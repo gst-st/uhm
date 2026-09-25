@@ -391,7 +391,7 @@ satisfies:
 
 **Step 1.** $\Gamma_{\text{exact}} = \Gamma_{\text{mf}} + \delta\Gamma$, where $\delta\Gamma$ contains all cross-correlations between holons.
 
-**Step 2.** The product $\Gamma_{\text{mf}}$ is a state of the composite, and its purity is the product of the purities (item 3). (An earlier step cited "[T-91 [T]](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени) (CC-5): if $H_i$ are viable, then the tensor product is non-trivial"; T-91 is the ∞-groupoid $\mathbf{Exp}_\infty$, CC-5 is T-68 and is [C at (HOL)], and none of the three items uses it.)
+**Step 2.** The product $\Gamma_{\text{mf}}$ is a state of the composite, and its purity is the product of the purities (item 3). (An earlier step cited "[T-91 [T]](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени) (CC-5): if $H_i$ are viable, then the tensor product is non-trivial"; T-91 is the ∞-groupoid $\mathbf{Exp}_\infty$, CC-5 is T-68 and is [T at weak coupling], and none of the three items uses it.)
 
 **Step 3.** $\|\delta\Gamma\|_F = \|\gamma_{\text{cross}}\|_F$ — total amplitude of inter-holon coherences.
 
@@ -405,7 +405,7 @@ $\blacksquare$
 
 **Dependencies:** [T-97 [T]](/docs/core/dynamics/viability#теорема-вложение-областей).
 
-*Corrected 2026-09-25:* the list also named "T-91 [T] (CC-5)" — a mislabel (T-91 is the ∞-groupoid $\mathbf{Exp}_\infty$; CC-5 is T-68, [C at (HOL)]), and not used by the three items.
+*Corrected 2026-09-25:* the list also named "T-91 [T] (CC-5)" — a mislabel (T-91 is the ∞-groupoid $\mathbf{Exp}_\infty$; CC-5 is T-68, [T at weak coupling]), and not used by the three items.
 
 ---
 

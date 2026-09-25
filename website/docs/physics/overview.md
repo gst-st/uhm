@@ -52,7 +52,7 @@ Complete map of the "Physics" section pages with subsections and key topics.
 | | [Neutrino Masses](/docs/physics/particle-physics/neutrino-masses) | Type-I seesaw, $M_R$ from loop mechanism [T], Dirac mass from O-sector [C], PMNS from anarchic $M_R$ [C], normal hierarchy [T] |
 | | [Supersymmetry](/docs/physics/particle-physics/susy) | $N=1$ from $G_2$-holonomy, $W$ from gauge $\varphi$ [T], $m_{3/2} \sim 10^{13}$ GeV |
 | | [Proton Decay](/docs/physics/particle-physics/proton-decay) | $\tau_p \sim 10^{37-38}$ years, channels $p \to e^+\pi^0$, comparison with Super-K/Hyper-K |
-| **Gravity** | [Emergent Geometry](/docs/physics/gravity/emergent-geometry) | One time direction [T] and three spatial ones at T-119 [C] (the "3+1 from sectoral decomposition $7 = 1 \oplus 3 \oplus \bar{3}$ [T]" is retracted [✗]: the axis-labelled split is not an $SU(3)$ decomposition), metric from Gap |
+| **Gravity** | [Emergent Geometry](/docs/physics/gravity/emergent-geometry) | One time direction [T] and three spatial ones at T-119 [T] (the "3+1 from sectoral decomposition $7 = 1 \oplus 3 \oplus \bar{3}$ [T]" is retracted [✗]: the axis-labelled split is not an $SU(3)$ decomposition), metric from Gap |
 | | [Einstein Equations](/docs/physics/gravity/einstein-equations) | $G_{\mu\nu}$ from Gap: full spectral action [T] + Lovelock theorem |
 | | [Cosmological Constant](/docs/physics/gravity/cosmological-constant) | $\Lambda$ budget: perturbative $10^{-41.5}$ [T]; SUSY $\varepsilon^{12}$ absorbs $\varepsilon^6$ → net $10^{-53.5}$; honest bracket $10^{-53.5}$–$10^{-93.5}$ [C], remaining $\gtrsim 27$ orders open |
 | | [Quantum Gravity](/docs/physics/gravity/quantum-gravity) | Gap functional integral on $(S^1)^{21}$, UV finiteness, information paradox |
@@ -850,7 +850,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 - [Proton Decay](/docs/physics/particle-physics/proton-decay) — $\tau_p \sim 10^{37}$ years
 
 *Gravity:*
-- [Emergent Geometry](/docs/physics/gravity/emergent-geometry) — 3+1: one time direction [T], three spatial ones at T-119 [C] (the split "from $G_2/SU(3)$" is retracted)
+- [Emergent Geometry](/docs/physics/gravity/emergent-geometry) — 3+1: one time direction [T], three spatial ones at T-119 [T] (the split "from $G_2/SU(3)$" is retracted)
 - [Einstein Equations](/docs/physics/gravity/einstein-equations) — $G_{\mu\nu}$ from Gap
 - [Cosmological Constant](/docs/physics/gravity/cosmological-constant) — $\Lambda$ budget
 - [Quantum Gravity](/docs/physics/gravity/quantum-gravity) — Gap functional integral, UV finiteness

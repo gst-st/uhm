@@ -114,6 +114,23 @@ D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_
 `exact_clock_z3_on_generations_forces_trivial_mixing` ((ПЧ) с точной ℤ₃ опровергнута) и
 `fermions_are_vectors_of_s_not_operators_and_eta0_is_forced` ((Кл₀) не выводится из аксиом о Γ).
 
+
+Четыре — за аттрактором в окне сознания (25.09.2026): `collineation_anchor_holds_a_living_attractor_in_the_window`
+(якорь uu† коллинеаций Фано: при κ > κ_c один сток в V_full, спектр якобиана точен),
+`phase_symmetric_self_models_hold_no_coherent_hyperbolic_state` (фазовое препятствие; Фано-регистрация
+держит P = 1/3, но Φ = 0), `attractor_consistency_is_first_order_in_the_hamiltonian` (T-157 в верной
+форме; прежняя граница ложна уже при H = 0) и `phi_coh_contracts_toward_i7_but_is_not_a_contraction`
+(«φ — сжатие с коэффициентом k» неверно: липшицева константа 54/49 у чистых состояний).
+
+
+Четыре — за теоремой 48d и переформулировкой T-119 (25.09.2026):
+`no_unital_spin_factor_on_any_holon_register` (единичного спин-фактора нет на ℂ^{7^M}; G₂-коммутант
+пары абелев, лапласиан регистра глубины с простым спектром), `colour_singlet_part_of_the_exceptional_jordan_algebra_is_hermitian_c3`
+(J₃(𝕆)^{SU(3)} = Herm(ℂ³), пирсово пространство E₁ даёт h₂(ℂ_O) сигнатуры (1,3)),
+`spatial_triplet_of_48c_is_the_weak_triplet` (в одной Spin(9) у цвета один централизатор 𝔲(2)) и
+`emergent_space_is_the_octahedron_and_its_fluctuations_the_three_sphere` (средние — октаэдр ≅ B³,
+флуктуации — ℝ³, минимальная унитизация — S³; цвет-синглетные координаты дают лишь 2).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -3299,6 +3316,807 @@ def test_fermions_are_vectors_of_s_not_operators_and_eta0_is_forced():
         span = np.array(vecs).T
     assert np.linalg.matrix_rank(span, tol=1e-9) == 8
     assert 14 % 16 != 0 and 98 % 16 != 0 and 16 % 16 == 0
+
+
+def test_canonical_aggregation_is_unique_and_the_octonion_product_is_dead():
+    """Каноническая агрегация (теорема 9.5 (a)) и отвергнутый октонионный путь (теорема 9.6 (b)).
+
+    (а) Линейное отображение End(ℂ^d ⊗ ℂ^d) → End(ℂ^d), инвариантное к перестановке факторов и
+    согласованное на всех σ ⊗ σ, единственно — среднее маргиналей (d = 3: ранг системы 729 из 729,
+    отклонение от среднего маргиналей ~1e-14); без симметрии остаётся 324 свободных параметра.
+    (б) Октонионный канал ℂ⁷⊗ℂ⁷ → ℂ⁷ по структурным константам Фано: VV† = 6I, образ W†W лежит в
+    антисимметричном подпространстве; ‖a × b‖² ≤ 2 для комплексных единичных a, b (максимум 2
+    достигается); выход несвязанной пары: P ≤ 1/7 + (6/7)w², w ≤ 1/3 для сепарабельных входов, т. е.
+    P ≤ 5/21 < 2/7, а для одинаковых жизнеспособных частей P ≤ 0,2522.
+    """
+    d = 3
+    rng = np.random.default_rng(0)
+    S = np.zeros((d * d, d * d))
+    for i in range(d):
+        for j in range(d):
+            S[i * d + j, j * d + i] = 1
+    N = d ** 6
+
+    def rows(X):
+        A = np.zeros((d * d, N), complex)
+        for ab in range(d * d):
+            A[ab, ab * d ** 4:(ab + 1) * d ** 4] = X.reshape(-1)
+        return A
+    As, ys = [], []
+    for _ in range(60):
+        s = rng.normal(size=(d, d)) + 1j * rng.normal(size=(d, d))
+        s = s + s.conj().T
+        As.append(rows(np.kron(s, s)))
+        ys.append((s * np.trace(s)).reshape(-1))
+    cons = np.vstack(As)
+    for _ in range(90):
+        X = rng.normal(size=(d * d, d * d)) + 1j * rng.normal(size=(d * d, d * d))
+        As.append(rows(X - S @ X @ S))
+        ys.append(np.zeros(d * d))
+    A, y = np.vstack(As), np.concatenate(ys)
+    sv = np.linalg.svd(A, compute_uv=False)
+    assert np.sum(sv > 1e-8 * sv[0]) == N                                            # единственность
+    sol = np.linalg.lstsq(A, y, rcond=None)[0]
+    X = rng.normal(size=(d * d, d * d)) + 1j * rng.normal(size=(d * d, d * d))
+    X4 = X.reshape(d, d, d, d)
+    mean = (np.einsum("iaja->ij", X4) + np.einsum("aiaj->ij", X4)) / 2
+    out = np.array([sol[r * d ** 4:(r + 1) * d ** 4] @ X.reshape(-1) for r in range(d * d)]).reshape(d, d)
+    assert np.linalg.norm(out - mean) < 1e-10                                        # = среднее маргиналей
+    sv = np.linalg.svd(cons, compute_uv=False)
+    assert N - np.sum(sv > 1e-8 * sv[0]) == 324                                      # без симметрии — не единственно
+    V = np.array([[PHI3[i, j, k] for i in range(7) for j in range(7)] for k in range(7)])
+    assert np.allclose(V @ V.T, 6 * np.eye(7))
+    W = V / np.sqrt(6)
+    Pi = W.T @ W
+    Sw = np.zeros((49, 49))
+    for i in range(7):
+        for j in range(7):
+            Sw[i * 7 + j, j * 7 + i] = 1
+    assert np.allclose(Sw @ Pi, -Pi) and np.allclose(Pi @ Pi, Pi)                    # внутри антисимметричного
+    for g in G2:
+        U = expm(0.7 * g)
+        assert np.allclose(W @ np.kron(U, U), U @ W)                                 # G₂-ковариантен
+    agg = lambda X: W @ X @ W.T + np.real(np.trace((np.eye(49) - Pi) @ X)) * np.eye(7) / 7
+    r = np.random.default_rng(1)
+    c2 = 0.0
+    for _ in range(400):
+        a, b = random_pure(r), random_pure(r)
+        c2 = max(c2, 6 * np.real(np.trace(Pi @ np.kron(a, b))))
+        assert purity(agg(np.kron(a, b))) <= 5 / 21 + 1e-12
+    assert c2 <= 2 + 1e-12
+    e = np.eye(7)
+    x, z = (e[0] + 1j * e[1]) / np.sqrt(2), (e[2] - 1j * e[5]) / np.sqrt(2)
+    assert abs(np.linalg.norm(V @ np.kron(x, z)) ** 2 - 2) < 1e-12                   # граница 2 достигается
+    for _ in range(300):
+        lam = r.uniform(0.3, 1)
+        s = lam * random_pure(r) + (1 - lam) * np.eye(7) / 7
+        if purity(s) > 2 / 7:
+            p = purity(agg(np.kron(s, s)))
+            assert p <= 1 / 7 + (6 / 7) * ((1 - purity(s)) / 2) ** 2 + 1e-12 and p < 0.2522
+
+
+def test_viability_passes_to_the_aggregate_only_at_weak_coupling():
+    """Теоремы 9.5 (b)–(f) и 9.6 (a): жизнеспособность и инварианты переходят к агрегату при слабой связи.
+
+    Воплощённый голоном генератора КК-7 (μ = 1, якорь веса 0,8): P(ρ*) = 0,3115, P(ρ_lin) = 0,3223 —
+    стационарное состояние линейной части без регенерации, ε_V = μ(P_lin − 2/7)/(2√P_lin) = 0,03225.
+    Связь в базисе Белла (максимально запутанные собственные векторы), размах s = 1,8246, порог g* = 0,01768.
+    (b) Тождество маргинали L[X₁] = i g Tr₂[H, X] на стационарном состоянии — до 1e-15.
+    (d) При g ≤ g* маргинали жизнеспособны; при g = 1 ещё живы (0,297); при g = 10 — мертвы (→ 1/7).
+    (e) Доминирование хребта (κ = 0,1, μ = 3,5, L_R ≤ 29κ): ‖X_i(t) − ρ*‖₁ ≤ e^{−(μ−L_R)t}‖X_i(0) − ρ*‖₁
+    + g s/(μ − L_R) из максимально запутанного старта.
+    (f) Бассейн: из запутанного и произведённого стартов маргинали приходят на расстояние 0,0643·g.
+    """
+    rng = np.random.default_rng(12)
+
+    def herm(r):
+        A = r.normal(size=(7, 7)) + 1j * r.normal(size=(7, 7))
+        return (A + A.conj().T) / 2
+    tn = lambda X: float(np.abs(np.linalg.eigvalsh((X + X.conj().T) / 2)).sum())
+    I7 = np.eye(7) / 7
+    v = rng.normal(size=7) + 1j * rng.normal(size=7)
+    v /= np.linalg.norm(v)
+    H = 0.3 * herm(rng)
+    sig = 0.8 * np.outer(v, v.conj()) + 0.2 * I7
+    a = _holon_pair_generator(H, sig, mu=1.0)
+    f = lambda G: np.einsum("iaja->ij", a(np.kron(G, I7).reshape(7, 7, 7, 7), G))
+    rho = _rk4(I7, f, 40.0, 800)
+    assert np.linalg.norm(f(rho)) < 1e-12 and abs(purity(rho) - 0.31146) < 1e-4
+    flin = lambda G: -1j * (H @ G - G @ H) + (2 / 3) * (np.diag(np.diag(G)) - G) + (sig * np.trace(G) - G)
+    L0 = np.array([flin(E.reshape(7, 7)).reshape(-1) for E in np.eye(49).astype(complex)]).T
+    rl = np.linalg.lstsq(np.vstack([L0, np.eye(7).reshape(1, -1)]), np.eye(50)[-1], rcond=None)[0].reshape(7, 7)
+    Pl = purity(rl)
+    epsV = (Pl - 2 / 7) / (2 * np.sqrt(Pl))
+    assert abs(Pl - 0.32234) < 1e-4 and abs(epsV - 0.03225) < 1e-4
+    assert tn(rl - sig) <= tn(flin(sig)) + 1e-12                                     # ‖ρ_lin − σ‖₁ ≤ ‖L⁰σ‖₁/μ
+    for _ in range(200):                                                              # (c): невязка ниже 2/7
+        G = random_state(rng)
+        if purity(G) <= 2 / 7:
+            assert tn(f(G)) >= epsV - 1e-12
+    marg = lambda X: (np.einsum("ijkj->ik", X.reshape(7, 7, 7, 7)), np.einsum("ijil->jl", X.reshape(7, 7, 7, 7)))
+
+    def rhs(X, g, Hint):
+        g1, g2 = marg(X)
+        X4 = X.reshape(7, 7, 7, 7)
+        out = a(X4, g1) + a(X4.transpose(1, 0, 3, 2), g2).transpose(1, 0, 3, 2)
+        return out.reshape(49, 49) - 1j * g * (Hint @ X - X @ Hint)
+    w = np.exp(2j * np.pi / 7)
+    B = np.zeros((49, 49), complex)
+    for m in range(7):
+        for n in range(7):
+            for j in range(7):
+                B[j * 7 + (j + m) % 7, m * 7 + n] = w ** (j * n) / np.sqrt(7)
+    assert np.allclose(B.conj().T @ B, np.eye(49))
+    for col in B.T:
+        assert np.allclose(np.einsum("ij,kj->ik", col.reshape(7, 7), col.reshape(7, 7).conj()), I7)
+    Hb = B @ np.diag(np.random.default_rng(2).uniform(-1, 1, 49)) @ B.conj().T
+    s = np.ptp(np.linalg.eigvalsh(Hb))
+    gstar = epsV / s
+    assert abs(s - 1.8246) < 1e-3 and abs(gstar - 0.01768) < 1e-4
+    sigma = np.kron(rho, rho).astype(complex)
+    P1 = {}
+    for g in (gstar, 1.0, 10.0):
+        n = int(max(800, 60 * g * s))
+        X = _rk4(sigma, lambda X: rhs(X, g, Hb), 60.0, n)
+        assert np.linalg.norm(rhs(X, g, Hb)) < 1e-9
+        g1, g2 = marg(X)
+        comm = Hb @ X - X @ Hb
+        assert np.linalg.norm(f(g1) - 1j * g * np.einsum("ijkj->ik", comm.reshape(7, 7, 7, 7))) < 1e-12   # (b)
+        assert tn(f(g1)) <= g * s + 1e-12
+        P1[g] = (purity(g1), purity(g2), purity((g1 + g2) / 2))
+    assert min(P1[gstar]) > 2 / 7 and min(P1[1.0]) > 2 / 7                           # (d)
+    assert max(P1[10.0]) < 0.16                                                        # 9.6 (a): → 1/7
+    Hg = np.kron(herm(np.random.default_rng(4)), herm(np.random.default_rng(5)))
+    Hg /= np.linalg.norm(Hg, 2)
+    for start in (random_pure(np.random.default_rng(80), 49),
+                  np.kron(random_pure(np.random.default_rng(81)), random_pure(np.random.default_rng(82)))):
+        ratio = []
+        for g in (0.01, 0.02):
+            X = _rk4(start, lambda X: rhs(X, g, Hg), 40.0, 800)
+            ratio.append(max(tn(m - rho) for m in marg(X)) / g)
+        assert abs(ratio[0] - 0.0643) < 1e-3 and abs(ratio[1] / ratio[0] - 1) < 3e-3  # (f) O(g) из бассейна
+    # (e) доминирование хребта: фиксированная цель регенерации, κ = 0,1, μ = 3,5, L_R ≤ 29κ
+    r = np.random.default_rng(7)
+    H2 = 0.2 * herm(r)
+    kap, mu, LR = 0.1, 3.5, 2.9
+    tgt = np.diag(np.eye(7)[0]).astype(complex)
+    sg = np.diag([0.66, 0.1, 0.06, 0.06, 0.04, 0.04, 0.04]).astype(complex)
+
+    def frozen(G):
+        gv = gate(purity(G))
+        return lambda Y: (-1j * (H2 @ Y - Y @ H2) + (2 / 3) * (np.diag(np.diag(Y)) - Y)
+                          + kap * gv * (tgt * np.trace(Y) - Y) + mu * (sg * np.trace(Y) - Y))
+    f2 = lambda G: frozen(G)(G)
+    rho2 = _rk4(I7, f2, 20.0, 1000)
+    assert np.linalg.norm(f2(rho2)) < 1e-12
+
+    def on1(M, X4):
+        return np.einsum("ijkl,kalb->iajb", M, X4)
+
+    def sup(Mf):
+        return np.array([Mf(E.reshape(7, 7)).reshape(-1) for E in np.eye(49).astype(complex)]).T.reshape(7, 7, 7, 7)
+
+    def rhs2(X, g):
+        g1, g2 = marg(X)
+        X4 = X.reshape(7, 7, 7, 7)
+        out = on1(sup(frozen(g1)), X4) + on1(sup(frozen(g2)), X4.transpose(1, 0, 3, 2)).transpose(1, 0, 3, 2)
+        return out.reshape(49, 49) - 1j * g * (Hb @ X - X @ Hb)
+    X = random_pure(np.random.default_rng(50), 49)
+    d0 = [tn(m - rho2) for m in marg(X)]
+    g = 0.2
+    for T in range(1, 7):
+        X = _rk4(X, lambda X: rhs2(X, g), 1.0, 50)
+        for dd, m in zip(d0, marg(X)):
+            assert tn(m - rho2) <= np.exp(-(mu - LR) * T) * dd + g * s / (mu - LR)   # (e)
+
+
+def _living_generator(H, anchor, kap, alpha):
+    """Генератор изолированного голонома с регенерацией к φ(Γ) = k P_α(Γ) + R·якорь(Γ), затвор g_V."""
+    c = (1 - alpha) / 3
+
+    def f(G):
+        P = purity(G)
+        R = 1 / (7 * P)
+        D = np.diag(np.diag(G))
+        return (-1j * (H @ G - G @ H) + (2 / 3) * (D - G)
+                + kap * gate(P) * ((1 - R) * (D + c * (G - D)) + R * anchor(G) - G))
+    return f
+
+
+def _stationary(f, G):
+    """Уточнение стационарной точки методом наименьших квадратов в 48 вещественных координатах."""
+    E = _jacobian_basis()
+    to = lambda X: np.real(np.einsum("aij,ji->a", E, X))
+    fr = lambda v: np.eye(7) / 7 + np.einsum("a,aij->ij", v, E)
+    r = least_squares(lambda v: to(f(fr(v))), to(G - np.eye(7) / 7), xtol=1e-15, ftol=1e-15, gtol=1e-15)
+    X = fr(r.x)
+    return (X + X.conj().T) / 2
+
+
+def _jacobian_basis():
+    B = []
+    for i in range(7):
+        for j in range(i + 1, 7):
+            M = np.zeros((7, 7), complex)
+            M[i, j] = M[j, i] = 1 / np.sqrt(2)
+            B.append(M)
+            M = np.zeros((7, 7), complex)
+            M[i, j], M[j, i] = -1j / np.sqrt(2), 1j / np.sqrt(2)
+            B.append(M)
+    for m in range(6):
+        d = np.zeros(7)
+        d[:m + 1], d[m + 1] = 1, -(m + 1)
+        B.append(np.diag(d / np.linalg.norm(d)).astype(complex))
+    return np.array(B)
+
+
+def _q_window(eta, c, t=1.0):
+    """Q(η) = (6η² − 1)[(t − cη)/(η(1 + 6η²)) − (1 − c)]: стационарность семейства Γ_η ⇔ κQ = 2/3."""
+    return (6 * eta ** 2 - 1) * ((t - c * eta) / (eta * (1 + 6 * eta ** 2)) - (1 - c))
+
+
+def test_collineation_anchor_holds_a_living_attractor_in_the_window():
+    """Якорь коллинеаций uu† держит изолированный голоном в сознательном окне: аттрактор в V_full.
+
+    Свидетель теоремы о живом аттракторе в окне (эволюция): φ_J(Γ) = k P_α(Γ) + R uu†, u = (1,…,1)/√7 —
+    единственное чистое состояние, неподвижное при 168 коллинеациях Фано (коммутант {I, J}).
+    При H = 0 стационарные точки с P > 2/7 — ровно Γ_η = (1−η)I/7 + η uu† с κQ(η) = 2/3; Q строго
+    вогнута, κ_c(α) = 2/(3 max Q): 16,63 (α = 0), 29,25 (α = ½), 59,34 (α = 1). При α = ½, κ = 40
+    два корня: седло P = 0,2962 и сток P = 0,3213, Φ = 6η² = 1,249; спектр якобиана стока —
+    {κηQ′(η); −κgR ×6; −(⅔ + κg(1 − kc)) ×41} до 1e-6; баланс T-98 (κg_V) до 1e-12. Со случайным H
+    нормы 1 аттрактор сохраняется в V_full; ниже порога (κ = 20) поток из uu† умирает в I/7.
+    """
+    perms = []
+    for p in itertools.permutations(range(7)):
+        lines = {frozenset(x - 1 for x in l) for l in LINES}
+        if all(frozenset(p[x - 1] for x in l) in lines for l in LINES):
+            perms.append(np.eye(7)[list(p)])
+    assert len(perms) == 168
+    A = np.vstack([np.kron(M, M) - np.eye(49) for M in perms])
+    assert int(np.sum(np.linalg.svd(A, compute_uv=False) < 1e-9)) == 2               # коммутант {I, J}
+    u = np.ones(7) / np.sqrt(7)
+    uu = np.outer(u, u).astype(complex)
+    assert all(np.allclose(M @ u, u) for M in perms)
+    ph = np.diag(np.exp(1j * np.random.default_rng(2).uniform(0, 2 * np.pi, 7)))
+    A = np.vstack([A, np.kron(ph, ph.conj()) - np.eye(49)])                          # + фазы: унитальна
+    assert int(np.sum(np.linalg.svd(A, compute_uv=False) < 1e-9)) == 1
+    eta = np.linspace(1 / np.sqrt(6), 1 / np.sqrt(3), 4001)
+    for cc in np.linspace(0, 1 / 3, 7):                                               # Q″ < 0 на всём окне
+        q = _q_window(eta, cc)
+        assert np.max(np.diff(q, 2)) < 0
+    kc = {a: (2 / 3) / np.max(_q_window(eta, (1 - a) / 3)) for a in (0.0, 0.5, 1.0)}
+    assert abs(kc[0.0] - 16.628) < 5e-3 and abs(kc[0.5] - 29.254) < 5e-3 and abs(kc[1.0] - 59.345) < 5e-3
+    assert abs(_q_window(0.5, 1 / 3)) < 1e-15                                         # P_∞(α = 0) = 5/14
+    alpha, kap, c = 0.5, 40.0, 0.5 / 3
+    zero = np.zeros((7, 7))
+    f = _living_generator(zero, lambda G: uu, kap, alpha)
+    fam = lambda e: np.eye(7) / 7 + e * (uu - np.eye(7) / 7)
+    v = kap * _q_window(eta, c) - 2 / 3
+    roots = [eta[i] for i in range(len(eta) - 1) if v[i] * v[i + 1] < 0]
+    assert len(roots) == 2
+    Ps = []
+    for e0 in roots:
+        G = _stationary(f, fam(e0))
+        e = float(np.real(G[0, 1])) * 7
+        assert np.linalg.norm(f(G)) < 1e-12 and np.linalg.norm(G - fam(e)) < 1e-12
+        Ps.append(purity(G))
+        spec = np.sort(np.linalg.eigvals(_jacobian(f, G)).real)
+        P, g = purity(G), gate(purity(G))
+        R = 1 / (7 * P)
+        dq = (_q_window(e + 1e-7, c) - _q_window(e - 1e-7, c)) / 2e-7
+        want = sorted([kap * e * dq] + [-kap * g * R] * 6 + [-(2 / 3 + kap * g * (1 - (1 - R) * c))] * 41)
+        assert np.allclose(spec, want, atol=1e-5)
+        if dq < 0:
+            star, estar = G, e
+    assert abs(Ps[0] - 0.2962) < 1e-4 and abs(Ps[1] - 0.3213) < 1e-4
+    P = purity(star)
+    assert 2 / 7 < P < 3 / 7 and 1 < integration(star) < 2 and abs(integration(star) - 6 * estar ** 2) < 1e-12
+    assert np.allclose(np.diag(star).real, 1 / 7, atol=1e-13)
+    R = 1 / (7 * P)
+    fstar = np.real(np.trace(star @ ((1 - R) * (np.diag(np.diag(star)) + c * (star - np.diag(np.diag(star))))
+                                     + R * uu)))
+    pd, kg = float(np.sum(np.real(np.diag(star)) ** 2)), kap * gate(P)
+    assert abs((2 / 3 * pd + kg * fstar) / (2 / 3 + kg) - P) < 1e-12                  # T-98 с κ g_V
+    rng = np.random.default_rng(4)
+    B = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    H = (B + B.conj().T) / 2
+    H /= np.linalg.norm(H, 2)
+    fh = _living_generator(H, lambda G: uu, kap, alpha)
+    G = _stationary(fh, star)
+    assert np.linalg.norm(fh(G)) < 1e-12 and np.max(np.linalg.eigvals(_jacobian(fh, G)).real) < -1
+    assert 2 / 7 < purity(G) < 3 / 7 and integration(G) > 1 and np.min(np.real(np.diag(G))) > 0.1
+    assert np.min(np.linalg.eigvalsh(G)) > 0
+    low = _living_generator(H, lambda G: uu, 20.0, alpha)
+    assert np.max(20.0 * _q_window(eta, c)) < 2 / 3
+    assert abs(purity(_rk4(uu, low, 30.0, 3000)) - 1 / 7) < 1e-9
+
+
+def test_phase_symmetric_self_models_hold_no_coherent_hyperbolic_state():
+    """Без фазового репера когерентное состояние не гиперболично; окно по P — да, V_full — нет.
+
+    Свидетель теоремы о фазовом препятствии (эволюция): при H = 0 самомодель, ковариантная
+    относительно диагональных унитарных (φ_coh, φ_s, всякий спектральный якорь, фано-регистрация),
+    имеет у недиагональной стационарной точки нулевое собственное значение. Спектральный якорь
+    Γ⁸/TrΓ⁸ при α = ½, κ = 40 держит Γ_η той же формы, что и якорь uu†, но у неё 6 нулевых и 6
+    растущих направлений. Фано-регистрация (якорь Π_p/3 самой вероятной прямой) даёт при H = 0 семь
+    стоков Π_p/3 с P = 1/3 и спектром {−κ/7 ×6; −⅔ − (κ/3)(1 − 4c/7) ×42} при любом κ > 0, Φ = 0.
+    """
+    alpha, kap, c = 0.5, 40.0, 0.5 / 3
+    zero = np.zeros((7, 7))
+    u = np.ones(7) / np.sqrt(7)
+    uu = np.outer(u, u).astype(complex)
+
+    def spec8(G):
+        w, V = np.linalg.eigh((G + G.conj().T) / 2)
+        w = np.clip(w, 0, None) ** 8
+        return (V * (w / w.sum())) @ V.conj().T
+    f = _living_generator(zero, spec8, kap, alpha)
+    G = _stationary(f, np.eye(7) / 7 + 0.456 * (uu - np.eye(7) / 7))
+    assert np.linalg.norm(f(G)) < 1e-12 and 2 / 7 < purity(G) < 3 / 7 and integration(G) > 1
+    ev = np.linalg.eigvals(_jacobian(f, G)).real
+    assert np.sum(np.abs(ev) < 1e-5) == 6 and np.sum(ev > 1) == 6
+    Pi = [np.diag([1.0 if m + 1 in l else 0.0 for m in range(7)]).astype(complex) for l in LINES]
+
+    def line(G):
+        p = [np.real(np.trace(X @ G)) for X in Pi]
+        return Pi[int(np.argmax(p))] / 3
+    for kap in (0.5, 1.0, 3.0):
+        f = _living_generator(zero, line, kap, alpha)
+        for X in Pi:
+            assert np.linalg.norm(f(X / 3)) < 1e-15 and abs(purity(X / 3) - 1 / 3) < 1e-15
+        spec = np.sort(np.linalg.eigvals(_jacobian(f, Pi[0] / 3)).real)
+        want = sorted([-kap / 7] * 6 + [-2 / 3 - kap / 3 * (1 - 4 * c / 7)] * 42)
+        assert np.allclose(spec, want, atol=1e-6)
+
+
+def test_attractor_consistency_is_first_order_in_the_hamiltonian():
+    """T-157 в верной форме: сдвиг аттрактора от точной самомодели — первого порядка по H.
+
+    Свидетель переформулированной T-157 (замкнутость без субстрата §10). Прежнее «‖ρ* − Γ*_coh‖ ≤
+    ‖H‖/(α + κ)» при Γ*_coh = I/7 ложно уже при H = 0: живой аттрактор φ_s есть e_m,
+    ‖e_m − I/7‖_F = √(6/7). Верно: ρ*(H) = e_m + O(H), и главный член точен —
+    ‖ρ*(H) − e_m‖_F = √2‖H e_m − H_mm e_m‖/(⅔ + 6κ(1 − c)/7) + O(‖H‖²) (при ε = 1e-3 отношение 1 ± 1e-3).
+    Тождество дефекта самопознания κg(φ(ρ*) − ρ*) = −ℒ₀[ρ*] — до 1e-12. Для φ_J (α = ½, κ = 40)
+    единственная неподвижная точка самомодели Γ_η∞, η∞ = 0,4725, отстоит от аттрактора на 0,0150
+    при границе √(6/7)(2η₊/3)/|λ_Y| = 0,0217.
+    """
+    kap, alpha, c = 1.0, 0.5, 0.5 / 3
+    e0 = np.diag(np.eye(7)[0]).astype(complex)
+    assert abs(np.linalg.norm(e0 - np.eye(7) / 7) - np.sqrt(6 / 7)) < 1e-15
+    rng = np.random.default_rng(9)
+    B = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    H1 = (B + B.conj().T) / 2
+    for eps in (1e-3, 1e-2):
+        H = eps * H1
+        f = lambda G: _frozen_self_registering(G, H, kap=kap, alpha=alpha)(G)
+        G = _stationary(f, e0)
+        col = H[:, 0].copy()
+        col[0] = 0
+        first = np.sqrt(2) * np.linalg.norm(col) / (2 / 3 + 6 * kap * (1 - c) / 7)
+        ratio = np.linalg.norm(G - e0) / first
+        assert abs(ratio - 1) < (2e-3 if eps == 1e-3 else 2e-2)
+        P = purity(G)
+        R = 1 / (7 * P)
+        D = np.diag(np.diag(G))
+        phi = (1 - R) * (D + c * (G - D)) + R * G @ G / P
+        L0 = -1j * (H @ G - G @ H) + (2 / 3) * (D - G)
+        assert np.linalg.norm(kap * gate(P) * (phi - G) + L0) < 1e-12
+    eta = np.linspace(0.4, 0.55, 150001)                                              # φ_J: сдвиг O(1/κ)
+    q = _q_window(eta, c)
+    e_inf = eta[np.argmin(np.abs((1 - c * eta) / (eta * (1 + 6 * eta ** 2)) - (1 - c)))]
+    v = 40.0 * q - 2 / 3
+    e_plus = max(eta[i] for i in range(len(eta) - 1) if v[i] * v[i + 1] < 0)
+    dq = (_q_window(e_plus + 1e-7, c) - _q_window(e_plus - 1e-7, c)) / 2e-7
+    dist, bound = np.sqrt(6 / 7) * (e_inf - e_plus), np.sqrt(6 / 7) * (2 * e_plus / 3) / abs(40.0 * e_plus * dq)
+    assert abs(e_inf - 0.4725) < 1e-4 and abs(dist - 0.0150) < 1e-4 and abs(bound - 0.0217) < 1e-4
+    u = np.ones(7) / np.sqrt(7)
+    uu = np.outer(u, u)
+    fix = np.eye(7) / 7 + e_inf * (uu - np.eye(7) / 7)
+    P = purity(fix)
+    R = 1 / (7 * P)
+    D = np.diag(np.diag(fix))
+    assert np.linalg.norm((1 - R) * (D + c * (fix - D)) + R * uu - fix) < 1e-4       # φ_J(Γ_η∞) = Γ_η∞
+
+
+def test_phi_coh_contracts_toward_i7_but_is_not_a_contraction():
+    """φ_coh сжимает к I/7 (множитель k ≤ 6/7), но не является сжатием: у чистых состояний 54/49.
+
+    Свидетель поправки к расщеплению шага (эволюция, итеративная схема): «схема сходится по Банаху,
+    так как φ — сжатие с коэффициентом k» неверно дословно — k есть множитель у отклонения от I/7,
+    а не константа Липшица; вдоль e₀ радиальная производная в чистом состоянии 54/49 > 1.
+    Верно: шаг Ли–Троттера S = [(1−a) id + aφ_coh]∘e^{Δτℒ₀} даёт ‖Γ_n − I/7‖_F ≤ (1 − a/7)ⁿ‖Γ_0 − I/7‖_F.
+    С φ_s при H = 0 у шага восемь неподвижных точек (e_m и I/7) — глобального сжатия нет.
+    """
+    pa = lambda G: np.diag(np.diag(G)) + (G - np.diag(np.diag(G))) / 6
+    phi = lambda G: (1 - 1 / (7 * purity(G))) * pa(G) + np.eye(7) / (49 * purity(G))
+    e0 = np.diag(np.eye(7)[0]).astype(complex)
+    d = e0 - np.eye(7) / 7
+    h = 1e-6
+    lip = np.linalg.norm(phi(e0) - phi(e0 - h * d)) / np.linalg.norm(h * d)
+    assert abs(lip - 54 / 49) < 1e-5
+    rng = np.random.default_rng(12)
+    B = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    H = 0.3 * (B + B.conj().T) / 2
+    L0 = lambda G: -1j * (H @ G - G @ H) + (2 / 3) * (np.diag(np.diag(G)) - G)
+    a, dt = 0.5, 0.1
+    step = lambda G: (1 - a) * _rk4(G, L0, dt, 4) + a * phi(_rk4(G, L0, dt, 4))
+    G = random_pure(rng)
+    dist = [np.linalg.norm(G - np.eye(7) / 7)]
+    for _ in range(60):
+        G = step(G)
+        dist.append(np.linalg.norm(G - np.eye(7) / 7))
+    assert all(dist[n + 1] <= (1 - a / 7) * dist[n] + 1e-12 for n in range(60))
+    zero = np.zeros((7, 7))
+    phis = lambda G: (1 - 1 / (7 * purity(G))) * pa(G) + G @ G / (7 * purity(G) ** 2)
+    stepS = lambda G: (1 - a) * G + a * phis(G)
+    fixed = [np.eye(7) / 7] + [np.diag(np.eye(7)[m]).astype(complex) for m in range(7)]
+    assert all(np.linalg.norm(stepS(X) - X) < 1e-15 for X in fixed)
+
+
+# --- Consciousness meta-level, 25.09.2026 (T-221 corrected, Cons(S) against Kleiner-Hoel,
+# --- enriched Yoneda for qualia, PCI bridge). Each test witnesses one statement of the
+# --- corresponding page; see the page anchors in the docstrings.
+
+def test_first_person_facts_of_two_subjects_are_not_compossible():
+    """T-221(a): List's lemma in the centred-world form (List 2023a, footnote 1 of the
+    quadrilemma). A centred world is (w, s); 'I am in state X' is the set of centred worlds
+    whose centre is in X. For two subjects in different complete states no centred world
+    satisfies both first-person facts, while the relativised (stage-indexed) facts are
+    jointly satisfiable -- the relationalist route keeps one coherent world."""
+    import itertools
+    worlds = [("w", {"s1": "X", "s2": "Y"})]
+    centred = [(w, s) for w, st in worlds for s in st]
+    state = {c: worlds[0][1][c[1]] for c in centred}
+    i_am_x = {c for c in centred if state[c] == "X"}
+    i_am_y = {c for c in centred if state[c] == "Y"}
+    assert i_am_x and i_am_y and not (i_am_x & i_am_y)
+    # relativised facts: 'relative to s1, I am X' and 'relative to s2, I am Y' are
+    # propositions about uncentred worlds and hold together at w
+    rel = [lambda w: w[1]["s1"] == "X", lambda w: w[1]["s2"] == "Y"]
+    assert all(f(worlds[0]) for f in rel)
+    # the same with every assignment of two distinct complete states out of three
+    for a, b in itertools.permutations("XYZ", 2):
+        st = {"s1": a, "s2": b}
+        cx = {s for s in st if st[s] == a}
+        cy = {s for s in st if st[s] == b}
+        assert not (cx & cy)
+
+
+def test_viability_penalty_pins_every_subthreshold_reconstruction_at_two_sevenths():
+    """Measurement protocol R5 (A-95): with the default lambda_2 = 100 the reconstruction of
+    pi_bio returns P = 2/7 exactly for every uniform sub-threshold state, so P8.2
+    (P < 2/7 in N3) cannot be observed; with lambda_2 = 0 the true P is returned. For the
+    uniform family the pinning threshold is lambda_2 >= 10(1 - m/m_c), m_c = 1/sqrt(294)."""
+    import numpy as np
+    from scipy.optimize import minimize
+    rng = np.random.default_rng(7)
+    iu = np.triu_indices(7, 1)
+    pos = []
+    k = 0
+    for i in range(7):
+        for j in range(i + 1):
+            pos.append((i, j, k))
+            k += 1 if i == j else 2
+    n = k
+
+    def build(x):
+        L = np.zeros((7, 7), complex)
+        for i, j, q in pos:
+            L[i, j] = max(x[q], 1e-6) if i == j else x[q] + 1j * x[q + 1]
+        G = L @ L.conj().T
+        return G / np.trace(G).real
+
+    def recon(m, lam2):
+        mag = np.full((7, 7), m)
+
+        def f(x):
+            G = build(x)
+            ll = -np.sum((np.real(np.diag(G)) - 1 / 7) ** 2) / 0.01
+            ll -= np.sum((np.abs(G[iu]) - mag[iu]) ** 2) / 0.05
+            return -(ll - lam2 * max(0.0, 2 / 7 - np.real(np.trace(G @ G))))
+        best = None
+        for _ in range(3):
+            x0 = 0.05 * rng.normal(size=n)
+            for i, j, q in pos:
+                if i == j:
+                    x0[q] = np.sqrt(1 / 7)
+            r = minimize(f, x0, method="L-BFGS-B",
+                         options=dict(ftol=1e-14, gtol=1e-10, maxiter=20000))
+            best = r if best is None or r.fun < best.fun else best
+        G = build(best.x)
+        return float(np.real(np.trace(G @ G)))
+    for m in (0.02, 0.05):
+        p_true = 1 / 7 + 42 * m * m
+        assert p_true < 2 / 7
+        assert abs(recon(m, 0.0) - p_true) < 2e-3
+        assert abs(recon(m, 100.0) - 2 / 7) < 2e-3
+    mc = 1 / np.sqrt(294)
+    assert abs(1 / 7 + 42 * mc * mc - 2 / 7) < 1e-15
+
+
+def test_uniform_diagonal_window_is_phi_between_one_and_two():
+    """PCI bridge: on the uniform-diagonal stratum P = (1 + Phi)/7, R = 1/(1 + Phi),
+    C = Phi R = Phi/(1 + Phi); the window P in (2/7, 3/7] is Phi in (1, 2] and C in (1/2, 2/3]."""
+    import numpy as np
+    rng = np.random.default_rng(3)
+    seen = [0, 0]
+    for _ in range(400):
+        ph = np.exp(1j * rng.uniform(0, 2 * np.pi, 7))
+        H = rng.uniform(0, 1 / 7) * (np.outer(ph, ph.conj()) - np.eye(7))
+        N = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+        N = 0.01 * (N + N.conj().T)
+        np.fill_diagonal(N, 0)
+        H = H + N
+        G = np.eye(7) / 7 + H
+        if np.min(np.linalg.eigvalsh(G)) < 0:
+            continue
+        P = np.real(np.trace(G @ G))
+        off = np.sum(np.abs(G) ** 2) - np.sum(np.abs(np.diag(G)) ** 2)
+        Phi = off / np.sum(np.abs(np.diag(G)) ** 2)
+        assert abs(P - (1 + Phi) / 7) < 1e-12
+        R = 1 / (7 * P)
+        assert abs(R - 1 / (1 + Phi)) < 1e-12
+        assert ((2 / 7 < P <= 3 / 7) == (1 < Phi <= 2 + 1e-15))
+        seen[int(2 / 7 < P <= 3 / 7)] += 1
+    assert min(seen) >= 20
+
+
+def test_cons_verdict_and_quality_geometry_are_independent():
+    """Kawakita et al. 2024 section: the Fubini-Study distances between the eigenrays of Gamma
+    do not depend on its spectrum, and P does not depend on the eigenrays; the same quality
+    geometry is carried by a state below 2/7 and by one inside the window."""
+    import numpy as np
+    rng = np.random.default_rng(11)
+    Z = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    Q, _ = np.linalg.qr(Z)
+
+    def geom(G):
+        _, V = np.linalg.eigh(G)
+        a = np.abs(V.conj().T @ Q)
+        return np.sort(np.round(np.arccos(np.clip(a, 0, 1)), 5).ravel())
+    lam_low = np.array([0.20, 0.18, 0.16, 0.14, 0.12, 0.11, 0.09])
+    lam_in = np.array([0.50, 0.20, 0.10, 0.08, 0.06, 0.04, 0.02])
+    G1 = Q @ np.diag(lam_low) @ Q.conj().T
+    G2 = Q @ np.diag(lam_in) @ Q.conj().T
+    P1, P2 = np.sum(lam_low ** 2), np.sum(lam_in ** 2)
+    assert P1 < 2 / 7 < P2 <= 3 / 7
+    assert np.allclose(geom(G1), geom(G2))
+
+
+def test_enriched_yoneda_embedding_of_fubini_study_rays_is_an_isometry():
+    """Categorical formalism, enriched Yoneda: for d = d_FS on CP^{n-1},
+    sup_x (d(x, b) - d(x, a)) = d(a, b) (the presheaf hom of y a and y b), attained at x = a;
+    a finite delta-net S gives d(a,b) - 2 delta <= max_s |d(s,a) - d(s,b)| <= d(a,b); and the
+    normalised volume of an FS ball of radius r in CP^1 and CP^2 is sin^{2(n-1)} r."""
+    import numpy as np
+    rng = np.random.default_rng(5)
+
+    def ray(n, k):
+        v = rng.normal(size=(k, n)) + 1j * rng.normal(size=(k, n))
+        return v / np.linalg.norm(v, axis=1, keepdims=True)
+
+    def d(u, v):
+        return np.arccos(np.clip(np.abs(u.conj() @ v.T), 0, 1))
+    tol = 1e-6
+    for n in (2, 3, 7):
+        X = ray(n, 4000)
+        A = ray(n, 20)
+        D_AA = d(A, A)
+        D_XA = d(X, A)
+        for i in range(20):
+            for j in range(20):
+                sup = np.max(np.concatenate([D_XA[:, j] - D_XA[:, i], [D_AA[i, j] - D_AA[i, i]]]))
+                assert sup <= D_AA[i, j] + tol
+                assert abs(sup - D_AA[i, j]) < tol
+    # finite-probe Yoneda on CP^1: a net of probes of covering radius delta
+    X = ray(2, 3000)
+    S = ray(2, 400)
+    delta = np.max(np.min(d(X, S), axis=1))
+    A = ray(2, 30)
+    DAS = d(A, S)
+    DAA = d(A, A)
+    for i in range(30):
+        for j in range(30):
+            prof = np.max(np.abs(DAS[i] - DAS[j]))
+            assert DAA[i, j] - 2 * delta - tol <= prof <= DAA[i, j] + tol
+    for n in (2, 3):
+        X = ray(n, 200000)
+        c = ray(n, 1)[0]
+        dist = np.arccos(np.clip(np.abs(X.conj() @ c), 0, 1))
+        for r in (0.3, 0.7, 1.1):
+            frac = np.mean(dist <= r)
+            assert abs(frac - np.sin(r) ** (2 * (n - 1))) < 5e-3
+
+
+# --- Теорема 48d и перестройка T-119 … T-121 (25.09.2026) ------------------------------------
+
+def _j3_of_o():
+    """J₃(𝕆): X = [[a₁, x₃, x̄₂], [x̄₃, a₂, x₁], [x₂, x̄₁, a₃]], координаты (a₁,a₂,a₃, x₁, x₂, x₃) ∈ ℝ²⁷."""
+    def to_m(v):
+        a, x = v[:3], [v[3:11], v[11:19], v[19:27]]
+        r = lambda s: s * unit(0)
+        return [[r(a[0]), x[2], _oconj(x[1])], [_oconj(x[2]), r(a[1]), x[0]], [x[1], _oconj(x[0]), r(a[2])]]
+
+    def from_m(P):
+        return np.concatenate([[P[0][0][0], P[1][1][0], P[2][2][0]], P[1][2], P[2][0], P[0][1]])
+
+    def mul(P, Q):
+        return [[sum(omul(P[i][k], Q[k][j]) for k in range(3)) for j in range(3)] for i in range(3)]
+
+    def jordan(u, v):
+        P, Q = to_m(u), to_m(v)
+        A, B = mul(P, Q), mul(Q, P)
+        return from_m([[(A[i][j] + B[i][j]) / 2 for j in range(3)] for i in range(3)])
+
+    def lift(X7):
+        Y = np.zeros((27, 27))
+        for s in range(3):
+            Y[4 + 8 * s:11 + 8 * s, 4 + 8 * s:11 + 8 * s] = X7
+        return Y
+    return jordan, lift
+
+
+def test_no_unital_spin_factor_on_any_holon_register():
+    """Теорема 48d(a)–(b): «двойка» (Q1) не живёт ни в голономах, ни в их регистрах.
+
+    (a) Эрмитова инволюция s₁ на ℂ^d с собственными подпространствами размерностей p, q; всякий
+    антикоммутирующий с ней эрмитов оператор переставляет их и имеет ранг ≤ 2·min(p, q) < d при
+    нечётном d — двух антикоммутирующих обратимых инволюций, т. е. единичного спин-фактора, нет
+    ни на ℂ⁷, ни на ℂ⁴⁹, ни на ℂ^{7^M}. (b) G₂-коммутант пары ℂ⁷⊗ℂ⁷ четырёхмерен и абелев
+    (7⊗7 = 1+7+14+27 без кратностей: четыре значения Казимира на подпространствах 1, 7, 14, 27);
+    цвет-синглетов в паре ровно 3, G₂-синглет один. Лапласиан пути регистра глубины имеет простой спектр — его коммутант абелев.
+    """
+    rng = np.random.default_rng(481)
+    for d in (7, 49):
+        for p in range(1, d):
+            s = np.diag([1.0] * p + [-1.0] * (d - p))
+            X = np.zeros((d, d), complex)
+            B = rng.normal(size=(p, d - p)) + 1j * rng.normal(size=(p, d - p))
+            X[:p, p:], X[p:, :p] = B, B.conj().T
+            assert np.allclose(s @ X + X @ s, 0) and np.linalg.matrix_rank(X) == 2 * min(p, d - p) < d
+    su3 = _su3_of_e_o()
+    pair = lambda gens: [np.kron(g, np.eye(7)) + np.kron(np.eye(7), g) for g in gens]
+    g2p, su3p = pair(G2), pair(su3)
+    Q = np.array([[np.trace(a @ b) for b in G2] for a in G2])                   # форма Киллинга (с точностью до знака)
+    Qi = np.linalg.inv(Q)
+    cas = sum(Qi[a, b] * g2p[a] @ g2p[b] for a in range(14) for b in range(14))
+    vals = np.round(np.linalg.eigvalsh((cas + cas.T) / 2), 6)
+    u, cnt = np.unique(vals, return_counts=True)
+    assert sorted(cnt) == [1, 7, 14, 27]                                          # без кратностей: коммутант ℂ⁴, абелев
+    assert _nullspace(np.vstack(su3p)).shape[0] == 3 and _nullspace(np.vstack(g2p)).shape[0] == 1
+    for n in (7, 49, 343):
+        L = np.diag([1.0] + [2.0] * (n - 2) + [1.0]) - np.eye(n, k=1) - np.eye(n, k=-1)
+        assert np.min(np.diff(np.linalg.eigvalsh(L))) > 1e-5
+
+
+def test_colour_singlet_part_of_the_exceptional_jordan_algebra_is_hermitian_c3():
+    """Теорема 48d(c): J₃(𝕆)^{SU(3)_C} = h₃(ℂ_O) ≅ Herm(ℂ³), J₃(𝕆)^{G₂} = h₃(ℝ).
+
+    Неподвижная часть 27-мерной J₃(𝕆) под 𝔰𝔲(3)_C девятимерна и замкнута относительно
+    йорданова произведения; под 𝔤₂ — шестимерна. Пирсово 0-пространство идемпотента E₁ —
+    h₂(𝕆) (размерность 10), его цвет-неподвижная часть четырёхмерна и несёт форму det
+    сигнатуры (1,3): пространство-время 48c.
+    """
+    jordan, lift = _j3_of_o()
+    su3 = [lift(X) for X in _su3_of_e_o()]
+    g2 = [lift(X) for X in G2]
+    Fc, Fg = _nullspace(np.vstack(su3)), _nullspace(np.vstack(g2))
+    assert (Fc.shape[0], Fg.shape[0]) == (9, 6)
+    for u in Fc:
+        for v in Fc:
+            w = jordan(u, v)
+            assert np.linalg.norm(w - Fc.T @ (Fc @ w)) < 1e-9
+    E1 = np.zeros(27)
+    E1[0] = 1
+    assert np.allclose(jordan(E1, E1), E1)
+    L = np.array([jordan(E1, np.eye(27)[k]) for k in range(27)]).T
+    P0 = _nullspace(L)
+    assert P0.shape[0] == 10
+    both = _nullspace(np.vstack([L, np.vstack(su3)]))
+    assert both.shape[0] == 4
+    # det на h₂ = a₂a₃ − |x₁|²: координаты 1, 2 и 3…10
+    Gm = np.zeros((27, 27))
+    Gm[1, 2] = Gm[2, 1] = 0.5
+    Gm[3:11, 3:11] = -np.eye(8)
+    ev = np.linalg.eigvalsh(both @ Gm @ both.T)
+    assert (np.sum(ev > 1e-9), np.sum(ev < -1e-9)) == (1, 3)
+
+
+def test_spatial_triplet_of_48c_is_the_weak_triplet():
+    """Теорема 48d(d): в одной Spin(9) у цвета один централизатор 𝔲(2) — пространство 48c и SU(2)_L T-326 совпадают.
+
+    Цвет-неподвижная часть вектора ℝ⁹ системы Клиффорда на 𝒮 = ℂ⊗𝕆 трёхмерна — span{iL_{e_O}, J, iJ};
+    производная централизатора цвета (единственная 𝔰𝔲(2)) действует на ней неприводимо, как 𝔰𝔬(3).
+    Та же тройка в h₂(𝕆) — {e_Oσ_y, σ_z, σ_x}, те же вращения — пространственные вращения 48c(e).
+    Отождествить 𝕆² из 48c(f) с 𝒮 значит сделать слабый изоспин пространственным вращением.
+    """
+    d = _sm_on_complex_octonions()
+    gam, su3 = d["gam"], d["su3"]
+    G = np.array([g.flatten() for g in gam]).T
+
+    def on_vector(Z):
+        M = np.zeros((9, 9))
+        for a, g in enumerate(gam):
+            v = (Z @ g - g @ Z).flatten()
+            coef = np.linalg.lstsq(G, v, rcond=None)[0]
+            assert np.linalg.norm(G @ coef - v) < 1e-9
+            M[:, a] = coef
+        return M
+    fixed = _nullspace(np.vstack([on_vector(X) for X in su3]))
+    assert fixed.shape[0] == 3
+    target = np.zeros((3, 9))
+    target[0, 6], target[1, 7], target[2, 8] = 1, 1, 1                          # iL_{e_O}, J, iJ
+    assert np.linalg.matrix_rank(np.vstack([fixed, target]), tol=1e-9) == 3
+    comm = [A @ B - B @ A for i, A in enumerate(d["C"]) for B in d["C"][i + 1:]]
+    U, s, _ = np.linalg.svd(np.array([X.flatten() for X in comm]).T, full_matrices=False)
+    su2 = [U[:, i].reshape(16, 16) for i in range(int(np.sum(s > 1e-9)))]
+    assert len(su2) == 3
+    R = [target @ on_vector(X) @ target.T for X in su2]
+    assert np.linalg.matrix_rank(np.array([r.flatten() for r in R]), tol=1e-9) == 3
+    assert _nullspace(np.vstack(R)).shape[0] == 0                               # неприводимо: общих неподвижных нет
+
+
+def _clock_torus_weights():
+    """Совместные собственные значения максимального тора U(3) = C_{SO(7)}(J)∩Stab(e_O) на ℂ⁷."""
+    su3 = _su3_of_e_o()
+    rng = np.random.default_rng(119)
+    X = sum(c * g for c, g in zip(rng.normal(size=8), su3))
+    cart = [sum(v[k] * su3[k] for k in range(8)) for v in _nullspace(np.array([(X @ g - g @ X).ravel() for g in su3]).T)]
+    J = np.array([omul(unit(7), unit(i + 1))[1:] for i in range(7)]).T
+    J[6, :], J[:, 6] = 0, 0
+    H = [1j * c for c in cart] + [1j * J]
+    _, V = np.linalg.eigh(sum(r * h for r, h in zip((1, np.pi, np.e), H)))
+    return H, np.array([[np.real(V[:, k].conj() @ h @ V[:, k]) for h in H] for k in range(7)])
+
+
+def test_emergent_space_is_the_octahedron_and_its_fluctuations_the_three_sphere():
+    """T-119 в верной форме: пространство — спектр трёх коммутирующих вращательных зарядов.
+
+    Три генератора (два картановских 𝔰𝔲(3)_C и J = L_{e_O}) коммутируют; совместный спектр на ℂ⁷ —
+    начало (ось O) и три антиподальные пары линейно независимых точек: октаэдр ≅ B³ (ранг 𝔰𝔬(7) = 3).
+    Средние по M голономам имеют спектр (1/M)·{n ∈ ℤ³ : |n|₁ ≤ M} в весовых координатах — он
+    сгущается к октаэдру (всякая точка октаэдра не дальше √3/(2M) от спектра). Флуктуации
+    (n − Mμ)/√M при μ внутри октаэдра покрывают всякий шар радиуса R с шагом 1/√M: спектр — ℝ³,
+    ковариация в состоянии I/7 невырождена. Минимальная унитизация C₀(ℝ³) — C(S³).
+    (d) Эрмитовых операторов, коммутирующих с 𝔰𝔲(3)_C, — ровно 3 (P_O, P_𝟑, P_𝟑̄): цвет-синглетные
+    координаты дают два измерения, не три.
+    """
+    H, pts = _clock_torus_weights()
+    assert all(np.allclose(a @ b, b @ a) for a in H for b in H)
+    nz = pts[np.linalg.norm(pts, axis=1) > 1e-9]
+    assert len(nz) == 6 and np.linalg.matrix_rank(nz, tol=1e-9) == 3
+    assert all(min(np.linalg.norm(p + q) for q in nz) < 1e-9 for p in nz)
+    B = np.array([nz[0], *[p for p in nz[1:] if np.linalg.matrix_rank(np.array([nz[0], p]), tol=1e-9) == 2][:1]])
+    B = np.vstack([B, [p for p in nz if np.linalg.matrix_rank(np.vstack([B, p]), tol=1e-9) == 3][0]])
+    w = np.linalg.solve(B.T, nz.T).T                                              # весовые координаты
+    assert np.allclose(np.sort(np.abs(w).sum(axis=1)), 1) and np.allclose(np.abs(w).max(axis=1), 1)
+    for M in (10, 40):
+        g = np.array(list(itertools.product(range(-M, M + 1), repeat=3)))
+        spec = g[np.abs(g).sum(axis=1) <= M] / M
+        probe = np.random.default_rng(M).uniform(-1, 1, size=(300, 3))
+        probe = probe[np.abs(probe).sum(axis=1) <= 1]
+        dist = np.min(np.linalg.norm(probe[:, None, :] - spec[None, :, :], axis=2), axis=1)
+        assert dist.max() <= np.sqrt(3) / (2 * M) + 1e-12
+    mu = np.array([0.1, -0.05, 0.2])                                              # внутри октаэдра
+    R, M = 3.0, 10 ** 6
+    probe = np.random.default_rng(7).uniform(-R, R, size=(200, 3))
+    n = np.rint(probe * np.sqrt(M) + M * mu)
+    assert np.all(np.abs(n).sum(axis=1) <= M)
+    assert np.max(np.linalg.norm((n - M * mu) / np.sqrt(M) - probe, axis=1)) <= np.sqrt(3) / (2 * np.sqrt(M)) + 1e-12
+    Cov = np.array([[np.trace(a @ b).real / 7 for b in H] for a in H])
+    assert np.all(np.linalg.eigvalsh(Cov) > 0.1)
+    herm = []                                                                     # (d): цвет-синглетных зарядов — 3 (с единицей)
+    for i in range(7):
+        for j in range(i, 7):
+            E = np.zeros((7, 7), complex)
+            E[i, j] = E[j, i] = 1
+            herm.append(E)
+            if i != j:
+                F = np.zeros((7, 7), complex)
+                F[i, j], F[j, i] = 1j, -1j
+                herm.append(F)
+    rows = np.vstack([np.array([(S @ X - X @ S).ravel() for S in herm]).T for X in _su3_of_e_o()])
+    assert _nullspace(np.vstack([rows.real, rows.imag])).shape[0] == 3
 
 
 def main():

@@ -154,7 +154,7 @@ The theory distinguishes **three fixed points** at different levels:
 | 1 | $\rho^*_\Omega$ | $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ | $> 1/7$ [T] | **Physical attractor**: balance of dissipation and regeneration |
 | 2 | $\Gamma^*_{\mathrm{coh}}$ | $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ | $1/7$ ($\Gamma^*_{\mathrm{coh}} = I/7$) | **Exact self-knowledge** of the canonical $\varphi_{\mathrm{coh}}$ — it coincides with level 0 (the row read "$P_{\mathrm{crit}} = 2/7$, viability boundary" until 2026-09-25) |
 
-**Non-trivial attractors** [T]: every stationary state $\rho^*_\Omega \neq I/7$ has $P > 1/7$ (T-96); whether one exists depends on the self-model — none for an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)), at least seven with the self-registering $\varphi_s$ ([T-124c](/docs/core/dynamics/evolution#теорема-единственность-нетривиального-аттрактора)). The line read "$\rho^*_\Omega \neq I/7$ — proved via $\kappa_{\mathrm{bootstrap}} > 0$ (T-59)" until 2026-09-25; retracted. See the [full proof](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
+**Non-trivial attractors** [T]: every stationary state $\rho^*_\Omega \neq I/7$ has $P > 1/7$ (T-96); whether one exists depends on the self-model — none for an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)), at least seven with the self-registering $\varphi_s$ ([T-124c](/docs/core/dynamics/evolution#теорема-единственность-нетривиального-аттрактора)), one inside the conscious window, in $\mathcal{V}_{\mathrm{full}}$, with the collineation anchor $\varphi_J$ for $\kappa > \kappa_c(\alpha)$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне)). The line read "$\rho^*_\Omega \neq I/7$ — proved via $\kappa_{\mathrm{bootstrap}} > 0$ (T-59)" until 2026-09-25; retracted. See the [full proof](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
 
 The formula $R = 1/(7P)$ uses $\rho^*_{\mathrm{diss}} = I/7$ — this is correct because $R$ measures the **distance from heat death**, not the distance from the dynamic attractor $\rho^*_\Omega$.
 
@@ -162,6 +162,7 @@ The formula $R = 1/(7P)$ uses $\rho^*_{\mathrm{diss}} = I/7$ — this is correct
 - **Simple form** $\varphi_k$: fixed point $\rho^*_{\mathrm{diss}} = I/7$ ($P = 1/7$, non-viable)
 - **Canonical** $\varphi_{\mathrm{coh}}$: fixed point $\Gamma^*_{\mathrm{coh}} = I/7$ ($P = 1/7$; "$P = 2/7$, viability boundary" until 2026-09-25, retracted)
 - **Self-registering** $\varphi_s$: fixed points include every flat frame state $\Pi_S/\lvert S\rvert$; its attractors keep an isolated holon alive
+- **Collineation-anchored** $\varphi_J$: the only fixed point is $\Gamma_{\eta_\infty}$, inside the window; its attractor for $\kappa > \kappa_c(\alpha)$ lies in $\mathcal{V}_{\mathrm{full}}$
 - **Full Liouvillian** $\mathcal{L}_\Omega$: attractor $\rho^*_\Omega$ ($P > 1/7$, physical balance)
 
 For details: [hierarchy of fixed points](/docs/core/dynamics/evolution#иерархия-неподвижных-точек), [stratification](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
@@ -237,6 +238,8 @@ $$
 :::
 
 **Proof:** By [Banach's fixed-point theorem](/docs/proofs/categorical/formalization-phi#31-основная-теорема) for contracting mappings. The space $\mathcal{D}(\mathcal{H})$ is a complete metric space (closed subset of a finite-dimensional space with Frobenius norm). $\varphi$ is a contracting mapping with constant $k < 1$. By Banach's theorem, a unique fixed point exists. ∎
+
+**Scope (2026-09-25).** With a fixed anchor $\rho^*$ and a fixed $k$, $\varphi_k$ is a contraction with constant $1 - k$ and the theorem applies. The self-models of the dynamics are not of this kind: in $\varphi_{\mathrm{coh}}$ the weight $k = 1 - R(\Gamma)$ depends on the state, and its Lipschitz constant at pure states is $54/49 > 1$ (its fixed point $I/7$ is still unique, because $\|\varphi_{\mathrm{coh}}(\Gamma) - I/7\|_F \leq \tfrac67\|\Gamma - I/7\|_F$); $\varphi_s$ has at least eight fixed points ($I/7$ and every $e_m$), so no contraction constant exists for it ([evolution, split-step method](/docs/core/dynamics/evolution#итеративная-схема)).
 
 ### Convergence to the Fixed Point
 

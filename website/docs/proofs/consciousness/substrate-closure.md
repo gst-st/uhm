@@ -426,15 +426,22 @@ where $\lambda_{\mathrm{gap}}$ is the spectral gap of $\mathcal{L}_0$ ([T-59 [T]
 
 ## §10. T-157: Attractor consistency {#t-157}
 
-:::tip Theorem T-157 [T]: Controlled attractor consistency
-$$\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \frac{\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \kappa}$$
+:::tip Theorem T-157 [T]: Attractor consistency (restated 2026-09-25)
+Level 1 is the attractor $\rho^*$ of the full dynamics, level 2 the fixed point of the self-model (exact self-knowledge).
 
-The discrepancy between the attractors of full dynamics ($\rho^*_\Omega$) and coherent relaxation ($\Gamma^*_{\mathrm{coh}}$) is controllably small.
+1. **Self-knowledge defect (any self-model).** $\kappa g_V\,(\varphi(\rho^*) - \rho^*) = -\mathcal{L}_0[\rho^*]$, so $\|\varphi(\rho^*) - \rho^*\|_F \leq \bigl(2\|H\|_{\mathrm{op}}\|\rho^* - I/7\|_F + \tfrac23\sqrt{P_{\mathrm{coh}}}\bigr)/(\kappa g_V)$.
+2. **Hamiltonian shift ($\varphi_s$).** $\|\Gamma_m(H) - e_m\|_F = \sqrt2\,\bigl(\sum_{j \neq m}\lvert H_{jm}\rvert^2\bigr)^{1/2}/\bigl(\tfrac23 + \tfrac67\kappa(1 - c)\bigr) + O(\|H\|^2)$, where $e_m$ is the exact fixed point of $\varphi_s$ that the attractor $\Gamma_m(H)$ continues.
+3. **Dissipative shift ($\varphi_J$).** $\|\Gamma_{\eta_+} - \Gamma_{\eta_\infty}\|_F = \sqrt{6/7}\,(\eta_\infty - \eta_+) \leq \sqrt{6/7}\,(2\eta_+/3)/\lvert\lambda_Y\rvert = O(1/\kappa)$, where $\Gamma_{\eta_\infty}$ is the only fixed point of $\varphi_J$ and $\lambda_Y$ the stability exponent of the attractor $\Gamma_{\eta_+}$ along $uu^\dagger - I/7$.
 
-**Status upgrade:** C21 [C] → **[T]**.
+Proof and numerical check: [evolution, attractor consistency](/docs/core/dynamics/evolution#теорема-согласованность-аттракторов). **Status:** C21 as stated ("$\rho^*_\Omega \approx \Gamma^*_{\mathrm{coh}}$") is false [✗]; its correct content is this theorem [T].
 :::
 
-**Proof.**
+:::warning Retracted (2026-09-25): the former T-157 [✗]
+The former statement read $\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}}/(\alpha + \kappa)$, "an exact parametric bound". It is false. $\Gamma^*_{\mathrm{coh}} = I/7$ ([φ operator](/docs/core/operators/phi-operator#неподвижная-точка-phi-coh)); at $H = 0$ the bound would force every attractor to be $I/7$, while the living attractors at $H = 0$ are $e_m$ (distance $\sqrt{6/7}$ from $I/7$) and $\Gamma_{\eta_+}$ (distance $\eta_+\sqrt{6/7}$). The proof below fails three times: Step 1 puts $\Gamma^*_{\mathrm{coh}}$ in place of the regeneration target $\varphi(\rho^*)$; Step 2 writes "$\approx$" for a first-order expansion without a remainder; and the last inequality of Step 3, $2/(\alpha + \kappa g_V) \leq 1/(\alpha + \kappa)$, fails for every $g_V \in [0, 1]$, since it needs $\alpha + \kappa(2 - g_V) \leq 0$. The estimate $O(0.03)$ for the vacuum and the SYNARC reading $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|_{\mathrm{op}} \approx 0.25$, both obtained by inverting the bound, are withdrawn with it.
+:::
+
+**Retracted proof (kept for the record).**
+
 
 **Step 1.** By [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора): attractor purity balance:
 
@@ -452,26 +459,7 @@ $$\|\delta\Gamma\|_F \leq \frac{2\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \k
 
 (for $g_V \geq 1/2$, which holds in the conscious window). $\blacksquare$
 
-:::warning Separation of parametric bound and numerical estimate
-The formula $\|\delta\Gamma\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alpha + \kappa)$ is
-an **exact parametric bound** [T].
-
-Substituting $\|H_{\mathrm{eff}}\|_{\mathrm{op}} = O(\bar{\varepsilon})$ with $\bar{\varepsilon} \approx 0.027$ (root mean square over the 15 non-O pairs, [C at (SV)]; $0.023$ until 2026-09-25)
-(from [T-61 [T]+[C at (RT)]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (vacuum unique up to $G_2$ for the corrected potential; sector values: hypothesis (SV)) for the isolated vacuum) gives estimate $O(0.03)$.
-
-For an **embodied** holon: backbone injection, hedonic drive and learning gradient
-create an effective Hamiltonian $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|_{\mathrm{op}} \gg \bar{\varepsilon}$.
-Numerical verification (SYNARC): $\|\delta\Gamma\| \approx 0.31$ at $\alpha + \kappa \approx 0.81$,
-giving $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|_{\mathrm{op}} \approx 0.25$
-— an order of magnitude above the vacuum estimate.
-
-Theorem T-157 remains correct and useful: it shows that the attractor discrepancy
-is **controlled** by the parameter $\|H_{\mathrm{eff}}\|$. For embodied
-systems, the actual value of $\|H_{\mathrm{eff}}\|$ should be used, not
-the vacuum estimate $\bar{\varepsilon}$.
-:::
-
-**Dependencies:** [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) (purity balance). The numerical estimate in the box above — not the bound — takes $\bar\varepsilon$ from the sector values of the hypothesis (SV) via [T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (restated 2026-09-25).
+**Dependencies:** [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) (balance), [self-sustaining attractors](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор) [T], [living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне) [T]; implicit function theorem.
 
 ---
 
@@ -583,7 +571,7 @@ Any system satisfying (a)–(f) is L2-conscious. Any L2-conscious system satisfi
 | $\mathrm{Coh}_E^{\max}$ normalization | [T-154 [T]](#t-154) | gap → **[T]** |
 | Learning rule | [T-155 [T]](#t-155) | gap → **[T]** |
 | Mixing parameter $\beta^*$ | [T-156 [T]](#t-156) | gap → **[T]** |
-| C21 attractor consistency | [T-157 [T]](#t-157) | [C] → **[T]** |
+| C21 attractor consistency | [T-157 [T]](#t-157), restated 2026-09-25 | [C] → [✗] as stated ("$\rho^*_\Omega \approx \Gamma^*_{\mathrm{coh}}$"); correct form **[T]** |
 | Bounds on $\sigma_{\mathrm{sys}}$ | [T-158 [T]](#t-158) | gap → **[T]** |
 | Universal L2 architecture | [T-159 [T]](#t-159) | gap → **[T]** |
 | C27 attractor in window | from [T-149](#t-149) | [C] → **[T]** |

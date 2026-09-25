@@ -597,7 +597,7 @@ The upper bound is achieved for an ensemble of orthogonal pure states. $\blacksq
 ## 10. Compositionality of Enc/Dec (T-108) [T] {#композициональность-enc-dec}
 
 :::warning Errata 2026-09-25: T-108 narrowed to what its proof carries
-The earlier statement took $\Phi_{\mathrm{agg}}$ "from T-72" and closed with "uniqueness — from $G_2$-rigidity at each scale (T-72)". T-72 never claimed uniqueness, and its own status is now [C under (AGG)] ([Theorem 9.2](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность)); the uniqueness step is **retracted**. The claim that functoriality "is preserved under aggregation" is **retracted** as well: $\mathrm{Enc}_{12}(o)$ maps $\mathcal{D}(\mathbb{C}^{49})$ to $\mathcal{D}(\mathbb{C}^7)$, so $\mathrm{Enc}_{12}(o) \circ \mathrm{Enc}_{12}(o')$ is not defined. What remains [T] is the closure below, which does not use T-72; that the diagnostics carry over across scales is a corollary conditional on the assumption (AGG) of Theorem 9.2.
+The earlier statement took $\Phi_{\mathrm{agg}}$ "from T-72" and closed with "uniqueness — from $G_2$-rigidity at each scale (T-72)". T-72 never claimed uniqueness, and its own status is now [T at weak coupling] ([Theorem 9.2](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность), through [Theorem 9.5](/docs/applied/coherence-cybernetics/theorems#теорема-95-каноническая-агрегация)); the uniqueness step is **retracted**. What is unique is the aggregation, not the encoding: the mean of the marginals is the only permutation-invariant aggregation consistent on uncoupled copies (Theorem 9.5 (a)). The claim that functoriality "is preserved under aggregation" is **retracted** as well: $\mathrm{Enc}_{12}(o)$ maps $\mathcal{D}(\mathbb{C}^{49})$ to $\mathcal{D}(\mathbb{C}^7)$, so $\mathrm{Enc}_{12}(o) \circ \mathrm{Enc}_{12}(o')$ is not defined. What remains [T] is the closure below, which does not use T-72; that the diagnostics carry over across scales is a corollary that holds at weak coupling (Theorem 9.2 with Theorem 9.5; earlier on 2026-09-25 conditional on the assumption (AGG)).
 :::
 
 :::tip Theorem T-108 (Compositionality of Enc/Dec: CPTP closure) [T]
@@ -617,7 +617,7 @@ is a CPTP channel $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$ f
 3. Aggregation $\Phi_{\mathrm{agg}}$ — a CPTP coarse-graining channel $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$; the proof works for any such channel, and the corpus singles out none.
 4. Composition of CPTP channels — CPTP. $\blacksquare$
 
-**Corollary (same diagnostics across scales) [C under (AGG)].** If $\Phi_{\mathrm{agg}}$ and the coupled state of the pair satisfy the assumption (AGG) of [Theorem 9.2](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность), then $P$, $R$, $\Phi$ and Gap of the aggregate lie within $O(\delta)$ of those of a part, so the diagnostics built on them (σ_sys, Enc/Dec monitoring) read the same at both scales — from individual agent to organisation, wherever the coupling is weak. Under strong coupling this is not guaranteed.
+**Corollary (same diagnostics across scales) [T at weak coupling].** If $\Phi_{\mathrm{agg}}$ and the coupled state of the pair satisfy the assumption (AGG) of [Theorem 9.2](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность), then $P$, $R$, $\Phi$ and Gap of the aggregate lie within $O(\delta)$ of those of a part, so the diagnostics built on them (σ_sys, Enc/Dec monitoring) read the same at both scales — from individual agent to organisation. For the canonical aggregation (the mean of the marginals) and weakly coupled embodied parts, (AGG) holds with $\delta = O(g)$ ([Theorem 9.5](/docs/applied/coherence-cybernetics/theorems#теорема-95-каноническая-агрегация)). Under strong coupling it can fail: the aggregate of two viable holons can be $I/7$ ([Theorem 9.6](/docs/applied/coherence-cybernetics/theorems#теорема-96-сильная-связь)). (Earlier on 2026-09-25: "[C under (AGG)]".)
 
 Analogously for Dec:
 
@@ -918,7 +918,7 @@ $\max_k \sigma^{\mathrm{motor}}_k = \sigma^{\mathrm{motor}}_O = 0.6$. Action is 
 4. **T-102 [T]:** The 3-term equation is complete — a fourth type of CPTP generator is impossible
 5. **T-103 [T]+[I]:** Hedonic valence = $dP/d\tau|_{\mathcal{R}}$ (formula [T], interpretation [I])
 6. **T-107 [T]:** Information capacity $\leq \log_2 7 \approx 2.81$ bits/observation
-7. **T-108 [T]:** the composite encoding is again a CPTP channel; the same diagnostics across scales hold only under weak coupling ([C under (AGG)], Theorem 9.2)
+7. **T-108 [T]:** the composite encoding is again a CPTP channel; the same diagnostics across scales hold under weak coupling ([T at weak coupling], Theorems 9.2 and 9.5) and can fail under strong coupling (Theorem 9.6)
 8. **Corollary T-100a [T]:** Enc factorises through arbitrary representation → modality agnosticism
 9. **Corollary T-107a/b [T]:** Cumulative capacity $I_n \leq 2.81\,n$ bits → complex modalities require $n_{\min} = \lceil I_{\mathrm{env}} / \log_2 7 \rceil$ steps
 10. **Corollary T-107c [D]:** Optimal Enc maximises $\Delta F$ (predictive structure) — a definition of optimality since 2026-09-25
@@ -953,7 +953,7 @@ The next step — applying this formalism to [stability problems](./stability) a
 3. **Action is a min-max strategy** (T-159 [T]): the system eliminates the largest deficit, not minimises "average error". No channel is left unattended.
 4. **Pleasure and suffering are derivatives of viability** (T-103 [T]+[I]): $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ — a mathematical identity, requiring no external "reward designer".
 5. **Fundamental bottleneck**: $\leq \log_2 7 \approx 2.81$ bits/observation (T-107 [T]). Simon's bounded rationality is not an empirical fact but a consequence of $N = 7$.
-6. **Composition** (T-108 [T]): the composite Enc is again a CPTP channel. From bacterium to organisation the same diagnostics apply only where the parts are weakly coupled ([C under (AGG)], Theorem 9.2).
+6. **Composition** (T-108 [T]): the composite Enc is again a CPTP channel. From bacterium to organisation the same diagnostics apply where the parts are weakly coupled ([T at weak coupling], Theorems 9.2 and 9.5), and not necessarily where they are strongly coupled (Theorem 9.6).
 7. **Classical approaches read as projections of CC** [I]: control theory, FEP, and RL as projections of the full 7-dimensional coherent dynamics; the claimed derivation of FEP as a special case is retracted (2026-09-25).
 
 :::tip Bridge to the next chapter
