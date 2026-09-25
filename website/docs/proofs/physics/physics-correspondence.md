@@ -651,7 +651,7 @@ Witnesses: the segment law holds to $8 \cdot 10^{-16}$ for a random normalised-l
 | Attractor results T-96, T-98, T-125, T-127 | kept | T-98 as a parameter condition; stability of the unique attractor |
 | Genesis T-148, T-149 | kept | through a non-unital environment only |
 | T-261 (direction, BKM gradient) | kept | kept with constant $\kappa_{\mathrm{eff}}$ |
-| Corollary T-221.2 (Loc) | Loc [T] (Theorem 8.5); the corollary [C] only through OW (T-120) | Loc [T] |
+| Corollary T-221.2 (Loc) | Loc [T] (Theorem 8.5); the corollary [T] — OW is the single topos, not the emergence of $M^4$, so it no longer passes through T-120 (the corollary read [C] through OW (T-120) until 2026-09-25; T-120 itself is [T] as mathematics since) | Loc [T] |
 | §8.6, speed-up beyond BQP | ideal dynamics: satisfiability in linear time [T] (Theorem 8.6); with noise open [H] | absent (linear CPTP) |
 
 One question remains open [Pr]: under A, a relativistic statement of "unconditioned" — relative to which hypersurface the marginal is taken — which Kent's construction suggests but which UHM would have to state on the spacetime it derives (T-120 [T] as mathematics; its reading as physical spacetime [I]). (Until 2026-09-25 a second open question was which of A and C the corpus adopts; §8.8 answers it.)

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 3
 title: "03 · Anchors and estimation"
-description: "How a real GammaEstimate is produced from evidence. The full 28-item self-audit instrument reproduced, the scoring model that maps responses to a coherence matrix (populations, magnitudes, and the honest phase-blindness), the measurement-bridge mathematics for the neural/physiological path with the PCI calibration, and the oracle protocol — each with its estimator, its uncertainty model, and its declared loss."
+description: "How a real GammaEstimate is produced from evidence. The full 28-item self-audit instrument reproduced, the scoring model that maps responses to a coherence matrix (populations, magnitudes, and the honest phase-blindness), the measurement-bridge mathematics for the neural/physiological path with the PCI verdict comparison, and the oracle protocol — each with its estimator, its uncertainty model, and its declared loss."
 ---
 
 # 03 · Anchors and estimation
@@ -80,7 +80,7 @@ The output is a fully valid `GammaEstimate` with `anchor = AUTOEPHEMERIS`, hones
 
 The hard-science path uses the corpus's [seven-channel embedding](/docs/applied/coherence-cybernetics/measurement#измерение-напряжений). Evidence $e$ is time-resolved signal: EEG (consumer or research grade), heart-rate variability, actigraphy, and light-exposure logging.
 
-**Purity axis — the keystone.** The [PCI calibration](/docs/applied/coherence-cybernetics/measurement#калибровка) fixes the scale: perturbational complexity index $\mathrm{PCI} = 0.31$ maps to $P_{\mathrm{crit}} = 2/7$, with wakefulness at $\mathrm{PCI}\approx0.44$ and REM at $\approx0.32$. Where TMS-EEG PCI is available (clinical), it directly anchors $P$; where only resting EEG is available (consumer), a validated proxy (spectral/entropy complexity calibrated against the PCI ladder) estimates $P$ with wider bounds.
+**Purity axis — the keystone.** $P$ is estimated from the reconstruction $\widehat\Gamma$ (EEG/HRV through $\pi_{\mathrm{bio}}$, parameters frozen on wakefulness, no viability penalty in the estimator), not converted from PCI. Where TMS-EEG PCI is available (clinical), it supplies an independent verdict to compare with — the concordance of $\mathrm{Cons}(\widehat\Gamma)$ with $\mathrm{PCI}_{\max} > 0.31$, Cohen's $\kappa$ ([P8.4](/docs/applied/research/measurement-protocol#тестируемые-предсказания-p8)) — never a scale anchor for $P$; where only resting EEG is available (consumer), $\widehat P$ carries wider bounds and no PCI comparison. *Corrected 2026-09-25:* the paragraph read "the PCI calibration fixes the scale: $\mathrm{PCI} = 0.31$ maps to $P_{\mathrm{crit}} = 2/7$, with wakefulness at $\mathrm{PCI} \approx 0.44$ and REM at $\approx 0.32$"; the mapping was a two-point line that put $2/7$ at $0.31$ by construction ([measurement §6.3](/docs/applied/coherence-cybernetics/measurement#калибровка)), and the two values have no source (benchmark medians: wakefulness 0.53, REM 0.48, Casarotto et al. 2016).
 
 **Coherences from cross-channel structure.** The seven axes map to seven signal channels (the σ-audit assignment); the coherence magnitudes and — here, unlike Anchor II — the **phases** are estimated from the cross-spectral density between channels at the integration timescale. Time-resolved signals *can* carry phase, which is why the measured anchor resolves the Gap map that the questionnaire cannot.
 

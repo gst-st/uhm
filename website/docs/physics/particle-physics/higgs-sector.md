@@ -45,7 +45,7 @@ Repairs tried. (i) Correct complex triplets: $\gamma_{EU}$ has zero singlet weig
 :::
 
 :::info Remark (the Gap vacuum and the Higgs plane) [I]
-Under [T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) in its corrected form ([C at (RT)] in the Gap phase) the imaginary part of the vacuum is $\mathrm{Im}\,\Gamma_v = \tfrac{b-c}{2}L_{e_O}$: the restriction to $\mathbb C^7$ of the clock generator $L_{e_O}$, one of the four directions of the colour-free Clifford plane of Theorem 2.6(f). Its stabiliser in $G_2$ is $\mathrm{SU}(3)_{e_O}$, and the stabiliser in $\mathfrak g_{\mathrm{SM}}$ of a vector of the plane $\{iL_{e_O}, \gamma_{10}\}$ is $\mathfrak{su}(3)\oplus\mathfrak u(1)_Q$. That the Gap condensate and the Higgs vacuum point along the same clock direction is a reading, not a derivation: $\Gamma$ lives on $\mathbb C^7$, the doublet on the Clifford vector $\mathbb R^{10}$, and no map between them is given.
+Under [T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) in its corrected form ([T] in the Gap phase) the imaginary part of the vacuum is $\mathrm{Im}\,\Gamma_v = \tfrac{b-c}{2}L_{e_O}$: the restriction to $\mathbb C^7$ of the clock generator $L_{e_O}$, one of the four directions of the colour-free Clifford plane of Theorem 2.6(f). Its stabiliser in $G_2$ is $\mathrm{SU}(3)_{e_O}$, and the stabiliser in $\mathfrak g_{\mathrm{SM}}$ of a vector of the plane $\{iL_{e_O}, \gamma_{10}\}$ is $\mathfrak{su}(3)\oplus\mathfrak u(1)_Q$. That the Gap condensate and the Higgs vacuum point along the same clock direction is a reading, not a derivation: $\Gamma$ lives on $\mathbb C^7$, the doublet on the Clifford vector $\mathbb R^{10}$, and no map between them is given.
 :::
 
 :::note Earlier statement (Theorem 1.0, stated as [T] until 2026-09-25)
@@ -68,7 +68,7 @@ From the electroweak uniqueness theorem ([§2.3a](/docs/physics/gauge-symmetry/s
 
 **Step 4. Nonzero VEV $\langle\gamma_{EU}\rangle \neq 0$ breaks $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$ [T].**
 
-From [Theorem on the unique vacuum T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): the unique global minimum of $V_\text{Gap}$ has $|\gamma_{EU}|_\text{vac} = \varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ (in units of $\omega_0$), giving $\langle\gamma_{EU}\rangle \neq 0$. A nonzero vacuum expectation value of a field with quantum numbers $(2, +1/2)$ uniquely realizes spontaneous breaking $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$.
+From [Theorem on the unique vacuum T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): the unique global minimum of $V_\text{Gap}$ has $|\gamma_{EU}|_\text{vac} = \varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ (in units of $\omega_0$), giving $\langle\gamma_{EU}\rangle \neq 0$. A nonzero vacuum expectation value of a field with quantum numbers $(2, +1/2)$ uniquely realizes spontaneous breaking $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$.
 
 **Conclusion (earlier, corrected 2026-09-25).** The earlier text read: "All four steps rely exclusively on [T]-results. The identification $H \sim \gamma_{EU}$ follows from them uniquely." Steps 3 and 4 are withdrawn (box above), so the identification is a hypothesis [H].
 
@@ -363,27 +363,27 @@ In UHM the moment $f_0$ of the spectral action is **uniquely determined** throug
 
 $$f_0 \Lambda^4 = \frac{1}{7}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]$$
 
-where $V_{\mathrm{Gap}}^{\min}$ is the potential value at the vacuum minimum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))), and $\zeta'_{H_{\mathrm{Gap}}}(0)$ is the log-determinant of the Hessian at the vacuum.
+where $V_{\mathrm{Gap}}^{\min}$ is the potential value at the vacuum minimum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))), and $\zeta'_{H_{\mathrm{Gap}}}(0)$ is the log-determinant of the Hessian at the vacuum.
 :::
 
 **Proof.**
 
 **Step 1 (Field-space finiteness → finite functional integral).** The Gap partition function on the compact target $(S^1)^{21}$ is finite — field-space finiteness **[T]**; full order-by-order UV-finiteness is structural [C] ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)). Therefore the functional integral $Z = \int [D\theta] \exp(-S_{\mathrm{Gap}}[\theta])$ is **finite and well-defined** without regularization ambiguity. The quantum effective action $\Gamma_{\mathrm{eff}} = -\ln Z$ is a finite, concrete quantity.
 
-**Step 2 (Unique vacuum → loop expansion).** From [T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): the potential $V_{\mathrm{Gap}}$ has a unique global minimum with positive definite Hessian $H_{\mathrm{Gap}}$. Expansion:
+**Step 2 (Unique vacuum → loop expansion).** From [T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): the potential $V_{\mathrm{Gap}}$ has a unique global minimum with positive definite Hessian $H_{\mathrm{Gap}}$. Expansion:
 
 $$\Gamma_{\mathrm{eff}} = V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\ln\det(H_{\mathrm{Gap}}) + O(\text{two-loop})$$
 
-**Step 3 (Determinant regularization).** Zeta-regularized determinant: $\ln\det(H_{\mathrm{Gap}}) = -\zeta'_{H_{\mathrm{Gap}}}(0)$. From T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): all eigenvalues $\lambda_i > 0$ (5 positive on the orbit space), so $\zeta'_{H_{\mathrm{Gap}}}(0) = -\sum_{i=1}^{5}\ln\lambda_i$.
+**Step 3 (Determinant regularization).** Zeta-regularized determinant: $\ln\det(H_{\mathrm{Gap}}) = -\zeta'_{H_{\mathrm{Gap}}}(0)$. From T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): all eigenvalues $\lambda_i > 0$ (5 positive on the orbit space), so $\zeta'_{H_{\mathrm{Gap}}}(0) = -\sum_{i=1}^{5}\ln\lambda_i$.
 
 **Step 4 (Identification with $f_0$).** Coefficient $a_0$ of the spectral action: $f_0 \Lambda^4 \cdot 7$ = vacuum energy density of the internal space = $\Gamma_{\mathrm{eff}}$. Therefore:
 
 $$f_0 = \frac{\Gamma_{\mathrm{eff}}}{7\Lambda^4} = \frac{1}{7\Lambda^4}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]$$
 
-**Step 5 (Uniqueness).** All quantities on the right-hand side are uniquely determined: $V_{\mathrm{Gap}}^{\min}$ from T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)), $\zeta'_{H_{\mathrm{Gap}}}(0)$ from a finite sum over 5 eigenvalues, $\Lambda = \omega_0$. $f_0$ is **not a free parameter**, but a definite function of the vacuum quantities. $\blacksquare$
+**Step 5 (Uniqueness).** All quantities on the right-hand side are uniquely determined: $V_{\mathrm{Gap}}^{\min}$ from T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)), $\zeta'_{H_{\mathrm{Gap}}}(0)$ from a finite sum over 5 eigenvalues, $\Lambda = \omega_0$. $f_0$ is **not a free parameter**, but a definite function of the vacuum quantities. $\blacksquare$
 
 :::info Numerical estimate [C]
-From T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)), Hessian eigenvalues: $\lambda_1 = 18\mu^2$ (confinement), $\lambda_{2,3} = 6\mu^2(1 + O(\varepsilon^2))$ (spatial), $\lambda_{4,5} = 12\mu^2(1 + O(\varepsilon))$ (O-modes). With $\mu^2 \approx \omega_0^2/7$: $f_0 \approx 2.2/\omega_0^4$. Numerical value [C] — depends on exact $\varepsilon_i$.
+From T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)), Hessian eigenvalues: $\lambda_1 = 18\mu^2$ (confinement), $\lambda_{2,3} = 6\mu^2(1 + O(\varepsilon^2))$ (spatial), $\lambda_{4,5} = 12\mu^2(1 + O(\varepsilon))$ (O-modes). With $\mu^2 \approx \omega_0^2/7$: $f_0 \approx 2.2/\omega_0^4$. Numerical value [C] — depends on exact $\varepsilon_i$.
 :::
 
 ### Theorem (Higgs quartic from spectral action) [C] {#теорема-хиггсовская-квартика}
@@ -550,7 +550,7 @@ $$\Delta V = V_\varphi^{(\pi)} - V_\varphi^{(0)} = 2\lambda_\varphi |\gamma_{LE}
 
 **Step 1.** $V_3$ is the unique $PT$-odd term in $V_{\mathrm{Gap}}$ [T] ([T-99](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd), step 2). It distinguishes chiral vacua: $\theta = 0$ and $\theta = \pi$ give different signs of the cubic combination $\sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$.
 
-**Step 2.** The vacuum of $V_{\mathrm{Gap}}$ is unique with positive definite Hessian — hypothesis (SV) [H] (T-64, corrected to the $G_2$-invariant potential, gives a vacuum unique up to $G_2$ — [T] for $\kappa \le \mu^2/48$, [C at (RT)] above — but not the sector one). No flat directions → the chiral minimum is non-degenerate.
+**Step 2.** The vacuum of $V_{\mathrm{Gap}}$ is unique with positive definite Hessian — hypothesis (SV) [H] (T-64, corrected to the $G_2$-invariant potential, gives a vacuum unique up to $G_2$ — [T] for every $\kappa > 0$ off the transition lines — but not the sector one). No flat directions → the chiral minimum is non-degenerate.
 
 **Step 3.** Topological barrier [C at (SV)] ([T-69](/docs/core/dynamics/composite-systems#теорема-тополог-защита)): $\Delta V \geq 6\mu^2 > 0$ prevents tunneling between chiral vacua.
 

@@ -58,7 +58,10 @@ PT-нечётных 3; среднее V₃ страницы по Γ_oct — но
 (𝒜(R) ≤ 672/343), `symmetric_vacuum_hessian_and_the_associator_coupling` (−48/7, 48/7, −96/7;
 спектр 𝒬 — 48, 0¹², −24⁸), `colour_invariant_sector_is_solved_in_closed_form` и
 `g2_invariant_vacuum_is_symmetric_or_colour_invariant_with_gap` (I/7 при малом κ, орбита S⁶ со
-стабилизатором SU(3) и 𝒢 > 0 при большом; κ₁ = 0,0787μ²), `real_twirl_inequality_holds_in_its_proven_cases_and_on_samples`.
+стабилизатором SU(3) и 𝒢 > 0 при большом; κ₁ = 0,0787μ²), `real_twirl_inequality_holds_in_its_proven_cases_and_on_samples`;
+`real_twirl_inequality_is_a_sum_of_positive_forms` ((ВУ) доказано: дефект = Σ p_m Q_{u_m}(R − 𝒯R), Q_u ≥ 0),
+`colour_sector_transitions_and_the_bound_on_mean_coherence` (λ* = 12,93μ², скачок ранг 7 → ранг 4 при κ₂;
+ε̄ < √5/40) и `derived_sources_give_no_associator_cubic` (спектральное действие и функции спектра дают κ = 0).
 
 
 Три — за восстановлением T-53b и T-118 (эмерджентное время §11.4, 25.09.2026):
@@ -138,6 +141,13 @@ D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_
 `clock_phase_and_gap_vacuum_dressings_do_not_fit_the_masses`, `the_data_ask_for_an_up_projector_at_one_percent`
 (t/b ≈ 68 при 2·10¹⁶ ГэВ, β/α = 0,971), `vacuum_antiunitary_lifts_are_gauge_parity_or_cp` и
 `an_unbroken_cp_or_lr_symmetry_contradicts_the_quark_data` (CP ⇒ J = 0; L↔R при одном дублете ⇒ m_t = m_b).
+
+Четыре — за теоремой 48e (25.09.2026): `two_level_systems_of_uhm_are_qubits_and_can_be_entangled`
+(двухуровневая система УГМ — грань ранга 2, шар Блоха B³; (ММ) выполнено, 𝕂 = ℂ_O),
+`colour_fixed_two_level_faces_of_holon_registers` (ℂ⁷ — 0, 𝒮 — лептонная прямая, пара — одна
+симметричная грань), `no_rotation_of_the_internal_generation_commutes_with_the_gauge_group`
+(коммутант 𝔤_SM в 𝔰𝔬(32) абелев, 6) и `fermion_space_is_weyl_spinor_times_one_generation`
+(F = ℂ_O² ⊗_ℂ 𝒮_ℂ: 51 = 6 + 45, коммутант ℂ, 2 × 16 вейлевских компонент).
 
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
@@ -4481,6 +4491,429 @@ def test_an_unbroken_cp_or_lr_symmetry_contradicts_the_quark_data():
     Ms = to_ops(N @ rng.normal(size=N.shape[1]))
     m = _yukawa_masses(0.8 * Ms[0] + 0.6 * Ms[3])
     assert abs(m["u"] - m["d"]) < 1e-9
+
+def test_phi_at_least_one_is_not_the_consciousness_verdict():
+    """Fundamental closures section 9 (retracted line "Phi >= 1 iff conscious"): on the
+    uniform family Gamma = I/7 + m(J - I) the state with Phi = 3 has P = 4/7 > 3/7 and
+    R = 1/4 < 1/3, so Phi >= 1 holds while Cons fails (the too-pure exit)."""
+    import numpy as np
+    m = np.sqrt(3 / 294)
+    G = np.eye(7) / 7 + m * (np.ones((7, 7)) - np.eye(7))
+    assert np.min(np.linalg.eigvalsh(G)) > 0 and abs(np.trace(G) - 1) < 1e-12
+    diag2 = np.sum(np.diag(G) ** 2)
+    Phi = (np.sum(np.abs(G) ** 2) - diag2) / diag2
+    P = np.real(np.trace(G @ G))
+    R = 1 / (7 * P)
+    assert abs(Phi - 3) < 1e-12 and abs(P - 4 / 7) < 1e-12 and abs(R - 1 / 4) < 1e-12
+    cons = (P > 2 / 7) and (R >= 1 / 3) and (Phi >= 1)
+    assert Phi >= 1 and not cons
+
+
+def test_verdict_concordance_is_judged_by_kappa_not_by_raw_agreement():
+    """PCI bridge in the concordance form (P8.4, SUB-5): the same raw agreement 34/40 = 85 %
+    gives Cohen's kappa 0.699 (inconclusive, between 0.4 and 0.8) with balanced verdicts and
+    0.167 (falsifying, below 0.4) with skewed ones. Illustrative counts, not data."""
+    def kappa(a, b, c, d):                                   # a: both Cons, d: both not, b, c: disagreements
+        n = a + b + c + d
+        po = (a + d) / n
+        pe = ((a + b) * (a + c) + (c + d) * (b + d)) / n ** 2
+        return (po - pe) / (1 - pe)
+    k1, k2 = kappa(18, 3, 3, 16), kappa(33, 3, 3, 1)
+    assert abs((18 + 16) / 40 - 0.85) < 1e-12 and abs((33 + 1) / 40 - 0.85) < 1e-12
+    assert abs(k1 - 0.34875 / 0.49875) < 1e-12 and 0.4 < k1 < 0.8
+    assert abs(k2 - 0.03 / 0.18) < 1e-12 and k2 < 0.4
+
+
+def test_two_point_pci_calibration_coincides_with_any_anchor():
+    """Measurement section 6.3 (withdrawn): the line through (0, 1/7) and (c, 2/7) returns
+    P = 2/7 at PCI = c for every anchor c, so "the thresholds coincide" was put in by hand."""
+    for c in (0.20, 0.25, 0.31, 0.40, 0.55):
+        a, b = (2 / 7 - 1 / 7) / c, 1 / 7
+        assert abs(a * c + b - 2 / 7) < 1e-15
+    assert abs((2 / 7 - 1 / 7) / 0.31 - 0.461) < 1e-3
+
+
+def test_phystheory_forgets_to_topoi_unfaithfully_and_composes_associatively():
+    """T-211 (corrected): PhysTheory as the Grothendieck construction of E -> Alg(E) over topoi.
+    Finite 1-truncated model: base = finite sets and maps (the discrete topoi Set^X), fibre over X
+    = families of monoids, a morphism (f, alpha) has alpha_x: M_x -> N_f(x). Composition
+    (g, beta) o (f, alpha) = (g f, beta_f(x) alpha_x) is associative and unital, and the forgetful
+    functor is not faithful: over the identity of a point there are two endomorphisms of the
+    multiplicative monoid {0, 1}; on (C, *) complex conjugation is a second endomorphism."""
+    import itertools
+    import random
+    mult = ((0, 1), (0, 1), lambda x, y: x * y, 1)           # carrier, carrier, product, unit
+    add2 = ((0, 1), (0, 1), lambda x, y: (x + y) % 2, 0)
+    triv = ((0,), (0,), lambda x, y: 0, 0)
+    monoids = [mult, add2, triv]
+
+    def homs(M, N):
+        out = []
+        for img in itertools.product(N[0], repeat=len(M[0])):
+            h = dict(zip(M[0], img))
+            if h[M[3]] != N[3]:
+                continue
+            if all(h[M[2](x, y)] == N[2](h[x], h[y]) for x in M[0] for y in M[0]):
+                out.append(h)
+        return out
+    assert len(homs(mult, mult)) == 2                         # id and x -> 1: not faithful over id
+    assert len(homs(add2, add2)) == 2 and len(homs(triv, mult)) == 1
+
+    rng = random.Random(5)
+
+    def obj():
+        n = rng.choice([1, 2])
+        return tuple(rng.choice(monoids) for _ in range(n))
+
+    def mor(A, B):
+        f = tuple(rng.randrange(len(B)) for _ in range(len(A)))
+        alpha = []
+        for x, M in enumerate(A):
+            hs = homs(M, B[f[x]])
+            alpha.append(rng.choice(hs))
+        return f, alpha
+
+    def comp(second, first):
+        (g, beta), (f, alpha) = second, first
+        return (tuple(g[f[x]] for x in range(len(f))),
+                [{k: beta[f[x]][v] for k, v in alpha[x].items()} for x in range(len(f))])
+    for _ in range(300):
+        A, B, C, D = obj(), obj(), obj(), obj()
+        u, v, w = mor(A, B), mor(B, C), mor(C, D)
+        assert comp(w, comp(v, u)) == comp(comp(w, v), u)
+        ident = (tuple(range(len(A))), [{k: k for k in M[0]} for M in A])
+        assert comp(u, ident) == u
+    zs = [complex(rng.uniform(-2, 2), rng.uniform(-2, 2)) for _ in range(50)]
+    assert all(abs((z * w).conjugate() - z.conjugate() * w.conjugate()) < 1e-12 for z in zs for w in zs)
+    assert (1 + 0j).conjugate() == 1 and any(z.conjugate() != z for z in zs)
+
+
+
+def _random_plane(rng, n, k=2):
+    """Ортонормированный базис случайного k-мерного подпространства ℂⁿ (столбцы)."""
+    Z = rng.normal(size=(n, k)) + 1j * rng.normal(size=(n, k))
+    return np.linalg.qr(Z)[0]
+
+
+def test_two_level_systems_of_uhm_are_qubits_and_can_be_entangled():
+    """Теорема 48e(a)–(b): двухуровневая система УГМ — грань D(ℂ^N) ранга 2, шар Блоха трёхмерен, (ММ) выполнено.
+
+    (a) Грань D(V) ⊂ D(ℂ⁷) и ⊂ D(ℂ⁴⁹) для случайной плоскости V (dim V = 2): аффинная оболочка
+    трёхмерна, ρ(r) = (P + r·σ_V)/2 ≥ 0 ⟺ |r| ≤ 1 — шар B³; её порядковое пространство Herm(V) несёт
+    det сигнатуры (1,3). Грань D(ℂ³) — не шар: у неё есть граничная точка (ранга 2), не крайняя.
+    Шары Блоха h₂(𝕂) имеют размерности dim 𝕂 + 1 = 2, 3, 5, 9; среди граней D(ℂ^N) шары — только
+    точки и B³, так что h₂(𝕂) с 𝕂 ∋ e_O — грань голономного регистра лишь при 𝕂 = ℂ_O.
+    (b) Для двух граней ранга 2 в ℂ⁷⊗ℂ⁷ составная грань D(V₁⊗V₂) — два кубита: локальная томография
+    (16 = 4·4), белловское состояние внутри грани имеет отрицательную частичную транспозицию (−1/2),
+    обратимая динамика грани exp(−itσ_x⊗σ_x) переводит произведение в запутанное состояние.
+    """
+    rng = np.random.default_rng(345)
+    pauli = [np.array([[0, 1], [1, 0]], complex), np.array([[0, -1j], [1j, 0]]), np.diag([1.0, -1.0]).astype(complex)]
+    for n in (7, 49):
+        V = _random_plane(rng, n)
+        P = V @ V.conj().T
+        sig = [V @ s @ V.conj().T for s in pauli]
+        herm = [P] + sig
+        assert np.linalg.matrix_rank(np.array([h.flatten() for h in herm]), tol=1e-9) == 4
+        for _ in range(40):
+            r = rng.normal(size=3)
+            r *= rng.uniform(0, 2) / np.linalg.norm(r)
+            rho = (P + sum(c * s for c, s in zip(r, sig))) / 2
+            lam = np.linalg.eigvalsh(rho).min()
+            assert (lam >= -1e-12) == (np.linalg.norm(r) <= 1 + 1e-12)
+    for t, x in ((rng.normal(), rng.normal(size=3)) for _ in range(5)):
+        assert abs(np.linalg.det(t * np.eye(2) + sum(c * s for c, s in zip(x, pauli))).real - (t * t - x @ x)) < 1e-12
+    mid = np.diag([0.5, 0.5, 0.0])                                                 # D(ℂ³) — не шар
+    a, b = np.diag([0.7, 0.3, 0.0]), np.diag([0.3, 0.7, 0.0])
+    assert np.isclose(np.linalg.eigvalsh(mid).min(), 0) and np.allclose((a + b) / 2, mid) and not np.allclose(a, b)
+    assert [k + 1 for k in (1, 2, 4, 8)] == [2, 3, 5, 9] and [k for k in (1, 2, 4, 8) if k + 1 in (0, 3)] == [2]
+    V1, V2 = _random_plane(rng, 7), _random_plane(rng, 7)
+    B = [np.kron(V1[:, i], V2[:, j]) for i in range(2) for j in range(2)]
+    PP = sum(np.outer(v, v.conj()) for v in B)
+    loc = [np.kron(x, y) for x in [V1 @ V1.conj().T] + [V1 @ s @ V1.conj().T for s in pauli]
+           for y in [V2 @ V2.conj().T] + [V2 @ s @ V2.conj().T for s in pauli]]
+    assert np.linalg.matrix_rank(np.array([m.flatten() for m in loc]), tol=1e-9) == 16   # локальная томография
+
+    def pt_min(psi):
+        R = np.outer(psi, psi.conj()).reshape(7, 7, 7, 7).transpose(0, 3, 2, 1).reshape(49, 49)
+        return np.linalg.eigvalsh(R).min()
+    bell = (B[0] + B[3]) / np.sqrt(2)
+    assert np.isclose(pt_min(bell), -0.5) and np.allclose(PP @ bell, bell)
+    Wb = np.array(B).T
+    H = Wb @ np.kron(pauli[0], pauli[0]) @ Wb.conj().T
+    U = expm(-1j * (np.pi / 4) * H)
+    assert np.allclose(U @ PP, PP @ U) and pt_min(U @ B[0]) < -0.49                 # сплетающая обратимая динамика
+
+
+def test_colour_fixed_two_level_faces_of_holon_registers():
+    """Теорема 48e(c): цвет-неподвижных двухуровневых систем в регистрах голонома ровно две канонические.
+
+    Цвет-неподвижное подпространство: в ℂ⁷ — одна прямая ℂe_O (грани ранга 2 нет); в 𝒮 = ℂ⊗𝕆 —
+    плоскость span{η₀, e_O} (лептонная прямая T-326); в паре ℂ⁷⊗ℂ⁷ — трёхмерно: перестановка
+    сомножителей даёт +1 дважды (e_O⊗e_O, Σ_{k≠O} e_k⊗e_k) и −1 один раз (Σ φ_{Ojk} e_j⊗e_k).
+    Вращения Блоха лептонной грани (унитарные относительно i) не коммутируют с гиперзарядом T-326:
+    с ним коммутирует ровно одна их образующая. Симметричную цвет-синглетную грань пары G₂ не сохраняет.
+    """
+    su3 = _su3_of_e_o()
+    assert _nullspace(np.vstack(su3)).shape[0] == 1
+    d = _sm_on_complex_octonions()
+    cs = [d["cl"](np.pad(X, ((1, 0), (1, 0)))) for X in su3]
+    fixed = _nullspace(np.vstack(cs))
+    assert fixed.shape[0] == 4                                                     # вещественная 4 = комплексная 2
+    face = [0, 7, 8, 15]                                                           # η₀, e_O и их i-кратные
+    assert np.allclose(fixed[:, [k for k in range(16) if k not in face]], 0)
+    pauli = [np.array([[0, 1], [1, 0]], complex), np.array([[0, -1j], [1j, 0]]), np.diag([1.0, -1.0]).astype(complex)]
+
+    def realify(A2):
+        A = np.zeros((8, 8), complex)
+        A[np.ix_([0, 7], [0, 7])] = A2
+        return np.block([[A.real, -A.imag], [A.imag, A.real]])
+    bloch = [realify(1j * s / 2) for s in pauli]
+    assert all(np.allclose(b @ d["imul"], d["imul"] @ b) for b in bloch)
+    assert all(np.allclose(b @ x, x @ b) for b in bloch for x in cs)
+    Y = d["Y"]
+    rows = np.array([(b @ Y - Y @ b).flatten() for b in bloch]).T
+    assert np.linalg.matrix_rank(rows, tol=1e-9) == 2                              # с Y коммутирует одна ось из трёх
+    pair = [np.kron(g, np.eye(7)) + np.kron(np.eye(7), g) for g in su3]
+    F = _nullspace(np.vstack(pair))
+    assert F.shape[0] == 3
+    swap = np.eye(49)[[7 * (k % 7) + k // 7 for k in range(49)]]
+    ev = np.sort(np.linalg.eigvalsh(F.conj() @ swap @ F.T).real)
+    assert np.allclose(ev, [-1, 1, 1])
+    eO = np.eye(7)[O_AXIS]
+    sym = np.array([np.kron(eO, eO), sum(np.kron(np.eye(7)[k], np.eye(7)[k]) for k in range(7) if k != O_AXIS)])
+    assert np.linalg.matrix_rank(np.vstack([F, sym]), tol=1e-9) == 3
+    Ps = sym.T @ np.linalg.pinv(sym.T)
+    g2p = [np.kron(g, np.eye(7)) + np.kron(np.eye(7), g) for g in G2]
+    assert max(np.linalg.norm((np.eye(49) - Ps) @ g @ Ps) for g in g2p) > 0.1        # G₂ её не сохраняет
+
+
+def _weyl_times_generation():
+    """F = S ⊗_ℂ 𝒮_ℂ ⊂ S ⊗_ℝ 𝒮_ℂ: подпространство, где мнимая единица вейлевского S равна i′ из T-329."""
+    e = _spin10_completion()
+    IS = np.kron(np.eye(2), np.array([[0.0, -1.0], [1.0, 0.0]]))                   # мнимая единица S = ℂ_O² ≅ ℝ⁴
+
+    def realify2(M):
+        R = np.zeros((4, 4))
+        for a in range(2):
+            for b in range(2):
+                z = M[a, b]
+                R[2 * a:2 * a + 2, 2 * b:2 * b + 2] = [[z.real, -z.imag], [z.imag, z.real]]
+        return R
+    pauli = [np.array([[0, 1], [1, 0]], complex), np.array([[0, -1j], [1j, 0]]), np.diag([1.0, -1.0]).astype(complex)]
+    rot = [realify2(1j * s / 2) for s in pauli]
+    boost = [realify2(s / 2) for s in pauli]
+    Z = np.kron(IS, np.eye(32)) @ np.kron(np.eye(4), e["ip"])
+    w, V = np.linalg.eigh((Z + Z.T) / 2)
+    B = V[:, w < 0]                                                                # IS⊗1 = 1⊗i′  ⟺  (IS⊗i′) = −1
+    res = lambda X: B.T @ X @ B
+    return dict(e=e, IS=IS, B=B, res=res, rot=[res(np.kron(r, np.eye(32))) for r in rot],
+                boost=[res(np.kron(b, np.eye(32))) for b in boost], unit=res(np.kron(IS, np.eye(32))),
+                internal=lambda X: res(np.kron(np.eye(4), X)))
+
+
+def test_no_rotation_of_the_internal_generation_commutes_with_the_gauge_group():
+    """Теорема 48e(d): вращения, коммутирующие с G_SM, не действуют на 𝒮_ℂ — спинорный индекс отдельный сомножитель.
+
+    Коммутант 𝔤_SM (T-329(в)) в End_ℝ(𝒮_ℂ) четырнадцатимерен (пять полей комплексного типа и ν^c,
+    дважды тривиальное: 5·2 + 4); его пересечение с 𝔰𝔬(32) шестимерно и абелево — 𝔰𝔲(2) в нём нет.
+    На ψ ∈ 𝒮 центр −1 ∈ SU(2)_L равен −1 на V_L и +1 на V_R: он не может быть поворотом на 2π,
+    который у фермиона равен −1 на всех полях.
+    """
+    e = _spin10_completion()
+    sm = e["sm"]
+    so = []
+    for i in range(32):
+        for j in range(i + 1, 32):
+            M = np.zeros((32, 32))
+            M[i, j], M[j, i] = 1, -1
+            so.append(M)
+    G = sum((np.kron(X, np.eye(32)) - np.kron(np.eye(32), X.T)).T @ (np.kron(X, np.eye(32)) - np.kron(np.eye(32), X.T))
+            for X in sm)
+    assert int(np.sum(np.linalg.eigvalsh(G) < 1e-9)) == 14
+    cs = [sum(v[k] * so[k] for k in range(len(so))) for v in _null_commutant(sm, so)]
+    assert len(cs) == 6 and max(np.abs(a @ b - b @ a).max() for a in cs for b in cs) < 1e-12
+    minus = expm(2 * np.pi * e["T3L"])
+    assert np.allclose(minus @ e["PL"], -e["PL"]) and np.allclose(minus @ e["PR"], e["PR"])
+
+
+def test_fermion_space_is_weyl_spinor_times_one_generation():
+    """Теорема 48e(e): согласованная совместная структура 48c и T-326/T-329 — F = ℂ_O² ⊗_ℂ 𝒮_ℂ.
+
+    F реализовано в S⊗_ℝ𝒮_ℂ (ℝ¹²⁸) как подпространство, где мнимая единица вейлевского S = ℂ_O² равна
+    i′ поля T-329: вещественная размерность 64, комплексная 32. Отображение ψ⊗s ↦ проекция ψ⊗(s⊗1)
+    из S⊗_ℝ𝒮 инъективно и сплетает 𝔰𝔭𝔦𝔫(9) и 𝔰𝔩(2,ℂ): S⊗_ℝ𝒮 ≅ S⊗_ℂ𝒮_ℂ. На F 𝔰𝔩(2,ℂ_O) (6) и
+    𝔰𝔭𝔦𝔫(10) (45) коммутируют, их сумма точна (51), коммутант совместного действия — ℂ (2):
+    F = (𝟐, 𝟏𝟔) неприводимо комплексного типа. Гиперзаряды на F — вдвое против 𝒮_ℂ: 16 вейлевских
+    полей по 2 компоненты, у лептонного дублета 2·2 = 4. На F_L = F ∩ V_L мнимая единица вейлевского
+    сомножителя действует как ±L_{e_O} (знак — ориентация γ₁₀), на F_R — как ∓L_{e_O}. Вращения
+    пространства (𝔰𝔲(2) ⊂ 𝔰𝔩(2,ℂ_O)) коммутируют со всей 𝔰𝔭𝔦𝔫(10) и пересекаются с 𝔰𝔲(2)_L по нулю.
+    """
+    f = _weyl_times_generation()
+    e, B, internal = f["e"], f["B"], f["internal"]
+    assert B.shape[1] == 64
+    unit = f["unit"]
+    assert np.allclose(unit @ unit, -np.eye(64))
+    d = e["d"]
+    emb = np.array([np.kron(psi, np.kron(s, [1.0, 0.0])) for psi in np.eye(4) for s in np.eye(16)]).T
+    Pemb = B.T @ emb
+    assert np.linalg.matrix_rank(Pemb, tol=1e-9) == 64
+    for X in d["spin9"][:6]:
+        assert np.allclose(Pemb @ np.kron(np.eye(4), X), internal(e["lift"](X)) @ Pemb)
+    spin10 = [internal(x) for x in e["spin10"]]
+    lor = f["rot"] + f["boost"]
+    assert max(np.abs(a @ b - b @ a).max() for a in lor for b in spin10) < 1e-12
+    assert np.linalg.matrix_rank(np.array([x.flatten() for x in lor + spin10]), tol=1e-9) == 51
+    rng = np.random.default_rng(3451)
+    G = np.zeros((4096, 4096))
+    for _ in range(3):
+        X = sum(c * x for c, x in zip(rng.normal(size=51), lor + spin10))
+        ad = np.kron(X, np.eye(64)) - np.kron(np.eye(64), X.T)
+        G += ad.T @ ad
+    assert int(np.sum(np.linalg.eigvalsh(G) < 1e-8)) == 2
+    q = -internal(e["om"]) @ internal(e["Y"])
+    vals, mult = np.unique(np.round(np.linalg.eigvalsh((q + q.T) / 2), 9), return_counts=True)
+    cF = {float(v) + 0.0: int(m) // 2 for v, m in zip(vals, mult)}                  # комплексные кратности
+    assert cF == {round(-2 / 3, 9): 6, -0.5: 4, 0.0: 2, round(1 / 6, 9): 12, round(1 / 3, 9): 6, 1.0: 2}
+    assert sum(cF.values()) == 32
+    PL, PR = internal(e["PL"]), internal(e["PR"])
+    L1 = internal(e["lift"](d["Lu"]))
+    sgn = 1 if np.allclose(e["om"], e["ip"]) else -1
+    assert np.allclose(PL @ unit @ PL, sgn * PL @ L1 @ PL) and np.allclose(PR @ unit @ PR, -sgn * PR @ L1 @ PR)
+    suL = [internal(x) for x in e["suL"]]
+    assert np.linalg.matrix_rank(np.array([x.flatten() for x in f["rot"] + suL]), tol=1e-9) == 6
+    assert max(np.abs(a @ b - b @ a).max() for a in f["rot"] for b in suL) < 1e-12
+
+
+# ── (ВУ) доказано; κ и фазовая картина сектора (25.09.2026, вторая волна) ──────────────────
+
+def _cal_a3(X, Y, Z):
+    """Симметричная трилинейная форма 𝒜(X, Y, Z), 𝒜(R, R, R) = 𝒜(R)."""
+    A = _assoc4()
+    return float(np.real(np.einsum('ijkl,ia,jb,kc,abcl->', A, X, Y, Z, A, optimize=True)))
+
+
+def _twirl_real(R, v=O_AXIS):
+    """𝒯_ŵ на вещественных симметричных: проекция на span{ŵŵᵀ, P}."""
+    e = np.eye(7)[v]
+    r = float(e @ R @ e)
+    return r * np.outer(e, e) + (np.trace(R) - r) / 6 * (np.eye(7) - np.outer(e, e))
+
+
+def _q_twirl(u, Y):
+    """Q_u(Y) = −2𝒜(𝒯(uuᵀ), Y, Y) − 𝒜(uuᵀ, Y, Y)."""
+    uu = np.outer(u, u)
+    return -2 * _cal_a3(_twirl_real(uu), Y, Y) - _cal_a3(uu, Y, Y)
+
+
+def test_real_twirl_inequality_is_a_sum_of_positive_forms():
+    """Лемма 3 (ВУ) [Т]: 8rt² + (16/9)t³ − 𝒜(R) = Σ_m p_m Q_{u_m}(R − 𝒯R), и Q_u ≥ 0 на W (26 измерений).
+
+    Спектр Q_u при u = c·ŵ + s·d (метрика Фробениуса): 16s²/3 десять раз и корни
+    9λ² − (216c² + 96s²)λ + 768c²s² + 160s⁴ (раз), 9λ² − (216c² + 144s²)λ + 2016c²s² + 368s⁴ (четыре),
+    9λ² − (216c² + 144s²)λ + 2304c²s² + 320s⁴ (три). При s = 0: 0 восемнадцать раз и 24 восемь.
+    """
+    rng = np.random.default_rng(377)
+    e = np.eye(7)[O_AXIS]
+    for _ in range(40):
+        k = rng.integers(1, 8)
+        W = rng.normal(size=(7, k))
+        R = W @ W.T / np.trace(W @ W.T)
+        r = R[O_AXIS, O_AXIS]
+        p, U = np.linalg.eigh(R)
+        D = R - _twirl_real(R)
+        rhs = sum(p[m] * _q_twirl(U[:, m], D) for m in range(7))
+        assert abs(8 * r * (1 - r) ** 2 + 16 / 9 * (1 - r) ** 3 - _cal_a(R) - rhs) < 1e-12
+    inv = [np.outer(e, e), (np.eye(7) - np.outer(e, e)) / np.sqrt(6)]
+    Wb = []
+    for i in range(7):
+        for j in range(i, 7):
+            F = np.zeros((7, 7))
+            F[i, j] = F[j, i] = 1
+            F = F - sum(np.sum(F * I) * I for I in inv)
+            for G in Wb:
+                F = F - np.sum(F * G) * G
+            if np.linalg.norm(F) > 1e-9:
+                Wb.append(F / np.linalg.norm(F))
+    assert len(Wb) == 26
+    d = np.eye(7)[0]
+    for th in (0.0, 0.2, 0.7, 1.2, np.pi / 2):
+        c, s = np.cos(th), np.sin(th)
+        u = c * e + s * d
+        K = np.array([[0.5 * (_q_twirl(u, A + B) - _q_twirl(u, A) - _q_twirl(u, B)) for B in Wb] for A in Wb])
+        ev = np.linalg.eigvalsh(K)
+        c2, s2 = c * c, s * s
+        pred = [16 * s2 / 3] * 10
+        for b1, b0, mult in ((216 * c2 + 96 * s2, 768 * c2 * s2 + 160 * s2 * s2, 1),
+                             (216 * c2 + 144 * s2, 2016 * c2 * s2 + 368 * s2 * s2, 4),
+                             (216 * c2 + 144 * s2, 2304 * c2 * s2 + 320 * s2 * s2, 3)):
+            disc = b1 * b1 - 36 * b0
+            assert disc >= 0 and b0 >= 0
+            pred += [(b1 - np.sqrt(disc)) / 18, (b1 + np.sqrt(disc)) / 18] * mult
+        assert np.max(np.abs(np.sort(ev) - np.sort(pred))) < 1e-10 and ev.min() > -1e-12
+        assert (ev.min() > 1e-3) == (s > 1e-9)
+    assert sum(abs(x) < 1e-9 for x in ev) == 0
+    K0 = np.array([[0.5 * (_q_twirl(e, A + B) - _q_twirl(e, A) - _q_twirl(e, B)) for B in Wb] for A in Wb])
+    ev0 = np.linalg.eigvalsh(K0)
+    assert np.allclose(ev0, [0] * 18 + [24] * 8, atol=1e-10)
+
+
+def test_colour_sector_transitions_and_the_bound_on_mean_coherence():
+    """T-64(d, e, g) и следствие (ii): λ* = 12,93μ², κ₂(20μ²) = 0,1854μ²; ε̄ < (1/4 − μ²/384κ)/(2√5) < √5/40.
+
+    Секторный потенциал f(s, x) = (3/2)x + (9/4)λ₄x² − κ[48s³ + 72(1−3s)(s² + x)], x = d² ∈ [0, s²], s ≤ 1/3.
+    Ниже λ* переход один — первого рода в ранг 4; выше — непрерывный в ранг 7 при 7μ²/48 и скачок
+    ранг 7 → ранг 4 при κ₂(λ₄).
+    """
+    from scipy.optimize import brentq, minimize_scalar
+    S = np.linspace(0, 1 / 3, 20001)
+
+    def sector_min(kap, lam):
+        A = 72 * kap * (1 - 3 * S) - 1.5
+        x = np.clip(A / (4.5 * lam), 0, S ** 2) if lam > 0 else np.where(A > 0, S ** 2, 0.0)
+        f = 1.5 * x + 2.25 * lam * x * x - kap * (48 * S ** 3 + 72 * (1 - 3 * S) * (S ** 2 + x))
+        i = int(np.argmin(f))
+        return f[i], S[i], x[i]
+
+    def f4min(kap, lam):
+        g = lambda s: (1.5 - 144 * kap) * s * s + 384 * kap * s ** 3 + 2.25 * lam * s ** 4
+        return minimize_scalar(g, bounds=(0, 1 / 3), method='bounded', options={'xatol': 1e-13}).fun
+
+    lstar = brentq(lambda l: f4min(7 / 48, l) + 672 * (7 / 48) / 343, 5, 20, xtol=1e-10)
+    assert abs(lstar - 12.93) < 5e-3
+    for lam, k1 in ((0, 0.0787), (1, 0.0842), (5, 0.1054)):
+        assert abs(brentq(lambda k: f4min(k, lam) + 672 * k / 343, 0.03, 0.146) - k1) < 5e-4
+    _, s, x = sector_min(0.17, 20.0)                     # ранг 7: 0 < d² < s²
+    assert 1e-4 < x < s * s - 1e-4
+    _, s, x = sector_min(0.20, 20.0)                     # ранг 4: d² = s²
+    assert abs(x - s * s) < 1e-12
+    for kap, lam in itertools.product((0.08, 0.12, 0.2, 0.5, 2.0, 10.0), (0.0, 1.0, 13.0, 20.0, 100.0)):
+        _, s, x = sector_min(kap, lam)
+        eps = np.sqrt(x) / (2 * np.sqrt(5))
+        assert eps <= max(0.0, 0.25 - 1 / (384 * kap)) / (2 * np.sqrt(5)) + 1e-4 and eps < np.sqrt(5) / 40
+
+
+def test_derived_sources_give_no_associator_cubic():
+    """T-331(e) [Т]: функции внедиагональных элементов и функции спектра не несут −κ𝒜 — κ = 0.
+
+    Две диагональные координатные тройки (на линии Фано и вне) имеют один спектр и одни
+    (нулевые) внедиагональные элементы, а 𝒜 на них — 0 и 24/27. Кубики G₂-ковариантного
+    диссипатора не лежат в оболочке {1, TrΓ², TrΓ³, 𝒜}.
+    """
+    on, off = np.zeros((7, 7)), np.zeros((7, 7))
+    on[[0, 1, 3], [0, 1, 3]] = 1 / 3
+    off[[0, 1, 2], [0, 1, 2]] = 1 / 3
+    assert abs(_cal_a(on)) < 1e-14 and abs(_cal_a(off) - 24 / 27) < 1e-12
+    rng = np.random.default_rng(378)
+    Aa = [PHI3[a] / np.sqrt(6) for a in range(7)]
+    dg2 = lambda G: sum(A @ G @ A.T for A in Aa) - G
+    Gs = [random_state(rng) for _ in range(60)]
+    base = np.array([[1.0, np.trace(G @ G).real, np.trace(G @ G @ G).real, _cal_a(G)] for G in Gs])
+    for f in (lambda G: np.trace(G @ G @ dg2(G)).real, lambda G: np.trace(G @ dg2(G) @ dg2(G)).real,
+              lambda G: np.trace(dg2(G) @ dg2(G) @ dg2(G)).real):
+        y = np.array([f(G) for G in Gs])
+        coef = np.linalg.lstsq(base, y, rcond=None)[0]
+        assert np.max(np.abs(base @ coef - y)) > 1e-3
 
 
 def main():
