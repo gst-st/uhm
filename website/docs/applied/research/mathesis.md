@@ -176,7 +176,7 @@ The hypergraph (SQLite) and typed edges are a **1-categorical emulation** of ∞
 - a distinguished subclass of morphisms (*dependencies*)
 - an epistemic functor $\varepsilon_T: \mathcal{C}_T \to \mathbf{Status}$
 
-Examples: $T_{\text{UHM}}$ (399 registry entries, 7 statuses, 5 axioms), $T_{\text{IIT}}$ (5 postulates, $\Phi$, Q-shape), $T_{\text{GWT}}$ (global ignition, access), $T_{\text{FEP}}$ (free energy, Markov blanket).
+Examples: $T_{\text{UHM}}$ (402 registry entries, 7 statuses, 5 axioms), $T_{\text{IIT}}$ (5 postulates, $\Phi$, Q-shape), $T_{\text{GWT}}$ (global ignition, access), $T_{\text{FEP}}$ (free energy, Markov blanket).
 
 **Morphisms.** A morphism $f: T_1 \to T_2$ is an *interpretation functor*: an ∞-functor $\mathcal{C}_{T_1} \to \mathcal{C}_{T_2}$, preserving statement types and compatible with $\varepsilon$.
 

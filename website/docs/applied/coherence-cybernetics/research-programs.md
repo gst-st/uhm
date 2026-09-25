@@ -293,6 +293,8 @@ Minimal sufficient set (hypothetical):
 
 **Link to UHM:** F4 formalizes [theorem 7.2](./theorems#теорема-72-условная-неподвижная-точка-рефлексии) — the conditional fixed point of reflection.
 
+**Scope (2026-09-25).** F4 holds for the form $k\,\mathcal{P}(\Gamma) + (1 - k)\rho_a$ with constant $k$ and anchor and a unital $\mathcal{P}$ ([formalization of φ, Lemma 2.1](/docs/proofs/categorical/formalization-phi#25-сжимающий-оператор-самомоделирования)); the UHM self-models, whose weight $k = 1 - 1/(7P)$ depends on the state, do not satisfy it — the Lipschitz constant of $\varphi_{\mathrm{coh}}$ at a pure state is $54/49$, that of $\varphi_J$ at a basis state $1.129$, and $\varphi_s$ has at least eight fixed points. The scenarios above do not follow from its failure: $\varphi_J$ is not a contraction, yet it has exactly one fixed point, $\Gamma_{\eta_\infty}$ inside the window, and an isolated holon regenerating toward it has a single hyperbolic sink in $\mathcal{V}_{\mathrm{full}}$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне) [T]). Stability of the self-model is a property of the full dynamics, not a contraction of $\varphi$; F4 is a sufficient design condition, not a necessary one.
+
 #### F5: Causal closure — the system is autonomous {#f5-причинное-замыкание}
 
 **Intuition.** The system's outputs are determined by its internal states, not directly by external causes. This does not mean isolation — the system receives inputs from the environment. But its *responses* are mediated by the internal state $\Gamma$.

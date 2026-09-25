@@ -128,7 +128,7 @@ $$
 | 3 | 7D structure ($\mathcal{H}_S \cong \mathbb{C}^7 \otimes \mathcal{H}_{\text{int}}$) | Levels 0, 1, 2 |
 | 4 | Holon (AP)+(PH)+(QG)+(V) | Levels 0, 1, 2, 3 |
 
-**Extended operator hierarchy (levels 5–9):**
+**Extended operator hierarchy (levels 5–10):**
 
 | Level | Object | Definition | Depends on |
 |---------|--------|-------------|------------|
@@ -137,6 +137,7 @@ $$
 | 7 | $R(\Gamma)$ | $R := 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$ | Level 6 + state $\Gamma$ |
 | 8 | $\kappa(\Gamma)$ | $\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ | Level 0 (adjunction $\mathcal{D} \dashv \mathcal{R}$) |
 | 9 | $\varphi_k(\Gamma)$ | Replacement channel: $\varphi_k = (1-k)\Gamma + k\rho^*_{\mathrm{diss}}$, $k = 1-R$ | Levels 6, 7 |
+| 10 | $\varphi_J(\Gamma)$ | Collineation-anchored self-model $k\,\mathcal{P}_\alpha(\Gamma) + R\,uu^\dagger$, $k = 1 - R$; the anchor is fixed up to the phase gauge by the principle (Eq-V) ([T-350](/docs/core/operators/phi-operator#t-350)); fixed point $\Gamma_{\eta_\infty}$ inside the window | Levels 3 (frame group $\Gamma_{\mathrm{oct}}$), 6, 7 |
 
 :::info Canonical order of definitions
 $$\Omega \xrightarrow{\text{L-unification}} \mathcal{L}_\Omega \xrightarrow{\text{primitivity}} \rho^*_{\mathrm{diss}} \xrightarrow{\text{proximity}} R(\Gamma) \xrightarrow{k=1-R} \varphi_k$$
@@ -150,15 +151,15 @@ The documentation uses three objects denoted $\rho^*$:
 | Object | Definition | Purity | Role |
 |--------|-------------|---------|------|
 | $\rho^*_{\mathrm{diss}} = I/7$ | Attractor of dissipation $\mathcal{D}_\Omega$ | $P = 1/7$ | Target state in the definition of $R$ |
-| $\Gamma^*_{\mathrm{coh}}$ | Fixed point of $\varphi_{\mathrm{coh}}$ | $P = 1/7$ ($\Gamma^*_{\mathrm{coh}} = I/7$) | Exact self-knowledge of the canonical self-model; coincides with $\rho^*_{\mathrm{diss}}$ (the row read "$P = 2/7$, viability threshold" until 2026-09-25) |
-| $\rho^*_{\mathrm{full}}$ | Attractor of the full $\mathcal{L}_\Omega$ other than $I/7$ | $P > 1/7$; $P > 2/7$ at the seven attractors of $\varphi_s$ | Physical stationary state of a living system; none for an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ (dead isolation, T-124c) |
+| $\Gamma^*_{\mathrm{coh}}$ | Fixed point of $\varphi_{\mathrm{coh}}$ | $P = 1/7$ ($\Gamma^*_{\mathrm{coh}} = I/7$) | Exact self-knowledge of the canonical self-model; coincides with $\rho^*_{\mathrm{diss}}$ (the row read "$P = 2/7$, viability threshold" until 2026-09-25); the fixed point of $\varphi_J$ is $\Gamma_{\eta_\infty}$, inside the window |
+| $\rho^*_{\mathrm{full}}$ | Attractor of the full $\mathcal{L}_\Omega$ other than $I/7$ | $P > 1/7$; $P > 2/7$ at the seven attractors of $\varphi_s$; $P \in (2/7, 5/14)$, in $\mathcal{V}_{\mathrm{full}}$, at the attractor of $\varphi_J$ for $\kappa > \kappa_c(\alpha)$ | Physical stationary state of a living system; none for an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ (dead isolation, T-124c) |
 
 The canonical definition of $R$ uses $\rho^*_{\mathrm{diss}} = I/7$—a constant independent of $\varphi$, $\kappa$, or the dynamics.
 :::
 
 **Proof (topological sorting):**
 
-The dependency graph $G = (V, E)$ with $V = \{0, 1, \ldots, 9\}$ and $E = \{(i, j) : i < j,\ \text{dependency}\}$ is a **DAG**: along any path $v_0 \to v_1 \to \cdots \to v_m$ we have $v_0 < v_1 < \cdots < v_m$, hence $v_m \neq v_0$.
+The dependency graph $G = (V, E)$ with $V = \{0, 1, \ldots, 10\}$ and $E = \{(i, j) : i < j,\ \text{dependency}\}$ is a **DAG**: along any path $v_0 \to v_1 \to \cdots \to v_m$ we have $v_0 < v_1 < \cdots < v_m$, hence $v_m \neq v_0$.
 
 Therefore **no circular dependencies** exist. ∎
 
