@@ -59,9 +59,9 @@ The dimension $N = 7$ is a **fundamental axiom** (Axiom 3) with two independent 
 | Track | Justification | Status |
 |------|-------------|--------|
 | **A** | [Theorem S](./axiom-septicity#теорема-s-семимерность--следствие-из-аксиомы): (AP)+(PH)+(QG) → N ≥ 7 | [T] Proved |
-| **B** | [Structural derivation](../../proofs/minimality/theorem-octonionic-derivation): P1+P2 → $\mathbb{O}$ → $\dim \mathrm{Im}(\mathbb{O})$ = 7 | Hurwitz step [T]; P1+P2 [C at (Alt)]; not independent of Track A (step T8 of the chain takes $N = 7$ from Theorem S) |
+| **B** | [Structural derivation](../../proofs/minimality/theorem-octonionic-derivation): P1+P2 → $\mathbb{O}$ → $\dim \mathrm{Im}(\mathbb{O})$ = 7 | Hurwitz step [T]; P1+P2 [T] (canonical orientation, T15-canon); not independent of Track A (step T8 of the chain takes $N = 7$ from Theorem S) |
 
-The bridge (AP)+(PH)+(QG) → P1+P2 is the [full chain T1–T15](../../proofs/minimality/theorem-octonionic-derivation#мост), [C at (Alt)]: the steps up to the design PG(2,2) are theorems, and the step PG(2,2) → $\mathbb{O}$ needs an orientation of the seven lines — only 16 of the 128 orientations give a normed algebra (registry row 41n). It was cited here as "[T]" and Track B as "[T] mathematically rigorous" until 2026-09-25.
+The bridge (AP)+(PH)+(QG) → P1+P2 is the [full chain T1–T15](../../proofs/minimality/theorem-octonionic-derivation#мост), [T]: the steps up to the design PG(2,2) are theorems, and the step PG(2,2) → $\mathbb{O}$ takes the canonical orientation of the seven lines — only 16 of the 128 orientations give a normed algebra, and they are the only orientation class invariant under the collineations of the design ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация); registry row 41n). It was cited here as "[T]" and Track B as "[T] mathematically rigorous" until 2026-09-25 without the orientation step, then as [C at (Alt)] until T15-canon the same day.
 :::
 
 **LEVEL 1: DEFINITIONS** (built from axioms)
@@ -848,7 +848,7 @@ Independently of Theorem S, the number 7 follows from two postulates via Hurwitz
 - Fano plane $\mathrm{PG}(2,2)$ — combinatorics of octonion multiplication (7 points, 7 lines)
 - Hamming code $H(7,4)$ — perfect error-correcting code on 7 bits
 
-Bridge (AP)+(PH)+(QG) → P1+P2: [full chain T1–T15](../../proofs/minimality/theorem-octonionic-derivation#мост), [C at (Alt)] — the orientation of the Fano lines is an input (registry row 41n; cited as [T] until 2026-09-25). The consequences listed above hold for $\mathbb{O}$ itself; as consequences of the axioms they carry the same condition.
+Bridge (AP)+(PH)+(QG) → P1+P2: [full chain T1–T15](../../proofs/minimality/theorem-octonionic-derivation#мост), [T] with the canonical orientation of the Fano lines ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация); registry row 41n; cited as [T] until 2026-09-25 without the orientation step, then as [C at (Alt)] the same day until T15-canon). The consequences listed above hold for $\mathbb{O}$ itself and, through the bridge, as consequences of the axioms.
 :::
 
 ---

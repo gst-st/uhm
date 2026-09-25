@@ -342,7 +342,7 @@ satisfy strengthened correlation constraints that are absent for arbitrary pairs
 Why do special constraints operate within the triple? Because the triple forms an associative subalgebra (quaternions $\mathbb{H}$), where the associativity of multiplication holds: $(e_a \cdot e_b) \cdot e_c = e_a \cdot (e_b \cdot e_c)$. For pairs from *different* triples associativity breaks down (this is the property of the octonions $\mathbb{O}$), and the constraints are weaker.
 
 :::tip Theorem [T]
-Sectoral strengthening is a **conditional theorem** [C at (Alt)]: the bridge from the axioms to the octonionic structure (T15) is closed up to the orientation of the Fano lines, the input (Alt) (registry row 41n), and condition (МП) is proved (T11–T13). (It read "a theorem [T] … fully closed" until 2026-09-25.) From the structure of $\mathbb{O}$ the algebraic closure of coherences within Fano triplets follows. Empirical verification of sectoral correlation is an [open question](/docs/reference/falsifiability).
+Sectoral strengthening is a **theorem** [T]: the bridge from the axioms to the octonionic structure (T15) is closed with the canonical orientation of the Fano lines ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация); registry row 41n), and condition (МП) is proved (T11–T13). (It read "a theorem [T] … fully closed" until 2026-09-25 without the orientation step, then [C at (Alt)] the same day until T15-canon.) From the structure of $\mathbb{O}$ the algebraic closure of coherences within Fano triplets follows. Empirical verification of sectoral correlation is an [open question](/docs/reference/falsifiability).
 :::
 
 ### Coverage of 21 pairs by Fano triplets

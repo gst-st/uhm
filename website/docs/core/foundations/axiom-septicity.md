@@ -1050,10 +1050,10 @@ $$
 $$
 :::
 
-:::tip Structural octonion derivation (Track B)—[C at (Alt)]
+:::tip Structural octonion derivation (Track B) — [T] with the canonical orientation (T15-canon)
 Aside from Theorem S, $N = 7$ has a **second route** via division algebras (not an independent count: step T8 of the chain takes $N = 7$ from Theorem S):
-- **[C at (Alt)] P1:** state space ≅ Im($\mathcal{A}$), $\mathcal{A}$ division (via bridge T15, [C at (Alt)])
-- **[C at (Alt)] P2:** $\mathcal{A}$ nonassociative (via bridge T15, [C at (Alt)])
+- **[T] P1:** state space ≅ Im($\mathcal{A}$), $\mathcal{A}$ division (via bridge T15 [T], canonical orientation)
+- **[T] P2:** $\mathcal{A}$ nonassociative (via bridge T15 [T], canonical orientation)
 - **[T] Hurwitz** → $\mathcal{A} = \mathbb{O}$ → $N = 7$
 
 Bridge (AP)+(PH)+(QG)+(V) → P1+P2—[full chain T1–T16](../../proofs/minimality/theorem-octonionic-derivation#мост): the steps up to the design PG(2,2) are [T], the step PG(2,2) → $\mathbb{O}$ needs an orientation of the seven lines, and only 16 of the 128 orientations give a normed algebra (registry row 41n). (T16/PID relabeled [D] in A1+A2; numerics unchanged.) Until 2026-09-25 this box read "[T]" and "all 12 steps [T]".
@@ -1061,10 +1061,10 @@ Bridge (AP)+(PH)+(QG)+(V) → P1+P2—[full chain T1–T16](../../proofs/minimal
 [Full derivation →](../../proofs/minimality/theorem-octonionic-derivation)
 :::
 
-### Bridge to P1+P2 [C at (Alt)] (Theorem T15) {#мост-p1p2}
+### Bridge to P1+P2 [T] (Theorem T15) {#мост-p1p2}
 
-:::tip Bridge: [C at (Alt)] — closed up to the orientation of the Fano lines
-$(AP)+(PH)+(QG)+(V) \Longrightarrow P1+P2$ via a **12-step formal chain** (Theorems T1–T16; T16/PID is [D] in A1+A2): the steps up to BIBD$(7,3,1)$ = PG(2,2) are [T]; the step PG(2,2) → $\mathbb{O}$ needs the orientation input (Alt) — only 16 of the 128 orientations make the multiplication alternative, equivalently normed (`test_only_16_of_128_fano_orientations_are_normed`, registry row 41n). Legacy condition (MP) is removed—it follows from T11–T13 (Choi rank + L-unification + forced BIBD). Until 2026-09-25 the heading and this box read "[T] fully closed … all [T]".
+:::tip Bridge: [T] — closed with the canonical orientation of the Fano lines
+$(AP)+(PH)+(QG)+(V) \Longrightarrow P1+P2$ via a **12-step formal chain** (Theorems T1–T16; T16/PID is [D] in A1+A2): the steps up to BIBD$(7,3,1)$ = PG(2,2) are [T]; the step PG(2,2) → $\mathbb{O}$ needs an orientation of the lines — only 16 of the 128 orientations make the multiplication alternative, equivalently normed (`test_only_16_of_128_fano_orientations_are_normed`, registry row 41n) — and these 16 are the only orientation class invariant under the collineations of the design, so the orientation the design determines is octonionic ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация), [T]). Legacy condition (MP) is removed—it follows from T11–T13 (Choi rank + L-unification + forced BIBD). Until 2026-09-25 the heading and this box read "[T] fully closed … all [T]" without naming the orientation; earlier that day they read [C at (Alt)], an input that T15-canon discharged.
 :::
 
 **Full chain (Theorem T15):**
@@ -1078,7 +1078,7 @@ $$
 $$
 
 $$
-\xrightarrow{[\text{T}]} \text{BIBD}(7,3,1) = \text{PG}(2,2) \xrightarrow{\text{(Alt)}} \mathbb{O} \xrightarrow{[\text{T}]} G_2 \xrightarrow{[\text{T}]} P1 + P2
+\xrightarrow{[\text{T}]} \text{BIBD}(7,3,1) = \text{PG}(2,2) \xrightarrow{[\text{T}]\ \text{canonical orientation}} \mathbb{O} \xrightarrow{[\text{T}]} G_2 \xrightarrow{[\text{T}]} P1 + P2
 $$
 
 | Step | Implication | Status |
@@ -1092,14 +1092,14 @@ $$
 | 7 | Choi rank = 7 ⇒ $b \geq 7$ | **[T]** Theorem T11 |
 | 8 | $b=7, k=3, v=7$, contraction $1/3$ ⇒ BIBD$(7,3,1)$ | **[T]** Theorem T13 |
 | 9 | $(7,3,1)$-BIBD ≅ PG(2,2) | **[T]** Hall 1967 |
-| 10–12 | PG(2,2) → $\mathbb{O}$ → $G_2$ → P1+P2 | **[C at (Alt)]** for step 10 (the orientation of the lines is an input); $\mathbb{O}$ → $G_2$ → P1+P2 is standard algebra [T] |
+| 10–12 | PG(2,2) → $\mathbb{O}$ → $G_2$ → P1+P2 | **[T]**: step 10 takes the canonical orientation (T15-canon; it was the input (Alt) earlier on 2026-09-25); $\mathbb{O}$ → $G_2$ → P1+P2 is standard algebra [T] |
 
-**Cascade:** P1, P2 — **[C at (Alt)]**. Track B — **[C at (Alt)]**. Fano PG(2,2) and Hamming $H(7,4)$ as combinatorics — **[T]** (steps 1–9); $G_2 = \mathrm{Aut}(\mathbb{O})$ and the maximality half of the double extremality (via Track B) — at (Alt). The cascade read "all [T]" until 2026-09-25.
+**Cascade:** P1, P2 — **[T]**. Track B — **[T]**. Fano PG(2,2) and Hamming $H(7,4)$ as combinatorics — **[T]** (steps 1–9); $G_2 = \mathrm{Aut}(\mathbb{O})$ — **[T]**. The maximality half of the double extremality (via Track B) excludes other dimensions through Hurwitz, which needs P1 for a competing decomposition; it carries the same condition as the strict necessity of $N = 7$, [C at (P1₆)]. The cascade read "all [T]" until 2026-09-25, then [C at (Alt)] until T15-canon the same day.
 
 More: [Lindblad operators](../../core/operators/lindblad-operators#редукция-моста), [Octonionic derivation](../../proofs/minimality/theorem-octonionic-derivation#мост).
 
-:::info $G_2$ gauge structure from axioms [C at (Alt)]
-Closing T15 yields $(AP)+(PH)+(QG)+(V) \Rightarrow \mathbb{O} \Rightarrow G_2 = \text{Aut}(\mathbb{O})$, with the orientation of the Fano lines as input (Alt); given $\mathbb{O}$, the statements below are theorems (the heading read [T] until 2026-09-25). [$G_2$ rigidity](../../proofs/categorical/uniqueness-theorem) proves more:
+:::info $G_2$ gauge structure from axioms [T]
+Closing T15 yields $(AP)+(PH)+(QG)+(V) \Rightarrow \mathbb{O} \Rightarrow G_2 = \text{Aut}(\mathbb{O})$, with the canonical orientation of the Fano lines (T15-canon); the statements below are theorems (the heading read [T] until 2026-09-25, then [C at (Alt)] until T15-canon discharged the orientation input the same day). [$G_2$ rigidity](../../proofs/categorical/uniqueness-theorem) proves more:
 
 **Lemma G4 [T]:** the **largest** subgroup of $U(7)$ preserving the octonionic 3-form $\varphi_3$ is $G_2 \times \mu_3$, and the scalars $\mu_3$ ($\omega^3 = 1$) act trivially on states, so on states it is $G_2$ (it read "$G_2$ is the largest subgroup" until 2026-09-25); the remaining axiomatic data $(\mathcal{D}_\Omega, \mathcal{R}, \kappa_0, \text{PW})$ are frame data, preserved only by the finite frame group $\Gamma_{\!\text{oct}} \subset G_2$ ([frame decision D-0910](../../proofs/categorical/uniqueness-theorem#g2-ригидность)).
 

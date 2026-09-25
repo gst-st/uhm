@@ -1055,7 +1055,7 @@ This track never mentions consciousness, phenomenology, or interiority—only al
 
 ### Bridge between tracks
 
-The bridge (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2 is the **T15 chain of 15 steps**: the steps up to PG(2,2) are [T], the step to $\mathbb{O}$ needs the orientation input (Alt), so the chain is [C at (Alt)] (registry row 41n; it read "all [T]" until 2026-09-25). Details: [Bridge](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
+The bridge (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2 is the **T15 chain of 15 steps**: the steps up to PG(2,2) are [T], and the step to $\mathbb{O}$ takes the canonical orientation — the unique collineation-invariant orientation class ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)) — so the chain is [T] (registry row 41n; it read "all [T]" until 2026-09-25 without the orientation step, then [C at (Alt)] until T15-canon the same day). Details: [Bridge](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
 
 Agreement of the two tracks means: whether we start from “what consciousness needs” (Track A) or “what algebra needs” (Track B), the answer is **7**. Physics has seen this before: the Standard Model also “chooses” gauge groups $SU(3) \times SU(2) \times U(1)$ from several independent constraints—anomaly cancellation, renormalizability, the observed particle spectrum. In the UHM the convergence is deeper: one track is phenomenological (consciousness), the other purely algebraic (which division algebras exist). The questions have no obvious link—yet the answer is the same.
 

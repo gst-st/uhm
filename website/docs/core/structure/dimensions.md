@@ -370,7 +370,7 @@ Hurwitz's theorem (1898) proves: no other such algebras exist. The dimensions 1,
 :::
 
 :::info $G_2$-caveat and spontaneous symmetry breaking [T]
-The specific identification $e_i$ ↔ dimension is a **conditional theorem** [C at (Alt)] (T15): the bridge is closed up to the orientation of the Fano lines, the input (Alt) (registry row 41n; it read "a theorem [T] … fully closed" until 2026-09-25).
+The octonionic multiplication on the seven dimensions is a **theorem** [T] (T15): the bridge is closed with the canonical orientation of the Fano lines, the only orientation class the design determines ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация); registry row 41n). Which unit is which dimension is fixed by three marks up to one binary choice $E \leftrightarrow U$ (T-177 [T]). (It read "a theorem [T] … fully closed" until 2026-09-25, then [C at (Alt)] the same day until T15-canon.)
 
 **Spontaneous breaking $G_2 \to SU(3)$ on $S^6$.** The quotient $G_2/SU(3) \cong S^6$ is the six-sphere. Choosing a specific singlet $O$ (fixing a point on $S^6$) is mathematically equivalent to spontaneous symmetry breaking. In UHM this breaking is **not** introduced "by hand" but arises **dynamically** through three mechanisms:
 

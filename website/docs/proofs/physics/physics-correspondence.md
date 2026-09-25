@@ -763,8 +763,8 @@ In the [structural derivation of N=7](../minimality/theorem-octonionic-derivatio
 **Decomposition 42 [I]:**
 $\dim(\mathcal{H}_{total}) = 42 = 7 \times 6$ in UHM. In M-theory: $42 = \binom{9}{2} + 6$ arises in a number of contexts.
 
-:::tip Bridge [C at (Alt)] — closed up to the orientation input (T15)
-This is a **substantive analogy**, resting on theorems T1–T15, which close the bridge up to the orientation input (Alt) (registry row 41n). The formal connection between the 7D structure of UHM and the $G_2$-compactification of M-theory is an [open problem](../minimality/theorem-octonionic-derivation#открытые-проблемы). Bridge [C at (Alt)] (T15; it read "Bridge [T] (closed, T15)" and "fully closed" until 2026-09-25).
+:::tip Bridge [T] — closed with the canonical orientation (T15, T15-canon)
+This is a **substantive analogy**, resting on theorems T1–T15, which close the bridge with the canonical orientation of the Fano lines ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация); registry row 41n). The formal connection between the 7D structure of UHM and the $G_2$-compactification of M-theory is an [open problem](../minimality/theorem-octonionic-derivation#открытые-проблемы). Bridge [T] (T15; it read "Bridge [T] (closed, T15)" and "fully closed" until 2026-09-25 without the orientation step, then [C at (Alt)] the same day until T15-canon).
 :::
 
 **Potential consequences [I]:**

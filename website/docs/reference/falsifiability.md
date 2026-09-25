@@ -437,7 +437,7 @@ content at half strength lands inside (T-321, T-323).
 **Verdict legend.** **PASSING** — measured value lies inside the pass band; **CONSISTENT** — not excluded, but the prediction lies beyond current sensitivity; **PARTIAL** — indirect or calibration-dependent support; **UNTESTED** — no experiment has probed the band yet. A single entry moving to FAIL falsifies the corresponding claim at its stated status level ([T]/[C]/[H]).
 
 :::warning Status of predictions
-Predictions marked [T] are based on rigorously proved theorems (see [status registry](/docs/reference/status-registry)). The [octonionic bridge](/docs/proofs/minimality/theorem-octonionic-derivation) is closed up to the orientation input (Alt): [C at (Alt)] (T15, registry row 41n; it read "fully closed [T]" until 2026-09-25). Predictions marked [H] require additional computations or contain gaps in the physical arguments.
+Predictions marked [T] are based on rigorously proved theorems (see [status registry](/docs/reference/status-registry)). The [octonionic bridge](/docs/proofs/minimality/theorem-octonionic-derivation) is closed with the canonical orientation of the Fano lines: [T] (T15, [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация), registry row 41n; it read "fully closed [T]" until 2026-09-25 without the orientation step, then [C at (Alt)] the same day). Predictions marked [H] require additional computations or contain gaps in the physical arguments.
 :::
 
 ## Completeness of Theory
@@ -536,8 +536,8 @@ Physics does not explain *why* the laws of nature exist — it describes their s
 | **Associator anomalies** | Triple interactions of dimensions should exhibit non-associativity: $[x, y, z] \neq 0$ | [T] |
 | **Hamming threshold** | Structure $H(7,4)$, exactly as in the canon ([T-93](/docs/core/dynamics/gap-dynamics#код-хэмминга)): **1** coherence violation is corrected automatically by the regenerator, **2** are detected via the syndrome measurements (E, O, U); beyond two the code is unreliable ($d = 3$). *Erratum 2026-07-25: this previously read «viable with loss of up to 3 of 7» — unsupported by T-93 and inconsistent with $d=3$ (the guarantee is $\lfloor(d-1)/2\rfloor = 1$ correction, $d-1 = 2$ detections); found by machine-checking the table against the canon.* | [T] |
 
-:::tip Bridge [C at (Alt)] — closed up to the orientation input (T15)
-The connection (AP)+(PH)+(QG)+(V) → P1+P2 is established via the formal chain T15 (12 steps): the steps up to PG(2,2) are [T], the step to $\mathbb{O}$ needs the orientation input (Alt), so the chain is [C at (Alt)] (registry row 41n; it read "all [T]" until 2026-09-25). T11–T13 prove the former condition (МП). The octonionic predictions are consequences of the structural derivation and carry the same condition.
+:::tip Bridge [T] — closed with the canonical orientation (T15, T15-canon)
+The connection (AP)+(PH)+(QG)+(V) → P1+P2 is established via the formal chain T15 (12 steps): the steps up to PG(2,2) are [T], the step to $\mathbb{O}$ takes the canonical orientation, the unique collineation-invariant class (T15-canon), so the chain is [T] (registry row 41n; it read "all [T]" until 2026-09-25 without the orientation step, then [C at (Alt)] the same day). T11–T13 prove the former condition (МП). The octonionic predictions are consequences of the structural derivation and carry no orientation condition.
 :::
 
 ### Research programme

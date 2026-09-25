@@ -1641,7 +1641,7 @@ In the [octonionic interpretation](../../core/structure/dimensions#октони�
 | **L3** | Meta-associators | Reflection on non-associativity |
 | **L4** | Full $A_\infty$-structure | All levels of homotopic associativity |
 
-Bridge [C at (Alt)] (T15; the orientation of the Fano lines is an input — registry row 41n; it read "[T] (closed)" until 2026-09-25). See [structural derivation](../minimality/theorem-octonionic-derivation).
+Bridge [T] (T15 with the canonical orientation of the Fano lines, [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация) — registry row 41n; it read "[T] (closed)" until 2026-09-25 without the orientation step, then [C at (Alt)] the same day). See [structural derivation](../minimality/theorem-octonionic-derivation).
 :::
 
 ---

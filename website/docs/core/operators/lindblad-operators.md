@@ -490,9 +490,9 @@ Status: **[T]**
 
 ---
 
-### Closing the Bridge (AP)+(PH)+(QG)+(V) ⇒ P1+P2 [C at (Alt)] {#редукция-моста}
+### Closing the Bridge (AP)+(PH)+(QG)+(V) ⇒ P1+P2 [T] {#редукция-моста}
 
-Sixteen theorems (T1–T16) generate a chain of implications (T16/PID is reclassified [D] — a definition embedded in A1+A2; computational results are unaffected). Every step up to BIBD$(7,3,1)$ = PG(2,2) is a theorem [T]; the arrow PG(2,2) → $\mathbb{O}$ needs an orientation of the seven lines, and only 16 of the 128 orientations give a normed (equivalently, alternative) algebra, so that arrow is [C at (Alt)] ([octonionic derivation, Step T15](/docs/proofs/minimality/theorem-octonionic-derivation#шаг-t15)). Until 2026-09-25 this paragraph said "all steps being theorems [T]".
+Sixteen theorems (T1–T16) generate a chain of implications (T16/PID is reclassified [D] — a definition embedded in A1+A2; computational results are unaffected). Every step up to BIBD$(7,3,1)$ = PG(2,2) is a theorem [T]; the arrow PG(2,2) → $\mathbb{O}$ needs an orientation of the seven lines, and only 16 of the 128 orientations give a normed (equivalently, alternative) algebra, and these 16 form the only orientation class invariant under the collineations of the design — the canonical orientation, which the design itself determines ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)). So that arrow is [T] ([octonionic derivation, Step T15](/docs/proofs/minimality/theorem-octonionic-derivation#шаг-t15)). Until 2026-09-25 this paragraph said "all steps being theorems [T]" without naming the orientation; earlier that day the arrow was marked [C at (Alt)], and T15-canon discharged the input the same day.
 
 $$
 \boxed{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{T}]} N = 7 \xrightarrow{[\text{T}]} \text{connectedness of } G_H \xrightarrow{[\text{T}]} \forall(i,j):\,\lambda_{ij} \geq 1
@@ -503,7 +503,7 @@ $$
 $$
 
 $$
-\xrightarrow{[\text{T}]} \text{BIBD}(7,3,1) = \text{PG}(2,2) \xrightarrow{\text{(Alt)}} \mathbb{O} \xrightarrow{[\text{T}]} G_2 \xrightarrow{[\text{T}]} P1+P2
+\xrightarrow{[\text{T}]} \text{BIBD}(7,3,1) = \text{PG}(2,2) \xrightarrow{[\text{T}]\ \text{canonical orientation}} \mathbb{O} \xrightarrow{[\text{T}]} G_2 \xrightarrow{[\text{T}]} P1+P2
 $$
 
 #### Theorem T1: Equivalence of BIBD channels [T] {#теорема-bibd-эквивалентность}
@@ -569,11 +569,11 @@ $k=3$ is the **unique** admissible size with optimal coherence preservation (the
 
 **Significance for autopoiesis:** $\kappa_0 \propto |\gamma_{OE}| \cdot |\gamma_{OU}|$ — the minimal contraction defines the "bottleneck". BIBD is optimal for stable viability.
 
-#### Theorem T15: Closing the bridge [C at (Alt)] {#замыкание-моста}
+#### Theorem T15: Closing the bridge [T] {#замыкание-моста}
 
-> **Theorem T15.** $(AP)+(PH)+(QG)+(V) \Longrightarrow P1 + P2$ — a chain whose steps 1–9 and 11 are theorems [T] and whose step 10 needs the orientation input (Alt): **[C at (Alt)]**. (Stated as "complete chain, all steps are theorems [T]" until 2026-09-25.)
+> **Theorem T15.** $(AP)+(PH)+(QG)+(V) \Longrightarrow P1 + P2$ — a chain of theorems [T]; step 10 takes the canonical orientation of the Fano lines, the unique collineation-invariant class ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)): **[T]**. (Stated as "complete chain, all steps are theorems [T]" until 2026-09-25 without the orientation step; [C at (Alt)] earlier that day, until T15-canon.)
 
-:::info Final bridge status: [C at (Alt)] — closed up to the orientation of the Fano lines
+:::info Final bridge status: [T] — closed with the canonical orientation of the Fano lines (T15-canon)
 
 | Step | Implication | Status |
 |-----|-----------|--------|
@@ -586,11 +586,11 @@ $k=3$ is the **unique** admissible size with optimal coherence preservation (the
 | 7 | Choi rank = 7 ⟹ $b \geq 7$ | **[T]** Theorem T11 |
 | 8 | $b=7, k=3, v=7$, contraction $1/3$ ⟹ BIBD$(7,3,1)$ | **[T]** Theorem T13 |
 | 9 | $(7,3,1)$-BIBD ≅ PG(2,2) | **[T]** Hall 1967 |
-| 10 | PG(2,2) ≅ multiplication table of Im($\mathbb{O}$) | **[C at (Alt)]** — true for the oriented plane; the design fixes no orientation, and 16 of the 128 orientations give $\mathbb{O}$ (`test_only_16_of_128_fano_orientations_are_normed`) |
+| 10 | PG(2,2) ≅ multiplication table of Im($\mathbb{O}$) | **[T]** T15-canon — 16 of the 128 orientations give $\mathbb{O}$ (`test_only_16_of_128_fano_orientations_are_normed`), and they are the only class invariant under $GL(3,\mathbb{F}_2)$ (`test_octonionic_orientation_is_the_unique_collineation_invariant_class`); each of the other seven classes singles out a line |
 | 11 | $\mathrm{Aut}(\mathbb{O}) = G_2$ | **[T]** standard Lie theory |
 | 12 | $\mathbb{O}$ — normed non-associative division algebra ⟹ P1+P2 | **[T]** definition |
 
-The bridge is closed **[C at (Alt)]** (T-15): steps 1–9 give the unoriented design PG(2,2) [T], step 10 needs (Alt), steps 11–12 are standard. Condition (МП) follows as a direct consequence of T11 + T12 + T13. Cascading corollaries: P1, P2 **[C at (Alt)]**; Track B ($\mathbb{O} \Rightarrow N=7$) **[C at (Alt)]**; the Fano plane and the Hamming code (as combinatorics) **[T]**. The former sentence "a complete chain of 12 steps, all theorems … P1, P2 [T]; Track B [T]" is retracted [✗].
+The bridge is closed **[T]** (T-15): steps 1–9 give the unoriented design PG(2,2) [T], step 10 takes the canonical orientation (T15-canon [T]), steps 11–12 are standard. Condition (МП) follows as a direct consequence of T11 + T12 + T13. Cascading corollaries: P1, P2 **[T]**; Track B ($\mathbb{O} \Rightarrow N=7$, a consistency loop that consumes $N = 7$ from Track A at step T8) **[T]**; the Fano plane and the Hamming code (as combinatorics) **[T]**. The strict necessity of $N = 7$ (excluding a rival six-function decomposition) stays [C at (P1₆)] — the chain proves P1 only for the seven-dimensional frame. The intermediate status of 2026-09-25, [C at (Alt)] for the bridge, P1, P2 and Track B, is superseded by T15-canon. The former sentence "a complete chain of 12 steps, all theorems … P1, P2 [T]; Track B [T]" is retracted [✗].
 
 See [Status registry](/docs/reference/status-registry), [Octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
 :::

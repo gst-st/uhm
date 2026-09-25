@@ -26,9 +26,9 @@ Direct consequence of three proven theorems:
 
 2. **T-40f [T]** (Full minimality 7/7): Each of the 7 dimensions [A, S, D, L, E, O, U] is **functionally necessary** — removing any one leads to loss of viability or violation of an axiom.
 
-3. **T-15, [C at (Alt)]** (Bridge closure): $(AP) + (PH) + (QG) + (V) \Longrightarrow P1 + P2$ — the autopoietic and physical premises entail the octonionic structure $\mathbb{O}$ and $G_2$-symmetry, given the orientation of the Fano lines (registry row 41n; cited as [T] until 2026-09-25).
+3. **T-15, [T]** (Bridge closure): $(AP) + (PH) + (QG) + (V) \Longrightarrow P1 + P2$ — the autopoietic and physical premises entail the octonionic structure $\mathbb{O}$ and $G_2$-symmetry, with the canonical orientation of the Fano lines ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация); registry row 41n; cited as [C at (Alt)] earlier on 2026-09-25).
 
-From T-42a: the representation is unique up to $G_2$. From T-40f: projections onto 7 dimensions form the unique functionally complete basis. From T-15: the $G_2$ structure is derived from the axioms at the orientation assumption (Alt), not postulated; T-123 is accordingly [T] given the octonionic structure and [C at (Alt)] as a consequence of the axioms (registry row T-123). $\blacksquare$
+From T-42a: the representation is unique up to $G_2$. From T-40f: projections onto 7 dimensions form the unique functionally complete basis. From T-15: the $G_2$ structure is derived from the axioms, not postulated; T-123 is accordingly [T] as a consequence of the axioms (registry row T-123; the intermediate "[T] given the octonionic structure, [C at (Alt)] as a consequence of the axioms" is superseded by T15-canon). $\blacksquare$
 
 ### Consequence for digital agents
 

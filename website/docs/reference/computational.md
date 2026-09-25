@@ -1106,7 +1106,7 @@ Polchinski's argument requires nonlinearity at the level of individual qubits. I
 **See also:** [Full proof with formal estimates](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение).
 
 :::note Octonionic structure and the frame group
-Algorithms operating in 7D space can use the [octonionic structure](/docs/proofs/minimality/theorem-octonionic-derivation) (bridge T15, [C at (Alt)]). The former note promised a reduction of the parameter space from $SO(7)$ (21 parameters) to $G_2$ (14 parameters) by $G_2$-covariance and called the bridge "[T] (closed)"; retracted 2026-09-25 — the dynamics is covariant only under the finite frame group $\Gamma_{\!\text{oct}}$ ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)), and the bridge needs the orientation input (Alt).
+Algorithms operating in 7D space can use the [octonionic structure](/docs/proofs/minimality/theorem-octonionic-derivation) (bridge T15, [T] with the canonical orientation — T15-canon). The former note promised a reduction of the parameter space from $SO(7)$ (21 parameters) to $G_2$ (14 parameters) by $G_2$-covariance and called the bridge "[T] (closed)"; retracted 2026-09-25 — the dynamics is covariant only under the finite frame group $\Gamma_{\!\text{oct}}$ ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)), and the orientation input (Alt) of the bridge, named here that day, is discharged by T15-canon.
 :::
 
 ---

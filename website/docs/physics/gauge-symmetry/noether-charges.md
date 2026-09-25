@@ -583,7 +583,7 @@ With an exponential kernel and $\omega\tau_M \gg 1$, the high-frequency componen
 
 The central task: to show that three UHM axioms — (AP) autopoiesis, (PH) pan-interiority, (QG) quantum graph — jointly entail two fundamental properties — P1 (division algebra) and P2 (non-associativity).
 
-:::tip[Theorem 13.0 (Bridge Closure) \[C at (Alt)\]]
+:::tip[Theorem 13.0 (Bridge Closure) \[T\]]
 8 steps for closing (AP)+(PH)+(QG) $\Rightarrow$ P1+P2 — proven except for the orientation input of Step 4 (the box read "[T] … all proven" until 2026-09-25):
 
 | Step | Statement | Status |
@@ -591,7 +591,7 @@ The central task: to show that three UHM axioms — (AP) autopoiesis, (PH) pan-i
 | 1 | (AP) $\Rightarrow$ invertibility of $\varphi$ | [T] |
 | 2 | Invertibility in 7D $\Rightarrow$ coherence preservation | [T] |
 | 3 | Coherence preservation $\Rightarrow$ Fano structure | [T] |
-| 4 | Fano structure + orientation (Alt) $\Rightarrow$ structure constants of $\mathbb{O}$ | [C at (Alt)] |
+| 4 | Fano structure + canonical orientation $\Rightarrow$ structure constants of $\mathbb{O}$ | [T] (T15-canon) |
 | 5 | Structure constants $\Rightarrow$ P1 (division algebra) | [T] |
 | **6** | **(PH) $\Rightarrow$ arrow of time in Gap** | **[T]** |
 | 7 | Arrow of time $\Rightarrow$ $V_3 \neq 0$ $\Rightarrow$ associator $\neq 0$ | [T] |
@@ -605,7 +605,7 @@ The central task: to show that three UHM axioms — (AP) autopoiesis, (PH) pan-i
 - **Step 1.** An autopoietic system must reproduce itself, which requires invertibility of the map $\varphi$. From $R > 0$ (non-zero self-modeling intensity), invertibility follows. [T]
 - **Step 2.** Invertible self-modeling in the 7D space of coherences must preserve the norm of coherences (otherwise the system "falls apart" or "explodes"). [T]
 - **Step 3.** Preservation of coherences in 7D with a CPTP channel structured by the $\mathrm{Cliff}(7)$ decomposition requires the Fano structure $\mathrm{PG}(2,2)$ (see [G₂-structure](/docs/physics/gauge-symmetry/g2-structure), Theorem 10.0). [T]
-- **Step 4.** The Fano plane $\mathrm{PG}(2,2)$ fixes *which* triples multiply; the signs need an orientation of the seven lines, and only 16 of the 128 orientations give an alternative (equivalently normed) algebra — the input (Alt) of the T15 bridge (registry row 41n), checked by `test_only_16_of_128_fano_orientations_are_normed`. [C at (Alt)] (It read "the Fano plane **uniquely** determines the structure constants $f_{ijk}$ … [T]" until 2026-09-25.)
+- **Step 4.** The Fano plane $\mathrm{PG}(2,2)$ fixes *which* triples multiply; the signs need an orientation of the seven lines, and only 16 of the 128 orientations give an alternative (equivalently normed) algebra — checked by `test_only_16_of_128_fano_orientations_are_normed` — and these 16 form the only orientation class invariant under the collineations of PG(2,2) ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация); registry row 41n), so the orientation the plane determines gives $\mathbb{O}$. [T] (Earlier on 2026-09-25 this step was [C at (Alt)]. It read "the Fano plane **uniquely** determines the structure constants $f_{ijk}$ … [T]" until 2026-09-25.)
 - **Step 5.** Structure constants from an alternative orientation (Step 4) determine a normed division algebra (Hurwitz's theorem: $\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}$ are the only ones; $\dim = 7$ imaginary units $\Rightarrow$ $\mathbb{O}$). [T] (It read "structure constants with $f_{ijk} = \pm 1$ on Fano lines" until 2026-09-25: only 16 of the 128 sign choices make the algebra normed, which is what Hurwitz's theorem needs.)
 
 #### Step 6: proven {#шаг-6-доказательство}
@@ -681,7 +681,7 @@ Step 6 is proven (Theorem 13.1 above) by combining approaches A and B from the o
 - **Approach A (algebraic):** Phase frustration from octonionic non-associativity (step 6.5) shows that $V_3\big|_{\rho^*} \neq 0$ — spontaneous PT-breaking at the vacuum.
 - **Approach B (informational):** Hamiltonian precession (T-132) + $\mathrm{Coh}_E > 0$ from (PH) provide irreversible complex coherences (steps 6.1–6.3).
 
-With the proof of Step 6 all eight steps are proved **given the octonionic multiplication** — Step 6.5 and Step 7 use it — so the chain $\text{(AP)} + \text{(PH)} + \text{(QG)} \Rightarrow \text{P1} + \text{P2}$ inherits the orientation input (Alt) of the T15 bridge (registry row 41n) and is [C at (Alt)]. (It read "the bridge is fully closed: all 8 steps have status [T]. The chain … is proven" until 2026-09-25.)
+With the proof of Step 6 all eight steps are proved **given the octonionic multiplication** — Step 6.5 and Step 7 use it — and the T15 bridge supplies it with the canonical orientation (T15-canon; registry row 41n), so the chain $\text{(AP)} + \text{(PH)} + \text{(QG)} \Rightarrow \text{P1} + \text{P2}$ is [T] ([C at (Alt)] earlier on 2026-09-25). (It read "the bridge is fully closed: all 8 steps have status [T]. The chain … is proven" until 2026-09-25.)
 
 ---
 
