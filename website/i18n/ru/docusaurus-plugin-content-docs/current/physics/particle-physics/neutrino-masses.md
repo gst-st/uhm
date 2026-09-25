@@ -279,10 +279,10 @@ $$
 **Шаг 3 (Вакуумные когерентности).** Партнёры лежат либо в $3$-секторе ($D$), либо в $\bar{3}$-секторе ($E$, $U$). Когерентности партнёр–O из самосогласованного вакуума (T-61) [Т]:
 
 $$
-|\gamma_{DO}| \approx \varepsilon_{O \to 3} \approx 0.023, \quad |\gamma_{EO}| \approx |\gamma_{UO}| \approx \varepsilon_{O \to \bar{3}} \approx 0.023
+|\gamma_{DO}| \approx \varepsilon_{O \to 3}, \quad |\gamma_{EO}| \approx |\gamma_{UO}| \approx \varepsilon_{O \to \bar{3}}
 $$
 
-Из T-61: $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0 \approx 0.023$ (O-изотропия).
+O-изотропия: $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0$. Значение не закреплено: $0{,}023$, бравшееся здесь из T-61 до 2026-09-25, получалось подстановкой $\varepsilon_O \approx 0{,}04$ против табличного $\varepsilon_O \sim 1$ (аудит A-83), а секторные значения T-61 — гипотеза (СВ) [Г]. Отношения ниже от $\varepsilon_0$ не зависят.
 
 **Шаг 4 (Дираковские массы).** Элемент $M_{O,\text{sector}}$ спектральной тройки даёт:
 
@@ -293,15 +293,15 @@ $$
 При $\text{Gap}(O, k) \approx 1$ для всех $k$ (O-сектор почти непрозрачен):
 
 $$
-m_D^{(1)} \propto \varepsilon_0 \cdot \sin(2\pi/7) = 0.023 \times 0.782 = 0.0180
+m_D^{(1)} \propto \varepsilon_0 \cdot \sin(2\pi/7) = 0.782\,\varepsilon_0
 $$
 
 $$
-m_D^{(4)} \propto \varepsilon_0 \cdot |\sin(8\pi/7)| = 0.023 \times 0.434 = 0.0100
+m_D^{(4)} \propto \varepsilon_0 \cdot |\sin(8\pi/7)| = 0.434\,\varepsilon_0
 $$
 
 $$
-m_D^{(2)} \propto \varepsilon_0 \cdot \sin(4\pi/7) = 0.023 \times 0.975 = 0.0224
+m_D^{(2)} \propto \varepsilon_0 \cdot \sin(4\pi/7) = 0.975\,\varepsilon_0
 $$
 
 $\blacksquare$

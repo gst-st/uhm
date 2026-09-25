@@ -32,7 +32,7 @@ In the [interiority hierarchy](./interiority-hierarchy) we defined the discrete 
 
 :::note Status
 Definitions [D], tower construction [H], biological correspondences [I]. Numerical thresholds [C at calibration].
-Depth dynamics (§7): growth [C] (A₄-bifurcation), energy [C] (Landauer), stress [T] (T-92), social [C] (CC-5/CC-7).
+Depth dynamics (§7): growth [C] (A₄-bifurcation), energy [C] (Landauer), stress [T] (T-92), social [C] (CC-5 at (HOL); CC-7 [T] for almost every anchor).
 Spectral formula for SAD [T] (§3.4, T-142).
 $P_\text{crit}^{(n)}$ formula [T] (§3.5, T-142). SAD_MAX = 3 [T] (§3.5, T-142).
 :::
@@ -516,7 +516,7 @@ The system **must** collapse the upper levels under high stress — an adaptive 
 
 ### 7.4 Social Depth [C] {#социальная-глубина}
 
-Multi-agent towers scale via [CC-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) (T-68, [C at (HOL)]: under the assumption that the composite is itself a holon, non-triviality, and for embodied systems viability per T-149; the former "non-triviality [T], viability [T for embodied]" is retracted with CC-5's step 1) and [CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [T]:
+Multi-agent towers scale via [CC-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) (T-68, [C at (HOL)]: under the assumption that the composite is itself a holon, non-triviality, and for embodied systems viability per T-149; the former "non-triviality [T], viability [T for embodied]" is retracted with CC-5's step 1; without (HOL), Corollary 9.1a [T] gives, for weakly coupled embodied holons with anchors outside a null set, a stationary composite within $O(g)$ of the product, with $P > 1/49$ and living marginals) and [CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) — [T] for almost every anchor (Theorem 9.4: the non-degeneracy (ND) holds off a closed set of anchors of measure zero; it read "[C at (ND)]" earlier on 2026-09-25):
 
 From T-68 (fractal closure), under (HOL) — $\mathbb{H}_A \otimes \mathbb{H}_B$ is itself a holon: $\mathbb{H}_A$ viable $\land$ $\mathbb{H}_B$ viable $\Rightarrow$ $\mathbb{H}_A \otimes \mathbb{H}_B$ viable (for embodied systems). Composite depth:
 

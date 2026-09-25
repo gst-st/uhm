@@ -158,7 +158,7 @@ $$
 В единственном вакууме ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Г] (переформулирована; секторные значения — гипотеза (СВ))) Gap-конфигурация $\theta^*$ удовлетворяет:
 
 **(a)** Для всех не-O пар ($i,j \in \{A,S,D,L,E,U\}$):
-$$\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.023 \ll 1/2$$
+$$\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.027 \ll 1/2$$
 
 **(b)** Для O-секторных пар ($i \in \{A,S,D,L,E,U\}$):
 $$\mathrm{Gap}(O,i) = 1 - O(\bar{\varepsilon}^2) \approx 1$$
@@ -182,7 +182,7 @@ $$\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2), \quad \ma
 
 $$\mathrm{Gap}(i,j) \leq \varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll \frac{1}{2}$$
 
-Средняя когерентность $\bar{\varepsilon} = \frac{1}{15}\sum_{i<j, \, i,j \neq O} \varepsilon_{ij} \approx 0.023$, а максимум $\varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll 1/2$.
+Средняя когерентность $\bar{\varepsilon} = \bigl(\frac{1}{15}\sum_{i<j, \, i,j \neq O} \varepsilon_{ij}^2\bigr)^{1/2} = \varepsilon_{33}/\sqrt5 \approx 0{,}027$ ([С при (СВ)]; значение $0{,}023$, стоявшее здесь до 2026-09-25, отозвано по аудиту A-83), а максимум $\varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll 1/2$.
 
 **Шаг 3 (O-сектор — необходимость Gap $\approx$ 1).** Механизм Пейдж–Вуттерс (A5) требует, чтобы O-подсистема служила часами. Скорость течения времени (из [спектральной тройки](/docs/core/foundations/spacetime#теорема-спектральная-тройка) T-53 [Т]):
 
@@ -208,7 +208,7 @@ $$\frac{d\tau}{d\sigma} = \omega_0 \cdot \sqrt{\sum_{i \neq O} |\gamma_{Oi}|^2 \
 
 $$\langle\mathrm{Gap}_{\text{non-O}}\rangle \ll \langle\mathrm{Gap}_O\rangle \approx 1$$
 
-Конкретно: $\langle\mathrm{Gap}_{\text{non-O}}\rangle \leq \bar{\varepsilon} \approx 0.023$, т.е. не-O пары почти прозрачны, а O-пары максимально непрозрачны.
+Конкретно: $\langle\mathrm{Gap}_{\text{non-O}}\rangle \leq \bar{\varepsilon} \approx 0.027$, т.е. не-O пары почти прозрачны, а O-пары максимально непрозрачны.
 
 ---
 

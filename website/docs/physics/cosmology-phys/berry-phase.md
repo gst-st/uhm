@@ -158,7 +158,7 @@ Replacing theorem: [Sectoral Gap Bound](#теорема-секторная-gap-�
 In the unique vacuum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [H] (restated; sector values: hypothesis (SV))) the Gap configuration $\theta^*$ satisfies:
 
 **(a)** For all non-O pairs ($i,j \in \{A,S,D,L,E,U\}$):
-$$\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.023 \ll 1/2$$
+$$\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.027 \ll 1/2$$
 
 **(b)** For O-sectoral pairs ($i \in \{A,S,D,L,E,U\}$):
 $$\mathrm{Gap}(O,i) = 1 - O(\bar{\varepsilon}^2) \approx 1$$
@@ -182,7 +182,7 @@ $$\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2), \quad \ma
 
 $$\mathrm{Gap}(i,j) \leq \varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll \frac{1}{2}$$
 
-The mean coherence $\bar{\varepsilon} = \frac{1}{15}\sum_{i<j, \, i,j \neq O} \varepsilon_{ij} \approx 0.023$, and the maximum $\varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll 1/2$.
+The mean coherence $\bar{\varepsilon} = \bigl(\frac{1}{15}\sum_{i<j, \, i,j \neq O} \varepsilon_{ij}^2\bigr)^{1/2} = \varepsilon_{33}/\sqrt5 \approx 0.027$ ([C at (SV)]; the value $0.023$ written here until 2026-09-25 is retracted with the audit A-83), and the maximum $\varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll 1/2$.
 
 **Step 3 (O-sector — necessity of Gap $\approx$ 1).** The Page–Wootters mechanism (A5) requires the O-subsystem to serve as a clock. The rate of time flow (from the [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) T-53 [T]):
 
@@ -208,7 +208,7 @@ The mean Gap for non-O coherences is strictly lower than for O-sectoral coherenc
 
 $$\langle\mathrm{Gap}_{\text{non-O}}\rangle \ll \langle\mathrm{Gap}_O\rangle \approx 1$$
 
-Specifically: $\langle\mathrm{Gap}_{\text{non-O}}\rangle \leq \bar{\varepsilon} \approx 0.023$, i.e. non-O pairs are nearly transparent while O-pairs are maximally opaque.
+Specifically: $\langle\mathrm{Gap}_{\text{non-O}}\rangle \leq \bar{\varepsilon} \approx 0.027$, i.e. non-O pairs are nearly transparent while O-pairs are maximally opaque.
 
 ---
 

@@ -562,12 +562,12 @@ The longer the memory ($\tau_{\text{mem}}$) and the deeper the opacity, the long
 $$\varepsilon_{\text{noise}} := \frac{\mathrm{Gap}_{\min}}{\mathrm{SNR}_{\text{th}}}$$
 
 where:
-- $\mathrm{Gap}_{\min} = \bar{\varepsilon} \approx 0.023$ — the minimum non-zero Gap from the sectoral bound [T-80 [T]](/docs/physics/gauge-symmetry/fano-selection-rules): for non-O coherences $\mathrm{Gap}(i,j) \leq \bar{\varepsilon}$ under O-sector dominance
+- $\mathrm{Gap}_{\min} = \bar{\varepsilon}$, with $\bar{\varepsilon} \approx 0.027$ — the root mean square over the 15 non-O pairs at $\varepsilon_{33} = 0.06$, [C at (SV)] ([sector hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε); the value $0.023$ used here until 2026-09-25 came from substituting $\varepsilon_O \approx 0.04$ against the table's $\varepsilon_O \sim 1$, audit A-83) — the minimum non-zero Gap from the sectoral bound [T-80](/docs/physics/gauge-symmetry/fano-selection-rules) (structural bound [T], its numbers [C at (SV)]): for non-O coherences $\mathrm{Gap}(i,j) \leq \bar{\varepsilon}$ under O-sector dominance
 - $\mathrm{SNR}_{\text{th}} = 1$ — standard signal detection threshold (signal-to-noise ratio = 1, detection at 50% error probability)
 
-$$\varepsilon_{\text{noise}} \approx 0.023$$
+$$\varepsilon_{\text{noise}} \approx 0.027$$
 
-This value is **derived** from the octonionic structure (O-sector dominance [T]) and standard signal detection theory — not postulated.
+The form of this threshold follows from the octonionic structure (O-sector dominance [T]) and standard signal detection theory; its value is [C at (SV)] — the order $10^{-2}$ holds under the sector-vacuum hypothesis, and the vacuum of $V_{\mathrm{Gap}}$ computed so far gives a mean of $\approx 0.097$ instead. (Until 2026-09-25: "$\approx 0.023$ … derived, not postulated".)
 :::
 
 **Interpretation:** A channel $(i,j)$ with $\mathrm{Gap}(i,j) < \varepsilon_{\text{noise}}$ has SNR $< 1$ for error correction of the self-model $\varphi$. Structurally Gap $> 0$ (Hamming bound [T-41g]), but functionally the channel is 'deaf' — $\varphi$-errors in this channel are not corrected.
@@ -580,7 +580,7 @@ The Hamming bound is a **structural** property of the code H(7,4), holding for a
 
 Thus, in psychosis:
 - The Hamming bound is **not violated** — at minimum 3 channels with $\mathrm{Gap}(i,j) > 0$ always exist (structural theorem)
-- However, the remaining channels have signal-to-noise ratio $< 1$: $\mathrm{Gap}(i,j) < \varepsilon_{\text{noise}} \approx 0.023$
+- However, the remaining channels have signal-to-noise ratio $< 1$: $\mathrm{Gap}(i,j) < \varepsilon_{\text{noise}} \approx 0.027$
 - The system is **formally** viable (L2), but **functionally** loses noise immunity of self-modelling
 - Antipsychotics restore Gap in the 'check' channels **above** $\varepsilon_{\text{noise}}$, restoring functional error correction
 
@@ -657,7 +657,7 @@ Pathological states are projected onto the [phase diagram](/docs/core/dynamics/g
 5. **Differential diagnosis** reduces to comparing Gap-profiles in key channels
 6. **Comorbidity** = channel-by-channel superposition of Gap-patterns ($\max$), leading to multiplicative deterioration
 7. **Therapy** = targeted Gap-reduction in pathological channels; three modalities (talk, pharmacological, practice)
-8. **$\varepsilon_{\text{noise}} \approx 0.023$** — the functional 'detectability' threshold of a channel, derived from first principles [T]
+8. **$\varepsilon_{\text{noise}} \approx 0.027$** — the functional 'detectability' threshold of a channel; its form from first principles [T], its value [C at (SV)] (it read "$\approx 0.023$ … [T]" until 2026-09-25)
 9. **Bifurcations** determine entry/exit dynamics: saddle-node (crisis), pitchfork (dissociation), Hopf (bipolar disorder)
 
 :::tip Bridge to the next chapter

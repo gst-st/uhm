@@ -211,7 +211,7 @@ Each dimension lies on exactly 3 Fano lines, hence $\sum_{p=1}^{7} \Pi_p = 3I$.
 :::danger Retracted: Fano Gap Bound [✗]
 The original formulation ($\mathrm{Gap} \leq 1/2$ for **all** pairs) has been **refuted**: O-sector Fano pairs (6 of 21) have $\mathrm{Gap}(O,i) \approx 1 > 1/2$ — a direct counterexample.
 
-**Replacement**: sectoral Gap bound **[T]** (T-80): $\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.023$ for non-O pairs; $\mathrm{Gap}(O,i) \approx 1$ for O-pairs — [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница).
+**Replacement**: sectoral Gap bound **[T]** as a structure, its numbers [C at (SV)] (T-80): $\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.027$ for non-O pairs ($0.023$ until 2026-09-25, audit A-83); $\mathrm{Gap}(O,i) \approx 1$ for O-pairs — [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница).
 
 <details>
 <summary>Original formulation (historical)</summary>
@@ -235,7 +235,7 @@ where $[e_i, e_j, e_k] = (e_i \cdot e_j) \cdot e_k - e_i \cdot (e_j \cdot e_k)$ 
 :::
 
 :::info Correct predictions from the sectoral Gap bound [T] (T-80)
-**F1.** The average Gap for non-O coherences (15 pairs) is **strictly below** $\bar{\varepsilon} \approx 0.023$, while O-sector coherences (6 pairs) have $\mathrm{Gap}(O,i) \approx 1$.
+**F1.** The average Gap for non-O coherences (15 pairs) is **strictly below** $\bar{\varepsilon} \approx 0.027$ (under (SV)), while O-sector coherences (6 pairs) have $\mathrm{Gap}(O,i) \approx 1$.
 
 **F2.** Connections **within** each block (e.g., $A \leftrightarrow S \leftrightarrow D$) are more conscious (lower Gap) than O-sector connections. The sectoral structure replaces the former division into "intra-Fano" vs "between triplets".
 

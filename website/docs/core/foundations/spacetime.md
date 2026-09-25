@@ -618,6 +618,8 @@ The three dimensions $\{A, S, D\}$ generate $SU(3)_C$ gauge fields (gluons). The
 
 **Step 4. $\bar{\mathbf{3}}$-sector: compact internal dimensions — retracted [✗]** ($\{L,E,U\}$ is not the $\bar{\mathbf{3}}$).
 
+*Where the electroweak group comes from instead (2026-09-25):* not from three axes but from the Clifford system of $\mathbb C\otimes\mathbb O$ — $\mathrm{SU}(2)_L\times\mathrm{U}(1)_Y$ is the centraliser of colour in its $\mathrm{Spin}(9)$, and $G_{\mathrm{SM}}$ is the normaliser of colour ([T-326](/docs/physics/gauge-symmetry/standard-model#sm-из-клиффорда); [T] as mathematics, [C at (Cl)] in UHM). No compactification is involved, and the spacetime directions are those of [Theorem 48c](#теорема-48c).
+
 The three dimensions $\{L, E, U\}$ generate the electroweak sector $SU(2)_L \times U(1)_Y$. The [Higgs mechanism](/docs/physics/particle-physics/higgs-sector) ($\langle \gamma_{EU} \rangle \neq 0$) gives mass to $W^\pm, Z$-bosons:
 
 - $W, Z$ are **massive** → short range ($r \lesssim 1/M_W \sim 10^{-16}$ cm)

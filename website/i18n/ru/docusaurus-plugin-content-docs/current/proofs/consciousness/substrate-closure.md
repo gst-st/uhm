@@ -456,7 +456,7 @@ $$\|\delta\Gamma\|_F \leq \frac{2\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \k
 Формула $\|\delta\Gamma\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alpha + \kappa)$ —
 **точная параметрическая граница** [Т].
 
-Подстановка $\|H_{\mathrm{eff}}\|_{\mathrm{op}} = O(\bar{\varepsilon})$ с $\bar{\varepsilon} \approx 0.023$
+Подстановка $\|H_{\mathrm{eff}}\|_{\mathrm{op}} = O(\bar{\varepsilon})$ с $\bar{\varepsilon} \approx 0{,}027$ (среднеквадратичное по 15 не-O парам, [С при (СВ)]; до 2026-09-25 — $0{,}023$)
 (из [T-61 [Г]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (переформулирована; секторные значения — гипотеза (СВ)) для изолированного вакуума) даёт оценку $O(0.03)$.
 
 Для **воплощённого** голона: backbone injection, hedonic drive и learning gradient

@@ -90,6 +90,10 @@ D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_
 фиксированной цели зависит от старта — башня не определена; при μ > L_R + κ_max башня
 сжимается с q = κ_max/(μ − L_R) и сходится к одной самомодели от любого якоря).
 
+Одна — за хвостом Хиггса при (Кл) (25.09.2026): `no_higgs_doublet_in_the_clifford_frame`
+(на 𝒮 = ℂ⊗𝕆 𝔰𝔲(2)_L действует одними дублетами, так что всякий оператор на 𝒮 — и всякая
+когерентность Γ, в том числе γ_EU, — несёт целый спин; вектор Spin(9) — (3⊕3̄)_{±1/3} ⊕ (1,3)_0).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -2526,6 +2530,41 @@ def test_phi_tower_converges_only_under_backbone_dominance():
     star = seqs[0][-1]
     assert max(tn(star - s[-1]) for s in seqs) < 1e-10
     assert np.linalg.norm(gen(star, kap, mu, sig)(star)) < 1e-10 and gate(purity(star)) == 1.0
+
+
+def test_no_higgs_doublet_in_the_clifford_frame():
+    """Под (Кл) хиггсовского дублета нет ни в состоянии голонома, ни в векторе Spin(9).
+
+    𝔰𝔲(2)_L = [𝔲(2), 𝔲(2)] — производная централизатора цвета в 𝔰𝔭𝔦𝔫(9) (размерность 3).
+    На 𝒮 = ℂ⊗𝕆 ≅ ℝ¹⁶ случайный её элемент имеет собственные значения ±ic и только их —
+    одни дублеты, синглетов SU(2)_L в 𝒮 нет. Поэтому ad на End(𝒮) = 𝒮⊗𝒮* даёт лишь 0 и ±2ic
+    (2⊗2 = 1⊕3): у всякого оператора на 𝒮, в том числе у когерентности γ_EU, спин целый.
+    Вектор ℝ⁹ системы (iL_{e_k}, J, iJ): 𝔰𝔲(2)_L даёт 0 (семь раз) и ±2ic — триплет на
+    span{iL_{e_O}, J, iJ}; гиперзаряд — ±1/3 на шести цветных, 0 на трёх синглетах.
+    """
+    d = _sm_on_complex_octonions()
+    comm = [A @ B - B @ A for i, A in enumerate(d["C"]) for B in d["C"][i + 1:]]
+    U, s, _ = np.linalg.svd(np.array([X.flatten() for X in comm]).T, full_matrices=False)
+    r = int(np.sum(s > 1e-9))
+    assert r == 3
+    X = sum(w * U[:, i].reshape(16, 16) for i, w in enumerate(np.random.default_rng(0).normal(size=3)))
+    ev = np.linalg.eigvals(X)
+    c = np.max(np.abs(ev.imag))
+    assert np.max(np.abs(ev.real)) < 1e-12 and np.allclose(np.abs(ev.imag), c)
+    ad = np.abs((ev[:, None] - ev[None, :]).imag) / c
+    assert np.all((ad < 1e-8) | (np.abs(ad - 2) < 1e-8))
+    G = np.array([g.flatten() for g in d["gam"]]).T
+
+    def on_vector(Z):
+        M = np.zeros((9, 9))
+        for a, g in enumerate(d["gam"]):
+            v = (Z @ g - g @ Z).flatten()
+            coef = np.linalg.lstsq(G, v, rcond=None)[0]
+            assert np.linalg.norm(G @ coef - v) < 1e-9
+            M[:, a] = coef
+        return np.sort(np.abs(np.linalg.eigvals(M).imag))
+    assert np.allclose(on_vector(X) / c, [0] * 7 + [2, 2], atol=1e-8)
+    assert np.allclose(on_vector(d["Y"]), [0] * 3 + [1 / 3] * 6, atol=1e-8)
 
 
 def main():

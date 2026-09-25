@@ -279,10 +279,10 @@ All three Fano lines exist [T] (property of PG(2,2): each pair of points defines
 **Step 3 (Vacuum coherences).** Partners lie either in the $3$-sector ($D$) or in the $\bar{3}$-sector ($E$, $U$). Coherences partner–O from the self-consistent vacuum (T-61) [T]:
 
 $$
-|\gamma_{DO}| \approx \varepsilon_{O \to 3} \approx 0.023, \quad |\gamma_{EO}| \approx |\gamma_{UO}| \approx \varepsilon_{O \to \bar{3}} \approx 0.023
+|\gamma_{DO}| \approx \varepsilon_{O \to 3}, \quad |\gamma_{EO}| \approx |\gamma_{UO}| \approx \varepsilon_{O \to \bar{3}}
 $$
 
-From T-61: $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0 \approx 0.023$ (O-isotropy).
+O-isotropy: $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0$. Its value is not fixed: the $0.023$ taken here from T-61 until 2026-09-25 came from substituting $\varepsilon_O \approx 0.04$ against the table's $\varepsilon_O \sim 1$ (audit A-83), and the sector values of T-61 are the hypothesis (SV) [H]. The ratios below do not depend on $\varepsilon_0$.
 
 **Step 4 (Dirac masses).** The element $M_{O,\text{sector}}$ of the spectral triple gives:
 
@@ -293,15 +293,15 @@ $$
 At $\text{Gap}(O, k) \approx 1$ for all $k$ (O-sector nearly opaque):
 
 $$
-m_D^{(1)} \propto \varepsilon_0 \cdot \sin(2\pi/7) = 0.023 \times 0.782 = 0.0180
+m_D^{(1)} \propto \varepsilon_0 \cdot \sin(2\pi/7) = 0.782\,\varepsilon_0
 $$
 
 $$
-m_D^{(4)} \propto \varepsilon_0 \cdot |\sin(8\pi/7)| = 0.023 \times 0.434 = 0.0100
+m_D^{(4)} \propto \varepsilon_0 \cdot |\sin(8\pi/7)| = 0.434\,\varepsilon_0
 $$
 
 $$
-m_D^{(2)} \propto \varepsilon_0 \cdot \sin(4\pi/7) = 0.023 \times 0.975 = 0.0224
+m_D^{(2)} \propto \varepsilon_0 \cdot \sin(4\pi/7) = 0.975\,\varepsilon_0
 $$
 
 $\blacksquare$

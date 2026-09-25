@@ -119,7 +119,7 @@ $$
 \varepsilon^{\text{(RG)}} \sim \left(\frac{\lambda_3^{\text{(IR)}}}{\lambda_4^{\text{(IR)}}}\right)^{1/2} \cdot (\mu^2)^{1/2} \cdot \text{(geometric factor)}.
 $$
 
-Numerically: $\varepsilon^{\text{(RG)}} \in [10^{-2.5}, 10^{-1.5}]$, consistent with T-80 [T] ($\bar{\varepsilon} \approx 0.023 = 10^{-1.64}$). $\square$
+Numerically: $\varepsilon^{\text{(RG)}} \in [10^{-2.5}, 10^{-1.5}]$, consistent with T-80 ($\bar{\varepsilon} \approx 0.027 = 10^{-1.57}$, the root mean square over the 15 non-O pairs, [C at (SV)]; $0.023$ until 2026-09-25, audit A-83). $\square$
 
 **Step 4 (Budget sensitivity).**
 
@@ -140,7 +140,7 @@ Thus the **order of magnitude** of the budget $10^{-41.5}$ is **robust to variat
 **Status:** [T] (the range $\varepsilon \in [10^{-3}, 10^{-1}]$ and budget sensitivity $10^{-41.5 \pm 6}$). The specific value $\varepsilon = 10^{-2}$ — **representative** of the range, gives the central budget estimate.
 
 :::info Updated dependence on $\varepsilon$
-The budget $10^{-41.5}$ follows from the **range** $\varepsilon \in [10^{-3}, 10^{-1}]$, rationally derived from (A)–(D) [T]. **Now [T]** for the budget range $10^{-41.5 \pm 6}$. The central value $\varepsilon = 10^{-2}$ is consistent with T-80 [T] ($\bar{\varepsilon} \approx 0.023$); deviation by one order (up or down) gives a spread of $\pm 6$ orders in the budget.
+The budget $10^{-41.5}$ follows from the **range** $\varepsilon \in [10^{-3}, 10^{-1}]$, rationally derived from (A)–(D) [T]. **Now [T]** for the budget range $10^{-41.5 \pm 6}$. The central value $\varepsilon = 10^{-2}$ is consistent with T-80 ($\bar{\varepsilon} \approx 0.027$ under (SV)); deviation by one order (up or down) gives a spread of $\pm 6$ orders in the budget.
 :::
 
 :::tip Theorem 2.1 (Perturbative Λ budget) [T for range $\varepsilon \in [10^{-3}, 10^{-1}]$]
@@ -178,9 +178,9 @@ $$
 $$
 
 :::warning Status of parameter $\varepsilon$ [C at (SV)]
-The order of magnitude $\varepsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12, T-61 restated + T-64 [H] (restated; sector values: hypothesis (SV))): $\bar{\varepsilon} \approx 0.023$. Changing $\varepsilon$ by one order alters the budget by 12 orders. Taking $\varepsilon = 10^{-2}$, the computation is correct [T].
+The order of magnitude $\varepsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12, T-61 restated + T-64 [H] (restated; sector values: hypothesis (SV))): $\bar{\varepsilon} \approx 0.027$ (the root mean square over the 15 non-O pairs, [C at (SV)]; $0.023$ until 2026-09-25, audit A-83). Changing $\varepsilon$ by one order alters the budget by 12 orders. Taking $\varepsilon = 10^{-2}$, the computation is correct [T].
 
-However, it has been shown that the homogeneous vacuum is **not** an exact solution ([Theorem on the self-consistent vacuum equation](/docs/core/dynamics/gap-thermodynamics#теорема-самосогласованное-вакуумное-уравнение) [C]): the vacuum has a **sector structure** with different $\varepsilon$ in different sectors. The mean value $\bar{\varepsilon} \approx 0.023 \sim 10^{-1.6}$ follows from the sector hierarchy $\varepsilon$ ([Theorem 14.2](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε) [C]), which is consistent in order with the adopted $\varepsilon = 10^{-2}$ and justifies the $\varepsilon^6$ factor in mechanism 1.
+However, it has been shown that the homogeneous vacuum is **not** an exact solution ([Theorem on the self-consistent vacuum equation](/docs/core/dynamics/gap-thermodynamics#теорема-самосогласованное-вакуумное-уравнение) [C]): the vacuum has a **sector structure** with different $\varepsilon$ in different sectors. The mean value $\bar{\varepsilon} \approx 0.027 \sim 10^{-1.6}$ follows from the sector hierarchy $\varepsilon$ ([Theorem 14.2](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε) [C]), which is consistent in order with the adopted $\varepsilon = 10^{-2}$ and justifies the $\varepsilon^6$ factor in mechanism 1.
 :::
 
 ### 2.2 Mechanism 2: RG suppression $\lambda_3^2$ [T] {#механизм-2}
@@ -691,7 +691,7 @@ To close the 79-order deficit, the following directions are considered:
 | Notation | Meaning | Examples in this document |
 |-------------|----------|---------------------------|
 | **[T]** | Theorem — rigorously proven | Each of the 6 mechanisms at fixed $\varepsilon$, instanton additive, $Z_\Phi(-k)=0$, spectral formula $\Lambda_{\text{CC}}$, SUSY-breaking $\varepsilon^{12}$ |
-| **[C at (SV)]** | Conditional — order of magnitude structurally motivated | $\varepsilon = 10^{-2}$ (sector hierarchy $\bar{\varepsilon} \approx 0.023$) |
+| **[C at (SV)]** | Conditional — order of magnitude structurally motivated | $\varepsilon = 10^{-2}$ (sector hierarchy $\bar{\varepsilon} \approx 0.027$ under (SV); $0.023$ until 2026-09-25) |
 | **[Г*]** | High-level hypothesis | Physical interpretation of $Z'_\Phi(-2)$ |
 | **[D]** | Refuted | Gaussian sum ($\leq 9$ orders), modular hypothesis ($\leq 15$ orders) |
 | **[Pr]** | Program — research direction | 8 directions to close the deficit |

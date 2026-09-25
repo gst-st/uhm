@@ -365,7 +365,7 @@ Taking into account that the $V_3$-vertex carries a factor $\lambda_3 \sim 74$ (
 $$\epsilon_\text{eff} = \lambda_3 \cdot \epsilon / (4\pi) \approx 74 \times 0.01 / 12.6 \approx 0.059$$
 
 :::info Sectoral origin of $\varepsilon_\text{eff}$ [C]
-The parameter $\varepsilon_\text{eff} \sim 0.06$ is **not** the global average $\bar{\varepsilon} \approx 0.023$, but a sectoral average determined by the [sectoral coherence hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε). The homogeneous vacuum ($|\gamma_{ij}| = \varepsilon = \mathrm{const}$) is not an exact solution; the vacuum has a **sectoral structure** $7 = 1_O \oplus 3 \oplus \bar{3}$:
+The parameter $\varepsilon_\text{eff} \sim 0.06$ is **not** the non-O mean $\bar{\varepsilon} \approx 0.027$ (under (SV); $0.023$ until 2026-09-25), but a sectoral average determined by the [sectoral coherence hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε). The homogeneous vacuum ($|\gamma_{ij}| = \varepsilon = \mathrm{const}$) is not an exact solution; the vacuum has a **sectoral structure** $7 = 1_O \oplus 3 \oplus \bar{3}$:
 
 | Sector | Coherence | Scale |
 |--------|:---------:|:-----:|
@@ -374,7 +374,7 @@ The parameter $\varepsilon_\text{eff} \sim 0.06$ is **not** the global average $
 | $\mathbf{3}$-to-$\mathbf{3}$ | $\varepsilon_{33} \sim \varepsilon_{\text{space}}$ | Intermediate |
 | $\bar{\mathbf{3}}$-to-$\bar{\mathbf{3}}$ | $\varepsilon_{\bar{3}\bar{3}} \sim \varepsilon_{\text{EW}}$ | $v_{\text{EW}}$ |
 
-The Yukawa texture is determined by the **sectors coupling generations to the Higgs** (the $\bar{3}$-to-$\bar{3}$ sector for electroweak and $O$-to-all), not by the global $\bar{\varepsilon}$. The effective $\varepsilon_\text{eff} \sim 0.06$ arises as a weighted combination of sectoral coherences participating in the Fano paths to the Higgs, which structurally justifies why it exceeds $\bar{\varepsilon} \approx 0.023$.
+The Yukawa texture is determined by the **sectors coupling generations to the Higgs** (the $\bar{3}$-to-$\bar{3}$ sector for electroweak and $O$-to-all), not by the global $\bar{\varepsilon}$. The effective $\varepsilon_\text{eff} \sim 0.06$ arises as a weighted combination of sectoral coherences participating in the Fano paths to the Higgs, which structurally justifies why it exceeds $\bar{\varepsilon} \approx 0.027$ (root mean square over the 15 non-O pairs under (SV); $0.023$ until 2026-09-25, audit A-83).
 :::
 
 #### Status of Parameter $\lambda_3$ {#предупреждение-λ3}
@@ -507,7 +507,7 @@ Corrections from off-diagonal entries have the character of seesaw suppression: 
 | $e$ | 1 | 2 (S) | 2-loop ($3$-to-$3$) | $\sim$ MeV | 0.511 MeV |
 
 :::warning Order of magnitude, not exact predictions
-All values in the table are **order-of-magnitude estimates**, not exact predictions. The parameter $\epsilon_\text{eff} \approx 0.06$ is structurally justified as the sectoral average of coherences from the [sectoral $\varepsilon$ hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε) (rather than the global $\bar{\varepsilon} \approx 0.023$), but the exact numerical value depends on non-perturbative loop contributions. Exact predictions require lattice computation of $V_3$ loop contributions.
+All values in the table are **order-of-magnitude estimates**, not exact predictions. The parameter $\epsilon_\text{eff} \approx 0.06$ is structurally justified as the sectoral average of coherences from the [sectoral $\varepsilon$ hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε) (rather than the non-O mean $\bar{\varepsilon} \approx 0.027$), but the exact numerical value depends on non-perturbative loop contributions. Exact predictions require lattice computation of $V_3$ loop contributions.
 :::
 
 ### 7.2 Ratio $m_b/m_\tau$ [C]
@@ -635,7 +635,7 @@ What is established, therefore, splits in two. The **structural** expression abo
 
 $$\bar{\varepsilon} = \frac{1}{21}\left(3\varepsilon_{33}^* + 3\varepsilon_{\bar{3}\bar{3}}^* + 9\varepsilon_{3\bar{3}}^* + 6\varepsilon_{O}^*\right) \approx 0.023$$
 
-at $\varepsilon_{3\bar{3}}^* \approx 0$ (confinement) and $\varepsilon_{\bar{3}\bar{3}}^* \approx 10^{-17}$ (electroweak suppression).
+at $\varepsilon_{3\bar{3}}^* \approx 0$ (confinement) and $\varepsilon_{\bar{3}\bar{3}}^* \approx 10^{-17}$ (electroweak suppression). *Erratum 2026-09-25 (audit A-83):* with the table's own $\varepsilon_O \sim 1$ (T-80, $\mathrm{Gap}(O,i) \approx 1$) this weighted mean is $(3 \cdot 0.06 + 6)/21 \approx 0.29$; the value $0.023$ needs $\varepsilon_O \approx 0.04$. The global average over all 21 pairs is dominated by the six O-pairs and is not the suppression parameter. The corpus now uses the root mean square over the 15 non-O pairs, $\bar\varepsilon = \varepsilon_{33}/\sqrt5 \approx 0.027$ at $\varepsilon_{33} = 0.06$ — [C at (SV)], [sector hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε).
 
 $\blacksquare$
 

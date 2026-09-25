@@ -7,7 +7,7 @@ description: "Head-to-head predictions: what competitors predict at each live ex
 # Frontier Ledger: UHM vs the Field
 
 :::info Why this page
-A mature theory must compete where others already predict. UHM's structural prohibitions (T-296 no second doublet; T-297 no gauge $Z'$ and the FE-uniqueness without leptoquarks — both hypotheses [H] since 2026-09-25; $N_{gen}=3$) are not silence — at every live frontier they commit UHM to a *definite* prediction, usually the boldest one on the table. Where T-297 or the FE-uniqueness carries a row, the prediction is the stake of a hypothesis, not a consequence of a theorem (it was presented as a theorem until 2026-09-25): **exact Standard-Model emptiness** where competitors expect signals, and definite *positive* signals elsewhere (O-sector relic, axion, proton decay, Majorana $0\nu\beta\beta$). Each row is falsifiable; several have already been graded by experiment.
+A mature theory must compete where others already predict. UHM's structural prohibitions (T-296 no second doublet [H]; T-297 no gauge $Z'$, stratified by T-329 — none in the doublet sector [C at (Cl)], none at any energy [H]; the FE-uniqueness without leptoquarks — [H] in the axis picture, [C at (Cl)] through T-326; $N_{gen}=3$) are not silence — at every live frontier they commit UHM to a *definite* prediction, usually the boldest one on the table. Where T-297 or the FE-uniqueness carries a row, the prediction is the stake of a hypothesis, not a consequence of a theorem (it was presented as a theorem until 2026-09-25): **exact Standard-Model emptiness** where competitors expect signals, and definite *positive* signals elsewhere (O-sector relic, axion, proton decay, Majorana $0\nu\beta\beta$). Each row is falsifiable; several have already been graded by experiment.
 :::
 
 | # | Frontier | Competitors predict | **UHM predicts** | Status |
@@ -22,8 +22,8 @@ A mature theory must compete where others already predict. UHM's structural proh
 | 8 | Higgs self-coupling | SM exact; BSM: various | $\delta\lambda/\lambda \sim 10^{-2}$–$10^{-3}$ [C] — invisible to HL-LHC, resolvable at FCC | open |
 | 9 | Neutrino hierarchy | Both orderings on the market | **Normal** (from $m_2/m_3$ spectral ratio) | JUNO will grade this within years |
 | 10 | Light sterile neutrinos | LSND/MiniBooNE-class hints | **None exist** [T ← $N_{gen}=3$]: anomalies must dissolve | MicroBooNE already deflating ✓ open |
-| 11 | Dilepton resonances ($Z'$,$W'$) | GUT/string spectra | **Permanent null at any energy** [H] (T-297; a gauged $B-L$ near the seesaw scale would put a $Z'$ beyond any collider, so nulls do not test it) | LHC nulls ✓ open |
-| 12 | Charged Higgs $H^\pm$ | 2HDM/MSSM: within HL-LHC reach | **Does not exist** [T-296] | open (discovery falsifies UHM at $\kappa_0$) |
+| 11 | Dilepton resonances ($Z'$,$W'$) | GUT/string spectra | **Permanent null at any energy** [H] (T-297; a gauged $B-L$ near the seesaw scale would put a $Z'$ beyond any collider, so nulls do not test it). Stratified by T-329: no $Z'$ in the doublet sector [C at (Cl)]; none within collider reach if $B-L$ breaks at the seesaw scale | LHC nulls ✓ open |
+| 12 | Charged Higgs $H^\pm$ | 2HDM/MSSM: within HL-LHC reach | **Does not exist** [H ← T-296] (read [T-296] as a theorem until 2026-09-25) | open (discovery falsifies UHM at $\kappa_0$) |
 
 :::warning Experimental reach: what any of this can decide, and when
 The ledger's *content* is not exhausted by "falsifiable in principle". Set against the reach of funded and planned experiments, the twelve rows sort into three groups — and only the last is decidable soon.
