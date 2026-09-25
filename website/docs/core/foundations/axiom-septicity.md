@@ -1115,7 +1115,7 @@ Closing T15 yields $(AP)+(PH)+(QG)+(V) \Rightarrow \mathbb{O} \Rightarrow G_2 = 
 
 **Consequences:**
 - Kinematic orbit space $\mathcal{D}(\mathbb{C}^7)/G_2$: $\dim = 48 - 14 = 34$; physical state space $\mathcal{D}(\mathbb{C}^7)/\Gamma_{\!\text{oct}}$: 48 parameters (D-0910)
-- $P$, $R$ are $G_2$-invariant; $\Phi$, $\text{Coh}_E$, $\kappa$ are frame-pinned observables (invariant under $\Gamma_{\!\text{oct}}$)
+- $P$, $R$ are $G_2$-invariant; $\Phi$, $\text{Coh}_E$, $\kappa$ are frame-pinned observables: $\Phi$ is invariant under the whole $\Gamma_{\!\text{oct}}$, $\text{Coh}_E$ only under its $192$ elements that keep the $E$-axis, $\kappa$ only under the elements that keep the axes it references (the line read "invariant under $\Gamma_{\!\text{oct}}$" for all three until 2026-09-25)
 - Inverse problem: $\Gamma(0)$ recoverable from trajectory (Picard–Lindelöf on compact $\mathcal{D}(\mathbb{C}^7)$)
 :::
 

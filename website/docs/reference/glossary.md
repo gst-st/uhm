@@ -283,7 +283,7 @@ See [Structural derivation via octonions](/docs/proofs/minimality/theorem-octoni
 | **Track B** | Justification of N=7 via P1+P2 → $\mathbb{O}$ → $\dim(\mathrm{Im}(\mathbb{O})) = 7$ ([Structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation)) |
 
 :::tip Bridge [T] — fully closed (T15)
-Connection (AP)+(PH)+(QG)+(V) → P1+P2 — full chain of 12 steps (T1–T16), **all [T]** (T16/IDP reclassified [D] — definition built into A1+A2; computational results unaffected). Former condition (МП) proved by T11–T13. See [bridge](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
+Connection (AP)+(PH)+(QG)+(V) → P1+P2 — chain of 12 steps (T1–T16): the steps up to PG(2,2) are [T], the step to $\mathbb{O}$ needs the orientation input (Alt), so the chain is **[C at (Alt)]** (it read "all [T]" until 2026-09-25; T16/IDP reclassified [D] — definition built into A1+A2; computational results unaffected). Former condition (МП) proved by T11–T13. See [bridge](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
 :::
 
 ## Gap-Dynamics and Fano-Structure Terms

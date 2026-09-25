@@ -365,7 +365,7 @@ The diagonal projection (atomic observation) **does not commute** with $G_2$-tra
 ### 6.2 Fano dissipator: frame-group covariance {#fano-frame-covariance}
 
 :::tip Theorem 11.2 (Covariance group of the Fano dissipator) [T]
-Since $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$ (Fano–atomic proportionality), the Fano dissipator is covariant under the finite frame group $\Gamma_{\!\text{oct}}\cong PSL(2,7)\subset G_2$, **not** under the full continuous $G_2$:
+Since $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$ (Fano–atomic proportionality), the Fano dissipator is covariant under the finite frame group $\Gamma_{\!\text{oct}}\subset G_2$ — the signed permutations in $G_2$, order $1344 = 8\cdot168$, acting on the lines through $\mathrm{Aut}(PG(2,2))\cong PSL(2,7)$ (it read "$\Gamma_{\!\text{oct}}\cong PSL(2,7)$" until 2026-09-25, the group confused with its image) — **not** under the full continuous $G_2$:
 
 $$
 \forall g \in \Gamma_{\!\text{oct}}:\quad \mathcal{D}_{\text{Fano}}[g\Gamma g^\dagger] = g\,\mathcal{D}_{\text{Fano}}[\Gamma]\,g^\dagger.

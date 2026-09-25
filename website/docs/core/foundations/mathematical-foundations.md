@@ -901,7 +901,7 @@ graph TD
 | 7 **points** | 7 **columns** of the parity-check matrix $H$ | 7 **imaginary units** $e_1, \ldots, e_7$ |
 | 7 **lines** (point triples) | 7 **codewords** of weight 3 | 7 **associative triples** $(e_i, e_j, e_k)$ with $e_i e_j = e_k$ |
 | Point–line incidence | A 1 in column $H$ | Belonging to a multiplication triple |
-| $PSL(2,7)$, order 168 | Automorphism group of the code | Subgroup of $G_2$ |
+| $PSL(2,7)$, order 168 | Automorphism group of the code | Image on the axes of the frame group $\Gamma_{\!\text{oct}} \subset G_2$ (signed permutations, order $1344 = 8 \cdot 168$), not a subgroup of it (the cell read "Subgroup of $G_2$" until 2026-09-25) |
 
 Why not coincidence? All three rest on the same substrate: the **field of two elements** $\mathbb{F}_2$ and its projective geometry. The Fano plane is $\mathrm{PG}(2, \mathbb{F}_2)$. The Hamming code is a linear code over $\mathbb{F}_2$, the kernel of $H$ with binary entries. The octonion multiplication table is an orientation of the lines of $\mathrm{PG}(2, \mathbb{F}_2)$.
 

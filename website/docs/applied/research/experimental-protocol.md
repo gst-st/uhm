@@ -11,7 +11,7 @@ This document describes a **maximally complete experimental protocol** for the e
 :::
 
 :::info Related documents
-- [23 unique CC predictions](/docs/applied/coherence-cybernetics/predictions) — full list of predictions with formulas
+- [23 CC predictions, 22 of them unique](/docs/applied/coherence-cybernetics/predictions) — full list of predictions with formulas (it read "23 unique" until 2026-09-25: on collective consciousness IIT has a criterion too)
 - [Γ measurement protocol](/docs/applied/research/measurement-protocol) — operationalisation of π_bio for AI systems
 - [Falsifiability criteria](/docs/reference/falsifiability) — formal refutation conditions
 - [Status registry](/docs/reference/status-registry) — current epistemic status of all claims
@@ -23,7 +23,7 @@ This document describes a **maximally complete experimental protocol** for the e
 
 ### 1.1. The problem: empirical vacuum
 
-UHM is one of the most formally developed theories of consciousness: ~210 theorems, 23 numerical predictions, categorical foundation. But **not a single prediction has been experimentally verified**. A theory without empirics is philosophy, no matter how rigorous the mathematics.
+UHM is one of the most formally developed theories of consciousness: ~210 theorems, 23 predictions (21 of them unique and numerical), categorical foundation. But **not a single prediction has been experimentally verified**. A theory without empirics is philosophy, no matter how rigorous the mathematics.
 
 ### 1.2. Key observation: PCI* ≈ P_crit
 

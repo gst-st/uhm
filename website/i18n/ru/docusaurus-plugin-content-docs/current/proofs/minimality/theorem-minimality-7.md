@@ -1033,7 +1033,7 @@ $$
 Полная формальная цепочка из 12 шагов (T15) устанавливает:
 
 $$
-(AP)+(PH)+(QG)+(V) \xrightarrow{[\text{Т}]} N = 7 \xrightarrow{[\text{Т}]} \text{связность} \xrightarrow{[\text{Т}]} \lambda_{ij} \geq 1 \xrightarrow{[\text{Т}]} S_7\text{-равномерность} \xrightarrow{[\text{Т}]} k = 3 \xrightarrow{[\text{Т}]} \lambda = 1 \xrightarrow{[\text{Т}]} \text{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} P1+P2
+(AP)+(PH)+(QG)+(V) \xrightarrow{[\text{Т}]} N = 7 \xrightarrow{[\text{Т}]} \text{связность} \xrightarrow{[\text{Т}]} \lambda_{ij} \geq 1 \xrightarrow{[\text{Т}]} S_7\text{-равномерность} \xrightarrow{[\text{Т}]} k = 3 \xrightarrow{[\text{Т}]} \lambda = 1 \xrightarrow{[\text{Т}]} \text{PG}(2,2) \xrightarrow{\text{(Альт)}} \mathbb{O} \xrightarrow{[\text{Т}]} P1+P2
 $$
 
 **Текущий статус:** [С при (Альт)] — все шаги до $\lambda = 1$ и PG(2,2) являются теоремами; стрелка PG(2,2) → $\mathbb{O}$ в формуле выше требует входа ориентации (Альт). Условие (МП) — принцип минимального представления ($\lambda = 1$) — доказано через T11–T13. (Прежнее «[Т] — все шаги цепочки являются теоремами» отозвано [✗].)

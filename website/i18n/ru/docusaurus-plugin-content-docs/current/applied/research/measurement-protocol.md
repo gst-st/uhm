@@ -942,6 +942,8 @@ public fn pi_bio(
 
 **Gauge-фиксация:** (i) выровнять labelling к Fano-convention; (ii) привязать $|E\rangle$ к γ-high×θ PAC.
 
+$P$ и $R$ — $G_2$-инварианты; $\Phi$ и $\mathrm{Coh}_E$ закреплены репером: $\Phi$ инвариантна относительно $\Gamma_{\!\text{oct}}$, $\mathrm{Coh}_E$ — лишь относительно её $192$ элементов, сохраняющих ось $E$ (и непрерывного стабилизатора $G_2^{(E)} \cong SU(3)$); поэтому протокол фиксации репера входит в пакет репликации ([реперное решение D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).
+
 **R7. Валидация против PCI.**
 - Вычислить PCI субъекта на тех же TMS-EEG данных через алгоритм Massimini (Lempel–Ziv complexity значимых источников; reference implementation доступна через PCIst package).
 - Тест монотонной гипотезы $\Phi(\Gamma) \approx \alpha_\mathrm{PCI}\cdot \mathrm{PCI} + \beta_\mathrm{PCI}$ (Step 5 теорема).

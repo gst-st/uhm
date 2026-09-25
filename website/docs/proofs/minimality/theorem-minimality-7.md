@@ -1033,7 +1033,7 @@ Closure of the bridge (AP)+(PH)+(QG) ↔ P1+P2 — **[C at (Alt)]**: the chain T
 The complete formal chain of 12 steps (T15) establishes:
 
 $$
-(AP)+(PH)+(QG)+(V) \xrightarrow{[\text{Т}]} N = 7 \xrightarrow{[\text{Т}]} \text{connectivity} \xrightarrow{[\text{Т}]} \lambda_{ij} \geq 1 \xrightarrow{[\text{Т}]} S_7\text{-uniformity} \xrightarrow{[\text{Т}]} k = 3 \xrightarrow{[\text{Т}]} \lambda = 1 \xrightarrow{[\text{Т}]} \text{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} P1+P2
+(AP)+(PH)+(QG)+(V) \xrightarrow{[\text{T}]} N = 7 \xrightarrow{[\text{T}]} \text{connectivity} \xrightarrow{[\text{T}]} \lambda_{ij} \geq 1 \xrightarrow{[\text{T}]} S_7\text{-uniformity} \xrightarrow{[\text{T}]} k = 3 \xrightarrow{[\text{T}]} \lambda = 1 \xrightarrow{[\text{T}]} \text{PG}(2,2) \xrightarrow{\text{(Alt)}} \mathbb{O} \xrightarrow{[\text{T}]} P1+P2
 $$
 
 **Current status:** [C at (Alt)] — all steps up to $\lambda = 1$ and PG(2,2) are theorems; the arrow PG(2,2) → $\mathbb{O}$ in the display above needs the orientation input (Alt). Condition (МП) — the principle of minimal representation ($\lambda = 1$) — is proven via T11–T13. (The former "[T] — all steps in the chain are theorems" is retracted [✗].)
