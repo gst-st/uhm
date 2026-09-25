@@ -38,13 +38,17 @@ LOCALES = {
 
 # ХРАПОВИК: база расхождений на 10.09.2026 (после прохода согласования).
 BASE_R1 = {"en": 0, "ru": 0}
-BASE_R4 = {"en": 44, "ru": 49}
+# 44/49 → 43/48 (25.09.2026): кампания прецедентов назвала допущение у одной строки [C].
+BASE_R4 = {"en": 43, "ru": 48}
 # R5: у скольких номеров нет машиночитаемой канонической записи статуса.
 # Это и есть механизмический долг, названный аудитом 10.09.2026: пока он не нуль,
 # пропагация статусов держится на руках. Расти ему нельзя.
 BASE_DEBT = {"en": 30, "ru": 30}
 # R6: сколько теорем [T] опираются на более слабую опору, не унаследовав её статус.
-BASE_R6 = {"en": 0, "ru": 0}
+# 0 → 2 (25.09.2026) — не рост долга, а прозрение прибора: опоры читаются по реестру,
+# окно в 60 строк снято. Названы оба: T-120 [T] на T-118 [C] (emergent-manifold) и
+# теорема на T-190 [C] (fundamental-closures). Каскад идёт следующим коммитом; база — к 0.
+BASE_R6 = {"en": 2, "ru": 2}
 
 CYR2LAT = {"Т": "T", "С": "C", "Г": "H", "П": "P", "О": "D", "И": "I"}
 WEAKER_OK = {"✗"}   # ретракция — не «более слабая опора», а снятие
@@ -83,7 +87,10 @@ def status_letters(text):
         for extra in re.findall(r"/([" + STATUS_CHARS + r"])\]", second):
             out.add(norm(extra))
     return out
-CITE = re.compile(r"\b(T-\d+(?:\.\d+)?[a-z]?)\s*\*{0,2}\[([" + STATUS_CHARS + r"])\]")
+# Цитата бывает и ССЫЛКОЙ: «[T-119](/docs/…) [T]». Прежний образец требовал букву
+# сразу за номером и не видел ни одной цитаты-ссылки: три заголовка spacetime держали
+# «T-119 [T]» при реестре [C], и R1 молчал (аудит A-37, 25.09.2026).
+CITE = re.compile(r"\b(T-\d+(?:\.\d+)?[a-z]?)(?:\]\([^)\s]*\))?\*{0,2}\s*\*{0,2}\[([" + STATUS_CHARS + r"])\]")
 LEGEND = re.compile(r"^-\s*\*\*\[([" + STATUS_CHARS + r"])\]\*\*\s*[—-]?\s*(.{3,110})")
 
 # R3: формулировки, отозванные проходом согласования 10.09.2026.
@@ -284,13 +291,23 @@ WEAKER = {"C", "D", "H", "P", "I"}
 CARRIER = re.compile(r"^(?:#{2,6}\s|:::\w+\s|\*\*(?:Theorem|Теорема|Claim|Утверждение|Corollary|Следствие|Lemma|Лемма))")
 
 
-def check_r6(root):
+DEP_REF = re.compile(r"\b(T-\d+(?:\.\d+)?[a-z]?)\b")
+
+
+def check_r6(root, statuses, kinds):
     """[T] не смеет опираться на более слабую опору, не унаследовав её статус.
 
     Правило аудита 10.09.2026: метки [C]/[D]/[I]/[P] обязаны распространяться по
     зависимостям. Прибор читает строку «**Зависимости:** …», берёт статус
     ближайшего носителя выше (заголовок, врезка или жирная преамбула теоремы) и
     сверяет: если носитель объявлен [T], а среди опор есть слабее — это дефект.
+
+    Слабость опоры читается ДВАЖДЫ: по букве, написанной в самой строке, и по
+    РЕЕСТРУ (номер, у которого все живые статусы слабее [T]). Прежде прибор знал
+    только букву в строке и искал носителя не дальше 60 строк — и 25.09.2026 не
+    видел двух опор: T-120 [T] стоял на T-118 [C] (строка зависимостей в 90 строках
+    от шапки), теорема на T-190 [C] — в 95 строках. Теперь носитель ищется до
+    ближайшего заголовка без окна.
     """
     bad = []
     for f in sorted(root.rglob("*.md*")):
@@ -299,21 +316,26 @@ def check_r6(root):
             m = DEPS.match(line.strip())
             if not m:
                 continue
-            dep = {s for _, s in re.findall(r"(T-\d+[a-z′']?)\s*\**\[([" + STATUS_CHARS + r"])\]", m.group(1))}
+            dep = {s for _, s in re.findall(
+                r"(T-\d+[a-z′']?)\]?(?:\([^)\s]*\))?\s*\**\[([" + STATUS_CHARS + r"])\]", m.group(1))}
             dep = {norm(x) for x in dep}
             weak = (dep & WEAKER) - WEAKER_OK
+            for tid in set(DEP_REF.findall(m.group(1))):
+                st = statuses.get(tid)
+                if st and kinds.get(tid) == "explicit" and "T" not in st and (st & WEAKER):
+                    weak |= st & WEAKER
             if not weak:
                 continue
-            own = None
-            for j in range(i - 1, max(-1, i - 60), -1):
+            own, carrier = None, None
+            for j in range(i - 1, -1, -1):
                 if CARRIER.match(lines[j]):
                     letters = status_letters(lines[j])
                     if letters:
-                        own = letters
+                        own, carrier = letters, lines[j]
                         break
                     if lines[j].startswith("#"):
                         break
-            if own == {"T"} and not CONDITIONED.search(lines[j]):
+            if own == {"T"} and not CONDITIONED.search(carrier):
                 bad.append((f, i + 1, sorted(weak), sorted(dep)))
     return bad
 
@@ -341,7 +363,7 @@ def main():
         r2 = check_r2(root)
         r3 = check_r3(root, loc)
         r4 = check_r4(root)
-        r6 = check_r6(root)
+        r6 = check_r6(root, statuses, kinds)
         tally = {k: sum(1 for v in kinds.values() if v == k)
                  for k in ("explicit", "collision", "companion", "implied", "absent")}
         debt = tally["collision"] + tally["implied"] + tally["absent"]
