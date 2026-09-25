@@ -74,7 +74,7 @@ The category $\mathbf{PhysTheory}$ of physical theories $(E, \mathcal A_\mathrm{
 **Proof (four-step).**
 
 **Step 1 (Object assignment).** Every object $(E, \mathcal A, D, \alpha, \beta) \in \mathbf{PhysTheory}$ determines a unique $\infty$-topos $E[\mathcal A] := \mathbf{Sh}_\infty(\mathrm{Spec}(\mathcal A), J_\mathrm{Bures})$ via:
-- (i) Connes reconstruction (T-119 [C]) — with axioms (i)–(iv) and (vi) argued, Poincaré duality and the first-order condition open (see [emergent-manifold.md §5](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство); an earlier line read "now with all six axioms verified", retracted).
+- (i) Connes reconstruction (T-119; [C] until 2026-09-25 with Poincaré duality and the first-order condition open, [T] since its restatement, which computes the spectrum $S^3$ so that all seven conditions hold for its Dirac triple) (see [emergent-manifold.md §5](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство); an earlier line read "now with all six axioms verified", retracted).
 - (ii) Lemma 2 of T-174 — $E[\mathcal A_\mathrm{int}] \simeq \mathbf{Sh}_\infty(\mathcal D(\mathbb C^7))$ via Morita equivalence of bimodule categories (Alvarez–Gracia-Bondía–Martín 1995; the second support, T-178, is retracted [✗] as a derivation since 2026-09-25, so (ii) rests on Lemma 2 of T-174 alone).
 
 **Step 2 (Morphism functoriality).** A receiving morphism $(E_1, \ldots) \to (E_2, \ldots)$ in $\mathbf{PhysTheory}$ consists of $(f^*, \alpha, \beta)$ (geometric morphism + intertwiner + covariance) satisfying the coherence diagrams of T-174. By the adjoint-functor theorem (Lurie HTT 5.5.2.9), any such datum induces a unique geometric morphism $E_1[\mathcal A_1] \to E_2[\mathcal A_2]$ in $\mathbf{Topoi}_\infty$. The assignment is **functorial** since composition of receiving morphisms matches composition of geometric morphisms.
@@ -91,7 +91,7 @@ HTT 5.2.7 ("presentable coherence inheritance") applies once $\iota: \mathbf{Phy
 
 **Size issue resolution.** $\mathbf{PhysTheory}$ is a **large** $(\infty,1)$-category (objects form a proper class because the finite NCG algebras $\mathcal A$ range over a proper class of Wedderburn forms), consistent with $\mathbf{Topoi}_\infty$'s size. The "essential uniqueness" of T-174 is unique **up to natural isomorphism** in $\mathbf{PhysTheory}$, equivalently up to equivalence in $\mathbf{Topoi}_\infty$. $\blacksquare$
 
-**Dependencies**: T-119 [C] (Connes reconstruction — the weakest link, and the reason this theorem is [C at T-119]: status is inherited from the weakest dependency), T-173 [T] (rigidity), T-174 [T] (universal property), T-178 (bimodule equivalence; retracted [✗] as a derivation 2026-09-25, no longer used), Lurie HTT 5.5.2.9 + 6.3.1.16 + 5.2.7.
+**Dependencies**: T-119 (Connes reconstruction — the weakest link, and the reason this theorem is [C at T-119]: status is inherited from the weakest dependency; T-119 is [T] as mathematics since its restatement of 2026-09-25, and whether T-211 rises with it awaits a recheck of Step 1), T-173 [T] (rigidity), T-174 [T] (universal property), T-178 (bimodule equivalence; retracted [✗] as a derivation 2026-09-25, no longer used), Lurie HTT 5.5.2.9 + 6.3.1.16 + 5.2.7.
 
 **Upgrade**: T-174's universal property is now **rigorously established** with full coherence verification.
 
@@ -440,14 +440,14 @@ Predicted thresholds:
 | §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
 | §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete, awaiting data** | EEG/fMRI/HRV 7-feature map |
 
-**Total (after extensions)**: of the ten theorems T-210–T-219, seven stand as [T] (T-210, T-212 in the corrected form T-212′ — its former identification with Rh is retracted — T-213, T-214, T-215 with a definitional part, T-217, T-218), two are [C] (T-211, T-216) and one is [H] (T-219); plus 2 computational-programme specifications. *Corrected 2026-09-25:* the line read "10 new [T] theorems … All mathematical and categorical gaps of UHM's foundational framework are closed at fundamental level"; the second sentence is retracted — the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the first-order condition and Poincaré duality of T-119 (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120, T-121, T-211 and clause (iii) of T-221 rest.
+**Total (after extensions)**: of the ten theorems T-210–T-219, seven stand as [T] (T-210, T-212 in the corrected form T-212′ — its former identification with Rh is retracted — T-213, T-214, T-215 with a definitional part, T-217, T-218), two are [C] (T-211, T-216) and one is [H] (T-219); plus 2 computational-programme specifications. *Corrected 2026-09-25:* the line read "10 new [T] theorems … All mathematical and categorical gaps of UHM's foundational framework are closed at fundamental level"; the second sentence is retracted — the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stayed open until 2026-09-25 — the first-order condition and Poincaré duality of T-119, settled that day by the restatement of T-119, which computes the spatial spectrum (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120, T-121, T-211 and clause (iii) of T-221 rested (T-120 and T-121 are [T] since; T-211 and clause (iii) of T-221 keep their marks until their proofs are rechecked).
 
 **Remaining genuinely open**:
 - Numerical computation of Λ (§8) — resource-bounded, no theoretical obstacle.
 - Empirical calibration of π<sub>bio</sub> (§9) — experimental programme, no theoretical obstacle.
 - The [P] bridge from E-sector structure to experienced content — **structurally inevitable** (T-214 [T]), not a lacuna.
 
-~~**No mathematical gaps remain** in UHM's foundational framework after these closures.~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the first-order condition and Poincaré duality of T-119 (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120, T-121, T-211 and clause (iii) of T-221 rest.
+~~**No mathematical gaps remain** in UHM's foundational framework after these closures.~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stayed open until 2026-09-25 — the first-order condition and Poincaré duality of T-119, settled that day by the restatement of T-119, which computes the spatial spectrum (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120, T-121, T-211 and clause (iii) of T-221 rested (T-120 and T-121 are [T] since; T-211 and clause (iii) of T-221 keep their marks until their proofs are rechecked).
 
 ---
 
@@ -792,7 +792,7 @@ Let $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{C}_7, J_{\mathrm{Bures}}, \omega
 
 (ii) **NS is conventional (T-215)**: the identity criterion $\iota \in \{\iota_\mathrm{min}, \iota_\mathrm{max}\}$ determines whether a fractal SYNARC tower counts as many agents ($\iota_\mathrm{min}$: NS holds per level) or one compound ($\iota_\mathrm{max}$: NS collapses at the tower level). Both are consistent with $\Omega^7$.
 
-(iii) **OW is derived, not postulated** [C at T-120 — the open reconstruction axioms of T-119]: T-120 (Emergent Manifold) assembles $M^4 = \mathbb R \times \Sigma^3$, which then follows uniquely (up to $G_2 \times \mathbb R_{>0}$ by T-173) from the spectral triple $(\mathcal A_\mathrm{int}, \mathcal H, D)$. The world-object is $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ in the Gelfand–Naimark–Connes sense.
+(iii) **OW is derived, not postulated** [C at T-120 — T-120 is [T] as mathematics since 2026-09-25; the rise of (iii) awaits a recheck]: T-120 (Emergent Manifold) assembles $M^4 = \mathbb R \times \Sigma^3$, which then follows uniquely (up to $G_2 \times \mathbb R_{>0}$ by T-173) from the spectral triple $(\mathcal A_\mathrm{int}, \mathcal H, D)$. The world-object is $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ in the Gelfand–Naimark–Connes sense.
 
 (iv) **NF holds structurally**: $\mathfrak{T}$ is an $\infty$-topos of sheaves on a small site (Lurie HTT 6.2.2.7; registry row T-76), so descent is a defining property of every object — not an a posteriori audit.
 
@@ -816,7 +816,7 @@ is jointly consistent with the predictions of quantum mechanics in UHM. **Loc** 
 
 **Part (ii)** is T-215 [T]+[D] restated.
 
-**Part (iii)** [C at T-120] combines T-117 through T-121 (emergent spatial and temporal manifold; T-118 is [T], T-119–T-121 are [C]) with T-173 ($G_2 \times \mathbb R_{>0}$ rigidity of the primitive): the spectral triple recovers $M^4$ uniquely up to this gauge group, so $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ is determined modulo equivalence.
+**Part (iii)** [C at T-120] combines T-117 through T-121 (emergent spatial and temporal manifold; T-117–T-121 are [T] as mathematics since 2026-09-25) with T-173 ($G_2 \times \mathbb R_{>0}$ rigidity of the primitive): the spectral triple recovers $M^4$ uniquely up to this gauge group, so $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ is determined modulo equivalence.
 
 **Part (iv)**: $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal C_7, J_{\mathrm{Bures}})$ is an $\infty$-topos of sheaves on a small site (Lurie HTT 6.2.2.7; $\mathcal C_7$ is essentially small, Part (v)), hence satisfies the Giraud axioms, hence descent. (An earlier version of this proof derived it from T-211 [T]; T-211 is [C at T-119] and is not needed here.)
 
@@ -854,7 +854,7 @@ Each alternative is a **reductive truncation** of $\mathfrak{T}$; UHM's categori
 
 Pred 1–23 (see [Predictions](/docs/applied/coherence-cybernetics/predictions)) provide the falsifiable content.
 
-**Dependencies**: T-120 [C] (emergent manifold; part (iii)), T-173 [T] ($G_2$-rigidity), T-186 [H] (Cohesive Closure; part (i)), T-211 [C] (PhysTheory coherences, at T-119; ambient only — part (iv) rests on HTT 6.2.2.7), T-215 [T]+[D] (cross-layer identity), T-217 [T] (tricategorical coherence limits reflexive regress to SAD ≤ 3).
+**Dependencies**: T-120 [T] (emergent manifold; part (iii)), T-173 [T] ($G_2$-rigidity), T-186 [H] (Cohesive Closure; part (i)), T-211 [C] (PhysTheory coherences, at T-119; ambient only — part (iv) rests on HTT 6.2.2.7), T-215 [T]+[D] (cross-layer identity), T-217 [T] (tricategorical coherence limits reflexive regress to SAD ≤ 3).
 
 **External references**: List (2025); DeBrota and List (2026); Rovelli (1996, 2025); Fine (2005); Lipman (2023); Glick (2021); Mermin (2019).
 
@@ -1146,7 +1146,7 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 
 **Total after all closures**: of the fourteen theorems T-210–T-223, ten stand as [T] (T-215 with a definitional part, T-212 in the corrected form T-212′), T-221 is stratified into [T], [C] and [I] parts, two are [C] (T-211, T-216) and one is [H] (T-219); plus 3 explicit clarifications and 2 computational-programme specifications (the line read "14 new [T] theorems" until 2026-09-25).
 
-~~**No open mathematical or categorical gaps remain in UHM's foundational framework.**~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the first-order condition and Poincaré duality of T-119 (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120, T-121, T-211 and clause (iii) of T-221 rest. T-221 answers the List/DeBrota *external* critique (its clause (iii) conditional on T-120); T-222 answers the QRT-completeness external critique; T-223 answers the Lerchner Melody-Paradox / Putnam-triviality external critique — the three principal recent external critiques (quantum-metaphysics no-go, resource-theoretic completeness, computational-functionalist triviality) each receive a structured answer; the earlier phrasing "closes … UHM is now closed against all three" is withdrawn with the sentence above.
+~~**No open mathematical or categorical gaps remain in UHM's foundational framework.**~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stayed open until 2026-09-25 — the first-order condition and Poincaré duality of T-119, settled that day by the restatement of T-119, which computes the spatial spectrum (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120, T-121, T-211 and clause (iii) of T-221 rested (T-120 and T-121 are [T] since; T-211 and clause (iii) of T-221 keep their marks until their proofs are rechecked). T-221 answers the List/DeBrota *external* critique (its clause (iii) conditional on T-120); T-222 answers the QRT-completeness external critique; T-223 answers the Lerchner Melody-Paradox / Putnam-triviality external critique — the three principal recent external critiques (quantum-metaphysics no-go, resource-theoretic completeness, computational-functionalist triviality) each receive a structured answer; the earlier phrasing "closes … UHM is now closed against all three" is withdrawn with the sentence above.
 
 **Strictly remaining** (all explicitly non-mathematical):
 - Numerical computation of Λ (§8) — bounded HPC task

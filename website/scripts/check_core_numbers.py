@@ -94,6 +94,14 @@ D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_
 (на 𝒮 = ℂ⊗𝕆 𝔰𝔲(2)_L действует одними дублетами, так что всякий оператор на 𝒮 — и всякая
 когерентность Γ, в том числе γ_EU, — несёт целый спин; вектор Spin(9) — (3⊕3̄)_{±1/3} ⊕ (1,3)_0).
 
+Четыре — за теоремой 48d и переформулировкой T-119 (25.09.2026):
+`no_unital_spin_factor_on_any_holon_register` (единичного спин-фактора нет на ℂ^{7^M}; G₂-коммутант
+пары абелев, лапласиан регистра глубины с простым спектром), `colour_singlet_part_of_the_exceptional_jordan_algebra_is_hermitian_c3`
+(J₃(𝕆)^{SU(3)} = Herm(ℂ³), пирсово пространство E₁ даёт h₂(ℂ_O) сигнатуры (1,3)),
+`spatial_triplet_of_48c_is_the_weak_triplet` (в одной Spin(9) у цвета один централизатор 𝔲(2)) и
+`emergent_space_is_the_octahedron_and_its_fluctuations_the_three_sphere` (средние — октаэдр ≅ B³,
+флуктуации — ℝ³, минимальная унитизация — S³; цвет-синглетные координаты дают лишь 2).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -2565,6 +2573,197 @@ def test_no_higgs_doublet_in_the_clifford_frame():
         return np.sort(np.abs(np.linalg.eigvals(M).imag))
     assert np.allclose(on_vector(X) / c, [0] * 7 + [2, 2], atol=1e-8)
     assert np.allclose(on_vector(d["Y"]), [0] * 3 + [1 / 3] * 6, atol=1e-8)
+
+
+# --- Теорема 48d и перестройка T-119 … T-121 (25.09.2026) ------------------------------------
+
+def _j3_of_o():
+    """J₃(𝕆): X = [[a₁, x₃, x̄₂], [x̄₃, a₂, x₁], [x₂, x̄₁, a₃]], координаты (a₁,a₂,a₃, x₁, x₂, x₃) ∈ ℝ²⁷."""
+    def to_m(v):
+        a, x = v[:3], [v[3:11], v[11:19], v[19:27]]
+        r = lambda s: s * unit(0)
+        return [[r(a[0]), x[2], _oconj(x[1])], [_oconj(x[2]), r(a[1]), x[0]], [x[1], _oconj(x[0]), r(a[2])]]
+
+    def from_m(P):
+        return np.concatenate([[P[0][0][0], P[1][1][0], P[2][2][0]], P[1][2], P[2][0], P[0][1]])
+
+    def mul(P, Q):
+        return [[sum(omul(P[i][k], Q[k][j]) for k in range(3)) for j in range(3)] for i in range(3)]
+
+    def jordan(u, v):
+        P, Q = to_m(u), to_m(v)
+        A, B = mul(P, Q), mul(Q, P)
+        return from_m([[(A[i][j] + B[i][j]) / 2 for j in range(3)] for i in range(3)])
+
+    def lift(X7):
+        Y = np.zeros((27, 27))
+        for s in range(3):
+            Y[4 + 8 * s:11 + 8 * s, 4 + 8 * s:11 + 8 * s] = X7
+        return Y
+    return jordan, lift
+
+
+def test_no_unital_spin_factor_on_any_holon_register():
+    """Теорема 48d(a)–(b): «двойка» (Q1) не живёт ни в голономах, ни в их регистрах.
+
+    (a) Эрмитова инволюция s₁ на ℂ^d с собственными подпространствами размерностей p, q; всякий
+    антикоммутирующий с ней эрмитов оператор переставляет их и имеет ранг ≤ 2·min(p, q) < d при
+    нечётном d — двух антикоммутирующих обратимых инволюций, т. е. единичного спин-фактора, нет
+    ни на ℂ⁷, ни на ℂ⁴⁹, ни на ℂ^{7^M}. (b) G₂-коммутант пары ℂ⁷⊗ℂ⁷ четырёхмерен и абелев
+    (7⊗7 = 1+7+14+27 без кратностей: четыре значения Казимира на подпространствах 1, 7, 14, 27);
+    цвет-синглетов в паре ровно 3, G₂-синглет один. Лапласиан пути регистра глубины имеет простой спектр — его коммутант абелев.
+    """
+    rng = np.random.default_rng(481)
+    for d in (7, 49):
+        for p in range(1, d):
+            s = np.diag([1.0] * p + [-1.0] * (d - p))
+            X = np.zeros((d, d), complex)
+            B = rng.normal(size=(p, d - p)) + 1j * rng.normal(size=(p, d - p))
+            X[:p, p:], X[p:, :p] = B, B.conj().T
+            assert np.allclose(s @ X + X @ s, 0) and np.linalg.matrix_rank(X) == 2 * min(p, d - p) < d
+    su3 = _su3_of_e_o()
+    pair = lambda gens: [np.kron(g, np.eye(7)) + np.kron(np.eye(7), g) for g in gens]
+    g2p, su3p = pair(G2), pair(su3)
+    Q = np.array([[np.trace(a @ b) for b in G2] for a in G2])                   # форма Киллинга (с точностью до знака)
+    Qi = np.linalg.inv(Q)
+    cas = sum(Qi[a, b] * g2p[a] @ g2p[b] for a in range(14) for b in range(14))
+    vals = np.round(np.linalg.eigvalsh((cas + cas.T) / 2), 6)
+    u, cnt = np.unique(vals, return_counts=True)
+    assert sorted(cnt) == [1, 7, 14, 27]                                          # без кратностей: коммутант ℂ⁴, абелев
+    assert _nullspace(np.vstack(su3p)).shape[0] == 3 and _nullspace(np.vstack(g2p)).shape[0] == 1
+    for n in (7, 49, 343):
+        L = np.diag([1.0] + [2.0] * (n - 2) + [1.0]) - np.eye(n, k=1) - np.eye(n, k=-1)
+        assert np.min(np.diff(np.linalg.eigvalsh(L))) > 1e-5
+
+
+def test_colour_singlet_part_of_the_exceptional_jordan_algebra_is_hermitian_c3():
+    """Теорема 48d(c): J₃(𝕆)^{SU(3)_C} = h₃(ℂ_O) ≅ Herm(ℂ³), J₃(𝕆)^{G₂} = h₃(ℝ).
+
+    Неподвижная часть 27-мерной J₃(𝕆) под 𝔰𝔲(3)_C девятимерна и замкнута относительно
+    йорданова произведения; под 𝔤₂ — шестимерна. Пирсово 0-пространство идемпотента E₁ —
+    h₂(𝕆) (размерность 10), его цвет-неподвижная часть четырёхмерна и несёт форму det
+    сигнатуры (1,3): пространство-время 48c.
+    """
+    jordan, lift = _j3_of_o()
+    su3 = [lift(X) for X in _su3_of_e_o()]
+    g2 = [lift(X) for X in G2]
+    Fc, Fg = _nullspace(np.vstack(su3)), _nullspace(np.vstack(g2))
+    assert (Fc.shape[0], Fg.shape[0]) == (9, 6)
+    for u in Fc:
+        for v in Fc:
+            w = jordan(u, v)
+            assert np.linalg.norm(w - Fc.T @ (Fc @ w)) < 1e-9
+    E1 = np.zeros(27)
+    E1[0] = 1
+    assert np.allclose(jordan(E1, E1), E1)
+    L = np.array([jordan(E1, np.eye(27)[k]) for k in range(27)]).T
+    P0 = _nullspace(L)
+    assert P0.shape[0] == 10
+    both = _nullspace(np.vstack([L, np.vstack(su3)]))
+    assert both.shape[0] == 4
+    # det на h₂ = a₂a₃ − |x₁|²: координаты 1, 2 и 3…10
+    Gm = np.zeros((27, 27))
+    Gm[1, 2] = Gm[2, 1] = 0.5
+    Gm[3:11, 3:11] = -np.eye(8)
+    ev = np.linalg.eigvalsh(both @ Gm @ both.T)
+    assert (np.sum(ev > 1e-9), np.sum(ev < -1e-9)) == (1, 3)
+
+
+def test_spatial_triplet_of_48c_is_the_weak_triplet():
+    """Теорема 48d(d): в одной Spin(9) у цвета один централизатор 𝔲(2) — пространство 48c и SU(2)_L T-326 совпадают.
+
+    Цвет-неподвижная часть вектора ℝ⁹ системы Клиффорда на 𝒮 = ℂ⊗𝕆 трёхмерна — span{iL_{e_O}, J, iJ};
+    производная централизатора цвета (единственная 𝔰𝔲(2)) действует на ней неприводимо, как 𝔰𝔬(3).
+    Та же тройка в h₂(𝕆) — {e_Oσ_y, σ_z, σ_x}, те же вращения — пространственные вращения 48c(e).
+    Отождествить 𝕆² из 48c(f) с 𝒮 значит сделать слабый изоспин пространственным вращением.
+    """
+    d = _sm_on_complex_octonions()
+    gam, su3 = d["gam"], d["su3"]
+    G = np.array([g.flatten() for g in gam]).T
+
+    def on_vector(Z):
+        M = np.zeros((9, 9))
+        for a, g in enumerate(gam):
+            v = (Z @ g - g @ Z).flatten()
+            coef = np.linalg.lstsq(G, v, rcond=None)[0]
+            assert np.linalg.norm(G @ coef - v) < 1e-9
+            M[:, a] = coef
+        return M
+    fixed = _nullspace(np.vstack([on_vector(X) for X in su3]))
+    assert fixed.shape[0] == 3
+    target = np.zeros((3, 9))
+    target[0, 6], target[1, 7], target[2, 8] = 1, 1, 1                          # iL_{e_O}, J, iJ
+    assert np.linalg.matrix_rank(np.vstack([fixed, target]), tol=1e-9) == 3
+    comm = [A @ B - B @ A for i, A in enumerate(d["C"]) for B in d["C"][i + 1:]]
+    U, s, _ = np.linalg.svd(np.array([X.flatten() for X in comm]).T, full_matrices=False)
+    su2 = [U[:, i].reshape(16, 16) for i in range(int(np.sum(s > 1e-9)))]
+    assert len(su2) == 3
+    R = [target @ on_vector(X) @ target.T for X in su2]
+    assert np.linalg.matrix_rank(np.array([r.flatten() for r in R]), tol=1e-9) == 3
+    assert _nullspace(np.vstack(R)).shape[0] == 0                               # неприводимо: общих неподвижных нет
+
+
+def _clock_torus_weights():
+    """Совместные собственные значения максимального тора U(3) = C_{SO(7)}(J)∩Stab(e_O) на ℂ⁷."""
+    su3 = _su3_of_e_o()
+    rng = np.random.default_rng(119)
+    X = sum(c * g for c, g in zip(rng.normal(size=8), su3))
+    cart = [sum(v[k] * su3[k] for k in range(8)) for v in _nullspace(np.array([(X @ g - g @ X).ravel() for g in su3]).T)]
+    J = np.array([omul(unit(7), unit(i + 1))[1:] for i in range(7)]).T
+    J[6, :], J[:, 6] = 0, 0
+    H = [1j * c for c in cart] + [1j * J]
+    _, V = np.linalg.eigh(sum(r * h for r, h in zip((1, np.pi, np.e), H)))
+    return H, np.array([[np.real(V[:, k].conj() @ h @ V[:, k]) for h in H] for k in range(7)])
+
+
+def test_emergent_space_is_the_octahedron_and_its_fluctuations_the_three_sphere():
+    """T-119 в верной форме: пространство — спектр трёх коммутирующих вращательных зарядов.
+
+    Три генератора (два картановских 𝔰𝔲(3)_C и J = L_{e_O}) коммутируют; совместный спектр на ℂ⁷ —
+    начало (ось O) и три антиподальные пары линейно независимых точек: октаэдр ≅ B³ (ранг 𝔰𝔬(7) = 3).
+    Средние по M голономам имеют спектр (1/M)·{n ∈ ℤ³ : |n|₁ ≤ M} в весовых координатах — он
+    сгущается к октаэдру (всякая точка октаэдра не дальше √3/(2M) от спектра). Флуктуации
+    (n − Mμ)/√M при μ внутри октаэдра покрывают всякий шар радиуса R с шагом 1/√M: спектр — ℝ³,
+    ковариация в состоянии I/7 невырождена. Минимальная унитизация C₀(ℝ³) — C(S³).
+    (d) Эрмитовых операторов, коммутирующих с 𝔰𝔲(3)_C, — ровно 3 (P_O, P_𝟑, P_𝟑̄): цвет-синглетные
+    координаты дают два измерения, не три.
+    """
+    H, pts = _clock_torus_weights()
+    assert all(np.allclose(a @ b, b @ a) for a in H for b in H)
+    nz = pts[np.linalg.norm(pts, axis=1) > 1e-9]
+    assert len(nz) == 6 and np.linalg.matrix_rank(nz, tol=1e-9) == 3
+    assert all(min(np.linalg.norm(p + q) for q in nz) < 1e-9 for p in nz)
+    B = np.array([nz[0], *[p for p in nz[1:] if np.linalg.matrix_rank(np.array([nz[0], p]), tol=1e-9) == 2][:1]])
+    B = np.vstack([B, [p for p in nz if np.linalg.matrix_rank(np.vstack([B, p]), tol=1e-9) == 3][0]])
+    w = np.linalg.solve(B.T, nz.T).T                                              # весовые координаты
+    assert np.allclose(np.sort(np.abs(w).sum(axis=1)), 1) and np.allclose(np.abs(w).max(axis=1), 1)
+    for M in (10, 40):
+        g = np.array(list(itertools.product(range(-M, M + 1), repeat=3)))
+        spec = g[np.abs(g).sum(axis=1) <= M] / M
+        probe = np.random.default_rng(M).uniform(-1, 1, size=(300, 3))
+        probe = probe[np.abs(probe).sum(axis=1) <= 1]
+        dist = np.min(np.linalg.norm(probe[:, None, :] - spec[None, :, :], axis=2), axis=1)
+        assert dist.max() <= np.sqrt(3) / (2 * M) + 1e-12
+    mu = np.array([0.1, -0.05, 0.2])                                              # внутри октаэдра
+    R, M = 3.0, 10 ** 6
+    probe = np.random.default_rng(7).uniform(-R, R, size=(200, 3))
+    n = np.rint(probe * np.sqrt(M) + M * mu)
+    assert np.all(np.abs(n).sum(axis=1) <= M)
+    assert np.max(np.linalg.norm((n - M * mu) / np.sqrt(M) - probe, axis=1)) <= np.sqrt(3) / (2 * np.sqrt(M)) + 1e-12
+    Cov = np.array([[np.trace(a @ b).real / 7 for b in H] for a in H])
+    assert np.all(np.linalg.eigvalsh(Cov) > 0.1)
+    herm = []                                                                     # (d): цвет-синглетных зарядов — 3 (с единицей)
+    for i in range(7):
+        for j in range(i, 7):
+            E = np.zeros((7, 7), complex)
+            E[i, j] = E[j, i] = 1
+            herm.append(E)
+            if i != j:
+                F = np.zeros((7, 7), complex)
+                F[i, j], F[j, i] = 1j, -1j
+                herm.append(F)
+    rows = np.vstack([np.array([(S @ X - X @ S).ravel() for S in herm]).T for X in _su3_of_e_o()])
+    assert _nullspace(np.vstack([rows.real, rows.imag])).shape[0] == 3
 
 
 def main():

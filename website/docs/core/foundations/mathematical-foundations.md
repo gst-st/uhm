@@ -749,7 +749,7 @@ $$
 
 **For the curious reader.** Turn it around: take the matrix algebra $M_2(\mathbb{C})$ (all $2 \times 2$ complex matrices). It is **noncommutative**: $AB \neq BA$ in general. Ask: “what space does it correspond to?” Gelfand’s answer: **none**—the theorem fails for noncommutative algebras. That is the crux: the quantum world is noncommutative, and ordinary geometry does not apply. To “see geometry” in noncommutative algebras took Connes.
 
-**Without Gelfand–Naimark** in the UHM: spacetime could not be derived from an algebra. $M^4$ would have to be **postulated**—as in the Standard Model and GR. A postulate is a degree of freedom, an arbitrary choice. In the UHM $M^4$ is not a postulate but a **conditional theorem**: T-120 [C], at the open reconstruction axioms of T-119 (an earlier version read "a theorem: T-120 [T]"; corrected 2026-09-25).
+**Without Gelfand–Naimark** in the UHM: spacetime could not be derived from an algebra. $M^4$ would have to be **postulated**—as in the Standard Model and GR. A postulate is a degree of freedom, an arbitrary choice. In the UHM $M^4$ is not a postulate but a **theorem of mathematics**: T-120 [T] (restated T-119, 2026-09-25; on the same day it had read "a conditional theorem: T-120 [C]", and before that "a theorem: T-120 [T]").
 
 Gelfand–Naimark works for **commutative** algebras—when $AB = BA$ for all observables. But quantum mechanics is intrinsically noncommutative: $\hat{x}\hat{p} \neq \hat{p}\hat{x}$. What then? We need geometry that works without commutativity. Connes built it.
 
@@ -811,11 +811,11 @@ The two approaches are not rivals but **complements**. Lurie’s topoi live in t
 
 1. **T-117 [T]**—Commutativity of the macroscopic algebra. For many copies ($n \to \infty$) the algebra of collective observables becomes commutative (a quantum central limit theorem). This opens the door to Gelfand’s theorem.
 2. **T-118 [T]**—Temporal manifold. The time algebra is $C_0(\mathbb{R})$ as the scaling limit of the reading algebras of the depth register — the O-registers of $M$ holons read positionally, $7^M$ ordered readings without a period ([emergent manifold, §4](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-время); [emergent time, §11.4](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)). The summed O-clock does not supply it: it keeps the period $2\pi/\omega_0$. (Earlier [T] from $N_{\text{eff}} = 7^M$ readings of the summed clock, retracted; then [C] at an aperiodic clock; [T] again since 2026-09-25 with the depth register.)
-3. **T-119 [C]**—Spatial manifold. The algebra of the remaining dimensions is isomorphic to $C(\Sigma^3)$ (Gelfand + Connes’s reconstruction theorem). Spectral data recover a compact three-manifold $\Sigma^3$.
-4. **T-120 [C]**—Product. The full spectral triple gives $M^4 = \mathbb{R} \times \Sigma^3$—four-dimensional spacetime—under the conditions of T-119. (Earlier [T]; lowered 2026-09-25, since a product is no stronger than its factors.)
-5. **T-121 [C]**—Lovelock completion: dynamics on $M^4$ satisfy Einstein’s equations (up to a cosmological constant), as far as $M^4$ is smooth, i.e. at T-120.
+3. **T-119 [T]**—Spatial manifold. Restated 2026-09-25: the joint spectrum of three commuting rotation charges of the holon is computed — their macroscopic fluctuations fill $\mathbb R^3$, and the minimal unitization gives $C(S^3)$ (Gelfand–Naimark); Connes’s conditions then hold for the Dirac triple of $S^3$. Two of the charges are colour Cartan generators, so reading $S^3$ as physical space is [I]. (It read [C], with the reconstruction axioms open.)
+4. **T-120 [T]**—Product. The full spectral triple gives $M^4 = \mathbb{R} \times \Sigma^3$—four-dimensional spacetime—with $\Sigma^3=S^3$. (Earlier [T]; lowered to [C] on 2026-09-25, since a product is no stronger than its factors; [T] again after the restatement of T-119 the same day.)
+5. **T-121 [T]**—Lovelock completion: dynamics on $M^4$ satisfy Einstein’s equations (up to a cosmological constant), on the smooth $M^4=\mathbb R\times S^3$ of T-120.
 
-Bottom line: 4D spacetime is **assembled**, not assumed — under two named conditions, an aperiodic clock and the two reconstruction axioms that T-119 leaves open. The question “why do we live in four dimensions?”—which neither the Standard Model nor general relativity answers (they take $M^4$ as given)—gets a constructive but conditional answer. Four-dimensionality follows from commutativity of the macroscopic algebra (quantum CLT at $N=7$), the rank count $1 + 3$ of T-119 — whose reading of the colour triplet as three spatial directions is [I] and meets the Coleman–Mandula obstacle — and Connes’s reconstruction theorem. (An earlier version called this “one of the UHM’s strongest results” and the derivation unconditional; retracted with the status of T-120.) For a different $N$, spacetime dimension could differ. Details: [Emergent manifold](/docs/proofs/physics/emergent-manifold), [Spacetime](./spacetime).
+Bottom line: 4D spacetime is **assembled**, not assumed — as mathematics without open conditions since 2026-09-25: the aperiodic clock is the depth register, and T-119 computes the spatial spectrum instead of reconstructing it (earlier the same day: two named conditions, an aperiodic clock and two open reconstruction axioms of T-119). The question “why do we live in four dimensions?”—which neither the Standard Model nor general relativity answers (they take $M^4$ as given)—gets a constructive answer; its physical reading is [I]. Four-dimensionality follows from commutativity of the macroscopic algebra (quantum CLT at $N=7$), the rank count $1 + 3$ of T-119 — whose reading of the colour triplet as three spatial directions is [I] and meets the Coleman–Mandula obstacle — and the computed spectrum $S^3$ of T-119. (An earlier version called this “one of the UHM’s strongest results” and the derivation unconditional; retracted with the status of T-120.) For a different $N$, spacetime dimension could differ. Details: [Emergent manifold](/docs/proofs/physics/emergent-manifold), [Spacetime](./spacetime).
 
 ---
 
@@ -1007,8 +1007,8 @@ Could this convergence have been foreseen? In hindsight—yes: all three lines s
 | Internal time | Page, Wootters | 1983 | $\tau$ from correlations with $O$ | A5 | [T] |
 | Canonical selection of Bures (Petz-minimal) | Čencov, Petz | 1978, 1996 | $J_{Bures}$ canonical (Petz-robust) | A2 | [T] |
 | Geometric phase | Berry | 1984 | Topological Gap protection | [Gap dynamics](../dynamics/gap-dynamics) | [T] |
-| $C^*$-algebra $\cong$ space | Gelfand, Naimark | 1943 | Emergence of $M^4$ | T-118, T-119 | [T] for T-118 (depth register); [C] for T-119 (open reconstruction axioms) |
-| Spectral triples, action | Connes, Chamseddine | 1990–96 | $M^4$, SM Lagrangian | T-53, T-65, T-120 | [T] (T-53, T-65); [C] (T-120); the SM finite space is imported from Connes (row T-178) |
+| $C^*$-algebra $\cong$ space | Gelfand, Naimark | 1943 | Emergence of $M^4$ | T-118, T-119 | [T] for T-118 (depth register); [T] for T-119 (spectrum computed, restated 2026-09-25) |
+| Spectral triples, action | Connes, Chamseddine | 1990–96 | $M^4$, SM Lagrangian | T-53, T-65, T-120 | [T] (T-53, T-65); [T] (T-120, since 2026-09-25); the SM finite space is imported from Connes (row T-178) |
 | Code $H(7,4)$ | Hamming | 1950 | 4+3 structure, self-correction | [Minimality](/docs/proofs/minimality/theorem-octonionic-derivation) | [T] |
 | Information theory | Shannon | 1948 | PID, learning bound | T-109 | [T] |
 | Symmetry $\to$ conservation | Noether | 1918 | 14 $G_2$ charges | [Noether charges](/docs/physics/gauge-symmetry/noether-charges) | [T] |
@@ -1075,13 +1075,13 @@ Mathematical honesty requires stating what **is** in the foundations—and what 
 
 **The UHM does not use:**
 - **String theory.** No extra (compactified) dimensions, no supersymmetry as input, no landscape of vacua. The UHM’s seven dimensions are seven “semantic” directions in $\mathcal{D}(\mathbb{C}^7)$, not spatial ones.
-- **Loop quantum gravity.** No spin networks, no Planck-scale spatial discreteness as a postulate. Spacetime $M^4$ is a **consequence** (T-120 [C], at the open reconstruction axioms of T-119), not an input.
+- **Loop quantum gravity.** No spin networks, no Planck-scale spatial discreteness as a postulate. Spacetime $M^4$ is a **consequence** (T-120 [T] as mathematics (restated T-119, 2026-09-25)), not an input.
 - **A concrete model of quantum gravity.** Gravity comes from Connes’s spectral action (T-65 [T]), not from quantizing the metric.
 - **A neurobiological substrate.** The theory is substrate-independent (T-153): $\Gamma$ may be realized in neural nets, silicon, or any physical system satisfying the axioms.
 
 **The UHM does not assume:**
 - A specific Hamiltonian $H$—the Hamiltonian is **derived** from structure
-- A fixed spacetime dimension—$M^4$ is assembled (T-120 [C]: the open reconstruction axioms of T-119)
+- A fixed spacetime dimension—$M^4$ is assembled (T-120 [T] as mathematics (restated T-119, 2026-09-25))
 - A fixed gauge group—$G_2$ follows from $\mathrm{Aut}(\mathbb{O})$
 - A specific neurobiological mechanism—the theory operates at the level of information architecture, not neurons
 - Classical vs. quantum nature of the substrate—it suffices that the substrate implements $\Gamma \in \mathcal{D}(\mathbb{C}^7)$
