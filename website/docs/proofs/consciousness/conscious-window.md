@@ -84,9 +84,11 @@ All $\sigma$-conditions ($\sigma_k < 1$) are satisfied **without any perturbatio
 
 Von Neumann entropy: $S_{vN} = -\frac{1+6\lambda}{7}\ln\frac{1+6\lambda}{7} - \frac{6(1-\lambda)}{7}\ln\frac{1-\lambda}{7}$.
 
-At $\lambda = 1/\sqrt{6} \approx 0.408$: eigenvalues $\approx 0.572$ (×1) and $\approx 0.085$ (×6), $S_{vN} \approx 1.55$, $D_{\mathrm{diff}} = e^{S_{vN}} \approx 4.7 \geq 2$. The minimum over $\lambda$ on the interval is reached at $\lambda \to 1/\sqrt{3}$: both types of eigenvalues approach $\approx 1/7$, $S_{vN} \to \ln 7 \approx 1.95$, $D_{\mathrm{diff}} \to 7 \geq 2$. The condition $D_{\mathrm{diff}} \geq 2$ holds over the entire interval.
+At $\lambda = 1/\sqrt{6} \approx 0.408$: eigenvalues $\approx 0.493$ (×1) and $\approx 0.085$ (×6), $S_{vN} \approx 1.60$, $D_{\mathrm{diff}} = e^{S_{vN}} \approx 4.96$. $S_{vN}$ decreases in $\lambda$ (the top eigenvalue grows), so the minimum over the interval is at $\lambda = 1/\sqrt{3}$: eigenvalues $\approx 0.638$ and $\approx 0.060$, $S_{vN} \approx 1.30$, $D_{\mathrm{diff}} \approx 3.68 \geq 2$. The condition $D_{\mathrm{diff}} \geq 2$ holds over the entire interval. (*Corrected 2026-09-25:* the step printed the top eigenvalue at $\lambda = 1/\sqrt6$ as $0.572$ and put the minimum at $\lambda \to 1/\sqrt3$ with both eigenvalues tending to $1/7$ and $D_{\mathrm{diff}} \to 7$; the conclusion was right, the numbers were not.)
 
 **Therefore**, $\Gamma_\lambda \in \mathcal{V}_{\mathrm{full}}$ for any $\lambda \in (1/\sqrt{6}, 1/\sqrt{3}]$, and the set is non-empty. $\blacksquare$
+
+**The witness is an attractor** [T]. With the collineation-anchored self-model $\varphi_J(\Gamma) = k\mathcal{P}_\alpha(\Gamma) + R\,|\psi\rangle\langle\psi|$ — the anchor is this same $|\psi\rangle$ — an isolated holon at $H = 0$ and $\kappa > \kappa_c(\alpha)$ ($16.63$ at $\alpha = 0$, $29.25$ at $\alpha = 1/2$) has exactly one living attractor, and it is $\Gamma_\lambda$ with $\lambda \in (0.42, 1/2)$: a hyperbolic sink inside $\mathcal{V}_{\mathrm{full}}$, persisting for small $H$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне)). Whether a physical holon's self-model is $\varphi_J$ is not fixed by the axioms [Pr] ([φ operator](/docs/core/operators/phi-operator#phi-j)).
 
 :::info Numerical verification of the conscious window (SYNARC)
 Attractor of the embodied agent: $P = 0.4286 \approx 3/7$ — at the upper boundary of the
@@ -404,7 +406,7 @@ The upper bound $P \leq 3/7$ follows **directly** from the definition $R = 1/(7P
 
 ### Status [T] (for embodied holons)
 
-C20 is unconditional for embodied holons (T-149 [T]). For isolated holons C20 remains [C].
+C20 is unconditional for embodied holons (T-149 [T]). For isolated holons C20 is a property of the self-model: with the canonical $\varphi_{\mathrm{coh}}$ it fails ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция) [T]); with the collineation anchor $\varphi_J$ and $\kappa > \kappa_c(\alpha)$ it holds, and the attractor lies in $\mathcal{V}_{\mathrm{full}}$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне) [T]); which self-model a physical holon has is [Pr]. (Until 2026-09-25: "for isolated holons C20 remains [C]".)
 
 ### Explicitly NOT proven
 
