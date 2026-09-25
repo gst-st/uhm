@@ -373,7 +373,9 @@ On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{
 | $\{E, U, A\}$ = $\{5, 6, 1\}$ | Interiority + Unity + Articulation | **Higgs line**: $A$ is the only element of sector **3** on this line, a bridge between the spatial and electroweak sectors |
 | $\{O, A, D\}$ = $\{7, 1, 3\}$ | Ground + Articulation + Dynamics | **Genetic line**: from the ground, through distinction, motion is born — "time through distinction" |
 
-:::tip Uniqueness of A on the Fano plane (T-177) [T]
+:::tip Uniqueness of A on the Fano plane (T-177, restated) [T]
+*Restated 2026-09-25: $A$ is the third point of the line through the $\kappa_0$ pair $E$, $U$, hence fixed by incidence once $\{E,U\}$ is given (T-177 restated). The sector reading below — "the only dimension from sector 3 on the Higgs line", "bridge between the spatial and electroweak sectors" — is withdrawn [✗] with T-48a: no axis lies in the **3**. Earlier text:*
+
 Articulation is the **only** dimension from sector **3** lying on the Higgs line $\{E, U, A\}$. This makes $A$ a bridge between the spatial sector $\{A, S, D\}$ and the electroweak sector $\{E, O, U\}$.
 
 This property is precisely what explains why the [tree-level Yukawa coupling](../../physics/gauge-symmetry/fano-selection-rules) exists only for the third generation of fermions ($k = 1$, dimension $A$): only $A$ is simultaneously connected to the Higgs dimensions $E$ and $U$.
@@ -396,7 +398,7 @@ graph TD
 ### Octonionic context {#октонионный-контекст}
 
 :::note Octonionic correspondence [T]
-The dimension corresponds to $e_1 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $A = e_1$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+The dimension corresponds to $e_1 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); the combinatorial and functional uniqueness of each role claimed by [T-177](/docs/reference/status-registry) and [T-183](/docs/reference/status-registry) is retracted [✗] (2026-09-25): it rested on the axis sectors of T-48a. Restated (T-177, T-183): given $O$ and the $\kappa_0$ pair $\{E,U\}$, incidence fixes $A$ and $D$ [T], and one binary convention [D] fixes $E$ versus $U$ together with $L$ versus $S$. The specific assignment $A = e_1$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ## Gradations of articulation {#градации-артикуляции}

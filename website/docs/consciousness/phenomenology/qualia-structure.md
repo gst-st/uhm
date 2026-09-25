@@ -145,7 +145,7 @@ This is an **interpretation** (a mapping from the formal to the phenomenal), not
 ### Complete table of 21 qualia types {#полная-таблица-21-типа-квалиа}
 
 :::warning Epistemic separation
-**Mathematical layer [T]:** 21 coherences $\gamma_{ij}$ form 4 sectors according to Fano structure (T-146 [T]). Each coherence is uniquely determined by its combinatorial profile (T-177 [T]).
+**Mathematical layer [T]:** 21 coherences $\gamma_{ij}$ form 4 sectors according to Fano structure (T-146 [T]). That each coherence is uniquely determined by its combinatorial profile (T-177) is retracted [✗] on 2026-09-25: it rested on the axis sectors of T-48a; restated, incidence fixes the axes $O$, $A$, $D$ once $O$ and the $\kappa_0$ pair $\{E,U\}$ are given, and one binary convention does the rest.
 
 **Semantic layer [I]:** Phenomenological names ("morphogenesis", "archetype", "teleology", etc.) are interpretive correlates [I], proposed on the basis of the functional roles of dimension pairs. Mathematics determines $\gamma_{ij}$ unambiguously; the interpretation of "what it is like to experience $\gamma_{AS}$" is philosophical, not mathematical.
 :::

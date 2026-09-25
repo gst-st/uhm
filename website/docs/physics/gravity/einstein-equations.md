@@ -470,7 +470,7 @@ $$
 ### 6.1 Beta Functions with Fano Combinatorics
 
 :::note Parameter $\lambda_3$ [T]
-The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively through the self-consistent vacuum $\theta^*$ (T-79 [T]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$). For details see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
+The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively through the self-consistent vacuum $\theta^*$ (T-79 [C at (SV)]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$). For details see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
 :::
 
 #### Theorem T-184 [T]: Non-perturbative extractability {#непертурбативная-извлекаемость}
@@ -511,7 +511,7 @@ $$a_2^{\mathrm{Lor}} = -a_2^{\mathrm{Eucl}} \quad \Rightarrow \quad S_{\mathrm{E
 
 yields the **correct sign** for gravitational attraction (ref.: van Suijlekom 2015, Ch. 12; Franco–Eckstein 2014). $\square_3$
 
-**Corollary.** The problem $\lambda_3 \approx 74 \gg 4\pi$ is fully resolved: it is not a perturbative coupling but a geometric spectral parameter. All UHM predictions (fermion masses T-180 [T], cosmological constant, gauge couplings) are determined by the spectrum of $D_{\mathrm{int}}$ — a finite operator on a compact space — and require no loop expansion. $\blacksquare$
+**Corollary.** The problem $\lambda_3 \approx 74 \gg 4\pi$ is fully resolved: it is not a perturbative coupling but a geometric spectral parameter. All UHM predictions (fermion masses T-180 [C at (SV)], cosmological constant, gauge couplings) are determined by the spectrum of $D_{\mathrm{int}}$ — a finite operator on a compact space — and require no loop expansion. $\blacksquare$
 
 :::tip Theorem 4.1 (Two-loop beta functions) [T]
 :::

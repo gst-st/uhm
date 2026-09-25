@@ -593,7 +593,7 @@ Y = \begin{pmatrix} 0 & A & 0 \\ A^* & 0 & B \\ 0 & B^* & C \end{pmatrix}
 $$
 with $A \sim \varepsilon^3$, $B \sim \varepsilon^2$, $C \sim 1$ (top Yukawa).
 
-The emergent Fritzsch texture is a **prediction** of UHM, not an input. The numerical values $A, B, C$ are determined by the sector hierarchy parameter $\varepsilon$ (T-64 [T]) and not by fitting.
+The emergent Fritzsch texture is a **prediction** of UHM, not an input. The numerical values $A, B, C$ are determined by the sector hierarchy parameter $\varepsilon$ (T-64 [H] (restated; sector values: hypothesis (SV))) and not by fitting.
 
 ### 9.5. Comparison with external audit criticism
 
@@ -602,7 +602,7 @@ An external audit raised the concern: "derivation of CKM substitutes observed qu
 **Response**: 
 - In UHM, Fritzsch texture **emerges** from $G_2$-invariance + Fano selection rules, independently of observed masses.
 - The numerical values of $V_{cb}$, $V_{us}$, etc., follow from the single parameter $\varepsilon \approx 10^{-3}$ of T-64 + $C_\text{norm}$ normalisation.
-- $\varepsilon$ is **derived** from $V_\mathrm{Gap}$ minimisation (a computational task [T at T-64]), not fitted from observed quark masses.
+- $\varepsilon$ is **derived** from $V_\mathrm{Gap}$ minimisation (a computational task [C at (SV)]), not fitted from observed quark masses.
 - If UHM predicts $\varepsilon$ independently, then CKM predictions are genuinely derived.
 - Current open point: the normalisation factor $C_\mathrm{norm} \approx 26$ is currently tuned (see §8.7), which **does** represent a residual phenomenological input. This is the **one genuine input** in current CKM derivation; closing this gap requires deriving $C_\mathrm{norm}$ from first principles.
 

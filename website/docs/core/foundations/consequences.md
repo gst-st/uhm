@@ -1182,9 +1182,11 @@ When $I > 0$, the whole carries **information missing from the parts**—the for
 
 ## Spectral self-closure {#спектральное-самозамыкание}
 
-#### Theorem (UHM self-closure) [T] {#теорема-самозамыкание}
+#### Theorem (UHM self-closure) [C at (SV)] {#теорема-самозамыкание}
 
-:::tip Theorem (Spectral self-closure) [T]
+*Corrected 2026-09-25 from [T] (T-79): step 4 takes a unique minimum of $V_{\text{Gap}}$ from T-64, which is restated as a hypothesis (unique only up to the symmetries of $V_{\text{Gap}}$, numerically), and the orbit space $(S^1)^{21}/G_2$ is not defined as stated because $V_3$ is not $G_2$-invariant; the unique fixed point is conditional on the sector-vacuum hypothesis (SV).*
+
+:::tip Theorem (Spectral self-closure) [C at (SV)]
 The axiom system A1–A5 fixes a unique self-consistent dynamics: the stationary state of the Lindbladian agrees with the minimum of the potential derived from the spectral triple of that state.
 :::
 
@@ -1197,11 +1199,11 @@ $$
 1. $\theta \mapsto \Gamma(\theta)$: stationary state $\rho_*$ of Lindbladian $\mathcal{L}_\Omega$ with Gap configuration $\theta$ (T-39a [T] gives primitivity of the linear part $\mathcal{L}_0$ and uniqueness of $I/7$ for it; uniqueness of the nontrivial attractor $\rho_*$ of full $\mathcal{L}_\Omega$ from T-96 [T]; smooth dependence on $\theta$ from analyticity of $\mathcal{L}_0$).
 2. $\Gamma \mapsto D_{\mathrm{int}}(\Gamma)$: Dirac operator from the [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) ([T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T]).
 3. $D_{\mathrm{int}} \mapsto V_{\mathrm{Gap}}$: [spectral action](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) [T].
-4. $V_{\mathrm{Gap}} \mapsto \theta_{\mathrm{vac}}$: unique potential minimum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]).
+4. $V_{\mathrm{Gap}} \mapsto \theta_{\mathrm{vac}}$: unique potential minimum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [H] (restated; sector values: hypothesis (SV))).
 
-**Fixed point existence.** Brouwer's theorem requires a compact **convex** domain (equivalently, a closed ball); the orbit space $(S^1)^{21}/G_2$ is a torus quotient, **not** convex (a rotation of $S^1$ has no fixed point), so Brouwer does not apply to it directly. Instead, $G_2$-orbital reduction (T-64 [T]) expresses $V_{\mathrm{Gap}}$ through the **5 sector parameters** $\vec\varepsilon=(\varepsilon_{O3},\varepsilon_{O\bar3},\varepsilon_{33},\varepsilon_{\bar3\bar3},\varepsilon_{3\bar3})\in[0,1]^5$, a compact **convex box**. The composite $\mathcal F$ restricts to a continuous self-map $\mathcal F:[0,1]^5\to[0,1]^5$ (each step preserves the physical parameter ranges), and **Brouwer's theorem** applied to the convex box $[0,1]^5$ gives a fixed point $\vec\varepsilon^*$, equivalently $\theta^*$.
+**Fixed point existence.** Brouwer's theorem requires a compact **convex** domain (equivalently, a closed ball); the orbit space $(S^1)^{21}/G_2$ is a torus quotient, **not** convex (a rotation of $S^1$ has no fixed point), so Brouwer does not apply to it directly. Instead, $G_2$-orbital reduction (T-64 [H] (restated; sector values: hypothesis (SV))) expresses $V_{\mathrm{Gap}}$ through the **5 sector parameters** $\vec\varepsilon=(\varepsilon_{O3},\varepsilon_{O\bar3},\varepsilon_{33},\varepsilon_{\bar3\bar3},\varepsilon_{3\bar3})\in[0,1]^5$, a compact **convex box**. The composite $\mathcal F$ restricts to a continuous self-map $\mathcal F:[0,1]^5\to[0,1]^5$ (each step preserves the physical parameter ranges), and **Brouwer's theorem** applied to the convex box $[0,1]^5$ gives a fixed point $\vec\varepsilon^*$, equivalently $\theta^*$.
 
-**Uniqueness.** The attractor $\rho_*$ of full $\mathcal{L}_\Omega$ is unique (T-96 [T]; T-39a [T] gives uniqueness of $I/7$ for $\mathcal{L}_0$). The minimum of $V_{\mathrm{Gap}}$ is unique (T-64 [T]). If $\theta_1^* \neq \theta_2^*$ but $\rho_*(\theta_1^*) = \rho_*(\theta_2^*)$ then $D_{\mathrm{int}}(\theta_1^*) = D_{\mathrm{int}}(\theta_2^*)$ then $V_{\mathrm{Gap}}(\theta_1^*) = V_{\mathrm{Gap}}(\theta_2^*)$ then $\theta_1^* = \theta_2^*$. Contradiction. $\blacksquare$
+**Uniqueness.** The attractor $\rho_*$ of full $\mathcal{L}_\Omega$ is unique (T-96 [T]; T-39a [T] gives uniqueness of $I/7$ for $\mathcal{L}_0$). The minimum of $V_{\mathrm{Gap}}$ is unique (T-64 [H] (restated; sector values: hypothesis (SV))). If $\theta_1^* \neq \theta_2^*$ but $\rho_*(\theta_1^*) = \rho_*(\theta_2^*)$ then $D_{\mathrm{int}}(\theta_1^*) = D_{\mathrm{int}}(\theta_2^*)$ then $V_{\mathrm{Gap}}(\theta_1^*) = V_{\mathrm{Gap}}(\theta_2^*)$ then $\theta_1^* = \theta_2^*$. Contradiction. $\blacksquare$
 
 :::info Physical meaning [I]
 Spectral self-closure means: **the theory fixes its own dynamics**. The potential $V_{\mathrm{Gap}}$ governing coherence dynamics is produced by a spectral triple that is itself fixed by the stationary state of that dynamics. This realizes autopoiesis (A1) at the level of the theory itself. The fixed point $\theta^*$ is a **categorical attractor** in the [$\infty$-topos](/docs/proofs/categorical/categorical-formalism) [T].

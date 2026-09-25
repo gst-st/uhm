@@ -16,7 +16,7 @@ This chapter answers the question: **does opacity (Gap) obey the laws of thermod
 :::tip Intuitive explanation
 Imagine a **stained-glass window** in a cathedral. Each glass pane can be transparent (Gap $= 0$) or fully opaque (Gap $= 1$), with any intermediate value.
 
-**Gap thermodynamics** answers the question: **which window configuration is energetically "cheaper"?** It turns out the system tends toward a specific transparency pattern — the **Gap vacuum** — just as water flows to the lowest point of a landscape. This vacuum is unique ([T-61 [T]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум)), and it is determined by the balance of three forces: the drive toward transparency (entropy), the drive toward order (coherence), and the arrow of time (octonionic associator).
+**Gap thermodynamics** answers the question: **which window configuration is energetically "cheaper"?** It turns out the system tends toward a specific transparency pattern — the **Gap vacuum** — just as water flows to the lowest point of a landscape. It is unique only up to the symmetries of the potential, and that only numerically ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум), restated as a hypothesis on 2026-09-25, §14); the sector structure once claimed for it is withdrawn [✗]. The vacuum is determined by the balance of three forces: the drive toward transparency (entropy), the drive toward order (coherence), and the arrow of time (octonionic associator).
 
 The effective temperature $T_{\text{eff}}$ shows how "hot" the system is: at high temperature all panes of the window are equally murky (disordered phase); at low temperature a structured pattern emerges (ordered phase).
 :::
@@ -512,7 +512,7 @@ where $\rho_{\mathrm{cl}} = (\rho_+ + \rho_-)/2$, $\rho_q = \rho_+ - \rho_-$, $\
 
 **Classical limit** ($\theta_q \to 0$) reproduces the equations of motion for $\mathcal{L}_{\mathrm{Gap}}$ **exactly**. The dissipative and regenerative terms are not "ad hoc," but **necessary consequences** of the Lindblad structure of the dynamics. The external field $\mathcal{L}_{\mathrm{ext}}$ is the standard linear term in the presence of an external source.
 
-**Self-consistency of stationarity.** At $\dot{\theta} = 0$ and $\theta = \theta^{\mathrm{target}}$ the equation of motion reduces to $\partial V_{\mathrm{Gap}}/\partial\theta = 0$: the nontrivial attractor $\rho_*$ of the full Lindbladian $\mathcal{L}_\Omega$ (T-96 [T]; primitivity of the linear part $\mathcal{L}_0$ — T-39a [T]) coincides with the minimum of $V_{\mathrm{Gap}}$ ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]).
+**Self-consistency of stationarity.** At $\dot{\theta} = 0$ and $\theta = \theta^{\mathrm{target}}$ the equation of motion reduces to $\partial V_{\mathrm{Gap}}/\partial\theta = 0$: the nontrivial attractor $\rho_*$ of the full Lindbladian $\mathcal{L}_\Omega$ (T-96 [T]; primitivity of the linear part $\mathcal{L}_0$ — T-39a [T]) coincides with a minimum of $V_{\mathrm{Gap}}$ (unique only up to the symmetries of $V_{\mathrm{Gap}}$, and only numerically: [T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) is restated as a hypothesis on 2026-09-25, §14).
 :::
 
 ### (a) Kinetic term
@@ -698,9 +698,11 @@ where $\lambda_4 > 0$ follows from the CPTP constraint $\sum_k K_k^\dagger K_k =
 
 | Symmetry | $V_2$ | $V_3$ | $V_4$ |
 |---|---|---|---|
-| $G_2$ | + | + | + |
+| $G_2$ | + | — | + |
 | $\mathbb{Z}_2(\mathrm{PT})$ | + | — | + |
 | $U(1)$ | — | — | — |
+
+*(Erratum 2026-09-25, audit A-90: the $G_2$ entry for $V_3$ read "+". It is false. $V_2$ and $V_4$ depend on $\Gamma$ only through $\mathcal{G}_{\text{total}} = \lVert \mathrm{Im}\,\Gamma \rVert_F^2$ and are even $O(7)$-invariant, but the sum over the 28 non-Fano triples in $V_3$ changes under generic elements of $G_2$ and even of $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ — 10 of 10 random elements moved it (`test_v_gap_cubic_term_is_not_g2_invariant`); of the 896 signed permutations of the axes that preserve $V_3$, only 56 lie in $G_2$.)*
 
 ### Analogy with the Higgs mechanism
 
@@ -1026,30 +1028,59 @@ $$
 **Conclusion.** The homogeneous vacuum is not an exact solution. The vacuum has a **sector structure**: different $\varepsilon$ in different sectors of the $7 \times 7$ matrix. $\blacksquare$
 
 :::info Status [T]
-The proof uses the definitions of constants $\lambda_3, \lambda_4$ from Theorem 13.5 and the spontaneous Gap formula from Theorem 13.6 (both [T]). Uniqueness of the self-consistent vacuum is proved in the theorem below (positive definiteness of the Hessian), which excludes alternative configurations.
+The proof uses the definitions of constants $\lambda_3, \lambda_4$ from Theorem 13.5 and the spontaneous Gap formula from Theorem 13.6 (both [T]). The uniqueness of the self-consistent vacuum, which the next theorem claimed from the positive definiteness of a Hessian, holds only up to the symmetries of $V_{\text{Gap}}$ and only numerically (restated as a hypothesis on 2026-09-25, see below); the exclusion of the homogeneous vacuum does not depend on it. The "sector structure" in the conclusion means only that the vacuum is not homogeneous: no split into sectors follows from this proof.
 :::
 
-#### Theorem (Unique self-consistent vacuum) [T] {#теорема-единственный-вакуум}
+#### Theorem (Unique self-consistent vacuum) — corrected: unique up to the symmetries of $V_{\text{Gap}}$ [H], without sector structure [✗] {#теорема-единственный-вакуум}
 
-$V_{\text{Gap}}$ has a unique minimum (up to $G_2$-conjugation) on the 21-dimensional space of coherences $\{\gamma_{ij}\}$ with the sector structure $7 = 1_O \oplus 3 \oplus \bar{3}$.
+:::danger Corrected 2026-09-25 (audit A-90)
+The statement below claimed a unique vacuum with the sector values of hypothesis (SV). Three repairs were tried; what survives is weaker.
+
+1. **Axis sectors.** The sectors $\{A,S,D\}$ and $\{L,E,U\}$ are the axis triples of T-48a, retracted: no triple of axes is $SU(3)$-invariant (0 of 20), and the triplet is $\mathbf 3 = \mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$.
+2. **Correct complex triplets.** The $SU(3)_C$-invariant states are $\Gamma = a\,|O\rangle\langle O| + b\,P_{\mathbf 3} + c\,P_{\bar{\mathbf 3}}$. Their only coherences sit on the pairs $(A,D)$, $(S,U)$, $(L,E)$, all of modulus $\delta = \lvert b-c\rvert/2$; on them $V_3 \equiv 0$ and $V_{\text{Gap}} = 6\mu^2\delta^2 + 36\lambda_4\delta^4$, minimal at $\delta = 0$, that is at $\mathcal{G}_{\text{total}} = 0$ (`test_su3_invariant_vacuum_has_no_spontaneous_gap`). A vacuum that keeps colour has no spontaneous Gap and none of the sector values below.
+3. **No sector ansatz; Fano lines instead.** Minimised over all of $\mathcal D(\mathbb C^7)$ with the self-consistent constants of Theorem 13.5, the vacuum is unique up to the 896 symmetries of $V_{\text{Gap}}$ (numerically) and sits on two Fano lines through one point, not on $SU(3)$ sectors — see T-64 below.
+
+What stands: Theorem 14.1 [T] (the homogeneous vacuum is not a stationary point); uniqueness of the self-consistent vacuum up to the symmetries of $V_{\text{Gap}}$ — the numerically supported hypothesis T-64 [H]. Retracted [✗]: the sector structure of the vacuum and the uniqueness modulo $G_2$. The sector values are the named hypothesis [(SV)](#гипотеза-секторного-вакуума) [H].
+:::
+
+
+*Earlier statement (retracted):* $V_{\text{Gap}}$ has a unique minimum (up to $G_2$-conjugation) on the 21-dimensional space of coherences $\{\gamma_{ij}\}$ with the sector structure $7 = 1_O \oplus 3 \oplus \bar{3}$.
 
 **Sector values:** $\varepsilon_{3\to\bar{3}} \approx 0$ (confinement), $\varepsilon_{\bar{3}\to\bar{3}} \approx 10^{-17}$ (electroweak), $\varepsilon_{33} \approx 0.06$ (Yukawa hierarchy), $\bar{\varepsilon} \approx 0.023$ (mean coherence).
 
-:::warning Sector coherence notation
+:::warning Sector coherence notation (earlier, axis-labelled sectors — see the retraction above)
 - $\varepsilon_{3\to\bar{3}}$ — coherence between the **confinement sector** ($\{A,S,D\}$) and the **electroweak sector** ($\{L,E,U\}$), suppressed by confinement → $\approx 0$
 - $\varepsilon_{\bar{3}\to\bar{3}}$ — coherence **within** the electroweak sector, suppressed by electroweak symmetry breaking → $\approx 10^{-17}$
 - $\bar{\varepsilon} \approx 0.023$ — **weighted mean** of sector coherences (not to be confused with $\varepsilon_O$ — coherence of the O-sector, which is $\sim 1$)
 :::
 
-Uniqueness follows from the positive definiteness of the Hessian $\partial^2 V_{\text{Gap}} / \partial \varepsilon_X \partial \varepsilon_Y$ at the minimum point.
+*(Earlier argument, retracted: "uniqueness follows from the positive definiteness of the Hessian $\partial^2 V_{\text{Gap}} / \partial \varepsilon_X \partial \varepsilon_Y$ at the minimum point". The Hessian was taken in five axis-sector variables, which do not parametrise the states; a positive-definite Hessian at one point would in any case give a local, not a global, statement.)*
 
-#### Theorem (Global minimization of V_Gap) [T] {#теорема-глобальная-минимизация}
+#### Theorem (Global minimization of V_Gap) — restated as a hypothesis [H]; the $G_2$-reduction retracted [✗] {#теорема-глобальная-минимизация}
 
-:::tip Theorem 14.3 (Global minimization of V_Gap) [T]
+:::danger Corrected 2026-09-25 (audit A-90): the minimum is not unique modulo $G_2$ and has no sector structure
+Checked with the page's own potential, $V_{\text{Gap}} = \mu^2\mathcal{G}_{\text{total}} + 2\lambda_3\sum_{(i,j,k)\notin\text{Fano}} \mathrm{Im}(\gamma_{ij}\gamma_{jk}\gamma_{ki}) + \lambda_4\mathcal{G}_{\text{total}}^2$ with $\mathcal{G}_{\text{total}} = \lVert\mathrm{Im}\,\Gamma\rVert_F^2$ (§11: the sine of the phase sum times the three moduli is $\mathrm{Im}(\gamma_{ij}\gamma_{jk}\gamma_{ki})$; the associator norm is 2), minimised over all states of $\mathcal D(\mathbb C^7)$ with no sector split assumed:
+
+1. **Step 1 fails.** $V_3$ is not $G_2$-invariant (erratum to the symmetry table, §11), so "$V_{\text{Gap}}$ on $(S^1)^{21}/G_2$" is not defined; besides, $G_2$ acts on $\Gamma$ by $\Gamma \mapsto g\Gamma g^{\mathsf T}$, not on a torus of phases.
+2. **Step 2 fails for either choice of sectors.** With axis triples it rests on T-48a (retracted). With the correct triplets the $SU(3)$-invariant states carry one coherence parameter, not five, and among them the minimum is at $\mathcal{G}_{\text{total}} = 0$ (T-61 above). $SU(3)$-covariance does not equalise the coherences of a state that is not $SU(3)$-invariant.
+3. **Not unique modulo $G_2$.** The minimiser is carried by the symmetries of $V_{\text{Gap}}$ to minimisers on which the $G_2$-invariant $\lVert w\rVert^2$, $w_k = \varphi_{ijk}\,\mathrm{Im}\,\Gamma_{ij}$, takes two values: two $G_2$-orbits at one value of $V$ (`test_v_gap_vacuum_is_unique_up_to_its_symmetries_not_up_to_g2`).
+4. **No sector structure.** The stabiliser in $\mathfrak g_2$ of the minimiser is zero: the vacuum keeps no $SU(3)$ — neither $SU(3)_C = \mathrm{Stab}(e_O)$ nor the stabiliser of any other unit vector. The five "sector values" and the Hessian eigenvalues $18\mu^2$, $6\mu^2$, $12\mu^2$ of Step 4 describe no critical point of $V_{\text{Gap}}$.
+:::
+
+:::note T-64 restated [H]: the self-consistent vacuum is unique up to the symmetries of $V_{\text{Gap}}$
+**Exact part.** (a) $V_{\text{Gap}}$ is continuous on the compact $\mathcal D(\mathbb C^7)$, so its minimum value exists. (b) The signed permutations of the axes that preserve $V_{\text{Gap}}$ are the seven cyclic shifts $e_k \mapsto e_{k+1}$ (indices mod 7) combined with the $2^7$ sign changes — 896 in all, of which 56 lie in $G_2$ (`test_v_gap_cubic_term_is_not_g2_invariant`). (c) On the $SU(3)_C$-invariant states the minimum is at $\mathcal{G}_{\text{total}} = 0$.
+
+**Numerical part — the hypothesis.** With the constants of Theorem 13.5 taken self-consistently (iterate: minimise, then recompute $\lambda_3/\mu^2 = 2/(3|\bar\gamma|)$ and $\lambda_4/\mu^2 = 1/(2\mathcal{G}^{(0)}_{\text{total}})$ at the minimiser; the iteration settles at $\lambda_3/\mu^2 = 9.25$, $\lambda_4/\mu^2 = 32.2$), 28 of 30 random starts reach $V_{\min} = -0.1973\,\mu^2$, and all 28 minimisers lie in one orbit of the 896 symmetries. The vacuum has rank 2, $P = 0.709$, $\mathcal{G}_{\text{total}} = 0.0155$, mean $|\gamma_{ij}| = 0.072$; it is supported on five axes forming the union of two Fano lines through one point (for one representative $\{D,L,U\} \cup \{O,A,D\}$; the cyclic shifts move the common point through all seven axes). The same picture holds at fixed constants $(\lambda_3/\mu^2, \lambda_4/\mu^2) = (1,1), (7,25), (30,10)$: 19, 26 and 30 of 30 starts reach the minimum, each set in one orbit, each support the union of two lines through a point. No proof of global optimality is given, hence [H].
+
+**Consequence.** The vacuum of $V_{\text{Gap}}$ has no $SU(3)$ sector structure and none of the (SV) values: its $O$-coherences are $0.08$–$0.20$, not $\sim 1$, and its mean coherence is of order $10^{-1}$, not $10^{-2}$. Results that were "[C at T-64]" used the (SV) values, so they are [C at (SV)].
+:::
+
+
+:::note Earlier statement (Theorem 14.3, retracted [✗])
 The $G_2$-invariant potential $V_{\text{Gap}}$ on the space $\mathcal{M} = (S^1)^{21}/G_2$ has a **unique global minimum** (up to $G_2$-conjugation). The minimum coincides with the sector solution from the [unique vacuum theorem](#теорема-единственный-вакуум).
 :::
 
-**Proof (5 steps).**
+**Earlier proof (5 steps; retracted — see the box above).**
 
 **Step 1 ($G_2$-orbit reduction).** The group $G_2 = \text{Aut}(\mathbb{O})$ acts on 21 coherences $\{\gamma_{ij}\}_{i < j}$ as $\text{Ad}(G_2)$. Since $\dim(G_2) = 14$, the orbit space:
 
@@ -1093,13 +1124,22 @@ All eigenvalues are strictly positive for $\mu^2 > 0$ (from positivity of $V_2$ 
 
 **Step 5 (Globality).** Compactness of $(S^1)^{21}$ guarantees the existence of a global minimum. Uniqueness of the critical point (Step 4) + absence of saddle points → the global minimum is unique. $\blacksquare$
 
-:::info Corollary (Complete resolution of $V_{\text{Gap}}$ minimization) [T]
-The $V_{\text{Gap}}$ minimization problem is **completely solved** [T] on the 5-dimensional orbit space. The residual 21-dimensional problem (before $G_2$-reduction) carries no new physics: $G_2$-gauge degrees of freedom do not enter the potential.
+:::info Corollary (Complete resolution of $V_{\text{Gap}}$ minimization) — retracted [✗]
+*Earlier text:* "The $V_{\text{Gap}}$ minimization problem is completely solved on the 5-dimensional orbit space. The residual 21-dimensional problem (before $G_2$-reduction) carries no new physics: $G_2$-gauge degrees of freedom do not enter the potential." Retracted with Theorem 14.3: $V_3$ is not $G_2$-invariant, so the $G_2$ directions do enter the potential, and the minimisation is open.
 :::
 
-### Theorem (Sector hierarchy of $\varepsilon$) [T] {#теорема-секторная-иерархия-ε}
+#### Hypothesis (SV): the sector vacuum [H] {#гипотеза-секторного-вакуума}
 
-:::tip Theorem 14.2 (Sector hierarchy of coherences) [T]
+:::note Hypothesis (SV) [H]
+The vacuum coherences have the hierarchy of the table in the next subsection: $O$-pairs $\varepsilon_O \sim 1$; within the triplet $\varepsilon_{33} \sim 10^{-2}$; within the antitriplet $\varepsilon_{\bar 3\bar 3} \sim 10^{-17}$; between them $\varepsilon_{3\bar 3} \to 0$ — with a unique vacuum and a positive-definite fluctuation spectrum (eigenvalues $18\mu^2$, $6\mu^2$, $12\mu^2$).
+
+It is not derived. The page's own $V_{\text{Gap}}$ gives a different vacuum (T-64 restated above), and (SV) is in tension with unbroken colour: a state with a nonzero coherence anywhere except on the pairs $(A,D)$, $(S,U)$, $(L,E)$ is not $SU(3)_C$-invariant (`test_su3_invariant_states_are_coherent_only_on_o_line_pairs`), so the $O$-coherences $\varepsilon_O \sim 1$ of (SV) already break $SU(3)_C$. Results that took these values from T-64 are conditional on (SV).
+:::
+
+
+### Sector hierarchy of $\varepsilon$ [C at (SV)] {#теорема-секторная-иерархия-ε}
+
+:::note Theorem 14.2 (Sector hierarchy of coherences) — corrected from [T] to [C at (SV)]: the table is hypothesis (SV), and the mean is taken over the non-O pairs (erratum below)
 The vacuum coherence $\varepsilon$ has a sector structure determined by the decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$:
 
 | Sector | Coherence | Scale |
@@ -1125,16 +1165,18 @@ $$
 \bar{\varepsilon} \approx 0.023 \sim 10^{-1.6}
 $$
 
-The order $10^{-2}$ **follows** from the sector structure of the Gap vacuum. $\blacksquare$
+*Earlier conclusion (retracted): "The order $10^{-2}$ follows from the sector structure of the Gap vacuum."*
 :::
+
+*(Erratum 2026-09-25, audit A-83: the computation substitutes $\varepsilon_O \sim 0.04$, while the table above — and T-80, $\mathrm{Gap}(O,i) \approx 1$ — give $\varepsilon_O \sim 1$; the table of T-61 also had $\varepsilon_{33} \approx 0.06$, not $0.02$. With the table's own values the 21-pair formula gives $\bar\varepsilon^2 = (6 \cdot 1 + 3 \cdot 0.02^2)/21$, so $\bar\varepsilon = \sqrt{6/21} \approx 0.53$; the value $0.023$ is reached only at $\varepsilon_O \approx 0.04$, which contradicts the table (`test_mean_coherence_with_the_tables_own_eps_o`). The six $O$-pairs dominate any mean over all 21 pairs. **Repair.** The quantity used downstream — the bound on non-O Gap in T-80 and the mean of [Berry phase](/docs/physics/cosmology-phys/berry-phase) — is the mean over the 15 non-O pairs, so $\bar\varepsilon$ is redefined as their root mean square: $\bar\varepsilon^2 = (9\varepsilon_{3\bar 3}^2 + 3\varepsilon_{33}^2 + 3\varepsilon_{\bar 3\bar 3}^2)/15$, which under (SV) is $\varepsilon_{33}/\sqrt 5$: $0.027$ at $\varepsilon_{33} = 0.06$ and $0.009$ at $\varepsilon_{33} = 0.02$. The order $10^{-2}$ therefore holds, conditional on (SV) — [C at (SV)]; the earlier $0.023$ lies inside this range but was obtained from a wrong substitution. Note that the page's own self-consistent $V_{\text{Gap}}$ vacuum (T-64 restated) gives a non-O root mean square of $0.097$ — order $10^{-1}$ — so $10^{-2}$ is a property of (SV), not of $V_{\text{Gap}}$. Retracted [✗]: "the order $10^{-2}$ follows from the sector structure of the Gap vacuum".)*
 
 ### Sector hierarchy cascade {#каскад-секторной-иерархии}
 
-The sector structure of $\varepsilon$ has three key consequences:
+Under hypothesis (SV) [H] the sector structure has the consequences below, each conditional on (SV). Items 1 and 2 were stated as derived; that is retracted [✗] (2026-09-25): the minimisation does not produce the sector values (T-64 restated), and with the non-O mean of the erratum to Theorem 14.2, $\bar\varepsilon \approx 0.027$ and $\bar\varepsilon^6 \approx 4 \times 10^{-10}$ (not $1.5 \times 10^{-10}$) — the same order.
 
-1. **$\varepsilon$ is not a free parameter.** The value of $\varepsilon$ follows from the sector vacuum structure determined by the decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ and minimization of $V_{\text{Gap}}$ by sectors.
+1. **Retracted:** **$\varepsilon$ is not a free parameter.** The value of $\varepsilon$ follows from the sector vacuum structure determined by the decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ and minimization of $V_{\text{Gap}}$ by sectors.
 
-2. **$\Lambda$ budget.** The key formula $\varepsilon^6 \sim 10^{-12}$ in the cosmological constant budget is now structurally justified: $\bar{\varepsilon} \approx 0.023$ gives $\bar{\varepsilon}^6 \approx 1.5 \times 10^{-10}$, consistent in order of magnitude with the required suppression.
+2. **Retracted:** **$\Lambda$ budget.** The key formula $\varepsilon^6 \sim 10^{-12}$ in the cosmological constant budget is now structurally justified: $\bar{\varepsilon} \approx 0.023$ gives $\bar{\varepsilon}^6 \approx 1.5 \times 10^{-10}$, consistent in order of magnitude with the required suppression.
 
 3. **Physical scales from sector $\varepsilon$:**
 
@@ -1167,7 +1209,7 @@ The sector structure of $\varepsilon$ has three key consequences:
 | Confinement | Sector $\varepsilon_{3\bar{3}}$ at the confinement scale | [Confinement](/docs/physics/gauge-symmetry/confinement) |
 | Cosmological constant | $\varepsilon^6$ budget from sector hierarchy | [Cosmological constant](/docs/physics/gravity/cosmological-constant) |
 | Yukawa hierarchy | $\varepsilon_{\text{eff}} \sim 0.06$ from sector averages | [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) |
-| Topological vacuum protection | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$; barrier $\geq 6\mu^2$ [T] | [Composite systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) |
+| Topological vacuum protection | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$; barrier $\geq 6\mu^2$ [C at (SV)] | [Composite systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) |
 | Gap = Serre curvature | Exact identification via spectral triple [T] | [Gap operator](/docs/core/dynamics/gap-operator#теорема-gap-серра) |
 
 ---

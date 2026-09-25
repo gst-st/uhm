@@ -121,7 +121,7 @@ A legitimate external critique raised the concern that the $M_R \approx 2.9 \tim
 
 **Structure of the derivation**:
 
-1. **Inputs**: the sector hierarchy parameter $\varepsilon \approx 10^{-3}$ from T-64 [T] (unique vacuum minimum of $V_{\mathrm{Gap}}$ on compact $(S^1)^{21}/G_2$), the Gap total $\mathcal G^{(O)}_{\mathrm{total}} \sim 6$ on the $O$-sector (Axiom A5 Page–Wootters), and the fundamental scale $\omega_0 \cdot M_P$ from T-39a [T].
+1. **Inputs**: the sector hierarchy parameter $\varepsilon \approx 10^{-3}$ from T-64 [H] (restated; sector values: hypothesis (SV)) (unique vacuum minimum of $V_{\mathrm{Gap}}$ on compact $(S^1)^{21}/G_2$), the Gap total $\mathcal G^{(O)}_{\mathrm{total}} \sim 6$ on the $O$-sector (Axiom A5 Page–Wootters), and the fundamental scale $\omega_0 \cdot M_P$ from T-39a [T].
 
 2. **Intermediate**: the $G_2$-extra-boson mass $M_{G_2}^{(\mathrm{extra})} = \omega_0 \cdot \sqrt{\mathcal G^{(O)}_{\mathrm{total}}} \sim 10^{17}$ GeV — derived at the Planckian scale from the internal spectral structure, not extrapolated from low energy.
 
@@ -134,7 +134,7 @@ The loop factor is a standard one-loop quantum-field-theoretic calculation with 
 
 **Key point**: the derivation uses **only** Planck-scale quantities ($\omega_0 M_P$, $\varepsilon$, $g_{G_2}$, $\mathcal G^{(O)}_{\mathrm{total}}$) together with a finite loop factor. No low-energy EFT parameter is extrapolated across many orders of magnitude. The result $M_R \sim 10^{14}$ GeV is a **structural prediction** of UHM's internal spectral triple, not a fit to observed neutrino masses.
 
-:::tip Closure T6: $M_R$ is structurally derived \[T at T-64\]
+:::tip Closure T6: $M_R$ is structurally derived \[C at (SV)\]
 $M_R \approx 2.9 \times 10^{14}$ GeV is derived from the UHM spectral triple via T-64 (unique vacuum) + A5 (Page–Wootters) + T-39a (fundamental $\omega_0$) + standard one-loop $G_2$-invariant quantum field theory. This is **not** an extrapolation of a low-energy effective action; it is a direct computation at the Planck scale.
 
 The external audit's concern about "speculative extrapolation of $V_{\mathrm{Gap}}$" conflates two uses of the Gap functional: (i) $V_{\mathrm{Gap}}$ minimisation yielding $\varepsilon$ at T-64 (a computational task on compact $(S^1)^{21}/G_2$, not an EFT extrapolation); (ii) the one-loop $G_2$-extra-boson exchange yielding the loop factor (standard QFT, not extrapolation). Both are rigorous. No extrapolation is involved.
@@ -406,7 +406,7 @@ $$
 
 where $H_{\text{Gap}}^{(O)}$ is the Gap Hamiltonian of the O-sector.
 
-**Step 2 (O-isotropy $\to$ anarchy).** From T-61 [T]: $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0$. The O-sector is isotropic with respect to both sectors. Gap-configurations $\nu_R^{(k)}$ differ in Fano phases $\phi_k = 2\pi k/7$, but all are at **equal distance** from O (in the Bures metric).
+**Step 2 (O-isotropy $\to$ anarchy).** From T-61 [H] (restated; sector values: hypothesis (SV)): $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0$. The O-sector is isotropic with respect to both sectors. Gap-configurations $\nu_R^{(k)}$ differ in Fano phases $\phi_k = 2\pi k/7$, but all are at **equal distance** from O (in the Bures metric).
 
 Therefore, the O-sector Gap Hamiltonian singles out no generation:
 

@@ -40,6 +40,16 @@ h₂(ℂ_O), сигнатура (1,3), централизатор 𝔰𝔬(1,3) 
 (запрет для осей и ассоциативных плоскостей), `octonionic_spinor_is_lepton_plus_quark_weyl` и
 `every_non_o_axis_is_half_triplet_and_colour_moves_any_axis_to_any` (что верно вместо 45b и (SA)).
 
+
+Шесть — за разбором вакуума того же дня (A-90, A-83): `v_gap_cubic_term_is_not_g2_invariant`
+(V₃ страницы не G₂- и не SU(3)-инвариантен), `su3_invariant_vacuum_has_no_spontaneous_gap`
+(на инвариантном семействе с верными секторами V₃ ≡ 0 и минимум при 𝒢_total = 0),
+`v_gap_vacuum_is_unique_up_to_its_symmetries_not_up_to_g2` (самосогласованный вакуум единствен
+с точностью до 896 симметрий V, лежит на двух G₂-орбитах, носитель — две линии Фано),
+`mean_coherence_with_the_tables_own_eps_o` (ε̄ ≈ 0,53 по 21 паре при ε_O ~ 1; по не-O парам ε_33/√5),
+`fano_roles_are_fixed_by_three_non_collinear_marks` (T-177: 168 → 24 → 4 → 1; O и пара κ₀ — 2) и
+`gamma_eu_vev_breaks_colour` (⟨γ_EU⟩ ≠ 0 оставляет от 𝔰𝔲(3)_C не более 𝔲(1)).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -1246,6 +1256,249 @@ def test_every_non_o_axis_is_half_triplet_and_colour_moves_any_axis_to_any():
     G[6, 6], G[:6, :6] = 0.3, 0.5 * P3 / 3 + 0.2 * P3.conj() / 3
     assert all(np.allclose(X @ G, G @ X) for X in su3) and np.allclose(np.diag(G)[:6], np.diag(G)[0])
 
+
+
+
+
+# --- Отзыв 25.09.2026 (A-90, A-83): вакуум V_Gap, ε̄, T-177, H ∼ γ_EU -------------------------
+
+_NONFANO = [t for t in itertools.combinations(range(7), 3)
+            if tuple(sorted(x + 1 for x in t)) not in {tuple(sorted(l)) for l in LINES}]
+_NF = np.array(_NONFANO)
+
+
+def _gap_total(G):
+    """𝒢_total = 2 Σ_{i<j} |γ_ij|² sin²θ_ij = ‖Im Γ‖_F² (gap-thermodynamics §11(a))."""
+    return float(np.sum(np.imag(G) ** 2))
+
+
+def _v3(G):
+    """V₃/λ₃ = Σ_{i<j<k ∉ Fano} ‖[e_i,e_j,e_k]‖·|γ_ij||γ_jk||γ_ik| sin(θ_ij+θ_jk−θ_ik) = 2 Σ Im(γ_ij γ_jk γ_ki)."""
+    i, j, k = _NF.T
+    return float(2 * np.sum(np.imag(G[i, j] * G[j, k] * G[k, i])))
+
+
+def _v_gap(G, mu2, l3, l4):
+    g = _gap_total(G)
+    return mu2 * g + l3 * _v3(G) + l4 * g * g
+
+
+def _state(x):
+    A = (x[:49] + 1j * x[49:]).reshape(7, 7)
+    R = A @ A.conj().T
+    return R / np.trace(R).real
+
+
+def test_v_gap_cubic_term_is_not_g2_invariant():
+    """V₂, V₄ G₂-инвариантны (даже O(7)), кубический член V₃ — нет, и даже не SU(3)_C-инвариантен.
+
+    Свидетель отзыва T-64 (25.09.2026): «G₂-инвариантный потенциал на (S¹)²¹/G₂» и
+    таблица симметрий (V₃: «G₂ +») ложны. Из 896 знаковых перестановок, сохраняющих V₃,
+    в G₂ лежат 56; ассоциатор неколлинеарной тройки имеет норму 2.
+    """
+    assert len(_NONFANO) == 28
+    for i, j, k in _NONFANO[:5]:
+        a = omul(omul(unit(i + 1), unit(j + 1)), unit(k + 1)) - omul(unit(i + 1), omul(unit(j + 1), unit(k + 1)))
+        assert abs(np.linalg.norm(a) - 2) < 1e-12
+    rng = np.random.default_rng(20)
+    G = random_state(rng)
+    su3 = _su3_of_e_o()
+    moved = 0
+    for _ in range(5):
+        g = expm(sum(c * X for c, X in zip(rng.normal(size=14), G2)))
+        H = g @ G @ g.T
+        assert abs(_gap_total(H) - _gap_total(G)) < 1e-12
+        moved += abs(_v3(H) - _v3(G)) > 1e-6
+        h = expm(sum(c * X for c, X in zip(rng.normal(size=8), su3)))
+        moved += abs(_v3(h @ G @ h.T) - _v3(G)) > 1e-6
+    assert moved == 10
+    samples = [random_state(rng) for _ in range(2)]
+    base = [_v3(S) for S in samples]
+    fano = {frozenset(l) for l in LINES}
+    keep, in_g2 = 0, 0
+    for p in itertools.permutations(range(7)):
+        if {frozenset(p[i - 1] + 1 for i in l) for l in fano} != fano:
+            continue
+        P = np.zeros((7, 7))
+        P[list(p), range(7)] = 1
+        for signs in itertools.product((1, -1), repeat=7):
+            Q = P * np.array(signs)
+            if all(abs(_v3(Q @ S @ Q.T) - b) < 1e-12 for S, b in zip(samples, base)):
+                keep += 1
+                in_g2 += np.allclose(np.einsum('ia,jb,kc,abc->ijk', Q, Q, Q, PHI3), PHI3)
+    assert (keep, in_g2) == (896, 56)
+
+
+def test_su3_invariant_vacuum_has_no_spontaneous_gap():
+    """На SU(3)_C-инвариантных Γ = a|O⟩⟨O| + bP₃ + cP₃̄ кубик V₃ ≡ 0, 𝒢_total = 6δ², δ = |b−c|/2.
+
+    Свидетель отзыва T-64: с верными секторами (триплет span{A−iD, S−iU, L−iE})
+    «пять секторных параметров» не существуют — инвариантное семейство имеет одну
+    когерентность δ, и V = 6μ²δ² + 36λ₄δ⁴ минимальна при δ = 0, то есть при 𝒢_total = 0.
+    """
+    Lo = np.array([omul(unit(7), unit(i + 1))[1:] for i in range(7)]).T
+    J = Lo[:6, :6]
+    su3 = _su3_of_e_o()
+    rng = np.random.default_rng(21)
+    for _ in range(20):
+        w = rng.dirichlet(np.ones(3))
+        a, b, c = w[0], w[1] / 3, w[2] / 3
+        G = np.zeros((7, 7), complex)
+        G[O_AXIS, O_AXIS] = a
+        G[:6, :6] = (b + c) / 2 * np.eye(6) + 1j * (b - c) / 2 * J
+        assert abs(np.trace(G).real - 1) < 1e-12 and np.linalg.eigvalsh(G).min() > -1e-12
+        assert max(np.abs(X @ G - G @ X).max() for X in su3) < 1e-12
+        assert abs(_v3(G)) < 1e-15
+        assert abs(_gap_total(G) - 6 * ((b - c) / 2) ** 2) < 1e-12
+
+
+def _sym_v():
+    """Знаковые перестановки, сохраняющие V_Gap: 7 циклических сдвигов e_k ↦ e_{k+1} × 128 смен знаков."""
+    out = []
+    for k in range(7):
+        P = np.zeros((7, 7))
+        P[[(i + k) % 7 for i in range(7)], range(7)] = 1
+        for signs in itertools.product((1, -1), repeat=7):
+            out.append(P * np.array(signs))
+    return out
+
+
+def test_v_gap_vacuum_is_unique_up_to_its_symmetries_not_up_to_g2():
+    """Самосогласованный вакуум V_Gap единствен с точностью до Sym(V) (896), но не до G₂; секторов нет.
+
+    Свидетель переформулировки T-64 и T-61 (25.09.2026). Константы теоремы 13.5 взяты в
+    неподвижной точке итерации «минимизировать → пересчитать |γ̄| и 𝒢⁰»: λ₃/μ² = 2/(3|γ̄|) ≈ 9,25,
+    λ₄/μ² = 1/(2𝒢⁰) ≈ 32,2. Из 12 стартов не меньше 8 дают одно V_min < 0, и все эти
+    минимизаторы лежат на одной орбите Sym(V); минимизатор — ранга 2, P ≈ 0,709, носитель —
+    объединение двух линий Фано через одну точку, стабилизатор в 𝔤₂ нулевой. Образы под
+    Sym(V) дают два значения G₂-инварианта ‖w‖², w_k = φ_ijk Im Γ_ij: две G₂-орбиты при одном V.
+    """
+    from scipy.optimize import minimize
+    l3, l4 = 9.25, 32.22
+    rng = np.random.default_rng(22)
+    runs = []
+    for _ in range(12):
+        r = minimize(lambda x: _v_gap(_state(x), 1.0, l3, l4), rng.normal(size=98),
+                     method='L-BFGS-B', options={'maxiter': 40000, 'ftol': 1e-16, 'gtol': 1e-12})
+        runs.append((r.fun, _state(r.x)))
+    vmin, G = min(runs, key=lambda t: t[0])
+    best = [H for f, H in runs if f - vmin < 1e-7]
+    assert vmin < 0 and len(best) >= 8
+    iu = np.triu_indices(7, 1)
+    assert abs(2 / (3 * np.abs(G[iu]).mean()) / l3 - 1) < 0.01 and abs(1 / (2 * _gap_total(G)) / l4 - 1) < 0.01
+    sym = _sym_v()
+    assert len(sym) == 896 and all(abs(_v_gap(Q @ G @ Q.T, 1.0, l3, l4) - vmin) < 1e-12 for Q in sym)
+    imgs = [Q @ G @ Q.T for Q in sym]
+    assert all(min(np.abs(H - I).max() for I in imgs) < 1e-3 for H in best)
+    assert np.linalg.matrix_rank(G, tol=1e-5) == 2 and abs(purity(G) - 0.709) < 0.002
+    supp = {i + 1 for i in range(7) if G[i, i].real > 1e-4}
+    inside = [set(l) for l in LINES if set(l) <= supp]
+    assert len(supp) == 5 and len(inside) == 2 and len(inside[0] & inside[1]) == 1
+    M = np.array([(X @ G - G @ X).ravel() for X in G2]).T
+    assert np.linalg.svd(np.vstack([M.real, M.imag]), compute_uv=False).min() > 1e-4
+    ws = set()
+    for H in imgs:
+        w = np.einsum('ijk,ij->k', PHI3, H.imag)
+        ws.add(round(float(w @ w), 4))
+    assert len(ws) == 2
+
+
+def test_mean_coherence_with_the_tables_own_eps_o():
+    """Среднее по 21 паре с ε_O ~ 1 из таблицы — 0,53, не 0,023; по 15 не-O парам — ε_33/√5.
+
+    Свидетель A-83 (теорема 14.2): 0,023 получалось лишь при ε_O = 0,04, что противоречит
+    строке «O-to-all: ε_O ~ 1» той же таблицы и T-80 (Gap(O,i) ≈ 1). Порядок 10⁻² держит
+    среднеквадратичное по 15 не-O парам: 0,027 при ε_33 = 0,06, 0,0089 при ε_33 = 0,02.
+    """
+    def mean21(eo, e33=0.02, e3b3b=1e-17, e33b=0.0):
+        return np.sqrt((6 * eo ** 2 + 9 * e33b ** 2 + 3 * e33 ** 2 + 3 * e3b3b ** 2) / 21)
+
+    def mean_non_o(e33, e3b3b=1e-17, e33b=0.0):
+        return np.sqrt((9 * e33b ** 2 + 3 * e33 ** 2 + 3 * e3b3b ** 2) / 15)
+    assert abs(mean21(1.0) - 0.5346) < 1e-4 and abs(mean21(0.04) - 0.0226) < 1e-4
+    assert abs(mean_non_o(0.06) - 0.0268) < 1e-4 and abs(mean_non_o(0.02) - 0.0089) < 1e-4
+
+
+def test_fano_roles_are_fixed_by_three_non_collinear_marks():
+    """Коллинеации PG(2,2) (168) действуют регулярно на 168 упорядоченных неколлинеарных тройках.
+
+    Свидетель переформулировки T-177 и T-183 (25.09.2026). Стабилизаторы: точки O — 24,
+    двух точек — 4, O и линии Хиггса {A,E,U} — 6 (орбиты {O}, {A,E,U}, {S,D,L}), O и пары
+    κ₀ {E,U} — 2 (орбиты {O}, {A}, {D}, {E,U}, {S,L}), трёх неколлинеарных точек — 1.
+    Знаки октонионов не помогают: элементы Γ_oct, закрепляющие +e_O, дают те же 24 перестановки.
+    """
+    fano = {frozenset(l) for l in LINES}
+    coll = [p for p in itertools.permutations(range(1, 8))
+            if {frozenset(p[i - 1] for i in l) for l in fano} == fano]
+    assert len(coll) == 168
+    triples = [t for t in itertools.permutations(range(1, 8), 3) if frozenset(t) not in fano]
+    assert len(triples) == 168
+    assert len({(p[0], p[1], p[2]) for p in coll}) == 168       # образы упорядоченной неколлинеарной тройки (A,S,D)
+    A, S, D, L, E, U, O = range(1, 8)
+
+    def orbits(group):
+        return {frozenset(p[x - 1] for p in group) for x in range(1, 8)}
+    s_o = [p for p in coll if p[O - 1] == O]
+    s_oe = [p for p in s_o if p[E - 1] == E]
+    s_h = [p for p in s_o if {p[A - 1], p[E - 1], p[U - 1]} == {A, E, U}]
+    s_k = [p for p in s_o if {p[E - 1], p[U - 1]} == {E, U}]
+    s_oea = [p for p in s_oe if p[A - 1] == A]
+    assert [len(s_o), len(s_oe), len(s_h), len(s_k), len(s_oea)] == [24, 4, 6, 2, 1]
+    assert orbits(s_h) == {frozenset({O}), frozenset({A, E, U}), frozenset({S, D, L})}
+    assert orbits(s_k) == {frozenset({O}), frozenset({A}), frozenset({D}), frozenset({E, U}), frozenset({S, L})}
+    perms = set()
+    for p in s_o:
+        P = np.zeros((7, 7))
+        P[[x - 1 for x in p], range(7)] = 1
+        for signs in itertools.product((1, -1), repeat=7):
+            if signs[O - 1] != 1:
+                continue
+            Q = P * np.array(signs)
+            if np.allclose(np.einsum('ia,jb,kc,abc->ijk', Q, Q, Q, PHI3), PHI3):
+                perms.add(p)
+    assert len(perms) == 24
+
+
+def test_gamma_eu_vev_breaks_colour():
+    """Γ = I/7 + ε(e^{iφ}|E⟩⟨U| + h.c.): стабилизатор в 𝔰𝔲(3)_C = Stab(e_O) — размерности ≤ 1 (из 8).
+
+    Свидетель отзыва теоремы 1.0 сектора Хиггса (25.09.2026): ⟨γ_EU⟩ ≠ 0 ломает SU(3)_C
+    (до U(1) при φ = π/2, полностью при прочих φ); у γ_EU нет синглетной компоненты.
+    Испробованный ремонт: γ_EU инвариантна под Stab(e_A) — но лишь вместе с равными γ_SL,
+    γ_DO, и это переносит цвет с O на A; SU(2), коммутирующей с цветом, на ℂ⁷ нет (коммутант ℂ³).
+    """
+    su3 = _su3_of_e_o()
+
+    def stab(G):
+        M = np.array([(X @ G - G @ X).ravel() for X in su3]).T
+        s = np.linalg.svd(np.vstack([M.real, M.imag]), compute_uv=False)
+        return int(np.sum(s < 1e-9))
+    assert stab(np.eye(7, dtype=complex) / 7) == 8
+    E, U = 4, 5
+    dims = []
+    for phi in np.linspace(0, 2 * np.pi, 25):
+        G = np.eye(7, dtype=complex) / 7
+        G[E, U] = 0.01 * np.exp(1j * phi)
+        G[U, E] = np.conj(G[E, U])
+        dims.append(stab(G))
+    assert max(dims) == 1 and min(dims) == 0
+    A_AX = 0                                                        # вариант ремонта: цвет = Stab(e_A)
+    M = np.array([X @ np.eye(7)[A_AX] for X in G2]).T
+    _, s, Vt = np.linalg.svd(M)
+    ns = Vt[np.sum(s > 1e-9):]
+    su3_a = [sum(ns[a][b] * G2[b] for b in range(14)) for a in range(ns.shape[0])]
+    La = np.array([omul(unit(1), unit(i + 1))[1:] for i in range(7)]).T
+    G = np.eye(7, dtype=complex) / 7 + 0.02j * La                   # пары (S,L), (E,U), (D,O) линий через A
+    assert len(su3_a) == 8 and max(np.abs(X @ G - G @ X).max() for X in su3_a) < 1e-12
+    assert abs(G[E, U]) > 0.019 and abs(abs(G[1, 3]) - abs(G[E, U])) < 1e-12 and abs(abs(G[2, 6]) - abs(G[E, U])) < 1e-12
+    basis = []
+    for i in range(7):
+        for j in range(7):
+            Z = np.zeros((7, 7), complex)
+            Z[i, j] = 1
+            basis.append(Z)
+    rows = np.vstack([np.array([(Y @ X - X @ Y).flatten() for Y in basis]).T for X in su3])
+    assert 49 - np.linalg.matrix_rank(rows, tol=1e-9) == 3                  # коммутант ℂ³: SU(2) с цветом не коммутирует
 
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]

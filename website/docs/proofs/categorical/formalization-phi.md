@@ -1816,7 +1816,7 @@ Tensor factorization of $\varphi$ is the key property behind the [marginal ident
 **Refinement: SSB, not gauge freedom.** The more precise qualification is **spontaneous symmetry breaking** (SSB), not gauge freedom:
 
 1. **Before $V_{\text{Gap}}$ minimization:** $G_2$-symmetry **unbroken**, all bases equivalent.
-2. **Upon $V_{\text{Gap}}$ minimization** (T-64 [T]): system "rolls" into a **specific** vacuum $\Gamma_{\text{vac}}$ on the manifold of minima $(S^1)^{21}/G_2$. One minimum is selected.
+2. **Upon $V_{\text{Gap}}$ minimization** (T-64 [H] (restated; sector values: hypothesis (SV))): system "rolls" into a **specific** vacuum $\Gamma_{\text{vac}}$ on the manifold of minima $(S^1)^{21}/G_2$. One minimum is selected.
 3. **After SSB:** $G_2 \to H$ (vacuum stabilizer). Boolean fragment $\mathrm{Dec}(\Omega)$ **crystallizes** as pointer basis fixed by the vacuum.
 4. **Goldstone modes** (see [goldstone-modes](/docs/applied/coherence-cybernetics/goldstone-modes)): massless excitations along broken directions $G_2/H$.
 
