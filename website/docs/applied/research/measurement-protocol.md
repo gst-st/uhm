@@ -474,7 +474,7 @@ public pure fn compute_purity(gamma: &StaticMatrix<Complex, 7, 7>) -> Float
 | $\mathrm{rank}(\rho_E) > 1$ (L1 threshold) | $> 1$ | Non-trivial interiority | [T] |
 | $R_{\text{th}}$ (L2 threshold) | $\geq 1/3$ | [Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) | Proven [T] |
 | $\Phi_{\text{th}}$ (L2 threshold) | $\geq 1$ | [T-129](/docs/proofs/consciousness/operationalization#t-129) | Proven [T] |
-| $D_{\text{diff}}^{\text{min}}$ | $\geq 2$ | [T-151](/docs/proofs/consciousness/substrate-closure#t-151) | Proven [T] |
+| $D_{\text{diff}}^{\text{min}}$ | $\geq 2$ | [T-151](/docs/proofs/consciousness/substrate-closure#t-151) | Independent L2 threshold [D] (it read "Proven [T]" until 2026-09-25) |
 | $\varepsilon_{\text{functor}}$ | $= 0$ at $\alpha=0$ (Cholesky) | [T, MVP-1]: exact functor | Proven |
 | $\varepsilon_{\text{functor}}$ | $< 0.1$ at $\alpha>0$ (neural) | Requires calibration | Hypothesis |
 | $\varepsilon_{\text{causal}}$ | $> 0.05$ | Requires calibration | Hypothesis |

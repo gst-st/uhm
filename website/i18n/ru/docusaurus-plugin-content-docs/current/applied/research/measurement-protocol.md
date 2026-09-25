@@ -460,7 +460,7 @@ public pure fn compute_purity(gamma: &StaticMatrix<Complex, 7, 7>) -> Float
 | $\mathrm{rank}(\rho_E) > 1$ (порог L1) | $> 1$ | Нетривиальная интериорность | [Т] |
 | $R_{\text{th}}$ (порог L2) | $\geq 1/3$ | [Иерархия](/docs/proofs/consciousness/interiority-hierarchy) | Доказано [Т] |
 | $\Phi_{\text{th}}$ (порог L2) | $\geq 1$ | [T-129](/docs/proofs/consciousness/operationalization#t-129) | Доказано [Т] |
-| $D_{\text{diff}}^{\text{min}}$ | $\geq 2$ | [T-151](/docs/proofs/consciousness/substrate-closure#t-151) | Доказано [Т] |
+| $D_{\text{diff}}^{\text{min}}$ | $\geq 2$ | [T-151](/docs/proofs/consciousness/substrate-closure#t-151) | Независимый порог L2 [О] (до 2026-09-25 значилось «Доказано [Т]») |
 | $\varepsilon_{\text{functor}}$ | $= 0$ при $\alpha=0$ (Cholesky) | [Т, MVP-1]: точный функтор | Доказано |
 | $\varepsilon_{\text{functor}}$ | $< 0.1$ при $\alpha>0$ (нейронный) | Требует калибровки | Гипотеза |
 | $\varepsilon_{\text{causal}}$ | $> 0.05$ | Требует калибровки | Гипотеза |

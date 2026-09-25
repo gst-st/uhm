@@ -758,11 +758,11 @@ Only L0–L2 appear here. The full interiority ladder L0→L4 (including L3—ne
 
 **Links to thresholds:**
 - L0 → L1: need $\mathrm{rank}(\rho_E) \geq 2$ (differentiated experience)
-- L1 → L2: need triple threshold ($R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$)—all three **derived** as [T] (see [below](#пороги-l2-строгий-вывод))
+- L1 → L2: need triple threshold ($R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$) — $R$ and $\Phi$ **derived** as [T], $D \geq 2$ an independent threshold [D] (see [below](#пороги-l2-строгий-вывод); it read "all three derived as [T]" until 2026-09-25)
 - L2 → L3: need gap entanglement between holons ($I(\mathbb{H}_1:\mathbb{H}_2) > 0$)
 :::
 
-### L2 thresholds: mathematical theorems [T] {#пороги-l2-строгий-вывод}
+### L2 thresholds: three theorems [T] and one independent threshold [D] {#пороги-l2-строгий-вывод}
 
 :::tip Status of L2 thresholds
 | Threshold | Value | Status | Ground |
@@ -770,7 +770,7 @@ Only L0–L2 appear here. The full interiority ladder L0→L4 (including L3—ne
 | $P_{\text{crit}}$ | $2/7$ | **[T]** | Noise distinguishability in $d_B$ ([proof](/docs/proofs/dynamics/theorem-purity-critical)) |
 | $R_{\text{th}}$ | $1/3$ | **[T]** | $K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + [Bayesian dominance](#теорема-порог-рефлексии) |
 | $\Phi_{\text{th}}$ | $1$ | **[T]** | Unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129), [derivation](#теорема-порог-интеграции)) |
-| $D_{\min}$ | $2$ | **[T]** | Consequence of $\Phi_{\text{th}} = 1$ ([T-151](/docs/proofs/consciousness/substrate-closure#t-151), [proof](#теорема-порог-дифференциации)) |
+| $D_{\min}$ | $2$ | **[D]** | Independent L2 threshold — **not** a consequence of $\Phi_{\text{th}} = 1$ (counterexample $\Phi \approx 1.03$, $D_{\text{diff}} \approx 1.42$); the independence of the four thresholds is T-124b, and $D_{\text{diff}} \geq 2$ holds on the embodied attractor ([T-151](/docs/proofs/consciousness/substrate-closure#t-151), [section](#теорема-порог-дифференциации)). It read "[T] — consequence of $\Phi_{\text{th}} = 1$" until 2026-09-25 |
 :::
 
 $$
@@ -927,28 +927,18 @@ The theorem narrows [I] in $R = P(H_1)$: monotonicity of $R$ vs $P_{\text{opt}}(
 
 ---
 
-### Theorem (differentiation threshold $D_{\min} = 2$) {#теорема-порог-дифференциации}
+### Differentiation threshold $D_{\min} = 2$: an independent L2 condition {#теорема-порог-дифференциации}
 
-:::tip Theorem [T] ($D_{\min}$ from $\Phi_{\text{th}}$)
-Differentiation threshold $D_{\min} = 2$ **follows** from $\Phi \geq 1$ [T] (T-129, [T-151](/docs/proofs/consciousness/substrate-closure#t-151)).
+:::warning Retracted [✗] (2026-09-25): "$D_{\min} = 2$ follows from $\Phi \geq 1$"
+This section stated a theorem [T]: "Differentiation threshold $D_{\min} = 2$ **follows** from $\Phi \geq 1$ (T-129, T-151)", read as "an integrated system automatically has at least one bit of phenomenal differentiation". The derivation was retracted on the [T-151 page](/docs/proofs/consciousness/substrate-closure#t-151) on 2026-07-09 and is retracted here: $\Phi \geq 1$ bounds only the **total** off-diagonal mass, not the E-row share. Counterexample: uniform diagonal $\gamma_{kk} = 1/7$, coherence $0.07$ on the 15 pairs without E — $P \approx 0.290$, $R \approx 0.49$, $\Phi \approx 1.03$, yet in the 7D reading of T-128 $D_{\text{diff}} = 1 + 6\,\mathrm{Coh}_E \approx 1.42 < 2$. The former proof failed at step 1, which read the total coherence $\Phi$ as a statement about the spectrum of $\rho_E$, and at step 2: two significant components do not give $D_{\text{diff}} = 2$ — the spectrum $(0.9, 0.1)$ has $D_{\text{diff}} \approx 1.38$.
 :::
+
+What stands (T-151): $D_{\min} = 2$ is one of the **four independent** L2 thresholds — definitional [D], with the independence of the four proved in T-124b; $\Phi \geq 1$ gives $D_{\text{diff}} > 1$ whenever the E-row is coherent; on the embodied attractor $D_{\text{diff}} \geq 2$.
 
 **Definition:**
 $$D_{\text{diff}} := \exp(S_{vN}(\rho_E))$$
 
 where $S_{vN}(\rho_E) = -\text{Tr}(\rho_E \log \rho_E)$ is von Neumann entropy of phenomenal content.
-
-**Proof:**
-
-1. For $\Phi > 1$ the spectrum of $\rho_E$ has **at least two** significant components (otherwise coherence sits in one dimension and $\Phi = 0$).
-
-2. Minimal nontrivial spectrum: $\lambda = (1/2, 1/2, 0, \ldots)$
-
-3. Then $S_{vN} = -2 \cdot \frac{1}{2} \log \frac{1}{2} = \log 2$
-
-4. Hence $D_{\text{diff}} = \exp(\log 2) = 2$ ∎
-
-**Interpretation:** $D_{\min} = 2$ is not independent—it **follows** from integration ($\Phi \geq 1$). An integrated system automatically has at least one bit of phenomenal differentiation.
 
 ---
 
@@ -961,7 +951,7 @@ This is the **single source of truth** for all UHM thresholds. Other documents s
 - $P_{\text{crit}} = 2/7 \approx 0.286$ — [proof](#критическая-чистота-теорема)
 - $R_{\text{th}} = 1/3 \approx 0.333$ — [proof](#теорема-порог-рефлексии)
 - $\Phi_{\text{th}} = 1$ — [theorem [T]](#теорема-порог-интеграции) (T-129)
-- $D_{\min} = 2$ — [theorem [T]](#теорема-порог-дифференциации) (T-151)
+- $D_{\min} = 2$ — [independent L2 threshold [D]](#теорема-порог-дифференциации) (T-151, T-124b; it read "theorem [T]" until 2026-09-25)
 - $C_{\text{th}} = 1/3 \approx 0.33$ — [combined](#комбинированный-порог-сознательности) ([T], T-140)
 :::
 
@@ -974,7 +964,7 @@ The triple $(P_{\text{crit}}, R_{\text{th}}, \Phi_{\text{th}})$ is **complete**:
 | $R_{\text{th}}$ | State vs. self-model | Bayesian dominance | $1/3$ |
 | $\Phi_{\text{th}}$ | Whole vs. parts | $P_{\text{coh}} \geq P_{\text{diag}}$ | $1$ |
 
-Any other threshold (e.g. $D_{\min}$) either follows from these three or lies outside core UHM structure.
+~~Any other threshold (e.g. $D_{\min}$) either follows from these three or lies outside core UHM structure.~~ Retracted [✗] (2026-09-25): $D_{\min} = 2$ does neither — it does not follow from the three (T-151) and it is one of the four independent L2 conditions (T-124b). The triple is complete for the three distinguishability tests in the table, not for L2.
 :::
 
 **Threshold ordering:**
@@ -1240,11 +1230,11 @@ $$
 5. **(V):** Viability means $P > P_{\text{crit}} = 2/7$
 6. **Theorem S:** Minimal dimension is 7
 7. **Uniqueness theorem:** Basis $\{A,S,D,L,E,O,U\}$ is unique **[T]** (A,S,D,L,U algebraically; E,O via $\kappa_0$ and functional independence; [proof](/docs/proofs/minimality/theorem-minimality-7#единственность-e))
-8. **Thresholds (all [T])**:
+8. **Thresholds** (three [T]; $D_{\min}$ an independent threshold [D]):
    - $P_{\text{crit}} = 2/7$—noise distinguishability (Frobenius) **[T] proved**
    - $R_{\text{th}} = 1/3$—Bayesian dominance at $K = 3$ **[T]** ($K = 3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция))
    - $\Phi_{\text{th}} = 1$—coherent dominance **[T]** (T-129: unique self-consistent value)
-   - $D_{\min} = 2$—consequence of $\Phi_{\text{th}} = 1$ **[T]** (T-151)
+   - $D_{\min} = 2$—independent L2 threshold **[D]** (T-151, T-124b; it read "consequence of $\Phi_{\text{th}} = 1$ [T]" until 2026-09-25)
    - $C_{\text{th}} = 1/3$—product $\Phi_{\text{th}} \times R_{\text{th}}$ **[T]** (T-140; $D_{\text{diff}}$ is separate for $V$, not in $C$)
 :::
 

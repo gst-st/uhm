@@ -180,7 +180,7 @@ where:
 - $P_{\text{max}} = 3/7$ **[T]** — **upper** bound of the conscious window: $R = 1/(7P) \geq 1/3$ holds if and only if $P \leq 3/7$; the Goldilocks zone $P \in (2/7, 3/7]$ is nonempty ([T-124](/docs/proofs/consciousness/conscious-window#t-124))
 - $R_{\text{th}} = 1/3$ **[T]** — $K = 3$ from the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + Bayesian dominance
 - $\Phi_{\text{th}} = 1$ **[T]** — the unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129))
-- $D_{\min} = 2$ **[T]** — unconditional consequence of $\Phi_{\text{th}} = 1$ [T] ([T-151](/docs/proofs/consciousness/substrate-closure#t-151))
+- $D_{\min} = 2$ **[D]** — an independent L2 threshold, not a consequence of $\Phi_{\text{th}} = 1$ ([T-151](/docs/proofs/consciousness/substrate-closure#t-151); it read "[T] — unconditional consequence of $\Phi_{\text{th}} = 1$" until 2026-09-25)
 
 :::note Level statuses
 - **L0–L2**: stable states for biological systems

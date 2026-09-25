@@ -180,7 +180,7 @@ $$
 - $P_{\text{max}} = 3/7$ **[Т]** — **верхняя** граница сознательного окна: $R = 1/(7P) \geq 1/3$ выполнено тогда и только тогда, когда $P \leq 3/7$; зона Голдилокс $P \in (2/7, 3/7]$ непуста ([T-124](/docs/proofs/consciousness/conscious-window#t-124))
 - $R_{\text{th}} = 1/3$ **[Т]** — $K = 3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + байесовское доминирование
 - $\Phi_{\text{th}} = 1$ **[Т]** — единственное самосогласованное значение при $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129))
-- $D_{\min} = 2$ **[Т]** — безусловное следствие $\Phi_{\text{th}} = 1$ [Т] ([T-151](/docs/proofs/consciousness/substrate-closure#t-151))
+- $D_{\min} = 2$ **[О]** — независимый порог L2, а не следствие $\Phi_{\text{th}} = 1$ ([T-151](/docs/proofs/consciousness/substrate-closure#t-151); до 2026-09-25 значилось «[Т] — безусловное следствие $\Phi_{\text{th}} = 1$»)
 
 :::note Статус уровней
 - **L0–L2**: стабильные состояния для биологических систем
