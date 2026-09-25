@@ -478,11 +478,11 @@ $$\Delta_{G_2}^{(\mathrm{exp})} := \max_a \left\|\sum_m [T_a]_{im} \, C_{(mj),(k
 | $\Delta_{G_2}^{(\mathrm{exp})}$ | Interpretation |
 |----------------------------------|---------------|
 | $\Delta = 0$ | Full $G_2$-symmetry. Octonionic structure unbroken. |
-| $0 < \Delta \ll 1$ | Weak breaking. $\Delta \propto \alpha^*$ — determined by the depth of self-observation (see [G₂-structure](/docs/physics/gauge-symmetry/g2-structure), Theorem 11.3). |
+| $0 < \Delta \ll 1$ | Weak breaking. ~~$\Delta \propto \alpha^*$ — determined by the depth of self-observation~~ (retracted 2026-09-25: the variational $\alpha^*$ does not exist, and the dynamics breaks $G_2$ by $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3}\Delta_{\max} \geq \tfrac23\Delta_{\max}$ for every value of the free Fano weight $\alpha$ — [G₂-structure](/docs/physics/gauge-symmetry/g2-structure), Theorems 10.4 and 11.3 — so UHM's own dynamics is never in this row). |
 | $\Delta \sim O(1)$ | Strong breaking. $G_2$-reduction is inapplicable; full 48-parameter tomography is required. |
 
 :::info[Interpretation \[I\]]
-The protocol gives a **falsifiable** prediction: if the $G_2$-structure of octonions is fundamental for Gap dynamics, the Ward identities must hold to an accuracy determined by the self-observation parameter $\alpha^*$. A complete violation ($\Delta \sim O(1)$) would refute the $G_2$-hypothesis.
+The protocol gives a **falsifiable** prediction: if the $G_2$-structure of octonions is fundamental for Gap dynamics, the Ward identities must hold to an accuracy ~~determined by the self-observation parameter $\alpha^*$~~. A complete violation ($\Delta \sim O(1)$) would refute the $G_2$-hypothesis. *Corrected 2026-09-25:* the variational $\alpha^*$ is retracted ([G₂-structure](/docs/physics/gauge-symmetry/g2-structure), Theorem 10.4), and the dissipative dynamics breaks $G_2$ by $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3}\Delta_{\max} \geq \tfrac23\Delta_{\max}$ for every $\alpha$ (Theorem 11.3 there; the frame is pinned, [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). Identities derived from a $G_2$-invariant $L_{\mathrm{Gap}}$ can therefore hold at most up to that breaking, and an order-one violation does not by itself separate UHM from its alternatives.
 :::
 
 ---
@@ -699,7 +699,7 @@ With the proof of Step 6 the **bridge is fully closed**: all 8 steps have status
 | Emergent time | Page–Wootters mechanism and the O-dimension | [Emergent time](/docs/core/operators/emergent-time) |
 | Uniqueness theorem | $G_2$ is the maximal gauge group [T]; inverse problem is well-posed (Lemma G2); 14 charges — the basis for well-posedness of the inverse problem | [G₂-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) |
 | Lindblad operators | Fano-structured $L_p^{\mathrm{Fano}}$; CPTP channels | [Lindblad operators](/docs/core/operators/lindblad-operators) |
-| Interiority hierarchy | Levels L0–L4 and degree of $G_2$-breaking $\alpha^*$ | [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) |
+| Interiority hierarchy | Levels L0–L4 and degree of $G_2$-breaking $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3}\Delta_{\max}$ (the variational $\alpha^*$ is retracted) | [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) |
 
 ---
 

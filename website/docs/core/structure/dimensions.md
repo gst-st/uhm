@@ -125,7 +125,7 @@ Remove any element — and the walk becomes impossible. Without eyes you cannot 
 ### Combinatorial uniqueness of semantic roles (T-177) [T] {#комбинаторная-единственность}
 
 :::tip Theorem T-177 [T]+[C at combinatorial-constraint set]: Combinatorial uniqueness of semantic roles
-After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]), each of the 7 dimensions has a **unique combinatorial profile** — a set of Fano lines and sector connections not isomorphic to the profile of any other dimension.
+After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a — retracted [✗] 2026-09-25 as an axis-labelled decomposition; the uniqueness below rests on it and is to be re-derived, see T-177 in the status registry), each of the 7 dimensions has a **unique combinatorial profile** — a set of Fano lines and sector connections not isomorphic to the profile of any other dimension.
 
 **Stratification:** The distinguishability of the 7 fingerprints is **[T]** as a combinatorial fact on the Fano plane PG(2,2) once **the combinatorial constraint set** is fixed (sector decomposition T-48a + Higgs line $\{A,E,U\}$). The choice of that constraint set itself is **[C at combinatorial-constraint set]**: T-48a and the Higgs line come from upstream axiomatic structure (A3, electroweak fit), not from T-177 in isolation. Conditional on those inputs, the fingerprint table is exact.
 :::
@@ -171,7 +171,7 @@ All 7 semantic roles $\{A,S,D,L,E,O,U\}$ are **uniquely** determined by the comb
 
 **Proof (T-183).**
 
-**Steps 1–3 (O, A, L):** Direct consequence of sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]) and the Higgs line $\{A,E,U\}$. O is the unique singlet. A is the unique element of **3** on the Higgs line. L is the unique element of $\bar{\mathbf{3}}$ off the Higgs line. (Already proved in T-177.)
+**Steps 1–3 (O, A, L):** Direct consequence of sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a — retracted [✗] 2026-09-25: no axis lies in the $\mathbf 3$ or the $\bar{\mathbf 3}$, so the A- and L-steps lose their ground; O survives as the $SU(3)$-singlet $\mathbb Ce_O$) and the Higgs line $\{A,E,U\}$. O is the unique singlet. A is the unique element of **3** on the Higgs line. L is the unique element of $\bar{\mathbf{3}}$ off the Higgs line. (Already proved in T-177.)
 
 **Step 4 (E).** The regeneration formula $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_X$ requires a dimension $X$ with properties: (a) $X \in \bar{\mathbf{3}}$ ($\kappa_0$ is defined via $\mathrm{Hom}(O, X)$); (b) $X$ on the Higgs line (electroweak coupling through the $\kappa_0$ chain: $\mathrm{End}(O) \otimes \mathrm{Hom}(O,X) \otimes \mathrm{Hom}(X,Y)$). From $\bar{\mathbf{3}} \cap \mathrm{Higgs} = \{E, U\}$.
 
@@ -528,7 +528,7 @@ The division into "objective" and "subjective" aspects is a **pedagogical simpli
 
 **Bridging aspect** — Logic ($L$) is singled out as the "bridge" between objective and subjective. The commutator $[A, B]$ defines **relations** between the operators of all other dimensions. Logic is what makes the system self-consistent: it ensures that the objective and the subjective do not contradict each other.
 
-This grouping $7 = 3 + 1 + 3$ has a deep mathematical basis: it corresponds to the **sector decomposition** $7 = \mathbf{3} \oplus \mathbf{1} \oplus \bar{\mathbf{3}}$ under the action of $SU(3) \subset G_2$ (theorem T-48a [T]). The triplet $\{A, S, D\}$ forms representation **3**, the singlet $\{O\}$ — representation **1**, and the anti-triplet $\{L, E, U\}$ — representation $\bar{\mathbf{3}}$. Remarkably, exactly this same type of decomposition determines the structure of quarks in chromodynamics ($SU(3)_{\text{color}}$), although here it acts at a completely different level of description.
+This grouping $7 = 3 + 1 + 3$ has a deep mathematical basis: it corresponds to the **sector decomposition** $7 = \mathbf{3} \oplus \mathbf{1} \oplus \bar{\mathbf{3}}$ under the action of $SU(3) \subset G_2$ (theorem T-48a — retracted [✗] 2026-09-25 in this axis-labelled form). ~~The triplet $\{A, S, D\}$ forms representation **3**, the singlet $\{O\}$ — representation **1**, and the anti-triplet $\{L, E, U\}$ — representation $\bar{\mathbf{3}}$.~~ Only the singlet survives: the triplet is $\mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$ and the anti-triplet its conjugate, so each mixes the two axis triples. Remarkably, exactly this same type of decomposition determines the structure of quarks in chromodynamics ($SU(3)_{\text{color}}$), although here it acts at a completely different level of description.
 
 :::note Why is L the "bridge" and not O?
 At first glance, O (Ground) also seems "bridging": it both nourishes and sets time. But O occupies a special position as an $SU(3)$ **singlet** — it is invariant under sector transformations. L, by contrast, occupies a **boundary** position: it belongs to the anti-triplet ($\bar{\mathbf{3}}$) but functionally connects both triplets through the commutator. Logic "knows" about both the objective and the subjective — that is its uniqueness.

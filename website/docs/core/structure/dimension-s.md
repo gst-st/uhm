@@ -325,7 +325,7 @@ The elements $\gamma_{Si}$ of the coherence matrix describe the connection of st
 
 ## Structure and the Fano plane {#структура-и-фано}
 
-In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM, dimension $S$ corresponds to the imaginary unit $e_2 \in \mathrm{Im}(\mathbb{O})$. Structure lies in the **3** sector of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]).
+In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM, dimension $S$ corresponds to the imaginary unit $e_2 \in \mathrm{Im}(\mathbb{O})$. ~~Structure lies in the **3** sector of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]).~~ Retracted 2026-09-25 with T-48a: no single axis lies in the $\mathbf 3$ — the triplet is $\mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$, so $S$ enters it only in the combination $S - iU$, paired with an axis of the other triple.
 
 On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$, structure $S$ ($= e_2$) belongs to **three Fano lines**:
 

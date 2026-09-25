@@ -128,8 +128,8 @@ The generation triplet $(k_1, k_2, k_3) = (1, 2, 4)$ is the unique associative t
 | Generation | Index $k$ | Dimension | Fano distance to Higgs line |
 |-----------|:----------:|-----------|:-------------------------------:|
 | 3rd (t,b,τ) | $k_1 = 1$ | A | $d = 0$ (on Higgs line) |
-| 2nd (c,s,μ) | $k_2 = 4$ | L | $d = 1$ (via confinement) |
-| 1st (u,d,e) | $k_3 = 2$ | S | $d = 1$ (via space) |
+| 2nd (c,s,μ) | $k_2 = 4$ | L | $d = 1$ (line $\{D,L,U\}$) |
+| 1st (u,d,e) | $k_3 = 2$ | S | $d = 1$ (line $\{S,D,E\}$) |
 
 All three elements are **distinct** ($k_1 \neq k_2 \neq k_3 \neq k_1$), which follows from the definition of the multiplicative subgroup $\{1, 2, 4\} \subset \mathbb{Z}_7^*$.
 
@@ -166,7 +166,7 @@ The lower bound $N_{\text{gen}} \geq 3$ (Step 2) uses the specific triplet $(1, 
 :::
 
 :::info Remark
-This theorem **does not depend** on the generation assignment ($k=1 \to$ 3rd, etc.). The assignment of the 3rd generation ($k=1$) — **[T]** (unique nonzero tree-level Yukawa, [Theorem 4.1](#thm-gen-4-1)). The ordering $k=4 \to$ 2nd, $k=2 \to$ 1st — **[T]** ([Theorem 4.3](#thm-gen-4-3)).
+This theorem **does not depend** on the generation assignment ($k=1 \to$ 3rd, etc.). The assignment of the 3rd generation ($k=1$) — **[T]** (unique nonzero tree-level Yukawa, [Theorem 4.1](#thm-gen-4-1)). The ordering $k=4 \to$ 2nd, $k=2 \to$ 1st — **[C at (SA)]**, with (SA) a hypothesis [H] ([Theorem 4.3](#thm-gen-4-3); it was stated as [T] until 2026-09-25).
 :::
 
 ### 1.3 Precedents and related programmes {#прецеденты-три-поколения}
@@ -179,11 +179,13 @@ Why matter comes in three generations is an open question of the Standard Model.
 
 **Dubois-Violette, Todorov and Boyle (2016–2026): three generations from triality.** A third line takes the exceptional Jordan algebra $J_3(\mathbb{O})$ — Hermitian $3\times3$ matrices with octonionic entries — as the internal quantum space, so that its three off-diagonal octonions can carry three generations. Dubois-Violette associates these three octonions, which are permuted by triality (the symmetry of $\mathrm{Spin}(8)$ that permutes its vector representation and its two spinor representations), with the three generations, and the split $\mathbb{O}=\mathbb{C}\oplus\mathbb{C}^3$ with one lepton and three quark colours (*Nucl. Phys. B* **912**, 426–449 (2016), [arXiv:1604.01247](https://arxiv.org/abs/1604.01247)). Boyle describes one generation as the tangent space $(\mathbb{C}\otimes\mathbb{O})^2$ of the complex octonionic projective plane, which transforms as the $16$ of $\mathrm{Spin}(10)$, notes that it arises in three triality-related ways, and concludes that "it is natural to suspect that this is the origin of the three generations" (*J. Math. Phys.* **67**, 071701 (2026), [arXiv:2006.16265](https://arxiv.org/abs/2006.16265)). *Standing:* published proposals; on generations the authors' own wording is conjectural ("tempting to speculate", "natural to suspect"). *Parallel:* the branching of $J_3(\mathbb{O})$ into three $G_2$-copies of the $7$ used in the Koide section below (T-220) [I]. *Difference:* in these proposals each of the three copies is a full Standard Model generation; the three copies of T-220 are representations of $G_2$, not of the Standard Model group.
 
-**Luhn, Nasri and Ramond (2007): the phases $e^{2\pi ik/7}$, $k\in\{1,2,4\}$, as a flavour triplet.** Flavour physics assigned the three families the same seventh roots of unity that §4.1 uses. $\mathrm{PSL}_2(7)$, the automorphism group of the Fano plane (order 168), is the only simple subgroup of $\mathrm{SU}(3)$ with a complex three-dimensional irreducible representation; in that triplet an element of order seven acts as $\mathrm{diag}(\eta,\eta^2,\eta^4)$ with $\eta^7=1$, and its trace is $\eta+\eta^2+\eta^4=(-1+i\sqrt7)/2$ ("Simple finite non-Abelian flavor groups", *J. Math. Phys.* **48**, 123519 (2007), [arXiv:0709.1447](https://arxiv.org/abs/0709.1447)). Its order-21 subgroup $\mathbb{Z}_7\rtimes\mathbb{Z}_3$ was proposed as a family symmetry ("Tri-bimaximal neutrino mixing and the family symmetry $\mathbb{Z}_7\rtimes\mathbb{Z}_3$", *Phys. Lett. B* **652**, 27–33 (2007), [arXiv:0706.2341](https://arxiv.org/abs/0706.2341)). *Standing:* part of the discrete-flavour programme; the target of the second paper, exact tri-bimaximal neutrino mixing, requires the mixing angle $\theta_{13}=0$ and was excluded when Daya Bay measured $\sin^22\theta_{13}=0.092\pm0.016\,(\mathrm{stat})\pm0.005\,(\mathrm{syst})$ at $5.2\sigma$ (*Phys. Rev. Lett.* **108**, 171803 (2012)). *Parallel:* the generation phases $\phi_n=2\pi k_n/7$, $k_n\in\{1,2,4\}$, of §4.1, the Gauss sum $\eta_1$ of Theorem 2.2 and the order-3 map $k\mapsto2k$ of Corollary 5.1 [I]. *Difference:* giving three families the exponents $\{1,2,4\}$ and cycling them by an order-3 map is prior art from 2007. In that work the family group is *horizontal* — it commutes with the gauge group. In UHM it does not.
+**Luhn, Nasri and Ramond (2007): the phases $e^{2\pi ik/7}$, $k\in\{1,2,4\}$, as a flavour triplet.** Flavour physics assigned the three families the same seventh roots of unity that §4.1 uses. $\mathrm{PSL}_2(7)$, the automorphism group of the Fano plane (order 168), is the only simple subgroup of $\mathrm{SU}(3)$ with a complex three-dimensional irreducible representation; in that triplet an element of order seven acts as $\mathrm{diag}(\eta,\eta^2,\eta^4)$ with $\eta^7=1$, and its trace is $\eta+\eta^2+\eta^4=(-1+i\sqrt7)/2$ ("Simple finite non-Abelian flavor groups", *J. Math. Phys.* **48**, 123519 (2007), [arXiv:0709.1447](https://arxiv.org/abs/0709.1447)). Its order-21 subgroup $\mathbb{Z}_7\rtimes\mathbb{Z}_3$ was proposed as a family symmetry ("Tri-bimaximal neutrino mixing and the family symmetry $\mathbb{Z}_7\rtimes\mathbb{Z}_3$", *Phys. Lett. B* **652**, 27–33 (2007), [arXiv:0706.2341](https://arxiv.org/abs/0706.2341)). *Standing:* part of the discrete-flavour programme; the target of the second paper, exact tri-bimaximal neutrino mixing, requires the mixing angle $\theta_{13}=0$ and was excluded when Daya Bay measured $\sin^22\theta_{13}=0.092\pm0.016\,(\mathrm{stat})\pm0.005\,(\mathrm{syst})$ at $5.2\sigma$ (*Phys. Rev. Lett.* **108**, 171803 (2012)). *Parallel:* the generation phases $\phi_n=2\pi k_n/7$, $k_n\in\{1,2,4\}$, of §4.1, the Gauss sum $\eta_1$ of Theorem 2.2 and the order-3 map $k\mapsto2k$ of Corollary 5.1 [I]. *Difference:* giving three families the exponents $\{1,2,4\}$ and cycling them by an order-3 map is prior art from 2007, and there the number three is an input, not a result: "Thankfully, there are only three chiral families in Nature, and the hunt for candidate finite flavor groups is limited to those groups which have two- or three-dimensional irreducible representations" ([arXiv:0706.2341](https://arxiv.org/abs/0706.2341) v2, p. 4). In that work the family group is *horizontal* — it commutes with the gauge group. In UHM it does not.
 
-The last point deserves a plain statement. The map $\sigma:e_k\mapsto e_{2k}$ of Theorem 5.1 is an automorphism of the octonion table of [G₂-structure, §2](/docs/physics/gauge-symmetry/g2-structure#октонионное-умножение-и-g2) (all signs $+$, direct check) and fixes $e_O=e_7$; it therefore lies in the stabiliser of the $O$-direction, the subgroup that the [Standard Model page](/docs/physics/gauge-symmetry/standard-model) identifies with $\mathrm{SU}(3)_C$. Left multiplication by $e_7$ makes the six other axes a copy of $\mathbb{C}^3$ with complex basis $\{A,S,L\}=\{e_1,e_2,e_4\}$ — the colour space of Günaydın and Gürsey, written with the same labelling by Todorov and Dubois-Violette (*Int. J. Mod. Phys. A* **33**, 1850118 (2018), eq. 2.5). In UHM's own identifications the three "generation" axes $k\in\{1,2,4\}$ are thus a basis of the colour triplet, and the $\mathbb{Z}_3$ that cycles them is a colour rotation. Standard Model generations are three copies of one colour representation, and any family symmetry commutes with $\mathrm{SU}(3)_c$. The identification [I] of Theorem 1.2 therefore needs a reason why axes that the octonionic lineage reads as colours should be read as families; and Theorem 5.2, which lets the vacuum break this $\mathbb{Z}_3$, would break $\mathrm{SU}(3)_C$ with it.
+The last point deserves a plain statement. The map $\sigma:e_k\mapsto e_{2k}$ of Theorem 5.1 is an automorphism of the octonion table of [G₂-structure, §2](/docs/physics/gauge-symmetry/g2-structure#октонионное-умножение-и-g2) (all signs $+$, direct check) and fixes $e_O=e_7$; it therefore lies in the stabiliser of the $O$-direction, the subgroup that the [Standard Model page](/docs/physics/gauge-symmetry/standard-model) identifies with $\mathrm{SU}(3)_C$. Left multiplication by $e_7$ makes the six other axes a copy of $\mathbb{C}^3$ with complex basis $\{A,S,L\}=\{e_1,e_2,e_4\}$ — the colour space of Günaydın and Gürsey, written with the same labelling by Todorov and Dubois-Violette (*Int. J. Mod. Phys. A* **33**, 1850118 (2018), eq. 2.5). In UHM's own identifications the three "generation" axes $k\in\{1,2,4\}$ are thus a basis of the colour triplet, and the $\mathbb{Z}_3$ that cycles them is a colour rotation. Standard Model generations are three copies of one colour representation, and any family symmetry commutes with $\mathrm{SU}(3)_c$. The identification [I] of Theorem 1.2 therefore needs a reason why axes that the octonionic lineage reads as colours should be read as families; and Theorem 5.2, which let the vacuum break this $\mathbb{Z}_3$, would break $\mathrm{SU}(3)_C$ with it — it is retracted accordingly (2026-09-25; checked numerically, `test_generation_z3_lies_in_colour_su3`).
 
-**3-3-1 models (1992): the number of families tied to the number of colours.** A dynamical argument ties the two threes together without octonions. Pisano and Pleitez (*Phys. Rev. D* **46**, 410–417 (1992), [arXiv:hep-ph/9206242](https://arxiv.org/abs/hep-ph/9206242)) and Frampton (*Phys. Rev. Lett.* **69**, 2889–2891 (1992)) extend the electroweak group to $\mathrm{SU}(3)_L\times\mathrm{U}(1)_X$ and treat the third quark family differently from the first two. Gauge anomalies — quantum inconsistencies that must cancel in a chiral gauge theory — then cancel only between families, which requires "that the number of families be equal to the number of quark colors" (Frampton's abstract; see also Pisano, *Mod. Phys. Lett. A* **11**, 2639–2647 (1996)). *Standing:* an active, falsifiable extension of the Standard Model. It predicts new gauge bosons, among them doubly charged "bileptons" and a $Z'$; a 2023 reinterpretation of an ATLAS search bounds the bilepton mass at $m_Y>1300$ GeV (Calabrese *et al.*, [arXiv:2312.02287](https://arxiv.org/abs/2312.02287)); in the minimal version the $\mathrm{U}(1)_X$ coupling grows without bound (a Landau pole) at a few TeV — about 4 TeV in the older literature, up to about 8.5 TeV in a 2023 re-analysis (Barela, [arXiv:2305.05066](https://arxiv.org/abs/2305.05066)). *Parallel:* in UHM, too, the number of generations and the colour triplet are threes of one structure [I]. *Difference:* the 3-3-1 argument is a consistency condition of a chiral quantum field theory and predicts new particles; the UHM count is combinatorial, and at colliders the corpus predicts the opposite — registry row T-297 forbids any gauge $Z'$ ("discovery refutes FE-uniqueness"). A 3-3-1 $Z'$ would refute T-297.
+**Noncommutative geometry (Chamseddine and Connes 2008 to Chamseddine 2025): the number is an input.** The spectral Standard Model, whose finite algebra the [spacetime page](/docs/core/foundations/spacetime#алгебра-морита) compares with UHM's, does not derive the number of generations either. Chamseddine and Connes classify the finite geometries of KO-dimension 6 and single out the Standard Model algebra, but state in the abstract that "the number of generations is still an input" ("Why the Standard Model", *J. Geom. Phys.* **58**, 38–47 (2008), [arXiv:0706.3688](https://arxiv.org/abs/0706.3688)); in his 2025 review Chamseddine lists among the questions that remain "an explanation for the number of generations N = 3; it is phenomenologically required (e.g. CP violation), but not derived here (nor anywhere else)" ([arXiv:2511.05909](https://arxiv.org/abs/2511.05909), §7). Yu and Ma claim such a derivation from tensor-product and quaternion extensions of the finite geometry ("Origin of fermion generations from extended noncommutative geometry", *Int. J. Mod. Phys. A* **33**, 1850168 (2018), [arXiv:1810.10189](https://arxiv.org/abs/1810.10189)); one of the programme's founders, writing seven years later, does not count it ("nor anywhere else"). *Standing:* in NCG the count is an acknowledged open problem. *Parallel:* Theorem 1.2 [I]. *Difference:* none in substance — UHM's count $|\mathrm{QR}(7)|=3$ attaches no representation content to the three classes, so it does not close the gap Chamseddine names.
+
+**3-3-1 models (1992): the number of families tied to the number of colours.** A dynamical argument ties the two threes together without octonions. Pisano and Pleitez (*Phys. Rev. D* **46**, 410–417 (1992), [arXiv:hep-ph/9206242](https://arxiv.org/abs/hep-ph/9206242)) and Frampton (*Phys. Rev. Lett.* **69**, 2889–2891 (1992)) extend the electroweak group to $\mathrm{SU}(3)_L\times\mathrm{U}(1)_X$ and treat the third quark family differently from the first two. Gauge anomalies — quantum inconsistencies that must cancel in a chiral gauge theory — then cancel only between families, which requires "that the number of families be equal to the number of quark colors" (Frampton's abstract; see also Pisano, *Mod. Phys. Lett. A* **11**, 2639–2647 (1996)). *Standing:* an active, falsifiable extension of the Standard Model. It predicts new gauge bosons, among them doubly charged "bileptons" and a $Z'$; a 2023 reinterpretation of an ATLAS search bounds the bilepton mass at $m_Y>1300$ GeV (Calabrese *et al.*, [arXiv:2312.02287](https://arxiv.org/abs/2312.02287)); in the minimal version the $\mathrm{U}(1)_X$ coupling grows without bound (a Landau pole) at a few TeV — about 4 TeV in the older literature, up to about 8.5 TeV in a 2023 re-analysis (Barela, [arXiv:2305.05066](https://arxiv.org/abs/2305.05066)). *Parallel:* in UHM, too, the number of generations and the colour triplet are threes of one structure [I]. *Difference:* the 3-3-1 argument is a consistency condition of a chiral quantum field theory and predicts new particles; the UHM count is combinatorial, and at colliders the corpus predicts the opposite — registry row T-297 forbids any gauge $Z'$ ("discovery refutes FE-uniqueness"). A 3-3-1 $Z'$ would refute T-297, which since 2026-09-25 is itself only a hypothesis [H] ([Standard Model, T-297](/docs/physics/gauge-symmetry/standard-model#запрет-z-прайм)).
 
 **Singh (2022–2026): masses from the eigenvalues of $J_3(\mathbb{O})$.** Tejinder Singh's "octonionic unification" programme claims numerical Standard Model parameters from the exceptional Jordan algebra. His paper in *Eur. Phys. J. Plus* states that the eigenvalues of the characteristic equation of $J_3(\mathbb{O})$ reproduce known mass ratios of quarks and leptons and derives the low-energy fine-structure constant (*Eur. Phys. J. Plus* **137**, 664 (2022), [arXiv:2205.06614](https://arxiv.org/abs/2205.06614)); later preprints extend the mass-ratio claims (an "edge universality" of the ratios between adjacent generations) and add a "falsification-oriented catalogue" of predictions, among them an inverted neutrino mass ordering ([arXiv:2508.10131](https://arxiv.org/abs/2508.10131); [arXiv:2604.06288](https://arxiv.org/abs/2604.06288)). *Standing:* speculative; the results appear in the author's own papers, and in September 2026 we found neither an independent confirmation nor a published critique. *Parallel:* the Koide section below (a mass operator on $J_3(\mathbb{O})$, hypothesis T-220-H) and the neutrino hierarchy of §4.6.1 [I]. *Difference:* the Koide section declines to derive masses from $J_3(\mathbb{O})$ and classes Koide's relation as empirical input, which is more cautious than Singh's claims. The two programmes predict opposite neutrino orderings — normal in §4.6.1, inverted in Singh's catalogue — so a measurement of the ordering will refute at least one of them.
 
@@ -266,7 +268,7 @@ For $(k_1,k_2,k_3) = (1,2,4)$: sum $e^{2\pi i/7} + e^{4\pi i/7} + e^{8\pi i/7}$.
 
 $$\eta_1 = \omega + \omega^2 + \omega^4 = \frac{-1 + i\sqrt{7}}{2}$$
 
-Imaginary part: $\mathrm{Im}(\eta_1) = \sqrt{7}/2 \neq 0$.
+Imaginary part: $\mathrm{Im}(\eta_1) = \sqrt{7}/2 \neq 0$. (The same sum is the trace of an order-7 element in the complex triplet of $\mathrm{PSL}_2(7)$ that Luhn, Nasri and Ramond used as a flavour group in 2007, with the number three taken as input; §1.3.)
 
 **Correction.** The condition $\mathrm{Im}(\sum \omega^{k_n}) = 0$ does **not** hold for any triplet from $\mathbb{Z}_7^* \setminus \{0\}$. Therefore, anomalous coherence as $\sum \sin(2\pi k_n/7) = 0$ is not an appropriate selection principle. $\blacksquare$
 
@@ -384,17 +386,17 @@ Unique nonzero tree-level Yukawa → $k=1$ = heaviest generation = **3rd**. $\bl
 The assignment $k=1 \to$ 3rd generation is a **theorem**, independent of assumptions. The mass hierarchy $m_t \gg m_c, m_u$ follows from the fact that **only** $k=1$ has a tree-level Yukawa coupling; $k=2$ and $k=4$ acquire mass only through loop corrections (see [Yukawa Mass Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy)).
 :::
 
-### 4.3 Theorem 4.2 (Sectoral asymmetry of generations) {#thm-gen-4-2}
+### 4.3 Theorem 4.2 (Sectoral asymmetry of generations) — retracted [✗] {#thm-gen-4-2}
 
-:::tip Theorem 4.2 (Sectoral asymmetry of generations) [T]
-Generations $k=2$ and $k=4$ belong to **different** sectors of the vacuum decomposition and have **structurally distinct** Fano paths to the Higgs. Strictly proved.
+:::danger Theorem 4.2 retracted [✗] (2026-09-25)
+Theorem 4.2 claimed that $k=2$ ($S$) lies in the $\mathbf{3}$-sector and $k=4$ ($L$) in the $\bar{\mathbf{3}}$-sector of the $\mathrm{SU}(3)_C$ decomposition, so that their Fano paths to the Higgs pass through pairs of different sector type. Step 1 is false: $\{A,S,D\}$ and $\{L,E,U\}$ are not the $\mathbf 3$ and $\bar{\mathbf 3}$ — no three axes span an $\mathrm{SU}(3)$-invariant subspace, and the triplet is spanned by $A-iD$, $S-iU$, $L-iE$ ([Standard Model, Theorem 1.1(a)](/docs/physics/gauge-symmetry/standard-model)) — so no axis "belongs" to either. What survives is incidence combinatorics [T]: $S$ reaches $E$ through the line $\{S,D,E\}$, $L$ reaches $U$ through the line $\{D,L,U\}$, both with the one intermediate point $D$. Which of the two pairs $(S,D)$, $(L,D)$ carries the smaller vacuum Gap is not decided by $\mathrm{SU}(3)$: an $\mathrm{SU}(3)_C$-invariant $\Gamma$ has no coherence on either pair (`test_su3_invariant_states_are_coherent_only_on_o_line_pairs`). That choice is the assumption (SA) of §4.4. Registry row 45b.
 :::
 
-**Theorem.** Generations $k=2$ and $k=4$ belong to **different** sectors of the vacuum decomposition and have **structurally distinct** Fano paths to the Higgs.
+*Record of the retracted theorem.* **Theorem.** Generations $k=2$ and $k=4$ belong to **different** sectors of the vacuum decomposition and have **structurally distinct** Fano paths to the Higgs.
 
 **Proof.**
 
-**Step 1. Sector assignment [T].**
+**Step 1. Sector assignment — retracted [✗].**
 
 From $SU(3)_C$-decomposition [T] ([Standard Model from $G_2$](/docs/physics/gauge-symmetry/standard-model)):
 
@@ -405,9 +407,9 @@ Therefore:
 - $k=2$ ($S$) $\in \mathbf{3}$-sector
 - $k=4$ ($L$) $\in \bar{\mathbf{3}}$-sector
 
-**Step 2. Fano paths to the Higgs [T].**
+**Step 2. Fano paths to the Higgs — the paths [T], their "sector type" retracted [✗].**
 
-Higgs line: $\{A=1, E=5, U=6\}$, where $E, U \in \bar{\mathbf{3}}$. Active Fano lines (without $O=7$):
+Higgs line: $\{A=1, E=5, U=6\}$, where $E, U \in \{L,E,U\}$ (formerly "$\in\bar{\mathbf{3}}$"). Active Fano lines (without $O=7$):
 
 | Path | Line | Intermediate | Reaches | Sector type of pair |
 |------|-------|:------------:|:---------:|:-----------------:|
@@ -418,27 +420,27 @@ Both paths pass through $D=3$ (Distinction dimension), but:
 - Pair $(S,D) = (2,3)$: both $\in \mathbf{3}$-sector → sector **3-to-3**, Gap $\sim \varepsilon$ (intermediate)
 - Pair $(L,D) = (4,3)$: $L \in \bar{\mathbf{3}}$, $D \in \mathbf{3}$ → sector **3-to-$\bar{3}$**, Gap $\approx 0$ (confinement) $\blacksquare$
 
-### 4.4 Theorem 4.3 (Generation ordering) {#thm-gen-4-3}
+### 4.4 Theorem 4.3 (Generation ordering) [C at (SA)] {#thm-gen-4-3}
 
-:::tip Theorem 4.3 (Generation ordering) [T]
-Proved via confinement [T] and asymptotic freedom [T]. $k=4 \to$ 2nd generation, $k=2 \to$ 1st generation.
+:::tip Theorem 4.3 (Generation ordering) [C at (SA)]
+$k=4 \to$ 2nd generation, $k=2 \to$ 1st generation, given the vacuum assumption (SA) below, which is a hypothesis [H]. Until 2026-09-25 this box read "[T] — proved via confinement [T] and asymptotic freedom [T]"; confinement and asymptotic freedom are facts of QCD, but that they act on the pair $(L,D)$ and not on $(S,D)$ is exactly (SA), whose former structural basis — Theorem 4.2 — is retracted.
 :::
 
-#### Theorem (SA): sectoral asymmetry [T] {#гипотеза-секторной-асимметрии}
+#### Hypothesis (SA): sectoral asymmetry [H] {#гипотеза-секторной-асимметрии}
 
-**Sectoral Asymmetry Theorem (SA) [T]:** The 1-loop effective Yukawa coupling via the confinement sector (Gap $\approx 0$) **exceeds** the coupling via the intermediate sector (Gap $\sim \varepsilon > 0$).
+**Sectoral asymmetry (SA) [H]** — the named assumption, stated on axis pairs: the vacuum Gap profile takes the axis-pair values of the ansatz of [Theorem 5.2(a)](#thm-5-2) — in particular Gap $\approx 0$ on the pair $(L,D)$ and Gap $\sim\varepsilon$ on $(S,D)$ — so that the 1-loop effective Yukawa coupling through $(L,D)$ **exceeds** the coupling through $(S,D)$. The earlier reading of these pair sets as the $\mathrm{SU}(3)$ sectors "confinement ($\mathbf{3}$-to-$\bar{\mathbf{3}}$)" and "intermediate ($\mathbf{3}$-to-$\mathbf{3}$)" is retracted (Theorem 4.2); no $\mathrm{SU}(3)_C$-invariant vacuum distinguishes the two pairs, and any vacuum that does is not $\mathrm{SU}(3)_C$-invariant (Theorem 5.2). Deriving or refuting (SA) is a research programme [Pr]. In the status registry it is the struck row T-52 — listed as a theorem until 2026-09-25 — and the entry (SA) of the table of promoted hypotheses, now [H].
 
-:::tip Proof (SA) [T]
-Proved via confinement [T] and asymptotic freedom [T]:
+:::note Former proof (SA) — retracted [✗]
+It read: "proved via confinement [T] and asymptotic freedom [T]":
 
 1. **Confinement sector** ($\mathbf{3}$-to-$\bar{\mathbf{3}}$, Gap $\approx 0$): non-perturbative coupling $\sim O(\Lambda_{\text{QCD}}/v_{\text{EW}}) \sim 10^{-3}$.
 2. **Intermediate sector** ($\mathbf{3}$-to-$\mathbf{3}$, Gap $\sim \varepsilon$): perturbative coupling $\sim \varepsilon^2/(16\pi^2) \sim 6 \times 10^{-7}$.
 3. **Ratio** $\sim 10^3$ — confinement sector dominates.
 
-The structural basis — different sector membership — is a theorem ([Theorem 4.2](#thm-gen-4-2)).
+"The structural basis — different sector membership — is a theorem (Theorem 4.2)." Theorem 4.2 is retracted; items 1–3 compare the two couplings once the Gap values of the two pairs are given, and giving them is (SA).
 :::
 
-**Theorem.** From the sectoral asymmetry (SA) [T]: $k=4 \to$ 2nd generation (c, s, μ), $k=2 \to$ 1st generation (u, d, e).
+**Theorem [C at (SA)].** From the sectoral asymmetry (SA): $k=4 \to$ 2nd generation (c, s, μ), $k=2 \to$ 1st generation (u, d, e).
 
 **Proof.**
 
@@ -456,7 +458,7 @@ The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric
 **⚠ C7**: $\lambda_3 \approx 74 \gg 4\pi$ — non-perturbative regime. All loop computations with $\lambda_3$ are formally unreliable and downgraded to **[H]**. See [warning](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative).
 :::
 
-**Step 4.** From confinement [T] and asymptotic freedom [T]: the non-perturbative amplitude of the confinement sector dominates over the perturbative one:
+**Step 4.** Given (SA) — i.e. that the pair $(L,D)$ lies in the Gap $\approx0$ regime where confinement [T] and asymptotic freedom [T] make the amplitude non-perturbative — the amplitude through $(L,D)$ dominates the perturbative one through $(S,D)$:
 
 $$y_4^{(\text{eff})} > y_2^{(\text{eff})} \quad \Longrightarrow \quad m(k=4) > m(k=2)$$
 
@@ -471,14 +473,14 @@ $\blacksquare$
 | Mass | Generation | Fano $k$ | Dimension | Mechanism | Status |
 |---|---|---|---|---|---|
 | **Heaviest** | 3rd (t, b, τ) | **1** | **A (Actualization)** | Tree-level ($f_{1,E,U} \neq 0$), IR FP | **[T]** |
-| **Intermediate** | 2nd (c, s, μ) | **4** | **L (Nomos)** | 1-loop, confinement ($3 \to \bar{3}$, Gap $\approx 0$) | **[T]** |
-| **Light** | 1st (u, d, e) | **2** | **S (Morphogenesis)** | 1-loop, intermediate ($3 \to 3$, Gap $\sim \varepsilon$) | **[T]** |
+| **Intermediate** | 2nd (c, s, μ) | **4** | **L (Nomos)** | 1-loop through the pair $(L,D)$ (Gap $\approx 0$ by (SA)) | **[C at (SA)]** |
+| **Light** | 1st (u, d, e) | **2** | **S (Morphogenesis)** | 1-loop through the pair $(S,D)$ (Gap $\sim \varepsilon$ by (SA)) | **[C at (SA)]** |
 
 ### 4.6 Cascade of assignment consequences {#каскад-назначения}
 
-#### 4.6.1 Neutrino hierarchy [T]
+#### 4.6.1 Neutrino hierarchy [C at (SA)]
 
-The assignment $k=4 \to$ 2nd generation and $k=2 \to$ 1st generation resolves the contradiction in [neutrino masses](/docs/physics/particle-physics/neutrino-masses): seesaw with $m_D \sim m_l$ gives the **normal** hierarchy ($m_{\nu_e} < m_{\nu_\mu} < m_{\nu_\tau}$).
+The assignment $k=4 \to$ 2nd generation and $k=2 \to$ 1st generation (Theorem 4.3, [C at (SA)]; this heading said [T] until 2026-09-25) resolves the contradiction in [neutrino masses](/docs/physics/particle-physics/neutrino-masses): seesaw with $m_D \sim m_l$ gives the **normal** hierarchy ($m_{\nu_e} < m_{\nu_\mu} < m_{\nu_\tau}$).
 
 #### 4.6.2 Discrepancy $m_2/m_3$ [C]
 
@@ -509,8 +511,8 @@ $$y_k^{(\text{tree})} = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|$$
 
 | Generation | $k_n$ | Dimension | $\sin(2\pi k_n/7)$ | Mechanism | $m_q^{(u)}$ | $m_q^{(d)}$ | $m_l$ |
 |---|---|---|---|---|---|---|---|
-| 1st | 2 | S (Morphogenesis) | 0.975 | 1-loop ($3$-to-$3$) | ~2 MeV | ~5 MeV | ~0.5 MeV |
-| 2nd | 4 | L (Nomos) | 0.434 | 1-loop (confinement) | ~1.3 GeV | ~100 MeV | ~106 MeV |
+| 1st | 2 | S (Morphogenesis) | 0.975 | 1-loop via $(S,D)$ [C at (SA)] | ~2 MeV | ~5 MeV | ~0.5 MeV |
+| 2nd | 4 | L (Nomos) | 0.434 | 1-loop via $(L,D)$ [C at (SA)] | ~1.3 GeV | ~100 MeV | ~106 MeV |
 | 3rd | 1 | A (Actualization) | 0.782 | Tree + IR FP | ~173 GeV | ~4.2 GeV | ~1.78 GeV |
 
 ---
@@ -563,9 +565,13 @@ i.e., $F$ is **equal** for all three generations.
 
 **(c)** **Fundamental consequence:** The mass hierarchy $m_t \gg m_c \gg m_u$ **cannot** be explained by Fano geometry alone. A $\mathbb{Z}_3$-breaking factor is required.
 
-### Theorem 5.2 (Vacuum breaking of Z₃) {#thm-5-2}
+### Theorem 5.2 (Vacuum breaking of Z₃) — retracted [✗] {#thm-5-2}
 
-**Theorem.** The vacuum Gap profile breaks the $\mathbb{Z}_3$-symmetry of the Fano line $\{1,2,4\}$.
+:::danger Theorem 5.2 retracted [✗] (2026-09-25): breaking this $\mathbb{Z}_3$ breaks colour
+Theorem 5.2 argued that the vacuum breaks the $\mathbb{Z}_3$ generated by $\sigma$ because $k=1$ ($A$) and $k=2$ ($S$) lie in the $\mathbf{3}$-sector and $k=4$ ($L$) in the $\bar{\mathbf{3}}$-sector. The argument is void — those sector labels are not an $\mathrm{SU}(3)$ decomposition (Theorem 4.2) — and the conclusion is worse than it looked. $\sigma$ extends to the automorphism $e_k\mapsto e_{2k}$ of $\mathbb{O}$ (all signs $+$), fixes $e_O=e_7$, and so lies in $\mathrm{SU}(3)_C=\mathrm{Stab}_{G_2}(e_O)$ of the [Standard Model page](/docs/physics/gauge-symmetry/standard-model); in the basis $A-iD$, $S-iU$, $L-iE$ of the triplet it is the cyclic permutation matrix, with determinant 1 and $\log\sigma\in\mathfrak{su}(3)$ (`test_generation_z3_lies_in_colour_su3`). A vacuum that breaks $\langle\sigma\rangle$ breaks $\mathrm{SU}(3)_C$. The axis-pair profile of (a) does so — $\sigma$ maps the pair $(A,L)$ (Gap $\approx0$) to $(S,A)$ (Gap $\sim\epsilon_{\text{space}}$) — and so does the Higgs condensate $\gamma_{EU}\neq0$, since $\sigma$ maps $(E,U)$ to $(D,E)$. In UHM's own identifications, then, the $\mathbb{Z}_3$ breaking that the mass hierarchy needs is colour breaking. No mechanism in the corpus reconciles this with unbroken $\mathrm{SU}(3)_C$; it is recorded as an open contradiction and a research programme [Pr].
+:::
+
+*Record of the retracted theorem.* **Theorem.** The vacuum Gap profile breaks the $\mathbb{Z}_3$-symmetry of the Fano line $\{1,2,4\}$.
 
 **(a)** The vacuum Gap profile defines 5 sectors with different Gap values:
 
@@ -583,11 +589,7 @@ i.e., $F$ is **equal** for all three generations.
 - $k=1$ (A) and $k=2$ (S) — in the **3-sector**
 - $k=4$ (L) — in the **$\bar{3}$-sector**
 
-This **breaks** $\mathbb{Z}_3$: two generations in one sector, one — in the other. $\blacksquare$
-
-:::warning Collision with the colour reading of the same axes
-Two findings of [§1.3](#прецеденты-три-поколения) bear on Theorems 4.2 and 5.2. First, the sector labels $3=\{A,S,D\}$ and $\bar{3}=\{L,E,U\}$ are not an $\mathrm{SU}(3)$ decomposition: the $\mathrm{SU}(3)$ that fixes $O$ pairs $A$ with $D$, $S$ with $U$ and $L$ with $E$ into three complex coordinates, and no three axes span an invariant subspace ([Spacetime, precedents](/docs/core/foundations/spacetime#прецеденты-3-плюс-1)). Second, the map $\sigma$ of Theorem 5.1 is an automorphism of $\mathbb{O}$ that fixes $e_O$, so it lies in the stabiliser of the $O$-direction — the subgroup that the Standard Model page identifies with $\mathrm{SU}(3)_C$. A vacuum that breaks $\langle\sigma\rangle$, as Theorem 5.2 states, therefore breaks that $\mathrm{SU}(3)$; the page does not reconcile this with unbroken colour.
-:::
+This **breaks** $\mathbb{Z}_3$: two generations in one sector, one — in the other. $\blacksquare$ (Retracted; see the box at the top of this theorem, which replaces the former warning "Collision with the colour reading of the same axes".)
 
 ---
 
@@ -843,17 +845,13 @@ With PDG 2023 values $m_e = 0.51099895$ MeV, $m_\mu = 105.6583755$ MeV, $m_\tau 
 - $\sqrt{m_e} = 0.7148460$ MeV$^{1/2}$
 - $\sqrt{m_\mu} = 10.27903$ MeV$^{1/2}$
 - $\sqrt{m_\tau} = 42.1528$ MeV$^{1/2}$
-- Numerator $\sum m_i = 1883.035$ MeV
-- Denominator $(\sum \sqrt{m_i})^2 = 53.1466^2 = 2824.566$
-- $K_\mathrm{obs} = 0.66672$, i.e. $2/3 - 6.1 \times 10^{-5}$
+- Numerator $\sum m_i = 1883.029$ MeV
+- Denominator $(\sum \sqrt{m_i})^2 = 53.14669^2 = 2824.570$
+- $K_\mathrm{obs} = 0.666661$, i.e. $2/3 - 6.2 \times 10^{-6}$; the uncertainty of $m_\tau$ ($\pm0.12$ MeV) moves $K$ by $\mp 7\times10^{-6}$, so the pole masses agree with $2/3$ within that uncertainty. (Corrected 2026-09-25: the earlier lines gave $1883.035$, $2824.566$ and "$K_\mathrm{obs}=0.66672$, i.e. $2/3-6.1\times10^{-5}$" — an arithmetic slip; $0.66672$ even lies *above* $2/3$.)
 
-Running to $\mu = M_Z$ (Foot, Li, Peterson 2007): $K(M_Z) = 0.6672 \pm 0.0004$, consistent with $2/3$ to below $0.1\%$.
+~~Running to $\mu = M_Z$ (Foot, Li, Peterson 2007): $K(M_Z) = 0.6672 \pm 0.0004$, consistent with $2/3$ to below $0.1\%$.~~ Retracted [✗] (September 2026): the cited source could not be located (it is not in INSPIRE-HEP), and the claim is contradicted by the computation of Xing and Zhang (*Phys. Lett. B* **635**, 107–111 (2006), [arXiv:hep-ph/0602134](https://arxiv.org/abs/hep-ph/0602134)): with running charged-lepton masses the relation departs from its pole-mass value $2/3$ by about $0.2\%$ at $\mu=M_Z$, not "below $0.1\%$".
 
-This precision (five digits) strongly suggests a **structural origin** rather than accidental coincidence.
-
-:::warning Citation check (September 2026)
-We could not locate the source "Foot, Li, Peterson 2007" cited above for the running value. The verified computation of Xing and Zhang (*Phys. Lett. B* **635**, 107–111 (2006), [arXiv:hep-ph/0602134](https://arxiv.org/abs/hep-ph/0602134)) finds that the running charged-lepton masses do not satisfy the relation: at $\mu=M_Z$ the value departs from the pole-mass value $2/3$ by about $0.2\%$, not "below $0.1\%$".
-:::
+This precision holds for pole masses only (about $10^{-5}$), which is often read as a hint of a **structural origin** [I]; with running masses the relation holds to about $0.2\%$ (above).
 
 ### Equivalent formulations
 

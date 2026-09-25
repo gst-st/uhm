@@ -286,9 +286,9 @@ The Hamming code $H(7,4)$ is a perfect linear binary code: 7 bits = 4 data + 3 p
 The 4+3 split is a theorem [T]. Matching the division into “objective” (A,S,D,L) and “subjective” (E,O,U) dimensions is nontrivial.
 :::
 
-### 0.5.4 Cayley–Dixon bound [T] {#граница-кэли-диксона}
+### 0.5.4 Cayley–Dickson bound [T] {#граница-кэли-диксона}
 
-$\mathbb{O}$ is the last normed division algebra in the Cayley–Dixon chain. Hence:
+$\mathbb{O}$ is the last normed division algebra in the Cayley–Dickson chain. Hence:
 
 $$
 N = 7 = \max\{\dim(\text{Im}(\mathcal{A})) : \mathcal{A} \text{ a division algebra}\}

@@ -723,7 +723,7 @@ Analysis conducted on 12 language corpora (BabyLM 100M, TinyStories, OpenWebMath
 
 ### 9.1 Sectoral Decomposition $7 = 1_O \oplus 3_{\{A,S,D\}} \oplus \bar{3}_{\{L,E,U\}}$ {#секторная-валидация}
 
-Theoretical prediction from [spacetime.md](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция) (T-52 [T]): the seven dimensions divide into a "light" sector $\{A,S,D\}$ ($3$-representation) and a "heavy" sector $\bar{3}_{\{L,E,U\}}$ with a bridge singlet $O$. In empirical σ-analysis of texts, the effective grouping differs: $O$ falls into the "heavy" cluster (high $\sigma_O$), and $U$ — into the "bridge" (intermediate $\sigma_U$). This reflects operational stress in the specific substrate (text), not the theoretical $G_2$-decomposition.
+Theoretical prediction from [spacetime.md](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция) (registry row 48a; the page cited it as T-52 [T]) — *retracted 2026-09-25: the axis triples are not $SU(3)$ sectors, so this is no longer a prediction and the comparison below tests an ansatz, not a theorem*: the seven dimensions divide into a "light" sector $\{A,S,D\}$ ($3$-representation) and a "heavy" sector $\bar{3}_{\{L,E,U\}}$ with a bridge singlet $O$. In empirical σ-analysis of texts, the effective grouping differs: $O$ falls into the "heavy" cluster (high $\sigma_O$), and $U$ — into the "bridge" (intermediate $\sigma_U$). This reflects operational stress in the specific substrate (text), not the theoretical $G_2$-decomposition.
 
 **Empirical results (means over 12 corpora):**
 

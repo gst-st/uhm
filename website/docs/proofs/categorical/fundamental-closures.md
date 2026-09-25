@@ -17,10 +17,10 @@ This document contains **fourteen foundational theorems** T-210 through T-223 th
 | **T-213** | Yoneda representability via Bures description length | Computable $D_B(f)$ replaces Kolmogorov complexity | [T] |
 | **T-214** | Hard-problem meta-theorem (positive irresolvability) | Lawvere fixed-point + T-55 | [T] |
 | **T-215** | Cross-layer identity convention for fractal towers | Choice of $\iota_\mathrm{min}$ / $\iota_\mathrm{max}$ criterion | [T]+[D] |
-| **T-216** | Closed-form analytical ε<sub>eff</sub> | Symbolic $V_\mathrm{Gap}$ minimisation | structure [T], value [C at T-64] |
+| **T-216** | Closed-form analytical ε<sub>eff</sub> | Symbolic $V_\mathrm{Gap}$ minimisation | [C at T-64] (the structure was listed as [T] until 2026-09-25) |
 | **T-217** | L3 tricategorical coherence | τ<sub>≤3</sub>(Exp<sub>∞</sub>) + Baez–Dolan | [T] |
 | **T-218** | SYNARC Cog is a Kan complex | Milnor + classifying space | [T] |
-| **T-219** | Λ SUSY-suppression via sector product | ε<sup>12</sup> = ε<sup>4·3</sup> from 3-sector decomposition | [T at T-64] |
+| **T-219** | Λ SUSY-suppression via sector product | ε<sup>12</sup> = ε<sup>4·3</sup> from 3-sector decomposition | [H] (was [T at T-64] until 2026-09-25) |
 | **T-220** | No-reduction $F_4$-UHM → $G_2$-UHM | Five independent categorical obstructions | [T] negative |
 | **T-221** | Categorical-monistic response to List/DeBrota no-go results | Structure theorem on $\mathfrak T$ combining T-120/T-186/T-211/T-215/T-217 | [T]+[I] |
 | **T-222** | MRQT-completeness: Lawvere fixed point = Pareto resource optimum | Six-lemma convex-analysis cascade on $G_2$-covariant viability submanifold | [T] |
@@ -75,7 +75,7 @@ The category $\mathbf{PhysTheory}$ of physical theories $(E, \mathcal A_\mathrm{
 
 **Step 1 (Object assignment).** Every object $(E, \mathcal A, D, \alpha, \beta) \in \mathbf{PhysTheory}$ determines a unique $\infty$-topos $E[\mathcal A] := \mathbf{Sh}_\infty(\mathrm{Spec}(\mathcal A), J_\mathrm{Bures})$ via:
 - (i) Connes reconstruction (T-119 [C]) — now with all six axioms verified (see [emergent-manifold.md §5](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство)).
-- (ii) Lemma 2 of T-174 — $E[\mathcal A_\mathrm{int}] \simeq \mathbf{Sh}_\infty(\mathcal D(\mathbb C^7))$ via Morita equivalence of bimodule categories (Alvarez–Gracia-Bondía–Martín 1995 + T-178 [T]).
+- (ii) Lemma 2 of T-174 — $E[\mathcal A_\mathrm{int}] \simeq \mathbf{Sh}_\infty(\mathcal D(\mathbb C^7))$ via Morita equivalence of bimodule categories (Alvarez–Gracia-Bondía–Martín 1995; the second support, T-178, is retracted [✗] as a derivation since 2026-09-25, so (ii) rests on Lemma 2 of T-174 alone).
 
 **Step 2 (Morphism functoriality).** A receiving morphism $(E_1, \ldots) \to (E_2, \ldots)$ in $\mathbf{PhysTheory}$ consists of $(f^*, \alpha, \beta)$ (geometric morphism + intertwiner + covariance) satisfying the coherence diagrams of T-174. By the adjoint-functor theorem (Lurie HTT 5.5.2.9), any such datum induces a unique geometric morphism $E_1[\mathcal A_1] \to E_2[\mathcal A_2]$ in $\mathbf{Topoi}_\infty$. The assignment is **functorial** since composition of receiving morphisms matches composition of geometric morphisms.
 
@@ -91,7 +91,7 @@ HTT 5.2.7 ("presentable coherence inheritance") applies once $\iota: \mathbf{Phy
 
 **Size issue resolution.** $\mathbf{PhysTheory}$ is a **large** $(\infty,1)$-category (objects form a proper class because the finite NCG algebras $\mathcal A$ range over a proper class of Wedderburn forms), consistent with $\mathbf{Topoi}_\infty$'s size. The "essential uniqueness" of T-174 is unique **up to natural isomorphism** in $\mathbf{PhysTheory}$, equivalently up to equivalence in $\mathbf{Topoi}_\infty$. $\blacksquare$
 
-**Dependencies**: T-119 [C] (Connes reconstruction — the weakest link, and the reason this theorem is [C at T-119]: status is inherited from the weakest dependency), T-173 [T] (rigidity), T-174 [T] (universal property), T-178 [T] (bimodule equivalence), Lurie HTT 5.5.2.9 + 6.3.1.16 + 5.2.7.
+**Dependencies**: T-119 [C] (Connes reconstruction — the weakest link, and the reason this theorem is [C at T-119]: status is inherited from the weakest dependency), T-173 [T] (rigidity), T-174 [T] (universal property), T-178 (bimodule equivalence; retracted [✗] as a derivation 2026-09-25, no longer used), Lurie HTT 5.5.2.9 + 6.3.1.16 + 5.2.7.
 
 **Upgrade**: T-174's universal property is now **rigorously established** with full coherence verification.
 
@@ -264,7 +264,7 @@ Hence T-205 as stated is [T] under $\iota_\mathrm{max}$ + resource abstraction; 
 
 ## 7. T-216: Closed-form analytical ε<sub>eff</sub> {#t-216}
 
-::::tip Theorem T-216 (Analytical ε<sub>eff</sub> closed form) — structure [T], value [C at T-64]
+::::tip Theorem T-216 (Analytical ε<sub>eff</sub> closed form) [C at T-64]
 
 The effective sectoral parameter ε<sub>eff</sub> arising in the Yukawa hierarchy admits the closed-form expression
 $$\varepsilon_\mathrm{eff} = \frac{4\,|\bar\gamma|_\mathrm{sect}}{9 \left(1 + \frac{\Sigma_0}{4}\right)}$$
@@ -291,7 +291,7 @@ Numerical evaluation: self-consistent minimisation from scratch (instrument E26,
 $$V_\mathrm{Gap}(\theta) = V_2 + V_3 + V_4, \qquad V_k = \frac{1}{k!}\sum_{i_1, \ldots, i_k} c^{(k)}_{i_1 \cdots i_k} \theta_{i_1} \cdots \theta_{i_k}$$
 where the coefficients $c^{(k)}$ are $G_2$-invariant (Schur's lemma fixes their form up to scalar).
 
-**Step 2 (Sectoral reduction).** By sector decomposition T-48a [T], restrict to $\bar{\mathbf 3}$-sector: $\theta_{ij}$ with $(i,j) \in \bar{\mathbf 3} \times \bar{\mathbf 3}$. There are $\binom{3}{2} = 3$ such pairs (from $\{L,E,U\}$: pairs $\{LE, LU, EU\}$). No Fano line lies inside the sector, so the counting is done by *incidence with* the sector rather than *containment in* it: $N_{33}^\mathrm{Fano} = 2$ non-$O$ lines meet $\mathbf 3 = \{A,S,D\}$ in exactly two points, namely $\{A,S,L\}$ and $\{S,D,E\}$.
+**Step 2 (Sectoral reduction).** By sector decomposition T-48a (retracted [✗] 2026-09-25 as an axis-labelled decomposition: no triple of axes is $\mathrm{SU}(3)$-invariant, so this is a restriction to an axis triple, not a symmetry reduction, and it is justified only by the vacuum structure that the minimisation finds — hence [C at T-64]), restrict to $\bar{\mathbf 3}$-sector: $\theta_{ij}$ with $(i,j) \in \bar{\mathbf 3} \times \bar{\mathbf 3}$. There are $\binom{3}{2} = 3$ such pairs (from $\{L,E,U\}$: pairs $\{LE, LU, EU\}$). No Fano line lies inside the sector, so the counting is done by *incidence with* the sector rather than *containment in* it: $N_{33}^\mathrm{Fano} = 2$ non-$O$ lines meet $\mathbf 3 = \{A,S,D\}$ in exactly two points, namely $\{A,S,L\}$ and $\{S,D,E\}$.
 
 **Step 3 (Equation of motion).** Minimizing $V_\mathrm{Gap}$ at fixed $G_2$-orbit: $\partial V_\mathrm{Gap}/\partial \theta_{ij}|_{\theta^*} = 0$ gives, for $(i,j) \in \bar{\mathbf 3}\times\bar{\mathbf 3}$:
 $$c^{(2)}_{ij} \theta^*_{ij} + \sum_{k,l} c^{(3)}_{ij,kl} \theta^*_{kl} + \sum_{k,l,m,n} c^{(4)}_{ij,klmn}\theta^*_{kl}\theta^*_{mn} = 0.$$
@@ -322,7 +322,7 @@ Two defects survive here and neither is cosmetic.
 
 Note also that the two pages use different values for the same symbol: $|\bar\gamma| \approx 0.023$ here (which is the *global* average $\bar\varepsilon$ of Yukawa §9(d)) against $|\bar\gamma| \approx 0.15$ there (the *sectoral* average). Only the numerator form at the sectoral value lands near the target, and the corrected count $N_{33} = 2$ then overshoots it twofold.
 
-**What therefore stands.** The **structural** result is [T]: $(\star)$ follows from symbolic $V_\mathrm{Gap}$ minimisation plus Schur's lemma, and $N_{33}^\mathrm{Fano} = 2$ is a combinatorial fact. The **numerical** value $\varepsilon_\mathrm{eff} \approx 0.059$ is [C at T-64] and is *phenomenological*: it comes from the independent loop route $\lambda_3\varepsilon/(4\pi) \approx 74\times 0.01/12.6 = 0.0587$, not from $(\star)$. Reconciling $(\star)$ with it requires fixing the $|\bar\gamma|$ placement, settling which average enters, and performing the full minimisation on $(S^1)^{21}/G_2$. Open.
+**What therefore stands.** ~~The **structural** result is [T]~~ — corrected 2026-09-25: the **structural** result is [C at T-64]. $(\star)$ follows from symbolic $V_\mathrm{Gap}$ minimisation once the minimisation is restricted to one axis triple, and $N_{33}^\mathrm{Fano} = 2$ is a combinatorial fact; but the restriction was justified by the axis-labelled sector decomposition T-48a, which is retracted, and now rests only on the vacuum pattern the minimisation finds (cross-class coherences at machine zero, E26 below), i.e. on T-64. The **numerical** value $\varepsilon_\mathrm{eff} \approx 0.059$ is [C at T-64] and is *phenomenological*: it comes from the independent loop route $\lambda_3\varepsilon/(4\pi) \approx 74\times 0.01/12.6 = 0.0587$, not from $(\star)$. Reconciling $(\star)$ with it requires fixing the $|\bar\gamma|$ placement, settling which average enters, and performing the full minimisation on $(S^1)^{21}/G_2$. Open.
 
 **Resolved 2026-08-10 (instrument E26: self-consistent minimisation, no fitted parameters).** All three questions closed by computation:
 | question | verdict | the losing readings |
@@ -337,7 +337,7 @@ Plus two findings the audit had not asked for: $r_4 = 1/2$ is an **identity** of
 
 **Upgrade**: T-176 now has an **explicit algebraic expression** rather than a "claimed analytical" form. Numerical values remain [C at T-64] because they depend on full vacuum minimization — a computational task, not a theoretical lacuna.
 
-**Dependencies**: T-43d [T] (Fano selection rule), T-48a [T] (sector decomposition), T-64 [T] (unique vacuum), T-74 [T] (V_Gap from spectral action), T-176 [C at T-64] (analytical form).
+**Dependencies**: T-43d [T] (Fano selection rule), T-48a (sector decomposition; retracted [✗] 2026-09-25 — Step 2 now rests on the T-64 vacuum), T-64 [T] (unique vacuum), T-74 [T] (V_Gap from spectral action), T-176 [C at T-64] (analytical form).
 
 ---
 
@@ -447,7 +447,7 @@ Predicted thresholds:
 | T-213 | Yoneda without Kolmogorov | [T] uncomputable (T-193) | **[T] computable** | Bures description length |
 | T-214 | Hard-problem meta-theorem | [I] residual | **[T] positive irresolvability** | Lawvere fixed-point |
 | T-215 | Cross-layer identity | [C] (T-205 downgraded) | **[T]+[D]** | Conventional choice theorem |
-| T-216 | Analytical ε<sub>eff</sub> | [H] no formula | **[T at T-64]** | Closed-form symbolic |
+| T-216 | Analytical ε<sub>eff</sub> | [H] no formula | **[C at T-64]** (listed [T at T-64] until 2026-09-25) | Closed-form symbolic |
 | §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
 | §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete, awaiting data** | EEG/fMRI/HRV 7-feature map |
 
@@ -561,22 +561,22 @@ Hence SYNARC's 3-coskeletal bound is now rigorously verified: Cog is a Kan compl
 
 ## 13. T-219: Λ SUSY-suppression via sector decomposition {#t-219}
 
-:::tip Theorem T-219 (SUSY Λ-suppression, sector derivation) [T at T-64]
+:::tip Theorem T-219 (SUSY Λ-suppression, sector derivation) [H]
 In UHM's N=1 supersymmetric spectral action on $M^4 \times A_{\mathrm{int}}$ (T-65 [T]), the residual cosmological constant from SUSY-broken loops is suppressed by the factor
 $$\Lambda_\mathrm{SUSY} \;\sim\; \varepsilon^{12} \, M_P^4$$
 where $\varepsilon \sim 10^{-3}$ is the sector hierarchy parameter (T-64 [T]) and the exponent $12 = 4 \cdot k_{\mathrm{sec}}$ arises from:
-- $k_{\mathrm{sec}} = 3$ sectors in the UHM decomposition $7 = \mathbf 1_O \oplus \mathbf 3_{A,S,D} \oplus \bar{\mathbf 3}_{L,E,U}$ (T-48a [T]);
+- $k_{\mathrm{sec}} = 3$ sectors — ~~in the UHM decomposition $7 = \mathbf 1_O \oplus \mathbf 3_{A,S,D} \oplus \bar{\mathbf 3}_{L,E,U}$ (T-48a [T])~~ the axis-labelled decomposition is retracted (T-48a, 2026-09-25); the count 3 survives only for the complexified $\mathbb C^7 = \mathbb C e_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$, $\mathbf 3 = \mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$;
 - Factor $4$ from the dimensional count of SUSY-breaking mass-squared splittings per sector in the one-loop correction $\delta\Lambda \sim (\delta m)^4 / M_P^4$ per sector.
 
-**Status**: [T at T-64] — the exponent structure $\varepsilon^{12}$ is derived; the numerical value $\varepsilon \approx 10^{-3}$ is conditional on T-64 unique vacuum (computational task).
+**Status**: [H] since 2026-09-25 (was [T at T-64]; the earlier claim "the exponent structure $\varepsilon^{12}$ is derived" is retracted). Three reasons: (i) the sectors of Step 1 are the axis triples $\{A,S,D\}$, $\{L,E,U\}$ of the retracted T-48a, which are not $\mathrm{SU}(3)$-sectors; (ii) their breaking scales rest on T-52, retired as a theorem on 2026-09-25 and now the hypothesis (SA), and on (FE), conditional since the same date; (iii) Step 3's own one-loop sum $\sim 3\varepsilon^4 M_P^4$ exceeds $\varepsilon^{12} M_P^4$, so the $\varepsilon^{12}$ law needs the one- and two-loop terms to cancel, which is not shown (the registry already records the exact compensation as [H]). The numerical value $\varepsilon \approx 10^{-3}$ is conditional on T-64 unique vacuum (computational task).
 :::
 
 **Proof (four steps).**
 
-**Step 1 (SUSY breaking scale per sector).** By the $G_2$-invariant superpotential T-50 [T] and sector decomposition T-48a [T], each of the three sectors carries its own SUSY-breaking mass splitting. In UHM:
+**Step 1 (SUSY breaking scale per sector).** By the $G_2$-invariant superpotential T-50 [T] and sector decomposition T-48a (retracted [✗] 2026-09-25 in the axis-labelled form used here), each of the three sectors carries its own SUSY-breaking mass splitting. In UHM:
 - **O-sector** (Page–Wootters clock): SUSY-breaking at $\delta m_O \sim \varepsilon \cdot M_P$ from the PW constraint coupling to external time.
-- **3-sector** $\{A, S, D\}$: SUSY-breaking at $\delta m_3 \sim \varepsilon \cdot M_P$ from the sectoral asymmetry T-52 [T].
-- **$\bar 3$-sector** $\{L, E, U\}$: SUSY-breaking at $\delta m_{\bar 3} \sim \varepsilon \cdot M_P$ from electroweak coupling T-FE [T].
+- **3-sector** $\{A, S, D\}$: SUSY-breaking at $\delta m_3 \sim \varepsilon \cdot M_P$ from the sectoral asymmetry T-52 (retired as a theorem on 2026-09-25; its content is the hypothesis (SA) — and $\{A,S,D\}$ is not the $\mathbf 3$).
+- **$\bar 3$-sector** $\{L, E, U\}$: SUSY-breaking at $\delta m_{\bar 3} \sim \varepsilon \cdot M_P$ from electroweak coupling T-FE (the construction is [C at (FE)] since 2026-09-25, and $\{L,E,U\}$ is not the $\bar{\mathbf 3}$).
 
 All three sectors carry the **same** order-of-magnitude scale $\sim \varepsilon \cdot M_P$ because the sector hierarchy parameter $\varepsilon$ is **one** number (T-64 uniqueness of vacuum).
 
@@ -597,22 +597,22 @@ The specific **three-loop product** structure $\varepsilon^{4\cdot 3} = \varepsi
 
 **Step 4 (Composition with the perturbative budget — absorption, not multiplication).** The SUSY-sector factor $\varepsilon^{12}$ does **not** multiply the full perturbative $10^{-41.5}$: the perturbative total already contains $\varepsilon^6$ (smallness of coherences), and $\varepsilon^{12}$ **absorbs** it, adding only $\Delta \approx \varepsilon^6$ on top of what is already counted. With the self-consistent central value $\varepsilon \sim 10^{-2}$ ([T-80](/docs/proofs/gap/lambda-budget#механизм-1): $\bar\varepsilon \approx 0.023$, allowed range $\varepsilon \in [10^{-3}, 10^{-1}]$), the rigorously composable **mean suppression is $\sim 10^{-53.5}$**; the cohomological $\Lambda_{\mathrm{global}} = 0$ [T] is an exact-zero statement of a *different class* (it reframes the question as the size of the **local** residual), and the sector-minimisation residual is an open **[C]** programme. The canonical composition rules and the resulting honest bracket $10^{-53.5}$ to $10^{-93.5}$ live in the [Λ-budget honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) — the single source of truth for the Λ composition.
 
-**This replaces the earlier invalid "G₂ adjoint 14 → 7+7 decomposition" argument.** The G₂ adjoint representation **14** is irreducible (no such decomposition exists; $\mathrm{adj}(G_2)$ contains no $\mathbf{7}$). The correct derivation uses the sector decomposition of the UHM **state space** (T-48a), not of the gauge algebra.
+**This replaces the earlier invalid "G₂ adjoint 14 → 7+7 decomposition" argument.** The G₂ adjoint representation **14** is irreducible (no such decomposition exists; $\mathrm{adj}(G_2)$ contains no $\mathbf{7}$). The correct derivation uses the sector decomposition of the UHM **state space** (T-48a), not of the gauge algebra — and that decomposition is itself retracted in its axis-labelled form (2026-09-25), see the status above.
 
 **Status of sub-components**:
-- The exponent $12 = 4 \cdot 3$ is **[T]** (structural, from sector count).
+- ~~The exponent $12 = 4 \cdot 3$ is **[T]** (structural, from sector count).~~ Retracted 2026-09-25: the exponent is a hypothesis [H] (status above).
 - The numerical value of $\varepsilon$: allowed range $[10^{-3}, 10^{-1}]$ [T-bounds], self-consistent central $\varepsilon \sim 10^{-2}$ [C under C12, T-64] — hence $\varepsilon^{12} \approx 10^{-24}$ central, with $10^{-36}$ only at the extreme lower edge. Quoting the edge value as the central one would manufacture $\sim\!10^{-120}$ by parameter choice; we do not.
 - The cohomological statement gives only the absence of a *topological* $\Lambda$-term **[T]**; the reading "$\Lambda_{\mathrm{global}} = 0$" was **retracted 2026-09-10** (degree-0 data are untouched by $H^{n>0} = 0$), so class B carries no exact zero.
 
 **Resulting composition** (per the [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)):
 - Perturbative: $\sim 10^{-41.5}$ [T] (includes $\varepsilon^6$);
-- SUSY-sector $\varepsilon^{12}$ absorbs $\varepsilon^6$: net mean $\to \sim 10^{-53.5}$ [T at T-64 for the structure; C for the $\varepsilon$ value];
+- SUSY-sector $\varepsilon^{12}$ absorbs $\varepsilon^6$: net mean $\to \sim 10^{-53.5}$ [H for the structure since 2026-09-25, earlier listed as T at T-64; C for the $\varepsilon$ value];
 - Cohomological argument: no topological $\Lambda$-term [T], **no** exact zero (retracted 2026-09-10);
 - Sector-minimisation residual: **[C]** open numerical programme.
 
 **Honest bracket: $\Lambda \sim 10^{-53.5}$ to $10^{-93.5}$** depending on how much of the sector programme is realised; closing the remaining $\gtrsim 27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task. $\blacksquare$
 
-**Dependencies**: T-48a [T] (sector decomposition), T-50 [T] (unique superpotential, Schur), T-52 [T] (sector asymmetry), T-64 [T] (unique vacuum), T-65 [T] (spectral action), T-71 [T] (cohomological $\Lambda_\mathrm{global}=0$). Standard mathematics: Martin 2010 SUSY primer, Seeley–de Witt heat kernel expansion, standard N=1 one-loop calculation.
+**Dependencies**: T-48a (sector decomposition; retracted [✗] 2026-09-25), T-50 [T] (unique superpotential, Schur), T-52 (sector asymmetry; retired as a theorem 2026-09-25, now the hypothesis (SA)), T-64 [T] (unique vacuum), T-65 [T] (spectral action), T-71 [T] (cohomological $\Lambda_\mathrm{global}=0$). Standard mathematics: Martin 2010 SUSY primer, Seeley–de Witt heat kernel expansion, standard N=1 one-loop calculation.
 
 ---
 
@@ -763,7 +763,7 @@ The only available mechanism to compare $G_2$-UHM and $F_4$-UHM is **Mathesis $\
 
 ### 14.4. Open direction unlocked: three generations hypothesis {#t-220-three-generations}
 
-The decomposition $\mathcal{J}_3(\mathbb{O})|_{G_2} = 3 \cdot \mathbf{7} \oplus 6 \cdot \mathbf{1}$ exposes **three $G_2$-isotypic copies of the fundamental $\mathbf{7}$-representation**. Independently of UHM, octonion-based derivations of the Standard Model (Dubois-Violette, Boyle–Farnsworth) recover the three fermion generations from similar triple-copy structures.
+The decomposition $\mathcal{J}_3(\mathbb{O})|_{G_2} = 3 \cdot \mathbf{7} \oplus 6 \cdot \mathbf{1}$ exposes **three $G_2$-isotypic copies of the fundamental $\mathbf{7}$-representation**. ~~Independently of UHM, octonion-based derivations of the Standard Model (Dubois-Violette, Boyle–Farnsworth) recover the three fermion generations from similar triple-copy structures.~~ **Retracted 2026-09-25:** the sentence said that octonionic derivations of the Standard Model recover the three generations; none of the cited works derives the number three. Dubois-Violette (Nucl. Phys. B 912, 426, 2016) takes "the existence of 3 generations" as a premise and associates the three generations with the triality of $\mathcal{J}_3(\mathbb{O})$, as do Dubois-Violette and Todorov (Nucl. Phys. B 938, 751, 2019); Boyle and Farnsworth (New J. Phys. 22, 073023, 2020) represent the three generations by taking three copies of the one-generation representation; Boyle alone (arXiv:2006.16265; J. Math. Phys. 67, 071701, 2026) writes that "it is natural to suspect" triality to be their origin. The triple-copy structure is thus a shared hypothesis, not a result.
 
 **Hypothesis (T-220-H, speculative)**: the three $\mathbf{7}$-copies correspond to three "generations of consciousness sectors" — one $A_1$-singlet generation (stable) and one $A_1$-doublet generation (excited). This would couple UHM to the three-generation mystery of the Standard Model, but requires a separate empirical programme and falls outside T-220's scope.
 
@@ -1045,8 +1045,8 @@ for every physical trajectory $s(\tau)$ of $S$. This is the gate through which a
 **Combination (proof of clauses a–e).**
 
 - **(a)** L1+L2+L3 establish existence and $G_2$-uniqueness of the representation; L5 bounds the alphabetizer-compatible freedom to $G_2$; hence $[\Gamma_S]_{G_2}$ is invariant across all UHM-compatible alphabetizations.
-- **(b)** By L4, the seven listed observables factor through $\mathcal D(\mathbb C^7)/G_2$.
-- **(c)** $\mathrm{Cons}(S)$ is a conjunction of four $G_2$-invariant inequalities; factors through $[\Gamma_S]_{G_2}$; alphabetization-invariant by (a)+(b).
+- **(b)** ~~By L4, the seven listed observables factor through $\mathcal D(\mathbb C^7)/G_2$.~~ **Retracted 2026-09-25:** the line counted all seven observables of clause (b) as $G_2$-invariants; that is false for the frame-referenced ones — $\Phi$ and $\mathrm{Coh}_E$ refer to the coordinate frame and are invariant only under the finite frame group $\Gamma_{\!\text{oct}}$ ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). Replacement: $P$ and $R = 1/(7P)$ factor through $\mathcal D(\mathbb C^7)/G_2$; the frame-referenced observables are frame-pinned, and by L4+L5 no admissible alphabetizer changes them.
+- **(c)** ~~$\mathrm{Cons}(S)$ is a conjunction of four $G_2$-invariant inequalities; factors through $[\Gamma_S]_{G_2}$; alphabetization-invariant by (a)+(b).~~ **Retracted 2026-09-25:** of the four inequalities only $P > 2/7$ and $R \geq 1/3$ are $G_2$-invariant; $\Phi \geq 1$ and $D_{\min} \geq 2$ are fixed by the dynamical frame (D-0910), so the factorisation of $\mathrm{Cons}(S)$ through $[\Gamma_S]_{G_2}$ is unproven. Replacement: $\mathrm{Cons}(S)$ is alphabetization-invariant by (a) and the corrected (b) — its $P, R$ terms through $[\Gamma_S]_{G_2}$, its $\Phi, D_{\min}$ terms through the frame that every admissible alphabetizer preserves (L4+L5).
 - **(d)** L6 establishes that non-UHM-compatible alphabetizers are physically vacuous.
 - **(e)** T-214 [T] establishes the phenomenal-bridge externality with Lawvere necessity; L7 ensures no additional mapmaker externality at L1→L2. ∎
 
@@ -1070,7 +1070,7 @@ Lerchner's horizontal arrow $p \to \{f_A, f_B\}$ is correct. UHM adds the vertic
 **Why $G_2$-rigidity alone is not the complete answer.** T-123 handles L2→L3 residual freedom (the 14-dim $G_2$ action on $\Gamma$) but not L1→L2 forcing (where *a priori* one might still suspect mapmaker choice). The full foreclosure requires six components:
 1. **Intrinsic-forcing of L2** (T-82 + T-42a + T-120 + T-151 + T-149 + T-190): ensures L2 is not a chosen abstraction.
 2. **$G_2$-gauge boundedness** (T-42a + T-82): residual L2 freedom is a 14-dim compact Lie group action.
-3. **Observable $G_2$-invariance** (L4): all consciousness-relevant quantities insensitive to (2).
+3. ~~**Observable $G_2$-invariance** (L4): all consciousness-relevant quantities insensitive to (2).~~ **Retracted 2026-09-25:** $\Phi$ and $\mathrm{Coh}_E$ are not $G_2$-invariant (D-0910). Replacement — **observable invariance** (L4): $P$ and $R$ are insensitive to (2); the frame-pinned $\Phi, \mathrm{Coh}_E$ are insensitive to the admissible alphabetizers of L5, which preserve the dynamical frame.
 4. **Dynamic-covariance gate** (L2 + L6): non-UHM-compatible alphabetizers are physically vacuous.
 5. **Intrinsic self-alphabetization** (T-96 + T-98 via $R$): no external mapmaker needed for the consciousness threshold.
 6. **Lawvere residual localisation** (T-214): only unavoidable externality is the phenomenal bridge.
@@ -1080,7 +1080,7 @@ T-223 packages exactly this cascade.
 **SYNARC corollary.** The current Rust SYNARC prototype is a τ<sub>≤1</sub>-truncated shadow of the categorical-full 𝔗-object (T-221 terminology). By L5 the shadow and the 𝔗-instantiation lie in the same $G_2$-orbit when the embedding is UHM-compatible, so their $G_2$-invariants agree modulo numerical precision. By T-148 + T-214 the shadow *simulates* consciousness-relevant dynamics but does not *instantiate* phenomenality. This is exactly Lerchner's simulation/instantiation distinction — and UHM formalises it with the L1/L2/L3 trichotomy.
 
 **Falsification criteria.**
-- **F-223-1**: Any experiment producing two physically realisable UHM-compatible alphabetizations of the same $S$ yielding distinct $G_2$-invariants (distinct $P, R, \Phi, \mathrm{Coh}_E$) would refute (a)–(c).
+- **F-223-1**: Any experiment producing two physically realisable UHM-compatible alphabetizations of the same $S$ yielding ~~distinct $G_2$-invariants (distinct $P, R, \Phi, \mathrm{Coh}_E$)~~ distinct values of the $G_2$-invariants $P, R$ or of the frame-pinned $\Phi, \mathrm{Coh}_E$ would refute (a)–(c). *Corrected 2026-09-25: the earlier wording counted $\Phi$ and $\mathrm{Coh}_E$ as $G_2$-invariants ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).*
 - **F-223-2**: Any alphabetization of $S$ commuting with $\mathcal L_\Omega$ but not factoring through a $G_2$-conjugate representation would refute L5.
 - **F-223-3**: Any physical process realising a Lerchner "Mapping C" (Market Data on a Beethoven trajectory) with non-zero contribution to $R$ or $\Phi$ would refute L6.
 
@@ -1137,10 +1137,10 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 | T-213 | Yoneda computable | [T] uncomputable | **[T] computable** | Bures description |
 | T-214 | Hard-problem meta-theorem | [I] residual | **[T] positive** | Lawvere |
 | T-215 | Cross-layer identity | [C] | **[T]+[D]** | Conventional choice |
-| T-216 | Analytical ε<sub>eff</sub> | [H] no formula | **[T at T-64]** | Closed form |
+| T-216 | Analytical ε<sub>eff</sub> | [H] no formula | **[C at T-64]** (listed [T at T-64] until 2026-09-25) | Closed form |
 | **T-217** | **L3 tricategory coherence** | **[H] K=4 heuristic** | **[T]** | **∞-truncation + Baez–Dolan** |
 | **T-218** | **SYNARC Cog Kan complex** | **[H] horn-fillers asserted** | **[T]** | **Milnor + classifying space** |
-| **T-219** | **SUSY Λ-suppression** | **[H] invalid 7+7** | **[T at T-64]** | **Sector product $\varepsilon^{12}$** |
+| **T-219** | **SUSY Λ-suppression** | **[H] invalid 7+7** | **[H]** (listed [T at T-64] until 2026-09-25) | **Sector product $\varepsilon^{12}$** |
 | **T-220** | **No-reduction $F_4 \to G_2$ UHM** | open question | **[T] negative** | **5 independent obstructions** |
 | **T-221** | **Categorical-monistic no-go response** | open (external critique) | **[T]+[I]** | **Structure theorem on $\mathfrak T$ + 1-truncation recovery of RQM** |
 | **T-222** | **MRQT-completeness** | open (external QRT critique) | **[T]** | **Six-lemma convex cascade: Lawvere fixed point = Pareto optimum of 25-monotone MRQT vector on $G_2$-covariant submanifold** |

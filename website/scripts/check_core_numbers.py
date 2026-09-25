@@ -17,6 +17,13 @@
 коммутируют (нет контекстуальности Кохена–Шпекера), ранг $G_2$ равен двум, а
 R = 1/(7P) не обращается в нуль.
 
+Пять добавлены отзывом 25.09.2026 (октонионная линия): `no_axis_triple_is_su3_invariant`
+(разложение 1_O ⊕ 3_{A,S,D} ⊕ 3̄_{L,E,U} ложно — 0 инвариантных троек из 20),
+`generation_z3_lies_in_colour_su3` (ℤ₃ поколений — элемент SU(3)_C),
+`su3_invariant_states_are_coherent_only_on_o_line_pairs`,
+`only_16_of_128_fano_orientations_are_normed` (пробел шага T15) и
+`gamma5_with_i_has_imaginary_spectrum` (спектр iΓ_OΓ_AΓ_SΓ_D — {±i}, не {±1}).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -645,6 +652,156 @@ def test_reflection_measure_never_vanishes():
     Ps = [purity(random_state(rng)) for _ in range(200)] + [1 / 7, 1.0]
     R = np.array([1 / (7 * P) for P in Ps])
     assert R.min() >= 1 / 7 - 1e-12 and R.max() <= 1 + 1e-12
+
+
+def _su3_of_e_o():
+    """Базис 𝔰𝔲(3) = Stab_{𝔤₂}(e_O): восемь антисимметричных матриц 7×7."""
+    A = np.array([X @ np.eye(7)[O_AXIS] for X in G2]).T
+    _, s, Vt = np.linalg.svd(A)
+    ns = Vt[np.sum(s > 1e-9):]
+    return [sum(ns[a][b] * G2[b] for b in range(14)) for a in range(ns.shape[0])]
+
+
+def test_no_axis_triple_is_su3_invariant():
+    """Ни одна тройка из шести осей ≠ O не инвариантна под SU(3) = Stab(e_O): 0 из 20.
+
+    Свидетель отзыва 25.09.2026: разложение «7 = 1_O ⊕ 3_{A,S,D} ⊕ 3̄_{L,E,U}» и его
+    вещественная форма ℝ¹⊕ℝ³⊕ℝ³ ложны. Коммутант 𝔰𝔲(3) на ℝ⁶ двумерен (ℝ⁶ неприводимо,
+    комплексного типа); L_{e_O} спаривает A↔D, S↔U, L↔E, и триплет есть
+    span_ℂ{A−iD, S−iU, L−iE}. Размах {A,S,D} сохраняет лишь одномерная 𝔲(1) ⊂ 𝔰𝔲(3).
+    Метки осей: A,S,D,L,E,U,O = e₁…e₇ (таблица g2-structure §2.2).
+    """
+    su3 = _su3_of_e_o()
+    assert len(su3) == 8
+    invariant = []
+    for T in itertools.combinations(range(6), 3):
+        P = np.zeros((7, 7))
+        P[list(T), list(T)] = 1
+        if max(np.abs((np.eye(7) - P) @ X @ P).max() for X in su3) < 1e-9:
+            invariant.append(T)
+    assert invariant == []
+    comm = np.vstack([np.kron(X[:6, :6].T, np.eye(6)) - np.kron(np.eye(6), X[:6, :6]) for X in su3])
+    assert 36 - np.linalg.matrix_rank(comm, tol=1e-9) == 2
+    Lo = np.array([omul(unit(7), unit(i + 1))[1:] for i in range(7)]).T
+    assert np.allclose((Lo @ Lo)[:6, :6], -np.eye(6))
+    assert all(abs(Lo[j, i] - 1) < 1e-12 for i, j in ((0, 2), (1, 5), (3, 4)))   # A→D, S→U, L→E
+    for a, d in ((0, 2), (1, 5), (3, 4)):                                         # A−iD, S−iU, L−iE ∈ 𝟑
+        v = np.zeros(7, complex)
+        v[a], v[d] = 1, -1j
+        assert np.allclose(Lo @ v, 1j * v)
+    P = np.zeros((7, 7))
+    P[[0, 1, 2], [0, 1, 2]] = 1
+    M = np.array([((np.eye(7) - P) @ X @ P).flatten() for X in su3]).T
+    assert len(su3) - np.linalg.matrix_rank(M, tol=1e-9) == 1                     # только 𝔲(1) сохраняет {A,S,D}
+
+
+def test_generation_z3_lies_in_colour_su3():
+    """σ: e_k ↦ e_{2k mod 7} — автоморфизм 𝕆, закрепляющий e_O = e₇, то есть элемент SU(3)_C.
+
+    Свидетель отзыва 25.09.2026 (Теорема 5.2 поколений): в базисе A−iD, S−iU, L−iE
+    триплета σ — циклическая перестановка с det = 1, и log σ ∈ 𝔰𝔲(3). Вакуум,
+    ломающий ⟨σ⟩, ломает SU(3)_C; ⟨σ⟩ не сохраняет и пару (E,U): σ(E,U) = (D,E).
+    """
+    def sig(k):
+        return (2 * k) % 7 or 7
+
+    S = np.zeros((8, 8))
+    S[0, 0] = 1
+    for k in range(1, 8):
+        S[sig(k), k] = 1
+    rng = np.random.default_rng(10)
+    for _ in range(20):
+        x, y = rng.normal(size=8), rng.normal(size=8)
+        assert np.allclose(S @ omul(x, y), omul(S @ x, S @ y), atol=1e-10)
+    assert sig(7) == 7 and sorted({tuple(sorted({k, sig(k), sig(sig(k))})) for k in range(1, 8)}) == [(1, 2, 4), (3, 5, 6), (7,)]
+    s7 = S[1:, 1:]
+    B = np.zeros((7, 3), complex)
+    for c, (a, d) in enumerate(((0, 2), (1, 5), (3, 4))):
+        B[a, c], B[d, c] = 1, -1j
+    M3 = np.linalg.lstsq(B, s7 @ B, rcond=None)[0]
+    assert np.allclose(M3, np.roll(np.eye(3), 1, axis=0)) and abs(np.linalg.det(M3) - 1) < 1e-12
+    from scipy.linalg import logm
+    X = np.real(logm(s7))
+    su3 = _su3_of_e_o()
+    F = np.array([Y.flatten() for Y in su3]).T
+    coef = np.linalg.lstsq(F, X.flatten(), rcond=None)[0]
+    assert np.linalg.norm(F @ coef - X.flatten()) < 1e-9
+    assert (sig(5), sig(6)) == (3, 5)                                             # (E,U) ↦ (D,E)
+
+
+def test_su3_invariant_states_are_coherent_only_on_o_line_pairs():
+    """SU(3)_C-инвариантная Γ имеет недиагональные элементы лишь на парах (A,D), (S,U), (L,E).
+
+    Отсюда: профиль «Gap одинаков на девяти парах {A,S,D}×{L,E,U}» — не цветовая
+    изотропия, а любая когерентность γ_EU ≠ 0 уже нарушает SU(3)_C.
+    """
+    su3 = _su3_of_e_o()
+    basis = []
+    for i in range(7):
+        for j in range(7):
+            E = np.zeros((7, 7), complex)
+            E[i, j] = 1
+            basis.append(E)
+    rows = np.vstack([np.array([(Y @ X - X @ Y).flatten() for Y in basis]).T for X in su3])
+    _, s, Vh = np.linalg.svd(rows)
+    null = Vh[np.sum(s > 1e-9):]
+    assert null.shape[0] == 3                                                     # коммутант ℂ³ (Шур)
+    support = {tuple(sorted((i, j))) for v in null for i in range(7) for j in range(7)
+               if i != j and abs(v.reshape(7, 7)[i, j]) > 1e-9}
+    assert support == {(0, 2), (1, 5), (3, 4)}
+
+
+def test_only_16_of_128_fano_orientations_are_normed():
+    """Из 2⁷ = 128 ориентаций семи линий Фано нормированную алгебру дают ровно 16.
+
+    Свидетель пробела шага T15 (25.09.2026): T12–T14 дают неориентированный BIBD(7,3,1);
+    ориентация — вход (Alt), а не выход. Шестнадцать — одна орбита смен знаков
+    e_i ↦ −e_i (стабилизатор порядка 8: тождество и семь дополнений линий).
+    """
+    rng = np.random.default_rng(11)
+    samples = [(rng.normal(size=8), rng.normal(size=8)) for _ in range(4)]
+
+    def normed(signs):
+        lines = [(i, j, k) if s > 0 else (j, i, k) for (i, j, k), s in zip(LINES, signs)]
+
+        def mul(a, b):
+            c = np.zeros(8)
+            c[0] = a[0] * b[0] - np.dot(a[1:], b[1:])
+            c[1:] += a[0] * b[1:] + b[0] * a[1:]
+            for i, j, k in lines:
+                for x, y, z in ((i, j, k), (j, k, i), (k, i, j)):
+                    c[z] += a[x] * b[y] - a[y] * b[x]
+            return c
+        return all(abs(np.linalg.norm(mul(x, y)) - np.linalg.norm(x) * np.linalg.norm(y)) < 1e-9
+                   for x, y in samples)
+
+    good = {s for s in itertools.product((1, -1), repeat=7) if normed(s)}
+    assert len(good) == 16 and (1,) * 7 in good
+
+    def flip(signs, S):
+        return tuple(-s if sum(p in S for p in line) % 2 else s for line, s in zip(LINES, signs))
+
+    subsets = [set(c) for r in range(8) for c in itertools.combinations(range(1, 8), r)]
+    assert {flip((1,) * 7, S) for S in subsets} == good
+
+
+def test_gamma5_with_i_has_imaginary_spectrum():
+    """В соглашении Γ_iΓ_j + Γ_jΓ_i = −2δ_ij (левое умножение в 𝕆): (Γ_OΓ_AΓ_SΓ_D)² = +1.
+
+    Свидетель отзыва 25.09.2026 (Стандартная модель §4.3): «γ₅ = iΓ_OΓ_AΓ_SΓ_D с
+    собственными значениями ±1» ложно — спектр iΓ_OΓ_AΓ_SΓ_D есть {±i}; так для всех 35 четвёрок.
+    """
+    def lmul(i):
+        return np.array([omul(unit(i), unit(j)) for j in range(8)]).T
+
+    G = [lmul(i) for i in range(1, 8)]
+    assert all(np.allclose(G[a] @ G[b] + G[b] @ G[a], -2 * (a == b) * np.eye(8)) for a in range(7) for b in range(7))
+    for q in itertools.combinations(range(7), 4):
+        P = G[q[0]] @ G[q[1]] @ G[q[2]] @ G[q[3]]
+        assert np.allclose(P @ P, np.eye(8))
+    P = G[O_AXIS] @ G[0] @ G[1] @ G[2]                                            # O, A, S, D
+    ev = np.linalg.eigvals(1j * P)
+    assert np.allclose(np.abs(ev.imag), 1) and np.allclose(ev.real, 0)
 
 
 def main():

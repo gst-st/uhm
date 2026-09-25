@@ -363,7 +363,7 @@ The elements $\gamma_{Ai}$ of the coherence matrix describe the connection of ar
 
 ## Articulation and the Fano plane {#артикуляция-и-фано}
 
-In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM the dimension $A$ corresponds to the imaginary unit $e_1 \in \mathrm{Im}(\mathbb{O})$. Articulation lies in sector **3** of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]).
+In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM the dimension $A$ corresponds to the imaginary unit $e_1 \in \mathrm{Im}(\mathbb{O})$. ~~Articulation lies in sector **3** of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]).~~ Retracted 2026-09-25 with T-48a: no single axis lies in the $\mathbf 3$ — the triplet is $\mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$, so $A$ enters it only in the combination $A - iD$.
 
 On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$, articulation $A$ ($= e_1$) belongs to **three Fano lines**:
 

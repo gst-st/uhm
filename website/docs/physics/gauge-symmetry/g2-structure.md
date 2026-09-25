@@ -119,8 +119,8 @@ $$\mathfrak{g}_2 = \mathfrak{su}(3) \oplus \mathbb{C}^3$$
 
 | Type | Count | $\mathrm{SU}(3)$ representation | Physical interpretation in UHM |
 |-----|-------|-------------------------------|-------------------------------|
-| $\mathrm{SU}(3)$ generators | 8 | $\mathbf{8}$ (adjoint) | Gauge transformations between triples of dimensions on a single Fano line; analogue of gluon fields |
-| Additional generators | 6 | $\mathbf{3} \oplus \bar{\mathbf{3}}$ | Transformations mixing dimensions from **different** Fano lines; 'inter-line' rotations |
+| $\mathrm{SU}(3)$ generators | 8 | $\mathbf{8}$ (adjoint) | Unitary rotations of the three complex coordinates $A-iD$, $S-iU$, $L-iE$ among themselves, fixing $O$; analogue of gluon fields. (The earlier gloss "gauge transformations between triples of dimensions on a single Fano line" is retracted [✗]: no generator acts inside a single Fano line, §2.6.) |
+| Additional generators | 6 | $\mathbf{3} \oplus \bar{\mathbf{3}}$ | The generators that move the $O$-direction: they span the tangent space of $S^6=G_2/\mathrm{SU}(3)$ at $e_O$. (The earlier gloss "mixing dimensions from different Fano lines" described no invariant property and is withdrawn.) |
 
 All 14 generators are anti-Hermitian $7 \times 7$ matrices $T_a \in \mathfrak{so}(7)$ satisfying:
 
@@ -168,7 +168,7 @@ Nothing in §§1–2 is new mathematics, and much of its physical reading is not
 
 **Günaydın and Gürsey (1973, 1974): colour inside $G_2$.** Murat Günaydın and Feza Gürsey were the first to read the subgroup of $G_2$ that fixes one imaginary unit as the colour group of quarks — the reading that this page and the [Standard Model page](/docs/physics/gauge-symmetry/standard-model) give to $\mathrm{SU}(3)\subset G_2$. In "Quark structure and octonions" (*J. Math. Phys.* **14**, 1651–1667 (1973), DOI [10.1063/1.1666240](https://doi.org/10.1063/1.1666240)) they wrote $\mathbb{O}$ in a *split basis* — complex combinations of pairs of imaginary units, adapted to one chosen unit $u$ — and reduced $G_2$ to $\mathrm{SU}(3)=\mathrm{Stab}_{G_2}(u)$, the automorphisms that leave $u$ fixed. Under this subgroup the seven imaginary units become a singlet ($u$ itself) plus a colour triplet and anti-triplet, $7=1\oplus3\oplus\bar{3}$, and the fourteen generators become $8\oplus3\oplus\bar{3}$ — the decomposition of §2.4. In "Quark statistics and octonions" (*Phys. Rev. D* **9**, 3387–3391 (1974), DOI [10.1103/PhysRevD.9.3387](https://doi.org/10.1103/PhysRevD.9.3387)) they went on to treat quark fields as octonionic fields. *Standing:* the group theory is standard and uncontested; as a model of quarks the programme was not adopted — quantum chromodynamics uses $\mathrm{SU}(3)_c$ with no octonionic structure — and it survives as the starting point of later work: Furey's thesis calls it "one of the earliest breakthroughs" of the field and extends it ([arXiv:1611.09182](https://arxiv.org/abs/1611.09182)). *Parallel in UHM:* the table of §2.4 (the $\mathfrak{su}(3)$ generators as an "analogue of gluon fields"), the gauge analogy of §3b, and $\mathrm{SU}(3)_C$ as the stabiliser of the $O$-direction [I]. *Difference:* the decomposition and its reading as colour are prior art from 1973; UHM cannot count either among its own results. What is UHM's own on this page is the use of $G_2$ as a symmetry of a $7\times7$ coherence matrix and its breaking by the pinching dynamics to the finite frame group $\Gamma_{\!\text{oct}}$ (§7); nothing in the lineage corresponds to that.
 
-The precedent also fixes what the triplet is, and this corrects the gloss of §2.4. Take the table of §2.2 and fix the unit $O=e_7$. Left multiplication by $e_7$ squares to $-1$ on the six remaining axes, so it serves as the imaginary unit of a complex structure, and it pairs these axes along the three Fano lines through $O$: $A\leftrightarrow D$, $S\leftrightarrow U$, $L\leftrightarrow E$. The three pairs are the three complex coordinates on which $\mathrm{SU}(3)$ acts as on $\mathbb{C}^3$; Todorov and Dubois-Violette write the same split with the same Fano labelling (eq. 2.5 of the paper cited below). In these coordinates every nonzero element of $\mathfrak{su}(3)$ is a traceless $3\times3$ matrix and therefore acts on at least two of the three lines through $O$; no generator acts inside a single Fano line (a direct check against the table finds none for any of the seven lines). The description "gauge transformations between triples of dimensions on a single Fano line" in §2.4 is therefore not accurate.
+The precedent also fixes what the triplet is, and this corrects the gloss of §2.4. Take the table of §2.2 and fix the unit $O=e_7$. Left multiplication by $e_7$ squares to $-1$ on the six remaining axes, so it serves as the imaginary unit of a complex structure, and it pairs these axes along the three Fano lines through $O$: $A\leftrightarrow D$, $S\leftrightarrow U$, $L\leftrightarrow E$. The three pairs are the three complex coordinates on which $\mathrm{SU}(3)$ acts as on $\mathbb{C}^3$; Todorov and Dubois-Violette write the same split with the same Fano labelling (eq. 2.5 of the paper cited below). In these coordinates every nonzero element of $\mathfrak{su}(3)$ is a traceless $3\times3$ matrix and therefore acts on at least two of the three lines through $O$; no generator acts inside a single Fano line (a direct check against the table finds none for any of the seven lines). The description "gauge transformations between triples of dimensions on a single Fano line" in §2.4 is therefore retracted there. The same precedent refutes the axis-labelled sector split $7=1_O\oplus3_{\{A,S,D\}}\oplus\bar3_{\{L,E,U\}}$ used elsewhere in the corpus; it is retracted in [Spacetime](/docs/core/foundations/spacetime#секторная-декомпозиция) and on the [Standard Model page](/docs/physics/gauge-symmetry/standard-model), Theorem 1.1(a).
 
 **Holland, Minkowski, Pepe and Wiese (2003): $G_2$ as a gauge group.** Lattice field theorists study a gauge theory whose gauge group is $G_2$ itself, to learn how quarks are confined when the centre symmetry of $\mathrm{SU}(3)$ is absent: the centre of $G_2$ is trivial. In "Exceptional confinement in G(2) gauge theory" (*Nucl. Phys. B* **668**, 207–236 (2003), [arXiv:hep-lat/0302023](https://arxiv.org/abs/hep-lat/0302023)) the fourteen gauge bosons transform under $\mathrm{SU}(3)\subset G_2$ as $8\oplus3\oplus\bar{3}$ — "gluons" plus vectors with the colour quantum numbers of quarks and antiquarks — and a Higgs field in the $7$ breaks $G_2$ to $\mathrm{SU}(3)$, giving the six extra vectors a mass; the lattice results show that $G_2$ confines without a centre. *Standing:* an established laboratory for confinement mechanisms — a model, not a claim about nature. *Parallel:* the six "additional generators" of §2.4 and the "$G_2$-extra bosons" of the Standard Model page [I]. *Difference:* six extra vectors in $3\oplus\bar{3}$ that become massive when a Higgs mechanism breaks $G_2$ to $\mathrm{SU}(3)$ are a property of every such gauge theory; their existence is therefore not a prediction specific to UHM — only their masses and couplings could be.
 
@@ -198,13 +198,11 @@ $$g: \gamma_{ij} \mapsto \sum_{k,l} D_{ki}(g)\, D_{lj}^*(g)\, \gamma_{kl}$$
 
 ### 3.2 $G_2$ Preserves the Fano Structure
 
-Since $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves octonionic multiplication, it preserves the structure constants $f_{ijk}$ as a **tensor** (the associative 3-form $\varphi$). It does **not** permute the seven coordinate Fano lines — that is done only by the finite frame subgroup $\Gamma_{\!\text{oct}}\cong PSL(2,7)\subset G_2$; a generic $g\in G_2$ rotates the coordinate axes (irreducibility of $\mathbf 7$):
+Since $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves octonionic multiplication, it preserves the structure constants $f_{ijk}$ as a **tensor** (the associative 3-form $\varphi$). It does **not** permute the seven coordinate Fano lines — that is done only by the finite frame subgroup $\Gamma_{\!\text{oct}}\subset G_2$ of signed permutation matrices, of order $1344=2^3\cdot168$, which acts on the lines through its quotient $\mathrm{Aut}(PG(2,2))\cong PSL(2,7)$ of order 168 (`test_frame_group_order_and_singer_subgroups`; [uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)); a generic $g\in G_2$ rotates the coordinate axes (irreducibility of $\mathbf 7$):
 
 $$g \in G_2 \ \Rightarrow\ g^\ast\varphi = \varphi; \qquad g \in \Gamma_{\!\text{oct}} \ \Rightarrow\ g \text{ permutes the Fano lines}.$$
 
-More precisely: for each $g \in G_2$ there exists a permutation $\sigma_g$ on the set $\{1, \ldots, 7\}$ of lines:
-
-$$g\, \Pi_p\, g^\dagger = \Pi_{\sigma_g(p)}$$
+~~More precisely: for each $g \in G_2$ there exists a permutation $\sigma_g$ on the set $\{1, \ldots, 7\}$ of lines with $g\, \Pi_p\, g^\dagger = \Pi_{\sigma_g(p)}$.~~ Retracted [✗] (2026-09-25): this holds only for $g\in\Gamma_{\!\text{oct}}$, as the paragraph above and Theorem 11.2 say; for a generic $g\in G_2$ no $g\,\Pi_p\,g^\dagger$ is a coordinate line projector, because $\mathbb{C}^7$ is irreducible under $G_2$. (The identification "$\Gamma_{\!\text{oct}}\cong PSL(2,7)$" written here earlier confused the frame group with its image on the lines.)
 
 ---
 
@@ -212,7 +210,7 @@ $$g\, \Pi_p\, g^\dagger = \Pi_{\sigma_g(p)}$$
 
 ### What $G_2$-Invariance Preserves
 
-$G_2$-symmetry is the **continuous kinematic symmetry** of UHM theory, which is **spontaneously broken** upon dynamical vacuum fixation. Before minimization of $V_{\text{Gap}}$: $G_2$ transformations rename the basis $\{A, S, D, L, E, U, O\}$, preserving the octonionic structure and all $G_2$-invariants ($P$, $R$, $\Phi$, spectrum of $\Gamma$). **After** minimization (T-64 [T]): a specific vacuum $\Gamma_{\text{vac}}$ is fixed, breaking $G_2 \to H$ (vacuum stabilizer). The Boolean fragment $\mathrm{Dec}(\Omega) \cong 2^7$ crystallizes as the pointer basis selected by spontaneous symmetry breaking — analogous to the Higgs mechanism $SU(2) \times U(1) \to U(1)_{\text{em}}$. [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes) — massless excitations along the broken directions $G_2/H$.
+$G_2$-symmetry is the **continuous kinematic symmetry** of UHM theory, which is **spontaneously broken** upon dynamical vacuum fixation. Before minimization of $V_{\text{Gap}}$: $G_2$ transformations rename the basis $\{A, S, D, L, E, U, O\}$, preserving the octonionic structure and all $G_2$-invariants ($P$, $R$, spectrum of $\Gamma$; not $\Phi$, see the table below). **After** minimization (T-64 [T]): a specific vacuum $\Gamma_{\text{vac}}$ is fixed, breaking $G_2 \to H$ (vacuum stabilizer). The Boolean fragment $\mathrm{Dec}(\Omega) \cong 2^7$ crystallizes as the pointer basis selected by spontaneous symmetry breaking — analogous to the Higgs mechanism $SU(2) \times U(1) \to U(1)_{\text{em}}$. [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes) — massless excitations along the broken directions $G_2/H$.
 
 :::tip[Status: Theorem \[T\]]
 The $G_2$-transformation $g: \Gamma \mapsto D(g)\,\Gamma\,D(g)^\dagger$ preserves the following physical quantities:
@@ -221,9 +219,9 @@ The $G_2$-transformation $g: \Gamma \mapsto D(g)\,\Gamma\,D(g)^\dagger$ preserve
 |-----------|---------|-----------------|
 | Total purity | $P = \mathrm{Tr}(\Gamma^2)$ | Degree of consciousness integration |
 | Reflection measure | $R = R(\Gamma)$ | Depth of self-observation |
-| Integration | $\Phi = \Phi(\Gamma)$ | System irreducibility |
+| ~~Integration~~ | ~~$\Phi = \Phi(\Gamma)$~~ | **Not invariant — retracted [✗]:** an explicit $g\in G_2$ takes $\Phi$ from 0 to 1 (`test_phi_not_g2_invariant`) |
 | Spectrum of $\Gamma$ | $\lambda_1 \geq \cdots \geq \lambda_7$ | Eigenvalue populations |
-| Total coherence | $\sum_{i < j} \|\gamma_{ij}\|^2$ | Overall connectivity of dimensions |
+| ~~Total coherence~~ | ~~$\sum_{i < j} \|\gamma_{ij}\|^2$~~ | **Not invariant — retracted [✗]:** it equals $\tfrac12(P-\sum_i\gamma_{ii}^2)$, and the same $g$ takes it from 0 to $\tfrac14$ at fixed $P=1$ |
 | Fano structure | $f_{ijk}$ | Octonion multiplication table |
 :::
 
@@ -240,9 +238,9 @@ The $G_2$-transformation **mixes** specific dimensions. In general:
 
 A $G_2$-transformation can be viewed as a **rotation** of the 7-dimensional space that:
 
-1. **Is compatible with the Fano plane:** if $\{i, j, k\}$ is a Fano line, then the image $\{g(i), g(j), g(k)\}$ is also a Fano line.
+1. **Preserves the octonionic 3-form:** it maps the span of each Fano line (an associative 3-plane) to an associative 3-plane — in general **not** to the span of one of the seven coordinate lines; only the finite frame group $\Gamma_{\!\text{oct}}$ permutes those (§3.2). The earlier wording "if $\{i,j,k\}$ is a Fano line, then the image $\{g(i), g(j), g(k)\}$ is also a Fano line" is retracted [✗].
 2. **Is not arbitrary:** of the 21 possible rotations in $\mathrm{SO}(7)$, only the 14-dimensional submanifold $G_2$ preserves octonionic multiplication.
-3. **Physically:** a $G_2$-transformation is a change of 'coordinate system' in the space of dimensions, under which all algebraic relations (Fano lines, signs of structure constants, triples of related dimensions) remain unchanged.
+3. **Physically:** a $G_2$-transformation is a change of 'coordinate system' in the space of dimensions: the multiplication table written in the rotated basis $\{g e_1,\dots,g e_7\}$ is the same table. The coordinate lines themselves, and quantities read off them ($\Phi$, the Gap profile, populations), are not preserved.
 
 :::warning[$G_2$-Covariance Principle]
 The physical laws of UHM theory (evolution, consciousness thresholds, Lindblad operators) must be formulated in terms of $G_2$-invariants. The specific 'label' of a dimension ($A$, $S$, $D$, ...) is a matter of basis choice, not of physics.
@@ -254,7 +252,7 @@ The physical laws of UHM theory (evolution, consciousness thresholds, Lindblad o
 |--------|---------------------|-----------------|-------------------|
 | Electrodynamics | $U(1)$ | Charge | Phase of the wave function |
 | Chromodynamics | $SU(3)$ | Color singlet | Quark color (r, g, b) |
-| **UHM** | $G_2$ | $P$, $R$, $\Phi$, spectrum, Fano structure | Dimension labels $\{A,S,D,L,E,U,O\}$ |
+| **UHM** | $G_2$ | $P$, $R$, spectrum, Fano structure (not $\Phi$) | Dimension labels $\{A,S,D,L,E,U,O\}$ |
 
 In this sense $G_2$ for UHM theory is the analogue of $SU(3)_c$ for QCD: specific 'colors' (dimensions) are not directly observable; only invariant combinations are observable.
 
@@ -302,8 +300,8 @@ If the UHM evolution equations are $G_2$-covariant, a full diagnostic requires m
 
 The remaining 27 parameters are computed from $G_2$ relations.
 
-:::warning[Status: Open Problem \[H\]]
-The evolution equations are **not** $G_2$-covariant: the pinching dissipator is covariant only under the finite frame group $\Gamma_{\!\text{oct}}$ (Theorem 11.2), and the degree of $G_2$ breaking is $\tfrac{2+\alpha}{3}\Delta_{\max} > 0$ for every $\alpha$ (Theorem 11.3 below).
+:::warning[Status: premise false — the corollary does not apply]
+The evolution equations are **not** $G_2$-covariant: the pinching dissipator is covariant only under the finite frame group $\Gamma_{\!\text{oct}}$ (Theorem 11.2), and the degree of $G_2$ breaking is $\tfrac{2+\alpha}{3}\Delta_{\max} > 0$ for every $\alpha$ (Theorem 11.3 below). So the reduction to 21 measured parameters never applies: all 48 are measured ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). This box used to be labelled "Open Problem [H]"; the question is settled in the negative.
 :::
 
 ---
@@ -427,10 +425,14 @@ $$\mathrm{Gap}^{\mathrm{target}}(i,j) = |\sin(\theta_{ij})| = \mathrm{Gap}(i,j) 
 
 **Fundamental corollary.** Canonical $\varphi_{\mathrm{coh}}$ **does not tend to change the Gap** — it tends to reproduce the Gap with reduced amplitude. The target state does **not destroy** coherences, but scales them.
 
-### Theorem 10.4 (Variational Determination of $\alpha^*$)
+### Theorem 10.4 (Variational Determination of $\alpha^*$) — retracted [✗]
 
-:::tip[Status: Theorem \[T\]]
-The optimal parameter $\alpha^*$ is determined by a variational principle.
+:::danger[Status: Retracted \[✗\] (2026-09-25)]
+The theorem claimed that the Fano weight has a variational optimum $\alpha^* \approx 1 - 2/(7P)$ inside $(0,1)$. It is false: $S_{\mathrm{spec}}(\rho) + D_{KL}(\rho\|\Gamma) = -\mathrm{Tr}(\rho\log\Gamma)$ is linear in $\rho$, and with $\mathcal{P}_\alpha(\Gamma) = \tfrac13[(2+\alpha)\,\Delta\Gamma + (1-\alpha)\,\Gamma]$, $\Delta\Gamma := \mathcal{P}_{\mathrm{base}}(\Gamma)$, the functional is affine in $\alpha$:
+
+$$\mathcal{F}(\alpha) = \mathcal{F}(0) + \tfrac{\alpha}{3}\left[D_{KL}(\Gamma\|\Delta\Gamma) + D_{KL}(\Delta\Gamma\|\Gamma)\right],$$
+
+so its minimum on $[0,1]$ is $\alpha = 0$ for every non-diagonal $\Gamma$ (400 random states: the identity and a positive slope in 400 of 400). No variational $\alpha^*$ exists; the Fano weight $\alpha$ is a free parameter of $\varphi_{\mathrm{coh}}$ ([status registry](/docs/reference/status-registry), row 36). The statement and proof below are kept as the record of the retracted claim.
 :::
 
 $$\alpha^* = \arg\min_{\alpha \in [0,1]} \mathcal{F}[\mathcal{P}_\alpha; \Gamma] = \arg\min_{\alpha} \left[S_{\mathrm{spec}}(\mathcal{P}_\alpha(\Gamma)) + D_{KL}(\mathcal{P}_\alpha(\Gamma) \| \Gamma)\right]$$
@@ -451,6 +453,8 @@ At $P \to P_{\mathrm{crit}}$: $\alpha^* \to 0$ — almost entirely Fano (minimal
 
 **Proof.** Minimisation of $\mathcal{F}$ over $\alpha$ at fixed $P$ determines the balance: increasing $\alpha$ improves predictive accuracy ($S_{\mathrm{spec}}$ decreases), but increases coherence loss ($D_{KL}$ grows). The condition $P > P_{\mathrm{crit}}$ requires preserving a sufficient number of coherences, which bounds $\alpha$ from above. The optimum is found from $\partial \mathcal{F}/\partial \alpha = 0$. $\blacksquare$
 
+**Where the proof fails.** It assumes that raising $\alpha$ lowers $S_{\mathrm{spec}}$ while raising $D_{KL}$, and solves $\partial\mathcal{F}/\partial\alpha = 0$. But $\partial\mathcal{F}/\partial\alpha$ is the constant $\tfrac13[D_{KL}(\Gamma\|\Delta\Gamma) + D_{KL}(\Delta\Gamma\|\Gamma)] \geq 0$, which vanishes only for diagonal $\Gamma$. Items (c)–(d), with $\alpha^* \approx 5/7$ at $P = 1$ and $\alpha^* \to 0$ at $P \to P_{\mathrm{crit}}$, are retracted [✗] with it.
+
 ### Theorem 10.5 (Explicit Coefficients of $\varphi_{\mathrm{coh}}$)
 
 :::tip[Status: Theorem \[T\]]
@@ -459,35 +463,41 @@ The Kraus operators of canonical $\varphi_{\mathrm{coh}}$ take a specific form.
 
 **Atomic operators (7 in total):**
 
-$$K_m^{(\mathrm{atom})} = \sqrt{\alpha^* k / 7} \cdot |m\rangle\langle m|, \quad m = 1, \ldots, 7$$
+$$K_m^{(\mathrm{atom})} = \sqrt{\alpha k} \cdot |m\rangle\langle m|, \quad m = 1, \ldots, 7$$
 
 **Fano operators (7 in total):**
 
-$$K_p^{(\mathrm{Fano})} = \sqrt{(1-\alpha^*) k / 3} \cdot \Pi_p, \quad p = 1, \ldots, 7$$
+$$K_p^{(\mathrm{Fano})} = \sqrt{(1-\alpha) k / 3} \cdot \Pi_p, \quad p = 1, \ldots, 7$$
 
-**Anchor operator:**
+**Anchor operators (49 in total),** with $\Gamma_{\mathrm{anchor}} = \sum_i \lambda_i |\psi_i\rangle\langle\psi_i|$:
 
-$$K_0^{(\mathrm{anch})} = \sqrt{1-k} \cdot \Gamma_{\mathrm{anchor}}^{1/2}$$
+$$K_{ij}^{(\mathrm{anch})} = \sqrt{(1-k)\,\lambda_i} \cdot |\psi_i\rangle\langle j|, \quad i, j = 1, \ldots, 7$$
 
 **CPTP verification:**
 
-$$\sum_{m=1}^{7} (K_m^{(\mathrm{atom})})^\dagger K_m^{(\mathrm{atom})} + \sum_{p=1}^{7} (K_p^{(\mathrm{Fano})})^\dagger K_p^{(\mathrm{Fano})} + (K_0^{(\mathrm{anch})})^\dagger K_0^{(\mathrm{anch})}$$
+$$\sum_{m=1}^{7} (K_m^{(\mathrm{atom})})^\dagger K_m^{(\mathrm{atom})} + \sum_{p=1}^{7} (K_p^{(\mathrm{Fano})})^\dagger K_p^{(\mathrm{Fano})} + \sum_{i,j=1}^{7} (K_{ij}^{(\mathrm{anch})})^\dagger K_{ij}^{(\mathrm{anch})}$$
 
-First term: $\alpha^* k / 7 \cdot 7I = \alpha^* k \cdot I$.
+First term: $\alpha k \sum_m |m\rangle\langle m| = \alpha k \cdot I$.
 
-Second term: $(1-\alpha^*) k / 3 \cdot 3I = (1-\alpha^*) k \cdot I$.
+Second term: $(1-\alpha) k / 3 \cdot 3I = (1-\alpha) k \cdot I$ (every point lies on three lines).
 
-Third term: $(1-k) \cdot I$.
+Third term: $(1-k) \sum_{i,j} \lambda_i\, |j\rangle\langle j| = (1-k) \cdot I$.
 
-**Total = $I$. $\checkmark$**
+**Total = $I$. $\checkmark$** The 63 operators reproduce $\varphi_{\mathrm{coh}}$ of Theorem 10.2 (numerically to $3\times10^{-16}$ on 50 random states).
 
-**Corollary.** The coefficients $c_{mn}$ are determined by:
+:::note Corrected 2026-09-25 — the former Kraus set was not trace-preserving
+The box printed $K_m^{(\mathrm{atom})} = \sqrt{\alpha^* k/7}\,|m\rangle\langle m|$, $K_p^{(\mathrm{Fano})} = \sqrt{(1-\alpha^*)k/3}\,\Pi_p$ and one anchor operator $K_0^{(\mathrm{anch})} = \sqrt{1-k}\,\Gamma_{\mathrm{anchor}}^{1/2}$, with "first term $\alpha^* k/7 \cdot 7I$" and "third term $(1-k)\cdot I$". Both steps are wrong: $\sum_m |m\rangle\langle m| = I$, not $7I$, so the atomic part got weight $\alpha k/7$; and $K_0^\dagger K_0 = (1-k)\,\Gamma_{\mathrm{anchor}} \neq (1-k)\,I$ — a single operator gives $\Gamma \mapsto (1-k)\,\Gamma_{\mathrm{anchor}}^{1/2}\,\Gamma\,\Gamma_{\mathrm{anchor}}^{1/2}$, not the replacement $\Gamma \mapsto (1-k)\,\Gamma_{\mathrm{anchor}}$. For $\alpha = 0.4$, $k = 0.8$ the printed set misses $I$ by $1.18$ in Frobenius norm. The printed coefficient $c_{mm} = \alpha^* k$ was wrong for the same reason, and $\alpha^*$ itself is retracted (Theorem 10.4).
+:::
 
-$$c_{mn} = \begin{cases} \alpha^* k & \text{for } m = n \text{ (atomic part)} \\ (1-\alpha^*) k / 3 & \text{for } m \neq n, (m,n) \text{ on a common Fano line} \\ 0 & \text{for } m \neq n, (m,n) \text{ not on a common Fano line} \end{cases}$$
+**Corollary.** In $\varphi_{\mathrm{coh}}(\Gamma)$ each entry $\gamma_{mn}$ is multiplied by
+
+$$c_{mn} = \begin{cases} k & \text{for } m = n \text{ (both channels keep the diagonal)} \\ (1-\alpha) k / 3 & \text{for } m \neq n \end{cases}$$
+
+and the anchor adds $(1-k)\,[\Gamma_{\mathrm{anchor}}]_{mn}$. Every pair $(m,n)$ lies on exactly one Fano line, so the former third case "$0$ for $(m,n)$ not on a common Fano line" is empty.
 
 The coefficients are fully determined by:
 - The Fano structure $\mathrm{PG}(2,2)$ (algebraic geometry)
-- The variational principle ($\alpha^*$ via $P$ and $P_{\mathrm{crit}}$)
+- ~~The variational principle ($\alpha^*$ via $P$ and $P_{\mathrm{crit}}$)~~ — retracted with Theorem 10.4: the Fano weight $\alpha$ is a free parameter
 - The contraction parameter $k$
 
 ---
@@ -531,7 +541,7 @@ since the left-hand side annihilates the coherence $\gamma_{12}$ in the rotated 
 ### Theorem 11.2 (Covariance group of the Fano dissipator)
 
 :::tip[Status: Theorem \[T\]]
-By the Fano–atomic proportionality $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$, the Fano dissipator is covariant under the finite octonionic frame group $\Gamma_{\!\text{oct}}=\mathrm{Aut}(PG(2,2))\cong PSL(2,7)\subset G_2$, and **not** under the full continuous $G_2$. The canonical fully $G_2$-covariant dissipator is $\mathcal{D}_{G_2}$ (structure-constant construction, $(A_a)_{bc}=\varphi_{abc}/\sqrt6$). Full treatment: [Fano channel §5](/docs/proofs/gap/fano-channel#g2-ковариантность).
+By the Fano–atomic proportionality $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$, the Fano dissipator is covariant under the finite octonionic frame group $\Gamma_{\!\text{oct}}\subset G_2$ — the signed permutation matrices in $G_2$, order $1344=2^3\cdot168$, acting on the lines through $\mathrm{Aut}(PG(2,2))\cong PSL(2,7)$ (order 168); the earlier "$\Gamma_{\!\text{oct}}=\mathrm{Aut}(PG(2,2))\cong PSL(2,7)$" confused the group with its image — and **not** under the full continuous $G_2$. The canonical fully $G_2$-covariant dissipator is $\mathcal{D}_{G_2}$ (structure-constant construction, $(A_a)_{bc}=\varphi_{abc}/\sqrt6$). Full treatment: [Fano channel §5](/docs/proofs/gap/fano-channel#g2-ковариантность).
 :::
 
 $$\forall g \in \Gamma_{\!\text{oct}}: \quad \mathcal{D}_{\mathrm{Fano}}[g\Gamma g^\dagger] = g \, \mathcal{D}_{\mathrm{Fano}}[\Gamma] \, g^\dagger$$
@@ -592,9 +602,11 @@ where $\mathrm{Ad}_g(\Gamma) = g\Gamma g^\dagger$.
 
 $$\Delta_{G_2}(0) = \tfrac23\Delta_{\max} > 0, \quad \Delta_{G_2}(1) = \Delta_{\max}$$
 
-**(e)** At optimal $\alpha^* \approx 1 - 2/(7P)$:
+**(e)** For every value of the free Fano weight $\alpha$:
 
-$$\Delta_{G_2}(\alpha^*) = \tfrac{2+\alpha^*}{3} \cdot \Delta_{\max}$$
+$$\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3} \cdot \Delta_{\max} \geq \tfrac23\,\Delta_{\max}$$
+
+(Until 2026-09-25 this item read "at optimal $\alpha^* \approx 1 - 2/(7P)$: $\Delta_{G_2}(\alpha^*) = \tfrac{2+\alpha^*}{3}\Delta_{\max}$"; the variational $\alpha^*$ is retracted, Theorem 10.4, so the purity $P$ does not fix the breaking.)
 
 **Proof.** (a)–(b): direct consequence of Theorems 11.1 and 11.2. (c)–(e): $\mathcal{P}_\alpha$ is a convex combination of two channels with the same finite covariance group $\Gamma_{\!\text{oct}}$; since $\mathcal{D}_\alpha = \tfrac{2+\alpha}{3}\mathcal{D}_{\mathrm{atom}}$ ([Lindblad operators](/docs/core/operators/lindblad-operators#g2-ковариантность)), the breaking measure is $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3}\Delta_{\max}$ — affine in $\alpha$ and strictly positive on $[0,1]$. $\blacksquare$
 
@@ -605,27 +617,27 @@ $$\Delta_{G_2}(\alpha^*) = \tfrac{2+\alpha^*}{3} \cdot \Delta_{\max}$$
 - Full dynamics $\mathcal{L}_\Omega = \mathcal{D}_{\text{atom}} + \mathcal{D}_{\text{Fano}} + \mathcal{R}$: **not** $G_2$-covariant at any $\alpha$ — **[T]** (both dissipators are only $\Gamma_{\!\text{oct}}$-covariant, Theorem 5.1b; $\mathcal{R}$ references the O, E, U axes; [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность))
 :::
 
-### Theorem 11.4 (Modified Gauge Reduction)
+### Theorem 11.4 (Modified Gauge Reduction) — retracted [✗]
 
-:::tip[Status: Theorem \[T\]]
-Superseded by the frame decision D-0910: the parameter space of Gap profiles is **not** reduced by $G_2$ at any $\alpha$; the interpolation below is retained only as a record of the retracted claim.
+:::danger[Status: Retracted \[✗\]]
+Superseded by the frame decision D-0910: the parameter space of Gap profiles is **not** reduced by $G_2$ at any $\alpha$; the interpolation below is retained only as a record of the retracted claim. (This box carried the header "Theorem [T]" until 2026-09-25 while stating the retraction.)
 :::
 
-**(a)–(c) Retracted (D-0910).** Earlier drafts interpolated "$34$ parameters at $\alpha = 0$, $34 + 14\alpha^*$ at optimal $\alpha^*$, $48$ at $\alpha = 1$" (for $P \approx 0.5$: $\approx 40$). The premise — a $G_2$-covariant Fano channel at $\alpha = 0$ — is false (Theorem 11.2): the pinching dynamics is only $\Gamma_{\!\text{oct}}$-covariant for every $\alpha \in [0,1]$, so the physical parameter space of Gap profiles is the full 48-dimensional $\mathcal{D}(\mathbb{C}^7)$ modulo a finite group at every $\alpha$. The number 34 survives only as the count of kinematic $G_2$-invariants ([uniqueness theorem, Corollary 1](/docs/proofs/categorical/uniqueness-theorem#физические-состояния)).
+**(a)–(c) Retracted (D-0910).** Earlier drafts interpolated "$34$ parameters at $\alpha = 0$, $34 + 14\alpha^*$ at optimal $\alpha^*$, $48$ at $\alpha = 1$" (for $P \approx 0.5$: $\approx 40$). The premise — a $G_2$-covariant Fano channel at $\alpha = 0$ — is false (Theorem 11.2): the pinching dynamics is only $\Gamma_{\!\text{oct}}$-covariant for every $\alpha \in [0,1]$, so the physical parameter space of Gap profiles is the full 48-dimensional $\mathcal{D}(\mathbb{C}^7)$ modulo a finite group at every $\alpha$. The number 34 survives only as the count of kinematic $G_2$-invariants ([uniqueness theorem, Corollary 1](/docs/proofs/categorical/uniqueness-theorem#физические-состояния)). The "optimal $\alpha^*$" of that interpolation is retracted as well (Theorem 10.4).
 
-**For a highly coherent system** with $P \approx 0.8$: $\alpha^* \approx 0.64$, number of parameters $\approx 34 + 9 = $ **43**. The reduction is even more moderate.
+~~**For a highly coherent system** with $P \approx 0.8$: $\alpha^* \approx 0.64$, number of parameters $\approx 34 + 9 = 43$. The reduction is even more moderate.~~ Retracted [✗] with (a)–(c): the count is 48 at every $\alpha$.
 
-**Interpretation.** Self-observation (nonzero $\alpha$) **partially breaks** the algebraic symmetry of the octonions. The deeper the self-knowledge (larger $\alpha$), the more broken the $G_2$-symmetry, and the more parameters are needed to describe the system. This is the fundamental 'price of self-knowledge': knowledge about oneself increases the complexity of self-description.
+**Interpretation (revised).** Self-observation (nonzero $\alpha$) increases the measure of $G_2$ breaking, $\Delta_{G_2}(\alpha)=\tfrac{2+\alpha}{3}\Delta_{\max}$ (Theorem 11.3). The number of parameters does not change with $\alpha$: it is 48 throughout. The former reading "the deeper the self-knowledge, the more parameters are needed — the price of self-knowledge" is retracted [✗] with (a)–(c).
 
 ### Updated Diagnostic Protocol
 
-Taking into account partial $G_2$-covariance:
+After the frame decision D-0910:
 
 | Mode | Number of parameters | Protocol |
 |-------|-----------------|----------|
-| $\alpha = 0$ (no self-knowledge, L0) | 34 (full $G_2$) | Minimal tomography: 7 populations + 7 moduli + 7 phases + $G_2$ relations |
-| $\alpha^* \approx 0.4$ (typical L2 system) | $\sim$40 | Extended tomography: 7 + 12 moduli + 12 phases + partial $G_2$ relations |
-| $\alpha = 1$ (full L4) | 48 (no $G_2$) | Full tomography: all 48 parameters |
+| every $\alpha\in[0,1]$ (L0 to L4) | 48 | Full tomography: all 48 parameters, read in the pinned frame |
+
+The former rows "$\alpha = 0$: 34 (full $G_2$), minimal tomography with $G_2$ relations" and "$\alpha^* \approx 0.4$: $\sim$40, partial $G_2$ relations" are retracted [✗] (D-0910): the dynamics is covariant only under $\Gamma_{\!\text{oct}}$ at every $\alpha$, so no $G_2$ relation reduces the count; the $\alpha^*$ of the second row is retracted as well (Theorem 10.4).
 
 ---
 
@@ -634,16 +646,16 @@ Taking into account partial $G_2$-covariance:
 ### Theorem 12.1 (Fano-Coherent Self-Modelling)
 
 :::tip[Status: Theorem \[T\]]
-Canonical coherence-preserving self-modelling for UHM theory is determined uniquely (up to the contraction parameter $k$).
+Canonical coherence-preserving self-modelling for UHM theory is determined up to two free parameters, the contraction $k$ and the Fano weight $\alpha$. (Until 2026-09-25 the box said "uniquely, up to the contraction parameter $k$"; that relied on the variational $\alpha^*$ of Theorem 10.4, which is retracted.)
 :::
 
 **(a)** **Algebraic structure:** The Fano plane $\mathrm{PG}(2,2)$ determines the composite atoms of the classifier $\Omega$, generating the Fano–Lindblad operators $L_p^{\mathrm{Fano}}$.
 
-**(b)** **Variational principle:** The balance of atomic and Fano observation $\alpha^*$ minimises the functional $\mathcal{F} = S_{\mathrm{spec}} + D_{KL}$.
+**(b)** ~~**Variational principle:** The balance of atomic and Fano observation $\alpha^*$ minimises the functional $\mathcal{F} = S_{\mathrm{spec}} + D_{KL}$.~~ Retracted [✗] (Theorem 10.4): $\mathcal{F}$ is affine in $\alpha$ and minimal at $\alpha = 0$; the balance $\alpha$ is a free parameter.
 
 **(c)** **Phase properties:** Canonical $\varphi_{\mathrm{coh}}$ **preserves** the phases of coherences. The target Gap coincides with the current Gap (amplitude scaling without phase distortion).
 
-**(d)** **Symmetry:** $G_2$-covariance is partially broken by the atomic component. The degree of breaking $\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}$ depends on the purity $P$.
+**(d)** **Symmetry:** $G_2$-covariance is broken at every $\alpha$; the degree of breaking is $\Delta_{G_2} = \tfrac{2+\alpha}{3}\,\Delta_{\max}$ (Theorem 11.3(e)) for the free Fano weight $\alpha$; the earlier dependence on the purity $P$ through $\alpha^*$ is retracted with Theorem 10.4. The earlier value $\alpha^*\cdot\Delta_{\max}$, which vanished at $\alpha^*=0$, is retracted [✗]: $\mathcal{P}_{\mathrm{Fano}}=\tfrac13\,\mathrm{id}+\tfrac23\mathcal{P}_{\mathrm{base}}$, so even the pure Fano channel breaks $G_2$ by $\tfrac23\Delta_{\max}$.
 
 **(e)** **Stationary Gap:** Substituting into the stationary equation with $\theta_{ij}^{\mathrm{target}} = \theta_{ij}$ gives:
 

@@ -2,7 +2,7 @@
 slug: /proofs/minimality/theorem-octonionic-derivation
 sidebar_position: 2
 title: "Structural Derivation of N = 7 via Octonions"
-description: "Canonical proof: P1 [T] + P2 [T] → O → N = 7 via the Hurwitz theorem. Bridge (AP)+(PH)+(QG)+(V) → P1+P2 fully closed [T] (T15 chain, 15 steps)"
+description: "Canonical proof: P1 + P2 → O → N = 7 via the Hurwitz theorem. Bridge (AP)+(PH)+(QG)+(V) → P1+P2 via the T15 chain (15 steps): conditional [C] on the orientation input (Alt) at step T15"
 ---
 
 # Structural Derivation of N = 7 via Octonions
@@ -12,7 +12,7 @@ description: "Canonical proof: P1 [T] + P2 [T] → O → N = 7 via the Hurwitz t
 :::warning Status markers for statements
 Each statement is marked with one of three statuses (the meanings are those of the [status registry](/docs/reference/status-registry); this page uses a three-letter subset of them):
 - **[T]** — **Theorem**: proven in pure mathematics or derived from axioms
-- **[C]** — **Conditional theorem**: proven under an explicitly named assumption (the canonical meaning of the [status registry](/docs/reference/status-registry); on this page the assumption is (МП), $\lambda = 1$). A statement that merely *follows logically* from theorems is itself **[T]**, not [C] — an earlier legend on this page read "[C] — Consequence: logically follows from [T]", which gave the letter a second meaning and is retracted.
+- **[C]** — **Conditional theorem**: proven under an explicitly named assumption (the canonical meaning of the [status registry](/docs/reference/status-registry); on this page the assumptions are (Alt) — the multiplication carried by the seven Fano lines is alternative, equivalently normed — and, historically, (МП), $\lambda = 1$). A statement that merely *follows logically* from theorems is itself **[T]**, not [C] — an earlier legend on this page read "[C] — Consequence: logically follows from [T]", which gave the letter a second meaning and is retracted.
 - **[I]** — **Interpretation**: substantive connection with UHM
 :::
 
@@ -22,10 +22,10 @@ The dimensionality $N = 7$ and its algebraic structure are established by **two 
 | Track | Delivers | Path | Status |
 |---|---|---|---|
 | **Track A** | The **number**: $N = 7$ | [Axiom 3](../../core/foundations/axiom-omega#аксиоматика) + [Theorem S](./theorem-minimality-7): (AP)+(PH)+(QG) → 7 functionally independent aspects → $N \geq 7$, minimality → $N = 7$ | [T] |
-| **Track B** | The **structure**: Fano/octonionic, P1 + P2 | The T15 bridge chain (this document): given $N = 7$ (consumed from Track A at [Step T8](#шаг-t8)), (AP)+(PH)+(QG)+(V) force the Fano organization BIBD$(7,3,1)$ and hence the octonionic algebra $\mathbb{O}$ | [Т given Track A] |
+| **Track B** | The **structure**: Fano/octonionic, P1 + P2 | The T15 bridge chain (this document): given $N = 7$ (consumed from Track A at [Step T8](#шаг-t8)), (AP)+(PH)+(QG)+(V) force the Fano organization BIBD$(7,3,1)$ [T given Track A]; the octonionic algebra $\mathbb{O}$ follows only with the orientation input (Alt) at [Step T15](#шаг-t15) | [C at (Alt), given Track A] |
 | **Consistency closure** | $\dim \mathrm{Im}(\mathbb{O}) = 8 - 1 = 7$ | The structure returned by Track B has imaginary dimension exactly $7$ — the loop closes on the same number Track A supplied | [T] |
 
-Track A proves the *number*; Track B proves the *structure* of the $N=7$ system; the octonionic closure confirms the two are one coherent whole. (Track B is **not** a second independent derivation of the number — its Step T8 takes $N = 7$ as input; what it derives independently is that the seven-dimensional system is forced to be Fano/octonionic.) The bridge is **[T]** — [fully closed](#мост). A genuinely *independent* second derivation of the number does exist, from another direction entirely: **Theorem Σ** ([T-224](/docs/applied/research/syndrome-calculus#t-224)) forces $N = 7$ from perfect single-fault diagnosability alone, consuming nothing from Track A — and [T-244](/docs/applied/research/syndrome-calculus#отбор-знака) proves that this diagnosability track and Track B are *one* condition (a frame is perfectly diagnosable exactly when it is a division algebra), so the closure loop is not merely consistent but forced from both ends.
+Track A proves the *number*; Track B proves the *structure* of the $N=7$ system; the octonionic closure confirms the two are one coherent whole. (Track B is **not** a second independent derivation of the number — its Step T8 takes $N = 7$ as input; what it derives independently is that the seven-dimensional system is forced to be Fano/octonionic.) The bridge is **[C at (Alt)]** ([§5](#мост)): Steps T1–T14 deliver the unordered design BIBD$(7,3,1)$, and only 16 of the $2^7=128$ orientations of its lines give a normed algebra; until 2026-09-25 this box said "[T] — fully closed". A genuinely *independent* second derivation of the number does exist, from another direction entirely: **Theorem Σ** ([T-224](/docs/applied/research/syndrome-calculus#t-224)) forces $N = 7$ from perfect single-fault diagnosability alone, consuming nothing from Track A — and [T-244](/docs/applied/research/syndrome-calculus#отбор-знака) proves that this diagnosability track and Track B are *one* condition (a frame is perfectly diagnosable exactly when it is a division algebra), so the closure loop is not merely consistent but forced from both ends.
 :::
 
 ---
@@ -48,9 +48,9 @@ No others exist.
 
 **Theorem (Adams).** The sphere $S^{n-1}$ admits an $H$-space structure (continuous multiplication with a unit) if and only if $n \in \{1, 2, 4, 8\}$.
 
-**Equivalent formulation:** Parallelizable spheres are only $S^0, S^1, S^3, S^7$.
+**Related statement:** Parallelizable spheres are only $S^0, S^1, S^3, S^7$ (Bott–Milnor and Kervaire 1958; also a consequence of Adams's work). These are the unit spheres $S^{n-1}$ of the four normed division algebras, $n \in \{1, 2, 4, 8\}$.
 
-**Corollary:** The imaginary unit sphere in $\text{Im}(\mathcal{A})$ for a division algebra $\mathcal{A}$ is $S^{n-2}$, parallelizable only for $n \in \{1, 2, 4, 8\}$.
+**Corollary — corrected (2026-09-25).** The unit sphere of $\mathcal{A}$ itself, $S^{n-1}$, is parallelizable exactly for $n \in \{1, 2, 4, 8\}$. The unit sphere of $\text{Im}(\mathcal{A})$, $S^{n-2}$, is **not**: for $n=4$ and $n=8$ it is $S^2$ and $S^6$, and neither is parallelizable (only $S^0, S^1, S^3, S^7$ are; $S^6$ carries an almost complex structure from $\mathbb{O}$, not a trivialisation of its tangent bundle). The former corollary — "the imaginary unit sphere $S^{n-2}$ is parallelizable only for $n \in \{1,2,4,8\}$" — is retracted [✗].
 
 ### 1.3 Cayley–Dickson Construction [T] {#кэли-диксон}
 
@@ -154,22 +154,22 @@ $G_2$ is the minimal exceptional Lie group, 14-dimensional, of rank 2.
 
 ---
 
-## §2. Theorems P1, P2 [T] {#постулаты}
+## §2. Theorems P1, P2 [C at (Alt)] {#постулаты}
 
-### 2.1 Theorem P1 (Division Algebra) [T] {#постулат-p1}
+### 2.1 Theorem P1 (Division Algebra) [C at (Alt)] {#постулат-p1}
 
-:::info Theorem P1 [T] (derived via the T15 bridge chain)
+:::info Theorem P1 [C at (Alt)] (the T15 bridge chain with the orientation input (Alt))
 The space of internal degrees of freedom of a viable system is isomorphic to $\text{Im}(\mathcal{A})$ — the imaginary part of some normed division algebra $\mathcal{A}$ over $\mathbb{R}$.
 :::
 
-**Derivation of P1:** P1 is derived from (AP)+(PH)+(QG)+(V) via the T15 chain [T] (§5). Original motivation:
+**Derivation of P1:** P1 follows from (AP)+(PH)+(QG)+(V) via the T15 chain (§5) **given (Alt)**. On the Fano support the two are in fact equivalent — exactly the same 16 of the 128 orientations make the multiplication alternative and make its norm multiplicative (`test_only_16_of_128_fano_orientations_are_normed`) — so the chain does not derive P1 from the axioms; it reduces P1 to the choice of an orientation. The status "[T]" stated here until 2026-09-25 is retracted [✗]. Original motivation:
 - A division algebra guarantees invertibility: every transformation has an inverse (no "traps" in the state space)
 - Normedness provides a metric: $|ab| = |a||b|$ ensures a consistent distance measure
 - Imaginary part: the real component is singled out (analogue of scalar "unity", dimension $U$), the internal degrees of freedom are the imaginary directions
 
-### 2.2 Theorem P2 (Non-associativity) [T] {#постулат-p2}
+### 2.2 Theorem P2 (Non-associativity) [C at (Alt)] {#постулат-p2}
 
-:::info Theorem P2 [T] (derived via the T15 bridge chain)
+:::info Theorem P2 [C at (Alt)] (the T15 bridge chain with the orientation input (Alt))
 The algebra $\mathcal{A}$ is non-associative:
 
 $$
@@ -177,15 +177,15 @@ $$
 $$
 :::
 
-**Derivation of P2:** P2 is derived from (AP)+(PH)+(QG)+(V) via the T15 chain [T] (§5). Original motivation:
+**Derivation of P2:** P2 follows from (AP)+(PH)+(QG)+(V) via the T15 chain (§5) given (Alt): the normed algebra on the Fano lines is $\mathbb{O}$, which is non-associative. Original motivation:
 - Associative algebras ($\mathbb{R}, \mathbb{C}, \mathbb{H}$) have $\dim(\text{Im}) \in \{0, 1, 3\}$ — insufficient for (AP)+(PH)+(QG) [by Theorem S](./theorem-minimality-7)
 - Non-associativity formalizes contextuality: the result depends on the order of grouping of operations, reflecting the non-classical nature of quantum systems
 - Artin's theorem [T] guarantees that non-associativity is *minimal* (pairwise interactions are associative)
 
-### 2.3 Connection of P1+P2 with UHM Conditions [T] {#связь-с-угм}
+### 2.3 Connection of P1+P2 with UHM Conditions [C at (Alt)] {#связь-с-угм}
 
-:::info Bridge [T] — fully closed
-The connection (AP)+(PH)+(QG)+(V) ⟹ P1+P2 is established via the **complete formal chain** T15 (15 steps, all [T]). Condition (МП) has become a theorem: it follows from T11–T14 (Choi rank = 7 ⟹ b ≥ 7 ⟹ λ = 1). The three motivational arguments below retain their intuitive role. Details: [§5](#мост).
+:::info Bridge [C at (Alt)] — closed up to the orientation of the Fano lines
+The connection (AP)+(PH)+(QG)+(V) ⟹ P1+P2 goes through the formal chain T15 (15 steps): T1–T14 are [T] as stated (T8 given Track A), Step T15 needs (Alt). Condition (МП) has become a theorem: it follows from T11–T14 (Choi rank = 7 ⟹ b ≥ 7 ⟹ λ = 1). The three motivational arguments below retain their intuitive role. Details: [§5](#мост). (Until 2026-09-25: "Bridge [T] — fully closed, 15 steps, all [T]".)
 :::
 
 | Argument | (AP)+(PH)+(QG) → | → P1+P2 |
@@ -196,23 +196,23 @@ The connection (AP)+(PH)+(QG)+(V) ⟹ P1+P2 is established via the **complete fo
 
 ---
 
-## §3. Derivation of N = 7 [T] {#вывод-n7}
+## §3. Derivation of N = 7 [C at (Alt)] {#вывод-n7}
 
-:::warning Theorem (Structural derivation of N = 7)
-From theorems P1 and P2 (derived from (AP)+(PH)+(QG)+(V) via the T15 chain [T]) it follows that $N = 7$.
+:::warning Theorem (Structural derivation of N = 7) [C at (Alt)]
+From theorems P1 and P2 (obtained from (AP)+(PH)+(QG)+(V) via the T15 chain with the orientation input (Alt)) it follows that $N = 7$. The number itself is supplied independently by Track A [T]; this section is the Track-B consistency loop.
 :::
 
 **Proof (6 steps):**
 
-1. **[T] P1:** $\mathcal{A}$ is a normed division algebra over $\mathbb{R}$ (derived via the T15 chain)
+1. **[C at (Alt)] P1:** $\mathcal{A}$ is a normed division algebra over $\mathbb{R}$ (via the T15 chain)
 2. **[T] Hurwitz:** $\dim(\mathcal{A}) \in \{1, 2, 4, 8\}$, i.e. $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$
-3. **[T] P2:** $\mathcal{A}$ is non-associative (derived via the T15 chain)
+3. **[C at (Alt)] P2:** $\mathcal{A}$ is non-associative (via the T15 chain)
 4. **[T]:** $\mathbb{R}, \mathbb{C}, \mathbb{H}$ are associative ⟹ $\mathcal{A} = \mathbb{O}$
 5. **[T]:** $\dim(\mathbb{O}) = 8$, therefore $\dim(\text{Im}(\mathbb{O})) = 8 - 1 = 7$
 6. **[T]:** $N = \dim(\text{Im}(\mathbb{O})) = 7$ $\quad\blacksquare$
 
 :::note Proof structure
-Steps 1, 3 are theorems [T] derivable from the axioms via the T15 chain (§5), which **consumes $N = 7$ from Track A at Step T8** (Theorem S, functional minimality). Steps 2, 4, 5 are pure mathematics [T]. Step 6 is a logical consequence [T]. P1 and P2 are not postulated but derived from (AP)+(PH)+(QG)+(V) given the Track-A dimension; the resulting $\dim\mathrm{Im}(\mathbb{O}) = 7$ closes the consistency loop with the number Track A supplied (see the dual-track box, §0).
+Steps 1, 3 are [C at (Alt)]: they follow from the axioms via the T15 chain (§5), which **consumes $N = 7$ from Track A at Step T8** (Theorem S, functional minimality) and the orientation input (Alt) at Step T15. Steps 2, 4, 5 are pure mathematics [T]. Step 6 is a logical consequence [T]. P1 and P2 are not postulated but derived from (AP)+(PH)+(QG)+(V) given the Track-A dimension; the resulting $\dim\mathrm{Im}(\mathbb{O}) = 7$ closes the consistency loop with the number Track A supplied (see the dual-track box, §0).
 :::
 
 ---
@@ -229,8 +229,8 @@ $$
 
 **Corollary for UHM [T]:** The space $\text{Im}(\mathbb{O}) \cong \mathbb{R}^7$ has $G_2$-symmetry — a 14-parameter group preserving the multiplication structure.
 
-:::info $G_2$ corollary [T]
-Identifying $G_2$-symmetry with the gauge freedom of UHM is a **theorem** [T]. $G_2$ acts on $\text{Im}(\mathbb{O})$; the identification $\text{Im}(\mathbb{O}) \cong \{A, S, D, L, E, O, U\}$ follows from the [bridge](#мост), fully closed by the T15 chain [T].
+:::info $G_2$ corollary [C at (Alt)]
+$\mathrm{Aut}(\mathbb{O})=G_2$ is a theorem [T]. Identifying $G_2$-symmetry with the gauge freedom of UHM rests on the identification $\text{Im}(\mathbb{O}) \cong \{A, S, D, L, E, O, U\}$, which comes from the [bridge](#мост) and so inherits its condition: **[C at (Alt)]** (stated as [T], "fully closed by the T15 chain", until 2026-09-25).
 :::
 
 ### 4.2 Fano Plane and Coherence Structure [T] {#фано-когерентности}
@@ -249,8 +249,8 @@ From the coincidence of the combinatorial structure:
 - **3 check bits** ↔ 3 "meta-structural" dimensions (E, O, U) [I]
 - **Perfect error correction** ↔ optimal noise immunity
 
-:::info Corollary [T]
-The correspondence of the 4+3 Hamming structure with the division of UHM dimensions is a **theorem** [T], since the bridge is fully closed by the T15 chain. The coincidence of the structural numbers is non-trivial and predicts a specific organization of noise immunity in the 7D system. H(7,4) is the unique perfect code of length 7 (T8 [T]), whose support structure = PG(2,2) (T9 [T]).
+:::info Corollary: numbers [T], correspondence [I]
+The 4+3 structure of $H(7,4)$ is a theorem [T]: H(7,4) is the unique perfect code of length 7 (T8 [T]), whose support structure = PG(2,2) (T9 [T]). Its correspondence with the division of UHM dimensions into (A,S,D,L) and (E,O,U) is **[I]**, as the list above says. The former wording — "a theorem [T], since the bridge is fully closed by the T15 chain" — is retracted [✗]: no step of the chain assigns data bits to particular dimensions, and the bridge is [C at (Alt)].
 :::
 
 ### 4.4 Cayley–Dickson Boundary [T] {#граница-кд}
@@ -262,15 +262,15 @@ The correspondence of the 4+3 Hamming structure with the division of UHM dimensi
 
 ---
 
-## §5. Bridge to UHM [T] {#мост}
+## §5. Bridge to UHM [C at (Alt)] {#мост}
 
-:::info Status: **[T]** — bridge fully closed (T15 chain)
-The connection P1+P2 ↔ (AP)+(PH)+(QG)+(V) is established via the **complete formal chain** T15 of 15 steps, **all [T]**. Condition (МП) has become a theorem: T11 (Choi rank = 7 ⟹ b ≥ 7), T12 (BIBD(7,3,1) from minimal projective decomposition), T13 (b ≥ 7 lines), T14 (λ = 1) — together give λ = 1 without additional conditions.
+:::info Status: **[C at (Alt)]** — T1–T14 closed, T15 needs the orientation input
+The connection P1+P2 ↔ (AP)+(PH)+(QG)+(V) goes through the formal chain T15 of 15 steps. Condition (МП) has become a theorem: T11 (Choi rank = 7 ⟹ b ≥ 7), T12 (BIBD(7,3,1) from minimal projective decomposition), T13 (b ≥ 7 lines), T14 (λ = 1) — together give λ = 1 without additional conditions. But T12–T14 deliver an **unoriented** design, and the multiplication table needs each line oriented: of the $2^7=128$ orientations, exactly 16 give a normed (equivalently, alternative) algebra — a single orbit of the sign changes $e_i\mapsto -e_i$, all of them $\mathbb{O}$ — and the other 112 give non-alternative algebras whose norm is not multiplicative (`test_only_16_of_128_fano_orientations_are_normed`). Step T15 therefore needs the named input (Alt): the multiplication carried by the lines is alternative (equivalently, normed).
 
-**Status evolution:** [I] (three interpretive arguments) → [C] under (МП) (one condition) → **[T]** (fully closed). The step PG(2,2) → $\mathbb{O}$ is a canonical identification, fixed by the uniqueness of BIBD(7,3,1) (Hall) and the Hurwitz theorem.
+**Status evolution:** [I] (three interpretive arguments) → [C] under (МП) (one condition) → "[T] (fully closed)" (2026-07) → **[C at (Alt)]** (2026-09-25). The earlier claim that "the step PG(2,2) → $\mathbb{O}$ is a canonical identification, fixed by the uniqueness of BIBD(7,3,1) (Hall) and the Hurwitz theorem" is retracted [✗]: Hall fixes the unordered design, and Hurwitz applies only once the algebra is normed, which is what (Alt) supplies. Deriving (Alt) from the axioms is Problem 5 of §6 [Pr].
 :::
 
-### 5.1 Complete chain of implications (T15 [T], 15 steps) {#цепочка-t15}
+### 5.1 Complete chain of implications (T15, 15 steps: T1–T14 [T], T15 [C at (Alt)]) {#цепочка-t15}
 
 $$
 \boxed{(AP)+(PH)+(QG)+(V)} \xrightarrow{T1{-}T3} \Gamma \in D(\mathcal{H}),\;\gamma_{ij}\neq 0 \xrightarrow{T4{-}T5} P > 2/N,\;\Phi \geq 1
@@ -392,9 +392,9 @@ Below are the 15 bridge steps with full inline proofs. The dependencies of each 
 - Contraction: $c_{k=3}=(k-1)/(v-1)=1/3$ vs $c_{k=2}=1/6$. ($k=3$ stronger.)
 - Number of Lindblad operators: $b_{k=3}=7$ vs $b_{k=2}=21$. ($k=3$ minimal.)
 - Purity loss: $\Delta P_{k=3}=8/9$ vs $\Delta P_{k=2}=35/36$. ($k=3$ smaller.)
-- Frame-group covariance: the $k=3$ Fano design is covariant under the octonionic frame group $\Gamma_{\!\text{oct}}=\mathrm{Aut}(PG(2,2))\cong PSL(2,7)$ (it permutes the 7 lines); the $k=2$ design has only $S_7\times S_2$ block symmetry, which does not embed in $\Gamma_{\!\text{oct}}$. (Neither *pinching* design is fully $G_2$-covariant — the $k=3$ dissipator is $\tfrac23\mathcal{D}_{\text{atom}}$ and breaks $G_2$ to $\Gamma_{\!\text{oct}}$, Fano-channel Th. 5.1a–b — so the decisive selectors are Choi-rank minimality and BIBD closure, not $G_2$.)
+- ~~Frame-group covariance: the $k=3$ Fano design is covariant under the octonionic frame group $\Gamma_{\!\text{oct}}$ (it permutes the 7 lines); the $k=2$ design has only $S_7\times S_2$ block symmetry, which does not embed in $\Gamma_{\!\text{oct}}$.~~ Retracted [✗] (2026-09-25): both channels equal $c\,\mathrm{id}+(1-c)\,\mathcal{P}_{\mathrm{base}}$ with $c=(k-1)/6$ (Theorem T1), so both are covariant under the same group — every signed permutation, hence all of $\Gamma_{\!\text{oct}}$ (order 1344) — and the criterion does not discriminate. (Neither *pinching* design is fully $G_2$-covariant — Fano-channel Th. 5.1a–b.)
 
-$k=3$ **strictly dominates** by all four criteria. $\square$
+$k=3$ **strictly dominates** by the first three criteria; the decisive selectors are Choi-rank minimality and BIBD closure. $\square$
 
 **Status:** **[T]** — non-circular derivation: $\lambda=1$ forced by primitivity of $\mathcal L_0$ (Stage 1), then $k=3$ selected by dominance (Stage 3). Cf. Steps T11–T14 for the Choi-rank re-derivation of $\lambda=1$.
 
@@ -440,13 +440,13 @@ $k=3$ **strictly dominates** by all four criteria. $\square$
 
 ---
 
-#### Step T15. T14 → $\mathbb{O}$: P1 (division algebra) + P2 (non-associativity) [T] {#шаг-t15}
+#### Step T15. T14 → $\mathbb{O}$: P1 (division algebra) + P2 (non-associativity) [C at (Alt)] {#шаг-t15}
 
-**Statement.** From BIBD$(7,3,1) \cong \text{PG}(2,2)$ and alternativity it follows that the algebraic structure is the octonions $\mathbb{O}$, yielding P1 (division algebra) and P2 (non-associativity).
+**Statement.** From BIBD$(7,3,1) \cong \text{PG}(2,2)$ **and alternativity (Alt)** it follows that the algebraic structure is the octonions $\mathbb{O}$, yielding P1 (division algebra) and P2 (non-associativity). The statement always named alternativity; the chain T1–T14 does not supply it.
 
-**Proof.** (i) BIBD$(7,3,1)$ is unique (Hall, 1967) and isomorphic to PG(2,2) — the Fano plane (§1.5). (ii) The 7 lines of PG(2,2) define the multiplication table of the 7 imaginary units $e_1,\ldots,e_7$: line $(e_i, e_j, e_k)$ specifies $e_i \cdot e_j = e_k$ (Baez, 2002). (iii) The resulting algebra $\mathcal{A} = \operatorname{span}\{1, e_1, \ldots, e_7\}$ is the unique 8-dimensional normed division algebra (Hurwitz, §1.1), i.e. $\mathcal{A} = \mathbb{O}$. (iv) $\mathbb{O}$ is a division algebra (P1 [T]) and non-associative (P2 [T]: $\mathbb{R}, \mathbb{C}, \mathbb{H}$ are associative, $\mathbb{O}$ is not, §1.3). Additionally: $\text{Aut}(\mathbb{O}) = G_2$ (§1.6). $\square$
+**Proof.** (i) BIBD$(7,3,1)$ is unique (Hall, 1967) and isomorphic to PG(2,2) — the Fano plane (§1.5). (ii) The 7 lines of PG(2,2) define a multiplication table of the 7 imaginary units $e_1,\ldots,e_7$ — line $(e_i, e_j, e_k)$ specifies $e_i \cdot e_j = e_k$ (Baez, 2002) — **once each line is given a cyclic orientation**, which the design does not carry. Of the $2^7=128$ orientations, exactly 16 make the norm multiplicative, and the same 16 make the algebra alternative; they form one orbit of the $2^7$ sign changes $e_i\mapsto-e_i$ (stabiliser of order 8: the identity and the seven complements of lines), so all 16 give the same algebra up to isomorphism (`test_only_16_of_128_fano_orientations_are_normed`). (iii) Given (Alt), the resulting algebra $\mathcal{A} = \operatorname{span}\{1, e_1, \ldots, e_7\}$ is normed, hence the unique 8-dimensional normed division algebra (Hurwitz, §1.1), i.e. $\mathcal{A} = \mathbb{O}$. (iv) $\mathbb{O}$ is a division algebra (P1) and non-associative (P2: $\mathbb{R}, \mathbb{C}, \mathbb{H}$ are associative, $\mathbb{O}$ is not, §1.3). Additionally: $\text{Aut}(\mathbb{O}) = G_2$ (§1.6). $\square$
 
-**Status:** **[T]** — canonical identification: uniqueness of BIBD$(7,3,1)$ (Hall) + uniqueness of $\mathbb{O}$ (Hurwitz).
+**Status:** **[C at (Alt)]**. The former status — "[T] — canonical identification: uniqueness of BIBD$(7,3,1)$ (Hall) + uniqueness of $\mathbb{O}$ (Hurwitz)" — is retracted [✗] (2026-09-25): between the two uniqueness theorems sits the choice of one of 128 orientations, and only 16 lead to $\mathbb{O}$.
 
 ---
 
@@ -461,23 +461,23 @@ $k=3$ **strictly dominates** by all four criteria. $\square$
 | T5 | T3+T4 ⟹ $\Phi \geq 1$ | T3, T4 | T-129 [T] | **[T]** |
 | T6 | (PH) ⟹ $\operatorname{rank}(\rho_E) > 1$ | (PH) | Non-triviality of qualia | **[T]** |
 | T7 | T4 ⟹ $c > 0$ | T4 | Exponential suppression of $\kappa_0$ at $c=0$ | **[T]** |
-| T8 | T7 + $N{=}7$ ⟹ $H(7,4)$ | T7, Theorem S (Track A: $N=7$) | Hamming bound, uniqueness | **[Т given Track A]** |
+| T8 | T7 + $N{=}7$ ⟹ $H(7,4)$ | T7, Theorem S (Track A: $N=7$) | Hamming bound, uniqueness | **[T given Track A]** |
 | T9 | T8 ⟹ PG(2,2) | T8 | Dual code $S(3,7)$ | **[T]** |
 | T10 | T9 ⟹ Fano optimality | T9, T7 | T4 (dominance of $k=3$) | **[T]** |
 | T11 | T10 ⟹ Choi rank = 7 | T10 | 7 independent projectors | **[T]** |
 | T12 | T11 ⟹ BIBD$(7,3,1)$ | T11 | L-unification + coverage of 21 pairs | **[T]** |
 | T13 | T12 ⟹ $b \geq 7$ | T11, T12 | Rank = lower bound | **[T]** |
 | T14 | T13 ⟹ $\lambda = 1$ | T13 | BIBD identity: $42 = 42\lambda$ | **[T]** |
-| T15 | T14 ⟹ $\mathbb{O}$ ⟹ P1+P2 | T14 | Hall + Hurwitz + Baez | **[T]** |
+| T15 | T14 + (Alt) ⟹ $\mathbb{O}$ ⟹ P1+P2 | T14, (Alt) | Hall + orientation (16 of 128) + Hurwitz + Baez | **[C at (Alt)]** |
 
 :::info Remark on the character of step T15 (PG(2,2) ≅ $\mathrm{Im}(\mathbb{O})$)
-Step T15 of the chain is a **mathematical fact** [T]: the Fano plane PG(2,2) defines the multiplication table of the imaginary units of the octonions. This is standard algebra (Baez, "The Octonions", 2002).
+That the Fano plane defines the multiplication table of the imaginary units of the octonions is standard algebra (Baez, "The Octonions", 2002) — for the **oriented** Fano plane. The unordered design of T12–T14 fixes the lines, not their orientations (16 of the 128 give $\mathbb{O}$).
 
 However, in the context of the full chain there is a **structural identification**: the transition from "Lindblad operators are organized according to PG(2,2)" to "the state space has an octonionic algebraic structure" requires identifying a combinatorial isomorphism with an algebraic one.
 
 This identification is **not arbitrary**: PG(2,2) is the unique BIBD(7,3,1) (Hall, 1967), and the multiplication table of $\mathrm{Im}(\mathbb{O})$ is the unique non-associative normed division algebra of dimension 7 (Hurwitz). Two rigid constraints (dynamical and algebraic) uniquely single out the same structure. Nevertheless, the transition from combinatorial organization to full algebraic interpretation (division, normedness, alternativity) enriches the structure beyond what strictly follows from the dynamical axioms.
 
-**Status:** Each of the 15 steps is [T]. The complete chain is closed [T]. The structural identification PG(2,2) → $\mathbb{O}$ is fixed by **uniqueness** on both sides (Hall + Hurwitz), making it a **canonical identification**, not an arbitrary choice.
+**Status (corrected 2026-09-25):** Steps T1–T14 are [T] as stated (T8 given Track A); Step T15 is **[C at (Alt)]**. The former lines "Each of the 15 steps is [T]. The complete chain is closed [T]. The structural identification PG(2,2) → $\mathbb{O}$ is fixed by uniqueness on both sides (Hall + Hurwitz), making it a canonical identification" are retracted [✗]: the uniqueness on the left is that of the unordered design, the uniqueness on the right is that of normed algebras, and the orientation between them is an input.
 :::
 
 :::warning Resolution of the ℝ⁷ → ℂ⁷ problem (complexification of octonions)
@@ -496,7 +496,7 @@ This identification is **not arbitrary**: PG(2,2) is the unique BIBD(7,3,1) (Hal
 
 3. **Division in $\mathbb{C}^7$ and non-associativity.** $\mathbb{O}_{\mathbb{C}} = \mathbb{O} \otimes_{\mathbb{R}} \mathbb{C}$ is **not** a division algebra (by Hurwitz's theorem, the only normed division algebras are ℝ, ℂ, ℍ, $\mathbb{O}$ — all over ℝ). But this is **not needed**: UHM uses the **automorphism group** $G_2 = \mathrm{Aut}(\mathbb{O})$ and the **Fano plane** $\mathrm{PG}(2,2)$, not the algebra $\mathbb{O}$ itself for calculations. $G_2$ is a compact Lie group defined over $\mathbb{R}$, canonically acting on $\mathbb{C}^7$. The Fano plane is a combinatorial structure independent of the coefficient field.
 
-4. **Spectral triple (T-53 [T])** works in $\mathbb{C}^7$: $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ with $H_{\text{int}} = \mathbb{C}^7$ and KO-dim = 6 — standard NCG construction (Connes 1994). The real structure $J: \mathbb{C}^7 \to \mathbb{C}^7$ (antilinear involution) provides the connection to $\mathbb{R}^7$.
+4. **Spectral triple (T-53 [C])** works in $\mathbb{C}^7$: $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ with $H_{\text{int}} = \mathbb{C}^7$. The real structure $J: \mathbb{C}^7 \to \mathbb{C}^7$ (antilinear involution) provides the connection to $\mathbb{R}^7$. (The KO-dimension 6 claimed for it is retracted: complex conjugation commutes with the real grading, which is KO-dimension 0 — [spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка).)
 :::
 
 ### 5.2 Key theorems
@@ -511,7 +511,7 @@ This identification is **not arbitrary**: PG(2,2) is the unique BIBD(7,3,1) (Hal
 Theorem T6 (uniform contraction) [T] proves democraticity of contraction **unconditionally** — from the $S_7$-equivariance of the atomic dissipator (T5 [T]). T6 removes the dependence on condition (КГ) in step 4 of the chain.
 :::
 
-**Theorem T4 (Optimality of k=3) [T].** Among admissible BIBD$(7,k,1)$ ($k \in \{2,3\}$): $k=3$ strictly dominates in contraction (1/3 vs 1/6), number of operators (7 vs 21), purity loss (8/9 vs 35/36), and frame-group covariance ($\Gamma_{\!\text{oct}}$ vs $S_7\times S_2$). Full $G_2$-covariance is not a discriminator (neither pinching design has it; see Fano-channel Th. 5.1a–b) — the decisive minimal selectors are Choi-rank $=7$ (T11) and BIBD closure (T13).
+**Theorem T4 (Optimality of k=3) [T].** Among admissible BIBD$(7,k,1)$ ($k \in \{2,3\}$): $k=3$ strictly dominates in contraction (1/3 vs 1/6), number of operators (7 vs 21), purity loss (8/9 vs 35/36) (the fourth criterion listed here before, frame-group covariance "$\Gamma_{\!\text{oct}}$ vs $S_7\times S_2$", is retracted: both channels are $\Gamma_{\!\text{oct}}$-covariant). Full $G_2$-covariance is not a discriminator (neither pinching design has it; see Fano-channel Th. 5.1a–b) — the decisive minimal selectors are Choi-rank $=7$ (T11) and BIBD closure (T13).
 
 **Theorem T5 ($S_7$-equivariance of dissipator) [T].** The atomic dissipator $\mathcal{D}_\text{atom}$ with operators $L_k = |k\rangle\langle k|$ commutes with any permutation $\sigma \in S_7$: $\mathcal{D}_\text{atom}[U_\sigma \Gamma U_\sigma^\dagger] = U_\sigma \mathcal{D}_\text{atom}[\Gamma] U_\sigma^\dagger$.
 
@@ -547,7 +547,8 @@ Condition (МП) — the principle of minimal representation — **has become a 
 |---|---|---|
 | Initial | [I] | Three interpretive arguments |
 | After T1–T10 | [C] under (МП) | One condition: $\lambda = 1$ |
-| After T11–T13 | **[T]** | Fully closed, no conditions |
+| After T11–T13 | "[T]" | Claimed fully closed, no conditions |
+| After 2026-09-25 | **[C at (Alt)]** | (МП) closed; the orientation input (Alt) of Step T15 remains |
 
 **Three independent confirmations of $\lambda = 1$ (now all [T]):**
 
@@ -603,6 +604,8 @@ A skeptical reading of the T15 chain may ask: is there a **competing** incidence
 | C6 | Normed division algebra exists at $N+1$ | T15 + §1.3 | $N \in \{0,1,3,7\}$ |
 | C7 | $G_2$-rigidity: $\mathrm{Aut}$ = exceptional simple Lie group | §1.6 + uniqueness-theorem | $N=7$ only |
 
+**Dependence among the constraints (added 2026-09-25).** C1 and C6 are the same Hurwitz condition (a normed division algebra of dimension $N+1$ exists), and C7 is a property of the algebra that C1/C6 select, so the table contains five independent constraints, not seven; its C6 and C7 columns repeat C1. C1, C6 and C7 come from Step T15 and therefore carry its input (Alt).
+
 **Pass/fail table for candidate structures.**
 
 | $N$ | Candidate | C1 | C2 | C3 | C4 | C5 | C6 | C7 | UHM-viable? |
@@ -615,7 +618,7 @@ A skeptical reading of the T15 chain may ask: is there a **competing** incidence
 | 15 | PG(3,2) + $\mathbb S$ sedenions | ✗ ($16\notin$ Hurwitz beyond $\mathbb O$) | ✓ | ✓ ($H(15,11)$) | ✓ ($STS(15)$) | ✗ ($b=35$) | ✗ ($\mathbb S$ has zero divisors) | ✗ ($\mathrm{Aut}\mathbb S \neq$ simple) | **No** (C1, C5, C6, C7 fail) |
 | 21 | PG(2,4) | ✗ | ✓ | ✗ | ✓ ($STS(21)$) | ✗ ($b=70$) | ✗ | ✗ | **No** (5 constraints fail) |
 
-**Conclusion (Theorem on uniqueness of $N=7$ under (AP)+(PH)+(QG)+(V)) [T].** The conjunction $C1 \cap C2 \cap C3 \cap C4 \cap C5 \cap C6 \cap C7$ is satisfied by **exactly one** value of $N$, namely $N=7$.
+**Conclusion (Theorem on uniqueness of $N=7$ under (AP)+(PH)+(QG)+(V)).** The conjunction $C1 \cap C2 \cap C3 \cap C4 \cap C5 \cap C6 \cap C7$ is satisfied by **exactly one** value of $N$, namely $N=7$. Status: the finite check is [T]; as a statement about the axioms it is [C at (Alt)] through C1, C6, C7 (Step T15), while the route through C5 alone uses T11–T14, which were run at $N=7$ taken from Track A. Until 2026-09-25 the conclusion was marked [T] without this split.
 
 **Proof.** $C1 \cap C3 = \{N : N+1\in\{2,4,8\} \wedge N = 2^r - 1\} = \{1,3,7\}$ (intersection of Hurwitz and Mersenne-1 sets). $C2$ adds $N\ge 4$, removing $1$ and $3$, leaving $\{7\}$. $C5$ independently isolates $N=7$ via Hall's BIBD closure theorem. $C6$ confirms $\mathbb O$ is the relevant division algebra. $C7$ locks the gauge group to $G_2$ via uniqueness of $\mathrm{Aut}(\mathbb O)$ as the unique exceptional simple Lie group obtainable as automorphisms of a Hurwitz algebra at this dimension. All seven constraints converge on $N=7$. $\square$
 
@@ -651,7 +654,7 @@ The route "normed division algebra → octonions → seven imaginary units → $
 
 **Manogue and Dray (1999, 2010): one preferred unit.** Choosing one preferred imaginary unit reduces octonionic ten-dimensional spacetime to four dimensions and singles out three quaternionic subalgebras, which the authors read as three generations (*Mod. Phys. Lett. A* **14**, 99–103 (1999), [arXiv:hep-th/9807044](https://arxiv.org/abs/hep-th/9807044); *J. Phys. Conf. Ser.* **254**, 012005 (2010), [arXiv:0911.2253](https://arxiv.org/abs/0911.2253)); see [Spacetime](/docs/core/foundations/spacetime#прецеденты-3-плюс-1) and [Fermion generations, §1.3](/docs/physics/particle-physics/fermion-generations#прецеденты-три-поколения).
 
-**Baez (2002): the Fano plane needs orientations.** Step T15 cites Baez's review for the rule "line $(e_i,e_j,e_k)$ specifies $e_i\cdot e_j=e_k$". The review states the rule for a Fano plane whose seven lines each carry a cyclic orientation: with the arrows drawn, the plane "completely describes the algebra structure of the octonions"; equivalently, $\mathbb{O}$ is the group algebra of $\mathbb{Z}_2^3$ twisted by a sign function (*Bull. Amer. Math. Soc.* **39**, 145–205 (2002), [arXiv:math/0105155](https://arxiv.org/abs/math/0105155)). *Standing:* standard; on physics Baez wrote that "there is still no proof that the octonions are useful for understanding the real world". *Difference, and a gap in T15:* Steps T12–T14 derive the unordered design BIBD$(7,3,1)$, and a block design carries no orientation. Of the $2^7=128$ ways to orient the seven lines of this corpus's Fano plane, 16 give a normed algebra — the octonions — and 112 give algebras in which the norm is not multiplicative (direct check). The orientation, and with it P1, is therefore an input of Step T15 rather than an output of T12–T14; the remark after the summary table of §5.1 concedes that the passage "enriches the structure beyond what strictly follows from the dynamical axioms".
+**Baez (2002): the Fano plane needs orientations.** Step T15 cites Baez's review for the rule "line $(e_i,e_j,e_k)$ specifies $e_i\cdot e_j=e_k$". The review states the rule for a Fano plane whose seven lines each carry a cyclic orientation: with the arrows drawn, the plane "completely describes the algebra structure of the octonions"; equivalently, $\mathbb{O}$ is the group algebra of $\mathbb{Z}_2^3$ twisted by a sign function (*Bull. Amer. Math. Soc.* **39**, 145–205 (2002), [arXiv:math/0105155](https://arxiv.org/abs/math/0105155)). *Standing:* standard; on physics Baez wrote that "there is still no proof that the octonions are useful for understanding the real world". *Difference, and a gap in T15:* Steps T12–T14 derive the unordered design BIBD$(7,3,1)$, and a block design carries no orientation. Of the $2^7=128$ ways to orient the seven lines of this corpus's Fano plane, 16 give a normed algebra — the octonions — and 112 give algebras in which the norm is not multiplicative (direct check). The orientation, and with it P1, is therefore an input of Step T15 rather than an output of T12–T14; the remark after the summary table of §5.1 concedes that the passage "enriches the structure beyond what strictly follows from the dynamical axioms". Since 2026-09-25 Step T15, P1, P2 and registry row 41n carry this input as [C at (Alt)].
 
 **M-theory on $G_2$-holonomy manifolds (Problem 4 below).** The programme that Problem 4 asks about exists. Compactifying eleven-dimensional M-theory on a seven-dimensional manifold whose holonomy group — the group generated by parallel transport around closed loops — is $G_2$ gives four-dimensional theories with one supersymmetry; non-abelian gauge groups and chiral fermions require singularities of the seven-manifold (Acharya and Gukov, *Phys. Rep.* **392**, 121–189 (2004), [arXiv:hep-th/0409191](https://arxiv.org/abs/hep-th/0409191); Atiyah and Witten, *Adv. Theor. Math. Phys.* **6**, 1–106 (2002), [arXiv:hep-th/0107177](https://arxiv.org/abs/hep-th/0107177)). *Standing:* an active programme within string theory, without experimental confirmation. *Difference:* there the seven are the dimensions of a curved space with $G_2$ holonomy, orthogonal to four-dimensional spacetime ($11=4+7$); in UHM they are the dimensions of a state space on which $G_2$ acts by automorphisms of $\mathbb{O}$. The shared ingredient is the group; the corpus establishes no map between the two.
 
@@ -670,7 +673,7 @@ The route "normed division algebra → octonions → seven imaginary units → $
 
 ## §6. Open Problems {#открытые-проблемы}
 
-**Problem 1 (Principle of minimal representation) — solved [T].** Theorems T11–T13 prove $\lambda = 1$ from axioms A1–A5. The bridge is fully closed [T].
+**Problem 1 (Principle of minimal representation) — solved [T].** Theorems T11–T13 prove $\lambda = 1$ from axioms A1–A5. The bridge is closed up to the orientation input of Step T15: [C at (Alt)] (see Problem 5).
 
 **Problem 2 ($G_2$-covariance).**
 Are the UHM evolution equations $G_2$-covariant? If so, $G_2$ provides 14 independent "gauge" degrees of freedom.
@@ -680,6 +683,8 @@ Are the 7 triples of the Fano plane privileged in the structure of $\Gamma$? Ver
 
 **Problem 4 (Physical realization of $G_2$).**
 Is the $G_2$ structure related to M-theory compactifications on $G_2$-manifolds (11 = 4 + 7)? That programme exists and is active; what it shares with UHM, and what it does not, is set out in [§5.7](#прецеденты-октонионы).
+
+**Problem 5 (Orientation of the Fano lines) [Pr].** Derive (Alt) — the choice of one of the 16 normed orientations out of 128 — from (AP)+(PH)+(QG)+(V), or show that it is independent of them. Until this is done the bridge, P1 and P2 are [C at (Alt)].
 
 ---
 
