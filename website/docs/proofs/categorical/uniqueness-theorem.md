@@ -264,14 +264,14 @@ Axioms A1–A5 uniquely determine (in the given basis $\mathcal{B}$) the followi
 ### Lemma G4: The octonionic-structure gauge group is $G_2$ [T] {#лемма-g4}
 
 :::tip Lemma G4 (Gauge group of the octonionic 3-form) [T]
-The maximal subgroup $\mathcal{G} \subseteq U(7)$ preserving the octonionic associative 3-form $\varphi_3 = \sum_{i<j<k} f_{ijk}\, e^i\wedge e^j\wedge e^k$ — equivalently, the structure constants $f_{ijk}$ of Lemma G3(ii) — is exactly $G_2 = \mathrm{Aut}(\mathbb{O})$.
+The maximal subgroup $\mathcal{G} \subseteq U(7)$ preserving the octonionic associative 3-form $\varphi_3 = \sum_{i<j<k} f_{ijk}\, e^i\wedge e^j\wedge e^k$ — equivalently, the structure constants $f_{ijk}$ of Lemma G3(ii) — is $G_2 \times \mu_3$, where $\mu_3 = \{\mathbb{1}, \omega\mathbb{1}, \omega^2\mathbb{1}\}$, $\omega = e^{2\pi i/3}$. The scalars $\omega\mathbb{1}$ preserve every 3-form and act trivially on density matrices, so on states the gauge group is $G_2 = \mathrm{Aut}(\mathbb{O})$. (It read "is exactly $G_2$" until 2026-09-25.)
 
 The remaining structures of Lemma G3 — the atomic projectors (i), the E-projection (iii), the PW clock $O$ (iv), the $\kappa_0$ formula (v) — are **not** $G_2$-invariant; they fix a **functional frame** (a choice of gauge) inside each $G_2$-orbit. Two representations related by $U\in G_2$ carry their frames into one another.
 :::
 
-**Proof.** We show $\mathcal{G} = G_2$ in two inclusions.
+**Proof.** We show $\mathcal{G} = G_2 \times \mu_3$ in two inclusions.
 
-**(A) $G_2 \subseteq \mathcal{G}$.** By definition $G_2 = \{g\in GL(7,\mathbb{R}) : g^\ast\varphi_3 = \varphi_3\}$ preserves the 3-form, and $G_2\subset SO(7)\subset U(7)$ preserves the Hermitian structure. Hence every $g\in G_2$ preserves $\varphi_3$, i.e. $g\in\mathcal{G}$. $\checkmark$
+**(A) $G_2 \subseteq \mathcal{G}$.** By definition $G_2 = \{g\in GL(7,\mathbb{R}) : g^\ast\varphi_3 = \varphi_3\}$ preserves the 3-form, and $G_2\subset SO(7)\subset U(7)$ preserves the Hermitian structure. Hence every $g\in G_2$ preserves $\varphi_3$, i.e. $g\in\mathcal{G}$. The scalars $\omega\mathbb{1}$, $\omega^3 = 1$, preserve every 3-form, so $\mu_3 \subseteq \mathcal{G}$ as well. $\checkmark$
 
 :::warning The functional labels are frame data, not $G_2$-invariants
 Since $\mathbb{C}^7$ is an **irreducible** $G_2$-module (Cartan 1894), by Schur's lemma it has **no** nonzero proper $G_2$-invariant subspace. Consequently:
@@ -282,25 +282,19 @@ Since $\mathbb{C}^7$ is an **irreducible** $G_2$-module (Cartan 1894), by Schur'
 The genuinely $G_2$-invariant content is the spectrum (6 numbers) plus the $\varphi_3$-relative angles (28) — the $48-14=34$ parameters of Corollary 1.
 :::
 
-**(B) $\mathcal{G} \subseteq G_2$: any $U \in \mathcal{G}$ belongs to $G_2$.**
+**(B) $\mathcal{G} \subseteq G_2 \times \mu_3$.** Let $U \in \mathcal{G}$.
 
-Let $U \in U(7)$ preserve all five structures of Lemma G3.
+**Step B1 (Lie algebra).** Write $X \in \mathfrak{u}(7)$ as $X = A + iS$ with $A$ real antisymmetric and $S$ real symmetric. Since $\varphi_3$ is real, $X\cdot\varphi_3 = A\cdot\varphi_3 + i\,S\cdot\varphi_3$ vanishes only if $A\cdot\varphi_3 = 0$ and $S\cdot\varphi_3 = 0$, i.e. only if $A$ and $S$ lie in the Lie algebra $\mathfrak{g}_2 \subset \mathfrak{so}(7)$ of $G_2 = \{g \in GL(7,\mathbb{R}) : g^*\varphi_3 = \varphi_3\}$; a symmetric $S$ in $\mathfrak{so}(7)$ is zero. So the Lie algebra of $\mathcal{G}$ is $\mathfrak{g}_2$ and its identity component is $G_2$ (machine check: the stabiliser of $\varphi_3$ in $\mathfrak{u}(7)$ has real dimension $14$).
 
-**Step B1.** From preservation of (ii) (Fano lines): $U$ induces an automorphism of the Fano plane PG(2,2). Since the oriented PG(2,2) of Lemma G3(ii) is the multiplication table of $\mathrm{Im}(\mathbb{O})$ (given the orientation (Alt)), $U$ induces an automorphism of octonionic multiplication.
+**Step B2 (normaliser).** $U$ normalises the identity component, so $g \mapsto UgU^{-1}$ is an automorphism of $G_2$. $G_2$ has no outer automorphisms, so there is $h \in G_2$ with $UgU^{-1} = hgh^{-1}$ for all $g \in G_2$, and $h^{-1}U$ commutes with $G_2$. Since $\mathbb{C}^7$ is an irreducible $G_2$-module (Cartan 1894), Schur's lemma gives $h^{-1}U = \lambda\mathbb{1}$ with $\lvert\lambda\rvert = 1$.
 
-**Step B2.** Restrict $U$ to $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. An automorphism of octonionic multiplication on $\mathrm{Im}(\mathbb{O})$ by definition belongs to $G_2 = \mathrm{Aut}(\mathbb{O})$.
+**Step B3 (the scalar).** $\lambda\mathbb{1} = h^{-1}U$ preserves $\varphi_3$, and $(\lambda\mathbb{1})^*\varphi_3 = \lambda^3\varphi_3$, so $\lambda^3 = 1$ and $U = h\,\lambda\mathbb{1} \in G_2 \times \mu_3$. The product is direct: $\mu_3$ is central, and $\omega\mathbb{1}$ is not real, so $\mu_3 \cap G_2 = \{\mathbb{1}\}$. $\blacksquare$
 
-:::tip Transition from combinatorial automorphisms to continuous ones
-$U \in U(7)$ preserves Fano lines **as subspaces** (not just as index sets). Each Fano line defines a 3-dimensional subspace, and preservation of all 7 such subspaces is equivalent to preservation of the octonionic cross-product (3-form $\varphi_3 = \sum f_{ijk}\, e^i \wedge e^j \wedge e^k$). By definition $G_2 = \{g \in \mathrm{GL}(7,\mathbb{R}) : g^*\varphi_3 = \varphi_3\}$, which proves $U \in G_2$.
-:::
+*Corrected 2026-09-25:* part (B) started from a $U$ preserving "all five structures of Lemma G3" (not the hypothesis of the lemma) and relied on a box asserting that "preservation of all 7 such subspaces is equivalent to preservation of the octonionic cross-product". That equivalence is false: every diagonal unitary preserves the seven coordinate line subspaces, and a generic one does not preserve $\varphi_3$ (machine check). The former Step B3 assumed that $U$ preserves the real structure, which $\omega\mathbb{1}$ does not. Steps B1–B3 and the box are replaced by the argument above; the lemma changes only by the scalars $\mu_3$, which act trivially on states.
 
 :::info Clarification: PSL(2,7) vs G₂
-The group of combinatorial automorphisms of PG(2,2) is finite: $\mathrm{Aut}(\mathrm{PG}(2,2)) \cong \mathrm{PSL}(2,7)$, $|\mathrm{PSL}(2,7)| = 168$. The group $G_2 = \mathrm{Aut}(\mathbb{O})$ is a compact Lie group, $\dim G_2 = 14$. Relation: every collineation of PG(2,2) has exactly $8$ lifts — signed permutations of the basis that are automorphisms of $\mathbb{O}$; the lifts form the frame group $\Gamma_{\!\text{oct}} \subset G_2$ of order $1344$, a non-split extension $2^3 \cdot \mathrm{PSL}(3,2)$, so the collineation group is a quotient of $\Gamma_{\!\text{oct}}$, not a subgroup of it. (Until 2026-09-25 this read "$\mathrm{PSL}(2,7) \subset G_2$ as a finite subgroup — every permutation of 7 points compatible with PG(2,2) extends to a continuous automorphism of $\mathbb{O}$"; as bare permutations only $21$ of the $168$ collineations are automorphisms.) Step B1 shows that $U$ preserves the **structure constants** $f_{ijk}$ (not just combinatorics), and step B2 uses the definition of $G_2$ as the group preserving these constants.
+The group of combinatorial automorphisms of PG(2,2) is finite: $\mathrm{Aut}(\mathrm{PG}(2,2)) \cong \mathrm{PSL}(2,7)$, $|\mathrm{PSL}(2,7)| = 168$. The group $G_2 = \mathrm{Aut}(\mathbb{O})$ is a compact Lie group, $\dim G_2 = 14$. Relation: every collineation of PG(2,2) has exactly $8$ lifts — signed permutations of the basis that are automorphisms of $\mathbb{O}$; the lifts form the frame group $\Gamma_{\!\text{oct}} \subset G_2$ of order $1344$, a non-split extension $2^3 \cdot \mathrm{PSL}(3,2)$, so the collineation group is a quotient of $\Gamma_{\!\text{oct}}$, not a subgroup of it. (Until 2026-09-25 this read "$\mathrm{PSL}(2,7) \subset G_2$ as a finite subgroup — every permutation of 7 points compatible with PG(2,2) extends to a continuous automorphism of $\mathbb{O}$"; as bare permutations only $21$ of the $168$ collineations are automorphisms.) Part (B) uses only the 3-form $\varphi_3$, not the combinatorics of the lines.
 :::
-
-**Step B3.** Since $G_2 \subset SO(7) \subset U(7)$ and $U$ preserves the Hermitian structure (as an element of $U(7)$), the restriction $U\big|_{\mathrm{Im}(\mathbb{O})}$ determines $U$ completely (since $\mathrm{Im}(\mathbb{O})$ is a real form of $\mathbb{C}^7$, and $U$ preserves the real structure via preservation of PG(2,2)).
-
-Therefore, $U \in G_2$. $\blacksquare$
 
 ---
 

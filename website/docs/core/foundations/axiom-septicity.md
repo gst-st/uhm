@@ -1101,7 +1101,7 @@ More: [Lindblad operators](../../core/operators/lindblad-operators#редукц�
 :::info $G_2$ gauge structure from axioms [C at (Alt)]
 Closing T15 yields $(AP)+(PH)+(QG)+(V) \Rightarrow \mathbb{O} \Rightarrow G_2 = \text{Aut}(\mathbb{O})$, with the orientation of the Fano lines as input (Alt); given $\mathbb{O}$, the statements below are theorems (the heading read [T] until 2026-09-25). [$G_2$ rigidity](../../proofs/categorical/uniqueness-theorem) proves more:
 
-**Lemma G4 [T]:** $G_2$ is the **largest** subgroup of $U(7)$ preserving the octonionic 3-form $\varphi_3$; the remaining axiomatic data $(\mathcal{D}_\Omega, \mathcal{R}, \kappa_0, \text{PW})$ are frame data, preserved only by the finite frame group $\Gamma_{\!\text{oct}} \subset G_2$ ([frame decision D-0910](../../proofs/categorical/uniqueness-theorem#g2-ригидность)).
+**Lemma G4 [T]:** the **largest** subgroup of $U(7)$ preserving the octonionic 3-form $\varphi_3$ is $G_2 \times \mu_3$, and the scalars $\mu_3$ ($\omega^3 = 1$) act trivially on states, so on states it is $G_2$ (it read "$G_2$ is the largest subgroup" until 2026-09-25); the remaining axiomatic data $(\mathcal{D}_\Omega, \mathcal{R}, \kappa_0, \text{PW})$ are frame data, preserved only by the finite frame group $\Gamma_{\!\text{oct}} \subset G_2$ ([frame decision D-0910](../../proofs/categorical/uniqueness-theorem#g2-ригидность)).
 
 **Consequences:**
 - Kinematic orbit space $\mathcal{D}(\mathbb{C}^7)/G_2$: $\dim = 48 - 14 = 34$; physical state space $\mathcal{D}(\mathbb{C}^7)/\Gamma_{\!\text{oct}}$: 48 parameters (D-0910)
