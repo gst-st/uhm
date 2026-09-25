@@ -201,17 +201,17 @@ $$
 c_{mn} = \begin{cases} \alpha^* k & m = n \text{ (atomic part)} \\ (1-\alpha^*) k / 3 & m \neq n,\, (m,n) \text{ on a common Fano line} \\ 0 & m \neq n,\, (m,n) \text{ not on a common Fano line} \end{cases}
 $$
 
-The coefficients are fully determined by:
+Given the Fano weight, the coefficients are determined by:
 - [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$
-- Variational principle ($\alpha^*$ via $P$ and $P_{\text{crit}}$)
+- The Fano weight $\alpha$ — a free parameter; its variational value $\alpha^*$ is retracted (§4)
 - Compression parameter $k$
 :::
 
 ---
 
-## 4. Variational Definition of α* [T] {#alpha-star}
+## 4. Variational Definition of α* — retracted 2026-09-25 [✗] {#alpha-star}
 
-:::tip Theorem 4.1 (Variational definition of $\alpha^*$) [T]
+:::tip Theorem 4.1 (Variational definition of $\alpha^*$) — retracted [✗]
 The optimal parameter is determined by the [variational principle](/docs/proofs/dynamics/fep-derivation):
 
 $$
@@ -230,6 +230,14 @@ $$
 | $P = 0.5$ | $\approx 0.43$ | Balance of atomic and Fano |
 | $P \to P_{\text{crit}}$ | $\to 0$ | Almost entirely Fano (minimal coherence destruction) |
 :::
+
+**Why retracted.** $\mathcal{F}[\psi;\Gamma] = S_{\text{spec}}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma)\|\Gamma) = -\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$ is linear in $\psi(\Gamma)$ ([FEP derivation](/docs/proofs/dynamics/fep-derivation), retraction box), and $\mathcal{P}_\alpha(\Gamma) = \Delta(\Gamma) + \tfrac{1-\alpha}{3}(\Gamma - \Delta(\Gamma))$, with $\Delta$ the diagonal part, is affine in $\alpha$. Hence, for full-rank $\Gamma$,
+
+$$
+\mathcal{F}(\alpha) = \mathcal{F}(0) + \frac{\alpha}{3}\left[D_{KL}(\Gamma\|\Delta\Gamma) + D_{KL}(\Delta\Gamma\|\Gamma)\right],
+$$
+
+so the minimum over $[0,1]$ is at $\alpha = 0$ (pure Fano) whenever $\Gamma$ has coherences; the interior value $1 - 2/(7P)$ has no derivation. Checked on 400 random states with $P$ from $0.19$ to $0.91$: minimum at $\alpha = 0$ in all 400. The weight $\alpha$ of $\varphi_{\text{coh}}$ is therefore a free parameter.
 
 ---
 
@@ -471,7 +479,7 @@ The fourteen theorems of this document are not isolated results — they form a 
 flowchart TD
     T1["T 1.1: Completeness of Fano atoms<br/>ΣΠ_p = 3I"] --> T2["T 2.1: Fano channel preserves coherences<br/>γ_ij → γ_ij/3, phases preserved"]
     T2 --> T3["T 3.1–3.3: Canonical φ_coh<br/>convex combination P_base + P_Fano"]
-    T3 --> T4["T 4.1: Variational α*<br/>α* ≈ 1 − P_crit/P"]
+    T3 --> T4["T 4.1: Variational α* — retracted ✗<br/>the functional is minimal at α = 0"]
     T5["T 5.1a–c: D_Fano=⅔D_atom<br/>frame-group Γ_oct; canonical D_G2"] --> T6["T 6.1–6.2: pinching breaks G₂<br/>violation = (2+α)/3·Δmax"]
     T6 --> T13["T 13.1: Fano optimality<br/>unique among BIBD(7,k,1)"]
     T2 --> T7["T 7.1: Stationary Gap<br/>phase shift ∝ Δω/(Γ₂+κ)"]
@@ -489,7 +497,7 @@ flowchart TD
 
 **Coherence-preserving observation (T 2.1).** The Fano channel does not destroy coherences — it scales their magnitudes by $1/3$, preserving phases. This is the critical distinction from the atomic channel, which zeroes out the entire off-diagonal. This very fact makes consciousness ($P > P_{\text{crit}}$) possible under self-observation.
 
-**Construction of the self-model (T 3.1–4.1).** From the Fano channel and the atomic channel, canonical self-modeling $\varphi_{\text{coh}}$ is constructed — a convex combination of two CPTP channels. The mixing parameter $\alpha^*$ is determined by the variational principle: minimum free energy. Everything is closed — no free parameters.
+**Construction of the self-model (T 3.1–4.1).** From the Fano channel and the atomic channel, canonical self-modeling $\varphi_{\text{coh}}$ is constructed — a convex combination of two CPTP channels. The mixing parameter was said to be fixed by the variational principle; that is retracted (§4), so the Fano weight $\alpha$ remains a free parameter of the construction.
 
 **Symmetry selection (T 5.1, 6.1–6.2).** The Fano channel and the atomic channel share the same finite covariance group $\Gamma_{\!\text{oct}}$ (Theorem 5.1b); neither is $G_2$-covariant, and the degree of $G_2$-violation $\tfrac{2+\alpha}{3}\Delta_{\max}$ grows monotonically with $\alpha$ from $\tfrac23\Delta_{\max}$ at $\alpha = 0$. This imposes a "penalty" on the decohering component: the larger the fraction of the atomic channel, the stronger the violation of the fundamental symmetry.
 
@@ -497,7 +505,7 @@ flowchart TD
 
 **Necessity of coherences (T 9.1, 12.1).** Two independent arguments show that atomic observation ($c = 0$) is incompatible with life: it suppresses purity below $P_{\text{crit}}$ and exponentially destroys the $\kappa_0$-contribution to regeneration. A living system **must** use composite (Fano) observation.
 
-**Democracy and optimality (T 11.1–11.2, 13.1).** $S_7$-equivariance guarantees that all coherences decohere equally — no sector is privileged. Among all BIBD$(7,k,1)$-channels satisfying this and $c > 0$, the Fano channel ($k = 3$) is the unique optimal one: it gives maximum contraction with minimum number of operators and full $G_2$-covariance.
+**Democracy and optimality (T 11.1–11.2, 13.1).** $S_7$-equivariance guarantees that all coherences decohere equally — no sector is privileged. Among all BIBD$(7,k,1)$-channels satisfying this and $c > 0$, the Fano channel ($k = 3$) is the unique optimal one: it gives maximum contraction with minimum number of operators; its covariance group is the frame group $\Gamma_{\!\text{oct}}$, not the full $G_2$ (Theorem 5.1b — the full $G_2$-covariance was retracted on 2026-09-10).
 
 **Closure to coding theory (T 14.1–14.2).** The structure of the Fano channel is isomorphic to the perfect Hamming code $H(7,4)$. This is no coincidence: autopoietic error self-correction with 7 dimensions requires distinguishing $2^3 = 8$ situations, which is realized by the unique perfect code of length 7.
 
@@ -506,10 +514,10 @@ flowchart TD
 The entire construction of the Fano channel is **uniquely determined** by four conditions:
 1. **Dimension $N = 7$** (axiom of septicity)
 2. **CPTP** (physicality of the quantum channel)
-3. **$G_2$-covariance** (octonionic symmetry)
+3. ~~**$G_2$-covariance** (octonionic symmetry)~~ — retracted 2026-09-10: the channel is covariant only under the frame group $\Gamma_{\!\text{oct}}$ (Theorem 5.1b); how much of the uniqueness claim survives without this condition is not re-derived here
 4. **Autopoietic optimality** (maximum preservation of coherences with complete pair coverage)
 
-From these four conditions everything else follows: the Fano plane, contraction $1/3$, Hamming code, variational $\alpha^*$, formula for stationary Gap. No element is arbitrary — the unified picture is closed.
+From these conditions follow the Fano plane, contraction $1/3$, Hamming code and the formula for stationary Gap. The variational $\alpha^*$ is retracted (§4), so the Fano weight $\alpha$ stays free.
 
 ---
 

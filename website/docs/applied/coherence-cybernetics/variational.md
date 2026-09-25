@@ -29,7 +29,7 @@ In this chapter we:
 1. **Trace the history** of variational principles — from Fermat's optics to Feynman's path integrals — and show how this idea transfers to the dynamics of consciousness (section 0).
 2. **Formulate the principle of stationary action** for Gap dynamics and derive from it the Euler–Lagrange equations with four "forces" of inner life (sections 1–2).
 3. **Build the irreversible thermodynamics** of the Gap sector: Onsager relations, symmetry of cross-couplings, the second law for consciousness (section 3).
-4. **Derive Friston's FEP** as the macroscopic limit of the Gap variational principle (section 4).
+4. **Relate the Gap variational principle to Friston's FEP** (section 4) — the earlier claim that the FEP is derived as its macroscopic limit is retracted (2026-09-25).
 5. **Establish the minimum entropy production principle** — the economy of opacity in the spirit of Prigogine (section 5).
 6. **Prove the fluctuation–dissipation theorem** for Gap, linking noise and response (section 6).
 7. **Derive the form of regeneration** from three independent arguments, closing the variational architecture (section 7).
@@ -82,7 +82,7 @@ Richard Feynman in 1948 resolved the "teleological" puzzle that had troubled phy
 
 In Coherence Cybernetics (CC) the variational principle plays the same fundamental role as in physics, but its domain is the **internal dynamics of consciousness**. The coherence phases $\theta_{ij}$ of the matrix $\Gamma$ are the analogues of generalised coordinates; their evolution is determined by the stationarity of the action $S_{\text{Gap}}$. The four "forces" governing inner life — potential, regenerative, dissipative, external — follow from a single variational principle just as inevitably as gravity follows from geodesics in spacetime.
 
-Moreover, in the macroscopic limit ($\tau_{\mathrm{obs}} \gg 1/\Gamma_2$) the entire apparatus of Friston's Free Energy Principle (FEP) is **derived** as a special case of the Gap variational principle. FEP is not a postulate — it is a consequence.
+The claim that in the macroscopic limit ($\tau_{\mathrm{obs}} \gg 1/\Gamma_2$) the apparatus of Friston's Free Energy Principle (FEP) is **derived** as a special case of the Gap variational principle is **retracted** (2026-09-25, section 4): the functional involved reduces to a cross-entropy, not to Friston's free energy.
 
 Let us proceed to the formalism.
 
@@ -327,17 +327,17 @@ The Lagrangian $\delta S = 0$ of the [previous chapter](./lagrangian) gives the 
 
 ## 4. Connection to the Free Energy Principle (FEP) {#связь-с-fep}
 
-### 4.0 Free Energy Principle as a Special Case of CC {#фристон-из-кк}
+### 4.0 Free Energy Principle and CC {#фристон-из-кк}
 
-The Free Energy Principle (FEP), proposed by Karl Friston in 2006, became one of the most influential theoretical frameworks in neuroscience. It asserts that any self-organising system — from a cell to a brain — minimises "free energy" $F = H(q) + D_{KL}(q \| p)$, where $q$ is the internal model and $p$ is sensory data.
+The Free Energy Principle (FEP), proposed by Karl Friston in 2006, became one of the most influential theoretical frameworks in neuroscience. It asserts that any self-organising system — from a cell to a brain — minimises variational free energy $F = \mathbb{E}_q[\ln q(s) - \ln p(s,o)] = D_{KL}(q(s) \| p(s)) - \langle \ln p(o|s) \rangle_q$, where $q$ is the internal (recognition) model and $p$ the generative model of hidden states $s$ and observations $o$. (The page earlier wrote $F = H(q) + D_{KL}(q \| p)$; that is a cross-entropy, not Friston's $F$.)
 
-FEP is often presented as a fundamental principle. But within CC theory it turns out to be a **consequence** — the macroscopic limit of a deeper variational principle of Gap. This does not diminish FEP; rather, it clarifies its domain of applicability and shows where it comes from.
+This section claimed that within CC the FEP turns out to be a **consequence** — the macroscopic limit of a deeper variational principle of Gap. That claim is **retracted** (2026-09-25): the functional $S_{\text{spec}} + D_{KL}$ restricted to diagonal states is the cross-entropy $-\sum_i q_i \ln p_i$, not Friston's free energy, and the self-model φ is not its minimiser ([FEP derivation](/docs/proofs/dynamics/fep-derivation), retraction box).
 
-The key idea is this: FEP describes the **diagonal sector** of the coherence matrix $\Gamma$ — the populations $\gamma_{ii}$ playing the role of probabilities. The coherences $\gamma_{ij}$ ($i \neq j$), carrying information about the phase relations between dimensions, are absent from FEP. They become significant only at high purity $P \gg P_{\text{crit}}$, i.e. in the regime of developed consciousness.
+The idea behind the retracted claim was this: FEP describes the **diagonal sector** of the coherence matrix $\Gamma$ — the populations $\gamma_{ii}$ playing the role of probabilities. The coherences $\gamma_{ij}$ ($i \neq j$), carrying information about the phase relations between dimensions, are absent from FEP. They become significant only at high purity $P \gg P_{\text{crit}}$, i.e. in the regime of developed consciousness.
 
 ### 4.1 FEP as the Macroscopic Limit
 
-:::tip Theorem 4.1 (FEP from the Gap variational principle) [T]
+:::tip Theorem 4.1 (FEP from the Gap variational principle) — retracted 2026-09-25 [✗]
 Friston's Free Energy Principle is derived as the **macroscopic limit** ($\tau_{\mathrm{obs}} \gg 1/\Gamma_2$, coherences have decohered) of the Gap variational principle:
 
 $$
@@ -345,27 +345,29 @@ $$
 $$
 
 Full derivation: [Derivation of FEP from UHM](/docs/proofs/dynamics/fep-derivation).
+
+**Retracted [✗]:** the displayed characterisation of φ (Theorem 3.1 of the FEP derivation) is false, and the diagonal limit of the functional is the cross-entropy, not Friston's free energy.
 :::
 
 :::info Terminology "macroscopic limit" and the decoherence theorem
-In standard QM the "classical limit" $\hbar \to 0$ corresponds to decoherence ($P \to 1/N$). In UHM the FEP reduction occurs in the **macroscopic limit**: coherences $|\gamma_{ij}|$ are small compared to populations $\gamma_{ii}$ (condition Dec). This is a **theorem [T]**, not a hypothesis:
+In standard QM the "classical limit" $\hbar \to 0$ corresponds to decoherence ($P \to 1/N$). In UHM the FEP reduction occurs in the **macroscopic limit**: coherences $|\gamma_{ij}|$ are small compared to populations $\gamma_{ii}$ (condition Dec). The decoherence part is a **theorem [T]**, not a hypothesis:
 
 1. Axioms A1–A5 → Fano dissipator $\mathcal{D}_\Omega$ with $\Gamma_2 > 0$ [T] (T-7)
 2. $\Gamma_2 > 0$ → $|\gamma_{ij}(\tau)| \leq |\gamma_{ij}(0)| \cdot e^{-\Gamma_2 \tau}$ [T]
 3. For biosystems $\tau_{\mathrm{obs}} \gg 1/\Gamma_2$ → $|\gamma_{ij}|/\gamma_{ii} \ll 1$ [T]
 4. $|\gamma_{ij}|/\gamma_{ii} \ll 1$ → $\mathcal{F} \approx \mathcal{F}_{\mathrm{diag}} + O(\varepsilon^2)$ [T] (Theorem 4.2)
-5. $\mathcal{F}_{\mathrm{diag}} = H(q) + D_{KL}(q \| p) = \mathrm{FEP}$ [T]
+5. $\mathcal{F}_{\mathrm{diag}} = H(q) + D_{KL}(q \| p) = -\sum_i q_i \ln p_i$ [T] — the cross-entropy; the former "$= \mathrm{FEP}$" is retracted [✗]
 
-The mapping from 7 abstract dimensions (A,S,D,L,E,O,U) to Friston's neural variables is **interpretational** [I], but the mathematical reduction of the functional is [T].
+The mapping from 7 abstract dimensions (A,S,D,L,E,O,U) to Friston's neural variables is **interpretational** [I]; the mathematical reduction of the functional is [T], but it ends at the cross-entropy, not at Friston's free energy.
 :::
 
-Let us trace the logic of the derivation in more detail. At step 1, decoherence $\Gamma_2 > 0$ is not an assumption but a theorem: any CPTP dissipator compatible with the Fano plane has a strictly positive decoherence rate. At step 2, the exponential decay of coherences is a standard result of open quantum systems theory. Step 3 is an empirical fact for biological systems: characteristic observation times (seconds, minutes) greatly exceed the decoherence time. Steps 4–5 are pure algebra.
+Let us trace the logic of the derivation in more detail. At step 1, decoherence $\Gamma_2 > 0$ is not an assumption but a theorem: any CPTP dissipator compatible with the Fano plane has a strictly positive decoherence rate. At step 2, the exponential decay of coherences is a standard result of open quantum systems theory. Step 3 is an empirical fact for biological systems: characteristic observation times (seconds, minutes) greatly exceed the decoherence time. Steps 4–5 are pure algebra — and step 5, done correctly, gives the cross-entropy, not Friston's free energy.
 
-Thus Friston's FEP is **not a fundamental principle but a limiting regime** of a more general theory. It is valid for systems with low coherence (most biological systems in most situations), but misses the quantum corrections that become significant at high purity $P$.
+~~Thus Friston's FEP is **not a fundamental principle but a limiting regime** of a more general theory.~~ Retracted with Theorem 4.1 (2026-09-25): nothing on this page derives the FEP from UHM, so it cannot say where the FEP is valid.
 
 ### 4.2 Derivation Chain
 
-:::info Connection of variational principles [T]
+:::info Connection of variational principles [T] — the last arrow, to Friston's FEP, is retracted [✗]
 Hierarchy of variational principles:
 
 $$
@@ -380,7 +382,7 @@ $$
 | Classical (FEP) | $\min F[q; o]$ | Bayesian brain |
 :::
 
-This hierarchy is one of the central constructions of the theory. It shows that the four levels of description — categorical, field, thermodynamic, and classical — do not compete, but are **nested** within each other. Each successive level is the macroscopic limit of the previous one. Friston's "Bayesian brain" is the last, coarsest layer, in which all phase information has been erased.
+This hierarchy is one of the central constructions of the theory. It shows that the four levels of description — categorical, field, thermodynamic, and classical — do not compete, but are **nested** within each other. Each successive level is the macroscopic limit of the previous one. Friston's "Bayesian brain" was placed as the last, coarsest layer, in which all phase information has been erased; that step is the retracted one (Theorem 4.1).
 
 ### 4.3 FEP Decomposition of the Free Energy Functional
 
@@ -392,14 +394,14 @@ $$
 $$
 
 where:
-- $\mathcal{F}_{\text{diag}}$ — contribution of diagonal elements (populations) = standard FEP
+- $\mathcal{F}_{\text{diag}}$ — contribution of diagonal elements (populations): the cross-entropy $-\sum_i q_i \ln p_i$; its identification with standard FEP is retracted (2026-09-25)
 - $F_{\text{Gap}}$ — free energy of the Gap sector (quantum correction)
 - $\alpha$ — coupling constant
 :::
 
-**Corollary:** Friston's FEP describes the **diagonal sector** of the full free energy. The coherence contribution ($F_{\text{Gap}}$) is a quantum correction that becomes significant at high [purity](/docs/core/dynamics/viability) $P \gg P_{\text{crit}}$.
+~~**Corollary:** Friston's FEP describes the **diagonal sector** of the full free energy.~~ Retracted with the identification above. The coherence contribution ($F_{\text{Gap}}$) is a quantum correction that becomes significant at high [purity](/docs/core/dynamics/viability) $P \gg P_{\text{crit}}$.
 
-The expansion in powers of $|\gamma_{ij}|$ shows that FEP is zeroth order, and the Gap contribution is a first- and second-order correction. At $P \approx P_{\text{crit}} = 2/7$ the correction is of order 30% of the diagonal contribution — no longer negligible. At $P \to 3/7$ (upper boundary of the Goldilocks zone, T-124 [T]) the coherences are so large that the series expansion loses meaning and the full functional $\mathcal{F}$ is needed. It is precisely in this regime that Gap theory predicts phenomena inaccessible to FEP.
+The expansion in powers of $|\gamma_{ij}|$ shows that the diagonal (cross-entropy) term is zeroth order, and the Gap contribution is a first- and second-order correction. At $P \approx P_{\text{crit}} = 2/7$ the correction is of order 30% of the diagonal contribution — no longer negligible. At $P \to 3/7$ (upper boundary of the Goldilocks zone, T-124 [T]) the coherences are so large that the series expansion loses meaning and the full functional $\mathcal{F}$ is needed. It is precisely in this regime that Gap theory predicts phenomena inaccessible to FEP.
 
 ---
 
@@ -581,7 +583,7 @@ This is a remarkable result: regeneration derived from categorical arguments (ad
 | Principle of stationary action | [T] | Generalised (with Rayleigh function) | Theorem 1.1 |
 | Equations of motion for $\theta_{ij}$ | [T] | Full 4-term structure | Theorem 2.1 |
 | Onsager relations | [C] | Linear regime, detailed balance | Theorem 3.2 |
-| FEP as macroscopic limit | [T] | $\tau_{\mathrm{obs}} \gg 1/\Gamma_2$ (Dec [T]) | Theorem 4.1 |
+| FEP as macroscopic limit — retracted 2026-09-25 | [✗] | the diagonal limit is a cross-entropy, not Friston's free energy | Theorem 4.1 |
 | Minimum $\dot{\Sigma}$ | [C] | Linear regime | Theorem 5.1 |
 | FDT for Gap | [T] | Stationarity | Theorem 6.1 |
 | Form of regeneration ℛ | [T] | CPTP-uniqueness + Bures + Landauer | Section 7 |
@@ -598,7 +600,7 @@ Let us summarise. In this chapter we traced the path from Fermat to Gap dynamics
 
 3. **Irreversible thermodynamics** (section 3) — direction: Onsager relations establish a deep reciprocity of internal processes and guarantee that total opacity does not decrease spontaneously ($\dot{\Sigma} \geq 0$). Clarity of consciousness requires effort.
 
-4. **FEP as a special case** (section 4) — the boundary: Friston's Free Energy Principle, one of the most influential theories in neuroscience, turns out to be the macroscopic limit of the Gap variational principle. This does not diminish FEP, but defines its domain of applicability.
+4. **FEP — a retracted special case** (section 4): the claim that Friston's Free Energy Principle is the macroscopic limit of the Gap variational principle is retracted (2026-09-25); the diagonal limit of the functional is a cross-entropy.
 
 5. **Minimum entropy production** (section 5) — economy: near equilibrium consciousness "chooses" the least wasteful configuration of opacity. Far from equilibrium dissipative structures are possible — the mathematical correlate of creativity.
 
@@ -616,7 +618,7 @@ A summary of the key results of this chapter:
 - **Four forces of inner life** — potential (structural harmony), regenerative (goal-directed homing by $\varphi$), dissipative (friction of forgetting), and external (the voice of the world) — exhaustively describe the right-hand side of the equations of motion (Theorem 2.1 [T]).
 - **Onsager relations** establish a deep *reciprocity* among Gap channels: cross-influences are symmetric, $L_{(ij),(kl)} = L_{(kl),(ij)}$ (Theorem 3.2 [C]).
 - **Second law for consciousness**: entropy production in the Gap sector is non-negative, $\dot{\Sigma} \geq 0$. Clarity of consciousness requires effort (Corollary 3.3 [T]).
-- **Friston's FEP as a special case**: the Free Energy Principle is derived as the macroscopic limit ($\tau_{\text{obs}} \gg 1/\Gamma_2$) of the Gap variational principle (Theorem 4.1 [T]).
+- ~~**Friston's FEP as a special case**~~ — retracted 2026-09-25 (Theorem 4.1 [✗]): the diagonal limit of the functional is the cross-entropy, not Friston's free energy.
 - **Opacity economy principle**: near the stationary state the Gap profile minimises entropy production — the system maintains exactly the level of opacity minimally required (Theorem 5.1 [C]).
 - **Fluctuation–dissipation theorem**: spontaneous Gap oscillations and response to an external field are determined by the same mechanism — noise is a source of information (Theorem 6.1 [T]).
 - **Regeneration fully derived**: the form $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ follows from three independent arguments and coincides with the extremal of the Bures functional (section 7 [T]).
@@ -635,7 +637,7 @@ In the [next chapter](./effective-temperature) we will answer these questions: d
 
 - [Lagrangian of Gap theory](./lagrangian) — full 6-term Lagrangian, potential $V_{\text{Gap}}$, symmetries
 - [Effective temperature](./effective-temperature) — $T_{\text{eff}}$, phase transition, Fisher metric
-- [Derivation of FEP from UHM](/docs/proofs/dynamics/fep-derivation) — rigorous proof of equivalence of the two definitions of $\varphi$
+- [Derivation of FEP from UHM](/docs/proofs/dynamics/fep-derivation) — the retracted derivation, with what stands (retraction box)
 - [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — FDT, Landauer bound, $T_{\text{eff}}$, full Lagrangian
 - [Evolution](/docs/core/dynamics/evolution) — equation $d\Gamma(\tau)/d\tau$, variational derivation of regeneration
 - [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) — stationary regimes, bifurcations, catastrophes

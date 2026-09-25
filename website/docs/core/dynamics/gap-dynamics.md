@@ -405,6 +405,8 @@ The measure of violation is **affine** in $\alpha$ and strictly positive on $[0,
 
 **"The price of self-knowledge":** deeper self-knowledge $\to$ stronger $G_2$ violation $\to$ more parameters required to describe the system.
 
+**[✗] Both columns above rest on retracted results:** the parameter counts on Theorem 11.4 (retracted with D-0910 — 48 parameters at every $\alpha$), and the values $\alpha^* \approx 1 - 2/(7P)$ on the variational definition of $\alpha^*$, retracted 2026-09-25 ([Fano channel §4](/docs/proofs/gap/fano-channel#alpha-star)) — the Fano weight $\alpha$ is a free parameter.
+
 ---
 
 ## 7. Unified theorem on self-observation and Gap {#единая-теорема}
@@ -414,23 +416,27 @@ The canonical formulation is also in the [φ operator](/docs/core/operators/phi-
 :::
 
 :::tip Theorem 12.1 (Fano-coherent self-modelling) [T]
-The canonical coherence-preserving self-modelling for UHM is uniquely determined (up to the compression parameter $k$):
+The canonical coherence-preserving self-modelling for UHM is determined up to the compression parameter $k$ and the Fano weight $\alpha$ (the variational value of item (b) is retracted):
 
 **(a) Algebraic structure:** The Fano plane $\mathrm{PG}(2,2)$ determines the compound atoms of the classifier $\Omega$, generating the Fano–Lindblad operators $L_p^{\text{Fano}}$.
 
-**(b) Variational principle:** The balance of atomic and Fano observation $\alpha^*$ minimizes the functional:
+**(b) Variational principle — retracted 2026-09-25 [✗]:** the balance of atomic and Fano observation $\alpha^*$ was said to minimize the functional
 
 $$
 \mathcal{F} = S_{\text{spec}} + D_{KL}
 $$
 
+but along $\mathcal{P}_\alpha$ this functional is affine in $\alpha$ with non-negative slope and is minimal at $\alpha = 0$ ([Fano channel §4](/docs/proofs/gap/fano-channel#alpha-star)).
+
 **(c) Phase properties:** Canonical $\varphi_{\text{coh}}$ **preserves** the phases of coherences. The target Gap coincides with the current Gap (amplitude scaling without phase distortion).
 
-**(d) Symmetry:** $G_2$-covariance is partially broken by the atomic component. Degree of violation:
+**(d) Symmetry (corrected):** $G_2$ is broken at every $\alpha$, by the Fano and the atomic components alike (Theorem 11.3). Degree of violation:
 
 $$
-\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}
+\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3} \cdot \Delta_{\max}
 $$
+
+The earlier $\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}$ assumed a $G_2$-covariant Fano dissipator, retracted on 2026-09-10.
 
 **(e) Stationary Gap:**
 
@@ -636,9 +642,9 @@ graph TD
 | Spectral interpretation of Gap | **[T]** | [Gap operator](/docs/core/dynamics/gap-operator#спектр) |
 | Atomic dissipator is not $G_2$-covariant | **[T]** | [6.1](#g2-ковариантность) |
 | Fano dissipator: frame-group $\Gamma_{\!\text{oct}}$-covariant, not full $G_2$ ($\mathcal{D}_{\text{Fano}}=\tfrac23\mathcal{D}_{\text{atom}}$) | **[T]** | [6.2](#fano-frame-covariance) |
-| Degree of $G_2$-violation $\propto \alpha^*$ | **[T]** | [6.3](#g2-ковариантность) |
-| Modified gauge reduction | **[T]** | [6.4](#g2-ковариантность) |
-| Fano-coherent self-modelling (unified theorem) | **[T]** | [7](#единая-теорема) |
+| Degree of $G_2$-violation $\tfrac{2+\alpha}{3}\Delta_{\max}$, affine in $\alpha$ | **[T]** | [6.3](#g2-ковариантность) |
+| Modified gauge reduction — retracted (D-0910) | **[✗]** | [6.4](#g2-ковариантность) |
+| Fano-coherent self-modelling (unified theorem): (a), (c), (e), corrected (d); (b) retracted | **[T]** | [7](#единая-теорема) |
 | Model 1: Uniform system $\Gamma = I/7$ | **[T]** | [8.1](#модельные-системы) |
 | Model 2: Pure state (uniform superposition) | **[T]** | [8.2](#модельные-системы) |
 | Model 3: Pure state with Fano phases | **[T]** | [8.3](#модельные-системы) |

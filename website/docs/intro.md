@@ -55,7 +55,7 @@ The **∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$** is the sole primitive of UHM
 | 4 | **[Self-modeling](./core/foundations/axiom-omega#свойство-4)** | $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty$ (adjunction)* |
 | 5 | **[Stratification](./core/foundations/axiom-omega#свойство-5)** | $X = \bigsqcup_\alpha S_\alpha$, $S_0 = \{T\}$ |
 
-*The variational characterization $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ is a **theorem** about properties of the categorically defined φ.
+*The variational characterization $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ was stated as a **theorem** about the categorically defined φ; it is **retracted** (2026-09-25): the functional equals the cross-entropy $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$ and is minimised by a projection onto the top eigenvector of $\Gamma$, not by φ ([FEP derivation](./proofs/dynamics/fep-derivation), retraction box).
 
 :::note Connection to the Septicity Axiom
 The [Septicity Axiom](./core/foundations/axiom-septicity) (AP+PH+QG+V) is a set of **consequences** of Ω⁷ — operational requirements that any viable system must satisfy.

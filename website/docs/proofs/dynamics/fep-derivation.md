@@ -2,13 +2,23 @@
 slug: /proofs/dynamics/fep-derivation
 sidebar_position: 4
 title: Derivation of FEP from UHM
-description: Rigorous proof of the variational characterization of φ and derivation of the free energy principle as the classical limit
+description: The variational functional S + D_KL of UHM's self-model — why it neither characterizes φ nor reduces to Friston's free energy (retracted 2026-09-25), and what stands
 ---
 
 # Derivation of the Free Energy Principle from UHM
 
-:::info Document status
-This document contains proofs of the connection between the categorical definition of φ and the variational principle, as well as the derivation of Friston's FEP as the classical limit of UHM. Theorem 3.1 — **[T]** (primitivity of the linear part $\mathcal{L}_0$ [proven](/docs/core/operators/lindblad-operators#примитивность-ℒω)). Theorem 4.1 — **[T]** (classical limit). Theorem 4.2 — **[T]** (identification of generative model = definition of self-reference). Theorem 4.3 — **[T]** (complete reduction of $S_{spec} + D_{KL}$ to $F_{FEP}$). Theorem 5.1 — **[T]**.
+:::danger Retraction 2026-09-25: Theorems 3.1, 4.2 (iii)–(iv), 4.3 and Corollaries 7.1–7.2 [✗]
+The functional this page minimises is a **cross-entropy**, and it does not do what the page claimed. For states $\rho$, $\Gamma$ with $\mathrm{supp}\,\rho \subseteq \mathrm{supp}\,\Gamma$,
+
+$$
+S_{vN}(\rho) + D_{KL}(\rho \| \Gamma) = -\mathrm{Tr}\,\rho\log\rho + \mathrm{Tr}\,\rho\log\rho - \mathrm{Tr}\,\rho\log\Gamma = -\mathrm{Tr}(\rho\log\Gamma),
+$$
+
+which is **linear** in $\rho = \psi(\Gamma)$. Its minimum over all CPTP channels is $-\log\lambda_{\max}(\Gamma)$, reached by the channel that sends $\Gamma$ onto an eigenvector of its largest eigenvalue — not by the self-model $\varphi$. The classical case is the same: $H(q) + D_{KL}(q\|p) = -\sum_i q_i \ln p_i$ is minimised by the point mass on $\arg\max_i p_i$, not by $q = p$. Example: for $p = (0.7, 0.2, 0.1)$ the value is $0.802$ at $q = p$ and $0.357$ at $q = (1, 0, 0)$.
+
+Retracted for that reason: **Theorem 3.1** (registry row 39e) — $\varphi$ is not the minimiser; **Theorem 4.2 (iii)** — the minima of the UHM functional and of Friston's free energy differ; **Theorem 4.2 (iv)** — $\mathcal{F}[\psi;\Gamma] \geq S_{vN}(\Gamma)$ fails on the same example ($0.357 < 0.802$); **Theorem 4.3** — the optimum is not $q^* = p$; **Corollaries 7.1–7.2**, which rest on Theorem 3.1. Four steps of the derivation were wrong, and each is marked where it occurs: §4.1, "$F = H(q) + D_{KL}(q\|p_{\text{prior}}) + \text{const}$" (the difference from $F$ is $\langle \ln q - \ln p(o|s) \rangle_q$, which depends on $q$); §4.4, Step 2, which lost $H(q)$; §4.5, Step 3, "$H_\times(q,p) \geq H(p)$ with equality at $q = p$" (Gibbs' inequality bounds $H_\times(p,q)$, with the arguments the other way round); §4.5, Step 4, "$H(q)$ does not affect the optimal $q$". The proof of Theorem 3.1 also used "$dS_{vN}/dt \geq 0$ for Lindblad evolution", which holds only for unital generators; for every Lindblad semigroup with a stationary state what holds is that the relative entropy to that state does not increase (Spohn 1978), and UHM's own dynamics lowers the entropy on its way from $I/7$ to the attractor (T-96).
+
+**What stands:** the categorical definition of $\varphi$ (§2); Theorem 4.1 as an identity — on diagonal states the functional equals $H(q) + D_{KL}(q\|p)$, the cross-entropy, which is **not** Friston's free energy; Theorem 5.1. **Open — research programme [Pr]:** whether $\varphi$ minimises any natural functional, and whether Friston's free energy arises as a limit of UHM.
 :::
 
 ## 1. Problem Statement
@@ -25,7 +35,7 @@ $$
 
 φ is defined as the **left adjoint** to the canonical inclusion of subobjects.
 
-**Variational characterization:**
+**Variational characterization** (retracted 2026-09-25 — the right-hand side is minimised by a projection onto the top eigenvector of $\Gamma$, not by $\varphi$; box above):
 
 $$
 \varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_{\Gamma \sim \mu}\left[S_{spec}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)\right]
@@ -35,10 +45,10 @@ $$
 
 | Question | Status |
 |--------|--------|
-| Proof of equivalence of the two definitions | **Theorem 3.1 [T]** |
-| Classical limit of the variational principle | **Theorem 4.1 [T]** |
-| Connection to Friston's FEP | **Theorem 4.2 [T]** (closed: generative model = definition of self-reference) |
-| Complete reduction of $S_{spec} + D_{KL}$ to $F_{FEP}$ | **Theorem 4.3 [T]** |
+| Proof of equivalence of the two definitions | **Theorem 3.1** — retracted [✗] |
+| Classical limit of the variational principle | **Theorem 4.1 [T]** — an identity: the limit is the cross-entropy, not Friston's free energy |
+| Connection to Friston's FEP | **Theorem 4.2** — (iii)–(iv) retracted [✗]; (i)–(ii) are identifications, not theorems |
+| Complete reduction of $S_{spec} + D_{KL}$ to $F_{FEP}$ | **Theorem 4.3** — retracted [✗] |
 | Justification of $S_{spec}$ vs $S_{vN}$ | **Theorem 5.1 [T]** |
 
 ---
@@ -126,7 +136,7 @@ where $\psi \in \mathcal{CPTP}$ is a CPTP channel (completely positive trace-pre
 
 ### 3.2 Central theorem {#32-центральная-теорема}
 
-:::tip Theorem 3.1 (Variational characterization of φ) [T]
+:::tip Theorem 3.1 (Variational characterization of φ) — retracted 2026-09-25 [✗]
 Let $\varphi$ be defined categorically as the left adjoint to the inclusion $i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathcal{E}$.
 
 Then:
@@ -136,9 +146,13 @@ $$
 $$
 
 where $\mu$ is the invariant measure on the state space (uniqueness of $\mu$ is guaranteed by [primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) **[T]**).
+
+**Retracted [✗]:** the functional is the cross-entropy $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$, minimised by a projection onto the top eigenvector of $\Gamma$, not by $\varphi$ (box at the top).
 :::
 
 ### 3.3 Proof
+
+**Retracted [✗] — kept for the record.** Step 3 holds only for unital generators; Step 4 (stationarity equals minimal entropy production) is Prigogine's near-equilibrium principle, not a theorem about $\mathcal{L}_\Omega$; Step 5 introduces an "entropy production" of a channel without derivation; and the conclusion is false (box at the top).
 
 **Step 1: Connection of φ with the logical Liouvillian.**
 
@@ -198,6 +212,8 @@ With the choice $\Gamma_{ref} = \Gamma$ (the initial state as reference):
 
 :::info Choice of Γ_ref = Γ
 The identification Γ_ref = Γ is a **motivated definition** (self-referential minimization), not a derivation from L_Ω. Motivation: autopoiesis (A1) requires that the system minimize the difference between itself and its model, which corresponds to Γ_ref = Γ. Alternative choices (Γ_ref = I/7 or Γ_ref = ρ*) give different functionals. The choice Γ_ref = Γ is the **unique** one for which the minimum of F coincides with the fixed point of φ (theorem).
+
+**[✗]** With Γ_ref = Γ the minimum sits at a projection onto the top eigenvector of Γ, which is not the fixed point of φ; the "theorem" in the previous sentence is retracted.
 :::
 
 $$
@@ -229,11 +245,13 @@ $$
 - Steps 3–5 use standard open quantum systems theory
 - The identification in Step 6 establishes the desired equivalence
 
+**[✗]** Steps 3–6 do not establish it (box at the top).
+
 ---
 
 ## 4. Classical Limit: Complete Derivation of FEP {#4-классический-предел-вывод-fep}
 
-In this section we rigorously show that Friston's FEP is a **special case** of the UHM variational principle, arising in the transition to the classical limit. The derivation consists of three stages: (i) definition of the classical limit as $R \to 0$ (decoherence), (ii) reduction of the quantum functional to the classical one, (iii) identification of UHM elements with Friston's constructions. The section concludes with an analysis of **what is lost** in the classical limit.
+This section **attempted** to show that Friston's FEP is a special case of the UHM variational principle, arising in the transition to the classical limit; the attempt fails (box at the top), and each error is marked where it occurs. The derivation consists of three stages: (i) definition of the classical limit as $R \to 0$ (decoherence), (ii) reduction of the quantum functional to the classical one, (iii) identification of UHM elements with Friston's constructions. The section concludes with an analysis of **what is lost** in the classical limit.
 
 ### 4.1 Friston's FEP (original formulation)
 
@@ -262,8 +280,10 @@ Proof: $F = D_{KL}(q(s) \| p(s|o)) - \ln p(o)$, and $D_{KL} \geq 0$.
 **Equivalent form via KL-divergence:**
 
 $$
-F = D_{KL}(q(s) \| p(s|o)) - \ln p(o) = H(q) + D_{KL}(q \| p_{\text{prior}}) + \text{const}
+F = D_{KL}(q(s) \| p(s|o)) - \ln p(o) = D_{KL}(q(s) \| p(s)) - \langle \ln p(o|s) \rangle_q
 $$
+
+**[✗] Retracted form (2026-09-25):** the page previously wrote the right-hand side as $H(q) + D_{KL}(q \| p_{\text{prior}}) + \text{const}$. That is the cross-entropy $-\langle \ln p(s) \rangle_q$; it differs from $F$ by $\langle \ln q(s) - \ln p(o|s) \rangle_q$, which depends on $q$.
 
 ### 4.2 Classical limit of UHM: formalization via $R \to 0$ {#42-классический-предел}
 
@@ -306,7 +326,7 @@ The channel degenerates into a **stochastic matrix** $T$ — a classical Markov 
 ### 4.3 Reduction of the quantum functional {#43-редукция}
 
 :::warning Theorem 4.1 (Classical limit of the variational principle) [T] {#теорема-41-классический-предел}
-In the classical limit ($\Gamma_{ij} \to 0$ for $i \neq j$), the UHM variational functional (Theorem 3.1) reduces to the classical variational free energy:
+In the classical limit ($\Gamma_{ij} \to 0$ for $i \neq j$), the UHM variational functional (Definition 3.3) reduces to the classical functional below — the cross-entropy $-\sum_i q_i \ln p_i$, which is **not** Friston's variational free energy (§4.1):
 
 $$
 \mathcal{F}[\psi; \Gamma] \xrightarrow[\Gamma_{ij}\to 0]{R \to R_{\min}} F_{cl}[q; p] = H(q) + D_{KL}(q \| p)
@@ -339,7 +359,7 @@ $$
 
 ### 4.4 Derivation of Friston's classical variational free energy {#44-вывод-fep}
 
-Now we perform the **complete derivation** of $F = \mathbb{E}_q[\ln q(s) - \ln p(s,o)]$ from the variational characterization of $\varphi$.
+This subsection attempted the **complete derivation** of $F = \mathbb{E}_q[\ln q(s) - \ln p(s,o)]$ from the variational characterization of $\varphi$; it fails at Step 2 (marked).
 
 **Step 1 (Identification of variables).** Within UHM, introduce the identification:
 
@@ -363,13 +383,15 @@ $$
 \mathcal{F}[q; p] = \sum_i q_i (\log q_i - \log p_i) = \mathbb{E}_q[\log q - \log p]
 $$
 
+**[✗] Error (retracted 2026-09-25):** the $q_i \log q_i$ terms cancel, so the sum is $-\sum_i q_i \log p_i$, the cross-entropy — not $\sum_i q_i(\log q_i - \log p_i)$. Everything below that rests on this line falls with it.
+
 In the continuous limit ($N \to \infty$, sums → integrals):
 
 $$
 \mathcal{F}[q; p] = \int ds \, q(s) \ln \frac{q(s)}{p(s,o)} = F_{FEP}
 $$
 
-This is **exactly** Friston's variational free energy.
+This was claimed to be **exactly** Friston's variational free energy; it is not (see the error above).
 
 **Step 3 (Equivalent forms).** Expanding $p(s,o) = p(o|s) p(s)$:
 
@@ -379,7 +401,7 @@ $$
 
 The first term is complexity (deviation from prior), the second is accuracy (expected likelihood). Minimization of $F$ = **balance of accuracy and complexity** — this is the classical analog of balancing spectral entropy and KL-divergence in Theorem 3.1.
 
-:::tip Theorem 4.2 (UHM → Friston's FEP) [T] {#теорема-42-угм-fep}
+:::tip Theorem 4.2 (UHM → Friston's FEP) — (iii)–(iv) retracted 2026-09-25 [✗] {#теорема-42-угм-fep}
 Let $\Gamma$ be the state of a holon in the classical limit ($\Gamma_{ij} = 0$ for $i \neq j$). Then:
 
 **(i)** The self-modeling operator $\varphi$ in the classical limit is identified with the **recognition density**: $\varphi(\Gamma) \leftrightarrow q^*(s|o)$.
@@ -398,7 +420,9 @@ $$
 \mathcal{F}[\psi; \Gamma] \geq S_{vN}(\Gamma) \quad \Longleftrightarrow \quad F \geq -\ln p(o)
 $$
 
-**Closedness of identification [T].** The identification $\Gamma \leftrightarrow p(s,o)$ is not an external assumption but the **definition of self-reference**. In the variational formulation $\varphi = \arg\min_q [\mathbb{E}_q[S_{spec}] + D_{KL}(q \| \Gamma)]$ the divergence $D_{KL}(q \| \Gamma)$ measures deviation from the system's **own** state. A self-referential system by definition uses itself as a generative model — this is not an assumption but a tautology of self-modeling.
+**Closedness of identification [D].** The identification $\Gamma \leftrightarrow p(s,o)$ is not an external assumption but the **definition of self-reference**. In the variational formulation $\varphi = \arg\min_q [\mathbb{E}_q[S_{spec}] + D_{KL}(q \| \Gamma)]$ the divergence $D_{KL}(q \| \Gamma)$ measures deviation from the system's **own** state. A self-referential system by definition uses itself as a generative model — this is not an assumption but a tautology of self-modeling.
+
+**Retracted [✗]:** (iii) the left side equals $-\ln\max_i p_i$, the right side is $0$ at $q = p$; (iv) fails for $p = (0.7, 0.2, 0.1)$, where $\mathcal{F} = 0.357 < S_{vN}(\Gamma) = 0.802$.
 :::
 
 **Proof of (iv).** From the definition of KL-divergence:
@@ -421,11 +445,13 @@ $$
 
 In the classical limit $S_{vN}(\Gamma) = H(p) = -\sum_i p_i \log p_i$, and the inequality takes the form $F \geq -\ln p(o)$, if $-\ln p(o)$ is identified with the entropy of the marginal probability of observations. $\blacksquare$
 
+**[✗]** The chain above proves only $\mathcal{F} \geq 0$; the claimed $\mathcal{F} \geq S_{vN}(\Gamma)$ fails on the example in the box at the top.
+
 ### 4.5 Spectral entropy + KL → variational free energy {#45-редукция-доказательство}
 
-We show **explicitly** how minimization of the quantum functional $S_{spec} + D_{KL}$ in the classical limit becomes minimization of Friston's variational free energy.
+This subsection claimed to show **explicitly** how minimization of the quantum functional $S_{spec} + D_{KL}$ in the classical limit becomes minimization of Friston's variational free energy; Steps 3 and 4 are wrong (marked).
 
-:::warning Theorem 4.3 (Complete reduction) [T] {#теорема-43-полная-редукция}
+:::warning Theorem 4.3 (Complete reduction) — retracted 2026-09-25 [✗] {#теорема-43-полная-редукция}
 Let $\Gamma \in \mathcal{D}(\mathbb{C}^N)$ be a diagonal density matrix, $\psi$ a CPTP channel preserving diagonality. Then the problem
 
 $$
@@ -441,6 +467,8 @@ $$
 where $\Delta^{N-1}$ is the $(N-1)$-simplex of probability distributions.
 
 Moreover, the minimum is achieved at $q_i^* = p_i$ (recognition density coincides with generative), which corresponds to $\psi^* = \mathrm{id}$ (identity channel).
+
+**Retracted [✗]:** the first problem is solved by the point mass on $\arg\max_i p_i$ (value $-\ln\max_i p_i$), the second by $q = p$ (value $0$); they are not the same problem.
 :::
 
 **Proof.**
@@ -456,6 +484,8 @@ $$
 This is the **cross-entropy** $H_\times(q, p) = -\sum_i q_i \ln p_i$.
 
 **Step 3 (Minimization).** The cross-entropy $H_\times(q, p) = -\sum_i q_i \ln p_i$ is minimized at $q = p$ (by the Lagrange multiplier method with the constraint $\sum_i q_i = 1$, or from the property $H_\times(q, p) = H(q) + D_{KL}(q \| p) \geq H(p)$, with equality at $q = p$).
+
+**[✗] Error (retracted 2026-09-25):** for fixed $p$, $H_\times(q,p) = -\sum_i q_i \ln p_i$ is linear in $q$ and is minimised by the point mass on $\arg\max_i p_i$; Gibbs' inequality gives $H_\times(p, q) \geq H(p)$, with the arguments the other way round. Example: $p = (0.7, 0.2, 0.1)$ gives $0.802$ at $q = p$ and $0.357$ at $q = (1, 0, 0)$.
 
 **Step 4 (Identification with FEP).** Friston's free energy:
 
@@ -483,6 +513,8 @@ $$
 
 Thus, the optimal recognition densities coincide. $\blacksquare$
 
+**[✗] Error (retracted 2026-09-25):** $H(q)$ depends on $q$, so adding it moves the optimum: $\arg\min_q D_{KL}(q\|p) = p$, but $\arg\min_q [H(q) + D_{KL}(q\|p)]$ is the point mass on $\arg\max_i p_i$.
+
 ### 4.6 Correspondence of constructions {#46-соответствие}
 
 Full correspondence table between UHM and FEP:
@@ -498,6 +530,8 @@ Full correspondence table between UHM and FEP:
 | CPTP channel $\psi$ | Stochastic matrix $T$ | Complete positivity → positivity |
 | $\rho^* = \varphi(\Gamma)$ — fixed point | Posterior distribution $p(s\|o)$ | Self-modeling → Bayesian inference |
 | Markov blanket (algebraic) | Markov blanket (graphical) | $\mathcal{B}(\Gamma)$ → conditional independence graph |
+
+**[✗] (2026-09-25):** the rows identifying $\varphi(\Gamma)$ with the optimal recognition density, $\mathcal{F}$ with Friston's free energy and $\rho^*$ with the posterior rest on Theorems 4.2 (iii) and 4.3 and are retracted with them; the other rows are notational correspondences.
 
 ### 4.7 What is lost in the classical limit {#47-потери}
 
@@ -560,7 +594,7 @@ $$
 
 Despite the losses, the **core** of the variational principle survives the classical limit:
 
-:::tip Corollary 4.1 (Invariance of the minimization principle) {#следствие-41}
+:::tip Corollary 4.1 (Invariance of the minimization principle) — retracted 2026-09-25 [✗] {#следствие-41}
 The principle "the system minimizes a functional balancing accuracy and complexity" is preserved across all regimes:
 
 | Regime | Functional | Accuracy | Complexity |
@@ -569,9 +603,11 @@ The principle "the system minimizes a functional balancing accuracy and complexi
 | Classical (FEP) | $\langle E \rangle_q - H(q)$ | $\langle \ln p(o\|s) \rangle_q$ | $D_{KL}(q \| p_{\text{prior}})$ |
 
 Prediction error minimization (PEM) is the **classical limit** of categorical self-modeling $\varphi \dashv i$.
+
+**Retracted [✗]:** this rests on Theorems 4.2 (iii) and 4.3; the quantum row's functional is the cross-entropy, whose minimiser is a pure state.
 :::
 
-This explains why Friston's FEP **works** for classical systems (the brain in the neurocomputational description, biological organisms): it captures the invariant core, though losing quantum structure.
+This was offered as the reason Friston's FEP **works** for classical systems (the brain in the neurocomputational description, biological organisms); with the reduction retracted, it explains nothing.
 
 ### 4.9 Structural diagram {#49-диаграмма}
 
@@ -585,7 +621,7 @@ This explains why Friston's FEP **works** for classical systems (the brain in th
 │       ↓                                                         │
 │  Level 2: φ = lim e^{tℒ_Ω}[Γ] (dynamical)                       │
 │       ↓                                                         │
-│  Level 3: φ = argmin [S_spec + D_KL] (variational, T 3.1)      │
+│  Level 3: φ = argmin [S_spec + D_KL] (T 3.1, retracted ✗)      │
 │       ↓                                                         │
 │  ┌─────────────────────────────────────────────────────────┐    │
 │  │    Classical limit: Γ_ij → 0, R → 1/7                  │    │
@@ -593,12 +629,14 @@ This explains why Friston's FEP **works** for classical systems (the brain in th
 │  │                      ↓                                  │    │
 │  │  ┌───────────────────────────────────────────────────┐  │    │
 │  │  │   Friston's FEP: min F = min [⟨E⟩ - H]            │  │    │
-│  │  │   (classical probabilities, SPECIAL CASE)         │  │    │
+│  │  │   (SPECIAL CASE: claim retracted ✗)               │  │    │
 │  │  │   (preserved: prediction error minimization)      │  │    │
 │  │  └───────────────────────────────────────────────────┘  │    │
 │  └─────────────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+The arrows from Level 3 down depict the retracted derivation (box at the top); Levels 0–2 are unaffected.
 
 ---
 
@@ -665,7 +703,7 @@ For practical purposes in UHM:
 
 | Aspect | FEP (Friston) | UHM |
 |--------|---------------|-----|
-| **Status** | Postulate (phenomenological) | Theorem (derived from Ω) |
+| **Status** | Postulate (phenomenological) | No variational principle for φ: Theorem 3.1 retracted (§3) |
 | **Domain** | Classical distributions in the original formulation; generic quantum systems in Fields, Friston, Glazebrook and Levin (2022) | Density matrices on $\mathbb{C}^7$ |
 | **Operator** | Implicit | Explicit CPTP channel |
 | **Justification** | Thermodynamics + Bayesian inference | Categorical adjunction |
@@ -692,15 +730,15 @@ Fluctuation theorems (Jarzynski, Crooks) connect free energy with non-equilibriu
 
 Systems that do not minimize surprise "dissipate" — lose their identity. Survival ≡ minimization of F.
 
-### 6.3 Why is UHM deeper?
+### 6.3 What UHM adds, and what it does not
 
 **1. Categorical justification:**
 
-In UHM, φ is **defined** by the structure of the ∞-topos; the variational principle is a **consequence**. In FEP, the variational principle is an axiom.
+In UHM, φ is **defined** by the structure of the ∞-topos. That a variational principle follows from it as a **consequence** was the claim of Theorem 3.1, retracted 2026-09-25; the page therefore has no variational principle for φ to set against the FEP's.
 
 **2. Quantum formulation — not a first:**
 
-UHM works with density matrices on $\mathbb{C}^7$. That the FEP is confined to classical distributions is **not** true: Fields, Friston, Glazebrook and Levin formulated it for generic quantum systems in the language of quantum information theory, with quantum systems acting as observers and agents (*Prog. Biophys. Mol. Biol.* 173, 36–59, 2022; arXiv:2112.15242). UHM's own contribution here is narrower: a variational functional for its self-model $\varphi$ on $\mathcal{D}(\mathbb{C}^7)$ and a comparison of its decohered limit with the classical variational free energy (§3–§4). The page does not compare this functional with the Fields et al. formulation, and neither is shown to contain the other.
+UHM works with density matrices on $\mathbb{C}^7$. That the FEP is confined to classical distributions is **not** true: Fields, Friston, Glazebrook and Levin formulated it for generic quantum systems in the language of quantum information theory, with quantum systems acting as observers and agents (*Prog. Biophys. Mol. Biol.* 173, 36–59, 2022; arXiv:2112.15242). What this page set out to add was narrower still — a variational characterisation of its self-model $\varphi$ on $\mathcal{D}(\mathbb{C}^7)$ and a reduction of its decohered limit to the classical variational free energy (§3–§4) — and both are retracted (box at the top). The page does not compare this functional with the Fields et al. formulation, and neither is shown to contain the other.
 
 **3. Resolution of circularity:**
 
@@ -716,37 +754,37 @@ In UHM, time is derived from the temporal modality ▷ on Ω. In FEP, time is an
 
 ### 7.1 Confirmation of consistency
 
-The proof of Theorem 3.1 confirms:
+The proof of Theorem 3.1 was taken to confirm the list below; items 1–2 are retracted with it (box at the top):
 
-1. The variational characterization is a **consequence** of the categorical definition
-2. The classical limit reproduces Friston's FEP
+1. ~~The variational characterization is a consequence of the categorical definition~~ [✗]
+2. ~~The classical limit reproduces Friston's FEP~~ [✗]
 3. UHM's functional is quantum, but a quantum FEP predates it (Fields et al. 2022, §6.3); no relation between the two is proved here
 
 ### 7.2 Clarification of statement status
 
 | Statement | Old status | New status |
 |-------------|---------------|--------------|
-| φ = argmin [S_spec + D_KL] | "Property 4" | **Theorem 3.1** [T] (proven) |
-| Classical limit of the functional | Implicit | **Theorem 4.1** [T] (full stat-mech reduction) |
-| FEP ⊂ UHM | Claimed | **Theorem 4.2** [T] (identification of generative model = definition of self-reference) |
-| $S_{spec} + D_{KL} \to F_{FEP}$ | Not proven | **Theorem 4.3** [T] (complete reduction) |
+| φ = argmin [S_spec + D_KL] | "Property 4" | **Theorem 3.1** — retracted 2026-09-25 [✗]: the argmin is a projection onto the top eigenvector of Γ |
+| Classical limit of the functional | Implicit | **Theorem 4.1** [T] (an identity: the limit is the cross-entropy) |
+| FEP ⊂ UHM | Claimed | Not shown: **Theorem 4.2** (iii)–(iv) retracted [✗] |
+| $S_{spec} + D_{KL} \to F_{FEP}$ | Not proven | Not proven: **Theorem 4.3** retracted [✗] |
 | S_spec = S_vN for ρ | Not clarified | **Theorem 5.1** [T] (proven) |
 
 ### 7.3 New corollaries
 
-**Corollary 7.1 (UHM's quantum variational principle).**
+**Corollary 7.1 (UHM's quantum variational principle) — retracted 2026-09-25 [✗].**
 
-For quantum systems, the generalized principle holds:
+The page stated that for quantum systems the generalized principle holds:
 
 $$
 \Gamma_* = \arg\min_{\Gamma} \left[S_{vN}(\Gamma) + D_{KL}(\Gamma \| \Gamma_0)\right]
 $$
 
-where $\Gamma_0$ is the initial/reference state.
+where $\Gamma_0$ is the initial/reference state. The functional equals $-\mathrm{Tr}(\Gamma \log \Gamma_0)$, so its minimiser is a projection onto the top eigenvector of $\Gamma_0$ — a pure state, not a principle for open systems.
 
-**Corollary 7.2 (Thermodynamic interpretation).**
+**Corollary 7.2 (Thermodynamic interpretation) — retracted 2026-09-25 [✗].**
 
-Minimization of $\mathcal{F}$ is equivalent to minimization of **entropy production** in an open quantum system.
+The page stated that minimization of $\mathcal{F}$ is equivalent to minimization of **entropy production** in an open quantum system; this rested on Steps 4–5 of the proof of Theorem 3.1, which are not established.
 
 ---
 
@@ -759,6 +797,8 @@ For $\mathcal{L}[\rho] = \sum_k (L_k \rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger
 $$
 \frac{dS_{vN}(\rho)}{dt} = -\mathrm{Tr}(\mathcal{L}[\rho] \log \rho) \geq 0
 $$
+
+**Corrected 2026-09-25:** the inequality holds for **unital** generators ($\mathcal{L}[I] = 0$, for instance all $L_k$ normal). For a general Lindblad generator with a stationary state $\sigma$, what holds is that the relative entropy does not increase, $\frac{d}{dt} D_{KL}(\rho(t) \| \sigma) \leq 0$ (Spohn 1978; monotonicity of relative entropy under CPTP maps); $S_{vN}$ itself can fall — UHM's dynamics lowers it on the way from $I/7$ to the attractor (T-96).
 
 ### Lemma A.2 (Uniqueness of stationary state)
 
@@ -788,17 +828,17 @@ $$
 
 :::tip Key results
 **Theorems:**
-1. **Theorem 3.1 [T]:** Categorically defined φ minimizes the functional $S_{spec} + D_{KL}$ ([primitivity of the linear part $\mathcal{L}_0$ proven](/docs/core/operators/lindblad-operators#примитивность-ℒω))
-2. **Theorem 4.1 [T]:** In the classical limit ($\Gamma_{ij} \to 0$, $R \to R_{\min}$) the UHM functional reduces to $H(q) + D_{KL}(q \| p)$
-3. **Theorem 4.2 [T]:** The classical limit of UHM reproduces Friston's FEP (identification of generative model = definition of self-reference)
-4. **Theorem 4.3 [T]:** Minimization of $S_{spec} + D_{KL}$ is identical to minimization of $F_{FEP}$ in the classical limit (optimal recognition densities coincide)
+1. **Theorem 3.1 — retracted [✗]:** the functional $S_{spec} + D_{KL}$ is minimised by a projection onto the top eigenvector of $\Gamma$, not by the categorically defined φ
+2. **Theorem 4.1 [T]:** In the classical limit ($\Gamma_{ij} \to 0$, $R \to R_{\min}$) the UHM functional reduces to $H(q) + D_{KL}(q \| p)$, the cross-entropy $-\sum_i q_i \ln p_i$ (not Friston's free energy)
+3. **Theorem 4.2 — (iii)–(iv) retracted [✗]:** the classical limit of the UHM functional does **not** reproduce Friston's FEP
+4. **Theorem 4.3 — retracted [✗]:** the two minimisation problems have different solutions (point mass on $\arg\max_i p_i$ against $q = p$)
 5. **Theorem 5.1 [T]:** $S_{spec} = S_{vN}$ for density matrices
 
-**Main conclusion:** Friston's FEP is not an independent principle but a **special case** (classical limit) of the more fundamental structure of UHM.
+**Main conclusion (corrected 2026-09-25):** the page does **not** derive Friston's FEP from UHM. What it establishes is Theorem 4.1 (an identity) and Theorem 5.1; whether φ minimises any natural functional, and whether the FEP arises as a limit of UHM, are open — research programme [Pr].
 :::
 
-:::tip Compatibility with octonionic norm [T]
-The variational principle $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ is compatible with the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация): the norm of $\mathbb{O}$ ($|xy| = |x||y|$) ensures consistency of the metric used in $D_{KL}$ with the algebraic structure of the state space. Bridge [T] (T15). See [structural derivation](../minimality/theorem-octonionic-derivation#мост).
+:::note Compatibility with octonionic norm — withdrawn 2026-09-25 [✗]
+**Withdrawn:** it concerned the variational principle of Theorem 3.1, retracted above. The box read: the variational principle $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ is compatible with the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация): the norm of $\mathbb{O}$ ($|xy| = |x||y|$) ensures consistency of the metric used in $D_{KL}$ with the algebraic structure of the state space. Bridge [T] (T15). See [structural derivation](../minimality/theorem-octonionic-derivation#мост).
 :::
 
 ---

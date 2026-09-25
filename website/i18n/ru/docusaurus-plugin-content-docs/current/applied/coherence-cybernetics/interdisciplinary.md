@@ -237,7 +237,7 @@ Default Mode Network (DMN) — сеть мозговых регионов, ак�
 | 8 | [Октонионный вывод](/docs/proofs/minimality/theorem-octonionic-derivation) | Связь $\mathrm{Im}(\mathbb{O})$ и $\mathbb{C}^7$: почему октонионы, а не кватернионы | 60 мин |
 | 9 | [Порог чистоты $P_{\text{crit}}$](/docs/proofs/dynamics/theorem-purity-critical) | Доказательство $P_{\text{crit}} = 2/7$ через норму Фробениуса | 45 мин |
 | 10 | [Эмерджентное время](/docs/proofs/dynamics/emergent-time) | Вывод временного параметра из спектрального зазора $\mathcal{L}_0$ | 45 мин |
-| 11 | [FEP как следствие](/docs/proofs/dynamics/fep-derivation) **(опц.)** | Принцип свободной энергии Фристона выводится из динамики $\Gamma$ | 45 мин |
+| 11 | [FEP и УГМ](/docs/proofs/dynamics/fep-derivation) **(опц.)** | Почему заявленный вывод принципа свободной энергии Фристона из динамики $\Gamma$ не проходит (отозван 2026-09-25) и что остаётся в силе | 45 мин |
 | 12 | [Холон-структура](/docs/core/structure/holon) **(опц.)** | Иерархическая композиция: $\Gamma_{\text{comp}}$ из подсистем, теорема T-64 | 60 мин |
 
 :::tip Что вы можете привнести

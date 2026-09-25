@@ -523,7 +523,7 @@ Computation of $\rho_*$ **is not an open problem**: primitivity of the linear pa
 
 1. **Spectral projection**: $\rho_* = \sum_{k: \mathrm{Re}(\lambda_k)=0} \langle L_k | \Gamma \rangle R_k$ ([formalization of φ](/docs/proofs/categorical/formalization-phi#27-спектральная-формула-для-φ-явное-вычисление))
 2. **Iteration**: $\rho_*^{(n)} := e^{n\Delta\tau\mathcal{L}_\Omega}[\Gamma_0]$ — convergence is exponential
-3. **Variational**: $\rho_* = \arg\min_{\psi \in \mathcal{CPTP}} [S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$ ([FEP](/docs/proofs/dynamics/fep-derivation))
+3. ~~**Variational**: $\rho_* = \arg\min_{\psi \in \mathcal{CPTP}} [S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$~~ — retracted 2026-09-25 [✗]: this argmin is a projection onto the top eigenvector of $\Gamma$, not $\rho_*$ ([FEP](/docs/proofs/dynamics/fep-derivation), retraction box)
 
 **See:** [Formalization of φ](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм), [Derivation of the form of ℛ](/docs/core/dynamics/evolution#вывод-формы-регенерации)
 :::
