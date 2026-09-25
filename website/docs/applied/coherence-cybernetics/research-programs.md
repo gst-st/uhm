@@ -544,15 +544,15 @@ Modern consciousness neuroscience is in a state of "theoretical pluralism": IIT,
 
 | CC construct | Neural correlate | Measurement method |
 |--------------|-----------------|-------------------|
-| $P(\Gamma)$ — purity | Perturbational Complexity Index (PCI) | TMS-EEG |
+| $P(\Gamma)$ — purity | Reconstruction $\widehat\Gamma$ by $\pi_{\mathrm{bio}}$; the Perturbational Complexity Index (PCI) is the independent verdict it is compared with, not a proxy for $P$ | EEG/HRV; TMS-EEG for PCI |
 | $\mathrm{Coh}_E$ — E-coherence | Gamma synchronization (30–100 Hz) | EEG/MEG |
 | $R$ — reflection measure | Default Mode Network activation | fMRI |
 | $\sigma_k$ — stresses | Autonomic stress markers | HRV, GSR, cortisol |
 | SAD — self-observation depth | Recursive Theory of Mind | behavioral tests |
 
-The connection between PCI (Casali et al., 2013) and purity $P$ is especially interesting. PCI measures the complexity of the brain's response to a magnetic pulse — and reliably distinguishes conscious and unconscious states. CC predicts that PCI is proportional to $P - 2/7$: consciousness "switches on" when PCI exceeds a certain threshold, corresponding to $P > P_{\text{crit}}$.
+The relation between PCI (Casali et al., 2013; Casarotto et al., 2016) and CC is especially interesting. PCI measures the complexity of the brain's response to a magnetic pulse, and on its benchmark the cut-off $\mathrm{PCI}^* = 0.31$ separates reported from unreported states. CC does not predict a numerical relation between PCI and $P$: the two lie on unrelated scales, and the nearness of 0.31 to $2/7 \approx 0.286$ carries no weight. The testable bridge is a **concordance of verdicts** — $\mathrm{Cons}(\widehat\Gamma)$, with $\widehat\Gamma$ reconstructed by $\pi_{\mathrm{bio}}$ frozen on wakefulness, against $\mathrm{PCI}_{\max} > 0.31$ on the same sessions, Cohen's $\kappa \geq 0.8$ ([P8.4](/docs/applied/research/measurement-protocol#тестируемые-предсказания-p8)). *Corrected 2026-09-25:* the paragraph said that CC predicts PCI proportional to $P - 2/7$; nothing derives that.
 
-**Key experiment:** Simultaneous measurement of PCI, gamma synchronization, and DMN activity in patients with disorders of consciousness (vegetative state, minimally conscious state, locked-in) followed by fitting the 7-dimensional $\Gamma$ model.
+**Key experiment:** Simultaneous measurement of PCI, gamma synchronization, and DMN activity in patients with disorders of consciousness (vegetative state, minimally conscious state, locked-in) followed by reconstruction of the 7-dimensional $\widehat\Gamma$ with parameters frozen beforehand and a comparison of verdicts (fitting $\Gamma$ to the patients' diagnostic labels would make agreement automatic — [the substitution argument](/docs/applied/research/measurement-protocol#substitution-position)).
 
 ### Artificial Intelligence: From Loss Function to Coherence {#мост-ии}
 
@@ -672,7 +672,7 @@ Key milestones of the near future:
 
 1. **Theoretical breakthrough:** Deriving F1–F10 from $\Omega^7$ (Q1) — this is the "Holy Grail" of the program. Success would transform CC from a set of plausible hypotheses into a *deductive* theory.
 2. **Computational verification:** Simulations of coherent agents (SYNARC) are already underway. The first results — confirmation or refutation of the No-Zombie prediction — may appear in the coming years.
-3. **Experimental contact:** The bridge between $P$ and PCI (perturbational complexity index) is the most promising path to experimental verification.
+3. **Experimental contact:** The concordance of UHM's verdict with the PCI verdict (perturbational complexity index; P8.4) is the most promising path to experimental verification (the item read "the bridge between $P$ and PCI" until 2026-09-25).
 4. **Interdisciplinary synthesis:** CC can become the "lingua franca" for consciousness researchers — a common language in which IIT, GWT, FEP and other theories can *precisely* formulate their disagreements.
 
 We are at the beginning of the journey. But the invariant hierarchy described in this chapter shows that the path is *structured*. We have a map — what remains is to walk the route.

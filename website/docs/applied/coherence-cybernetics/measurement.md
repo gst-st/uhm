@@ -90,7 +90,7 @@ In neuroscience the direct analogue of purity is **coherence of neural activity*
 |-------|-------------|-----------------|
 | **EEG coherence** | Synchronisation of electrical activity between brain regions | High coherence → high P |
 | **fMRI functional connectivity** | Correlation of BOLD signals between regions | Strong connectivity → high $\|\gamma_{ij}\|$ → high P |
-| **PCI (Perturbational Complexity Index)** | Complexity of the response to TMS stimulation | PCI ∝ P (experimentally shown for wakefulness vs. coma) |
+| **PCI (Perturbational Complexity Index)** | Complexity of the response to TMS stimulation | No numerical relation to $P$: PCI is compared with UHM by a concordance of verdicts (P8.4), not converted into $P$ (the cell read "PCI ∝ P (experimentally shown for wakefulness vs. coma)" until 2026-09-25; no experiment showed it) |
 | **Lempel-Ziv entropy** | Compressibility of the neural signal | Low entropy → high P |
 
 ### 2.3 L1 Protocol for Neural Data
@@ -288,7 +288,7 @@ Rationale: at meta-d' = 1 (average healthy adult) we get $R \approx 0.33 \approx
 [Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) $\Phi$ shows how unified the system is — whether it breaks down into independent subsystems.
 
 **Proxies:**
-- **PCI (Perturbational Complexity Index):** the brain's response to TMS stimulation — integrated systems give a complex, widespread response. PCI > 0.31 — wakefulness; PCI < 0.31 — vegetative state (Casali et al., 2013).
+- **PCI (Perturbational Complexity Index):** the brain's response to TMS stimulation — integrated systems give a complex, widespread response. On its benchmark the cut-off $\mathrm{PCI}^* = 0.31$ separates states with a subjective report from states without one (Casarotto et al., 2016); in patients, 36 of 38 in a minimally conscious state and 9 of 43 in a vegetative state lie above it (index introduced by Casali et al., 2013).
 - **Mutual Information** between subsystems
 - **Spectral gap** of the functional connectivity graph
 
@@ -298,7 +298,7 @@ $$
 \Phi \approx \frac{\lambda_2 - \lambda_1}{\lambda_{\text{norm}}}
 $$
 
-where $\lambda_{\text{norm}}$ is a normalising coefficient chosen so that $\Phi = 1$ corresponds to the consciousness threshold (PCI = 0.31).
+where $\lambda_{\text{norm}}$ is a normalising coefficient fixed on wakefulness sessions only ([SUB-1](/docs/applied/research/measurement-protocol#substitution-position)). *Corrected 2026-09-25:* it read "chosen so that $\Phi = 1$ corresponds to the consciousness threshold (PCI = 0.31)" — that choice puts the tested threshold into the proxy, so agreement with PCI would follow by construction.
 
 ### 4.3 Consciousness Measure C
 
@@ -306,24 +306,26 @@ $C = \Phi \times R$ (T-140 [T]) — the product of integration and reflection.
 
 **Critical thresholds:**
 - $C = 0$: system is non-conscious (stone, thermostat)
-- $0 < C < 1$: "pre-consciousness" (bacterium, simple AI)
-- $C \geq 1$: conscious system ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$)
+- $0 < C < 1/3$: "pre-consciousness" (bacterium, simple AI)
+- $C \geq C_{\text{th}} = 1/3$ (T-140) is necessary for a conscious system; the full predicate is $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$, which implies $C \geq 1/3$. On the uniform-diagonal stratum the window gives $C = \Phi/(1+\Phi) \in (1/2, 2/3]$.
 
-**Numerical example.** Healthy adult: meta-d' = 1.2, PCI = 0.45.
+*Corrected 2026-09-25:* the thresholds read "$0 < C < 1$: pre-consciousness; $C \geq 1$: conscious system". $C \geq 1$ contradicts T-140 ($C_{\text{th}} = 1/3$), and on the uniform diagonal it is never reached inside the window.
+
+**Numerical example.** Healthy adult: meta-d' = 1.2, reconstructed $\widehat\Phi = 1.45$ (illustrative values).
 
 $$
 R \approx \frac{1.2}{3} = 0.40 \geq 1/3 \quad \checkmark
 $$
 
 $$
-\Phi \approx \frac{0.45}{0.31} = 1.45 \geq 1 \quad \checkmark
+\widehat\Phi = 1.45 \geq 1 \quad \checkmark \qquad (\text{from the reconstructed } \widehat\Gamma,\ \text{not from PCI})
 $$
 
 $$
 C = 1.45 \times 0.40 = 0.58
 $$
 
-Wait — $C < 1$? This indicates that the calibration coefficients require refinement (or that $C \geq 1$ is a more demanding condition than it seems). Alternative calibration: $R \approx \text{meta-d'}/2$ would give $R = 0.6$, $C = 0.87$ — closer, but such a value lies outside the canonical band $[1/3, 1/2)$ that the conscious window imposes on $R = 1/(7P)$: a "reflection" of $0.6$ can only be the self-model quality $R_\varphi$, not the canonical $R$ that enters $C = \Phi \times R$ ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)). The calibration must map meta-d' into the canonical band.
+$C = 0.58 \geq C_{\text{th}} = 1/3$ ✓, and it lies in $(1/2, 2/3]$, where the window puts $C$ on the uniform diagonal — a value below 1 is what the window predicts, not a calibration failure. (Until 2026-09-25 the example took $\Phi \approx \mathrm{PCI}/0.31$ — a conversion no derivation supports — and read $C < 1$ as a problem, because the threshold list above said $C \geq 1$.) An alternative $R \approx \text{meta-d'}/2$ would give $R = 0.6$, a value outside the canonical band $[1/3, 1/2)$ that the conscious window imposes on $R = 1/(7P)$: a "reflection" of $0.6$ can only be the self-model quality $R_\varphi$, not the canonical $R$ that enters $C = \Phi \times R$ ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)). The calibration must map meta-d' into the canonical band.
 
 :::note Lesson
 Calibration is an empirical task. The theoretical CC thresholds ($P = 2/7$, $R = 1/3$, $\Phi = 1$) are precise *within the formalism*. But translating neural data into the formalism requires experimental fitting. The formulas given are starting points, not final answers.
@@ -442,39 +444,26 @@ $$
 
 Parameters $\alpha_k$, $\beta_k$, $x_k^0$ are fitted empirically from a training sample.
 
-### 6.3 Numerical Calibration Example
+### 6.3 Numerical Example: Testing Against PCI Without Calibrating to It
 
-**Task:** calibrate PCI → $P$ for neural data.
+**Withdrawn (2026-09-25).** This subsection "calibrated PCI → $P$" by a line through $(\mathrm{PCI}, P) = (0, 1/7)$ and $(0.31, 2/7)$, $P \approx 0.461 \cdot \mathrm{PCI} + 0.143$, and concluded that the CC threshold *coincides* with the clinical threshold PCI = 0.31. Three faults:
+- **The coincidence was put in by hand.** A line through $(0, 1/7)$ and $(c, 2/7)$ returns $P = 2/7$ at $\mathrm{PCI} = c$ for every anchor $c$ — it would "coincide" with 0.25 or 0.40 just as well (`check_core_numbers.py`, `test_two_point_pci_calibration_coincides_with_any_anchor`).
+- **The data had no source.** "Wakefulness 0.44 ± 0.06, REM 0.32 ± 0.05, deep sleep 0.21 ± 0.04, vegetative 0.19 ± 0.06, propofol 0.18 ± 0.05" matches no table of Casali et al. (2013) or Casarotto et al. (2016); the benchmark values are below.
+- **A threshold fitted to report-labelled states tests nothing.** It reproduces the labels by construction — the strict-dependence horn of Kleiner & Hoel (2021), see the [measurement protocol](/docs/applied/research/measurement-protocol#substitution-position).
 
-**Data** (from the literature):
-- Wakefulness: PCI = 0.44 ± 0.06
-- REM sleep: PCI = 0.32 ± 0.05
-- Deep sleep: PCI = 0.21 ± 0.04
-- Vegetative state: PCI = 0.19 ± 0.06
-- Anaesthesia (propofol): PCI = 0.18 ± 0.05
+The nearness of $\mathrm{PCI}^* = 0.31$ to $2/7 \approx 0.286$ is a coincidence of two unrelated scales: PCI is a normalised Lempel–Ziv complexity of a binarised response to TMS, $P$ is a function of $\Gamma$.
 
-**Calibration:** Assume a linear relationship $P = a \cdot \text{PCI} + b$.
+**What replaces it — a concordance of verdicts** (P8.4 and pre-registration SUB-1 … SUB-6 of the [measurement protocol](/docs/applied/research/measurement-protocol#substitution-position)):
+1. Freeze the reconstruction $\pi_\theta$ on wakefulness sessions only; no viability penalty in the estimator ($\lambda_2 = 0$).
+2. On held-out sessions compute the UHM verdict $\mathrm{Cons}(\widehat\Gamma)$ and the PCI verdict $\mathrm{PCI}_{\max} > 0.31$ independently.
+3. Report Cohen's $\kappa = (p_o - p_e)/(1 - p_e)$, where $p_o$ is the observed agreement and $p_e$ the agreement expected from the two marginal rates. $\kappa \geq 0.8$ corroborates, $\kappa < 0.4$ falsifies.
 
-Boundary conditions:
-- At PCI = 0 → $P = 1/7 \approx 0.143$ (complete chaos)
-- At PCI = 0.31 → $P = 2/7 \approx 0.286$ (consciousness threshold)
+**Worked example** (illustrative counts, not data). 40 sessions: both verdicts "conscious" in 18, both "not conscious" in 16, disagreement in $3 + 3$. Then $p_o = 34/40 = 0.85$; each verdict says "conscious" 21 times, so $p_e = (21/40)^2 + (19/40)^2 = 0.501$ and $\kappa = (0.85 - 0.501)/(1 - 0.501) = 0.70$ — inconclusive. With the same 34 agreements split as $33 + 1$ (both marginals 36 of 40), $p_e = 0.82$ and $\kappa = 0.17$ — falsifying. Raw agreement does not decide; $\kappa$ does (`test_verdict_concordance_is_judged_by_kappa_not_by_raw_agreement`).
 
-From two points: $a = (0.286 - 0.143) / 0.31 = 0.461$, $b = 0.143$.
-
-$$
-P \approx 0.461 \cdot \text{PCI} + 0.143
-$$
-
-Verification:
-- Wakefulness: $P = 0.461 \times 0.44 + 0.143 = 0.346 > 2/7$ (conscious)
-- REM: $P = 0.461 \times 0.32 + 0.143 = 0.290 > 2/7$ (conscious, barely)
-- Deep sleep: $P = 0.461 \times 0.21 + 0.143 = 0.240 < 2/7$ (not conscious)
-- Vegetative: $P = 0.461 \times 0.19 + 0.143 = 0.231 < 2/7$ (not conscious)
-
-This is consistent with clinical data: REM sleep — with dreams (experience is present), deep sleep — without (experience is absent).
+**Reference values** — Casarotto et al. (2016), Table 1, $\mathrm{PCI}_{\max}$ median [min–max]: wakefulness 0.53 [0.39–0.70] (102 subjects), REM sleep 0.48 [0.36–0.56] (8), ketamine 0.43 [0.36–0.52] (6), NREM sleep 0.25 [0.15–0.31] (18), midazolam 0.30 [0.23–0.31], xenon 0.23 [0.11–0.31], propofol 0.26 [0.23–0.31] (6 each). The decisive sessions are REM and ketamine: consciousness without behaviour at the time, out of sample when $\theta$ is frozen on wakefulness.
 
 :::tip What this means
-Calibration of PCI → $P$ shows that the CC threshold ($P = 2/7$) *coincides* with the clinical threshold PCI = 0.31, at which conscious patients are distinguished from unconscious ones. This is the first (albeit indirect) argument in favour of the CC thresholds not being arbitrary.
+The CC threshold $P = 2/7$ is not a number on the PCI scale and is not tested by matching one. It is tested by whether the verdict computed from $\widehat\Gamma$ agrees with the independently validated PCI verdict on sessions that did not fix the reconstruction.
 :::
 
 ## 6.4 Rigorous $\Gamma$-estimator: consistency and confidence bounds {#оценка-gamma}
@@ -600,9 +589,9 @@ Critically, CC **allows** itself to be measured. This distinguishes it from pure
 ### What We Learned {#итоги}
 
 1. CC observables form a **4-level hierarchy**: L1 (global) → L2 (sectoral) → L3 (coherent) → L4 (derived).
-2. Purity $P$ can be estimated through **EEG coherence**, PCI, fMRI connectivity — with a calibration function.
+2. Purity $P$ can be estimated through **EEG coherence** and fMRI connectivity — by a reconstruction whose parameters are frozen before the test; PCI is the independent verdict it is compared with, not an estimator of $P$.
 3. The stress tensor $\sigma$ is measured through **psychometric scales** (for the individual) or **organisational audits** (for companies).
-4. Calibration of PCI → $P$ gives a threshold **coinciding** with the clinical consciousness threshold.
+4. The CC threshold is tested against PCI by a **concordance of verdicts** (Cohen's $\kappa$, P8.4), not by a PCI → $P$ calibration: the earlier line "calibration of PCI → $P$ gives a threshold coinciding with the clinical threshold" is withdrawn (2026-09-25) — the coincidence was put in by the two-point line of §6.3.
 5. All measurements are **approximate**: calibration coefficients require empirical fitting.
 
 ---
