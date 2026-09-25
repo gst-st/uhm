@@ -90,8 +90,8 @@ $\dot q = g^{-1}\nabla\mathcal F$ (his 6.3). The learning algorithm is
 
 UHM is built on five axioms: reality as an $\infty$-topos over density
 matrices, the **Bures** Grothendieck topology, dimension $N=7$, a scale
-$\omega_0$, and a Page–Wootters decomposition (the last derivable,
-T-87). Its dynamics is the **triad** forced by LGKS-completeness
+$\omega_0$, and a Page–Wootters decomposition (its clock register
+constructed, its constraint assumed — T-87, [C] for the link). Its dynamics is the **triad** forced by LGKS-completeness
 (T-57):
 
 $$
@@ -966,7 +966,7 @@ Corpus cross-references: T-41 (Fano channel family), T-42a
 ($G_2$-rigidity), T-55 (Lawvere incompleteness), T-57 (triadic
 completeness), T-59 ($\lambda_{\text{deco}}=5\gamma/21$), T-71 (vacuum
 energy), T-72 (scale invariance), T-73/T-74 (Gap curvature, spectral
-action), T-87 (A5 derivable), T-124 (conscious window), T-187 (why
+action), T-87 (A5: clock register [T], constraint [C]), T-124 (conscious window), T-187 (why
 Bures). Registry rows: T-293, T-294, T-295; the per-axis screen lives under T-298; the composition ceiling and the addressing regime under T-304.
 
 ---

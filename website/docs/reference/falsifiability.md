@@ -451,9 +451,9 @@ The theory is complete in the following sense:
 5. **Explanatory power:** Resolves traditional philosophical problems
 6. **Falsifiability:** Makes testable predictions about the structure of experience
 7. **Formal rigour:** Key theorems proved ([7D minimality](/docs/proofs/minimality/theorem-minimality-7), [operator φ](/docs/proofs/categorical/formalization-phi), [functor F](/docs/proofs/categorical/categorical-formalism))
-8. **Compatibility with QM:** The nonlinear regenerative term $\mathcal{R}$ [does not violate the no-signalling constraint](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) — proved via the CPTP property of $\varphi$ (conditions [NS1-NS3](/docs/core/dynamics/evolution#запрет-сигнализации))
-9. **Ensemble independence:** Evolution is defined on $\Gamma$ (density matrix), not on wave functions — [does not depend on decomposition](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)
-10. **Computational consistency:** The nonlinearity $\mathcal{R}$ [does not provide acceleration](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение) beyond BQP
+8. **Compatibility with QM:** the regenerative term keeps the [marginal identity](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) [T] (CPTP property of $\varphi$, conditions [NS1-NS3](/docs/core/dynamics/evolution#запрет-сигнализации)); no-signalling of the full dynamics holds only in the non-selective reading [C] — with the Lüders update the gate $g_V$ signals (an earlier item called no-signalling proved; retracted)
+9. **Ensemble independence:** the evolution map is a function of $\Gamma$ (density matrix), not of its decomposition [D]; the physical reading "two preparations of the same $\Gamma$ evolve identically" is [retracted](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)
+10. **Computational consistency:** the claim that the nonlinearity $\mathcal{R}$ gives no acceleration beyond BQP is [retracted](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение) — whether it does is an open question [H]
 
 ## Vulnerability analysis {#анализ-уязвимостей}
 

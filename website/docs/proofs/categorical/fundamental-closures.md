@@ -13,7 +13,7 @@ This document contains **fourteen foundational theorems** T-210 through T-223 th
 |---|---|---|---|
 | **T-210** | Strict (not weak) Φ-monotonicity under epistemic refinement | Interior-stratum argument + T-151 | [T] |
 | **T-211** | Higher coherences of **PhysTheory** $(\infty,1)$-category | Full embedding into $\mathbf{Topoi}_\infty$ (HTT 5.2.7) | [C at T-119] |
-| **T-212** | Explicit definition of rheonomy modality **Rh** | Super-cohesion right adjoint (Schreiber DCCT §3.10) | [T] |
+| **T-212** | Explicit definition of rheonomy modality **Rh** | Super-cohesion right adjoint (solid cohesion; not in DCCT v1) | [C at the differential cohesion of the UHM site (T-185) and a solid-cohesive extension] (was [T] until 2026-09-25) |
 | **T-213** | Yoneda representability via Bures description length | Computable $D_B(f)$ replaces Kolmogorov complexity | [T] |
 | **T-214** | Hard-problem meta-theorem (positive irresolvability) | Lawvere fixed-point + T-55 | [T] |
 | **T-215** | Cross-layer identity convention for fractal towers | Choice of $\iota_\mathrm{min}$ / $\iota_\mathrm{max}$ criterion | [T]+[D] |
@@ -99,11 +99,11 @@ HTT 5.2.7 ("presentable coherence inheritance") applies once $\iota: \mathbf{Phy
 
 ## 3. T-212: Rheonomy modality **Rh** explicit definition {#t-212}
 
-:::tip Theorem T-212 (Rheonomy modality Rh) [T]
+:::tip Theorem T-212 (Rheonomy modality Rh) [C at the differential cohesion of the UHM site (T-185) and a solid-cohesive extension]
 
 In UHM's differentially cohesive $\infty$-topos $\mathbf{Sh}_\infty(\mathcal C_7, J_B)$, the **rheonomy modality**
 $$\mathrm{Rh}: \mathbf{Sh}_\infty(\mathcal C_7) \to \mathbf{Sh}_\infty(\mathcal C_7)$$
-is the **right adjoint** to the "bosonic-grade forgetful" functor $\flat_\mathrm{bos}$ in the super-cohesive extension (Schreiber 2013, *Differential Cohomology in a Cohesive $\infty$-Topos* §3.10). Explicitly:
+is the **right adjoint** to the "bosonic-grade forgetful" functor $\flat_\mathrm{bos}$ in a super-cohesive (solid) extension. (The citation read "Schreiber 2013, *Differential Cohomology in a Cohesive $\infty$-Topos* §3.10"; corrected 2026-09-25 — the rheonomy modality Rh does not occur in DCCT arXiv:1310.7930v1, whose §3.10 is "Structures in a differentially cohesive ∞-topos"; Rh belongs to Schreiber's later solid (super-)cohesion.) Explicitly:
 $$\mathrm{Rh}(F)(\Gamma) := \operatorname{Tr}(F(\Gamma)) \cdot \mathbf{1}_{\mathcal C_7},$$
 where $\operatorname{Tr}: F(\Gamma) \to \mathbb C$ is the $G_2$-invariant trace (aggregation over 7 dimensions) and $\mathbf{1}_{\mathcal C_7}$ is the unit sheaf. The seven canonical modalities map bijectively to the seven UHM dimensions:
 $$\mathrm{Id} \leftrightarrow O,\quad \Pi \leftrightarrow A,\quad \flat \leftrightarrow S,\quad \Im \leftrightarrow D,\quad \sharp \leftrightarrow L,\quad \& \leftrightarrow E,\quad \mathrm{Rh} \leftrightarrow U.$$
@@ -112,7 +112,7 @@ $$\mathrm{Id} \leftrightarrow O,\quad \Pi \leftrightarrow A,\quad \flat \leftrig
 
 **Proof (three-step).**
 
-**Step 1 (Adjunction $\flat_\mathrm{bos} \dashv \mathrm{Rh}$).** The super-cohesive extension of $\mathbf{Sh}_\infty(\mathcal C_7)$ (Schreiber 2013, *Differential Cohomology in a Cohesive $\infty$-Topos*, §3.10; Sati–Schreiber 2018 §4.1) has an additional adjoint pair $(\flat_\mathrm{bos}, \mathrm{Rh})$ where $\flat_\mathrm{bos}$ is the inclusion of the bosonic (grade-0) subcategory and $\mathrm{Rh}$ its right adjoint. In the finite-dimensional UHM setting, the bosonic subcategory corresponds to **$G_2$-invariant** scalars: $\flat_\mathrm{bos}(F) = F^{G_2}$ (the $G_2$-fixed subspace).
+**Step 1 (Adjunction $\flat_\mathrm{bos} \dashv \mathrm{Rh}$).** A super-cohesive (solid) extension of $\mathbf{Sh}_\infty(\mathcal C_7)$ — assumed, since even the differential cohesion of the UHM site is an assumption of T-185, and the rheonomy modality Rh does not occur in DCCT arXiv:1310.7930v1, whose §3.10 is "Structures in a differentially cohesive ∞-topos"; Rh belongs to Schreiber's later solid (super-)cohesion — has an additional adjoint pair $(\flat_\mathrm{bos}, \mathrm{Rh})$ where $\flat_\mathrm{bos}$ is the inclusion of the bosonic (grade-0) subcategory and $\mathrm{Rh}$ its right adjoint. In the finite-dimensional UHM setting, the bosonic subcategory corresponds to **$G_2$-invariant** scalars: $\flat_\mathrm{bos}(F) = F^{G_2}$ (the $G_2$-fixed subspace).
 
 :::note Framework-conditional citation (see [Rigour Stratification §T-212](/docs/reference/status-registry#стратификация-строгости))
 The super-cohesive extension of Schreiber DCCT §3.10 was developed for smooth super-$\infty$-stacks. Its instantiation on the **finite-dimensional** UHM site $\mathcal C_7 = \mathcal{D}(\mathbb{C}^7)$ reduces super-cohesion to the $G_2$-grading here; full axiomatic equivalence with Schreiber's infinite-dimensional setting is implicit in Sati–Schreiber 2018 §4.1 but not separately verified for the stratified Bures site.
@@ -123,7 +123,7 @@ $$\mathrm{Rh}(F)(\Gamma) = \int_{g \in G_2} F(g \cdot \Gamma) \, dg = \operatorn
 where the $G_2$-invariant integral equals the trace by the Weyl integration formula for compact groups. This matches the "aggregation over 7 dimensions" semantics of the **Unity (U)** dimension.
 
 **Step 3 (Verification of modal axioms).**
-- **Idempotent**: $\mathrm{Rh}(\mathrm{Rh}(F)) = \operatorname{Tr}(\operatorname{Tr}(F(\Gamma))\mathbf{1}) \mathbf{1} = \operatorname{Tr}(F(\Gamma))\mathbf{1} = \mathrm{Rh}(F)$ since $\operatorname{Tr}(\mathbf{1}) = 7$ (rescale to $1$). $\checkmark$
+- **Idempotent** — only with the normalised trace: with $\operatorname{Tr}$ as printed, $\mathrm{Rh}(\mathrm{Rh}(F)) = \operatorname{Tr}(\operatorname{Tr}(F(\Gamma))\mathbf{1}) \mathbf{1} = 7\operatorname{Tr}(F(\Gamma))\mathbf{1} \neq \mathrm{Rh}(F)$; with $\tfrac17\operatorname{Tr}$ in the definition, $\mathrm{Rh}\circ\mathrm{Rh} = \mathrm{Rh}$. (The line read "$= \operatorname{Tr}(F(\Gamma))\mathbf{1}$ since $\operatorname{Tr}(\mathbf{1}) = 7$ (rescale to $1$)"; corrected 2026-09-25.)
 - **Comonad unit**: $\eta: \mathrm{Id} \to \mathrm{Rh}$ sends $F(\Gamma) \to \operatorname{Tr}(F(\Gamma))\mathbf{1}$. $\checkmark$
 - **Interacts correctly with other modalities**: $[\sharp, \mathrm{Rh}] = 0$ (both are "global" modalities, commute via standard adjunction calculus). $\checkmark$
 
@@ -141,7 +141,7 @@ Hence $\mathrm{Rh}$ is a **genuine modality** in the precise sense of differenti
 | $\&$ | Infinitesimal flat (rel. homotopy) | E (Interiority) | Gap spectral eigenvectors |
 | $\mathrm{Rh}$ | Rheonomy (bosonic right adjoint) | U (Unity) | $G_2$-invariant trace |
 
-**Dependencies**: T-185 [T] (7 modalities existence), Schreiber 2013 DCCT §3.10, Sati–Schreiber 2018 §4.1, Weyl integration formula.
+**Dependencies**: T-185, stratified — the modalities of a differentially cohesive ∞-topos (i) [T], the differential cohesion of the UHM site (ii) [C], the list of seven and its match to the dimensions (iii) [I]; a solid-cohesive extension carrying Rh (assumed); Weyl integration formula. The former entries "T-185 [T]" and "Schreiber 2013 DCCT §3.10" are corrected: T-212 inherits (ii), and the rheonomy modality Rh does not occur in DCCT arXiv:1310.7930v1, whose §3.10 is "Structures in a differentially cohesive ∞-topos"; Rh belongs to Schreiber's later solid (super-)cohesion.
 
 ---
 
@@ -443,7 +443,7 @@ Predicted thresholds:
 |---|---|---|---|---|
 | T-210 | Strict Φ-monotonicity | [T] weak (T-195) | **[T] strict** | Interior-stratum argument |
 | T-211 | PhysTheory higher coherences | [T] deferred to HTT | **[C at T-119]** (read "[T] verified" until 2026-09-25) | HTT 5.2.7 inheritance |
-| T-212 | Rh modality explicit | [T] unnamed (T-185) | **[T] defined** | Super-cohesion right adjoint |
+| T-212 | Rh modality explicit | [T] unnamed (T-185) | **[C] defined** at the differential cohesion of the UHM site (read "[T] defined" until 2026-09-25) | Super-cohesion right adjoint |
 | T-213 | Yoneda without Kolmogorov | [T] uncomputable (T-193) | **[T] computable** | Bures description length |
 | T-214 | Hard-problem meta-theorem | [I] residual | **[T] positive irresolvability** | Lawvere fixed-point |
 | T-215 | Cross-layer identity | [C] (T-205 downgraded) | **[T]+[D]** | Conventional choice theorem |
@@ -1135,7 +1135,7 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 |---|---|---|---|---|
 | T-210 | Strict Φ-monotonicity | [T] weak | **[T] strict** | Interior-stratum |
 | T-211 | PhysTheory coherences | [T] deferred | **[C at T-119]** (read "[T] verified" until 2026-09-25) | HTT 5.2.7 |
-| T-212 | Rh modality | [T] unnamed | **[T] defined** | Super-cohesion |
+| T-212 | Rh modality | [T] unnamed | **[C] defined** (read "[T] defined" until 2026-09-25) | Super-cohesion |
 | T-213 | Yoneda computable | [T] uncomputable | **[T] computable** | Bures description |
 | T-214 | Hard-problem meta-theorem | [I] residual | **[T] positive** | Lawvere |
 | T-215 | Cross-layer identity | [C] | **[T]+[D]** | Conventional choice |
