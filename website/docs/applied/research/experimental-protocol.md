@@ -11,7 +11,7 @@ This document describes a **maximally complete experimental protocol** for the e
 :::
 
 :::info Related documents
-- [23 unique CC predictions](/docs/applied/coherence-cybernetics/predictions) — full list of predictions with formulas
+- [23 CC predictions, 22 of them unique](/docs/applied/coherence-cybernetics/predictions) — full list of predictions with formulas (it read "23 unique" until 2026-09-25: on collective consciousness IIT has a criterion too)
 - [Γ measurement protocol](/docs/applied/research/measurement-protocol) — operationalisation of π_bio for AI systems
 - [Falsifiability criteria](/docs/reference/falsifiability) — formal refutation conditions
 - [Status registry](/docs/reference/status-registry) — current epistemic status of all claims
@@ -23,7 +23,7 @@ This document describes a **maximally complete experimental protocol** for the e
 
 ### 1.1. The problem: empirical vacuum
 
-UHM is one of the most formally developed theories of consciousness: ~210 theorems, 23 numerical predictions, categorical foundation. But **not a single prediction has been experimentally verified**. A theory without empirics is philosophy, no matter how rigorous the mathematics.
+UHM is one of the most formally developed theories of consciousness: ~210 theorems, 23 predictions (21 of them unique and numerical), categorical foundation. But **not a single prediction has been experimentally verified**. A theory without empirics is philosophy, no matter how rigorous the mathematics.
 
 ### 1.2. Key observation: PCI* ≈ P_crit
 
@@ -171,7 +171,7 @@ Any implementation used for Phase I must satisfy:
 2. For each: compute the order parameter (PCI analogue) and distance to P_crit
 3. Fit: OP ~ (P − P_crit)^β
 
-**Prediction:** β = 1/4 ± 0.05 (T-161).
+**Prediction:** β = 1/4 ± 0.05 (T-161, [C] at the ℤ₂ symmetry m → −m; without it the swallowtail value β = 1/2).
 
 **Falsification:** β ∉ [0.20, 0.30] at N=10⁴.
 
@@ -376,7 +376,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 3. For conscious (x > 0): fit PCI ~ x^β
 4. Extract β, 95% CI
 
-**Prediction:** β = 1/4 ± 0.05 (T-161).
+**Prediction:** β = 1/4 ± 0.05 (T-161, [C] at the ℤ₂ symmetry m → −m; without it the swallowtail value β = 1/2).
 
 **Additional exponents:**
 - α = 1/2: specific heat (from variance of P near threshold)

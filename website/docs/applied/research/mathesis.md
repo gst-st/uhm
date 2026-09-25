@@ -1255,7 +1255,7 @@ The claim "consciousness requires a global workspace" (GWT) is loaded into Mathe
 
 ### 12.6. Responding to criticism
 
-`claim/dependencies uhm:T-120 --full` → full dependency tree, all [T] → "T-120 is fully justified." Time: 30 seconds.
+`claim/dependencies uhm:T-120 --full` → full dependency tree: T-117 [T], T-118 [C] (an aperiodic clock), T-119 [C] (two open reconstruction axioms) → "T-120 is conditional on these two assumptions." Time: 30 seconds. (An earlier version of this example returned "all [T] … fully justified"; the registry now lists T-120 as [C].)
 
 ---
 

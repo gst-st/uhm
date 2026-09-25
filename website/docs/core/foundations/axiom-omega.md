@@ -59,9 +59,9 @@ The dimension $N = 7$ is a **fundamental axiom** (Axiom 3) with two independent 
 | Track | Justification | Status |
 |------|-------------|--------|
 | **A** | [Theorem S](./axiom-septicity#теорема-s-семимерность--следствие-из-аксиомы): (AP)+(PH)+(QG) → N ≥ 7 | [T] Proved |
-| **B** | [Structural derivation](../../proofs/minimality/theorem-octonionic-derivation): P1+P2 → $\mathbb{O}$ → $\dim \mathrm{Im}(\mathbb{O})$ = 7 | [T] Mathematically rigorous |
+| **B** | [Structural derivation](../../proofs/minimality/theorem-octonionic-derivation): P1+P2 → $\mathbb{O}$ → $\dim \mathrm{Im}(\mathbb{O})$ = 7 | Hurwitz step [T]; P1+P2 [C at (Alt)]; not independent of Track A (step T8 of the chain takes $N = 7$ from Theorem S) |
 
-The bridge (AP)+(PH)+(QG) → P1+P2 is the [full chain T1–T15 [T]](../../proofs/minimality/theorem-octonionic-derivation#мост).
+The bridge (AP)+(PH)+(QG) → P1+P2 is the [full chain T1–T15](../../proofs/minimality/theorem-octonionic-derivation#мост), [C at (Alt)]: the steps up to the design PG(2,2) are theorems, and the step PG(2,2) → $\mathbb{O}$ needs an orientation of the seven lines — only 16 of the 128 orientations give a normed algebra (registry row 41n). It was cited here as "[T]" and Track B as "[T] mathematically rigorous" until 2026-09-25.
 :::
 
 **LEVEL 1: DEFINITIONS** (built from axioms)
@@ -784,7 +784,7 @@ with $\mathcal H_{6D}\cong(1-P_O)(H_{\text{int}})\cong\mathbf 3\oplus\bar{\mathb
 
 Hence the clock register and the tensor factor of A5 follow from A1–A4 + T-53 + T-42e + T-116 [T]; the constraint is an independent assumption [C]. An earlier conclusion — "A5 is entirely a theorem consequence of A1–A4 …; A5 contributes no independent axiomatic content" — is retracted. $\blacksquare$
 
-**Dependencies**: T-53 [T] (spectral triple, KO-dim 6), T-42a/e [T] ($G_2$-rigidity + stabiliser), T-116 [T] (Suzuki–Trotter), Connes–Marcolli 2008; the constraint of step 4 is the support condition of Property 2 (assumed).
+**Dependencies**: T-53 [T] (the algebra $A_{\text{int}}$ and its Wedderburn decomposition; the KO-dimension-6 claim of T-53 is retracted and steps 1–3 do not use it), T-42a/e [T] ($G_2$-rigidity + stabiliser), T-116 [T] (Suzuki–Trotter), Connes–Marcolli 2008; the constraint of step 4 is the support condition of Property 2 (assumed).
 
 **Proof chain**: [T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) → Wedderburn → clock register $\mathbb C[\mathbb Z_7]$ → tensor factorisation; the PW constraint is added as an assumption → A5.
 :::
@@ -848,7 +848,7 @@ Independently of Theorem S, the number 7 follows from two postulates via Hurwitz
 - Fano plane $\mathrm{PG}(2,2)$ — combinatorics of octonion multiplication (7 points, 7 lines)
 - Hamming code $H(7,4)$ — perfect error-correcting code on 7 bits
 
-Bridge (AP)+(PH)+(QG) → P1+P2: [full chain T1–T15 [T]](../../proofs/minimality/theorem-octonionic-derivation#мост).
+Bridge (AP)+(PH)+(QG) → P1+P2: [full chain T1–T15](../../proofs/minimality/theorem-octonionic-derivation#мост), [C at (Alt)] — the orientation of the Fano lines is an input (registry row 41n; cited as [T] until 2026-09-25). The consequences listed above hold for $\mathbb{O}$ itself; as consequences of the axioms they carry the same condition.
 :::
 
 ---

@@ -51,7 +51,7 @@ It is not derived, for three reasons. (i) The UHM triple has $H_{\text{int}} = \
 **Step 1 (Input data).** Finite UHM spectral triple:
 - Algebra: $A_{\text{int}} = \mathbb{C}_O \oplus M_3(\mathbb{C})_{\mathbf{3}} \oplus M_3(\mathbb{C})_{\bar{\mathbf{3}}}$
 - Space: $H_{\text{int}} = \mathbb{C}^7$
-- Real structure: $J$ with $J^2 = +1$, $JD = DJ$, $J\chi = -\chi J$ (KO-dim 6)
+- Real structure: $J$ with $J^2 = +1$, $JD = DJ$, $J\chi = -\chi J$ (KO-dim 6) — retracted [✗]: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка))
 - Chirality: $\chi = \mathrm{diag}(+1, -1, -1, -1, +1, +1, +1)$
 
 **Step 2 (Opposite algebra).** The real structure $J$ defines a right action of the algebra $A_{\text{int}}$ on $H_{\text{int}}$:

@@ -253,8 +253,10 @@ $$
 Коэффициенты канонического $\varphi_{\text{coh}}$ при заданном Фано-весе $\alpha$:
 
 $$
-c_{mn} = \begin{cases} \alpha^* k & m = n \text{ (атомарная часть)} \\ (1-\alpha^*) k / 3 & m \neq n,\, (m,n) \text{ на общей Фано-линии} \\ 0 & m \neq n,\, (m,n) \text{ вне общей Фано-линии} \end{cases}
+c_{mn} = \begin{cases} k & m = n \text{ (атомарный и Фано-канал оба сохраняют диагональ)} \\ (1-\alpha) k / 3 & m \neq n \end{cases}
 $$
+
+а якорь добавляет $(1-k)\,[\Gamma_{\text{anchor}}]_{mn}$. Каждая пара $(m,n)$ лежит ровно на одной Фано-линии, так что третий случай «$0$ для $(m,n)$ вне общей Фано-линии» пуст. *Исправлено 2026-09-25:* врезка печатала $c_{mm} = \alpha^* k$ и этот пустой третий случай; диагональный коэффициент равен $\alpha k + (1-\alpha)k = k$ (как в [$G_2$-структуре, теорема 10.5](/docs/physics/gauge-symmetry/g2-structure)), а $\alpha^*$ отозвано.
 
 Коэффициенты определены через:
 - [Фано-структуру](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$ (алгебраическая геометрия)
@@ -264,8 +266,8 @@ $$
 [Доказательство →](/docs/proofs/gap/fano-channel#phi-coh) | Статус: **[Т]**
 :::
 
-:::info Операторы Крауса
-Атомарные операторы (7 штук): $K_m^{(\text{atom})} = \sqrt{\alpha^* k / 7} \cdot |m\rangle\langle m|$. Фано-операторы (7 штук): $K_p^{(\text{Fano})} = \sqrt{(1-\alpha^*) k / 3} \cdot \Pi_p$. Якорный оператор: $K_0 = \sqrt{(1-k)/7} \cdot I$. Проверка: $\sum (K^{(\text{atom})})^\dagger K^{(\text{atom})} + \sum (K^{(\text{Fano})})^\dagger K^{(\text{Fano})} + K_0^\dagger K_0 = \alpha^* k \cdot I + (1-\alpha^*) k \cdot I + (1-k) \cdot I = I$.
+:::info Операторы Крауса (7 + 7 + 49; исправлено 2026-09-25)
+Атомарные операторы (7): $K_m^{(\text{atom})} = \sqrt{\alpha k} \cdot |m\rangle\langle m|$. Фано-операторы (7): $K_p^{(\text{Fano})} = \sqrt{(1-\alpha) k / 3} \cdot \Pi_p$. Якорные операторы (49), где $\Gamma_{\text{anchor}} = \sum_i \lambda_i |\psi_i\rangle\langle\psi_i|$: $K_{ij}^{(\text{anch})} = \sqrt{(1-k)\lambda_i} \cdot |\psi_i\rangle\langle j|$. Проверка: $\sum_m (K_m^{(\text{atom})})^\dagger K_m^{(\text{atom})} = \alpha k \cdot I$; $\sum_p (K_p^{(\text{Fano})})^\dagger K_p^{(\text{Fano})} = \tfrac{(1-\alpha)k}{3} \cdot 3I$ (каждая точка лежит на трёх линиях); $\sum_{i,j} (K_{ij}^{(\text{anch})})^\dagger K_{ij}^{(\text{anch})} = (1-k) \cdot I$; в сумме $I$. Эти 63 оператора воспроизводят $\varphi_{\text{coh}}$ с точностью $3 \times 10^{-16}$ на 50 случайных состояниях. Прежний набор — $K_m^{(\text{atom})} = \sqrt{\alpha^* k/7}\,|m\rangle\langle m|$ и один якорь $K_0 = \sqrt{(1-k)/7}\,I$ — не сохранял след: $\sum_m |m\rangle\langle m| = I$, а не $7I$, и $K_0^\dagger K_0 = \tfrac{1-k}{7}\,I$; при $\alpha = 0{,}4$, $k = 0{,}8$ он отстоит от $I$ на $1{,}18$ по норме Фробениуса, а одно кратное $I$ не может реализовать замещение $\Gamma \mapsto (1-k)\,\Gamma_{\text{anchor}}$. Та же поправка, что в [$G_2$-структуре, теорема 10.5](/docs/physics/gauge-symmetry/g2-structure).
 :::
 
 ---

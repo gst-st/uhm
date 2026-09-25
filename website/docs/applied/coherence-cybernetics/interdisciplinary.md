@@ -205,7 +205,7 @@ Below are five curated paths through the entire UHM/CC documentation. Each route
 | 2 | [Axiom of Septicity](/docs/core/foundations/axiom-septicity) | Proof of $N=7$ from octonion algebra, canonical $\kappa_0$, $\mathrm{Coh}_E$ as HS-projection | 90 min |
 | 3 | [Spacetime](/docs/core/foundations/spacetime) | Emergent spacetime: from $\Omega$ to the metric, causal structure | 45 min |
 | 4 | [Emergent Geometry](/docs/physics/gravity/emergent-geometry) | Connes' spectral triple, reconstruction of a smooth manifold from algebraic data | 60 min |
-| 5 | [Emergent Manifold $M^4$](/docs/proofs/physics/emergent-manifold) | Full proof of T-117 -- T-121: background independence, $M^4 = \mathbb{R} \times \Sigma^3$ | 90 min |
+| 5 | [Emergent Manifold $M^4$](/docs/proofs/physics/emergent-manifold) | Proof of T-117 -- T-121 (T-118 to T-121 conditional): background independence, $M^4 = \mathbb{R} \times \Sigma^3$ | 90 min |
 | 6 | [Einstein Equations](/docs/physics/gravity/einstein-equations) | Derivation of GR as an effective theory on scales larger than the spectral gap | 60 min |
 | 7 | [Standard Model](/docs/physics/gauge-symmetry/standard-model) | $SU(3) \times SU(2) \times U(1)$ from the $G_2$-structure of imaginary octonions | 60 min |
 | 8 | [Quantum Reduction](/docs/physics/quantum-mechanics/qm-reduction) | Collapse as a special case of Lindblad dissipation in $\mathcal{D}_\Omega$ | 45 min |

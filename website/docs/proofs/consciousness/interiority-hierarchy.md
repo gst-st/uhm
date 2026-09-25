@@ -1641,7 +1641,7 @@ In the [octonionic interpretation](../../core/structure/dimensions#октони�
 | **L3** | Meta-associators | Reflection on non-associativity |
 | **L4** | Full $A_\infty$-structure | All levels of homotopic associativity |
 
-Bridge [T] (closed, T15). See [structural derivation](../minimality/theorem-octonionic-derivation).
+Bridge [C at (Alt)] (T15; the orientation of the Fano lines is an input — registry row 41n; it read "[T] (closed)" until 2026-09-25). See [structural derivation](../minimality/theorem-octonionic-derivation).
 :::
 
 ---
@@ -1649,34 +1649,34 @@ Bridge [T] (closed, T15). See [structural derivation](../minimality/theorem-octo
 ## Stratification isolation and no-signaling prohibition {#стратификационная-изоляция}
 
 :::info Principle (Stratification isolation)
-Nonlinear dynamics (regeneration $\mathcal{R}$) at levels L2+ **does not induce** nonlinear effects at level L0 (standard QM) and does not violate the no-signaling principle.
+Nonlinear dynamics (regeneration $\mathcal{R}$) at levels L2+ **does not change** the reduced states of L0 systems (the marginal identity [T]). No-signalling of the full dynamics holds only in the non-selective reading [C]: with the Lüders update at a distant partner the nonlinear gate $g_V$ signals ([physics correspondence §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). (The principle read "and does not violate the no-signaling principle"; corrected 2026-09-25.)
 :::
 
 ### Separation of nonlinearity by level
 
 | Level | Stratum $X$ | Dynamics | Nonlinear $\mathcal{R}$ |
 |---------|------------|----------|--------------------------|
-| L0 | $S_I$ (matter) | $d\Gamma/d\tau = -i[H, \Gamma]$ | **No** ($R = 0$) |
+| L0 | $S_I$ (matter) | $d\Gamma/d\tau = -i[H, \Gamma]$ | **No** ($R < R_{\text{th}} = 1/3$; $R = 1/(7P) \geq 1/7$ is never $0$) |
 | L1 | $S_{II}$ (life) | + $\mathcal{D}[\Gamma]$ (linear Lindblad) | **No** |
 | L2 | $S_{III}$ (mind) | + $\mathcal{R}[\Gamma, E]$ | **Yes** ($R \geq 1/3$) |
 | L3 | $S_{IV}$ (network consciousness) | + $R^{(n)}$ | **Yes** (higher orders) |
 | L4 | $S_{IV}$ (unitary consciousness) | Full ∞-structure | **Yes** |
 
-### Theorem (No-signaling prohibition for all levels)
+### Theorem (Marginal identity for all levels) [T]; no-signalling of the full dynamics [C]
 
-For L0-systems (atoms, photons, qubits) $R = 0$, and $\mathcal{R} = 0$. For L2+ systems the nonlinearity $\mathcal{R}$ does not violate the no-signaling prohibition thanks to the CPTP structure of operator $\varphi$ and locality of $\kappa$:
+For L0-systems (atoms, photons, qubits) $R$ lies below the threshold $R_{\text{th}} = 1/3$, so $\mathcal{R} = 0$ (an earlier version wrote "$R = 0$", which is impossible: $R = 1/(7P) \geq 1/7$). For L2+ systems the CPTP structure of the operator $\varphi$ and the locality of $\kappa$ give the marginal identity — regeneration of $A$ leaves $B$'s unconditioned reduced state unchanged:
 
 $$
 \mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0
 $$
 
-Proof: [Physical correspondence: §8](/docs/proofs/physics/physics-correspondence#запрет-сигнализации).
+Proof: [Physical correspondence: §8](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). The identity does not cover the other direction: after a Lüders measurement at the partner, each run leaves the L2 system in a conditional state, the nonlinear gate $g_V$ acts on that state, and the averaged evolution depends on whether the partner measured — so no-signalling of the full dynamics holds only in the non-selective reading [C] ([§8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). (The heading read "No-signaling prohibition for all levels" and the text "does not violate the no-signaling prohibition"; corrected 2026-09-25.)
 
 ### Physical consequence
 
 Atoms and photons used in Bell experiments are at level L0. For them UHM **exactly coincides** with quantum mechanics. The nonlinearity $\mathcal{R}$ acts only on **autonomous macro-systems** (cells, brain), which do not form maximally entangled EPR states with distant photons.
 
-Even if an L2-system (brain) is entangled with an L0-system (photon), the regeneration of the brain **does not affect** the state of the photon — this is a consequence of the CPTP property of $\varphi$ and linearity of the partial trace.
+Even if an L2-system (brain) is entangled with an L0-system (photon), the regeneration of the brain **does not affect** the photon's reduced state — a consequence of the CPTP property of $\varphi$ and linearity of the partial trace [T]. The converse is not excluded: a Lüders measurement on the photon changes the conditional states of the brain, and its nonlinear regeneration can then depend on the choice of measurement [C].
 
 ---
 

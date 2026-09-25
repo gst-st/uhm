@@ -436,7 +436,7 @@ An earlier version stated T-190 as [T]: "All five axioms A1–A5 of UHM are theo
 |-------|-----------|------------|:------:|
 | **A1** | Reality = $\infty$-topos $\mathbf{Sh}_\infty(\mathcal{C})$ | T-76 [T] (Bures + Lurie → ∞-topos verified at site level) + T-186 (a) [H] (cohesive closure, which would single out the ∞-topos as the structure admitting the differentially cohesive modalities) | [H] |
 | **A2** | $J_{\mathrm{Bures}}$ Grothendieck topology | T-187 [T] (triple characterization: Char-I Petz extremality + Char-II Uhlmann + Char-III SLD-CR) + **T-189 [T] (Char-IV MaxEnt covariance)**: the physical covariance of quantum fluctuations uniquely selects the Bures metric without information-geometric choice | [T] |
-| **A3** | $N = 7$ | Theorem S [T] (functional minimality 7/7) + T15 [T] (bridge (AP)+(PH)+(QG)+(V) → P1+P2 → Hurwitz → $\mathbb{O}$ → $N = 7$) | [T] |
+| **A3** | $N = 7$ | Theorem S [T] (functional minimality 7/7); T15 [C at (Alt)] (bridge (AP)+(PH)+(QG)+(V) → P1+P2 → Hurwitz → $\mathbb{O}$ → $N = 7$; cited as [T] until 2026-09-25) supports the value but is not needed | [T] (by Theorem S) |
 | **A4** | $\omega_0 > 0$ | Trivial: $\omega_0 = 0$ implies no dynamics ($H_{\mathrm{eff}} = 0$), which violates (AP) (no autopoiesis without evolution). Therefore $\omega_0 > 0$ is a **necessary condition** for (AP), not an independent axiom | [T] |
 | **A5** | Page–Wootters $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$ | T-87: the clock register and the tensor factor are constructed from A1–A4 via the spectral triple (steps 1–3, [T]); the constraint $\hat{C}\Gamma = 0$ is assumed (step 4, [C]) | [C] |
 
@@ -457,7 +457,7 @@ $$
 
 **Conclusion (conditional).** Under the two conditions of the theorem, the formal structure of UHM is determined by the four characterizing properties of a viable holon — (AP) autopoiesis, (PH) phenomenology, (QG) quantum grounding, (V) viability — together with the maximum entropy principle and the Page–Wootters constraint. An earlier conclusion — that UHM is **self-grounding**, that no external mathematical structure is imported, and that "everything else follows" from the definition of a holon — is retracted: the constraint is imported as an assumption, and the cohesive route to A1 is a hypothesis. $\blacksquare$
 
-**Dependencies:** T-15 [T], T-53 [T], T-76 [T], T-87 [C], T-186 [H], T-187 [T], T-189 [T], Theorem S [T].
+**Dependencies:** T15 [C at (Alt)] (bridge; A3 itself rests on Theorem S), T-53 [T], T-76 [T], T-87 [C], T-186 [H], T-187 [T], T-189 [T], Theorem S [T].
 
 ### 5.3.1 Petz-robustness classification of UHM results {#petz-робастность}
 

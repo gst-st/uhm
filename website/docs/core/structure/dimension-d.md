@@ -184,7 +184,7 @@ $$
 - $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate [T], $\kappa_0$ — [categorical derivation](../foundations/axiom-septicity#структурный-анзац-kappa0)
 - $(\rho_* - \Gamma)$ — unique CPTP relaxation [T], $\rho_* = \varphi(\Gamma)$ — categorical self-model ([φ operator](/docs/core/operators/phi-operator))
 - $g_V(P)$ — V-preservation gate [T] (Landauer + V-invariance, [derivation](../dynamics/evolution#теорема-v-preservation-gate))
-- The nonlinearity of $\mathcal{R}$ in $\Gamma$ **does not violate** the no-signalling constraint — see [proof](../dynamics/evolution#запрет-сигнализации)
+- The nonlinearity of $\mathcal{R}$ in $\Gamma$ keeps the **marginal identity** $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ [T]; no-signalling of the full dynamics holds only in the non-selective reading [C] — with the Lüders update at a distant partner the gate $g_V$ signals ([proof and the counterexample](../dynamics/evolution#запрет-сигнализации); [physics correspondence §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). An earlier line said the nonlinearity "does not violate" the no-signalling constraint; retracted.
 
 :::info Regeneration: why life is not merely complex physics
 The regenerative part $\mathcal{R}$ is the fundamental distinction of living systems from non-living ones. A stone is subject only to unitary and dissipative dynamics: wind and rain gradually erode it. A living tree **actively resists** destruction: it draws energy from sunlight, nutrients from the soil, and uses them to restore its structure. In the mathematics of UHM this is expressed in the fact that $\mathcal{R}$ can **increase** purity $P$, compensating the losses from $\mathcal{D}$.

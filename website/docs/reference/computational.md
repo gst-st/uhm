@@ -1077,13 +1077,13 @@ version = "1.0.0"
 
 ## Computational Bound: $\mathcal{R}$ and BQP {#вычислительное-ограничение}
 
-:::info Connection with theory
-Nonlinear quantum mechanics (Polchinski, 1991) potentially allows NP-complete problems to be solved in polynomial time. This section shows that the nonlinearity $\mathcal{R}$ in UHM **does not provide** such acceleration.
+:::warning Retracted (2026-09-25): the computational-power bound
+Deterministic nonlinear quantum evolution can solve NP-complete and #P problems in polynomial time by amplifying exponentially small differences between states (D. S. Abrams and S. Lloyd, *Phys. Rev. Lett.* **81**, 3992 (1998)). This section stated as a theorem that the nonlinearity $\mathcal{R}$ in UHM **does not provide** such acceleration. None of the four arguments below bounds what a nonlinear evolution can compute — a threshold, a metabolic rate, the data-processing inequality and decoherence restrict when and how often $\mathcal{R}$ acts, not what it can amplify — and the bistability of $I/7$ against $\rho^*$ is itself an amplifier of small differences. The claim is retracted; whether $\mathcal{R}$ permits a speed-up beyond BQP is an open question [H] ([physics correspondence §8.6](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение)). The former theorem and its arguments are kept below as a record.
 :::
 
-**Theorem (Computational power bound).** The nonlinear regenerative term $\mathcal{R}$ does not provide computational acceleration beyond standard quantum complexity BQP.
+**Former theorem (Computational power bound), retracted.** The nonlinear regenerative term $\mathcal{R}$ does not provide computational acceleration beyond standard quantum complexity BQP.
 
-**Proof (four independent arguments):**
+**Former proof (four arguments):**
 
 **1. Threshold bound.**
 $\mathcal{R}$ is activated only for systems with $R \geq R_{\text{th}} = 1/3$, $\Phi \geq \Phi_{\text{th}} = 1$ ([level L2+](/docs/proofs/consciousness/interiority-hierarchy)). Standard quantum computations operate with qubits ($N = 2$), for which $R \approx 0$ → $\mathcal{R} = 0$, and the dynamics is fully unitary (standard QM).
@@ -1101,12 +1101,12 @@ I(\Gamma_A : \Gamma_B) \geq I(\varphi(\Gamma_A) : \Gamma_B)
 $$
 
 **4. Scale separation.**
-Polchinski's argument requires nonlinearity at the level of individual qubits. In UHM nonlinearity acts at the level of macroscopic autonomous systems (L2+). Decoherence exponentially suppresses quantum differences ($\varepsilon \sim 2^{-n}$), and $\mathcal{R}$ cannot amplify them — it only maintains macroscopic coherence above $P_{\text{crit}} = 2/7$. $\blacksquare$
+Polchinski's argument requires nonlinearity at the level of individual qubits. In UHM nonlinearity acts at the level of macroscopic autonomous systems (L2+). Decoherence exponentially suppresses quantum differences ($\varepsilon \sim 2^{-n}$), and $\mathcal{R}$ cannot amplify them — it only maintains macroscopic coherence above $P_{\text{crit}} = 2/7$. (Retracted with the theorem: "cannot amplify" is asserted, not shown.)
 
 **See also:** [Full proof with formal estimates](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение).
 
-:::note $G_2$-covariance [T]
-Algorithms operating in 7D space can take advantage of [octonionic structure](/docs/proofs/minimality/theorem-octonionic-derivation): $G_2$-covariance potentially reduces the parameter space from $SO(7)$ (21 parameters) to $G_2$ (14 parameters). Bridge [T] (closed, T15).
+:::note Octonionic structure and the frame group
+Algorithms operating in 7D space can use the [octonionic structure](/docs/proofs/minimality/theorem-octonionic-derivation) (bridge T15, [C at (Alt)]). The former note promised a reduction of the parameter space from $SO(7)$ (21 parameters) to $G_2$ (14 parameters) by $G_2$-covariance and called the bridge "[T] (closed)"; retracted 2026-09-25 — the dynamics is covariant only under the finite frame group $\Gamma_{\!\text{oct}}$ ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)), and the bridge needs the orientation input (Alt).
 :::
 
 ---

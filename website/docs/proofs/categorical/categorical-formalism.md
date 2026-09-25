@@ -1107,14 +1107,14 @@ CPTP channels are generally irreversible. Therefore:
 
 *This is not a bug but a feature:* Irreversibility corresponds to the arrow of time in experience.
 
-:::info Faithfulness of F on $G_2$-orbits [T]
-Despite the irreversibility of individual CPTP channels, the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#верность-функтора) [T] establishes **faithfulness of the functor on objects** (up to the gauge group):
+:::info Faithfulness of F on frame orbits [T]
+Despite the irreversibility of individual CPTP channels, the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#верность-функтора) [T] establishes **faithfulness of the functor on objects** up to the finite frame group:
 
 $$
-F(\Gamma_1) \cong F(\Gamma_2) \quad \Longleftrightarrow \quad \Gamma_2 = U\Gamma_1 U^\dagger \text{ for some } U \in G_2
+F(\Gamma_1) \cong F(\Gamma_2) \quad \Longrightarrow \quad \Gamma_2 = U\Gamma_1 U^\dagger \text{ for some } U \in \Gamma_{\!\text{oct}} \subset G_2
 $$
 
-**Kernel:** $\ker(F) = \{\mathrm{Ad}_U : U \in G_2\}$. In other words, two states are phenomenologically identical if and only if their coherence matrices are related by a $G_2$-transformation. The functor $F$ is **injective on the space $\mathcal{D}(\mathbb{C}^7)/G_2$** (34-dimensional).
+**Kernel:** $\ker(F) \subseteq \{\mathrm{Ad}_U : U \in \Gamma_{\!\text{oct}},\ U e_E = \pm e_E\}$ — the $E$-axis stabiliser in $\Gamma_{\!\text{oct}}$, $192$ of its $1344$ elements. Experience reads the frame-pinned $E$-sector, so a generic $G_2$-rotation changes it, and so does every element of $\Gamma_{\!\text{oct}}$ that moves the $E$-axis ([uniqueness theorem, Corollary 3](/docs/proofs/categorical/uniqueness-theorem#верность-функтора)). *Corrected 2026-09-25:* the box stated "$\Longleftrightarrow$ … $U \in G_2$", "$\ker(F) = \{\mathrm{Ad}_U : U \in G_2\}$" and "$F$ is injective on the 34-dimensional $\mathcal{D}(\mathbb{C}^7)/G_2$"; retracted with the frame decision D-0910.
 :::
 
 ### 7.2 Alternative constructions

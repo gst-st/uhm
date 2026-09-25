@@ -29,8 +29,8 @@ UHM synthesizes these approaches: the metric is determined by quantum informatio
 
 In UHM, spacetime is not a fundamental structure but **emerges** from the coherence matrix $\Gamma$. The metric reflects the "logical distance" between configurations $\Gamma$ — the geometry of space is determined by the **structure of distinctions** imposed by the classifier $\Omega$.
 
-:::tip Status: fully derived [T]
-The spatial manifold $\Sigma^3$ is derived from the categorical structure (T-119 [C]), the product $M^4 = \mathbb{R} \times \Sigma^3$ is proved (T-120 [T]), and the Einstein equations are obtained from the spectral action (T-65 [T]). Details: [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold).
+:::tip Status: conditional [C]
+The spatial manifold $\Sigma^3$ is derived from the categorical structure (T-119 [C]), the product $M^4 = \mathbb{R} \times \Sigma^3$ is assembled at an aperiodic clock and the open reconstruction axioms of T-119 (T-120 [C]), and the Einstein equations are obtained from the spectral action (T-65 [T]). An earlier version of this box read "fully derived [T]" and "the product is proved (T-120 [T])"; retracted with the status of T-120. Details: [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold).
 :::
 
 ---
@@ -170,23 +170,23 @@ where $D_{\text{Gap}}$ is the Dirac operator whose elements are determined by th
 
 ## 4. Emergent Dimensionality
 
-### 4.1 Derivation of 3+1 Dimensions [T]
+### 4.1 Derivation of 3+1 Dimensions [C]
 
-:::tip [T] Dimensionality from Gelfand–Connes reconstruction (T-119)
-The dimension of macroscopic space is **derived**: commutativity of the macro-algebra (T-117 [T]) + spectral dimension of the $\{A,S,D\}$-sector = 3 + Connes reconstruction (2008) $\Rightarrow$ $\Sigma^3$ is a smooth 3-manifold. Details: [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство).
+:::tip [C] Dimensionality from Gelfand–Connes reconstruction (T-119)
+The dimension of macroscopic space is derived under named conditions: commutativity of the macro-algebra (T-117 [T]) + the rank count of T-119, Step 2c′ ($\operatorname{rank}\mathfrak u(3) = 3$, with the colour triplet read as space — [I]) + Connes reconstruction (2008), whose Poincaré duality and first-order condition are open $\Rightarrow$ $\Sigma^3$ is a smooth 3-manifold under these conditions. (An earlier version derived the 3 from "the spectral dimension of the $\{A,S,D\}$-sector" and headed this section [T]; retracted — the Weyl-law step and the axis labels are retracted in T-119.) Details: [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство).
 :::
 
-:::tip Status of the 3+1 dimension derivation: [T] (T-119, T-120)
-The decomposition $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1 \oplus \mathbb{R}^3 \oplus \mathbb{R}^3$ follows from $\mathrm{SU}(3) \subset G_2$ — the stabilizer of the O-direction. The choice of embedding is **unique** — fixed by the PW mechanism (A5): O determines the temporal direction [T] (T-87). Compactification of the $\bar{\mathbf{3}}$-sector is ensured by the massiveness of $W,Z$ [T]. The product $M^4 = \mathbb{R} \times \Sigma^3$ is **derived** from the categorical structure ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)).
+:::tip Status of the 3+1 dimension derivation: [C] (T-119, T-120); the real split is retracted [✗]
+Former text: "The decomposition $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1 \oplus \mathbb{R}^3 \oplus \mathbb{R}^3$ follows from $\mathrm{SU}(3) \subset G_2$ — the stabilizer of the O-direction … Compactification of the $\bar{\mathbf{3}}$-sector is ensured by the massiveness of $W,Z$ [T]." Retracted (2026-09-25): $\mathrm{SU}(3)$ acts irreducibly on $\mathbb{R}^6$, so the only invariant real splitting is $\mathbb{R} \oplus \mathbb{R}^6$; the triplet appears only after complexification, $\mathbb{C}^7 = \mathbb{C}e_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ ([spacetime, sectoral decomposition](/docs/core/foundations/spacetime#секторная-декомпозиция)), and the compactification falls with the split. What stands: the choice of the $O$-direction is fixed by the PW mechanism (A5) — O determines the temporal direction [T] (T-87, steps 1–3); the product $M^4 = \mathbb{R} \times \Sigma^3$ is assembled from the categorical structure at an aperiodic clock and the open reconstruction axioms of T-119 ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек), [C]).
 :::
 
 ### 4.2 Resolved Questions
 
 | Question | Answer | Theorem |
 |--------|-------|---------|
-| Why $\dim_{\mathrm{eff}} = 3$ for space? | From the $\{A,S,D\}$-sector: $\dim(\mathbf{3}) = 3$ | T-119 [C] |
-| How does Lorentzian signature $(+,-,-,-)$ arise? | $(1,3)$-split [T] (PW time + $S^3$); Lorentzian sign from reflection positivity (bounded-below PW generator) | T-53 [T]+[T at refl. positivity] |
-| How is 3+1 connected to the 7 dimensions of the holon? | Sector decomposition + Gelfand–Connes reconstruction | T-120 [T] |
+| Why $\dim_{\mathrm{eff}} = 3$ for space? | The rank count $\operatorname{rank}\mathfrak u(3) = 3$ of T-119 (the colour triplet read as space, [I]); the former "$\dim(\mathbf{3}) = 3$ of the $\{A,S,D\}$-sector" is retracted | T-119 [C] |
+| How does Lorentzian signature $(+,-,-,-)$ arise? | One time direction [T] (PW clock), three spatial ones at T-119 ($S^3$); the sign at reflection positivity (bounded-below PW generator) | T-53 [C] (registry: signature $(1,3)$ [C]) |
+| How is 3+1 connected to the 7 dimensions of the holon? | Rank count $1 + 3$ + Gelfand–Connes reconstruction; the axis-labelled sector decomposition is retracted | T-120 [C] |
 
 ### 4.3 Sector Decomposition
 
@@ -222,11 +222,11 @@ The first term is the **Einstein–Hilbert action** with cosmological constant. 
 
 | Result | Status | Theorem |
 |-----------|--------|---------|
-| Manifold $M^4 = \mathbb{R} \times \Sigma^3$ derived | **[T]** | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
+| Manifold $M^4 = \mathbb{R} \times \Sigma^3$ assembled | **[C]** (aperiodic clock; open reconstruction axioms of T-119) | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
 | Einstein equations from spectral action | **[T]** | [T-65](/docs/physics/gravity/einstein-equations) |
 | Cosmological constant $\Lambda_{\text{CC}} > 0$ | **[T]** | [T-71](/docs/core/foundations/consequences#теорема-лямбда-положительна) |
-| Lovelock gaps closed | **[T]** | [T-121](/docs/proofs/physics/emergent-manifold#теорема-лавлок-замыкание) |
-| Vacuum topology $\Sigma^3 \cong S^3$ | **[T]** | [T-120b](/docs/proofs/physics/emergent-manifold#следствие-вакуумная-топология) |
+| Lovelock gaps closed | **[C at T-120]** | [T-121](/docs/proofs/physics/emergent-manifold#теорема-лавлок-замыкание) |
+| Vacuum topology $\Sigma^3 \cong S^3$ | **[C]** (inherits T-119) | [T-120b](/docs/proofs/physics/emergent-manifold#следствие-вакуумная-топология) |
 
 ### 5.3 Lovelock Gaps and Their Closure
 
@@ -234,8 +234,8 @@ The Lovelock theorem (1971) states: the unique second-order tensor constructed f
 
 | Gap | Question | UHM answer | Theorem |
 |--------|--------|-----------|---------|
-| 1 | Why $d = 4$? | Sector decomposition $7 = 1 + 3 + 3$ | T-120 [T] |
-| 2 | Why Lorentzian signature? | $(1,3)$-split [T]; Lorentzian sign [T at reflection positivity] (bounded-below PW generator; KO-dim 6 alone does not fix it) | T-53 [T]+[T at r.p.] |
+| 1 | Why $d = 4$? | Rank count $1 + 3$ of T-119 (the colour triplet read as space, [I]); the former "sector decomposition $7 = 1 + 3 + 3$" is retracted with the axis-labelled split | T-120 [C] |
+| 2 | Why Lorentzian signature? | $(1,3)$ [C]: one time direction [T], three spatial ones at T-119; the sign at reflection positivity (bounded-below PW generator; KO-dimension does not fix it, and KO-dimension 6 on $\mathbb{C}^7$ is retracted) | T-53 [C] |
 | 3 | Why $\Lambda > 0$? | Autopoiesis requires $\rho_{\text{vac}} > 0$ | T-71 [T] |
 
 ---

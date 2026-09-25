@@ -26,9 +26,9 @@ Direct consequence of three proven theorems:
 
 2. **T-40f [T]** (Full minimality 7/7): Each of the 7 dimensions [A, S, D, L, E, O, U] is **functionally necessary** — removing any one leads to loss of viability or violation of an axiom.
 
-3. **T-15 [T]** (Bridge closure): $(AP) + (PH) + (QG) + (V) \Longrightarrow P1 + P2$ — the autopoietic and physical premises entail the octonionic structure $\mathbb{O}$ and $G_2$-symmetry.
+3. **T-15, [C at (Alt)]** (Bridge closure): $(AP) + (PH) + (QG) + (V) \Longrightarrow P1 + P2$ — the autopoietic and physical premises entail the octonionic structure $\mathbb{O}$ and $G_2$-symmetry, given the orientation of the Fano lines (registry row 41n; cited as [T] until 2026-09-25).
 
-From T-42a: the representation is unique up to $G_2$. From T-40f: projections onto 7 dimensions form the unique functionally complete basis. From T-15: the $G_2$ structure is derived from the axioms, not postulated. $\blacksquare$
+From T-42a: the representation is unique up to $G_2$. From T-40f: projections onto 7 dimensions form the unique functionally complete basis. From T-15: the $G_2$ structure is derived from the axioms at the orientation assumption (Alt), not postulated; T-123 is accordingly [T] given the octonionic structure and [C at (Alt)] as a consequence of the axioms (registry row T-123). $\blacksquare$
 
 ### Consequence for digital agents
 
@@ -496,7 +496,7 @@ At $P = 3/7$ (upper boundary, $R = R_{\mathrm{th}} = 1/3$): $|R' - R| \leq \frac
 
 ### Consequence: transition sharpness
 
-The consciousness transition is **continuous** (no first-order discontinuity) but **sharp** (critical exponents from T-161 [T]):
+The consciousness transition is **continuous** (no first-order discontinuity) but **sharp** — under the $\mathbb Z_2$ symmetry of T-161, whose exponents are [C] since 2026-09-25 (their derivation of that symmetry from a KO-dimension-6 real structure is retracted):
 
 $$\mathrm{Observable} \sim (P - P_{\mathrm{crit}})^\beta, \quad \beta = 1/4$$
 
@@ -512,9 +512,9 @@ Theorem T-145 [T] gives the probability of staying within the viable set under s
 
 $$\mathbb{P}[\Gamma(\tau) \in V_{\mathrm{full}} \;\forall\tau > \tau^*] \geq 1 - \exp\left(-\frac{r_{\mathrm{stab}}^2}{2\sigma_h^2}\right)$$
 
-where $r_{\mathrm{stab}} = \sqrt{P(\rho^*) - 2/7}$ (T-104 [T]). For a typical embodied holon with $P^* \approx 3/7$: $r_{\mathrm{stab}} = \sqrt{1/7} \approx 0.378$. For noise $\sigma_h = 0.01$: $\mathbb{P}[\text{viability}] \geq 1 - e^{-714} \approx 1$. The system is **overwhelmingly robust**. $\blacksquare$
+where $r_{\mathrm{stab}}$ is the Bures distance to $\{P = 2/7\}$ (T-104). For a typical embodied holon with $P^* \approx 3/7$ the closed form of T-104 on the one-dominant family gives $r_{\mathrm{stab}} \approx 0.147$. For noise $\sigma_h = 0.01$: $\mathbb{P}[\text{viability}] \geq 1 - e^{-107} \approx 1$. (An earlier version used $r_{\mathrm{stab}} = \sqrt{P(\rho^*) - 2/7} = \sqrt{1/7} \approx 0.378$ and $e^{-714}$; that surd is refuted in registry row T-104.) The system is **overwhelmingly robust**. $\blacksquare$
 
-**Dependencies:** T-104 [T], T-145 [T], T-161 [T], T-124b [T].
+**Dependencies:** T-104, T-145 [T], T-124b [T]. The sharpness consequence uses T-161, [C] at its $\mathbb Z_2$ symmetry; the perturbation bounds 1–3 do not.
 
 ---
 

@@ -1270,7 +1270,7 @@ $$\hat{\sigma}_k = w_k^\top h + b_k, \quad \text{где } h \text{ — скры�
 - [Измерение O (Основание)](../structure/dimension-o) — роль внутренних часов
 - [Пространство-время](./spacetime) — эмерджентная геометрия
 - [Категорный формализм](../../proofs/categorical/categorical-formalism) — ∞-группоид и ∞-топос
-- [Категорный формализм — самореферентное замыкание](../../proofs/categorical/categorical-formalism#самореферентное-замыкание) — Th_UHM, лемма Ёнеды, архитектура самореференции
+- [Категорный формализм — самореферентное замыкание](../../proofs/categorical/categorical-formalism#самореферентное-замыкание) — Th_UHM, лемма Йонеды, архитектура самореференции
 - [Иерархия интериорности](../../proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
 - [Соответствие с физикой](../../proofs/physics/physics-correspondence) — связь с КМ, ОТО и Стандартной моделью
 - [Космологическая постоянная](../../physics/gravity/cosmological-constant) — бюджет Λ, спектральная формула, $\Lambda > 0$ [Т]

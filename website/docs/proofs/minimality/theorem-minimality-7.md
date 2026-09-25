@@ -447,13 +447,15 @@ Articulation is the primary act of reality: "Draw a distinction" (Spencer-Brown)
 
 **Therefore:** $\dim(\mathcal{H}) \geq 7$
 
-#### Theorem (Strict necessity of N = 7) **[T]** {#теорема-строгая-необходимость-7}
+#### Theorem (Strict necessity of N = 7) **[C at (Alt)]** {#теорема-строгая-необходимость-7}
+
+*Status corrected 2026-09-25 (it read [T]).* Steps 1–2 apply Hurwitz's theorem to the state space through P1 — "the space of internal degrees of freedom is $\mathrm{Im}(\mathcal{A})$ for a normed division algebra $\mathcal{A}$" — and P1 follows from the axioms only at the orientation assumption (Alt) of the bridge T15 (registry row 41n). Without P1, Step 3 and Theorem S show that each of the seven listed functions is needed ($N \geq 7$, [T]), not that no other six-function decomposition exists.
 
 **Statement.** There is no alternative set of 6 functions covering the requirements (AP)+(PH)+(QG). The minimal dimensionality $N = 7$ is strictly necessary.
 
 **Proof (3 steps).**
 
-**Step 1 (Octonionic track [T]).** By [T-15 [T]](/docs/proofs/minimality/theorem-octonionic-derivation#мост):
+**Step 1 (Octonionic track [C at (Alt)]).** By [T-15](/docs/proofs/minimality/theorem-octonionic-derivation#мост), [C at (Alt)]:
 - (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1 (normed division algebra) + P2 (non-associativity)
 - By the Hurwitz theorem: $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$
 - P2 excludes $\mathbb{R}$ ($\dim = 1$), $\mathbb{C}$ ($\dim = 2$), $\mathbb{H}$ ($\dim = 4$) — all associative
@@ -958,16 +960,16 @@ Regeneration **does not depend on the phenomenological state**, which violates (
 
 7. **Orthogonality of E and O:** E and O cannot be merged — the causal argument (External ≠ Internal) is reinforced by the categorical argument from κ₀: for $O=E$ regeneration loses phenomenological feedback. [Proof →](#ортогональность-eo)
 
-8. **Strict necessity of N = 7:** The impossibility of an alternative 6D set is proven via the Hurwitz theorem ($\dim(\mathrm{Im}(\mathcal{A})) \in \{0,1,3,7\}$) + functional uniqueness 40f [T]. [Proof →](#теорема-строгая-необходимость-7)
+8. **Strict necessity of N = 7:** The impossibility of an alternative 6D set follows via the Hurwitz theorem ($\dim(\mathrm{Im}(\mathcal{A})) \in \{0,1,3,7\}$) + functional uniqueness 40f [T] — at (Alt), since Hurwitz reaches the state space only through P1. [Proof →](#теорема-строгая-необходимость-7)
 
 ### 8.2 What Remains Conditional
 
 1. **Functional uniqueness of E:** **[T]** — [proven](#единственность-e)
 2. **Functional uniqueness of O:** **[T]** — [proven](#единственность-o)
 3. **Orthogonality of E and O:** **[T]** — [proven](#ортогональность-eo)
-4. **Strict necessity of N = 7 (S1):** **[T]** — [proven](#теорема-строгая-необходимость-7) (Hurwitz theorem + 40f [T])
+4. **Strict necessity of N = 7 (S1):** **[C at (Alt)]** — [proven given P1](#теорема-строгая-необходимость-7) (Hurwitz theorem + 40f [T]; P1 at the orientation assumption (Alt))
 
-All four gaps are closed. There are **no remaining** conditional results in the minimality theorem.
+Three of the four gaps are closed; the fourth, S1, is conditional at (Alt). (An earlier version read "All four gaps are closed. There are no remaining conditional results in the minimality theorem"; corrected 2026-09-25 with the status of the bridge T15.)
 
 ### 8.3 What Remains Open
 
@@ -1031,7 +1033,7 @@ Closure of the bridge (AP)+(PH)+(QG) ↔ P1+P2 — **[C at (Alt)]**: the chain T
 The complete formal chain of 12 steps (T15) establishes:
 
 $$
-(AP)+(PH)+(QG)+(V) \xrightarrow{[\text{Т}]} N = 7 \xrightarrow{[\text{Т}]} \text{connectivity} \xrightarrow{[\text{Т}]} \lambda_{ij} \geq 1 \xrightarrow{[\text{Т}]} S_7\text{-uniformity} \xrightarrow{[\text{Т}]} k = 3 \xrightarrow{[\text{Т}]} \lambda = 1 \xrightarrow{[\text{Т}]} \text{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} P1+P2
+(AP)+(PH)+(QG)+(V) \xrightarrow{[\text{T}]} N = 7 \xrightarrow{[\text{T}]} \text{connectivity} \xrightarrow{[\text{T}]} \lambda_{ij} \geq 1 \xrightarrow{[\text{T}]} S_7\text{-uniformity} \xrightarrow{[\text{T}]} k = 3 \xrightarrow{[\text{T}]} \lambda = 1 \xrightarrow{[\text{T}]} \text{PG}(2,2) \xrightarrow{\text{(Alt)}} \mathbb{O} \xrightarrow{[\text{T}]} P1+P2
 $$
 
 **Current status:** [C at (Alt)] — all steps up to $\lambda = 1$ and PG(2,2) are theorems; the arrow PG(2,2) → $\mathbb{O}$ in the display above needs the orientation input (Alt). Condition (МП) — the principle of minimal representation ($\lambda = 1$) — is proven via T11–T13. (The former "[T] — all steps in the chain are theorems" is retracted [✗].)

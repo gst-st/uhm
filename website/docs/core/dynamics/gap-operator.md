@@ -98,36 +98,38 @@ $\binom{7}{2} = 21$ pairs of dimensions define 21 coherences $\gamma_{ij}$, each
 
 | Pair $(i,j)$ | Fano line | Sector | Physical meaning |
 |:---:|:---:|:---:|:---|
-| $(A,S)$ | $\{A,S,D\}$ | $\mathbf{3}$-$\mathbf{3}$ | Articulation structure |
-| $(A,D)$ | $\{A,S,D\}$ | $\mathbf{3}$-$\mathbf{3}$ | Dynamic articulation |
-| $(S,D)$ | $\{A,S,D\}$ | $\mathbf{3}$-$\mathbf{3}$ | Structural dynamics |
-| $(L,E)$ | $\{L,E,U\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | Logic of interiority |
-| $(L,U)$ | $\{L,E,U\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | Logical unity |
-| $(E,U)$ | $\{L,E,U\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | **Higgs channel** |
-| $(A,L)$ | $\{A,L,O\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Articulation of logic |
-| $(A,O)$ | $\{A,L,O\}$ | $O$-link | Observation of articulation |
-| $(L,O)$ | $\{A,L,O\}$ | $O$-link | Logical foundation |
-| $(S,E)$ | $\{S,E,O\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Structure of interiority |
-| $(S,O)$ | $\{S,E,O\}$ | $O$-link | Structural foundation |
-| $(E,O)$ | $\{S,E,O\}$ | $O$-link | **Regenerative channel** ($\kappa_0$) |
-| $(D,U)$ | $\{D,U,O\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Dynamics of unity |
-| $(D,O)$ | $\{D,U,O\}$ | $O$-link | Dynamic foundation |
-| $(U,O)$ | $\{D,U,O\}$ | $O$-link | **Clock channel** ($\kappa_0$) |
-| $(A,E)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Articulation of experience |
-| $(A,U)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Articulation of unity |
-| $(S,L)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Structural logic |
-| $(S,U)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Structural unity |
-| $(D,E)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Dynamics of interiority |
-| $(D,L)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Dynamic logic |
+| $(A,S)$ | $\{A,S,L\}$ | $\mathbf{3}$-$\mathbf{3}$ | Articulation structure |
+| $(A,D)$ | $\{O,A,D\}$ | $\mathbf{3}$-$\mathbf{3}$ | Dynamic articulation |
+| $(S,D)$ | $\{S,D,E\}$ | $\mathbf{3}$-$\mathbf{3}$ | Structural dynamics |
+| $(L,E)$ | $\{L,E,O\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | Logic of interiority |
+| $(L,U)$ | $\{D,L,U\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | Logical unity |
+| $(E,U)$ | $\{E,U,A\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | **Higgs channel** |
+| $(A,L)$ | $\{A,S,L\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Articulation of logic |
+| $(A,O)$ | $\{O,A,D\}$ | $O$-link | Observation of articulation |
+| $(L,O)$ | $\{L,E,O\}$ | $O$-link | Logical foundation |
+| $(S,E)$ | $\{S,D,E\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Structure of interiority |
+| $(S,O)$ | $\{U,O,S\}$ | $O$-link | Structural foundation |
+| $(E,O)$ | $\{L,E,O\}$ | $O$-link | **Regenerative channel** ($\kappa_0$) |
+| $(D,U)$ | $\{D,L,U\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Dynamics of unity |
+| $(D,O)$ | $\{O,A,D\}$ | $O$-link | Dynamic foundation |
+| $(U,O)$ | $\{U,O,S\}$ | $O$-link | **Clock channel** ($\kappa_0$) |
+| $(A,E)$ | $\{E,U,A\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Articulation of experience |
+| $(A,U)$ | $\{E,U,A\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Articulation of unity |
+| $(S,L)$ | $\{A,S,L\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Structural logic |
+| $(S,U)$ | $\{U,O,S\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Structural unity |
+| $(D,E)$ | $\{S,D,E\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Dynamics of interiority |
+| $(D,L)$ | $\{D,L,U\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Dynamic logic |
 
-:::info Sector membership
-The 21 pairs split into sectors according to the decomposition $7 = 1_O \oplus \mathbf{3}_{A,S,D} \oplus \bar{\mathbf{3}}_{L,E,U}$:
+:::info Sector membership — axis-triple labels; the $SU(3)$ reading is retracted [✗]
+*Corrected 2026-09-25.* The "Sector" column and the list below label pairs by the axis triples $\{A,S,D\}$ and $\{L,E,U\}$ of the decomposition $7 = 1_O \oplus \mathbf{3}_{A,S,D} \oplus \bar{\mathbf{3}}_{L,E,U}$, which is retracted (registry row 48a): no three of the six non-$O$ axes span an $\mathrm{SU}(3)$-invariant subspace, so "$\mathbf{3}$" and "$\bar{\mathbf{3}}$" here are bookkeeping names of axis triples, not colour sectors, and "confinement" and "electroweak" are not their properties. The $\varepsilon$ values are the vacuum pattern of the sector hierarchy, [C at T-64] (T-216). The "Fano line" column now lists the canonical lines of [$G_2$-structure, §1.2](/docs/physics/gauge-symmetry/g2-structure#12-таблица-фано-линий); it used to list $\{A,S,D\}$ and $\{L,E,U\}$, which are not lines, and to leave six pairs unassigned.
+
+Former split:
 - **$\mathbf{3}$-$\mathbf{3}$**: 3 pairs (within the confinement sector), $\varepsilon_{33} \sim 0.06$
 - **$\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$**: 3 pairs (within the electroweak sector), $\varepsilon_{\bar{3}\bar{3}} \sim 10^{-17}$
 - **$\mathbf{3}$-$\bar{\mathbf{3}}$**: 9 pairs (confinement↔electroweak), $\varepsilon_{3\bar{3}} \approx 0$
 - **$O$-links**: 6 pairs ($O$ with the rest), $\varepsilon_O \sim 1$
 
-The assignment of pairs marked "—" to Fano lines depends on the choice of $G_2$ gauge ([T-42a](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [T]). The first 15 pairs are uniquely determined by the base lines; the last 6 form the remaining Fano lines out of 7.
+Every pair lies on exactly one of the seven lines of PG(2,2): three pairs per line, $7 \times 3 = 21$. (An earlier sentence said that the assignment of six pairs to lines "depends on the choice of $G_2$ gauge"; retracted — the lines are fixed by the multiplication table, and $G_2$ does not permute them.)
 :::
 
 ---

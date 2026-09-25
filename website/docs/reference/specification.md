@@ -397,7 +397,7 @@ $$
 | Transition | Measure | Threshold | Status | Derivation |
 |------------|---------|-----------|--------|------------|
 | L0→L1 | $\Phi$ | $> 0$ | | Structural condition (any integration) |
-| L1→L2 | $R, \Phi, D_{\text{diff}}$ | $1/3, 1, 2$ | **[T],[T],[T]** | $R$: triadic decomposition + Bayesian; $\Phi$: T-129; $D_{\min}$: T-151 |
+| L1→L2 | $R, \Phi, D_{\text{diff}}$ | $1/3, 1, 2$ | **[T],[T],[D]** | $R$: triadic decomposition + Bayesian; $\Phi$: T-129; $D_{\min}$: T-151, an independent threshold (it read [T] until 2026-09-25) |
 | L2→L3 | $R^{(2)}$ | $1/4$ | **[T]** | $1/(3+1)$ |
 | L3→L4 | $\lim R^{(n)}$ | $> 0$ | **[T]** | Postnikov stabilisation |
 
@@ -405,7 +405,7 @@ $$
 - **$P_{\text{crit}} = 2/7$** **[T]** — [strictly proved](/docs/proofs/dynamics/theorem-purity-critical) (five independent paths)
 - **$R_{\text{th}} = 1/3$** **[T]** — $K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + [Bayesian dominance](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии)
 - **$\Phi_{\text{th}} = 1$** **[T]** — unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129))
-- **$D_{\text{diff}} \geq 2$** **[T]** — unconditional consequence of $\Phi_{\text{th}} = 1$ [T] ([T-151](/docs/proofs/consciousness/substrate-closure#t-151))
+- **$D_{\text{diff}} \geq 2$** **[D]** — an independent L2 threshold, not a consequence of $\Phi_{\text{th}} = 1$ ([T-151](/docs/proofs/consciousness/substrate-closure#t-151); it read "[T] — unconditional consequence of $\Phi_{\text{th}} = 1$" until 2026-09-25)
 :::
 
 ### Integration Measure
@@ -485,5 +485,5 @@ $$
 - [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
 - [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, ∞-groupoid $\mathbf{Exp}_\infty$
 - [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4 and n-truncations of the ∞-groupoid
-- [Bimodular construction](/docs/proofs/physics/bimodule-construction) — SM representations from bimodules of the spectral triple (T-178–T-181)
+- [Bimodular construction](/docs/proofs/physics/bimodule-construction) — SM representations from bimodules of Connes' imported finite space $H_F$; the derivation from the UHM spectral triple (T-178) is retracted [✗] (2026-09-25) — $H_{\text{int}} = \mathbb{C}^7$ has 7 states, one generation needs 32, and no KO-dimension-6 real structure exists on $\mathbb{C}^7$; T-179 is retracted as stated (T-178–T-181)
 - [Computational implementation](./computational) — Python code

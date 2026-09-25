@@ -122,8 +122,8 @@ interpretive bridge confined to what "measurement" names **[I]**.
 
 Here the two programmes genuinely touch. Everett's original name was
 the *relative-state* formulation; Deutsch has always emphasised
-this. UHM's Axiom 5 — now a theorem
-([T-87: A5 derivable from A1–A4](/docs/core/foundations/axiom-omega#pw-constraint)) —
+this. UHM's Axiom 5 — its clock register constructed from A1–A4, its constraint assumed
+([T-87](/docs/core/foundations/axiom-omega#pw-constraint): steps 1–3 [T], the Page–Wootters link $\hat{C}\Gamma = 0$ [C]; an earlier line read "now a theorem — A5 derivable from A1–A4") —
 is precisely a relative-state construction: a global constrained
 state $\hat{C}\Gamma_{\text{total}} = 0$ whose **conditional states
 relative to the clock sector** are the experienced instants

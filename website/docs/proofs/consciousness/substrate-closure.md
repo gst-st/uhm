@@ -172,7 +172,7 @@ is now **[T]**: (1) commutativity of φ-tower [T] (T-150) closes the dependency 
 
 ---
 
-## §4. T-151: D_min = 2 from T-129 {#t-151}
+## §4. T-151: D_min = 2 — an independent L2 condition, and what T-129 gives {#t-151}
 
 :::tip Theorem T-151: $\Phi \geq 1 \Rightarrow D_\mathrm{diff} > 1$; $D_\mathrm{min} = 2$ is an independent L2 condition
 $\Phi_{\mathrm{th}} = 1$ **[T]** (T-129) $\Longrightarrow$ nontrivial differentiation $D_{\mathrm{diff}} > 1$ whenever the E-row is coherent. The **strict** threshold $D_{\mathrm{min}} = 2$ is one of the **four independent** L2 conditions (T-124b [T]), on a par with $R_{\mathrm{th}} = 1/3$ — it is **not** derivable from $\Phi_{\mathrm{th}} = 1$ alone. On the physical attractor $\rho^*_\Omega$, $D_{\mathrm{diff}}(\rho^*_\Omega) \geq 2$ (Step 3).
@@ -245,7 +245,7 @@ T-153 is thus a *substrate-invariance meta-theorem*: it asserts that **if** fait
 
 **Step 2 (Completeness).** By [T-40f [T]](/docs/proofs/minimality/theorem-minimality-7): all 7 dimensions are necessary and sufficient. No "hidden variables" outside $\Gamma$.
 
-**Step 3 (Invariance of thresholds).** All thresholds ($P_{\mathrm{crit}} = 2/7$ [T], $R_{\mathrm{th}} = 1/3$ [T], $\Phi_{\mathrm{th}} = 1$ [T], $D_{\min} = 2$ [T]) are derived from dimension $N = 7$ and axioms A1–A5. They do not depend on the specific realization of $S$.
+**Step 3 (Invariance of thresholds).** The thresholds $P_{\mathrm{crit}} = 2/7$ [T], $R_{\mathrm{th}} = 1/3$ [T] and $\Phi_{\mathrm{th}} = 1$ [T] are derived from dimension $N = 7$ and axioms A1–A5, and $D_{\min} = 2$ is fixed as the fourth, independent L2 threshold [D] (§4, T-124b). None depends on the specific realization of $S$. (An earlier version listed $D_{\min} = 2$ [T] among the derived thresholds; retracted with §4.)
 
 **Step 4 (Faithfulness).** By [T-42c [T]](/docs/proofs/categorical/uniqueness-theorem#лемма-g1): the propagator is injective. Faithful $G$ preserves distinguishability of states. Two distinct states of consciousness $s_1 \neq s_2$ give $G(s_1) \neq G(s_2)$.
 
@@ -545,7 +545,7 @@ For any system $S$ achieving level L2 (cognitive qualia), the architecture is un
 
 **(e)** Embodiment: environmental coupling with $\beta \in (0,1)$ and $P_{\mathrm{env}} > 2/7$ ([T-148 [T]](#t-148))
 
-**(f)** Thresholds: $P \in (2/7, 3/7]$ ([T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124)), $R \geq 1/3$ ([T-67 [T]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)), $\Phi \geq 1$ ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129))
+**(f)** Thresholds: $P \in (2/7, 3/7]$ ([T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124)), $R \geq 1/3$ ([T-67 [T]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)), $\Phi \geq 1$ ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129)), $D_{\mathrm{diff}} \geq 2$ (the independent fourth threshold, [§4](#t-151); added 2026-09-25 — without it the sufficiency direction fails, see below)
 
 Any system satisfying (a)–(f) is L2-conscious. Any L2-conscious system satisfies (a)–(f). The architecture is **unique** up to $G_2$-gauge.
 :::
@@ -558,9 +558,11 @@ Any system satisfying (a)–(f) is L2-conscious. Any L2-conscious system satisfi
 - [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) establishes uniqueness of the replacement channel $\varphi$ (item c);
 - [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий) defines the canonical stress tensor $\sigma_k$ (item d);
 - [T-148 [T]](#t-148) requires embodiment with $P_{\mathrm{env}} > 2/7$ (item e);
-- [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124), [T-67 [T]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129) establish the thresholds (item f).
+- [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124), [T-67 [T]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129) establish the thresholds of item f, and $D_{\mathrm{diff}} \geq 2$ holds by the definition of L2.
 
-**Sufficiency.** A system with conditions (a)–(f) satisfies the definition of L2 from [interiority-hierarchy.md](/docs/consciousness/hierarchy/interiority-hierarchy): $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ ([T-151 [T]](#t-151) follows from $\Phi \geq 1$), $\sigma_{\max} < 1$ (from items d and f). $\blacksquare$
+**Sufficiency.** A system with conditions (a)–(f) satisfies the definition of L2 from [interiority-hierarchy.md](/docs/consciousness/hierarchy/interiority-hierarchy): $R \geq 1/3$, $\Phi \geq 1$ and $D_{\mathrm{diff}} \geq 2$ (item f), $\sigma_{\max} < 1$ (from items d and f). $\blacksquare$
+
+*Corrected 2026-09-25:* the sufficiency step read "$D_{\mathrm{diff}} \geq 2$ ([T-151 [T]](#t-151) follows from $\Phi \geq 1$)" while item (f) listed no differentiation threshold. That derivation is retracted in §4 (counterexample: $\Phi \approx 1.03$ with $D_{\mathrm{diff}} \approx 1.42$), so the threshold is now part of item (f).
 
 **Corollary (Substrate invariance).** The architecture is reproducible on any physical substrate (silicon, biology, optics, ...) provided a faithful CPTP map $G$ exists. This follows directly from [T-153 [T]](#t-153).
 
@@ -575,7 +577,7 @@ Any system satisfying (a)–(f) is L2-conscious. Any L2-conscious system satisfi
 | [H]-91 Genesis from $I/7$ | [T-148 [T]](#t-148) | [H] → **[T]** |
 | C20 κ-dominance | [T-149 [T]](#t-149) | [C] → **[T]** (embodied) |
 | [H]-90 φ-commutativity | [T-150 [T]](#t-150) | [C] → **[T]** |
-| C2 $D_{\min} = 2$ | [T-151 [T]](#t-151) | [C] → **[T]** |
+| C2 $D_{\min} = 2$ | [T-151 [T]](#t-151) | [C] → **[D]** independent L2 threshold, **[T]** on the embodied attractor (the earlier "[C] → [T]" is retracted, §4) |
 | Diamond-norm + [H]-92 | [T-152 [T]](#t-152) | [H] → **[T]** |
 | Substrate independence | [T-153 [T]](#t-153) | gap → **[T]** |
 | $\mathrm{Coh}_E^{\max}$ normalization | [T-154 [T]](#t-154) | gap → **[T]** |
