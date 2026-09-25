@@ -337,7 +337,7 @@ $$
 
 This is "dephasing self-observation" — preserves the diagonal in the basis $\{P_i\}$.
 
-### 2.5 Contracting self-modeling operator
+### 2.5 Contracting self-modeling operator {#25-сжимающий-оператор-самомоделирования}
 
 **Definition 2.6 (Contracting operator):**
 
@@ -364,7 +364,9 @@ $$
 = k \cdot \|\mathcal{P}(\Gamma_1) - \mathcal{P}(\Gamma_2)\|_F \leq k \cdot \|\Gamma_1 - \Gamma_2\|_F
 $$
 
-(CPTP does not increase the Frobenius norm). ∎
+(for a unital $\mathcal{P}$, which does not increase the Frobenius norm). ∎
+
+**Scope (corrected 2026-09-25).** The lemma needs three things: $k$ constant, the anchor constant, and $\mathcal{P}$ unital — or the trace norm in place of the Frobenius norm, which every CPTP map contracts. The parenthetical "CPTP does not increase the Frobenius norm" is false for non-unital channels: $X \mapsto \mathrm{Tr}_2 X \otimes |0\rangle\langle 0|$ on $\mathbb{C}^2 \otimes \mathbb{C}^2$ stretches the Hilbert–Schmidt distance of $|0\rangle\langle0| \otimes I/2$ and $|1\rangle\langle1| \otimes I/2$ by $\sqrt2$ (`test_self_model_contraction_holds_only_for_constant_weight_and_unital_part`). The UHM self-models have $k = 1 - 1/(7P)$, which depends on $\Gamma$, and they are not contractions: the Lipschitz constant of $\varphi_{\mathrm{coh}}$ at a pure state is $54/49$, that of $\varphi_J$ at a basis state $1.129$. Their fixed points exist anyway (Brouwer) and are unique by direct computation — $I/7$ for $\varphi_{\mathrm{coh}}$, $\Gamma_{\eta_\infty}$ for $\varphi_J$ ([evolution](/docs/core/dynamics/evolution#иерархия-неподвижных-точек)); $\varphi_{\mathrm{coh}}$ contracts only toward its own fixed point, $\|\varphi_{\mathrm{coh}}(\Gamma) - I/7\|_F \le k\|\Gamma - I/7\|_F$.
 
 ### 2.6 Canonical form of φ for UHM {#26-каноническая-форма-φ-для-угм}
 
@@ -806,6 +808,8 @@ $\Gamma^* = \lim_{n \to \infty} \varphi^n(\Gamma_0)$, where $\Gamma_0 \in \mathc
 
 $\mathcal{D}(\mathcal{H})$ is closed $\Rightarrow \Gamma^* \in \mathcal{D}(\mathcal{H})$. ∎
 
+**Scope (2026-09-25).** Theorem 3.1 is Banach's theorem and is true as a conditional; its hypothesis — a global contraction with constant $k$ — is met by the form of Lemma 2.1 with constant $k$ and anchor and a unital $\mathcal{P}$, not by the UHM self-models $\varphi_{\mathrm{coh}}$, $\varphi_s$, $\varphi_J$, whose weight $k = 1 - 1/(7P)$ varies with the state (Lipschitz constants $54/49$ and $1.129$ above; $\varphi_s$ has at least eight fixed points). For them a fixed point exists by Brouwer's theorem on the compact convex $\mathcal{D}(\mathcal{H})$, and uniqueness, where it holds, comes from the explicit computation.
+
 ### 3.2 Approximate fixed points
 
 **Definition 3.1 ($\varepsilon$-fixed point):**
@@ -832,7 +836,7 @@ $$
 
 where $\Gamma_c = I/N$ is the center of $\mathcal{D}(\mathcal{H})$.
 
-For $\lambda < 1$: $\varphi_\lambda$ is a contracting map with constant $\lambda$ (analogously to Lemma 2.1).
+For $\lambda < 1$: if $\varphi$ is non-expansive, $\varphi_\lambda$ is a contracting map with constant $\lambda$ (as in Lemma 2.1). *Corrected 2026-09-25:* for a merely continuous $\varphi$ this step fails, and the theorem needs no approximation at all — Brouwer's theorem gives an exact fixed point of every continuous $\varphi$ on the compact convex $\mathcal{D}(\mathcal{H})$, so $\varepsilon = 0$ is attained. The argument below is kept for the non-expansive case.
 
 By Theorem 3.1: $\exists \, \Gamma^*_\lambda : \varphi_\lambda(\Gamma^*_\lambda) = \Gamma^*_\lambda$.
 
@@ -876,6 +880,8 @@ $$
 where $\mathcal{P}|_{\rho_{\text{inv}}^\perp}$ is the restriction of $\mathcal{P}$ to the orthogonal complement of $\rho_{\text{inv}}$.
 
 **Interpretation:** $\mathcal{P}$ is contracting if it has a unique invariant state and all perturbations decay.
+
+**Corrected 2026-09-25 [✗ as "if and only if"].** The spectral condition makes some power $\mathcal{P}^m$ a contraction (and $\mathcal{P}$ one in a suitably chosen norm); it does not make $\mathcal{P}$ itself a contraction in the Frobenius norm. The channel $0.9\,(\mathrm{Tr}_2 X \otimes |0\rangle\langle0|) + 0.1\,\mathrm{Tr}(X)\,|00\rangle\langle00|$ on $\mathbb{C}^2 \otimes \mathbb{C}^2$ has the unique invariant state $|00\rangle\langle00|$ and its other eigenvalues in $|z| \le 0.9$, yet stretches a Hilbert–Schmidt distance by $0.9\sqrt2 = 1.27$. The converse (a contraction has a unique fixed point) is Banach.
 
 **Examples of contracting CPTP:**
 
@@ -1283,7 +1289,7 @@ $\Gamma^*$ is an object such that $\varphi_{\Gamma^*} = \mathrm{id}_{\Gamma^*}$ 
 
 **Corollary 6.1 (Necessity of contraction for ideal self-knowledge):**
 
-For the existence of exact $\Gamma^* = \varphi(\Gamma^*)$ it is necessary that $\varphi$ be contracting (or have an invariant subspace).
+~~For the existence of exact $\Gamma^* = \varphi(\Gamma^*)$ it is necessary that $\varphi$ be contracting (or have an invariant subspace).~~ **Retracted 2026-09-25 [✗]:** every continuous $\varphi$ on $\mathcal{D}(\mathcal{H})$ has an exact fixed point (Brouwer); contraction gives uniqueness and geometric convergence of the iterates, not existence. $\varphi_{\mathrm{coh}}$ and $\varphi_J$ are not contractions and have exactly one fixed point each.
 
 **Corollary 6.2 (Approximate self-knowledge is always possible):**
 
@@ -1299,7 +1305,7 @@ The fixed point of $\varphi$ is the "thermodynamic equilibrium of self-observati
 
 **Limitation 6.1 (Contraction requirement):**
 
-Theorem 3.1 requires $k < 1$. For $k = 1$ (isometric $\varphi$) the fixed point may not exist or may be non-unique.
+Theorem 3.1 requires $k < 1$. For $k = 1$ (isometric $\varphi$) the fixed point may be non-unique; it always exists (Brouwer; the text said "may not exist" until 2026-09-25).
 
 **Limitation 6.2 (Finite-dimensionality):**
 
@@ -1635,6 +1641,8 @@ $$
 $$
 
 **Interpretation:** Regeneration is a **protective mechanism** that uses the self-model as a guide for restoring coherence.
+
+**Corrected 2026-09-25 [✗ as stated].** The gate $g_V(P) = \mathrm{clamp}(7P - 2, 0, 1)$ switches regeneration off for $P \le 2/7$, where $dP/d\tau = -\tfrac43 P_{\mathrm{coh}} \le 0$ for every $\kappa$; the UHM self-models are not contractions (Lemma 2.1, scope). What holds [T], for $\varphi_J$ and $\kappa > \kappa_c(\alpha)$ at $H = 0$: on the family $\Gamma_\eta$, $dP/d\tau = \tfrac{12}{7}\eta\,h(\eta)$ is negative below the saddle $P_-$, positive on $(P_-, P_+)$ and negative above the sink $P_+$ — regeneration protects the window from the saddle up, not from the threshold $2/7$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне); the admissible $\kappa$ in [T-352](/docs/core/dynamics/evolution#t-352)).
 
 ### 9.6 Preservation of positivity under regeneration
 

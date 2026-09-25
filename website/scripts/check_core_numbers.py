@@ -149,6 +149,16 @@ D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_
 (коммутант 𝔤_SM в 𝔰𝔬(32) абелев, 6) и `fermion_space_is_weyl_spinor_times_one_generation`
 (F = ℂ_O² ⊗_ℂ 𝒮_ℂ: 51 = 6 + 45, коммутант ℂ, 2 × 16 вейлевских компонент).
 
+
+Четыре — за выводом якоря φ_J и окном параметров (25.09.2026, T-350 … T-352):
+`frame_covariance_modulo_gauge_fixes_the_collineation_anchor` (Γ_oct нерасщепимо, коллинеаций-перестановок в нём 21,
+орбита uu† — 64 знаковые перефазировки; однородные потоки на K₇ — только (0, 0) и (π, π); κ_c убывает по t),
+`constant_anchor_window_attractor_is_explicit` (стационар (1 − η)diag ρ_a + ηρ_a и точный спектр; диагональный H
+точно, Ω_c = 1,839 при κ = 40; H из span{I, J} любой нормы не сдвигает сток),
+`no_self_model_holds_the_window_below_the_rate_floor` (κ ≥ 11,83 / 20,91 / 42,64 при любом H и любом якоре) и
+`self_model_contraction_holds_only_for_constant_weight_and_unital_part` (лемма 2.1 — лишь при постоянных k и якоре и
+унитальном P; у φ_J липшицева константа 1,129; неунитальный канал растягивает расстояние ГШ в √2 раз).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -4914,6 +4924,301 @@ def test_derived_sources_give_no_associator_cubic():
         y = np.array([f(G) for G in Gs])
         coef = np.linalg.lstsq(base, y, rcond=None)[0]
         assert np.max(np.abs(base @ coef - y)) > 1e-3
+
+
+
+def _anchor_window_parts(P, kap, c):
+    """A(P) = ⅔ + κg(1 − kc), B(P) = κgR — коэффициенты уравнения когерентностей γ(A + iω) = B·a."""
+    g = np.clip(7 * P - 2, 0, 1)
+    R = 1 / (7 * P)
+    return 2 / 3 + kap * g * (1 - (1 - R) * c), kap * g * R
+
+
+def test_frame_covariance_modulo_gauge_fixes_the_collineation_anchor():
+    """T-350: якорь φ_J выводится из (Eq) + наибольшей жизнеспособности с точностью до диагональной калибровки.
+
+    Γ_oct = 2³·GL(3,2) — нерасщепимое расширение: из 168 коллинеаций перестановками без знаков в Γ_oct
+    лежит 21 (группа 7:3), дополнения к знаковой подгруппе нет; орбита uu† под Γ_oct — 64 знаковые
+    перефазировки D uu† D. Динамика без H ковариантна при всех 5040 перестановках и всех диагональных
+    унитарных. Калибровочные инварианты (модули и потоки треугольников): на K₇ с однородными потоками по
+    прямым и по непрямым треугольникам остаются лишь (0, 0) и (π, π) — семейство D((1−t)I/7 + t uu†)D†.
+    При diag ρ_a = I/7 жизнь в окне зависит лишь от s = P(ρ_a) − 1/7 (как у t-семейства с t = √(7s/6)),
+    κ_c строго убывает по t, порог t > (2 − c)/√6; чистота семейства (1 + 6t²)/7 — максимум при t = 1.
+    """
+    group = frame_group()
+    mats = [np.rint(M).astype(int) for _, M in group]
+    assert sum(bool(np.all(M >= 0)) for M in mats) == 21
+    I7 = np.eye(7, dtype=int)
+    key = lambda M: M.tobytes()
+    signs = {key(np.rint(M).astype(int)) for p, M in group if p == tuple(range(7))}
+
+    # Гашюц: расщепление над абелевой N равносильно расщеплению над прообразом силовской 2-подгруппы —
+    # стабилизатора флага (точка 0 ⊂ прямая через неё), порядок 64; дополнение порядка 8 там ищется перебором.
+    flag = next(l for l in ({x - 1 for x in l} for l in LINES) if 0 in l)
+    syl = [np.rint(M).astype(int) for p, M in group if p[0] == 0 and {p[x] for x in flag} == flag]
+    assert len(syl) == 64
+    outside = [M for M in syl if key(M) not in signs]
+
+    def closure(gens):
+        S, front = {key(I7): I7}, [I7]
+        while front:
+            new = []
+            for A in front:
+                for g in gens:
+                    B = A @ g
+                    if key(B) not in S:
+                        S[key(B)] = B
+                        new.append(B)
+            front = new
+        return S
+
+    assert not any(len(S) == 8 and len(signs & set(S)) == 1
+                   for a in outside for b in outside for S in [closure([a, b])])        # нерасщепимо
+    u = np.ones(7) / np.sqrt(7)
+    orbit = set()
+    for M in mats:
+        v = np.rint(M @ u * np.sqrt(7)).astype(int)
+        assert set(np.abs(v)) == {1}                                               # M u = D u, D = diag(±1)
+        orbit.add(tuple(v) if v[0] > 0 else tuple(-v))
+    assert len(orbit) == 64
+    uu = np.outer(u, u).astype(complex)
+    rng = np.random.default_rng(31)
+    G = random_pure(rng) * 0.5 + np.eye(7) / 14
+    Dph = np.diag(np.exp(1j * rng.uniform(0, 2 * np.pi, 7)))
+    f = _living_generator(np.zeros((7, 7)), lambda X: uu, 40.0, 0.5)
+    fD = _living_generator(np.zeros((7, 7)), lambda X: Dph @ uu @ Dph.conj().T, 40.0, 0.5)
+    assert np.allclose(fD(Dph @ G @ Dph.conj().T), Dph @ f(G) @ Dph.conj().T, atol=1e-12)   # калибровка
+    for p in itertools.islice(itertools.permutations(range(7)), 0, 5040, 97):
+        Pm = np.eye(7)[list(p)]
+        assert np.allclose(Pm @ uu @ Pm.T, uu) and np.allclose(f(Pm @ G @ Pm.T), Pm @ f(G) @ Pm.T, atol=1e-12)
+    edges = [(i, j) for i in range(7) for j in range(i + 1, 7)]
+    col = {e: n for n, e in enumerate(edges)}
+    free = [col[e] for e in edges if e[0] != 0]
+    S = np.ones((2 ** 15, 21), dtype=np.int8)
+    S[:, free] = 1 - 2 * ((np.arange(2 ** 15)[:, None] >> np.arange(15)[None, :]) & 1)
+    lines = {frozenset(x - 1 for x in l) for l in LINES}
+    tri = list(itertools.combinations(range(7), 3))
+    prod = np.stack([S[:, col[(a, b)]] * S[:, col[(b, c)]] * S[:, col[(a, c)]] for a, b, c in tri], axis=1)
+    on = np.array([frozenset(t) in lines for t in tri])
+    ok = (np.ptp(prod[:, on], axis=1) == 0) & (np.ptp(prod[:, ~on], axis=1) == 0)
+    uniform = {(int(r[on][0]), int(r[~on][0])) for r in prod[ok]}
+    assert uniform == {(1, 1), (-1, -1)}
+    eta = np.linspace(1 / np.sqrt(6), 1 / np.sqrt(3), 4001)
+    for alpha in (0.0, 0.5, 1.0):
+        c = (1 - alpha) / 3
+        ts = np.linspace((2 - c) / np.sqrt(6) + 0.01, 1, 30)
+        kcs = [(2 / 3) / np.max(_q_window(eta, c, t)) for t in ts]
+        assert all(np.diff(kcs) < 0)                                               # κ_c убывает по t
+        assert all(np.max(np.diff(_q_window(eta, c, t), 2)) < 0 for t in np.linspace(0.01, 1, 12))   # Q_t вогнута
+        assert np.max(_q_window(eta, c, (2 - c) / np.sqrt(6) - 1e-3)) <= 1e-12     # ниже порога жизни нет
+    for t in (-1 / 6, 0.3, 1.0):
+        rho = (1 - t) * np.eye(7) / 7 + t * uu
+        assert abs(purity(rho) - (1 + 6 * t ** 2) / 7) < 1e-12
+    # (Eq)-якорь общего вида с той же когерентной чистотой s живёт так же, как t-семейство
+    alpha, kap, c = 0.5, 80.0, 0.5 / 3
+    flat = [np.exp(1j * rng.uniform(0, 2 * np.pi, 7)) / np.sqrt(7) for _ in range(2)]
+    anchor = 0.93 * np.outer(flat[0], flat[0].conj()) + 0.07 * np.outer(flat[1], flat[1].conj())
+    assert np.allclose(np.diag(anchor).real, 1 / 7)
+    s = purity(anchor) - 1 / 7
+    tt = np.sqrt(7 * s / 6)
+    v = kap * _q_window(eta, c, tt) - 2 / 3
+    xi = [eta[i] for i in range(len(eta) - 1) if v[i] > 0 >= v[i + 1]][0]
+    G = (1 - xi / tt) * np.eye(7) / 7 + (xi / tt) * anchor
+    fa = _living_generator(np.zeros((7, 7)), lambda Y: anchor, kap, alpha)
+    G = _stationary(fa, G)
+    assert np.linalg.norm(fa(G)) < 1e-12 and abs(purity(G) - (1 + 6 * xi ** 2) / 7) < 1e-4
+
+
+def test_constant_anchor_window_attractor_is_explicit():
+    """T-351: при постоянном якоре стационар с P > 2/7 — (1 − η)diag ρ_a + ηρ_a, спектр якобиана точен.
+
+    Скаляр η — корень h(η) = B(P) − ηA(P), P = d + η²s; спектр — {h′(η); −κgR ×6; −A ×41}.
+    Три якоря при α = ½: возмущённый uu† (3 % случайного чистого состояния, κ = 50: P = 0,3185, Φ = 1,227),
+    перефазированный D uu† D† (κ = 40, аттрактор — D Γ_η D†) и чистый с амплитудами 1 ± 0,3 (κ = 50: P = 0,3299,
+    Φ = 1,148, диагональ 0,105–0,204) — все три стока в V_full. При диагональном H когерентности
+    γ_ij = B a_ij/(A + iΔω_ij) точно; для φ_J при разбросе энергий ≤ Ω_c окно держится (Ω_c = 1,839 при κ = 40,
+    α = ½; 4,201 при α = 0), сток с диагональю 1/7. H из span{I, J} любой нормы аттрактора не сдвигает.
+    """
+    alpha, kap = 0.5, 40.0
+    c = (1 - alpha) / 3
+    rng = np.random.default_rng(7)
+    u = np.ones(7) / np.sqrt(7)
+    uu = np.outer(u, u).astype(complex)
+    Dph = np.diag(np.exp(1j * rng.uniform(0, 2 * np.pi, 7)))
+    amp = 1 + 0.3 * rng.uniform(-1, 1, 7)
+    psi = amp * np.exp(1j * rng.uniform(0, 2 * np.pi, 7))
+    psi /= np.linalg.norm(psi)
+    anchors = {"perturbed": (0.97 * uu + 0.03 * random_pure(rng), 50.0),
+               "rephased": (Dph @ uu @ Dph.conj().T, 40.0),
+               "uneven": (np.outer(psi, psi.conj()), 50.0)}
+    eta = np.linspace(1e-4, 0.999, 200001)
+    for name, (ra, kap) in anchors.items():
+        dg = np.diag(np.diag(ra))
+        d = float(np.sum(np.real(np.diag(ra)) ** 2))
+        s = purity(ra) - d
+        P = d + eta ** 2 * s
+        A, B = _anchor_window_parts(P, kap, c)
+        h = np.where(P > 2 / 7, B - eta * A, -1.0)
+        roots = [i for i in range(len(eta) - 1) if h[i] > 0 >= h[i + 1]]
+        assert len(roots) == 1
+        e = eta[roots[0]]
+        f = _living_generator(np.zeros((7, 7)), lambda X, ra=ra: ra, kap, alpha)
+        G = _stationary(f, (1 - e) * dg + e * ra)
+        e = float(np.real(np.vdot(ra - dg, G - dg)) / np.real(np.vdot(ra - dg, ra - dg)))
+        assert np.linalg.norm(f(G)) < 1e-12 and np.linalg.norm(G - ((1 - e) * dg + e * ra)) < 1e-10
+        Pst = purity(G)
+        A0, B0 = _anchor_window_parts(Pst, kap, c)
+        hp = lambda x: (lambda Pp: (lambda AB: AB[1] - x * AB[0])(_anchor_window_parts(Pp, kap, c)))(d + x * x * s)
+        dh = (hp(e + 1e-7) - hp(e - 1e-7)) / 2e-7
+        g, R = gate(Pst), 1 / (7 * Pst)
+        want = sorted([dh] + [-kap * g * R] * 6 + [-A0] * 41)
+        assert np.allclose(np.sort(np.linalg.eigvals(_jacobian(f, G)).real), want, atol=1e-5)
+        assert dh < 0
+        assert 2 / 7 < Pst <= 3 / 7 and integration(G) > 1 and np.all(np.real(np.diag(G)) > 0)
+        if name == "rephased":
+            Gs = Dph.conj().T @ G @ Dph
+            assert np.allclose(np.diag(Gs).real, 1 / 7) and np.allclose(Gs - np.diag(np.diag(Gs)), e * (uu - np.diag(np.diag(uu))), atol=1e-10)
+    kap = 40.0
+    Pg = np.linspace(2 / 7 + 1e-7, 3 / 7, 100001)
+    oc = {}
+    for a, kk in ((0.5, 40.0), (0.0, 40.0), (0.5, 30.0), (0.5, 100.0)):
+        A, B = _anchor_window_parts(Pg, kk, (1 - a) / 3)
+        oc[(a, kk)] = np.sqrt(np.max((6 / 7) * B ** 2 / (Pg - 1 / 7) - A ** 2))
+    assert abs(oc[(0.5, 40.0)] - 1.839) < 2e-3 and abs(oc[(0.0, 40.0)] - 4.201) < 2e-3
+    assert abs(oc[(0.5, 30.0)] - 0.414) < 2e-3 and abs(oc[(0.5, 100.0)] - 7.614) < 2e-3
+    w = rng.uniform(0, 1, 7)
+    w = (w - w.min()) / (w.max() - w.min()) * 0.99 * oc[(0.5, 40.0)]
+    H = np.diag(w).astype(complex)
+    dw2 = (w[:, None] - w[None, :]) ** 2
+    A, B = _anchor_window_parts(Pg, kap, c)
+    G_P = np.array([np.sum(B[i] ** 2 / (A[i] ** 2 + dw2[~np.eye(7, dtype=bool)])) / 49 for i in range(0, len(Pg), 50)]) \
+        - (Pg[::50] - 1 / 7)
+    Pr = Pg[::50][[i for i in range(len(G_P) - 1) if G_P[i] > 0 >= G_P[i + 1]][0]]
+    A1, B1 = _anchor_window_parts(Pr, kap, c)
+    G0 = np.eye(7) / 7 + (B1 / 7) / (A1 + 1j * (w[:, None] - w[None, :])) * (1 - np.eye(7))
+    f = _living_generator(H, lambda X: uu, kap, alpha)
+    G = _stationary(f, G0)
+    A2, B2 = _anchor_window_parts(purity(G), kap, c)
+    exact = np.eye(7) / 7 + (B2 / 7) / (A2 + 1j * (w[:, None] - w[None, :])) * (1 - np.eye(7))
+    assert np.linalg.norm(f(G)) < 1e-12 and np.linalg.norm(G - exact) < 1e-10
+    assert 2 / 7 < purity(G) < 3 / 7 and np.allclose(np.diag(G).real, 1 / 7)
+    assert np.max(np.linalg.eigvals(_jacobian(f, G)).real) < -4
+    eta = np.linspace(1 / np.sqrt(6), 0.5, 20001)
+    v = kap * _q_window(eta, c) - 2 / 3
+    e = eta[[i for i in range(len(eta) - 1) if v[i] > 0 >= v[i + 1]][0]]
+    Ge = np.eye(7) / 7 + e * (uu - np.eye(7) / 7)
+    G0 = _stationary(_living_generator(np.zeros((7, 7)), lambda X: uu, kap, alpha), Ge)
+    fJ = _living_generator(3.0 * np.eye(7) + 50.0 * np.ones((7, 7)), lambda X: uu, kap, alpha)
+    assert np.linalg.norm(fJ(G0)) < 1e-11                                            # тот же сток при ‖H‖ = 353
+
+
+def test_no_self_model_holds_the_window_below_the_rate_floor():
+    """T-352: κ ≥ κ_floor(α) у всякой самомодели замещающей формы при любом H — 11,83 / 20,91 / 42,64.
+
+    Из баланса чистоты: (⅔)P_coh = κg(f − P), f − P = R Tr(Γσ) − 1/7 − k(1 − c)P_coh, Tr(Γσ) ≤ λ_max(P),
+    P_coh ≥ P/2 в V_full. При H = 0 порог 13,11 / 23,21 / 47,35 достигается постоянным чистым якорем с
+    d = P/2 (аттрактор на Φ = 1). κ_c(φ_J)/κ_floor = 1,405 / 1,399 / 1,392. Неравенство баланса проверено
+    на стоке φ_J со случайным H нормы 1.
+    """
+    P = np.linspace(2 / 7 + 1e-9, 3 / 7, 400001)
+    g, R = 7 * P - 2, 1 / (7 * P)
+    lmax = (1 + np.sqrt(6 * (7 * P - 1))) / 7
+    floors, h0 = {}, {}
+    for alpha in (0.0, 0.5, 1.0):
+        c = (1 - alpha) / 3
+        den = g * (R * lmax - 1 / 7 - (1 - R) * (1 - c) * P / 2)
+        floors[alpha] = np.min(np.where(den > 0, (P / 3) / np.where(den > 0, den, 1), np.inf))
+        et = np.sqrt(P / (2 - P))
+        den0 = g * (R - et * (1 - c + c * R))
+        h0[alpha] = np.min(np.where(den0 > 0, (2 / 3) * et / np.where(den0 > 0, den0, 1), np.inf))
+    assert abs(floors[0.0] - 11.834) < 2e-3 and abs(floors[0.5] - 20.913) < 2e-3 and abs(floors[1.0] - 42.638) < 2e-3
+    assert abs(h0[0.0] - 13.113) < 2e-3 and abs(h0[0.5] - 23.209) < 2e-3 and abs(h0[1.0] - 47.353) < 2e-3
+    eta = np.linspace(1 / np.sqrt(6), 1 / np.sqrt(3), 40001)
+    for alpha, want in ((0.0, 1.405), (0.5, 1.399), (1.0, 1.392)):
+        kc = (2 / 3) / np.max(_q_window(eta, (1 - alpha) / 3))
+        assert kc > h0[alpha] > floors[alpha] and abs(kc / floors[alpha] - want) < 2e-3
+    # порог при H = 0 достигается: чистый якорь с |ψ_0|² = p, остальные равны, d = Σ|ψ_k|⁴
+    alpha, c = 0.0, 1 / 3
+    et = np.sqrt(P / (2 - P))
+    den0 = g * (R - et * (1 - c + c * R))
+    dstar = P[np.argmin(np.where(den0 > 0, (2 / 3) * et / np.where(den0 > 0, den0, 1), np.inf))] / 2
+    from scipy.optimize import brentq
+    p = brentq(lambda q: q ** 2 + (1 - q) ** 2 / 6 - dstar, 1 / 7, 0.9)
+    psi = np.array([np.sqrt(p)] + [np.sqrt((1 - p) / 6)] * 6)
+    ra = np.outer(psi, psi).astype(complex)
+    for kap, alive in ((13.2, True), (12.9, False)):
+        d, s = dstar, 1 - dstar
+        et = np.linspace(1e-4, 0.999, 400001)
+        Pe = d + et ** 2 * s
+        A, B = _anchor_window_parts(Pe, kap, c)
+        h = np.where(Pe > 2 / 7, B - et * A, -1.0)
+        ok = (h >= 0) & (et ** 2 * s >= d) & (Pe <= 3 / 7)
+        assert bool(ok.any()) == alive
+    # баланс на стоке φ_J со случайным H
+    alpha, kap, c = 0.5, 40.0, 0.5 / 3
+    u = np.ones(7) / np.sqrt(7)
+    uu = np.outer(u, u).astype(complex)
+    rng = np.random.default_rng(3)
+    Hm = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    Hm = (Hm + Hm.conj().T) / 2
+    Hm /= np.linalg.norm(Hm, 2)
+    f = _living_generator(Hm, lambda X: uu, kap, alpha)
+    e = 0.4563
+    G = _stationary(f, np.eye(7) / 7 + e * (uu - np.eye(7) / 7))
+    Pg, Rg = purity(G), 1 / (7 * purity(G))
+    pd = float(np.sum(np.real(np.diag(G)) ** 2))
+    pc = Pg - pd
+    fval = np.real(np.trace(G @ ((1 - Rg) * (np.diag(np.diag(G)) + c * (G - np.diag(np.diag(G)))) + Rg * uu)))
+    assert abs((2 / 3) * pc - kap * gate(Pg) * (fval - Pg)) < 1e-10
+    lm = np.max(np.linalg.eigvalsh(G))
+    assert np.real(np.trace(G @ uu)) <= lm + 1e-12 <= (1 + np.sqrt(6 * (7 * Pg - 1))) / 7 + 1e-12
+    assert pc >= Pg / 2 and kap >= floors[0.5]
+
+
+def test_self_model_contraction_holds_only_for_constant_weight_and_unital_part():
+    """Лемма 2.1 формализации φ: φ_k = kP + (1 − k)ρ_a сжимает с константой k по Фробениусу, если k и якорь
+    постоянны, а P унитален (здесь P_α); у φ_J с k = 1 − 1/(7P) липшицева константа в базисном состоянии
+    1,129 > 1. Неунитальный CPTP может растягивать расстояние Гильберта–Шмидта: X ↦ Tr₂X ⊗ |0⟩⟨0| на
+    ℂ²⊗ℂ² — в √2 раз; смесь 0,9 этого канала со сбросом в |00⟩ имеет единственное инвариантное состояние
+    и спектр в круге радиуса 0,9, но растягивает в 0,9√2 = 1,27 раза (теорема 3.3 в форме «тогда и только
+    тогда» неверна).
+    """
+    u = np.ones(7) / np.sqrt(7)
+    uu = np.outer(u, u).astype(complex)
+    alpha, c = 0.5, 0.5 / 3
+
+    def phi_j(G):
+        P = purity(G)
+        R = 1 / (7 * P)
+        D = np.diag(np.diag(G))
+        return (1 - R) * (D + c * (G - D)) + R * uu
+
+    B = _jacobian_basis()
+    e0 = np.zeros((7, 7), complex)
+    e0[0, 0] = 1
+    J = np.zeros((48, 48))
+    for a, Ba in enumerate(B):
+        dlt = (phi_j(e0 + 1e-6 * Ba) - phi_j(e0 - 1e-6 * Ba)) / 2e-6
+        J[:, a] = np.real(np.einsum("bij,ji->b", B, dlt))
+    assert abs(np.linalg.norm(J, 2) - 1.129) < 2e-3
+    rng = np.random.default_rng(4)
+    k = 0.8
+    phik = lambda G: k * (np.diag(np.diag(G)) + c * (G - np.diag(np.diag(G)))) + (1 - k) * uu
+    for _ in range(20):
+        G1, G2 = random_pure(rng), random_pure(rng)
+        assert np.linalg.norm(phik(G1) - phik(G2)) <= k * np.linalg.norm(G1 - G2) + 1e-12
+    ket0 = np.diag([1.0, 0.0])
+    X = np.kron(np.diag([1.0, -1.0]), np.eye(2) / 2)
+
+    def tr2_reset(Y, p=1.0):
+        T = Y.reshape(2, 2, 2, 2).trace(axis1=1, axis2=3)
+        return p * np.kron(T, ket0) + (1 - p) * np.trace(Y) * np.kron(ket0, ket0)
+
+    assert abs(np.linalg.norm(tr2_reset(X)) / np.linalg.norm(X) - np.sqrt(2)) < 1e-12
+    M = np.array([tr2_reset(E.reshape(4, 4), 0.9).ravel() for E in np.eye(16)]).T
+    ev = np.linalg.eigvals(M)
+    assert np.sum(np.abs(ev - 1) < 1e-9) == 1 and np.sort(np.abs(ev))[-2] < 0.9 + 1e-9
+    assert abs(np.linalg.norm(tr2_reset(X, 0.9)) / np.linalg.norm(X) - 0.9 * np.sqrt(2)) < 1e-12
 
 
 def main():
