@@ -57,9 +57,11 @@ Every candidate for "which transformations relate physically indistinguishable d
 | $G_2$ | 14 | 34 | not invariant (witness: $1 \to 0.75$) | not invariant (witness: $0 \to 1$) |
 | $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ | 8 | 40 | not invariant (witness: $1 \to 0.45$) | not invariant (witness: $0 \to 2.19$) |
 | $SU(2) = \mathrm{Stab}_{G_2}(e_E, e_O)$ | 3 | 45 | **invariant** | not invariant (witness: $0.690 \to 0.637$) |
-| $\Gamma_{\!\text{oct}}$ (frame group) | 0 | 48 | **invariant** | **invariant** |
+| $\Gamma_{\!\text{oct}}$ (frame group) | 0 | 48 | invariant only under the $192$ of $1344$ elements that keep the $E$-axis (witness for the others: $1 \to 0$) | **invariant** (all $1344$) |
 
-Reading the lattice: $\mathrm{Coh}_E$ needs only a distinguished $E$-axis, so the No-Zombie threshold survives already at $SU(2)_{E,O}$. $\Phi$ survives **nowhere above the discrete row** — by the rigidity theorem this is not an artefact of the present definition of the window but of $\Phi$ itself. Hence the corpus takes the last row: the identification group is $\Gamma_{\!\text{oct}}$ and all 48 parameters are physical. The alternative — keeping a continuous group — is available only at the price of rewriting the L2 condition in invariants of that group (for $SU(2)_{E,O}$: 45 parameters, $\Phi$ replaced by an $SU(2)$-invariant), and the octonionic reading would then have to rebuild the phenomenology of the 21 pairs on $1 \oplus 27 \oplus 7 \oplus 14$.
+*Corrected 2026-09-25.* The frame-group row read "$\mathrm{Coh}_E$: **invariant**"; that is retracted: an element of $\Gamma_{\!\text{oct}}$ that moves the $E$-axis to another axis takes $\mathrm{Coh}_E(\lvert e_E\rangle\langle e_E\rvert)$ from $1$ to $0$, and exhaustive enumeration finds $\mathrm{Coh}_E$ preserved on exactly $192 = 1344/7$ elements — those that keep the $E$-axis ($96$ fix $e_E$, $96$ send it to $-e_E$) — while $\Phi$ is preserved on all $1344$ (regression test `test_coh_e_is_invariant_only_on_the_e_axis_stabiliser`).
+
+Reading the lattice: $\mathrm{Coh}_E$ needs only a distinguished $E$-axis, so the No-Zombie threshold survives on the stabiliser of that axis — already at $SU(2)_{E,O}$, in fact on the whole eight-dimensional $\mathrm{Stab}_{G_2}(e_E) \cong SU(3)$ (a rotation fixing $e_E$ fixes $\gamma_{EE}$ and the norm of the $E$-row), and in the frame group only on its $E$-axis stabiliser. $\Phi$ survives **nowhere above the discrete row** — by the rigidity theorem this is not an artefact of the present definition of the window but of $\Phi$ itself. Hence the corpus takes the last row: the identification group is $\Gamma_{\!\text{oct}}$ and all 48 parameters are physical. (With the corrected row, the only group of the lattice that preserves both observables with the axes held fixed is the $E$-axis stabiliser inside $\Gamma_{\!\text{oct}}$, of order $192$; the frame decision takes $\Gamma_{\!\text{oct}}$ with the functional labels carried along with the axes, as in Step 4 of the proof below, so that $\mathrm{Coh}_E$ is read on the image of the $E$-axis.) The alternative — keeping a continuous group — is available only at the price of rewriting the L2 condition in invariants of that group (for $SU(2)_{E,O}$: 45 parameters, $\Phi$ replaced by an $SU(2)$-invariant), and the octonionic reading would then have to rebuild the phenomenology of the 21 pairs on $1 \oplus 27 \oplus 7 \oplus 14$.
 :::
 
 ---
@@ -160,7 +162,7 @@ All 7 dimensions are [functionally unique](/docs/proofs/minimality/theorem-minim
 Full chain [(AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2](/docs/proofs/minimality/theorem-octonionic-derivation#мост) of 12 steps, all [T]:
 
 $$
-\mathrm{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{Т}]} \mathrm{BIBD}(7,3,1) \xrightarrow{[\text{Т}]} \mathrm{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} G_2
+\mathrm{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{T}]} \mathrm{BIBD}(7,3,1) \xrightarrow{[\text{T}]} \mathrm{PG}(2,2) \xrightarrow{[\text{T}]} \mathbb{O} \xrightarrow{[\text{T}]} G_2
 $$
 
 ### P4. L-unification [T] {#p4-л-унификация}
@@ -275,7 +277,7 @@ The remaining structures of Lemma G3 — the atomic projectors (i), the E-projec
 Since $\mathbb{C}^7$ is an **irreducible** $G_2$-module (Cartan 1894), by Schur's lemma it has **no** nonzero proper $G_2$-invariant subspace. Consequently:
 - no coordinate axis $|k\rangle$ — in particular the E, O, U axes — is $G_2$-invariant; a generic $g\in G_2$ rotates it;
 - the *set* of atomic projectors $\{|k\rangle\langle k|\}$ is preserved only by the **finite** frame subgroup $\Gamma_{\!\text{oct}} = 2^3 \!\cdot\! \mathrm{PSL}(3,2) \subset G_2$ of order $1344$ (permutation part $\mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$, order 168; sign part of order 8 — [frame rigidity](#жёсткость-репера)), not by all of $G_2$;
-- hence $\mathrm{Coh}_E$, $\Phi$ and $\kappa_0$, which reference the E/O/U axes, are **frame-dependent**: invariant under $\mathrm{Stab}_{G_2}$ of the chosen frame, not under all of $G_2$. They are physical because the frame is pinned by the dynamics (Definition G1's $\mathcal{L}_\Omega$-covariance), **not** because they descend to $\mathcal{D}(\mathbb{C}^7)/G_2$.
+- hence $\mathrm{Coh}_E$, $\Phi$ and $\kappa_0$, which reference the E/O/U axes, are **frame-dependent**: invariant under $\mathrm{Stab}_{G_2}$ of the chosen frame, not under all of $G_2$ — $\Phi$ under the whole frame group $\Gamma_{\!\text{oct}}$, $\mathrm{Coh}_E$ only under its $192$ elements that keep the $E$-axis, $\kappa_0$ only under the elements that keep the axes it references. They are physical because the frame is pinned by the dynamics (Definition G1's $\mathcal{L}_\Omega$-covariance), **not** because they descend to $\mathcal{D}(\mathbb{C}^7)/G_2$.
 
 The genuinely $G_2$-invariant content is the spectrum (6 numbers) plus the $\varphi_3$-relative angles (28) — the $48-14=34$ parameters of Corollary 1.
 :::
@@ -419,12 +421,16 @@ up to the finite frame group $\Gamma_{\!\text{oct}}$ (frame decision D-0910); in
 :::tip Corollary 3 (Faithfulness of functor) [T]
 The functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ ([categorical formalism](/docs/proofs/categorical/categorical-formalism)) is **faithful** on frame orbits: if $F(\Gamma_1) \cong F(\Gamma_2)$ in $\mathbf{Exp}$, then $\Gamma_2 = U\Gamma_1 U^\dagger$ for $U \in \Gamma_{\!\text{oct}}$ (in particular $U \in G_2$).
 
-Kernel of $F$ on the set of isomorphisms (experience reads the frame-pinned $E$-sector, so a generic $G_2$-rotation changes it — D-0910):
+Kernel of $F$ on the set of isomorphisms (experience reads the frame-pinned $E$-sector, so a generic $G_2$-rotation changes it — D-0910, and so does every element of $\Gamma_{\!\text{oct}}$ that moves the $E$-axis):
 
 $$
-\ker(F) = \{\mathrm{Ad}_U : U \in \Gamma_{\!\text{oct}}\} \subset \{\mathrm{Ad}_U : U \in G_2\}
+\ker(F) \subseteq \{\mathrm{Ad}_U : U \in \Gamma_{\!\text{oct}},\ U e_E = \pm e_E\} \subsetneq \{\mathrm{Ad}_U : U \in \Gamma_{\!\text{oct}}\} \subset \{\mathrm{Ad}_U : U \in G_2\}
 $$
+
+The $E$-axis stabiliser in $\Gamma_{\!\text{oct}}$ has $192 = 1344/7$ elements.
 :::
+
+*Corrected 2026-09-25.* The corollary stated $\ker(F) = \{\mathrm{Ad}_U : U \in \Gamma_{\!\text{oct}}\}$; that is retracted: $F$ reads the $E$-sector, and an element of $\Gamma_{\!\text{oct}}$ that moves the $E$-axis takes $\mathrm{Coh}_E(\lvert e_E\rangle\langle e_E\rvert)$ from $1$ to $0$, so $\mathrm{Ad}_U$ changes $F$ for $1152$ of the $1344$ elements; only the $192$ that keep the $E$-axis can lie in the kernel ([lattice of identification groups](#жёсткость-репера); regression test `test_coh_e_is_invariant_only_on_the_e_axis_stabiliser`). The faithfulness statement above is unaffected.
 
 ### Corollary 4: Predictive power [T] {#предсказательная-мощность}
 
@@ -454,8 +460,8 @@ Two classes of observable must be distinguished (irreducibility of $\mathbf 7$, 
 - the spectrum (6) and the $\varphi_3$-relative angles (28) — the 34 parameters above
 
 **Frame-dependent** (defined only after the functional frame is fixed by the dynamics; invariant under $\mathrm{Stab}_{G_2}$ of the frame, *not* under all of $G_2$, since no axis is $G_2$-invariant):
-- E-coherence $\mathrm{Coh}_E(\Gamma)$ — references the E-axis
-- Integration measure $\Phi = \sum_{i\neq j}|\gamma_{ij}|^2/\sum_i\gamma_{ii}^2$ — references the coordinate basis
+- E-coherence $\mathrm{Coh}_E(\Gamma)$ — references the E-axis; invariant only under the elements that keep it ($192$ of the $1344$ in $\Gamma_{\!\text{oct}}$)
+- Integration measure $\Phi = \sum_{i\neq j}|\gamma_{ij}|^2/\sum_i\gamma_{ii}^2$ — references the coordinate basis; invariant under all of $\Gamma_{\!\text{oct}}$
 - the regeneration coefficient $\kappa_0$ — references the O, E, U axes
 
 These frame-dependent quantities are physical because the dynamics ($\mathcal{L}_\Omega$-covariance, Definition G1) pins the frame; they are not among the 34 orbit-invariants.

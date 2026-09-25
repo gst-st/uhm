@@ -5,13 +5,15 @@
 ОШИБКИ, найденные внешним аудитом 10.09.2026, и стоят здесь, чтобы не вернуться:
 `kl_at_threshold` (точная D_KL на пороге — 0,344, а не 1/2), `phi_not_g2_invariant`
 (Φ не $G_2$-инвариантна) и `z7_irreps_are_one_dimensional` (неприводимые
-представления ℤ₇ одномерны, регулярное — семимерно). Ещё две стоят за отзывами
+представления ℤ₇ одномерны, регулярное — семимерно). Ещё три стоят за отзывами
 25.09.2026: `phi_of_a_product_factorises` (Φ произведения задана частями — условие
-Φ₁₂ > 1 выполняет любая несвязанная пара) и `window_predicate_not_constant_on_g2_orbit`
-(предикат окна не постоянен на $G_2$-орбите).
+Φ₁₂ > 1 выполняет любая несвязанная пара), `window_predicate_not_constant_on_g2_orbit`
+(предикат окна не постоянен на $G_2$-орбите) и `coh_e_is_invariant_only_on_the_e_axis_stabiliser`
+(Coh_E сохраняют лишь 192 из 1344 элементов реперной группы Γ_oct — те, что оставляют ось E).
 
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
+import functools
 import itertools
 
 import numpy as np
@@ -210,9 +212,13 @@ def test_frame_rigidity_no_continuous_symmetry_of_phi():
         assert len(basis) - np.linalg.matrix_rank(np.array(rows)) == 0
 
 
-def test_frame_group_order_and_singer_subgroups():
-    """|Γ_oct| = 1344 = 8·168; элементов порядка 7 — 48, то есть 8 зингеровых подгрупп."""
-    total, perms, signs_only = 0, set(), 0
+@functools.lru_cache(maxsize=None)
+def frame_group():
+    """Γ_oct полным перебором: знаковые перестановки осей, сохраняющие φ₃, — пары (перестановка, матрица).
+
+    Матрица M переводит e_i в ±e_{perm[i]}. Перебор один на весь прогон: им пользуются две проверки.
+    """
+    out = []
     lines0 = {tuple(sorted((a - 1, b - 1, c - 1))) for a, b, c in LINES}
     for perm in itertools.permutations(range(7)):
         if not all(tuple(sorted(perm[i] for i in l)) in lines0 for l in lines0):
@@ -223,10 +229,16 @@ def test_frame_group_order_and_singer_subgroups():
         for sg in itertools.product((1, -1), repeat=7):
             M = P * np.array(sg)[None, :]
             if np.allclose(np.einsum("ia,jb,kc,abc->ijk", M, M, M, PHI3), PHI3, atol=1e-9):
-                total += 1
-                perms.add(perm)
-                signs_only += perm == tuple(range(7))
-    assert (total, len(perms), signs_only) == (1344, 168, 8)
+                out.append((perm, M))
+    return tuple(out)
+
+
+def test_frame_group_order_and_singer_subgroups():
+    """|Γ_oct| = 1344 = 8·168; элементов порядка 7 — 48, то есть 8 зингеровых подгрупп."""
+    group = frame_group()
+    perms = {perm for perm, _ in group}
+    signs_only = sum(perm == tuple(range(7)) for perm, _ in group)
+    assert (len(group), len(perms), signs_only) == (1344, 168, 8)
 
     def order(p):
         q, n = p, 1
@@ -235,6 +247,39 @@ def test_frame_group_order_and_singer_subgroups():
         return n
 
     assert sum(order(p) == 7 for p in perms) // 6 == 8
+
+
+def test_coh_e_is_invariant_only_on_the_e_axis_stabiliser():
+    """Φ сохраняют все 1344 элемента Γ_oct, Coh_E — лишь 192 = 1344/7, оставляющие ось E на месте.
+
+    Свидетель исправления решётки групп отождествления и следствия 3 теоремы единственности
+    (25.09.2026): строка «Γ_oct: Coh_E инвариантна» была ложной — элемент, уводящий ось E на другую
+    ось, переводит Coh_E(|e_E⟩⟨e_E|) из 1 в 0, поэтому ker F лежит в стабилизаторе оси E внутри
+    Γ_oct, а не совпадает с Γ_oct. Из 192 элементов 96 оставляют e_E, 96 обращают его в −e_E:
+    знака оси Coh_E не видит.
+    """
+    rng = np.random.default_rng(14)
+    states = []
+    for _ in range(3):
+        A = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+        G = A @ A.conj().T
+        states.append(G / np.trace(G).real)
+    keeps_phi = keeps_coh = keeps_axis = keeps_vector = 0
+    for perm, M in frame_group():
+        phi = all(abs(integration(M @ G @ M.T) - integration(G)) < 1e-12 for G in states)
+        coh = all(abs(coh_e(M @ G @ M.T) - coh_e(G)) < 1e-12 for G in states)
+        axis = perm[E_AXIS] == E_AXIS
+        assert coh == axis                        # Coh_E сохраняется ровно тогда, когда ось E на месте
+        keeps_phi += phi
+        keeps_coh += coh
+        keeps_axis += axis
+        keeps_vector += axis and M[E_AXIS, E_AXIS] == 1
+    assert (keeps_phi, keeps_coh, keeps_axis, keeps_vector) == (1344, 192, 192, 96)
+    GE = np.zeros((7, 7))
+    GE[E_AXIS, E_AXIS] = 1
+    perm, M = next(el for el in frame_group() if el[0][E_AXIS] != E_AXIS)
+    assert abs(coh_e(GE) - 1) < 1e-12 and abs(coh_e(M @ GE @ M.T)) < 1e-12      # Coh_E: 1 → 0
+    assert abs(integration(M @ GE @ M.T) - integration(GE)) < 1e-12              # Φ = 0 не сдвинулась
 
 
 def test_stabiliser_lattice():

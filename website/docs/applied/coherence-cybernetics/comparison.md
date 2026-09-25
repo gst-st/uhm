@@ -92,7 +92,7 @@ Full analysis of 42 theories of consciousness (including the 8 below) with histo
 
 FEP (Friston, 2010) asserts that any stable system minimizes variational free energy $F$. CC shares the idea of active self-maintenance and uses the Markov blanket (Enc-functor). The canonical $\Delta F$ of the holon ([definition](/docs/core/dynamics/evolution#каноническое-delta-f) [T]) is the analog of Friston's free energy.
 
-**Bridge:** FEP is a special case of CC under two simplifications: (1) the E-dimension is ignored, (2) regeneration $\mathcal{R}$ is absorbed into variational inference. More details — [Variational Formulation](./variational).
+**Bridge [I].** ~~FEP is a special case of CC under two simplifications: (1) the E-dimension is ignored, (2) regeneration $\mathcal{R}$ is absorbed into variational inference.~~ Retracted (2026-09-25): the claim read the diagonal limit of CC's functional $S_{\text{spec}} + D_{KL}$ as Friston's free energy, but that limit is the cross-entropy $-\sum_i q_i \ln p_i$ — at $p = (0.7, 0.2, 0.1)$ it equals $0.802$ at $q = p$ and $0.357$ at the point mass $q = (1, 0, 0)$, so it is minimised by the point mass, not by the posterior — and what replaces it is an interpretation [I]: the two frameworks share a variational vocabulary and the Markov-blanket picture, and no derivation connects them ([Variational Formulation, Theorem 4.1 [✗]](./variational#связь-с-fep); [FEP derivation](/docs/proofs/dynamics/fep-derivation), registry row 39e).
 
 | Aspect | FEP | CC |
 |---|---|---|
@@ -246,7 +246,7 @@ This is an ambitious claim. But it is falsifiable: if a theory is found that mak
 2. CC **inherits** the key ideas of each: integration (IIT), active self-maintenance (FEP), global accessibility (GWT), self-production (autopoiesis), reflection (HOT), recurrence (RPT), self-model (AST).
 3. CC **surpasses** each in specific aspects: formalization, computability, falsifiability, completeness.
 4. Each theory **surpasses** CC in its own strengths: experimental base, neural concreteness, philosophical development.
-5. CC is a **metatheory**: it includes the others as special cases or projections.
+5. CC is read as a **metatheory** [I]: the others appear as projections of its formalism (table above). The one special case it claimed — the FEP as a limit of CC — is retracted (§2.2).
 
 ---
 

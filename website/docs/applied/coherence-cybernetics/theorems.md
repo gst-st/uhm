@@ -616,44 +616,52 @@ Having proved that every viable system possesses non-trivial interiority, we can
 
 Let us return to the orchestra analogy. Until now we have been studying *one* musician (a single holon). Now imagine two orchestras deciding to play together. The first question: will the joint performance be meaningful? The second: will it produce something that was absent from either orchestra individually?
 
-Theorems 9.1–9.3 are the answer: yes, joint play is not only meaningful but **generates a new quality**. Two orchestras are more than two orchestras. The whole is more than the sum of its parts. And this is not a metaphor — it is a theorem.
+Theorems 9.1–9.3 are the answer (9.1 under its assumption (HOL) that the joint system is itself a holon): yes, joint play is not only meaningful but **generates a new quality**. Two orchestras are more than two orchestras. The whole is more than the sum of its parts. And this is not a metaphor — it is a theorem.
 
-### Theorem 9.1 / T-68 (Fractal Closure, CC-5) [T]+[C] {#теорема-91-фрактальное-замыкание}
+### Theorem 9.1 / T-68 (Fractal Closure, CC-5) [C at (HOL)] {#теорема-91-фрактальное-замыкание}
+
+:::warning Errata 2026-09-25: status corrected from [T]+[C] to [C at (HOL)]
+Step 1 claimed that the composite $\mathbb{H}_{12} = \mathbb{H}_1 \times_T \mathbb{H}_2$ is represented by a state $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$ — first by the Morita equivalence T-58 (retracted 2026-09-10), then by the section–retraction T-58′ — and neither carries it: T-58′ is $\pi \circ \iota = \mathrm{id}$ between the 7D and 42D descriptions of *one* holon and gives no map from the composite's state space $\mathcal{D}(\mathbb{C}^7 \otimes \mathbb{C}^7) = \mathcal{D}(\mathbb{C}^{49})$ to $\mathcal{D}(\mathbb{C}^7)$. The conclusion needs that map, because $P > 1/7$ is a statement in $\mathcal{D}(\mathbb{C}^7)$: in $\mathcal{D}(\mathbb{C}^{49})$ the maximally mixed state has $P = 1/49$, and two uncoupled viable holons at $P = 0.3$ give $P = 0.09 < 1/7$. What replaces it is a named assumption:
+
+**(HOL)** the composite is itself a holon — its state is represented in $\mathcal{D}(\mathbb{C}^7)$ (for instance through an aggregation channel $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$, which the theory does not fix; compare (AGG) of [Theorem 9.2](#теорема-92-масштабная-инвариантность)) and evolves there under a generator that satisfies A1–A5.
+
+Under (HOL), steps 2–6 apply the single-holon theorems to the composite and the statement below holds; without it the corpus has no derivation that a composite of holons is a holon. Non-triviality is therefore [C at (HOL)], no longer "[T], unconditional".
+:::
 
 :::warning Status revised (session 25)
 The status of T-68 has been clarified following resolution of the self-referential paradox:
-- **Non-triviality** $P > 1/7$ — **[T]** (T-96, unconditional)
-- **Viability** $P > 2/7$ — **[T at backbone-injection lower-bound] for embodied** systems (T-149: backbone injection ensures κ-dominance; Step 3 of T-149 is [C at that lower bound], not from pure axioms); **[C]** for isolated holons (C20 — irrelevant, since an isolated holon is dead forever, T-148)
+- **Non-triviality** $P > 1/7$ — **[C at (HOL)]** (T-96 applied to the composite; the earlier "[T], unconditional" is corrected in the errata above)
+- **Viability** $P > 2/7$ — **[T at backbone-injection lower-bound] for embodied** systems, given (HOL) (T-149: backbone injection ensures κ-dominance; Step 3 of T-149 is [C at that lower bound], not from pure axioms); **[C]** for isolated holons (C20 — irrelevant, since an isolated holon is dead forever, T-148)
 
 See [Status Registry](/docs/reference/status-registry), [T-149](/docs/proofs/consciousness/substrate-closure#t-149).
 :::
 
 :::note In Plain Terms
-Imagine mixing two paints. Can you be sure the mixture will not separate back into its components? Theorem 9.1 asserts: if two holons (viable systems) interact, their union **also** forms a holon — with its own dynamics, its own attractor, and its own properties.
+Imagine mixing two paints. Can you be sure the mixture will not separate back into its components? Theorem 9.1 asserts: if the union of two interacting holons (viable systems) is **itself** a holon — the assumption (HOL) — then it has its own dynamics, its own non-trivial attractor, and its own properties. That the union is a holon is assumed, not proved (an earlier edition said the theorem asserts it; retracted, errata above).
 
-This is the principle of **self-similarity**: the structure of CC reproduces itself at every scale. A cell is a holon. An organ is a holon. An organism is a holon. A society is a holon. Each level is described by the same formalism.
+This is the principle of **self-similarity**: the structure of CC reproduces itself at every scale at which (HOL) holds. A cell is a holon. An organ is a holon. An organism is a holon. A society is a holon. Each of these is an instance of (HOL), read as an interpretation [I], not a consequence of the theorem; where it holds, each level is described by the same formalism.
 
 For a sociologist: this is the mathematical justification for what Luhmann intuitively felt — social systems reproduce themselves at every level.
 
 **Connection:** [Autopoiesis axiom (AP)](/docs/core/foundations/axiom-septicity#ap-автопоэзис), [Composition closure](./axiomatics#замкнутость-композиции-следствие-из-ap), [Primitivity of the linear part](/docs/core/operators/lindblad-operators#примитивность-ℒω)
 :::
 
-:::tip Statement [T]
-Let $\mathbb{H}_1, \mathbb{H}_2$ be viable holons with dynamics satisfying axioms A1–A5. Then their composite $\mathbb{H}_{12}$ (defined as an object of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$):
+:::tip Statement [C at (HOL)]
+Let $\mathbb{H}_1, \mathbb{H}_2$ be viable holons with dynamics satisfying axioms A1–A5, and let their composite $\mathbb{H}_{12}$ (an object of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$) satisfy (HOL). Then:
 
-1. **[T]** Has a non-trivial attractor: $P(\rho_*^{(12)}) > 1/7$ (from [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора))
-2. **[T at backbone-injection lower-bound]** For embodied systems: $P(\rho_*^{(12)}) > P_{\mathrm{crit}} = 2/7$ ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора), Step 3 [C])
+1. **[C at (HOL)]** It has a non-trivial attractor: $P(\rho_*^{(12)}) > 1/7$ (from [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора))
+2. **[C at (HOL) and the backbone-injection lower bound]** For embodied systems: $P(\rho_*^{(12)}) > P_{\mathrm{crit}} = 2/7$ ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора), Step 3 [C])
 :::
 
 **Proof (6 steps).**
 
-**Step 1 (Composite as an ∞-topos object).** In $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$ the objects $\mathbb{H}_1, \mathbb{H}_2$ define a new object $\mathbb{H}_{12} = \mathbb{H}_1 \times_T \mathbb{H}_2$ (product over the terminal object $T$). The ∞-topos is complete (all finite limits exist). By the [section–retraction](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (T-58′ [T]; the Morita *equivalence* reading is retracted), $\mathbb{H}_{12}$ is representable by a state $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$.
+**Step 1 (Composite as an ∞-topos object).** In $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$ the objects $\mathbb{H}_1, \mathbb{H}_2$ define a new object $\mathbb{H}_{12} = \mathbb{H}_1 \times_T \mathbb{H}_2$ (product over the terminal object $T$). The ∞-topos is complete (all finite limits exist). That $\mathbb{H}_{12}$ is represented by a state $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$ is assumption (HOL). ~~By the section–retraction (T-58′; the Morita *equivalence* reading is retracted), $\mathbb{H}_{12}$ is representable by a state $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$.~~ Retracted (errata above): the [section–retraction](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) concerns the 7D and 42D descriptions of one holon, not a composite of two.
 
-**Step 2 (Axiom inheritance).** Axioms A1–A5 are **structural** properties of the ∞-topos, not tied to a specific scale:
+**Step 2 (Axiom inheritance, under (HOL)).** The earlier text read A1–A5 as **structural** properties of the ∞-topos that the composite inherits at any scale; what the proof uses is that the composite satisfies them, which is (HOL):
 
 - **A1** (Autopoiesis): the product of autonomous systems is autonomous. The spectral gap of each $\mathcal{L}_\Omega^{(i)}$ ($\lambda_{\mathrm{gap}}^{(i)} > 0$, from [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]) ensures robustness under perturbations from coupling. For coupling through coherences with amplitude $\varepsilon_0 \ll \lambda_{\mathrm{gap}}$, the Kato perturbation theorem guarantees preservation of the spectral gap.
-- **A2** (Phenomenology): representability in $\mathbb{C}^7$ — by construction of the composite (A3), not via T-58; the Morita *equivalence* reading is retracted, and only the section–retraction T-58′ [T] survives.
-- **A3** (Quantum basis): $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$ by construction.
+- **A2** (Phenomenology): representability in $\mathbb{C}^7$ — by (HOL). The earlier "by construction of the composite (A3)" named no construction and is retracted; the Morita *equivalence* reading T-58 is retracted, and the section–retraction T-58′ does not apply to composites.
+- **A3** (Quantum basis): $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$ — by (HOL), not "by construction".
 - **A5** (Page–Wootters): the temporal structure is inherited through the O-dimension.
 
 **Step 3 (Triadic decomposition).** From A1–A5 it follows that the dynamics of $\mathbb{H}_{12}$ decomposes into exactly three types ([T-57](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [T], LGKS theorem):
@@ -684,7 +692,7 @@ $$
 $\blacksquare$
 
 :::info Key observation
-Non-triviality of the attractor is an **unconditional** result [T]: the spectral gap of the linear part $\mathcal{L}_0$ ensures convergence, and regeneration $\mathcal{R}$ keeps the system away from the trivial $I/7$. Viability ($P > 2/7$) for **embodied** holons is [T at the backbone-injection lower bound] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149), Step 3 [C]). Theorem CC-5 is a direct consequence of the **universality** of axioms A1–A5 within the ∞-topos.
+Given (HOL), non-triviality of the composite's attractor follows from the single-holon theory: the spectral gap of the linear part $\mathcal{L}_0$ ensures convergence, and regeneration $\mathcal{R}$ keeps the system away from the trivial $I/7$. Viability ($P > 2/7$) for **embodied** holons is, given (HOL), [T at the backbone-injection lower bound] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149), Step 3 [C]). Theorem CC-5 is the single-holon theory applied to a composite that is assumed to be a holon; the universality of A1–A5 within the ∞-topos does not by itself make the composite satisfy them. (Earlier: "an **unconditional** result [T]" and "a direct consequence of the universality of axioms A1–A5"; retracted with step 1.)
 :::
 
 :::note Corollary CC-7 (Emergence) [T]
@@ -695,7 +703,7 @@ The composite holon possesses its **own** non-trivial attractor $\rho_*^{(12)} \
 
 ---
 
-The composite holon exists. But are its **qualitative** properties — purity, reflection, integration — preserved? The next theorem answers: yes, when the parts are weakly coupled and the aggregation is consistent — and not otherwise.
+If the composite is a holon, it has its own attractor. But are its **qualitative** properties — purity, reflection, integration — preserved? The next theorem answers: yes, when the parts are weakly coupled and the aggregation is consistent — and not otherwise.
 
 ### Theorem 9.2 / T-72 (Scale Invariance, CC-6) [C under (AGG)] {#теорема-92-масштабная-инвариантность}
 
@@ -750,10 +758,10 @@ With $\rho = \rho_k$, $\rho' = \sigma^{\otimes k}$ and (AGG a): $d_B(\Gamma^{(k)
 
 **Step 5 (Thresholds).** If $P(\sigma) - 2/7$ exceeds the bound on $\Delta_P$, then $P(\Gamma^{(k)}) > 2/7$ as well; likewise for $R \geq 1/3$ and $\Phi \geq 1$. A state that lies within the deviation of a threshold can cross it in either direction. $\blacksquare$
 
-**What does not need (AGG).** If the aggregate is itself a holon, [Theorem 9.1](#теорема-91-фрактальное-замыкание) gives it its own non-trivial attractor, $P(\rho_*^{(k)}) > 1/7$ ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]). That statement concerns the aggregate's own dynamics, not how its invariants compare with those of its parts.
+**What does not need (AGG).** If the aggregate is itself a holon — assumption (HOL) of [Theorem 9.1](#теорема-91-фрактальное-замыкание) — that theorem gives it its own non-trivial attractor, $P(\rho_*^{(k)}) > 1/7$ ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]). That statement concerns the aggregate's own dynamics, not how its invariants compare with those of its parts.
 
-:::info Corollary (Fractal structure) [C under (AGG)]
-Scale invariance under (AGG) + fractal closure CC-5 (non-triviality [T], viability [T for embodied] by [T-149](/docs/proofs/consciousness/substrate-closure#t-149)) justify the fractal structure of UHM at every scale at which the constituents are weakly coupled and aggregated consistently — from sub-cellular holons to metagalactic structures, wherever (AGG) holds. Where the coupling is strong, fractal closure still gives the aggregate its own attractor, but its invariants need not resemble those of its parts.
+:::info Corollary (Fractal structure) [C under (AGG) and (HOL)]
+Scale invariance under (AGG) + fractal closure CC-5 under (HOL) (non-triviality; viability for embodied systems by [T-149](/docs/proofs/consciousness/substrate-closure#t-149)) justify the fractal structure of UHM at every scale at which the aggregate is a holon and the constituents are weakly coupled and aggregated consistently — from sub-cellular holons to metagalactic structures, wherever (HOL) and (AGG) hold. Where the coupling is strong, fractal closure still gives the aggregate, if it is a holon, its own attractor, but its invariants need not resemble those of its parts. (Earlier: "non-triviality [T], viability [T for embodied]" without (HOL); corrected 2026-09-25.)
 :::
 
 ---
@@ -787,7 +795,7 @@ Consequently, $\rho_*^{(12)}$ is **irreducible** to $\rho_*^{(1)} \otimes \rho_*
 
 **Proof.**
 
-**Step 1.** The composite Lindbladian $\mathcal{L}_\Omega^{(12)} = \mathcal{L}_\Omega^{(1)} \otimes \mathrm{id}_2 + \mathrm{id}_1 \otimes \mathcal{L}_\Omega^{(2)} + \mathcal{L}_{\mathrm{int}}$ has a primitive linear part (from [Theorem 9.1 (CC-5)](#теорема-91-фрактальное-замыкание), step 5) → there exists a non-trivial attractor $\rho_*^{(12)} \neq I/7$ (from [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]).
+**Step 1.** The composite Lindbladian $\mathcal{L}_\Omega^{(12)} = \mathcal{L}_\Omega^{(1)} \otimes \mathrm{id}_2 + \mathrm{id}_1 \otimes \mathcal{L}_\Omega^{(2)} + \mathcal{L}_{\mathrm{int}}$ has a primitive linear part (from [Theorem 9.1 (CC-5)](#теорема-91-фрактальное-замыкание), step 5, which holds under its assumption (HOL); steps 2–4 below use only that the composite generator has a stationary state, which every Lindblad semigroup on a finite-dimensional space has, so this theorem does not inherit (HOL)) → there exists a non-trivial attractor $\rho_*^{(12)} \neq I/7$ (from [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]).
 
 **Step 2 (By contradiction).** If $\rho_*^{(12)} = \rho_*^{(1)} \otimes \rho_*^{(2)}$, then:
 
@@ -1059,7 +1067,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **No-Zombie (Theorem 8.1 and corollaries):** The culmination of the theory. A viable open system *must* have non-trivial E-coherence. Experience is not an epiphenomenon but a causally necessary element of dynamics. Philosophical zombies are mathematically impossible.
 
-**Composition and emergence (Theorems 9.x):** CC scales: a union of holons is again a holon (fractal closure). Structural invariants are preserved when the parts are weakly coupled (scale invariance, [C under (AGG)]). The whole is more than the sum of its parts (irreducible emergence).
+**Composition and emergence (Theorems 9.x):** CC scales where a union of holons is again a holon — fractal closure gives such a union its own non-trivial attractor under that assumption, (HOL), which it does not derive (corrected 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance, [C under (AGG)]). The whole is more than the sum of its parts (irreducible emergence).
 
 **Diagnostics (Theorem 10.1):** All viability conditions are equivalent to one: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$. The stress tensor is a universal monitoring tool.
 
@@ -1067,7 +1075,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **Attractors and structure (T-96, T-98, T-77, T-82, etc.):** Every system evolves toward a non-trivial equilibrium. The balance between dissipation and regeneration determines "health". The Fano structure is unique — CC has no alternatives. Full formulations and proofs — in the [summary table](#теоремы-аттракторов).
 
-Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms, except where a result names an additional assumption (scale invariance, Theorem 9.2, needs (AGG)). Not a single link can be removed without breaking the chain.
+Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms, except where a result names an additional assumption (fractal closure, Theorem 9.1, needs (HOL); scale invariance, Theorem 9.2, needs (AGG)). Not a single link can be removed without breaking the chain.
 
 ---
 
@@ -1085,7 +1093,7 @@ graph TD
     T81 --> C811["Corollary: Non-epiphenomenalism"]
     T81 --> C812["Corollary: Non-zombie"]
     T81P --> C813["Corollary: Coh min"]
-    T81 --> T91["Theorem 9.1: Composition [T]"]
+    T81 --> T91["Theorem 9.1: Composition [C]"]
     T91 --> T92["Theorem 9.2: Invariance [C]"]
     T91 --> T93x["Theorem 9.3: Emergence [T]"]
     T72 --> T101["Theorem 10.1: Equivalence [T]"]
@@ -1134,7 +1142,7 @@ Let us summarise. In this chapter we have traversed the full path from basic exi
 
 3. **Zombies are impossible** (Theorem 8.1 [T]): a viable open system must have $\mathrm{Coh}_E > 1/7$. E-coherence causally influences dynamics — epiphenomenalism is excluded (Corollary 8.1.1 [T]).
 
-4. **Composition works** (Theorems 9.1–9.3): the union of viable holons yields a holon (fractal closure [T] for embodied systems, T-149). Structural invariants are preserved when the parts are weakly coupled (scale invariance [C under (AGG)]). The whole is irreducible to the parts (emergence [T]).
+4. **Composition works** (Theorems 9.1–9.3) where the union of viable holons is itself a holon: fractal closure then gives it a non-trivial attractor, and viability for embodied systems (T-149) — [C at (HOL)]; that the union is a holon is assumed, not derived (the earlier "the union of viable holons yields a holon (fractal closure [T] for embodied systems)" is retracted, 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance [C under (AGG)]). The whole is irreducible to the parts (emergence [T]).
 
 5. **A unified health criterion** (Theorem 10.1 [T]): $\Gamma \in \mathcal{V}_{\mathrm{full}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1$ — the system is alive if and only if none of the seven stresses has reached unity.
 
