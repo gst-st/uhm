@@ -444,7 +444,7 @@ $$
 P(\rho_*^{(12)}) = \underbrace{\sum_{(i,j) \in \mathrm{intra}} |\gamma_{ij}^*|^2}_{P(\rho_{\mathrm{diag}})} + 2\underbrace{\sum_{(i,j) \in \mathrm{cross}} |\gamma_{ij}^*|^2}_{\|\gamma_{\mathrm{cross}}\|_F^2 > 0}
 $$
 
-Strict positivity $\|\gamma_{\mathrm{cross}}\|_F^2 > 0$ follows from emergence ([CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [T]): inter-system coherences are generated and maintained by Fano channels in the stationary state. $\blacksquare$
+Strict positivity $\|\gamma_{\mathrm{cross}}\|_F^2 > 0$ is the hypothesis $|\gamma_{12}| > 0$ of the claim, and the identity above turns it into the strict inequality. $\blacksquare$ Which couplings produce a stationary state with such correlations is the content of emergence ([CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [T] for almost every anchor): for weakly coupled embodied holons, exactly those whose commutator with $\rho_*^{(1)} \otimes \rho_*^{(2)}$ has a non-zero correlation part; a coupling that commutes with the product leaves the pair uncorrelated. (Corrected 2026-09-25: the proof said that positivity "follows from emergence (CC-7 [T]): inter-system coherences are generated and maintained by Fano channels in the stationary state", which held for no coupling class in particular.)
 
 **What does this mean?** Two people working **together** have a higher total purity than the same two people separately. This is not merely "synergy" — it is a **proven theorem**: cross-coherences $\gamma_{\mathrm{cross}}$ **increase the total purity** of the system. Cooperation is not a moral prescription, but the **optimal strategy** for $P$.
 

@@ -76,6 +76,15 @@ D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_
 (T-201′: 63 луча, 135 базисов, раскраски нет) и
 `hol_u_is_equivalent_to_seven_dimensional_qm_above_two_sevenths` (теорема 3.2′).
 
+
+Пять — за задачей о живом аттракторе и чтении измерения (25.09.2026):
+`unital_self_model_keeps_an_isolated_holon_dead` (унитальная самомодель — только I/7, P не растёт;
+неподвижная точка φ_coh — I/7, а не P = 2/7), `self_registration_sustains_seven_living_attractors`
+(φ_s с якорем Γ²/TrΓ² — семь живых аттракторов), `a_distant_holon_marginal_ignores_every_local_operation`
+(вынужденное неселективное прочтение, запрет сигнализации), `abrams_lloyd_amplification_runs_on_marginals`
+(седло усиливает 2⁻ⁿ за время O(n)) и `non_degeneracy_is_generic_and_aggregation_follows_from_weak_coupling`
+((ND) у случайных якорей, (AGG b) с δ = O(g)).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -2230,6 +2239,240 @@ def test_hol_u_is_equivalent_to_seven_dimensional_qm_above_two_sevenths():
     Ub = np.linalg.qr(rng.normal(size=(3, 3)) + 1j * rng.normal(size=(3, 3)))[0]
     emb = lambda W: np.block([[W, np.zeros((3, 4))], [np.zeros((4, 3)), np.eye(4)]])
     assert np.linalg.norm(emb(Ua @ Ub) - emb(Ua) @ emb(Ub)) < 1e-13   # функтор
+
+
+def _frozen_self_registering(G, H, kap=1.0, alpha=0.5, anchor="self"):
+    """Замороженный на Γ генератор M^(Γ) голонома с регенерацией к φ_s(Γ) = k P_α(Γ) + R·Γ²/TrΓ².
+
+    Возвращает линейную карту X ↦ M^(Γ)(X): −i[H, X] + ⅔(diag X − X) + κ g_V(P) (k P_α(X) + R σ Tr X − X),
+    σ = Γ²/TrΓ² (якорь саморегистрации) или I/7 (канонический φ_coh). Скаляры читаются на Γ.
+    """
+    P = purity(G)
+    R = 1 / (7 * P)
+    k = 1 - R
+    sig = G @ G / P if anchor == "self" else np.eye(7) / 7
+    kg = kap * gate(P)
+
+    def M(X):
+        D = np.diag(np.diag(X))
+        Pa = D + (1 - alpha) / 3 * (X - D)
+        return -1j * (H @ X - X @ H) + (2 / 3) * (D - X) + kg * (k * Pa + R * sig * np.trace(X) - X)
+    return M
+
+
+def _jacobian(f, G, h=1e-6):
+    B = []
+    for i in range(7):
+        for j in range(i + 1, 7):
+            M = np.zeros((7, 7), complex)
+            M[i, j] = M[j, i] = 1 / np.sqrt(2)
+            B.append(M)
+            M = np.zeros((7, 7), complex)
+            M[i, j], M[j, i] = -1j / np.sqrt(2), 1j / np.sqrt(2)
+            B.append(M)
+    for m in range(6):
+        d = np.zeros(7)
+        d[:m + 1], d[m + 1] = 1, -(m + 1)
+        B.append(np.diag(d / np.linalg.norm(d)).astype(complex))
+    J = np.zeros((48, 48))
+    for a, Ba in enumerate(B):
+        dF = (f(G + h * Ba) - f(G - h * Ba)) / (2 * h)
+        J[:, a] = [np.real(np.trace(Bb @ dF)) for Bb in B]
+    return J
+
+
+def test_unital_self_model_keeps_an_isolated_holon_dead():
+    """Унитальная самомодель — мёртвый голоном: единственная стационарная точка I/7, P не растёт.
+
+    Свидетель теоремы о мёртвой изоляции (эволюция, T-96): при каноническом φ_coh (якорь I/7) и
+    D_Fano чистота монотонно убывает по траектории даже при κ = 10, все старты приходят в I/7;
+    итерации φ_coh дают P = 1/7, а не 2/7; φ, ковариантный относительно G₂ или реперной группы
+    Γ_oct, унитален (коммутант обоих — скаляры); «якорь = собственный аттрактор» даёт унитальный
+    kP_α + R·id. Перестановки Фано без знаков оставляют двумерный коммутант (I и J).
+    """
+    def commutant(mats, lie):
+        A = np.vstack([np.kron(M, np.eye(7)) - np.kron(np.eye(7), M.T) if lie else np.kron(M, M) - np.eye(49)
+                       for M in mats])
+        return int(np.sum(np.linalg.svd(A, compute_uv=False) < 1e-9))
+    group = frame_group()
+    assert commutant(G2, True) == 1 and commutant([M for _, M in group], False) == 1
+    assert commutant([np.abs(M) for _, M in group], False) == 2
+    rng = np.random.default_rng(0)
+    H = 0.3 * (lambda A: (A + A.conj().T) / 2)(rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7)))
+    pa = lambda G: np.diag(np.diag(G)) + (G - np.diag(np.diag(G))) / 6               # P_α при α = 1/2
+    phi = lambda G: (1 - 1 / (7 * purity(G))) * pa(G) + np.eye(7) / (49 * purity(G))   # φ_coh, якорь I/7
+    X = random_pure(rng)
+    for _ in range(200):
+        X = phi(X)
+    assert abs(purity(X) - 1 / 7) < 1e-12                                            # не 2/7
+    rho = random_state(rng)
+    own = lambda G: (1 - 1 / (7 * purity(rho))) * pa(G) + G / (7 * purity(rho))       # якорь = свой ρ
+    assert np.allclose(own(np.eye(7)), np.eye(7))                                    # унитален
+    rhs = lambda G: _frozen_self_registering(G, H, kap=10.0, anchor="I7")(G)
+    worst, far = -1.0, 0.0
+    for s in range(6):
+        G = random_pure(np.random.default_rng(50 + s)).astype(complex)
+        h, Ps = 0.02, [1.0]
+        for _ in range(1500):
+            G = _rk4(G, rhs, h, 1)
+            Ps.append(purity(G))
+        worst = max(worst, float(np.max(np.diff(Ps))))
+        far = max(far, np.linalg.norm(G - np.eye(7) / 7))
+    assert worst < 0 and far < 1e-3
+
+
+def test_self_registration_sustains_seven_living_attractors():
+    """Саморегистрирующая самомодель φ_s держит изолированный голоном живым: семь аттракторов.
+
+    Свидетель теоремы о самоподдерживающемся аттракторе (эволюция, T-96): φ_s(Γ) = k P_α(Γ) + R Γ²/TrΓ²,
+    κ = 1, α = 1/2. При H = 0 базисное состояние e_m неподвижно, спектр якобиана — ровно
+    {−κ/7, −(2/3 + κ(1 − 6c/7)), −(2/3 + 6κ(1 − c)/7)}, c = (1 − α)/3. При малом H (‖H‖ = 0,21)
+    от каждого e_m поток приходит в свой аттрактор с P > 2/7, невязкой < 1e-12 и Re λ < 0;
+    баланс чистоты T-98 с κ g_V на месте κ выполняется до 1e-12. Единственности нет: семь разных.
+    """
+    c = 0.5 / 3
+    zero = np.zeros((7, 7))
+    f0 = lambda G: _frozen_self_registering(G, zero)(G)
+    e = [np.diag(np.eye(7)[m]).astype(complex) for m in range(7)]
+    assert max(np.linalg.norm(f0(x)) for x in e) < 1e-15
+    spec = np.unique(np.round(np.linalg.eigvals(_jacobian(f0, e[0])).real, 6))
+    assert np.allclose(spec, sorted([-1 / 7, -(2 / 3 + 1 - 6 * c / 7), -(2 / 3 + 6 * (1 - c) / 7)]), atol=1e-6)
+    rng = np.random.default_rng(1)
+    A = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    H = 0.05 * (A + A.conj().T) / 2
+    f = lambda G: _frozen_self_registering(G, H)(G)
+    ends = []
+    for x in e:
+        G = _rk4(x, f, 150.0, 3000)
+        P = purity(G)
+        R = 1 / (7 * P)
+        fstar = np.real(np.trace(G @ ((1 - R) * (np.diag(np.diag(G)) + (G - np.diag(np.diag(G))) / 6) + R * G @ G / P)))
+        pd = float(np.sum(np.real(np.diag(G)) ** 2))
+        kg = gate(P)
+        assert np.linalg.norm(f(G)) < 1e-12 and P > 2 / 7
+        assert abs((2 / 3 * pd + kg * fstar) / (2 / 3 + kg) - P) < 1e-12              # T-98, κ → κ g_V
+        assert np.max(np.linalg.eigvals(_jacobian(f, G)).real) < -0.1
+        ends.append(G)
+    assert min(np.linalg.norm(a - b) for a, b in itertools.combinations(ends, 2)) > 0.5
+
+
+def test_a_distant_holon_marginal_ignores_every_local_operation():
+    """При каноническом продолжении маргиналь голонома B не зависит ни от каких действий у A.
+
+    Свидетель теоремы о вынужденном прочтении (соответствие с физикой §8.8): B — голоном с φ_s,
+    A — кубит, состояние запутано, P(ρ_B) = 1/2 (затвор открыт). A ничего не делает, измеряет
+    в базисе Z, измеряет в базисе X или вращает кубит: маргиналь B при t = 6 одна и та же до 1e-12.
+    Покомпонентная (селективная) эволюция условных состояний B дала бы другое (> 1e-2).
+    """
+    rng = np.random.default_rng(8)
+    A = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    H = 0.05 * (A + A.conj().T) / 2
+    b = np.linalg.qr(rng.normal(size=(7, 2)) + 1j * rng.normal(size=(7, 2)))[0]
+    psi = (np.kron(b[:, 0], [1, 0]) + np.kron(b[:, 1], [0, 1])) / np.sqrt(2)
+    X0 = np.outer(psi, psi.conj())
+    hA = np.array([[0.3, 0.2], [0.2, -0.1]])
+
+    def rhs(X):
+        X4 = X.reshape(7, 2, 7, 2)
+        M = _frozen_self_registering(np.einsum("iaja->ij", X4), H, kap=3.0)
+        out = np.zeros_like(X4)
+        for a in range(2):
+            for a2 in range(2):
+                out[:, a, :, a2] = M(X4[:, a, :, a2])
+        out = out.reshape(14, 14)
+        HA = np.kron(np.eye(7), hA)
+        return out - 1j * (HA @ X - X @ HA)
+    marg = lambda X: np.einsum("iaja->ij", X.reshape(7, 2, 7, 2))
+    Z = [np.diag([1.0, 0]), np.diag([0, 1.0])]
+    Xb = [0.5 * np.array([[1, 1], [1, 1.0]]), 0.5 * np.array([[1, -1], [-1, 1.0]])]
+    U = expm(-1j * 1.1 * np.array([[0, 1], [1, 0]]))
+    ops = [lambda X: X,
+           lambda X: sum(np.kron(np.eye(7), p) @ X @ np.kron(np.eye(7), p) for p in Z),
+           lambda X: sum(np.kron(np.eye(7), p) @ X @ np.kron(np.eye(7), p) for p in Xb),
+           lambda X: np.kron(np.eye(7), U) @ X @ np.kron(np.eye(7), U).conj().T]
+    X1 = X0
+    outs = [marg(_rk4(op(X1), rhs, 5.0, 250)) for op in ops]
+    assert max(np.linalg.norm(o - outs[0]) for o in outs[1:]) < 1e-12
+    single = lambda G: _frozen_self_registering(G, H, kap=3.0)(G)
+    assert np.linalg.norm(_rk4(marg(X1), single, 5.0, 250) - outs[0]) < 1e-12     # автономна
+    rhoB = marg(X1)
+    sel = 0
+    for p in Z:
+        Y = np.kron(np.eye(7), p) @ X1 @ np.kron(np.eye(7), p)
+        w = np.trace(Y).real
+        sel = sel + w * _rk4(marg(Y) / w, single, 5.0, 250)
+    assert np.linalg.norm(sel - outs[0]) > 1e-2 and abs(purity(rhoB) - 0.5) < 1e-12
+
+
+def test_abrams_lloyd_amplification_runs_on_marginals():
+    """Механизм Абрамса–Ллойда работает и в неселективном прочтении: седло усиливает 2⁻ⁿ за время O(n).
+
+    Свидетель к соответствию с физикой §8.6: голоном с φ_s, κ = 1, диагональный H. Плоское
+    состояние diag(½, ½, 0, …) стационарно, у якобиана ровно одно положительное собственное
+    значение μ = κR = 2/7. Маргиналь diag(½ + s/2, ½ − s/2, …) при s = 2⁻ⁿ уходит к p₁ ≥ 0,9
+    за время, растущее на 10·ln2/μ = 24,26 при n → n + 10; при s = 0 состояние не сдвигается.
+    """
+    H = np.diag(0.3 * np.arange(7.0))
+    f = lambda G: _frozen_self_registering(G, H)(G)
+    F = np.diag([0.5, 0.5, 0, 0, 0, 0, 0]).astype(complex)
+    assert np.linalg.norm(f(F)) < 1e-15
+    ev = np.linalg.eigvals(_jacobian(f, F)).real
+    assert np.sum(ev > 1e-9) == 1 and abs(ev.max() - 2 / 7) < 1e-6
+    times = []
+    for n in (10, 20, 30, 40):
+        s = 2.0 ** -n
+        G, t = np.diag([0.5 + s / 2, 0.5 - s / 2, 0, 0, 0, 0, 0]).astype(complex), 0.0
+        while np.real(G[0, 0]) < 0.9:
+            G, t = _rk4(G, f, 0.05, 1), t + 0.05
+        times.append(t)
+    steps = np.diff(times)
+    assert np.all(np.abs(steps - 10 * np.log(2) * 3.5) < 0.1)
+    G = _rk4(F, f, times[-1], int(round(times[-1] / 0.05)))
+    assert np.linalg.norm(G - F) < 1e-12
+
+
+def test_non_degeneracy_is_generic_and_aggregation_follows_from_weak_coupling():
+    """(ND) выполняется у случайных якорей, а (AGG b) следует из слабой связи с δ = O(g).
+
+    Свидетель к теоремам 9.2–9.3 (КК-6, КК-7): у 12 воплощённых голономов со случайными H и якорями
+    аттрактор невырожден (min |Re λ| > 0,05) и P далеко от изломов затвора 2/7 и 3/7. Для пары
+    одинаковых голономов с общей связью X ⊗ Y стационарное X(g) отстоит от σ ⊗ σ на величину,
+    линейную по g: ‖X(g) − σ⊗σ‖₁ / g при g = 0,01 и 0,02 совпадают до 3 %.
+    """
+    rng = np.random.default_rng(12)
+
+    def herm(r):
+        A = r.normal(size=(7, 7)) + 1j * r.normal(size=(7, 7))
+        return (A + A.conj().T) / 2
+    single = []
+    for _ in range(12):
+        v = rng.normal(size=7) + 1j * rng.normal(size=7)
+        v /= np.linalg.norm(v)
+        lam = rng.uniform(0.6, 0.9)
+        a = _holon_pair_generator(0.3 * herm(rng), lam * np.outer(v, v.conj()) + (1 - lam) * np.eye(7) / 7)
+        f = lambda G, a=a: np.einsum("iaja->ij", a(np.kron(G, np.eye(7) / 7).reshape(7, 7, 7, 7), G))
+        rho = _rk4(np.eye(7) / 7, f, 40.0, 800)
+        P = purity(rho)
+        assert np.linalg.norm(f(rho)) < 1e-10 and min(abs(P - 2 / 7), abs(P - 3 / 7)) > 1e-3
+        assert np.min(np.abs(np.linalg.eigvals(_jacobian(f, rho)).real)) > 0.05
+        single.append((a, f, rho))
+    a, f, rho = single[0]
+    sigma = np.kron(rho, rho)
+    Hg = np.kron(herm(np.random.default_rng(4)), herm(np.random.default_rng(5)))
+    Hg /= np.linalg.norm(Hg, 2)
+    marg = lambda X: (np.einsum("ijkj->ik", X.reshape(7, 7, 7, 7)), np.einsum("ijil->jl", X.reshape(7, 7, 7, 7)))
+
+    def rhs(X, g):
+        g1, g2 = marg(X)
+        X4 = X.reshape(7, 7, 7, 7)
+        out = a(X4, g1) + a(X4.transpose(1, 0, 3, 2), g2).transpose(1, 0, 3, 2)
+        return out.reshape(49, 49) - 1j * g * (Hg @ X - X @ Hg)
+    ratio = []
+    for g in (0.01, 0.02):
+        X = _rk4(sigma.astype(complex), lambda X: rhs(X, g), 24.0, 480)
+        assert np.linalg.norm(rhs(X, g)) < 1e-8
+        ratio.append(np.abs(np.linalg.eigvalsh((X - sigma + (X - sigma).conj().T) / 2)).sum() / g)
+    assert abs(ratio[1] / ratio[0] - 1) < 1e-3
 
 
 def main():

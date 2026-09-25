@@ -117,7 +117,7 @@ $$
 
 This is the standard von Neumann reduction postulate, **derived** from the $\Omega$ structure. $\blacksquare$
 
-*Scope (2026-09-25).* Whether this update may be applied to a system entangled with a holon before the holon's regeneration acts depends on the measurement reading the corpus adopts: under the non-selective reading (Option A of [physics correspondence, §8.7](/docs/proofs/physics/physics-correspondence#87-прочтение-измерения)) it may not, and selection is a readout of the final joint state; under linear regeneration (Option C) it may without restriction. A modification of the regenerative term that keeps the threshold $P = 2/7$ and allows the update without signalling does not exist (same section).
+*Scope (2026-09-25).* $\Gamma_k$ is the conditional readout of the state: the component of the post-measurement joint state that carries record $k$, normalised. It is not substituted for the state of a system inside the regenerative dynamics. The axioms force this reading — the argument of a holon's dynamics is its unconditioned marginal, and a Lüders-conditioned regeneration is not a function of the joint state ([physics correspondence, Theorem 8.5, §8.8](/docs/proofs/physics/physics-correspondence#88-прочтение-вынуждено) [T]). Applied to a system entangled with a holon, the update is therefore a readout of the final joint state, not a step taken before the holon's regeneration acts. (Earlier in the day this note left the reading to the corpus's choice between Options A and C of §8.7.)
 
 ### 2.3 Lindblad Operators as Decoherence Channels
 
@@ -499,7 +499,7 @@ Thus, self-measurement $\varphi$ is **well-defined** (CPTP), has a **unique fixe
 Introducing nonlinearity into quantum mechanics typically violates the no-signaling principle (Gisin, 1990; Polchinski, 1991). The regenerative term $\mathcal{R}[\Gamma, E]$ is nonlinear in $\Gamma$ through $\kappa(\Gamma)$ and $\varphi(\Gamma)$.
 
 :::warning What is proven and what is not
-The theorem below proves that the regeneration of $A$ leaves the *unconditioned* marginal of $B$ unchanged [T]. It does not prove that the full dynamics forbids signalling, and with the Lüders update of Theorem 2.1 (step 4) applied to a measurement at $A$ it does not: $B$'s state becomes one of the conditional states, the state-dependent regenerative term of $B$ acts on each, and the resulting statistics depend on what $A$ chose (explicit example and the two possible repairs: [Physics correspondence, §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). No-signalling of the full dynamics is [C] under the non-selective reading, in which the nonlinear terms act only on unconditioned marginals; the options and what each costs this theorem are set out in [Physics correspondence, §8.7](/docs/proofs/physics/physics-correspondence#87-прочтение-измерения). The earlier title "No-signaling in UHM" and the [T] status of the full claim are retracted.
+The theorem below proves that the regeneration of $A$ leaves the *unconditioned* marginal of $B$ unchanged [T]. It does not prove that the full dynamics forbids signalling, and with the Lüders update of Theorem 2.1 (step 4) applied to a measurement at $A$ it does not: $B$'s state becomes one of the conditional states, the state-dependent regenerative term of $B$ acts on each, and the resulting statistics depend on what $A$ chose (explicit example and the two possible repairs: [Physics correspondence, §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). That selective application, however, is not a dynamics of UHM: the axioms make the argument of a holon's regeneration its unconditioned marginal, and with that reading no operation at $A$ changes $B$'s statistics — no-signalling of the full dynamics is [T] ([Physics correspondence, Theorem 8.5, §8.8](/docs/proofs/physics/physics-correspondence#88-прочтение-вынуждено); it was [C] under the non-selective reading until the reading was shown to be forced). The earlier title "No-signaling in UHM" rested on the CPTP structure of $\varphi$ alone and stays retracted as an argument.
 :::
 
 ### 8.2 The Central Theorem
@@ -560,12 +560,12 @@ UHM evolution is defined on the density matrix $\Gamma$, not on the ensemble dec
 *Proof:* All components of the equation ($H_{eff}$, $\mathcal{D}_\Omega$, $\kappa$, $\varphi$, $g_V(P)$) are functions of $\Gamma$, not of the specific decomposition $\Gamma = \sum_i p_i |\psi_i\rangle\langle\psi_i|$. $\blacksquare$
 :::
 
-An earlier version added "two different preparations of the same $\Gamma$ evolve identically". That is retracted: a proper mixture — a coin toss, or a measurement on a distant partner — evolves branch by branch, $\sum_k p_k\,\Phi_t(\rho_k)$, which differs from $\Phi_t(\sum_k p_k \rho_k)$ for a nonlinear $\Phi_t$ ([Physics correspondence, §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)).
+An earlier version added "two different preparations of the same $\Gamma$ evolve identically". That is retracted as it was argued: in the selective reading a proper mixture evolves branch by branch, $\sum_k p_k\,\Phi_t(\rho_k)$, which differs from $\Phi_t(\sum_k p_k \rho_k)$ for a nonlinear $\Phi_t$ ([Physics correspondence, §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). The correct statement is Theorem 8.5 (ii) of §8.8: preparations that leave a holon with the same marginal leave it with the same future marginal, because the selective reading is not a UHM dynamics.
 
 ### 8.5 Computational Constraint
 
 :::warning Retracted: Theorem 8.3 (Absence of computational speedup) [T]
-An earlier version stated as a theorem that $\mathcal{R}$ gives no speed-up beyond BQP, on four grounds: activity only for L2+ systems, the cost $\Delta F > 0$, the data-processing inequality for $\varphi$, and decoherence. None of these bounds what a nonlinear evolution can compute, and D. S. Abrams and S. Lloyd showed that generic deterministic nonlinear quantum evolution solves NP-complete problems in polynomial time (*Phys. Rev. Lett.* **81**, 3992 (1998)). The theorem is retracted; the question is open [H] ([Physics correspondence, §8.6](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение)).
+An earlier version stated as a theorem that $\mathcal{R}$ gives no speed-up beyond BQP, on four grounds: activity only for L2+ systems, the cost $\Delta F > 0$, the data-processing inequality for $\varphi$, and decoherence. None of these bounds what a nonlinear evolution can compute, and D. S. Abrams and S. Lloyd showed that generic deterministic nonlinear quantum evolution solves NP-complete problems in polynomial time (*Phys. Rev. Lett.* **81**, 3992 (1998)). The theorem is retracted. For the ideal dynamics the question is now settled the other way: with a regeneration that keeps a holon alive, the amplification runs on the holon's marginal and decides satisfiability in time linear in the number of bits ([Physics correspondence, Theorem 8.6](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение) [T]); with noise of fixed size it is open [H].
 :::
 
 ---
@@ -582,7 +582,7 @@ An earlier version stated as a theorem that $\mathcal{R}$ gives no speed-up beyo
 | Observer (external) | Self-measurement via $\varphi$ (when $R > 0$) | [H] |
 | Irreversibility of measurement | $dS_{vN}/d\tau \geq 0$ from the unitality of $\mathcal{D}_\Omega$ (not from CPTP alone) | [T] |
 | Marginal identity | $\text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ | [T] |
-| No-signalling of the full dynamics | Only in the non-selective reading; fails with the Lüders update; no threshold-keeping repair of $\mathcal{R}$ exists (physics correspondence §8.7) | [C] |
+| No-signalling of the full dynamics | The non-selective reading is forced by the axioms; with it no remote operation changes a holon's statistics (physics correspondence §8.8; [C] before 2026-09-25) | [T] |
 | Ensemble independence | Evolution map defined on $\Gamma$ | [D] |
 
 ---

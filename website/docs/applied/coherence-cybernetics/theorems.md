@@ -695,6 +695,14 @@ $\blacksquare$
 Given (HOL), non-triviality of the composite's attractor follows from the single-holon theory: the spectral gap of the linear part $\mathcal{L}_0$ ensures convergence, and regeneration $\mathcal{R}$ keeps the system away from the trivial $I/7$. Viability ($P > 2/7$) for **embodied** holons is, given (HOL), [T at the backbone-injection lower bound] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149), Step 3 [C]). Theorem CC-5 is the single-holon theory applied to a composite that is assumed to be a holon; the universality of A1–A5 within the ∞-topos does not by itself make the composite satisfy them. (Earlier: "an **unconditional** result [T]" and "a direct consequence of the universality of axioms A1–A5"; retracted with step 1.)
 :::
 
+:::tip Corollary 9.1a (Non-triviality of the composite without (HOL)) [T]
+Let $\mathbb{H}_1, \mathbb{H}_2$ be embodied holons whose anchors lie outside the null set of [Theorem 9.4](#теорема-94-генеричность-nd), coupled by $-ig[H_{\mathrm{int}}, \cdot]$ with the canonical extension. For $|g|$ small the composite on $\mathbb{C}^7 \otimes \mathbb{C}^7$ has a stationary state $X(g)$, smooth in $g$, with $\lVert X(g) - \rho_*^{(1)} \otimes \rho_*^{(2)} \rVert_1 = O(g)$. Hence $P(X(g)) = P(\rho_*^{(1)})\,P(\rho_*^{(2)}) + O(g) > 1/49$ — the composite is not at its own maximally mixed state — and the marginals satisfy $P(X_i(g)) = P(\rho_*^{(i)}) + O(g)$, so a part that is viable with a margin stays viable. If the single-holon attractors are linearly stable (as in every case computed), so is $X(g)$.
+:::
+
+*Proof.* Theorem 9.4 gives (ND), Theorem 9.3 (iii) the branch $X(g)$ by the implicit function theorem, and the $O(g)$ bound is the derivative $X'(0) = \mathcal{J}^{-1}(i[H_{\mathrm{int}}, \sigma])$. $P(\rho) > 1/7$ for every state $\rho \neq I/7$, and $\rho_*^{(i)} \neq I/7$ because the backbone pumps toward a full-rank anchor $\sigma_i \neq I/7$. The spectrum of the Jacobian is that of the two local blocks and of $\mathcal{J}_c$, with $\mathrm{Re} \leq -2\mu$ (Theorem 9.3, step 3), and it moves continuously with $g$. $\blacksquare$
+
+What (HOL) adds is a seven-dimensional description of the composite. The axioms fix the dimension of a holon at seven, and a composite of two holons lives on $\mathbb{C}^{49}$; a description in $\mathcal{D}(\mathbb{C}^7)$ that the joint flow respects is extra structure, not a consequence of A1–A5, so (HOL) stays an assumption of Theorem 9.1. The substance that Theorem 9.1 wanted from it — that the composite of living holons has a non-trivial attractor — does not need it.
+
 :::note Corollary CC-7 (Emergence) — withdrawn [✗] (2026-09-25)
 ~~The composite holon possesses its **own** non-trivial attractor $\rho_*^{(12)} \neq \alpha\rho_*^{(1)} + (1-\alpha)\rho_*^{(2)}$ (from nonlinearity of $\mathcal{R}$ and primitivity of the linear part $\mathcal{L}_0^{(12)}$). Proof — Theorem 9.3 [T].~~ Withdrawn: the proof it cited is retracted, and the comparison mixes spaces — $\rho_*^{(12)}$ lives on $\mathbb{C}^{49}$, the mixture on $\mathbb{C}^7$. When the coupling commutes with $\rho_*^{(1)} \otimes \rho_*^{(2)}$ the composite's attractor is that product, fixed entirely by the parts. What the composite acquires, and when, is [Theorem 9.3](#теорема-93-эмерджентность) [C under (ND)].
 :::
@@ -758,6 +766,12 @@ With $\rho = \rho_k$, $\rho' = \sigma^{\otimes k}$ and (AGG a): $d_B(\Gamma^{(k)
 
 **Step 5 (Thresholds).** If $P(\sigma) - 2/7$ exceeds the bound on $\Delta_P$, then $P(\Gamma^{(k)}) > 2/7$ as well; likewise for $R \geq 1/3$ and $\Phi \geq 1$. A state that lies within the deviation of a threshold can cross it in either direction. $\blacksquare$
 
+:::tip Corollary 9.2a ((AGG) at the stationary state of weakly coupled holons) [T]
+Let $k$ identical embodied holons with an anchor outside the null set of [Theorem 9.4](#теорема-94-генеричность-nd) be coupled by $-ig\,H_{\mathrm{int}}$, and let the aggregation be the partial trace onto one holon or the mean of the single-copy marginals. For $|g|$ small the stationary state $\rho_k = X(g)$ near $\sigma^{\otimes k}$ satisfies (AGG): (a) holds by the choice of aggregation, and (b) holds in trace norm with $\delta = \tfrac12\lVert X(g) - \sigma^{\otimes k}\rVert_1 = O(g)$. The conclusions of Theorem 9.2 therefore hold at the stationary state with deviations $O(g)$.
+:::
+
+*Proof.* The branch $X(g)$ and its derivative are those of Corollary 9.1a, now for $k$ factors. Both aggregations are CPTP and return $\sigma$ on $\sigma^{\otimes k}$, so $\tfrac12\lVert\Gamma^{(k)} - \sigma\rVert_1 \leq \delta$; steps 2–5 of Theorem 9.2 use only this bound, $\lVert\Gamma^{(k)} - \sigma\rVert_F \leq 2\delta$. $\blacksquare$ Witness (`test_non_degeneracy_is_generic_and_aggregation_follows_from_weak_coupling`): two identical embodied holons with a generic coupling $X \otimes Y$ of unit norm; $\lVert X(g) - \sigma \otimes \sigma\rVert_1 / g = 0.13421$ at $g = 0.01$ and $0.13419$ at $g = 0.02$.
+
 **What does not need (AGG).** If the aggregate is itself a holon — assumption (HOL) of [Theorem 9.1](#теорема-91-фрактальное-замыкание) — that theorem gives it its own non-trivial attractor, $P(\rho_*^{(k)}) > 1/7$ ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]). That statement concerns the aggregate's own dynamics, not how its invariants compare with those of its parts.
 
 :::info Corollary (Fractal structure) [C under (AGG) and (HOL)]
@@ -768,7 +782,7 @@ Scale invariance under (AGG) + fractal closure CC-5 under (HOL) (non-triviality;
 
 Fractal closure and scale invariance concern what the composite inherits. The next question is what it acquires: when does coupling make the joint state of two holons carry information that the two individual states do not — mutual information $I > 0$? The earlier answer, "always, once they interact", is false; the correct answer is a criterion on the coupling.
 
-#### Theorem 9.3 (CC-7: Emergence) [C under (ND)] {#теорема-93-эмерджентность}
+#### Theorem 9.3 (CC-7: Emergence) [T for almost every anchor] {#теорема-93-эмерджентность}
 
 <!-- preserve old anchor for backward compatibility -->
 <span id="гипотеза-93-эмерджентность"></span>
@@ -800,12 +814,12 @@ Let $\mathcal{L}_i[\rho_*^{(i)}] = 0$, $\sigma := \rho_*^{(1)} \otimes \rho_*^{(
 
 **(ND)** *Non-degeneracy:* each $\rho_*^{(i)}$ is a non-degenerate fixed point — the Jacobian of $\mathcal{L}_i$ at $\rho_*^{(i)}$ is invertible on traceless Hermitian operators, and $P(\rho_*^{(i)}) \notin \{2/7, 3/7\}$, so that the gate $g_V$ is differentiable there.
 
-:::tip Theorem 9.3 (CC-7: Emergence) [C under (ND)]
+:::tip Theorem 9.3 (CC-7: Emergence) [T for almost every anchor; earlier C under (ND)]
 **(i) Exact, any $g$.** $\sigma$ is a stationary state of the coupled composite if and only if $[H_{\mathrm{int}}, \sigma] = 0$. In that case the pair has a stationary state with $I(\mathbb{H}_1 : \mathbb{H}_2) = 0$ at every coupling strength.
 
 **(ii) Exact, any $g$.** A product $s_1 \otimes s_2$ is a stationary state if and only if $\Pi_c^{(s_1 \otimes s_2)}\bigl([H_{\mathrm{int}}, s_1 \otimes s_2]\bigr) = 0$ and each $s_i$ is stationary for $\mathcal{L}_i - i g [H_i^{\mathrm{mf}}, \cdot\,]$ with the mean fields $H_1^{\mathrm{mf}} = \mathrm{Tr}_2[(I \otimes s_2) H_{\mathrm{int}}]$, $H_2^{\mathrm{mf}} = \mathrm{Tr}_1[(s_1 \otimes I) H_{\mathrm{int}}]$. A stationary state of the pair is uncorrelated exactly when it is such a product; in particular a local coupling $H_A \otimes I + I \otimes H_B$ never correlates the pair.
 
-**(iii) Weak coupling, under (ND).** For $|g|$ small there is a unique stationary state $X(g)$ near $\sigma$, smooth in $g$, and
+**(iii) Weak coupling, under (ND) — which holds for every pair of anchors outside a closed null set (Theorem 9.4).** For $|g|$ small there is a unique stationary state $X(g)$ near $\sigma$, smooth in $g$, and
 
 $$
 X(g) - X_1(g) \otimes X_2(g) = g\, C_1 + O(g^2), \qquad C_1 = \mathcal{J}_c^{-1}\, \Pi_c^{(\sigma)}\bigl(i[H_{\mathrm{int}}, \sigma]\bigr),
@@ -830,13 +844,23 @@ For $s_i = \rho_*^{(i)}$ the first two terms vanish, which proves (i). For (ii):
 
 **Step 4 (First order).** Under (ND) the local blocks are invertible too, so $\mathcal{J}$ is, and the implicit function theorem gives the branch $X(g)$. Differentiating $\mathcal{L}^{(12)}[X(g)] = 0$ at $g = 0$: $\mathcal{J} X'(0) = i[H_{\mathrm{int}}, \sigma]$; applying $\Pi_c^{(\sigma)}$, which commutes with $\mathcal{J}$, gives $\Pi_c^{(\sigma)} X'(0) = C_1$. Since $X - X_1 \otimes X_2 = \Pi_c^{(\sigma)}(X) - (X_1 - \rho_*^{(1)}) \otimes (X_2 - \rho_*^{(2)})$, the correlation is $g C_1 + O(g^2)$, and $C_1 \neq 0$ exactly when $\Pi_c^{(\sigma)}([H_{\mathrm{int}}, \sigma]) \neq 0$. The bound on $I$ is the quantum Pinsker inequality $D(\rho \,\|\, \tau) \geq \tfrac12 \lVert \rho - \tau \rVert_1^2$. $\blacksquare$
 
-**Why [C] and not [T].** Parts (i) and (ii) use nothing beyond the form of the composite generator and hold unconditionally. Part (iii) needs (ND): that the single-holon attractor is a non-degenerate fixed point is not proved in the corpus. It also needs the attractor to exist: an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ (anchor $I/7$) has none besides $I/7$, since $\mathrm{Tr}(\Gamma \varphi_{\mathrm{coh}}(\Gamma)) \leq P - (P - 1/7)/(7P)$, so regeneration and dissipation both lower $P$ (over 100 random states the left side minus the right is at most $-0.020$; twenty pure starts all end at $P = 0.14286$ by $t = 60$); the anchor $\sigma_i$ of an embodied holon is what gives it one ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)).
+**Status: [T] for almost every anchor (updated 2026-09-25; it was [C under (ND)]).** Parts (i) and (ii) use nothing beyond the form of the composite generator and hold unconditionally. Part (iii) needs (ND), and [Theorem 9.4](#теорема-94-генеричность-nd) below proves it for every pair of anchors outside a closed Lebesgue-null set. It also needs the attractor to exist. An embodied holon always has a stationary state: its flow maps the compact convex set of states into itself, so each time-$t$ map has a fixed point (Brouwer), and a limit of such points as $t \to 0$ is stationary. An isolated holon with the self-registering $\varphi_s$ has seven non-degenerate ones for small $H$ ([evolution](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор)), and there the correlation block is invertible too, with $\mathrm{Re} \leq -2\kappa g_V R$ in place of $-2\mu$ (the anchor term acts as $-\kappa g_V R$ on traceless operators). Without an anchor of either kind there is nothing to apply (iii) to: an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ (anchor $I/7$) has none besides $I/7$, since $\mathrm{Tr}(\Gamma \varphi_{\mathrm{coh}}(\Gamma)) \leq P - (P - 1/7)/(7P)$, so regeneration and dissipation both lower $P$ (over 100 random states the left side minus the right is at most $-0.020$; twenty pure starts all end at $P = 0.14286$ by $t = 60$); the anchor $\sigma_i$ of an embodied holon is what gives it one ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)).
 
 **Numerical check** (`test_coupled_holons_can_have_a_product_stationary_state`). Two embodied holons with the canonical ingredients above ($\alpha = 1/2$, $\mu = 1$, $\kappa = 1/7 + \mathrm{Coh}_E$, $g_V = \mathrm{clamp}(7P - 2, 0, 1)$, random $H_i$ of norm scale $0.3$, anchors of purity weight $0.85$ and $0.8$) have attractors with $P = 0.362$ and $0.303$ (residual below $10^{-15}$). All couplings are normalised to operator norm $0.3$.
 - (i) $H_{\mathrm{int}} \propto (\rho_*^{(1)} - I/7) \otimes (\rho_*^{(2)} - I/7)$: $\lVert [H_{\mathrm{int}}, \sigma] \rVert_F = 1.7 \times 10^{-17}$. From a random state on $\mathbb{C}^{49}$ the flow reaches $\sigma$ to $4.9 \times 10^{-16}$ by $t = 24$; $\lvert I \rvert < 10^{-15}$.
 - (ii) $H_{\mathrm{int}} = H_A \otimes I$: $\lVert [H_{\mathrm{int}}, \sigma] \rVert_F = 0.052$; the stationary state moves $0.027$ away from $\sigma$ and stays a product to $4 \times 10^{-16}$; $\lvert I \rvert < 10^{-15}$.
 - A generic $X \otimes Y$: correlation $\lVert X - X_1 \otimes X_2 \rVert_F = 0.013$, $I = 2.1 \times 10^{-3}$.
 - (iii) In a run of the same model with $\kappa_0 = \omega_0 \lvert\gamma_{OE}\rvert \lvert\gamma_{OU}\rvert / \gamma_{OO}$: the single-holon Jacobians have spectra with $\mathrm{Re}\,\lambda \leq -1.30$ and $-1.42$, so (ND) holds for this pair; under the coupling of (i), three random starts on $\mathbb{C}^{49}$ end within $10^{-13}$ of $\sigma$; for a generic $X \otimes Y$ of unit norm at $g = 0.02$ and $0.04$, the measured correlation matches $g C_1$ to relative $5.8 \times 10^{-3}$ and $1.16 \times 10^{-2}$ (error linear in $g$), and $I/g^2 = 0.02437$ at both.
+
+#### Theorem 9.4 (Non-degeneracy is generic) [T] {#теорема-94-генеричность-nd}
+
+:::tip Theorem 9.4 [T]
+Let a holon be embodied, with generator $\mathcal{L}_\sigma[\Gamma] = -i[H,\Gamma] + \mathcal{D}_\Omega[\Gamma] + \kappa(\Gamma)\,g_V(P)\,(\varphi(\Gamma) - \Gamma) + \mu(\sigma - \Gamma)$, $\mu > 0$, $\kappa$ smooth, $\varphi = \varphi_{\mathrm{coh}}$ or $\varphi_s$, and a full-rank anchor $\sigma$. There is a closed Lebesgue-null set $N$ of anchors such that for $\sigma \notin N$ every stationary state of $\mathcal{L}_\sigma$ is non-degenerate and has $P \notin \{2/7, 3/7\}$. Its complement is open and dense. Hence (ND) holds for every pair of anchors outside $N \times N$.
+:::
+
+*Proof.* On the open set $U$ of trace-one Hermitian matrices with $P \notin \{2/7, 3/7\}$ the map $F(\Gamma, \sigma) = \mathcal{L}_\sigma[\Gamma]$ is smooth ($P \geq 1/7$ on trace-one Hermitian matrices, so $R$ and $\Gamma^2/P$ are smooth), with values in the traceless Hermitian matrices. Its derivative in $\sigma$ is $\mu$ times the identity on traceless directions, which is onto; so $0$ is a regular value of $F$ on $U \times \{\sigma \text{ full rank}\}$. By the parametric transversality theorem (V. Guillemin, A. Pollack, *Differential Topology*, Prentice-Hall 1974, Ch. 2 §3), for almost every $\sigma$ the value $0$ is regular for $F(\cdot, \sigma)$ on $U$: every zero there is non-degenerate. On each kink surface $K_c = \{P = c\}$, $c \in \{2/7, 3/7\}$, take the one-sided smooth continuation of $g_V$ (it agrees with $g_V$ on $K_c$); its restriction to $K_c$, a 47-dimensional manifold, is again a submersion in $\sigma$, and transversality to $0$ in a 48-dimensional space means no zeros, so for almost every $\sigma$ no stationary state lies on $K_c$. The bad set $N$ is closed: a limit of anchors with a degenerate or kink stationary state has one too, since stationary states lie in the compact set of states. A closed null set has a dense open complement. $\blacksquare$
+
+Witness (`test_non_degeneracy_is_generic_and_aggregation_follows_from_weak_coupling`): 12 embodied holons with random $H$ of scale $0.3$ and random anchors of pure weight $0.6$–$0.9$; the attractors have $P$ from $0.226$ to $0.341$, at least $1.3 \cdot 10^{-3}$ from $2/7$ and $3/7$, and Jacobians with $\min\lvert\mathrm{Re}\,\lambda\rvert$ from $1.19$ to $1.49$ — all non-degenerate.
 
 **What remains of "emergence".** For a correlated joint state the marginals do not determine it, and $I = S(\rho_1) + S(\rho_2) - S(\rho_{12}) > 0$ is the information the partial traces discard — a standard identity, true of every correlated pair, coupled thermostats included. Theorem 9.3 says when the dynamics of coupled holons produces such a state; it does not say that interaction alone does.
 
@@ -1098,7 +1122,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **No-Zombie (Theorem 8.1 and corollaries):** The culmination of the theory. A viable open system *must* have non-trivial E-coherence. Experience is not an epiphenomenon but a causally necessary element of dynamics. Philosophical zombies are mathematically impossible.
 
-**Composition and emergence (Theorems 9.x):** CC scales where a union of holons is again a holon — fractal closure gives such a union its own non-trivial attractor under that assumption, (HOL), which it does not derive (corrected 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance, [C under (AGG)]). The whole carries information that its parts do not ($I > 0$) when the coupling has a correlating part at the parts' steady states — not for every coupling (Theorem 9.3, [C under (ND)]; the earlier unconditional "irreducible emergence" [T] is retracted, 2026-09-25).
+**Composition and emergence (Theorems 9.x):** CC scales where a union of holons is again a holon — fractal closure gives such a union its own non-trivial attractor under that assumption, (HOL), which it does not derive (corrected 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance, [C under (AGG)]). The whole carries information that its parts do not ($I > 0$) when the coupling has a correlating part at the parts' steady states — not for every coupling (Theorem 9.3, [T] for almost every anchor, Theorem 9.4; the earlier unconditional "irreducible emergence" [T] is retracted, 2026-09-25).
 
 **Diagnostics (Theorem 10.1):** All viability conditions are equivalent to one: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$. The stress tensor is a universal monitoring tool.
 
@@ -1106,7 +1130,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **Attractors and structure (T-96, T-98, T-77, T-82, etc.):** Every system evolves toward a non-trivial equilibrium. The balance between dissipation and regeneration determines "health". The Fano structure is unique — CC has no alternatives. Full formulations and proofs — in the [summary table](#теоремы-аттракторов).
 
-Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms, except where a result names an additional assumption (fractal closure, Theorem 9.1, needs (HOL); scale invariance, Theorem 9.2, needs (AGG); emergence, Theorem 9.3, needs (ND) for its weak-coupling criterion). Not a single link can be removed without breaking the chain.
+Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms, except where a result names an additional assumption (fractal closure, Theorem 9.1, needs (HOL); scale invariance, Theorem 9.2, needs (AGG); emergence, Theorem 9.3, needs (ND) for its weak-coupling criterion, and Theorem 9.4 proves (ND) for almost every anchor). Not a single link can be removed without breaking the chain.
 
 ---
 
@@ -1173,7 +1197,7 @@ Let us summarise. In this chapter we have traversed the full path from basic exi
 
 3. **Zombies are impossible** (Theorem 8.1 [T]): a viable open system must have $\mathrm{Coh}_E > 1/7$. E-coherence causally influences dynamics — epiphenomenalism is excluded (Corollary 8.1.1 [T]).
 
-4. **Composition works** (Theorems 9.1–9.3) where the union of viable holons is itself a holon: fractal closure then gives it a non-trivial attractor, and viability for embodied systems (T-149) — [C at (HOL)]; that the union is a holon is assumed, not derived (the earlier "the union of viable holons yields a holon (fractal closure [T] for embodied systems)" is retracted, 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance [C under (AGG)]). The whole is irreducible to the parts when the coupling correlates them — which not every coupling does (emergence, Theorem 9.3 [C under (ND)]; the earlier unconditional [T] is retracted, 2026-09-25).
+4. **Composition works** (Theorems 9.1–9.3) where the union of viable holons is itself a holon: fractal closure then gives it a non-trivial attractor, and viability for embodied systems (T-149) — [C at (HOL)]; that the union is a holon is assumed, not derived (the earlier "the union of viable holons yields a holon (fractal closure [T] for embodied systems)" is retracted, 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance [C under (AGG)]). The whole is irreducible to the parts when the coupling correlates them — which not every coupling does (emergence, Theorem 9.3 [T] for almost every anchor; the earlier unconditional [T] is retracted, 2026-09-25).
 
 5. **A unified health criterion** (Theorem 10.1 [T]): $\Gamma \in \mathcal{V}_{\mathrm{full}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1$ — the system is alive if and only if none of the seven stresses has reached unity.
 

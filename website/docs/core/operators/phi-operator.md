@@ -104,16 +104,17 @@ This form **destroys** all coherences ($\gamma_{ij} \to 0$ for $i \neq j$), whic
 
 1. **CPTP channel:** $\varphi$ is a completely positive, trace-preserving map
 2. **Idempotence (of ideal φ):** $\varphi \circ \varphi = \varphi$ — for the idempotent definition (Definition 3). The canonical form $\varphi_{\text{coh}}$ with compression parameter $k = 1 - R < 1$ [T] is a **contractive** mapping (not idempotent); the idempotent projection is the limit $\lim_{n\to\infty} \varphi_{\text{coh}}^n$
-3. **Purity monotonicity:** $P(\varphi_{\text{base}}(\Gamma)) \leq P(\Gamma)$ for the base form (decoherence decreases purity); $P(\varphi_{\text{coh}}(\Gamma))$ depends on the parameter $\alpha$ — at $\alpha < 1$ the Fano component partially preserves coherences. The fixed point of the canonical $\varphi_{\mathrm{coh}}$ has $P(\Gamma^*_{\mathrm{coh}}) = P_{\text{crit}} = 2/7$
-4. **Fixed point:** $\exists! \, \Gamma^*_{\mathrm{coh}}: \varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$
+3. **Purity monotonicity:** $P(\varphi_{\text{base}}(\Gamma)) \leq P(\Gamma)$ for the base form (decoherence decreases purity); $P(\varphi_{\text{coh}}(\Gamma))$ depends on the parameter $\alpha$ — at $\alpha < 1$ the Fano component partially preserves coherences. The fixed point of the canonical $\varphi_{\mathrm{coh}}$ is $I/7$, with $P = 1/7$ (the value $2/7$ printed here earlier is retracted, see below)
+4. **Fixed point:** $\exists! \, \Gamma^*_{\mathrm{coh}}: \varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$, namely $\Gamma^*_{\mathrm{coh}} = I/7$
 
-:::tip Theorem: Fixed point of φ_coh
-$\exists! \, \Gamma^*_{\mathrm{coh}} \in \mathcal{D}(\mathbb{C}^7)$: $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ with $P(\Gamma^*_{\mathrm{coh}}) = P_{\text{crit}} = 2/7$.
-[Proof →](/docs/proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) | Status: **[T]**
+:::tip Theorem: Fixed point of φ_coh (corrected 2026-09-25) {#неподвижная-точка-phi-coh}
+The canonical $\varphi_{\mathrm{coh}}$ (anchor $I/7$, $k = 1 - R < 1$) has exactly one fixed point, $\Gamma^*_{\mathrm{coh}} = I/7$, with $P = 1/7$.
+
+*Proof.* A fixed point has $\gamma_{ij} = \tfrac{k(1-\alpha)}{3}\gamma_{ij}$ for $i \neq j$, and $k(1-\alpha)/3 < 1$, so $\gamma_{ij} = 0$; on the diagonal $\gamma_{ii} = k\gamma_{ii} + (1-k)/7$, and $1 - k = R > 0$ gives $\gamma_{ii} = 1/7$. $\blacksquare$ This agrees with Corollary 2.1 of [Formalisation of φ](/docs/proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) (uniform anchor, fixed point $I/7$). Status: **[T]**. The earlier statement "$P(\Gamma^*_{\mathrm{coh}}) = P_{\text{crit}} = 2/7$" is retracted [✗]: 200 iterations of $\varphi_{\mathrm{coh}}$ from a random pure state end at $P = 1/7$ to $10^{-12}$ (`test_unital_self_model_keeps_an_isolated_holon_dead`).
 :::
 
 :::warning Distinction between fixed points
-$\Gamma^*_{\mathrm{coh}}$ (fixed point of $\varphi_{\mathrm{coh}}$, $P = 2/7$) **differs** from $\rho^*_{\mathrm{diss}} = I/7$ (attractor of the dissipator, $P = 1/7$). The canonical definition of the [reflexion measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) uses $\rho^*_{\mathrm{diss}} = I/7$: $R = 1/(7P)$. Details: [stratification of definitions](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
+For the canonical $\varphi_{\mathrm{coh}}$ the fixed point of the self-model and the attractor of the dissipator coincide: both are $I/7$. *Corrected 2026-09-25:* the box said that $\Gamma^*_{\mathrm{coh}}$, with $P = 2/7$, differs from $\rho^*_{\mathrm{diss}} = I/7$. They differ for a self-model with a non-unital anchor — for the self-registering $\varphi_s$ [below](#phi-s) every basis state is a fixed point. The canonical definition of the [reflexion measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) uses $\rho^*_{\mathrm{diss}} = I/7$: $R = 1/(7P)$. Details: [stratification of definitions](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
 :::
 
 ---
@@ -325,7 +326,37 @@ Let $\Gamma$ have purity $P = 0.4$ (a viable system). We compute (step 1 uses th
 3. **Compression parameter:** $k = 1 - R = 0.643$
 4. **Target coherence:** $|\gamma_{ij}^{\text{target}}| = \frac{k(1-\alpha^*)}{3}|\gamma_{ij}| = \frac{0.643 \times 0.714}{3}|\gamma_{ij}| \approx 0.153\,|\gamma_{ij}|$
 
-The self-model retains ~15% of each coherence amplitude — a "defocused" but not destroyed reflection. The purity of the self-model $P(\varphi_{\text{coh}}(\Gamma))$ converges to $P_{\text{crit}} = 2/7$ under iteration — the viability threshold acts as an **attractor** of self-modelling.
+The self-model retains ~15% of each coherence amplitude — a "defocused" but not destroyed reflection. Under iteration the purity of the self-model converges to $1/7$, not to $P_{\text{crit}} = 2/7$ (corrected 2026-09-25; the text said that the viability threshold acts as an attractor of self-modelling): the canonical $\varphi_{\mathrm{coh}}$ is unital, and its only fixed point is $I/7$.
+
+---
+
+## Why an isolated holon needs a non-unital self-model: the self-registering form φ_s {#phi-s}
+
+The canonical $\varphi_{\mathrm{coh}}$ preserves coherences, and that is necessary for life ([Fano channel, Theorem 9.1](/docs/proofs/gap/fano-channel#необходимость-phi-coh)); it is not sufficient. Its anchor $I/7$ makes it unital, and a unital self-model cannot raise purity: an isolated holon regenerating toward $\varphi_{\mathrm{coh}}(\Gamma)$ dies whatever $\kappa$ is ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция) [T]).
+
+:::tip Theorem (Symmetric linear self-models are unital) [T]
+A linear CPTP self-model covariant under $G_2$, or under the frame group $\Gamma_{\mathrm{oct}}$, is unital. So is $\varphi_{\mathrm{coh}}$ for every $\alpha$ and $k$.
+:::
+
+*Proof.* $\Phi(I)$ commutes with an irreducible representation, so it is a multiple of $I$ (Schur), equal to $I$ by trace preservation; $G_2$ and $\Gamma_{\mathrm{oct}}$ act irreducibly on $\mathbb{C}^7$ ([evolution, dead isolation, item 3](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)). $\blacksquare$
+
+So an anchor that keeps a holon alive either breaks the symmetry from outside — the environmental anchor of an embodied holon ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)) — or depends on the state itself, which lets a covariant law have non-symmetric fixed points.
+
+:::tip Lemma (Intrinsic anchors are spectral) [T]
+Let $\sigma$ send states to states with $\sigma(U\Gamma U^\dagger) = U\sigma(\Gamma)U^\dagger$ for every unitary $U$ — the anchor refers to nothing outside the holon. If $\Gamma = \sum_i \lambda_i |i\rangle\langle i|$ has distinct eigenvalues, then $\sigma(\Gamma) = \sum_i s_i |i\rangle\langle i|$ is diagonal in the eigenbasis of $\Gamma$, and $\mathrm{Tr}(\Gamma\sigma(\Gamma)) = \sum_i \lambda_i s_i$. The constant anchor $s_i = 1/7$ gives overlap $1/7 < P$ for every $\Gamma \neq I/7$; the choice $s_i = \lambda_i$ ($\sigma(\Gamma) = \Gamma$) makes the regeneration target at $\Gamma$ equal to the image of $\Gamma$ under the unital $k\mathcal{P}_\alpha + R\,\mathrm{id}$; the choice $s_i = \lambda_i^2/\sum_j \lambda_j^2$ gives $\mathrm{Tr}\,\Gamma^3/\mathrm{Tr}\,\Gamma^2 \geq P$, with equality only for a flat spectrum.
+:::
+
+*Proof.* The unitaries $U = \sum_i e^{i\theta_i}|i\rangle\langle i|$ fix $\Gamma$, so $U\sigma(\Gamma)U^\dagger = \sigma(\Gamma)$ for all phases $\theta_i$, which forces $\sigma(\Gamma)$ to be diagonal in $\{|i\rangle\}$. The overlap is then $\sum_i\lambda_i s_i$. For $s_i \propto \lambda_i^2$ the inequality $\sum_i\lambda_i^3 \geq (\sum_i\lambda_i^2)^2$ is Chebyshev's sum inequality with the weights $\lambda_i$. $\blacksquare$
+
+The weights $s \propto \lambda^q$ order the intrinsic anchors: $q = 0$ is the canonical $I/7$, $q = 1$ is the state itself, and both are dead by the theorem of dead isolation; $q = 2$ is the lowest degree that sharpens. At $q \to \infty$ the anchor becomes the projector onto the top eigenvector of $\Gamma$ — the minimiser, over CPTP channels, of the cross-entropy $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$ of the [retracted variational principle](/docs/proofs/dynamics/fep-derivation) — which is discontinuous where the top eigenvalue is degenerate.
+
+**Definition [D] (self-registering self-model).**
+
+$$
+\varphi_s(\Gamma) = k\,\mathcal{P}_\alpha(\Gamma) + R\,\frac{\Gamma^2}{\mathrm{Tr}\,\Gamma^2}, \qquad R = \frac{1}{7P},\quad k = 1 - R .
+$$
+
+The anchor $\Gamma^2/\mathrm{Tr}\,\Gamma^2 = \sqrt{\Gamma}\,\Gamma\,\sqrt{\Gamma}/\mathrm{Tr}(\Gamma^2)$ is the Lüders update of $\Gamma$ on the effect $\Gamma$: the state the holon is left in after registering its own state, the one effect it has without an outside reference. It is smooth on all states ($\mathrm{Tr}\,\Gamma^2 \geq 1/7$) and differs from $\varphi_{\mathrm{coh}}$ only in the anchor. With it an isolated holon has at least seven self-sustaining attractors with $P > 2/7$ ([evolution](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор) [T]); at $H = 0$ they are the basis states, where $\varphi_s(e_m) = e_m$ — exact self-knowledge. That the self-model of a physical holon is $\varphi_s$ rather than $\varphi_{\mathrm{coh}}$ is not derived from the axioms [Pr]; that it must be non-unital for an isolated holon to live is [T].
 
 ---
 

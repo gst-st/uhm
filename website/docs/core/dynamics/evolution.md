@@ -761,7 +761,7 @@ where $\varphi$ is the self-modelling operator (left adjoint to the inclusion of
 
 :::info Distinction between attractors
 - $\rho^*_{\mathrm{diss}} = I/7$ — attractor of the linear part $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ (without regeneration), $P = 1/7$. Uniqueness from [primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]. Used in [definition of R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
-- $\rho^*_\Omega \neq I/7$ — nontrivial attractor of full dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$, $P(\rho^*_\Omega) > 1/7$ [T] ([T-96](#теорема-нетривиальность-аттрактора)); $P > 2/7$ for embodied holons [T at backbone-injection lower-bound] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149), Step 3 [C]).
+- $\rho^*_\Omega \neq I/7$ — nontrivial attractor of full dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$; every such point has $P(\rho^*_\Omega) > 1/7$ [T] ([T-96](#теорема-нетривиальность-аттрактора)). Whether one exists depends on the self-model: with the canonical unital $\varphi_{\mathrm{coh}}$ an isolated holon has none ([dead isolation](#теорема-мёртвая-изоляция) [T]); with the self-registering $\varphi_s$ it has at least seven, each with $P > 2/7$ ([self-sustaining attractors](#теорема-самоподдерживающийся-аттрактор) [T]); an embodied holon has one through its anchor, $P > 2/7$ [T at backbone-injection lower-bound] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149), Step 3 [C]).
 :::
 
 :::tip Definiteness of the regeneration target [T]
@@ -797,12 +797,63 @@ $$
    2\alpha \cdot P_{\mathrm{coh}} = 2\kappa(f^* - P)
    $$
 
-   where $\alpha = 2/3$ (Fano decoherence), $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$. Since $P_{\mathrm{coh}} = \sum_{i < j} 2|\gamma^*_{ij}|^2 \geq 0$ always, we need $f^* \geq P$. But $f^* = P$ implies $P_{\mathrm{coh}} = 0$, $\rho^*_\Omega$ is diagonal, and by primitivity of $\mathcal{L}_0$: $\rho^*_\Omega = I/7$ — contradiction. Therefore $f^* > P$ and $P_{\mathrm{coh}} > 0$.
+   where $\alpha = 2/3$ (Fano decoherence), $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$. Since $P_{\mathrm{coh}} = \sum_{i < j} 2|\gamma^*_{ij}|^2 \geq 0$ always, we need $f^* \geq P$. But $f^* = P$ implies $P_{\mathrm{coh}} = 0$, so $\rho^*_\Omega$ is diagonal. For a self-model that sends diagonal states to diagonal states (both $\varphi_{\mathrm{coh}}$ and the self-registering $\varphi_s$ below do), the off-diagonal part of $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ reads $H_{ij}(\gamma^*_{jj} - \gamma^*_{ii}) = 0$ for $i \neq j$. The stationary operators of $\mathcal{L}_0$ are the diagonal matrices that commute with $H$, so primitivity of $\mathcal{L}_0$ means that the graph of non-zero $H_{ij}$ is connected; hence all $\gamma^*_{ii}$ are equal and $\rho^*_\Omega = I/7$ — contradiction. Therefore $f^* > P$ and $P_{\mathrm{coh}} > 0$. (Clarified 2026-09-25: the step used to pass from "diagonal" to $I/7$ by primitivity alone; a diagonal state is not stationary for $\mathcal{L}_0$ by being diagonal, and the condition on $\varphi$ is what closes the step.)
 4. **$P > 1/7$.** $P = P_{\mathrm{diag}} + P_{\mathrm{coh}} > P_{\mathrm{diag}} \geq 1/7$ (Jensen's inequality: $\sum_i \gamma_{ii}^2 \geq (\sum_i \gamma_{ii})^2/7 = 1/7$). ∎
 
 :::warning Resolution of the ρ* self-reference paradox
 In earlier versions ρ* was defined as "the unique stationary state of the full $\mathcal{L}_\Omega$" (via primitivity T-39a). This created a paradox: at $\rho_* = \rho^*_\Omega$ the regeneration vanishes ($\mathcal{R}[\rho^*_\Omega] = \kappa \cdot (\rho^*_\Omega - \rho^*_\Omega) = 0$), and the only solution to $\mathcal{L}_0[\rho^*_\Omega] = 0$ is $I/7$. The paradox is resolved by replacement: $\rho_*$ in $\mathcal{R}$ is defined as the **categorical self-model** $\varphi(\Gamma)$ of the current state (Definition 1 of the [φ operator](/docs/core/operators/phi-operator)), not as the dynamical limit. In this case $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$ (the system does not achieve perfect self-knowledge), and regeneration **does not vanish** in the stationary regime — it is precisely compensated by dissipation.
 :::
+
+T-96 says what a nontrivial fixed point must look like; it does not say that one exists. The next two theorems settle existence for an isolated holon — a holon that imports free energy (the rate $\kappa$) but no state from outside. With the canonical $\varphi_{\mathrm{coh}}$ there is none, and the reason is general: a self-model that is unital cannot raise purity. Replacing the anchor $I/7$ by the holon's own self-registration gives self-sustaining attractors.
+
+#### Theorem (Dead isolation: a unital self-model sustains no life) [T] {#теорема-мёртвая-изоляция}
+
+:::tip Theorem (Dead isolation) [T]
+Let $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ be a primitive unital GKSL generator, and let the regeneration target be $\varphi(\Gamma) = \Phi_\Gamma(\Gamma)$, where for every state $\Gamma$ the map $\Phi_\Gamma$ is a **unital** CPTP channel, $\Phi_\Gamma(I) = I$; the scalars $\kappa(\Gamma) \geq 0$ and $g_V(P) \geq 0$ are arbitrary. Then:
+
+1. $I/7$ is the only stationary state of $\dot\Gamma = \mathcal{L}_0[\Gamma] + \kappa(\Gamma)\,g_V(P)\,(\varphi(\Gamma) - \Gamma)$, and the purity $P$ does not increase along any trajectory.
+2. The canonical $\varphi_{\mathrm{coh}}$ (anchor $I/7$) is of this kind for every $\alpha$ and every $k$. With the Fano dissipator $\mathcal{D}_\Omega[\Gamma] = \tfrac23(\mathrm{diag}\,\Gamma - \Gamma)$, every trajectory converges to $I/7$.
+3. A linear CPTP self-model covariant under $G_2$ or under the frame group $\Gamma_{\mathrm{oct}}$ is unital. So is the self-consistent choice "anchor = the attractor itself": at $\Gamma = \rho$ the target $k\mathcal{P}_\alpha(\rho) + R\rho$ is the image of $\rho$ under the unital channel $k\mathcal{P}_\alpha + R\,\mathrm{id}$.
+
+Hence a nontrivial fixed point needs a self-model that is not unital there, with overlap $f^* = \mathrm{Tr}(\rho^*\varphi(\rho^*)) > P(\rho^*)$ (step 3 of T-96): the self-model must be sharper than the state.
+:::
+
+**Proof.** (1) Along a trajectory $\tfrac{d}{d\tau}P = 2\,\mathrm{Tr}(\Gamma\,\mathcal{L}_0[\Gamma]) + 2\kappa g_V\,(\mathrm{Tr}(\Gamma\varphi(\Gamma)) - P)$; the Hamiltonian term drops out. A unital trace-preserving positive map contracts the Hilbert–Schmidt norm (D. Pérez-García, M. M. Wolf, D. Petz, M. B. Ruskai, "Contractivity of positive and trace-preserving maps under $L_p$ norms", *J. Math. Phys.* **47**, 083506 (2006)). Applied to $e^{\tau\mathcal{L}_0}$ this makes the first term $\leq 0$; applied to $\Phi_\Gamma$ with Cauchy–Schwarz, $\mathrm{Tr}(\Gamma\Phi_\Gamma(\Gamma)) \leq \|\Gamma\|_2\|\Phi_\Gamma(\Gamma)\|_2 \leq P$, so the second term is $\leq 0$. At a stationary state $\rho$ both terms vanish. If $\kappa g_V > 0$, equality in Cauchy–Schwarz gives $\Phi_\rho(\rho) = c\rho$, and $c = 1$ by the trace, so the regenerative term vanishes; if $\kappa g_V = 0$ it vanishes anyway. Then $\mathcal{L}_0[\rho] = 0$, and primitivity gives $\rho = I/7$.
+
+(2) $\mathcal{P}_\alpha$ and the replacement $X \mapsto \mathrm{Tr}(X)\,I/7$ are unital, hence so is $\varphi_{\mathrm{coh}}$; explicitly $\mathrm{Tr}(\Gamma\varphi_{\mathrm{coh}}(\Gamma)) \leq P - (P - 1/7)/(7P)$. With the Fano dissipator, $\mathrm{Tr}(\Gamma\mathcal{D}_\Omega[\Gamma]) = -\tfrac23 P_{\mathrm{coh}}$, so $P$ is non-increasing and bounded, and by LaSalle's invariance principle (H. K. Khalil, *Nonlinear Systems*, 3rd ed., Theorem 4.4) every trajectory approaches the largest invariant set on which $dP/d\tau = 0$. On it $\Gamma(\tau)$ is diagonal at all times, and $\varphi_{\mathrm{coh}}$ keeps it diagonal; the off-diagonal part of the equation then forces $[H, \Gamma] = 0$, and connectedness of the graph of $H$ (primitivity, as in step 3 of T-96) gives $\Gamma = I/7$.
+
+(3) If $\Phi(UXU^\dagger) = U\Phi(X)U^\dagger$ for every $U$ of a representation that is irreducible on $\mathbb{C}^7$, then $\Phi(I)$ commutes with the representation and is a multiple of $I$ by Schur's lemma (W. Fulton, J. Harris, *Representation Theory*, Springer 1991, Lemma 1.7), equal to $I$ by trace preservation. $G_2$ acts irreducibly on $\mathbb{C}^7$, and so does $\Gamma_{\mathrm{oct}}$: the commutant of its 1344 signed permutation matrices is one-dimensional. The 168 Fano collineations without signs leave a two-dimensional commutant, spanned by $I$ and the all-ones matrix. The last claim is (1) applied at the point $\rho$. $\blacksquare$
+
+**Numerical check** (`test_unital_self_model_keeps_an_isolated_holon_dead` in `website/scripts/check_core_numbers.py`). Canonical $\varphi_{\mathrm{coh}}$, $\alpha = 1/2$, a random $H$ of scale $0.3$ and $\kappa = 10$: along six pure starts $P$ falls at every one of 1500 integration steps, and all six end within $10^{-3}$ of $I/7$ by $\tau = 30$; 200 iterations of $\varphi_{\mathrm{coh}}$ from a pure state give $P = 1/7$ to $10^{-12}$.
+
+#### Theorem (Self-sustaining attractors of the self-registering self-model) [T] {#теорема-самоподдерживающийся-аттрактор}
+
+**Definition [D].** The **self-registering self-model** replaces the anchor $I/7$ of $\varphi_{\mathrm{coh}}$ by the state the holon is left in after registering its own state as an effect:
+
+$$
+\varphi_s(\Gamma) = k\,\mathcal{P}_\alpha(\Gamma) + R\,\sigma(\Gamma), \qquad \sigma(\Gamma) = \frac{\sqrt{\Gamma}\,\Gamma\,\sqrt{\Gamma}}{\mathrm{Tr}(\Gamma^2)} = \frac{\Gamma^2}{P}, \qquad R = \frac{1}{7P},\; k = 1 - R .
+$$
+
+$\sigma(\Gamma)$ is the Lüders update of $\Gamma$ on the effect $\Gamma$; it uses nothing but the holon's own state. Frozen at a state $g$, the map $X \mapsto k\mathcal{P}_\alpha(X) + R\,\sigma(g)\,\mathrm{Tr}\,X$ is CPTP and, unless $g$ has a flat spectrum, not unital. Why an anchor of this kind is the natural one — every unitarily covariant anchor is a reweighting of the spectrum of $\Gamma$, and $\Gamma^2/P$ is the lowest-degree reweighting that sharpens it — is shown on the [φ-operator page](/docs/core/operators/phi-operator#phi-s).
+
+:::tip Theorem (Self-sustaining attractors) [T]
+Take the full dynamics $\dot\Gamma = -i[H,\Gamma] + \mathcal{D}_\Omega[\Gamma] + \kappa(\Gamma)\,g_V(P)\,(\varphi_s(\Gamma) - \Gamma)$ with the Fano dissipator, the gate $g_V = \mathrm{clamp}(7P - 2, 0, 1)$ and a smooth $\kappa(\Gamma) > 0$ (for instance $\kappa_{\mathrm{bootstrap}} + \kappa_0\,\mathrm{Coh}_E$); $c = (1 - \alpha)/3$.
+
+1. **Sharper than the state.** $\mathrm{Tr}(\Gamma\,\sigma(\Gamma)) = \mathrm{Tr}\,\Gamma^3/\mathrm{Tr}\,\Gamma^2 \geq P$, with equality exactly when the spectrum of $\Gamma$ is flat on its support.
+2. **Exact self-knowledge at $H = 0$.** Each basis state $e_m = |m\rangle\langle m|$ is stationary and satisfies $\varphi_s(e_m) = e_m$. It is a hyperbolic sink: on traceless Hermitian operators the Jacobian is diagonal in the matrix-unit basis, with eigenvalue $-\kappa/7$ on the 6 diagonal directions, $-(2/3 + 6\kappa(1 - c)/7)$ on the 12 real directions of the coherences with $m$, and $-(2/3 + \kappa(1 - 6c/7))$ on the 30 real directions of the other coherences ($\kappa = \kappa(e_m)$).
+3. **Persistence.** There is $h_0 > 0$, depending on $\kappa$ and $\alpha$, such that for every Hamiltonian with $\|H\| < h_0$ the dynamics has seven distinct stationary states $\Gamma_m(H)$, one near each $e_m$, smooth in $H$, locally exponentially stable, with $P(\Gamma_m(H)) > 2/7$ (and $\to 1$ as $H \to 0$). T-96 and the balance T-98 hold at each; for $H$ whose graph is connected, $P_{\mathrm{coh}} > 0$ and $\varphi_s(\Gamma_m) \neq \Gamma_m$.
+4. **No uniqueness.** The living attractor is not unique: there are at least seven, and $I/7$ attracts as well (for primitive $\mathcal{L}_0$ the gate is shut on the ball $P < 2/7$, where the flow is $\mathcal{L}_0$).
+:::
+
+**Proof.** (1) With eigenvalues $\lambda_i$ of $\Gamma$ read as probabilities, $\mathrm{Tr}\,\Gamma^3 = \mathbb{E}[\lambda\cdot\lambda]$ and $P = \mathbb{E}[\lambda]$, so $\mathrm{Tr}\,\Gamma^3 \geq P^2$ is $\mathrm{Var}(\lambda) \geq 0$ (Chebyshev's sum inequality), with equality iff $\lambda$ is constant on the support.
+
+(2) $e_m$ is diagonal, so $\mathcal{D}_\Omega[e_m] = 0$, $\mathcal{P}_\alpha(e_m) = e_m$, $\sigma(e_m) = e_m$, hence $\varphi_s(e_m) = (k + R)\,e_m = e_m$, and with $H = 0$ there is no Hamiltonian term. Linearise at $e_m$: derivatives of $\kappa$ and $g_V$ multiply $\varphi_s(e_m) - e_m = 0$; derivatives of $k$ and $R$ multiply $\mathcal{P}_\alpha(e_m)$ and $\sigma(e_m)$, both equal to $e_m$, and $dk + dR = 0$; $g_V \equiv 1$ near $P = 1$. So $DF(X) = \mathcal{D}_\Omega[X] + \kappa\bigl(\tfrac67\mathcal{P}_\alpha(X) + \tfrac17 D\sigma(X) - X\bigr)$ with $D\sigma(X) = e_mX + Xe_m - 2X_{mm}e_m$, which keeps exactly the coherences $X_{mj}$, $X_{jm}$. On diagonal entries $DF$ multiplies by $\kappa(\tfrac67 - 1) = -\kappa/7$; on coherences with $m$ by $-\tfrac23 + \kappa(\tfrac67 c + \tfrac17 - 1)$; on other coherences by $-\tfrac23 + \kappa(\tfrac67 c - 1)$.
+
+(3) Near $e_m$ the vector field is smooth on the affine space of trace-one Hermitian matrices ($g_V \equiv 1$ for $P > 3/7$, and $P \geq 1/7$ keeps $\sigma$ smooth), and $DF$ is invertible by (2), so the implicit function theorem gives a unique zero $\Gamma_m(H)$ near $e_m$, smooth in $H$; its spectrum stays in $\mathrm{Re} < 0$ for small $H$. Frozen at any state, the generator is of GKSL form, so the flow keeps states states; a state close enough to $\Gamma_m(H)$ flows into it, hence $\Gamma_m(H)$ is a state. Continuity gives $P \to 1$. (4) The seven are near seven different points. $\blacksquare$
+
+**Numerical check** (`test_self_registration_sustains_seven_living_attractors`). $\kappa = 1$, $\alpha = 1/2$. At $H = 0$ the Jacobian spectrum at $e_0$ is $\{-1/7, -1.381, -1.524\}$, equal to the formulas of item 2 to $10^{-6}$. With a random $H$ of operator norm $0.213$ the seven starts $e_m$ end at seven stationary states with $P = 0.889, 0.884, 0.873, 0.833, 0.783, 0.821, 0.891$, residuals below $10^{-12}$, largest $\mathrm{Re}\,\lambda$ between $-0.181$ and $-0.167$, pairwise distances at least $1.21$ in Frobenius norm; the balance T-98 (with $\kappa g_V$) holds at each to $10^{-12}$. **How large $H$ may be:** with $\kappa = 1$ all seven survive at $\|H\| = 0.43$, six at $0.55$, one at $0.85$, none at $1.07$; with $\kappa = 3$ all seven survive up to $1.07$ and none at $2.56$ — the admissible Hamiltonian grows with the regeneration rate.
+
+**What the theorem does and does not give.** It gives an isolated holon that stays alive on its own: energy from outside (the rate $\kappa$, $\Delta F > 0$), form from inside (the anchor is the holon's own self-registration). Two limits are stated as they are. The living states are localised: at $\|H\| = 0.213$ the largest diagonal entry is $0.88$–$0.94$ — the localisation that [Fano-channel Theorem 9.1(c)](/docs/proofs/gap/fano-channel#необходимость-phi-coh) calls pathological. And they sit above the conscious window: in every run the smallest living $P$ was $0.430 > 3/7$, so $R < 1/3$; a self-sustained attractor inside $(2/7, 3/7]$ was not found. Which self-model a physical holon has is not fixed by the axioms [Pr]; what is fixed [T] is that it must be non-unital to keep an isolated holon alive.
 
 #### Hierarchy of fixed points [D] {#иерархия-неподвижных-точек}
 
@@ -810,7 +861,9 @@ In earlier versions ρ* was defined as "the unique stationary state of the full 
 |-------|--------|------------|-----|-----------------|
 | 0 | $\rho^*_{\mathrm{diss}} = I/7$ | $\mathcal{D}_\Omega[\rho^*_{\mathrm{diss}}] = 0$ | $1/7$ | Thermal death (entropy maximum) |
 | 1 | $\rho^*_\Omega$ | $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ | $> 1/7$ [T] | Post-Genesis attractor (balance of $\mathcal{D}$ and $\mathcal{R}$) |
-| 2 | $\Gamma^*_{\mathrm{coh}}$ | $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ | $2/7$ | Viability boundary — target of $\varphi_{\mathrm{coh}}$ |
+| 2 | $\Gamma^*_{\mathrm{coh}}$ | $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ | $1/7$ ($\Gamma^*_{\mathrm{coh}} = I/7$) | Exact self-knowledge; for the canonical $\varphi_{\mathrm{coh}}$ it coincides with level 0; for $\varphi_s$ the fixed points include every flat frame state $\Pi_S/\lvert S\rvert$ |
+
+*Corrected 2026-09-25:* level 2 was listed with $P = 2/7$, "viability boundary". $\varphi_{\mathrm{coh}}$ multiplies each coherence by $k(1 - \alpha)/3 < 1$ and pulls the diagonal toward $I/7$ with weight $1 - k = R > 0$, so its only fixed point is $I/7$ ([φ operator](/docs/core/operators/phi-operator#неподвижная-точка-phi-coh)).
 
 The reflection measure $R$ uses $\rho^*_{\mathrm{diss}} = I/7$ as **reference** (distance from thermal death), not as the regeneration target. More details: [self-observation](/docs/consciousness/foundations/self-observation#иерархия-аттракторов).
 
@@ -819,7 +872,7 @@ Three contexts in which the symbol $\rho_*$ (or $\rho^*$) appears in UHM dynamic
 
 | Context | Object | Definition | Role |
 |---|---|---|---|
-| (a) Dynamical attractor | $\rho^*_\Omega$ | Unique fixed point of $\mathcal L_\Omega[\Gamma] = 0$ in the viable region (T-96 [T]) | Long-time limit of evolution; $P(\rho^*_\Omega) > 1/7$ |
+| (a) Dynamical attractor | $\rho^*_\Omega$ | Fixed point of $\mathcal L_\Omega[\Gamma] = 0$ other than $I/7$ (T-96 [T]); none for an isolated holon with the canonical $\varphi_{\mathrm{coh}}$, at least seven with $\varphi_s$, one for an embodied holon under backbone dominance ([T-124c](#теорема-единственность-нетривиального-аттрактора)) | Long-time limit of evolution; $P(\rho^*_\Omega) > 1/7$ |
 | (b) Categorical self-model | $\varphi(\Gamma)$ | Left adjoint $\varphi \dashv i: \mathrm{Sub}(\Gamma)\hookrightarrow\mathbf{Sh}_\infty$ applied to current $\Gamma$ (T-62 [T]) | Instantaneous self-representation |
 | (c) Regeneration target | $\rho_*$ in $\mathcal R[\Gamma,E] = \kappa(\Gamma)(\rho_* - \Gamma) g_V(P)$ | Defined **as** $\varphi(\Gamma)$ via the iterative scheme above | Drives non-equilibrium relaxation |
 
@@ -856,6 +909,8 @@ $$
 $$
 ∎
 
+**Scope (2026-09-25).** The rate in the balance is the effective rate $\kappa\,g_V(P)$ at the fixed point, since the gate multiplies the regenerative term; for $P \geq 3/7$ the two coincide. The formula is an identity at every fixed point. With the canonical unital $\varphi_{\mathrm{coh}}$ an isolated holon has no fixed point other than $I/7$ ([dead isolation](#теорема-мёртвая-изоляция)); at the seven attractors of the self-registering $\varphi_s$ the balance holds to $10^{-12}$ ([self-sustaining attractors](#теорема-самоподдерживающийся-аттрактор)).
+
 #### Corollary T-98a: Lower bound for embodied systems [T] {#следствие-t98a}
 
 :::tip Corollary T-98a [T]
@@ -878,9 +933,21 @@ The difference is due to backbone injection ($\beta = 0.3$) and hedonic drive.
 For $P(\rho^*_\Omega) > 2/7$ the attractor is **locally asymptotically stable**: $\|\Gamma(\tau) - \rho^*_\Omega\|_F \leq \|\Gamma(0) - \rho^*_\Omega\|_F \cdot e^{-c\tau}$, $c > 0$. The basin of attraction contains $B(\rho^*_\Omega, r_{\mathrm{stab}}) \cap \mathcal{V}_P$. See [T-125](/docs/proofs/consciousness/conscious-window#t-125), [T-127](/docs/proofs/consciousness/conscious-window#t-127).
 :::
 
-#### Theorem (Uniqueness of the nontrivial attractor) [T] {#теорема-единственность-нетривиального-аттрактора}
+#### Theorem (Count of nontrivial attractors; T-124c, restated 2026-09-25) [T] {#теорема-единственность-нетривиального-аттрактора}
 
-The full nonlinear dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ has **at most one** nontrivial fixed point $\rho^*_\Omega \neq I/7$ in the viable set $\mathcal{V}_P = \{\Gamma : P(\Gamma) > P_{\mathrm{crit}}\}$.
+:::warning Retracted (2026-09-25): "at most one nontrivial fixed point; exactly two fixed points in all" [✗]
+The statement below, with its proof, is retracted. For the canonical $\varphi_{\mathrm{coh}}$ an isolated holon has no nontrivial fixed point at all ([dead isolation](#теорема-мёртвая-изоляция)), so "exactly two fixed points, one viable and one dead" is false; with the self-registering $\varphi_s$ it has at least seven ([self-sustaining attractors](#теорема-самоподдерживающийся-аттрактор)), so "at most one" is false. The proof fails at three places. Step 1 treats $\mathcal{L}_0 + \kappa(\Gamma)g_V(P)(\rho - \Gamma)$ as a linear generator, but $\kappa$ and $g_V$ depend on $\Gamma$. Step 2 uses $\varphi_i(\Gamma) = (1-k)\Gamma + k\rho_i$ with the candidate attractors $\rho_i$ as anchors, which is neither $\varphi_{\mathrm{coh}}$ (anchor $I/7$, weight $1 - k$) nor the regeneration target. Step 3 needs $\kappa_{\max} < \lambda_{\mathrm{gap}}$, which is not shown.
+:::
+
+:::tip Theorem (Count of nontrivial attractors) [T]
+1. An isolated holon with the canonical $\varphi_{\mathrm{coh}}$ has no stationary state other than $I/7$ ([dead isolation](#теорема-мёртвая-изоляция)).
+2. An isolated holon with the self-registering $\varphi_s$ and $\|H\| < h_0$ has at least seven locally stable stationary states with $P > 2/7$, besides $I/7$ ([self-sustaining attractors](#теорема-самоподдерживающийся-аттрактор)).
+3. **Backbone dominance.** Let an embodied holon carry the backbone term $\mu(\sigma - \Gamma)$ ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)), and let $L_{\mathcal{R}}$ be a Lipschitz constant, in trace norm on $\mathcal{D}(\mathbb{C}^7)$, of $\Gamma \mapsto \kappa(\Gamma)g_V(P)(\varphi(\Gamma) - \Gamma)$. If $\mu > L_{\mathcal{R}}$, the dynamics has exactly one stationary state, and every trajectory converges to it at rate $\mu - L_{\mathcal{R}}$.
+:::
+
+**Proof of 3.** The regenerative map is Lipschitz on the compact set of states: $\kappa$ is smooth, $g_V$ is Lipschitz and $1/P \leq 7$. For two trajectories, $-i[H,\cdot] + \mathcal{D}_\Omega$ generates trace-preserving CP maps, which do not increase the trace norm of the Hermitian difference; the backbone contributes $-\mu(\Gamma_1 - \Gamma_2)$, and regeneration at most $L_{\mathcal{R}}\|\Gamma_1 - \Gamma_2\|_1$. Hence $\|\Gamma_1(\tau) - \Gamma_2(\tau)\|_1 \leq e^{-(\mu - L_{\mathcal{R}})\tau}\|\Gamma_1(0) - \Gamma_2(0)\|_1$; the time-$\tau$ maps are contractions of the complete space $\mathcal{D}(\mathbb{C}^7)$, and their common fixed point is the unique stationary state. $\blacksquare$
+
+**Retracted statement and proof (kept for the record).** The full nonlinear dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ has **at most one** nontrivial fixed point $\rho^*_\Omega \neq I/7$ in the viable set $\mathcal{V}_P = \{\Gamma : P(\Gamma) > P_{\mathrm{crit}}\}$.
 
 **Proof.**
 
@@ -917,7 +984,7 @@ By Banach's theorem, $\Psi$ has a **unique** fixed point.
 
 **Conclusion:** The nontrivial attractor $\rho^*_\Omega$ of $\mathcal{L}_\Omega$ is **unique** in $\mathcal{V}_P$. Combined with the trivial fixed point $I/7$, the dynamics has **exactly two** fixed points: one viable ($\rho^*_\Omega$) and one dead ($I/7$). $\blacksquare$
 
-**Dependencies:** T-39a [T] (primitivity, spectral gap), T-96 [T] ($\kappa < \kappa_{\max}$), [iterative scheme](#итеративная-схема) [T]. Standard mathematics: Banach fixed-point theorem.
+**Dependencies of the retracted proof:** T-39a [T] (primitivity, spectral gap), T-96 [T] ($\kappa < \kappa_{\max}$), [iterative scheme](#итеративная-схема) [T]. Standard mathematics: Banach fixed-point theorem.
 
 #### Theorem (Attractor viability) [С → Т for embodied] {#теорема-жизнеспособность-аттрактора}
 
@@ -930,6 +997,8 @@ $$
 the nontrivial attractor is viable: $P(\rho^*_\Omega) > P_{\mathrm{crit}} = 2/7$.
 
 **Proof.** From the [balance formula](#теорема-баланс-чистоты-аттрактора) for $P_{\mathrm{diag}} = 1/7$ (uniform diagonal): $P > 2/7 \Leftrightarrow \kappa(f^* - 2/7) > \alpha/7$, whence $\kappa > \alpha/(7(f^* - 2/7)) = 2/(21(f^* - 2/7))$. The condition depends on the overlap $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$ with the self-model, hence status [C] for an isolated holon. ∎
+
+For an isolated holon whose self-model is the self-registering $\varphi_s$, viability is a theorem without this condition: the seven attractors of the [self-sustaining attractors theorem](#теорема-самоподдерживающийся-аттрактор) have $P > 2/7$ for $\|H\| < h_0$ [T]. With the canonical $\varphi_{\mathrm{coh}}$ the condition cannot be met, since $f^* > P$ is impossible for a unital self-model ([dead isolation](#теорема-мёртвая-изоляция)).
 
 :::tip Elevation to [T] for embodied holons (T-149)
 By [T-149](/docs/proofs/consciousness/substrate-closure#t-149): for an **embodied** holon $(H, \pi, B)$ with $P_{\mathrm{env}} > 2/7$ the attractor viability holds **at the backbone-injection lower bound** (Step 3 of T-149 is **[C at backbone-injection lower-bound]** — the bound $f^*>2/7$ is a condition on the anchor, not proved from pure axioms) — backbone injection ensures $P > 2/7$ via [T-148 [T]](/docs/proofs/consciousness/substrate-closure#t-148) (genesis through environmental adjunction). An isolated holon at $I/7$ remains dead forever (T-39a [T]).
