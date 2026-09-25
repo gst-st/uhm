@@ -85,6 +85,11 @@ D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_
 (седло усиливает 2⁻ⁿ за время O(n)) и `non_degeneracy_is_generic_and_aggregation_follows_from_weak_coupling`
 ((ND) у случайных якорей, (AGG b) с δ = O(g)).
 
+Одна — за переформулировкой T-191 (башня φ, 25.09.2026):
+`phi_tower_converges_only_under_backbone_dominance` (у изолированного голонома предел при
+фиксированной цели зависит от старта — башня не определена; при μ > L_R + κ_max башня
+сжимается с q = κ_max/(μ − L_R) и сходится к одной самомодели от любого якоря).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -2473,6 +2478,54 @@ def test_non_degeneracy_is_generic_and_aggregation_follows_from_weak_coupling():
         assert np.linalg.norm(rhs(X, g)) < 1e-8
         ratio.append(np.abs(np.linalg.eigvalsh((X - sigma + (X - sigma).conj().T) / 2)).sum() / g)
     assert abs(ratio[1] / ratio[0] - 1) < 1e-3
+
+
+def test_phi_tower_converges_only_under_backbone_dominance():
+    """T-191 в верной форме: башня самомоделей сходится лишь при доминировании хребта.
+
+    (а) Изолированный голоном, фиксированная цель |0⟩⟨0|, κ = 3: из I/7 затвор закрыт и
+    поток стоит (P = 1/7), из |0⟩ приходит в живое состояние (P ≈ 0,98) — предел зависит
+    от старта, итерация φ⁽ⁿ⁺¹⁾ = lim exp(τℒ⁽ⁿ⁾) не определена (шаг 1 прежнего доказательства).
+    (б) Воплощённый голоном с хребтом μ(σ − Γ), P(σ) > 3/7, κ = 0,1, μ = 3,5: следовая
+    константа Липшица регенерации L_R ≤ κ(1 + 2·14) = 29κ, так что μ > L_R + κ_max и
+    q = κ/(μ − L_R) = 1/6; от трёх якорей (I/7, |0⟩, случайный чистый) башня сходится к одной
+    неподвижной точке (разброс < 1e-10, невязка < 1e-10), и каждое сжатие ≤ q.
+    """
+    rng = np.random.default_rng(7)
+    H = 0.2 * (lambda A: (A + A.conj().T) / 2)(rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7)))
+
+    def gen(a, kap, mu, sig):
+        def f(G):
+            D = np.diag(np.diag(G))
+            out = -1j * (H @ G - G @ H) + (2 / 3) * (D - G) + kap * gate(purity(G)) * (a - G)
+            return out + mu * (sig - G) if mu else out
+        return f
+
+    tn = lambda X: float(np.abs(np.linalg.eigvalsh((X + X.conj().T) / 2)).sum())
+    a0 = np.diag(np.eye(7)[0]).astype(complex)
+    f = gen(a0, 3.0, 0.0, None)
+    dead = _rk4(np.eye(7) / 7, f, 40.0, 2000)
+    live = _rk4(a0, f, 40.0, 2000)
+    assert abs(purity(dead) - 1 / 7) < 1e-12 and purity(live) > 3 / 7 and tn(dead - live) > 1
+    kap, mu = 0.1, 3.5
+    q = kap / (mu - 29 * kap)
+    sig = np.diag([0.66, 0.1, 0.06, 0.06, 0.04, 0.04, 0.04]).astype(complex)
+    assert purity(sig) > 3 / 7
+    seqs = []
+    for a in (np.eye(7) / 7, a0, random_pure(rng)):
+        a = a.astype(complex)
+        seq = [a]
+        for _ in range(8):
+            a = _rk4(a, gen(a, kap, mu, sig), 12.0, 600)
+            seq.append(a)
+        seqs.append(seq)
+    for i, j in itertools.combinations(range(3), 2):
+        for n in range(4):
+            d0, d1 = tn(seqs[i][n] - seqs[j][n]), tn(seqs[i][n + 1] - seqs[j][n + 1])
+            assert d1 <= q * d0 + 1e-12
+    star = seqs[0][-1]
+    assert max(tn(star - s[-1]) for s in seqs) < 1e-10
+    assert np.linalg.norm(gen(star, kap, mu, sig)(star)) < 1e-10 and gate(purity(star)) == 1.0
 
 
 def main():

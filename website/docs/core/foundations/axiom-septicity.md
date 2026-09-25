@@ -150,8 +150,8 @@ The documentation uses three objects denoted $\rho^*$:
 | Object | Definition | Purity | Role |
 |--------|-------------|---------|------|
 | $\rho^*_{\mathrm{diss}} = I/7$ | Attractor of dissipation $\mathcal{D}_\Omega$ | $P = 1/7$ | Target state in the definition of $R$ |
-| $\Gamma^*_{\mathrm{coh}}$ | Fixed point of $\varphi_{\mathrm{coh}}$ | $P = 2/7$ | Viability threshold |
-| $\rho^*_{\mathrm{full}}$ | Attractor of the full $\mathcal{L}_\Omega$ | $P > 2/7$ | Physical stationary state of a living system |
+| $\Gamma^*_{\mathrm{coh}}$ | Fixed point of $\varphi_{\mathrm{coh}}$ | $P = 1/7$ ($\Gamma^*_{\mathrm{coh}} = I/7$) | Exact self-knowledge of the canonical self-model; coincides with $\rho^*_{\mathrm{diss}}$ (the row read "$P = 2/7$, viability threshold" until 2026-09-25) |
+| $\rho^*_{\mathrm{full}}$ | Attractor of the full $\mathcal{L}_\Omega$ other than $I/7$ | $P > 1/7$; $P > 2/7$ at the seven attractors of $\varphi_s$ | Physical stationary state of a living system; none for an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ (dead isolation, T-124c) |
 
 The canonical definition of $R$ uses $\rho^*_{\mathrm{diss}} = I/7$—a constant independent of $\varphi$, $\kappa$, or the dynamics.
 :::

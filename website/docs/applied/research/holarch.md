@@ -353,7 +353,7 @@ HOLARCH imports the corpus results that examine it:
 
 - $\varphi(\Gamma)$ — the self-model — is a **functor** (T-96 [T]): it must be
   computed *from the state* by a lawful map, not asserted alongside it.
-- The self-model tower $\varphi, \varphi^{(2)}, \ldots$ **converges** (T-191 [T])
+- The self-model tower $\varphi, \varphi^{(2)}, \ldots$ **converges** for an embodied holon under backbone dominance (T-191 [T], restated 2026-09-25)
   and terminates at depth 3 (T-142) — reflection on reflection has a floor and a
   ceiling; §10 prices it.
 - **Fidelity is a number**: $R_\varphi = 1 - \lVert\Gamma - \varphi(\Gamma)\rVert^2

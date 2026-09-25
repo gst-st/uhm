@@ -147,32 +147,26 @@ For a psychologist: this is the mathematical model of stable identity formation 
 :::
 
 :::info Statement
-For a conscious system with $R(\Gamma) > 0$ there exists a unique fixed point:
+The canonical self-model $\varphi_{\mathrm{coh}}$ (anchor $I/7$, $k = 1 - R$) has exactly one fixed point, and its iterates converge to it geometrically:
 $$
-\exists! \Gamma^* \in \mathcal{V} : \varphi(\Gamma^*) = \Gamma^*
+\varphi_{\mathrm{coh}}(\Gamma^*) = \Gamma^* \iff \Gamma^* = I/7, \qquad \|\varphi_{\mathrm{coh}}^n(\Gamma_0) - I/7\|_F \leq (6/7)^n\,\|\Gamma_0 - I/7\|_F .
 $$
+The fixed point lies outside the viable set $\mathcal{V}$ ($P = 1/7 < 2/7$).
 
-Proved: $\varphi_k(\Gamma^*) = \Gamma^* \implies \Gamma^* = \rho^*$ (uniqueness from CPTP-contraction of $\varphi$ and primitivity of the linear part $\mathcal{L}_0$).
+*Restated 2026-09-25.* The statement read "$\exists! \Gamma^* \in \mathcal{V}: \varphi(\Gamma^*) = \Gamma^*$", with the fixed point at $P = 2/7$ and a rate $e^{-n\lambda_{\mathrm{gap}}}$ from the primitivity of $\mathcal{L}_0$; retracted [✗] — the unique fixed point is $I/7$, not in $\mathcal{V}$, and the spectral gap of $\mathcal{L}_0$ says nothing about iterating $\varphi$. For the self-registering $\varphi_s$ uniqueness fails: every flat frame state $\Pi_S/\lvert S\rvert$ is fixed.
 :::
 
 **Proof:**
 
-Let $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ be a [CPTP channel](/docs/proofs/categorical/formalization-phi).
+Write $\varphi_{\mathrm{coh}}(\Gamma) = k\,\mathcal{P}_\alpha(\Gamma) + (1 - k)\,I/7$, with $k = 1 - 1/(7P(\Gamma))$ and $\mathcal{P}_\alpha$ keeping the diagonal and multiplying each coherence by $(1 - \alpha)/3$ (each pair lies on one Fano line).
 
-1. The space $(\mathcal{D}(\mathcal{H}), \|\cdot\|_F)$ is a complete metric space
+1. $\mathcal{P}_\alpha$ is trace-preserving and fixes $I/7$, so $\varphi_{\mathrm{coh}}(\Gamma) - I/7 = k\,\mathcal{P}_\alpha(\Gamma - I/7)$.
+2. $\|\mathcal{P}_\alpha(X)\|_F \leq \|X\|_F$ (the diagonal is kept, the rest shrinks), and $k \leq 1 - 1/7 = 6/7$ since $P \leq 1$. Hence $\|\varphi_{\mathrm{coh}}(\Gamma) - I/7\|_F \leq \tfrac67\|\Gamma - I/7\|_F$, and iterating gives the rate.
+3. A fixed point satisfies $\|\Gamma^* - I/7\|_F \leq \tfrac67\|\Gamma^* - I/7\|_F$, so $\Gamma^* = I/7$ ([φ operator](/docs/core/operators/phi-operator#неподвижная-точка-phi-coh)). ∎
 
-2. **Strict contraction** from primitivity of the linear part $\mathcal{L}_0$: by the [primitivity theorem](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T], the linear Lindbladian $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ is primitive (unique stationary state $I/7$). Primitivity implies **uniform contraction** of $e^{k\mathcal{L}_0}$ for $k > 0$: $\|e^{k\mathcal{L}_0}(\Gamma_1) - e^{k\mathcal{L}_0}(\Gamma_2)\|_F \leq e^{-\lambda_{\mathrm{gap}} k} \|\Gamma_1 - \Gamma_2\|_F$, where $\lambda_{\mathrm{gap}} > 0$ is the spectral gap of $\mathcal{L}_0$
+Witness: 200 iterations from a random pure state end at $P = 1/7$ to $10^{-12}$ (`test_unital_self_model_keeps_an_isolated_holon_dead`).
 
-3. By the Banach fixed-point theorem $\exists! \Gamma^* : \varphi(\Gamma^*) = \Gamma^*$. The fixed point $\Gamma^*_{\mathrm{coh}}$ has $P = 2/7$ ([T](/docs/core/operators/phi-operator#свойства))
-
-**Convergence rate:**
-$$
-\|\varphi^n(\Gamma_0) - \Gamma^*\|_F \leq e^{-n\lambda_{\mathrm{gap}}} \cdot \|\Gamma_0 - \Gamma^*\|_F
-$$
-
-Geometric convergence at rate $e^{-n\lambda_{\mathrm{gap}}}$ guarantees an $\varepsilon$-approximation is reached in $O(\log(1/\varepsilon))$ iterations. ∎
-
-**Interpretation:** $\Gamma^*$ is the state of ideal self-knowledge, attainable by iterative reflection.
+**Interpretation:** perfect self-knowledge of the canonical self-model is the dead state: a holon that reflects on itself with $\varphi_{\mathrm{coh}}$ alone converges to heat death, and life needs a self-model with a non-unital anchor — the self-registering $\varphi_s$ ([φ operator, §φ_s](/docs/core/operators/phi-operator#phi-s)) — or an environment. (Until 2026-09-25: "$\Gamma^*$ is the state of ideal self-knowledge, attainable by iterative reflection", read as a viable state; retracted with the statement.)
 
 ---
 
@@ -1193,7 +1187,7 @@ Let us summarise. In this chapter we have traversed the full path from basic exi
 
 1. **Dynamics exists and is correct** (Theorems 6.1–6.2 [T]): the evolution equation has a unique solution preserving the physical meaning of the matrix $\Gamma$ (Hermiticity, positivity, normalisation).
 
-2. **Viability requires self-reference** (Theorem 7.1 [T]): a system maintaining $P > 2/7$ *must* have an internal self-model $\varphi$. Iterations of $\varphi$ converge to the unique fixed point $\Gamma^*$ (Theorem 7.2 [T]).
+2. **Viability requires self-reference** (Theorem 7.1 [T]): a system maintaining $P > 2/7$ *must* have an internal self-model $\varphi$. Iterations of the canonical $\varphi_{\mathrm{coh}}$ converge to its unique fixed point, $I/7$ (Theorem 7.2 [T], restated 2026-09-25) — so the self-model that keeps a holon alive cannot be $\varphi_{\mathrm{coh}}$ alone.
 
 3. **Zombies are impossible** (Theorem 8.1 [T]): a viable open system must have $\mathrm{Coh}_E > 1/7$. E-coherence causally influences dynamics — epiphenomenalism is excluded (Corollary 8.1.1 [T]).
 

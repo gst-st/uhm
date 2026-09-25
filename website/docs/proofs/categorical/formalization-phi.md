@@ -567,57 +567,35 @@ has $P = 0.36 + 6 \times 0.0045 = 0.387 > 2/7$. ✓
 E-accentuation is not a "privilege" of dimension E, but a **structural consequence** of the fact that conscious systems are defined through experience. Non-conscious systems (L0) do not have this constraint — their anchor can be uniform, and the question $P(\Gamma^*) < P_{\text{crit}}$ is not relevant for them (see [theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical)).
 :::
 
-:::warning Potential circularity — RESOLVED (T-191)
-The choice of anchor depends on the interiority level (L2), which is defined via R, which is defined via φ. This apparent circularity is **resolved** by the following convergence theorem.
+:::warning Potential circularity — resolved by the closed form of φ, not by the tower
+The choice of anchor depends on the interiority level (L2), which is defined via R, which is defined via φ. The circularity is only apparent: the canonical $\varphi_{\mathrm{coh}}$ and the self-registering $\varphi_s$ are closed-form functions of the current $\Gamma$ ([φ operator](/docs/core/operators/phi-operator)), with $R = 1/(7P)$ read on the same $\Gamma$, so no fixed point has to be found first. The convergence theorem below settles the second question — whether iterating "self-model → attractor → self-model" converges — and it does so only for an embodied holon under backbone dominance. (Until 2026-09-25 this box said the circularity is resolved by T-191 for every holon.)
 :::
 
-#### Theorem T-191 (Convergence of the φ-tower) [T] {#t-191-сходимость-φ-башни}
+#### Theorem T-191 (Convergence of the φ-tower; restated 2026-09-25) [T] {#t-191-сходимость-φ-башни}
 
-:::tip Theorem T-191 [T]
-The iterative self-modeling tower $\varphi^{(0)}, \varphi^{(1)}, \varphi^{(2)}, \ldots$ converges in operator norm to the unique self-consistent self-model $\varphi^*$, starting from **any** initial anchor. The convergence is exponential with rate bounded by the Fano contraction $\alpha = 2/3$.
+:::warning Retracted (2026-09-25): convergence "from any anchor" for every holon, $q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min})$ [✗]
+The former statement — the tower converges for every holon, from any anchor, with rate $q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min}) < 1$ — is retracted with its proof, which is the retracted proof of T-124c in another dress. Step 1 called $\mathcal{L}_0 + \kappa(\Gamma)g_V(P)(\varphi^{(n)}(\Gamma) - \Gamma)$ a generator of a contractive CPTP semigroup with a unique stationary state; the scalars depend on $\Gamma$, and the gate makes the flow bistable. For an isolated holon with a fixed target $|0\rangle\langle 0|$ and $\kappa = 3$ the flow from $I/7$ stays at $I/7$ (the gate is closed) while the flow from $|0\rangle$ ends at a living state with $P \approx 0.98$, so $\varphi^{(n+1)} = \lim_\tau \exp(\tau\mathcal{L}^{(n)})$ is not defined. Step 3 used $\kappa_{\max} < \lambda_{\mathrm{gap}}$, "verified in T-96" — T-96 verifies no such bound. For the canonical unital $\varphi_{\mathrm{coh}}$ the tower started at $I/7$ stays at the dead replacement channel $\Gamma \mapsto I/7$ ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)).
 :::
 
-**Formulation.** Define the iterative scheme:
+:::tip Theorem T-191 (restated) [T]
+Let an embodied holon carry the backbone term $\mu(\sigma - \Gamma)$ ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)); let $L_{\mathcal{R}}$ be a trace-norm Lipschitz constant on $\mathcal{D}(\mathbb{C}^7)$ of $\Gamma \mapsto \kappa(\Gamma)g_V(P)(a - \Gamma)$, uniform in the target state $a$, and $\kappa_{\max} = \sup \kappa\,g_V$. If
+$$\mu > L_{\mathcal{R}} + \kappa_{\max},$$
+then the tower of self-models — $a_0$ any state, $a_{n+1}$ the stationary state of the dynamics with regeneration target $a_n$ (so that $\varphi^{(n)}$ is the replacement channel $\Gamma \mapsto a_n$) — is well defined, and
+$$\|a_n - a^*\|_1 \leq \frac{q^n}{1 - q}\,\|a_1 - a_0\|_1, \qquad q = \frac{\kappa_{\max}}{\mu - L_{\mathcal{R}}} < 1,$$
+with one limit $a^*$ for every initial anchor: $a^*$ is the stationary state of the dynamics that regenerates toward $a^*$ itself.
+:::
 
-1. $\varphi^{(0)}(\Gamma) := I/7$ (maximally mixed anchor — no prior knowledge)
-2. $\varphi^{(n+1)}(\Gamma) := \lim_{\tau \to \infty} \exp\!\bigl(\tau \cdot \mathcal{L}_\Omega^{(n)}\bigr)[\Gamma]$, where $\mathcal{L}_\Omega^{(n)}$ uses $\varphi^{(n)}$ as the regeneration target
+**Proof.** *Each iterate is defined.* $\mu > L_{\mathcal{R}}$ is the backbone dominance of [T-124c (3)](/docs/core/dynamics/evolution#теорема-единственность-нетривиального-аттрактора): for every target $a$ the dynamics has exactly one stationary state $\rho(a)$, and every trajectory reaches it at rate $c = \mu - L_{\mathcal{R}}$ in trace norm.
 
-Then:
-$$\|\varphi^{(n)} - \varphi^*\|_{\mathrm{op}} \leq q^n \cdot \|\varphi^{(0)} - \varphi^*\|_{\mathrm{op}}, \quad q = \frac{\kappa_{\max}}{\lambda_{\mathrm{gap}} + \kappa_{\min}} < 1$$
+*The iteration contracts.* For targets $a, b$ the two generators differ by $\kappa(\Gamma)g_V(P)(a - b)$, whose trace norm is at most $\kappa_{\max}\|a - b\|_1$. Run the dynamics with target $a$ from $\rho(b)$; the difference $\Delta(\tau)$ from the constant solution $\rho(b)$ of the dynamics with target $b$ obeys, by the contraction estimate of T-124c (3) with this inhomogeneity, $\|\Delta(\tau)\|_1 \leq \int_0^\tau e^{-c(\tau - s)}\,\kappa_{\max}\|a - b\|_1\,ds \leq \kappa_{\max}\|a - b\|_1/c$. As $\tau \to \infty$ the trajectory reaches $\rho(a)$, so $\|\rho(a) - \rho(b)\|_1 \leq q\,\|a - b\|_1$.
 
-**Proof.**
+*Banach.* $\mathcal{D}(\mathbb{C}^7)$ with the trace norm is complete; $a \mapsto \rho(a)$ is a contraction with constant $q < 1$, so it has one fixed point $a^*$, the iterates converge to it geometrically, and two towers started at $a_0, \tilde a_0$ approach each other as $q^n\|a_0 - \tilde a_0\|_1$. $\blacksquare$
 
-**Step 1 (Well-definedness of each iterate).** For fixed $\varphi^{(n)}$, the Liouvillian $\mathcal{L}_\Omega^{(n)} = \mathcal{L}_0 + \kappa(\Gamma) \cdot (\varphi^{(n)}(\Gamma) - \Gamma) \cdot g_V(P)$ is a contractive CPTP semigroup generator on the finite-dimensional space $\mathcal{D}(\mathbb{C}^7)$. By primitivity of $\mathcal{L}_0$ (T-39a [T]) and the addition of a contractive regeneration term, $\mathcal{L}_\Omega^{(n)}$ has a unique stationary state $\rho^{*(n)}$ (by the Perron–Frobenius theorem for positive semigroups on finite-dimensional matrix algebras, Evans 1977). Therefore $\varphi^{(n+1)}$ is well-defined. $\checkmark$
+*Constants.* $\kappa$ constant: $\lvert P(X) - P(Y)\rvert = \lvert\mathrm{Tr}\,(X + Y)(X - Y)\rvert \leq 2\|X - Y\|_1$ and $g_V = \mathrm{clamp}(7P - 2, 0, 1)$ give $L_{\mathcal{R}} \leq \kappa(1 + 2 \cdot 14) = 29\kappa$. Witness (`test_phi_tower_converges_only_under_backbone_dominance`): $\kappa = 0.1$, $\mu = 3.5$, $P(\sigma) > 3/7$, so $q \leq 1/6$; from $I/7$, $|0\rangle$ and a random pure anchor the towers meet to $10^{-10}$, each step contracts by at most $0.028$, and the limit has residual $< 10^{-10}$ with the gate open; the isolated counterexample of the box above is in the same check.
 
-**Step 2 (Contraction of the iteration map).** Define $\Psi: \mathcal{B}(\mathcal{D}(\mathbb{C}^7)) \to \mathcal{B}(\mathcal{D}(\mathbb{C}^7))$ by $\Psi(\varphi) := \lim_{\tau \to \infty} \exp(\tau \cdot \mathcal{L}_\Omega[\cdot; \varphi])$. For two candidate self-models $\varphi_1, \varphi_2$:
+**Corollary (SAD tower).** The Self-Awareness Depth tower $\mathrm{SAD} = 1, 2, 3$ (T-142 [T]) corresponds to the first three iterates. Under the hypothesis of the theorem the differences $\|a_{n+1} - a_n\|_1$ decrease geometrically. By T-142 [T], SAD$_{\max} = 3$ — the fourth iterate would require $P > 9/14 > 3/7$, violating $R \geq 1/3$ — so the tower terminates at finite depth whatever the hypothesis; convergence matters only for the realisable levels.
 
-$$\|\Psi(\varphi_1) - \Psi(\varphi_2)\|_{\mathrm{op}} \leq \frac{\kappa_{\max} \cdot \sup_\Gamma \|\varphi_1(\Gamma) - \varphi_2(\Gamma)\|_F}{\lambda_{\mathrm{gap}} + \kappa_{\min}}$$
-
-This follows from the resolvent estimate: the stationary state of $\mathcal{L}_0 + \mathcal{R}$ depends on $\mathcal{R}$ through the resolvent $(\mathcal{L}_0 - z)^{-1}$, and the spectral gap $\lambda_{\mathrm{gap}}$ of $\mathcal{L}_0$ bounds the resolvent norm at $z = 0$ by $1/\lambda_{\mathrm{gap}}$.
-
-Since $\varphi_i$ are replacement channels: $\|\varphi_1(\Gamma) - \varphi_2(\Gamma)\|_F = k \cdot \|\rho^{*}_1 - \rho^{*}_2\|_F \leq \|\varphi_1 - \varphi_2\|_{\mathrm{op}}$ (with $k = 1 - R \leq 1$). Therefore:
-
-$$\|\Psi(\varphi_1) - \Psi(\varphi_2)\|_{\mathrm{op}} \leq q \cdot \|\varphi_1 - \varphi_2\|_{\mathrm{op}}, \quad q = \frac{\kappa_{\max}}{\lambda_{\mathrm{gap}} + \kappa_{\min}}$$
-
-**Step 3 (Contractivity $q < 1$).** The condition $q < 1$ is equivalent to $\kappa_{\max} < \lambda_{\mathrm{gap}} + \kappa_{\min}$. Since $\kappa_{\min} = \kappa_{\mathrm{bootstrap}} = \omega_0/7 > 0$ (T-59 [T]) and $\kappa_{\max} < \lambda_{\mathrm{gap}}$ (the clustering condition from T-117, verified in T-96 [T]):
-
-$$q = \frac{\kappa_{\max}}{\lambda_{\mathrm{gap}} + \kappa_{\min}} < \frac{\lambda_{\mathrm{gap}}}{\lambda_{\mathrm{gap}} + \kappa_{\min}} < 1 \quad \checkmark$$
-
-**Step 4 (Banach convergence).** The space of CPTP operators on $\mathcal{D}(\mathbb{C}^7)$ with the operator norm is a **complete** metric space (closed subset of the finite-dimensional space $\mathcal{B}(M_7(\mathbb{C}))$). By the Banach fixed-point theorem, $\Psi$ has a unique fixed point $\varphi^*$, and the iterates $\varphi^{(n)} = \Psi^n(\varphi^{(0)})$ converge exponentially:
-
-$$\|\varphi^{(n)} - \varphi^*\|_{\mathrm{op}} \leq \frac{q^n}{1-q} \|\varphi^{(1)} - \varphi^{(0)}\|_{\mathrm{op}}$$
-
-**Step 5 (Independence of initial anchor).** The fixed point $\varphi^*$ is unique (Step 4). Starting from $\varphi^{(0)} = I/7$ or from any other CPTP anchor $\tilde{\varphi}^{(0)}$:
-
-$$\|\Psi^n(\varphi^{(0)}) - \Psi^n(\tilde{\varphi}^{(0)})\|_{\mathrm{op}} \leq q^n \|\varphi^{(0)} - \tilde{\varphi}^{(0)}\|_{\mathrm{op}} \to 0$$
-
-Both sequences converge to the same $\varphi^*$. The choice of initial anchor is irrelevant. $\blacksquare$
-
-**Corollary (Resolution of circularity).** The definition hierarchy $\Omega \to \mathcal{L}_\Omega \to \rho^*_{\mathrm{diss}} \to R \to \varphi$ is **not circular**: starting from $\varphi^{(0)} = I/7$ (which depends on nothing), each iterate $\varphi^{(n+1)}$ depends only on $\varphi^{(n)}$, and the limit $\varphi^*$ is independent of the starting point. The apparent circularity was an artifact of presenting the converged state as if it were the definition.
-
-**Corollary (SAD tower convergence).** The Self-Awareness Depth tower $\mathrm{SAD} = 1, 2, 3$ (T-142 [T]) corresponds to the first three iterates $\varphi^{(1)}, \varphi^{(2)}, \varphi^{(3)}$. Since $q < 1$, the differences $\|\varphi^{(n+1)} - \varphi^{(n)}\|$ decrease geometrically. By T-142 [T], SAD$_{\max} = 3$ — the fourth iterate $\varphi^{(4)}$ would require $P > 9/14 > 3/7$, violating $R \geq 1/3$. The tower **terminates** at finite depth, making convergence trivially satisfied for the physically realizable levels.
-
-**Dependencies:** T-39a [T] (primitivity, spectral gap), T-59 [T] ($\kappa_{\mathrm{bootstrap}}$), T-96 [T] ($\kappa < \kappa_{\max}$), T-124c [T] (attractor uniqueness), T-142 [T] (SAD$_{\max} = 3$). Standard mathematics: Banach fixed-point theorem, Perron–Frobenius for positive semigroups (Evans 1977).
+**Dependencies:** T-124c (3) [T] (backbone dominance: existence, uniqueness and rate of the stationary state), T-148 [T] (backbone term), T-142 [T] (SAD$_{\max} = 3$). Standard mathematics: Banach fixed-point theorem, the variation-of-constants estimate for a flow contracting in trace norm. (The dependencies read "T-39a (spectral gap), T-59, T-96 ($\kappa < \kappa_{\max}$), T-124c (attractor uniqueness)" until 2026-09-25; the uniqueness statement of T-124c is retracted, and T-96 bounds no $\kappa$.)
 
 ### 2.7 Spectral formula for φ (explicit computation) {#27-спектральная-формула-для-φ-явное-вычисление}
 

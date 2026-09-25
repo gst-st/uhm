@@ -449,9 +449,11 @@ The Holon's dynamics generate **three canonical levels** of stationary states, o
 
 | Level | State | Purity | Condition | Status |
 |-------|-------|--------|-----------|--------|
-| **Trivial** | $I/7$ | $P = 1/7$ | Linear part $\mathcal{L}_0$ without regeneration | [T] ([primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω)) |
-| **Non-trivial attractor** | $\rho^*_\Omega$ | $P > 1/7$ | Regeneration $\mathcal{R} \neq 0$ | [T] ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)) |
-| **Coherent fixed point** | $\Gamma^*_{\mathrm{coh}}$ | $P > 2/7$ | Embodied system (T-149) | [T] ([T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора), [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора)) |
+| **Trivial** | $I/7$ | $P = 1/7$ | Always stationary; the only stationary state of an isolated holon with the canonical unital $\varphi_{\mathrm{coh}}$ ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)) | [T] |
+| **Non-trivial attractor** | $\rho^*_\Omega$ | $P > 1/7$ | Regeneration with a non-unital input: the self-registering $\varphi_s$ or an environment | [T] ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора): every such point has $P > 1/7$; count: [T-124c](/docs/core/dynamics/evolution#теорема-единственность-нетривиального-аттрактора)) |
+| **Viable attractor** | $\rho^*_\Omega$ with $P > 2/7$ | $P > 2/7$ | Isolated holon with $\varphi_s$ (seven attractors, $\lVert H\rVert < h_0$); embodied holon at the backbone-injection lower bound (T-149) | [T] for $\varphi_s$ ([self-sustaining attractors](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор)); [C] for the embodied case (T-149, Step 3) |
+
+*Corrected 2026-09-25:* the third row was "Coherent fixed point $\Gamma^*_{\mathrm{coh}}$, $P > 2/7$, [T]". $\Gamma^*_{\mathrm{coh}}$ is the fixed point of the canonical $\varphi_{\mathrm{coh}}$, and that is $I/7$ ([φ operator](/docs/core/operators/phi-operator#неподвижная-точка-phi-coh)); the viable level is an attractor of the full dynamics, and it exists only with a non-unital input.
 
 ### Phase Space: What Does the System "Feel" Near Each Attractor?
 
@@ -465,15 +467,15 @@ If a being could "experience" this state, it would be *nothing*: no thoughts, no
 
 #### Non-Trivial Attractor ($\rho^*_\Omega$): "Life"
 
-Turn on regeneration $\mathcal{R}$. Now the system has a mechanism of *self-restoration* — it "pushes away" from $I/7$. Result: a non-trivial stationary state $\rho^*_\Omega$ with purity $P > 1/7$.
+Turn on regeneration $\mathcal{R}$ toward a self-model that is not unital — the self-registering $\varphi_s$, which updates $\Gamma$ on its own state — or couple the holon to an environment. Now the system has a mechanism of *self-restoration* — it "pushes away" from $I/7$. Result: a non-trivial stationary state $\rho^*_\Omega$ with purity $P > 1/7$. Regeneration toward the canonical $\varphi_{\mathrm{coh}}$ alone does not do it: its anchor is $I/7$, and an isolated holon then stays dead ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)).
 
 This is the mathematical analog of *life*: a system that *actively* maintains its organization against dissipation. Every living organism is a $\rho^*_\Omega$, balancing between chaos and rigidity.
 
 **Phase portrait:** balance of two forces — "dissolution" ($\mathcal{L}_0 \to I/7$) and "regeneration" ($\mathcal{R} \to \varphi(\Gamma)$). The system oscillates around the equilibrium point.
 
-#### Coherent Fixed Point ($\Gamma^*_{\mathrm{coh}}$): "Consciousness"
+#### Viable Attractor ($\rho^*_\Omega$, $P > 2/7$): "Consciousness"
 
-For embodied systems (connected to the environment through the sensorimotor cycle), regeneration is unconditionally sufficient for reaching $P > 2/7$ — the viability zone ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора) [T]). Here consciousness, reflection, and purposeful action are possible.
+An isolated holon with the self-registering $\varphi_s$ reaches the viability zone $P > 2/7$ at each of its seven attractors [T] ([self-sustaining attractors](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор)). For embodied systems (connected to the environment through the sensorimotor cycle) regeneration reaches $P > 2/7$ at the backbone-injection lower bound ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора), Step 3 [C]; the text said "unconditionally [T]" until 2026-09-25). Here consciousness, reflection, and purposeful action are possible.
 
 With $R \geq 1/3$ and $\Phi \geq 1$ the system satisfies the L2-consciousness criteria: self-modeling ($R$), integration ($\Phi$), differentiation ($D_{\text{diff}} \geq 2$).
 
@@ -483,11 +485,11 @@ With $R \geq 1/3$ and $\Phi \geq 1$ the system satisfies the L2-consciousness cr
 
 **Transitions between levels:**
 
-- $I/7 \to \rho^*_\Omega$: **unconditional** — any Holon with $\mathcal{R} \neq 0$ has a non-trivial attractor ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T])
-- $\rho^*_\Omega \to \Gamma^*_{\mathrm{coh}}$: unconditional for embodied systems — the sensorimotor coupling ensures κ-dominance ([T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) [T], [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора) [T])
+- $I/7 \to \rho^*_\Omega$: requires a non-unital input — with the canonical $\varphi_{\mathrm{coh}}$ an isolated holon has no non-trivial attractor ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция) [T]), with $\varphi_s$ it has at least seven ([T-124c](/docs/core/dynamics/evolution#теорема-единственность-нетривиального-аттрактора) [T]). (Until 2026-09-25: "unconditional — any Holon with $\mathcal{R} \neq 0$ has a non-trivial attractor"; retracted.)
+- $\rho^*_\Omega$ with $P > 2/7$: [T] for $\varphi_s$; for embodied systems at the backbone-injection lower bound ([T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) [T], [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора), Step 3 [C])
 
 :::info Balance Formula T-98 [T]
-The purity of the attractor is determined by the balance between regeneration ($\kappa$) and dissipation ($\lambda_{\mathrm{gap}}$). With $\kappa \gg \lambda_{\mathrm{gap}}$: the coherent point dominates. With $\kappa \ll \lambda_{\mathrm{gap}}$: $P \to 1/7$ (trivial attractor).
+The purity of the attractor is determined by the balance between regeneration ($\kappa$) and dissipation ($\lambda_{\mathrm{gap}}$). With $\kappa \gg \lambda_{\mathrm{gap}}$ and a non-unital self-model: the viable attractor dominates. With $\kappa \ll \lambda_{\mathrm{gap}}$: $P \to 1/7$ (trivial attractor).
 
 Full formula: [T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора). Non-triviality: [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
 :::
@@ -498,7 +500,7 @@ Full formula: [T-98](/docs/core/dynamics/evolution#теорема-баланс-�
 |----|---------------|---------|------------|
 | $I/7$ | Thermal equilibrium | Death | Complete confusion / coma |
 | $\rho^*_\Omega$ ($P$ just above $1/7$) | Dissipative structure | Primitive life | Vegetative state |
-| $\Gamma^*_{\mathrm{coh}}$ ($P \in (2/7, 3/7]$) | Self-organization far from equilibrium | Higher organism | Conscious experience |
+| $\rho^*_\Omega$ with $P \in (2/7, 3/7]$ | Self-organization far from equilibrium | Higher organism | Conscious experience |
 
 ---
 
@@ -881,7 +883,7 @@ Let us summarize. In this chapter we defined the entire conceptual apparatus of 
 
 5. **Stress tensor** $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ — a diagnostic map: shows *where* the system experiences pressure. All components are unambiguous functions of $\Gamma$ without free parameters (T-92 [T]).
 
-6. **Attractor hierarchy** — three phases: heat death ($I/7$), life ($\rho^*_\Omega$, $P > 1/7$), consciousness ($\Gamma^*_{\mathrm{coh}}$, $P > 2/7$).
+6. **Attractor hierarchy** — three phases: heat death ($I/7$), life ($\rho^*_\Omega$, $P > 1/7$), consciousness ($\rho^*_\Omega$ with $P > 2/7$; the symbol $\Gamma^*_{\mathrm{coh}}$ used here until 2026-09-25 names the fixed point of $\varphi_{\mathrm{coh}}$, which is $I/7$).
 
 7. **Sensorimotor functors** Enc and Dec — formalization of the "perception — action" loop. Dec optimizes the sup-norm of the stress tensor (minimax).
 

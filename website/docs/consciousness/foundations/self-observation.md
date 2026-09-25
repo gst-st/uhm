@@ -152,15 +152,16 @@ The theory distinguishes **three fixed points** at different levels:
 |-------|--------|------------|-----|----------------|
 | 0 | $\rho^*_{\mathrm{diss}} = I/7$ | $\mathcal{D}_\Omega[\rho^*_{\mathrm{diss}}] = 0$ | $1/7$ | **Reference for $R$**: distance from heat death |
 | 1 | $\rho^*_\Omega$ | $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ | $> 1/7$ [T] | **Physical attractor**: balance of dissipation and regeneration |
-| 2 | $\Gamma^*_{\mathrm{coh}}$ | $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ | $P_{\mathrm{crit}} = 2/7$ | **Viability boundary**: target of canonical $\varphi_{\mathrm{coh}}$ |
+| 2 | $\Gamma^*_{\mathrm{coh}}$ | $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ | $1/7$ ($\Gamma^*_{\mathrm{coh}} = I/7$) | **Exact self-knowledge** of the canonical $\varphi_{\mathrm{coh}}$ — it coincides with level 0 (the row read "$P_{\mathrm{crit}} = 2/7$, viability boundary" until 2026-09-25) |
 
-**Non-triviality of the attractor** [T]: $\rho^*_\Omega \neq I/7$ — proved via $\kappa_{\mathrm{bootstrap}} > 0$ (T-59). See the [full proof](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
+**Non-trivial attractors** [T]: every stationary state $\rho^*_\Omega \neq I/7$ has $P > 1/7$ (T-96); whether one exists depends on the self-model — none for an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)), at least seven with the self-registering $\varphi_s$ ([T-124c](/docs/core/dynamics/evolution#теорема-единственность-нетривиального-аттрактора)). The line read "$\rho^*_\Omega \neq I/7$ — proved via $\kappa_{\mathrm{bootstrap}} > 0$ (T-59)" until 2026-09-25; retracted. See the [full proof](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
 
 The formula $R = 1/(7P)$ uses $\rho^*_{\mathrm{diss}} = I/7$ — this is correct because $R$ measures the **distance from heat death**, not the distance from the dynamic attractor $\rho^*_\Omega$.
 
 :::info Definition Stratification
 - **Simple form** $\varphi_k$: fixed point $\rho^*_{\mathrm{diss}} = I/7$ ($P = 1/7$, non-viable)
-- **Canonical** $\varphi_{\mathrm{coh}}$: fixed point $\Gamma^*_{\mathrm{coh}}$ ($P = 2/7$, viability boundary)
+- **Canonical** $\varphi_{\mathrm{coh}}$: fixed point $\Gamma^*_{\mathrm{coh}} = I/7$ ($P = 1/7$; "$P = 2/7$, viability boundary" until 2026-09-25, retracted)
+- **Self-registering** $\varphi_s$: fixed points include every flat frame state $\Pi_S/\lvert S\rvert$; its attractors keep an isolated holon alive
 - **Full Liouvillian** $\mathcal{L}_\Omega$: attractor $\rho^*_\Omega$ ($P > 1/7$, physical balance)
 
 For details: [hierarchy of fixed points](/docs/core/dynamics/evolution#иерархия-неподвижных-точек), [stratification](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
