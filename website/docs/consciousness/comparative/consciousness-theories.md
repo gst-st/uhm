@@ -433,6 +433,7 @@ Three well-known formal arguments were aimed at IIT. Each applies to any theory 
 - **Strict-dependence horn.** The corpus's own row [F-Neural](/docs/reference/falsifiability#f-neural-нейронные-корреляты) maps the clinical PCI cut-off 0.31 onto $P_{\text{crit}} = 2/7$ and calls the support "calibration-dependent, not direct". A threshold calibrated on the inference data cannot be falsified by the same data.
 - **The supervenience criterion** — "same full invariant, different experience" — is not refuted by substitutions (they change $\Gamma$ and keep the reports, which supervenience allows), but only because it predicts nothing about *which* experience a state carries; the falsifiability page says as much.
 - **The ways out.** No lenient dependency is constructed in the corpus. The second way out is closed to UHM as formulated: two-aspect monism identifies experience with an aspect of $\Gamma$, so experience makes no causal difference beyond $\Gamma$. Whether the No-Zombie link ([Theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie): viability forces $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min}$) ties the differentiation conjunct $D \geq 2$ to observable viability — and so puts it on the unfalsifiable horn — is not analysed in the corpus.
+- **Where the predicate sits, proved (2026-09-25).** [Theorem of the measurement protocol](/docs/applied/research/measurement-protocol#substitution-position) [T]: (i) calibration of $\pi_{\mathrm{bio}}$ on report-labelled sessions is on the strict-dependence horn; (ii) the reference estimator contained the predicate — its viability penalty reconstructed every sub-threshold state of the uniform family at $P = 2/7$ exactly, so the NREM prediction could not be observed (removed); (iii) with parameters frozen in advance the predicate is on the independence horn, and UHM takes the second disjunct of Theorem 3.10 for substitutes; (iv) the non-closure exit is closed; (v) a lenient dependency restricted to intact human brains in natural and pharmacological states is possible and testable [H]. The same page shows that a similarity structure shared with humans — GPT-4's 91.4 % Gromov–Wasserstein match on 93 colours (Kawakita et al., *Sci. Rep.* 14: 15917, 2024) — is inference data and independent of the verdict.
 
 ### Aaronson's "unconscious expander" (2014) {#aaronson-expander}
 
@@ -446,7 +447,7 @@ Three well-known formal arguments were aimed at IIT. Each applies to any theory 
 
 ### What this means for the falsification criterion {#critiques-summary}
 
-[I] Taken together: (1) the supervenience criterion escapes these arguments only because it makes no prediction about which experience a state carries; (2) the numeric predicate is exposed exactly where it has content — through the reconstruction $\pi_{\mathrm{bio}}$; (3) the corpus has none of the answers the literature considers: no reconstruction protocol fixed and published before testing, no statement of what $\mathrm{Cons}(S)$ says about input–output-equivalent substitutes (feedforward unfoldings, lookup tables, emulations), no construction of a lenient dependency, and no condition that excludes trivially simple systems passing the gate. These are open problems of UHM, not solved ones.
+[I] Taken together: (1) the supervenience criterion escapes these arguments only because it makes no prediction about which experience a state carries; (2) the numeric predicate is exposed exactly where it has content — through the reconstruction $\pi_{\mathrm{bio}}$; (3) the corpus had none of the answers the literature considers. *Update 2026-09-25:* the [measurement protocol](/docs/applied/research/measurement-protocol#substitution-position) now proves where $\mathrm{Cons}(S)$ sits [T] — calibration on report-labelled sessions is on the strict-dependence horn, a test with parameters frozen in advance is on the independence horn, and the reference estimator had the predicate inside its loss (a viability penalty that reconstructed every sub-threshold state of the uniform family at $P = 2/7$; removed) — and fixes a pre-registration (SUB-1 … SUB-6). What it says about input–output-equivalent substitutes is explicit: reports are evidence only inside a declared domain, and UHM makes no consciousness claim about unfoldings, emulations or language models; a *lenient dependency* exists at best inside that domain [H]. Still open: no reconstruction protocol has been *run* and published, and no condition excludes trivially simple systems passing the gate.
 
 ## Debate on AI Consciousness (2023–2025) {#ai-consciousness-debate}
 
@@ -485,93 +486,71 @@ This is implemented in the [SYNARC architecture](/docs/applied/coherence-cyberne
 ## Meta-Level: Objectivism and the No-Go Results (List 2025, DeBrota–List 2026) {#no-go-objectivism}
 
 :::info What this section is about
-This is not "another theory of consciousness" but a *meta-level* discussion: two recent no-go results argue that **classical scientific objectivism is incompatible with any honest accommodation of consciousness or quantum measurement outcomes**. UHM's position — the **categorical-monistic route** — is formally codified as [T-221](/docs/proofs/categorical/fundamental-closures#t-221).
+This is not "another theory of consciousness" but a *meta-level* discussion: recent no-go results argue that **classical scientific objectivism cannot be combined with realism about first-personal facts** (and, in a parallel result, with realism about quantum measurement outcomes, given locality and measurement independence). Which way out UHM takes is stated as [T-221](/docs/proofs/categorical/fundamental-closures#t-221) — corrected on 2026-09-25: UHM takes the **relationalist** route, not a "fourth" one.
 :::
 
-### The two no-go results
+### The no-go results, as their authors state them
 
-**List (2025), *The Philosophical Quarterly* 75(3).** The *quadrilemma for theories of consciousness*: the five theses
+**List (2025), *The Philosophical Quarterly* 75(3): 1026–1048, doi:10.1093/pq/pqae053.** The *quadrilemma for theories of consciousness* has **four** claims:
 
-- **FPR** (first-personal realism): for each conscious subject there are first-personal facts
-- **NS** (non-solipsism): more than one conscious subject exists
-- **OW** (one world): reality is exhausted by one world
-- **NF** (non-fragmentation): any world is a coherent collection of facts
-- **NR** (non-relationalism): facts are absolute ("such and such is the case"), not relative
+- **First-person realism (FPR):** for any conscious subject, there are first-personal facts;
+- **Non-solipsism (NS):** there is more than one conscious subject;
+- **Non-fragmentation (NF):** the totality of facts that hold in any given world are compossible;
+- **One world (OW):** reality consists of one world, not of many.
 
-are jointly inconsistent. Any two or three are jointly consistent; any four are not. Classical *objectivism* is defined as the conjunction {OW, NF, NR}.
+They are jointly inconsistent, and **any three of them are consistent**. List pairs each dropped claim with a family of theories: dropping FPR is "the most common strategy" — physicalist and dualist theories, "and arguably also the various recently influential Russellian, neutral, or double-aspect monist views"; dropping NS is Hare's egocentric presentism; dropping NF is Fine's (2005) and Lipman's (2023) fragmentalism; dropping OW is List's own many-worlds theory of consciousness (2023). Non-relationalism is not a separate claim here: it "was treated as a presupposition of first-personal realism" (DeBrota & List 2026, footnote 5).
 
-**DeBrota & List (2026), *Foundations of Physics* 56:24 and arXiv:2604.14234.** The *heptalemma for quantum mechanics*: the seven theses {Locality, Measurement Independence, Measurement Realism, NS, OW, NF, NR} are jointly inconsistent with the predictions of quantum mechanics. Any six are consistent.
+**DeBrota & List (2026), "Consciousness, quantum mechanics, and the limits of scientific objectivism", arXiv:2604.14234.** The same result in five-thesis form: FPR, NS and **objectivism** — the conjunction of OW, NF and **non-relationalism (NR)**: "any fact … is of the absolute form 'such and such is the case', not of the relative form 'such and such is the case, relative to such and such'" — are jointly inconsistent; **any two of the three are consistent**.
 
-### The three routes that DeBrota & List identify
+**DeBrota & List (2026), "A heptalemma for quantum mechanics", *Found. Phys.* 56, 24, arXiv:2512.01982.** Locality, measurement independence, measurement realism, NR, NF, OW and NS are jointly inconsistent with the predictions of quantum mechanics; any six are consistent.
 
-Dropping one conjunct of objectivism gives a non-objectivist route. The authors identify three, symmetric in both domains:
+:::warning Corrected 2026-09-25
+This section stated that List's quadrilemma has *five* theses including NR, that "any two or three are jointly consistent; any four are not", and cited the heptalemma as arXiv:2604.14234. All three are wrong: the quadrilemma has four claims and any three are consistent; in the five-thesis form dropping any one thesis leaves a consistent four; the heptalemma is arXiv:2512.01982 (*Found. Phys.* 56, 24), while arXiv:2604.14234 is the programmatic paper on consciousness and quantum mechanics.
+:::
 
-| Route | Dropped conjunct | Consciousness analogue | QM analogue |
+### The three non-objectivist routes
+
+Relaxing one conjunct of objectivism gives a non-objectivist route; DeBrota & List trace each route in both domains:
+
+| Route | Dropped conjunct | Consciousness | Quantum mechanics |
 |---|---|---|---|
-| Relationalist | NR | Relativist FPR (Fine 2005) | Relational QM (Rovelli 1996, 2025) |
-| Fragmentalist | NF | Fine fragmentalism, Lipman 2023 | Fragmentalist QBism |
-| Many-subjective-worlds | OW | List 2023 (many-worlds of consciousness) | Pluriverse QBism (Mermin 2019, Fuchs, Pienaar) |
+| Relationalist | NR | first-personal facts only relative to a perspective (Fine 2005 discusses and rejects it) | Relational QM (Rovelli 1996, 2025) |
+| Fragmentalist | NF | Fine 2005, Lipman 2023 | quantum-logical approaches; "Fragmentalist QBism"; sheaf-theoretic tools of Abramsky & Brandenburger (2011) |
+| Many-subjective-worlds | OW | List 2023 | "Pluriverse QBism" (Mermin 2019, Fuchs, Pienaar) |
 
-The authors leave the choice among the three to "inference to the best explanation" (§10 of the paper) and provide no measurable discriminator.
+Against the relationalist route the authors raise two objections: the table of relativised first-personal facts "leaves open which experiences I have", so relationalism "would amount to a denial of first-personal realism in the originally intended sense"; and one must say what the relativisation parameter is — for Fine (2005) a "pure metaphysical self … that stands outside the world". They leave the choice among routes to "an inference to the best explanation" and consider it "unlikely that empirical evidence alone could adjudicate the issue".
 
-### UHM's fourth route: categorical-monistic {#uhm-fourth-route}
+### UHM's route: relationalist, with an internal parameter {#uhm-route}
 
-UHM does not fit into any of the three routes as stated. Instead, UHM realises a **fourth** route that preserves all three conjuncts of classical objectivism at the ∞-topos level while relaxing NR into **site-relativization**. The formal structure is:
+[T-221](/docs/proofs/categorical/fundamental-closures#t-221) **[T]+[I]** reads UHM's facts in the internal language of the ∞-topos $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{C}_7, J_\mathrm{Bures}, \omega_0)$: a fact holds *relative to* a stage $y(\Gamma)$ when it is forced there, *absolutely* when it is forced at the terminal object. The theorem shows:
 
-$$\mathfrak{T} \;=\; \mathrm{Sh}_\infty(\mathcal{C}_7,\; J_\mathrm{Bures},\; \omega_0)$$
-
-Mapping of the five theses:
-
-| Thesis | Status in UHM | Backing theorem |
+| Thesis | In UHM | Ground |
 |---|---|---|
-| FPR | **forced** | [T-186](/docs/proofs/categorical/cohesive-closure) (Cohesive Closure): $F \cong \&\|_\mathcal{D}$ |
-| NS | **conventional** | [T-215](/docs/proofs/categorical/fundamental-closures#t-215): choice $\iota_\mathrm{min}$ vs $\iota_\mathrm{max}$ |
-| OW | **derived at T-120 [C], unique** | [T-120](/docs/proofs/physics/emergent-manifold) + [T-173](/docs/proofs/categorical/uniqueness-theorem) |
-| NF | **definitional** | [T-211](/docs/proofs/categorical/fundamental-closures#t-211): Giraud axioms, descent |
-| NR | **replaced by NR$_\text{site}$** | Facts are ∞-sheaf sections indexed by the internal site $\mathcal C_7 \in \mathfrak{T}$ |
+| OW | kept — one topos | the choice of primitive |
+| NF | kept — the internal logic is consistent | non-degeneracy of $\mathfrak{T}$ |
+| NS | kept under the identity convention $\iota_{\min}$ | [T-215](/docs/proofs/categorical/fundamental-closures#t-215) |
+| FPR | kept **only in relativised form** — each subject's facts are forced at its own stage | T-221(a), (b) |
+| NR | **given up** for first-personal facts | T-221(a): the first-personal facts of two subjects are not compossible, so they cannot all be absolute |
 
-The full result with proof is collected in [Fundamental Closure T-221](/docs/proofs/categorical/fundamental-closures#t-221). Three key corollaries:
+So UHM is on the **relationalist** route of DeBrota & List; in List's (2025) four-claim map, where NR is part of FPR, it is on the **first horn** — the one List assigns, "arguably", to double-aspect monisms. What is specific to UHM within that route: the relativisation parameter is an object of the world itself (T-221(c)), which answers Fine's objection. What is not answered: the objection that the table of relativised facts does not say which subject *I* am. In $\mathfrak{T}$ no internal formula selects "my" stage; the choice is a point of the topos, an external datum (T-221(d)) — the same shape as the hard-problem meta-theorem [T-214](/docs/proofs/categorical/fundamental-closures#t-214).
 
-1. **List 2025 quadrilemma**: {FPR, NS (ι<sub>min</sub>), OW, NF, NR<sub>site</sub>} is jointly consistent in $\mathfrak{T}$.
-2. **DeBrota–List 2026 heptalemma**: {Loc, MI, MR, NS, OW, NF, NR<sub>site</sub>} is jointly consistent with QM predictions in $\mathfrak{T}$.
-3. **RQM as shadow**: Relational quantum mechanics is recovered as the 1-truncation $\tau_{\leq 1}(\mathfrak{T})$. All $n \geq 2$ coherence data — including the &-modality that carries FPR content by T-186 — is discarded by 1-truncation, which is exactly why RQM is sometimes accused of being "too third-personal" (Glick 2021).
-
-### Why the other three routes are *truncations*, not alternatives
-
-Each of the three non-objectivist routes identified by DeBrota–List (2026) is a **reductive specialisation** of $\mathfrak{T}$:
-
-| Route | $\mathfrak{T}$-specialisation | What is lost |
-|---|---|---|
-| Relationalist (RQM) | $\tau_{\leq 1}(\mathfrak{T})$ — 1-truncation | all $n \geq 2$ coherences, including FPR via &-modality |
-| Fragmentalist | drop descent in a sector | violates T-211 Giraud (no longer an ∞-topos) |
-| Many-subjective-worlds | pointwise Yoneda without gluing | no covering $\{U_i \to W\}$ coherence, no shared objectivity |
-
-From UHM's perspective these are not *competing* positions — they are *compatible shadows* of the same structure, each losing different layers of coherence.
-
-### Empirical discriminator (absent from DeBrota–List)
-
-The paper identifies no measurable criterion. UHM provides one: the **π<sub>bio</sub> protocol** (TMS–EEG, [Fundamental Closures §9](/docs/proofs/categorical/fundamental-closures)) measures $\Phi(\Gamma)$ directly. Predicted signatures:
-
-- **UHM (T-221)**: $\Phi \geq 1$ threshold with sector-profile dependence; site-relativization visible as Γ-indexed variation across subjects
-- **RQM shadow**: no threshold, only relative correlations
-- **Fragmentalism**: incoherent $\Phi$-assignments across subjects (fails descent)
-- **Many-subjective-worlds**: per-subject $\Phi$ with no cross-subject invariant
-
-See [Predictions](/docs/applied/coherence-cybernetics/predictions) for the 23+ falsifiable predictions, including Pred 9 (learning bound) and Pred 10 (N=7 minimality).
+:::warning Retracted 2026-09-25 [✗]
+This section claimed that UHM realises a "fourth, categorical-monistic route" beyond the three, keeping FPR, NS, OW and NF while "relaxing NR into site-relativisation", with FPR "forced" by T-186. Site-relativisation of facts is the relationalist route itself, and T-186(a) is a hypothesis. Also retracted: "RQM is recovered as the 1-truncation $\tau_{\leq 1}(\mathfrak{T})$" (the site is a 1-category, its representables are 0-truncated, and 1-truncation changes none of them); "the other routes are truncations of $\mathfrak{T}$" — fragmentalism as "dropping descent" misreads the route (descent can hold while the local facts fail to form one coherent collection, which is the sheaf-theoretic picture the authors cite); and the "empirical discriminator": the routes are readings of one forcing relation, share every observable (T-221(e)), and $\pi_{\mathrm{bio}}$ cannot tell them apart — in agreement with the authors.
+:::
 
 ### Connection with UHM's hard-problem meta-theorem
 
-The structural inevitability of site-relativization in T-221 is consonant with [T-214](/docs/proofs/categorical/fundamental-closures#t-214) (hard-problem meta-theorem): any sufficiently rich self-referential system has **structurally irreducible external postulates** (Lawvere fixed-point). T-221 localises this irreducibility: what in List–DeBrota's framework appears as "conflict between FPR and objectivism" is, in UHM, the *positive* fact that the relativization parameter ($\Gamma$) lives *internally* to the ∞-topos rather than in a mysterious external metaphysical subject (which was Fine's 2005 worry with pure relationalism).
+T-214 states that a sufficiently rich self-referential system has irreducible external postulates (Lawvere fixed point). T-221(d) places one of them exactly: the fact "I am *this* subject" is not among the facts of $\mathfrak{T}$; it is the choice of a point. What in the no-go literature appears as the price of relationalism — the "vertiginous question" (Hellie 2013) left open — is in UHM an instance of T-214, not something the categorical machinery removes.
 
 ### Independent convergence: Lerchner (2026, Google DeepMind)
 
 An independent argument by Alexander Lerchner (*The Abstraction Fallacy: Why AI Can Simulate But Not Instantiate Consciousness*, Google DeepMind working paper, 2026-03) reaches the same broad conclusion — that algorithmic symbol manipulation cannot **instantiate** experience, only **simulate** it — via a different route. Lerchner argues that computation is a "mapmaker-dependent" description of physics rather than an intrinsic physical process, and therefore inverts the standard chain "Physics → Computation → Consciousness" into "Physics → Consciousness → Concepts → Computation".
 
-In UHM terms this is the **negative** form of T-221 (rejection of naive non-relationalism in favour of an agent-indexed view of computation) combined with the Lawvere barrier of T-214. UHM supplies the **positive, constructive** counterpart that Lerchner's paper leaves open — "What physical conditions are needed for consciousness?" — namely the specific structure $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with $G_2$-covariant Lindblad dynamics, the four measurable thresholds $(P, R, \Phi, D)$, and the $\pi_\text{bio}$ protocol as the operational discriminator. Lerchner's terminology (*abstraction fallacy*, *mapmaker*, *alphabetization*, *transduction fallacy*, *simulation vs. instantiation*) translates into UHM formalism via: simulation ↔ 1-truncation $\tau_{\leq 1}(\mathfrak{T})$; instantiation ↔ full cohesive section; causality gap ↔ T-214 Lawvere barrier; mapmaker-dependency ↔ site-relativization NR$_\text{site}$ of T-221.
+In UHM terms this is the **negative** form of T-221 (rejection of naive non-relationalism in favour of an agent-indexed view of computation) combined with the Lawvere barrier of T-214. UHM supplies the **positive, constructive** counterpart that Lerchner's paper leaves open — "What physical conditions are needed for consciousness?" — namely the specific structure $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with $G_2$-covariant Lindblad dynamics, the four measurable thresholds $(P, R, \Phi, D)$, and the $\pi_\text{bio}$ protocol as the operational discriminator. Lerchner's terminology (*abstraction fallacy*, *mapmaker*, *alphabetization*, *transduction fallacy*, *simulation vs. instantiation*) translates into UHM formalism via: simulation ↔ 1-truncation $\tau_{\leq 1}(\mathfrak{T})$; instantiation ↔ full cohesive section; causality gap ↔ T-214 Lawvere barrier; mapmaker-dependency ↔ the stage-relativisation of facts in T-221 (the relationalist route).
 
 **Formal foreclosure of the Melody Paradox**: Lerchner's core §3.3 argument (the Melody Paradox / Putnam triviality) is fully closed in UHM by [T-223](/docs/proofs/categorical/fundamental-closures#t-223) via a three-level ontology L1 (physical vehicle) / L2 (intrinsic categorical class $[\Gamma_S]_{G_2}$, forced by T-190 zero-axiom closure) / L3 (symbolic readout, Lerchner-variable). The putnam-freedom acts on L1→L3 but has zero purchase on L1→L2; UHM's consciousness predicate $\mathrm{Cons}(S) := (P > 2/7) \wedge (R \geq 1/3) \wedge (\Phi \geq 1) \wedge (D_{\min} \geq 2)$ factors through L2 via $G_2$-invariance of observables, hence is alphabetization-invariant. The seven-lemma proof additionally shows that non-UHM-compatible alphabetizers (Lerchner's Fig. 3 "Market Data on a Beethoven trajectory") are physically vacuous (Piccinini–Kim), and that self-alphabetization via the intrinsic reflection measures $R$ and $R_\varphi$ (T-96/T-126) categorifies the Maturana–Varela enactivist thesis that Lerchner himself cites.
 
-The independent convergence from a major industrial AI-research laboratory — arriving at a structurally similar conclusion without UHM's category-theoretic machinery — reinforces the view that UHM's categorical-monistic route (T-221) is not one philosophical option among many but a structurally forced reply to the no-go results, detectable from multiple starting points.
+The convergence concerns the distinction between simulating and instantiating experience. It does not bear on T-221: that theorem (corrected 2026-09-25) places UHM on the relationalist route, one of three readings of the same formal structure, and ~~"UHM's categorical-monistic route (T-221) is not one philosophical option among many but a structurally forced reply to the no-go results"~~ is retracted [✗] with the fourth-route reading.
 
 ---
 
@@ -2178,7 +2157,7 @@ A category $\mathbf Q$ of qualia: objects are experiences, arrows are similarity
 |---|---|---|
 | What a quale is | An object of a category of experiences, fixed by its relations | A ray $[\lvert q\rangle] \in \mathbb P(\mathcal H_E)$ with Fubini–Study distances |
 | Yoneda lemma for qualia | Category-theoretic programme from 2016; the Yoneda-based account stated and applied in the 2020 preprint and the 2021 paper | [Theorem "Yoneda's lemma for qualia"](/docs/consciousness/foundations/two-aspect-monism#теорема-реляционная-определённость) |
-| Graded similarity | Enriched categories (2022) | Fubini–Study metric $d_{FS}$ |
+| Graded similarity | Enriched categories (2022); enriched Yoneda up to enriched isomorphism | Fubini–Study metric $d_{FS}$: a Lawvere metric space whose enriched Yoneda embedding is an isometry, with enriched isomorphism = identity ([theorem](/docs/proofs/categorical/categorical-formalism#enriched-yoneda), 2026-09-25) |
 | Map from physics to experience | A functor between experience and IIT's structures, to be tested (2016) | Functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$, claimed unique under UHM's axioms |
 | Empirical test | Done: unsupervised alignment of colour-similarity structures (2025) | Metric prediction 4 on the [falsifiability](/docs/reference/falsifiability) page; not yet tested |
 
@@ -2196,6 +2175,7 @@ UHM's relational identity of qualia — the [Yoneda theorem for qualia](/docs/co
 ### What CC does better {#category-qualia-better}
 
 - One point, backed by the corpus's formal results: UHM commits in advance to a concrete geometry for the category of qualities (Fubini–Study distances on $\mathbb P(\mathcal H_E)$) and states that the functor $F$ is unique under its axioms ([theorem](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв), labelled [T] on its page, with no registry number). The Tsuchiya programme deliberately leaves the category to be found by experiment. Whether committing in advance is an advantage depends on whether the committed geometry survives the kind of test listed next.
+- *Added 2026-09-25 [T].* The commitment has checkable consequences that the programme's general lemma cannot have: with $d_{FS}$ the enriched Yoneda embedding is an isometry and enriched isomorphism is identity; dissimilarities to a finite probe set fix a quality to within twice its covering radius, with explicit probe counts (93 colours cannot resolve below $\approx 0.104$ rad even on $\mathbb{CP}^1$); and a dissimilarity matrix is realisable only if a Gram-type matrix $\cos(d_{ij})e^{i\theta_{ij}}$ is positive semidefinite of rank $\leq \dim \mathcal H_E$ ([enriched Yoneda theorem](/docs/proofs/categorical/categorical-formalism#enriched-yoneda)). The enriched construction itself is the programme's (2022).
 
 ### Honest assessment: what the theory does better than CC {#category-qualia-honest}
 
@@ -2205,7 +2185,7 @@ UHM's relational identity of qualia — the [Yoneda theorem for qualia](/docs/co
 
 ### Standing {#category-qualia-standing}
 
-An active programme. Its relational method has produced one published cross-subject test (Kawakita et al., 2025). By its own description it is "ontologically neutral": it proposes a language for testable questions about the structure of experience, not a criterion of which systems are conscious.
+An active programme. Its relational method has produced two published alignment tests: across people (Kawakita et al., *iScience*, 2025) and between people and language models (Kawakita, Zeleznikow-Johnston, Tsuchiya & Oizumi, *Sci. Rep.* 14: 15917, 2024: GPT-4 matched colour-neurotypical humans on 93 colours with a matching rate of 91.4 %, GPT-3.5 with 11.8 %). What that match does and does not say about consciousness in UHM's terms: [measurement protocol](/docs/applied/research/measurement-protocol#substitution-position). By its own description it is "ontologically neutral": it proposes a language for testable questions about the structure of experience, not a criterion of which systems are conscious.
 
 ### Mapping functor [I] {#category-qualia-functor}
 

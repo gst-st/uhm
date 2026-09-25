@@ -650,7 +650,7 @@ public pure fn reconstruct_gap_profile(data: &DualInterviewData)
 ## Protocol $\pi_{\mathrm{bio}}$: Reconstructing $\Gamma$ from Biological Neural Data (Resolution P8) {#протокол-pi-bio}
 
 :::warning Status: [T] structural + [H] empirical calibration
-The protocol $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$ defines the mapping of neural data (EEG/fMRI/HRV) into the space of density matrices. The mathematical structure is **[T]** (follows from $G_2$-rigidity T-42a). The specific correspondences between EEG bands and dimensions are **[H]** (require experimental validation). A fully specified measurement protocol with feature extraction, validation gates against PCI, and predicted thresholds $P(\Gamma_\mathrm{wake})>2/7$, $P(\Gamma_\mathrm{NREM3})<2/7$ is given in [Fundamental Closures §9](/docs/proofs/categorical/fundamental-closures#pi-bio-protocol): simultaneous TMS+EEG+fMRI+HRV recording on $N\geq 50$ subjects across wake/NREM3/anaesthesia states, with explicit 7-feature and 21-off-diagonal extraction protocols. No theoretical obstacle remains; the programme awaits empirical data.
+The protocol $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$ defines the mapping of neural data (EEG/fMRI/HRV) into the space of density matrices. The mathematical structure is **[T]** (follows from $G_2$-rigidity T-42a). The specific correspondences between EEG bands and dimensions are **[H]** (require experimental validation). A fully specified measurement protocol with feature extraction, validation gates against PCI, and predicted thresholds $P(\Gamma_\mathrm{wake})>2/7$, $P(\Gamma_\mathrm{NREM3})<2/7$ is given in [Fundamental Closures §9](/docs/proofs/categorical/fundamental-closures#pi-bio-protocol): simultaneous TMS+EEG+fMRI+HRV recording on $N\geq 50$ subjects across wake/NREM3/anaesthesia states, with explicit 7-feature and 21-off-diagonal extraction protocols. *Corrected 2026-09-25:* the sentence "no theoretical obstacle remains" is withdrawn — as first specified, the estimator contained the tested predicate and the calibration used report-labelled sessions; the conditions under which a test is possible are the [position against the substitution argument](#substitution-position) and its pre-registration SUB-1 … SUB-6.
 :::
 
 ### Principle: EEG Bands as Projections of $\Gamma$ onto Dimensions {#eeg-полосы}
@@ -706,7 +706,7 @@ Types of CFC used for reconstruction:
 
 The phase $\theta_{ij} = \arg(\gamma_{ij})$ determines the Gap: $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$.
 
-**Phase extraction method:** Paradoxical probes (Stage 3 of the [dual interview](#протокол-двойного-интервью-для-биологических-систем)). Reaction time on conflict tasks involving the pair of dimensions $(i,j)$ is proportional to the Gap:
+**Phase extraction method:** Paradoxical probes (Stage 3 of the [dual interview](#протокол-двойного-интервью-для-биологических-систем)). *In a test of $\mathrm{Cons}(S)$ this route is excluded (SUB-3, [below](#substitution-position)): reaction times are behaviour, i.e. inference data; phases then come from the EEG.* Reaction time on conflict tasks involving the pair of dimensions $(i,j)$ is proportional to the Gap:
 
 $$\mathrm{Gap}(i,j) \approx \tanh\!\left(\frac{\mathrm{RT}_{ij} - \overline{\mathrm{RT}}}{\sigma_{\mathrm{RT}}}\right)$$
 
@@ -733,32 +733,38 @@ where $\mathcal{L}(\mathbf{x} | \Gamma)$ — likelihood of the observation model
 
 $$R_{\mathrm{phys}}(\Gamma) = -\lambda_1 \|\dot{\Gamma} - \mathcal{L}_\Omega[\Gamma]\|_F^2 - \lambda_2 \max(0, P_{\mathrm{crit}} - P(\Gamma))$$
 
-The first term penalizes inconsistency with dynamics; the second penalizes non-viable states.
+The first term penalizes inconsistency with dynamics; the second penalizes non-viable states. *Corrected 2026-09-25:* the second term puts the tested predicate into the estimator — with $\lambda_2 = 100$ every sub-threshold state of the uniform family is reconstructed at $P = 2/7$ exactly ([theorem, part (ii)](#substitution-position)); in any test $\lambda_2 = 0$, and $\lambda_1 = 0$ in confirmatory runs (SUB-2).
 
 **Optimization:** Gradient descent over the 48 Cholesky factorization parameters (all physical — 34 kinematic invariants + 14 frame-orientation parameters, D-0910). The frame is fixed by the labelling rule of R6 (Fano-frame convention and the $E$-axis anchor), not by a continuous gauge choice; the convention $\gamma_{AS} \in \mathbb{R}_+$ removes only the global phase.
 
-### Step 5: Connection to PCI (Casali et al. 2013) {#pci-связь}
+### Step 5: Connection to PCI (Casali et al. 2013; Casarotto et al. 2016) {#pci-связь}
 
-:::info Theorem ($\mathrm{PCI} \to \Phi$ proxy) [H]
-The Perturbational Complexity Index (PCI) correlates with the integration measure $\Phi(\Gamma)$:
+:::info Hypothesis ($\mathrm{PCI} \to \Phi$ proxy) [H]
+The Perturbational Complexity Index (PCI) is monotonically related to the integration measure $\Phi(\Gamma)$ (prediction P8.3). A linear form $\Phi(\Gamma) \approx \alpha_{\mathrm{PCI}} \cdot \mathrm{PCI} + \beta_{\mathrm{PCI}}$ with constants fitted on a training set is a *calibration*, not a bridge: whatever it fits, it cannot test.
 
-$$\Phi(\Gamma) \approx \alpha_{\mathrm{PCI}} \cdot \mathrm{PCI} + \beta_{\mathrm{PCI}}$$
-
-where $\alpha_{\mathrm{PCI}}$, $\beta_{\mathrm{PCI}}$ — calibration constants determined from a training set (healthy waking, sleep, anesthesia).
-
-**Justification:** PCI measures the algorithmic complexity of the cortical response to TMS perturbation. High PCI means simultaneous spatial differentiation and integration — exactly what $\Phi$ quantifies in UHM. Empirically: PCI $\geq 0.31$ during wakefulness (Casali et al. 2013), corresponding to $\Phi \geq \Phi_{\mathrm{th}} = 1$.
+**Justification:** PCI measures the algorithmic complexity of the cortical response to TMS perturbation; a high PCI requires a response that is both integrated and differentiated, and $\Phi$ is UHM's integration measure. The earlier sentence "PCI $\geq 0.31$ during wakefulness, corresponding to $\Phi \geq \Phi_{\mathrm{th}} = 1$" stated a correspondence that nothing derives; it is withdrawn.
 :::
 
-**Calibration table (hypothetical, requires experimental verification):**
+**What can be derived — the bridge on UHM's side [T].** Three facts fix how UHM's thresholds sit relative to each other, with no neural data:
+- $\Phi \geq 1 \Rightarrow P \geq 2/7$ on all of $\mathcal D(\mathbb C^7)$ ([T-129a](/docs/proofs/consciousness/operationalization#t-129a-универсальность)).
+- On the uniform-diagonal stratum $P = (1 + \Phi)/7$, $R = 1/(1 + \Phi)$ and $C = \Phi R = \Phi/(1+\Phi)$; the window $P \in (2/7, 3/7]$ is exactly $\Phi \in (1, 2]$, $R \in [1/3, 1/2)$, $C \in (1/2, 2/3]$ (checked in `check_core_numbers.py`, `test_uniform_diagonal_window_is_phi_between_one_and_two`).
+- The predicate has **two exits**: $P \leq 2/7$ (too mixed; on the uniform diagonal the same as $\Phi \leq 1$) and $P > 3/7$ (too pure; $R < 1/3$). A low PCI therefore has two possible UHM signatures, not one.
 
-| State | PCI (observed) | $P$ (predicted) | $R$ (predicted) | $\Phi$ (predicted) |
-|-------|:--------------:|:---------------:|:---------------:|:------------------:|
-| Wakefulness | $0.44 \pm 0.10$ | $> 2/7$ | $\geq 1/3$ | $\geq 1$ |
-| REM sleep | $0.41 \pm 0.09$ | $> 2/7$ | $\geq 1/3$ | $\geq 1$ |
-| NREM (N3) | $0.18 \pm 0.06$ | $\lesssim 2/7$ | $< 1/3$ | $< 1$ |
-| Anesthesia (propofol) | $0.12 \pm 0.05$ | $< 2/7$ | $< 1/3$ | $< 1$ |
-| Coma | $0.15 \pm 0.10$ | $\lesssim 2/7$ | — | $< 1$ |
-| MCS (minimally conscious) | $0.32 \pm 0.08$ | $\approx 2/7$ | $\approx 1/3$ | $\approx 1$ |
+**What cannot be derived [✗ if claimed].** A numerical conversion between PCI and $P$ or $\Phi$. PCI is a normalised Lempel–Ziv complexity of a binarised source-activity matrix; $P$ and $\Phi$ are functions of $\Gamma$. The closeness of $\mathrm{PCI}^* = 0.31$ to $2/7 \approx 0.286$ is a coincidence of two unrelated scales and carries no evidential weight. The bridge that *can* be tested is a **concordance of verdicts** on the same sessions (P8.4 below): $\mathrm{Cons}(\hat\Gamma)$ against $\mathrm{PCI}_{\max} > \mathrm{PCI}^*$.
+
+**Reference data — Casarotto et al. (2016), Table 1** (*Ann. Neurol.* 80: 718–729, doi:10.1002/ana.24779). Benchmark population: 150 subjects, 540 sets of TMS-evoked potentials; $\mathrm{PCI}^* = 0.31$ from an ROC analysis in which the presence or absence of a subjective report — immediate or delayed — is the ground truth; on this benchmark the cut-off separates the two classes with 100 % sensitivity and 100 % specificity. Values are $\mathrm{PCI}_{\max}$ per subject, median [min–max]:
+
+| Condition | Report | Subjects | $\mathrm{PCI}_{\max}$ | UHM verdict to be tested |
+|---|---|:-:|:-:|---|
+| Wakefulness (healthy) | immediate | 102 | 0.53 [0.39–0.70] | Cons |
+| REM sleep | delayed (dream) | 8 | 0.48 [0.36–0.56] | Cons |
+| Ketamine anaesthesia | delayed | 6 | 0.43 [0.36–0.52] | Cons |
+| NREM sleep | none | 18 | 0.25 [0.15–0.31] | ¬Cons |
+| Midazolam | none | 6 | 0.30 [0.23–0.31] | ¬Cons |
+| Xenon | none | 6 | 0.23 [0.11–0.31] | ¬Cons |
+| Propofol | none | 6 | 0.26 [0.23–0.31] | ¬Cons |
+
+Applied to patients: 36 of 38 in a minimally conscious state had $\mathrm{PCI}_{\max} > \mathrm{PCI}^*$ (sensitivity 94.7 %), and 9 of 43 in a vegetative state did too. (Casali et al. 2013, *Sci. Transl. Med.* 5(198): 198ra105, doi:10.1126/scitranslmed.3006294, introduced the index.) The table this section carried until 2026-09-25 — "wakefulness $0.44 \pm 0.10$, REM $0.41 \pm 0.09$, NREM $0.18 \pm 0.06$, propofol $0.12 \pm 0.05$, coma $0.15 \pm 0.10$, MCS $0.32 \pm 0.08$", labelled "observed" — has no source in either paper and is withdrawn. The REM and ketamine rows matter most for UHM: consciousness without behaviour, where the verdict cannot be read off reports given at the time.
 
 ### Step 6: Connection to Quantum Cognition (Pothos-Busemeyer) {#quantum-cognition}
 
@@ -861,11 +867,10 @@ public fn pi_bio(
             ll_off -= (gamma[i, j].abs() - off_diag_mag[i, j]).pow(2) / 0.05;
         }}
 
-        // Physical regulariser: hard floor at P > P_crit.
-        let p = (gamma.matmul(&gamma)).trace().real();
-        let p_penalty = -100.0 * (2.0 / 7.0 - p).max(0.0);
+        // No viability term (SUB-2, corrected 2026-09-25): the former
+        // `-100.0 * (2/7 - P).max(0)` pinned every sub-threshold state at P = 2/7.
 
-        -(ll_diag + ll_off + p_penalty)
+        -(ll_diag + ll_off)
     };
 
     // Initialise from the diagonal (triangle-flattened index k = i·(i+1)).
@@ -936,7 +941,7 @@ The canonical bands used by $\pi_{\mathrm{bio}}$ are then extracted from the wav
 **R5. Reconstruction.** Run the MLE algorithm (Step 4 above) with:
 - Cholesky initialization from the calibrated diagonal.
 - Optimizer: `scipy.optimize.minimize(method='L-BFGS-B', options={'ftol': 1e-9, 'maxiter': 500})`.
-- Regularizer: $\lambda_1 = 0.1$, $\lambda_2 = 100$ (empirical defaults; subjects should try $\lambda_1 \in \{0.01, 0.1, 1\}$ and report sensitivity).
+- Regularizer: $\lambda_2 = 0$ and, in the confirmatory run, $\lambda_1 = 0$ (SUB-2); $\lambda_1 \in \{0.01, 0.1, 1\}$ only as a reported sensitivity analysis. The earlier defaults $\lambda_1 = 0.1$, $\lambda_2 = 100$ are withdrawn (2026-09-25): $\lambda_2 = 100$ pins every sub-threshold state of the uniform family at $P = 2/7$.
 
 **R6. Observable computation.** From the reconstructed $\Gamma$ (canonical definitions):
 - $P = \mathrm{Tr}(\Gamma^2) = \|\Gamma\|_F^2$ (purity) — **$G_2$-gauge-invariant** (trace of $\Gamma^2$ under unitary conjugation).
@@ -950,7 +955,7 @@ $P$ and $R$ are $G_2$-invariant; $\Phi$ and $\mathrm{Coh}_E$ are frame-pinned �
 
 **R7. Validation against PCI.**
 - Compute the subject's PCI on the same TMS-EEG data via the Massimini algorithm (Lempel–Ziv complexity of significant sources; reference implementation available via PCIst package).
-- Test the monotonic hypothesis $\Phi(\Gamma) \approx \alpha_\mathrm{PCI}\cdot \mathrm{PCI} + \beta_\mathrm{PCI}$ (Step 5 theorem).
+- Test the monotonic hypothesis $\Phi(\Gamma) \approx \alpha_\mathrm{PCI}\cdot \mathrm{PCI} + \beta_\mathrm{PCI}$ (Step 5 hypothesis [H]).
 - Pre-register: $r_{\mathrm{Spearman}} \ge 0.5$ across $\ge 20$ subjects constitutes corroboration; $r < 0.3$ constitutes falsification of P8.3.
 
 **R8. Reference implementation stub.** The Python code in the next subsection is *reference* only: it documents the algorithm faithfully but is not a turn-key pipeline. A complete MNE-Python implementation with:
@@ -977,9 +982,40 @@ Without items (i)-(v), a replication attempt cannot be audited.
 | P8.1 | $P(\Gamma_{\mathrm{wake}}) > 2/7$ for waking subjects | EEG+HRV → $\pi_{\mathrm{bio}}$ → $P$ | $P < 2/7$ in healthy waking subjects |
 | P8.2 | $P(\Gamma_{\mathrm{NREM3}}) < 2/7$ during deep sleep | EEG → $\pi_{\mathrm{bio}}$ → $P$ | $P > 2/7$ during N3 |
 | P8.3 | $\mathrm{PCI} \propto \Phi(\Gamma)$ (monotonic dependence) | TMS-EEG + $\pi_{\mathrm{bio}}$ | Non-monotonic correlation |
-| P8.4 | The $P = 2/7$ transition coincides with PCI $\approx 0.31$ | Simultaneous measurement | Threshold divergence |
+| P8.4 | Concordance of verdicts: $\mathrm{Cons}(\hat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ on the same sessions, Cohen's $\kappa \geq 0.8$ (SUB-5; until 2026-09-25: "the $P = 2/7$ transition coincides with PCI $\approx 0.31$", a comparison of unrelated scales) | TMS-EEG + $\pi_{\mathrm{bio}}$ with $\theta$ frozen on wakefulness | $\kappa < 0.4$ |
 | P8.5 | $\mathrm{Gap}(L,E) \approx 1$ in alexithymia | Dual interview + EEG | $\mathrm{Gap}(L,E) \ll 1$ with diagnosed alexithymia |
 | P8.6 | Critical exponents $\beta = 1/4$ at the sleep-wakefulness transition | EEG monitoring + $\pi_{\mathrm{bio}}$ → $P(\tau)$ near $P_{\mathrm{crit}}$ | Other exponents |
+
+### Position against the substitution argument {#substitution-position}
+
+Kleiner & Hoel (*Neurosci. Conscious.* 2021(1), niab001; arXiv:2004.03541) separate an experiment's data into *prediction data* $o_i$, from which a theory predicts experience, and *inference data* $o_r$ — reports and behaviour — from which the experimenter infers it. If the two are **independent** (Definition 3.8: for any $o_i, o_i', o_r$ some physically possible variation changes $o_i$ into $o_i'$ and keeps $o_r$), every minimally informative theory is "already falsified" or "every single inference operation is wrong" (Theorem 3.10). If they are **strictly dependent** ($o_i = f(o_r)$, Definition 4.2), the theory is already falsified or empirically unfalsifiable (Theorem 4.3). Between the two lies a *lenient dependency*, of which the authors know no instance. The unfolding argument (Doerig et al. 2019) is one case. The predicate $\mathrm{Cons}(S) = (P > 2/7) \wedge (R \geq 1/3) \wedge (\Phi \geq 1) \wedge (D \geq 2)$ is computed from $\hat\Gamma = \pi_\theta(o_i)$, where $\theta$ collects the free parameters of $\pi_{\mathrm{bio}}$ (weights $w_k$, observation-model coefficients, $\alpha_{\mathrm{PCI}}, \beta_{\mathrm{PCI}}$, the regulariser weights $\lambda_1, \lambda_2$).
+
+:::tip Theorem (Where $\mathrm{Cons}(S)$ sits between the horns) [T], with part (v) [H]
+**(i) Calibration is on the strict-dependence horn.** As specified above, $\theta$ is fitted on report-labelled sessions (Step 1: "a training set with known consciousness state"; the constants $\alpha_{\mathrm{PCI}}, \beta_{\mathrm{PCI}}$ of Step 5, fitted on "healthy waking, sleep, anesthesia"). On those sessions $\mathrm{Cons}_\theta$ is fitted to reproduce the labels, so its agreement with them tests nothing (Kleiner–Hoel, Theorem 4.3). The same holds for $\mathrm{PCI}^*$ on its own benchmark: fitted to reports, 100 % accurate there by construction.
+
+**(ii) The estimator contained the predicate.** With the default regulariser of R5 ($\lambda_2 = 100$), the reconstruction returns $\hat P = 2/7$ exactly for every sub-threshold state of the uniform family $\Gamma = I/7 + m(J - I)$ with $m < m_c = 1/\sqrt{294}$: numerically, $m = 0.02$ (true $P = 0.160$) and $m = 0.05$ (true $P = 0.248$) both give $\hat P = 0.2857$, while $\lambda_2 = 0$ returns the true values. Analytically, pinning occurs whenever $\lambda_2 \geq 10\,(1 - m/m_c)$, so any $\lambda_2 \geq 10$ pins the whole family. Prediction P8.2 ($P < 2/7$ in N3) could therefore not be observed, and P8.1 was favoured by the loss itself. (Checked in `check_core_numbers.py`, `test_viability_penalty_pins_every_subthreshold_reconstruction_at_two_sevenths`.)
+
+**(iii) After freezing, the predicate is on the independence horn.** Once $\theta$ is frozen before the test data are seen, $\mathrm{Cons}_\theta$ is a function of $o_i$ alone. Whenever a physically possible variation keeps the reports and moves $\hat\Gamma$ across a threshold — Kleiner and Hoel argue that interventions and unfoldings supply such variations — Theorem 3.10 applies: some possible system falsifies $\mathrm{Cons}$, or report-based inference is wrong for some system with each report. UHM takes the second disjunct for substitutes: it treats reports as evidence only within a declared domain (the "no threshold without ground truth" constraint above), not across all physically possible systems.
+
+**(iv) The non-closure exit is closed.** Kleiner and Hoel's other way out — experience making a physical difference beyond the physical state — is unavailable: two-aspect monism identifies experience with an aspect of $\Gamma$.
+
+**(v) A domain-restricted lenient dependency [H].** Let $D_{\mathrm{nat}}$ be the domain in which reports are the accepted inference: intact adult human brains in natural sleep–wake states and under standard anaesthetics. Inside $D_{\mathrm{nat}}$ the dependence is lenient if (a) one report class occurs with different $\hat\Gamma$ — not strict; $\mathrm{PCI}_{\max}$ already spans 0.39–0.70 among 102 awake subjects — and (b) no member of $D_{\mathrm{nat}}$ with a report has $\mathrm{Cons}_\theta$ false — not independent within $D_{\mathrm{nat}}$. Then neither Theorem 3.10 nor Theorem 4.3 covers tests inside $D_{\mathrm{nat}}$. Condition (b) is empirical and coincides with P8.1, which is why it must be established on sessions disjoint from those that fix $\theta$. This does not answer the substitution argument for systems outside $D_{\mathrm{nat}}$ — feedforward unfoldings, emulations, language models — and UHM makes no consciousness claim there.
+:::
+
+**Proof.** (i) A statistic fitted to labels is, on the fitting set, a function of the labels up to fit error; Definition 4.2 holds there. (ii) For the uniform family the diagonal term is at its optimum, and the off-diagonal loss is $420\,(m' - m)^2$ against the penalty $\lambda_2 \max(0,\, 2/7 - 1/7 - 42 m'^2)$; the derivative of the sum, $840(m' - m) - 84\lambda_2 m'$, is negative on $[m, m_c)$ iff $\lambda_2 > 10(1 - m/m')$ there, i.e. iff $\lambda_2 \geq 10(1 - m/m_c)$, so the minimiser is $m' = m_c$, where $P = 2/7$. The numerical check runs the reference MLE of Step 4. (iii) With $\theta$ fixed, $\mathrm{Cons}_\theta \circ \mathrm{obs}$ depends on $p$ only through $o_i$; Definition 3.8 is the stated premise, and Theorem 3.10 is Kleiner and Hoel's. (iv) By the definition of two-aspect monism. (v) Definitions 3.8 and 4.2 restricted to $D_{\mathrm{nat}}$ fail exactly under (b) and (a). $\square$
+
+**The protocol that follows (pre-registration SUB-1 … SUB-6).**
+- **SUB-1.** Freeze $\theta$ on wakefulness sessions only (the reference-ensemble normalisation of R4); no NREM, anaesthesia, REM or ketamine label enters the fit.
+- **SUB-2.** $\lambda_2 = 0$ in every confirmatory run. $\lambda_1$ (consistency with $\mathcal L_\Omega$) also carries the theory: $\lambda_1 = 0$ in the confirmatory run, other values only as a reported sensitivity analysis.
+- **SUB-3.** Phases from the EEG (complex phase-locking values, as in [§9.3 of the fundamental closures](/docs/proofs/categorical/fundamental-closures#pi-bio-protocol)), never from reaction times: reaction times are behaviour, i.e. inference data. $P$, $R$ and $\Phi$ depend only on $|\gamma_{ij}|$ and $\gamma_{ii}$; $D = e^{S}$ depends on the spectrum and hence on the phases.
+- **SUB-4.** Register the verdicts of the table in Step 5 before unblinding. The decisive rows are REM and ketamine (consciousness without behaviour at the time): with $\theta$ frozen on wakefulness they are out-of-sample.
+- **SUB-5.** Concordance with $\mathrm{PCI}^*$ on the same sessions (P8.4 in concordance form): Cohen's $\kappa$ between $\mathrm{Cons}_\theta$ and $\mathrm{PCI}_{\max} > 0.31$; $\kappa \geq 0.8$ corroborates, $\kappa < 0.4$ falsifies [Pr].
+- **SUB-6.** The two exits (Step 5): among sessions with $\mathrm{PCI}_{\max} \leq 0.31$, responses that stay local are predicted to have $\hat\Phi < 1$; responses that spread as a stereotyped global wave, $\hat P > 3/7$ ($\hat R < 1/3$). This compares prediction data with prediction data, so the substitution argument does not touch it — it tests UHM's structure, not its consciousness claim [H].
+
+**What separates a system passing $\mathrm{Cons}(S)$ from one with an isomorphic similarity structure [T].** Kawakita, Zeleznikow-Johnston, Tsuchiya & Oizumi (*Sci. Rep.* 14: 15917, 2024, doi:10.1038/s41598-024-65604-1) aligned colour-similarity structures for 93 colours by Gromov–Wasserstein optimal transport, without labels: GPT-4's structure matched that of colour-neurotypical humans with a matching rate of 91.4 % (GPT-3.5: 11.8 %). In UHM:
+- A similarity structure is **inference data** — judgements, i.e. reports. A system that reproduces it is precisely what a substitution preserves; by (iii) it carries no weight for $\mathrm{Cons}$.
+- **The verdict and the quality geometry are independent.** The Fubini–Study distances between the eigenrays of $\Gamma$ do not depend on its spectrum, and $P = \sum_k \lambda_k^2$ does not depend on the eigenrays. The same geometry is carried by a state with $P = 0.152$ (outside the window) and by one with $P = 0.312$ (inside it), so an isomorphic similarity structure is neither sufficient nor necessary for $\mathrm{Cons}$ (`test_cons_verdict_and_quality_geometry_are_independent`).
+- What $\mathrm{Cons}$ requires is the system's own $\hat\Gamma$, reconstructed from its internal, interventional data by a protocol validated where ground truth exists. For a language model no such validation exists, and the corpus makes no claim ("no threshold without ground truth" above). The 91.4 % result shows that report-level structure can be shared across radically different systems, which is exactly why UHM does not read consciousness off it.
 
 ### Key References {#литература-p8}
 
@@ -988,6 +1024,9 @@ Without items (i)-(v), a replication attempt cannot be audited.
 3. **Butlin et al. (2023/2025)** — "Consciousness in Artificial Intelligence: Insights from the Science of Consciousness." [arXiv: 2308.08708](https://arxiv.org/abs/2308.08708); updated 2025: "Identifying indicators of consciousness in AI systems." *Trends in Cognitive Sciences*.
 4. **eLife (2024/2025)** — "Spatiotemporal brain complexity quantifies consciousness outside of perturbation paradigms." [eLife 98920](https://elifesciences.org/articles/98920).
 5. **Quantum-inspired EEG (2026)** — "Quantum inspired feature engineering for explainable EEG signal classification." *Scientific Reports*. [Nature](https://www.nature.com/articles/s41598-026-41821-8).
+6. **Casarotto et al. (2016)** — "Stratification of unresponsive patients by an independently validated index of brain complexity." *Annals of Neurology* 80(5): 718–729. doi:10.1002/ana.24779 ($\mathrm{PCI}^* = 0.31$; Table 1 above).
+7. **Kleiner & Hoel (2021)** — "Falsification and consciousness." *Neuroscience of Consciousness* 2021(1): niab001. doi:10.1093/nc/niab001; arXiv:2004.03541.
+8. **Kawakita, Zeleznikow-Johnston, Tsuchiya & Oizumi (2024)** — "Gromov–Wasserstein unsupervised alignment reveals structural correspondences between the color similarity structures of humans and large language models." *Scientific Reports* 14: 15917. doi:10.1038/s41598-024-65604-1.
 
 ---
 
