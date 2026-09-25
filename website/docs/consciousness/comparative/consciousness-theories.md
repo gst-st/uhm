@@ -2110,12 +2110,12 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 | Aspect | PWT (Worden) | CC / UHM |
 |--------|--------------|----------|
 | Ontological primitive | Wave excitation $\psi$ in 3-D space | Coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Hard problem | Not directly addressed | Reframed via two-aspect monism (T-186 [T]) |
+| Hard problem | Not directly addressed | Reframed via two-aspect monism (T-186 [H]) |
 | Target | **Spatial** consciousness (sub-problem) | Full hierarchy L0–L4, all content |
 | Physical substrate | Thalamus / insect central body | Substrate-independent (categorical) |
 | Consciousness threshold | None | $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ (T-160, T-40b, T-129, T-151 [T]) |
 | Numerical predictions | None | 23 predictions with falsification criteria |
-| Derivation of physics | None | GR + QM + Standard Model from $\Gamma$ (T-117–T-121, T-186 [T]) |
+| Derivation of physics | None | GR + QM + Standard Model from $\Gamma$ (T-117–T-121, T-186 [H]) |
 | Group structure | $PGL(4,\mathbb{R})$ (projective) | $G_2 = \mathrm{Aut}(\mathbb{O})$ (exceptional, finite-dim) |
 | Falsification | Wave not found in brain | $\beta \neq 1/4$; zombie at $N < 7$; $\mathrm{SAD} \geq 4$; etc. |
 | Scope relative to UHM | Candidate neural *implementation* of the coarse-grained geometric sector $\{A,S,D\}$ of $\Gamma$ | Foundational theory of which PWT may be a brain-level projection |

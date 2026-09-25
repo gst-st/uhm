@@ -31,11 +31,11 @@ The conditions (AP)+(PH)+(QG)+(V) are **not an independent axiom** but **charact
 :::info Full axiomatic closure — T-190 extends (AP+PH+QG+V) with (MaxEnt)
 For **local theorem work**—Theorem S (N ≥ 7), Bridge T-15, regeneration $\kappa$, threshold derivations—the 4-tuple **(AP)+(PH)+(QG)+(V)** is sufficient and used throughout this chapter.
 
-For the **global self-grounding claim** (UHM has zero independent axioms), one additional characterizing principle is required:
+For the **global self-grounding claim** (UHM has zero independent axioms — conditional since 2026-09-25: the Page–Wootters constraint stays an assumption, see T-190), one additional characterizing principle is required:
 
 - **(MaxEnt) Maximum entropy**—Jaynes 1957: among monotone quantum metrics the Bures metric is the unique one induced by maximum-entropy covariance (T-189 [T], Char-IV of T-187 [T]).
 
-With the extended 5-tuple **(AP)+(PH)+(QG)+(V)+(MaxEnt)**, theorem **[T-190 [T] Axiomatic Closure](/docs/proofs/categorical/cohesive-closure#теорема-аксиоматическое-замыкание)** promotes all five axioms A1–A5 to theorems. (MaxEnt) enters only through A2 (Bures) via T-189; it does **not** change any preconditions of individual theorems stated below. The 4-tuple remains the working characterization; the 5-tuple is the closure-level characterization.
+With the extended 5-tuple **(AP)+(PH)+(QG)+(V)+(MaxEnt)**, theorem **[T-190 [C] Axiomatic Closure](/docs/proofs/categorical/cohesive-closure#теорема-аксиоматическое-замыкание)** derives the axioms A1–A5 under two conditions — the Page–Wootters constraint is assumed (T-87, step 4) and the cohesive route to A1 is a hypothesis (T-186(a)); an earlier wording, "promotes all five axioms A1–A5 to theorems", is retracted. (MaxEnt) enters only through A2 (Bures) via T-189; it does **not** change any preconditions of individual theorems stated below. The 4-tuple remains the working characterization; the 5-tuple is the closure-level characterization.
 :::
 
 :::info Axiom (AP+PH+QG+V)

@@ -36,7 +36,7 @@ The solution is a **5-step chain** of Gelfand–Naimark–Connes, where each ste
 | Step | Content | Source |
 |------|---------|--------|
 | 1 | Composite algebra | Tensor product [T] |
-| 2 | Temporal C*-algebra | $\mathbb{C}[\mathbb{Z}_{7^M}] \to C(S^1)$ [T] |
+| 2 | Temporal C*-algebra | $\mathbb{C}[\mathbb{Z}_N] \to C(S^1)$ [T]; the step to $C_0(\mathbb{R})$ needs an aperiodic clock [C] (T-118) |
 | 3 | Spatial C*-algebra | Gelfand + Connes [standard mathematics] |
 | 4 | Reconstruction | Connes (2008) [standard mathematics] |
 | 5 | Product | Sector decomposition [T] + steps 1–4 |
@@ -73,7 +73,7 @@ where $O^{(m)} = \mathbb{1} \otimes \cdots \otimes O \otimes \cdots \otimes \mat
 
 ### 2.3 Effective Clocks and the Temporal Algebra
 
-For $M$ holons, the effective clock period is $N_{\text{eff}} = 7^M$ [T] (from the [Emergent Time Theorem](/docs/proofs/dynamics/emergent-time#предел-n-infty)). The clock algebra is the group algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$.
+For $M$ holons with identical clocks the summed clock has $6M+1$ distinguishable readings and the fixed period $2\pi/\omega_0$ (see the [Emergent Time Theorem](/docs/proofs/dynamics/emergent-time#композитные-часы)); its algebra approaches $C(S^1)$ of fixed circumference as $M \to \infty$. An earlier version stated $N_{\text{eff}} = 7^M$ [T] and a clock algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$; retracted — $7^M$ is the dimension of the clock space, not the number of readings.
 
 ---
 
@@ -117,17 +117,17 @@ The exponential clustering condition $\|R\|_{\text{op}} < \Delta(L_0)$ is verifi
 
 ## 4. Theorem T-118: Emergent Temporal Manifold {#теорема-эмерджентное-время}
 
-:::tip Theorem T-118 (Emergent Temporal Manifold) [T]
+:::tip Theorem T-118 (Emergent Temporal Manifold) [C under an aperiodic clock]
 The temporal part of $A_{\text{macro}}$ is isomorphic to $C_0(\mathbb{R})$ — the algebra of continuous functions vanishing at infinity.
 :::
 
 **Proof.**
 
-**Step 1 (Composite clocks).** $N_{\text{eff}} = 7^M$ [T] ([Emergent Time](/docs/proofs/dynamics/emergent-time#предел-n-infty)).
+**Step 1 (Composite clocks).** The summed clock of $M$ identical holons has $6M+1$ readings and period $2\pi/\omega_0$ ([Emergent Time](/docs/proofs/dynamics/emergent-time#композитные-часы)). An earlier step read "$N_{\text{eff}} = 7^M$ [T]"; retracted.
 
 **Step 2 (Algebraic limit).** The clock algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$ converges to $C(S^1)$ as C*-algebras [T] (ibid., §3.8). This is a standard result of group algebra theory: the Gelfand spectrum $\hat{\mathbb{Z}}_N = \mathbb{Z}_N \cong$ roots of unity $\subset S^1$, and in the limit $N \to \infty$ they are dense in $S^1$.
 
-**Step 3 (Decompactification).** $C(S^1) \to C_0(\mathbb{R})$ in the limit $M \to \infty$. Formally: the embedding $\mathbb{Z} \hookrightarrow \mathbb{R}$ in the continuous limit gives the dual map $\hat{\mathbb{R}} = \mathbb{R} \to S^1 = \hat{\mathbb{Z}}$. As $M \to \infty$, the period $T = 7^M \cdot \delta\tau \to \infty$, and $S^1$ unrolls into $\mathbb{R}$:
+**Step 3 (Decompactification).** $C(S^1) \to C_0(\mathbb{R})$ in the limit $M \to \infty$. Formally: the embedding $\mathbb{Z} \hookrightarrow \mathbb{R}$ in the continuous limit gives the dual map $\hat{\mathbb{R}} = \mathbb{R} \to S^1 = \hat{\mathbb{Z}}$. If the clock period $T$ grows without bound, $S^1$ unrolls into $\mathbb{R}$. Composite O-clocks do not provide this — their period stays $2\pi/\omega_0$ (an earlier version took $T = 7^M \cdot \delta\tau \to \infty$, retracted) — so an aperiodic clock is the assumption of T-118:
 
 $$
 C(S^1_T) \xrightarrow{T \to \infty} C_0(\mathbb{R})
@@ -138,7 +138,7 @@ This is the standard Pontryagin construction: $C_0(\mathbb{R})$ is the inductive
 **Dependencies:** Existing results [T] (emergent time, PW mechanism). Standard mathematics: Pontryagin duality.
 
 :::note Formalization of an existing result
-T-118 contains nothing fundamentally new — it is an explicit formulation of a result that already followed from the existing theory of time [T].
+T-118 is conditional: the decompactification needs a clock whose period grows without bound, which the existing theory of time does not supply (composite O-clocks keep the period $2\pi/\omega_0$). An earlier sentence called it an explicit formulation of a result that already followed [T]; retracted.
 :::
 
 ---
@@ -325,7 +325,7 @@ where $M^4 = \mathbb{R} \times \Sigma^3$, and $(A_{\text{int}}, H_{\text{int}}, 
 
 **Proof.**
 
-**Step 1 (Temporal component).** $A_{\text{time}} \cong C_0(\mathbb{R})$ (T-118 [T]).
+**Step 1 (Temporal component).** $A_{\text{time}} \cong C_0(\mathbb{R})$ (T-118 [C], under an aperiodic clock).
 
 **Step 2 (Spatial component).** $A_{\text{space}} \cong C(\Sigma^3)$ (T-119 [C]).
 
@@ -403,7 +403,7 @@ The argument that KO-dim 6 plus the sign relations $J^2=+1$, $JD=DJ$, $J\chi=-\c
 
 No degree of freedom remains. $\blacksquare$
 
-**Dependencies:** T-117 [T], T-118 [T], T-119 [C], T-53 [T]. Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
+**Dependencies:** T-117 [T], T-118 [C], T-119 [C], T-53 [T]. Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
 
 :::warning Compatibility with existing results
 The derived product of triples **coincides** with the one previously postulated for the spectral action (T-65 [T]). All results depending on T-65 ($G_N = 3\pi/(7f_2\Lambda^2)$, Einstein equations, $\Lambda_{\text{CC}}$) remain unchanged — only the justification changes: from [P] to [T].
@@ -478,7 +478,7 @@ $k=+1$ (closed) is compatible with data: $\Omega_k = 0.0007\pm0.0019$ (Planck 20
 | Result | Old Status | New Status | Reason |
 |--------|:---:|:---:|--------|
 | Commutativity of macro-algebra | — | **[T]** T-117 | Quantum CLT + clustering |
-| Temporal manifold | [T] (partial) | **[T]** T-118 | Explicit formalization |
+| Temporal manifold | [T] (partial) | **[C]** T-118 (aperiodic clock assumed) | Explicit formalization |
 | Spatial manifold | [P] | **[T]** T-119 | Gelfand + Connes |
 | Product of triples | [P] | **[T]** T-120 | T-117 + T-118 + T-119 |
 | Lovelock: gap 1 | open | **closed** T-121 | $M^4$ is smooth |
@@ -508,7 +508,7 @@ The derived $M^4$ generates **exactly the same** product of spectral triples tha
 
 ### 11.2 Compatibility with Page–Wootters [T]
 
-The PW mechanism (A5) for emergent time is a **special case** of T-118. The temporal manifold $\mathbb{R}$ from T-118 is the continuous limit of discrete PW-time $\mathbb{Z}_7$.
+The PW mechanism (A5) supplies the cyclic readings $\mathbb{Z}_7$; their continuum limit at fixed period is a circle, not $\mathbb{R}$. The line $\mathbb{R}$ of T-118 is the assumed aperiodic clock, not a limit of PW time. (An earlier version called the PW mechanism a special case of T-118 and $\mathbb{R}$ the continuous limit of $\mathbb{Z}_7$; retracted.)
 
 ### 11.3 Compatibility with Sector Decomposition [T]
 
@@ -535,7 +535,7 @@ graph TD
     subgraph "Existing [Т]"
         T53["T-53: Spectral triple"]
         SEC["Sector decomposition"]
-        NEFF["N_eff = 7^M"]
+        NEFF["6M+1 readings, fixed period"]
         CLIM["ℂ#91;ℤ_N#93; → C#40;S¹#41;"]
         PRIM["Primitivity of ℒ₀"]
         KO["KO-dim 6 → Lorentz"]

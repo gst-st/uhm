@@ -1198,13 +1198,15 @@ $n$-morphisms are $n$-simplices in $\mathcal{E}$, corresponding to $n$-parameter
 †-categories are categories with a contravariant functor $\dagger: \mathbf{C} \to \mathbf{C}$ satisfying $\dagger \circ \dagger = \mathrm{id}$. This is a natural formalism for quantum mechanics, where $\dagger$ corresponds to Hermitian conjugation.
 :::
 
-**Definition 7.3 (†-category $\mathbf{DensityMat}^\dagger$).**
+**Definition 7.3 (†-category $\mathbf{DensityMat}^\dagger$) — retracted as stated.**
 
-$\mathbf{DensityMat}$ with additional structure:
+An earlier version defined $\mathbf{DensityMat}^\dagger$ as $\mathbf{DensityMat}$ with the additional structure
 
 $$
-\dagger: \mathrm{Mor}(\rho_1, \rho_2) \to \mathrm{Mor}(\rho_2, \rho_1), \quad \Phi^\dagger := \Phi^* \text{ (adjoint channel)}
+\dagger: \mathrm{Mor}(\rho_1, \rho_2) \to \mathrm{Mor}(\rho_2, \rho_1), \quad \Phi^\dagger := \Phi^* \text{ (adjoint channel)}.
 $$
+
+This rule does not define a dagger on $\mathbf{DensityMat}$ and is retracted. The adjoint $\Phi^*$ of a CPTP channel is unital, $\Phi^*(I) = I$, but trace-preserving only when $\Phi$ is unital; and $\Phi^*(\rho_2)$ need not equal $\rho_1$. For the replacement channel $\Phi(X) = \mathrm{Tr}(X)\,\sigma$ the adjoint is $\Phi^*(Y) = \mathrm{Tr}(\sigma Y)\,I$, which takes a state to a multiple of the identity with trace $7\,\mathrm{Tr}(\sigma Y)$ — not a morphism of $\mathbf{DensityMat}$ at all. Whether $\mathbf{DensityMat}$ carries any dagger compatible with its structure is open; the dagger of categorical quantum mechanics lives on the category of all completely positive maps between systems (paragraph below).
 
 **Advantages:**
 1. Naturally includes reversibility (unitary channels)
@@ -1245,7 +1247,7 @@ For practical purposes of UHM it is recommended:
 | Metric structure | $\mathbf{Exp}_{\mathrm{Met}}$ (enriched over Met) | [T] Defined |
 | Logical constructions | Sheaf topos $\mathrm{Sh}(\mathbf{Exp}_2)$ | [C] Sketch |
 | Dynamics and history | Bicategory $\mathbf{Exp}_2$ (§5.2.2) | [T] Formalized |
-| Quantum structure | †-category $\mathbf{DensityMat}^\dagger$ | [Pr] Program |
+| Quantum structure | †-structure (the rule $\Phi^\dagger := \Phi^*$ of Definition 7.3 is retracted) | [Pr] Program |
 | Homotopy theory | $\infty$-topos $\mathbf{Sh}_\infty(\mathbf{Exp}_\infty)$ | [T] Consistent with §10 |
 
 :::note Development priorities
@@ -2712,7 +2714,7 @@ where $\Gamma_A(\tau)$ is determined by the full evolution equation (including $
 
 ### Theorem: no-signaling as a natural transformation {#запрет-сигнализации-естественная-трансформация}
 
-:::warning Theorem (No-signaling as natural transformation)
+:::warning Theorem (Marginal naturality of the partial trace)
 
 The partial trace:
 
@@ -2726,6 +2728,8 @@ $$
 \mathrm{Tr}_A \circ \mathcal{E}_\tau^{(\text{UHM}), A \otimes B} = \mathcal{E}_\tau^{(\text{UHM}), B} \circ \mathrm{Tr}_A
 $$
 :::
+
+The theorem concerns the **unconditioned** marginal: it holds for joint evolutions without a measurement, and it is the categorical form of the marginal identity of [Physics correspondence, Theorem 8.1](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). It does not cover a measurement at $A$ with the Lüders update, which replaces $\mathrm{Tr}_A\Gamma_{AB}$ by a conditional state; with that update the nonlinear dynamics signals (§8.5 there). Read as "no-signalling of UHM", the theorem holds only in the non-selective reading [C]; an earlier title claimed no-signalling outright, which is retracted.
 
 **Proof (scheme).** Commutative diagram:
 
@@ -2770,13 +2774,9 @@ $$
 
 ### Connection to ∞-topos
 
-In the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ the no-signaling prohibition is formalized via the **sheaf condition**. For a cover $\{U_A, U_B\}$ in the topology $J_{\mathrm{Bures}}$:
-
-$$
-\mathrm{Sh}_\infty(\mathcal{C})(U_A \cup U_B) \xrightarrow{\sim} \mathrm{Sh}_\infty(\mathcal{C})(U_A) \times_{\mathrm{Sh}_\infty(\mathcal{C})(U_A \cap U_B)} \mathrm{Sh}_\infty(\mathcal{C})(U_B)
-$$
-
-The no-signaling prohibition is a consequence of the **gluing condition** for sheaves: local data on $U_A$ do not affect global data restricted to $U_B$ (when $U_A \cap U_B = \varnothing$ for spatially separated systems).
+:::warning Retracted: no-signalling from the sheaf condition [✗]
+An earlier version of this subsection said that in $\mathbf{Sh}_\infty(\mathcal{C})$ the no-signalling prohibition "is a consequence of the gluing condition for sheaves" for a cover $\{U_A, U_B\}$ of $J_{\mathrm{Bures}}$, "local data on $U_A$ do not affect global data restricted to $U_B$ when $U_A \cap U_B = \varnothing$ for spatially separated systems". It is retracted. The covers of $J_{\mathrm{Bures}}$ are neighbourhoods in the space of states, not regions of space, so two separated laboratories are not two members of such a cover; and the gluing condition says how sections restrict and glue, not how a dynamics acts on them, so it implies nothing about signalling.
+:::
 
 ## Phenomenal functor and Yoneda lemma {#феноменальный-функтор}
 
@@ -2799,9 +2799,13 @@ Complete proof: [Uniqueness theorem FV](/docs/consciousness/foundations/two-aspe
 
 ### Relational identity of qualia (Yoneda lemma)
 
-By the Yoneda lemma, a quality $[|q\rangle] \in \text{Ob}(\mathbf{Exp})$ is **completely determined** by its functor of points $h_{[q]} := \text{Hom}_{\mathbf{Exp}}(-, [|q\rangle])$.
+By the Yoneda lemma an object of a category is determined by its functor of points **up to isomorphism**: $h_X \cong h_Y$ implies $X \cong Y$. On this page the objects of $\mathbf{Exp}$ are the tuples $\mathcal{Q} = (\lambda, [q], c, h)$ of Definition 2.2, with morphisms induced by CPTP channels (Definition 2.6); a single quality $[|q\rangle]$ is a component of an object, not an object, so its "functor of points" is not defined here. In the metric reading the statement is elementary: two points of $\mathbb{P}(\mathcal{H}_E)$ with the same Fubini–Study distance to every point coincide (take the point itself).
 
-**Corollary:** Inverted qualia are impossible — two qualities with the same relational position (same $d_{FS}$ to all other qualities) are identical by the Yoneda lemma.
+What does **not** follow is an answer to the inverted-spectrum question. That question concerns two subjects whose quality spaces are related by a map preserving every relation — a symmetry of the whole space — and asks whether the same relational position can carry different qualities; the Yoneda lemma, which works inside one category and yields isomorphism rather than identity, says nothing about such symmetries. UHM's own position on the case — isomorphic experience for states related by $G_2$, with "which quality is red" left to calibration — is stated on the [relational identity page](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность) [I].
+
+:::warning Retracted: "inverted qualia are impossible"
+An earlier corollary here read: "Inverted qualia are impossible — two qualities with the same relational position (same $d_{FS}$ to all other qualities) are identical by the Yoneda lemma." It is retracted: the lemma ([stated above](#феноменальный-функтор)) gives isomorphism, not identity, within one category; the morphisms it would need are not defined for single qualities on this page; and the inverted-spectrum case is a question about symmetries between two subjects' quality spaces, which the lemma does not address. The neighbouring page withdrew the same claim.
+:::
 
 More details: [Relational identity](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность).
 
@@ -2863,10 +2867,10 @@ More details: [Consequences — self-referential closure](/docs/core/foundations
 
 ## Categorical completeness of UHM {#категориальная-полнота}
 
-### Theorem (Closure of axiomatics) [T] {#замкнутость-аксиоматики}
+### Theorem (Closure of axiomatics) [C] {#замкнутость-аксиоматики}
 
-:::tip Theorem (Categorical closure) [T]
-Axioms A1-A4 of UHM form a **categorically closed** system: all constructions definable in the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ are expressible via A1-A4 without invoking external objects.
+:::tip Theorem (Categorical closure) [C under the Page–Wootters constraint]
+Axioms A1-A4 of UHM, **together with the Page–Wootters constraint** $\hat{C}\Gamma = 0$ (an assumption, T-87 step 4), form a **categorically closed** system: all constructions definable in the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ are expressible via them without invoking external objects. (An earlier version stated this for A1–A4 alone with status [T]; retracted, see Step 3.)
 
 **Proof (3 steps).**
 
@@ -2878,7 +2882,7 @@ Axioms A1-A4 of UHM form a **categorically closed** system: all constructions de
 - Thresholds P_crit, R_th, Φ_th — derived from A1-A4 ([T])
 - Evolution dΓ/dτ = ℒ_Ω[Γ] — derived from Ω (T-57 [T])
 
-**Step 3 (Absence of external dependencies).** The only historical dependence — A5 (Page–Wootters) — is derivable from A1-A4 (T-87 [T]). All 210+ theorems are derived from A1-A4 without external postulates. $\blacksquare$
+**Step 3 (External dependencies).** The historical dependence A5 (Page–Wootters) is only half derivable from A1–A4: its clock register is constructed (T-87, steps 1–3), its constraint $\hat{C}\Gamma = 0$ is an assumption (T-87, step 4, [C]). An earlier version of this step said that A5 is derivable from A1–A4 and that all results are derived without external postulates; that is retracted — the constraint is an external postulate in the sense of this theorem. $\blacksquare$
 :::
 
 ### Connection to the Lurie–Shulman program {#связь-с-лурье-шульманом}
@@ -2887,12 +2891,14 @@ UHM realizes a concrete instance of the **∞-topos physics** program (Schreiber
 
 | Component of the program | Realization in UHM | Status |
 |---|---|---|
-| ∞-topos as "space" | $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7))$ | A1 [T] |
-| Cohesion | $J_{Bures}$-covers | A2 [T] |
-| Differential structure | Spectral triple T-53 | [T] |
-| Quantization | CPTP-morphisms | [T] |
-| Gauge symmetry | $G_2 = \mathrm{Aut}(\mathbb{O})$ | [T] |
-| Gravity | Emergent from NCG (T-120) | [T] |
+| ∞-topos as "space" | $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7))$ | [I] |
+| Cohesion | $J_{Bures}$-covers | [I] |
+| Differential structure | Spectral triple T-53 | [I] |
+| Quantization | CPTP-morphisms | [I] |
+| Gauge symmetry | $G_2 = \mathrm{Aut}(\mathbb{O})$ | [I] |
+| Gravity | Emergent from NCG (T-120) | [I] |
+
+The status column rates the **pairing** of a programme heading with a UHM structure, and every pairing is a reading [I]; the statuses of the UHM statements themselves are in their own rows of the registry (for the ∞-topos, T-76 at site level). An earlier version of this table put "A1 [T]", "A2 [T]" and [T] in this column, which read as if the pairings were proven; that is retracted. No proof exists that the UHM ∞-topos is cohesive (note below), so the row "Cohesion" in particular has no [T] behind it.
 
 :::note Reading of this table [I]: what Schreiber's programme is, and where the pairing is inaccurate
 U. Schreiber, "Differential cohomology in a cohesive ∞-topos", arXiv:1310.7930 (2013; 797 pages, no journal version), builds differential cohomology, higher gauge fields and prequantum field theory inside ∞-toposes that carry **cohesion**: an adjoint quadruple $\Pi \dashv \mathrm{Disc} \dashv \Gamma \dashv \mathrm{coDisc}$ between the ∞-topos and ∞-groupoids, with $\Pi$ preserving finite products (Definition 3.4.1 there, generalising F. W. Lawvere, "Axiomatic cohesion", *Theory Appl. Categ.* **19**, 41–49 (2007)). **Differential cohesion** adds infinitesimal structure (§3.5 there); the models of these axioms include smooth, synthetic-differential and super ∞-groupoids (chapter 4 there). "Shulman 2019" is M. Shulman, "All (∞,1)-toposes have strict univalent universes", arXiv:1904.07004: every Grothendieck ∞-topos interprets homotopy type theory with univalent universes, which is what licenses the internal-language step of the [closure theorem](#замкнутость-аксиоматики). The table pairs headings of Schreiber's programme with UHM structures; the pairing is an interpretation, and three of its rows are inaccurate as stated:
@@ -2941,7 +2947,7 @@ These programmes do not start from a Hilbert space of states. They start from al
 **How UHM differs** [I].
 1. *A different base.* In these programmes the base of the topos is the poset of contexts, and the state space is an object inside the topos. In UHM the base site is $(\mathbf{DensityMat}, J_{\mathrm{Bures}})$ of [§6.3.1](#631-bures-топология-на-densitymat) — density matrices as objects, CPTP channels as arrows, covers from the Bures metric — so states are objects of the site itself. No spectral presheaf is constructed, and none of the theorems above transfers to UHM without a proof.
 2. *Contextuality is what they model and what UHM sets aside.* The context topos exists because no single classical perspective suffices. $\mathrm{Dec}(\Omega) \cong 2^7$ is the Boolean algebra of projections diagonal in one fixed basis, that is, the propositions of **one** context. In the Döring–Isham topos of $M_7(\mathbb{C})$ the only decidable clopen propositions are the trivial ones: A. Döring proved that for every von Neumann algebra other than $\mathbb{C}$ and $M_2(\mathbb{C})$ each clopen subobject $S \neq 0, \underline{\Sigma}$ has a co-Heyting negation strictly larger than its Heyting negation, $\sim\! S > \neg S$ ("Topos-based logic for quantum systems and bi-Heyting algebras", in *Logic and Algebraic Structures in Quantum Computing*, Lecture Notes in Logic **45**, Cambridge University Press 2016, pp. 151–173, doi:10.1017/CBO9781139519687.009, arXiv:1202.2750, §5). Since $\sim\! S$ is the least element whose join with $S$ is $\underline{\Sigma}$, this means $S \vee \neg S \neq \underline{\Sigma}$. The correspondence in §15.2.2 is therefore an analogy with a single stage of the presheaf, not with its logic.
-3. *What they proved and UHM has not.* Isham–Butterfield and Heunen–Landsman–Spitters proved a structural theorem about quantum theory inside their topos: the Kochen–Specker theorem as the absence of global elements, or of points. No page of the corpus proves a statement of this kind about the logic of $\mathbf{Sh}_\infty(\mathbf{DensityMat}, J_{\mathrm{Bures}})$. The registry lists a contextuality claim for the seven Fano-line measurements (T-201), but its proof is cited to an external paper, and it concerns a measurement scenario, not the internal logic of the UHM topos.
+3. *What they proved and UHM has not.* Isham–Butterfield and Heunen–Landsman–Spitters proved a structural theorem about quantum theory inside their topos: the Kochen–Specker theorem as the absence of global elements, or of points. No page of the corpus proves a statement of this kind about the logic of $\mathbf{Sh}_\infty(\mathbf{DensityMat}, J_{\mathrm{Bures}})$. The registry used to list a Kochen–Specker contextuality claim for the seven Fano-line measurements (T-201), with its proof cited to an external paper; it is now retracted [✗]. The Fano-line projectors $\Pi_p = \sum_{i \in \mathrm{line}_p} |i\rangle\langle i|$ ([Fano channel](/docs/proofs/gap/fano-channel)) are all diagonal in the pointer basis of §15.2.2, so they commute pairwise, and the distribution $p_i = \gamma_{ii}$ over the seven points reproduces the outcome statistics of every line and every set of lines at once — a joint distribution exists for every $\Gamma$, and commuting projectors admit no Kochen–Specker contextuality.
 4. *A different setting, not a stronger result.* UHM works with an ∞-topos rather than a 1-topos; the site-level statement is T-76 (§6.3.1; its extension to $\mathbf{Exp}$ is Claim 10.2, which awaits verification, [§10.4](#104-infty-топос-пучков)). This changes the mathematical setting; it is not a result about quantum theory that the 1-topos programmes lacked.
 
 ### Categorical quantum mechanics {#прецеденты-cqm}

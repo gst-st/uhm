@@ -10,7 +10,7 @@ description: Formal connection of UHM with fundamental physical theories
 ## Section Status
 
 :::info Section Status
-The main results are formalized and proven **[T]**: L-unification, reduction to QM, emergent geometry ($M^4$), Einstein equations, SM gauge group, no-signaling. Open directions: concrete SM parameters, non-perturbative partition function.
+The main results are formalized and proven **[T]**: L-unification, reduction of the evolution equation to the von Neumann equation (Theorem 3.1), emergent geometry ($M^4$), Einstein equations, SM gauge group. No-signalling is proven as the marginal identity of Theorem 8.1; for the full nonlinear dynamics it holds only in the non-selective reading of §8.5 [C]. The category equivalence of §3.3 and the computational bound of §8.6 are retracted. An earlier version of this box listed "reduction to QM" and "no-signaling" among the [T] results without these limits; that is retracted. Open directions: concrete SM parameters, non-perturbative partition function.
 :::
 
 ## Contents
@@ -186,9 +186,9 @@ public pure fn lindblad_from_omega<const N: Int>(_gamma: &StaticMatrix<Complex, 
 | Physical theory | How L-unification explains it | Status |
 |-----------------|-------------------------------|--------|
 | Quantum decoherence | Dissipation = logical uncertainty relative to Ω | [T] |
-| Second law of thermodynamics | $dS/dt \geq 0$ from the structure of ℒ_Ω | [T] |
+| Second law of thermodynamics | $dS/dt \geq 0$ for the unital part $\mathcal{L}_0$ (Hermitian Lindblad operators); with regeneration the Lyapunov functional is the free energy (T-261) | [T] |
 | Measurement in QM | Reduction = projection onto atom χ_{S_k} | [T] |
-| Arrow of time | Asymmetry of ℒ_Ω under action of ▷ | [T] |
+| Arrow of time | Monotone in the parameter $t$ of the dissipative semigroup; not supplied by the ▷-clock (T-53b) | [T] in $t$; [C] as emergent |
 
 ---
 
@@ -256,21 +256,13 @@ $$
 \pi_{\text{QM}}(\mathbb{H}) := (\mathcal{H}_{\mathbb{H}}, H_{\mathbb{H}}, \Gamma_{\mathbb{H}})
 $$
 
-**[T] Theorem 3.2 (Equivalence of categories).**
-The restriction $\pi_{\text{QM}}|_{\mathbf{Hol}_{R=0}}$ is an equivalence of categories:
-
-$$
-\mathbf{Hol}_{R=0} \simeq \mathbf{QM}
-$$
-
-*Proof:*
-1. Full faithfulness: morphisms in $\mathbf{Hol}_{R=0}$ are unitary transformations
-2. Essential surjectivity: every QM system corresponds to an object of $\mathbf{Hol}_{R=0}$ (a configuration Γ with degenerate dynamics)
-3. Therefore, $\pi_{\text{QM}}$ is an equivalence ∎
+:::warning Retracted: Theorem 3.2 (Equivalence of categories $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$) [✗]
+An earlier version stated as [T] that $\pi_{\text{QM}}|_{\mathbf{Hol}_{R=0}}$ is an equivalence of categories. It is not. Essential surjectivity fails: $\mathbf{QM}$ contains a qubit and the state $I/7$ with $P = 1/7$, while objects of $\mathbf{Hol}$ are seven-dimensional with $P > 2/7$, and unitary isomorphisms preserve dimension and purity (under $R = 1/(7P) \geq 1/7$ the category $\mathbf{Hol}_{R=0}$ is even empty). "At $R = 0$ morphisms are unitary" is not justified: the replacement channel onto a fixed point of self-modelling is a non-unitary morphism of $\mathbf{Hol}$. Full faithfulness was asserted without a functor on morphisms. What holds is an identification by definition of the unitary part of $\mathbf{Hol}$ with the full subcategory of $\mathbf{QM}$ on seven-dimensional systems with $P > 2/7$ [D]. Details: [reduction to QM, §4.2](/docs/physics/quantum-mechanics/qm-reduction#4-функтор-редукции).
+:::
 
 ### 3.4 Taxonomy of Physical Systems via L-Unification
 
-**[T] Theorem 3.3 (Classification by $R$ and structure of Ω).**
+**[I] Theorem 3.3 (Classification by $R$ and structure of Ω).** (Status [I]: under the master definition $R = 1/(7P) \in [1/7, 1]$ the row $R = 0$ describes no state; the table is a classification scheme. An earlier label [T] is retracted.)
 
 | Parameter $R$ | Structure of Ω | Dynamics | Physical system |
 |---------------|---------------|----------|-----------------|
@@ -483,8 +475,8 @@ The full automorphism group $G_2 = \mathrm{Aut}(\mathbb{O})$ acts on the 7 dimen
 
 ## 8. No-Signaling {#запрет-сигнализации}
 
-:::info Connection to L-unification
-The no-signaling principle is a consequence of the **CPTP structure** of the self-modeling operator $\varphi$, derived from classifier Ω. The nonlinearity of the regenerative term $\mathcal{R}$ **does not violate** the no-signaling principle due to the locality of $\varphi$ and $\kappa$.
+:::info What is proven and what is not
+**Proven [T]:** the regenerative term of a holon $A$ leaves the unconditioned reduced state of a distant system $B$ unchanged, $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ (Theorem 8.1), and so do local unitaries at $A$ (Corollary 8.1). **Not proven, and false under the measurement rule the corpus adopts:** that the full nonlinear dynamics forbids signalling. If $A$ performs a projective measurement with the Lüders update of [measurement, Theorem 2.1, step 4](/docs/physics/quantum-mechanics/measurement#2-измерение-из-omega), the state of $B$ becomes one of the conditional states $\rho_B^{(k)}$ with probabilities $p_k$, and the state-dependent regenerative term of $B$ acts on each of them; for a nonlinear term the resulting ensemble depends on what $A$ chose to do (§8.5). No-signalling of the full dynamics holds only in the non-selective reading of NS2, at the price named in §8.5 [C]. An earlier version of this box said that no-signalling is a consequence of the CPTP structure of $\varphi$ and that the nonlinearity "does not violate" it; that is retracted.
 :::
 
 ### 8.1 Problem Statement
@@ -497,7 +489,7 @@ Introducing nonlinearity into quantum mechanics typically violates the no-signal
 |----------|-------------------------|-----|
 | Defined on | Wave functions $\vert\psi\rangle$ | Density matrices $\Gamma$ |
 | Extension to $A \otimes B$ | Not canonical | $\varphi_A \otimes \mathrm{id}_B$ (CPTP) |
-| Ensemble dependence | Yes (different decompositions → different evolution) | No (defined on $\Gamma$) |
+| Ensemble dependence | Yes (different decompositions → different evolution) | The map depends on $\Gamma$ alone, but a proper mixture prepared by a remote measurement evolves branch by branch (§8.5) |
 | Domain of applicability | All quantum systems | Only autonomous L2+ systems |
 
 ### 8.2 Canonical Extension of Regeneration to Composite Systems
@@ -514,7 +506,7 @@ where $\Gamma_A = \mathrm{Tr}_B(\Gamma_{AB})$.
 
 ### 8.3 Central Theorem
 
-**[T] Theorem 8.1 (No-signaling in UHM).**
+**[T] Theorem 8.1 (Regeneration of $A$ leaves the marginal of $B$ unchanged).**
 
 For two spatially separated autonomous holons $A$ and $B$ with joint state $\Gamma_{AB}$:
 
@@ -539,6 +531,8 @@ $$
 $$
 
 Therefore: $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot g_V(P_A) \cdot (\Gamma_B - \Gamma_B) = 0$. ∎
+
+The identity concerns the unconditioned marginal $\Gamma_B = \mathrm{Tr}_A\Gamma_{AB}$. An earlier title of this theorem, "No-signaling in UHM", claimed more than it proves; see §8.5 for what a measurement at $A$ does.
 
 **[T] Corollary 8.1 (Invariance under local operations).**
 
@@ -570,24 +564,31 @@ The proof rests on three structural conditions:
 | **NS2** (Locality of κ) | $\kappa_A(\Gamma_{AB}) = \kappa_A(\mathrm{Tr}_B(\Gamma_{AB}))$ | [Definition of κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) via local coherences |
 | **NS3** (CPTP φ) | $\varphi$ is a CPTP channel | [Definition of φ](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) |
 
+NS2 makes $\kappa_A$ a function of the *unconditioned* marginal. Whether that marginal is updated when a distant partner is measured decides between the two readings of §8.5.
+
 ### 8.5 Ensemble Independence {#85-ансамблевая-независимость}
 
-**[T] Theorem 8.3 (Ensemble independence).**
+**[D] Theorem 8.3 (The evolution map is a function of $\Gamma$).**
 
-The UHM evolution is defined on the density matrix $\Gamma$, not on its ensemble decomposition. Two different preparations of the same $\Gamma$ evolve identically.
+The UHM evolution is defined on the density matrix $\Gamma$, not on its ensemble decomposition.
 
-*Proof:* All components of the equation ($H_{eff}$, $\mathcal{D}_\Omega$, $\kappa$, $\varphi$, $g_V(P)$) are functions of $\Gamma$, not of any specific decomposition $\Gamma = \sum_i p_i |\psi_i\rangle\langle\psi_i|$. ∎
+*Proof:* All components of the equation ($H_{eff}$, $\mathcal{D}_\Omega$, $\kappa$, $\varphi$, $g_V(P)$) are functions of $\Gamma$, not of any specific decomposition $\Gamma = \sum_i p_i |\psi_i\rangle\langle\psi_i|$. ∎ (This holds by the definition of the terms, hence [D].)
+
+:::warning Retracted: "two preparations of the same Γ evolve identically" and "resolving the Gisin problem"
+An earlier version concluded from Theorem 8.3 that two different preparations of the same $\Gamma$ evolve identically, and the conclusion of this page called that "resolving the Gisin problem". Both are retracted. A preparation that is a proper mixture — a coin toss, or a measurement on a distant partner with the Lüders update — produces in each run one of the states $\rho_k$, and the regenerative term acts on that state; the ensemble then evolves as $\sum_k p_k\,\Phi_t(\rho_k)$, not as $\Phi_t(\sum_k p_k \rho_k)$, and for a nonlinear $\Phi_t$ the two differ. This is the scenario of N. Gisin ("Weinberg's non-linear quantum mechanics and supraluminal communications", *Phys. Lett. A* **143**, 1 (1990)): $A$ measures one half of an entangled pair in a basis of her choice, the conditional ensemble at $B$ depends on that choice, and a nonlinear local evolution at $B$ turns the difference into different statistics. A map that depends on $\Gamma$ alone can still be nonlinear, and C. Simon, V. Bužek and N. Gisin proved that with Hilbert-space states, the trace rule and no signalling the dynamics must be linear and completely positive (*Phys. Rev. Lett.* **87**, 170405 (2001)).
+
+*Example* (regression check in `website/scripts/check_core_numbers.py`). $A$ is a qutrit, $B$ a holon, the joint state $\tfrac{1}{\sqrt 3}(|0\rangle|e_0\rangle + |1\rangle|e_1\rangle + |2\rangle|e_2\rangle)$. If $A$ does not measure, the state of $B$ is $\rho_B = \tfrac13(|e_0\rangle\langle e_0| + |e_1\rangle\langle e_1| + |e_2\rangle\langle e_2|)$ with $P = 1/3$, and the viability gate $g_V(P) = \mathrm{clamp}(7P - 2, 0, 1)$ equals $1/3$. If $A$ measures in the basis $\{|0\rangle, |1\rangle, |2\rangle\}$, the states of $B$ are the pure $|e_k\rangle\langle e_k|$ with $g_V = 1$. With $\kappa$ fixed, the initial drift of $B$'s averaged state is $\tfrac{\kappa}{3}(\rho_* - \rho_B)$ in the first case and $\kappa(\rho_* - \rho_B)$ in the second: $B$'s statistics depend on whether $A$ measured. With $\kappa$ depending on $\mathrm{Coh}_E$, two measurement bases of $A$ that both leave $B$'s branches pure already give different drifts.
+:::
+
+**What would restore no-signalling.** (a) *The non-selective reading* [C]: the nonlinear terms act on unconditioned marginals and never on remotely conditioned sub-ensembles — NS2 kept after a remote measurement. Then no signal passes, but the evolution inside one branch depends on the branches that did not occur; J. Polchinski, who built this construction for Weinberg's nonlinear quantum mechanics, named the price — a channel between branches of the wave function, the "Everett phone" ("Weinberg's nonlinear quantum mechanics and the Einstein–Podolsky–Rosen paradox", *Phys. Rev. Lett.* **66**, 397 (1991)) — and the reading also gives up the Lüders update for remote partners that the corpus uses. (b) *Convex quasi-linearity*: J. Rembieliński and P. Caban showed that deterministic nonlinear evolutions mapping a mixture to a mixture of the images, $f(\lambda\rho_1 + (1-\lambda)\rho_2) = p\,f(\rho_1) + (1-p)\,f(\rho_2)$ for some $p \in [0,1]$, do not allow signalling and "cannot be ruled out by a standard argument" ("Nonlinear evolution and signaling", *Phys. Rev. Research* **2**, 012027 (2020)), and built a nonlinear extension of the Lindblad generator of this kind ("Nonlinear extension of the quantum dynamical semigroup", *Quantum* **5**, 420 (2021), arXiv:2003.09170); A. Kent gave another route ("Nonlinearity without superluminality", *Phys. Rev. A* **72**, 012108 (2005)). The regenerative flow of UHM is not convex quasi-linear: on 30 random pairs of pure states, with the canonical $\kappa(\Gamma)$, $g_V$ and a dephasing linear part, the image of a mixture lies off the segment between the images of its components by 4–26 % of that segment's length (numerical check). Route (b) is therefore not available as the term is written, and the no-signalling statement of UHM is **[C] under the non-selective reading (a)**. Which reading the corpus adopts, and whether $\mathcal{R}$ can be recast in convex quasi-linear form, is an open problem.
 
 ### 8.6 Computational Bound {#86-вычислительное-ограничение}
 
-**[T] Theorem 8.4 (Absence of computational speedup).**
+:::warning Retracted: Theorem 8.4 (Absence of computational speedup) [T]
+An earlier version stated as a theorem that the nonlinear regenerative term provides no computational speed-up beyond BQP, on four grounds: (1) $\mathcal{R}$ is active only for L2+ systems, qubits have $R \approx 0$; (2) each regeneration step requires $\Delta F > 0$; (3) $\varphi$ does not increase quantum information; (4) decoherence suppresses exponentially small differences. None of the four bounds what a nonlinear evolution can compute, and the claim collides with D. S. Abrams and S. Lloyd, who showed that generic deterministic nonlinear quantum evolution solves NP-complete and #P problems in polynomial time by amplifying exponentially small differences between states ("Nonlinear quantum mechanics implies polynomial-time solution for NP-complete and #P problems", *Phys. Rev. Lett.* **81**, 3992 (1998), arXiv:quant-ph/9801041). (1) restricts which systems are active, not what an active system can do; holons are seven-level systems, and $R = 1/(7P)$ never vanishes. (2) is an energy cost, not a bound on complexity. (3) constrains the channel $\varphi$, while the nonlinearity sits in the scalar weights $\kappa(\Gamma)\,g_V(P(\Gamma))$. (4) states the question rather than answering it: whether the nonlinear term amplifies small differences faster than decoherence erases them. The gate $g_V$ makes the regenerative flow bistable — for $\kappa$ above the existence threshold the dead state $I/7$ (T-148) and the attractor $\rho_*$ (T-96) both attract, and trajectories that start on either side of the boundary between their basins end a finite distance apart however close they started — which is the kind of amplification Abrams and Lloyd use. The theorem is retracted.
+:::
 
-The nonlinear regenerative term $\mathcal{R}$ does not provide computational speedup beyond the class BQP:
-
-1. **Threshold bound:** $\mathcal{R}$ is active only for L2+ systems ($R \geq 1/3$); qubits ($N = 2$) have $R \approx 0$
-2. **Thermodynamic bound:** Each regeneration step requires $\Delta F > 0$
-3. **CPTP bound:** $\varphi$ does not increase quantum information (data processing inequality)
-4. **Scale separation:** Decoherence suppresses exponentially small differences
+**Open question [H].** Whether the regenerative term, under its thresholds and with decoherence, permits a speed-up beyond BQP. The corpus contains neither a proof of the bound nor a construction of the speed-up.
 
 ---
 
@@ -596,16 +597,17 @@ The nonlinear regenerative term $\mathcal{R}$ does not provide computational spe
 | Physical theory | Connection to UHM | Status | Reference |
 |-----------------|-------------------|--------|-----------|
 | **L-unification** | Dissipation from logical structure Ω: $L_k = \sqrt{\chi_{S_k}}$ | [T] Proven | §2 |
-| **Quantum mechanics** | Special case at $R \to 0$ (Ω trivializes) | [T] Proven | §3 |
+| **Quantum mechanics** | The equation reduces to the von Neumann equation when $\mathcal{D}$ and $\mathcal{R}$ vanish (Theorem 3.1); the category equivalence $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$ is retracted (§3.3) | [T] (Theorem 3.1) | §3 |
 | **Schrödinger equation** | $\frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff},\Gamma]$ | [T] Proven | Theorem 3.1 |
 | **Lindblad equation** | $\mathcal{L}_\Omega[\Gamma]$ — logical Liouvillian from Ω | [T] Formalized | [evolution.md](/docs/core/dynamics/evolution) |
-| **Thermodynamics** | $dS_{vN}/dt \geq 0$ from the structure of ℒ_Ω | [T] Proven | [spacetime.md](/docs/core/foundations/spacetime#стрела-времени) |
+| **Thermodynamics** | $dS_{vN}/dt \geq 0$ for the unital part $\mathcal{L}_0$; with regeneration the free energy is the Lyapunov functional (T-261). (An earlier entry read "$dS_{vN}/dt \geq 0$ from the structure of ℒ_Ω"; that is false for non-unital channels and is retracted.) | [T] Proven | [emergent time §7.1](/docs/proofs/dynamics/emergent-time#7-теорема-о-стреле-времени) |
 | **Decoherence** | Logical uncertainty relative to Ω | [T] Formalized | §2.3 |
-| **No-signaling** | $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ | [T] Proven | §8, Theorem 8.1 |
-| **Ensemble independence** | Evolution defined on $\Gamma$, not on $\vert\psi\rangle$ | [T] Proven | §8.5 |
-| **Computational bound** | $\mathcal{R}$ does not accelerate computation beyond BQP | [T] Proven | §8.6 |
+| **Marginal identity** | $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ | [T] Proven | §8, Theorem 8.1 |
+| **No-signalling of the full dynamics** | Holds in the non-selective reading only; fails with the Lüders update (§8.5) | [C] | §8.5 |
+| **Ensemble independence** | The evolution map is a function of $\Gamma$; the physical reading "same $\Gamma$, same evolution" is retracted | [D] | §8.5 |
+| **Computational bound** | Retracted; open question | [H] | §8.6 |
 | **Space** | $\Sigma^3$ from Gelfand–Connes, $M^4 = \mathbb{R} \times \Sigma^3$ | [T] Proven | [T-119, T-120](/docs/proofs/physics/emergent-manifold) |
-| **Time** | Emergent τ via modality ▷ on Ω | [T] Proven | [emergent-time.md](/docs/proofs/dynamics/emergent-time) |
+| **Time** | Cyclic clock τ ∈ ℤ₇ via modality ▷ on Ω [T]; the aperiodic parameter of the dynamics is assumed [C] (T-53b) | [T] / [C] | [emergent-time.md](/docs/proofs/dynamics/emergent-time) |
 | **Discreteness of time** | $\tau \in \mathbb{Z}_7$ from the structure of Ω | [T] Corollary | §3.6 |
 | **GR / Einstein** | Spectral action → $G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$ | [T] Proven | [T-65](/docs/physics/gravity/einstein-equations) |
 | **Standard Model** | $G_2 \supset SU(3) \to SU(3)_C \times SU(2)_L \times U(1)_Y$ | [T] Structure derived | [SM](/docs/physics/gauge-symmetry/standard-model) |
@@ -628,13 +630,13 @@ This means: **physics is a consequence of the structure of logical distinctions*
 
 1. **L-unification:** Lindblad operators $L_k = \sqrt{\chi_{S_k}}$ are derived from classifier Ω
 2. **Logical Liouvillian:** $\mathcal{L}_\Omega[\Gamma]$ defines dissipation via the logical structure
-3. **Reduction to QM:** UHM contains quantum mechanics as a special case ($R \to 0$, Ω trivializes)
-4. **Thermodynamics:** The second law is a consequence of the structure of ℒ_Ω
+3. **Reduction to QM:** with the dissipator and the regenerator switched off, the UHM equation is the von Neumann equation (Theorem 3.1); the claim that UHM contains quantum mechanics as a category equivalence is retracted (§3.3)
+4. **Thermodynamics:** entropy grows under the unital part of ℒ_Ω; the full flow has the free energy as Lyapunov functional
 5. **Metric on states:** The Frobenius norm defines a complete metric
 6. **Discreteness of time:** $\tau \in \mathbb{Z}_7$ from the temporal modality ▷ on Ω
-7. **No-signaling:** $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ — the nonlinearity of $\mathcal{R}$ does not violate the prohibition on superluminal signaling
-8. **Ensemble independence:** Evolution is defined on $\Gamma$ (not on wave functions), resolving the Gisin problem
-9. **Computational bound:** $\mathcal{R}$ provides no speedup beyond BQP (4 independent arguments)
+7. **Marginal identity:** $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ — regeneration of $A$ does not change $B$'s unconditioned marginal; no-signalling of the full dynamics is [C] (§8.5)
+8. **Ensemble independence:** the evolution map is defined on $\Gamma$ [D]; the earlier claim that this resolves the Gisin problem is retracted (§8.5)
+9. **Computational bound:** retracted; whether $\mathcal{R}$ gives a speed-up beyond BQP is open [H] (§8.6)
 10. **Emergent geometry:** $M^4 = \mathbb{R} \times \Sigma^3$ derived from categorical structure (T-117—T-120)
 11. **Einstein equations:** The spectral action reproduces $G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$ (T-65)
 12. **Gauge group:** $SU(3)_C \times SU(2)_L \times U(1)_Y$ from $G_2 = \mathrm{Aut}(\mathbb{O})$ (T-53)
