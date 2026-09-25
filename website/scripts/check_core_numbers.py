@@ -4119,6 +4119,102 @@ def test_emergent_space_is_the_octahedron_and_its_fluctuations_the_three_sphere(
     assert _nullspace(np.vstack([rows.real, rows.imag])).shape[0] == 3
 
 
+def test_phi_at_least_one_is_not_the_consciousness_verdict():
+    """Fundamental closures section 9 (retracted line "Phi >= 1 iff conscious"): on the
+    uniform family Gamma = I/7 + m(J - I) the state with Phi = 3 has P = 4/7 > 3/7 and
+    R = 1/4 < 1/3, so Phi >= 1 holds while Cons fails (the too-pure exit)."""
+    import numpy as np
+    m = np.sqrt(3 / 294)
+    G = np.eye(7) / 7 + m * (np.ones((7, 7)) - np.eye(7))
+    assert np.min(np.linalg.eigvalsh(G)) > 0 and abs(np.trace(G) - 1) < 1e-12
+    diag2 = np.sum(np.diag(G) ** 2)
+    Phi = (np.sum(np.abs(G) ** 2) - diag2) / diag2
+    P = np.real(np.trace(G @ G))
+    R = 1 / (7 * P)
+    assert abs(Phi - 3) < 1e-12 and abs(P - 4 / 7) < 1e-12 and abs(R - 1 / 4) < 1e-12
+    cons = (P > 2 / 7) and (R >= 1 / 3) and (Phi >= 1)
+    assert Phi >= 1 and not cons
+
+
+def test_verdict_concordance_is_judged_by_kappa_not_by_raw_agreement():
+    """PCI bridge in the concordance form (P8.4, SUB-5): the same raw agreement 34/40 = 85 %
+    gives Cohen's kappa 0.699 (inconclusive, between 0.4 and 0.8) with balanced verdicts and
+    0.167 (falsifying, below 0.4) with skewed ones. Illustrative counts, not data."""
+    def kappa(a, b, c, d):                                   # a: both Cons, d: both not, b, c: disagreements
+        n = a + b + c + d
+        po = (a + d) / n
+        pe = ((a + b) * (a + c) + (c + d) * (b + d)) / n ** 2
+        return (po - pe) / (1 - pe)
+    k1, k2 = kappa(18, 3, 3, 16), kappa(33, 3, 3, 1)
+    assert abs((18 + 16) / 40 - 0.85) < 1e-12 and abs((33 + 1) / 40 - 0.85) < 1e-12
+    assert abs(k1 - 0.34875 / 0.49875) < 1e-12 and 0.4 < k1 < 0.8
+    assert abs(k2 - 0.03 / 0.18) < 1e-12 and k2 < 0.4
+
+
+def test_two_point_pci_calibration_coincides_with_any_anchor():
+    """Measurement section 6.3 (withdrawn): the line through (0, 1/7) and (c, 2/7) returns
+    P = 2/7 at PCI = c for every anchor c, so "the thresholds coincide" was put in by hand."""
+    for c in (0.20, 0.25, 0.31, 0.40, 0.55):
+        a, b = (2 / 7 - 1 / 7) / c, 1 / 7
+        assert abs(a * c + b - 2 / 7) < 1e-15
+    assert abs((2 / 7 - 1 / 7) / 0.31 - 0.461) < 1e-3
+
+
+def test_phystheory_forgets_to_topoi_unfaithfully_and_composes_associatively():
+    """T-211 (corrected): PhysTheory as the Grothendieck construction of E -> Alg(E) over topoi.
+    Finite 1-truncated model: base = finite sets and maps (the discrete topoi Set^X), fibre over X
+    = families of monoids, a morphism (f, alpha) has alpha_x: M_x -> N_f(x). Composition
+    (g, beta) o (f, alpha) = (g f, beta_f(x) alpha_x) is associative and unital, and the forgetful
+    functor is not faithful: over the identity of a point there are two endomorphisms of the
+    multiplicative monoid {0, 1}; on (C, *) complex conjugation is a second endomorphism."""
+    import itertools
+    import random
+    mult = ((0, 1), (0, 1), lambda x, y: x * y, 1)           # carrier, carrier, product, unit
+    add2 = ((0, 1), (0, 1), lambda x, y: (x + y) % 2, 0)
+    triv = ((0,), (0,), lambda x, y: 0, 0)
+    monoids = [mult, add2, triv]
+
+    def homs(M, N):
+        out = []
+        for img in itertools.product(N[0], repeat=len(M[0])):
+            h = dict(zip(M[0], img))
+            if h[M[3]] != N[3]:
+                continue
+            if all(h[M[2](x, y)] == N[2](h[x], h[y]) for x in M[0] for y in M[0]):
+                out.append(h)
+        return out
+    assert len(homs(mult, mult)) == 2                         # id and x -> 1: not faithful over id
+    assert len(homs(add2, add2)) == 2 and len(homs(triv, mult)) == 1
+
+    rng = random.Random(5)
+
+    def obj():
+        n = rng.choice([1, 2])
+        return tuple(rng.choice(monoids) for _ in range(n))
+
+    def mor(A, B):
+        f = tuple(rng.randrange(len(B)) for _ in range(len(A)))
+        alpha = []
+        for x, M in enumerate(A):
+            hs = homs(M, B[f[x]])
+            alpha.append(rng.choice(hs))
+        return f, alpha
+
+    def comp(second, first):
+        (g, beta), (f, alpha) = second, first
+        return (tuple(g[f[x]] for x in range(len(f))),
+                [{k: beta[f[x]][v] for k, v in alpha[x].items()} for x in range(len(f))])
+    for _ in range(300):
+        A, B, C, D = obj(), obj(), obj(), obj()
+        u, v, w = mor(A, B), mor(B, C), mor(C, D)
+        assert comp(w, comp(v, u)) == comp(comp(w, v), u)
+        ident = (tuple(range(len(A))), [{k: k for k in M[0]} for M in A])
+        assert comp(u, ident) == u
+    zs = [complex(rng.uniform(-2, 2), rng.uniform(-2, 2)) for _ in range(50)]
+    assert all(abs((z * w).conjugate() - z.conjugate() * w.conjugate()) < 1e-12 for z in zs for w in zs)
+    assert (1 + 0j).conjugate() == 1 and any(z.conjugate() != z for z in zs)
+
+
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
     bad = 0
