@@ -511,25 +511,29 @@ Three systems (the canonical reflection $R = 1/(7P)$ is determined by $P$; the d
 | System | $P$ | $\Phi$ | $D_{\text{diff}}$ |
 |--------|-----|--------|-------------------|
 | Bacterium | 0.20 | 0.3 | 1.2 |
-| Cat | 0.32 | 1.8 | 1.8 |
-| Human | 0.35 | 2.1 | 2.6 |
+| Cat | 0.32 | 1.1 | 1.8 |
+| Human | 0.35 | 1.3 | 2.6 |
 
 **(a)** For each: compute $R = 1/(7P)$ and check the four thresholds ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$).
 
 **(b)** Compute $C = \Phi \times R$ for each.
 
-**(c)** Which systems are "conscious" (all three thresholds met)?
+**(c)** Which systems are "conscious" (all four thresholds met)?
+
+**(d)** Check that the data are consistent with the definitions: show that every $7 \times 7$ state has $\Phi \leq 7P - 1$.
 
 <details>
 <summary>Solution</summary>
 
 **(a)** Bacterium: $R = 1/(7 \times 0.20) \approx 0.71$. $P = 0.20 < 2/7$ (no), $R = 0.71 \geq 1/3$ (yes — a large thermal reserve, but no viability to use it), $\Phi = 0.3 < 1$ (no), $D_{\text{diff}} = 1.2 < 2$ (no). 1 of 4.
-Cat: $R = 1/(7 \times 0.32) \approx 0.45$. $P = 0.32 > 2/7$ (yes), $R = 0.45 \geq 1/3$ (yes), $\Phi = 1.8 > 1$ (yes), $D_{\text{diff}} = 1.8 < 2$ (**no!**). 3 of 4.
-Human: $R = 1/(7 \times 0.35) \approx 0.41$. $P$ (yes), $R$ (yes), $\Phi = 2.1$ (yes), $D_{\text{diff}} = 2.6 \geq 2$ (yes). 4 of 4.
+Cat: $R = 1/(7 \times 0.32) \approx 0.45$. $P = 0.32 > 2/7$ (yes), $R = 0.45 \geq 1/3$ (yes), $\Phi = 1.1 \geq 1$ (yes), $D_{\text{diff}} = 1.8 < 2$ (**no!**). 3 of 4.
+Human: $R = 1/(7 \times 0.35) \approx 0.41$. $P$ (yes), $R$ (yes), $\Phi = 1.3$ (yes), $D_{\text{diff}} = 2.6 \geq 2$ (yes). 4 of 4.
 
-**(b)** Bacterium: $C = 0.3 \times 0.71 = 0.21$. Cat: $C = 1.8 \times 0.45 = 0.81$. Human: $C = 2.1 \times 0.41 = 0.86$.
+**(b)** Bacterium: $C = 0.3 \times 0.714 \approx 0.21$. Cat: $C = 1.1 \times 0.446 \approx 0.49$. Human: $C = 1.3 \times 0.408 \approx 0.53$.
 
-**(c)** Only the **human** satisfies all four thresholds. The cat is "almost" — it narrowly misses differentiation ($D_{\text{diff}} = 1.8$ instead of the required $2$): its experiential repertoire is a shade too poor for stable qualia comparison. This is consistent with cats demonstrating *limited* metacognition. Note also that $C$ alone does not decide the question: the cat's $C = 0.81$ is close to the human's $0.86$, yet the four-condition predicate separates them — the thresholds form a conjunction, not a score.
+**(c)** Only the **human** satisfies all four thresholds. The cat is "almost" — it narrowly misses differentiation ($D_{\text{diff}} = 1.8$ instead of the required $2$): its experiential repertoire is a shade too poor for stable qualia comparison. This is consistent with cats demonstrating *limited* metacognition. Note also that $C$ alone does not decide the question: the cat's $C \approx 0.49$ is close to the human's $0.53$, yet the four-condition predicate separates them — the thresholds form a conjunction, not a score.
+
+**(d)** $\Phi = P/\sum_i \gamma_{ii}^2 - 1$, and $\sum_i \gamma_{ii}^2 \geq (\sum_i \gamma_{ii})^2/7 = 1/7$ by Cauchy–Schwarz, so $\Phi \leq 7P - 1$; inside the conscious window $P \leq 3/7$ this gives $\Phi \leq 2$. The data pass: bacterium $0.3 \leq 0.40$, cat $1.1 \leq 1.24$, human $1.3 \leq 1.45$. The bound is attained: $\Gamma = \lambda \lvert u\rangle\langle u\rvert + (1 - \lambda)\, I/7$ with $u = (1, \ldots, 1)/\sqrt7$ has a flat diagonal, $P = (1 + 6\lambda^2)/7$ and $\Phi = 6\lambda^2 = 7P - 1$; at $\lambda = 1/2$, $P = 5/14 \approx 0.357$, $\Phi = 3/2$, $R = 2/5$, $C = 3/5$. (An earlier edition gave the cat $\Phi = 1.8$ and the human $\Phi = 2.1$, with $C = 0.81$ and $0.86$. These values are retracted: at $P = 0.32$ and $P = 0.35$ the definitions allow at most $\Phi = 1.24$ and $1.45$.)
 
 </details>
 
@@ -600,7 +604,7 @@ A philosophical zombie is a creature identical to a human in all respects, excep
 
 **(a)** Formulate the key distinction between CC and panpsychism in one sentence.
 
-**(b)** What is the "combination problem" and why does CC avoid it?
+**(b)** What is the "combination problem", and does CC avoid it?
 
 **(c)** Under what conditions would CC *become* panpsychism? (What would need to be changed in the axioms?)
 
@@ -609,9 +613,9 @@ A philosophical zombie is a creature identical to a human in all respects, excep
 <details>
 <summary>Solution</summary>
 
-**(a)** CC is emergentism with a precise threshold ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$), not unlimited panpsychism: a stone does *not* have experience.
+**(a)** CC is a threshold view, not unlimited panpsychism: every system has interiority (L0), which is not experience, and experience (L2) is attributed only past the four thresholds ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$) — a stone does *not* have experience. In the field's vocabulary this is a constitutive panprotopsychism with a threshold for awareness [I] ([panpsychism analysis](/docs/consciousness/comparative/panpsychism-analysis#место-панинтериоризма)).
 
-**(b)** The combination problem: if every atom has micro-experience, how do micro-experiences add up to macro-experience? CC bypasses this: there are no micro-experiences — experience is emergent (arises only under threshold conditions).
+**(b)** The combination problem: if every atom has micro-experience, how do micro-experiences add up to macro-experience? CC does not avoid it but restates it: there are no micro-experiences, yet there is universal protophenomenal interiority (L0), so the question becomes how L0 structure constitutes L2 experience. The thresholds answer *when* a system is a subject, not *how* [I]. (Earlier editions answered that CC "bypasses" the problem because experience is emergent and called CC "emergentism with a precise threshold"; both are withdrawn — see [Philosophical Foundations §1.4](./philosophy#онтология).)
 
 **(c)** If the threshold were $P > 0$ (not $P > 2/7$) and $R > 0$, $\Phi > 0$ — any system with non-zero parameters would be "slightly conscious." That is panpsychism. CC avoids this by setting *finite* thresholds.
 

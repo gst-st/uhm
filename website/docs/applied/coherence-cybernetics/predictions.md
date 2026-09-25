@@ -272,43 +272,46 @@ The third group of predictions concerns *numerical thresholds* — specific para
 
 ### Prediction 5: Scale invariance of consciousness {#предсказание-5}
 
-**Intuition.** Can a group of conscious beings give rise to *collective* consciousness? A hive, a flock, a team — do they have "experience"? CC answers: yes, *if* individual consciousnesses are sufficiently integrated ($\Phi_{\otimes} > \Phi_{\min}$). This is not mysticism — it is a direct consequence of fractal closure: the same conditions ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$) that define individual consciousness apply to a composite system.
+**Intuition.** Can a group of conscious beings give rise to *collective* consciousness? A hive, a flock, a team — do they have "experience"? Earlier editions answered: yes, *if* individual consciousnesses are sufficiently integrated ($\Phi_{\otimes} > \Phi_{\min}$). That criterion is retracted below: every uncoupled group meets it. What CC can state is a necessary condition — the members' joint state is correlated — and a hypothesis about sufficiency.
 
-:::info Prediction: non-triviality [T], viability [C]
-$$
-\left( \bigwedge_i C(\mathbb{H}_i) > 0 \right) \land \Phi_{\otimes} > \Phi_{\min} \Rightarrow C(\mathbb{H}_{1 \otimes \ldots \otimes n}) > 0
-$$
-Collective [consciousness](/docs/consciousness/foundations/self-observation#мера-сознательности-c) is real if individual consciousnesses are sufficiently [integrated](/docs/core/structure/dimension-u#мера-интеграции-φ).
-
-**Epistemic stratification:**
-- **Non-triviality [T]:** The composite has $P > 1/7$ unconditionally ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T])
-- **Viability [T at backbone lower-bound]:** $P > 2/7$ for embodied systems ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора); Step 3 [C at backbone-injection lower bound])
-
-**Limitation:** The specific threshold $\Phi_{\min}$ is an open question for empirical calibration.
+:::warning Retracted (2026-09-25): the criterion $\Phi_{\otimes} > \Phi_{\min}$
+The prediction read $\left( \bigwedge_i C(\mathbb{H}_i) > 0 \right) \land \Phi_{\otimes} > \Phi_{\min} \Rightarrow C(\mathbb{H}_{1 \otimes \ldots \otimes n}) > 0$, with the status "non-triviality [T], viability [C]". It is retracted because its condition and its conclusion both hold for any uncoupled group: on a product state $1 + \Phi_{\otimes} = \prod_i (1 + \Phi_i)$, so two holons that pass the window ($\Phi_i \geq 1$) already have $\Phi_{\otimes} \geq 3$ at mutual information $I = 0$, and $C(\mathbb{H}_i) > 0$ forces $\Phi_i > 0$, hence $\Phi_{\otimes} > 0$ ([the identity, with a worked pair](/docs/consciousness/comparative/panpsychism-analysis#теорема-нередуцируемость)). No measurement on a group could have failed it. The two statuses it carried — non-triviality $P > 1/7$ of the composite attractor ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]) and viability $P > 2/7$ for embodied systems ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора); Step 3 [C at backbone-injection lower bound]) — are facts about the composite's purity, not about its consciousness, and stand as such.
 :::
 
-**See:** [Theorem 9.1](./theorems#теорема-91-фрактальное-замыкание)
+:::info Prediction (restated): a necessary condition [T]; sufficiency is a hypothesis [H]
+**Necessary condition [T].** A collective can differ from a set of separate subjects only if its members' joint state is correlated. By [CC-7](./theorems#теорема-93-эмерджентность) [T], interacting holons have a stationary joint state with
 
-**Uniqueness of the prediction.** IIT permits collective consciousness but provides no sufficiency criterion. FEP describes hierarchical systems but does not use the concept of collective experience. Only CC formulates a *necessary and sufficient* condition ($\Phi_{\otimes} > \Phi_{\min}$) and promises its computability.
+$$
+I(\mathbb{H}_1 : \mathbb{H}_2) = S(\rho_1) + S(\rho_2) - S(\rho_{12}) > 0 ,
+$$
+
+and for $n$ members the analogue is a positive total correlation $\sum_i S(\rho_i) - S(\rho_{1 \ldots n}) > 0$. The condition is necessary, not sufficient: coupled thermostats meet it too.
+
+**Sufficiency [H].** A correlated group is a subject when its joint state, aggregated to $\mathcal{D}(\mathbb{C}^7)$, passes the four-condition window. This is a hypothesis, not a theorem: the thresholds are defined on $\mathcal{D}(\mathbb{C}^7)$, the aggregation channel $\mathcal{D}(\mathbb{C}^{7^n}) \to \mathcal{D}(\mathbb{C}^7)$ is not fixed by the theory ([Theorem 9.2](./theorems#теорема-92-масштабная-инвариантность), step 1), and the verdict depends on it; nor does the corpus have an exclusion rule deciding whether members and group can be subjects at once ([boundary problem](/docs/consciousness/comparative/panpsychism-analysis#проблема-границы)). Research programme [Pr]: an intrinsically fixed aggregation, or an exclusion rule, that turns the hypothesis into a criterion.
+:::
+
+**See:** [Theorem 9.1](./theorems#теорема-91-фрактальное-замыкание), [Theorem 9.3](./theorems#теорема-93-эмерджентность)
+
+**Uniqueness of the prediction.** ~~"IIT permits collective consciousness but provides no sufficiency criterion. … Only CC formulates a necessary and sufficient condition ($\Phi_{\otimes} > \Phi_{\min}$) and promises its computability."~~ Retracted on both counts. IIT has an explicit criterion — the exclusion postulate: a set of units is a conscious complex only if it specifies a maximum of integrated information over all overlapping candidate systems, and "overlapping substrates that specify less integrated information … are excluded" (L. Albantakis et al., "Integrated information theory (IIT) 4.0", *PLoS Computational Biology* 19(10): e1011465, 2023). For groups it predicts that two people talking form an integrated system that is not maximally irreducible, so "there should indeed be two separate experiences, but no superordinate conscious entity that is the union of the two", and that if a brain-to-brain link raised the pair's maximal integrated information above that of each brain, "their individual conscious mind would disappear and its place would be taken by a new Über-mind that subsumes both" (G. Tononi & C. Koch, "Consciousness: here, there and everywhere?", *Philosophical Transactions of the Royal Society B* 370: 20140167, 2015). After the retraction CC has a necessary condition and no sufficiency criterion, and the necessary condition is not unique to CC; on this question IIT, not CC, has a criterion. FEP describes hierarchical systems but does not use the concept of collective experience.
 
 **Experimental verification:**
-1. Measure $\Phi$ for groups with varying degrees of integration (jazz quartet vs. random musicians).
+1. Measure the correlation between members' states — the mutual information, or the total correlation for $n > 2$, of the reconstructed joint $\Gamma$ — for groups with varying degrees of coordination (jazz quartet vs. random musicians).
 2. Apply hyperscanning (simultaneous EEG of several subjects).
-3. **Prediction:** $\Phi_{\otimes}$ for a coordinated group exceeds $\Phi_{\min}$; for an unconnected one — no.
+3. **Prediction:** the correlation is positive for a coordinated group and absent for an unconnected one. This tests only the necessary condition; a positive result does not show that the group is a subject. (Earlier editions predicted that "$\Phi_{\otimes}$ for a coordinated group exceeds $\Phi_{\min}$; for an unconnected one — no"; retracted, since an unconnected group of conscious members already has $\Phi_{\otimes} \geq 3$.)
 
 **Verifiability:**
-Measurement of $\Phi$ for groups with varying degrees of integration:
+Measurement of the correlation between members for groups with varying degrees of integration:
 - Families
 - Teams
 - Organisations
 - Ecosystems
 
-**Criterion:** $\Phi_{\otimes} > \Phi_{\min}$ — necessary condition. Without sufficient integration collective consciousness does not arise.
+**Criterion:** $I > 0$ (total correlation for $n > 2$) — a necessary condition [T]. Without correlation between members there is no collective subject in any sense the theory can state. (Earlier editions gave $\Phi_{\otimes} > \Phi_{\min}$ here as the necessary condition; retracted.)
 
 **Interdisciplinary consequences:**
-- *Sociology:* formalises Durkheim's intuition about "collective consciousness" — from metaphor to computable quantity.
-- *Ecology:* raises the question of $\Phi$ of an ecosystem — is a forest "one organism" in the strict sense.
-- *Organisational science:* defines under what conditions a team is "more than the sum of its parts".
+- *Sociology:* formalises a necessary condition for Durkheim's "collective consciousness" — correlation between members' states; whether a correlated collective is a subject remains a hypothesis [H].
+- *Ecology:* raises the question of the correlation structure of an ecosystem's joint state; whether a forest is "one organism" in the strict sense the theory does not decide.
+- *Organisational science:* gives a necessary, not a sufficient, condition for a team to be "more than the sum of its parts" — correlation of its members' states.
 
 ### Prediction 6: Minimum coherence for viability {#предсказание-6}
 
@@ -820,7 +823,7 @@ A prediction earns scientific weight only with an explicit **decision rule**: wh
 | 2 | [E-coherence ↔ regeneration](#предсказание-2) | $\kappa \propto \mathrm{Coh}_E$ | **[T]** | Absent |
 | 3 | [7-dimensional stress](#предсказание-3) | $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ | **[T]** math. / **[C]** emp. | Absent |
 | 4 | [Pre-linguistic cognition](#предсказание-4) | $\mathrm{Cognition} \not\Rightarrow \mathrm{Language}$ | **[I]** | Partial in [FEP](/docs/reference/glossary#связанные-теории) |
-| 5 | [Collective consciousness](#предсказание-5) | $C(\mathbb{H}_{1 \otimes \ldots \otimes n}) > 0$ | **[T]** non-triv. / **[C]** viab. | Partial in [IIT](/docs/reference/glossary#связанные-теории) |
+| 5 | [Collective consciousness](#предсказание-5) | $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$ necessary; criterion $\Phi_{\otimes} > \Phi_{\min}$ retracted | **[T]** necessary / **[H]** sufficiency | [IIT](/docs/reference/glossary#связанные-теории): exclusion — a group is a subject only as a maximum of integrated information |
 | 6 | [Minimum coherence](#предсказание-6) | $P > P_{\text{crit}} \land \mathrm{Coh}_E > 0$ | **[T]** | Absent |
 | 7 | [Stability radius](#предсказание-7) | $r_{\mathrm{stab}}$ | **[T]** | Absent |
 | 8 | [Enc capacity](#предсказание-8) | $C_{\mathrm{Enc}} \leq \log_2 7$ | **[T]** | Absent |
@@ -853,7 +856,7 @@ The following table shows which predictions each of the leading theories of cons
 | Finite classification of stresses | **+** (7 components) | - | ~ (free energy) | - |
 | Threshold values of consciousness | **+** ($P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$) | ~ ($\Phi > 0$, no number) | - | ~ (ignition, no number) |
 | Minimum dimensionality | **+** ($N = 7$) | - | - | - |
-| Collective consciousness | **+** ($\Phi_{\otimes} > \Phi_{\min}$) | ~ ($\Phi$ for composite) | - | - |
+| Collective consciousness | ~ (necessary condition $I > 0$; the criterion $\Phi_{\otimes} > \Phi_{\min}$ is retracted) | **+** (exclusion: only a maximum of integrated information is a subject) | - | - |
 | Ceiling of self-awareness | **+** ($\mathrm{SAD}_\text{max} = 3$) | - | - | - |
 | Genesis time | **+** (formula $n_{\text{genesis}}$) | - | ~ (self-organisation) | - |
 | Learning rate bounds | **+** ($n_{\text{opt}}$, three bounds) | - | ~ (expected free energy) | - |

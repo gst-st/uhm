@@ -91,7 +91,7 @@ See [Exp category](/docs/proofs/categorical/categorical-formalism#2-катего
 | **History** | Derived as the loop space in the ∞-groupoid: $\mathrm{Hist}(\mathcal{Q}) := \Omega_\mathcal{Q}(\mathbf{Exp}_\infty)$ — [theorem](/docs/proofs/dynamics/emergent-time#5-категорное-время-через-infty-группоид) |
 | **$\mathbb{P}(\mathcal{H}_E)$** | [Projective space](/docs/reference/specification#проективное-пространство-качеств) of qualities |
 | **$d_{\mathrm{FS}}$** | [Fubini-Study metric](/docs/reference/specification#метрика-фубини-штуди): $d_{\mathrm{FS}}([\lvert\psi\rangle],[\lvert\phi\rangle]) = \arccos(\lvert\langle\psi\vert\phi\rangle\rvert)$ |
-| **Relational identity of qualia** | [Theorem](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность): by Yoneda's lemma, the identity of qualia $[\lvert q\rangle]$ is fully determined by its relational position in the Exp category. Inverted qualia are impossible. |
+| **Relational identity of qualia** | [Theorem](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность): by Yoneda's lemma, a quality $[\lvert q\rangle]$ is determined **up to isomorphism** by its relational position in the Exp category. Whether an inverted spectrum between two subjects is possible is not settled: the lemma gives isomorphism within one category, not identity, and says nothing about symmetries between two subjects' quality spaces. (An earlier edition said "Inverted qualia are impossible"; retracted.) |
 | **Phenomenal vector FV** | $\text{FV}(\rho_E) := \{(\lambda_i, [\lvert q_i\rangle])\}$ — [unique functor](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв), extracting experiential content from $\rho_E$. Not an arbitrary postulate, but a forced structure. |
 
 ## Calibration Terms
@@ -187,8 +187,8 @@ See [L-unification](/docs/core/structure/dimension-l#категориально�
 
 | Term | Definition |
 |------|------------|
-| **Fundamental mode Γ** | Γ subsystem with $R = 0$; dynamics degenerate into Schrödinger/Dirac. Passive stability (symmetries). Examples: quarks, leptons, bosons. **Not a Holon** — does not satisfy (AP)+(QG) |
-| **Composite configuration Γ** | Quasi-autonomous configuration with $0 < R \ll 1$; near-unitary dynamics. Passive stability (bonds). Examples: atoms, simple molecules. **Not a Holon** — does not satisfy (AP)+(QG) |
+| **Fundamental mode Γ** | Γ subsystem whose dynamics degenerate into Schrödinger/Dirac, with no regeneration of its own. Passive stability (symmetries). Examples: quarks, leptons, bosons. **Not a Holon** — does not satisfy (AP)+(QG). (An earlier edition characterised it by $R = 0$; retracted — the canonical $R = 1/(7P)$ is at least $1/7$ for every state and near $1$ close to $I/7$, where it is a formal artefact of the trivial self-model.) |
+| **Composite configuration Γ** | Quasi-autonomous configuration with near-unitary dynamics. Passive stability (bonds). Examples: atoms, simple molecules. **Not a Holon** — does not satisfy (AP)+(QG). (An earlier edition gave $0 < R \ll 1$; retracted for the same reason, $R \geq 1/7$.) |
 | **Holon** | Self-sufficient unit, (AP)+(PH)+(QG)+(V), where (V): $P > P_{\text{crit}} = 2/7$. Examples: cells, organisms |
 | **L2-Holon** | Holon with cognitive qualia: $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$. Which systems reach L2 is an empirical question |
 | **Passive stability** | Stability through symmetries (conservation laws). Characteristic of fundamental modes and composite Γ configurations |
@@ -202,7 +202,7 @@ See [L-unification](/docs/core/structure/dimension-l#категориально�
 | **Free Energy Principle (FEP)** | Friston's theory. In UHM: **special case** (classical limit) of the variational characterisation of φ — [Theorem 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep). Full formulation: $\varphi = \arg\min[S_{vN} + D_{KL}]$ |
 | **Global Workspace Theory (GWT)** | Baars's theory — global access to information |
 | **Conscious realism** | Hoffman's theory; connection to UHM: agent $\approx$ L2-Holon (hypothesis) |
-| **Panpsychism** | "Everything has consciousness." UHM: **paninteriorism** — everything has L0, not L2 |
+| **Panpsychism** | "Everything has consciousness." UHM: **paninteriorism** — everything has L0, which is not experience, and not everything has L2; in the field's vocabulary a panprotopsychism with a threshold [I] ([analysis](/docs/consciousness/comparative/panpsychism-analysis#место-панинтериоризма)) |
 
 ## Status of Claims
 

@@ -5,7 +5,10 @@
 ОШИБКИ, найденные внешним аудитом 10.09.2026, и стоят здесь, чтобы не вернуться:
 `kl_at_threshold` (точная D_KL на пороге — 0,344, а не 1/2), `phi_not_g2_invariant`
 (Φ не $G_2$-инвариантна) и `z7_irreps_are_one_dimensional` (неприводимые
-представления ℤ₇ одномерны, регулярное — семимерно).
+представления ℤ₇ одномерны, регулярное — семимерно). Ещё две стоят за отзывами
+25.09.2026: `phi_of_a_product_factorises` (Φ произведения задана частями — условие
+Φ₁₂ > 1 выполняет любая несвязанная пара) и `window_predicate_not_constant_on_g2_orbit`
+(предикат окна не постоянен на $G_2$-орбите).
 
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
@@ -13,6 +16,7 @@ import itertools
 
 import numpy as np
 from scipy.linalg import expm
+from scipy.optimize import least_squares
 
 LINES = [(1, 2, 4), (2, 3, 5), (3, 4, 6), (4, 5, 7), (5, 6, 1), (6, 7, 2), (7, 1, 3)]
 E_AXIS, O_AXIS = 4, 6          # E = e_5, O = e_7 в разметке {A,S,D,L,E,O,U}
@@ -128,6 +132,64 @@ def test_phi_not_g2_invariant():
     assert abs(integration(G) - 0.0) < 1e-12 and abs(integration(g @ G @ g.T) - 1.0) < 1e-9
     assert abs(coh_e(G, 0) - 1.0) < 1e-12 and abs(coh_e(g @ G @ g.T, 0) - 0.75) < 1e-9
     assert abs(purity(G) - purity(g @ G @ g.T)) < 1e-12                        # P инвариантна
+
+
+def test_phi_of_a_product_factorises():
+    """1 + Φ(Γ₁⊗Γ₂) = (1 + Φ₁)(1 + Φ₂): два несвязанных состояния окна дают Φ₁₂ ≥ 3 при I(1:2) = 0.
+
+    Свидетель отзыва «категорной нередуцируемости» (панпсихизм, §2) и критерия Φ_⊗ > Φ_min
+    предсказания 5 (25.09.2026): интеграция совместной матрицы произведения задана частями и
+    корреляции частей не отмечает — её отмечает взаимная информация (CC-7).
+    """
+    rng = np.random.default_rng(12)
+    for _ in range(20):
+        pair = []
+        for _ in range(2):
+            A = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+            G = A @ A.conj().T
+            pair.append(G / np.trace(G).real)
+        Ga, Gb = pair
+        lhs = 1 + integration(np.kron(Ga, Gb))
+        assert abs(lhs - (1 + integration(Ga)) * (1 + integration(Gb))) < 1e-10 * lhs
+    u = np.ones(7) / np.sqrt(7)
+    Gw = 0.5 * np.outer(u, u) + 0.5 * np.eye(7) / 7            # P = 5/14, R = 2/5, Φ = 3/2
+    P = purity(Gw)
+    assert abs(P - 5 / 14) < 1e-12 and abs(integration(Gw) - 1.5) < 1e-12
+    assert 2 / 7 < P <= 3 / 7 and 1 / (7 * P) >= 1 / 3           # окно пройдено
+    G12 = np.kron(Gw, Gw)
+    assert abs(integration(G12) - 21 / 4) < 1e-10                # Φ₁₂ = 21/4 без всякой связи
+    entropy = lambda M: float(-sum(w * np.log(w) for w in np.linalg.eigvalsh(M) if w > 1e-15))
+    G4 = G12.reshape(7, 7, 7, 7)
+    mutual = entropy(np.einsum("ijkj->ik", G4)) + entropy(np.einsum("ijil->jl", G4)) - entropy(G12)
+    assert abs(mutual) < 1e-10                                   # I(1:2) = 0
+    lam = np.sqrt(1 / 6)
+    Gt = lam * np.outer(u, u) + (1 - lam) * np.eye(7) / 7        # Φ = 1 ровно, P = 2/7
+    assert abs(integration(Gt) - 1) < 1e-12 and abs(integration(np.kron(Gt, Gt)) - 3) < 1e-10
+
+
+def test_window_predicate_not_constant_on_g2_orbit():
+    """g ∈ G₂ переводит состояние окна (P = 5/14, R = 2/5, Φ = 3/2) в диагональное: Φ = 0 при тех же P, R.
+
+    Свидетель отзыва «предикат сознания постоянен на G₂-орбите» (замечание к T-253, доказательство
+    T-153a, двухаспектный монизм, «Вселенная как голоном», 25.09.2026). G₂ транзитивна на S⁶:
+    элемент, переводящий равномерный вектор u в e₁, снимает все когерентности, не меняя спектра,
+    и C = Φ·R падает с 3/5 до 0.
+    """
+    u, e1 = np.ones(7) / np.sqrt(7), np.eye(7)[0]
+    g_of = lambda c: expm(sum(ci * X for ci, X in zip(c, G2)))
+    fit = least_squares(lambda c: g_of(c) @ u - e1, np.full(14, 0.1), xtol=1e-15, ftol=1e-15, gtol=1e-15)
+    g = g_of(fit.x)
+    assert np.allclose(g @ u, e1, atol=1e-9) and np.allclose(g @ g.T, np.eye(7), atol=1e-12)
+    act = lambda v: np.r_[v[0], g @ v[1:]]
+    rg = np.random.default_rng(13)
+    x, y = np.r_[0, rg.normal(size=7)], np.r_[0, rg.normal(size=7)]
+    assert np.allclose(act(omul(x, y)), omul(act(x), act(y)), atol=1e-9)      # g ∈ Aut(𝕆) = G₂
+    Gw = 0.5 * np.outer(u, u) + 0.5 * np.eye(7) / 7
+    P = purity(Gw)
+    assert 2 / 7 < P <= 3 / 7 and 1 / (7 * P) >= 1 / 3 and integration(Gw) >= 1   # окно пройдено
+    assert abs(integration(Gw) / (7 * P) - 0.6) < 1e-12                           # C = 3/5
+    Gg = g @ Gw @ g.T
+    assert abs(purity(Gg) - P) < 1e-12 and integration(Gg) < 1e-9                 # Φ: 3/2 → 0, C → 0
 
 
 def test_frame_rigidity_no_continuous_symmetry_of_phi():

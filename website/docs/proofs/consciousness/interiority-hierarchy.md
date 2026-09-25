@@ -675,14 +675,15 @@ The term **"qualia"** is categorially correct ONLY for L2. Using "qualia of an a
 
 ## 5.1 Panpsychism vs. Paninteriorism
 
-**Classical panpsychism** (Chalmers, 2015): Everything possesses consciousness (or proto-consciousness).
+**Classical panpsychism** (Chalmers, 2015): fundamental entities possess consciousness; its variant **panprotopsychism** gives them protophenomenal properties instead — not themselves experience, but able to constitute it.
 
-**Paninteriorism of UHM:** Everything possesses **Interiority** (Level 0), but only some systems possess **Cognitive Qualia** (Level 2).
+**Paninteriorism of UHM:** Everything possesses **Interiority** (Level 0), but only some systems possess **Cognitive Qualia** (Level 2). In the field's vocabulary this is a constitutive panprotopsychism with a threshold for awareness [I].
 
 This avoids:
-1. The combination problem — the transition from L0 to L2 is mathematically defined
-2. Anthropomorphism — an atom does not "feel pain," it has interiority
-3. Conceptual dilution — qualia in the strict sense = L2
+1. Anthropomorphism — an atom does not "feel pain," it has interiority
+2. Conceptual dilution — qualia in the strict sense = L2
+
+It does not avoid the combination problem; it restates it. The transition from L0 to L2 is mathematically defined as a threshold criterion, which says *when* a system is an L2 subject, not *how* non-phenomenal L0 structure constitutes experience [I]; that question stays open ([analysis with sources](/docs/consciousness/comparative/panpsychism-analysis#что-отвечает-аппарат-угм)). (Earlier editions listed the combination problem first among the difficulties this avoids; withdrawn.)
 
 ## 5.2 Resolution of the terminological problem
 

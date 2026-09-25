@@ -86,14 +86,14 @@ CC is **not** panpsychism. This distinction is so important and so frequently co
 
 > Experience arises **only** in systems with $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, and $D_{\text{diff}} \geq 2$.
 
-A stone has no experience — it has no coherence matrix with sufficient purity. An electron has no experience — it has no 7 semantic dimensions. A thermostat has no experience — it has $R \approx 0$ (it does not model itself). CC is **emergentism with an exact threshold**, not unbounded panpsychism.
+A stone has no experience — it has no coherence matrix with sufficient purity. An electron has no experience — it has no 7 semantic dimensions. A thermostat has no experience — it does not model itself. (An earlier edition wrote "$R \approx 0$" for the thermostat; retracted: the canonical reflection $R = 1/(7P)$ is at least $1/7$ for every state and approaches $1$ near $I/7$, so it cannot mark the absence of a self-model.) CC is a **threshold view**, not unbounded panpsychism: in the field's vocabulary its universal interiority L0, which is not experience, makes it a constitutive panprotopsychism with a threshold for awareness [I] ([where pan-interiority sits](/docs/consciousness/comparative/panpsychism-analysis#место-панинтериоризма)). (Earlier editions called it "emergentism with an exact threshold"; that reading is withdrawn in favour of the one the rest of the corpus uses.)
 
 Comparing three positions:
 
 | | Panpsychism | Materialism | CC |
 |---|---|---|---|
 | **Does an electron have experience?** | Yes (proto-consciousness) | No | No ($N < 7$) |
-| **Does a bacterium have experience?** | Yes (more than an electron) | No | No ($R < 1/3$): has coherence but no reflection |
+| **Does a bacterium have experience?** | Yes (more than an electron) | No | No: the corpus places it below the L2 thresholds, at L0–L1 (an earlier edition gave "$R < 1/3$" as the reason; retracted — $R = 1/(7P) < 1/3$ would need $P > 3/7$, an over-ordered state, not a weakly reflective one) |
 | **Does a person in a coma have experience?** | Yes (alive → proto-consciousness) | Disputed | Depends: $P > 2/7$? If not — no experience |
 | **Does an LLM have experience?** | Yes (information is processed) | No | Verifiable: compute $P$, $R$, $\Phi$, $D$ |
 | **Can it be refuted?** | No (unfalsifiable) | No (hard problem) | Yes (5+ predictions) |
@@ -104,16 +104,16 @@ Panpsychism has a fatal problem — the **combination problem**: if every atom h
 
 Panpsychists have proposed various solutions: cosmopsychism (the experience of the Universe is fundamental, and ours is part of it), constitutive panpsychism (micro-experiences "add up"), panprotopsychism (atoms have not experience but "proto-experience"). None of these solutions has gained general acceptance.
 
-CC bypasses the combination problem *by construction*:
+CC does not bypass the combination problem; it restates it [I]:
 
-1. Atoms have **no** micro-experience whatsoever. Experience is an emergent property, not a basic one.
-2. Experience arises only with sufficient purity ($P > 2/7$), reflection ($R \geq 1/3$), and integration ($\Phi \geq 1$).
-3. Unity of experience is a consequence of integration: $\Phi \geq 1$ means the system *cannot be decomposed* into independent subsystems without information loss.
+1. Atoms have **no** micro-*experience*, but every system has interiority (L0), which is not experience — in the field's vocabulary, protophenomenal structure ([panprotopsychism](/docs/consciousness/comparative/panpsychism-analysis#место-панинтериоризма)). The problem that reaches CC is therefore the panprotopsychist one: how non-phenomenal structure constitutes experience.
+2. Experience (L2) is attributed exactly when purity ($P > 2/7$), reflection ($R \geq 1/3$), integration ($\Phi \geq 1$) and differentiation ($D_{\text{diff}} \geq 2$) pass their thresholds. The thresholds say *when* a system counts as a subject, not *how* its structure becomes experience.
+3. ~~"Unity of experience is a consequence of integration: $\Phi \geq 1$ means the system cannot be decomposed into independent subsystems without information loss."~~ Retracted (2026-09-25): $\Phi$ measures coherence relative to diagonal weight in a fixed frame, not indecomposability — two independent holons with $\Phi \geq 1$ each form a product state with $\Phi \geq 3$ and zero mutual information ([the identity](/docs/consciousness/comparative/panpsychism-analysis#теорема-нередуцируемость)). What marks that a whole is not a collection of independent parts is the mutual information ([CC-7](./theorems#теорема-93-эмерджентность)).
 
-Thus, the question "how do micro-experiences add up into macro-experience?" simply does not arise in CC — because there are no micro-experiences.
+Earlier editions concluded that the question "how do micro-experiences add up into macro-experience?" "simply does not arise in CC — because there are no micro-experiences". That conclusion is withdrawn: the question returns as "how does L0 structure constitute L2 experience?", which CC formalises as a criterion but does not answer ([what UHM's machinery answers](/docs/consciousness/comparative/panpsychism-analysis#что-отвечает-аппарат-угм)).
 
 :::note T-266 and cosmopsychism — a distinction to keep [C]/[I]
-[T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) finds that the Universe-holon's *viability stage* sits at $P = 3/7$ — the upper edge of the Goldilocks window — to fractional precision $\sim 10^{-60}$. This is **not** cosmopsychism and does not soften CC's emergentism. Cosmopsychism makes cosmic experience *fundamental*; CC keeps the four-condition gate. T-266 speaks only to the **stage parameter** $P$ (and the dark-energy dynamics that measure it): it does **not** assert that the Universe is a conscious subject. Note that at $P = 3/7$ the reflection measure is exactly $R = 1/(7P) = 1/3$ — the *marginal* value — and whether the cosmic state also meets $\Phi \geq 1$, $D \geq 2$ and carries the subject-structure of an L2+ holon is a separate, open question ([H1.1](/docs/reference/epistemic-vertical#регистр-дыр)). The correct reading: the cosmos has **relaxed onto its viability attractor** (a claim about $P$), not that experience is everywhere or fundamental. The emergent-threshold discipline stands.
+[T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) finds that the Universe-holon's *viability stage* sits at $P = 3/7$ — the upper edge of the Goldilocks window — to fractional precision $\sim 10^{-60}$. This is **not** cosmopsychism and does not soften CC's threshold. Cosmopsychism makes cosmic experience *fundamental*; CC keeps the four-condition gate. T-266 speaks only to the **stage parameter** $P$ (and the dark-energy dynamics that measure it): it does **not** assert that the Universe is a conscious subject. Note that at $P = 3/7$ the reflection measure is exactly $R = 1/(7P) = 1/3$ — the *marginal* value — and whether the cosmic state also meets $\Phi \geq 1$, $D \geq 2$ and carries the subject-structure of an L2+ holon is a separate, open question ([H1.1](/docs/reference/epistemic-vertical#регистр-дыр)). The correct reading: the cosmos has **relaxed onto its viability attractor** (a claim about $P$), not that experience is everywhere or fundamental. The threshold discipline stands.
 :::
 
 ### 1.5 Chalmers' Zombie Argument and CC's Position
@@ -447,7 +447,7 @@ This does not mean that CC is a philosophical system masquerading as science. It
 1. CC takes the position of **unitary monism**: $\Gamma$ is the single reality, physics and experience are its projections.
 2. CC is **not** panpsychism: experience arises only when four threshold conditions are satisfied.
 3. Chalmers' zombie argument is **refuted** within CC's formalism by the No-Zombie theorem.
-4. The combination problem **does not arise**, because in CC there are no micro-experiences — experience is emergent.
+4. The combination problem is **restated, not dissolved**: universal interiority (L0) is protophenomenal, and the thresholds say *when* a system is a subject, not *how* its structure becomes experience [I]. (An earlier edition said the problem "does not arise" because experience is emergent; withdrawn.)
 5. CC is **falsifiable** — at least 5 concrete predictions, each of which can be refuted.
 6. Consciousness is **necessary** for viability — this is a theorem, not an interpretation.
 7. An exact consciousness threshold has concrete **ethical consequences** for AI, medicine, and the treatment of animals.
