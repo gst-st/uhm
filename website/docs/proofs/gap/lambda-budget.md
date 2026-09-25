@@ -66,9 +66,9 @@ $$
 $$
 
 under the following conditions:
-**(A)** Stationarity of $V_{\text{Gap}}$ at the global minimum (T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)));
+**(A)** Stationarity of $V_{\text{Gap}}$ at the global minimum (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)));
 **(B)** Wilson-Fisher fixed point for $\lambda_4$ (standard RG-analysis result);
-**(C)** Positive-definite Hessian at minimum (T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)));
+**(C)** Positive-definite Hessian at minimum (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)));
 **(D)** Quantum fluctuation lower bound $\varepsilon_{\min} \sim \omega_0 / \omega_{\text{Planck}}$.
 
 **Proof.**
@@ -81,7 +81,7 @@ $$
 |\gamma_{ij}| = \varepsilon \leq \frac{1}{7} \approx 0.143.
 $$
 
-For a positive-definite Hessian of $V_{\text{Gap}}$ at the minimum (T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))), the absence of strong quartic saturation is required. Standard perturbative stability analysis: $\varepsilon \cdot \lambda_3 \ll \mu^2$, giving:
+For a positive-definite Hessian of $V_{\text{Gap}}$ at the minimum (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))), the absence of strong quartic saturation is required. Standard perturbative stability analysis: $\varepsilon \cdot \lambda_3 \ll \mu^2$, giving:
 
 $$
 \varepsilon \ll \frac{\mu^2}{\lambda_3^{\text{(UV)}}} \approx \frac{\mu^2}{1} \sim 10^{1.2} \quad \text{(trivial UV bound)}.
@@ -178,7 +178,7 @@ $$
 $$
 
 :::warning Status of parameter $\varepsilon$ [C at (SV)]
-The order of magnitude $\varepsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12, T-61 restated + T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))): $\bar{\varepsilon} \approx 0.027$ (the root mean square over the 15 non-O pairs, [C at (SV)]; $0.023$ until 2026-09-25, audit A-83). Changing $\varepsilon$ by one order alters the budget by 12 orders. Taking $\varepsilon = 10^{-2}$, the computation is correct [T].
+The order of magnitude $\varepsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12, T-61 restated + T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))): $\bar{\varepsilon} \approx 0.027$ (the root mean square over the 15 non-O pairs, [C at (SV)]; $0.023$ until 2026-09-25, audit A-83). Changing $\varepsilon$ by one order alters the budget by 12 orders. Taking $\varepsilon = 10^{-2}$, the computation is correct [T].
 
 However, it has been shown that the homogeneous vacuum is **not** an exact solution ([Theorem on the self-consistent vacuum equation](/docs/core/dynamics/gap-thermodynamics#теорема-самосогласованное-вакуумное-уравнение) [C]): the vacuum has a **sector structure** with different $\varepsilon$ in different sectors. The mean value $\bar{\varepsilon} \approx 0.027 \sim 10^{-1.6}$ follows from the sector hierarchy $\varepsilon$ ([Theorem 14.2](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε) [C]), which is consistent in order with the adopted $\varepsilon = 10^{-2}$ and justifies the $\varepsilon^6$ factor in mechanism 1.
 :::

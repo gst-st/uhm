@@ -68,7 +68,7 @@ The parameter λ₃ ≈ 74 ≫ 4π means that the octonionic cubic vertex is in 
 ## 2. Triple Suppression
 
 :::warning Theorem 7.2 [C at (SV)]
-**Status [C at (SV)]:** The order of magnitude $\epsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12, T-61 restated + T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))): $\bar{\varepsilon} \approx 0.027$ (the root mean square over the 15 non-O pairs, [C at (SV)]; $0.023$ until 2026-09-25, audit A-83). The correct budget is in Section 5.
+**Status [C at (SV)]:** The order of magnitude $\epsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12, T-61 restated + T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))): $\bar{\varepsilon} \approx 0.027$ (the root mean square over the 15 non-O pairs, [C at (SV)]; $0.023$ until 2026-09-25, audit A-83). The correct budget is in Section 5.
 
 The smallness of the observed $\Lambda$ is explained by triple suppression:
 :::
