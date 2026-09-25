@@ -285,7 +285,7 @@ $$
 
 **Interpretation of $\Phi$:**
 - $\Phi = 0$: Classical ensemble (no coherences)
-- $\Phi \to \infty$: Maximally entangled state
+- Upper bound: since $\Phi = P/\sum_i \gamma_{ii}^2 - 1$ and $\sum_i \gamma_{ii}^2 \geq 1/7$ (Cauchy–Schwarz), $\Phi \leq 7P - 1 \leq 6$; the first bound is attained exactly when the diagonal is uniform, and $\Phi = 6$ exactly for pure states with a uniform diagonal (e.g. $\lvert u\rangle\langle u\rvert$, $u = (1, \ldots, 1)/\sqrt7$); inside the conscious window $P \leq 3/7$ this gives $\Phi \leq 2$ ([dimension U](/docs/core/structure/dimension-u#мера-интеграции-φ)). (An earlier edition wrote "$\Phi \to \infty$: maximally entangled state"; retracted — $\Phi$ is bounded, and a single $7 \times 7$ state is not a bipartite system, so "entangled" does not apply.)
 
 ### Justification of thresholds {#обоснование-порогов}
 
