@@ -162,7 +162,7 @@ implement Holon {
     }
 
     /// Base regeneration rate κ₀ = ω₀ · |γ_OE| · |γ_OU| / γ_OO
-    /// (T-64 [H] (restated; sector values: hypothesis (SV)), categorical derivation via Coh_E → κ).
+    /// (T-64 [T]+[C at (RT)], corrected 2026-09-25; categorical derivation via Coh_E → κ).
     public fn kappa_0(&self) -> Float where ensures result >= 0.0 {
         let o = index(Dim.O); let e = index(Dim.E); let u = index(Dim.U);
         let g_OO = self.gamma[o, o].real();

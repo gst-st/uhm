@@ -41,7 +41,11 @@ Dimensions $E$ (evaluation) and $U$ (unity) belong to the $\bar{3}$-sector $\{L,
 :::danger Corrected 2026-09-25 (audit A-90): a vacuum value of $\gamma_{EU}$ breaks colour
 Checked numerically with $SU(3)_C = \mathrm{Stab}_{G_2}(e_O)$, the colour group of the corpus. The state $\Gamma = I/7 + \varepsilon\,(e^{i\phi}|E\rangle\langle U| + \text{h.c.})$ keeps a subalgebra of $\mathfrak{su}(3)_C$ of dimension 1 at $\phi = \pi/2$ (and $3\pi/2$) and of dimension 0 at the other 23 of 25 sampled phases, against 8 at $\varepsilon = 0$; the coherence $\gamma_{EU}$ has no colour-singlet component, since the $SU(3)_C$-invariant states have coherences only on $(A,D)$, $(S,U)$, $(L,E)$ (`test_gamma_eu_vev_breaks_colour`). So $\langle\gamma_{EU}\rangle \neq 0$ breaks $SU(3)_C$, while the Standard-Model Higgs is a colour singlet. Steps 3 and 4 below fail as well: no $SU(2)$ commutes with $SU(3)_C$ on $\mathbb C^7$ (the commutant is $\mathbb C^3$), so there is no doublet $(2,+1/2)$ to carry, and the vacuum value came from T-64, which is restated as a hypothesis whose vacuum has no sector values; $E$ and $U$ are not in a sector $\bar{\mathbf 3} = \{L,E,U\}$ (T-48a retracted).
 
-Repairs tried. (i) Correct complex triplets: $\gamma_{EU}$ has zero singlet weight, as above. (ii) Another colour group: $\gamma_{EU}$ is invariant under $\mathrm{Stab}_{G_2}(e_A)$, but only inside the combination with equal coherences on $(S,L)$ and $(D,O)$ — the pairs of the lines through $A$ — and this moves colour from $O$ to $A$, against the rest of the corpus. (iii) A doublet on $\mathbb C^7$: impossible for any $SU(3)$, for the commutant reason above. (iv) The Clifford frame (Cl) of [T-326](/docs/physics/gauge-symmetry/standard-model#sm-из-клиффорда), where $SU(2)_L$ does exist — as the centraliser of colour in the $\mathrm{Spin}(9)$ of $\mathcal S = \mathbb C\otimes\mathbb O$: it gives $H \sim \gamma_{EU}$ no support. $\mathcal S = (\mathbf 3,\mathbf 2)_{1/6} \oplus (\mathbf 1,\mathbf 2)_{-1/2}$ contains doublets only, so every operator on $\mathcal S$ — every coherence of $\Gamma$, $\gamma_{EU}$ included — carries integer $SU(2)_L$ spin ($\mathbf 2\otimes\mathbf 2 = \mathbf 1\oplus\mathbf 3$); and the vector $\mathbb R^9$ of the Clifford system is $(\mathbf 3\oplus\bar{\mathbf 3},\mathbf 1)_{\pm1/3} \oplus (\mathbf 1,\mathbf 3)_0$ — no doublet either (`test_no_higgs_doublet_in_the_clifford_frame`). A doublet needs $SU(2)_L$ singlets, which $\mathcal S$ lacks; they appear only in the right-handed extension of T-329, where the Higgs question is open. What stands [T]: Step 1 (T-42a) and Step 2 (Theorem 1.1). The identification $H \sim \gamma_{EU}$ is a hypothesis [H] with three named obstructions: colour breaking under $SU(3)_C = \mathrm{Stab}(e_O)$, the absence of a doublet on $\mathbb C^7$, and the absence of a doublet among the operators on $\mathcal S$ and in the vector of $\mathrm{Spin}(9)$ under (Cl).
+Repairs tried. (i) Correct complex triplets: $\gamma_{EU}$ has zero singlet weight, as above. (ii) Another colour group: $\gamma_{EU}$ is invariant under $\mathrm{Stab}_{G_2}(e_A)$, but only inside the combination with equal coherences on $(S,L)$ and $(D,O)$ — the pairs of the lines through $A$ — and this moves colour from $O$ to $A$, against the rest of the corpus. (iii) A doublet on $\mathbb C^7$: impossible for any $SU(3)$, for the commutant reason above. (iv) The Clifford frame of [T-326](/docs/physics/gauge-symmetry/standard-model#sm-из-клиффорда) restricted to $\mathrm{Spin}(9)$, where an $SU(2)$ does exist — the centraliser of colour in the $\mathrm{Spin}(9)$ of $\mathcal S = \mathbb C\otimes\mathbb O$, which T-329 shows to be the diagonal of $SU(2)_L\times SU(2)_R$: it gives $H \sim \gamma_{EU}$ no support. $\mathcal S = (\mathbf 3,\mathbf 2)_{1/6} \oplus (\mathbf 1,\mathbf 2)_{-1/2}$ contains doublets only, so every operator on $\mathcal S$ — every coherence of $\Gamma$, $\gamma_{EU}$ included — carries integer $SU(2)_L$ spin ($\mathbf 2\otimes\mathbf 2 = \mathbf 1\oplus\mathbf 3$); and the vector $\mathbb R^9$ of the Clifford system is $(\mathbf 3\oplus\bar{\mathbf 3},\mathbf 1)_{\pm1/3} \oplus (\mathbf 1,\mathbf 3)_0$ — no doublet either (`test_no_higgs_doublet_in_the_clifford_frame`). *(Narrowed 2026-09-25: this absence holds for $\mathrm{Spin}(9)$ only.)* In the $\mathrm{Spin}(10)$ completion, where the tenth Clifford generator is forced, the colour-free Clifford plane $\{iL_{e_O}, J, iJ, \gamma_{10}\}$ is one Higgs doublet with $Y = \pm\tfrac12$ — [T] as a representation, the identification [H] — and a vacuum in the plane $\{iL_{e_O}, \gamma_{10}\}$ leaves exactly $SU(3)\times U(1)_Q$ ([standard model, Theorem 2.6(f)](/docs/physics/gauge-symmetry/standard-model#поколение-t329)). That doublet is a direction of the Clifford vector, not a coherence of $\Gamma$, so it gives $H \sim \gamma_{EU}$ no support either. What stands [T]: Step 1 (T-42a) and Step 2 (Theorem 1.1). The identification $H \sim \gamma_{EU}$ is a hypothesis [H] with three named obstructions: colour breaking under $SU(3)_C = \mathrm{Stab}(e_O)$, the absence of a doublet on $\mathbb C^7$, and the absence of a doublet among the operators on $\mathcal S$ and in the vector of $\mathrm{Spin}(9)$. The Higgs doublet of the corpus is the one of Theorem 2.6(f).
+:::
+
+:::info Remark (the Gap vacuum and the Higgs plane) [I]
+Under [T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) in its corrected form ([C at (RT)] in the Gap phase) the imaginary part of the vacuum is $\mathrm{Im}\,\Gamma_v = \tfrac{b-c}{2}L_{e_O}$: the restriction to $\mathbb C^7$ of the clock generator $L_{e_O}$, one of the four directions of the colour-free Clifford plane of Theorem 2.6(f). Its stabiliser in $G_2$ is $\mathrm{SU}(3)_{e_O}$, and the stabiliser in $\mathfrak g_{\mathrm{SM}}$ of a vector of the plane $\{iL_{e_O}, \gamma_{10}\}$ is $\mathfrak{su}(3)\oplus\mathfrak u(1)_Q$. That the Gap condensate and the Higgs vacuum point along the same clock direction is a reading, not a derivation: $\Gamma$ lives on $\mathbb C^7$, the doublet on the Clifford vector $\mathbb R^{10}$, and no map between them is given.
 :::
 
 :::note Earlier statement (Theorem 1.0, stated as [T] until 2026-09-25)
@@ -64,7 +68,7 @@ From the electroweak uniqueness theorem ([§2.3a](/docs/physics/gauge-symmetry/s
 
 **Step 4. Nonzero VEV $\langle\gamma_{EU}\rangle \neq 0$ breaks $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$ [T].**
 
-From [Theorem on the unique vacuum T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [H] (restated; sector values: hypothesis (SV)): the unique global minimum of $V_\text{Gap}$ has $|\gamma_{EU}|_\text{vac} = \varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ (in units of $\omega_0$), giving $\langle\gamma_{EU}\rangle \neq 0$. A nonzero vacuum expectation value of a field with quantum numbers $(2, +1/2)$ uniquely realizes spontaneous breaking $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$.
+From [Theorem on the unique vacuum T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): the unique global minimum of $V_\text{Gap}$ has $|\gamma_{EU}|_\text{vac} = \varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ (in units of $\omega_0$), giving $\langle\gamma_{EU}\rangle \neq 0$. A nonzero vacuum expectation value of a field with quantum numbers $(2, +1/2)$ uniquely realizes spontaneous breaking $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$.
 
 **Conclusion (earlier, corrected 2026-09-25).** The earlier text read: "All four steps rely exclusively on [T]-results. The identification $H \sim \gamma_{EU}$ follows from them uniquely." Steps 3 and 4 are withdrawn (box above), so the identification is a hypothesis [H].
 
@@ -310,34 +314,34 @@ Fermionic representations from Gap-configurations form the same structure as one
 
 ### Theorem T-70 (Canonical definition of $f_0$) [C at (SV)] {#теорема-f0-канонический}
 
-*Corrected 2026-09-25 from [T]: Steps 2, 3 and 5 take the unique vacuum and its five Hessian eigenvalues from T-64, which is restated as a hypothesis whose vacuum has none of these sector values (see [Gap thermodynamics §14](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)); the formula holds conditional on the sector-vacuum hypothesis (SV).*
+*Corrected 2026-09-25 from [T]: Steps 2, 3 and 5 take the unique vacuum and its five Hessian eigenvalues from the sector form of T-64; the corrected T-64 has a vacuum with none of these sector values (see [Gap thermodynamics §14](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)); the formula holds conditional on the sector-vacuum hypothesis (SV).*
 
 :::tip [C at (SV)] Theorem
 In UHM the moment $f_0$ of the spectral action is **uniquely determined** through the vacuum effective action of the Gap theory on $(S^1)^{21}$:
 
 $$f_0 \Lambda^4 = \frac{1}{7}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]$$
 
-where $V_{\mathrm{Gap}}^{\min}$ is the potential value at the vacuum minimum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [H] (restated; sector values: hypothesis (SV))), and $\zeta'_{H_{\mathrm{Gap}}}(0)$ is the log-determinant of the Hessian at the vacuum.
+where $V_{\mathrm{Gap}}^{\min}$ is the potential value at the vacuum minimum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))), and $\zeta'_{H_{\mathrm{Gap}}}(0)$ is the log-determinant of the Hessian at the vacuum.
 :::
 
 **Proof.**
 
 **Step 1 (Field-space finiteness → finite functional integral).** The Gap partition function on the compact target $(S^1)^{21}$ is finite — field-space finiteness **[T]**; full order-by-order UV-finiteness is structural [C] ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)). Therefore the functional integral $Z = \int [D\theta] \exp(-S_{\mathrm{Gap}}[\theta])$ is **finite and well-defined** without regularization ambiguity. The quantum effective action $\Gamma_{\mathrm{eff}} = -\ln Z$ is a finite, concrete quantity.
 
-**Step 2 (Unique vacuum → loop expansion).** From [T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [H] (restated; sector values: hypothesis (SV)): the potential $V_{\mathrm{Gap}}$ has a unique global minimum with positive definite Hessian $H_{\mathrm{Gap}}$. Expansion:
+**Step 2 (Unique vacuum → loop expansion).** From [T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): the potential $V_{\mathrm{Gap}}$ has a unique global minimum with positive definite Hessian $H_{\mathrm{Gap}}$. Expansion:
 
 $$\Gamma_{\mathrm{eff}} = V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\ln\det(H_{\mathrm{Gap}}) + O(\text{two-loop})$$
 
-**Step 3 (Determinant regularization).** Zeta-regularized determinant: $\ln\det(H_{\mathrm{Gap}}) = -\zeta'_{H_{\mathrm{Gap}}}(0)$. From T-64 [H] (restated; sector values: hypothesis (SV)): all eigenvalues $\lambda_i > 0$ (5 positive on the orbit space), so $\zeta'_{H_{\mathrm{Gap}}}(0) = -\sum_{i=1}^{5}\ln\lambda_i$.
+**Step 3 (Determinant regularization).** Zeta-regularized determinant: $\ln\det(H_{\mathrm{Gap}}) = -\zeta'_{H_{\mathrm{Gap}}}(0)$. From T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): all eigenvalues $\lambda_i > 0$ (5 positive on the orbit space), so $\zeta'_{H_{\mathrm{Gap}}}(0) = -\sum_{i=1}^{5}\ln\lambda_i$.
 
 **Step 4 (Identification with $f_0$).** Coefficient $a_0$ of the spectral action: $f_0 \Lambda^4 \cdot 7$ = vacuum energy density of the internal space = $\Gamma_{\mathrm{eff}}$. Therefore:
 
 $$f_0 = \frac{\Gamma_{\mathrm{eff}}}{7\Lambda^4} = \frac{1}{7\Lambda^4}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]$$
 
-**Step 5 (Uniqueness).** All quantities on the right-hand side are uniquely determined: $V_{\mathrm{Gap}}^{\min}$ from T-64 [H] (restated; sector values: hypothesis (SV)), $\zeta'_{H_{\mathrm{Gap}}}(0)$ from a finite sum over 5 eigenvalues, $\Lambda = \omega_0$. $f_0$ is **not a free parameter**, but a definite function of the vacuum quantities. $\blacksquare$
+**Step 5 (Uniqueness).** All quantities on the right-hand side are uniquely determined: $V_{\mathrm{Gap}}^{\min}$ from T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)), $\zeta'_{H_{\mathrm{Gap}}}(0)$ from a finite sum over 5 eigenvalues, $\Lambda = \omega_0$. $f_0$ is **not a free parameter**, but a definite function of the vacuum quantities. $\blacksquare$
 
 :::info Numerical estimate [C]
-From T-64 [H] (restated; sector values: hypothesis (SV)), Hessian eigenvalues: $\lambda_1 = 18\mu^2$ (confinement), $\lambda_{2,3} = 6\mu^2(1 + O(\varepsilon^2))$ (spatial), $\lambda_{4,5} = 12\mu^2(1 + O(\varepsilon))$ (O-modes). With $\mu^2 \approx \omega_0^2/7$: $f_0 \approx 2.2/\omega_0^4$. Numerical value [C] — depends on exact $\varepsilon_i$.
+From T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)), Hessian eigenvalues: $\lambda_1 = 18\mu^2$ (confinement), $\lambda_{2,3} = 6\mu^2(1 + O(\varepsilon^2))$ (spatial), $\lambda_{4,5} = 12\mu^2(1 + O(\varepsilon))$ (O-modes). With $\mu^2 \approx \omega_0^2/7$: $f_0 \approx 2.2/\omega_0^4$. Numerical value [C] — depends on exact $\varepsilon_i$.
 :::
 
 ### Theorem (Higgs quartic from spectral action) [C] {#теорема-хиггсовская-квартика}
@@ -483,7 +487,7 @@ In UHM the role of the UV cutoff $\Lambda$ is played by the scale $\mu_\text{phy
 ### 4.4 Parity breaking from $V_3$ and stability of the chiral vacuum {#4-4}
 
 :::tip [C at (SV)] Theorem
-Dynamical stability of the chiral vacuum follows conditional on the sector-vacuum hypothesis (SV): Step 2 uses the unique vacuum with positive-definite Hessian of T-64 and Step 3 the barrier of T-69, both conditional on (SV) since 2026-09-25 (earlier stated as proved from [T]-results).
+Dynamical stability of the chiral vacuum follows conditional on the sector-vacuum hypothesis (SV): Step 2 uses the unique sector vacuum with positive-definite Hessian (hypothesis (SV); the corrected T-64 gives a different vacuum) and Step 3 the barrier of T-69, both conditional on (SV) since 2026-09-25 (earlier stated as proved from [T]-results).
 :::
 
 The cubic potential $V_3$ (and the associated orientational $V_\varphi$-contribution) ensures **dynamical stability** of chiral distinction in the $E$-$U$ channel:
@@ -504,7 +508,7 @@ $$\Delta V = V_\varphi^{(\pi)} - V_\varphi^{(0)} = 2\lambda_\varphi |\gamma_{LE}
 
 **Step 1.** $V_3$ is the unique $PT$-odd term in $V_{\mathrm{Gap}}$ [T] ([T-99](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd), step 2). It distinguishes chiral vacua: $\theta = 0$ and $\theta = \pi$ give different signs of the cubic combination $\sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$.
 
-**Step 2.** The vacuum of $V_{\mathrm{Gap}}$ is unique with positive definite Hessian — hypothesis (SV) [H] (T-64 [H] in its restated form: unique only up to the symmetries of $V_{\mathrm{Gap}}$). No flat directions → the chiral minimum is non-degenerate.
+**Step 2.** The vacuum of $V_{\mathrm{Gap}}$ is unique with positive definite Hessian — hypothesis (SV) [H] (T-64, corrected to the $G_2$-invariant potential, gives a vacuum unique up to $G_2$ — [T] for $\kappa \le \mu^2/48$, [C at (RT)] above — but not the sector one). No flat directions → the chiral minimum is non-degenerate.
 
 **Step 3.** Topological barrier [C at (SV)] ([T-69](/docs/core/dynamics/composite-systems#теорема-тополог-защита)): $\Delta V \geq 6\mu^2 > 0$ prevents tunneling between chiral vacua.
 
@@ -658,7 +662,7 @@ In physical units with $\mu \sim M_{\text{Planck}}$: the exponent $e^{10.88 \cdo
 
 **Falsifiable prediction.** Observation of spontaneous chirality flipping (a right-handed neutrino appearing from a left-handed one without a mass insertion) at any sub-Planckian energy would falsify the topological protection theorem T-69 [C at (SV)] and the cubic potential $V_3$ (T-99 [T]).
 
-**Status.** [C at (SV)] — follows from T-69 [C at (SV)] (topological barrier), the hypothesis (SV) [H] (unique vacuum with positive Hessian; T-64 is restated), and T-99 [T] ($V_3$ is the unique $PT$-odd term); corrected from [T] on 2026-09-25.
+**Status.** [C at (SV)] — follows from T-69 [C at (SV)] (topological barrier), the hypothesis (SV) [H] (unique vacuum with positive Hessian; the corrected T-64 does not give its values), and step 2 of T-99 ($V_3$ is the unique $PT$-odd term — true of the retracted cubic only; the corrected potential is PT-even, T-331); corrected from [T] on 2026-09-25.
 
 ---
 

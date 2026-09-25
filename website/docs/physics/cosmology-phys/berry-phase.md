@@ -155,7 +155,7 @@ Replacing theorem: [Sectoral Gap Bound](#теорема-секторная-gap-�
 ### 5.2 Theorem (Sectoral Gap Bound) [T] {#теорема-секторная-gap-граница}
 
 :::tip Theorem (Sectoral Gap Bound) [T]
-In the unique vacuum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [H] (restated; sector values: hypothesis (SV))) the Gap configuration $\theta^*$ satisfies:
+In the unique vacuum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) the Gap configuration $\theta^*$ satisfies:
 
 **(a)** For all non-O pairs ($i,j \in \{A,S,D,L,E,U\}$):
 $$\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.027 \ll 1/2$$
@@ -169,7 +169,7 @@ $$\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2), \quad \ma
 
 **Proof.**
 
-**Step 1 (Vacuum sectoral hierarchy).** The unique global minimum of $V_{\text{Gap}}$ ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [H] (restated; sector values: hypothesis (SV))) defines the sectoral parametrisation $\boldsymbol{\varepsilon} = (\varepsilon_{O3}, \varepsilon_{O\bar{3}}, \varepsilon_{33}, \varepsilon_{\bar{3}\bar{3}}, \varepsilon_{3\bar{3}})$. From the positive definiteness of the Hessian (T-64):
+**Step 1 (Vacuum sectoral hierarchy).** The unique global minimum of $V_{\text{Gap}}$ ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) defines the sectoral parametrisation $\boldsymbol{\varepsilon} = (\varepsilon_{O3}, \varepsilon_{O\bar{3}}, \varepsilon_{33}, \varepsilon_{\bar{3}\bar{3}}, \varepsilon_{3\bar{3}})$. From the positive definiteness of the Hessian (T-64):
 
 | Sector | Pairs | $\varepsilon$ | Gap |
 |--------|------|--------------|-----|
