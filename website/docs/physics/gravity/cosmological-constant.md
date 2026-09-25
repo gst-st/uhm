@@ -60,15 +60,15 @@ $$
 :::danger Warning C7: non-perturbative regime
 The parameter λ₃ ≈ 74 ≫ 4π means that the octonionic cubic vertex is in the **strong coupling** regime. All loop computations using λ₃ as a perturbative parameter are formally unreliable. Quantitative results in this section (masses, branching ratios, numerical coefficients) have status **[H]** pending non-perturbative analysis.
 
-**Non-perturbative approach:** Mass ratios are determined by the spectrum of $D_{\text{int}}$ and are **independent** of λ₃ — Theorem T-180 [T]. C7 is reinterpreted as a structural property of the octonionic algebra [I], not a defect of the theory. See [Bimodule Construction §3](/docs/proofs/physics/bimodule-construction#непертурбативный).
+**Non-perturbative approach:** Mass ratios are determined by the spectrum of $D_{\text{int}}$ and are **independent** of λ₃ — Theorem T-180 [C at (SV)]. C7 is reinterpreted as a structural property of the octonionic algebra [I], not a defect of the theory. See [Bimodule Construction §3](/docs/proofs/physics/bimodule-construction#непертурбативный).
 :::
 
 ---
 
 ## 2. Triple Suppression
 
-:::warning Theorem 7.2 [C under C12, T-64]
-**Status [C under C12, T-64]:** The order of magnitude $\epsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12 [T] + T-64 [T]): $\bar{\varepsilon} \approx 0.023$. The correct budget is in Section 5.
+:::warning Theorem 7.2 [C at (SV)]
+**Status [C at (SV)]:** The order of magnitude $\epsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12, T-61 restated + T-64 [H] (restated; sector values: hypothesis (SV))): $\bar{\varepsilon} \approx 0.023$. The correct budget is in Section 5.
 
 The smallness of the observed $\Lambda$ is explained by triple suppression:
 :::
@@ -337,7 +337,7 @@ $$
 
 The fine cancellation between the first and second terms (ensuring the smallness of $\Lambda$) is determined by the **O-sector opacity** $\mathcal{G}_O$.
 
-**Step 4 (Physical interpretation).** $\Lambda_{\text{CC}} \propto \mathcal{G}_O$ means: the cosmological constant = **energetic cost of observation**. The more opaque the O-channel (i.e. the more precise the internal clock), the larger $\Lambda$. The smallness of $\Lambda$ is a consequence of the near-perfect cancellation $f_0\Lambda^4 \cdot 7 \approx f_2\Lambda^2\omega_0^2 \mathcal{G}_O$, guaranteed by UV-finiteness ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность): field-space [T], order-by-order [C]) and canonical $f_0$ ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) [T]). $\blacksquare$
+**Step 4 (Physical interpretation).** $\Lambda_{\text{CC}} \propto \mathcal{G}_O$ means: the cosmological constant = **energetic cost of observation**. The more opaque the O-channel (i.e. the more precise the internal clock), the larger $\Lambda$. The smallness of $\Lambda$ is a consequence of the near-perfect cancellation $f_0\Lambda^4 \cdot 7 \approx f_2\Lambda^2\omega_0^2 \mathcal{G}_O$, guaranteed by UV-finiteness ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность): field-space [T], order-by-order [C]) and canonical $f_0$ ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) [C at (SV)]). $\blacksquare$
 :::
 
 :::warning Status of Λ suppression
@@ -395,7 +395,7 @@ $$
 \Lambda_{\mathrm{pert}} \sim 10^{-41.5} \cdot M_P^4, \quad \Lambda_{\mathrm{bracket}} \sim 10^{-53.5}\ \text{to}\ 10^{-93.5} \cdot M_P^4, \quad \Lambda_{\mathrm{obs}} \sim 10^{-120} \cdot M_P^4
 $$
 
-**Honest composition [T-structural, C-numerical].** The rows above do **not** all multiply — they fall into three classes ([honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет), the canonical composition): **(A)** rigorous mean suppression — perturbative $10^{-41.5}$ [T] with the SUSY-sector $\varepsilon^{12}$ *absorbing* the $\varepsilon^6$ already inside it, net $\sim 10^{-53.5}$; **(B)** the cohomological exact zero $\Lambda_{\text{global}} = 0$ [T], which reframes the question as the size of the *local* residual; **(C)** the sector-minimization programme [C], potentially adding up to $\sim 10^{-40}$. The honest bracket is $10^{-53.5}$–$10^{-93.5}$; the remaining $\gtrsim 27$ orders to $\Lambda_{\mathrm{obs}}$ are **open — computational (Hybrid Monte-Carlo on $(S^1)^{21}/G_2$) plus conceptual (proving the local residual saturates the cohomological bound)**. Every coefficient is determined by $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) **[T]**), so the programme has no free parameters — but it is a programme, not a completed multiplication. Details: [updated budget](/docs/proofs/gap/lambda-budget#обновлённый-бюджет), [structural closure](/docs/proofs/gap/lambda-budget#структурное-замыкание-лямбда).
+**Honest composition [T-structural, C-numerical].** The rows above do **not** all multiply — they fall into three classes ([honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет), the canonical composition): **(A)** rigorous mean suppression — perturbative $10^{-41.5}$ [T] with the SUSY-sector $\varepsilon^{12}$ *absorbing* the $\varepsilon^6$ already inside it, net $\sim 10^{-53.5}$; **(B)** the cohomological exact zero $\Lambda_{\text{global}} = 0$ [T], which reframes the question as the size of the *local* residual; **(C)** the sector-minimization programme [C], potentially adding up to $\sim 10^{-40}$. The honest bracket is $10^{-53.5}$–$10^{-93.5}$; the remaining $\gtrsim 27$ orders to $\Lambda_{\mathrm{obs}}$ are **open — computational (Hybrid Monte-Carlo on $(S^1)^{21}/G_2$) plus conceptual (proving the local residual saturates the cohomological bound)**. Every coefficient is determined by $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) **[C at (SV)]**), so the programme has no free parameters — but it is a programme, not a completed multiplication. Details: [updated budget](/docs/proofs/gap/lambda-budget#обновлённый-бюджет), [structural closure](/docs/proofs/gap/lambda-budget#структурное-замыкание-лямбда).
 
 ---
 
@@ -793,7 +793,7 @@ The radion/modulus $S_0$ is not a fixed parameter but a **dynamical variable**. 
 5. **Coherent instanton sum** — destructive interference over topological sectors
 6. **Lattice Monte Carlo** — direct computation of the partition function on $(S^1)^{21}$ with $G_2$-symmetry
 
-**Status: [C], honest bracket $10^{-53.5}$–$10^{-93.5}$** ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)). All coefficients are determined by $\theta^*$ (T-79 [T]) — no free parameters. The remaining $\gtrsim 27$ orders are an open computational + conceptual task (numerical minimization on $(S^1)^{21}/G_2$ + saturation of the cohomological bound by the local residual).
+**Status: [C], honest bracket $10^{-53.5}$–$10^{-93.5}$** ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)). All coefficients are determined by $\theta^*$ (T-79 [C at (SV)]) — no free parameters. The remaining $\gtrsim 27$ orders are an open computational + conceptual task (numerical minimization on $(S^1)^{21}/G_2$ + saturation of the cohomological bound by the local residual).
 
 ---
 

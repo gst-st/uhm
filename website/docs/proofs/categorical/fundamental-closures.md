@@ -17,7 +17,7 @@ This document contains **fourteen foundational theorems** T-210 through T-223 th
 | **T-213** | Yoneda representability via Bures description length | Computable $D_B(f)$ replaces Kolmogorov complexity | [T] |
 | **T-214** | Hard-problem meta-theorem (positive irresolvability) | Lawvere fixed-point + T-55 | [T] |
 | **T-215** | Cross-layer identity convention for fractal towers | Choice of $\iota_\mathrm{min}$ / $\iota_\mathrm{max}$ criterion | [T]+[D] |
-| **T-216** | Closed-form analytical ε<sub>eff</sub> | Symbolic $V_\mathrm{Gap}$ minimisation | [C at T-64] (the structure was listed as [T] until 2026-09-25) |
+| **T-216** | Closed-form analytical ε<sub>eff</sub> | Symbolic $V_\mathrm{Gap}$ minimisation | [C at (SV)] (the structure was listed as [T] until 2026-09-25) |
 | **T-217** | L3 tricategorical coherence | τ<sub>≤3</sub>(Exp<sub>∞</sub>) + Baez–Dolan | [T] |
 | **T-218** | SYNARC Cog is a Kan complex | Milnor + classifying space | [T] |
 | **T-219** | Λ SUSY-suppression via sector product | ε<sup>12</sup> = ε<sup>4·3</sup> from 3-sector decomposition | [H] (was [T at T-64] until 2026-09-25) |
@@ -264,7 +264,7 @@ Hence T-205 as stated is [T] under $\iota_\mathrm{max}$ + resource abstraction; 
 
 ## 7. T-216: Closed-form analytical ε<sub>eff</sub> {#t-216}
 
-::::tip Theorem T-216 (Analytical ε<sub>eff</sub> closed form) [C at T-64]
+::::tip Theorem T-216 (Analytical ε<sub>eff</sub> closed form) [C at (SV)]
 
 The effective sectoral parameter ε<sub>eff</sub> arising in the Yukawa hierarchy admits the closed-form expression
 $$\varepsilon_\mathrm{eff} = \frac{4\,|\bar\gamma|_\mathrm{sect}}{9 \left(1 + \frac{\Sigma_0}{4}\right)}$$
@@ -291,7 +291,7 @@ Numerical evaluation: self-consistent minimisation from scratch (instrument E26,
 $$V_\mathrm{Gap}(\theta) = V_2 + V_3 + V_4, \qquad V_k = \frac{1}{k!}\sum_{i_1, \ldots, i_k} c^{(k)}_{i_1 \cdots i_k} \theta_{i_1} \cdots \theta_{i_k}$$
 where the coefficients $c^{(k)}$ are $G_2$-invariant (Schur's lemma fixes their form up to scalar).
 
-**Step 2 (Sectoral reduction).** By sector decomposition T-48a (retracted [✗] 2026-09-25 as an axis-labelled decomposition: no triple of axes is $\mathrm{SU}(3)$-invariant, so this is a restriction to an axis triple, not a symmetry reduction, and it is justified only by the vacuum structure that the minimisation finds — hence [C at T-64]), restrict to $\bar{\mathbf 3}$-sector: $\theta_{ij}$ with $(i,j) \in \bar{\mathbf 3} \times \bar{\mathbf 3}$. There are $\binom{3}{2} = 3$ such pairs (from $\{L,E,U\}$: pairs $\{LE, LU, EU\}$). No Fano line lies inside the sector, so the counting is done by *incidence with* the sector rather than *containment in* it: $N_{33}^\mathrm{Fano} = 2$ non-$O$ lines meet $\mathbf 3 = \{A,S,D\}$ in exactly two points, namely $\{A,S,L\}$ and $\{S,D,E\}$.
+**Step 2 (Sectoral reduction).** By sector decomposition T-48a (retracted [✗] 2026-09-25 as an axis-labelled decomposition: no triple of axes is $\mathrm{SU}(3)$-invariant, so this is a restriction to an axis triple, not a symmetry reduction, and it is justified only by the vacuum structure that the minimisation finds — hence [C at (SV)]), restrict to $\bar{\mathbf 3}$-sector: $\theta_{ij}$ with $(i,j) \in \bar{\mathbf 3} \times \bar{\mathbf 3}$. There are $\binom{3}{2} = 3$ such pairs (from $\{L,E,U\}$: pairs $\{LE, LU, EU\}$). No Fano line lies inside the sector, so the counting is done by *incidence with* the sector rather than *containment in* it: $N_{33}^\mathrm{Fano} = 2$ non-$O$ lines meet $\mathbf 3 = \{A,S,D\}$ in exactly two points, namely $\{A,S,L\}$ and $\{S,D,E\}$.
 
 **Step 3 (Equation of motion).** Minimizing $V_\mathrm{Gap}$ at fixed $G_2$-orbit: $\partial V_\mathrm{Gap}/\partial \theta_{ij}|_{\theta^*} = 0$ gives, for $(i,j) \in \bar{\mathbf 3}\times\bar{\mathbf 3}$:
 $$c^{(2)}_{ij} \theta^*_{ij} + \sum_{k,l} c^{(3)}_{ij,kl} \theta^*_{kl} + \sum_{k,l,m,n} c^{(4)}_{ij,klmn}\theta^*_{kl}\theta^*_{mn} = 0.$$
@@ -322,7 +322,7 @@ Two defects survive here and neither is cosmetic.
 
 Note also that the two pages use different values for the same symbol: $|\bar\gamma| \approx 0.023$ here (which is the *global* average $\bar\varepsilon$ of Yukawa §9(d)) against $|\bar\gamma| \approx 0.15$ there (the *sectoral* average). Only the numerator form at the sectoral value lands near the target, and the corrected count $N_{33} = 2$ then overshoots it twofold.
 
-**What therefore stands.** ~~The **structural** result is [T]~~ — corrected 2026-09-25: the **structural** result is [C at T-64]. $(\star)$ follows from symbolic $V_\mathrm{Gap}$ minimisation once the minimisation is restricted to one axis triple, and $N_{33}^\mathrm{Fano} = 2$ is a combinatorial fact; but the restriction was justified by the axis-labelled sector decomposition T-48a, which is retracted, and now rests only on the vacuum pattern the minimisation finds (cross-class coherences at machine zero, E26 below), i.e. on T-64. The **numerical** value $\varepsilon_\mathrm{eff} \approx 0.059$ is [C at T-64] and is *phenomenological*: it comes from the independent loop route $\lambda_3\varepsilon/(4\pi) \approx 74\times 0.01/12.6 = 0.0587$, not from $(\star)$. Reconciling $(\star)$ with it requires fixing the $|\bar\gamma|$ placement, settling which average enters, and performing the full minimisation on $(S^1)^{21}/G_2$. Open.
+**What therefore stands.** ~~The **structural** result is [T]~~ — corrected 2026-09-25: the **structural** result is [C at (SV)]. $(\star)$ follows from symbolic $V_\mathrm{Gap}$ minimisation once the minimisation is restricted to one axis triple, and $N_{33}^\mathrm{Fano} = 2$ is a combinatorial fact; but the restriction was justified by the axis-labelled sector decomposition T-48a, which is retracted, and now rests only on the vacuum pattern the minimisation finds (cross-class coherences at machine zero, E26 below), i.e. on T-64. The **numerical** value $\varepsilon_\mathrm{eff} \approx 0.059$ is [C at (SV)] and is *phenomenological*: it comes from the independent loop route $\lambda_3\varepsilon/(4\pi) \approx 74\times 0.01/12.6 = 0.0587$, not from $(\star)$. Reconciling $(\star)$ with it requires fixing the $|\bar\gamma|$ placement, settling which average enters, and performing the full minimisation on $(S^1)^{21}/G_2$. Open.
 
 **Resolved 2026-08-10 (instrument E26: self-consistent minimisation, no fitted parameters).** All three questions closed by computation:
 | question | verdict | the losing readings |
@@ -335,9 +335,9 @@ Plus two findings the audit had not asked for: $r_4 = 1/2$ is an **identity** of
 
 **Inputs used above** (from T-64 numerical minimization; reading fixed by E26): $V_4/V_2 = 1/2$ — an identity of 13.5; $\Sigma_0 = \sum|\gamma^*|^2 \approx 0.3$ (the amplitude sum; the E26 vacuum gives $0.1035$); sectoral $|\bar\gamma| \approx 0.15$ (E26: $0.1314$), global $\bar\varepsilon \approx 0.023$.
 
-**Upgrade**: T-176 now has an **explicit algebraic expression** rather than a "claimed analytical" form. Numerical values remain [C at T-64] because they depend on full vacuum minimization — a computational task, not a theoretical lacuna.
+**Upgrade**: T-176 now has an **explicit algebraic expression** rather than a "claimed analytical" form. Numerical values remain [C at (SV)] because they depend on full vacuum minimization — a computational task, not a theoretical lacuna.
 
-**Dependencies**: T-43d [T] (Fano selection rule), T-48a (sector decomposition; retracted [✗] 2026-09-25 — Step 2 now rests on the T-64 vacuum), T-64 [T] (unique vacuum), T-74 [T] (V_Gap from spectral action), T-176 [C at T-64] (analytical form).
+**Dependencies**: T-43d [T] (Fano selection rule), T-48a (sector decomposition; retracted [✗] 2026-09-25 — Step 2 now rests on the T-64 vacuum), T-64 [H] (restated; sector values: hypothesis (SV)) (unique vacuum), T-74 [T] (V_Gap from spectral action), T-176 [C at (SV)] (analytical form).
 
 ---
 
@@ -375,10 +375,10 @@ where $\theta^*$ is the global minimum.
 ### 8.5. Output validation
 
 - Must reproduce known perturbative suppression (10^{−41.5}) at tree level.
-- Must give unique minimum (verified by Hessian positivity — T-64 [T]).
+- Must give unique minimum (verified by Hessian positivity — T-64 [H] (restated; sector values: hypothesis (SV))).
 - Numerical $\Lambda$ must agree with observed $\sim 10^{-120}$ within ±5 orders (stricter than current ±10).
 
-**Status**: [C at T-64] → **numerical programme fully specified**. Total resource cost < $10^5$ USD on cloud HPC. No theoretical obstacle remains.
+**Status**: [C at (SV)] → **numerical programme fully specified**. Total resource cost < $10^5$ USD on cloud HPC. No theoretical obstacle remains.
 
 ---
 
@@ -447,7 +447,7 @@ Predicted thresholds:
 | T-213 | Yoneda without Kolmogorov | [T] uncomputable (T-193) | **[T] computable** | Bures description length |
 | T-214 | Hard-problem meta-theorem | [I] residual | **[T] positive irresolvability** | Lawvere fixed-point |
 | T-215 | Cross-layer identity | [C] (T-205 downgraded) | **[T]+[D]** | Conventional choice theorem |
-| T-216 | Analytical ε<sub>eff</sub> | [H] no formula | **[C at T-64]** (listed [T at T-64] until 2026-09-25) | Closed-form symbolic |
+| T-216 | Analytical ε<sub>eff</sub> | [H] no formula | **[C at (SV)]** (listed [T at T-64] until 2026-09-25) | Closed-form symbolic |
 | §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
 | §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete, awaiting data** | EEG/fMRI/HRV 7-feature map |
 
@@ -564,7 +564,7 @@ Hence SYNARC's 3-coskeletal bound is now rigorously verified: Cog is a Kan compl
 :::tip Theorem T-219 (SUSY Λ-suppression, sector derivation) [H]
 In UHM's N=1 supersymmetric spectral action on $M^4 \times A_{\mathrm{int}}$ (T-65 [T]), the residual cosmological constant from SUSY-broken loops is suppressed by the factor
 $$\Lambda_\mathrm{SUSY} \;\sim\; \varepsilon^{12} \, M_P^4$$
-where $\varepsilon \sim 10^{-3}$ is the sector hierarchy parameter (T-64 [T]) and the exponent $12 = 4 \cdot k_{\mathrm{sec}}$ arises from:
+where $\varepsilon \sim 10^{-3}$ is the sector hierarchy parameter (T-64 [H] (restated; sector values: hypothesis (SV))) and the exponent $12 = 4 \cdot k_{\mathrm{sec}}$ arises from:
 - $k_{\mathrm{sec}} = 3$ sectors — ~~in the UHM decomposition $7 = \mathbf 1_O \oplus \mathbf 3_{A,S,D} \oplus \bar{\mathbf 3}_{L,E,U}$ (T-48a [T])~~ the axis-labelled decomposition is retracted (T-48a, 2026-09-25); the count 3 survives only for the complexified $\mathbb C^7 = \mathbb C e_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$, $\mathbf 3 = \mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$;
 - Factor $4$ from the dimensional count of SUSY-breaking mass-squared splittings per sector in the one-loop correction $\delta\Lambda \sim (\delta m)^4 / M_P^4$ per sector.
 
@@ -601,7 +601,7 @@ The specific **three-loop product** structure $\varepsilon^{4\cdot 3} = \varepsi
 
 **Status of sub-components**:
 - ~~The exponent $12 = 4 \cdot 3$ is **[T]** (structural, from sector count).~~ Retracted 2026-09-25: the exponent is a hypothesis [H] (status above).
-- The numerical value of $\varepsilon$: allowed range $[10^{-3}, 10^{-1}]$ [T-bounds], self-consistent central $\varepsilon \sim 10^{-2}$ [C under C12, T-64] — hence $\varepsilon^{12} \approx 10^{-24}$ central, with $10^{-36}$ only at the extreme lower edge. Quoting the edge value as the central one would manufacture $\sim\!10^{-120}$ by parameter choice; we do not.
+- The numerical value of $\varepsilon$: allowed range $[10^{-3}, 10^{-1}]$ [T-bounds], self-consistent central $\varepsilon \sim 10^{-2}$ [C at (SV)] — hence $\varepsilon^{12} \approx 10^{-24}$ central, with $10^{-36}$ only at the extreme lower edge. Quoting the edge value as the central one would manufacture $\sim\!10^{-120}$ by parameter choice; we do not.
 - The cohomological statement gives only the absence of a *topological* $\Lambda$-term **[T]**; the reading "$\Lambda_{\mathrm{global}} = 0$" was **retracted 2026-09-10** (degree-0 data are untouched by $H^{n>0} = 0$), so class B carries no exact zero.
 
 **Resulting composition** (per the [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)):
@@ -612,7 +612,7 @@ The specific **three-loop product** structure $\varepsilon^{4\cdot 3} = \varepsi
 
 **Honest bracket: $\Lambda \sim 10^{-53.5}$ to $10^{-93.5}$** depending on how much of the sector programme is realised; closing the remaining $\gtrsim 27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task. $\blacksquare$
 
-**Dependencies**: T-48a (sector decomposition; retracted [✗] 2026-09-25), T-50 [T] (unique superpotential, Schur), T-52 (sector asymmetry; retired as a theorem 2026-09-25, now the hypothesis (SA)), T-64 [T] (unique vacuum), T-65 [T] (spectral action), T-71 [T] (cohomological $\Lambda_\mathrm{global}=0$). Standard mathematics: Martin 2010 SUSY primer, Seeley–de Witt heat kernel expansion, standard N=1 one-loop calculation.
+**Dependencies**: T-48a (sector decomposition; retracted [✗] 2026-09-25), T-50 [T] (unique superpotential, Schur), T-52 (sector asymmetry; retired as a theorem 2026-09-25, now the hypothesis (SA)), T-64 [H] (restated; sector values: hypothesis (SV)) (unique vacuum), T-65 [T] (spectral action), T-71 [T] (cohomological $\Lambda_\mathrm{global}=0$). Standard mathematics: Martin 2010 SUSY primer, Seeley–de Witt heat kernel expansion, standard N=1 one-loop calculation.
 
 ---
 
@@ -1139,7 +1139,7 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 | T-213 | Yoneda computable | [T] uncomputable | **[T] computable** | Bures description |
 | T-214 | Hard-problem meta-theorem | [I] residual | **[T] positive** | Lawvere |
 | T-215 | Cross-layer identity | [C] | **[T]+[D]** | Conventional choice |
-| T-216 | Analytical ε<sub>eff</sub> | [H] no formula | **[C at T-64]** (listed [T at T-64] until 2026-09-25) | Closed form |
+| T-216 | Analytical ε<sub>eff</sub> | [H] no formula | **[C at (SV)]** (listed [T at T-64] until 2026-09-25) | Closed form |
 | **T-217** | **L3 tricategory coherence** | **[H] K=4 heuristic** | **[T]** | **∞-truncation + Baez–Dolan** |
 | **T-218** | **SYNARC Cog Kan complex** | **[H] horn-fillers asserted** | **[T]** | **Milnor + classifying space** |
 | **T-219** | **SUSY Λ-suppression** | **[H] invalid 7+7** | **[H]** (listed [T at T-64] until 2026-09-25) | **Sector product $\varepsilon^{12}$** |

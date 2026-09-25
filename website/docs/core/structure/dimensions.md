@@ -122,9 +122,19 @@ To bring the dimensions closer, imagine a person walking through a forest:
 Remove any element — and the walk becomes impossible. Without eyes you cannot discern the path. Without a skeleton — you cannot hold your form. Without legs — you cannot move. Without logic — you walk into a ditch. Without senses — you miss the beauty. Without support — you fall. Without "I" — there is no one walking.
 :::
 
-### Combinatorial uniqueness of semantic roles (T-177) [T] {#комбинаторная-единственность}
+### Combinatorial fixing of semantic roles (T-177) — restated [T] {#комбинаторная-единственность}
 
-:::tip Theorem T-177 [T]+[C at combinatorial-constraint set]: Combinatorial uniqueness of semantic roles
+:::danger Corrected 2026-09-25 (audit A-90): without axis sectors the incidences fix the roles only from three marks
+The earlier fingerprints (below) use the sector of each axis ($\mathbf 3$ or $\bar{\mathbf 3}$) from T-48a, which is retracted: no axis lies in the $\mathbf 3$ or the $\bar{\mathbf 3}$ (0 of 20 axis triples is $SU(3)$-invariant). Repairs tried: (i) the correct complex triplets carry no axis labels; (ii) the octonion signs and the complex structure $J = L_{e_O}$ (which orients the pairs $A \to D$, $S \to U$, $L \to E$) do not reduce the symmetry — the elements of $\Gamma_{\mathrm{oct}}$ that fix $+e_O$ realise the same 24 permutations as the collineations fixing $O$; (iii) marking the Higgs line $\{A,E,U\}$ with $O$ leaves 6 collineations, orbits $\{O\}$, $\{A,E,U\}$, $\{S,D,L\}$. What survives is the exact count below, which replaces the uniqueness claim.
+:::
+
+:::tip Theorem T-177 (restated) [T]: three non-collinear marks fix all seven roles
+The collineation group of the Fano plane (order 168) acts regularly on the 168 ordered non-collinear triples of axes. Hence the incidence structure fixes all seven roles exactly when three non-collinear axes are marked, and never with fewer: the stabiliser of $O$ has order 24, of $O$ and one more axis 4, of a third axis off their line 1. With $O$ and the Higgs line marked, 6 collineations remain; with $O$ and the $\kappa_0$ pair $\{E,U\}$ (T-42a) marked, 2 remain, with orbits $\{O\}$, $\{A\}$, $\{D\}$, $\{E,U\}$, $\{S,L\}$: $A$ is the third point of the line through $E$ and $U$, and $D$ the third point of the line through $O$ and $A$, while $E \leftrightarrow U$ (with $L \leftrightarrow S$) is one binary choice.
+
+*Proof.* The points of $\mathrm{PG}(2,2)$ are the nonzero vectors of $\mathbb F_2^3$, an ordered non-collinear triple is an ordered basis, and $GL(3,2)$ (order 168) acts simply transitively on ordered bases. Checked exhaustively over all 5040 permutations (`test_fano_roles_are_fixed_by_three_non_collinear_marks`). $\blacksquare$
+:::
+
+:::note Earlier statement (T-177, retracted [✗]): Combinatorial uniqueness of semantic roles
 After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a — retracted [✗] 2026-09-25 as an axis-labelled decomposition; the uniqueness below rests on it and is to be re-derived, see T-177 in the status registry), each of the 7 dimensions has a **unique combinatorial profile** — a set of Fano lines and sector connections not isomorphic to the profile of any other dimension.
 
 **Stratification:** The distinguishability of the 7 fingerprints is **[T]** as a combinatorial fact on the Fano plane PG(2,2) once **the combinatorial constraint set** is fixed (sector decomposition T-48a + Higgs line $\{A,E,U\}$). The choice of that constraint set itself is **[C at combinatorial-constraint set]**: T-48a and the Higgs line come from upstream axiomatic structure (A3, electroweak fit), not from T-177 in isolation. Conditional on those inputs, the fingerprint table is exact.
@@ -154,8 +164,10 @@ After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\ma
 
 All 7 fingerprints are pairwise distinct. $\blacksquare$
 
-:::info Theorem T-183 [T]+[C at combinatorial-uniqueness chain]: Uniqueness of functional assignment for all 7 roles
-All 7 semantic roles $\{A,S,D,L,E,O,U\}$ are **uniquely** determined by the combinatorial structure (T-177 [T]), the functional requirements of the evolution equation $\mathcal{L}_\Omega$, and axioms (AP)+(PH)+(QG)+(V):
+:::info Theorem T-183 — restated [T]+[D] (2026-09-25): Functional assignment of the 7 roles
+*Restated.* Given $O$ (the clock and ground) and the $\kappa_0$ pair $\{E,U\}$ (T-42a), incidence fixes $A$ (third point of the line through $E$, $U$) and $D$ (third point of the line through $O$, $A$) **[T]** (T-177 restated); what remains is one binary choice, $E \leftrightarrow U$ together with $L \leftrightarrow S$, which is a convention **[D]**. *Retracted [✗]:* the earlier derivation below — steps 1–3, the sector condition of step 4 ($X \in \bar{\mathbf 3}$) and the "sector covariance" of step 6 use axis sectors that do not exist, and step 4 broke the $E \leftrightarrow U$ choice with $L$, whose own identification rested on those sectors. Earlier text:*
+
+All 7 semantic roles $\{A,S,D,L,E,O,U\}$ are **uniquely** determined by the combinatorial structure (T-177, retracted), the functional requirements of the evolution equation $\mathcal{L}_\Omega$, and axioms (AP)+(PH)+(QG)+(V):
 
 **Stratification:** Given the combinatorial-uniqueness chain of upstream inputs — sector decomposition T-48a, the Higgs line $\{A,E,U\}$, $L$-mediation of the regeneration formula, and sector-covariance of unitary evolution — each step (4)–(7) of the proof is **[T]**. The result is thus **[C at combinatorial-uniqueness chain]**: strip any single link (e.g. change the Higgs line, or allow $S$-mediated regeneration), and the uniqueness argument no longer runs. The chain itself is justified upstream in T-48a + axioms; T-183 is not independently axiom-free.
 
@@ -193,7 +205,7 @@ The evolution operator $e^{-iH_{\mathrm{eff}}\tau}$ is generated from the O-sect
 :::
 
 :::info Epistemic status of semantic labelling [D]+[T]
-The mathematical structure of axioms A1–A5 requires exactly 7 dimensions (Theorem S [T]). The **functional assignment** of all 7 roles to specific dimensions is now **uniquely determined [T]** (T-183): each role is the unique element satisfying its combinatorial and dynamical constraints (sector membership, Fano-line incidence, $L$-mediation for $E$, sector covariance for $D$). The **semantic names** (A=Articulation, S=Structure, etc.) remain a **definition by convention [D]** — they are human-language labels for mathematically distinguished objects. Analogy: the assignment of quarks to specific charge values ($+2/3$ vs $-1/3$) is [T], but the names "up" and "down" are [D].
+The mathematical structure of axioms A1–A5 requires exactly 7 dimensions (Theorem S [T]). The **functional assignment** of all 7 roles was claimed to be uniquely determined through sector membership (T-183); that derivation is retracted [✗] on 2026-09-25 with T-48a. Restated (T-177, T-183): given $O$ and the $\kappa_0$ pair $\{E,U\}$, incidence fixes $A$ and $D$ [T], and one binary convention [D] fixes $E$ versus $U$ (with $L$ versus $S$). The **semantic names** (A=Articulation, S=Structure, etc.) remain a **definition by convention [D]** — they are human-language labels for mathematically distinguished objects. Analogy: the assignment of quarks to specific charge values ($+2/3$ vs $-1/3$) is [T], but the names "up" and "down" are [D].
 :::
 
 :::info Functional basis with operator roles
@@ -201,17 +213,17 @@ Each dimension is defined by **an operator and its role in the axioms**:
 
 | Dimension | Operator | Axiomatic role | Necessity | Combinatorial status (T-177) |
 |-----------|----------|---------------------|---------------|------------------------------|
-| $e_1$ (A) | Projector $P^2 = P$ | Discrimination of subobjects | (AP) | **[T]** — unique element of **3** on the Higgs line |
-| $e_2$ (S) | $H = H^\dagger$ | Spectrum of invariants | (AP) | **[T]** — by exclusion (T-183, step 7) |
-| $e_3$ (D) | $U(\tau) = e^{-iH\tau}$ | Unitary evolution | (QG) | **[T]** — unique element of $\{S,D\}$ on $\{O,A,\cdot\}$ (T-183, step 6) |
-| $e_4$ (L) | $[\cdot, \cdot]$ | Algebra closure | (AP) | **[T]** — unique element of $\bar{\mathbf{3}}$ outside Higgs |
-| $e_5$ (E) | $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | Phenomenology | (PH) | **[T]** — unique $L$-mediated element of $\bar{\mathbf{3}} \cap \mathrm{Higgs}$ (T-183, step 4) |
-| $e_6$ (U) | $\mathrm{Tr}(\cdot)$ | Normalisation | (AP) | **[T]** — by exclusion (T-183, step 5) |
-| $e_7$ (O) | $H_O$, $\vert 0\rangle$ | Clock + source | (QG) | **[T]** — unique singlet |
+| $e_1$ (A) | Projector $P^2 = P$ | Discrimination of subobjects | (AP) | **[T]** — third point of the line through $E$, $U$ (T-177 restated) |
+| $e_2$ (S) | $H = H^\dagger$ | Spectrum of invariants | (AP) | **[D]** — labelling (T-183 retracted [✗]) |
+| $e_3$ (D) | $U(\tau) = e^{-iH\tau}$ | Unitary evolution | (QG) | **[T]** — third point of the line through $O$, $A$ (T-177 restated) |
+| $e_4$ (L) | $[\cdot, \cdot]$ | Algebra closure | (AP) | **[D]** — labelling (T-177 retracted [✗]) |
+| $e_5$ (E) | $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | Phenomenology | (PH) | **[D]** — labelling (T-183 retracted [✗]) |
+| $e_6$ (U) | $\mathrm{Tr}(\cdot)$ | Normalisation | (AP) | **[D]** — labelling (T-183 retracted [✗]) |
+| $e_7$ (O) | $H_O$, $\vert 0\rangle$ | Clock + source | (QG) | **[T]** — the vector fixed by $SU(3)_C = \mathrm{Stab}(e_O)$ |
 
-The semantic names are **not arbitrary mnemonics**, but a reflection of combinatorially unique functional profiles (T-177 [T]). Analogy: just as "up" and "down" quarks are not random words (they differ by charge $+2/3$ vs $-1/3$), the names themselves are a convention for mathematically distinguishable objects.
+The semantic names were presented as a reflection of combinatorially unique functional profiles (T-177); in the restated form (2026-09-25) incidence fixes $O$, $A$, $D$ and the pairs $\{E,U\}$, $\{L,S\}$, and one binary convention [D] does the rest. Analogy: just as "up" and "down" quarks are not random words (they differ by charge $+2/3$ vs $-1/3$), the names themselves are a convention for mathematically distinguishable objects.
 
-**Mathematical uniqueness:** [The basis uniqueness theorem](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) proves the functional decomposition is unique (up to isomorphism) for all 7 dimensions [T]. The stronger result **T-183** establishes uniqueness of the functional assignment for **all** 7 roles via a uniform method: sector decomposition (T-48a) + Fano-line incidence + dynamical constraints ($L$-mediation for $E$, sector covariance for $D$, exclusion for $S$ and $U$).
+**Mathematical uniqueness:** [The basis uniqueness theorem](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) proves the functional decomposition is unique (up to isomorphism) for all 7 dimensions [T]. The stronger result **T-183** claimed uniqueness of the functional assignment for **all** 7 roles via sector decomposition (T-48a) + Fano-line incidence + dynamical constraints; that derivation is retracted [✗] on 2026-09-25 with T-48a; its restated form fixes $O$, $A$, $D$ by incidence and leaves one binary convention.
 :::
 
 :::info Emergent time

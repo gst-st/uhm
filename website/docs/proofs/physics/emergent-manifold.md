@@ -464,7 +464,7 @@ Until 2026-09-25 the heading read [T]; registry row T-120b records [C]: the impl
 
 **Proof.**
 
-1. **Vacuum symmetry.** The Gap vacuum configuration is invariant under $\mathrm{SU}(3) \subset G_2$ — the stabilizer of the O-direction in $G_2$ (sector decomposition [T], vacuum uniqueness T-64 [T]).
+1. **Vacuum symmetry.** The Gap vacuum configuration is invariant under $\mathrm{SU}(3) \subset G_2$ — the stabilizer of the O-direction in $G_2$ (sector decomposition [T], vacuum uniqueness T-64 [H] (restated; sector values: hypothesis (SV))).
 
 2. **Transitivity.** $\mathrm{SU}(3)$ acts transitively on the unit sphere $S^5 \subset \mathbb{C}^3$ (fundamental representation of the $\mathbf{3}$-sector) with isotropy $\mathrm{SU}(2)$, so $\mathrm{SU}(3)/\mathrm{SU}(2)\cong S^5$. The vacuum $3$-manifold $\Sigma^3$ is the fixed-radius orbit of the residual $\mathrm{SO}(4)\subset\mathrm{SU}(3)\ltimes(\text{phases})$ acting on the spatial section; its induced metric inherits an isometry group of dimension $\dim(\mathrm{Isom}(\Sigma^3)) \geq 6$. (The $\mathrm{SU}(3)$ orbit is $S^5$, not $S^2$; the $3$-manifold arises from the constant-curvature homogeneous structure, not directly as the $\mathrm{SU}(3)$-orbit.)
 

@@ -457,7 +457,7 @@ The formula $\|\delta\Gamma\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alph
 an **exact parametric bound** [T].
 
 Substituting $\|H_{\mathrm{eff}}\|_{\mathrm{op}} = O(\bar{\varepsilon})$ with $\bar{\varepsilon} \approx 0.023$
-(from [T-61 [T]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) for the isolated vacuum) gives estimate $O(0.03)$.
+(from [T-61 [H]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (restated; sector values: hypothesis (SV)) for the isolated vacuum) gives estimate $O(0.03)$.
 
 For an **embodied** holon: backbone injection, hedonic drive and learning gradient
 create an effective Hamiltonian $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|_{\mathrm{op}} \gg \bar{\varepsilon}$.
@@ -471,7 +471,7 @@ systems, the actual value of $\|H_{\mathrm{eff}}\|$ should be used, not
 the vacuum estimate $\bar{\varepsilon}$.
 :::
 
-**Dependencies:** [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) (purity balance), [T-61 [T]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (unique vacuum).
+**Dependencies:** [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) (purity balance). The numerical estimate in the box above — not the bound — takes $\bar\varepsilon$ from the sector values of the hypothesis (SV) via [T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (restated 2026-09-25).
 
 ---
 

@@ -676,7 +676,7 @@ Dimension L ($e_4$ in the octonionic correspondence) belongs to three [Fano line
 :::info Combinatorial profile of L
 Of the seven dimensions, L is the **only** element of the $\bar{\mathbf{3}}$-sector that does **not** lie on the Higgs line $\{E, U, A\}$. This gives L a unique role: while E and U are connected to the "interiority" and "unifying" aspects through the Higgs channel, L stands "apart", providing an **independent** consistency check. It is like a referee who is not a participant in the game.
 
-By [theorem T-177](/docs/core/structure/dimensions#комбинаторная-единственность) the semantic role of L is combinatorially unique [T].
+[Theorem T-177](/docs/core/structure/dimensions#комбинаторная-единственность) claimed the semantic role of L combinatorially unique; the claim is retracted [✗] (2026-09-25) with T-48a — restated (T-177), incidence fixes $L$ only together with the binary convention that fixes $E$ versus $U$ ($L$ is the third point of the line through $O$ and $E$).
 :::
 
 ### What the Fano lines say about logic {#фано-линии-логика}
@@ -694,7 +694,7 @@ Note that L shares Fano line $\{D, L, U\}$ with [dimension D (Dynamics)](./dimen
 ### Octonionic context {#октонионный-контекст}
 
 :::note Octonionic correspondence [T]
-The dimension corresponds to $e_4 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $L = e_4$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+The dimension corresponds to $e_4 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); the combinatorial and functional uniqueness of each role claimed by [T-177](/docs/reference/status-registry) and [T-183](/docs/reference/status-registry) is retracted [✗] (2026-09-25): it rested on the axis sectors of T-48a. Restated (T-177, T-183): given $O$ and the $\kappa_0$ pair $\{E,U\}$, incidence fixes $A$ and $D$ [T], and one binary convention [D] fixes $E$ versus $U$ together with $L$ versus $S$. The specific assignment $L = e_4$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ## Key conclusions of the chapter {#ключевые-выводы}

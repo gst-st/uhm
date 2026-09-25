@@ -66,9 +66,9 @@ $$
 $$
 
 under the following conditions:
-**(A)** Stationarity of $V_{\text{Gap}}$ at the global minimum (T-64 [T]);
+**(A)** Stationarity of $V_{\text{Gap}}$ at the global minimum (T-64 [H] (restated; sector values: hypothesis (SV)));
 **(B)** Wilson-Fisher fixed point for $\lambda_4$ (standard RG-analysis result);
-**(C)** Positive-definite Hessian at minimum (T-64 [T]);
+**(C)** Positive-definite Hessian at minimum (T-64 [H] (restated; sector values: hypothesis (SV)));
 **(D)** Quantum fluctuation lower bound $\varepsilon_{\min} \sim \omega_0 / \omega_{\text{Planck}}$.
 
 **Proof.**
@@ -81,7 +81,7 @@ $$
 |\gamma_{ij}| = \varepsilon \leq \frac{1}{7} \approx 0.143.
 $$
 
-For a positive-definite Hessian of $V_{\text{Gap}}$ at the minimum (T-64 [T]), the absence of strong quartic saturation is required. Standard perturbative stability analysis: $\varepsilon \cdot \lambda_3 \ll \mu^2$, giving:
+For a positive-definite Hessian of $V_{\text{Gap}}$ at the minimum (T-64 [H] (restated; sector values: hypothesis (SV))), the absence of strong quartic saturation is required. Standard perturbative stability analysis: $\varepsilon \cdot \lambda_3 \ll \mu^2$, giving:
 
 $$
 \varepsilon \ll \frac{\mu^2}{\lambda_3^{\text{(UV)}}} \approx \frac{\mu^2}{1} \sim 10^{1.2} \quad \text{(trivial UV bound)}.
@@ -177,8 +177,8 @@ $$
 \Lambda_{\text{Gap}} \propto \varepsilon^6 \cdot M_{\text{Pl}}^4 \sim 10^{-12} \cdot M_{\text{Pl}}^4
 $$
 
-:::warning Status of parameter $\varepsilon$ [С given C12, T-64]
-The order of magnitude $\varepsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12 [T] + T-64 [T]): $\bar{\varepsilon} \approx 0.023$. Changing $\varepsilon$ by one order alters the budget by 12 orders. Taking $\varepsilon = 10^{-2}$, the computation is correct [T].
+:::warning Status of parameter $\varepsilon$ [C at (SV)]
+The order of magnitude $\varepsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12, T-61 restated + T-64 [H] (restated; sector values: hypothesis (SV))): $\bar{\varepsilon} \approx 0.023$. Changing $\varepsilon$ by one order alters the budget by 12 orders. Taking $\varepsilon = 10^{-2}$, the computation is correct [T].
 
 However, it has been shown that the homogeneous vacuum is **not** an exact solution ([Theorem on the self-consistent vacuum equation](/docs/core/dynamics/gap-thermodynamics#теорема-самосогласованное-вакуумное-уравнение) [C]): the vacuum has a **sector structure** with different $\varepsilon$ in different sectors. The mean value $\bar{\varepsilon} \approx 0.023 \sim 10^{-1.6}$ follows from the sector hierarchy $\varepsilon$ ([Theorem 14.2](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε) [C]), which is consistent in order with the adopted $\varepsilon = 10^{-2}$ and justifies the $\varepsilon^6$ factor in mechanism 1.
 :::
@@ -596,7 +596,7 @@ SUSY component **[T]** (spectral action, [details](/docs/physics/gravity/quantum
 
 #### Structural closure of the Λ-budget [Т-structural] {#структурное-замыкание-лямбда}
 
-The entire chain is closed: every coefficient is determined via $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) **[T]**), $\theta^*$ being a consequence of T-53 and T-66. The uncertainty of $\pm 10$ orders is an artifact of analytic estimates; the exact value is a computational problem on $(S^1)^{21}/G_2$.
+The entire chain is closed: every coefficient is determined via $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) **[C at (SV)]**), $\theta^*$ being a consequence of T-53 and T-66. The uncertainty of $\pm 10$ orders is an artifact of analytic estimates; the exact value is a computational problem on $(S^1)^{21}/G_2$.
 
 Full chain for determining $\Lambda_{\text{CC}}$:
 
@@ -604,10 +604,10 @@ Full chain for determining $\Lambda_{\text{CC}}$:
 2. **$\Lambda > 0$ from autopoiesis** ([T-71](/docs/core/foundations/consequences#теорема-лямбда-положительна) [T]): sign determined structurally
 3. **O-sector dominance** ([](/docs/physics/gravity/cosmological-constant#теорема-лямбда-o-доминирование) [T]): $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$
 4. **Spectral formula** ([](#теорема-спектральная-лямбда) [T]): $\Lambda_{\text{CC}}$ via $\mathrm{Tr}(D_{\text{int}}^n)$
-5. **Canonical $f_0$** ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) [T]): parameter determined from UV finiteness
+5. **Canonical $f_0$** ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) [C at (SV)]): parameter determined from UV finiteness
 6. **SUSY compensation** [T]: $\varepsilon^{12}$ from spectral action
 
-No coefficient contains free parameters — all are determined via the fixed point $\theta^*$ of the self-consistent map $\mathcal{F}$ (T-79 [T]). Status C18: **structural formula [T]**, numerical precision — computational problem.
+No coefficient contains free parameters — all are determined via the fixed point $\theta^*$ of the self-consistent map $\mathcal{F}$ (T-79 [C at (SV)]). Status C18: **structural formula [T]**, numerical precision — computational problem.
 
 ---
 
@@ -622,7 +622,7 @@ No coefficient contains free parameters — all are determined via the fixed poi
 | Fano code (6 linear constraints) | $10^{-0.9}$ | **[T]** |
 | $\sqrt{N_F}$ (uncorrelated Fano modes) | $10^{-11.9}$ | **[T]** |
 | O-sector isolation $(6/21)^3$ | $10^{-1.7}$ | **[T]** |
-| **Perturbative total** | **$10^{-41.5}$** | **[C]** (at $\varepsilon = 10^{-2}$ [С given C12, T-64]) |
+| **Perturbative total** | **$10^{-41.5}$** | **[C]** (at $\varepsilon = 10^{-2}$ [C at (SV)]) |
 | **Cohomological + SUSY + spectral** | | |
 | Cohomological argument | no *topological* $\Lambda$-term; **no** cancellation of the vacuum energy (retracted 2026-09-10) | **[T]** narrow / **[✗]** wide |
 | $Z_\Phi(-2) = 0$ (winding) | winding cancellation | **[T]** |
@@ -650,7 +650,7 @@ Correct perturbative budget: **$10^{-41.5}$**. Taking into account the spectral 
 
 ## 6. Closure Program {#программа}
 
-Structural closure has been achieved: the [spectral formula](#теорема-спектральная-лямбда) [T] establishes SUSY compensation to $\varepsilon^{12}$ rigorously, [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] refines the sector contribution. All coefficients are determined via the fixed point $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) [T]). Estimated budget $\sim 10^{-120 \pm 10}$ [C]. The remaining gap is a **computational** problem, not a conceptual one: exact computation of the sector factor requires numerical minimization on $(S^1)^{21}$ with $G_2$-symmetry.
+Structural closure has been achieved: the [spectral formula](#теорема-спектральная-лямбда) [T] establishes SUSY compensation to $\varepsilon^{12}$ rigorously, [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] refines the sector contribution. All coefficients are determined via the fixed point $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) [C at (SV)]). Estimated budget $\sim 10^{-120 \pm 10}$ [C]. The remaining gap is a **computational** problem, not a conceptual one: exact computation of the sector factor requires numerical minimization on $(S^1)^{21}$ with $G_2$-symmetry.
 
 :::info Closure program [Pr]
 To close the 79-order deficit, the following directions are considered:
@@ -691,7 +691,7 @@ To close the 79-order deficit, the following directions are considered:
 | Notation | Meaning | Examples in this document |
 |-------------|----------|---------------------------|
 | **[T]** | Theorem — rigorously proven | Each of the 6 mechanisms at fixed $\varepsilon$, instanton additive, $Z_\Phi(-k)=0$, spectral formula $\Lambda_{\text{CC}}$, SUSY-breaking $\varepsilon^{12}$ |
-| **[С given C12, T-64]** | Conditional — order of magnitude structurally motivated | $\varepsilon = 10^{-2}$ (sector hierarchy $\bar{\varepsilon} \approx 0.023$) |
+| **[C at (SV)]** | Conditional — order of magnitude structurally motivated | $\varepsilon = 10^{-2}$ (sector hierarchy $\bar{\varepsilon} \approx 0.023$) |
 | **[Г*]** | High-level hypothesis | Physical interpretation of $Z'_\Phi(-2)$ |
 | **[D]** | Refuted | Gaussian sum ($\leq 9$ orders), modular hypothesis ($\leq 15$ orders) |
 | **[Pr]** | Program — research direction | 8 directions to close the deficit |

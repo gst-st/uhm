@@ -168,7 +168,7 @@ Generations $k=2$ (S) and $k=4$ (L) have $y^{(\text{tree})} = 0$. Their masses a
 
 :::warning Statuses of $V_3$-mixing
 - One-loop Yukawa: $y_n^{(1)} \sim (\lambda_3/16\pi^2) \cdot y_t \cdot |\gamma_{3\bar{3}}|^2$ — **[T]** (Fano vertex counting)
-- Scaling law $m_c/m_t \sim |\gamma_{3\bar{3}}|^2 \sim \varepsilon_{\text{eff}}^2$ — **[C at T-64]** (depends on vacuum parameters)
+- Scaling law $m_c/m_t \sim |\gamma_{3\bar{3}}|^2 \sim \varepsilon_{\text{eff}}^2$ — **[C at (SV)]** (depends on vacuum parameters)
 - Exact mass ratio (numerical coefficient) — **[H]** (requires non-perturbative computation)
 :::
 
@@ -380,7 +380,7 @@ The Yukawa texture is determined by the **sectors coupling generations to the Hi
 #### Status of Parameter $\lambda_3$ {#предупреждение-λ3}
 
 :::note Status of parameter $\lambda_3$ [T]
-The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [T]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness for any value of $\lambda_3$. The loop estimates in this section are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$).
+The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [C at (SV)]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness for any value of $\lambda_3$. The loop estimates in this section are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$).
 :::
 
 #### Non-Perturbative Regime (C7) {#c7-nonperturbative}
@@ -519,7 +519,7 @@ The ratio $m_b/m_\tau \approx 4.2/1.78 \approx 2.4$ — a prediction of SU(5)-GU
 #### Theorem (Sectoral RG for $m_b/m_t$) [T] {#теорема-mb-mt}
 
 :::tip [T] Theorem
-The mechanism for generating $m_b/m_t$ is fully determined **[T]**: the $\times 4$ discrepancy is an artifact of using the average $\varepsilon$ instead of the sectoral $\varepsilon_{33}^*(\theta^*)$. With the sectoral correction $r_{33} \approx 0.25$: $y_b \approx 0.024$ — exact agreement. The precision numerical prediction is a computational task in $\theta^*$ (T-79 [T]).
+The mechanism for generating $m_b/m_t$ is fully determined **[T]**: the $\times 4$ discrepancy is an artifact of using the average $\varepsilon$ instead of the sectoral $\varepsilon_{33}^*(\theta^*)$. With the sectoral correction $r_{33} \approx 0.25$: $y_b \approx 0.024$ — exact agreement. The precision numerical prediction is a computational task in $\theta^*$ (T-79 [C at (SV)]).
 :::
 
 **Theorem.**
@@ -559,7 +559,7 @@ $$\frac{m_b}{m_t} = \frac{y_b(m_b)}{y_t(m_t)} \approx \frac{0.097}{1.0} \approx 
 Observed: $m_b/m_t \approx 4.18/172.7 \approx 0.024$. Residual discrepancy $\sim \times 4$ when using the average $\varepsilon$.
 
 :::tip Resolution of the $\times 4$ discrepancy — [T]
-The $\times 4$ discrepancy in $m_b/m_t$ is an **artifact** of using the average $\varepsilon$ instead of the sectoral $\varepsilon_{33}^*(\theta^*)$. In the self-consistent vacuum $\theta^*$ (T-79 [T]):
+The $\times 4$ discrepancy in $m_b/m_t$ is an **artifact** of using the average $\varepsilon$ instead of the sectoral $\varepsilon_{33}^*(\theta^*)$. In the self-consistent vacuum $\theta^*$ (T-79 [C at (SV)]):
 
 $$y_b = \frac{\lambda_3 \cdot \varepsilon_{33}^*}{16\pi^2} \cdot \eta_{\text{QCD}} \cdot y_t$$
 
@@ -599,9 +599,9 @@ The rigorous budget $10^{-41.5}$ includes the contribution from RG suppression o
 
 ## 9. Analytic Formula for the Suppression Parameter ε (Resolution of P6) {#9-аналитическая-формула-ε}
 
-### Theorem 9.1 (Analytic ε from Sectoral Minimization) [T at T-64] {#thm-9-1}
+### Theorem 9.1 (Analytic ε from Sectoral Minimization) [C at (SV)] {#thm-9-1}
 
-:::tip Strengthening: full analytic closed form ([T-216 [T at T-64]](/docs/proofs/categorical/fundamental-closures#t-216))
+:::tip Strengthening: full analytic closed form ([T-216 [C at (SV)]](/docs/proofs/categorical/fundamental-closures#t-216))
 The analytic closed form (amended 2026-08-10 per instrument E26)
 $$\varepsilon_\mathrm{eff}=\frac{4\,|\bar\gamma|_\mathrm{sect}}{9\,(1+\Sigma_0/4)}$$
 is derived from symbolic $V_\mathrm{Gap}$ minimisation plus Schur's lemma in [T-216](/docs/proofs/categorical/fundamental-closures#t-216); formula (c) below is the **self-consistency equation** for $\varepsilon_{33}$ (its $|\bar\gamma|$ comes from the constant $\lambda_3 = 2\mu^2/(3|\bar\gamma|)$ and itself depends on $\varepsilon_{33}$), not a closed value — reading it as one was what manufactured the former "two-order gap". Solving the self-consistency (E26, no fitted parameters) gives $\varepsilon_\mathrm{eff} = 0.0569$ vs the loop route's $0.0587$ — $3\%$; the value stays [C] only on the sector-ansatz caveat.
@@ -626,7 +626,7 @@ Substituting $N_{33}^{(\mathrm{Fano})} = 2$ and $|\bar{\gamma}| \approx 0.15$ in
 
 The number $0.059$ comes from a **different** route — the loop estimate $\varepsilon_{\mathrm{eff}} = \lambda_3\varepsilon/(4\pi) \approx 74 \times 0.01 / 12.6 = 0.0587$ of §[Effective parameter](#функциональная-зависимость-ε) — and is phenomenological.
 
-What is established, therefore, splits in two. The **structural** expression above is [T]: it follows from symbolic $V_{\mathrm{Gap}}$ minimisation plus Schur's lemma, and $N_{33}^{(\mathrm{Fano})} = 2$ is a combinatorial fact about the Fano plane. The **numerical** value is [C at T-64]: closing the two-order gap requires either the full minimisation on $(S^1)^{21}/G_2$ with the true $\Sigma_0/(2\mathcal{G}^{(0)}_{\mathrm{total}})$ (which would have to supply a suppression of $\sim 100$) or a correction to the canonical substitution. This is open.
+What is established, therefore, splits in two. The **structural** expression above is [T]: it follows from symbolic $V_{\mathrm{Gap}}$ minimisation plus Schur's lemma, and $N_{33}^{(\mathrm{Fano})} = 2$ is a combinatorial fact about the Fano plane. The **numerical** value is [C at (SV)]: closing the two-order gap requires either the full minimisation on $(S^1)^{21}/G_2$ with the true $\Sigma_0/(2\mathcal{G}^{(0)}_{\mathrm{total}})$ (which would have to supply a suppression of $\sim 100$) or a correction to the canonical substitution. This is open.
 
 **Resolved 2026-08-10 (instrument E26).** The "two-order gap" was an artefact of reading (c) — a *self-consistency equation* in which $|\bar\gamma|$ itself is a function of $\varepsilon_{33}$ — as a closed value, and of double-counting $N_{33}$ (it already sits inside the self-consistency; multiplying again overshoots twofold). Solving the self-consistent minimisation from scratch with the Theorem-13.5 constants, amplitudes free within Cauchy–Schwarz: $\varepsilon^*_{33} = 0.1314$, amplitude sum $\Sigma_0 = 0.1035$, $r_4 = 1/2$ (an identity, see [T-216](/docs/proofs/categorical/fundamental-closures#t-216)), giving $\varepsilon_\mathrm{eff} = \frac{4}{9} \cdot 0.1314 / 1.0259 = 0.0569$ against the loop route's $0.0587$ — agreement to $3\%$, with the confinement and electroweak suppressions ($\varepsilon_{3\bar 3}, \varepsilon_{\bar 3\bar 3} \to 0$) reproduced by the minimiser rather than imposed. The 21-amplitude run outside the $SU(3)$ ansatz (wave 2) confirmed it: sector selection exact, $\varepsilon_\mathrm{eff} = 0.0549$ ($\times 0.93$) — the caveat is discharged.
 :::
@@ -685,7 +685,7 @@ $$\boxed{\varepsilon_{\mathrm{eff}} = \frac{4\,|\bar{\gamma}|_{\mathrm{sect}}}{9
 
 Mass predictions: the order of magnitude is correct for all 9 particles; the best agreement is for $t$, $b$, $u$, $\tau$ (within 5%). Discrepancies for $c$, $\mu$ (factor $\sim 2$) — expected limits of the one-loop estimate without non-perturbative corrections.
 
-**Status:** The analytic formula is **[T]** (consequence of sectoral minimization [T] and canonical constants [T]). Numerical mass predictions are **[C at T-64]** (depend on the sectoral vacuum structure).
+**Status:** The analytic formula is **[T]** (consequence of sectoral minimization [T] and canonical constants [T]). Numerical mass predictions are **[C at (SV)]** (depend on the sectoral vacuum structure).
 :::
 
 ### 9.3 Testable Predictions {#тестируемые-предсказания-p6}

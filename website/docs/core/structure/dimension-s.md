@@ -335,7 +335,9 @@ On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{
 | $\{S, D, E\}$ = $\{2, 3, 5\}$ | Structure + Dynamics + Interiority | **Evolutionary line**: form + change + experience — the triad of lived experience |
 | $\{U, O, S\}$ = $\{6, 7, 2\}$ | Unity + Ground + Structure | **Fundamental line**: $S$ is connected to $O$ through the $\bar{\mathbf{3}}$ element ($U$) — form through integration |
 
-:::tip Uniqueness of S on the Fano plane (T-177) [T]
+:::tip Uniqueness of S on the Fano plane (T-177) — retracted [✗]
+*Retracted 2026-09-25 with T-48a and T-177: no axis lies in the **3** or the $\bar{\mathbf{3}}$, so the sector labels below have no content; restated (T-177), incidence fixes $S$ only together with the binary convention that fixes $E$ versus $U$ (the collineation swapping $E \leftrightarrow U$ with $O$ fixed swaps $S \leftrightarrow L$). Earlier text:*
+
 Structure is the only element of the **3** sector that is connected to Ground ($O$) through a $\bar{\mathbf{3}}$ element (Unity, $U$) on the line $\{U, O, S\}$. By comparison: $A$ is connected to $O$ directly (line $\{O, A, D\}$), and $D$ — through a **3** element ($A$).
 
 This means that the path from the Ground to Structure passes through **integration** ($U$) — form arises not directly from the source, but through unification.
@@ -358,7 +360,7 @@ graph TD
 ### Octonionic context {#октонионный-контекст}
 
 :::note Octonionic correspondence [T]
-The dimension corresponds to $e_2 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $S = e_2$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+The dimension corresponds to $e_2 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); the combinatorial and functional uniqueness of each role claimed by [T-177](/docs/reference/status-registry) and [T-183](/docs/reference/status-registry) is retracted [✗] (2026-09-25): it rested on the axis sectors of T-48a. Restated (T-177, T-183): given $O$ and the $\kappa_0$ pair $\{E,U\}$, incidence fixes $A$ and $D$ [T], and one binary convention [D] fixes $E$ versus $U$ together with $L$ versus $S$. The specific assignment $S = e_2$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ## Gradations of structure {#градации-структуры}

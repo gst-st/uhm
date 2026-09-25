@@ -78,7 +78,7 @@ Complete map of the "Physics" section pages with subsections and key topics.
 | [RG flow, 3+1](/docs/physics/gauge-symmetry/rg-flow) | Bridge AP+PH+QG+V $\Rightarrow$ P1+P2 **[T]** (T15, 12 steps) | High (all steps [T]) |
 | [Einstein from Gap, two-loop RG, $\Lambda$](/docs/physics/gravity/einstein-equations) | RG suppression $\lambda_3$ [T], swallowtail [T], spectral action [T] | High (spectral triple [T]) |
 | [SM from $G_2$, three-loop RG, $\Lambda$](/docs/physics/gauge-symmetry/standard-model) | $SU(3)_C$ from $G_2$ [T], factor $19/49$ [T] | Medium (rank SM > rank $G_2$) |
-| [Confinement, CKM, neutrinos, $\xi_F$](/docs/physics/gauge-symmetry/confinement) | $\xi_F \sim 160$ pc [C], ABJ [T], CKM [H], $\sqrt{\sigma} \approx 457$ MeV **[C at T-64]**, $\theta_{\mathrm{QCD}} = 0$ **[T]** (T-99) | High (T-73 + T-69 + T-64 + T-99) |
+| [Confinement, CKM, neutrinos, $\xi_F$](/docs/physics/gauge-symmetry/confinement) | $\xi_F \sim 160$ pc [C], ABJ [T], CKM [H], $\sqrt{\sigma} \approx 457$ MeV **[C at (SV)]**, $\theta_{\mathrm{QCD}} = 0$ **[T]** (T-99) | High (T-73 + T-69 + T-64 + T-99) |
 | [Standard Model, SUSY, proton, $\Lambda$](/docs/physics/gauge-symmetry/standard-model) | (1,2,4) unique [T], **IR FP error [✗]** | Low (5 critical vulnerabilities) |
 | [Fano selection rule](/docs/physics/gauge-symmetry/fano-selection-rules) | **Uniqueness of Higgs line [T]**, selection rule **[T]** (via $f_{ijk}$) | High |
 | [Full Fano architecture, synthesis](/docs/physics/particle-physics/fermion-generations) | Fritzsch texture [C], budget 41.5 [C], **deficit 79** | Medium (CKM numbers overstated) |
@@ -201,7 +201,7 @@ Lower bound $N_{\text{gen}} \geq 3$ from uniqueness of the associative triplet $
 :::warning Reclassification: Confinement from Gap
 **Details:** [Confinement](/docs/physics/gauge-symmetry/confinement)
 
-Qualitative argument. Status: program [P]. **Clarification:** the $\sqrt{\sigma}$ discrepancy ($7\times$: 60 MeV vs 440 MeV) has been diagnosed — the sectoral correction ($|\gamma|_{3\bar{3}} \approx 2.7\bar{\varepsilon}$) yields $\sqrt{\sigma} \approx 457$ MeV **[C at T-64]**. **Strong CP:** $\theta_{\mathrm{QCD}} = 0$ exactly (T-99 [T]) — structural consequence of the reality of $f_{ijk}$ and uniqueness of the vacuum.
+Qualitative argument. Status: program [P]. **Clarification:** the $\sqrt{\sigma}$ discrepancy ($7\times$: 60 MeV vs 440 MeV) has been diagnosed — the sectoral correction ($|\gamma|_{3\bar{3}} \approx 2.7\bar{\varepsilon}$) yields $\sqrt{\sigma} \approx 457$ MeV **[C at (SV)]**. **Strong CP:** $\theta_{\mathrm{QCD}} = 0$ exactly (T-99 [T]) — structural consequence of the reality of $f_{ijk}$ and uniqueness of the vacuum.
 :::
 
 :::tip Fano selection rule [T]
@@ -410,22 +410,22 @@ Spectral triple T-53 [T] + NCG curvature → exact identification Gap$(i,j) = \|
 **See:** [Gap Operator](/docs/core/dynamics/gap-operator#теорема-gap-серра) | [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics)
 :::
 
-:::tip Theorem: Topological protection of the Gap vacuum [T]
+:::tip Theorem: Topological protection of the Gap vacuum [T]+[C at (SV)] (T-69, stratified 2026-09-25: $\pi_2$ exact, barrier from the (SV) Hessian)
 **Details:** [Composite Systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита)
 
-$\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ + positive-definite Hessian (T-64 [T]) + compactness $(S^1)^{21}$ → the vacuum is separated from configurations with $\text{Gap} = 0$ by a finite energy barrier $\geq 6\mu^2$.
+$\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ + positive-definite Hessian (T-64 [H] (restated; sector values: hypothesis (SV))) + compactness $(S^1)^{21}$ → the vacuum is separated from configurations with $\text{Gap} = 0$ by a finite energy barrier $\geq 6\mu^2$.
 
 **See:** [Composite Systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) | [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics)
 :::
 
-:::tip Theorem: $\varepsilon$ from global minimization of $V_{\text{Gap}}$ [T]
+:::tip Theorem: $\varepsilon$ from global minimization of $V_{\text{Gap}}$ [C at (SV)] (T-64 restated as a hypothesis on 2026-09-25)
 **Details:** [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)
 
 Key parameter of the $\Lambda$ budget (12 orders of magnitude). $G_2$-orbit reduction $21D \to 5D$, unique global minimum with positive-definite Hessian (5 eigenvalues). Sectoral structure of $\varepsilon$ follows from the unique vacuum (T-61) [T].
 :::
 
 :::tip Theorem: UV finiteness of Gap theory [T field-space, C order-by-order]
-Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is **UV finite** [C] (structural argument): compactness bounds amplitudes and the $G_2$ Ward identities constrain the $21$-parameter space. The residual vacuum energy is suppressed by the **sector-product** scaling $\Lambda_{\text{residual}}\sim\varepsilon^{12}M_P^4$ (T-219 [T at T-64]). The earlier exact "$7-7=0$ bose–fermi trace" route is **retracted [✗]** — a $\mathbb{Z}_2$-grading on the odd internal space $\mathbb{C}^7$ has $\mathrm{Tr}\in\{\pm1,\pm3,\pm5,\pm7\}$, never $0$, and the split $\mathbf{14}\to\mathbf7\oplus\mathbf7$ does not exist (the $G_2$ adjoint $\mathbf{14}$ is irreducible) — see [Λ-budget Thm 4.4](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация).
+Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is **UV finite** [C] (structural argument): compactness bounds amplitudes and the $G_2$ Ward identities constrain the $21$-parameter space. The residual vacuum energy is suppressed by the **sector-product** scaling $\Lambda_{\text{residual}}\sim\varepsilon^{12}M_P^4$ (T-219 [H]). The earlier exact "$7-7=0$ bose–fermi trace" route is **retracted [✗]** — a $\mathbb{Z}_2$-grading on the odd internal space $\mathbb{C}^7$ has $\mathrm{Tr}\in\{\pm1,\pm3,\pm5,\pm7\}$, never $0$, and the split $\mathbf{14}\to\mathbf7\oplus\mathbf7$ does not exist (the $G_2$ adjoint $\mathbf{14}$ is irreducible) — see [Λ-budget Thm 4.4](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация).
 
 **See:** [Quantum Gravity](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)
 :::
@@ -506,7 +506,7 @@ Also refuted at $S_0 = 20$. Extra factor of $\pi$ — ~15, not ~48 orders. Windi
 :::warning $\Lambda$: perturbative deficit 79 orders; honest bracket $10^{-53.5}$–$10^{-93.5}$ [C]
 **Perturbative total:** 41.5 [T] out of 120 (at $\varepsilon = 10^{-2}$; 29.5 orders without $\varepsilon$). Perturbative deficit: 79 orders, of which the SUSY-sector absorption covers 12 more (net $10^{-53.5}$).
 
-**Cohomological + SUSY + spectral sector**: the cohomological prohibition of a *topological* $\Lambda$-term [T] (which, after the 2026-09-10 retraction, contributes **no** exact zero — the vacuum energy is degree-0 data), the SUSY-sector $\varepsilon^{12}$ [T at T-64] (**absorbs** the perturbative $\varepsilon^6$ → net mean $\sim 10^{-53.5}$; exact compensation $\mathrm{Tr}(1)=0$ — **[H]**, $G_2$-adj 14 is irreducible), and the sectoral-minimization programme **[C]** compose to the honest bracket **$10^{-53.5}$–$10^{-93.5}$** [C]; the remaining $\gtrsim 27$ orders are open. Details: [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) | [spectral formula](/docs/proofs/gap/lambda-budget#теорема-спектральная-лямбда).
+**Cohomological + SUSY + spectral sector**: the cohomological prohibition of a *topological* $\Lambda$-term [T] (which, after the 2026-09-10 retraction, contributes **no** exact zero — the vacuum energy is degree-0 data), the SUSY-sector $\varepsilon^{12}$ [H] (T-219) (**absorbs** the perturbative $\varepsilon^6$ → net mean $\sim 10^{-53.5}$; exact compensation $\mathrm{Tr}(1)=0$ — **[H]**, $G_2$-adj 14 is irreducible), and the sectoral-minimization programme **[C]** compose to the honest bracket **$10^{-53.5}$–$10^{-93.5}$** [C]; the remaining $\gtrsim 27$ orders are open. Details: [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) | [spectral formula](/docs/proofs/gap/lambda-budget#теорема-спектральная-лямбда).
 
 Non-perturbative mechanisms:
 - Gaussian sum: refuted at physical $S_0$
@@ -514,7 +514,7 @@ Non-perturbative mechanisms:
 - Instanton: additive, not multiplicative
 - Zeta $Z_\Phi(-k) = 0$: mathematics correct, physical interpretation unclear
 
-**Status: [C]** — structural mechanisms identified; honest bracket $10^{-53.5}$–$10^{-93.5}$ ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)); the remaining $\gtrsim 27$ orders — an open computational + conceptual task (minimization on $(S^1)^{21}$ + saturation of the cohomological bound). Strategy: three levels — (A) cohomological exact zero [T] + SUSY-sector $\varepsilon^{12}$ [T at T-64], (B) modular $\Gamma_0(7)$ program, (C) dynamic $S_0$. See [closure strategy](/docs/physics/gravity/cosmological-constant#стратегия-замыкания).
+**Status: [C]** — structural mechanisms identified; honest bracket $10^{-53.5}$–$10^{-93.5}$ ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)); the remaining $\gtrsim 27$ orders — an open computational + conceptual task (minimization on $(S^1)^{21}$ + saturation of the cohomological bound). Strategy: three levels — (A) cohomological exact zero [T] + SUSY-sector $\varepsilon^{12}$ [H] (T-219), (B) modular $\Gamma_0(7)$ program, (C) dynamic $S_0$. See [closure strategy](/docs/physics/gravity/cosmological-constant#стратегия-замыкания).
 :::
 
 ### Dark matter
@@ -767,10 +767,10 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 45. Einstein equations from spectral action — **[T]** (T-65): full spectral action from finite spectral triple T-53 — [Einstein Equations](/docs/physics/gravity/einstein-equations)
 46. SM from $G_2$ — colour $SU(3)$ from $G_2$ **[T]**; electroweak sector **[C at (FE)]** — the pair $(E,U)$ from $\kappa_0$ is [T], its former reading as the HS-projection of a "$\bar{3}$-sector" is retracted, and the uniqueness of the group is [H] (listed as [T] until 2026-09-25) — [Standard Model](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ)
 47. 3 generations from Fano — **count [T], identification [I]**: $N_{\text{gen}} = 3$ is the exact count $|\mathrm{QR}(7)| = |\mathbb{Z}_7^*/\{\pm1\}| = (7-1)/2 = 3$ **[T]** (group-theoretic, topology-independent); physical identification of the 3 classes with generations [I] — [Fermion Generations](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)
-48. Confinement from Gap — [Confinement](/docs/physics/gauge-symmetry/confinement) — **[C at T-64]**; $\sqrt{\sigma} \approx 457$ MeV **[C at T-64]** after sectoral correction
+48. Confinement from Gap — [Confinement](/docs/physics/gauge-symmetry/confinement) — **[C at (SV)]**; $\sqrt{\sigma} \approx 457$ MeV **[C at (SV)]** after sectoral correction
 49. Fano selection rule — **[T]**: proven via octonion structure constants $f_{ijk}$ (unique $G_2$-invariant trilinear operator) — [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk)
 50. Gap as Serre curvature — **[T]** (T-73): spectral triple T-53 + NCG curvature → exact identification — [Gap Operator](/docs/core/dynamics/gap-operator#теорема-gap-серра)
-51. Sectoral hierarchy $\varepsilon$ — **[T]** (T-64): global minimization of $V_{\text{Gap}}$ with $G_2$-orbit reduction 21D→5D; unique vacuum with sectoral structure — [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)
+51. Sectoral hierarchy $\varepsilon$ — **[C at (SV)]** since 2026-09-25 (T-64 restated as a hypothesis: the vacuum of $V_{\text{Gap}}$ is unique only up to its symmetries, numerically; the $G_2$-orbit reduction 21D→5D and the sectoral structure are retracted [✗]) — [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)
 52. Type-I seesaw: $M_R \sim 10^{14}$ GeV — **[T]**: $M_R = g^4_{G_2}/(16\pi^2) \cdot M_{G_2}^{(\text{extra})} \sim 2.9 \times 10^{14}$ GeV from loop mechanism of $G_2$-extra bosons — [Neutrino Masses](/docs/physics/particle-physics/neutrino-masses#теорема-mr-из-gap)
 53. PMNS from anarchic $M_R$ — **[C]**: O-sector isotropy → angles $\theta_{12} \approx 34°$, $\theta_{23} \approx 45°$, $\theta_{13} \approx 9°$ — [Neutrino Masses](/docs/physics/particle-physics/neutrino-masses#теорема-pmns-анархия)
 54. F-term SUSY breaking from $V_3$ — **[T]**: $F = \partial W / \partial \Theta \neq 0$, $\sqrt{F} \sim \varepsilon \cdot M_{\text{Planck}}$ from superpotential $W$, uniqueness from Schur's lemma — [Supersymmetry](/docs/physics/particle-physics/susy#теорема-суперпотенциал)
@@ -800,7 +800,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 
 ### Fundamental
 
-1. **$\gtrsim 27$ open orders of $\Lambda$** — structural mechanisms identified: spectral formula [T] + global minimization of $V_{\text{Gap}}$ [T] + SUSY-sector $\varepsilon^{12}$ [T at T-64] (exact compensation [H]) give the honest bracket $10^{-53.5}$–$10^{-93.5}$ [C] ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)); the rest to the observed $10^{-120}$ is an open computational + conceptual task. Strategy: (A) cohomological exact zero + SUSY-sector, (B) modular $\Gamma_0(7)$, (C) dynamic $S_0$ — see [closure strategy](/docs/physics/gravity/cosmological-constant#стратегия-замыкания)
+1. **$\gtrsim 27$ open orders of $\Lambda$** — structural mechanisms identified: spectral formula [T] + global minimization of $V_{\text{Gap}}$ [H] (T-64 restated 2026-09-25) + SUSY-sector $\varepsilon^{12}$ [H] (T-219) (exact compensation [H]) give the honest bracket $10^{-53.5}$–$10^{-93.5}$ [C] ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)); the rest to the observed $10^{-120}$ is an open computational + conceptual task. Strategy: (A) cohomological exact zero + SUSY-sector, (B) modular $\Gamma_0(7)$, (C) dynamic $S_0$ — see [closure strategy](/docs/physics/gravity/cosmological-constant#стратегия-замыкания)
 
 ### Quantum Gravity and SUSY
 

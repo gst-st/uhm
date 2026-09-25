@@ -32,8 +32,8 @@ where $\mathcal{A}(\lambda) = i\langle n(\lambda)|\nabla_\lambda|n(\lambda)\rang
 
 ## 2. Topologically Protected Gap
 
-:::warning Theorem 5.1 [H] — **superseded by T-64 [T]**
-**Status:** The hypothesis about $\pi_1(M) \neq 0$ has been superseded by a proven result. T-64 [T] establishes topological protection of the Gap through a different, rigorously proven mechanism: a positive-definite Hessian $+$ $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ provide an energy barrier $\Delta V \geq 6\mu^2 > 0$ (see [vacuum uniqueness](/docs/proofs/categorical/uniqueness-theorem)). The original formulation via the Berry phase and $\pi_1(M)$ is no longer required.
+:::warning Theorem 5.1 [H] — **superseded by T-69 (stratified [T]+[C at (SV)] since 2026-09-25)**
+**Status:** The hypothesis about $\pi_1(M) \neq 0$ was superseded by T-69, which protects the Gap through a different mechanism — conditional on the sector-vacuum hypothesis (SV) since 2026-09-25, because the Hessian it uses is that of the sector parametrisation of T-64 (restated as a hypothesis): a positive-definite Hessian $+$ $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ provide an energy barrier $\Delta V \geq 6\mu^2 > 0$ (see [vacuum uniqueness](/docs/proofs/categorical/uniqueness-theorem)). The original formulation via the Berry phase and $\pi_1(M)$ is no longer required.
 
 If $M$ contains non-contractible loops ($\pi_1(M) \neq 0$), then there exist pairs of dimensions $(i, j)$ with a **topologically protected** Gap:
 
@@ -155,7 +155,7 @@ Replacing theorem: [Sectoral Gap Bound](#теорема-секторная-gap-�
 ### 5.2 Theorem (Sectoral Gap Bound) [T] {#теорема-секторная-gap-граница}
 
 :::tip Theorem (Sectoral Gap Bound) [T]
-In the unique vacuum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]) the Gap configuration $\theta^*$ satisfies:
+In the unique vacuum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [H] (restated; sector values: hypothesis (SV))) the Gap configuration $\theta^*$ satisfies:
 
 **(a)** For all non-O pairs ($i,j \in \{A,S,D,L,E,U\}$):
 $$\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.023 \ll 1/2$$
@@ -169,7 +169,7 @@ $$\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2), \quad \ma
 
 **Proof.**
 
-**Step 1 (Vacuum sectoral hierarchy).** The unique global minimum of $V_{\text{Gap}}$ ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]) defines the sectoral parametrisation $\boldsymbol{\varepsilon} = (\varepsilon_{O3}, \varepsilon_{O\bar{3}}, \varepsilon_{33}, \varepsilon_{\bar{3}\bar{3}}, \varepsilon_{3\bar{3}})$. From the positive definiteness of the Hessian (T-64):
+**Step 1 (Vacuum sectoral hierarchy).** The unique global minimum of $V_{\text{Gap}}$ ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [H] (restated; sector values: hypothesis (SV))) defines the sectoral parametrisation $\boldsymbol{\varepsilon} = (\varepsilon_{O3}, \varepsilon_{O\bar{3}}, \varepsilon_{33}, \varepsilon_{\bar{3}\bar{3}}, \varepsilon_{3\bar{3}})$. From the positive definiteness of the Hessian (T-64):
 
 | Sector | Pairs | $\varepsilon$ | Gap |
 |--------|------|--------------|-----|

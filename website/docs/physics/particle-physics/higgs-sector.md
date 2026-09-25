@@ -28,7 +28,7 @@ description: "Uniqueness of the Higgs line {A,E,U}, Higgs mass with octonionic c
 
 ## 1. Uniqueness of the Higgs line \{A,E,U\} {#1-единственность-хиггсовой-линии-aeu}
 
-### 1.1 Identification of the Higgs field [T] {#отождествление-хиггса}
+### 1.1 Identification of the Higgs field [H] {#отождествление-хиггса}
 
 In UHM the Higgs field is identified with the $E$-$U$ coherence in the $\bar{3}$-to-$\bar{3}$ sector:
 
@@ -36,10 +36,16 @@ $$H \sim \gamma_{EU} = |\gamma_{EU}| e^{i\theta_{EU}}$$
 
 Dimensions $E$ (evaluation) and $U$ (unity) belong to the $\bar{3}$-sector $\{L, E, U\} = \{4, 5, 6\}$. The pair $(E, U)$ defines the electroweak channel: $\text{Gap}(E,U) = 0$ corresponds to a weak doublet, $\text{Gap}(E,U) \neq 0$ — to a singlet.
 
-#### Theorem 1.0 (Identification $H \sim \gamma_{EU}$) [T] {#теорема-отождествление-хиггса}
+#### Theorem 1.0 (Identification $H \sim \gamma_{EU}$) — corrected from [T] to [H] {#теорема-отождествление-хиггса}
 
-:::tip [T] Theorem
-The identification $H \sim \gamma_{EU}$ is strictly proved from four independent [T]-results: categorical uniqueness of the pair $(E,U)$, uniqueness of the Higgs line, $SU(2)_L \times U(1)_Y$ quantum numbers, and nonzero vacuum expectation value from the unique vacuum.
+:::danger Corrected 2026-09-25 (audit A-90): a vacuum value of $\gamma_{EU}$ breaks colour
+Checked numerically with $SU(3)_C = \mathrm{Stab}_{G_2}(e_O)$, the colour group of the corpus. The state $\Gamma = I/7 + \varepsilon\,(e^{i\phi}|E\rangle\langle U| + \text{h.c.})$ keeps a subalgebra of $\mathfrak{su}(3)_C$ of dimension 1 at $\phi = \pi/2$ (and $3\pi/2$) and of dimension 0 at the other 23 of 25 sampled phases, against 8 at $\varepsilon = 0$; the coherence $\gamma_{EU}$ has no colour-singlet component, since the $SU(3)_C$-invariant states have coherences only on $(A,D)$, $(S,U)$, $(L,E)$ (`test_gamma_eu_vev_breaks_colour`). So $\langle\gamma_{EU}\rangle \neq 0$ breaks $SU(3)_C$, while the Standard-Model Higgs is a colour singlet. Steps 3 and 4 below fail as well: no $SU(2)$ commutes with $SU(3)_C$ on $\mathbb C^7$ (the commutant is $\mathbb C^3$), so there is no doublet $(2,+1/2)$ to carry, and the vacuum value came from T-64, which is restated as a hypothesis whose vacuum has no sector values; $E$ and $U$ are not in a sector $\bar{\mathbf 3} = \{L,E,U\}$ (T-48a retracted).
+
+Repairs tried. (i) Correct complex triplets: $\gamma_{EU}$ has zero singlet weight, as above. (ii) Another colour group: $\gamma_{EU}$ is invariant under $\mathrm{Stab}_{G_2}(e_A)$, but only inside the combination with equal coherences on $(S,L)$ and $(D,O)$ — the pairs of the lines through $A$ — and this moves colour from $O$ to $A$, against the rest of the corpus. (iii) A doublet on $\mathbb C^7$: impossible for any $SU(3)$, for the commutant reason above. What stands [T]: Step 1 (T-42a) and Step 2 (Theorem 1.1). The identification $H \sim \gamma_{EU}$ is a hypothesis [H] with the two named obstructions: colour breaking under $SU(3)_C = \mathrm{Stab}(e_O)$, and the absence of a doublet on $\mathbb C^7$.
+:::
+
+:::note Earlier statement (Theorem 1.0, stated as [T] until 2026-09-25)
+The identification $H \sim \gamma_{EU}$ is strictly proved from four independent [T]-results: categorical uniqueness of the pair $(E,U)$, uniqueness of the Higgs line, $SU(2)_L \times U(1)_Y$ quantum numbers, and nonzero vacuum expectation value from the unique vacuum. *(Corrected: see the box above.)*
 :::
 
 **Theorem.** The coherence $\gamma_{EU}$ is the unique candidate for the Higgs field in UHM, and the identification $H \sim \gamma_{EU}$ is proved from the following chain.
@@ -58,9 +64,9 @@ From the electroweak uniqueness theorem ([§2.3a](/docs/physics/gauge-symmetry/s
 
 **Step 4. Nonzero VEV $\langle\gamma_{EU}\rangle \neq 0$ breaks $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$ [T].**
 
-From [Theorem on the unique vacuum T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]: the unique global minimum of $V_\text{Gap}$ has $|\gamma_{EU}|_\text{vac} = \varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ (in units of $\omega_0$), giving $\langle\gamma_{EU}\rangle \neq 0$. A nonzero vacuum expectation value of a field with quantum numbers $(2, +1/2)$ uniquely realizes spontaneous breaking $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$.
+From [Theorem on the unique vacuum T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [H] (restated; sector values: hypothesis (SV)): the unique global minimum of $V_\text{Gap}$ has $|\gamma_{EU}|_\text{vac} = \varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ (in units of $\omega_0$), giving $\langle\gamma_{EU}\rangle \neq 0$. A nonzero vacuum expectation value of a field with quantum numbers $(2, +1/2)$ uniquely realizes spontaneous breaking $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$.
 
-**Conclusion.** All four steps rely exclusively on [T]-results. The identification $H \sim \gamma_{EU}$ follows from them uniquely. $\blacksquare$
+**Conclusion (earlier, corrected 2026-09-25).** The earlier text read: "All four steps rely exclusively on [T]-results. The identification $H \sim \gamma_{EU}$ follows from them uniquely." Steps 3 and 4 are withdrawn (box above), so the identification is a hypothesis [H].
 
 ### 1.2 Fano–Higgs line
 
@@ -190,7 +196,7 @@ $$V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lam
 At $\mu^2 < 0$ (low-temperature regime): minimum at $|\gamma_{EU}| = v \neq 0$. This is the standard Higgs mechanism applied to the Gap potential. Higgs mass = second derivative of $V_{EU}$ at the minimum.
 
 :::note Status of parameter $\lambda_3$ [T]
-The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [T]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the right order of magnitude (error $\lesssim \times 5$). For details — see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
+The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [C at (SV)]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the right order of magnitude (error $\lesssim \times 5$). For details — see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
 
 **⚠ C7**: $\lambda_3 \approx 74 \gg 4\pi$ — non-perturbative regime. All loop computations with $\lambda_3$ are formally unreliable and downgraded to **[H]**. See [warning](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative).
 :::
@@ -302,34 +308,36 @@ Fermionic representations from Gap-configurations form the same structure as one
 
 ## 4. Higgs mass with octonionic correction {#4-масса-хиггса-с-октонионной-коррекцией}
 
-### Theorem T-70 (Canonical definition of $f_0$) [T] {#теорема-f0-канонический}
+### Theorem T-70 (Canonical definition of $f_0$) [C at (SV)] {#теорема-f0-канонический}
 
-:::tip [T] Theorem
+*Corrected 2026-09-25 from [T]: Steps 2, 3 and 5 take the unique vacuum and its five Hessian eigenvalues from T-64, which is restated as a hypothesis whose vacuum has none of these sector values (see [Gap thermodynamics §14](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)); the formula holds conditional on the sector-vacuum hypothesis (SV).*
+
+:::tip [C at (SV)] Theorem
 In UHM the moment $f_0$ of the spectral action is **uniquely determined** through the vacuum effective action of the Gap theory on $(S^1)^{21}$:
 
 $$f_0 \Lambda^4 = \frac{1}{7}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]$$
 
-where $V_{\mathrm{Gap}}^{\min}$ is the potential value at the vacuum minimum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]), and $\zeta'_{H_{\mathrm{Gap}}}(0)$ is the log-determinant of the Hessian at the vacuum.
+where $V_{\mathrm{Gap}}^{\min}$ is the potential value at the vacuum minimum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [H] (restated; sector values: hypothesis (SV))), and $\zeta'_{H_{\mathrm{Gap}}}(0)$ is the log-determinant of the Hessian at the vacuum.
 :::
 
 **Proof.**
 
 **Step 1 (Field-space finiteness → finite functional integral).** The Gap partition function on the compact target $(S^1)^{21}$ is finite — field-space finiteness **[T]**; full order-by-order UV-finiteness is structural [C] ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)). Therefore the functional integral $Z = \int [D\theta] \exp(-S_{\mathrm{Gap}}[\theta])$ is **finite and well-defined** without regularization ambiguity. The quantum effective action $\Gamma_{\mathrm{eff}} = -\ln Z$ is a finite, concrete quantity.
 
-**Step 2 (Unique vacuum → loop expansion).** From [T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]: the potential $V_{\mathrm{Gap}}$ has a unique global minimum with positive definite Hessian $H_{\mathrm{Gap}}$. Expansion:
+**Step 2 (Unique vacuum → loop expansion).** From [T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [H] (restated; sector values: hypothesis (SV)): the potential $V_{\mathrm{Gap}}$ has a unique global minimum with positive definite Hessian $H_{\mathrm{Gap}}$. Expansion:
 
 $$\Gamma_{\mathrm{eff}} = V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\ln\det(H_{\mathrm{Gap}}) + O(\text{two-loop})$$
 
-**Step 3 (Determinant regularization).** Zeta-regularized determinant: $\ln\det(H_{\mathrm{Gap}}) = -\zeta'_{H_{\mathrm{Gap}}}(0)$. From T-64 [T]: all eigenvalues $\lambda_i > 0$ (5 positive on the orbit space), so $\zeta'_{H_{\mathrm{Gap}}}(0) = -\sum_{i=1}^{5}\ln\lambda_i$.
+**Step 3 (Determinant regularization).** Zeta-regularized determinant: $\ln\det(H_{\mathrm{Gap}}) = -\zeta'_{H_{\mathrm{Gap}}}(0)$. From T-64 [H] (restated; sector values: hypothesis (SV)): all eigenvalues $\lambda_i > 0$ (5 positive on the orbit space), so $\zeta'_{H_{\mathrm{Gap}}}(0) = -\sum_{i=1}^{5}\ln\lambda_i$.
 
 **Step 4 (Identification with $f_0$).** Coefficient $a_0$ of the spectral action: $f_0 \Lambda^4 \cdot 7$ = vacuum energy density of the internal space = $\Gamma_{\mathrm{eff}}$. Therefore:
 
 $$f_0 = \frac{\Gamma_{\mathrm{eff}}}{7\Lambda^4} = \frac{1}{7\Lambda^4}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]$$
 
-**Step 5 (Uniqueness).** All quantities on the right-hand side are uniquely determined: $V_{\mathrm{Gap}}^{\min}$ from T-64 [T], $\zeta'_{H_{\mathrm{Gap}}}(0)$ from a finite sum over 5 eigenvalues, $\Lambda = \omega_0$. $f_0$ is **not a free parameter**, but a definite function of the vacuum quantities. $\blacksquare$
+**Step 5 (Uniqueness).** All quantities on the right-hand side are uniquely determined: $V_{\mathrm{Gap}}^{\min}$ from T-64 [H] (restated; sector values: hypothesis (SV)), $\zeta'_{H_{\mathrm{Gap}}}(0)$ from a finite sum over 5 eigenvalues, $\Lambda = \omega_0$. $f_0$ is **not a free parameter**, but a definite function of the vacuum quantities. $\blacksquare$
 
 :::info Numerical estimate [C]
-From T-64 [T], Hessian eigenvalues: $\lambda_1 = 18\mu^2$ (confinement), $\lambda_{2,3} = 6\mu^2(1 + O(\varepsilon^2))$ (spatial), $\lambda_{4,5} = 12\mu^2(1 + O(\varepsilon))$ (O-modes). With $\mu^2 \approx \omega_0^2/7$: $f_0 \approx 2.2/\omega_0^4$. Numerical value [C] — depends on exact $\varepsilon_i$.
+From T-64 [H] (restated; sector values: hypothesis (SV)), Hessian eigenvalues: $\lambda_1 = 18\mu^2$ (confinement), $\lambda_{2,3} = 6\mu^2(1 + O(\varepsilon^2))$ (spatial), $\lambda_{4,5} = 12\mu^2(1 + O(\varepsilon))$ (O-modes). With $\mu^2 \approx \omega_0^2/7$: $f_0 \approx 2.2/\omega_0^4$. Numerical value [C] — depends on exact $\varepsilon_i$.
 :::
 
 ### Theorem (Higgs quartic from spectral action) [C] {#теорема-хиггсовская-квартика}
@@ -358,7 +366,7 @@ $$S = f_0 \Lambda^4 a_0 + f_2 \Lambda^2 a_2 + f_4 a_4 + O(\Lambda^{-2})$$
 
 The coefficient $a_4$ contains the term $\mathrm{Tr}(D_{\text{int}}^4)$, generating the quartic Higgs potential.
 
-**Step 3 (Computation).** From sectoral values (T-61, unique vacuum [T]):
+**Step 3 (Computation).** From sectoral values (hypothesis (SV) [H]; T-61 restated):
 
 $$\mathrm{Tr}(D_{\text{int}}^2) \approx 6\omega_0^2\varepsilon_0^2, \qquad \mathrm{Tr}(D_{\text{int}}^4) \approx 6\omega_0^4\varepsilon_0^4 + \text{sectoral corrections}$$
 
@@ -368,7 +376,7 @@ $$\lambda_4(v) = \lambda_4(\Lambda) + \frac{1}{16\pi^2}\left(24\lambda_4^2 - 6y_
 
 At $y_t \approx 1$ (quasi-IR fixed point [T]): RG brings $\lambda_4$ to the observed $\approx 0.13$ from $\lambda_4(\Lambda) \approx 0.20$ [C] — standard Shaposhnikov–Wetterich result (2010). $\blacksquare$
 
-**Status:** [C] — $\lambda_4$ determined through spectrum $D_{\text{int}}$ + RG. Parameter $f_0$ is **canonically determined [T]** ([T-70](#теорема-f0-канонический)). The conditionality [C] remains only for the numerical value — depends on exact sectoral $\varepsilon_i$.
+**Status:** [C] — $\lambda_4$ determined through spectrum $D_{\text{int}}$ + RG. Parameter $f_0$ is **canonically determined [C at (SV)]** ([T-70](#теорема-f0-канонический)). The conditionality [C] remains only for the numerical value — depends on exact sectoral $\varepsilon_i$.
 
 :::info Cross-references
 - **Spectral triple:** [Theorem (UHM Spectral Triple)](/docs/core/foundations/spacetime#теорема-спектральная-тройка) — finite triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$; its KO-dimension-6 claim is retracted: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка))
@@ -381,7 +389,7 @@ At $y_t \approx 1$ (quasi-IR fixed point [T]): RG brings $\lambda_4$ to the obse
 ### Theorem 4.1 (Higgs mass) [C] {#thm-4-1}
 
 :::warning [C] Conditional
-The formula for the Higgs mass contains $\lambda_4$, determined from the spectral action ([theorem on Higgs quartic](#теорема-хиггсовская-квартика) [C]), and the octonionic correction from $V_3$. Parameter $f_0$ is canonically determined [T] ([T-70](#теорема-f0-канонический)); conditionality [C] — only numerical value through $\varepsilon_i$.
+The formula for the Higgs mass contains $\lambda_4$, determined from the spectral action ([theorem on Higgs quartic](#теорема-хиггсовская-квартика) [C]), and the octonionic correction from $V_3$. Parameter $f_0$ is canonically determined [C at (SV)] ([T-70](#теорема-f0-канонический)); conditionality [C] — only numerical value through $\varepsilon_i$.
 :::
 
 **Theorem.** The Higgs mass is determined as the second derivative of the potential $V_{EU}$ at the minimum:
@@ -474,8 +482,8 @@ In UHM the role of the UV cutoff $\Lambda$ is played by the scale $\mu_\text{phy
 
 ### 4.4 Parity breaking from $V_3$ and stability of the chiral vacuum {#4-4}
 
-:::tip [T] Theorem
-Dynamical stability of the chiral vacuum is proved from existing [T]-results.
+:::tip [C at (SV)] Theorem
+Dynamical stability of the chiral vacuum follows conditional on the sector-vacuum hypothesis (SV): Step 2 uses the unique vacuum with positive-definite Hessian of T-64 and Step 3 the barrier of T-69, both conditional on (SV) since 2026-09-25 (earlier stated as proved from [T]-results).
 :::
 
 The cubic potential $V_3$ (and the associated orientational $V_\varphi$-contribution) ensures **dynamical stability** of chiral distinction in the $E$-$U$ channel:
@@ -496,9 +504,9 @@ $$\Delta V = V_\varphi^{(\pi)} - V_\varphi^{(0)} = 2\lambda_\varphi |\gamma_{LE}
 
 **Step 1.** $V_3$ is the unique $PT$-odd term in $V_{\mathrm{Gap}}$ [T] ([T-99](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd), step 2). It distinguishes chiral vacua: $\theta = 0$ and $\theta = \pi$ give different signs of the cubic combination $\sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$.
 
-**Step 2.** The vacuum of $V_{\mathrm{Gap}}$ is unique with positive definite Hessian [T] ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)). No flat directions → the chiral minimum is non-degenerate.
+**Step 2.** The vacuum of $V_{\mathrm{Gap}}$ is unique with positive definite Hessian — hypothesis (SV) [H] (T-64 [H] in its restated form: unique only up to the symmetries of $V_{\mathrm{Gap}}$). No flat directions → the chiral minimum is non-degenerate.
 
-**Step 3.** Topological barrier [T] ([T-69](/docs/core/dynamics/composite-systems#теорема-тополог-защита)): $\Delta V \geq 6\mu^2 > 0$ prevents tunneling between chiral vacua.
+**Step 3.** Topological barrier [C at (SV)] ([T-69](/docs/core/dynamics/composite-systems#теорема-тополог-защита)): $\Delta V \geq 6\mu^2 > 0$ prevents tunneling between chiral vacua.
 
 **Conclusion.** $V_3$ selects the chiral vacuum (step 1), the Hessian ensures local stability (step 2), the topological barrier — global protection from tunneling (step 3). $\blacksquare$
 
@@ -573,9 +581,11 @@ $$Y = \frac{1}{3}\left(\sum_{i \in 3} \text{Gap}(O,i) - \sum_{j \in \bar{3}} \te
 
 ## 6. Falsifiable predictions {#6-фальсифицируемые-предсказания}
 
-### 6.0 Prohibition of a second Higgs doublet [T] {#запрет-второго-дублета}
+### 6.0 Prohibition of a second Higgs doublet [H] {#запрет-второго-дублета}
 
-:::tip [T] Structural prohibition (T-296)
+*Corrected 2026-09-25 from [T] to [H]: step (i) takes "$\langle\gamma_{ij}\rangle \neq 0$ only for the $\kappa_0$ pair" from T-64, which never stated it and is now a hypothesis, and the whole argument presupposes the identification $H \sim \gamma_{EU}$ of Theorem 1.0, now a hypothesis with a colour-breaking obstruction. The exclusion of 2HDM spectra is a prediction of that hypothesis, not a theorem.*
+
+:::tip [H] Structural prohibition (T-296)
 UHM forbids a second Higgs doublet. The categorical uniqueness that *selects* the pair $(E,U)$ simultaneously *excludes* every other scalar candidate.
 :::
 
@@ -630,14 +640,14 @@ What remains open **[P]** is the RG-scale ↔ $H(t)$ bridge for the *non-O* chan
 
 ---
 
-### 6.5 Chirality tunneling rate [T] {#скорость-хирального-туннелирования}
+### 6.5 Chirality tunneling rate [C at (SV)] {#скорость-хирального-туннелирования}
 
-:::tip Theorem T-185b [T]: Chirality stability prediction
+:::tip Theorem T-185b [C at (SV)]: Chirality stability prediction
 The chiral vacuum is stable against tunneling with a lifetime vastly exceeding the age of the universe:
 
 $$\tau_{\text{chiral}} \sim \frac{1}{\mu} \exp\!\left(\frac{B}{\hbar}\right) \gg \tau_{\text{universe}} \approx 4.4 \times 10^{17}\;\text{s}$$
 
-where $B \geq \pi\sqrt{12}\,\mu \approx 10.88\,\mu$ is the WKB bounce action through the barrier $\Delta V \geq 6\mu^2$ (T-69 [T]).
+where $B \geq \pi\sqrt{12}\,\mu \approx 10.88\,\mu$ is the WKB bounce action through the barrier $\Delta V \geq 6\mu^2$ (T-69 [C at (SV)]).
 :::
 
 **Derivation.** The WKB tunneling rate between the chiral vacua $\theta = 0$ and $\theta = \pi$:
@@ -646,9 +656,9 @@ $$\Gamma_{\text{tunnel}} = \mu \cdot \exp\!\left(-\frac{B}{\hbar}\right), \quad 
 
 In physical units with $\mu \sim M_{\text{Planck}}$: the exponent $e^{10.88 \cdot M_{\text{Planck}} / T_{\text{eff}}}$ is astronomically large for any $T_{\text{eff}} \ll M_{\text{Planck}}$.
 
-**Falsifiable prediction.** Observation of spontaneous chirality flipping (a right-handed neutrino appearing from a left-handed one without a mass insertion) at any sub-Planckian energy would falsify the topological protection theorem T-69 [T] and the cubic potential $V_3$ (T-99 [T]).
+**Falsifiable prediction.** Observation of spontaneous chirality flipping (a right-handed neutrino appearing from a left-handed one without a mass insertion) at any sub-Planckian energy would falsify the topological protection theorem T-69 [C at (SV)] and the cubic potential $V_3$ (T-99 [T]).
 
-**Status.** [T] — follows from T-69 [T] (topological barrier), T-64 [T] (unique vacuum), T-99 [T] ($V_3$ is the unique $PT$-odd term).
+**Status.** [C at (SV)] — follows from T-69 [C at (SV)] (topological barrier), the hypothesis (SV) [H] (unique vacuum with positive Hessian; T-64 is restated), and T-99 [T] ($V_3$ is the unique $PT$-odd term); corrected from [T] on 2026-09-25.
 
 ---
 
@@ -666,7 +676,7 @@ The full chain from axioms to $M_H$ consists of five links:
 |---|---|---|---|
 | (1) Spectral triple | $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ exists **[T]** (T-53); "KO-dim = 6" is retracted — no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)) | **[T]** (T-53), without the real structure | Axioms |
 | (2) Spectral action | $S = \mathrm{Tr}(f(D_A/\Lambda))$ expands in Seeley–DeWitt series | **[T]** (T-65) | (1) |
-| (3) $f_0$ canonically determined | $f_0 = \Gamma_{\text{eff}} / (7\Lambda^4)$ through Gap theory vacuum | **[T]** (T-70) | (2) + unique vacuum T-64 [T] |
+| (3) $f_0$ canonically determined | $f_0 = \Gamma_{\text{eff}} / (7\Lambda^4)$ through Gap theory vacuum | **[C at (SV)]** (T-70) | (2) + sector vacuum (SV) [H] |
 | (4) $\lambda_4$ from $D_{\text{int}}$ + RG | $\lambda_4 = \frac{\pi^2}{2f_0\Lambda^4} \cdot \frac{\mathrm{Tr}(D_{\text{int}}^4)}{[\mathrm{Tr}(D_{\text{int}}^2)]^2}$, RG: $\Lambda \to v_{\text{EW}}$ | **[C]** | (3) + numerical $\varepsilon_i$ |
 | (5) $M_H$ from potential | $M_H^2 = 2\lambda_4 v^2 + \delta M_H^2(\lambda_3, \bar{A}, \mu)$ | **[C]** | (4) + octonionic correction |
 
@@ -745,7 +755,7 @@ UHM determines the Higgs mass through chain (1)–(5), in which links (1)–(3) 
 - **CKM matrix:** Mismatch of $Y^u$ and $Y^d$ via conjugate Higgs → [CKM Matrix](./ckm-matrix.md)
 - **Spectral triple:** Finite $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ → [Spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T]; the former "with KO-dimension 6" is retracted — no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка))
 - **Spectral action:** $S = \mathrm{Tr}(f(D/\Lambda))$, determines $\lambda_4$ → [Quantum Gravity](/docs/physics/gravity/quantum-gravity)
-- **Unique vacuum:** Sectoral values $\varepsilon$ from T-61 → [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]
+- **Unique vacuum:** Sectoral values $\varepsilon$ — hypothesis (SV) [H] (T-61 restated) → [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум)
 
 
 ---

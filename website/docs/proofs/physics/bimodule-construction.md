@@ -139,14 +139,16 @@ where $f$ is a smooth cutoff function. This formula **does not require** expansi
 
 ### 3.2 Spectral predictions without loops
 
-:::warning Theorem T-180 (Non-perturbative mass ratios) [T]
+:::warning Theorem T-180 (Non-perturbative mass ratios) [C at (SV)]
+*Corrected 2026-09-25 from [T]: the vacuum state $\theta^*$ is taken with the sector values of the hypothesis (SV); T-64 is restated as a hypothesis whose vacuum has none of them.*
+
 Fermion mass ratios are determined by the **eigenvalues** of the finite Dirac operator $D_{\text{int}}$ and **do not depend** on λ₃:
 
 $$
 \frac{m_i}{m_j} = \frac{|[D_{\text{int}}]_{ii}|}{|[D_{\text{int}}]_{jj}|} = \frac{\mathrm{Gap}(i)}{\mathrm{Gap}(j)}
 $$
 
-where $\mathrm{Gap}(i)$ are the Gap parameters from the vacuum state $\theta^*$ (T-64 [T], unique minimum of $V_{\text{Gap}}$).
+where $\mathrm{Gap}(i)$ are the Gap parameters from the vacuum state $\theta^*$ (T-64 [H] (restated; sector values: hypothesis (SV)), unique minimum of $V_{\text{Gap}}$).
 :::
 
 **Corollary.** The mass hierarchy ($m_t \gg m_u$) is determined by the hierarchy of vacuum Gap parameters, which follows from the **geometry** of the Fano plane (different distances on PG(2,2)), not from loop corrections with λ₃.
@@ -159,7 +161,7 @@ $$
 V_{\text{Gap}} = V_2(\varepsilon) + \lambda_3 \cdot V_3(\varepsilon, \theta) + \lambda_4 \cdot V_4(\varepsilon)
 $$
 
-For λ₃ ≫ λ₄ the potential is dominated by the **cubic** term $V_3$. This is **not** a problem — it is an indication that the vacuum structure is determined by the **octonionic associator** (the cubic term $\propto [e_i, e_j, e_k]$), not by the standard quartic potential. The minimum of $V_{\text{Gap}}$ (T-64 [T]) exists and is unique **independently** of the ratio λ₃/λ₄.
+For λ₃ ≫ λ₄ the potential is dominated by the **cubic** term $V_3$. This is **not** a problem — it is an indication that the vacuum structure is determined by the **octonionic associator** (the cubic term $\propto [e_i, e_j, e_k]$), not by the standard quartic potential. The minimum of $V_{\text{Gap}}$ (T-64 [H] (restated; sector values: hypothesis (SV))) exists and is unique **independently** of the ratio λ₃/λ₄.
 
 :::info Reinterpretation of C7
 Condition C7 ($\lambda_3 \gg 4\pi$) is **not** a problem but a **feature** of the octonionic structure. The non-associativity of octonions manifests through the dominance of the cubic potential. Physical predictions should be extracted from the spectrum of $D_{\text{int}}$ (non-perturbatively), not from loop expansions of the Lagrangian. **Updated status of C7: from a [H]-warning to an [I]-feature** — a structural property of the theory, not a defect.

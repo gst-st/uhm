@@ -457,7 +457,7 @@ $$\|\delta\Gamma\|_F \leq \frac{2\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \k
 **точная параметрическая граница** [Т].
 
 Подстановка $\|H_{\mathrm{eff}}\|_{\mathrm{op}} = O(\bar{\varepsilon})$ с $\bar{\varepsilon} \approx 0.023$
-(из [T-61 [Т]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) для изолированного вакуума) даёт оценку $O(0.03)$.
+(из [T-61 [Г]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (переформулирована; секторные значения — гипотеза (СВ)) для изолированного вакуума) даёт оценку $O(0.03)$.
 
 Для **воплощённого** голона: backbone injection, hedonic drive и learning gradient
 создают эффективный гамильтониан $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|_{\mathrm{op}} \gg \bar{\varepsilon}$.
@@ -471,7 +471,7 @@ $$\|\delta\Gamma\|_F \leq \frac{2\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \k
 вакуумную оценку $\bar{\varepsilon}$.
 :::
 
-**Зависимости:** [T-98 [Т]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) (баланс чистоты), [T-61 [Т]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (единственный вакуум).
+**Зависимости:** [T-98 [Т]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) (баланс чистоты). Численная оценка в рамке выше — не сама граница — берёт $\bar\varepsilon$ из секторных значений гипотезы (СВ) через [T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (переформулирована 25.09.2026).
 
 ---
 
