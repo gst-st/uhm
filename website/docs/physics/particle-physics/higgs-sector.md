@@ -160,15 +160,15 @@ The $E$-$U$ channel is distinguished for three reasons:
 
 3. **Physical:** $E$-dimension $\leftrightarrow$ evaluative structure $\leftrightarrow$ electric charge. $U$-dimension $\leftrightarrow$ unification $\leftrightarrow$ weak isospin. At $\text{Gap}(E,U) = 0$ they are indistinguishable → $SU(2)_L$ doublet. At $\text{Gap}(E,U) \neq 0$ they are distinguishable → singlets.
 
-### 1.6 Yukawa couplings in the Clifford frame: what splits up from down (T-340) {#юкавы-t340}
+### 1.6 Yukawa couplings in the Clifford frame: what splits up from down (T-332) {#юкавы-t340}
 
 :::tip[Status: Theorem 1.6 (a)–(e) is \[T\] as mathematics and \[C at (Cl)\] in UHM; the hypothesis (UP) of (f) is \[H\]; the Yukawa structure itself — $m_t/m_b$, $y_t$, CKM — stays open \[Pr\]]
-[Theorem 2.6(f)](/docs/physics/gauge-symmetry/standard-model#поколение-t329) of the Standard Model page puts the Higgs doublet in the colour-free Clifford plane of $\mathrm{Spin}(10)$ and notes that one Clifford multiplication gives $m_t=m_b=m_\tau$. This section finds what in UHM can separate up from down, classifies every Yukawa coupling by the stage of the clock's symmetry breaking, and compares with the masses. Registry row T-340; checks in `website/scripts/check_core_numbers.py`.
+[Theorem 2.6(f)](/docs/physics/gauge-symmetry/standard-model#поколение-t329) of the Standard Model page puts the Higgs doublet in the colour-free Clifford plane of $\mathrm{Spin}(10)$ and notes that one Clifford multiplication gives $m_t=m_b=m_\tau$. This section finds what in UHM can separate up from down, classifies every Yukawa coupling by the stage of the clock's symmetry breaking, and compares with the masses. Registry row T-332; checks in `website/scripts/check_core_numbers.py`.
 :::
 
 **Setting.** Notation of the Standard Model page, §2.6: $\mathcal S_{\mathbb C}=V_L\oplus V_R$, field unit $\omega$, Clifford vectors $\gamma_a$, colour-free plane $P=\{iL_{e_O},J,iJ,\gamma_{10}\}$ with neutral directions $\{iL_{e_O},\gamma_{10}\}$. A Yukawa coupling is a real-linear map $h\mapsto M(h)$ from $P$ to $\omega$-antilinear operators $V_L\to V_R$ — the Dirac form of Theorem 2.6(f) — that is equivariant under a group $G$: $M(gh)=gM(h)g^{-1}$. The masses of $u,d,\nu,e$ are the singular values of $M(\langle h\rangle)$ between the matching components.
 
-**Theorem 1.6 (T-340).**
+**Theorem 1.6 (T-332).**
 
 **(a) Up and down are where the two units meet [T].** The operator $\tau := -iL_{e_O}$ on $\mathcal S_{\mathbb C}$ is a symmetric involution. It equals $+1$ on $u_L,\nu_L,u^c,\nu^c$ and $-1$ on $d_L,e_L,d^c,e^c$, on both halves alike. So the up-type fields are the vectors on which the imaginary unit of $\mathcal H$ acts as the clock's left multiplication, $i=L_{e_O}$, and the down-type fields those with $i=-L_{e_O}$. On $\mathbb C^7\subset\mathcal S$ the two eigenspaces of $L_{e_O}$ on $e_O^\perp$ — the "triplet" $P_{\mathbf 3}$ ($L_{e_O}=-i$) and "antitriplet" $P_{\bar{\mathbf 3}}$ ($L_{e_O}=+i$) of [T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) — are the down and up components of the left-handed quark doublet. In the field's complex structure both are colour triplets. $\tau_R:=\tau|_{V_R}$ commutes with $\mathfrak g_{\mathrm{SM}}$. On $V_L$, $\tau$ is twice $T_{3L}$ and does not commute with $\mathfrak{su}(2)_L$.
 
@@ -631,7 +631,7 @@ $$Y = \frac{1}{3}\left(\sum_{i \in 3} \text{Gap}(O,i) - \sum_{j \in \bar{3}} \te
 
 *Corrected 2026-09-25 from [T] to [H]: step (i) takes "$\langle\gamma_{ij}\rangle \neq 0$ only for the $\kappa_0$ pair" from T-64, which never stated it and is now a hypothesis, and the whole argument presupposes the identification $H \sim \gamma_{EU}$ of Theorem 1.0, now a hypothesis with a colour-breaking obstruction. The exclusion of 2HDM spectra is a prediction of that hypothesis, not a theorem.*
 
-*New basis (T-340, [§1.6](#юкавы-t340)).* In the Clifford frame the colour-free plane of $\mathrm{Spin}(10)$ is exactly one real doublet, so a real Higgs field gives one doublet without reference to $\gamma_{EU}$. The price is the up–down split. With one real doublet it must come from the operator $\tau_R$ (the imaginary unit of $\mathcal H$ on $V_R$), that is from a coupling that breaks $\mathrm{SU}(2)_R$. The alternative is the complex bidoublet — two doublets with $m_t/m_b=\tan\beta$ — which this prohibition excludes. The data require the $\tau_R$-coefficient $\beta/\alpha=0.971$ (T-340(f)). T-296 stays [H]. A charged Higgs would now refute the real-plane reading together with it.
+*New basis (T-332, [§1.6](#юкавы-t340)).* In the Clifford frame the colour-free plane of $\mathrm{Spin}(10)$ is exactly one real doublet, so a real Higgs field gives one doublet without reference to $\gamma_{EU}$. The price is the up–down split. With one real doublet it must come from the operator $\tau_R$ (the imaginary unit of $\mathcal H$ on $V_R$), that is from a coupling that breaks $\mathrm{SU}(2)_R$. The alternative is the complex bidoublet — two doublets with $m_t/m_b=\tan\beta$ — which this prohibition excludes. The data require the $\tau_R$-coefficient $\beta/\alpha=0.971$ (T-332(f)). T-296 stays [H]. A charged Higgs would now refute the real-plane reading together with it.
 
 :::tip [H] Structural prohibition (T-296)
 UHM forbids a second Higgs doublet. The categorical uniqueness that *selects* the pair $(E,U)$ simultaneously *excludes* every other scalar candidate.

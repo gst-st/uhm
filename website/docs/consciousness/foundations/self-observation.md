@@ -162,7 +162,7 @@ The formula $R = 1/(7P)$ uses $\rho^*_{\mathrm{diss}} = I/7$ — this is correct
 - **Simple form** $\varphi_k$: fixed point $\rho^*_{\mathrm{diss}} = I/7$ ($P = 1/7$, non-viable)
 - **Canonical** $\varphi_{\mathrm{coh}}$: fixed point $\Gamma^*_{\mathrm{coh}} = I/7$ ($P = 1/7$; "$P = 2/7$, viability boundary" until 2026-09-25, retracted)
 - **Self-registering** $\varphi_s$: fixed points include every flat frame state $\Pi_S/\lvert S\rvert$; its attractors keep an isolated holon alive
-- **Collineation-anchored** $\varphi_J$: the only fixed point is $\Gamma_{\eta_\infty}$, inside the window; its attractor for $\kappa > \kappa_c(\alpha)$ lies in $\mathcal{V}_{\mathrm{full}}$; the anchor is derived up to the phase gauge from the principle (Eq-V) ([T-350](/docs/core/operators/phi-operator#t-350)), and every self-model of this form needs $\kappa \geq 11.83$ at $\alpha = 0$ to stay in the window ([T-352](/docs/core/dynamics/evolution#t-352))
+- **Collineation-anchored** $\varphi_J$: the only fixed point is $\Gamma_{\eta_\infty}$, inside the window; its attractor for $\kappa > \kappa_c(\alpha)$ lies in $\mathcal{V}_{\mathrm{full}}$; the anchor is derived up to the phase gauge from the principle (Eq-V) ([T-334](/docs/core/operators/phi-operator#t-334)), and every self-model of this form needs $\kappa \geq 11.83$ at $\alpha = 0$ to stay in the window ([T-336](/docs/core/dynamics/evolution#t-336))
 - **Full Liouvillian** $\mathcal{L}_\Omega$: attractor $\rho^*_\Omega$ ($P > 1/7$, physical balance)
 
 For details: [hierarchy of fixed points](/docs/core/dynamics/evolution#иерархия-неподвижных-точек), [stratification](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).

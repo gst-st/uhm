@@ -25,8 +25,8 @@ description: "Fano selection rule for Yukawa couplings, quasi-IR fixed point, an
 7. [Mass Spectrum and Comparison with Observations](#7-массовый-спектр-и-сравнение-с-наблюдениями) (diagonalization with seesaw corrections, [Sectoral RG for $m_b/m_t$](#теорема-mb-mt))
 8. [Contribution to the Cosmological Constant Budget](#8-вклад-в-бюджет-космологической-постоянной)
 
-:::warning[The Clifford frame (2026-09-25, T-340)]
-The derivations on this page place the Higgs on the axis pair $(E,U)$, and that identification $H\sim\gamma_{EU}$ is a hypothesis [H] with a colour obstruction ([Higgs sector §1.1](/docs/physics/particle-physics/higgs-sector#теорема-отождествление-хиггса)). In the frame where the Standard Model is derived ([Theorem 2.6](/docs/physics/gauge-symmetry/standard-model#поколение-t329)), the Yukawa couplings are classified in [Higgs sector §1.6](/docs/physics/particle-physics/higgs-sector#юкавы-t340) (T-340). With one real doublet, up and down are separated only by $\tau_R=-iL_{e_O}|_{V_R}$, and the data ask for its coefficient $\beta/\alpha=0.971$ — "only up-type couples at tree level", the hypothesis (UP) [H]. The Fano selection rule below is arithmetic on axes [T]. Its use for the physical $y_t$, $y_b$ inherits [H] from $H\sim\gamma_{EU}$. Theorems 5.3 and "Sectoral RG for $m_b/m_t$" are corrected accordingly.
+:::warning[The Clifford frame (2026-09-25, T-332)]
+The derivations on this page place the Higgs on the axis pair $(E,U)$, and that identification $H\sim\gamma_{EU}$ is a hypothesis [H] with a colour obstruction ([Higgs sector §1.1](/docs/physics/particle-physics/higgs-sector#теорема-отождествление-хиггса)). In the frame where the Standard Model is derived ([Theorem 2.6](/docs/physics/gauge-symmetry/standard-model#поколение-t329)), the Yukawa couplings are classified in [Higgs sector §1.6](/docs/physics/particle-physics/higgs-sector#юкавы-t340) (T-332). With one real doublet, up and down are separated only by $\tau_R=-iL_{e_O}|_{V_R}$, and the data ask for its coefficient $\beta/\alpha=0.971$ — "only up-type couples at tree level", the hypothesis (UP) [H]. The Fano selection rule below is arithmetic on axes [T]. Its use for the physical $y_t$, $y_b$ inherits [H] from $H\sim\gamma_{EU}$. Theorems 5.3 and "Sectoral RG for $m_b/m_t$" are corrected accordingly.
 :::
 
 ---
@@ -111,7 +111,7 @@ Thus, the selection rule follows directly from the algebra $\mathbb{O}$, without
 ### Theorem 3.1 (Third-Generation Yukawa Coupling) {#thm-3-1}
 
 :::tip [T] $y_t$ is the unique $O(1)$ Yukawa; [C] its precise value
-*Update 2026-09-25 (T-340):* the [T] below is the arithmetic of the Fano rule on axes. Its physical reading uses $H\sim\gamma_{EU}$, which is [H]. In the Clifford frame "exactly one $O(1)$ coupling per generation, the up-type" is the hypothesis (UP) [H]; the data support it ($y_t/y_b\approx68$, $y_t/y_\tau\approx45$ at $2\times10^{16}$ GeV), and nothing derives it yet ([Higgs sector §1.6](/docs/physics/particle-physics/higgs-sector#юкавы-t340)).
+*Update 2026-09-25 (T-332):* the [T] below is the arithmetic of the Fano rule on axes. Its physical reading uses $H\sim\gamma_{EU}$, which is [H]. In the Clifford frame "exactly one $O(1)$ coupling per generation, the up-type" is the hypothesis (UP) [H]; the data support it ($y_t/y_b\approx68$, $y_t/y_\tau\approx45$ at $2\times10^{16}$ GeV), and nothing derives it yet ([Higgs sector §1.6](/docs/physics/particle-physics/higgs-sector#юкавы-t340)).
 
 The Fano selection rule makes $y_t$ the **unique** $O(1)$ Yukawa coupling — this is the genuine [T] content (part (a)). The observed $m_t\approx173$ GeV corresponds to $y_t(m_t)\approx0.94$: $O(1)$, but **not** pinned at the Pendleton–Ross IR quasi-fixed point (which overshoots — see (b)). Status: "exactly one $O(1)$ Yukawa" **[T]**; the numerical $m_t\approx173$ GeV **[C]** (compatible, not fixed-point-predicted).
 :::
@@ -322,10 +322,10 @@ From observed masses: $\sqrt{m_d/m_s} \approx 0.22$, $\sqrt{m_u/m_c} \approx 0.0
 
 ### Theorem 5.3 (Distinction between $Y^u$ and $Y^d$) — corrected from [T] to [H] {#thm-5-3}
 
-:::warning [H] Corrected 2026-09-25 (T-340)
+:::warning [H] Corrected 2026-09-25 (T-332)
 Up-type and down-type quarks acquire masses through a single Higgs doublet with different orientations in Fano space. The mass mechanism for the $b$-quark is **loop-level** (not tree-level), with QCD-IR enhancement and a sectoral correction $r_{33} \approx 0.25$. Full statement: [Sectoral RG for $m_b/m_t$](#теорема-mb-mt).
 
-*Why [H].* (i) "$y_b^{(\text{tree})}=0$" uses $H\sim\gamma_{EU}$, which is [H]. (ii) In the Clifford frame the same pattern is the projection onto $i=L_{e_O}$, the hypothesis (UP) of [T-340(f)](/docs/physics/particle-physics/higgs-sector#юкавы-t340): it agrees with the data ($\beta/\alpha=0.971$), but no principle fixes it. (iii) The loop value uses $\lambda_3$ of the retracted cubic $V_3$ and $\varepsilon_{33}$ of (SV). What stands [T]: with one real doublet, the only operator that can separate $Y^u$ from $Y^d$ is $\tau_R$ (T-340(b)).
+*Why [H].* (i) "$y_b^{(\text{tree})}=0$" uses $H\sim\gamma_{EU}$, which is [H]. (ii) In the Clifford frame the same pattern is the projection onto $i=L_{e_O}$, the hypothesis (UP) of [T-332(f)](/docs/physics/particle-physics/higgs-sector#юкавы-t340): it agrees with the data ($\beta/\alpha=0.971$), but no principle fixes it. (iii) The loop value uses $\lambda_3$ of the retracted cubic $V_3$ and $\varepsilon_{33}$ of (SV). What stands [T]: with one real doublet, the only operator that can separate $Y^u$ from $Y^d$ is $\tau_R$ (T-332(b)).
 :::
 
 **Theorem.** Up-type and down-type quarks acquire masses through a single Higgs doublet, but with different orientations:
@@ -382,7 +382,7 @@ The parameter $\varepsilon_\text{eff} \sim 0.06$ is **not** the non-O mean $\bar
 | $\mathbf{3}$-to-$\mathbf{3}$ | $\varepsilon_{33} \sim \varepsilon_{\text{space}}$ | Intermediate |
 | $\bar{\mathbf{3}}$-to-$\bar{\mathbf{3}}$ | $\varepsilon_{\bar{3}\bar{3}} \sim \varepsilon_{\text{EW}}$ | $v_{\text{EW}}$ |
 
-*Decision on (SV) in the Clifford frame (2026-09-25, T-340).* A coherence of $\Gamma$ acts inside one copy of $\mathcal S$. Under (Cl₀) with (GC) the family index lives on the clock register ([T-328](/docs/physics/particle-physics/fermion-generations#поколения-t328)), so no coherence of $\Gamma$ on $\mathbb C^7$ can be a suppression between generations. The only non-O coherence of the corrected vacuum, $(b-c)/2$ with $\bar\varepsilon=\lvert b-c\rvert/(2\sqrt5)\in[0,0.056]$, is its up–down ($T_{3L}$) asymmetry (T-340(e)), not a family parameter. As a vacuum of $V_{\text{Gap}}$, (SV) is refuted [✗] by T-64 [T]; it survives only as an independent hypothesis [H]. As the carrier of the generation parameter $\varepsilon$ it has no support under (Cl), so the value $\varepsilon=O(10^{-2})$ used below is phenomenological [H]. The conditional statements [C at (SV)] remain true as implications.
+*Decision on (SV) in the Clifford frame (2026-09-25, T-332).* A coherence of $\Gamma$ acts inside one copy of $\mathcal S$. Under (Cl₀) with (GC) the family index lives on the clock register ([T-328](/docs/physics/particle-physics/fermion-generations#поколения-t328)), so no coherence of $\Gamma$ on $\mathbb C^7$ can be a suppression between generations. The only non-O coherence of the corrected vacuum, $(b-c)/2$ with $\bar\varepsilon=\lvert b-c\rvert/(2\sqrt5)\in[0,0.056]$, is its up–down ($T_{3L}$) asymmetry (T-332(e)), not a family parameter. As a vacuum of $V_{\text{Gap}}$, (SV) is refuted [✗] by T-64 [T]; it survives only as an independent hypothesis [H]. As the carrier of the generation parameter $\varepsilon$ it has no support under (Cl), so the value $\varepsilon=O(10^{-2})$ used below is phenomenological [H]. The conditional statements [C at (SV)] remain true as implications.
 
 The Yukawa texture is determined by the **sectors coupling generations to the Higgs** (the $\bar{3}$-to-$\bar{3}$ sector for electroweak and $O$-to-all), not by the global $\bar{\varepsilon}$. The effective $\varepsilon_\text{eff} \sim 0.06$ arises as a weighted combination of sectoral coherences participating in the Fano paths to the Higgs, which structurally justifies why it exceeds $\bar{\varepsilon} \approx 0.027$ (root mean square over the 15 non-O pairs under (SV); $0.023$ until 2026-09-25, audit A-83).
 :::
@@ -529,7 +529,7 @@ The ratio $m_b/m_\tau \approx 4.2/1.78 \approx 2.4$ — a prediction of SU(5)-GU
 #### Theorem (Sectoral RG for $m_b/m_t$) — corrected from [T] to [H] {#теорема-mb-mt}
 
 :::warning [H] Corrected 2026-09-25
-Its inputs are hypotheses: $y_b^{(\text{tree})}=0$ ((UP), or $H\sim\gamma_{EU}$), $\lambda_3\approx74$ of the retracted cubic $V_3$, and $\varepsilon_{33}^*$ of (SV). The correction $r_{33}\approx0.25$ is chosen to match. The compared ratio mixes scales: $m_b(m_b)/m_t\approx0.024$, while at one scale $m_b/m_t\approx0.018$ at $M_Z$ and $0.0146$ at $2\times10^{16}$ GeV (one-loop, T-340(f)). The earlier text follows.
+Its inputs are hypotheses: $y_b^{(\text{tree})}=0$ ((UP), or $H\sim\gamma_{EU}$), $\lambda_3\approx74$ of the retracted cubic $V_3$, and $\varepsilon_{33}^*$ of (SV). The correction $r_{33}\approx0.25$ is chosen to match. The compared ratio mixes scales: $m_b(m_b)/m_t\approx0.024$, while at one scale $m_b/m_t\approx0.018$ at $M_Z$ and $0.0146$ at $2\times10^{16}$ GeV (one-loop, T-332(f)). The earlier text follows.
 :::
 
 :::note Earlier statement (stated as [T] until 2026-09-25)

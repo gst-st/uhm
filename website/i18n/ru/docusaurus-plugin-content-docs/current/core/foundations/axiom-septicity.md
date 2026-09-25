@@ -137,7 +137,7 @@ $$
 | 7 | $R(\Gamma)$ | $R := 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$ | Уровень 6 + состояние $\Gamma$ |
 | 8 | $\kappa(\Gamma)$ | $\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ | Уровень 0 (сопряжение $\mathcal{D} \dashv \mathcal{R}$) |
 | 9 | $\varphi_k(\Gamma)$ | Замещающий канал: $\varphi_k = (1-k)\Gamma + k\rho^*_{\mathrm{diss}}$, $k = 1-R$ | Уровни 6, 7 |
-| 10 | $\varphi_J(\Gamma)$ | Самомодель с якорем коллинеаций $k\,\mathcal{P}_\alpha(\Gamma) + R\,uu^\dagger$, $k = 1 - R$; якорь фиксирован с точностью до фазовой калибровки принципом (Рав-Ж) ([T-350](/docs/core/operators/phi-operator#t-350)); неподвижная точка $\Gamma_{\eta_\infty}$ внутри окна | Уровни 3 (реперная группа $\Gamma_{\mathrm{oct}}$), 6, 7 |
+| 10 | $\varphi_J(\Gamma)$ | Самомодель с якорем коллинеаций $k\,\mathcal{P}_\alpha(\Gamma) + R\,uu^\dagger$, $k = 1 - R$; якорь фиксирован с точностью до фазовой калибровки принципом (Рав-Ж) ([T-334](/docs/core/operators/phi-operator#t-334)); неподвижная точка $\Gamma_{\eta_\infty}$ внутри окна | Уровни 3 (реперная группа $\Gamma_{\mathrm{oct}}$), 6, 7 |
 
 :::info Канонический порядок определений
 $$\Omega \xrightarrow{\text{L-унификация}} \mathcal{L}_\Omega \xrightarrow{\text{примитивность}} \rho^*_{\mathrm{diss}} \xrightarrow{\text{близость}} R(\Gamma) \xrightarrow{k=1-R} \varphi_k$$

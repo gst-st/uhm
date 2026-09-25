@@ -137,7 +137,7 @@ $$
 | 7 | $R(\Gamma)$ | $R := 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$ | Level 6 + state $\Gamma$ |
 | 8 | $\kappa(\Gamma)$ | $\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ | Level 0 (adjunction $\mathcal{D} \dashv \mathcal{R}$) |
 | 9 | $\varphi_k(\Gamma)$ | Replacement channel: $\varphi_k = (1-k)\Gamma + k\rho^*_{\mathrm{diss}}$, $k = 1-R$ | Levels 6, 7 |
-| 10 | $\varphi_J(\Gamma)$ | Collineation-anchored self-model $k\,\mathcal{P}_\alpha(\Gamma) + R\,uu^\dagger$, $k = 1 - R$; the anchor is fixed up to the phase gauge by the principle (Eq-V) ([T-350](/docs/core/operators/phi-operator#t-350)); fixed point $\Gamma_{\eta_\infty}$ inside the window | Levels 3 (frame group $\Gamma_{\mathrm{oct}}$), 6, 7 |
+| 10 | $\varphi_J(\Gamma)$ | Collineation-anchored self-model $k\,\mathcal{P}_\alpha(\Gamma) + R\,uu^\dagger$, $k = 1 - R$; the anchor is fixed up to the phase gauge by the principle (Eq-V) ([T-334](/docs/core/operators/phi-operator#t-334)); fixed point $\Gamma_{\eta_\infty}$ inside the window | Levels 3 (frame group $\Gamma_{\mathrm{oct}}$), 6, 7 |
 
 :::info Canonical order of definitions
 $$\Omega \xrightarrow{\text{L-unification}} \mathcal{L}_\Omega \xrightarrow{\text{primitivity}} \rho^*_{\mathrm{diss}} \xrightarrow{\text{proximity}} R(\Gamma) \xrightarrow{k=1-R} \varphi_k$$

@@ -1642,7 +1642,7 @@ $$
 
 **Interpretation:** Regeneration is a **protective mechanism** that uses the self-model as a guide for restoring coherence.
 
-**Corrected 2026-09-25 [✗ as stated].** The gate $g_V(P) = \mathrm{clamp}(7P - 2, 0, 1)$ switches regeneration off for $P \le 2/7$, where $dP/d\tau = -\tfrac43 P_{\mathrm{coh}} \le 0$ for every $\kappa$; the UHM self-models are not contractions (Lemma 2.1, scope). What holds [T], for $\varphi_J$ and $\kappa > \kappa_c(\alpha)$ at $H = 0$: on the family $\Gamma_\eta$, $dP/d\tau = \tfrac{12}{7}\eta\,h(\eta)$ is negative below the saddle $P_-$, positive on $(P_-, P_+)$ and negative above the sink $P_+$ — regeneration protects the window from the saddle up, not from the threshold $2/7$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне); the admissible $\kappa$ in [T-352](/docs/core/dynamics/evolution#t-352)).
+**Corrected 2026-09-25 [✗ as stated].** The gate $g_V(P) = \mathrm{clamp}(7P - 2, 0, 1)$ switches regeneration off for $P \le 2/7$, where $dP/d\tau = -\tfrac43 P_{\mathrm{coh}} \le 0$ for every $\kappa$; the UHM self-models are not contractions (Lemma 2.1, scope). What holds [T], for $\varphi_J$ and $\kappa > \kappa_c(\alpha)$ at $H = 0$: on the family $\Gamma_\eta$, $dP/d\tau = \tfrac{12}{7}\eta\,h(\eta)$ is negative below the saddle $P_-$, positive on $(P_-, P_+)$ and negative above the sink $P_+$ — regeneration protects the window from the saddle up, not from the threshold $2/7$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне); the admissible $\kappa$ in [T-336](/docs/core/dynamics/evolution#t-336)).
 
 ### 9.6 Preservation of positivity under regeneration
 
