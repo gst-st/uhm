@@ -566,13 +566,13 @@ The previous claim $\mathrm{Tr}_{\text{int}}(\gamma_{\text{int}}) = 7_{\text{bos
 **Results used:**
 - T-42a [T] ($G_2$-rigidity, 7-dimensional representation $\mathbf{7}_{G_2}$);
 - T-53 [T] (sector decomposition $1 \oplus 3 \oplus \bar{3}$, $H_{\text{int}} = \mathbb{C}^7$);
-- T-83 [T] (Barrett KO-dim 6, spectral triple);
+- T-83 (its inputs "Barrett" and "KO-dim 6" are retracted — registry row T-83);
 - Connes' classification theorem for finite spectral triples (Connes 1994);
 - Cartan's theorem on simple Lie groups ($\mathbf{7}_{G_2}$ — the unique 7-dimensional representation).
 
 **Consistency check:**
-- Dependencies T-42a, T-53, T-83 — all [T], no circularities;
-- $\mathbb{Z}_2$-grading $\gamma_{\text{int}}$ is standard for KO-dim 6 (Connes-Dungen);
+- Dependencies T-42a, T-53, T-83 — an earlier version called them all [T]; T-83 is stratified and its KO-dimension input is retracted;
+- $\mathbb{Z}_2$-grading $\gamma_{\text{int}}$ — the earlier "standard for KO-dim 6 (Connes-Dungen)" is retracted: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка));
 - Consistent with the spectral formula Theorem 4.3 [T];
 - Consistent with the $\varepsilon^{12}$-estimate of residual $\Lambda$ under SUSY breaking.
 

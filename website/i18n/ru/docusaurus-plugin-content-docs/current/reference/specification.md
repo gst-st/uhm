@@ -485,5 +485,5 @@ $$
 - [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
 - [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор $F$, ∞-группоид $\mathbf{Exp}_\infty$
 - [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4 и n-усечения ∞-группоида
-- [Бимодульная конструкция](/docs/proofs/physics/bimodule-construction) — SM-представления из бимодулей спектральной тройки (T-178–T-181)
+- [Бимодульная конструкция](/docs/proofs/physics/bimodule-construction) — SM-представления из бимодулей импортированного конечного пространства $H_F$ Конна; вывод из спектральной тройки УГМ (T-178) отозван [✗] (2026-09-25) — у $H_{\text{int}} = \mathbb{C}^7$ 7 состояний, а поколению нужно 32, и вещественной структуры KO-размерности 6 на $\mathbb{C}^7$ нет; T-179 отозвана в данной формулировке (T-178–T-181)
 - [Вычислительная реализация](./computational) — Python-код

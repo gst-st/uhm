@@ -7,11 +7,11 @@ description: "G₂-rigidity of holonomic representation: uniqueness of the map G
 
 # Uniqueness Theorem of Holonomic Representation
 
-:::warning Status: [T] — all steps proven
-The uniqueness theorem of holonomic representation is a **theorem [T]**, relying exclusively on previously proven results:
+:::warning Status: [T] given the octonionic structure; that structure is [C at (Alt)]
+The uniqueness theorem of holonomic representation is a **theorem [T]** about $\mathbb{C}^7$ carrying the octonionic multiplication of the oriented Fano plane. From the axioms that structure follows only at the orientation assumption (Alt) of the bridge T15 (registry row 41n), so as a consequence of the axioms the theorem is [C at (Alt)]. Until 2026-09-25 this box read "[T] — all steps proven, relying exclusively on previously proven results". It relies on:
 - Primitivity of $\mathcal{L}_\Omega$ [T] ([proof](/docs/core/operators/lindblad-operators#примитивность-ℒω))
 - Full minimality 7/7 [T] ([proof](/docs/proofs/minimality/theorem-minimality-7))
-- Bridge T15 [T]: (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2 $\Rightarrow$ $\mathbb{O}$ $\Rightarrow$ $G_2$ ([proof](/docs/proofs/minimality/theorem-octonionic-derivation#мост))
+- Bridge T15 [C at (Alt)]: (AP)+(PH)+(QG)+(V) $\Rightarrow$ BIBD(7,3,1) = PG(2,2) [T] $\Rightarrow$ $\mathbb{O}$ (needs the orientation (Alt)) $\Rightarrow$ $G_2$ ([proof](/docs/proofs/minimality/theorem-octonionic-derivation#мост))
 - L-unification [T] ([proof](/docs/core/operators/lindblad-operators))
 - Uniqueness of E, O, U [T] ([proof](/docs/proofs/minimality/theorem-minimality-7))
 :::
@@ -157,12 +157,12 @@ All 7 dimensions are [functionally unique](/docs/proofs/minimality/theorem-minim
 - [O is unique](/docs/proofs/minimality/theorem-minimality-7) [T]: $\mathcal{R}$ [T] + $\kappa_0$ ($\mathrm{End}(O)$, $\mathrm{Hom}(O,E)$, $\mathrm{Hom}(O,U)$) + PW (A5) + functional independence
 - [E $\perp$ O](/docs/proofs/minimality/theorem-minimality-7) [T]: causal + categorical (O = E degenerates $\kappa_0$)
 
-### P3. Bridge T15 [T] {#p3-мост}
+### P3. Bridge T15 [C at (Alt)] {#p3-мост}
 
-Full chain [(AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2](/docs/proofs/minimality/theorem-octonionic-derivation#мост) of 12 steps, all [T]:
+Full chain [(AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2](/docs/proofs/minimality/theorem-octonionic-derivation#мост) of 12 steps; the steps up to PG(2,2) are [T], the step to $\mathbb{O}$ needs an orientation of the seven lines (only 16 of the 128 orientations are normed; registry row 41n). Stated as "all [T]" until 2026-09-25:
 
 $$
-\mathrm{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{T}]} \mathrm{BIBD}(7,3,1) \xrightarrow{[\text{T}]} \mathrm{PG}(2,2) \xrightarrow{[\text{T}]} \mathbb{O} \xrightarrow{[\text{T}]} G_2
+\mathrm{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{T}]} \mathrm{BIBD}(7,3,1) \xrightarrow{[\text{T}]} \mathrm{PG}(2,2) \xrightarrow{\text{(Alt)}} \mathbb{O} \xrightarrow{[\text{T}]} G_2
 $$
 
 ### P4. L-unification [T] {#p4-л-унификация}
@@ -245,7 +245,7 @@ Axioms A1–A5 uniquely determine (in the given basis $\mathcal{B}$) the followi
 
 **(i)** Atomic projectors $\{|k\rangle\langle k|\}_{k=0}^{6}$ (from L-unification [T])
 
-**(ii)** The system of Fano lines $\{\mathrm{line}_p\}_{p=1}^{7} \subset \binom{[7]}{3}$ (from bridge T15 [T])
+**(ii)** The system of Fano lines $\{\mathrm{line}_p\}_{p=1}^{7} \subset \binom{[7]}{3}$ with its orientation, i.e. the structure constants $f_{ijk}$ (from bridge T15: the lines [T], their orientation at (Alt))
 
 **(iii)** E-projection $\pi_E(\Gamma) = P_E\Gamma + \Gamma P_E - P_E\Gamma P_E$ (from [Coh_E [T]](/docs/core/foundations/axiom-septicity#hs-projection))
 
@@ -256,7 +256,7 @@ Axioms A1–A5 uniquely determine (in the given basis $\mathcal{B}$) the followi
 
 **Proof.** Each structure is derived from the axioms:
 - (i): [L-unification](/docs/core/foundations/axiom-omega#lk-из-omega) [T] — atoms $S_k = |k\rangle\langle k|$ of classifier $\Omega$
-- (ii): Bridge T15 [T] — uniqueness of BIBD$(7,3,1)$ $\cong$ PG(2,2) (Hall 1967)
+- (ii): Bridge T15 — uniqueness of BIBD$(7,3,1)$ $\cong$ PG(2,2) (Hall 1967) [T]; the orientation that turns the lines into the structure constants $f_{ijk}$ is the input (Alt) (registry row 41n; this line read "Bridge T15 [T]" until 2026-09-25)
 - (iii): [HS-projection theorem](/docs/core/foundations/axiom-septicity#теорема-hs-проекция) [T] — orthogonal projection in Hilbert–Schmidt space
 - (iv): Axiom A5 (Page–Wootters) — explicit postulate
 - (v): Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ [T] — formula for $\kappa_0$ from [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0). $\blacksquare$
@@ -286,7 +286,7 @@ The genuinely $G_2$-invariant content is the spectrum (6 numbers) plus the $\var
 
 Let $U \in U(7)$ preserve all five structures of Lemma G3.
 
-**Step B1.** From preservation of (ii) (Fano lines): $U$ induces an automorphism of the Fano plane PG(2,2). Since PG(2,2) is isomorphic to the multiplication table of $\mathrm{Im}(\mathbb{O})$ [T], $U$ induces an automorphism of octonionic multiplication.
+**Step B1.** From preservation of (ii) (Fano lines): $U$ induces an automorphism of the Fano plane PG(2,2). Since the oriented PG(2,2) of Lemma G3(ii) is the multiplication table of $\mathrm{Im}(\mathbb{O})$ (given the orientation (Alt)), $U$ induces an automorphism of octonionic multiplication.
 
 **Step B2.** Restrict $U$ to $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. An automorphism of octonionic multiplication on $\mathrm{Im}(\mathbb{O})$ by definition belongs to $G_2 = \mathrm{Aut}(\mathbb{O})$.
 
@@ -309,7 +309,7 @@ Therefore, $U \in G_2$. $\blacksquare$
 ### Theorem (G₂-rigidity of holonomic representation) [T] {#g2-ригидность}
 
 :::warning Theorem of G₂-rigidity [T]
-Let $S$ be an autonomous system satisfying (AP)+(PH)+(QG)+(V). Let $(\mathbb{C}^7, \mathcal{B}_1, G_1)$ and $(\mathbb{C}^7, \mathcal{B}_2, G_2)$ be two holonomic representations of $S$ (Definition G1).
+Let $S$ be an autonomous system satisfying (AP)+(PH)+(QG)+(V), with $\mathbb{C}^7$ carrying the octonionic multiplication of Lemma G3(ii) (from the axioms at the orientation assumption (Alt)). Let $(\mathbb{C}^7, \mathcal{B}_1, G_1)$ and $(\mathbb{C}^7, \mathcal{B}_2, G_2)$ be two holonomic representations of $S$ (Definition G1).
 
 Then there exists a **unique** $U \in G_2 = \mathrm{Aut}(\mathbb{O})$ such that:
 
@@ -476,7 +476,7 @@ This theorem **fully closes** the question of uniqueness of the map G at the the
 
 | Question | Status | Basis |
 |--------|:------:|-----------|
-| **Existence** of G | **[T]** | Theorem S + bridge T15 |
+| **Existence** of G | **[T]** (Theorem S); the octonionic structure via the bridge T15, [C at (Alt)] | Theorem S + bridge T15 |
 | **Uniqueness** of G (up to $G_2$) | **[T]** | Theorem of $G_2$-rigidity (this document) |
 | **Predictivity** of G | [Empirical] | Requires experimental verification |
 

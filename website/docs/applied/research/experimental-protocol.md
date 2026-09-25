@@ -171,7 +171,7 @@ Any implementation used for Phase I must satisfy:
 2. For each: compute the order parameter (PCI analogue) and distance to P_crit
 3. Fit: OP ~ (P − P_crit)^β
 
-**Prediction:** β = 1/4 ± 0.05 (T-161).
+**Prediction:** β = 1/4 ± 0.05 (T-161, [C] at the ℤ₂ symmetry m → −m; without it the swallowtail value β = 1/2).
 
 **Falsification:** β ∉ [0.20, 0.30] at N=10⁴.
 
@@ -376,7 +376,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 3. For conscious (x > 0): fit PCI ~ x^β
 4. Extract β, 95% CI
 
-**Prediction:** β = 1/4 ± 0.05 (T-161).
+**Prediction:** β = 1/4 ± 0.05 (T-161, [C] at the ℤ₂ symmetry m → −m; without it the swallowtail value β = 1/2).
 
 **Additional exponents:**
 - α = 1/2: specific heat (from variance of P near threshold)

@@ -253,8 +253,10 @@ $$
 The coefficients of the canonical $\varphi_{\text{coh}}$, given the Fano weight $\alpha$:
 
 $$
-c_{mn} = \begin{cases} \alpha^* k & m = n \text{ (atomic part)} \\ (1-\alpha^*) k / 3 & m \neq n,\, (m,n) \text{ on a common Fano line} \\ 0 & m \neq n,\, (m,n) \text{ not on a common Fano line} \end{cases}
+c_{mn} = \begin{cases} k & m = n \text{ (the atomic and the Fano channel both keep the diagonal)} \\ (1-\alpha) k / 3 & m \neq n \end{cases}
 $$
+
+and the anchor adds $(1-k)\,[\Gamma_{\text{anchor}}]_{mn}$. Every pair $(m,n)$ lies on exactly one Fano line, so a third case "$0$ for $(m,n)$ not on a common Fano line" is empty. *Corrected 2026-09-25:* the box printed $c_{mm} = \alpha^* k$ and that empty third case; the diagonal coefficient is $\alpha k + (1-\alpha)k = k$ (as in [$G_2$-structure, Theorem 10.5](/docs/physics/gauge-symmetry/g2-structure)), and $\alpha^*$ is retracted.
 
 The coefficients are determined through:
 - The [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$ (algebraic geometry)
@@ -264,8 +266,8 @@ The coefficients are determined through:
 [Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[T]**
 :::
 
-:::info Kraus operators
-Atomic operators (7 total): $K_m^{(\text{atom})} = \sqrt{\alpha^* k / 7} \cdot |m\rangle\langle m|$. Fano operators (7 total): $K_p^{(\text{Fano})} = \sqrt{(1-\alpha^*) k / 3} \cdot \Pi_p$. Anchor operator: $K_0 = \sqrt{(1-k)/7} \cdot I$. Verification: $\sum (K^{(\text{atom})})^\dagger K^{(\text{atom})} + \sum (K^{(\text{Fano})})^\dagger K^{(\text{Fano})} + K_0^\dagger K_0 = \alpha^* k \cdot I + (1-\alpha^*) k \cdot I + (1-k) \cdot I = I$.
+:::info Kraus operators (7 + 7 + 49; corrected 2026-09-25)
+Atomic operators (7): $K_m^{(\text{atom})} = \sqrt{\alpha k} \cdot |m\rangle\langle m|$. Fano operators (7): $K_p^{(\text{Fano})} = \sqrt{(1-\alpha) k / 3} \cdot \Pi_p$. Anchor operators (49), with $\Gamma_{\text{anchor}} = \sum_i \lambda_i |\psi_i\rangle\langle\psi_i|$: $K_{ij}^{(\text{anch})} = \sqrt{(1-k)\lambda_i} \cdot |\psi_i\rangle\langle j|$. Verification: $\sum_m (K_m^{(\text{atom})})^\dagger K_m^{(\text{atom})} = \alpha k \cdot I$; $\sum_p (K_p^{(\text{Fano})})^\dagger K_p^{(\text{Fano})} = \tfrac{(1-\alpha)k}{3} \cdot 3I$ (every point lies on three lines); $\sum_{i,j} (K_{ij}^{(\text{anch})})^\dagger K_{ij}^{(\text{anch})} = (1-k) \cdot I$; total $I$. The 63 operators reproduce $\varphi_{\text{coh}}$ to $3 \times 10^{-16}$ on 50 random states. The former set — $K_m^{(\text{atom})} = \sqrt{\alpha^* k/7}\,|m\rangle\langle m|$, one anchor $K_0 = \sqrt{(1-k)/7}\,I$ — was not trace-preserving: $\sum_m |m\rangle\langle m| = I$, not $7I$, and $K_0^\dagger K_0 = \tfrac{1-k}{7}\,I$; for $\alpha = 0.4$, $k = 0.8$ it misses $I$ by $1.18$ in Frobenius norm, and a single multiple of $I$ cannot implement the replacement $\Gamma \mapsto (1-k)\,\Gamma_{\text{anchor}}$. Same correction as [$G_2$-structure, Theorem 10.5](/docs/physics/gauge-symmetry/g2-structure).
 :::
 
 ---

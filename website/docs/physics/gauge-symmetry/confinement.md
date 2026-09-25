@@ -537,10 +537,10 @@ $$q_\mu\,\Gamma_5^{\mu,ab}(p,q) = 2m\,\Gamma_5^{ab}(p,q) + \frac{\alpha_s}{2\pi}
 
 The second term is the anomalous contribution, absent classically. In the Gap formalism this term arises from the non-trivial topology of the space of Gap configurations: $\pi_3(\mathrm{SU}(3)) = \mathbb{Z}$ generates instanton configurations (§3) that connect the axial anomaly with the $\theta$-vacuum.
 
-### 6.5 Cancellation of Gauge Anomalies (T-175b) [T] {#теорема-отмена-калибровочных-аномалий}
+### 6.5 Cancellation of Gauge Anomalies (T-175b) [T] for the Standard-Model content; [C at (FE)] as a UHM result {#теорема-отмена-калибровочных-аномалий}
 
-:::tip Theorem (Cancellation of UHM gauge anomalies) [T]
-The UHM spectral triple ([T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка)) with unimodularity guarantees **complete cancellation** of the $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ gauge anomalies:
+:::tip Theorem (Cancellation of gauge anomalies) [T] for the representation content of Step 3; [C at (FE)] as a UHM result
+For the one-generation fermion content of Step 3 — the Standard-Model fermions, which UHM imports with Connes' $H_F$ — the $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ gauge anomalies cancel **completely**. (Until 2026-09-25 the statement read: "The UHM spectral triple (T-53) with unimodularity guarantees complete cancellation"; that derivation is retracted in Step 2 below.)
 
 $$\mathrm{tr}(T^a \{T^b, T^c\}) = 0 \quad \text{for all gauge generators}$$
 :::
@@ -549,9 +549,11 @@ $$\mathrm{tr}(T^a \{T^b, T^c\}) = 0 \quad \text{for all gauge generators}$$
 
 **Step 1 (Unimodularity = anomaly cancellation).** Alvarez, Gracia-Bondia, Martin (Phys. Lett. B364, 1995) proved: in the NCG model of the Standard Model the unimodularity condition $\det(u)|_{\mathcal{H}_{\text{int}}} = 1$ is **strictly equivalent** to the cancellation of gauge anomalies (in the absence of right-handed neutrinos; with right-handed neutrinos — also true with automatic adjustment of hypercharges).
 
-**Step 2 (UHM satisfies unimodularity).** The spectral triple T-53 [T] has $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$, real structure $J$ (KO-dim 6) and is Morita-equivalent to the Connes algebra $\mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ ([T-175a](/docs/core/foundations/spacetime#алгебра-морита)). The unitary group $U(A_{\text{int}}) = U(1) \times U(3) \times U(3)$ after unimodularity gives:
+**Step 2 (UHM satisfies unimodularity) — retracted [✗] (2026-09-25).** Former text: "The spectral triple T-53 has $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$, real structure $J$ (KO-dim 6) and is Morita-equivalent to the Connes algebra $\mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ ([T-175a](/docs/core/foundations/spacetime#алгебра-морита)). The unitary group $U(A_{\text{int}}) = U(1) \times U(3) \times U(3)$ after unimodularity gives:
 
-$$SU(A_{\text{int}}) = \{u : \det(u)|_{\mathcal{H}_{\text{int}}} = 1\} \to \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$$
+$$SU(A_{\text{int}}) = \{u : \det(u)|_{\mathcal{H}_{\text{int}}} = 1\} \to \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y\text{."}$$
+
+Three of its inputs fail: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)); the Morita equivalence T-175a is retracted (the centres $\mathbb{C}^3$ and $\mathbb{C}\oplus\mathbb{R}\oplus\mathbb{C}$ differ); and unimodularity cannot produce an $\mathrm{SU}(2)$ from $U(1) \times U(3) \times U(3)$ — the condition $\det u = 1$ is a single constraint that cuts the rank from 7 to 6 and leaves $\mathrm{U}(1)^{2} \times \mathrm{SU}(3)^{2}$ up to finite quotients, with no $\mathrm{SU}(2)$ factor at all. The anomaly cancellation of Step 1 is a theorem about Connes' model with its imported $H_F$; UHM inherits it only together with that import, with the electroweak group [C at (FE)] ([Standard Model](/docs/physics/gauge-symmetry/standard-model#теорема-фэ)).
 
 **Step 3 (Explicit verification).** The UHM fermion representation (from the sectoral decomposition + [HE](/docs/physics/gauge-symmetry/standard-model#теорема-фэ)) for one generation:
 
@@ -610,7 +612,7 @@ Confinement in Gap theory is self-consistent:
 8. Asymptotic freedom reproduced in the standard way [T]; relation to [RG flow](/docs/physics/gauge-symmetry/rg-flow) via $\lambda_4$ [T]
 9. ABJ anomaly from $\mathrm{Cliff}(7)$: $\partial_\mu j_5^\mu = (N_f g_s^2/16\pi^2)\,G\tilde{G}$ [T]
 10. Decay $\pi^0 \to \gamma\gamma$: $\tau = 8.4 \times 10^{-17}$ s (agreement with PDG) [T]
-11. Cancellation of **gauge** anomalies: $\mathrm{tr}(T^a\{T^b,T^c\}) = 0$ from the spectral triple + unimodularity (T-175b [T])
+11. Cancellation of **gauge** anomalies: $\mathrm{tr}(T^a\{T^b,T^c\}) = 0$ for the Standard-Model content (T-175b: the arithmetic [T]; as a UHM result [C at (FE)] with the imported $H_F$ — the derivation "from the spectral triple + unimodularity" is retracted)
 
 ---
 
@@ -628,7 +630,7 @@ Confinement in Gap theory is self-consistent:
 | Asymptotic freedom (relation to [RG flow](/docs/physics/gauge-symmetry/rg-flow)) | [T] |
 | Running of quark masses | [T] |
 | ABJ anomaly (chiral) from $\mathrm{Cliff}(7)$; index theorem | [T] |
-| Cancellation of gauge anomalies $\mathrm{tr}(T^a\{T^b,T^c\}) = 0$ (T-175b) | [T] |
+| Cancellation of gauge anomalies $\mathrm{tr}(T^a\{T^b,T^c\}) = 0$ (T-175b) | [T] for the Standard-Model content; [C at (FE)] as a UHM result |
 | Decay $\pi^0 \to \gamma\gamma$: $\tau = 8.4 \times 10^{-17}$ s | [T] |
 | Anomalous Ward identities for axial vertices | [T] |
 

@@ -378,12 +378,12 @@ The canonical fully $G_2$-covariant dissipator is $\mathcal{D}_{G_2}$ (structure
 
 ### 6.3 Degree of $G_2$-violation
 
-:::tip Theorem 11.3 (Degree of $G_2$-violation is proportional to $\alpha^*$) [T]
+:::tip Theorem 11.3 (Degree of $G_2$-violation is affine in the Fano weight $\alpha$) [T]
 **(a)** $\alpha = 0$ (pure Fano): covariance under the finite frame group $\Gamma_{\!\text{oct}}$ only — no $G_2$-covariance at any $\alpha$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность), [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).
 
 **(b)** $\alpha = 1$ (pure atomic): $G_2$ is **completely broken**.
 
-**(c)** Intermediate values: $\Delta_{G_2}(\alpha^*) = \tfrac{2+\alpha^*}{3} \cdot \Delta_{\max}$, from $\mathcal{D}_\alpha = \tfrac{2+\alpha}{3}\mathcal{D}_{\mathrm{atom}}$
+**(c)** Intermediate values: $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3} \cdot \Delta_{\max}$, from $\mathcal{D}_\alpha = \tfrac{2+\alpha}{3}\mathcal{D}_{\mathrm{atom}}$. (The title read "proportional to $\alpha^*$" and (c) was written at $\alpha^*$ until 2026-09-25; the violation is affine, not proportional, and $\alpha^*$ is retracted — $\alpha$ is a free parameter.)
 
 The measure of violation is **affine** in $\alpha$ and strictly positive on $[0,1]$ — from the proportionality $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$.
 :::
@@ -403,7 +403,7 @@ The measure of violation is **affine** in $\alpha$ and strictly positive on $[0,
 | Highly coherent (L3) | $\approx 0.8$ | $\approx 0.64$ | $\approx 43$ | Weak |
 | Complete self-knowledge (L4) | $1.0$ | $\approx 0.71$ | $\approx 44$ | Minimal |
 
-**"The price of self-knowledge":** deeper self-knowledge $\to$ stronger $G_2$ violation $\to$ more parameters required to describe the system.
+**"The price of self-knowledge"** — retracted with the table: deeper self-knowledge $\to$ stronger $G_2$ violation $\to$ more parameters required to describe the system. The link from self-knowledge to $\alpha$ was $\alpha^* \approx 1 - 2/(7P)$, and the parameter count is 48 at every $\alpha$.
 
 **[✗] Both columns above rest on retracted results:** the parameter counts on Theorem 11.4 (retracted with D-0910 — 48 parameters at every $\alpha$), and the values $\alpha^* \approx 1 - 2/(7P)$ on the variational definition of $\alpha^*$, retracted 2026-09-25 ([Fano channel §4](/docs/proofs/gap/fano-channel#alpha-star)) — the Fano weight $\alpha$ is a free parameter.
 

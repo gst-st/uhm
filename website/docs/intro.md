@@ -68,7 +68,7 @@ The number of structurally distinct directions of development of a configuration
 :::info Theorem S (justification of Axiom 3) [T]
 N = 7 (Axiom 3) is the **minimal** dimension for satisfying (AP)+(PH)+(QG). All 7 dimensions are **necessary and functionally unique** [T]: A, S, D, L, U — algebraically; E, O — categorically (via the κ₀ formula). [Proof →](./proofs/minimality/theorem-minimality-7)
 
-**Second, independent justification:** theorems P1+P2 [C at (Alt)] (derived from (AP)+(PH)+(QG)+(V) via the T15 chain, whose step PG(2,2) → $\mathbb{O}$ needs an orientation of the seven Fano lines — only 16 of the 128 orientations give a normed algebra, registry row 41n; stated as [T] until 2026-09-25) yield $N = \dim(\mathrm{Im}(\mathbb{O})) = 7$ through the Hurwitz theorem. [Structural derivation →](./proofs/minimality/theorem-octonionic-derivation)
+**Second justification** (not independent of Theorem S: step T8 of the chain takes $N = 7$ from it; it read "second, independent" until 2026-09-25): theorems P1+P2 [C at (Alt)] (derived from (AP)+(PH)+(QG)+(V) via the T15 chain, whose step PG(2,2) → $\mathbb{O}$ needs an orientation of the seven Fano lines — only 16 of the 128 orientations give a normed algebra, registry row 41n; stated as [T] until 2026-09-25) yield $N = \dim(\mathrm{Im}(\mathbb{O})) = 7$ through the Hurwitz theorem. [Structural derivation →](./proofs/minimality/theorem-octonionic-derivation)
 :::
 
 ## Key Results

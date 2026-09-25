@@ -198,8 +198,10 @@ $$
 Decomposition coefficients of canonical $\varphi_{\text{coh}}$:
 
 $$
-c_{mn} = \begin{cases} \alpha^* k & m = n \text{ (atomic part)} \\ (1-\alpha^*) k / 3 & m \neq n,\, (m,n) \text{ on a common Fano line} \\ 0 & m \neq n,\, (m,n) \text{ not on a common Fano line} \end{cases}
+c_{mn} = \begin{cases} k & m = n \text{ (the atomic and the Fano channel both keep the diagonal)} \\ (1-\alpha) k / 3 & m \neq n \end{cases}
 $$
+
+and the anchor adds $(1-k)\,[\Gamma_{\text{anchor}}]_{mn}$. Every pair $(m,n)$ lies on exactly one Fano line, so a third case "$0$ for $(m,n)$ not on a common Fano line" is empty. *Corrected 2026-09-25:* the theorem printed $c_{mm} = \alpha^* k$ and that empty third case; the diagonal coefficient is $\alpha k + (1-\alpha)k = k$ (as in [$G_2$-structure, Theorem 10.5](/docs/physics/gauge-symmetry/g2-structure)), and $\alpha^*$ is retracted.
 
 Given the Fano weight, the coefficients are determined by:
 - [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$

@@ -487,8 +487,8 @@ $$
 
 | $\Delta_{G_2}^{(\text{exp})}$ | Interpretation |
 |-------------------------------|----------------|
-| $\Delta \approx 0$ | Full $G_2$-symmetry confirmed |
-| $0 < \Delta \ll 1$ | Weak violation — the dynamics gives $\Delta_{G_2} = \tfrac{2+\alpha^*}{3}\Delta_{\max}$, affine in the Fano weight $\alpha^*$ (depth of [self-observation](/docs/physics/gauge-symmetry/g2-structure)) |
+| $\Delta \approx 0$ | $G_2$-symmetric dynamics — which would contradict the pinching dissipator: it gives $\Delta_{G_2} \geq \tfrac23\Delta_{\max}$ at every $\alpha$ (the row read "full $G_2$-symmetry confirmed" until 2026-09-25) |
+| $0 < \Delta \ll 1$ | Weak violation — the dynamics gives $\Delta_{G_2} = \tfrac{2+\alpha}{3}\Delta_{\max}$, affine in the Fano weight $\alpha$, a free parameter (its variational value $\alpha^*$, which tied it to the depth of [self-observation](/docs/physics/gauge-symmetry/g2-structure), is retracted) |
 | $\Delta \sim O(1)$ | Strong violation — $G_2$-reduction not applicable |
 ::::
 

@@ -430,7 +430,7 @@ Symbols related to the [bimodular construction](/docs/proofs/physics/bimodule-co
 | Notation | Meaning |
 |----------|---------|
 | $H_F$ | Finite Hilbert space of the spectral triple as an $(A_{\text{int}}, A_{\text{int}}^\circ)$-bimodule (KO-dim 6). Decomposition into irreducible bimodules reproduces one generation of SM fermions — for Connes' imported $H_F$; T-178 (a derivation from the UHM triple) is retracted [✗] 2026-09-25 |
-| KO-dim | KO-dimension $= 6$ (mod 8) — classification invariant of the real structure $J$; Connes's conditions: $J^2 = 1$, $JD = DJ$, $J\gamma = -\gamma J$ |
+| KO-dim | KO-dimension (mod 8) — classification invariant of a real structure $J$; KO-dimension 6 (Connes' finite space): $J^2 = 1$, $JD = DJ$, $J\gamma = -\gamma J$. Not available on the UHM $\mathbb{C}^7$ (odd dimension; retracted 2026-09-25) |
 | $D_{\text{int}}$ | Dirac operator of the internal space; its eigenvalues determine the fermion mass ratios [T-180 [T]] |
 
 ---
