@@ -451,14 +451,14 @@ Predicted thresholds:
 | §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
 | §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete, awaiting data** | EEG/fMRI/HRV 7-feature map |
 
-**Total (after extensions)**: 10 new [T] theorems + 2 computational-programme specifications. All mathematical and categorical gaps of UHM's foundational framework are **closed at fundamental level**.
+**Total (after extensions)**: of the ten theorems T-210–T-219, six stand as [T] (T-210, T-213, T-214, T-215 with a definitional part, T-217, T-218), three are [C] (T-211, T-212, T-216) and one is [H] (T-219); plus 2 computational-programme specifications. *Corrected 2026-09-25:* the line read "10 new [T] theorems … All mathematical and categorical gaps of UHM's foundational framework are closed at fundamental level"; the second sentence is retracted — the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the orientation (Alt) of T15 and the first-order condition and Poincaré duality of T-119, on which T-120, T-121, T-211 and clause (iii) of T-221 rest.
 
 **Remaining genuinely open**:
 - Numerical computation of Λ (§8) — resource-bounded, no theoretical obstacle.
 - Empirical calibration of π<sub>bio</sub> (§9) — experimental programme, no theoretical obstacle.
 - The [P] bridge from E-sector structure to experienced content — **structurally inevitable** (T-214 [T]), not a lacuna.
 
-**No mathematical gaps remain** in UHM's foundational framework after these closures.
+~~**No mathematical gaps remain** in UHM's foundational framework after these closures.~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the orientation (Alt) of T15 and the first-order condition and Poincaré duality of T-119, on which T-120, T-121, T-211 and clause (iii) of T-221 rest.
 
 ---
 
@@ -1153,9 +1153,9 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 | §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
 | §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete** | EEG/fMRI/HRV |
 
-**Total after all closures**: 14 new [T] theorems + 3 explicit clarifications + 2 computational-programme specifications.
+**Total after all closures**: of the fourteen theorems T-210–T-223, nine stand as [T] (T-215 with a definitional part), T-221 is stratified into [T], [C] and [I] parts, three are [C] (T-211, T-212, T-216) and one is [H] (T-219); plus 3 explicit clarifications and 2 computational-programme specifications (the line read "14 new [T] theorems" until 2026-09-25).
 
-**No open mathematical or categorical gaps remain in UHM's foundational framework.** T-221 closes the List/DeBrota *external* gap; T-222 closes the QRT-completeness external gap; T-223 closes the Lerchner Melody-Paradox / Putnam-triviality external gap — UHM is now closed against all three principal recent external critiques (quantum-metaphysics no-go, resource-theoretic completeness, computational-functionalist triviality).
+~~**No open mathematical or categorical gaps remain in UHM's foundational framework.**~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the orientation (Alt) of T15 and the first-order condition and Poincaré duality of T-119, on which T-120, T-121, T-211 and clause (iii) of T-221 rest. T-221 answers the List/DeBrota *external* critique (its clause (iii) conditional on T-120); T-222 answers the QRT-completeness external critique; T-223 answers the Lerchner Melody-Paradox / Putnam-triviality external critique — the three principal recent external critiques (quantum-metaphysics no-go, resource-theoretic completeness, computational-functionalist triviality) each receive a structured answer; the earlier phrasing "closes … UHM is now closed against all three" is withdrawn with the sentence above.
 
 **Strictly remaining** (all explicitly non-mathematical):
 - Numerical computation of Λ (§8) — bounded HPC task
