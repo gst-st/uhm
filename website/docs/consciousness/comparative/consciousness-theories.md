@@ -1064,7 +1064,7 @@ Northoff uses nonlinear dynamics, measures of scale-free activity (power-law exp
 - Temporal structure: spectral gap $\Lambda$ defines timescales
 
 ### What CC does better
-- Derivation of spacetime from first principles, conditional on the open reconstruction axioms of T-119 ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
+- Derivation of spacetime from first principles, [T] as mathematics since the restatement of T-119 on 2026-09-25 (conditional on its open reconstruction axioms before) ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
 - Formal thresholds instead of correlation measures
 - Unified dynamics (Lindblad + $\mathcal{R}$) instead of a set of metrics
 
@@ -1246,7 +1246,7 @@ Operational synchrony: $\text{OS}_{ij}(t) = \text{corr}(\text{ISS}_i(t), \text{I
 |--------|-----|-----|
 | Central object | Operational modules (OM) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
 | Connectivity | Operational synchrony OS | Coherences $\gamma_{ij}$ |
-| Space-time | BOST (operational) | Emergent $M^4$ [C] (T-120: the open reconstruction axioms of T-119) |
+| Space-time | BOST (operational) | Emergent $M^4$ [T] as mathematics (T-120, restated T-119, 2026-09-25; reading [I]) |
 | Hierarchy | Simple → Complex OM | L0 → L4 |
 
 ### What CC borrows
@@ -2094,14 +2094,14 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 | Physical substrate | Thalamus / insect central body | Substrate-independent (categorical) |
 | Consciousness threshold | None | $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ (T-160, T-40b, T-129, T-151 [T]) |
 | Numerical predictions | None | 23 predictions with falsification criteria |
-| Derivation of physics | None | GR on an emergent $M^4$ (T-117–T-121, [C] beyond T-117); quantum mechanics postulated, not derived ([QM reduction](/docs/physics/quantum-mechanics/qm-reduction)); Standard-Model colour from $G_2$ [T], electroweak [C at (FE)], finite space imported from Connes (T-186 [H]) |
+| Derivation of physics | None | GR on an emergent $M^4$ (T-117–T-121, [T] as mathematics since 2026-09-25); quantum mechanics postulated, not derived ([QM reduction](/docs/physics/quantum-mechanics/qm-reduction)); Standard-Model colour from $G_2$ [T], electroweak [C at (FE)], finite space imported from Connes (T-186 [H]) |
 | Group structure | $PGL(4,\mathbb{R})$ (projective) | $G_2 = \mathrm{Aut}(\mathbb{O})$ (exceptional, finite-dim) |
 | Falsification | Wave not found in brain | $\beta \neq 1/4$; zombie at $N < 7$; $\mathrm{SAD} \geq 4$; etc. |
 | Scope relative to UHM | Candidate neural *implementation* of the coarse-grained geometric sector $\{A,S,D\}$ of $\Gamma$ | Foundational theory of which PWT may be a brain-level projection |
 
 ### What CC borrows
 - **Wave-like ontology of the substrate of experience**: both theories reject a purely neural-computational account. In CC, the off-diagonal coherences $\gamma_{ij}$ play the role analogous to the PWT wave field — they carry phase information that is lost in any classical computational description.
-- **Projective geometry of the spatial sector**: the $\{A,S,D\}$ sector of $\Gamma$ reconstructs (via Gel'fand + Connes, T-119 [C]) a smooth compact orientable spin 3-manifold $\Sigma^3$. Worden's emphasis that the spatial representation is projective rather than Euclidean is compatible with the $PGL(4,\mathbb{R})$ action on projective spatial sections of $\Sigma^3$.
+- **Projective geometry of the spatial sector**: the $\{A,S,D\}$ sector of $\Gamma$ reconstructs (via Gel'fand + Connes, T-119 [T]) a smooth compact orientable spin 3-manifold $\Sigma^3$. Worden's emphasis that the spatial representation is projective rather than Euclidean is compatible with the $PGL(4,\mathbb{R})$ action on projective spatial sections of $\Sigma^3$.
 - **Explicit mechanism for undistorted spatial experience**: PWT's selection / precision / decoding triad sharpens the requirement that any theory of consciousness must eventually explain how phenomenal 3-D space is achieved. In UHM this is answered by the spectral-triple reconstruction of $\Sigma^3$ and the Page–Wootters emergence of time.
 
 ### What CC does better
@@ -2121,7 +2121,7 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 $$F_{\mathrm{PWT}}: \mathbf{PWT} \to \mathbf{Hol}$$
 
 Wave excitation $\psi \mapsto$ off-diagonal coherences in the $\{A,S,D\}$-sector of $\Gamma$;
-projective group action $PGL(4,\mathbb{R}) \mapsto$ $G_2$-restricted transformations on $\Sigma^3$ (T-119 [C]);
+projective group action $PGL(4,\mathbb{R}) \mapsto$ $G_2$-restricted transformations on $\Sigma^3$ (T-119 [T]);
 thalamic / central-body substrate $\mapsto$ one possible physical realisation of $\pi_{\mathrm{bio}}^{-1}$;
 undistorted conscious space $\mapsto$ spectral-triple reconstruction $A_{\mathrm{space}} \cong C(\Sigma^3)$.
 

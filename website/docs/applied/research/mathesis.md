@@ -1255,7 +1255,7 @@ The claim "consciousness requires a global workspace" (GWT) is loaded into Mathe
 
 ### 12.6. Responding to criticism
 
-`claim/dependencies uhm:T-120 --full` → full dependency tree: T-117 [T], T-118 [T] (depth register), T-119 [C] (two open reconstruction axioms) → "T-120 is conditional on the open reconstruction axioms of T-119." Time: 30 seconds. (An earlier version of this example returned "all [T] … fully justified"; the registry now lists T-120 as [C]; until the depth register of 2026-09-25 the tree also listed T-118 as conditional on an aperiodic clock.)
+`claim/dependencies uhm:T-120 --full` → full dependency tree: T-117 [T], T-118 [T] (depth register), T-119 [T] (spectrum computed, restated 2026-09-25) → "T-120 is [T] as mathematics; the reading of its spatial factor as physical space is [I]." Time: 30 seconds. (An earlier version of this example returned "all [T] … fully justified"; the registry listed T-120 as [C] at the open reconstruction axioms of T-119 until their restatement of 2026-09-25, and lists it as [T] since; until the depth register of 2026-09-25 the tree also listed T-118 as conditional on an aperiodic clock.)
 
 ---
 

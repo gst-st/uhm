@@ -49,7 +49,7 @@ UHM generates the following commutative diagram of categories:
     DensityMat ────────────────▶ ClassMech
                     ℏ→0
        │
-       │ π_Space [C] (T-119, T-120)
+       │ π_Space [T] (T-119, T-120)
        ▼
     Riem (M⁴ = ℝ × Σ³)
 ```
@@ -64,7 +64,7 @@ where:
 - $\mathbf{QM}$ — category of quantum-mechanical systems
 - $\mathbf{DensityMat}$ — category of [density matrices](/docs/core/dynamics/coherence-matrix)
 - $\mathbf{ClassMech}$ — category of classical mechanical systems
-- $\mathbf{Riem}$ — category of Riemannian manifolds ($M^4$ assembled at T-120 [C]: the open reconstruction axioms of T-119)
+- $\mathbf{Riem}$ — category of Riemannian manifolds ($M^4$ assembled at T-120 [T] as mathematics (restated T-119, 2026-09-25))
 
 ### 1.2 Forgetful Functor
 
@@ -356,9 +356,9 @@ where $L_i$ are logarithmic derivatives: $\partial_i \rho = \frac{1}{2}\{\rho, L
 **[C] Theorem (Dimension 3+1, T-119 + T-120).**
 
 The dimension of macroscopic space is derived under named conditions (the heading read [T] until 2026-09-25):
-- $\dim(\Sigma^3) = 3$ — from the rank count of T-119, Step 2c′ (T-119 [C]); the axis triple $\{A,S,D\}$ is not an $SU(3)$ sector (row 48a, retracted), and reading the colour triplet as space is [I]
+- $\dim(\Sigma^3) = 3$ — from the rank count of T-119, Step 2c′ (T-119 [T]); the axis triple $\{A,S,D\}$ is not an $SU(3)$ sector (row 48a, retracted), and reading the colour triplet as space is [I]
 - Lorentzian signature $(+,-,-,-)$ — [C] (registry row T-53): one time direction [T] (PW clock), three spatial directions at T-119 ($S^3$), the sign at reflection positivity (bounded-below PW generator / Osterwalder–Schrader; Krein route). KO-dimension does not fix the signature, and the KO-dimension-6 claim for $\mathbb{C}^7$ is retracted
-- Product $M^4 = \mathbb{R} \times \Sigma^3$ — T-120 [C], at the open reconstruction axioms of T-119 (an earlier line derived it "from the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ (T-120 [T])"; the axis-labelled decomposition is retracted, row 48a)
+- Product $M^4 = \mathbb{R} \times \Sigma^3$ — T-120 [T] as mathematics (restated T-119, 2026-09-25) (an earlier line derived it "from the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ (T-120 [T])"; the axis-labelled decomposition is retracted, row 48a)
 
 See [Emergent Manifold](/docs/proofs/physics/emergent-manifold)
 
@@ -367,12 +367,12 @@ See [Emergent Manifold](/docs/proofs/physics/emergent-manifold)
 ## 5. Connection to General Relativity {#5-связь-с-общей-теорией-относительности}
 
 :::tip Status: Einstein equations [T] on the product triple; the derivation of $M^4$ [C]
-The Einstein equations are obtained from the spectral action (T-65 [T]), and the cosmological constant is computed (T-65 [T]); the manifold $M^4$ on which they live is assembled from the categorical structure only under one condition — the open reconstruction axioms of T-119 (T-120 [C]); the aperiodic clock, a second condition until 2026-09-25, is the depth register (T-118 [T]). An earlier version read "fully formalized [T] … the manifold $M^4$ is derived (T-120 [T])"; retracted with the status of T-120.
+The Einstein equations are obtained from the spectral action (T-65 [T]), and the cosmological constant is computed (T-65 [T]); the manifold $M^4$ on which they live is assembled from the categorical structure (T-120 [T] as mathematics since the restatement of T-119 on 2026-09-25; before it, under one condition — the open reconstruction axioms of T-119); the aperiodic clock, a second condition until 2026-09-25, is the depth register (T-118 [T]). An earlier version read "fully formalized [T] … the manifold $M^4$ is derived (T-120 [T])"; retracted with the status of T-120.
 :::
 
 ### 5.1 Emergent Manifold
 
-**[C] Theorem (Product of spectral triples, T-120)** — at the open reconstruction axioms of T-119 (the aperiodic clock, T-118, named here until 2026-09-25, is the depth register, [T]); the heading read [T] until 2026-09-25.
+**[T] Theorem (Product of spectral triples, T-120)** — as mathematics since the restatement of T-119 on 2026-09-25, which computes the spatial spectrum $S^3$; the reading of $M^4$ as physical spacetime is [I]. The heading read [T] until early 2026-09-25, then [C] at the open reconstruction axioms of T-119 (the aperiodic clock, T-118, named here then, is the depth register, [T]).
 In the thermodynamic limit the effective spectral triple factorizes:
 
 $$
@@ -394,7 +394,7 @@ with $G_N = 3\pi/(7 f_2 \Lambda^2)$. Details: [Einstein Equations](/docs/physics
 
 ### 5.3 Cosmological Constant
 
-**[T]** The cosmological constant is computed from the Gap of the O-sector: $\Lambda_{\text{Gap}} > 0$ (T-71 [T]), which determines the vacuum topology $\Sigma^3 \cong S^3$ (T-120b [C], inheriting T-119). Details: [Cosmological Constant](/docs/physics/gravity/cosmological-constant).
+**[T]** The cosmological constant is computed from the Gap of the O-sector: $\Lambda_{\text{Gap}} > 0$ (T-71 [T]), which determines the vacuum topology $\Sigma^3 \cong S^3$ (T-120b: the topology $S^3$ [T] from T-119, the curvature [C at the vacuum symmetry]). Details: [Cosmological Constant](/docs/physics/gravity/cosmological-constant).
 
 ---
 
@@ -654,7 +654,7 @@ Witnesses: the segment law holds to $8 \cdot 10^{-16}$ for a random normalised-l
 | Corollary T-221.2 (Loc) | Loc [T] (Theorem 8.5); the corollary [C] only through OW (T-120) | Loc [T] |
 | §8.6, speed-up beyond BQP | ideal dynamics: satisfiability in linear time [T] (Theorem 8.6); with noise open [H] | absent (linear CPTP) |
 
-One question remains open [Pr]: under A, a relativistic statement of "unconditioned" — relative to which hypersurface the marginal is taken — which Kent's construction suggests but which UHM would have to state on the spacetime it derives only conditionally (T-120 [C]). (Until 2026-09-25 a second open question was which of A and C the corpus adopts; §8.8 answers it.)
+One question remains open [Pr]: under A, a relativistic statement of "unconditioned" — relative to which hypersurface the marginal is taken — which Kent's construction suggests but which UHM would have to state on the spacetime it derives (T-120 [T] as mathematics; its reading as physical spacetime [I]). (Until 2026-09-25 a second open question was which of A and C the corpus adopts; §8.8 answers it.)
 
 ### 8.8 The reading is forced {#88-прочтение-вынуждено}
 
@@ -689,7 +689,7 @@ Witness (`test_a_distant_holon_marginal_ignores_every_local_operation`): $B$ a h
 | **No-signalling of the full dynamics** | Holds in the non-selective reading, which the axioms force: the argument of a holon's dynamics is its marginal, and a selective (Lüders-conditioned) regeneration is not a UHM dynamics (Theorem 8.5; [C] before 2026-09-25) | [T] | §8.8 |
 | **Ensemble independence** | The evolution map is a function of $\Gamma$; the physical reading "same $\Gamma$, same evolution" is retracted | [D] | §8.5 |
 | **Computational bound** | "≤ BQP" retracted; the ideal dynamics with a living regenerator decides satisfiability in linear time (Theorem 8.6); with noise open | [T] / [H] | §8.6 |
-| **Space** | $\Sigma^3$ from Gelfand–Connes, $M^4 = \mathbb{R} \times \Sigma^3$ | [C] (T-119: first-order condition, Poincaré duality; T-120: also an aperiodic clock) | [T-119, T-120](/docs/proofs/physics/emergent-manifold) |
+| **Space** | $\Sigma^3$ from Gelfand–Connes, $M^4 = \mathbb{R} \times \Sigma^3$ | [T] as mathematics (T-119 restated 2026-09-25: spectrum computed; formerly [C] at the first-order condition and Poincaré duality) | [T-119, T-120](/docs/proofs/physics/emergent-manifold) |
 | **Time** | Cyclic clock τ ∈ ℤ₇ via modality ▷ on Ω [T]; the aperiodic parameter of the dynamics is assumed [C] (T-53b) | [T] / [C] | [emergent-time.md](/docs/proofs/dynamics/emergent-time) |
 | **Discreteness of time** | $\tau \in \mathbb{Z}_7$ from the structure of Ω | [T] Corollary | §3.6 |
 | **GR / Einstein** | Spectral action → $G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$ | [T] Proven | [T-65](/docs/physics/gravity/einstein-equations) |
@@ -720,7 +720,7 @@ This means: **physics is a consequence of the structure of logical distinctions*
 7. **Marginal identity:** $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ — regeneration of $A$ does not change $B$'s unconditioned marginal; no-signalling of the full dynamics is [C] (§8.5)
 8. **Ensemble independence:** the evolution map is defined on $\Gamma$ [D]; the earlier claim that this resolves the Gisin problem is retracted (§8.5)
 9. **Computational bound:** retracted; whether $\mathcal{R}$ gives a speed-up beyond BQP is open [H] (§8.6)
-10. **Emergent geometry:** $M^4 = \mathbb{R} \times \Sigma^3$ assembled from categorical structure (T-117—T-120) — conditional [C] on the open reconstruction axioms of T-119
+10. **Emergent geometry:** $M^4 = \mathbb{R} \times \Sigma^3$ assembled from categorical structure (T-117—T-120) — [T] as mathematics since the restatement of T-119 (2026-09-25); [C] at its open reconstruction axioms before
 11. **Einstein equations:** The spectral action reproduces $G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$ (T-65)
 12. **Gauge group:** $SU(3)_C$ from $G_2 = \mathrm{Aut}(\mathbb{O})$ [T]; $SU(2)_L \times U(1)_Y$ from (FE) [C at (FE)]. The former item — the whole group from $G_2$ (T-53) — is retracted (rank $G_2 = 2 < 4$)
 

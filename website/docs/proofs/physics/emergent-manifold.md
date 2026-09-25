@@ -2,15 +2,15 @@
 sidebar_position: 2
 title: "Emergent Manifold M⁴"
 slug: /proofs/physics/emergent-manifold
-description: "Derivation of smooth 4-manifold M⁴ from categorical structure: background independence [P] → [C] (T-119 reconstruction; the time factor T-118 is [T])"
+description: "Derivation of the 4-manifold M⁴ = ℝ × S³ from the algebra of holons: time from the depth register (T-118), space as the computed spectrum of three commuting rotation charges (T-119), both [T] as mathematics"
 ---
 
 # Emergent Manifold M⁴
 
-:::info Status: [C] — conditional on the reconstruction axioms left open by T-119
-**Background independence:** The 4-dimensional spacetime $M^4$ is **assembled** from the categorical structure $\mathcal{C}$ via the Gelfand–Naimark–Connes chain under one named condition: the two Connes reconstruction axioms that T-119 leaves open (the first-order condition and Poincaré duality). The time factor is a theorem: $C_0(\mathbb{R})$ is the scaling limit of the reading algebras of the depth register (T-118 [T], [emergent time §11.4](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)). The product of spectral triples $M^4 \times F_{\text{int}}$ is therefore a **conditional theorem** — no longer a postulate, not yet an unconditional result.
+:::info Status: [T] as mathematics (since 2026-09-25); the reading of the spatial factor as physical space is [I]
+**Background independence:** The 4-manifold $M^4=\mathbb R\times S^3$ is **computed**, not postulated. The time factor $C_0(\mathbb{R})$ is the scaling limit of the reading algebras of the depth register (T-118 [T], [emergent time §11.4](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)). The space factor is the Gelfand spectrum of the macroscopic fluctuations of three commuting rotation charges of the holon: $\mathbb R^3$, whose minimal unitization is $C(S^3)$ (T-119 [T], restated 2026-09-25). No reconstruction axiom is left open: the manifold is obtained from the spectrum directly, and Connes' conditions then hold for its Dirac triple. The product of spectral triples $M^4 \times F_{\text{int}}$ is therefore a theorem for every metric on $M^4$ (T-120 [T]).
 
-**New results:** T-117 – T-121 (5 theorems, 1 corollary): T-117 and T-118 [T]; T-119 [C]; T-120, its corollary T-120b and T-121 [C], inheriting the condition of T-119. An earlier version of this box read "All [T]. No new postulates, hypotheses, or open questions are introduced" — retracted: two reconstruction axioms are open, and the KO-dimension-6 structure used in T-120 (Steps 6 and 8) does not exist on $\mathbb{C}^7$. An intermediate version of 2026-09-25 also listed an aperiodic clock as an assumption of T-118; the depth register discharges it.
+**New results:** T-117 – T-121 (5 theorems, 1 corollary): T-117, T-118, T-119, T-120 and T-121 [T]; the topology half of T-120b ($\Sigma^3\cong S^3$) [T], its curvature half [C at the vacuum symmetry]. Earlier versions of this box: "All [T]. No new postulates, hypotheses, or open questions are introduced" (retracted then: two reconstruction axioms were open, and the KO-dimension-6 structure used in T-120, Steps 6 and 8, does not exist on $\mathbb{C}^7$); then, on 2026-09-25, "[C] at the first-order condition and Poincaré duality of T-119". Those two axioms are no longer conditions: the restated T-119 computes the spatial spectrum instead of reconstructing it. What stays [I] is the reading: two of the three charges are colour Cartan generators, so this space is not the colour-singlet space of [Theorem 48c](/docs/core/foundations/spacetime#теорема-48c) (see T-119(d)).
 :::
 
 ---
@@ -31,17 +31,17 @@ The manifold $M^4$ was **borrowed** from classical differential geometry. (An ea
 
 ### 1.2 Solution Strategy
 
-The solution is a **5-step chain** of Gelfand–Naimark–Connes. Each step relies on existing results or standard mathematical theorems, and Steps 3–4 carry a named condition, the two reconstruction axioms that T-119 leaves open (an intermediate version also named an aperiodic clock at Step 2; discharged by T-118):
+The solution is a **5-step chain** of Gelfand–Naimark–Connes. Each step relies on existing results or standard mathematical theorems (Steps 3–4 carried a named condition, the two reconstruction axioms of T-119, until the restatement of 2026-09-25; an intermediate version also named an aperiodic clock at Step 2, discharged by T-118):
 
 | Step | Content | Source |
 |------|---------|--------|
 | 1 | Composite algebra | Tensor product [T] |
 | 2 | Temporal C*-algebra | $\mathbb{C}[\mathbb{Z}_N] \to C(S^1)$ for the summed O-clock; $C_0(\mathbb{R})$ as the scaling limit of the depth register (T-118 [T]) |
-| 3 | Spatial C*-algebra | Gelfand + Connes [standard mathematics]; applied to UHM in T-119 [C] |
-| 4 | Reconstruction | Connes (2008) [standard mathematics]; first-order condition and Poincaré duality open (T-119 [C]) |
-| 5 | Product | Steps 1–4; inherits the condition of Steps 3–4 (T-120 [C]) |
+| 3 | Spatial C*-algebra | Joint spectrum of three commuting rotation charges, computed: octahedron (averages), $\mathbb R^3$ (fluctuations), $C(S^3)$ after the minimal unitization (T-119 [T]) |
+| 4 | Manifold | Gelfand–Naimark [standard mathematics]; Connes' conditions hold for the Dirac triple of $S^3$ (T-119(c) [T]) |
+| 5 | Product | Steps 1–4 (T-120 [T]) |
 
-**No new axioms or postulates are introduced; one assumption is** — the open reconstruction axioms of T-119. (An earlier line read "No new axioms, postulates, or hypotheses are introduced"; retracted. An intermediate version also listed an aperiodic clock; discharged by T-118.)
+**No new axioms or postulates are introduced; one definition is named** — the spatial algebra is the *minimal* unitization of the fluctuation algebra (T-119(b)). (Earlier lines read "No new axioms, postulates, or hypotheses are introduced", retracted, and then "one assumption — the open reconstruction axioms of T-119", superseded by the restatement.)
 
 ---
 
@@ -135,13 +135,34 @@ The temporal part of $A_{\text{macro}}$ — the diagonal algebra $A_N \cong \mat
 
 ## 5. Theorem T-119: Emergent Spatial Manifold {#теорема-эмерджентное-пространство}
 
-:::tip Theorem T-119 (Emergent Spatial Manifold) [C at the first-order condition and Poincaré duality]
-The spatial part of $A_{\text{macro}}$ (restricted to the spatial sector of Step 2c′) is isomorphic to $C(\Sigma^3)$ for the unique smooth compact orientable spin 3-manifold $\Sigma^3$.
+:::tip Theorem T-119 (Emergent Spatial Manifold) — [T] as mathematics (restated 2026-09-25); reading as physical space [I]
+Let $J=L_{e_O}$ on $e_O^\perp$ (and $0$ on $e_O$), and let $H_1,H_2,H_3$ be Hermitian generators on $\mathbb C^7$ of a maximal torus of $\mathrm U(3)=\mathrm{Stab}_{\mathrm{SO}(7)}(e_O)\cap C(J)$: two Cartan generators of $\mathfrak{su}(3)_C$ and $iJ$. Equivalently, of a maximal torus of $\mathrm{SO}(7)$ that fixes the clock axis; $\operatorname{rank}\mathrm{SO}(7)=3$. For $M$ holons put $\bar H_i=\frac1M\sum_m H_i^{(m)}$ and $F_i=\sqrt M\,(\bar H_i-\mu_i)$ with $\mu_i=\omega(H_i)$ for a faithful state $\omega$ of one holon.
+
+**(a) Averages: an octahedron.** The joint eigenvalues of $(H_1,H_2,H_3)$ on $\mathbb C^7$ are $0$ (on $e_O$) and $\pm w_1,\pm w_2,\pm w_3$ with $w_a$ linearly independent. The joint spectra of $(\bar H_i)$ fill the weight octahedron $\mathcal O=\mathrm{conv}\{\pm w_a\}$ with mesh $O(1/M)$. Sampling $f\mapsto f(\bar H)$ embeds $C(\mathcal O)$ isometrically into $\prod_M A_M/\bigoplus_M A_M$. $\mathcal O\cong B^3$ is a manifold with boundary $S^2$, and its $K$-theoretic Poincaré duality fails.
+
+**(b) Fluctuations: $\mathbb R^3$, and $S^3$ after the unit.** The joint spectra of $(F_i)$ fill every ball of $\mathbb R^3$ with mesh $O(1/\sqrt M)$. Sampling embeds $C_0(\mathbb R^3)$ isometrically into $\prod_M A_M/\bigoplus_M A_M$. The *spatial algebra*, defined as the unital C*-algebra generated by this image, is the minimal unitization $C_0(\mathbb R^3)^+\cong C(S^3)$.
+
+**(c) The manifold and Connes' conditions.** $\Sigma^3:=S^3$ is a closed, orientable, simply connected spin 3-manifold, with a unique smooth structure. For every Riemannian metric $g$ on it the Dirac triple $(C^\infty(S^3),L^2(S^3,S),D_g)$ satisfies all seven of Connes' conditions, the first-order condition and Poincaré duality included.
+
+**(d) Colour-singlet coordinates give two dimensions.** The Hermitian operators on $\mathbb C^7$ that commute with $\mathrm{SU}(3)_C$ are $\mathrm{span}\{P_O,P_{\mathbf 3},P_{\bar{\mathbf 3}}\}$; their traceless part is two-dimensional. So the "3" of (a)–(c) needs two colour Cartan generators, and this $\Sigma^3$ is not colour-singlet.
 :::
 
-Until 2026-09-25 the heading read [T], while the correction box of Step 2c below and registry row T-119 record [C]; the heading now carries the registry status. The statement read "restricted to the $\{A,S,D\}$-sector"; that axis triple is not an $\mathrm{SU}(3)$ sector (row 48a, retracted), and the spatial sector actually used in Step 2c′ is the six non-$O$ axes viewed as $\mathbb{C}^3$ through the derived complex structure $J$.
+**Proof.** (a) The $H_i$ commute: they lie in one torus. Their joint eigenvalues are computed (numbers below). In weight coordinates they are $0,\pm e_1,\pm e_2,\pm e_3$. On $(\mathbb C^7)^{\otimes M}$ the $\bar H_i$ commute exactly, and their joint eigenvalues are the means of $M$ weights: $\frac1M\{n\in\mathbb Z^3:\lvert n\rvert_1\le M\}$ (the weight $0$ lets the sum stop short of $M$ steps). All these points lie in $\mathcal O=\{\lvert x\rvert_1\le1\}$, and every point of $\mathcal O$ is within $\sqrt3/(2M)$ of one of them. As in [T-118](#теорема-эмерджентное-время), $\lVert f(\bar H)\rVert=\max_{\mathrm{spec}}\lvert f\rvert\ge\lVert f\rVert_\infty-\omega_f(\sqrt3/(2M))$, so sampling is isometric in the quotient. $\mathcal O$ is a compact convex body with interior, hence homeomorphic to $B^3$. Poincaré duality for a closed 3-manifold $X$ would give $K^0(X)\cong K_1(X)$. For the contractible $\mathcal O$, $K^0=\mathbb Z$ and $K_1=0$.
+(b) The joint spectrum of $(F_i)$ is $\{(n-M\mu)/\sqrt M:\lvert n\rvert_1\le M\}$. A faithful $\omega$ gives every joint eigenvalue positive weight, so $\mu$ is an interior point of $\mathcal O$. Given $R$, once $M$ is so large that the ball of radius $R\sqrt M+1$ about $M\mu$ lies in $M\mathcal O$, rounding any $x$ with $\lvert x\rvert\le R$ to the lattice $(\mathbb Z^3-M\mu)/\sqrt M$ stays inside the constraint and moves $x$ by at most $\sqrt3/(2\sqrt M)$. So the spectra fill the ball, and $\lVert f(F)\rVert\to\lVert f\rVert_\infty$ for $f\in C_0(\mathbb R^3)$. The image contains no unit, because $C_0(\mathbb R^3)$ has none. So image $+\,\mathbb C1$ is the minimal unitization, whose spectrum is the one-point compactification $\mathbb R^3\cup\{\infty\}=S^3$.
+(c) $S^3$ is compact, orientable and parallelisable, hence spin (with one spin structure, since $H^1(S^3;\mathbb Z_2)=0$), and simply connected. Its smooth structure is unique (Moise 1952: every topological 3-manifold has one smooth structure up to diffeomorphism). For a closed spin manifold the Dirac triple satisfies Connes' conditions; this is the "only if" half of the reconstruction theorem (Connes, *J. Noncommut. Geom.* **7**, 1–82 (2013), [arXiv:0810.2088](https://arxiv.org/abs/0810.2088); J. M. Gracia-Bondía, J. C. Várilly, H. Figueroa, *Elements of Noncommutative Geometry*, Birkhäuser 2001, ch. 10–11). The first-order condition holds because $[D,a]=c(da)$ acts by Clifford multiplication, which commutes with multiplication by functions, and $b^\circ=b$ on a commutative algebra. Poincaré duality is the fundamental class $[D]\in K_3(S^3)$. There is no circularity: the manifold is established by (b) through Gelfand–Naimark, not assumed in order to check an axiom.
+(d) $\mathbb C^7=\mathbb Ce_O\oplus\mathbf 3\oplus\bar{\mathbf 3}$ with three inequivalent irreducibles, so by Schur the commutant is $\mathbb C^3$. $\blacksquare$
 
-**Proof (6 steps).**
+*Numbers* (`website/scripts/check_core_numbers.py`, `test_emergent_space_is_the_octahedron_and_its_fluctuations_the_three_sphere`): the three generators commute; their joint spectrum on $\mathbb C^7$ is the origin plus three antipodal pairs of rank $3$, and in weight coordinates every non-zero point has $\lvert w\rvert_1=\lvert w\rvert_\infty=1$; for $M=10$ and $M=40$ random points of $\mathcal O$ lie within $\sqrt3/(2M)$ of the mean spectrum; for $M=10^6$ and $\mu$ interior, random points of $[-3,3]^3$ lie within $\sqrt3/(2\sqrt M)$ of the fluctuation spectrum; the covariance of $(H_i)$ in $I/7$ is non-degenerate; the colour commutant on $\mathbb C^7$ has dimension $3$.
+
+**The one choice, named.** Other unital completions of $C_0(\mathbb R^3)$ give other compactifications: the coordinate resolvents $(F_i\pm i)^{-1}$ give $(\mathbb R\cup\infty)^3=T^3$, all bounded continuous functions give the Stone–Čech $\beta\mathbb R^3$, and projective completion gives $\mathbb{RP}^3$. The one-point compactification is the smallest compactification of $\mathbb R^3$, and the rotations of the fluctuation covariance extend to it (they do not extend to $T^3$). T-119 takes it by definition, just as T-118 takes $C_0(\mathbb R)$ and not $C_b(\mathbb R)$. This is a definition, not a hypothesis about UHM. Its physical content is that "space" means the observables that become constant at large fluctuations.
+
+**The metric is not fixed.** The covariance of $(F_i)$ in the state $I/7$ is $\tfrac27\cdot1$ in weight coordinates. It gives $\mathbb R^3$ a flat metric, which extends to $S^3$ only conformally (stereographic projection). T-119 fixes the manifold, not the metric. The metric is dynamical and enters through the spectral action (T-65).
+
+**Reading as physical space: [I].** The three charges rotate the three complex planes $\{A,D\},\{S,U\},\{L,E\}$ into which $L_{e_O}$ pairs the six non-$O$ axes; the fixed axis is the clock. So $7=1+2\cdot3$ gives one clock axis and $\operatorname{rank}\mathrm{SO}(7)=3$ commuting charges. But by (d) the coordinates are colour-charged: the Weyl group of $\mathrm{SU}(3)_C$ permutes them, and colour rotations mix them with non-commuting charges. Read as physical space, this $\Sigma^3$ meets the Coleman–Mandula obstacle that [Theorem 48c](/docs/core/foundations/spacetime#теорема-48c) avoids. The two results give the same count $1+3$ but are not yet one picture ([Theorem 48d](/docs/core/foundations/spacetime#теорема-48d)).
+
+**What changed on 2026-09-25.** The former statement read: "The spatial part of $A_{\text{macro}}$ (restricted to the spatial sector of Step 2c′) is isomorphic to $C(\Sigma^3)$ for the unique smooth compact orientable spin 3-manifold $\Sigma^3$", with status [C] at the first-order condition and Poincaré duality. Its proof below tried to verify Connes' axioms for an abstract triple whose algebra it never computed. Computed, the algebra settles both open axioms. For the averages, the spectrum is the octahedron and Poincaré duality fails, so the closed-manifold statement is false for that algebra. For the fluctuations, the spectrum is $\mathbb R^3$, its minimal unitization is $S^3$, and the axioms hold. The restated theorem keeps the dimension ($3$, now the dimension of a computed spectrum rather than the rank of Step 2c′) and the compact spin 3-manifold, and names $\Sigma^3=S^3$. It needs neither T-117 (the three charges commute exactly) nor the "$\mathbf 3$-sector" projector of Step 2b. The heading read [T] until early 2026-09-25, then [C]; the old statement also read "restricted to the $\{A,S,D\}$-sector", which is not an $\mathrm{SU}(3)$ sector (row 48a, retracted).
+
+**Former proof (6 steps), superseded 2026-09-25** — kept as a record. Its Step 2c′ rank count survives as the count of (a); Steps 3–6 are replaced by (b)–(c).
 
 **Step 1 (Connes metric on holon positions).**
 
@@ -236,7 +257,7 @@ $$
 
 Total $1 + 3 = 4 = \dim M^4$, with the split exactly $(1,3)$ — and no Weyl law anywhere. Verified: adding the $O$-direction to the cloud gives singular values $(1,\,0.985,\,0.948,\,0.638)$, i.e. four independent directions. This supersedes the dimension half of [T-53](/docs/core/foundations/spacetime#лоренцева-сигнатура), which previously read the "$3$" off this theorem's broken Step 2c. The rank count itself is exact; reading the colour triplet $\mathbf{3}$ as the three directions of space is UHM's own proposal [I] and meets the Coleman–Mandula obstacle ([spacetime, precedents](/docs/core/foundations/spacetime#прецеденты-3-плюс-1)), so the dimension half of T-119 carries that reading as well.
 
-**The dimension step now goes through Theorem 48c (2026-09-25).** The obstacle is removed on the [spacetime page](/docs/core/foundations/spacetime#теорема-48c): the colour-singlet part of the spin factor $\mathfrak h_2(\mathbb O) \cong \mathbb R^{1,9}$ is $\mathfrak h_2(\mathbb C_O)$, of dimension $4$ and signature $(1,3)$, and $SL(2,\mathbb C_O)$ acts on it commuting with $SU(3)_C$ — a direct product, so Coleman–Mandula is respected. The count $(1,3)$, the Lorentzian sign (the sign of $\det$, without reflection positivity) and a rotation group $SO(3)$ outside colour are [T] as mathematics; their reading as physical spacetime is [C at (Q)]. The rank count of this step agrees with 48c numerically but no longer carries the dimension. What 48c does not give is the manifold: $\Sigma^3$, its reconstruction axioms and the product triple stay as they are — T-119 [C], and T-120 [C at the open reconstruction axioms of T-119].
+**The dimension step now goes through Theorem 48c (2026-09-25).** The obstacle is removed on the [spacetime page](/docs/core/foundations/spacetime#теорема-48c): the colour-singlet part of the spin factor $\mathfrak h_2(\mathbb O) \cong \mathbb R^{1,9}$ is $\mathfrak h_2(\mathbb C_O)$, of dimension $4$ and signature $(1,3)$, and $SL(2,\mathbb C_O)$ acts on it commuting with $SU(3)_C$ — a direct product, so Coleman–Mandula is respected. The count $(1,3)$, the Lorentzian sign (the sign of $\det$, without reflection positivity) and a rotation group $SO(3)$ outside colour are [T] as mathematics; their reading as physical spacetime is [C at (Q)]. The rank count of this step agrees with 48c numerically but no longer carries the dimension. What 48c does not give is the manifold. The manifold comes from the restated T-119 [T] ($\Sigma^3=S^3$, computed), whose coordinates, however, are colour-charged (T-119(d)); the two counts agree, the two pictures are not yet one.
 
 :::tip A sharp structural consequence: the clock is what makes space three-dimensional
 The three $\mathfrak u(3)$ Cartan directions are independent **only** because the embedding in $\mathbb C^7$ leaves the trace of the $\mathbf 3$-block free. Measured inside the $\mathbf 3$-block alone, the trace direction does not fluctuate at all and the cloud collapses to singular values $(1,\,0.572,\,0)$ — dimension $2$, not $3$. The third spatial coordinate becomes dynamical precisely because amplitude can flow between the $\mathbf 3$-sector and the $O$-sector.
@@ -301,29 +322,29 @@ By Connes' reconstruction theorem (Connes, 2008; Connes, 2013): a commutative sp
 The formulation of Connes' 2013 reconstruction theorem uses **seven** axioms. In Step 5 above, axioms (i)–(vi) are argued explicitly via the constructions listed (sector decomposition for dimension, direct-limit argument for regularity, finitely-generated-module structure for finiteness, explicit Hochschild 3-cycle for orientability, Atiyah–Singer for Poincaré duality, heat-kernel density for absolute continuity). The **seventh axiom — the first-order (order-one) condition** $[[D,a],b^\circ]=0$ for $a,b\in A$ and $b^\circ = Jb^*J^{-1}$ — is satisfied automatically for $A_{\text{macro}}^{\text{spatial}}$ commutative acting diagonally, but for the composite triple carrying the $J$-induced bimodule structure it reduces to a specific computation on the effective Dirac operator restricted to the $\mathbf{3}$-sector. This computation was **sketched** via a KO-dimension-6 structure attributed to T-53 — that structure does not exist on $\mathbb{C}^7$ (retracted [✗], [spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)) — and has **not been written out**; full verification is the framework-conditional gap flagged for T-119 in the [Rigour Stratification table](/docs/reference/status-registry#стратификация-строгости).
 :::
 
-**Dependencies:** T-117 [T], T-53 [T]; the complexified decomposition $\mathbb{C}^7 = \mathbb{C}e_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (standard; the axis-labelled row 48a is retracted). Standard mathematics: Gelfand–Naimark, Connes (2008, 2013). **Framework-conditional**: applicability of Connes 2013 reconstruction to the UHM effective spatial triple requires the 7-axiom check with the first-order condition treated as noted above.
+**Dependencies (restated theorem):** the octonion table and $\mathfrak{su}(3)_C=\mathrm{Stab}_{\mathfrak g_2}(e_O)$; the complexified decomposition $\mathbb{C}^7 = \mathbb{C}e_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (standard; the axis-labelled row 48a is retracted). Standard mathematics: Gelfand–Naimark, Moise (1952), Connes (2013, the "only if" direction). T-117 is not used. *Former dependencies, superseded:* T-117 [T], T-53 [T], and the 7-axiom check of the abstract triple ("framework-conditional", with the first-order condition untreated).
 
 ---
 
 ## 6. Theorem T-120: Product of Spectral Triples {#теорема-произведение-троек}
 
-:::tip Theorem T-120 (Product of Spectral Triples) [C at the open reconstruction axioms of T-119]
-In the thermodynamic limit, the effective spectral triple of the composite system factorizes:
+:::tip Theorem T-120 (Product of Spectral Triples) — [T] as mathematics (since 2026-09-25)
+In the limit $M\to\infty$ the macroscopic time, space and internal algebras commute and generate $C_0(\mathbb R)\otimes C(S^3)\otimes A_{\text{int}}=C_0(M^4)\otimes A_{\text{int}}$. For every Riemannian metric on $M^4$ the product triple
 
 $$
 (C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4, S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})
 $$
 
-where $M^4 = \mathbb{R} \times \Sigma^3$, and $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is the finite triple written down in T-53, without the KO-dimension-6 real structure (retracted, Step 6).
+is a spectral triple, where $M^4 = \mathbb{R} \times \Sigma^3$ with $\Sigma^3=S^3$ (T-119), and $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is the finite triple written down in T-53, without the KO-dimension-6 real structure (retracted, Step 6). The metric is not fixed by the theorem: it is the dynamical variable of the spectral action (T-65).
 :::
 
-**Status.** Until 2026-09-25 the heading read [T] while its own proof took the temporal factor from T-118 (then conditional) and the spatial factor from T-119 [C]. A product is no stronger than its factors, so T-120 is [C] at the first-order condition and Poincaré duality left open by T-119; the corollary T-120b and T-121 inherit this. (An intermediate version of the same day also carried an aperiodic clock as a condition via T-118; T-118 is now [T], and that condition is dropped.)
+**Status.** Until early 2026-09-25 the heading read [T] while its own proof took the temporal factor from T-118 (then conditional) and the spatial factor from T-119 [C]; it was then lowered to [C] at the first-order condition and Poincaré duality of T-119. Both factors are now theorems (T-118 [T], T-119 [T] restated), and the product carries no real structure, so no first-order condition applies to it: [T] as mathematics. The reading of $M^4$ as physical spacetime inherits the [I] of T-119's spatial reading.
 
 **Proof.**
 
 **Step 1 (Temporal component).** $A_{\text{time}} \cong C_0(\mathbb{R})$ as the scaling limit of the depth register (T-118 [T]).
 
-**Step 2 (Spatial component).** $A_{\text{space}} \cong C(\Sigma^3)$ (T-119 [C]).
+**Step 2 (Spatial component).** $A_{\text{space}} \cong C(S^3)$ (T-119 [T]).
 
 **Step 3 (Internal component).** $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ (T-53 [T]).
 
@@ -331,6 +352,8 @@ where $M^4 = \mathbb{R} \times \Sigma^3$, and $(A_{\text{int}}, H_{\text{int}}, 
 - O-sector $\perp$ $\{A,S,D\}$-sector $\perp$ $\{L,E,U\}$-sector
 
 This follows from the orthogonality of these coordinate subspaces of $\mathbb{C}^7$ and decoherence of inter-sector coherences at macroscopic scales (T-117). (An earlier version cited "the sector decomposition [T]"; the axis triples are not $\mathrm{SU}(3)$ sectors — row 48a, retracted — and only their orthogonality is used here.)
+
+*Replaced 2026-09-25 by a direct estimate, which needs neither sectors nor T-117.* The depth register is a separate tensor factor, so its readings commute with everything on the holons. An operator $a$ on one holon $m_0$ and a spatial field satisfy $\lVert[F_i,a]\rVert=\lVert[H_i,a]\rVert/\sqrt M$. For $f$ with $\int\lvert k\rvert\,\lvert\hat f(k)\rvert\,dk<\infty$ (dense in $C_0(\mathbb R^3)$), $\lVert[f(F),a]\rVert\le\int\lvert\hat f(k)\rvert\,\lVert[e^{ik\cdot F},a]\rVert\,dk\le\sqrt3\,\max_i\lVert[H_i,a]\rVert\,M^{-1/2}\int\lvert k\rvert\,\lvert\hat f(k)\rvert\,dk\to0$. So the three algebras commute in $\prod_M/\bigoplus_M$.
 
 **Step 5 (Product of algebras).**
 
@@ -348,7 +371,7 @@ $$
 
 (T-53). **Retracted [✗] (2026-09-25):** the count used KO-dimension 6 for the finite factor, and no real structure of KO-dimension 6 exists on $H_{\text{int}} = \mathbb{C}^7$: it would exchange the $\chi = \pm 1$ eigenspaces, which must then have equal dimension, and $7$ is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)). The product of Steps 1–5 is taken without a real structure, and this construction assigns it no KO-dimension.
 
-**Step 7 (Connes product theorem).** By the product theorem (Connes, 1996; Chamseddine–Connes, 1997): the product of spectral triples satisfying NCG axioms yields a spectral triple satisfying NCG axioms. Standard result. Here the product inherits exactly the axioms its factors satisfy: the finite factor has no real structure of KO-dimension 6 and its first-order line is unverified (spacetime, Step 6), and the spatial factor has the two open axioms of T-119.
+**Step 7 (Connes product theorem).** By the product theorem (Connes, 1996; Chamseddine–Connes, 1997): the product of spectral triples satisfying NCG axioms yields a spectral triple satisfying NCG axioms. Standard result. Here the product inherits exactly the axioms its factors satisfy: the finite factor has no real structure of KO-dimension 6 and its first-order line is unverified (spacetime, Step 6), and the spatial factor had the two open axioms of T-119 until its restatement. The spatial factor is now the Dirac triple of $S^3$, which satisfies all of Connes' conditions (T-119(c)). The product has no real structure, because the finite factor has none, so the first-order condition, which is defined through the real structure, does not arise. What the product is: a spectral triple, with $D$ self-adjoint, compact resolvent on bounded regions, and bounded commutators.
 
 **Step 8 (Lorentzian signature) — retracted [✗] (2026-09-25).**
 
@@ -398,25 +421,25 @@ Former note, retracted: the argument that KO-dim 6 plus the sign relations $J^2=
 
 **Former conclusion, retracted [✗]:** "the signature $(+1,-1,-1,-1)$ is uniquely determined by KO-dimension 6 (from the $G_2$-structure), the Page–Wootters constraint (from A5, T-87) and the sign convention $D_O > 0$; no degree of freedom remains". The first input does not exist, the second is conditional, and neither fixes a signature. **Status of the signature:** $(1,3)$ [C] at T-119 and reflection positivity (registry row T-53). $\blacksquare$ (for Steps 1–7)
 
-**Dependencies:** T-117 [T], T-118 [T], T-119 [C], T-53 [T]. Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
+**Dependencies:** T-118 [T], T-119 [T], T-53 [T] (the finite triple); T-117 no longer needed (Step 4). Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
 
 :::warning Compatibility with existing results
-The derived product of triples **coincides** with the one previously postulated for the spectral action (T-65 [T]). All results depending on T-65 ($G_N = 3\pi/(7f_2\Lambda^2)$, Einstein equations, $\Lambda_{\text{CC}}$) remain unchanged — only the justification changes: from [P] to [C] at T-119 (an earlier version said "from [P] to [T]"; retracted with the status of T-120).
+The derived product of triples **coincides** with the one previously postulated for the spectral action (T-65 [T]). All results depending on T-65 ($G_N = 3\pi/(7f_2\Lambda^2)$, Einstein equations, $\Lambda_{\text{CC}}$) remain unchanged — only the justification changes: from [P] to [T] as mathematics through the restated T-119 (an earlier version said "from [P] to [T]" while T-119 was conditional, and was lowered to "[C] at T-119" on 2026-09-25; the restatement of the same day makes the product a theorem, with the physical reading of the spatial factor [I]).
 :::
 
 ---
 
 ## 7. Theorem T-121: Closure of Lovelock Gaps {#теорема-лавлок-замыкание}
 
-:::tip Theorem T-121 (Closure of Lovelock Gaps) [C at T-120]
+:::tip Theorem T-121 (Closure of Lovelock Gaps) [T] (since 2026-09-25, with T-120)
 Three gaps of the Lovelock argument ([§3.4](/docs/physics/gravity/einstein-equations#34-ограничения-аргумента-лавлока)) are closed under the conditions of T-120:
 :::
 
-Until 2026-09-25 the heading read [T]; gap 1 closes only as far as $M^4$ is a smooth manifold, which is T-120 [C].
+The heading read [T] until early 2026-09-25, then [C at T-120]: gap 1 closes only as far as $M^4$ is a smooth manifold. With T-120 [T] it is: $M^4=\mathbb R\times S^3$.
 
 **Gap 1 (Discreteness vs. continuity): CLOSED.**
 
-$M^4$ is a smooth manifold (T-120 [C], at the open reconstruction axioms of T-119). Under these conditions Lovelock's theorem (1971) applies directly to the effective 4D action on $M^4$.
+$M^4=\mathbb R\times S^3$ is a smooth 4-manifold (T-120 [T]). Lovelock's theorem (1971) is local and applies directly to the effective 4D action on $M^4$.
 
 **Gap 2 (Covariance): CLOSED.**
 
@@ -429,18 +452,18 @@ $M^4$ is a smooth manifold (T-120 [C], at the open reconstruction axioms of T-11
 
 The Aharonov–Bohm counterexample concerns PT-properties of holonomy and does not affect the main argument (spectral action), only the supplementary Lovelock argument. Since gaps 1 and 2 are closed under the conditions of T-120, the Lovelock argument is applicable under them, and PT-properties of holonomy do not affect its validity. $\blacksquare$
 
-**Dependencies:** T-120 [C], T-53 [T]. Standard mathematics: Lovelock (1971).
+**Dependencies:** T-120 [T], T-53 [T]. Standard mathematics: Lovelock (1971).
 
 :::note Status of arguments for Einstein equations
 - **Main argument** (spectral action, T-65): [T] — independent of Lovelock
-- **Supplementary argument** (Lovelock): [C] at T-120 (T-121); an earlier line read "now also [T]"
+- **Supplementary argument** (Lovelock): [T] (T-121, with T-120 [T]); the line read "now also [T]" until early 2026-09-25, then "[C] at T-120"
 :::
 
 ---
 
 ## 8. Corollary T-120b: Vacuum Topology {#следствие-вакуумная-топология}
 
-:::tip Corollary T-120b (Vacuum Topology) [C at T-119]
+:::tip Corollary T-120b (Vacuum Topology) — topology $\Sigma^3\cong S^3$ [T]; constant curvature $k=+1$ [C at the vacuum symmetry]
 For the vacuum Gap-configuration (minimizing $V_{\text{Gap}}$), the spatial manifold $\Sigma^3$ has constant curvature (is maximally symmetric):
 
 - The sign of curvature is determined by $\text{sign}(\Lambda_{\text{Gap}})$
@@ -452,7 +475,7 @@ ds^2 = dt^2 - a^2(t)\left[\frac{dr^2}{1-kr^2} + r^2 d\Omega^2\right], \quad k = 
 $$
 :::
 
-Until 2026-09-25 the heading read [T]; registry row T-120b records [C]: the implication is exact, but asserting that $\Sigma^3$ is closed presupposes that it exists as a smooth manifold, which is the conditional half of T-119.
+Until early 2026-09-25 the heading read [T], then [C at T-119]: asserting that $\Sigma^3$ is closed presupposed that it exists as a smooth manifold, the then conditional half of T-119. **Split 2026-09-25.** (i) $\Sigma^3\cong S^3$ is now part of T-119 itself, [T], by a route independent of the vacuum: the spatial algebra is the minimal unitization of $C_0(\mathbb R^3)$. Steps 1–3 and 5 below are no longer needed for it; in particular simple connectivity no longer rests on T-64. (ii) Constant curvature, $k=+1$ and the de Sitter metric still use Steps 1–4: the vacuum symmetry of Step 1 rests on T-64, now [H] (hypothesis (SV)), and on $\Lambda_{\text{Gap}}>0$ (T-71). So (ii) is [C at the vacuum symmetry]. A remark, not a proof: the flat covariance metric of T-119 extends to $S^3$ exactly in the round conformal class, the class of $k=+1$.
 
 **Proof.**
 
@@ -478,15 +501,15 @@ $k=+1$ (closed) is compatible with data: $\Omega_k = 0.0007\pm0.0019$ (Planck 20
 |--------|:---:|:---:|--------|
 | Commutativity of macro-algebra | — | **[T]** T-117 | Quantum CLT + clustering |
 | Temporal manifold | [T] (partial) | **[T]** T-118 (scaling limit of the depth register) | Emergent time, Theorems 11.1 and 11.5 |
-| Spatial manifold | [P] | **[C]** T-119 (first-order condition, Poincaré duality open) | Gelfand + Connes |
-| Product of triples | [P] | **[C]** T-120 (inherits T-119) | T-117 + T-118 + T-119 |
+| Spatial manifold | [P] | **[T]** T-119 (spectrum computed: $\mathbb R^3$, minimal unitization $S^3$) | Gelfand–Naimark; Connes' conditions for the Dirac triple of $S^3$ |
+| Product of triples | [P] | **[T]** T-120 | T-118 + T-119 |
 | Lovelock: gap 1 | open | **closed at T-120** T-121 | $M^4$ is smooth under the conditions of T-120 |
 | Lovelock: gap 2 | open | **closed** T-121 | Spectral-action covariance (c); the $G_2 \to SU(3) \to SO(3)$ leg (b) is retracted |
 | Compactification 6D → 4D | [P] | **retracted [✗]** | Rested on the axis-labelled decomposition (row 48a) |
-| Background independence | [P] | **[C]** | $M^4$ assembled at T-119 |
-| Product $M^4 \times F_{\text{int}}$ "borrowed" | implicit assumption | **[C]** derived at T-119 | T-120 |
+| Background independence | [P] | **[T]** as mathematics; reading [I] | $M^4=\mathbb R\times S^3$ computed (T-118, T-119) |
+| Product $M^4 \times F_{\text{int}}$ "borrowed" | implicit assumption | **[T]** derived | T-120 |
 
-The temporal row read [C] (aperiodic clock assumed) in an intermediate version of 2026-09-25 and is [T] since the depth register (emergent time §11.4). Until 2026-09-25 the last five rows of the "new status" column read [T] (and "closed by T-120" for the compactification); corrected with the status of T-119 and T-120.
+The temporal row read [C] (aperiodic clock assumed) in an intermediate version of 2026-09-25 and is [T] since the depth register (emergent time §11.4). Until 2026-09-25 the last five rows of the "new status" column read [T] (and "closed by T-120" for the compactification); corrected with the status of T-119 and T-120. Later the same day they were set to [C] at T-119, and the restatement of T-119 (spectrum computed) raised the spatial, product and background-independence rows to [T] as mathematics.
 
 ---
 
@@ -495,8 +518,8 @@ The temporal row read [C] (aperiodic clock assumed) in an intermediate version o
 | Potential objection | Resolution |
 |---------------------|-----------|
 | Thermodynamic limit $M \to \infty$ | Standard mathematical limit, analogous to classical mechanics from QM. Corrections $O(7^{-M})$ are exponentially small. Not a new open question |
-| Specific topology of $\Sigma^3$ | Determined via $\Lambda_{\text{Gap}}$ and vacuum symmetry (T-120b, [C] at T-119) |
-| First-order condition and Poincaré duality | **Open** — the named conditions of T-119, inherited by T-120. An earlier version of this table listed no open question; corrected 2026-09-25. The aperiodic clock, listed here in an intermediate version, is supplied by the depth register (T-118) |
+| Specific topology of $\Sigma^3$ | $S^3$, the minimal unitization of the fluctuation spectrum $\mathbb R^3$ (T-119, [T]); the curvature via $\Lambda_{\text{Gap}}$ and vacuum symmetry (T-120b(ii), [C at the vacuum symmetry]) |
+| First-order condition and Poincaré duality | **Closed** (2026-09-25): the restated T-119 computes the spatial spectrum ($\mathbb R^3$, minimal unitization $S^3$), and both hold for the Dirac triple of $S^3$. For the averages instead of the fluctuations the spectrum is the octahedron $\cong B^3$, where Poincaré duality fails, so the choice of the fluctuation algebra is named in the theorem. Earlier this row read **Open**, and before that the table listed no open question. The aperiodic clock, listed here in an intermediate version, is supplied by the depth register (T-118) |
 | Non-perturbative partition function $Z_N \to Z$ | Was [P] **before** this work. Not related to background independence. Not a new question |
 | Smoothness of $M^4$ for finite $M$ | $M^4$ is defined in the limit. For finite $M$, geometry is "blurred" at the Planck scale — a **prediction**, not an open question. For the time factor the finite-$M$ picture is exact: $7^M$ readings of chronon spacing (emergent time §11.4) |
 
@@ -566,10 +589,8 @@ graph TD
     NEFF --> T118
     CLIM --> T118
 
-    T117 --> T119
     GN --> T119
-    CR --> T119
-    T53 --> T119
+    SEC --> T119
 
     T118 --> T120
     T119 --> T120
@@ -582,12 +603,12 @@ graph TD
 
     style T117 fill:#2d6,stroke:#000
     style T118 fill:#2d6,stroke:#000
-    style T119 fill:#fc3,stroke:#000
-    style T120 fill:#fc3,stroke:#000
-    style T121 fill:#fc3,stroke:#000
+    style T119 fill:#2d6,stroke:#000
+    style T120 fill:#2d6,stroke:#000
+    style T121 fill:#2d6,stroke:#000
 ```
 
-Green: [T] (T-117, T-118); amber: [C]. The chain has one conditional link — T-119 (first-order condition, Poincaré duality) — and T-120 and T-121 inherit it (an intermediate version also had T-118 amber, at an aperiodic clock; the depth register makes it [T]); the former node "KO-dim 6 → Lorentz" is removed (retracted, T-120 Step 6). An earlier caption read "All arrows lead from [T] or standard mathematics to [T]. The chain contains no [P], [H], or [C]"; retracted.
+Green: [T]. Since 2026-09-25 T-119 computes the spatial spectrum instead of reconstructing it, so the chain has no conditional link, and T-119 no longer uses T-117 or Connes' reconstruction direction. Until then it had one — T-119 (first-order condition, Poincaré duality) — and T-120 and T-121 inherited it (an intermediate version also had T-118 amber, at an aperiodic clock; the depth register makes it [T]); the former node "KO-dim 6 → Lorentz" is removed (retracted, T-120 Step 6). An earlier caption read "All arrows lead from [T] or standard mathematics to [T]. The chain contains no [P], [H], or [C]"; retracted.
 
 ---
 

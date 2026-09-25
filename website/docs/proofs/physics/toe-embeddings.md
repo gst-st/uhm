@@ -81,7 +81,7 @@ as **formal power series** under the identification (a)-(d) from T-170.
 
 **Proof.**
 
-**Step 1 (Dimensional correspondence) [T].** M-theory: 11D = 4D ($M^4$) + 7D ($\mathcal{M}_7$). UHM: $M^4$ is the base of the product triple — assembled at T-120 [C] (open reconstruction axioms of T-119); the correspondence below uses only that the product has a four-dimensional base, not how it is obtained — and the 7D internal space is parametrized by $\mathcal{D}(\mathbb{C}^7)$. The former sentence "the spectral triple with KO-dim = 6 (T-53) upon supersymmetric extension gives KO-dim = 6 + 1 = 7 (standard $\mathbb{Z}_8$-shift)" is retracted [✗]: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)).
+**Step 1 (Dimensional correspondence) [T].** M-theory: 11D = 4D ($M^4$) + 7D ($\mathcal{M}_7$). UHM: $M^4$ is the base of the product triple — assembled at T-120 [T] as mathematics (restated T-119, 2026-09-25); the correspondence below uses only that the product has a four-dimensional base, not how it is obtained — and the 7D internal space is parametrized by $\mathcal{D}(\mathbb{C}^7)$. The former sentence "the spectral triple with KO-dim = 6 (T-53) upon supersymmetric extension gives KO-dim = 6 + 1 = 7 (standard $\mathbb{Z}_8$-shift)" is retracted [✗]: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)).
 
 **Step 2 (Gap moduli = $G_2$ moduli, formal level) [T].** The physical configuration space of UHM:
 
@@ -196,7 +196,7 @@ Hence: **if** a non-perturbative definition of M-theory exists, UHM agrees with 
 **Results used:**
 - T-53 [T] (spectral triple; its KO-dimension-6 claim is retracted [✗]);
 - T-65 [T] (Connes–Chamseddine spectral action);
-- T-120 [C] (emergent $M^4$, at the open reconstruction axioms of T-119; used only for the four-dimensional base in Step 1);
+- T-120 [T] (emergent $M^4$, [T] as mathematics with the restated T-119; used only for the four-dimensional base in Step 1);
 - Joyce 1996 ($G_2$-manifolds with $b_3 = 21$);
 - Connes–Chamseddine 1997 (spectral action);
 - Acharya–Witten 2001 (M-theory on $G_2$);
@@ -204,7 +204,7 @@ Hence: **if** a non-perturbative definition of M-theory exists, UHM agrees with 
 - Kaluza–Klein reduction theory (standard).
 
 **Consistency check:**
-- Dependencies T-53, T-65 [T]; T-120 [C], entering only through the four-dimensional base of Step 1; no circularities.
+- Dependencies T-53, T-65 [T]; T-120 [T], entering only through the four-dimensional base of Step 1; no circularities.
 - The perturbative part uses standard QFT methods;
 - The non-perturbative part is marked [C] with the open problems named;
 - Consistent with T-171 [T], T-171' [T], T-172 [T] (the other embeddings of alternative approaches).
@@ -574,17 +574,17 @@ $$
 \begin{pmatrix} j_1 & j_2 & j_3 \\ m_1 & m_2 & m_3 \end{pmatrix} \sim \frac{1}{\sqrt{24\pi V_{\text{tet}}}} \cos\left(S_{\text{Regge}} + \frac{\pi}{4}\right) \quad \text{(Ponzano-Regge 1968)},
 $$
 
-where $V_{\text{tet}}$ is the tetrahedron volume, $S_{\text{Regge}}$ is the Regge action. Convergence of $A_{\text{Fano}}$ to the Einstein-Hilbert action for $M^4$ (via T-120 [C], at the open reconstruction axioms of T-119) requires proof of compatibility of the 7-line Fano structure with the 4-face simplex in Regge calculus — this is an **active research problem** in semi-classical LQG. Status: [С given Fano-Regge compatibility].
+where $V_{\text{tet}}$ is the tetrahedron volume, $S_{\text{Regge}}$ is the Regge action. Convergence of $A_{\text{Fano}}$ to the Einstein-Hilbert action for $M^4$ (via T-120 [T] as mathematics (restated T-119, 2026-09-25)) requires proof of compatibility of the 7-line Fano structure with the 4-face simplex in Regge calculus — this is an **active research problem** in semi-classical LQG. Status: [С given Fano-Regge compatibility].
 
 **Results used:**
 - T-42a [T] ($G_2$-rigidity, connection to octonions);
-- T-120 [C] (emergent $M^4$; enters only the semi-classical limit, which is [C] anyway);
+- T-120 [T] (emergent $M^4$; enters only the semi-classical limit, which is [C] anyway);
 - Standard theory of Wigner 3$j$-symbols (Varshalovich 1988);
 - Spin foam theory (Perez 2013);
 - $G_2$ Casimir operator (standard representation theory).
 
 **Consistency check:**
-- Dependencies T-42a [T], T-120 [C] (the latter only for the semi-classical limit); no circularities. (An earlier line read "all [T]"; corrected 2026-09-25.)
+- Dependencies T-42a [T], T-120 [T] (the latter only for the semi-classical limit); no circularities. (An earlier line read "all [T]"; corrected 2026-09-25.)
 - Consistent with T-171 [T] and T-171' [T] (LQG embedding functors);
 - Semi-classical limit remains [C] (Fano-Regge compatibility — an open problem in the LQG community).
 
@@ -635,9 +635,9 @@ $$
 v \preceq w \quad \Leftrightarrow \quad \tau_v \leq \tau_w \;\land\; d_{\mathcal{G}}(v,w) \leq c \cdot |\tau_w - \tau_v|
 $$
 
-where $d_{\mathcal{G}}$ is the Connes distance (T-119 [C]) and $c$ is the maximum speed of coupling (finite-range Gap coupling).
+where $d_{\mathcal{G}}$ is the Connes distance (T-119 [T]) and $c$ is the maximum speed of coupling (finite-range Gap coupling).
 
-**(c)** Discreteness: the summed clock of $M$ holons has $6M+1$ readings ([Emergent time, composite clocks](/docs/proofs/dynamics/emergent-time#композитные-часы)), and together with the finite number of holons $M$ this ensures the discreteness of the causal set. In the continuum limit the Lorentzian manifold $M^4$ is recovered under the conditions of T-118, T-119 and T-120 [C]. (An earlier version read "the temporal clocks $\mathbb{Z}_{7^M}$" and "T-118, T-119, T-120 [T]"; retracted — $M$ summed seven-level clocks give at most $6M+1$ readings, not $7^M$.)
+**(c)** Discreteness: the summed clock of $M$ holons has $6M+1$ readings ([Emergent time, composite clocks](/docs/proofs/dynamics/emergent-time#композитные-часы)), and together with the finite number of holons $M$ this ensures the discreteness of the causal set. In the continuum limit the Lorentzian manifold $M^4$ is recovered under the conditions of T-118, T-119 and T-120 [T]. (An earlier version read "the temporal clocks $\mathbb{Z}_{7^M}$" and "T-118, T-119, T-120 [T]"; retracted — $M$ summed seven-level clocks give at most $6M+1$ readings, not $7^M$.)
 :::
 
 **Proof.**
@@ -738,18 +738,18 @@ which exactly reproduces the causal order $\preceq$ via the Gap couplings of the
 
 **Step 4 (Functoriality).** The assignment $(C, \preceq) \mapsto N_\bullet(C, \preceq) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ is functorial with respect to morphisms of partially ordered sets (order-preserving maps), since the nerve is a functor $\mathbf{Poset} \to \mathbf{sSet}$, and the Yoneda embedding is functorial.
 
-**Step 5 (Causal order from holons).** By Lemma C30, the holonic configuration $\Gamma_{\text{total}}$ for $(C, \preceq)$ reproduces the causal order. The continuum limit $M \to \infty$ (T-117 [T]) gives the manifold $\Sigma^3$ (T-119 [C]), and the full $M^4$ is recovered by T-120 [C] under its two conditions. The functor of the Conclusion does not use this remark.
+**Step 5 (Causal order from holons).** By Lemma C30, the holonic configuration $\Gamma_{\text{total}}$ for $(C, \preceq)$ reproduces the causal order. The continuum limit $M \to \infty$ (T-117 [T]) gives the manifold $\Sigma^3$ (T-119 [T]), and the full $M^4$ is recovered by T-120 [T] (with the restated T-119). The functor of the Conclusion does not use this remark.
 
 **Conclusion.** The functor $\mathcal{F}_{\text{CS}}: \mathbf{CausalSet}_{\text{fin}}^{M^4} \to \mathbf{Sh}_\infty(\mathcal{C})$ is well-defined, where $\mathbf{CausalSet}_{\text{fin}}^{M^4}$ is the full subcategory of finite causal sets faithfully embedded into $M^4$. $\blacksquare$
 
 **Status:** [T]. The proof uses:
 - T-38b [T] ($\tau \in \mathbb{Z}_7$ per holon; the summed clock of $M$ holons has $6M+1$ readings — an earlier line read "emergent clocks $\mathbb{Z}_{7^M}$", retracted);
-- T-117, T-118 [T]; T-119, T-120 [C] (recovery of $M^4$ — only in the remark of Step 5);
+- T-117, T-118 [T]; T-119, T-120 [T] (recovery of $M^4$ — only in the remark of Step 5);
 - [Lurie HTT 6.1.3.8](https://www.math.ias.edu/~lurie/papers/HTT.pdf) (embedding of simplicial sets);
 - Standard theory of nerves of partially ordered sets (Mac Lane 1998).
 
 **Consistency check:**
-- Dependencies: T-38b [T] and Lemma C30 for the functor; T-117, T-118 [T] and T-119, T-120 [C] only for the continuum remark; no circularities. (An earlier line read "all [T]"; corrected 2026-09-25.)
+- Dependencies: T-38b [T] and Lemma C30 for the functor; T-117, T-118 [T] and T-119, T-120 [T] only for the continuum remark; no circularities. (An earlier line read "all [T]"; corrected 2026-09-25.)
 - The $\Gamma_{\text{total}}$ construction uses only existing holonic states (no new formalism required);
 - Scope: finite causal sets faithfully embedded into $M^4$. For causal sets with causal dimension > 4 (Brightwell-Gregory 1991) the theorem is not applicable — this is a physical restriction consistent with the axiom of emergent $M^4$ in UHM.
 
@@ -759,7 +759,7 @@ which exactly reproduces the causal order $\preceq$ via the Gap couplings of the
 |--------|--------|---------|
 | Discrete time structure | **[T]** | $6M+1$ readings of the summed clock (T-38b [T] per holon); the former "$\mathbb{Z}_{7^M}$" is retracted |
 | Causal order | **[T]** | Finite-range Gap coupling + emergent time |
-| Continuum limit → $M^4$ | **[C]** | T-118 [T] + T-119 + T-120 [C] (open reconstruction axioms) |
+| Continuum limit → $M^4$ | **[T]** as mathematics | T-118 [T] + T-119 [T] + T-120 [T] (restated T-119, 2026-09-25) |
 | Full functor | **[T]** | C30 proven as Lemma (§3.2) |
 | Embedding into ∞-topos | **[T]** | Nerve — standard construction |
 
@@ -999,7 +999,7 @@ The receiving morphism $(f^*, \alpha, \beta): (E, \mathcal{A}, D) \to (\mathrm{S
                     │                 │
                     ▼                 ▼
               11D = 4D + 7D      spin = {A,S,D}
-              [C: T-120]         [T: T-53]
+              [T: T-120]         [T: T-53]
 ```
 
 ---
@@ -1020,7 +1020,7 @@ M-theory (Task 1) has status **[T]** at levels of M-theory definedness: perturba
 What is **proven unconditionally [T]**:
 1. The $G_2$-symmetry is identical between UHM and M-theory on $G_2$-manifolds;
 2. The chain of embeddings $SU(2) \subset SU(3) \subset G_2$ connects LQG with UHM algebraically;
-3. The discrete time structure ($6M+1$ readings of the summed clock; the former "$\mathbb{Z}_{7^M}$" is retracted) + continuum limit ($M^4$, [C] at T-120) encompasses causal sets as an intermediate stage;
+3. The discrete time structure ($6M+1$ readings of the summed clock; the former "$\mathbb{Z}_{7^M}$" is retracted) + continuum limit ($M^4$, [T] with T-120) encompasses causal sets as an intermediate stage;
 4. Primitive rigidity (T-173) shows the uniqueness of the UHM construction.
 
 What is **not proven**:
