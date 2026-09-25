@@ -3370,6 +3370,181 @@ def test_phi_coh_contracts_toward_i7_but_is_not_a_contraction():
     assert all(np.linalg.norm(stepS(X) - X) < 1e-15 for X in fixed)
 
 
+# --- Consciousness meta-level, 25.09.2026 (T-221 corrected, Cons(S) against Kleiner-Hoel,
+# --- enriched Yoneda for qualia, PCI bridge). Each test witnesses one statement of the
+# --- corresponding page; see the page anchors in the docstrings.
+
+def test_first_person_facts_of_two_subjects_are_not_compossible():
+    """T-221(a): List's lemma in the centred-world form (List 2023a, footnote 1 of the
+    quadrilemma). A centred world is (w, s); 'I am in state X' is the set of centred worlds
+    whose centre is in X. For two subjects in different complete states no centred world
+    satisfies both first-person facts, while the relativised (stage-indexed) facts are
+    jointly satisfiable -- the relationalist route keeps one coherent world."""
+    import itertools
+    worlds = [("w", {"s1": "X", "s2": "Y"})]
+    centred = [(w, s) for w, st in worlds for s in st]
+    state = {c: worlds[0][1][c[1]] for c in centred}
+    i_am_x = {c for c in centred if state[c] == "X"}
+    i_am_y = {c for c in centred if state[c] == "Y"}
+    assert i_am_x and i_am_y and not (i_am_x & i_am_y)
+    # relativised facts: 'relative to s1, I am X' and 'relative to s2, I am Y' are
+    # propositions about uncentred worlds and hold together at w
+    rel = [lambda w: w[1]["s1"] == "X", lambda w: w[1]["s2"] == "Y"]
+    assert all(f(worlds[0]) for f in rel)
+    # the same with every assignment of two distinct complete states out of three
+    for a, b in itertools.permutations("XYZ", 2):
+        st = {"s1": a, "s2": b}
+        cx = {s for s in st if st[s] == a}
+        cy = {s for s in st if st[s] == b}
+        assert not (cx & cy)
+
+
+def test_viability_penalty_pins_every_subthreshold_reconstruction_at_two_sevenths():
+    """Measurement protocol R5 (A-95): with the default lambda_2 = 100 the reconstruction of
+    pi_bio returns P = 2/7 exactly for every uniform sub-threshold state, so P8.2
+    (P < 2/7 in N3) cannot be observed; with lambda_2 = 0 the true P is returned. For the
+    uniform family the pinning threshold is lambda_2 >= 10(1 - m/m_c), m_c = 1/sqrt(294)."""
+    import numpy as np
+    from scipy.optimize import minimize
+    rng = np.random.default_rng(7)
+    iu = np.triu_indices(7, 1)
+    pos = []
+    k = 0
+    for i in range(7):
+        for j in range(i + 1):
+            pos.append((i, j, k))
+            k += 1 if i == j else 2
+    n = k
+
+    def build(x):
+        L = np.zeros((7, 7), complex)
+        for i, j, q in pos:
+            L[i, j] = max(x[q], 1e-6) if i == j else x[q] + 1j * x[q + 1]
+        G = L @ L.conj().T
+        return G / np.trace(G).real
+
+    def recon(m, lam2):
+        mag = np.full((7, 7), m)
+
+        def f(x):
+            G = build(x)
+            ll = -np.sum((np.real(np.diag(G)) - 1 / 7) ** 2) / 0.01
+            ll -= np.sum((np.abs(G[iu]) - mag[iu]) ** 2) / 0.05
+            return -(ll - lam2 * max(0.0, 2 / 7 - np.real(np.trace(G @ G))))
+        best = None
+        for _ in range(3):
+            x0 = 0.05 * rng.normal(size=n)
+            for i, j, q in pos:
+                if i == j:
+                    x0[q] = np.sqrt(1 / 7)
+            r = minimize(f, x0, method="L-BFGS-B",
+                         options=dict(ftol=1e-14, gtol=1e-10, maxiter=20000))
+            best = r if best is None or r.fun < best.fun else best
+        G = build(best.x)
+        return float(np.real(np.trace(G @ G)))
+    for m in (0.02, 0.05):
+        p_true = 1 / 7 + 42 * m * m
+        assert p_true < 2 / 7
+        assert abs(recon(m, 0.0) - p_true) < 2e-3
+        assert abs(recon(m, 100.0) - 2 / 7) < 2e-3
+    mc = 1 / np.sqrt(294)
+    assert abs(1 / 7 + 42 * mc * mc - 2 / 7) < 1e-15
+
+
+def test_uniform_diagonal_window_is_phi_between_one_and_two():
+    """PCI bridge: on the uniform-diagonal stratum P = (1 + Phi)/7, R = 1/(1 + Phi),
+    C = Phi R = Phi/(1 + Phi); the window P in (2/7, 3/7] is Phi in (1, 2] and C in (1/2, 2/3]."""
+    import numpy as np
+    rng = np.random.default_rng(3)
+    seen = [0, 0]
+    for _ in range(400):
+        ph = np.exp(1j * rng.uniform(0, 2 * np.pi, 7))
+        H = rng.uniform(0, 1 / 7) * (np.outer(ph, ph.conj()) - np.eye(7))
+        N = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+        N = 0.01 * (N + N.conj().T)
+        np.fill_diagonal(N, 0)
+        H = H + N
+        G = np.eye(7) / 7 + H
+        if np.min(np.linalg.eigvalsh(G)) < 0:
+            continue
+        P = np.real(np.trace(G @ G))
+        off = np.sum(np.abs(G) ** 2) - np.sum(np.abs(np.diag(G)) ** 2)
+        Phi = off / np.sum(np.abs(np.diag(G)) ** 2)
+        assert abs(P - (1 + Phi) / 7) < 1e-12
+        R = 1 / (7 * P)
+        assert abs(R - 1 / (1 + Phi)) < 1e-12
+        assert ((2 / 7 < P <= 3 / 7) == (1 < Phi <= 2 + 1e-15))
+        seen[int(2 / 7 < P <= 3 / 7)] += 1
+    assert min(seen) >= 20
+
+
+def test_cons_verdict_and_quality_geometry_are_independent():
+    """Kawakita et al. 2024 section: the Fubini-Study distances between the eigenrays of Gamma
+    do not depend on its spectrum, and P does not depend on the eigenrays; the same quality
+    geometry is carried by a state below 2/7 and by one inside the window."""
+    import numpy as np
+    rng = np.random.default_rng(11)
+    Z = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    Q, _ = np.linalg.qr(Z)
+
+    def geom(G):
+        _, V = np.linalg.eigh(G)
+        a = np.abs(V.conj().T @ Q)
+        return np.sort(np.round(np.arccos(np.clip(a, 0, 1)), 5).ravel())
+    lam_low = np.array([0.20, 0.18, 0.16, 0.14, 0.12, 0.11, 0.09])
+    lam_in = np.array([0.50, 0.20, 0.10, 0.08, 0.06, 0.04, 0.02])
+    G1 = Q @ np.diag(lam_low) @ Q.conj().T
+    G2 = Q @ np.diag(lam_in) @ Q.conj().T
+    P1, P2 = np.sum(lam_low ** 2), np.sum(lam_in ** 2)
+    assert P1 < 2 / 7 < P2 <= 3 / 7
+    assert np.allclose(geom(G1), geom(G2))
+
+
+def test_enriched_yoneda_embedding_of_fubini_study_rays_is_an_isometry():
+    """Categorical formalism, enriched Yoneda: for d = d_FS on CP^{n-1},
+    sup_x (d(x, b) - d(x, a)) = d(a, b) (the presheaf hom of y a and y b), attained at x = a;
+    a finite delta-net S gives d(a,b) - 2 delta <= max_s |d(s,a) - d(s,b)| <= d(a,b); and the
+    normalised volume of an FS ball of radius r in CP^1 and CP^2 is sin^{2(n-1)} r."""
+    import numpy as np
+    rng = np.random.default_rng(5)
+
+    def ray(n, k):
+        v = rng.normal(size=(k, n)) + 1j * rng.normal(size=(k, n))
+        return v / np.linalg.norm(v, axis=1, keepdims=True)
+
+    def d(u, v):
+        return np.arccos(np.clip(np.abs(u.conj() @ v.T), 0, 1))
+    tol = 1e-6
+    for n in (2, 3, 7):
+        X = ray(n, 4000)
+        A = ray(n, 20)
+        D_AA = d(A, A)
+        D_XA = d(X, A)
+        for i in range(20):
+            for j in range(20):
+                sup = np.max(np.concatenate([D_XA[:, j] - D_XA[:, i], [D_AA[i, j] - D_AA[i, i]]]))
+                assert sup <= D_AA[i, j] + tol
+                assert abs(sup - D_AA[i, j]) < tol
+    # finite-probe Yoneda on CP^1: a net of probes of covering radius delta
+    X = ray(2, 3000)
+    S = ray(2, 400)
+    delta = np.max(np.min(d(X, S), axis=1))
+    A = ray(2, 30)
+    DAS = d(A, S)
+    DAA = d(A, A)
+    for i in range(30):
+        for j in range(30):
+            prof = np.max(np.abs(DAS[i] - DAS[j]))
+            assert DAA[i, j] - 2 * delta - tol <= prof <= DAA[i, j] + tol
+    for n in (2, 3):
+        X = ray(n, 200000)
+        c = ray(n, 1)[0]
+        dist = np.arccos(np.clip(np.abs(X.conj() @ c), 0, 1))
+        for r in (0.3, 0.7, 1.1):
+            frac = np.mean(dist <= r)
+            assert abs(frac - np.sin(r) ** (2 * (n - 1))) < 5e-3
+
+
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
     bad = 0
