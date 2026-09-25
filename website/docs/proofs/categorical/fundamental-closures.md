@@ -326,7 +326,7 @@ Plus two findings the audit had not asked for: $r_4 = 1/2$ is an **identity** of
 
 **Upgrade**: T-176 now has an **explicit algebraic expression** rather than a "claimed analytical" form. Numerical values remain [C at (SV)] because they depend on full vacuum minimization — a computational task, not a theoretical lacuna.
 
-**Dependencies**: T-43d [T] (Fano selection rule), T-48a (sector decomposition; retracted [✗] 2026-09-25 — Step 2 now rests on the T-64 vacuum), T-64 [H] (restated; sector values: hypothesis (SV)) (unique vacuum), T-74 [T] (V_Gap from spectral action), T-176 [C at (SV)] (analytical form).
+**Dependencies**: T-43d [T] (Fano selection rule), T-48a (sector decomposition; retracted [✗] 2026-09-25 — Step 2 now rests on the T-64 vacuum), T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)) (unique vacuum), T-74 [T] (V_Gap from spectral action), T-176 [C at (SV)] (analytical form).
 
 ---
 
@@ -364,7 +364,7 @@ where $\theta^*$ is the global minimum.
 ### 8.5. Output validation
 
 - Must reproduce known perturbative suppression (10^{−41.5}) at tree level.
-- Must give unique minimum (verified by Hessian positivity — T-64 [H] (restated; sector values: hypothesis (SV))).
+- Must give unique minimum (verified by Hessian positivity — T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))).
 - Numerical $\Lambda$ must agree with observed $\sim 10^{-120}$ within ±5 orders (stricter than current ±10).
 
 **Status**: [C at (SV)] → **numerical programme fully specified**. Total resource cost < $10^5$ USD on cloud HPC. No theoretical obstacle remains.
@@ -553,7 +553,7 @@ Hence SYNARC's 3-coskeletal bound is now rigorously verified: Cog is a Kan compl
 :::tip Theorem T-219 (SUSY Λ-suppression, sector derivation) [H]
 In UHM's N=1 supersymmetric spectral action on $M^4 \times A_{\mathrm{int}}$ (T-65 [T]), the residual cosmological constant from SUSY-broken loops is suppressed by the factor
 $$\Lambda_\mathrm{SUSY} \;\sim\; \varepsilon^{12} \, M_P^4$$
-where $\varepsilon \sim 10^{-3}$ is the sector hierarchy parameter (T-64 [H] (restated; sector values: hypothesis (SV))) and the exponent $12 = 4 \cdot k_{\mathrm{sec}}$ arises from:
+where $\varepsilon \sim 10^{-3}$ is the sector hierarchy parameter (T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) and the exponent $12 = 4 \cdot k_{\mathrm{sec}}$ arises from:
 - $k_{\mathrm{sec}} = 3$ sectors — ~~in the UHM decomposition $7 = \mathbf 1_O \oplus \mathbf 3_{A,S,D} \oplus \bar{\mathbf 3}_{L,E,U}$ (T-48a [T])~~ the axis-labelled decomposition is retracted (T-48a, 2026-09-25); the count 3 survives only for the complexified $\mathbb C^7 = \mathbb C e_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$, $\mathbf 3 = \mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$;
 - Factor $4$ from the dimensional count of SUSY-breaking mass-squared splittings per sector in the one-loop correction $\delta\Lambda \sim (\delta m)^4 / M_P^4$ per sector.
 
@@ -601,7 +601,7 @@ The specific **three-loop product** structure $\varepsilon^{4\cdot 3} = \varepsi
 
 **Honest bracket: $\Lambda \sim 10^{-53.5}$ to $10^{-93.5}$** depending on how much of the sector programme is realised; closing the remaining $\gtrsim 27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task. $\blacksquare$
 
-**Dependencies**: T-48a (sector decomposition; retracted [✗] 2026-09-25), T-50 [T] (unique superpotential, Schur), T-52 (sector asymmetry; retired as a theorem 2026-09-25, now the hypothesis (SA)), T-64 [H] (restated; sector values: hypothesis (SV)) (unique vacuum), T-65 [T] (spectral action), T-71 [T] (cohomological $\Lambda_\mathrm{global}=0$). Standard mathematics: Martin 2010 SUSY primer, Seeley–de Witt heat kernel expansion, standard N=1 one-loop calculation.
+**Dependencies**: T-48a (sector decomposition; retracted [✗] 2026-09-25), T-50 [T] (unique superpotential, Schur), T-52 (sector asymmetry; retired as a theorem 2026-09-25, now the hypothesis (SA)), T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)) (unique vacuum), T-65 [T] (spectral action), T-71 [T] (cohomological $\Lambda_\mathrm{global}=0$). Standard mathematics: Martin 2010 SUSY primer, Seeley–de Witt heat kernel expansion, standard N=1 one-loop calculation.
 
 ---
 

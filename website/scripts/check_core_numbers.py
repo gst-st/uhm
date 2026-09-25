@@ -50,6 +50,16 @@ h₂(ℂ_O), сигнатура (1,3), централизатор 𝔰𝔬(1,3) 
 `fano_roles_are_fixed_by_three_non_collinear_marks` (T-177: 168 → 24 → 4 → 1; O и пара κ₀ — 2) и
 `gamma_eu_vev_breaks_colour` (⟨γ_EU⟩ ≠ 0 оставляет от 𝔰𝔲(3)_C не более 𝔲(1)).
 
+Семь — за G₂-инвариантным потенциалом Gap (T-331, T-64 в исправленной форме, 25.09.2026):
+`g2_invariant_cubics_are_pt_even` (до степени 3 PT-нечётных G₂-инвариантов нет, кубика от Im Γ нет;
+PT-нечётных квартик три), `frame_group_cubics_and_the_page_v3_average` (при Γ_oct кубиков 25,
+PT-нечётных 3; среднее V₃ страницы по Γ_oct — ноль), `associator_cubic_is_invariant_positive_and_factors_through_lambda3_7`
+(𝒜 = 96·Tr(Π₇Λ³Γ) ≥ 0, молчит на ассоциативных состояниях), `real_states_obey_the_associator_identity_and_peak_at_i_over_7`
+(𝒜(R) ≤ 672/343), `symmetric_vacuum_hessian_and_the_associator_coupling` (−48/7, 48/7, −96/7;
+спектр 𝒬 — 48, 0¹², −24⁸), `colour_invariant_sector_is_solved_in_closed_form` и
+`g2_invariant_vacuum_is_symmetric_or_colour_invariant_with_gap` (I/7 при малом κ, орбита S⁶ со
+стабилизатором SU(3) и 𝒢 > 0 при большом; κ₁ = 0,0787μ²), `real_twirl_inequality_holds_in_its_proven_cases_and_on_samples`.
+
 
 Три — за восстановлением T-53b и T-118 (эмерджентное время §11.4, 25.09.2026):
 `depth_register_carries_the_dissipative_arrow` (относительно цепи показаний со связью
@@ -1553,6 +1563,370 @@ def test_gamma_eu_vev_breaks_colour():
             basis.append(Z)
     rows = np.vstack([np.array([(Y @ X - X @ Y).flatten() for Y in basis]).T for X in su3])
     assert 49 - np.linalg.matrix_rank(rows, tol=1e-9) == 3                  # коммутант ℂ³: SU(2) с цветом не коммутирует
+
+
+# ── G₂-инвариантный потенциал Gap: T-331 и T-64 в исправленной форме (25.09.2026) ──────────
+
+@functools.lru_cache(maxsize=None)
+def _assoc4():
+    """a_{ijkl}: [e_i, e_j, e_k] = Σ_l a_{ijkl} e_l. Тензор вполне антисимметричен (a = 2ψ)."""
+    A = np.zeros((7, 7, 7, 7))
+    for i in range(7):
+        for j in range(7):
+            for k in range(7):
+                x, y, z = unit(i + 1), unit(j + 1), unit(k + 1)
+                A[i, j, k] = (omul(omul(x, y), z) - omul(x, omul(y, z)))[1:]
+    return A
+
+
+def _cal_a(G):
+    """Ассоциаторный кубик 𝒜(Γ) = Σ ⟨[e_i,e_j,e_k],[e_a,e_b,e_c]⟩ Γ_ia Γ_jb Γ_kc = E‖[x,y,z]‖²."""
+    A = _assoc4()
+    return float(np.real(np.einsum('ijkl,ia,jb,kc,abcl->', A, G, G, G, A, optimize=True)))
+
+
+def _cal_a_grad(G):
+    """D_ia = ∂𝒜/∂Γ_ia (Γ как 49 независимых комплексных переменных)."""
+    A = _assoc4()
+    T = np.einsum('ijkl,jb,kc->ibcl', A, G, G, optimize=True)
+    return 3 * np.einsum('ibcl,abcl->ia', T, A, optimize=True)
+
+
+def _l_of(u):
+    """Матрица L_u: y ↦ u × y (мнимая часть октонионного произведения)."""
+    return np.einsum('xyz,x->zy', PHI3, u)
+
+
+def _vg_value_grad(x, kap, l4, mu2=1.0):
+    """V = μ²𝒢 + λ₄𝒢² − κ𝒜 на Γ = AA†/Tr и её градиент по 98 вещественным параметрам A."""
+    A = (x[:49] + 1j * x[49:]).reshape(7, 7)
+    M = A @ A.conj().T
+    t = np.trace(M).real
+    G = M / t
+    g = float(np.sum(G.imag ** 2))
+    V = mu2 * g + l4 * g * g - kap * _cal_a(G)
+    H = (mu2 + 2 * l4 * g) * 2j * G.imag - kap * _cal_a_grad(G).T
+    H = (H + H.conj().T) / 2
+    K = (H - np.trace(H @ G).real * np.eye(7)) / t
+    Gm = 2 * (K @ A)
+    return V, np.concatenate([Gm.real.ravel(), Gm.imag.ravel()])
+
+
+def _colour_family(a, b, c, v=O_AXIS):
+    """Γ = a|v⟩⟨v| + bP_𝟑(v) + cP_𝟑̄(v) в осевом базисе: Re = a vvᵀ + (b+c)/2 (I − vvᵀ), Im = (b−c)/2 L_v."""
+    e = np.eye(7)[v]
+    return a * np.outer(e, e) + (b + c) / 2 * (np.eye(7) - np.outer(e, e)) + 0.5j * (b - c) * _l_of(e)
+
+
+def _family_min(kap, l4, mu2=1.0):
+    """Минимум V на SU(3)_v-инвариантных состояниях: s = b+c, d = b−c, 0 ≤ |d| ≤ s ≤ 1/3.
+
+    При фиксированном s V — многочлен от d² со старшим членом (9/4)λ₄d⁴: минимум по d берётся
+    при d = 0, при d = s или во внутренней точке d² = (72κ(1−3s) − (3/2)μ²)/((9/2)λ₄). Три ветви
+    минимизируются по s на [0, 1/3]; ветвь d = 0 даёт −672κ/343 при s = 2/7 (состояние I/7).
+    """
+    from scipy.optimize import minimize_scalar
+
+    def vfun(s, d):
+        return 1.5 * mu2 * d * d + 2.25 * l4 * d ** 4 - kap * (48 * s ** 3 + 72 * (1 - 3 * s) * (s * s + d * d))
+
+    def inner(s):
+        if l4 <= 0:
+            return 0.0
+        d2 = (72 * kap * (1 - 3 * s) - 1.5 * mu2) / (4.5 * l4)
+        return float(np.sqrt(min(max(d2, 0.0), s * s)))
+    cands = [(vfun(2 / 7, 0.0), (2 / 7, 0.0)), (vfun(0.0, 0.0), (0.0, 0.0))]
+    for branch in (lambda s: 0.0, lambda s: s, inner):
+        r = minimize_scalar(lambda s: vfun(s, branch(s)), bounds=(0.0, 1 / 3), method='bounded',
+                            options={'xatol': 1e-13})
+        for s0 in np.linspace(0, 1 / 3, 61):
+            if vfun(s0, branch(s0)) < r.fun:
+                r = minimize_scalar(lambda s: vfun(s, branch(s)), bounds=(max(0, s0 - 0.01), min(1 / 3, s0 + 0.01)),
+                                    method='bounded', options={'xatol': 1e-13})
+        cands.append((r.fun, (r.x, branch(r.x))))
+    return min(cands, key=lambda c: c[0])
+
+
+def _g2_invariant_counts(dmax=4, N=36):
+    """Размерности G₂-инвариантов в Sym(27 ⊕ 7 ⊕ 14) по степеням (S, X₇, X₁₄): интегрирование Вейля."""
+    t = np.exp(2j * np.pi * np.arange(N) / N)
+    T1, T2 = np.meshgrid(t, t, indexing='ij')
+    eps = [(1, 0), (0, 1), (-1, -1)]
+    w7 = [(0, 0)] + eps + [(-a, -b) for a, b in eps]
+    roots = [w for w in w7 if w != (0, 0)] + [(a1 - a2, b1 - b2) for i, (a1, b1) in enumerate(eps)
+                                              for j, (a2, b2) in enumerate(eps) if i != j]
+    w14 = [(0, 0), (0, 0)] + roots
+    w27 = [(a1 + a2, b1 + b2) for i, (a1, b1) in enumerate(w7) for j, (a2, b2) in enumerate(w7) if i <= j]
+    w27.remove((0, 0))
+    meas = np.ones_like(T1)
+    for a, b in roots:
+        meas = meas * (1 - T1 ** a * T2 ** b)
+    meas = meas.real / 12
+
+    def h(ws):
+        p = [None] + [sum(T1 ** (k * a) * T2 ** (k * b) for a, b in ws) for k in range(1, dmax + 1)]
+        out = [np.ones_like(T1)]
+        for d in range(1, dmax + 1):
+            out.append(sum(p[k] * out[d - k] for k in range(1, d + 1)) / d)
+        return out
+    hS, h7, h14 = h(w27), h(w7), h(w14)
+    return {(s, a, b): int(round(np.mean(hS[s] * h7[a] * h14[b] * meas).real))
+            for s in range(dmax + 1) for a in range(dmax + 1) for b in range(dmax + 1) if s + a + b <= dmax}
+
+
+def test_g2_invariant_cubics_are_pt_even():
+    """T-331(а): у G₂-инвариантных многочленов на Herm(ℂ⁷) до степени 3 нет PT-нечётных; на Im Γ нет кубика.
+
+    Γ = I/7 + S + iX, S ∈ 27, X = X₇ + X₁₄. PT: X ↦ −X. Интегрирование Вейля по тору G₂ точно
+    для тригонометрических многочленов этой степени. Квадратичных инвариантов три (|S|², |X₇|², |X₁₄|²),
+    кубических пять — ни одного с нечётной степенью по X; кубика от одной Im Γ нет вовсе
+    (у G₂ нет кубического Казимира). PT-нечётные появляются в степени 4, их три.
+    Однородных кубиков по Γ (со следом) — девять.
+    """
+    c = _g2_invariant_counts()
+    by_deg = lambda d, odd=None: sum(v for (s, a, b), v in c.items() if s + a + b == d
+                                     and (odd is None or (a + b) % 2 == odd))
+    assert [by_deg(d) for d in (1, 2, 3)] == [0, 3, 5]
+    assert by_deg(1, 1) == by_deg(2, 1) == by_deg(3, 1) == 0
+    assert by_deg(4, 1) == 3
+    assert sum(v for (s, a, b), v in c.items() if s == 0 and a + b == 3) == 0
+    assert 1 + by_deg(1) + by_deg(2) + by_deg(3) == 9
+
+
+def test_frame_group_cubics_and_the_page_v3_average():
+    """T-331(в): при одной рамочной симметрии Γ_oct кубиков 25, PT-нечётных 3; среднее V₃ страницы — ноль.
+
+    Треугольники Im(γ_ij γ_jk γ_ki) не чувствуют смен знака, знакопеременны по (i,j,k), а стабилизатор
+    треугольника в коллинеациях переставляет его вершины всеми способами: Γ_oct-инвариантной
+    знакопеременной весовой функции нет, и усреднение V₃ по Γ_oct даёт ноль.
+    """
+    grp = [M for _, M in frame_group()]
+
+    def sym_char(Q, d, pt):
+        p = [None]
+        for k in range(1, d + 1):
+            Qk = np.linalg.matrix_power(Q, k)
+            t1, t2 = np.trace(Qk), np.trace(Qk @ Qk)
+            p.append((t1 * t1 + t2) / 2 + ((-1) ** k if pt else 1) * (t1 * t1 - t2) / 2)
+        h = [1.0]
+        for n in range(1, d + 1):
+            h.append(sum(p[k] * h[n - k] for k in range(1, n + 1)) / n)
+        return h[d]
+    inv = np.mean([sym_char(Q, 3, False) for Q in grp])
+    even = np.mean([(sym_char(Q, 3, False) + sym_char(Q, 3, True)) / 2 for Q in grp])
+    assert (round(inv), round(inv - even)) == (25, 3)
+    G = random_state(np.random.default_rng(370))
+    assert abs(_v3(G)) > 1e-4 and abs(np.mean([_v3(M @ G @ M.T) for M in grp])) < 1e-15
+
+
+def test_associator_cubic_is_invariant_positive_and_factors_through_lambda3_7():
+    """T-331(г, д): 𝒜 G₂-инвариантен, PT-чётен, ≥ 0, равен 96·Tr(Π₇ Λ³Γ) и молчит на ассоциативных состояниях.
+
+    Π₇ — проектор на Λ³₇ = {ι_v ψ} ⊂ Λ³ℂ⁷. На координатной тройке 𝒜 = 6‖[e_i,e_j,e_k]‖²/27:
+    0 на линии Фано, 24/27 вне её — веса V₃ страницы, но в квадрате. На состояниях ранга ≤ 2
+    и на состояниях в плоскости линии Фано (и в любой её G₂-копии) 𝒜 = 0.
+    """
+    rng = np.random.default_rng(371)
+    G = random_state(rng)
+    g = expm(sum(c * X for c, X in zip(rng.normal(size=14), G2)))
+    assert abs(_cal_a(g @ G @ g.T) - _cal_a(G)) < 1e-12 and abs(_cal_a(G.conj()) - _cal_a(G)) < 1e-14
+    assert min(_cal_a(random_state(rng)) for _ in range(20)) > 0
+    trip = list(itertools.combinations(range(7), 3))
+    idx = {t: n for n, t in enumerate(trip)}
+
+    def lam3(M):
+        return np.array([[np.linalg.det(M[np.ix_(a, b)]) for b in trip] for a in trip])
+    psi = _assoc4() / 2
+    vecs = np.array([[psi[a, b, c, l] for (a, b, c) in trip] for l in range(7)]).T
+    Q, _ = np.linalg.qr(vecs)
+    P7 = Q @ Q.T
+    for _ in range(3):
+        G = random_state(rng)
+        assert abs(96 * np.trace(P7 @ lam3(G)).real - _cal_a(G)) < 1e-12
+    for i, j, k in [(0, 1, 3), (0, 1, 2)]:
+        D = np.zeros((7, 7))
+        D[[i, j, k], [i, j, k]] = 1 / 3
+        on_line = tuple(sorted((i + 1, j + 1, k + 1))) in {tuple(sorted(l)) for l in LINES}
+        assert abs(_cal_a(D) - (0 if on_line else 24 / 27)) < 1e-12
+    for _ in range(3):
+        B = rng.normal(size=(3, 3)) + 1j * rng.normal(size=(3, 3))
+        H = np.zeros((7, 7), complex)
+        H[np.ix_([0, 1, 3], [0, 1, 3])] = B @ B.conj().T
+        g = expm(sum(c * X for c, X in zip(rng.normal(size=14), G2)))
+        assert abs(_cal_a(g @ H @ g.T)) < 1e-12
+        W = rng.normal(size=(7, 2)) + 1j * rng.normal(size=(7, 2))
+        assert abs(_cal_a(W @ W.conj().T)) < 1e-12
+
+
+def test_real_states_obey_the_associator_identity_and_peak_at_i_over_7():
+    """T-64(б): для вещественных R = Σ p_m u_m u_mᵀ  𝒜(R) = 4 Σ p_m[(1−p_m)² − 2|R⁺_m|²] ≤ 672/343.
+
+    R⁺_m — часть R на u_m^⊥, коммутирующая с J_m = L_{u_m}; |R⁺_m|² ≥ (1−p_m)²/6, так что
+    𝒜(R) ≤ (8/3) Σ p_m(1−p_m)² ≤ 96/49 = 672/343, равенство только при R = I/7.
+    """
+    rng = np.random.default_rng(372)
+    for _ in range(30):
+        k = rng.integers(1, 8)
+        W = rng.normal(size=(7, k))
+        R = W @ W.T / np.trace(W @ W.T)
+        p, U = np.linalg.eigh(R)
+        rhs = 0.0
+        for m in range(7):
+            u = U[:, m]
+            P, J = np.eye(7) - np.outer(u, u), _l_of(u)
+            Rp = (P @ R @ P + J @ R @ J.T) / 2
+            rhs += 4 * p[m] * ((1 - p[m]) ** 2 - 2 * np.sum(Rp * Rp))
+        assert abs(_cal_a(R) - rhs) < 1e-12
+        assert _cal_a(R) <= 8 / 3 * np.sum(p * (1 - p) ** 2) + 1e-12 and _cal_a(R) < 672 / 343
+    assert abs(_cal_a(np.eye(7) / 7) - 672 / 343) < 1e-13
+
+
+def test_symmetric_vacuum_hessian_and_the_associator_coupling():
+    """T-64(в): у I/7 вторые коэффициенты 𝒜 — −48/7 на 27, +48/7 на 7, −96/7 на 14; 𝒬(e_O e_Oᵀ) = {48, 0¹², −24⁸}.
+
+    𝒜(R + iX) − 𝒜(R) = Q_R(X) — квадратичная форма по X, линейная по R. При R = e_O e_Oᵀ её спектр:
+    48 на L_{e_O}, −24 на 𝔰𝔲(3)_O, 0 на двенадцати остальных. Отсюда Q_R(X) ≤ 48|X|² и
+    Q_R(X) ≤ 288 wᵀRw при X₇ = L_w; I/7 — строгий локальный минимум V ровно при κ < 7μ²/48.
+    """
+    rng = np.random.default_rng(373)
+    I7 = np.eye(7) / 7
+    S = rng.normal(size=(7, 7))
+    S = S + S.T - 2 * np.trace(S) / 7 * np.eye(7)
+    X = rng.normal(size=(7, 7))
+    X = X - X.T
+    x7 = np.einsum('ijk,k->ij', PHI3, np.einsum('ijk,ij->k', PHI3, X)) / 6
+    x14 = X - x7
+    q = lambda D: (_cal_a(I7 + 1e-2 * D) + _cal_a(I7 - 1e-2 * D) - 2 * _cal_a(I7)) / 2e-4
+    assert abs(q(S) / np.sum(S * S) + 48 / 7) < 1e-8
+    assert abs(q(1j * x7) / np.sum(x7 * x7) - 48 / 7) < 1e-8
+    assert abs(q(1j * x14) / np.sum(x14 * x14) + 96 / 7) < 1e-8
+    basis = []
+    for i in range(7):
+        for j in range(i + 1, 7):
+            E = np.zeros((7, 7))
+            E[i, j], E[j, i] = 2 ** -0.5, -2 ** -0.5
+            basis.append(E)
+    Ro = np.zeros((7, 7))
+    Ro[O_AXIS, O_AXIS] = 1
+    base = _cal_a(Ro.astype(complex))
+    Qm = np.zeros((21, 21))
+    for a in range(21):
+        for b in range(a, 21):
+            qa, qb = _cal_a(Ro + 1j * basis[a]) - base, _cal_a(Ro + 1j * basis[b]) - base
+            Qm[a, b] = Qm[b, a] = qa if a == b else (_cal_a(Ro + 1j * (basis[a] + basis[b])) - base - qa - qb) / 2
+    w, V = np.linalg.eigh(Qm)
+    assert np.allclose(w, [-24] * 8 + [0] * 12 + [48], atol=1e-9)
+    Lo = _l_of(np.eye(7)[O_AXIS])
+    lo = np.array([np.sum(Lo * E) for E in basis])
+    assert abs(abs(V[:, -1] @ lo) / np.linalg.norm(lo) - 1) < 1e-9
+    su3 = np.array([[np.sum(Y * E) for E in basis] for Y in _su3_of_e_o()]).T
+    assert np.linalg.norm(su3 - V[:, :8] @ (V[:, :8].T @ su3)) < 1e-9
+
+
+def test_colour_invariant_sector_is_solved_in_closed_form():
+    """T-64(д): на Γ = a|v⟩⟨v| + bP_𝟑 + cP_𝟑̄  𝒜 = 48(b+c)³ + 144a(b²+c²), 𝒢 = (3/2)(b−c)².
+
+    Максимум 𝒜 на всём D(ℂ⁷) равен 3 и берётся в (1/4)(|v⟩⟨v| + P_𝟑); на вещественных — 672/343.
+    Стабилизатор такого состояния в 𝔤₂ — 𝔰𝔲(3)_v (размерность 8): орбита — G₂/SU(3) = S⁶.
+    """
+    rng = np.random.default_rng(374)
+    for _ in range(10):
+        a, b, c = rng.normal(size=3)
+        G = _colour_family(a, b, c)
+        assert abs(_cal_a(G) - 48 * (b + c) ** 3 - 144 * a * (b * b + c * c)) < 1e-10
+        assert abs(_gap_total(G) - 1.5 * (b - c) ** 2) < 1e-12
+    G = _colour_family(0.25, 0.25, 0.0)
+    assert abs(np.trace(G).real - 1) < 1e-12 and np.linalg.eigvalsh(G).min() > -1e-12
+    assert abs(_cal_a(G) - 3) < 1e-12 and abs(_gap_total(G) - 3 / 32) < 1e-12
+    M = np.array([(X @ G - G @ X).ravel() for X in G2]).T
+    assert int(np.sum(np.linalg.svd(np.vstack([M.real, M.imag]), compute_uv=False) < 1e-9)) == 8
+
+
+def test_g2_invariant_vacuum_is_symmetric_or_colour_invariant_with_gap():
+    """T-64(б–е): глобальный минимум V = μ²𝒢 + λ₄𝒢² − κ𝒜 совпадает с минимумом на цветово-инвариантных.
+
+    При κ = 0,05 (λ₄ = 1) вакуум — I/7 (стабилизатор 14, 𝒢 = 0); при κ = 0,2 — состояние
+    a|v⟩⟨v| + bP_𝟑 ранга 4 со стабилизатором 𝔰𝔲(3)_v (8) и 𝒢 > 0: спонтанный Gap при сохранённом
+    цвете. Порог первого рода при λ₄ = 0: κ₁ = 0,0787μ² (−4A³/27B² = −672κ/343, A = 144κ − 3/2, B = 384κ).
+    """
+    from scipy.optimize import minimize, brentq
+    rng = np.random.default_rng(375)
+    for kap, stab, gap_pos in [(0.05, 14, False), (0.2, 8, True)]:
+        fv, _ = _family_min(kap, 1.0)
+        runs = []
+        for _ in range(5):
+            r = minimize(_vg_value_grad, rng.normal(size=98), args=(kap, 1.0), jac=True, method='L-BFGS-B',
+                         options={'maxiter': 50000, 'ftol': 1e-16, 'gtol': 1e-11})
+            runs.append(r)
+        best = min(runs, key=lambda r: r.fun)
+        assert abs(best.fun - fv) < 1e-8
+        A = (best.x[:49] + 1j * best.x[49:]).reshape(7, 7)
+        G = A @ A.conj().T
+        G /= np.trace(G).real
+        M = np.array([(X @ G - G @ X).ravel() for X in G2]).T
+        assert int(np.sum(np.linalg.svd(np.vstack([M.real, M.imag]), compute_uv=False) < 1e-4)) == stab
+        assert (_gap_total(G) > 1e-3) == gap_pos
+    k1 = brentq(lambda k: 4 * (144 * k - 1.5) ** 3 / (27 * (384 * k) ** 2) - 672 * k / 343, 0.03, 0.14)
+    assert abs(k1 - 0.0787) < 1e-4 and 1 / 48 < k1 < 7 / 48
+
+
+def test_real_twirl_inequality_holds_in_its_proven_cases_and_on_samples():
+    """(RT): 𝒜(R) ≤ 8rt² + (16/9)t³ при r = ⟨ŵ,Rŵ⟩, t = 1 − r; доказано при β = 0 и при M⁻ = 0.
+
+    R = [[M, β],[βᵀ, r]] в базисе (ŵ^⊥, ŵ), ŵ = e_O. При β = 0: 𝒜 = 12r(t² − 2|M⁺|²) + 𝒜₆(M),
+    𝒜₆(M) ≤ (16/9)t³. При M⁻ = 0: дефект D = 24r(|M⁺|² − t²/6) + 24βᵀ(tI − 2M⁺)β + 8TrM⁺³ − (2/9)t³.
+    Вне этих случаев неравенство проверено выборкой; равенство — на SU(3)_ŵ-скручивании R.
+    """
+    rng = np.random.default_rng(376)
+    J = _l_of(np.eye(7)[O_AXIS])[:6, :6]
+
+    def block(M, b, r):
+        R = np.zeros((7, 7))
+        R[:6, :6], R[:6, O_AXIS], R[O_AXIS, :6], R[O_AXIS, O_AXIS] = M, b, b, r
+        return R
+    for _ in range(20):
+        r = rng.uniform(0.01, 0.9)
+        t = 1 - r
+        W = rng.normal(size=(6, 6))
+        M = W @ W.T
+        M *= t / np.trace(M)
+        Mp = (M + J @ M @ J.T) / 2
+        R6 = block(M, np.zeros(6), 0.0)
+        assert abs(_cal_a(block(M, np.zeros(6), r)) - 12 * r * (t * t - 2 * np.sum(Mp * Mp)) - _cal_a(R6)) < 1e-12
+        assert _cal_a(R6) <= 16 / 9 * t ** 3 + 1e-12
+        L = np.linalg.cholesky(Mp)
+        xi = rng.normal(size=6)
+        b = np.sqrt(r) * L @ (xi / (np.linalg.norm(xi) * rng.uniform(1, 2)))
+        D = 8 * r * t * t + 16 / 9 * t ** 3 - _cal_a(block(Mp, b, r))
+        pred = (24 * r * (np.sum(Mp * Mp) - t * t / 6) + 24 * b @ (t * np.eye(6) - 2 * Mp) @ b
+                + 8 * np.trace(Mp @ Mp @ Mp) - 2 / 9 * t ** 3)
+        assert abs(D - pred) < 1e-12 and pred >= -1e-14
+    e_w = np.eye(7)[O_AXIS]
+    Lw, Pw = _l_of(e_w), np.eye(7) - np.outer(e_w, e_w)
+    for _ in range(10):                      # шестимерное тождество: 𝒜(M) = 4Σ p_m[(t−p_m)² − 2|M_W⁺|² − 2|c|² − q_m²]
+        W = np.zeros((7, 6))
+        W[:6] = rng.normal(size=(6, 6))
+        M = W @ W.T / np.trace(W @ W.T)
+        p, U = np.linalg.eigh(M[:6, :6])
+        rhs, qsum = 0.0, 0.0
+        for m in range(6):
+            u = np.zeros(7)
+            u[:6] = U[:, m]
+            Ju = Lw @ u
+            PW = Pw - np.outer(u, u) - np.outer(Ju, Ju)
+            K = _l_of(u) @ PW
+            MW = PW @ M @ PW
+            MWp = (MW + K @ MW @ K.T) / 2
+            cvec, q = PW @ M @ Ju, Ju @ M @ Ju
+            qsum += q
+            rhs += 4 * p[m] * ((1 - p[m]) ** 2 - 2 * np.sum(MWp * MWp) - 2 * cvec @ cvec - q * q)
+        assert abs(_cal_a(M) - rhs) < 1e-12 and abs(qsum - 1) < 1e-12
+    for _ in range(1500):
+        k = rng.integers(1, 8)
+        W = rng.normal(size=(7, k))
+        R = W @ W.T / np.trace(W @ W.T)
+        r = R[O_AXIS, O_AXIS]
+        assert _cal_a(R) <= 8 * r * (1 - r) ** 2 + 16 / 9 * (1 - r) ** 3 + 1e-12
 
 
 

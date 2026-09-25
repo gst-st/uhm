@@ -594,7 +594,7 @@ Y = \begin{pmatrix} 0 & A & 0 \\ A^* & 0 & B \\ 0 & B^* & C \end{pmatrix}
 $$
 with $A \sim \varepsilon^3$, $B \sim \varepsilon^2$, $C \sim 1$ (top Yukawa).
 
-The emergent Fritzsch texture is a **prediction** of UHM, not an input. The numerical values $A, B, C$ are determined by the sector hierarchy parameter $\varepsilon$ (T-64 [H] (restated; sector values: hypothesis (SV))) and not by fitting.
+The emergent Fritzsch texture is a **prediction** of UHM, not an input. The numerical values $A, B, C$ are determined by the sector hierarchy parameter $\varepsilon$ (T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) and not by fitting.
 
 ### 9.5. Comparison with external audit criticism
 

@@ -78,7 +78,7 @@ Complete map of the "Physics" section pages with subsections and key topics.
 | [RG flow, 3+1](/docs/physics/gauge-symmetry/rg-flow) | Bridge AP+PH+QG+V $\Rightarrow$ P1+P2 **[T]** (T15, 12 steps) | High (all steps [T]) |
 | [Einstein from Gap, two-loop RG, $\Lambda$](/docs/physics/gravity/einstein-equations) | RG suppression $\lambda_3$ [T], swallowtail [T], spectral action [T] | High (spectral triple [T]) |
 | [SM from $G_2$, three-loop RG, $\Lambda$](/docs/physics/gauge-symmetry/standard-model) | $SU(3)_C$ from $G_2$ [T], factor $19/49$ [T] | Medium (rank SM > rank $G_2$) |
-| [Confinement, CKM, neutrinos, $\xi_F$](/docs/physics/gauge-symmetry/confinement) | $\xi_F \sim 160$ pc [C], ABJ [T], CKM [H], $\sqrt{\sigma} \approx 457$ MeV **[C at (SV)]**, $\theta_{\mathrm{QCD}} = 0$ **[T]** (T-99) | High (T-73 + T-69 + T-64 + T-99) |
+| [Confinement, CKM, neutrinos, $\xi_F$](/docs/physics/gauge-symmetry/confinement) | $\xi_F \sim 160$ pc [C], ABJ [T], CKM [H], $\sqrt{\sigma} \approx 457$ MeV **[C at (SV)]**, $\theta_{\mathrm{QCD}} = 0$ **[C at (SV)]** (T-99) | High (T-73 + T-69 + T-64 + T-99) |
 | [Standard Model, SUSY, proton, $\Lambda$](/docs/physics/gauge-symmetry/standard-model) | (1,2,4) unique [T], **IR FP error [✗]** | Low (5 critical vulnerabilities) |
 | [Fano selection rule](/docs/physics/gauge-symmetry/fano-selection-rules) | **Uniqueness of Higgs line [T]**, selection rule **[T]** (via $f_{ijk}$) | High |
 | [Full Fano architecture, synthesis](/docs/physics/particle-physics/fermion-generations) | Fritzsch texture [C], budget 41.5 [C], **deficit 79** | Medium (CKM numbers overstated) |
@@ -413,7 +413,7 @@ Spectral triple T-53 [T] + NCG curvature → exact identification Gap$(i,j) = \|
 :::tip Theorem: Topological protection of the Gap vacuum [T]+[C at (SV)] (T-69, stratified 2026-09-25: $\pi_2$ exact, barrier from the (SV) Hessian)
 **Details:** [Composite Systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита)
 
-$\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ + positive-definite Hessian (T-64 [H] (restated; sector values: hypothesis (SV))) + compactness $(S^1)^{21}$ → the vacuum is separated from configurations with $\text{Gap} = 0$ by a finite energy barrier $\geq 6\mu^2$.
+$\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ + positive-definite Hessian (T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) + compactness $(S^1)^{21}$ → the vacuum is separated from configurations with $\text{Gap} = 0$ by a finite energy barrier $\geq 6\mu^2$.
 
 **See:** [Composite Systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) | [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics)
 :::

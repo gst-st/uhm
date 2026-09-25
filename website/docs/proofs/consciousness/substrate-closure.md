@@ -457,7 +457,7 @@ The formula $\|\delta\Gamma\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alph
 an **exact parametric bound** [T].
 
 Substituting $\|H_{\mathrm{eff}}\|_{\mathrm{op}} = O(\bar{\varepsilon})$ with $\bar{\varepsilon} \approx 0.027$ (root mean square over the 15 non-O pairs, [C at (SV)]; $0.023$ until 2026-09-25)
-(from [T-61 [H]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (restated; sector values: hypothesis (SV)) for the isolated vacuum) gives estimate $O(0.03)$.
+(from [T-61 [T]+[C at (RT)]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (vacuum unique up to $G_2$ for the corrected potential; sector values: hypothesis (SV)) for the isolated vacuum) gives estimate $O(0.03)$.
 
 For an **embodied** holon: backbone injection, hedonic drive and learning gradient
 create an effective Hamiltonian $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|_{\mathrm{op}} \gg \bar{\varepsilon}$.
