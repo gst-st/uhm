@@ -691,7 +691,7 @@ Schwinger-Keldysh formalism: $S_{Gap} = \mathrm{Re}\,\mathrm{Tr}[\rho_+ \ln\rho_
 
 **Details:** [Axiom of Septicity — Bridge](/docs/core/foundations/axiom-septicity#мост-p1p2), [Gap RG Flow](/docs/physics/gauge-symmetry/rg-flow)
 
-**Verdict:** Bridge (AP)+(PH)+(QG)+(V) ⟹ P1+P2 **fully closed** — chain T15 of 12 steps, all [T]. Condition (MP) proven in T11–T13 (Hoy rank = 7, L-unification, forced BIBD).
+**Verdict:** Bridge (AP)+(PH)+(QG)+(V) ⟹ P1+P2 **closed up to the orientation input (Alt)** — chain T15 of 12 steps: the steps up to PG(2,2) are [T], the step to $\mathbb{O}$ is [C at (Alt)] (registry row 41n; it read "fully closed … all [T]" until 2026-09-25). Condition (MP) proven in T11–T13 (Hoy rank = 7, L-unification, forced BIBD).
 
 ### 4. SM from $G_2$: electroweak sector
 
@@ -823,7 +823,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 | Criterion | Score | Comment |
 |-----------|-------|---------|
 | **Completeness** | 9/10 | Theory covers from quantum gravity to consciousness. Added: RG flow, neutrino masses, SUSY, proton decay, quantum gravity, Fano-electroweak construction (FE), superpotential $W$ [T], generation counting [T], $M_R$ from loop mechanism [T], 3+1 from sectoral decomposition (retracted [✗] 2026-09-25), $\varepsilon$ from sectoral hierarchy [C], Berry derivation of $L_{\text{top}}$ [T] (T-85). Unclosed: $\gtrsim 27$ orders of $\Lambda$ (beyond the net $10^{-53.5}$), Kähler metric $G_2$ |
-| **Consistency** | 9/10 | $\Lambda$ budget is arithmetically flawless. Bridge (AP)+(PH)+(QG)+(V) → P1+P2 fully closed [T] (T15). Superpotential $W$ closes the SUSY sector [T]. $\varepsilon$ partially from sectoral hierarchy [C]. $\sqrt{\sigma}$ after sectoral correction $\approx 457$ MeV (vs 440 MeV observed). $L_{\text{top}}$ from Keldysh [T] (T-85). Residual inconsistency: $T_{eff}$. Theory **self-corrects** |
+| **Consistency** | 9/10 | $\Lambda$ budget is arithmetically flawless. Bridge (AP)+(PH)+(QG)+(V) → P1+P2 closed up to the orientation input, [C at (Alt)] (T15; it read "fully closed [T]" until 2026-09-25). Superpotential $W$ closes the SUSY sector [T]. $\varepsilon$ partially from sectoral hierarchy [C]. $\sqrt{\sigma}$ after sectoral correction $\approx 457$ MeV (vs 440 MeV observed). $L_{\text{top}}$ from Keldysh [T] (T-85). Residual inconsistency: $T_{eff}$. Theory **self-corrects** |
 | **Mathematical rigor** | 8/10 | 140+ impeccable theorems [T] (Level 1) + ~20 conditional [C]. CS cascade closed (T-85) |
 | **Categorical rigor** | 5/10 | $\infty$-topos and dagger-category are mentioned but not rigorously formalized. Ehresmann connection, duality functor — postulated, not constructed |
 | **Integration readiness** | 7/10 | ~16 results ready for transfer (after editing). ~10 require substantial rework. ~8 not suitable for integration |
