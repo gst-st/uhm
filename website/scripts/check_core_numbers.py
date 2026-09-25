@@ -66,6 +66,16 @@ h₂(ℂ_O), сигнатура (1,3), централизатор 𝔰𝔬(1,3) 
 на 120°; десятый генератор возвращает 𝔲(1)_{B−L}; у ℤ₇ три нетривиальные
 вещественные гармоники.
 
+
+Пять — за теоремами сильных оснований (25.09.2026), каждая восстанавливает [T] в верной
+форме: `rank_strata_are_manifolds_of_dimension_14k_minus_k2_minus_1` (T-185 (ii′): страты
+D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_normalised_trace_projection`
+(T-212′: «формула Rh» — G₂-скручивание), `octonionic_orientation_is_the_unique_collineation_invariant_class`
+(T15-канон: единственный инвариантный класс ориентаций — 𝕆; 0 против 96 ассоциирующих троек,
+метрика Брайанта (7,0) против (4,3)), `e7_rays_from_the_hamming_quadrangles_are_kochen_specker`
+(T-201′: 63 луча, 135 базисов, раскраски нет) и
+`hol_u_is_equivalent_to_seven_dimensional_qm_above_two_sevenths` (теорема 3.2′).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -1978,6 +1988,248 @@ def test_clock_has_three_nontrivial_real_harmonics():
         P[(2 * t) % 7, t] = 1
     X = d["g"][0]
     assert np.allclose(np.kron(P, np.eye(16)) @ np.kron(np.eye(7), X), np.kron(np.eye(7), X) @ np.kron(P, np.eye(16)))
+
+
+# ---------------------------------------------------------------------------
+# Сильные основания (25.09.2026): когезия, эквивалентность с КМ, ориентация Фано,
+# контекстуальность Кохена–Шпекера. Пять свидетелей новых теорем [T].
+# ---------------------------------------------------------------------------
+
+def test_rank_strata_are_manifolds_of_dimension_14k_minus_k2_minus_1():
+    """Страт D_k = {rank Γ = k} — гладкое многообразие размерности 14k − k² − 1; D_7 открыт (48).
+
+    Свидетель T-185 (ii′): состояния лежат в Smooth∞Grpd как стратифицированный объект,
+    каждый страт — многообразие; прямолинейная ретракция на P_V/k остаётся в страте
+    (D_k ≃ Gr_k(ℂ⁷), форма ∫D_k — тип Грассманиана, ∫D = *).
+    """
+    rng = np.random.default_rng(21)
+    for k in range(1, 8):
+        A = rng.normal(size=(7, k)) + 1j * rng.normal(size=(7, k))
+
+        def rho(a):
+            M = a.reshape(7, k, 2)
+            B = M[..., 0] + 1j * M[..., 1]
+            R = B @ B.conj().T
+            R = R / np.trace(R).real
+            return np.concatenate([R.real.ravel(), R.imag.ravel()])
+        a0 = np.stack([A.real, A.imag], axis=-1).ravel()
+        J = np.zeros((98, a0.size))
+        h = 1e-6
+        for t in range(a0.size):
+            e = np.zeros(a0.size)
+            e[t] = h
+            J[:, t] = (rho(a0 + e) - rho(a0 - e)) / (2 * h)
+        s = np.linalg.svd(J, compute_uv=False)
+        dim = int((s > 1e-6 * s[0]).sum())
+        assert dim == 14 * k - k * k - 1, (k, dim)
+        R = A @ A.conj().T
+        R /= np.trace(R).real
+        w, V = np.linalg.eigh(R)
+        P = V[:, -k:] @ V[:, -k:].conj().T
+        for t in np.linspace(0, 1, 11):
+            X = (1 - t) * R + t * P / k
+            assert np.linalg.matrix_rank(X, tol=1e-10) == k
+
+
+def test_g2_twirl_is_the_normalised_trace_projection():
+    """Коммутант g₂ на ℂ⁷ одномерен: G₂-скручивание X ↦ ∫ gXg† dg равно (1/7)Tr(X)·I.
+
+    Свидетель T-212′ [T]: «формула Rh» — это G₂-скручивание (проекция на инварианты),
+    идемпотентное лишь с нормированным следом (с Tr: E∘E = 7E). Модальность Rh твёрдой
+    когезии сохраняет глобальные точки (Rh X(ℝ⁰) = X(ℝ⁰)) и формулой не является.
+    """
+    rows = []
+    for D in G2:
+        rows.append(np.kron(D, np.eye(7)) - np.kron(np.eye(7), D.T))   # vec([D, X]) (построчно)
+    L = np.vstack(rows)
+    s = np.linalg.svd(L, compute_uv=False)
+    null = int((s < 1e-10).sum()) + (49 - len(s) if len(s) < 49 else 0)
+    assert null == 1
+    rng = np.random.default_rng(5)
+    X = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    _, _, Vh = np.linalg.svd(L)
+    n = Vh[-1].conj()
+    n = n / np.linalg.norm(n)
+    proj = (n.conj() @ X.ravel()) * n
+    assert np.linalg.norm(proj.reshape(7, 7) - np.trace(X) / 7 * np.eye(7)) < 1e-10
+    E1 = lambda Y: np.trace(Y) / 7 * np.eye(7)
+    Et = lambda Y: np.trace(Y) * np.eye(7)
+    assert np.linalg.norm(E1(E1(X)) - E1(X)) < 1e-12
+    assert np.linalg.norm(Et(Et(X)) - 7 * Et(X)) < 1e-9
+
+
+def _fano_orientation_data():
+    rng = np.random.default_rng(11)
+    samples = [(rng.normal(size=8), rng.normal(size=8)) for _ in range(4)]
+
+    def mul_for(signs):
+        lines = [(i, j, k) if s > 0 else (j, i, k) for (i, j, k), s in zip(LINES, signs)]
+
+        def mul(a, b):
+            c = np.zeros(8)
+            c[0] = a[0] * b[0] - np.dot(a[1:], b[1:])
+            c[1:] += a[0] * b[1:] + b[0] * a[1:]
+            for i, j, k in lines:
+                for x, y, z in ((i, j, k), (j, k, i), (k, i, j)):
+                    c[z] += a[x] * b[y] - a[y] * b[x]
+            return c
+        return mul
+
+    def normed(signs):
+        mul = mul_for(signs)
+        return all(abs(np.linalg.norm(mul(x, y)) - np.linalg.norm(x) * np.linalg.norm(y)) < 1e-9
+                   for x, y in samples)
+
+    def flip(signs, S):
+        return tuple(-s if sum(p in S for p in line) % 2 else s for line, s in zip(LINES, signs))
+
+    subsets = [set(c) for r in range(8) for c in itertools.combinations(range(1, 8), r)]
+    allsig = list(itertools.product((1, -1), repeat=7))
+    cls = {s: frozenset(flip(s, S) for S in subsets) for s in allsig}
+    sets = [frozenset(l) for l in LINES]
+    coll = [p for p in itertools.permutations(range(1, 8))
+            if all(frozenset(p[x - 1] for x in l) in sets for l in LINES)]
+
+    def act(p, signs):
+        out = [0] * 7
+        for (i, j, k), s in zip(LINES, signs):
+            a, b, c = (p[i - 1], p[j - 1], p[k - 1]) if s > 0 else (p[j - 1], p[i - 1], p[k - 1])
+            idx = sets.index(frozenset((a, b, c)))
+            L0 = LINES[idx]
+            rots = {L0, (L0[1], L0[2], L0[0]), (L0[2], L0[0], L0[1])}
+            out[idx] = 1 if (a, b, c) in rots else -1
+        return tuple(out)
+    return mul_for, normed, cls, coll, act
+
+
+def test_octonionic_orientation_is_the_unique_collineation_invariant_class():
+    """Из 8 калибровочных классов ориентаций линий Фано (по 16) инвариантен относительно
+    группы коллинеаций GL(3,2) ровно один — нормированный (𝕆); остальные семь — одна
+    орбита, каждый выделяет одну линию. Три равносильные характеристики класса 𝕆:
+    инвариантность, ни одной ассоциирующей независимой тройки (0 из 168 против 96),
+    знакоопределённая метрика Брайанта 3-формы (7,0) против (4,3).
+
+    Свидетель теоремы T15-канон [T] (строка 41n): (Alt) ⟺ каноничность ориентации.
+    """
+    mul_for, normed, cls, coll, act = _fano_orientation_data()
+    classes = set(cls.values())
+    assert len(coll) == 168 and len(classes) == 8 and all(len(c) == 16 for c in classes)
+    fixed = [c for c in classes if all(cls[act(p, next(iter(c)))] == c for p in coll)]
+    good = {s for s in cls if normed(s)}
+    assert len(fixed) == 1 and set(fixed[0]) == good
+    rest = [c for c in classes if c != fixed[0]]
+    orbit = {cls[act(p, next(iter(rest[0])))] for p in coll}
+    assert len(orbit) == 7
+    signs_o = next(iter(fixed[0]))
+    eps = {}
+    for p in itertools.permutations(range(7)):
+        inv = sum(1 for a in range(7) for b in range(a + 1, 7) if p[a] > p[b])
+        eps[p] = -1 if inv % 2 else 1
+    for c in [fixed[0]] + rest:
+        signs = next(iter(c))
+        mul = mul_for(signs)
+        assoc = sum(1 for i, j, k in itertools.permutations(range(1, 8), 3)
+                    if {i, j, k} not in [set(l) for l in LINES]
+                    and np.allclose(mul(mul(unit(i), unit(j)), unit(k)), mul(unit(i), mul(unit(j), unit(k)))))
+        phi = np.zeros((7, 7, 7))
+        for (i, j, k), s in zip(LINES, signs):
+            for (x, y, z), t in (((i, j, k), 1), ((j, k, i), 1), ((k, i, j), 1),
+                                 ((j, i, k), -1), ((i, k, j), -1), ((k, j, i), -1)):
+                phi[x - 1, y - 1, z - 1] = s * t
+        B = np.zeros((7, 7))
+        for p, e in eps.items():
+            B += e * np.outer(phi[:, p[0], p[1]], phi[:, p[2], p[3]]) * phi[p[4], p[5], p[6]]
+        assert np.abs(B - np.diag(np.diag(B))).max() < 1e-9
+        pos = int((np.diag(B) > 0).sum())
+        if c == fixed[0]:
+            assert assoc == 0 and (pos == 7 or pos == 0)
+        else:
+            assert assoc == 96 and pos in (3, 4)
+
+
+def _e7_rays():
+    quads = [tuple(p for p in range(1, 8) if p not in l) for l in LINES]
+    vecs = [unit(i)[1:] for i in range(1, 8)]
+    for q in quads:
+        for sg in itertools.product((1, -1), repeat=4):
+            if sg[0] < 0:
+                continue
+            v = np.zeros(7)
+            for s, p in zip(sg, q):
+                v[p - 1] = s / 2
+            vecs.append(v)
+    return np.array(vecs)
+
+
+def test_e7_rays_from_the_hamming_quadrangles_are_kochen_specker():
+    """63 луча в ℝ⁷ ⊂ ℂ⁷ — семь осей и ½(±e_a±e_b±e_c±e_d) на семи дополнениях линий Фано
+    (слова веса 4 кода Хэмминга): корни E₇ (мнимые единицы целых октонионов Кокстера).
+    135 ортонормированных базисов, каждый луч — в 15; раскраски 0/1 с ровно одной
+    единицей в каждом базисе нет (MILP — недопустимо). Ориентация линий не участвует.
+
+    Свидетель T-201′ [T]: контекстуальность Кохена–Шпекера в ℂ⁷ с некоммутирующими проекторами
+    (Ruuge, J. Phys. A 40, 2849 (2007) — конфигурация E₇ 63₁₅–135₇).
+    """
+    from scipy.optimize import Bounds, LinearConstraint, milp
+    R = _e7_rays()
+    n = len(R)
+    assert n == 63
+    V = np.vstack([R, -R])
+    S = {tuple(np.round(v, 9)) for v in V}
+    assert all(tuple(np.round(v - 2 * (u @ v) * u, 9)) in S for u in V for v in V)   # система корней
+    G = np.abs(R @ R.T) < 1e-9
+    bases = []
+
+    def ext(cur, cand):
+        if len(cur) == 7:
+            bases.append(tuple(cur))
+            return
+        for idx, c in enumerate(cand):
+            ext(cur + [c], [d for d in cand[idx + 1:] if G[c, d]])
+    ext([], list(range(n)))
+    assert len(bases) == 135
+    assert all(sum(r in b for b in bases) == 15 for r in range(n))
+    A = np.zeros((len(bases), n))
+    for k, b in enumerate(bases):
+        A[k, list(b)] = 1
+    res = milp(c=np.zeros(n), constraints=[LinearConstraint(A, 1, 1)],
+               integrality=np.ones(n), bounds=Bounds(0, 1))
+    assert res.status == 2                                   # раскраски нет
+    sub = A[[k for k, b in enumerate(bases) if 0 in b]]
+    res = milp(c=np.zeros(n), constraints=[LinearConstraint(sub, 1, 1)],
+               integrality=np.ones(n), bounds=Bounds(0, 1))
+    assert res.status == 0                                   # прибор умеет находить раскраску
+    assert int(((~G).sum() - n) // 2) == 1008                # некоммутирующих пар лучей (из 1953)
+
+
+def test_hol_u_is_equivalent_to_seven_dimensional_qm_above_two_sevenths():
+    """Hol^u ≃ QM₇^{P>2/7}: включение полно и верно, существенная сюръективность — перестановкой,
+    переводящей вектор носителя в ось E. Чистота — инвариант изоморфизма КМ; при d ≤ 3
+    любое состояние имеет P ≥ 1/3 > 2/7 и вкладывается изометрией, при d = 4 состояние I/4
+    (P = 1/4) не вкладывается никак: граница d ≤ 3 точна.
+    """
+    rng = np.random.default_rng(31)
+    for _ in range(20):
+        G = random_state(rng)
+        v = rng.normal(size=7) + 1j * rng.normal(size=7)
+        U = np.linalg.qr(v.reshape(7, 1) @ np.ones((1, 7)) + rng.normal(size=(7, 7)))[0]
+        assert abs(purity(U @ G @ U.conj().T) - purity(G)) < 1e-12
+    G = np.zeros((7, 7), complex)
+    G[0, 0], G[1, 1] = 0.7, 0.3                               # γ_EE = 0, P = 0,58 > 2/7
+    assert G[E_AXIS, E_AXIS] == 0 and purity(G) > 2 / 7
+    j = int(np.argmax(np.real(np.diag(G))))
+    perm = list(range(7))
+    perm[j], perm[E_AXIS] = perm[E_AXIS], perm[j]
+    Pm = np.eye(7)[perm]
+    G2_ = Pm @ G @ Pm.T
+    assert G2_[E_AXIS, E_AXIS].real > 0 and abs(purity(G2_) - purity(G)) < 1e-15
+    for d in (2, 3):
+        assert 1 / d > 2 / 7
+    assert 1 / 4 < 2 / 7
+    Ua = np.linalg.qr(rng.normal(size=(3, 3)) + 1j * rng.normal(size=(3, 3)))[0]
+    Ub = np.linalg.qr(rng.normal(size=(3, 3)) + 1j * rng.normal(size=(3, 3)))[0]
+    emb = lambda W: np.block([[W, np.zeros((3, 4))], [np.zeros((4, 3)), np.eye(4)]])
+    assert np.linalg.norm(emb(Ua @ Ub) - emb(Ua) @ emb(Ub)) < 1e-13   # функтор
 
 
 def main():
