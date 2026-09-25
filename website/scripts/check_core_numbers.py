@@ -30,6 +30,10 @@ R = 1/(7P) не обращается в нуль.
 `only_16_of_128_fano_orientations_are_normed` (пробел шага T15) и
 `gamma5_with_i_has_imaginary_spectrum` (спектр iΓ_OΓ_AΓ_SΓ_D — {±i}, не {±1}).
 
+Одна — за отзывом шагов 2–3 КК-7 (теорема 9.3, аудит A-82):
+`coupled_holons_can_have_a_product_stationary_state` (связь, коммутирующая с ρ₁*⊗ρ₂*,
+оставляет стационарным произведение, I = 0; локальная связь сдвигает маргиналь без корреляции).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -953,6 +957,99 @@ def test_finite_dimensional_relational_dynamics_recurs():
     tau0 = np.ones(7) / np.sqrt(7)
     ov = lambda t: np.prod([abs(np.vdot(tau0, np.exp(-1j * om * k * t) * tau0)) ** 2 for om in (1.0, np.sqrt(2))])
     assert ov(2 * np.pi * 70) > 0.99 and ov(2 * np.pi * 70) < 1 - 1e-6
+
+
+def _holon_pair_generator(H, sig, mu=1.0, alpha=0.5):
+    """Генератор одного воплощённого голонома, продолженный канонически на ℂ⁷ ⊗ ℂ⁷ (фактор 1).
+
+    L[Γ] = −i[H, Γ] + D_Fano[Γ] + κ g_V (φ_coh(Γ) − Γ) + μ (σ_env − Γ): D_Fano = ⅔(diag Γ − Γ),
+    φ_coh(Γ) = k[α diag Γ + (1−α) P_Fano(Γ)] + (1−k) I/7 с k = 1 − 1/(7P), P_Fano(Γ)_ij = γ_ij/3
+    при i ≠ j; κ = 1/7 + Coh_E, g_V = clamp(7P − 2, 0, 1); последний член — подкачка к якорю
+    π(B(x)) = σ_env (T-148). Продолжение — (φ ⊗ id), скаляры κ, g_V, k читаются на маргинали.
+    """
+    D = np.eye(7)
+
+    def apply(X4, g):
+        P = purity(g)
+        kap, gv, k = 1 / 7 + coh_e(g), gate(P), 1 - 1 / (7 * P)
+        W = (2 / 3) * (D - 1) + kap * gv * (k * (alpha * D + (1 - alpha) * (1 / 3 + 2 / 3 * D)) - 1) - mu
+        tr1 = np.einsum("iaib->ab", X4)
+        out = -1j * (np.einsum("ij,jakb->iakb", H, X4) - np.einsum("iakb,kj->iajb", X4, H))
+        out += W[:, None, :, None] * X4
+        out += np.einsum("ij,ab->iajb", kap * gv * (1 - k) * D / 7 + mu * sig, tr1)
+        return out
+    return apply
+
+
+def test_coupled_holons_can_have_a_product_stationary_state():
+    """Связь двух голономов не обязана коррелировать их стационарное состояние: I(1:2) = 0.
+
+    Свидетель отзыва шагов 2–3 КК-7 (теорема 9.3, 25.09.2026; аудит A-82). Два воплощённых
+    голонома с каноническим генератором и стационарными ρ₁*, ρ₂*. (а) Связь
+    H_int ∝ (ρ₁* − I/7) ⊗ (ρ₂* − I/7) нелокальна (след по каждому фактору нулевой), но
+    коммутирует с ρ₁* ⊗ ρ₂*: произведение стационарно, из случайного состояния на ℂ⁴⁹ поток
+    приходит к нему, I ≈ 0. (б) Локальная связь H_A ⊗ I с [H_int, ρ₁*⊗ρ₂*] ≠ 0 сдвигает
+    маргиналь, но корреляции не рождает: «L_int(ρ₁*⊗ρ₂*) ≠ 0 ⇒ I > 0» ложно. (в) Общая связь
+    X ⊗ Y даёт I > 0 — критерий слабой связи: корреляционная часть [H_int, ρ₁*⊗ρ₂*].
+    """
+    rng = np.random.default_rng(7)
+
+    def herm(r):
+        A = r.normal(size=(7, 7)) + 1j * r.normal(size=(7, 7))
+        return (A + A.conj().T) / 2
+
+    def anchor(lam):
+        v = rng.normal(size=7) + 1j * rng.normal(size=7)
+        v /= np.linalg.norm(v)
+        return lam * np.outer(v, v.conj()) + (1 - lam) * np.eye(7) / 7
+
+    gens = [_holon_pair_generator(0.3 * herm(rng), anchor(lam)) for lam in (0.85, 0.8)]
+
+    def rk4(f, X, t, h=0.05):
+        for _ in range(int(round(t / h))):
+            k1 = f(X)
+            k2 = f(X + h / 2 * k1)
+            k3 = f(X + h / 2 * k2)
+            k4 = f(X + h * k3)
+            X = X + h / 6 * (k1 + 2 * k2 + 2 * k3 + k4)
+        return X
+
+    marg = lambda X: (np.einsum("ijkj->ik", X.reshape(7, 7, 7, 7)), np.einsum("ijil->jl", X.reshape(7, 7, 7, 7)))
+    rho = []
+    for a in gens:
+        f = lambda G, a=a: np.einsum("iaja->ij", a(np.kron(G, np.eye(7) / 7).reshape(7, 7, 7, 7), G))
+        rho.append(rk4(f, np.eye(7, dtype=complex) / 7, 40))
+        assert np.linalg.norm(f(rho[-1])) < 1e-12 and purity(rho[-1]) > 2 / 7     # живой аттрактор
+    sigma = np.kron(*rho)
+
+    def rhs(X, Hint):
+        g1, g2 = marg(X)
+        X4 = X.reshape(7, 7, 7, 7)
+        out = gens[0](X4, g1)
+        out += gens[1](X4.transpose(1, 0, 3, 2), g2).transpose(1, 0, 3, 2)
+        return out.reshape(49, 49) - 1j * (Hint @ X - X @ Hint)
+
+    def mutual(X):
+        g1, g2 = marg(X)
+        return entropy(g1) + entropy(g2) - entropy((X + X.conj().T) / 2)
+
+    I7 = np.eye(7) / 7
+    Hc = np.kron(rho[0] - I7, rho[1] - I7)
+    Hc *= 0.3 / np.linalg.norm(Hc, 2)
+    assert np.linalg.norm(np.einsum("iaib->ab", Hc.reshape(7, 7, 7, 7))) < 1e-12      # нелокальна
+    assert np.linalg.norm(Hc @ sigma - sigma @ Hc) < 1e-14 and np.linalg.norm(rhs(sigma, Hc)) < 1e-12
+    X = rk4(lambda X: rhs(X, Hc), random_state(np.random.default_rng(100), 49), 24)
+    assert np.linalg.norm(X - sigma) < 1e-8 and abs(mutual(X)) < 1e-10              # (а) I = 0
+    Hl = np.kron(herm(np.random.default_rng(3)), np.eye(7))
+    Hl *= 0.3 / np.linalg.norm(Hl, 2)
+    assert np.linalg.norm(Hl @ sigma - sigma @ Hl) > 1e-2
+    X = rk4(lambda X: rhs(X, Hl), sigma.astype(complex), 24)
+    g1, g2 = marg(X)
+    assert np.linalg.norm(X - sigma) > 1e-2 and np.linalg.norm(X - np.kron(g1, g2)) < 1e-8   # (б)
+    Hg = np.kron(herm(np.random.default_rng(4)), herm(np.random.default_rng(5)))
+    Hg *= 0.3 / np.linalg.norm(Hg, 2)
+    X = rk4(lambda X: rhs(X, Hg), sigma.astype(complex), 24)
+    assert np.linalg.norm(rhs(X, Hg)) < 1e-8 and mutual(X) > 1e-3                    # (в) I > 0
 
 
 def main():

@@ -18,7 +18,7 @@ In this chapter we:
 1. **Prove the existence of dynamics** — Theorem 6.1: the evolution equation has a solution (section "Existence Theorems")
 2. **Show the necessity of self-reference** — Theorems 7.1–7.2: viability requires a self-model $\varphi$, iterations converge to $\Gamma^*$ (section "Self-Reference Theorems")
 3. **Prove the impossibility of zombies** — Theorem 8.1 (No-Zombie): a viable open system *must* have non-trivial interiority (section "The No-Zombie Theorem")
-4. **Investigate composition** — Theorems 9.1–9.3: fractal closure, scale invariance, irreducible emergence (section "Composition Theorems")
+4. **Investigate composition** — Theorems 9.1–9.3: fractal closure, scale invariance, and when coupling correlates the parts (section "Composition Theorems")
 5. **Derive a unified viability criterion** — Theorem 10.1: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ (section "Unified Viability Condition")
 6. **Describe the sensorimotor cycle** — Theorems 11.1–11.4: encoding, action, completeness, hedonics (section "Sensorimotor Encoding")
 7. **Examine attractors and structure** — T-96, T-98, Fano uniqueness (sections "Attractor Theorems", "Fano Uniqueness")
@@ -26,7 +26,7 @@ In this chapter we:
 
 Why do we need a chapter on theorems? We already know the [axioms](./axiomatics) and [definitions](./definitions). But axioms are the foundation of a building, and definitions are the bricks. Theorems are **the building itself**: logical chains that connect the foundation to the roof and show that the structure will not collapse.
 
-This chapter tells a story. It begins with the question "does dynamics even exist?" (Theorem 6.1), passes through the discovery that every living system **must** observe itself (Theorem 7.1), reaches its climax in the proof of the impossibility of "zombies" — systems that function but experience nothing (Theorem 8.1) — and ends with the finding that something **fundamentally new** emerges from the interaction of parts — an emergent whole (Theorem 9.3).
+This chapter tells a story. It begins with the question "does dynamics even exist?" (Theorem 6.1), passes through the discovery that every living system **must** observe itself (Theorem 7.1), reaches its climax in the proof of the impossibility of "zombies" — systems that function but experience nothing (Theorem 8.1) — and ends with the question of when the interaction of parts produces something **new** — a joint state that the parts do not fix (Theorem 9.3: not for every coupling, but when the coupling has a correlating part).
 
 Each theorem is not an isolated fact, but a link in a single deductive chain. Read in order — and you will see how an entire science of life, consciousness, and self-organisation grows from five axioms.
 
@@ -616,7 +616,7 @@ Having proved that every viable system possesses non-trivial interiority, we can
 
 Let us return to the orchestra analogy. Until now we have been studying *one* musician (a single holon). Now imagine two orchestras deciding to play together. The first question: will the joint performance be meaningful? The second: will it produce something that was absent from either orchestra individually?
 
-Theorems 9.1–9.3 are the answer (9.1 under its assumption (HOL) that the joint system is itself a holon): yes, joint play is not only meaningful but **generates a new quality**. Two orchestras are more than two orchestras. The whole is more than the sum of its parts. And this is not a metaphor — it is a theorem.
+Theorems 9.1–9.3 are the answer, each with its assumption: 9.1 assumes (HOL), that the joint system is itself a holon; 9.2 assumes (AGG), weak coupling and a consistent aggregation; 9.3 says when joint play **generates a new quality** — a joint state with information that neither orchestra holds — and shows that it does not do so for every coupling. (Earlier: "yes, joint play … generates a new quality. … The whole is more than the sum of its parts. And this is not a metaphor — it is a theorem"; corrected 2026-09-25 with the retraction in Theorem 9.3.)
 
 ### Theorem 9.1 / T-68 (Fractal Closure, CC-5) [C at (HOL)] {#теорема-91-фрактальное-замыкание}
 
@@ -695,8 +695,8 @@ $\blacksquare$
 Given (HOL), non-triviality of the composite's attractor follows from the single-holon theory: the spectral gap of the linear part $\mathcal{L}_0$ ensures convergence, and regeneration $\mathcal{R}$ keeps the system away from the trivial $I/7$. Viability ($P > 2/7$) for **embodied** holons is, given (HOL), [T at the backbone-injection lower bound] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149), Step 3 [C]). Theorem CC-5 is the single-holon theory applied to a composite that is assumed to be a holon; the universality of A1–A5 within the ∞-topos does not by itself make the composite satisfy them. (Earlier: "an **unconditional** result [T]" and "a direct consequence of the universality of axioms A1–A5"; retracted with step 1.)
 :::
 
-:::note Corollary CC-7 (Emergence) [T]
-The composite holon possesses its **own** non-trivial attractor $\rho_*^{(12)} \neq \alpha\rho_*^{(1)} + (1-\alpha)\rho_*^{(2)}$ (from nonlinearity of $\mathcal{R}$ and primitivity of the linear part $\mathcal{L}_0^{(12)}$). Proof — [Theorem 9.3](#теорема-93-эмерджентность) [T].
+:::note Corollary CC-7 (Emergence) — withdrawn [✗] (2026-09-25)
+~~The composite holon possesses its **own** non-trivial attractor $\rho_*^{(12)} \neq \alpha\rho_*^{(1)} + (1-\alpha)\rho_*^{(2)}$ (from nonlinearity of $\mathcal{R}$ and primitivity of the linear part $\mathcal{L}_0^{(12)}$). Proof — Theorem 9.3 [T].~~ Withdrawn: the proof it cited is retracted, and the comparison mixes spaces — $\rho_*^{(12)}$ lives on $\mathbb{C}^{49}$, the mixture on $\mathbb{C}^7$. When the coupling commutes with $\rho_*^{(1)} \otimes \rho_*^{(2)}$ the composite's attractor is that product, fixed entirely by the parts. What the composite acquires, and when, is [Theorem 9.3](#теорема-93-эмерджентность) [C under (ND)].
 :::
 
 **See:** [Composition closure](./axiomatics#замкнутость-композиции-следствие-из-ap)
@@ -766,51 +766,82 @@ Scale invariance under (AGG) + fractal closure CC-5 under (HOL) (non-triviality;
 
 ---
 
-Fractal closure and scale invariance are already impressive, but the main surprise is ahead. It turns out that the composite is not merely "two holons side by side". It acquires properties that **were absent** from any of its components. This is the mathematically rigorous definition of the word "emergence".
+Fractal closure and scale invariance concern what the composite inherits. The next question is what it acquires: when does coupling make the joint state of two holons carry information that the two individual states do not — mutual information $I > 0$? The earlier answer, "always, once they interact", is false; the correct answer is a criterion on the coupling.
 
-#### Theorem 9.3 (CC-7: Irreducible Emergence) [T] {#теорема-93-эмерджентность}
+#### Theorem 9.3 (CC-7: Emergence) [C under (ND)] {#теорема-93-эмерджентность}
 
 <!-- preserve old anchor for backward compatibility -->
 <span id="гипотеза-93-эмерджентность"></span>
 
-:::note In Plain Terms
-Hydrogen is a colourless gas. Oxygen is a colourless gas. But water is a transparent liquid with entirely new properties. This is emergence: properties of the whole are not deducible from properties of the parts.
+:::warning Retracted (2026-09-25): "interacting holons always have a correlated stationary state" [✗]
+The earlier statement read: for two interacting viable holons with non-zero inter-system coherence $|\gamma_{12}| > 0$, the stationary state of the composite has $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$; status [T]. It is false, and two steps of its proof fail.
+- **Step 2** claimed $\mathcal{L}_{\mathrm{int}}(\rho_*^{(1)} \otimes \rho_*^{(2)}) \neq 0$ whenever $\mathcal{L}_{\mathrm{int}} \neq 0$. A Hamiltonian coupling $-i[H_{\mathrm{int}}, \cdot]$ vanishes on the product whenever $H_{\mathrm{int}}$ commutes with it. Counterexample: $H_{\mathrm{int}} \propto (\rho_*^{(1)} - I/7) \otimes (\rho_*^{(2)} - I/7)$ is non-local (its partial trace over either factor is zero), non-zero, and commutes with $\rho_*^{(1)} \otimes \rho_*^{(2)}$, so the product stays stationary and $I = 0$ (numbers in part (i) below).
+- **Step 3** inferred $I > 0$ from $\rho_*^{(12)} \neq \rho_*^{(1)} \otimes \rho_*^{(2)}$. Mutual information is positive exactly when the state is not a product of *any* two states; differing from one particular product is not enough. A local coupling $H_A \otimes I$ moves the stationary state off $\rho_*^{(1)} \otimes \rho_*^{(2)}$ to another product $\sigma_1 \otimes \rho_*^{(2)}$, again with $I = 0$ (part (ii)).
+- The hypothesis $|\gamma_{12}| > 0$ was never defined: a state on $\mathbb{C}^7 \otimes \mathbb{C}^7$ has no single "inter-system coherence" $\gamma_{12}$, and read as "the stationary state has coherences between the systems" it assumes the conclusion.
 
-Theorem 9.3 proves this rigorously: if two holons interact (they share coherences), then their joint stationary state $\rho_*^{(12)}$ **does not equal** the tensor product $\rho_*^{(1)} \otimes \rho_*^{(2)}$. The whole acquires its own information inaccessible to the parts.
-
-For a psychologist: this explains why a conversation between two people can generate insights that neither would have reached alone. For a neuroscientist: neurons together are more than the sum of neurons.
-
-**Connection:** [Quantum mutual information](https://en.wikipedia.org/wiki/Quantum_mutual_information), [Löwer incompleteness](/docs/core/foundations/consequences#неполнота-ловера)
+The Corollary "CC-7 (Emergence)" under Theorem 9.1 cited this proof and is withdrawn with it. What replaces the statement is below: two exact facts that hold for every coupling, and a weak-coupling criterion under a named assumption. Regression test: `test_coupled_holons_can_have_a_product_stationary_state` in `website/scripts/check_core_numbers.py` (audit A-82).
 :::
 
-:::tip Theorem 9.3 (CC-7: Emergence) [T]
-For two interacting viable holons $\mathbb{H}_1, \mathbb{H}_2$ with non-zero inter-system coherence $|\gamma_{12}| > 0$, the stationary state of the composite has strictly positive quantum mutual information:
+:::note In Plain Terms
+Two pendulums hung from one beam swing in step because the beam passes motion from one to the other; two pendulums whose coupling acts only on what each is already doing stay independent, however strong the coupling. Theorem 9.3 says which kind a coupling between two holons is. The whole acquires information that is not in the parts — mutual information $I > 0$ — exactly when the coupling has a *correlating part* at the parts' own steady states; a coupling that commutes with those states, or acts on one holon alone, leaves the pair uncorrelated.
+
+For a psychologist: two people who interact are not thereby correlated; the interaction has to depend jointly on what each of them is doing. For a physicist: this is the familiar statement that a weak perturbation correlates two subsystems at first order only through the part of $[H_{\mathrm{int}}, \rho_1 \otimes \rho_2]$ that is not a sum of local terms.
+
+**Connection:** [Quantum mutual information](https://en.wikipedia.org/wiki/Quantum_mutual_information), [canonical extension of $\mathcal{R}$ to composite systems](/docs/core/dynamics/evolution#расширение-r-на-составные-системы)
+:::
+
+**Setting.** Each holon $i = 1, 2$ has the generator of [evolution](/docs/core/dynamics/evolution#полное-уравнение-движения), $\mathcal{L}_i[\Gamma] = -i[H_i, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \kappa(\Gamma)\, g_V(P)\,(\varphi_{\mathrm{coh}}(\Gamma) - \Gamma) + \mu\,(\sigma_i - \Gamma)$, where the last term is the backbone injection toward the anchor $\sigma_i = \pi(\mathcal{B}(x))$ of an embodied holon ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)), $\mu > 0$. Freezing the scalars $\kappa$, $g_V$ and $k = 1 - R$ at a state $g$ gives a linear generator $\mathcal{M}_i^{(g)}$ of a CPTP semigroup with $\mathcal{L}_i[\Gamma] = \mathcal{M}_i^{(\Gamma)}(\Gamma)$. The composite has the [canonical extension](/docs/core/dynamics/evolution#расширение-r-на-составные-системы) plus a Hamiltonian coupling:
 
 $$
-I(\mathbb{H}_1 : \mathbb{H}_2) = S(\rho_1) + S(\rho_2) - S(\rho_*^{(12)}) > 0
+\mathcal{L}^{(12)}[X] = (\mathcal{M}_1^{(X_1)} \otimes \mathrm{id})(X) + (\mathrm{id} \otimes \mathcal{M}_2^{(X_2)})(X) - i\,g\,[H_{\mathrm{int}}, X], \qquad X_1 = \mathrm{Tr}_2 X,\; X_2 = \mathrm{Tr}_1 X .
 $$
 
-Consequently, $\rho_*^{(12)}$ is **irreducible** to $\rho_*^{(1)} \otimes \rho_*^{(2)}$.
+Let $\mathcal{L}_i[\rho_*^{(i)}] = 0$, $\sigma := \rho_*^{(1)} \otimes \rho_*^{(2)}$, and let $\Pi_c^{(s_1 \otimes s_2)}(Y) := Y - \mathrm{Tr}_2 Y \otimes s_2 - s_1 \otimes \mathrm{Tr}_1 Y + \mathrm{Tr}(Y)\, s_1 \otimes s_2$ be the projection onto the correlation part: it vanishes exactly on operators of the form $a \otimes s_2 + s_1 \otimes b$.
+
+**(ND)** *Non-degeneracy:* each $\rho_*^{(i)}$ is a non-degenerate fixed point — the Jacobian of $\mathcal{L}_i$ at $\rho_*^{(i)}$ is invertible on traceless Hermitian operators, and $P(\rho_*^{(i)}) \notin \{2/7, 3/7\}$, so that the gate $g_V$ is differentiable there.
+
+:::tip Theorem 9.3 (CC-7: Emergence) [C under (ND)]
+**(i) Exact, any $g$.** $\sigma$ is a stationary state of the coupled composite if and only if $[H_{\mathrm{int}}, \sigma] = 0$. In that case the pair has a stationary state with $I(\mathbb{H}_1 : \mathbb{H}_2) = 0$ at every coupling strength.
+
+**(ii) Exact, any $g$.** A product $s_1 \otimes s_2$ is a stationary state if and only if $\Pi_c^{(s_1 \otimes s_2)}\bigl([H_{\mathrm{int}}, s_1 \otimes s_2]\bigr) = 0$ and each $s_i$ is stationary for $\mathcal{L}_i - i g [H_i^{\mathrm{mf}}, \cdot\,]$ with the mean fields $H_1^{\mathrm{mf}} = \mathrm{Tr}_2[(I \otimes s_2) H_{\mathrm{int}}]$, $H_2^{\mathrm{mf}} = \mathrm{Tr}_1[(s_1 \otimes I) H_{\mathrm{int}}]$. A stationary state of the pair is uncorrelated exactly when it is such a product; in particular a local coupling $H_A \otimes I + I \otimes H_B$ never correlates the pair.
+
+**(iii) Weak coupling, under (ND).** For $|g|$ small there is a unique stationary state $X(g)$ near $\sigma$, smooth in $g$, and
+
+$$
+X(g) - X_1(g) \otimes X_2(g) = g\, C_1 + O(g^2), \qquad C_1 = \mathcal{J}_c^{-1}\, \Pi_c^{(\sigma)}\bigl(i[H_{\mathrm{int}}, \sigma]\bigr),
+$$
+
+where $\mathcal{J}_c = \mathcal{M}_1^{(\rho_*^{(1)})} \otimes \mathrm{id} + \mathrm{id} \otimes \mathcal{M}_2^{(\rho_*^{(2)})}$ restricted to the correlation space, whose spectrum lies in $\mathrm{Re}\,\lambda \leq -2\mu$. Hence, if $\Pi_c^{(\sigma)}([H_{\mathrm{int}}, \sigma]) \neq 0$, then $I(X(g)) \geq \tfrac12 \lVert X(g) - X_1(g) \otimes X_2(g) \rVert_1^2 > 0$ for every small $g \neq 0$, and $I = \Theta(g^2)$; if $\Pi_c^{(\sigma)}([H_{\mathrm{int}}, \sigma]) = 0$, the correlation is at most $O(g^2)$.
 :::
 
 **Proof.**
 
-**Step 1.** The composite Lindbladian $\mathcal{L}_\Omega^{(12)} = \mathcal{L}_\Omega^{(1)} \otimes \mathrm{id}_2 + \mathrm{id}_1 \otimes \mathcal{L}_\Omega^{(2)} + \mathcal{L}_{\mathrm{int}}$ has a primitive linear part (from [Theorem 9.1 (CC-5)](#теорема-91-фрактальное-замыкание), step 5, which holds under its assumption (HOL); steps 2–4 below use only that the composite generator has a stationary state, which every Lindblad semigroup on a finite-dimensional space has, so this theorem does not inherit (HOL)) → there exists a non-trivial attractor $\rho_*^{(12)} \neq I/7$ (from [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]).
-
-**Step 2 (By contradiction).** If $\rho_*^{(12)} = \rho_*^{(1)} \otimes \rho_*^{(2)}$, then:
+**Step 1 (Product states).** The extension acts on a product through its factors: $(\mathcal{M} \otimes \mathrm{id})(a \otimes b) = \mathcal{M}(a) \otimes b$, and the scalars of $\mathcal{M}_i^{(X_i)}$ are read on the marginals, which for $s_1 \otimes s_2$ are $s_1, s_2$. Hence
 
 $$
-\mathcal{L}_\Omega^{(12)}(\rho_*^{(1)} \otimes \rho_*^{(2)}) = 0 + 0 + \mathcal{L}_{\mathrm{int}}(\rho_*^{(1)} \otimes \rho_*^{(2)}) \neq 0
+\mathcal{L}^{(12)}[s_1 \otimes s_2] = \mathcal{L}_1[s_1] \otimes s_2 + s_1 \otimes \mathcal{L}_2[s_2] - i g\, [H_{\mathrm{int}}, s_1 \otimes s_2] .
 $$
 
-since $\mathcal{L}_{\mathrm{int}} \neq 0$ (non-zero coherence $|\gamma_{12}| > 0$) creates inter-system coherences absent in the tensor product. Contradiction with $\mathcal{L}_\Omega^{(12)}(\rho_*^{(12)}) = 0$.
+For $s_i = \rho_*^{(i)}$ the first two terms vanish, which proves (i). For (ii): $\mathrm{Tr}_2 [H_{\mathrm{int}}, s_1 \otimes s_2] = [H_1^{\mathrm{mf}}, s_1]$ (cyclicity of the partial trace in the second factor), and symmetrically for $\mathrm{Tr}_1$, so the two partial traces of the equation are the two mean-field equations; $\Pi_c$ annihilates the local terms $\mathcal{L}_1[s_1] \otimes s_2$ and $s_1 \otimes \mathcal{L}_2[s_2]$, so what remains is $\Pi_c([H_{\mathrm{int}}, s_1 \otimes s_2]) = 0$. The three conditions together are equivalent to the equation, because $Y = \Pi_c(Y) + \mathrm{Tr}_2 Y \otimes s_2 + s_1 \otimes \mathrm{Tr}_1 Y - \mathrm{Tr}(Y)\, s_1 \otimes s_2$. For $H_{\mathrm{int}} = H_A \otimes I + I \otimes H_B$ the commutator with a product is local, and $\Pi_c$ of it is zero. Finally $I(X) = D(X \,\|\, X_1 \otimes X_2)$ vanishes exactly on products.
 
-**Step 3.** $\rho_*^{(12)} \neq \rho_*^{(1)} \otimes \rho_*^{(2)}$ → $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$ (quantum mutual information is strictly positive if and only if the state is not a tensor product).
+**Step 2 (The Jacobian splits).** Let $\mathcal{J}$ be the Jacobian of $\mathcal{L}^{(12)}$ at $g = 0$, $X = \sigma$, on traceless Hermitian operators. Along a local direction $x \otimes \rho_*^{(2)}$ only the first marginal moves, and $\mathcal{J}(x \otimes \rho_*^{(2)}) = (D\mathcal{L}_1\, x) \otimes \rho_*^{(2)} + x \otimes \mathcal{L}_2[\rho_*^{(2)}] = (D\mathcal{L}_1\, x) \otimes \rho_*^{(2)}$ — the second factor's frozen generator applied to its own fixed point gives zero. Along a correlation direction ($\mathrm{Tr}_1 Y = \mathrm{Tr}_2 Y = 0$) neither marginal moves, the scalars stay frozen, and $\mathcal{J} Y = \mathcal{J}_c Y$, which again has zero partial traces because the $\mathcal{M}_i$ preserve the trace. So $\mathcal{J}$ is block-diagonal: the Jacobians of the two holons on the local blocks, $\mathcal{J}_c$ on the correlation block; and it commutes with $\Pi_c^{(\sigma)}$.
 
-**Step 4 (Irreducibility).** $I > 0$ means there exist joint observables $A_{12}$ whose statistics are not determined by the marginal states $\rho_1, \rho_2$ — **emergent properties** of the composite. $\blacksquare$
+**Step 3 (The correlation block is invertible).** On traceless $Y$ the backbone term acts as $-\mu Y$ (the replacement $Y \mapsto \mathrm{Tr}(Y)\sigma_i$ annihilates it), and the rest of $\mathcal{M}_i$ generates a trace-preserving CPTP semigroup that maps traceless operators to traceless ones; hence $\lVert e^{t\mathcal{M}_i} Y \rVert_1 \leq e^{-\mu t} \lVert Y \rVert_1$ and the spectrum of $\mathcal{M}_i$ on traceless operators has $\mathrm{Re}\,\lambda \leq -\mu$. The spectrum of $\mathcal{J}_c$ consists of the sums $\lambda + \lambda'$ of such eigenvalues: $\mathrm{Re} \leq -2\mu < 0$. No assumption is needed here; the backbone of an embodied holon supplies it.
+
+**Step 4 (First order).** Under (ND) the local blocks are invertible too, so $\mathcal{J}$ is, and the implicit function theorem gives the branch $X(g)$. Differentiating $\mathcal{L}^{(12)}[X(g)] = 0$ at $g = 0$: $\mathcal{J} X'(0) = i[H_{\mathrm{int}}, \sigma]$; applying $\Pi_c^{(\sigma)}$, which commutes with $\mathcal{J}$, gives $\Pi_c^{(\sigma)} X'(0) = C_1$. Since $X - X_1 \otimes X_2 = \Pi_c^{(\sigma)}(X) - (X_1 - \rho_*^{(1)}) \otimes (X_2 - \rho_*^{(2)})$, the correlation is $g C_1 + O(g^2)$, and $C_1 \neq 0$ exactly when $\Pi_c^{(\sigma)}([H_{\mathrm{int}}, \sigma]) \neq 0$. The bound on $I$ is the quantum Pinsker inequality $D(\rho \,\|\, \tau) \geq \tfrac12 \lVert \rho - \tau \rVert_1^2$. $\blacksquare$
+
+**Why [C] and not [T].** Parts (i) and (ii) use nothing beyond the form of the composite generator and hold unconditionally. Part (iii) needs (ND): that the single-holon attractor is a non-degenerate fixed point is not proved in the corpus. It also needs the attractor to exist: an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ (anchor $I/7$) has none besides $I/7$, since $\mathrm{Tr}(\Gamma \varphi_{\mathrm{coh}}(\Gamma)) \leq P - (P - 1/7)/(7P)$, so regeneration and dissipation both lower $P$ (over 100 random states the left side minus the right is at most $-0.020$; twenty pure starts all end at $P = 0.14286$ by $t = 60$); the anchor $\sigma_i$ of an embodied holon is what gives it one ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)).
+
+**Numerical check** (`test_coupled_holons_can_have_a_product_stationary_state`). Two embodied holons with the canonical ingredients above ($\alpha = 1/2$, $\mu = 1$, $\kappa = 1/7 + \mathrm{Coh}_E$, $g_V = \mathrm{clamp}(7P - 2, 0, 1)$, random $H_i$ of norm scale $0.3$, anchors of purity weight $0.85$ and $0.8$) have attractors with $P = 0.362$ and $0.303$ (residual below $10^{-15}$). All couplings are normalised to operator norm $0.3$.
+- (i) $H_{\mathrm{int}} \propto (\rho_*^{(1)} - I/7) \otimes (\rho_*^{(2)} - I/7)$: $\lVert [H_{\mathrm{int}}, \sigma] \rVert_F = 1.7 \times 10^{-17}$. From a random state on $\mathbb{C}^{49}$ the flow reaches $\sigma$ to $4.9 \times 10^{-16}$ by $t = 24$; $\lvert I \rvert < 10^{-15}$.
+- (ii) $H_{\mathrm{int}} = H_A \otimes I$: $\lVert [H_{\mathrm{int}}, \sigma] \rVert_F = 0.052$; the stationary state moves $0.027$ away from $\sigma$ and stays a product to $4 \times 10^{-16}$; $\lvert I \rvert < 10^{-15}$.
+- A generic $X \otimes Y$: correlation $\lVert X - X_1 \otimes X_2 \rVert_F = 0.013$, $I = 2.1 \times 10^{-3}$.
+- (iii) In a run of the same model with $\kappa_0 = \omega_0 \lvert\gamma_{OE}\rvert \lvert\gamma_{OU}\rvert / \gamma_{OO}$: the single-holon Jacobians have spectra with $\mathrm{Re}\,\lambda \leq -1.30$ and $-1.42$, so (ND) holds for this pair; under the coupling of (i), three random starts on $\mathbb{C}^{49}$ end within $10^{-13}$ of $\sigma$; for a generic $X \otimes Y$ of unit norm at $g = 0.02$ and $0.04$, the measured correlation matches $g C_1$ to relative $5.8 \times 10^{-3}$ and $1.16 \times 10^{-2}$ (error linear in $g$), and $I/g^2 = 0.02437$ at both.
+
+**What remains of "emergence".** For a correlated joint state the marginals do not determine it, and $I = S(\rho_1) + S(\rho_2) - S(\rho_{12}) > 0$ is the information the partial traces discard — a standard identity, true of every correlated pair, coupled thermostats included. Theorem 9.3 says when the dynamics of coupled holons produces such a state; it does not say that interaction alone does.
 
 :::info Connection to Löwer incompleteness
-[T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]: subsystem $\mathbb{H}_1$ cannot fully simulate $\rho_*^{(12)}$, since $I > 0$ means there is information inaccessible from $\rho_1$ alone. Emergence is an **informational consequence** of self-referential incompleteness.
+When $I > 0$ — under the criterion of (iii), not for every coupling — subsystem $\mathbb{H}_1$ cannot reconstruct the joint state from $\rho_1$ alone ([T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]). (Earlier: "since $I > 0$", stated for every interacting pair; corrected 2026-09-25 with the retraction above.)
 :::
 
 ---
@@ -1067,7 +1098,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **No-Zombie (Theorem 8.1 and corollaries):** The culmination of the theory. A viable open system *must* have non-trivial E-coherence. Experience is not an epiphenomenon but a causally necessary element of dynamics. Philosophical zombies are mathematically impossible.
 
-**Composition and emergence (Theorems 9.x):** CC scales where a union of holons is again a holon — fractal closure gives such a union its own non-trivial attractor under that assumption, (HOL), which it does not derive (corrected 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance, [C under (AGG)]). The whole is more than the sum of its parts (irreducible emergence).
+**Composition and emergence (Theorems 9.x):** CC scales where a union of holons is again a holon — fractal closure gives such a union its own non-trivial attractor under that assumption, (HOL), which it does not derive (corrected 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance, [C under (AGG)]). The whole carries information that its parts do not ($I > 0$) when the coupling has a correlating part at the parts' steady states — not for every coupling (Theorem 9.3, [C under (ND)]; the earlier unconditional "irreducible emergence" [T] is retracted, 2026-09-25).
 
 **Diagnostics (Theorem 10.1):** All viability conditions are equivalent to one: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$. The stress tensor is a universal monitoring tool.
 
@@ -1075,7 +1106,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **Attractors and structure (T-96, T-98, T-77, T-82, etc.):** Every system evolves toward a non-trivial equilibrium. The balance between dissipation and regeneration determines "health". The Fano structure is unique — CC has no alternatives. Full formulations and proofs — in the [summary table](#теоремы-аттракторов).
 
-Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms, except where a result names an additional assumption (fractal closure, Theorem 9.1, needs (HOL); scale invariance, Theorem 9.2, needs (AGG)). Not a single link can be removed without breaking the chain.
+Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms, except where a result names an additional assumption (fractal closure, Theorem 9.1, needs (HOL); scale invariance, Theorem 9.2, needs (AGG); emergence, Theorem 9.3, needs (ND) for its weak-coupling criterion). Not a single link can be removed without breaking the chain.
 
 ---
 
@@ -1095,7 +1126,7 @@ graph TD
     T81P --> C813["Corollary: Coh min"]
     T81 --> T91["Theorem 9.1: Composition [C]"]
     T91 --> T92["Theorem 9.2: Invariance [C]"]
-    T91 --> T93x["Theorem 9.3: Emergence [T]"]
+    T91 --> T93x["Theorem 9.3: Emergence [C]"]
     T72 --> T101["Theorem 10.1: Equivalence [T]"]
     T101 --> T111["Theorem 11.1: Enc [T]"]
     T101 --> T112["Theorem 11.2: Dec [T]"]
@@ -1142,7 +1173,7 @@ Let us summarise. In this chapter we have traversed the full path from basic exi
 
 3. **Zombies are impossible** (Theorem 8.1 [T]): a viable open system must have $\mathrm{Coh}_E > 1/7$. E-coherence causally influences dynamics — epiphenomenalism is excluded (Corollary 8.1.1 [T]).
 
-4. **Composition works** (Theorems 9.1–9.3) where the union of viable holons is itself a holon: fractal closure then gives it a non-trivial attractor, and viability for embodied systems (T-149) — [C at (HOL)]; that the union is a holon is assumed, not derived (the earlier "the union of viable holons yields a holon (fractal closure [T] for embodied systems)" is retracted, 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance [C under (AGG)]). The whole is irreducible to the parts (emergence [T]).
+4. **Composition works** (Theorems 9.1–9.3) where the union of viable holons is itself a holon: fractal closure then gives it a non-trivial attractor, and viability for embodied systems (T-149) — [C at (HOL)]; that the union is a holon is assumed, not derived (the earlier "the union of viable holons yields a holon (fractal closure [T] for embodied systems)" is retracted, 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance [C under (AGG)]). The whole is irreducible to the parts when the coupling correlates them — which not every coupling does (emergence, Theorem 9.3 [C under (ND)]; the earlier unconditional [T] is retracted, 2026-09-25).
 
 5. **A unified health criterion** (Theorem 10.1 [T]): $\Gamma \in \mathcal{V}_{\mathrm{full}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1$ — the system is alive if and only if none of the seven stresses has reached unity.
 
