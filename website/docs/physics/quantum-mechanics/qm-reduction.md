@@ -7,7 +7,7 @@ description: Rigorous proof that standard quantum mechanics is a special case of
 # Reduction of UHM to Quantum Mechanics
 
 :::info Section Status
-In §1–§6, Theorem 3.1 (the evolution equation reduces to the von Neumann equation when the dissipator and the regenerator are switched off, $\kappa_0 \to 0$, $\gamma_k \to 0$), Theorem 3.4 and Theorem 1.1 carry **[T]**. Theorem 3.2, the category equivalence $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$, is retracted [✗] (§4.2), and the classification of Theorem 3.3 is a reading [I]. An earlier version of this box gave every result of §1–§6 the status [T]; that is retracted. §7 compares them with the reconstructions of quantum theory; its comparisons are interpretations [I].
+In §1–§6, Theorem 3.1 (the evolution equation reduces to the von Neumann equation when the dissipator and the regenerator are switched off, $\kappa_0 \to 0$, $\gamma_k \to 0$), Theorem 3.4 and Theorem 1.1 carry **[T]**. Theorem 3.2, the category equivalence $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$, is retracted [✗] (§4.2); what holds instead is Theorem 3.2′ [T], an equivalence of $\mathbf{Hol}^u$ with seven-dimensional quantum mechanics above purity $2/7$, sharp in scope (§4.2). The classification of Theorem 3.3 is a reading [I]. §8 proves Kochen–Specker contextuality in $\mathbb{C}^7$ with a set of rays built from the Fano plane (T-201′, [T]). An earlier version of this box gave every result of §1–§6 the status [T]; that is retracted. §7 compares them with the reconstructions of quantum theory; its comparisons are interpretations [I].
 :::
 
 ## Contents
@@ -19,6 +19,7 @@ In §1–§6, Theorem 3.1 (the evolution equation reduces to the von Neumann equ
 5. [Taxonomy of Physical Systems](#5-таксономия)
 6. [Time Discreteness and Page–Wootters](#6-дискретность-времени)
 7. [Precedents: Reconstructions of Quantum Theory](#7-прецеденты-реконструкции)
+8. [Kochen–Specker Contextuality in the Holon Space](#8-контекстуальность-кш)
 
 ---
 
@@ -217,7 +218,20 @@ An earlier version stated as [T] that the restriction $\pi_{\text{QM}}|_{\mathbf
 - **Full faithfulness is not proven.** The proof asserts a bijection of hom-sets without constructing the functor on morphisms.
 :::
 
-**What holds instead** [D]. Let $\mathbf{Hol}^{u}$ be the category whose objects are the objects of $\mathbf{Hol}$ with a chosen Hamiltonian and whose morphisms are the unitary conjugations between them. Sending $\mathbb{H}$ to $(\mathbb{C}^7, H_{\mathbb{H}}, \Gamma_{\mathbb{H}})$ identifies $\mathbf{Hol}^{u}$ with the full subcategory of $\mathbf{QM}$ on seven-dimensional systems with purity above $2/7$. This is an identification by definition, not a reduction: it says nothing about quantum systems of other dimension or lower purity, which make up most of $\mathbf{QM}$. The dynamical content of the reduction is Theorem 3.1.
+**What holds instead.** An earlier note here (2026-09-25) called the following an "identification by definition [D]" and stated it as an isomorphism with the full subcategory on seven-dimensional systems of purity above $2/7$. It is not an isomorphism — a holon also needs $\rho_E \neq 0$, which unitary conjugation does not preserve — but it is an equivalence, and that is a theorem.
+
+Let $\mathbf{Hol}^{u}$ be the category whose objects are pairs $(\Gamma, H)$ with $\Gamma$ an object of $\mathbf{Hol}$ ([Definition 12.1](/docs/proofs/categorical/categorical-formalism#категория-голономов-hol)) and $H$ a Hamiltonian, and whose morphisms $(\Gamma_1, H_1) \to (\Gamma_2, H_2)$ are all unitaries $U$ with $U\Gamma_1U^\dagger = \Gamma_2$, as in Definition 3.1. For a single seven-dimensional state the conditions of Definition 12.1 read: (V) $P = \mathrm{Tr}\,\Gamma^2 > 2/7$; (PH) $\rho_E \neq 0$, which in the 7D formalism is $\gamma_{EE} > 0$; (AP) holds for every state (the replacement channel $X \mapsto \mathrm{Tr}(X)\,\Gamma$ fixes $\Gamma$); (QG) is a condition on the generator, carried by $H$. Let $\mathbf{QM}_7^{>2/7}$ be the full subcategory of $\mathbf{QM}$ on the objects $(\mathbb{C}^7, H, \rho)$ with $\mathrm{Tr}\,\rho^2 > 2/7$.
+
+:::tip Theorem 3.2′ (Holons are seven-dimensional quantum mechanics above purity 2/7) [T]
+1. The inclusion $\iota : \mathbf{Hol}^{u} \to \mathbf{QM}_7^{>2/7}$, $(\Gamma, H) \mapsto (\mathbb{C}^7, H, \Gamma)$, is an equivalence of categories. It is not an isomorphism: $(\mathbb{C}^7, H, |O\rangle\langle O|)$ has $P = 1$ and $\gamma_{EE} = 0$, so it is not a holon, yet it is isomorphic in $\mathbf{QM}$ to one.
+2. Its isomorphism classes are the spectra $\lambda_1 \geq \dots \geq \lambda_7 \geq 0$ with $\sum\lambda_i = 1$ and $\sum\lambda_i^2 > 2/7$; the automorphism group of an object is the centraliser of $\Gamma$ in $U(7)$, $\prod_i U(m_i)$ over the eigenvalue multiplicities $m_i$.
+3. No equivalence $\mathbf{Hol}^{u} \simeq \mathbf{QM}$ exists, and none after restricting $\mathbf{QM}$ to any class containing a qubit or the state $I/7$: dimension and purity are invariants of isomorphism in $\mathbf{QM}$.
+4. Every quantum system of dimension $d \leq 3$ is holonic: an isometry $V : \mathbb{C}^d \to \mathbb{C}^7$ gives a faithful functor $\mathbf{QM}_d \to \mathbf{QM}_7^{>2/7} \simeq \mathbf{Hol}^u$, $(\mathbb{C}^d, H, \rho) \mapsto (\mathbb{C}^7, VHV^\dagger, V\rho V^\dagger)$, $U \mapsto VUV^\dagger + (1 - VV^\dagger)$, because every state on $\mathbb{C}^d$ has $\mathrm{Tr}\,\rho^2 \geq 1/d \geq 1/3 > 2/7$. The bound $d \leq 3$ is sharp: for $d \geq 4$ the state $I/d$ has purity $1/d \leq 1/4 < 2/7$, and an isometric embedding preserves purity, so $I/d$ is the image of no holon. The functor is not full (unitaries acting on the complement of $V\mathbb{C}^d$ are extra morphisms).
+:::
+
+**Proof.** (1) Both categories are full subcategories of $\mathbf{QM}$, so $\iota$ is fully faithful. Essential surjectivity: for $(\mathbb{C}^7, H, \rho)$ with $\mathrm{Tr}\,\rho^2 > 2/7$ pick an index $j$ with $\rho_{jj} > 0$ (one exists, since $\mathrm{Tr}\,\rho = 1$) and the permutation unitary $\Pi$ exchanging $|j\rangle$ and $|E\rangle$. Then $\Pi$ is an isomorphism $(\mathbb{C}^7, H, \rho) \to (\mathbb{C}^7, \Pi H\Pi^\dagger, \Pi\rho\Pi^\dagger)$ in $\mathbf{QM}$, the target has $\gamma_{EE} = \rho_{jj} > 0$ and the same purity, so it lies in the image of $\iota$. (2) Unitary orbits of density matrices are classified by spectra, and the purity is $\sum\lambda_i^2$; the stabiliser of a Hermitian matrix under conjugation is the product of the unitary groups of its eigenspaces. (3) A unitary preserves dimension and spectrum. (4) $\mathrm{Tr}\,\rho^2 \geq 1/d$ is Cauchy–Schwarz on the eigenvalues; $V\rho V^\dagger$ has the eigenvalues of $\rho$ padded with zeros, hence the same purity; $U \mapsto VUV^\dagger + (1 - VV^\dagger)$ preserves products and identities and is injective. Numerical witness: `test_hol_u_is_equivalent_to_seven_dimensional_qm_above_two_sevenths`. $\blacksquare$
+
+The theorem is the correct form of the retracted Theorem 3.2 and is as strong as the definitions allow: seven-dimensional quantum mechanics above the viability threshold *is* the category of holons with unitary morphisms, up to equivalence, and all of qubit and qutrit quantum mechanics sits inside it; beyond three levels the maximally mixed states do not. The dynamical content of the reduction remains Theorem 3.1.
 
 ### 4.3 Physical Meaning of the Equivalence
 
@@ -396,12 +410,30 @@ The four points below are interpretive comparisons [I]; each names the corpus st
 
 ---
 
+## 8. Kochen–Specker Contextuality in the Holon Space {#8-контекстуальность-кш}
+
+The Fano-line projectors $\Pi_\ell = \sum_{i \in \ell}|i\rangle\langle i|$ commute, and the distribution $p_i = \gamma_{ii}$ reproduces every one of their contexts, so they show no contextuality; the former T-201 claimed otherwise and is retracted ([registry](/docs/reference/status-registry), `test_fano_line_projectors_commute_hence_noncontextual`). Contextuality needs non-commuting projectors. The Fano plane supplies a canonical set of them.
+
+**The rays.** In $\mathbb{R}^7 \subset \mathbb{C}^7$ take the seven basis vectors $|i\rangle$ and, for each of the seven complements $q = \{a, b, c, d\}$ of a Fano line (the words of weight four of the Hamming code $H(7,4)$ of Step T8), the eight rays $\tfrac12(|a\rangle \pm |b\rangle \pm |c\rangle \pm |d\rangle)$. These are 63 rays; with both signs they are 126 unit vectors, closed under the reflections $v \mapsto v - 2\langle u, v\rangle u$ — the root system $E_7$. As octonions they are the purely imaginary units of Coxeter's integral octonions. No orientation of the Fano lines enters: only the lines, through their complements, do.
+
+:::tip Theorem T-201′ (Kochen–Specker contextuality of the Fano–Hamming rays) [T]
+The 63 rays form 135 orthonormal bases of $\mathbb{C}^7$, each ray lying in 15 of them, and every set of mutually orthogonal rays extends to one of these bases. There is no assignment $v : \{\text{rays}\} \to \{0, 1\}$ with exactly one ray of value 1 in each basis. Hence for every state $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ the rank-one projectors onto these rays admit no non-contextual value assignment: UHM's state space carries state-independent Kochen–Specker contextuality, with projectors from different bases that do not commute (1008 of the 1953 pairs of rays are neither orthogonal nor equal).
+:::
+
+**Proof.** The counts are a finite enumeration of the maximal orthogonal subsets (all have seven elements). Non-colourability is a finite 0/1 feasibility problem — 63 variables, 135 equality constraints $\sum_{r \in b} v_r = 1$ — and it is infeasible; this is checked by an exact integer-programming solver (`test_e7_rays_from_the_hamming_quadrangles_are_kochen_specker`) and was confirmed independently by a propagating backtracking search. A basis-critical subfamily of 36 of the 135 bases is already uncolourable. The configuration $63_{15}$–$135_7$ of the $E_7$ rays and its Kochen–Specker property are due to A. Ruuge, "Exceptional and non-crystallographic root systems and the Kochen–Specker theorem", *J. Phys. A: Math. Theor.* **40**, 2849–2859 (2007), arXiv:0906.2696; what is added here is its construction from the Fano plane and the Hamming code of the UHM chain. $\blacksquare$
+
+**What this does and does not claim.** Kochen–Specker sets exist in every dimension $d \geq 3$, so contextuality of $\mathbb{C}^7$ is expected; the content of T-201′ is that the canonical structure the UHM chain produces (the Fano plane of Step T12 and its Hamming code of Step T8) yields a Kochen–Specker set without further choices. It does not claim that the Fano channel or the line projectors are contextual, and it does not revive the retracted corollary about SYNARC distinguishing classical from quantum outcomes.
+
+---
+
 ## Summary Table of Results
 
 | Theorem | Statement | Status |
 |---------|-----------|--------|
 | **T.3.1** | Reduction to the Schrödinger equation at $R \to 0$ | [T] Proved |
-| **T.3.2** | ~~Category equivalence $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$~~ | [✗] Retracted (§4.2); replaced by an identification by definition [D] |
+| **T.3.2** | ~~Category equivalence $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$~~ | [✗] Retracted (§4.2) |
+| **T.3.2′** | $\mathbf{Hol}^u \simeq \mathbf{QM}_7^{>2/7}$; all of $\mathbf{QM}_d$, $d \leq 3$, embeds faithfully; sharp at $d = 4$ | [T] Proved (§4.2) |
+| **T-201′** | Kochen–Specker contextuality of the 63 Fano–Hamming ($E_7$) rays in $\mathbb{C}^7$ | [T] Proved (§8) |
 | **T.3.3** | Classification of systems by $R$ and $\Omega$ | [I] Classification scheme (the row $R = 0$ is empty under $R = 1/(7P)$) |
 | **T.3.4** | Discreteness of internal time $\tau \in \mathbb{Z}_N$ | [T] Proved |
 | **T.1.1** | Functoriality of the forgetful functor $\mathcal{U}: \mathbf{Hol} \to \mathbf{DensityMat}$ | [T] Proved |

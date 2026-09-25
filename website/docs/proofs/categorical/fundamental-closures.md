@@ -13,7 +13,7 @@ This document contains **fourteen foundational theorems** T-210 through T-223 th
 |---|---|---|---|
 | **T-210** | Strict (not weak) Φ-monotonicity under epistemic refinement | Interior-stratum argument + T-151 | [T] |
 | **T-211** | Higher coherences of **PhysTheory** $(\infty,1)$-category | Full embedding into $\mathbf{Topoi}_\infty$ (HTT 5.2.7) | [C at T-119] |
-| **T-212** | Explicit definition of rheonomy modality **Rh** | Super-cohesion right adjoint (solid cohesion; not in DCCT v1) | [C at the differential cohesion of the UHM site (T-185) and a solid-cohesive extension] (was [T] until 2026-09-25) |
+| **T-212** | The U-projection $X \mapsto \frac17\operatorname{Tr}(X)\mathbf{1}$ is the $G_2$-twirl (T-212′); its former identification with the rheonomy modality **Rh** is retracted | Schur's lemma + Haar measure; Rh preserves global points | [T] for T-212′; [✗] for "Rh explicit" (it was [C at the differential cohesion of the UHM site (T-185) and a solid-cohesive extension], and [T] before) |
 | **T-213** | Yoneda representability via Bures description length | Computable $D_B(f)$ replaces Kolmogorov complexity | [T] |
 | **T-214** | Hard-problem meta-theorem (positive irresolvability) | Lawvere fixed-point + T-55 | [T] |
 | **T-215** | Cross-layer identity convention for fractal towers | Choice of $\iota_\mathrm{min}$ / $\iota_\mathrm{max}$ criterion | [T]+[D] |
@@ -97,51 +97,40 @@ HTT 5.2.7 ("presentable coherence inheritance") applies once $\iota: \mathbf{Phy
 
 ---
 
-## 3. T-212: Rheonomy modality **Rh** explicit definition {#t-212}
+## 3. T-212: the U-projection is the $G_2$-twirl, not the rheonomy modality {#t-212}
 
-:::tip Theorem T-212 (Rheonomy modality Rh) [C at the differential cohesion of the UHM site (T-185) and a solid-cohesive extension]
-
-In UHM's differentially cohesive $\infty$-topos $\mathbf{Sh}_\infty(\mathcal C_7, J_B)$, the **rheonomy modality**
-$$\mathrm{Rh}: \mathbf{Sh}_\infty(\mathcal C_7) \to \mathbf{Sh}_\infty(\mathcal C_7)$$
-is the **right adjoint** to the "bosonic-grade forgetful" functor $\flat_\mathrm{bos}$ in a super-cohesive (solid) extension. (The citation read "Schreiber 2013, *Differential Cohomology in a Cohesive $\infty$-Topos* §3.10"; corrected 2026-09-25 — the rheonomy modality Rh does not occur in DCCT arXiv:1310.7930v1, whose §3.10 is "Structures in a differentially cohesive ∞-topos"; Rh belongs to Schreiber's later solid (super-)cohesion.) Explicitly:
-$$\mathrm{Rh}(F)(\Gamma) := \operatorname{Tr}(F(\Gamma)) \cdot \mathbf{1}_{\mathcal C_7},$$
-where $\operatorname{Tr}: F(\Gamma) \to \mathbb C$ is the $G_2$-invariant trace (aggregation over 7 dimensions) and $\mathbf{1}_{\mathcal C_7}$ is the unit sheaf. The seven canonical modalities map bijectively to the seven UHM dimensions:
-$$\mathrm{Id} \leftrightarrow O,\quad \Pi \leftrightarrow A,\quad \flat \leftrightarrow S,\quad \Im \leftrightarrow D,\quad \sharp \leftrightarrow L,\quad \& \leftrightarrow E,\quad \mathrm{Rh} \leftrightarrow U.$$
-
+:::tip Theorem T-212′ ($G_2$-twirl) [T]
+Let $G_2$ act on $\mathbb{C}^7$ by its seven-dimensional representation (the complexification of $\mathrm{Im}\,\mathbb{O}$), and let $dg$ be the Haar probability measure. Then for every $X \in M_7(\mathbb{C})$
+$$\mathcal{T}(X) := \int_{G_2} g\,X\,g^\dagger\,dg = \tfrac17\operatorname{Tr}(X)\,\mathbf{1}.$$
+$\mathcal{T}$ is a unital, trace-preserving, completely positive idempotent, it is the only trace-preserving linear map onto $\mathbb{C}\mathbf{1}$, and on states it sends every $\Gamma$ to $I/7$. With the unnormalised trace, $X \mapsto \operatorname{Tr}(X)\mathbf{1}$ satisfies $E \circ E = 7E$ and is not idempotent.
 :::
 
-**Proof (three-step).**
+**Proof.** By invariance of the Haar measure, $\mathcal{T}$ is idempotent, self-adjoint for the Hilbert–Schmidt product, and its image is the commutant $\{X : gXg^\dagger = X \ \forall g \in G_2\}$; so $\mathcal{T}$ is the orthogonal projection onto the commutant. The seven-dimensional representation of $G_2$ is irreducible of real type, so its complexification is irreducible and, by Schur's lemma (W. Fulton, J. Harris, *Representation Theory*, GTM 129, Springer 1991, Lemma 1.7), the commutant is $\mathbb{C}\mathbf{1}$ (numerically: the joint kernel of $X \mapsto [D_a, X]$ over the fourteen generators $D_a$ of $\mathfrak{g}_2$ has dimension 1, `test_g2_twirl_is_the_normalised_trace_projection`). The orthogonal projection onto $\mathbb{C}\mathbf{1}$ is $X \mapsto \frac{\langle \mathbf{1}, X\rangle}{\langle \mathbf{1}, \mathbf{1}\rangle}\mathbf{1} = \frac17 \operatorname{Tr}(X)\mathbf{1}$. A linear map onto $\mathbb{C}\mathbf{1}$ has the form $X \mapsto f(X)\mathbf{1}$, and preserving the trace forces $7f(X) = \operatorname{Tr}(X)$. Complete positivity: $\mathcal{T}$ is an average of unitary conjugations. $\blacksquare$
 
-**Step 1 (Adjunction $\flat_\mathrm{bos} \dashv \mathrm{Rh}$).** A super-cohesive (solid) extension of $\mathbf{Sh}_\infty(\mathcal C_7)$ — assumed, since even the differential cohesion of the UHM site is an assumption of T-185, and the rheonomy modality Rh does not occur in DCCT arXiv:1310.7930v1, whose §3.10 is "Structures in a differentially cohesive ∞-topos"; Rh belongs to Schreiber's later solid (super-)cohesion — has an additional adjoint pair $(\flat_\mathrm{bos}, \mathrm{Rh})$ where $\flat_\mathrm{bos}$ is the inclusion of the bosonic (grade-0) subcategory and $\mathrm{Rh}$ its right adjoint. In the finite-dimensional UHM setting, the bosonic subcategory corresponds to **$G_2$-invariant** scalars: $\flat_\mathrm{bos}(F) = F^{G_2}$ (the $G_2$-fixed subspace).
+The formula is not specific to $G_2$: every subgroup of $U(7)$ acting irreducibly on $\mathbb{C}^7$ (for instance $SO(7)$ or $U(7)$ itself) has the same twirl. The reading of $\mathcal{T}$ as the U-dimension ("Unity = aggregation over the seven dimensions") is an interpretation [I].
 
-:::note Framework-conditional citation (see [Rigour Stratification §T-212](/docs/reference/status-registry#стратификация-строгости))
-The super-cohesive extension of Schreiber DCCT §3.10 was developed for smooth super-$\infty$-stacks. Its instantiation on the **finite-dimensional** UHM site $\mathcal C_7 = \mathcal{D}(\mathbb{C}^7)$ reduces super-cohesion to the $G_2$-grading here; full axiomatic equivalence with Schreiber's infinite-dimensional setting is implicit in Sati–Schreiber 2018 §4.1 but not separately verified for the stratified Bures site.
+:::warning Retracted [✗] (2026-09-25): "T-212 — the rheonomy modality Rh, explicitly $\mathrm{Rh}(F)(\Gamma) = \operatorname{Tr}(F(\Gamma))\cdot\mathbf{1}$"
+An earlier version stated, first as [T] and then as [C at the differential cohesion of the UHM site (T-185) and a solid-cohesive extension], that in UHM's differentially cohesive ∞-topos $\mathbf{Sh}_\infty(\mathcal C_7, J_B)$ the rheonomy modality is the right adjoint of a "bosonic-grade forgetful" functor $\flat_{\mathrm{bos}}$, with the explicit formula $\mathrm{Rh}(F)(\Gamma) := \operatorname{Tr}(F(\Gamma))\cdot\mathbf{1}_{\mathcal C_7}$, and that the seven modalities $\mathrm{Id}, \Pi, \flat, \Im, \sharp, \&, \mathrm{Rh}$ map bijectively to O, A, S, D, L, E, U. The identification with Rh is false, and the condition it was placed under does not rescue it:
+1. **Rh preserves points.** In solid cohesion (the 2017 version of Schreiber's DCCT, site of its Definition 6.6.13; D. J. Myers, M. Riley, *Commuting Cohesions*, arXiv:2301.13780, §6.3) the rheonomy modality acts by $\mathrm{Rh}\,X(C^\infty(\mathbb{R}^n)\otimes W\otimes\Lambda\mathbb{R}^q) = X(C^\infty(\mathbb{R}^n)\otimes W)$. At the point ($n = 0$, $W = \mathbb{R}$, $q = 0$) this gives $\mathrm{Rh}\,X(\mathbb{R}^0) = X(\mathbb{R}^0)$: the unit $X \to \mathrm{Rh}\,X$ is a bijection on global points. The state space $\mathcal{D}(\mathbb{C}^7)$ is an object of the differentially cohesive $\mathfrak{T}_{\mathrm{UHM}}$ ([T-185 (ii′)](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime)); in any solid-cohesive extension of it, Rh keeps every state $\Gamma$ where it is, while the formula sends it to $I/7$.
+2. **The formula is not a modality.** A modality acts on objects of the topos; "$\operatorname{Tr}(F(\Gamma))$" treats the values of a sheaf as matrices, which is typed only for an operator-valued function. The old Step 1 identified the bosonic part with $G_2$-invariants, $\flat_{\mathrm{bos}}(F) = F^{G_2}$; in solid cohesion the bosonic part is the even part of a supergeometric object, and $G_2$ plays no role. The old Step 2 equated $\int_{G_2} F(g\cdot\Gamma)\,dg$ (an average of the argument) with $\operatorname{Tr}(F(\Gamma))\cdot\mathbf{1}$ (a trace of the value) "by the Weyl integration formula"; the two are different operations, and neither is Rh.
+3. **Rh is not in the list of differential cohesion.** A differentially cohesive ∞-topos carries $\mathrm{Id}$, $\Pi \dashv \flat \dashv \sharp$ and $\mathrm{Red} \dashv \Im \dashv \&$ — seven, pairwise distinct on $\mathfrak{T}_{\mathrm{UHM}}$ ([T-185 (ii′), item 4](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime)). Solid cohesion adds a third triple $\rightrightarrows \dashv \rightsquigarrow \dashv \mathrm{Rh}$, giving ten. The seven of the old table drop Red and borrow Rh.
+
+What the old theorem wanted — an explicit, canonical projection for the U-dimension — is Theorem T-212′ above, proved without any cohesion. The old table of modalities and dimensions is kept below as a reading [I], with Red in the place Rh occupied.
 :::
 
-**Step 2 (Explicit formula).** By direct computation: the right adjoint to $\flat_\mathrm{bos}$ in a finite Cartesian-closed $\infty$-category is given by the trace map followed by unit embedding:
-$$\mathrm{Rh}(F)(\Gamma) = \int_{g \in G_2} F(g \cdot \Gamma) \, dg = \operatorname{Tr}(F(\Gamma)) \cdot \mathbf{1},$$
-where the $G_2$-invariant integral equals the trace by the Weyl integration formula for compact groups. This matches the "aggregation over 7 dimensions" semantics of the **Unity (U)** dimension.
+**Modalities and dimensions — a reading [I].** With the corrected list of differential cohesion ([T-185 (ii′)](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime)):
 
-**Step 3 (Verification of modal axioms).**
-- **Idempotent** — only with the normalised trace: with $\operatorname{Tr}$ as printed, $\mathrm{Rh}(\mathrm{Rh}(F)) = \operatorname{Tr}(\operatorname{Tr}(F(\Gamma))\mathbf{1}) \mathbf{1} = 7\operatorname{Tr}(F(\Gamma))\mathbf{1} \neq \mathrm{Rh}(F)$; with $\tfrac17\operatorname{Tr}$ in the definition, $\mathrm{Rh}\circ\mathrm{Rh} = \mathrm{Rh}$. (The line read "$= \operatorname{Tr}(F(\Gamma))\mathbf{1}$ since $\operatorname{Tr}(\mathbf{1}) = 7$ (rescale to $1$)"; corrected 2026-09-25.)
-- **Comonad unit**: $\eta: \mathrm{Id} \to \mathrm{Rh}$ sends $F(\Gamma) \to \operatorname{Tr}(F(\Gamma))\mathbf{1}$. $\checkmark$
-- **Interacts correctly with other modalities**: $[\sharp, \mathrm{Rh}] = 0$ (both are "global" modalities, commute via standard adjunction calculus). $\checkmark$
+| Modality | Adjunction role | UHM dimension (reading) |
+|---|---|---|
+| $\mathrm{Id}$ | Identity | O (Foundation) |
+| $\Pi$ | Shape | A (Articulation) |
+| $\flat$ | Flat (discrete coreflection) | S (Structure) |
+| $\Im$ | Infinitesimal shape (de Rham) | D (Dynamics) |
+| $\sharp$ | Sharp (codiscrete reflection) | L (Logic) |
+| $\&$ | Infinitesimal flat | E (Interiority) |
+| $\mathrm{Red}$ | Reduction | U (Unity) — earlier Rh; the $G_2$-twirl of T-212′ is an operator on $M_7(\mathbb{C})$, not a modality |
 
-Hence $\mathrm{Rh}$ is a **genuine modality** in the precise sense of differential cohesion, not a notational placeholder. $\blacksquare$
-
-**Mapping to UHM dimensions.** The 7 modalities correspond to the 7 dimensions via their functional roles:
-
-| Modality | Adjunction role | UHM dimension | Operator |
-|---|---|---|---|
-| $\mathrm{Id}$ | Identity (unit) | O (Foundation) | Page–Wootters clock |
-| $\Pi$ | Shape ($\pi_0$ of shape theory) | A (Articulation) | Projector distinction |
-| $\flat$ | Flat (discrete reflection) | S (Structure) | Hermitian retention |
-| $\Im$ | Infinitesimal shape (de Rham) | D (Dynamics) | Unitary evolution |
-| $\sharp$ | Sharp (codiscrete) | L (Logic) | Subobject classifier |
-| $\&$ | Infinitesimal flat (rel. homotopy) | E (Interiority) | Gap spectral eigenvectors |
-| $\mathrm{Rh}$ | Rheonomy (bosonic right adjoint) | U (Unity) | $G_2$-invariant trace |
-
-**Dependencies**: T-185, stratified — the modalities of a differentially cohesive ∞-topos (i) [T], the differential cohesion of the UHM site (ii) [C], the list of seven and its match to the dimensions (iii) [I]; a solid-cohesive extension carrying Rh (assumed); Weyl integration formula. The former entries "T-185 [T]" and "Schreiber 2013 DCCT §3.10" are corrected: T-212 inherits (ii), and the rheonomy modality Rh does not occur in DCCT arXiv:1310.7930v1, whose §3.10 is "Structures in a differentially cohesive ∞-topos"; Rh belongs to Schreiber's later solid (super-)cohesion.
+**Dependencies**: T-212′ uses only the representation theory of $G_2$ (Schur's lemma, Haar measure). The retraction uses T-185 (ii′) [T] and the definition of Rh in solid cohesion.
 
 ---
 
@@ -443,7 +432,7 @@ Predicted thresholds:
 |---|---|---|---|---|
 | T-210 | Strict Φ-monotonicity | [T] weak (T-195) | **[T] strict** | Interior-stratum argument |
 | T-211 | PhysTheory higher coherences | [T] deferred to HTT | **[C at T-119]** (read "[T] verified" until 2026-09-25) | HTT 5.2.7 inheritance |
-| T-212 | Rh modality explicit | [T] unnamed (T-185) | **[C] defined** at the differential cohesion of the UHM site (read "[T] defined" until 2026-09-25) | Super-cohesion right adjoint |
+| T-212 | U-projection / "Rh modality explicit" | [T] unnamed (T-185) | **[T] $G_2$-twirl (T-212′)**; the identification with Rh [✗] (read "[T] defined", then "[C] defined", until 2026-09-25) | Schur + Haar |
 | T-213 | Yoneda without Kolmogorov | [T] uncomputable (T-193) | **[T] computable** | Bures description length |
 | T-214 | Hard-problem meta-theorem | [I] residual | **[T] positive irresolvability** | Lawvere fixed-point |
 | T-215 | Cross-layer identity | [C] (T-205 downgraded) | **[T]+[D]** | Conventional choice theorem |
@@ -451,14 +440,14 @@ Predicted thresholds:
 | §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
 | §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete, awaiting data** | EEG/fMRI/HRV 7-feature map |
 
-**Total (after extensions)**: of the ten theorems T-210–T-219, six stand as [T] (T-210, T-213, T-214, T-215 with a definitional part, T-217, T-218), three are [C] (T-211, T-212, T-216) and one is [H] (T-219); plus 2 computational-programme specifications. *Corrected 2026-09-25:* the line read "10 new [T] theorems … All mathematical and categorical gaps of UHM's foundational framework are closed at fundamental level"; the second sentence is retracted — the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the orientation (Alt) of T15 and the first-order condition and Poincaré duality of T-119, on which T-120, T-121, T-211 and clause (iii) of T-221 rest.
+**Total (after extensions)**: of the ten theorems T-210–T-219, seven stand as [T] (T-210, T-212 in the corrected form T-212′ — its former identification with Rh is retracted — T-213, T-214, T-215 with a definitional part, T-217, T-218), two are [C] (T-211, T-216) and one is [H] (T-219); plus 2 computational-programme specifications. *Corrected 2026-09-25:* the line read "10 new [T] theorems … All mathematical and categorical gaps of UHM's foundational framework are closed at fundamental level"; the second sentence is retracted — the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the first-order condition and Poincaré duality of T-119 (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120, T-121, T-211 and clause (iii) of T-221 rest.
 
 **Remaining genuinely open**:
 - Numerical computation of Λ (§8) — resource-bounded, no theoretical obstacle.
 - Empirical calibration of π<sub>bio</sub> (§9) — experimental programme, no theoretical obstacle.
 - The [P] bridge from E-sector structure to experienced content — **structurally inevitable** (T-214 [T]), not a lacuna.
 
-~~**No mathematical gaps remain** in UHM's foundational framework after these closures.~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the orientation (Alt) of T15 and the first-order condition and Poincaré duality of T-119, on which T-120, T-121, T-211 and clause (iii) of T-221 rest.
+~~**No mathematical gaps remain** in UHM's foundational framework after these closures.~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the first-order condition and Poincaré duality of T-119 (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120, T-121, T-211 and clause (iii) of T-221 rest.
 
 ---
 
@@ -1025,8 +1014,8 @@ Putnam–Lerchner triviality concerns L1→L3. UHM's consciousness predicate con
 **Proof of T-223 (seven lemmas).**
 
 **L1 (Categorical necessity of $\mathbb C^7$ and $G_2$) — context; clauses (a)–(e) do not use it.** Combine T-82 (BIBD(7,3,1) / Fano plane uniqueness via Fisher + Veblen–Wedderburn), T-42a ($G_2$-rigidity of the Fano dissipator), T-151 ($D_{\min} = 2$ from Φ-threshold), T-149 (viability of the embodied attractor). The Bridge T15 (row 41n) chains them:
-$$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{[T]} \mathrm{BIBD}(7,3,1) \xrightarrow{[T]} \mathrm{PG}(2,2) \xrightarrow{\text{(Alt)}} \mathbb O \xrightarrow{[T]} G_2.$$
-The step $\mathrm{PG}(2,2) \to \mathbb O$ needs an orientation of the seven lines, and only 16 of the 128 orientations give a normed algebra, so $\dim = 7$ and $G_2$ are forced at the assumption (Alt), [C at (Alt)]. *Corrected 2026-09-25:* the lemma read "no step admits parameter freedom; $\dim = 7$ and $G_2$ are forced with zero external input" and also listed T-120 ($M^4$ from the quantum CLT), which plays no role in the Putnam argument, and T-190 as "zero-axiom categorical closure" — withdrawn: T-190 is [C] (the Page–Wootters constraint is assumed and the route to A1 via T-186(a) is a hypothesis). ∎
+$$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{[T]} \mathrm{BIBD}(7,3,1) \xrightarrow{[T]} \mathrm{PG}(2,2) \xrightarrow{\text{canonical orientation, [T]}} \mathbb O \xrightarrow{[T]} G_2.$$
+The step $\mathrm{PG}(2,2) \to \mathbb O$ needs an orientation of the seven lines, and only 16 of the 128 orientations give a normed algebra; they form the only orientation class invariant under the collineations of PG(2,2), so the algebra canonically attached to the design is $\mathbb O$ ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), and $\dim = 7$ and $G_2$ are forced for it [T]. (Until 2026-09-25 this step was [C at (Alt)].) *Corrected 2026-09-25:* the lemma read "no step admits parameter freedom; $\dim = 7$ and $G_2$ are forced with zero external input" and also listed T-120 ($M^4$ from the quantum CLT), which plays no role in the Putnam argument, and T-190 as "zero-axiom categorical closure" — withdrawn: T-190 is [C] (the Page–Wootters constraint is assumed and the route to A1 via T-186(a) is a hypothesis). ∎
 
 **L2 (Covariance gate).** A UHM-admissible holonomic representation is a triple $(\mathbb C^7, \mathcal B, G_S)$ satisfying Definition G1 of the Uniqueness Theorem:
 $$\frac{d}{d\tau} G_S(s(\tau)) = \mathcal L_\Omega[G_S(s(\tau))]$$
@@ -1068,7 +1057,7 @@ for every physical trajectory $s(\tau)$ of $S$. This is the gate through which a
 Lerchner's horizontal arrow $p \to \{f_A, f_B\}$ is correct. UHM adds the vertical arrow $p \to [\Gamma_S]_{G_2}$. Consciousness lives at the vertical arrow's target; computation lives at the horizontal arrows' targets. Putnam's multiplicity is confined to the horizontal; UHM's consciousness predicate is alphabetization-invariant.
 
 **Why $G_2$-rigidity alone is not the complete answer.** T-123 handles L2→L3 residual freedom (the 14-dim $G_2$ action on $\Gamma$) but not L1→L2 forcing (where *a priori* one might still suspect mapmaker choice). The full foreclosure requires six components:
-1. **Intrinsic-forcing of L2** (T-82 + T-42a + T-151 + T-149 + the Bridge T15): ensures L2 is not a chosen abstraction — [C at (Alt)], the orientation input of T15. (The list included T-120 and T-190 until 2026-09-25; the first plays no role here, and the second is [C].)
+1. **Intrinsic-forcing of L2** (T-82 + T-42a + T-151 + T-149 + the Bridge T15): ensures L2 is not a chosen abstraction — [T] with the canonical orientation of T15 ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация); [C at (Alt)] until 2026-09-25). (The list included T-120 and T-190 until 2026-09-25; the first plays no role here, and the second is [C].)
 2. **$G_2$-gauge boundedness** (T-42a + T-82): residual L2 freedom is a 14-dim compact Lie group action.
 3. ~~**Observable $G_2$-invariance** (L4): all consciousness-relevant quantities insensitive to (2).~~ **Retracted 2026-09-25:** $\Phi$ and $\mathrm{Coh}_E$ are not $G_2$-invariant (D-0910). Replacement — **observable invariance** (L4): $P$ and $R$ are insensitive to (2); the frame-pinned $\Phi, \mathrm{Coh}_E$ are insensitive to the admissible alphabetizers of L5, which preserve the dynamical frame.
 4. **Dynamic-covariance gate** (L2 + L6): non-UHM-compatible alphabetizers are physically vacuous.
@@ -1125,6 +1114,8 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 - Between strata, Bures distance extends continuously (Uhlmann 1976) but the metric tensor degenerates.
 - The viability condition $P > P_\mathrm{crit} = 2/7$ restricts attention to strata $r \geq 2$ (T-151 [T] $D_{\min} = 2$); the conscious window is entirely interior to $\mathcal D_7$.
 
+**Update 2026-09-25.** The strata are submanifolds of dimension $14k - k^2 - 1$ whose shapes are the Grassmannians $\mathrm{Gr}_k(\mathbb{C}^7)$, and the whole stratified space is an object of the differentially cohesive $\mathrm{SynthDiff}\infty\mathrm{Grpd}$ ([T-185 (ii′)](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime)); no separate stratified site is needed.
+
 **Consequence**: all viable-state theorems operate on the **interior stratum** $\mathcal D_7$, where Bures is smooth and all metric-geometric arguments are valid. Boundary handling is not needed for consciousness-related claims; it is needed only for pathological-state or thermal-death analysis (conducted via the Ayala–Francis–Rozenblyum stratified machinery).
 
 ---
@@ -1135,7 +1126,7 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 |---|---|---|---|---|
 | T-210 | Strict Φ-monotonicity | [T] weak | **[T] strict** | Interior-stratum |
 | T-211 | PhysTheory coherences | [T] deferred | **[C at T-119]** (read "[T] verified" until 2026-09-25) | HTT 5.2.7 |
-| T-212 | Rh modality | [T] unnamed | **[C] defined** (read "[T] defined" until 2026-09-25) | Super-cohesion |
+| T-212 | U-projection | [T] unnamed | **[T] $G_2$-twirl**; Rh identification [✗] (read "[T] defined", then "[C] defined", until 2026-09-25) | Schur + Haar |
 | T-213 | Yoneda computable | [T] uncomputable | **[T] computable** | Bures description |
 | T-214 | Hard-problem meta-theorem | [I] residual | **[T] positive** | Lawvere |
 | T-215 | Cross-layer identity | [C] | **[T]+[D]** | Conventional choice |
@@ -1153,9 +1144,9 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 | §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
 | §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete** | EEG/fMRI/HRV |
 
-**Total after all closures**: of the fourteen theorems T-210–T-223, nine stand as [T] (T-215 with a definitional part), T-221 is stratified into [T], [C] and [I] parts, three are [C] (T-211, T-212, T-216) and one is [H] (T-219); plus 3 explicit clarifications and 2 computational-programme specifications (the line read "14 new [T] theorems" until 2026-09-25).
+**Total after all closures**: of the fourteen theorems T-210–T-223, ten stand as [T] (T-215 with a definitional part, T-212 in the corrected form T-212′), T-221 is stratified into [T], [C] and [I] parts, two are [C] (T-211, T-216) and one is [H] (T-219); plus 3 explicit clarifications and 2 computational-programme specifications (the line read "14 new [T] theorems" until 2026-09-25).
 
-~~**No open mathematical or categorical gaps remain in UHM's foundational framework.**~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the orientation (Alt) of T15 and the first-order condition and Poincaré duality of T-119, on which T-120, T-121, T-211 and clause (iii) of T-221 rest. T-221 answers the List/DeBrota *external* critique (its clause (iii) conditional on T-120); T-222 answers the QRT-completeness external critique; T-223 answers the Lerchner Melody-Paradox / Putnam-triviality external critique — the three principal recent external critiques (quantum-metaphysics no-go, resource-theoretic completeness, computational-functionalist triviality) each receive a structured answer; the earlier phrasing "closes … UHM is now closed against all three" is withdrawn with the sentence above.
+~~**No open mathematical or categorical gaps remain in UHM's foundational framework.**~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the first-order condition and Poincaré duality of T-119 (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120, T-121, T-211 and clause (iii) of T-221 rest. T-221 answers the List/DeBrota *external* critique (its clause (iii) conditional on T-120); T-222 answers the QRT-completeness external critique; T-223 answers the Lerchner Melody-Paradox / Putnam-triviality external critique — the three principal recent external critiques (quantum-metaphysics no-go, resource-theoretic completeness, computational-functionalist triviality) each receive a structured answer; the earlier phrasing "closes … UHM is now closed against all three" is withdrawn with the sentence above.
 
 **Strictly remaining** (all explicitly non-mathematical):
 - Numerical computation of Λ (§8) — bounded HPC task
