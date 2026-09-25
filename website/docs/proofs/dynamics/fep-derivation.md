@@ -554,7 +554,7 @@ $$
 
 — the standard Q-matrix of a continuous Markov chain.
 
-**Consequence.** Classical FEP describes only **passive** minimization of free energy (dissipation). The quantum FEP of UHM includes **active regeneration** — the system's ability to restore complex structures lost during decoherence.
+**Consequence.** In the classical limit the UHM functional retains only **passive** minimization (dissipation); UHM's quantum dynamics adds **active regeneration** — the system's ability to restore complex structures lost during decoherence. This contrasts two regimes of UHM's own functional; it says nothing against Friston's FEP, which includes action through active inference and has a quantum formulation (§6.3).
 
 ### 4.8 What is preserved: prediction error minimization {#48-сохраняется}
 
@@ -666,7 +666,7 @@ For practical purposes in UHM:
 | Aspect | FEP (Friston) | UHM |
 |--------|---------------|-----|
 | **Status** | Postulate (phenomenological) | Theorem (derived from Ω) |
-| **Domain** | Classical distributions | Quantum states |
+| **Domain** | Classical distributions in the original formulation; generic quantum systems in Fields, Friston, Glazebrook and Levin (2022) | Density matrices on $\mathbb{C}^7$ |
 | **Operator** | Implicit | Explicit CPTP channel |
 | **Justification** | Thermodynamics + Bayesian inference | Categorical adjunction |
 | **Circularity** | Not resolved | Resolved (hierarchy Ω → φ) |
@@ -698,9 +698,9 @@ Systems that do not minimize surprise "dissipate" — lose their identity. Survi
 
 In UHM, φ is **defined** by the structure of the ∞-topos; the variational principle is a **consequence**. In FEP, the variational principle is an axiom.
 
-**2. Quantum generalization:**
+**2. Quantum formulation — not a first:**
 
-UHM works with density matrices (quantum systems). FEP — only with classical distributions.
+UHM works with density matrices on $\mathbb{C}^7$. That the FEP is confined to classical distributions is **not** true: Fields, Friston, Glazebrook and Levin formulated it for generic quantum systems in the language of quantum information theory, with quantum systems acting as observers and agents (*Prog. Biophys. Mol. Biol.* 173, 36–59, 2022; arXiv:2112.15242). UHM's own contribution here is narrower: a variational functional for its self-model $\varphi$ on $\mathcal{D}(\mathbb{C}^7)$ and a comparison of its decohered limit with the classical variational free energy (§3–§4). The page does not compare this functional with the Fields et al. formulation, and neither is shown to contain the other.
 
 **3. Resolution of circularity:**
 
@@ -720,7 +720,7 @@ The proof of Theorem 3.1 confirms:
 
 1. The variational characterization is a **consequence** of the categorical definition
 2. The classical limit reproduces Friston's FEP
-3. UHM **generalizes** FEP to the quantum case
+3. UHM's functional is quantum, but a quantum FEP predates it (Fields et al. 2022, §6.3); no relation between the two is proved here
 
 ### 7.2 Clarification of statement status
 
@@ -734,7 +734,7 @@ The proof of Theorem 3.1 confirms:
 
 ### 7.3 New corollaries
 
-**Corollary 7.1 (Quantum FEP).**
+**Corollary 7.1 (UHM's quantum variational principle).**
 
 For quantum systems, the generalized principle holds:
 
@@ -780,6 +780,7 @@ $$
 2. **Spohn H.** "Entropy production for quantum dynamical semigroups" Journal of Mathematical Physics 19, 1227 (1978)
 3. **Lindblad G.** "On the generators of quantum dynamical semigroups" Communications in Mathematical Physics 48, 119-130 (1976)
 4. **Lurie J.** "Higher Topos Theory" Princeton University Press (2009)
+5. **Fields C., Friston K., Glazebrook J.F., Levin M.** "A free energy principle for generic quantum systems" Progress in Biophysics and Molecular Biology 173, 36-59 (2022); arXiv:2112.15242
 
 ---
 
