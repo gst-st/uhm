@@ -827,7 +827,7 @@ is jointly consistent with the predictions of quantum mechanics in UHM. **Loc** 
 
 **Part (ii)** is T-215 [T]+[D] restated.
 
-**Part (iii)** [C at T-120] combines T-117 through T-121 (emergent spatial and temporal manifold; T-118–T-121 are [C]) with T-173 ($G_2 \times \mathbb R_{>0}$ rigidity of the primitive): the spectral triple recovers $M^4$ uniquely up to this gauge group, so $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ is determined modulo equivalence.
+**Part (iii)** [C at T-120] combines T-117 through T-121 (emergent spatial and temporal manifold; T-118 is [T], T-119–T-121 are [C]) with T-173 ($G_2 \times \mathbb R_{>0}$ rigidity of the primitive): the spectral triple recovers $M^4$ uniquely up to this gauge group, so $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ is determined modulo equivalence.
 
 **Part (iv)**: $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal C_7, J_{\mathrm{Bures}})$ is an $\infty$-topos of sheaves on a small site (Lurie HTT 6.2.2.7; $\mathcal C_7$ is essentially small, Part (v)), hence satisfies the Giraud axioms, hence descent. (An earlier version of this proof derived it from T-211 [T]; T-211 is [C at T-119] and is not needed here.)
 

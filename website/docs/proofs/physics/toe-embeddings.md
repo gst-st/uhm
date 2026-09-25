@@ -744,12 +744,12 @@ which exactly reproduces the causal order $\preceq$ via the Gap couplings of the
 
 **Status:** [T]. The proof uses:
 - T-38b [T] ($\tau \in \mathbb{Z}_7$ per holon; the summed clock of $M$ holons has $6M+1$ readings — an earlier line read "emergent clocks $\mathbb{Z}_{7^M}$", retracted);
-- T-117 [T]; T-118, T-119, T-120 [C] (recovery of $M^4$ — only in the remark of Step 5);
+- T-117, T-118 [T]; T-119, T-120 [C] (recovery of $M^4$ — only in the remark of Step 5);
 - [Lurie HTT 6.1.3.8](https://www.math.ias.edu/~lurie/papers/HTT.pdf) (embedding of simplicial sets);
 - Standard theory of nerves of partially ordered sets (Mac Lane 1998).
 
 **Consistency check:**
-- Dependencies: T-38b [T] and Lemma C30 for the functor; T-117 [T] and T-118, T-119, T-120 [C] only for the continuum remark; no circularities. (An earlier line read "all [T]"; corrected 2026-09-25.)
+- Dependencies: T-38b [T] and Lemma C30 for the functor; T-117, T-118 [T] and T-119, T-120 [C] only for the continuum remark; no circularities. (An earlier line read "all [T]"; corrected 2026-09-25.)
 - The $\Gamma_{\text{total}}$ construction uses only existing holonic states (no new formalism required);
 - Scope: finite causal sets faithfully embedded into $M^4$. For causal sets with causal dimension > 4 (Brightwell-Gregory 1991) the theorem is not applicable — this is a physical restriction consistent with the axiom of emergent $M^4$ in UHM.
 
@@ -759,7 +759,7 @@ which exactly reproduces the causal order $\preceq$ via the Gap couplings of the
 |--------|--------|---------|
 | Discrete time structure | **[T]** | $6M+1$ readings of the summed clock (T-38b [T] per holon); the former "$\mathbb{Z}_{7^M}$" is retracted |
 | Causal order | **[T]** | Finite-range Gap coupling + emergent time |
-| Continuum limit → $M^4$ | **[C]** | T-118 + T-119 + T-120 [C] (aperiodic clock, open reconstruction axioms) |
+| Continuum limit → $M^4$ | **[C]** | T-118 [T] + T-119 + T-120 [C] (open reconstruction axioms) |
 | Full functor | **[T]** | C30 proven as Lemma (§3.2) |
 | Embedding into ∞-topos | **[T]** | Nerve — standard construction |
 

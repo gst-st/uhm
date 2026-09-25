@@ -50,6 +50,13 @@ h₂(ℂ_O), сигнатура (1,3), централизатор 𝔰𝔬(1,3) 
 `fano_roles_are_fixed_by_three_non_collinear_marks` (T-177: 168 → 24 → 4 → 1; O и пара κ₀ — 2) и
 `gamma_eu_vev_breaks_colour` (⟨γ_EU⟩ ≠ 0 оставляет от 𝔰𝔲(3)_C не более 𝔲(1)).
 
+
+Три — за восстановлением T-53b и T-118 (эмерджентное время §11.4, 25.09.2026):
+`depth_register_carries_the_dissipative_arrow` (относительно цепи показаний со связью
+Фейнмана–Китаева диссипативная полугруппа — условная динамика точно, на кольце стрела
+ломается ровно на одном шаге), `regenerative_solution_is_a_conditional_history` и
+`depth_register_time_algebra_is_the_line`.
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -1499,6 +1506,200 @@ def test_gamma_eu_vev_breaks_colour():
             basis.append(Z)
     rows = np.vstack([np.array([(Y @ X - X @ Y).flatten() for Y in basis]).T for X in su3])
     assert 49 - np.linalg.matrix_rank(rows, tol=1e-9) == 3                  # коммутант ℂ³: SU(2) с цветом не коммутирует
+
+
+
+def _superop(f, d=7):
+    """Матрица супероператора X ↦ f(X) в построчной векторизации."""
+    S = np.zeros((d * d, d * d), complex)
+    for k in range(d * d):
+        E = np.zeros(d * d, complex)
+        E[k] = 1
+        S[:, k] = f(E.reshape(d, d)).ravel()
+    return S
+
+
+def _choi(Phi, d=7):
+    C = np.zeros((d * d, d * d), complex)
+    for i in range(d):
+        for j in range(d):
+            E = np.zeros((d, d))
+            E[i, j] = 1
+            C[i * d:(i + 1) * d, j * d:(j + 1) * d] = (Phi @ E.ravel()).reshape(d, d)
+    return (C + C.conj().T) / 2
+
+
+def _stinespring_unitary(Phi, rng):
+    """Унитарный W на ℂ⁷ ⊗ ℂ⁴⁹ с Tr_E W(ρ ⊗ |0⟩⟨0|)W† = Φ(ρ) (Стайнспринг, дополнение базиса)."""
+    w, V = np.linalg.eigh(_choi(Phi))
+    iso = np.zeros((343, 7), complex)
+    for j, (lam, v) in enumerate(zip(w, V.T)):
+        if lam > 1e-14:
+            K = np.sqrt(lam) * v.reshape(7, 7).T           # оператор Крауса K[a, i]
+            for a in range(7):
+                iso[a * 49 + j, :] = K[a, :]
+    Q, _ = np.linalg.qr(np.hstack([iso, rng.normal(size=(343, 336)) + 1j * rng.normal(size=(343, 336))]))
+    W = np.zeros((343, 343), complex)
+    cols0 = [i * 49 for i in range(7)]
+    W[:, cols0] = iso
+    W[:, [c for c in range(343) if c not in cols0]] = Q[:, 7:]
+    return W
+
+
+def _unital_primitive_l0(rng):
+    """ℒ₀ = −i[H,·] + ⅔(diag − id): эрмитовы операторы Линдблада (Фано-диссипатор = ⅔·D_atom)."""
+    A = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    H = (A + A.conj().T) / 2
+    H /= np.linalg.norm(H, 2)
+    gam = 2 / 3
+    return H, gam, (lambda X: -1j * (H @ X - X @ H) + gam * (np.diag(np.diag(X)) - X))
+
+
+def test_depth_register_carries_the_dissipative_arrow():
+    """Регистр глубины — точный конечный носитель T-53b (эмерджентное время §11.4, теоремы 11.1, 11.2, 11.4).
+
+    Цепь из N+1 = 13 показаний, среда ℂ⁴⁹, связь Фейнмана–Китаева: 𝒲†Ĉ𝒲 = Λ ⊗ 1 (лапласиан пути),
+    щель 4 sin²(π/26); условные состояния совпадают с e^{nΔtℒ₀}ρ₀ до 10⁻¹⁴ при всех n; чистота строго
+    падает, D(·‖I/7) не растёт. На кольце стрела ломается ровно на одном шаге из N+1. Орбита одной
+    унитарной (часы-орбита на конечном пространстве) после падения D снова растёт. Ошибка между
+    показаниями ≤ Δt(2‖H‖ + 2γ).
+    """
+    rng = np.random.default_rng(7)
+    H, gam, L0 = _unital_primitive_l0(rng)
+    Lsup = _superop(L0)
+    ev = np.linalg.eigvals(Lsup)
+    assert np.sum(abs(ev) < 1e-10) == 1                              # примитивна: одна неподвижная точка
+    N, dt = 12, 0.3
+    Ws = [np.eye(343, dtype=complex)] + [_stinespring_unitary(expm(n * dt * Lsup), rng) for n in range(1, N + 1)]
+    assert max(np.linalg.norm(W.conj().T @ W - np.eye(343)) for W in Ws) < 1e-12
+    Us = [None] + [Ws[n] @ Ws[n - 1].conj().T for n in range(1, N + 1)]    # не зависят от состояния
+
+    def C_apply(psi):
+        out = np.zeros_like(psi)
+        for n in range(N + 1):
+            out[n] = ((n > 0) + (n < N)) * psi[n]
+            if n > 0:
+                out[n] -= Us[n] @ psi[n - 1]
+            if n < N:
+                out[n] -= Us[n + 1].conj().T @ psi[n + 1]
+        return out
+    e0 = np.zeros(49)
+    e0[0] = 1
+    psi0 = rng.normal(size=7) + 1j * rng.normal(size=7)
+    psi0 /= np.linalg.norm(psi0)
+    hist = np.array([W @ np.kron(psi0, e0) for W in Ws]) / np.sqrt(N + 1)
+    assert np.linalg.norm(C_apply(hist)) < 1e-13                      # история лежит в ker Ĉ
+    v = rng.normal(size=(N + 1, 343)) + 1j * rng.normal(size=(N + 1, 343))
+    lhs = np.array([Ws[n].conj().T @ x for n, x in enumerate(C_apply(np.array([Ws[n] @ v[n] for n in range(N + 1)])))])
+    Lam = np.diag([float((n > 0) + (n < N)) for n in range(N + 1)]) - np.eye(N + 1, k=1) - np.eye(N + 1, k=-1)
+    assert np.linalg.norm(lhs - Lam @ v) < 1e-11                      # 𝒲†Ĉ𝒲 = Λ ⊗ 1
+    lev = np.linalg.eigvalsh(Lam)
+    assert abs(lev[0]) < 1e-12 and lev[1] > 1e-3
+    assert abs(lev[1] - 4 * np.sin(np.pi / (2 * (N + 1))) ** 2) < 1e-12
+    rho0 = 0.5 * random_state(rng) + 0.5 * np.outer(psi0, psi0.conj())
+    Ps, Ds = [], []
+    for n in range(N + 1):
+        big = Ws[n] @ np.kron(rho0, np.outer(e0, e0)) @ Ws[n].conj().T
+        cond = np.einsum("aibi->ab", big.reshape(7, 49, 7, 49))
+        target = (expm(n * dt * Lsup) @ rho0.ravel()).reshape(7, 7)
+        assert np.linalg.norm(cond - target) < 1e-13                  # точно, при каждом показании
+        Ps.append(purity(cond))
+        Ds.append(np.log(7) - entropy(cond))
+    assert np.diff(Ps).max() < -1e-3 and np.diff(Ds).max() < 0        # стрела на всей истории
+    ring = Ps + [Ps[0]]
+    assert int((np.diff(ring) > 0).sum()) == 1                        # кольцо: ровно один шаг против стрелы
+    state = np.kron(rho0, np.outer(e0, e0))
+    Dorb = []
+    for n in range(400):                                              # часы-орбита: одна унитарная W₁
+        Dorb.append(np.log(7) - entropy(np.einsum("aibi->ab", state.reshape(7, 49, 7, 49))))
+        state = Ws[1] @ state @ Ws[1].conj().T
+    Dorb = np.array(Dorb)
+    assert (Dorb - np.minimum.accumulate(Dorb)).max() > 0.02
+    bound = dt * (2 * np.linalg.norm(H, 2) + 2 * gam)
+    worst = 0.0
+    for t in np.linspace(0, N * dt, 241):
+        n = int(np.floor(t / dt + 1e-12))
+        d = ((expm(t * Lsup) - expm(n * dt * Lsup)) @ rho0.ravel()).reshape(7, 7)
+        worst = max(worst, np.abs(np.linalg.eigvalsh((d + d.conj().T) / 2)).sum())
+    assert 0 < worst <= bound
+
+
+def test_regenerative_solution_is_a_conditional_history():
+    """Полный поток с ℛ = κ g_V (φ(Γ) − Γ) — условная история связи, подогнанной под решение (теорема 11.3).
+
+    Замороженный генератор ℒ_s = ℒ₀ + c(s)(ρ_*(s)Tr − id) на решении совпадает с полной правой частью;
+    его пропагаторы за Δt — CPTP (минимальное собственное значение Чоя ≥ 0, след сохраняется) и
+    переводят Γ((n−1)Δt) в Γ(nΔt); прямое интегрирование даёт то же решение.
+    """
+    rng = np.random.default_rng(7)
+    _, _, L0 = _unital_primitive_l0(rng)
+    Lsup = _superop(L0)
+    kap = 3.0
+
+    def full(G):
+        return L0(G) + kap * gate(purity(G)) * (_phi_coh_fixed(G) - G)
+
+    def frozen(G):
+        c, rs = kap * gate(purity(G)), _phi_coh_fixed(G)
+        return Lsup + _superop(lambda X: c * (rs * np.trace(X) - X))
+    psi = np.zeros(7, complex)
+    psi[0] = 1
+    G = 0.9 * np.outer(psi, psi.conj()) + 0.1 * np.eye(7) / 7
+    dt, N, sub = 0.25, 12, 40
+    h = dt / sub
+    Gs, Phis = [G.copy()], []
+    for _ in range(N):
+        Phi = np.eye(49, dtype=complex)
+        for _ in range(sub):
+            def f(G, Phi):
+                L = frozen(G)
+                return (L @ G.ravel()).reshape(7, 7), L @ Phi
+            k1 = f(G, Phi)
+            k2 = f(G + h / 2 * k1[0], Phi + h / 2 * k1[1])
+            k3 = f(G + h / 2 * k2[0], Phi + h / 2 * k2[1])
+            k4 = f(G + h * k3[0], Phi + h * k3[1])
+            G = G + h / 6 * (k1[0] + 2 * k2[0] + 2 * k3[0] + k4[0])
+            Phi = Phi + h / 6 * (k1[1] + 2 * k2[1] + 2 * k3[1] + k4[1])
+        Phis.append(Phi)
+        Gs.append(G.copy())
+    assert max(np.linalg.norm((frozen(g) @ g.ravel()).reshape(7, 7) - full(g)) for g in Gs) < 1e-13
+    assert max(np.linalg.norm((Phis[n] @ Gs[n].ravel()).reshape(7, 7) - Gs[n + 1]) for n in range(N)) < 1e-13
+    assert min(np.linalg.eigvalsh(_choi(P)).min() for P in Phis) > -1e-10          # CPTP
+    tr = np.eye(7).ravel()
+    assert max(np.linalg.norm(tr @ P - tr) for P in Phis) < 1e-12
+    assert purity(Gs[0]) > 2 / 7 > purity(Gs[-1])                    # затвор включён в начале решения
+    G2 = Gs[0].copy()
+    for _ in range(N * sub):
+        k1 = full(G2)
+        k2 = full(G2 + h / 2 * k1)
+        k3 = full(G2 + h / 2 * k2)
+        k4 = full(G2 + h * k3)
+        G2 = G2 + h / 6 * (k1 + 2 * k2 + 2 * k3 + k4)
+    assert np.linalg.norm(G2 - Gs[-1]) < 1e-12
+
+
+def test_depth_register_time_algebra_is_the_line():
+    """Алгебра времени регистра глубины в скейлинговом пределе — C₀(ℝ) (теорема 11.5, T-118).
+
+    Показания t_k = (k − m)Δt с Δt = 1/√N, m = N/2: норма выборки ‖s_N f‖ приближает ‖f‖∞
+    не хуже модуля непрерывности ω_f(Δt/2) ≤ Lip(f)·Δt/2, и ошибка падает с ростом N.
+    Позиционный регистр из M = 2 O-регистров: 49 упорядоченных показаний, младший разряд — n mod 7.
+    """
+    f = lambda x: np.exp(-(x - 0.37) ** 2) * np.cos(3 * x)
+    xs = np.linspace(-12, 12, 2_000_001)
+    sup = np.abs(f(xs)).max()
+    lip = np.abs(np.gradient(f(xs), xs)).max()
+    errs = []
+    for N in (100, 1_000, 10_000, 100_000):
+        dt = 1 / np.sqrt(N)
+        t = (np.arange(N + 1) - N // 2) * dt
+        err = sup - np.abs(f(t)).max()
+        assert -1e-9 <= err <= lip * dt / 2 + 1e-9
+        errs.append(err)
+    assert errs[-1] < errs[0]
+    digits = [(n % 7, n // 7) for n in range(49)]
+    assert len(set(digits)) == 49 and all(a + 7 * b == n for n, (a, b) in enumerate(digits))
+
 
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
