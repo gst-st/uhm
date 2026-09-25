@@ -57,6 +57,15 @@ h₂(ℂ_O), сигнатура (1,3), централизатор 𝔰𝔬(1,3) 
 ломается ровно на одном шаге), `regenerative_solution_is_a_conditional_history` и
 `depth_register_time_algebra_is_the_line`.
 
+
+Семь — за исправленной сборкой Стандартной модели (25.09.2026, T-350 … T-353):
+система Клиффорда iL_{e_k}, J, iJ на ℂ⊗𝕆 единственна и максимальна (𝔰𝔭𝔦𝔫(9));
+централизатор цвета в ней — 𝔲(2), нормализатор цвета — 12-мерная 𝔤_SM = 𝔠(R_{e_O});
+ядро — ровно ℤ₆; (ℂ⊗𝕆, L_{e_O}) = (3,2)_{1/6} ⊕ (1,2)_{−1/2} и не самосопряжено;
+семейная симметрия внутри одной копии невозможна, тройственность вращает 𝔲(1)²
+на 120°; десятый генератор возвращает 𝔲(1)_{B−L}; у ℤ₇ три нетривиальные
+вещественные гармоники.
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -1699,6 +1708,276 @@ def test_depth_register_time_algebra_is_the_line():
     assert errs[-1] < errs[0]
     digits = [(n % 7, n // 7) for n in range(49)]
     assert len(set(digits)) == 49 and all(a + 7 * b == n for n, (a, b) in enumerate(digits))
+
+
+# ---------------------------------------------------------------------------
+# Стандартная модель на комплексных октонионах (25.09.2026, T-350 … T-353).
+# Пространство 𝒮 = ℂ⊗𝕆 = ℂη₀ ⊕ ℂ⁷ записано вещественно как пары (x, y) ↔ x + iy.
+# ---------------------------------------------------------------------------
+
+def _lmul8(i):
+    return np.array([omul(unit(i), unit(j)) for j in range(8)]).T
+
+
+def _rmul8(i):
+    return np.array([omul(unit(j), unit(i)) for j in range(8)]).T
+
+
+def _null_commutant(ops, space, tol=1e-9):
+    rows = np.vstack([np.array([(S @ X - X @ S).flatten() for S in space]).T for X in ops])
+    _, s, Vt = np.linalg.svd(rows)
+    return Vt[np.sum(s > tol):]
+
+
+@functools.lru_cache(maxsize=None)
+def _sm_on_complex_octonions():
+    """Клиффордова система 𝒮, 𝔰𝔭𝔦𝔫(9), 𝔰𝔲(3)_C, её централизатор и полная 𝔤_SM."""
+    Z, I8 = np.zeros((8, 8)), np.eye(8)
+    imul = np.block([[Z, -I8], [I8, Z]])                     # умножение на i
+    conj = np.block([[I8, Z], [Z, -I8]])                     # комплексное сопряжение J
+    cl = lambda A: np.block([[A, Z], [Z, A]])                # ℂ-линейное продолжение
+    gam = [imul @ cl(_lmul8(k)) for k in range(1, 8)] + [conj, imul @ conj]
+    spin9 = [gam[a] @ gam[b] / 2 for a in range(9) for b in range(a + 1, 9)]
+    su3 = []
+    for X in _su3_of_e_o():
+        M = np.zeros((8, 8))
+        M[1:, 1:] = X
+        su3.append(cl(M))
+    cen = _null_commutant(su3, spin9)
+    C = [sum(v[i] * spin9[i] for i in range(36)) for v in cen]
+    zc = _null_commutant(C, C)
+    Y = sum(zc[0][i] * C[i] for i in range(len(C)))
+    Lu = cl(_lmul8(7))
+    q = -Lu @ Y
+    ev = np.linalg.eigvalsh((q + q.T) / 2)
+    Y = Y * (1 / 6) / ev.max()                               # нормировка: заряд кварков 1/6
+    return dict(imul=imul, conj=conj, cl=cl, gam=gam, spin9=spin9, su3=su3, C=C, Y=Y,
+                Lu=Lu, Ru=cl(_rmul8(7)), g=su3 + C)
+
+
+def _span_residual(X, ops):
+    F = np.array([o.flatten() for o in ops]).T
+    c = np.linalg.lstsq(F, X.flatten(), rcond=None)[0]
+    return np.linalg.norm(F @ c - X.flatten())
+
+
+def test_complex_octonion_clifford_system_is_maximal_spin9():
+    """T-350(а): iL_{e_1..7}, J, iJ на 𝒮 = ℂ⊗𝕆 ≅ ℝ¹⁶ — система Клиффорда Cl(9,0), и она единственна.
+
+    Операторы, антикоммутирующие со всеми семью iL_{e_k}, образуют ровно двумерное
+    пространство span{J, iJ}: продолжение семи до девяти не выбирается. Объём семи
+    равен i. По Гурвицу–Радону на ℝ¹⁶ нет десяти таких операторов (Cl(10,0) ≅ M₃₂(ℝ)),
+    так что 𝔰𝔭𝔦𝔫(9) (размерность 36) — наибольшая спинорная алгебра системы.
+    """
+    d = _sm_on_complex_octonions()
+    gam = d["gam"]
+    for a in range(9):
+        for b in range(9):
+            assert np.allclose(gam[a] @ gam[b] + gam[b] @ gam[a], 2 * (a == b) * np.eye(16))
+    basis = [np.outer(np.eye(16)[i], np.eye(16)[j]) for i in range(16) for j in range(16)]
+    rows = np.vstack([np.array([(S @ X + X @ S).flatten() for S in basis]).T for X in gam[:7]])
+    _, s, Vt = np.linalg.svd(rows)
+    anti = [v.reshape(16, 16) for v in Vt[np.sum(s > 1e-9):]]
+    assert len(anti) == 2
+    assert _span_residual(d["conj"], anti) < 1e-9 and _span_residual(d["imul"] @ d["conj"], anti) < 1e-9
+    w7 = functools.reduce(np.matmul, gam[:7])
+    assert np.allclose(w7, d["imul"])
+    assert np.linalg.matrix_rank(np.array([x.flatten() for x in d["spin9"]])) == 36
+    G2c = []
+    for X in G2:
+        M = np.zeros((8, 8))
+        M[1:, 1:] = X
+        G2c.append(d["cl"](M))
+    assert max(_span_residual(X, d["spin9"]) for X in G2c) < 1e-9                   # 𝔤₂ ⊂ 𝔰𝔭𝔦𝔫(7) ⊂ 𝔰𝔭𝔦𝔫(9)
+
+
+def test_standard_model_algebra_is_the_centraliser_of_colour_in_spin9():
+    """T-350(б): 𝔠_{𝔰𝔭𝔦𝔫(9)}(𝔰𝔲(3)_C) = 𝔲(2); 𝔫(𝔰𝔲(3)_C) = 𝔰𝔲(3)⊕𝔰𝔲(2)⊕𝔲(1) = 𝔠(R_{e_O}).
+
+    Централизатор цвета четырёхмерен, центр одномерен, коммутант трёхмерен; нормализатор
+    цвета двенадцатимерен и совпадает с централизатором правого умножения на e_O
+    (характеристика Краснова); централизатор всей 𝔤_SM в 𝔰𝔭𝔦𝔫(9) — одна 𝔲(1)_Y.
+    """
+    d = _sm_on_complex_octonions()
+    spin9, su3, C = d["spin9"], d["su3"], d["C"]
+    assert max(_span_residual(X, spin9) for X in su3) < 1e-9
+    assert len(C) == 4
+    assert _null_commutant(C, C).shape[0] == 1
+    assert np.linalg.matrix_rank(np.array([(a @ b - b @ a).flatten() for a in C for b in C]), tol=1e-9) == 3
+    F3 = np.array([x.flatten() for x in su3]).T
+
+    def out3(X):
+        return F3 @ np.linalg.lstsq(F3, X.flatten(), rcond=None)[0] - X.flatten()
+    M = np.vstack([np.array([out3(S @ X - X @ S) for S in spin9]).T for X in su3])
+    assert 36 - np.linalg.matrix_rank(M, tol=1e-9) == 12
+    cr = _null_commutant([d["Ru"]], spin9)
+    CR = [sum(v[i] * spin9[i] for i in range(36)) for v in cr]
+    assert len(CR) == 12 and max(_span_residual(X, d["g"]) for X in CR) < 1e-9
+    assert _null_commutant(d["g"], spin9).shape[0] == 1                            # нет Z′ внутри Spin(9)
+    assert _null_commutant([d["Lu"]], spin9).shape[0] == 18                        # 𝔰𝔭𝔦𝔫(6)⊕𝔰𝔭𝔦𝔫(3)
+
+
+def test_spin9_standard_model_group_has_exactly_z6_kernel():
+    """T-350(в): ядро SU(3)×SU(2)×U(1) → Spin(9) на 𝒮 — ровно ℤ₆ = {(ω^a, (−1)^b, ω^{−a}(−1)^b)}.
+
+    U(1) параметризована зарядом 6Y ∈ {1, −3} с периодом 2π; центр SU(3)_C — умножение
+    на e^{2πL_u/3} на шести осях ≠ O; центр SU(2) — −1. Шесть и только шесть троек
+    действуют тождественно: глобальная форма (SU(3)×SU(2)×U(1))/ℤ₆.
+    """
+    d = _sm_on_complex_octonions()
+    P = np.eye(8)
+    P[0, 0] = P[7, 7] = 0
+    w = expm((2 * np.pi / 3) * d["Lu"] @ d["cl"](P))
+    assert max(np.abs(w @ X - X @ w).max() for X in d["su3"]) < 1e-9
+    assert np.allclose(expm(2 * np.pi * 6 * d["Y"]), np.eye(16))
+    assert not np.allclose(expm(np.pi * 6 * d["Y"]), np.eye(16))
+    kernel = []
+    for n in range(12):
+        u1 = expm((np.pi * n / 6) * 6 * d["Y"])
+        for a, wa in enumerate((np.eye(16), w, w @ w)):
+            for s in (1, -1):
+                if np.allclose(s * wa @ u1, np.eye(16)):
+                    kernel.append((a, s, n))
+    assert len(kernel) == 6 and sorted({a for a, _, _ in kernel}) == [0, 1, 2] and {s for _, s, _ in kernel} == {1, -1}
+
+
+def test_complex_octonion_doublets_are_chiral():
+    """T-351: (𝒮, L_{e_O}) = (3,2)_{1/6} ⊕ (1,2)_{−1/2}; сопряжённое не изоморфно — тест Дистлера–Гарибальди.
+
+    Коммутант 𝔤_SM в End_ℝ(ℝ¹⁶) четырёхмерен (ℂ⊕ℂ: блок кварков и блок лептонов);
+    L_{e_O} = γ_O γ_J γ_{iJ} — объём трёх клиффордовых направлений, дополнительных к цвету,
+    коммутирует с 𝔰𝔭𝔦𝔫(6)⊕𝔰𝔭𝔦𝔫(3) и даёт один знак обоим блокам. Физическое i
+    с 𝔤_SM не коммутирует. Заряды Q = T₃ + Y: {2/3, −1/3, 0, −1}; лептонная прямая — ℂ_{e_O} = span{1, e_O}.
+    """
+    d = _sm_on_complex_octonions()
+    g, Lu, Y, gam = d["g"], d["Lu"], d["Y"], d["gam"]
+    assert np.allclose(gam[6] @ gam[7] @ gam[8], Lu) and np.allclose(Lu @ Lu, -np.eye(16))
+    assert max(np.abs(Lu @ X - X @ Lu).max() for X in g) < 1e-12
+    assert max(np.abs(d["imul"] @ X - X @ d["imul"]).max() for X in g) > 0.5
+    basis = [np.outer(np.eye(16)[i], np.eye(16)[j]) for i in range(16) for j in range(16)]
+    assert _null_commutant(g, basis).shape[0] == 4
+    q = -Lu @ Y
+    assert np.allclose(q, q.T) and np.allclose(q @ Lu, Lu @ q)
+    vals, mult = np.unique(np.round(np.linalg.eigvalsh(q), 9), return_counts=True)
+    spec = dict(zip(vals, mult // 2))                                               # комплексные кратности
+    assert spec == {round(-1 / 2, 9): 2, round(1 / 6, 9): 6}                        # (1,2)_{−1/2} ⊕ (3,2)_{1/6}
+    conj_spec = {round(-k, 9): m for k, m in spec.items()}
+    assert conj_spec != spec                                                        # (𝒮,L_u) ≇ его сопряжённому
+    T3 = -Lu @ (d["imul"] / 2)
+    assert _span_residual(d["imul"] / 2, d["C"]) < 1e-9
+    Q = T3 + q
+    qv, qm = np.unique(np.round(np.linalg.eigvals(Q).real, 9), return_counts=True)
+    assert dict(zip(qv, qm // 2)) == {round(-1.0, 9): 1, round(-1 / 3, 9): 3, 0.0: 1, round(2 / 3, 9): 3}
+    one, eO, eA = np.eye(16)[0], np.eye(16)[7], np.eye(16)[1]
+    assert abs(one @ q @ one + 0.5) < 1e-9 and abs(eO @ q @ eO + 0.5) < 1e-9 and abs(eA @ q @ eA - 1 / 6) < 1e-9
+    D = [a @ b - b @ a for a in d["C"] for b in d["C"]]
+    assert _span_residual(d["imul"] / 2, D) < 1e-9                                 # i/2 = T₃ ∈ 𝔰𝔲(2)_L
+    w, V = np.linalg.eigh(q)
+    Pl = V[:, np.isclose(w, -0.5)] @ V[:, np.isclose(w, -0.5)].T
+    Jmix = Lu @ (np.eye(16) - 2 * Pl)                                               # знак лептонного блока обращён
+    assert np.allclose(Jmix @ Jmix, -np.eye(16)) and max(np.abs(Jmix @ X - X @ Jmix).max() for X in g) < 1e-12
+    qm = -Jmix @ Y
+    mv, mm = np.unique(np.round(np.linalg.eigvalsh((qm + qm.T) / 2), 9), return_counts=True)
+    mix = dict(zip(mv, mm // 2))
+    assert mix == {round(1 / 6, 9): 6, 0.5: 2} and {round(-k, 9): m for k, m in mix.items()} != mix   # тоже кирально
+
+
+def test_family_symmetry_cannot_live_inside_one_copy():
+    """T-352(а,б): на 𝒮 с 𝔤_SM коммутируют лишь фазы U(1)_B×U(1)_L; тройственность вращает 𝔲(1)² на 120°.
+
+    (а) Коммутант 𝔤_SM на 𝒮 — ℂ⊕ℂ, поэтому никакая перестановка трёх объектов внутри 𝒮
+    (осей {1,2,4}, трёх линий через O, трёх пар (A,D),(S,U),(L,E)) не коммутирует с 𝔤_SM;
+    σ: e_k ↦ e_{2k} с ней не коммутирует. (б) Автоморфизм тройственности τ алгебры 𝔰𝔬(8)
+    (из локальной тройственности A(xy) = B(x)y + xC(y), τ(A) = κBκ) имеет порядок 3 и
+    неподвижную алгебру 𝔤₂ (размерность 14); он неподвижен на 𝔰𝔲(3)_C, а её централизатор
+    в 𝔰𝔬(8) — span{L_{e_O}, R_{e_O}} — поворачивает на 2π/3. Тройственность коммутирует с
+    цветом, но переводит 𝔤_SM = 𝔠(R_{e_O}) в другое вложение: семейной симметрией она не является.
+    """
+    d = _sm_on_complex_octonions()
+
+    def sig(k):
+        return (2 * k) % 7 or 7
+    S = np.zeros((8, 8))
+    S[0, 0] = 1
+    for k in range(1, 8):
+        S[sig(k), k] = 1
+    Sc = d["cl"](S)
+    assert max(np.abs(Sc @ X - X @ Sc).max() for X in d["g"]) > 0.1
+    so8 = []
+    for a in range(8):
+        for b in range(a + 1, 8):
+            M = np.zeros((8, 8))
+            M[a, b], M[b, a] = 1, -1
+            so8.append(M)
+    F8 = np.array([m.flatten() for m in so8]).T
+    E = np.eye(8)
+    colB = {(i, j): np.array([omul(so8[k] @ E[i], E[j]) for k in range(28)]).T for i in range(8) for j in range(8)}
+    colC = {(i, j): np.array([omul(E[i], so8[k] @ E[j]) for k in range(28)]).T for i in range(8) for j in range(8)}
+    Mx = np.vstack([np.hstack([colB[i, j], colC[i, j]]) for i in range(8) for j in range(8)])
+    K = np.diag([1.0] + [-1.0] * 7)
+    T = np.zeros((28, 28))
+    for n, A in enumerate(so8):
+        r = np.concatenate([A @ omul(E[i], E[j]) for i in range(8) for j in range(8)])
+        sol = np.linalg.lstsq(Mx, r, rcond=None)[0]
+        assert np.linalg.norm(Mx @ sol - r) < 1e-9
+        B = sum(sol[k] * so8[k] for k in range(28))
+        T[:, n] = np.linalg.lstsq(F8, (K @ B @ K).flatten(), rcond=None)[0]
+    assert np.allclose(np.linalg.matrix_power(T, 3), np.eye(28))
+    assert 28 - np.linalg.matrix_rank(T - np.eye(28), tol=1e-9) == 14
+    su3o = []
+    for X in _su3_of_e_o():
+        M = np.zeros((8, 8))
+        M[1:, 1:] = X
+        su3o.append(np.linalg.lstsq(F8, M.flatten(), rcond=None)[0])
+    assert all(np.allclose(T @ x, x) for x in su3o)
+    Cb = np.array([np.linalg.lstsq(F8, _lmul8(7).flatten(), rcond=None)[0],
+                   np.linalg.lstsq(F8, _rmul8(7).flatten(), rcond=None)[0]]).T
+    coef = np.linalg.lstsq(Cb, T @ Cb, rcond=None)[0]
+    assert np.allclose(Cb @ coef, T @ Cb)                                           # τ сохраняет span{L_u, R_u}
+    ev = np.linalg.eigvals(coef)
+    assert np.allclose(sorted(np.angle(ev)), [-2 * np.pi / 3, 2 * np.pi / 3])
+
+
+def test_left_right_extension_brings_b_minus_l():
+    """T-353: добавив к системе десятый генератор (ℝ³² = 𝒮⊗ℝ²), получаем 𝔠_{𝔰𝔭𝔦𝔫(10)}(𝔰𝔲(3)_C) размерности 7.
+
+    Это 𝔰𝔲(2)_L⊕𝔰𝔲(2)_R⊕𝔲(1)_{B−L}: ранг вместе с цветом 5. Синглеты SU(2)_L
+    (правые поля) появляются лишь в расширении, и с ними — лишняя 𝔲(1).
+    """
+    d = _sm_on_complex_octonions()
+    s1, s3 = np.array([[0, 1], [1, 0]]), np.diag([1, -1])
+    g10 = [np.kron(g, s3) for g in d["gam"]] + [np.kron(np.eye(16), s1)]
+    for a in range(10):
+        for b in range(10):
+            assert np.allclose(g10[a] @ g10[b] + g10[b] @ g10[a], 2 * (a == b) * np.eye(32))
+    spin10 = [g10[a] @ g10[b] / 2 for a in range(10) for b in range(a + 1, 10)]
+    c10 = _null_commutant([np.kron(X, np.eye(2)) for X in d["su3"]], spin10)
+    assert c10.shape[0] == 7
+    C10 = [sum(v[i] * spin10[i] for i in range(45)) for v in c10]
+    assert _null_commutant(C10, C10).shape[0] == 1
+    assert np.linalg.matrix_rank(np.array([(a @ b - b @ a).flatten() for a in C10 for b in C10]), tol=1e-9) == 6
+
+
+def test_clock_has_three_nontrivial_real_harmonics():
+    """T-352(в): у ℤ₇ три нетривиальных вещественных неприводимых представления; Aut(ℤ₇)/{±1} ≅ ℤ₃ переставляет их просто транзитивно.
+
+    Регулярное вещественное представление ℤ₇ = 1 ⊕ три плоскости вращения на 2πm/7,
+    m = 1, 2, 3. Умножение m ↦ 2m переводит классы {±1} → {±2} → {±4 = ∓3} → {±1}.
+    Оператор на регистре часов ⊗ 1 коммутирует с любой 1 ⊗ X на 𝒮.
+    """
+    S = np.roll(np.eye(7), 1, axis=0)
+    ang = np.round(np.abs(np.angle(np.linalg.eigvals(S))) * 7 / (2 * np.pi)).astype(int)
+    vals, mult = np.unique(ang, return_counts=True)
+    assert dict(zip(vals, mult)) == {0: 1, 1: 2, 2: 2, 3: 2}
+    cls = lambda m: min(m % 7, (-m) % 7)
+    orbit = [cls(pow(2, t, 7)) for t in range(3)]
+    assert sorted(orbit) == [1, 2, 3] and cls(pow(2, 3, 7)) == 1
+    d = _sm_on_complex_octonions()
+    P = np.zeros((7, 7))
+    for t in range(7):
+        P[(2 * t) % 7, t] = 1
+    X = d["g"][0]
+    assert np.allclose(np.kron(P, np.eye(16)) @ np.kron(np.eye(7), X), np.kron(np.eye(7), X) @ np.kron(P, np.eye(16)))
 
 
 def main():

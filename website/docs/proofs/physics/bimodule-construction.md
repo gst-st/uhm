@@ -16,7 +16,7 @@ This document solves four interrelated problems that remained open [P] in UHM th
 
 All four problems have a **common root**: the theory has so far worked at the level of **algebras**, without reaching the level of **representations and bimodules**. Connes' bimodule construction is the missing link.
 
-*Correction 2026-09-25:* problem 1 is **not** solved here — T-178 below is retracted as a derivation; the Standard Model representations come from Connes' Hilbert space $H_F$, which UHM imports.
+*Correction 2026-09-25:* problem 1 is **not** solved here — T-178 below is retracted as a derivation; the Standard Model representations come from Connes' Hilbert space $H_F$, which UHM imports. Half of problem 1 is solved elsewhere, without the import. Under the assumption (Cl), the left-handed doublets $(3,2)_{1/6}\oplus(1,2)_{-1/2}$ arise on $\mathbb{C}\otimes\mathbb{O}$ — UHM's Hilbert space plus the parallel spinor — as the spinor of the forced octonionic Clifford system, with the group $(\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1))/\mathbb{Z}_6$ ([Standard Model, §2.5](/docs/physics/gauge-symmetry/standard-model#sm-из-клиффорда), T-350, T-351). The right-handed singlets do not fit there (T-353).
 :::
 
 ---
