@@ -2927,6 +2927,198 @@ def test_fermions_are_vectors_of_s_not_operators_and_eta0_is_forced():
     assert 14 % 16 != 0 and 98 % 16 != 0 and 16 % 16 == 0
 
 
+def test_canonical_aggregation_is_unique_and_the_octonion_product_is_dead():
+    """Каноническая агрегация (теорема 9.5 (a)) и отвергнутый октонионный путь (теорема 9.6 (b)).
+
+    (а) Линейное отображение End(ℂ^d ⊗ ℂ^d) → End(ℂ^d), инвариантное к перестановке факторов и
+    согласованное на всех σ ⊗ σ, единственно — среднее маргиналей (d = 3: ранг системы 729 из 729,
+    отклонение от среднего маргиналей ~1e-14); без симметрии остаётся 324 свободных параметра.
+    (б) Октонионный канал ℂ⁷⊗ℂ⁷ → ℂ⁷ по структурным константам Фано: VV† = 6I, образ W†W лежит в
+    антисимметричном подпространстве; ‖a × b‖² ≤ 2 для комплексных единичных a, b (максимум 2
+    достигается); выход несвязанной пары: P ≤ 1/7 + (6/7)w², w ≤ 1/3 для сепарабельных входов, т. е.
+    P ≤ 5/21 < 2/7, а для одинаковых жизнеспособных частей P ≤ 0,2522.
+    """
+    d = 3
+    rng = np.random.default_rng(0)
+    S = np.zeros((d * d, d * d))
+    for i in range(d):
+        for j in range(d):
+            S[i * d + j, j * d + i] = 1
+    N = d ** 6
+
+    def rows(X):
+        A = np.zeros((d * d, N), complex)
+        for ab in range(d * d):
+            A[ab, ab * d ** 4:(ab + 1) * d ** 4] = X.reshape(-1)
+        return A
+    As, ys = [], []
+    for _ in range(60):
+        s = rng.normal(size=(d, d)) + 1j * rng.normal(size=(d, d))
+        s = s + s.conj().T
+        As.append(rows(np.kron(s, s)))
+        ys.append((s * np.trace(s)).reshape(-1))
+    cons = np.vstack(As)
+    for _ in range(90):
+        X = rng.normal(size=(d * d, d * d)) + 1j * rng.normal(size=(d * d, d * d))
+        As.append(rows(X - S @ X @ S))
+        ys.append(np.zeros(d * d))
+    A, y = np.vstack(As), np.concatenate(ys)
+    sv = np.linalg.svd(A, compute_uv=False)
+    assert np.sum(sv > 1e-8 * sv[0]) == N                                            # единственность
+    sol = np.linalg.lstsq(A, y, rcond=None)[0]
+    X = rng.normal(size=(d * d, d * d)) + 1j * rng.normal(size=(d * d, d * d))
+    X4 = X.reshape(d, d, d, d)
+    mean = (np.einsum("iaja->ij", X4) + np.einsum("aiaj->ij", X4)) / 2
+    out = np.array([sol[r * d ** 4:(r + 1) * d ** 4] @ X.reshape(-1) for r in range(d * d)]).reshape(d, d)
+    assert np.linalg.norm(out - mean) < 1e-10                                        # = среднее маргиналей
+    sv = np.linalg.svd(cons, compute_uv=False)
+    assert N - np.sum(sv > 1e-8 * sv[0]) == 324                                      # без симметрии — не единственно
+    V = np.array([[PHI3[i, j, k] for i in range(7) for j in range(7)] for k in range(7)])
+    assert np.allclose(V @ V.T, 6 * np.eye(7))
+    W = V / np.sqrt(6)
+    Pi = W.T @ W
+    Sw = np.zeros((49, 49))
+    for i in range(7):
+        for j in range(7):
+            Sw[i * 7 + j, j * 7 + i] = 1
+    assert np.allclose(Sw @ Pi, -Pi) and np.allclose(Pi @ Pi, Pi)                    # внутри антисимметричного
+    for g in G2:
+        U = expm(0.7 * g)
+        assert np.allclose(W @ np.kron(U, U), U @ W)                                 # G₂-ковариантен
+    agg = lambda X: W @ X @ W.T + np.real(np.trace((np.eye(49) - Pi) @ X)) * np.eye(7) / 7
+    r = np.random.default_rng(1)
+    c2 = 0.0
+    for _ in range(400):
+        a, b = random_pure(r), random_pure(r)
+        c2 = max(c2, 6 * np.real(np.trace(Pi @ np.kron(a, b))))
+        assert purity(agg(np.kron(a, b))) <= 5 / 21 + 1e-12
+    assert c2 <= 2 + 1e-12
+    e = np.eye(7)
+    x, z = (e[0] + 1j * e[1]) / np.sqrt(2), (e[2] - 1j * e[5]) / np.sqrt(2)
+    assert abs(np.linalg.norm(V @ np.kron(x, z)) ** 2 - 2) < 1e-12                   # граница 2 достигается
+    for _ in range(300):
+        lam = r.uniform(0.3, 1)
+        s = lam * random_pure(r) + (1 - lam) * np.eye(7) / 7
+        if purity(s) > 2 / 7:
+            p = purity(agg(np.kron(s, s)))
+            assert p <= 1 / 7 + (6 / 7) * ((1 - purity(s)) / 2) ** 2 + 1e-12 and p < 0.2522
+
+
+def test_viability_passes_to_the_aggregate_only_at_weak_coupling():
+    """Теоремы 9.5 (b)–(f) и 9.6 (a): жизнеспособность и инварианты переходят к агрегату при слабой связи.
+
+    Воплощённый голоном генератора КК-7 (μ = 1, якорь веса 0,8): P(ρ*) = 0,3115, P(ρ_lin) = 0,3223 —
+    стационарное состояние линейной части без регенерации, ε_V = μ(P_lin − 2/7)/(2√P_lin) = 0,03225.
+    Связь в базисе Белла (максимально запутанные собственные векторы), размах s = 1,8246, порог g* = 0,01768.
+    (b) Тождество маргинали L[X₁] = i g Tr₂[H, X] на стационарном состоянии — до 1e-15.
+    (d) При g ≤ g* маргинали жизнеспособны; при g = 1 ещё живы (0,297); при g = 10 — мертвы (→ 1/7).
+    (e) Доминирование хребта (κ = 0,1, μ = 3,5, L_R ≤ 29κ): ‖X_i(t) − ρ*‖₁ ≤ e^{−(μ−L_R)t}‖X_i(0) − ρ*‖₁
+    + g s/(μ − L_R) из максимально запутанного старта.
+    (f) Бассейн: из запутанного и произведённого стартов маргинали приходят на расстояние 0,0643·g.
+    """
+    rng = np.random.default_rng(12)
+
+    def herm(r):
+        A = r.normal(size=(7, 7)) + 1j * r.normal(size=(7, 7))
+        return (A + A.conj().T) / 2
+    tn = lambda X: float(np.abs(np.linalg.eigvalsh((X + X.conj().T) / 2)).sum())
+    I7 = np.eye(7) / 7
+    v = rng.normal(size=7) + 1j * rng.normal(size=7)
+    v /= np.linalg.norm(v)
+    H = 0.3 * herm(rng)
+    sig = 0.8 * np.outer(v, v.conj()) + 0.2 * I7
+    a = _holon_pair_generator(H, sig, mu=1.0)
+    f = lambda G: np.einsum("iaja->ij", a(np.kron(G, I7).reshape(7, 7, 7, 7), G))
+    rho = _rk4(I7, f, 40.0, 800)
+    assert np.linalg.norm(f(rho)) < 1e-12 and abs(purity(rho) - 0.31146) < 1e-4
+    flin = lambda G: -1j * (H @ G - G @ H) + (2 / 3) * (np.diag(np.diag(G)) - G) + (sig * np.trace(G) - G)
+    L0 = np.array([flin(E.reshape(7, 7)).reshape(-1) for E in np.eye(49).astype(complex)]).T
+    rl = np.linalg.lstsq(np.vstack([L0, np.eye(7).reshape(1, -1)]), np.eye(50)[-1], rcond=None)[0].reshape(7, 7)
+    Pl = purity(rl)
+    epsV = (Pl - 2 / 7) / (2 * np.sqrt(Pl))
+    assert abs(Pl - 0.32234) < 1e-4 and abs(epsV - 0.03225) < 1e-4
+    assert tn(rl - sig) <= tn(flin(sig)) + 1e-12                                     # ‖ρ_lin − σ‖₁ ≤ ‖L⁰σ‖₁/μ
+    for _ in range(200):                                                              # (c): невязка ниже 2/7
+        G = random_state(rng)
+        if purity(G) <= 2 / 7:
+            assert tn(f(G)) >= epsV - 1e-12
+    marg = lambda X: (np.einsum("ijkj->ik", X.reshape(7, 7, 7, 7)), np.einsum("ijil->jl", X.reshape(7, 7, 7, 7)))
+
+    def rhs(X, g, Hint):
+        g1, g2 = marg(X)
+        X4 = X.reshape(7, 7, 7, 7)
+        out = a(X4, g1) + a(X4.transpose(1, 0, 3, 2), g2).transpose(1, 0, 3, 2)
+        return out.reshape(49, 49) - 1j * g * (Hint @ X - X @ Hint)
+    w = np.exp(2j * np.pi / 7)
+    B = np.zeros((49, 49), complex)
+    for m in range(7):
+        for n in range(7):
+            for j in range(7):
+                B[j * 7 + (j + m) % 7, m * 7 + n] = w ** (j * n) / np.sqrt(7)
+    assert np.allclose(B.conj().T @ B, np.eye(49))
+    for col in B.T:
+        assert np.allclose(np.einsum("ij,kj->ik", col.reshape(7, 7), col.reshape(7, 7).conj()), I7)
+    Hb = B @ np.diag(np.random.default_rng(2).uniform(-1, 1, 49)) @ B.conj().T
+    s = np.ptp(np.linalg.eigvalsh(Hb))
+    gstar = epsV / s
+    assert abs(s - 1.8246) < 1e-3 and abs(gstar - 0.01768) < 1e-4
+    sigma = np.kron(rho, rho).astype(complex)
+    P1 = {}
+    for g in (gstar, 1.0, 10.0):
+        n = int(max(800, 60 * g * s))
+        X = _rk4(sigma, lambda X: rhs(X, g, Hb), 60.0, n)
+        assert np.linalg.norm(rhs(X, g, Hb)) < 1e-9
+        g1, g2 = marg(X)
+        comm = Hb @ X - X @ Hb
+        assert np.linalg.norm(f(g1) - 1j * g * np.einsum("ijkj->ik", comm.reshape(7, 7, 7, 7))) < 1e-12   # (b)
+        assert tn(f(g1)) <= g * s + 1e-12
+        P1[g] = (purity(g1), purity(g2), purity((g1 + g2) / 2))
+    assert min(P1[gstar]) > 2 / 7 and min(P1[1.0]) > 2 / 7                           # (d)
+    assert max(P1[10.0]) < 0.16                                                        # 9.6 (a): → 1/7
+    Hg = np.kron(herm(np.random.default_rng(4)), herm(np.random.default_rng(5)))
+    Hg /= np.linalg.norm(Hg, 2)
+    for start in (random_pure(np.random.default_rng(80), 49),
+                  np.kron(random_pure(np.random.default_rng(81)), random_pure(np.random.default_rng(82)))):
+        ratio = []
+        for g in (0.01, 0.02):
+            X = _rk4(start, lambda X: rhs(X, g, Hg), 40.0, 800)
+            ratio.append(max(tn(m - rho) for m in marg(X)) / g)
+        assert abs(ratio[0] - 0.0643) < 1e-3 and abs(ratio[1] / ratio[0] - 1) < 3e-3  # (f) O(g) из бассейна
+    # (e) доминирование хребта: фиксированная цель регенерации, κ = 0,1, μ = 3,5, L_R ≤ 29κ
+    r = np.random.default_rng(7)
+    H2 = 0.2 * herm(r)
+    kap, mu, LR = 0.1, 3.5, 2.9
+    tgt = np.diag(np.eye(7)[0]).astype(complex)
+    sg = np.diag([0.66, 0.1, 0.06, 0.06, 0.04, 0.04, 0.04]).astype(complex)
+
+    def frozen(G):
+        gv = gate(purity(G))
+        return lambda Y: (-1j * (H2 @ Y - Y @ H2) + (2 / 3) * (np.diag(np.diag(Y)) - Y)
+                          + kap * gv * (tgt * np.trace(Y) - Y) + mu * (sg * np.trace(Y) - Y))
+    f2 = lambda G: frozen(G)(G)
+    rho2 = _rk4(I7, f2, 20.0, 1000)
+    assert np.linalg.norm(f2(rho2)) < 1e-12
+
+    def on1(M, X4):
+        return np.einsum("ijkl,kalb->iajb", M, X4)
+
+    def sup(Mf):
+        return np.array([Mf(E.reshape(7, 7)).reshape(-1) for E in np.eye(49).astype(complex)]).T.reshape(7, 7, 7, 7)
+
+    def rhs2(X, g):
+        g1, g2 = marg(X)
+        X4 = X.reshape(7, 7, 7, 7)
+        out = on1(sup(frozen(g1)), X4) + on1(sup(frozen(g2)), X4.transpose(1, 0, 3, 2)).transpose(1, 0, 3, 2)
+        return out.reshape(49, 49) - 1j * g * (Hb @ X - X @ Hb)
+    X = random_pure(np.random.default_rng(50), 49)
+    d0 = [tn(m - rho2) for m in marg(X)]
+    g = 0.2
+    for T in range(1, 7):
+        X = _rk4(X, lambda X: rhs2(X, g), 1.0, 50)
+        for dd, m in zip(d0, marg(X)):
+            assert tn(m - rho2) <= np.exp(-(mu - LR) * T) * dd + g * s / (mu - LR)   # (e)
+
+
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
     bad = 0

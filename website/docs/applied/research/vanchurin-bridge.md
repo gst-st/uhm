@@ -111,7 +111,7 @@ The dictionary is exact on every line that matters:
 | covariant descent $\dot q=g^{-1}\nabla\mathcal F$ | regeneration $\mathcal R$ toward $\rho_*$ | T-39f–h |
 | emergent time = block index | $\tau\in\mathbb Z_7$ (Page–Wootters) | T-38b, T-87 |
 | maximum-entropy identity $g^{-1}=c$ (his 4.7) | **derived here as a dynamical theorem** (§4) | this page |
-| multi-level structure | fractal holon (a holon of holons); coherence contraction $c_F=1/3=1/\lvert\mathrm{QR}(7)\rvert$ per step of the Fano channel | CC-5 [C at (HOL)] for the holon of holons; $c_F$ is the [Fano channel's contraction](/docs/proofs/gap/fano-channel#state-independence-alpha) [T]. (Earlier credited to T-72 — scale invariance, [C at (AGG)], which states neither; retracted) |
+| multi-level structure | fractal holon (a holon of holons); coherence contraction $c_F=1/3=1/\lvert\mathrm{QR}(7)\rvert$ per step of the Fano channel | CC-5 [T at weak coupling] for the holon of holons (Theorem 9.5: the canonical aggregate of weakly coupled viable holons is viable); $c_F$ is the [Fano channel's contraction](/docs/proofs/gap/fano-channel#state-independence-alpha) [T]. (Earlier credited to T-72 — scale invariance, which states neither; retracted) |
 | cellular network | Fano plane $\mathrm{PG}(2,2)$, *unique* optimal BIBD$(7,3,1)$ | T-41i |
 
 ---
@@ -783,13 +783,17 @@ The thirty-line simulation is
 :::note Level-matching caveat
 The derivation is at the level of a holon's internal state dynamics.
 Applying it to population genetics assumes that an evolving population
-is itself a holon. The corpus does not derive that: fractal closure
+is itself a holon. The corpus derives only part of that: fractal closure
 ([CC-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание))
-takes it as its assumption (HOL) and then gives the composite a
-non-trivial attractor, and scale invariance
-([T-72](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность),
-[C at (AGG)]) carries invariants across scales only for weakly coupled,
-consistently aggregated parts. (An earlier edition said the identification
+and scale invariance
+([T-72](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность))
+are [T at weak coupling] — the canonical aggregate of weakly coupled viable
+holons is viable, and its invariants lie within $O(g)$ of a member's
+([Theorem 9.5](/docs/applied/coherence-cybernetics/theorems#теорема-95-каноническая-агрегация)) —
+but that aggregate follows the members' own generator only up to a forcing,
+depends on nothing but their marginals, and can die at strong coupling
+([Theorem 9.6](/docs/applied/coherence-cybernetics/theorems#теорема-96-сильная-связь));
+that a population is a holon in the full sense stays the assumption (HOL). (An earlier edition said the identification
 "is exactly what UHM's scale-invariance theorem (T-72, with contraction
 $c_F=1/3$) asserts"; retracted — T-72 asserts no closure, and $c_F = 1/3$
 is the Fano channel's coherence contraction, not a property of
