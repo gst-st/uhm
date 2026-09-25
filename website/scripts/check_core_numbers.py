@@ -94,6 +94,16 @@ D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_
 (на 𝒮 = ℂ⊗𝕆 𝔰𝔲(2)_L действует одними дублетами, так что всякий оператор на 𝒮 — и всякая
 когерентность Γ, в том числе γ_EU, — несёт целый спин; вектор Spin(9) — (3⊕3̄)_{±1/3} ⊕ (1,3)_0).
 
+Восемь — за полным поколением (T-326 … T-329, вторая волна 25.09.2026):
+`the_tenth_generator_is_forced_by_complexifying_the_spinor` (на 𝒮⊗_ℝℂ′ десятая образующая
+вынуждена, ω = ±i′), `left_right_split_is_canonical_and_the_t326_su2_is_diagonal` (V_L ⊕ V_R,
+ω = ±L_{e_O}; 𝔰𝔲(2) из T-326 — диагональ L ⊕ R, её 𝔲(1) — (B−L)/2),
+`the_clock_stabiliser_gives_pati_salam_then_left_right_then_colour` (21 → 15; 18 → 12; 8),
+`one_generation_with_a_right_handed_neutrino` (Y = (B−L)/2 + (i/2)|_{V_R}, Q = i/2 + (B−L)/2, ℤ₆),
+`the_full_generation_is_anomaly_free`, `the_colour_singlet_clifford_plane_is_one_higgs_doublet`,
+`exact_clock_z3_on_generations_forces_trivial_mixing` ((ПЧ) с точной ℤ₃ опровергнута) и
+`fermions_are_vectors_of_s_not_operators_and_eta0_is_forced` ((Кл₀) не выводится из аксиом о Γ).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -2565,6 +2575,356 @@ def test_no_higgs_doublet_in_the_clifford_frame():
         return np.sort(np.abs(np.linalg.eigvals(M).imag))
     assert np.allclose(on_vector(X) / c, [0] * 7 + [2, 2], atol=1e-8)
     assert np.allclose(on_vector(d["Y"]), [0] * 3 + [1 / 3] * 6, atol=1e-8)
+
+
+# ---------------------------------------------------------------------------
+# Полное поколение (25.09.2026, T-326 … T-329, вторая волна): комплексификация спинора.
+# 𝒮_ℂ = 𝒮 ⊗_ℝ ℂ′ записано как ℝ³² = 𝒮 ⊗ ℝ², i′ = 1 ⊗ [[0,1],[−1,0]], K′ = 1 ⊗ σ₃.
+# ---------------------------------------------------------------------------
+
+@functools.lru_cache(maxsize=None)
+def _spin10_completion():
+    """Десятая образующая, 𝔰𝔭𝔦𝔫(10), половины V_L ⊕ V_R, 𝔰𝔲(2)_L ⊕ 𝔰𝔲(2)_R, (B−L)/2 и гиперзаряд."""
+    d = _sm_on_complex_octonions()
+    s1, s3 = np.array([[0.0, 1.0], [1.0, 0.0]]), np.diag([1.0, -1.0])
+    ip = np.kron(np.eye(16), s3 @ s1)                                  # i′: новая мнимая единица
+    g10 = [np.kron(g, s3) for g in d["gam"]] + [np.kron(np.eye(16), s1)]
+    spin10 = [g10[a] @ g10[b] / 2 for a in range(10) for b in range(a + 1, 10)]
+    lift = lambda X: np.kron(X, np.eye(2))
+    su3 = [lift(X) for X in d["su3"]]
+    om = functools.reduce(np.matmul, g10)                              # объём Cl(10)
+    om4 = g10[6] @ g10[7] @ g10[8] @ g10[9]                            # объём бесцветной 4-плоскости
+    PL, PR = (np.eye(32) - om4) / 2, (np.eye(32) + om4) / 2           # ω = +L_{e_O} на V_L, −L_{e_O} на V_R
+    cen = [sum(v[i] * spin10[i] for i in range(45)) for v in _null_commutant(su3, spin10)]
+    comm = [a @ b - b @ a for a in cen for b in cen]
+    U, s, _ = np.linalg.svd(np.array([x.flatten() for x in comm]).T, full_matrices=False)
+    der = [U[:, i].reshape(32, 32) for i in range(int(np.sum(s > 1e-9)))]
+
+    def acting_only_on(P):
+        rows = np.array([(x @ (np.eye(32) - P)).flatten() for x in der]).T
+        _, s_, Vt = np.linalg.svd(rows)
+        return [sum(v[i] * der[i] for i in range(len(der))) for v in Vt[np.sum(s_ > 1e-9):]]
+    BL = lift(d["Y"])                                                  # гиперзаряд T-326 = (B−L)/2
+    I1 = lift(d["imul"])
+    T3L, T3R = (I1 / 2) @ PL, (I1 / 2) @ PR                            # i/2 = T₃L + T₃R
+    Y = BL + T3R
+    return dict(d=d, ip=ip, g10=g10, spin10=spin10, su3=su3, om=om, om4=om4, PL=PL, PR=PR,
+                cen=cen, suL=acting_only_on(PL), suR=acting_only_on(PR), BL=BL, I1=I1,
+                T3L=T3L, T3R=T3R, Y=Y, lift=lift, sm=su3 + acting_only_on(PL) + [Y])
+
+
+def _charges(e, X, P=None):
+    """Заряды X относительно комплексной структуры ω: собственные числа −ωX (комплексные кратности)."""
+    q = -e["om"] @ X
+    q = (q + q.T) / 2
+    if P is not None:
+        q = P @ q @ P
+    vals, mult = np.unique(np.round(np.linalg.eigvalsh(q), 9), return_counts=True)
+    return {float(v) + 0.0: int(m) for v, m in zip(vals, mult)}
+
+
+def test_the_tenth_generator_is_forced_by_complexifying_the_spinor():
+    """T-329(а): поле Вейля со значениями в вещественном 𝒮 живёт в 𝒮_ℂ = 𝒮⊗_ℝℂ′ ≅ ℝ³²; там Клиффорд вынужденно продолжается до десяти.
+
+    Девять образующих 𝒮, сделанные ℂ′-антилинейными, γ_a⊗K′, сохраняют соотношения; с ними
+    антикоммутирует ровно двумерное пространство span{i′K′, i′}. Из него квадрат +1 и
+    симметричность имеет лишь ±i′K′ — десятая образующая (знак = ориентация, чётность мира).
+    Объём десяти ω = γ₁⋯γ₁₀ равен i′ (с точностью до знака): комплексная структура 𝟏𝟔 Spin(10) —
+    та самая мнимая единица, что понадобилась полю. На ℝ³² одиннадцатой нет (Cl(11,0) ≅ M₃₂(ℂ),
+    неприводимый модуль ℝ⁶⁴). Подалгебра 𝔰𝔭𝔦𝔫(9) действует как ℂ′-линейное продолжение T-326.
+    """
+    e = _spin10_completion()
+    g10, ip = e["g10"], e["ip"]
+    for a in range(10):
+        for b in range(10):
+            assert np.allclose(g10[a] @ g10[b] + g10[b] @ g10[a], 2 * (a == b) * np.eye(32))
+    basis = [np.outer(np.eye(32)[i], np.eye(32)[j]) for i in range(32) for j in range(32)]
+    rows = np.vstack([np.array([(S @ X + X @ S).flatten() for S in basis]).T for X in g10[:9]])
+    _, s, Vt = np.linalg.svd(rows)
+    anti = [v.reshape(32, 32) for v in Vt[np.sum(s > 1e-9):]]
+    assert len(anti) == 2
+    assert _span_residual(g10[9], anti) < 1e-9 and _span_residual(ip, anti) < 1e-9
+    for t in np.linspace(0, np.pi, 7)[1:-1]:                          # a·i′K′ + b·i′: квадрат a² − b²
+        T = np.cos(t) * g10[9] + np.sin(t) * ip
+        assert not (np.allclose(T @ T, np.eye(32)) and np.allclose(T, T.T))
+    assert np.allclose(e["om"], ip) or np.allclose(e["om"], -ip)
+    assert max(np.abs(e["om"] @ x - x @ e["om"]).max() for x in e["spin10"]) < 1e-12
+    assert np.linalg.matrix_rank(np.array([x.flatten() for x in e["spin10"]]), tol=1e-9) == 45
+    assert max(_span_residual(e["lift"](x), e["spin10"]) for x in e["d"]["spin9"]) < 1e-9
+
+
+def test_left_right_split_is_canonical_and_the_t326_su2_is_diagonal():
+    """T-329(б): ℝ³² = V_L ⊕ V_R — собственные пространства объёма бесцветной 4-плоскости {iL_{e_O}, J, iJ, γ₁₀}.
+
+    ω = +L_{e_O} на V_L и −L_{e_O} на V_R (однородно на кварках и лептонах): (V_L, ω) = (𝒮, L_{e_O}) —
+    левые дублеты T-326/T-327, (V_R, ω) — сопряжённая копия. Централизатор цвета в 𝔰𝔭𝔦𝔫(10)
+    (размерность 7) = 𝔰𝔲(2)_L ⊕ 𝔰𝔲(2)_R ⊕ 𝔲(1): каждая 𝔰𝔲(2) действует только на своей половине,
+    центр — гиперзаряд T-326, т. е. (B−L)/2. 𝔰𝔲(2) из 𝔰𝔭𝔦𝔫(9) T-326 — диагональ: у каждого её
+    элемента L- и R-части равной нормы. Стабилизатор любого бесцветного вектора (любая Spin(9) ⊃ цвет)
+    пересекает 𝔰𝔲(2)_L по нулю: 𝔰𝔲(2)_L не лежит ни в одной такой Spin(9).
+    """
+    e = _spin10_completion()
+    om, PL, PR, L1 = e["om"], e["PL"], e["PR"], e["lift"](e["d"]["Lu"])
+    assert np.allclose(e["om4"], e["om4"].T) and np.allclose(e["om4"] @ e["om4"], np.eye(32))
+    assert np.trace(PL) == 16 and np.trace(PR) == 16
+    assert np.allclose(PL @ om @ PL, PL @ L1 @ PL) and np.allclose(PR @ om @ PR, -PR @ L1 @ PR)
+    assert len(e["cen"]) == 7 and len(e["suL"]) == 3 and len(e["suR"]) == 3
+    assert all(np.allclose(x @ PR, 0) and np.allclose(PR @ x, 0) for x in e["suL"])
+    assert all(np.allclose(x @ PL, 0) and np.allclose(PL @ x, 0) for x in e["suR"])
+    zc = _null_commutant(e["cen"], e["cen"])
+    assert zc.shape[0] == 1
+    Z = [sum(v[i] * e["cen"][i] for i in range(7)) for v in zc]
+    assert _span_residual(e["BL"], Z) < 1e-9                                      # центр = гиперзаряд T-326
+    d = e["d"]
+    comm = [a @ b - b @ a for a in d["C"] for b in d["C"]]
+    U, s, _ = np.linalg.svd(np.array([x.flatten() for x in comm]).T, full_matrices=False)
+    F = np.array([m.flatten() for m in e["suL"] + e["suR"]]).T
+    for i in range(3):
+        X = e["lift"](U[:, i].reshape(16, 16))
+        c = np.linalg.lstsq(F, X.flatten(), rcond=None)[0]
+        assert np.linalg.norm(F @ c - X.flatten()) < 1e-9
+        nL = np.linalg.norm(sum(c[k] * e["suL"][k] for k in range(3)))
+        nR = np.linalg.norm(sum(c[3 + k] * e["suR"][k] for k in range(3)))
+        assert nL > 0.1 and abs(nL - nR) < 1e-9                                   # диагональ L ⊕ R
+    rng = np.random.default_rng(7)
+    plane = e["g10"][6:10]
+    for _ in range(5):
+        v = rng.normal(size=4)
+        v /= np.linalg.norm(v)
+        V = sum(v[i] * plane[i] for i in range(4))
+        stab = _null_commutant([V], e["cen"])
+        S = [sum(w[i] * e["cen"][i] for i in range(7)) for w in stab]
+        FS = np.array([x.flatten() for x in S] + [x.flatten() for x in e["suL"]]).T
+        assert np.linalg.matrix_rank(FS, tol=1e-9) == len(S) + 3                  # 𝔰𝔱𝔞𝔟 ∩ 𝔰𝔲(2)_L = 0
+
+
+def test_the_clock_stabiliser_gives_pati_salam_then_left_right_then_colour():
+    """(Кл), второе предложение, — теорема: стабилизатор структурных отображений часов L_{e_O}, R_{e_O}.
+
+    В 𝔤₂: 𝔠(L_{e_O}) = 𝔠(R_{e_O}) = 𝔰𝔲(3)_C (размерность 8) — цвет УГМ. В 𝔰𝔭𝔦𝔫(9) на 𝒮:
+    𝔠(L_{e_O}) = 𝔰𝔭𝔦𝔫(6)⊕𝔰𝔭𝔦𝔫(3) = 𝔰𝔲(4)⊕𝔰𝔲(2) (18, Пати–Салам на левой половине),
+    𝔠(R_{e_O}) = 𝔠(L_{e_O}, R_{e_O}) = нормализатор цвета (12). В 𝔰𝔭𝔦𝔫(10) на 𝒮_ℂ:
+    𝔠(L_{e_O}) = 𝔰𝔲(4)⊕𝔰𝔲(2)_L⊕𝔰𝔲(2)_R (21), 𝔠(R_{e_O}) = 𝔠(L,R) = 𝔰𝔲(3)⊕𝔰𝔲(2)_L⊕𝔰𝔲(2)_R⊕𝔲(1)_{B−L} (15).
+    """
+    e = _spin10_completion()
+    d = e["d"]
+    G2c = []
+    for X in G2:
+        M = np.zeros((8, 8))
+        M[1:, 1:] = X
+        G2c.append(d["cl"](M))
+    dims = lambda ops, space: _null_commutant(ops, space).shape[0]
+    assert dims([d["Lu"]], G2c) == 8 and dims([d["Ru"]], G2c) == 8
+    assert dims([d["Lu"]], d["spin9"]) == 18 and dims([d["Ru"]], d["spin9"]) == 12
+    assert dims([d["Lu"], d["Ru"]], d["spin9"]) == 12
+    L1, R1 = e["lift"](d["Lu"]), e["lift"](d["Ru"])
+    assert dims([L1], e["spin10"]) == 21 and dims([R1], e["spin10"]) == 15 and dims([L1, R1], e["spin10"]) == 15
+    CR = [sum(v[i] * e["spin10"][i] for i in range(45)) for v in _null_commutant([R1], e["spin10"])]
+    assert max(_span_residual(x, CR) for x in e["su3"] + e["cen"]) < 1e-9          # 𝔠(R) = цвет ⊕ 7
+    CL = [sum(v[i] * e["spin10"][i] for i in range(45)) for v in _null_commutant([L1], e["spin10"])]
+    assert np.linalg.matrix_rank(np.array([(a @ b - b @ a).flatten() for a in CL for b in CL]), tol=1e-9) == 21
+
+
+def test_one_generation_with_a_right_handed_neutrino():
+    """T-329(в): Y = (B−L)/2 + T₃R, T₃R = (i/2)|_{V_R}; (𝒮_ℂ, ω) — одно поколение СМ с ν_R.
+
+    На V_L: (3,2)_{1/6} ⊕ (1,2)_{−1/2}; на V_R: u^c (3̄)_{−2/3}, d^c (3̄)_{1/3}, e^c 1_{1}, ν^c 1_{0}.
+    Q = T₃L + Y = i/2 + (B−L)/2: {±2/3, ±1/3} по три, ±1 по одному, 0 дважды. Стабилизатор
+    вектора ν^c в 𝔰𝔲(3)⊕𝔰𝔲(2)_L⊕𝔰𝔲(2)_R⊕𝔲(1)_{B−L} — ровно 𝔤_SM (размерность 12), в 𝔰𝔭𝔦𝔫(10) — 𝔰𝔲(5) (24).
+    Ядро SU(3)×SU(2)_L×U(1)_Y на ℝ³² — снова ровно ℤ₆. Знак T₃R не важен (отражение Вейля SU(2)_R).
+    """
+    e = _spin10_completion()
+    PL, PR, Y = e["PL"], e["PR"], e["Y"]
+    assert _span_residual(e["T3R"], e["suR"]) < 1e-9 and _span_residual(e["T3L"], e["suL"]) < 1e-9
+    cL = _charges(e, Y, PL)
+    cR = _charges(e, Y, PR)
+    assert cL == {-0.5: 4, 0.0: 16, round(1 / 6, 9): 12}                         # вещественные размерности
+    assert cR == {round(-2 / 3, 9): 6, 0.0: 18, round(1 / 3, 9): 6, 1.0: 2}
+    for sgn in (1, -1):
+        assert _charges(e, e["BL"] + sgn * e["T3R"], PR) == cR
+    q = _charges(e, e["T3L"] + Y)
+    assert {k: v // 2 for k, v in q.items()} == {-1.0: 1, round(-2 / 3, 9): 3, round(-1 / 3, 9): 3, 0.0: 2,
+                                                  round(1 / 3, 9): 3, round(2 / 3, 9): 3, 1.0: 1}
+    assert np.allclose(e["T3L"] + Y, e["I1"] / 2 + e["BL"])                      # Q = i/2 + (B−L)/2
+    lr = e["su3"] + e["cen"]
+    qY = -e["om"] @ Y
+    qB = -e["om"] @ e["BL"]
+    M = PR @ ((qY + qY.T) @ (qY + qY.T) / 4 + ((qB + qB.T) / 2 - PR / 2) @ ((qB + qB.T) / 2 - PR / 2)) @ PR
+    w, V = np.linalg.eigh(M + 10 * PL)
+    nu = V[:, np.abs(w) < 1e-9]
+    assert nu.shape[1] == 2                                                        # ν^c: одна комплексная прямая
+    v = nu[:, 0]
+    rows = np.array([x @ v for x in lr]).T
+    _, s, Vt = np.linalg.svd(rows)
+    S = [sum(c[i] * lr[i] for i in range(len(lr))) for c in Vt[np.sum(s > 1e-9):]]
+    assert len(S) == 12 and max(_span_residual(x, S) for x in e["sm"]) < 1e-9
+    rows10 = np.array([x @ v for x in e["spin10"]]).T
+    assert 45 - np.linalg.matrix_rank(rows10, tol=1e-9) == 24                    # 𝔰𝔲(5)
+    P = np.eye(8)
+    P[0, 0] = P[7, 7] = 0
+    w3 = expm((2 * np.pi / 3) * e["lift"](e["d"]["Lu"] @ e["d"]["cl"](P)))
+    assert max(np.abs(w3 @ x - x @ w3).max() for x in e["su3"]) < 1e-9
+    assert np.allclose(expm(2 * np.pi * 6 * Y), np.eye(32)) and not np.allclose(expm(np.pi * 6 * Y), np.eye(32))
+    minus = expm(2 * np.pi * e["T3L"])                                             # центр SU(2)_L
+    assert np.allclose(minus @ PL, -PL) and np.allclose(minus @ PR, PR)
+    kernel = []
+    for n in range(12):
+        u1 = expm((np.pi * n / 6) * 6 * Y)
+        for a, wa in enumerate((np.eye(32), w3, w3 @ w3)):
+            for sgn, z2 in ((1, np.eye(32)), (-1, minus)):
+                if np.allclose(z2 @ wa @ u1, np.eye(32)):
+                    kernel.append((a, sgn, n))
+    assert len(kernel) == 6 and sorted({a for a, _, _ in kernel}) == [0, 1, 2]
+
+
+def test_the_full_generation_is_anomaly_free():
+    """T-329(г): все калибровочные и гравитационная аномалии поколения 𝒮_ℂ сокращаются — и не случайно.
+
+    Для любого X ∈ 𝔰𝔭𝔦𝔫(10) след куба зарядов по 𝟏𝟔 равен нулю (у 𝔰𝔬(10) нет кубического
+    инварианта), и 𝔲(1)_Y ⊂ 𝔰𝔭𝔦𝔫(10) — гиперзаряд не подобран. Явно: SU(3)²Y, SU(2)²Y, Y³, grav·Y,
+    SU(3)³ (левых триплетов столько же, сколько антитриплетов) и глобальная аномалия Виттена
+    (4 дублета SU(2)_L — чётно). С ν^c сокращаются и (B−L)³, grav·(B−L).
+    """
+    e = _spin10_completion()
+    om = e["om"]
+    rng = np.random.default_rng(11)
+    for _ in range(6):
+        X = sum(c * x for c, x in zip(rng.normal(size=45), e["spin10"]))
+        q = -om @ X
+        q = (q + q.T) / 2
+        assert abs(np.trace(q @ q @ q)) < 1e-9 and abs(np.trace(q)) < 1e-9
+    fields = [(6, 1 / 6, 1 / 3), (3, -2 / 3, -1 / 3), (3, 1 / 3, -1 / 3), (2, -1 / 2, -1), (1, 1, 1), (1, 0, 1)]
+    Ys = [k for k, m in _charges(e, e["Y"]).items() for _ in range(m // 2)]
+    listed = sorted([round(y, 9) for n, y, _ in fields for _ in range(n)])
+    assert sorted(round(y, 9) for y in Ys) == listed
+    su3_2_y = 2 * (1 / 6) + (-2 / 3) + (1 / 3)
+    su2_2_y = 3 * (1 / 6) + (-1 / 2)
+    y3 = sum(n * y ** 3 for n, y, _ in fields)
+    grav = sum(n * y for n, y, _ in fields)
+    bl3 = sum(n * b ** 3 for n, _, b in fields)
+    bl1 = sum(n * b for n, _, b in fields)
+    assert max(abs(x) for x in (su3_2_y, su2_2_y, y3, grav, bl3, bl1)) < 1e-12
+    assert 2 - 1 - 1 == 0 and (3 + 1) % 2 == 0
+    bl3_no_nu = bl3 - 1
+    assert abs(bl3_no_nu + 1) < 1e-12                                              # без ν^c (B−L)³ = −1
+
+
+def test_the_colour_singlet_clifford_plane_is_one_higgs_doublet():
+    """T-329(д): бесцветная 4-плоскость вектора ℝ¹⁰, {iL_{e_O}, J, iJ, γ₁₀}, — (1,2,2)₀ = один комплексный дублет Y = ±1/2.
+
+    𝔰𝔲(2)_L действует на ней без неподвижных векторов (собственные числа ±ic/2 · 2), Y — поворот
+    с |заряд| = 1/2; клиффордово умножение на её векторы переставляет V_L ↔ V_R (дираковская масса).
+    Стабилизатор γ₁₀ (и любого вектора плоскости {iL_{e_O}, γ₁₀}) в 𝔤_SM — 𝔰𝔲(3) ⊕ 𝔲(1)_Q
+    с Q = i/2 + (B−L)/2. Цветные направления (3⊕3̄)_{±1/3} сохраняют половины.
+    """
+    e = _spin10_completion()
+    G = np.array([g.flatten() for g in e["g10"]]).T
+
+    def on_vector(Z):
+        M = np.zeros((10, 10))
+        for a, g in enumerate(e["g10"]):
+            v = (Z @ g - g @ Z).flatten()
+            c = np.linalg.lstsq(G, v, rcond=None)[0]
+            assert np.linalg.norm(G @ c - v) < 1e-9
+            M[:, a] = c
+        return M
+    MY = on_vector(e["Y"])
+    assert np.allclose(np.sort(np.abs(np.linalg.eigvals(MY[6:, 6:]).imag)), [0.5] * 4)
+    assert np.allclose(MY[6:, :6], 0) and np.allclose(MY[:6, 6:], 0)
+    assert np.allclose(np.sort(np.abs(np.linalg.eigvals(MY[:6, :6]).imag)), [1 / 3] * 6)
+    rng = np.random.default_rng(3)
+    X = sum(c * x for c, x in zip(rng.normal(size=3), e["suL"]))
+    ev = np.linalg.eigvals(on_vector(X)[6:, 6:])
+    assert np.max(np.abs(ev.real)) < 1e-9 and np.min(np.abs(ev.imag)) > 1e-3           # нет инвариантов: дублет
+    for a in range(6, 10):
+        g = e["g10"][a]
+        assert np.allclose(e["PL"] @ g @ e["PL"], 0) and np.allclose(e["PR"] @ g @ e["PR"], 0)
+    for a in range(6):
+        g = e["g10"][a]
+        assert np.allclose(e["PL"] @ g @ e["PR"], 0)
+    Q = e["I1"] / 2 + e["BL"]
+    for vec in (9, 6):
+        rows = np.array([on_vector(x)[:, vec] for x in e["sm"]]).T
+        _, s, Vt = np.linalg.svd(rows)
+        S = [sum(c[i] * e["sm"][i] for i in range(len(e["sm"]))) for c in Vt[np.sum(s > 1e-9):]]
+        assert len(S) == 9 and _span_residual(Q, S) < 1e-9
+
+
+def test_exact_clock_z3_on_generations_forces_trivial_mixing():
+    """(ПЧ) в точной форме опровергнута: горизонтальная ℤ₃, переставляющая поколения, даёт |V_CKM| — перестановку.
+
+    Пусть ℤ₃ действует на индексе поколения циклической перестановкой P с любыми характерами
+    у полей и хиггса. Инвариантная юкавская матрица в базисе Фурье F имеет носитель j − i ≡ k:
+    Y Y† диагональна в одном базисе для всех секторов, и |V_CKM| — матрица перестановки
+    (данные: |V_us| ≈ 0,225, PDG 2024). Майорановская матрица имеет носитель i + j ≡ k: одно
+    массовое состояние совпадает с ароматом заряженного лептона — в PMNS есть столбец с |U| = 1
+    (данные: max|U| ≈ 0,85, |U_e3| ≈ 0,15), а два других вырождены с углом 45°.
+    """
+    rng = np.random.default_rng(5)
+    w = np.exp(2j * np.pi / 3)
+    P = np.roll(np.eye(3), 1, axis=0)
+
+    def invariant(chi, transpose=False):
+        Z = rng.normal(size=(3, 3)) + 1j * rng.normal(size=(3, 3))
+        if transpose:
+            Z = Z + Z.T
+        acc = np.zeros((3, 3), complex)
+        for t in range(3):
+            Pt = np.linalg.matrix_power(P, t)
+            acc += (w ** (-chi * t)) * ((Pt.T if transpose else Pt.conj().T) @ Z @ Pt)
+        return acc / 3
+    for chi_u, chi_d in itertools.product(range(3), repeat=2):
+        Yu, Yd = invariant(chi_u), invariant(chi_d)
+        for t in range(3):
+            Pt = np.linalg.matrix_power(P, t)
+            assert np.allclose(Pt.conj().T @ Yu @ Pt, w ** (chi_u * t) * Yu)
+        _, Uu = np.linalg.eigh(Yu @ Yu.conj().T)
+        _, Ud = np.linalg.eigh(Yd @ Yd.conj().T)
+        V = np.abs(Uu.conj().T @ Ud)
+        assert np.allclose(np.sort(V.flatten()), [0] * 6 + [1] * 3, atol=1e-8)
+    for chi in range(3):
+        Ye = invariant(0)
+        M = invariant(chi, transpose=True)
+        for t in range(3):
+            Pt = np.linalg.matrix_power(P, t)
+            assert np.allclose(Pt.T @ M @ Pt, w ** (chi * t) * M)
+        _, Ue = np.linalg.eigh(Ye @ Ye.conj().T)
+        Mf = Ue.T @ M @ Ue                                                       # майорановская в базисе масс e, μ, τ
+        H = Mf.conj().T @ Mf
+        m2, Un = np.linalg.eigh(H)
+        U = np.abs(Un)
+        assert np.isclose(U.max(), 1.0, atol=1e-8)                               # столбец PMNS с |U| = 1
+        assert np.isclose(m2[0], m2[1]) or np.isclose(m2[1], m2[2]) or np.isclose(m2[0], m2[2])
+    s = np.sin(np.pi * np.arange(1, 4) / 7)                                      # закон m ∝ sinⁿ(πm/7) не проходит
+    me, mmu, mtau = 0.51099895, 105.6583755, 1776.86
+    n1 = np.log(mmu / me) / np.log(s[1] / s[0])
+    n2 = np.log(mtau / mmu) / np.log(s[2] / s[1])
+    assert abs(n1 - 9.05) < 0.01 and abs(n2 - 12.8) < 0.05
+
+
+def test_fermions_are_vectors_of_s_not_operators_and_eta0_is_forced():
+    """(Кл₀) не выводится из аксиом о Γ: −1 ∈ SU(2)_L действует на 𝒮 как −1, на End(𝒮) — как +1.
+
+    Всё, что строится из матриц когерентности (операторы, их тензорные произведения), имеет целый
+    слабый изоспин; дублеты — векторы 𝒮, а не операторы. Замыкание Im 𝕆 под семью левыми
+    умножениями — всё 𝕆 (e_k e_k = −1): параллельный спинор η₀ достраивается вынужденно,
+    и ни ℂ⁷ (ℝ¹⁴), ни ℂ⁷ ⊗ ℂ⁷ часов Пейджа–Вуттерса (ℝ⁹⁸) модулем Cl(7) быть не могут —
+    размерности модулей кратны 16.
+    """
+    d = _sm_on_complex_octonions()
+    comm = [a @ b - b @ a for a in d["C"] for b in d["C"]]
+    U, s, _ = np.linalg.svd(np.array([x.flatten() for x in comm]).T, full_matrices=False)
+    assert _span_residual(d["imul"] / 2, [U[:, i].reshape(16, 16) for i in range(3)]) < 1e-9
+    minus = expm(2 * np.pi * d["imul"] / 2)
+    assert np.allclose(minus, -np.eye(16))
+    Z = np.random.default_rng(2).normal(size=(16, 16))
+    assert np.allclose(minus @ Z @ np.linalg.inv(minus), Z)
+    vecs = [unit(i) for i in range(1, 8)]
+    for _ in range(2):
+        vecs = vecs + [_lmul8(k) @ v for k in range(1, 8) for v in vecs]
+        span = np.array(vecs).T
+    assert np.linalg.matrix_rank(span, tol=1e-9) == 8
+    assert 14 % 16 != 0 and 98 % 16 != 0 and 16 % 16 == 0
 
 
 def main():

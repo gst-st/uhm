@@ -15,6 +15,7 @@ description: "Derivation of the CKM matrix, Cabibbo angle, CP phase, and Jarlsko
 **Important note on levels:**
 - **Level 1 [T]:** Fano topology → Fritzsch texture (structural prediction: hierarchical $3 \times 3$ mass matrix with zeros on the diagonal for light generations).
 - **Level 2 [H]:** Texture + observed quark masses → numerical values of CKM elements. Formulas like $|V_{us}| \sim \sqrt{m_d/m_s}$ are standard consequences of Fritzsch texture (Fritzsch, 1977), not original predictions of UHM.
+- **Harmonic reading (T-328, 2026-09-25):** this page uses the axis reading of the generations. In the harmonic reading (hypothesis (GC)) an exact family $\mathbb{Z}_3$ would make $|V_{\mathrm{CKM}}|$ a permutation matrix, which $|V_{us}|\approx0.224$ refutes. Mixing then measures the breaking of the family $\mathbb{Z}_3$, and no value of it is derived ([Fermion generations, §5.3(d)](/docs/physics/particle-physics/fermion-generations#поколения-t328)).
 :::
 
 ## Contents
