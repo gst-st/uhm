@@ -117,6 +117,8 @@ $$
 
 This is the standard von Neumann reduction postulate, **derived** from the $\Omega$ structure. $\blacksquare$
 
+*Scope (2026-09-25).* Whether this update may be applied to a system entangled with a holon before the holon's regeneration acts depends on the measurement reading the corpus adopts: under the non-selective reading (Option A of [physics correspondence, §8.7](/docs/proofs/physics/physics-correspondence#87-прочтение-измерения)) it may not, and selection is a readout of the final joint state; under linear regeneration (Option C) it may without restriction. A modification of the regenerative term that keeps the threshold $P = 2/7$ and allows the update without signalling does not exist (same section).
+
 ### 2.3 Lindblad Operators as Decoherence Channels
 
 The Lindblad operators $L_k = \sqrt{\chi_{S_k}}$ — square roots of characteristic morphisms — define the **decoherence process** in the measurement basis:
@@ -497,7 +499,7 @@ Thus, self-measurement $\varphi$ is **well-defined** (CPTP), has a **unique fixe
 Introducing nonlinearity into quantum mechanics typically violates the no-signaling principle (Gisin, 1990; Polchinski, 1991). The regenerative term $\mathcal{R}[\Gamma, E]$ is nonlinear in $\Gamma$ through $\kappa(\Gamma)$ and $\varphi(\Gamma)$.
 
 :::warning What is proven and what is not
-The theorem below proves that the regeneration of $A$ leaves the *unconditioned* marginal of $B$ unchanged [T]. It does not prove that the full dynamics forbids signalling, and with the Lüders update of Theorem 2.1 (step 4) applied to a measurement at $A$ it does not: $B$'s state becomes one of the conditional states, the state-dependent regenerative term of $B$ acts on each, and the resulting statistics depend on what $A$ chose (explicit example and the two possible repairs: [Physics correspondence, §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). No-signalling of the full dynamics is [C] under the non-selective reading, in which the nonlinear terms act only on unconditioned marginals. The earlier title "No-signaling in UHM" and the [T] status of the full claim are retracted.
+The theorem below proves that the regeneration of $A$ leaves the *unconditioned* marginal of $B$ unchanged [T]. It does not prove that the full dynamics forbids signalling, and with the Lüders update of Theorem 2.1 (step 4) applied to a measurement at $A$ it does not: $B$'s state becomes one of the conditional states, the state-dependent regenerative term of $B$ acts on each, and the resulting statistics depend on what $A$ chose (explicit example and the two possible repairs: [Physics correspondence, §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). No-signalling of the full dynamics is [C] under the non-selective reading, in which the nonlinear terms act only on unconditioned marginals; the options and what each costs this theorem are set out in [Physics correspondence, §8.7](/docs/proofs/physics/physics-correspondence#87-прочтение-измерения). The earlier title "No-signaling in UHM" and the [T] status of the full claim are retracted.
 :::
 
 ### 8.2 The Central Theorem
@@ -580,7 +582,7 @@ An earlier version stated as a theorem that $\mathcal{R}$ gives no speed-up beyo
 | Observer (external) | Self-measurement via $\varphi$ (when $R > 0$) | [H] |
 | Irreversibility of measurement | $dS_{vN}/d\tau \geq 0$ from the unitality of $\mathcal{D}_\Omega$ (not from CPTP alone) | [T] |
 | Marginal identity | $\text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ | [T] |
-| No-signalling of the full dynamics | Only in the non-selective reading; fails with the Lüders update | [C] |
+| No-signalling of the full dynamics | Only in the non-selective reading; fails with the Lüders update; no threshold-keeping repair of $\mathcal{R}$ exists (physics correspondence §8.7) | [C] |
 | Ensemble independence | Evolution map defined on $\Gamma$ | [D] |
 
 ---

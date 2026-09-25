@@ -17,6 +17,12 @@
 коммутируют (нет контекстуальности Кохена–Шпекера), ранг $G_2$ равен двум, а
 R = 1/(7P) не обращается в нуль.
 
+Четыре — за открытыми вопросами оснований (25.09.2026): селективный запрет
+сигнализации требует аффинности, затвор бистабилен, а аффинный и нормированно-линейный
+потоки — нет; веса Рембелиньского–Цабана не частоты, записанные A; при чисто точечном
+спектре относительная динамика возвращается (соответствие с физикой §8.7, эмерджентное
+время §11.3).
+
 Пять добавлены отзывом 25.09.2026 (октонионная линия): `no_axis_triple_is_su3_invariant`
 (разложение 1_O ⊕ 3_{A,S,D} ⊕ 3̄_{L,E,U} ложно — 0 инвариантных троек из 20),
 `generation_z3_lies_in_colour_su3` (ℤ₃ поколений — элемент SU(3)_C),
@@ -802,6 +808,151 @@ def test_gamma5_with_i_has_imaginary_spectrum():
     P = G[O_AXIS] @ G[0] @ G[1] @ G[2]                                            # O, A, S, D
     ev = np.linalg.eigvals(1j * P)
     assert np.allclose(np.abs(ev.imag), 1) and np.allclose(ev.real, 0)
+
+
+def _rk4(G, rhs, t, n):
+    G = G.astype(complex).copy()
+    h = t / n
+    for _ in range(n):
+        k1 = rhs(G)
+        k2 = rhs(G + h / 2 * k1)
+        k3 = rhs(G + h / 2 * k2)
+        k4 = rhs(G + h * k3)
+        G = G + h / 6 * (k1 + 2 * k2 + 2 * k3 + k4)
+    return G
+
+
+def _phi_coh_fixed(G, k=0.8, alpha=0.4):
+    """φ_coh с фиксированными k и α: CPTP и унитальный канал (вариант C соответствия с физикой §8.7)."""
+    Pis = []
+    for line in LINES:
+        P = np.zeros((7, 7))
+        for i in line:
+            P[i - 1, i - 1] = 1
+        Pis.append(P)
+    fano = sum(P @ G @ P for P in Pis) / 3
+    return k * (alpha * np.diag(np.diag(G)) + (1 - alpha) * fano) + (1 - k) * np.eye(7) / 7
+
+
+def test_selective_no_signalling_needs_affinity():
+    """Селективный запрет сигнализации держит член с постоянным темпом и рушит член с затвором.
+
+    Свидетель к соответствию с физикой §8.7: A управляет разложением ρ_B (HJW) через
+    случайное измерение на очищении; линейный член c̄(φ̄(Γ) − Γ) даёт одинаковый дрейф
+    ветвей и безусловного состояния (до 1e-12), член g_V(P)(ρ* − Γ) на ρ_B с P < 2/7 —
+    нет: безусловный затвор закрыт, чистые ветви его открывают.
+    """
+    rng = np.random.default_rng(5)
+    rho_b = random_state(rng)
+    assert purity(rho_b) < 2 / 7
+    rho_star = np.diag([0.6, 0.25, 0.15, 0, 0, 0, 0])
+    w, V = np.linalg.eigh(rho_b)
+    psi = sum(np.sqrt(max(w[i], 0)) * np.kron(np.eye(7)[i], V[:, i]) for i in range(7))
+    lin = lambda G: 1.3 * (_phi_coh_fixed(G) - G)
+    gated = lambda G: gate(purity(G)) * (rho_star - G)
+    worst_lin, least_gated = 0.0, np.inf
+    for _ in range(20):
+        n = int(rng.integers(7, 14))
+        U = np.linalg.qr(rng.normal(size=(n, n)) + 1j * rng.normal(size=(n, n)))[0][:, :7]
+        M = (np.kron(U, np.eye(7)) @ psi).reshape(n, 7)
+        ps = [np.vdot(v, v).real for v in M]
+        brs = [np.outer(v, v.conj()) / p for v, p in zip(M, ps) if p > 1e-14]
+        ps = [p for p in ps if p > 1e-14]
+        assert np.allclose(sum(p * b for p, b in zip(ps, brs)), rho_b)
+        worst_lin = max(worst_lin, np.linalg.norm(sum(p * lin(b) for p, b in zip(ps, brs)) - lin(rho_b)))
+        least_gated = min(least_gated, np.linalg.norm(sum(p * gated(b) for p, b in zip(ps, brs)) - gated(rho_b)))
+    assert worst_lin < 1e-12 and least_gated > 0.5
+
+
+def test_gate_bistability_excludes_affine_and_quasilinear_flows():
+    """Затвор бистабилен, а аффинный и нормированно-линейный потоки бистабильными быть не могут.
+
+    Свидетель к соответствию с физикой §8.7: γ(I/7 − Γ) + κ g_V(P)(ρ* − Γ) при γ = 0,3,
+    κ = 10 притягивает и I/7, и живое состояние с P ≈ 0,4275; без затвора аттрактор один.
+    Для класса Рембелиньского–Цабана ρ̇ = Lρ − ρ Tr(Lρ) точка отрезка между собственными
+    состояниями движется по логистическому закону, и все базисные старты уходят в одно.
+    """
+    I7 = np.eye(7) / 7
+    rho_star = np.diag([0.6, 0.25, 0.15, 0, 0, 0, 0]).astype(complex)
+    gam, kap = 0.3, 10.0
+    full = lambda G: gam * (I7 - G) + kap * gate(purity(G)) * (rho_star - G)
+    dead = _rk4(0.4 * I7 + 0.6 * rho_star, full, 40.0, 2000)
+    alive = _rk4(0.2 * I7 + 0.8 * rho_star, full, 40.0, 2000)
+    assert np.linalg.norm(dead - I7) < 1e-4 and abs(purity(alive) - 0.4275) < 1e-3
+    linear = lambda G: gam * (I7 - G) + kap * (rho_star - G)
+    ends = [_rk4(G0, linear, 40.0, 2000) for G0 in (I7, rho_star, (I7 + rho_star) / 2)]
+    assert max(np.linalg.norm(e - ends[0]) for e in ends) < 1e-10
+    rng = np.random.default_rng(7)
+    Gd = np.diag(rng.normal(size=7))
+    Ls = [np.diag(rng.normal(size=7)) for _ in range(2)]
+    L = lambda X: Gd @ X + X @ Gd + sum(K @ X @ K.conj().T for K in Ls)
+    rc = lambda X: L(X) - X * np.trace(L(X)).real
+    basis = [np.diag(np.eye(7)[i]).astype(complex) for i in range(7)]
+    mu = [np.trace(L(b)).real for b in basis]
+    s0, t = 0.3, 0.7
+    Xt = _rk4((1 - s0) * basis[0] + s0 * basis[1], rc, t, 700)
+    s_pred = s0 * np.exp(t * mu[1]) / ((1 - s0) * np.exp(t * mu[0]) + s0 * np.exp(t * mu[1]))
+    assert abs(np.real(Xt[1, 1]) - s_pred) < 1e-10
+    top = int(np.argmax(mu))
+    for b in basis:
+        end = _rk4(0.97 * b + 0.03 * I7, rc, 30.0, 3000)
+        assert int(np.argmax(np.real(np.diag(end)))) == top
+
+
+def test_rembielinski_caban_weights_are_not_recorded_frequencies():
+    """Кубит Рембелиньского–Цабана — локальный фильтр; при записанных частотах A сигнал Жизена возвращается.
+
+    Свидетель к соответствию с физикой §8.7: формула (14) PRR 2, 012027 совпадает с
+    ρ ↦ AρA†/Tr(AρA†), A = exp(gt σ_z/2); при gt = 1 и весах ½ компонента Блоха B вдоль e
+    равна 0,668 при e·ζ = ½ и 0,762 при e·ζ = 0; веса λ(t) (24) восстанавливают tanh(gt).
+    """
+    sig = [np.array([[0, 1], [1, 0]]), np.array([[0, -1j], [1j, 0]]), np.diag([1.0, -1.0])]
+    e, gt = np.array([0.0, 0.0, 1.0]), 1.0
+    A = expm(gt / 2 * sig[2])
+
+    def rc14(xi):
+        c, s = np.cosh(gt), np.sinh(gt)
+        return (xi + e * (s + (c - 1) * (e @ xi))) / (c + (e @ xi) * s)
+    xi = np.array([0.3, -0.2, 0.5])
+    rho = 0.5 * (np.eye(2) + sum(xi[k] * sig[k] for k in range(3)))
+    out = A @ rho @ A.conj().T
+    out = out / np.trace(out).real
+    assert np.allclose(np.real([np.trace(out @ s) for s in sig]), rc14(xi), atol=1e-14)
+    z = {}
+    for ce in (0.0, 0.5):
+        zeta = np.array([np.sqrt(1 - ce ** 2), 0.0, ce])
+        b1, b2 = rc14(-zeta), rc14(zeta)
+        lam = 0.5 * (1 - ce * np.tanh(gt))
+        assert abs((lam * b1 + (1 - lam) * b2)[2] - np.tanh(gt)) < 1e-12
+        z[ce] = 0.5 * (b1 + b2)[2]
+    assert abs(z[0.0] - 0.7616) < 1e-4 and abs(z[0.5] - 0.6681) < 1e-4
+
+
+def test_finite_dimensional_relational_dynamics_recurs():
+    """При чисто точечном спектре диссипации нет ни относительно каких часов.
+
+    Свидетель к эмерджентному времени §11.3: замкнутая система 7 × 8 со случайным
+    гамильтонианом — D(ρ_S‖I/7) падает с log 7 и затем снова растёт более чем на 0,4;
+    двое O-часов с частотами 1 и √2 точно не возвращаются, но при t ≈ 2π·70 состояние
+    часов перекрывается с начальным более чем на 0,99.
+    """
+    rng = np.random.default_rng(3)
+    X = rng.normal(size=(56, 56)) + 1j * rng.normal(size=(56, 56))
+    w, V = np.linalg.eigh((X + X.conj().T) / 2)
+    c = V.conj().T @ np.kron(np.eye(7)[0], np.eye(8)[0])
+
+    def D(t):
+        M = (V @ (np.exp(-1j * w * t) * c)).reshape(7, 8)
+        ev = np.linalg.eigvalsh(M @ M.conj().T)
+        ev = ev[ev > 1e-15]
+        return np.log(7) + float((ev * np.log(ev)).sum())
+    Ds = np.array([D(t) for t in np.linspace(0, 200, 4001)])
+    assert abs(Ds[0] - np.log(7)) < 1e-9
+    assert (Ds - np.minimum.accumulate(Ds)).max() > 0.4
+    k = np.arange(7)
+    tau0 = np.ones(7) / np.sqrt(7)
+    ov = lambda t: np.prod([abs(np.vdot(tau0, np.exp(-1j * om * k * t) * tau0)) ** 2 for om in (1.0, np.sqrt(2))])
+    assert ov(2 * np.pi * 70) > 0.99 and ov(2 * np.pi * 70) < 1 - 1e-6
 
 
 def main():
