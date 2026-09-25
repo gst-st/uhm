@@ -11,7 +11,7 @@ This chapter is one of the most revolutionary in the Unitary Holonomic Monism. W
 UHM takes the next, radical step: **time does not exist as a background**. Time is not stage scenery but part of the performance. It *emerges* from the internal structure of reality, like a pattern appearing on fabric in a certain light.
 
 :::info DRY: Master definition of temporal structure
-Time is **derived** from the structure of the [subobject classifier Ω](/docs/core/foundations/axiom-omega), not postulated. The full proof and all four constructions are in the [Theorem on Emergent Time](/docs/proofs/dynamics/emergent-time).
+The **cyclic clock** $\tau \in \mathbb{Z}_7$ is derived from the structure of the [subobject classifier Ω](/docs/core/foundations/axiom-omega), not postulated. The dissipative dynamics and the arrow run in an aperiodic parameter $t$ that this clock does not supply; they hold on that assumption (T-53b, [C]). The full proof and the constructions are in the [Theorem on Emergent Time](/docs/proofs/dynamics/emergent-time).
 :::
 
 ---
@@ -30,7 +30,7 @@ The idea of emergent time did not arise from nothing. It grew from centuries of 
 
 **Connes (1994)** showed how to extract time from algebraic structure. In noncommutative geometry, the automorphism group of the algebra of observables contains a one-parameter flow — "time" — as a purely algebraic object.
 
-UHM synthesises all these ideas into a single construction, where time emerges in four equivalent ways from the same mathematical source — the [classifier Ω](/docs/core/foundations/axiom-omega).
+UHM synthesises these ideas into a single construction, where a cyclic clock emerges in three equivalent ways from the same mathematical source — the [classifier Ω](/docs/core/foundations/axiom-omega) — and a fourth, stratificational construction measures the depth of descent over it.
 
 ---
 
@@ -83,7 +83,7 @@ The Hamiltonian $H_O$ is **recovered** from $\triangleright$ via the matrix loga
 
 ## Four Equivalent Constructions
 
-UHM derives time in four different ways — and proves that all of them yield the same result. This is like four different routes leading to the same mountain summit. Each route illuminates its own aspect of the nature of time.
+UHM describes time in four different ways. Three of them — Page–Wootters, information-geometric, categorical — yield the same cyclic clock; the fourth, stratificational, is not a copy of that clock but a monotone depth over it (T-53a). Each route illuminates its own aspect of the nature of time.
 
 | # | Construction | Source | Time |
 |---|-------------|----------|-------|
@@ -92,9 +92,9 @@ UHM derives time in four different ways — and proves that all of them yield th
 | 3 | **Categorical** | ∞-groupoid of paths $\text{Exp}_\infty$ | Chains of morphisms |
 | 4 | **Stratificational** | Collapse of strata to $T$ | $d_{\text{strat}}$ |
 
-:::warning Theorem T-53a (Equivalence of the four constructions of time) [T]
-All four constructions — Page–Wootters, information-geometric, categorical, and stratificational — generate **isomorphic** temporal structures: canonical bijections exist between the sets of "moments" that preserve order and metric (up to normalisation).
-[Proof →](/docs/proofs/dynamics/emergent-time#6-теорема-об-эквивалентности) | Status: **[T]**
+:::warning Theorem T-53a (Equivalence of the constructions of the cyclic clock) [T]
+The Page–Wootters, information-geometric and categorical constructions generate **isomorphic** temporal structures on the set $\mathbb{Z}_7$ of "moments": canonical bijections exist between their label sets. The stratificational construction is not a fourth copy: its depth $n \in \mathbb{N}$ is monotone and relates to the tick only by $\tau = n \bmod 7$. An earlier version claimed all four constructions isomorphic; the stratificational leg (Lemma 6.3) is retracted, because it required coarsenings with $\pi^7 = \mathrm{id}$, which would make them invertible.
+[Proof →](/docs/proofs/dynamics/emergent-time#6-теорема-об-эквивалентности) | Status: **[T]** for the narrowed statement
 :::
 
 ### Formal Justification of the Equivalence of the Four Constructions {#four-constructions-equivalence}
@@ -103,9 +103,9 @@ Summary of the equivalence proof (full rigorous proof: [Theorem →](/docs/proof
 
 **PW ↔ Information-geometric.** The Bures arc length between successive conditional states is constant: $d_B(\Gamma(\tau_n), \Gamma(\tau_{n+1})) = \delta\tau \cdot \|d\Gamma/d\tau\|_B = \text{const}$, since the PW mechanism generates a uniform discrete flow. Summing over $n$ ticks gives total time as the path-length integral.
 
-**PW ↔ Categorical.** Each conditional state $\Gamma(\tau_n)$ is a 0-morphism in $\mathbf{Exp}_\infty$. The transition $\Gamma(\tau_n) \to \Gamma(\tau_{n+1})$ is a 1-morphism induced by the CPTP channel $e^{\delta\tau \mathcal{L}_\Omega}$. The chain of 1-morphisms forms a path in the ∞-groupoid whose length = number of ticks = discrete time.
+**PW ↔ Categorical.** Each conditional state $\Gamma(\tau_n)$ is a 0-morphism in $\mathbf{Exp}_\infty$. The transition $\Gamma(\tau_n) \to \Gamma(\tau_{n+1})$ is a 1-morphism induced by the unitary step between ticks (for $H_{int} = 0$; the dissipative map $e^{t \mathcal{L}_\Omega}$ acts in the aperiodic parameter $t$, not in the tick). The chain of 1-morphisms forms a path in the ∞-groupoid whose length = number of ticks = discrete time.
 
-**PW ↔ Stratificational.** Each tick of the PW clock is a coarsening of the stratification: $\pi_n: \mathcal{C}_n \to \mathcal{C}_{n-1}$ is a functor that loses homotopic information. The descent depth (number of applications of $\pi$) to the terminal object $T$ coincides with the number of *elapsed* PW ticks counted cumulatively ($n \in \mathbb{N}$), not with the cyclic label $\tau = n \bmod 7$: the tick is periodic, the depth is monotone ([two indices, one arrow](/docs/proofs/dynamics/emergent-time#временная-стратификация)).
+**PW and Stratificational (not an equivalence).** A coarsening of the stratification is irreversible: $\pi_n: \mathcal{C}_n \to \mathcal{C}_{n-1}$ is a functor that loses homotopic information. The descent depth (number of applications of $\pi$) to the terminal object $T$ coincides with the number of *elapsed* PW ticks counted cumulatively ($n \in \mathbb{N}$), not with the cyclic label $\tau = n \bmod 7$: the tick is periodic, the depth is monotone ([two indices, one arrow](/docs/proofs/dynamics/emergent-time#временная-стратификация)). The map $n \mapsto \tau$ is a surjection, not a bijection, and the depth — a winding number of the clock — is not an observable relative to the O-clock.
 
 ### Construction 1: Page–Wootters (the pendulum in the room)
 
@@ -159,13 +159,13 @@ $$
 \hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{int}
 $$
 
-This constraint is equivalent to the requirement:
+This constraint implies the requirement
 
 $$
 [\hat{C}, \Gamma_{total}] = 0
 $$
 
-i.e. the total system is **stationary** — time emerges only as an internal parameter of correlations.
+i.e. the total system is **stationary** — time emerges only as an internal parameter of correlations. The converse fails for mixed states: a state spread over two eigenvalues of $\hat{C}$ commutes with $\hat{C}$ without being annihilated by it, so the constraint is the stronger assumption $\mathrm{supp}\,\Gamma_{total} \subseteq \ker\hat{C}$ (T-87, step 4, [C]). An earlier version called the two conditions equivalent; that is retracted.
 
 :::info What does "stationary" mean?
 "Stationary" does not mean "dead". A standing wave on a guitar string appears motionless, yet every point on the string is oscillating. So too the Universe in UHM: *as a whole* it does not change, but inside it there is motion — like the patterns inside a frozen hologram.
@@ -221,23 +221,23 @@ where $p(\tau) = \mathrm{Tr}[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}_{6D}
 
 Intuitively: we project the total state onto a "slice" at a specific clock reading $\tau$. Each slice is the coherence matrix $\Gamma(\tau)$ of the six-dimensional subsystem. The collection of slices is a "film" assembled from "frames".
 
-:::warning Theorem T-53b (Emergent dynamics) [T]
-The conditional states $\Gamma(\tau)$ evolve according to the full UHM equation:
+:::warning Theorem T-53b (Emergent dynamics) [C under an aperiodic time parameter]
+In an aperiodic time parameter $t$ — the parameter of the Lindblad semigroup, whose physical carrier is not the O-clock — the state evolves according to the full UHM equation:
 
 $$
-\frac{d\Gamma(\tau)}{d\tau} = -i[H_{\text{eff}}, \Gamma(\tau)] + \mathcal{D}[\Gamma(\tau)] + \mathcal{R}[\Gamma(\tau), E]
+\frac{d\Gamma(t)}{dt} = -i[H_{\text{eff}}, \Gamma(t)] + \mathcal{D}[\Gamma(t)] + \mathcal{R}[\Gamma(t), E]
 $$
 
-where $H_{\text{eff}}(\tau) = H_{6D} + \langle\tau| H_{\text{int}} |\tau\rangle_O$ is the effective Hamiltonian, $\mathcal{D}$ is the [Fano dissipator](/docs/core/operators/lindblad-operators), and $\mathcal{R}$ is the [regenerator](/docs/core/dynamics/evolution#вывод-формы-регенерации).
+where $H_{\text{eff}} = H_{6D} + \langle\tau| H_{\text{int}} |\tau\rangle_O$ is the effective Hamiltonian (exact for $H_{\text{int}} = 0$, the leading term otherwise), $\mathcal{D}$ is the [Fano dissipator](/docs/core/operators/lindblad-operators), and $\mathcal{R}$ is the [regenerator](/docs/core/dynamics/evolution#вывод-формы-регенерации). In the Page–Wootters tick $\tau \in \mathbb{Z}_7$ itself the conditional states change by a unitary step between ticks (for $H_{\text{int}} = 0$).
 
-All three components of the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) emerge **automatically** from the PW constraint — time is born together with the full dynamics.
-[Proof →](/docs/proofs/dynamics/emergent-time#3-механизм-page-wootters-для-угм) | Status: **[T]**
+An earlier version stated, as [T], that the conditional states $\Gamma(\tau)$ obey this full equation in the tick $\tau$, with all three components of the triadic decomposition emerging "automatically" from the PW constraint. That is retracted: relative to a clock of period seven ticks any dynamics is periodic, and a Lyapunov functional that is non-increasing and periodic is constant (Chataignier, Höhn, Lock, Mele 2026), while the Page–Wootters construction yields no dissipator.
+[Proof →](/docs/proofs/dynamics/emergent-time#9-следствия) | Status: **[C]**, assumption named: an aperiodic time parameter
 :::
 
-Remarkably, the emergent dynamics *automatically* contains all three components of the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция): the Hamiltonian $-i[H_{eff}, \cdot]$, the dissipator $\mathcal{D}$, and the regenerator $\mathcal{R}$. Time does not merely "emerge" — it emerges *together with the full dynamics*.
+The dissipator and the regenerator are therefore postulated dynamics in $t$; what the Page–Wootters mechanism yields is the unitary part (see the [retraction box in §9.1](/docs/proofs/dynamics/emergent-time#9-следствия)).
 
 :::warning Status of the tensor structure
-The decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$ is formally **Axiom 5**, but is **derivable** from A1–A4 via the spectral triple T-53 **[T]**: the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 isolates the clock summand, and the tensor factor $\mathcal{H}_O \cong \mathbb{C}[\mathbb{Z}_7]$ is the regular representation of the shift $\triangleright$ (T-87, step 3) — a direct sum is not a tensor product, so the factorisation is built from the clock register rather than read off the algebra. Details: [derivation of A5](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки). Status: **[T]**
+The decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$ is formally **Axiom 5**. Its clock factor is built from the spectral triple T-53: the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 isolates the clock summand, and the tensor factor $\mathcal{H}_O \cong \mathbb{C}[\mathbb{Z}_7]$ is the regular representation of the shift $\triangleright$ (T-87, step 3) — a direct sum is not a tensor product, so the factorisation is built from the clock register rather than read off the algebra. The constraint half of A5 is not derived: it is the assumption $\mathrm{supp}\,\Gamma_{total} \subseteq \ker\hat{C}$ (T-87, step 4, [C]). An earlier version of this box called A5 derivable from A1–A4 with status [T]; that is retracted. Details: [derivation of A5](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки).
 :::
 
 ---
@@ -258,7 +258,7 @@ The analogy with cinema is deeper than it appears. When you watch a film, you se
 
 ### From Discrete to Continuous
 
-Continuous physical time is the **macroscopic approximation** when $N_{\text{eff}} \gg 7$ for composite systems. The algebraic limit:
+Continuous time on a circle is the **macroscopic approximation** when the number of readings is large. The algebraic limit:
 
 $$
 \mathbb{C}[\mathbb{Z}_N] \to C(S^1) \quad \text{as } N \to \infty
@@ -267,11 +267,9 @@ $$
 Here $\mathbb{C}[\mathbb{Z}_N]$ is the group algebra of the cyclic group of $N$ elements (discrete clock with $N$ divisions), and $C(S^1)$ is the algebra of continuous functions on the circle (continuous clock). As $N \to \infty$ a discrete dial with $N$ divisions becomes continuous.
 
 :::info How continuous time arises
-An individual Holon has 7 "ticks". But a composite system of $M$ Holons has $N_{\text{eff}} = 7^M$ ticks (in the simplest case). Already for $M = 10$ (a modest system of 10 Holons) $N_{\text{eff}} \approx 3 \times 10^8$ — resolution so fine that discreteness is indistinguishable. For macroscopic systems ($M \sim 10^{23}$) time is effectively continuous.
+An individual Holon has 7 "ticks". A composite system of $M$ Holons with identical clocks has a summed clock generator with spectrum $\{0, 1, \ldots, 6M\}$: $6M+1$ distinguishable readings, period $2\pi/\omega_0$ unchanged, resolution $2\pi/((6M+1)\omega_0)$. For $M = 10$ that is 61 readings. As $M \to \infty$ the readings become dense in a circle of fixed circumference; a line $\mathbb{R}$ is not obtained this way.
 
-**Discretisation error estimate.** For a system of $M$ independent Holons the approximation error for continuous time is $O(7^{-M})$ — exponentially small. Formally: by the Stone–Weierstrass theorem, $\mathbb{C}[\mathbb{Z}_N]$ is dense in $C(S^1)$ in the sup-norm as $N \to \infty$.
-
-**Remark:** $N_{\text{eff}} = 7^M$ holds for **independent** Holons (tensor product of clocks). For interacting systems $N_{\text{eff}}$ may differ from $7^M$ depending on the coupling spectrum.
+**Retracted.** An earlier version of this box gave $N_{\text{eff}} = 7^M$ ticks ($\approx 3 \times 10^8$ for $M = 10$) and an approximation error $O(7^{-M})$ for $M$ independent Holons. The dimension $7^M$ of the tensor product of clock spaces is not the number of readings: the summed generator has only $6M+1$ distinct eigenvalues ([composite clocks](/docs/proofs/dynamics/emergent-time#композитные-часы)); $7^M$ readings would need clock frequencies in the ratio $1 : 7 : 7^2 : \cdots$.
 :::
 
 [More on the limit $N \to \infty$ →](/docs/proofs/dynamics/emergent-time#предел-n-infty)
@@ -287,9 +285,10 @@ The arrow of time arises as the **collapse of strata** of the ∞-topos to the t
 
 1. **Irreversibility:** $\pi_n$ is not an equivalence ($\ker(\pi_n) \neq 0$ — information is lost)
 2. **Monotonicity:** $\dim(\mathcal{C}_n) \geq \dim(\mathcal{C}_{n-1})$ — complexity does not increase
-3. **CPTP structure:** Orientation toward $T$ entails the CPTP property of evolution (a consequence, not a postulate)
+3. **CPTP structure** [H]: that orientation toward $T$ entails the CPTP property of evolution, rather than presupposing it, is an open hypothesis ([§7.1](/docs/proofs/dynamics/emergent-time#7-теорема-о-стреле-времени)); an earlier version listed it as a consequence, which is retracted
 
-[Proof →](/docs/proofs/dynamics/emergent-time#7-теорема-о-стреле-времени) | Status: **[T]**
+The monotonicity holds in the parameter $t$ of the dissipative semigroup, not in the Page–Wootters tick; for the unital part the von Neumann entropy grows, for the full flow the free energy is the Lyapunov functional (Theorem 10.1 of the proof page).
+[Proof →](/docs/proofs/dynamics/emergent-time#7-теорема-о-стреле-времени) | Status: **[T]** for items 1–2, **[H]** for item 3
 :::
 
 ### Intuitive Explanation of the Arrow
@@ -302,7 +301,7 @@ Formally: each stratum $\mathcal{C}_n$ projects onto the next $\mathcal{C}_{n-1}
 
 ### Relation to CPTP
 
-CPTP channels (completely positive, trace-preserving maps) are the canonical form of quantum evolution. In standard quantum theory their CPTP property is postulated. In UHM it is **derived**: the orientation of strata toward $T$ means that each step of evolution is a coarsening, and coarsenings are automatically CPTP.
+CPTP channels (completely positive, trace-preserving maps) are the canonical form of quantum evolution. In standard quantum theory their CPTP property is postulated. That UHM **derives** it from the orientation of strata toward $T$ — each step of evolution a coarsening, and coarsenings automatically CPTP — is an open hypothesis [H]: the proof page uses the CPTP property rather than deriving it (§7.1 there). An earlier version of this paragraph presented the derivation as done; that is retracted.
 
 ---
 
@@ -385,11 +384,11 @@ For neural systems $\omega_0$ is related to the characteristic frequency of neur
 
 1. **Time does not exist as a background.** It emerges from correlations between the O-dimension (the clock) and the other six dimensions of the Holon.
 
-2. **Four constructions — one result.** The Page–Wootters, information-geometric, categorical, and stratificational constructions yield an equivalent notion of time [T].
+2. **Three constructions — one cyclic clock.** The Page–Wootters, information-geometric and categorical constructions yield an equivalent cyclic clock [T]; the stratificational construction is a monotone depth over it, not a fourth copy (T-53a, narrowed).
 
-3. **Time is fundamentally discrete.** The Holon has 7 "moments". Continuous time is the macroscopic approximation for composite systems.
+3. **Time is fundamentally discrete.** The Holon has 7 "moments". For composite systems the readings become dense in a circle of fixed period; an aperiodic time $\mathbb{R}$ is not obtained from the O-clocks and is assumed by the dynamics (T-53b, [C]).
 
-4. **The arrow of time is a structural necessity.** It arises from the irreversibility of coarsening (the collapse of strata to the terminal object).
+4. **The arrow of time is the collapse of strata.** It arises from the irreversibility of coarsening, monotone in the parameter $t$ of the dissipative semigroup, not in the cyclic tick.
 
 5. **Time freezes as P → 2/7.** The rate of subjective time vanishes at the viability threshold — consciousness cannot "experience" its own disappearance.
 

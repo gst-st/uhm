@@ -8,7 +8,12 @@
 представления ℤ₇ одномерны, регулярное — семимерно). Ещё две стоят за отзывами
 25.09.2026: `phi_of_a_product_factorises` (Φ произведения задана частями — условие
 Φ₁₂ > 1 выполняет любая несвязанная пара) и `window_predicate_not_constant_on_g2_orbit`
-(предикат окна не постоянен на $G_2$-орбите).
+(предикат окна не постоянен на $G_2$-орбите). Девять — за отзывами того же дня в
+основаниях: стрела времени только для унитальных каналов, `6M+1` показание составных
+часов вместо `7^M`, стационарность не даёт связи Пейджа–Вуттерса, селективная
+регенерация сигналит, поток регенерации не выпукло квазилинеен, сопряжённый канал
+замены не сохраняет след, проекторы линий Фано коммутируют (нет контекстуальности
+Кохена–Шпекера), ранг $G_2$ равен двум, а R = 1/(7P) не обращается в нуль.
 
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
@@ -380,6 +385,220 @@ def test_contractible_space_keeps_degree_zero():
     h0 = len(verts) - r1
     h1 = (len(E) - r1) - r2
     assert h0 == 1 and h1 == 0                          # H⁰ ≠ 0, H¹ = 0
+
+
+def entropy(G):
+    w = np.linalg.eigvalsh(G)
+    w = w[w > 1e-15]
+    return float(-(w * np.log(w)).sum())
+
+
+def random_state(rng, d=7):
+    A = rng.normal(size=(d, d)) + 1j * rng.normal(size=(d, d))
+    G = A @ A.conj().T
+    return G / np.trace(G).real
+
+
+def random_pure(rng, d=7):
+    v = rng.normal(size=d) + 1j * rng.normal(size=d)
+    v /= np.linalg.norm(v)
+    return np.outer(v, v.conj())
+
+
+def gate(P):
+    """Шлюз жизнеспособности g_V(P) = clamp(7P − 2, 0, 1)."""
+    return float(np.clip(7 * P - 2, 0, 1))
+
+
+def test_reset_channel_lowers_entropy_unital_does_not():
+    """Стрела времени — только для унитальных каналов: сброс X ↦ Tr(X)|0⟩⟨0| снижает S с log 7 до 0.
+
+    Свидетель отзыва 25.09.2026 (T-53c, п. 3; теорема 7.1 эмерджентного времени):
+    «всякая CPTP-эволюция не уменьшает энтропию» ложно для неунитальных каналов.
+    Для унитальных (здесь — смеси унитарных) энтропия не падает.
+    """
+    rng = np.random.default_rng(21)
+    reset = np.zeros((7, 7))
+    reset[0, 0] = 1.0                                   # образ любого состояния при сбросе
+    assert abs(entropy(np.eye(7) / 7) - np.log(7)) < 1e-12 and entropy(reset) < 1e-12
+    worst = np.inf
+    for _ in range(100):
+        G = random_state(rng)
+        Us = [np.linalg.qr(rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7)))[0] for _ in range(3)]
+        p = rng.dirichlet(np.ones(3))
+        out = sum(pk * U @ G @ U.conj().T for pk, U in zip(p, Us))
+        worst = min(worst, entropy(out) - entropy(G))
+    assert worst > -1e-10
+
+
+def test_composite_clock_has_6m_plus_1_readings():
+    """M одинаковых O-часов: 6M+1 различимое показание и период 2π/ω₀, а не 7^M.
+
+    Свидетель отзыва 25.09.2026 (эмерджентное время §3.8, T-118): 7^M — размерность
+    пространства часов; число показаний 7^M дают лишь позиционные частоты 1 : 7 : 7², …
+    """
+    T1 = np.arange(7.0)
+    for M in range(1, 5):
+        total = np.zeros(1)
+        for _ in range(M):
+            total = np.add.outer(total, T1).ravel()     # спектр T_comp = Σ T⁽ᵐ⁾
+        assert len(np.unique(np.round(total, 9))) == 6 * M + 1
+        assert np.allclose(np.exp(-2j * np.pi * total), 1)      # период 2π при ω₀ = 1
+    positional = np.add.outer(T1, 7 * T1).ravel()
+    assert len(np.unique(positional)) == 49                      # 7² только при частотах 1 : 7
+
+
+def test_stationarity_is_not_the_pw_constraint():
+    """[Ĉ, Γ] = 0 не влечёт ĈΓ = 0: связь PW требует supp Γ ⊆ ker Ĉ.
+
+    Свидетель отзыва 25.09.2026 (T-87, шаг 4): Γ = ½(|a⟩⟨a| + |b⟩⟨b|) на двух
+    собственных векторах Ĉ с c_a ≠ c_b стационарна, но не лежит ни в каком
+    собственном подпространстве Ĉ, тем более в ядре.
+    """
+    w0 = 1.0
+    HO = np.diag([w0 * k for k in range(7)])
+    E = np.array([-w0 * j for j in range(6)])
+    C = np.kron(HO, np.eye(6)) + np.kron(np.eye(7), np.diag(E))
+    c = np.real(np.diag(C))
+    a, b = 1 * 6 + 0, 2 * 6 + 0                        # (k=1, j=0) и (k=2, j=0): c = 1 и 2
+    G = np.zeros((42, 42))
+    G[a, a] = G[b, b] = 0.5
+    assert np.linalg.norm(C @ G - G @ C) < 1e-12
+    assert min(np.linalg.norm((C - s * np.eye(42)) @ G) for s in (c[a], c[b], 0.0)) > 0.3
+    ker = [i for i in range(42) if abs(c[i]) < 1e-12]  # (k=j, j): ω₀k + E_j = 0
+    Gk = np.zeros((42, 42))
+    for i in ker:
+        Gk[i, i] = 1 / len(ker)
+    assert np.linalg.norm(C @ Gk) < 1e-12              # supp Γ ⊆ ker Ĉ ⟺ ĈΓ = 0
+
+
+def test_selective_regeneration_signals():
+    """Шлюз g_V делает регенерацию сигнальной при обновлении Людерса у партнёра.
+
+    Свидетель отзыва 25.09.2026 (соответствие с физикой §8.5): кутрит A и голоном B
+    в состоянии (1/√3)Σ|k⟩|e_k⟩. Без измерения у A: P(ρ_B) = 1/3, g_V = 1/3; с
+    измерением: ветви чистые, g_V = 1 — начальный дрейф втрое больше. При κ,
+    зависящей от Coh_E, различаются уже два базиса измерения A.
+    """
+    e = np.eye(7)
+    rho_star = np.diag([0.6, 0.25, 0.15, 0, 0, 0, 0])
+    branches = [np.outer(e[k], e[k]) for k in range(3)]
+    rho_b = sum(branches) / 3
+    assert abs(purity(rho_b) - 1 / 3) < 1e-12 and abs(gate(purity(rho_b)) - 1 / 3) < 1e-12
+    drift = lambda G, kappa: kappa(G) * gate(purity(G)) * (rho_star - G)
+    const = lambda G: 1.0
+    d_no = drift(rho_b, const)
+    d_meas = sum(drift(br, const) for br in branches) / 3
+    assert np.allclose(d_meas, 3 * d_no) and np.linalg.norm(d_meas - d_no) > 0.1
+    kappa_e = lambda G: 1.0 + coh_e(G)
+    z = [np.outer(e[E_AXIS], e[E_AXIS]), np.outer(e[O_AXIS], e[O_AXIS])]
+    plus, minus = (e[E_AXIS] + e[O_AXIS]) / np.sqrt(2), (e[E_AXIS] - e[O_AXIS]) / np.sqrt(2)
+    x = [np.outer(plus, plus), np.outer(minus, minus)]
+    assert np.allclose(sum(z) / 2, sum(x) / 2)         # одно и то же среднее состояние B
+    dz = sum(drift(br, kappa_e) for br in z) / 2
+    dx = sum(drift(br, kappa_e) for br in x) / 2
+    assert np.linalg.norm(dz - dx) > 0.1
+
+
+def test_regenerative_flow_is_not_convex_quasilinear():
+    """Образ смеси под потоком регенерации лежит вне отрезка между образами частей.
+
+    Свидетель к соответствию с физикой §8.5: выпуклая квазилинейность
+    (Rembieliński–Caban) исключила бы сигнализацию, но поток с каноническими κ(Γ),
+    g_V и дефазирующей линейной частью ею не обладает; линейная часть сама по
+    себе аффинна (контроль).
+    """
+    rng = np.random.default_rng(11)
+    rho_star = np.diag([0.6, 0.25, 0.15, 0, 0, 0, 0]).astype(complex)
+    H = rng.normal(size=(7, 7))
+    H = (H + H.T) / 2
+
+    def flow(G, nonlinear=True, t=0.5, n=200):
+        G = G.astype(complex).copy()
+        h = t / n
+
+        def rhs(X):
+            out = -1j * (H @ X - X @ H) + 0.3 * (np.diag(np.diag(X)) - X)
+            if nonlinear:
+                out = out + (1.0 + coh_e(X)) * gate(purity(X)) * (rho_star - X)
+            return out
+        for _ in range(n):
+            k1 = rhs(G)
+            k2 = rhs(G + h / 2 * k1)
+            k3 = rhs(G + h / 2 * k2)
+            k4 = rhs(G + h * k3)
+            G = G + h / 6 * (k1 + 2 * k2 + 2 * k3 + k4)
+        return G
+
+    def off_segment(X, A, B):
+        D = B - A
+        s = min(1.0, max(0.0, np.real(np.vdot(D, X - A)) / np.real(np.vdot(D, D))))
+        return np.linalg.norm(X - (A + s * D)) / np.linalg.norm(D)
+
+    rel = []
+    for _ in range(6):
+        r1, r2 = random_pure(rng), random_pure(rng)
+        lam = rng.uniform(0.2, 0.8)
+        mix = lam * r1 + (1 - lam) * r2
+        rel.append(off_segment(flow(mix), flow(r1), flow(r2)))
+        if len(rel) <= 2:
+            assert off_segment(flow(mix, False), flow(r1, False), flow(r2, False)) < 1e-9
+    assert min(rel) > 0.01
+
+
+def test_replacement_channel_adjoint_is_not_trace_preserving():
+    """Кинжал Φ† := Φ* не замкнут в CPTP: у канала замены Φ(X) = Tr(X)σ сопряжённый Φ*(Y) = Tr(σY)·I.
+
+    Свидетель отзыва 25.09.2026 (определение 7.3 категорного формализма).
+    """
+    sigma = np.zeros((7, 7))
+    sigma[0, 0] = 1.0
+    rho = sigma.copy()
+    adj = np.trace(sigma @ rho) * np.eye(7)
+    X, Y = random_state(np.random.default_rng(5)), random_state(np.random.default_rng(6))
+    assert abs(np.trace(np.trace(X) * sigma @ Y) - np.trace(X @ (np.trace(sigma @ Y) * np.eye(7)))) < 1e-12
+    assert abs(np.trace(adj) - 7) < 1e-12              # след 7, а не 1
+
+
+def test_fano_line_projectors_commute_hence_noncontextual():
+    """Проекторы линий Фано диагональны, попарно коммутируют и имеют общее распределение p_i = γ_ii.
+
+    Свидетель отзыва T-201 (25.09.2026): контекстуальности Кохена–Шпекера нет.
+    """
+    P = [np.diag([1.0 if i + 1 in line else 0.0 for i in range(7)]) for line in LINES]
+    for A in P:
+        for B in P:
+            assert np.linalg.norm(A @ B - B @ A) < 1e-15
+    G = random_state(np.random.default_rng(7))
+    p = np.real(np.diag(G))
+    for A, line in zip(P, LINES):
+        assert abs(np.real(np.trace(A @ G)) - sum(p[i - 1] for i in line)) < 1e-12
+        for B, other in zip(P, LINES):
+            both = set(line) & set(other)
+            assert abs(np.real(np.trace(A @ B @ G)) - sum(p[i - 1] for i in both)) < 1e-12
+
+
+def test_g2_rank_is_two():
+    """Ранг G₂ равен 2: централизатор общего элемента 𝔤₂ двумерен; у SU(3)×SU(2)×U(1) ранг 4.
+
+    Свидетель отзыва 25.09.2026 (T-275): вложение калибровочной группы Стандартной
+    модели в G₂ невозможно по рангу.
+    """
+    rng = np.random.default_rng(12)
+    X = sum(c * g for c, g in zip(rng.normal(size=14), G2))
+    ad = np.array([(X @ g - g @ X).ravel() for g in G2]).T
+    assert 14 - np.linalg.matrix_rank(ad, tol=1e-9) == 2 < 2 + 1 + 1
+
+
+def test_reflection_measure_never_vanishes():
+    """R = 1/(7P) ∈ [1/7, 1]: подкатегория Hol с R = 0 пуста.
+
+    Свидетель отзыва 25.09.2026 (теорема 3.3 редукции к КМ).
+    """
+    rng = np.random.default_rng(13)
+    Ps = [purity(random_state(rng)) for _ in range(200)] + [1 / 7, 1.0]
+    R = np.array([1 / (7 * P) for P in Ps])
+    assert R.min() >= 1 / 7 - 1e-12 and R.max() <= 1 + 1e-12
 
 
 def main():

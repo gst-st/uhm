@@ -369,16 +369,16 @@ $$
 ### 5.3 Entropy and Measurement
 
 :::tip [T] Theorem 5.2 (Entropy growth under decoherence)
-Under the action of the logical Liouvillian, the von Neumann entropy does not decrease:
+Under the **unital** part of the logical Liouvillian — purely dissipative dynamics ($\mathcal{R} = 0$), whose Lindblad operators are Hermitian — the von Neumann entropy does not decrease:
 
 $$
-\frac{dS_{vN}}{d\tau} \geq 0, \quad S_{vN} = -\text{Tr}(\Gamma \log \Gamma)
+\frac{dS_{vN}}{d\tau} \geq 0, \quad S_{vN} = -\text{Tr}(\Gamma \log \Gamma).
 $$
 
-for purely dissipative dynamics ($\mathcal{R} = 0$).
+For a non-unital generator — with regeneration toward a purer $\rho_*$ — the entropy can fall; what is monotone for any Lindblad semigroup is the relative entropy to its stationary state (H. Spohn, *J. Math. Phys.* **19**, 1227 (1978)).
 :::
 
-This is a standard consequence of CPTP structure: completely positive trace-preserving channels do not decrease the von Neumann entropy (CPTP contractivity).
+The reason is unitality, not complete positivity alone. The Lindblad operators $L_k$ are Hermitian projectors, so $\mathcal{D}_\Omega[\mathbb{1}] = 0$: the semigroup is unital, keeps $\mathbb{1}/7$ fixed, and the monotonicity of relative entropy, $D(\Gamma(\tau)\,\|\,\mathbb{1}/7) = \log 7 - S_{vN}(\Gamma(\tau))$ non-increasing, gives $dS_{vN}/d\tau \geq 0$. An earlier justification read "completely positive trace-preserving channels do not decrease the von Neumann entropy"; that is false for non-unital channels — the reset channel $X \mapsto \mathrm{Tr}(X)|0\rangle\langle 0|$ takes $\mathbb{1}/7$, with entropy $\log 7$, to a pure state — and is retracted ([emergent time, §7.1](/docs/proofs/dynamics/emergent-time#7-теорема-о-стреле-времени)).
 
 ---
 
@@ -496,9 +496,13 @@ Thus, self-measurement $\varphi$ is **well-defined** (CPTP), has a **unique fixe
 
 Introducing nonlinearity into quantum mechanics typically violates the no-signaling principle (Gisin, 1990; Polchinski, 1991). The regenerative term $\mathcal{R}[\Gamma, E]$ is nonlinear in $\Gamma$ through $\kappa(\Gamma)$ and $\varphi(\Gamma)$.
 
+:::warning What is proven and what is not
+The theorem below proves that the regeneration of $A$ leaves the *unconditioned* marginal of $B$ unchanged [T]. It does not prove that the full dynamics forbids signalling, and with the Lüders update of Theorem 2.1 (step 4) applied to a measurement at $A$ it does not: $B$'s state becomes one of the conditional states, the state-dependent regenerative term of $B$ acts on each, and the resulting statistics depend on what $A$ chose (explicit example and the two possible repairs: [Physics correspondence, §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). No-signalling of the full dynamics is [C] under the non-selective reading, in which the nonlinear terms act only on unconditioned marginals. The earlier title "No-signaling in UHM" and the [T] status of the full claim are retracted.
+:::
+
 ### 8.2 The Central Theorem
 
-:::tip [T] Theorem 8.1 (No-signaling in UHM)
+:::tip [T] Theorem 8.1 (Regeneration of $A$ leaves the marginal of $B$ unchanged)
 For two spatially separated autonomous Holons $A$ and $B$ with joint state $\Gamma_{AB}$:
 
 $$
@@ -548,21 +552,18 @@ The proof relies on three structural conditions:
 
 ### 8.4 Ensemble Independence
 
-:::tip [T] Theorem 8.2 (Ensemble independence)
-UHM evolution is defined on the density matrix $\Gamma$, not on the ensemble decomposition. Two different preparations of the same $\Gamma$ evolve identically.
+:::tip [D] Theorem 8.2 (The evolution map is a function of $\Gamma$)
+UHM evolution is defined on the density matrix $\Gamma$, not on the ensemble decomposition.
 
 *Proof:* All components of the equation ($H_{eff}$, $\mathcal{D}_\Omega$, $\kappa$, $\varphi$, $g_V(P)$) are functions of $\Gamma$, not of the specific decomposition $\Gamma = \sum_i p_i |\psi_i\rangle\langle\psi_i|$. $\blacksquare$
 :::
 
+An earlier version added "two different preparations of the same $\Gamma$ evolve identically". That is retracted: a proper mixture — a coin toss, or a measurement on a distant partner — evolves branch by branch, $\sum_k p_k\,\Phi_t(\rho_k)$, which differs from $\Phi_t(\sum_k p_k \rho_k)$ for a nonlinear $\Phi_t$ ([Physics correspondence, §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)).
+
 ### 8.5 Computational Constraint
 
-:::tip [T] Theorem 8.3 (Absence of computational speedup)
-The nonlinear regenerative term $\mathcal{R}$ does not provide computational speedup beyond the class BQP:
-
-1. **Threshold constraint:** $\mathcal{R}$ is active only for L2+ systems ($R \geq 1/3$); qubits ($N = 2$) have $R \approx 0$
-2. **Thermodynamic constraint:** Each regeneration step requires $\Delta F > 0$
-3. **CPTP constraint:** $\varphi$ does not increase quantum information (data processing inequality)
-4. **Scale separation:** Decoherence suppresses exponentially small differences
+:::warning Retracted: Theorem 8.3 (Absence of computational speedup) [T]
+An earlier version stated as a theorem that $\mathcal{R}$ gives no speed-up beyond BQP, on four grounds: activity only for L2+ systems, the cost $\Delta F > 0$, the data-processing inequality for $\varphi$, and decoherence. None of these bounds what a nonlinear evolution can compute, and D. S. Abrams and S. Lloyd showed that generic deterministic nonlinear quantum evolution solves NP-complete problems in polynomial time (*Phys. Rev. Lett.* **81**, 3992 (1998)). The theorem is retracted; the question is open [H] ([Physics correspondence, §8.6](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение)).
 :::
 
 ---
@@ -577,9 +578,10 @@ The nonlinear regenerative term $\mathcal{R}$ does not provide computational spe
 | Preferred basis | Atoms of $\Omega$: $\mathcal{T}_\Omega = \{S_k\}$ | [T] |
 | Collapse (instantaneous) | Limit of fast decoherence $\gamma_k \to \infty$ | [T] |
 | Observer (external) | Self-measurement via $\varphi$ (when $R > 0$) | [H] |
-| Irreversibility of measurement | $dS_{vN}/d\tau \geq 0$ from CPTP | [T] |
-| No-signaling | $\text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ | [T] |
-| Ensemble independence | Evolution defined on $\Gamma$ | [T] |
+| Irreversibility of measurement | $dS_{vN}/d\tau \geq 0$ from the unitality of $\mathcal{D}_\Omega$ (not from CPTP alone) | [T] |
+| Marginal identity | $\text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ | [T] |
+| No-signalling of the full dynamics | Only in the non-selective reading; fails with the Lüders update | [C] |
+| Ensemble independence | Evolution map defined on $\Gamma$ | [D] |
 
 ---
 

@@ -231,10 +231,12 @@ The theory uses **two formalisms**:
 **Open part [C]:** The full reduced matrix $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ and the differentiation measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ still require tensor factorisation (42D formalism), since the partial trace $\mathrm{Tr}_{\bar{E}}$ is not defined in $\mathbb{C}^7$ (7 is prime). Statements using $D_{\text{diff}}$ have status **[C]** — conditional on the 42D extension.
 :::
 
-## Categorical semantics of the dimensions (T-185) [T] {#категориальная-семантика}
+## Categorical semantics of the dimensions (T-185) [C] {#категориальная-семантика}
 
-:::warning Theorem T-185 [T]: Differentially cohesive modalities and the septenary structure
-The UHM ∞-topos $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{Bures})$ admits a **differentially cohesive** structure (Schreiber 2013) with two tiers of adjoint functors:
+:::warning Theorem T-185 [C under differential cohesion of the UHM site]: Differentially cohesive modalities and the septenary structure
+**Status, stratified 2026-09-25.** That a differentially cohesive ∞-topos carries the modalities $\int \dashv \flat \dashv \sharp$ and $\Re \dashv \Im \dashv \&$ is [T] (U. Schreiber, DCCT arXiv:1310.7930v1, Definition 3.4.1 and §3.5). That the UHM ∞-topos is differentially cohesive is an assumption [C]: Schreiber's sufficient condition is an ∞-cohesive site (his Definition 3.4.17), which needs finite products, and $\mathbf{DensityMat}$ has none. The list of exactly seven modalities below and its decomposition $1 \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ are a reading [I]: DCCT v1 has the reduction $\Re$ and no Rh. An earlier version gave the whole theorem [T]; retracted.
+
+The UHM ∞-topos $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{Bures})$ is assumed to admit a **differentially cohesive** structure (Schreiber 2013) with two tiers of adjoint functors:
 
 **Cohesive tier** (macrostructure): $p_! \dashv p^* \dashv p_* \dashv p^!$
 
@@ -255,7 +257,7 @@ These adjunctions generate exactly **7 canonical modalities** decomposing as $1 
 
 **Proof (T-185).**
 
-**Step 1 (Cohesive structure).** The Bures metric $d_B$ on $\mathcal{D}(\mathbb{C}^7)$ defines: (a) topological structure via $J_{Bures}$-covers (A2 [T]); (b) differential structure via tangent spaces $T_\Gamma\mathcal{D}$ (smooth manifold with boundary). By Schreiber's theorem (2013), the sheaf ∞-topos over a smooth site admits a differentially cohesive structure with two tiers of adjunctions generating $3 + 3 + 1 = 7$ modalities.
+**Step 1 (Cohesive structure).** The Bures metric $d_B$ on $\mathcal{D}(\mathbb{C}^7)$ defines: (a) topological structure via $J_{Bures}$-covers (A2 [T]); (b) differential structure via tangent spaces $T_\Gamma\mathcal{D}$ (smooth manifold with boundary). The step "By Schreiber's theorem (2013), the sheaf ∞-topos over a smooth site admits a differentially cohesive structure" cites no such theorem: DCCT (arXiv:1310.7930v1, Definition 3.4.17) gives a sufficient condition, an ∞-cohesive site with finite products, which this site does not meet. Differential cohesion is therefore the assumption of T-185, and the count $3 + 3 + 1 = 7$ is a reading of it.
 
 **Step 2 (Sector decomposition).** Cohesive modalities $\{\Pi, \flat, \Im\}$ are **left** adjoint compositions: covariant with respect to direct images. Infinitesimal modalities $\{\sharp, \&, \mathrm{Rh}\}$ are **right** adjoint compositions: contravariant. This exactly reproduces the sector decomposition $\mathbf{3}$ (covariant) $\oplus$ $\bar{\mathbf{3}}$ (contravariant) $\oplus$ $\mathbf{1}$ (invariant).
 

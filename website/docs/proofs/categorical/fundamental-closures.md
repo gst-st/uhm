@@ -213,13 +213,13 @@ composing to $\tilde W$ itself, i.e., $\tilde W$ factors through its own graph.
 
 **Step 4 (Positivity).** The obstruction is **not a technical limitation to be overcome** — it is a **structural feature** of any self-referential formal system containing its own semantic mapping to phenomenal content. The residual status of T-38a (E-sector = interiority [P]) and T-203 (qualia = E-eigenvectors [I] — the E-slice identification; the full content and its gauge-invariant colour live in [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure)) follows the **correct epistemic pattern**: the mathematical core [T] is internal; the bridge to phenomenal content [P]/[I] is necessarily external. $\blacksquare$
 
-**Corollary (positive localization of the hard problem).** Combined with T-188 (which localizes WHY to "why CPTP?"), T-214 completes the **constructive resolution** of the hard problem: UHM
-- **solves structurally** the WHAT (T-203 [T]+[I]) and the WHY-localization (T-188 [T]),
+**Corollary (positive localization of the hard problem) [C under the conditions of T-188: the cohesion assumed in T-185 and the hypothesis T-186(a)].** Combined with T-188 (which localizes WHY to "why CPTP?"), T-214 completes the **constructive resolution** of the hard problem: UHM
+- **solves structurally** the WHAT (T-203 [T]+[I]) and the WHY-localization (T-188 [C]),
 - **proves unresolvable** the internal bridge to phenomenal content (T-214 [T]).
 
 No further progress on the hard problem is achievable within formal mathematics. Whether it **should** be sought in mathematics rather than philosophy is itself a meta-question outside $\mathrm{Th}_\mathrm{UHM}$.
 
-**Dependencies**: T-54 [T] (internal theory exists), T-55 [T] (Lawvere incompleteness), T-188 [T] (hard-problem localization), Lawvere 1969, Yanofsky 2003.
+**Dependencies**: T-54 [T] (internal theory exists), T-55 [T] (Lawvere incompleteness), T-188 [C] (hard-problem localization), Lawvere 1969, Yanofsky 2003.
 
 ---
 
@@ -787,7 +787,7 @@ The decomposition $\mathcal{J}_3(\mathbb{O})|_{G_2} = 3 \cdot \mathbf{7} \oplus 
 
 The authors identify three non-objectivist routes in each case — *relationalist*, *fragmentalist*, *many-subjective-worlds* — but leave open which (if any) is structurally forced, and do not provide a measurable criterion. Theorem T-221 establishes that UHM realises a **fourth** route, not in that taxonomy: a **categorical-monistic** route in which site-relativization replaces naive non-relationalism, while all other objectivist conjuncts are preserved structurally.
 
-:::tip Theorem T-221 (Categorical-monistic route) [T] formal + [I] interpretive
+:::tip Theorem T-221 (Categorical-monistic route) [T] formal for (ii)–(v), [C] for (i) and T-221.1–T-221.2 (conditions named there) + [I] interpretive
 
 Let $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{C}_7, J_{\mathrm{Bures}}, \omega_0)$ be the UHM cohesive $\infty$-topos (A1–A5 + T-211 Giraud), and let the five theses be formalised as follows.
 
@@ -799,7 +799,7 @@ Let $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{C}_7, J_{\mathrm{Bures}}, \omega
 
 **Claim.** In UHM:
 
-(i) **FPR is forced**: by T-186 (Cohesive Closure), $F \cong \&|_{\mathcal D}$, so $\mathrm{Map}_\mathrm{int}(\Gamma,-)$ is structurally non-trivial for any viable $\Gamma$.
+(i) **FPR is forced** [C under the hypothesis T-186(a)]: by T-186 (Cohesive Closure), $F \cong \&|_{\mathcal D}$, so $\mathrm{Map}_\mathrm{int}(\Gamma,-)$ is structurally non-trivial for any viable $\Gamma$.
 
 (ii) **NS is conventional (T-215)**: the identity criterion $\iota \in \{\iota_\mathrm{min}, \iota_\mathrm{max}\}$ determines whether a fractal SYNARC tower counts as many agents ($\iota_\mathrm{min}$: NS holds per level) or one compound ($\iota_\mathrm{max}$: NS collapses at the tower level). Both are consistent with $\Omega^7$.
 
@@ -809,13 +809,13 @@ Let $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{C}_7, J_{\mathrm{Bures}}, \omega
 
 (v) **NR is relaxed to NR$_\mathrm{site}$**: facts are internal sections of $\infty$-sheaves over an internal site. The site object $\mathcal C_7$ is itself an object of $\mathfrak{T}$ (presentability, HTT 6.3.1.16), so relativization is **internal**, not external.
 
-**Corollary T-221.1 (Positive response to List 2025 quadrilemma).** Under convention $\iota_\mathrm{min}$, the five-tuple
+**Corollary T-221.1 (Positive response to List 2025 quadrilemma) [C under the hypothesis T-186(a), through (i)].** Under convention $\iota_\mathrm{min}$, the five-tuple
 $$\{\mathrm{FPR},\ \mathrm{NS},\ \mathrm{OW},\ \mathrm{NF},\ \mathrm{NR}_\mathrm{site}\}$$
 is jointly **consistent** in $\mathfrak{T}$. The joint inconsistency proved by List (2025) is avoided by the single structural replacement $\mathrm{NR} \rightsquigarrow \mathrm{NR}_\mathrm{site}$. This provides a **fourth non-objectivist route** (categorical-monistic) distinct from the three identified in List (2025) / DeBrota–List (2026).
 
-**Corollary T-221.2 (Positive response to DeBrota–List 2026 heptalemma).** The seven-tuple
+**Corollary T-221.2 (Positive response to DeBrota–List 2026 heptalemma) [C under the non-selective reading of no-signalling, physics correspondence §8.5].** The seven-tuple
 $$\{\mathrm{Loc},\ \mathrm{MI},\ \mathrm{MR},\ \mathrm{NS},\ \mathrm{OW},\ \mathrm{NF},\ \mathrm{NR}_\mathrm{site}\}$$
-is jointly consistent with the predictions of quantum mechanics in UHM. **Loc** holds because Lindblad $\mathcal L_\Omega$ is spatially local on $\mathbb C^7$; **MI** holds because the regeneration operator $\mathcal R$ is autonomous (T-62 [T]); **MR** holds because measurement outcomes correspond to fixed points $\rho^* = \varphi(\Gamma)$ (T-96, T-98 [T]).
+is jointly consistent with the predictions of quantum mechanics in UHM. **Loc** holds only in the non-selective reading: the Lindblad part $\mathcal L_\Omega$ is spatially local on $\mathbb C^7$, but under a Lüders update at a distant partner the nonlinear regeneration makes local statistics depend on the partner's choice; **MI** holds because the regeneration operator $\mathcal R$ is autonomous (T-62 [T]); **MR** holds because measurement outcomes correspond to fixed points $\rho^* = \varphi(\Gamma)$ (T-96, T-98 [T]).
 
 **Corollary T-221.3 (RQM as 1-categorical shadow).** Relational quantum mechanics (Rovelli 1996, 2025) is recovered as the 1-truncation $\tau_{\leq 1}(\mathfrak{T})$: collapsing all $n \geq 2$ coherences yields "facts relative to observer". The first-personal content which RQM lacks (Glick 2021) is encoded in UHM by the $\&$-modality of T-186, which lives in dimensions $n \geq 2$ and is invisible to 1-truncation.
 
@@ -823,7 +823,7 @@ is jointly consistent with the predictions of quantum mechanics in UHM. **Loc** 
 
 **Proof.**
 
-**Part (i)** is a direct application of T-186 [T] (Cohesive Closure Theorem, see [`/docs/proofs/categorical/cohesive-closure`](/docs/proofs/categorical/cohesive-closure)). The natural isomorphism $F \cong \&|_\mathcal{D}$ forces the interior functor to be non-trivial on any $\Gamma$ in the interior stratum $\mathcal D_7$; the viability condition $P(\Gamma) > 2/7$ places $\Gamma$ in this stratum (T-39 [T] via T-151 [T]).
+**Part (i)** is a direct application of T-186 [H] (Cohesive Closure Theorem, see [`/docs/proofs/categorical/cohesive-closure`](/docs/proofs/categorical/cohesive-closure)). The natural isomorphism $F \cong \&|_\mathcal{D}$ forces the interior functor to be non-trivial on any $\Gamma$ in the interior stratum $\mathcal D_7$; the viability condition $P(\Gamma) > 2/7$ places $\Gamma$ in this stratum (T-39 [T] via T-151 [T]).
 
 **Part (ii)** is T-215 [T]+[D] restated.
 
@@ -833,11 +833,11 @@ is jointly consistent with the predictions of quantum mechanics in UHM. **Loc** 
 
 **Part (v)** requires showing that the site $\mathcal C_7 = \mathbf{DensityMat}(\mathbb C^7)$ is an *internal* object of $\mathfrak{T}$. Since $\mathfrak{T}$ is presentable (HTT 6.3.1.16) and $\mathcal C_7$ is essentially small (bounded by $\dim(\mathcal D(\mathbb C^7)) = 49$), the $\infty$-Yoneda embedding $y: \mathcal C_7 \hookrightarrow \mathfrak{T}$ lands in $\mathfrak{T}$ itself, so the relativization parameter $\Gamma$ is $\mathfrak{T}$-internal.
 
-**Corollary T-221.1.** Suppose, for contradiction, that $\{\mathrm{FPR}, \mathrm{NS}, \mathrm{OW}, \mathrm{NF}, \mathrm{NR}_\mathrm{site}\}$ were jointly inconsistent. Since (i)–(iv) are [T] theorems of UHM, and NR$_\mathrm{site}$ follows from (v), all five theses are simultaneously satisfied in the single model $\mathfrak{T}$. Joint satisfaction in a model implies joint consistency. Contradiction.
+**Corollary T-221.1.** Suppose, for contradiction, that $\{\mathrm{FPR}, \mathrm{NS}, \mathrm{OW}, \mathrm{NF}, \mathrm{NR}_\mathrm{site}\}$ were jointly inconsistent. Since (ii)–(iv) are [T] theorems of UHM, (i) holds under the hypothesis T-186(a), and NR$_\mathrm{site}$ follows from (v), all five theses are simultaneously satisfied in the single model $\mathfrak{T}$. Joint satisfaction in a model implies joint consistency. Contradiction.
 
 The distinction from List's quadrilemma resides in the NR formulation: List's classical NR requires facts of the form "such and such is the case" *absolute simpliciter*. NR$_\mathrm{site}$ weakens this to "such and such holds for internal site object $\Gamma$". This is neither pure Rovelli-relationalism (which would require external observers) nor Fine-fragmentalism (which requires incoherent worlds) nor many-subjective-worlds (which requires multiple worlds). It is a **fourth option**: a single coherent world with *internal* site-relativization.
 
-**Corollary T-221.2.** Each of Loc, MI, MR is a [T] theorem in UHM (T-62, T-96, T-98, T-211). Combined with (ii)–(v) this exhausts the heptalemma. Joint consistency in $\mathfrak{T}$ is again sufficient.
+**Corollary T-221.2 [C under the non-selective reading of no-signalling].** MI and MR are [T] theorems in UHM (T-62, T-96, T-98, T-211); Loc holds only in the non-selective reading, because with a Lüders update at a distant partner the nonlinear regeneration makes local statistics depend on the partner's choice ([physics correspondence §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). (An earlier wording listed Loc among the [T] theorems; retracted.) Combined with (ii)–(v) this exhausts the heptalemma. Joint consistency in $\mathfrak{T}$ is again sufficient.
 
 **Corollary T-221.3.** The 1-truncation $\tau_{\leq 1}: \mathfrak{T} \to \tau_{\leq 1}(\mathfrak{T})$ is a reflective left-exact localisation (HTT 5.5.6). Under this truncation:
 - Representable sheaves $y(\Gamma)$ collapse to hom-sets $\mathrm{Map}_\mathcal{C}(-, \Gamma)$, reproducing Rovelli's "facts relative to $\Gamma$".
@@ -865,7 +865,7 @@ Each alternative is a **reductive truncation** of $\mathfrak{T}$; UHM's categori
 
 Pred 1–23 (see [Predictions](/docs/applied/coherence-cybernetics/predictions)) provide the falsifiable content.
 
-**Dependencies**: T-120 [T] (emergent manifold), T-173 [T] ($G_2$-rigidity), T-186 [T] (Cohesive Closure), T-211 [T] (PhysTheory coherences), T-215 [T]+[D] (cross-layer identity), T-217 [T] (tricategorical coherence limits reflexive regress to SAD ≤ 3).
+**Dependencies**: T-120 [T] (emergent manifold), T-173 [T] ($G_2$-rigidity), T-186 [H] (Cohesive Closure), T-211 [T] (PhysTheory coherences), T-215 [T]+[D] (cross-layer identity), T-217 [T] (tricategorical coherence limits reflexive regress to SAD ≤ 3).
 
 **External references**: List (2025); DeBrota and List (2026); Rovelli (1996, 2025); Fine (2005); Lipman (2023); Glick (2021); Mermin (2019).
 
@@ -981,7 +981,7 @@ T-222 is falsifiable:
 
 Tested in experiment E6 of the FSQCE Phase 0.5 protocol (see `fsqce-specification.md` §32.75).
 
-**Dependencies**: T-39a [T] (spectral gap), T-62 [T] (CPTP), T-73 [T] ($C_{HS}$ = Coh$_E$), T-96 [T] (Lawvere fixed point), T-142 [T] (Fano contraction), T-151 [T] ($D_\text{min} = 2$, viability), T-173 [T] ($G_2$-rigidity), T-186 [T] (cohesive closure), T-187 [T] (triple Bures), T-189 [T] (natural gradient).
+**Dependencies**: T-39a [T] (spectral gap), T-62 [T] (CPTP), T-73 [T] ($C_{HS}$ = Coh$_E$), T-96 [T] (Lawvere fixed point), T-142 [T] (Fano contraction), T-151 [T] ($D_\text{min} = 2$, viability), T-173 [T] ($G_2$-rigidity), T-186 [H] (cohesive closure), T-187 [T] (triple Bures), T-189 [T] (natural gradient).
 
 **External references**: Brandão et al. PNAS 112:3275 (2015); Baumgratz-Cramer-Plenio PRL 113:140401 (2014); Streltsov-Adesso-Plenio Rev. Mod. Phys. 89:041003 (2017); Yunger-Halpern Nat. Rev. Phys. 5:689 (2023); Khanian et al. Ann. Henri Poincaré 24:1725 (2023); Reeb-Wolf NJP 16:103011 (2014); Bennett Stud. Hist. Phil. Mod. Phys. 34:501 (2003); Zurek Nature 341:119 (1989); Schur's lemma (classical representation theory).
 
@@ -1084,7 +1084,7 @@ T-223 packages exactly this cascade.
 - **F-223-2**: Any alphabetization of $S$ commuting with $\mathcal L_\Omega$ but not factoring through a $G_2$-conjugate representation would refute L5.
 - **F-223-3**: Any physical process realising a Lerchner "Mapping C" (Market Data on a Beethoven trajectory) with non-zero contribution to $R$ or $\Phi$ would refute L6.
 
-**Dependencies**: T-42a [T] ($G_2$-rigidity), T-82 [T] (BIBD(7,3,1) uniqueness), T-96 [T] (Lawvere fixed point $\rho_* = \varphi(\Gamma)$), T-98 [T] (balance formula for $R$), T-120 [T] (M⁴ derivation), T-123 [T] ($G_2$-uniqueness of holonomic representation), T-148 [T] (embodiment requirement), T-149 [T] (Fano plane minimality), T-151 [T] ($D_{\min} = 2$), T-153a [T] (consciousness predicate C1–C3), T-190 [T] (zero-axiom categorical closure), T-214 [T] (hard-problem meta-theorem, Lawvere positivity).
+**Dependencies**: T-42a [T] ($G_2$-rigidity), T-82 [T] (BIBD(7,3,1) uniqueness), T-96 [T] (Lawvere fixed point $\rho_* = \varphi(\Gamma)$), T-98 [T] (balance formula for $R$), T-120 [T] (M⁴ derivation), T-123 [T] ($G_2$-uniqueness of holonomic representation), T-148 [T] (embodiment requirement), T-149 [T] (Fano plane minimality), T-151 [T] ($D_{\min} = 2$), T-153a [T] (consciousness predicate C1–C3), T-190 [C] (zero-axiom categorical closure), T-214 [T] (hard-problem meta-theorem, Lawvere positivity).
 
 **External references**: Putnam 1988 *Representation and Reality* (MIT Press); Sprevak 2018 "Triviality arguments about computational implementation", *Routledge Handbook of the Philosophy of Computing and Information*; Piccinini 2008 "Computation without representation", *Phil. Stud.* 137; Kim 2005 *Physicalism, or Something Near Enough*; Maturana-Varela 1980 *Autopoiesis and Cognition*; Thompson 2019 *Mind in Life*; Lerchner 2026 "The Abstraction Fallacy" (DeepMind preprint, 2026-03-19); Lawvere 1969, Yanofsky 2003 (inherited via T-214).
 

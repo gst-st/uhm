@@ -11,7 +11,7 @@ This chapter addresses three foundational vulnerabilities identified in external
 (1) the interpretive status of the phenomenal functor $F$,
 (2) the $O(H_{\text{int}})$ approximation in the Page-Wootters time emergence,
 (3) the conditional dependence of $\Delta F > 0$ on spectral details of $D_{\text{int}}$.
-A single categorical construction — the operationalization of the differentially cohesive structure (T-185) — closes all three simultaneously.
+A single categorical construction — the operationalization of the differentially cohesive structure (T-185) — was proposed to close all three simultaneously. It does not: the cohesion it rests on is assumed, not proven (T-185, [C]); closure (a) is a hypothesis [H]; closures (b) and (c) are retracted [✗] (§3). The retraction box after the theorem states the reasons.
 :::
 
 ## 1. The Three Vulnerabilities
@@ -38,7 +38,7 @@ The regeneration term $\mathcal{R}$ requires $\Delta F > 0$ (Landauer principle,
 
 ### 2.1. T-185 as foundation
 
-Theorem T-185 [T] establishes that $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{\text{Bures}})$ is a **differentially cohesive** $\infty$-topos (Schreiber 2013, *Differential Cohomology in a Cohesive $\infty$-Topos*, §3.9 cohesion + §3.10 super-/differential cohesion) with two tiers of adjunctions:
+Theorem T-185 asserts that $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{\text{Bures}})$ is a **differentially cohesive** $\infty$-topos (U. Schreiber, *Differential cohomology in a cohesive $\infty$-topos*, arXiv:1310.7930v1, 2013: cohesion is Definition 3.4.1 in §3.4, differential cohesion §3.5) with two tiers of adjunctions. The corpus has no proof of this assertion, so T-185 is [C] under the assumption that the UHM ∞-topos is differentially cohesive; Schreiber's sufficient condition, an ∞-cohesive site (his Definition 3.4.17), begins with finite products, which $\mathbf{DensityMat}$ lacks. An earlier version cited "§3.9 cohesion + §3.10 super-/differential cohesion": in arXiv v1, §3.9 and §3.10 are "Structures in a cohesive / differentially cohesive ∞-topos", there is no super-cohesion, and the modality Rh used below for the U-dimension does not occur at all (it belongs to Schreiber's later "solid cohesion"). The two tiers:
 
 $$
 \text{Cohesive:} \quad \Pi \dashv \mathrm{Disc} \dashv \Gamma_! \dashv \mathrm{coDisc}
@@ -47,17 +47,21 @@ $$
 \text{Infinitesimal:} \quad \mathrm{Red} \dashv \iota^* \dashv \mathrm{Inf}
 $$
 
-generating 7 canonical modalities: $\mathrm{Id}$ (O), $\Pi$ (A), $\flat$ (S), $\Im$ (D), $\sharp$ (L), $\&$ (E), $\mathrm{Rh}$ (U).
+generating the modalities listed by T-185: $\mathrm{Id}$ (O), $\Pi$ (A), $\flat$ (S), $\Im$ (D), $\sharp$ (L), $\&$ (E), $\mathrm{Rh}$ (U). In DCCT v1 a differentially cohesive ∞-topos carries, besides the identity, the six modalities $\int \dashv \flat \dashv \sharp$ and $\Re \dashv \Im \dashv \&$; the list of seven drops the reduction $\Re$ and adds $\mathrm{Rh}$, so "exactly 7" and the assignment to dimensions are a reading [I].
 
 :::note Framework-conditional citation (see [Rigour Stratification §T-185](/docs/reference/status-registry#стратификация-строгости))
-Schreiber's DCCT §3.9/§3.10 axiomatises differential cohesion for smooth $\infty$-stacks. Its applicability to the **stratified** $\mathcal{D}(\mathbb{C}^7)$-site (boundary of rank-deficient matrices) is the subject of **Gap A** in §4.2 below: cohesion axioms hold for stratified smooth spaces (Lurie HTT §7.3.6; Ayala–Francis–Rozenblyum 2017), but the specific verification for the Bures-stratified site is what T-185 actually asserts.
+Schreiber's DCCT (arXiv v1: Definition 3.4.1 and §3.5) axiomatises cohesion and differential cohesion; its models include smooth, synthetic-differential and super ∞-groupoids (chapter 4 there). Its applicability to the **stratified** $\mathcal{D}(\mathbb{C}^7)$-site (boundary of rank-deficient matrices) is the subject of **Gap A** in §4.2 below, and it is not established: the verification for the Bures-stratified site is exactly what T-185 would have to assert, and the site as defined lacks the finite products that Schreiber's ∞-cohesive-site criterion requires. (An earlier version of this note said that cohesion axioms hold for stratified smooth spaces by Lurie HTT §7.3.6; no such result is cited correctly, and the claim is withdrawn.)
 :::
 
-Currently, T-185 is used only for **dimension counting** — matching 7 modalities to 7 dimensions. The key insight of this chapter: if the cohesive structure is **operationalized** (each modality applied to $\Gamma$ as a mathematical operation), all three vulnerabilities close simultaneously.
+Currently, T-185 is used only for **dimension counting** — matching 7 modalities to 7 dimensions. The proposal of this chapter was that if the cohesive structure is **operationalized** (each modality applied to $\Gamma$ as a mathematical operation), all three vulnerabilities close simultaneously; §3 records that they do not.
 
 ### 2.2. The differential cohomology hexagon
 
-In any differentially cohesive $\infty$-topos $\mathbf{H}$, for any coefficient object $\mathbf{A}$, there exists a canonical exact hexagon (Schreiber 2013, §3.9):
+:::warning Scope of the hexagon: stable coefficients only
+An earlier version of this subsection said that "in any differentially cohesive ∞-topos, for any coefficient object $\mathbf{A}$, there exists a canonical exact hexagon (Schreiber 2013, §3.9)". That is retracted. In DCCT v1 the hexagon is Proposition 4.1.17: for a cohesive ∞-topos $\mathbf{H}$ and a **stable** homotopy type $E \in \mathrm{Stab}(\mathbf{H})$ (a spectrum object), and its proof uses stability — the rows are fibre sequences because $\mathrm{Stab}(\mathbf{H})$ is stable. It is not asserted for an arbitrary coefficient object, and in particular not for the delooping $\mathbf{B}G_2$ of the nonabelian group $G_2$ used in §3.3.
+:::
+
+For a stable coefficient $E$ there is a canonical hexagon (DCCT v1, Proposition 4.1.17):
 
 ```
          ♭(A) ———→ A ———→ ♭_dR(A)
@@ -71,13 +75,13 @@ where:
 - $\flat_{\mathrm{dR}}(\mathbf{A}) = \mathrm{cofib}(\mathbf{A} \to \sharp(\mathbf{A}))$ = de Rham coefficient (connection data)
 - $\Pi$ = shape modality (fundamental $\infty$-groupoid)
 
-This hexagon **forces** the relationship between internal aspect ($\flat$), external structure ($\Pi$), and curvature ($\flat_{\mathrm{dR}}$). It is not a choice — it is a structural theorem of cohesive $\infty$-topoi.
+For stable $E$ this hexagon **forces** the relationship between internal aspect ($\flat$), external structure ($\Pi$), and curvature ($\flat_{\mathrm{dR}}$); it is a structural theorem of cohesive $\infty$-topoi with stable coefficients, not of arbitrary ones.
 
 ## 3. Theorem: Cohesive Closure
 
-:::tip Theorem T-186 (Cohesive Closure) [T]
+:::tip Theorem T-186 (Cohesive Closure): (a) [H]; (b) and (c) retracted [✗]
 
-Let $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{\text{Bures}})$ be the UHM $\infty$-topos with differentially cohesive structure (T-185 [T]). Then:
+Let $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{\text{Bures}})$ be the UHM $\infty$-topos with differentially cohesive structure (assumed: T-185, [C]). Then, as originally stated:
 
 **(a) Phenomenal necessity.** The phenomenal functor $F$ is naturally isomorphic to the infinitesimal flat modality restricted to density matrices:
 
@@ -96,6 +100,13 @@ The evolution is governed by the counit $\varepsilon: \Pi \circ \flat \Rightarro
 $$\Delta F(\Gamma) = \|\mathrm{curv}(\Gamma)\|^2 = \omega_0^2 \cdot \mathcal{G}_{\text{total}}$$
 
 By T-55 (Gap > 0, Lawvere incompleteness), $\mathcal{G}_{\text{total}} > 0$ for any $\Gamma$ with $P > P_{\text{crit}}$. Therefore $\Delta F > 0$ — and consequently $\Lambda > 0$ — is **unconditional**, independent of spectral details of $D_{\text{int}}$.
+:::
+
+:::warning Retracted as a theorem [T] (2026-09-25): what survives of T-186
+An earlier version stated T-186 with status [T] in all three parts. None of the three is proven.
+- **(a) is a hypothesis [H].** It presupposes the cohesion of T-185, which is assumed, not proven; and the proof in §3.1 identifies the E-component of a jet space with $\rho_E$ by assertion (Steps 3–4) without constructing the natural isomorphism $F \cong \&|_{\mathcal{D}}$.
+- **(b) is retracted [✗].** With a clock–system interaction the conditional state obeys a time-nonlocal Schrödinger equation (A. R. H. Smith, M. Ahmadi, *Quantum* **3**, 160 (2019)); relative to a clock of period seven ticks every conditional dynamics is periodic (L. Chataignier, P. A. Höhn, M. P. E. Lock, F. M. Mele, *New J. Phys.* **28**, 034504 (2026)); and the counit invoked in §3.2 carries no information about $\triangleright$ or $H_{\text{int}}$ — in a cohesive ∞-topos the natural maps are $\flat \Rightarrow \mathrm{Id} \Rightarrow \int$, and Step 3 asserts $\varepsilon_\Gamma \circ \Gamma(\tau_n) = \triangleright^*(\Gamma(\tau_n))$ without computation. There is no "exact time" beyond the unitary step for $H_{\text{int}} = 0$.
+- **(c) is retracted [✗].** The hexagon exists for stable coefficients only (§2.2), not for $\mathbf{B}G_2$; and $\mathcal{D}(\mathbb{C}^7)$ is convex, hence contractible, so every $G_2$-bundle over it is trivial and every characteristic class vanishes — $c_2 = 0$. The formula $c_2 = \frac{1}{8\pi^2}\sum_{i<j}|\gamma_{ij}|^2\,\mathrm{Gap}(i,j)^2$ of §3.3 varies continuously with $\Gamma$ and so cannot be a topological invariant; and $\Delta F = \|\mathrm{curv}(\Gamma)\|^2$ is asserted, not derived. $\Delta F > 0$ and $\Lambda > 0$ return to their earlier status, [C] conditional on the spectral details of $D_{\text{int}}$.
 :::
 
 ### 3.1. Proof of (a): $F \cong \&$
@@ -122,9 +133,11 @@ The infinitesimal path space $\mathrm{Inf}(\Gamma)$ captures all infinitesimal d
 
 This is not an interpretation but a structural consequence of the Postnikov tower, which exists canonically for any $\infty$-groupoid.
 
-**Status upgrade:** The assignment $\pi_n \leftrightarrow$ L-levels goes from **[I]** to **[T]**: it is forced by the Postnikov filtration of $\&(\Gamma)$, not by interpretive choice. $\square$
+**Status:** the assignment $\pi_n \leftrightarrow$ L-levels stays **[I]**, and $F \cong \&|_{\mathcal{D}}$ is a hypothesis [H]: Steps 3–4 assert the identification without constructing it, and the modality $\&$ exists only if T-185's cohesion does. An earlier "status upgrade [I] → [T]" is retracted. $\square$
 
-### 3.2. Proof of (b): Exact time emergence
+### 3.2. Proof of (b): Exact time emergence — retracted
+
+The argument below is kept as it was written, for the record; it does not prove (b), for the reasons in the box after the theorem.
 
 **Step 1.** In the cohesive $\infty$-topos, the flat modality $\flat$ applied to the total state $\Gamma_{\text{total}} \in \mathfrak{T}$ extracts its **locally constant** structure — the data that is invariant under infinitesimal deformations.
 
@@ -144,9 +157,11 @@ $$\Gamma(\tau_{n+1}) = \varepsilon_\Gamma \circ \Gamma(\tau_n) = \triangleright^
 
 **Step 4.** The continuous limit $\mathbb{Z}_{7^M} \to \mathbb{R}$ for composite systems follows from the shape modality: $\Pi(\Gamma_{\text{composite}})$ has fundamental group $\mathbb{Z}_{7^M}$, and for $M \to \infty$, $\Pi$ automatically computes the pro-finite completion $\hat{\mathbb{Z}}_7 \cong \mathbb{Z}_7$, whose Pontryagin dual is $\mathbb{R}/\mathbb{Z}_7$-local. The passage to $\mathbb{R}$ is exact via the universal property of pro-finite groups.
 
-**Status upgrade:** Time emergence goes from **[T] with $O(H_{\text{int}})$ correction** to **[T] exact**. $\square$
+**Status:** retracted [✗]. Step 4 is also false: the summed clock of $M$ holons has $6M+1$ readings and period $2\pi/\omega_0$, not a group $\mathbb{Z}_{7^M}$ ([composite clocks](/docs/proofs/dynamics/emergent-time#композитные-часы)); the profinite completion $\hat{\mathbb{Z}}_7$ of the 7-adic integers is not $\mathbb{Z}/7$, and no limit of O-clocks unrolls the circle into $\mathbb{R}$. An earlier "status upgrade to [T] exact" is retracted.
 
-### 3.3. Proof of (c): Unconditional $\Lambda > 0$
+### 3.3. Proof of (c): Unconditional $\Lambda > 0$ — retracted
+
+The argument below is kept as it was written, for the record; Steps 1 and 4 fail (box after the theorem).
 
 **Step 1.** In the differentially cohesive $\infty$-topos, a connection on a $G_2$-bundle $P \to \mathcal{D}(\mathbb{C}^7)$ is classified by a differential cocycle in the hexagon:
 
@@ -180,9 +195,11 @@ $$\Lambda = \mu^2 \cdot \mathcal{G}_{\text{total}}^{(O)} > 0$$
 
 follows from the O-sector component of the Gap, which is nonzero by the same Lawvere argument applied to the O-dimension.
 
-**Status upgrade:** $\Delta F > 0$ and $\Lambda > 0$ go from **[C] conditional on $D_{\text{int}}$ spectral details** to **[T] unconditional from cohesive non-flatness + Lawvere incompleteness**. $\square$
+**Status:** retracted [✗]. $\Delta F > 0$ and $\Lambda > 0$ remain **[C] conditional on $D_{\text{int}}$ spectral details**; an earlier "status upgrade to [T] unconditional" is retracted, because the hexagon does not apply to $\mathbf{B}G_2$ and $c_2$ of any bundle over the contractible $\mathcal{D}(\mathbb{C}^7)$ is zero.
 
 #### Worked numerical example {#числовой-пример-цепочка}
+
+The example computes $\mathcal{G}_{\text{total}}$ for a sample state; the chain "Chern–Weil $\Rightarrow \Delta F > 0$" it illustrates is retracted with (c).
 
 Consider a holon with $P = 0.35$ (viable, above $P_{\text{crit}} = 2/7 \approx 0.286$) and $\omega_0 = 40$ Hz (gamma-band). Three dominant off-diagonal coherences on Fano lines:
 
@@ -216,7 +233,7 @@ The free energy gradient is strictly positive — the system has thermodynamic f
 
 | Dependency | Status | Reference |
 |---|---|---|
-| T-185 (differentially cohesive structure) | [T] | [Dimensions §4](/docs/core/structure/dimensions#категориальная-семантика) |
+| T-185 (differentially cohesive structure) | [C] (assumed cohesion) | [Dimensions §4](/docs/core/structure/dimensions#категориальная-семантика) |
 | T-55 (Lawvere incompleteness, Gap > 0) | [T] | [Consequences](/docs/core/foundations/consequences#неполнота-ловера) |
 | T-73 (Gap = curvature) | [T] | [Gap Operator §5](/docs/core/dynamics/gap-operator#теорема-gap-серра) |
 | T-53 (spectral triple) | [T] | [Categorical Formalism](/docs/proofs/categorical/categorical-formalism) |
@@ -224,23 +241,25 @@ The free energy gradient is strictly positive — the system has thermodynamic f
 
 ### 4.2. Technical gaps requiring separate verification
 
-**Gap A (boundary of $\mathcal{D}(\mathbb{C}^7)$).** The space of density matrices has a boundary where eigenvalues vanish. Cohesion axioms require the site to be a smooth $\infty$-groupoid. The boundary $\partial\mathcal{D}$ consists of lower-rank matrices ($\mathrm{rank}(\Gamma) < 7$) and is a stratified space. **Resolution:** Define the site as $\mathcal{C} = \mathrm{Strat}(\mathcal{D}(\mathbb{C}^7))$ — the stratified $\infty$-category (Ayala-Francis-Rozenblyum 2017) realized as a cosheaf over the poset of orthogonal projectors $\mathrm{Proj}(\mathbb{C}^7)$. Each stratum $\mathcal{D}_k = \{\Gamma : \mathrm{rank}(\Gamma) = k\}$ is a smooth manifold; the inclusions $\mathcal{D}_k \hookrightarrow \overline{\mathcal{D}_k}$ are compatible with the Bures metric (Uhlmann's theorem: $d_B$ extends continuously to the boundary). The flat modality $\flat$ isolates the discrete topology of the stratification — it sees only which stratum $\Gamma$ belongs to, not its internal geometry. Cohesion axioms hold for stratified smooth spaces (Lurie HTT §7.3.6, extended to stratified sites by Ayala-Francis-Rozenblyum). Status: [T] from established results.
+**Gap A (boundary of $\mathcal{D}(\mathbb{C}^7)$).** The space of density matrices has a boundary where eigenvalues vanish. Cohesion axioms require the site to be a smooth $\infty$-groupoid. The boundary $\partial\mathcal{D}$ consists of lower-rank matrices ($\mathrm{rank}(\Gamma) < 7$) and is a stratified space. **Resolution:** Define the site as $\mathcal{C} = \mathrm{Strat}(\mathcal{D}(\mathbb{C}^7))$ — the stratified $\infty$-category (Ayala-Francis-Rozenblyum 2017) realized as a cosheaf over the poset of orthogonal projectors $\mathrm{Proj}(\mathbb{C}^7)$. Each stratum $\mathcal{D}_k = \{\Gamma : \mathrm{rank}(\Gamma) = k\}$ is a smooth manifold; the inclusions $\mathcal{D}_k \hookrightarrow \overline{\mathcal{D}_k}$ are compatible with the Bures metric (Uhlmann's theorem: $d_B$ extends continuously to the boundary). The flat modality $\flat$ isolates the discrete topology of the stratification — it sees only which stratum $\Gamma$ belongs to, not its internal geometry. An earlier version asserted that cohesion axioms hold for stratified smooth spaces (Lurie HTT §7.3.6, extended by Ayala–Francis–Rozenblyum) and gave this gap "[T] from established results"; neither reference proves cohesion of this site, and the site lacks the finite products of an ∞-cohesive site. Status: open; T-185 is [C] until it is closed.
 
-**Gap B ($\&(\Gamma) = \rho_E$ correspondence).** The claim that the infinitesimal flat modality applied to $\Gamma$ yields the E-sector reduced density matrix requires showing that the formal neighbourhood decomposes along the 7 Fano directions and that the E-component equals $\mathrm{Tr}_{-E}(\Gamma)$. **Resolution:** In the 42D extension, the tangent space $T_\Gamma \mathcal{D}$ decomposes as $\bigoplus_{k=1}^{7} T_k$ along the 7 basis directions (this is the content of the Fano channel decomposition, T-39a). The infinitesimal flat $\& = \iota^* \circ \mathrm{Inf}$ restricts to the formal neighbourhood and selects the E-component by the T-185 assignment $\& = E$. Status: [T] from T-39a + T-185.
+**Gap B ($\&(\Gamma) = \rho_E$ correspondence).** The claim that the infinitesimal flat modality applied to $\Gamma$ yields the E-sector reduced density matrix requires showing that the formal neighbourhood decomposes along the 7 Fano directions and that the E-component equals $\mathrm{Tr}_{-E}(\Gamma)$. **Resolution:** In the 42D extension, the tangent space $T_\Gamma \mathcal{D}$ decomposes as $\bigoplus_{k=1}^{7} T_k$ along the 7 basis directions (this is the content of the Fano channel decomposition, T-39a). The infinitesimal flat $\& = \iota^* \circ \mathrm{Inf}$ restricts to the formal neighbourhood and selects the E-component by the T-185 assignment $\& = E$. Status: hypothesis [H] — the assignment $\& = E$ is a reading, and $\&$ exists only under T-185's assumption (an earlier "[T] from T-39a + T-185" is retracted).
 
-**Gap C (counit exactness).** The counit $\varepsilon: \Pi \circ \flat \Rightarrow \mathrm{Id}$ is exact for any cohesive $\infty$-topos (Schreiber 2013, Proposition 3.4.5). For finite-dimensional sites, the exactness follows from the finite generation of the covering sieves. **Clarification:** The $O(H_{\text{int}})$ correction in the original Page-Wootters formulation arises **only** when projecting the cohesive $\mathbb{Z}_7$-time onto classical $\mathbb{R}$. Within the internal logic of the topos, $\mathbb{Z}_7$-cyclic time is absolutely exact — the counit is an exact natural transformation by definition. The approximation is an artifact of the classical projection, not of the dynamics. Status: [T] from Schreiber's published proof.
+**Gap C (counit exactness).** The counit $\varepsilon: \Pi \circ \flat \Rightarrow \mathrm{Id}$ is exact for any cohesive $\infty$-topos (Schreiber 2013, Proposition 3.4.5). For finite-dimensional sites, the exactness follows from the finite generation of the covering sieves. **Clarification:** The $O(H_{\text{int}})$ correction in the original Page-Wootters formulation arises **only** when projecting the cohesive $\mathbb{Z}_7$-time onto classical $\mathbb{R}$. Within the internal logic of the topos, $\mathbb{Z}_7$-cyclic time is absolutely exact — the counit is an exact natural transformation by definition. The approximation is an artifact of the classical projection, not of the dynamics. — **Retracted [✗]:** the exactness of a counit says nothing about the conditional dynamics; with $H_{\text{int}} \neq 0$ that dynamics is time-nonlocal (Smith–Ahmadi 2019), and the $O(H_{\text{int}})$ correction is not an artefact of a projection (earlier status "[T] from Schreiber's published proof").
 
-**Gap D ($G_2$ Chern-Weil computation).** The Chern-Weil homomorphism for $G_2$-bundles is standard for compact Lie groups over **smooth manifolds** (Milnor–Stasheff 1974). The UHM bundle, however, lives over the **stratified** space $\mathcal{D}(\mathbb{C}^7)$ (strata indexed by rank; cf. Gap A), so the Milnor–Stasheff formalism does not apply verbatim. Resolution: we work stratum-wise — on the full-rank open stratum $\mathcal{D}^\circ$ the computation is classical, and continuity of $c_2$ across the rank boundary follows from the continuous extension of the Bures metric (Uhlmann 1976) combined with the stratified Chern–Weil theory of Ayala–Francis–Rozenblyum 2017. The stratum-wise identification of $c_2$ with the Gap total $\mathcal{G}_{\text{total}}$ is exactly T-73 [T]; the cross-stratum continuity adds no new hypothesis. Status: [T] from T-73 + continuity of the Bures extension.
+**Gap D ($G_2$ Chern-Weil computation).** The Chern-Weil homomorphism for $G_2$-bundles is standard for compact Lie groups over **smooth manifolds** (Milnor–Stasheff 1974). The UHM bundle, however, lives over the **stratified** space $\mathcal{D}(\mathbb{C}^7)$ (strata indexed by rank; cf. Gap A), so the Milnor–Stasheff formalism does not apply verbatim. Resolution: we work stratum-wise — on the full-rank open stratum $\mathcal{D}^\circ$ the computation is classical, and continuity of $c_2$ across the rank boundary follows from the continuous extension of the Bures metric (Uhlmann 1976) combined with the stratified Chern–Weil theory of Ayala–Francis–Rozenblyum 2017. The stratum-wise identification of $c_2$ with the Gap total $\mathcal{G}_{\text{total}}$ is exactly T-73 [T]; the cross-stratum continuity adds no new hypothesis. — **Retracted [✗]:** every stratum $\mathcal{D}_k$ of full rank is convex, hence contractible, so bundles over it are trivial and $c_2 = 0$; what T-73 identifies with $\mathcal{G}_{\text{total}}$ is a pointwise curvature expression, not a characteristic class (earlier status "[T] from T-73 + continuity").
 
 ## 5. Consequences
 
 ### 5.1. The hard problem — reformulated at the categorical level
 
-T-186(a) shifts the [I] status of the phenomenal functor to [T]: the relationship between $\Gamma$ and its experiential content is **forced** by the cohesive adjunction, not stipulated. The remaining interpretive element localizes to a single point: the choice of axiom A2 (Bures metric). Given A2, everything follows by categorical necessity.
+If T-186(a) held, it would shift the [I] status of the phenomenal functor: the relationship between $\Gamma$ and its experiential content would be **forced** by the cohesive adjunction, not stipulated. T-186(a) is a hypothesis [H] and rests on the assumed cohesion of T-185, so the phenomenal functor stays [I]. (An earlier sentence stated the shift to [T] as done; retracted.) Under that hypothesis the remaining interpretive element would localize to a single point: the choice of axiom A2 (Bures metric). Given A2, everything follows by categorical necessity.
 
 The hard problem thus becomes: **why does the ∞-topos of reality have the Bures topology?** This is a deeper question than "why does matter give rise to experience" — but it is a single question, not three.
 
-#### Theorem T-188 (Localization of the Hard Problem) [T] {#теорема-локализация-hard-problem}
+#### Theorem T-188 (Localization of the Hard Problem) [C] {#теорема-локализация-hard-problem}
+
+Status [C]: conditional on the cohesion assumed in T-185 and on the hypothesis T-186(a) [H]. An earlier version gave [T]; retracted.
 
 The classical hard problem of consciousness ("why does physical structure give rise to experience?") reduces, within UHM, to a **single physical question** through the following chain of implications:
 
@@ -250,11 +269,11 @@ $$
 
 **Step 1.** By T-187 [T]: A2 uniquely determines the Bures metric via four independent characterizations (Char-I Petz extremality, Char-II Uhlmann universality, Char-III SLD-Fisher saturation, Char-IV MaxEnt covariance T-189 [T]).
 
-**Step 2.** By T-185 [T]: the Bures-enriched $\infty$-topos $\mathfrak{T}$ is differentially cohesive, generating canonical modalities $\{\Pi, \flat, \sharp, \Im, \&, \mathrm{Rh}\}$.
+**Step 2.** By T-185 (assumed, [C]): the Bures-enriched $\infty$-topos $\mathfrak{T}$ is differentially cohesive, generating canonical modalities $\{\Pi, \flat, \sharp, \Im, \&, \mathrm{Rh}\}$.
 
-**Step 3.** By T-186(a) [T]: the phenomenal functor $F \cong \&|_{\mathcal{D}}$ — experience is the infinitesimal flat modality restricted to density matrices. This is forced by the adjunction, not stipulated.
+**Step 3.** By T-186(a) (hypothesis, [H]): the phenomenal functor $F \cong \&|_{\mathcal{D}}$ — experience is the infinitesimal flat modality restricted to density matrices. This is forced by the adjunction, not stipulated.
 
-**Therefore:** Given A2, the existence and structure of experience is a **theorem** (T-186). The only remaining interpretive element is A2 itself. But A2 is not a consciousness axiom — it is a **physics axiom** about the metric structure of quantum state space.
+**Therefore:** Given A2, the cohesion of T-185 and the hypothesis T-186(a), the existence and structure of experience would be a **theorem**. The only remaining interpretive element is A2 itself. But A2 is not a consciousness axiom — it is a **physics axiom** about the metric structure of quantum state space.
 
 The question "why Bures?" reduces further:
 - Bures = minimal CPTP-monotone metric (Char-I)
@@ -263,15 +282,15 @@ The question "why Bures?" reduces further:
 
 **Conclusion:** The hard problem of consciousness, within UHM, is **equivalent to** the hard problem of physics: "why does reality obey quantum mechanics?" This is not a dissolution of the problem but a precise **localization**: the mystery of experience is the same mystery as the existence of quantum structure. No additional "consciousness-specific" mystery remains. $\blacksquare$
 
-**Dependencies:** T-185 [T], T-186 [T], T-187 [T].
+**Dependencies:** T-185 [C], T-186 [H], T-187 [T].
 
 ### 5.2. Statuses of the closed vulnerabilities
 
 | Vulnerability | Status | Closure mechanism |
 |---|---|---|
-| $F = \&$: phenomenal functor | [T] from $\iota^* \dashv \mathrm{Inf}$ | Postnikov tower of $\&(\Gamma)$ |
-| Page-Wootters time | [T] exact | Counit of $(\Pi \dashv \flat)$ |
-| $\Delta F > 0$, $\Lambda > 0$ | [T] unconditional | Chern-Weil + Gap > 0 (T-55) |
+| $F = \&$: phenomenal functor | [H] (earlier: [T] from $\iota^* \dashv \mathrm{Inf}$; retracted) | Postnikov tower of $\&(\Gamma)$, assuming T-185 |
+| Page-Wootters time | [✗] retracted (earlier: [T] exact); with interaction the conditional dynamics is time-nonlocal | Counit of $(\Pi \dashv \flat)$ — does not apply |
+| $\Delta F > 0$, $\Lambda > 0$ | [C] as before (earlier: [T] unconditional; retracted) | Chern-Weil fails: hexagon only for stable coefficients, $c_2 = 0$ over a contractible base |
 
 ### 5.3. Closing the last open question: why Bures? (T-187)
 
@@ -402,20 +421,24 @@ For (⊇): the identity $\mathrm{id}: (K, \tau_\mathrm{std}) \to (K, \tau_d)$ is
 
 ### 5.4. Axiomatic closure: all axioms are theorems (T-190) {#теорема-аксиоматическое-замыкание}
 
-:::tip Theorem T-190 (Axiomatic Closure of UHM) [T]
+:::tip Theorem T-190 (Axiomatic Closure of UHM) [C under T-87's constraint assumption and hypothesis T-186(a)]
 
-All five axioms A1–A5 of UHM are **theorems** — they are derivable from the characterizing properties (AP)+(PH)+(QG)+(V) and the maximum entropy principle (MaxEnt). UHM has **zero** independent axioms beyond the defining conditions of a viable holon.
+The axioms A1–A5 of UHM are derivable from the characterizing properties (AP)+(PH)+(QG)+(V) and the maximum entropy principle (MaxEnt) **under two conditions**: the Page–Wootters constraint of A5 is assumed (T-87, step 4, [C]), and the route to A1 through T-186 rests on the hypothesis T-186(a) [H].
+:::
+
+:::warning Retracted: "zero independent axioms"
+An earlier version stated T-190 as [T]: "All five axioms A1–A5 of UHM are theorems … UHM has zero independent axioms beyond the defining conditions of a viable holon." Both parts are retracted. The constraint half of A5 is not derived (T-87, step 4), so it remains an independent assumption; and A1's derivation invoked T-186, whose part (a) is a hypothesis and whose parts (b)–(c) are retracted.
 :::
 
 **Proof (status of each axiom).**
 
 | Axiom | Statement | Derivation | Status |
 |-------|-----------|------------|:------:|
-| **A1** | Reality = $\infty$-topos $\mathbf{Sh}_\infty(\mathcal{C})$ | T-76 [T] (Bures + Lurie → ∞-topos verified) + T-186 [T] (cohesive closure: ∞-topos is the unique categorical structure admitting the differentially cohesive modalities forced by (AP)+(PH)+(QG)+(V)) | [T] |
+| **A1** | Reality = $\infty$-topos $\mathbf{Sh}_\infty(\mathcal{C})$ | T-76 [T] (Bures + Lurie → ∞-topos verified at site level) + T-186 (a) [H] (cohesive closure, which would single out the ∞-topos as the structure admitting the differentially cohesive modalities) | [H] |
 | **A2** | $J_{\mathrm{Bures}}$ Grothendieck topology | T-187 [T] (triple characterization: Char-I Petz extremality + Char-II Uhlmann + Char-III SLD-CR) + **T-189 [T] (Char-IV MaxEnt covariance)**: the physical covariance of quantum fluctuations uniquely selects the Bures metric without information-geometric choice | [T] |
 | **A3** | $N = 7$ | Theorem S [T] (functional minimality 7/7) + T15 [T] (bridge (AP)+(PH)+(QG)+(V) → P1+P2 → Hurwitz → $\mathbb{O}$ → $N = 7$) | [T] |
 | **A4** | $\omega_0 > 0$ | Trivial: $\omega_0 = 0$ implies no dynamics ($H_{\mathrm{eff}} = 0$), which violates (AP) (no autopoiesis without evolution). Therefore $\omega_0 > 0$ is a **necessary condition** for (AP), not an independent axiom | [T] |
-| **A5** | Page–Wootters $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$ | T-87 [T]: derived from A1–A4 via the spectral triple construction. The tensor factorization is forced by the KO-dimension 6 real structure (T-53 [T]) and the $G_2 \to SU(3)$ sector decomposition | [T] |
+| **A5** | Page–Wootters $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$ | T-87: the clock register and the tensor factor are constructed from A1–A4 via the spectral triple (steps 1–3, [T]); the constraint $\hat{C}\Gamma = 0$ is assumed (step 4, [C]) | [C] |
 
 **Chain of derivation:**
 
@@ -432,11 +455,9 @@ $$
 \xrightarrow{T\text{-}87} \text{PW factorization} \;[\text{A5}]
 $$
 
-**Conclusion.** UHM is a **self-grounding** theory: its formal structure is uniquely determined by the four characterizing properties of a viable holon — (AP) autopoiesis, (PH) phenomenology, (QG) quantum grounding, (V) viability — together with the maximum entropy principle. No external mathematical structure is imported; all structure **emerges** from the conditions of viability.
+**Conclusion (conditional).** Under the two conditions of the theorem, the formal structure of UHM is determined by the four characterizing properties of a viable holon — (AP) autopoiesis, (PH) phenomenology, (QG) quantum grounding, (V) viability — together with the maximum entropy principle and the Page–Wootters constraint. An earlier conclusion — that UHM is **self-grounding**, that no external mathematical structure is imported, and that "everything else follows" from the definition of a holon — is retracted: the constraint is imported as an assumption, and the cohesive route to A1 is a hypothesis. $\blacksquare$
 
-The only remaining primitive is the **defining question**: "What is a viable self-sustaining system?" The answer — the four properties (AP)+(PH)+(QG)+(V) — is not an axiom but a **definition**: a holon is a configuration satisfying these properties. Everything else follows. $\blacksquare$
-
-**Dependencies:** T-15 [T], T-53 [T], T-76 [T], T-87 [T], T-186 [T], T-187 [T], T-189 [T], Theorem S [T].
+**Dependencies:** T-15 [T], T-53 [T], T-76 [T], T-87 [C], T-186 [H], T-187 [T], T-189 [T], Theorem S [T].
 
 ### 5.3.1 Petz-robustness classification of UHM results {#petz-робастность}
 
@@ -502,7 +523,7 @@ These results require Bures-specific properties that do **not** generalise to ot
 | Uhlmann purification variational formula | Only Bures admits $d(\rho,\sigma) = \inf\| \|\psi\rangle - \|\varphi\rangle\|$ over purifications (Hübner 1992); no Kubo–Mori analogue exists. |
 | SLD-Fisher Cramér–Rao **saturation** | Only SLD-Fisher = $4g_B$ saturates the multiparameter quantum CR bound (Braunstein–Caves 1994). All other Petz members give strict sub-saturation. |
 | Petz-poset minimality $g_B \le g_f$ | Tautological for Bures, false for all others. |
-| Page–Wootters time emergence via Bures-cohesion | T-185, T-186 use the cohesive $\infty$-topos with Bures topology specifically; the differential cohesion adjunction $(\Pi \dashv \flat)$ is Bures-canonical. Other Petz topologies give equivalent classical cohesion (R1) but the *enriched* differential cohesion structure prefers Bures. |
+| Page–Wootters time emergence via Bures-cohesion | T-185, T-186 use the cohesive $\infty$-topos with Bures topology specifically. This row is moot: the cohesion is assumed (T-185, [C]) and the time-emergence part of T-186 is retracted. |
 
 #### Summary table
 
@@ -529,7 +550,7 @@ A subtle but important clarification reconciles two seemingly tensioned claims o
 
 **Claim A (T-153 substrate-independence) [T].** The L-level of consciousness is determined solely by $\Gamma$, not by the underlying neural state $s$ (silicon, carbon, transistor, neuron — equivalent if both produce the same $\Gamma$).
 
-**Claim B (Q9 R4 Bures-essentiality) [T].** Page–Wootters emergent time and the cohesive $\infty$-topos derivation (T-185, T-186) use Bures-specific structural properties; other Petz members would require different proofs.
+**Claim B (Q9 R4 Bures-essentiality) [I].** Page–Wootters emergent time and the cohesive $\infty$-topos derivation (T-185, T-186) use Bures-specific structural properties; other Petz members would require different proofs. (Status lowered from [T]: the derivations it refers to are assumed, hypothetical or retracted.)
 
 These do not contradict. They live at **different abstraction levels**:
 
@@ -548,7 +569,7 @@ Operationally: an AGI engineer **using UHM** can implement $\pi: s \to \Gamma$ o
 
 ### 5.4. The remaining interpretive element
 
-With T-187, the last postulate of UHM is closed. The theory now rests entirely on:
+The statuses below are those the corpus assigned before the audit of 2026-09-25; A1's cohesive route through T-186 is now a hypothesis [H], and the constraint of A5 remains an assumption (T-87, step 4). With T-187, the last postulate of UHM was said to be closed. The theory was said to rest entirely on:
 
 - **A1 [T]:** Reality is an $\infty$-topos (the most general space with internal logic — no alternative with equivalent power)
 - **A2 [T]:** The topology is Bures (the unique coarsest CPTP-compatible topology — T-187)

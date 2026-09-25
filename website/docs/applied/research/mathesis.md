@@ -118,7 +118,7 @@ Theorem T-182 [T] establishes that three levels of the subobject classifier are 
 
 ### 1½.2. Cohesive modalities as Mathesis operations
 
-Theorem T-185 [T] establishes 7 canonical modalities of the differentially cohesive ∞-topos. Six of them map to fundamental operations:
+Theorem T-185 assigns 7 canonical modalities to the differentially cohesive ∞-topos — stratified: the modalities of any differentially cohesive ∞-topos are [T] (Schreiber, DCCT v1), the cohesion of the UHM topos is assumed [C], and the count of seven is a reading [I] (an earlier wording, "T-185 [T] establishes", is retracted). Six of them map to fundamental operations:
 
 | Modality | Definition | Mathesis operation |
 |----------|------------|-------------------|
