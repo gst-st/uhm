@@ -695,60 +695,65 @@ The composite holon possesses its **own** non-trivial attractor $\rho_*^{(12)} \
 
 ---
 
-The composite holon exists. But are its **qualitative** properties — purity, reflection, integration — preserved? The next theorem says: yes, structural invariants are stable under scaling.
+The composite holon exists. But are its **qualitative** properties — purity, reflection, integration — preserved? The next theorem answers: yes, when the parts are weakly coupled and the aggregation is consistent — and not otherwise.
 
-### Theorem 9.2 / T-72 (Scale Invariance, CC-6) [T] {#теорема-92-масштабная-инвариантность}
+### Theorem 9.2 / T-72 (Scale Invariance, CC-6) [C under (AGG)] {#теорема-92-масштабная-инвариантность}
 
-:::note In Plain Terms
-Recall a Russian nesting doll (matryoshka): the small doll resembles the large one, and that resembles an even larger one. Theorem 9.2 asserts that the structural properties of a holon (purity, reflection, integration) are **preserved** when moving from one scale to another. A neuron, a cortical column, the entire brain — all are described by the same mathematics, and the key invariants remain in the same ranges.
-
-For a physicist: this is the analogue of renormalization-group invariance — the properties of a field theory do not depend on the scale of observation (up to running coupling constants). Here the running coupling constants play the role of $O(\varepsilon)$ corrections.
-
-For a biologist: this explains why the same principles of homeostasis operate at the level of the cell, the organ, and the organism.
-
-**Connection:** [Morita equivalence](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [$G_2$-rigidity](/docs/proofs/categorical/uniqueness-theorem)
+:::warning Errata 2026-09-25: status corrected from [T] to [C under (AGG)]
+The earlier statement claimed that **any** CPTP aggregation preserves $P$, $R$, $\Phi$, the Gap profile and the L-level up to $O(\varepsilon_0)$ with $\varepsilon_0 \approx 0.023$. That claim is retracted: its proof did not carry it.
+- **Contractivity is not preservation.** The completely depolarising channel $\Lambda(\rho) = \mathrm{Tr}(\rho)\, I/7$ is CPTP and Bures-contractive, yet it sends every state to $I/7$: $P = 1/7 < 2/7$ and $\Phi = 0$. Even the partial trace sends a maximally entangled pair of holons to $I/7$. Contractivity bounds the distance between two *images*; it says nothing about the distance between an image and a constituent unless something ties the two together — assumption (AGG) below.
+- **Step 3** ("all structural invariants are $G_2$-invariants", T-42a) is retracted: $P$ and $R$ are unitary invariants, but $\Phi$ and the Gap profile are frame-pinned — an explicit $g \in G_2$ sends $\Phi$ from $0$ to $1$ ([frame rigidity](/docs/proofs/categorical/uniqueness-theorem#жёсткость-репера); regression test `test_phi_not_g2_invariant`). The step needed only continuity, which holds.
+- **Step 5** ($|P(\Gamma^{(k)}) - P(\Gamma^{(1)})| \leq \|\Phi_k\|_{\mathrm{cb}}\,\varepsilon_{\mathrm{coupling}} \leq \varepsilon_0$) is retracted: it was asserted, not derived. For a CPTP map $\|\Phi_k\|_{\mathrm{cb}} = 1$, so the inequality only renamed the unknown deviation; and $0.023$ is the weighted mean of the sector coherences of the Gap vacuum inside one holon ([sector hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε)), not a coupling between holons.
+- **Steps 1 and 4**: step 1 cited the Morita equivalence T-58, retracted on 2026-09-10 (and it concerned 7D↔42D, not $7^k \to 7$); step 4 derived $R \geq 1/3$ "from primitivity", but $R \geq 1/3$ means $P \leq 3/7$, an upper bound that primitivity does not give; "the L-level is preserved or elevated" had no argument.
 :::
 
-:::tip Statement [T]
-The structural invariants of a holon ($P$, $R$, $\Phi$, Gap profile, L-level) are preserved (up to bounded corrections of order $O(\varepsilon)$) under scale aggregation:
+:::note In Plain Terms
+Recall a Russian nesting doll (matryoshka): the small doll resembles the large one, and that resembles an even larger one. Theorem 9.2 says when a holon made of holons keeps the structural properties of its parts (purity, reflection, integration): when the parts are only weakly coupled, and the aggregation, applied to uncoupled parts, returns the state of a part. Then every key invariant of the whole lies within an explicit distance, proportional to the coupling, of the same invariant of a part. With strong coupling nothing of the kind holds: two maximally entangled holons, aggregated by the partial trace, give the dead state $I/7$.
 
-$$
-\mathrm{structure}(\mathbb{H}) \cong \mathrm{structure}(\mathbb{H}^{(2)}) \cong \mathrm{structure}(\mathbb{H}^{(3)}) \cong \ldots
-$$
+For a physicist: this is the analogue of renormalization-group invariance — the properties of a field theory do not depend on the scale of observation (up to running coupling constants). Here the coupling $\delta$ between the parts plays the role of the running coupling: the corrections are of order $\delta$ and are small only when $\delta$ is.
+
+For a biologist: the same principles of homeostasis can operate at the level of the cell, the organ and the organism wherever the parts are weakly coupled; the theorem does not say that they must.
+
+**Connection:** [section–retraction T-58′](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [frame rigidity](/docs/proofs/categorical/uniqueness-theorem#жёсткость-репера), [threshold robustness T-124d](/docs/proofs/consciousness/conscious-window#t-124d)
+:::
+
+:::tip Statement [C under (AGG)]
+Let $k$ identical holons have the state $\sigma \in \mathcal{D}(\mathbb{C}^7)$, let $\rho_k \in \mathcal{D}(\mathbb{C}^{7^k})$ be the state of the coupled collection, and let the aggregation be a CPTP channel $\Phi_k: \mathcal{D}(\mathbb{C}^{7^k}) \to \mathcal{D}(\mathbb{C}^7)$. Assume
+
+**(AGG)** (a) *consistency*: $\Phi_k(\sigma^{\otimes k}) = \sigma$ — aggregating uncoupled copies returns the constituent (the partial trace and the mean of the single-copy marginals both qualify); (b) *weak coupling*: $d_B(\rho_k, \sigma^{\otimes k}) \leq \delta$.
+
+Then the aggregate $\Gamma^{(k)} := \Phi_k(\rho_k)$ satisfies $d_B(\Gamma^{(k)}, \sigma) \leq \delta$ and $\|\Gamma^{(k)} - \sigma\|_F \leq 2\delta$, and, with $\Delta_P := |P(\Gamma^{(k)}) - P(\sigma)|$:
+
+- $\Delta_P \leq 4\delta\sqrt{P(\sigma)} + 4\delta^2$ and $|R(\Gamma^{(k)}) - R(\sigma)| \leq 7\Delta_P$;
+- $|\Phi(\Gamma^{(k)}) - \Phi(\sigma)| \leq 7\Delta_P + 196\,P(\sigma)\,\delta$ — a crude global bound; [T-124d](/docs/proofs/consciousness/conscious-window#t-124d) gives the first-order sensitivity;
+- $|\mathrm{Gap}_{\Gamma^{(k)}}(i,j) - \mathrm{Gap}_{\sigma}(i,j)| \leq \pi\delta/|\sigma_{ij}|$ whenever $2\delta < |\sigma_{ij}|$;
+- each L2 condition $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$ keeps its truth value when $\sigma$ clears the threshold by more than the corresponding deviation.
+
+$\Phi$ and Gap are compared in the fixed frame: they are frame-pinned, not $G_2$-invariant. No bound is claimed for the full L-level, which also involves $D_{\mathrm{diff}}$ and, at L3, $R^{(2)}$.
 :::
 
 **Proof (5 steps).**
 
-**Step 1 (Definition of aggregation).** A $k$-scale aggregation is a CPTP channel $\Phi_k: \mathcal{D}(\mathbb{C}^{7^k}) \to \mathcal{D}(\mathbb{C}^7)$, realising the transition from the "microscopic" description (a collection of interacting holons) to the "macroscopic" one (a single holon). From [T-58](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) [T]: both levels of description are equivalent (Morita).
-
-**Step 2 (Bures contractivity).** $\Phi_k$ is a CPTP channel $\to$ it is contractive in the Bures metric [T] (standard result):
+**Step 1 (Contractivity carries the conclusion because of (AGG a)).** The fidelity does not decrease under CPTP maps, so the Bures distance does not increase (standard result):
 
 $$
-d_{\mathrm{Bures}}(\Phi_k(\rho), \Phi_k(\sigma)) \leq d_{\mathrm{Bures}}(\rho, \sigma)
+d_{\mathrm{Bures}}(\Phi_k(\rho), \Phi_k(\rho')) \leq d_{\mathrm{Bures}}(\rho, \rho')
 $$
 
-**Step 3 (Invariants as Bures-continuous functionals).** All structural invariants are $G_2$-invariants [T] ([T-42a](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)):
+With $\rho = \rho_k$, $\rho' = \sigma^{\otimes k}$ and (AGG a): $d_B(\Gamma^{(k)}, \sigma) \leq d_B(\rho_k, \sigma^{\otimes k}) \leq \delta$. Without (a) the second image is not $\sigma$, and nothing about $\sigma$ follows — this is where the earlier proof broke.
 
-- $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ — continuous in Bures
-- $R(\Gamma) = 1/(7P)$ — continuous (as a function of $P = \mathrm{Tr}(\Gamma^2)$; [master definition](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) [T])
-- $\Phi(\Gamma) = \sum_{i \neq j}|\gamma_{ij}|^2 / \sum_i \gamma_{ii}^2$ — continuous
-- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — continuous (for $|\gamma_{ij}| > 0$)
+**Step 2 (From Bures to trace and Frobenius norms).** With $d_B^2 = 2(1 - \sqrt{F})$ one has $1 - F = d_B^2 - d_B^4/4 \leq d_B^2$, and the Fuchs–van de Graaf inequality $\tfrac12\|\rho - \rho'\|_1 \leq \sqrt{1 - F}$ (arXiv:quant-ph/9712042) gives $\tfrac12\|\Gamma^{(k)} - \sigma\|_1 \leq \delta$. Since $\|X\|_F \leq \|X\|_1$, the deviation $X := \Gamma^{(k)} - \sigma$ has $\|X\|_F \leq 2\delta$.
 
-**Step 4 (CC-5 $\to$ preservation of structure).** From [Theorem 9.1](#теорема-91-фрактальное-замыкание): aggregation of holons satisfying A1–A5 has a non-trivial attractor. Consequently:
-- $P(\Gamma^{(k)}) > 1/7$ [T] — preservation of non-triviality ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)); $P > 2/7$ [T] for embodied systems ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора))
-- $R(\Gamma^{(k)}) \geq R_{\mathrm{th}} = 1/3$ [T] (from primitivity of the linear part of the aggregated Lindbladian)
-- L-level is preserved or elevated (L2 $\to$ L2 or L3)
+**Step 3 (Purity and reflection).** $P(\sigma + X) - P(\sigma) = 2\,\mathrm{Tr}(\sigma X) + \mathrm{Tr}(X^2)$, so by Cauchy–Schwarz $\Delta_P \leq 2\|\sigma\|_F\|X\|_F + \|X\|_F^2 \leq 4\delta\sqrt{P(\sigma)} + 4\delta^2$ (Bound 1 of T-124d). For $R = 1/(7P)$: $|\Delta R| = \Delta_P/(7PP') \leq 7\Delta_P$, because $P, P' \geq 1/7$.
 
-**Step 5 (Bound on corrections).** Difference of invariants at scale $k$ and scale 1:
+**Step 4 (Integration and Gap, in the fixed frame).** Write $\Phi = P/D - 1$ with $D = \sum_i \gamma_{ii}^2 \geq 1/7$ (Cauchy–Schwarz, since $\sum_i \gamma_{ii} = 1$). Then $|\Delta\Phi| \leq \Delta_P/D' + P\,|\Delta D|/(DD') \leq 7\Delta_P + 49\,P(\sigma)\,|\Delta D|$, and $|\Delta D| \leq (\sqrt{D} + \sqrt{D'})\,\|X\|_F \leq 4\delta$. For $\mathrm{Gap}(i,j) = |\sin(\arg\gamma_{ij})|$: if $|X_{ij}| < |\sigma_{ij}|$, the phase of $\sigma_{ij} + X_{ij}$ differs from that of $\sigma_{ij}$ by at most $\arcsin(|X_{ij}|/|\sigma_{ij}|) \leq \tfrac{\pi}{2}|X_{ij}|/|\sigma_{ij}|$, and $|\sin|$ is 1-Lipschitz; with $|X_{ij}| \leq \|X\|_F \leq 2\delta$ this is the stated bound. The comparison is meaningful because (AGG a) holds as a matrix identity in one frame; a $G_2$ rotation of either state would change $\Phi$ and Gap.
 
-$$
-|P(\Gamma^{(k)}) - P(\Gamma^{(1)})| \leq \|\Phi_k\|_{\mathrm{cb}} \cdot \varepsilon_{\mathrm{coupling}} \leq \varepsilon_0
-$$
+**Step 5 (Thresholds).** If $P(\sigma) - 2/7$ exceeds the bound on $\Delta_P$, then $P(\Gamma^{(k)}) > 2/7$ as well; likewise for $R \geq 1/3$ and $\Phi \geq 1$. A state that lies within the deviation of a threshold can cross it in either direction. $\blacksquare$
 
-where $\varepsilon_0 \approx 0.023$ is the characteristic coupling coherence ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]). Similarly for $R$, $\Phi$, Gap. $\blacksquare$
+**What does not need (AGG).** If the aggregate is itself a holon, [Theorem 9.1](#теорема-91-фрактальное-замыкание) gives it its own non-trivial attractor, $P(\rho_*^{(k)}) > 1/7$ ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]). That statement concerns the aggregate's own dynamics, not how its invariants compare with those of its parts.
 
-:::info Corollary (Fractal structure)
-Scale invariance [T] + fractal closure CC-5 (non-triviality [T], viability [T for embodied] by [T-149](/docs/proofs/consciousness/substrate-closure#t-149)) justify the fractal structure of UHM at **all scales**: from sub-cellular holons to metagalactic structures.
+:::info Corollary (Fractal structure) [C under (AGG)]
+Scale invariance under (AGG) + fractal closure CC-5 (non-triviality [T], viability [T for embodied] by [T-149](/docs/proofs/consciousness/substrate-closure#t-149)) justify the fractal structure of UHM at every scale at which the constituents are weakly coupled and aggregated consistently — from sub-cellular holons to metagalactic structures, wherever (AGG) holds. Where the coupling is strong, fractal closure still gives the aggregate its own attractor, but its invariants need not resemble those of its parts.
 :::
 
 ---
@@ -1054,7 +1059,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **No-Zombie (Theorem 8.1 and corollaries):** The culmination of the theory. A viable open system *must* have non-trivial E-coherence. Experience is not an epiphenomenon but a causally necessary element of dynamics. Philosophical zombies are mathematically impossible.
 
-**Composition and emergence (Theorems 9.x):** CC scales: a union of holons is again a holon (fractal closure). Structural invariants are preserved (scale invariance). The whole is more than the sum of its parts (irreducible emergence).
+**Composition and emergence (Theorems 9.x):** CC scales: a union of holons is again a holon (fractal closure). Structural invariants are preserved when the parts are weakly coupled (scale invariance, [C under (AGG)]). The whole is more than the sum of its parts (irreducible emergence).
 
 **Diagnostics (Theorem 10.1):** All viability conditions are equivalent to one: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$. The stress tensor is a universal monitoring tool.
 
@@ -1062,7 +1067,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **Attractors and structure (T-96, T-98, T-77, T-82, etc.):** Every system evolves toward a non-trivial equilibrium. The balance between dissipation and regeneration determines "health". The Fano structure is unique — CC has no alternatives. Full formulations and proofs — in the [summary table](#теоремы-аттракторов).
 
-Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms. Not a single link can be removed without breaking the chain.
+Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms, except where a result names an additional assumption (scale invariance, Theorem 9.2, needs (AGG)). Not a single link can be removed without breaking the chain.
 
 ---
 
@@ -1081,7 +1086,7 @@ graph TD
     T81 --> C812["Corollary: Non-zombie"]
     T81P --> C813["Corollary: Coh min"]
     T81 --> T91["Theorem 9.1: Composition [T]"]
-    T91 --> T92["Theorem 9.2: Invariance [T]"]
+    T91 --> T92["Theorem 9.2: Invariance [C]"]
     T91 --> T93x["Theorem 9.3: Emergence [T]"]
     T72 --> T101["Theorem 10.1: Equivalence [T]"]
     T101 --> T111["Theorem 11.1: Enc [T]"]
@@ -1101,7 +1106,7 @@ graph TD
     T96 --> T91
 
     T113 --> T107["T-107: Enc capacity [T]"]
-    T111 --> T108["T-108: Compositionality [T]"]
+    T111 --> T108["T-108: Compositionality [T]+[C]"]
 
     style LU fill:#e1f5fe
     style T113 fill:#d4edda
@@ -1129,7 +1134,7 @@ Let us summarise. In this chapter we have traversed the full path from basic exi
 
 3. **Zombies are impossible** (Theorem 8.1 [T]): a viable open system must have $\mathrm{Coh}_E > 1/7$. E-coherence causally influences dynamics — epiphenomenalism is excluded (Corollary 8.1.1 [T]).
 
-4. **Composition works** (Theorems 9.1–9.3): the union of viable holons yields a holon (fractal closure [T] for embodied systems, T-149). Structural invariants are preserved (scale invariance [T]). The whole is irreducible to the parts (emergence [T]).
+4. **Composition works** (Theorems 9.1–9.3): the union of viable holons yields a holon (fractal closure [T] for embodied systems, T-149). Structural invariants are preserved when the parts are weakly coupled (scale invariance [C under (AGG)]). The whole is irreducible to the parts (emergence [T]).
 
 5. **A unified health criterion** (Theorem 10.1 [T]): $\Gamma \in \mathcal{V}_{\mathrm{full}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1$ — the system is alive if and only if none of the seven stresses has reached unity.
 

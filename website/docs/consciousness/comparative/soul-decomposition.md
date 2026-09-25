@@ -618,7 +618,7 @@ The theory does not answer "is there a soul?" It **replaces** the question with 
 10. **The theory's silence is exact.** Three interpretations of the remainder, one phenomenal bridge, one cosmic stage — open; everything indexed to a person — decided (§8).
 
 :::tip Closing the comparative section
-This chapter completes the comparative arc: [thirty-five theories of consciousness](/docs/consciousness/comparative/consciousness-theories), [panpsychism](/docs/consciousness/comparative/panpsychism-analysis), and now the oldest theory of all. The formal ground it stands on is the ethics-and-meaning sequence — especially [Death and Continuity](/docs/consciousness/ethics-meaning/death-continuity), whose theorems decide most of the register. Where the traditions were right, they were right about structure; where they were wrong, they were wrong about carriers. The soul was never one thing — and everything it named is accounted for.
+This chapter completes the comparative arc: [forty-two theories of consciousness](/docs/consciousness/comparative/consciousness-theories), [panpsychism](/docs/consciousness/comparative/panpsychism-analysis), and now the oldest theory of all. The formal ground it stands on is the ethics-and-meaning sequence — especially [Death and Continuity](/docs/consciousness/ethics-meaning/death-continuity), whose theorems decide most of the register. Where the traditions were right, they were right about structure; where they were wrong, they were wrong about carriers. The soul was never one thing — and everything it named is accounted for.
 :::
 
 ---

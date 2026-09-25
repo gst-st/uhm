@@ -118,7 +118,9 @@ where:
 **Interpretation:**
 - $\Phi = 0$: classical ensemble without coherences (orchestra without a conductor — each on their own)
 - $\Phi = 1$: phase-transition point — connections are equal in strength to localisation
-- $\Phi \to \infty$: maximally integrated (entangled) state
+- $\Phi = 6$: the maximum — a pure state with equal weight on all seven dimensions, $|\psi_i|^2 = 1/7$ (maximal integration). "Entangled" does not apply here: $\mathbb{C}^7$ has no tensor factorisation, since 7 is prime, and entanglement is defined only in the 42-dimensional extension $\mathbb{C}^7 \otimes \mathbb{C}^6$.
+
+**Upper bound (an elementary consequence of the definition, not a registry theorem).** Since $P = \mathrm{Tr}(\Gamma^2) = \sum_i \gamma_{ii}^2 + \sum_{i \neq j}|\gamma_{ij}|^2$, one has $\Phi = P/\sum_i \gamma_{ii}^2 - 1$; by Cauchy–Schwarz $\sum_i \gamma_{ii}^2 \geq (\sum_i \gamma_{ii})^2/7 = 1/7$. Hence $\Phi \leq 7P - 1 \leq 6$, with equality exactly for pure states with uniform diagonal. Inside the conscious window $P \leq 3/7$ this gives $\Phi \leq 2$.
 
 ### Numerical example of computing Φ {#числовой-пример}
 
