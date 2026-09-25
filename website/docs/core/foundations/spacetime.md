@@ -15,19 +15,19 @@ This chapter is one of the most remarkable in the theory. Space and time are **n
 - **Base space** $X = |N(\mathcal{C})|$ — from the nerve of the category (geometric realization of the simplicial set of objects and morphisms)
 - **Time** — from the Page–Wootters mechanism (correlation with the O measurement) and stratification (collapse to the terminal object T)
 - **Metric** — from Connes' spectral triple (distance formula via the Dirac operator)
-- **Dimensionality** 6D = 7 - 1, with compactification to 3+1D via sectoral decomposition
-- **Lorentzian signature** — $(1,3)$ **[T]** via an explicit Krein–Lorentzian spectral triple (1 time from Page–Wootters, 3 space from $S^3$; $\mathcal{D}$ Krein-self-adjoint); only physical input is bounded-below $H_S$ (universal stability)
+- **Dimensionality** 6D = 7 - 1; the compactification to 3+1D "via sectoral decomposition" is **retracted [✗]** (2026-09-25) — the axis split $7=1_O\oplus3_{\{A,S,D\}}\oplus\bar{3}_{\{L,E,U\}}$ is not a decomposition under $\mathrm{SU}(3)$ ([details](#секторная-декомпозиция))
+- **Lorentzian signature** — $(1,3)$ **[C]** (registry row T-53): 1 time from Page–Wootters [T]; 3 space from $S^3$, which rests on T-119 [C]; the Lorentzian sign holds at reflection positivity (bounded-below $H_S$). The Krein–Lorentzian triple below is a consistency check, not a derivation of the sign
 - **Gravity** — from the full spectral action (Einstein equations as a consequence)
 - **Background independence** — $M^4$ derived algebraically via the Gel'fand–Naimark–Connes chain ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
 
 This is a radical departure from standard physics, where spacetime is a given on which dynamics unfolds. In UHM dynamics *generates* spacetime.
 :::
 
-:::info Section status: [T] Formalized
+:::info Section status (per item)
 - **Base space:** [T] $X = |N(\mathcal{C})|$ — geometric realization of the nerve of the category
 - **Time:** [T] Formalized via the [emergent time theorem](../../proofs/dynamics/emergent-time)
 - **Metric:** [T] Connes stratified metric $d_{strat}$
-- **Lorentzian signature:** $(1,3)$ **[T]** via explicit [Krein–Lorentzian spectral triple](#теорема-крейнова-тройка) ($\beta=\gamma^0\otimes1$, $\mathcal D$ Krein-self-adjoint; signature $=(\dim$ time-sector$,\dim\Sigma^3)=(1,3)$); only physical input bounded-below $H_S$
+- **Lorentzian signature:** $(1,3)$ **[C]** (registry row T-53) — the time count is [T]; the spatial slice $\Sigma^3$ rests on T-119 [C]; the sign holds at reflection positivity (bounded-below $H_S$). The [Krein–Lorentzian spectral triple](#теорема-крейнова-тройка) ($\beta=\gamma^0\otimes1$, $\mathcal D$ Krein-self-adjoint) realises the signature consistently but does not select it
 - **Gravity:** [T] Full spectral action from the finite triple
 - **Background independence:** [T] $M^4$ derived from categorical structure ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек))
 :::
@@ -274,7 +274,7 @@ along the stratal depth $n \in \mathbb{N}$ (the cumulative tick count — the cy
 | Formulation | Formula | Source |
 |--------------|---------|----------|
 | Geometric | $\dim(X_n) \geq \dim(X_{n+1})$ | [Property 3](./axiom-omega#свойство-3) |
-| Entropic | $\sigma(\gamma) \cdot \Delta S_{vN}(\gamma) \geq 0$ | CPTP structure |
+| Entropic | $\sigma(\gamma) \cdot \Delta S_{vN}(\gamma) \geq 0$ | Unital CPTP structure only (see the retraction under "Thermodynamic direction") |
 | Convergence | $\lim_{n \to \infty} X_n = \{T\}$ | Terminality of T |
 
 [Full proof →](../../proofs/dynamics/emergent-time#10-стратификационное-время)
@@ -302,7 +302,7 @@ $$
 These concepts are related (both concern direction), but have different epistemological status.
 :::
 
-This inequality is a **consequence** of the properties of CPTP channels: they do not decrease entropy.
+~~This inequality is a **consequence** of the properties of CPTP channels: they do not decrease entropy.~~ **Retracted 2026-09-25:** a CPTP channel can lower the von Neumann entropy — the constant channel $X \mapsto \mathrm{Tr}(X)\,\Gamma'$ sends $I/7$ to any $\Gamma'$ — so the inequality holds only for **unital** generators ($\mathcal{L}(I) = 0$), such as the Hamiltonian part and dissipators with Hermitian Lindblad operators. For a quantum dynamical semigroup with a stationary state $\rho_\infty$ the monotone quantity is the relative entropy: $\tfrac{d}{d\tau} D_{KL}(\Gamma(\tau)\,\|\,\rho_\infty) \leq 0$ (Spohn, *J. Math. Phys.* **19**, 1227 (1978)). The UHM generator is not unital — regeneration $\mathcal R$ and the anchor pull toward $\rho^* \neq I/7$ and lower $S_{vN}$ on the way from $I/7$ to the attractor — and, being nonlinear, it lies outside the scope of that 1978 result as well; no entropy-type monotone is established for the full $\mathcal L_\Omega$.
 
 :::note Clarification
 In the presence of [regeneration](../dynamics/evolution#3-регенеративный-член) $\mathcal{R}$ a local decrease in entropy is possible due to the import of free energy:
@@ -332,9 +332,9 @@ Under unital channels $I/7$ is the unique **sink**: every state majorizes $I/7$,
 |--------|--------------|-----------|
 | Sink (unital order) | $\forall \Gamma:\ I/7 \prec \Gamma$; $I/7\not\to\sigma\ (\sigma\neq I/7)$ | All dissipative paths lead to T |
 | Collapse of strata | $\dim(X_n) \geq \dim(X_{n+1})$ | Dimensionality does not grow along the depth $n$ |
-| Entropy | $dS_{vN}/d\tau \geq 0$ | Entropy does not decrease |
+| Entropy (unital channels) | $dS_{vN}/d\tau \geq 0$ for unital generators only | Entropy does not decrease along unital dynamics; for a general quantum dynamical semigroup the monotone is $D_{KL}(\Gamma\|\rho_\infty)$ (Spohn 1978) |
 
-**Status:** [T] Formalized. The second law is **derived** from categorical structure.
+**Status:** [T] Formalized for the unital morphism class. The second law is **derived** from categorical structure for unital dynamics; the full UHM generator is not unital (see "Thermodynamic direction").
 
 ### Relation to the Heaviside function
 
@@ -356,14 +356,14 @@ $$
 
 where $\tau_{\mathbb{H}}$ is the proper time of the [Holon](../structure/holon) $\mathbb{H}$.
 
-### Relativistic effects [T] {#релятивистские-эффекты}
+### Relativistic effects [C] {#релятивистские-эффекты}
 
-:::tip Theorem (Relativistic effects from spectral triple) [T]
-Gravitational and kinematic time dilation are consequences of the spectral triple T-53 [T] and the full spectral action T-65 [T]. Connes' formula defines the metric $g_{\mu\nu}$, and the spectral action reproduces the Einstein–Hilbert action, which includes all relativistic effects.
+:::tip Theorem (Relativistic effects from spectral triple) [C at T-53]
+Gravitational and kinematic time dilation are consequences of the spectral triple T-53 [C] (its Lorentzian sign holds at reflection positivity, its spatial slice at T-119) and the full spectral action T-65 [T]. Connes' formula defines the metric $g_{\mu\nu}$, and the spectral action reproduces the Einstein–Hilbert action, which includes all relativistic effects.
 
 **Proof.**
 
-**Step 1 (Metric from Connes formula).** From T-53 [T] ([spectral triple](#теорема-спектральная-тройка)):
+**Step 1 (Metric from Connes formula).** From T-53 [C] ([spectral triple](#теорема-спектральная-тройка)):
 
 $$d(p, q) = \sup\{|f(p) - f(q)| : \|[D, f]\| \leq 1\}$$
 
@@ -413,14 +413,10 @@ where $N = 7$ is the number of dimensions of the [Holon](../structure/holon).
 
 ### Relation to GR (program) {#связь-с-ото}
 
-:::tip [T] Sectoral decomposition + background independence
-The transition from 7D (= 6D + time) to the observable 3+1D is formalized via sectoral decomposition:
+:::tip Background independence [T]; sectoral decomposition retracted [✗]
+The transition from 7D (= 6D + time) to the observable 3+1D was formalized via the sectoral decomposition $7 = 1_O \oplus 3_{\{A,S,D\}} \oplus \bar{3}_{\{L,E,U\}}$, with the masslessness of gluons (the $\{A,S,D\}$ "$\mathbf{3}$-sector") giving non-compact space and the massiveness of $W,Z$ (the $\{L,E,U\}$ "$\bar{\mathbf{3}}$-sector") a compactification at $v_{\text{EW}}$. This is **retracted [✗]** (2026-09-25): no three of the six non-$O$ axes span an $\mathrm{SU}(3)$-invariant subspace, so neither axis set is a sector. Details — [Sectoral decomposition](#секторная-декомпозиция).
 
-$$7 = 1_O \oplus 3_{\{A,S,D\}} \oplus \bar{3}_{\{L,E,U\}}$$
-
-The masslessness of gluons ($\mathbf{3}$-sector) provides non-compact spatial dimensions; the massiveness of $W,Z$ ($\bar{\mathbf{3}}$-sector) provides compactification at the scale $v_{\text{EW}}$. Details — [Sectoral decomposition](#секторная-декомпозиция).
-
-**Results:** The [finite spectral triple](#теорема-спектральная-тройка) $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is constructed [T] (T-53). The spectral action $S = \text{Tr}(f(D/\Lambda))$ gives $\int(a_0\Lambda^4 + a_2\Lambda^2 R + \ldots)\sqrt{g}\,d^4x$ [T] (T-65, [full spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)). The product of triples $M^4 \times F_{\text{int}}$ is **derived** from categorical structure [T] ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)): the macroscopic algebra is commutative in the thermodynamic limit (T-117 [T]), the Gel'fand–Connes reconstruction gives $\Sigma^3$ (T-119 [C]), the product $M^4 = \mathbb{R} \times \Sigma^3$ satisfies the NCG axioms (T-120 [T]).
+**Results:** The [finite spectral triple](#теорема-спектральная-тройка) $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is written down (T-53; its KO-dimension-6 claim is retracted, see Step 6 there). The spectral action $S = \text{Tr}(f(D/\Lambda))$ gives $\int(a_0\Lambda^4 + a_2\Lambda^2 R + \ldots)\sqrt{g}\,d^4x$ [T] (T-65, [full spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)). The product of triples $M^4 \times F_{\text{int}}$ is obtained from the categorical structure along the chain of [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек): the macroscopic algebra is commutative in the thermodynamic limit (T-117 [T]), the Gel'fand–Connes reconstruction gives $\Sigma^3$ (T-119 [C]), and the product $M^4 = \mathbb{R} \times \Sigma^3$ is assembled from these (T-120); with T-118 and T-119 conditional, the chain is conditional too, so this page does not lean on T-120 as unconditional.
 :::
 
 See [Correspondence with physics: GR](../../proofs/physics/physics-correspondence#5-связь-с-общей-теорией-относительности) for the detailed program.
@@ -508,8 +504,8 @@ Violation of Bell inequalities is a consequence of non-zero coherences in the st
 | **Metric $d_{strat}$** | [T] Formalized | [Connes stratified metric](#метрика-конна) |
 | **Dimensionality 6D** | [T] Formalized | Consequence of $N = 7$ |
 | **Local-global dichotomy** | [T] Formalized | [H* = 0 globally, H*_loc ≠ 0 locally](#локально-глобальная-дихотомия) |
-| **Lorentzian signature** | signature $(1,3)$ [T] (Krein construction) | [UHM spectral triple](#теорема-спектральная-тройка) |
-| **Compactification 7D → 3+1D** | [T] | [Sectoral decomposition](#секторная-декомпозиция) |
+| **Lorentzian signature** | signature $(1,3)$ [C] (T-53: time count [T], spatial slice T-119 [C], sign at reflection positivity) | [UHM spectral triple](#теорема-спектральная-тройка) |
+| **Compactification 7D → 3+1D** | retracted [✗] | [Sectoral decomposition](#секторная-декомпозиция): the axis split is not an $\mathrm{SU}(3)$ decomposition |
 | **Background independence ($M^4$ derived)** | [T] | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
 | **Einstein equations** | [T] | Spectral action from the full triple |
 
@@ -519,23 +515,29 @@ The circularity problem of $\Gamma_A$ has been **resolved**: space is now derive
 
 ## Sectoral decomposition of dimension 7 = 1 + 3 + 3̄ {#секторная-декомпозиция}
 
-:::note Where 3+1 dimensions come from
-We live in three-dimensional space with one dimension of time — 3+1 = 4 in total. But in UHM there are 7 fundamental dimensions. Where did the other 3 go? The answer: they are *curled up* (compactified) at the scale of the electroweak interaction. Of the 7 dimensions: one (O) becomes time, three (A, S, D) become spatial (they correspond to massless gluons, and are therefore non-compact — they extend to infinity), and the remaining three (L, E, U) are compact internal dimensions (they correspond to massive $W$- and $Z$-bosons, which are curled up at the scale $\sim 1/v_{\text{EW}}$). Thus the 3+1-dimensionality of our world is neither an accident nor a postulate, but a consequence of the vacuum symmetry $SU(3)_C$.
+:::danger Retracted [✗] (2026-09-25): 3+1 from $7=1_O\oplus3_{\{A,S,D\}}\oplus\bar3_{\{L,E,U\}}$
+This section claimed that the $\mathrm{SU}(3)_C$ fixing $O$ splits the seven axes into time $O$, a spatial triplet $\{A,S,D\}$ and a compact anti-triplet $\{L,E,U\}$, and read 3+1 dimensions off that split; the split is false — none of the 20 triples of non-$O$ axes spans an $\mathrm{SU}(3)$-invariant subspace, and the commutant of $\mathfrak{su}(3)$ on those six axes is two-dimensional, so $\mathbb{R}^6$ is irreducible (of complex type) and the only invariant real splitting is $\mathbb{R}e_O\oplus\mathbb{R}^6$. What replaces it is the complexified decomposition $\mathbb{C}^7=\mathbb{C}e_O\oplus\mathbf 3\oplus\bar{\mathbf 3}$ with $\mathbf 3=\mathrm{span}_{\mathbb C}\{A-iD,\ S-iU,\ L-iE\}$ **[T]** — standard mathematics and prior art (Günaydın and Gürsey 1973, see [precedents](#прецеденты-3-плюс-1)) — which assigns no axis to "space" and none to "compact", and therefore yields no 3+1 count.
+
+- *Numbers* (`website/scripts/check_core_numbers.py`, `test_no_axis_triple_is_su3_invariant`): $\dim\mathrm{Der}(\mathbb{O})=14$, $\dim\mathrm{Stab}(e_O)=8$; invariant axis triples $0$ of $20$; commutant $2$; left multiplication by $e_O=e_7$ pairs $A\leftrightarrow D$, $S\leftrightarrow U$, $L\leftrightarrow E$. Only a one-dimensional $\mathfrak{u}(1)\subset\mathfrak{su}(3)$ maps the span of $\{A,S,D\}$ into itself, so $\mathrm{SU}(3)$ does not act on $\{A,S,D\}$ as on a triplet.
+- *Retracted with it on this page:* the theorem and Steps 2–5 below, the corollary $\dim(\text{space})=|\mathbf{3}|=3$, the Kaluza–Klein corollary, part (b) and Steps 2 and 5 of the theorem "Spacetime from spectral triple", and the $\{A,S,D\}$ leg of (M2). Registry: rows 48a and C11.
+- *What survives:* one time direction from the Page–Wootters clock [T]. Three spatial directions are claimed only through T-119 [C] (the rank of $\mathfrak{u}(3)$), which reads the colour algebra as the spatial one and so meets the Coleman–Mandula obstacle named in the precedents; a derivation of "3" that avoids it is a research programme [Pr].
 :::
 
-### Theorem (Sectoral decomposition of dimensionality) [T] {#теорема-секторная-декомпозиция}
+### Theorem (Sectoral decomposition of dimensionality) — retracted [✗] {#теорема-секторная-декомпозиция}
 
-:::tip Theorem (Sectoral decomposition) [T]
+:::note Retracted formulation [✗], kept as a record (reason in the box above)
 The seven dimensions of UHM decompose under the action of the vacuum $SU(3)_C$-symmetry into three classes with different physical scales. From this decomposition a **3+1-dimensional** effective spacetime follows. Conditional on the sector asymmetry hypothesis (SA).
+
+The popular gloss that accompanied it: one axis ($O$) becomes time, three ($A,S,D$) become space because they "correspond to massless gluons", three ($L,E,U$) are compact because they "correspond to massive $W$- and $Z$-bosons".
 :::
 
-**Theorem.** The seven dimensions of UHM decompose under the action of the vacuum $SU(3)_C$-symmetry:
+**Former statement.** The seven dimensions of UHM decompose under the action of the vacuum $SU(3)_C$-symmetry:
 
 $$7 = \underbrace{1}_{O \,(\text{time})} \;\oplus\; \underbrace{3}_{\{A,S,D\}\,(\text{space})} \;\oplus\; \underbrace{\bar{3}}_{\{L,E,U\}\,(\text{compact})}$$
 
 From this decomposition a **3+1-dimensional** effective spacetime follows.
 
-**Proof.**
+**Former proof** (Step 1 survives on its own; Steps 2–5 are retracted with the statement).
 
 **Step 1. Emergent time from $O$ [T].**
 
@@ -545,9 +547,9 @@ $$\Gamma(\tau) = \frac{\text{Tr}_O\left[(|\tau\rangle\langle\tau|_O \otimes \mat
 
 Time $\tau$ is the parameter of conditional states. This is **1 temporal** dimension [T].
 
-**Step 2. Sectoral hierarchy of Gap-scales [T].**
+**Step 2. Sectoral hierarchy of Gap-scales — retracted as a consequence of $\mathrm{SU}(3)_C$ [✗].**
 
-Vacuum Gap-profile [T] ([Gap-thermodynamics](/docs/core/dynamics/gap-thermodynamics), [Consequences of axiomatics](/docs/core/foundations/consequences)):
+The table below is an ansatz for the vacuum Gap profile on sets of axis pairs ([Gap-thermodynamics](/docs/core/dynamics/gap-thermodynamics), [Consequences of axiomatics](/docs/core/foundations/consequences)). It is not $\mathrm{SU}(3)_C$-invariant: an $\mathrm{SU}(3)_C$-invariant $\Gamma$ has off-diagonal entries only on the pairs $(A,D)$, $(S,U)$, $(L,E)$ (`test_su3_invariant_states_are_coherent_only_on_o_line_pairs`), so an equal Gap on the nine pairs $\{A,S,D\}\times\{L,E,U\}$ is not colour isotropy:
 
 | Sector | Dimensions | Gap | Physical scale |
 |--------|-----------|-----|-------------------|
@@ -556,7 +558,7 @@ Vacuum Gap-profile [T] ([Gap-thermodynamics](/docs/core/dynamics/gap-thermodynam
 | $\mathbf{3}$-to-$\mathbf{3}$ | $\{A,S,D\}^2$ | $\sim \varepsilon$ | Intermediate |
 | $\bar{\mathbf{3}}$-to-$\bar{\mathbf{3}}$ | $\{L,E,U\}^2$ | $\sim \varepsilon_{\text{EW}} \sim 10^{-17}$ | $v_{\text{EW}} \sim 246$ GeV |
 
-**Step 3. $\mathbf{3}$-sector: non-compact spatial dimensions [T].**
+**Step 3. $\mathbf{3}$-sector: non-compact spatial dimensions — retracted [✗]** ($\{A,S,D\}$ is not the $\mathbf{3}$, and the gluons of $\mathrm{SU}(3)_C$ act on all six non-$O$ axes).
 
 The three dimensions $\{A, S, D\}$ generate $SU(3)_C$ gauge fields (gluons). The confinement sector $\mathbf{3}$-to-$\bar{\mathbf{3}}$ with Gap $\approx 0$ means:
 
@@ -564,7 +566,7 @@ The three dimensions $\{A, S, D\}$ generate $SU(3)_C$ gauge fields (gluons). The
 - [Confinement](/docs/physics/gauge-symmetry/confinement) forms **extended** structures (hadrons, nuclei, atoms)
 - Spatial extension is determined by the **absence of mass** of gluons: massless gauge bosons → the spatial structure **does not curl up**
 
-**Step 4. $\bar{\mathbf{3}}$-sector: compact internal dimensions [T].**
+**Step 4. $\bar{\mathbf{3}}$-sector: compact internal dimensions — retracted [✗]** ($\{L,E,U\}$ is not the $\bar{\mathbf{3}}$).
 
 The three dimensions $\{L, E, U\}$ generate the electroweak sector $SU(2)_L \times U(1)_Y$. The [Higgs mechanism](/docs/physics/particle-physics/higgs-sector) ($\langle \gamma_{EU} \rangle \neq 0$) gives mass to $W^\pm, Z$-bosons:
 
@@ -572,7 +574,7 @@ The three dimensions $\{L, E, U\}$ generate the electroweak sector $SU(2)_L \tim
 - The $\bar{\mathbf{3}}$-sector is "curled up" at the scale $\sim 1/v_{\text{EW}}$
 - Effective compactification radius: $R_{\text{EW}} \sim 1/v_{\text{EW}} \sim 10^{-17}$ cm
 
-**Step 5. Result: 3+1 from 7 = 1+3+3̄ [T].**
+**Step 5. Result: 3+1 from 7 = 1+3+3̄ — retracted [✗]** (it rests on Steps 3 and 4).
 
 $$\underbrace{\text{time}}_{O \;\to\; \tau} + \underbrace{\text{3D space}}_{\{A,S,D\} \;\to\; \text{massless gluons}} + \underbrace{\text{3 compact}}_{\{L,E,U\} \;\to\; \text{massive } W^\pm, Z}$$
 
@@ -582,15 +584,15 @@ $$M^{3+1} = \{O\text{-time}\} \times \{A,S,D\text{-space}\}$$
 
 The $\bar{\mathbf{3}}$-dimensions are "frozen" below the electroweak scale and appear as internal quantum numbers (weak isospin, hypercharge). $\blacksquare$
 
-:::warning Dependence on (SA)
-The sectoral decomposition 7=1+3+3̄ is marked [T], however the identification of {A,S,D} with the 3-sector and {L,E,U} with the 3̄-sector depends on the sector asymmetry hypothesis (SA). **Updated status: [T|SA]** — theorem, conditional on (SA). The decomposition Im(O)≅R^7=R^1⊕R^3⊕R^3 under SU(3)⊂G₂ is [T] (standard mathematics). The physical identification of sectors is [C upon SA].
+:::warning Dependence on (SA) — superseded by the retraction
+This box used to grade the split as "[T|SA]" and to call "$\mathrm{Im}(\mathbb{O})\cong\mathbb{R}^7=\mathbb{R}^1\oplus\mathbb{R}^3\oplus\mathbb{R}^3$ under $\mathrm{SU}(3)\subset G_2$" standard mathematics. That real splitting is retracted [✗]: it is not invariant (box at the top of this section). No hypothesis (SA) can restore it, because it is a statement of representation theory, not of dynamics; (SA) survives only as an assumption about the vacuum Gap profile on axis pairs ([fermion generations, §4.4](/docs/physics/particle-physics/fermion-generations#гипотеза-секторной-асимметрии)).
 :::
 
-### Consequence: dimensionality of space {#размерность-пространства-3}
+### Consequence: dimensionality of space — retracted [✗] {#размерность-пространства-3}
 
 $$\dim(\text{space}) = |\mathbf{3}| = 3$$
 
-This is **not a postulate**, but a consequence of the fact that $SU(3)_C$ is the stabilizer of the O-direction in $G_2$ [T], and that the fundamental representation of $SU(3)$ has $\dim = 3$ [T].
+Retracted with the theorem. The fundamental representation of $\mathrm{SU}(3)$ has complex dimension 3, but it is spanned by $A-iD$, $S-iU$, $L-iE$, not by three axes; its real form is six-dimensional and irreducible. A count of spatial directions from $\dim_{\mathbb C}\mathbf{3}=3$ therefore needs a separate argument; T-119 supplies one only as [C].
 
 ### Precedents and related programmes {#прецеденты-3-плюс-1}
 
@@ -598,7 +600,7 @@ Two older literatures meet in this section. The *octonionic lineage* found the s
 
 **The split $7=1\oplus3\oplus\bar{3}$ is prior art (Günaydın and Gürsey, 1973).** The decomposition of the imaginary octonions under the subgroup $\mathrm{SU}(3)\subset G_2$ that fixes one unit entered physics with Günaydın and Gürsey ("Quark structure and octonions", *J. Math. Phys.* **14**, 1651–1667 (1973), DOI [10.1063/1.1666240](https://doi.org/10.1063/1.1666240)), who read the triplet as quark colour; details and standing are in [G₂-structure, §2.6](/docs/physics/gauge-symmetry/g2-structure#прецеденты-g2). The mathematical half of the theorem above — the half that the (SA) box calls standard mathematics — is therefore not a UHM result, and the novelty of this page can lie only in the physical reading.
 
-The precedent also says what the triplet is, and the labels used above do not match it. Fix the unit $O=e_7$. Left multiplication by $e_7$ is a complex structure on the six other axes; with the table of [G₂-structure, §2](/docs/physics/gauge-symmetry/g2-structure#октонионное-умножение-и-g2) it pairs $A$ with $D$, $S$ with $U$ and $L$ with $E$, and Todorov and Dubois-Violette write the same split with the same Fano labelling (*Int. J. Mod. Phys. A* **33**, 1850118 (2018), eq. 2.5, [arXiv:1806.09450](https://arxiv.org/abs/1806.09450)). $\mathrm{SU}(3)$ acts on these six axes as on $\mathbb{C}^3$; after complexification the triplet $3$ is spanned by $A-iD$, $S-iU$, $L-iE$ (up to a sign convention) and the anti-triplet $\bar{3}$ by their complex conjugates. Two consequences collide with the statement of the theorem:
+The precedent also says what the triplet is, and the labels used above do not match it. Fix the unit $O=e_7$. Left multiplication by $e_7$ is a complex structure on the six other axes; with the table of [G₂-structure, §2](/docs/physics/gauge-symmetry/g2-structure#октонионное-умножение-и-g2) it pairs $A$ with $D$, $S$ with $U$ and $L$ with $E$, and Todorov and Dubois-Violette write the same split with the same Fano labelling (*Int. J. Mod. Phys. A* **33**, 1850118 (2018), eq. 2.5, [arXiv:1806.09450](https://arxiv.org/abs/1806.09450)). $\mathrm{SU}(3)$ acts on these six axes as on $\mathbb{C}^3$; after complexification the triplet $3$ is spanned by $A-iD$, $S-iU$, $L-iE$ (up to a sign convention) and the anti-triplet $\bar{3}$ by their complex conjugates. Two consequences refute the statement of the theorem, which is retracted accordingly (box at the top of the [sectoral decomposition](#секторная-декомпозиция)):
 - the sets $\{A,S,D\}$ and $\{L,E,U\}$ are not the $3$ and the $\bar{3}$. No three of the six axes span an $\mathrm{SU}(3)$-invariant subspace, and none can: $\mathrm{SU}(3)$ would act on a real three-dimensional invariant subspace through a homomorphism $\mathrm{SU}(3)\to\mathrm{SO}(3)$, which must be trivial because the simple eight-dimensional group has no non-trivial homomorphism into the three-dimensional $\mathrm{SO}(3)$ — yet $\mathrm{SU}(3)$ fixes no non-zero vector among these six axes;
 - the (SA) box's "$\mathrm{Im}(\mathbb{O})\cong\mathbb{R}^1\oplus\mathbb{R}^3\oplus\mathbb{R}^3$ under $\mathrm{SU}(3)\subset G_2$" is not an invariant splitting; the invariant one is $\mathbb{R}\oplus\mathbb{R}^6$, with $\mathbb{R}^6\cong\mathbb{C}^3$ irreducible.
 
@@ -606,31 +608,33 @@ The reading "three axes become space, three become compact" thus rests on a part
 
 **Four dimensions from one chosen unit (Kugo and Townsend 1983; Manogue and Dray 1999; Boyle 2026).** A second precedent concerns the step from the octonions to four-dimensional spacetime. Kugo and Townsend related supersymmetry to the four normed division algebras ("Supersymmetry and the division algebras", *Nucl. Phys. B* **221**, 357–380 (1983)), and Baez's review lists the isomorphisms that tie each algebra to a Minkowski spacetime: $\mathfrak{sl}(2,\mathbb{R})\cong\mathfrak{so}(2,1)$, $\mathfrak{sl}(2,\mathbb{C})\cong\mathfrak{so}(3,1)$, $\mathfrak{sl}(2,\mathbb{H})\cong\mathfrak{so}(5,1)$, $\mathfrak{sl}(2,\mathbb{O})\cong\mathfrak{so}(9,1)$ — the spacetime dimension is the dimension of the algebra plus two ("The Octonions", *Bull. Amer. Math. Soc.* **39**, 145–205 (2002), [arXiv:math/0105155](https://arxiv.org/abs/math/0105155)). Baez and Huerta prove that Yang–Mills fields minimally coupled to massless spinors are supersymmetric exactly in these dimensions, 3, 4, 6 and 10 ("Division algebras and supersymmetry I", *Proc. Symp. Pure Math.* **81**, 65–80 (2010), [arXiv:0909.0551](https://arxiv.org/abs/0909.0551)). In this dictionary the four-dimensional spacetime we inhabit belongs to the complex numbers, not to the octonions. Manogue and Dray then showed how to descend from ten to four dimensions without compactification ("Dimensional reduction", *Mod. Phys. Lett. A* **14**, 99–103 (1999), [arXiv:hep-th/9807044](https://arxiv.org/abs/hep-th/9807044)): writing the ten-dimensional massless Dirac equation with octonions and choosing one preferred imaginary unit $\ell$ selects a complex subalgebra $\mathbb{C}\subset\mathbb{O}$, hence $\mathrm{SL}(2,\mathbb{C})\subset\mathrm{SL}(2,\mathbb{O})$, and breaks ten-dimensional Lorentz invariance to four-dimensional; the same choice yields exactly three generations ([Fermion generations, §1.3](/docs/physics/particle-physics/fermion-generations#прецеденты-три-поколения)). Boyle restates the Todorov–Dubois-Violette result in the same language: $2\times2$ Hermitian octonionic matrices form ten-dimensional Minkowski space and complex ones four-dimensional, and "if we fix a copy of $M^{10}$ inside $h_3(\mathbb{O})$, and also fix a copy of $M^4$ inside $M^{10}$, the residual symmetry is $G_{\mathrm{SM}}$" (*J. Math. Phys.* **67**, 071701 (2026), [arXiv:2006.16265](https://arxiv.org/abs/2006.16265)); Krasnov characterises $G_{\mathrm{SM}}$ as the subgroup of $\mathrm{Spin}(9)$ that commutes with a complex structure on $\mathbb{O}^2$ fixed by one unit imaginary octonion (*J. Math. Phys.* **62**, 021703 (2021), [arXiv:1912.11282](https://arxiv.org/abs/1912.11282)). *Standing:* the isomorphisms and the supersymmetry theorem are established mathematics; Manogue and Dray treat free particles in momentum space only and did not construct interactions (their own conclusion); the Jordan-algebra results are published group theory whose physical interpretation is still conjectural (Boyle: "many questions remain"). *Parallel:* UHM's $O$-direction plays the role of the lineage's chosen unit [I]. *Difference:* in the lineage the chosen unit fixes $\mathbb{C}\subset\mathbb{O}$, spacetime comes from $\mathbb{C}$, and the colour triplet stays an internal label. UHM instead reads the colour triplet itself as the three directions of space and the chosen unit as time. We found no precedent for this reading in the lineage; it is UHM's own proposal [I].
 
-**An obstacle to reading colour as space (Coleman and Mandula, 1967).** The Coleman–Mandula theorem ("All possible symmetries of the S matrix", *Phys. Rev.* **159**, 1251–1256 (1967)) states that for a relativistic scattering matrix with a mass gap, the symmetry group is locally a direct product of the Poincaré group and an internal group: internal rotations such as colour commute with spatial rotations. Furey lists "heed or evade the Coleman–Mandula theorem" as the first checkpoint for any algebraic model of the Standard Model (*Ann. Phys. (Berlin)* **537**, 2400323 (2025), [arXiv:2312.12799](https://arxiv.org/abs/2312.12799)). Reading one triplet both as colour and as the spatial vector index — and, in (M2) below, deriving spatial isotropy from $\mathrm{SU}(3)\subset G_2$ acting on $\{A,S,D\}$ — needs either a named loophole, such as a vacuum that locks colour to spatial rotations, or a retreat to an equality of counts. The page offers neither.
+**An obstacle to reading colour as space (Coleman and Mandula, 1967).** The Coleman–Mandula theorem ("All possible symmetries of the S matrix", *Phys. Rev.* **159**, 1251–1256 (1967)) states that for a relativistic scattering matrix with a mass gap, the symmetry group is locally a direct product of the Poincaré group and an internal group: internal rotations such as colour commute with spatial rotations. Furey lists "heed or evade the Coleman–Mandula theorem" as the first checkpoint for any algebraic model of the Standard Model (*Ann. Phys. (Berlin)* **537**, 2400323 (2025), [arXiv:2312.12799](https://arxiv.org/abs/2312.12799)). Reading one triplet both as colour and as the spatial vector index — and, in (M2) below, deriving spatial isotropy from $\mathrm{SU}(3)\subset G_2$ acting on $\{A,S,D\}$ — needs either a named loophole, such as a vacuum that locks colour to spatial rotations, or a retreat to an equality of counts. The page offered neither; the $\{A,S,D\}$ leg of (M2) is therefore retracted, and (M2) now rests on the maximal symmetry of $S^3$ alone, [C] at T-120b.
 
-**Why three and one: the older question (Ehrenfest 1917 to Müller and Masanes 2013).** Whether the dimension of space can be explained is a question older than quantum mechanics. Ehrenfest showed that if Newton's and Coulomb's laws are extended to $n$ space dimensions, neither planetary orbits nor classical atoms are stable for $n>3$ (*Proc. Amsterdam Acad.* **20**, 200 (1917); *Ann. Phys.* **61**, 440–446 (1920), DOI [10.1002/andp.19203660503](https://doi.org/10.1002/andp.19203660503)). Tegmark added time: with more or fewer than one time dimension the equations of nature lose hyperbolicity — the property that lets present data determine the future — so observers cannot predict; with more than three space dimensions there are no traditional atoms, with fewer no gravitational force ("On the dimensionality of spacetime", *Class. Quantum Grav.* **14**, L69–L75 (1997), [arXiv:gr-qc/9702052](https://arxiv.org/abs/gr-qc/9702052)); his argument is explicitly anthropic — the other dimensionalities "might correspond to 'dead worlds', devoid of observers". Information-theoretic reconstructions of quantum theory reach the same number from other premises. Dakić and Brukner show that if the states of the simplest system form a $d$-dimensional ball, their three axioms (on information capacity, locality and reversibility) admit only $d=1$, a classical bit, and $d=3$, the Bloch ball of a qubit ("Quantum theory and beyond: is entanglement special?", in *Deep Beauty*, ed. H. Halvorson, Cambridge University Press 2011, 365–392, [arXiv:0911.0695](https://arxiv.org/abs/0911.0695)). Müller and Masanes prove that if physics happens in $d$ spatial dimensions, events are probabilistic, and the smallest systems carry directional information and evolve continuously and reversibly, then $d=3$ and these systems are quantum bits — the two threes are fixed together ("Three-dimensionality of space and the quantum bit: an information-theoretic approach", *New J. Phys.* **15**, 053040 (2013), [arXiv:1206.0630](https://arxiv.org/abs/1206.0630)). Callender reviews the tradition from Kant to the recent physics literature and argues that modern "proofs" of this kind have gone off track — in his title's words, they are answers in search of a question (*Stud. Hist. Phil. Mod. Phys.* **36**, 113–136 (2005), DOI [10.1016/j.shpsb.2004.09.002](https://doi.org/10.1016/j.shpsb.2004.09.002)). *Standing:* the arguments of Ehrenfest and Tegmark are accepted as conditional — the other laws are held fixed — and anthropic; the reconstruction results hold under their postulates; the question is not regarded as settled. *Parallel:* the claim in the opening box that the 3+1-dimensional world is "a consequence, not a premise" of the theory. *Difference:* the aim is not new, and a derivation of $d=3$ from quantum-information postulates already exists (Müller and Masanes, 2013). There "three" is the dimension of the qubit's Bloch ball; here it is the dimension of the $\mathrm{SU}(3)$ triplet, whose physical identification the (SA) box classes as [C upon SA], and whose labelling is questioned above. The spatial slice $\Sigma^3$ used for the signature rests on registry row T-119, which the [status registry](/docs/reference/status-registry) lists as [C]; the same registry records the Lorentzian signature of row T-53 as conditional — on T-119 and on the reflection-positivity input, with the Krein triple a consistency check rather than a derivation of the sign — not as the unconditional [T] stated in the headings of this page.
+**Why three and one: the older question (Ehrenfest 1917 to Müller and Masanes 2013).** Whether the dimension of space can be explained is a question older than quantum mechanics. Ehrenfest showed that if Newton's and Coulomb's laws are extended to $n$ space dimensions, neither planetary orbits nor classical atoms are stable for $n>3$ (*Proc. Amsterdam Acad.* **20**, 200 (1917); *Ann. Phys.* **61**, 440–446 (1920), DOI [10.1002/andp.19203660503](https://doi.org/10.1002/andp.19203660503)). Tegmark added time: with more or fewer than one time dimension the equations of nature lose hyperbolicity — the property that lets present data determine the future — so observers cannot predict; with more than three space dimensions there are no traditional atoms, with fewer no gravitational force ("On the dimensionality of spacetime", *Class. Quantum Grav.* **14**, L69–L75 (1997), [arXiv:gr-qc/9702052](https://arxiv.org/abs/gr-qc/9702052)); his argument is explicitly anthropic — the other dimensionalities "might correspond to 'dead worlds', devoid of observers". Information-theoretic reconstructions of quantum theory reach the same number from other premises. Dakić and Brukner show that if the states of the simplest system form a $d$-dimensional ball, their three axioms (on information capacity, locality and reversibility) admit only $d=1$, a classical bit, and $d=3$, the Bloch ball of a qubit ("Quantum theory and beyond: is entanglement special?", in *Deep Beauty*, ed. H. Halvorson, Cambridge University Press 2011, 365–392, [arXiv:0911.0695](https://arxiv.org/abs/0911.0695)). Müller and Masanes prove that if physics happens in $d$ spatial dimensions, events are probabilistic, and the smallest systems carry directional information and evolve continuously and reversibly, then $d=3$ and these systems are quantum bits — the two threes are fixed together ("Three-dimensionality of space and the quantum bit: an information-theoretic approach", *New J. Phys.* **15**, 053040 (2013), [arXiv:1206.0630](https://arxiv.org/abs/1206.0630)). The case closest to UHM's own structure has been examined in this literature and excluded. When the state space of the elementary system is a ball of dimension $d=7$, the minimal group acting transitively on its boundary $S^6$ is $G_2$, and the octonionic structure constants are the only invariant candidate for the coupling to a field; but the dynamics they generate leaves $G_2$, and no interacting solution remains (Dakić and Brukner, "The classical limit of a physical theory and the dimensionality of space", [arXiv:1307.3984](https://arxiv.org/abs/1307.3984), §VI.C). Masanes, Müller, Pérez-García and Augusiak prove that when the local group is $G_2$, every bipartite dynamics is non-interacting ("Entanglement and the three-dimensionality of the Bloch ball", *J. Math. Phys.* **55**, 122203 (2014), [arXiv:1111.4060](https://arxiv.org/abs/1111.4060), §IV.I); Müller's lecture notes derive the three-dimensionality of the Bloch ball from operational principles (*SciPost Phys. Lect. Notes* **28** (2021), [arXiv:2011.01286](https://arxiv.org/abs/2011.01286)). This is a counter-precedent, not a refutation: the state space of a UHM holon is the quantum state space of a seven-level system, $\mathcal{D}(\mathbb{C}^7)$ with pure states $\mathbb{CP}^6$, not a seven-dimensional ball. It does show that "$G_2$ acting on seven directions" has already been tried as a source of spatial dimension and fails to produce interacting physics. Callender reviews the tradition from Kant to the recent physics literature and argues that modern "proofs" of this kind have gone off track — in his title's words, they are answers in search of a question (*Stud. Hist. Phil. Mod. Phys.* **36**, 113–136 (2005), DOI [10.1016/j.shpsb.2004.09.002](https://doi.org/10.1016/j.shpsb.2004.09.002)). *Standing:* the arguments of Ehrenfest and Tegmark are accepted as conditional — the other laws are held fixed — and anthropic; the reconstruction results hold under their postulates; the question is not regarded as settled. *Parallel:* the claim in the opening box that the 3+1-dimensional world is "a consequence, not a premise" of the theory. *Difference:* the aim is not new, and a derivation of $d=3$ from quantum-information postulates already exists (Müller and Masanes, 2013). There "three" is the dimension of the qubit's Bloch ball; here it was the dimension of the $\mathrm{SU}(3)$ triplet, whose axis labelling is retracted above. The spatial slice $\Sigma^3$ used for the signature rests on registry row T-119, which the [status registry](/docs/reference/status-registry) lists as [C]; the same registry records the Lorentzian signature of row T-53 as conditional — on T-119 and on the reflection-positivity input, with the Krein triple a consistency check rather than a derivation of the sign. The headings of this page now carry that [C]; until 2026-09-25 they stated an unconditional [T].
 
-### Consequence: Kaluza–Klein spectrum {#калуца-клейн-спектр}
+### Consequence: Kaluza–Klein spectrum — retracted [✗] {#калуца-клейн-спектр}
 
-Compactification of the $\bar{\mathbf{3}}$-sector gives a Kaluza–Klein tower with scale:
+Former text: compactification of the $\bar{\mathbf{3}}$-sector gives a Kaluza–Klein tower with scale
 
-$$m_{\text{KK}} \sim \frac{1}{R_{\text{EW}}} \sim v_{\text{EW}} \sim 246 \text{ GeV}$$
+$$m_{\text{KK}} \sim \frac{1}{R_{\text{EW}}} \sim v_{\text{EW}} \sim 246 \text{ GeV};$$
 
-First excitations = $W^\pm$, $Z$, Higgs. Heavy multiplets = superpartners + $G_2$-extra bosons.
+first excitations $=W^\pm$, $Z$, Higgs; heavy multiplets = superpartners + $G_2$-extra bosons.
 
-### Lorentzian signature from spectral triple — Lorentzian signature $(1,3)$ [T] (Krein) {#лоренцева-сигнатура}
+Retracted [✗] (2026-09-25) with the sectoral decomposition it follows from. Independently, it contradicts data and is not a Kaluza–Klein spectrum: when the Standard Model gauge bosons propagate in compact extra dimensions, electroweak precision tests require $m_{\text{KK}}\gtrsim 3$ TeV even with custodial symmetry and $\gtrsim 10$ TeV in warped models (Particle Data Group, *Review of Particle Physics* 2024, review 85 "Extra dimensions", §85.3.1.2), far above 246 GeV; and a tower with first level at $W^\pm$, $Z$, $H$ and the next at $10^{13}$ GeV has no level spacing of order $1/R$.
 
-:::warning Status: from arbitrary sign-ansatz to reflection positivity
-The signature decomposes into two claims, both now derived:
-- **$(1,3)$-split — [T].** Exactly **one** timelike direction (the Page–Wootters clock is the unique $\mathbb{Z}_7$ time, [T]) and exactly **three** spacelike directions (the vacuum spatial slice is $\Sigma^3\cong S^3$, Riemannian/positive-definite, [T-119](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство) [T]). The counting $1+3$ needs no ansatz.
+### Lorentzian signature from spectral triple — Lorentzian signature $(1,3)$ [C] {#лоренцева-сигнатура}
+
+:::warning Status: [C] (registry row T-53) — from arbitrary sign-ansatz to reflection positivity
+The signature decomposes into two claims; neither is unconditional (corrected 2026-09-25 to the registry: the headings here had said [T]):
+- **$(1,3)$-split — time count [T], spatial count [C].** Exactly **one** timelike direction (the Page–Wootters clock is the unique $\mathbb{Z}_7$ time, [T]) and **three** spacelike directions from the vacuum spatial slice $\Sigma^3\cong S^3$, Riemannian/positive-definite, whose manifold reconstruction is conditional ([T-119](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство) [C]). The count "3" behind it is the rank of $\mathfrak{u}(3)$, i.e. it reads the colour algebra as the spatial one — the reading that meets the Coleman–Mandula theorem ([precedents](#прецеденты-3-плюс-1)).
 - **Lorentzian relative sign — [T at reflection positivity].** Previously this rested on the arbitrary ansatz $g_{\mu\mu}=\chi_{\mu\mu}/|D_\mu|^2$. It is now derived from a **physical stability principle**: the PW generator $H_S$ must be bounded below (unitary, no runaway), which by **Osterwalder–Schrader** reflection positivity forces the time coordinate to enter the metric with sign opposite to the (positive-definite) spatial coordinates — i.e. Lorentzian $(+,-,-,-)$, not Euclidean. The Krein fundamental symmetry then has exactly one negative direction (the PW clock). This replaces "arbitrary sign choice **[C]**" with "physical stability requirement **[T at reflection positivity]**".
 
-**KO-dimension 6** fixes the *internal* real-structure signs ($J^2=+1$, $J\chi=-\chi J$; fermion doubling), **not** the spacetime signature by itself — the signature is carried by the Krein structure. The rigorous Lorentzian realisation via a **Krein / Lorentzian spectral triple** (Franco–Eckstein, van den Dungen, Bochniak–Sitarz) is **now constructed explicitly** — see the [Krein–Lorentzian spectral triple theorem](#теорема-крейнова-тройка) below, which proves signature $(1,3)$ **[T]**. Only the boundedness-below of $H_S$ (universal stability) remains as physical input.
+**KO-dimension 6** fixes the *internal* real-structure signs ($J^2=+1$, $J\chi=-\chi J$; fermion doubling), **not** the spacetime signature by itself — the signature is carried by the Krein structure. (For the $J$ of the UHM triple the KO-dimension-6 claim is retracted: complex conjugation commutes with the real grading, see Step 6.) A Lorentzian realisation via a **Krein / Lorentzian spectral triple** (Franco–Eckstein, van den Dungen, Bochniak–Sitarz) is constructed explicitly in the [Krein–Lorentzian spectral triple theorem](#теорема-крейнова-тройка) below. It is a consistency check, not a derivation of the sign: the Euclidean set $\{\gamma^0, i\gamma^i\}$ is Krein-self-adjoint just as exactly with $\beta=1$ (registry row T-53), so $\beta=\gamma^0\otimes1$ encodes one timelike direction instead of deriving it. The earlier sentence "which proves signature $(1,3)$ [T]" is retracted [✗]; the signature is **[C]** — spatial slice at T-119, sign at reflection positivity (boundedness-below of $H_S$).
 :::
 
-#### Theorem (UHM spectral triple) — Lorentzian signature $(1,3)$ [T] (Krein) {#теорема-спектральная-тройка}
+#### Theorem (UHM spectral triple) — Lorentzian signature $(1,3)$ [C] {#теорема-спектральная-тройка}
 
-There exists a finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$, compatible with the sectoral decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$, such that the Dirac operator $D_{\text{int}}$ inherits the sign structure of the PW-constraint (Step 4, **[T]**); the emergent metric on $M^{3+1}$ has one timelike and three spacelike directions (**[T]**) with **Lorentzian signature** $(+1,-1,-1,-1)$ fixed by reflection positivity (**[T at reflection positivity]**, Step 5).
+There exists a finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$, block-diagonal on the axis blocks $\{O\}$, $\{A,S,D\}$, $\{L,E,U\}$, such that the Dirac operator $D_{\text{int}}$ inherits the sign structure of the PW-constraint (Step 4, **[T]**); the emergent metric on $M^{3+1}$ has one timelike direction (**[T]**) and three spacelike directions (**[C]**, T-119), with **Lorentzian signature** $(+1,-1,-1,-1)$ fixed by reflection positivity (**[T at reflection positivity]**, Step 5). The statement used to say "compatible with the sectoral decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$"; the axis blocks are not those sectors (retracted, [above](#секторная-декомпозиция)), and Step 6's KO-dimension claim is retracted below.
 
 **Construction and proof.**
 
@@ -638,12 +642,14 @@ There exists a finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text
 
 $$A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$$
 
-corresponding to the sectors $\{O\}$, $\{A,S,D\}$, $\{L,E,U\}$.
+acting block-diagonally on the axis blocks $\{O\}$, $\{A,S,D\}$, $\{L,E,U\}$. These blocks are not the $\mathrm{SU}(3)$ sectors (retracted, [sectoral decomposition](#секторная-декомпозиция)); with the correct sectors the two $M_3(\mathbb{C})$ summands would act on $\mathbf 3=\mathrm{span}_{\mathbb C}\{A-iD,S-iU,L-iE\}$ and on $\bar{\mathbf 3}$, and the grading and real structure of Steps 2 and 6 would have to be redone. That is not done here.
 
-#### Relation to the Chamseddine–Connes algebra (T-175a) [T] {#алгебра-морита}
+#### Relation to the Chamseddine–Connes algebra (T-175a) — retracted [✗] {#алгебра-морита}
 
-:::info T-175a: Morita-equivalence of algebras
-$A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ is the **pre-broken** algebra of UHM. The standard NCG algebra $A_F = \mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ (Chamseddine–Connes–Marcolli, 2007) is obtained from $A_{\text{int}}$ after imposing the real structure $J$ (KO-dim 6) and electroweak breaking:
+:::danger T-175a retracted [✗] (2026-09-25): the two algebras are not Morita-equivalent
+T-175a claimed that $A_{\text{int}}=\mathbb{C}\oplus M_3(\mathbb{C})\oplus M_3(\mathbb{C})$ is Morita-equivalent to $A_F=\mathbb{C}\oplus\mathbb{H}\oplus M_3(\mathbb{C})$ and gives the identical Standard Model gauge group; both parts are false, and nothing replaces them. Morita equivalence preserves the centre, and $Z(A_{\text{int}})=\mathbb{C}^3$ (real dimension 6) while $Z(A_F)=\mathbb{C}\oplus\mathbb{R}\oplus\mathbb{C}$ (real dimension 5); equivalently $A_{\text{int}}$ is Morita-equivalent to $\mathbb{C}^3$ and $A_F$ to $\mathbb{C}\oplus\mathbb{H}\oplus\mathbb{C}$, and $\mathbb{H}$ is not Morita-equivalent to $\mathbb{C}$. The unitary groups differ as well: $U(1)\times U(3)\times U(3)$ (dimension 19) against $U(1)\times SU(2)\times U(3)$ (dimension 13). The passage $A_{\text{int}}\to A_F$ described below is at best a passage to a different algebra, and its item 2 uses the retracted split $\bar3=\{L,E,U\}$. The cited Alvarez, Gracia-Bondía and Martín (*Phys. Lett. B* **364**, 33–40 (1995), [arXiv:hep-th/9506115](https://arxiv.org/abs/hep-th/9506115)) prove that unimodularity is equivalent to anomaly cancellation for Connes' model; they say nothing about $A_{\text{int}}$.
+
+Retracted formulation, kept as a record: $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ is the **pre-broken** algebra of UHM. The standard NCG algebra $A_F = \mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ (Chamseddine–Connes–Marcolli, 2007) is obtained from $A_{\text{int}}$ after imposing the real structure $J$ (KO-dim 6) and electroweak breaking:
 
 1. Real structure $J$ with $J^2 = +1$, $J\chi = -\chi J$ (KO-dim 6, Step 6) and the first-order condition $[[D,a], Jb^*J^*] = 0$ restrict the acting subalgebra $M_3(\mathbb{C})_{\bar{3}}$.
 2. The Higgs line $\{A,E,U\}$ ([EW](/docs/physics/gauge-symmetry/standard-model#теорема-фэ) [T]) canonically decomposes $\bar{3} \to 2_{EU} \oplus 1_L$, reducing $M_3(\mathbb{C})_{\bar{3}} \to M_2(\mathbb{C})_{EU} \oplus \mathbb{C}_L$.
@@ -672,24 +678,24 @@ The spectra of $D_O$ and $D_{\text{rest}}$ have opposite signs.
 
 $$g_{00} = \frac{+1}{|D_O|^2} > 0, \qquad g_{aa} = \frac{-1}{|D_{3,a}|^2} < 0, \qquad \text{signature } (+1,-1,-1,-1).$$
 
-Thus the **$(1,3)$-split is [T]** (one timelike direction from PW-clock uniqueness, [T]; three spacelike from $\Sigma^3\cong S^3$ Riemannian, [T-119](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство) [T]), and the **Lorentzian signature is [T]** — realised rigorously by the explicit **Krein–Lorentzian spectral triple** constructed in the theorem below (Franco–Eckstein, van den Dungen, Bochniak–Sitarz framework). The only physical input retained is the boundedness-below of the PW generator $H_S$ (stability), universal to every physical theory.
+Thus the time count is **[T]** (PW-clock uniqueness), the three spacelike directions rest on $\Sigma^3\cong S^3$ ([T-119](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство) [C]), and the **Lorentzian signature is [C]** — conditional on T-119 and on reflection positivity, i.e. on the boundedness-below of the PW generator $H_S$ (stability). The explicit **Krein–Lorentzian spectral triple** of the theorem below (Franco–Eckstein, van den Dungen, Bochniak–Sitarz framework) realises this signature consistently but does not select it (registry row T-53). The earlier sentence "the $(1,3)$-split is [T] … and the Lorentzian signature is [T]" is retracted [✗].
 
 **Step 6 (NCG axioms).** Verification of Connes' 7 axioms for $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$:
-- *Real structure:* $J_{\text{int}} = $ complex conjugation. $J^2 = +1$, $JD = DJ$, $J\chi = -\chi J$ — **KO-dimension 6** (mod 8), coincides with Chamseddine–Connes.
-- *First order:* $[[D_{\text{int}}, a], Jb^*J^*] = 0$ — satisfied ($D$ is inter-sectoral, $A$ is intra-sectoral).
+- *Real structure:* $J_{\text{int}} = $ complex conjugation. $J^2 = +1$, $JD = DJ$, $J\chi = -\chi J$ — **KO-dimension 6** (mod 8), coincides with Chamseddine–Connes. **Retracted [✗] (2026-09-25):** complex conjugation commutes with every real diagonal matrix, so with the $\chi_{\text{int}}$ of Step 2 one gets $J\chi=+\chi J$, not $-\chi J$; together with $J^2=+1$ and $JD=DJ$ this is KO-dimension 0, not 6 (signs $\epsilon=\epsilon'=\epsilon''=+1$; table in Barrett, *J. Math. Phys.* **48**, 012303 (2007), [arXiv:hep-th/0608221](https://arxiv.org/abs/hep-th/0608221)). A KO-dimension-6 real structure must exchange the $\chi=\pm1$ subspaces, as Barrett's $J_F$ exchanges particles and antiparticles; being bijective, it forces the two subspaces to have equal dimension, which no grading of the odd-dimensional $\mathbb{C}^7$ provides (here $4 + 3$). So no real structure of KO-dimension 6 (or 2) exists on $H_{\text{int}} = \mathbb{C}^7$ at all.
+- *First order:* $[[D_{\text{int}}, a], Jb^*J^*] = 0$ — asserted ("$D$ is inter-sectoral, $A$ is intra-sectoral"), not verified here; registry row T-119 records the first-order condition as a constraint on $D$, not a consequence.
 - *Orientation:* $\pi(c) = \chi_{\text{int}}$ for $c \in A \otimes A^{op}$.
 
-All axioms are satisfied. $\blacksquare$
+The former conclusion "All axioms are satisfied" is retracted [✗]: the KO-dimension-6 claim fails as stated, and the first-order line is unverified. $\blacksquare$
 
-#### Theorem (UHM Krein–Lorentzian spectral triple) [T] {#теорема-крейнова-тройка}
+#### Theorem (UHM Krein–Lorentzian spectral triple) [C] {#теорема-крейнова-тройка}
 
-:::tip Theorem (Krein–Lorentzian spectral triple) [T]
-There is an explicit **Krein spectral triple** $(A, \mathcal{K}, \mathcal{D}, \beta, J)$ realising the emergent spacetime $M^{3+1}$ as a genuine **Lorentzian** noncommutative geometry, with metric signature exactly $(1,3)$ (one timelike, three spacelike). The signature is **not** put in by hand: it equals $(\dim \text{time-sector}, \dim \text{space-sector}) = (1,3)$, where the "1" is the dimension of the Page–Wootters clock sector [T] and the "3" is $\dim\Sigma^3$ [T-119]. This upgrades the Lorentzian signature to **[T]**; the only physical input is that $H_S$ is bounded below (stability).
+:::tip Theorem (Krein–Lorentzian spectral triple) [C]
+There is an explicit **Krein spectral triple** $(A, \mathcal{K}, \mathcal{D}, \beta, J)$ realising the emergent spacetime $M^{3+1}$ as a **Lorentzian** noncommutative geometry, with metric signature $(1,3)$ (one timelike, three spacelike): $(\dim \text{time-sector}, \dim \text{space-sector}) = (1,3)$, where the "1" is the dimension of the Page–Wootters clock sector [T] and the "3" is $\dim\Sigma^3$ (T-119 [C]). The timelike direction is put in through the choice $\beta=\gamma^0\otimes1$; with $\beta=1$ the Euclidean set $\{\gamma^0,i\gamma^i\}$ is Krein-self-adjoint as well (registry row T-53). The earlier sentence "this upgrades the Lorentzian signature to [T]" is retracted [✗]; the physical input remains that $H_S$ is bounded below (stability).
 :::
 
 **Construction.**
 
-**(K1) Auxiliary Hilbert space and Wick rotation.** Start from the *Euclidean* Hilbert space $\mathcal{H} = L^2(M,S)\otimes\mathbb{C}^7$ of the product triple ([Step 1](#теорема-спектральная-тройка)), where $L^2(M,S)$ carries the spinor bundle over the base $M=\mathbb{R}_{\text{PW}}\times\Sigma^3$. The Page–Wootters factor $\mathbb{R}_{\text{PW}}$ is the emergent time; $\Sigma^3\cong S^3$ is the emergent space (T-119, T-120b [T]).
+**(K1) Auxiliary Hilbert space and Wick rotation.** Start from the *Euclidean* Hilbert space $\mathcal{H} = L^2(M,S)\otimes\mathbb{C}^7$ of the product triple ([Step 1](#теорема-спектральная-тройка)), where $L^2(M,S)$ carries the spinor bundle over the base $M=\mathbb{R}_{\text{PW}}\times\Sigma^3$. The Page–Wootters factor $\mathbb{R}_{\text{PW}}$ is the emergent time; $\Sigma^3\cong S^3$ is the emergent space (T-119, T-120b [C]).
 
 **(K2) Fundamental symmetry $\beta$.** Define the **fundamental symmetry** (Krein metric operator)
 
@@ -713,18 +719,18 @@ using the Lorentzian Clifford identity $\gamma^0(\gamma^\mu)^\dagger\gamma^0=\ga
 
 **(K5) Signature theorem.** The metric signature equals the $\beta$-signature restricted to the tangent (Clifford) structure:
 $$\operatorname{sig}(g) = \big(\#\{\mu:(\gamma^\mu)^2=+1\},\ \#\{\mu:(\gamma^\mu)^2=-1\}\big) = (\underbrace{1}_{\dim\mathcal H_{\text{time}}},\ \underbrace{3}_{\dim\Sigma^3}) = (1,3).$$
-Both entries are theorems: the timelike count is the number of time **axes** $=\dim\mathbb{R}_{\text{PW}}=1$ (the single PW-clock evolution parameter — *not* the $7$ clock-register states); the spacelike count is $\dim\Sigma^3=3$ ([T-119](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство) [T]). Hence the signature is **forced to be Lorentzian $(1,3)$** — it cannot be Euclidean $(0,4)$ (the timelike count is $1\neq0$) nor $(2,2)$ (it is $1\neq 2$). $\blacksquare$
+The timelike count is a theorem: the number of time **axes** $=\dim\mathbb{R}_{\text{PW}}=1$ (the single PW-clock evolution parameter — *not* the $7$ clock-register states). The spacelike count $\dim\Sigma^3=3$ rests on [T-119](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство) [C]. Given both, and given $\beta=\gamma^0\otimes1$, the signature is $(1,3)$; it is not *forced* to be Lorentzian by the Krein structure, since the same count with $\beta=1$ is Euclidean — the Lorentzian choice is the reflection-positivity input of (K6). $\blacksquare$
 
 **(K6) Reflection positivity / unitarity.** The time-reflection $\Theta:\ t\mapsto -t$ lifts to $\Theta=\beta\,\mathcal{U}_{\text{PW}}$. Osterwalder–Schrader positivity $\langle\Theta\psi,\psi\rangle_\beta\geq 0$ on the positive-time subspace is **equivalent** to the spectrum condition that the PW generator $H_S$ be bounded below. Under this (the minimal stability requirement), the quotient of $\mathcal{K}$ by the $\beta$-null states is a genuine (positive-norm) Hilbert space carrying a **unitary** representation of the Lorentz group — i.e. the Krein triple is the intrinsic Lorentzian object, and no separate Euclidean→Lorentzian continuation is needed.
 
-:::note Status upgrade: Lorentzian signature [T]
-The Krein construction makes the earlier "[T at reflection positivity]" precise and stronger: the **signature $(1,3)$ is [T]** — it is the pair $(\dim\text{time-sector},\dim\Sigma^3)=(1,3)$, both factors proven, with the timelike direction fixed by the PW constraint. The Krein triple $(A,\mathcal K,\mathcal D,\beta)$ is exhibited explicitly and $\mathcal D$ is provably Krein-self-adjoint. The residual "reflection positivity" is not a gap but the statement that $H_S$ is bounded below — the universal stability axiom of every physical theory.
+:::note Former status upgrade — retracted [✗] (2026-09-25)
+This note claimed that the Krein construction makes the signature $(1,3)$ [T], "both factors proven". Retracted in line with registry row T-53: the spatial factor rests on T-119 [C], and Krein-self-adjointness holds equally for the Euclidean set with $\beta=1$, so it does not select the sign. What stands: the Krein triple $(A,\mathcal K,\mathcal D,\beta)$ is exhibited explicitly and $\mathcal D$ is Krein-self-adjoint; the signature is **[C]**, with reflection positivity (boundedness-below of $H_S$) as the named input.
 :::
 
 #### Theorem (Metric components from the spectral action — quantitative match) {#теорема-метрика-компоненты}
 
 :::tip Theorem (Emergent metric components vs observation)
-The spectral action fixes the emergent metric **components** — not just the signature — from the Dirac spectrum. The result is a **Friedmann–Lemaître–Robertson–Walker** metric on $\mathbb{R}_{\text{PW}}\times S^3$ that is **locally Minkowski [T]** (exact local Lorentz invariance), with Newton's constant set by $\Lambda=M_{\text{Pl}}$. All checkable geometric predictions match observation; the **single unresolved quantity is the cosmological constant** (the $\sim10^{-123}$ problem, honestly open).
+The spectral action fixes the emergent metric **components** — not just the signature — from the Dirac spectrum. The result is a **Friedmann–Lemaître–Robertson–Walker** metric on $\mathbb{R}_{\text{PW}}\times S^3$ that is **locally Minkowski [C]** (local Lorentz invariance at T-120b and reflection positivity), with Newton's constant set by $\Lambda=M_{\text{Pl}}$. All checkable geometric predictions match observation; the **single unresolved quantity is the cosmological constant** (the $\sim10^{-123}$ problem, honestly open).
 :::
 
 **(M1) Metric components from the Dirac spectrum.** The emergent metric weights each Clifford direction by the corresponding Dirac eigenvalue (Gap-scale), with the Krein sign of §Krein triple:
@@ -733,16 +739,16 @@ $$g_{00} = \frac{+1}{|D_O|^2} = \frac{1}{\omega_0^2}, \qquad g_{aa} = \frac{-1}{
 
 where $|D_O|=\omega_0$ (the fundamental PW frequency) and $|D_{3,a}|=\omega_0\,\mathrm{Gap}_a$ are the spatial-sector eigenvalues. The overall factor $\omega_0^{-2}$ fixes the **unit of proper time** ($\omega_0\equiv1$ in natural units); it is not observable, only the ratios are.
 
-**(M2) Local Lorentz invariance [T].** The spatial Gap-scales are **isotropic**, $\mathrm{Gap}_1=\mathrm{Gap}_2=\mathrm{Gap}_3=\mathrm{Gap}_s$, because the vacuum spatial slice $\Sigma^3\cong S^3$ is **maximally symmetric** ([T-120b](/docs/proofs/physics/emergent-manifold) [T]; isometry group $SO(4)$ acts transitively on tangent directions) and the internal automorphisms $G_2\supset SU(3)$ act transitively on the $\{A,S,D\}$-sector. Hence the tangent metric is, after the coordinate rescaling $x^a\mapsto x^a/\mathrm{Gap}_s$,
+**(M2) Local Lorentz invariance [C at T-120b].** The spatial Gap-scales are **isotropic**, $\mathrm{Gap}_1=\mathrm{Gap}_2=\mathrm{Gap}_3=\mathrm{Gap}_s$, because the vacuum spatial slice $\Sigma^3\cong S^3$ is **maximally symmetric** ([T-120b](/docs/proofs/physics/emergent-manifold) [C] — it inherits T-119; isometry group $SO(4)$ acts transitively on tangent directions). The second leg of the earlier argument — "the internal automorphisms $G_2\supset SU(3)$ act transitively on the $\{A,S,D\}$-sector" — is **retracted [✗]**: only a one-dimensional $\mathfrak{u}(1)\subset\mathfrak{su}(3)$ maps the span of $\{A,S,D\}$ into itself (`test_no_axis_triple_is_su3_invariant`), and deriving spatial isotropy from colour rotations meets the Coleman–Mandula theorem ([precedents](#прецеденты-3-плюс-1)). Hence the tangent metric is, after the coordinate rescaling $x^a\mapsto x^a/\mathrm{Gap}_s$,
 
 $$g_{\mu\nu} = \frac{1}{\omega_0^2}\,\mathrm{diag}(1,-1,-1,-1) = \frac{1}{\omega_0^2}\,\eta_{\mu\nu},$$
 
 **exactly Minkowski** at every point. Two distinct statements combine here, and it is worth keeping them separate:
 
 - **Minkowski tangent space** (the equivalence-principle statement) follows already from the **signature $(1,3)$** of the Krein construction — it holds at every point of *any* smooth Lorentzian metric, curved or not.
-- **Rotational spatial isotropy** — that the three spatial $\mathrm{Gap}$-scales are *equal*, $\mathrm{Gap}_1=\mathrm{Gap}_2=\mathrm{Gap}_3$, so there is **no preferred spatial direction** — is the *stronger* statement, and it is what $S^3/G_2$ maximal symmetry forces (**[T]**, not an assumption).
+- **Rotational spatial isotropy** — that the three spatial $\mathrm{Gap}$-scales are *equal*, $\mathrm{Gap}_1=\mathrm{Gap}_2=\mathrm{Gap}_3$, so there is **no preferred spatial direction** — is the *stronger* statement, and it is what the maximal symmetry of $S^3$ would force (**[C]** at T-120b; the $G_2$ leg is retracted, see above).
 
-Together they give exact **local Lorentz invariance**. The rotational-isotropy part is precisely what the strongest laboratory tests probe: spatial isotropy is verified to $\sim10^{-18}$ (Hughes–Drever, optical-cavity Michelson–Morley), and any anisotropy would require breaking the $S^3/G_2$ symmetry. (Boost invariance is a separate sector, constrained independently and not derived here beyond the signature.)
+Together they give **local Lorentz invariance [C]**. The rotational-isotropy part is precisely what the strongest laboratory tests probe: spatial isotropy is verified to $\sim10^{-18}$ (Hughes–Drever, optical-cavity Michelson–Morley), and any anisotropy would require breaking the $S^3$ symmetry. (Boost invariance is a separate sector, constrained independently and not derived here beyond the signature.)
 
 **(M3) FRW form and spatial curvature.** The slow spatial variation of $\mathrm{Gap}_s$ over $S^3$ gives **constant positive curvature** (maximal symmetry ⟹ constant $R$), so the global metric is the **closed FRW** line element
 
@@ -760,16 +766,16 @@ with the $O(1)$ coefficient $3\pi/7\approx1.35$. Setting $\Lambda=M_{\text{Pl}}$
 
 | Metric/geometric quantity | Spectral-action prediction | Observation | Status |
 |---|---|---|---|
-| Signature | $(1,3)$ (Krein, §above) | $(1,3)$ | **[T]** ✓ |
-| Local Lorentz invariance | exact Minkowski tangent (M2) | isotropy $<10^{-18}$ | **[T]** ✓ |
-| Metric form | closed FRW $\mathbb{R}\times S^3$ (M3) | FRW | **[T]** ✓ |
+| Signature | $(1,3)$ (Krein, §above) | $(1,3)$ | **[C]** ✓ (T-53) |
+| Local Lorentz invariance | exact Minkowski tangent (M2) | isotropy $<10^{-18}$ | **[C at T-120b]** ✓ |
+| Metric form | closed FRW $\mathbb{R}\times S^3$ (M3) | FRW | **[C at T-120b]** ✓ |
 | Spatial curvature | closed $S^3$, $\Omega_k\lesssim0$ | $\Omega_k=0.001\pm0.002$ | **[T]/[C]** ✓ |
 | Newton's constant $G_N$ | $3\pi/(7f_2\Lambda^2)$, $\Lambda=M_{\text{Pl}}$ | $6.674\times10^{-11}$ | **[T at $\Lambda=M_{\text{Pl}}$]** (fixes $\Lambda$) |
 | $\sin^2\theta_W$ (unification) | $3/8$ (Connes tr-relation) | $0.231$ at $M_Z$ (after RG) | **[C]** ✓ |
 | Cosmological constant $\Lambda_{\text{cc}}$ | $\varepsilon^{12}M_{\text{Pl}}^4\sim10^{-24}M_{\text{Pl}}^4$ (one mechanism) | $\sim10^{-123}M_{\text{Pl}}^4$ | **[C]/[H] — UNRESOLVED** |
 
 :::warning Honest gap: the cosmological constant
-The **only** metric-sector quantity **not** matched is the cosmological constant. The $\varepsilon^{12}$ sector-suppression (T-219) gives $\Lambda_{\text{cc}}\sim10^{-24}M_{\text{Pl}}^4$ — still **$\sim99$ orders of magnitude larger** than the observed $\sim10^{-123}M_{\text{Pl}}^4$. The [Λ-budget ledger](/docs/proofs/gap/lambda-budget) stacks additional structural mechanisms to reach an *order-of-magnitude* estimate $\sim10^{-120\pm10}M_{\text{Pl}}^4$ **[C]**, consistent in magnitude but **not derived to precision**. This is the standard cosmological-constant problem; UHM does not claim to have solved it. Everything else in the metric sector — signature, local Lorentz invariance, FRW form, curvature, $G_N$ — is matched. The *time-dependence* of Λ, unlike its magnitude, is governed by an exact law: $1+w_{\text{eff}} = -\tfrac{2}{3}\,d\ln\mathcal{G}_O/d\ln a$ with a positive floor and no-Big-Rip/no-vacuum-Crunch exclusions — [T-254/T-255](/docs/physics/gravity/cosmological-constant#теорема-лямбда-дрейф).
+The **only** metric-sector quantity **not** matched is the cosmological constant. The $\varepsilon^{12}$ sector-suppression (T-219, a hypothesis [H] since 2026-09-25) would give $\Lambda_{\text{cc}}\sim10^{-24}M_{\text{Pl}}^4$ — still **$\sim99$ orders of magnitude larger** than the observed $\sim10^{-123}M_{\text{Pl}}^4$. ~~The [Λ-budget ledger](/docs/proofs/gap/lambda-budget) stacks additional structural mechanisms to reach an *order-of-magnitude* estimate $\sim10^{-120\pm10}M_{\text{Pl}}^4$ **[C]**, consistent in magnitude but **not derived to precision**.~~ Retracted: that total was a forbidden sum, withdrawn by the ledger's own 2026-07 audit; the ledger's honest bracket is $10^{-53.5}$ to $10^{-93.5}$, its upper end already uses the hypothesis T-219, and the remaining $\gtrsim 27$ orders to the observed value are open. This is the standard cosmological-constant problem; UHM does not claim to have solved it. Everything else in the metric sector — signature, local Lorentz invariance, FRW form, curvature, $G_N$ — is matched. The *time-dependence* of Λ, unlike its magnitude, is governed by an exact law: $1+w_{\text{eff}} = -\tfrac{2}{3}\,d\ln\mathcal{G}_O/d\ln a$ with a positive floor and no-Big-Rip/no-vacuum-Crunch exclusions — [T-254/T-255](/docs/physics/gravity/cosmological-constant#теорема-лямбда-дрейф).
 :::
 
 :::info Spectral identity
@@ -782,32 +788,32 @@ $$
 This connects the [total Gap](/docs/core/dynamics/gap-operator#g-total-definition) with the coefficient $a_2$ of the spectral action and justifies the [derivation of $V_{\mathrm{Gap}}$](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) from axioms [T].
 :::
 
-#### Theorem (Spacetime from spectral triple) [T] {#теорема-время-из-o}
+#### Theorem (Spacetime from spectral triple) — (a) [T], (b) retracted [✗], (c) [C] {#теорема-время-из-o}
 
-:::tip Theorem (Spacetime from spectral triple) [T]
-The finite spectral triple (T-53 [T]) with algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ uniquely determines:
+:::tip Theorem (Spacetime from spectral triple): (a) [T], (b) retracted [✗], (c) [C]
+The finite spectral triple (T-53 [C]) with algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ was claimed to determine uniquely:
 
 **(a)** $\mathbb{R}^1$ (time): the one-dimensional subalgebra $\mathbb{C} \subset A_{\text{int}}$ = O-sector; PW-clock.
 
-**(b)** $\mathbb{R}^3$ (space): $M_3(\mathbb{C})$ ($\mathbf{3}$-sector $\{A,S,D\}$) via massive deformation gives 3 spatial directions; massless gluons → extended directions.
+**(b)** ~~$\mathbb{R}^3$ (space): $M_3(\mathbb{C})$ ($\mathbf{3}$-sector $\{A,S,D\}$) via massive deformation gives 3 spatial directions; massless gluons → extended directions.~~ Retracted [✗]: $\{A,S,D\}$ is not the $\mathbf 3$ ([sectoral decomposition](#секторная-декомпозиция)).
 
-**(c)** Signature $(+1,-1,-1,-1)$: the $(1,3)$-split [T] (PW-clock + $S^3$) with the Lorentzian sign fixed by reflection positivity [T at reflection positivity] (KO-dim 6 fixes the internal grading, not the signature).
+**(c)** Signature $(+1,-1,-1,-1)$: time count [T] (PW-clock), spatial slice $S^3$ [C] (T-119), Lorentzian sign fixed by reflection positivity [T at reflection positivity] — overall [C] (T-53). KO-dimension does not fix the signature; the KO-dimension-6 claim of Step 6 above is retracted.
 
 **Proof.**
 
-**Step 1 (Algebraic derivation).** T-53 [T] establishes: $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$. By Barrett's classification (Barrett 2007) of finite spectral triples with KO-dim 6: the algebra $\mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ is **unique** (up to Morita-equivalence), giving Standard Model physics. (KO-dim 6 fixes the real/grading structure [T]; the Lorentzian *signature* $(1,3)$ is [T] via the explicit Krein–Lorentzian spectral triple — see [§Lorentzian signature](#лоренцева-сигнатура).)
+**Step 1 (Algebraic derivation) — retracted [✗].** The step read: "T-53 establishes $A_{\text{int}}$; by Barrett's classification (Barrett 2007) of finite spectral triples with KO-dim 6, the algebra $\mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ is **unique** (up to Morita-equivalence), giving Standard Model physics." Barrett 2007 (*J. Math. Phys.* **48**, 012303, [arXiv:hep-th/0608221](https://arxiv.org/abs/hep-th/0608221)) contains no classification of finite spectral triples: it keeps Connes' algebra $\mathbb{C}\oplus\mathbb{H}\oplus M_3(\mathbb{C})$ and changes grading and real structure to KO-dimension 6. The classification of irreducible finite geometries of KO-dimension 6 is Chamseddine and Connes ("Why the Standard Model", *J. Geom. Phys.* **58**, 38–47 (2008), [arXiv:0706.3688](https://arxiv.org/abs/0706.3688)); its output is $\mathbb{C}\oplus\mathbb{H}\oplus M_3(\mathbb{C})$, the maximal subalgebra of $M_2(\mathbb{H})\oplus M_4(\mathbb{C})$ admitting the order-one condition — not $\mathbb{C}\oplus M_3(\mathbb{C})\oplus M_3(\mathbb{C})$, which is not Morita-equivalent to it (T-175a, retracted above).
 
-**Step 2 (Stabilizer group and decomposition).** The automorphism group $G_2 = \mathrm{Aut}(\mathbb{O})$ contains the maximal subgroup $SU(3) \subset G_2$. Fixing the O-dimension stabilizes $SU(3)$, and the remaining 6 real directions $\mathrm{Im}(\mathbb{O})/\langle e_O \rangle \cong \mathbb{R}^6$ group into $\mathbb{C}^3$ (fundamental representation of $SU(3)$): $7 = 1_O \oplus 3_{A,S,D} \oplus \bar{3}_{L,E,U}$. This is [T] ([sectoral decomposition](#теорема-секторная-декомпозиция)).
+**Step 2 (Stabilizer group and decomposition) — retracted [✗] as labelled.** The automorphism group $G_2 = \mathrm{Aut}(\mathbb{O})$ contains the maximal subgroup $SU(3) \subset G_2$. Fixing the O-dimension stabilizes $SU(3)$, and the remaining 6 real directions $\mathrm{Im}(\mathbb{O})/\langle e_O \rangle \cong \mathbb{R}^6$ form one copy of $\mathbb{C}^3$ (the complex structure is $L_{e_O}$) — true [T]. The step went on: "$7 = 1_O \oplus 3_{A,S,D} \oplus \bar{3}_{L,E,U}$, this is [T]" — false; see the [sectoral decomposition](#теорема-секторная-декомпозиция).
 
 **Step 3 (Time from O via PW-mechanism).** Page–Wootters (A5) uses O as the clock subsystem. Rate of flow (from T-53): $\frac{d\tau}{d\sigma} = \omega_0 \sqrt{\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2}$. From the [sectoral Gap-bound](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) [T]: $\mathrm{Gap}(O,i) \approx 1$, therefore $d\tau/d\sigma > 0$ — time flows monotonically.
 
 **Step 4 (Space from Dirac spectrum).** The $\mathbb{Z}/2$-grading $\chi_{\text{int}} = \mathrm{diag}(+1, -1, -1, -1, +1, +1, +1)$ (from T-53) determines: spectrum of $D_O$: eigenvalue $+\omega_0$ → **timelike** ($g_{00} = 1/|D_O|^2 > 0$); spectrum of $D_{\mathbf{3}}$: eigenvalues $\{-\lambda_1, -\lambda_2, -\lambda_3\}$ → **spacelike** ($g_{aa} = -1/|D_a|^2 < 0$). Connes formula: $d(p,q) = \sup\{|f(p) - f(q)| : \|[D,f]\| \leq 1\}$.
 
-**Step 5 (Compactification of the $\bar{\mathbf{3}}$-sector).** The electroweak scale $v_{\text{EW}} \sim 246$ GeV determines the compactification size of the $\bar{\mathbf{3}}$-sector: $R_{\bar{3}} \sim 1/v_{\text{EW}} \sim 10^{-18}$ m. This sector is "curled up" and not observable as macroscopic space. $\blacksquare$
+**Step 5 (Compactification of the $\bar{\mathbf{3}}$-sector) — retracted [✗].** The electroweak scale $v_{\text{EW}} \sim 246$ GeV was said to set the compactification size of the $\bar{\mathbf{3}}$-sector, $R_{\bar{3}} \sim 1/v_{\text{EW}} \sim 10^{-18}$ m, "curled up and not observable as macroscopic space". There is no $\{L,E,U\}$ sector to compactify (above), and a Kaluza–Klein scale of 246 GeV is excluded by electroweak precision data ([Kaluza–Klein corollary](#калуца-клейн-спектр)). $\blacksquare$
 :::
 
 :::info Key point: time is not a postulate, but a consequence
-Time is not postulated (as in standard physics), but **derived** from the spectral triple: the O-sector of the algebra $\mathbb{C}$ determines the one-dimensional timelike direction via $\chi_{\text{int}}$ and the Connes formula. This is a direct consequence of T-53 [T] + A5 + [sectoral decomposition](#теорема-секторная-декомпозиция) [T].
+Time is not postulated (as in standard physics), but **derived** from the spectral triple: the O-sector of the algebra $\mathbb{C}$ determines the one-dimensional timelike direction via $\chi_{\text{int}}$ and the Connes formula. It rests on T-53 [C] (whose time part is [T]) and A5; the [sectoral decomposition](#теорема-секторная-декомпозиция) that used to be cited here as a third support is retracted [✗].
 :::
 
 #### Consequence: formula dτ/dσ from spectral triple [T] {#следствие-dtau}

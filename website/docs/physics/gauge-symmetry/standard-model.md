@@ -12,27 +12,27 @@ Derivation of the Standard Model gauge group from $G_2 = \mathrm{Aut}(\mathbb{O}
 
 ## Overview
 
-:::info[Correctness of the heading — [T]]
-$\mathrm{rank}(G_2) = 2 < \mathrm{rank}(\mathrm{SM}) = 4$, so the SM gauge group **is not a subgroup** of $G_2$. However, the full SM group **is unique** and is derived from the axioms:
-- $\mathrm{SU}(3)_C$ from $G_2$ as the stabilizer of the O-direction — **[T]** (standard mathematical fact)
-- Electroweak sector $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from the Fano-electroweak construction (FE) — **[T]** (combinatorics: uniqueness of $(E,U)$); **[C]** (dynamical gauge structure)
+:::info[What the heading means]
+$\mathrm{rank}(G_2) = 2 < \mathrm{rank}(\mathrm{SM}) = 4$, so the SM gauge group **is not a subgroup** of $G_2$. The page obtains it from $G_2$ **plus** constructions outside $G_2$; after the retraction of 2026-09-25 (the axis sets $\{A,S,D\}$, $\{L,E,U\}$ are not the $\mathbf 3$, $\bar{\mathbf 3}$ of $\mathrm{SU}(3)$, Theorem 1.1(a) below) the statuses are:
+- $\mathrm{SU}(3)_C$ from $G_2$ as the stabilizer of the O-direction — **[T]** as mathematics ($\mathrm{Stab}_{G_2}(e_O)\cong\mathrm{SU}(3)$; prior art, Günaydın–Gürsey 1973); its reading as colour is **[I]**
+- Electroweak sector $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from the Fano-electroweak construction (FE): the pair $(E,U)$ from $\kappa_0$ and the line $\{A,E,U\}$ through it are **[T]** combinatorics; the group and its uniqueness are **[C at (FE)]**, where (FE) is the assumption that the electroweak group acts on $\mathrm{span}\{L,E,U\}$ of the Page–Wootters system factor — an input that the retracted split "$\bar{\mathbf 3}=\{L,E,U\}$" used to supply
 - Full correspondence "SM from $G_2$ + (FE)" — **[C]** (electroweak dynamics is conditional)
 :::
 
-The central task is the derivation of the Standard Model gauge group $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from $G_2 = \mathrm{Aut}(\mathbb{O})$. The strategy is dual: $\mathrm{SU}(3)_C$ is extracted from the stabilizer of the O-direction in $G_2$, while the electroweak sector $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ comes from the Fano-electroweak construction (FE): the Higgs line $\{A,E,U\}$ canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$.
+The central task is the derivation of the Standard Model gauge group $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from $G_2 = \mathrm{Aut}(\mathbb{O})$. The strategy is dual: $\mathrm{SU}(3)_C$ is extracted from the stabilizer of the O-direction in $G_2$, while the electroweak sector $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ comes from the Fano-electroweak construction (FE) on the pair $(E,U)$ and the Higgs line $\{A,E,U\}$. (The former phrase "the Higgs line canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$" is retracted [✗]: $\{L,E,U\}$ is not the $\bar{\mathbf 3}$.)
 
 :::tip[Status: \[T\] for SU(3)\_C]
 $\mathrm{SU}(3)_C$ from $G_2$ is a standard mathematical fact.
 :::
 
-:::tip[Status: \[T\] for the combinatorics of the electroweak sector]
-The electroweak sector $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ is derived from the Fano-electroweak construction (FE): the formula $\kappa_0$ [T] categorically singles out the **unique** pair $(E,U)$ via $\mathrm{Hom}(O,E)$ and $\mathrm{Hom}(O,U)$, the Higgs line $\{A,E,U\}$ canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$, which determines $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$. Full proof of uniqueness: [sect. 2.3a](#теорема-единственности-фэ).
+:::tip[Status: \[T\] for the combinatorics of the electroweak sector; the group is \[C at (FE)\]]
+The formula $\kappa_0$ [T] categorically singles out the **unique** pair $(E,U)$ via $\mathrm{Hom}(O,E)$ and $\mathrm{Hom}(O,U)$, and the only Fano line through $E$ and $U$ is $\{A,E,U\}$ — both [T]. That these data determine $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ is [C at (FE)]; the step "the Higgs line canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$" that used to carry it is retracted [✗]. Proof and its status: [sect. 2.3a](#теорема-единственности-фэ).
 :::
 
 :::warning Distinction between [T] and [C] in the electroweak sector {#электрослабое-разграничение}
 Two levels of results must be clearly separated:
 
-- **[T] (proven):** combinatorial uniqueness of the pair $(E,U)$ from $\kappa_0$, uniqueness of the Higgs line $\{A,E,U\}$, canonical decomposition $\bar{3} \to 2_{EU} \oplus 1_L$
+- **[T] (proven):** combinatorial uniqueness of the pair $(E,U)$ from $\kappa_0$, uniqueness of the Higgs line $\{A,E,U\}$. The "canonical decomposition $\bar{3} \to 2_{EU} \oplus 1_L$" listed here before is retracted [✗]
 - **[C] (conditional):** full dynamical gauge structure $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ with correct running of coupling constants — depends on dynamical content (Gap potential, RG equations) going beyond pure combinatorics
 - **Free parameter:** the hypercharge generator $Y$ contains the parameter $\alpha$ (relative weight of baryon number and weak isospin within $\bar{3}$), whose value is not fixed by the Fano structure and requires an additional condition (e.g., from anomaly freedom or phenomenology)
 :::
@@ -47,7 +47,7 @@ Two levels of results must be clearly separated:
 
 **Strategy.** Overcome the obstacle through two mechanisms:
 - (A) $\mathrm{SU}(3)_C$ from the stabilizer of the O-direction in $G_2$ — **[T]** (structural symmetry, rank $2 \to$ rank 2)
-- (B) $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from the Fano-electroweak construction (FE): the Higgs line $\{A,E,U\}$ canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$ — **[T]** (uniqueness of the pair $(E,U)$ from $\kappa_0$ [T]; adds rank 2 in the 42D PW extension)
+- (B) $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from the Fano-electroweak construction (FE) on the Page–Wootters system factor — **[C at (FE)]** (the pair $(E,U)$ from $\kappa_0$ is [T]; adds rank 2 in the 42D PW extension). The former "the Higgs line canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$ — [T]" is retracted [✗]
 
 ### 1.2 Theorem 1.1 (Decomposition of $G_2$-generators under $\mathrm{SU}(3)$)
 
@@ -55,11 +55,11 @@ Two levels of results must be clearly separated:
 The maximal embedding $\mathrm{SU}(3) \subset G_2$ (stabilizer of a vector in $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$) determines the decomposition.
 :::
 
-**(a)** Representation **7** (fundamental):
+**(a)** Representation **7** (fundamental). Over $\mathbb{R}$: $\mathbf 7\to\mathbf 1\oplus\mathbf 6$, with $\mathbf 6$ irreducible of complex type (the complex structure is left multiplication by $e_O$, which pairs $A\leftrightarrow D$, $S\leftrightarrow U$, $L\leftrightarrow E$). Over $\mathbb{C}$ **[T]**:
 
-$$7 \to 1_O \oplus 3_{ASD} \oplus \bar{3}_{LEU}$$
+$$7 \to 1_O \oplus \mathbf 3 \oplus \bar{\mathbf 3},\qquad \mathbf 3=\mathrm{span}_{\mathbb C}\{A-iD,\ S-iU,\ L-iE\},\quad \bar{\mathbf 3}=\overline{\mathbf 3}.$$
 
-where: $1$ — distinguished O-direction (time, Page–Wootters); $3$ — spatial triplet $\{A, S, D\}$; $\bar{3}$ — Gap triplet $\{L, E, U\}$.
+The earlier labels $3_{ASD}=\{A,S,D\}$ ("spatial triplet") and $\bar{3}_{LEU}=\{L,E,U\}$ ("Gap triplet") are **retracted [✗]** (2026-09-25): none of the 20 triples of non-$O$ axes spans an $\mathrm{SU}(3)$-invariant subspace (`test_no_axis_triple_is_su3_invariant` in `website/scripts/check_core_numbers.py`). Prior art for the split and its colour reading: Günaydın and Gürsey 1973 ([G₂-structure, §2.6](/docs/physics/gauge-symmetry/g2-structure#прецеденты-g2)).
 
 **(b)** Adjoint representation **14** (algebra $\mathfrak{g}_2$):
 
@@ -67,7 +67,7 @@ $$14 \to 8 \oplus 3 \oplus \bar{3}$$
 
 where $8$ is the adjoint representation of $\mathrm{SU}(3)$ (generators of $\mathrm{SU}(3)$), $3$ and $\bar{3}$ are fundamental representations.
 
-**(c)** The 21 coherences $\gamma_{ij}$ decompose into sectors:
+**(c)** — **retracted [✗] as an assignment of axis pairs.** The multiplicities are right: over $\mathbb{C}$, $\Lambda^2(\mathbf 1\oplus\mathbf 3\oplus\bar{\mathbf 3})=\mathbf 8\oplus\mathbf 1\oplus2\cdot\mathbf 3\oplus2\cdot\bar{\mathbf 3}$ (21 dimensions). But the pair sets in the table below are not the invariant subspaces — an $\mathrm{SU}(3)$-invariant $7\times7$ matrix has off-diagonal entries only on $(A,D)$, $(S,U)$, $(L,E)$ (`test_su3_invariant_states_are_coherent_only_on_o_line_pairs`). Record of the retracted table:
 
 | Sector | Pairs | Number | $\mathrm{SU}(3)$-representation |
 |---|---|---|---|
@@ -77,7 +77,7 @@ where $8$ is the adjoint representation of $\mathrm{SU}(3)$ (generators of $\mat
 | $\bar{3}$-to-$\bar{3}$ | $\{L\text{-}E, L\text{-}U, E\text{-}U\}$ | 3 | $3$ ($\wedge^2 \bar{3}$) |
 | **3-to-$\bar{3}$** | **$\{A\text{-}L, A\text{-}E, A\text{-}U, S\text{-}L, S\text{-}E, S\text{-}U, D\text{-}L, D\text{-}E, D\text{-}U\}$** | **9** | **$8 \oplus 1$** |
 
-**(d)** The 3-to-$\bar{3}$ sector contains the **adjoint representation of $\mathrm{SU}(3)$** (8 generators) plus the **$\mathrm{SU}(3)$-singlet** (1 generator). Eight is precisely the number of gluons in QCD.
+**(d)** ~~The 3-to-$\bar{3}$ sector contains the **adjoint representation of $\mathrm{SU}(3)$** (8 generators) plus the **$\mathrm{SU}(3)$-singlet** (1 generator).~~ Retracted [✗] with (c): the nine pairs $\{A,S,D\}\times\{L,E,U\}$ do not span $\mathbf 8\oplus\mathbf 1$. What holds is (b): the eight generators of $\mathfrak{su}(3)$ — the number of gluons in QCD.
 
 **Proof.** Standard representation theory of exceptional Lie algebras. The embedding $\mathrm{SU}(3) \subset G_2$ is defined by the stabilizer: $\mathrm{Stab}_{G_2}(e_1) \cong \mathrm{SU}(3)$ for any unit vector $e_1 \in S^6 \subset \mathrm{Im}(\mathbb{O})$. The decomposition of **7** follows from the fact that $\mathrm{SU}(3)$ acts trivially on $e_1$ (singlet) and as fundamental/antifundamental on the orthogonal complement. The decomposition of **14** follows from the structural theorem for the pair $(G_2, \mathrm{SU}(3))$:
 
@@ -97,23 +97,19 @@ $G_2$ is not an arbitrarily chosen symmetry, but the **only maximal gauge group*
 
 The remaining $\mathrm{SU}(3)$ is identified with the **gauge group of the strong interaction** $\mathrm{SU}(3)_C$:
 
-**(a)** 8 generators of $\mathrm{SU}(3)_C$ = 8 coherences of the 3-to-$\bar{3}$ sector (after subtracting the singlet):
+:::danger Items (a)–(c) retracted [✗] (2026-09-25)
+They identified the eight generators of $\mathrm{SU}(3)_C$ with coherences of the nine pairs $\{A,S,D\}\times\{L,E,U\}$ and read unbroken colour off an equal Gap on those pairs. Both rest on the retracted labels of Theorem 1.1(a). The generators of $\mathfrak{su}(3)\subset\mathfrak{g}_2\subset\mathfrak{so}(7)$ are real antisymmetric $7\times7$ matrices acting on all six non-$O$ axes (its Cartan subalgebra rotates the planes $(A,D)$, $(S,U)$, $(L,E)$ with angles summing to zero). An $\mathrm{SU}(3)_C$-invariant $\Gamma$ has off-diagonal entries only on $(A,D)$, $(S,U)$, $(L,E)$ (`test_su3_invariant_states_are_coherent_only_on_o_line_pairs`); a vacuum with non-zero coherence on the nine pairs, equal Gap or not, therefore breaks $\mathrm{SU}(3)_C$ instead of exhibiting it. Unbroken colour is thus not derived on this page; what vacuum is compatible with it is an open problem [Pr].
+:::
 
-$$T_a^{(\mathrm{color})} \in \{A\text{-}L, A\text{-}E, A\text{-}U, S\text{-}L, S\text{-}E, S\text{-}U, D\text{-}L, D\text{-}E, D\text{-}U\}_{\mathrm{traceless}}$$
+**(a)** ~~8 generators of $\mathrm{SU}(3)_C$ = 8 coherences of the 3-to-$\bar{3}$ sector (after subtracting the singlet): $T_a^{(\mathrm{color})} \in \{A\text{-}L, A\text{-}E, A\text{-}U, S\text{-}L, S\text{-}E, S\text{-}U, D\text{-}L, D\text{-}E, D\text{-}U\}_{\mathrm{traceless}}$~~ — retracted [✗].
 
-**(b)** "Gluon field" — fluctuations of the 8 Gap phases $\theta_{ij}$ in the 3-to-$\bar{3}$ sector around the vacuum value:
+**(b)** ~~"Gluon field" — fluctuations of the 8 Gap phases $\theta_{ij}$ in the 3-to-$\bar{3}$ sector around the vacuum value, $A_\mu^a(x) \sim \partial_\mu \theta_{ij}^{(a)}(x)$~~ — retracted [✗] with (a).
 
-$$A_\mu^a(x) \sim \partial_\mu \theta_{ij}^{(a)}(x), \quad a = 1, \ldots, 8$$
-
-**(c)** $\mathrm{SU}(3)_C$ is an **exact** symmetry (not broken in the vacuum), because the Gap vacuum $\Gamma_{\mathrm{vac}}$ (L0) is **isotropic** in the 3-to-$\bar{3}$ sector:
-
-$$\mathrm{Gap}(A,L) = \mathrm{Gap}(A,E) = \cdots = \mathrm{Gap}(D,U) = \mathrm{Gap}_{\mathrm{vac}}^{(3\bar{3})}$$
-
-All 9 coherences of this sector have the same Gap, and $\mathrm{SU}(3)$ is unbroken.
+**(c)** ~~$\mathrm{SU}(3)_C$ is an exact symmetry, because the Gap vacuum is isotropic in the 3-to-$\bar{3}$ sector, $\mathrm{Gap}(A,L) = \cdots = \mathrm{Gap}(D,U)$~~ — retracted [✗]: equal Gap on axis pairs is not $\mathrm{SU}(3)$-invariance (box above).
 
 **Justification of the identification.** Of all possible candidates for $\mathrm{SU}(3)$ (stabilizers of $A, S, \ldots, U$), O is the only one for which:
 - (i) The stabilizer has a physical meaning (choice of the "clock" subsystem)
-- (ii) The remaining $\mathrm{SU}(3)$ acts on the spatial + Gap sectors
+- (ii) The remaining $\mathrm{SU}(3)$ acts on the six axes other than $O$, as on one copy of $\mathbb{C}^3$ (not separately on "spatial" and "Gap" sectors — Theorem 1.1(a))
 - (iii) $G_2$-invariance of the Lagrangian guarantees conservation of $\mathrm{SU}(3)_C$ charges (8 of the 14 $G_2$-charges)
 
 ---
@@ -129,18 +125,18 @@ All 9 coherences of this sector have the same Gap, and $\mathrm{SU}(3)$ is unbro
 | Mechanism | Source | Result | Status |
 |---|---|---|---|
 | $G_2 \to \mathrm{SU}(3)_C$ | Stabilizer of the O-direction | rank 2 — strong interaction | **[T]** |
-| Fano-electroweak construction (FE) | Higgs line $\{A,E,U\}$ | rank 2 — electroweak interaction | **[T]** (combinatorics); **[C]** (dynamics) |
+| Fano-electroweak construction (FE) | Higgs line $\{A,E,U\}$ | rank 2 — electroweak interaction | **[C at (FE)]** (the combinatorics of $(E,U)$ is [T]; dynamics [C]) |
 
-**Analysis in 7D:** The generator $T_3 = (\lvert E\rangle\langle E\rvert - \lvert U\rangle\langle U\rvert)/2$ of $\mathrm{SU}(2)_L$ is a diagonal operator. Within $\mathfrak{su}(3)$ acting on $\bar{3} = \{L,E,U\}$, the Cartan generators (analogues of Gell-Mann's $\lambda_3$, $\lambda_8$) include $\lvert E\rangle\langle E\rvert - \lvert U\rangle\langle U\rvert$ as one of the two Cartans. Consequently, $T_3 \in \mathfrak{h}(\mathrm{SU}(3))$, and in 7D $\mathrm{SU}(2)_L$ is a **subgroup** of $\mathrm{SU}(3)_{\bar{3}}$. The rank remains 2.
+**Analysis in 7D — retracted [✗] and replaced.** The former analysis read $\bar{3} = \{L,E,U\}$ as the anti-triplet, took $\lvert E\rangle\langle E\rvert - \lvert U\rangle\langle U\rvert$ for one of its Cartan generators and concluded that in 7D $\mathrm{SU}(2)_L$ is a subgroup of "$\mathrm{SU}(3)_{\bar{3}}$". Both premises are false: the anti-triplet is spanned by $A+iD$, $S+iU$, $L+iE$, and the generators of $\mathrm{SU}(3)\subset G_2\subset\mathrm{SO}(7)$ are real antisymmetric matrices, which a real diagonal matrix is not. What is true in 7D: the $\mathrm{SU}(2)$ generated by $T_{1,2,3}$ on $\mathrm{span}\{E,U\}$ does **not** commute with $\mathrm{SU}(3)_C$ (numerically $\max_a\|[T_a,X]\|=3.6$ over a basis $X$ of $\mathfrak{su}(3)$), and Schur's lemma gives the centraliser of $\mathrm{SU}(3)_C$ in $\mathrm{U}(7)$ as $\mathrm{U}(1)^3$ (dimension 3, checked) — it contains no $\mathrm{SU}(2)$ at all. In 7D the electroweak group of (FE) and the colour group therefore cannot coexist as commuting factors.
 
 **Resolution in 42D:** In the Page–Wootters extension (Axiom A5):
 
 $$\mathcal{H}_{\mathrm{total}} = \mathcal{H}_O \otimes \mathcal{H}_{6D} = \mathbb{C}^7 \otimes \mathbb{C}^6 = \mathbb{C}^{42}$$
 
-$\mathrm{SU}(3)_C$ (from $G_2$ on the clock factor) and $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ (from (FE) on the system factor) act on **different** tensor factors, so they commute and ranks add: $2 + 2 = 4 = \mathrm{rank}(\mathrm{SM})$. Status: **[T]** (under Axiom A5, Page–Wootters).
+$\mathrm{SU}(3)_C$ (from $G_2$ on the clock factor) and $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ (from (FE) on the system factor) act on **different** tensor factors, so they commute and ranks add: $2 + 2 = 4 = \mathrm{rank}(\mathrm{SM})$. Status: **[C at (FE)]** under Axiom A5 (Page–Wootters). The commutation itself is trivial here — any two groups on different tensor factors commute — and it is the only sense in which the two groups commute; in 7D they do not (above).
 
-:::tip Resolved: bimodule construction [T]
-SM representations $(3,2)_{1/6}$ arise **not** from the tensor product $\mathbb{C}^7 \otimes \mathbb{C}^6$ (this is the PW realization for emergent time), but from the **bimodule decomposition** of $H_F$ via the real structure $J$ (KO-dim 6): the left action of $\mathbb{H}$ gives weak isospin, the right action of $M_3(\mathbb{C})^\circ$ gives color. Both act on the same element $\xi \in H_F$. Full proof: [Bimodule construction T-176](/docs/proofs/physics/bimodule-construction#бимодульная-конструкция).
+:::warning Bimodule construction — retracted as a derivation [✗] (2026-09-25)
+This box said "Resolved [T]": SM representations $(3,2)_{1/6}$ arise **not** from the tensor product $\mathbb{C}^7 \otimes \mathbb{C}^6$ but from the **bimodule decomposition** of $H_F$ via the real structure $J$ (KO-dim 6) — left action of $\mathbb{H}$ for weak isospin, right action of $M_3(\mathbb{C})^\circ$ for colour ([Bimodule construction, T-178](/docs/proofs/physics/bimodule-construction#бимодульная-конструкция); the box cited it as "T-176"). The mechanism is Connes's, and it works for his $A_F$ acting on his $H_F$ (96 states for three generations). It is not derived from the UHM triple: $H_{\text{int}}=\mathbb{C}^7$ cannot carry the 16 states of one generation, the passage $A_{\text{int}}\to A_F$ leaned on the Morita claim T-175a (retracted), and $J$ = complex conjugation does not have KO-dimension 6 ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)). Status of the representation content in UHM: imported, not derived.
 :::
 
 ### 2.2 Fano Structure and the Higgs Line {#фановская-структура}
@@ -159,7 +155,7 @@ The seven Fano lines of $\mathrm{PG}(2,2)$ (with the identification $\{1,2,3,4,5
 
 The Higgs line $\{A,E,U\} = \{5,6,1\}$ is the **unique** Fano line containing both electroweak dimensions $E$ and $U$ (proven in sect. 9.2, [T]).
 
-**Classification with respect to the decomposition $7 = 1_O \oplus 3_{ASD} \oplus \bar{3}_{LEU}$:**
+**Classification with respect to the axis sets $\{O\}$, $\{A,S,D\}$, $\{L,E,U\}$** (incidence combinatorics only: these sets are not the $\mathrm{SU}(3)$ sectors, Theorem 1.1(a); below, "3" and "$\bar 3$" name the two axis sets):
 
 | Type | Fano lines | Number | Characteristic |
 |-----|-----------|-------|----------------|
@@ -173,17 +169,13 @@ The Higgs line $\{A,E,U\} = \{5,6,1\}$ is the **unique** Fano line containing bo
 
 ### 2.3 Theorem 2.1 (Fano-Electroweak Construction) {#теорема-фэ}
 
-:::tip[Status: Theorem \[T\]]
-The Higgs line $\{A,E,U\}$ canonically defines the electroweak gauge symmetry $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$. The uniqueness of the construction is proven: the formula $\kappa_0$ [T] categorically singles out the pair $(E,U)$ — see [sect. 2.3a](#теорема-единственности-фэ).
+:::tip[Status: \[C at (FE)\]; the pair $(E,U)$ and the Higgs line are \[T\]]
+The Higgs line $\{A,E,U\}$ and the pair $(E,U)$ singled out by the formula $\kappa_0$ [T] define the electroweak gauge symmetry $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ **given (FE)**: the electroweak group acts on $\mathrm{span}\{L,E,U\}$ of the Page–Wootters system factor. Until 2026-09-25 this box said "Theorem [T]", with (FE) supplied by reading $\{L,E,U\}$ as the $\bar{\mathbf 3}$ of $\mathrm{SU}(3)$; that reading is retracted (Theorem 1.1(a)). See [sect. 2.3a](#теорема-единственности-фэ).
 :::
 
-**Fano-electroweak uniqueness theorem (FE).** *The canonical decomposition $\bar{3} \to 2_{EU} \oplus 1_L$, induced by the Higgs line $\{A,E,U\}$, determines the **unique** effective gauge symmetry of the electroweak sector [T].*
+**Fano-electroweak construction (FE).** *Given (FE), the split of $\mathrm{span}\{L,E,U\}$ into $\mathrm{span}\{E,U\}\oplus\mathrm{span}\{L\}$, singled out by the Higgs line $\{A,E,U\}$, carries the effective gauge symmetry of the electroweak sector [C at (FE)].* The former wording, "the canonical decomposition $\bar{3} \to 2_{EU} \oplus 1_L$ … determines the **unique** effective gauge symmetry [T]", is retracted [✗].
 
-**(a)** The antifundamental triplet $\bar{3}_{LEU} = \{L, E, U\}$ decomposes along the Higgs line:
-
-$$\bar{3}_{LEU} \to 2_{EU} \oplus 1_L$$
-
-where $2_{EU} = \{E, U\}$ is the doublet, $1_L = \{L\}$ is the singlet. The decomposition is canonical: the Higgs line $\{A,E,U\}$ singles out the pair $\{E,U\}$ from $\bar{3}$ in a unique way (sect. 9.2).
+**(a)** ~~The antifundamental triplet $\bar{3}_{LEU} = \{L, E, U\}$ decomposes along the Higgs line, $\bar{3}_{LEU} \to 2_{EU} \oplus 1_L$~~ — retracted [✗]: $\{L,E,U\}$ is not the antifundamental triplet. What remains [T]: the pair $\{E,U\}$ is singled out by $\kappa_0$ and lies on exactly one Fano line, $\{A,E,U\}$ (sect. 9.2). The split $\mathrm{span}\{L,E,U\}=\mathrm{span}\{E,U\}\oplus\mathrm{span}\{L\}$ into a doublet $2_{EU}$ and a singlet $1_L$ is then a definition [D] on the system factor.
 
 **(b)** Gauge structure with explicit generators:
 
@@ -199,45 +191,45 @@ $$
 Y = \frac{1}{3}\left(\sum_{i \in 3} \lvert i\rangle\langle i\rvert - \sum_{j \in \bar{3}} \lvert j\rangle\langle j\rvert\right) + \alpha\left(\lvert L\rangle\langle L\rvert - \frac{1}{2}(\lvert E\rangle\langle E\rvert + \lvert U\rangle\langle U\rvert)\right)
 $$
 
-where the first term is an analogue of baryon number (distinguishes 3 and $\bar{3}$), the second is weak isospin within $\bar{3}$ (distinguishes $1_L$ and $2_{EU}$). Total: 4 generators = $\dim(\mathrm{SU}(2) \times \mathrm{U}(1))$.
+where the first term is an analogue of baryon number (it distinguishes the axis sets $\{A,S,D\}$ and $\{L,E,U\}$ named "3" and "$\bar{3}$"), the second is weak isospin within $\{L,E,U\}$ (distinguishes $1_L$ and $2_{EU}$). Total: 4 generators = $\dim(\mathrm{SU}(2) \times \mathrm{U}(1))$. Note that in 7D the first term does not commute with $\mathrm{SU}(3)_C$: the only $\mathfrak{u}(1)$ in $\mathfrak{so}(7)$ commuting with $\mathfrak{su}(3)$ is generated by the cross product $x\mapsto e_O\times x$ (left multiplication by $e_O$ on the six axes orthogonal to it), which is not diagonal in the axes and does not lie in $\mathfrak{g}_2$ (the centraliser of $\mathfrak{su}(3)$ in $\mathfrak{g}_2$ is zero). A hypercharge that separates $\mathbf 3$ from $\bar{\mathbf 3}$ is therefore outside $G_2$.
 
 :::warning Unfixed parameter α
-The parameter α in the hypercharge generator Y is **not fixed** by the Fano structure. The uniqueness of the gauge group SU(3)×SU(2)×U(1) is [T]; the uniqueness of the hypercharge embedding is [C, upon fixing α from anomaly freedom or phenomenology].
+The parameter α in the hypercharge generator Y is **not fixed** by the Fano structure. The uniqueness of the gauge group SU(3)×SU(2)×U(1) is [C at (FE)] (it was stated as [T] until 2026-09-25); the uniqueness of the hypercharge embedding is [C, upon fixing α from anomaly freedom or phenomenology].
 :::
 
 **(c)** Advantage over the SU(6)-construction:
 
-| Criterion | Old approach [H] (SU(6)) | (FE)-construction [T] |
+| Criterion | Old approach [H] (SU(6)) | (FE)-construction [C at (FE)] |
 |----------|--------------------------|--------------------------|
-| Number of hypotheses | $\geq 3$ (SU(6), SU(5)-embedding, GJ-decomposition) | 0 (derived from $\kappa_0$ [T]) |
+| Number of hypotheses | $\geq 3$ (SU(6), SU(5)-embedding, GJ-decomposition) | 1: (FE) (the pair $(E,U)$ itself is derived from $\kappa_0$ [T]) |
 | Use of Fano | Minimal | Central (Higgs line) |
-| SU(3) consistency | Requires a separate theorem | Automatic (single SU(3) from $G_2$) |
+| SU(3) consistency | Requires a separate theorem | Not automatic: in 7D the SU(2) on $\mathrm{span}\{E,U\}$ does not commute with $\mathrm{SU}(3)_C$; they commute only on different PW tensor factors (Theorem 2.2 retracted) |
 | Predictive power | X,Y-leptoquarks (not observed) | Yukawa hierarchy (consistent) |
 | Economy | 35 generators of SU(6) | 12 generators of SM |
-| Status | [H] | **[T]** — uniqueness theorem |
+| Status | [H] | **[C at (FE)]** (was "[T] — uniqueness theorem" until 2026-09-25) |
 
 ### 2.3a Uniqueness Theorem for the Electroweak Construction {#теорема-единственности-фэ}
 
-:::tip[Status: Theorem \[T\]+\[I\]]
-The SM gauge group $G_{\mathrm{SM}} = \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ is the **unique** rank-4 gauge group compatible with the Fano-plane structure and $G_2$-symmetry.
+:::tip[Status: construction \[C at (FE)\]; uniqueness \[H\]; identification \[I\]]
+The SM gauge group $G_{\mathrm{SM}} = \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ is claimed to be the **unique** rank-4 gauge group compatible with the Fano-plane structure and $G_2$-symmetry. Status since 2026-09-25: the construction below is [C at (FE)]; the uniqueness is [H] — Step 3 is not a classification (see there), and no uniqueness theorem for $\mathrm{SU}(2)\times\mathrm{U}(1)$ exists in the literature; the former status "[T]+[I]" is retracted [✗].
 
-#### Corollary: rank-4 prohibition — no Z′, no fifth force [T] (T-297) {#запрет-z-прайм}
+#### Corollary: rank-4 prohibition — no Z′, no fifth force [H] (T-297) {#запрет-z-прайм}
 
-Uniqueness of $G_{\mathrm{SM}}$ as the **rank-4** group compatible with Fano + $G_2$ forbids every gauge extension of higher rank: any extra gauge $\mathrm{U}(1)$ — a $Z'$, gauged $B{-}L$, a gauged "dark photon" — would raise the rank to 5, and no rank-5 subgroup fits the incidence structure. This is a structural exclusion, not a phenomenological bound: UHM predicts that collider and dark-sector searches for a *gauge* $Z'$ will remain empty at any energy. Discovery of one would refute the (FE)-uniqueness theorem itself. (Notation guard: the quantity $Z'_\Phi(-2)$ of the [$\Lambda$-budget](/docs/proofs/gap/lambda-budget) is the *derivative of an Epstein zeta regulator*, not a boson.)
+The former text: uniqueness of $G_{\mathrm{SM}}$ as the **rank-4** group compatible with Fano + $G_2$ forbids every gauge extension of higher rank: any extra gauge $\mathrm{U}(1)$ — a $Z'$, gauged $B{-}L$, a gauged "dark photon" — would raise the rank to 5, and no rank-5 subgroup fits the incidence structure, so collider and dark-sector searches for a *gauge* $Z'$ remain empty "at any energy". Downgraded to **[H]** (2026-09-25): the uniqueness it rests on is [H] (above), and the octonionic routes that do derive Standard Model structure end with an extra $\mathrm{U}(1)$ — Furey and Hughes obtain "Standard model + $B-L$" from their division-algebraic symmetry breaking (*Phys. Lett. B* **831**, 137186 (2022), [arXiv:2210.10126](https://arxiv.org/abs/2210.10126)), and Boyle a left–right symmetric extension (*J. Math. Phys.* **67**, 071701 (2026), [arXiv:2006.16265](https://arxiv.org/abs/2006.16265)). A gauged $B-L$ broken near the corpus's own seesaw scale $M_R\sim3\times10^{14}$ GeV would give a $Z'$ far beyond any collider, which the corpus does not exclude; "empty searches" would then not test the claim. Defensible form [H]: the (FE) construction contains no extra gauge $\mathrm{U}(1)$; a gauge $Z'$ found within collider reach would contradict (FE). (Notation guard: the quantity $Z'_\Phi(-2)$ of the [$\Lambda$-budget](/docs/proofs/gap/lambda-budget) is the *derivative of an Epstein zeta regulator*, not a boson.)
  The key element is the categorical uniqueness of the pair $(E,U)$ from the formula $\kappa_0$ [T]. Identification of the abstract generators with the physical SM gauge fields is **[I]** (an interpretive step).
 :::
 
-**Theorem (Uniqueness of the electroweak construction).** Under axioms A1–A5, the Standard Model gauge group
+**Claim (Uniqueness of the electroweak construction) — [C at (FE)] for the construction, [H] for uniqueness.** Under axioms A1–A5 and (FE), the Standard Model gauge group
 $$G_{\mathrm{SM}} = \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$$
 is the **unique** rank-4 gauge group compatible with the Fano-plane structure and $G_2$-symmetry.
 
-#### Proof {#доказательство-единственности-фэ}
+#### Argument {#доказательство-единственности-фэ}
 
 **Step 1. $\mathrm{SU}(3)_C$ from $G_2$ [T] (existing result).**
 
 The stabilizer of the O-direction in the $G_2$-representation on $\mathbb{C}^7$ is $\mathrm{SU}(3)$ [T]. Under $G_2 \to \mathrm{SU}(3)$:
 $$7 \to 3 \oplus \bar{3} \oplus 1$$
-where $1 = O$, $3 = \{A, S, D\}$, $\bar{3} = \{L, E, U\}$. Rank$(\mathrm{SU}(3)_C) = 2$, fully exhausting rank$(G_2)$.
+where $1 = O$ and $3=\mathrm{span}_{\mathbb C}\{A-iD,S-iU,L-iE\}$, $\bar 3$ its conjugate. (The former "$3 = \{A, S, D\}$, $\bar{3} = \{L, E, U\}$" is retracted [✗], Theorem 1.1(a).) Rank$(\mathrm{SU}(3)_C) = 2$, fully exhausting rank$(G_2)$.
 
 **Step 2. Necessity of tensor extension [T].**
 
@@ -247,9 +239,9 @@ where $G_2$ acts on $\mathcal{H}_O$ (structural factor) and the electroweak grou
 $$[\mathrm{SU}(3)_C^{(\text{struct})}, G_{\mathrm{EW}}^{(\text{sys})}] = 0$$
 and addition of ranks.
 
-**Step 3. Classification of possible gauge groups on $\bar{3}$ [T].**
+**Step 3. Possible gauge groups on $\mathrm{span}\{L,E,U\}$ — [C at (FE)], not a classification.**
 
-On the system factor, the electroweak group $G_{\mathrm{EW}}$ acts on $\bar{3} = \{L, E, U\} \cong \mathbb{C}^3$. Required rank $= 2$. Maximal subgroups of $\mathrm{U}(3)$ of rank 2:
+On the system factor, the electroweak group $G_{\mathrm{EW}}$ acts on $\mathrm{span}\{L, E, U\} \cong \mathbb{C}^3$ — this is the assumption (FE); the former justification "$\bar{3} = \{L, E, U\}$" is retracted. Required rank $= 2$. The table lists some subgroups of $\mathrm{U}(3)$ of rank 2; it is not a classification — for instance $\mathrm{SO}(3)\times\mathrm{U}(1)$ also has rank 2 and acts on $\mathbb{C}^3$ irreducibly without any $2+1$ split:
 
 | Subgroup | Rank | Fano-compatibility |
 |-----------|:----:|:------------------:|
@@ -258,9 +250,9 @@ On the system factor, the electroweak group $G_{\mathrm{EW}}$ acts on $\bar{3} =
 | $\mathrm{U}(1) \times \mathrm{U}(1)$ | 2 | Abelian — insufficient for the mass spectrum |
 | $\mathrm{U}(2)$ | 2 | Isomorphic to $\mathrm{SU}(2) \times \mathrm{U}(1)$ up to center |
 
-**Step 4. Uniqueness of the decomposition $\bar{3} \to 2 \oplus 1$ [T] (key new element).**
+**Step 4. Uniqueness of the split $\{L,E,U\} \to 2 \oplus 1$ [T] given (FE) (key new element).**
 
-Each decomposition $\bar{3} = \{L, E, U\} \to (2) \oplus (1)$ is defined by a distinguished **pair** in $\bar{3}$. Pairs in $\bar{3}$:
+Each split $\{L, E, U\} \to (2) \oplus (1)$ is defined by a distinguished **pair** in $\{L,E,U\}$. Pairs:
 
 | Pair | Remainder | Fano line through the pair | Third point |
 |------|---------|----------------------|-------------|
@@ -275,7 +267,7 @@ The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamm
 - Pair $\{L, U\}$: no $\mathrm{Hom}(O, L)$ in $\kappa_0$ — $L$ is not categorically singled out
 - Pair $\{L, E\}$: excludes $U$ from the doublet — destroys the normalization $\mathrm{Tr}(\Gamma) = 1$ (function of U)
 
-Consequently, the decomposition $\bar{3} \to \{E, U\} \oplus \{L\}$ is **unique**.
+Consequently, the split $\{L,E,U\} \to \{E, U\} \oplus \{L\}$ is **unique** among the three pairs.
 
 **Step 5. Uniqueness of the Fano-Higgs line [T] (existing result).**
 
@@ -285,23 +277,25 @@ In PG(2,2), exactly one line passes through the points $E = 5$ and $U = 6$: $\{A
 
 On the doublet $\{E, U\} \cong \mathbb{C}^2$:
 - $\mathrm{SU}(2)_L$ is the unique (up to isomorphism) rank-1 group acting irreducibly on $\mathbb{C}^2$
-- $\mathrm{U}(1)_Y$ is the unique (up to normalization) generator commuting with $\mathrm{SU}(2)_L$ and distinguishing $3$ and $\bar{3}$
+- $\mathrm{U}(1)_Y$ is the unique (up to normalization) generator commuting with $\mathrm{SU}(2)_L$ and distinguishing the axis sets $\{A,S,D\}$ and $\{L,E,U\}$ (on the system factor; in 7D such a generator does not commute with $\mathrm{SU}(3)_C$, Theorem 2.1(b))
 
-**Step 7. Result: rank = 4 [T].**
+**Step 7. Result: rank = 4 [C at (FE)].**
 
 $$\text{rank}(\mathrm{SU}(3)_C) + \text{rank}(\mathrm{SU}(2)_L) + \text{rank}(\mathrm{U}(1)_Y) = 2 + 1 + 1 = 4$$
 
-Since at each step the choice is **unique**, an alternative rank-4 gauge group **does not exist**. $\blacksquare$
+~~Since at each step the choice is unique, an alternative rank-4 gauge group does not exist.~~ Retracted [✗]: Step 3 is not exhaustive and Step 1's labels are retracted; what follows is that, given (FE), this construction yields $G_{\mathrm{SM}}$ with rank 4 [C at (FE)]. Uniqueness among all rank-4 groups compatible with the axioms is [H]. $\blacksquare$
 
 :::info[Key new element]
-Step 4 — **categorical uniqueness of the pair $(E, U)$** from the formula $\kappa_0$ [T]. Previously, (FE) was treated as a separate hypothesis; now it is derived from the $\kappa_0$-theorem. The formula $\kappa_0$ [T] contains **exactly** $|\gamma_{OE}|$ and $|\gamma_{OU}|$ — this is not a free parameter, but a consequence of the adjunction $\mathcal{D} \dashv \mathcal{R}$ [T].
+Step 4 — **categorical uniqueness of the pair $(E, U)$** from the formula $\kappa_0$ [T]. The formula $\kappa_0$ [T] contains **exactly** $|\gamma_{OE}|$ and $|\gamma_{OU}|$ — this is not a free parameter, but a consequence of the adjunction $\mathcal{D} \dashv \mathcal{R}$ [T]. The pair is derived; the three-dimensional space on which the electroweak group acts is not. That input, (FE), was treated as a separate hypothesis before, was then taken as derived through "$\bar{\mathbf 3}=\{L,E,U\}$", and is a named assumption again since the retraction of 2026-09-25.
 :::
 
-### 2.4 Theorem 2.2 (Consistency of the Two $\mathrm{SU}(3)$'s) {#согласование-su3}
+### 2.4 Theorem 2.2 (Consistency of the Two $\mathrm{SU}(3)$'s) — retracted [✗] {#согласование-su3}
 
-:::tip[Status: Theorem \[T\]]
-The two routes to $\mathrm{SU}(3)_C$ — through $G_2$ (sect. 1.3) and through the 42D tensor structure (sect. 2.1) — yield **the same** subgroup.
+:::danger[Status: Retracted \[✗\] (2026-09-25)]
+The theorem claimed that the two routes to $\mathrm{SU}(3)_C$ — through $G_2$ (sect. 1.3) and through the 42D tensor structure (sect. 2.1) — yield **the same** subgroup, and that it commutes with $\mathrm{SU}(2)_L\times\mathrm{U}(1)_Y$. Its proof (b) identified the triplet with the axes $\{A,S,D\}$, and (c) derived the commutation from $\{A,S,D\} \cap \{E,U,L\} = \varnothing$. Both fail. $\mathrm{SU}(3)_C$ acts on all six non-$O$ axes at once — $7\to1\oplus\mathbf 3\oplus\bar{\mathbf 3}$ is a complex split with no axis in either summand — and Schur's lemma makes its centraliser in $\mathrm U(7)$ equal to $\mathrm U(1)^3$ (dimension 3, checked), which contains no $\mathrm{SU}(2)$: in 7D the two groups do not commute ($\max_a\|[T_a,X]\|=3.6$, sect. 2.1). In the 42D Page–Wootters extension, $\mathrm{SU}(3)_C$ on the clock factor commutes with any group on the system factor for the trivial reason of tensor independence; nothing more is claimed.
 :::
+
+*Record of the retracted theorem (reason in the box above).*
 
 **(a)** Definition of consistency. $G_2$ acts on $\mathcal{H}_O \cong \mathbb{C}^7$ (7D formalism). In the 42D PW extension, $\mathrm{SU}(3)_C$ acts on the $3_{ASD}$-factor. Consistent embedding:
 
@@ -345,7 +339,7 @@ Elementary fermions are identified with degenerate ($R \to 0$) configurations $\
 :::
 
 :::info Status stratification
-- Algebraic embedding $G_2 \supset SU(3) \times SU(2) \times U(1)$: **[T]** (standard group theory)
+- ~~Algebraic embedding $G_2 \supset SU(3) \times SU(2) \times U(1)$: [T] (standard group theory)~~ — **retracted [✗]** (2026-09-25): impossible, $\mathrm{rank}\,G_2 = 2 < 4 = \mathrm{rank}\,(SU(3) \times SU(2) \times U(1))$ (sect. 1.1 of this page says so itself); the maximal subgroups of full rank in $G_2$ are $\mathrm{SU}(3)$ and $\mathrm{SO}(4)$, and the centraliser of $\mathrm{SU}(3)$ in $G_2$ is finite. What holds: $\mathrm{SU}(3)\subset G_2$ [T]; $\mathrm{SU}(2)\times\mathrm{U}(1)$ is added outside $G_2$ by (FE) [C at (FE)]
 - Concrete identification of Gap configurations with quarks/leptons: **[H]** (assigned by analogy with quantum numbers, not derived from dynamics)
 :::
 
@@ -439,15 +433,24 @@ This 3-form is the standard calibrating form of $G_2$:
 
 $$\varphi = \sum_{(i,j,k) \in \mathrm{Fano}} e^i \wedge e^j \wedge e^k$$
 
-summing over the 7 Fano lines. **Orientability of a $G_2$-manifold is equivalent to the existence of a parallel spinor.**
+summing over the 7 Fano lines. ~~Orientability of a $G_2$-manifold is equivalent to the existence of a parallel spinor.~~ Corrected (2026-09-25): a parallel spinor exists exactly when the holonomy lies in $G_2$; orientability (with a spin structure) only guarantees a $G_2$-structure, not a parallel one. And a smooth manifold of $G_2$ holonomy gives no chiral fermions in four dimensions — they require singularities (Acharya and Witten, "Chiral fermions from manifolds of $G_2$ holonomy", [arXiv:hep-th/0109152](https://arxiv.org/abs/hep-th/0109152)).
 
-### 4.3 Chiral Operator from 4D Reduction
+### 4.3 Chiral Operator from 4D Reduction — retracted [✗]
 
-Under reduction 7D $\to$ 4D (splitting $\mathrm{Im}(\mathbb{O}) = \mathbb{R}^1_O \oplus \mathbb{R}^3_{ASD} \oplus \mathbb{R}^3_{LEU}$) the spinor representation induces a chiral operator:
+:::danger Retracted [✗] (2026-09-25): chirality is not derived from $G_2$
+This subsection claimed that the reduction 7D → 4D along $\mathrm{Im}(\mathbb{O}) = \mathbb{R}^1_O \oplus \mathbb{R}^3_{ASD} \oplus \mathbb{R}^3_{LEU}$ induces the chirality operator $\gamma_5 = i\Gamma_O\Gamma_A\Gamma_S\Gamma_D$ with eigenvalues $\pm1$, and that left chirality of $\mathrm{Gap}(E,U)=0$ follows from the parallel spinor [T]. Three facts refute it.
+1. *The operator.* In this page's own convention, $\Gamma_i\Gamma_j+\Gamma_j\Gamma_i=-2\delta_{ij}$ realised by left octonionic multiplication, $(\Gamma_O\Gamma_A\Gamma_S\Gamma_D)^2=+1$ — for all 35 quadruples of generators — so $i\Gamma_O\Gamma_A\Gamma_S\Gamma_D$ has eigenvalues $\pm i$, not $\pm1$ (`test_gamma5_with_i_has_imaginary_spectrum`).
+2. *The split.* $\mathbb{R}^3_{ASD}\oplus\mathbb{R}^3_{LEU}$ is the retracted axis split (Theorem 1.1(a)); reading $\{O,A,S,D\}$ as the four spacetime directions is retracted with it ([spacetime](/docs/core/foundations/spacetime#секторная-декомпозиция)).
+3. *No chirality from $G_2$.* Every irreducible representation of $G_2$ is real — the longest element of its Weyl group is $-1$ — so every $G_2$-module is self-conjugate, i.e. non-chiral in the sense of Distler and Garibaldi (*Commun. Math. Phys.* **298**, 419–436 (2010), [arXiv:0905.2658](https://arxiv.org/abs/0905.2658), Def. 2.5), and a self-conjugate structure stays self-conjugate on restriction to any subgroup. On the geometric side, compactification on a smooth manifold of $G_2$ holonomy gives no four-dimensional chiral fermions (Acharya and Witten, [arXiv:hep-th/0109152](https://arxiv.org/abs/hep-th/0109152)).
+
+Where the corpus actually takes chirality from: the $\mathbb{Z}_2$-grading of a KO-dimension-6 finite spectral triple — Connes's $(A_F,H_F)$, imported through the bimodule construction (T-178, retracted as a derivation) — and a hypercharge that separates $\mathbf 3$ from $\bar{\mathbf 3}$, which lies outside $G_2$ (the centraliser of $\mathrm{SU}(3)$ in $G_2$ is finite). Chirality is an input of the UHM construction, not an output; deriving it is a research programme [Pr].
+:::
+
+*Record of the retracted derivation.* Under reduction 7D $\to$ 4D (splitting $\mathrm{Im}(\mathbb{O}) = \mathbb{R}^1_O \oplus \mathbb{R}^3_{ASD} \oplus \mathbb{R}^3_{LEU}$) the spinor representation was said to induce a chiral operator:
 
 $$\gamma_5 = i\Gamma_O \Gamma_A \Gamma_S \Gamma_D$$
 
-This operator has eigenvalues $\pm 1$ and defines the chirality of 4D spinors:
+This operator was said to have eigenvalues $\pm 1$ (it has $\pm i$, item 1 above) and to define the chirality of 4D spinors:
 
 $$\gamma_5 \psi_L = -\psi_L, \quad \gamma_5 \psi_R = +\psi_R$$
 
@@ -455,8 +458,8 @@ The chirality of a 4D spinor is determined by the **internal spinor** $\chi_{\ma
 
 $$\gamma_5 \psi = \pm \psi \quad \Longleftrightarrow \quad \Gamma_L \Gamma_E \Gamma_U \chi_{\mathrm{int}} = \mp \chi_{\mathrm{int}}$$
 
-:::tip[Status: Theorem \[T\]]
-The connection $\mathrm{Gap}(E,U) = 0 \leftrightarrow$ left chirality is derived from the structure of the $G_2$-parallel spinor $\eta_0$ and the reduction $\mathrm{Cliff}(7) \supset \mathrm{Cliff}(1,3) \otimes \mathrm{Cliff}(3)$.
+:::note[Status: Retracted \[✗\]]
+~~The connection $\mathrm{Gap}(E,U) = 0 \leftrightarrow$ left chirality is derived from the structure of the $G_2$-parallel spinor $\eta_0$ and the reduction $\mathrm{Cliff}(7) \supset \mathrm{Cliff}(1,3) \otimes \mathrm{Cliff}(3)$.~~ Retracted with this subsection (box above); the former status was "Theorem [T]".
 :::
 
 ---
@@ -466,7 +469,7 @@ The connection $\mathrm{Gap}(E,U) = 0 \leftrightarrow$ left chirality is derived
 ### 5.1 Theorem 5.1 (Full Table of Gauge Fields)
 
 :::tip[Status: Theorem \[T\] for the SM part; \[H\] for $G_2$-extra]
-$G_2$-generators generate $\mathrm{SU}(3)_C$ (8 gluons) and 6 $G_2$-extra bosons. The Fano-electroweak construction (FE) determines $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ (4 bosons) — **[T]** (uniqueness from $\kappa_0$).
+$G_2$-generators generate $\mathrm{SU}(3)_C$ (8 gluons) and 6 $G_2$-extra bosons. The Fano-electroweak construction (FE) determines $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ (4 bosons) — **[C at (FE)]** (the pair $(E,U)$ from $\kappa_0$ is [T]).
 :::
 
 | Field | Group | Number | Mass | Status |
@@ -476,7 +479,7 @@ $G_2$-generators generate $\mathrm{SU}(3)_C$ (8 gluons) and 6 $G_2$-extra bosons
 | Photon $\gamma$ | $\mathrm{U}(1)_{\mathrm{EM}}$ | 1 | 0 | SM [T] |
 | **$G_2$-extra** | **$G_2/\mathrm{SU}(3)$** | **6** | **$M_{G_2} \sim \mu_{\mathrm{phys}}$** | **Beyond SM [H]** |
 
-**(a)** 6 $G_2$-extra bosons are "connector" fields from $3 + \bar{3}$ in the decomposition $14 \to 8 + 3 + \bar{3}$. They connect the spatial ($3$) and Gap ($\bar{3}$) sectors. The mass is determined by the Gap in the O-to-$3$ and O-to-$\bar{3}$ sectors:
+**(a)** 6 $G_2$-extra bosons are "connector" fields from $3 + \bar{3}$ in the decomposition $14 \to 8 + 3 + \bar{3}$: the generators that move the $O$-direction. (The former gloss "they connect the spatial ($3$) and Gap ($\bar{3}$) sectors" used the retracted axis labels, Theorem 1.1(a).) The mass is determined by the Gap in the O-to-$3$ and O-to-$\bar{3}$ sectors:
 
 $$M_{G_2}^{(\mathrm{extra})} \sim \mu_{\mathrm{phys}} \cdot \mathrm{Gap}_{\mathrm{vac}}^{(O)} \cdot |\gamma_{\mathrm{vac}}^{(O)}|$$
 
@@ -533,7 +536,7 @@ The anomalous dimension $\Delta_3 = 5/42$ in the $\bar{3}$-to-$\bar{3}$ sector i
 ### 6.1 Theorem 6.1 (Higgs Field as E-U Coherence)
 
 :::warning[Status: Hypothesis \[H\]]
-Spontaneous electroweak symmetry breaking arises from Gap condensation in the $\bar{3}$-to-$\bar{3}$ sector.
+Spontaneous electroweak symmetry breaking arises from Gap condensation in the $\bar{3}$-to-$\bar{3}$ sector (the axis pairs of $\{L,E,U\}$; not an $\mathrm{SU}(3)$ sector, Theorem 1.1(a)). A condensate $\gamma_{EU}\neq0$ is not $\mathrm{SU}(3)_C$-invariant (sect. 9.4), so as stated this hypothesis breaks colour together with the electroweak group.
 :::
 
 **(a)** The Higgs field is identified with the E-U coherence ($\bar{3}$-to-$\bar{3}$ sector):
@@ -770,7 +773,11 @@ $$\sigma: 1 \to 2 \to 4 \to 1 \quad (\text{cycle } (1\,2\,4))$$
 
 **Corollary.** Any Fano-invariant functional $F(k_1, k_2, k_3)$ satisfies $F(1,2,4) = F(2,4,1) = F(4,1,2)$, i.e., it is **the same** for all three generations. Consequently, the mass hierarchy $m_t \gg m_c \gg m_u$ **cannot** be explained by Fano geometry alone — a Z₃-breaking factor is required.
 
-This factor is provided by the Fano-Higgs line $\{1,5,6\}$: among the elements of the generation triplet $(1,2,4)$, only $k=1$ lies on this line. The vacuum Gap profile additionally breaks Z₃, since $k=1$ (A) and $k=2$ (S) lie in the 3-sector, while $k=4$ (L) lies in the $\bar{3}$-sector.
+This factor is provided by the Fano-Higgs line $\{1,5,6\}$: among the elements of the generation triplet $(1,2,4)$, only $k=1$ lies on this line. ~~The vacuum Gap profile additionally breaks Z₃, since $k=1$ (A) and $k=2$ (S) lie in the 3-sector, while $k=4$ (L) lies in the $\bar{3}$-sector.~~ Retracted [✗] (2026-09-25): the sector labels are not an $\mathrm{SU}(3)$ decomposition (Theorem 1.1(a)).
+
+:::warning The generation $\mathbb{Z}_3$ is a colour rotation
+$\sigma$ extends to the automorphism $e_k\mapsto e_{2k}$ of $\mathbb{O}$ (all signs $+$); it fixes $e_O=e_7$ and therefore lies in $\mathrm{SU}(3)_C=\mathrm{Stab}_{G_2}(e_O)$ of sect. 1.3. In the basis $A-iD$, $S-iU$, $L-iE$ of the triplet it is the cyclic permutation matrix, of determinant 1 (`test_generation_z3_lies_in_colour_su3`). Whatever breaks $\langle\sigma\rangle$ breaks $\mathrm{SU}(3)_C$. The Higgs line does: $\sigma$ maps the pair $(E,U)$ to $(D,E)$, so a condensate $\gamma_{EU}\neq0$ (sect. 6.1) is not $\mathrm{SU}(3)_C$-invariant — as no $\Gamma$ with a coherence outside the pairs $(A,D)$, $(S,U)$, $(L,E)$ is not. In UHM's own identifications, the $\mathbb{Z}_3$ breaking that the mass hierarchy needs is therefore colour breaking. No mechanism on this page reconciles it with unbroken colour; the contradiction is open [Pr] ([fermion generations, Theorem 5.2](/docs/physics/particle-physics/fermion-generations#thm-5-2)).
+:::
 
 ---
 
@@ -816,12 +823,12 @@ Generations $k=2$ (S) and $k=4$ (L) with $y^{(\text{tree})} = 0$ acquire masses 
 - $V_3 \supset \lambda_3 |\gamma_{24}| |\gamma_{43}| |\gamma_{23}| \sin(\theta_{24} + \theta_{43} - \theta_{23})$ — triple $\{2,4,3\} = \{S,L,D\}$
 - $V_3 \supset \lambda_3 |\gamma_{14}| |\gamma_{43}| |\gamma_{13}| \sin(\theta_{14} + \theta_{43} - \theta_{13})$ — triple $\{1,4,3\} = \{A,L,D\}$
 
-All three are non-Fano triples (containing $D=3$ as mediator). Generation mixing passes through the **color dimension D**, which connects the generation mechanism with [confinement](/docs/physics/gauge-symmetry/confinement).
+All three are non-Fano triples (containing $D=3$ as mediator). Generation mixing passes through **dimension D**, which the page used to call the "color dimension" and connect with [confinement](/docs/physics/gauge-symmetry/confinement); no axis is a colour direction (the triplet is spanned by $A-iD$, $S-iU$, $L-iE$, Theorem 1.1(a)), so that link is retracted [✗].
 
 ### 10.4 Theorem 10.2 (Generation Assignment and Fano Distance to Higgs)
 
 :::warning[Hypothesis 10.2 (Generation assignment) \[H\]]
-The distinction between $k=2$ and $k=4$ is determined by the type of intermediate sector in the Fano path to the Higgs. Strictly — a hypothesis requiring lattice confirmation.
+The distinction between $k=2$ and $k=4$ is determined by the type of intermediate sector in the Fano path to the Higgs. Strictly — a hypothesis requiring lattice confirmation. The "sectors" below are sets of axis pairs, not $\mathrm{SU}(3)$ sectors (Theorem 1.1(a)); the premise that $(L,D)$ carries Gap $\approx0$ and $(S,D)$ Gap $\sim\epsilon$ is the vacuum assumption (SA) [H] of [fermion generations, §4.4](/docs/physics/particle-physics/fermion-generations#гипотеза-секторной-асимметрии).
 :::
 
 Define the **O-free Fano distance** $d_H(k_n)$ as the minimum number of Fano lines in the path from $k_n$ to the Higgs $(E, U)$, not passing through $O = 7$ ($\mathrm{Gap} \sim 1$, suppressed paths).
@@ -1123,25 +1130,27 @@ The large PMNS mixing angles ($\theta_{12} \sim 34°$, $\theta_{23} \sim 45°$) 
 |---|---|
 | $\mathrm{SU}(3)_C$ from the stabilizer of O in $G_2$ | [T] |
 | Decomposition $14 \to 8 + 3 + \bar{3}$ (gluons + extra) | [T] |
-| $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from Fano-electroweak construction (FE) | [T] (combinatorics: uniqueness of $(E,U)$, Higgs line); [C] (dynamical gauge structure, running of couplings) |
-| Consistency of the two $\mathrm{SU}(3)$'s ($G_2$ and 42D PW) | [T] |
+| $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from Fano-electroweak construction (FE) | [T] for the combinatorics (uniqueness of $(E,U)$, Higgs line); [C at (FE)] for the group; uniqueness among rank-4 groups [H]; the "$\bar 3\to\{E,U\}\oplus\{L\}$" decomposition retracted [✗] |
+| Consistency of the two $\mathrm{SU}(3)$'s ($G_2$ and 42D PW) | retracted [✗] (Theorem 2.2) |
+| Decomposition $7\to1_O\oplus3_{ASD}\oplus\bar3_{LEU}$ (axis labels) | retracted [✗]; replaced by $\mathbb{C}^7=\mathbb{C}e_O\oplus\mathbf 3\oplus\bar{\mathbf 3}$, $\mathbf 3=\mathrm{span}_{\mathbb C}\{A-iD,S-iU,L-iE\}$ [T] (Theorem 1.1(a)) |
+| $G_2\supset SU(3)\times SU(2)\times U(1)$ | retracted [✗] (rank $2<4$; sect. 3.1) |
 | Full SM from $G_2$ + (FE) | [C] (electroweak dynamics is conditional) |
 | Quarks and leptons as Gap configurations | [H] |
 | Three generations from Fano structure ($N_{\text{gen}} = 3$) | **count [T], identification [I]** — exact count $\|\mathrm{QR}(7)\|=3$ [T], physical identification [I] ([proof](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)) |
-| Chirality from $\eta_0$ and $\mathrm{Gap}(E,U) = 0$ | [T] |
+| Chirality from $\eta_0$ and $\mathrm{Gap}(E,U) = 0$ | retracted [✗] (sect. 4.3: spectrum $\pm i$, not $\pm1$; $G_2$ has only real representations) |
 | 18 gauge bosons (SM + 6 $G_2$-extra) | [T] for SM; [H] beyond SM |
 | Mass hierarchy from Gap hierarchy of the vacuum | [H] |
 | Resolution of hierarchy via RG with anomalous dimensions | [H] |
-| Higgs as Gap condensate of E-U coherence | [T] (#9: uniqueness of {A,E,U} + T-70: canonical $f_0$) |
+| Higgs as Gap condensate of E-U coherence | [H] (as in sect. 6.1; the table said [T] until 2026-09-25; a condensate $\gamma_{EU}\neq0$ is not $\mathrm{SU}(3)_C$-invariant, sect. 9.4) |
 | $M_H^2 = 2\lambda_4 v^2 + 3\lambda_3^2 \bar{A}^2/(4\mu^2)$ (octonionic correction) | [H] |
 | $\delta\lambda/\lambda_{\text{SM}} \sim O(10^{-2}\text{--}10^{-3})$ (FCC prediction) | [I] |
 | Gap anticorrelation (Ward), factor $19/49$ | [T] |
 | Generation selection principle $(1,2,4)$ from associator | [T] (uniqueness) |
 | Fano Yukawa selection rule | **[T]** (via $f_{ijk}$ — unique $G_2$-invariant trilinear operator) |
-| Mass hierarchy $m_t \gg m_c \gg m_u$ from Fano selection | **[T]** (consequence of selection rule [T]) |
+| Mass hierarchy $m_t \gg m_c, m_u$ from Fano selection | **[T]** (consequence of selection rule [T]); the further $m_c \gg m_u$ needs (SA) — [C at (SA)] |
 | $m_t \approx 173$ GeV from IR fixed point (unique O(1) Yukawa) | [T] |
 | Light generation masses via loop suppression | [H] (order of magnitude) |
-| Generation assignment: $k=1 \to 3$rd, $k=4 \to 2$nd, $k=2 \to 1$st | **[T]** (45a, 45b: uniqueness from Fano selection rule) |
+| Generation assignment: $k=1 \to 3$rd, $k=4 \to 2$nd, $k=2 \to 1$st | $k=1\to3$rd **[T]** (45a); $k=4\to2$nd, $k=2\to1$st **[C at (SA)]**, (SA) [H] (45b retracted) |
 | N=1 SUSY from parallel spinor $\eta_0$ | [T] |
 | SUSY breaking via $V_3$ | **[T]** (T-50: superpotential $W$ is unique, Schur's lemma) |
 | $m_{3/2} \sim 10^{13}$ GeV | **[T]** (T-50: $m_{3/2} \sim \varepsilon^3 M_P$ from uniqueness of $W$, Schur's lemma) |

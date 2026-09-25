@@ -251,16 +251,16 @@ The adjoint representation **14** of G₂ is **irreducible** — it does not dec
 :::
 
 :::tip Replacement: T-219 sector-product derivation
-The invalid "$\mathbf{14} \to \mathbf{7} \oplus \mathbf{7}$" argument is replaced by **[T-219](/docs/proofs/categorical/fundamental-closures#t-219) [T at T-64]**, which derives the $\varepsilon^{12}$ suppression **rigorously** from the three-sector decomposition:
+The invalid "$\mathbf{14} \to \mathbf{7} \oplus \mathbf{7}$" argument is replaced by **[T-219](/docs/proofs/categorical/fundamental-closures#t-219)**, which ~~derives the $\varepsilon^{12}$ suppression **rigorously**~~ (retracted 2026-09-25: T-219 is [H], its status was [T at T-64]) proposes the $\varepsilon^{12}$ suppression from the three-sector decomposition:
 $$\Lambda_\mathrm{SUSY} \sim \varepsilon^{12} M_P^4 = \varepsilon^{4 \cdot k_\mathrm{sec}} M_P^4, \quad k_\mathrm{sec} = 3$$
-via $G_2$-invariant Fano coupling (T-43d [T]) + three-loop nested product × one-loop $\operatorname{STr}(M_k^4) \sim (\varepsilon M_P)^4$ per sector (Martin 2010 SUSY primer). The three sectors are $\mathbf 1_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$ (T-48a [T]), each contributing one $\varepsilon^4$ independently. This **does not rely** on any reducibility of the G₂ adjoint — it uses the sector decomposition of the **state space**, which is legitimate.
+via $G_2$-invariant Fano coupling (T-43d [T]) + three-loop nested product × one-loop $\operatorname{STr}(M_k^4) \sim (\varepsilon M_P)^4$ per sector (Martin 2010 SUSY primer). The three sectors are $\mathbf 1_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$ (T-48a — retracted [✗] 2026-09-25 in its axis-labelled form; the count survives for $\mathbb C^7 = \mathbb Ce_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$, but T-219, whose sectors were the axis triples, is now a hypothesis [H]), each contributing one $\varepsilon^4$ independently. This **does not rely** on any reducibility of the G₂ adjoint — it uses the sector decomposition of the **state space**, which is legitimate.
 
-After T-219 the composition follows the [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет): perturbative $10^{-41.5}$ [T] (already includes $\varepsilon^6$); sector-product SUSY $\varepsilon^{12}$ [T at T-64] **absorbs** $\varepsilon^6$ → net mean $\sim 10^{-53.5}$; cohomological $\Lambda_\mathrm{global} = 0$ [T] (exact zero, separate class); sector-minimisation residual [C] (open programme) → honest bracket $\sim 10^{-53.5}$ to $10^{-93.5}$; the rest to $10^{-120}$ is open.
+After T-219 the composition follows the [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет): perturbative $10^{-41.5}$ [T] (already includes $\varepsilon^6$); sector-product SUSY $\varepsilon^{12}$ [H] (T-219, corrected from T at T-64 on 2026-09-25) **absorbs** $\varepsilon^6$ → net mean $\sim 10^{-53.5}$ if that hypothesis holds; cohomological: no topological $\Lambda$-term [T], the exact-zero reading $\Lambda_\mathrm{global} = 0$ being retracted since 2026-09-10; sector-minimisation residual [C] (open programme) → honest bracket $\sim 10^{-53.5}$ to $10^{-93.5}$; the rest to $10^{-120}$ is open.
 :::
 ::::
 
 :::info Status (post T-219)
-Structural formula $\Lambda_{\text{CC}} \sim \varepsilon^{12}$ **[T]** (spectral action). Sector-product derivation **[T at T-64]** via [T-219](/docs/proofs/categorical/fundamental-closures#t-219). The sector component is refined via [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]. Details: [full budget with proofs](/docs/proofs/gap/lambda-budget#спектральная-формула).
+Structural formula $\Lambda_{\text{CC}} \sim \varepsilon^{12}$ **[T]** (spectral action). Sector-product derivation **[H]** via [T-219](/docs/proofs/categorical/fundamental-closures#t-219) (corrected from T at T-64 on 2026-09-25). The sector component is refined via [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]. Details: [full budget with proofs](/docs/proofs/gap/lambda-budget#спектральная-формула).
 :::
 
 ---
@@ -376,7 +376,7 @@ Detailed justification of each mechanism with proofs: [Full $\Lambda$ budget: pr
 | Mechanism | Suppression | Status | Note |
 |----------|-----------|--------|------------|
 | Cohomological argument | no topological $\Lambda$-term; **no** cancellation of the vacuum energy | **[T]** narrow / **[✗]** wide | $H^{n>0}(X) = 0$ [T]; a vacuum total is degree-0 data ([details](/docs/proofs/gap/lambda-budget#когомологическое-обнуление)) |
-| SUSY-breaking $\varepsilon^{12}$ ($\varepsilon\sim10^{-2}$ central) | $10^{-24}$, **absorbs** the perturbative $\varepsilon^6$ (net $\Delta \approx 10^{-12}$) | **[T at T-64]** scale via [T-219](/docs/proofs/categorical/fundamental-closures#t-219); exact compensation $\mathrm{Tr}(1)=0$ — **[H]** | G₂-adj **14** is irreducible, 7+7 decomposition not justified |
+| SUSY-breaking $\varepsilon^{12}$ ($\varepsilon\sim10^{-2}$ central) | $10^{-24}$, **absorbs** the perturbative $\varepsilon^6$ (net $\Delta \approx 10^{-12}$) | **[H]** scale via [T-219](/docs/proofs/categorical/fundamental-closures#t-219) (corrected from T at T-64 on 2026-09-25); exact compensation $\mathrm{Tr}(1)=0$ — **[H]** | G₂-adj **14** is irreducible, 7+7 decomposition not justified |
 | $Z'_\Phi(-2)$ | $\times 10^{10}$ — an **enhancement**, excluded from the mean-suppression product | **[T]** (math.) | Residual winding contribution; physical interpretation open |
 | RG $\lambda_3^2$ | $10^{-14.5}$ — **already inside** the perturbative $10^{-41.5}$ (§5.1); listed for reference, not multiplied again | **[T]** | RG suppression of the cubic coupling |
 | Sector ([global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)) | $10^{-40}$ | **[C]** | Global minimization of $V_{\text{Gap}}$ [T]; exact value is a computational task |
