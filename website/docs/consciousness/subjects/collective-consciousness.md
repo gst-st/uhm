@@ -114,7 +114,7 @@ $$
 I_{\text{comp}} := \sum_{i=1}^{N} S(\Gamma_i) - S(\Gamma_{\text{comp}}) \geq 0 ,
 $$
 
-which vanishes exactly when $\Gamma_{\text{comp}} = \bigotimes_i \Gamma_i$ and which [CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [T] makes positive for interacting holons ($N = 2$: the mutual information). On this page the connectivity readings formerly written with $\Phi_{\text{comp}}$ are now written with $I_{\text{comp}}$; they remain interpretations [I]. The collective reflection $R_{\text{comp}}$ is likewise used interpretively: the canonical $R = 1/(7P)$ is defined on $\mathcal{D}(\mathbb{C}^7)$, and its value for a group needs an aggregation channel that the theory does not fix.
+which vanishes exactly when $\Gamma_{\text{comp}} = \bigotimes_i \Gamma_i$ and which ($N = 2$: the mutual information) interaction alone does not make positive: by [CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) ([C under (ND)]) weakly coupled members are correlated exactly when the coupling has a correlating part at their attractors, while a coupling that commutes with the product of the members' attractors, or acts on one member alone, leaves $I_{\text{comp}} = 0$. (Earlier: "which CC-7 [T] makes positive for interacting holons"; retracted 2026-09-25.) On this page the connectivity readings formerly written with $\Phi_{\text{comp}}$ are now written with $I_{\text{comp}}$; they remain interpretations [I]. The collective reflection $R_{\text{comp}}$ is likewise used interpretively: the canonical $R = 1/(7P)$ is defined on $\mathcal{D}(\mathbb{C}^7)$, and its value for a group needs an aggregation channel that the theory does not fix.
 :::
 
 ### Recovering the individual from the collective
