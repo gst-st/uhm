@@ -285,7 +285,7 @@ $$
 
 **Interpretation of $\Phi$:**
 - $\Phi = 0$: Classical ensemble (no coherences)
-- $\Phi \to \infty$: Maximally entangled state
+- Upper bound: since $\Phi = P/\sum_i \gamma_{ii}^2 - 1$ and $\sum_i \gamma_{ii}^2 \geq 1/7$ (Cauchy–Schwarz), $\Phi \leq 7P - 1 \leq 6$; the first bound is attained exactly when the diagonal is uniform, and $\Phi = 6$ exactly for pure states with a uniform diagonal (e.g. $\lvert u\rangle\langle u\rvert$, $u = (1, \ldots, 1)/\sqrt7$); inside the conscious window $P \leq 3/7$ this gives $\Phi \leq 2$ ([dimension U](/docs/core/structure/dimension-u#мера-интеграции-φ)). (An earlier edition wrote "$\Phi \to \infty$: maximally entangled state"; retracted — $\Phi$ is bounded, and a single $7 \times 7$ state is not a bipartite system, so "entangled" does not apply.)
 
 ### Justification of thresholds {#обоснование-порогов}
 
@@ -675,14 +675,15 @@ The term **"qualia"** is categorially correct ONLY for L2. Using "qualia of an a
 
 ## 5.1 Panpsychism vs. Paninteriorism
 
-**Classical panpsychism** (Chalmers, 2015): Everything possesses consciousness (or proto-consciousness).
+**Classical panpsychism** (Chalmers, 2015): fundamental entities possess consciousness; its variant **panprotopsychism** gives them protophenomenal properties instead — not themselves experience, but able to constitute it.
 
-**Paninteriorism of UHM:** Everything possesses **Interiority** (Level 0), but only some systems possess **Cognitive Qualia** (Level 2).
+**Paninteriorism of UHM:** Everything possesses **Interiority** (Level 0), but only some systems possess **Cognitive Qualia** (Level 2). In the field's vocabulary this is a constitutive panprotopsychism with a threshold for awareness [I].
 
 This avoids:
-1. The combination problem — the transition from L0 to L2 is mathematically defined
-2. Anthropomorphism — an atom does not "feel pain," it has interiority
-3. Conceptual dilution — qualia in the strict sense = L2
+1. Anthropomorphism — an atom does not "feel pain," it has interiority
+2. Conceptual dilution — qualia in the strict sense = L2
+
+It does not avoid the combination problem; it restates it. The transition from L0 to L2 is mathematically defined as a threshold criterion, which says *when* a system is an L2 subject, not *how* non-phenomenal L0 structure constitutes experience [I]; that question stays open ([analysis with sources](/docs/consciousness/comparative/panpsychism-analysis#что-отвечает-аппарат-угм)). (Earlier editions listed the combination problem first among the difficulties this avoids; withdrawn.)
 
 ## 5.2 Resolution of the terminological problem
 

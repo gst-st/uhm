@@ -304,7 +304,7 @@ The section is organized into 7 subsections, each revealing a specific aspect of
 | # | Document | Topic | Key result |
 |---|----------|-------|------------|
 | 21 | [42 theories of consciousness](./comparative/consciousness-theories) | Meta-analysis | UHM vs IIT, GNW, HOT, PWT, the category theory of qualia, etc. |
-| 22 | [Panpsychism](./comparative/panpsychism-analysis) | Critical analysis | Solution to the combination problem |
+| 22 | [Panpsychism](./comparative/panpsychism-analysis) | Critical analysis | Pan-interiority as panprotopsychism; the combination problem restated as a criterion — *when*, not *how* [I] (an earlier edition listed a "solution"; withdrawn) |
 | 23 | [Cognitive hierarchy](./comparative/cognitive-hierarchy) | K1–K5 levels | Operationalization |
 
 ### Ethics and Meaning (ethics-meaning/)
