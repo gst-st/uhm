@@ -107,6 +107,8 @@ $$m_{\nu_3} = \frac{m_D^2}{M_R} = \frac{(122\;\text{GeV})^2}{2.9\times10^{14}\;\
 
 — matching the atmospheric scale $\sqrt{\Delta m^2_{32}} \approx 0.05$ eV.
 
+*In the Clifford frame (2026-09-25, [T-340](/docs/physics/particle-physics/higgs-sector#юкавы-t340)).* The Fano placement above uses the axis identification $H\sim\gamma_{EU}$, which is [H]. In the frame of the Standard Model page, $m_\nu^D = m_u$ holds for every Pati–Salam-invariant Yukawa coupling [T as mathematics], and under the hypothesis (UP) it holds for the leading coupling. Then $y_{\nu_3}^D = y_t$: at $10^{14}$ GeV one-loop running gives $y_t = 0.48$, so $m_D \approx 83$ GeV, and $m_{\nu_3} = 0.05$ eV requires $M_R \approx 1.4\times10^{14}$ GeV. That is a factor 2 below the $2.9\times10^{14}$ GeV of Theorem 2.1, the same order. Both $y_{\nu_3}\sim0.7$ and $y_{\nu_3} = y_t$ are readings, [H].
+
 :::warning Unit-conversion correction
 A naïve $y_\nu\sim 0.01$ would give $m_\nu\sim 6\times10^{-14}$ GeV $=6\times10^{-5}$ eV (**with the GeV→eV factor $10^9$**), i.e. $\sim1000\times$ too small — a small $y_\nu$ cannot reproduce the data. The physical resolution is the Fano **tree-level $O(1)$** Yukawa above (ν_τ shares the $k=1$ line with the top), which yields $0.05$ eV directly. The $m_2/m_3$ *ratio* (from $\sin^2$ of Fano angles) is separately correct and unaffected. The per-flavour table in §4 uses this same $10^9$ factor and the $O(1)$ tree Yukawa.
 :::
@@ -121,7 +123,7 @@ A legitimate external critique raised the concern that the $M_R \approx 2.9 \tim
 
 **Structure of the derivation**:
 
-1. **Inputs**: the sector hierarchy parameter $\varepsilon \approx 10^{-3}$ from T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)) (unique vacuum minimum of $V_{\mathrm{Gap}}$ on compact $(S^1)^{21}/G_2$), the Gap total $\mathcal G^{(O)}_{\mathrm{total}} \sim 6$ on the $O$-sector (Axiom A5 Page–Wootters), and the fundamental scale $\omega_0 \cdot M_P$ from T-39a [T].
+1. **Inputs**: the sector hierarchy parameter $\varepsilon \approx 10^{-3}$ from T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)) (unique vacuum minimum of $V_{\mathrm{Gap}}$ on compact $(S^1)^{21}/G_2$), the Gap total $\mathcal G^{(O)}_{\mathrm{total}} \sim 6$ on the $O$-sector (Axiom A5 Page–Wootters), and the fundamental scale $\omega_0 \cdot M_P$ from T-39a [T].
 
 2. **Intermediate**: the $G_2$-extra-boson mass $M_{G_2}^{(\mathrm{extra})} = \omega_0 \cdot \sqrt{\mathcal G^{(O)}_{\mathrm{total}}} \sim 10^{17}$ GeV — derived at the Planckian scale from the internal spectral structure, not extrapolated from low energy.
 
@@ -406,7 +408,7 @@ $$
 
 where $H_{\text{Gap}}^{(O)}$ is the Gap Hamiltonian of the O-sector.
 
-**Step 2 (O-isotropy $\to$ anarchy).** From T-61 [T]+[C at (RT)] (vacuum unique up to $G_2$ for the corrected potential; sector values: hypothesis (SV)): $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0$. The O-sector is isotropic with respect to both sectors. Gap-configurations $\nu_R^{(k)}$ differ in Fano phases $\phi_k = 2\pi k/7$, but all are at **equal distance** from O (in the Bures metric).
+**Step 2 (O-isotropy $\to$ anarchy).** From T-61 [T] (vacuum unique up to $G_2$ for the corrected potential; sector values: hypothesis (SV)): $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0$. The O-sector is isotropic with respect to both sectors. Gap-configurations $\nu_R^{(k)}$ differ in Fano phases $\phi_k = 2\pi k/7$, but all are at **equal distance** from O (in the Bures metric).
 
 Therefore, the O-sector Gap Hamiltonian singles out no generation:
 
