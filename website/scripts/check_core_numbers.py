@@ -94,6 +94,13 @@ D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_
 (на 𝒮 = ℂ⊗𝕆 𝔰𝔲(2)_L действует одними дублетами, так что всякий оператор на 𝒮 — и всякая
 когерентность Γ, в том числе γ_EU, — несёт целый спин; вектор Spin(9) — (3⊕3̄)_{±1/3} ⊕ (1,3)_0).
 
+Четыре — за аттрактором в окне сознания (25.09.2026): `collineation_anchor_holds_a_living_attractor_in_the_window`
+(якорь uu† коллинеаций Фано: при κ > κ_c один сток в V_full, спектр якобиана точен),
+`phase_symmetric_self_models_hold_no_coherent_hyperbolic_state` (фазовое препятствие; Фано-регистрация
+держит P = 1/3, но Φ = 0), `attractor_consistency_is_first_order_in_the_hamiltonian` (T-157 в верной
+форме; прежняя граница ложна уже при H = 0) и `phi_coh_contracts_toward_i7_but_is_not_a_contraction`
+(«φ — сжатие с коэффициентом k» неверно: липшицева константа 54/49 у чистых состояний).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -2565,6 +2572,249 @@ def test_no_higgs_doublet_in_the_clifford_frame():
         return np.sort(np.abs(np.linalg.eigvals(M).imag))
     assert np.allclose(on_vector(X) / c, [0] * 7 + [2, 2], atol=1e-8)
     assert np.allclose(on_vector(d["Y"]), [0] * 3 + [1 / 3] * 6, atol=1e-8)
+
+
+def _living_generator(H, anchor, kap, alpha):
+    """Генератор изолированного голонома с регенерацией к φ(Γ) = k P_α(Γ) + R·якорь(Γ), затвор g_V."""
+    c = (1 - alpha) / 3
+
+    def f(G):
+        P = purity(G)
+        R = 1 / (7 * P)
+        D = np.diag(np.diag(G))
+        return (-1j * (H @ G - G @ H) + (2 / 3) * (D - G)
+                + kap * gate(P) * ((1 - R) * (D + c * (G - D)) + R * anchor(G) - G))
+    return f
+
+
+def _stationary(f, G):
+    """Уточнение стационарной точки методом наименьших квадратов в 48 вещественных координатах."""
+    E = _jacobian_basis()
+    to = lambda X: np.real(np.einsum("aij,ji->a", E, X))
+    fr = lambda v: np.eye(7) / 7 + np.einsum("a,aij->ij", v, E)
+    r = least_squares(lambda v: to(f(fr(v))), to(G - np.eye(7) / 7), xtol=1e-15, ftol=1e-15, gtol=1e-15)
+    X = fr(r.x)
+    return (X + X.conj().T) / 2
+
+
+def _jacobian_basis():
+    B = []
+    for i in range(7):
+        for j in range(i + 1, 7):
+            M = np.zeros((7, 7), complex)
+            M[i, j] = M[j, i] = 1 / np.sqrt(2)
+            B.append(M)
+            M = np.zeros((7, 7), complex)
+            M[i, j], M[j, i] = -1j / np.sqrt(2), 1j / np.sqrt(2)
+            B.append(M)
+    for m in range(6):
+        d = np.zeros(7)
+        d[:m + 1], d[m + 1] = 1, -(m + 1)
+        B.append(np.diag(d / np.linalg.norm(d)).astype(complex))
+    return np.array(B)
+
+
+def _q_window(eta, c, t=1.0):
+    """Q(η) = (6η² − 1)[(t − cη)/(η(1 + 6η²)) − (1 − c)]: стационарность семейства Γ_η ⇔ κQ = 2/3."""
+    return (6 * eta ** 2 - 1) * ((t - c * eta) / (eta * (1 + 6 * eta ** 2)) - (1 - c))
+
+
+def test_collineation_anchor_holds_a_living_attractor_in_the_window():
+    """Якорь коллинеаций uu† держит изолированный голоном в сознательном окне: аттрактор в V_full.
+
+    Свидетель теоремы о живом аттракторе в окне (эволюция): φ_J(Γ) = k P_α(Γ) + R uu†, u = (1,…,1)/√7 —
+    единственное чистое состояние, неподвижное при 168 коллинеациях Фано (коммутант {I, J}).
+    При H = 0 стационарные точки с P > 2/7 — ровно Γ_η = (1−η)I/7 + η uu† с κQ(η) = 2/3; Q строго
+    вогнута, κ_c(α) = 2/(3 max Q): 16,63 (α = 0), 29,25 (α = ½), 59,34 (α = 1). При α = ½, κ = 40
+    два корня: седло P = 0,2962 и сток P = 0,3213, Φ = 6η² = 1,249; спектр якобиана стока —
+    {κηQ′(η); −κgR ×6; −(⅔ + κg(1 − kc)) ×41} до 1e-6; баланс T-98 (κg_V) до 1e-12. Со случайным H
+    нормы 1 аттрактор сохраняется в V_full; ниже порога (κ = 20) поток из uu† умирает в I/7.
+    """
+    perms = []
+    for p in itertools.permutations(range(7)):
+        lines = {frozenset(x - 1 for x in l) for l in LINES}
+        if all(frozenset(p[x - 1] for x in l) in lines for l in LINES):
+            perms.append(np.eye(7)[list(p)])
+    assert len(perms) == 168
+    A = np.vstack([np.kron(M, M) - np.eye(49) for M in perms])
+    assert int(np.sum(np.linalg.svd(A, compute_uv=False) < 1e-9)) == 2               # коммутант {I, J}
+    u = np.ones(7) / np.sqrt(7)
+    uu = np.outer(u, u).astype(complex)
+    assert all(np.allclose(M @ u, u) for M in perms)
+    ph = np.diag(np.exp(1j * np.random.default_rng(2).uniform(0, 2 * np.pi, 7)))
+    A = np.vstack([A, np.kron(ph, ph.conj()) - np.eye(49)])                          # + фазы: унитальна
+    assert int(np.sum(np.linalg.svd(A, compute_uv=False) < 1e-9)) == 1
+    eta = np.linspace(1 / np.sqrt(6), 1 / np.sqrt(3), 4001)
+    for cc in np.linspace(0, 1 / 3, 7):                                               # Q″ < 0 на всём окне
+        q = _q_window(eta, cc)
+        assert np.max(np.diff(q, 2)) < 0
+    kc = {a: (2 / 3) / np.max(_q_window(eta, (1 - a) / 3)) for a in (0.0, 0.5, 1.0)}
+    assert abs(kc[0.0] - 16.628) < 5e-3 and abs(kc[0.5] - 29.254) < 5e-3 and abs(kc[1.0] - 59.345) < 5e-3
+    assert abs(_q_window(0.5, 1 / 3)) < 1e-15                                         # P_∞(α = 0) = 5/14
+    alpha, kap, c = 0.5, 40.0, 0.5 / 3
+    zero = np.zeros((7, 7))
+    f = _living_generator(zero, lambda G: uu, kap, alpha)
+    fam = lambda e: np.eye(7) / 7 + e * (uu - np.eye(7) / 7)
+    v = kap * _q_window(eta, c) - 2 / 3
+    roots = [eta[i] for i in range(len(eta) - 1) if v[i] * v[i + 1] < 0]
+    assert len(roots) == 2
+    Ps = []
+    for e0 in roots:
+        G = _stationary(f, fam(e0))
+        e = float(np.real(G[0, 1])) * 7
+        assert np.linalg.norm(f(G)) < 1e-12 and np.linalg.norm(G - fam(e)) < 1e-12
+        Ps.append(purity(G))
+        spec = np.sort(np.linalg.eigvals(_jacobian(f, G)).real)
+        P, g = purity(G), gate(purity(G))
+        R = 1 / (7 * P)
+        dq = (_q_window(e + 1e-7, c) - _q_window(e - 1e-7, c)) / 2e-7
+        want = sorted([kap * e * dq] + [-kap * g * R] * 6 + [-(2 / 3 + kap * g * (1 - (1 - R) * c))] * 41)
+        assert np.allclose(spec, want, atol=1e-5)
+        if dq < 0:
+            star, estar = G, e
+    assert abs(Ps[0] - 0.2962) < 1e-4 and abs(Ps[1] - 0.3213) < 1e-4
+    P = purity(star)
+    assert 2 / 7 < P < 3 / 7 and 1 < integration(star) < 2 and abs(integration(star) - 6 * estar ** 2) < 1e-12
+    assert np.allclose(np.diag(star).real, 1 / 7, atol=1e-13)
+    R = 1 / (7 * P)
+    fstar = np.real(np.trace(star @ ((1 - R) * (np.diag(np.diag(star)) + c * (star - np.diag(np.diag(star))))
+                                     + R * uu)))
+    pd, kg = float(np.sum(np.real(np.diag(star)) ** 2)), kap * gate(P)
+    assert abs((2 / 3 * pd + kg * fstar) / (2 / 3 + kg) - P) < 1e-12                  # T-98 с κ g_V
+    rng = np.random.default_rng(4)
+    B = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    H = (B + B.conj().T) / 2
+    H /= np.linalg.norm(H, 2)
+    fh = _living_generator(H, lambda G: uu, kap, alpha)
+    G = _stationary(fh, star)
+    assert np.linalg.norm(fh(G)) < 1e-12 and np.max(np.linalg.eigvals(_jacobian(fh, G)).real) < -1
+    assert 2 / 7 < purity(G) < 3 / 7 and integration(G) > 1 and np.min(np.real(np.diag(G))) > 0.1
+    assert np.min(np.linalg.eigvalsh(G)) > 0
+    low = _living_generator(H, lambda G: uu, 20.0, alpha)
+    assert np.max(20.0 * _q_window(eta, c)) < 2 / 3
+    assert abs(purity(_rk4(uu, low, 30.0, 3000)) - 1 / 7) < 1e-9
+
+
+def test_phase_symmetric_self_models_hold_no_coherent_hyperbolic_state():
+    """Без фазового репера когерентное состояние не гиперболично; окно по P — да, V_full — нет.
+
+    Свидетель теоремы о фазовом препятствии (эволюция): при H = 0 самомодель, ковариантная
+    относительно диагональных унитарных (φ_coh, φ_s, всякий спектральный якорь, фано-регистрация),
+    имеет у недиагональной стационарной точки нулевое собственное значение. Спектральный якорь
+    Γ⁸/TrΓ⁸ при α = ½, κ = 40 держит Γ_η той же формы, что и якорь uu†, но у неё 6 нулевых и 6
+    растущих направлений. Фано-регистрация (якорь Π_p/3 самой вероятной прямой) даёт при H = 0 семь
+    стоков Π_p/3 с P = 1/3 и спектром {−κ/7 ×6; −⅔ − (κ/3)(1 − 4c/7) ×42} при любом κ > 0, Φ = 0.
+    """
+    alpha, kap, c = 0.5, 40.0, 0.5 / 3
+    zero = np.zeros((7, 7))
+    u = np.ones(7) / np.sqrt(7)
+    uu = np.outer(u, u).astype(complex)
+
+    def spec8(G):
+        w, V = np.linalg.eigh((G + G.conj().T) / 2)
+        w = np.clip(w, 0, None) ** 8
+        return (V * (w / w.sum())) @ V.conj().T
+    f = _living_generator(zero, spec8, kap, alpha)
+    G = _stationary(f, np.eye(7) / 7 + 0.456 * (uu - np.eye(7) / 7))
+    assert np.linalg.norm(f(G)) < 1e-12 and 2 / 7 < purity(G) < 3 / 7 and integration(G) > 1
+    ev = np.linalg.eigvals(_jacobian(f, G)).real
+    assert np.sum(np.abs(ev) < 1e-5) == 6 and np.sum(ev > 1) == 6
+    Pi = [np.diag([1.0 if m + 1 in l else 0.0 for m in range(7)]).astype(complex) for l in LINES]
+
+    def line(G):
+        p = [np.real(np.trace(X @ G)) for X in Pi]
+        return Pi[int(np.argmax(p))] / 3
+    for kap in (0.5, 1.0, 3.0):
+        f = _living_generator(zero, line, kap, alpha)
+        for X in Pi:
+            assert np.linalg.norm(f(X / 3)) < 1e-15 and abs(purity(X / 3) - 1 / 3) < 1e-15
+        spec = np.sort(np.linalg.eigvals(_jacobian(f, Pi[0] / 3)).real)
+        want = sorted([-kap / 7] * 6 + [-2 / 3 - kap / 3 * (1 - 4 * c / 7)] * 42)
+        assert np.allclose(spec, want, atol=1e-6)
+
+
+def test_attractor_consistency_is_first_order_in_the_hamiltonian():
+    """T-157 в верной форме: сдвиг аттрактора от точной самомодели — первого порядка по H.
+
+    Свидетель переформулированной T-157 (замкнутость без субстрата §10). Прежнее «‖ρ* − Γ*_coh‖ ≤
+    ‖H‖/(α + κ)» при Γ*_coh = I/7 ложно уже при H = 0: живой аттрактор φ_s есть e_m,
+    ‖e_m − I/7‖_F = √(6/7). Верно: ρ*(H) = e_m + O(H), и главный член точен —
+    ‖ρ*(H) − e_m‖_F = √2‖H e_m − H_mm e_m‖/(⅔ + 6κ(1 − c)/7) + O(‖H‖²) (при ε = 1e-3 отношение 1 ± 1e-3).
+    Тождество дефекта самопознания κg(φ(ρ*) − ρ*) = −ℒ₀[ρ*] — до 1e-12. Для φ_J (α = ½, κ = 40)
+    единственная неподвижная точка самомодели Γ_η∞, η∞ = 0,4725, отстоит от аттрактора на 0,0150
+    при границе √(6/7)(2η₊/3)/|λ_Y| = 0,0217.
+    """
+    kap, alpha, c = 1.0, 0.5, 0.5 / 3
+    e0 = np.diag(np.eye(7)[0]).astype(complex)
+    assert abs(np.linalg.norm(e0 - np.eye(7) / 7) - np.sqrt(6 / 7)) < 1e-15
+    rng = np.random.default_rng(9)
+    B = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    H1 = (B + B.conj().T) / 2
+    for eps in (1e-3, 1e-2):
+        H = eps * H1
+        f = lambda G: _frozen_self_registering(G, H, kap=kap, alpha=alpha)(G)
+        G = _stationary(f, e0)
+        col = H[:, 0].copy()
+        col[0] = 0
+        first = np.sqrt(2) * np.linalg.norm(col) / (2 / 3 + 6 * kap * (1 - c) / 7)
+        ratio = np.linalg.norm(G - e0) / first
+        assert abs(ratio - 1) < (2e-3 if eps == 1e-3 else 2e-2)
+        P = purity(G)
+        R = 1 / (7 * P)
+        D = np.diag(np.diag(G))
+        phi = (1 - R) * (D + c * (G - D)) + R * G @ G / P
+        L0 = -1j * (H @ G - G @ H) + (2 / 3) * (D - G)
+        assert np.linalg.norm(kap * gate(P) * (phi - G) + L0) < 1e-12
+    eta = np.linspace(0.4, 0.55, 150001)                                              # φ_J: сдвиг O(1/κ)
+    q = _q_window(eta, c)
+    e_inf = eta[np.argmin(np.abs((1 - c * eta) / (eta * (1 + 6 * eta ** 2)) - (1 - c)))]
+    v = 40.0 * q - 2 / 3
+    e_plus = max(eta[i] for i in range(len(eta) - 1) if v[i] * v[i + 1] < 0)
+    dq = (_q_window(e_plus + 1e-7, c) - _q_window(e_plus - 1e-7, c)) / 2e-7
+    dist, bound = np.sqrt(6 / 7) * (e_inf - e_plus), np.sqrt(6 / 7) * (2 * e_plus / 3) / abs(40.0 * e_plus * dq)
+    assert abs(e_inf - 0.4725) < 1e-4 and abs(dist - 0.0150) < 1e-4 and abs(bound - 0.0217) < 1e-4
+    u = np.ones(7) / np.sqrt(7)
+    uu = np.outer(u, u)
+    fix = np.eye(7) / 7 + e_inf * (uu - np.eye(7) / 7)
+    P = purity(fix)
+    R = 1 / (7 * P)
+    D = np.diag(np.diag(fix))
+    assert np.linalg.norm((1 - R) * (D + c * (fix - D)) + R * uu - fix) < 1e-4       # φ_J(Γ_η∞) = Γ_η∞
+
+
+def test_phi_coh_contracts_toward_i7_but_is_not_a_contraction():
+    """φ_coh сжимает к I/7 (множитель k ≤ 6/7), но не является сжатием: у чистых состояний 54/49.
+
+    Свидетель поправки к расщеплению шага (эволюция, итеративная схема): «схема сходится по Банаху,
+    так как φ — сжатие с коэффициентом k» неверно дословно — k есть множитель у отклонения от I/7,
+    а не константа Липшица; вдоль e₀ радиальная производная в чистом состоянии 54/49 > 1.
+    Верно: шаг Ли–Троттера S = [(1−a) id + aφ_coh]∘e^{Δτℒ₀} даёт ‖Γ_n − I/7‖_F ≤ (1 − a/7)ⁿ‖Γ_0 − I/7‖_F.
+    С φ_s при H = 0 у шага восемь неподвижных точек (e_m и I/7) — глобального сжатия нет.
+    """
+    pa = lambda G: np.diag(np.diag(G)) + (G - np.diag(np.diag(G))) / 6
+    phi = lambda G: (1 - 1 / (7 * purity(G))) * pa(G) + np.eye(7) / (49 * purity(G))
+    e0 = np.diag(np.eye(7)[0]).astype(complex)
+    d = e0 - np.eye(7) / 7
+    h = 1e-6
+    lip = np.linalg.norm(phi(e0) - phi(e0 - h * d)) / np.linalg.norm(h * d)
+    assert abs(lip - 54 / 49) < 1e-5
+    rng = np.random.default_rng(12)
+    B = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    H = 0.3 * (B + B.conj().T) / 2
+    L0 = lambda G: -1j * (H @ G - G @ H) + (2 / 3) * (np.diag(np.diag(G)) - G)
+    a, dt = 0.5, 0.1
+    step = lambda G: (1 - a) * _rk4(G, L0, dt, 4) + a * phi(_rk4(G, L0, dt, 4))
+    G = random_pure(rng)
+    dist = [np.linalg.norm(G - np.eye(7) / 7)]
+    for _ in range(60):
+        G = step(G)
+        dist.append(np.linalg.norm(G - np.eye(7) / 7))
+    assert all(dist[n + 1] <= (1 - a / 7) * dist[n] + 1e-12 for n in range(60))
+    zero = np.zeros((7, 7))
+    phis = lambda G: (1 - 1 / (7 * purity(G))) * pa(G) + G @ G / (7 * purity(G) ** 2)
+    stepS = lambda G: (1 - a) * G + a * phis(G)
+    fixed = [np.eye(7) / 7] + [np.diag(np.eye(7)[m]).astype(complex) for m in range(7)]
+    assert all(np.linalg.norm(stepS(X) - X) < 1e-15 for X in fixed)
 
 
 def main():

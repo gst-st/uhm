@@ -49,7 +49,7 @@ Analogy: a recursive picture. Imagine a painter painting a picture that depicts 
 Mathematically, the circularity is resolved rigorously:
 
 :::warning Bootstrap nature of the definition of φ
-The operator φ defines the "self-model" of the system, i.e. φ(Γ) ≈ Γ — the system models itself. This appears to be a **circular** definition. The circularity is resolved via the **fixed-point theorem**: the operator φ is defined **independently** (as the left adjoint to the inclusion of subobjects), and the fixed point Γ* with φ(Γ*) = Γ* **exists and is unique** by Banach's theorem (φ is a contractive mapping with parameter k < 1). A detailed account of the resolution of circularity is in [Formalisation of the operator φ: resolution of circularity](/docs/proofs/categorical/formalization-phi#категориальное-определение-φ).
+The operator φ defines the "self-model" of the system, i.e. φ(Γ) ≈ Γ — the system models itself. This appears to be a **circular** definition. The circularity is resolved via the **fixed-point theorem**: the operator φ is defined **independently** (as the left adjoint to the inclusion of subobjects), and for the canonical $\varphi_{\mathrm{coh}}$ the fixed point Γ* with φ(Γ*) = Γ* **exists and is unique** — it is $I/7$ — because $\|\varphi_{\mathrm{coh}}(\Gamma) - I/7\|_F \leq k\|\Gamma - I/7\|_F$ with $k \leq 6/7$. *Corrected 2026-09-25:* the box said "by Banach's theorem (φ is a contractive mapping with parameter k < 1)"; $k$ multiplies the deviation from $I/7$ and is not a Lipschitz constant — near pure states $\varphi_{\mathrm{coh}}$ stretches distances by up to $54/49$ ([evolution, split-step method](/docs/core/dynamics/evolution#итеративная-схема)), and a self-model that keeps an isolated holon alive has several fixed points. A detailed account of the resolution of circularity is in [Formalisation of the operator φ: resolution of circularity](/docs/proofs/categorical/formalization-phi#категориальное-определение-φ).
 :::
 
 ---
@@ -103,7 +103,7 @@ This form **destroys** all coherences ($\gamma_{ij} \to 0$ for $i \neq j$), whic
 ## Свойства
 
 1. **CPTP channel:** $\varphi$ is a completely positive, trace-preserving map
-2. **Idempotence (of ideal φ):** $\varphi \circ \varphi = \varphi$ — for the idempotent definition (Definition 3). The canonical form $\varphi_{\text{coh}}$ with compression parameter $k = 1 - R < 1$ [T] is a **contractive** mapping (not idempotent); the idempotent projection is the limit $\lim_{n\to\infty} \varphi_{\text{coh}}^n$
+2. **Idempotence (of ideal φ):** $\varphi \circ \varphi = \varphi$ — for the idempotent definition (Definition 3). The canonical form $\varphi_{\text{coh}}$ with compression parameter $k = 1 - R < 1$ [T] is not idempotent; it **contracts toward $I/7$**, $\|\varphi_{\text{coh}}(\Gamma) - I/7\|_F \leq k\|\Gamma - I/7\|_F$, but is not a contraction of the state space (Lipschitz constant $54/49$ at pure states; "contractive mapping" until 2026-09-25); the idempotent projection is the limit $\lim_{n\to\infty} \varphi_{\text{coh}}^n$, the constant map onto $I/7$
 3. **Purity monotonicity:** $P(\varphi_{\text{base}}(\Gamma)) \leq P(\Gamma)$ for the base form (decoherence decreases purity); $P(\varphi_{\text{coh}}(\Gamma))$ depends on the parameter $\alpha$ — at $\alpha < 1$ the Fano component partially preserves coherences. The fixed point of the canonical $\varphi_{\mathrm{coh}}$ is $I/7$, with $P = 1/7$ (the value $2/7$ printed here earlier is retracted, see below)
 4. **Fixed point:** $\exists! \, \Gamma^*_{\mathrm{coh}}: \varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$, namely $\Gamma^*_{\mathrm{coh}} = I/7$
 
@@ -357,6 +357,32 @@ $$
 $$
 
 The anchor $\Gamma^2/\mathrm{Tr}\,\Gamma^2 = \sqrt{\Gamma}\,\Gamma\,\sqrt{\Gamma}/\mathrm{Tr}(\Gamma^2)$ is the Lüders update of $\Gamma$ on the effect $\Gamma$: the state the holon is left in after registering its own state, the one effect it has without an outside reference. It is smooth on all states ($\mathrm{Tr}\,\Gamma^2 \geq 1/7$) and differs from $\varphi_{\mathrm{coh}}$ only in the anchor. With it an isolated holon has at least seven self-sustaining attractors with $P > 2/7$ ([evolution](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор) [T]); at $H = 0$ they are the basis states, where $\varphi_s(e_m) = e_m$ — exact self-knowledge. That the self-model of a physical holon is $\varphi_s$ rather than $\varphi_{\mathrm{coh}}$ is not derived from the axioms [Pr]; that it must be non-unital for an isolated holon to live is [T].
+
+## What the axioms fix about the anchor, and the collineation anchor φ_J {#phi-j}
+
+The attractors of $\varphi_s$ lie above the conscious window, and they are localised. The reason is not the choice $q = 2$: a self-model covariant under the diagonal unitaries — every intrinsic anchor, every anchor built from the Fano projectors — holds no hyperbolic attractor in $\mathcal{V}_{\mathrm{full}}$ near $H = 0$ ([phase-reference obstruction](/docs/core/dynamics/evolution#теорема-фазовое-препятствие) [T]). Such a self-model can reach the window by purity — the Fano-line registration of the same theorem holds $P = 1/3$ for every $\kappa$ — but not $\Phi \geq 1$.
+
+:::tip Theorem (Symmetric anchors) [T]
+Let a self-model have the replacement form $\varphi(\Gamma) = k\,\mathcal{P}_\alpha(\Gamma) + R\,\rho_a$ with an anchor $\rho_a$ independent of $\Gamma$.
+
+1. If $\varphi$ is covariant under $G_2$, under the signed frame group $\Gamma_{\mathrm{oct}}$, or under the full group of monomial unitaries that permute the Fano lines (permutations with arbitrary phases), then $\rho_a = I/7$ and $\varphi$ is unital.
+2. If $\varphi$ is covariant under the 168 collineations of the Fano plane acting as permutations of the basis, then $\rho_a = (1 - t)\,I/7 + t\,uu^\dagger$ with $u = (1, \dots, 1)/\sqrt7$ and $t \in [-1/6, 1]$; it is unital only for $t = 0$ and pure only for $t = 1$.
+:::
+
+*Proof.* $\mathcal{P}_\alpha$ is covariant under each of these groups (they map Fano lines to lines, and $\mathcal{P}_{\mathrm{base}}$ commutes with monomial unitaries), so covariance of $\varphi$ is $M\rho_aM^\dagger = \rho_a$ for every $M$ of the group, i.e. $\rho_a$ lies in the commutant. For $G_2$ and $\Gamma_{\mathrm{oct}}$ the commutant is $\mathbb{C}I$ ([dead isolation, item 3](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)); for the monomial group the diagonal phases force $\rho_a$ diagonal and the 2-transitive permutations force its diagonal constant. The 168 collineations act 2-transitively on the points, so the permutation representation has two orbits on pairs of indices — equal and distinct — and its commutant is spanned by $I$ and $J$ ($J/7 = uu^\dagger$). The eigenvalues of $(1 - t)I/7 + t\,uu^\dagger$ are $(1 + 6t)/7$ and $(1 - t)/7$, which gives $t \in [-1/6, 1]$. $\blacksquare$
+
+**What is derived and what is added.** The self-modelling adjunction $\varphi \dashv i$ and the terminal object make $\varphi$ a CPTP left adjoint; they do not fix its anchor — every anchor above yields a CPTP channel of the same form, and so does every intrinsic anchor, including the Lüders update $\Gamma^2/\mathrm{Tr}\,\Gamma^2$ of $\varphi_s$. What the axioms and the theorems of this page and of [evolution](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция) do fix [T] is: the anchor of an isolated living holon is non-unital; a symmetric Γ-independent anchor is non-unital only under the collineations without phases or signs; an attractor in $\mathcal{V}_{\mathrm{full}}$ near $H = 0$ needs an anchor that is not phase-covariant. Two added principles [Pr] fix the self-model; the remarks after the formula say in what sense neither is idle:
+
+- **(Col)** the symmetry of the self-model is that of its own Fano channel restricted to permutations — the 168 collineations acting on the basis, without phases or signs;
+- **(Pure)** the anchor carries no entropy of its own: it is a pure state.
+
+(Col) gives the family $(1 - t)I/7 + t\,uu^\dagger$; (Pure) gives $t = 1$, that is
+
+$$
+\varphi_J(\Gamma) = k\,\mathcal{P}_\alpha(\Gamma) + R\,uu^\dagger ,
+$$
+
+unique up to the Fano weight $\alpha$. With it an isolated holon at $H = 0$ has, for $\kappa > \kappa_c(\alpha)$, a single living attractor, which persists for small $H$ and lies in $\mathcal{V}_{\mathrm{full}}$: $P \in (2/7, 5/14)$, $\Phi \in (1, 3/2]$, uniform diagonal ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне) [T]). (Col) is what makes the phase reference internal: a phase-covariant self-model is excluded by the obstruction, and with no symmetry at all the anchor is an arbitrary fixed state — a reference supplied from outside, which is the embodied case ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)), not a principle of the isolated holon. (Pure) can be weakened to $t > (2 - c)/\sqrt6$ but not dropped: for $t \leq (2 - c)/\sqrt6$ there is no living state at all. The price of (Col) is a phase reference: it selects equal phases of the basis states, which neither $\mathcal{P}_\alpha$ nor the octonionic frame does. Whether a physical holon's self-model is $\varphi_{\mathrm{coh}}$, $\varphi_s$ or $\varphi_J$ is not decided by the axioms [Pr].
 
 ---
 
