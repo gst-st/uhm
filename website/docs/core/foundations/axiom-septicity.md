@@ -525,7 +525,7 @@ $$
 \sum_{\ell=1}^{7} \mathrm{Coh}_\ell(\Gamma) = \frac{3\,P_{\mathrm{diag}} + 5\,P_{\mathrm{coh}}}{P} = 5 - \frac{2}{1+\Phi},
 $$
 
-which equals $3$ **only** for diagonal $\Gamma$ ($\Phi=0$) and rises toward $5$ as $\Phi\to\infty$. This gives a clean operational witness for the L2 integration threshold:
+which equals $3$ **only** for diagonal $\Gamma$ ($\Phi=0$) and rises with $\Phi$. On $\mathcal{D}(\mathbb{C}^7)$ the integration measure is bounded, $\Phi \leq 7P - 1 \leq 6$ ([interiority hierarchy, Definition 2.4](/docs/proofs/consciousness/interiority-hierarchy)), with $\Phi = 6$ exactly for pure states with a uniform diagonal, so the sum never exceeds $5 - \tfrac27 = \tfrac{33}{7} \approx 4.714$. (It read "rises toward $5$ as $\Phi\to\infty$" until 2026-09-25; in dimension 7 the measure $\Phi$ does not grow without bound.) This gives a clean operational witness for the L2 integration threshold:
 
 $$
 \Phi \geq 1 \iff \sum_{\ell=1}^{7}\mathrm{Coh}_\ell(\Gamma) \geq 4. \qquad \textbf{[T]}
