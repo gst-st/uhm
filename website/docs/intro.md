@@ -68,7 +68,7 @@ The number of structurally distinct directions of development of a configuration
 :::info Theorem S (justification of Axiom 3) [T]
 N = 7 (Axiom 3) is the **minimal** dimension for satisfying (AP)+(PH)+(QG). All 7 dimensions are **necessary and functionally unique** [T]: A, S, D, L, U — algebraically; E, O — categorically (via the κ₀ formula). [Proof →](./proofs/minimality/theorem-minimality-7)
 
-**Second, independent justification:** theorems P1+P2 [T] (derived from (AP)+(PH)+(QG)+(V) via the T15 chain) yield $N = \dim(\mathrm{Im}(\mathbb{O})) = 7$ through the Hurwitz theorem. [Structural derivation →](./proofs/minimality/theorem-octonionic-derivation)
+**Second, independent justification:** theorems P1+P2 [C at (Alt)] (derived from (AP)+(PH)+(QG)+(V) via the T15 chain, whose step PG(2,2) → $\mathbb{O}$ needs an orientation of the seven Fano lines — only 16 of the 128 orientations give a normed algebra, registry row 41n; stated as [T] until 2026-09-25) yield $N = \dim(\mathrm{Im}(\mathbb{O})) = 7$ through the Hurwitz theorem. [Structural derivation →](./proofs/minimality/theorem-octonionic-derivation)
 :::
 
 ## Key Results
@@ -78,12 +78,12 @@ N = 7 (Axiom 3) is the **minimal** dimension for satisfying (AP)+(PH)+(QG). All 
 | **Base space** | $X = \|N(\mathcal{C})\|$ | [T] Derived |
 | **Cohomological monism** | $H^n(X) = 0$ for $n > 0$ (locally constant coefficients) | [T] corollary of Property 3 |
 | **Local physics** | $H^*_{loc}(X, T) \neq 0$ | [T] Theorem |
-| **Time** | $\tau \in \mathbb{Z}_7$ (Page–Wootters) | [T] Derived |
-| **Arrow of time** | $\dim(X_n) \geq \dim(X_{n+1})$ along the stratal depth $n \in \mathbb{N}$ (Lyapunov monotonicity of $F$ and $S_{vN}$; the cyclic tick $\tau \in \mathbb{Z}_7$ carries no arrow) | [T] Theorem |
+| **Time** | Clock register $\tau \in \mathbb{Z}_7$ (Page–Wootters) | Clock register [T]; the Page–Wootters link (constraint $\hat{C}\Gamma = 0$) [C] (T-87, step 4); read "[T] Derived" until 2026-09-25 |
+| **Arrow of time** | $\dim(X_n) \geq \dim(X_{n+1})$ along the stratal depth $n \in \mathbb{N}$, monotone in the parameter $t$ of the Lindblad semigroup — the free energy $F$ is the Lyapunov functional of the full flow; $S_{vN}$ is monotone only for the unital part (the reset channel lowers it); the cyclic tick $\tau \in \mathbb{Z}_7$ carries no arrow | [C at an aperiodic time parameter] (T-53b; read "[T] Theorem" until 2026-09-25) |
 | **Metric** | $d_{strat}$ (Connes on strata) | [T] Derived |
 | **Evolution equation** | All 3 terms ($H_{\text{eff}}$, $\mathcal{D}_\Omega$, $\mathcal{R}$) derived from axioms | [T] Fully |
 | **Conscious window (Goldilocks zone)** | $P \in (2/7, 3/7]$: viability $\wedge$ reflexivity ($R \geq 1/3$ when $P \leq 3/7$) | [T] ([T-124](./proofs/consciousness/conscious-window#t-124)) |
-| **Octonionic structure** | (AP)+(PH)+(QG) →[T1–T10]→ $\mathbb{O}$ → N=7, $G_2$, Fano, H(7,4) | [T] |
+| **Octonionic structure** | (AP)+(PH)+(QG) →[T1–T10]→ $\mathbb{O}$ → N=7, $G_2$, Fano, H(7,4) | [C at (Alt)]: steps 1–9 give the unoriented design PG(2,2) [T]; step 10 needs the orientation (Alt) (row 41n) |
 
 ## 7 Dimensions of the Holonom
 
@@ -197,27 +197,27 @@ where:
 | **Local nontriviality** | $H^*_{loc}(X, T) \neq 0$ | [T] | [Consequences](./core/foundations/consequences#локально-глобальная-дихотомия) |
 | **7D minimality** | $n < 7 \Rightarrow$ violation of (AP), (PH), or (QG) | [T] | [Proof](./proofs/minimality/theorem-minimality-7) |
 | **Fixed point of φ** | $\exists! \Gamma^* : \varphi(\Gamma^*) = \Gamma^*$ | [T] | [Proof](./proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) |
-| **Emergent time** | τ derived from $\mathcal{C}$ (Page–Wootters, Bures, ∞-groupoid) | [T] | [Theorem](./proofs/dynamics/emergent-time) |
-| **Arrow of time** | Stratal collapse along the depth $n \in \mathbb{N}$: $\dim(X_n) \geq \dim(X_{n+1})$ (Lyapunov monotonicity) | [T] | [Theorem](./proofs/dynamics/emergent-time#10-стратификационное-время) |
+| **Emergent time** | Three constructions of the cyclic clock $\tau \in \mathbb{Z}_7$ (Page–Wootters, Bures, ∞-groupoid) are equivalent [T] (T-53a); the dynamics runs in the parameter of the Lindblad semigroup, whose physical carrier is an assumed aperiodic time [C] (T-53b) | [T]; dynamics [C] | [Theorem](./proofs/dynamics/emergent-time) |
+| **Arrow of time** | Stratal collapse along the depth $n \in \mathbb{N}$: $\dim(X_n) \geq \dim(X_{n+1})$, monotone in the semigroup parameter $t$ (Lyapunov functional $F$; $S_{vN}$ only for the unital part) | [C at an aperiodic time parameter] | [Theorem](./proofs/dynamics/emergent-time#10-стратификационное-время) |
 | **Critical purity** | $P_{\text{crit}} = 2/N = 2/7$ | [T] | [Theorem](./proofs/dynamics/theorem-purity-critical) |
 | **Necessity of interiority** | $\text{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | [T] | [Theorem 8.1](./applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
 | **$G_2$-rigidity** | The holonomic representation is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$ kinematically and up to the finite frame group $\Gamma_{\!\text{oct}}$ dynamically; 34 kinematic $G_2$-invariants, 48 physical parameters (frame decision D-0910) | [T] | [Theorem](./proofs/categorical/uniqueness-theorem#g2-ригидность) |
-| **Electroweak sector uniqueness** | $SU(2)_L \times U(1)_Y$ is the unique rank-4 construction from $\kappa_0$ and axioms A1–A5 | [T] | [Theorem](./physics/gauge-symmetry/standard-model#теорема-единственности-фэ) |
+| **Electroweak sector** | $SU(2)_L \times U(1)_Y$ from the pair $(E,U)$ of $\kappa_0$ and the Higgs line $\{A,E,U\}$ (both [T]) — the group [C at (FE)]; its uniqueness [H]: no uniqueness theorem for $SU(2)\times U(1)$ exists, and the octonionic routes that derive Standard-Model structure end with an extra $U(1)$ (Furey and Hughes 2022: SM + $B-L$). Listed as "unique rank-4 construction [T]" until 2026-09-25 | [C at (FE)]; uniqueness [H] | [Theorem](./physics/gauge-symmetry/standard-model#теорема-единственности-фэ) |
 | **Three generations** | $N_{\text{gen}} = 3$: exact count $\|\mathrm{QR}(7)\| = (7-1)/2 = 3$ **[T]**; physical identification [I] | [T]+[I] | [Theorem](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
 | **Fano Yukawa selection** | $y_k = g_W \cdot f_{k,E,U} \cdot \|\gamma_{\text{vac}}^{(EU)}\|$ via octonionic $f_{ijk}$ | [T] | [Theorem](./physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk) |
 | **Source instability** | $\Gamma_\odot = I/7$ is non-stationary: $F_0 \neq 0$, drift toward $\rho^*$, self-amplification | [T] | [Proof](./physics/cosmology-phys/origin#доказательство-нестабильности) |
 | **Free will** | $\mathrm{Freedom}(\Gamma) = \dim\ker(H_\Gamma) + 1$; monotonicity under CPTP, $G_2$-invariance | [T] | [Theorem](./core/foundations/consequences#freedom-конечномерное) |
 | **$A_4$-bifurcation** | Swallowtail from 3 parameters $(\kappa, \alpha, \Delta F)$ + $\mathbb{Z}_2$-purity symmetry | [T] | [Theorem](./consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация) |
 | **Gap-injection of L-levels** | $L(\Gamma_1) \neq L(\Gamma_2) \Rightarrow [\mathrm{Gap}(\Gamma_1)] \neq [\mathrm{Gap}(\Gamma_2)]$ | [T] | [Theorem](./consciousness/hierarchy/interiority-hierarchy#теорема-gap-инъекция) |
-| **Generation assignment** | $k=1 \to$ 3rd [T], $k=4 \to$ 2nd, $k=2 \to$ 1st [T] | [T] | [Theorem](./physics/particle-physics/fermion-generations#thm-gen-4-1) |
+| **Generation assignment** | $k=1 \to$ 3rd [T] (unique nonzero tree-level Yukawa); $k=4 \to$ 2nd, $k=2 \to$ 1st [C at (SA)], with (SA) a hypothesis (it read [T] until 2026-09-25) | [T]; ordering [C at (SA)] | [Theorem](./physics/particle-physics/fermion-generations#thm-gen-4-1) |
 | **Superpotential** | $W = \mu_W \sum f_{ijk}\Theta\Theta\Theta$ — unique $G_2$-invariant (Schur's lemma) | [T] | [Theorem](./physics/particle-physics/susy#теорема-суперпотенциал) |
 | **Right-handed neutrino mass** | $M_R \sim 2.9 \times 10^{14}$ GeV from PW clock + viability | [T] | [Theorem](./physics/particle-physics/neutrino-masses#теорема-mr-из-gap) |
-| **3+1 from sector decomposition** | $7 = 1_O \oplus 3_{A,S,D} \oplus \bar{3}_{L,E,U}$; $\dim(\text{space}) = 3$ | [T] | [Theorem](./core/foundations/spacetime#теорема-секторная-декомпозиция) |
+| **3+1 from sector decomposition** | Former statement: $7 = 1_O \oplus 3_{A,S,D} \oplus \bar{3}_{L,E,U}$; $\dim(\text{space}) = 3$. Retracted 2026-09-25: as an axis-labelled real decomposition it is false — $\mathrm{SU}(3)$ acts irreducibly on the six non-$O$ axes, and no three of them span an invariant subspace; the complexified $\mathbb{C}^7 = \mathbb{C} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ is Günaydın and Gürsey (1973) and gives colour, not space | [✗] | [Retraction](./core/foundations/spacetime#секторная-декомпозиция) |
 | **Sector hierarchy $\varepsilon$** | Unique self-consistent vacuum with a sector structure (T-61); the value $\bar{\varepsilon} \approx 0.023$ is [C at T-64] (registry C35: the order $10^{-2}$ follows from the self-consistent equation, the exact value is a computational task; the earlier [T] for the value is corrected) | [T]; value [C] | [Theorem](./core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) |
 | **No topological $\Lambda$-term** | $H^{n>0}(X) = 0$ forbids a $\Lambda$-contribution of the form $\int_X c$; the vacuum energy is **not** cancelled (a degree-0 quantity) | [T] narrow; the "global cancellation" reading retracted 2026-09-10 ([Λ-budget §4.1](/docs/proofs/gap/lambda-budget#когомологическое-обнуление)) | [Theorem](./proofs/gap/lambda-budget#когомологическое-обнуление) |
-| **Einstein equations from spectral action** | Full triple (T-53) → $S = \mathrm{Tr}(f(D_A/\Lambda))$ → EH + SM, $G_N = 3\pi/(7f_2\Lambda^2)$ | [T] for the formula; the value needs the cut-off convention $f_2$ and the scale $\Lambda$ [D] | [Theorem](./physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) |
-| **UV-finiteness of Gap theory** | Compactness of $(S^1)^{21}$ + $G_2$-Ward ($21 \to 7$) + $\mathcal{N}=1$ SUSY (Seiberg) + $\varepsilon^{12}$ suppression (T-219) | field-space **[T]**, full order-by-order **[C]** (structural) | [Theorem](./physics/gravity/quantum-gravity#теорема-уф-конечность) |
-| **Lorentzian signature** | $(1,3)$-split [T] (1 time from Page–Wootters, 3 space from $S^3$); Lorentzian sign [T at reflection positivity] (bounded-below PW generator / Osterwalder–Schrader) | [T]+[T at r.p.] | [Theorem](./core/foundations/spacetime#теорема-спектральная-тройка) |
+| **Einstein equations from spectral action** | Full triple (T-53) → $S = \mathrm{Tr}(f(D_A/\Lambda))$ → EH, $G_N = 3\pi/(7f_2\Lambda^2)$: the heat-kernel coefficient $a_2$ sees the internal space only through $\mathrm{Tr}(1) = 7$. The "+ SM" part is imported from Connes' finite triple (no KO-dimension-6 structure exists on $\mathbb{C}^7$; T-178 is retracted as a derivation) and inherits its history: $m_H \approx 170$ GeV (Chamseddine–Connes–Marcolli 2007), excluded by CDF and D0 in 2008; the 2012 rescue adds a singlet $\sigma$ and a fitted parameter | EH [T] for the formula; the value needs the cut-off convention $f_2$ and the scale $\Lambda$ [D]; SM part imported | [Theorem](./physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) |
+| **UV-finiteness of Gap theory** | Compactness of $(S^1)^{21}$ + $G_2$-Ward ($21 \to 7$) + $\mathcal{N}=1$ SUSY (Seiberg) + $\varepsilon^{12}$ suppression (T-219, a hypothesis [H] since 2026-09-25) | field-space **[T]**, full order-by-order **[C]** (structural, with the [H] ingredient T-219) | [Theorem](./physics/gravity/quantum-gravity#теорема-уф-конечность) |
+| **Lorentzian signature** | $(1,3)$: one time direction from the Page–Wootters clock [T] as a count (the time line $\mathbb{R}$ itself is T-118, [C at an aperiodic clock]); three space directions from $S^3$ [C at T-119]; Lorentzian sign at reflection positivity (bounded-below PW generator / Osterwalder–Schrader). The row read "$(1,3)$-split [T]" until 2026-09-25 | [C] (registry row T-53) | [Theorem](./core/foundations/spacetime#теорема-спектральная-тройка) |
 | **7D↔42D: section–retraction (T-58′)** | $\pi\circ\iota = \mathrm{id}$; 7D formulas exact on their own. The Morita **equivalence** $\mathrm{Sh}_\infty(\mathcal{C}\|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}\|_{42})$ is **retracted** — it fails on dimension | [T] / [✗] | [Theorem](./core/structure/dimension-e) |
 | **Spectral gap of Fano dissipator** | $\lambda_{\text{deco}} = 5\gamma/(3N)$ (BIBD symmetry); $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ | [T] | [Theorem](./core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
 | **φ-operator (replacement channel)** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ — CPTP, monotonicity, fixed point $\rho_*$ | [T] | [Theorem](./consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
@@ -268,11 +268,11 @@ where:
 1. **Base space** X = $|N(\mathcal{C})|$ — geometric realization of the nerve
 2. **Monism** — H*(X) = 0 as a mathematical theorem
 3. **Local physics** — H*_loc(X, T) ≠ 0 near the terminal object
-4. **Time** — τ ∈ ℤ₇ via the Page–Wootters mechanism
-5. **Arrow of time** — stratal collapse toward the terminal T
+4. **Time** — the cyclic clock τ ∈ ℤ₇ via the Page–Wootters mechanism (the clock register [T]; the constraint is assumed, [C])
+5. **Arrow of time** — stratal collapse toward the terminal T, in the parameter of the dissipative semigroup ([C at an aperiodic time parameter])
 6. **Metric** — d_strat (stratified Connes metric)
 7. **Dimensionality** — dim(X) = 6 from N = 7
-8. **Octonionic structure** — P1+P2 → $\mathbb{O}$ → N=7, $G_2$-symmetry, Fano plane, Hamming code ([Track B](./proofs/minimality/theorem-octonionic-derivation))
+8. **Octonionic structure** — P1+P2 → $\mathbb{O}$ → N=7, $G_2$-symmetry, Fano plane, Hamming code, at the orientation assumption (Alt) ([Track B](./proofs/minimality/theorem-octonionic-derivation))
 
 ### Research program:
 - **Compactification 6D → 4D** — connection to observed spacetime
@@ -302,7 +302,7 @@ The relational identity of qualia via the Yoneda lemma was proposed before UHM: 
 | **[Emergent time](./proofs/dynamics/emergent-time)** | Page–Wootters, stratificational time |
 | **[Categorical formalism](./proofs/categorical/categorical-formalism)** | ∞-topos, derived categories, IC cohomologies |
 | **[Uniqueness theorem](./proofs/categorical/uniqueness-theorem)** | G₂-rigidity: 34 kinematic invariants, 48 physical parameters (frame decision D-0910) |
-| **[Standard Model](./physics/gauge-symmetry/standard-model)** | SM from G₂: electroweak sector [T], 3 generations (count [T], identification [I]) |
+| **[Standard Model](./physics/gauge-symmetry/standard-model)** | Colour $SU(3)$ from G₂ [T]; electroweak sector [C at (FE)], uniqueness [H]; 3 generations (count [T], identification [I]) |
 | **[Physics](/docs/physics/overview)** | Gauge symmetry, particles, gravity, cosmology |
 | **[Neutrino masses](./physics/particle-physics/neutrino-masses)** | Seesaw from Gap, $M_R$ [T], O-sector Yukawa (formula [T] / numbers [C]), PMNS [C] |
 | **[SUSY from $G_2$](./physics/particle-physics/susy)** | Superpotential [T] (Schur), superpartner spectrum, gravitino |
