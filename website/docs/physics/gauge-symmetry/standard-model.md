@@ -59,7 +59,7 @@ The maximal embedding $\mathrm{SU}(3) \subset G_2$ (stabilizer of a vector in $\
 
 $$7 \to 1_O \oplus \mathbf 3 \oplus \bar{\mathbf 3},\qquad \mathbf 3=\mathrm{span}_{\mathbb C}\{A-iD,\ S-iU,\ L-iE\},\quad \bar{\mathbf 3}=\overline{\mathbf 3}.$$
 
-The earlier labels $3_{ASD}=\{A,S,D\}$ ("spatial triplet") and $\bar{3}_{LEU}=\{L,E,U\}$ ("Gap triplet") are **retracted [✗]** (2026-09-25): none of the 20 triples of non-$O$ axes spans an $\mathrm{SU}(3)$-invariant subspace (`test_no_axis_triple_is_su3_invariant` in `website/scripts/check_core_numbers.py`). Prior art for the split and its colour reading: Günaydın and Gürsey 1973 ([G₂-structure, §2.6](/docs/physics/gauge-symmetry/g2-structure#прецеденты-g2)).
+The earlier labels $3_{ASD}=\{A,S,D\}$ ("spatial triplet") and $\bar{3}_{LEU}=\{L,E,U\}$ ("Gap triplet") are **retracted [✗]** (2026-09-25): none of the 20 triples of non-$O$ axes spans an $\mathrm{SU}(3)$-invariant subspace (`test_no_axis_triple_is_su3_invariant` in `website/scripts/check_core_numbers.py`). Prior art for the split and its colour reading: Günaydın and Gürsey 1973 ([G₂-structure, §2.6](/docs/physics/gauge-symmetry/g2-structure#прецеденты-g2)). No axis is spatial. Spatial directions whose rotations commute with this $\mathrm{SU}(3)$ exist only outside $\mathrm{Im}\,\mathbb O$: they form the colour-singlet part $\mathfrak h_2(\mathbb C_O)$ of $\mathfrak h_2(\mathbb O)$ ([Spacetime, Theorem 48c](/docs/core/foundations/spacetime#теорема-48c), [T] as mathematics, [C at (Q)] as spacetime).
 
 **(b)** Adjoint representation **14** (algebra $\mathfrak{g}_2$):
 
