@@ -184,7 +184,7 @@ $$
 - $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate [T], $\kappa_0$ — [categorical derivation](../foundations/axiom-septicity#структурный-анзац-kappa0)
 - $(\rho_* - \Gamma)$ — unique CPTP relaxation [T], $\rho_* = \varphi(\Gamma)$ — categorical self-model ([φ operator](/docs/core/operators/phi-operator))
 - $g_V(P)$ — V-preservation gate [T] (Landauer + V-invariance, [derivation](../dynamics/evolution#теорема-v-preservation-gate))
-- The nonlinearity of $\mathcal{R}$ in $\Gamma$ **does not violate** the no-signalling constraint — see [proof](../dynamics/evolution#запрет-сигнализации)
+- The nonlinearity of $\mathcal{R}$ in $\Gamma$ keeps the **marginal identity** $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ [T]; no-signalling of the full dynamics holds only in the non-selective reading [C] — with the Lüders update at a distant partner the gate $g_V$ signals ([proof and the counterexample](../dynamics/evolution#запрет-сигнализации); [physics correspondence §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). An earlier line said the nonlinearity "does not violate" the no-signalling constraint; retracted.
 
 :::info Regeneration: why life is not merely complex physics
 The regenerative part $\mathcal{R}$ is the fundamental distinction of living systems from non-living ones. A stone is subject only to unitary and dissipative dynamics: wind and rain gradually erode it. A living tree **actively resists** destruction: it draws energy from sunlight, nutrients from the soil, and uses them to restore its structure. In the mathematics of UHM this is expressed in the fact that $\mathcal{R}$ can **increase** purity $P$, compensating the losses from $\mathcal{D}$.
@@ -286,33 +286,27 @@ Detailed derivation: [Theorem on emergent time](../../proofs/dynamics/emergent-t
 
 ## Arrow of time
 
-:::info Theorem on the arrow of time [T]
-The direction of time is a **categorical consequence** of the structure of CPTP channels, not a postulate:
+:::info Arrow of time: the entropy form, corrected (2026-09-25)
+~~The direction of time is a **categorical consequence** of the structure of CPTP channels: $\sigma(\gamma) \cdot \Delta S_{vN}(\gamma) \geq 0$, with $\sigma(\gamma) = +1$ for physically realisable (CPTP) paths.~~ Retracted: a CPTP channel can lower the von Neumann entropy — the reset channel $\rho \mapsto \lvert 0\rangle\langle 0\rvert$ takes $I/7$ ($S_{vN} = \ln 7 \approx 1.95$) to a pure state ($S_{vN} = 0$), and UHM's own dynamics carries a state near $I/7$ to an attractor with $P > 1/7$, hence lower $S_{vN}$ ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)). Entropy growth holds only for **unital** channels and generators ($\Phi(I) = I$). What replaces it: for a linear Lindblad generator — a quantum dynamical semigroup — with a stationary state $\rho_*$, the relative entropy $D(\Gamma(\tau)\,\|\,\rho_*)$ does not increase (H. Spohn, "Entropy production for quantum dynamical semigroups", *J. Math. Phys.* 19, 1227–1230, 1978).
 
-$$
-\sigma(\gamma) \cdot \Delta S_{vN}(\gamma) \geq 0
-$$
-
-where σ(γ) = +1 for physically realisable paths (CPTP).
-
-[Full proof →](../../proofs/dynamics/emergent-time#7-теорема-о-стреле-времени)
+UHM's structural arrow — the collapse of strata towards the terminal object — is [T-53c](/docs/core/operators/emergent-time#t-53c). The [entropy-form proof](../../proofs/dynamics/emergent-time#7-теорема-о-стреле-времени) uses the step "CPTP channels do not decrease $S_{vN}$" and carries the same restriction to unital channels.
 :::
 
-The direction of time is determined by the asymmetry of dynamics:
+The direction of time is determined by the asymmetry of dynamics. For a linear Lindblad generator with stationary state $\rho_*$:
 
 $$
-\frac{dS_{vN}}{d\tau} \geq 0 \quad \text{(second law — consequence of CPTP)}
+\frac{d}{d\tau}\, D\bigl(\Gamma(\tau)\,\big\|\,\rho_*\bigr) \leq 0
 $$
 
-where $S_{vN} = -\mathrm{Tr}(\Gamma \log \Gamma)$ is the von Neumann entropy.
+where $D(\rho\,\|\,\sigma) = \mathrm{Tr}\,\rho\,(\log\rho - \log\sigma)$ is the relative entropy (Spohn 1978). For a unital generator, $\rho_* = I/7$, this is $dS_{vN}/d\tau \geq 0$ with $S_{vN} = -\mathrm{Tr}(\Gamma \log \Gamma)$ the von Neumann entropy; UHM's linear part $\mathcal{L}_0$ is of this kind (its stationary state is $I/7$, [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω)), while the full dynamics, with the nonlinear regeneration $\mathcal{R}$, is not, and lowers $S_{vN}$ on the way to its attractor. The earlier display "$dS_{vN}/d\tau \geq 0$ (second law — consequence of CPTP)" is retracted with the box above: it is only the unital special case.
 
 ### Why time moves "forward"
 
 The arrow of time is one of the deepest questions in physics. Newton's laws, the Schrödinger equation — all of them are **symmetric** with respect to time reversal. So where does irreversibility come from?
 
-In UHM the answer is elegant: **CPTP channels are irreversible by construction**. CPTP (Completely Positive Trace-Preserving) is a class of maps describing the physically admissible evolution of quantum systems. The key property: a CPTP channel can "smear" a pure state into a mixed state, but the **reverse process** (reassembling the mixed state back into a pure one) is **not** CPTP.
+In UHM the answer is elegant: **non-unitary CPTP channels are irreversible by construction**. CPTP (Completely Positive Trace-Preserving) is a class of maps describing the physically admissible evolution of quantum systems. The key property: a CPTP channel that is not unitary has **no CPTP inverse** — no physical process undoes it on every input. (An earlier sentence said that the reverse process, "reassembling the mixed state back into a pure one", is not CPTP; that is retracted: the reset channel $\rho \mapsto \lvert 0\rangle\langle 0\rvert$ does exactly that and is CPTP — what it cannot do is recover *which* state it reset.)
 
-Simply put: breaking a glass is easy (CPTP), but reassembling the shards would require an "anti-CPTP" process, which is physically forbidden. The arrow of time is not a mystery, but a **consequence** of the mathematical structure of admissible quantum channels.
+Simply put: breaking a glass is easy (CPTP), but reassembling the shards into *that* glass would require inverting the channel — an "anti-CPTP" process, which is physically forbidden. The arrow of time is not a mystery, but a **consequence** of the mathematical structure of admissible quantum channels.
 
 :::note The arrow of time and the three types of dynamics
 Unitary dynamics is **by itself** reversible — it has no arrow of time. The arrow arises from the **dissipative** part $\mathcal{D}$: it is decoherence that creates irreversibility. But here is a paradox: the **regenerative** part $\mathcal{R}$ is also irreversible, even though it acts "in the opposite direction" — it increases $P$ instead of decreasing it. Is there not a contradiction here?
@@ -325,7 +319,7 @@ No. Regeneration is irreversible in a **different sense**: it uses the resource 
 For living systems a local decrease in entropy is possible through regeneration:
 
 $$
-\frac{dS_{vN}^{\text{local}}}{d\tau} < 0 \quad \text{при} \quad \Delta F > 0 \text{ и } \frac{dS_{vN}^{\text{total}}}{d\tau} \geq 0
+\frac{dS_{vN}^{\text{local}}}{d\tau} < 0 \quad \text{when} \quad \Delta F > 0 \text{ and } \frac{dS_{vN}^{\text{total}}}{d\tau} \geq 0
 $$
 
 A living being **locally** defeats entropy (becomes more ordered), but **globally** the total entropy (organism + environment) increases. The refrigerator cools its interior but heats the room — the second law of thermodynamics is not violated.
@@ -483,7 +477,7 @@ The dimension corresponds to $e_3 \in \mathrm{Im}(\mathbb{O})$. This identificat
 
 1. **Dynamics is not motion in time, but the source of time.** Time $\tau$ arises from D↔O correlations via the Page–Wootters mechanism.
 2. **Three types of dynamics exhaust all possibilities.** Unitary (reversible), dissipative (irreversible, destructive) and regenerative (irreversible, constructive) — there are no others.
-3. **The arrow of time is a consequence, not a postulate.** CPTP channels are irreversible by construction; entropy increases automatically.
+3. **The arrow of time is a consequence, not a postulate.** Non-unitary CPTP channels are irreversible by construction; along a linear Lindblad semigroup the relative entropy to its stationary state does not increase (Spohn 1978), and the von Neumann entropy itself grows only under unital dynamics (the earlier "entropy increases automatically" is corrected, 2026-09-25).
 4. **Life is dynamic balance.** Living systems maintain $P > 2/7$ through the equilibrium between $\mathcal{D}$ and $\mathcal{R}$.
 5. **D is combinatorially unique.** On the Fano plane D is the only **3**-dimension with a direct O-connection, which explains its role as the source of emergent time.
 

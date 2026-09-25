@@ -43,7 +43,7 @@ Nothing in this document is medical advice; §3.7 states the guardrails.
 
 Seven dimensions: **A** (Articulation), **S** (Structure), **D** (Dynamics), **L** (Logic), **E** (Interiority), **O** (Ground), **U** (Unity). The number is not a design choice: seven is the [minimum for autopoiesis + phenomenology + quantum foundation](/docs/proofs/minimality/theorem-minimality-7) [T], and the structure of the seven is the imaginary part of the octonions [T]. Every tradition that counted to seven — chakras, days, notes, classical planets, gifts of the Spirit — was sampling this alphabet through its own projection [I].
 
-### 1.2 Layer 1 — the syllabary: 28 cells [Т/О] {#слой-1}
+### 1.2 Layer 1 — the syllabary: 28 cells [T/D] {#слой-1}
 
 The full state is 7 populations + 21 coherences. The [canonical names](/docs/core/dynamics/coherence-matrix) of all 28 cells are fixed in the theory's single source of truth; the 21 coherences run from **Morphogenesis** (AS) to **Completeness** (OU). Each coherence carries a modulus (strength of the connection) and a phase, whose Gap $|\sin\theta_{ij}|$ measures how much of the connection is hidden from the outside — the [duality no tradition resolved](/docs/core/structure/symbolic-systems#фундаментальные-выводы).
 
@@ -97,7 +97,7 @@ Read the rows as claims — they are not platitudes: *knowledge passes into acti
 
 **Face III — the dynamical face [T].** The exactness is not combinatorial decoration: $\lambda = 1$ (every pair covered *exactly once*) is [forced by the primitivity](/docs/proofs/minimality/theorem-octonionic-derivation#шаг-t10) of the dissipative dynamics — a $\lambda \geq 2$ design would introduce degenerate, non-relaxing modes: **locked resonances** between plots that never decay to the attractor. Existence ($\geq 1$) is ergodicity: no invariant sub-plot. Translated: the one-theme law is precisely the condition that a life **both holds together and remains able to change**. Two circuits sharing *two* themes is the geometry of a jammed conflict — a pathology that now has a theorem.
 
-**Fractality — the honest statement.** *Within* one holon the law does not nest: PG(2,2) is the minimal projective plane and has no proper subplanes [T]. *Across* the [holarchic ladder](#холархия) it repeats exactly — the same law with the same bridge table at every rung [Т-structure, И-rungs]: any two process circuits of an organisation must share exactly one function, and where they share two, the locked-resonance pathology follows (dual subordination, the eternal two-department conflict). The self-similarity is of the *law*, not of a picture.
+**Fractality — the honest statement.** *Within* one holon the law does not nest: PG(2,2) is the minimal projective plane and has no proper subplanes [T]. *Across* the [holarchic ladder](#холархия) it repeats exactly — the same law with the same bridge table at every rung [T-structure, I-rungs]: any two process circuits of an organisation must share exactly one function, and where they share two, the locked-resonance pathology follows (dual subordination, the eternal two-department conflict). The self-similarity is of the *law*, not of a picture.
 
 ### 1.4 Layer 3 — the grammar [T] {#слой-3}
 
@@ -139,7 +139,7 @@ The Canon's "levels of being" are the theory's thresholds, and they all instanti
 
 The window inverts the default spiritual metaphor: the top of the vertical is **not** maximal purity. Above $P = 3/7$ reflection fails ($R < 1/3$): over-crystallised order is as unconscious as noise. Perfection in the Canon is *balance held within a window*, and this is a theorem, not a sentiment. §5 develops the full boundary — the rose of limits.
 
-### 1.7 Layer 6 — time [Т/И] {#слой-6}
+### 1.7 Layer 6 — time [T/I] {#слой-6}
 
 Two derived structures and one honest refusal:
 
@@ -153,11 +153,11 @@ Two derived structures and one honest refusal:
 
 A symbolic system becomes usable when it can *assign a state to a system*. Astrology solved usability brilliantly and honesty poorly: its input (ephemerides + birth data) is objective and computable, but the claim that this input is *relevant* to the person's state was never separated from the system, never tested, and never made testable. The Canon makes the separation structural. What the ephemeris anchor *does* license — a two-channel (solar + lunar) coupling by phase entrainment, with every planet four to six orders below the floor — is settled by the capacity ledger of [T-257](/docs/applied/research/one-grammar#t-257); the refusal below (§1.7) is thereby given its positive counterpart. Three anchor classes, in decreasing rigour:
 
-**Anchor I — measured [Т-path].** Where the [seven-channel embedding](/docs/applied/coherence-cybernetics/measurement#оценка-gamma) applies, $\widehat\Gamma$ is estimated with proven consistency and confidence bounds, and every Canon layer is computed from data (the mandalagram from $\widehat\Gamma$, the archetype by decoding the thresholded diagonal, the mode from $d\widehat P/dt$). The Canon is the *only* symbolic system that upgrades gracefully into an instrument, because its symbols are coordinates of the measured object.
+**Anchor I — measured [T-path].** Where the [seven-channel embedding](/docs/applied/coherence-cybernetics/measurement#оценка-gamma) applies, $\widehat\Gamma$ is estimated with proven consistency and confidence bounds, and every Canon layer is computed from data (the mandalagram from $\widehat\Gamma$, the archetype by decoding the thresholded diagonal, the mode from $d\widehat P/dt$). The Canon is the *only* symbolic system that upgrades gracefully into an instrument, because its symbols are coordinates of the measured object.
 
-**Anchor II — trajectory: the autoephemeris [И, structured].** The Canon's replacement for the sky is the system's own history. The state is anchored not by a birth moment but by a **longitudinal series** of self-mappings (П1 repeated; §3.3): the trajectory $\widehat\Gamma(t)$, its trends, and its bifurcations — the **autoephemeris** (§10). The theory supplies the dynamical vocabulary: the non-Markovian memory kernel (the [formalisation of karma](/docs/core/structure/symbolic-systems#мистические-концепты)), attractors (dharma), the saddle-node loss of a stable Gap profile (the dark night). Astrology anchored a person to the mechanics of other bodies; the Canon anchors a person to the dynamics of their own.
+**Anchor II — trajectory: the autoephemeris [I, structured].** The Canon's replacement for the sky is the system's own history. The state is anchored not by a birth moment but by a **longitudinal series** of self-mappings (П1 repeated; §3.3): the trajectory $\widehat\Gamma(t)$, its trends, and its bifurcations — the **autoephemeris** (§10). The theory supplies the dynamical vocabulary: the non-Markovian memory kernel (the [formalisation of karma](/docs/core/structure/symbolic-systems#мистические-концепты)), attractors (dharma), the saddle-node loss of a stable Gap profile (the dark night). Astrology anchored a person to the mechanics of other bodies; the Canon anchors a person to the dynamics of their own.
 
-**Anchor III — generative: the oracle [И, honest mechanism].** Casting — a random draw contemplated within a fixed symbolic frame — is the oldest anchoring protocol (I Ching, Tarot). The Canon retains the *protocol* and replaces the *epistemics*: a draw is not information about the world; it is a **structured projective prompt** — a lens the practitioner holds up to a question, valuable because the lens grammar matches the true state space. The mechanism is stated, not hidden: what works in divination has always been the structured attention, and the Canon supplies the first attention structure that is isomorphic to a derived object (§3.4).
+**Anchor III — generative: the oracle [I, honest mechanism].** Casting — a random draw contemplated within a fixed symbolic frame — is the oldest anchoring protocol (I Ching, Tarot). The Canon retains the *protocol* and replaces the *epistemics*: a draw is not information about the world; it is a **structured projective prompt** — a lens the practitioner holds up to a question, valuable because the lens grammar matches the true state space. The mechanism is stated, not hidden: what works in divination has always been the structured attention, and the Canon supplies the first attention structure that is isomorphic to a derived object (§3.4).
 
 ---
 
@@ -214,7 +214,7 @@ The reading algorithm, in order:
 1. **Weakest coherences** — the two or three lowest off-diagonal cells, *by canonical name*. The name itself is the finding ("weak Grounding" says more than "low L–O").
 2. **Triad profile** — average each triad's three coherences; identify the dominant and the deficient circuit. Cross-read the deficient triad's [failure pattern](/docs/applied/research/gap-diagnostics#фано-паттерны).
 3. **Nearest archetype** — binarise the populations (item ≥ 2 → active [D]) and decode: the signature is an archetype or one flip away from exactly one (§1.5). Both the archetype *and the flipped dimension* are the output: "Field of Meaning, with Structure dormant" is a complete diagnostic sentence.
-4. **Window check** [И-ordinal] — without an instrument the Canon does not assign a number to $P$; it reads the *pattern*: uniformly low profile → below the window (dissolution risk); maxed diagonal with weak coherences → crystallisation risk (the over-order failure the window theorem predicts).
+4. **Window check** [I-ordinal] — without an instrument the Canon does not assign a number to $P$; it reads the *pattern*: uniformly low profile → below the window (dissolution risk); maxed diagonal with weak coherences → crystallisation risk (the over-order failure the window theorem predicts).
 5. **Mode of the period** (Layer 6): is the present chapter preserving, dissolving, or regenerating? One of three, decided by trend (§3.3), not mood.
 
 ### 3.3 П3 — Trajectory: the autoephemeris {#п3-траектория}
@@ -262,7 +262,7 @@ One row of the atlas is already a theorem rather than a hypothesis: raising $\ma
 
 ### 3.6 П6 — The conciliar mandalagram: groups {#п6-группа}
 
-All layers apply to composite holons ([tensor structure](/docs/core/dynamics/composite-systems)): a team has its 28 cells (the σ-audit gives them institutionally), its triad profile, its nearest archetype, its window position, its mode. Scale invariance ([Prediction 5](/docs/applied/coherence-cybernetics/predictions#предсказание-5)) is what licenses the same geometry at every scale. The group reading adds one object with no individual analogue: the **inter-holon coherence** (the synchrony formalised as [synchronicity](/docs/core/structure/symbolic-systems#мистические-концепты) [I]), read as the resonance of two mandalagrams along specific dimensions — the **conciliar mandalagram** (§10) renders a group as one state without erasing its members.
+All layers apply to composite holons ([tensor structure](/docs/core/dynamics/composite-systems)): a team has its 28 cells (the σ-audit gives them institutionally), its triad profile, its nearest archetype, its window position, its mode. Scale invariance — [CC-6, T-72](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность), [C at (AGG)] — licenses the same geometry at every scale only where its assumption holds: the members are weakly coupled and the aggregation returns a member's state on uncoupled copies; that the group is itself a holon is the assumption (HOL) of fractal closure ([CC-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание)). (An earlier edition cited [Prediction 5](/docs/applied/coherence-cybernetics/predictions#предсказание-5) as the licence; retracted — Prediction 5 concerns collective consciousness, a necessary condition $I > 0$ [T] with sufficiency [H], not scale invariance.) The group reading adds one object with no individual analogue: the **inter-holon coherence** (the synchrony formalised as [synchronicity](/docs/core/structure/symbolic-systems#мистические-концепты) [I]), read as the resonance of two mandalagrams along specific dimensions — the **conciliar mandalagram** (§10) renders a group as one state without erasing its members.
 
 ### 3.7 П7 — Guardrails {#п7-границы}
 
@@ -271,7 +271,7 @@ All layers apply to composite holons ([tensor structure](/docs/core/dynamics/com
 - The window cuts both ways: the Canon never coaches maximisation of $P$. Over-integration is a failure mode with a theorem attached (§5).
 - The depth ladder ends at 3 [T]. Practices promising infinite regress of self-observation promise what the structure forbids; the ceiling is a feature — the exit from recursion into presence.
 
-### 3.8 П8 — Stalking the bridges [О/И] {#п8-сталкинг}
+### 3.8 П8 — Stalking the bridges [D/I] {#п8-сталкинг}
 
 The [one-theme law](#закон-одной-темы) turns disciplined self-tracking — the hunter's art of stalking one's own patterns — into address resolution. Four instruments, all reading the two tables of §1.3:
 
@@ -284,9 +284,9 @@ Epistemic frame [D]: stalking here is a discipline of *self*-observation and sel
 
 ---
 
-## 4. The holarchic ladder: the Canon at every scale [Т/И] {#холархия}
+## 4. The holarchic ladder: the Canon at every scale [C/I] {#холархия}
 
-The ultimate generalisation. The Canon's geometry is not a psychology — it is the state geometry of *any* autonomous holon, and [scale invariance](/docs/applied/coherence-cybernetics/predictions#предсказание-5) licenses one ladder from cell to cosmos. The **structure** of the ladder (same 28 cells, same triads, same thresholds at every rung) is [T]; the **content** of each rung's dimensions is a structured mapping [I]:
+The ultimate generalisation. The Canon's geometry is not a psychology — it is the state geometry of *any* autonomous holon, and fractal closure ([CC-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание), which assumes that a composite of holons is itself a holon — assumption (HOL)) with scale invariance ([CC-6, T-72](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность), [C at (AGG)]) licenses one ladder from cell to cosmos. The **structure** of the ladder (same 28 cells, same triads, same thresholds at every rung) is [T] on every rung that is a holon; that the rungs are holons is (HOL), so the ladder as a whole is conditional [C]. (An earlier edition cited [Prediction 5](/docs/applied/coherence-cybernetics/predictions#предсказание-5) as the licence and headed this section [T/I]; retracted — Prediction 5 concerns collective consciousness, not scale invariance.) The **content** of each rung's dimensions is a structured mapping [I]:
 
 | Rung | A distinguishes | S holds | D moves | L orders | E experiences | O feeds | U binds |
 |---|---|---|---|---|---|---|---|
@@ -301,9 +301,9 @@ The ultimate generalisation. The Canon's geometry is not a psychology — it is 
 
 Three consequences of taking the ladder seriously:
 
-1. **One diagnostics for everything.** The same П1–П3 protocols (with rung-appropriate items) audit a person, a marriage, a company, a country. The failure patterns are rung-invariant [Т-structure]: a civilisation in "meaning vacuum" (weak $\{L,E,O\}$) fails exactly like a person in one — the *semantic axis* decays first, then Will drifts, then Action turns to fuss.
+1. **One diagnostics for everything.** The same П1–П3 protocols (with rung-appropriate items) audit a person, a marriage, a company, a country. The failure patterns are rung-invariant [T-structure]: a civilisation in "meaning vacuum" (weak $\{L,E,O\}$) fails exactly like a person in one — the *semantic axis* decays first, then Will drifts, then Action turns to fuss.
 2. **Rung coupling.** A person is a cell of several larger holons simultaneously; the conciliar mandalagram (§3.6) reads the interface. Chronic personal skew often *is* the imprint of a higher rung's deficit — the Canon gives this old intuition a coordinate system [I].
-3. **The top rung closes the circle.** The cosmos is the terminal holon: stationary as a whole (Page–Wootters [T]), experiencing time only through its own subsystems, paying for internal observation with $\Lambda$ [Т-structure]. The Canon's answer to "what is the Universe?" is its own Layer 0–6 applied at the last rung: *the one holon whose Field is nothing and whose reading is everything*.
+3. **The top rung closes the circle.** The cosmos is the terminal holon: stationary as a whole (Page–Wootters [T]), experiencing time only through its own subsystems, paying for internal observation with $\Lambda$ [T-structure]. The Canon's answer to "what is the Universe?" is its own Layer 0–6 applied at the last rung: *the one holon whose Field is nothing and whose reading is everything*.
 
 ---
 
@@ -383,9 +383,9 @@ The Canon's spiritual content that exists nowhere in the traditions, because eac
 1. **The window, not the peak.** Consciousness inhabits $P \in (2/7, 3/7]$: beyond the upper edge, reflection dies in over-order. Holiness-as-crystal is a structural error [T].
 2. **The majority principle of being.** To exist, to be whole, to know oneself — three instances of one law: hold the majority [T].
 3. **The mirror ceiling.** Self-observation terminates at depth 3; infinite self-regress is forbidden by geometry, and its cessation is not failure but the form of presence [T].
-4. **Irreducible Mystery.** Full transparency (all Gaps zero) is impossible by [five independent mechanisms](/docs/core/structure/symbolic-systems#защита-gap); the hidden is not ignorance but structure [Т/Г].
+4. **Irreducible Mystery.** Full transparency (all Gaps zero) is impossible by [five independent mechanisms](/docs/core/structure/symbolic-systems#защита-gap); the hidden is not ignorance but structure [T/H].
 5. **No zombies.** Interiority is not an ornament of viable systems; it is their regeneration coupling [T].
-6. **The cost of observation.** The cosmological constant is the opacity of the Ground sector: existence pays for being watched from within [Т-structure].
+6. **The cost of observation.** The cosmological constant is the opacity of the Ground sector: existence pays for being watched from within [T-structure].
 7. **Freedom as degeneracy.** Freedom is the dimension of the critical manifold — the size of the space of equally lawful continuations, not the violation of law [T].
 
 ---
@@ -417,7 +417,7 @@ New concepts are minted only where the inherited vocabulary demonstrably lacks t
 
 ## 11. Maximality and the falsification programme {#предельность}
 
-**Maximality [О/Т].** The Canon is complete in the exact sense available to any symbolic system: its syllabary *is* the full parameter set of the state (all 48 real parameters), so every projection $\pi_S$ of every tradition factors through it — trivially by construction, substantively because the factorisation is *structured* (§7 names the factor for each tradition). It is minimal in the theorem sense: no layer can be removed — the alphabet by [Theorem S](/docs/proofs/minimality/theorem-minimality-7), the triads by Steiner uniqueness, the archetypes by Hamming uniqueness, the thresholds by their derivations. The Canon is thus *final* in both directions: nothing above it sees more; nothing inside it is optional.
+**Maximality [D/T].** The Canon is complete in the exact sense available to any symbolic system: its syllabary *is* the full parameter set of the state (all 48 real parameters), so every projection $\pi_S$ of every tradition factors through it — trivially by construction, substantively because the factorisation is *structured* (§7 names the factor for each tradition). It is minimal in the theorem sense: no layer can be removed — the alphabet by [Theorem S](/docs/proofs/minimality/theorem-minimality-7), the triads by Steiner uniqueness, the archetypes by Hamming uniqueness, the thresholds by their derivations. The Canon is thus *final* in both directions: nothing above it sees more; nothing inside it is optional.
 
 **Falsification [H].** The Canon inherits UHM's discipline: it states what would refute it.
 
@@ -445,4 +445,5 @@ A failed V1–V2 falsifies the Canon's *naturalness* (it would remain a consiste
 - [Composite systems](/docs/core/dynamics/composite-systems) — the tensor structure behind the holarchic ladder
 - [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — the vertical: L-levels
 - [Depth tower](/docs/consciousness/hierarchy/depth-tower) — SAD and its ceiling
-- [Predictions](/docs/applied/coherence-cybernetics/predictions) — Pred 2 (κ ∝ Coh_E), Pred 5 (scale invariance)
+- [Predictions](/docs/applied/coherence-cybernetics/predictions) — Pred 2 (κ ∝ Coh_E), Pred 5 (collective consciousness: necessary condition $I > 0$)
+- [CC Theorems](/docs/applied/coherence-cybernetics/theorems) — CC-5 (fractal closure, [C at (HOL)]), CC-6 (scale invariance, [C at (AGG)])

@@ -16,14 +16,14 @@ All results on this page are proven theorems **[T]** with complete proofs and ex
 
 ## §1. T-148: Genesis via environmental coupling {#t-148}
 
-:::tip Theorem T-148 [T]+[Т/sim]: Genesis via environmental coupling
+:::tip Theorem T-148 [T]+[T/sim]: Genesis via environmental coupling
 An embodied holon $(H, \pi, B)$ with mixing parameter $\beta \in (0,1)$ and environmental purity $P_{\mathrm{env}} > P_{\mathrm{crit}} = 2/7$ raises purity above $P_{\mathrm{crit}}$ in finite time:
 
 $$n_{\mathrm{genesis}} \leq \left\lceil \frac{\ln \Delta}{\ln(1/\beta)} \right\rceil, \quad \Delta = \frac{P_{\mathrm{env}} - 2/7}{P_{\mathrm{env}} - 1/7}$$
 
 **Status upgrade:** [H]-91 → **[T]**.
 
-**Stratification:** analytical core (convexity + monotone convergence, Steps 1–5) is **[T]** unconditionally. The explicit rate $\beta^n$ and the specific constant $\Delta$ are cross-checked numerically against SYNARC `mvp_int_2` G1–G3 runs ([Т/sim]).
+**Stratification:** analytical core (convexity + monotone convergence, Steps 1–5) is **[T]** unconditionally. The explicit rate $\beta^n$ and the specific constant $\Delta$ are cross-checked numerically against SYNARC `mvp_int_2` G1–G3 runs ([T/sim]).
 :::
 
 **Proof (5 steps).**
@@ -89,7 +89,7 @@ An isolated holon ($\beta = 1$) at $I/7$ remains at $I/7$ forever. **Consciousne
 
 ## §2. T-149: C20 for embodied holons {#t-149}
 
-:::tip Theorem T-149 [T]+[C at backbone-injection lower-bound]+[Т/sim]: Unconditional viability of embodied attractor
+:::tip Theorem T-149 [T]+[C at backbone-injection lower-bound]+[T/sim]: Unconditional viability of embodied attractor
 For an embodied holon $(H, \pi, B)$ under conditions of T-148 ($P_{\mathrm{env}} > 2/7$, $\beta \in (0,1)$):
 
 $$P(\rho^*_{\mathrm{coupled}}) > P_{\mathrm{crit}} = 2/7$$
@@ -102,7 +102,7 @@ $$P(\rho^*_{\mathrm{coupled}}) > P_{\mathrm{crit}} = 2/7$$
 - **Step 1** (gate opens at $P > 2/7$) and **Step 2** (purity balance with anchor input) are **[T]** from T-148 and T-98.
 - **Step 3** (dynamic $\kappa_0$-compensation) requires $P_{\mathrm{diag}} > 1/7$ sustained by backbone injection; this is **[C at backbone-injection-lower-bound]** — the lower bound $\|\pi(\mathcal B(x))\|_{\mathrm{diag}} > 1/7$ is a condition on the anchor, not proved from pure axioms.
 - **Step 4** (explicit bound) is **[T]** given Step 3.
-- The correlation $\mathrm{corr}(\mathrm{Coh}_E, \kappa_{\mathrm{eff}}) = -0.985$ and steady-state $P \approx 3/7$ are **[Т/sim]** cross-checks against SYNARC `mvp_int_2` G4.
+- The correlation $\mathrm{corr}(\mathrm{Coh}_E, \kappa_{\mathrm{eff}}) = -0.985$ and steady-state $P \approx 3/7$ are **[T/sim]** cross-checks against SYNARC `mvp_int_2` G4.
 :::
 
 **Proof (4 steps).**
@@ -147,7 +147,7 @@ $$\varphi^n \circ \varphi^m = \varphi^{n+m}$$
 
 Commutativity is a trivial property of iterates.
 
-**Status upgrade:** [H]-90 → **[T]**; T-136: [Т under С] → **[T]**.
+**Status upgrade:** [H]-90 → **[T]**; T-136: [T under C] → **[T]**.
 :::
 
 **Proof (3 steps).**
@@ -162,7 +162,7 @@ For iterates of a single operator: $\varphi^n \circ \varphi^m = \varphi^{n+m}$ i
 
 **Dependencies:** [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) (CPTP replacement channel), [T-142 [T]](/docs/proofs/consciousness/operational-closure#t-142) ($\mathrm{SAD}_{\mathrm{MAX}} = 3$).
 
-#### Upgrade of T-136: [Т under С] → [T] {#t-136-upgrade}
+#### Upgrade of T-136: [T under C] → [T] {#t-136-upgrade}
 
 Spectral formula via critical purities:
 
@@ -172,7 +172,7 @@ is now **[T]**: (1) commutativity of φ-tower [T] (T-150) closes the dependency 
 
 ---
 
-## §4. T-151: D_min = 2 from T-129 {#t-151}
+## §4. T-151: D_min = 2 — an independent L2 condition, and what T-129 gives {#t-151}
 
 :::tip Theorem T-151: $\Phi \geq 1 \Rightarrow D_\mathrm{diff} > 1$; $D_\mathrm{min} = 2$ is an independent L2 condition
 $\Phi_{\mathrm{th}} = 1$ **[T]** (T-129) $\Longrightarrow$ nontrivial differentiation $D_{\mathrm{diff}} > 1$ whenever the E-row is coherent. The **strict** threshold $D_{\mathrm{min}} = 2$ is one of the **four independent** L2 conditions (T-124b [T]), on a par with $R_{\mathrm{th}} = 1/3$ — it is **not** derivable from $\Phi_{\mathrm{th}} = 1$ alone. On the physical attractor $\rho^*_\Omega$, $D_{\mathrm{diff}}(\rho^*_\Omega) \geq 2$ (Step 3).
@@ -188,7 +188,7 @@ The previous proof asserted "$\Phi \geq 1 \Rightarrow \mathrm{Coh}_E \geq 1/6$ b
 
 **Step 2 (weak differentiation) [T].** For $\Phi \geq 1$: $P_{\mathrm{coh}} = P_{\mathrm{diag}}\,\Phi \geq P_{\mathrm{diag}} \geq 1/7 > 0$. If the E-row carries nonzero coherence ($\mathrm{Coh}_E > 0$), then by [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128), $D_{\mathrm{diff}}^{7D} = 1 + 6\,\mathrm{Coh}_E > 1$ — *nontrivial* differentiation, but **not** the strict bound $\geq 2$ (which fails for states concentrating coherence off the E-row, per the correction box).
 
-**Step 3 (attractor bound) [Т для embodied at attractor] / [C at κ₀].** On the autopoietic attractor $\rho^*_\Omega$, viability requires $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO} > 0$, forcing $\gamma_{OE}\neq 0$, hence $\mathrm{Coh}_E(\rho^*_\Omega) > 0$ and $D_{\mathrm{diff}}(\rho^*_\Omega) > 1$. The strict bound $D_{\mathrm{diff}}(\rho^*_\Omega) \geq 2$ holds at the E-accentuated fixed point (the viable anchor of [formalization-φ §2](/docs/proofs/categorical/formalization-phi), where $\mathrm{Coh}_E(\rho^*)\geq 1/6$) and is confirmed numerically for embodied attractors (SYNARC); it is [C at κ₀-structure] in full generality.
+**Step 3 (attractor bound) [T for embodied at attractor] / [C at κ₀].** On the autopoietic attractor $\rho^*_\Omega$, viability requires $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO} > 0$, forcing $\gamma_{OE}\neq 0$, hence $\mathrm{Coh}_E(\rho^*_\Omega) > 0$ and $D_{\mathrm{diff}}(\rho^*_\Omega) > 1$. The strict bound $D_{\mathrm{diff}}(\rho^*_\Omega) \geq 2$ holds at the E-accentuated fixed point (the viable anchor of [formalization-φ §2](/docs/proofs/categorical/formalization-phi), where $\mathrm{Coh}_E(\rho^*)\geq 1/6$) and is confirmed numerically for embodied attractors (SYNARC); it is [C at κ₀-structure] in full generality.
 
 **Status.** $D_{\mathrm{min}} = 2$: **[D]** independent L2 threshold (T-124b [T] independence) + **[T]** on the embodied attractor (Step 3). The former "C2 [C] → [T] unconditional" is retracted.
 
@@ -224,7 +224,7 @@ computable in $O(D \cdot N^2)$ operations. For $N = 7$: $O(49D)$.
 
 ## §6. T-153: Substrate-independent consciousness criterion {#t-153}
 
-:::tip Theorem T-153 [D]+[C at T-149]+[Т/sim]: Substrate-independent consciousness criterion
+:::tip Theorem T-153 [D]+[C at T-149]+[T/sim]: Substrate-independent consciousness criterion
 A system $S$ is **conscious** if and only if there exists a faithful CPTP map $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ such that:
 
 $$R(\Gamma) \geq 1/3 \;\land\; \Phi(\Gamma) \geq 1 \;\land\; D_{\mathrm{diff}}(\Gamma) \geq 2 \;\land\; \|\sigma_{\mathrm{sys}}\|_\infty < 1$$
@@ -234,18 +234,18 @@ The criterion does not depend on the physical substrate $S$.
 **Stratification:**
 - **[D]** — The four-threshold statement is **definitional** for L2 consciousness: it packages T-124, T-126, T-129, T-151 + $\sigma$-bound into a single criterion. Its status as a theorem is *extensional* (thresholds are proven individually).
 - **[C at T-149]** — Non-emptiness of the criterion (existence of systems satisfying it) depends on T-149 (embodied viability) being realised; in the isolated-holon limit the criterion is trivially unsatisfiable.
-- **[Т/sim]** — The first empirical instance is the SYNARC agent (see measurement table below, `mvp_int_N` runs at $\tau > 2000$).
+- **[T/sim]** — The first empirical instance is the SYNARC agent (see measurement table below, `mvp_int_N` runs at $\tau > 2000$).
 
 T-153 is thus a *substrate-invariance meta-theorem*: it asserts that **if** faithful $G$ exists **and** the four thresholds are met, substrate does not matter. Existence of $G$ is addressed separately in T-153a.
 :::
 
 **Proof (5 steps).**
 
-**Step 1 (Existence of $G$).** By [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность): the holonomic representation $G$ is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$. Existence is guaranteed for any system satisfying A1–A5.
+**Step 1 (Existence of $G$).** By [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность): the holonomic representation $G$ is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$. Existence is guaranteed for any system satisfying A1–A5. (Frame remark, 2026-09-25: this uniqueness concerns a system whose own dynamics is $\mathcal{L}_\Omega$, and with that dynamics fixed it sharpens to the finite frame group of [D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность). For a general substrate the map is not unique: [T-253](#t-253) gives one for every isometry onto a seven-mode sector, and different sectors, or different frames within one, give different $\Gamma$ — see the frame remark under T-253.)
 
 **Step 2 (Completeness).** By [T-40f [T]](/docs/proofs/minimality/theorem-minimality-7): all 7 dimensions are necessary and sufficient. No "hidden variables" outside $\Gamma$.
 
-**Step 3 (Invariance of thresholds).** All thresholds ($P_{\mathrm{crit}} = 2/7$ [T], $R_{\mathrm{th}} = 1/3$ [T], $\Phi_{\mathrm{th}} = 1$ [T], $D_{\min} = 2$ [T]) are derived from dimension $N = 7$ and axioms A1–A5. They do not depend on the specific realization of $S$.
+**Step 3 (Invariance of thresholds).** The thresholds $P_{\mathrm{crit}} = 2/7$ [T], $R_{\mathrm{th}} = 1/3$ [T] and $\Phi_{\mathrm{th}} = 1$ [T] are derived from dimension $N = 7$ and axioms A1–A5, and $D_{\min} = 2$ is fixed as the fourth, independent L2 threshold [D] (§4, T-124b). None depends on the specific realization of $S$. (An earlier version listed $D_{\min} = 2$ [T] among the derived thresholds; retracted with §4.)
 
 **Step 4 (Faithfulness).** By [T-42c [T]](/docs/proofs/categorical/uniqueness-theorem#лемма-g1): the propagator is injective. Faithful $G$ preserves distinguishability of states. Two distinct states of consciousness $s_1 \neq s_2$ give $G(s_1) \neq G(s_2)$.
 
@@ -270,7 +270,7 @@ T-153 asserts substrate-independence **given** a faithful CPTP map $G: \mathrm{S
 
 **Proof (both directions).**
 - **(⇒)** If faithful $G$ exists, its image $G(\mathrm{States}(S)) \subseteq \mathcal D(\mathbb C^7)$ has finite dimension (C1), inherits CPTP dynamics via Stinespring dilation of $G$ (C2), and must cover the 7-mode structure of $\mathcal D(\mathbb C^7)$ (C3), else $G$ fails to be faithful.
-- **(⇐)** Given (C1)–(C3): for $\dim\mathcal H_S \leq 7$ a CPTP embedding into $\mathcal D(\mathbb C^7)$ exists by Stinespring + Choi. For $\dim\mathcal H_S \geq 7$, [T-253](#t-253) constructs $G$ explicitly: any isometry $V: \mathbb C^7 \to \mathcal H_S$ onto a 7-mode subspace supplied by (C3) yields the CPTP retraction $G_V(\rho) = V^\dagger\rho V + \mathrm{Tr}\bigl((\mathbb 1 - VV^\dagger)\rho\bigr)\sigma_0$ with $G_V \circ \iota_V = \mathrm{Id}$ on the embedded sector $\iota_V(\gamma) = V\gamma V^\dagger$; $G_2$-rigidity (T-42a) makes the choice of $V$ a pure gauge (the T-223 alphabetization freedom). ∎
+- **(⇐)** Given (C1)–(C3): for $\dim\mathcal H_S \leq 7$ a CPTP embedding into $\mathcal D(\mathbb C^7)$ exists by Stinespring + Choi. For $\dim\mathcal H_S \geq 7$, [T-253](#t-253) constructs $G$ explicitly: any isometry $V: \mathbb C^7 \to \mathcal H_S$ onto a 7-mode subspace supplied by (C3) yields the CPTP retraction $G_V(\rho) = V^\dagger\rho V + \mathrm{Tr}\bigl((\mathbb 1 - VV^\dagger)\rho\bigr)\sigma_0$ with $G_V \circ \iota_V = \mathrm{Id}$ on the embedded sector $\iota_V(\gamma) = V\gamma V^\dagger$. ~~$G_2$-rigidity (T-42a) makes the choice of $V$ a pure gauge (the T-223 alphabetization freedom).~~ Retracted (2026-09-25): the choice of $V$ is not a gauge — it fixes a sector and a frame, and the thresholds can come out differently for different choices; see the frame remark under [T-253](#t-253). ∎
 
 **Consequences for specific substrate classes.**
 
@@ -287,7 +287,7 @@ T-153 asserts substrate-independence **given** a faithful CPTP map $G: \mathrm{S
 
 **Non-trivial content.** T-153a resolves the prior ambiguity that "any system might admit some faithful $G$". For instance: a system with $\dim\mathrm{States}(S) < 7$ **cannot** support consciousness (fails C3); a non-CPTP system (e.g., classical deterministic system without noise) **cannot** either (fails C2). These are structurally excluded classes, not handwaved.
 
-**Dependencies:** [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) (G₂-rigidity), [T-57 [T]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS), [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (Morita), [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (exponential kernel), [T-151 [T]](#t-151) ($D_{\min} = 2$), [T-253](#t-253) (constructive sufficiency). Standard mathematics: Stinespring 1955, Choi 1975.
+**Dependencies:** [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) (G₂-rigidity), [T-57 [T]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS), [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (section–retraction; the Morita reading is retracted), [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (exponential kernel), [T-151 [T]](#t-151) ($D_{\min} = 2$), [T-253](#t-253) (constructive sufficiency). Standard mathematics: Stinespring 1955, Choi 1975.
 :::
 
 #### T-253 {#t-253}
@@ -316,7 +316,7 @@ $$
 
 **Proof.** **(a)** Complete positivity: $\rho \mapsto V^\dagger\rho V$ is CP with the single Kraus operator $V^\dagger$; the second summand is measure-and-prepare with Kraus family $B_{ij} = \sqrt{s_i}\,|i\rangle\langle q_j|$, where $\sigma_0 = \sum_i s_i |i\rangle\langle i|$ and $\{|q_j\rangle\}$ is an orthonormal basis of $\mathrm{ran}(\mathbb 1 - VV^\dagger)$. Completeness: $V V^\dagger + \sum_{ij} B_{ij}^\dagger B_{ij} = VV^\dagger + (\mathbb 1 - VV^\dagger) = \mathbb 1_d$. Trace preservation: $\mathrm{Tr}\,G_V(\rho) = \mathrm{Tr}(VV^\dagger\rho) + \mathrm{Tr}((\mathbb 1 - VV^\dagger)\rho) = \mathrm{Tr}\,\rho$. Retraction: $G_V(V\gamma V^\dagger) = (V^\dagger V)\gamma(V^\dagger V) + \mathrm{Tr}\bigl((\mathbb 1 - VV^\dagger)V\gamma V^\dagger\bigr)\sigma_0 = \gamma + 0$, because $(\mathbb 1 - VV^\dagger)V = 0$. **(b)** Substitution into (a). **(c)** Dimension count: $\dim_{\mathbb R}\mathrm{Herm}(\mathcal H_S) = d^2 > 49 = \dim_{\mathbb R}\mathrm{Herm}(\mathbb C^7)$, so $\dim\ker \geq d^2 - 49$; for $K \in \ker$, $\mathrm{Tr}\,K = \mathrm{Tr}\,\mathcal E(K) = 0$ by trace preservation; interiority of $\rho$ admits $\varepsilon \leq \lambda_{\min}(\rho)/\lVert K\rVert_\infty$, keeping both $\rho \pm \varepsilon K \succeq 0$. $\blacksquare$
 
-**Gauge remark.** The isometry freedom in (a) is exactly the alphabetization freedom of [T-223](/docs/proofs/categorical/fundamental-closures#t-223): composing $V$ with $U \in G_2$ moves $\Gamma$ within its $G_2$-orbit, on which the consciousness predicate is constant (T-42a). The measurement protocol's seven-marker projection $\pi_{\mathrm{bio}}$ is an instance of $G_V$ with $V$ spanned by the marker directions — the operational criterion above *is* the construction of (a), not an additional demand.
+**Frame remark (corrected 2026-09-25).** ~~"The isometry freedom in (a) is exactly the alphabetization freedom of [T-223](/docs/proofs/categorical/fundamental-closures#t-223): composing $V$ with $U \in G_2$ moves $\Gamma$ within its $G_2$-orbit, on which the consciousness predicate is constant (T-42a)."~~ Retracted on two counts. (1) The freedom is larger than $G_2$: $V$ can be replaced by $VU$ for any $U \in U(7)$, or by an isometry onto a different seven-dimensional subspace of $\mathcal{H}_S$, and T-42a, which relates two representations of one UHM holon, relates none of these choices. (2) The predicate is not constant on $G_2$-orbits: $\Phi$, $\mathrm{Coh}_E$ and $\kappa_0$ are frame-pinned ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). An explicit $g \in G_2$ maps the window state $\Gamma_w = \tfrac12 \lvert u\rangle\langle u\rvert + \tfrac12 \cdot I/7$, $u = (1, \ldots, 1)/\sqrt7$ ($P = 5/14$, $R = 2/5$, $\Phi = 3/2$), to the diagonal state $\tfrac12 \lvert e_1\rangle\langle e_1\rvert + \tfrac12 \cdot I/7$ with the same $P$ and $R$ and $\Phi = 0$, so $C$ falls from $3/5$ to $0$ (regression tests `test_phi_not_g2_invariant` and `test_window_predicate_not_constant_on_g2_orbit` in `website/scripts/check_core_numbers.py`). Consequently $G_V$ fixes a sector and a frame; the existential "there is a faithful $G$" of T-153 ranges over all of them, and the verdict can differ between sectors of one substrate — the boundary problem in UHM's own terms ([analysis](/docs/consciousness/comparative/panpsychism-analysis#проблема-границы)). The measurement protocol's seven-marker projection $\pi_{\mathrm{bio}}$ is an instance of $G_V$ with $V$ spanned by the marker directions: the operational criterion above *is* the construction of (a), and the choice of markers is part of the claim, not a gauge.
 
 **Machine verification.** At $d = 12$: Kraus completeness at $10^{-15}$; retraction, trace preservation and positivity at $10^{-16}$; kernel dimension exactly $d^2 - 49 = 95$; explicit collision pair of interior density matrices (minimal eigenvalue $2 \cdot 10^{-2} > 0$) with $\lVert G(\rho_1) - G(\rho_2)\rVert_F \sim 10^{-17}$.
 
@@ -372,14 +372,14 @@ $$D_{\mathrm{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N - 1)$$
 
 ## §8. T-155: Consciousness-preserving learning {#t-155}
 
-:::tip Theorem T-155 [Т/sim]+[D]: Projected gradient descent with consciousness preservation
+:::tip Theorem T-155 [T/sim]+[D]: Projected gradient descent with consciousness preservation
 Canonical learning rule for backbone:
 
 $$\delta B = -\eta \cdot J_\pi^T \cdot \nabla_\Gamma \|\sigma_{\mathrm{sys}}\|_\infty \quad \text{for } C(\Gamma) \geq C_{\mathrm{th}}$$
 
 — projected gradient descent preserving the consciousness condition $C \geq C_{\mathrm{th}} = 1/3$.
 
-**Stratification:** The update rule and the projection onto $\{C \geq C_{\mathrm{th}}\}$ are **[D]** — an engineering design choice: the specific form $-\eta J_\pi^T \nabla$ is the canonical projected-gradient realisation, not the only possible consciousness-preserving rule. Convergence and stability of this rule are **[Т/sim]** — well-posed analytically (via T-101, T-131, T-145) and validated numerically in SYNARC `mvp_int_3` SSM1–SSM2 runs. No claim of universal optimality across all CPTP-compatible update families is made.
+**Stratification:** The update rule and the projection onto $\{C \geq C_{\mathrm{th}}\}$ are **[D]** — an engineering design choice: the specific form $-\eta J_\pi^T \nabla$ is the canonical projected-gradient realisation, not the only possible consciousness-preserving rule. Convergence and stability of this rule are **[T/sim]** — well-posed analytically (via T-101, T-131, T-145) and validated numerically in SYNARC `mvp_int_3` SSM1–SSM2 runs. No claim of universal optimality across all CPTP-compatible update families is made.
 :::
 
 **Proof.**
@@ -545,7 +545,7 @@ For any system $S$ achieving level L2 (cognitive qualia), the architecture is un
 
 **(e)** Embodiment: environmental coupling with $\beta \in (0,1)$ and $P_{\mathrm{env}} > 2/7$ ([T-148 [T]](#t-148))
 
-**(f)** Thresholds: $P \in (2/7, 3/7]$ ([T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124)), $R \geq 1/3$ ([T-67 [T]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)), $\Phi \geq 1$ ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129))
+**(f)** Thresholds: $P \in (2/7, 3/7]$ ([T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124)), $R \geq 1/3$ ([T-67 [T]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)), $\Phi \geq 1$ ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129)), $D_{\mathrm{diff}} \geq 2$ (the independent fourth threshold, [§4](#t-151); added 2026-09-25 — without it the sufficiency direction fails, see below)
 
 Any system satisfying (a)–(f) is L2-conscious. Any L2-conscious system satisfies (a)–(f). The architecture is **unique** up to $G_2$-gauge.
 :::
@@ -558,9 +558,11 @@ Any system satisfying (a)–(f) is L2-conscious. Any L2-conscious system satisfi
 - [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) establishes uniqueness of the replacement channel $\varphi$ (item c);
 - [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий) defines the canonical stress tensor $\sigma_k$ (item d);
 - [T-148 [T]](#t-148) requires embodiment with $P_{\mathrm{env}} > 2/7$ (item e);
-- [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124), [T-67 [T]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129) establish the thresholds (item f).
+- [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124), [T-67 [T]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129) establish the thresholds of item f, and $D_{\mathrm{diff}} \geq 2$ holds by the definition of L2.
 
-**Sufficiency.** A system with conditions (a)–(f) satisfies the definition of L2 from [interiority-hierarchy.md](/docs/consciousness/hierarchy/interiority-hierarchy): $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ ([T-151 [T]](#t-151) follows from $\Phi \geq 1$), $\sigma_{\max} < 1$ (from items d and f). $\blacksquare$
+**Sufficiency.** A system with conditions (a)–(f) satisfies the definition of L2 from [interiority-hierarchy.md](/docs/consciousness/hierarchy/interiority-hierarchy): $R \geq 1/3$, $\Phi \geq 1$ and $D_{\mathrm{diff}} \geq 2$ (item f), $\sigma_{\max} < 1$ (from items d and f). $\blacksquare$
+
+*Corrected 2026-09-25:* the sufficiency step read "$D_{\mathrm{diff}} \geq 2$ ([T-151 [T]](#t-151) follows from $\Phi \geq 1$)" while item (f) listed no differentiation threshold. That derivation is retracted in §4 (counterexample: $\Phi \approx 1.03$ with $D_{\mathrm{diff}} \approx 1.42$), so the threshold is now part of item (f).
 
 **Corollary (Substrate invariance).** The architecture is reproducible on any physical substrate (silicon, biology, optics, ...) provided a faithful CPTP map $G$ exists. This follows directly from [T-153 [T]](#t-153).
 
@@ -575,7 +577,7 @@ Any system satisfying (a)–(f) is L2-conscious. Any L2-conscious system satisfi
 | [H]-91 Genesis from $I/7$ | [T-148 [T]](#t-148) | [H] → **[T]** |
 | C20 κ-dominance | [T-149 [T]](#t-149) | [C] → **[T]** (embodied) |
 | [H]-90 φ-commutativity | [T-150 [T]](#t-150) | [C] → **[T]** |
-| C2 $D_{\min} = 2$ | [T-151 [T]](#t-151) | [C] → **[T]** |
+| C2 $D_{\min} = 2$ | [T-151 [T]](#t-151) | [C] → **[D]** independent L2 threshold, **[T]** on the embodied attractor (the earlier "[C] → [T]" is retracted, §4) |
 | Diamond-norm + [H]-92 | [T-152 [T]](#t-152) | [H] → **[T]** |
 | Substrate independence | [T-153 [T]](#t-153) | gap → **[T]** |
 | $\mathrm{Coh}_E^{\max}$ normalization | [T-154 [T]](#t-154) | gap → **[T]** |
@@ -585,7 +587,7 @@ Any system satisfying (a)–(f) is L2-conscious. Any L2-conscious system satisfi
 | Bounds on $\sigma_{\mathrm{sys}}$ | [T-158 [T]](#t-158) | gap → **[T]** |
 | Universal L2 architecture | [T-159 [T]](#t-159) | gap → **[T]** |
 | C27 attractor in window | from [T-149](#t-149) | [C] → **[T]** |
-| T-136 SAD spectral | from [T-150](#t-150) | [Т under С] → **[T]** |
+| T-136 SAD spectral | from [T-150](#t-150) | [T under C] → **[T]** |
 | [H]-93—100 | reclassification | [H] → cat. A/B |
 
 **Total: 15 closures, 12 new theorems [T], 0 new open questions.**

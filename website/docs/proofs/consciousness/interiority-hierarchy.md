@@ -285,7 +285,7 @@ $$
 
 **Interpretation of $\Phi$:**
 - $\Phi = 0$: Classical ensemble (no coherences)
-- $\Phi \to \infty$: Maximally entangled state
+- Upper bound: since $\Phi = P/\sum_i \gamma_{ii}^2 - 1$ and $\sum_i \gamma_{ii}^2 \geq 1/7$ (Cauchy–Schwarz), $\Phi \leq 7P - 1 \leq 6$; the first bound is attained exactly when the diagonal is uniform, and $\Phi = 6$ exactly for pure states with a uniform diagonal (e.g. $\lvert u\rangle\langle u\rvert$, $u = (1, \ldots, 1)/\sqrt7$); inside the conscious window $P \leq 3/7$ this gives $\Phi \leq 2$ ([dimension U](/docs/core/structure/dimension-u#мера-интеграции-φ)). (An earlier edition wrote "$\Phi \to \infty$: maximally entangled state"; retracted — $\Phi$ is bounded, and a single $7 \times 7$ state is not a bipartite system, so "entangled" does not apply.)
 
 ### Justification of thresholds {#обоснование-порогов}
 
@@ -675,14 +675,15 @@ The term **"qualia"** is categorially correct ONLY for L2. Using "qualia of an a
 
 ## 5.1 Panpsychism vs. Paninteriorism
 
-**Classical panpsychism** (Chalmers, 2015): Everything possesses consciousness (or proto-consciousness).
+**Classical panpsychism** (Chalmers, 2015): fundamental entities possess consciousness; its variant **panprotopsychism** gives them protophenomenal properties instead — not themselves experience, but able to constitute it.
 
-**Paninteriorism of UHM:** Everything possesses **Interiority** (Level 0), but only some systems possess **Cognitive Qualia** (Level 2).
+**Paninteriorism of UHM:** Everything possesses **Interiority** (Level 0), but only some systems possess **Cognitive Qualia** (Level 2). In the field's vocabulary this is a constitutive panprotopsychism with a threshold for awareness [I].
 
 This avoids:
-1. The combination problem — the transition from L0 to L2 is mathematically defined
-2. Anthropomorphism — an atom does not "feel pain," it has interiority
-3. Conceptual dilution — qualia in the strict sense = L2
+1. Anthropomorphism — an atom does not "feel pain," it has interiority
+2. Conceptual dilution — qualia in the strict sense = L2
+
+It does not avoid the combination problem; it restates it. The transition from L0 to L2 is mathematically defined as a threshold criterion, which says *when* a system is an L2 subject, not *how* non-phenomenal L0 structure constitutes experience [I]; that question stays open ([analysis with sources](/docs/consciousness/comparative/panpsychism-analysis#что-отвечает-аппарат-угм)). (Earlier editions listed the combination problem first among the difficulties this avoids; withdrawn.)
 
 ## 5.2 Resolution of the terminological problem
 
@@ -1640,7 +1641,7 @@ In the [octonionic interpretation](../../core/structure/dimensions#октони�
 | **L3** | Meta-associators | Reflection on non-associativity |
 | **L4** | Full $A_\infty$-structure | All levels of homotopic associativity |
 
-Bridge [T] (closed, T15). See [structural derivation](../minimality/theorem-octonionic-derivation).
+Bridge [C at (Alt)] (T15; the orientation of the Fano lines is an input — registry row 41n; it read "[T] (closed)" until 2026-09-25). See [structural derivation](../minimality/theorem-octonionic-derivation).
 :::
 
 ---
@@ -1648,34 +1649,34 @@ Bridge [T] (closed, T15). See [structural derivation](../minimality/theorem-octo
 ## Stratification isolation and no-signaling prohibition {#стратификационная-изоляция}
 
 :::info Principle (Stratification isolation)
-Nonlinear dynamics (regeneration $\mathcal{R}$) at levels L2+ **does not induce** nonlinear effects at level L0 (standard QM) and does not violate the no-signaling principle.
+Nonlinear dynamics (regeneration $\mathcal{R}$) at levels L2+ **does not change** the reduced states of L0 systems (the marginal identity [T]). No-signalling of the full dynamics holds only in the non-selective reading [C]: with the Lüders update at a distant partner the nonlinear gate $g_V$ signals ([physics correspondence §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). (The principle read "and does not violate the no-signaling principle"; corrected 2026-09-25.)
 :::
 
 ### Separation of nonlinearity by level
 
 | Level | Stratum $X$ | Dynamics | Nonlinear $\mathcal{R}$ |
 |---------|------------|----------|--------------------------|
-| L0 | $S_I$ (matter) | $d\Gamma/d\tau = -i[H, \Gamma]$ | **No** ($R = 0$) |
+| L0 | $S_I$ (matter) | $d\Gamma/d\tau = -i[H, \Gamma]$ | **No** ($R < R_{\text{th}} = 1/3$; $R = 1/(7P) \geq 1/7$ is never $0$) |
 | L1 | $S_{II}$ (life) | + $\mathcal{D}[\Gamma]$ (linear Lindblad) | **No** |
 | L2 | $S_{III}$ (mind) | + $\mathcal{R}[\Gamma, E]$ | **Yes** ($R \geq 1/3$) |
 | L3 | $S_{IV}$ (network consciousness) | + $R^{(n)}$ | **Yes** (higher orders) |
 | L4 | $S_{IV}$ (unitary consciousness) | Full ∞-structure | **Yes** |
 
-### Theorem (No-signaling prohibition for all levels)
+### Theorem (Marginal identity for all levels) [T]; no-signalling of the full dynamics [C]
 
-For L0-systems (atoms, photons, qubits) $R = 0$, and $\mathcal{R} = 0$. For L2+ systems the nonlinearity $\mathcal{R}$ does not violate the no-signaling prohibition thanks to the CPTP structure of operator $\varphi$ and locality of $\kappa$:
+For L0-systems (atoms, photons, qubits) $R$ lies below the threshold $R_{\text{th}} = 1/3$, so $\mathcal{R} = 0$ (an earlier version wrote "$R = 0$", which is impossible: $R = 1/(7P) \geq 1/7$). For L2+ systems the CPTP structure of the operator $\varphi$ and the locality of $\kappa$ give the marginal identity — regeneration of $A$ leaves $B$'s unconditioned reduced state unchanged:
 
 $$
 \mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0
 $$
 
-Proof: [Physical correspondence: §8](/docs/proofs/physics/physics-correspondence#запрет-сигнализации).
+Proof: [Physical correspondence: §8](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). The identity does not cover the other direction: after a Lüders measurement at the partner, each run leaves the L2 system in a conditional state, the nonlinear gate $g_V$ acts on that state, and the averaged evolution depends on whether the partner measured — so no-signalling of the full dynamics holds only in the non-selective reading [C] ([§8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). (The heading read "No-signaling prohibition for all levels" and the text "does not violate the no-signaling prohibition"; corrected 2026-09-25.)
 
 ### Physical consequence
 
 Atoms and photons used in Bell experiments are at level L0. For them UHM **exactly coincides** with quantum mechanics. The nonlinearity $\mathcal{R}$ acts only on **autonomous macro-systems** (cells, brain), which do not form maximally entangled EPR states with distant photons.
 
-Even if an L2-system (brain) is entangled with an L0-system (photon), the regeneration of the brain **does not affect** the state of the photon — this is a consequence of the CPTP property of $\varphi$ and linearity of the partial trace.
+Even if an L2-system (brain) is entangled with an L0-system (photon), the regeneration of the brain **does not affect** the photon's reduced state — a consequence of the CPTP property of $\varphi$ and linearity of the partial trace [T]. The converse is not excluded: a Lüders measurement on the photon changes the conditional states of the brain, and its nonlinear regeneration can then depend on the choice of measurement [C].
 
 ---
 

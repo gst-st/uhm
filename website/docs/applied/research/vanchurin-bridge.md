@@ -90,8 +90,8 @@ $\dot q = g^{-1}\nabla\mathcal F$ (his 6.3). The learning algorithm is
 
 UHM is built on five axioms: reality as an $\infty$-topos over density
 matrices, the **Bures** Grothendieck topology, dimension $N=7$, a scale
-$\omega_0$, and a Page–Wootters decomposition (the last derivable,
-T-87). Its dynamics is the **triad** forced by LGKS-completeness
+$\omega_0$, and a Page–Wootters decomposition (its clock register
+constructed, its constraint assumed — T-87, [C] for the link). Its dynamics is the **triad** forced by LGKS-completeness
 (T-57):
 
 $$
@@ -105,13 +105,13 @@ The dictionary is exact on every line that matters:
 | VL object | UHM object | Status of the link |
 |---|---|---|
 | trainable state $q$ | coherence matrix $\Gamma\in\mathcal D(\mathbb C^7)$ | structural |
-| loss $-\mathcal F$ | free-energy functional $\mathcal F[\varphi;\Gamma]$ | T-39e (variational $\varphi$) |
+| loss $-\mathcal F$ | free-energy functional $\mathcal F[\varphi;\Gamma]$ | T-39e (variational $\varphi$) — retracted 2026-09-25: the functional is a cross-entropy and $\varphi$ is not its minimiser, so this row is a notational match only |
 | metric $g$ | **Bures/SLD metric** — *unique* monotone metric (Petz; T-187) | forced, not chosen |
 | noise covariance $\kappa$ | covariance of one-step Kraus increments of $\mathcal D_\Omega$ | forced by T-41/T-59, **relative to the canonical Kraus resolution** (§7.2) |
 | covariant descent $\dot q=g^{-1}\nabla\mathcal F$ | regeneration $\mathcal R$ toward $\rho_*$ | T-39f–h |
 | emergent time = block index | $\tau\in\mathbb Z_7$ (Page–Wootters) | T-38b, T-87 |
 | maximum-entropy identity $g^{-1}=c$ (his 4.7) | **derived here as a dynamical theorem** (§4) | this page |
-| multi-level structure | fractal holon, contraction $c_F=1/3=1/\lvert\mathrm{QR}(7)\rvert$ | T-72, CC-5 |
+| multi-level structure | fractal holon (a holon of holons); coherence contraction $c_F=1/3=1/\lvert\mathrm{QR}(7)\rvert$ per step of the Fano channel | CC-5 [C at (HOL)] for the holon of holons; $c_F$ is the [Fano channel's contraction](/docs/proofs/gap/fano-channel#state-independence-alpha) [T]. (Earlier credited to T-72 — scale invariance, [C at (AGG)], which states neither; retracted) |
 | cellular network | Fano plane $\mathrm{PG}(2,2)$, *unique* optimal BIBD$(7,3,1)$ | T-41i |
 
 ---
@@ -783,11 +783,20 @@ The thirty-line simulation is
 :::note Level-matching caveat
 The derivation is at the level of a holon's internal state dynamics.
 Applying it to population genetics assumes that an evolving population
-is itself a holon — which is exactly what UHM's scale-invariance theorem
-(T-72, with contraction $c_F=1/3$) asserts, but which remains a bridge
-assumption **[I]** rather than a theorem about biology. If the
-identification is rejected, P1 still stands for physical holons and for
-engineered learning systems built on the UHM core.
+is itself a holon. The corpus does not derive that: fractal closure
+([CC-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание))
+takes it as its assumption (HOL) and then gives the composite a
+non-trivial attractor, and scale invariance
+([T-72](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность),
+[C at (AGG)]) carries invariants across scales only for weakly coupled,
+consistently aggregated parts. (An earlier edition said the identification
+"is exactly what UHM's scale-invariance theorem (T-72, with contraction
+$c_F=1/3$) asserts"; retracted — T-72 asserts no closure, and $c_F = 1/3$
+is the Fano channel's coherence contraction, not a property of
+aggregation.) The identification remains a bridge assumption **[I]**
+rather than a theorem about biology. If it is rejected, P1 still stands
+for physical holons and for engineered learning systems built on the UHM
+core.
 :::
 
 ---
@@ -957,7 +966,7 @@ Corpus cross-references: T-41 (Fano channel family), T-42a
 ($G_2$-rigidity), T-55 (Lawvere incompleteness), T-57 (triadic
 completeness), T-59 ($\lambda_{\text{deco}}=5\gamma/21$), T-71 (vacuum
 energy), T-72 (scale invariance), T-73/T-74 (Gap curvature, spectral
-action), T-87 (A5 derivable), T-124 (conscious window), T-187 (why
+action), T-87 (A5: clock register [T], constraint [C]), T-124 (conscious window), T-187 (why
 Bures). Registry rows: T-293, T-294, T-295; the per-axis screen lives under T-298; the composition ceiling and the addressing regime under T-304.
 
 ---

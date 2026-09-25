@@ -50,9 +50,9 @@ where $T = \Gamma^*$ — the global attractor (equilibrium state).
 
 **Theorem (Arrow of time):**
 
-$$\lim_{\tau \to \infty} \Gamma(\tau) = T$$
+$$\lim_{t \to \infty} \Gamma(t) = T$$
 
-provided $\Delta F > 0$ (system is not isolated).
+provided $\Delta F > 0$ (system is not isolated). Here $t$ is the parameter of the dissipative semigroup; the cyclic Page–Wootters tick $\tau \in \mathbb{Z}_7$ has no limit, and the O-clock does not supply $t$ ([emergent time, §11.2](/docs/proofs/dynamics/emergent-time#112-конечные-периодические-часы)).
 
 **Geometric formulation** (along the stratal depth $n \in \mathbb{N}$ — the cumulative tick count, not the cyclic label $\tau \in \mathbb{Z}_7$; [two indices, one arrow](/docs/proofs/dynamics/emergent-time#временная-стратификация)):
 
@@ -65,7 +65,7 @@ The arrow of time is the **progressive collapse of higher strata** toward termin
 ## Full equation of motion {#полное-уравнение-движения}
 
 :::info Emergent time
-Time τ is **derived** from the structure of the category $\mathcal{C}$ via the Page–Wootters mechanism, not postulated as an external parameter. See [Theorem on emergent time](../../proofs/dynamics/emergent-time).
+The **cyclic clock** τ ∈ ℤ₇ is derived from the structure of the category $\mathcal{C}$ via the Page–Wootters mechanism. The equation below, with its dissipative and regenerative terms, runs in an aperiodic parameter that this clock does not supply: it holds on that assumption (T-53b, [C]). Of the carriers already in the corpus only an ideal clock register with an infinite environment supplies it, and $\mathcal{R}$ is then postulated in that parameter rather than derived from a clock ([emergent time, §11.3](../../proofs/dynamics/emergent-time#113-носители-апериодического-параметра)). An earlier version of this box said that time as such is derived and not an external parameter; that is retracted. See [Theorem on emergent time](../../proofs/dynamics/emergent-time).
 :::
 
 The evolution of $\Gamma$ is described by the **logical Liouvillian**:
@@ -81,7 +81,7 @@ $$
 $$
 
 where:
-- τ — internal time (parameter of conditional states relative to [O](../structure/dimension-o))
+- τ — the evolution parameter; for the dissipative and regenerative terms it must be aperiodic, which the conditional states relative to [O](../structure/dimension-o) do not provide (T-53b, [C])
 - $H_{eff}$ — effective Hamiltonian from the Page–Wootters constraint
 - $-i[H_{eff}, \Gamma]$ — unitary evolution (preserves $P$)
 - $\mathcal{D}_\Omega[\Gamma]$ — **logical dissipation** (operators L_k from Ω)
@@ -204,27 +204,27 @@ $$
 
 where $H_{eff}$ is the effective Hamiltonian arising from the [Page–Wootters constraint](../../proofs/dynamics/emergent-time#33-формальная-конструкция).
 
-:::note Page–Wootters constraint [T] (T-87, P3)
-$[\hat{C}, \Gamma_{\text{total}}] = 0$ — Wheeler–DeWitt constraint. Derived from A1–A4 via the spectral triple construction (T-87). Time $\tau$ is emergent from correlations between the "clock" and "system" subsystems. Full derivation: [Emergent time](/docs/proofs/dynamics/emergent-time).
+:::note Page–Wootters constraint (T-87: clock register [T], constraint [C])
+$\hat{C}\,\Gamma_{\text{total}} = 0$ — Wheeler–DeWitt constraint, equivalently $\mathrm{supp}\,\Gamma_{\text{total}} \subseteq \ker\hat{C}$. It implies the stationarity condition $[\hat{C}, \Gamma_{\text{total}}] = 0$ but does not follow from it: a mixed state spread over two eigenvalues of $\hat{C}$ is stationary without being annihilated. The clock register is built from A1–A4 via the spectral triple (T-87, steps 1–3); the constraint is an assumption (T-87, step 4). An earlier version of this note wrote the constraint as the commutator and called it derived from A1–A4; retracted. Time $\tau$ is emergent from correlations between the "clock" and "system" subsystems. Full derivation: [Emergent time](/docs/proofs/dynamics/emergent-time).
 :::
 
 **Definition [D] (Wheeler–DeWitt constraint).** {#ограничение-wdw}
 
 $$\hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{\mathrm{int}}$$
 
-— the full energy operator. Physical states satisfy $[\hat{C}, \Gamma_{\mathrm{total}}] = 0$ ([T-87 [T]](/docs/core/operators/emergent-time)). Emergent time $\tau$ follows from this constraint via the Page–Wootters mechanism.
+— the full energy operator. Physical states satisfy $\hat{C}\,\Gamma_{\mathrm{total}} = 0$, that is $\mathrm{supp}\,\Gamma_{\mathrm{total}} \subseteq \ker\hat{C}$ (T-87, step 4, an assumption, [C]); this implies $[\hat{C}, \Gamma_{\mathrm{total}}] = 0$. Emergent time $\tau$ follows from this constraint via the Page–Wootters mechanism.
 
 #### Derivation of the constraint from axiom A5 {#вывод-wdw}
 
-The Page–Wootters constraint (analogue of the Wheeler–DeWitt equation) is **derived** from A5:
+The Page–Wootters constraint (analogue of the Wheeler–DeWitt equation) is **stated** in A5:
 
 **Step 1.** A5 establishes: $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$ with coupling operator $\hat{C} = H_O \otimes \mathbb{1} + \mathbb{1} \otimes H_{\text{rest}} + H_{\text{int}}$.
 
-**Step 2.** Global stationarity: $[\hat{C}, \Gamma_{\text{total}}] = 0$ — the Universe *as a whole* does not evolve.
+**Step 2.** The global state lies in the kernel of the constraint, $\hat{C}\,\Gamma_{\text{total}} = 0$ — the Universe *as a whole* does not evolve. (Global stationarity, $[\hat{C}, \Gamma_{\text{total}}] = 0$, is weaker and does not imply it for mixed states.)
 
-**Step 3.** Partial trace over O: the conditional state $\Gamma(\tau) = \mathrm{Tr}_O[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}) \cdot \Gamma_{\text{total}}] / p(\tau)$ satisfies $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma]$, where $H_{\text{eff}}(\tau) = H_{\text{rest}} + \langle\tau|H_{\text{int}}|\tau\rangle_O$.
+**Step 3.** Partial trace over O: for $H_{\text{int}} = 0$ the conditional states $\Gamma(\tau) = \mathrm{Tr}_O[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}) \cdot \Gamma_{\text{total}}] / p(\tau)$ are related by a unitary step between ticks, generated by $H_{\text{rest}}$; for $H_{\text{int}} \neq 0$ the generator $H_{\text{eff}}(\tau) = H_{\text{rest}} + \langle\tau|H_{\text{int}}|\tau\rangle_O$ is the leading term of a time-nonlocal law (A. R. H. Smith, M. Ahmadi, *Quantum* **3**, 160 (2019)).
 
-Emergent dynamics is a **consequence** of the static structure of $\Gamma_{\text{total}}$. Status: **[T]**
+The unitary part of the dynamics is a **consequence** of the static structure of $\Gamma_{\text{total}}$ [T]. An earlier version of Step 3 also derived the dissipator, $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma]$, with status [T]; that is retracted — the Page–Wootters construction yields no dissipator, and relative to a clock of period seven ticks a dissipative evolution would be constant ([emergent time, §9.1](/docs/proofs/dynamics/emergent-time#9-следствия)).
 
 **Properties:**
 - Preserves $\mathrm{Tr}(\Gamma) = 1$
@@ -238,7 +238,7 @@ This section contains the **derivation** of the effective Hamiltonian from the f
 :::
 
 **Theorem (Effective dynamics):**
-Let $\Gamma_{total} \in \mathcal{H}_{phys} = \ker(\hat{C})$ satisfy the constraint $[\hat{C}, \Gamma_{total}] = 0$ (for pure projectors $\Gamma = |\Psi\rangle\langle\Psi|$ this reduces to the standard $\hat{C}|\Psi\rangle = 0$). Then the conditional state:
+Let $\Gamma_{total}$ be supported in $\mathcal{H}_{phys} = \ker(\hat{C})$, that is $\hat{C}\,\Gamma_{total} = 0$; this implies $[\hat{C}, \Gamma_{total}] = 0$, but not conversely (for a pure projector $\Gamma = |\Psi\rangle\langle\Psi|$ the commutator condition says only that $|\Psi\rangle$ is an eigenvector of $\hat{C}$, and $\hat{C}|\Psi\rangle = 0$ requires in addition that its eigenvalue be zero). Then the conditional state:
 
 $$
 \Gamma(\tau) = \frac{\mathrm{Tr}_O\left[ (|\tau\rangle\langle \tau|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{total} \right]}{p(\tau)}
@@ -303,6 +303,8 @@ $$
 
 :::note Connection with original dynamics
 For $\lambda_E, \lambda_U \to 0$ the effective dynamics coincides with the standard von Neumann equation. Standard quantum mechanics is the **weak coupling limit** with the internal clock.
+
+**Scope of the derivation.** The theorem is exact for $H_{int} = 0$. With a clock–system interaction the conditional state obeys a time-nonlocal Schrödinger equation (A. R. H. Smith, M. Ahmadi, "Quantizing time: interacting clocks and systems", *Quantum* **3**, 160 (2019), arXiv:1712.00081), and $H_{eff}(\tau) = H_{6D} + \langle\tau|H_{int}|\tau\rangle_O$ is its leading term in $H_{int}$, not an exact generator; Step 4 above, which drops all higher terms, is an approximation. An earlier claim that the cohesive closure removes the $O(H_{int})$ correction (T-186(b)) is retracted.
 
 Full definition of [the constraint $\hat{C}$](../foundations/axiom-omega#свойство-2) and [clock operators](../structure/dimension-o#алгебра-часов) can be found in the respective documents.
 :::
@@ -477,13 +479,13 @@ In the implementation, the shape parameter $k = 1 - R$ is clamped to $[0.15,\; 1
 :::
 
 :::warning Nonlinearity and the no-signalling prohibition
-$\mathcal{R}$ is nonlinear in $\Gamma$ (through $\kappa(\Gamma)$ and $\varphi(\Gamma)$). In standard quantum mechanics, nonlinear evolution typically leads to violation of the superluminal no-signalling prohibition (Gisin, 1990). In UHM the problem is **structurally excluded** by three conditions:
+$\mathcal{R}$ is nonlinear in $\Gamma$ (through $\kappa(\Gamma)$ and $\varphi(\Gamma)$). In standard quantum mechanics, nonlinear evolution typically leads to violation of the superluminal no-signalling prohibition (Gisin, 1990). In UHM three conditions secure a **marginal identity** — regeneration of $A$ leaves the unconditioned state of $B$ unchanged:
 
 1. **Locality of φ:** tensor factorization $\tilde{\varphi}_A = \varphi_A \otimes \mathrm{id}_B$ (from holonon autonomy)
 2. **Locality of κ:** $\kappa_A(\Gamma_{AB}) = \kappa_A(\mathrm{Tr}_B(\Gamma_{AB}))$ (depends only on local coherences)
 3. **CPTP property of φ:** completeness condition $\sum_m K_m^\dagger K_m = I$
 
-From (1)–(3) it follows that $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ — regeneration of subsystem $A$ does not affect the reduced state of the remote subsystem $B$. The fundamental difference from Weinberg's "nonlinear QM": the nonlinearity of UHM acts **at the level of the density matrix**, not the wave function, which eliminates the ensemble dependence — the source of Gisin's problems.
+From (1)–(3) it follows that $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ — regeneration of subsystem $A$ does not affect the reduced state of the remote subsystem $B$ [T]. This does not exclude signalling through a measurement at $A$: with the Lüders update the state of $B$ becomes a conditional state, the nonlinear term of $B$ acts on it, and the statistics of $B$ depend on what $A$ did ([Physics correspondence, §8.5](../../proofs/physics/physics-correspondence#85-ансамблевая-независимость)). Acting on the density matrix rather than on the wave function does not remove this, because a proper mixture evolves branch by branch. No-signalling of the full dynamics is [C] under the non-selective reading, with the "Everett phone" as its price. No modification of $\mathcal{R}$ that keeps the gate $g_V$ removes this condition: selective no-signalling forces affine local dynamics, and an affine or normalised-linear term cannot vanish below $P = 2/7$ without vanishing everywhere; the options are in [Physics correspondence, §8.7](../../proofs/physics/physics-correspondence#87-прочтение-измерения). An earlier version of this box said that the problem is "structurally excluded" and that density-matrix nonlinearity "eliminates the ensemble dependence — the source of Gisin's problems"; retracted.
 
 Rigorous proof: [§ No-signalling prohibition](#запрет-сигнализации) below, [Correspondence with physics](../../proofs/physics/physics-correspondence#запрет-сигнализации).
 :::
@@ -1021,8 +1023,10 @@ where $\Gamma_A := \mathrm{Tr}_B(\Gamma_{AB})$, and $\varphi_A \otimes \mathrm{i
 
 ### No-signalling prohibition {#запрет-сигнализации}
 
-:::warning Theorem (No-signalling prohibition in UHM)
-Despite the nonlinearity of the regenerative term, UHM evolution **preserves the no-signalling principle**: regeneration of subsystem $A$ does not affect the reduced state of the remote subsystem $B$.
+:::warning Theorem (Regeneration of $A$ leaves the marginal of $B$ unchanged) [T]
+Despite the nonlinearity of the regenerative term, regeneration of subsystem $A$ does not affect the unconditioned reduced state of the remote subsystem $B$.
+
+(An earlier title, "No-signalling prohibition in UHM", said that UHM evolution "preserves the no-signalling principle"; that is more than the identity below proves and is retracted — see the box after the proof.)
 
 $$
 \mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0
@@ -1061,19 +1065,17 @@ $$
 
 The result does not depend on the degree of entanglement of $\Gamma_{AB}$, the specific form of $\kappa_A$ or $\varphi_A$. ∎
 
-:::info Difference from Weinberg's nonlinear QM
-The theorems of Gisin (1990) and Polchinski (1991) prove that the nonlinear modification of the Schrödinger equation $i\hbar\partial_t|\psi\rangle = H[|\psi\rangle]|\psi\rangle$ violates no-signalling, because:
-- Nonlinearity acts on the **state vector** $|\psi\rangle$, not on the density matrix $\rho$
-- The result depends on the **ensemble decomposition**: $\rho = \sum_i p_i |\psi_i\rangle\langle\psi_i|$ — the same $\rho$ with different decompositions gives different evolutions
+:::warning Difference from Weinberg's nonlinear QM — and why it does not settle Gisin's argument
+The arguments of Gisin (1990) and Polchinski (1991) show that the nonlinear modification of the Schrödinger equation $i\hbar\partial_t|\psi\rangle = H[|\psi\rangle]|\psi\rangle$ allows signalling: a measurement at $A$ prepares at $B$ an ensemble of conditional states that depends on $A$'s choice, and a nonlinear evolution at $B$ turns the difference into different statistics.
 
-In UHM the nonlinearity $\mathcal{R}[\Gamma, E]$ acts on $\Gamma$ (density matrix) **directly**, bypassing the $|\psi\rangle$ level. The functionals $\kappa(\Gamma)$, $\varphi(\Gamma)$, $g_V(P(\Gamma))$ depend **only on $\Gamma$**, not on its ensemble decomposition. This **structurally** eliminates the Gisin mechanism.
+In UHM the nonlinearity $\mathcal{R}[\Gamma, E]$ acts on $\Gamma$ (density matrix) directly, and $\kappa(\Gamma)$, $\varphi(\Gamma)$, $g_V(P(\Gamma))$ depend only on $\Gamma$. That does not remove the mechanism: after a measurement at $A$ with the Lüders update, each run leaves $B$ in one conditional state $\rho_B^{(k)}$, $\mathcal{R}$ acts on that state, and the averaged evolution $\sum_k p_k\,\Phi_t(\rho_B^{(k)})$ depends on the ensemble. With the viability gate $g_V$ alone, $B$'s drift differs by a factor three according to whether $A$ measured an entangled qutrit or not ([Physics correspondence, §8.5](../../proofs/physics/physics-correspondence#85-ансамблевая-независимость); regression check in `website/scripts/check_core_numbers.py`). An earlier version of this box concluded that density-matrix nonlinearity "structurally eliminates the Gisin mechanism"; that is retracted. What remains is [C]: no-signalling holds if the nonlinear terms act only on unconditioned marginals, at the price J. Polchinski called the "Everett phone" (*Phys. Rev. Lett.* **66**, 397 (1991)).
 :::
 
 **Consequences:**
 
-1. Nonlinearity of $\kappa(\Gamma)$ **does not violate** the no-signalling prohibition — $c_A$ is taken out of the partial trace as a scalar
-2. Protection is **structural**: does not depend on the specific form of $\kappa$, $\varphi$ or $\Delta F$ — conditions NS1–NS3 are sufficient
-3. The result holds for **arbitrary** (including maximally entangled) states $\Gamma_{AB}$
+1. Nonlinearity of $\kappa(\Gamma)$ does not spoil the marginal identity — $c_A$ is taken out of the partial trace as a scalar
+2. The identity is **structural**: it does not depend on the specific form of $\kappa$, $\varphi$ or $\Delta F$ — conditions NS1–NS3 are sufficient for it (not for no-signalling of the full dynamics, which needs the non-selective reading, [C])
+3. The identity holds for **arbitrary** (including maximally entangled) states $\Gamma_{AB}$
 
 **Three conditions ensuring the no-signalling prohibition (NS1–NS3):** {#условия-ns}
 

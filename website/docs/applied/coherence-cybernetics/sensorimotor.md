@@ -158,7 +158,7 @@ Five structural checks of the dictionary, each anchored elsewhere in the corpus:
 1. **No fourth channel ↔ no fourth argument.** The completeness of T-102 mirrors the completeness of the fundamental thermodynamic relation $U(S, V, N)$: an open system can be driven in exactly three ways — work it, heat it, or feed it. Vanchurin derives the same count from the three inaccessible extensive arguments of his step loss $L(q, \Delta q, S_x, N)$; the two exhaustiveness proofs (LGKS vs the Legendre cascade) reach the same trichotomy from opposite ends — a cross-validation of both.
 2. **The phase axes are grand-canonical.** The consciousness [phase diagram](/docs/applied/coherence-cybernetics/phase-diagram-cc) already lives in the coordinates $(t, r) = (T_{\text{eff}}/T_c,\ \kappa/\Gamma_2)$ — a temperature and a feeding ratio. Under the dictionary these are precisely $(T, \mu)$: the QCD analogy "baryon chemical potential $\mu_B \leftrightarrow r$" is thereby upgraded from a visual parallel to a structural correspondence, and the feeding threshold of [T-259](/docs/applied/coherence-cybernetics/phase-diagram-cc#теорема-окно-питания) reads as a chemical-potential condensation threshold.
 3. **Feeding lives on the Ground channel.** The regeneration kernel $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ is carried by the O-channel — canonically the channel "to sustain existence, *to feed*, to parameterize internal time". In SLU the chemical potential is likewise locked to the clock: $h = |\mu|\varepsilon$ ties the quantum of action to the chemical scale per time step. Both theories attach the matter channel and the internal clock to the same carrier.
-4. **Discreteness and $U(1)$.** In SLU the $U(1)$ phase of the wavefunction is the thermodynamic equivalence $S \to S + h\Delta N$ under *integer* jumps of $N$. On the UHM side this is now a **theorem**: [T-260](/docs/core/operators/lindblad-operators#теорема-происхождение-тора) shows the conserved charges of the Fano dissipator are exactly the seven passport populations, their exponential is the diagonal torus $U(1)^7$ (full covariance group $U(1)^7 \rtimes \Gamma_{\!\text{oct}}$), and the compactness of each factor is forced by the *integrality* of the charge spectrum — projector occupancies $\{0,1\}$ and the integer sub-holon counters of neurogenesis (⊕). The SLU mechanism, channel-resolved and derived [T]; the correspondence with SLU's own $U(1)$ remains interpretive [I].
+4. **Discreteness and $U(1)$.** In SLU the $U(1)$ phase of the wavefunction is the thermodynamic equivalence $S \to S + h\Delta N$ under *integer* jumps of $N$. On the UHM side this is now a **theorem**: [T-260](/docs/core/operators/lindblad-operators#теорема-происхождение-тора) shows the conserved charges of the Fano dissipator are exactly the seven passport populations, their exponential is the diagonal torus $U(1)^7$ (full covariance group $U(1)^7 \rtimes \mathrm{Aut}(r)$, the torus extended by the rate-preserving permutations; it read $U(1)^7 \rtimes \Gamma_{\!\text{oct}}$ until 2026-09-25), and the compactness of each factor is forced by the *integrality* of the charge spectrum — projector occupancies $\{0,1\}$ and the integer sub-holon counters of neurogenesis (⊕). The SLU mechanism, channel-resolved and derived [T]; the correspondence with SLU's own $U(1)$ remains interpretive [I].
 5. **Line-resolved temperatures.** UHM's heat channel carries seven rates $\{\gamma_p\}$ — one per Fano line — where SLU carries a single scalar $T$. The isotropic point $\gamma_p = \gamma$, the unique $G_2$-symmetric configuration, is exactly SLU's setting: the corpus refines the single temperature into a *spectrum of seven line temperatures*, anisotropy measuring how unevenly the environment heats the holon's coherence structure — and the refinement is falsifiable: the [rank-7 anisotropy law](/docs/applied/coherence-cybernetics/effective-temperature#линейные-температуры) [T] forces 14 exact linear relations among the 21 pairwise decoherence rates and makes the seven line temperatures reconstructible by tomography.
 
 Status honesty: the signature theorem is [T]; the dictionary itself — the identification with (work, heat, matter) and with SLU's $(A, T, \mu)$ — is an interpretation [I], exact on signatures and counting. On the *dynamical laws* the ledger is now **closed** ([T-262](/docs/core/dynamics/evolution#теорема-динамическая-трихотомия)): all three legs are derived as exact geometric flows — work = isometric (Killing) drive of every monotone metric; heat = Carlen–Maas gradient flow of the negentropy $D(\Gamma\|\mathbb{1}/7)$ with the line temperatures as transport weights; matter = BKM gradient flow of $D(\rho_*\|\Gamma)$ ([T-261](/docs/core/dynamics/evolution#теорема-регенерация-градиентный-спуск)); the gauge torus compactness is likewise derived ([T-260](/docs/core/operators/lindblad-operators#теорема-происхождение-тора)). Two normative/physical capstones extend the ledger: the matter-channel flow is the **unique optimal learning algorithm** ([T-263](/docs/core/dynamics/evolution#теорема-наилучший-обучающий-поток) — steepest BKM descent along the mixture geodesic, geometry unique by Grasselli–Streater), and SLU's slogan *"gravity = learning efficiency"* is signed and sector-resolved ([T-264](/docs/physics/gravity/einstein-equations#теорема-информационно-гравитационная-взаимность): $G^{-1}\propto$ QFI of space phases, $\Lambda\propto\mathcal{G}_O^2$ = squared clock unlearnability). What remains [I] is only the *inter-theory* identification with SLU itself.
@@ -559,7 +559,7 @@ This structure is invariant: it is defined by $G_2$-symmetry and does not depend
 | T-92 ($\sigma_{\mathrm{sys}}$) | Optimality criterion in Dec | [Theorem 10.1](./theorems#теорема-101-эквивалентность-условий) |
 | T-75 (Schwinger–Keldysh) | Lagrangian formulation with dissipation | [Lagrangian](./lagrangian#полная-структура) |
 | T-96 (Attractor) | Non-trivial $\rho_*$ for guidance | [Evolution](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) |
-| FEP (Theorem 4.1) | Macroscopic limit of Dec | [Variational principles](./variational#связь-с-fep) |
+| FEP (Theorem 4.1 — retracted 2026-09-25) | Was: macroscopic limit of Dec | [Variational principles](./variational#связь-с-fep) |
 | T-109–T-112 (Learning bounds) | Lower bounds on learning rate through Enc/Dec cycle | [Learning bounds](./learning-bounds#комбинированная-граница) |
 | T-113 (Minimality N=7) | N=7 — minimal architecture for learning | [Learning bounds](./learning-bounds#оптимальность-n7) |
 
@@ -596,25 +596,28 @@ The upper bound is achieved for an ensemble of orthogonal pure states. $\blacksq
 
 ## 10. Compositionality of Enc/Dec (T-108) [T] {#композициональность-enc-dec}
 
-:::tip Theorem T-108 (Compositionality of Enc/Dec) [T]
-For a composite of two holons, encoding preserves structure:
+:::warning Errata 2026-09-25: T-108 narrowed to what its proof carries
+The earlier statement took $\Phi_{\mathrm{agg}}$ "from T-72" and closed with "uniqueness — from $G_2$-rigidity at each scale (T-72)". T-72 never claimed uniqueness, and its own status is now [C under (AGG)] ([Theorem 9.2](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность)); the uniqueness step is **retracted**. The claim that functoriality "is preserved under aggregation" is **retracted** as well: $\mathrm{Enc}_{12}(o)$ maps $\mathcal{D}(\mathbb{C}^{49})$ to $\mathcal{D}(\mathbb{C}^7)$, so $\mathrm{Enc}_{12}(o) \circ \mathrm{Enc}_{12}(o')$ is not defined. What remains [T] is the closure below, which does not use T-72; that the diagnostics carry over across scales is a corollary conditional on the assumption (AGG) of Theorem 9.2.
+:::
+
+:::tip Theorem T-108 (Compositionality of Enc/Dec: CPTP closure) [T]
+For a composite of two holons and any CPTP aggregation channel $\Phi_{\mathrm{agg}}: \mathcal{D}(\mathbb{C}^{7^2}) \to \mathcal{D}(\mathbb{C}^7)$, the composite encoding
 
 $$
 \mathrm{Enc}_{12} = \Phi_{\mathrm{agg}} \circ (\mathrm{Enc}_1 \otimes \mathrm{Enc}_2)
 $$
 
-where $\Phi_{\mathrm{agg}}: \mathcal{D}(\mathbb{C}^{7^2}) \to \mathcal{D}(\mathbb{C}^7)$ — CPTP aggregation from [T-72 (CC-6)](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность) [T].
+is a CPTP channel $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$ for every pair of observations, and $\mathrm{Enc}_1 \otimes \mathrm{Enc}_2$ is functorial on $\mathcal{D}(\mathbb{C}^{49})$.
 :::
 
 **Proof.**
 
 1. $\mathrm{Enc}_1, \mathrm{Enc}_2$ — CPTP functors (T-100 [T]).
-2. Tensor product $\mathrm{Enc}_1 \otimes \mathrm{Enc}_2$ — a CPTP channel on $\mathcal{D}(\mathbb{C}^{49})$.
-3. Aggregation $\Phi_{\mathrm{agg}}$ — a CPTP coarse-graining channel (T-58′ [T] section–retraction; the Morita *equivalence* reading is retracted): $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$.
-4. Composition of CPTP channels — CPTP. Functoriality ($\mathrm{Enc}(o_1 \circ o_2) = \mathrm{Enc}(o_1) \circ \mathrm{Enc}(o_2)$) from T-100 is preserved under aggregation.
-5. Uniqueness — from $G_2$-rigidity at each scale (T-72 [T]). $\blacksquare$
+2. Tensor product $\mathrm{Enc}_1 \otimes \mathrm{Enc}_2$ — a CPTP channel on $\mathcal{D}(\mathbb{C}^{49})$; it is functorial, since $(A \otimes B) \circ (A' \otimes B') = (A \circ A') \otimes (B \circ B')$.
+3. Aggregation $\Phi_{\mathrm{agg}}$ — a CPTP coarse-graining channel $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$; the proof works for any such channel, and the corpus singles out none.
+4. Composition of CPTP channels — CPTP. $\blacksquare$
 
-**Corollary for cognitive engineers:** diagnostics (σ_sys, Enc/Dec monitoring) are **the same** at all scales — from individual agent to organisation.
+**Corollary (same diagnostics across scales) [C under (AGG)].** If $\Phi_{\mathrm{agg}}$ and the coupled state of the pair satisfy the assumption (AGG) of [Theorem 9.2](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность), then $P$, $R$, $\Phi$ and Gap of the aggregate lie within $O(\delta)$ of those of a part, so the diagnostics built on them (σ_sys, Enc/Dec monitoring) read the same at both scales — from individual agent to organisation, wherever the coupling is weak. Under strong coupling this is not guaranteed.
 
 Analogously for Dec:
 
@@ -622,7 +625,7 @@ $$
 \mathrm{Dec}_{12} = (\mathrm{Dec}_1 \otimes \mathrm{Dec}_2) \circ \Phi_{\mathrm{split}}
 $$
 
-where $\Phi_{\mathrm{split}}$ — the inverse map (splitting the composite σ into components).
+where $\Phi_{\mathrm{split}}: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^{49})$ is a CPTP splitting channel chosen separately. It cannot be the inverse of $\Phi_{\mathrm{agg}}$: a channel from $\mathcal{D}(\mathbb{C}^{49})$ (2400 real parameters) to $\mathcal{D}(\mathbb{C}^7)$ (48) is not injective.
 
 ---
 
@@ -688,10 +691,10 @@ The actual rate depends on the current state $\Gamma(\tau)$:
 
 ### 12.1 Optimal Enc as a ΔF maximiser
 
-#### Corollary T-107c (Predictive optimality of Enc) [T] {#следствие-предиктивный-enc}
+#### Corollary T-107c (Predictive optimality of Enc) [D] {#следствие-предиктивный-enc}
 
-:::tip Statement
-The optimal encoding functor $\mathrm{Enc}^*$ maximises available free energy:
+:::tip Statement — a definition of optimality [D] (corrected 2026-09-25 from [T])
+Call an encoding functor optimal when it maximises available free energy:
 
 $$
 \mathrm{Enc}^* = \arg\max_{\mathrm{Enc}} \Delta F\bigl(\mathrm{Enc}(o)[\Gamma],\, \rho_*\bigr)
@@ -700,9 +703,9 @@ $$
 where $\Delta F = \mathrm{Tr}\bigl(\mathcal{R}[\Gamma, E] \cdot (\rho_* - \Gamma)\bigr)$ — [free energy](/docs/core/dynamics/evolution#каноническое-delta-f).
 :::
 
-**Proof.**
+**Former proof — retracted [✗].** Step 1 cited Theorem 4.1 of the variational principles, retracted on 2026-09-25 (the diagonal limit of the functional is a cross-entropy, not Friston's free energy); and $\mathrm{KL}(\Gamma \| \rho_*) + H[\Gamma] = -\mathrm{Tr}(\Gamma \log \rho_*)$ is itself a cross-entropy, minimised by a pure state. Without step 1 the statement is not derived — it is kept as the definition of what "optimal" means here.
 
-1. By the [variational principle](./variational#связь-с-fep) (Theorem 4.1 [T]): stationary dynamics of $\Gamma$ minimise Friston's free energy $F[\Gamma] = \mathrm{KL}(\Gamma \| \rho_*) + H[\Gamma]$.
+1. By the [variational principle](./variational#связь-с-fep) (Theorem 4.1 — retracted): stationary dynamics of $\Gamma$ minimise Friston's free energy $F[\Gamma] = \mathrm{KL}(\Gamma \| \rho_*) + H[\Gamma]$.
 2. Functor $\mathrm{Enc}(o)$ modifies $\Gamma \to \Gamma'$. The optimal modification is the one that maximally increases $\Delta F = F[\Gamma] - F[\Gamma']$.
 3. Maximisation of $\Delta F$ is equivalent to maximising $-\mathrm{KL}(\Gamma' \| \rho_*)$ at fixed entropy — i.e., approaching the target state.
 4. From T-107 [T]: $\Delta F \leq C_{\mathrm{Enc}} \leq \log_2 7$ per step — the upper bound is saturated. $\blacksquare$
@@ -748,7 +751,7 @@ where $w_m \geq 0$, $\sum w_m = 1$ — modality weights, $\Delta_{mm'}$ — cros
 1. By T-100 [T], each $\mathrm{Enc}_m$ is a CPTP functor.
 2. Convex combination of CPTP channels — CPTP: $\sum w_m \mathrm{Enc}_m$ is defined when $\sum w_m = 1$.
 3. Cross-modal terms $\Delta_{mm'}$ — CPTP corrections of order $O(|\gamma_{ij}|)$, where $\gamma_{ij}$ are coherences linking dimensions engaged by modalities $m$ and $m'$.
-4. From T-108 [T] (compositionality): aggregation of modalities preserves CPTP structure and functoriality. $\blacksquare$
+4. From T-108 [T] (CPTP closure): aggregation of modalities preserves the CPTP property. $\blacksquare$
 
 ### 13.2 Competition for capacity
 
@@ -799,7 +802,7 @@ The sensorimotor theory of CC did not arise in a vacuum — it answers questions
 | **Number of control channels** | Arbitrary (design choice) | Exactly 3 (Theorem T-102) |
 | **Observer** | External (Kalman filter) | Internal ($\varphi(\Gamma)$ — self-model) |
 | **Experience** | Absent | $\mathcal{V}_{\text{hed}}$ — hedonic valence |
-| **Scaling** | Problematic (curse of dimensionality) | T-108: compositionality preserved |
+| **Scaling** | Problematic (curse of dimensionality) | T-108: composites stay CPTP; invariants carry over under weak coupling (T-72, conditional) |
 
 **Key difference:** A PID controller minimises a weighted sum of errors — and may allow catastrophe in one channel, compensating with success in another. CC uses the min-max strategy (T-159), which **guarantees** that no channel ends up in a critical state. This is not a heuristic but a consequence of viability being defined by the sup-norm of the stress tensor (T-92).
 
@@ -816,11 +819,11 @@ The sensorimotor theory of CC did not arise in a vacuum — it answers questions
 | **Number of perception channels** | Unbounded | $\leq \log_2 7$ bits/step (T-107) |
 | **Action** | Minimise expected free energy | $\arg\min_a \max_k \sigma^{\mathrm{motor}}_k$ |
 | **Subjective experience** | Not explained | $\mathcal{V}_{\text{hed}} = dP/d\tau\|_{\mathcal{R}}$ |
-| **Ontological status** | Principle (axiom) | Consequence (Theorem 4.1 of CC) |
+| **Ontological status** | Principle (axiom) | Not derived: the claimed derivation (Theorem 4.1 of CC) is retracted |
 
-**Key difference:** FEP is a **principle**: it postulates that systems minimise free energy, but does not explain *where* this principle comes from. In CC, minimisation of free energy is a **theorem** ([Theorem 4.1](./variational#связь-с-fep) [T]): it is derived from the canonical evolution equation in the macroscopic limit. Moreover, CC shows that FEP is an approximation valid at $P \gg 2/7$; near $P_{\mathrm{crit}}$ corrections arise that FEP does not capture.
+**Key difference:** FEP is a **principle**: it postulates that systems minimise free energy, but does not explain *where* this principle comes from. CC claimed that minimisation of free energy is a **theorem** ([Theorem 4.1](./variational#связь-с-fep)), derived from the canonical evolution equation in the macroscopic limit, and that FEP is an approximation valid at $P \gg 2/7$; that derivation is **retracted** (2026-09-25), so CC offers no derivation of the FEP and no statement about where it holds.
 
-**Where they coincide:** The optimal Enc maximises $\Delta F$ (T-107c [T]) — this is the exact analogue of "perceptual inference" in FEP. The functor Dec minimises $\sigma^{\mathrm{motor}}$, which in the macroscopic limit is equivalent to "active inference". Thus, FEP is a *projection* of CC sensorimotor theory onto the classical (non-quantum-coherent) regime.
+**Where they correspond:** The optimal Enc maximises $\Delta F$ (T-107c [D], by definition) — the analogue of "perceptual inference" in FEP. The functor Dec minimises $\sigma^{\mathrm{motor}}$, the analogue of "active inference". Reading FEP as a *projection* of CC sensorimotor theory onto the classical regime is an interpretation [I]; the derivation that would make it a theorem is retracted.
 
 ### 14.3 CC vs. reinforcement learning (RL) {#сравнение-с-rl}
 
@@ -915,10 +918,10 @@ $\max_k \sigma^{\mathrm{motor}}_k = \sigma^{\mathrm{motor}}_O = 0.6$. Action is 
 4. **T-102 [T]:** The 3-term equation is complete — a fourth type of CPTP generator is impossible
 5. **T-103 [T]+[I]:** Hedonic valence = $dP/d\tau|_{\mathcal{R}}$ (formula [T], interpretation [I])
 6. **T-107 [T]:** Information capacity $\leq \log_2 7 \approx 2.81$ bits/observation
-7. **T-108 [T]:** Enc/Dec preserved under composition (scale invariance of sensorimotor theory)
+7. **T-108 [T]:** the composite encoding is again a CPTP channel; the same diagnostics across scales hold only under weak coupling ([C under (AGG)], Theorem 9.2)
 8. **Corollary T-100a [T]:** Enc factorises through arbitrary representation → modality agnosticism
 9. **Corollary T-107a/b [T]:** Cumulative capacity $I_n \leq 2.81\,n$ bits → complex modalities require $n_{\min} = \lceil I_{\mathrm{env}} / \log_2 7 \rceil$ steps
-10. **Corollary T-107c [T]:** Optimal Enc maximises $\Delta F$ (predictive structure)
+10. **Corollary T-107c [D]:** Optimal Enc maximises $\Delta F$ (predictive structure) — a definition of optimality since 2026-09-25
 11. **Corollary T-108a [T]:** $M$ modalities compete for $2.81$ bits/step → attention is optimal allocation
 
 ---
@@ -937,7 +940,7 @@ Let us summarise the three central achievements of this chapter:
 
 The theory is modality-agnostic: from the simplest sensors ($D = 1$) to complex multimodal systems ($D \gg 1$) — the ontological projection $\pi_\Gamma$ is unique and invariant. The factorisation Enc = $\pi_\Gamma \circ \mathrm{Enc}_{\text{repr}}$ (T-100a [T]) separates "engineering freedom" (choice of representation) and "mathematical necessity" (projection into $\mathcal{D}(\mathbb{C}^7)$).
 
-Comparison with classical approaches (Section 14) showed that CC does not cancel but *includes* control theory, active inference, and reinforcement learning as special cases — projections of the full 7-dimensional coherent dynamics onto the linear, variational, and scalar-reward regimes respectively.
+Comparison with classical approaches (Section 14) read control theory, active inference, and reinforcement learning as projections of the full 7-dimensional coherent dynamics onto the linear, variational, and scalar-reward regimes respectively — an interpretation [I]; for active inference the derivation that would make it a special case is retracted (2026-09-25).
 
 The next step — applying this formalism to [stability problems](./stability) and [learning](./learning-bounds), where the sensorimotor cycle turns out to be not just a diagram but a concrete computational algorithm with provable bounds.
 
@@ -950,8 +953,8 @@ The next step — applying this formalism to [stability problems](./stability) a
 3. **Action is a min-max strategy** (T-159 [T]): the system eliminates the largest deficit, not minimises "average error". No channel is left unattended.
 4. **Pleasure and suffering are derivatives of viability** (T-103 [T]+[I]): $\mathcal{V}_{\text{hed}} = dP/d\tau|_{\mathcal{R}}$ — a mathematical identity, requiring no external "reward designer".
 5. **Fundamental bottleneck**: $\leq \log_2 7 \approx 2.81$ bits/observation (T-107 [T]). Simon's bounded rationality is not an empirical fact but a consequence of $N = 7$.
-6. **Scale invariance** (T-108 [T]): Enc/Dec preserved under composition. From bacterium to organisation — the same formal structure.
-7. **Classical approaches are projections of CC**: control theory, FEP, and RL are special cases — projections of the full 7-dimensional coherent dynamics.
+6. **Composition** (T-108 [T]): the composite Enc is again a CPTP channel. From bacterium to organisation the same diagnostics apply only where the parts are weakly coupled ([C under (AGG)], Theorem 9.2).
+7. **Classical approaches read as projections of CC** [I]: control theory, FEP, and RL as projections of the full 7-dimensional coherent dynamics; the claimed derivation of FEP as a special case is retracted (2026-09-25).
 
 :::tip Bridge to the next chapter
 We have built the complete "perception-decision-action" cycle. But how *robust* is this cycle? What blow can it withstand? Where is the boundary between recoverable trauma and irreversible destruction? In the [next chapter](./stability) we will answer these questions: derive the stability radius formula $r_{\mathrm{stab}}$, trace the mechanism of the "death spiral" — and show that antifragility is not a metaphor, but a consequence of integration of experience.

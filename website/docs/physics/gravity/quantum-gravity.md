@@ -14,7 +14,7 @@ The Gap functional integral as an alternative formulation of quantum gravity. Th
 The Gap functional integral as an alternative formulation of quantum gravity: well-definedness on the compact target space $(S^1)^{21}$, **field-space finiteness [T]** (compact target), full order-by-order UV-finiteness **[C]** (structural), full spectral action [T], Gap resolution of the black hole information paradox.
 
 :::info Status
-Spectral action [T]: the full spectral triple from T-53 reproduces the Einstein–Hilbert action + Standard Model. **Field-space (large-field) finiteness [T]:** the lattice partition function $Z_N$ is finite for every $N$ because the target $(S^1)^{21}/G_2$ is **compact** (finite volume, bounded integrand) — a rigorous result (§3), with the continuum limit remaining [P]. **Full order-by-order UV-finiteness [C]** (structural): compactness + $G_2$ Ward identities + $\mathcal{N}=1$ holomorphy (Seiberg) + the sector-product $\varepsilon^{12}$ suppression (T-219) — **not** the retracted exact "$7-7=0$" trace. Information paradox — [C] (unitarity [T], Gap description of the horizon — ansatz). Entropy $S_{\text{BH}}$ — [C under T-65, T-73, Wald]: leading term $A/(4G_N)$ [T] from Wald's formula + spectral action; Gap correction coefficient $c_{\mathrm{Gap}}$ explicitly computed [C under T-65, T-73, T-74] (§6.3). Lattice verification — [P].
+Spectral action [T]: the full spectral triple from T-53 reproduces the Einstein–Hilbert action + Standard Model (the Standard-Model part is imported from Connes' model and inherits its Higgs-mass history — see the box under Theorem 2.2). **Field-space (large-field) finiteness [T]:** the lattice partition function $Z_N$ is finite for every $N$ because the target $(S^1)^{21}/G_2$ is **compact** (finite volume, bounded integrand) — a rigorous result (§3), with the continuum limit remaining [P]. **Full order-by-order UV-finiteness [C]** (structural): compactness + $G_2$ Ward identities + $\mathcal{N}=1$ holomorphy (Seiberg) + the sector-product $\varepsilon^{12}$ suppression (T-219) — **not** the retracted exact "$7-7=0$" trace. Information paradox — [C] (unitarity [T], Gap description of the horizon — ansatz). Entropy $S_{\text{BH}}$ — [C under T-65, T-73, Wald]: leading term $A/(4G_N)$ [T] from Wald's formula + spectral action; Gap correction coefficient $c_{\mathrm{Gap}}$ explicitly computed [C under T-65, T-73, T-74] (§6.3). Lattice verification — [P].
 :::
 
 ---
@@ -88,7 +88,7 @@ The Gap functional integral $Z_N$ is finite for any $N$ (compactness of $(S^1)^{
 :::
 
 :::note Separation of two tasks
-Derivation of the manifold $M^4$ from the categorical structure — **[T]** ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)): commutativity of the macro-algebra + Gelfand–Connes reconstruction. Non-perturbative continuum limit of the partition function $\lim_{N\to\infty} Z_N$ — a separate task, remaining **[P]** (§7 below).
+Derivation of the manifold $M^4$ from the categorical structure — **[C]** ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек), at an aperiodic clock and the open reconstruction axioms of T-119): commutativity of the macro-algebra + Gelfand–Connes reconstruction. (An earlier version marked it [T]; lowered 2026-09-25.) Non-perturbative continuum limit of the partition function $\lim_{N\to\infty} Z_N$ — a separate task, remaining **[P]** (§7 below).
 :::
 
 ### Equivalence with Quantum Gravity
@@ -96,11 +96,23 @@ Derivation of the manifold $M^4$ from the categorical structure — **[T]** ([T-
 #### Theorem (Full spectral action of UHM) [T] {#теорема-полное-спектральное-действие}
 
 ::::tip Theorem 2.2 (Low-energy limit → Einstein–Hilbert action) [T]
-**Status [T]:** The full spectral triple $(A, H, D) = (C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4, S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})$, where $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is the finite triple from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка), satisfies Connes' axioms for spectral geometry. The manifold $M^4$ is **derived** from the categorical structure [T] ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)). The spectral action $S = \mathrm{Tr}(f(D_A/\Lambda)) + \frac{1}{2}\langle J\psi, D_A\psi\rangle$ reproduces the Einstein–Hilbert action + Standard Model.
+**Status [T]:** The full spectral triple $(A, H, D) = (C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4, S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})$, where $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is the finite triple from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка), is a spectral triple: $D$ is self-adjoint with compact resolvent and has bounded commutators with $A$. It is **not** a real spectral triple in Connes' sense — $H_{\text{int}} = \mathbb{C}^7$ carries no real structure of KO-dimension 6 ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)) — and the Einstein–Hilbert term below does not use one. (It read "satisfies Connes' axioms for spectral geometry" until 2026-09-25.) The manifold $M^4$ is assembled from the categorical structure only at T-120 [C] ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек): an aperiodic clock and the open reconstruction axioms of T-119); the Einstein–Hilbert term below holds on the product with any four-dimensional base. The spectral action $S = \mathrm{Tr}(f(D_A/\Lambda)) + \frac{1}{2}\langle J\psi, D_A\psi\rangle$ reproduces the Einstein–Hilbert action + Standard Model.
+
+:::warning Honest status of the Standard-Model part (2026-09-25)
+The Einstein–Hilbert term is not affected: it comes from the heat-kernel coefficient $a_2$ and sees the internal space only through $\mathrm{Tr}(I_{H_{\text{int}}}) = 7$ (Step 3). The words "+ Standard Model" are weaker than the [T] above, for three reasons.
+
+1. Step 1 takes $d_F = 6$ from T-53, but no real structure of KO-dimension 6 exists on $H_{\text{int}} = \mathbb{C}^7$ ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)); the Standard-Model content of a spectral action comes from Connes' $H_F$, which UHM imports ([bimodule construction, T-178](/docs/proofs/physics/bimodule-construction#бимодульная-конструкция), retracted as a derivation).
+2. The Higgs sector inherits a failed prediction. Under the "big desert" assumption Chamseddine, Connes and Marcolli obtained "a Higgs mass around 170 GeV" (*Adv. Theor. Math. Phys.* **11**, 991–1089 (2007), [arXiv:hep-th/0610241](https://arxiv.org/abs/hep-th/0610241)); CDF and D0 excluded a Standard-Model Higgs of 170 GeV at 95% C.L. in 2008 ([arXiv:0808.0534](https://arxiv.org/abs/0808.0534)), and the Higgs was found at 125 GeV (ATLAS and CMS, *Phys. Lett. B* **716**, 1 and 30 (2012)). At 125 GeV the quartic coupling turns negative at high energy, which, in Chamseddine and Connes's words, rules out the big desert and invalidates "the positivity of the coupling at unification which is an essential prediction of the spectral action".
+3. The rescue keeps a real singlet $\sigma$ strongly coupled to the Higgs and fits a free parameter $n(u)$ for every unification scale $u$, which gives "a one parameter family" of consistent models (*JHEP* **09**, 104 (2012), [arXiv:1208.1030](https://arxiv.org/abs/1208.1030)): consistency bought with a fitted parameter, not a prediction.
+
+So the gravitational sector stands as stated, while the Standard-Model sector is imported together with its boundary conditions at the unification scale and inherits this history.
+:::
 
 **Proof (5 steps).**
 
-**Step 1 (NCG axioms for the product triple).** By Connes' product theorem (Connes, 1996; Chamseddine–Connes, 1997): if $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is a finite spectral triple satisfying the NCG axioms with KO-dimension $d_F$, and $(C^\infty(M), L^2(M,S), D_M)$ is the spectral triple of a closed spin-manifold with KO-dimension $d_M = 4$, then the product $(C^\infty(M) \otimes A_{\text{int}},\; L^2(M,S) \otimes H_{\text{int}},\; D_M \otimes 1 + \gamma_5 \otimes D_{\text{int}})$ satisfies the NCG axioms with KO-dimension $d_M + d_F \pmod{8}$. For T-53 [T]: $d_F = 6$, total $4 + 6 = 10 \equiv 2 \pmod{8}$. First-order condition, real structure, orientation, Poincaré duality — satisfied automatically from the product theorem + verification of the finite triple ([T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка)).
+**Step 1 (The product is a spectral triple).** $D = D_M \otimes 1 + \gamma_5 \otimes D_{\text{int}}$ is self-adjoint with compact resolvent ($M$ closed, $H_{\text{int}}$ finite-dimensional), and for $a = f \otimes b$ the commutator $[D, a] = [D_M, f] \otimes b + \gamma_5 f \otimes [D_{\text{int}}, b]$ is bounded. Since $\gamma_5$ anticommutes with $D_M$, $D^2 = D_M^2 \otimes 1 + 1 \otimes D_{\text{int}}^2$ — the operator Steps 2–3 expand.
+
+*Retracted 2026-09-25:* this step invoked Connes' product theorem for real triples (Connes, 1996; Chamseddine–Connes, 1997) — "for T-53: $d_F = 6$, total $4 + 6 = 10 \equiv 2 \pmod 8$; first-order condition, real structure, orientation, Poincaré duality — satisfied automatically from the product theorem + verification of the finite triple". The product theorem needs a real finite triple, and $H_{\text{int}} = \mathbb{C}^7$ has none of KO-dimension 6: such a structure exchanges the $\chi = \pm1$ eigenspaces, which would then have equal dimension, and $7$ is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)).
 
 **Step 2 (Expansion of the spectral action).** By the Chamseddine–Connes formula (1996):
 
@@ -193,7 +205,7 @@ which changes by $\mathcal O(1)$ factor across reasonable choices of $f$. More i
 :::info $f$-independence of UHM-structural predictions [T]
 The following UHM predictions are **manifestly $f$-independent**:
 
-1. **Sector count**: $7 = \mathbf{1}_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]) — combinatorial.
+1. **Sector count**: $\mathbb{C}^7 = \mathbb{C}e_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ under $SU(3) \subset G_2$ — representation theory (Günaydın and Gürsey, 1973); the axis-labelled form $7 = \mathbf{1}_O \oplus \mathbf{3}_{A,S,D} \oplus \bar{\mathbf{3}}_{L,E,U}$ of T-48a is retracted [✗] (2026-09-25).
 2. **Fano contraction** $\alpha = 2/3$ (Corollary 2.1a [T]) — from replication number $r = 3$ in PG(2,2).
 3. **Critical purity** $P_\mathrm{crit} = 2/7$ (T-39a [T]) — from spectral optimization on $\mathbb{C}^7$.
 4. **Reflection threshold** $R_\mathrm{th} = 1/3$ (T-96 [T]) — from K=3 tripartite decomposition.
@@ -290,7 +302,7 @@ $$
 
 Newton's constant: $G_N = \frac{3\pi}{7 f_2 \Lambda^2}$, where the moment $a_2 = \mathrm{Tr}(D_{\text{int}}^{-2})$ is computed from the spectrum of the internal Dirac operator [T].
 
-**(b) Lovelock theorem (additional argument).** In 4D the unique covariant, metric, quasi-linear-in-second-derivatives action is the Einstein–Hilbert action with $\Lambda$-term [T as standard theorem]. Applicability to the emergent metric from coherences — **[C under T-120]**: T-120 [T] derives $M^4$ as a smooth 4-manifold with diffeoinvariance and metric tensor, which is precisely the condition of the Lovelock theorem.
+**(b) Lovelock theorem (additional argument).** In 4D the unique covariant, metric, quasi-linear-in-second-derivatives action is the Einstein–Hilbert action with $\Lambda$-term [T as standard theorem]. Applicability to the emergent metric from coherences — **[C under T-120]**: T-120 [C] assembles $M^4$ as a smooth 4-manifold with diffeoinvariance and metric tensor — at an aperiodic clock and the open reconstruction axioms of T-119 — which is precisely the condition of the Lovelock theorem.
 
 **Summary:** The spectral argument is **unconditional** (finite spectral triple T-53 [T]).
 
@@ -375,7 +387,7 @@ Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is renor
 
 **Step 2 ($G_2$ Ward identities).** The 14 generators of $G_2$ give 14 linear identities among the Green's functions. Of the 21 independent 4-point functions on $(S^1)^{21}$, the Ward identities leave only $21 - 14 = 7$ independent.
 
-**Step 3 ($\mathcal{N}=1$ SUSY suppression).** By Seiberg's non-renormalization theorems (1993): $\mathcal{N}=1$ SUSY forbids renormalization of the superpotential (holomorphy theorem), and D-terms receive only finite corrections. The residual vacuum contribution is suppressed by the **sector-product** scaling $\Lambda_{\text{residual}}\sim\varepsilon^{12}M_P^4$ (T-219 [T at T-64]). *(The earlier exact "$7-7=0$ bose–fermi trace" is **retracted [✗]** — a $\mathbb{Z}_2$-grading on the odd internal $\mathbb{C}^7$ cannot have trace $0$, and $\mathbf{14}\to\mathbf7\oplus\mathbf7$ does not exist since the $G_2$ adjoint is irreducible; see [Λ-budget Thm 4.4](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация). Holomorphy + compactness, not an exact trace, carry the finiteness argument.)*
+**Step 3 ($\mathcal{N}=1$ SUSY suppression).** By Seiberg's non-renormalization theorems (1993): $\mathcal{N}=1$ SUSY forbids renormalization of the superpotential (holomorphy theorem), and D-terms receive only finite corrections. The residual vacuum contribution is suppressed by the **sector-product** scaling $\Lambda_{\text{residual}}\sim\varepsilon^{12}M_P^4$ (T-219, a hypothesis [H] since 2026-09-25; it was cited here as [T at T-64]). *(The earlier exact "$7-7=0$ bose–fermi trace" is **retracted [✗]** — a $\mathbb{Z}_2$-grading on the odd internal $\mathbb{C}^7$ cannot have trace $0$, and $\mathbf{14}\to\mathbf7\oplus\mathbf7$ does not exist since the $G_2$ adjoint is irreducible; see [Λ-budget Thm 4.4](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация). Holomorphy + compactness, not an exact trace, carry the finiteness argument.)*
 
 **Step 4 (APS index).** The index of the Dirac operator on the compact space:
 

@@ -97,7 +97,7 @@ $$
 \mathrm{Tr}_A[(\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB})] = \mathrm{Tr}_A[\Gamma_{AB}] = \Gamma_B
 $$
 
-which guarantees that the regenerative term $\mathcal{R}$ [does not violate no-signalling](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). Any modification of $\varphi$ that violates the CPTP condition $\sum_m K_m^\dagger K_m = I$ potentially opens a channel for superluminal communication.
+which gives the **marginal identity**: regeneration of $A$ does not change $B$'s unconditioned reduced state [T]. It does not by itself give [no-signalling of the full dynamics](/docs/proofs/physics/physics-correspondence#запрет-сигнализации): with the Lüders update at a distant partner the nonlinear gate $g_V$ signals, and no-signalling holds only in the non-selective reading [C] ([§8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). (An earlier sentence said the CPTP property guarantees that $\mathcal{R}$ does not violate no-signalling; retracted.) Any modification of $\varphi$ that violates the CPTP condition $\sum_m K_m^\dagger K_m = I$ potentially opens a channel for superluminal communication.
 :::
 
 :::tip Physical Realisation — Resolved [T]

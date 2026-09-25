@@ -10,7 +10,7 @@ description: "Practical guide for cognitive engineers: vital indicators, decisio
 > — Hippocrates (paraphrased)
 
 :::tip Bridge from the Previous Chapter
-In the [previous chapter](./predictions) we formulated 23 unique predictions of CC — numerical, verifiable, falsifiable consequences of the theory. But a prediction without a diagnostic tool is like a recipe without a thermometer. How do we know that $P$ is approaching $P_{\text{crit}}$? That $\sigma_E$ is rising? That the death spiral has already been triggered? Diagnostics is the bridge between predictions and actions: it turns abstract theorems into practical decisions.
+In the [previous chapter](./predictions) we formulated 23 predictions of CC — 22 of them unique, 21 unique and numerical — verifiable, falsifiable consequences of the theory. But a prediction without a diagnostic tool is like a recipe without a thermometer. How do we know that $P$ is approaching $P_{\text{crit}}$? That $\sigma_E$ is rising? That the death spiral has already been triggered? Diagnostics is the bridge between predictions and actions: it turns abstract theorems into practical decisions.
 :::
 
 :::info Chapter Roadmap
@@ -723,7 +723,7 @@ Analysis conducted on 12 language corpora (BabyLM 100M, TinyStories, OpenWebMath
 
 ### 9.1 Sectoral Decomposition $7 = 1_O \oplus 3_{\{A,S,D\}} \oplus \bar{3}_{\{L,E,U\}}$ {#секторная-валидация}
 
-Theoretical prediction from [spacetime.md](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция) (T-52 [T]): the seven dimensions divide into a "light" sector $\{A,S,D\}$ ($3$-representation) and a "heavy" sector $\bar{3}_{\{L,E,U\}}$ with a bridge singlet $O$. In empirical σ-analysis of texts, the effective grouping differs: $O$ falls into the "heavy" cluster (high $\sigma_O$), and $U$ — into the "bridge" (intermediate $\sigma_U$). This reflects operational stress in the specific substrate (text), not the theoretical $G_2$-decomposition.
+Theoretical prediction from [spacetime.md](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция) (registry row 48a; the page cited it as T-52 [T]) — *retracted 2026-09-25: the axis triples are not $SU(3)$ sectors, so this is no longer a prediction and the comparison below tests an ansatz, not a theorem*: the seven dimensions divide into a "light" sector $\{A,S,D\}$ ($3$-representation) and a "heavy" sector $\bar{3}_{\{L,E,U\}}$ with a bridge singlet $O$. In empirical σ-analysis of texts, the effective grouping differs: $O$ falls into the "heavy" cluster (high $\sigma_O$), and $U$ — into the "bridge" (intermediate $\sigma_U$). This reflects operational stress in the specific substrate (text), not the theoretical $G_2$-decomposition.
 
 **Empirical results (means over 12 corpora):**
 

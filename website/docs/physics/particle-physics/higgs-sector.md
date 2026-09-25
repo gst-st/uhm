@@ -371,7 +371,7 @@ At $y_t \approx 1$ (quasi-IR fixed point [T]): RG brings $\lambda_4$ to the obse
 **Status:** [C] — $\lambda_4$ determined through spectrum $D_{\text{int}}$ + RG. Parameter $f_0$ is **canonically determined [T]** ([T-70](#теорема-f0-канонический)). The conditionality [C] remains only for the numerical value — depends on exact sectoral $\varepsilon_i$.
 
 :::info Cross-references
-- **Spectral triple:** [Theorem (UHM Spectral Triple) [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) — finite triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$, KO-dimension 6
+- **Spectral triple:** [Theorem (UHM Spectral Triple)](/docs/core/foundations/spacetime#теорема-спектральная-тройка) — finite triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$; its KO-dimension-6 claim is retracted: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка))
 - **Spectral action:** [Quantum Gravity](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) — $S = \mathrm{Tr}(f(D_A/\Lambda))$, Einstein equations [T]
 - **Unique vacuum:** [T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) — sectoral values $\varepsilon$
 :::
@@ -581,8 +581,7 @@ UHM forbids a second Higgs doublet. The categorical uniqueness that *selects* th
 
 **Theorem (no-2HDM).** In UHM there is exactly one condensing scalar channel — $\gamma_{EU}$. No second Higgs doublet (and hence no 2HDM spectrum $H^\pm, A^0, H^0$ of the MSSM type) exists.
 
-**Proof.** (i) Condensation requires the $\kappa_0$-channel: the vacuum theorem T-64 gives $\langle\gamma_{ij}angle 
-eq 0$ only for the pair singled out by $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$, whose morphism content is exactly $\mathrm{Hom}(O,E)\cdot\mathrm{Hom}(O,U)$ (T-42a). (ii) The only other $\bar 3$-pairs are $(L,E)$ and $(L,U)$; neither enters $\kappa_0$ ($\mathrm{Hom}(O,L)$ is absent from it), so neither acquires a VEV. (iii) By incidence ($\lambda=1$) the pair $(L,U)$ lies on the single line $\{D,L,U\}$, already exhausted as the Color-U Yukawa channel of the 2nd generation ([selection rules](/docs/physics/gauge-symmetry/fano-selection-rules)) — it is a mass channel, not a scalar sector. $\blacksquare$
+**Proof.** (i) Condensation requires the $\kappa_0$-channel: the vacuum theorem T-64 gives $\langle\gamma_{ij}\rangle \neq 0$ only for the pair singled out by $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$, whose morphism content is exactly $\mathrm{Hom}(O,E)\cdot\mathrm{Hom}(O,U)$ (T-42a). (ii) The only other $\bar 3$-pairs are $(L,E)$ and $(L,U)$; neither enters $\kappa_0$ ($\mathrm{Hom}(O,L)$ is absent from it), so neither acquires a VEV. (iii) By incidence ($\lambda=1$) the pair $(L,U)$ lies on the single line $\{D,L,U\}$, already exhausted as the Color-U Yukawa channel of the 2nd generation ([selection rules](/docs/physics/gauge-symmetry/fano-selection-rules)) — it is a mass channel, not a scalar sector. $\blacksquare$
 
 **Falsification.** Discovery of a charged Higgs $H^\pm$ or of a second CP-even/odd neutral scalar of doublet type at the LHC/HL-LHC would refute the categorical uniqueness of $(E,U)$ — i.e. strike at $\kappa_0$ itself, not at a peripheral fit. UHM stakes the entire class of 2HDM/MSSM Higgs sectors on this.
 
@@ -665,7 +664,7 @@ The full chain from axioms to $M_H$ consists of five links:
 
 | Link | Statement | Status | Dependency |
 |---|---|---|---|
-| (1) Spectral triple | $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ exists, KO-dim = 6 | **[T]** (T-53) | Axioms |
+| (1) Spectral triple | $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ exists **[T]** (T-53); "KO-dim = 6" is retracted — no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)) | **[T]** (T-53), without the real structure | Axioms |
 | (2) Spectral action | $S = \mathrm{Tr}(f(D_A/\Lambda))$ expands in Seeley–DeWitt series | **[T]** (T-65) | (1) |
 | (3) $f_0$ canonically determined | $f_0 = \Gamma_{\text{eff}} / (7\Lambda^4)$ through Gap theory vacuum | **[T]** (T-70) | (2) + unique vacuum T-64 [T] |
 | (4) $\lambda_4$ from $D_{\text{int}}$ + RG | $\lambda_4 = \frac{\pi^2}{2f_0\Lambda^4} \cdot \frac{\mathrm{Tr}(D_{\text{int}}^4)}{[\mathrm{Tr}(D_{\text{int}}^2)]^2}$, RG: $\Lambda \to v_{\text{EW}}$ | **[C]** | (3) + numerical $\varepsilon_i$ |
@@ -744,7 +743,7 @@ UHM determines the Higgs mass through chain (1)–(5), in which links (1)–(3) 
 - **Uniqueness of the Higgs line:** Foundation of the Fano selection rule → [Yukawa Mass Hierarchy](./yukawa-hierarchy.md)
 - **Three generations:** Generation line $\{A,S,L\}$ orthogonal to Higgs line → [Three Fermion Generations](./fermion-generations.md)
 - **CKM matrix:** Mismatch of $Y^u$ and $Y^d$ via conjugate Higgs → [CKM Matrix](./ckm-matrix.md)
-- **Spectral triple:** Finite $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ with KO-dimension 6 → [Spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T]
+- **Spectral triple:** Finite $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ → [Spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T]; the former "with KO-dimension 6" is retracted — no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка))
 - **Spectral action:** $S = \mathrm{Tr}(f(D/\Lambda))$, determines $\lambda_4$ → [Quantum Gravity](/docs/physics/gravity/quantum-gravity)
 - **Unique vacuum:** Sectoral values $\varepsilon$ from T-61 → [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]
 

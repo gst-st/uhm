@@ -7,7 +7,7 @@ description: Rigorous proof that standard quantum mechanics is a special case of
 # Reduction of UHM to Quantum Mechanics
 
 :::info Section Status
-All results in this section have the status **[T] Theorem** — strictly proved. Reduction to standard QM is one of the most formalized sections of the theory.
+In §1–§6, Theorem 3.1 (the evolution equation reduces to the von Neumann equation when the dissipator and the regenerator are switched off, $\kappa_0 \to 0$, $\gamma_k \to 0$), Theorem 3.4 and Theorem 1.1 carry **[T]**. Theorem 3.2, the category equivalence $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$, is retracted [✗] (§4.2), and the classification of Theorem 3.3 is a reading [I]. An earlier version of this box gave every result of §1–§6 the status [T]; that is retracted. §7 compares them with the reconstructions of quantum theory; its comparisons are interpretations [I].
 :::
 
 ## Contents
@@ -18,6 +18,7 @@ All results in this section have the status **[T] Theorem** — strictly proved.
 4. [Reduction Functor and Category Equivalence](#4-функтор-редукции)
 5. [Taxonomy of Physical Systems](#5-таксономия)
 6. [Time Discreteness and Page–Wootters](#6-дискретность-времени)
+7. [Precedents: Reconstructions of Quantum Theory](#7-прецеденты-реконструкции)
 
 ---
 
@@ -208,34 +209,22 @@ The functor $\pi_{\text{QM}}$ assigns to each Holon with $R \to 0$ a quantum-mec
 
 ### 4.2 The Equivalence Theorem
 
-:::tip [T] Theorem 3.2 (Category equivalence)
-The restriction $\pi_{\text{QM}}|_{\mathbf{Hol}_{R=0}}$ is a category equivalence:
+:::warning Retracted: Theorem 3.2 (Category equivalence $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$) [✗]
+An earlier version stated as [T] that the restriction $\pi_{\text{QM}}|_{\mathbf{Hol}_{R=0}}$ is an equivalence of categories $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$. That is false, and each step of its proof fails.
 
-$$
-\mathbf{Hol}_{R=0} \simeq \mathbf{QM}
-$$
+- **Essential surjectivity fails.** An equivalence must reach every object of $\mathbf{QM}$ up to isomorphism, and the isomorphisms of $\mathbf{QM}$ are unitaries, which preserve dimension and purity. $\mathbf{QM}$ contains systems of every dimension — a qubit, $\mathcal{H} = \mathbb{C}^2$ — and states of every purity — $I/7$, with $P = 1/7$. Objects of $\mathbf{Hol}$ are seven-dimensional coherence matrices with $P > 2/7$ ([Definition 12.1 (V)](/docs/proofs/categorical/categorical-formalism#категория-голономов-hol)), so neither the qubit nor $(\mathbb{C}^7, H, I/7)$ is isomorphic to any $\pi_{\text{QM}}(\mathbb{H})$. Under the master definition $R = 1/(7P) \geq 1/7$ of the [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) no holon has $R = 0$ at all, so $\mathbf{Hol}_{R=0}$ is empty.
+- **"At $R = 0$ CPTP channels degenerate to unitaries" is not justified.** Morphisms of $\mathbf{Hol}$ are CPTP channels that preserve viability and commute with self-modelling; nothing in that definition makes them unitary. The replacement channel $X \mapsto \mathrm{Tr}(X)\,\rho^*$ onto a fixed point $\rho^*$ of self-modelling meets both conditions and is not unitary; with no rule sending it to a unitary, $\pi_{\text{QM}}$ is not even defined on morphisms.
+- **Full faithfulness is not proven.** The proof asserts a bijection of hom-sets without constructing the functor on morphisms.
 :::
 
-*Proof:*
-
-**Step 1 (Full faithfulness).** Morphisms in $\mathbf{Hol}_{R=0}$ are unitary transformations. At $R = 0$ regeneration is absent, and CPTP channels degenerate to unitary ones. Therefore:
-
-$$
-\mathrm{Mor}_{\mathbf{Hol}_{R=0}}(\mathbb{H}_1, \mathbb{H}_2) \cong \mathrm{Mor}_{\mathbf{QM}}(\pi_{\text{QM}}(\mathbb{H}_1), \pi_{\text{QM}}(\mathbb{H}_2))
-$$
-
-The functor is fully faithful.
-
-**Step 2 (Essential surjectivity).** Any quantum-mechanical system $(\mathcal{H}, H, \rho_0)$ corresponds to an object of $\mathbf{Hol}_{R=0}$: this is the configuration $\Gamma = \rho_0$ with degenerate dynamics ($\mathcal{D} = 0$, $\mathcal{R} = 0$). For any $(\mathcal{H}, H, \rho_0) \in \mathrm{Ob}(\mathbf{QM})$ there exists $\mathbb{H} \in \mathrm{Ob}(\mathbf{Hol}_{R=0})$ such that $\pi_{\text{QM}}(\mathbb{H}) \cong (\mathcal{H}, H, \rho_0)$.
-
-**Step 3.** From full faithfulness and essential surjectivity it follows that $\pi_{\text{QM}}$ is a category equivalence. $\blacksquare$
+**What holds instead** [D]. Let $\mathbf{Hol}^{u}$ be the category whose objects are the objects of $\mathbf{Hol}$ with a chosen Hamiltonian and whose morphisms are the unitary conjugations between them. Sending $\mathbb{H}$ to $(\mathbb{C}^7, H_{\mathbb{H}}, \Gamma_{\mathbb{H}})$ identifies $\mathbf{Hol}^{u}$ with the full subcategory of $\mathbf{QM}$ on seven-dimensional systems with purity above $2/7$. This is an identification by definition, not a reduction: it says nothing about quantum systems of other dimension or lower purity, which make up most of $\mathbf{QM}$. The dynamical content of the reduction is Theorem 3.1.
 
 ### 4.3 Physical Meaning of the Equivalence
 
-:::info What $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$ means
-The category equivalence means that standard quantum mechanics is **exactly** contained in UHM as a special case at zero reflection. All results of QM automatically hold in UHM at $R = 0$.
+:::info What the reduction does and does not mean
+Theorem 3.1 shows that when the dissipator and the regenerator are switched off, the UHM equation is the von Neumann equation on $\mathcal{D}(\mathbb{C}^7)$. It does not show that standard quantum mechanics is contained in UHM: quantum systems of other dimensions, and seven-dimensional states with $P \leq 2/7$, are not holons. An earlier version of this box read the retracted Theorem 3.2 as "standard quantum mechanics is **exactly** contained in UHM as a special case at zero reflection; all results of QM automatically hold in UHM at $R = 0$"; that reading is retracted with it.
 
-New UHM effects (regeneration, self-modeling, consciousness) arise **only** at $R > 0$.
+New UHM effects (regeneration, self-modeling, consciousness) are the terms that Theorem 3.1 switches off.
 :::
 
 ### 4.4 Commutative Diagram
@@ -263,13 +252,15 @@ Key role of $\Omega$:
 
 ### 5.1 Classification by $R$ and the Structure of $\Omega$
 
-:::tip [T] Theorem 3.3 (Classification by $R$ and the structure of $\Omega$)
+:::tip [I] Theorem 3.3 (Classification by $R$ and the structure of $\Omega$)
 
 | Parameter $R$ | $\Omega$ Structure | Dynamics | Physical system |
 |---------------|--------------------|----------|-----------------|
 | $R = 0$ | Trivial (all $\chi_S$ defined) | $\frac{d\Gamma}{dt} = -i[H, \Gamma]$ | Unitary QM (quarks, leptons, bosons) |
 | $R \ll 1/3$ | Partially defined | $\frac{d\Gamma}{dt} = -i[H, \Gamma] + \mathcal{L}_\Omega[\Gamma]$ | Open QM (atoms in a medium) |
 | $R \geq 1/3$ | Reflexive ($\Omega$ models itself) | Full equation with $\mathcal{R}[\Gamma, E]$ | Living systems (cells, organisms) |
+
+Status [I]: under the master definition $R = 1/(7P) \in [1/7, 1]$ the row $R = 0$ describes no state of $\mathcal{D}(\mathbb{C}^7)$; the table reads $R$ as the quality of self-modelling and is a classification scheme, not a theorem. (An earlier header gave it [T]; retracted.)
 :::
 
 ### 5.2 Detailed Interpretation
@@ -377,13 +368,41 @@ $$
 
 ---
 
+## 7. Precedents: Reconstructions of Quantum Theory {#7-прецеденты-реконструкции}
+
+This page obtains quantum mechanics from UHM by switching off two terms of an evolution equation that is already written in the Hilbert-space formalism: the objects of the base category are density matrices on $\mathbb{C}^{42}$ ([Property 1](/docs/core/foundations/axiom-omega#свойство-1)), processes are CPTP channels, probabilities are traces. Since 2001 a separate line of research has done what UHM does not: it **derives** that formalism — complex Hilbert spaces, density matrices, unitary dynamics, the trace rule for probabilities — from requirements on how systems can be prepared, transformed and measured. These derivations are the relevant precedent for any claim that UHM "derives" quantum mechanics, and they bear on UHM in two ways, both stated in §7.2.
+
+They work inside **generalized probabilistic theories** (GPTs): a state is simply the list of outcome probabilities for a fixed set of measurements, and a theory is specified by which states, transformations and measurements it allows. Classical probability theory and quantum theory are two such theories; a **reconstruction** is a theorem that picks out quantum theory among all of them from a few physical requirements.
+
+### 7.1 The reconstructions {#71-реконструкции}
+
+- **Hardy (2001).** L. Hardy, "Quantum theory from five reasonable axioms", arXiv:quant-ph/0101012. A system is characterised by two integers: $K$, the number of probabilities needed to fix a state, and $N$, the largest number of states that can be told apart in a single shot. From five axioms — probabilities as limits of relative frequencies; *simplicity* ($K$ is the smallest function of $N$ consistent with the other axioms); *subspaces* (a system confined to $M$ of its $N$ distinguishable states behaves as a system with $N = M$); *composite systems* ($N_{AB} = N_A N_B$, $K_{AB} = K_A K_B$); *continuity* (a continuous reversible transformation connects any two pure states) — Hardy derives $K = N^r$ with $r$ a positive integer and then $r = 2$, which is complex quantum theory. Dropping the single word "continuous" leaves classical probability theory, with $K = N$.
+- **Dakić and Brukner (2011).** B. Dakić, Č. Brukner, "Quantum theory and beyond: is entanglement special?", in *Deep Beauty: Understanding the Quantum World through Mathematical Innovation*, ed. H. Halvorson, Cambridge University Press 2011, pp. 365–392, doi:10.1017/CBO9780511976971.011, arXiv:0911.0695. Three axioms — all systems that carry at most one bit are equivalent; the state of a composite system is fixed by measurements on its parts; any two pure states are connected by a reversible transformation — reconstruct classical probability theory and quantum theory, and continuity of the transformation separates quantum theory. A by-product: no other probabilistic theory can have entanglement without breaking one of the axioms.
+- **Masanes and Müller (2011).** Ll. Masanes, M. P. Müller, "A derivation of quantum theory from physical requirements", *New J. Phys.* **13**, 063001 (2011), arXiv:1004.1483. Five requirements — *finiteness* (a system with two distinguishable states has a finite-dimensional state space), *local tomography* (the state of a composite is fixed by the statistics of measurements on its parts), *equivalence of subspaces*, *symmetry* (every pure state can be reversibly mapped to every other), *all measurements allowed* — are met by exactly two theories, classical probability theory and quantum theory; requiring the reversible transformations to be continuous leaves quantum theory alone. The three-dimensionality of the qubit's Bloch ball gets a group-theoretic explanation.
+- **Chiribella, D'Ariano and Perinotti (2011).** G. Chiribella, G. M. D'Ariano, P. Perinotti, "Informational derivation of quantum theory", *Phys. Rev. A* **84**, 012311 (2011), arXiv:1011.6451. Five informational principles — causality, perfect distinguishability, ideal compression, local distinguishability, pure conditioning — define a class of theories; one further postulate, **purification** (every mixed state is the marginal of a pure state of a larger system, unique up to a reversible transformation of the added system), singles out finite-dimensional quantum theory, derived without assuming the Hilbert-space framework.
+- **The seven-dimensional case with $G_2$ (2013–2021).** In these reconstructions the elementary system — the analogue of a bit — has a Euclidean ball as its state space, and the requirement that any pure state be reachable from any other by a reversible transformation makes its symmetry group transitive on the boundary sphere. For odd ball dimension $d \neq 7$ that group must be $SO(d)$; for $d = 7$ it may also be the exceptional group $G_2$, transitive on $S^6$. This is the one place where the octonionic structure used by UHM appears in the reconstruction literature, and it has been examined and set aside. B. Dakić and Č. Brukner ("The classical limit of a physical theory and the dimensionality of space", in *Quantum Theory: Informational Foundations and Foils*, eds. G. Chiribella, R. W. Spekkens, Springer 2016, arXiv:1307.3984, §VI.C) showed that the unique $G_2$-invariant tensor — the octonionic structure constants $\psi_{ijk}$, nonzero exactly on the seven Fano triples — couples the system to a classical field through generators outside $\mathfrak{g}_2$, so the dynamics leaves $G_2$ and would have to be $SO(7)$, a case they had already excluded. Ll. Masanes, M. P. Müller, D. Pérez-García and R. Augusiak ("Entanglement and the three-dimensionality of the Bloch ball", *J. Math. Phys.* **55**, 122203 (2014), arXiv:1111.4060, §IV.I) proved that two such systems with local group $G_2$ admit no interacting dynamics, hence no entanglement. M. P. Müller's review calls the $d = 7$ ball with $G_2$ "a curious special case", ruled out for two systems, and leaves open whether a post-quantum $G_2$-related theory exists for three or more (lecture notes cited under *Standing* below, §4.2).
+- **Höhn (2017).** P. A. Höhn, "Toolbox for reconstructing quantum theory from rules on information acquisition", *Quantum* **1**, 38 (2017), arXiv:1412.8323; the many-qubit case is completed in P. A. Höhn, C. S. M. Wever, "Quantum theory from questions", *Phys. Rev. A* **95**, 012102 (2017), arXiv:1511.01130. An observer interrogates a system with yes/no questions; four rules — a limit on the information available, the existence of complementary information, conservation of the total information between interrogations, and continuous evolution of the observer's knowledge — give the Bloch ball of a qubit (and the disc of a rebit, which an extra rule removes), with unitary time evolution.
+
+**Standing.** These are accepted theorems within the GPT framework; what the field discusses is which requirements are physically compelling. Dakić and Brukner, for instance, note that most earlier attempts either fall short of deriving the theory uniquely or rest on abstract assumptions that themselves need physical motivation (2011, abstract), and Masanes and Müller replaced Hardy's simplicity axiom by their fifth requirement (2011, §I). M. P. Müller's lecture notes review the framework and a reconstruction from tomographic locality, continuous reversibility and the subspace axiom ("Probabilistic theories and reconstructions of quantum theory", *SciPost Phys. Lect. Notes* **28** (2021), arXiv:2011.01286).
+
+### 7.2 What the reconstructions mean for UHM {#72-что-реконструкции-значат-для-угм}
+
+The four points below are interpretive comparisons [I]; each names the corpus statement it rests on.
+
+1. **UHM posits what the reconstructions derive.** The corpus says so itself. Its epistemic audit names the quantum posit (QG) — "that the states of reality form a quantum state space (density operators on a Hilbert space)" — as one of the two inputs UHM does not derive, and adds that reconstruction programmes could relocate (QG) to weaker operational axioms but cannot remove a first posit ([epistemic vertical, §8](/docs/reference/epistemic-vertical#края)); T-190 derives the axioms A1–A5 *from* (AP)+(PH)+(QG)+(V) together with MaxEnt, with (QG) among the premises. Nothing on this page derives complex numbers, the trace rule or the tensor product: Theorem 3.1 removes $\mathcal{D}$ and $\mathcal{R}$ from an equation that already contains $-i[H_{\mathrm{eff}}, \Gamma]$, and the retracted Theorem 3.2 compared two categories that are both built from Hilbert spaces. "Reduction" in the title therefore means that standard quantum mechanics is a regime of UHM, not that UHM produces it. The reconstructions are not rivals of this page; they are the step that would have to come before it, and that step is not in the corpus.
+2. **The regime $R > 0$ lies outside every reconstructed theory.** Each reconstruction starts from the operational meaning of a mixture: if a preparation is a coin-flip mixture of two preparations, it cannot matter whether the outcome of the coin is forgotten before or after a transformation, so every transformation acts affinely on states, $T(q\rho_1 + (1-q)\rho_2) = qT(\rho_1) + (1-q)T(\rho_2)$ (Hardy 2001, Eqs. (41)–(46); Masanes and Müller 2011, §II C). The regenerative term of UHM is not affine in $\Gamma$ — it is weighted by $\kappa(\Gamma)$ and $g_V(P(\Gamma))$ ([evolution, §3](/docs/core/dynamics/evolution#3-регенеративный-член)) — so the full UHM dynamics violates the requirement from which the reconstructions start. A no-go theorem makes the stake explicit: C. Simon, V. Bužek and N. Gisin showed that if states are described in Hilbert space, outcome probabilities follow the trace rule and superluminal signalling is impossible, then the dynamics must be linear and completely positive on density matrices ("The no-signaling condition and quantum dynamics", *Phys. Rev. Lett.* **87**, 170405 (2001), arXiv:quant-ph/0102125). The corpus meets the nonlinearity question with the statement that its evolution depends on $\Gamma$ alone ([ensemble independence](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)); that statement does not answer this theorem, because a map can depend on $\Gamma$ alone and still fail to be affine. This collision is not yet answered in the corpus.
+3. **Where UHM goes further.** Nowhere in the domain of the reconstructions: no corpus theorem improves on a reconstruction theorem. UHM's specific content — the dimension seven, the Fano form of the dissipator — lies downstream of (QG) and concerns which quantum system is meant, not why the theory is quantum.
+4. **UHM's seven and $G_2$ are not the rejected $d = 7$ ball.** The case set aside in §7.1 is a seven-dimensional *state space* of an elementary system, a Bloch ball with boundary $S^6$. The state space of a holon is $\mathcal{D}(\mathbb{C}^7)$ — a quantum seven-level system with pure states $\mathbb{CP}^6$ and 48 real parameters — on which $G_2 \subset SO(7) \subset U(7)$ acts as a symmetry inside ordinary quantum theory. Those results therefore do not refute UHM. What they show is that when the combination "seven, $G_2$, Fano triples" was tried as the foundation of a probabilistic theory, it failed — one more reason why UHM's use of it has to stay downstream of the quantum posit (QG), as point 1 says.
+
+---
+
 ## Summary Table of Results
 
 | Theorem | Statement | Status |
 |---------|-----------|--------|
 | **T.3.1** | Reduction to the Schrödinger equation at $R \to 0$ | [T] Proved |
-| **T.3.2** | Category equivalence $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$ | [T] Proved |
-| **T.3.3** | Classification of systems by $R$ and $\Omega$ | [T] Proved |
+| **T.3.2** | ~~Category equivalence $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$~~ | [✗] Retracted (§4.2); replaced by an identification by definition [D] |
+| **T.3.3** | Classification of systems by $R$ and $\Omega$ | [I] Classification scheme (the row $R = 0$ is empty under $R = 1/(7P)$) |
 | **T.3.4** | Discreteness of internal time $\tau \in \mathbb{Z}_N$ | [T] Proved |
 | **T.1.1** | Functoriality of the forgetful functor $\mathcal{U}: \mathbf{Hol} \to \mathbf{DensityMat}$ | [T] Proved |
 

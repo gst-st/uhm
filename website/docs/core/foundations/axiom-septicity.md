@@ -31,11 +31,11 @@ The conditions (AP)+(PH)+(QG)+(V) are **not an independent axiom** but **charact
 :::info Full axiomatic closure — T-190 extends (AP+PH+QG+V) with (MaxEnt)
 For **local theorem work**—Theorem S (N ≥ 7), Bridge T-15, regeneration $\kappa$, threshold derivations—the 4-tuple **(AP)+(PH)+(QG)+(V)** is sufficient and used throughout this chapter.
 
-For the **global self-grounding claim** (UHM has zero independent axioms), one additional characterizing principle is required:
+For the **global self-grounding claim** (UHM has zero independent axioms — conditional since 2026-09-25: the Page–Wootters constraint stays an assumption, see T-190), one additional characterizing principle is required:
 
 - **(MaxEnt) Maximum entropy**—Jaynes 1957: among monotone quantum metrics the Bures metric is the unique one induced by maximum-entropy covariance (T-189 [T], Char-IV of T-187 [T]).
 
-With the extended 5-tuple **(AP)+(PH)+(QG)+(V)+(MaxEnt)**, theorem **[T-190 [T] Axiomatic Closure](/docs/proofs/categorical/cohesive-closure#теорема-аксиоматическое-замыкание)** promotes all five axioms A1–A5 to theorems. (MaxEnt) enters only through A2 (Bures) via T-189; it does **not** change any preconditions of individual theorems stated below. The 4-tuple remains the working characterization; the 5-tuple is the closure-level characterization.
+With the extended 5-tuple **(AP)+(PH)+(QG)+(V)+(MaxEnt)**, theorem **[T-190 [C] Axiomatic Closure](/docs/proofs/categorical/cohesive-closure#теорема-аксиоматическое-замыкание)** derives the axioms A1–A5 under two conditions — the Page–Wootters constraint is assumed (T-87, step 4) and the cohesive route to A1 is a hypothesis (T-186(a)); an earlier wording, "promotes all five axioms A1–A5 to theorems", is retracted. (MaxEnt) enters only through A2 (Bures) via T-189; it does **not** change any preconditions of individual theorems stated below. The 4-tuple remains the working characterization; the 5-tuple is the closure-level characterization.
 :::
 
 :::info Axiom (AP+PH+QG+V)
@@ -525,7 +525,7 @@ $$
 \sum_{\ell=1}^{7} \mathrm{Coh}_\ell(\Gamma) = \frac{3\,P_{\mathrm{diag}} + 5\,P_{\mathrm{coh}}}{P} = 5 - \frac{2}{1+\Phi},
 $$
 
-which equals $3$ **only** for diagonal $\Gamma$ ($\Phi=0$) and rises toward $5$ as $\Phi\to\infty$. This gives a clean operational witness for the L2 integration threshold:
+which equals $3$ **only** for diagonal $\Gamma$ ($\Phi=0$) and rises with $\Phi$. On $\mathcal{D}(\mathbb{C}^7)$ the integration measure is bounded, $\Phi \leq 7P - 1 \leq 6$ ([interiority hierarchy, Definition 2.4](/docs/proofs/consciousness/interiority-hierarchy)), with $\Phi = 6$ exactly for pure states with a uniform diagonal, so the sum never exceeds $5 - \tfrac27 = \tfrac{33}{7} \approx 4.714$. (It read "rises toward $5$ as $\Phi\to\infty$" until 2026-09-25; in dimension 7 the measure $\Phi$ does not grow without bound.) This gives a clean operational witness for the L2 integration threshold:
 
 $$
 \Phi \geq 1 \iff \sum_{\ell=1}^{7}\mathrm{Coh}_\ell(\Gamma) \geq 4. \qquad \textbf{[T]}
@@ -758,11 +758,11 @@ Only L0–L2 appear here. The full interiority ladder L0→L4 (including L3—ne
 
 **Links to thresholds:**
 - L0 → L1: need $\mathrm{rank}(\rho_E) \geq 2$ (differentiated experience)
-- L1 → L2: need triple threshold ($R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$)—all three **derived** as [T] (see [below](#пороги-l2-строгий-вывод))
+- L1 → L2: need triple threshold ($R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$) — $R$ and $\Phi$ **derived** as [T], $D \geq 2$ an independent threshold [D] (see [below](#пороги-l2-строгий-вывод); it read "all three derived as [T]" until 2026-09-25)
 - L2 → L3: need gap entanglement between holons ($I(\mathbb{H}_1:\mathbb{H}_2) > 0$)
 :::
 
-### L2 thresholds: mathematical theorems [T] {#пороги-l2-строгий-вывод}
+### L2 thresholds: three theorems [T] and one independent threshold [D] {#пороги-l2-строгий-вывод}
 
 :::tip Status of L2 thresholds
 | Threshold | Value | Status | Ground |
@@ -770,7 +770,7 @@ Only L0–L2 appear here. The full interiority ladder L0→L4 (including L3—ne
 | $P_{\text{crit}}$ | $2/7$ | **[T]** | Noise distinguishability in $d_B$ ([proof](/docs/proofs/dynamics/theorem-purity-critical)) |
 | $R_{\text{th}}$ | $1/3$ | **[T]** | $K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + [Bayesian dominance](#теорема-порог-рефлексии) |
 | $\Phi_{\text{th}}$ | $1$ | **[T]** | Unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129), [derivation](#теорема-порог-интеграции)) |
-| $D_{\min}$ | $2$ | **[T]** | Consequence of $\Phi_{\text{th}} = 1$ ([T-151](/docs/proofs/consciousness/substrate-closure#t-151), [proof](#теорема-порог-дифференциации)) |
+| $D_{\min}$ | $2$ | **[D]** | Independent L2 threshold — **not** a consequence of $\Phi_{\text{th}} = 1$ (counterexample $\Phi \approx 1.03$, $D_{\text{diff}} \approx 1.42$); the independence of the four thresholds is T-124b, and $D_{\text{diff}} \geq 2$ holds on the embodied attractor ([T-151](/docs/proofs/consciousness/substrate-closure#t-151), [section](#теорема-порог-дифференциации)). It read "[T] — consequence of $\Phi_{\text{th}} = 1$" until 2026-09-25 |
 :::
 
 $$
@@ -927,28 +927,18 @@ The theorem narrows [I] in $R = P(H_1)$: monotonicity of $R$ vs $P_{\text{opt}}(
 
 ---
 
-### Theorem (differentiation threshold $D_{\min} = 2$) {#теорема-порог-дифференциации}
+### Differentiation threshold $D_{\min} = 2$: an independent L2 condition {#теорема-порог-дифференциации}
 
-:::tip Theorem [T] ($D_{\min}$ from $\Phi_{\text{th}}$)
-Differentiation threshold $D_{\min} = 2$ **follows** from $\Phi \geq 1$ [T] (T-129, [T-151](/docs/proofs/consciousness/substrate-closure#t-151)).
+:::warning Retracted [✗] (2026-09-25): "$D_{\min} = 2$ follows from $\Phi \geq 1$"
+This section stated a theorem [T]: "Differentiation threshold $D_{\min} = 2$ **follows** from $\Phi \geq 1$ (T-129, T-151)", read as "an integrated system automatically has at least one bit of phenomenal differentiation". The derivation was retracted on the [T-151 page](/docs/proofs/consciousness/substrate-closure#t-151) on 2026-07-09 and is retracted here: $\Phi \geq 1$ bounds only the **total** off-diagonal mass, not the E-row share. Counterexample: uniform diagonal $\gamma_{kk} = 1/7$, coherence $0.07$ on the 15 pairs without E — $P \approx 0.290$, $R \approx 0.49$, $\Phi \approx 1.03$, yet in the 7D reading of T-128 $D_{\text{diff}} = 1 + 6\,\mathrm{Coh}_E \approx 1.42 < 2$. The former proof failed at step 1, which read the total coherence $\Phi$ as a statement about the spectrum of $\rho_E$, and at step 2: two significant components do not give $D_{\text{diff}} = 2$ — the spectrum $(0.9, 0.1)$ has $D_{\text{diff}} \approx 1.38$.
 :::
+
+What stands (T-151): $D_{\min} = 2$ is one of the **four independent** L2 thresholds — definitional [D], with the independence of the four proved in T-124b; $\Phi \geq 1$ gives $D_{\text{diff}} > 1$ whenever the E-row is coherent; on the embodied attractor $D_{\text{diff}} \geq 2$.
 
 **Definition:**
 $$D_{\text{diff}} := \exp(S_{vN}(\rho_E))$$
 
 where $S_{vN}(\rho_E) = -\text{Tr}(\rho_E \log \rho_E)$ is von Neumann entropy of phenomenal content.
-
-**Proof:**
-
-1. For $\Phi > 1$ the spectrum of $\rho_E$ has **at least two** significant components (otherwise coherence sits in one dimension and $\Phi = 0$).
-
-2. Minimal nontrivial spectrum: $\lambda = (1/2, 1/2, 0, \ldots)$
-
-3. Then $S_{vN} = -2 \cdot \frac{1}{2} \log \frac{1}{2} = \log 2$
-
-4. Hence $D_{\text{diff}} = \exp(\log 2) = 2$ ∎
-
-**Interpretation:** $D_{\min} = 2$ is not independent—it **follows** from integration ($\Phi \geq 1$). An integrated system automatically has at least one bit of phenomenal differentiation.
 
 ---
 
@@ -961,7 +951,7 @@ This is the **single source of truth** for all UHM thresholds. Other documents s
 - $P_{\text{crit}} = 2/7 \approx 0.286$ — [proof](#критическая-чистота-теорема)
 - $R_{\text{th}} = 1/3 \approx 0.333$ — [proof](#теорема-порог-рефлексии)
 - $\Phi_{\text{th}} = 1$ — [theorem [T]](#теорема-порог-интеграции) (T-129)
-- $D_{\min} = 2$ — [theorem [T]](#теорема-порог-дифференциации) (T-151)
+- $D_{\min} = 2$ — [independent L2 threshold [D]](#теорема-порог-дифференциации) (T-151, T-124b; it read "theorem [T]" until 2026-09-25)
 - $C_{\text{th}} = 1/3 \approx 0.33$ — [combined](#комбинированный-порог-сознательности) ([T], T-140)
 :::
 
@@ -974,7 +964,7 @@ The triple $(P_{\text{crit}}, R_{\text{th}}, \Phi_{\text{th}})$ is **complete**:
 | $R_{\text{th}}$ | State vs. self-model | Bayesian dominance | $1/3$ |
 | $\Phi_{\text{th}}$ | Whole vs. parts | $P_{\text{coh}} \geq P_{\text{diag}}$ | $1$ |
 
-Any other threshold (e.g. $D_{\min}$) either follows from these three or lies outside core UHM structure.
+~~Any other threshold (e.g. $D_{\min}$) either follows from these three or lies outside core UHM structure.~~ Retracted [✗] (2026-09-25): $D_{\min} = 2$ does neither — it does not follow from the three (T-151) and it is one of the four independent L2 conditions (T-124b). The triple is complete for the three distinguishability tests in the table, not for L2.
 :::
 
 **Threshold ordering:**
@@ -1060,21 +1050,21 @@ $$
 $$
 :::
 
-:::tip Structural octonion derivation (Track B)—[T]
-Aside from Theorem S, $N = 7$ has a **second route** via division algebras:
-- **[T] P1:** state space ≅ Im($\mathcal{A}$), $\mathcal{A}$ division (via bridge T15 [T])
-- **[T] P2:** $\mathcal{A}$ nonassociative (via bridge T15 [T])
+:::tip Structural octonion derivation (Track B)—[C at (Alt)]
+Aside from Theorem S, $N = 7$ has a **second route** via division algebras (not an independent count: step T8 of the chain takes $N = 7$ from Theorem S):
+- **[C at (Alt)] P1:** state space ≅ Im($\mathcal{A}$), $\mathcal{A}$ division (via bridge T15, [C at (Alt)])
+- **[C at (Alt)] P2:** $\mathcal{A}$ nonassociative (via bridge T15, [C at (Alt)])
 - **[T] Hurwitz** → $\mathcal{A} = \mathbb{O}$ → $N = 7$
 
-Bridge (AP)+(PH)+(QG)+(V) → P1+P2—[full chain T1–T16, **all 12 steps [T]**](../../proofs/minimality/theorem-octonionic-derivation#мост). (T16/PID relabeled [D] in A1+A2; numerics unchanged.)
+Bridge (AP)+(PH)+(QG)+(V) → P1+P2—[full chain T1–T16](../../proofs/minimality/theorem-octonionic-derivation#мост): the steps up to the design PG(2,2) are [T], the step PG(2,2) → $\mathbb{O}$ needs an orientation of the seven lines, and only 16 of the 128 orientations give a normed algebra (registry row 41n). (T16/PID relabeled [D] in A1+A2; numerics unchanged.) Until 2026-09-25 this box read "[T]" and "all 12 steps [T]".
 
 [Full derivation →](../../proofs/minimality/theorem-octonionic-derivation)
 :::
 
-### Bridge to P1+P2 [T]—closed (Theorem T15) {#мост-p1p2}
+### Bridge to P1+P2 [C at (Alt)] (Theorem T15) {#мост-p1p2}
 
-:::tip Bridge: [T] fully closed
-$(AP)+(PH)+(QG)+(V) \Longrightarrow P1+P2$ via a **12-step formal chain** (Theorems T1–T16), **all [T]** (T16/PID is [D] in A1+A2). Legacy condition (MP) is removed—it is now theorem (T11–T13: Choi rank + L-unification + forced BIBD).
+:::tip Bridge: [C at (Alt)] — closed up to the orientation of the Fano lines
+$(AP)+(PH)+(QG)+(V) \Longrightarrow P1+P2$ via a **12-step formal chain** (Theorems T1–T16; T16/PID is [D] in A1+A2): the steps up to BIBD$(7,3,1)$ = PG(2,2) are [T]; the step PG(2,2) → $\mathbb{O}$ needs the orientation input (Alt) — only 16 of the 128 orientations make the multiplication alternative, equivalently normed (`test_only_16_of_128_fano_orientations_are_normed`, registry row 41n). Legacy condition (MP) is removed—it follows from T11–T13 (Choi rank + L-unification + forced BIBD). Until 2026-09-25 the heading and this box read "[T] fully closed … all [T]".
 :::
 
 **Full chain (Theorem T15):**
@@ -1088,7 +1078,7 @@ $$
 $$
 
 $$
-\xrightarrow{[\text{T}]} \text{BIBD}(7,3,1) = \text{PG}(2,2) \xrightarrow{[\text{T}]} \mathbb{O} \xrightarrow{[\text{T}]} G_2 \xrightarrow{[\text{T}]} P1 + P2
+\xrightarrow{[\text{T}]} \text{BIBD}(7,3,1) = \text{PG}(2,2) \xrightarrow{\text{(Alt)}} \mathbb{O} \xrightarrow{[\text{T}]} G_2 \xrightarrow{[\text{T}]} P1 + P2
 $$
 
 | Step | Implication | Status |
@@ -1102,20 +1092,20 @@ $$
 | 7 | Choi rank = 7 ⇒ $b \geq 7$ | **[T]** Theorem T11 |
 | 8 | $b=7, k=3, v=7$, contraction $1/3$ ⇒ BIBD$(7,3,1)$ | **[T]** Theorem T13 |
 | 9 | $(7,3,1)$-BIBD ≅ PG(2,2) | **[T]** Hall 1967 |
-| 10–12 | PG(2,2) → $\mathbb{O}$ → $G_2$ → P1+P2 | **[T]** standard algebra |
+| 10–12 | PG(2,2) → $\mathbb{O}$ → $G_2$ → P1+P2 | **[C at (Alt)]** for step 10 (the orientation of the lines is an input); $\mathbb{O}$ → $G_2$ → P1+P2 is standard algebra [T] |
 
-**Cascade:** P1, P2 — **[T]**. Track B — **[T]**. $G_2$, Fano PG(2,2), Hamming $H(7,4)$, double extremality — **[T]**.
+**Cascade:** P1, P2 — **[C at (Alt)]**. Track B — **[C at (Alt)]**. Fano PG(2,2) and Hamming $H(7,4)$ as combinatorics — **[T]** (steps 1–9); $G_2 = \mathrm{Aut}(\mathbb{O})$ and the maximality half of the double extremality (via Track B) — at (Alt). The cascade read "all [T]" until 2026-09-25.
 
 More: [Lindblad operators](../../core/operators/lindblad-operators#редукция-моста), [Octonionic derivation](../../proofs/minimality/theorem-octonionic-derivation#мост).
 
-:::info $G_2$ gauge structure from axioms [T]
-Closing T15 yields $(AP)+(PH)+(QG)+(V) \Rightarrow \mathbb{O} \Rightarrow G_2 = \text{Aut}(\mathbb{O})$. [$G_2$ rigidity](../../proofs/categorical/uniqueness-theorem) proves more:
+:::info $G_2$ gauge structure from axioms [C at (Alt)]
+Closing T15 yields $(AP)+(PH)+(QG)+(V) \Rightarrow \mathbb{O} \Rightarrow G_2 = \text{Aut}(\mathbb{O})$, with the orientation of the Fano lines as input (Alt); given $\mathbb{O}$, the statements below are theorems (the heading read [T] until 2026-09-25). [$G_2$ rigidity](../../proofs/categorical/uniqueness-theorem) proves more:
 
-**Lemma G4 [T]:** $G_2$ is the **largest** subgroup of $U(7)$ preserving the octonionic 3-form $\varphi_3$; the remaining axiomatic data $(\mathcal{D}_\Omega, \mathcal{R}, \kappa_0, \text{PW})$ are frame data, preserved only by the finite frame group $\Gamma_{\!\text{oct}} \subset G_2$ ([frame decision D-0910](../../proofs/categorical/uniqueness-theorem#g2-ригидность)).
+**Lemma G4 [T]:** the **largest** subgroup of $U(7)$ preserving the octonionic 3-form $\varphi_3$ is $G_2 \times \mu_3$, and the scalars $\mu_3$ ($\omega^3 = 1$) act trivially on states, so on states it is $G_2$ (it read "$G_2$ is the largest subgroup" until 2026-09-25); the remaining axiomatic data $(\mathcal{D}_\Omega, \mathcal{R}, \kappa_0, \text{PW})$ are frame data, preserved only by the finite frame group $\Gamma_{\!\text{oct}} \subset G_2$ ([frame decision D-0910](../../proofs/categorical/uniqueness-theorem#g2-ригидность)).
 
 **Consequences:**
 - Kinematic orbit space $\mathcal{D}(\mathbb{C}^7)/G_2$: $\dim = 48 - 14 = 34$; physical state space $\mathcal{D}(\mathbb{C}^7)/\Gamma_{\!\text{oct}}$: 48 parameters (D-0910)
-- $P$, $R$ are $G_2$-invariant; $\Phi$, $\text{Coh}_E$, $\kappa$ are frame-pinned observables (invariant under $\Gamma_{\!\text{oct}}$)
+- $P$, $R$ are $G_2$-invariant; $\Phi$, $\text{Coh}_E$, $\kappa$ are frame-pinned observables: $\Phi$ is invariant under the whole $\Gamma_{\!\text{oct}}$, $\text{Coh}_E$ only under its $192$ elements that keep the $E$-axis, $\kappa$ only under the elements that keep the axes it references (the line read "invariant under $\Gamma_{\!\text{oct}}$" for all three until 2026-09-25)
 - Inverse problem: $\Gamma(0)$ recoverable from trajectory (Picard–Lindelöf on compact $\mathcal{D}(\mathbb{C}^7)$)
 :::
 
@@ -1240,11 +1230,11 @@ $$
 5. **(V):** Viability means $P > P_{\text{crit}} = 2/7$
 6. **Theorem S:** Minimal dimension is 7
 7. **Uniqueness theorem:** Basis $\{A,S,D,L,E,O,U\}$ is unique **[T]** (A,S,D,L,U algebraically; E,O via $\kappa_0$ and functional independence; [proof](/docs/proofs/minimality/theorem-minimality-7#единственность-e))
-8. **Thresholds (all [T])**:
+8. **Thresholds** (three [T]; $D_{\min}$ an independent threshold [D]):
    - $P_{\text{crit}} = 2/7$—noise distinguishability (Frobenius) **[T] proved**
    - $R_{\text{th}} = 1/3$—Bayesian dominance at $K = 3$ **[T]** ($K = 3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция))
    - $\Phi_{\text{th}} = 1$—coherent dominance **[T]** (T-129: unique self-consistent value)
-   - $D_{\min} = 2$—consequence of $\Phi_{\text{th}} = 1$ **[T]** (T-151)
+   - $D_{\min} = 2$—independent L2 threshold **[D]** (T-151, T-124b; it read "consequence of $\Phi_{\text{th}} = 1$ [T]" until 2026-09-25)
    - $C_{\text{th}} = 1/3$—product $\Phi_{\text{th}} \times R_{\text{th}}$ **[T]** (T-140; $D_{\text{diff}}$ is separate for $V$, not in $C$)
 :::
 

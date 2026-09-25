@@ -804,7 +804,7 @@ The problem: $R$ depends on $\varphi(\Gamma)$, but $\varphi$ requires $R$ to def
 
 1. $\kappa_{\mathrm{bootstrap}} = \omega_0/N = 1/7$ — minimal regeneration **without** knowledge of $\rho^*$ (T-59 [T])
 2. At initialisation: $\rho^{(0)}_* = I/7$ (trivial self-model)
-3. Iteration: $\rho^{(n+1)}_* = \varphi(\Gamma^{(n)})$ — exponential convergence ([T-72](./theorems#теорема-72-условная-неподвижная-точка-рефлексии) [T])
+3. Iteration: $\rho^{(n+1)}_* = \varphi(\Gamma^{(n)})$ — exponential convergence ([Theorem 7.2](./theorems#теорема-72-условная-неподвижная-точка-рефлексии) [T])
 
 This protocol is analogous to the **boot sequence** of an operating system: a minimal bootloader (BIOS) starts the kernel, the kernel starts the drivers, the drivers activate full functionality. Similarly, $\kappa_{\text{bootstrap}}$ starts minimal regeneration, which gradually "spins up" the full self-modelling cycle.
 

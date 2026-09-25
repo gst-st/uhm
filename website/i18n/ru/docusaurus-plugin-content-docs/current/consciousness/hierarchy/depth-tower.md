@@ -516,9 +516,9 @@ $$\Delta F^{(k)} \geq k_B \cdot T_\text{eff} \cdot \ln(2) \cdot k$$
 
 ### 7.4 Социальная глубина [С] {#социальная-глубина}
 
-Мультиагентные башни масштабируются через [КК-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) (T-68: нетривиальность [Т], жизнеспособность [Т для воплощённых] по T-149) и [КК-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [Т]:
+Мультиагентные башни масштабируются через [КК-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) (T-68, [С при (HOL)]: при допущении, что композит сам есть голоном, — нетривиальность, а для воплощённых систем и жизнеспособность по T-149; прежнее «нетривиальность [Т], жизнеспособность [Т для воплощённых]» отозвано вместе с шагом 1 КК-5) и [КК-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [Т]:
 
-Из T-68 (фрактальное замыкание): $\mathbb{H}_A$ viable $\land$ $\mathbb{H}_B$ viable $\Rightarrow$ $\mathbb{H}_A \otimes \mathbb{H}_B$ viable. Глубина композита:
+Из T-68 (фрактальное замыкание), при (HOL) — $\mathbb{H}_A \otimes \mathbb{H}_B$ сам есть голоном: $\mathbb{H}_A$ viable $\land$ $\mathbb{H}_B$ viable $\Rightarrow$ $\mathbb{H}_A \otimes \mathbb{H}_B$ viable (для воплощённых систем). Глубина композита:
 
 $$\min(\mathrm{SAD}_A, \mathrm{SAD}_B) \leq \mathrm{SAD}(\mathbb{H}_A \otimes \mathbb{H}_B) \leq \mathrm{SAD}_A + \mathrm{SAD}_B$$
 

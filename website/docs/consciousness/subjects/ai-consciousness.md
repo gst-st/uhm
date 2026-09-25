@@ -537,15 +537,19 @@ The **mathematical claims** being tested are all [T] (proven theorems of UHM). T
 
 **Cost.** Sweep ~100 $\sigma$ values × $10^4$ steps each; single GPU.
 
-### Test E4 — $G_2$-invariance of observables {#тест-e4-g2-инвариантность}
+### Test E4 — Frame invariance of observables {#тест-e4-g2-инвариантность}
 
-**Claim under test.** $P, R, \Phi, \mathrm{Coh}_E$ are $G_2$-gauge-invariant in the appropriate sense (Q5, Q9 R1).
+:::warning Corrected (2026-09-25): the claim under test was false for $\Phi$ and $\mathrm{Coh}_E$
+The test claimed that $P, R, \Phi, \mathrm{Coh}_E$ are "$G_2$-gauge-invariant in the appropriate sense", with $\Phi$ and $\mathrm{Coh}_E$ invariant under the stabiliser of the Fano frame; that is retracted, because an element of the frame group $\Gamma_{\!\text{oct}}$ that moves the $E$-axis takes $\mathrm{Coh}_E(\lvert e_E\rangle\langle e_E\rvert)$ from $1$ to $0$, and an explicit $g \in G_2$ with $g e_1 = (e_1 + e_2)/\sqrt2$ takes $\Phi(\lvert e_1\rangle\langle e_1\rvert)$ from $0$ to $1$ — the pass criterion as written would have failed on the theory's own observables. What replaces it: only $P$ and $R$ are $G_2$-invariant; $\Phi$ is invariant under all $1344$ elements of $\Gamma_{\!\text{oct}}$ and under no continuous subgroup of $G_2$; $\mathrm{Coh}_E$ is invariant under the rotations that keep the $E$-axis — the eight-dimensional $\mathrm{Stab}_{G_2}(e_E) \cong SU(3)$, and $192$ of the $1344$ elements of $\Gamma_{\!\text{oct}}$ ([frame decision D-0910 and the lattice of identification groups](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). The labels "Q5, Q9 R1" had no referent on this page and are dropped.
+:::
 
-**Protocol.** Generate random $\Gamma$ with $P > 2/7$. Apply random $U \in G_2 \subset SO(7)$ (use generators $T_1,\ldots,T_{14}$ of $\mathfrak g_2$, exponentiate). Compare $P(\Gamma)$ vs $P(U\Gamma U^\dagger)$, similarly for $R$. For $\Phi, \mathrm{Coh}_E$, restrict $U$ to the Fano-stabilising subgroup and verify invariance.
+**Claim under test.** $P$ and $R$ are $G_2$-invariant (indeed $U(7)$-invariant); $\Phi$ is invariant exactly under the finite frame group $\Gamma_{\!\text{oct}}$ ([frame rigidity](/docs/proofs/categorical/uniqueness-theorem#жёсткость-репера)); $\mathrm{Coh}_E$ is invariant under the rotations that keep the $E$-axis.
 
-**Pass criterion.** $|P(U\Gamma U^\dagger) - P(\Gamma)| < 10^{-10}$ (machine precision); same for $R$. $\Phi, \mathrm{Coh}_E$ invariant under Fano-frame stabilizer.
+**Protocol.** Generate random $\Gamma$ with $P > 2/7$. (i) Apply random $U \in G_2 \subset SO(7)$ (generators $T_1,\ldots,T_{14}$ of $\mathfrak g_2$, exponentiate) and compare $P$ and $R$. (ii) Apply all $1344$ elements of $\Gamma_{\!\text{oct}}$ — the signed permutations of the axes that preserve the octonionic 3-form — and compare $\Phi$. (iii) Apply the $192$ elements of $\Gamma_{\!\text{oct}}$ that keep the $E$-axis, and random elements of $\mathrm{Stab}_{G_2}(e_E)$, and compare $\mathrm{Coh}_E$. Controls: a random $U \in G_2$ must change $\Phi$, and an element of $\Gamma_{\!\text{oct}}$ that moves the $E$-axis must change $\mathrm{Coh}_E$.
 
-**Falsification.** Any non-trivial gauge dependence beyond numerical noise refutes T-186 / Q5 / Q9 R1.
+**Pass criterion.** Invariance to $10^{-10}$ (machine precision) in (i)–(iii), and both controls change their observable far above that noise.
+
+**Falsification.** A change of $P$ or $R$ under $G_2$, of $\Phi$ under $\Gamma_{\!\text{oct}}$, or of $\mathrm{Coh}_E$ under the $E$-axis stabiliser — or a control that does not change — refutes frame decision D-0910. These are algebraic identities, already regression-tested in `website/scripts/check_core_numbers.py` (`test_phi_not_g2_invariant`, `test_stabiliser_lattice`, `test_coh_e_is_invariant_only_on_the_e_axis_stabiliser`), so on an agent the test checks the implementation, not the theory.
 
 **Cost.** Trivial; minutes on CPU.
 
@@ -628,7 +632,7 @@ The **mathematical claims** being tested are all [T] (proven theorems of UHM). T
 | E1 | $N \ge 7$ minimality | Sharp viability transition at $N=7$ | Theorem S, octonionic derivation |
 | E2 | E-ablation → death | A2 decays to $1/7$ | T-81 No-Zombie |
 | E3 | $\beta = 1/4$ tricritical | $\beta = 0.25 \pm 0.05$ | Theorem 5.2 + Q4 mechanism |
-| E4 | $G_2$ gauge-invariance | Machine-precision invariance | T-186, Q5, Q9 R1 |
+| E4 | Frame invariance: $P, R$ under $G_2$; $\Phi$ under $\Gamma_{\!\text{oct}}$; $\mathrm{Coh}_E$ under the $E$-axis stabiliser | Machine-precision invariance; both controls change | Frame decision D-0910 |
 | E5 | Avalanche L1→L2 | Quadratic $B > 0$ | T-43b avalanche dynamics |
 | E6 | CPTP-anchor universal | $\|\pi-\mathcal E\|_\diamond < 10^{-3}$ | T-152 |
 | E7 | $\Phi \leftrightarrow$ integration | Spearman $\rho > 0.5$ | T-129 operational |

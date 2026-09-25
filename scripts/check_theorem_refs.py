@@ -524,7 +524,7 @@ def main() -> int:
     NAME_EN = re.compile(r"\bby\s+(?:the\s+)?([A-Z][a-z]+(?:[-\u2013][A-Z][a-z]+)*)"
                          r"(?:'s)?\s+(?:theorem|lemma|principle|formula)\b")
     NAME_ADDR = re.compile(r"\]\(|T-\d+|§\d|\d+\.\d+|Глав[аеы]\s+\d|[Cc]h\.\s*\d")
-    NAME_BASE = 64          # замер на 371 файле; опускать руками, не поднимать
+    NAME_BASE = 62          # 64 → 62 (25.09: кампания прецедентов дописала адреса); опускать руками, не поднимать
     name_seen = 0
     name_bad = []
     _paths = set()

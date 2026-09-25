@@ -118,7 +118,7 @@ Theorem T-182 [T] establishes that three levels of the subobject classifier are 
 
 ### 1½.2. Cohesive modalities as Mathesis operations
 
-Theorem T-185 [T] establishes 7 canonical modalities of the differentially cohesive ∞-topos. Six of them map to fundamental operations:
+Theorem T-185 assigns 7 canonical modalities to the differentially cohesive ∞-topos — stratified: the modalities of any differentially cohesive ∞-topos are [T] (Schreiber, DCCT v1), the cohesion of the UHM topos is assumed [C], and the count of seven is a reading [I] (an earlier wording, "T-185 [T] establishes", is retracted). Six of them map to fundamental operations:
 
 | Modality | Definition | Mathesis operation |
 |----------|------------|-------------------|
@@ -1255,7 +1255,7 @@ The claim "consciousness requires a global workspace" (GWT) is loaded into Mathe
 
 ### 12.6. Responding to criticism
 
-`claim/dependencies uhm:T-120 --full` → full dependency tree, all [T] → "T-120 is fully justified." Time: 30 seconds.
+`claim/dependencies uhm:T-120 --full` → full dependency tree: T-117 [T], T-118 [C] (an aperiodic clock), T-119 [C] (two open reconstruction axioms) → "T-120 is conditional on these two assumptions." Time: 30 seconds. (An earlier version of this example returned "all [T] … fully justified"; the registry now lists T-120 as [C].)
 
 ---
 

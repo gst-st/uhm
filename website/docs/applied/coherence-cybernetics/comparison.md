@@ -11,7 +11,7 @@ description: "Systematic comparison of CC with IIT, FEP, GWT, autopoiesis, and o
 
 
 :::info Who This Chapter Is For
-A systematic comparison of CC with nine competing theories of consciousness: IIT, FEP, GWT, autopoiesis, Orch-OR, HOT, RPT, and AST.
+A systematic comparison of CC with eight competing theories of consciousness: IIT, FEP, GWT, autopoiesis, Orch-OR, HOT, RPT, and AST.
 :::
 
 In the previous chapter we explored the philosophical foundation of CC — unitary monism, the necessity of consciousness, the ethics of the threshold. All of this sounds impressive, but a scientific theory does not live in a vacuum. Its value is determined not only by internal beauty, but by *what it can do that others cannot*. It is time to place CC alongside its competitors — honestly, noting both the advantages and the limitations of each.
@@ -21,7 +21,7 @@ If you are a scientist working in one of these traditions, this section will sho
 :::info Chapter Roadmap
 In this chapter we:
 1. Sketch the **theoretical landscape** — a master table of 9 theories (section 1)
-2. Show **CC bridges to each theory** with compact comparisons (section 2). Extended analysis of all 36 theories: [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories)
+2. Show **CC bridges to each theory** with compact comparisons (section 2). Extended analysis of all 42 theories: [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories)
 3. Consolidate everything into a **predictions table** (section 3) and honestly assess the **limitations of CC** (section 4)
 :::
 
@@ -72,7 +72,7 @@ These theories can be divided into three families:
 ## 2. Detailed Comparison with Each Theory {#детальное-сравнение}
 
 :::info Detailed Analysis
-Full analysis of 36 theories of consciousness (including the 8 below) with history, formalism, and critique: [Theories of Consciousness → 36 theories](/docs/consciousness/comparative/consciousness-theories). Here — **only the bridges** between each theory and CC.
+Full analysis of 42 theories of consciousness (including the 8 below) with history, formalism, and critique: [Theories of Consciousness → 42 theories](/docs/consciousness/comparative/consciousness-theories). Here — **only the bridges** between each theory and CC.
 :::
 
 ### 2.1 IIT (Tononi) {#iit}
@@ -92,7 +92,7 @@ Full analysis of 36 theories of consciousness (including the 8 below) with histo
 
 FEP (Friston, 2010) asserts that any stable system minimizes variational free energy $F$. CC shares the idea of active self-maintenance and uses the Markov blanket (Enc-functor). The canonical $\Delta F$ of the holon ([definition](/docs/core/dynamics/evolution#каноническое-delta-f) [T]) is the analog of Friston's free energy.
 
-**Bridge:** FEP is a special case of CC under two simplifications: (1) the E-dimension is ignored, (2) regeneration $\mathcal{R}$ is absorbed into variational inference. More details — [Variational Formulation](./variational).
+**Bridge [I].** ~~FEP is a special case of CC under two simplifications: (1) the E-dimension is ignored, (2) regeneration $\mathcal{R}$ is absorbed into variational inference.~~ Retracted (2026-09-25): the claim read the diagonal limit of CC's functional $S_{\text{spec}} + D_{KL}$ as Friston's free energy, but that limit is the cross-entropy $-\sum_i q_i \ln p_i$ — at $p = (0.7, 0.2, 0.1)$ it equals $0.802$ at $q = p$ and $0.357$ at the point mass $q = (1, 0, 0)$, so it is minimised by the point mass, not by the posterior — and what replaces it is an interpretation [I]: the two frameworks share a variational vocabulary and the Markov-blanket picture, and no derivation connects them ([Variational Formulation, Theorem 4.1 [✗]](./variational#связь-с-fep); [FEP derivation](/docs/proofs/dynamics/fep-derivation), registry row 39e).
 
 | Aspect | FEP | CC |
 |---|---|---|
@@ -246,7 +246,7 @@ This is an ambitious claim. But it is falsifiable: if a theory is found that mak
 2. CC **inherits** the key ideas of each: integration (IIT), active self-maintenance (FEP), global accessibility (GWT), self-production (autopoiesis), reflection (HOT), recurrence (RPT), self-model (AST).
 3. CC **surpasses** each in specific aspects: formalization, computability, falsifiability, completeness.
 4. Each theory **surpasses** CC in its own strengths: experimental base, neural concreteness, philosophical development.
-5. CC is a **metatheory**: it includes the others as special cases or projections.
+5. CC is read as a **metatheory** [I]: the others appear as projections of its formalism (table above). The one special case it claimed — the FEP as a limit of CC — is retracted (§2.2).
 
 ---
 

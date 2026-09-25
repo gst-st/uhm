@@ -320,7 +320,7 @@ Section 5.2 said charges fade on the timescale $1/\Gamma_2$. There is a crucial 
 
 Why circles rather than open lines? Because the population spectrum is **integer-quantized** — the conserved quantities change only by whole units (a discrete degree of freedom is added or removed, $\Delta N \in \mathbb{Z}$), so the phases they generate wrap around and close on themselves. **Compactness is the shadow of integrality** — precisely as the quantization of electric charge is what makes electromagnetism's gauge group the *circle* $U(1)$ and not the *line* $\mathbb{R}$. This is the same mechanism by which Vanchurin's self-learning universe grows a $U(1)$ from an integer count of degrees of freedom, here derived channel-by-channel.
 
-The full covariance group of the dissipator is $U(1)^7 \rtimes \Gamma_{\text{oct}}$, where $\Gamma_{\text{oct}} = \mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$ permutes the seven Fano lines. This is a *finite* frame group living **inside** $G_2$ — **not** the full continuous $G_2$: only the discrete line-permutations map the projector family to itself, while a generic $G_2$ rotation does not. (This corrects a natural over-expectation that the dissipator inherits all of $G_2$; see [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-происхождение-тора).) So the picture of §2–§4 sharpens: of the 14 $G_2$-charges, it is the seven population-charges that the dissipator protects *exactly*, and their protected phases are the compact torus above.
+The full unitary covariance group of the dissipator is $U(1)^7 \rtimes \mathrm{Aut}(r)$ — the torus extended by the permutations that preserve the decay rates. For equal line rates that is every permutation, $U(1)^7 \rtimes S_7$, and its elements in $G_2$ form the *finite* frame group $\Gamma_{\text{oct}}$ (signed permutations, order $1344$, acting on the seven Fano lines through $\mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$) — **not** the full continuous $G_2$: only monomial maps send the diagonal algebra to itself, while a generic $G_2$ rotation does not. (This corrects a natural over-expectation that the dissipator inherits all of $G_2$; see [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-происхождение-тора). Until 2026-09-25 this paragraph gave the group as $U(1)^7 \rtimes \Gamma_{\text{oct}}$ with $\Gamma_{\text{oct}} = \mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$ — the frame group confused with its image, and a permutation part too narrow for equal rates and too wide for generic ones.) So the picture of §2–§4 sharpens: of the 14 $G_2$-charges, it is the seven population-charges that the dissipator protects *exactly*, and their protected phases are the compact torus above.
 
 ---
 
@@ -377,7 +377,7 @@ The 14 Ward identities reduce 231 free parameters to 217 — these are **linear 
 :::
 
 :::info Practical Consequence [T]
-If $G_2$-symmetry is unbroken ($\alpha^* = 0$), the entire $21 \times 21$ correlation matrix is determined by **one number** $\alpha$. With partial breaking ($\alpha^* > 0$) corrections of order $\alpha^* \cdot \Delta_{\max}$ appear.
+For the $G_2$-symmetric reference dynamics the entire $21 \times 21$ correlation matrix would be determined by **one number** $\alpha$. The actual dynamics breaks $G_2$ at every Fano weight $\alpha^*$, including $\alpha^* = 0$: $\Delta_{G_2} = \tfrac{2+\alpha^*}{3}\,\Delta_{\max} \geq \tfrac23\Delta_{\max}$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)), so corrections of that order are always present. (Corrected 2026-09-25: the reading "$\alpha^* = 0$ is unbroken" assumed the $G_2$-covariant Fano dissipator retracted on 2026-09-10.)
 :::
 
 ### 6.4 Reduction Cascade — From Chaos to Order
@@ -487,8 +487,8 @@ $$
 
 | $\Delta_{G_2}^{(\text{exp})}$ | Interpretation |
 |-------------------------------|----------------|
-| $\Delta \approx 0$ | Full $G_2$-symmetry confirmed |
-| $0 < \Delta \ll 1$ | Weak violation — $\Delta \propto \alpha^*$ (depth of [self-observation](/docs/physics/gauge-symmetry/g2-structure)) |
+| $\Delta \approx 0$ | $G_2$-symmetric dynamics — which would contradict the pinching dissipator: it gives $\Delta_{G_2} \geq \tfrac23\Delta_{\max}$ at every $\alpha$ (the row read "full $G_2$-symmetry confirmed" until 2026-09-25) |
+| $0 < \Delta \ll 1$ | Weak violation — the dynamics gives $\Delta_{G_2} = \tfrac{2+\alpha}{3}\Delta_{\max}$, affine in the Fano weight $\alpha$, a free parameter (its variational value $\alpha^*$, which tied it to the depth of [self-observation](/docs/physics/gauge-symmetry/g2-structure), is retracted) |
 | $\Delta \sim O(1)$ | Strong violation — $G_2$-reduction not applicable |
 ::::
 
@@ -497,7 +497,7 @@ $$
 :::warning Falsifiable Prediction [H]
 If the $G_2$-structure of octonions is fundamental to Gap-dynamics, then:
 
-1. Ward identities must hold with accuracy $\Delta \propto \alpha^* \approx 1 - 2/(7P)$
+1. Ward identities must hold with accuracy $\Delta_{G_2} = \tfrac{2+\alpha^*}{3}\Delta_{\max}$, with the Fano weight $\alpha^*$ not fixed by any proven principle (the value $\alpha^* \approx 1 - 2/(7P)$ is retracted — [Fano channel §4](/docs/proofs/gap/fano-channel#alpha-star))
 2. The decomposition $C = \alpha \cdot \mathbf{1} + \beta \cdot \mathbf{F} + \gamma \cdot \mathbf{F}^2$ with $\beta = -3\alpha/7$, $\gamma = 3\alpha/49$ must approximate the data well
 3. Systematic violation $\Delta \sim O(1)$ refutes the $G_2$-hypothesis
 

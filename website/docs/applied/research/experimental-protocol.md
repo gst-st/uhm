@@ -11,7 +11,7 @@ This document describes a **maximally complete experimental protocol** for the e
 :::
 
 :::info Related documents
-- [23 unique CC predictions](/docs/applied/coherence-cybernetics/predictions) — full list of predictions with formulas
+- [23 CC predictions, 22 of them unique](/docs/applied/coherence-cybernetics/predictions) — full list of predictions with formulas (it read "23 unique" until 2026-09-25: on collective consciousness IIT has a criterion too)
 - [Γ measurement protocol](/docs/applied/research/measurement-protocol) — operationalisation of π_bio for AI systems
 - [Falsifiability criteria](/docs/reference/falsifiability) — formal refutation conditions
 - [Status registry](/docs/reference/status-registry) — current epistemic status of all claims
@@ -23,7 +23,7 @@ This document describes a **maximally complete experimental protocol** for the e
 
 ### 1.1. The problem: empirical vacuum
 
-UHM is one of the most formally developed theories of consciousness: ~210 theorems, 23 numerical predictions, categorical foundation. But **not a single prediction has been experimentally verified**. A theory without empirics is philosophy, no matter how rigorous the mathematics.
+UHM is one of the most formally developed theories of consciousness: ~210 theorems, 23 predictions (21 of them unique and numerical), categorical foundation. But **not a single prediction has been experimentally verified**. A theory without empirics is philosophy, no matter how rigorous the mathematics.
 
 ### 1.2. Key observation: PCI* ≈ P_crit
 
@@ -171,7 +171,7 @@ Any implementation used for Phase I must satisfy:
 2. For each: compute the order parameter (PCI analogue) and distance to P_crit
 3. Fit: OP ~ (P − P_crit)^β
 
-**Prediction:** β = 1/4 ± 0.05 (T-161).
+**Prediction:** β = 1/4 ± 0.05 (T-161, [C] at the ℤ₂ symmetry m → −m; without it the swallowtail value β = 1/2).
 
 **Falsification:** β ∉ [0.20, 0.30] at N=10⁴.
 
@@ -376,7 +376,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 3. For conscious (x > 0): fit PCI ~ x^β
 4. Extract β, 95% CI
 
-**Prediction:** β = 1/4 ± 0.05 (T-161).
+**Prediction:** β = 1/4 ± 0.05 (T-161, [C] at the ℤ₂ symmetry m → −m; without it the swallowtail value β = 1/2).
 
 **Additional exponents:**
 - α = 1/2: specific heat (from variance of P near threshold)
@@ -561,7 +561,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 
 ## 8. Context: comparison with adversarial collaboration {#context}
 
-In 2018–2025, the Templeton Foundation funded the COGITATE project (\$30M) — adversarial collaboration IIT vs GWT vs HOT. Result (Nature, April 2025): **no theory fully confirmed**. IIT scored higher, but its key prediction (sustained synchronization) was not confirmed.
+The Cogitate Consortium's adversarial collaboration, funded by the Templeton World Charity Foundation (a grant of 6,028,087 US dollars, 2019–2024), tested integrated information theory (IIT) against global neuronal workspace theory (GNWT) on preregistered, divergent predictions (*Nature* 642, 133–142, published 30 April 2025; 256 participants; fMRI, MEG and intracranial EEG). In the paper's words, the results "align with some predictions of IIT and GNWT, while substantially challenging key tenets of both theories": for IIT, the lack of sustained synchronisation within posterior cortex; for GNWT, the general lack of ignition at stimulus offset and the limited representation of some conscious dimensions in prefrontal cortex. The paper gives no score or ranking of one theory over the other, and higher-order theories (HOT) were not among the theories tested. For the corpus's account of the collaboration see [Consciousness theories §9](/docs/consciousness/comparative/consciousness-theories#adversarial-collaboration).
 
 **Fundamental difference between UHM and IIT/GWT/HOT:**
 
@@ -570,7 +570,7 @@ In 2018–2025, the Templeton Foundation funded the COGITATE project (\$30M) —
 | Numerical threshold | Φ > 0 (no number) | None | None | P_crit = 2/7 |
 | Critical exponents | None | None | None | α=1/2, β=1/4, γ=1, ν=1/2, δ=5 |
 | Computability of Φ | NP-hard for >30 elements | N/A | N/A | P = Tr(Γ²), O(49) |
-| Number of free parameters | ~10³⁸ (all partitions) | Undefined | Undefined | 34 (G₂-invariant) |
+| Number of free parameters | ~10³⁸ (all partitions) | Undefined | Undefined | 48 — all parameters of Γ are physical; 34 = 48 − 14 counts only the kinematic G₂-invariants (frame decision D-0910) |
 | Riskiest test | No single number | "Ignition" (qualitative) | "Meta-cognition" (qualitative) | **β = 1/4** (one number, falsifiable) |
 
 UHM addresses the ConTraSt critique (Yaron et al. 2022): methodological choice does not predetermine the result, because predictions are **numerical**, not qualitative. β=1/4 will either be confirmed or not — regardless of paradigm.
@@ -635,7 +635,7 @@ UHM does not hide from falsification — it presents 23 targets and points where
 - [Stability](/docs/applied/coherence-cybernetics/stability) — T-104, stability radius
 
 **External resources:**
-- [COGITATE Results (Nature 2025)](https://www.nature.com/articles/s41586-025-08888-1) — adversarial collaboration IIT vs GWT
+- [COGITATE Results (Nature 2025)](https://www.nature.com/articles/s41586-025-08888-1) — Cogitate Consortium, adversarial collaboration IIT vs GNWT, *Nature* 642, 133–142
 - [PCI Benchmark (Casali et al. 2013)](https://www.science.org/doi/10.1126/scitranslmed.3006294) — PCI* = 0.31
 - [ConTraSt Database](https://contrastdb.tau.ac.il/) — 412 experiments on theories of consciousness
 - [Del Cul et al. 2007](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050260) — nonlinear threshold of consciousness

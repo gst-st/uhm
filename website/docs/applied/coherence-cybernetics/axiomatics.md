@@ -582,11 +582,11 @@ $$
 \mathrm{Viable}(\mathbb{H}_1) \land \mathrm{Viable}(\mathbb{H}_2) \land \Phi_{12} > \Phi_{\min} \Rightarrow \mathrm{Viable}(\mathbb{H}_{12})
 $$
 
-The composition of viable Holons with sufficient integration forms a viable Holon. **See:** [Theorem 9.1](./theorems#теорема-91-фрактальное-замыкание)
+**Retracted as stated [✗] (2026-09-25).** The formula above made the composition of viable Holons "with sufficient integration" viable. Its condition cannot fail: for a product state, $1 + \Phi(\Gamma_1\otimes\Gamma_2) = (1 + \Phi_1)(1 + \Phi_2)$, so two uncoupled holons with $\Phi_1 = \Phi_2 = 1$ already give $\Phi_{12} = 3$ at zero mutual information ([panpsychism analysis, §2](/docs/consciousness/comparative/panpsychism-analysis); Prediction 5 of the [predictions](/docs/applied/coherence-cybernetics/predictions)). What stands is CC-5 of [Theorem 9.1](./theorems#теорема-91-фрактальное-замыкание), **[C at (HOL)]**: if the composite is itself a holon — its state represented in $\mathcal{D}(\mathbb{C}^7)$ — its attractor is nontrivial ($P > 1/7$), and for embodied systems viable ($P > 2/7$, T-149). The coupling of the parts is measured by the mutual information: $I(1{:}2) > 0$ is a necessary condition [T] (CC-7), not a sufficient one.
 
-This theorem is not an abstraction. It describes how cells form tissues, tissues form organs, organs form organisms, organisms form social groups. Every level is a composition of Holons from the previous level, and every level is viable **if** the integration between components ($\Phi_{12}$) is sufficient.
+This is not an abstraction. It describes how cells form tissues, tissues form organs, organs form organisms, organisms form social groups. Every level is a composition of Holons from the previous level, and every level is viable **if** the composite is itself a holon (HOL) — that assumption carries the step. (The paragraph read "if the integration between components ($\Phi_{12}$) is sufficient".)
 
-The condition $\Phi_{12} > \Phi_{\min}$ is the mathematical formulation of the intuition that "the whole is greater than the sum of its parts" only when the parts are **sufficiently connected**. A pile of sand is not a Holon (the grains are not integrated). A brain is a Holon (neurons are integrated through synaptic connections).
+The intuition that "the whole is greater than the sum of its parts" only when the parts are **connected** is expressed by $I(1{:}2) > 0$, not by $\Phi_{12} > \Phi_{\min}$ (retracted above). A pile of sand is not a Holon (the grains are not integrated). A brain is a Holon (neurons are integrated through synaptic connections).
 
 ---
 
@@ -603,9 +603,9 @@ Let us summarize: what exactly is *derived* in CC and from what.
 | $w_E > 1/7$ | Definition of L2 | [T] | [E-Accentuation](#e-акцентуация) |
 | $\kappa_{\text{bootstrap}} > 0$ | Adjunction $\mathcal{D} \dashv \mathcal{R}$ | [T] | [Bootstrap](#bootstrap-парадокс) |
 | $N = 7$ | (AP)+(PH)+(QG) | [T] | [Theorem S](/docs/proofs/minimality/theorem-minimality-7) |
-| Composition closure | (AP) | [T] | [Theorem 9.1](#замкнутость-композиции-следствие-из-ap) |
+| Composition closure (CC-5) | (AP) + the assumption (HOL) | [C at (HOL)] | [Theorem 9.1](#замкнутость-композиции-следствие-из-ap) |
 
-None of these results is postulated. Each is a consequence of the five axioms. This is both the strength and the vulnerability of the axiomatic approach: strength, because all consequences are **necessary**; vulnerability, because the refutation of *any* consequence refutes *at least one* axiom.
+None of these results is postulated. Each is a consequence of the five axioms — composition closure together with the assumption (HOL); the row read "[T]" and "(AP)" alone until 2026-09-25. This is both the strength and the vulnerability of the axiomatic approach: strength, because all consequences are **necessary**; vulnerability, because the refutation of *any* consequence refutes *at least one* axiom.
 
 ---
 

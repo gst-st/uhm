@@ -125,7 +125,7 @@ Remove any element — and the walk becomes impossible. Without eyes you cannot 
 ### Combinatorial uniqueness of semantic roles (T-177) [T] {#комбинаторная-единственность}
 
 :::tip Theorem T-177 [T]+[C at combinatorial-constraint set]: Combinatorial uniqueness of semantic roles
-After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]), each of the 7 dimensions has a **unique combinatorial profile** — a set of Fano lines and sector connections not isomorphic to the profile of any other dimension.
+After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a — retracted [✗] 2026-09-25 as an axis-labelled decomposition; the uniqueness below rests on it and is to be re-derived, see T-177 in the status registry), each of the 7 dimensions has a **unique combinatorial profile** — a set of Fano lines and sector connections not isomorphic to the profile of any other dimension.
 
 **Stratification:** The distinguishability of the 7 fingerprints is **[T]** as a combinatorial fact on the Fano plane PG(2,2) once **the combinatorial constraint set** is fixed (sector decomposition T-48a + Higgs line $\{A,E,U\}$). The choice of that constraint set itself is **[C at combinatorial-constraint set]**: T-48a and the Higgs line come from upstream axiomatic structure (A3, electroweak fit), not from T-177 in isolation. Conditional on those inputs, the fingerprint table is exact.
 :::
@@ -171,7 +171,7 @@ All 7 semantic roles $\{A,S,D,L,E,O,U\}$ are **uniquely** determined by the comb
 
 **Proof (T-183).**
 
-**Steps 1–3 (O, A, L):** Direct consequence of sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]) and the Higgs line $\{A,E,U\}$. O is the unique singlet. A is the unique element of **3** on the Higgs line. L is the unique element of $\bar{\mathbf{3}}$ off the Higgs line. (Already proved in T-177.)
+**Steps 1–3 (O, A, L):** Direct consequence of sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a — retracted [✗] 2026-09-25: no axis lies in the $\mathbf 3$ or the $\bar{\mathbf 3}$, so the A- and L-steps lose their ground; O survives as the $SU(3)$-singlet $\mathbb Ce_O$) and the Higgs line $\{A,E,U\}$. O is the unique singlet. A is the unique element of **3** on the Higgs line. L is the unique element of $\bar{\mathbf{3}}$ off the Higgs line. (Already proved in T-177.)
 
 **Step 4 (E).** The regeneration formula $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_X$ requires a dimension $X$ with properties: (a) $X \in \bar{\mathbf{3}}$ ($\kappa_0$ is defined via $\mathrm{Hom}(O, X)$); (b) $X$ on the Higgs line (electroweak coupling through the $\kappa_0$ chain: $\mathrm{End}(O) \otimes \mathrm{Hom}(O,X) \otimes \mathrm{Hom}(X,Y)$). From $\bar{\mathbf{3}} \cap \mathrm{Higgs} = \{E, U\}$.
 
@@ -231,10 +231,12 @@ The theory uses **two formalisms**:
 **Open part [C]:** The full reduced matrix $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ and the differentiation measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ still require tensor factorisation (42D formalism), since the partial trace $\mathrm{Tr}_{\bar{E}}$ is not defined in $\mathbb{C}^7$ (7 is prime). Statements using $D_{\text{diff}}$ have status **[C]** — conditional on the 42D extension.
 :::
 
-## Categorical semantics of the dimensions (T-185) [T] {#категориальная-семантика}
+## Categorical semantics of the dimensions (T-185) [C] {#категориальная-семантика}
 
-:::warning Theorem T-185 [T]: Differentially cohesive modalities and the septenary structure
-The UHM ∞-topos $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{Bures})$ admits a **differentially cohesive** structure (Schreiber 2013) with two tiers of adjoint functors:
+:::warning Theorem T-185 [C under differential cohesion of the UHM site]: Differentially cohesive modalities and the septenary structure
+**Status, stratified 2026-09-25.** That a differentially cohesive ∞-topos carries the modalities $\int \dashv \flat \dashv \sharp$ and $\Re \dashv \Im \dashv \&$ is [T] (U. Schreiber, DCCT arXiv:1310.7930v1, Definition 3.4.1 and §3.5). That the UHM ∞-topos is differentially cohesive is an assumption [C]: Schreiber's sufficient condition is an ∞-cohesive site (his Definition 3.4.17), which needs finite products, and $\mathbf{DensityMat}$ has none. The list of exactly seven modalities below and its decomposition $1 \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ are a reading [I]: DCCT v1 has the reduction $\Re$ and no Rh. An earlier version gave the whole theorem [T]; retracted.
+
+The UHM ∞-topos $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{Bures})$ is assumed to admit a **differentially cohesive** structure (Schreiber 2013) with two tiers of adjoint functors:
 
 **Cohesive tier** (macrostructure): $p_! \dashv p^* \dashv p_* \dashv p^!$
 
@@ -255,7 +257,7 @@ These adjunctions generate exactly **7 canonical modalities** decomposing as $1 
 
 **Proof (T-185).**
 
-**Step 1 (Cohesive structure).** The Bures metric $d_B$ on $\mathcal{D}(\mathbb{C}^7)$ defines: (a) topological structure via $J_{Bures}$-covers (A2 [T]); (b) differential structure via tangent spaces $T_\Gamma\mathcal{D}$ (smooth manifold with boundary). By Schreiber's theorem (2013), the sheaf ∞-topos over a smooth site admits a differentially cohesive structure with two tiers of adjunctions generating $3 + 3 + 1 = 7$ modalities.
+**Step 1 (Cohesive structure).** The Bures metric $d_B$ on $\mathcal{D}(\mathbb{C}^7)$ defines: (a) topological structure via $J_{Bures}$-covers (A2 [T]); (b) differential structure via tangent spaces $T_\Gamma\mathcal{D}$ (smooth manifold with boundary). The step "By Schreiber's theorem (2013), the sheaf ∞-topos over a smooth site admits a differentially cohesive structure" cites no such theorem: DCCT (arXiv:1310.7930v1, Definition 3.4.17) gives a sufficient condition, an ∞-cohesive site with finite products, which this site does not meet. Differential cohesion is therefore the assumption of T-185, and the count $3 + 3 + 1 = 7$ is a reading of it.
 
 **Step 2 (Sector decomposition).** Cohesive modalities $\{\Pi, \flat, \Im\}$ are **left** adjoint compositions: covariant with respect to direct images. Infinitesimal modalities $\{\sharp, \&, \mathrm{Rh}\}$ are **right** adjoint compositions: contravariant. This exactly reproduces the sector decomposition $\mathbf{3}$ (covariant) $\oplus$ $\bar{\mathbf{3}}$ (contravariant) $\oplus$ $\mathbf{1}$ (invariant).
 
@@ -356,7 +358,7 @@ Hurwitz's theorem (1898) proves: no other such algebras exist. The dimensions 1,
 :::
 
 :::info $G_2$-caveat and spontaneous symmetry breaking [T]
-The specific identification $e_i$ ↔ dimension is a **theorem** [T] (T15): the bridge is fully closed (theorems T1–T15).
+The specific identification $e_i$ ↔ dimension is a **conditional theorem** [C at (Alt)] (T15): the bridge is closed up to the orientation of the Fano lines, the input (Alt) (registry row 41n; it read "a theorem [T] … fully closed" until 2026-09-25).
 
 **Spontaneous breaking $G_2 \to SU(3)$ on $S^6$.** The quotient $G_2/SU(3) \cong S^6$ is the six-sphere. Choosing a specific singlet $O$ (fixing a point on $S^6$) is mathematically equivalent to spontaneous symmetry breaking. In UHM this breaking is **not** introduced "by hand" but arises **dynamically** through three mechanisms:
 
@@ -526,7 +528,7 @@ The division into "objective" and "subjective" aspects is a **pedagogical simpli
 
 **Bridging aspect** — Logic ($L$) is singled out as the "bridge" between objective and subjective. The commutator $[A, B]$ defines **relations** between the operators of all other dimensions. Logic is what makes the system self-consistent: it ensures that the objective and the subjective do not contradict each other.
 
-This grouping $7 = 3 + 1 + 3$ has a deep mathematical basis: it corresponds to the **sector decomposition** $7 = \mathbf{3} \oplus \mathbf{1} \oplus \bar{\mathbf{3}}$ under the action of $SU(3) \subset G_2$ (theorem T-48a [T]). The triplet $\{A, S, D\}$ forms representation **3**, the singlet $\{O\}$ — representation **1**, and the anti-triplet $\{L, E, U\}$ — representation $\bar{\mathbf{3}}$. Remarkably, exactly this same type of decomposition determines the structure of quarks in chromodynamics ($SU(3)_{\text{color}}$), although here it acts at a completely different level of description.
+This grouping $7 = 3 + 1 + 3$ has a deep mathematical basis: it corresponds to the **sector decomposition** $7 = \mathbf{3} \oplus \mathbf{1} \oplus \bar{\mathbf{3}}$ under the action of $SU(3) \subset G_2$ (theorem T-48a — retracted [✗] 2026-09-25 in this axis-labelled form). ~~The triplet $\{A, S, D\}$ forms representation **3**, the singlet $\{O\}$ — representation **1**, and the anti-triplet $\{L, E, U\}$ — representation $\bar{\mathbf{3}}$.~~ Only the singlet survives: the triplet is $\mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$ and the anti-triplet its conjugate, so each mixes the two axis triples. Remarkably, exactly this same type of decomposition determines the structure of quarks in chromodynamics ($SU(3)_{\text{color}}$), although here it acts at a completely different level of description.
 
 :::note Why is L the "bridge" and not O?
 At first glance, O (Ground) also seems "bridging": it both nourishes and sets time. But O occupies a special position as an $SU(3)$ **singlet** — it is invariant under sector transformations. L, by contrast, occupies a **boundary** position: it belongs to the anti-triplet ($\bar{\mathbf{3}}$) but functionally connects both triplets through the commutator. Logic "knows" about both the objective and the subjective — that is its uniqueness.

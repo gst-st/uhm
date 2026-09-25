@@ -491,12 +491,12 @@ $$
 \Lambda_{\text{residual}} \sim \varepsilon^{12} \sim 10^{-24}
 $$
 
-**Status [T at T-64] via T-219**: the earlier "14 → 7_light ⊕ 7_heavy" decomposition of the G₂ adjoint was **mathematically invalid** — $\mathrm{adj}(G_2) = \mathbf{14}$ is irreducible under G₂ and admits no such splitting. **T-219** [T at T-64] ([Fundamental Closures §13](/docs/proofs/categorical/fundamental-closures#t-219)) replaces this with a rigorous derivation:
+**Status [H] via T-219** (corrected from T at T-64 on 2026-09-25): the earlier "14 → 7_light ⊕ 7_heavy" decomposition of the G₂ adjoint was **mathematically invalid** — $\mathrm{adj}(G_2) = \mathbf{14}$ is irreducible under G₂ and admits no such splitting. **T-219** ([Fundamental Closures §13](/docs/proofs/categorical/fundamental-closures#t-219); [H] since 2026-09-25) replaces this with a derivation that is itself a hypothesis:
 
 $$\Lambda_\mathrm{SUSY}\;\sim\;\varepsilon^{12}\,M_P^4 \;=\; \varepsilon^{4\cdot k_\mathrm{sec}}\,M_P^4, \qquad k_\mathrm{sec}=3.$$
 
 The exponent $12 = 4 \cdot 3$ arises **product-structurally** from:
-- $k_\mathrm{sec}=3$ sectors (O, $\mathbf 3$, $\bar{\mathbf 3}$) in UHM sector decomposition (T-48a [T]);
+- $k_\mathrm{sec}=3$ sectors (O, $\mathbf 3$, $\bar{\mathbf 3}$) in UHM sector decomposition (T-48a — retracted [✗] 2026-09-25 in its axis-labelled form; the count 3 survives for the complexified $\mathbb C^7$, the per-sector derivation of T-219 does not);
 - Factor $4$ per sector from $\operatorname{STr}(M_k^4) \sim (\delta m_k)^4 \sim (\varepsilon M_P)^4$ SUSY one-loop (Martin 2010);
 - Three-loop nested product: leading correction $\sim \varepsilon^{4+4+4} = \varepsilon^{12}$ (G₂-invariant Fano coupling T-43d [T] mandates one $\varepsilon^4$ per sector).
 
@@ -513,7 +513,7 @@ The mechanisms below fall into **three non-composable classes**; naively multipl
 | Class | Component | Effect on $\langle\Lambda\rangle$ | Status |
 |---|---|---|---|
 | **(A) Mean, rigorous** | Perturbative (6 mechanisms, incl. $\varepsilon^6$ and RG $\lambda_3^2$) | $10^{-41.5}$ | **[T]** |
-| (A) | SUSY-breaking $\varepsilon^{12}$ (**absorbs** $\varepsilon^6$, adds $\Delta\approx-12$ over the $\varepsilon^6$ already counted) | $\to 10^{-53.5}$ net | [T at T-64] via [T-219](/docs/proofs/categorical/fundamental-closures#t-219) |
+| (A) | SUSY-breaking $\varepsilon^{12}$ (**absorbs** $\varepsilon^6$, adds $\Delta\approx-12$ over the $\varepsilon^6$ already counted) | $\to 10^{-53.5}$ net | [H] via [T-219](/docs/proofs/categorical/fundamental-closures#t-219) (corrected from T at T-64 on 2026-09-25) |
 | ~~(B) Exact zero (separate)~~ | ~~Cohomological $\Lambda_{\text{global}} = 0$~~ | **Retracted 2026-09-10**: cohomology vanishes in positive degree only; a vacuum-energy total is degree-0 data. What remains: no *topological* $\Lambda$-term **[T]**, no cancellation of the vacuum energy | **[✗]** as a cancellation |
 | **(C) Fluctuation / programme** | Sector [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) | $\sim10^{-40}$ residual | **[C]** (numerical, open) |
 | sign | $\Lambda > 0$ from autopoiesis | sign fixed | **[T]** |
@@ -558,21 +558,21 @@ The previous claim $\mathrm{Tr}_{\text{int}}(\gamma_{\text{int}}) = 7_{\text{bos
 1. **Odd dimension.** A $\mathbb{Z}_2$-grading $\gamma_{\text{int}}$ on the internal space $H_{\text{int}}\cong\mathbb{C}^7$ (odd) has $\dim H^+ + \dim H^- = 7$, so $\mathrm{Tr}(\gamma_{\text{int}}) = \dim H^+ - \dim H^- \in\{\pm1,\pm3,\pm5,\pm7\}$ — it can **never** be $0$. Indeed the T-53 grading $\chi_{\text{int}}=\mathrm{diag}(+,-,-,-,+,+,+)$ has $\mathrm{Tr}\,\chi_{\text{int}}=+1$. The old "Step 5" itself conceded $7/2\notin\mathbb{Z}$ and patched by tensoring with $\mathbb{C}^2$, which changes the space and proves nothing about $\mathrm{Tr}(\gamma_{\text{int}})$ on $\mathbb{C}^7$.
 2. **Irreducibility.** The decomposition $\mathbf{14}\to\mathbf{7}\oplus\mathbf{7}$ does not exist: the adjoint $\mathbf{14}$ of $G_2$ is **irreducible** (it does not contain $\mathbf{7}$). So there is no $G_2$-covariant $7$-boson $\leftrightarrow$ $7$-fermion pairing of gaugino modes.
 
-**Replacement (correct route).** The leading vacuum suppression is the **sector-product** scaling $\Lambda_{\text{residual}}\sim\varepsilon^{12}M_P^4$ of [T-219 [T at T-64]](/docs/proofs/categorical/fundamental-closures#t-219), derived from the $7=1\oplus3\oplus\bar 3$ decomposition — not from an exact bose–fermi trace. Consistent with `cosmological-constant.md` §4a, which already marks the SUSY-compensation route **[H]**.
+**Replacement (correct route).** The leading vacuum suppression is the **sector-product** scaling $\Lambda_{\text{residual}}\sim\varepsilon^{12}M_P^4$ of [T-219](/docs/proofs/categorical/fundamental-closures#t-219) — [H] since 2026-09-25 (it was T at T-64) — proposed from the $7=1\oplus3\oplus\bar 3$ decomposition — not from an exact bose–fermi trace. Consistent with `cosmological-constant.md` §4a, which already marks the SUSY-compensation route **[H]**.
 
-**Status:** **[✗] retracted**; superseded by T-219 [T at T-64] (structural $\varepsilon^{12}$) + the honest [H] for exact compensation.
+**Status:** **[✗] retracted**; superseded by T-219, itself [H] since 2026-09-25 (structural $\varepsilon^{12}$), + the honest [H] for exact compensation.
 :::
 
 **Results used:**
 - T-42a [T] ($G_2$-rigidity, 7-dimensional representation $\mathbf{7}_{G_2}$);
 - T-53 [T] (sector decomposition $1 \oplus 3 \oplus \bar{3}$, $H_{\text{int}} = \mathbb{C}^7$);
-- T-83 [T] (Barrett KO-dim 6, spectral triple);
+- T-83 (its inputs "Barrett" and "KO-dim 6" are retracted — registry row T-83);
 - Connes' classification theorem for finite spectral triples (Connes 1994);
 - Cartan's theorem on simple Lie groups ($\mathbf{7}_{G_2}$ — the unique 7-dimensional representation).
 
 **Consistency check:**
-- Dependencies T-42a, T-53, T-83 — all [T], no circularities;
-- $\mathbb{Z}_2$-grading $\gamma_{\text{int}}$ is standard for KO-dim 6 (Connes-Dungen);
+- Dependencies T-42a, T-53, T-83 — an earlier version called them all [T]; T-83 is stratified and its KO-dimension input is retracted;
+- $\mathbb{Z}_2$-grading $\gamma_{\text{int}}$ — the earlier "standard for KO-dim 6 (Connes-Dungen)" is retracted: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка));
 - Consistent with the spectral formula Theorem 4.3 [T];
 - Consistent with the $\varepsilon^{12}$-estimate of residual $\Lambda$ under SUSY breaking.
 

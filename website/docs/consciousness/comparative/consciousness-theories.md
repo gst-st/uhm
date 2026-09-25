@@ -1,14 +1,14 @@
 ---
 sidebar_position: 1
 title: Theories of Consciousness
-description: CC's relation to 36 theories of consciousness — IIT, FEP, autopoiesis, Dennett, Panksepp, Damasio, Seth, Anokhin, Worden (PWT), and others.
+description: CC's relation to 42 theories of consciousness — IIT, FEP, autopoiesis, Dennett, Panksepp, Damasio, Seth, Anokhin, Worden (PWT), the category theory of qualia, Tegmark, D'Ariano–Faggin, and others — and the formal critiques that bind UHM's consciousness predicate.
 slug: /consciousness/comparative/consciousness-theories
 ---
 
 # Theories of Consciousness: A Meta-Comparative Analysis
 
 :::info Bridge from the previous section
-In the [States](/docs/consciousness/states/pathological) sections we examined how the $\Gamma$-profile determines normal and pathological states. Now — context: how does the UHM formalism relate to 36 alternative theories of consciousness? Each of them is a projection of $\Gamma$ onto a specific aspect: integration (IIT), access (GWT), reflection (HOT), prediction error (FEP), projective spatial geometry (PWT).
+In the [States](/docs/consciousness/states/pathological) sections we examined how the $\Gamma$-profile determines normal and pathological states. Now — context: how does the UHM formalism relate to 42 alternative theories of consciousness? Each of them is a projection of $\Gamma$ onto a specific aspect: integration (IIT), access (GWT), reflection (HOT), prediction error (FEP), projective spatial geometry (PWT).
 :::
 
 :::note On notation
@@ -23,16 +23,16 @@ In this document:
 - [T] — theorem, [C] — conditional theorem, [I] — interpretation. Details: [status registry](/docs/reference/status-registry)
 :::
 
-## Introduction: 36 theories and one problem {#введение}
+## Introduction: 42 theories and one problem {#введение}
 
-Consciousness science is a young field. Although philosophers have discussed the nature of consciousness since Descartes (1641), systematic **scientific** theories appeared only in the 1980–2000s. By the mid-2020s there are more than thirty — from neurobiological (NCC, RPT, DIT) to mathematical (IIT, FEP), philosophical (panpsychism, Russellian monism), and wave-based (Pribram holonomic, CEMI, PWT).
+Consciousness science is a young field. Although philosophers have discussed the nature of consciousness since Descartes (1641), systematic **scientific** theories appeared only in the 1980–2000s. By the mid-2020s there are more than thirty — from neurobiological (NCC, RPT, DIT) to mathematical (IIT, FEP), philosophical (panpsychism, Russellian monism), wave-based (Pribram holonomic, CEMI, PWT), category-theoretic (Tsuchiya–Saigo, Kleiner–Tull) and quantum-informational (Tegmark, D'Ariano–Faggin, Fields–Glazebrook–Levin).
 
 All these theories try to answer one question: **what is consciousness and why does it exist?** But each approaches the question from its own side, focusing on one aspect: information integration (IIT), recurrent processing (RPT), predictive coding (PP), self-modelling (AST), metarepresentation (HOT), or the undistorted geometry of phenomenal space (PWT).
 
 CC claims that each of these theories is a **projection** of a unified formalism onto a specific aspect. IIT projects $\Gamma$ onto integration ($\Phi$), GWT onto the access threshold ($P > 2/7$), HOT onto reflection ($R \geq 1/3$), PP onto prediction error ($\sigma_k$), PWT onto the projective spatial sector $\{A,S,D\} \to \Sigma^3$. None covers everything; CC claims to **unify** them.
 
 This is a serious claim, and it demands careful analysis. In this document we:
-1. Examine each of the 36 theories: its history, central idea, and formal core
+1. Examine each of the 42 theories: its history, central idea, and formal core
 2. Show the precise mapping into the CC formalism (functor)
 3. Honestly indicate what each theory does **better** than CC
 4. Close with a master table and assessment of completeness
@@ -53,6 +53,11 @@ Theories are grouped by type:
 | **Philosophical** | Russellian monism, Dennett | §24-25 |
 | **Affective** | Panksepp, Solms, Merker | §26, 29-30 |
 | **Wave / field** | Holonomic Brain (Pribram), CEMI, PWT (Worden) | §31, 17, 36 |
+| **Mathematical / categorical** | Category theory of qualia (Tsuchiya, Saigo); formal IIT and process theories (Kleiner, Tull, Signorelli, Coecke, Prentner) | §37–38 |
+| **Quantum-informational** | Minimal physicalism and quantum FEP (Fields, Glazebrook, Levin); perceptronium (Tegmark); quantum-information panpsychism (D'Ariano, Faggin) | §39–41 |
+| **Physics of observers** | Observer theory (Wolfram) | §42 |
+
+The formal critiques that bind every theory of this kind — UHM's own consciousness predicate included — are collected right after §9, in [Formal critiques that bind UHM's consciousness predicate](#formal-critiques).
 
 ---
 
@@ -141,7 +146,7 @@ CC defines its **own integration measure**, inspired by IIT ideas but not identi
 - [Dynamics](/docs/core/dynamics/evolution) (unitary, dissipative, regenerative terms)
 - [Viability](/docs/core/dynamics/viability)
 - [Self-modelling](/docs/proofs/categorical/formalization-phi) ($\varphi$)
-- Quantum foundation [(QG)](/docs/core/foundations/axiom-septicity)
+- Quantum foundation [(QG)](/docs/core/foundations/axiom-septicity) — absent from Tononi's IIT 3.0 and 4.0, but not from the IIT programme at large: quantum versions of IIT exist (Zanardi, Tomka & Campos Venuti 2018; Kleiner & Tull 2021 — see [§38](#formal-iit))
 
 <a id="принцип-свободной-энергии-fep"></a>
 
@@ -162,29 +167,22 @@ FEP grew from the Bayesian approach to the brain (Helmholtz, Dayan, Hinton) and 
 - **Markov blanket** — statistical boundary separating internal from external states
 - **Active inference** — actions as minimisation of expected free energy
 
-:::info UHM as a generalisation of FEP
-**[Theorem 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep):** Friston's FEP is the **classical limit** of the variational characterisation of φ in UHM.
-
-In the classical limit (diagonal density matrices $\Gamma = \mathrm{diag}(p)$):
-$$
-\mathcal{F}_{\text{UHM}} = S_{vN} + D_{KL} \xrightarrow{\text{classical}} H(q) + D_{KL}(q \| p) = F_{FEP}
-$$
-
-This is a strictly proven correspondence, not a conceptual analogy.
+:::warning Retracted (2026-09-25): "FEP is the classical limit of UHM"
+~~"[Theorem 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep): Friston's FEP is the classical limit of the variational characterisation of φ in UHM … This is a strictly proven correspondence, not a conceptual analogy."~~ Retracted with the [FEP derivation](/docs/proofs/dynamics/fep-derivation) (Theorems 3.1, 4.2 (iii)–(iv) and 4.3; registry row 39e [✗]). The UHM functional is a cross-entropy, $S_{vN}(\rho) + D_{KL}(\rho \,\|\, \Gamma) = -\mathrm{Tr}(\rho\log\Gamma)$, linear in $\rho$ and minimised by the projection onto the top eigenvector of $\Gamma$, not by $\varphi$; on diagonal states it becomes $H(q) + D_{KL}(q \,\|\, p) = -\sum_i q_i \ln p_i$ — for $p = (0.7, 0.2, 0.1)$ it is $0.802$ at $q = p$ and $0.357$ at the point mass — and this is **not** Friston's variational free energy. What stands: that identity on diagonal states (Theorem 4.1) and Theorem 5.1 ($S_{\mathrm{spec}} = S_{vN}$ on density matrices). Whether Friston's free energy arises as a limit of UHM is an open research programme [Pr].
 :::
 
 **Formal correspondences:**
 
 | FEP (Friston) | Formal analogue in CC | Status |
 |---------------|-----------------------|--------|
-| Free energy $F = \langle E \rangle_q - H(q)$ | $\mathcal{F} = S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)$ | **[Theorem 4.2](/docs/proofs/dynamics/fep-derivation)** |
+| Free energy $F = \langle E \rangle_q - H(q)$ | $\mathcal{F} = S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)$ — a cross-entropy, not $F$ | ~~Theorem 4.2~~ **retracted [✗]** ([FEP derivation](/docs/proofs/dynamics/fep-derivation)) |
 | Markov blanket | Boundary of [Holon](/docs/core/structure/holon) — [dimension A](/docs/core/structure/dimension-a) | Conceptual |
 | Internal states | Coherence matrix $\Gamma$ | Formal |
 | Active inference | [Regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}[\Gamma, E]$ | Conceptual |
-| Generative model | [Self-modelling operator](/docs/proofs/categorical/formalization-phi) $\varphi$ | **[Theorem 3.1](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации)** |
+| Generative model | [Self-modelling operator](/docs/proofs/categorical/formalization-phi) $\varphi$ | ~~Theorem 3.1~~ **retracted [✗]** (row 39e: $\varphi$ is not the minimiser) — [FEP derivation](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации) |
 | Sensory states | Interaction with environment through [O-dimension](/docs/core/structure/dimension-o) | Conceptual |
 
-**Key result:** In UHM φ is defined **categorically** (adjunction $\varphi \dashv i$), and the variational form $\varphi = \arg\min[S_{vN} + D_{KL}]$ is a **proven theorem** ([Theorem 3.1](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации)).
+**Key result:** In UHM φ is defined **categorically** (adjunction $\varphi \dashv i$). ~~"The variational form $\varphi = \arg\min[S_{vN} + D_{KL}]$ is a proven theorem (Theorem 3.1)."~~ Retracted (2026-09-25, registry row 39e [✗]): the minimiser of that functional is the projection onto the top eigenvector of $\Gamma$, not $\varphi$ ([FEP derivation](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации)).
 
 **What FEP adds (as motivation):**
 - Thermodynamic grounding
@@ -193,16 +191,16 @@ This is a strictly proven correspondence, not a conceptual analogy.
 - Connection to gradient flow
 
 **Formal status of FEP in UHM:**
-- FEP is the **classical limit** ([Theorem 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep))
-- The variational principle of φ is **derived** from the categorical definition ([Theorem 3.1](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации))
-- In FEP the variational principle is an axiom; in UHM it is a theorem
+- ~~FEP is the classical limit (Theorem 4.2)~~ — retracted (2026-09-25): on diagonal states the UHM functional is a cross-entropy (Theorem 4.1), not Friston's free energy; whether FEP is a limit of UHM is an open programme [Pr] ([FEP derivation](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep))
+- ~~The variational principle of φ is derived from the categorical definition (Theorem 3.1)~~ — retracted (registry row 39e [✗])
+- ~~In FEP the variational principle is an axiom; in UHM it is a theorem~~ — retracted with Theorem 3.1: UHM currently has no variational principle for $\varphi$
 
 **What FEP does not include (UHM extends):**
 - [Experiential content](/docs/proofs/categorical/categorical-formalism#2-категория-exp) (E-dimension as fundamental)
 - [7-dimensional structure](/docs/core/structure/dimensions) ([justification](/docs/core/foundations/axiom-omega#октонионная-структура))
 - [Reflexive closure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
 - [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) (L0→L1→L2→L3→L4)
-- **Quantum generalisation** (density matrices instead of probabilities)
+- **Quantum generalisation** (density matrices instead of probabilities) — not new as such: a quantum-information formulation of the FEP, co-authored by Friston, was published in 2022 (Fields, Friston, Glazebrook & Levin; see [§39](#minimal-physicalism)). What was specific to UHM — its construction ($S_{vN} + D_{KL}$ with the self-model $\varphi$) — is retracted on the [FEP derivation](/docs/proofs/dynamics/fep-derivation) page (2026-09-25): the functional is a cross-entropy and $\varphi$ is not its minimiser
 
 ---
 
@@ -306,7 +304,7 @@ where $\varepsilon = \Gamma - \rho^*$ is the **prediction error**, $k = 1-R$ is 
 | Precision $\pi$ | $k = 1 - R$ | **[T]** (T-77) |
 | Prior | $\rho^* = \varphi(\Gamma)$ | **[T]** (categorical self-model) |
 | Likelihood update | $\Gamma \to (1-k)\Gamma + k\rho^*$ | **[T]** (replacement channel) |
-| Free energy | $\mathcal{F} = S_{vN} + D_{KL}$ | **[T]** (Theorem 3.1) |
+| Free energy | $\mathcal{F} = S_{vN} + D_{KL}$ (a cross-entropy) | **[✗]** — Theorem 3.1 retracted 2026-09-25 (registry row 39e) |
 | Hierarchical prediction | SAD tower $\varphi^{(n)}$ | **[T]** (T-142) |
 
 **What UHM adds:**
@@ -363,26 +361,92 @@ where $\varepsilon = \Gamma - \rho^*$ is the **prediction error**, $k = 1-R$ is 
 
 **Connection:** Quantum Cognition is the **closest** formalism to CC in mainstream cognitive science. CC can be viewed as a **foundation** for QC: it fixes $N = 7$, derives dynamics and consciousness thresholds, providing concrete predictions instead of an arbitrary model.
 
-## 9. Adversarial Collaboration IIT vs GWT (2023–2024) {#adversarial-collaboration}
+## 9. Adversarial Collaboration IIT vs GWT (2023–2025) {#adversarial-collaboration}
 
 :::info Empirical context
-The COGITATE project (Templeton World Charity Foundation): pre-registered experiments testing predictions of IIT and GWT about neural correlates of the content of consciousness (content-specific NCC).
+The COGITATE project (Templeton World Charity Foundation): pre-registered experiments testing predictions of IIT and GWT about neural correlates of the content of consciousness (content-specific NCC). The proponents of both theories and a theory-neutral consortium fixed the predictions, and what would count as a failure, before any data were collected. First results were posted in June 2023 (bioRxiv, doi:10.1101/2023.06.23.546249); the peer-reviewed report is Cogitate Consortium, Ferrante O., Gorska-Klimowska U., …, Mudrik L., Melloni L., "Adversarial testing of global neuronal workspace and integrated information theories of consciousness", *Nature* 642, 133–142 (2025), doi:10.1038/s41586-025-08888-1. 256 participants viewed clearly visible faces, objects, letters and false fonts for 0.5, 1.0 or 1.5 s while fMRI, MEG and intracranial EEG (iEEG) were recorded.
 :::
 
-**Results:**
-- Sustained activity in posterior cortex correlates with conscious content (partial support for IIT)
-- Prefrontal involvement was found in some paradigms (partial support for GWT)
-- Neither theory was fully confirmed
+### What each theory predicted, and what was found {#cogitate-predictions}
 
-**Interpretation through CC:**
+"GNWT" is Dehaene's global neuronal workspace version of GWT (§4); "ignition" is its predicted sudden, brain-wide rise of activity when content enters the workspace; "PFC" is the prefrontal cortex.
 
-| Result | CC interpretation |
+| Preregistered prediction | IIT | GNWT | Published outcome (*Nature*, 2025) |
+|---|---|---|---|
+| 1. Where conscious content can be decoded | Mainly posterior cortex; PFC adds nothing | PFC is necessary | Category, identity and orientation decodable in visual and ventrotemporal cortex; category also in inferior frontal cortex, whatever the task; face orientation not decodable from PFC in iEEG and fMRI; adding PFC to the decoder did not improve it |
+| 2. How content is held over time | Sustained posterior activity that tracks stimulus duration | Brief PFC ignition at stimulus onset **and offset**, silent maintenance in between | Duration-tracking responses in occipital and lateral temporal cortex — IIT passed its preregistered criterion, but orientation information was not sustained; none of 655 PFC electrodes showed the onset-plus-offset profile |
+| 3. Connectivity between areas | Sustained gamma-band synchrony within posterior cortex | Brief synchrony between category-selective areas and PFC | The preregistered phase-synchrony measure supported neither theory; an amplitude-based measure found content-selective coupling of face-selective areas with both early visual cortex and inferior frontal cortex |
+
+The consortium's summary: the results "align with some predictions of IIT and GNWT, while substantially challenging key tenets of both theories". For IIT, "a lack of sustained synchronization within the posterior cortex contradicts the claim that network connectivity specifies consciousness"; GNWT "is challenged by the general lack of ignition at stimulus offset and limited representation of certain conscious dimensions in the prefrontal cortex". The proponents' own readings are given separately in the paper's supplementary discussion.
+
+**Results** (as summarised earlier on this page, now corrected against the publication):
+- Sustained activity in posterior cortex tracks conscious content over time — IIT passed its preregistered duration test — but orientation, a clearly experienced feature, was not maintained, and the synchrony within posterior cortex that IIT requires was absent
+- Prefrontal cortex carried category information even for stimuli irrelevant to the task (partial support for GWT), but not identity, and the offset ignition that GNWT requires was absent
+- Neither theory was confirmed: both were substantially challenged on central, preregistered predictions
+
+**Interpretation through CC [I]:**
+
+| Result | CC interpretation [I] |
 |--------|------------------|
-| Posterior cortex → content | $\Phi \geq 1$: integration of coherences (IIT analogue) |
-| Prefrontal → access | $R \geq 1/3$: reflexive access (GWT analogue) |
-| No-report → less frontal | Without report $R$ is not measured, but $\Phi$ is preserved |
+| Posterior cortex → content | $\Phi \geq 1$: integration of coherences (IIT analogue) — but CC names no brain region and has no fixed reconstruction protocol $\pi_{\mathrm{bio}}$, so the result does not test $\Phi \geq 1$ |
+| Prefrontal → access | $R \geq 1/3$: reflexive access (GWT analogue) — same caveat |
+| No sustained synchrony within posterior cortex | A reading of $\Phi(\Gamma)$ as posterior connectivity inherits IIT's failed prediction |
+| No offset ignition in PFC | A reading of ignition as the crossing of $P = 2/7$ inherits GNWT's failed prediction |
+| Stimuli irrelevant to the task (not reported) | Category information was still present in inferior frontal cortex; the reading previously given here — "no report, less frontal involvement: $R$ not measured, $\Phi$ preserved" — is not what the study found |
 
-**Key advantage of CC:** CC **unifies** both predictions: ignition ($P > 2/7$) as threshold, posterior hot zone ($\Phi \geq 1$) as integration, frontal involvement ($R \geq 1/3$) as reflection. The adversarial collaboration confirms that a **conjunctive** approach (both conditions necessary) is more accurate than each theory separately.
+**What the collaboration does — and does not — show for CC [I].** CC made no preregistered prediction in COGITATE, so the study neither supports nor refutes it. An earlier version of this paragraph said that the collaboration "confirms that a conjunctive approach (both conditions necessary) is more accurate than each theory separately"; the published outcome does not support that sentence. If IIT's posterior integration is read as $\Phi \geq 1$ and GNWT's ignition as $P > 2/7$ — the mappings this page uses — then a predicate that requires both conditions inherits both failures instead of escaping them. What COGITATE does show is how a theory of consciousness gets tested: predictions fixed in advance, adversaries agreeing beforehand on what counts as failure, several recording methods at once. CC has not entered such a test; it would first need a fixed reconstruction protocol $\pi_{\mathrm{bio}}$ ([falsifiability](/docs/reference/falsifiability)).
+
+### The "pseudoscience" letter and the replies (2023–2025) {#iit-pseudoscience}
+
+In September 2023 a letter signed by 124 scholars was posted on PsyArXiv: IIT-Concerned, Fleming S.M., Frith C.D., Goodale M., Lau H., LeDoux J.E., Lee A.L.F., Michel M., Owen A.M., Peters M.A.K., Slagter H.A., "The Integrated Information Theory of Consciousness as Pseudoscience", doi:10.31234/osf.io/zsr78. It argued that IIT should be labelled pseudoscience, and *Nature*'s news report described the reaction as an uproar (Lenharo M., *Nature*, 20 September 2023, doi:10.1038/d41586-023-02971-1). The group then published its case as a peer-reviewed Comment — IIT-Concerned et al., "What makes a theory of consciousness unscientific?", *Nature Neuroscience* 28, 689–693 (2025), doi:10.1038/s41593-025-01881-x — arguing that IIT "is indeed unscientific because its core claims are untestable even in principle". The same issue carried two replies:
+- Tononi G., Albantakis L., Barbosa L., Boly M., et al. (22 authors, among them C. Koch, E. Hoel and N. Tsuchiya), "Consciousness or pseudo-consciousness? A clash of two paradigms", *Nature Neuroscience* 28, 694–702 (2025), doi:10.1038/s41593-025-01880-y. The label, they answer, exposes "a crisis in the dominant computational-functionalist paradigm, which is challenged by IIT's consciousness-first paradigm".
+- Gomez-Marin A., Seth A.K., "A science of consciousness beyond pseudo-science and pseudo-consciousness", *Nature Neuroscience* 28, 703–706 (2025), doi:10.1038/s41593-025-01913-6 — a critical assessment of the charge that tries to turn the clash into lessons for the field.
+
+**Why this matters for UHM [I].** The charge is aimed at IIT's identity claim: that an experience *is* a certain mathematical structure. UHM makes an identity claim of the same kind — experience as an aspect of $\Gamma$ — and its own [falsifiability page](/docs/reference/falsifiability) states that its main criterion is a supervenience claim, testable only together with a fixed reconstruction protocol $\pi_{\mathrm{bio}}$. The corpus goes further against itself: by [T-214](/docs/proofs/categorical/fundamental-closures#t-214), registered as a theorem, the bridge from states to experience cannot be an internal morphism of the theory, so the identifications "E-sector = interiority" and "qualia = eigenvectors" are necessarily external postulates. The "untestable in principle" criticism therefore reaches UHM's identity claim at least as directly as IIT's. What UHM can set against it are only its numeric predictions — and those meet the formal critiques of the next section.
+
+## Formal Critiques That Bind UHM's Consciousness Predicate {#formal-critiques}
+
+:::info Why this section exists
+Three well-known formal arguments were aimed at IIT. Each applies to any theory that decides consciousness from a system's *internal* structure — and UHM's predicate $\mathrm{Cons}(S) := (P > 2/7) \wedge (R \geq 1/3) \wedge (\Phi \geq 1) \wedge (D_{\min} \geq 2)$ ([T-223](/docs/proofs/categorical/fundamental-closures#t-223)) is such a theory: it reads four numbers off the reconstructed state $\Gamma$. Until this section the corpus did not discuss these arguments. The analysis below is an interpretation [I]; it does not claim to close any of them.
+:::
+
+### The unfolding argument (Doerig, Schurger, Hess & Herzog, 2019) {#unfolding-argument}
+
+**Source:** Doerig A., Schurger A., Hess K., Herzog M.H., "The unfolding argument: Why IIT and other causal structure theories cannot explain consciousness", *Conscious. Cogn.* 72, 49–59 (2019), doi:10.1016/j.concog.2019.04.002.
+
+**The argument.** By a result of the theory of computation, any recurrent network can be "unfolded" into a feedforward network that computes the same input–output function over any finite duration. Theories that tie consciousness to causal structure — IIT, recurrent processing theory (§10) — say that the recurrent network may be conscious and the feedforward one never is. But all evidence about consciousness reaches us through input–output behaviour (reports), which the two networks share. Hence, the authors conclude, such theories "are either false or outside the realm of science".
+
+**Standing.** Contested and unresolved. Replies: Tsuchiya N., Andrillon T., Haun A., *Conscious. Cogn.* 79, 102877 (2020); Kleiner J., "Brain states matter. A reply to the unfolding argument", *Conscious. Cogn.* 85, 102981 (2020), which rejects the premise "that measures of brain activity cannot be used in an empirical test of theories of consciousness". Counter-reply: Herzog M.H., Schurger A., Doerig A., "First-person experience cannot rescue causal structure theories from the unfolding argument", *Conscious. Cogn.* 98, 103261 (2022).
+
+**Exposure of UHM [I].** Direct, wherever $\Gamma$ is reconstructed from internal structure. This page itself maps recurrent processing onto UHM ([§10](#rpt): "feedforward sweep $\mapsto R < R_{\text{th}}$"). If the reconstruction $\pi_{\mathrm{bio}}$ assigns different $\Gamma$ to a recurrent brain and to its feedforward unfolding — which it must, if that mapping is to mean anything — then UHM gives different verdicts on two systems with identical reports and falls into the dilemma. Moreover, the canonical reflection measure $R = 1/(7P)$ is a function of purity alone ([T-126](/docs/proofs/consciousness/conscious-window#t-126), registered as a theorem), so recurrence can enter UHM only through the way $\pi_{\mathrm{bio}}$ assigns $P$ — and $\pi_{\mathrm{bio}}$ is not yet fixed. The corpus's nearest defence, [T-223](/docs/proofs/categorical/fundamental-closures#t-223) (registered as a theorem), shows that $\mathrm{Cons}(S)$ does not change when the *readout alphabet* is relabelled. Unfolding relabels nothing: it replaces the physical system while keeping its behaviour, so T-223 does not answer it.
+
+### The substitution argument (Kleiner & Hoel, 2021) {#substitution-argument}
+
+**Source:** Kleiner J., Hoel E., "Falsification and consciousness", *Neurosci. Conscious.* 2021(1), niab001 (2021), doi:10.1093/nc/niab001.
+
+**The argument.** A test of a theory of consciousness compares the experience the theory *predicts* from internal data (brain imaging, say) with the experience the experimenter *infers* from reports or behaviour. If the two kinds of data are independent — internal data can vary while the reports stay fixed — then every "minimally informative" theory admits a *universal substitution*: a change of physical system that keeps every report and changes the prediction. The theory is then falsified by some possible system, or every single inference is wrong. If instead prediction and inference are strictly dependent, the theory is unfalsifiable. The unfolding argument is one special case. Kleiner and Hoel name two ways out: a "lenient dependency" between prediction and inference data (they know of no theory or paradigm that has one), and theories in which physics is not causally closed, so that experience makes a physical difference of its own.
+
+**Standing.** Not refuted in the sources cited here. The authors present it as a defect of the standard scheme for testing theories of consciousness, not of one theory — and Hoel is also among the 22 authors of the IIT reply in *Nature Neuroscience* (2025, §9).
+
+**Exposure of UHM [I].** UHM's predicate is minimally informative (it separates $\mathrm{Cons}$ from $\neg\mathrm{Cons}$), and its contentful falsifiers compare an internal quantity with an inferred state: $P(\Gamma_{\mathrm{wake}}) > 2/7 > P(\Gamma_{\mathrm{NREM3}})$ and the monotone $\Phi$–PCI relation (the warning box on the [falsifiability](/docs/reference/falsifiability) page). Both horns of the dilemma are visible in the corpus:
+- **Independence horn.** If $\pi_{\mathrm{bio}}$ is fixed from anatomy and physiology alone, internal data can vary while reports stay fixed — Kleiner and Hoel argue that interventions such as transcranial magnetic stimulation probably allow this even within human brains — and the theorem applies: some possible system falsifies the predicate, or the inferences are wrong.
+- **Strict-dependence horn.** The corpus's own row [F-Neural](/docs/reference/falsifiability#f-neural-нейронные-корреляты) maps the clinical PCI cut-off 0.31 onto $P_{\text{crit}} = 2/7$ and calls the support "calibration-dependent, not direct". A threshold calibrated on the inference data cannot be falsified by the same data.
+- **The supervenience criterion** — "same full invariant, different experience" — is not refuted by substitutions (they change $\Gamma$ and keep the reports, which supervenience allows), but only because it predicts nothing about *which* experience a state carries; the falsifiability page says as much.
+- **The ways out.** No lenient dependency is constructed in the corpus. The second way out is closed to UHM as formulated: two-aspect monism identifies experience with an aspect of $\Gamma$, so experience makes no causal difference beyond $\Gamma$. Whether the No-Zombie link ([Theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie): viability forces $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min}$) ties the differentiation conjunct $D \geq 2$ to observable viability — and so puts it on the unfalsifiable horn — is not analysed in the corpus.
+
+### Aaronson's "unconscious expander" (2014) {#aaronson-expander}
+
+**Sources:** Aaronson S., "Why I Am Not An Integrated Information Theorist (or, The Unconscious Expander)", *Shtetl-Optimized* (blog), 21 May 2014, https://scottaaronson.blog/?p=1799; Tononi's reply, "Why Scott should stare at a blank wall and reconsider (or, the conscious grid)", with Aaronson's answer, posted 30 May 2014 as "Giulio Tononi and Me: A Phi-nal Exchange", https://scottaaronson.blog/?p=1823.
+
+**The argument.** Systems that do almost nothing — applying a Vandermonde matrix over a finite field, a low-density parity-check code, logic gates wired as an expander graph (a sparse graph in which every set of nodes connects to many others) — have large IIT $\Phi$, so IIT predicts that they can be "unboundedly more conscious than humans".
+
+**Standing.** Tononi's reply — subtitled "the conscious grid" — accepted the implication: by IIT, a large network of XOR gates arranged as an expander, or even as a two-dimensional grid, is conscious. The disagreement is therefore not about the calculation but about whether such a verdict refutes a theory; Tononi et al. (2025, §9) still cite the exchange.
+
+**Exposure of UHM [I].** The quantitative form does not carry over. [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) is bounded: because $|\gamma_{ij}|^2 \leq \gamma_{ii}\gamma_{jj}$ for any density matrix, $\Phi \leq 6$ in dimension 7 (the corpus records $\Phi_{\max} = 6$ for a flat diagonal in registry row T-305, a conditional result); inside the window $P \leq 3/7$, the identity $P = P_{\mathrm{diag}}(1 + \Phi)$ of [T-129a](/docs/proofs/consciousness/operationalization#t-129a-универсальность) (registered as a theorem) together with $P_{\mathrm{diag}} \geq 1/7$ gives $\Phi \leq 2$, so the degree $C = \Phi R$ stays below 1. Nothing can be "unboundedly more conscious" (these bounds are elementary consequences of registered identities, not registry entries). The qualitative form does carry over. $\mathrm{Cons}(S)$ is four inequalities on $\Gamma$ for any system satisfying the axioms (AP)+(PH)+(QG)+(V); the window is non-empty by construction ([T-124](/docs/proofs/consciousness/conscious-window#t-124), registered as a theorem); and nothing in the definitions requires complexity. The corpus has not shown that a structurally trivial engineered system — for instance a seven-level open quantum system held inside the window by designed dissipation — fails the axioms. Until it does, UHM faces the choice Tononi faced: accept the verdict, or add a condition.
+
+### What this means for the falsification criterion {#critiques-summary}
+
+[I] Taken together: (1) the supervenience criterion escapes these arguments only because it makes no prediction about which experience a state carries; (2) the numeric predicate is exposed exactly where it has content — through the reconstruction $\pi_{\mathrm{bio}}$; (3) the corpus has none of the answers the literature considers: no reconstruction protocol fixed and published before testing, no statement of what $\mathrm{Cons}(S)$ says about input–output-equivalent substitutes (feedforward unfoldings, lookup tables, emulations), no construction of a lenient dependency, and no condition that excludes trivially simple systems passing the gate. These are open problems of UHM, not solved ones.
 
 ## Debate on AI Consciousness (2023–2025) {#ai-consciousness-debate}
 
@@ -462,7 +526,7 @@ Mapping of the five theses:
 |---|---|---|
 | FPR | **forced** | [T-186](/docs/proofs/categorical/cohesive-closure) (Cohesive Closure): $F \cong \&\|_\mathcal{D}$ |
 | NS | **conventional** | [T-215](/docs/proofs/categorical/fundamental-closures#t-215): choice $\iota_\mathrm{min}$ vs $\iota_\mathrm{max}$ |
-| OW | **derived, unique** | [T-120](/docs/proofs/physics/emergent-manifold) + [T-173](/docs/proofs/categorical/uniqueness-theorem) |
+| OW | **derived at T-120 [C], unique** | [T-120](/docs/proofs/physics/emergent-manifold) + [T-173](/docs/proofs/categorical/uniqueness-theorem) |
 | NF | **definitional** | [T-211](/docs/proofs/categorical/fundamental-closures#t-211): Giraud axioms, descent |
 | NR | **replaced by NR$_\text{site}$** | Facts are ∞-sheaf sections indexed by the internal site $\mathcal C_7 \in \mathfrak{T}$ |
 
@@ -579,7 +643,7 @@ graph TB
     C1 --> C2 --> C3 --> KK
     AP --> KK
     IIT -->|"Φ → Φ(Γ)"| KK
-    FEP -->|"class. limit [T]"| KK
+    FEP -.->|"class. limit retracted"| KK
     GWT2 -->|"ignition → P>2/7"| KK
     HOT2 -->|"HOT → φ, R≥1/3"| KK
     AST2 -->|"self-model → φ"| KK
@@ -614,7 +678,7 @@ This is **not a uniqueness theorem**: from the minimality of 7 dimensions it doe
 | Cybernetics-III | $F_{\mathrm{Luhmann}}: \mathbf{Social} \to \mathbf{Hol}$ | No | Yes | Projection |
 | Autopoiesis | $F_{\mathrm{MV}}: \mathbf{Autopoiesis} \to \mathbf{Hol}$ | No | Yes | Projection |
 | IIT | $F_{\mathrm{IIT}}: \mathbf{IIT} \to \mathbf{Hol}$ | No | Yes | Projection |
-| FEP | $F_{\mathrm{FEP}}: \mathbf{FEP} \hookrightarrow \mathbf{Hol}^{\mathrm{diag}}$ | Yes (on $\Gamma^{\mathrm{diag}}$) | Yes | **Embedding (class. limit)** |
+| FEP | $F_{\mathrm{FEP}}: \mathbf{FEP} \hookrightarrow \mathbf{Hol}^{\mathrm{diag}}$ | Yes (on $\Gamma^{\mathrm{diag}}$) | Yes | ~~Embedding (class. limit)~~ — retracted 2026-09-25: on diagonal states the UHM functional is a cross-entropy, not Friston's free energy |
 | Panpsychism: panprotopsychism | $\iota_{\mathrm{L0}}: \mathbf{Pan}_{\mathrm{proto}} \hookrightarrow \mathbf{Hol}$ | Yes (on L0) | Yes | Embedding |
 | Panpsychism: Russellian monism | $F_{\mathrm{Russell}}: \mathbf{Russell} \to \mathbf{Hol}$ | No | Yes | Projection |
 | AST | $F_{\mathrm{AST}}: \mathbf{AttSchema} \to \mathbf{Hol}$ | No | Yes | Projection (only φ, without Φ) |
@@ -645,9 +709,9 @@ This is **not a uniqueness theorem**: from the minimality of 7 dimensions it doe
 | **IIT** | No — $\Phi^{\mathrm{IIT}}$ depends on partition choice (MIP) | No |
 | **FEP** | Partial — $\varphi$ is variational, but multiple minima are possible | No |
 | **GWT/HOT** | No formalisation | No |
-| **CC** | **Yes** — $R$, $\Phi$, $\mathrm{Coh}_E$ are $G_2$-invariants | **Yes** — uniqueness up to $G_2$ |
+| **CC** | **Partial** — only $P$ and $R$ are invariant (under every unitary); $\Phi$ and $\mathrm{Coh}_E$ are frame-pinned ([D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность); [T-223](/docs/proofs/categorical/fundamental-closures#t-223), lemma L4): $\Phi$ is invariant only under the finite frame group $\Gamma_{\!\text{oct}}$, $\mathrm{Coh}_E$ only under the rotations that fix the $E$ axis (an 8-dimensional $SU(3)$ inside $G_2$) | **Yes** — uniqueness up to $G_2$ ([T-123](/docs/proofs/consciousness/conscious-window#t-123)) |
 
-CC is the only theory of consciousness for which the **observer-independence** of all key measures and the **uniqueness** of the representation (up to the finite-dimensional gauge group $G_2$) are proven.
+The **uniqueness** of the representation up to the finite-dimensional gauge group $G_2$ is a registered theorem (T-123). An earlier version of this box also listed $\Phi$ and $\mathrm{Coh}_E$ as $G_2$-invariants and called CC "the only theory" whose key measures are all observer-independent; lemma L4 of T-223 shows that $\Phi$ and $\mathrm{Coh}_E$ are frame-referenced, so both statements are withdrawn.
 :::
 
 ## Orch-OR (Penrose, Hameroff) {#orch-or}
@@ -719,7 +783,21 @@ Minimisation of $F$ $\Longleftrightarrow$ maximisation of $P$. Lindblad $\mathca
 | $\varphi(\Gamma)$ (self-model) | Q-shape | — | HOR | Generative model | Prior | — | Schema |
 | $V_{\text{hed}}$ (valence) | — | — | — | $-G$ (expected FE) | Error resolution | — | — |
 
-**Conclusion:** UHM is the most mathematically rigorous theory of consciousness. It is unique in specifying a concrete algebraic structure (Fano plane, $G_2$), exact thresholds ($P_{\text{crit}}=2/7$, $R_{\text{th}}=1/3$, $\Phi_{\text{th}}=1$), and having a software implementation (SYNARC).
+**Continuation for §37–§42 [I].** Same rows, with one row added for the relational identity of qualia, which is where the category-theoretic programme meets UHM:
+
+| UHM measure | Category theory of qualia (§37) | Formal IIT, process theories (§38) | Minimal physicalism, quantum FEP (§39) | Perceptronium (§40) | D'Ariano–Faggin (§41) | Observer theory (§42) |
+|-------------|------|------|------|------|------|------|
+| $P$ (purity) | — | — | — | Numerically, the most integrated states have $\rho^2 \propto \rho$ | Experienced state pure ($P = 1$) — outside UHM's window | — |
+| $R$ (reflexivity) | — | — | Self-representation traced to the bacterial stress response | — | — | Observer's belief in its own persistence |
+| $\Phi$ (integration) | Functor between experience and IIT structure (2016) | Generalised IIT; quantum IIT as a special case | Integrated information said to "emerge naturally" | Mutual information across a tensor cut; at most about 0.25 bit for quantum states | — | — |
+| $\sigma$ (stress) | — | — | Stress response of basal systems | — | — | — |
+| D/SAD (depth) | — | — | Hierarchical Bayesian inference | Hierarchy of integrated, relatively independent objects | — | — |
+| $\kappa$ (coherence) | — | — | Quantum coherence as a computational resource | — | Entanglement builds new qualia | — |
+| $\varphi(\Gamma)$ (self-model) | — | — | — | — | — | Observer's "equivalencing" of configurations |
+| $V_{\text{hed}}$ (valence) | — | — | — | — | — | — |
+| Relational identity of qualia (Yoneda) | Yoneda lemma for qualia (2020/2021, in a categorical programme begun in 2016); enriched version (2022) | Experience spaces with a distance | — | — | Qualia = pure states (rays) | — |
+
+**Conclusion [I]:** Among the theories in these tables, UHM is the one that fixes a concrete algebraic structure (Fano plane, $G_2$) and numeric thresholds ($P_{\text{crit}}=2/7$, $R_{\text{th}}=1/3$, $\Phi_{\text{th}}=1$). It is not the only mathematically rigorous programme — see the axiomatisation of IIT and the category theory of qualia (§37–§38) — and not the only one with software: IIT has the PyPhi toolbox (Mayner W.G.P. et al., *PLoS Comput. Biol.* 14, e1006343, 2018) and ART has working models (§12). An earlier version of this conclusion called UHM "the most mathematically rigorous theory of consciousness" and "unique" in having a software implementation; both statements are withdrawn.
 
 ---
 
@@ -1007,7 +1085,7 @@ Northoff uses nonlinear dynamics, measures of scale-free activity (power-law exp
 - Temporal structure: spectral gap $\Lambda$ defines timescales
 
 ### What CC does better
-- Derivation of spacetime from first principles ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
+- Derivation of spacetime from first principles, conditional on an aperiodic clock and the open reconstruction axioms of T-119 ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
 - Formal thresholds instead of correlation measures
 - Unified dynamics (Lindblad + $\mathcal{R}$) instead of a set of metrics
 
@@ -1189,7 +1267,7 @@ Operational synchrony: $\text{OS}_{ij}(t) = \text{corr}(\text{ISS}_i(t), \text{I
 |--------|-----|-----|
 | Central object | Operational modules (OM) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
 | Connectivity | Operational synchrony OS | Coherences $\gamma_{ij}$ |
-| Space-time | BOST (operational) | Emergent $M^4$ [T] (T-120) |
+| Space-time | BOST (operational) | Emergent $M^4$ [C] (T-120: an aperiodic clock, the open reconstruction axioms of T-119) |
 | Hierarchy | Simple → Complex OM | L0 → L4 |
 
 ### What CC borrows
@@ -1414,13 +1492,13 @@ Dissipative structure $\mapsto$ Holon $\mathbb{H}$; entropy production $\mapsto$
 
 ### Creators and history
 
-**Bertrand Russell** in «The Analysis of Matter» (1927) pointed out that physics describes only the structural/dispositional properties of matter, leaving open the question of "intrinsic nature". **David Chalmers** (2010, «The Character of Consciousness») and **Philip Goff** (2017, «Consciousness and Fundamental Reality») developed this into Russellian monism: the intrinsic nature of matter is proto-experiential. This is not panpsychism (proto-experience is not experience), but "panprotopsychism".
+**Bertrand Russell** in «The Analysis of Matter» (1927) pointed out that physics describes only the structural/dispositional properties of matter, leaving open the question of "intrinsic nature". **David Chalmers** (2010, «The Character of Consciousness») and **Philip Goff** (2017, «Consciousness and Fundamental Reality») developed this into Russellian monism: the intrinsic nature of matter is experiential or proto-experiential. The view comes in two varieties (T. Alter & D. Pereboom, "Russellian Monism", *Stanford Encyclopedia of Philosophy*, 2019, revised 2023, §1.2): *Russellian panpsychism*, on which the intrinsic properties ("quiddities") are themselves phenomenal — among its defenders Strawson (2006) and Goff (2017), who takes them to be phenomenal properties of the whole cosmos — and *Russellian panprotopsychism*, on which they are what Chalmers calls protophenomenal properties: not phenomenal themselves, but able collectively to constitute phenomenal properties. (An earlier edition said that Russellian monism "is not panpsychism … but panprotopsychism"; retracted — panprotopsychism is one of its two varieties.)
 
 ### Key idea
 
-Physics describes causal-structural properties (mass, charge, spin) — but these properties are defined through relations, not "from the inside". Russellian monism postulates: there exist intrinsic properties that (a) ground causal-structural properties and (b) are proto-experiential. Consciousness is when proto-experiential intrinsic properties come together into an integrated whole.
+Physics describes causal-structural properties (mass, charge, spin) — but these properties are defined through relations, not "from the inside". Russellian monism postulates: there exist intrinsic properties that (a) ground causal-structural properties and (b) are experiential or proto-experiential. Consciousness is when these intrinsic properties come together into an integrated whole.
 
-Key problem: **combination problem** — how simple proto-experiential properties give rise to unified macro-experience.
+Key problem: **combination problem** — how simple experiential or proto-experiential properties give rise to unified macro-experience.
 
 ### Formal structure
 
@@ -1432,7 +1510,7 @@ Formalisation is limited. Chalmers uses language of properties: physical propert
 |--------|-------------------|----|
 | Ontology | Intrinsic properties (proto-experience) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ (dual-aspect monism) |
 | Structure/experience | Physics = structure, experience = intrinsic | Structure and experience = aspects of $\Gamma$ |
-| Combination problem | Central problem | Resolved: L0 → L2 through thresholds ($P$, $R$, $\Phi$) |
+| Combination problem | Central problem | Restated, not resolved: the thresholds ($P$, $R$, $\Phi$, $D_{\text{diff}}$) say *when* L0 structure counts as an L2 subject, not *how* it constitutes experience [I] (an earlier edition said "Resolved"; retracted) |
 | Formalisation | Minimal | Complete (categories, dynamics) |
 
 ### What CC borrows
@@ -1440,7 +1518,7 @@ Formalisation is limited. Chalmers uses language of properties: physical propert
 - L0 as proto-experience: [panprotopsychism](/docs/consciousness/comparative/panpsychism-analysis) — compatible with CC
 
 ### What CC does better
-- **Solution to the combination problem**: thresholds $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$ determine when proto-experience (L0) becomes consciousness (L2)
+- **A criterion for the combination problem, not a solution**: thresholds $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ determine *when* protophenomenal structure (L0) counts as consciousness (L2), not *how* it becomes experience [I] ([analysis with sources](/docs/consciousness/comparative/panpsychism-analysis#что-отвечает-аппарат-угм)); an earlier edition listed this as a "solution to the combination problem" — withdrawn
 - Formal dynamics: how exactly intrinsic properties evolve
 - Concrete predictions instead of a philosophical thesis
 
@@ -1630,7 +1708,7 @@ Bayesian brain: $P(\text{cause}|\text{sensation}) \propto P(\text{sensation}|\te
 | Self | Interoceptive inference | $\varphi(\Gamma)$, R-measure |
 | "Real problem" | Explain properties of experience | E-dimension, $\mathrm{Coh}_E$ |
 | Precision | Weight of prediction error | $\sigma_k$ (stress vector) |
-| Free energy | Minimisation of $F$ | Class. limit $\mathcal{L}_\Omega$ [T] |
+| Free energy | Minimisation of $F$ | ~~Class. limit $\mathcal{L}_\Omega$ [T]~~ retracted 2026-09-25 [✗] |
 
 ### What CC borrows
 - Interoception: $\sigma_k$ as formalisation of interoceptive stress
@@ -1652,7 +1730,7 @@ Bayesian brain: $P(\text{cause}|\text{sensation}) \propto P(\text{sensation}|\te
 
 $$F_{\text{Seth}}: \mathbf{PP_{intero}} \to \mathbf{Hol}$$
 
-Prediction error $\mapsto$ $\sigma_k$; precision $\pi$ $\mapsto$ $1/\sigma_k$; interoceptive self-model $\mapsto$ $\varphi(\Gamma)$; free energy $F$ $\mapsto$ classical limit $\mathcal{L}_\Omega$. The functor is **not complete** — Seth does not cover integration ($\Phi$), the SAD tower, $G_2$-rigidity.
+Prediction error $\mapsto$ $\sigma_k$; precision $\pi$ $\mapsto$ $1/\sigma_k$; interoceptive self-model $\mapsto$ $\varphi(\Gamma)$; free energy $F$ $\mapsto$ ~~classical limit $\mathcal{L}_\Omega$~~ no counterpart (the FEP limit is retracted, 2026-09-25). The functor is **not complete** — Seth does not cover integration ($\Phi$), the SAD tower, $G_2$-rigidity.
 
 ---
 
@@ -1732,7 +1810,7 @@ Borrows the formalism of Friston's FEP: $F = D_{KL}[q(\theta) \| p(\theta|o)] - 
 
 ### What CC borrows
 - Primacy of affect: E-dimension is fundamental, $V_{\text{hed}}$ — hedonic value
-- Connection to FEP: CC includes FEP as classical limit [T]
+- Connection to FEP: ~~CC includes FEP as classical limit [T]~~ — retracted 2026-09-25 ([FEP derivation](/docs/proofs/dynamics/fep-derivation)); the connection is an open programme [Pr]
 - Dynamic model: psychic "forces" = components of $\mathcal{L}_\Omega$
 
 ### What CC does better
@@ -2032,12 +2110,12 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 | Aspect | PWT (Worden) | CC / UHM |
 |--------|--------------|----------|
 | Ontological primitive | Wave excitation $\psi$ in 3-D space | Coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Hard problem | Not directly addressed | Reframed via two-aspect monism (T-186 [T]) |
+| Hard problem | Not directly addressed | Reframed via two-aspect monism (T-186 [H]) |
 | Target | **Spatial** consciousness (sub-problem) | Full hierarchy L0–L4, all content |
 | Physical substrate | Thalamus / insect central body | Substrate-independent (categorical) |
 | Consciousness threshold | None | $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ (T-160, T-40b, T-129, T-151 [T]) |
 | Numerical predictions | None | 23 predictions with falsification criteria |
-| Derivation of physics | None | GR + QM + Standard Model from $\Gamma$ (T-117–T-121, T-186 [T]) |
+| Derivation of physics | None | GR on an emergent $M^4$ (T-117–T-121, [C] beyond T-117); quantum mechanics postulated, not derived ([QM reduction](/docs/physics/quantum-mechanics/qm-reduction)); Standard-Model colour from $G_2$ [T], electroweak [C at (FE)], finite space imported from Connes (T-186 [H]) |
 | Group structure | $PGL(4,\mathbb{R})$ (projective) | $G_2 = \mathrm{Aut}(\mathbb{O})$ (exceptional, finite-dim) |
 | Falsification | Wave not found in brain | $\beta \neq 1/4$; zombie at $N < 7$; $\mathrm{SAD} \geq 4$; etc. |
 | Scope relative to UHM | Candidate neural *implementation* of the coarse-grained geometric sector $\{A,S,D\}$ of $\Gamma$ | Foundational theory of which PWT may be a brain-level projection |
@@ -2076,6 +2154,373 @@ Crucially, PWT and UHM are **not mutually exclusive**. If Worden's wave is event
 
 ---
 
+## 37. Category Theory of Consciousness and Qualia (Tsuchiya, Saigo) {#category-qualia}
+
+> *«Category theory can prove that two objects A and B in a category can be equivalent if and only if all the relationships that A holds with others in the category are the same as those of B; this proof is called the Yoneda lemma.»* — Naotsugu Tsuchiya and Hayato Saigo (2021)
+
+**In brief.** This programme treats experiences as the objects of a category and their similarities as its arrows, and asks what can be known about an experience from its relations alone. It matters for UHM directly: it is the published precedent for UHM's use of the Yoneda lemma to identify qualia relationally, and it has already taken that idea into the laboratory.
+
+### Creators and history {#category-qualia-history}
+
+**Naotsugu Tsuchiya** (Monash University, Melbourne), **Hayato Saigo** (Nagahama Institute of Bio-Science and Technology) and **Shigeru Taguchi** (Hokkaido University) proposed in 2016 to use category theory — the branch of mathematics that studies structures together with the structure-preserving maps between them — to assess IIT's central claim that an experience *is* a particular mathematical structure: Tsuchiya N., Taguchi S., Saigo H., "Using category theory to assess the relationship between consciousness and integrated information theory", *Neurosci. Res.* 107, 1–7 (2016), doi:10.1016/j.neures.2015.12.007. Instead of asserting an identity in one step, they asked whether there is a *functor* — a structure-preserving translation — between the domain of experience and IIT's "maximally irreducible conceptual structures", and claimed that the existence of such a functor can be tested empirically. In an April 2020 preprint ("Applying Yoneda's lemma to consciousness research: categories of level and contents of consciousness", doi:10.31219/osf.io/68nhy) and the paper that followed (Tsuchiya N., Saigo H., "A relational approach to consciousness: categories of level and contents of consciousness", *Neurosci. Conscious.* 2021(2), niab034, doi:10.1093/nc/niab034) the Yoneda lemma became the centre of the programme. With **Steven Phillips** (National Institute of Advanced Industrial Science and Technology, Tsukuba) they extended it to graded similarity: Tsuchiya N., Phillips S., Saigo H., "Enriched category as a model of qualia structure based on similarity judgements", *Conscious. Cogn.* 101, 103319 (2022), doi:10.1016/j.concog.2022.103319. What the sources support directly is this: a category-theoretic approach from 2016, the Yoneda-based relational account of qualia explicitly in the 2020 preprint and the 2021 paper, and the enriched (metric) version in 2022. A later paper by the same authors cites the 2016 paper when it writes that category theory characterises a quale "as a collection of relationships with other qualia via the Yoneda lemma" (Tsuchiya N., Saigo H., Phillips S., "An adjunction hypothesis between qualia and reports", *Front. Psychol.* 13, 1053977, published January 2023); but the 2016 abstract does not mention the lemma, and the 2021 paper credits the 2016 paper with the categorical approach — tools for kinds of "sameness" and a stepwise plan for testing IIT's identity claim — not with the lemma. (An earlier edition said that the authors credit the 2016 paper as the start of the Yoneda-based characterisation; that wording is withdrawn.)
+
+### Key idea {#category-qualia-key-idea}
+
+An experience cannot be inspected "in itself", but its relations to other experiences can — by asking people whether two experiences look the same, or how similar they are. Take experiences as objects and "is experienced as nearly indistinguishable from" (or a graded dissimilarity) as arrows, and you obtain a category of qualia. The Yoneda lemma then says that an object is determined, up to isomorphism, by the totality of its relations to all other objects: two qualia with the same pattern of relations to everything else are equivalent. The 2021 paper also defines categories for the *level* of consciousness (states ordered by "is at least as conscious as") and for its *contents* (colour, sound, pain), and proposes the categorical structure of experience as a gold standard against which empirical research and theories of consciousness should be tested.
+
+### Formal structure {#category-qualia-formal}
+
+A category $\mathbf Q$ of qualia: objects are experiences, arrows are similarity relations. For $A \in \mathbf Q$ the functor $h_A = \mathrm{Hom}(-, A)$ collects all of $A$'s relations, and the Yoneda lemma gives $h_A \cong h_B \Rightarrow A \cong B$. In the enriched version the sets of arrows are replaced by numbers — a measured dissimilarity — and a quale is characterised by its dissimilarities to all others "up to an (enriched) isomorphism" (2022). The empirical arm (Kawakita G., Zeleznikow-Johnston A., Takeda K., Tsuchiya N., Oizumi M., "Is my 'red' your 'red'?: Evaluating structural correspondences between color similarity judgments using unsupervised alignment", *iScience* 28, 112029, 2025) collected similarity judgements for 93 colours and aligned the resulting structures across people by optimal transport, *without* telling the algorithm which colour is which: the structures of colour-neurotypical participants aligned "correctly" at the group level, those of colour-blind participants did not.
+
+### Comparison with CC {#category-qualia-comparison}
+
+| Aspect | Category theory of qualia | CC / UHM |
+|---|---|---|
+| What a quale is | An object of a category of experiences, fixed by its relations | A ray $[\lvert q\rangle] \in \mathbb P(\mathcal H_E)$ with Fubini–Study distances |
+| Yoneda lemma for qualia | Category-theoretic programme from 2016; the Yoneda-based account stated and applied in the 2020 preprint and the 2021 paper | [Theorem "Yoneda's lemma for qualia"](/docs/consciousness/foundations/two-aspect-monism#теорема-реляционная-определённость) |
+| Graded similarity | Enriched categories (2022) | Fubini–Study metric $d_{FS}$ |
+| Map from physics to experience | A functor between experience and IIT's structures, to be tested (2016) | Functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$, claimed unique under UHM's axioms |
+| Empirical test | Done: unsupervised alignment of colour-similarity structures (2025) | Metric prediction 4 on the [falsifiability](/docs/reference/falsifiability) page; not yet tested |
+
+### Precedent: what this programme did first {#category-qualia-precedent}
+
+:::warning Prior art for a UHM ingredient
+UHM's relational identity of qualia — the [Yoneda theorem for qualia](/docs/consciousness/foundations/two-aspect-monism#теорема-реляционная-определённость) and its corollary on inverted qualia — is **not a novel idea of UHM**. The use of the Yoneda lemma to characterise a quale by its relations to all other qualia was published by Tsuchiya and Saigo in an April 2020 preprint and a 2021 journal paper, within the category-theoretic programme that Tsuchiya, Taguchi and Saigo began in 2016; the graded (metric) version — a quale characterised by its dissimilarities to all other qualia, up to enriched isomorphism — appeared in 2022. The corpus page that states the theorem does not cite this work. What UHM adds is a *specific* choice of category (rays of $\mathbb P(\mathcal H_E)$ with the Fubini–Study metric) and the claim that the functor $F$ into it is [unique under UHM's axioms](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв); that page labels these formal results [T] and marks their reading as a theory of experience [I].
+:::
+
+### What CC borrows {#category-qualia-borrows}
+
+- The relational strategy itself: the identity of a quality through its position among all other qualities. The Yoneda argument on the [two-aspect monism](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность) page is this programme's argument, restated for UHM's category — though the corpus does not cite the programme.
+- The functorial framing: a theory of consciousness as a structure-preserving map from physical states into a category of experiences (2016).
+
+### What CC does better {#category-qualia-better}
+
+- One point, backed by the corpus's formal results: UHM commits in advance to a concrete geometry for the category of qualities (Fubini–Study distances on $\mathbb P(\mathcal H_E)$) and states that the functor $F$ is unique under its axioms ([theorem](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв), labelled [T] on its page, with no registry number). The Tsuchiya programme deliberately leaves the category to be found by experiment. Whether committing in advance is an advantage depends on whether the committed geometry survives the kind of test listed next.
+
+### Honest assessment: what the theory does better than CC {#category-qualia-honest}
+
+- **Priority**: it published the Yoneda-based relational account of qualia before UHM, with the caveats that UHM's page omits — equivalence *up to isomorphism*, and a category of qualia that has to be established by experiment.
+- **Data**: its similarity-judgement and unsupervised-alignment methods have produced results (93 colours; neurotypical against colour-blind observers). UHM's metric prediction ($d_{\mathrm{perceived}} \sim d_{FS}$, [falsifiability](/docs/reference/falsifiability), prediction 4) has no data and needs a calibration that is not yet fixed.
+- **Precision about inverted qualia [I]**: the Yoneda lemma gives identity up to isomorphism within one category. UHM's corollary — two qualities with the same distances to all others are identical — holds in any metric space for a simpler reason (two distinct points always differ in their distance to one of the two), so it does not reach the classical inverted-spectrum case, which concerns a symmetry of the whole quality space mapping one subject's qualities onto another's. The Tsuchiya programme poses that question correctly — as the existence of a structure-preserving map between two subjects' categories — and has begun to measure it. The corpus assigned it to the $G_2$ frame, but that identification is retracted ([calibration and the $G_2$-frame](/docs/consciousness/foundations/two-aspect-monism#калибровка-как-g2-репер): the phenomenal functor is not blind to a $G_2$ rotation, frame decision D-0910); what remains is empirical calibration, not Yoneda.
+
+### Standing {#category-qualia-standing}
+
+An active programme. Its relational method has produced one published cross-subject test (Kawakita et al., 2025). By its own description it is "ontologically neutral": it proposes a language for testable questions about the structure of experience, not a criterion of which systems are conscious.
+
+### Mapping functor [I] {#category-qualia-functor}
+
+$$F_{\text{CatQ}}: \mathbf{Q} \to \mathbf{Exp}$$
+
+Object of $\mathbf Q$ (an experience) $\mapsto$ ray $[\lvert q\rangle]$; similarity arrow $\mapsto$ small $d_{FS}$; enriched hom (a dissimilarity) $\mapsto$ $d_{FS}$ itself. The functor is **conjectural**: nothing guarantees that measured similarity structures are Fubini–Study geometries, and that is exactly what an alignment test would check.
+
+---
+
+## 38. The Mathematical Structure of IIT and Process Theories (Kleiner, Tull, Signorelli, Coecke, Prentner) {#formal-iit}
+
+> *«We provide a definition of a generalized IIT which has IIT 3.0 of Tononi et. al., as well as the Quantum IIT introduced by Zanardi et. al. as special cases.»* — Johannes Kleiner and Sean Tull (2020)
+
+**In brief.** A group of mathematicians and philosophers set out to state precisely what kind of mathematical object a theory of consciousness is, taking IIT as the worked case. It matters for UHM because UHM's own architecture — a map from physical states into a structured space of experiences, written in the language of categories — is one instance of the general form they axiomatised, and because they showed where IIT's formal definition breaks.
+
+### Creators and history {#formal-iit-history}
+
+- **Johannes Kleiner** (Munich Center for Mathematical Philosophy, LMU Munich): "Mathematical Models of Consciousness", *Entropy* 22(6), 609 (2020), doi:10.3390/e22060609 — what warrants a mathematical representation of experience, and a general framework for models of consciousness.
+- **Kleiner and Sean Tull** (Cambridge Quantum Computing): "The Mathematical Structure of Integrated Information Theory", *Front. Appl. Math. Stat.* 6, 602973 (2021), doi:10.3389/fams.2020.602973 (arXiv:2002.07655, February 2020); and **Tull and Kleiner**, "Integrated Information in Process Theories", arXiv:2002.07654 (2020).
+- **Camilo Miguel Signorelli, Quanlong Wang and Bob Coecke**: "Reasoning about conscious experience with axiomatic and graphical mathematics", *Conscious. Cogn.* 95, 103168 (2021), doi:10.1016/j.concog.2021.103168.
+- **Robert Prentner**: "Consciousness and topologically structured phenomenal spaces", *Conscious. Cogn.* 70, 25–38 (2019), doi:10.1016/j.concog.2019.02.002; "Category theory in consciousness science: going beyond the correlational project", *Synthese* 204, 69 (2024), doi:10.1007/s11229-024-04718-5; with Albantakis L. and Durham I., "Computing the integrated information of a quantum mechanism", *Entropy* 25(3), 449 (2023).
+
+### Key idea {#formal-iit-key-idea}
+
+Kleiner and Tull strip IIT down to the structure its algorithm actually uses: a class of physical systems, a class of *experience spaces* (sets equipped with a distance, an intensity and a scaling) and "cause–effect repertoires". An IIT is then a map that sends each system to its space of possible experiences, and each state to the experience it has. Tononi's IIT 3.0 and the quantum IIT of Zanardi, Tomka and Campos Venuti ("Towards Quantum Integrated Information Theory", arXiv:1806.01421, 2018) come out as special cases; the process-theory version — symmetric monoidal categories with their graphical calculus of string diagrams — extends IIT to any physical theory that can be written that way. Signorelli, Wang and Coecke use the same graphical calculus to recover, from the way processes compose, the distinction between an external and an internal view, the privacy of experience and phenomenal unity. Prentner models phenomenal space with mereology and topology (2019) and argues (2024) that category theory, and above all the notion of a functor, is what can take consciousness science beyond the "correlational project".
+
+### Formal structure {#formal-iit-formal}
+
+An IIT in the sense of Kleiner and Tull: the data are a system class $\mathrm{Sys}$ and a cause–effect structure; the output is a map $\mathrm{Sys} \to \mathrm{Exp}$ into experience spaces and, for each system, a map from its states to its experience space. The work does not claim that any IIT is true. It locates a weak point of the definition: IIT's nested maximisations and minimisations ("core subsystems") come with "no guarantee that these operations lead to unique results, neither in classical nor Quantum IIT", which the authors call "a case of ill-definedness".
+
+### Comparison with CC {#formal-iit-comparison}
+
+| Aspect | Formal IIT and process theories | CC / UHM |
+|---|---|---|
+| General form | A map $\mathrm{Sys} \to \mathrm{Exp}$ into experience spaces | Functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ |
+| Language | Symmetric monoidal categories, string diagrams | ∞-topos; CPTP category $\mathbf{Hol}$ |
+| Quantum case | Quantum IIT as a special case (2018, 2021, 2023) | $\Gamma \in \mathcal D(\mathbb C^7)$ |
+| External/internal split | Recovered from composition (Signorelli, Wang, Coecke 2021) | [Map splitting](/docs/consciousness/foundations/two-aspect-monism#категориальная-формализация) into $\mathrm{Map}_{\mathrm{ext}}$ and $\mathrm{Map}_{\mathrm{int}}$ |
+| Well-definedness | IIT's cores may be non-unique — shown (2021) | Closed formula for $\Phi$ in a pinned frame; representation unique up to $G_2$ ([T-123](/docs/proofs/consciousness/conscious-window#t-123), registered as a theorem) |
+
+### Precedent {#formal-iit-precedent}
+
+The **form** of UHM's bridge — a structure-preserving map from physical states into a mathematically structured space of experiences — was published before UHM: as a functor to be tested between experience and IIT's structures (Tsuchiya, Taguchi and Saigo 2016, §37) and as an axiomatic definition of the whole class of such theories (Kleiner and Tull, arXiv February 2020). Two further precedents bear on claims made on this page: quantum versions of IIT exist (Zanardi, Tomka and Campos Venuti 2018; Kleiner and Tull 2021; Albantakis, Prentner and Durham 2023), so "no quantum foundation" (§2) describes Tononi's IIT 3.0 and 4.0, not the IIT programme; and a categorical derivation of the external/internal distinction, of privacy and of unity was published by Signorelli, Wang and Coecke (2021). UHM's map-splitting theorem is a different construction — labelled [T] on its page, with its reading as physics versus experience marked [I] — but it is not the first categorical account of that distinction.
+
+### What CC borrows {#formal-iit-borrows}
+
+- Nothing explicitly: the corpus does not cite this work. Implicitly, UHM uses the template "theory of consciousness = map into a space of experiences", with its $\mathbf{Exp}$ in the role of the experience space.
+- The criticism of IIT in the $G_2$-rigidity box above ("$\Phi^{\mathrm{IIT}}$ depends on partition choice") is a special case of the non-uniqueness that Kleiner and Tull proved.
+
+### What CC does better {#formal-iit-better}
+
+- UHM's integration measure is well defined by construction: [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) is a closed formula on a fixed $7 \times 7$ matrix, with no search over partitions, so the ill-definedness that Kleiner and Tull found in IIT's cores cannot arise for it. This is a property of the definition, not a theorem; its price is that $\Phi(\Gamma)$ depends on the pinned frame (registry row T-129: "$\Phi$ is a frame-pinned observable").
+
+### Honest assessment: what the theory does better than CC {#formal-iit-honest}
+
+- **Axiomatic transparency**: Kleiner and Tull separate what IIT's algorithm needs from auxiliary choices and state the result as definitions a reader can check in one paper.
+- **Generality**: the process-theory formulation applies to any physical theory expressible in symmetric monoidal categories; UHM fixes one seven-dimensional quantum theory.
+- **Structure of phenomenal space**: Prentner's mereological and topological model says how parts of experience compose into a unified field; UHM expresses unity only through the single number $\Phi \geq 1$.
+
+### Standing {#formal-iit-standing}
+
+An active research line whose results are definitions and a proved limitation of IIT's algorithm, not empirical claims — so "confirmed" or "refuted" does not apply. The substitution argument of Kleiner and Hoel (see [Formal critiques](#substitution-argument)) comes from the same programme.
+
+### Mapping functor [I] {#formal-iit-functor}
+
+$$F_{\text{KT}}: \mathbf{Sys}_{\mathrm{IIT}} \to \mathbf{Hol}$$
+
+A generalised IIT is a map $\mathrm{Sys} \to \mathrm{Exp}$; UHM has the same shape, with $\mathrm{Sys}$ the states $\mathcal D(\mathbb C^7)$ with the dynamics $\mathcal L_\Omega$ and $\mathrm{Exp}$ the rays with Fubini–Study geometry — *if* UHM is read as a theory of IIT type, which the corpus does not claim. The mapping is **not an embedding**: UHM has no cause–effect repertoires and no exclusion step.
+
+---
+
+## 39. Minimal Physicalism and a Quantum Free-Energy Principle (Fields, Glazebrook, Levin) {#minimal-physicalism}
+
+> *«Our "minimal physicalist" approach makes no assumptions beyond those of quantum information theory, and hence is applicable from the molecular scale upwards.»* — Chris Fields, James F. Glazebrook and Michael Levin (2021)
+
+**In brief.** Fields, Glazebrook and Levin describe any system that exchanges information with its environment — a molecule, a cell, an organism — in the language of quantum information, and read cognition and awareness off that description at every scale. It matters for UHM twice: it is a published scale-free, quantum-informational account of cognition and consciousness (UHM's scale invariance CC-6 and its fractal holons make a scale claim of their own), and, with Karl Friston, it published a quantum formulation of the free-energy principle, which UHM also claims to generalise.
+
+### Creators and history {#minimal-physicalism-history}
+
+**Chris Fields** (Caunes Minervois, France), **James F. Glazebrook** (Eastern Illinois University; University of Illinois at Urbana–Champaign) and **Michael Levin** (Allen Discovery Center, Tufts University): "Minimal physicalism as a scale-free substrate for cognition and consciousness", *Neurosci. Conscious.* 2021(2), niab013 (2021), doi:10.1093/nc/niab013. With **Karl Friston**: Fields C., Friston K., Glazebrook J.F., Levin M., "A free energy principle for generic quantum systems", *Prog. Biophys. Mol. Biol.* 173, 36–59 (2022), doi:10.1016/j.pbiomolbio.2022.05.006 (arXiv:2112.15242, December 2021).
+
+### Key idea {#minimal-physicalism-key-idea}
+
+Two systems that interact through a boundary are described as exchanging bits across a "holographic screen" — an array of qubits that each side alternately prepares and measures. The screen plays the role of a Markov blanket (the statistical boundary between inside and outside in the free-energy principle). What a system can register is limited by its *quantum reference frames* (QRFs), the physical structures it uses to measure. From this the 2021 paper shows, in its words, that "integrated information, state broadcasting via small-world networks, and hierarchical Bayesian inference emerge naturally", and lists eighteen qualitative predictions, mostly about basal organisms — for example, that *E. coli*, whose spatial reference frame is one-dimensional (its body axis), does not experience three-dimensional space. The 2022 paper reformulates the free-energy principle for generic quantum systems and shows it to be "asymptotically equivalent to the Principle of Unitarity".
+
+### Formal structure {#minimal-physicalism-formal}
+
+A bipartite interaction $H_{AB}$ encoded on the $N$ qubits of the screen; separability of the joint state gives conditional independence, i.e. a Markov blanket; QRFs are specified with Barwise–Seligman channel theory, a category-theoretic language of classifiers and "infomorphisms". There is no fixed dimension and no threshold.
+
+### Comparison with CC {#minimal-physicalism-comparison}
+
+| Aspect | Minimal physicalism, quantum FEP | CC / UHM |
+|---|---|---|
+| Description of the substrate | Quantum information, any dimension | $\Gamma \in \mathcal D(\mathbb C^7)$ |
+| Scale | Scale-free by construction, from molecules to ecosystems | [Scale invariance CC-6](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность) (registry row T-72, [C] under assumption (AGG)) |
+| Boundary | Holographic screen as Markov blanket | Holon boundary, dimension $A$ (conceptual, §3) |
+| Free-energy principle | Quantum formulation (2021/2022) | ~~Classical FEP as a limit of UHM's variational $\varphi$~~ — retracted 2026-09-25 ([FEP derivation](/docs/proofs/dynamics/fep-derivation)): the functional is a cross-entropy and $\varphi$ is not its minimiser |
+| Criterion of consciousness | None; awareness graded by the available QRFs | $\mathrm{Cons}(S)$: four thresholds |
+| Basal organisms | Eighteen qualitative predictions | L0 (proto-experience) for every system; no organism-specific prediction |
+
+### Precedent: what this programme did first {#minimal-physicalism-precedent}
+
+:::warning Two UHM claims with an earlier external version
+1. **Quantum generalisation of the FEP.** The [FEP derivation page](/docs/proofs/dynamics/fep-derivation) (§6.3 and Corollary 7.1) presents "UHM generalizes FEP to the quantum case" as a UHM result and says that the FEP works "only with classical distributions". A quantum-information formulation of the FEP, co-authored by the FEP's originator, was posted in December 2021 and published in 2022 (Fields, Friston, Glazebrook and Levin). Quantising the FEP is therefore not new with UHM. What was UHM's own — its particular functional ($S_{vN} + D_{KL}$ with the self-model $\varphi$) and the claim that the classical FEP is its limit — was retracted on that page on 2026-09-25 (Theorems 3.1, 4.2 (iii)–(iv), 4.3 and Corollaries 7.1–7.2): the functional is a cross-entropy, minimised by the projection onto the top eigenvector of $\Gamma$ rather than by $\varphi$.
+2. **A scale-free, quantum-informational account of cognition and consciousness.** A framework that applies "in the same form" from molecules to ecosystems was published in 2021. UHM's CC-6 states something narrower and different — a bounded change of $P$, $R$ and $\Phi$ under aggregation, conditional on assumption (AGG) (T-72 [C]) — but the idea of a scale-free quantum-information substrate for consciousness is not a UHM novelty.
+:::
+
+### What CC borrows {#minimal-physicalism-borrows}
+
+- Nothing explicitly: the corpus does not cite this work. The ingredients run in parallel — a boundary read as a Markov blanket, and one formal structure claimed at every scale.
+
+### What CC does better {#minimal-physicalism-better}
+
+- UHM states quantitative claims where this programme stays qualitative. CC-6 (registry row T-72, corrected on 2026-09-25 to [C] under assumption (AGG)) bounds the change of $P$, $R$ and $\Phi$ under aggregation by $O(\delta)$ when the aggregation returns the constituent on uncoupled copies and the coupling $\delta$ is weak. The earlier unconditional bound $O(\varepsilon_0)$ for any CPTP aggregation is retracted there — the completely depolarising channel is CPTP and sends every $\Gamma$ to $I/7$ — so the advantage is conditional on (AGG).
+- UHM has explicit thresholds of consciousness; the programme has none — which is also why it cannot be caught out by them.
+
+### Honest assessment: what the theory does better than CC {#minimal-physicalism-honest}
+
+- **Minimal assumptions**: nothing beyond standard quantum information theory, where UHM adds a fixed dimension, an octonionic structure and four thresholds.
+- **Contact with biology**: its eighteen predictions concern organisms that can be studied now (bacteria, biofilms, insects), and the programme stresses that basal organisms and synthetic constructs offer "distinct advantages for experimental manipulation"; UHM makes no organism-specific prediction.
+- **The FEP is theirs**: Friston co-authored the quantum formulation; UHM's claim to contain the FEP as a limit was a claim about someone else's principle, and it is retracted (2026-09-25, [FEP derivation](/docs/proofs/dynamics/fep-derivation)).
+
+### Standing {#minimal-physicalism-standing}
+
+Active. The programme builds on the free-energy principle, whose central derivation Aguilera M., Millidge B., Tschantz A. and Buckley C.L. ("How particular is the physics of the free energy principle?", *Phys. Life Rev.* 40, 24–50, 2022, doi:10.1016/j.plrev.2021.11.001) found to hold "only for a very narrow space of parameters" even in simple linear stochastic systems. The quantum reformulation replaces the Markov blanket by a holographic screen defined through separability; whether that answers the criticism is not settled in the sources cited here. The 2021 paper presents several of its predictions as agreeing with observations already made (for instance, stigmergic memory in bacteria) rather than as new tests.
+
+### Mapping functor [I] {#minimal-physicalism-functor}
+
+$$F_{\text{MP}}: \mathbf{QRF} \to \mathbf{Hol}$$
+
+Holographic screen $\mapsto$ holon boundary (dimension $A$); quantum reference frame $\mapsto$ the pinned frame in which $\Gamma$ is read; variational free energy $\mapsto$ ~~$S_{vN} + D_{KL}$~~ no counterpart (that functional is a cross-entropy, and the FEP limit is retracted, 2026-09-25). The functor is **not complete**: minimal physicalism has no fixed dimension, no $G_2$ structure and no thresholds, while UHM has no account of what a system can register.
+
+---
+
+## 40. Tegmark — Consciousness as a State of Matter ("Perceptronium") {#perceptronium}
+
+> *«We examine the hypothesis that consciousness can be understood as a state of matter, "perceptronium", with distinctive information processing abilities.»* — Max Tegmark (2015)
+
+**In brief.** Tegmark asked what physical properties a lump of matter needs in order to be conscious — the way one asks what makes matter a solid or a liquid — and tried to answer with density matrices and Hamiltonians. It matters for UHM because UHM also starts from a density matrix and its dynamics, and because Tegmark's calculations show that integration defined independently of basis is tiny for every quantum state — which sharpens what UHM's integration measure is, and what it is not.
+
+### Creators and history {#perceptronium-history}
+
+**Max Tegmark** (MIT): "Consciousness as a state of matter", *Chaos, Solitons & Fractals* 76, 238–270 (2015), doi:10.1016/j.chaos.2015.03.014; arXiv:1401.1219 (January 2014). The same author's earlier decoherence argument against quantum effects in the brain is treated separately in the corpus ([T-267](/docs/consciousness/foundations/two-aspect-monism#t-267)).
+
+### Key idea {#perceptronium-key-idea}
+
+Tegmark proposes four conjectured necessary conditions for "perceptronium": the **information** principle (substantial capacity to store information), the **integration** principle (it cannot consist of nearly independent parts), the **independence** principle (substantial independence from the rest of the world) and the **dynamics** principle (substantial capacity to process information). **Autonomy** combines the last two, and a **utility** principle is offered as an evolutionary explanation rather than a necessary condition. He then generalises Tononi's integrated information to arbitrary quantum systems and uses it on the "quantum factorization problem": why do observers experience the particular split of Hilbert space into subsystems that corresponds to classical space?
+
+### Formal structure {#perceptronium-formal}
+
+The integrated information of a state $\rho$ is the mutual information across the "cruelest cut", minimised over all ways of factorising the Hilbert space into a tensor product. By a theorem Tegmark attributes to Jevtic, Jennings and Rudolph, the minimum is reached in the eigenbasis of $\rho$; numerically, the most integrated states are rescaled projectors. His conclusion: "no matter how large a quantum system we create, its state can never contain more than about a quarter of a bit of integrated information" — the *quantum integration paradox* — so that integrated information "must be modified or supplemented by at least one additional principle". Maximising independence alone picks the energy eigenbasis, in which nothing changes (the paper's *quantum Zeno paradox*).
+
+### Comparison with CC {#perceptronium-comparison}
+
+| Aspect | Perceptronium (Tegmark) | CC / UHM |
+|---|---|---|
+| Starting objects | $\rho$ and $H$ ("physics from scratch") | $\Gamma$ and $\mathcal L_\Omega$ |
+| Integration | Mutual information across a tensor-product cut, independent of basis | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ): off-diagonal coherence in a fixed basis |
+| Upper bound | About 0.25 bit for any quantum state | $\Phi \leq 6$ on any $7 \times 7$ density matrix; $\Phi \leq 2$ inside the consciousness window (see [Aaronson](#aaronson-expander)) |
+| Which basis? | Open ("quantum factorization problem") | The pinned functional frame; representation unique up to $G_2$ ([T-123](/docs/proofs/consciousness/conscious-window#t-123), registered as a theorem) |
+| Consciousness | Necessary conditions only | $\mathrm{Cons}(S)$: four thresholds |
+
+### Difference in kind {#perceptronium-difference}
+
+[I] The two "integrations" are different quantities. Tegmark's needs a tensor-product factorisation $\mathcal H = \mathcal H_1 \otimes \mathcal H_2$, and $\mathbb C^7$ has none because 7 is prime; so Tegmark's measure is not even defined for a single seven-dimensional $\Gamma$, and his quarter-bit bound does not constrain $\Phi(\Gamma)$. Conversely, $\Phi(\Gamma)$ is not a property of the state alone: it vanishes in $\Gamma$'s own eigenbasis and becomes positive only relative to a fixed basis. What Tegmark calls the factorisation problem therefore returns in UHM as the question of the frame. The corpus answers it with its $G_2$-uniqueness theorem plus the frame decision D-0910 (registry row T-129: "$\Phi$ is a frame-pinned observable") — by axiom and convention, not by deriving the basis from a Hamiltonian, as Tegmark asks.
+
+### What CC borrows {#perceptronium-borrows}
+
+- Nothing explicitly: the corpus cites Tegmark only for the decoherence argument (T-267). In parallel: the starting point "only $\rho$ and its dynamics", and consciousness as a phase of matter — UHM's [T-160](/docs/consciousness/hierarchy/swallowtail-transitions#фазовый-переход) (registered as a theorem) places a phase transition at $P = 2/7$.
+
+### What CC does better {#perceptronium-better}
+
+- A definite answer to "which basis": T-123 (uniqueness of the representation up to $G_2$, registered as a theorem) together with the pinned frame; Tegmark leaves the question open. Whether an answer by axiom and convention counts as better is itself debatable.
+- Quantitative thresholds, where Tegmark gives necessary conditions only.
+
+### Honest assessment: what the theory does better than CC {#perceptronium-honest}
+
+- **Checked calculations with a negative result**: the quarter-bit bound is a precise no-go for basis-independent integration in quantum states, and Tegmark states the paradoxes of his own proposal openly.
+- **The factorisation problem is posed, not assumed**: UHM's integration means something only in a basis it fixes; Tegmark shows why the choice of basis cannot be taken for granted.
+- **Links to established physics**: error-correcting codes, criticality in condensed matter, Quantum Darwinism.
+
+### Standing {#perceptronium-standing}
+
+A programmatic paper. By its author's own conclusion, the integration principle as defined fails for quantum states and needs "at least one additional principle"; it has not been developed into a testable criterion of which systems are conscious.
+
+### Mapping functor [I] {#perceptronium-functor}
+
+$$F_{\text{Teg}}: \mathbf{Perceptronium} \to \mathbf{Hol}$$
+
+Information principle $\mapsto$ $D_{\mathrm{diff}} \geq 2$; integration principle $\mapsto$ $\Phi \geq 1$ (a different quantity, as above); independence and dynamics $\mapsto$ autonomous $\mathcal L_\Omega$ with regeneration; factorisation problem $\mapsto$ the choice of frame. **Not a projection in the usual sense**: the central quantity changes its meaning in translation.
+
+---
+
+## 41. D'Ariano and Faggin — Quantum-Information Panpsychism {#quantum-info-panpsychism}
+
+> *«As a result we reach a quantum-information-based panpsychism, with classical physics supervening on quantum physics, quantum physics supervening on quantum information, and quantum information supervening on consciousness.»* — Giacomo Mauro D'Ariano and Federico Faggin (2020)
+
+**In brief.** Two physicists argue that experience *is* quantum information as lived from inside, and that a quale is a pure quantum state. Of all the external programmes on this page it is the nearest to UHM's identification of experience with a state in the Hilbert-space formalism — and it contradicts UHM on two precise points.
+
+### Creators and history {#quantum-info-panpsychism-history}
+
+**Giacomo Mauro D'Ariano** (Department of Physics, University of Pavia) and **Federico Faggin** (Federico and Elvia Faggin Foundation): "Hard Problem and Free Will: An Information-Theoretical Approach", arXiv:2012.06580 (December 2020); published in F. Scardigli (ed.), *Artificial Intelligence Versus Natural Intelligence*, Springer, 2022, pp. 145–192, doi:10.1007/978-3-030-85480-5_5. Faggin's book *Irreducible: Consciousness, Life, Computers, and Human Nature* (Essentia Books, 2024) sets out an idealist version for general readers, in which, in its publisher's words, "nature's most fundamental level is that of consciousness as a quantum phenomenon".
+
+### Key idea {#quantum-info-panpsychism-key-idea}
+
+The chapter's principles: information is experienced by the system that carries it (P1); experience cannot be shared, even in principle (P2, *privacy*) — and since only non-classical information cannot be read without disturbing it, the information theory of consciousness must be quantum (P2′); the state of a conscious system is *pure* (P3, "psycho-purity"), because an experience is one definite thing, whereas a mixture describes only someone else's knowledge of it; experience is made of structured qualia (P4). Hence their statement S1: "Qualia are described by ontic pure quantum states", with new qualia arising by superposition and entanglement. Free will is the unpredictable outcome of a purity-preserving ("atomic") quantum operation. The chapter lists possible tests: the number of qubits involved, complementary observables in cognition, violations of local-realism bounds.
+
+### Formal structure {#quantum-info-panpsychism-formal}
+
+Operational probabilistic theories as the framework, with quantum theory as the chosen instance. The *ontic* state is the pure state lived from inside; the *epistemic* state is the generally mixed state predicted from outside. To keep the ontic state pure, its evolution must be atomic (a single Kraus operator).
+
+### Comparison with CC {#quantum-info-panpsychism-comparison}
+
+| Aspect | D'Ariano–Faggin | CC / UHM |
+|---|---|---|
+| Experience is | Quantum information lived from inside | An aspect of $\Gamma \in \mathcal D(\mathbb C^7)$ (two-aspect monism) |
+| A quale | A pure state (a ray) | A ray $[\lvert q\rangle] \in \mathbb P(\mathcal H_E)$ — an eigen-ray of $\rho_E$; the identification is marked [I] (registry row T-203) |
+| Purity of the experienced state | Pure, $P = 1$ | Mixed: the window $2/7 < P \leq 3/7$ |
+| Why quantum | Privacy requires information that cannot be copied | $\Gamma$ is "classically realizable" ([T-267](/docs/consciousness/foundations/two-aspect-monism#t-267)) |
+| Free will | Outcome of an atomic quantum operation | Dec-functor ($\sigma$-optimisation) |
+| Dimension | Open ("the number of qubits involved") | Fixed: 7 |
+
+### Two points of direct conflict {#quantum-info-panpsychism-conflict}
+
+:::warning The programmes contradict each other here
+1. **Purity.** D'Ariano and Faggin require the experienced state to be pure. UHM's consciousness window requires $R \geq 1/3$, i.e. (with $R = 1/(7P)$) $P \leq 3/7$: a pure state has $R = 1/7$ and fails UHM's predicate. The two cannot both be right about the *experienced* state. They could be reconciled only by reading UHM's $\Gamma$ as D'Ariano and Faggin's *epistemic* state — knowledge from outside — which is exactly the reading they reject for experience, and which would turn UHM's identity claim into a claim about an observer's knowledge.
+2. **Why quantum.** Their argument for quantum theory is privacy: classical information can be copied and read without disturbance, so it cannot be experience. The corpus holds instead that $\Gamma$ is classically realizable ([T-267](/docs/consciousness/foundations/two-aspect-monism#t-267), registered with theorem and conditional parts) and complex "by algebra, not superposition". By D'Ariano and Faggin's privacy principle, a classically realizable $\Gamma$ could not carry experience.
+:::
+
+### Precedent {#quantum-info-panpsychism-precedent}
+
+The identification of a quale with a pure quantum state — a ray of a Hilbert space — was published by D'Ariano and Faggin in December 2020 (arXiv) and in 2022 (book chapter), with worked examples (direction qualia on the Bloch sphere). UHM's identification of a quality with a ray $[\lvert q\rangle] \in \mathbb P(\mathcal H_E)$ is therefore not new as a *form* of identification. UHM's variant — eigen-rays of a mixed $\rho_E$ — is different, and the corpus itself marks it as an interpretation (T-203: mathematical core registered as a theorem, identification as [I]).
+
+### What CC borrows {#quantum-info-panpsychism-borrows}
+
+- Nothing explicitly: the corpus does not cite this work. In parallel: experience identified with a state in the Hilbert-space formalism; qualities as rays; the privacy of experience as structural (in UHM through T-214: the bridge to experience cannot be internal to the theory).
+
+### What CC does better {#quantum-info-panpsychism-better}
+
+- A fixed dimension and explicit thresholds, with a non-empty window ([T-124](/docs/proofs/consciousness/conscious-window#t-124), registered as a theorem). D'Ariano and Faggin leave the number of qubits open and give no criterion separating conscious from non-conscious systems — under their panpsychism, every system that carries information experiences it.
+
+### Honest assessment: what the theory does better than CC {#quantum-info-panpsychism-honest}
+
+- **An argument for quantumness**: privacy, hence no copying, hence quantum theory. UHM uses the quantum formalism without such an argument and, by T-267, does not need genuinely quantum information at all.
+- **Named experimental signatures**: complementary observables and violations of local-realism bounds in cognition — sharper than anything the corpus offers for the quantum character of $\Gamma$.
+- **A mechanism for free will stated inside the formalism** (an atomic operation), where UHM uses a decision functor.
+
+### Standing {#quantum-info-panpsychism-standing}
+
+A theoretical proposal in a book chapter and a book for general readers; the tests it lists are not reported as performed in the works cited here.
+
+### Mapping functor [I] {#quantum-info-panpsychism-functor}
+
+$$F_{\text{DF}}: \mathbf{QInfo}_{\text{ontic}} \to \mathbf{Hol}$$
+
+Pure ontic state $\mapsto$ ray $[\lvert q\rangle]$; mixed epistemic state $\mapsto$ $\Gamma$; atomic operation $\mapsto$ Dec-functor. The functor is **not structure-preserving** on the central point: it sends what one theory calls the experienced state to what the other calls knowledge about it.
+
+---
+
+## 42. Wolfram — Observer Theory {#observer-theory}
+
+> *«Consciousness is not about the general computation that brains—or, for that matter, many other things—can do. It's about the particular feature of our brains that causes us to have a coherent thread of experience.»* — Stephen Wolfram (2021)
+
+**In brief.** Wolfram argues that the laws of physics we find are the laws any observer like us must find — an observer who is computationally bounded and lives one sequential thread of experience. It matters for UHM because UHM also ties physics and experience together through the structure of an observer (self-model, emergent time); Wolfram's essays are the most explicit statement that physical law depends on the kind of observer.
+
+### Creators and history {#observer-theory-history}
+
+**Stephen Wolfram**: "What Is Consciousness? Some New Perspectives from Our Physics Project" (22 March 2021) and "Observer Theory" (11 December 2023), both published on his own site, writings.stephenwolfram.com — essays, not peer-reviewed papers.
+
+### Key idea {#observer-theory-key-idea}
+
+In Wolfram's Physics Project the universe is a computationally irreducible rewriting of a hypergraph. An observer is anything that treats many microscopic configurations as equivalent ("equivalencing"), is computationally bounded, and takes itself to persist in time. His claim: "if there's underlying computational irreducibility—plus causal invariance—then any observer who forms their perception of the universe in a computationally bounded way must inevitably perceive the universe to follow the laws of general relativity"; likewise, quantum mechanics is what such an observer sees of the branching ("branchial") structure of histories, and the second law of thermodynamics follows too. Consciousness, in the 2021 essay, is the feature that produces "a coherent thread of experience".
+
+### Formal structure {#observer-theory-formal}
+
+Programmatic: the essays state the claims and refer to the technical documents of the Physics Project. They give no quantitative criterion of consciousness and no test of one.
+
+### Comparison with CC {#observer-theory-comparison}
+
+| Aspect | Observer theory | CC / UHM |
+|---|---|---|
+| What makes an observer | Computational boundedness, equivalencing, belief in its own persistence | Self-model $\varphi$, reflection $R$ |
+| Time | A sequential thread of experience | [Emergent time](/docs/core/foundations/spacetime) (Page–Wootters) |
+| Physics from | Observer plus computational irreducibility and causal invariance | $\Gamma$ and $\mathcal L_\Omega$ (spectral action and related results) |
+| Criterion of consciousness | None | $\mathrm{Cons}(S)$ |
+
+### Precedent {#observer-theory-precedent}
+
+Wolfram's essays (2021, 2023) state explicitly that the physical laws we find follow from the kind of observer we are. The corpus derives general relativity from a spectral action, not from properties of the observer, so there is no priority collision on that point; the parallel lies only in the role both give to the observer's structure.
+
+### What CC borrows {#observer-theory-borrows}
+
+- Nothing explicitly: the corpus does not cite this work.
+
+### What CC does better {#observer-theory-better}
+
+- A consciousness predicate with numbers, including a non-empty window ([T-124](/docs/proofs/consciousness/conscious-window#t-124), registered as a theorem); Wolfram gives none.
+
+### Honest assessment: what the theory does better than CC {#observer-theory-honest}
+
+- **Economy**: one idea — boundedness plus persistence — where UHM needs several axioms.
+- **An explicit link** between "one thread of experience" and the emergence of physical law, which UHM does not state.
+
+### Standing {#observer-theory-standing}
+
+Self-published essays within a broader project; not peer-reviewed, and without a test of the claims about consciousness.
+
+### Mapping functor [I] {#observer-theory-functor}
+
+$$F_{\text{Obs}}: \mathbf{Observer} \to \mathbf{Hol}$$
+
+Equivalencing $\mapsto$ coarse-graining into $\Gamma$; computational boundedness $\mapsto$ the finite dimension 7; persistence $\mapsto$ the fixed point $\Gamma^*$ of $\varphi$. **Conceptual only**: neither side supplies the arrows.
+
+---
+
 ## Final Comparative Assessment {#итоговая-оценка}
 
 Before moving to the master table, it is useful to assess the key theories across several criteria. For each criterion: 0 = absent, 1 = partial, 2 = complete.
@@ -2094,7 +2539,7 @@ Before moving to the master table, it is useful to assess the key theories acros
 | **Total** | **8** | **5** | **9** | **6** | **5** | **5** | **4** | **9** | **18** |
 
 :::warning Caveat
-This table is a **subjective** assessment, not a proven result. CC scores maximum on formal criteria but **zero** on empirical base — which is perhaps the most important criterion. A theory without experimental verification remains a hypothesis, however elegant its mathematics.
+This table is a **subjective** assessment, not a proven result. CC scores maximum on formal criteria but **zero** on empirical base — which is perhaps the most important criterion. A theory without experimental verification remains a hypothesis, however elegant its mathematics. CC's score for falsifiability should be read together with the [formal critiques](#formal-critiques) above: its main criterion is testable only with a fixed reconstruction protocol $\pi_{\mathrm{bio}}$, and its numeric predicate is exposed to the unfolding and substitution arguments.
 :::
 
 ### How CC unifies theories: diagram of projections
@@ -2108,7 +2553,7 @@ graph TD
     HOT_P["HOT<br/>→ R ≥ 1/3, φ"]
     PP_P["PP<br/>→ σ_k, k=1-R"]
     AST_P["AST<br/>→ φ(Γ)"]
-    FEP_P["FEP<br/>→ class. limit ℒ_Ω"]
+    FEP_P["FEP<br/>→ limit retracted"]
     AFF["Affective<br/>→ V_hed, E-dim."]
     QC_P["Quant.Cog.<br/>→ Γ, N=7"]
 
@@ -2128,13 +2573,13 @@ Each arrow is a projection: the theory takes **part** of the CC formalism and ig
 
 ---
 
-## Master Table: 36 Theories of Consciousness {#мастер-таблица}
+## Master Table: 42 Theories of Consciousness {#мастер-таблица}
 
 | # | Theory | Authors | Year | Central object | Consciousness measure | Connection to CC | Functor status |
 |---|--------|---------|-----|----------------|----------------------|-----------------|----------------|
 | 1 | Autopoiesis | Maturana, Varela | 1980 | Autopoietic organisation | No | (AP), $\varphi(\Gamma^*)=\Gamma^*$ | Projection |
 | 2 | IIT | Tononi | 2004/2023 | Cause-effect structure | $\Phi^{\text{IIT}}$ | $\Phi(\Gamma)$ | Projection |
-| 3 | FEP | Friston | 2010 | Markov blanket | $F$ (free energy) | Class. limit [T] | **Embedding** |
+| 3 | FEP | Friston | 2010 | Markov blanket | $F$ (free energy) | ~~Class. limit [T]~~ retracted 2026-09-25 [✗] | ~~Embedding~~ open [Pr] |
 | 4 | GWT | Baars, Dehaene | 1988/2001 | Global workspace | Broadcasting | $P > 2/7$ (ignition) | Projection |
 | 5 | HOT | Rosenthal, Lau | 2005 | Metarepresentation | HOT level | $\varphi$, $R \geq 1/3$ | Projection |
 | 6 | PP | Clark, Hohwy | 2013 | Prediction error | Precision | $\sigma_k$, $k=1-R$ [T] | Projection |
@@ -2168,6 +2613,12 @@ Each arrow is a projection: the theory takes **part** of the CC formalism and ig
 | 34 | Information Synthesis | Ivanitsky | 1996 | Circular cortical cycle | EEG coherence | $\gamma_{ij}$, $R$, $\Phi$ | Projection |
 | 35 | Psycho-logic | Allakhverdov | 2000 | Hypothesis verification | No | $\varphi$, $\Gamma^*$, L0/L2 | Projection |
 | 36 | Projective Wave Theory (PWT) | Worden | 2024/2026 | Wave $\psi$ with projective $PGL(4,\mathbb{R})$ action | None (binary: wave present/absent) | Coherences $\gamma_{ij}$ in $\{A,S,D\}$, $\Sigma^3$ (T-119) | Projection / candidate neural implementation |
+| 37 | Category theory of qualia | Tsuchiya, Taguchi, Saigo, Phillips | 2016/2021/2022 | Category of experiences; similarity as arrows | None (structure, not magnitude) | Yoneda identity of qualia, $d_{FS}$ geometry | **Precedent** (Yoneda) / conjectural functor |
+| 38 | Formal IIT; process theories | Kleiner, Tull; Signorelli, Wang, Coecke; Prentner | 2019–2024 | Map from systems into experience spaces | Generalised $\Phi$ | Functor $F$ into $\mathbf{Exp}$; $\Phi(\Gamma)$ | **Precedent** (form of the bridge) / projection |
+| 39 | Minimal physicalism; quantum FEP | Fields, Glazebrook, Levin (and Friston) | 2021/2022 | Holographic screen between quantum systems | None (graded by reference frames) | CC-6 scale invariance ([C] under (AGG)); FEP limit (retracted) | **Precedent** (quantum FEP) / projection |
+| 40 | Perceptronium | Tegmark | 2014/2015 | $\rho$ and $H$ with a tensor factorisation | Integrated information across the "cruelest cut" | $\Phi(\Gamma)$ — a different quantity | Different in kind |
+| 41 | Quantum-information panpsychism | D'Ariano, Faggin | 2020/2022/2024 | Pure ("ontic") quantum state | None (panpsychist) | Qualia as rays; conflicts on purity and on quantumness | **Conflict** |
+| 42 | Observer theory | Wolfram | 2021/2023 | Computationally bounded observer | None | Observer structure, emergent time | Conceptual |
 
 :::info Notes on the master table
 - **Embedding** — the theory is a strict subcase of CC (proven)
@@ -2175,14 +2626,18 @@ Each arrow is a projection: the theory takes **part** of the CC formalism and ig
 - **Hypothesis** — connection is speculative
 - **Principally incomplete** — the theory rejects formalisation (enactivism)
 - **Not formal** — research programme, not a formal theory
+- **Precedent** — the external work published first an ingredient that UHM uses; UHM's version of that ingredient is not novel
+- **Conflict** — the two theories make contradictory claims on a named point
+- **Different in kind** — the shared word (here "integration") names different quantities
+- **Conceptual** — a parallel of ideas with no formal arrows on either side
 
-None of the listed theories covers **all** components of CC simultaneously: quantum formalism ($\Gamma$), dynamics ($\mathcal{L}_\Omega$), self-modelling ($\varphi$), thresholds ($P$, $R$, $\Phi$), phenomenology ($\mathrm{Coh}_E$), and algebraic rigidity ($G_2$). However, CC in turn has no empirical validation and no measurement protocols for $\Gamma$, which is its main weakness compared to experimental theories (NCC, RPT, ART, Ivanitsky, Anokhin).
+None of the listed theories covers **all** components of CC simultaneously: quantum formalism ($\Gamma$), dynamics ($\mathcal{L}_\Omega$), self-modelling ($\varphi$), thresholds ($P$, $R$, $\Phi$), phenomenology ($\mathrm{Coh}_E$), and algebraic rigidity ($G_2$). However, CC in turn has no empirical validation and no measurement protocols for $\Gamma$, which is its main weakness compared to experimental theories (NCC, RPT, ART, Ivanitsky, Anokhin, and the category theory of qualia with its colour-alignment data, §37).
 :::
 
 ---
 
 **Related documents:**
-- [FEP derivation from UHM](/docs/proofs/dynamics/fep-derivation) — **rigorous proof** that FEP is the classical limit of UHM (Theorems 3.1, 4.2, 5.1)
+- [FEP derivation from UHM](/docs/proofs/dynamics/fep-derivation) — the claim that FEP is the classical limit of UHM is retracted there (Theorems 3.1, 4.2 (iii)–(iv), 4.3 [✗]); Theorems 4.1 (as an identity) and 5.1 stand
 - [History of cybernetics](/docs/applied/coherence-cybernetics/cybernetics-history) — cybernetics of orders I-II-III
 - [Panpsychism](./panpsychism-analysis) — categorical analysis of variants of panpsychism and Hoffman's conscious realism
 - [Cognitive hierarchy](./cognitive-hierarchy) — K1–K5 levels

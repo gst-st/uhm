@@ -43,14 +43,14 @@ This ensures mathematical honesty and avoids hidden assumptions.
 | **Axiom 2 (Metric)** | The Grothendieck topology $J$ is induced by the Bures metric $d_B$ | **Petz classification:** Bures is the *minimal* monotone Riemannian metric on $\mathcal{D}(\mathcal{H})$ (unique in the classical case by Chentsov; minimal among infinitely many in the quantum case) |
 | **Axiom 3 (Dimension)** | $N = 7$ is the dimension of the base Hilbert space | Characterizes the class of systems under study (holons) |
 | **Axiom 4 (Scale)** | $\omega_0 = \lambda_{\min}(H_{\text{eff}}) > 0$ — the minimal nonzero eigenvalue of the effective Hamiltonian | Derived spectral property: $\omega_0 > 0$ for any viable system ($\omega_0 = 0 \Rightarrow$ no dynamics $\Rightarrow P < P_{\text{crit}}$). Different holons have different $\omega_0$, like different atoms have different masses. See [T-186, Cohesive Closure §5.4](/docs/proofs/categorical/cohesive-closure) |
-| **Axiom 5 (Page–Wootters)** | Tensor factorization $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$ with clock sector and constraint $\hat{C}\Gamma = 0$ | **Historically an axiom; now derivable** from A1–A4 via the spectral triple ([T-87 [T]](#pw-constraint)) — kept in the list for complete exposition. The *independent* axiom count is therefore **four** |
+| **Axiom 5 (Page–Wootters)** | Tensor factorization $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$ with clock sector and constraint $\hat{C}\Gamma = 0$ | **Half constructed, half assumed.** The clock register and the tensor factor are constructed from A1–A4 via the spectral triple ([T-87](#pw-constraint), steps 1–3, [T]); the constraint $\hat{C}\Gamma = 0$ is an assumption — the support condition $\mathrm{supp}\,\Gamma \subseteq \ker\hat{C}$ of [Property 2](#свойство-2) (T-87, step 4, [C]). The *independent* content is therefore A1–A4 **plus the constraint**. (An earlier entry called A5 derivable and the independent count four; retracted.) |
 
-:::warning Two inter-derivable axiom bases (T-190 Axiomatic Closure)
-UHM admits **two equivalent five-fold axiom bases**, and T-190 [T] establishes their **inter-derivability** — not a reduction to zero axioms:
+:::warning Two axiom bases and a conditional closure (T-190)
+UHM admits **two five-fold axiom bases**, and T-190 [C] asserts their **inter-derivability** under two named conditions — not a reduction to zero axioms:
 - the **mathematical** basis A1–A5 (∞-topos, Bures, $N=7$, $\omega_0$, Page–Wootters);
 - the **operational** basis (AP) autopoiesis, (PH) phenomenal identification, (QG) quantum-gravitational consistency, (V) viability, (MaxEnt) maximum entropy.
 
-T-87 [T] derives A5 from A1–A4; T-186/T-187 and the Hurwitz–Adams–Fano chain derive A1–A4 from the operational basis (given (QG)'s quantum/CPTP formalism); T-190 [T] closes the loop. This is a **basis-equivalence / self-consistency** result: the two 5-tuples entail one another, so neither is more primitive. It is **not** a claim of "zero axioms" — the operational properties are themselves five assumptions of the same cardinality. **Honest residue:** (QG) posits the quantum/CPTP formalism, so "why quantum mechanics?" remains genuinely external (see T-188). The A1–A5 labeling is kept for pedagogy; each is a theorem *relative to the other basis*, not absolutely.
+T-87 constructs the clock register of A5 from A1–A4 and takes the constraint as an assumption (step 4, [C]); T-187 and the Hurwitz–Adams–Fano chain support A2–A3 from the operational basis (given (QG)'s quantum/CPTP formalism), while the route to A1 through T-186 rests on the hypothesis T-186(a) [H]; T-190 closes the loop only under these two conditions, hence [C]. (An earlier version of this box gave T-87 and T-190 as [T]; retracted.) This is a **basis-equivalence / self-consistency** result: the two 5-tuples entail one another, so neither is more primitive. It is **not** a claim of "zero axioms" — the operational properties are themselves five assumptions of the same cardinality. **Honest residue:** (QG) posits the quantum/CPTP formalism, so "why quantum mechanics?" remains genuinely external (see T-188). The A1–A5 labeling is kept for pedagogy; each is a theorem *relative to the other basis*, not absolutely.
 :::
 
 :::info Status of $N = 7$ (two-track justification)
@@ -59,9 +59,9 @@ The dimension $N = 7$ is a **fundamental axiom** (Axiom 3) with two independent 
 | Track | Justification | Status |
 |------|-------------|--------|
 | **A** | [Theorem S](./axiom-septicity#теорема-s-семимерность--следствие-из-аксиомы): (AP)+(PH)+(QG) → N ≥ 7 | [T] Proved |
-| **B** | [Structural derivation](../../proofs/minimality/theorem-octonionic-derivation): P1+P2 → $\mathbb{O}$ → $\dim \mathrm{Im}(\mathbb{O})$ = 7 | [T] Mathematically rigorous |
+| **B** | [Structural derivation](../../proofs/minimality/theorem-octonionic-derivation): P1+P2 → $\mathbb{O}$ → $\dim \mathrm{Im}(\mathbb{O})$ = 7 | Hurwitz step [T]; P1+P2 [C at (Alt)]; not independent of Track A (step T8 of the chain takes $N = 7$ from Theorem S) |
 
-The bridge (AP)+(PH)+(QG) → P1+P2 is the [full chain T1–T15 [T]](../../proofs/minimality/theorem-octonionic-derivation#мост).
+The bridge (AP)+(PH)+(QG) → P1+P2 is the [full chain T1–T15](../../proofs/minimality/theorem-octonionic-derivation#мост), [C at (Alt)]: the steps up to the design PG(2,2) are theorems, and the step PG(2,2) → $\mathbb{O}$ needs an orientation of the seven lines — only 16 of the 128 orientations give a normed algebra (registry row 41n). It was cited here as "[T]" and Track B as "[T] mathematically rigorous" until 2026-09-25.
 :::
 
 **LEVEL 1: DEFINITIONS** (built from axioms)
@@ -153,7 +153,7 @@ Unlike 1-categorical Grothendieck topoi, where $\mathcal{C}$ must have finite li
 1. **Axiom Ω⁷ postulates the ∞-topos as primitive**, not $\mathcal{C}$. Physical states are objects of $\mathbf{Sh}_\infty(\mathcal{C})$, not $\mathcal{C}$.
 2. **Analogy with AG**: global sections of a sheaf on a scheme X need not be "functions on X" — they live in the **sheaf category**, which is strictly richer. Similarly: composite quantum states are topos objects, not C objects.
 3. **Sieve stability** via CPTP-contractivity of the Bures metric is defined through **composition of morphisms** (always defined), not through pullbacks of objects. This is the standard method for defining Grothendieck topologies (cf. étale, fppf topology in AG).
-4. **Entanglement via Day convolution.** The tensor product of quantum states $\otimes$ is **not** the Cartesian product $\times$ in the topos (Abramsky-Coecke theorem: CPTP category is non-Cartesian monoidal). The correct monoidal structure on $\mathbf{Sh}_\infty(\mathcal{C})$ is given by **Day convolution** (Day 1970):
+4. **Entanglement via Day convolution.** The tensor product of quantum states $\otimes$ is **not** the Cartesian product $\times$ in the topos (quantum channels form a monoidal but non-Cartesian category: a Cartesian product would supply a natural diagonal, that is a cloning channel; in compact closed categories this is Abramsky's cloning-collapse theorem, Theorem 11 of S. Abramsky, "No-cloning in categorical quantum mechanics", 2010, arXiv:0910.2401 — an earlier wording credited an "Abramsky–Coecke theorem"). The correct monoidal structure on $\mathbf{Sh}_\infty(\mathcal{C})$ is given by **Day convolution** (Day 1970):
    
    $$(\mathcal{F} \otimes_{\text{Day}} \mathcal{G})(\rho) = \int^{\rho_1, \rho_2} \mathcal{F}(\rho_1) \times \mathcal{G}(\rho_2) \times \mathcal{C}(\rho_1 \otimes \rho_2, \rho)$$
    
@@ -494,7 +494,7 @@ $\square_c$
 
 **Problem.** Quantum entanglement is fundamentally incompatible with Cartesian monoidal structure. In the category of sets (or a 1-topos), the tensor product is Cartesian: $A \times B$. But for quantum states $\rho_A \otimes \rho_B \neq \rho_A \times \rho_B$ — the tensor product admits **non-separable** (entangled) states, which the Cartesian product cannot.
 
-**Abramsky–Coecke theorem (2004) [T]:** The category of CPTP channels is a **symmetric monoidal**, but **not Cartesian** monoidal category. The no-cloning theorem ($\not\exists\; \Delta: \rho \mapsto \rho \otimes \rho$) is a consequence of non-Cartesianness.
+**Non-Cartesianness [T]:** The category of CPTP channels is a **symmetric monoidal**, but **not Cartesian** monoidal category: a Cartesian product would supply a natural diagonal $\Delta: \rho \mapsto \rho \otimes \rho$, that is a cloning channel, which the no-cloning theorem excludes (W. K. Wootters, W. H. Zurek 1982; D. Dieks 1982). In compact closed categories the statement is Abramsky's cloning-collapse theorem: a uniform, monoidal-natural copying map forces every endomorphism to be a scalar multiple of the identity (S. Abramsky, "No-cloning in categorical quantum mechanics", in *Semantic Techniques in Quantum Computation*, Cambridge University Press 2010, Theorem 11, arXiv:0910.2401). An earlier wording called this the "Abramsky–Coecke theorem (2004)"; the 2004 paper of Abramsky and Coecke set up the framework, the theorem is Abramsky's of 2010.
 
 **Day convolution construction.** Let $(\mathcal{C}, \otimes)$ be a monoidal category (CPTP with tensor product). Day convolution (Day 1970) defines a monoidal structure on the sheaf category:
 
@@ -726,8 +726,8 @@ For $\omega_0 \gg 1$ (Planck-scale frequency) the error is negligible.
 The tensor factorization $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$ was stated historically as **Axiom 5**. It postulates structure **compatible** with the algebraic modality $\triangleright$.
 :::
 
-:::note Status of A5 (T-87 [T])
-Page–Wootters was historically taken as an axiom. Theorem T-87 [T] shows A5 is **derivable** from A1–A4 via the spectral triple. The **independent** axiom count for UHM is therefore four (A1–A4). A5 stays in the list for a complete exposition.
+:::note Status of A5 (T-87: clock register [T], constraint [C])
+Page–Wootters was historically taken as an axiom. Theorem T-87 constructs its clock register and tensor factor from A1–A4 via the spectral triple (steps 1–3, [T]); its constraint $\hat{C}\Gamma_{\text{total}} = 0$ is not derived and remains an assumption — the support condition of [Property 2](#свойство-2) (step 4, [C]). The independent content of UHM is therefore A1–A4 plus the constraint. An earlier version of this note said that T-87 makes A5 derivable and the independent axiom count four; that is retracted.
 :::
 
 **Statement:**
@@ -759,8 +759,8 @@ For $p = 2$, $\delta\tau = 0.01$, $T = 100$: $\varepsilon \leq 10^{-5}$.
 
 Specification: language-limits-preveal.md §4.4 | Status: **[T]**
 
-:::tip Theorem T-87 (A5 from spectral triple) [T] (**expanded proof, 2026-04-17**)
-Axiom **A5 (Page–Wootters)** — that the total state space factorises as $\mathcal{H}_{\text{tot}}=\mathcal{H}_O\otimes\mathcal{H}_{\text{rest}}$ with clock sector $\mathcal H_O$ and constraint $\hat C\Gamma=0$ — is **derivable** from A1–A4 via the finite spectral triple $(A_{\text{int}},H_{\text{int}},D_{\text{int}})$ of T-53.
+:::tip Theorem T-87 (A5 from spectral triple): clock register [T], constraint [C under supp Γ ⊆ ker Ĉ] (**expanded proof 2026-04-17; corrected 2026-09-25**)
+Of Axiom **A5 (Page–Wootters)** — that the total state space factorises as $\mathcal{H}_{\text{tot}}=\mathcal{H}_O\otimes\mathcal{H}_{\text{rest}}$ with clock sector $\mathcal H_O$ and constraint $\hat C\Gamma=0$ — the **tensor factor** is constructed from A1–A4 via the finite spectral triple $(A_{\text{int}},H_{\text{int}},D_{\text{int}})$ of T-53 (steps 1–3); the **constraint** is an assumption (step 4); the dissipative conditional dynamics once claimed in step 5 is retracted.
 
 **Proof (5 steps).**
 
@@ -778,15 +778,15 @@ $$\mathcal H_{\text{tot}} := \mathbb C[\mathbb Z_7]\otimes\mathcal H_{6D} \cong 
 
 with $\mathcal H_{6D}\cong(1-P_O)(H_{\text{int}})\cong\mathbf 3\oplus\bar{\mathbf 3}$ the six non-clock dimensions. This **derives** the $42=7\times 6$ architecture that Property 1 previously postulated. **Uniqueness** up to $G_2$: the $\triangleright$-action is $G_2$-equivariant (it permutes the Fano structure), so any alternative clock register commuting with $G_2$ is $G_2$-conjugate to $\mathbb C[\mathbb Z_7]$ (T-42a [T]); the Suzuki–Trotter lift (T-116 [T]) realises the unitary $\mathbb Z_7$-evolution on it.
 
-**(4) Wheeler–DeWitt constraint from stationarity.** The global state $\Gamma_{\text{tot}}$ on $\mathcal H_O\otimes\mathcal H_{\text{rest}}$ is stationary under $\mathcal L_\Omega$ by T-96 [T] (attractor characterisation). Stationarity against $D_{\text{int}}$ yields $[D_{\text{int}},\Gamma_{\text{tot}}]=0$, which in the PW form becomes $\hat C\Gamma_{\text{tot}}=0$ with constraint operator $\hat C=H_O\otimes 1+1\otimes H_{\text{rest}}$. This is exactly the PW constraint (Giovannetti–Lloyd–Maccone 2015 derivation from Dirac quantisation of reparametrisation-invariant theories, specialised to finite NCG).
+**(4) The constraint is assumed [C].** The constraint $\hat C\Gamma_{\text{tot}}=0$ is the support condition $\mathrm{supp}\,\Gamma_{\text{tot}} \subseteq \ker\hat C$, the sharp reading of [Property 2](#свойство-2); it is not derived here. An earlier version of this step derived it from stationarity: "$\Gamma_{\text{tot}}$ is stationary under $\mathcal L_\Omega$ by T-96; stationarity against $D_{\text{int}}$ yields $[D_{\text{int}},\Gamma_{\text{tot}}]=0$, which in the PW form becomes $\hat C\Gamma_{\text{tot}}=0$ … (Giovannetti–Lloyd–Maccone 2015 derivation from Dirac quantisation of reparametrisation-invariant theories)". That derivation is retracted on three counts. (i) Stationarity of a mixed state gives only the commutator $[\hat C,\Gamma_{\text{tot}}]=0$; a state spread over two eigenvalues $c_a \neq c_b$ of $\hat C$ commutes with $\hat C$, yet $(\hat C - c)\Gamma_{\text{tot}} \neq 0$ for every shift $c$. (ii) Stationarity under the full Liouvillian is $\mathcal L_\Omega[\Gamma]=0$, a balance of the Hamiltonian, dissipative and regenerative terms, which does not give a vanishing commutator term by term; and $D_{\text{int}}$ acts on the seven-dimensional $H_{\text{int}}$, $\hat C$ on the 42-dimensional $\mathcal H_{\text{tot}}$. (iii) V. Giovannetti, S. Lloyd and L. Maccone ("Quantum time", *Phys. Rev. D* **92**, 045033 (2015), arXiv:1504.04215) introduce the constraint by selecting the null eigenvectors of the constraint operator, "consistently with a Wheeler–DeWitt equation"; their paper contains no derivation from Dirac quantisation. The equivalence of Page–Wootters conditional states with Dirac quantisation of the constrained system is the "trinity" of P. A. Höhn, A. R. H. Smith and M. P. E. Lock ("Trinity of relational quantum dynamics", *Phys. Rev. D* **104**, 066001 (2021), arXiv:1912.00033), proved for clocks with continuous non-degenerate spectrum.
 
-**(5) Existence of conditional states.** Conditional-on-$|\tau\rangle$ states $\Gamma(\tau):=\operatorname{Tr}_O\!\bigl((|\tau\rangle\!\langle\tau|\otimes 1)\Gamma_{\text{tot}}\bigr)$ satisfy the PW evolution $i\partial_\tau\Gamma(\tau)=[H_{\text{eff}},\Gamma(\tau)]+\mathcal D[\Gamma(\tau)]+\mathcal R[\Gamma(\tau)]$ (proven by direct computation from step 4).
+**(5) Retracted: dissipative conditional dynamics.** An earlier step stated that the conditional states $\Gamma(\tau):=\operatorname{Tr}_O\!\bigl((|\tau\rangle\!\langle\tau|\otimes 1)\Gamma_{\text{tot}}\bigr)$ satisfy $i\partial_\tau\Gamma(\tau)=[H_{\text{eff}},\Gamma(\tau)]+\mathcal D[\Gamma(\tau)]+\mathcal R[\Gamma(\tau)]$, "proven by direct computation from step 4". No such computation exists, and the statement is false: for $H_{\text{int}}=0$ the conditional states are related by a unitary step between ticks, and relative to a clock of period seven ticks every conditional dynamics is periodic, so a Lyapunov functional that never increases along $\mathcal D$ and $\mathcal R$ would be constant (L. Chataignier, P. A. Höhn, M. P. E. Lock, F. M. Mele, *New J. Phys.* **28**, 034504 (2026); [emergent time §9.1](../../proofs/dynamics/emergent-time#9-следствия)). The dissipative dynamics holds in an aperiodic parameter $t$ (T-53b, [C]).
 
-Hence A5 is entirely a theorem consequence of A1–A4 + T-53 + T-42e + T-96 + T-116; A5 contributes **no independent axiomatic content**. $\blacksquare$
+Hence the clock register and the tensor factor of A5 follow from A1–A4 + T-53 + T-42e + T-116 [T]; the constraint is an independent assumption [C]. An earlier conclusion — "A5 is entirely a theorem consequence of A1–A4 …; A5 contributes no independent axiomatic content" — is retracted. $\blacksquare$
 
-**Dependencies**: T-53 [T] (spectral triple, KO-dim 6), T-42a/e [T] ($G_2$-rigidity + stabiliser), T-96 [T] (attractor), T-116 [T] (Suzuki–Trotter), Connes–Marcolli 2008, Giovannetti–Lloyd–Maccone 2015.
+**Dependencies**: T-53 [T] (the algebra $A_{\text{int}}$ and its Wedderburn decomposition; the KO-dimension-6 claim of T-53 is retracted and steps 1–3 do not use it), T-42a/e [T] ($G_2$-rigidity + stabiliser), T-116 [T] (Suzuki–Trotter), Connes–Marcolli 2008; the constraint of step 4 is the support condition of Property 2 (assumed).
 
-**Proof chain**: [T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) → Wedderburn + chiral grading → tensor factorisation → PW constraint → A5.
+**Proof chain**: [T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) → Wedderburn → clock register $\mathbb C[\mathbb Z_7]$ → tensor factorisation; the PW constraint is added as an assumption → A5.
 :::
 
 ### Principle of informational distinguishability as definition {#пир-как-теорема}
@@ -848,7 +848,7 @@ Independently of Theorem S, the number 7 follows from two postulates via Hurwitz
 - Fano plane $\mathrm{PG}(2,2)$ — combinatorics of octonion multiplication (7 points, 7 lines)
 - Hamming code $H(7,4)$ — perfect error-correcting code on 7 bits
 
-Bridge (AP)+(PH)+(QG) → P1+P2: [full chain T1–T15 [T]](../../proofs/minimality/theorem-octonionic-derivation#мост).
+Bridge (AP)+(PH)+(QG) → P1+P2: [full chain T1–T15](../../proofs/minimality/theorem-octonionic-derivation#мост), [C at (Alt)] — the orientation of the Fano lines is an input (registry row 41n; cited as [T] until 2026-09-25). The consequences listed above hold for $\mathbb{O}$ itself; as consequences of the axioms they carry the same condition.
 :::
 
 ---
@@ -870,7 +870,7 @@ $$
 \text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42})
 $$
 
-где $\mathcal{D}(\mathcal{H}) = \{\Gamma \in \mathcal{L}(\mathcal{H}) : \Gamma^\dagger = \Gamma, \Gamma \geq 0, \text{Tr}(\Gamma) = 1\}$
+where $\mathcal{D}(\mathcal{H}) = \{\Gamma \in \mathcal{L}(\mathcal{H}) : \Gamma^\dagger = \Gamma, \Gamma \geq 0, \text{Tr}(\Gamma) = 1\}$
 
 **Dimension:** $\dim(\mathcal{H}_{\text{total}}) = 7 \times 6 = 42$ — derived, not postulated: the clock factor is the regular representation $\mathbb{C}[\mathbb{Z}_7]$ of the shift $\triangleright$ ([T-87, step 3](#a5-из-спектральной-тройки)); Property 1 records the result.
 :::
@@ -982,16 +982,14 @@ The following are equivalent (see [proof](/docs/proofs/categorical/formalization
 
 **Corollary:** $\varphi$ is a stationary distribution of $\mathcal{L}_\Omega$. Cycles are allowed: $\mathcal{L}_\Omega$ and $\varphi$ are **independently** derived from $\Omega$.
 
-:::note Theorem 3.1 (variational characterization of $\varphi$) — [full proof](/docs/proofs/dynamics/fep-derivation)
-The categorically defined $\varphi$ satisfies the variational principle
+:::warning Retracted: Theorem 3.1 (variational characterization of $\varphi$) and Theorem 4.2 [✗]
+An earlier version of this property stated as a theorem that the categorically defined $\varphi$ satisfies the variational principle
 
 $$
-\varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_{\Gamma \sim \mu}\left[S_{spec}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)\right]
+\varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_{\Gamma \sim \mu}\left[S_{spec}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)\right],
 $$
 
-with $S_{\text{spec}} = S_{vN}$ for density matrices (spectral entropy = von Neumann entropy) and $D_{KL}$ the quantum Kullback–Leibler divergence.
-
-**Important:** This is a **characterization** (theorem), not the definition of $\varphi$. Friston’s FEP is the **classical limit** of this principle ([Theorem 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep)).
+with $S_{\text{spec}} = S_{vN}$ and $D_{KL}$ the quantum Kullback–Leibler divergence, and that Friston's FEP is its classical limit (Theorem 4.2). Both are retracted. The functional is a cross-entropy, $S_{vN}(\sigma) + D_{KL}(\sigma\|\Gamma) = -\mathrm{Tr}(\sigma\log\Gamma)$, linear in $\sigma = \psi(\Gamma)$; its minimum $-\log\lambda_{\max}(\Gamma)$ is attained by the channel onto the top eigenvector of $\Gamma$, not by $\varphi$. The "variational characterization is a theorem" of this property therefore does not hold; whether $\varphi$ has a variational characterization is open [Pr] (registry row 39e; [FEP derivation](/docs/proofs/dynamics/fep-derivation)).
 :::
 
 ### Dependency hierarchy (no cycles) {#иерархия-зависимостей}
@@ -1560,8 +1558,8 @@ $$
 | **$\kappa_{\text{bootstrap}} > 0$** | **minimal regeneration** | **adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$** |
 | **Genesis needed** | **$P = 1/N \Rightarrow P > P_{\text{crit}}$** | **bootstrap paradox** |
 | **PID — def. [D] (T16 [T])** | **distinction ⟺ $d_B > 0$** | **embedded in A1+A2 (Kripke–Joyal)** |
-| **$\varphi = \arg\min F$** | **Theorem 3.1 (variational)** | **$\varphi \dashv i$, Liouvillian $\mathcal{L}_\Omega$** |
-| **FEP $\subseteq$ UHM** | **Theorem 4.2 (classical limit)** | **Theorem 3.1 + diagonal limit** |
+| ~~$\varphi = \arg\min F$~~ | Theorem 3.1 (variational) — retracted [✗]: the functional is a cross-entropy minimised by the top-eigenvector channel | — |
+| ~~FEP $\subseteq$ UHM~~ | Theorem 4.2 (classical limit) — retracted [✗] with Theorem 3.1 | — |
 
 ---
 
@@ -1686,7 +1684,7 @@ In the Ω⁷ formulation UHM is:
 - [Structural derivation $N{=}7$ via octonions](../../proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → $N{=}7$ (track B)
 - [Axiom (AP+PH+QG+V)](./axiom-septicity) — autopoiesis, phenomenology, quantum grounding, viability (extended with **(MaxEnt)** for T-190 axiomatic closure)
 - [Consequences](./consequences) — corollaries of Ω⁷
-- [Deriving FEP from UHM](../../proofs/dynamics/fep-derivation) — variational Thm. 3.1 and classical-limit Thm. 4.2
+- [Deriving FEP from UHM](../../proofs/dynamics/fep-derivation) — the variational Thm. 3.1 and the classical-limit Thm. 4.2, both retracted [✗] (registry row 39e)
 - [Emergent time theorem](../../proofs/dynamics/emergent-time) — time from ∞-structure
 - [Categorical formalism: topology](../../proofs/categorical/categorical-formalism#63-топология-гротендика-на-densitymat-и-exp) — Bures covers and site
 - [Mathematical apparatus: topology](../../reference/specification#топология-гротендика) — formal specification

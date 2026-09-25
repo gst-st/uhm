@@ -384,12 +384,12 @@ Status: **[T]**
 
 ### Cascading Corollaries of Primitivity
 
-The proof of primitivity closes **5 conditional results**, upgrading their status from [C] to [T]:
+The proof of primitivity closes **5 conditional results**, upgrading their status from [C] to [T] (one of them, the variational characterisation of φ, was retracted on 2026-09-25):
 
 | Result | Old status | New status | Reason |
 |-----------|:---:|:---:|---|
 | Equivalence (1)⇔(2) for φ | [C] | **[T]** | Perron–Frobenius theorem applicable |
-| Variational characterisation of φ (Th.3.1 FEP) | [C] | **[T]** | Uniqueness of the stationary state |
+| Variational characterisation of φ (Th.3.1 FEP) | [C] | **[✗]** retracted 2026-09-25 | The functional is a cross-entropy, minimised by a projection onto the top eigenvector of Γ, not by φ |
 | Spectral formula for φ (Th.2.3) | [T] | **[T]** (multiplicity 1) | Unique zero mode |
 | Convergence $R \to 1$ (Th.4.2) | [T] | **[T]** (unconditionally) | Guaranteed for any initial state |
 | Uniqueness of the regeneration target | implicit | **[T]** | $\Gamma_{\text{target}} = \rho_*$ uniquely |
@@ -428,7 +428,7 @@ For $k = 3$: **Theorem (Hall 1967).** The $(7,3,1)$-BIBD is **unique** up to iso
 Properties of the unique solution:
 - The Fano plane carries the multiplication table of the octonions — precisely: its lines fix *which* triples multiply, and an **orientation** of each line fixes the signs. Of the $2^7 = 128$ orientations exactly **16** yield a normed division algebra (machine: consistent with the classical count $480 = 30 \times 16$ over all labelled Fano planes). All 16 give isomorphic copies of $\mathbb{O}$, so the choice is a gauge of labelling, not extra structure — but the plane alone does not determine the signs
 - $\text{Aut}(\text{PG}(2,2)) \cong GL(3,\mathbb{F}_2) \cong PSL(2,7)$, order 168
-- $PSL(2,7) \subset G_2 = \text{Aut}(\mathbb{O})$
+- the collineations lift to $G_2 = \text{Aut}(\mathbb{O})$ only together with sign changes: the signed permutations preserving the octonion product form the frame group $\Gamma_{\!\text{oct}}$ of order $1344 = 8 \cdot 168$, which maps onto $\text{Aut}(\text{PG}(2,2))$ and contains no subgroup isomorphic to $PSL(2,7)$; only $21$ collineations are automorphisms as bare basis permutations. (The line read "$PSL(2,7) \subset G_2 = \text{Aut}(\mathbb{O})$" until 2026-09-25.)
 
 $\blacksquare$
 
@@ -482,28 +482,28 @@ Status: **[T]**
 
 **Connection to autopoiesis.** Distinguishing 8 situations (no perturbation + 7 single-dimensional ones) requires $\lceil\log_2 8\rceil = 3$ observations — exactly 3 parity-check bits of $H(7,4)$. The number 3 coincides with $K = 3$ (triadic decomposition [T]), $k = 3$ (Fano block size), $d = 3$ (code distance), and — the deepest reading — $\lvert\mathrm{QR}(7)\rvert = 3$, the number of quadratic residues of 7 (see the number-theoretic root below).
 
-> **Number-theoretic root of the triadic 3 [Т, cited].** The four coincident 3's above are not four accidents but one. Index the seven channels by $\mathbb{Z}/7$; octonion multiplication is carried by the seven Fano lines, the cyclic shifts of $\mathrm{QR}(7) = \{1, 2, 4\}$ (the quadratic residues of 7). A multiplier $a \in (\mathbb{Z}/7)^\ast$ acting by $i \mapsto a\,i$ **preserves** the Fano-line set — hence the orientation of the product $e_i e_j = \pm e_k$ — **iff** $a \in \mathrm{QR}(7)$; the non-residues $\{3,5,6\}$ reverse it. So the orientation-preserving symmetry group of octonion multiplication is exactly $\mathrm{QR}(7) \cong \mathbb{Z}/3$ — the $\mathbb{Z}/3$-part of the Frobenius group $F_{21} = \mathbb{Z}/7 \rtimes \mathbb{Z}/3$, normaliser of the Singer cycle in $\mathrm{PSL}(2,7)$ (order 168). Thus $K = 3 = \lvert\mathrm{QR}(7)\rvert$, and $R_{\text{th}} = 1/K = 1/3$ is the reciprocal order of the substrate's orientation-symmetry group. Full statement, machine-verified proof, and the dimensional pin ($\lvert\mathrm{QR}(N)\rvert = (N-1)/2 \geq 3 \Leftrightarrow N \geq 7$, so only $\mathbb{O}$ among division algebras hosts the three triadic sectors) — [math-foundations, Part XVIII, Thm. 11.6/11.8](https://math-foundations.holon.sh/docs/autogeny/three-faces#paley-root). **Honest caveat:** $R_{\text{th}} = 1/3$ itself is fixed by the $N$-independent LGKS triad (T-57); the orientation root supplies its *name*, and the pin on $N = 7$ rests on the hosting premise that three dynamical sectors require three distinct orientation classes.
+> **Number-theoretic root of the triadic 3 [T, cited].** The four coincident 3's above are not four accidents but one. Index the seven channels by $\mathbb{Z}/7$; octonion multiplication is carried by the seven Fano lines, the cyclic shifts of $\mathrm{QR}(7) = \{1, 2, 4\}$ (the quadratic residues of 7). A multiplier $a \in (\mathbb{Z}/7)^\ast$ acting by $i \mapsto a\,i$ **preserves** the Fano-line set — hence the orientation of the product $e_i e_j = \pm e_k$ — **iff** $a \in \mathrm{QR}(7)$; the non-residues $\{3,5,6\}$ reverse it. So the orientation-preserving symmetry group of octonion multiplication is exactly $\mathrm{QR}(7) \cong \mathbb{Z}/3$ — the $\mathbb{Z}/3$-part of the Frobenius group $F_{21} = \mathbb{Z}/7 \rtimes \mathbb{Z}/3$, normaliser of the Singer cycle in $\mathrm{PSL}(2,7)$ (order 168). Thus $K = 3 = \lvert\mathrm{QR}(7)\rvert$, and $R_{\text{th}} = 1/K = 1/3$ is the reciprocal order of the substrate's orientation-symmetry group. Full statement, machine-verified proof, and the dimensional pin ($\lvert\mathrm{QR}(N)\rvert = (N-1)/2 \geq 3 \Leftrightarrow N \geq 7$, so only $\mathbb{O}$ among division algebras hosts the three triadic sectors) — [math-foundations, Part XVIII, Thm. 11.6/11.8](https://math-foundations.holon.sh/docs/autogeny/three-faces#paley-root). **Honest caveat:** $R_{\text{th}} = 1/3$ itself is fixed by the $N$-independent LGKS triad (T-57); the orientation root supplies its *name*, and the pin on $N = 7$ rests on the hosting premise that three dynamical sectors require three distinct orientation classes. **Prior art:** the group $F_{21}=\mathbb{Z}_7\rtimes\mathbb{Z}_3$ with the weights $\mathrm{QR}(7)=\{1,2,4\}$, and the sum $\eta+\eta^2+\eta^4=(-1+i\sqrt7)/2$ over them, were used as a family symmetry by Luhn, Nasri and Ramond (*Phys. Lett. B* **652**, 27–33 (2007), [arXiv:0706.2341](https://arxiv.org/abs/0706.2341)); there the number three is an input ("Thankfully, there are only three chiral families in Nature", v2, p. 4), and their target — tri-bimaximal neutrino mixing, with $\theta_{13}=0$ — was excluded when Daya Bay measured $\sin^22\theta_{13}=0.092$, i.e. $\theta_{13}\approx8.8^\circ$ (*Phys. Rev. Lett.* **108**, 171803 (2012)). See [fermion generations, §1.3](/docs/physics/particle-physics/fermion-generations#прецеденты-три-поколения).
 
 #### Theorem T10: Autopoietic optimality of the Fano channel [T] {#теорема-оптимальность-фано}
 
-> Among $S_7$-invariant BIBD$(7,k,1)$ channels ($k \in \{2,3\}$) satisfying $c > 0$ (T7), full pair coverage (T2), and democracy (T6), the **unique optimal** one is the Fano channel ($k=3$, $c=1/3$): it strictly dominates in contraction rate, stationary purity, number of operators, and $\Gamma_{\!\text{oct}}$-covariance (Theorem 5.1b).
+> Among $S_7$-invariant BIBD$(7,k,1)$ channels ($k \in \{2,3\}$) satisfying $c > 0$ (T7), full pair coverage (T2), and democracy (T6), the **unique optimal** one is the Fano channel ($k=3$, $c=1/3$): it strictly dominates in contraction rate, stationary purity and number of operators. (The former fourth criterion, "$\Gamma_{\!\text{oct}}$-covariance", is retracted 2026-09-25: both channels are $\Gamma_{\!\text{oct}}$-covariant, see T4.)
 
 ---
 
-### Closing the Bridge (AP)+(PH)+(QG)+(V) ⇒ P1+P2 [T] {#редукция-моста}
+### Closing the Bridge (AP)+(PH)+(QG)+(V) ⇒ P1+P2 [C at (Alt)] {#редукция-моста}
 
-Sixteen theorems (T1–T16) generate a **complete chain of implications**, all steps being theorems [T] (T16/ПИР is reclassified [D] — a definition embedded in A1+A2; computational results are unaffected):
-
-$$
-\boxed{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{Т}]} N = 7 \xrightarrow{[\text{Т}]} \text{связность } G_H \xrightarrow{[\text{Т}]} \forall(i,j):\,\lambda_{ij} \geq 1
-$$
+Sixteen theorems (T1–T16) generate a chain of implications (T16/PID is reclassified [D] — a definition embedded in A1+A2; computational results are unaffected). Every step up to BIBD$(7,3,1)$ = PG(2,2) is a theorem [T]; the arrow PG(2,2) → $\mathbb{O}$ needs an orientation of the seven lines, and only 16 of the 128 orientations give a normed (equivalently, alternative) algebra, so that arrow is [C at (Alt)] ([octonionic derivation, Step T15](/docs/proofs/minimality/theorem-octonionic-derivation#шаг-t15)). Until 2026-09-25 this paragraph said "all steps being theorems [T]".
 
 $$
-\xrightarrow{[\text{Т}]} S_7\text{-uniformity} \xrightarrow{[\text{Т}]} k = 3 \xrightarrow{[\text{Т}]} \text{rank-3 projectors} \xrightarrow{[\text{Т}]} b = 7
+\boxed{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{T}]} N = 7 \xrightarrow{[\text{T}]} \text{connectedness of } G_H \xrightarrow{[\text{T}]} \forall(i,j):\,\lambda_{ij} \geq 1
 $$
 
 $$
-\xrightarrow{[\text{Т}]} \text{BIBD}(7,3,1) = \text{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} G_2 \xrightarrow{[\text{Т}]} P1+P2
+\xrightarrow{[\text{T}]} S_7\text{-uniformity} \xrightarrow{[\text{T}]} k = 3 \xrightarrow{[\text{T}]} \text{rank-3 projectors} \xrightarrow{[\text{T}]} b = 7
+$$
+
+$$
+\xrightarrow{[\text{T}]} \text{BIBD}(7,3,1) = \text{PG}(2,2) \xrightarrow{\text{(Alt)}} \mathbb{O} \xrightarrow{[\text{T}]} G_2 \xrightarrow{[\text{T}]} P1+P2
 $$
 
 #### Theorem T1: Equivalence of BIBD channels [T] {#теорема-bibd-эквивалентность}
@@ -535,9 +535,9 @@ T3 proved the democracy of coverage $\lambda_{ij} = \lambda$. **The theorem is f
 | Contraction $c(k)$ | 1/6 | **1/3** | $k=3$ |
 | Number of Kraus operators $b$ | 21 | **7** | $k=3$ |
 | Purity loss $1-c^2$ | 35/36 | **8/9** | $k=3$ |
-| $G_2$-covariance | **No** [T] | **Yes** [T] | $k=3$ |
+| Covariance | frame group $\Gamma_{\!\text{oct}}$ (and all signed permutations), not $G_2$ | the same | — (no discrimination) |
 
-$k=3$ is the **unique** admissible size with $G_2$-covariance and optimal coherence preservation. $\blacksquare$
+$k=3$ is the **unique** admissible size with optimal coherence preservation (the first three rows). $\blacksquare$ The former fourth row, "$G_2$-covariance: No for $k=2$, Yes for $k=3$", and the phrase "unique admissible size with $G_2$-covariance" are retracted [✗] (2026-09-25): every BIBD channel with parameters $(7,k)$ equals $c\,\mathrm{id}+(1-c)\,\mathcal{P}_{\mathrm{base}}$ with $c=(k-1)/6$ (Theorem T1), so both are covariant under exactly the same group — the monomial unitaries, which meet $G_2$ in $\Gamma_{\!\text{oct}}$ — and neither is $G_2$-covariant (the Fano-channel retraction of 2026-09-10).
 
 **Additional arguments:** (1) The triadic decomposition [T] (§[below](#триадная-декомпозиция)) establishes exactly $K=3$ types of dynamics — the block size $k=3$ coincides with the number of types. (2) Theorem T7 [T] (§[above](#теорема-необходимость-c)) proves the necessity of $c > 0$, excluding the atomic channel. (3) Theorem T10 [T] (§[above](#теорема-оптимальность-фано)) gives the full optimality of $k=3$. (4) The Hamming code $H(7,4)$ [T] (Theorems T8, T9) provides an information-theoretic justification of the Fano structure. (5) Theorems T11–T13 [T] (§[below](#теорема-ранг-хои)) prove that $\lambda = 1$ is **forced** by the Choi rank + L-unification, closing the bridge.
 
@@ -569,11 +569,11 @@ $k=3$ is the **unique** admissible size with $G_2$-covariance and optimal cohere
 
 **Significance for autopoiesis:** $\kappa_0 \propto |\gamma_{OE}| \cdot |\gamma_{OU}|$ — the minimal contraction defines the "bottleneck". BIBD is optimal for stable viability.
 
-#### Theorem T15: Closing the bridge [T] {#замыкание-моста}
+#### Theorem T15: Closing the bridge [C at (Alt)] {#замыкание-моста}
 
-> **Theorem T15.** $(AP)+(PH)+(QG)+(V) \Longrightarrow P1 + P2$ — complete chain, **all steps are theorems [T]**.
+> **Theorem T15.** $(AP)+(PH)+(QG)+(V) \Longrightarrow P1 + P2$ — a chain whose steps 1–9 and 11 are theorems [T] and whose step 10 needs the orientation input (Alt): **[C at (Alt)]**. (Stated as "complete chain, all steps are theorems [T]" until 2026-09-25.)
 
-:::info Final bridge status: [T] — fully closed
+:::info Final bridge status: [C at (Alt)] — closed up to the orientation of the Fano lines
 
 | Step | Implication | Status |
 |-----|-----------|--------|
@@ -586,11 +586,11 @@ $k=3$ is the **unique** admissible size with $G_2$-covariance and optimal cohere
 | 7 | Choi rank = 7 ⟹ $b \geq 7$ | **[T]** Theorem T11 |
 | 8 | $b=7, k=3, v=7$, contraction $1/3$ ⟹ BIBD$(7,3,1)$ | **[T]** Theorem T13 |
 | 9 | $(7,3,1)$-BIBD ≅ PG(2,2) | **[T]** Hall 1967 |
-| 10 | PG(2,2) ≅ multiplication table of Im($\mathbb{O}$) | **[T]** standard algebra |
+| 10 | PG(2,2) ≅ multiplication table of Im($\mathbb{O}$) | **[C at (Alt)]** — true for the oriented plane; the design fixes no orientation, and 16 of the 128 orientations give $\mathbb{O}$ (`test_only_16_of_128_fano_orientations_are_normed`) |
 | 11 | $\mathrm{Aut}(\mathbb{O}) = G_2$ | **[T]** standard Lie theory |
 | 12 | $\mathbb{O}$ — normed non-associative division algebra ⟹ P1+P2 | **[T]** definition |
 
-The bridge is closed **[T]** (T-15) — a complete chain of 12 steps, all theorems. Condition (МП) follows as a direct consequence of T11 + T12 + T13. Cascading corollaries: P1, P2 **[T]**; Track B ($\mathbb{O} \Rightarrow N=7$) **[T]**; $G_2$-structure, Fano plane, Hamming code, double extremality — all **[T]**.
+The bridge is closed **[C at (Alt)]** (T-15): steps 1–9 give the unoriented design PG(2,2) [T], step 10 needs (Alt), steps 11–12 are standard. Condition (МП) follows as a direct consequence of T11 + T12 + T13. Cascading corollaries: P1, P2 **[C at (Alt)]**; Track B ($\mathbb{O} \Rightarrow N=7$) **[C at (Alt)]**; the Fano plane and the Hamming code (as combinatorics) **[T]**. The former sentence "a complete chain of 12 steps, all theorems … P1, P2 [T]; Track B [T]" is retracted [✗].
 
 See [Status registry](/docs/reference/status-registry), [Octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
 :::
@@ -649,7 +649,7 @@ Status: **[T]**
 :::tip Theorem (Impossibility of a 4th type of dynamics) [T]
 An arbitrary generator of a Markovian semigroup on $M_7(\mathbb{C})$ compatible with A1–A5 decomposes into $\mathcal{L} = \mathcal{L}_{\text{Ham}} + \mathcal{L}_{\text{diss}} + \mathcal{L}_{\text{reg}}$ — no other components exist.
 
-**Proof:** The LGKS theorem (1976) gives a unique decomposition into Hamiltonian and dissipative parts. The dissipative part is uniquely split into $\mathcal{D}$ (Fano contraction, $dP/d\tau \leq 0$) and $\mathcal{R}$ (replacement channel, $dP/d\tau \geq 0$) under the constraints of A5 (PW-anchoring of $\mathcal{R}$ to the O-sector), Fano-structuredness of $\mathcal{D}$, and covariance under the octonionic frame group $\Gamma_{\text{oct}} = \mathrm{Aut}(\mathrm{PG}(2,2)) \cong PSL(2,7)$ (the covariance group of the Fano dissipator — see [Fano channel, Th. 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)).
+**Proof:** The LGKS theorem (1976) gives a unique decomposition into Hamiltonian and dissipative parts. The dissipative part is uniquely split into $\mathcal{D}$ (Fano contraction, $dP/d\tau \leq 0$) and $\mathcal{R}$ (replacement channel, $dP/d\tau \geq 0$) under the constraints of A5 (PW-anchoring of $\mathcal{R}$ to the O-sector), Fano-structuredness of $\mathcal{D}$, and covariance under the octonionic frame group $\Gamma_{\text{oct}}$ (the elements of $G_2$ under which the Fano dissipator is covariant: the signed permutations in $G_2$, order $1344$, acting on the lines through $\mathrm{Aut}(\mathrm{PG}(2,2)) \cong PSL(2,7)$; until 2026-09-25 the group was written as $\mathrm{Aut}(\mathrm{PG}(2,2))$ — see [Fano channel, Th. 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)).
 :::
 
 ### Corollary: K = 3 for the reflexion threshold {#следствие-k3}
@@ -711,7 +711,7 @@ $\mathcal{D}_{\text{Fano}} = \tfrac23\,\mathcal{D}_{\text{atom}}$ as superoperat
 :::
 
 :::warning Theorem: the pinching dissipators break $G_2$ to the finite frame group [T]
-Because $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$, both dissipators have the **same** symmetry group: the finite octonionic frame group $\Gamma_{\!\text{oct}} = \mathrm{Aut}(PG(2,2)) \cong PSL(2,7) \subset G_2$ (plus $S_7$-equivariance for the atomic form). **Neither** is covariant under the full continuous $G_2$: since $\mathbb{C}^7$ is an irreducible $G_2$-module (Schur), a generic $g\in G_2$ carries a coordinate line-projector $\Pi_p$ to a rank-3 projector onto a *rotated* subspace, so $\mathrm{diag}(g\Gamma g^\dagger)\neq g\,\mathrm{diag}(\Gamma)\,g^\dagger$.
+Because $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$, both dissipators have the **same** symmetry group: all monomial unitaries $U(1)^7 \rtimes S_7$, whose elements in $G_2$ form the finite octonionic frame group $\Gamma_{\!\text{oct}} \subset G_2$ — the signed permutation matrices in $G_2$, order $1344 = 8\cdot168$, acting on the lines through $\mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$. (Until 2026-09-25 this read "$\Gamma_{\!\text{oct}} = \mathrm{Aut}(PG(2,2)) \cong PSL(2,7) \subset G_2$ (plus $S_7$-equivariance for the atomic form)": the group was confused with its image, and the Fano form is $S_7$-equivariant too.) **Neither** is covariant under the full continuous $G_2$: since $\mathbb{C}^7$ is an irreducible $G_2$-module (Schur), a generic $g\in G_2$ carries a coordinate line-projector $\Pi_p$ to a rank-3 projector onto a *rotated* subspace, so $\mathrm{diag}(g\Gamma g^\dagger)\neq g\,\mathrm{diag}(\Gamma)\,g^\dagger$.
 
 [Proof →](/docs/proofs/gap/fano-channel#g2-ковариантность) | Status: **[T]**
 :::
@@ -725,12 +725,14 @@ For the Fano dissipator with arbitrary positive line rates $\{\gamma_p\}$:
 
 1. **Conserved-charge algebra = diagonal algebra.** In the Heisenberg picture $\mathcal{D}^\dagger[Q] = 0$ iff $Q$ is diagonal: $\mathcal{D}$ acts as a Schur multiplier $Q_{ij} \mapsto -r_{ij}Q_{ij}$ with $r_{ij} > 0$ for all $i \neq j$ (BIBD incidence) and $r_{ii} = 0$, so $\ker\mathcal{D} = \mathrm{span}\{\Pi_k\}$, $\dim = 7$. The seven conserved charges are exactly the passport populations $\gamma_{kk} = \mathrm{Tr}(\Pi_k\Gamma)$.
 2. **Compactness ⟺ integrality.** The exponential of the charge algebra is the diagonal torus $\{\exp(i\sum_k \varphi_k\Pi_k)\} = U(1)^7 \subset U(7)$. Each factor is a circle rather than a line precisely because the charge spectrum is integral: $\mathrm{spec}(\Pi_k) = \{0,1\} \subset \mathbb{Z}$ gives $e^{2\pi i\Pi_k} = \mathbb{1}$ exactly; the cascade occupancy counters $\hat{N}_k$ (integer sub-holon counts of the ⊕-primitive) preserve integrality and hence the torus; a generator with an irrational spectral ratio would wind densely — an $\mathbb{R}$-orbit that never closes.
-3. **Full covariance group.** Every diagonal unitary is an exact symmetry of $\mathcal{D}$, and the rotations permuting the line projectors form the finite frame group $\Gamma_{\!\text{oct}} = \mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$ (frame-breaking theorem above); hence the full unitary covariance group of the pinching dynamics is $U(1)^7 \rtimes \Gamma_{\!\text{oct}}$ — the compact torus of grand-canonical phases, extended by the frame permutations.
+3. **Full covariance group.** Every diagonal unitary is an exact symmetry of $\mathcal{D}$, and every unitary symmetry is monomial, $U|k\rangle = e^{i\theta_k}|\sigma(k)\rangle$, with $\sigma$ preserving the decay rates, $r_{\sigma(i)\sigma(j)} = r_{ij}$; hence the full unitary covariance group of the dissipator is $U(1)^7 \rtimes \mathrm{Aut}(r)$ — the compact torus of grand-canonical phases, extended by the rate-preserving permutations. For equal line rates $\mathcal{D}$ is a multiple of $\mathcal{D}_{\text{atom}}$ ($\tfrac23\mathcal{D}_{\text{atom}}$ at rate $\tfrac13$) and $\mathrm{Aut}(r) = S_7$: the group is all monomial unitaries, and its elements in $G_2$ are the frame group $\Gamma_{\!\text{oct}}$ of order $1344$ (frame-breaking theorem above). For generic rates $\mathrm{Aut}(r)$ is trivial and the group is the torus alone.
 :::
 
-**Proof.** *(1)* The Schur multiplier is self-adjoint in the Hilbert–Schmidt inner product, so the Heisenberg action is the same multiplier; $Q_{ij}r_{ij} = 0$ with $r_{ij} > 0$ forces $Q_{ij} = 0$ off the diagonal. Positivity of $r_{ij}$: every pair $(i,j)$, $i \neq j$, lies on exactly one line ($\lambda = 1$), so for all-positive rates the lines meeting $\{i,j\}$ in one point contribute a strictly positive decay. *(2)* $e^{i\varphi\Pi_k}$ has eigenvalues $\{e^{i\varphi}, 1\}$ and closes iff $\varphi \in 2\pi\mathbb{Z}$; for $\mathrm{spec}(G)$ with an irrational ratio, $e^{i\varphi G} = \mathbb{1}$ has no solution $\varphi \neq 0$ (Weyl winding). *(3)* A diagonal $U$ commutes with every diagonal $\Pi_p$, so $\mathcal{D}[U\Gamma U^\dagger] = U\mathcal{D}[\Gamma]U^\dagger$ termwise; the non-diagonal statement is the frame-breaking theorem. $\blacksquare$
+*Corrected 2026-09-25 (item 3):* it read "the rotations permuting the line projectors form the finite frame group $\Gamma_{\!\text{oct}} = \mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$ …; hence the full unitary covariance group of the pinching dynamics is $U(1)^7 \rtimes \Gamma_{\!\text{oct}}$". That group is too small for equal rates — a transposition, which is not a collineation, is an exact symmetry — and too large for generic rates, where a collineation carries a line to a line of another rate; and $\Gamma_{\!\text{oct}}$ has order $1344$, with $\mathrm{Aut}(PG(2,2))$ only its image on the lines.
 
-**Machine verification.** Anisotropic random rates: $\dim\ker\mathcal{D} = 7$ exactly; $\|\mathcal{D}^\dagger[Q_{\text{diag}}]\| = 2\cdot10^{-16}$ vs $\|\mathcal{D}^\dagger[Q_{\text{off}}]\| = 4.9$; diagonal-unitary covariance $1.4\cdot10^{-16}$, non-diagonal witness $0.22$; $\|e^{2\pi i\Pi_k} - \mathbb{1}\| = 2\cdot10^{-16}$, integer cascade counter $9\cdot10^{-16}$; irrational generator $\mathrm{diag}(1,\sqrt{2})$: minimal return $0.044 > 0$ on $\varphi \in (0, 200]$ — dense winding, never closes.
+**Proof.** *(1)* The Schur multiplier is self-adjoint in the Hilbert–Schmidt inner product, so the Heisenberg action is the same multiplier; $Q_{ij}r_{ij} = 0$ with $r_{ij} > 0$ forces $Q_{ij} = 0$ off the diagonal. Positivity of $r_{ij}$: every pair $(i,j)$, $i \neq j$, lies on exactly one line ($\lambda = 1$), so for all-positive rates the lines meeting $\{i,j\}$ in one point contribute a strictly positive decay. *(2)* $e^{i\varphi\Pi_k}$ has eigenvalues $\{e^{i\varphi}, 1\}$ and closes iff $\varphi \in 2\pi\mathbb{Z}$; for $\mathrm{spec}(G)$ with an irrational ratio, $e^{i\varphi G} = \mathbb{1}$ has no solution $\varphi \neq 0$ (Weyl winding). *(3)* A diagonal $U$ commutes with every diagonal $\Pi_p$, so $\mathcal{D}[U\Gamma U^\dagger] = U\mathcal{D}[\Gamma]U^\dagger$ termwise. Conversely, if $U$ is a symmetry and $Q \in \ker\mathcal{D}$, then $\mathcal{D}[UQU^\dagger] = U\mathcal{D}[Q]U^\dagger = 0$: $U$ maps the diagonal algebra onto itself, hence permutes its minimal projections, $U|k\rangle = e^{i\theta_k}|\sigma(k)\rangle$. For such $U$ the $(\sigma(i),\sigma(j))$ entries of $\mathcal{D}[U\Gamma U^\dagger]$ and $U\mathcal{D}[\Gamma]U^\dagger$ are $-r_{\sigma(i)\sigma(j)}e^{i(\theta_i-\theta_j)}\Gamma_{ij}$ and $-r_{ij}e^{i(\theta_i-\theta_j)}\Gamma_{ij}$, equal for all $\Gamma$ iff $r_{\sigma(i)\sigma(j)} = r_{ij}$. For $\mathcal{D} = \sum_p \gamma_p\big(\Pi_p\,\cdot\,\Pi_p - \tfrac12\{\Pi_p,\cdot\}\big)$ one has $r_{ij} = \tfrac12(R_i + R_j) - \gamma_{\ell(i,j)}$, with $R_i$ the total rate of the three lines through $i$ and $\ell(i,j)$ the line through $i$ and $j$; equal rates $\gamma$ give $r_{ij} = 2\gamma$ for all $i \neq j$, so every $\sigma \in S_7$ qualifies. $\blacksquare$
+
+**Machine verification.** Anisotropic random rates: $\dim\ker\mathcal{D} = 7$ exactly; $\|\mathcal{D}^\dagger[Q_{\text{diag}}]\| = 2\cdot10^{-16}$ vs $\|\mathcal{D}^\dagger[Q_{\text{off}}]\| = 4.9$; diagonal-unitary covariance $1.4\cdot10^{-16}$, non-diagonal witness $0.22$; $\|e^{2\pi i\Pi_k} - \mathbb{1}\| = 2\cdot10^{-16}$, integer cascade counter $9\cdot10^{-16}$; irrational generator $\mathrm{diag}(1,\sqrt{2})$: minimal return $0.044 > 0$ on $\varphi \in (0, 200]$ — dense winding, never closes. Item 3 (added 2026-09-25): for random rates a brute-force search over $S_7$ finds $\mathrm{Aut}(r)$ trivial, and the collineation $i \mapsto i+1$ fails covariance (residual $0.074$ on a random state); for equal rates the transposition $(0\,1)$, which is not a collineation, is an exact symmetry (residual $0$).
 
 **Grand-canonical reading (T-258).** The torus phases $\varphi_k$ are conjugate to the integer passport occupancies exactly as the $U(1)$ phase of a wavefunction is conjugate to particle number in the grand-canonical ensemble — and as in Vanchurin's *Self-Learning Universe*, where $U(1)$ arises from the thermodynamic equivalence $S \to S + h\Delta N$, $\Delta N \in \mathbb{Z}$. The compactness of the gauge torus is therefore not a stipulation: it is the **integrality of the holon's matter ledger**. Check 4 of the [grand-canonical dictionary](/docs/applied/coherence-cybernetics/sensorimotor#гранд-канонический-словарь) is thereby *derived* on the UHM side; the correspondence with SLU's own $U(1)$ remains interpretive [I].
 
@@ -751,7 +753,7 @@ is **strictly positive for every** $\alpha\in[0,1]$:
 | $\alpha$ | Mode | $\Delta_{G_2}(\alpha)$ (dynamics) |
 |----------|-------|---------------------|
 | $0$ | Purely Fano | $\tfrac23\Delta_{\max} > 0$ (breaks $G_2$ to $\Gamma_{\!\text{oct}}$) |
-| $\alpha^* \in (0,1)$ | Mixed (optimal) | $\tfrac{2+\alpha^*}{3}\Delta_{\max}$ |
+| $\alpha \in (0,1)$ | Mixed (no proven optimum: the variational $\alpha^*$ is retracted) | $\tfrac{2+\alpha}{3}\Delta_{\max}$ |
 | $1$ | Purely atomic | $\Delta_{\max}$ |
 
 :::info Remark: kinematic $G_2$ vs. dynamical frame — the frame decision D-0910 [T]

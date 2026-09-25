@@ -91,7 +91,7 @@ See [Exp category](/docs/proofs/categorical/categorical-formalism#2-катего
 | **History** | Derived as the loop space in the ∞-groupoid: $\mathrm{Hist}(\mathcal{Q}) := \Omega_\mathcal{Q}(\mathbf{Exp}_\infty)$ — [theorem](/docs/proofs/dynamics/emergent-time#5-категорное-время-через-infty-группоид) |
 | **$\mathbb{P}(\mathcal{H}_E)$** | [Projective space](/docs/reference/specification#проективное-пространство-качеств) of qualities |
 | **$d_{\mathrm{FS}}$** | [Fubini-Study metric](/docs/reference/specification#метрика-фубини-штуди): $d_{\mathrm{FS}}([\lvert\psi\rangle],[\lvert\phi\rangle]) = \arccos(\lvert\langle\psi\vert\phi\rangle\rvert)$ |
-| **Relational identity of qualia** | [Theorem](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность): by Yoneda's lemma, the identity of qualia $[\lvert q\rangle]$ is fully determined by its relational position in the Exp category. Inverted qualia are impossible. |
+| **Relational identity of qualia** | [Theorem](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность): by Yoneda's lemma, a quality $[\lvert q\rangle]$ is determined **up to isomorphism** by its relational position in the Exp category. Whether an inverted spectrum between two subjects is possible is not settled: the lemma gives isomorphism within one category, not identity, and says nothing about symmetries between two subjects' quality spaces. (An earlier edition said "Inverted qualia are impossible"; retracted.) |
 | **Phenomenal vector FV** | $\text{FV}(\rho_E) := \{(\lambda_i, [\lvert q_i\rangle])\}$ — [unique functor](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв), extracting experiential content from $\rho_E$. Not an arbitrary postulate, but a forced structure. |
 
 ## Calibration Terms
@@ -151,7 +151,7 @@ See [L-unification](/docs/core/structure/dimension-l#категориально�
 | **$R$ (reflection)** | $R = R_{\text{canonical}} := 1/(7P)$ — canonical definition used in all thresholds. Not to be confused with the self-model quality $R_\varphi := 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / P$ (formerly also written $Q_\varphi$). Stratification: [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r); higher orders: [formalisation of φ](/docs/proofs/categorical/formalization-phi#28-рефлексия-n-го-порядка-для-l3l4) |
 | **$R_{\text{th}}$** | Reflection threshold $= 1/3$ **[T]** ($K = 3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + [Bayesian dominance](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии)) |
 | **$\Phi_{\text{th}}$** | Integration threshold $= 1$ **[T]** ([T-129](/docs/proofs/consciousness/operationalization#t-129)) — unique self-consistent value at $P_{\text{crit}} = 2/7$; [coherent dominance](/docs/core/structure/dimension-u#мера-интеграции-φ) |
-| **$D_{\min}$** | Minimum differentiation $= 2$ **[T]** ([T-151](/docs/proofs/consciousness/substrate-closure#t-151)) — unconditional consequence of $\Phi_{\text{th}} = 1$ [T]; [definition](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2) |
+| **$D_{\min}$** | Minimum differentiation $= 2$ **[D]** ([T-151](/docs/proofs/consciousness/substrate-closure#t-151)) — an independent L2 threshold, not a consequence of $\Phi_{\text{th}} = 1$ (it read "[T] — unconditional consequence of $\Phi_{\text{th}} = 1$" until 2026-09-25); [definition](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2) |
 | **$C_{\text{th}}$** | Consciousness threshold $= \Phi_{\text{th}} \times R_{\text{th}} = 1 \times 1/3 = 1/3$ **[T]** (T-140); $D_{\text{diff}} \geq D_{\min} = 2$ — separate viability condition [T] (T-151) |
 | **$\varphi$ (operator)** | [Self-modelling operator](/docs/proofs/categorical/formalization-phi); $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ |
 | **$K_m$** | Kraus operators; $\sum_m K_m^\dagger K_m = I$ |
@@ -174,7 +174,7 @@ See [L-unification](/docs/core/structure/dimension-l#категориально�
 | **Interpolation formulation** | Consequence [T] of CPTP-uniqueness of the replacement channel: regeneration as a convex combination of $\mathrm{Id}$ and $\mathcal{C}_{\rho_*}$; proves preservation of $\Gamma \geq 0$ |
 | **$R^{(n)}$ (n-th order reflection)** | $R^{(n)}(\Gamma) := F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$ — consistency measure between successive levels of self-modelling |
 | **Spectral formula $\varphi$** | $\varphi(\Gamma) = \sum_{k: \mathrm{Re}(\lambda_k)=0} \langle L_k \vert \Gamma \rangle R_k$ — projection onto the kernel of $\mathcal{L}_\Omega$; see [formalisation of φ](/docs/proofs/categorical/formalization-phi#27-спектральная-формула-для-φ-явное-вычисление) |
-| **Variational characterisation of φ** | **Theorem 3.1:** $\varphi = \arg\min_{\psi \in \mathcal{CPTP}} [S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$; see [proof](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации) |
+| **Variational characterisation of φ** | **Retracted [✗]** (2026-09-25, registry row 39e): ~~Theorem 3.1: $\varphi = \arg\min_{\psi \in \mathcal{CPTP}} [S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$~~. The functional equals $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$, a cross-entropy linear in $\psi(\Gamma)$; its minimum $-\log\lambda_{\max}(\Gamma)$ is reached by the channel onto the top eigenvector of $\Gamma$, not by $\varphi$. Whether $\varphi$ minimises any natural functional is an open programme [Pr] — see the [retraction](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации) |
 | **$S_{spec}$ (spectral entropy)** | For density matrices $S_{spec} = S_{vN}$ ([Theorem 5.1](/docs/proofs/dynamics/fep-derivation#5-s_spec-vs-s_vn-обоснование-выбора)). General: $S_{spec}(A) = -\sum_i \lvert\lambda_i\rvert \log\lvert\lambda_i\rvert$ |
 | **Canonical $\Delta F$** | $\Delta F(\Gamma) := d_B^2(\Gamma, \Gamma_{\mathrm{eq}}) - d_B^2(\Gamma, \varphi(\Gamma))$ — unified definition via the Bures metric |
 | **L3 metastability** | Lifetime of network consciousness: $\tau_3 = 1/(\kappa_{\mathrm{bootstrap}} \cdot (1 - R^{(2)}))$; finite without active maintenance |
@@ -187,8 +187,8 @@ See [L-unification](/docs/core/structure/dimension-l#категориально�
 
 | Term | Definition |
 |------|------------|
-| **Fundamental mode Γ** | Γ subsystem with $R = 0$; dynamics degenerate into Schrödinger/Dirac. Passive stability (symmetries). Examples: quarks, leptons, bosons. **Not a Holon** — does not satisfy (AP)+(QG) |
-| **Composite configuration Γ** | Quasi-autonomous configuration with $0 < R \ll 1$; near-unitary dynamics. Passive stability (bonds). Examples: atoms, simple molecules. **Not a Holon** — does not satisfy (AP)+(QG) |
+| **Fundamental mode Γ** | Γ subsystem whose dynamics degenerate into Schrödinger/Dirac, with no regeneration of its own. Passive stability (symmetries). Examples: quarks, leptons, bosons. **Not a Holon** — does not satisfy (AP)+(QG). (An earlier edition characterised it by $R = 0$; retracted — the canonical $R = 1/(7P)$ is at least $1/7$ for every state and near $1$ close to $I/7$, where it is a formal artefact of the trivial self-model.) |
+| **Composite configuration Γ** | Quasi-autonomous configuration with near-unitary dynamics. Passive stability (bonds). Examples: atoms, simple molecules. **Not a Holon** — does not satisfy (AP)+(QG). (An earlier edition gave $0 < R \ll 1$; retracted for the same reason, $R \geq 1/7$.) |
 | **Holon** | Self-sufficient unit, (AP)+(PH)+(QG)+(V), where (V): $P > P_{\text{crit}} = 2/7$. Examples: cells, organisms |
 | **L2-Holon** | Holon with cognitive qualia: $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$. Which systems reach L2 is an empirical question |
 | **Passive stability** | Stability through symmetries (conservation laws). Characteristic of fundamental modes and composite Γ configurations |
@@ -199,10 +199,10 @@ See [L-unification](/docs/core/structure/dimension-l#категориально�
 | Term | Definition |
 |------|------------|
 | **Integrated Information Theory (IIT)** | Tononi's theory. UHM generalises: $C = \Phi_{\text{UHM}} \times R$ **[T T-140]**; $D_{\text{diff}} \geq D_{\min}$ — separate viability condition. **Important:** $\Phi_{\text{UHM}} \neq \Phi_{\text{IIT}}$ — see [notation](/docs/reference/notation) |
-| **Free Energy Principle (FEP)** | Friston's theory. In UHM: **special case** (classical limit) of the variational characterisation of φ — [Theorem 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep). Full formulation: $\varphi = \arg\min[S_{vN} + D_{KL}]$ |
+| **Free Energy Principle (FEP)** | Friston's theory. ~~In UHM: special case (classical limit) of the variational characterisation of φ — Theorem 4.2; full formulation $\varphi = \arg\min[S_{vN} + D_{KL}]$~~ — retracted 2026-09-25 ([FEP derivation](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep)): on diagonal states the UHM functional is the cross-entropy $-\sum_i q_i \ln p_i$, not Friston's free energy, and $\varphi$ is not its minimiser; whether FEP arises as a limit of UHM is an open programme [Pr] |
 | **Global Workspace Theory (GWT)** | Baars's theory — global access to information |
 | **Conscious realism** | Hoffman's theory; connection to UHM: agent $\approx$ L2-Holon (hypothesis) |
-| **Panpsychism** | "Everything has consciousness." UHM: **paninteriorism** — everything has L0, not L2 |
+| **Panpsychism** | "Everything has consciousness." UHM: **paninteriorism** — everything has L0, which is not experience, and not everything has L2; in the field's vocabulary a panprotopsychism with a threshold [I] ([analysis](/docs/consciousness/comparative/panpsychism-analysis#место-панинтериоризма)) |
 
 ## Status of Claims
 
@@ -282,8 +282,8 @@ See [Structural derivation via octonions](/docs/proofs/minimality/theorem-octoni
 | **Track A** | Justification of N=7 via (AP)+(PH)+(QG) → minimality ([Theorem S](/docs/proofs/minimality/theorem-minimality-7)) |
 | **Track B** | Justification of N=7 via P1+P2 → $\mathbb{O}$ → $\dim(\mathrm{Im}(\mathbb{O})) = 7$ ([Structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation)) |
 
-:::tip Bridge [T] — fully closed (T15)
-Connection (AP)+(PH)+(QG)+(V) → P1+P2 — full chain of 12 steps (T1–T16), **all [T]** (T16/IDP reclassified [D] — definition built into A1+A2; computational results unaffected). Former condition (МП) proved by T11–T13. See [bridge](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
+:::tip Bridge [C at (Alt)] — closed up to the orientation input (T15)
+Connection (AP)+(PH)+(QG)+(V) → P1+P2 — chain of 12 steps (T1–T16): the steps up to PG(2,2) are [T], the step to $\mathbb{O}$ needs the orientation input (Alt), so the chain is **[C at (Alt)]** (it read "all [T]" until 2026-09-25; T16/IDP reclassified [D] — definition built into A1+A2; computational results unaffected). Former condition (МП) proved by T11–T13. See [bridge](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
 :::
 
 ## Gap-Dynamics and Fano-Structure Terms
@@ -306,8 +306,8 @@ See [Gap operator](/docs/core/dynamics/gap-operator) and [φ-operator](/docs/cor
 
 | Term | Definition |
 |------|------------|
-| **Bimodule $H_F$** | Finite Hilbert space of the UHM spectral triple as an $(A_{\text{int}}, A_{\text{int}}^\circ)$-bimodule via the real structure $J$ (KO-dim 6). Decomposition into irreducible bimodules exactly matches one generation of SM fermions. T-178 [T] (bimodular realisation), T-179 [T] (hypercharge fixation), T-180 [T] (mass relations), T-181 [T] (derivation of (AP),(PH),(QG),(V) from A1–A4) — [bimodular construction](/docs/proofs/physics/bimodule-construction) |
-| **KO-dimension** | Classification invariant of the real structure $J$ on a spectral triple. In UHM: KO-dim $= 6$ (mod 8) — condition ensuring chirality and the SM generation structure. From Connes's conditions: $J^2 = 1$, $JD = DJ$, $J\gamma = -\gamma J$ — [bimodular construction](/docs/proofs/physics/bimodule-construction) |
+| **Bimodule $H_F$** | Finite Hilbert space of the UHM spectral triple as an $(A_{\text{int}}, A_{\text{int}}^\circ)$-bimodule via the real structure $J$ (KO-dim 6). ~~Decomposition into irreducible bimodules exactly matches one generation of SM fermions. T-178 [T] (bimodular realisation), T-179 [T] (hypercharge fixation),~~ Retracted 2026-09-25: no KO-dimension-6 structure exists on $\mathbb C^7$, the $H_F$ that carries one generation is Connes' imported space, T-178 is retracted as a derivation and T-179 as stated; T-180 [T] (mass relations), T-181 [T] (derivation of (AP),(PH),(QG),(V) from A1–A4) — [bimodular construction](/docs/proofs/physics/bimodule-construction) |
+| **KO-dimension** | Classification invariant (mod 8) of the real structure $J$ on a spectral triple. Connes' finite space of the Standard Model has KO-dimension 6: $J^2 = 1$, $JD = DJ$, $J\gamma = -\gamma J$. The former entry "In UHM: KO-dim $= 6$" is retracted (2026-09-25): no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)) — [bimodular construction](/docs/proofs/physics/bimodule-construction) |
 | **T-181 (characterising properties)** | (AP), (PH), (QG), (V) — theorems from A1–A4. (QG) from A1 (∞-topos), (AP) from A1 (terminal object + adjunction), (PH) from A1+A3, (V) from A2+A3. Consequence: number of independent UHM axioms = 4 — [bimodular construction](/docs/proofs/physics/bimodule-construction#вывод-apphqgv) |
 | **$\mathrm{SAD}_{\max}$** | Maximum recursive self-modelling depth: $\mathrm{SAD}_{\max} = 3$ **[T]** (T-142: from Fano contraction $\alpha = 2/3$, $P_{\text{crit}}^{(n)} = P_{\text{crit}} \cdot 3^{n-1}/(n+1)$ — and, independently, from the coding ceiling T-232/T-239). Pred 12 — [depth tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) |
 | **Fano channel ($P_{\mathrm{Fano}}$)** | CPTP map $P_{\mathrm{Fano}}(\Gamma) = \frac{1}{3}\sum_p \Pi_p \Gamma \Pi_p$, preserving coherences. Covariant under the finite frame group $\Gamma_{\!\text{oct}}$, not under the full $G_2$ (Theorem 5.1b) — [Fano channel](/docs/proofs/gap/fano-channel#g2-ковариантность) |

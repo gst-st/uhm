@@ -23,6 +23,12 @@
 (`~~…~~`) — это ретракции, они не канон; несколько строк с одним номером
 (63 таких пары, реестр их объявляет) дают ОБЪЕДИНЕНИЕ допустимых статусов.
 
+НЕ-T НОМЕРА (аудит A-84, 25.09.2026). Реестр держит ещё семейства `CC-n`
+(`КК-n`) и `Pred n`; прежде прибор их не разбирал, и R1/R4 их не видели. Теперь
+они классифицируются отдельно (свой долг R5x), цитаты и носители страницы
+предсказаний сверяются правилом R1x, строки [C] — правилом R4x. Номера `C12`,
+`H3`, `P2` не входят: эти буквы с цифрой в корпусе многозначны.
+
 ХРАПОВИК. Числа расхождений сравниваются с базой ниже: расти им нельзя.
 Уменьшил — обнови базу.
 """
@@ -38,19 +44,43 @@ LOCALES = {
 
 # ХРАПОВИК: база расхождений на 10.09.2026 (после прохода согласования).
 BASE_R1 = {"en": 0, "ru": 0}
-BASE_R4 = {"en": 44, "ru": 49}
+# 44/49 → 43/48 (25.09.2026): кампания прецедентов назвала допущение у одной строки [C].
+# 43/48 → 43/47 (25.09.2026): русской строке T-120b вернули фразу английской, называющую допущение.
+# 43/47 → 43/46 (25.09.2026): русская строка T-151 переведена с английской — ушла пометка «C2 [С] → [Т]».
+BASE_R4 = {"en": 43, "ru": 46}
 # R5: у скольких номеров нет машиночитаемой канонической записи статуса.
 # Это и есть механизмический долг, названный аудитом 10.09.2026: пока он не нуль,
 # пропагация статусов держится на руках. Расти ему нельзя.
 BASE_DEBT = {"en": 30, "ru": 30}
 # R6: сколько теорем [T] опираются на более слабую опору, не унаследовав её статус.
+# 0 → 2 (25.09.2026) — не рост долга, а прозрение прибора: опоры читаются по реестру,
+# окно в 60 строк снято. Названы оба: T-120 [T] на T-118 [C] (emergent-manifold) и
+# теорема на T-190 [C] (fundamental-closures).
+# 2 → 0 (25.09.2026): T-120 и T-121 понижены до [C], T-223 не пользуется ни T-120, ни T-190.
 BASE_R6 = {"en": 0, "ru": 0}
+# НЕ-T НОМЕРА (CC-n/КК-n, Pred n) — измерено 25.09.2026 на a61647d в миг прозрения.
+# R1x — цитаты и носители страницы предсказаний против реестра; R4x — их строки [C]
+# без названного допущения; долг R5x — номера без машиночитаемой записи статуса.
+BASE_R1X = {"en": 0, "ru": 0}
+# R4x 0 → 4: Pred 3 ([T]/[C]), Pred 7, Pred 11, Pred 15 — [C] в колонке статуса без
+# названного допущения (в обеих локалях одни и те же четыре строки).
+BASE_R4X = {"en": 4, "ru": 4}
+BASE_DEBTX = {"en": 0, "ru": 0}
 
 CYR2LAT = {"Т": "T", "С": "C", "Г": "H", "П": "P", "О": "D", "И": "I"}
 WEAKER_OK = {"✗"}   # ретракция — не «более слабая опора», а снятие
 STATUS_CHARS = "TCHPDIТСГПОИ✗"
+# Дата между глаголом и предлогом («corrected 2026-09-25 from [T]», «исправлено
+# 2026-09-25 с [Т]») — та же форма повышения: без неё строка Pred 7 читалась бы
+# как [T] рядом со своим текущим [C] (аудит A-84, 25.09.2026).
+_DATE = r"(?:\s+\d{4}-\d{2}-\d{2})?"
 RAISED = re.compile(
-    r"(raised from|corrected from|повышен[аоы]? с|исправлен[аоы]? с|поднят[аоы]? с)\s*\*{0,2}\[?[" + STATUS_CHARS + r"]\]?",
+    r"(raised" + _DATE + r" from|corrected" + _DATE + r" from|повышен[аоы]?" + _DATE + r" с"
+    r"|исправлен[аоы]?" + _DATE + r" с|поднят[аоы]?" + _DATE + r" с"
+    # Понижение называет прежний статус так же, как повышение: «The status had
+    # earlier been lowered from [T]» в строке CC-5 делал её [C]+[T], и цитата
+    # «CC-5 [T]» прошла бы молча.
+    r"|lowered" + _DATE + r" from|downgraded" + _DATE + r" from|понижен[аоы]?" + _DATE + r" с)\s*\*{0,2}\[?[" + STATUS_CHARS + r"]\]?",
     re.I,
 )
 # «Old Fano bound retracted [✗]», «Butterfly A₅ отозвана [✗]» — снятая ПОД-ЧАСТЬ
@@ -63,6 +93,29 @@ RETRACTED_SUB = re.compile(
 # «H3 [H] → CLOSED», «Г3 [Г] → ЗАКРЫТО» — статус выражен прозой, а не буквой
 CLOSED = re.compile(r"\[[" + STATUS_CHARS + r"]\]\s*(→|->)\s*(CLOSED|ЗАКРЫТ[АОЫ]?)", re.I)
 ROW = re.compile(r"^\|\s*\*{0,2}~{0,2}\s*(T-\d+(?:\.\d+)?[a-z]?|\d+[a-z]?)\s*~{0,2}\*{0,2}\s*\|(.*)$")
+# НЕ-T НОМЕРА РЕЕСТРА (аудит A-84, 25.09.2026). Реестр держит ещё два семейства
+# с собственной нумерацией: теоремы кибернетики когерентности `CC-n` (в русской
+# локали `КК-n`) и реестр предсказаний `Pred n`. Образец `ROW` знал только T-номера,
+# и шестнадцать строк CC/КК плюс сорок четыре Pred не читались вовсе: цитата
+# «CC-5 [T]» при строке «[C at (HOL)]» прошла бы R1 молча, а R4 не видел их [C].
+# Семейства однозначны: префикс не совпадает ни с чем в корпусе. Номера `C12`,
+# `H3`, `P2` — нет: те же буквы с цифрой означают условия, гипотезы, принципы и
+# шаги доказательств, и перенумерация «C32 (was C22)» их размывает; они сюда не
+# входят. Канонический ключ одинаков в обеих локалях: `КК-n` → `CC-n`.
+XROW = re.compile(r"^\|\s*\*{0,2}~{0,2}\s*(CC-\d+|КК-\d+|Pred \d+)\s*~{0,2}\*{0,2}\s*\|(.*)$")
+XFAMILIES = ("CC", "Pred")
+# Цитата не-T номера: «CC-5 [C at (HOL)]», «[КК-7](…) [Т]», «Pred 7 [C]».
+XCITE = re.compile(
+    r"(?<![\w-])(CC-\d+|КК-\d+|Pred \d+)(?:\]\([^)\s]*\))?\*{0,2}\s*\*{0,2}\[([" + STATUS_CHARS + r"])")
+# Страница предсказаний пишет статус не цитатой, а носителем раздела:
+# «### Prediction 7: …» → «:::info Prediction [C]» или «**Status:** [C] …».
+PRED_HEAD = re.compile(r"^#{2,4}\s+(?:Prediction|Предсказание)\s+(\d+)\b")
+PRED_CARRIER = re.compile(r"^(?::::\w+\s+(?:Prediction|Предсказание)|\*\*(?:Status|Статус):\*\*)")
+
+
+def xkey(tid):
+    """Канонический ключ не-T номера: `КК-5` и `CC-5` — один результат."""
+    return "CC-" + tid[3:] if tid.startswith("КК-") else tid
 # Токен статуса: [T], [Т/С], [T/sim], [T at …], [Т при …] — все формы, что в ходу.
 TOKEN = re.compile(
     r"\[([" + STATUS_CHARS + r"])(?:/(?:sim|[" + STATUS_CHARS + r"]))?"
@@ -83,7 +136,10 @@ def status_letters(text):
         for extra in re.findall(r"/([" + STATUS_CHARS + r"])\]", second):
             out.add(norm(extra))
     return out
-CITE = re.compile(r"\b(T-\d+(?:\.\d+)?[a-z]?)\s*\*{0,2}\[([" + STATUS_CHARS + r"])\]")
+# Цитата бывает и ССЫЛКОЙ: «[T-119](/docs/…) [T]». Прежний образец требовал букву
+# сразу за номером и не видел ни одной цитаты-ссылки: три заголовка spacetime держали
+# «T-119 [T]» при реестре [C], и R1 молчал (аудит A-37, 25.09.2026).
+CITE = re.compile(r"\b(T-\d+(?:\.\d+)?[a-z]?)(?:\]\([^)\s]*\))?\*{0,2}\s*\*{0,2}\[([" + STATUS_CHARS + r"])\]")
 LEGEND = re.compile(r"^-\s*\*\*\[([" + STATUS_CHARS + r"])\]\*\*\s*[—-]?\s*(.{3,110})")
 
 # R3: формулировки, отозванные проходом согласования 10.09.2026.
@@ -124,7 +180,7 @@ def section_status(heading):
     return next(iter(letters)) if len(letters) == 1 else None
 
 
-def registry_rows(root):
+def registry_rows(root, row=ROW):
     """Живые (не зачёркнутые) строки реестра по номеру, вместе со статусом СЕКЦИИ.
 
     Реестр кодирует статус двумя способами: буквой в самой строке и —
@@ -141,16 +197,19 @@ def registry_rows(root):
         if head:
             section = section_status(head.group(1))
             continue
-        m = ROW.match(line)
+        m = row.match(line)
         if not m or line.count("~~") >= 2:
             continue
         tid = m.group(1)
-        tid = tid if tid.startswith("T-") else "T-" + tid
+        if row is ROW:
+            tid = tid if tid.startswith("T-") else "T-" + tid
+        else:
+            tid = xkey(tid)
         out.setdefault(tid, []).append((m.group(2), section))
     return out
 
 
-def classify(root):
+def classify(root, row=ROW):
     """Каждому номеру — вид свидетельства о статусе.
 
     explicit  — статус читается машиной однозначно (одна живая строка, один статус);
@@ -167,7 +226,7 @@ def classify(root):
     пропагация статусов в корпусе делается руками и разъезжается.
     """
     kinds, statuses = {}, {}
-    for tid, bodies in registry_rows(root).items():
+    for tid, bodies in registry_rows(root, row).items():
         per_row = []
         implied = False
         for body, section in bodies:
@@ -195,6 +254,43 @@ def classify(root):
             kinds[tid] = "explicit"
             statuses[tid] = union
     return kinds, statuses
+
+
+def check_r1x(root, statuses, kinds):
+    """R1 для не-T номеров: цитаты `CC-n`/`КК-n`/`Pred n` и носители страницы предсказаний.
+
+    Цитата сверяется, как и у T-номеров, с объединением живых статусов строки.
+    На странице предсказаний статус раздела «Prediction N» пишется первым
+    носителем (`:::info Prediction [X]` или `**Status:** [X]`); расхождение —
+    если ни одна его буква не входит в статусы строки `Pred N` реестра.
+    """
+    statuses = {t: v for t, v in statuses.items() if kinds.get(t) != "absent"}
+    bad, seen_n = [], {"цитат": 0, "носителей": 0}
+    for f in sorted(root.rglob("*.md*")):
+        if f.name == "status-registry.md":
+            continue
+        pred, seen = None, False
+        for i, line in enumerate(f.read_text(encoding="utf-8").split("\n"), 1):
+            head = PRED_HEAD.match(line)
+            if head:
+                pred, seen = "Pred " + head.group(1), False
+            elif line.startswith("#"):
+                pred = None
+            if pred and not seen and PRED_CARRIER.match(line):
+                letters = status_letters(line)
+                if letters:
+                    seen = True
+                    seen_n["носителей"] += pred in statuses
+                    if pred in statuses and not (letters & statuses[pred]):
+                        bad.append((f, i, pred, "/".join(sorted(letters)), sorted(statuses[pred])))
+            if RETRACTION_MARK.search(line):
+                continue
+            for m in XCITE.finditer(line):
+                tid, st = xkey(m.group(1)), norm(m.group(2))
+                seen_n["цитат"] += tid in statuses
+                if tid in statuses and st not in statuses[tid]:
+                    bad.append((f, i, tid, st, sorted(statuses[tid])))
+    return bad, seen_n
 
 
 def check_r1(root, statuses, kinds):
@@ -284,13 +380,23 @@ WEAKER = {"C", "D", "H", "P", "I"}
 CARRIER = re.compile(r"^(?:#{2,6}\s|:::\w+\s|\*\*(?:Theorem|Теорема|Claim|Утверждение|Corollary|Следствие|Lemma|Лемма))")
 
 
-def check_r6(root):
+DEP_REF = re.compile(r"\b(T-\d+(?:\.\d+)?[a-z]?)\b")
+
+
+def check_r6(root, statuses, kinds):
     """[T] не смеет опираться на более слабую опору, не унаследовав её статус.
 
     Правило аудита 10.09.2026: метки [C]/[D]/[I]/[P] обязаны распространяться по
     зависимостям. Прибор читает строку «**Зависимости:** …», берёт статус
     ближайшего носителя выше (заголовок, врезка или жирная преамбула теоремы) и
     сверяет: если носитель объявлен [T], а среди опор есть слабее — это дефект.
+
+    Слабость опоры читается ДВАЖДЫ: по букве, написанной в самой строке, и по
+    РЕЕСТРУ (номер, у которого все живые статусы слабее [T]). Прежде прибор знал
+    только букву в строке и искал носителя не дальше 60 строк — и 25.09.2026 не
+    видел двух опор: T-120 [T] стоял на T-118 [C] (строка зависимостей в 90 строках
+    от шапки), теорема на T-190 [C] — в 95 строках. Теперь носитель ищется до
+    ближайшего заголовка без окна.
     """
     bad = []
     for f in sorted(root.rglob("*.md*")):
@@ -299,32 +405,37 @@ def check_r6(root):
             m = DEPS.match(line.strip())
             if not m:
                 continue
-            dep = {s for _, s in re.findall(r"(T-\d+[a-z′']?)\s*\**\[([" + STATUS_CHARS + r"])\]", m.group(1))}
+            dep = {s for _, s in re.findall(
+                r"(T-\d+[a-z′']?)\]?(?:\([^)\s]*\))?\s*\**\[([" + STATUS_CHARS + r"])\]", m.group(1))}
             dep = {norm(x) for x in dep}
             weak = (dep & WEAKER) - WEAKER_OK
+            for tid in set(DEP_REF.findall(m.group(1))):
+                st = statuses.get(tid)
+                if st and kinds.get(tid) == "explicit" and "T" not in st and (st & WEAKER):
+                    weak |= st & WEAKER
             if not weak:
                 continue
-            own = None
-            for j in range(i - 1, max(-1, i - 60), -1):
+            own, carrier = None, None
+            for j in range(i - 1, -1, -1):
                 if CARRIER.match(lines[j]):
                     letters = status_letters(lines[j])
                     if letters:
-                        own = letters
+                        own, carrier = letters, lines[j]
                         break
                     if lines[j].startswith("#"):
                         break
-            if own == {"T"} and not CONDITIONED.search(lines[j]):
+            if own == {"T"} and not CONDITIONED.search(carrier):
                 bad.append((f, i + 1, sorted(weak), sorted(dep)))
     return bad
 
 
-def check_r4(root):
+def check_r4(root, row=ROW):
     """Строки реестра со статусом [C] обязаны называть допущение."""
     names = re.compile(r"\[[CС]\s*(at|under|при|given|если)|условн|conditional|assumption|допущени|гипотез", re.I)
     bad = []
     text = (root / "reference/status-registry.md").read_text(encoding="utf-8").split("\n")
     for i, line in enumerate(text, 1):
-        m = ROW.match(line)
+        m = row.match(line)
         if not m or line.count("~~") >= 2:
             continue
         body = RAISED.sub(" ", m.group(2))
@@ -341,7 +452,7 @@ def main():
         r2 = check_r2(root)
         r3 = check_r3(root, loc)
         r4 = check_r4(root)
-        r6 = check_r6(root)
+        r6 = check_r6(root, statuses, kinds)
         tally = {k: sum(1 for v in kinds.values() if v == k)
                  for k in ("explicit", "collision", "companion", "implied", "absent")}
         debt = tally["collision"] + tally["implied"] + tally["absent"]
@@ -375,6 +486,34 @@ def main():
         for f, i, weak, dep in r6[:10]:
             print(f"     {f.relative_to(ROOT)}:{i}: опоры {dep}, слабее теоремы: {weak}")
         if len(r6) > BASE_R6[loc]:
+            fail = True
+        # не-T номера: CC/КК и Pred
+        xkinds, xstat = classify(root, XROW)
+        xtally = {k: sum(1 for v in xkinds.values() if v == k)
+                  for k in ("explicit", "collision", "companion", "implied", "absent")}
+        xdebt = xtally["collision"] + xtally["implied"] + xtally["absent"]
+        fam = {f: sum(1 for t in xkinds if t.startswith(f)) for f in XFAMILIES}
+        print(f"  НЕ-T номера реестра: {len(xkinds)} ("
+              + ", ".join(f"{f} {n}" for f, n in fam.items())
+              + f") — машиночитаемых {xtally['explicit'] + xtally['companion']}, долг {xdebt} "
+              f"(двусмысленных {xtally['collision']}, прозой {xtally['implied']}, без буквы {xtally['absent']}; "
+              f"база {BASE_DEBTX[loc]})")
+        for t in sorted(t for t, k in xkinds.items() if k in ("collision", "implied", "absent")):
+            print(f"     {t}: {xkinds[t]}")
+        if xdebt > BASE_DEBTX[loc]:
+            fail = True
+        r1x, seen_x = check_r1x(root, xstat, xkinds)
+        print(f"  R1x статус цитаты CC/Pred против реестра: осмотрено цитат {seen_x['цитат']}, "
+              f"носителей предсказаний {seen_x['носителей']}; расхождений {len(r1x)} (база {BASE_R1X[loc]})")
+        for f, i, tid, st, reg in r1x:
+            print(f"     {f.relative_to(ROOT)}:{i}: {tid} цитирован [{st}], реестр даёт {reg}")
+        if len(r1x) > BASE_R1X[loc]:
+            fail = True
+        r4x = check_r4(root, XROW)
+        print(f"  R4x строки [C] CC/Pred без названного допущения: {len(r4x)} (база {BASE_R4X[loc]})")
+        for i, tid, body in r4x:
+            print(f"     реестр:{i}: {tid} — {body}")
+        if len(r4x) > BASE_R4X[loc]:
             fail = True
     print("правило: реестр — канон; одна буква — одно значение; отозванное не возвращается")
     return 1 if fail else 0

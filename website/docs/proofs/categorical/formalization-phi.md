@@ -114,7 +114,7 @@ Step (1) ⟹ (2) uses the Perron–Frobenius theorem for the **linear part** $\m
 - Universal property: $\text{Hom}(\varphi(X), S) \cong \text{Hom}(X, i(S))$ follows from idempotency ∎
 
 :::info Remark on completeness of equivalence
-**Direction (1)⟹(2)** follows from primitivity of the linear part $\mathcal{L}_0$ [T]: the left adjoint $\varphi$ projects onto the invariant subspace, and primitivity provides the spectral gap and convergence of the linear dynamics. **Direction (2)⟹(1):** any minimizer of the variational functional under the CPTP condition is a stationary point, and the CPTP contraction φ guarantees uniqueness $= \varphi$. Thus (2)⟹(1) is also [T] via the categorical definition of φ. All three directions have status **[T]**.
+**Direction (1)⟹(2)** follows from primitivity of the linear part $\mathcal{L}_0$ [T]: the left adjoint $\varphi$ projects onto the invariant subspace, and primitivity provides the spectral gap and convergence of the linear dynamics. **Direction (2)⟹(1):** ~~any minimizer of the variational functional under the CPTP condition is a stationary point, and the CPTP contraction φ guarantees uniqueness $= \varphi$. Thus (2)⟹(1) is also [T] via the categorical definition of φ.~~ **[✗] Retracted 2026-09-25:** this argument rested on the variational characterisation of φ ([Theorem 3.1 of the FEP derivation](/docs/proofs/dynamics/fep-derivation), registry row 39e), which is retracted: the functional equals $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$, is linear in $\psi(\Gamma)$ and is minimised by the projection onto the top eigenvector of $\Gamma$, not by $\varphi$. The equivalence does not need it: the cycle (1)⟹(2)⟹(3)⟹(1) above is proved without the variational functional, and (2)⟹(1) is the composite (2)⟹(3)⟹(1). The three steps of the cycle keep status **[T]**.
 :::
 
 ---
@@ -1804,12 +1804,12 @@ This is consistent with the fixed point property $\varphi(\Gamma^*) = \Gamma^*$:
 ## Tensor factorization of φ for composite systems {#тензорная-факторизация}
 
 :::info Relation to no-signaling prohibition and preservation of holonomic character
-Tensor factorization of $\varphi$ is a key property ensuring [compatibility of $\mathcal{R}$ with no-signaling prohibition](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). It guarantees that self-modeling of autonomous subsystems does not create channels of superluminal communication (Gisin, Polchinski 1991).
+Tensor factorization of $\varphi$ is the key property behind the [marginal identity](/docs/proofs/physics/physics-correspondence#запрет-сигнализации): the regeneration of an autonomous subsystem does not change the unconditioned state of its partner. It does not by itself exclude superluminal signalling: with a Lüders update after a measurement on one side, a state-dependent regeneration on the other side makes its statistics depend on the choice of measurement (Gisin 1990; Polchinski 1991; §8.5 of the page linked). No-signalling of the full dynamics is [C] under the non-selective reading. An earlier sentence here said that factorization guarantees no superluminal channels; retracted.
 
 **Preservation of holonomic character.** Factorization $\varphi_{A \otimes B} = \varphi_A \otimes \varphi_B$ concerns **only** the regenerative term $\mathcal{R}$. The full dynamics $\mathcal{L}_\Omega = -i[H, \cdot] + \mathcal{D}[\cdot] + \mathcal{R}[\cdot]$ contains:
 - **$H$ (Hamiltonian):** creates and preserves entanglement — **non-local** ✓
 - **$\mathcal{D}$ (dissipation):** may destroy entanglement, but through **common** decoherence — **non-local** in general
-- **$\mathcal{R}$ (regeneration via $\varphi$):** local (factorizes) — ensures no-signaling
+- **$\mathcal{R}$ (regeneration via $\varphi$):** local (factorizes) — keeps the partner's unconditioned marginal unchanged
 
 "Holonomy" (the whole > sum of parts) is realized through $H + \mathcal{D}$, not through $\mathcal{R}$. Self-modeling ($\varphi$) is a **local** process (each agent models itself, not another). Entanglement is a property of $H$ (Hamiltonian dynamics). The theory is **not** a "local hidden variable theory": only $\mathcal{R}$ is local, while $H + \mathcal{D}$ are non-local.
 
@@ -1871,7 +1871,7 @@ $$
 \mathrm{Tr}_A\left[\alpha \cdot ((\Phi_A \otimes \mathrm{id}_B)(\rho_{AB}) - \rho_{AB})\right] = 0
 $$
 
-**Corollary:** The regenerative term $\tilde{\mathcal{R}}_A[\Gamma_{AB}] = \kappa_A \cdot ((\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) - \Gamma_{AB}) \cdot g_V(P_A)$ automatically satisfies the no-signaling prohibition — the contribution to $\Gamma_B = \mathrm{Tr}_A[\Gamma_{AB}]$ is zero.
+**Corollary:** The regenerative term $\tilde{\mathcal{R}}_A[\Gamma_{AB}] = \kappa_A \cdot ((\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) - \Gamma_{AB}) \cdot g_V(P_A)$ contributes nothing to $\Gamma_B = \mathrm{Tr}_A[\Gamma_{AB}]$ — the marginal identity. This is not yet no-signalling of the full dynamics, which fails with the Lüders update and holds only in the non-selective reading [C]; an earlier wording said the term "automatically satisfies the no-signaling prohibition", which is retracted.
 
 Full proof: [Physical correspondence — No-signaling prohibition](/docs/proofs/physics/physics-correspondence#запрет-сигнализации).
 

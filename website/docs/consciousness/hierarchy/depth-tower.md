@@ -516,9 +516,9 @@ The system **must** collapse the upper levels under high stress — an adaptive 
 
 ### 7.4 Social Depth [C] {#социальная-глубина}
 
-Multi-agent towers scale via [CC-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) (T-68: non-triviality [T], viability [T for embodied] per T-149) and [CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [T]:
+Multi-agent towers scale via [CC-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) (T-68, [C at (HOL)]: under the assumption that the composite is itself a holon, non-triviality, and for embodied systems viability per T-149; the former "non-triviality [T], viability [T for embodied]" is retracted with CC-5's step 1) and [CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [T]:
 
-From T-68 (fractal closure): $\mathbb{H}_A$ viable $\land$ $\mathbb{H}_B$ viable $\Rightarrow$ $\mathbb{H}_A \otimes \mathbb{H}_B$ viable. Composite depth:
+From T-68 (fractal closure), under (HOL) — $\mathbb{H}_A \otimes \mathbb{H}_B$ is itself a holon: $\mathbb{H}_A$ viable $\land$ $\mathbb{H}_B$ viable $\Rightarrow$ $\mathbb{H}_A \otimes \mathbb{H}_B$ viable (for embodied systems). Composite depth:
 
 $$\min(\mathrm{SAD}_A, \mathrm{SAD}_B) \leq \mathrm{SAD}(\mathbb{H}_A \otimes \mathbb{H}_B) \leq \mathrm{SAD}_A + \mathrm{SAD}_B$$
 

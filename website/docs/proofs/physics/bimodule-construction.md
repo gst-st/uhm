@@ -15,6 +15,8 @@ This document solves four interrelated problems that remained open [P] in UHM th
 4. **G-map**: How is the map $G: \text{States} \to \mathcal{D}(\mathbb{C}^7)$ constructed for concrete systems?
 
 All four problems have a **common root**: the theory has so far worked at the level of **algebras**, without reaching the level of **representations and bimodules**. Connes' bimodule construction is the missing link.
+
+*Correction 2026-09-25:* problem 1 is **not** solved here — T-178 below is retracted as a derivation; the Standard Model representations come from Connes' Hilbert space $H_F$, which UHM imports.
 :::
 
 ---
@@ -38,8 +40,10 @@ All four problems are symptoms of a single gap: between the **algebraic** struct
 
 ### 2.1 Finite bimodule from the UHM spectral triple
 
-:::warning Theorem T-178 (Bimodule realization of SM) [T]
-The finite Hilbert space $H_F$ of the UHM spectral triple, viewed as an $(A_{\text{int}}, A_{\text{int}}^\circ)$-bimodule via the real structure $J$ with KO-dimension 6, decomposes into a direct sum of irreducible bimodules **exactly coinciding** with one generation of SM fermions.
+:::danger Theorem T-178 (Bimodule realization of SM) — retracted [✗] as a derivation (2026-09-25)
+Retracted statement: the finite Hilbert space $H_F$ of the UHM spectral triple, viewed as an $(A_{\text{int}}, A_{\text{int}}^\circ)$-bimodule via the real structure $J$ with KO-dimension 6, decomposes into a direct sum of irreducible bimodules **exactly coinciding** with one generation of SM fermions.
+
+It is not derived, for three reasons. (i) The UHM triple has $H_{\text{int}} = \mathbb{C}^7$, while one generation needs $32$ states (16 Weyl fermions and their conjugates); the $H_F$ used below is Connes' Hilbert space, imported, and "$7 \cdot 2 = 14 + 2$" in the reduction note is a count, not a map. (ii) KO-dimension 6 cannot occur on $\mathbb{C}^7$: it needs $J\chi = -\chi J$, so the antiunitary $J$ maps the $+1$ eigenspace of $\chi$ onto the $-1$ eigenspace and the two have equal dimension, which no grading of an odd-dimensional space provides (with the $\chi$ of Step 1 they are $4$ and $3$; [spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)). (iii) The reduction $A_{\text{int}} \to A_F$ is not a homomorphism, and its "Morita compatibility" is T-175a, retracted: Morita equivalence preserves the centre, $\mathbb{C}^3$ for $A_{\text{int}}$ against $\mathbb{C}\oplus\mathbb{R}\oplus\mathbb{C}$ for $A_F$ ([spacetime](/docs/core/foundations/spacetime#алгебра-морита)). What stands is the standard bimodule decomposition of Connes' $H_F$ over $A_F = \mathbb{C}\oplus\mathbb{H}\oplus M_3(\mathbb{C})$ (Chamseddine–Connes–Marcolli 2007; Barrett 2007), which UHM imports rather than derives.
 :::
 
 **Construction.**
@@ -47,7 +51,7 @@ The finite Hilbert space $H_F$ of the UHM spectral triple, viewed as an $(A_{\te
 **Step 1 (Input data).** Finite UHM spectral triple:
 - Algebra: $A_{\text{int}} = \mathbb{C}_O \oplus M_3(\mathbb{C})_{\mathbf{3}} \oplus M_3(\mathbb{C})_{\bar{\mathbf{3}}}$
 - Space: $H_{\text{int}} = \mathbb{C}^7$
-- Real structure: $J$ with $J^2 = +1$, $JD = DJ$, $J\chi = -\chi J$ (KO-dim 6)
+- Real structure: $J$ with $J^2 = +1$, $JD = DJ$, $J\chi = -\chi J$ (KO-dim 6) — retracted [✗]: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка))
 - Chirality: $\chi = \mathrm{diag}(+1, -1, -1, -1, +1, +1, +1)$
 
 **Step 2 (Opposite algebra).** The real structure $J$ defines a right action of the algebra $A_{\text{int}}$ on $H_{\text{int}}$:
@@ -79,11 +83,11 @@ $$
 :::info Explicit reduction $M_3(\mathbb C)\to\mathbb H$
 The arrow $A_\mathrm{int}\to A_F$ is **not** an algebra isomorphism — it is a reduction induced by the real structure $J$ plus the ФЭ breaking. $A_\mathrm{int}=\mathbb C\oplus M_3(\mathbb C)_{\mathbf 3}\oplus M_3(\mathbb C)_{\bar{\mathbf 3}}$ has $\dim_\mathbb R=1+18+18=37$; $A_F=\mathbb C\oplus\mathbb H\oplus M_3(\mathbb C)$ has $\dim_\mathbb R=1+4+18=23$. The reduction:
 1. The first $M_3(\mathbb C)_{\mathbf 3}$ factor carries the $SU(3)_C$ colour action — retained in $A_F$ as $M_3(\mathbb C)$.
-2. The second $M_3(\mathbb C)_{\bar{\mathbf 3}}$ factor is reduced to $\mathbb H\subset M_2(\mathbb C)\subset M_3(\mathbb C)$ via the $J$-compatibility + Higgs-line $\{A,E,U\}$ constraint (T-1a): the 2-dimensional weak-isospin subspace $\mathrm{span}\{|E\rangle,|U\rangle\}$ supports an anti-commuting real structure $J^2=+1,\ [J,\gamma]=0$, whose commutant is $\mathbb H$ (Barrett 2007, §3.2; Chamseddine–Connes 2007). The remaining $M_3(\mathbb C)_{\bar{\mathbf 3}}\setminus\mathbb H$ content is projected out as it fails the first-order condition with the Dirac operator restricted to the Higgs line.
-3. The net effect is a **Morita-compatible** reduction: $A_F$ and $A_\mathrm{int}$ have the **same** category of bimodule representations realising SM fermions (Alvarez–Gracia-Bondía–Martín 1995), i.e., the bimodule structure is preserved.
-4. Verification: dimensional accounting — $H_F$ fermion count from $A_F$ bimodules = 16 per generation (SM), matching $\dim H_F = 7 \cdot 2 = 14 + 2$ right-handed neutrinos.
+2. The second $M_3(\mathbb C)_{\bar{\mathbf 3}}$ factor is reduced to $\mathbb H\subset M_2(\mathbb C)\subset M_3(\mathbb C)$ via the $J$-compatibility + Higgs-line $\{A,E,U\}$ constraint (T-1a): the 2-dimensional weak-isospin subspace $\mathrm{span}\{|E\rangle,|U\rangle\}$ supports an anti-commuting real structure $J^2=+1,\ [J,\gamma]=0$, whose commutant is $\mathbb H$ (Barrett 2007, §3.2; Chamseddine–Connes 2007). *Retracted 2026-09-25:* an antiunitary $J$ with $J^2 = +1$ on $\mathbb{C}^2$ is complex conjugation in a suitable basis, and its commutant in $M_2(\mathbb{C})$ is $M_2(\mathbb{R})$; $\mathbb{H}$ is the commutant of a $J$ with $J^2 = -1$. Barrett's paper has four sections and no subsections, so there is no §3.2, and it takes $A_F = \mathbb{C}\oplus\mathbb{H}\oplus M_3(\mathbb{C})$ as given. The remaining $M_3(\mathbb C)_{\bar{\mathbf 3}}\setminus\mathbb H$ content is projected out as it fails the first-order condition with the Dirac operator restricted to the Higgs line.
+3. ~~The net effect is a **Morita-compatible** reduction: $A_F$ and $A_\mathrm{int}$ have the **same** category of bimodule representations realising SM fermions (Alvarez–Gracia-Bondía–Martín 1995), i.e., the bimodule structure is preserved.~~ Retracted 2026-09-25 with T-175a: the centres differ ($\mathbb{C}^3$ against $\mathbb{C}\oplus\mathbb{R}\oplus\mathbb{C}$), so the bimodule categories are not equivalent.
+4. ~~Verification: dimensional accounting — $H_F$ fermion count from $A_F$ bimodules = 16 per generation (SM), matching $\dim H_F = 7 \cdot 2 = 14 + 2$ right-handed neutrinos.~~ Retracted 2026-09-25: $H_{\text{int}} = \mathbb{C}^7$ has dimension 7; "$7 \cdot 2 + 2 = 16$" does not construct the 16 states of a generation.
 
-This resolves the concern that $A_\mathrm{int}$ and $A_F$ differ as algebras: the equivalence is at the level of bimodule categories (Morita), not objects.
+~~This resolves the concern that $A_\mathrm{int}$ and $A_F$ differ as algebras: the equivalence is at the level of bimodule categories (Morita), not objects.~~ Retracted 2026-09-25: there is no such equivalence (item 3).
 :::
 
 The bimodule decomposition of $H_F$ gives (Barrett, 2007; Chamseddine-Connes, 2007):
@@ -100,7 +104,7 @@ The bimodule decomposition of $H_F$ gives (Barrett, 2007; Chamseddine-Connes, 20
 :::info Solution of the SM representations problem
 The 42D tensor structure $\mathbb{C}^7 \otimes \mathbb{C}^6$ is a realization of the Page–Wootters mechanism for **emergent time**. SM representations arise from a **different** construction: the bimodule decomposition of $H_F$ via the real structure $J$. These two mechanisms are **compatible** but solve **different** problems: PW gives time, the bimodule gives particles.
 
-**Updated status of the SM representations problem: [T]** — solved via the standard NCG construction (Barrett 2007), applied to the UHM spectral triple (T-53 [T]).
+~~**Updated status of the SM representations problem: [T]** — solved via the standard NCG construction (Barrett 2007), applied to the UHM spectral triple (T-53 [T]).~~ Retracted 2026-09-25: the construction is applied to Connes' imported $H_F$, not to the UHM triple, whose $\mathbb{C}^7$ carries no KO-dimension-6 structure (T-178 above). Deriving the SM representations from UHM remains an open problem [Pr].
 :::
 
 $\blacksquare$
@@ -109,11 +113,13 @@ $\blacksquare$
 
 The free parameter $\alpha$ in the hypercharge generator $Y$ is fixed by **anomaly freedom** of the bimodule $H_F$:
 
-:::warning Theorem T-179 (Hypercharge fixation) [T]
-The anomaly cancellation conditions $\mathrm{Tr}(Y) = 0$ and $\mathrm{Tr}(Y^3) = 0$ on the bimodule $H_F$ **uniquely** fix the hypercharge assignments of the Standard Model (up to overall normalization).
+:::danger Theorem T-179 (Hypercharge fixation) — retracted [✗] as stated (2026-09-25)
+Retracted statement: the anomaly cancellation conditions $\mathrm{Tr}(Y) = 0$ and $\mathrm{Tr}(Y^3) = 0$ on the bimodule $H_F$ **uniquely** fix the hypercharge assignments of the Standard Model (up to overall normalization).
+
+Two equations cannot fix the five hypercharges of a generation (six with $\nu_R$). Even all four anomaly conditions — gravitational, $U(1)_Y^3$, $SU(3)^2\,U(1)_Y$ and $SU(2)^2\,U(1)_Y$ — are solved both by the Standard Model values and by $y_Q = y_L = y_e = 0$, $y_u = -y_d$; and with a right-handed neutrino every combination $Y + c\,(B-L)$ passes all four (checked in exact arithmetic for $c = 1/7,\ 1/2,\ 3$; $B-L$ is the anomaly-free outer automorphism noted by Boyle and Farnsworth, *New J. Phys.* **22**, 073023 (2020)). Fixing the hypercharges needs further input: the Yukawa couplings to one Higgs doublet and, when $\nu_R$ is present, a Majorana mass for it (Babu and Mohapatra, *Phys. Rev. Lett.* **63**, 938 (1989)). The bimodule it is applied to is Connes' imported $H_F$ (T-178 above), so no part of the result is derived from UHM.
 :::
 
-**Proof.** This is a standard result of anomaly theory (Alvarez-Gaumé, Witten 1984), applied to the specific bimodule from Step 4 above. The condition $\mathrm{Tr}(Y) = 0$ fixes the relative hypercharges of quarks and leptons; $\mathrm{Tr}(Y^3) = 0$ fixes the absolute values. The unique solution: $Y(q_L) = 1/6$, $Y(u_R) = 2/3$, $Y(d_R) = -1/3$, $Y(l_L) = -1/2$, $Y(e_R) = -1$. $\blacksquare$
+**Former proof (retracted with the statement).** This is a standard result of anomaly theory (Alvarez-Gaumé, Witten 1984), applied to the specific bimodule from Step 4 above. The condition $\mathrm{Tr}(Y) = 0$ fixes the relative hypercharges of quarks and leptons; $\mathrm{Tr}(Y^3) = 0$ fixes the absolute values. The unique solution: $Y(q_L) = 1/6$, $Y(u_R) = 2/3$, $Y(d_R) = -1/3$, $Y(l_L) = -1/2$, $Y(e_R) = -1$. $\blacksquare$
 
 ---
 

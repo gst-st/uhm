@@ -59,7 +59,7 @@ Jung could not explain the **mechanism** — how archetypes are transmitted and 
 
 Le Bon in 'The Psychology of Crowds' (1895) described a phenomenon that everyone has observed at a stadium or rally: a person in a crowd behaves **differently** from when alone. They are more impulsive, less critical, more subject to emotions. Le Bon spoke of the 'crowd soul' — a collective psyche that suppresses individual rationality.
 
-In UHM terms: a crowd is a state of high $\Phi_{\text{comp}}$ (strong integration: everyone is synchronised) with low $R_{\text{comp}}$ (weak reflection: no one is thinking about what is happening). This is a **dangerous combination**: the system is integrated but does not reflect — it acts as a single organism, but without reason.
+In UHM terms: a crowd is a state of high $I_{\text{comp}}$ (strong correlation: everyone is synchronised) with low $R_{\text{comp}}$ (weak reflection: no one is thinking about what is happening). This is a **dangerous combination**: the system is integrated but does not reflect — it acts as a single organism, but without reason.
 
 ### Superorganism (Wheeler, 1911; Wilson, 1971)
 
@@ -73,7 +73,7 @@ In UHM terms: a superorganism is a system with $\Gamma_{\text{comp}} \neq \bigot
 |-----------|-----------|-------------------|
 | Durkheim | Collective representations | Emergent coherences $\mathcal{U}_{\text{coll}}$ |
 | Jung | Archetypes | Structural regularities of $\Gamma_{\text{comp}}$ that increase $P$ |
-| Le Bon | 'Crowd soul' | $\Phi_{\text{comp}} \uparrow$, $R_{\text{comp}} \downarrow$ |
+| Le Bon | 'Crowd soul' | $I_{\text{comp}} \uparrow$, $R_{\text{comp}} \downarrow$ |
 | Wilson | Superorganism | $\text{Level}(\Gamma_{\text{comp}}) > \max_i \text{Level}(\Gamma_i)$ |
 
 ## Motivation {#мотивация}
@@ -97,7 +97,7 @@ If we wish to describe **two** holonoms **together**, we need a space large enou
 - The state of the second holonom ($7$ dimensions)
 - **Connections** between them (which are absent from any individual description!)
 
-The tensor product $\mathbb{C}^7 \otimes \mathbb{C}^7 = \mathbb{C}^{49}$ is precisely such a space. It has $49 = 7 \times 7$ dimensions, of which $7 + 7 = 14$ describe the individual states, and the remaining $49 - 14 = 35$ describe **connections** (correlations, coherences) between the holonoms.
+The tensor product $\mathbb{C}^7 \otimes \mathbb{C}^7 = \mathbb{C}^{49}$ is precisely such a space. A density matrix on it has $49^2 - 1 = 2400$ real parameters; the two individual states (its partial traces, below) fix $48 + 48 = 96$ of them, and the remaining $48 \times 48 = 2304$ describe **connections** (correlations, coherences) between the holonoms. (Earlier editions split the $49$ dimensions into $7 + 7 = 14$ "individual" and $35$ "connection" dimensions; retracted — the dimensions of a tensor product do not split that way: every basis vector $\lvert i\rangle \otimes \lvert j\rangle$ belongs to both holonoms.)
 
 For $N$ holonoms:
 
@@ -106,6 +106,16 @@ $$
 $$
 
 The dimensionality grows **exponentially**: for $N = 2$ it is $49$, for $N = 3$ — $343$, for $N = 10$ — $\sim 2.8 \times 10^8$. This means: the larger the group, the **richer** the space of possible collective states — and the more 'room' for emergent coherences.
+
+:::warning Correction (2026-09-25): $\Phi_{\text{comp}}$ does not measure the connection between members
+Earlier editions of this page used the integration measure of the joint matrix, $\Phi_{\text{comp}} = \Phi(\Gamma_{\text{comp}})$, as the measure of how strongly the members are connected — high for a synchronised crowd, "medium" for a nation, growing for humanity. That reading is retracted. For a separable state $1 + \Phi\bigl(\bigotimes_i \Gamma_i\bigr) = \prod_i (1 + \Phi_i)$, so the joint matrix's integration grows with the members' own integration even when they share nothing: two uncoupled members with $\Phi_i \geq 1$ already give $\Phi_{\text{comp}} \geq 3$, and a hundred give $\Phi_{\text{comp}} \geq 2^{100} - 1$, at zero mutual information ([the identity and a worked pair](/docs/consciousness/comparative/panpsychism-analysis#теорема-нередуцируемость)). What measures the connection between members is their correlation, the total correlation
+
+$$
+I_{\text{comp}} := \sum_{i=1}^{N} S(\Gamma_i) - S(\Gamma_{\text{comp}}) \geq 0 ,
+$$
+
+which vanishes exactly when $\Gamma_{\text{comp}} = \bigotimes_i \Gamma_i$ and which ($N = 2$: the mutual information) interaction alone does not make positive: by [CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) ([C under (ND)]) weakly coupled members are correlated exactly when the coupling has a correlating part at their attractors, while a coupling that commutes with the product of the members' attractors, or acts on one member alone, leaves $I_{\text{comp}} = 0$. (Earlier: "which CC-7 [T] makes positive for interacting holons"; retracted 2026-09-25.) On this page the connectivity readings formerly written with $\Phi_{\text{comp}}$ are now written with $I_{\text{comp}}$; they remain interpretations [I]. The collective reflection $R_{\text{comp}}$ is likewise used interpretively: the canonical $R = 1/(7P)$ is defined on $\mathcal{D}(\mathbb{C}^7)$, and its value for a group needs an aggregation channel that the theory does not fix.
+:::
 
 ### Recovering the individual from the collective
 
@@ -286,10 +296,10 @@ This means: the question 'can a human **genuinely** empathise with a machine?' h
 
 ## Collective L-levels {#коллективные-уровни}
 
-### Claim C.2 (Emergent collective L-levels) [C] {#эмерджентные-уровни}
+### Claim C.2 (Emergent collective L-levels) [H] {#эмерджентные-уровни}
 
-:::tip Claim C.2 [C]
-**Condition:** $\Gamma_{\text{comp}}$ has non-trivial coherences absent from individual $\Gamma_i$ (Definition D.1).
+:::tip Claim C.2 [H]
+**Condition:** $\Gamma_{\text{comp}}$ has non-trivial coherences absent from individual $\Gamma_i$ (Definition D.1), and the composite is represented on $\mathcal{D}(\mathbb{C}^7)$, where L-levels are defined, by an aggregation channel.
 
 A collective can possess an L-level **exceeding** the individual one:
 
@@ -298,13 +308,15 @@ $$
 $$
 
 **Argument.** The measures $R$ and $\Phi$ are computed from $\Gamma$. The composite $\Gamma_{\text{comp}}$ may have:
-- Higher $\Phi$ (additional coherences between individuals increase the numerator $\sum_{i \neq j} |\gamma_{ij}|^2$)
-- Higher $R$ (the collective self-model is more precise than individual ones — the scientific community knows more about itself than any individual scientist)
+- ~~Higher $\Phi$ (additional coherences between individuals increase the numerator $\sum_{i \neq j} |\gamma_{ij}|^2$)~~ — retracted (2026-09-25): the joint matrix has a higher $\Phi$ than its members even with no coherence between them ($1 + \Phi(\bigotimes_i \Gamma_i) = \prod_i (1 + \Phi_i)$; two uncoupled L2 members give $\Phi_{\text{comp}} \geq 3$), so a higher $\Phi_{\text{comp}}$ is no evidence of a collective level. The coherences between individuals are measured by $I_{\text{comp}}$ (the correction above).
+- Higher $R$ (the collective self-model is more precise than individual ones — the scientific community knows more about itself than any individual scientist) [I]
+
+**Status.** Earlier editions marked this claim [C] with the non-factorisation condition alone. With its $\Phi$-argument retracted it is a hypothesis [H]: L-levels are defined on $\mathcal{D}(\mathbb{C}^7)$, the aggregation channel that would represent $\Gamma_{\text{comp}}$ there is not fixed by the theory, and with an unconstrained channel the claim is empty — a constant (replacement) channel sends any group, correlated or not, to a window state. Under the assumption (AGG) of [CC-6](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность) (T-72 [C]) a weakly coupled group of identical members aggregates to within $O(\delta)$ of one member, so a higher collective level would need strong coupling, where no result applies. Research programme [Pr]: an intrinsically fixed aggregation ([Prediction 5](/docs/applied/coherence-cybernetics/predictions#предсказание-5)).
 
 Examples:
 1. **Scientific community:** Potential collective L3 — meta-reflection ($R^{(2)}$) at the level of a discipline (the scientific method as $\varphi^{(2)}$)
 2. **Swarm of bees:** Collective 'decision-making' (choosing a new hive) — potentially L1, even if an individual bee is L0–L1
-3. **Symphony orchestra:** High $\Phi_{\text{comp}}$ — musical unity inaccessible to any individual musician
+3. **Symphony orchestra:** High $I_{\text{comp}}$ — musical unity inaccessible to any individual musician
 :::
 
 ### Why a group can be 'smarter' than any individual: detailed analysis
@@ -330,6 +342,8 @@ No individual scientist is capable of a meta-analysis of thousands of works — 
 | Family (human) | L2 | L2+ | Shared models, empathy | Family 'rituals', shared memories, non-verbal understanding |
 | Scientific community | L2 | L2–L3? | Peer review = collective $\varphi^{(2)}$ | Scientific method — reflection on reflection |
 | Religious community | L2 | L2+ | Ritual = synchronisation of $\gamma_{OU}^{(\text{comp})}$ | Communal prayer, liturgy — synchronisation of $O$ (foundation) and $U$ (unity) |
+
+*The table illustrates Claim C.2, a hypothesis [H]; its collective levels are interpretations [I], not measurements.*
 
 ## Memes and cultural coherences {#мемы}
 
@@ -379,25 +393,25 @@ The $\Gamma_{\text{comp}}$ formalism is applicable at **any** scale — from a p
 
 #### Crowd ($N \sim 10^2$–$10^4$)
 
-**Characteristic:** $\Phi_{\text{comp}} \uparrow \uparrow$, $R_{\text{comp}} \downarrow \downarrow$
+**Characteristic:** $I_{\text{comp}} \uparrow \uparrow$, $R_{\text{comp}} \downarrow \downarrow$
 
-A crowd is a system with maximum integration (everyone is synchronised through sight, hearing, and bodily contact) and minimal reflection (no one is thinking about what they are doing). The mechanism is **emotional contagion**: $\gamma_{DE}^{(\text{comp})}$ grows in an avalanche-like manner, as positive feedback. The result: collective panic, euphoria, aggression — states that no individual would be in alone.
+A crowd is a system with maximum correlation (everyone is synchronised through sight, hearing, and bodily contact) and minimal reflection (no one is thinking about what they are doing). The mechanism is **emotional contagion**: $\gamma_{DE}^{(\text{comp})}$ grows in an avalanche-like manner, as positive feedback. The result: collective panic, euphoria, aggression — states that no individual would be in alone.
 
 #### Nation ($N \sim 10^6$–$10^9$)
 
-**Characteristic:** $\Phi_{\text{comp}}$ — medium (connectivity via media, institutions), $R_{\text{comp}}$ — medium (parliaments, media, science as reflection)
+**Characteristic:** $I_{\text{comp}}$ — medium (connectivity via media, institutions), $R_{\text{comp}}$ — medium (parliaments, media, science as reflection)
 
-A nation is a more complex collective: it possesses institutions of reflection (parliament, court, press) that increase $R_{\text{comp}}$. But connectivity ($\Phi_{\text{comp}}$) is weaker than in a crowd: millions of people cannot be physically synchronised.
+A nation is a more complex collective: it possesses institutions of reflection (parliament, court, press) that increase $R_{\text{comp}}$. But connectivity ($I_{\text{comp}}$ per member) is weaker than in a crowd: millions of people cannot be physically synchronised. (Read literally, the earlier $\Phi_{\text{comp}}$ of a nation would exceed a crowd's by many orders of magnitude, since $1 + \Phi_{\text{comp}} = \prod_i (1 + \Phi_i)$ on uncorrelated members — see the correction above.)
 
 National identity is a set of cultural coherences ($\gamma_{SL}^{(\text{comp})}$, $\gamma_{SE}^{(\text{comp})}$, $\gamma_{OU}^{(\text{comp})}$), stable on the timescale of centuries.
 
 #### Humanity ($N \sim 10^{10}$)
 
-**Characteristic:** $\Phi_{\text{comp}}$ — growing (internet, globalisation), $R_{\text{comp}}$ — open question
+**Characteristic:** $I_{\text{comp}}$ — growing (internet, globalisation), $R_{\text{comp}}$ — open question
 
 Humanity as a single subject is the limiting case of $\Gamma_{\text{comp}}$. The collective L-level of humanity is an **open question**: we do not know whether humanity as a whole is sufficiently integrated and reflective.
 
-The internet increases $\Phi_{\text{comp}}$ (information connectivity), but may decrease $R_{\text{comp}}$ (echo chambers, disinformation). The global scientific method increases $R_{\text{comp}}$ (meta-analyses, replication), but global populism decreases it.
+The internet increases $I_{\text{comp}}$ (information connectivity), but may decrease $R_{\text{comp}}$ (echo chambers, disinformation). The global scientific method increases $R_{\text{comp}}$ (meta-analyses, replication), but global populism decreases it.
 
 The question: is humanity a single subject with $\text{Level}(\Gamma_{\text{comp}}) > L2$? Or is it a set of poorly connected subsystems? The answer depends on how much $\Gamma_{\text{comp}}$ factorises: if $\Gamma_{\text{comp}} \approx \bigotimes_i \Gamma_{\text{nation}_i}$, humanity is not a single subject. If there are significant $\mathcal{U}_{\text{coll}}$ — it is a subject.
 
@@ -406,18 +420,18 @@ The question: is humanity a single subject with $\text{Level}(\Gamma_{\text{comp
 :::warning Claim C.3 (Influence of social media on collective reflection) [C]
 **Condition:** The model $G$ for collective systems is correctly defined.
 
-Social media may **decrease** collective reflection $R_{\text{comp}}$ while increasing $\Phi_{\text{comp}}$:
+Social media may **decrease** collective reflection $R_{\text{comp}}$ while increasing $I_{\text{comp}}$:
 
-1. **Increase of $\Phi$:** Increase in connectivity (more coherences $\gamma_{ij}^{(\text{comp})}$). Everyone is connected to everyone through platforms.
+1. **Increase of $I_{\text{comp}}$:** Increase in connectivity (more coherences $\gamma_{ij}^{(\text{comp})}$ between members). Everyone is connected to everyone through platforms.
 2. **Decrease of $R$:** Fragmentation of the self-model — the collective models **itself** increasingly poorly (echo chambers: each subgroup models only itself, $\varphi_{\text{subgr}} \neq \varphi_{\text{comp}}$)
-3. **Result:** $\Phi \uparrow$ with $R \downarrow$ — **high integration with low reflection**
+3. **Result:** $I_{\text{comp}} \uparrow$ with $R \downarrow$ — **high connectivity with low reflection**
 
-This corresponds to [emotionally charged states](/docs/consciousness/phenomenology/emotional-taxonomy#сложные-эмоции) at the collective level: mass panic (high $\Phi$, high $|dP/d\tau|$, low $R$).
+This corresponds to [emotionally charged states](/docs/consciousness/phenomenology/emotional-taxonomy#сложные-эмоции) at the collective level: mass panic (high $I_{\text{comp}}$, high $|dP/d\tau|$, low $R$). (Earlier editions wrote $\Phi$ for the connectivity in this claim; retracted as a measure of connectivity — see the correction in [the composite system](#составная-система).)
 :::
 
 This is the same dynamic that Le Bon described for a crowd in a square — but on the scale of billions of people and in real time. Social networks transform humanity into a **global crowd**: highly integrated, but poorly reflective.
 
-Analogy: a crowd at a stadium. Everyone is connected (high $\Phi$), emotions are synchronous — but no one is reflecting on what is actually happening (low $R$). Hence the 'crowd effect': the collective acts impulsively, contrary to the interests of each individual. Social networks are a stadium the size of a planet.
+Analogy: a crowd at a stadium. Everyone is connected (high $I_{\text{comp}}$), emotions are synchronous — but no one is reflecting on what is actually happening (low $R$). Hence the 'crowd effect': the collective acts impulsively, contrary to the interests of each individual. Social networks are a stadium the size of a planet.
 
 ## Collective Gap phase transition {#коллективный-переход}
 
@@ -477,10 +491,10 @@ graph TB
 2. **The collective unconscious** is not a metaphor: it is a formally defined set of coherences in $\Gamma_{\text{comp}}$, inaccessible to the reflection of any individual. The individual feels their influence, but cannot consciously access them directly.
 3. **Archetypes** are selected by viability pressure: patterns that increase the $P$ of the group are reproduced across generations. Their universality is a consequence of the universality of the environment $E_{\text{shared}}$.
 4. **Empathy** has a precise measure: $\mathrm{Empathy}(A,B) = 1 - \mathrm{Gap}_{AB}(E,E)$. It requires minimum L1 in both participants and Gap-entanglement.
-5. **A collective can possess an L higher than the individual:** the scientific method as collective $\varphi^{(2)}$, a flock as distributed $\Gamma_{\text{comp}}$.
+5. **A collective may possess an L higher than the individual** — a hypothesis [H] until an aggregation channel is fixed: the scientific method as collective $\varphi^{(2)}$, a flock as distributed $\Gamma_{\text{comp}}$. The connection between members is measured by their correlation $I_{\text{comp}}$, not by the integration $\Phi$ of the joint matrix, which uncoupled members already push above $3$.
 6. **Cultural coherences** are the 'genes' of culture, transmitted through two channels: logical ($\gamma_{SL}$) and aesthetic ($\gamma_{SE}$).
-7. **From crowd to humanity:** the formalism scales. Crowd = $\Phi \uparrow$, $R \downarrow$. Nation = medium $\Phi$, $R$. Humanity = open question.
-8. **Social media — a dangerous experiment:** $\Phi \uparrow$ with $R \downarrow$ creates a highly integrated but unreflective collective — a global 'crowd'.
+7. **From crowd to humanity:** the formalism scales. Crowd = $I_{\text{comp}} \uparrow$, $R \downarrow$. Nation = medium $I_{\text{comp}}$, $R$. Humanity = open question.
+8. **Social media — a dangerous experiment:** $I_{\text{comp}} \uparrow$ with $R \downarrow$ creates a highly connected but unreflective collective — a global 'crowd'.
 9. **A group is more robust than an individual:** the collective critical temperature is higher, formalising the intuition about social support and the danger of loneliness.
 
 :::tip Bridge to the next chapter

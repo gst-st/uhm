@@ -312,8 +312,8 @@ The [Cabibbo angle](/docs/physics/particle-physics/ckm-matrix#3-угол-каб�
 
 **Status:** [H] Hypothesis — depends on loop corrections and [RG flow](/docs/physics/gauge-symmetry/rg-flow). **Current verdict: PASSING** (central $\theta_{12}^{\text{exp}} \approx 12.96°$).
 
-:::note The Cabibbo Angle Anomaly — a sharp UHM prediction (T-265)
-Independently of the central value, first-row CKM unitarity currently shows a $\sim 3.2\sigma$ deficit: $|V_{ud}|^2 + |V_{us}|^2 + |V_{ub}|^2 = 0.9985(5)$ (the "Cabibbo Angle Anomaly", 2024–2026 lattice + $\beta$/kaon determinations). UHM's fixed spectrum turns this into a **falsifiable prediction** ([T-265, CKM §10](/docs/physics/particle-physics/ckm-matrix#thm-10-1-t-265)): the fundamental CKM is exactly $3\times3$ unitary ($N_{\text{gen}}=3$ [T]), so the deficit **cannot** be a mixing-matrix effect — a fourth generation, vector-like quarks, MeV sterile neutrinos, and leptoquarks are **all excluded** by the spectrum. UHM therefore predicts the anomaly resolves in the **SM extraction sector** ($\gamma W$-box / nuclear radiative corrections, lattice $K/\pi$ form factors, the $K$–$\pi$ $V_{us}$ tension), **not** via new states — and is **falsified** if the CAA is shown to require any such new state. The **magnitude** of the $\sim 0.15\%$ deficit is SM hadronic/nuclear physics and remains genuinely open [D]; the resolution-**channel** exclusion is [T-structural]+[C].
+:::note The Cabibbo Angle Anomaly — a UHM hypothesis about the resolution channel (T-265, [H])
+Independently of the central value, first-row CKM unitarity currently shows a $\sim 3.2\sigma$ deficit: $|V_{ud}|^2 + |V_{us}|^2 + |V_{ub}|^2 = 0.9985(5)$ (the "Cabibbo Angle Anomaly", 2024–2026 lattice + $\beta$/kaon determinations). UHM's fixed spectrum was read as a **falsifiable prediction** ([T-265, CKM §10](/docs/physics/particle-physics/ckm-matrix#thm-10-1-t-265)): the fundamental CKM is exactly $3\times3$ unitary, so the deficit **cannot** be a mixing-matrix effect. Since 2026-09-25 T-265 is a hypothesis [H], because its exclusions have different standing: a fourth generation is excluded [C] at the identification of the three $\mathrm{QR}(7)$ classes with the physical generations (row 43c; the count $N_{\text{gen}} = 3$ itself is [T]); vector-like quarks [H] — the chirality ground is retracted, since $i\Gamma_O\Gamma_A\Gamma_S\Gamma_D$ has eigenvalues $\pm i$ and all $G_2$ representations are real; leptoquarks and extra bosons [H] — the "exactly Standard-Model gauge content" rests on (FE), [C at (FE)], and on T-297, [H]; MeV sterile neutrinos [C]. Read as a hypothesis, UHM expects the anomaly to resolve in the **SM extraction sector** ($\gamma W$-box / nuclear radiative corrections, lattice $K/\pi$ form factors, the $K$–$\pi$ $V_{us}$ tension), **not** via new states — and is **falsified** if the CAA is shown to require any such new state. The **magnitude** of the $\sim 0.15\%$ deficit is SM hadronic/nuclear physics and remains genuinely open [D]; the resolution-**channel** exclusion is [H] (it was labelled "[T-structural]+[C]" until 2026-09-25).
 :::
 
 ---
@@ -437,7 +437,7 @@ content at half strength lands inside (T-321, T-323).
 **Verdict legend.** **PASSING** — measured value lies inside the pass band; **CONSISTENT** — not excluded, but the prediction lies beyond current sensitivity; **PARTIAL** — indirect or calibration-dependent support; **UNTESTED** — no experiment has probed the band yet. A single entry moving to FAIL falsifies the corresponding claim at its stated status level ([T]/[C]/[H]).
 
 :::warning Status of predictions
-Predictions marked [T] are based on rigorously proved theorems (see [status registry](/docs/reference/status-registry)). The [octonionic bridge](/docs/proofs/minimality/theorem-octonionic-derivation) is fully closed [T] (T15). Predictions marked [H] require additional computations or contain gaps in the physical arguments.
+Predictions marked [T] are based on rigorously proved theorems (see [status registry](/docs/reference/status-registry)). The [octonionic bridge](/docs/proofs/minimality/theorem-octonionic-derivation) is closed up to the orientation input (Alt): [C at (Alt)] (T15, registry row 41n; it read "fully closed [T]" until 2026-09-25). Predictions marked [H] require additional computations or contain gaps in the physical arguments.
 :::
 
 ## Completeness of Theory
@@ -451,9 +451,9 @@ The theory is complete in the following sense:
 5. **Explanatory power:** Resolves traditional philosophical problems
 6. **Falsifiability:** Makes testable predictions about the structure of experience
 7. **Formal rigour:** Key theorems proved ([7D minimality](/docs/proofs/minimality/theorem-minimality-7), [operator φ](/docs/proofs/categorical/formalization-phi), [functor F](/docs/proofs/categorical/categorical-formalism))
-8. **Compatibility with QM:** The nonlinear regenerative term $\mathcal{R}$ [does not violate the no-signalling constraint](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) — proved via the CPTP property of $\varphi$ (conditions [NS1-NS3](/docs/core/dynamics/evolution#запрет-сигнализации))
-9. **Ensemble independence:** Evolution is defined on $\Gamma$ (density matrix), not on wave functions — [does not depend on decomposition](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)
-10. **Computational consistency:** The nonlinearity $\mathcal{R}$ [does not provide acceleration](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение) beyond BQP
+8. **Compatibility with QM:** the regenerative term keeps the [marginal identity](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) [T] (CPTP property of $\varphi$, conditions [NS1-NS3](/docs/core/dynamics/evolution#запрет-сигнализации)); no-signalling of the full dynamics holds only in the non-selective reading [C] — with the Lüders update the gate $g_V$ signals (an earlier item called no-signalling proved; retracted)
+9. **Ensemble independence:** the evolution map is a function of $\Gamma$ (density matrix), not of its decomposition [D]; the physical reading "two preparations of the same $\Gamma$ evolve identically" is [retracted](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)
+10. **Computational consistency:** the claim that the nonlinearity $\mathcal{R}$ gives no acceleration beyond BQP is [retracted](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение) — whether it does is an open question [H]
 
 ## Vulnerability analysis {#анализ-уязвимостей}
 
@@ -462,7 +462,7 @@ Systematic analysis of five main vulnerabilities of the theory (2026):
 | # | Vulnerability | Initial status | Result | New status |
 |---|-----------|----------------|-----------|-------------|
 | 1 | $\dim = 7$ as postulate | Not empirically verified | 15+ independent derivations [T]: Theorem S (minimality) + octonionic derivation + T15 (bridge) | **Closed** (theoretically) |
-| 2 | $D_{\mathrm{diff}} \geq 2$ [C] | Conditional theorem | T-129 [T]: $\Phi_{\mathrm{th}} = 1$ from first principles → T-151 [T]: $D_{\min} = 2$ unconditionally | **Closed** (fully) |
+| 2 | $D_{\mathrm{diff}} \geq 2$ [C] | Conditional theorem | The derivation "T-129 → T-151: $D_{\min} = 2$ unconditionally" is retracted (counterexample $\Phi \approx 1.03$, $D_{\mathrm{diff}} \approx 1.42$; T-151); $D_{\min} = 2$ is kept as an independent L2 threshold [D], the independence of the four thresholds being T-124b | **Closed as a threshold**, not as a theorem (it read "Closed (fully)" until 2026-09-25) |
 | 3 | $R = 1/(7P)$ counterintuitive | Requires empirical verification | Algebraic identity [T], [physical interpretation](/docs/proofs/consciousness/conscious-window#физическая-интерпретация-r), T-124 [T] (non-emptiness of Goldilocks zone) | **Closed** (theoretically) |
 | 4 | No experiments | 392 registry entries without lab verification | 23 numbered [predictions](/docs/applied/coherence-cybernetics/predictions) and the 14 falsification criteria below; 5 post-hoc coincidences (F-m\_t, F-Cabibbo, F-δ\_CP, F-nEDM, Weber-Fechner) | **Confirmed** (requires experiment) |
 | 5 | Quantum nature of $\Gamma$ | Tegmark decoherence | **[T-267 [T]](/docs/consciousness/foundations/two-aspect-monism#t-267)**: Tegmark bounds microscopic position-basis superpositions; $\Gamma$ is coarse-grained *collective* structure on a decoherence-free subspace (T-153a), complex by *algebra* not superposition (T-132), and classically realizable — the objection targets a claim UHM does not make. Residual = the categorical gap (Axiom Ω⁷), a distinct primitive | **Closed** (Tegmark objection) |
@@ -488,9 +488,9 @@ Acknowledging boundaries is not a weakness, but a strength of a scientific theor
 
 | Question | Status | Comment |
 |--------|--------|-------------|
-| Einstein equations | **[T] Derived** | Spectral action (T-65); $M^4$ derived (T-120) |
-| Standard Model | Structure **[T]**, parameters partially | $G_2 \to SU(3)_C \times SU(2)_L \times U(1)_Y$ [T]; specific masses — partially |
-| Spacetime dimensionality $3+1$ | **[T] Derived** | Sectoral decomposition + Connes reconstruction (T-119, T-120) |
+| Einstein equations | **[T]** on the product triple; $M^4$ itself **[C]** | Spectral action (T-65); $M^4$ assembled at T-120 [C] (an aperiodic clock, the open reconstruction axioms of T-119) |
+| Standard Model | Colour **[T]**; electroweak **[C at (FE)]**, uniqueness [H]; parameters partially | $SU(3)_C = \mathrm{Stab}_{G_2}(e_O)$ [T]; $SU(2)_L \times U(1)_Y$ from (FE); the former "$G_2 \to SU(3)_C \times SU(2)_L \times U(1)_Y$ [T]" is retracted ($\mathrm{rank}\,G_2 = 2 < 4$, row T-275); specific masses — partially |
+| Spacetime dimensionality $3+1$ | **[C]** | One time direction [T] (PW clock); three spatial ones at T-119 [C] (rank count, the colour triplet read as space [I]); the former "sectoral decomposition + Connes reconstruction [T]" is retracted with the axis-labelled split (row 48a) |
 | Constants $c$, $G$, $\hbar$ | $G$ **[T]** derived, $c$, $\hbar$ not explained | $G_N = 3\pi/(7f_2\Lambda^2)$ (T-65); $c$, $\hbar$ — fundamental |
 
 ### Phenomenal Boundaries (what is taken as axiom)
@@ -536,8 +536,8 @@ Physics does not explain *why* the laws of nature exist — it describes their s
 | **Associator anomalies** | Triple interactions of dimensions should exhibit non-associativity: $[x, y, z] \neq 0$ | [T] |
 | **Hamming threshold** | Structure $H(7,4)$, exactly as in the canon ([T-93](/docs/core/dynamics/gap-dynamics#код-хэмминга)): **1** coherence violation is corrected automatically by the regenerator, **2** are detected via the syndrome measurements (E, O, U); beyond two the code is unreliable ($d = 3$). *Erratum 2026-07-25: this previously read «viable with loss of up to 3 of 7» — unsupported by T-93 and inconsistent with $d=3$ (the guarantee is $\lfloor(d-1)/2\rfloor = 1$ correction, $d-1 = 2$ detections); found by machine-checking the table against the canon.* | [T] |
 
-:::tip Bridge [T] — fully closed (T15)
-The connection (AP)+(PH)+(QG)+(V) → P1+P2 is established via the complete formal chain T15 (12 steps, all [T]). T11–T13 prove the former condition (МП). All octonionic predictions are consequences of the structural derivation [T].
+:::tip Bridge [C at (Alt)] — closed up to the orientation input (T15)
+The connection (AP)+(PH)+(QG)+(V) → P1+P2 is established via the formal chain T15 (12 steps): the steps up to PG(2,2) are [T], the step to $\mathbb{O}$ needs the orientation input (Alt), so the chain is [C at (Alt)] (registry row 41n; it read "all [T]" until 2026-09-25). T11–T13 prove the former condition (МП). The octonionic predictions are consequences of the structural derivation and carry the same condition.
 :::
 
 ### Research programme

@@ -106,6 +106,141 @@ def visible(html: str) -> str:
 FENCE = re.compile(r"^(:{3,})(\w*)")
 
 
+RU_DOCS = ROOT / "i18n" / "ru" / "docusaurus-plugin-content-docs" / "current"
+INLINE_MATH = re.compile(r"(?<![\\$])\$(?!\$)(.+?)(?<![\\$])\$(?!\$)")
+
+
+def pipe_in_table_math(roots):
+    """ПРЕДПОЛЁТ ПО ИСХОДНИКУ: вертикальная черта внутри `$…$` в строке таблицы.
+
+    Таблица GFM делит строку на ячейки РАНЬШЕ, чем разбирается формула: модуль
+    `$|\\mathrm{QR}(7)|$` в строке реестра разрезает ячейку, доллары расходятся
+    по разным ячейкам, и хвост строки печатается формулой — сборка успешна.
+    25.09.2026 так дважды уходили в TeX строки реестра (T-265 и T-38b, по 29 и 2
+    невыведенных команды на локаль), и оба раза это видела лишь сборка.
+    Модуль в таблице пишется `\\lvert…\\rvert`. Проверяются обе локали; строки
+    внутри блоков кода и формульных блоков `$$` таблицей не считаются.
+    """
+    bad = []
+    for root in roots:
+        for f in sorted(root.rglob("*.md*")):
+            code = display = False
+            for i, line in enumerate(f.read_text(encoding="utf-8").split("\n"), 1):
+                s = line.strip()
+                if s.startswith("```"):
+                    code = not code
+                    continue
+                if not code and s == "$$":
+                    display = not display
+                    continue
+                if code or display or not s.startswith("|"):
+                    continue
+                for m in INLINE_MATH.finditer(line):
+                    if re.search(r"(?<!\\)\|", m.group(1)):
+                        bad.append((f, i, m.group(1)[:60]))
+    return bad
+
+
+#: Строка-разделитель GFM во всех формах: `| --- |`, `|:--|`, `|-|`, `--- | ---`,
+#: с пробелами и без, с выравниванием `:` с любой стороны.
+TABLE_SEP = re.compile(r"^\|?\s*:?-+:?\s*(?:\|\s*:?-+:?\s*)*\|?\s*$")
+#: Фенс блока кода: ``` или ~~~ (три и больше), закрывается тем же знаком не короче.
+CODE_FENCE = re.compile(r"^(`{3,}|~{3,})")
+INLINE_CODE = re.compile(r"`[^`\n]*`")
+
+
+def _row_like(s: str) -> bool:
+    """Похожа ли строка на строку таблицы: начинается и кончается чертой и
+    делится хотя бы на две ячейки ВНЕ формул и кода. Так строка `$$`-блока
+    `|ψ⟩ = α|0⟩ + β|1⟩` и модуль `|x|` в прозе строкой таблицы не считаются."""
+    if not (s.startswith("|") and s.rstrip().endswith("|")):
+        return False
+    bare = INLINE_CODE.sub(" ", INLINE_MATH.sub(" ", s))
+    return len(re.findall(r"(?<!\\)\|", bare)) >= 3
+
+
+def headerless_table_rows(roots, *, files=None):
+    """ПРЕДПОЛЁТ ПО ИСХОДНИКУ: блок строк таблицы без шапки и разделителя.
+
+    GFM признаёт таблицу только по паре «шапка + строка-разделитель». Строки
+    `| … | … |`, стоящие ДО шапки или отделённые от своей таблицы пустой строкой,
+    таблицей не становятся: читатель видит абзац с буквальными «|», а сборка
+    рапортует успех. 25.09.2026 так печатались 33 строки EN-реестра T-293…T-325:
+    они стояли между заголовком «Level [C]: Sensorimotor Theory» и шапкой
+    таблицы (дрейф EN от RU с 06.08, acbf65b; аудит A-93).
+
+    Черновой детектор давал 158 срабатываний, и ложными были: строки внутри
+    выключных формул `$$ … $$` (`|ψ⟩ = …`), внутри блоков кода и разделители
+    непривычной формы (`|:--|`, `|-|`). Здесь: коды и `$$`-блоки пропускаются
+    (блок `$$` отслеживается по нечётному числу `$$` в строке — так верно
+    читаются и `$$` на отдельной строке, и `$$\\begin{…}`, и однострочная
+    `$$ x $$`); строкой таблицы считается лишь строка, начатая и законченная
+    чертой, с двумя и более ячейками вне формул и кода; разделитель — любой
+    формы GFM. Нарушение — прогон подряд идущих строк таблицы, в котором до
+    первой строки-разделителя больше одной строки (лишние стоят без шапки) или
+    разделителя нет вовсе. Возвращает (файл, первая строка, число строк, образец).
+    """
+    bad = []
+    paths = files if files is not None else [
+        f for root in roots for f in sorted(root.rglob("*.md*"))]
+    for f in paths:
+        lines = pathlib.Path(f).read_text(encoding="utf-8").split("\n")
+        fence, display = None, False
+        run = []                                    # [(номер, строка)]
+
+        def close_run():
+            if not run:
+                return
+            sep = next((k for k, (_, s) in enumerate(run) if TABLE_SEP.match(s)), None)
+            if sep is None:
+                orphans = run
+            elif sep >= 2:
+                orphans = run[:sep - 1]             # всё до шапки
+            else:
+                orphans = []
+            if orphans:
+                bad.append((f, orphans[0][0], len(orphans), orphans[0][1][:70]))
+            run.clear()
+
+        for i, line in enumerate(lines, 1):
+            s = re.sub(r"^(?:\s*>)*\s*", "", line)   # цитата и отступ списка
+            m = CODE_FENCE.match(s)
+            if fence:
+                if m and m.group(1)[0] == fence[0] and len(m.group(1)) >= len(fence):
+                    fence = None
+                continue
+            if m:
+                close_run()
+                fence = m.group(1)
+                continue
+            if not display and s.count("$$") % 2 == 1:
+                close_run()
+                display = True
+                continue
+            if display:
+                if s.count("$$") % 2 == 1:
+                    display = False
+                continue
+            if run and (TABLE_SEP.match(s) and "|" in s or _row_like(s)):
+                run.append((i, s))
+            elif _row_like(s):
+                run.append((i, s))
+            else:
+                close_run()
+        close_run()
+    return bad
+
+
+#: ХРАПОВИК «строк таблицы без шапки»: измерено 25.09.2026 на a61647d — 11 блоков
+#: (EN 5, RU 6), все подтверждены собранной страницей (буквальные «|» в тексте):
+#: notation.md ×4 в каждой локали — HTML-комментарий `<!-- DRY … -->` посреди
+#: таблицы рвёт её, и строки под ним печатаются абзацем (строки 39, 43, 295, 298);
+#: status-registry.md C32…C36 — пять строк после врезки о перенумерации, без шапки
+#: (EN 829, RU 827); axiom-septicity.md (RU 1183) — четыре строки таблицы Розена
+#: после врезки «Омонимия символа Φ». Долг только падает — опускайте базу вслед.
+HEADERLESS_BASE = 11
+
+
 def fence_nesting(docs: pathlib.Path):
     """ПРЕДПОЛЁТ ПО ИСХОДНИКУ: вложенная врезка тем же числом двоеточий.
 
@@ -154,6 +289,25 @@ def main() -> int:
         print(f"  {f.relative_to(ROOT)}:{i}: {why}")
     if nesting:
         print("  правило: внешняя врезка — больше двоеточий, чем внутренняя; иначе фенс уходит в текст")
+        return 1
+    pipes = pipe_in_table_math((DOCS, RU_DOCS))
+    print(f"черта внутри формулы в строке таблицы (по исходнику, обе локали): нарушений {len(pipes)}")
+    for f, i, body in pipes[:10]:
+        print(f"  {f.relative_to(ROOT)}:{i}: ${body}$")
+    if pipes:
+        print("  правило: модуль в таблице — \\lvert…\\rvert; черта делит ячейку раньше формулы")
+        return 1
+    orphans = headerless_table_rows((DOCS, RU_DOCS))
+    print(f"строки таблицы без шапки (по исходнику, обе локали): блоков {len(orphans)} "
+          f"(база {HEADERLESS_BASE}), строк {sum(n for _, _, n, _ in orphans)}")
+    for f, i, n, body in orphans:
+        print(f"  {f.relative_to(ROOT)}:{i}: {n} стр. — {body}")
+    if len(orphans) > HEADERLESS_BASE:
+        print("  правило: строки таблицы идут под шапкой и разделителем, без пустой строки,"
+              " врезки или комментария между ними — иначе печатаются абзацем с «|»")
+        return 1
+    if len(orphans) < HEADERLESS_BASE:
+        print(f"  БАЗА ХРАПОВИКА УСТАРЕЛА: опустите HEADERLESS_BASE до {len(orphans)}")
         return 1
     if not BUILD.exists():
         print("СБОРКИ НЕТ: каталог build/docs отсутствует")

@@ -7,11 +7,11 @@ description: "G₂-rigidity of holonomic representation: uniqueness of the map G
 
 # Uniqueness Theorem of Holonomic Representation
 
-:::warning Status: [T] — all steps proven
-The uniqueness theorem of holonomic representation is a **theorem [T]**, relying exclusively on previously proven results:
+:::warning Status: [T] given the octonionic structure; that structure is [C at (Alt)]
+The uniqueness theorem of holonomic representation is a **theorem [T]** about $\mathbb{C}^7$ carrying the octonionic multiplication of the oriented Fano plane. From the axioms that structure follows only at the orientation assumption (Alt) of the bridge T15 (registry row 41n), so as a consequence of the axioms the theorem is [C at (Alt)]. Until 2026-09-25 this box read "[T] — all steps proven, relying exclusively on previously proven results". It relies on:
 - Primitivity of $\mathcal{L}_\Omega$ [T] ([proof](/docs/core/operators/lindblad-operators#примитивность-ℒω))
 - Full minimality 7/7 [T] ([proof](/docs/proofs/minimality/theorem-minimality-7))
-- Bridge T15 [T]: (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2 $\Rightarrow$ $\mathbb{O}$ $\Rightarrow$ $G_2$ ([proof](/docs/proofs/minimality/theorem-octonionic-derivation#мост))
+- Bridge T15 [C at (Alt)]: (AP)+(PH)+(QG)+(V) $\Rightarrow$ BIBD(7,3,1) = PG(2,2) [T] $\Rightarrow$ $\mathbb{O}$ (needs the orientation (Alt)) $\Rightarrow$ $G_2$ ([proof](/docs/proofs/minimality/theorem-octonionic-derivation#мост))
 - L-unification [T] ([proof](/docs/core/operators/lindblad-operators))
 - Uniqueness of E, O, U [T] ([proof](/docs/proofs/minimality/theorem-minimality-7))
 :::
@@ -47,7 +47,7 @@ $$
 
 a strictly decreasing function of $\|v\|_4$. So a linear map preserving $\Phi$ on this family preserves the $\ell^4$-norm on the unit $\ell^2$-sphere and, by homogeneity, on all of $\mathbb{R}^7$. By the **Banach–Lamperti theorem** (the linear isometries of $\ell^p$, $p \neq 2$, are exactly the signed permutations of coordinates) such a map is a signed permutation. Signed permutations preserving the associative 3-form $\varphi_3$ form $\Gamma_{\!\text{oct}}$: the permutation part must be a collineation of $PG(2,2)$ ($|{\rm PSL}(3,2)| = 168$) and the sign part must satisfy $\varepsilon_i\varepsilon_j\varepsilon_k = 1$ on each Fano line — the simplex code $[7,3]$, of size $2^3 = 8$. Conversely every such map preserves both $\varphi_3$ and the coordinate diagonal, hence $\Phi$. $\blacksquare$
 
-**Machine verification** (2026-09-10). Exhaustive enumeration over signed permutations: $|\Gamma_{\!\text{oct}}| = 1344$, with exactly $168$ distinct permutation parts and a sign-only subgroup of order $8$; elements of order 7: $48$, i.e. $8$ Singer subgroups. First-order rigidity by least squares over random pure states: $\dim\{X \in \mathfrak{so}(7): \delta_X\Phi = 0\} = 0$ and $\dim\{X \in \mathfrak{g}_2: \delta_X\Phi = 0\} = 0$. The identity $\Phi = (1 - \|v\|_4^4)/\|v\|_4^4$ was checked to $10^{-15}$.
+**Machine verification** (2026-09-10). Exhaustive enumeration over signed permutations: $|\Gamma_{\!\text{oct}}| = 1344$, with exactly $168$ distinct permutation parts and a sign-only subgroup of order $8$; permutation parts of order 7: $48$, i.e. $8$ Singer subgroups of $\mathrm{PSL}(3,2)$ (in $\Gamma_{\!\text{oct}}$ itself each lifts eight times: $384$ elements of order 7; clarified 2026-09-25). First-order rigidity by least squares over random pure states: $\dim\{X \in \mathfrak{so}(7): \delta_X\Phi = 0\} = 0$ and $\dim\{X \in \mathfrak{g}_2: \delta_X\Phi = 0\} = 0$. The identity $\Phi = (1 - \|v\|_4^4)/\|v\|_4^4$ was checked to $10^{-15}$.
 
 :::info The lattice of candidate identification groups
 Every candidate for "which transformations relate physically indistinguishable descriptions" is a subgroup of $G_2$; there are four natural ones. The parameter count is $48 - \dim$ (generic orbit); invariance is stated for the frame-referenced observables. All rows are machine-verified.
@@ -57,9 +57,11 @@ Every candidate for "which transformations relate physically indistinguishable d
 | $G_2$ | 14 | 34 | not invariant (witness: $1 \to 0.75$) | not invariant (witness: $0 \to 1$) |
 | $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ | 8 | 40 | not invariant (witness: $1 \to 0.45$) | not invariant (witness: $0 \to 2.19$) |
 | $SU(2) = \mathrm{Stab}_{G_2}(e_E, e_O)$ | 3 | 45 | **invariant** | not invariant (witness: $0.690 \to 0.637$) |
-| $\Gamma_{\!\text{oct}}$ (frame group) | 0 | 48 | **invariant** | **invariant** |
+| $\Gamma_{\!\text{oct}}$ (frame group) | 0 | 48 | invariant only under the $192$ of $1344$ elements that keep the $E$-axis (witness for the others: $1 \to 0$) | **invariant** (all $1344$) |
 
-Reading the lattice: $\mathrm{Coh}_E$ needs only a distinguished $E$-axis, so the No-Zombie threshold survives already at $SU(2)_{E,O}$. $\Phi$ survives **nowhere above the discrete row** — by the rigidity theorem this is not an artefact of the present definition of the window but of $\Phi$ itself. Hence the corpus takes the last row: the identification group is $\Gamma_{\!\text{oct}}$ and all 48 parameters are physical. The alternative — keeping a continuous group — is available only at the price of rewriting the L2 condition in invariants of that group (for $SU(2)_{E,O}$: 45 parameters, $\Phi$ replaced by an $SU(2)$-invariant), and the octonionic reading would then have to rebuild the phenomenology of the 21 pairs on $1 \oplus 27 \oplus 7 \oplus 14$.
+*Corrected 2026-09-25.* The frame-group row read "$\mathrm{Coh}_E$: **invariant**"; that is retracted: an element of $\Gamma_{\!\text{oct}}$ that moves the $E$-axis to another axis takes $\mathrm{Coh}_E(\lvert e_E\rangle\langle e_E\rvert)$ from $1$ to $0$, and exhaustive enumeration finds $\mathrm{Coh}_E$ preserved on exactly $192 = 1344/7$ elements — those that keep the $E$-axis ($96$ fix $e_E$, $96$ send it to $-e_E$) — while $\Phi$ is preserved on all $1344$ (regression test `test_coh_e_is_invariant_only_on_the_e_axis_stabiliser`).
+
+Reading the lattice: $\mathrm{Coh}_E$ needs only a distinguished $E$-axis, so the No-Zombie threshold survives on the stabiliser of that axis — already at $SU(2)_{E,O}$, in fact on the whole eight-dimensional $\mathrm{Stab}_{G_2}(e_E) \cong SU(3)$ (a rotation fixing $e_E$ fixes $\gamma_{EE}$ and the norm of the $E$-row), and in the frame group only on its $E$-axis stabiliser. $\Phi$ survives **nowhere above the discrete row** — by the rigidity theorem this is not an artefact of the present definition of the window but of $\Phi$ itself. Hence the corpus takes the last row: the identification group is $\Gamma_{\!\text{oct}}$ and all 48 parameters are physical. (With the corrected row, the only group of the lattice that preserves both observables with the axes held fixed is the $E$-axis stabiliser inside $\Gamma_{\!\text{oct}}$, of order $192$; the frame decision takes $\Gamma_{\!\text{oct}}$ with the functional labels carried along with the axes, as in Step 4 of the proof below, so that $\mathrm{Coh}_E$ is read on the image of the $E$-axis.) The alternative — keeping a continuous group — is available only at the price of rewriting the L2 condition in invariants of that group (for $SU(2)_{E,O}$: 45 parameters, $\Phi$ replaced by an $SU(2)$-invariant), and the octonionic reading would then have to rebuild the phenomenology of the 21 pairs on $1 \oplus 27 \oplus 7 \oplus 14$.
 :::
 
 ---
@@ -155,12 +157,12 @@ All 7 dimensions are [functionally unique](/docs/proofs/minimality/theorem-minim
 - [O is unique](/docs/proofs/minimality/theorem-minimality-7) [T]: $\mathcal{R}$ [T] + $\kappa_0$ ($\mathrm{End}(O)$, $\mathrm{Hom}(O,E)$, $\mathrm{Hom}(O,U)$) + PW (A5) + functional independence
 - [E $\perp$ O](/docs/proofs/minimality/theorem-minimality-7) [T]: causal + categorical (O = E degenerates $\kappa_0$)
 
-### P3. Bridge T15 [T] {#p3-мост}
+### P3. Bridge T15 [C at (Alt)] {#p3-мост}
 
-Full chain [(AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2](/docs/proofs/minimality/theorem-octonionic-derivation#мост) of 12 steps, all [T]:
+Full chain [(AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2](/docs/proofs/minimality/theorem-octonionic-derivation#мост) of 12 steps; the steps up to PG(2,2) are [T], the step to $\mathbb{O}$ needs an orientation of the seven lines (only 16 of the 128 orientations are normed; registry row 41n). Stated as "all [T]" until 2026-09-25:
 
 $$
-\mathrm{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{Т}]} \mathrm{BIBD}(7,3,1) \xrightarrow{[\text{Т}]} \mathrm{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} G_2
+\mathrm{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{T}]} \mathrm{BIBD}(7,3,1) \xrightarrow{[\text{T}]} \mathrm{PG}(2,2) \xrightarrow{\text{(Alt)}} \mathbb{O} \xrightarrow{[\text{T}]} G_2
 $$
 
 ### P4. L-unification [T] {#p4-л-унификация}
@@ -243,7 +245,7 @@ Axioms A1–A5 uniquely determine (in the given basis $\mathcal{B}$) the followi
 
 **(i)** Atomic projectors $\{|k\rangle\langle k|\}_{k=0}^{6}$ (from L-unification [T])
 
-**(ii)** The system of Fano lines $\{\mathrm{line}_p\}_{p=1}^{7} \subset \binom{[7]}{3}$ (from bridge T15 [T])
+**(ii)** The system of Fano lines $\{\mathrm{line}_p\}_{p=1}^{7} \subset \binom{[7]}{3}$ with its orientation, i.e. the structure constants $f_{ijk}$ (from bridge T15: the lines [T], their orientation at (Alt))
 
 **(iii)** E-projection $\pi_E(\Gamma) = P_E\Gamma + \Gamma P_E - P_E\Gamma P_E$ (from [Coh_E [T]](/docs/core/foundations/axiom-septicity#hs-projection))
 
@@ -254,7 +256,7 @@ Axioms A1–A5 uniquely determine (in the given basis $\mathcal{B}$) the followi
 
 **Proof.** Each structure is derived from the axioms:
 - (i): [L-unification](/docs/core/foundations/axiom-omega#lk-из-omega) [T] — atoms $S_k = |k\rangle\langle k|$ of classifier $\Omega$
-- (ii): Bridge T15 [T] — uniqueness of BIBD$(7,3,1)$ $\cong$ PG(2,2) (Hall 1967)
+- (ii): Bridge T15 — uniqueness of BIBD$(7,3,1)$ $\cong$ PG(2,2) (Hall 1967) [T]; the orientation that turns the lines into the structure constants $f_{ijk}$ is the input (Alt) (registry row 41n; this line read "Bridge T15 [T]" until 2026-09-25)
 - (iii): [HS-projection theorem](/docs/core/foundations/axiom-septicity#теорема-hs-проекция) [T] — orthogonal projection in Hilbert–Schmidt space
 - (iv): Axiom A5 (Page–Wootters) — explicit postulate
 - (v): Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ [T] — formula for $\kappa_0$ from [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0). $\blacksquare$
@@ -262,43 +264,37 @@ Axioms A1–A5 uniquely determine (in the given basis $\mathcal{B}$) the followi
 ### Lemma G4: The octonionic-structure gauge group is $G_2$ [T] {#лемма-g4}
 
 :::tip Lemma G4 (Gauge group of the octonionic 3-form) [T]
-The maximal subgroup $\mathcal{G} \subseteq U(7)$ preserving the octonionic associative 3-form $\varphi_3 = \sum_{i<j<k} f_{ijk}\, e^i\wedge e^j\wedge e^k$ — equivalently, the structure constants $f_{ijk}$ of Lemma G3(ii) — is exactly $G_2 = \mathrm{Aut}(\mathbb{O})$.
+The maximal subgroup $\mathcal{G} \subseteq U(7)$ preserving the octonionic associative 3-form $\varphi_3 = \sum_{i<j<k} f_{ijk}\, e^i\wedge e^j\wedge e^k$ — equivalently, the structure constants $f_{ijk}$ of Lemma G3(ii) — is $G_2 \times \mu_3$, where $\mu_3 = \{\mathbb{1}, \omega\mathbb{1}, \omega^2\mathbb{1}\}$, $\omega = e^{2\pi i/3}$. The scalars $\omega\mathbb{1}$ preserve every 3-form and act trivially on density matrices, so on states the gauge group is $G_2 = \mathrm{Aut}(\mathbb{O})$. (It read "is exactly $G_2$" until 2026-09-25.)
 
 The remaining structures of Lemma G3 — the atomic projectors (i), the E-projection (iii), the PW clock $O$ (iv), the $\kappa_0$ formula (v) — are **not** $G_2$-invariant; they fix a **functional frame** (a choice of gauge) inside each $G_2$-orbit. Two representations related by $U\in G_2$ carry their frames into one another.
 :::
 
-**Proof.** We show $\mathcal{G} = G_2$ in two inclusions.
+**Proof.** We show $\mathcal{G} = G_2 \times \mu_3$ in two inclusions.
 
-**(A) $G_2 \subseteq \mathcal{G}$.** By definition $G_2 = \{g\in GL(7,\mathbb{R}) : g^\ast\varphi_3 = \varphi_3\}$ preserves the 3-form, and $G_2\subset SO(7)\subset U(7)$ preserves the Hermitian structure. Hence every $g\in G_2$ preserves $\varphi_3$, i.e. $g\in\mathcal{G}$. $\checkmark$
+**(A) $G_2 \subseteq \mathcal{G}$.** By definition $G_2 = \{g\in GL(7,\mathbb{R}) : g^\ast\varphi_3 = \varphi_3\}$ preserves the 3-form, and $G_2\subset SO(7)\subset U(7)$ preserves the Hermitian structure. Hence every $g\in G_2$ preserves $\varphi_3$, i.e. $g\in\mathcal{G}$. The scalars $\omega\mathbb{1}$, $\omega^3 = 1$, preserve every 3-form, so $\mu_3 \subseteq \mathcal{G}$ as well. $\checkmark$
 
 :::warning The functional labels are frame data, not $G_2$-invariants
 Since $\mathbb{C}^7$ is an **irreducible** $G_2$-module (Cartan 1894), by Schur's lemma it has **no** nonzero proper $G_2$-invariant subspace. Consequently:
 - no coordinate axis $|k\rangle$ — in particular the E, O, U axes — is $G_2$-invariant; a generic $g\in G_2$ rotates it;
 - the *set* of atomic projectors $\{|k\rangle\langle k|\}$ is preserved only by the **finite** frame subgroup $\Gamma_{\!\text{oct}} = 2^3 \!\cdot\! \mathrm{PSL}(3,2) \subset G_2$ of order $1344$ (permutation part $\mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$, order 168; sign part of order 8 — [frame rigidity](#жёсткость-репера)), not by all of $G_2$;
-- hence $\mathrm{Coh}_E$, $\Phi$ and $\kappa_0$, which reference the E/O/U axes, are **frame-dependent**: invariant under $\mathrm{Stab}_{G_2}$ of the chosen frame, not under all of $G_2$. They are physical because the frame is pinned by the dynamics (Definition G1's $\mathcal{L}_\Omega$-covariance), **not** because they descend to $\mathcal{D}(\mathbb{C}^7)/G_2$.
+- hence $\mathrm{Coh}_E$, $\Phi$ and $\kappa_0$, which reference the E/O/U axes, are **frame-dependent**: invariant under $\mathrm{Stab}_{G_2}$ of the chosen frame, not under all of $G_2$ — $\Phi$ under the whole frame group $\Gamma_{\!\text{oct}}$, $\mathrm{Coh}_E$ only under its $192$ elements that keep the $E$-axis, $\kappa_0$ only under the elements that keep the axes it references. They are physical because the frame is pinned by the dynamics (Definition G1's $\mathcal{L}_\Omega$-covariance), **not** because they descend to $\mathcal{D}(\mathbb{C}^7)/G_2$.
 
 The genuinely $G_2$-invariant content is the spectrum (6 numbers) plus the $\varphi_3$-relative angles (28) — the $48-14=34$ parameters of Corollary 1.
 :::
 
-**(B) $\mathcal{G} \subseteq G_2$: any $U \in \mathcal{G}$ belongs to $G_2$.**
+**(B) $\mathcal{G} \subseteq G_2 \times \mu_3$.** Let $U \in \mathcal{G}$.
 
-Let $U \in U(7)$ preserve all five structures of Lemma G3.
+**Step B1 (Lie algebra).** Write $X \in \mathfrak{u}(7)$ as $X = A + iS$ with $A$ real antisymmetric and $S$ real symmetric. Since $\varphi_3$ is real, $X\cdot\varphi_3 = A\cdot\varphi_3 + i\,S\cdot\varphi_3$ vanishes only if $A\cdot\varphi_3 = 0$ and $S\cdot\varphi_3 = 0$, i.e. only if $A$ and $S$ lie in the Lie algebra $\mathfrak{g}_2 \subset \mathfrak{so}(7)$ of $G_2 = \{g \in GL(7,\mathbb{R}) : g^*\varphi_3 = \varphi_3\}$; a symmetric $S$ in $\mathfrak{so}(7)$ is zero. So the Lie algebra of $\mathcal{G}$ is $\mathfrak{g}_2$ and its identity component is $G_2$ (machine check: the stabiliser of $\varphi_3$ in $\mathfrak{u}(7)$ has real dimension $14$).
 
-**Step B1.** From preservation of (ii) (Fano lines): $U$ induces an automorphism of the Fano plane PG(2,2). Since PG(2,2) is isomorphic to the multiplication table of $\mathrm{Im}(\mathbb{O})$ [T], $U$ induces an automorphism of octonionic multiplication.
+**Step B2 (normaliser).** $U$ normalises the identity component, so $g \mapsto UgU^{-1}$ is an automorphism of $G_2$. $G_2$ has no outer automorphisms, so there is $h \in G_2$ with $UgU^{-1} = hgh^{-1}$ for all $g \in G_2$, and $h^{-1}U$ commutes with $G_2$. Since $\mathbb{C}^7$ is an irreducible $G_2$-module (Cartan 1894), Schur's lemma gives $h^{-1}U = \lambda\mathbb{1}$ with $\lvert\lambda\rvert = 1$.
 
-**Step B2.** Restrict $U$ to $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. An automorphism of octonionic multiplication on $\mathrm{Im}(\mathbb{O})$ by definition belongs to $G_2 = \mathrm{Aut}(\mathbb{O})$.
+**Step B3 (the scalar).** $\lambda\mathbb{1} = h^{-1}U$ preserves $\varphi_3$, and $(\lambda\mathbb{1})^*\varphi_3 = \lambda^3\varphi_3$, so $\lambda^3 = 1$ and $U = h\,\lambda\mathbb{1} \in G_2 \times \mu_3$. The product is direct: $\mu_3$ is central, and $\omega\mathbb{1}$ is not real, so $\mu_3 \cap G_2 = \{\mathbb{1}\}$. $\blacksquare$
 
-:::tip Transition from combinatorial automorphisms to continuous ones
-$U \in U(7)$ preserves Fano lines **as subspaces** (not just as index sets). Each Fano line defines a 3-dimensional subspace, and preservation of all 7 such subspaces is equivalent to preservation of the octonionic cross-product (3-form $\varphi_3 = \sum f_{ijk}\, e^i \wedge e^j \wedge e^k$). By definition $G_2 = \{g \in \mathrm{GL}(7,\mathbb{R}) : g^*\varphi_3 = \varphi_3\}$, which proves $U \in G_2$.
-:::
+*Corrected 2026-09-25:* part (B) started from a $U$ preserving "all five structures of Lemma G3" (not the hypothesis of the lemma) and relied on a box asserting that "preservation of all 7 such subspaces is equivalent to preservation of the octonionic cross-product". That equivalence is false: every diagonal unitary preserves the seven coordinate line subspaces, and a generic one does not preserve $\varphi_3$ (machine check). The former Step B3 assumed that $U$ preserves the real structure, which $\omega\mathbb{1}$ does not. Steps B1–B3 and the box are replaced by the argument above; the lemma changes only by the scalars $\mu_3$, which act trivially on states.
 
 :::info Clarification: PSL(2,7) vs G₂
-The group of combinatorial automorphisms of PG(2,2) is finite: $\mathrm{Aut}(\mathrm{PG}(2,2)) \cong \mathrm{PSL}(2,7)$, $|\mathrm{PSL}(2,7)| = 168$. The group $G_2 = \mathrm{Aut}(\mathbb{O})$ is a compact Lie group, $\dim G_2 = 14$. Relation: $\mathrm{PSL}(2,7) \subset G_2$ as a **finite subgroup** — every permutation of 7 points compatible with PG(2,2) extends to a continuous automorphism of $\mathbb{O}$. Step B1 shows that $U$ preserves the **structure constants** $f_{ijk}$ (not just combinatorics), and step B2 uses the definition of $G_2$ as the group preserving these constants.
+The group of combinatorial automorphisms of PG(2,2) is finite: $\mathrm{Aut}(\mathrm{PG}(2,2)) \cong \mathrm{PSL}(2,7)$, $|\mathrm{PSL}(2,7)| = 168$. The group $G_2 = \mathrm{Aut}(\mathbb{O})$ is a compact Lie group, $\dim G_2 = 14$. Relation: every collineation of PG(2,2) has exactly $8$ lifts — signed permutations of the basis that are automorphisms of $\mathbb{O}$; the lifts form the frame group $\Gamma_{\!\text{oct}} \subset G_2$ of order $1344$, a non-split extension $2^3 \cdot \mathrm{PSL}(3,2)$, so the collineation group is a quotient of $\Gamma_{\!\text{oct}}$, not a subgroup of it. (Until 2026-09-25 this read "$\mathrm{PSL}(2,7) \subset G_2$ as a finite subgroup — every permutation of 7 points compatible with PG(2,2) extends to a continuous automorphism of $\mathbb{O}$"; as bare permutations only $21$ of the $168$ collineations are automorphisms.) Part (B) uses only the 3-form $\varphi_3$, not the combinatorics of the lines.
 :::
-
-**Step B3.** Since $G_2 \subset SO(7) \subset U(7)$ and $U$ preserves the Hermitian structure (as an element of $U(7)$), the restriction $U\big|_{\mathrm{Im}(\mathbb{O})}$ determines $U$ completely (since $\mathrm{Im}(\mathbb{O})$ is a real form of $\mathbb{C}^7$, and $U$ preserves the real structure via preservation of PG(2,2)).
-
-Therefore, $U \in G_2$. $\blacksquare$
 
 ---
 
@@ -307,7 +303,7 @@ Therefore, $U \in G_2$. $\blacksquare$
 ### Theorem (G₂-rigidity of holonomic representation) [T] {#g2-ригидность}
 
 :::warning Theorem of G₂-rigidity [T]
-Let $S$ be an autonomous system satisfying (AP)+(PH)+(QG)+(V). Let $(\mathbb{C}^7, \mathcal{B}_1, G_1)$ and $(\mathbb{C}^7, \mathcal{B}_2, G_2)$ be two holonomic representations of $S$ (Definition G1).
+Let $S$ be an autonomous system satisfying (AP)+(PH)+(QG)+(V), with $\mathbb{C}^7$ carrying the octonionic multiplication of Lemma G3(ii) (from the axioms at the orientation assumption (Alt)). Let $(\mathbb{C}^7, \mathcal{B}_1, G_1)$ and $(\mathbb{C}^7, \mathcal{B}_2, G_2)$ be two holonomic representations of $S$ (Definition G1).
 
 Then there exists a **unique** $U \in G_2 = \mathrm{Aut}(\mathbb{O})$ such that:
 
@@ -419,12 +415,16 @@ up to the finite frame group $\Gamma_{\!\text{oct}}$ (frame decision D-0910); in
 :::tip Corollary 3 (Faithfulness of functor) [T]
 The functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ ([categorical formalism](/docs/proofs/categorical/categorical-formalism)) is **faithful** on frame orbits: if $F(\Gamma_1) \cong F(\Gamma_2)$ in $\mathbf{Exp}$, then $\Gamma_2 = U\Gamma_1 U^\dagger$ for $U \in \Gamma_{\!\text{oct}}$ (in particular $U \in G_2$).
 
-Kernel of $F$ on the set of isomorphisms (experience reads the frame-pinned $E$-sector, so a generic $G_2$-rotation changes it — D-0910):
+Kernel of $F$ on the set of isomorphisms (experience reads the frame-pinned $E$-sector, so a generic $G_2$-rotation changes it — D-0910, and so does every element of $\Gamma_{\!\text{oct}}$ that moves the $E$-axis):
 
 $$
-\ker(F) = \{\mathrm{Ad}_U : U \in \Gamma_{\!\text{oct}}\} \subset \{\mathrm{Ad}_U : U \in G_2\}
+\ker(F) \subseteq \{\mathrm{Ad}_U : U \in \Gamma_{\!\text{oct}},\ U e_E = \pm e_E\} \subsetneq \{\mathrm{Ad}_U : U \in \Gamma_{\!\text{oct}}\} \subset \{\mathrm{Ad}_U : U \in G_2\}
 $$
+
+The $E$-axis stabiliser in $\Gamma_{\!\text{oct}}$ has $192 = 1344/7$ elements.
 :::
+
+*Corrected 2026-09-25.* The corollary stated $\ker(F) = \{\mathrm{Ad}_U : U \in \Gamma_{\!\text{oct}}\}$; that is retracted: $F$ reads the $E$-sector, and an element of $\Gamma_{\!\text{oct}}$ that moves the $E$-axis takes $\mathrm{Coh}_E(\lvert e_E\rangle\langle e_E\rvert)$ from $1$ to $0$, so $\mathrm{Ad}_U$ changes $F$ for $1152$ of the $1344$ elements; only the $192$ that keep the $E$-axis can lie in the kernel ([lattice of identification groups](#жёсткость-репера); regression test `test_coh_e_is_invariant_only_on_the_e_axis_stabiliser`). The faithfulness statement above is unaffected.
 
 ### Corollary 4: Predictive power [T] {#предсказательная-мощность}
 
@@ -454,8 +454,8 @@ Two classes of observable must be distinguished (irreducibility of $\mathbf 7$, 
 - the spectrum (6) and the $\varphi_3$-relative angles (28) — the 34 parameters above
 
 **Frame-dependent** (defined only after the functional frame is fixed by the dynamics; invariant under $\mathrm{Stab}_{G_2}$ of the frame, *not* under all of $G_2$, since no axis is $G_2$-invariant):
-- E-coherence $\mathrm{Coh}_E(\Gamma)$ — references the E-axis
-- Integration measure $\Phi = \sum_{i\neq j}|\gamma_{ij}|^2/\sum_i\gamma_{ii}^2$ — references the coordinate basis
+- E-coherence $\mathrm{Coh}_E(\Gamma)$ — references the E-axis; invariant only under the elements that keep it ($192$ of the $1344$ in $\Gamma_{\!\text{oct}}$)
+- Integration measure $\Phi = \sum_{i\neq j}|\gamma_{ij}|^2/\sum_i\gamma_{ii}^2$ — references the coordinate basis; invariant under all of $\Gamma_{\!\text{oct}}$
 - the regeneration coefficient $\kappa_0$ — references the O, E, U axes
 
 These frame-dependent quantities are physical because the dynamics ($\mathcal{L}_\Omega$-covariance, Definition G1) pins the frame; they are not among the 34 orbit-invariants.
@@ -470,7 +470,7 @@ This theorem **fully closes** the question of uniqueness of the map G at the the
 
 | Question | Status | Basis |
 |--------|:------:|-----------|
-| **Existence** of G | **[T]** | Theorem S + bridge T15 |
+| **Existence** of G | **[T]** (Theorem S); the octonionic structure via the bridge T15, [C at (Alt)] | Theorem S + bridge T15 |
 | **Uniqueness** of G (up to $G_2$) | **[T]** | Theorem of $G_2$-rigidity (this document) |
 | **Predictivity** of G | [Empirical] | Requires experimental verification |
 

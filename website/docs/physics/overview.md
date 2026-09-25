@@ -52,7 +52,7 @@ Complete map of the "Physics" section pages with subsections and key topics.
 | | [Neutrino Masses](/docs/physics/particle-physics/neutrino-masses) | Type-I seesaw, $M_R$ from loop mechanism [T], Dirac mass from O-sector [C], PMNS from anarchic $M_R$ [C], normal hierarchy [T] |
 | | [Supersymmetry](/docs/physics/particle-physics/susy) | $N=1$ from $G_2$-holonomy, $W$ from gauge $\varphi$ [T], $m_{3/2} \sim 10^{13}$ GeV |
 | | [Proton Decay](/docs/physics/particle-physics/proton-decay) | $\tau_p \sim 10^{37-38}$ years, channels $p \to e^+\pi^0$, comparison with Super-K/Hyper-K |
-| **Gravity** | [Emergent Geometry](/docs/physics/gravity/emergent-geometry) | 3+1 from sectoral decomposition $7 = 1 \oplus 3 \oplus \bar{3}$ [T], metric from Gap |
+| **Gravity** | [Emergent Geometry](/docs/physics/gravity/emergent-geometry) | One time direction [T] and three spatial ones at T-119 [C] (the "3+1 from sectoral decomposition $7 = 1 \oplus 3 \oplus \bar{3}$ [T]" is retracted [✗]: the axis-labelled split is not an $SU(3)$ decomposition), metric from Gap |
 | | [Einstein Equations](/docs/physics/gravity/einstein-equations) | $G_{\mu\nu}$ from Gap: full spectral action [T] + Lovelock theorem |
 | | [Cosmological Constant](/docs/physics/gravity/cosmological-constant) | $\Lambda$ budget: perturbative $10^{-41.5}$ [T]; SUSY $\varepsilon^{12}$ absorbs $\varepsilon^6$ → net $10^{-53.5}$; honest bracket $10^{-53.5}$–$10^{-93.5}$ [C], remaining $\gtrsim 27$ orders open |
 | | [Quantum Gravity](/docs/physics/gravity/quantum-gravity) | Gap functional integral on $(S^1)^{21}$, UV finiteness, information paradox |
@@ -397,7 +397,7 @@ Open problems: exact lattice calculation on $(S^1)^{21}$, inflation from $V_{\te
 :::tip Theorem: Einstein equations from Gap [T]
 **Details:** [Einstein Equations](/docs/physics/gravity/einstein-equations)
 
-The full spectral triple $(A, H, D)$ from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) satisfies the Connes axioms. The spectral action $\mathrm{Tr}(f(D_A/\Lambda))$ reproduces the Einstein-Hilbert action with $G_N = 3\pi/(7 f_2\Lambda^2)$ **[T]**. Additional argument: Lovelock theorem [T] (T-121).
+The full spectral triple $(A, H, D)$ from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) is a spectral triple, but not a real one: $H_{\text{int}} = \mathbb{C}^7$ has no real structure of KO-dimension 6 (it read "satisfies the Connes axioms" until 2026-09-25). The spectral action $\mathrm{Tr}(f(D_A/\Lambda))$ reproduces the Einstein-Hilbert action with $G_N = 3\pi/(7 f_2\Lambda^2)$ **[T]**. Additional argument: Lovelock theorem [T] (T-121).
 
 **See:** [Gravity](/docs/physics/gravity/emergent-geometry) | [Einstein Equations](/docs/physics/gravity/einstein-equations) | [Quantum Gravity](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)
 :::
@@ -691,7 +691,7 @@ Schwinger-Keldysh formalism: $S_{Gap} = \mathrm{Re}\,\mathrm{Tr}[\rho_+ \ln\rho_
 
 **Details:** [Axiom of Septicity — Bridge](/docs/core/foundations/axiom-septicity#мост-p1p2), [Gap RG Flow](/docs/physics/gauge-symmetry/rg-flow)
 
-**Verdict:** Bridge (AP)+(PH)+(QG)+(V) ⟹ P1+P2 **fully closed** — chain T15 of 12 steps, all [T]. Condition (MP) proven in T11–T13 (Hoy rank = 7, L-unification, forced BIBD).
+**Verdict:** Bridge (AP)+(PH)+(QG)+(V) ⟹ P1+P2 **closed up to the orientation input (Alt)** — chain T15 of 12 steps: the steps up to PG(2,2) are [T], the step to $\mathbb{O}$ is [C at (Alt)] (registry row 41n; it read "fully closed … all [T]" until 2026-09-25). Condition (MP) proven in T11–T13 (Hoy rank = 7, L-unification, forced BIBD).
 
 ### 4. SM from $G_2$: electroweak sector
 
@@ -762,10 +762,10 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 40. Topological protection of Gap — **[T]** (T-69): $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$, barrier $\Delta V \geq 6\mu^2 > 0$ — [Composite Systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита)
 41. Fano Gap bound — **[✗]** ($\leq 1/2$ for all pairs); **replacement**: sectoral Gap bound **[T]** (T-80) — [Berry Phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница)
 42. Canonical Schrödinger/Heisenberg duality — [Composite Systems](/docs/core/dynamics/composite-systems) — **[I]**
-43. Bridge closure P1+P2 — **[T]**: T15 — full chain of 12 steps — [Axiom of Septicity](/docs/core/foundations/axiom-septicity#мост-p1p2)
-44. 3+1 from sectoral decomposition — **[T]**: $7 = 1 \oplus 3 \oplus \bar{3}$ [T]; compactification of $\bar{\mathbf{3}}$ at scale $v_{\text{EW}}$ (confinement [T] + asymptotic freedom) [T] — [Spacetime](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция)
+43. Bridge closure P1+P2 — **[C at (Alt)]**: T15 — chain of 12 steps, the step PG(2,2) → $\mathbb{O}$ needs the orientation of the Fano lines (row 41n; listed as [T] until 2026-09-25) — [Axiom of Septicity](/docs/core/foundations/axiom-septicity#мост-p1p2)
+44. 3+1 from sectoral decomposition — **retracted [✗]** (2026-09-25; listed as [T] with "$7 = 1 \oplus 3 \oplus \bar{3}$ [T]; compactification of $\bar{\mathbf{3}}$ at scale $v_{\text{EW}}$ [T]"): no three of the six non-$O$ axes span an $SU(3)$-invariant subspace; the complexified $\mathbb{C}^7 = \mathbb{C} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ is Günaydın and Gürsey (1973) and gives colour, not space; the compactification falls with the split — [Spacetime](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция)
 45. Einstein equations from spectral action — **[T]** (T-65): full spectral action from finite spectral triple T-53 — [Einstein Equations](/docs/physics/gravity/einstein-equations)
-46. SM from $G_2$ — **[T]**: electroweak sector from HS-projection of $\bar{3}$-sector; uniqueness of pair $(E,U)$ proven from $\kappa_0$ — [Standard Model](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ)
+46. SM from $G_2$ — colour $SU(3)$ from $G_2$ **[T]**; electroweak sector **[C at (FE)]** — the pair $(E,U)$ from $\kappa_0$ is [T], its former reading as the HS-projection of a "$\bar{3}$-sector" is retracted, and the uniqueness of the group is [H] (listed as [T] until 2026-09-25) — [Standard Model](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ)
 47. 3 generations from Fano — **count [T], identification [I]**: $N_{\text{gen}} = 3$ is the exact count $|\mathrm{QR}(7)| = |\mathbb{Z}_7^*/\{\pm1\}| = (7-1)/2 = 3$ **[T]** (group-theoretic, topology-independent); physical identification of the 3 classes with generations [I] — [Fermion Generations](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)
 48. Confinement from Gap — [Confinement](/docs/physics/gauge-symmetry/confinement) — **[C at T-64]**; $\sqrt{\sigma} \approx 457$ MeV **[C at T-64]** after sectoral correction
 49. Fano selection rule — **[T]**: proven via octonion structure constants $f_{ijk}$ (unique $G_2$-invariant trilinear operator) — [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk)
@@ -811,7 +811,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 
 ### Computational
 
-14. $Z'_\Phi(-2)$ — the *derivative of the Epstein zeta regulator* (the prime is differentiation, not a gauge boson; gauge $Z'$ are forbidden by [T-297](/docs/physics/gauge-symmetry/standard-model#запрет-z-прайм)) — physical interpretation requires full QFT computation
+14. $Z'_\Phi(-2)$ — the *derivative of the Epstein zeta regulator* (the prime is differentiation, not a gauge boson; that gauge $Z'$ are excluded is [T-297](/docs/physics/gauge-symmetry/standard-model#запрет-z-прайм), a hypothesis [H] since 2026-09-25 — it was read as a prohibition) — physical interpretation requires full QFT computation
 15. Full functional integral (bosons + fermions + SUSY) in winding sectors
 16. Lattice computation of partition function on $(S^1)^{21}$ with $G_2$-symmetry
 17. Two-loop correction to $\eta_F$ (sensitivity of $\xi_F$ to $\eta_F$)
@@ -822,8 +822,8 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 
 | Criterion | Score | Comment |
 |-----------|-------|---------|
-| **Completeness** | 9/10 | Theory covers from quantum gravity to consciousness. Added: RG flow, neutrino masses, SUSY, proton decay, quantum gravity, Fano-electroweak construction (FE), superpotential $W$ [T], generation counting [T], $M_R$ from loop mechanism [T], 3+1 from sectoral decomposition [T], $\varepsilon$ from sectoral hierarchy [C], Berry derivation of $L_{\text{top}}$ [T] (T-85). Unclosed: $\gtrsim 27$ orders of $\Lambda$ (beyond the net $10^{-53.5}$), Kähler metric $G_2$ |
-| **Consistency** | 9/10 | $\Lambda$ budget is arithmetically flawless. Bridge (AP)+(PH)+(QG)+(V) → P1+P2 fully closed [T] (T15). Superpotential $W$ closes the SUSY sector [T]. $\varepsilon$ partially from sectoral hierarchy [C]. $\sqrt{\sigma}$ after sectoral correction $\approx 457$ MeV (vs 440 MeV observed). $L_{\text{top}}$ from Keldysh [T] (T-85). Residual inconsistency: $T_{eff}$. Theory **self-corrects** |
+| **Completeness** | 9/10 | Theory covers from quantum gravity to consciousness. Added: RG flow, neutrino masses, SUSY, proton decay, quantum gravity, Fano-electroweak construction (FE), superpotential $W$ [T], generation counting [T], $M_R$ from loop mechanism [T], 3+1 from sectoral decomposition (retracted [✗] 2026-09-25), $\varepsilon$ from sectoral hierarchy [C], Berry derivation of $L_{\text{top}}$ [T] (T-85). Unclosed: $\gtrsim 27$ orders of $\Lambda$ (beyond the net $10^{-53.5}$), Kähler metric $G_2$ |
+| **Consistency** | 9/10 | $\Lambda$ budget is arithmetically flawless. Bridge (AP)+(PH)+(QG)+(V) → P1+P2 closed up to the orientation input, [C at (Alt)] (T15; it read "fully closed [T]" until 2026-09-25). Superpotential $W$ closes the SUSY sector [T]. $\varepsilon$ partially from sectoral hierarchy [C]. $\sqrt{\sigma}$ after sectoral correction $\approx 457$ MeV (vs 440 MeV observed). $L_{\text{top}}$ from Keldysh [T] (T-85). Residual inconsistency: $T_{eff}$. Theory **self-corrects** |
 | **Mathematical rigor** | 8/10 | 140+ impeccable theorems [T] (Level 1) + ~20 conditional [C]. CS cascade closed (T-85) |
 | **Categorical rigor** | 5/10 | $\infty$-topos and dagger-category are mentioned but not rigorously formalized. Ehresmann connection, duality functor — postulated, not constructed |
 | **Integration readiness** | 7/10 | ~16 results ready for transfer (after editing). ~10 require substantial rework. ~8 not suitable for integration |
@@ -850,7 +850,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 - [Proton Decay](/docs/physics/particle-physics/proton-decay) — $\tau_p \sim 10^{37}$ years
 
 *Gravity:*
-- [Emergent Geometry](/docs/physics/gravity/emergent-geometry) — 3+1 from $G_2/SU(3)$
+- [Emergent Geometry](/docs/physics/gravity/emergent-geometry) — 3+1: one time direction [T], three spatial ones at T-119 [C] (the split "from $G_2/SU(3)$" is retracted)
 - [Einstein Equations](/docs/physics/gravity/einstein-equations) — $G_{\mu\nu}$ from Gap
 - [Cosmological Constant](/docs/physics/gravity/cosmological-constant) — $\Lambda$ budget
 - [Quantum Gravity](/docs/physics/gravity/quantum-gravity) — Gap functional integral, UV finiteness
