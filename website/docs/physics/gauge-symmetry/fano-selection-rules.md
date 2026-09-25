@@ -67,7 +67,7 @@ The theorem argued that the vacuum Gap profile breaks the $\mathbb{Z}_3$ of the 
 
 Retracted formulation, kept as a record: the vacuum Gap profile breaks the $\mathbb{Z}_3$-symmetry of the Fano line $\{1,2,4\}$.
 
-What a family symmetry has to be instead: it must commute with the whole Standard Model group. Under the assumption (Cl) that group acts on $\mathbb{C}\otimes\mathbb{O}$, and there only the phases $\mathrm{U}(1)_B\times\mathrm{U}(1)_L$ commute with it, so no $\mathbb{Z}_3$ acting on the axes qualifies. A horizontal $\mathbb{Z}_3$ exists on the clock register ([fermion generations, §5.3](/docs/physics/particle-physics/fermion-generations#поколения-t352), T-352). The selection rule of §2 below is incidence arithmetic on axes and stays [T] as such. Reading its $k$ as a generation label is the axis reading of the identification, which T-352 shows cannot carry a family symmetry.
+What a family symmetry has to be instead: it must commute with the whole Standard Model group. Under the assumption (Cl) that group acts on $\mathbb{C}\otimes\mathbb{O}$, and there only the phases $\mathrm{U}(1)_B\times\mathrm{U}(1)_L$ commute with it, so no $\mathbb{Z}_3$ acting on the axes qualifies. A horizontal $\mathbb{Z}_3$ exists on the clock register ([fermion generations, §5.3](/docs/physics/particle-physics/fermion-generations#поколения-t328), T-328). The selection rule of §2 below is incidence arithmetic on axes and stays [T] as such. Reading its $k$ as a generation label is the axis reading of the identification, which T-328 shows cannot carry a family symmetry.
 :::
 
 **(a)** The vacuum Gap profile defines 5 sectors with different Gap values:
