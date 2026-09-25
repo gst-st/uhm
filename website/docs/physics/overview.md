@@ -397,7 +397,7 @@ Open problems: exact lattice calculation on $(S^1)^{21}$, inflation from $V_{\te
 :::tip Theorem: Einstein equations from Gap [T]
 **Details:** [Einstein Equations](/docs/physics/gravity/einstein-equations)
 
-The full spectral triple $(A, H, D)$ from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) satisfies the Connes axioms. The spectral action $\mathrm{Tr}(f(D_A/\Lambda))$ reproduces the Einstein-Hilbert action with $G_N = 3\pi/(7 f_2\Lambda^2)$ **[T]**. Additional argument: Lovelock theorem [T] (T-121).
+The full spectral triple $(A, H, D)$ from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) is a spectral triple, but not a real one: $H_{\text{int}} = \mathbb{C}^7$ has no real structure of KO-dimension 6 (it read "satisfies the Connes axioms" until 2026-09-25). The spectral action $\mathrm{Tr}(f(D_A/\Lambda))$ reproduces the Einstein-Hilbert action with $G_N = 3\pi/(7 f_2\Lambda^2)$ **[T]**. Additional argument: Lovelock theorem [T] (T-121).
 
 **See:** [Gravity](/docs/physics/gravity/emergent-geometry) | [Einstein Equations](/docs/physics/gravity/einstein-equations) | [Quantum Gravity](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)
 :::
