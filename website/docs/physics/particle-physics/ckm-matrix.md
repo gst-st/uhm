@@ -461,7 +461,8 @@ Precise values of $\bar{\rho}$, $\bar{\eta}$ depend on the phases of the Yukawa 
 1. **Fritzsch texture** from Fano topology — hierarchical $3 \times 3$ mass matrix.
 2. **Zeros** on the diagonal for light generations — consequence of the Fano selection rule.
 3. **CP phase** determined by $\mathbb{Z}_7$-structure — discrete set of possible values.
-4. **Strong CP: $\theta_\text{QCD} = 0$ exactly** — [T-99 \[T\]](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd): 7-step proof from A1–A5. $V_3$ cancels vacuum phases, but generates $\delta_{\mathrm{CP}} \neq 0$ through inter-generation mixing.
+4. **Strong CP: $\theta_\text{QCD} = 0$** — [T-99, \[C at (SV)\]](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd) (corrected 2026-09-25 from [T]): only through the chain of the retracted cubic $V_3$. The corrected potential is PT-even, and no lift of its vacuum's antiunitary symmetry gives $\bar\theta = 0$ with $m_t \neq m_b$ and $J \neq 0$ ([T-341](/docs/physics/gauge-symmetry/confinement#pt-на-фермионах-t341)).
+5. **One channel gives no mixing [T]** ([T-340(g)](/docs/physics/particle-physics/higgs-sector#юкавы-t340)): if every generation couples through one flavour matrix times the same internal Clifford operator, $M_u \propto M_d$ and $V_{\mathrm{CKM}} = 1$. Mixing needs at least two channels (in $\mathrm{SO}(10)$ language, $\mathbf{10}$ with $\overline{\mathbf{126}}$ or $\mathbf{120}$). Under the hypothesis (UP) the tree-level down-type matrix vanishes, so the whole CKM matrix comes from subleading down-type terms. Its hierarchy is not derived [Pr].
 :::
 
 ### 8.2 What Follows from Standard Formulas [H]
@@ -517,7 +518,7 @@ The discrepancy of $J_\text{pred}$ and $J_\text{obs}$ is determined **only** by 
 1. **Fritzsch texture** from Fano topology — $M^{u,d}_{11} = M^{u,d}_{22} = 0$ for light generations [T].
 2. **Form** of the mixing formulas ($|V_{us}| \sim \sqrt{m_d/m_s}$ etc.) as a **structural** consequence of the texture [T].
 3. **CP-violation phase** $\delta_\text{CP}$ determined by $V_3$ and $\mathbb{Z}_7$-structure, not a free parameter [H].
-4. **$\theta_\text{QCD} = 0$** — automatic consequence of the isotropy of the Gap vacuum [T].
+4. **$\theta_\text{QCD} = 0$** — consequence of the isotropy of the Gap vacuum of the retracted $V_3$, [C at (SV)] (corrected 2026-09-25 from [T]; T-341 closes the route through the corrected vacuum).
 :::
 
 :::warning Correct status of numerical predictions

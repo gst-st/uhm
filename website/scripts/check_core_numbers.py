@@ -131,6 +131,14 @@ D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_
 `emergent_space_is_the_octahedron_and_its_fluctuations_the_three_sphere` (средние — октаэдр ≅ B³,
 флуктуации — ℝ³, минимальная унитизация — S³; цвет-синглетные координаты дают лишь 2).
 
+Шесть — за юкавами в рамке Spin(10) и θ (T-340, T-341, 25.09.2026):
+`up_and_down_are_where_the_hilbert_unit_meets_the_clock` (верх — i = L_{e_O}, низ — i = −L_{e_O};
+параметр Gap вакуума T-64 — компонента T₃L), `clifford_yukawas_split_up_from_down_only_through_tau_r`
+(юкав 2 / 4 / 8 при Пати–Салам / лево-правой / 𝔤_SM; |m_u| = |m_d| при всякой SU(2)_R-инвариантной),
+`clock_phase_and_gap_vacuum_dressings_do_not_fit_the_masses`, `the_data_ask_for_an_up_projector_at_one_percent`
+(t/b ≈ 68 при 2·10¹⁶ ГэВ, β/α = 0,971), `vacuum_antiunitary_lifts_are_gauge_parity_or_cp` и
+`an_unbroken_cp_or_lr_symmetry_contradicts_the_quark_data` (CP ⇒ J = 0; L↔R при одном дублете ⇒ m_t = m_b).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -4117,6 +4125,362 @@ def test_emergent_space_is_the_octahedron_and_its_fluctuations_the_three_sphere(
                 herm.append(F)
     rows = np.vstack([np.array([(S @ X - X @ S).ravel() for S in herm]).T for X in _su3_of_e_o()])
     assert _nullspace(np.vstack([rows.real, rows.imag])).shape[0] == 3
+
+
+# ---------------------------------------------------------------------------
+# Юкавы в клиффордовой рамке Spin(10) и антиунитарная симметрия вакуума (25.09.2026, T-340, T-341).
+# Юкава — ℝ-линейное отображение h ↦ M(h) бесцветной 4-плоскости {iL_{e_O}, J, iJ, γ₁₀} в
+# ω-антилинейные операторы V_L → V_R (форма дираковской массы, T-329(е)), эквивариантное под группой.
+# ---------------------------------------------------------------------------
+
+@functools.lru_cache(maxsize=None)
+def _yukawa_frame():
+    e = _spin10_completion()
+    om, PL, PR, g10 = e["om"], e["PL"], e["PR"], e["g10"]
+
+    def half(P):
+        w, V = np.linalg.eigh(P)
+        return V[:, w > 0.5]
+    UL, UR = half(PL), half(PR)
+    G = np.array([g.flatten() for g in g10]).T
+
+    def on_vector(X):
+        M = np.zeros((10, 10))
+        for a, g in enumerate(g10):
+            v = (X @ g - g @ X).flatten()
+            M[:, a] = np.linalg.lstsq(G, v, rcond=None)[0]
+        return M
+
+    def charge(X):
+        q = -om @ X
+        return (q + q.T) / 2
+
+    def proj(q, val, P):
+        w, V = np.linalg.eigh(P @ q @ P + 50 * (np.eye(32) - P))
+        Vs = V[:, np.abs(w - val) < 1e-7]
+        return Vs @ Vs.T
+    t3l, t3r, bl = charge(e["T3L"]), charge(e["T3R"]), 2 * charge(e["BL"])
+    secL = {"u": (0.5, 1 / 3), "d": (-0.5, 1 / 3), "nu": (0.5, -1.0), "e": (-0.5, -1.0)}
+    secR = {"u": (-0.5, -1 / 3), "d": (0.5, -1 / 3), "nu": (-0.5, 1.0), "e": (0.5, 1.0)}
+    secL = {k: proj(t3l, a, PL) @ proj(bl, b, PL) for k, (a, b) in secL.items()}
+    secR = {k: proj(t3r, a, PR) @ proj(bl, b, PR) for k, (a, b) in secR.items()}
+    span = lambda ops, space: [sum(v[i] * space[i] for i in range(len(space))) for v in _null_commutant(ops, space)]
+    L1, R1 = e["lift"](e["d"]["Lu"]), e["lift"](e["d"]["Ru"])
+    tau = -e["I1"] @ L1                                                  # τ = −i·L_{e_O}
+    return dict(e=e, UL=UL, UR=UR, on_vector=on_vector, secL=secL, secR=secR, L1=L1, tau=tau,
+                PS=span([L1], e["spin10"]), LR=span([L1, R1], e["spin10"]))
+
+
+def _yukawa_masses(M):
+    f = _yukawa_frame()
+    return {k: float(np.linalg.svd(f["secR"][k] @ M @ f["secL"][k], compute_uv=False)[0]) for k in f["secL"]}
+
+
+def _yukawa_space(alg, seed=1):
+    """Эквивариантные ω-антилинейные M: плоскость → Hom(V_L, V_R). Алгебра задаётся двумя общими элементами."""
+    f = _yukawa_frame()
+    e, UL, UR = f["e"], f["UL"], f["UR"]
+    rng = np.random.default_rng(seed)
+    gens = [sum(c * x for c, x in zip(rng.normal(size=len(alg)), alg)) for _ in range(2)]
+    omL, omR = UL.T @ e["om"] @ UL, UR.T @ e["om"] @ UR
+    n, rows = 256, []
+    for X in gens:
+        R = f["on_vector"](X)[6:, 6:]
+        XL, XR = UL.T @ X @ UL, UR.T @ X @ UR
+        for a in range(4):
+            blk = np.zeros((n, 4 * n))
+            blk[:, a * n:(a + 1) * n] += np.kron(XR, np.eye(16)) - np.kron(np.eye(16), XL.T)
+            for b in range(4):
+                blk[:, b * n:(b + 1) * n] -= R[b, a] * np.eye(n)
+            rows.append(blk)
+    for a in range(4):
+        blk = np.zeros((n, 4 * n))
+        blk[:, a * n:(a + 1) * n] = np.kron(omR, np.eye(16)) + np.kron(np.eye(16), omL.T)
+        rows.append(blk)
+    _, s, Vt = np.linalg.svd(np.vstack(rows), full_matrices=True)
+    N = Vt[np.sum(s > 1e-9):].T
+    to_ops = lambda x: [UR @ x[a * n:(a + 1) * n].reshape(16, 16) @ UL.T for a in range(4)]
+    return N, to_ops
+
+
+def test_up_and_down_are_where_the_hilbert_unit_meets_the_clock():
+    """T-340(а): верхние поля — там, где мнимая единица ℋ совпадает с часами, i = L_{e_O}; нижние — i = −L_{e_O}.
+
+    τ = −iL_{e_O} на 𝒮_ℂ: +1 на u_L, ν_L, u^c, ν^c и −1 на d_L, e_L, d^c, e^c — одинаково на обеих
+    половинах. τ_R = τ|_{V_R} (= 2T₃R со знаком) коммутирует с 𝔤_SM; τ на V_L — это 2T₃L и с 𝔰𝔲(2)_L
+    не коммутирует. На ℂ⁷ ⊂ 𝒮 собственные пространства L_{e_O} = ∓i (цветные «триплет» P_𝟑 и
+    «антитриплет» P_𝟑̄ страницы термодинамики Gap) — нижняя и верхняя компоненты кваркового дублета.
+    Цветово-инвариантный вакуум T-64 равен a|O⟩⟨O| + (b+c)/2·Π₆ − (b−c)/2·τ: его параметр Gap b − c —
+    компонента T₃L; продолженный на 𝒮 весом t на η₀, он коммутирует с 𝔰𝔲(2)_L только при b = c и t = a.
+    """
+    f = _yukawa_frame()
+    e, tau = f["e"], f["tau"]
+    assert np.allclose(tau, tau.T) and np.allclose(tau @ tau, np.eye(32))
+    for k, sgn in (("u", 1), ("nu", 1), ("d", -1), ("e", -1)):
+        for P in (f["secL"][k], f["secR"][k]):
+            assert np.allclose(tau @ P, sgn * P)
+    tauR = e["PR"] @ tau @ e["PR"]
+    assert max(np.abs(tauR @ x - x @ tauR).max() for x in e["sm"]) < 1e-12
+    assert max(np.abs(tau @ x - x @ tau).max() for x in e["suL"]) > 0.1
+    d = e["d"]
+    tS = -d["imul"] @ d["Lu"]                                                    # τ на 𝒮 = ℝ¹⁶
+    Lc = _l_of(np.eye(7)[O_AXIS])
+    w, V = np.linalg.eigh(1j * Lc)                                               # iL: +1 на L = −i (P_𝟑), −1 на P_𝟑̄
+    for val, sgn in ((1.0, -1), (-1.0, 1)):
+        for x in V[:, np.abs(w - val) < 1e-9].T:
+            X = np.zeros(8, complex)
+            X[1:] = x
+            xr = np.concatenate([X.real, X.imag])
+            assert np.allclose(tS @ xr, sgn * xr)                                 # P_𝟑 — нижние, P_𝟑̄ — верхние
+    a, b, c = 0.37, 0.15, 0.06
+    G = _colour_family(a, b, c)
+    Pi6 = np.eye(7) - np.outer(np.eye(7)[O_AXIS], np.eye(7)[O_AXIS])
+    assert np.allclose(G, a * (np.eye(7) - Pi6) + (b + c) / 2 * Pi6 + 1j * (b - c) / 2 * Lc)
+    assert np.isclose(float(np.sum(G.imag ** 2)), 1.5 * (b - c) ** 2)            # 𝒢 = ‖Im Γ‖² = (3/2)(b−c)²
+    comm = [x @ y - y @ x for x in d["C"] for y in d["C"]]                    # 𝔰𝔲(2) T-326 = 𝔰𝔲(2)_L на V_L ≅ 𝒮
+    U, sv, _ = np.linalg.svd(np.array([x.flatten() for x in comm]).T, full_matrices=False)
+    su2 = [U[:, i].reshape(16, 16) for i in range(int(np.sum(sv > 1e-9)))]
+    assert len(su2) == 3
+
+    def gamma_hat(a, b, c, t):
+        M = np.zeros((8, 8), complex)
+        M[1:, 1:] = _colour_family(a, b, c)
+        M[0, 0] = t
+        return np.block([[M.real, -M.imag], [M.imag, M.real]])
+    for (a, b, c, t), ok in (((0.4, 0.1, 0.1, 0.4), True), ((0.4, 0.1, 0.1, 0.0), False),
+                             ((0.4, 0.2, 0.0, 0.4), False), ((1 / 7, 1 / 7, 1 / 7, 0.0), False)):
+        Gh = gamma_hat(a, b, c, t)
+        assert (max(np.abs(Gh @ x - x @ Gh).max() for x in su2) < 1e-12) == ok
+
+
+def test_clifford_yukawas_split_up_from_down_only_through_tau_r():
+    """T-340(б, в): юкавы по уровням симметрии — 2, 4, 8 вещественных измерений; расщепление верх/низ даёт лишь τ_R.
+
+    Пати–Салам (𝔠(L_{e_O}), 21): 2 = одна комплексная константа, m_u = m_d = m_ν = m_e. Лево-правая
+    (𝔠(L,R), 15): 4 — кварки и лептоны порознь, но |m_u| = |m_d|, |m_ν| = |m_e|. 𝔤_SM (12): 8 —
+    ровно span{1, ω}⊗{1, B−L}⊗{1, τ_R}·γ(h), четыре независимые массы. Вещественный вакуум в плоскости
+    нейтральных направлений {iL_{e_O}, γ₁₀} при любой SU(2)_R-инвариантной юкаве масс не расщепляет;
+    изотропные векторы её комплексификации γ₁₀ ± ω·iL_{e_O} дают массы только верхним (соотв. нижним).
+    """
+    f = _yukawa_frame()
+    e = f["e"]
+    plane = e["g10"][6:10]
+    rng = np.random.default_rng(5)
+    dims, gaps = {}, []
+    for name, alg in (("PS", f["PS"]), ("LR", f["LR"]), ("SM", e["sm"])):
+        N, to_ops = _yukawa_space(alg)
+        dims[name] = N.shape[1]
+        for _ in range(3):
+            Ms = to_ops(N @ rng.normal(size=N.shape[1]))
+            h = np.array([rng.normal(), 0.0, 0.0, rng.normal()])                     # нейтральная плоскость
+            m = _yukawa_masses(sum(h[i] * Ms[i] for i in range(4)))
+            if name in ("PS", "LR"):
+                assert abs(m["u"] - m["d"]) < 1e-9 and abs(m["nu"] - m["e"]) < 1e-9
+            if name == "PS":
+                assert abs(m["u"] - m["e"]) < 1e-9
+            if name == "SM":
+                gaps.append(min(abs(m["u"] - m["d"]), abs(m["nu"] - m["e"])))
+        if name == "SM":
+            tauR = e["PR"] @ f["tau"] @ e["PR"]
+            ops = [[T @ B @ D @ e["PR"] @ g @ e["PL"] for g in plane]
+                   for D in (np.eye(32), e["om"]) for B in (np.eye(32), e["BL"]) for T in (np.eye(32), tauR)]
+            vec = np.array([np.concatenate([(f["UR"].T @ M[a] @ f["UL"]).flatten() for a in range(4)]) for M in ops]).T
+            assert np.linalg.matrix_rank(vec, tol=1e-9) == 8 and np.linalg.norm(N @ (N.T @ vec) - vec) < 1e-9
+    assert dims == {"PS": 2, "LR": 4, "SM": 8} and max(gaps) > 1e-2
+    g10, om = e["g10"], e["om"]
+    for th in np.linspace(0, np.pi, 5):
+        m = _yukawa_masses(np.cos(th) * g10[9] + np.sin(th) * g10[6])
+        assert np.allclose(list(m.values()), 1.0)
+    mu, md = _yukawa_masses(g10[9] + om @ g10[6]), _yukawa_masses(g10[9] - om @ g10[6])
+    assert np.isclose(mu["u"], 2) and np.isclose(mu["nu"], 2) and mu["d"] < 1e-12 and mu["e"] < 1e-12
+    assert np.isclose(md["d"], 2) and np.isclose(md["e"], 2) and md["u"] < 1e-12 and md["nu"] < 1e-12
+
+
+def test_clock_phase_and_gap_vacuum_dressings_do_not_fit_the_masses():
+    """T-340(г, д): фазы часов не расщепляют модули; заселённость вакуума даёт m_τ ≥ 0,46·m_кварк.
+
+    Унитарные «одевания» exp(φ i), exp(φ L_{e_O}), exp(φ ω), exp(φ(B−L)) сохраняют |m_u| = |m_d|: фаза
+    Пейджа–Вуттерса меняет лишь аргументы масс. Юкава, взвешенная заселённостями левых компонент
+    в вакууме T-64 (u: вес P_𝟑̄, d: вес P_𝟑, ν и e: a/2 каждой, так как e_O — половина ν и половина e),
+    даёт на 99 точках фазы Gap отношение лептон/тяжёлый кварк от 0,46 до 0,95 (данные: m_τ/m_t = 0,022
+    при 2·10¹⁶ ГэВ) и m_ν = m_e; на ветви ранга 4 при λ₄ = 0 оно ≥ 1/2 аналитически.
+    """
+    f = _yukawa_frame()
+    e = f["e"]
+    M0 = e["g10"][9]
+    for gen in (e["I1"], f["L1"], e["om"], e["BL"]):
+        for phi in (0.3, 1.1):
+            U = expm(phi * gen)
+            m = _yukawa_masses(U @ M0 @ U)
+            assert abs(m["u"] - m["d"]) < 1e-9 and abs(m["nu"] - m["e"]) < 1e-9
+    ratios, split = [], []
+    for l4 in (0.0, 1.0, 30.0):
+        for kap in np.geomspace(0.05, 3.0, 40):
+            _, (s, dd) = _family_min(kap, l4)
+            if abs(dd) < 1e-9:
+                continue
+            b, c = (s + dd) / 2, (s - dd) / 2
+            a = 1 - 3 * s
+            ratios.append((a / 2) / max(b, c))
+            split.append(min(b, c) / max(b, c))
+    assert len(ratios) >= 90
+    assert 0.46 < min(ratios) and max(ratios) < 0.96
+    for kap in (0.1, 0.5, 2.0):                                                    # ветвь ранга 4, λ₄ = 0
+        s = 0.25 - 1 / (384 * kap)
+        assert (1 - 3 * s) / 2 / s >= 0.5
+
+
+def test_the_data_ask_for_an_up_projector_at_one_percent():
+    """T-340(е): однопетлевой бег СМ от M_Z; t/b ≈ 55 при M_Z и ≈ 68 при 2·10¹⁶ ГэВ; b/τ ≈ 0,66.
+
+    Входы: m_t(m_t) = 162,5 ГэВ, m_b(m_b) = 4,18 ГэВ (MS-bar, однопетлевая КХД до M_Z), m_τ = 1,777 ГэВ,
+    α_s(M_Z) = 0,118. Клиффордовы соотношения m_t = m_b и m_b = m_τ расходятся с данными в 68 раз и
+    на 34 %; коэффициент τ_R, нужный данным, β/α = (y_t − y_b)/(y_t + y_b) = 0,971: юкава — проекция на
+    i = L_{e_O} с точностью 1,5 %. Тогда y_ν^D = y_t и сизо M_R = m_D²/0,05 эВ ≈ 1,2–1,4·10¹⁴ ГэВ.
+    """
+    from scipy.integrate import solve_ivp
+    MZ, v, a0 = 91.1876, 246.22, 0.1180
+    a_s = lambda mu: a0 / (1 + a0 * (23 / 3) / (2 * np.pi) * np.log(mu / MZ))
+    mt = 162.5 * (a_s(MZ) / a_s(162.5)) ** (12 / 23)
+    mb = 4.18 * (a_s(MZ) / a_s(4.18)) ** (12 / 23)
+    assert 54 < mt / mb < 56
+
+    def rhs(t, s):
+        g1, g2, g3, yt, yb, yl = s
+        k = 1 / (16 * np.pi ** 2)
+        return [k * 4.1 * g1 ** 3, -k * 19 / 6 * g2 ** 3, -k * 7 * g3 ** 3,
+                k * yt * (4.5 * yt ** 2 + 1.5 * yb ** 2 + yl ** 2 - 8 * g3 ** 2 - 2.25 * g2 ** 2 - 0.85 * g1 ** 2),
+                k * yb * (1.5 * yt ** 2 + 4.5 * yb ** 2 + yl ** 2 - 8 * g3 ** 2 - 2.25 * g2 ** 2 - 0.25 * g1 ** 2),
+                k * yl * (3 * yt ** 2 + 3 * yb ** 2 + 2.5 * yl ** 2 - 2.25 * g2 ** 2 - 2.25 * g1 ** 2)]
+    s0 = [np.sqrt(5 / 3) * 0.3574, 0.6517, np.sqrt(4 * np.pi * a0)] + [np.sqrt(2) * m / v for m in (mt, mb, 1.77693)]
+    out = {}
+    for mu in (1e14, 2e16):
+        yt, yb, yl = solve_ivp(rhs, (0, np.log(mu / MZ)), s0, rtol=1e-10).y[3:, -1]
+        out[mu] = (yt, yb, yl)
+    yt, yb, yl = out[2e16]
+    assert 66 < yt / yb < 71 and 0.63 < yb / yl < 0.68
+    assert 0.965 < (yt - yb) / (yt + yb) < 0.975
+    for mu in out:
+        MR = (out[mu][0] * v / np.sqrt(2)) ** 2 / 0.050e-9
+        assert 1.0e14 < MR < 1.5e14
+
+
+def _vacuum_antiunitary_lifts():
+    """PT = J на 𝒮; g_v — автоморфизм 𝕆 порядка 2, тождественный на кватернионной линии без e_O."""
+    e = _spin10_completion()
+    d = e["d"]
+    gv = None
+    for i, j in itertools.combinations(range(1, 7), 2):
+        k = int(np.argmax(np.abs(omul(unit(i), unit(j)))))
+        if k in (0, 7):
+            continue
+        D = -np.eye(8)
+        D[0, 0] = D[i, i] = D[j, j] = D[k, k] = 1
+        if all(np.allclose(D @ omul(unit(p), unit(q)), omul(D @ unit(p), D @ unit(q))) for p in range(8) for q in range(8)):
+            gv = D
+            break
+    Th = d["cl"](gv) @ d["conj"]
+    Kp = np.kron(np.eye(16), np.diag([1.0, -1.0]))
+    lift = e["lift"]
+    return e, gv, Th, {"Theta1": lift(Th), "ThetaK": lift(Th) @ Kp, "J1": lift(d["conj"]), "JK": lift(d["conj"]) @ Kp}
+
+
+def test_vacuum_antiunitary_lifts_are_gauge_parity_or_cp():
+    """T-341(а): поднятия PT и Θ_v = g_v∘PT на 𝒮_ℂ — калибровочный элемент, L↔R-обмен, P-тип или CP-тип.
+
+    PT на ℂ⁷ — сопряжение J, то есть образующая γ₈. Θ_v сохраняет вакуум Γ_v, PT — нет. ℂ′-линейные
+    поднятия J⊗1 и Θ_v⊗1 лежат в Spin(10) (сопряжение ими — поворот ℝ¹⁰ с det +1) и коммутируют с ω:
+    это унитарные внутренние преобразования 𝟏𝟔, θ-член они не меняют. J⊗1 сохраняет половины;
+    Θ_v⊗1 их переставляет, переводит 𝔰𝔲(2)_L в 𝔰𝔲(2)_R и оставляет γ₁₀ и iL_{e_O} на месте.
+    Антилинейные поднятия: J⊗K′ переставляет половины (P-тип), Θ_v⊗K′ сохраняет их и нормализует
+    𝔤_SM (CP-тип), оставляя iL_{e_O} и обращая γ₁₀. Любое из переставляющих вместе с 𝔤_SM порождает
+    лево-правую алгебру (размерность 15).
+    """
+    e, gv, Th, lifts = _vacuum_antiunitary_lifts()
+    assert gv is not None and gv[7, 7] == -1
+    M = np.zeros((8, 8), complex)
+    M[1:, 1:] = _colour_family(0.4, 0.2, 0.0)
+    Mr = np.block([[M.real, -M.imag], [M.imag, M.real]])
+    J = e["d"]["conj"]
+    assert np.allclose(Th @ Mr @ np.linalg.inv(Th), Mr) and not np.allclose(J @ Mr @ J, Mr)
+    om, om4 = e["om"], e["om4"]
+    G = np.array([g.flatten() for g in e["g10"]]).T
+
+    def rot(T):
+        Ti = np.linalg.inv(T)
+        R = np.zeros((10, 10))
+        for a, g in enumerate(e["g10"]):
+            v = (T @ g @ Ti).flatten()
+            c = np.linalg.lstsq(G, v, rcond=None)[0]
+            assert np.linalg.norm(G @ c - v) < 1e-9
+            R[:, a] = c
+        return R
+    want = {"J1": (1, 1), "Theta1": (1, -1), "JK": (-1, -1), "ThetaK": (-1, 1)}
+    for name, T in lifts.items():
+        lin = 1 if np.allclose(T @ om, om @ T) else (-1 if np.allclose(T @ om, -om @ T) else 0)
+        half = 1 if np.allclose(T @ om4, om4 @ T) else (-1 if np.allclose(T @ om4, -om4 @ T) else 0)
+        assert (lin, half) == want[name]
+        R = rot(T)
+        assert np.allclose(R @ R.T, np.eye(10)) and np.isclose(np.linalg.det(R), lin)
+        if name == "Theta1":
+            assert np.isclose(R[9, 9], 1) and np.isclose(R[6, 6], 1)
+        if name == "ThetaK":
+            assert np.isclose(R[6, 6], 1) and np.isclose(R[9, 9], -1)
+    Ti = np.linalg.inv(lifts["ThetaK"])
+    assert max(_span_residual(lifts["ThetaK"] @ x @ Ti, e["sm"]) for x in e["sm"]) < 1e-9
+    for name in ("Theta1", "JK"):
+        T = lifts[name]
+        Ti = np.linalg.inv(T)
+        assert max(_span_residual(T @ x @ Ti, e["suR"]) for x in e["suL"]) < 1e-9
+        ops = list(e["sm"]) + [T @ x @ Ti for x in e["sm"]]
+        basis = []
+        for X in ops:
+            if not basis or _span_residual(X, basis) > 1e-8:
+                basis.append(X)
+        grew = True
+        while grew:
+            grew = False
+            for A in list(basis):
+                for B in list(basis):
+                    Z = A @ B - B @ A
+                    if _span_residual(Z, basis) > 1e-8:
+                        basis.append(Z)
+                        grew = True
+        assert len(basis) == 15
+
+
+def test_an_unbroken_cp_or_lr_symmetry_contradicts_the_quark_data():
+    """T-341(б, в): ненарушенная CP кварковых юкав даёт J = 0; L↔R-симметрия при одном дублете — |m_u| = |m_d|.
+
+    Обобщённая CP, Y = U Y* U^T для обоих секторов (U унитарна и симметрична), обнуляет инвариант
+    Ярлскога — при J_данные = 3,12·10⁻⁵ (PDG 2024). Эрмитовы юкавы (чётность при двух дублетах с вещественными
+    вакуумами) дают вещественный det M_uM_d, т. е. θ̄ = 0, и J ≠ 0 — этот путь требует второго дублета.
+    """
+    rng = np.random.default_rng(13)
+
+    def jarlskog(Yu, Yd):
+        _, Uu = np.linalg.eigh(Yu @ Yu.conj().T)
+        _, Ud = np.linalg.eigh(Yd @ Yd.conj().T)
+        V = Uu.conj().T @ Ud
+        return float(np.imag(V[0, 1] * V[1, 2] * np.conj(V[0, 2]) * np.conj(V[1, 1])))
+    cmat = lambda: rng.normal(size=(3, 3)) + 1j * rng.normal(size=(3, 3))
+    for _ in range(20):
+        W = np.linalg.qr(cmat())[0]
+        U = W @ W.T
+        Yu, Yd = cmat(), cmat()
+        Yu, Yd = (Yu + U @ Yu.conj() @ U.T) / 2, (Yd + U @ Yd.conj() @ U.T) / 2
+        assert abs(jarlskog(Yu, Yd)) < 1e-12
+        Hu, Hd = cmat(), cmat()
+        Hu, Hd = Hu + Hu.conj().T, Hd + Hd.conj().T
+        assert abs(np.imag(np.linalg.det(Hu @ Hd))) < 1e-9 * abs(np.linalg.det(Hu @ Hd))
+    assert max(abs(jarlskog(*(lambda A, B: (A + A.conj().T, B + B.conj().T))(cmat(), cmat()))) for _ in range(20)) > 1e-3
+    J_data = 3.12e-5                                                            # PDG 2024, (3,12 +0,13 −0,12)·10⁻⁵
+    assert J_data > 1e-6
+    f = _yukawa_frame()
+    N, to_ops = _yukawa_space(f["LR"], seed=3)
+    Ms = to_ops(N @ rng.normal(size=N.shape[1]))
+    m = _yukawa_masses(0.8 * Ms[0] + 0.6 * Ms[3])
+    assert abs(m["u"] - m["d"]) < 1e-9
 
 
 def main():
