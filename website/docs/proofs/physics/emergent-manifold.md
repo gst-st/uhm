@@ -2,15 +2,15 @@
 sidebar_position: 2
 title: "Emergent Manifold M⁴"
 slug: /proofs/physics/emergent-manifold
-description: "Derivation of smooth 4-manifold M⁴ from categorical structure: background independence [P] → [C] (aperiodic clock, T-119 reconstruction)"
+description: "Derivation of smooth 4-manifold M⁴ from categorical structure: background independence [P] → [C] (T-119 reconstruction; the time factor T-118 is [T])"
 ---
 
 # Emergent Manifold M⁴
 
-:::info Status: [C] — conditional on an aperiodic clock (T-118) and on the reconstruction axioms left open by T-119
-**Background independence:** The 4-dimensional spacetime $M^4$ is **assembled** from the categorical structure $\mathcal{C}$ via the Gelfand–Naimark–Connes chain under two named conditions: an aperiodic clock (T-118) and the two Connes reconstruction axioms that T-119 leaves open (the first-order condition and Poincaré duality). The product of spectral triples $M^4 \times F_{\text{int}}$ is therefore a **conditional theorem** — no longer a postulate, not yet an unconditional result.
+:::info Status: [C] — conditional on the reconstruction axioms left open by T-119
+**Background independence:** The 4-dimensional spacetime $M^4$ is **assembled** from the categorical structure $\mathcal{C}$ via the Gelfand–Naimark–Connes chain under one named condition: the two Connes reconstruction axioms that T-119 leaves open (the first-order condition and Poincaré duality). The time factor is a theorem: $C_0(\mathbb{R})$ is the scaling limit of the reading algebras of the depth register (T-118 [T], [emergent time §11.4](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)). The product of spectral triples $M^4 \times F_{\text{int}}$ is therefore a **conditional theorem** — no longer a postulate, not yet an unconditional result.
 
-**New results:** T-117 – T-121 (5 theorems, 1 corollary): T-117 [T]; T-118 and T-119 [C]; T-120, its corollary T-120b and T-121 [C], inheriting both conditions. An earlier version of this box read "All [T]. No new postulates, hypotheses, or open questions are introduced" — retracted: the aperiodic clock is an assumption, two reconstruction axioms are open, and the KO-dimension-6 structure used in T-120 (Steps 6 and 8) does not exist on $\mathbb{C}^7$.
+**New results:** T-117 – T-121 (5 theorems, 1 corollary): T-117 and T-118 [T]; T-119 [C]; T-120, its corollary T-120b and T-121 [C], inheriting the condition of T-119. An earlier version of this box read "All [T]. No new postulates, hypotheses, or open questions are introduced" — retracted: two reconstruction axioms are open, and the KO-dimension-6 structure used in T-120 (Steps 6 and 8) does not exist on $\mathbb{C}^7$. An intermediate version of 2026-09-25 also listed an aperiodic clock as an assumption of T-118; the depth register discharges it.
 :::
 
 ---
@@ -31,17 +31,17 @@ The manifold $M^4$ was **borrowed** from classical differential geometry. (An ea
 
 ### 1.2 Solution Strategy
 
-The solution is a **5-step chain** of Gelfand–Naimark–Connes. Each step relies on existing results or standard mathematical theorems, and two steps carry named conditions — Step 2 an aperiodic clock (T-118), Steps 3–4 the two reconstruction axioms that T-119 leaves open:
+The solution is a **5-step chain** of Gelfand–Naimark–Connes. Each step relies on existing results or standard mathematical theorems, and Steps 3–4 carry a named condition, the two reconstruction axioms that T-119 leaves open (an intermediate version also named an aperiodic clock at Step 2; discharged by T-118):
 
 | Step | Content | Source |
 |------|---------|--------|
 | 1 | Composite algebra | Tensor product [T] |
-| 2 | Temporal C*-algebra | $\mathbb{C}[\mathbb{Z}_N] \to C(S^1)$ [T]; the step to $C_0(\mathbb{R})$ needs an aperiodic clock [C] (T-118) |
+| 2 | Temporal C*-algebra | $\mathbb{C}[\mathbb{Z}_N] \to C(S^1)$ for the summed O-clock; $C_0(\mathbb{R})$ as the scaling limit of the depth register (T-118 [T]) |
 | 3 | Spatial C*-algebra | Gelfand + Connes [standard mathematics]; applied to UHM in T-119 [C] |
 | 4 | Reconstruction | Connes (2008) [standard mathematics]; first-order condition and Poincaré duality open (T-119 [C]) |
-| 5 | Product | Steps 1–4; inherits both conditions (T-120 [C]) |
+| 5 | Product | Steps 1–4; inherits the condition of Steps 3–4 (T-120 [C]) |
 
-**No new axioms or postulates are introduced; two assumptions are** — an aperiodic clock (T-118) and the open reconstruction axioms of T-119. (An earlier line read "No new axioms, postulates, or hypotheses are introduced"; retracted.)
+**No new axioms or postulates are introduced; one assumption is** — the open reconstruction axioms of T-119. (An earlier line read "No new axioms, postulates, or hypotheses are introduced"; retracted. An intermediate version also listed an aperiodic clock; discharged by T-118.)
 
 ---
 
@@ -73,7 +73,7 @@ where $O^{(m)} = \mathbb{1} \otimes \cdots \otimes O \otimes \cdots \otimes \mat
 
 ### 2.3 Effective Clocks and the Temporal Algebra
 
-For $M$ holons with identical clocks the summed clock has $6M+1$ distinguishable readings and the fixed period $2\pi/\omega_0$ (see the [Emergent Time Theorem](/docs/proofs/dynamics/emergent-time#композитные-часы)); its algebra approaches $C(S^1)$ of fixed circumference as $M \to \infty$. An earlier version stated $N_{\text{eff}} = 7^M$ [T] and a clock algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$; retracted — $7^M$ is the dimension of the clock space, not the number of readings.
+For $M$ holons with identical clocks the summed clock has $6M+1$ distinguishable readings and the fixed period $2\pi/\omega_0$ (see the [Emergent Time Theorem](/docs/proofs/dynamics/emergent-time#композитные-часы)); its algebra approaches $C(S^1)$ of fixed circumference as $M \to \infty$. Read positionally — the $M$ O-registers as digits of one number, stepped by the odometer carry under a Feynman–Kitaev constraint — the same registers carry $7^M$ ordered readings without a period: the depth register ([emergent time §11.4](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)), whose algebra has the line as its scaling limit (T-118). An earlier version stated $N_{\text{eff}} = 7^M$ [T] and a clock algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$; retracted — $7^M$ is the dimension of the clock space, not the number of readings.
 
 ---
 
@@ -117,29 +117,19 @@ The exponential clustering condition $\|R\|_{\text{op}} < \Delta(L_0)$ is verifi
 
 ## 4. Theorem T-118: Emergent Temporal Manifold {#теорема-эмерджентное-время}
 
-:::tip Theorem T-118 (Emergent Temporal Manifold) [C under an aperiodic clock]
-The temporal part of $A_{\text{macro}}$ is isomorphic to $C_0(\mathbb{R})$ — the algebra of continuous functions vanishing at infinity.
+:::tip Theorem T-118 (Emergent Temporal Manifold) [T]
+The temporal part of $A_{\text{macro}}$ — the diagonal algebra $A_N \cong \mathbb{C}^{N+1}$ of the depth register, with readings $t_k = (k - m)\,\Delta t$ in a macroscopic unit — converges to $C_0(\mathbb{R})$, the algebra of continuous functions vanishing at infinity, in the scaling limit $\Delta t \to 0$, $m\,\Delta t \to \infty$, $(N - m)\,\Delta t \to \infty$: the reading sets converge to $\mathbb{R}$ in the pointed Hausdorff sense, and sampling is an injective isometric $*$-homomorphism $C_0(\mathbb{R}) \to \prod_N A_N/\bigoplus_N A_N$.
 :::
 
 **Proof.**
 
-**Step 1 (Composite clocks).** The summed clock of $M$ identical holons has $6M+1$ readings and period $2\pi/\omega_0$ ([Emergent Time](/docs/proofs/dynamics/emergent-time#композитные-часы)). An earlier step read "$N_{\text{eff}} = 7^M$ [T]"; retracted.
+**Step 1 (The register).** The depth register has $N+1$ orthonormal readings ordered as a chain; with $N + 1 = 7^M$ it is realised in the O-registers of $M$ holons read positionally, $n = \sum_m \tau_m 7^{m-1}$, under a Feynman–Kitaev constraint ([emergent time §11.4](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)). Relative to it the dissipative dynamics is the conditional dynamics exactly (Theorem 11.1 there), so its readings are the time of the dynamics, not only a label. The summed clock of $M$ identical holons, by contrast, has $6M+1$ readings and period $2\pi/\omega_0$ ([composite clocks](/docs/proofs/dynamics/emergent-time#композитные-часы)); an earlier step read "$N_{\text{eff}} = 7^M$ [T]" for the summed clock and is retracted.
 
-**Step 2 (Algebraic limit).** The clock algebra $\mathbb{C}[\mathbb{Z}_N]$ converges to $C(S^1)$ as C*-algebras as $N \to \infty$ [T] (ibid., §3.8); for the summed O-clock the $6M+1$ readings lie on one circle of fixed period, so the limit is $C(S^1)$ of fixed circumference (an earlier version wrote $\mathbb{C}[\mathbb{Z}_{7^M}]$; retracted). This is a standard result of group algebra theory: the Gelfand spectrum $\hat{\mathbb{Z}}_N = \mathbb{Z}_N \cong$ roots of unity $\subset S^1$, and in the limit $N \to \infty$ they are dense in $S^1$.
+**Step 2 (Scaling limit).** Theorem 11.5 of emergent time: the readings form a grid of mesh $\Delta t$ that eventually covers every $[-R, R]$; evaluation at the readings is a $*$-homomorphism $s_N: C_0(\mathbb{R}) \to A_N$, and $\|s_N f\| \geq \|f\|_\infty - \omega_f(\Delta t/2)$ by uniform continuity, so $\limsup_N \|s_N f\| = \|f\|_\infty$. $\blacksquare$
 
-**Step 3 (Decompactification).** $C(S^1) \to C_0(\mathbb{R})$ in the limit $M \to \infty$. Formally: the embedding $\mathbb{Z} \hookrightarrow \mathbb{R}$ in the continuous limit gives the dual map $\hat{\mathbb{R}} = \mathbb{R} \to S^1 = \hat{\mathbb{Z}}$. If the clock period $T$ grows without bound, $S^1$ unrolls into $\mathbb{R}$. Composite O-clocks do not provide this — their period stays $2\pi/\omega_0$ (an earlier version took $T = 7^M \cdot \delta\tau \to \infty$, retracted) — so an aperiodic clock is the assumption of T-118:
+**What changed.** An earlier Step 3 obtained $C_0(\mathbb{R})$ by "decompactification" $C(S^1_T) \to C_0(\mathbb{R})$ of a clock whose period $T$ grows without bound, and an intermediate version of 2026-09-25 kept this as the assumption of T-118, then [C], since composite O-clocks keep the period $2\pi/\omega_0$. The depth register supplies the unbounded clock: its readings are a chain of length $N \to \infty$, not a circle. With the origin at the first reading the same limit is $C_0([0, \infty))$ — the recorded time has a beginning — and $\mathbb{R}$ is the limit seen from readings far from both ends; T-120 uses the latter.
 
-$$
-C(S^1_T) \xrightarrow{T \to \infty} C_0(\mathbb{R})
-$$
-
-This is the standard Pontryagin construction: $C_0(\mathbb{R})$ is the inductive limit $\varinjlim_{T} C(S^1_T)$. $\blacksquare$
-
-**Dependencies:** Existing results [T] (emergent time, PW mechanism). Standard mathematics: Pontryagin duality.
-
-:::note Formalization of an existing result
-T-118 is conditional: the decompactification needs a clock whose period grows without bound, which the existing theory of time does not supply (composite O-clocks keep the period $2\pi/\omega_0$). An earlier sentence called it an explicit formulation of a result that already followed [T]; retracted.
-:::
+**Dependencies:** emergent time, Theorems 11.1 and 11.5 [T]; standard mathematics: Gelfand–Naimark.
 
 ---
 
@@ -315,7 +305,7 @@ The formulation of Connes' 2013 reconstruction theorem uses **seven** axioms. In
 
 ## 6. Theorem T-120: Product of Spectral Triples {#теорема-произведение-троек}
 
-:::tip Theorem T-120 (Product of Spectral Triples) [C at an aperiodic clock (T-118) and the open reconstruction axioms of T-119]
+:::tip Theorem T-120 (Product of Spectral Triples) [C at the open reconstruction axioms of T-119]
 In the thermodynamic limit, the effective spectral triple of the composite system factorizes:
 
 $$
@@ -325,11 +315,11 @@ $$
 where $M^4 = \mathbb{R} \times \Sigma^3$, and $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is the finite triple written down in T-53, without the KO-dimension-6 real structure (retracted, Step 6).
 :::
 
-**Status.** Until 2026-09-25 the heading read [T] while its own proof took the temporal factor from T-118 [C] and the spatial factor from T-119 [C]. A product is no stronger than its factors, so T-120 is [C] at both conditions: an aperiodic clock (T-118) and the first-order condition and Poincaré duality left open by T-119. The corollary T-120b and T-121 inherit them.
+**Status.** Until 2026-09-25 the heading read [T] while its own proof took the temporal factor from T-118 (then conditional) and the spatial factor from T-119 [C]. A product is no stronger than its factors, so T-120 is [C] at the first-order condition and Poincaré duality left open by T-119; the corollary T-120b and T-121 inherit this. (An intermediate version of the same day also carried an aperiodic clock as a condition via T-118; T-118 is now [T], and that condition is dropped.)
 
 **Proof.**
 
-**Step 1 (Temporal component).** $A_{\text{time}} \cong C_0(\mathbb{R})$ (T-118 [C], under an aperiodic clock).
+**Step 1 (Temporal component).** $A_{\text{time}} \cong C_0(\mathbb{R})$ as the scaling limit of the depth register (T-118 [T]).
 
 **Step 2 (Spatial component).** $A_{\text{space}} \cong C(\Sigma^3)$ (T-119 [C]).
 
@@ -406,10 +396,10 @@ Former note, retracted: the argument that KO-dim 6 plus the sign relations $J^2=
 
 **Former conclusion, retracted [✗]:** "the signature $(+1,-1,-1,-1)$ is uniquely determined by KO-dimension 6 (from the $G_2$-structure), the Page–Wootters constraint (from A5, T-87) and the sign convention $D_O > 0$; no degree of freedom remains". The first input does not exist, the second is conditional, and neither fixes a signature. **Status of the signature:** $(1,3)$ [C] at T-119 and reflection positivity (registry row T-53). $\blacksquare$ (for Steps 1–7)
 
-**Dependencies:** T-117 [T], T-118 [C], T-119 [C], T-53 [T]. Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
+**Dependencies:** T-117 [T], T-118 [T], T-119 [C], T-53 [T]. Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
 
 :::warning Compatibility with existing results
-The derived product of triples **coincides** with the one previously postulated for the spectral action (T-65 [T]). All results depending on T-65 ($G_N = 3\pi/(7f_2\Lambda^2)$, Einstein equations, $\Lambda_{\text{CC}}$) remain unchanged — only the justification changes: from [P] to [C] at T-118 and T-119 (an earlier version said "from [P] to [T]"; retracted with the status of T-120).
+The derived product of triples **coincides** with the one previously postulated for the spectral action (T-65 [T]). All results depending on T-65 ($G_N = 3\pi/(7f_2\Lambda^2)$, Einstein equations, $\Lambda_{\text{CC}}$) remain unchanged — only the justification changes: from [P] to [C] at T-119 (an earlier version said "from [P] to [T]"; retracted with the status of T-120).
 :::
 
 ---
@@ -424,7 +414,7 @@ Until 2026-09-25 the heading read [T]; gap 1 closes only as far as $M^4$ is a sm
 
 **Gap 1 (Discreteness vs. continuity): CLOSED.**
 
-$M^4$ is a smooth manifold (T-120 [C], at an aperiodic clock and the open reconstruction axioms of T-119). Under these conditions Lovelock's theorem (1971) applies directly to the effective 4D action on $M^4$.
+$M^4$ is a smooth manifold (T-120 [C], at the open reconstruction axioms of T-119). Under these conditions Lovelock's theorem (1971) applies directly to the effective 4D action on $M^4$.
 
 **Gap 2 (Covariance): CLOSED.**
 
@@ -485,16 +475,16 @@ $k=+1$ (closed) is compatible with data: $\Omega_k = 0.0007\pm0.0019$ (Planck 20
 | Result | Old Status | New Status | Reason |
 |--------|:---:|:---:|--------|
 | Commutativity of macro-algebra | — | **[T]** T-117 | Quantum CLT + clustering |
-| Temporal manifold | [T] (partial) | **[C]** T-118 (aperiodic clock assumed) | Explicit formalization |
+| Temporal manifold | [T] (partial) | **[T]** T-118 (scaling limit of the depth register) | Emergent time, Theorems 11.1 and 11.5 |
 | Spatial manifold | [P] | **[C]** T-119 (first-order condition, Poincaré duality open) | Gelfand + Connes |
-| Product of triples | [P] | **[C]** T-120 (inherits T-118, T-119) | T-117 + T-118 + T-119 |
+| Product of triples | [P] | **[C]** T-120 (inherits T-119) | T-117 + T-118 + T-119 |
 | Lovelock: gap 1 | open | **closed at T-120** T-121 | $M^4$ is smooth under the conditions of T-120 |
 | Lovelock: gap 2 | open | **closed** T-121 | Spectral-action covariance (c); the $G_2 \to SU(3) \to SO(3)$ leg (b) is retracted |
 | Compactification 6D → 4D | [P] | **retracted [✗]** | Rested on the axis-labelled decomposition (row 48a) |
-| Background independence | [P] | **[C]** | $M^4$ assembled at T-118 and T-119 |
-| Product $M^4 \times F_{\text{int}}$ "borrowed" | implicit assumption | **[C]** derived at T-118, T-119 | T-120 |
+| Background independence | [P] | **[C]** | $M^4$ assembled at T-119 |
+| Product $M^4 \times F_{\text{int}}$ "borrowed" | implicit assumption | **[C]** derived at T-119 | T-120 |
 
-Until 2026-09-25 the last five rows of the "new status" column read [T] (and "closed by T-120" for the compactification); corrected with the status of T-119 and T-120.
+The temporal row read [C] (aperiodic clock assumed) in an intermediate version of 2026-09-25 and is [T] since the depth register (emergent time §11.4). Until 2026-09-25 the last five rows of the "new status" column read [T] (and "closed by T-120" for the compactification); corrected with the status of T-119 and T-120.
 
 ---
 
@@ -504,9 +494,9 @@ Until 2026-09-25 the last five rows of the "new status" column read [T] (and "cl
 |---------------------|-----------|
 | Thermodynamic limit $M \to \infty$ | Standard mathematical limit, analogous to classical mechanics from QM. Corrections $O(7^{-M})$ are exponentially small. Not a new open question |
 | Specific topology of $\Sigma^3$ | Determined via $\Lambda_{\text{Gap}}$ and vacuum symmetry (T-120b, [C] at T-119) |
-| Aperiodic clock; first-order condition and Poincaré duality | **Open** — the named conditions of T-118 and T-119, inherited by T-120. An earlier version of this table listed no open question; corrected 2026-09-25 |
+| First-order condition and Poincaré duality | **Open** — the named conditions of T-119, inherited by T-120. An earlier version of this table listed no open question; corrected 2026-09-25. The aperiodic clock, listed here in an intermediate version, is supplied by the depth register (T-118) |
 | Non-perturbative partition function $Z_N \to Z$ | Was [P] **before** this work. Not related to background independence. Not a new question |
-| Smoothness of $M^4$ for finite $M$ | $M^4$ is defined in the limit. For finite $M$, geometry is "blurred" at the Planck scale — a **prediction**, not an open question |
+| Smoothness of $M^4$ for finite $M$ | $M^4$ is defined in the limit. For finite $M$, geometry is "blurred" at the Planck scale — a **prediction**, not an open question. For the time factor the finite-$M$ picture is exact: $7^M$ readings of chronon spacing (emergent time §11.4) |
 
 ---
 
@@ -518,7 +508,7 @@ The derived $M^4$ generates **exactly the same** product of spectral triples tha
 
 ### 11.2 Compatibility with Page–Wootters [T]
 
-The PW mechanism (A5) supplies the cyclic readings $\mathbb{Z}_7$; their continuum limit at fixed period is a circle, not $\mathbb{R}$. The line $\mathbb{R}$ of T-118 is the assumed aperiodic clock, not a limit of PW time. (An earlier version called the PW mechanism a special case of T-118 and $\mathbb{R}$ the continuous limit of $\mathbb{Z}_7$; retracted.)
+The PW mechanism (A5) supplies the cyclic readings $\mathbb{Z}_7$; their continuum limit at fixed period is a circle, not $\mathbb{R}$. The line $\mathbb{R}$ of T-118 is the scaling limit of the depth register — a Page–Wootters clock of Feynman–Kitaev type whose lowest digit is the O-tick — not a limit of the cyclic O-clock. (An earlier version called the PW mechanism a special case of T-118 and $\mathbb{R}$ the continuous limit of $\mathbb{Z}_7$; retracted.)
 
 ### 11.3 Compatibility with Sector Decomposition [T]
 
@@ -545,8 +535,8 @@ graph TD
     subgraph "Existing"
         T53["T-53: Spectral triple"]
         SEC["Complexified decomposition"]
-        NEFF["6M+1 readings, fixed period"]
-        CLIM["ℂ#91;ℤ_N#93; → C#40;S¹#41;"]
+        NEFF["Depth register: 7^M ordered readings"]
+        CLIM["Scaling limit → C₀#40;ℝ#41;"]
         PRIM["Primitivity of ℒ₀"]
         SPEC["Spectral action → EH"]
     end
@@ -589,13 +579,13 @@ graph TD
     LOV --> T121
 
     style T117 fill:#2d6,stroke:#000
-    style T118 fill:#fc3,stroke:#000
+    style T118 fill:#2d6,stroke:#000
     style T119 fill:#fc3,stroke:#000
     style T120 fill:#fc3,stroke:#000
     style T121 fill:#fc3,stroke:#000
 ```
 
-Green: [T] (T-117); amber: [C]. The chain has two conditional links — T-118 (aperiodic clock) and T-119 (first-order condition, Poincaré duality) — and T-120 and T-121 inherit both; the former node "KO-dim 6 → Lorentz" is removed (retracted, T-120 Step 6). An earlier caption read "All arrows lead from [T] or standard mathematics to [T]. The chain contains no [P], [H], or [C]"; retracted.
+Green: [T] (T-117, T-118); amber: [C]. The chain has one conditional link — T-119 (first-order condition, Poincaré duality) — and T-120 and T-121 inherit it (an intermediate version also had T-118 amber, at an aperiodic clock; the depth register makes it [T]); the former node "KO-dim 6 → Lorentz" is removed (retracted, T-120 Step 6). An earlier caption read "All arrows lead from [T] or standard mathematics to [T]. The chain contains no [P], [H], or [C]"; retracted.
 
 ---
 

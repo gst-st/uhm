@@ -11,7 +11,7 @@ This chapter is one of the most revolutionary in the Unitary Holonomic Monism. W
 UHM takes the next, radical step: **time does not exist as a background**. Time is not stage scenery but part of the performance. It *emerges* from the internal structure of reality, like a pattern appearing on fabric in a certain light.
 
 :::info DRY: Master definition of temporal structure
-The **cyclic clock** $\tau \in \mathbb{Z}_7$ is derived from the structure of the [subobject classifier Ω](/docs/core/foundations/axiom-omega), not postulated. The dissipative dynamics and the arrow run in an aperiodic parameter $t$ that this clock does not supply; they hold on that assumption (T-53b, [C]). The full proof and the constructions are in the [Theorem on Emergent Time](/docs/proofs/dynamics/emergent-time).
+The **cyclic clock** $\tau \in \mathbb{Z}_7$ is derived from the structure of the [subobject classifier Ω](/docs/core/foundations/axiom-omega), not postulated. The dissipative dynamics and the arrow run in an aperiodic parameter $t$ that this clock does not supply. Its carrier is the **depth register** — the stratal depth recorded as an ordered chain of readings, built positionally from the O-registers of several holons — relative to which the dissipative dynamics is the conditional dynamics exactly and the arrow holds on the whole recorded history (T-53b, [T]). The full proof and the constructions are in the [Theorem on Emergent Time](/docs/proofs/dynamics/emergent-time).
 :::
 
 ---
@@ -221,8 +221,8 @@ where $p(\tau) = \mathrm{Tr}[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}_{6D}
 
 Intuitively: we project the total state onto a "slice" at a specific clock reading $\tau$. Each slice is the coherence matrix $\Gamma(\tau)$ of the six-dimensional subsystem. The collection of slices is a "film" assembled from "frames".
 
-:::warning Theorem T-53b (Emergent dynamics) [C under an aperiodic time parameter]
-In an aperiodic time parameter $t$ — the parameter of the Lindblad semigroup, whose physical carrier is not the O-clock — the state evolves according to the full UHM equation:
+:::warning Theorem T-53b (Emergent dynamics) [T]
+In an aperiodic time parameter $t$ — the parameter of the Lindblad semigroup, whose physical carrier is not the O-clock but the depth register — the state evolves according to the full UHM equation:
 
 $$
 \frac{d\Gamma(t)}{dt} = -i[H_{\text{eff}}, \Gamma(t)] + \mathcal{D}[\Gamma(t)] + \mathcal{R}[\Gamma(t), E]
@@ -230,11 +230,13 @@ $$
 
 where $H_{\text{eff}} = H_{6D} + \langle\tau| H_{\text{int}} |\tau\rangle_O$ is the effective Hamiltonian (exact for $H_{\text{int}} = 0$, the leading term otherwise), $\mathcal{D}$ is the [Fano dissipator](/docs/core/operators/lindblad-operators), and $\mathcal{R}$ is the [regenerator](/docs/core/dynamics/evolution#вывод-формы-регенерации). In the Page–Wootters tick $\tau \in \mathbb{Z}_7$ itself the conditional states change by a unitary step between ticks (for $H_{\text{int}} = 0$).
 
-An earlier version stated, as [T], that the conditional states $\Gamma(\tau)$ obey this full equation in the tick $\tau$, with all three components of the triadic decomposition emerging "automatically" from the PW constraint. That is retracted: relative to a clock of period seven ticks any dynamics is periodic, and a Lyapunov functional that is non-increasing and periodic is constant (Chataignier, Höhn, Lock, Mele 2026), while the Page–Wootters construction yields no dissipator.
-[Proof →](/docs/proofs/dynamics/emergent-time#9-следствия) | Status: **[C]**, assumption named: an aperiodic time parameter
+**The carrier.** Record the depth $n \in \{0, \ldots, N\}$ in a register whose readings form a chain, not a cycle (positionally, in the O-registers of $\lceil\log_7(N+1)\rceil$ holons), add two holons as environment and take a constraint of Feynman–Kitaev type. For every initial state the conditional state at reading $n$ is then **exactly** $e^{n\Delta t\,\mathcal{L}_0}\rho_0$, with one state-independent constraint, in a world of dimension $343(N+1)$; the relative entropy to $I/7$ does not grow and the purity falls strictly along all $N+1$ readings. Each solution of the full equation, regenerator included, is reproduced exactly at every reading by a constraint fitted to that solution. Between readings the error is at most $\Delta t\,\|\mathcal{L}\|_{1\to1}$, and the continuous $t$ is the scaling limit of the readings ([§11.4 of the proof](/docs/proofs/dynamics/emergent-time#114-регистр-глубины), Theorems 11.1–11.5).
+
+An earlier version stated, as [T], that the conditional states $\Gamma(\tau)$ obey this full equation in the O-tick $\tau$, with all three components of the triadic decomposition emerging "automatically" from the PW constraint. That is retracted: relative to a clock of period seven ticks any dynamics is periodic, and a Lyapunov functional that is non-increasing and periodic is constant (Chataignier, Höhn, Lock, Mele 2026), while the Page–Wootters construction yields no dissipator. An intermediate version of 2026-09-25 then held the theorem [C] at an assumed aperiodic time parameter; the depth register discharges that assumption.
+[Proof →](/docs/proofs/dynamics/emergent-time#114-регистр-глубины) | Status: **[T]** relative to the depth register; that the world's timeless state is of the constructed kind is the constraint assumption of A5, as for every Page–Wootters statement
 :::
 
-The dissipator and the regenerator are therefore postulated dynamics in $t$; what the Page–Wootters mechanism yields is the unitary part (see the [retraction box in §9.1](/docs/proofs/dynamics/emergent-time#9-следствия)).
+Relative to the O-clock alone the Page–Wootters mechanism yields only the unitary part (see the [retraction box in §9.1](/docs/proofs/dynamics/emergent-time#9-следствия)); the dissipator and the regenerator become conditional dynamics relative to the depth register.
 
 :::warning Status of the tensor structure
 The decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$ is formally **Axiom 5**. Its clock factor is built from the spectral triple T-53: the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 isolates the clock summand, and the tensor factor $\mathcal{H}_O \cong \mathbb{C}[\mathbb{Z}_7]$ is the regular representation of the shift $\triangleright$ (T-87, step 3) — a direct sum is not a tensor product, so the factorisation is built from the clock register rather than read off the algebra. The constraint half of A5 is not derived: it is the assumption $\mathrm{supp}\,\Gamma_{total} \subseteq \ker\hat{C}$ (T-87, step 4, [C]). An earlier version of this box called A5 derivable from A1–A4 with status [T]; that is retracted. Details: [derivation of A5](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки).
@@ -267,7 +269,7 @@ $$
 Here $\mathbb{C}[\mathbb{Z}_N]$ is the group algebra of the cyclic group of $N$ elements (discrete clock with $N$ divisions), and $C(S^1)$ is the algebra of continuous functions on the circle (continuous clock). As $N \to \infty$ a discrete dial with $N$ divisions becomes continuous.
 
 :::info How continuous time arises
-An individual Holon has 7 "ticks". A composite system of $M$ Holons with identical clocks has a summed clock generator with spectrum $\{0, 1, \ldots, 6M\}$: $6M+1$ distinguishable readings, period $2\pi/\omega_0$ unchanged, resolution $2\pi/((6M+1)\omega_0)$. For $M = 10$ that is 61 readings. As $M \to \infty$ the readings become dense in a circle of fixed circumference; a line $\mathbb{R}$ is not obtained this way.
+An individual Holon has 7 "ticks". A composite system of $M$ Holons with identical clocks has a summed clock generator with spectrum $\{0, 1, \ldots, 6M\}$: $6M+1$ distinguishable readings, period $2\pi/\omega_0$ unchanged, resolution $2\pi/((6M+1)\omega_0)$. For $M = 10$ that is 61 readings. As $M \to \infty$ the readings become dense in a circle of fixed circumference; a line $\mathbb{R}$ is not obtained this way. The same $M$ O-registers used as the digits of one number — a positional register with the odometer step, not a summed generator — have $7^M$ ordered readings and no period, and their scaling limit is the line $\mathbb{R}$ (T-118, [proof §11.4](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)).
 
 **Retracted.** An earlier version of this box gave $N_{\text{eff}} = 7^M$ ticks ($\approx 3 \times 10^8$ for $M = 10$) and an approximation error $O(7^{-M})$ for $M$ independent Holons. The dimension $7^M$ of the tensor product of clock spaces is not the number of readings: the summed generator has only $6M+1$ distinct eigenvalues ([composite clocks](/docs/proofs/dynamics/emergent-time#композитные-часы)); $7^M$ readings would need clock frequencies in the ratio $1 : 7 : 7^2 : \cdots$.
 :::
@@ -287,7 +289,7 @@ The arrow of time arises as the **collapse of strata** of the ∞-topos to the t
 2. **Monotonicity:** $\dim(\mathcal{C}_n) \geq \dim(\mathcal{C}_{n-1})$ — complexity does not increase
 3. **CPTP structure** [H]: that orientation toward $T$ entails the CPTP property of evolution, rather than presupposing it, is an open hypothesis ([§7.1](/docs/proofs/dynamics/emergent-time#7-теорема-о-стреле-времени)); an earlier version listed it as a consequence, which is retracted
 
-The monotonicity holds in the parameter $t$ of the dissipative semigroup, not in the Page–Wootters tick; for the unital part the von Neumann entropy grows, for the full flow the free energy is the Lyapunov functional (Theorem 10.1 of the proof page).
+The monotonicity holds in the parameter $t$ of the dissipative semigroup — carried by the depth register, along whose readings it holds exactly (T-53b) — not in the Page–Wootters tick; for the unital part the von Neumann entropy grows, for the full flow the free energy is the Lyapunov functional (Theorem 10.1 of the proof page).
 [Proof →](/docs/proofs/dynamics/emergent-time#7-теорема-о-стреле-времени) | Status: **[T]** for items 1–2, **[H]** for item 3
 :::
 
@@ -386,7 +388,7 @@ For neural systems $\omega_0$ is related to the characteristic frequency of neur
 
 2. **Three constructions — one cyclic clock.** The Page–Wootters, information-geometric and categorical constructions yield an equivalent cyclic clock [T]; the stratificational construction is a monotone depth over it, not a fourth copy (T-53a, narrowed).
 
-3. **Time is fundamentally discrete.** The Holon has 7 "moments". For composite systems the readings become dense in a circle of fixed period; an aperiodic time $\mathbb{R}$ is not obtained from the O-clocks and is assumed by the dynamics (T-53b, [C]).
+3. **Time is fundamentally discrete.** The Holon has 7 "moments". For composite systems the summed readings become dense in a circle of fixed period. An aperiodic time comes from the depth register — the O-registers of several holons read as the digits of one number: its readings form a chain, the dynamics relative to it is dissipative exactly, and its scaling limit is the line $\mathbb{R}$ (T-53b, T-118, [T]).
 
 4. **The arrow of time is the collapse of strata.** It arises from the irreversibility of coarsening, monotone in the parameter $t$ of the dissipative semigroup, not in the cyclic tick.
 
