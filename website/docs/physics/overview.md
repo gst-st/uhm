@@ -413,7 +413,7 @@ Spectral triple T-53 [T] + NCG curvature → exact identification Gap$(i,j) = \|
 :::tip Theorem: Topological protection of the Gap vacuum [T]+[C at (SV)] (T-69, stratified 2026-09-25: $\pi_2$ exact, barrier from the (SV) Hessian)
 **Details:** [Composite Systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита)
 
-$\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ + positive-definite Hessian (T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) + compactness $(S^1)^{21}$ → the vacuum is separated from configurations with $\text{Gap} = 0$ by a finite energy barrier $\geq 6\mu^2$.
+$\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ + positive-definite Hessian (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) + compactness $(S^1)^{21}$ → the vacuum is separated from configurations with $\text{Gap} = 0$ by a finite energy barrier $\geq 6\mu^2$.
 
 **See:** [Composite Systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) | [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics)
 :::

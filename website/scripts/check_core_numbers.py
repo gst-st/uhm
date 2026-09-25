@@ -58,7 +58,10 @@ PT-нечётных 3; среднее V₃ страницы по Γ_oct — но
 (𝒜(R) ≤ 672/343), `symmetric_vacuum_hessian_and_the_associator_coupling` (−48/7, 48/7, −96/7;
 спектр 𝒬 — 48, 0¹², −24⁸), `colour_invariant_sector_is_solved_in_closed_form` и
 `g2_invariant_vacuum_is_symmetric_or_colour_invariant_with_gap` (I/7 при малом κ, орбита S⁶ со
-стабилизатором SU(3) и 𝒢 > 0 при большом; κ₁ = 0,0787μ²), `real_twirl_inequality_holds_in_its_proven_cases_and_on_samples`.
+стабилизатором SU(3) и 𝒢 > 0 при большом; κ₁ = 0,0787μ²), `real_twirl_inequality_holds_in_its_proven_cases_and_on_samples`;
+`real_twirl_inequality_is_a_sum_of_positive_forms` ((ВУ) доказано: дефект = Σ p_m Q_{u_m}(R − 𝒯R), Q_u ≥ 0),
+`colour_sector_transitions_and_the_bound_on_mean_coherence` (λ* = 12,93μ², скачок ранг 7 → ранг 4 при κ₂;
+ε̄ < √5/40) и `derived_sources_give_no_associator_cubic` (спектральное действие и функции спектра дают κ = 0).
 
 
 Три — за восстановлением T-53b и T-118 (эмерджентное время §11.4, 25.09.2026):
@@ -4417,6 +4420,137 @@ def test_fermion_space_is_weyl_spinor_times_one_generation():
     suL = [internal(x) for x in e["suL"]]
     assert np.linalg.matrix_rank(np.array([x.flatten() for x in f["rot"] + suL]), tol=1e-9) == 6
     assert max(np.abs(a @ b - b @ a).max() for a in f["rot"] for b in suL) < 1e-12
+
+
+# ── (ВУ) доказано; κ и фазовая картина сектора (25.09.2026, вторая волна) ──────────────────
+
+def _cal_a3(X, Y, Z):
+    """Симметричная трилинейная форма 𝒜(X, Y, Z), 𝒜(R, R, R) = 𝒜(R)."""
+    A = _assoc4()
+    return float(np.real(np.einsum('ijkl,ia,jb,kc,abcl->', A, X, Y, Z, A, optimize=True)))
+
+
+def _twirl_real(R, v=O_AXIS):
+    """𝒯_ŵ на вещественных симметричных: проекция на span{ŵŵᵀ, P}."""
+    e = np.eye(7)[v]
+    r = float(e @ R @ e)
+    return r * np.outer(e, e) + (np.trace(R) - r) / 6 * (np.eye(7) - np.outer(e, e))
+
+
+def _q_twirl(u, Y):
+    """Q_u(Y) = −2𝒜(𝒯(uuᵀ), Y, Y) − 𝒜(uuᵀ, Y, Y)."""
+    uu = np.outer(u, u)
+    return -2 * _cal_a3(_twirl_real(uu), Y, Y) - _cal_a3(uu, Y, Y)
+
+
+def test_real_twirl_inequality_is_a_sum_of_positive_forms():
+    """Лемма 3 (ВУ) [Т]: 8rt² + (16/9)t³ − 𝒜(R) = Σ_m p_m Q_{u_m}(R − 𝒯R), и Q_u ≥ 0 на W (26 измерений).
+
+    Спектр Q_u при u = c·ŵ + s·d (метрика Фробениуса): 16s²/3 десять раз и корни
+    9λ² − (216c² + 96s²)λ + 768c²s² + 160s⁴ (раз), 9λ² − (216c² + 144s²)λ + 2016c²s² + 368s⁴ (четыре),
+    9λ² − (216c² + 144s²)λ + 2304c²s² + 320s⁴ (три). При s = 0: 0 восемнадцать раз и 24 восемь.
+    """
+    rng = np.random.default_rng(377)
+    e = np.eye(7)[O_AXIS]
+    for _ in range(40):
+        k = rng.integers(1, 8)
+        W = rng.normal(size=(7, k))
+        R = W @ W.T / np.trace(W @ W.T)
+        r = R[O_AXIS, O_AXIS]
+        p, U = np.linalg.eigh(R)
+        D = R - _twirl_real(R)
+        rhs = sum(p[m] * _q_twirl(U[:, m], D) for m in range(7))
+        assert abs(8 * r * (1 - r) ** 2 + 16 / 9 * (1 - r) ** 3 - _cal_a(R) - rhs) < 1e-12
+    inv = [np.outer(e, e), (np.eye(7) - np.outer(e, e)) / np.sqrt(6)]
+    Wb = []
+    for i in range(7):
+        for j in range(i, 7):
+            F = np.zeros((7, 7))
+            F[i, j] = F[j, i] = 1
+            F = F - sum(np.sum(F * I) * I for I in inv)
+            for G in Wb:
+                F = F - np.sum(F * G) * G
+            if np.linalg.norm(F) > 1e-9:
+                Wb.append(F / np.linalg.norm(F))
+    assert len(Wb) == 26
+    d = np.eye(7)[0]
+    for th in (0.0, 0.2, 0.7, 1.2, np.pi / 2):
+        c, s = np.cos(th), np.sin(th)
+        u = c * e + s * d
+        K = np.array([[0.5 * (_q_twirl(u, A + B) - _q_twirl(u, A) - _q_twirl(u, B)) for B in Wb] for A in Wb])
+        ev = np.linalg.eigvalsh(K)
+        c2, s2 = c * c, s * s
+        pred = [16 * s2 / 3] * 10
+        for b1, b0, mult in ((216 * c2 + 96 * s2, 768 * c2 * s2 + 160 * s2 * s2, 1),
+                             (216 * c2 + 144 * s2, 2016 * c2 * s2 + 368 * s2 * s2, 4),
+                             (216 * c2 + 144 * s2, 2304 * c2 * s2 + 320 * s2 * s2, 3)):
+            disc = b1 * b1 - 36 * b0
+            assert disc >= 0 and b0 >= 0
+            pred += [(b1 - np.sqrt(disc)) / 18, (b1 + np.sqrt(disc)) / 18] * mult
+        assert np.max(np.abs(np.sort(ev) - np.sort(pred))) < 1e-10 and ev.min() > -1e-12
+        assert (ev.min() > 1e-3) == (s > 1e-9)
+    assert sum(abs(x) < 1e-9 for x in ev) == 0
+    K0 = np.array([[0.5 * (_q_twirl(e, A + B) - _q_twirl(e, A) - _q_twirl(e, B)) for B in Wb] for A in Wb])
+    ev0 = np.linalg.eigvalsh(K0)
+    assert np.allclose(ev0, [0] * 18 + [24] * 8, atol=1e-10)
+
+
+def test_colour_sector_transitions_and_the_bound_on_mean_coherence():
+    """T-64(d, e, g) и следствие (ii): λ* = 12,93μ², κ₂(20μ²) = 0,1854μ²; ε̄ < (1/4 − μ²/384κ)/(2√5) < √5/40.
+
+    Секторный потенциал f(s, x) = (3/2)x + (9/4)λ₄x² − κ[48s³ + 72(1−3s)(s² + x)], x = d² ∈ [0, s²], s ≤ 1/3.
+    Ниже λ* переход один — первого рода в ранг 4; выше — непрерывный в ранг 7 при 7μ²/48 и скачок
+    ранг 7 → ранг 4 при κ₂(λ₄).
+    """
+    from scipy.optimize import brentq, minimize_scalar
+    S = np.linspace(0, 1 / 3, 20001)
+
+    def sector_min(kap, lam):
+        A = 72 * kap * (1 - 3 * S) - 1.5
+        x = np.clip(A / (4.5 * lam), 0, S ** 2) if lam > 0 else np.where(A > 0, S ** 2, 0.0)
+        f = 1.5 * x + 2.25 * lam * x * x - kap * (48 * S ** 3 + 72 * (1 - 3 * S) * (S ** 2 + x))
+        i = int(np.argmin(f))
+        return f[i], S[i], x[i]
+
+    def f4min(kap, lam):
+        g = lambda s: (1.5 - 144 * kap) * s * s + 384 * kap * s ** 3 + 2.25 * lam * s ** 4
+        return minimize_scalar(g, bounds=(0, 1 / 3), method='bounded', options={'xatol': 1e-13}).fun
+
+    lstar = brentq(lambda l: f4min(7 / 48, l) + 672 * (7 / 48) / 343, 5, 20, xtol=1e-10)
+    assert abs(lstar - 12.93) < 5e-3
+    for lam, k1 in ((0, 0.0787), (1, 0.0842), (5, 0.1054)):
+        assert abs(brentq(lambda k: f4min(k, lam) + 672 * k / 343, 0.03, 0.146) - k1) < 5e-4
+    _, s, x = sector_min(0.17, 20.0)                     # ранг 7: 0 < d² < s²
+    assert 1e-4 < x < s * s - 1e-4
+    _, s, x = sector_min(0.20, 20.0)                     # ранг 4: d² = s²
+    assert abs(x - s * s) < 1e-12
+    for kap, lam in itertools.product((0.08, 0.12, 0.2, 0.5, 2.0, 10.0), (0.0, 1.0, 13.0, 20.0, 100.0)):
+        _, s, x = sector_min(kap, lam)
+        eps = np.sqrt(x) / (2 * np.sqrt(5))
+        assert eps <= max(0.0, 0.25 - 1 / (384 * kap)) / (2 * np.sqrt(5)) + 1e-4 and eps < np.sqrt(5) / 40
+
+
+def test_derived_sources_give_no_associator_cubic():
+    """T-331(e) [Т]: функции внедиагональных элементов и функции спектра не несут −κ𝒜 — κ = 0.
+
+    Две диагональные координатные тройки (на линии Фано и вне) имеют один спектр и одни
+    (нулевые) внедиагональные элементы, а 𝒜 на них — 0 и 24/27. Кубики G₂-ковариантного
+    диссипатора не лежат в оболочке {1, TrΓ², TrΓ³, 𝒜}.
+    """
+    on, off = np.zeros((7, 7)), np.zeros((7, 7))
+    on[[0, 1, 3], [0, 1, 3]] = 1 / 3
+    off[[0, 1, 2], [0, 1, 2]] = 1 / 3
+    assert abs(_cal_a(on)) < 1e-14 and abs(_cal_a(off) - 24 / 27) < 1e-12
+    rng = np.random.default_rng(378)
+    Aa = [PHI3[a] / np.sqrt(6) for a in range(7)]
+    dg2 = lambda G: sum(A @ G @ A.T for A in Aa) - G
+    Gs = [random_state(rng) for _ in range(60)]
+    base = np.array([[1.0, np.trace(G @ G).real, np.trace(G @ G @ G).real, _cal_a(G)] for G in Gs])
+    for f in (lambda G: np.trace(G @ G @ dg2(G)).real, lambda G: np.trace(G @ dg2(G) @ dg2(G)).real,
+              lambda G: np.trace(dg2(G) @ dg2(G) @ dg2(G)).real):
+        y = np.array([f(G) for G in Gs])
+        coef = np.linalg.lstsq(base, y, rcond=None)[0]
+        assert np.max(np.abs(base @ coef - y)) > 1e-3
 
 
 def main():

@@ -609,7 +609,7 @@ For a rigorous derivation one needs: (1) to formalize the projection of $S_{\mat
 
 ### Setup
 
-The Gap vacuum ([T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) is dynamically stable (positive-definite Hessian). This section establishes **topological** protection — the impossibility of continuously deforming the vacuum into a configuration with $\mathrm{Gap} = 0$ without passing through a phase transition.
+The Gap vacuum ([T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) is dynamically stable (positive-definite Hessian). This section establishes **topological** protection — the impossibility of continuously deforming the vacuum into a configuration with $\mathrm{Gap} = 0$ without passing through a phase transition.
 
 #### Theorem 11.1 / T-69 (Topological Protection of the Gap Vacuum) [T]+[C at (SV)] {#теорема-тополог-защита}
 
@@ -617,7 +617,7 @@ The Gap vacuum ([T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорем
 
 :::tip Theorem 11.1
 
-**Statement.** The Gap vacuum (T-61 [T]+[C at (RT)] (vacuum unique up to $G_2$ for the corrected potential; sector values: hypothesis (SV))) is topologically protected: any continuous path from the vacuum configuration to a configuration with $\mathrm{Gap}(i,j) = 0$ for some pair $(i,j)$ must pass through a transition point with an energy barrier $\Delta V \geq 6\mu^2 > 0$.
+**Statement.** The Gap vacuum (T-61 [T] (vacuum unique up to $G_2$ for the corrected potential; sector values: hypothesis (SV))) is topologically protected: any continuous path from the vacuum configuration to a configuration with $\mathrm{Gap}(i,j) = 0$ for some pair $(i,j)$ must pass through a transition point with an energy barrier $\Delta V \geq 6\mu^2 > 0$.
 :::
 
 **Proof (6 steps).**
@@ -632,11 +632,11 @@ $$
 
 Gap configurations of maximal rank are topologically classified by winding numbers $(n_1, n_2) \in \mathbb{Z}^2$.
 
-**Step 3 (Vacuum in the trivial sector).** The vacuum ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]+[C at (RT)] (vacuum unique up to $G_2$ for the corrected potential; sector values: hypothesis (SV))) is a $G_2$-invariant point with sector parameterization $\boldsymbol{\varepsilon} = (\varepsilon_{O3}, \varepsilon_{O\bar{3}}, \varepsilon_{33}, \varepsilon_{\bar{3}\bar{3}}, \varepsilon_{3\bar{3}})$ [T] ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)). From $G_2$-invariance: the vacuum lies in the trivial topological sector $(n_1, n_2) = (0, 0)$.
+**Step 3 (Vacuum in the trivial sector).** The vacuum ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T] (vacuum unique up to $G_2$ for the corrected potential; sector values: hypothesis (SV))) is a $G_2$-invariant point with sector parameterization $\boldsymbol{\varepsilon} = (\varepsilon_{O3}, \varepsilon_{O\bar{3}}, \varepsilon_{33}, \varepsilon_{\bar{3}\bar{3}}, \varepsilon_{3\bar{3}})$ [T] ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)). From $G_2$-invariance: the vacuum lies in the trivial topological sector $(n_1, n_2) = (0, 0)$.
 
 **Step 4 (Energy barrier).** To transition to a configuration with $\mathrm{Gap}(i,j) = 0$ (for some pair), the stabilizer rank must change: $T^2 \to H$ (with $\dim H > 2$). This requires passing through a critical point of the potential $V_{\mathrm{Gap}}$.
 
-From T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)), the Hessian at the vacuum is strictly positive-definite. Minimum eigenvalue:
+From T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)), the Hessian at the vacuum is strictly positive-definite. Minimum eigenvalue:
 
 $$
 \lambda_{\min}(H_{\mathrm{Gap}}) = 6\mu^2(1 + O(\varepsilon^2)) > 0
@@ -660,7 +660,7 @@ $$
 \Delta V_{Oi} = 12\mu^2 \cdot |\Delta\varepsilon_{Oi}|^2 \geq 12\mu^2 \varepsilon_0^2
 $$
 
-**Step 6 (Compactness).** The configuration space $(S^1)^{21}$ is compact. Uniqueness of the global minimum (T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) + positive-definiteness of the Hessian $\to$ the vacuum is separated from any configuration with zero Gap by a finite energy barrier. $\blacksquare$
+**Step 6 (Compactness).** The configuration space $(S^1)^{21}$ is compact. Uniqueness of the global minimum (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) + positive-definiteness of the Hessian $\to$ the vacuum is separated from any configuration with zero Gap by a finite energy barrier. $\blacksquare$
 
 ### Physical Significance
 
@@ -671,7 +671,7 @@ $$
 | Topological solitons | $(n_1, n_2) \neq (0,0)$ | Stable by virtue of $\pi_2(G_2/T^2) = \mathbb{Z}^2$ |
 
 :::info Corollary
-The stability of all physical predictions (masses, coupling constants) is **justified conditional on (SV)**: the vacuum is stable both dynamically (T-64 [T]+[C at (RT)] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) and topologically (T-69 [C at (SV)]).
+The stability of all physical predictions (masses, coupling constants) is **justified conditional on (SV)**: the vacuum is stable both dynamically (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) and topologically (T-69 [C at (SV)]).
 :::
 
 ---
