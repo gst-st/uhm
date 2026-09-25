@@ -34,6 +34,12 @@ R = 1/(7P) не обращается в нуль.
 `coupled_holons_can_have_a_product_stationary_state` (связь, коммутирующая с ρ₁*⊗ρ₂*,
 оставляет стационарным произведение, I = 0; локальная связь сдвигает маргиналь без корреляции).
 
+Четыре — за выводом 3+1 взамен отозванного (теорема 48c, 25.09.2026):
+`colour_commuting_spacetime_is_h2_of_the_clock_complex` (неподвижная часть h₂(𝕆) под SU(3)_C —
+h₂(ℂ_O), сигнатура (1,3), централизатор 𝔰𝔬(1,3) ⊕ 𝔲(1)), `no_rotation_of_the_seven_axes_commutes_with_colour`
+(запрет для осей и ассоциативных плоскостей), `octonionic_spinor_is_lepton_plus_quark_weyl` и
+`every_non_o_axis_is_half_triplet_and_colour_moves_any_axis_to_any` (что верно вместо 45b и (SA)).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -1050,6 +1056,195 @@ def test_coupled_holons_can_have_a_product_stationary_state():
     Hg *= 0.3 / np.linalg.norm(Hg, 2)
     X = rk4(lambda X: rhs(X, Hg), sigma.astype(complex), 24)
     assert np.linalg.norm(rhs(X, Hg)) < 1e-8 and mutual(X) > 1e-3                    # (в) I > 0
+
+
+def _nullspace(M, tol=1e-9):
+    _, s, vt = np.linalg.svd(M)
+    return vt[np.sum(s > tol):]
+
+
+def _oconj(x):
+    y = -x.copy()
+    y[0] = x[0]
+    return y
+
+
+def _h2_of_o():
+    """Спин-фактор h₂(𝕆): X = [[a, x], [x̄, b]], координаты (a, b, x₀…x₇); форма — det X = ab − |x|²."""
+    Gm = np.zeros((10, 10))
+    Gm[0, 1] = Gm[1, 0] = 0.5
+    Gm[2:, 2:] = -np.eye(8)
+    to_m = lambda v: [[v[0] * unit(0), v[2:]], [_oconj(v[2:]), v[1] * unit(0)]]
+    from_m = lambda P: np.concatenate([[P[0][0][0], P[1][1][0]], P[0][1]])
+    su3 = []
+    for X in _su3_of_e_o():
+        Y = np.zeros((10, 10))
+        Y[3:, 3:] = X
+        su3.append(Y)
+    return Gm, to_m, from_m, su3
+
+
+def _clock_complex_matrix(Mc):
+    """Комплексная 2×2 матрица, записанная в ℂ_O = ℝ1 ⊕ ℝe_O: i ↦ e_O = e₇."""
+    z = lambda c: c.real * unit(0) + c.imag * unit(7)
+    return [[z(Mc[0, 0]), z(Mc[0, 1])], [z(Mc[1, 0]), z(Mc[1, 1])]]
+
+
+def _omatmul(P, Q):
+    return [[omul(P[i][0], Q[0][j]) + omul(P[i][1], Q[1][j]) for j in range(2)] for i in range(2)]
+
+
+def test_colour_commuting_spacetime_is_h2_of_the_clock_complex():
+    """Теорема 48c: пространство-время, коммутирующее с цветом, — h₂(ℂ_O) сигнатуры (1,3).
+
+    (a) 𝕆^{SU(3)} = ℂ_O = span{1, e_O}; комплексные структуры на ℝ⁶, коммутирующие с 𝔰𝔲(3), — ±L_{e_O}.
+    (b) h₂(𝕆) ≅ ℝ^{1,9}; его SU(3)-неподвижная часть — h₂(ℂ_O), размерность 4, сигнатура det — (1,3).
+    (c) централизатор 𝔰𝔲(3) в 𝔰𝔬(1,9) — размерность 7 = 6 + 1, производная алгебра шестимерна,
+        форма Киллинга (3,3), т. е. 𝔰𝔬(1,3) ⊕ 𝔲(1); компактная часть четырёхмерна (𝔰𝔬(3) ⊕ 𝔲(1))
+        и неподвижна у неё ровно одна прямая — единица 1₂ (время).
+    (d) SL(2,ℂ_O): X ↦ MXM† корректна (скобки не важны), сохраняет det, на h₂(ℂ_O) — собственная
+        ортохронная Лоренца, на цветовом дополнении W ≅ ℂ³ тождественна и коммутирует с SU(3).
+    Свидетель вывода 25.09.2026 взамен отозванного «3+1 из 7 = 1 ⊕ 3 ⊕ 3̄» (аудит A-31, A-33).
+    """
+    su3_8 = []
+    for X in _su3_of_e_o():
+        Y = np.zeros((8, 8))
+        Y[1:, 1:] = X
+        su3_8.append(Y)
+    fixed = _nullspace(np.vstack(su3_8))
+    assert fixed.shape[0] == 2 and np.allclose(fixed[:, 1:7], 0)                                     # (a) ℂ_O
+    six = [X[:6, :6] for X in _su3_of_e_o()]
+    comm = np.vstack([np.kron(X.T, np.eye(6)) - np.kron(np.eye(6), X) for X in six])
+    cm = [v.reshape(6, 6, order="F") for v in _nullspace(comm)]
+    Lo = np.array([omul(unit(7), unit(i + 1))[1:] for i in range(7)]).T[:6, :6]
+    assert len(cm) == 2 and all(np.linalg.matrix_rank(np.array([np.eye(6).ravel(), Lo.ravel(), c.ravel()]), tol=1e-9) == 2 for c in cm)
+    Gm, to_m, from_m, su3 = _h2_of_o()
+    ev = np.linalg.eigvalsh(Gm)
+    assert (np.sum(ev > 0), np.sum(ev < 0)) == (1, 9)
+    Fix = _nullspace(np.vstack(su3))
+    ev = np.linalg.eigvalsh(Fix @ Gm @ Fix.T)
+    assert Fix.shape[0] == 4 and (np.sum(ev > 0), np.sum(ev < 0)) == (1, 3)                          # (b)
+    basis = []
+    for i in range(10):
+        for j in range(10):
+            E = np.zeros((10, 10))
+            E[i, j] = 1
+            basis.append(E)
+    so19 = [v.reshape(10, 10) for v in _nullspace(np.array([(E.T @ Gm + Gm @ E).ravel() for E in basis]).T)]
+    assert len(so19) == 45
+    A = np.vstack([np.array([(Y @ X - X @ Y).ravel() for Y in so19]).T for X in su3])
+    cent = [sum(c[k] * so19[k] for k in range(45)) for c in _nullspace(A)]
+    assert len(cent) == 7                                                                            # (c)
+    br = np.array([(X @ Y - Y @ X).ravel() for X in cent for Y in cent])
+    u, s, _ = np.linalg.svd(br.T)
+    der = [u[:, k].reshape(10, 10) for k in range(np.sum(s > 1e-9))]
+    assert len(der) == 6
+    D = np.array([d.ravel() for d in der]).T
+    ads = [np.array([np.linalg.lstsq(D, (X @ Y - Y @ X).ravel(), rcond=None)[0] for Y in der]).T for X in der]
+    K = np.linalg.eigvalsh(np.array([[np.trace(a @ b) for b in ads] for a in ads]))
+    assert (np.sum(K > 1e-9), np.sum(K < -1e-9)) == (3, 3)                                            # 𝔰𝔬(1,3)
+    S = np.eye(10)
+    S[:2, :2] = [[1, 1], [1, -1]]                                                                    # (a,b) = (t+z, t−z)
+    c2 = [np.linalg.inv(S) @ X @ S for X in cent]
+    kc = _nullspace(np.array([((X + X.T) / 2).ravel() for X in c2]).T)
+    comp = [sum(c[k] * c2[k] for k in range(7)) for c in kc]
+    fx = _nullspace(np.vstack(comp))
+    assert len(comp) == 4 and fx.shape[0] == 1 and abs(abs(fx[0, 0]) - 1) < 1e-9                    # время = 1₂
+    rng = np.random.default_rng(48)
+    for _ in range(4):                                                                               # (d)
+        Mc = rng.normal(size=(2, 2)) + 1j * rng.normal(size=(2, 2))
+        Mc /= np.sqrt(np.linalg.det(Mc))
+        Mo = _clock_complex_matrix(Mc)
+        Md = [[_oconj(Mo[j][i]) for j in range(2)] for i in range(2)]
+        L = np.zeros((10, 10))
+        for k in range(10):
+            X = to_m(np.eye(10)[k])
+            P1, P2 = _omatmul(_omatmul(Mo, X), Md), _omatmul(Mo, _omatmul(X, Md))
+            assert np.allclose(from_m(P1), from_m(P2)) and np.allclose(P1[0][0][1:], 0) and np.allclose(P1[1][1][1:], 0)
+            L[:, k] = from_m(P1)
+        assert np.allclose(L.T @ Gm @ L, Gm) and np.allclose(L[:, 3:9], np.eye(10)[:, 3:9])
+        g = expm(sum(c * X for c, X in zip(rng.normal(size=8), su3)))
+        assert np.allclose(L @ g, g @ L)
+        L4 = (np.linalg.inv(S) @ L @ S)[np.ix_([0, 1, 2, 9], [0, 1, 2, 9])]
+        assert abs(np.linalg.det(L4) - 1) < 1e-9 and L4[0, 0] >= 1 - 1e-12
+
+
+def test_no_rotation_of_the_seven_axes_commutes_with_colour():
+    """Запрет: ни одна SO(3) на семи осях голонома не коммутирует с SU(3)_C.
+
+    Централизатор 𝔰𝔲(3) в 𝔤₂ — 0, в 𝔰𝔬(7) — 1 (𝔲(1) = L_{e_O} на ℝ⁶), в 𝔲(7) — 3 (𝔲(1)³).
+    Путь (а) — ассоциативные 3-плоскости: у каждой из семи линий Фано стабилизатор в 𝔤₂ шестимерен
+    (𝔰𝔬(4)) и действует на плоскости как 𝔰𝔬(3), но пересекается с 𝔰𝔲(3) по 𝔲(2) (линии через O, 4)
+    или по 𝔰𝔬(3) (остальные четыре, 3) — вращения плоскости суть цветовые вращения.
+    """
+    su3 = _su3_of_e_o()
+    cen = lambda gens: _nullspace(np.vstack([np.array([(Y @ X - X @ Y).ravel() for Y in gens]).T for X in su3])).shape[0]
+    so7 = []
+    for i in range(7):
+        for j in range(i + 1, 7):
+            E = np.zeros((7, 7))
+            E[i, j], E[j, i] = 1, -1
+            so7.append(E)
+    assert (cen(G2), cen(so7)) == (0, 1)
+    u7 = [E.astype(complex) for E in so7] + [1j * (np.outer(np.eye(7)[i], np.eye(7)[j]) + np.outer(np.eye(7)[j], np.eye(7)[i])) / (2 if i == j else 1)
+                                             for i in range(7) for j in range(i, 7)]
+    rows = np.vstack([np.array([(Y @ X - X @ Y).ravel() for Y in u7]).T for X in su3])
+    rows = np.vstack([rows.real, rows.imag])
+    assert _nullspace(rows).shape[0] == 3
+    caps = []
+    for line in LINES:
+        idx = [p - 1 for p in line]
+        P = np.zeros((7, 7))
+        P[idx, idx] = 1
+        stab = [sum(c[k] * G2[k] for k in range(14))
+                for c in _nullspace(np.array([((np.eye(7) - P) @ X @ P).ravel() for X in G2]).T)]
+        assert len(stab) == 6 and np.linalg.matrix_rank(np.array([(P @ X @ P).ravel() for X in stab]), tol=1e-9) == 3
+        A = np.hstack([np.array([X.ravel() for X in stab]).T, -np.array([X.ravel() for X in su3]).T])
+        caps.append((7 in line, _nullspace(A).shape[0]))
+    assert sorted(caps) == [(False, 3)] * 4 + [(True, 4)] * 3
+
+
+def test_octonionic_spinor_is_lepton_plus_quark_weyl():
+    """𝕆² под SL(2,ℂ_O) × SU(3)_C: левое умножение ψ ↦ Mψ — представление, коммутирующее с цветом.
+
+    Как ℂ_O-модуль 𝕆 = ℂ_O ⊕ ℂ³, поэтому 𝕆² = (2,1) ⊕ (2,3): вейлевский спинор-синглет и
+    вейлевский спинор-триплет. Спин и цвет — разные множители, как требует Коулмен–Мандула.
+    """
+    rng = np.random.default_rng(49)
+    su3_8 = []
+    for X in _su3_of_e_o():
+        Y = np.zeros((8, 8))
+        Y[1:, 1:] = X
+        su3_8.append(Y)
+    act = lambda Mo, p: [omul(Mo[i][0], p[0]) + omul(Mo[i][1], p[1]) for i in range(2)]
+    for _ in range(4):
+        M1, M2 = (rng.normal(size=(2, 2)) + 1j * rng.normal(size=(2, 2)) for _ in range(2))
+        g = expm(sum(c * X for c, X in zip(rng.normal(size=8), su3_8)))
+        p = [rng.normal(size=8), rng.normal(size=8)]
+        a1, a2, a12 = _clock_complex_matrix(M1), _clock_complex_matrix(M2), _clock_complex_matrix(M1 @ M2)
+        assert np.allclose(act(a1, act(a2, p)), act(a12, p))
+        assert np.allclose(act(a1, [g @ p[0], g @ p[1]]), [g @ v for v in act(a1, p)])
+    Lo8 = np.array([omul(unit(7), unit(i)) for i in range(8)]).T
+    assert all(np.allclose(Lo8 @ X, X @ Lo8) for X in su3_8)                       # цвет ℂ_O-линеен
+
+
+def test_every_non_o_axis_is_half_triplet_and_colour_moves_any_axis_to_any():
+    """Что верно вместо 45b и (SA): ось не принадлежит ни 𝟑, ни 𝟑̄, а делится поровну.
+
+    P_𝟑 = (1 − iJ)/2 на ℂ⊗ℝ⁶, J = L_{e_O}: ⟨e_k, P_𝟑 e_k⟩ = 1/2 для всех шести осей. Орбита SU(3)_C
+    каждой оси пятимерна, то есть это вся S⁵ ⊂ ℝ⁶: цвет переводит любую ось в любую, и всякая
+    цвет-инвариантная величина одинакова на S и на L; у SU(3)-инвариантной Γ шесть диагональных
+    элементов равны. Цвет-инвариантная асимметрия одна — вес 𝟑 против 𝟑̄ (b ≠ c в Γ = a|O⟩⟨O| + bP_𝟑 + cP_𝟑̄).
+    """
+    J = np.array([omul(unit(7), unit(i + 1))[1:] for i in range(7)]).T[:6, :6]
+    P3 = (np.eye(6) - 1j * J) / 2
+    assert np.allclose(P3 @ P3, P3) and np.linalg.matrix_rank(P3) == 3 and np.allclose(np.diag(P3), 0.5)
+    su3 = _su3_of_e_o()
+    for k in range(6):
+        assert np.linalg.matrix_rank(np.array([X[:6, k] for X in su3]).T, tol=1e-9) == 5
+    G = np.zeros((7, 7), complex)
+    G[6, 6], G[:6, :6] = 0.3, 0.5 * P3 / 3 + 0.2 * P3.conj() / 3
+    assert all(np.allclose(X @ G, G @ X) for X in su3) and np.allclose(np.diag(G)[:6], np.diag(G)[0])
 
 
 def main():
