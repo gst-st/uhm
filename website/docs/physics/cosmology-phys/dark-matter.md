@@ -8,13 +8,13 @@ description: "Systematic overview of dark matter candidates in the Gap formalism
 # Dark Matter from Gap
 
 :::info Who This Chapter Is For
-Dark matter candidates within Gap theory. The reader will learn why the $O$-sector relic is the most viable candidate and how the QCD axion is predicted.
+Dark matter candidates within Gap theory. The reader will learn why the $O$-sector relic is the most viable candidate and why the QCD axion claimed here needs a Peccei–Quinn sector that the Clifford content lacks (T-333(e)–(h)).
 :::
 
 
 ## Overview
 
-Gap theory provides a systematic framework for analysing dark matter candidates. Standard SUSY candidates are **excluded** (too heavy or unstable). The most viable candidate is the **$O$-sector relic** (Wimpzilla, $m \sim 10^{13}$ GeV), gravitationally produced during inflation and stabilised by $O$-parity. A subdominant QCD axion ($m_a \sim 3$ neV, $\sim 1\%$ DM) is additionally predicted.
+Gap theory provides a systematic framework for analysing dark matter candidates. Standard SUSY candidates are **excluded** (too heavy or unstable). The most viable candidate is the **$O$-sector relic** (Wimpzilla, $m \sim 10^{13}$ GeV), gravitationally produced during inflation and stabilised by $O$-parity. A subdominant QCD axion ($m_a \sim 3$ neV, $\sim 1\%$ DM) was additionally claimed. In the Clifford content it is not a QCD axion, and its relic estimate conflicts with the isocurvature bound (T-333(e)–(h), §3).
 
 ---
 
@@ -52,7 +52,7 @@ Standard SUSY dark matter candidates are **excluded** in the Gap formalism:
 | Wino/Bino | $\sim 10^{11}$ GeV | Stable | $\gg 0.12$ | Excluded |
 | Gap instantons | $\sim \Lambda_{\mathrm{QCD}}$ | Stable (topology) | — | Excluded (hadronic) |
 | $G_2$-extra bosons | $\sim M_P$ | Stable ($G_2$ charge) | $\sim 10^{-6}$ | Excluded (too little) |
-| QCD axion | $\sim 3$ neV | Stable ($U(1)_{\mathrm{PQ}}$) | $\sim 10^{-3}$ | **Subdominant** (§3) |
+| QCD axion | $\sim 3$ neV | Stable ($U(1)_{\mathrm{PQ}}$) | $\sim 10^{-3}$ | **Not realised** in the Clifford content; needs (PQ) (§3, T-333(e)–(h)) |
 | Dark ALPs | $\sim 10^{15}$ GeV | Stable | Heavy | Excluded (§4) |
 | **$O$-sector relic** | **$\sim 10^{13}$ GeV** | **$\tau \gg t_U$ ($O$-parity)** | **$\sim 0.1$–$0.4$ [C at T-50, CKR]** | **Primary candidate (§5)** |
 
@@ -68,6 +68,10 @@ Standard SUSY dark matter candidates are **excluded** in the Gap formalism:
 In standard physics the Peccei–Quinn axion solves the strong CP problem via dynamical relaxation $\theta_{\mathrm{QCD}} \to 0$. In the Gap formalism $\theta_{\mathrm{QCD}} = 0$ follows **structurally** from the reality of the octonionic $f_{ijk}$ and vacuum uniqueness ([T-99 \[T\]](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd)). The Gap axion is therefore a **purely DM candidate**, not a solution to the CP problem.
 :::
 
+:::warning[Correction 2026-09-26 (T-333(e)–(h)): in the Clifford content this axion is not a QCD axion]
+[Confinement §3.1b](/docs/physics/gauge-symmetry/confinement#пк-и-нб) (T-333(e)–(h)) shows that with the fields the Clifford frame forces — three generations of the $\mathbf{16}$ and one doublet — no $\mathrm{U}(1)$ with a colour anomaly survives the quark masses. So a Gap phase has no $G\tilde G$ coupling, and the "axial anomaly with QCD" of §3.1 needs a Peccei–Quinn sector that the frame lacks: a second doublet with a singlet, or new coloured fermions. Call this addition the hypothesis (PQ). Three more points. (1) The mass formula of §3.3 needs the potential of $a$ to come from QCD alone, while §3.5 gives every phase a mass from $V_{\mathrm{Gap}}$; the two cannot both hold. (2) "$\theta_{\mathrm{QCD}}=0$ structurally" rests only on the retracted cubic $V_3$ (T-99 is [C at (SV)]). An axion with a $G\tilde G$ coupling and a QCD-dominated potential relaxes $\theta$ whatever else holds, so it cannot be "purely a DM candidate". (3) The relic estimate of §3.4 takes $\theta_i=H_I/(2\pi f_a)$, a pure fluctuation around $\theta=0$. The axion density is then isocurvature with relative amplitude of order one, and the Planck bound allows $\Omega_a/\Omega_c\lesssim3\times10^{-5}$, not $10^{-2}$. Theorem 9.1 is corrected from [T] to [H] ($\epsilon\sim10^{-3}$ and $N_{\mathrm{DW}}=1$ are assumed), and Theorems 9.2 and 9.3 from [T] to [C at (PQ)]. The arithmetic stands: $f_a=2\times10^{15}$ GeV gives $m_a=2.9$ neV.
+:::
+
 ### 3.1 Definition {#31-определение}
 
 The Gap axion is a pseudoscalar field $a(x)$, the zero mode of the phases $\theta_{ij}$ in the $3$-to-$\bar{3}$ sector, possessing an axial anomaly with QCD:
@@ -80,7 +84,7 @@ where $c_{ij}$ are coefficients determined from the anomaly condition $\partial_
 
 ### 3.2 Decay Constant
 
-:::tip Theorem 9.1 [T]
+:::tip Theorem 9.1 [H] (corrected 2026-09-26 from [T])
 The decay constant of the Gap axion:
 
 $$
@@ -94,7 +98,7 @@ Canonical normalisation: from the kinetic term $\mathcal{L}_{\mathrm{kin}} = \fr
 
 ### 3.3 Axion Mass
 
-:::tip Theorem 9.2 [T]
+:::tip Theorem 9.2 [C at (PQ)] (corrected 2026-09-26 from [T])
 The mass is determined by QCD instantons:
 
 $$
@@ -106,7 +110,7 @@ An ultralight axion within the sensitivity range of the CASPEr and ABRACADABRA e
 
 ### 3.4 Relic Density
 
-:::tip Theorem 9.3 [T]
+:::tip Theorem 9.3 [C at (PQ)] (corrected 2026-09-26 from [T])
 From the vacuum misalignment mechanism:
 
 $$
@@ -120,7 +124,7 @@ $$
 \Omega_a h^2 \approx 0.12 \times 7100 \times 1.39 \times 10^{-6} \approx 1.2 \times 10^{-3}
 $$
 
-**Conclusion [C]:** The QCD axion constitutes $\sim 1\%$ of the observed dark matter — a **subdominant** component (subject to $\epsilon \sim 10^{-3}$ and $N_{\mathrm{DW}} = 1$).
+**Conclusion [C]:** The QCD axion constitutes $\sim 1\%$ of the observed dark matter — a **subdominant** component (subject to $\epsilon \sim 10^{-3}$ and $N_{\mathrm{DW}} = 1$). *Corrected (T-333(e)–(h)):* only under (PQ), and with $\theta_i$ set by the inflationary fluctuation the isocurvature bound caps the fraction near $3\times10^{-5}$.
 
 ### 3.5 Full Axion Spectrum from $(S^1)^{21}$
 
@@ -345,7 +349,7 @@ Gap theory predicts two-component dark matter:
 | Component | Mass | $\Omega h^2$ | Fraction of DM | Mechanism |
 |-----------|-------|-------------|-----------|----------|
 | $O$-relic (Wimpzilla) | $\sim 10^{13}$ GeV | $\sim 0.1$–$0.4$ | $\sim 83$–$100\%$ | CKR (gravitational) |
-| QCD axion | $\sim 3$ neV | $\sim 1.2 \times 10^{-3}$ | $\sim 1\%$ | Vacuum misalignment |
+| QCD axion (only under (PQ), T-333(e)–(h)) | $\sim 3$ neV | $\lesssim 4 \times 10^{-6}$ (isocurvature) | $\lesssim 3\times10^{-5}$ | Vacuum misalignment |
 | Dark ALPs | $\sim 10^{9}$–$10^{15}$ GeV | negligible | $\ll 1\%$ | Gravitational (suppressed) |
 | $G_2$-extra bosons | $\sim M_P$ | $\sim 10^{-6}$ | $\ll 1\%$ | Gravitational (exponentially suppressed) |
 | **Total** | | **$\sim 0.1$–$0.4$** | **$\sim 100\%$** | |
@@ -422,9 +426,9 @@ $\ell_{\mathrm{Planck}}$ is the UV cutoff (lattice spacing), $\xi_F$ is the IR c
 
 | # | Prediction | Value | Experiment |
 |---|-------------|----------|-------------|
-| P1 | $m_a \sim 3$ neV | $2.85 \times 10^{-9}$ eV | CASPEr, ABRACADABRA |
+| P1 | $m_a \sim 3$ neV (only under (PQ), T-333(e)–(h)) | $2.85 \times 10^{-9}$ eV | CASPEr, ABRACADABRA |
 | P2 | $f_a \sim 2 \times 10^{15}$ GeV | From $\epsilon \cdot M_P$ | Axion-photon conversion |
-| P3 | $\Omega_a / \Omega_{\mathrm{DM}} \sim 10^{-2}$ | $\sim 1\%$ DM | Cosmological constraints |
+| P3 | $\Omega_a / \Omega_{\mathrm{DM}} \sim 10^{-2}$ — excluded by isocurvature (T-333(e)–(h)) | $\lesssim 3\times10^{-5}$ under (PQ) | Cosmological constraints |
 | P4 | $m_{\mathrm{DM}} \sim 10^{13}$ GeV | Wimpzilla | UHECR anomalies |
 | P5 | No WIMP-DM in direct detectors | $\sigma < 10^{-60}$ cm$^2$ | XENON, LZ (confirmed) |
 | P6 | $\xi_F \sim 160$ pc | Fano correlation length | Large-scale structure |

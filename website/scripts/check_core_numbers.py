@@ -159,6 +159,15 @@ D(ℂ⁷) — многообразия, D_k ≃ Gr_k(ℂ⁷)), `g2_twirl_is_the_
 `self_model_contraction_holds_only_for_constant_weight_and_unital_part` (лемма 2.1 — лишь при постоянных k и якоре и
 унитальном P; у φ_J липшицева константа 1,129; неунитальный канал растягивает расстояние ГШ в √2 раз).
 
+Четыре — за (ВП) и сильной CP в клиффордовом составе (26.09.2026, T-332(h)–(k), T-333(e)–(h)):
+`up_projection_is_holomorphy_in_one_complex_doublet` (τ_Rγ(h) = ωγ(jh), j = 2ad Y на плоскости; (ВП) —
+голоморфность по одному дублету), `an_exact_up_projection_leaves_the_tau_massless_to_all_orders` (при β = α
+пять фаз вместо трёх: d^c с КХД-аномалией 1/2, e^c без неабелевой — m_τ = 0 во всех порядках),
+`b_tau_and_the_size_of_the_up_projector_breaking` (ε = 0,0357 / 0,0292 / 0,0288; y_b = y_τ при 6,3·10⁶ ГэВ;
+q/p = −0,349; ветвь ранга 4 на 94 из 99 точек) и `no_peccei_quinn_symmetry_in_the_clifford_content`
+(при det Y_u, det Y_d ≠ 0 КХД-аномалия нулевая на 300 носителях; 𝟏𝟔 кирален; Γ_v коммутирует с (B−L)/2;
+m_a = 2,9 нэВ, изокривизна — Ω_a/Ω_c ≲ 3·10⁻⁵).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -5481,6 +5490,197 @@ def test_depth_register_history_and_the_two_slots_supply_no_spinor_rotation():
             continue
         s2 = sum(c * v.reshape(7, 7) for c, v in zip(rng.normal(size=len(null)), null))
         assert np.linalg.matrix_rank(s2, tol=1e-9) == 2 * min(p, q) < 7
+
+
+def _field_phases():
+    """Шесть фаз поколения (Q, L, u^c, d^c, ν^c, e^c) как ω·P на 𝒮_ℂ и их КХД/SU(2) аномалии."""
+    f = _yukawa_frame()
+    e = f["e"]
+    sL, sR = f["secL"], f["secR"]
+    proj = {"Q": sL["u"] + sL["d"], "L": sL["nu"] + sL["e"], "u": sR["u"], "d": sR["d"],
+            "n": sR["nu"], "e": sR["e"]}
+    col = proj["Q"] + proj["u"] + proj["d"]
+
+    def charge(X):
+        q = -e["om"] @ X
+        return (q + q.T) / 2
+    a3 = lambda X: float(np.trace(charge(X) @ col)) / 12               # Σ q·T(𝟑), T = 1/2 на триплет
+    a2 = lambda X: float(np.trace(charge(X) @ (proj["Q"] + proj["L"]))) / 8
+    return f, proj, a3, a2
+
+
+def _yukawa_u1s(alpha, beta, bl=0.0):
+    """U(1) на полях поколения и на плоскости Хиггса (заряд q_H при j), сохраняющие (α + βτ_R + b(B−L))γ(h)."""
+    f, proj, a3, a2 = _field_phases()
+    e = f["e"]
+    om, PL, PR = e["om"], e["PL"], e["PR"]
+    tauR = PR @ f["tau"] @ PR
+    plane = e["g10"][6:10]
+    j = 2 * f["on_vector"](e["Y"])[6:, 6:]
+    Mh = [(alpha * np.eye(32) + beta * tauR + bl * e["BL"]) @ PR @ g @ PL for g in plane]
+    cols = [np.concatenate([((om @ P) @ M - M @ (om @ P)).ravel() for M in Mh]) for P in proj.values()]
+    cols.append(np.concatenate([-sum(j[b, a] * Mh[b] for b in range(4)).ravel() for a in range(4)]))
+    _, s, Vt = np.linalg.svd(np.array(cols).T)
+    N = Vt[np.sum(s > 1e-9):]
+    return [(v, sum(c * om @ P for c, P in zip(v[:6], proj.values()))) for v in N], a3, a2
+
+
+def test_up_projection_is_holomorphy_in_one_complex_doublet():
+    """T-332(h): (ВП) ⟺ юкава голоморфна по одному комплексному дублету плоскости.
+
+    Гиперзаряд действует на бесцветной плоскости P как j/2 с j² = −1, и на V_L → V_R
+    τ_R·γ(h) = ω·γ(jh). Поэтому (1 ± τ_R)γ(h)/2 = γ(π_± h), π_± = (1 ± ωj)/2 — проекторы на P_ℂ,
+    каждый ранга 4 (один дублет): верхняя проекция — ω-линейная функция одного комплексного дублета
+    π_+h (гиперзаряд −1/2, H̃ СМ), и только его. Вещественный вакуум даёт ей m_u = 1, m_d = 0.
+    """
+    f = _yukawa_frame()
+    e = f["e"]
+    om, PL, PR = e["om"], e["PL"], e["PR"]
+    tauR = PR @ f["tau"] @ PR
+    plane = e["g10"][6:10]
+    RY = f["on_vector"](e["Y"])[6:, 6:]
+    j = 2 * RY
+    assert np.allclose(j @ j, -np.eye(4)) and np.allclose(j, -j.T)
+    for a in range(4):
+        jh = sum(j[b, a] * plane[b] for b in range(4))
+        assert np.allclose(tauR @ PR @ plane[a] @ PL, PR @ om @ jh @ PL)
+    Wj = np.kron(j, np.eye(2))                                        # P_ℂ = P ⊗ ℂ_ω, ω = [[0,−1],[1,0]]
+    Wom = np.kron(np.eye(4), np.array([[0.0, -1.0], [1.0, 0.0]]))
+    for sgn in (1, -1):
+        pi = (np.eye(8) + sgn * Wom @ Wj) / 2
+        assert np.allclose(pi @ pi, pi) and round(np.trace(pi)) == 4
+    m = _yukawa_masses(((np.eye(32) + tauR) / 2) @ PR @ (0.6 * plane[3] + 0.8 * plane[0]) @ PL)
+    assert np.isclose(m["u"], 1) and np.isclose(m["nu"], 1) and m["d"] < 1e-12 and m["e"] < 1e-12
+
+
+def test_an_exact_up_projection_leaves_the_tau_massless_to_all_orders():
+    """T-332(i): точная (ВП) несёт лишнюю симметрию, запрещающую m_τ во всех порядках; данные её опровергают.
+
+    U(1) на шести полях поколения и дублете, сохраняющие юкаву (α + βτ_R)γ(h) (при желании с (B−L)):
+    при |β| ≠ |α| их ровно 3 (Y, B, L), и КХД-аномалия каждой равна нулю; при β = ±α — 5, среди них
+    фаза e^c (аномалий SU(3) и SU(2) нет: запрет m_e, m_μ, m_τ точен и непертурбативно) и
+    КХД-аномальная фаза d^c (A₃ = 1/2 на поколение: m_d, m_s, m_b = 0 во всех порядках теории возмущений).
+    """
+    f, proj, a3, a2 = _field_phases()
+    om = f["e"]["om"]
+    assert np.isclose(a3(om @ proj["d"]), 0.5) and abs(a2(om @ proj["d"])) < 1e-12
+    assert abs(a3(om @ proj["e"])) < 1e-12 and abs(a2(om @ proj["e"])) < 1e-12
+    assert np.isclose(a3(om @ proj["Q"]), 1.0) and np.isclose(a2(om @ proj["Q"]), 1.5)
+    for ab in ((1.0, 0.971, 0.0), (1.0, 0.5, 0.0), (0.7, -0.2, 0.3)):
+        sols, _, _ = _yukawa_u1s(*ab)
+        assert len(sols) == 3 and max(abs(a3(X)) for _, X in sols) < 1e-9
+    for beta in (1.0, -1.0):
+        sols, _, _ = _yukawa_u1s(1.0, beta)
+        assert len(sols) == 5 and max(abs(a3(X)) for _, X in sols) > 0.1
+        V = np.array([v for v, _ in sols])
+        side = "e" if beta == 1.0 else "n"
+        unit = np.zeros(7)
+        unit[list(proj).index(side)] = 1.0
+        assert np.linalg.norm(V.T @ (V @ unit) - unit) < 1e-9       # фаза e^c (или ν^c) — симметрия
+
+
+def test_b_tau_and_the_size_of_the_up_projector_breaking():
+    """T-332(j): нарушение (ВП) ε = 1 − β/α и b–τ по однопетлевому бегу СМ; ветвь ранга 4 вакуума.
+
+    ε(μ) = 2y_b/(y_t + y_b): 0,0357 при M_Z, 0,0292 при 10¹⁴, 0,0288 при 2·10¹⁶ ГэВ. y_b/y_τ падает от
+    1,73 при M_Z до 0,655 при 2·10¹⁶ и равна 1 при ≈ 6,3·10⁶ ГэВ: нарушение без (B−L)-одевания
+    сшивается с b = τ лишь там; сшивка при 2·10¹⁶ требует одевания p + q(B−L) с q/p = −0,349.
+    Вакуум T-64: на 94 из 99 точек фазы Gap ветвь ранга 4 (одна компонента кваркового дублета
+    не заселена, точная кварковая проекция), на остальных доля до 0,75.
+    """
+    from scipy.integrate import solve_ivp
+    from scipy.optimize import brentq
+    MZ, v, a0 = 91.1876, 246.22, 0.1180
+    a_s = lambda mu: a0 / (1 + a0 * (23 / 3) / (2 * np.pi) * np.log(mu / MZ))
+    mt = 162.5 * (a_s(MZ) / a_s(162.5)) ** (12 / 23)
+    mb = 4.18 * (a_s(MZ) / a_s(4.18)) ** (12 / 23)
+
+    def rhs(t, s):
+        g1, g2, g3, yt, yb, yl = s
+        k = 1 / (16 * np.pi ** 2)
+        return [k * 4.1 * g1 ** 3, -k * 19 / 6 * g2 ** 3, -k * 7 * g3 ** 3,
+                k * yt * (4.5 * yt ** 2 + 1.5 * yb ** 2 + yl ** 2 - 8 * g3 ** 2 - 2.25 * g2 ** 2 - 0.85 * g1 ** 2),
+                k * yb * (1.5 * yt ** 2 + 4.5 * yb ** 2 + yl ** 2 - 8 * g3 ** 2 - 2.25 * g2 ** 2 - 0.25 * g1 ** 2),
+                k * yl * (3 * yt ** 2 + 3 * yb ** 2 + 2.5 * yl ** 2 - 2.25 * g2 ** 2 - 2.25 * g1 ** 2)]
+    s0 = [np.sqrt(5 / 3) * 0.3574, 0.6517, np.sqrt(4 * np.pi * a0)] + [np.sqrt(2) * m / v for m in (mt, mb, 1.77693)]
+    T = np.log(2e16 / MZ)
+    sol = solve_ivp(rhs, (0, T), s0, rtol=1e-10, dense_output=True)
+    at = lambda mu: sol.sol(np.log(mu / MZ))[3:]
+    eps = {mu: 2 * at(mu)[1] / (at(mu)[0] + at(mu)[1]) for mu in (MZ, 1e14, 2e16)}
+    assert abs(eps[MZ] - 0.0357) < 5e-4 and abs(eps[1e14] - 0.0292) < 5e-4 and abs(eps[2e16] - 0.0288) < 5e-4
+    r = {mu: at(mu)[1] / at(mu)[2] for mu in (MZ, 2e16)}
+    assert abs(r[MZ] - 1.73) < 0.01 and abs(r[2e16] - 0.655) < 0.005
+    mu_bt = MZ * np.exp(brentq(lambda t: sol.sol(t)[4] - sol.sol(t)[5], 0.1, T))
+    assert 5e6 < mu_bt < 8e6
+    qp = (r[2e16] - 1) / (1 / 3 + r[2e16])                               # (p + q/3)/(p − q) = y_b/y_τ
+    assert abs(qp + 0.349) < 0.005
+    n = rank4 = 0
+    split = []
+    for l4 in (0.0, 1.0, 30.0):
+        for kap in np.geomspace(0.05, 3.0, 40):
+            _, (s, dd) = _family_min(kap, l4)
+            if abs(dd) < 1e-9:
+                continue
+            b, c = (s + dd) / 2, (s - dd) / 2
+            n += 1
+            rank4 += min(b, c) < 1e-9
+            split.append(min(b, c) / max(b, c))
+    assert (n, rank4) == (99, 94) and 0.74 < max(split) < 0.76
+
+
+def test_no_peccei_quinn_symmetry_in_the_clifford_content():
+    """T-333(e)–(g): при трёх поколениях 𝟏𝟔 и одном дублете нет U(1) с КХД-аномалией; аксион страницы ТМ.
+
+    Заряды (Q_i, u_i, d_i, H), сохраняющие ненулевые входы Y_u (QH̃u^c) и Y_d (QHd^c) при det ≠ 0:
+    на 300 случайных масках носителя с невырожденными матрицами КХД-аномалия Σ(2q_Q + q_u + q_d) = 0
+    на всём пространстве решений. 𝟏𝟔 кирален: мультимножество гиперзарядов цветных состояний не
+    замкнуто относительно смены знака (векторной пары для Нельсона–Барра нет). Страница тёмной
+    материи: m_a = 2,9 нэВ при f_a = 2·10¹⁵ ГэВ — арифметика верна; при θ_i = H_I/(2πf_a) плотность
+    аксиона — изокривизна порядка единицы, и β_iso < 0,038 требует Ω_a/Ω_c ≲ 3·10⁻⁵ против 10⁻².
+    """
+    rng = np.random.default_rng(7)
+    checked = 0
+    while checked < 300:
+        Mu, Md = rng.random((3, 3)) < 0.6, rng.random((3, 3)) < 0.6
+        Yu, Yd = Mu * rng.normal(size=(3, 3)), Md * rng.normal(size=(3, 3))
+        if abs(np.linalg.det(Yu)) < 1e-3 or abs(np.linalg.det(Yd)) < 1e-3:
+            continue
+        rows = []                                                         # неизвестные: q_Q(3), q_u(3), q_d(3), q_H
+        for (Mk, off, sH) in ((Mu, 3, -1.0), (Md, 6, 1.0)):
+            for i, jj in zip(*np.nonzero(Mk)):
+                row = np.zeros(10)
+                row[i] += 1
+                row[off + jj] += 1
+                row[9] += sH
+                rows.append(row)
+        _, s, Vt = np.linalg.svd(np.array(rows))
+        N = Vt[np.sum(s > 1e-9):]
+        anom = np.array([2, 2, 2, 1, 1, 1, 1, 1, 1, 0.0])
+        assert np.abs(N @ anom).max() < 1e-9
+        checked += 1
+    f, proj, _, _ = _field_phases()
+    e = f["e"]
+    q = -e["om"] @ e["Y"]
+    q = (q + q.T) / 2
+    col = proj["Q"] + proj["u"] + proj["d"]
+    w = np.round(np.linalg.eigvalsh(col @ q @ col + 50 * (np.eye(32) - col)), 9)
+    ys = sorted(x for x in w if x < 10)
+    assert sorted(-x for x in ys) != ys
+    d = e["d"]
+    for a, b, c in ((0.37, 0.15, 0.06), (0.4, 0.3, 0.0)):                 # вакуум T-64 на 𝒮 коммутирует с (B−L)/2
+        M = np.zeros((8, 8), complex)
+        M[1:, 1:] = _colour_family(a, b, c)
+        M[0, 0] = a
+        Gh = np.block([[M.real, -M.imag], [M.imag, M.real]])
+        assert np.abs(Gh @ d["Y"] - d["Y"] @ Gh).max() < 1e-12
+    mu_, md_, mpi, fpi, fa = 2.16e-3, 4.67e-3, 0.135, 0.092, 2e15
+    ma = np.sqrt(mu_ * md_) / (mu_ + md_) * mpi * fpi / fa * 1e18                 # нэВ
+    assert 2.8 < ma < 3.0
+    HI = np.pi * 2.435e18 * np.sqrt(2.1e-9 * 0.036 / 2)
+    assert abs(HI / (2 * np.pi * fa) - 3.7e-3) < 2e-4
+    PS_max = 0.038 / (1 - 0.038) * 2.1e-9
+    frac = np.sqrt(PS_max / (4 / 60))                                     # P_δ ≈ 4/N, N = 60
+    assert 2e-5 < frac < 5e-5 and 1e-2 / frac > 200
 
 
 def main():
