@@ -6592,6 +6592,65 @@ def test_anchor_principle_is_independent_and_attractor_integration_does_not_repl
         assert x_lo is not None and x_hi * x_hi * s_hi > x_lo * x_lo * s_lo
 
 
+def test_t222_window_has_no_resource_optimum_and_the_renyi_family_splits():
+    """T-222 (переформулирована 26.09.2026): окно 2/7 < P ≤ 3/7 не выделяет ресурсного оптимума.
+
+    (i) Всякое состояние окна строго доминируется подмесом I/7: ρ_t = (1 − t)ρ + t I/7 остаётся в окне,
+    и H_α растёт при α ∈ {½, 1, 2, 3, ∞} (F_α = k_BT(log 7 − H_α) падает). (iii) На сфере P = 2/7
+    F_1 и F_∞ минимизируются разными спектрами: s_1 (спектр Γ_{1/√6}) — H_1 = 1,6019, H_∞ = 0,7077;
+    трёхуровневый s_3 — H_1 = 1,3909, H_∞ = 1,1783; s_1 — максимум H_1 на сфере (случайные спектры
+    не превосходят). (iv) s_1 не мажорируется (⅓, ⅓, ⅓, 0, 0, 0, 0): 0,4928 > ⅓. Прежняя T-222
+    («ρ* = φ(Γ) — Парето-оптимум всех монотонов, терминальный объект») отозвана этими числами.
+    """
+    def renyi(lam, a):
+        lam = np.asarray(lam, float)
+        lam = lam[lam > 1e-15]
+        if a == 1:
+            return float(-(lam * np.log(lam)).sum())
+        if a == np.inf:
+            return float(-np.log(lam.max()))
+        return float(np.log((lam ** a).sum()) / (1 - a))
+    alphas = (0.5, 1, 2, 3, np.inf)
+    rng = np.random.default_rng(222)
+    uni = np.full(7, 1 / 7)
+    checked = 0
+    while checked < 200:
+        lam = rng.dirichlet(np.full(7, 0.4))
+        P = float((lam ** 2).sum())
+        if not 2 / 7 < P <= 3 / 7:
+            continue
+        t = 0.5 * (1 - np.sqrt((1 / 7) / (P - 1 / 7)))                    # half-way to the sphere
+        lt = (1 - t) * lam + t * uni
+        Pt = float((lt ** 2).sum())
+        assert 2 / 7 < Pt < P
+        for a in alphas:
+            assert renyi(lt, a) > renyi(lam, a) + 1e-9
+        checked += 1
+    r6, r3 = np.sqrt(6), np.sqrt(3)
+    s1 = np.array([(1 + r6) / 7] + [(6 - r6) / 42] * 6)
+    s3 = np.array([(3 + 2 * r3) / 21] * 3 + [(2 - r3) / 14] * 4)
+    eta = 1 / r6
+    gam = np.array([(1 + 6 * eta) / 7] + [(1 - eta) / 7] * 6)          # spectrum of Γ_{1/√6}
+    for s in (s1, s3, gam):
+        assert abs(s.sum() - 1) < 1e-12 and abs((s ** 2).sum() - 2 / 7) < 1e-12
+    assert np.allclose(np.sort(gam), np.sort(s1))
+    assert abs(renyi(s1, 1) - 1.6019) < 1e-4 and abs(renyi(s3, 1) - 1.3909) < 1e-4
+    assert abs(renyi(s1, np.inf) - 0.7077) < 1e-4 and abs(renyi(s3, np.inf) - 1.1783) < 1e-4
+    assert renyi(s1, 1) > renyi(s3, 1) and renyi(s3, np.inf) > renyi(s1, np.inf)
+    best_h1 = 0.0
+    for _ in range(20000):
+        lam = rng.dirichlet(np.full(7, 0.7))
+        c = np.sqrt((1 / 7) / ((lam ** 2).sum() - 1 / 7))
+        mu = uni + c * (lam - uni)
+        if mu.min() < 0:
+            continue
+        best_h1 = max(best_h1, renyi(mu, 1))
+    assert 1.5 < best_h1 <= renyi(s1, 1) + 1e-12
+    third = np.array([1 / 3] * 3 + [0.0] * 4)
+    majorized = all(np.sort(s1)[::-1][:k].sum() <= np.sort(third)[::-1][:k].sum() + 1e-12 for k in range(1, 8))
+    assert not majorized and s1.max() > 1 / 3
+
+
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
     bad = 0

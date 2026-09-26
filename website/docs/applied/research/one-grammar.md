@@ -18,7 +18,7 @@ The principle is a conjunction of four theorem-grade clauses:
 
 | # | Clause | Support | Status |
 |---|---|---|---|
-| 1 | Reading is not optional: viability *is* maintained proximity to the self-model — the regeneration $\mathcal{R}$ reads the state through $\varphi(\Gamma)$ at every instant | T-96/T-98 (Lawvere necessity), T-222 (viability-first) | **[T]** |
+| 1 | Reading is not optional: viability *is* maintained proximity to the self-model — the regeneration $\mathcal{R}$ reads the state through $\varphi(\Gamma)$ at every instant | the evolution equation (the target of $\mathcal{R}$ is $\varphi(\Gamma)$), T-96 (the target is the self-model, not a dynamical limit), T-222 (restated 2026-09-26: the regeneration holds viability, not a resource optimum). Until 2026-09-26: "T-96/T-98 (Lawvere necessity), T-222 (viability-first)"; the Lawvere reading places fixed points with $\varphi$, not with $\mathcal{L}_\Omega$ (erratum to T-222) | **[T]** |
 | 2 | The complete reading grammar is unique: perfect single-fault diagnosability + nontrivial rigid grammar force seven axes with the Fano incidence | T-224 (Theorem Σ), T-244/T-246 | **[T]** |
 | 3 | The grammar is level-free and alphabet-free: it transmits down the coinductive carrier, and the predicate is invariant under substrate and lettering | T-247, T-153, T-223 | **[T]** |
 | 4 | Hence any symbolic system that *aspires to completeness* converges on the same object, and any actual system is a **partial chart** of it — classified below | T-256 | **[T]** structure, **[I]** per-tradition mapping |

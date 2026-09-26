@@ -599,7 +599,7 @@ Any theory of consciousness that includes (1) formalisability, (2) quantum mecha
 - **(c)** Causal interaction of two substances (dualism) — 2 primitives + causal connection
 :::
 
-Option (a) is **minimal**: one axiom instead of two or three. This is not a proof of truth, but a proof of **economy** (Occam's razor).
+Option (a) is **minimal** among (a)–(c): one psychophysical primitive instead of two or three. This is not a proof of truth, but an argument of **economy** (Occam's razor), and it is [I] for two reasons: that every theory meeting (1)–(4) contains one of the three types is not proven, and the count is of primitives about experience and the physical, not of axioms. The theory's own independent axiomatic content is A1–A4 plus the constraint of A5, with the bridge premises and the principle (MaxΦ) on top ([Premises of UHM](/docs/reference/premises)); option (a) adds no axiom to these — it is the reading of axiom Ω⁷ as a whole. (Until 2026-09-26: "one axiom instead of two or three"; withdrawn as a count of axioms.)
 
 ### Cost of the Primitive
 
@@ -748,11 +748,11 @@ Physics does not explain **why** the laws of nature are as they are — it descr
 
 ### Axiomatic Status
 
-The identity of being and experience ([Axiom Ω⁷](/docs/core/foundations/axiom-omega)) is a **primitive** of the theory, [minimal](#минимальность-аксиомы) among all possible axiomatic choices:
+The identity of being and experience ([Axiom Ω⁷](/docs/core/foundations/axiom-omega)) is a **primitive** of the theory, [minimal](#минимальность-аксиомы) among the three types of psychophysical axiom compared there [I]:
 
 1. Any proof already presupposes experience
 2. Denial leads to the unsolvable problems of dualism
-3. The primitive is **minimal** — one axiom instead of two or three (Theorem of [minimality](#сравнение-аксиоматических-выборов))
+3. The primitive is **minimal** — one psychophysical primitive instead of two or three ([minimality](#сравнение-аксиоматических-выборов), [I]); the axioms of the theory are A1–A4 plus the constraint of A5, and this primitive is their reading, not a further axiom
 4. Everything else is **derived**: the form of content, the identity of qualia, immanence, the gap
 
 ## Scale of Consciousness
