@@ -96,6 +96,15 @@ On top of them the current corpus uses, as listed on the premises page of the ar
         spinor factor of the fermion field, with a causal form preserved by every
         internal-structure-preserving transformation ((P)~$\Leftrightarrow$~(L)~$\wedge$~(W),
         Theorem~48e). Neither is derivable from the axioms, and the two are independent.
+        T-347~\status{T} (as mathematics; no status changes) closes the routes from the
+        holon: (Cl$_0$)~$\Leftrightarrow$~(Mod), the holon's product acting on matter --- a
+        real-linear $\rho:\Oct\to\mathrm{End}_{\mathbb R}(F)$ with $\rho(1) = 1$ and
+        $\rho(x)^2 = \rho(x^2)$, commuting with $i$; no property of the holon (viability,
+        the window, the self-model, regeneration, $G_2$-rigidity) decides (Cl$_0$), (P) or
+        (W$_0$), because everything built from $\Gam$ is tensorial while matter is spinorial
+        (the $2\pi$-rotation is $-1$ on $\Oct$ and $+1$ on $\mathbb{R}^7$); the maximality of
+        $\mathrm{Spin}(9)$ presupposes (Mod), and the minimal spinor factor ($n = 1$) has no
+        spatial direction.
   \item \textbf{Principle of the self-model \status{Pr}:} (Max$\Phi$) --- the anchor of the
         self-model is maximally integrated, $\Phi(\rho_a) = 6$ (T-334).
   \item \textbf{Strict necessity of $N = 7$ \status{H}:} (P1$_6$); $N \geq 7$ needs no premise.
@@ -289,8 +298,8 @@ structure (that $F$ exists and is unique given the axioms) is a theorem~\status{
 ontological claim that the internal aspect \emph{is} experience (rather than merely
 \emph{models} it) is the \emph{defining property} (PH) of a viable holon, read from
 axiom $\Omega^7$ as a whole --- not a sixth axiom. The Axiomatic Closure T-190 derives
-A1--A5 from (AP)+(PH)+(QG)+(V)+MaxEnt only \status{C} under the constraint of A5 and the
-hypothesis T-186(a); the earlier claim of \textbf{zero} independent axioms is withdrawn
+A1--A5 from (AP)+(PH)+(QG)+(V)+MaxEnt only \status{C} under the constraint of A5, the
+hypothesis T-186(a) and the CPTP-monotonicity of the enrichment of A2; the earlier claim of \textbf{zero} independent axioms is withdrawn
 (Section~\ref{subsec:premises}).
 \end{definition}
 
@@ -456,17 +465,28 @@ This supports A2; the axiom itself is listed among the postulates
 \paragraph{Axiomatic closure is conditional (T-190).}
 With T-187, T-189 and T-87, the axioms A1--A5 are derivable from the characterising
 properties $(\text{AP})+(\text{PH})+(\text{QG})+(\text{V})+\text{MaxEnt}$ of a viable holon
-only under two conditions: the Page--Wootters constraint of A5 is assumed, and the route
-to A1 through T-186(a) is a hypothesis. The derivations are:
+only under three conditions: the Page--Wootters constraint of A5 is assumed, the route
+to A1 through T-186(a) is a hypothesis, and the enrichment of A2 is CPTP-monotone,
+$d(\mathcal E\rho,\mathcal E\sigma) \le d(\rho,\sigma)$ for every CPTP map $\mathcal E$. The
+third condition was named on 2026-09-26 (Lemma~M of the corpus, \status{T}): it follows from
+none of (AP), (PH), (QG), (V), MaxEnt --- the Hilbert--Schmidt metric, in which (V) is
+written, satisfies them all and grows by the factor $\sqrt2$ under a partial-trace channel on
+$\mathbb{C}^7$ --- but it follows from the operational reading (O) of the enrichment as the
+best distinguishability over measurements, which also gives Bures directly
+(Fuchs--Caves~\cite{fuchs1995}). The derivations are:
 \begin{itemize}[leftmargin=2em,nosep]
   \item \textbf{A1 \status{H}:} $\infty$-topos $\ShInf(\mathcal{C})$ from T-76 (Grothendieck site
         level \status{T} via Bures topology, Uhlmann 1976 CPTP contractivity;
         Exp-extension conditional on Giraud axiom verification per Claim 10.2)
         + T-186(a), a hypothesis.
-  \item \textbf{A2:} Uniquely canonical Petz-enrichment via T-187~\status{T} (triple
+  \item \textbf{A2 \status{C} (monotonicity):} the topology is forced (every continuous
+        distance on the compact $\Dens(\mathbb{C}^7)$ induces the standard one); \emph{within
+        the CPTP-monotone metrics} Bures is the uniquely canonical Petz-enrichment via T-187~\status{T} (triple
         characterisation: Char-I Petz extremality, Char-II Uhlmann universality, Char-III
         SLD-Fisher Cram\'er--Rao saturation) + T-189~\status{T} (Char-IV, physical recasting via
-        MaxEnt: $g_{ij} = \tfrac14 C^{\mathrm{SLD}}_{ij}$, equivalently $g_B^{-1} = 4\,C_{\mathrm{est}}$).
+        MaxEnt: $g_{ij} = \tfrac14 C^{\mathrm{SLD}}_{ij}$, equivalently $g_B^{-1} = 4\,C_{\mathrm{est}}$);
+        the monotonicity itself is the third condition (this line read ``via T-187 + T-189''
+        until 2026-09-26).
   \item \textbf{A3:} $N \geq 7$ from Theorem~S~\status{T}; the \emph{structure} from the
         Bridge T-15 chain
         $(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{\text{T-15}} \mathrm{BIBD}(7,3,1) \to \mathrm{PG}(2,2) \to \mathbb O \to G_2$
@@ -483,10 +503,11 @@ to A1 through T-186(a) is a hypothesis. The derivations are:
 \begin{theorembox}[T-190: Axiomatic Closure of UHM \status{C}]
 \label{thm:t190-axiomatic-closure}
 A1--A5 of $\Omega^7$ are derivable from
-$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V})+\text{MaxEnt}$ \emph{under two conditions}:
-the Page--Wootters constraint is assumed (T-87, step 4) and the route to A1 through
-T-186(a) is a hypothesis. The derivation chain per axiom:
-A1 via T-76+T-186(a); A2 via T-187+T-189 (triple Petz/Uhlmann/SLD-Fisher + MaxEnt
+$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V})+\text{MaxEnt}$ \emph{under three conditions}:
+the Page--Wootters constraint is assumed (T-87, step 4), the route to A1 through
+T-186(a) is a hypothesis, and the enrichment of A2 is CPTP-monotone (Lemma~M). The
+derivation chain per axiom:
+A1 via T-76+T-186(a); A2 via monotonicity + T-187 + T-189 (triple Petz/Uhlmann/SLD-Fisher + MaxEnt
 physical recasting); A3 via Theorem~S and Bridge T-15; A4 via (V) necessity;
 the clock register of A5 via T-87, steps 1--3. The earlier statement --- all five axioms
 are theorems and UHM has \textbf{zero} independent axioms --- is
