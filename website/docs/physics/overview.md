@@ -45,7 +45,7 @@ Complete map of the "Physics" section pages with subsections and key topics.
 | | [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules) | Fano channel, selection rule, Higgs line |
 | | [Noether Charges](/docs/physics/gauge-symmetry/noether-charges) | 14 conserved charges, Ward identities |
 | | [Gap RG Flow](/docs/physics/gauge-symmetry/rg-flow) | β-functions (1/2/3-loop), fixed points, conformal window, RG suppression $\lambda_3$ |
-| **Particle Physics** | [Fermion Generations](/docs/physics/particle-physics/fermion-generations) | Triplet (1,2,4), Fritzsch texture |
+| **Particle Physics** | [Fermion Generations](/docs/physics/particle-physics/fermion-generations) | Triplet (1,2,4), Fritzsch texture (retracted [✗] 2026-09-26, T-345(e)) |
 | | [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) | Mass hierarchy from Fano topology, sectoral RG for $m_b/m_t$ [T] |
 | | [CKM Matrix](/docs/physics/particle-physics/ckm-matrix) | Quark mixing, $\delta_{CP}$ |
 | | [Higgs Sector](/docs/physics/particle-physics/higgs-sector) | Uniqueness of Higgs line $\{A,E,U\}$, Higgs quartic $\lambda_4$ from spectral action [C] |
@@ -81,7 +81,7 @@ Complete map of the "Physics" section pages with subsections and key topics.
 | [Confinement, CKM, neutrinos, $\xi_F$](/docs/physics/gauge-symmetry/confinement) | $\xi_F \sim 160$ pc [C], ABJ [T], CKM [H], $\sqrt{\sigma} \approx 457$ MeV **[C at (SV)]**, $\theta_{\mathrm{QCD}} = 0$ **[C at (SV)]** (T-99) | High (T-73 + T-69 + T-64 + T-99) |
 | [Standard Model, SUSY, proton, $\Lambda$](/docs/physics/gauge-symmetry/standard-model) | (1,2,4) unique [T], **IR FP error [✗]** | Low (5 critical vulnerabilities) |
 | [Fano selection rule](/docs/physics/gauge-symmetry/fano-selection-rules) | **Uniqueness of Higgs line [T]**, selection rule **[T]** (via $f_{ijk}$) | High |
-| [Full Fano architecture, synthesis](/docs/physics/particle-physics/fermion-generations) | Fritzsch texture [C], budget 41.5 [C], **deficit 79** | Medium (CKM numbers overstated) |
+| [Full Fano architecture, synthesis](/docs/physics/particle-physics/fermion-generations) | Fritzsch texture [✗] (was [C]; 2026-09-26, T-345(e)), budget 41.5 [C], **deficit 79** | Medium (CKM numbers overstated) |
 | [Gaussian sum, dark matter](/docs/physics/cosmology-phys/dark-matter) | Lattice theta function, O-relic, QCD axion | Medium (vulnerabilities K-1, K-2) |
 | [Resolution K-1/K-2, O-parity](/docs/physics/cosmology-phys/berry-phase) | $G_2$-orientation [T], CS refutation [T], O-parity [T] | High |
 | [Exact $\Theta_M$, uniqueness $B^{(b)}$, zeta](/docs/physics/dual-aspect/zeta-regularization) | **$\Theta_M/\Theta_0 \approx 1$ at $S_0=20$ [T]**, $B^{(b)}$ unique [T], $Z_\Phi(-k)=0$ [T] | High |
@@ -140,8 +140,10 @@ Fano plane combinatorics. The unique line satisfying the selection rule conditio
 **See:** [Particle Physics](/docs/physics/particle-physics/fermion-generations)
 :::
 
-:::warning Conditional: Fritzsch texture from Fano topology [C]
+:::warning[Retracted 2026-09-26 (T-345(e)): Fritzsch texture from Fano topology, formerly [C]]
 **Details:** [Fermion Generations](/docs/physics/particle-physics/fermion-generations)
+
+**Status [✗].** The six-zero Fritzsch texture is refuted by the data whatever its origin: with the running masses at $M_Z$ it gives $\lvert V_{cb}\rvert\ge0.073$ for every choice of phases, against $0.04183^{+0.00079}_{-0.00069}$ (PDG 2024) ([CKM §6.3](/docs/physics/particle-physics/ckm-matrix#derivation-vus), [§11](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов)). Former text:
 
 Structural prediction: fermion mass hierarchy follows from the Fano incidence topology. **Texture structure [T]**, but the full Fritzsch texture is conditional on the assumption $\epsilon \ll 1$ and absence of non-perturbative corrections — **[C]** (see yukawa-hierarchy.md, Theorem 5.2).
 
@@ -218,6 +220,8 @@ Proven via octonion structure constants $f_{ijk}$ — the unique $G_2$-invariant
 Formulas such as $|V_{us}| \sim \sqrt{m_d/m_s}$ are standard consequences of the Fritzsch texture with **observed** quark masses as input. "Agreement at 1-4%" is not a prediction of the theory, but a consequence of substituting empirical data.
 
 **Verdict:** The prediction is **structure** (Fritzsch texture). Numbers are a consequence of structure + data. "1% agreement" for $J$ is actually 3% in $\sin(\delta)$.
+
+*Corrected 2026-09-26 (T-345(e)):* the structure is retracted as well [✗] — the Fritzsch texture gives $\lvert V_{cb}\rvert\ge0.073$ against $0.0418$ — and $J$ computed with $\delta = 64.5°$ is not a prediction: that phase rests on a "two-loop correction" of $12.6°$ which the Standard Model does not have. No parameter-free structure of the clock predicts a mixing angle or a mass ratio ([CKM §11](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов)).
 :::
 
 ### Refuted results [✗]
@@ -270,8 +274,8 @@ Covariantly constant spinor $\eta_0 = 1_\mathbb{O}$: $\Delta_7 = 1 \oplus 7$ —
 
 ### Conditional results [C]
 
-:::warning Conditional: Fritzsch texture from Fano topology [C]
-Texture structure [T]; full Fritzsch texture is conditional on $\epsilon \ll 1$ — **[C]**.
+:::warning[Retracted 2026-09-26 (T-345(e)): Fritzsch texture from Fano topology, formerly [C]]
+**Status [✗]:** the texture gives $\lvert V_{cb}\rvert\ge0.073$ against $0.0418$ ([CKM §6.3](/docs/physics/particle-physics/ckm-matrix#derivation-vus)). Former text: Texture structure [T]; full Fritzsch texture is conditional on $\epsilon \ll 1$ — **[C]**.
 
 **See:** [Particle Physics](/docs/physics/particle-physics/fermion-generations)
 :::
@@ -298,8 +302,8 @@ Superpotential $W = \mu_W \sum f_{ijk} \Theta_{ij}\Theta_{jk}\Theta_{ik}$ constr
 $\varepsilon_{eff}$ — **partially solved**: self-consistent equation from sectoral hierarchy [C], but full minimization of $V_{\text{Gap}}$ with sectoral structure is open. Assignment: $k=1 \to$ 3rd [T], $k=4 \to$ 2nd, $k=2 \to$ 1st (confinement [T] + asymptotic freedom) [T] — see [generation assignment](/docs/physics/particle-physics/fermion-generations#4-назначение-поколений).
 :::
 
-:::warning Hypothesis: $\delta_{CP} \sim 64.5°$
-Observed $\delta_{CP} \equiv \gamma = 64.6° \pm 2.8°$ (LHCb tree-level combination, ICHEP 2024; PDG 2024 global fit $65.7° \pm 1.5°$) — the prediction lands essentially on top ($\approx 0.04\sigma$ from the direct value). The sign of the 2-loop correction is undetermined a priori; the data select the negative branch. Status [H].
+:::warning[Retracted 2026-09-26 (T-345(e)): δ_CP ∼ 64.5°, formerly a hypothesis]
+**Status [✗].** $64.5°$ is the Fano phase $77.1°$ minus a "two-loop correction" of $12.6°$ that the Standard Model does not have: in one-loop running from $M_Z$ to $2\times10^{16}$ GeV $\sin\delta$ changes by $2\times10^{-5}$ and the phase by $0.003°$. Without it the Fano value $77.1°$ is $7.6\sigma$ from $65.7° \pm 1.5°$ (PDG 2024), and the phase source $V_3$ is retracted (every $G_2$-invariant cubic is PT-even, T-331). Agreement with the data stands; the derivation does not ([CKM §11](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов)). Former text: Observed $\delta_{CP} \equiv \gamma = 64.6° \pm 2.8°$ (LHCb tree-level combination, ICHEP 2024; PDG 2024 global fit $65.7° \pm 1.5°$) — the prediction lands essentially on top ($\approx 0.04\sigma$ from the direct value). The sign of the 2-loop correction is undetermined a priori; the data select the negative branch. Status [H].
 :::
 
 :::info Neutrino masses via type-I seesaw [T]
@@ -728,9 +732,9 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 21. $S_{Gap}$ from Schwinger-Keldysh (T-75): dissipation + kinetics + potential — [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан)
 22. Spectral self-closure (T-79): axioms → spectral triple → axioms — [Consequences](/docs/core/foundations/consequences#теорема-самозамыкание)
 
-### Level 1a: Conditional results [C] (3 results)
+### Level 1a: Conditional results [C] (3 results listed, item 20 retracted 2026-09-26)
 
-20. Fritzsch texture from Fano topology — **[C]** (structure [T], full texture conditional on $\epsilon \ll 1$) — [Fermion Generations](/docs/physics/particle-physics/fermion-generations)
+20. ~~Fritzsch texture from Fano topology — **[C]** (structure [T], full texture conditional on $\epsilon \ll 1$)~~ — retracted [✗] 2026-09-26 (T-345(e)): $\lvert V_{cb}\rvert\ge0.073$ against $0.0418$ — [Fermion Generations](/docs/physics/particle-physics/fermion-generations)
 21. $\xi_F \sim 160$ pc — **[C]** (RG equation [T], numerical value conditional on vacuum parameters) — [Confinement](/docs/physics/gauge-symmetry/confinement)
 22. Perturbative $\Lambda$ budget $= 10^{-41.5}$ — **[C]** (at $\varepsilon = 10^{-2}$; without $\varepsilon$: 29.5 [T]) — [Cosmological Constant](/docs/physics/gravity/cosmological-constant)
 
@@ -841,7 +845,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 - [Noether Charges](/docs/physics/gauge-symmetry/noether-charges) — 14 charges, Ward identities
 
 *Particle physics:*
-- [Fermion Generations](/docs/physics/particle-physics/fermion-generations) — triplet (1,2,4), Fritzsch texture
+- [Fermion Generations](/docs/physics/particle-physics/fermion-generations) — triplet (1,2,4), Fritzsch texture (retracted, T-345(e))
 - [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) — mass hierarchy
 - [CKM Matrix](/docs/physics/particle-physics/ckm-matrix) — quark mixing
 - [Higgs Sector](/docs/physics/particle-physics/higgs-sector) — uniqueness of Higgs line

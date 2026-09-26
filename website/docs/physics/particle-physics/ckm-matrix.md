@@ -183,6 +183,8 @@ Observed: $\theta_{23}/\theta_{12} \approx 0.040/0.227 \approx 0.18$. This is co
 
 ### Theorem 3.2 (Refined Cabibbo angle with selection principle) {#thm-3-2}
 
+*Retracted [✗] 2026-09-26 (T-345(e)) together with Theorem 3.1:* it uses the same suppression $\exp(-4.63)$ of the retracted cubic, and angles do not run appreciably in the Standard Model. The text is the former derivation.
+
 **Theorem.** Taking into account the selection principle $(k_1,k_2,k_3) = (1,2,4)$ and RG evolution:
 
 **(a)** Bare angle: $\theta_{12}^{(\text{Fano})} = 2\pi|k_1 - k_2|/7 = 2\pi/7$. RG correction: suppression by $\exp(-4.63) \approx 0.0097$.
@@ -223,6 +225,8 @@ $$\delta_\text{CP} = \arg\left(\sum_\text{Fano} \pm e^{i(\phi_1 + \phi_2 - \phi_
 Qualitative mechanism: $V_3$ (octonionic associator, PT-odd) is the unique source of CP violation in the Gap formalism. The specific numerical value of the phase is determined by the $\mathbb{Z}_7$-structure, but two-loop corrections require further computation.
 
 Computational task C16: 3-loop RG + threshold corrections. All formulas are defined [T]; computation is feasible in SYNARC.
+
+*Retracted [✗] 2026-09-26 (T-345(e)):* $V_3$ is not PT-odd — every $G_2$-invariant cubic is PT-even (T-331) — so it is no source of CP violation, and the phase does not run appreciably (Theorem 4.2). This box keeps its former text.
 :::
 
 CP violation in the CKM matrix arises from the **complexity** of the overlaps $\langle\chi_i|\Gamma_{EU}|\chi_j\rangle$ between fermionic spinors of different generations. This complexity has a single source — the cubic potential $V_3$. Here $V_3$ plays a **dual role**: it also enforces $\theta_{\mathrm{QCD}} = 0$ through the fixing of vacuum phases ([T-99 \[T\]](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd)), while generating $\delta_{\mathrm{CP}} \neq 0$ through inter-generation mixing (details: [dual role of $V_3$](/docs/physics/gauge-symmetry/confinement#следствие-двойная-роль-v3)):
@@ -296,6 +300,8 @@ The negative sign means that $J$ **decreases** when moving from IR to UV (i.e. i
 - Tree-level value $\delta_\text{CP}^{(\text{tree})} = |2\pi/7| \approx 51.4°$ — UV value
 - IR value: $\delta_\text{CP}^{(\text{phys})} \approx 51.4° + |\delta^{(2)}| \approx 64°$ (correction is added due to sign convention)
 - **Magnitude** $|\delta^{(2)}| \sim 12.6°$ depends on threshold corrections at the GUT scale — **[H]**
+
+*Retracted [✗] 2026-09-26 (T-345(e)):* the running of $J$ in the SM follows that of the angles ($\lvert V_{cb}\rvert$, $\lvert V_{ub}\rvert$ grow by 13 % from $M_Z$ to $2\times10^{16}$ GeV), while the phase itself moves by $0.003°$ and $\sin\delta$ by $2\times10^{-5}$ (`test_ckm_phase_does_not_run_in_the_sm`); there is no correction of $12.6°$ whose sign could be fixed. This box keeps its former text.
 :::
 
 ### Former final prediction, retracted [✗]:
@@ -306,6 +312,8 @@ $$|\delta_\text{CP}| \approx 64.5° \quad \text{(former: sign of correction [C u
 
 :::warning Discrepancy with experiment
 Observed value $\delta_\text{CP} = 65.7° \pm 1.5°$ (PDG 2024). Predicted value $\approx 64.5°$ deviates from the central experimental value by $\sim 1.2°$ ($< 1\sigma$). Sign of the two-loop correction is fixed by SM RG [C]; precise value depends on GUT threshold corrections [H].
+
+*Retracted 2026-09-26 (T-345(e)):* the predicted value is retracted [✗] (box under Theorem 4.2); the discrepancy of the uncorrected $77.1°$ is $11.4°$, $7.6\sigma$.
 :::
 
 ---
@@ -316,6 +324,8 @@ Observed value $\delta_\text{CP} = 65.7° \pm 1.5°$ (PDG 2024). Predicted value
 
 :::warning [H] Hypothesis
 The numerical agreement $J \approx 3 \times 10^{-5}$ follows from Fritzsch texture with observed masses, and is not an independent prediction.
+
+*Corrected 2026-09-26 (T-345(e)):* (c) and (d) are [✗]. The phase $64.5°$ of (c) is retracted (Theorem 4.2), and in (d) the observed $\delta = 65.7°$ is substituted: $J$ computed from the observed angles and the observed phase reproduces the observed $J$ by construction, so it is not a prediction. With the uncorrected Fano phase, $\sin 77.1° = 0.975$ against $\sin 65.7° = 0.911$.
 :::
 
 **Theorem.** The Jarlskog invariant is computed from the CKM parameters:
@@ -348,6 +358,8 @@ Observed: $J = (3.08 \pm 0.15) \times 10^{-5}$. **Agreement within 1%.**
 Of the 4 parameters in the formula ($s_{12}$, $s_{23}$, $s_{13}$, $\delta$) only **one** ($\delta$) is predicted by the theory. The remaining three are observables. The residual phase discrepancy is small: $\sin(64.5°)/\sin(65.7°) = 0.903/0.911 = 0.991$ ($\sim 1\%$).
 
 Correct formulation: with Fano-predicted phase $\delta = 64.5°$ and **observed** CKM angles: $J_\text{pred} = 0.967 \times J_\text{obs} \approx 3.0 \times 10^{-5}$. The only genuine prediction is $\sin\delta = 0.903$ vs observed $0.934$ ($\sim 3\%$ discrepancy).
+
+*Corrected 2026-09-26 (T-345(e)):* that one parameter is retracted [✗] (Theorem 4.2), so none of the four is predicted.
 :::
 
 ---
@@ -380,6 +392,8 @@ $$V_{ub} \approx \frac{\epsilon_{13}^{d*}}{y_b} - \frac{\epsilon_{13}^{u*}}{y_t}
 
 :::warning [H] Level 2 — numerical values
 Formulas $|V_{us}| \sim \sqrt{m_d/m_s}$ are standard consequences of Fritzsch texture (Fritzsch, 1977), not original predictions of UHM. The theory's prediction is the **texture structure** [T], not the numbers [H].
+
+*Corrected 2026-09-26 (T-345(e)):* the texture structure is retracted [✗] (§6.3). In (a) the value $0.044$ is not what the Fritzsch texture gives: its exact diagonalisation gives $\lvert V_{cb}\rvert\ge0.073$ for every phase, and the factor $0.5$ from a "Fano phase" $\pi/7$ is not derived.
 :::
 
 **Theorem.** From Fano texture with $\epsilon_\text{eff} \approx 0.06$:
@@ -411,7 +425,7 @@ Observed: $|V_{us}| = 0.2243 \pm 0.0005$. **Agreement** at the center of the ran
 ### 6.3 Derivation of the Formula $|V_{us}| \sim \sqrt{m_d/m_s}$ from Fritzsch Texture {#derivation-vus}
 
 :::warning [H] Standard consequence of Fritzsch texture
-The formula $|V_{us}| \sim \sqrt{m_d/m_s}$ is **not** an original prediction of UHM. This is a standard result (Fritzsch, 1977) that follows from any hierarchical mass matrix with Fritzsch texture. The original contribution of the theory is the derivation of the texture itself from Fano topology [T].
+The formula $|V_{us}| \sim \sqrt{m_d/m_s}$ is **not** an original prediction of UHM. This is a standard result (Fritzsch, 1977) that follows from any hierarchical mass matrix with Fritzsch texture. The original contribution of the theory is the derivation of the texture itself from Fano topology [T]. *Corrected 2026-09-26 (T-345(e)):* that derivation is retracted [✗] (box below).
 :::
 
 The derivation chain consists of two fundamentally distinct steps:
@@ -499,6 +513,8 @@ Numerical values of CKM elements ($|V_{us}| \approx 0.222$, $|V_{cb}| \approx 0.
 - $|V_{ub}| \sim \sqrt{m_u/m_t}$
 
 These are standard formulas (Fritzsch, 1977), not original predictions of UHM.
+
+*Corrected 2026-09-26 (T-345(e)):* the texture behind them is refuted ($\lvert V_{cb}\rvert\ge0.073$ against $0.0418$, §6.3); $\lvert V_{us}\rvert\approx\sqrt{m_d/m_s}$ survives as the empirical Gatto–Sartori–Tonin relation, and $0.044$ is not a Fritzsch value.
 :::
 
 ### 8.3 Anatomy of the Derivation Chain: Structure vs Numbers
@@ -507,17 +523,21 @@ For each CKM result it is necessary to clearly distinguish two levels:
 
 | Statement | Level | What it uses | Status |
 |---|---|---|---|
-| Yukawa matrix is Fritzsch texture | Structural [T] | Fano topology, $\mathbb{Z}_7$-symmetry | **Genuine prediction** |
+| Yukawa matrix is Fritzsch texture | Structural, retracted [✗] 2026-09-26 (was [T]) | Fano topology, $\mathbb{Z}_7$-symmetry | Refuted: $\lvert V_{cb}\rvert\ge0.073$ against $0.0418$ (was "genuine prediction") |
 | $\lVert V_{us}\rVert \approx \sqrt{m_d/m_s} \approx 0.222$ | Consequence [H] | Texture + $m_d = 4.7$ MeV, $m_s = 93.5$ MeV (PDG) | Standard Fritzsch |
 | $\lVert V_{cb}\rVert \approx \sqrt{m_c/m_t} \times f(\phi) \approx 0.044$ | Consequence [H] | Texture + $m_c$, $m_t$ (PDG) + Fano phase | Depends on $\lVert\phi_u - \phi_d\rVert$ |
 | $\lVert V_{ub}\rVert \approx \sqrt{m_u/m_t} \approx 0.0036$ | Consequence [H] | Texture + $m_u$, $m_t$ (PDG) | Standard Fritzsch |
-| $\sin\delta_\text{CP} \approx 0.903$ | Prediction [H] | $V_3$-phase from $\mathbb{Z}_7$ + two-loop correction | Only genuine numerical prediction |
+| $\sin\delta_\text{CP} \approx 0.903$ | Retracted [✗] 2026-09-26 (was prediction [H]) | $V_3$-phase from $\mathbb{Z}_7$ + two-loop correction | The $12.6°$ correction is absent in the SM; $V_3$ retracted (T-331) (was "only genuine numerical prediction") |
 
 The formula $|V_{us}| \sim \sqrt{m_d/m_s}$ is a standard consequence of Fritzsch texture (Fritzsch, 1977). It arises from diagonalizing the mass matrix $M^d M^{d\dagger}$ with zero diagonal elements for the light generations (detailed derivation: [section 6.3](#derivation-vus)). The analogous formulas $|V_{cb}| \sim \sqrt{m_c/m_t}$ and $|V_{ub}| \sim \sqrt{m_u/m_t}$ follow from elements $(2,3)$ and $(1,3)$ of the diagonalization matrices.
 
 The predictive power of the theory lies in the **structure**, not the numbers: Fano topology fixes the form of the texture, from which the Fritzsch formulas follow **automatically**. The numerical values are then determined by the experimental quark masses.
 
+*Corrected 2026-09-26 (T-345(e)):* the structure named here is retracted [✗] — the Fritzsch texture gives $\lvert V_{cb}\rvert\ge0.073$ against $0.0418$ — and no parameter-free structure of the clock supplies another one (§11).
+
 ### 8.4 Honest Assessment of the Jarlskog Invariant
+
+*Corrected 2026-09-26 (T-345(e)):* the phase $64.5°$ used below is retracted [✗] (Theorem 4.2), so $J$ here has no predicted parameter left; the text is the former assessment.
 
 Of the 4 parameters of the formula $J = c_{12} c_{23} c_{13}^2 s_{12} s_{23} s_{13} \sin\delta$ only **one** ($\delta$) is predicted by the theory. The remaining three angles ($s_{12}$, $s_{23}$, $s_{13}$) are observed quantities. The claim of "agreement within 1%" for $J$ is due to:
 
@@ -550,6 +570,7 @@ The discrepancy of $J_\text{pred}$ and $J_\text{obs}$ is determined **only** by 
 :::warning Correct status of numerical predictions
 - Numerical values of CKM elements ($|V_{us}| = 0.222$, $|V_{cb}| = 0.044$, etc.) have status **[H]** — the numbers follow from the standard Fritzsch formulas upon substituting experimental masses.
 - Agreement for CP violation: $\sin\delta_\text{pred} / \sin\delta_\text{obs} = 0.967$, i.e. $\sim 3\%$ — order of magnitude, not an exact prediction.
+- *Corrected 2026-09-26 (T-345(e)):* the Fritzsch texture and $\delta_\text{pred} = 64.5°$ are retracted [✗]; the numbers above are the Gatto–Sartori–Tonin relation and substituted observations, not predictions.
 :::
 
 ### 8.7 Open Questions
@@ -629,6 +650,8 @@ The emergent Fritzsch texture is a **prediction** of UHM, not an input. The nume
 
 ### 9.5. Comparison with external audit criticism
 
+*Note 2026-09-26 (T-345(e)):* the response below rests on the retracted texture and on the retracted Theorem 3.1 with its fitted $C_{\mathrm{norm}}\approx26$; it is kept as the former response. The concern is answered now by §11: no parameter-free structure predicts the CKM numbers.
+
 An external audit raised the concern: "derivation of CKM substitutes observed quark masses into Fritzsch texture, reducing its predictive value."
 
 **Response**: 
@@ -650,6 +673,8 @@ Honestly documenting residual concerns:
 
 These are **computational tasks**, not circular substitutions. UHM maintains non-circularity in principle; residual numerical work is clear-cut.
 
+*Corrected 2026-09-26 (T-345(e)):* items 1–2 are void — the Cabibbo derivation that $C_{\mathrm{norm}}$ normalised is retracted [✗] (Theorem 3.1) — and item 3 would compute from a texture the data refute.
+
 ### 9.7. Summary
 
 :::info CKM non-circularity status [T at T-173 + computational closure]
@@ -657,6 +682,7 @@ These are **computational tasks**, not circular substitutions. UHM maintains non
 - **Fritzsch texture**: emergent from $G_2$-invariance + Fano selection, not an ansatz.
 - **Residual input**: single normalisation $C_\mathrm{norm}$ — reducible to a computational task at T-64.
 - **External audit concern** (observed masses substituted into Fritzsch) **does not apply** to UHM's actual derivation path.
+- *Corrected 2026-09-26 (T-345(e)):* the second and third items are retracted [✗] — the emergent texture is refuted by $\lvert V_{cb}\rvert$ (§6.3), and $C_{\mathrm{norm}}$ belonged to the retracted Theorem 3.1. The principle of the first item stays a statement of method with no derived CKM number behind it (§11).
 :::
 
 ---
@@ -691,7 +717,7 @@ The UHM spectrum is fixed, and it collides head-on with the BSM family.
 
 **Consequence.** UHM makes a sharp, falsifiable prediction about the *channel* of the anomaly: the deficit lives in the **$\gamma W$-box / nuclear-structure radiative corrections, the lattice $K$/$\pi$ form factors, or the $K$–$\pi$ $V_{us}$ tension** — the SM hadronic/nuclear inputs — not in the mixing matrix itself.
 
-**Self-consistency.** This is precisely what licenses the corpus's own Cabibbo derivation ([§3](#3-угол-кабиббо)) to fix the normalisation $C_{\text{norm}}$ from the CKM unitarity condition: UHM's fundamental CKM is exactly unitary [C at 43c identification] (the count $N_{\text{gen}}=3$ is exact, its physical identification is [I]; until 2026-09-25 this read "T from $N_{\text{gen}}=3$"), so the measured $\sim 0.15\%$ deficit is, within UHM, an **extraction artifact**, not a property of the mixing.
+**Self-consistency.** This is precisely what licenses the corpus's own Cabibbo derivation ([§3](#3-угол-кабиббо)) to fix the normalisation $C_{\text{norm}}$ from the CKM unitarity condition: UHM's fundamental CKM is exactly unitary [C at 43c identification] (the count $N_{\text{gen}}=3$ is exact, its physical identification is [I]; until 2026-09-25 this read "T from $N_{\text{gen}}=3$"), so the measured $\sim 0.15\%$ deficit is, within UHM, an **extraction artifact**, not a property of the mixing. *Note 2026-09-26 (T-345(e)):* the Cabibbo derivation of §3 is retracted [✗], so this licence no longer serves a derivation; the unitarity statement itself is unaffected.
 
 **What UHM does *not* predict [D].** The **magnitude** and **sign** of the deficit are Standard-Model hadronic/nuclear physics (the size of $\Box_{\gamma W}$, nuclear-structure corrections, form-factor values); UHM offers no derivation of the $\sim 0.15\%$ number. That residual is the genuinely open part.
 
