@@ -5221,6 +5221,268 @@ def test_self_model_contraction_holds_only_for_constant_weight_and_unital_part()
     assert abs(np.linalg.norm(tr2_reset(X, 0.9)) / np.linalg.norm(X) - 0.9 * np.sqrt(2)) < 1e-12
 
 
+# ── (W) сведена к принципу без числа; внутренняя структура УГМ слепа к кратности (26.09.2026) ──
+
+def _herm_basis(n):
+    B = []
+    for i in range(n):
+        E = np.zeros((n, n), complex)
+        E[i, i] = 1
+        B.append(E)
+    for i in range(n):
+        for j in range(i + 1, n):
+            E = np.zeros((n, n), complex)
+            E[i, j] = E[j, i] = 1
+            B.append(E)
+            E = np.zeros((n, n), complex)
+            E[i, j], E[j, i] = -1j, 1j
+            B.append(E)
+    return B
+
+
+def _sl_basis(n, compact_only=False):
+    """Вещественный базис 𝔰𝔩(n,ℂ) (или 𝔰𝔲(n)): антиэрмитовы (вращения) и эрмитовы бесследовые (бусты)."""
+    H = [h for h in _herm_basis(n)]
+    H0 = [h - np.trace(h) / n * np.eye(n) for h in H]
+    rot = [1j * h for h in H0]
+    boo = [] if compact_only else list(H0)
+    out = []
+    for X in rot + boo:
+        if np.linalg.norm(X) < 1e-12:
+            continue
+        if out and np.linalg.matrix_rank(np.array([np.concatenate([o.real.ravel(), o.imag.ravel()]) for o in out + [X]]), tol=1e-9) == len(out):
+            continue
+        out.append(X)
+    return out
+
+
+def _congruence_rep(n, alg):
+    """Действие A·X = AX + XA† алгебры alg на Herm(n) (вещественные матрицы n²×n²)."""
+    B = _herm_basis(n)
+    G = np.array([[np.real(np.trace(a.conj().T @ b)) for b in B] for a in B])
+    Ginv = np.linalg.inv(G)
+    coords = lambda X: Ginv @ np.array([np.real(np.trace(b.conj().T @ X)) for b in B])
+    return [np.array([coords(A @ b + b @ A.conj().T) for b in B]).T for A in alg], B, G
+
+
+def _invariant_quadratic_forms(n, compact_only=False):
+    reps, _, _ = _congruence_rep(n, _sl_basis(n, compact_only))
+    d = n * n
+    sym = []
+    for i in range(d):
+        for j in range(i, d):
+            S = np.zeros((d, d))
+            S[i, j] = S[j, i] = 1
+            sym.append(S)
+    rows = np.vstack([np.array([(R.T @ S + S @ R).ravel() for S in sym]).T for R in reps])
+    _, s, Vt = np.linalg.svd(rows)
+    null = Vt[np.sum(s > 1e-9):]
+    return [sum(v[k] * sym[k] for k in range(len(sym))) for v in null]
+
+
+def test_only_a_two_component_spinor_factor_carries_a_relativistic_causal_structure():
+    """Теорема 48e(g): n = 2 — единственный размер спинорного сомножителя W, при котором он несёт лоренцеву структуру.
+
+    Для W = ℂⁿ (n = 2, 3, 4): квадратичных форм на Herm(W), инвариантных относительно SL(W)
+    (X ↦ MXM†), ровно 1, 0, 0 — при n = 2 это det сигнатуры (1,3); относительно одних вращений
+    SU(W) их 2 при всяком n (tr X², (tr X)²): число 2 выбирают бусты. Конус форм ранга ≤ 1
+    («лучи света = чистые состояния W») имеет размерность 2n − 1 против n² − 1 у квадрики: 3 = 3,
+    5 < 8, 7 < 15. Орбиты SU(W) на бесследовых формах — размерности не выше n² − n против сферы
+    n² − 2: 2 = 2, 6 < 7, 12 < 14 (изотропия пространства). Форма Киллинга 𝔰𝔩(n,ℂ) как
+    вещественной алгебры — сигнатуры (n²−1, n²−1): (3,3) = 𝔰𝔬(1,3), (8,8) ни у какой 𝔰𝔬(1,k).
+    SL(W)-инвариантных билинейных форм на самом W (спаривание массового члена): 1, 0 (ε при n = 2).
+    """
+    for n, want in ((2, 1), (3, 0), (4, 0)):
+        Q = _invariant_quadratic_forms(n)
+        assert len(Q) == want
+        assert len(_invariant_quadratic_forms(n, compact_only=True)) == 2
+    Q = _invariant_quadratic_forms(2)[0]
+    _, B, G = _congruence_rep(2, [])
+    rng = np.random.default_rng(2600)
+    # сигнатура det в координатах эрмитова базиса
+    M = np.zeros((4, 4))
+    for i, bi in enumerate(B):
+        for j, bj in enumerate(B):
+            M[i, j] = (np.real(np.linalg.det(bi + bj)) - np.real(np.linalg.det(bi)) - np.real(np.linalg.det(bj))) / 2
+    lam = Q.ravel() @ M.ravel() / (M.ravel() @ M.ravel())
+    assert np.allclose(Q, lam * M)
+    ev = np.linalg.eigvalsh(M)
+    assert (int(np.sum(ev > 1e-9)), int(np.sum(ev < -1e-9))) == (1, 3)
+    for n in (2, 3, 4):
+        psi = rng.normal(size=n) + 1j * rng.normal(size=n)
+        _, B, G = _congruence_rep(n, [])
+        Ginv = np.linalg.inv(G)
+        coords = lambda X: Ginv @ np.array([np.real(np.trace(b.conj().T @ X)) for b in B])
+        tang = []
+        for k in range(n):
+            for z in (1, 1j):
+                d = np.zeros(n, complex)
+                d[k] = z
+                tang.append(coords(np.outer(d, psi.conj()) + np.outer(psi, d.conj())))
+        tang.append(coords(np.outer(psi, psi.conj())))
+        assert np.linalg.matrix_rank(np.array(tang), tol=1e-9) == 2 * n - 1
+        H = rng.normal(size=(n, n)) + 1j * rng.normal(size=(n, n))
+        X = H + H.conj().T
+        X -= np.trace(X) / n * np.eye(n)
+        orb = [A @ X - X @ A for A in _sl_basis(n, compact_only=True)]
+        rk = np.linalg.matrix_rank(np.array([np.concatenate([o.real.ravel(), o.imag.ravel()]) for o in orb]), tol=1e-9)
+        assert rk == n * n - n and (rk >= n * n - 2) == (n == 2)
+        alg = _sl_basis(n)
+        ad = []
+        for A in alg:
+            cols = []
+            for Bm in alg:
+                C = A @ Bm - Bm @ A
+                cols.append(np.linalg.lstsq(np.array([np.concatenate([a.real.ravel(), a.imag.ravel()]) for a in alg]).T,
+                                            np.concatenate([C.real.ravel(), C.imag.ravel()]), rcond=None)[0])
+            ad.append(np.array(cols).T)
+        K = np.array([[np.trace(a @ b) for b in ad] for a in ad])
+        kv = np.linalg.eigvalsh((K + K.T) / 2)
+        sig = (int(np.sum(kv > 1e-6)), int(np.sum(kv < -1e-6)))
+        assert sig == (n * n - 1, n * n - 1)
+        lorentz = [(k, k * (k - 1) // 2) for k in range(1, 20)]
+        assert (sig in lorentz) == (n == 2)
+    for n, want in ((2, 1), (3, 0)):
+        alg = _sl_basis(n)
+        basis = [np.outer(np.eye(n)[i], np.eye(n)[j]) for i in range(n) for j in range(n)]
+        rows = np.vstack([np.array([(A.T @ E + E @ A).ravel() for E in basis]).T for A in alg])
+        assert n * n - np.linalg.matrix_rank(rows, tol=1e-9) == want            # комплексная размерность
+
+
+def test_uhm_internal_structure_is_blind_to_the_multiplicity_of_the_fermion_field():
+    """Теорема 48e(f): коммутант внутренних ℂ′-линейных операторов УГМ на 𝒮_ℂ — ровно ℂ′ = span{1, i′}.
+
+    Алгебра, порождённая 𝔰𝔭𝔦𝔫(10) (цвет, 𝔰𝔲(2)_L,R, B−L, Y), подъёмами L_{e_O}, R_{e_O}, мнимой
+    единицы i пространства ℋ и 𝔤₂, имеет в End_ℝ(ℝ³²) коммутант размерности 2, и это span{1, i′}.
+    Значит, на Fₙ = ℂⁿ ⊗_ℂ 𝒮_ℂ коммутант — Mₙ(ℂ′) (вещественная размерность 2n²): внутренняя
+    структура не видит n. Десять образующих Клиффорда ℂ′-антилинейны (антикоммутируют с i′) — они
+    действуют на Fₙ лишь вместе со структурой на первом сомножителе. i′ = ±L_{e_O} на V_L.
+    """
+    e = _spin10_completion()
+    d, lift, ip = e["d"], e["lift"], e["ip"]
+    g2 = []
+    for X in G2:
+        M = np.zeros((8, 8))
+        M[1:, 1:] = X
+        g2.append(lift(d["cl"](M)))
+    ops = list(e["spin10"]) + [lift(d["Lu"]), lift(d["Ru"]), e["I1"]] + g2
+    I32 = np.eye(32)
+    G = np.zeros((1024, 1024))
+    for X in ops:
+        ad = np.kron(X, I32) - np.kron(I32, X.T)
+        G += ad.T @ ad
+    w, V = np.linalg.eigh(G)
+    assert int(np.sum(w < 1e-8)) == 2
+    C = [V[:, k].reshape(32, 32) for k in range(2)]
+    F = np.array([c.ravel() for c in C]).T
+    for T in (np.eye(32), ip):
+        assert np.linalg.norm(F @ np.linalg.lstsq(F, T.ravel(), rcond=None)[0] - T.ravel()) < 1e-9
+    for g in e["g10"]:
+        assert np.allclose(g @ ip, -ip @ g)
+    PL = e["PL"]
+    sgn = 1 if np.allclose(e["om"], ip) else -1
+    assert np.allclose(PL @ ip @ PL, sgn * PL @ lift(d["Lu"]) @ PL)
+    for n in (1, 2, 3):
+        opsn = [np.kron(np.eye(n), X) for X in ops[:12] + [lift(d["Lu"])]]
+        # коммутант 1⊗𝔄 = End(ℝⁿ)⊗ℂ′ проверяем по вложению: всё из Mₙ(ℂ′) коммутирует
+        rng = np.random.default_rng(n)
+        Z = np.kron(rng.normal(size=(n, n)), np.eye(32)) + np.kron(rng.normal(size=(n, n)), ip)
+        assert max(np.abs(Z @ X - X @ Z).max() for X in opsn) < 1e-12
+
+
+def test_a_real_lorentz_factor_gives_an_anomalous_or_vectorlike_generation():
+    """Теорема 48e(h): при вещественном лоренцевом сомножителе всякое фермионное пространство на 𝒮 аномально или векторно.
+
+    Коммутант 𝔤_SM (T-326) в End_ℝ(𝒮) — ℂ ⊕ ℂ (размерность 4, коммутативен): кварковый блок
+    (ℝ¹², где цвет действует) и лептонная прямая (ℝ⁴). Комплексные структуры, коммутирующие с 𝔤_SM, —
+    ±L_{e_O} на каждом блоке. При J = L_{e_O}: Y-заряды {1/6: 6, −1/2: 2}, ΣY³ = −2/9; при смене знака
+    на кварковом блоке кубическая цветовая аномалия Σq³ меняет знак и не равна нулю. На p копиях Q_L
+    и m − p копиях Q̄_L она пропорциональна 2p − m: ноль только в векторном случае.
+    """
+    d = _sm_on_complex_octonions()
+    basis = [np.outer(np.eye(16)[i], np.eye(16)[j]) for i in range(16) for j in range(16)]
+    com = _null_commutant(d["g"], basis)
+    assert len(com) == 4
+    C = [v.reshape(16, 16) for v in com]
+    assert max(np.abs(a @ b - b @ a).max() for a in C for b in C) < 1e-10
+    S = sum(s.T @ s for s in d["su3"])
+    w, V = np.linalg.eigh(S)
+    PQ = V[:, w > 1e-9] @ V[:, w > 1e-9].T
+    assert int(round(np.trace(PQ))) == 12
+    Lu = d["Lu"]
+
+    def charges(J, X, P):
+        q = -J @ X
+        q = P @ ((q + q.T) / 2) @ P
+        vals = np.linalg.eigvalsh(q)
+        return vals
+
+    qY = np.round(np.linalg.eigvalsh((-Lu @ d["Y"] + (-Lu @ d["Y"]).T) / 2), 9)
+    vals, mult = np.unique(qY, return_counts=True)
+    cm = {float(v) + 0.0: int(m) // 2 for v, m in zip(vals, mult)}
+    assert cm == {-0.5: 2, round(1 / 6, 9): 6}
+    assert abs(sum(v ** 3 * m for v, m in cm.items()) - (-2 / 9)) < 1e-9
+    rng = np.random.default_rng(7)
+    X = sum(c * s for c, s in zip(rng.normal(size=8), d["su3"]))
+    A = []
+    for sq in (1, -1):
+        J = sq * PQ @ Lu @ PQ + (np.eye(16) - PQ) @ Lu @ (np.eye(16) - PQ)
+        assert np.allclose(J @ J, -np.eye(16)) and max(np.abs(J @ g - g @ J).max() for g in d["g"]) < 1e-10
+        A.append(np.sum(charges(J, X, PQ) ** 3) / 2)
+    assert abs(A[0]) > 1e-3 and abs(A[0] + A[1]) < 1e-9
+
+
+def test_depth_register_history_and_the_two_slots_supply_no_spinor_rotation():
+    """Теорема 48e(i): ни история регистра глубины, ни два слота «голоном + самомодель» не дают вращения спинорного сомножителя.
+
+    Фейнман–Китаев: для N = 6 шагов со случайными унитарами на ℂ⁷ гамильтониан распространения после
+    сопряжения W = Σ|t⟩⟨t|⊗U_t⋯U_1 равен (L_path/2) ⊗ 1; спектр L_path прост, его коммутант в M₇(ℂ)
+    имеет размерность 7 и абелев — 𝔰𝔲(2) на часах с ним не коммутирует. Два слота: алгебра M₇ ⊕ M₇
+    с центром ℂ² (бит слота классический); для s₁ = diag(1^p, −1^q), p + q = 7, решения s₁s₂ = −s₂s₁
+    имеют ранг не выше 2·min(p, q) < 7 — обратимой пары нет, единичного спин-фактора нет ни в блоке, ни в сумме.
+    """
+    rng = np.random.default_rng(2611)
+    N, d = 6, 7
+    Us = []
+    for _ in range(N):
+        Z = rng.normal(size=(d, d)) + 1j * rng.normal(size=(d, d))
+        Q, R = np.linalg.qr(Z)
+        Us.append(Q @ np.diag(np.diag(R) / np.abs(np.diag(R))))
+    T = N + 1
+    ket = lambda t: np.eye(T)[t]
+    H = np.zeros((T * d, T * d), complex)
+    for t in range(1, T):
+        P1, P0 = np.outer(ket(t), ket(t)), np.outer(ket(t - 1), ket(t - 1))
+        hop = np.kron(np.outer(ket(t), ket(t - 1)), Us[t - 1])
+        H += (np.kron(P1 + P0, np.eye(d)) - hop - hop.conj().T) / 2
+    W = np.zeros((T * d, T * d), complex)
+    acc = np.eye(d)
+    for t in range(T):
+        if t > 0:
+            acc = Us[t - 1] @ acc
+        W += np.kron(np.outer(ket(t), ket(t)), acc)
+    Lp = np.diag([1.0] + [2.0] * (T - 2) + [1.0]) - np.eye(T, k=1) - np.eye(T, k=-1)
+    assert np.allclose(W.conj().T @ H @ W, np.kron(Lp / 2, np.eye(d)))
+    ev = np.linalg.eigvalsh(Lp)
+    assert np.min(np.diff(ev)) > 1e-3
+    basis = [np.outer(np.eye(T)[i], np.eye(T)[j]) for i in range(T) for j in range(T)]
+    com = _null_commutant([Lp], basis)
+    assert len(com) == T
+    Cm = [v.reshape(T, T) for v in com]
+    assert max(np.abs(a @ b - b @ a).max() for a in Cm for b in Cm) < 1e-10
+    for p in range(8):
+        q = 7 - p
+        s1 = np.diag([1.0] * p + [-1.0] * q)
+        b7 = [np.outer(np.eye(7)[i], np.eye(7)[j]) for i in range(7) for j in range(7)]
+        rows = np.array([(s1 @ E + E @ s1).ravel() for E in b7]).T
+        _, s, Vt = np.linalg.svd(rows)
+        null = Vt[np.sum(s > 1e-9):]
+        if len(null) == 0:
+            continue
+        s2 = sum(c * v.reshape(7, 7) for c, v in zip(rng.normal(size=len(null)), null))
+        assert np.linalg.matrix_rank(s2, tol=1e-9) == 2 * min(p, q) < 7
+
+
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
     bad = 0
