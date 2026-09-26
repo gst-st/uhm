@@ -22,6 +22,8 @@ Each UHM result carries one of seven statuses:
 **Inheritance rule (R6).** A result may not be stronger than its weakest dependency: a [T] resting on a [C], [D], [P] or [I] inherits that status and must say so at the point of use (`[C at T-119]`, `[T at the T-128 definition]`). Checked by `scripts/check_status_consistency.py`.
 
 **Naming rule for [C].** [C] means "conditional theorem" and **nothing else**: the assumption must be recoverable at the canonical row here, and inline uses should name it (`[C at 2-loop RG]`, `[C under Gap-potential topology]`). A statement that merely follows logically from theorems is **[T]**, not [C]. Until 2026-09-10 the octonionic-derivation page carried a second, incompatible legend ("[C] — Consequence: logically follows from [T]"), which made one letter mean both "weaker than a theorem" and "a theorem's consequence"; that legend is retracted.
+
+**Where the assumptions are listed.** Every assumption named in a `[C at (X)]` here — the axioms, the bridge premises (Cl₀) and (P), the principle (MaxΦ), (P1₆), the free parameters and the identification hypotheses — is listed once, with where it is used, its status, independence models and the discharged ones, on [Premises of UHM](/docs/reference/premises).
 :::
 
 :::warning What this registry does not cover {#ранние-номера}
