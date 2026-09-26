@@ -85,7 +85,7 @@ T-329 uses only that the spinor factor of the fermion field is a complex space o
 
 | Premise | Statement | Used by | Status |
 |---|---|---|---|
-| **(SV)** | the sector values of the Gap vacuum ($\varepsilon_{33}$, $\bar\varepsilon = O(10^{-2})$) | T-69, T-70, T-79–T-81, T-99, T-120b(ii), T-176, T-180, T-185b, T-216, T-219, C35 and the Λ-budget | [H]; as the vacuum of $V_{\text{Gap}}$ it is refuted [✗] by T-64; it survives only as an independent hypothesis, and under (Cl₀)+(GC) it no longer carries a family index (T-332) |
+| **(SV)** | the sector values of the Gap vacuum ($\varepsilon_{33}$, $\bar\varepsilon = O(10^{-2})$) | T-69, T-70, T-79–T-81, T-99 (conclusion retracted 2026-09-26), T-120b(ii), T-176, T-180, T-185b, T-216, T-219, C35 and the Λ-budget | [H]; as the vacuum of $V_{\text{Gap}}$ it is refuted [✗] by T-64; it survives only as an independent hypothesis, and under (Cl₀)+(GC) it no longer carries a family index (T-332) |
 | **(GC)** | a generation is a non-trivial real harmonic of the clock register | $N_{\text{gen}} = 3$ in the harmonic reading (T-328), the mixing discussion | [H]; the exact family $\mathbb Z_3$ is refuted by $\lvert V_{us}\rvert \approx 0.224$ — only the broken form survives |
 | **(UP)** | only up-type fields couple to the Higgs doublet at tree level (holomorphy in one complex doublet) | T-332, the Dirac neutrino mass | [H] at leading order; the exact form is refuted [✗] (it leaves $e$, $\mu$, $\tau$ massless to all orders, T-332(i)) |
 | **(PQ)** | an added Peccei–Quinn sector | the Gap-axion table of dark matter and confinement | [H]; the Clifford content has no Peccei–Quinn symmetry and no spontaneous CP violation (T-333(e)–(h)); strong CP is open [Pr] |
@@ -105,7 +105,7 @@ T-329 uses only that the spinor factor of the fermion field is a complex space o
 | regeneration rate $\kappa$, Fano weight $\alpha$ | the evolution equation, T-334–T-336 | free; the window needs $\kappa \geq 11.83,\ 20.91,\ 42.64$ at $\alpha = 0,\ \tfrac12,\ 1$ for every self-model (T-336) |
 | $\omega_0$ | A4 | the scale; its value differs between holons |
 | phase reference $D$ of $\varphi_J$ | T-334(4) | a gauge of the $H$-free dynamics; physical only relative to a non-diagonal $H$ |
-| $\bar\theta_{\mathrm{QCD}}$ | T-333 | free in the Clifford content [Pr] |
+| $\bar\theta_{\mathrm{QCD}}$ | T-333, T-99 (corrected 2026-09-26) | free in the Clifford content [Pr]; no $G_2$-invariant Gap term fixes it ([Confinement §3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)) |
 
 ## 5. Premises discharged — no longer inputs {#снятые-посылки}
 

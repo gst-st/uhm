@@ -892,7 +892,7 @@ Predictions are **independent** of the $\Lambda$ suppression mechanism:
 
 1. $N = 7$ (number of dimensions)
 2. 3 generations of fermions
-3. $\theta_{\mathrm{QCD}} = 0$
+3. ~~$\theta_{\mathrm{QCD}} = 0$~~ — withdrawn 2026-09-26 (T-99 corrected): not derived, $\bar\theta$ is a free parameter, strong CP open [Pr] ([Confinement §3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала))
 4. $|V_{us}|, |V_{cb}|, |V_{ub}|$ — from Fano geometry
 5. QCD axion: $f_a \sim 2 \times 10^{15}$ GeV, $m_a \sim 3$ neV
 6. O-relic (Wimpzilla): $m \sim 10^{13}$ GeV, $\sigma_{\mathrm{DD}} \sim 10^{-60}$ cm$^2$

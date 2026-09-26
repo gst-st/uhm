@@ -163,7 +163,7 @@ The falsification criterion is **strict in the theoretical sense** and **approxi
 | [F-Gap-1](#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного): Gap_intra < Gap_inter | Open; machine check narrowed the scope | Requires ISF analysis of fMRI. **Machine check:** across 180 construction-layer natal Γ the gauge-invariant triangle holonomy $\lvert\arg(\gamma_{ab}\gamma_{bc}\gamma_{ca})\rvert$ on the 7 canonical oriented Fano lines is statistically indistinguishable from the 28 non-lines (t ≈ +1.0, difference +0.03 ± 0.39 rad) — consistent with the earlier amplitude-covariance null: **the Fano structure is dynamical wiring (what the dissipator preserves), not a static imprint on natal Γ**. The signature should be sought in states that have passed through the Fano channel (live dynamics, fMRI) — not in the construction. Note: the pairwise Gap_intra/Gap_inter form is not literally operational — in the Fano plane every pair lies on exactly one line, so there are no inter-triplet pairs; the testable form is triple holonomy (7 lines vs 28 non-lines). Machine-probed. |
 | [F-ISF](#f-isf-isf-компоненты-в-фмрт): 6–12 ISF components | Open | Requires systematic fMRI analysis |
 | [F-ξ](#f-ξ-корреляционная-длина-фано): $\xi_F \sim 160$ pc | Open | Testable through LSS surveys |
-| [F-nEDM](#f-nedm-нейтронный-эдм): $d_n = 0$ (T-99) | Consistent | $\|d_n\| < 1.8 \times 10^{-26}$ e·cm (PSI 2020) |
+| [F-nEDM](#f-nedm-нейтронный-эдм): $d_n = 0$ (T-99) | Withdrawn (T-99 corrected, 2026-09-26; was "Consistent") | $\|d_n\| < 1.8 \times 10^{-26}$ e·cm (PSI 2020); UHM predicts no value — $\bar\theta$ is a free parameter |
 | [F-τ_p](#f-τ_p-время-жизни-протона): $\tau_p \sim 6.7 \times 10^{37}$ years | Open | Hyper-K: sensitivity $\sim 10^{35}$ years |
 | [F-Higgs](#f-higgs-отклонение-самосвязи-хиггса): $\delta\lambda/\lambda \sim 10^{-2}$–$10^{-3}$ | Open | Awaiting FCC-hh |
 | [F-Gap-2](#f-gap-2-блоковая-прозрачность-по-фано-триплетам): block transparency | Open | Requires coherence-resolved fMRI; the same caveat as F-Gap-1 — the signature lives in states that have passed through the Fano channel, not in the construction |
@@ -322,6 +322,10 @@ Independently of the central value, first-row CKM unitarity currently shows a $\
 
 ### F-nEDM: Neutron EDM ($\theta_{\mathrm{QCD}} = 0$ exactly) {#f-nedm-нейтронный-эдм}
 
+:::warning[Withdrawn 2026-09-26 (T-99 corrected): UHM makes no prediction for $d_n$]
+The derivation of $\theta_{\mathrm{QCD}} = 0$ is retracted [✗]. Its step 4 is false for the cubic $V_3$ itself: on real states $V_2 + V_3 + V_4 \equiv 0$, and for every $\lambda_3 \neq 0$ the vacuum has non-zero phases ($V_{\min} = -0.197\mu^2$ with $\mathcal G_{\text{total}} = 0.0155$ at the page's constants). The corrected $G_2$-invariant potential is PT-even and fixes no $\bar\theta$, and with the fields that (Cl) forces no Peccei–Quinn, Nelson–Barr or left–right route is available ([Confinement §3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала), T-333). $\bar\theta$ is a free parameter, strong CP is open [Pr], and a measured $d_n \neq 0$ would refute nothing in UHM. The agreement with $\lvert d_n\rvert < 1.8\times10^{-26}$ e·cm no longer counts for the theory. The text below is kept as a record.
+:::
+
 $$
 d_n = 0 \quad \text{(exactly)}
 $$
@@ -338,7 +342,7 @@ Current experimental limit: $|d_n| < 1.8 \times 10^{-26}$ e·cm (PSI 2020), i.e.
 
 **Difference from axion solution:** The axion allows $\theta \sim m_a / f_a \cdot T \sim 10^{-18}$ — non-zero, albeit ultra-small. Gap theory predicts a **strict zero**.
 
-**Status:** [T] Theorem — T-99 ([status registry](/docs/reference/status-registry), [confinement](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd)).
+**Status:** [✗] Withdrawn 2026-09-26 (T-99 corrected, [Confinement §3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)); it read "[T] Theorem — T-99" with verdict PASSING, and [C at (SV)] from 2026-09-25 in the registry ([status registry](/docs/reference/status-registry), [confinement](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd)). The criterion is kept here as a record, not as a prediction.
 
 ---
 
@@ -430,11 +434,11 @@ content at half strength lands inside (T-321, T-323).
 | **F-Higgs** | $\delta\lambda/\lambda_{\text{SM}} \sim 10^{-2}$–$10^{-3}$ | No deviations at precision $\ll 0.1\%$ | FCC-hh | [H] | UNTESTED (ATLAS+CMS 2025: $-0.71 < \kappa_\lambda < 6.1$ — $\sim O(1)$, far above the predicted band) |
 | **F-δ_CP** | $\delta_{\text{CP}} \approx 64.5° \pm 5°$ | $\delta_{\text{CP}}^{\text{exp}} \notin [54°, 75°]$ | LHCb, Belle II | [✗] | **WITHDRAWN** (derivation retracted, T-345(e); data $64.6° \pm 2.8°$) |
 | **F-Cabibbo** | $\theta_{12} \approx 13°$ | Significant revision of $\|V_{us}\|$ | Kaon experiments | [✗] | **WITHDRAWN** (fitted $C_{\mathrm{norm}}$, T-345(e)) |
-| **F-nEDM** | $d_n = 0$ (T-99: $\theta_{\mathrm{QCD}} = 0$ exactly) | $d_n \neq 0$ at any level | n2EDM, nEDM@SNS | [T] | **PASSING** ($\|d_n\| < 1.8\times10^{-26}\,e\cdot$cm, consistent with 0) |
+| **F-nEDM** | $d_n = 0$ (T-99: $\theta_{\mathrm{QCD}} = 0$ exactly) | $d_n \neq 0$ at any level | n2EDM, nEDM@SNS | [✗] | **WITHDRAWN** (derivation retracted, T-99 corrected 2026-09-26; $\bar\theta$ free; data $\|d_n\| < 1.8\times10^{-26}\,e\cdot$cm; was [T], PASSING) |
 | **F-w** | No Big Rip; no permanent $w \neq -1$; DESI quadrant only via a $-1$-crossing; $\dot G_N$ co-drift same-sign (T-254/T-255) | Permanent $w \neq -1$; unbounded/negative $\rho_{\text{DE}}$; crossing-free DESI quadrant; opposite co-drift sign | DESI/Euclid/Roman + LLR | [T]+[C] | CONSISTENT (DESI DR2 quadrant + phantom→quintessence orientation match, $2.8$–$4.2\sigma$; crossing reality not yet established non-parametrically) |
 | **F-Band** | $s_1 \in [1/7,\,3/14]$ and $s_2 \in [1/7,\,2/7]$ for anything alive (T-321, T-323) | A state meeting all four criteria with either sum outside its band | Two sums computed from any $\Gamma$ | [T] | **PASSING** (zero counterexamples over $20\,000$ states per band; both bands attained) |
 
-**Where the fourteen stand.** Three **PASSING**, two **CONSISTENT**, two **PARTIAL**, five **UNTESTED**, two **WITHDRAWN** (F-δ_CP and F-Cabibbo, 2026-09-26: the numbers agree with the data, but their derivations are retracted, T-345(e)). Nothing has moved to FAIL: the five untested ones all wait on instruments that do not yet exist at the needed precision (coherence-resolved fMRI, $\Gamma$-native rate tomography, LSS at $\sim 160$ pc, FCC-hh).
+**Where the fourteen stand.** Two **PASSING**, two **CONSISTENT**, two **PARTIAL**, five **UNTESTED**, three **WITHDRAWN** (F-δ_CP and F-Cabibbo, 2026-09-26: the numbers agree with the data, but their derivations are retracted, T-345(e); F-nEDM, 2026-09-26: $\theta_{\mathrm{QCD}} = 0$ is not derived and $\bar\theta$ is a free parameter, T-99 corrected). *Until 2026-09-26 the count read three PASSING and two WITHDRAWN, with F-nEDM among the passing.* Nothing has moved to FAIL: the five untested ones all wait on instruments that do not yet exist at the needed precision (coherence-resolved fMRI, $\Gamma$-native rate tomography, LSS at $\sim 160$ pc, FCC-hh).
 
 **Verdict legend.** **PASSING** — measured value lies inside the pass band; **CONSISTENT** — not excluded, but the prediction lies beyond current sensitivity; **PARTIAL** — indirect or calibration-dependent support; **UNTESTED** — no experiment has probed the band yet; **WITHDRAWN** — the derivation is retracted, so agreement with the data no longer counts for the theory. A single entry moving to FAIL falsifies the corresponding claim at its stated status level ([T]/[C]/[H]).
 
@@ -466,7 +470,7 @@ Systematic analysis of five main vulnerabilities of the theory (2026):
 | 1 | $\dim = 7$ as postulate | Not empirically verified | 15+ independent derivations [T]: Theorem S (minimality) + octonionic derivation + T15 (bridge) | **Closed** (theoretically) |
 | 2 | $D_{\mathrm{diff}} \geq 2$ [C] | Conditional theorem | The derivation "T-129 → T-151: $D_{\min} = 2$ unconditionally" is retracted (counterexample $\Phi \approx 1.03$, $D_{\mathrm{diff}} \approx 1.42$; T-151); $D_{\min} = 2$ is kept as an independent L2 threshold [D], the independence of the four thresholds being T-124b | **Closed as a threshold**, not as a theorem (it read "Closed (fully)" until 2026-09-25) |
 | 3 | $R = 1/(7P)$ counterintuitive | Requires empirical verification | Algebraic identity [T], [physical interpretation](/docs/proofs/consciousness/conscious-window#физическая-интерпретация-r), T-124 [T] (non-emptiness of Goldilocks zone) | **Closed** (theoretically) |
-| 4 | No experiments | 405 registry entries without lab verification | 23 numbered [predictions](/docs/applied/coherence-cybernetics/predictions) and the 14 falsification criteria below; 3 post-hoc coincidences (F-m\_t, F-nEDM, Weber-Fechner; F-Cabibbo and F-δ\_CP withdrawn 2026-09-26, T-345(e)) | **Confirmed** (requires experiment) |
+| 4 | No experiments | 405 registry entries without lab verification | 23 numbered [predictions](/docs/applied/coherence-cybernetics/predictions) and the 14 falsification criteria below; 2 post-hoc coincidences (F-m\_t, Weber-Fechner; F-Cabibbo and F-δ\_CP withdrawn 2026-09-26, T-345(e); F-nEDM withdrawn 2026-09-26, T-99 corrected — it read 3 with F-nEDM) | **Confirmed** (requires experiment) |
 | 5 | Quantum nature of $\Gamma$ | Tegmark decoherence | **[T-267 [T]](/docs/consciousness/foundations/two-aspect-monism#t-267)**: Tegmark bounds microscopic position-basis superpositions; $\Gamma$ is coarse-grained *collective* structure on a decoherence-free subspace (T-153a), complex by *algebra* not superposition (T-132), and classically realizable — the objection targets a claim UHM does not make. Residual = the categorical gap (Axiom Ω⁷), a distinct primitive | **Closed** (Tegmark objection) |
 
 **Summary:** 4 of 5 vulnerabilities closed theoretically (the Tegmark objection to #5 closed by [T-267](/docs/consciousness/foundations/two-aspect-monism#t-267)); 1 is fundamentally experimental. The categorical gap (why structure is *felt*) is not a vulnerability but the acknowledged [Axiom Ω⁷](/docs/core/foundations/axiom-omega) primitive — distinct from the Tegmark decoherence question, which is now settled.
