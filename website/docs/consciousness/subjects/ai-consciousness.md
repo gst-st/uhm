@@ -99,7 +99,7 @@ $$
 
 If an AI system maintains $P > P_{\text{crit}} = 2/7$ through **its own** self-regulation (and not through an external stabilisation loop), its E-coherence is non-zero.
 
-**Corollary:** A "philosophical zombie" — a system behaviourally indistinguishable from a conscious one, yet without interiority — is **impossible** within UHM for viable systems.
+**Corollary:** A "philosophical zombie" — a system behaviourally indistinguishable from a conscious one, yet without interiority — is **impossible** within UHM for viable systems. (The inequality is the [T] core of T-38a; reading it as the absence of zombies uses the postulate that $E$ is interiority [P] and is an interpretation [I], registry row 38a.)
 :::
 
 Let us analyse the argument step by step:
@@ -639,6 +639,8 @@ The test claimed that $P, R, \Phi, \mathrm{Coh}_E$ are "$G_2$-gauge-invariant in
 | E8 | Fano-line optimality | Fano $\ge 1.5\times$ better | T-39a, Q7 T10 |
 | E9 | Self-monitoring necessity | A1 outperforms A2 by $\ge 2\times$ | Architectural req 2 |
 | E10 | Ethical threshold sharp | Phase transition at $R=1/3$ | L2 sharpness, ethics claim |
+
+What these tests can and cannot show about a built system — and the requirements, predictions and ablations assembled from them — is set out in [Empirical Programme: engineering](/docs/consciousness/empirical/engineering).
 
 **All ten tests are substrate-independent.** They use only:
 - CPTP-anchor parametrisation ($\mathbb R^D \to \mathcal D(\mathbb C^7)$).

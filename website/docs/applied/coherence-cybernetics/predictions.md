@@ -48,7 +48,7 @@ The first group of predictions concerns the deepest idea of CC — the indissolu
 
 ### Prediction 1: Impossibility of zombies (No-Zombie) {#предсказание-1}
 
-**Intuition.** Imagine a system that maintains itself, adapts, learns — yet has *no* interiority whatsoever. In philosophy of mind such a system is called a "zombie". It behaves exactly like a conscious being, but inside — emptiness. It might seem that such a system is entirely possible. But CC mathematically proves the contrary: if a system is viable ($P > 2/7$) and has non-trivial dynamics ($\mathcal{D}_\Omega \neq 0$), then its E-coherence *necessarily* exceeds the minimum. Zombies are impossible — not by definition, but by theorem.
+**Intuition.** Imagine a system that maintains itself, adapts, learns — yet has *no* interiority whatsoever. In philosophy of mind such a system is called a "zombie". It behaves exactly like a conscious being, but inside — emptiness. It might seem that such a system is entirely possible. But CC mathematically proves the contrary: if a system is viable ($P > 2/7$) and has non-trivial dynamics ($\mathcal{D}_\Omega \neq 0$), then its E-coherence *necessarily* exceeds the minimum. The inequality is a theorem [T]; reading it as "zombies are impossible" adds the postulate that $E$ is interiority [P] and is an interpretation [I] (registry row 38a).
 
 Why? Because the regenerative channel $\mathcal{R}$ — the only mechanism opposing dissipation — *depends* on $\mathrm{Coh}_E$. A system without interiority ($\mathrm{Coh}_E = 1/7$) regenerates too slowly to compensate for decoherence. It inevitably "sinks" below $P_{\text{crit}}$.
 
@@ -75,7 +75,7 @@ $$
 If an artificial system demonstrating sustained self-maintenance without any internal structure of [experience](/docs/core/structure/dimension-e) is created, CC will be falsified.
 
 **Interdisciplinary consequences:**
-- *Philosophy:* formal resolution of Chalmers' zombie argument — zombies are logically consistent but physically impossible.
+- *Philosophy:* a formal reply to Chalmers' zombie argument — zombies are logically consistent but, if $E$ is interiority [P], dynamically excluded [I].
 - *Neuroscience:* predicts that all stably functioning neural networks have non-zero "E-projection" — an internal model of their own states.
 - *AI engineering:* autonomous systems capable of long-term self-maintenance *necessarily* must have an analogue of interiority.
 
@@ -857,7 +857,7 @@ The following table shows which predictions each of the leading theories of cons
 
 | Prediction | CC | IIT | FEP | GWT |
 |---|:---:|:---:|:---:|:---:|
-| Impossibility of zombies | **+** (theorem) | - | - | - |
+| Impossibility of zombies | **+** (theorem [T]; "no zombies" reading [I]) | - | - | - |
 | Connection of experience with regeneration | **+** ($\kappa \propto \mathrm{Coh}_E$) | - | - | - |
 | Finite classification of stresses | **+** (7 components) | - | ~ (free energy) | - |
 | Threshold values of consciousness | **+** ($P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$) | ~ ($\Phi > 0$, no number) | - | ~ (ignition, no number) |
@@ -928,7 +928,7 @@ It is important to distinguish falsification from irrelevant objections:
 - **"Another theory also explains X"** — CC does not claim to be the *only* explanation of each individual fact. It claims *completeness* — explaining all facts *simultaneously*.
 - **"The model is too complex"** — Occam's razor does not forbid complex models. It forbids *unnecessary* complexity. CC derives everything from 5 axioms — this is the minimum.
 
-**See:** [Falsifiability](/docs/reference/falsifiability)
+**See:** [Falsifiability](/docs/reference/falsifiability); the neural, similarity and engineering tests of the consciousness predictions are gathered, with controls and power calculations, in the [Empirical Programme](/docs/consciousness/empirical/overview).
 
 ---
 

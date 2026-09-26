@@ -185,7 +185,7 @@ Thus, the philosophical zombie — a system without interiority but functionally
 :::note In Plain Terms
 Imagine a factory running 24/7. Every second machines wear out (dissipation). For the factory not to stop, repair crews are needed (regeneration). But the efficiency of repair depends on whether the factory **knows** about its breakdowns — whether it has a monitoring system (E-coherence). A factory without monitoring is a "zombie factory". Theorem 8.1 says: such a factory will inevitably stop. Monitoring is not a luxury but a necessity.
 
-For a philosopher: this is the formal reply to Chalmers's argument. In the ontology of CC, zombies are impossible — not because we postulate it, but because mathematics excludes this possibility.
+For a philosopher: this is the formal reply to Chalmers's argument. What mathematics excludes is a viable dissipative system with $\mathrm{Coh}_E \leq 1/7$ [T]; that such a system would be a zombie rests on the postulate that $E$ is interiority [P], so "zombies are impossible" is the interpretation [I] of the theorem (registry row 38a), not a second theorem.
 
 For a biologist: this explains why the nervous system (providing self-monitoring) evolved in *all* complex multicellular organisms. An organism without a "sense of self" is not viable.
 
