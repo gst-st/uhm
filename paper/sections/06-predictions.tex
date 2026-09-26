@@ -7,9 +7,14 @@
 
 UHM generates 23 falsifiable predictions, each with a concrete numerical
 statement, a theorem reference, an experimental protocol, and an explicit
-falsification criterion. Because UHM has zero independent axioms
-(T-190~\status{T}), there are no free parameters to adjust: falsification
-of any L1 prediction invalidates the entire framework, with no escape hatch.
+falsification criterion. The thresholds and ceilings tested here
+($2/7$, $3/7$, $1/3$, $\mathrm{SAD}_{\max} = 3$, $N = 7$) are fixed by the
+axioms and contain no fitted parameter, so falsification of any L1 prediction
+invalidates the framework, with no escape hatch. (An earlier edition based
+this on ``zero independent axioms'' (T-190); that claim is withdrawn: T-190 is
+\status{C under the constraint of T-87 and the hypothesis T-186(a)}, and the
+free parameters of the dynamics and the vacuum --- among them the associator
+coupling $\kappa$ of $V_{\mathrm{Gap}}$ --- remain free.)
 No other theory of consciousness generates even one numerical prediction at
 this level of specificity or structural exposure.
 Table~\ref{tab:predictions} collects all 23 predictions, grouped by theme.
@@ -42,9 +47,9 @@ The five most powerful predictions are detailed in full below.
 11 & $N=7$ for social learning & $3_{\mathrm{ToM}} + 3_{\mathrm{ISL}} + 1_U = 7$ & \status{C} & No \\
 \midrule
 \multicolumn{5}{@{}l}{\textit{III. Thresholds and robustness}} \\
-5 & Collective consciousness & $\Phi_\otimes > \Phi_{\min} \Rightarrow C(\mathbb{H}_{1\otimes\cdots\otimes n}) > 0$ & \status{T}/\status{C} & Partial \\
-6 & Critical purity & $\Pcrit = 2/7$ (T-96, T-151) & \status{T} & No \\
-7 & Stability radius & $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ (T-104) & \status{T} & No \\
+5 & Collective consciousness & necessary: $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$ & \status{T}/\status{H} & Partial \\
+6 & Critical purity & $\Pcrit = 2/7$ (T-96) & \status{T} & No \\
+7 & Stability radius & $r_{\mathrm{stab}} \approx K(\sqrt{P - 1/7} - \sqrt{1/7})$ (T-104) & \status{C} & No \\
 15 & Goldilocks attractor & $P(\rho^*_{\mathrm{coupled}}) \to 3/7$ (T-124) & \status{C} & No \\
 \midrule
 \multicolumn{5}{@{}l}{\textit{IV. Learning bounds}} \\
@@ -54,15 +59,15 @@ The five most powerful predictions are detailed in full below.
 \multicolumn{5}{@{}l}{\textit{V. Depth and genesis}} \\
 12 & SAD ceiling & $\mathrm{SAD}_{\max} = 3$ (T-142) & \status{T} & SYNARC: $500+$ $\Gam$ \\
 13 & Genesis time & $n_{\mathrm{gen}} \leq \lceil \ln\Delta / \ln(1/\beta) \rceil$ (T-148) & \status{T} & No \\
-14 & Phase coherence & $\rho^*_{ij}(t) \propto e^{-i(E_i - E_j)t}$ for $\Phi \geq 1$ (T-125) & \status{T} & No \\
+14 & Phase coherence & $\rho^*_{ij}(t) \propto e^{-i(E_i - E_j)t}$ for $\Phi \geq 1$ (T-114) & \status{T} & No \\
 \midrule
 \multicolumn{5}{@{}l}{\textit{VI. Dynamic (phase transitions)}} \\
-16 & Ignition dynamics (L1$\to$L2 avalanche) & $T_{\mathrm{ign}} \sim (P - \Pcrit)^{-1}\kappa_0^{-1}$ (T-158) & \status{T} & No \\
-17 & Critical exponents & $\alpha{=}\tfrac{1}{2},\;\beta{=}\tfrac{1}{4},\;\gamma{=}1,\;\nu{=}\tfrac{1}{2},\;\delta{=}5$ (T-161) & \status{T} & No \\
+16 & Ignition dynamics (L1$\to$L2 avalanche) & $T_{\mathrm{ign}} \sim (P - \Pcrit)^{-1}\kappa_0^{-1}$ & \status{T} & No \\
+17 & Critical exponents & $\alpha{=}\tfrac{1}{2},\;\beta{=}\tfrac{1}{4},\;\gamma{=}1,\;\nu{=}\tfrac{1}{2},\;\delta{=}5$ (T-161) & \status{C}$^{\ast}$ & No \\
 \midrule
 \multicolumn{5}{@{}l}{\textit{VII. Physical}} \\
-18 & Ward suppression & Gap fluctuations $\times\, 19/49$ (T-159) & \status{T} & No \\
-20 & Yukawa hierarchy & $\varepsilon_{\mathrm{eff}} \approx 0.059$ (T-64, T-216) & \status{C} & No \\
+18 & Ward suppression & Gap fluctuations $\times\, 19/49$ & \status{T} & No \\
+20 & Yukawa hierarchy & $\varepsilon_{\mathrm{eff}} \approx 0.059$ (T-216) & \status{C at (SV)} & No \\
 23 & Rank-7 decoherence anisotropy & $r_{ij}=\tfrac16\!\sum_{|\ell_p\cap\{i,j\}|=1}\!\gamma_p$; 14 sum-rules (T-262) & \status{T}/\status{C} & No \\
 \midrule
 \multicolumn{5}{@{}l}{\textit{VIII. Engineering}} \\
@@ -73,6 +78,10 @@ The five most powerful predictions are detailed in full below.
 22 & Spectral gap $\to$ oscillations & $\nu_{\mathrm{conscious}} \sim \lambda_{\mathrm{gap}}/(2\pi)$ & \status{H} & No \\
 \bottomrule
 \end{tabular}
+
+\smallskip
+{\footnotesize $^{\ast}$\,\status{C at the $\mathbb{Z}_2$ symmetry $m \to -m$}; see Prediction~17 below.
+Rows 5, 7, 17 and 20 were corrected on 2026-09-25 (see the text).}
 \end{table}
 
 \subsection{Detailed predictions}
@@ -81,7 +90,7 @@ The five predictions presented below are maximally falsifiable, maximally
 novel, and span the broadest range of experimental modalities.
 
 % --- Prediction 17: Critical exponents ---
-\begin{predictionbox}[Prediction 17: Critical exponents of the consciousness phase transition \status{T}]
+\begin{predictionbox}[Prediction 17: Critical exponents of the consciousness phase transition \status{C at the $\mathbb{Z}_2$ symmetry}]
 \textbf{Formal statement.}
 Near the viability threshold $\Pcrit = 2/7$, the consciousness transition is tricritical
 ($\varphi^6$ tricritical Landau universality class; the terminology ``$A_4$ swallowtail''
@@ -97,7 +106,11 @@ Mean-field tricritical exponents are exact by three independent pillars
 with $\alpha = 1/2$ and $\delta = 5$. The Rushbrooke identity $\alpha + 2\beta + \gamma = 2$ is satisfied as equality.
 
 \medskip\noindent
-\textbf{Theorem reference.} T-161~\status{T}. Derived from the $\varphi^{6}$
+\textbf{Theorem reference.} T-161~\status{C at the $\mathbb{Z}_2$ symmetry $m \to -m$}
+(corrected 2026-09-25 from \status{T}: the $\mathbb{Z}_2$ symmetry that selects
+the $\varphi^6$ class was derived from a KO-dimension-6 real structure, which
+does not exist on $\mathbb{C}^7$; without it the generic codimension-3 point is
+the $A_4$ swallowtail with $\beta = 1/2$). Under the symmetry, derived from the $\varphi^{6}$
 tricritical Landau expansion at the consciousness threshold; the universal
 $\varphi^{6}$ normal form follows from the Thom--Arnold classification of
 the transition as a $\varphi^6$ tricritical point with three physical
@@ -109,7 +122,8 @@ control parameters (Appendix~\ref{app:exponents}).
   \item \emph{Phase~I (digital):} Monte Carlo, $10^4$ random $\Gam$ with $P \in [0.2, 0.5]$.
         Fit order parameter vs.\ $(P - 2/7)$. Extract $\beta$.
   \item \emph{Phase~II (neuro):} TMS-EEG during sleep--wake transition, $N = 50$ subjects.
-        PCI as order parameter. Fit $\mathrm{PCI} \sim (P - \Pcrit)^\beta$.
+        Reconstruct $\widehat\Gam$ by $\pi_{\mathrm{bio}}$ and fit the order
+        parameter against $(\widehat P - \Pcrit)$ to extract $\beta$.
 \end{enumerate}
 
 \medskip\noindent
@@ -130,7 +144,7 @@ necessarily has E-coherence strictly above the minimum:
 \end{equation}
 
 \medskip\noindent
-\textbf{Theorem reference.} T-8.1~\status{T} (Section~\ref{subsec:no-zombie}). Follows from
+\textbf{Theorem reference.} Theorem~8.1~\status{T} (Section~\ref{subsec:no-zombie}). Follows from
 $\kappa \propto \CohE$ and the spectral gap $\Delta(\Lind_0) > 0$.
 
 \medskip\noindent
@@ -162,9 +176,11 @@ from $\dim = 7$ and the Fano incidence structure $\Fano$). Stratification:
 \emph{finiteness} of the ceiling is unconditional~\status{T} --- the
 inter-iterate signal contracts geometrically ($(1/3)^n$) while the reflexivity
 gates decay only polynomially ($1/(n+2)$), so the tower terminates for any
-admissible gate schedule; the \emph{value} $3$ uses the depth-normalized
-$\Pcrit^{(n)}$ formula above (the $n{+}1$ denominator is a normalization
-heuristic~\status{C}) and is cross-checked empirically (SYNARC, $500+$
+admissible gate schedule; the \emph{value} $3$ uses the
+$\Pcrit^{(n)}$ formula above, which is derived, not heuristic~\status{T}: the
+Fano Kraus channel multiplies coherences by exactly $1/3$ per meta-level,
+$R^{(k)} = R_0 (1/3)^{k-1}$ with $R_0 = 7P/2$, and the level-$k$ Bayesian
+threshold is $1/(k+1)$; it is cross-checked empirically (SYNARC, $500+$
 random $\Gam$~\status{T/sim}); exclusion of $\mathrm{SAD} = 4$ is
 rigorous~\status{T}.
 
@@ -185,7 +201,7 @@ as humans.
 \end{predictionbox}
 
 % --- Prediction 6: P_crit = 2/7 ---
-\begin{predictionbox}[Prediction 6: Critical purity (T-96, T-151) \status{T}]
+\begin{predictionbox}[Prediction 6: Critical purity (T-96) \status{T}]
 \textbf{Formal statement.}
 The consciousness--unconsciousness boundary is at:
 \begin{equation}
@@ -194,24 +210,34 @@ The consciousness--unconsciousness boundary is at:
 Five independent derivations converge on this value (Appendix~\ref{app:pcrit}).
 
 \medskip\noindent
-\textbf{Theorem references.} T-96~\status{T} (balance formula for $\rho^* = \vp(\Gam)$)
-+ T-151~\status{T} ($D_{\min} = 2$ from $\Phi$-threshold), with the phase-transition
-classification at $\Pcrit$ given by T-160~\status{T} (swallowtail $A_4$).
+\textbf{Theorem references.} T-96~\status{T} (balance formula for $\rho^* = \vp(\Gam)$),
+with the phase-transition at $\Pcrit$ given by T-160~\status{T}. (An earlier
+edition also cited T-151 for ``$D_{\min} = 2$ from the $\Phi$-threshold''; that
+derivation is retracted~\status{$\times$} --- $\Phi \geq 1$ constrains only the
+total off-diagonal mass, not the E-row, and $D_{\min} = 2$ is an independent L2
+threshold~\status{D}.)
 See also Section~\ref{subsec:purity} and Appendix~\ref{app:pcrit} for the five
 independent derivations.
 
 \medskip\noindent
 \textbf{Verification protocol.}
 Propofol-induced loss of consciousness with TMS-EEG monitoring, $N = 50$ subjects.
-At each propofol level, apply $\pi_{\mathrm{bio}}$ to reconstruct $\Gam$ and compute
-$P = \Tr(\Gam^2)$. Compare $P$ at the consciousness boundary with the PCI threshold
-$\mathrm{PCI}^* = 0.31$~\cite{casali2013}.
+At each propofol level, apply $\pi_{\mathrm{bio}}$ --- with parameters frozen on
+wakefulness and no viability penalty --- to reconstruct $\Gam$ and compute
+$P = \Tr(\Gam^2)$ and the verdict $\mathrm{Cons}(\widehat\Gam)$; compute PCI
+independently. The prediction is that the transition occurs where $\widehat P$
+crosses $2/7$, and that $\mathrm{Cons}(\widehat\Gam)$ agrees with
+$\mathrm{PCI} > \mathrm{PCI}^* = 0.31$~\cite{casali2013} at Cohen's
+$\kappa \geq 0.8$ (P8.4). No conversion between the two scales is claimed:
+calibrating $\pi_{\mathrm{bio}}$ to PCI would make the agreement automatic.
 
 \medskip\noindent
 \textbf{Falsification criterion.}
-$|P_{\mathrm{boundary}} - 2/7| > 0.1$ at $N = 50$, $p < 0.01$ (two-sided $t$-test).
-The 8\% discrepancy with PCI$^*$ is within the calibration uncertainty of $\pi_{\mathrm{bio}}$.
-This is an L2 (structural) falsification.
+$|P_{\mathrm{boundary}} - 2/7| > 0.1$ at $N = 50$, $p < 0.01$ (two-sided $t$-test),
+or verdict concordance with PCI below Cohen's $\kappa = 0.8$.
+(An earlier edition compared $2/7$ with $\mathrm{PCI}^* = 0.31$ as numbers
+``within 8\%''; that comparison is withdrawn --- the two numbers live on
+unrelated scales.) This is an L2 (structural) falsification.
 \end{predictionbox}
 
 % --- Prediction 10: N=7 minimality ---
@@ -261,7 +287,8 @@ L3 & Approximation parameter & $\pi_{\mathrm{bio}}$ error $> 30\%$; $\lambda_{\m
 \end{table}
 
 \noindent
-Predictions 1, 10, 12 are L1 tests; predictions 6, 7, 17, 23 are L2 tests; predictions 21, 22
+Predictions 1, 10, 12 are L1 tests; predictions 6, 7, 17, 23 are L2 tests (17 at its
+stated condition); predictions 21, 22
 are L3 tests. The remaining predictions distribute across L1--L2. The exposure of
 L1 targets reflects commitment to falsifiability:
 UHM names the experiments that could destroy it.
