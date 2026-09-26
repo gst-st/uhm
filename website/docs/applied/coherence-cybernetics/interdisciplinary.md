@@ -158,7 +158,7 @@ In biology: organ disintegration — organs cease to function in a coordinated m
 |---|---|---|---|---|---|
 | $\mathrm{Coh}_E$ | [E-coherence](./definitions#e-когерентность) | Interoceptive connectivity | Depth of self-awareness | Self-monitoring activation | Feedback culture |
 | $R$ | [Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | Metacognitive accuracy | Reflectivity | Confidence calibration | Quality of retrospectives |
-| $\Phi$ | [Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) | PCI, spectral gap | Wholeness of the "I" | Multi-head coherence | Cross-functionality |
+| $\Phi$ | [Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) | Spectral gap (PCI: an independent verdict, not a $\Phi$ estimate) | Wholeness of the "I" | Multi-head coherence | Cross-functionality |
 | $C = \Phi \times R$ | [Consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | Level of consciousness | Level of awareness | — | Organisational maturity |
 | $\varphi(\Gamma)$ | [Self-model](/docs/proofs/categorical/formalization-phi) | Default mode network | Self-concept | World model | Strategy, mission |
 

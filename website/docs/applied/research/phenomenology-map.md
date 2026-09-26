@@ -20,8 +20,8 @@ The single most important discipline: a signature is a statement about the **hol
 
 | Experience | UHM signature | How to test | Status |
 |---|---|---|---|
-| Wakeful consciousness | $P>2/7$, $\Phi\geq1$, $C=\Phi R>0$ | PCI $\approx0.31$ threshold | **[falsifiable]** |
-| Deep sleep / anaesthesia | $P<2/7$ (loss of viability), $\mathrm{Gap}\to1$ | PCI collapses | **[falsifiable]** |
+| Wakeful consciousness | $P>2/7$, $\Phi\geq1$, $C=\Phi R>0$ | concordance of $\mathrm{Cons}(\widehat\Gamma)$ with $\mathrm{PCI}_{\max}>0.31$ (Cohen's $\kappa$, P8.4) | **[falsifiable]** |
+| Deep sleep / anaesthesia | $P<2/7$ (loss of viability), $\mathrm{Gap}\to1$ | $\mathrm{PCI}_{\max}\leq0.31$; same concordance test | **[falsifiable]** |
 | Meditation / flow | low $T_{\mathrm{eff}}$ (cognitive temperature) | EEG spectral slope, HRV | **[falsifiable]** |
 | Metacognition / insight | high $R$ (reflection) | meta-$d'$ correlates with $R$ | **[falsifiable]** |
 | "Grokking" / sudden understanding | $\Phi$ crosses $1$ (L1→L2 ignition) | a measurable, dated transition | **[falsifiable]** |

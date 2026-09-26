@@ -736,24 +736,24 @@ Two holons $\mathbb{H}_1$ and $\mathbb{H}_2$ with $\Gamma_1, \Gamma_2 \in \mathc
 
 ## 7. Measurement and Calibration {#блок-7}
 
-### Problem 7.1 ★ PCI — P Calibration
+### Problem 7.1 ★ PCI and P: Why a Calibration Line Proves Nothing
 
-Using the linear calibration $P = 0.461 \cdot \text{PCI} + 0.143$ (from [Measurement Methodology](./measurement#калибровка)):
+Until 2026-09-25 the [Measurement Methodology](./measurement#калибровка) converted PCI into purity by the line $P = 0.461 \cdot \text{PCI} + 0.143$ and concluded that the CC threshold coincides with the clinical cut-off $\mathrm{PCI}^* = 0.31$. The conversion is withdrawn; this problem shows why, and what replaces it.
 
-**(a)** Compute $P$ for PCI = 0.35 (REM sleep with vivid dreams).
+**(a)** Show that the line through $(\mathrm{PCI}, P) = (0, 1/7)$ and $(c, 2/7)$ returns $P = 2/7$ at $\mathrm{PCI} = c$ for every anchor $c > 0$, and recover $0.461$ and $0.143$ for $c = 0.31$.
 
-**(b)** At what PCI does $P$ cross the upper boundary of the Goldilocks zone ($P = 3/7$)?
+**(b)** Casarotto et al. (2016) report $\mathrm{PCI}_{\max}$ in wakefulness 0.53 [0.39–0.70] (102 subjects, all reporting). Where does the withdrawn line put the upper end of this range relative to the window $P \in (2/7, 3/7]$? What does that say about the line?
 
-**(c)** Does PCI > 0.62 occur in reality? What would it mean?
+**(c)** The bridge that can fail is a concordance of verdicts (P8.4). On 50 held-out sessions: both "conscious" (by $\mathrm{Cons}(\widehat\Gamma)$ and by $\mathrm{PCI}_{\max} > 0.31$) in 24, both "not conscious" in 20, $\mathrm{Cons}$ only in 2, PCI only in 4. Compute Cohen's $\kappa$ and state the verdict of the test ($\kappa \geq 0.8$ corroborates, $\kappa < 0.4$ falsifies).
 
 <details>
 <summary>Solution</summary>
 
-**(a)** $P = 0.461 \times 0.35 + 0.143 = 0.304 > 2/7$. Consciousness is present (dreaming!).
+**(a)** The line is $P = \tfrac17\,(1 + \mathrm{PCI}/c)$; at $\mathrm{PCI} = c$ it gives $2/7$ whatever $c$ is. For $c = 0.31$: slope $1/(7 \cdot 0.31) = 0.461$, intercept $1/7 = 0.143$. The "coincidence" with 0.31 was put in by the choice of anchor; it would coincide with 0.25 or 0.40 just as well.
 
-**(b)** $3/7 = 0.461 \cdot \text{PCI} + 0.143$. $\text{PCI} = (0.429 - 0.143)/0.461 = 0.620$.
+**(b)** $P = \tfrac17\,(1 + 0.70/0.31) = 0.465 > 3/7 = 0.429$; the line leaves the window at $\mathrm{PCI} = 2 \cdot 0.31 = 0.62$. It would put the most complex awake brains outside the window ($P > 3/7$, hence $R < 1/3$ and $\neg\mathrm{Cons}$) although every one of them reports. A conversion with no derivation contradicts the very data it was fitted to read; PCI is a normalised Lempel–Ziv complexity of a binarised response, $P$ a function of $\Gamma$, and no number converts one into the other.
 
-**(c)** PCI > 0.62 — extremely rare. In the literature maximum values are ~0.55–0.60 (meditators, flow states). If PCI > 0.62 → $P > 3/7$ → the system *exits the Goldilocks zone* → risk of rigidity. This may correspond to manic states (excessive organization, but loss of flexibility).
+**(c)** $p_o = 44/50 = 0.88$. Marginals: $\mathrm{Cons}$ says "conscious" in $26/50 = 0.52$, PCI in $28/50 = 0.56$; $p_e = 0.52 \cdot 0.56 + 0.48 \cdot 0.44 = 0.502$. $\kappa = (0.88 - 0.502)/(1 - 0.502) = 0.76$ — between 0.4 and 0.8: inconclusive, neither corroborated nor falsified, although raw agreement is 88 %.
 
 </details>
 
@@ -943,11 +943,11 @@ fn main() using [IO, Random] {
 
 **Assignment:** Find published PCI data (e.g., Casali et al., 2013, or Casarotto et al., 2016).
 
-**(a)** Apply the PCI → $P$ calibration from [Measurement Methodology](./measurement#калибровка).
+**(a)** Do not convert PCI into $P$ — that conversion is withdrawn (Problem 7.1). Take a dataset with raw TMS-EEG (e.g. R1.b of the [replication-ready specification](/docs/applied/research/measurement-protocol#replication-ready-tms-eeg)) and reconstruct $\widehat\Gamma$ with $\pi_{\mathrm{bio}}$ frozen on wakefulness sessions and no viability penalty ([SUB-1, SUB-2](/docs/applied/research/measurement-protocol#substitution-position)).
 
-**(b)** For each state (wakefulness, REM, deep sleep, anesthesia, vegetative state) determine: $P > 2/7$ or $P < 2/7$?
+**(b)** For each state (wakefulness, REM, deep sleep, anesthesia, vegetative state) compute the verdict $\mathrm{Cons}(\widehat\Gamma)$ and, independently, the PCI verdict $\mathrm{PCI}_{\max} > 0.31$.
 
-**(c)** Does the CC prediction agree with the clinical diagnosis?
+**(c)** Compute Cohen's $\kappa$ between the two verdicts (P8.4): $\kappa \geq 0.8$ corroborates, $\kappa < 0.4$ falsifies. Where they disagree, which exit of the predicate ($\widehat P \leq 2/7$ or $\widehat P > 3/7$) does $\mathrm{Cons}$ take, and does the clinical diagnosis side with it?
 
 **(d)** Publish the results (preprint on arXiv or bioRxiv).
 

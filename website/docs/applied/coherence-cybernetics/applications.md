@@ -292,7 +292,7 @@ CC unifies existing theories:
 
 | CC Prediction | Empirical Data | Status |
 |-----------------|---------------------|--------|
-| $\Phi > 0$ for consciousness | PCI correlates with consciousness | ✓ Confirmed |
+| $\Phi > 0$ for consciousness | PCI correlates with consciousness, but PCI is not a measure of $\Phi$; no $\Phi$ from a reconstructed $\widehat\Gamma$ has yet been compared with the PCI verdict (P8.4) | Open (read "✓ Confirmed" until 2026-09-26) |
 | 7-dimensional structure | Not tested | Open |
 | $\mathrm{Coh}_E$ ↔ interiority coherence | Partial data | In progress |
 | $R$ ↔ metacognition | Prefrontal activity | ✓ Consistent |

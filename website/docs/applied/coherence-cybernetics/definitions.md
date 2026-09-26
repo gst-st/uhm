@@ -708,16 +708,19 @@ Neurobiological correlates require experimental validation. See [Γ measurement 
 **Protocol:**
 
 1. **Measuring $P$:** EEG coherence in θ, α, γ bands
-2. **Estimating $\Phi$:** Perturbational Complexity Index (PCI)
+2. **Estimating $\Phi$:** from the reconstructed $\widehat\Gamma$ (effective connectivity, as in the table above), with parameters frozen on wakefulness ([SUB-1](/docs/applied/research/measurement-protocol#substitution-position))
 3. **Estimating $\mathrm{Coh}_E$:** Integrated Information Decomposition (ΦID)
+4. **Independent check:** the Perturbational Complexity Index (PCI) verdict $\mathrm{PCI}_{\max} > 0.31$, compared with $\mathrm{Cons}(\widehat\Gamma)$ by Cohen's $\kappa$ (P8.4) — PCI is not an estimate of $\Phi$ or $P$: it is a normalised Lempel–Ziv complexity of a binarised response to TMS, on a scale no derivation connects with $\Gamma$
 
-| State | $P$ | $\Phi_{\text{eff}}$ (PCI) | Interpretation |
-|-------|-----|---------------------------|----------------|
-| Coma | $< 0.3$ | $< 0.2$ | Minimal integration |
-| Minimally conscious | $0.3$–$0.5$ | $0.2$–$0.4$ | Partial integration |
-| Conscious | $> 0.5$ | $> 0.4$ | Full integration |
+| State | UHM verdict to be tested (from $\widehat\Gamma$) | $\mathrm{PCI}_{\max}$ (Casarotto et al. 2016) | Interpretation |
+|-------|-----------------------------------------------|------------------------------------------|----------------|
+| Vegetative state / UWS | $\neg\mathrm{Cons}$ | 34 of 43 patients $\leq 0.31$ | Minimal integration |
+| Minimally conscious | $\mathrm{Cons}$ | 36 of 38 patients $> 0.31$ | Partial integration |
+| Conscious (wakefulness) | $\mathrm{Cons}$, $P \in (2/7, 3/7]$ | median 0.53 [0.39–0.70], 102 subjects | Full integration |
 
-**Reference:** Casali et al. (2013), Science Translational Medicine
+*Corrected 2026-09-26:* the table read PCI values as "$\Phi_{\text{eff}}$ (PCI)" ($< 0.2$, $0.2$–$0.4$, $> 0.4$) beside purities $< 0.3$, $0.3$–$0.5$, $> 0.5$. PCI is not a value of $\Phi$ (whose threshold is $\Phi \geq 1$), and $P > 0.5$ lies above the window $P \leq 3/7$, where $R < 1/3$ and $\mathrm{Cons}$ fails; the PCI column now carries source data and the UHM column the verdict to be tested against it.
+
+**References:** Casali et al. (2013), *Science Translational Medicine* 5(198): 198ra105 (the index); Casarotto et al. (2016), *Ann. Neurol.* 80: 718–729 (the cut-off $\mathrm{PCI}^* = 0.31$ and the patient counts)
 
 ---
 

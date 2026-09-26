@@ -28,11 +28,11 @@ The sequence is ordered by *(validatable now × market pull × build cost)*, not
 **Deliverable.** The [measurement anchor](/docs/applied/console/anchors#измерение): consumer EEG + HRV + actigraphy → a genuinely measured `GammaEstimate` with real covariance and a resolved Gap map; the chronobiology channel (solar/lunar entrainment) from light/sleep logs.
 
 **Validation protocol (V1-VAL) — the corpus's sharpest test.**
-- *The keystone:* confirm the [F-Neural prediction](/docs/reference/falsifiability) — that the $P_{\mathrm{crit}} = 2/7 \leftrightarrow \mathrm{PCI} = 0.31$ calibration holds on independent data across arousal states (wake / drowsy / sleep). This is the single result that moves the clinical case ([04 §4](/docs/applied/console/use-cases#клиника)) from `[research]` toward `[medical]`.
+- *The keystone:* confirm the [F-Neural prediction](/docs/reference/falsifiability) — that, with $\pi_{\mathrm{bio}}$ frozen on wakefulness, the verdict $\mathrm{Cons}(\widehat\Gamma)$ agrees with the independently validated PCI verdict $\mathrm{PCI}_{\max} > 0.31$ on held-out data across arousal states (wake / drowsy / sleep), Cohen's $\kappa \geq 0.8$ ([P8.4, SUB-5](/docs/applied/research/measurement-protocol#substitution-position)). (Until 2026-09-26: "that the $P_{\mathrm{crit}} = 2/7 \leftrightarrow \mathrm{PCI} = 0.31$ calibration holds" — PCI and $P$ are unrelated scales, and a calibration between them tests nothing.) This is the single result that moves the clinical case ([04 §4](/docs/applied/console/use-cases#клиника)) from `[research]` toward `[medical]`.
 - *Cross-anchor agreement:* where a user has both a self-audit and a wearable, the shared sectors (populations, coherence magnitudes) should agree within their stated confidence — a direct check that the two anchors estimate the same object.
 - *Chronobiology:* circadian/circalunar modulation of $P$ should be detectable and phase-locked to the licensed drivers, and *absent* for any planetary index (a negative control that, if it ever came back positive, would falsify [T-257](/docs/applied/research/one-grammar#t-257)).
 
-**Success metrics.** PCI calibration reproduced within CI; cross-anchor agreement within bounds; the planetary negative control stays null. **Gate to V2:** V1-VAL passed with clinical-grade signal on at least one partnered device.
+**Success metrics.** Verdict concordance with PCI at $\kappa \geq 0.8$ on held-out sessions (not a PCI → $P$ calibration); cross-anchor agreement within bounds; the planetary negative control stays null. **Gate to V2:** V1-VAL passed with clinical-grade signal on at least one partnered device.
 
 ## §4. V2 — Run: dyad, group, clinical, interop {#v2}
 
@@ -62,7 +62,7 @@ Every consented session is a data point for the validation studies. This is the 
 | Stage | Product KPI | Scientific KPI | Gate |
 |---|---|---|---|
 | V0 | weekly-active, back-projection funnel conversion | instrument validity + triad-clustering (F-Gap-2 analog) | studies pass, base sufficient |
-| V1 | measured-anchor adoption | PCI calibration reproduced; planetary control null | clinical-grade signal on a device |
+| V1 | measured-anchor adoption | verdict concordance with PCI, $\kappa \geq 0.8$; planetary control null | clinical-grade signal on a device |
 | V2 | B2B seats; clinical pilots | domain predictions confirmed; regulatory bar met | per-domain pre-registration passed |
 | B2B-AI | enterprise contracts | early-warning lift over baselines | — (parallel) |
 | Horizon | — | modulation protocol defined only when writable | ethics + theory bound |

@@ -156,7 +156,7 @@ $\mathcal{R}[\Gamma, E]$ — формализация этого «сопрот�
 |---|---|---|---|---|---|
 | $\mathrm{Coh}_E$ | [E-когерентность](./definitions#e-когерентность) | Интероцептивная связность | Глубина самоосознания | Self-monitoring activation | Культура обратной связи |
 | $R$ | [Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | Метакогнитивная точность | Рефлексивность | Confidence calibration | Качество ретроспектив |
-| $\Phi$ | [Мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) | PCI, spectral gap | Целостность «Я» | Multi-head coherence | Кросс-функциональность |
+| $\Phi$ | [Мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) | Spectral gap (PCI — независимый вердикт, а не оценка $\Phi$) | Целостность «Я» | Multi-head coherence | Кросс-функциональность |
 | $C = \Phi \times R$ | [Мера сознательности](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | Уровень сознания | Уровень осознанности | — | Организационная зрелость |
 | $\varphi(\Gamma)$ | [Самомодель](/docs/proofs/categorical/formalization-phi) | Default mode network | Я-концепция | World model | Стратегия, миссия |
 
