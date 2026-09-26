@@ -5952,6 +5952,60 @@ def test_no_peccei_quinn_symmetry_in_the_clifford_content():
     assert 2e-5 < frac < 5e-5 and 1e-2 / frac > 200
 
 
+def _pt_odd_quartic(G):
+    """PT-нечётный G₂-инвариант степени 4 типа S³X₇: ⟨φ·X, φ·(N S)⟩, N_pq = φ_pab S_ac S_bd φ_qcd.
+
+    S — бесследовая часть Re Γ, X = Im Γ. Линеен по X, поэтому его первая вариация на
+    вещественных состояниях в направлениях Im Γ, вообще говоря, не нуль.
+    """
+    S = G.real - np.trace(G.real) / 7 * np.eye(7)
+    v = np.einsum('kij,ij->k', PHI3, G.imag)
+    N = np.einsum('pab,ac,bd,qcd->pq', PHI3, S, S, PHI3)
+    return float(v @ np.einsum('kab,ab->k', PHI3, N @ S))
+
+
+def test_theta_route_through_the_gap_potential_fails_for_v3_and_for_pt_odd_quartics():
+    """T-99 (исправление 26.09.2026): шаг 4 ложен при всяком λ₃ ≠ 0; PT-нечётная квартика — источник фаз, не страж.
+
+    (1) На вещественных Γ (все θ_ij ∈ {0, π}) V₂ + V₃ + V₄ страницы ≡ 0: 𝒢_total = ‖Im Γ‖² = 0 и V₃ = 0.
+    Производная V₃ вдоль i·X на вещественном состоянии не нуль, поэтому для λ₃ = 9,25; 1; 0,1; 0,01
+    сдвиг R → R + itX с подходящим знаком t даёт V < 0: вакуум лежит вне вещественных состояний,
+    фазы в нём не нуль (свидетель `v_gap_vacuum_is_unique…` даёт 𝒢_total = 1/(2λ₄) > 0).
+    «Все фазы обращаются в нуль» шага 4 опровергнуто для самого V₃, при любых секторных модулях.
+    (2) Явная PT-нечётная квартика типа S³X₇ (одна из трёх PT-нечётных квартик T-331) G₂-инвариантна,
+    меняет знак при PT, так что потенциал с ней не инвариантен ни относительно какого g∘PT, g ∈ G₂;
+    её первая вариация по Im Γ на вещественных состояниях не нуль, и μ²𝒢 + λ₄𝒢² + εQ имеет V < 0 —
+    PT-нечётный член рождает фазы вакуума, а не запрещает их.
+    """
+    rng = np.random.default_rng(3399)
+    W = rng.normal(size=(7, 7))
+    R = W @ W.T / np.trace(W @ W.T)
+    assert _gap_total(R) == 0 and abs(_v3(R)) < 1e-15
+    X = rng.normal(size=(7, 7))
+    X = X - X.T
+    h = 1e-6
+    dv3 = (_v3(R + 1j * h * X) - _v3(R - 1j * h * X)) / (2 * h)
+    assert abs(dv3) > 1e-3
+    for l3, l4 in ((9.25, 32.22), (1.0, 0.1), (0.1, 1.0), (0.01, 10.0)):
+        t = -np.sign(l3 * dv3) * 0.1 * abs(l3 * dv3) / (np.sum(X * X) + abs(l3) * 50)
+        G = R + 1j * t * X
+        assert np.linalg.eigvalsh(G).min() > 0
+        assert _v_gap(G, 1.0, l3, l4) < 0 < _gap_total(G)
+    G = random_state(rng)
+    g = expm(sum(c * Y for c, Y in zip(rng.normal(size=14), G2)))
+    q = _pt_odd_quartic(G)
+    assert abs(q) > 1e-6
+    assert abs(_pt_odd_quartic(g @ G @ g.T) - q) < 1e-14 and abs(_pt_odd_quartic(G.conj()) + q) < 1e-15
+    assert abs(_pt_odd_quartic(g @ G.conj() @ g.T) + q) < 1e-14
+    dq = (_pt_odd_quartic(R + 1j * h * X) - _pt_odd_quartic(R - 1j * h * X)) / (2 * h)
+    assert abs(dq) > 1e-4 and abs(_pt_odd_quartic(R)) < 1e-15
+    t = -np.sign(dq) * 0.1 * abs(dq) / np.sum(X * X)
+    G = R + 1j * t * X
+    assert np.linalg.eigvalsh(G).min() > 0
+    V = _gap_total(G) + 10 * _gap_total(G) ** 2 + _pt_odd_quartic(G)
+    assert V < 0 < _gap_total(G)
+
+
 def _sym_basis_27():
     """Ортонормированный базис бесследовых вещественных симметричных 7×7 (27 = представление G₂)."""
     B = []
