@@ -399,7 +399,7 @@ $$
 
 At $P = P_{\text{crit}} = 2/N$, minimal regeneration $\kappa_{\text{bootstrap}} = \omega_0/N$ ensures:
 - One regeneration cycle per period $T = 2\pi/\omega_0$
-- Sufficient rate to sustain $P > P_{\text{crit}}$
+- Sufficient rate to sustain $P > P_{\text{crit}}$ — *corrected 2026-09-26:* only when $\omega_0$ is large against the decoherence rate. In the units of $\mathcal{D}_\Omega$ (decoherence rate $2/3$) a stationary state in the conscious window needs $\kappa \ge 11.83$ for every self-model ([T-336](/docs/core/dynamics/evolution#t-336)), and $\kappa(\Gamma) \le 9\omega_0/14$, so $\omega_0 \ge 18.4$; with the collineation anchor $\omega_0 > 111.35$ ($\alpha = 0$). $\kappa_{\text{bootstrap}} = \omega_0/7$ alone would need $\omega_0 \ge 82.8$. The convention fixes $\kappa$ in units of $\omega_0$; the ratio $\omega_0$ to the decoherence rate stays free ([T-346](/docs/core/dynamics/evolution#t-346))
 
 ∎
 

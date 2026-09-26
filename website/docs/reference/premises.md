@@ -102,7 +102,7 @@ T-329 uses only that the spinor factor of the fermion field is a complex space o
 |---|---|---|
 | $\kappa$, weight of the associator cubic in $V_{\text{Gap}}$ | T-64, T-331 | **Free** [T]: no derived source carries it (T-331(e)); its weight is $0$ for every functional of the isolated dynamics (T-331(f)). Both phases occur: for $0 < \kappa \leq \mu^2/48$ the vacuum is $I/7$, for $\kappa > \min(7\mu^2/48, \kappa_1)$ the Gap is spontaneous with orbit $S^6$ (T-64) |
 | $\mu^2$, $\lambda_4$ | $V_{\text{Gap}}$ (T-64) | free couplings of the potential |
-| regeneration rate $\kappa$, Fano weight $\alpha$ | the evolution equation, T-334–T-336 | free; the window needs $\kappa \geq 11.83,\ 20.91,\ 42.64$ at $\alpha = 0,\ \tfrac12,\ 1$ for every self-model (T-336) |
+| regeneration rate $\kappa$, Fano weight $\alpha$ | the evolution equation, T-334–T-336, T-346 | **Free** [T]: the window needs $\kappa \geq 11.83,\ 20.91,\ 42.64$ at $\alpha = 0,\ \tfrac12,\ 1$ for every self-model (T-336); no route fixes the value above it (T-346) — the threshold $\kappa_c$ of $\varphi_J$ has Galois group $S_7$, the attractor has no interior optimum, the fold survives no detuning, every norm balance with $\mathcal{D}_\Omega$ gives $\kappa g_V \le 1$ against the needed $\ge 1.70$, the categorical $\kappa(\Gamma)$ moves the freedom into $\omega_0$, and composition has only trivial fixed points |
 | $\omega_0$ | A4 | the scale; its value differs between holons |
 | phase reference $D$ of $\varphi_J$ | T-334(4) | a gauge of the $H$-free dynamics; physical only relative to a non-diagonal $H$ |
 | $\bar\theta_{\mathrm{QCD}}$ | T-333 | free in the Clifford content [Pr] |
