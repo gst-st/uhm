@@ -445,14 +445,16 @@ For (⊇): the identity $\mathrm{id}: (K, \tau_\mathrm{std}) \to (K, \tau_d)$ is
 
 **Conclusion.** Axiom A2 is canonical in a precise sense: the Bures metric is uniquely determined by three independent mathematical witnesses (Petz extremality, Uhlmann purification, SLD-Cramér-Rao), all mutually consistent. Any other Petz metric gives the same classical $\infty$-topos but a different enrichment, one that is non-universal by Char-I.
 
-**Status:** the canonicity of Bures is [T] — three independent witnesses (Char-I–III), with Char-IV a recasting of Char-III; the topology of A2 is forced by the lemma above. A2 itself stays a postulate [P]: that the enrichment be CPTP-monotone is not derived from the other axioms ([premises](/docs/reference/premises#аксиомы)). This line read "A2 is [T] by quadruple characterization" until 2026-09-26. $\square$
+**Status:** the canonicity of Bures is [T] — three independent witnesses (Char-I–III), with Char-IV a recasting of Char-III; the topology of A2 is forced by the lemma above. A2 itself stays a postulate [P]: that the enrichment be CPTP-monotone is not derived from the other axioms ([premises](/docs/reference/premises#аксиомы)); nor is it derived from the holon's properties, but it follows from the operational reading (O) ([Lemma M](#лемма-монотонность-обогащения)). This line read "A2 is [T] by quadruple characterization" until 2026-09-26. $\square$
 
-### 5.4. Axiomatic closure: all axioms are theorems (T-190) {#теорема-аксиоматическое-замыкание}
+### 5.4. Axiomatic closure: the axioms from the holon's properties under three conditions (T-190) {#теорема-аксиоматическое-замыкание}
 
-:::tip Theorem T-190 (Axiomatic Closure of UHM) [C under T-87's constraint assumption and hypothesis T-186(a)]
+:::tip Theorem T-190 (Axiomatic Closure of UHM) [C under T-87's constraint assumption, hypothesis T-186(a) and the monotonicity of the enrichment]
 
-The axioms A1–A5 of UHM are derivable from the characterizing properties (AP)+(PH)+(QG)+(V) and the maximum entropy principle (MaxEnt) **under two conditions**: the Page–Wootters constraint of A5 is assumed (T-87, step 4, [C]), and the route to A1 through T-186 rests on the hypothesis T-186(a) [H].
+The axioms A1–A5 of UHM are derivable from the characterizing properties (AP)+(PH)+(QG)+(V) and the maximum entropy principle (MaxEnt) **under three conditions**: the Page–Wootters constraint of A5 is assumed (T-87, step 4, [C]); the route to A1 through T-186 rests on the hypothesis T-186(a) [H]; and the enrichment of A2 is CPTP-monotone, $d(\Phi\rho,\Phi\sigma) \le d(\rho,\sigma)$ for every CPTP $\Phi$ — implied by the operational reading (O) of the enrichment and not derivable from (AP)+(PH)+(QG)+(V)+MaxEnt ([Lemma M](#лемма-монотонность-обогащения)).
 :::
+
+The third condition was named on 2026-09-26: until then the theorem listed two conditions while its table gave A2 as [T] through T-187 and T-189, both of which select Bures only among metrics already assumed monotone.
 
 :::warning Retracted: "zero independent axioms"
 An earlier version stated T-190 as [T]: "All five axioms A1–A5 of UHM are theorems … UHM has zero independent axioms beyond the defining conditions of a viable holon." Both parts are retracted. The constraint half of A5 is not derived (T-87, step 4), so it remains an independent assumption; and A1's derivation invoked T-186, whose part (a) is a hypothesis and whose parts (b)–(c) are retracted.
@@ -463,7 +465,7 @@ An earlier version stated T-190 as [T]: "All five axioms A1–A5 of UHM are theo
 | Axiom | Statement | Derivation | Status |
 |-------|-----------|------------|:------:|
 | **A1** | Reality = $\infty$-topos $\mathbf{Sh}_\infty(\mathcal{C})$ | T-76 [T] (Bures + Lurie → ∞-topos verified at site level) + T-186 (a) [H] (cohesive closure, which would single out the ∞-topos as the structure admitting the differentially cohesive modalities) | [H] |
-| **A2** | $J_{\mathrm{Bures}}$ Grothendieck topology | T-187 [T] (triple characterization: Char-I Petz extremality + Char-II Uhlmann + Char-III SLD-CR) + **T-189 [T] (Char-IV MaxEnt covariance)**: the physical covariance of quantum fluctuations uniquely selects the Bures metric without information-geometric choice | [T] |
+| **A2** | $J_{\mathrm{Bures}}$ Grothendieck topology | the topology is forced (continuous-distance lemma, §5.3); within the CPTP-monotone metrics T-187 [T] (triple characterization: Char-I Petz extremality + Char-II Uhlmann + Char-III SLD-CR) + T-189 [T] (Char-IV MaxEnt covariance) select Bures; the monotonicity itself is the third condition — it follows from the operational reading (O) and from none of (AP), (PH), (QG), (V), MaxEnt ([Lemma M](#лемма-монотонность-обогащения)); the cell read [T] until 2026-09-26 | [C] (monotonicity) |
 | **A3** | $N = 7$ | Theorem S [T] (functional minimality 7/7); T15 [T] with the canonical orientation of the Fano lines ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация); bridge (AP)+(PH)+(QG)+(V) → P1+P2 → Hurwitz → $\mathbb{O}$ → $N = 7$; cited as [T] before 2026-09-25 and as [C at (Alt)] earlier that day) supports the value but is not needed | [T] (by Theorem S) |
 | **A4** | $\omega_0 > 0$ | Trivial: $\omega_0 = 0$ implies no dynamics ($H_{\mathrm{eff}} = 0$), which violates (AP) (no autopoiesis without evolution). Therefore $\omega_0 > 0$ is a **necessary condition** for (AP), not an independent axiom | [T] |
 | **A5** | Page–Wootters $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$ | T-87: the clock register and the tensor factor are constructed from A1–A4 via the spectral triple (steps 1–3, [T]); the constraint $\hat{C}\Gamma = 0$ is assumed (step 4, [C]) | [C] |
@@ -479,13 +481,43 @@ $$
 \xrightarrow{T\text{-}76} \infty\text{-topos} \;[\text{A1}]
 $$
 $$
-\xrightarrow{T\text{-}187 + T\text{-}189} J_{\mathrm{Bures}} \;[\text{A2}]
+\xrightarrow{\text{monotonicity} + T\text{-}187 + T\text{-}189} J_{\mathrm{Bures}} \;[\text{A2}]
 \xrightarrow{T\text{-}87} \text{PW factorization} \;[\text{A5}]
 $$
 
-**Conclusion (conditional).** Under the two conditions of the theorem, the formal structure of UHM is determined by the four characterizing properties of a viable holon — (AP) autopoiesis, (PH) phenomenology, (QG) quantum grounding, (V) viability — together with the maximum entropy principle and the Page–Wootters constraint. An earlier conclusion — that UHM is **self-grounding**, that no external mathematical structure is imported, and that "everything else follows" from the definition of a holon — is retracted: the constraint is imported as an assumption, and the cohesive route to A1 is a hypothesis. $\blacksquare$
+**Conclusion (conditional).** Under the three conditions of the theorem, the formal structure of UHM is determined by the four characterizing properties of a viable holon — (AP) autopoiesis, (PH) phenomenology, (QG) quantum grounding, (V) viability — together with the maximum entropy principle, the Page–Wootters constraint and the monotonicity of the enrichment (equivalently for this purpose, its operational reading (O)). An earlier conclusion — that UHM is **self-grounding**, that no external mathematical structure is imported, and that "everything else follows" from the definition of a holon — is retracted: the constraint is imported as an assumption, and the cohesive route to A1 is a hypothesis. $\blacksquare$
 
-**Dependencies:** T15 [T] with the canonical orientation (bridge; A3 itself rests on Theorem S), T-53 [T], T-76 [T], T-87 [C], T-186 [H], T-187 [T], T-189 [T], Theorem S [T].
+**Dependencies:** T15 [T] with the canonical orientation (bridge; A3 itself rests on Theorem S), T-53 [T], T-76 [T], T-87 [C], T-186 [H], T-187 [T], T-189 [T], Theorem S [T], Lemma M [T].
+
+#### Lemma M: monotonicity of the enrichment — what implies it and what does not {#лемма-монотонность-обогащения}
+
+:::info Lemma M [T]
+(a) **Independence.** CPTP-monotonicity of the enrichment does not follow from (AP)+(PH)+(QG)+(V)+MaxEnt.
+
+(b) **Operational reading implies it.** Call the enrichment *operational*, (O), if it is the best distinguishability reachable by measurement: $d(\rho,\sigma) = \sup_M \delta\bigl(p_M(\rho), p_M(\sigma)\bigr)$, the supremum over POVMs $M = \{M_k\}$ with $p_M(\rho)_k = \operatorname{Tr}(M_k\rho)$ and $\delta$ any function of two outcome distributions; infinitesimally, $g(\rho)(X,X) = \sup_M F_{\mathrm{cl}}(M;\rho,X)$, the largest classical Fisher information of an outcome distribution. Under (O), $d(\Phi\rho,\Phi\sigma) \le d(\rho,\sigma)$ for every CPTP $\Phi$, for **every** choice of $\delta$.
+
+(c) **Operational reading fixes Bures directly.** With $\delta$ the classical Bhattacharyya angle, (O) gives $d = \arccos\sqrt F$, the Bures angle (Fuchs–Caves 1995: $F(\rho,\sigma) = \min_M \bigl(\sum_k \sqrt{p_k q_k}\bigr)^2$); infinitesimally, (O) gives $\mathcal F_{\mathrm{SLD}} = 4 g_B$ (Braunstein–Caves 1994). Petz's classification is then not needed to reach Bures.
+:::
+
+*Proof.* (b) For CPTP $\Phi$ and a POVM $M$ on the output, $\operatorname{Tr}(M_k\Phi(\rho)) = \operatorname{Tr}(\Phi^\dagger(M_k)\rho)$, and $\{\Phi^\dagger(M_k)\}$ is a POVM because the adjoint $\Phi^\dagger$ is completely positive and unital. So the measurements of $\Phi\rho$ versus $\Phi\sigma$ form a subset of the measurements of $\rho$ versus $\sigma$, and a supremum over a subset is not larger. The same argument bounds the Fisher information. (c) is the cited theorems.
+
+(a) The four properties and MaxEnt constrain $\Gamma$, its self-model $\varphi$ and its dynamics; none of them names a metric on $\mathcal D(\mathbb C^7)$ except (V), and (V) is written in the Hilbert–Schmidt norm, $P - 1/7 = \lVert\Gamma - I/7\rVert_{\mathrm{HS}}^2$. The Hilbert–Schmidt distance is Riemannian, continuous, induces the standard topology, and every CPTP map is Lipschitz for it, so the ε-δ coverage it generates is stable (the stability proof of [Axiom Ω⁷](/docs/core/foundations/axiom-omega#доказательство-стабильности) needs only uniform continuity of the morphisms; contractivity is sufficient, not necessary). It is not monotone: the channel with Kraus operators $K_b = \lvert 0\rangle\langle b\rvert + \lvert 1\rangle\langle 2{+}b\rvert$ for $b = 0, 1$ — the partial trace over the second factor of $\mathrm{span}\{0,1,2,3\} \cong \mathbb C^2 \otimes \mathbb C^2$ — plus $\lvert 6\rangle\langle j\rvert$ for $j = 4, 5, 6$ maps the full-rank pair $\rho = 0.98\,\mathrm{diag}(\tfrac12,\tfrac12,0,\dots) + 0.02\,I/7$, $\sigma = 0.98\,\mathrm{diag}(0,0,\tfrac12,\tfrac12,0,\dots) + 0.02\,I/7$ to a pair $\sqrt2 = 1.41421$ times farther apart in Hilbert–Schmidt distance, while their Bures angle keeps the ratio $1.00000$. A holon enriched in this metric satisfies every property that a Bures-enriched one does. $\square$
+
+**Numbers** (`check_core_numbers.py`, `enrichment_monotonicity_is_not_forced_by_the_holon_and_follows_from_operational_distinguishability`): the Hilbert–Schmidt ratio $\sqrt2$ both for the distance and for the tangent $\rho - \sigma$ at $(\rho+\sigma)/2$, where the SLD Fisher ratio is $\le 1$; over 1000 random states, traceless directions and random channels with 2–3 Kraus operators on $\mathbb C^7$ the SLD Fisher information never grows, the largest ratio being $0.497$; the Fuchs–Caves measurement attains the fidelity to $10^{-15}$, while 200 random bases overshoot it by at least $0.214$ (median $0.283$).
+
+**Paths tried for deriving monotonicity, and why each stops.**
+
+| Path | Why it does not give monotonicity |
+|---|---|
+| (QG): CPTP morphisms, Lindblad dynamics | fixes the morphisms and the differential form, not a metric on the objects |
+| (V): distinguishability from noise | written in the Hilbert–Schmidt norm, which is not monotone (part (a)) |
+| (AP), (PH) | conditions on $\varphi$ and on $\rho_E$; any metric leaves them intact |
+| MaxEnt, T-189 steps 1–2 | $\mathrm{Cov} = g^{-1}$ holds for every metric; not a selector |
+| MaxEnt selector $(\star)$ over all Riemannian metrics | picks Bures without Petz, but only after positing that the metric is the attainable (SLD) Fisher information — which is (O) |
+| Site axioms (stability of covers) | need uniform continuity of CPTP maps, true for every continuous metric on the compact $\mathcal D$ |
+| Riemannian compatibility with Lindblad dynamics (§5.3, step 2) | gives a Riemannian metric, not a monotone one |
+
+**Verdict.** Monotonicity is not a consequence of the holon's properties, so it is the third condition of T-190. Its most economical reading is (O): the enrichment measures what an observer can distinguish, which the corpus already uses informally ("a cover ≈ a family of measurements that resolve the state", [Axiom Ω⁷](/docs/core/foundations/axiom-omega#доказательство-стабильности)). Under (O) monotonicity is a theorem and Bures follows without the Petz classification, so the postulated content of A2 shrinks to (O).
 
 ### 5.3.1 Petz-robustness classification of UHM results {#petz-робастность}
 
