@@ -409,6 +409,8 @@ All $(v,k,\lambda)$-BIBD channels with the same $v$ and $k$ (but arbitrary $\lam
 
 **Corollary:** For $v = 7$, $k = 3$: the Fano channel ($\lambda = 1$, $b = 7$) and any $(7,3,\lambda)$-BIBD channel give the same contraction $c = 1/3$. The question "why $\lambda = 1$?" is replaced by the question "why $k = 3$?".
 
+*Which decomposition, not only which channel (2026-09-26).* The channel $c = 1/3$ does not know the lines: all $30$ Fano planes on the seven axes, and many other Kraus sets, give it. Among its Kraus representations by seven operators proportional to projectors — of any ranks and weights — only the line resolutions of the $30$ planes occur, with rank $3$ and weight $1/3$ forced, and exactly one plane is invariant under the frame group $\Gamma_{\!\text{oct}}$: the octonionic one ([T13, strengthened](/docs/core/operators/lindblad-operators#t13-sharp)). Given the channel, "why these seven lines, with $\lambda = 1$?" is thus answered by sharpness, minimality and the frame group. What this gives for the associator coupling $\kappa$: [T-331(g)](/docs/core/dynamics/gap-thermodynamics#t-331g).
+
 Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-bibd-эквивалентность).
 
 ---

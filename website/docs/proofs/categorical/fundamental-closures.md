@@ -1,7 +1,7 @@
 ---
 sidebar_position: 5
 title: "Fundamental Closures (T-210..T-223)"
-description: "Foundational theorems closing the last mathematical gaps of UHM: strict Φ-monotonicity, PhysTheory coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε_eff, L3 tricategory coherence, Kan complex, sector-product SUSY, no-reduction F₄→G₂, UHM's relationalist route through the List/DeBrota no-go results, MRQT-completeness, Putnam-triviality foreclosure, plus computational programmes for Λ and π_bio."
+description: "Foundational theorems closing the last mathematical gaps of UHM: strict Φ-monotonicity, PhysTheory coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε_eff, L3 tricategory coherence, Kan complex, sector-product SUSY, no-reduction F₄→G₂, UHM's relationalist route through the List/DeBrota no-go results, the resource geometry of the viable window (no single MRQT optimum), Putnam-triviality foreclosure, plus computational programmes for Λ and π_bio."
 ---
 
 # Fundamental Closures — T-210..T-223
@@ -23,7 +23,7 @@ This document contains **fourteen foundational theorems** T-210 through T-223 th
 | **T-219** | Λ SUSY-suppression via sector product | ε<sup>12</sup> = ε<sup>4·3</sup> from 3-sector decomposition | [H] (was [T at T-64] until 2026-09-25) |
 | **T-220** | No-reduction $F_4$-UHM → $G_2$-UHM | Five independent categorical obstructions | [T] negative |
 | **T-221** | UHM realises the relationalist route through the List/DeBrota no-go results | Kripke–Joyal forcing in $\mathfrak T$: first-personal facts of two subjects are not compossible, facts are stage-indexed, the parameter is internal, the three routes share every observable | [T]+[I] (corrected 2026-09-25: the "fourth route" and the RQM-as-truncation corollary are retracted; before that it read [T]+[C]+[I], and [T]+[I] until the first audit) |
-| **T-222** | MRQT-completeness: Lawvere fixed point = Pareto resource optimum | Six-lemma convex-analysis cascade on $G_2$-covariant viability submanifold | [T] |
+| **T-222** | Resource geometry of the viable window (restated 2026-09-26; the former "MRQT-completeness: Lawvere fixed point = Pareto resource optimum" is [✗]) | Majorization on the purity window: no optimum inside, Pareto set on $P = 2/7$, $F_1$ and $F_\infty$ minimised by different spectra, no terminal object | [T] |
 | **T-223** | Putnam-triviality foreclosure (Lerchner Melody-Paradox closure) | Seven-lemma cascade: three-level ontology L1/L2/L3 + $G_2$-gauge boundedness + intrinsic self-alphabetization via $R$ | [T] |
 
 Plus **computational programmes**: Λ-deficit numerical specification (§8), π<sub>bio</sub> measurement protocol (§9).
@@ -833,119 +833,88 @@ The finite form of (a) — centred worlds $(w, s)$, the first-personal propositi
 
 ---
 
-## 16. T-222: MRQT-completeness of UHM — Lawvere fixed point = resource optimum {#t-222}
+## 16. T-222: the resource geometry of the viable window — no single resource optimum {#t-222}
 
 **Motivation**. The Landauer principle ($W_\text{erase} \geq k_B T \ln 2$) is a *projection* of a richer multi-resource structure onto a single energy axis. Modern *quantum resource theories* (QRT, 2013–2026) generalise thermodynamics into a hierarchy: a family of Rényi free energies $F_\alpha$ (Brandão–Horodecki 2015), coherence monotones $C_\text{rel}, C_{HS}$ (Baumgratz–Cramer–Plenio 2014), non-Abelian conserved charges (Yunger-Halpern 2016–2023), algorithmic complexity $K_Q$ (Bennett–Zurek 1989–2003), quantum-memory-assisted erasure (Reeb–Wolf 2014). Each resource admits its own monotone and generalised second law.
 
-The natural question: is UHM's Lawvere fixed-point $\rho^* = \varphi(\Gamma)$ (T-96) optimal with respect to the full multi-resource vector — or does UHM require an explicit MRQT-extension on top of its existing $\mathcal{R}$-operator?
+The question: does the viability window of UHM single out one state that is optimal for the whole multi-resource vector — so that the dynamics would need no multi-objective criterion on top of $\mathcal{R}$? T-222 answers it: **no**. Inside the window every state is strictly dominated; on its boundary the Rényi family pulls apart, so no state is optimal for all resources at once; and the fixed points of the self-model are not optima either.
 
-Theorem T-222 proves the first alternative: **UHM is MRQT-complete in its domain of applicability** (Markovian + high-temperature, $\beta H_\text{eff} \ll 1$). No extension is required. The optimum is characterised by *spectral majorization*, not by an (empty) $G_2$-invariant submanifold — the corrected formulation below.
+:::warning Erratum 2026-09-26: the former T-222 "MRQT-completeness, Lawvere fixed point = Pareto resource optimum" [✗]
+The former statement read: "$\rho^* = \varphi(\Gamma)$, the Lawvere fixed point of T-96, realises the majorization-minimal viable spectrum ($P = 2/7$); every spectral MRQT-monotone is optimised there **simultaneously**; $\rho^*$ is the **terminal object** of the category of viable resource objects, the regeneration $\mathcal{R}$ being the unique resource-monotone morphism $\rho \to \rho^*$; UHM is MRQT-complete." Each part fails.
+
+1. **$\varphi(\Gamma)$ is not a fixed point of $\mathcal{L}_\Omega$.** T-96 proves the opposite: at a nontrivial stationary state $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$ (step 2), and $\rho_* = \varphi(\Gamma)$ is the regeneration *target*, the value of the self-model at the current state ([unified $\rho_*$ lemma](/docs/core/dynamics/evolution#лемма-единство-rho-star)). Fixed points belong to $\varphi$ itself ([Theorem 10.1 of Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics#неподвижная-точка-лавера): $I/7$ for $\varphi_{\mathrm{coh}}$, $\Gamma_{\eta_\infty}$ for $\varphi_J$, at least eight for $\varphi_s$), and they are not stationary states of $\mathcal{L}_\Omega$. Lawvere's theorem gives, under a point-surjection $A \to Y^A$, a fixed point of every endomorphism of $Y$ — here of $\varphi$, never of $\mathcal{L}_\Omega$; read in $\mathbf{Set}$ it gives nothing, since $\mathcal{D}(\mathbb{C}^7)$ has fixed-point-free self-maps, and the fixed points of a continuous $\varphi$ exist by Brouwer's theorem (Theorem 10.1(a)). T-96 carries no value $P = 2/7$.
+2. **No simultaneous optimum** — item (iii) below: $F_1$ and $F_\infty$ are minimised by different spectra.
+3. **No optimum in $\mathcal{V}_\text{full}$** — item (i): the purity condition $P > 2/7$ is open, and every viable state is strictly dominated.
+4. **No terminal object** — item (iv).
+5. **Lemmas.** L3 ("$K_Q(\rho^*) = O(\log(1/\varepsilon)) + O(1)$, hence $K_Q = O(1)$") contradicts itself and does not concern a spectral monotone ($K_Q$ is uncomputable and not a function of the spectrum); L4 called $C_{HS} = 1/7$ a minimum, but at $P = 2/7$ it is the maximum of $C_{HS} = P - P_\text{diag}$ (item (vi)); L6 read "majorization-minimal spectrum compatible with $P$" as unique, which item (iii) refutes. L1 (the twirled charges vanish) and the identity of L5 on uniform-diagonal states stand, in item (vi).
+
+**Routes tried before lowering the headline.** (a) Identify the optimum with a fixed point of a self-model: $\Gamma_{\eta_\infty}$ of $\varphi_J$ is strictly dominated (item (v)), $I/7$ is not viable. (b) Take the optimum on the boundary, where F-monotonicity is not strict: the boundary carries a Pareto *set*, not a point, and it contains spectra optimal for $F_1$ and for $F_\infty$ that differ (item (iii)). (c) Weaken "terminal" to "reachable from every viable state" under the free operations of the resource theory: refuted by two explicit states (item (iv)). (d) Keep simultaneity for the sub-family $\alpha \leq 1$: $\Gamma_{1/\sqrt6}$ minimises $F_1$ uniquely and $F_{1/2}$ numerically, but $F_\alpha$ for $\alpha > 2$ prefer a three-level spectrum — the family splits at $\alpha = 2$, where $F_2$ is constant on the boundary. What survives is the theorem below, [T].
+:::
 
 ### 16.1. Statement {#t-222-statement}
 
-:::tip Theorem T-222 (H-MRQT-Lawvere) [T]
-Define the MRQT resource vector on $\mathcal{D}(\mathbb{C}^7)$:
+:::tip Theorem T-222 (The resource geometry of the viable window; restated 2026-09-26) [T]
+Let $\mathcal{W} := \{\rho \in \mathcal{D}(\mathbb{C}^7) : 2/7 < P(\rho) \leq 3/7\}$ — the two orbit-invariant conditions of $\mathcal{V}_\text{full}$, $P > 2/7$ and $R = 1/(7P) \geq 1/3$ — and let $\overline{\mathcal{W}}$ be its closure. In the high-temperature limit $\rho_\beta \to I/7$ the Rényi free energies are $F_\alpha(\rho) = k_BT\,D_\alpha(\rho\,\|\,I/7) = k_BT\,(\log 7 - H_\alpha(\rho))$, $\alpha \in (0, \infty]$, with $H_\alpha$ the Rényi entropy of the spectrum ($F_1$ carries $S_\text{vN}$); a state is better on a component when that $F_\alpha$ is smaller.
+
+(i) **No optimum inside the window.** For every $\rho \in \mathcal{W}$ and small $t > 0$ the state $\rho_t = (1-t)\rho + t\,I/7$ lies in $\mathcal{W}$, and $F_\alpha(\rho_t) < F_\alpha(\rho)$ for every $\alpha \in (0, \infty]$.
+
+(ii) **The Pareto set lies on the boundary sphere.** On $\overline{\mathcal{W}}$ the Pareto set of $(F_{1/2}, F_1, F_2, F_\infty)$ is non-empty and lies on $P = 2/7$, where $F_2 = k_BT\log 2$ is constant.
+
+(iii) **The Rényi family splits.** No state of $\overline{\mathcal{W}}$ minimises $F_1$ and $F_\infty$ together. $F_1$ has exactly one minimising spectrum,
 $$
-R(\rho) = \bigl( E(\rho),\ F_0, F_{1/2}, F_1, F_2, F_\infty,\ C_\text{rel}(\rho),\ C_{HS}(\rho),\ S_\text{vN}(\rho),\ K_Q(\rho),\ Q_1(\rho), \ldots, Q_{14}(\rho) \bigr),
+s_1 = \Bigl(\tfrac{1+\sqrt6}{7},\ \tfrac{6-\sqrt6}{42}\times 6\Bigr),
 $$
-where $F_\alpha(\rho, \rho_\beta)$ are sandwiched $\alpha$-Rényi free energies, $C_\text{rel}$ is relative-entropy coherence, $C_{HS} = \mathrm{Coh}_E$ is the HS-projection coherence (T-73), $S_\text{vN}$ is von Neumann entropy, $K_Q$ is quantum Kolmogorov complexity, and $Q_a = \mathrm{Tr}(\rho T_a)$ are the 14 non-Abelian charges generated by $\mathfrak{g}_2$.
+the spectrum of $\Gamma_{1/\sqrt6} = (1 - \tfrac{1}{\sqrt6})\,I/7 + \tfrac{1}{\sqrt6}\,uu^\dagger$, the member of the $\varphi_J$ family $\Gamma_\eta$ on the sphere $P = 2/7$. The three-level spectrum $s_3 = \bigl(\tfrac{3+2\sqrt3}{21}\times 3,\ \tfrac{2-\sqrt3}{14}\times 4\bigr)$, also on the sphere, has the larger $F_1$ ($H_1 = 1.391$ against $1.602$) and the smaller $F_\infty$ ($H_\infty = 1.178$ against $0.708$).
 
-Split $R = (R_\text{spec}, R_\text{frame})$, where $R_\text{spec} = (E, \{F_\alpha\}, C_\text{rel}, S_\text{vN}, K_Q)$ are functions of the **eigenvalue spectrum** alone (Schur-convex or Schur-concave), and $R_\text{frame} = (C_{HS}, Q_1,\dots,Q_{14})$ are **frame-dependent** (they reference the octonionic frame; see [uniqueness theorem §invariants](/docs/proofs/categorical/uniqueness-theorem#инварианты)). Then on the viable region $\mathcal{V}_\text{full}$ (the $G_2$-*equivariant* domain — the region is $G_2$-invariant, its states are not):
+(iv) **No terminal object.** Take as free operations the unital channels — the channels fixing $I/7$, under which every $F_\alpha$ is monotone. No state of $\overline{\mathcal{W}}$ is reachable from both the state of spectrum $s_1$ and $\mathrm{diag}(\tfrac13, \tfrac13, \tfrac13, 0, 0, 0, 0) \in \mathcal{W}$; so the category of window states with unital channels as morphisms has no terminal object, and the regeneration does not supply one.
 
-(i) **(spectral optimum)** $\rho^* = \varphi(\Gamma)$ from T-96 realises the majorization-minimal viable spectrum ($P = 2/7$), and by Karamata's inequality every Schur-monotone component of $R_\text{spec}$ is optimised **simultaneously** there. Hence $\rho^*$ is a **Pareto-optimum** of $R_\text{spec}$: no viable state improves any spectral component without worsening another.
+(v) **Fixed points of the self-model are not optima.** The fixed point $\Gamma_{\eta_\infty}$ of $\varphi_J$ (Theorem 10.1(b)) lies in $\mathcal{W}$ for every $\alpha \in [0, 1]$ and is strictly dominated by $\Gamma_{1/\sqrt6}$ on every $F_\alpha$, $\alpha \in (0, \infty]$; the fixed point $I/7$ of $\varphi_{\mathrm{coh}}$ lies outside $\overline{\mathcal{W}}$.
 
-(ii) **(frame components)** In the physical frame fixed by the dynamics, $C_{HS}(\rho^*) = 1/7$ is minimal on $\mathcal{V}_\text{full}$, and the twirl $\int_{G_2} \mathrm{Tr}(g\rho^* g^\dagger\, T_a)\,dg = 0$ (Schur), so the orbit-averaged non-Abelian charges vanish. These statements are frame-relative, not $G_2$-invariant.
-
-Consequently, $\rho^*$ is the **terminal object** of the category $\mathbf{Res}$ of viable resource objects with resource-monotone CPTP morphisms: from every viable $\rho$ the regeneration $\mathcal{R}$ (T-96) supplies a resource-monotone morphism $\rho\to\rho^*$, and it is unique up to CPTP-equivalence on the support.
+(vi) **Frame components.** In the physical frame $C_{HS}(\rho) = P - P_\text{diag} \leq P - 1/7$, with equality exactly on uniform-diagonal states, on which also $C_\text{rel} = \log 7 - S_\text{vN}$, so that $C_\text{rel} = F_1/k_BT$ there. The $G_2$-twirled charges $\overline{Q}_a(\rho) = \int_{G_2}\mathrm{Tr}(g\rho g^\dagger T_a)\,dg$ vanish for every $\rho$: the 14 non-Abelian charges are frame data only.
 :::
 
 ### 16.2. Proof {#t-222-proof}
 
-The proof proceeds via six lemmas.
+**(i)** $P(\rho_t) = 1/7 + (1-t)^2(P(\rho) - 1/7)$ decreases continuously in $t$, so $\rho_t \in \mathcal{W}$ for small $t$. The spectrum of $\rho_t$ is $(1-t)\lambda + t\,(1/7, \ldots, 1/7)$, majorized by $\lambda$ and not a permutation of it (as $\lambda \neq$ uniform). $H_\alpha$ is strictly Schur-concave for $\alpha \in (0, \infty)$, and $H_\infty = -\log\lambda_{\max}$ increases strictly because $\lambda_{\max}(\rho_t) = (1-t)\lambda_{\max} + t/7 < \lambda_{\max}$ (A. W. Marshall, I. Olkin, B. C. Arnold, *Inequalities: Theory of Majorization and Its Applications*, 2nd ed., Springer 2011, Ch. 3).
 
-#### Lemma L1 — orbit-averaged non-Abelian charges vanish
+**(ii)** $\overline{\mathcal{W}}$ is compact and $H_{1/2}, H_1, H_2, H_\infty$ are continuous on it, so maximising them lexicographically gives a non-empty set of maximisers, each Pareto-optimal. A point of $\overline{\mathcal{W}}$ with $P > 2/7$ is strictly dominated by the argument of (i); hence the Pareto set lies on $P = 2/7$, where $D_2(\rho\|I/7) = \log(7P) = \log 2$.
 
-We do **not** require $\rho$ to be $G_2$-invariant: by Schur's lemma the only $G_2$-invariant state is $I/7$ (with $P=1/7 < 2/7$), which is not viable, so $\mathcal{D}^{G_2}\cap\mathcal{V}_\text{full}=\varnothing$ — the earlier "$G_2$-covariant submanifold" formulation was vacuous. Instead we use $G_2$-*equivariance*: the $G_2$-twirl of any $\rho$,
-$$
-\overline{Q}_a(\rho) := \int_{G_2}\mathrm{Tr}\big(g\rho g^\dagger\, T_a\big)\,dg = \mathrm{Tr}\Big(\Big[\int_{G_2} g\rho g^\dagger dg\Big] T_a\Big),
-$$
-has $\int_{G_2} g\rho g^\dagger dg = I/7$ (Schur), and since each $T_a$ is traceless, $\overline{Q}_a(\rho)=0$ for all $a$ and all $\rho$. Thus the 14 non-Abelian charges are pure *frame* data (their orbit average is identically zero); in the physical frame the $G_2$-equivariant regeneration $\mathcal{R}$ drives $\rho\to\rho^*$ along the orbit. $\square$
+**(iii)** By (i) a minimiser of $F_1$ on $\overline{\mathcal{W}}$ lies on $P = 2/7$, and it has full rank, since $-\lambda\log\lambda$ has infinite slope at $0$. The Lagrange conditions for maximising $H_1$ under $\sum\lambda_i = 1$, $\sum\lambda_i^2 = 2/7$ read $\log\lambda_i + 2\nu\lambda_i = \text{const}$; the left side is monotone or unimodal in $\lambda_i$, so a maximiser has at most two distinct eigenvalues. Solving $m a + (7-m) b = 1$, $m a^2 + (7-m) b^2 = 2/7$ gives exactly three two-level spectra: $s_1$ ($m = 1$, from $49a^2 - 14a - 5 = 0$), $s_2 = (0.3687 \times 2,\ 0.0525 \times 5)$ and $s_3$ ($m = 3$, from $147a^2 - 42a - 1 = 0$), with $H_1 = 1.6019$, $1.5094$, $1.3909$. So $s_1$ is the unique minimising spectrum of $F_1$. Every minimiser of $F_\infty$ has $\lambda_{\max} \leq \lambda_{\max}(s_3) = 0.3078 < 0.4928 = \lambda_{\max}(s_1)$, so it is not $s_1$. The spectrum of $\Gamma_\eta$ is $\bigl((1+6\eta)/7,\ (1-\eta)/7 \times 6\bigr)$ with $P = (1 + 6\eta^2)/7$; $\eta = 1/\sqrt6$ gives $P = 2/7$ and $s_1$.
 
-#### Lemma L2 — $F_2$ minimum at $P = 2/7$
+**(iv)** A unital channel maps $\rho$ to $\sigma$ if and only if $\lambda(\sigma) \prec \lambda(\rho)$ (P. M. Alberti, A. Uhlmann, *Stochasticity and Partial Order*, Reidel 1982). Let $\tau \in \overline{\mathcal{W}}$ with $\lambda(\tau) \prec s_1$. Then $P(\tau) \leq P(s_1) = 2/7 \leq P(\tau)$, and strict Schur-convexity of $\sum\lambda_i^2$ makes $\lambda(\tau)$ a permutation of $s_1$. But $s_1 \not\prec (\tfrac13, \tfrac13, \tfrac13, 0, 0, 0, 0)$, as $0.4928 > 1/3$. A terminal object would be reachable from both.
 
-In the high-temperature limit $\beta H_\text{eff} \ll 1$, $\rho_\beta \approx I/7$, and
-$$
-F_2(\rho, I/7) = k_B T \log(7 \, \mathrm{Tr}(\rho^2)) - k_B T \log Z = k_B T \log(7 P(\rho)) - k_B T \log Z.
-$$
-Under $G_2$-covariance, minimising $F_2$ is equivalent to minimising $P(\rho)$. The constraint $P > P_\text{crit} = 2/7$ (viability, T-151) forces the minimum to the boundary: $P = 2/7$. This is $\rho^*$ (T-96). $\square$
+**(v)** $P(\Gamma_{\eta_\infty}) = 5/14$, $0.334$, $0.317$ at $\alpha = 0, 1/2, 1$ (Theorem 10.1(b)), in $(2/7, 3/7]$, and $\eta_\infty \in [0.4507, 0.5] > 1/\sqrt6 = 0.4082$. Then $\Gamma_{1/\sqrt6} = s\,\Gamma_{\eta_\infty} + (1-s)\,I/7$ with $s = 1/(\sqrt6\,\eta_\infty) \in (0, 1)$, and (i) applies.
 
-#### Lemma L3 — Algorithmic simplicity of $\rho^*$
+**(vi)** $C_{HS} = P - P_\text{diag}$ (T-73) and $P_\text{diag} = \sum_i\gamma_{ii}^2 \geq 1/7$ by Cauchy–Schwarz, with equality exactly at $\gamma_{ii} = 1/7$. $C_\text{rel}(\rho) = S(\Delta(\rho)) - S(\rho)$ and $\Delta(\rho) = I/7$ on uniform-diagonal states. The twirl: $\int_{G_2} g\rho g^\dagger\,dg = I/7$ by Schur's lemma, since $G_2$ acts irreducibly on $\mathbb{C}^7$, and each $T_a$ is traceless. $\blacksquare$
 
-$\rho^*$ is fully specified by three finite data: (a) the 14 $G_2$-generators, (b) purity $P = 2/7$, (c) the Fano incidence structure (7 lines, replication $r = 3$). The minimal program computing $\rho^*$ to accuracy $\varepsilon$ has length $O(\log(1/\varepsilon)) + O(1)$, where the $O(1)$ term encodes the fixed structural data. Hence $K_Q(\rho^*) = O(1)$, independent of the system dimension scaling. $\square$
-
-#### Lemma L4 — $C_{HS}$ minimum on viable boundary
-
-In the physical frame, for the uniform-diagonal viable representative $\rho^*$ ($P=2/7$, $P_\text{diag}=1/7$): $C_{HS}(\rho^*) = P - P_\text{diag} = 2/7 - 1/7 = 1/7$, the **minimum** value of $C_{HS}$ on the uniform-diagonal boundary of $\mathcal{V}_\text{full}$. (This is a frame-relative statement, per L1.) $\square$
-
-#### Lemma L5 — $C_\text{rel}$ and $F_1$ co-minimise
-
-$C_\text{rel}(\rho) = S(\Delta(\rho)) - S(\rho)$. For the uniform-diagonal representative $\rho^*$, $\Delta(\rho^*) = I/7$, so $S(\Delta(\rho^*)) = \log 7$. Hence $C_\text{rel}(\rho^*) = \log 7 - S(\rho^*)$.
-
-$F_1(\rho, I/7) = k_B T(\log 7 - S(\rho)) + \text{const}$.
-
-Both differ only by scale and constant. They are minimised simultaneously by maximising $S(\rho)$ subject to $P \geq 2/7$. The maximum of $S$ at the boundary is achieved at $\rho^*$. $\square$
-
-#### Lemma L6 — All $F_\alpha$ minimise simultaneously
-
-$D_\alpha(\rho \| I/7) = \frac{1}{\alpha-1} \log \mathrm{Tr}(\rho^\alpha (I/7)^{1-\alpha}) = \frac{1}{\alpha-1} \log(7^{\alpha-1} \mathrm{Tr}(\rho^\alpha))$.
-
-For any viable $\rho$ with fixed $P$, the eigenvalue spectrum $\{\lambda_i\}$ satisfies $\sum \lambda_i = 1$, $\sum \lambda_i^2 = P$. By convex analysis (Karamata's inequality for Schur-convex functions), $\mathrm{Tr}(\rho^\alpha) = \sum \lambda_i^\alpha$ is minimised (for $\alpha > 1$) or maximised (for $\alpha < 1$) on the majorization-minimal spectrum compatible with $P$. On $\mathcal{V}_\text{full}$ the minimum approaches $I/7$ but is forbidden by viability; the admitted minimum is the boundary $P = 2/7$ at $\rho^*$.
-
-Simultaneously for all $\alpha \in (0, \infty]$, $F_\alpha(\rho^*, I/7)$ is the infimum on $\mathcal{V}_\text{full}$. $\square$
-
-#### Synthesis
-
-Combining L1–L6: every **spectral** component of $R$ is optimised at $\rho^*$ by majorization on the viable region $\mathcal{V}_\text{full}$ (L2, L5, L6), while the **frame** components — the orbit-averaged non-Abelian charges (L1) and $C_{HS}$ (L4) — attain their frame-fixed values at $\rho^*$. This establishes Pareto-optimality of $R_\text{spec}$ (no spectral component improvable without worsening another), simultaneous optimisation, and terminal-object status in $\mathbf{Res}$. The transition $\rho \to \rho^*$ via the regeneration operator $\mathcal{R}$ (T-96 dynamics) is a CPTP morphism monotonically improving all spectral resources. $\blacksquare$
+**Numerical check** (scratch run, 2026-09-26). Twenty thousand random spectra scaled onto $P = 2/7$: the best $H_{1/2}$ ($1.7893$) and $H_1$ ($1.6019$) are at $s_1$; the best $H_3$ ($1.2181$) and $H_\infty$ ($1.1225$, below $H_\infty(s_3) = 1.1783$) are at spectra with three large and four small eigenvalues, not at $s_1$.
 
 ### 16.3. Categorical interpretation {#t-222-categorical}
 
-$\mathbf{Res}_{G_2}$ — the category of $G_2$-covariant viable quantum states with resource-monotone CPTP morphisms — has:
-- **Initial object**: $I/7$ (maximally mixed, outside $\mathcal{V}_\text{full}$ but categorically present).
-- **Terminal object**: $\rho^* = \varphi(\Gamma)$ (on the viable boundary).
-
-This dual structure parallels $(\mathbf{0}, \mathbf{1})$ in classical category theory, now realised thermodynamically. $\rho^*$ is the UHM-distinguished "limit state" toward which all $G_2$-covariant viable dynamics converge under resource-monotone evolution.
+The window with unital channels as morphisms is a preorder — Alberti–Uhlmann's majorization order on spectra. It has no terminal object (iv), and the purity bound $P \geq 2/7$ cuts it along a sphere on which the order leaves many incomparable minimal elements (iii). The former reading — $I/7$ initial, $\rho^* = \varphi(\Gamma)$ terminal, "the limit state toward which all viable dynamics converge" — is retracted: $I/7$ lies outside the window, and $\varphi(\Gamma)$ is a map of the state, not an object. Which point of the Pareto sphere a holon approaches is decided by its self-model and its dynamics, not by the resource order: with $\varphi_J$ the fixed point $\Gamma_{\eta_\infty}$, the upper end of the living attractor, sits at $P = 0.317$–$0.357$, inside the window, where by (v) it is not resource-optimal.
 
 ### 16.4. Applicability domain {#t-222-scope}
 
-T-222 holds under three conditions (the earlier "$G_2$-covariance of the state" condition is dropped — it would force $\rho = I/7$, non-viable; only the *region* $\mathcal{V}_\text{full}$ is $G_2$-invariant, and the frame is fixed by the dynamics):
-
-1. **Viability** — $\rho \in \mathcal{V}_\text{full}$, i.e., $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_\text{diff} \geq 2$.
-2. **Markovian** — Lindblad dynamics (T4 scope, see `theoretical-closures.md`).
-3. **High-temperature (weak effective Hamiltonian)** — $\beta H_\text{eff} \ll 1$ (Lemmas L2 and L6 use $\rho_\beta \approx I/7$).
-
-Outside these conditions, T-222 does not apply directly. A generalisation to arbitrary $\beta$ requires temperature-dependent $\rho^*(\beta)$, which deviates from the T-96 Lawvere point by $O(\beta)$. Non-Markovian extensions, and the frame-covariant treatment of the 14 non-Abelian charges, remain open research directions.
+1. **Purity window** — $\rho \in \overline{\mathcal{W}}$. The other conditions of $\mathcal{V}_\text{full}$ are frame conditions. $\Phi = P_\text{coh}/P_\text{diag} \geq 1$ is met by the uniform-diagonal representative of every spectrum with $P \geq 2/7$ (Schur–Horn), so the spectral statements hold on $\mathcal{V}_\text{full}$ as well; $D_\text{diff} \geq 2$ has status [C] and is not used.
+2. **High temperature** — $\rho_\beta \to I/7$. At finite $\beta$ the reference state is $\rho_\beta$ and the free operations are the Gibbs-preserving channels; thermo-majorization replaces majorization, and the statements must be re-derived.
+3. **Markovianity** is not used: the theorem is about states and the resource order, not about a flow.
 
 ### 16.5. Consequences {#t-222-consequences}
 
 :::info What T-222 establishes
-1. **UHM is MRQT-complete**: the existing theoretical machinery (T-96 Lawvere fixed point + $\mathcal{R}$-operator) already optimises all spectral MRQT-monotones simultaneously (by majorization), and fixes the frame components at $\rho^*$. No additional structure required.
-2. **$\mathcal{R}$-operator is universal**: its action $\rho \to \rho^*$ is the **unique** (up to CPTP-equivalence) CPTP-morphism guaranteeing monotone improvement of *all* MRQT resources at once.
-3. **FSQCE automatically MRQT-optimal**: any FSQCE device operating at the UHM fixed point $\rho^*$ is automatically Pareto-optimal across all 25 resources. Engineering simplifies from 25-dimensional multi-objective optimisation to single-objective ($\rho \to \rho^*$).
-4. **"Magic" as inevitable structure**: the intuition of deeper-level physics where constraints become "composition rules" is formalised — the MRQT-level is the UHM-level; no additional hidden layer is needed *within the domain of applicability*.
+1. **UHM is not MRQT-complete in the former sense**: the viability window selects no resource optimum, and a choice on the Pareto sphere needs a criterion — a weight on the Rényi orders — that neither the self-model nor $\mathcal{L}_\Omega$ supplies.
+2. **Viability costs resources**: every viable state could be made cheaper on every $F_\alpha$ by mixing it toward $I/7$ (i); what stops this is the viability bound, not resource optimality. The regeneration holds the holon *away* from the resource-cheap direction.
+3. **For an FSQCE device** the design target is a point of the sphere $P = 2/7$ chosen by the order $\alpha$ that matters to the task: $\Gamma_{1/\sqrt6}$ for $F_1$ (von Neumann, $C_\text{rel}$), a state with three large eigenvalues, $s_3$ or better, for $F_\infty$ (single-shot).
+4. The former items "$\mathcal{R}$ is the universal resource-monotone morphism" and "FSQCE is automatically Pareto-optimal across 25 resources" are retracted with the erratum.
 :::
 
 ### 16.6. Falsification criteria {#t-222-falsification}
 
-T-222 is falsifiable:
-- **F-222-1**: experimental observation of a $G_2$-covariant viable state $\rho'$ with $R(\rho') < R(\rho^*)$ on at least one component would refute (i).
-- **F-222-2**: observation of Markovian violation within the FSQCE regime would narrow the domain of applicability.
-- **F-222-3**: temperature-dependence showing $\rho^*_\text{MRQT}(\beta = 0) \neq \rho^*_\text{Lawvere}$ would refute the low-$\beta$ matching.
+T-222 is a theorem about states; it is checked by computation, not by experiment. It would be refuted by a state of $\overline{\mathcal{W}}$ with $F_1 \leq F_1(s_1)$ and $F_\infty \leq F_\infty(s_3)$, or by a state of $\mathcal{W}$ that no $\rho_t$ improves. Experimentally, a device held at the living attractor of $\varphi_J$ should be strictly improvable on every $F_\alpha$ by partial depolarisation without leaving the window.
 
-Tested in experiment E6 of the FSQCE Phase 0.5 protocol (see `fsqce-specification.md` §32.75).
+**Dependencies**: T-73 [T] ($C_{HS} = P - P_\text{diag}$), T-96 [T] (regeneration target $\varphi(\Gamma)$, $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$), [Theorem 10.1 of Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics#неподвижная-точка-лавера) [T] (fixed points of the self-model), T-126 [T] ($R = 1/(7P)$), T-151 [T] (viability $P > 2/7$).
 
-**Dependencies**: T-39a [T] (spectral gap), T-62 [T] (CPTP), T-73 [T] ($C_{HS}$ = Coh$_E$), T-96 [T] (Lawvere fixed point), T-142 [T] (Fano contraction), T-151 [T] ($D_\text{min} = 2$, viability), T-173 [T] ($G_2$-rigidity), T-186 [H] (cohesive closure), T-187 [T] (triple Bures), T-189 [T] (natural gradient).
-
-**External references**: Brandão et al. PNAS 112:3275 (2015); Baumgratz-Cramer-Plenio PRL 113:140401 (2014); Streltsov-Adesso-Plenio Rev. Mod. Phys. 89:041003 (2017); Yunger-Halpern Nat. Rev. Phys. 5:689 (2023); Khanian et al. Ann. Henri Poincaré 24:1725 (2023); Reeb-Wolf NJP 16:103011 (2014); Bennett Stud. Hist. Phil. Mod. Phys. 34:501 (2003); Zurek Nature 341:119 (1989); Schur's lemma (classical representation theory).
+**External references**: Brandão et al. PNAS 112:3275 (2015); Baumgratz-Cramer-Plenio PRL 113:140401 (2014); Streltsov-Adesso-Plenio Rev. Mod. Phys. 89:041003 (2017); Yunger-Halpern Nat. Rev. Phys. 5:689 (2023); Marshall–Olkin–Arnold, *Inequalities* (2011); Alberti–Uhlmann, *Stochasticity and Partial Order* (1982); Schur's lemma (classical representation theory).
 
 ---
 
@@ -1002,7 +971,7 @@ for every physical trajectory $s(\tau)$ of $S$. This is the gate through which a
 
 **L6 (Non-dynamical alphabetizers are physically vacuous).** If $f$ does not commute with $\Phi^{\mathsf{phys}}_\tau$, then $f$ cannot be read off any causal process of $S$; it is an act of pure epistemic interpretation with no grounding in causal closure (Kim 2005). Such $f$ correspond to Lerchner's Mapping C ("Market Data") and Mapping B ("backward Beethoven") in Fig. 3 when those readings are not themselves realised as separate physical processes. Lerchner correctly identifies them as extrinsic; UHM adds that they are extrinsic *to physics*, hence irrelevant to any physicalist grounding of consciousness.
 
-**L7 (Self-alphabetization via $R$).** By T-96 [T], $\rho_* = \varphi(\Gamma)$ is the intrinsic Lawvere fixed point of $\mathcal L_\Omega$, a functorial categorical self-model of $\Gamma$. The reflection measures are functionals of $\Gamma$ alone: the canonical $R(\Gamma) = 1/(7P(\Gamma)) = 1 - \|\Gamma - I/7\|_F^2/\|\Gamma\|_F^2$ (T-126 [T]), and the self-model quality $R_\varphi(\Gamma) = 1 - \|\Gamma - \varphi(\Gamma)\|_F^2/\|\Gamma\|_F^2$ involves only $\Gamma$ and its internal self-model $\varphi(\Gamma)$ ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)). No external observer or alphabetizer appears. The threshold $R \geq 1/3$ quantifies *how much* self-observation is required for consciousness. This makes UHM strictly stronger than Lerchner's own enactivist gesture (his §2.3 citing Thompson 2019 / Maturana-Varela 1980: "the mapmaker is the entire structurally unified organism") — UHM supplies a *quantitative, $G_2$-invariant* criterion for intrinsic self-alphabetization.
+**L7 (Self-alphabetization via $R$).** By T-96 [T], the regeneration target of $\mathcal L_\Omega$ is $\rho_* = \varphi(\Gamma)$, the functorial categorical self-model of the current state (T-62: the left adjoint) — computed from $\Gamma$ alone. It is not a fixed point of $\mathcal L_\Omega$: at a nontrivial stationary state $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$ (T-96, step 2). Fixed points belong to $\varphi$ itself — $I/7$ for $\varphi_{\mathrm{coh}}$, $\Gamma_{\eta_\infty}$ for $\varphi_J$, at least eight for $\varphi_s$ ([Theorem 10.1 of Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics#неподвижная-точка-лавера) [T]: existence by Brouwer; Lawvere's theorem concerns fixed points of an endomorphism such as $\varphi$, never of $\mathcal L_\Omega$) — and they are not stationary states of $\mathcal L_\Omega$. The lemma needs neither: it needs only that the target is a functional of $\Gamma$. (Corrected 2026-09-26: the sentence read "$\rho_* = \varphi(\Gamma)$ is the intrinsic Lawvere fixed point of $\mathcal L_\Omega$".) The reflection measures are functionals of $\Gamma$ alone: the canonical $R(\Gamma) = 1/(7P(\Gamma)) = 1 - \|\Gamma - I/7\|_F^2/\|\Gamma\|_F^2$ (T-126 [T]), and the self-model quality $R_\varphi(\Gamma) = 1 - \|\Gamma - \varphi(\Gamma)\|_F^2/\|\Gamma\|_F^2$ involves only $\Gamma$ and its internal self-model $\varphi(\Gamma)$ ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)). No external observer or alphabetizer appears. The threshold $R \geq 1/3$ quantifies *how much* self-observation is required for consciousness. This makes UHM strictly stronger than Lerchner's own enactivist gesture (his §2.3 citing Thompson 2019 / Maturana-Varela 1980: "the mapmaker is the entire structurally unified organism") — UHM supplies a *quantitative, $G_2$-invariant* criterion for intrinsic self-alphabetization.
 
 **Combination (proof of clauses a–e).**
 
@@ -1048,7 +1017,7 @@ T-223 packages exactly this cascade.
 - **F-223-2**: Any alphabetization of $S$ commuting with $\mathcal L_\Omega$ but not factoring through a $G_2$-conjugate representation would refute L5.
 - **F-223-3**: Any physical process realising a Lerchner "Mapping C" (Market Data on a Beethoven trajectory) with non-zero contribution to $R$ or $\Phi$ would refute L6.
 
-**Dependencies**: T-42a [T] ($G_2$-rigidity), T-82 [T] (BIBD(7,3,1) uniqueness), T-96 [T] (Lawvere fixed point $\rho_* = \varphi(\Gamma)$), T-98 [T] (balance formula for $R$), T-123 [T] ($G_2$-uniqueness of holonomic representation), T-148 [T] (embodiment requirement), T-149 [T] (Fano plane minimality), T-151 [T] ($D_{\min} = 2$), T-153a [T] (consciousness predicate C1–C3), T-214 [T] (hard-problem meta-theorem, Lawvere positivity).
+**Dependencies**: T-42a [T] ($G_2$-rigidity), T-82 [T] (BIBD(7,3,1) uniqueness), T-96 [T] (regeneration target $\rho_* = \varphi(\Gamma)$), Theorem 10.1 of Gap thermodynamics [T] (fixed points of $\varphi$), T-98 [T] (balance formula for $R$), T-123 [T] ($G_2$-uniqueness of holonomic representation), T-148 [T] (embodiment requirement), T-149 [T] (Fano plane minimality), T-151 [T] ($D_{\min} = 2$), T-153a [T] (consciousness predicate C1–C3), T-214 [T] (hard-problem meta-theorem, Lawvere positivity).
 
 *Corrected 2026-09-25:* the dependency list also named the emergent-manifold theorem (the $M^4$ derivation, now conditional) and the axiomatic closure T-190 (conditional); neither is used by (a)–(e), which concern UHM-compatible representations whose existence is the premise — they entered only the context lemma L1.
 
@@ -1111,7 +1080,7 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 | **T-219** | **SUSY Λ-suppression** | **[H] invalid 7+7** | **[H]** (listed [T at T-64] until 2026-09-25) | **Sector product $\varepsilon^{12}$** |
 | **T-220** | **No-reduction $F_4 \to G_2$ UHM** | open question | **[T] negative** | **5 independent obstructions** |
 | **T-221** | **Relationalist route through the List/DeBrota no-go** | open (external critique) | **[T]+[I]** (corrected 2026-09-25; the fourth-route reading and "RQM = 1-truncation" retracted [✗]) | **No-go holds internally; UHM keeps OW, NF, NS and relativised FPR; the routes are readings of one forcing relation** |
-| **T-222** | **MRQT-completeness** | open (external QRT critique) | **[T]** | **Six-lemma convex cascade: Lawvere fixed point = Pareto optimum of 25-monotone MRQT vector on $G_2$-covariant submanifold** |
+| **T-222** | **Resource geometry of the viable window** | open (external QRT critique) | **[T]** (restated 2026-09-26) | **Majorization: no resource optimum in the window, the Rényi family splits at $\alpha = 2$, no terminal object; the former "Lawvere fixed point = Pareto optimum, MRQT-complete" is [✗]** |
 | **T-223** | **Putnam-triviality foreclosure (Lerchner Melody-Paradox)** | open (external critique) | **[T]** | **Seven-lemma cascade: three-level L1/L2/L3 ontology + $G_2$-gauge boundedness + intrinsic self-alphabetization via $R$** |
 | §18.1 | A4 simple spectrum | implicit | **Explicit** | Spectral transversality |
 | §18.2 | $f_0$ ζ'(0) | delicate | **Elementary** | Finite-dim spectral zeta |
@@ -1121,7 +1090,7 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 
 **Total after all closures**: of the fourteen theorems T-210–T-223, eleven stand as [T] (T-215 with a definitional part, T-212 in the corrected form T-212′, T-211 in the corrected form of 2026-09-25), T-221 is stratified into [T] and [I] parts (its [C] parts went with the retracted fourth-route reading, 2026-09-25), one is [C] (T-216) and one is [H] (T-219); plus 3 explicit clarifications and 2 computational-programme specifications (the line read "14 new [T] theorems" until 2026-09-25).
 
-~~**No open mathematical or categorical gaps remain in UHM's foundational framework.**~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the first-order condition and Poincaré duality of T-119 (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120 and T-121 rest (T-211 was listed here too; its recheck of 2026-09-25 showed that it never used them; clause (iii) of the earlier T-221 rested on them, the corrected T-221 of 2026-09-25 does not). T-221 answers the List/DeBrota *external* critique by locating UHM on the relationalist route (corrected 2026-09-25; the earlier "fourth route" is retracted); T-222 answers the QRT-completeness external critique; T-223 answers the Lerchner Melody-Paradox / Putnam-triviality external critique — the three principal recent external critiques (quantum-metaphysics no-go, resource-theoretic completeness, computational-functionalist triviality) each receive a structured answer; the earlier phrasing "closes … UHM is now closed against all three" is withdrawn with the sentence above. (T-119's own inputs — the first-order condition and Poincaré duality — were settled on 2026-09-25 by computing the spatial spectrum; T-120 and T-121 are [T] since.)
+~~**No open mathematical or categorical gaps remain in UHM's foundational framework.**~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stay open — the first-order condition and Poincaré duality of T-119 (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120 and T-121 rest (T-211 was listed here too; its recheck of 2026-09-25 showed that it never used them; clause (iii) of the earlier T-221 rested on them, the corrected T-221 of 2026-09-25 does not). T-221 answers the List/DeBrota *external* critique by locating UHM on the relationalist route (corrected 2026-09-25; the earlier "fourth route" is retracted); T-222 answers the QRT-completeness external critique — negatively since 2026-09-26: the viable window selects no resource optimum; T-223 answers the Lerchner Melody-Paradox / Putnam-triviality external critique — the three principal recent external critiques (quantum-metaphysics no-go, resource-theoretic completeness, computational-functionalist triviality) each receive a structured answer; the earlier phrasing "closes … UHM is now closed against all three" is withdrawn with the sentence above. (T-119's own inputs — the first-order condition and Poincaré duality — were settled on 2026-09-25 by computing the spatial spectrum; T-120 and T-121 are [T] since.)
 
 **Strictly remaining** (all explicitly non-mathematical):
 - Numerical computation of Λ (§8) — bounded HPC task

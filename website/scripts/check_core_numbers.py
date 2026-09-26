@@ -6356,6 +6356,240 @@ def test_parameter_free_clock_pairs_miss_the_up_quark_ratios():
         s = np.linalg.svd(A[None] + X[:, None, None] * B[None], compute_uv=False)
         d = np.max(np.abs(np.log(s[:, [2, 1]] / s[:, [0]]) - target), axis=1)
         assert d.min() > 2.0
+# ── T13 (усилена 26.09.2026) и T-331(g): острый минимальный инструмент и расходимости его считывания ──────
+
+def _sharp_minimal_kraus_solutions():
+    """Все острые минимальные крауссовы разложения шуровского канала Φ_c = c·id + (1 − c)·diag на ℂ⁷:
+    семь операторов √x_S Π_S (Π_S — координатный проектор), N X Nᵀ = (1 − c)I + cJ, N — матрица
+    инцидентности 7×7. Обратимость N даёт |S ∩ T| = t k_S k_T при S ≠ T, t = c/(1 + 6c) — рационально,
+    ≤ 7/(k_S k_T); перебор по размерам и по системам множеств (первый блок закреплён: с точностью до S₇)."""
+    from fractions import Fraction as Fr
+    subsets = [frozenset(s) for r in range(1, 8) for s in itertools.combinations(range(7), r)]
+
+    def realise(ks, t):
+        cols = []
+
+        def rec():
+            m = len(cols)
+            if m == 7:
+                N = np.array([[1.0 if i in S else 0.0 for S in cols] for i in range(7)])
+                return abs(np.linalg.det(N)) > 0.5
+            for S in subsets:
+                if len(S) != ks[m] or S in cols or (m == 0 and S != frozenset(range(ks[0]))):
+                    continue
+                if any(len(S & T) != t * ks[m] * len(T) for T in cols):
+                    continue
+                cols.append(S)
+                if rec():
+                    return True
+                cols.pop()
+            return False
+        return [sorted(S) for S in cols] if rec() else None
+    out = []
+    for ks in itertools.combinations_with_replacement(range(7, 0, -1), 7):
+        ts = {Fr(m, ks[a] * ks[b]) for a, b in itertools.combinations(range(7), 2) for m in range(1, 8)}
+        for t in sorted(x for x in ts if 0 < x < Fr(1, 7)):
+            if all((t * ks[a] * ks[b]).denominator == 1 for a, b in itertools.combinations(range(7), 2)):
+                sol = realise(list(ks), t)
+                if sol is not None:
+                    out.append((t / (1 - 6 * t), ks, sol))
+    return out
+
+
+def test_sharp_minimal_kraus_representations_are_the_fano_planes():
+    """T13 (усилена 26.09.2026) [Т]: острое минимальное крауссово разложение Φ_Ω = id + D_Ω (c = 1/3) —
+    семь проекторов линий одной из 30 плоскостей Фано с весом 1/3; ранги и веса не предполагаются.
+
+    При 0 < c < 1 острое минимальное разложение есть лишь при c ∈ {1/3, 1/2, 5/6} (симметричные схемы
+    (7,3,1), (7,4,2), (7,6,5)); в семействе 𝒫_α (c = (1 − α)/3) — лишь при α = 0 (и α = 1: оси).
+    Из 30 плоскостей одна инвариантна относительно 168 коллинеаций октонионной — сами линии Фано.
+    Синдромные измерения кода Хэмминга дают пары {Π_p, I − Π_p}: случайная проверка — Φ_{3/7}, у которого
+    острого минимального разложения нет; полный синдром — дефазировку Φ₀. Без остроты минимальные
+    разложения — U(7)-орбита, например циклическое √(3/7)I, √(2/21)diag(ω^{ai}), чьи исходы от Γ не зависят.
+    """
+    from fractions import Fraction as Fr
+    sols = _sharp_minimal_kraus_solutions()
+    assert sorted((c, ks[0], len(set(ks))) for c, ks, _ in sols) == [(Fr(1, 3), 3, 1), (Fr(1, 2), 4, 1), (Fr(5, 6), 6, 1)]
+    # c = 1/3: все системы семи троек, попарно пересекающихся в одной точке, — ровно 30 плоскостей Фано
+    triples = [frozenset(s) for s in itertools.combinations(range(7), 3)]
+    fams = []
+
+    def grow(fam, start):
+        if len(fam) == 7:
+            fams.append(frozenset(fam))
+            return
+        for q in range(start, 35):
+            if all(len(triples[q] & T) == 1 for T in fam):
+                grow(fam + [triples[q]], q + 1)
+    grow([], 0)
+    lines0 = frozenset(frozenset(x - 1 for x in l) for l in LINES)
+    assert len(fams) == 30 and lines0 in fams
+    for fam in fams:                                     # каждая даёт Φ_{1/3}: пара на одной линии
+        Nm = np.array([[1.0 if i in S else 0.0 for S in fam] for i in range(7)])
+        assert np.allclose(Nm @ Nm.T / 3, (2 / 3) * np.eye(7) + np.ones((7, 7)) / 3)
+    coll = [s for s in itertools.permutations(range(7))
+            if frozenset(frozenset(s[i] for i in l) for l in lines0) == lines0]
+    assert len(coll) == 168
+    inv = [f for f in fams if all(frozenset(frozenset(s[i] for i in l) for l in f) == f for s in coll)]
+    assert inv == [lines0]
+    # синдромная проверка: {Π_p, I − Π_p} с вероятностью 1/7 → когерентности × 3/7; полный синдром различает оси
+    Pl = [np.diag([1.0 if i in l else 0.0 for i in range(7)]) for l in lines0]
+    rng = np.random.default_rng(411)
+    G = random_state(rng)
+    syn = sum(P @ G @ P + (np.eye(7) - P) @ G @ (np.eye(7) - P) for P in Pl) / 7
+    off = ~np.eye(7, dtype=bool)
+    assert np.allclose(syn[off], 3 / 7 * G[off]) and np.allclose(np.diag(syn), np.diag(G))
+    assert len({tuple(1 if i in l else 0 for l in lines0) for i in range(7)}) == 7
+    # несострое минимальное разложение того же Φ_{1/3}: исходы не зависят от Γ
+    om = np.exp(2j * np.pi / 7)
+    K = [np.sqrt(3 / 7) * np.eye(7)] + [np.sqrt(2 / 21) * np.diag(om ** (a * np.arange(7))) for a in range(1, 7)]
+    fano = sum(P @ G @ P for P in Pl) / 3
+    assert np.linalg.norm(sum(k @ G @ k.conj().T for k in K) - fano) < 1e-14
+    assert np.allclose([np.trace(k.conj().T @ k @ G).real for k in K], [3 / 7] + [2 / 21] * 6)
+
+
+def test_line_instrument_divergences_fix_no_coupling_and_no_gap_phase():
+    """T-331(g) [Т]: канонический инструмент линий фиксирует носитель считывания, но не κ.
+
+    Кубик считывания Σ_p (Tr Π_pΔ)³ плоскости, делящей с октонионной 7, 3, 1, 0 линий (1, 7, 14, 8
+    плоскостей), весит 1/72, 1/252, −1/1008, −1/288 (a = 1/504 на линию, −a/4 на треугольник), среднее 0.
+    f-расходимость считывания от считывания I/7 весит (49/11664) f'''(1) (f''(1) = 1): KL −49/11664,
+    обратная KL −49/5832, Реньи порядка α: −α(2 − α)·49/11664 (Пирсон и α = 2 — ноль, α > 2 — плюс).
+    Информационный выигрыш Гроневолда I_G весит −245/46656. Все исходы инструмента — функции диагонали Γ.
+    """
+    from fractions import Fraction as Fr
+    B, TA, T3, To, w = _associator_weight_tools()
+    lines0 = frozenset(frozenset(x - 1 for x in l) for l in LINES)
+    planes = {frozenset(frozenset(s[i] for i in l) for l in lines0) for s in itertools.permutations(range(7))}
+
+    def t_read(P):
+        v = np.array([[np.trace(b[np.ix_(sorted(l), sorted(l))]) for l in P] for b in B])
+        return np.einsum('pl,ql,rl->pqr', v, v, v)
+    tally = {}
+    for P in planes:
+        key = (len(P & lines0), Fr(w(t_read(P))).limit_denominator(5000))
+        tally[key] = tally.get(key, 0) + 1
+    assert tally == {(7, Fr(1, 72)): 1, (3, Fr(1, 252)): 7, (1, Fr(-1, 1008)): 14, (0, Fr(-1, 288)): 8}
+    lines = [sorted(l) for l in lines0]
+    Pl = [np.diag([1.0 if i in l else 0.0 for i in range(7)]) for l in lines]
+    w_read = w(t_read(lines0))                      # кубик Σ_p (Tr Π_pΔ)³; Σ_p δ_p³ весит w_read/27
+    # кубический член расходимостей: f'''(1)/6 · Σ_p (1/7)(7δ_p)³, δ_p = Tr(Π_pΔ)/3 — сверка разностями
+    read = lambda G: np.array([np.trace(P @ G).real / 3 for P in Pl])
+    u = np.ones(7) / 7
+    divs = {'kl': (lambda p: np.sum(p * np.log(p / u)), -1.0),
+            'rkl': (lambda p: np.sum(u * np.log(u / p)), -2.0),
+            'renyi_half': (lambda p: np.log(np.sum(p ** 0.5 * u ** 0.5)) / (-0.5), -0.5 * 1.5),
+            'renyi_3': (lambda p: np.log(np.sum(p ** 3 * u ** -2)) / 2, 3.0),
+            'pearson': (lambda p: np.sum((p - u) ** 2 / u) / 2, 0.0)}
+    rng = np.random.default_rng(412)
+    for name, (Df, f3) in divs.items():
+        for _ in range(3):
+            D = np.einsum('p,pij->ij', rng.normal(size=27), B)
+            D /= np.linalg.norm(D)
+            eps = np.linspace(-0.02, 0.02, 21)
+            g = np.array([Df(read(np.eye(7) / 7 + e * D)) for e in eps])
+            c3 = np.polyfit(eps, g, 7)[-4]
+            pred = f3 / 6 * 49 * np.sum(read(D) ** 3)
+            assert abs(c3 - pred) < 1e-6 * max(1.0, abs(pred))
+        assert abs(f3 * 49 / 6 * w_read / 27 - f3 * 49 / 11664) < 1e-14
+    assert abs(-49 / 11664 * 2 - (-49 / 5832)) < 1e-18
+    # Гроневолд: I_G = S(Γ) − Σ p_p S(Γ_p); кубик (49/6)Tr Δ³ − (49/18)Σ_p Tr(Δ|_p)³ + (49/6)Σ_p δ_p³
+    Tblk = _sym3(sum(np.einsum('pab,qbc,rca->pqr', *[B[:, l][:, :, l]] * 3) for l in lines))
+    assert abs(w(Tblk) - 1 / 288) < 1e-12
+    assert abs(-(49 / 18) * w(Tblk) + 49 / 6 * w_read / 27 - (-245 / 46656)) < 1e-14
+    # исходы инструмента (повторные применения, диагональные унитарные между ними) видят лишь диагональ
+    G = random_state(rng)
+    G2 = np.diag(np.diag(G))                             # то же распределение осей, без когерентностей
+    for _ in range(20):
+        seq = rng.integers(0, 7, size=4)
+        K = np.eye(7, dtype=complex)
+        for p in seq:
+            K = np.diag(np.exp(1j * rng.random(7))) @ (Pl[p] / np.sqrt(3)) @ K
+        assert abs(np.trace(K @ G @ K.conj().T) - np.trace(K @ G2 @ K.conj().T)) < 1e-15
+
+
+def _real_commutant_dim(ops, n):
+    G = np.zeros((n * n, n * n))
+    I = np.eye(n)
+    for X in ops:
+        ad = np.kron(X, I) - np.kron(I, X.T)
+        G += ad.T @ ad
+    return int(np.sum(np.linalg.eigvalsh(G) < 1e-8))
+
+
+def test_spinor_factor_premise_and_fermion_module_premise_are_independent():
+    """Посылки УГМ (reference/premises): (P) и (Кл₀) независимы — модели «все, кроме одной».
+
+    (Кл₀) без (P): Fₙ = ℂⁿ ⊗ 𝒮_ℂ при n = 3 — всё о поколении верно (48e(f)), но SL(W)-инвариантных
+    квадратичных форм на Herm(ℂ³) нет (0), причинной формы нет — (P) ложна.
+    (P) без (Кл₀): F = W ⊗_ℂ M с M = ℂ⁷ (векторы голонома, 𝔤₂ и i пространства ℋ): коммутант этой
+    внутренней структуры в End_ℝ(ℝ¹⁴) двумерен (= ℂ), значит преобразования W, сохраняющие её, —
+    GL(W), и при W = ℂ² инвариантная форма одна (det) — (P) выполнена; но dim_ℝ ℂ⁷ = 14 не кратно 16,
+    ℂ⁷ не модуль Cl₇ — (Кл₀) ложна. Объединение (P) и (Кл₀) в одну фразу возможно (так и записана (P)),
+    сокращения числа независимых входов — нет.
+    """
+    J = np.kron(np.array([[0.0, -1.0], [1.0, 0.0]]), np.eye(7))
+    ops = [np.kron(np.eye(2), X) for X in G2] + [J]
+    assert _real_commutant_dim(ops, 14) == 2
+    assert _real_commutant_dim([np.kron(np.eye(2), X) for X in G2], 14) == 4        # без i: M₂(ℝ)
+    assert 14 % 16 != 0 and 32 % 16 == 0
+    assert len(_invariant_quadratic_forms(2)) == 1 and len(_invariant_quadratic_forms(3)) == 0
+
+
+def _top_window_sink(d, s, kap, alpha, n=20001):
+    """Верхний сток в окне при постоянном якоре (T-335): η = F(P), F = B/A, P = d + η²s; None, если нет."""
+    c = (1 - alpha) / 3
+    Fp = lambda P: np.divide(*_anchor_window_parts(P, kap, c)[::-1])
+    h = lambda e: Fp(d + e * e * s) - e
+    eta = np.linspace(1e-6, 1, n)
+    P = d + eta ** 2 * s
+    v = h(eta)
+    idx = np.where((P[:-1] > 2 / 7) & (v[:-1] > 0) & (v[1:] <= 0))[0]
+    if not len(idx):
+        return None
+    lo, hi = eta[idx[-1]], eta[idx[-1] + 1]
+    for _ in range(80):
+        m = (lo + hi) / 2
+        lo, hi = (m, hi) if h(m) > 0 else (lo, m)
+    return lo
+
+
+def test_anchor_principle_is_independent_and_attractor_integration_does_not_replace_it():
+    """Посылки УГМ: (МаксΦ) независима от аксиом и от жизни в окне; максимум Φ аттрактора её не заменяет.
+
+    Якорь ρ_t = (1 − t)I/7 + t uu†, t = 0,9 (α = ½, κ = 100 > κ_c(0,9) = 75,56): (Eq) выполнено,
+    Φ(ρ_t) = 6t² = 4,86 < 6, а сток в окне есть — P ∈ (2/7, 3/7]. Унитальный якорь I/7: Φ = 0, (Eq) верно,
+    голоном мёртв. Аттрактор постоянного якоря зависит лишь от d = Σ(ρ_a)ᵢᵢ² и s = P(ρ_a) − d, и его
+    интеграция равна η²s/d; при фиксированном d она растёт с s (чистый якорь лучше). Принцип
+    «наибольшая интеграция аттрактора» выбирает uu† лишь при κ выше κ_* ≈ 1,012 κ_c(α): при α = 0,
+    κ = 16,8 чистый якорь с d = 1/7 + 10⁻⁴ даёт Φ_att = 1,25155 > 1,25148 у uu†; при κ = 20 uu† выигрывает
+    у всех якорей сетки (чистых и смешанных).
+    """
+    alpha, kap, t = 0.5, 100.0, 0.9
+    u = np.ones(7) / np.sqrt(7)
+    rho = (1 - t) * np.eye(7) / 7 + t * np.outer(u, u)
+    assert np.allclose(np.diag(rho), 1 / 7) and abs(integration(rho) - 6 * t * t) < 1e-12
+    e = _top_window_sink(1 / 7, 6 * t * t / 7, kap, alpha)
+    G0 = (1 - e) * np.eye(7) / 7 + e * rho
+    f = _living_generator(np.zeros((7, 7)), lambda Y: rho.astype(complex), kap, alpha)
+    G = _stationary(f, G0.astype(complex))
+    assert np.linalg.norm(f(G)) < 1e-10 and 2 / 7 < purity(G) <= 3 / 7 and np.allclose(G, G0, atol=1e-6)
+    assert integration(np.eye(7) / 7) == 0
+    phi_att = lambda d, s, k, a: (lambda x: None if x is None else x * x * s / d)(_top_window_sink(d, s, k, a))
+    a0, b0 = phi_att(1 / 7, 6 / 7, 16.8, 0.0), phi_att(1 / 7 + 1e-4, 6 / 7 - 1e-4, 16.8, 0.0)
+    assert b0 > a0 + 3e-5
+    best = phi_att(1 / 7, 6 / 7, 20.0, 0.0)
+    for d in np.linspace(1 / 7 + 1e-4, 0.5, 40):
+        for frac in (1.0, 0.9, 0.6):
+            v = phi_att(d, frac * (1 - d), 20.0, 0.0)
+            assert v is None or v < best
+    for a, kc in ((0.0, 16.63), (0.5, 29.25), (1.0, 59.34)):                     # κ_* ∈ (1,005; 1,02)·κ_c
+        slope = [phi_att(1 / 7 + 1e-6, 6 / 7 - 1e-6, r * kc, a) - phi_att(1 / 7, 6 / 7, r * kc, a)
+                 for r in (1.005, 1.02)]
+        assert slope[0] > 0 > slope[1]
+    for s_lo, s_hi in ((0.5, 0.6), (0.7, 0.8)):
+        x_lo, x_hi = _top_window_sink(0.2, s_lo, 60.0, 0.0), _top_window_sink(0.2, s_hi, 60.0, 0.0)
+        assert x_lo is not None and x_hi * x_hi * s_hi > x_lo * x_lo * s_lo
 
 
 def main():

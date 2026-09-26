@@ -561,6 +561,28 @@ $k=3$ is the **unique** admissible size with optimal coherence preservation (the
 
 **Proof.** (a) Regularity: CPTP preservation $[\Phi]_{ii} = \gamma_{ii}$ requires $r_i = r$ for all $i$; from $7r = 21$: $r = 3$. (b) Uniform coverage: contraction $c = 1/3$ for **all** pairs (T1 [T]) gives $\lambda_{ij}/r = 1/3$, hence $\lambda_{ij} = 1$. (c) Parameters $v=7, b=7, k=3, r=3, \lambda=1$ define a BIBD$(7,3,1)$. By uniqueness (Kirkman 1847): $S(2,3,7) = \text{PG}(2,2)$. $\blacksquare$
 
+<span id="t13-sharp"></span>
+
+:::tip T13, strengthened (2026-09-26): the sharp minimal instrument of the Fano channel [T]
+Let $\Phi_c(\Gamma) = c\,\Gamma + (1-c)\,\mathrm{diag}\,\Gamma$ on $\mathbb C^7$, $0 \le c < 1$; then $\Phi_{1/3} = \mathcal P_{\text{Fano}} = \mathrm{id} + \mathcal D_\Omega$ and $\mathcal P_\alpha = \Phi_{(1-\alpha)/3}$. Call a Kraus representation **sharp** if each Kraus operator is a positive multiple of an orthogonal projector (the Lüders coarsening of T12) and **minimal** if it has as many operators as the Choi rank, $7$ (T11).
+
+**(a)** Every Kraus operator of $\Phi_c$ is diagonal, so a sharp one is $\sqrt{x_S}\,\Pi_S$ for a set $S$ of axes.
+
+**(b)** The sharp minimal representations of $\Phi_{1/3}$ are exactly $\{\Pi_p/\sqrt3\}_{p \in \mathcal P}$, $\mathcal P$ one of the $30$ Fano planes on the seven axes. Ranks and weights are not assumed: they come out as $3$ and $1/3$.
+
+**(c)** For $0 < c < 1$ a sharp minimal representation exists only at $c \in \{1/3, 1/2, 5/6\}$, by the symmetric designs $(7,3,1)$, $(7,4,2)$, $(7,6,5)$; at $c = 0$ it is the seven axis projectors. In the family $\mathcal P_\alpha$ only $\alpha = 0$ (Fano) and $\alpha = 1$ (atomic) have one.
+
+**(d)** Exactly one of the $30$ planes is invariant under the collineation image of $\Gamma_{\!\text{oct}}$: the octonionic lines. Hence the instrument of $\mathcal D_\Omega$ that is sharp, minimal and $\Gamma_{\!\text{oct}}$-covariant is unique — the line instrument $\{L_p^{\text{Fano}}\}$.
+
+**(e)** No clause can be dropped. Without minimality: $\sqrt{1/3}\,I$ with $\sqrt{2/3}\,|i\rangle\langle i|$ (eight sharp operators — the axis resolution of [T-331(f)(d)](/docs/core/dynamics/gap-thermodynamics#t-331f)), and mixtures over planes. Without sharpness: the unitary mixtures of the line operators, e.g. $\sqrt{3/7}\,I$ and $\sqrt{2/21}\,\mathrm{diag}(\omega^{ai})$, $a = 1, \dots, 6$, $\omega = e^{2\pi i/7}$, whose outcome probabilities $3/7$ and $2/21$ do not depend on $\Gamma$. Without $\Gamma_{\!\text{oct}}$: the other $29$ planes.
+
+**(f)** The syndrome measurements of the Hamming code do not give $\Phi_{1/3}$: a single parity check is the sharp pair $\{\Pi_p, I - \Pi_p\}$, a check chosen uniformly gives $\Phi_{3/7}$, which by (c) has no sharp minimal representation, and the full syndrome, which tells every axis apart, gives $\Phi_0$.
+:::
+
+**Proof.** (a) The Choi matrix $\sum_{ij}C_{ij}|ii\rangle\langle jj|$, $C = (1-c)I + cJ$, lives on $\mathrm{span}\{|ii\rangle\}$, and the Kraus operators are the vectors of its range read as matrices; a diagonal projector is a coordinate projector. (b) With the $7\times7$ incidence matrix $N$ ($N_{iS} = 1$ iff $i \in S$) and $X = \mathrm{diag}(x_S)$ the representation reads $NXN^{\mathsf T} = C$. Minimality makes the seven operators linearly independent, so $N$ is invertible and $X^{-1} = N^{\mathsf T}C^{-1}N$ with $C^{-1} = (I - tJ)/(1-c)$, $t = c/(1+6c)$. Off the diagonal this reads $|S \cap T| = t\,k_Sk_T$, $k_S = |S|$; on it, $x_S = (1-c)/(k_S(1 - tk_S))$. At $c = 1/3$, $t = 1/9$: $9$ divides $k_Sk_T$ for all $S \ne T$, and as $k \le 7$ every $k_S \in \{3, 6\}$, so $x_S = 1/3$; the trace $\sum_S x_Sk_S = \mathrm{Tr}\,C = 7$ gives $\sum_S k_S = 21$, so all $k_S = 3$. Then any two blocks meet in one point, and $C_{ij} = 1/3$ puts every pair of axes on exactly one block: a $(7,3,1)$ design, the Fano plane (T13 above), with $7!/168 = 30$ labellings. Conversely every Fano plane gives $\Phi_{1/3}$ (T-78). (c) $t\,k_Sk_T$ is a positive integer, so $t$ is rational and at most $7/(k_Sk_T)$; a finite search over the block sizes, the admissible $t$ and the set systems with these intersections finds exactly the three designs. (d) A plane invariant under the $168$ collineations $G_0$ of the octonionic plane is a union of $G_0$-orbits of triples. $G_0$ has two orbits on the $35$ triples, the $7$ lines and the $28$ triangles (it acts regularly on the $168$ ordered non-collinear triples, the bases of $\mathbb F_2^3$), so the plane is the set of lines. The collineation image of $\Gamma_{\!\text{oct}}$ is $G_0$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)). (e) For $i \ne j$, $\tfrac37 + \tfrac2{21}\sum_{a=1}^6\omega^{a(i-j)} = \tfrac37 - \tfrac2{21} = \tfrac13$, and $\tfrac37 + \tfrac{12}{21} = 1$ for $i = j$. (f) Label the axes and the checks by the nonzero vectors of $\mathbb F_2^3$; the check $h$ reads $h\cdot i$, $\{i : h\cdot i = 0\}$ is a line, and two distinct axes agree on the $3$ checks with $h\cdot(i+j) = 0$. $\blacksquare$
+
+Check: `test_sharp_minimal_kraus_representations_are_the_fano_planes`. The generator $\mathcal D_\Omega$ as a map fixes only $\Phi_{1/3}$, which does not know the lines; the physical instrument that resolves them — the one the associator weight needs — is fixed by sharpness, minimality and the frame group. What this does and does not give for $\kappa$: [T-331(g)](/docs/core/dynamics/gap-thermodynamics#t-331g).
+
 #### Theorem T14: Max-min optimality of BIBD [T] {#теорема-maxmin}
 
 > Among regular block designs $(v=7, k=3, \lambda_{ij} \geq 1)$, BIBD$(7,3,1)$ **maximises** $\min_{i \neq j}\lambda_{ij}/r$.

@@ -399,6 +399,7 @@ const sidebars: SidebarsConfig = {
     'reference/specification',
     'reference/computational',
     'reference/status-registry',
+    'reference/premises',
     'reference/articulation-hygiene',
     'reference/epistemic-vertical',
   ],

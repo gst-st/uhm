@@ -478,9 +478,11 @@ The Lagrangian of Gap theory provides the **energetic** argument (nos. 2 and 3 i
 | 2 | Spontaneous breaking | Theorem 4.1: $\mathcal{G}_{\text{total}}^{(\min)} > 0$ | Cubic term $V_3$ shifts the minimum away from zero |
 | 3 | Phase frustration | $V_3$: impossibility of $\theta_{ij}+\theta_{jk}=\theta_{ik}$ globally | Non-associativity forbids global zeroing |
 | 4 | Thermodynamic | [Theorem 5.2](/docs/core/dynamics/gap-thermodynamics#принцип-свободной-энергии): $T_{\text{eff}} > 0$ | Thermal fluctuations sustain Gap |
-| 5 | Self-referential | [Theorem 10.2](/docs/core/dynamics/gap-thermodynamics#неподвижная-точка-лавера): $k > 0$ for $L < 4$ | $\mathrm{Gap}_{\text{perceived}} \neq \mathrm{Gap}_{\text{actual}}$ |
+| 5 | Self-referential | [Theorem 10.2](/docs/core/dynamics/gap-thermodynamics#неподвижная-точка-лавера): a self-model with a real anchor registers the fraction $kc \leq 2/7$ of the Gap operator | $\mathrm{Gap}_{\text{perceived}} \neq \mathrm{Gap}_{\text{actual}}$ wherever $\hat{\mathcal G} \neq 0$ |
 
 The five arguments are independent: each of them alone is sufficient to prove nonzero Gap. Together they create **multi-layered protection** of the result: even if one argument turns out to be wrong, the remaining four support it. This is the architecture of robust knowledge.
+
+*(Scope, 2026-09-26: the independence claim does not hold for three rows. Row 5 presupposes $\hat{\mathcal G} \neq 0$ — it says that a self-model under-registers a Gap that is there, not that there is one; the former entry "$k > 0$ for $L < 4$" rested on the retracted table of $k$ by level of interiority. Rows 2 and 3 rest on the retracted cubic $V_3$; with the $G_2$-invariant potential row 2 holds above the threshold of [T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) (d), and row 3 has no counterpart — see [Gap thermodynamics, five arguments](/docs/core/dynamics/gap-thermodynamics#минимум-потенциала-и-спонтанный-gap).)*
 
 ---
 
