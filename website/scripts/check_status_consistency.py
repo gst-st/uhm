@@ -15,6 +15,11 @@
   R3  ОТОЗВАННОЕ. Отозванная формулировка не смеет появиться вне контекста
       отзыва (строка без маркера «отозвано / retracted / прежняя редакция»).
   R4  УСЛОВИЕ [C]. Строка реестра со статусом [C] обязана называть допущение.
+  R7  ОПОРА НА ОТОЗВАННОЕ. Номер, отозванный реестром ЦЕЛИКОМ ([✗]), не смеет
+      стоять в контексте опоры («by T-58», «из T-178», «(T-48a)», «conditional on»)
+      без пометки отзыва в том же предложении, соседнем, в начале абзаца, в шапке
+      врезки или в заголовке раздела. Цитату «T-n [T]» при [✗] ловит R1; R7 ловит
+      опору БЕЗ буквы статуса.
 
 ЧТЕНИЕ РЕЕСТРА. Наивный разбор («любая буква в скобках») ЛЖЁТ: строка
 «— raised from [H]» называет ПРЕЖНИЙ статус, а не текущий, и прибор объявлял бы
@@ -68,6 +73,11 @@ BASE_R1X = {"en": 0, "ru": 0}
 # названного допущения (в обеих локалях одни и те же четыре строки).
 BASE_R4X = {"en": 4, "ru": 4}
 BASE_DEBTX = {"en": 0, "ru": 0}
+# R7 — опора на ЦЕЛИКОМ отозванный номер без пометки отзыва рядом. Измерено 26.09.2026
+# на c7900f5 в миг прозрения: 5/4 (en/ru) — T-58 в «Claim [C] … conditional on T-58»
+# (dimension-e) и в строке реестра T-95 («rests on T-58 [C]»), T-58 «is itself [C]»
+# (operationalization, en), T-178 в двух ссылках notation на «T-178–T-181».
+BASE_R7 = {"en": 5, "ru": 4}
 
 CYR2LAT = {"Т": "T", "С": "C", "Г": "H", "П": "P", "О": "D", "И": "I"}
 WEAKER_OK = {"✗"}   # ретракция — не «более слабая опора», а снятие
@@ -446,8 +456,251 @@ def check_r4(root, row=ROW):
     return bad
 
 
+# ---------------------------------------------------------------------------
+# R7  ОПОРА НА ОТОЗВАННОЕ (26.09.2026).
+#
+# R1 ловит ЦИТАТУ со статусом («T-178 [T]» при реестре [✗]). Но опора редко
+# пишется с буквой: «by T-48a», «из T-178», «(T-179)», «[T, T-175a]» — статуса
+# нет, и R1 молчит, а читатель берёт отозванный результат за действующий.
+# R7 читает реестр, составляет список ЦЕЛИКОМ отозванных номеров и ищет их
+# в контексте опоры без пометки отзыва в пределах абзаца, врезки или раздела.
+#
+# Целиком отозванный номер — тот, у которого ВСЕ живые строки после снятия
+# исторических контекстов («corrected from [T]», «previously … [✗]», «[T] → [✗]»
+# до стрелки) и цитат ЧУЖИХ номеров («Replaced by T-58′ [T]») несут только [✗].
+# Частично отозванные (снятая под-часть: «Old … formula retracted [✗]») сюда не
+# входят — их опора законна. Ещё три семейства: номера из списков
+# «*Retracted [✗]:* Lemma T-170'.1 …, T-170' as a theorem …», строки реестра
+# «#n» (раздел «Level 4 … [✗]» и зачёркнутые строки «Retracted [✗]») и
+# утверждения X1–X4 раздела «Retracted Statements [✗]». Номера C-n не входят
+# (буквы с цифрой в корпусе многозначны, как и для R1x: C2 — и отозванная строка
+# условий, и шаг вывода); целиком отозванных CC/КК в реестре на 26.09.2026 нет.
+# ---------------------------------------------------------------------------
+RID = r"[TТ]-\d+[a-z]?(?:['′]{1,2})?(?:\.\d+)?"
+HIST = re.compile(
+    r"(?:previously|earlier|formerly|was|ранее|прежде|было|бывш\w*)\s[^|;\]]{0,40}?\[✗\]"
+    r"|\[[" + STATUS_CHARS + r"]\]\*{0,2}~{0,2}\s*(?:→|->)\s*", re.I)
+FOREIGN_CITE = re.compile(r"(?:" + RID + r"|\b[CXН]\d+['′]?)\]?(?:\([^)\s]*\))?\*{0,2}\s*\*{0,2}\[[" + STATUS_CHARS + r"][^\]]*\]")
+RETR_LIST = re.compile(r"\*(?:Retracted|Отозван[оаы]?) \[✗\]:\*(.*?)(?:\*(?:Status history|История статуса)|\s\|\s|$)")
+RETR_SECTION = re.compile(r"^##\s+.*\[✗\]\s*$")
+ROW_RETRACTED = re.compile(r"(?:Retracted|Отозван[аоы]?|Ретрактирован[аоы]?)\*{0,2}\s*\[✗\]", re.I)
+
+
+REPLACED_BY = re.compile(r"(?:Replaced by|Replacement|Заменена?|Замена)\*{0,2}:?\s*\*{0,2}" + RID
+                         + r"['′]?\*{0,2}\s*\*{0,2}\[[" + STATUS_CHARS + r"]\]", re.I)
+
+
+#: Явный переход САМОЙ строки в [✗]: «[T] → [✗]», «corrected from [T] to [✗]».
+#: «the former statement is corrected from [T] to [✗]» — переформулировка, не отзыв.
+TO_RETRACTED = re.compile(
+    r"(?<!former statement is )(?<!former statement )(?<!прежняя формулировка )(?<!прежнее утверждение )"
+    r"(?:\[[TCHТСГ]\]\*{0,2}\s*(?:→|->)\s*\*{0,2}|(?:corrected|исправлен[аоы]?)\s+(?:from|с)\s+\[[TCHТСГ]\]\s+(?:to|на)\s+)\[✗\]")
+
+
+def _row_letters(tid, body, section):
+    if TO_RETRACTED.search(body):
+        return {"✗"}
+    body = RAISED.sub(" ", body)
+    body = HIST.sub(" ", body)
+    body = RETRACTED_SUB.sub(" ", body)          # снятая под-часть — не статус строки
+    body = REPLACED_BY.sub(" ", body)            # «Replaced by T-58′ [T]» — статус замены
+    # цитата ЧУЖОГО номера не статус строки; своя редакция («T-201′ [T]») — статус
+    body = FOREIGN_CITE.sub(lambda m: m.group(0) if m.group(0).startswith(tid) else " ", body)
+    found = status_letters(body)
+    return found or ({section} if section else set())
+
+
+def retracted_ids(root):
+    """Номера, отозванные ЦЕЛИКОМ, с видом записи: {ключ: вид}."""
+    text = (root / "reference/status-registry.md").read_text(encoding="utf-8")
+    out = {}
+    for tid, bodies in registry_rows(root).items():
+        letters = [_row_letters(tid, b, s) for b, s in bodies]
+        if letters and all(l == {"✗"} for l in letters):
+            out[tid] = "строка"
+    section_retracted = False
+    for line in text.split("\n"):
+        if line.startswith("## "):
+            section_retracted = bool(RETR_SECTION.match(line.strip()))
+            continue
+        for m in RETR_LIST.finditer(line):
+            span = re.sub(r"\([^()]*\)", " ", re.sub(r"\([^()]*\)", " ", m.group(1)))
+            for item in re.split(r",\s+|\s+(?:and|и)\s+", span):
+                im = re.match(r"\s*(?:the former |прежн\w+ )?(?:Lemma |Лемма |лемма )?(" + RID + r")(?![\w'′.])", item)
+                if im:
+                    out[im.group(1).replace("Т-", "T-")] = "список отзыва"
+        cell = re.match(r"^\|\s*(~~)?(\d+|X\d+)(~~)?\s*\|", line)
+        if not cell:
+            continue
+        num = cell.group(2)
+        if num.startswith("X"):
+            if section_retracted:
+                out[num] = "утверждение"
+        elif section_retracted or (cell.group(1) and ROW_RETRACTED.search(line)
+                                   and not re.search(r"Raised to|Повышен|Resolved|Решено", line)):
+            out["#" + num] = "строка реестра"
+    return out
+
+
+# Опора: слово-связка ПЕРЕД номером, статус без [✗] ПОСЛЕ него, глагол-вывод
+# после него, скобочная ссылка «(T-178)» / «(by T-178)» и форма «[T, T-178]».
+RELY_BEFORE = re.compile(
+    r"(?:\b(?:by|from|via|using|uses|use of|per|according to|by virtue of|because of|thanks to|follows? from|"
+    r"following|based on|rests? on|resting on|relies on|relying on|invoking|invokes|given|with|of|on|upon|in|"
+    r"conditional on|depends on|decomposition|construction|equivalence|theorem|lemma)"
+    r"|(?<![\w-])(?:по|из|согласно|в силу|благодаря|следует из|через|на основе|опирается на|опираясь на|"
+    r"с опорой на|используя|использует|при|при условии|условии|дают|даёт|дает|на|в|от|"
+    r"декомпозици\w*|конструкци\w*|эквивалентност\w*|теорем\w*|лемм\w*))"
+    r"\s+(?:the\s+|теорем[аеыуой]+\s+|леммы?\s+|lemma\s+|theorem\s+|Theorem\s+|Lemma\s+|\*\*|\[)*$", re.I)
+RELY_BRACKET = re.compile(r"\[[TCHТСГ](?:\s+at|\s+при)?,?\s*$|\(\s*(?:see\s+|см\.\s+|cf\.\s+)?$")
+RELY_AFTER = re.compile(
+    r"^(?:′|')?(?:\]\([^)\s]*\))?\*{0,2}\s*\*{0,2}\[[TCHPDIТСГПОИ][^\]]*\]"
+    r"|^(?:\]\([^)\s]*\))?\*{0,2}[^\S\n]+(?:gives|yields|implies|shows|proves|guarantees|fixes|establishes|"
+    r"даёт|дает|доказывает|показывает|гарантирует|фиксирует|обеспечивает|устанавливает)\b", re.I)
+RETR_NEAR = re.compile(
+    r"retract|withdraw|отозв|ретракт|\[✗\]|refuted|опроверг|снят[аоы]? \d{4}|"
+    r"former (?:text|box|statement|claim|version|reading|row|derivation|proof)|"
+    r"прежн\w* (?:текст|врезк|формулиров|утвержд|редакц|чтени|строк|вывод|доказ)|"
+    r"over-claim|завышен|~~", re.I)
+#: Пометка в начале абзаца покрывает абзац, только если называет ОТЗЫВ, а не
+#: любую правку: «**Status errata 2026-09-10: [T] → [D].**» о своём результате не
+#: помечает чужой номер, опору на который абзац называет ниже.
+RETR_LEAD = re.compile(r"retract|withdraw|отозв|ретракт|\[✗\]|~~", re.I)
+#: Объявление «ниже — отозванное»: «*Retracted [✗]:* the earlier derivation below»,
+#: «The text below is the former derivation», «Текст ниже — прежний вывод». Покрывает
+#: всё до конца врезки (если объявлено внутри неё) или до следующего заголовка.
+#: «(see below)» — ссылка на одно место, а не объявление, и не покрывает.
+RETR_BELOW = re.compile(
+    r"(?:retract\w*|withdrawn|отозван\w*|ретракт\w*|former|earlier|прежн\w*|as a record|как запись)"
+    r"[^.\n]{0,100}?(?<!see )(?<!see the )(?<!см\. )\b(?:below|ниже)\b"
+    r"|\b(?:below|ниже)\b[^.\n]{0,40}?\b(?:is|are|—|-)\s+(?:the\s+)?(?:former|прежн\w*|retracted|отозван\w*)", re.I)
+FENCE = re.compile(r"^\s*(```|~~~)")
+
+
+def _blocks(lines):
+    """Для каждой строки — её абзац, шапка её врезки и её заголовок.
+
+    Окно пометки — абзац (подряд идущие непустые строки; строка таблицы — сама
+    себе абзац), ШАПКА врезки («:::note Earlier statement (T-177, retracted [✗])»)
+    и ближайший заголовок. Не вся врезка: в длинной врезке «(T-177, retracted)»
+    в одном абзаце прощало опору «justified upstream in T-48a» в другом.
+    """
+    n = len(lines)
+    para, head, adm = [None] * n, [None] * n, [None] * n
+    cur_head, cur_adm = None, None
+    for i, line in enumerate(lines):
+        s = line.strip()
+        if s.startswith("#"):
+            cur_head = i
+        if re.match(r"^:::\w", s):
+            cur_adm = i
+        elif s == ":::":
+            cur_adm = None
+        head[i], adm[i] = cur_head, cur_adm
+    i = 0
+    while i < n:
+        s = lines[i].strip()
+        if not s or s.startswith(":::"):
+            i += 1
+            continue
+        if s.startswith("|"):
+            para[i] = (i, i)
+            i += 1
+            continue
+        j = i
+        while j + 1 < n and lines[j + 1].strip() and not lines[j + 1].strip().startswith(("|", ":::", "#")):
+            j += 1
+        for k in range(i, j + 1):
+            para[k] = (i, j)
+        i = j + 1
+    return para, head, adm
+
+
+SENT_SPLIT = re.compile(r"(?<=[.!?])\s+(?=[A-ZА-ЯЁ*_(\[\"«])")
+
+
+def _mark_scope(lines, para, head, adm, i, m):
+    """Где пометка отзыва засчитывается упоминанию.
+
+    Предложение упоминания, начало его абзаца (формы «**Step 1 — [✗] retracted.**»,
+    «*Retracted 2026-09-25 with T-48a …*»), шапка врезки и заголовок раздела.
+    Зачёркнутый текст («~~… (T-48a [T])~~») помечен самим зачёркиванием.
+    Прежде окном был весь абзац — и «Errata» о другом номере в начале длинного
+    абзаца прощала фразу «the bridge it leans on, Morita equivalence T-58, is
+    itself [C]» в его конце (operationalization, 26.09.2026).
+    """
+    line = lines[i]
+    if line[:m.start()].count("~~") % 2 == 1:
+        return "~~"
+    starts = [0] + [x.end() for x in SENT_SPLIT.finditer(line)] + [len(line)]
+    k = max(j for j, x in enumerate(starts) if x <= m.start())
+    # предложение упоминания и по одному соседу: «… (T-48a, T-82). *Corrected:* T-48a is retracted»
+    scope = line[starts[max(0, k - 1)]:starts[min(len(starts) - 1, k + 2)]]
+    a, _b = para[i] or (i, i)
+    lead = lines[a][:120]
+    if RETR_LEAD.search(lead):
+        scope += "\n" + lead
+    if a < i:
+        scope += "\n" + lines[i - 1][-200:]
+    for k in (head[i], adm[i]):
+        if k is not None:
+            scope += "\n" + lines[k]
+    # объявление «ниже — отозванное» выше по той же врезке или разделу
+    top = adm[i] if adm[i] is not None else head[i]
+    if top is not None and any(RETR_BELOW.search(lines[j]) for j in range(top, i)):
+        scope += "\n[✗] (объявлено выше: ниже — отозванное)"
+    return scope
+
+
+def check_r7(root, retracted, excused=None, mentions=None):
+    """Опора на целиком отозванный номер без пометки отзыва поблизости."""
+    t_ids = sorted((k for k in retracted if k.startswith("T-")), key=len, reverse=True)
+    rows = [k[1:] for k in retracted if k.startswith("#")]
+    xs = [k for k in retracted if k.startswith("X")]
+    alts = [re.escape(t).replace("T\\-", "[TТ]-").replace("'", "['′]").replace("′", "['′]") for t in t_ids]
+    pat = []
+    if alts:
+        pat.append(r"(?<![\w-])(" + "|".join(alts) + r")(?![\w′'.]|\.\d)")
+    if rows:
+        pat.append(r"(?:(?<![\w#])#|\bNo\.?\s?|№\s?)(" + "|".join(rows) + r")(?![\w-])")
+    if xs:
+        pat.append(r"(?<![\w$\\_{^])(" + "|".join(xs) + r")(?![\w'′])")
+    ID = re.compile("|".join(pat))
+    bad, seen = [], {"упоминаний": 0, "опор": 0, "файлов": 0}
+    for f in sorted(root.rglob("*.md*")):
+        seen["файлов"] += 1
+        lines = f.read_text(encoding="utf-8").split("\n")
+        para, head, adm = _blocks(lines)
+        in_fence = False
+        for i, line in enumerate(lines):
+            if FENCE.match(line):
+                in_fence = not in_fence
+                continue
+            if in_fence or line.lstrip().startswith("#"):
+                continue
+            for m in ID.finditer(line):
+                seen["упоминаний"] += 1
+                if mentions is not None:
+                    mentions.append((f, i + 1, line.strip()[:160]))
+                before, after = line[max(0, m.start() - 60):m.start()], line[m.end():m.end() + 80]
+                if not (RELY_BEFORE.search(before) or RELY_BRACKET.search(before) or RELY_AFTER.search(after)):
+                    continue
+                seen["опор"] += 1
+                scope = _mark_scope(lines, para, head, adm, i, m)
+                if RETR_NEAR.search(scope):
+                    if excused is not None:
+                        excused.append((f, i + 1, line.strip()[:200], RETR_NEAR.search(scope).group(0)))
+                    continue
+                tid = next(g for g in m.groups() if g)
+                key = tid.replace("Т-", "T-").replace("′", "'")
+                if (f, i + 1, key) not in {(b[0], b[1], b[2]) for b in bad}:
+                    bad.append((f, i + 1, key, line.strip()[:160]))
+    return bad, seen
+
+
 def main():
     fail = False
+    files_seen = 0
     for loc, (root, _letter) in LOCALES.items():
         kinds, statuses = classify(root)
         r1 = check_r1(root, statuses, kinds)
@@ -517,6 +770,24 @@ def main():
             print(f"     реестр:{i}: {tid} — {body}")
         if len(r4x) > BASE_R4X[loc]:
             fail = True
+        # R7: опора на целиком отозванный номер
+        retracted = retracted_ids(root)
+        r7, seen7 = check_r7(root, retracted)
+        fam7 = {"строк реестра T": 0, "списков отзыва": 0, "строк #n": 0, "утверждений X": 0}
+        for kind in retracted.values():
+            fam7[{"строка": "строк реестра T", "список отзыва": "списков отзыва",
+                  "строка реестра": "строк #n", "утверждение": "утверждений X"}[kind]] += 1
+        print(f"  R7 опора на отозванное [✗] без пометки: отозванных номеров {len(retracted)} ("
+              + ", ".join(f"{k} {v}" for k, v in fam7.items())
+              + f"); осмотрено файлов {seen7['файлов']}, упоминаний {seen7['упоминаний']}, "
+              f"из них в контексте опоры {seen7['опор']}; расхождений {len(r7)} (база {BASE_R7[loc]})")
+        for f, i, tid, text in r7[:20]:
+            print(f"     {f.relative_to(ROOT)}:{i}: {tid} — {text[:110]}")
+        if len(r7) > BASE_R7[loc]:
+            fail = True
+        files_seen = max(files_seen, seen7["файлов"])
+    # охват называется так, как его читает scripts/verify_gate.py
+    print(f"файлов: {files_seen} (на локаль; реестр — канон)")
     print("правило: реестр — канон; одна буква — одно значение; отозванное не возвращается")
     return 1 if fail else 0
 
