@@ -74,7 +74,7 @@ $$
 
 ---
 
-## 3. Five Derivation Paths (two exact derivations + three supports)
+## 3. Five Derivation Paths (a core of two ingredients + three supports)
 
 ### 3.1 Path 1: Geometric (structural doubling principle)
 
@@ -345,7 +345,7 @@ Uniqueness follows from the algebraic equivalence of conditions 1, 3 and 5 (all 
 
 :::info Logical structure of the five paths
 
-The derivation has **one load-bearing core and four structural supports**, each with a precisely delimited role:
+The derivation has **one load-bearing core of two ingredients (Paths 5 and 1) and three structural supports (Paths 3, 4, 2)**, each with a precisely delimited role:
 
 **Core (the derivation proper).** $P_{\mathrm{crit}} = 2/N$ follows from two ingredients, both parameter-free:
 

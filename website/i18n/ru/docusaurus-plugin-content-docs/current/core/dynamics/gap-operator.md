@@ -225,7 +225,7 @@ $$
 #### Теорема 5.1 / T-73 (Gap = кривизна из спектральной тройки) [Т] {#теорема-gap-серра}
 
 :::tip Теорема 5.1
-В рамках [спектральной тройки](/docs/core/foundations/spacetime#теорема-спектральная-тройка) УГМ (T-53 [Т]) мера $\mathrm{Gap}(i,j)$ **точно совпадает** с нормой кривизны связности на [расслоении Серра](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра) $\mathrm{Bundle}(\Gamma, \Omega) \to B_{\mathrm{ext}}$:
+В рамках конечной [спектральной тройки](/docs/core/foundations/spacetime#теорема-спектральная-тройка) $(A_{\text{int}}, \mathbb C^7, D_{\text{int}})$ УГМ (её существование, шаги 1–4 T-53, — [Т]; лоренцев знак T-53, [С], не используется) мера $\mathrm{Gap}(i,j)$ **точно совпадает** с нормой кривизны связности на [расслоении Серра](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра) $\mathrm{Bundle}(\Gamma, \Omega) \to B_{\mathrm{ext}}$:
 
 $$
 \|\mathrm{Curv}\|_{ij}^2 = |[D_{\mathrm{int}}]_{ij}|^2 = \omega_0^2 |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2

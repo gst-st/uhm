@@ -207,10 +207,10 @@ The following UHM predictions are **manifestly $f$-independent**:
 
 1. **Sector count**: $\mathbb{C}^7 = \mathbb{C}e_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ under $SU(3) \subset G_2$ — representation theory (Günaydın and Gürsey, 1973); the axis-labelled form $7 = \mathbf{1}_O \oplus \mathbf{3}_{A,S,D} \oplus \bar{\mathbf{3}}_{L,E,U}$ of T-48a is retracted [✗] (2026-09-25).
 2. **Fano contraction** $\alpha = 2/3$ (Corollary 2.1a [T]) — from replication number $r = 3$ in PG(2,2).
-3. **Critical purity** $P_\mathrm{crit} = 2/7$ (T-39a [T]) — from spectral optimization on $\mathbb{C}^7$.
-4. **Reflection threshold** $R_\mathrm{th} = 1/3$ (T-96 [T]) — from K=3 tripartite decomposition.
+3. **Critical purity** $P_\mathrm{crit} = 2/7$ ([theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical), registry Level 1 row 5 [T]) — from spectral optimization on $\mathbb{C}^7$.
+4. **Reflection threshold** $R_\mathrm{th} = 1/3$ ([Bayesian dominance](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) [T], with $K = 3$ from the triadic decomposition T-40a, T-40b) — the reading $R = P(H_1)$ is [I] (registry row C1).
 5. **Integration threshold** $\Phi_\mathrm{th} = 1$ (T-129 [T]) — self-consistent value.
-6. **Minimum distinguishability** $D_\mathrm{min} = 2$ (T-151 [T]) — geometric bound.
+6. **Differentiation threshold** $D_\mathrm{min} = 2$ — an independent L2 condition, set by definition [D]: T-151 [T] proves only $\Phi \geq 1 \Rightarrow D_\mathrm{diff} > 1$ when the E-row is coherent, and that $D_\mathrm{min} = 2$ does not follow (until 2026-09-26 this item read "(T-151 [T]) — geometric bound").
 7. **SAD ceiling** $\mathrm{SAD}_\mathrm{max} = 3$ (T-142 [T]) — from $\alpha = 2/3$ and $P \leq 1$.
 8. **Three-generation structure** (T-220 Obstruction I) — from $\mathcal J_3(\mathbb O)|_{A_1 \times G_2}$ branching.
 9. **Gauge group $G_2$** — from $\mathrm{Aut}(\mathbb O)$.

@@ -138,7 +138,7 @@ What is established in 7D **without** any lift:
 
 #### Canonical PW-reconstruction algorithm [C] {#канонический-алгоритм-pw}
 
-**Claim [C].** For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ there exists a unique canonical procedure for computing $\rho_E$, $D_{\text{diff}}$, $\sigma_L$, and $C$ with **zero reconstruction error** — conditional on T-58 and on a tensor factor $\mathcal{H}_E$ being specified in step 2.
+**Claim [C].** For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ there exists a unique canonical procedure for computing $\rho_E$, $D_{\text{diff}}$, $\sigma_L$, and $C$ from a chosen lift — conditional on the choice of lift (the round trip $\pi\circ\iota = \mathrm{id}$ of T-58′ [T] holds for every lift in use) and on a tensor factor $\mathcal{H}_E$ being specified in step 2. The former clause "with **zero reconstruction error**" rested on the Morita equivalence T-58, which is retracted [✗] (2026-09-10, box above); see step 4.
 
 **Algorithm (4 steps):**
 
@@ -163,7 +163,7 @@ The equivalence that would have guaranteed "all observables coincide with zero e
 
 **Practical rule:**
 - **7D is sufficient** for $P$, $R$, $\Phi$, $\kappa$, $\mathrm{Coh}_E$ — defined through the diagonal and off-diagonal elements of $\Gamma \in \mathcal{D}(\mathbb{C}^7)$;
-- **42D is required** (or the 7D formula T-128 via Morita equivalence) for $D_{\text{diff}}$, $\sigma_L$, $\rho_E$ — these require a partial trace.
+- **42D is required** (or the 7D definition T-128 [D], which tracks the 42D notion without computing it — the Morita-equivalence reading is retracted) for $D_{\text{diff}}$, $\sigma_L$, $\rho_E$ — these require a partial trace.
 :::
 
 #### What $\rho_E$ is in 7D and in 42D — the canonical statement {#rho-e-7d-42d}

@@ -445,7 +445,7 @@ For (⊇): the identity $\mathrm{id}: (K, \tau_\mathrm{std}) \to (K, \tau_d)$ is
 
 **Conclusion.** Axiom A2 is canonical in a precise sense: the Bures metric is uniquely determined by three independent mathematical witnesses (Petz extremality, Uhlmann purification, SLD-Cramér-Rao), all mutually consistent. Any other Petz metric gives the same classical $\infty$-topos but a different enrichment, one that is non-universal by Char-I.
 
-**Status:** A2 is [T] by **quadruple** characterization (Char-I through Char-IV). $\square$
+**Status:** the canonicity of Bures is [T] — three independent witnesses (Char-I–III), with Char-IV a recasting of Char-III; the topology of A2 is forced by the lemma above. A2 itself stays a postulate [P]: that the enrichment be CPTP-monotone is not derived from the other axioms ([premises](/docs/reference/premises#аксиомы)). This line read "A2 is [T] by quadruple characterization" until 2026-09-26. $\square$
 
 ### 5.4. Axiomatic closure: all axioms are theorems (T-190) {#теорема-аксиоматическое-замыкание}
 
