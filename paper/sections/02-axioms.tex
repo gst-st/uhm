@@ -8,10 +8,13 @@
 Like IIT~\cite{iit4}, UHM begins with properties of experience and translates them into
 mathematical postulates. Unlike IIT, UHM's postulates are grounded in a specific algebraic
 structure (octonions) and a specific combinatorial structure (Fano plane), which uniquely
-determine the dimensionality and architecture of the theory. UHM rests on \textbf{four axioms} (A1--A4), all of which are now themselves derived
-as theorems (see Section~\ref{subsec:cohesive-closure} and below); a fifth axiom (A5,
-Page--Wootters temporal constraint) is \emph{derived} from A1--A4 via the spectral triple
-construction (T-87~\status{T}).
+determine the dimensionality and architecture of the theory. UHM rests on \textbf{four axioms}
+(A1--A4) and the Page--Wootters constraint of a fifth (A5); the clock register of A5
+follows from A1--A4 via the spectral-triple construction (T-87, steps 1--3~\status{T}),
+the constraint itself does not. These five inputs are postulates~\status{P}, each
+independent; several are supported by theorems (Section~\ref{subsec:premises}). The
+earlier statement that all axioms are derived as theorems is withdrawn
+(Section~\ref{subsec:cohesive-closure}).
 
 \subsection{The single primitive}
 
@@ -26,17 +29,20 @@ density matrices, $J_{\mathrm{Bures}}$ is the Grothendieck topology induced by t
 metric, and $\omega_0$ is the subobject classifier.
 \end{axiombox}
 
-Everything else --- spacetime, quantum mechanics, gravity, consciousness --- is derived, not
-postulated. The coherence matrix $\Gam$ is an object of this category:
+The quantum formalism --- density matrices and CPTP maps, (QG) --- is posited with
+the site, not derived (``why quantum theory'' stays external, T-188). Spacetime,
+gravity and the structure of consciousness are derived from the primitive, the
+physical readings of spacetime and matter through named bridge premises
+(Section~\ref{subsec:premises}). The coherence matrix $\Gam$ is an object of this category:
 $\Gam \in \mathrm{Ob}(\mathcal{C})$.
 
-\subsubsection*{The four axioms (all derived)}
+\subsubsection*{The four axioms}
 
 \begin{enumerate}[leftmargin=2em]
-  \item \textbf{(A1) Structure \status{T}:} Reality is an $\infty$-topos $\ShInf(\mathcal{C})$ over
+  \item \textbf{(A1) Structure \status{P}:} Reality is an $\infty$-topos $\ShInf(\mathcal{C})$ over
         the site of density matrices $\Dens(\mathbb{C}^7)$, generating continuous CPTP
         dynamics $\Lind_\Omega$ (Lindbladian form via GKSL theorem).
-  \item \textbf{(A2) Metric \status{T}:} The Grothendieck topology $J_{\mathrm{Bures}}$ is induced
+  \item \textbf{(A2) Metric \status{P}:} The Grothendieck topology $J_{\mathrm{Bures}}$ is induced
         by the Bures distance:
         \begin{equation}
           d_B(\Gam, \Gam') = \sqrt{2 - 2\sqrt{F(\Gam, \Gam')}}
@@ -49,29 +55,62 @@ $\Gam \in \mathrm{Ob}(\mathcal{C})$.
         Chentsov's theorem~\cite{chentsov1982}; in the quantum case,
         infinitely many monotone metrics exist, but Bures is minimal).
         This choice ensures $\Pcrit = 2/7$ is the least restrictive threshold.
-        \emph{Derived status:} T-187 proves that Bures is the uniquely canonical
+        \emph{Support:} T-187~\status{T} proves that Bures is the uniquely canonical
         Petz-enrichment, fixed by three independent characterizations (Petz extremality,
-        Uhlmann purification, SLD-Fisher saturation), making A2 a theorem rather
-        than a postulate (Section~\ref{subsec:cohesive-closure}).
-  \item \textbf{(A3) Dimension \status{T}:} The base Hilbert space dimension is $N = 7$, grounded
+        Uhlmann purification, SLD-Fisher saturation), and T-189~\status{T} recasts it as a
+        maximum-entropy selector (Section~\ref{subsec:cohesive-closure}); the axiom
+        itself stays a postulate.
+  \item \textbf{(A3) Dimension \status{P}:} The base Hilbert space dimension is $N = 7$, grounded
         in octonion structure $G_2 = \mathrm{Aut}(\Oct)$ and the Fano plane $\Fano$
-        (Section~\ref{subsec:why-seven}).
-  \item \textbf{(A4) Scale \status{T}:} Characteristic frequency
-        $\omega_0 = \lambda_{\min}(H_{\mathrm{eff}}) > 0$ relates internal time $\tau$ to
-        physical time $t$. This is not a free parameter: $\omega_0$ is the minimal nonzero
-        eigenvalue of the effective Hamiltonian $H_{\mathrm{eff}}$ (T-87). A system with
-        $\omega_0 = 0$ has no dynamics, hence no regeneration, hence is not viable. Different
-        holons have different $\omega_0$, just as different atoms have different masses ---
-        a computed spectral property, not a postulated one.
+        (Section~\ref{subsec:why-seven}). $N \geq 7$ is a theorem (Theorem~S~\status{T});
+        strict necessity of $N = 7$ is \status{C at (P1$_6$)}.
+  \item \textbf{(A4) Scale \status{P}:} Characteristic frequency
+        $\omega_0 > 0$ relates internal time $\tau$ to physical time $t$. A system with
+        $\omega_0 = 0$ has no dynamics, hence no regeneration, hence is not viable; the
+        \emph{value} of $\omega_0$ is a free parameter and differs between holons.
 \end{enumerate}
 
-From these four, a fifth constraint is derived (T-87~\status{T}):
+The fifth axiom is stratified (T-87):
 
 \begin{enumerate}[leftmargin=2em, start=5]
-  \item \textbf{(A5, derived) Page--Wootters temporal constraint~\cite{page1983}:}
-        $[\hat{C},\, \Gam_{\mathrm{total}}] = 0$, yielding emergent time from the
-        O-dimension (Section~\ref{subsec:emergent-time}).
+  \item \textbf{(A5) Page--Wootters clock and constraint~\cite{page1983}:} the clock
+        register --- the tensor factor $\mathcal{H}_O = \mathbb{C}[\mathbb{Z}_7]$ --- follows from
+        A1--A4 (T-87, steps 1--3~\status{T}); the constraint $\hat{C}\,\Gam_{\mathrm{total}} = 0$,
+        the support condition $\mathrm{supp}\,\Gam \subseteq \ker\hat C$, is an independent
+        postulate~\status{P} (stationarity of a mixed state gives only
+        $[\hat{C}, \Gam_{\mathrm{total}}] = 0$; the earlier ``A5 is a consequence of A1--A4'' is
+        withdrawn). Emergent time from the O-dimension is developed in
+        Section~\ref{subsec:emergent-time}.
 \end{enumerate}
+
+\subsubsection*{Premises in use}
+\label{subsec:premises}
+
+The independent axiomatic content is A1--A4 plus the constraint of A5: five inputs,
+each independent (a state off $\ker\hat C$ satisfies A1--A4 and violates the constraint).
+On top of them the current corpus uses, as listed on the premises page of the archive:
+\begin{itemize}[leftmargin=2em,nosep]
+  \item \textbf{Bridge premises of physics \status{H}:} (Cl$_0$) --- fermions are vectors
+        of the spinor module $\mathcal S = \mathbb C\otimes\Oct$ of the octonionic Clifford
+        system; (P) --- the tangent vectors of spacetime are the Hermitian forms on the
+        spinor factor of the fermion field, with a causal form preserved by every
+        internal-structure-preserving transformation ((P)~$\Leftrightarrow$~(L)~$\wedge$~(W),
+        Theorem~48e). Neither is derivable from the axioms, and the two are independent.
+  \item \textbf{Principle of the self-model \status{Pr}:} (Max$\Phi$) --- the anchor of the
+        self-model is maximally integrated, $\Phi(\rho_a) = 6$ (T-334).
+  \item \textbf{Strict necessity of $N = 7$ \status{H}:} (P1$_6$); $N \geq 7$ needs no premise.
+  \item \textbf{Free parameters:} the associator coupling $\kappa$ of $V_{\mathrm{Gap}}$ (free:
+        no derived source fixes it, T-331), $\mu^2$, $\lambda_4$, the regeneration rate and the
+        Fano weight $\alpha$, $\omega_0$.
+  \item \textbf{Identification hypotheses \status{H}:} the sector values (SV) of the Gap
+        vacuum, the generation reading (GC) in broken form, (UP) at leading order,
+        (FE) and (SA) in the axis frame, the Higgs identification, T-186(a), and the
+        reconstruction and aperiodic-clock conditions of T-119/T-120 read as physics;
+        (HOL) is an interpretation~\status{I}.
+\end{itemize}
+Results labelled ``\status{T} as mathematics'' use only the axioms; their physical
+readings carry the premises above. The former inputs (Alt), (MP), (MM), (Q), (RT),
+(Col), (Pure), (AGG) and (ND) are discharged.
 
 \paragraph{Principle of Informational Distinguishability (PID, T-16~\status{O}).}
 Given A1 and A2, a further principle follows tautologically: two states are ontologically
@@ -86,10 +125,11 @@ The Bures metric on $\Dens(\mathbb{C}^7)$ defines a topology in the point-set se
 independent} mathematical witnesses plus \emph{one physical recasting}: (Char-I)~Petz
 extremality (minimal in the Petz poset), (Char-II)~Uhlmann purification universality,
 (Char-III)~SLD-Cram\'{e}r--Rao saturation, plus (Char-IV, T-189~\status{T})~a
-\emph{physical selector} $g^{ij} = C^{ij}_{\mathrm{SLD}}$ matching the inverse metric
-against the Petz-free SLD covariance (defined from
+\emph{physical selector} $g_{ij} = \tfrac14 C^{\mathrm{SLD}}_{ij}$ matching the metric
+against the Petz-free SLD bilinear form (defined from
 $\partial\rho = \tfrac12(L_i\rho + \rho L_i)$ without reference to any metric). Char-IV
-reduces to Char-III via $g_B^{-1} = C_{\mathrm{SLD}}$ (Braunstein--Caves 1994), so it is
+reduces to Char-III via $\mathcal F_{\mathrm{SLD}} = 4g_B$ (Braunstein--Caves 1994; the
+earlier identity $g_B^{-1} = C_{\mathrm{SLD}}$ is false and corrected), so it is
 not a fourth logically independent witness --- it is a statistical-mechanical recasting
 that strengthens the physical motivation of T-187 without adding mathematical redundancy.
 T-187 retains status \status{T} on the strength of Char-I (Petz extremality) alone.
@@ -104,7 +144,9 @@ via Lawvere's fixed-point theorem). No simpler structure provides all three.
 \subsection{Why seven dimensions: the Fano plane and octonions}
 \label{subsec:why-seven}
 
-The number 7 is not chosen --- it is \emph{derived}. Two complementary
+The number 7 is not chosen: $N \geq 7$ is \emph{derived} (Theorem~S~\status{T}), and
+strict necessity of $N = 7$ holds \status{C at (P1$_6$)}, P1 for a competing
+decomposition. Two complementary
 arguments fix it: a \emph{functional} count that determines the number, and an
 exceptional \emph{algebraic} structure that determines the shape of the
 seven-dimensional system (the octonions and the Fano plane are two faces of
@@ -229,8 +271,10 @@ $\Gam$ is a single ontological primitive. Its external aspect
 ($\mathrm{Map}_{\mathrm{int}}(\Gam)$) is experience. The phenomenal functor
 $F: \mathbf{Phys} \to \mathbf{Phen}$ is an \emph{isomorphism} between the physical
 and interiority categories --- preserving the structure of morphisms (as proclaimed by
-Spinoza's E2P7 and constructed explicitly in UHM via T-186~\status{T}; see
-\S\ref{subsec:cohesive-closure}). The functorial part is \status{T}; the
+Spinoza's E2P7). The functor $F$ is unique given the axioms (theorem of uniqueness of
+the phenomenal functor~\status{T}); its identification with the infinitesimal flat
+modality of cohesion (T-186(a), \S\ref{subsec:cohesive-closure}) is a
+hypothesis~\status{H}. The functorial part is \status{T}; the
 ontological identification "internal aspect = experience" is \status{O}
 (definitional; PH clause of the characterising properties). However, the self-modeling operator $\vp$ is
 \emph{not} an isomorphism: $\mathrm{Gap}(\Gam, \vp(\Gam)) > 0$ (T-55~\status{T}, Lawvere
@@ -239,12 +283,13 @@ system's self-knowledge of them is structurally incomplete.
 
 \medskip\noindent\textit{Epistemic status.} Two-aspect monism is the semantic bridge
 from the mathematical primitive $\Gam$ to the phenomenology of experience. The functorial
-structure (that $F$ exists and is an isomorphism) is a theorem (T-186~\status{T}). The
+structure (that $F$ exists and is unique given the axioms) is a theorem~\status{T}. The
 ontological claim that the internal aspect \emph{is} experience (rather than merely
-\emph{models} it) is the \emph{defining property} (PH) of a viable holon --- not an
-independent postulate. By T-190~\status{T} (Axiomatic Closure), all axioms A1--A5 are
-derivable from (AP)+(PH)+(QG)+(V)+MaxEnt. The theory has \textbf{zero} independent axioms
-beyond the characterising properties of viable holons.
+\emph{models} it) is the \emph{defining property} (PH) of a viable holon, read from
+axiom $\Omega^7$ as a whole --- not a sixth axiom. The Axiomatic Closure T-190 derives
+A1--A5 from (AP)+(PH)+(QG)+(V)+MaxEnt only \status{C} under the constraint of A5 and the
+hypothesis T-186(a); the earlier claim of \textbf{zero} independent axioms is withdrawn
+(Section~\ref{subsec:premises}).
 \end{definition}
 
 This position has a deep philosophical genealogy:
@@ -289,92 +334,99 @@ At full opacity rank ($r = 3$, generic spectrum), the configuration is
 \emph{topologically protected}: the flag variety $G_2/T^2$ has
 $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ (the rank-$2$ weight lattice), so nontrivial
 second-homotopy classes obstruct continuous deformation of a rank-$3$ Gap to the
-trivial (zero-Gap) state (T-69~\status{T}). A sufficiently rich inner life is therefore
-topologically stable --- it cannot be ``smoothly erased.''
+trivial (zero-Gap) state (T-69: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$~\status{T}; the
+energy barriers $\geq 6\mu^2$ protecting the vacuum are Hessian eigenvalues of the
+retracted sector parametrisation of T-64, so the protection is \status{C at (SV)}).
+A sufficiently rich inner life is in this sense topologically stable.
 
-\subsection{Cohesive closure: from interpretation to structural necessity (T-186)}
+\subsection{Cohesive closure: what survives (T-185--T-190)}
 \label{subsec:cohesive-closure}
 
 \paragraph{Attribution.} The cohesive-closure layer of UHM (theorems T-185 and beyond)
 rests on a specific mathematical lineage: Lawvere's axiomatic cohesion~\cite{lawvere1973}
 (1970s), refined and extended to the differential-cohesive $\infty$-topos framework by
 Schreiber~\cite{schreiber2013} (DCCT, 2013--2016), with further super-cohesive
-developments~\cite{sati-schreiber2018}. Every cohesion-dependent theorem that follows
---- T-185 (7 modalities), T-186 (phenomenal functor $F \cong \&|_{\mathcal D}$),
-T-188 (hard-problem localization), T-212 (rheonomy modality $\mathrm{Rh}$), T-221
-(categorical-monistic response) --- uses Schreiber's modal calculus as its
-structural scaffolding. The pre-T-182 core of UHM (T-1 through T-181) stands
-independently on octonionic, Fano, Lindbladian, and Bures foundations; cohesion
-enters from T-185 onwards as a \emph{strengthening} that turns previously
-interpretive identifications into structural theorems.
+developments~\cite{sati-schreiber2018}. The cohesion-dependent statements that follow
+--- T-185 (modalities), T-186 (phenomenal functor $F \cong \&|_{\mathcal D}$), T-188
+(hard-problem localization) --- use Schreiber's modal calculus as their structural
+scaffolding. The pre-T-182 core of UHM (T-1 through T-181) stands independently on
+octonionic, Fano, Lindbladian, and Bures foundations. Two former members of this layer
+no longer use cohesion: the U-projection is the $G_2$-twirl
+$X \mapsto \tfrac17\Tr(X)\,\mathbf 1$ (T-212$'$~\status{T}), and its identification with
+the rheonomy modality $\mathrm{Rh}$ is retracted~\status{$\times$} ($\mathrm{Rh}$ preserves
+global points and is not among the modalities of differential cohesion); T-221 is the
+relationalist route through the List/DeBrota no-go results (\S\ref{subsec:foundational-closure}).
 
-Theorem T-185~\status{T} establishes that the UHM $\infty$-topos is differentially cohesive
-with 7 canonical modalities. This structure has been used for dimension counting (matching
-modalities to dimensions). But cohesive modalities carry intrinsic mathematical content
-that, when operationalized, closes three foundational vulnerabilities simultaneously.
+Theorem T-185 is stratified. (i)~In any differentially cohesive $\infty$-topos the
+modalities $\Pi \dashv \flat \dashv \sharp$ and $\mathrm{Red} \dashv \Pi_{\inf} \dashv
+\flat_{\inf}$ exist~\status{T}. (ii)~That the site $(\mathbf{DensityMat}, J_{\mathrm{Bures}})$
+is differentially cohesive is an assumption~\status{C}: it has no $\infty$-cohesive site,
+and the petit $\infty$-topos of the space $\Dens(\mathbb{C}^7)$ is not cohesive at all.
+(ii$'$)~$\Dens(\mathbb{C}^7)$ with its rank strata is an object of the differentially
+cohesive $\mathrm{SynthDiff}\infty\mathrm{Grpd}$, the strata $\Dens_k$ are submanifolds of
+dimension $14k - k^2 - 1$ with shapes $\Pi\Dens_k \simeq \mathrm{Gr}_k(\mathbb{C}^7)$, and
+the seven modalities $\mathrm{Id}, \Pi, \flat, \sharp, \mathrm{Red}, \Pi_{\inf}, \flat_{\inf}$
+are pairwise distinct~\status{T}. Their assignment to the seven dimensions is an
+interpretation~\status{I}; the former list with $\mathrm{Rh}$ in place of $\mathrm{Red}$ is
+retracted~\status{$\times$}.
 
-In any differentially cohesive $\infty$-topos $\mathbf{H}$~\cite{schreiber2013}, for any
-coefficient object $\mathbf{A}$, a canonical \emph{differential cohomology hexagon} exists:
+For a \emph{stable} coefficient object $E$ of a cohesive $\infty$-topos
+$\mathbf{H}$~\cite{schreiber2013} there is a canonical \emph{differential cohomology
+hexagon} (DCCT v1, Prop.~4.1.17), whose structural maps include
 \begin{equation}
-  \flat(\mathbf{A}) \to \mathbf{A} \to \flat_{\mathrm{dR}}(\mathbf{A})
+  \flat(E) \to E \to \flat_{\mathrm{dR}}(E).
   \label{eq:hexagon}
 \end{equation}
-This hexagon \textbf{forces} the relationship between the internal aspect ($\flat$, flat
+For stable $E$ it forces the relationship between the internal aspect ($\flat$, flat
 modality), the external structure ($\Pi$, shape modality), and the curvature
-($\flat_{\mathrm{dR}}$, de Rham coefficient). It is not a choice --- it is a structural
-theorem.
+($\flat_{\mathrm{dR}}$, de Rham coefficient). An earlier version of this section stated the
+hexagon for \emph{any} coefficient object; that is retracted --- it does not apply to
+$\mathbf{B}G_2$, which is not stable.
 
-\begin{theorembox}[T-186: Cohesive Closure \status{T}]
+\begin{theorembox}[T-186: Cohesive Closure --- (a) \status{H}; (b), (c) \status{$\times$}]
 Let $\mathfrak{T} = \ShInf(\Dens(\mathbb{C}^7), J_{\mathrm{Bures}})$ be the UHM
-$\infty$-topos with differentially cohesive structure (T-185). Then:
+$\infty$-topos with differentially cohesive structure (assumed in the original statement;
+available in the corrected form T-185 (ii$'$)). As originally stated:
 
 \textbf{(a) Phenomenal necessity.} The phenomenal functor $F$ is naturally isomorphic
 to the infinitesimal flat modality:
-$F \cong \&\big|_{\Dens}$.
-The Postnikov filtration of $\&(\Gam)$ reproduces the interiority hierarchy L0--L4.
-The phenomenal structure is determined by the adjunction $\iota^* \dashv \mathrm{Inf}$,
-not by interpretive postulate. \textbf{Status upgrade:} $F$ from \status{I} to \status{T}.
+$F \cong \&\big|_{\Dens}$,
+and the Postnikov filtration of $\&(\Gam)$ reproduces the interiority hierarchy L0--L4.
+\emph{Status: hypothesis}~\status{H}. The modality $\&$ exists on the state space
+(T-185 (ii$'$)), but the natural isomorphism is asserted, not constructed; modal
+constructions commute with every unitary conjugation of $\Dens(\mathbb{C}^7)$ and cannot
+pick out the E-axis of the pointer frame, which $F$ uses.
 
-\textbf{(b) Exact time.} The Page--Wootters conditional states are sections of
-$\flat(\Gam_{\mathrm{total}})$. The evolution is governed by the counit
-$\varepsilon: \Pi \circ \flat \Rightarrow \mathrm{Id}$, which is an \emph{exact}
-natural transformation --- no $O(H_{\mathrm{int}})$ correction.
-\textbf{Status upgrade:} PW time from \status{T}+$O(\cdot)$ to \status{T} exact.
+\textbf{(b) Exact time.} ``The Page--Wootters conditional states are sections of
+$\flat(\Gam_{\mathrm{total}})$, governed exactly by the counit, with no
+$O(H_{\mathrm{int}})$ correction.'' \emph{Retracted}~\status{$\times$}: with a clock--system
+interaction the conditional dynamics is time-nonlocal (Smith--Ahmadi 2019), relative to a
+seven-periodic clock every conditional dynamics is periodic, and the counit carries no
+information about $H_{\mathrm{int}}$.
 
-\textbf{(c) Unconditional $\Lambda > 0$.} The free energy gradient
-$\Delta F = \|\mathrm{curv}(\Gam)\|^2 = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}$
-via the Chern--Weil homomorphism. By T-55 ($\mathrm{Gap} > 0$),
-$\Delta F > 0$ is unconditional.
-\textbf{Status upgrade:} $\Lambda > 0$ from \status{C} to \status{T}.
+\textbf{(c) Unconditional $\Lambda > 0$.} ``$\Delta F = \|\mathrm{curv}(\Gam)\|^2 =
+\omega_0^2\,\mathcal{G}_{\mathrm{total}} > 0$ via Chern--Weil and T-55.''
+\emph{Retracted}~\status{$\times$}: the hexagon holds for stable coefficients only, not for
+$\mathbf{B}G_2$, and every $G_2$-bundle over the contractible $\Dens(\mathbb{C}^7)$ is
+trivial, so all its characteristic classes vanish. $\Delta F > 0$ and $\Lambda > 0$ return
+to their conditional status~\status{C} (on the spectral details of $D_{\mathrm{int}}$).
 \end{theorembox}
 
-The full proof proceeds in three steps: (a) phenomenal necessity follows from
-the Postnikov filtration of $\&(\Gamma)$ via the cohesive adjunction
-$\iota^* \dashv \mathrm{Inf}$; (b) exact time emergence follows from the
-counit $\varepsilon: \Pi \circ \flat \Rightarrow \mathrm{Id}$, which is a
-natural transformation between functors and not an approximation; (c) the
-unconditional positivity of $\Delta F$ follows from the Chern--Weil
-identification $\|\mathrm{curv}(\Gamma)\|^2 = \omega_0^2 \cdot \mathcal{G}_\mathrm{total}$
-combined with T-55 ($\mathcal{G}_\mathrm{total} > 0$ via Lawvere incompleteness).
-Dependencies: T-185~\status{T}, T-55~\status{T}, T-73~\status{T},
-Schreiber~\cite{schreiber2013}.
-
-\paragraph{Worked example.}
+\paragraph{Worked example (curvature, not an unconditional $\Delta F$).}
 Consider a holon at $P = 0.35$ with $\omega_0 = 40$\,Hz and three
 representative coherences on Fano lines:
 $\gamma_{EO} = 0.08\,e^{i\pi/3}$,
 $\gamma_{AE} = 0.06\,e^{i\pi/4}$,
-$\gamma_{OU} = 0.05\,e^{i\pi/5}$.
-(1)~Lawvere incompleteness (T-55) forces
-$\mathrm{Gap}(i,j) = |\sin\theta_{ij}| > 0$ for at least one pair.
-(2)~The total Gap
+$\gamma_{OU} = 0.05\,e^{i\pi/5}$,
+with $\mathrm{Gap}(i,j) = |\sin\theta_{ij}|$.
+The total Gap is
 $\mathcal{G}_{\mathrm{total}} = \sum_{i<j}|\gamma_{ij}|^2\,\mathrm{Gap}(i,j)^2
-\geq 0.0048 + 0.0018 + 0.0009 = 0.0075$.
-(3)~By Chern--Weil (T-73):
-$\Delta F = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
-= 1600 \cdot 0.0075 = 12.0 > 0$.
-The free energy gradient is strictly positive --- the system has thermodynamic
-fuel for regeneration.
+\geq 0.0048 + 0.0018 + 0.0009 = 0.0075$,
+and the curvature of the Serre bundle (T-73~\status{T}:
+$\|\mathrm{Curv}\|_{ij}^2 = \omega_0^2|\gamma_{ij}|^2\,\mathrm{Gap}(i,j)^2$) has squared norm
+$\omega_0^2\,\mathcal{G}_{\mathrm{total}} \geq 1600 \cdot 0.0075 = 12.0$.
+Reading this number as a free-energy gradient $\Delta F > 0$ was part~(c) of T-186 and is
+retracted; the free-energy fuel for regeneration is conditional~\status{C}.
 
 \begin{theorembox}[T-187: Canonicity of the Bures Enrichment \status{T}]
 Within the Petz family of CPTP-monotone Riemannian metrics on $\Dens(\mathbb{C}^7)$, the
@@ -395,47 +447,49 @@ All three select the same $d_B$; any other Petz metric gives the same classical
 $\infty$-topos (compact bi-Lipschitz equivalence at the topological level) but a different
 enrichment. The Grothendieck topology $J_B$ is generated by the $\varepsilon$-$\delta$
 coverage (Johnstone, \emph{Elephant} C2.1.10); transitivity is automatic from the generation.
-\textbf{Status upgrade:} A2 from \status{P} to \status{T}.
+This supports A2; the axiom itself is listed among the postulates
+(Section~\ref{subsec:premises}).
 \end{theorembox}
 
-\paragraph{All five axioms are now theorems (T-190 Axiomatic Closure).}
-With T-186, T-187, T-189, and T-190, the axiomatic foundation of UHM is
-\emph{self-grounding}: every axiom A1--A5 is derivable from the five
-characterising properties $(\text{AP})+(\text{PH})+(\text{QG})+(\text{V})+\text{MaxEnt}$
-of a viable holon, leaving \textbf{zero} independent postulates. The derivations are:
+\paragraph{Axiomatic closure is conditional (T-190).}
+With T-187, T-189 and T-87, the axioms A1--A5 are derivable from the characterising
+properties $(\text{AP})+(\text{PH})+(\text{QG})+(\text{V})+\text{MaxEnt}$ of a viable holon
+only under two conditions: the Page--Wootters constraint of A5 is assumed, and the route
+to A1 through T-186(a) is a hypothesis. The derivations are:
 \begin{itemize}[leftmargin=2em,nosep]
-  \item \textbf{A1 \status{T}:} $\infty$-topos $\ShInf(\mathcal{C})$ from T-76 (Grothendieck site
+  \item \textbf{A1 \status{H}:} $\infty$-topos $\ShInf(\mathcal{C})$ from T-76 (Grothendieck site
         level \status{T} via Bures topology, Uhlmann 1976 CPTP contractivity;
         Exp-extension conditional on Giraud axiom verification per Claim 10.2)
-        + T-186 (cohesive closure). Most general space with internal
-        logic compatible with quantum-mechanical CPTP dynamics.
-  \item \textbf{A2 \status{T}:} Uniquely canonical Petz-enrichment via T-187 (triple
+        + T-186(a), a hypothesis.
+  \item \textbf{A2:} Uniquely canonical Petz-enrichment via T-187~\status{T} (triple
         characterisation: Char-I Petz extremality, Char-II Uhlmann universality, Char-III
-        SLD-Fisher Cram\'er--Rao saturation) + T-189 (Char-IV, physical recasting via
-        MaxEnt: $g_B^{-1} = C_{\mathrm{SLD}}$).
-  \item \textbf{A3 \status{T}:} the \emph{number} $N = 7$ from Theorem~S
-        (functional minimality); the \emph{structure} from the Bridge T-15 chain
+        SLD-Fisher Cram\'er--Rao saturation) + T-189~\status{T} (Char-IV, physical recasting via
+        MaxEnt: $g_{ij} = \tfrac14 C^{\mathrm{SLD}}_{ij}$, equivalently $g_B^{-1} = 4\,C_{\mathrm{est}}$).
+  \item \textbf{A3:} $N \geq 7$ from Theorem~S~\status{T}; the \emph{structure} from the
+        Bridge T-15 chain
         $(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{\text{T-15}} \mathrm{BIBD}(7,3,1) \to \mathrm{PG}(2,2) \to \mathbb O \to G_2$
-        (which consumes $N = 7$ from Theorem~S); Hurwitz--Adams closes the
-        consistency loop: $\dim\mathrm{Im}(\mathbb O) = 7$.
-  \item \textbf{A4 \status{T}:} $\omega_0 = \lambda_{\min}(H_{\mathrm{eff}}) > 0$ forced by
-        viability (V): $\omega_0 = 0 \Rightarrow$ no dynamics $\Rightarrow$ (AP)
-        violated; a derived spectral property of $H_{\mathrm{eff}}$.
-  \item \textbf{A5 \status{T}:} Page--Wootters temporal constraint $[\hat C, \Gam_{\mathrm{total}}] = 0$
-        from T-87 applied to A1--A4 via the spectral-triple construction.
+        with the canonical orientation of the Fano lines (T15-canon~\status{T}; the chain
+        consumes $N = 7$ from Theorem~S); strict necessity of $N = 7$ is
+        \status{C at (P1$_6$)}.
+  \item \textbf{A4:} $\omega_0 > 0$ forced by viability (V): $\omega_0 = 0 \Rightarrow$ no
+        dynamics $\Rightarrow$ (AP) violated; its value is a free parameter.
+  \item \textbf{A5:} the clock register from T-87, steps 1--3~\status{T}; the constraint
+        $\hat C\,\Gam = 0$ is not derived (T-87, step 4, is \status{C} under the support
+        condition of Property~2).
 \end{itemize}
 
-\begin{theorembox}[T-190: Axiomatic Closure of UHM \status{T}]
+\begin{theorembox}[T-190: Axiomatic Closure of UHM \status{C}]
 \label{thm:t190-axiomatic-closure}
-All five axioms A1--A5 of $\Omega^7$ are theorems derivable from
-$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V})+\text{MaxEnt}$. Consequently UHM has
-\textbf{zero} independent axioms; every ``axiom'' is structurally forced by the
-characterising properties of a viable holon. The full derivation chain per axiom:
-A1 via T-76+T-186; A2 via T-187+T-189 (triple Petz/Uhlmann/SLD-Fisher + MaxEnt
+A1--A5 of $\Omega^7$ are derivable from
+$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V})+\text{MaxEnt}$ \emph{under two conditions}:
+the Page--Wootters constraint is assumed (T-87, step 4) and the route to A1 through
+T-186(a) is a hypothesis. The derivation chain per axiom:
+A1 via T-76+T-186(a); A2 via T-187+T-189 (triple Petz/Uhlmann/SLD-Fisher + MaxEnt
 physical recasting); A3 via Theorem~S and Bridge T-15; A4 via (V) necessity;
-A5 via T-87. Proof details appear in Section~\ref{subsec:foundational-closure}
-(see also the companion localisation theorem T-188 reducing the hard problem
-to ``why CPTP?'', the $\vp$-tower convergence T-191 resolving the
-self-modelling circularity, and the target-category verification T-192 for
-$\mathbf{Exp}^{(2)}$).
+the clock register of A5 via T-87, steps 1--3. The earlier statement --- all five axioms
+are theorems and UHM has \textbf{zero} independent axioms --- is
+retracted~\status{$\times$}: the constraint remains an independent assumption. Proof details
+appear in Section~\ref{subsec:foundational-closure} (see also the companion localisation
+theorem T-188~\status{C}, the $\vp$-tower convergence T-191 under backbone dominance, and the
+target-category verification T-192 for $\mathbf{Exp}^{(2)}$).
 \end{theorembox}
