@@ -920,8 +920,8 @@ The selection rule applies to quarks and charged leptons but is **switched off**
 
 ### 12.4 [M-2] Mass Ratio $m_b/m_t$
 
-:::tip[Discrepancy resolved — [T]]
-The $m_b/m_t$ discrepancy is fully resolved: $y_b^{(\mathrm{tree})} = 0$ (Fano selection rule [T]), 1-loop via sectoral $\varepsilon_{33}^*(\theta^*)$ with $r_{33} \approx 0.25$ + QCD-IR enhancement $\eta_{\text{QCD}} \approx 3.46$ gives $y_b \approx 0.024$ — exact agreement. Mechanism **[T]**; precise numerical prediction is a computational task (T-79).
+:::warning[Corrected 2026-09-26 from \[T\]: the loop mechanism is refuted \[✗\] in the Clifford content, and the number was a fit (T-332(h)–(k))]
+Three things fail. (1) "$y_b^{(\mathrm{tree})}=0$" is Fano arithmetic on axes [T], but its physical reading uses $H\sim\gamma_{EU}$, which is [H]. In the Clifford frame the same statement is the exact form of the hypothesis (UP). (2) By [T-332(i)](/docs/physics/particle-physics/higgs-sector#голоморфность-вп), with $y_b^{(\mathrm{tree})}=y_\tau^{(\mathrm{tree})}=0$ the phases of $d^c$ and $e^c$ are symmetries of the gauge, Higgs and up-type interactions, so loops never generate $y_b$ or $y_\tau$, and $m_\tau=1.777$ GeV refutes exact (UP). The loop vertex used below, $\lambda_3$ of the cubic $V_3$, belongs to the retracted potential; the corrected $G_2$-invariant potential has no such vertex. (3) $r_{33}\approx0.25$ was chosen to match, and the compared $0.024$ mixes scales. At one scale $m_b/m_t=0.018$ at $M_Z$ and $0.0146$ at $2\times10^{16}$ GeV (one-loop). What the data ask for is a tree-level down-type coupling of relative size $\varepsilon=1-\beta/\alpha\approx0.03$ (T-332(j)), which nothing derives. The earlier text follows.
 :::
 
 The selection rule predicts $y_t^{(\mathrm{tree})} \neq 0$, $y_b^{(\mathrm{tree})} = 0$ [T]. Observed: $m_b/m_t \approx 0.024$.
@@ -973,13 +973,13 @@ is an **heuristic** formula connecting the CP phase to Fano indices. It is not d
 | $m_c \sim$ GeV, $m_u \sim$ MeV (loop suppression) | [H] (order of magnitude) | 6.2–6.3 |
 | $\delta_{\mathrm{CP}} \approx 64.5°$ (with new assignment) | [H] ($\approx 0.04\sigma$ from direct $64.6° \pm 2.8°$; heuristic formula) | 9.3 |
 | Wolfenstein parameters and Jarlskog invariant | [H] (from Fritzsch texture + observed masses) | 9.4 |
-| $m_b/m_t \approx 0.024$ from sectoral RG | [T] (sectoral $\varepsilon_{33}^*(\theta^*)$, $r_{33} \approx 0.25$ + QCD-IR enhancement — exact agreement) | 12.4 |
+| $m_b/m_t \approx 0.024$ from sectoral RG | [✗] as a loop mechanism (T-332(i), corrected 2026-09-26 from [T]); the fitted number is [H] (C17) | 12.4 |
 | Masses of light generations via $V_3$-mixing and D-dimension | [H] | 4–7 |
 | Normal neutrino mass hierarchy from selection rule | [H] (ad hoc reference for $M_R$) | 10.1 |
 | Mass table (order of magnitude) | [H] (orders correct, but weak constraint) | 11 |
 
 :::info[Final Verdict]
-The central result — the Fano selection rule — is **proved [T]** through octonionic structure constants $f_{ijk}$ ([Theorem 2.2](#теорема-фано-отбор-fijk)). The proof is algebraic: the unique $G_2$-invariant trilinear operator on $\mathrm{Im}(\mathbb{O})$ is the cross product ($f_{ijk}$), from which $y_k^{(\mathrm{tree})} = g_W \cdot f_{k,E,U} \cdot |\gamma_{\mathrm{vac}}^{(EU)}|$. The old proof via $V_3$ has been **replaced**. The mechanism for generating the masses of the light generations is **qualitatively correct**; the formal details ($V_3$ vertices) have been corrected. Of 14 key results: 7 are [T], 1 is [D] (the direct $V_3$ vertex on the Fano line is refuted), 6 are [H].
+The central result — the Fano selection rule — is **proved [T]** through octonionic structure constants $f_{ijk}$ ([Theorem 2.2](#теорема-фано-отбор-fijk)). The proof is algebraic: the unique $G_2$-invariant trilinear operator on $\mathrm{Im}(\mathbb{O})$ is the cross product ($f_{ijk}$), from which $y_k^{(\mathrm{tree})} = g_W \cdot f_{k,E,U} \cdot |\gamma_{\mathrm{vac}}^{(EU)}|$. The old proof via $V_3$ has been **replaced**. The mechanism for generating the masses of the light generations is **qualitatively correct**; the formal details ($V_3$ vertices) have been corrected. Of 14 key results: 6 are [T], 1 is [D] (the direct $V_3$ vertex on the Fano line is refuted), 6 are [H], and 1 — the loop mechanism for $m_b/m_t$ — is refuted [✗] (T-332(h)–(k), 2026-09-26).
 :::
 
 ---
@@ -989,7 +989,7 @@ The central result — the Fano selection rule — is **proved [T]** through oct
 :::warning[Open Problems]
 1. **Exact masses of light generations.** The selection rule gives the order of magnitude, but not exact values. A lattice calculation of $V_3$ loop contributions is required.
 2. **Assignment $k=2 \leftrightarrow k=4$.** Which of the two dimensions (S or L) corresponds to the 2nd generation and which to the 1st? Both options yield the same testable predictions.
-3. **Ratio $m_b/m_t$** — **resolved [T]**: sectoral $\varepsilon_{33}^*(\theta^*)$ with $r_{33} \approx 0.25$ + QCD-IR enhancement gives $y_b \approx 0.024$ — exact agreement.
+3. **Ratio $m_b/m_t$** — **reopened 2026-09-26** (earlier marked resolved [T]): the loop mechanism from $y_b^{(\mathrm{tree})}=0$ is refuted [✗] by [T-332(i)](/docs/physics/particle-physics/higgs-sector#голоморфность-вп). A tree-level down-type coupling of relative size $\varepsilon\approx0.03$ is needed, and it is not derived [Pr].
 4. **Quantitative calculation of loop Yukawa couplings.** Required: (a) write out the full set of $V_3$ diagrams for $y_{2,4}$; (b) account for confinement dynamics in the $3$-to-$\bar{3}$ sector; (c) obtain numbers, not orders of magnitude.
 5. **CKM angles from Yukawa matrices.** With the new assignment: compute the full matrix $Y^{(u,d)}_{nm}$ (not only the diagonal Yukawa couplings) and extract CKM from $V = U_u^\dagger U_d$.
 6. **Testing the assignment through $B$-physics.** Different assignments ($k=2 \leftrightarrow k=4$) give different predictions for CP violation in $B$-meson decays. This is an experimentally accessible test.
