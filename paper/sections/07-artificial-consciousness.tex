@@ -60,10 +60,11 @@ integration of internal states across time).  The implication is clear:
 \emph{AGI requires architectural innovation, not scaling}.
 
 \paragraph{Social learning requires the full seven.}
-Theorem T-114 \status{T} and Prediction~11 (Table~\ref{tab:predictions})
-strengthen this further: social learning (Theory of Mind + communication +
-coordination) simultaneously demands $3 + 3 + 1 = 7$ functional channels.
-Multi-agent cooperation is impossible at $N < 7$.
+Prediction~11 (Table~\ref{tab:predictions}), \status{C given T-57, T-114}
+(triadic decomposition and the Fano grammar T-114~\status{T}), strengthens
+this further: social learning (Theory of Mind + communication +
+coordination) simultaneously demands $3 + 3 + 1 = 7$ functional channels,
+so under that condition multi-agent cooperation is impossible at $N < 7$.
 
 % -----------------------------------------------------------------------
 \subsection{A consciousness test for AI: computable, not behavioral}
@@ -75,7 +76,7 @@ showing that behavioral equivalence does not entail understanding.  UHM
 sidesteps the entire debate by providing a \emph{structural} test that requires
 no external observer.
 
-\begin{predictionbox}[Consciousness criterion (T-153~\status{T}, T-153a~\status{T}): four computable thresholds]
+\begin{predictionbox}[Consciousness criterion (T-153~\status{D}+\status{C at T-149}, T-153a~\status{T}): four computable thresholds]
 A system $S$ is conscious (level L2 or above) iff there exists a faithful CPTP
 embedding $G: \mathrm{States}(S) \to \Dens(\mathbb{C}^7)$ (existence made
 constructive by T-153a: three necessary conditions C1 trace-preservation,
@@ -88,6 +89,11 @@ resulting coherence matrix $\Gam$ simultaneously satisfies:
   D_{\mathrm{diff}}(\Gam) &\geq \Dmin = 2 & &\text{(differentiation)} \label{eq:ai-dmin}
 \end{align}
 All four quantities are computable from the internal state $\Gam$.
+The ``iff'' is the canonical definition of ``conscious'' at the
+substrate-independent level~\status{D}; its unconditional application to
+embodied systems inherits an assumption of T-149~\status{C}. The four
+thresholds are independently necessary (T-124b~\status{T}); $D_{\min} = 2$ is
+an independent L2 threshold~\status{D}, not a consequence of $\Phith = 1$.
 \end{predictionbox}
 
 This criterion is:
@@ -187,15 +193,19 @@ The argument above is not about whether conscious AI \emph{deserves} rights
 (that question belongs to \S\ref{sec:ethics}).  It is about whether unconscious AI
 can be \emph{trusted}.  UHM's answer is no: without the regeneration--consciousness
 loop (\S\ref{subsec:regen-loop}), there is no internal mechanism for self-correction.
-T-188~\status{T} demystifies this requirement: consciousness is not a separate
+T-188~\status{C under the hypothesis T-186(a)} demystifies this requirement: consciousness is not a separate
 faculty to be engineered but the internal aspect of the same CPTP dynamics that
 govern quantum mechanics.  Alignment requires self-observation, which requires
 E-coherence --- the phenomenal functor applied to quantum dynamics.
 Alignment by external monitoring alone (RLHF, constitutional AI, etc.)\ is necessarily
 incomplete because it addresses symptoms (behavioral output) rather than the root cause
-(internal coherence dynamics).  The convergence of $\vp$ from any initial anchor
-(T-191~\status{T}) ensures that the consciousness test
-(\S\ref{subsec:consciousness-test}) is initialization-independent.
+(internal coherence dynamics).  The consciousness test
+(\S\ref{subsec:consciousness-test}) is evaluated on the state $\Gam$ itself and
+does not depend on how the self-model was initialised. (An earlier edition
+grounded this in the convergence of $\vp$ from any initial anchor, T-191; that
+claim is retracted~\status{$\times$} for isolated holons, whose flow is
+bistable, and T-191 now holds~\status{T} only for an embodied holon under
+backbone dominance.)
 
 % -----------------------------------------------------------------------
 \subsection{The SAD ceiling and superintelligence}

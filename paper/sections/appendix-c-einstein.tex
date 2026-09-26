@@ -7,10 +7,26 @@
 
 This appendix presents the derivation chain from the coherence matrix $\Gam$ to the
 Einstein field equations. The derivation proceeds in five steps: (1)~commutativity of the
-macroscopic algebra; (2)~emergent temporal manifold; (3)~emergent spatial manifold via
-Connes reconstruction; (4)~product spectral triple $M^4 = \mathbb{R} \times \Sigma^3$;
-(5)~Einstein--Hilbert action via Lovelock's theorem. No additional axioms are introduced
-beyond A1--A5.
+macroscopic algebra; (2)~emergent temporal manifold; (3)~emergent spatial manifold,
+computed as a Gelfand spectrum; (4)~product spectral triple $M^4 = \mathbb{R} \times S^3$;
+(5)~Einstein--Hilbert action from the spectral action, with Lovelock's theorem as a
+supplementary argument. The mathematics uses no axioms beyond A1--A5; the reading of
+$M^4$ as physical spacetime is an interpretation \status{I}, and the Standard-Model part
+of the spectral action is imported from the Connes--Chamseddine finite triple rather than
+derived (Step~5).
+
+\paragraph{Retractions in this appendix (2026-09-25).} An earlier version of this appendix
+rested on three constructions that are retracted \status{$\times$}: the axis-labelled
+sector decomposition $7 = 1_O \oplus \mathbf{3}_{A,S,D} \oplus \bar{\mathbf{3}}_{L,E,U}$
+(row 48a: $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ acts irreducibly on the six non-$O$ axes, and
+no three of them span an invariant subspace; the complexified
+$\mathbb{C}^7 = \mathbb{C} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ is classical
+representation theory, G\"unaydin--G\"ursey 1973, and gives colour, not space); a real
+structure of KO-dimension~6 on $H_{\mathrm{int}} = \mathbb{C}^7$ (none exists: with
+$J^2 = 1$, $J\chi = -\chi J$ forces the $\chi = \pm 1$ eigenspaces to have equal
+dimension, impossible in odd dimension); and the summed clock of $M$ holons with
+$7^M$ readings (it has $6M+1$ readings and the fixed period $2\pi/\omega_0$). The steps
+below are restated without them.
 
 \subsection{Step 1: Commutativity of the macroscopic algebra (T-117)}
 
@@ -18,7 +34,7 @@ Consider a composite system of $M$ holons with total Hilbert space
 $\Hil_M = \bigotimes_{m=1}^M \Hil_{\mathrm{int}}^{(m)}$, $\dim(\Hil_M) = 7^M$, and
 observable algebra $A_M = \bigotimes_m A_{\mathrm{int}}^{(m)}$ where
 $A_{\mathrm{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$
-(T-53~\status{T}).
+(T-53).
 
 Define macroscopic averages over a region $\Lambda_\ell(x)$ containing
 $|\Lambda_\ell(x)|$ holons:
@@ -54,184 +70,194 @@ exponential decay of correlations follows from the spectral gap. $\square$
 \paragraph{Significance.}
 Commutativity of the macroscopic algebra is the prerequisite for applying Gelfand's theorem:
 a commutative C$^*$-algebra is isomorphic to the algebra of continuous functions on a
-compact Hausdorff space. This is the gateway from quantum algebra to classical geometry.
+compact Hausdorff space. The proof holds for any local observables (an earlier restriction
+to a ``$\mathbf{3}+1$-effective sector'' came from the retracted row 48a and is not used).
+The restated T-119 and T-120 below do not need T-117: they estimate the commutators of the
+macroscopic algebras directly.
 
 \subsection{Step 2: Emergent temporal manifold (T-118)}
 
 \begin{theorembox}[T-118: Temporal manifold \status{T}]
-The temporal C$^*$-algebra converges to $C_0(\mathbb{R})$:
+The temporal C$^*$-algebra is $C_0(\mathbb{R})$, obtained as the scaling limit of the
+reading algebras $\mathbb{C}^{N+1}$ of the depth register:
 \begin{equation}
-  \mathbb{C}[\mathbb{Z}_{7^M}]
-  \xrightarrow{M \to \infty}
-  C(S^1)
-  \xrightarrow{\text{decompactification}}
+  \mathbb{C}^{N+1}
+  \xrightarrow{\;\Delta t \to 0,\ \text{window} \to \infty\;}
   C_0(\mathbb{R})
   \label{eq:temporal-algebra}
 \end{equation}
+(with the origin at the first reading the limit is $C_0([0,\infty))$).
 \end{theorembox}
 
-\paragraph{Proof.}
-For $M$ holons, the effective clock period is $N_{\mathrm{eff}} = 7^M$ (from the emergent
-time theorem). The clock algebra is the group algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$.
-By Pontryagin duality:
-\begin{equation}
-  \mathbb{C}[\mathbb{Z}_{7^M}] \cong C(\widehat{\mathbb{Z}_{7^M}})
-  = C(\mathbb{Z}_{7^M})
-\end{equation}
-where $\widehat{\mathbb{Z}_{7^M}} \cong \mathbb{Z}_{7^M}$ is the Pontryagin dual.
+\paragraph{Proof (sketch).}
+The depth register records the stratal depth $n \in \{0,\dots,N\}$ as an ordered chain of
+readings, stored positionally in the O-registers of $\lceil\log_7(N+1)\rceil$ holons under
+a Feynman--Kitaev constraint. One state-independent constraint gives the conditional states
+exactly $e^{n\Delta t\,\Lind}\rho_0$ at every reading (T-53b~\status{T}). As the chronon
+$\Delta t \to 0$ and the window grows without bound on both sides of the origin, the
+reading sets $\Delta t\cdot\{0,\dots,N\}$ converge to $\mathbb{R}$ in the pointed Hausdorff
+sense, and sampling embeds $C_0(\mathbb{R})$ isometrically into
+$\prod_N \mathbb{C}^{N+1}/\bigoplus_N \mathbb{C}^{N+1}$. $\square$
 
-As $M \to \infty$, $\mathbb{Z}_{7^M} \hookrightarrow S^1$ (embedding as $7^M$-th roots of
-unity), and $C(\mathbb{Z}_{7^M}) \to C(S^1)$ (by density of roots of unity on the circle).
-The decompactification $S^1 \to \mathbb{R}$ (unwrapping the circle) yields
-$C(S^1) \to C_0(\mathbb{R})$.
-
-The physical content: continuous time $\tau \in \mathbb{R}$ emerges from the discrete
-temporal modality $\triangleright: S_i \mapsto S_{(i+1)\bmod 7}$ in the limit of many
-coupled holons. $\square$
+\noindent\emph{Retracted derivation.} An earlier proof took the clock algebra of $M$
+holons to be $\mathbb{C}[\mathbb{Z}_{7^M}]$ with effective period $7^M$ and passed to
+$C(S^1)$ and then $C_0(\mathbb{R})$ by decompactification. It is retracted
+\status{$\times$}: the summed clock of $M$ holons has $6M+1$ readings and the fixed period
+$2\pi/\omega_0$; the $7^M$ ordered readings belong to the same registers read
+positionally, which is the depth register above. Composite clocks with incommensurate
+frequencies give $C(\mathbb{T}^M)$, not $C_0(\mathbb{R})$.
 
 \subsection{Step 3: Emergent spatial manifold (T-119)}
 
-\begin{theorembox}[T-119: Spatial manifold \status{T}]
-The spatial C$^*$-algebra is isomorphic to continuous functions on a compact 3-manifold:
+\begin{theorembox}[T-119: Spatial manifold \status{T} as mathematics]
+Let $H_1, H_2, H_3$ be three commuting rotation charges of the holon --- a maximal torus of
+$\mathrm{U}(3) = \mathrm{Stab}_{\mathrm{SO}(7)}(e_O) \cap C(L_{e_O})$ (two colour Cartan
+generators and $iL_{e_O}$; $\operatorname{rank}\mathrm{SO}(7) = 3$). Then:
+(a)~the joint spectra of their averages over $M$ holons fill the weight octahedron
+$\cong B^3$; (b)~the joint spectra of the fluctuations $\sqrt{M}(\bar H - \mu)$ fill
+$\mathbb{R}^3$, and the spatial algebra --- the minimal unitization of $C_0(\mathbb{R}^3)$
+--- is
 \begin{equation}
-  A_{\mathrm{space}} \cong C(\Sigma^3)
+  A_{\mathrm{space}} \cong C(S^3);
   \label{eq:spatial-algebra}
 \end{equation}
-where $\Sigma^3$ is a smooth compact orientable spin 3-manifold, reconstructed via the
-Connes reconstruction theorem~\cite{connes2008reconstruction}.
+(c)~$\Sigma^3 = S^3$ is closed and spin with a unique smooth structure, and its Dirac triple
+satisfies all seven of Connes' conditions~\cite{connes2008reconstruction}, first order and
+Poincar\'e duality included; (d)~colour-singlet charges give only two dimensions, so this
+$\Sigma^3$ has colour-charged coordinates. The reading of $\Sigma^3$ as physical space is
+\status{I}.
 \end{theorembox}
 
-\paragraph{Proof.}
-The algebra $A_{\mathrm{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$
-has a sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ (T-53~\status{T}). The
-$\mathbf{3} + \bar{\mathbf{3}}$ sector transforms under the fundamental representation
-of $\mathrm{SU}(3) \subset G_2 = \mathrm{Aut}(\Oct)$.
+\paragraph{Remarks.}
+The number of emergent coordinates is the \emph{rank} of the sector algebra --- the number of
+independent commuting charges --- not the dimension of a representation space:
+$\operatorname{rank}\mathfrak{u}(3) = 3$, whereas $\dim\mathfrak{u}(3) = 9$,
+$\dim\mathfrak{su}(3) = 8$, $\dim G_2 = 14$. Point~(d) is a Coleman--Mandula obstacle for
+the physical reading: the count $3$ is a count of colour and gives no rotation group
+commuting with colour. The colour-commuting route to $3+1$ is Theorem~48c: the colour-singlet
+part of the spin factor $\mathfrak h_2(\Oct) \cong \mathbb{R}^{1,9}$ is
+$\mathfrak h_2(\mathbb{C}_O)$, of dimension~4 and signature $(1,3)$, on which
+$SL(2,\mathbb{C}_O)$ acts as $SO^+(1,3)$ commuting with colour --- \status{T} as
+mathematics, \status{C at (L)} as physical spacetime, with (L)~$\Leftrightarrow$~(P) by
+Theorem~48e(f)--(i).
 
-By T-117, the macroscopic algebra in the $\mathbf{3}$-sector is commutative. By Gelfand's
-theorem, this commutative C$^*$-algebra is $C(X)$ for some compact Hausdorff space $X$.
-It remains to determine $\dim(X) = 3$ and the smooth structure.
-
-\emph{Spectral dimension.} The sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ under $\mathrm{Stab}_{G_2}(e_O) \cong \mathrm{SU}(3)$ assigns the $\{A,S,D\}$-sector to the fundamental representation $\mathbf{3}$ of $\mathrm{SU}(3)$ with $\dim(\mathbf{3}) = 3$. The effective spatial Dirac operator $D_{\mathrm{eff}} = \Pi_{\mathbf{3}} D_{\mathrm{int}} \Pi_{\mathbf{3}}$ acts on $\bigotimes_m \mathbb{C}^3$. By the Weyl law for eigenvalue counting, $N(\lambda) \sim C \cdot M \cdot \lambda^{\dim(\mathbf{3})}$, giving:
-\begin{equation}
-  d_{\mathrm{spectral}} = \dim(\mathbf{3}) = 3
-\end{equation}
-Note: $d_{\mathrm{spectral}} = 3 \neq \dim(\mathrm{SU}(3)) = 8$, because the Weyl law counts eigenvalues on the \emph{representation space} (carrier space $\mathbb{C}^3$), not on the group manifold (Connes 1996, \S VI.1).
-
-\emph{Smooth structure.} The Connes reconstruction theorem~\cite{connes2008reconstruction} states that a
-commutative spectral triple $(A, H, D)$ satisfying seven axioms (dimension, regularity,
-finiteness, first order, orientation, Poincar\'e duality, and reality) uniquely determines
-a smooth compact orientable spin manifold $\Sigma$ with $A \cong C^\infty(\Sigma)$ and $D$
-the Dirac operator~\cite{connes2008reconstruction}. The macroscopic algebra satisfies all seven axioms (verified by
-construction from the $\mathbf{3}$-sector). $\square$
-
-The verification of all seven Connes axioms for the macroscopic algebra constructed from the $\{A,S,D\}$-sector is technically demanding. A complete proof requires checking: (1)~regularity ($A$ is a pre-$C^*$-algebra closed under holomorphic functional calculus --- holds since $A_\mathrm{macro}$ is a direct limit of matrix algebras); (2)~finiteness (the Hilbert space $H$ is a finitely generated projective $A$-module --- holds from compactness of the underlying spectral data); (3)~first-order condition ($[[D,a],b^0] = 0$ for all $a,b \in A$ --- verified by direct computation in the $\mathbf{3}$-sector generators); (4)~orientability (existence of a Hochschild cycle $c$ with $\pi_D(c) = \gamma$ --- constructed from the $\mathrm{SU}(3)$-invariant volume form); (5)~Poincar\'{e} duality (the intersection form on $K$-theory is non-degenerate --- follows from the $\mathrm{SU}(3)$ representation ring structure); (6)~reality ($J$ antilinear isometry with $JD = DJ$, $J^2 = \pm 1$ according to KO-dimension --- inherited from the finite triple T-53 with KO-dim 6); (7)~the metric dimension equals $\dim \Sigma$ (from the Weyl asymptotics of $D$). Each axiom is verified constructively from the $\{A,S,D\}$-sector structure established in Step~2. Each axiom is verified constructively; the complete line-by-line verification is available in the extended documentation (proofs/physics/emergent-manifold, Steps 5(i)-5(v)).
+\noindent\emph{Retracted derivation.} The earlier proof took $\Sigma^3$ from the
+$\{A,S,D\}$-sector of the axis-labelled decomposition $7 = 1_O \oplus \mathbf{3} \oplus
+\bar{\mathbf{3}}$, obtained $d_{\mathrm{spectral}} = 3$ from a Weyl law
+$N(\lambda) \sim C M \lambda^{\dim\mathbf{3}}$ on $\bigotimes_m \mathbb{C}^3$, and asserted
+that the macroscopic algebra of that sector satisfies all seven Connes axioms, reality
+inherited from a KO-dimension-6 finite triple. All three steps are retracted
+\status{$\times$}: the axis sector is not $SU(3)$-invariant (row 48a); $\bigotimes_{m=1}^M
+\mathbb{C}^3$ is finite-dimensional, so its eigenvalue count saturates at $3^M$ and has no
+power law; the first-order condition is a constraint on the Dirac operator, not a
+consequence, and the Poincar\'e-duality check assumed the manifold it was meant to
+conclude; and no KO-dimension-6 real structure exists on $\mathbb{C}^7$. The restated
+T-119 computes the spectrum instead of reconstructing it.
 
 \subsection{Step 4: Product spectral triple $M^4$ (T-120, T-120b)}
 
-\begin{theorembox}[T-120: Product manifold \status{T}]
-The full macroscopic spectral triple is a product:
+\begin{theorembox}[T-120: Product manifold \status{T} as mathematics]
+For every Riemannian metric on $M^4 = \mathbb{R}\times S^3$ the product of the temporal and
+spatial triples,
 \begin{equation}
   (A, H, D)_{\mathrm{macro}} = (C_0(\mathbb{R}), L^2(\mathbb{R}), i\partial_\tau)
   \times
-  (C(\Sigma^3), L^2(\Sigma^3, S), D_{\Sigma^3})
+  (C(S^3), L^2(S^3, S), D_{S^3}),
   \label{eq:product-triple}
 \end{equation}
-yielding the 4-manifold $M^4 = \mathbb{R} \times \Sigma^3$.
+is a spectral triple on the 4-manifold $M^4 = \mathbb{R} \times S^3$; the three macroscopic
+algebras commute in the limit by a direct estimate, $\|[F_i, a]\| = O(M^{-1/2})$. The
+product carries no real structure, so no first-order condition arises. Its reading as
+physical spacetime inherits the \status{I} of T-119.
 \end{theorembox}
 
-\begin{theorembox}[T-120b: Vacuum topology \status{T}]
-The spatial manifold has the topology of a 3-sphere:
-\begin{equation}
-  \Sigma^3 \cong S^3
-  \label{eq:vacuum-topology}
-\end{equation}
-corresponding to a de~Sitter spatial section.
+\begin{theorembox}[T-120b: Vacuum topology]
+(i)~$\Sigma^3 \cong S^3$ \status{T} --- now part of T-119 (minimal unitization of the
+fluctuation spectrum $\mathbb{R}^3$), independent of the vacuum.
+(ii)~Constant curvature $k = +1$, a de~Sitter spatial section
+\status{C at the vacuum symmetry}: the step uses the $SU(3)$-invariance of a unique sector
+vacuum, now the hypothesis (SV).
 \end{theorembox}
 
 \paragraph{Proof of T-120.}
-The temporal algebra $C_0(\mathbb{R})$ (T-118) and the spatial algebra $C(\Sigma^3)$
-(T-119) are independent sectors of the macroscopic algebra (the O-sector is temporal;
-the $\{A,S,D\}$-sector is spatial). Their tensor product gives the full macroscopic
-algebra:
+The temporal algebra $C_0(\mathbb{R})$ (T-118) and the spatial algebra $C(S^3)$ (T-119)
+commute in the limit, so their tensor product is the full macroscopic algebra:
 \begin{equation}
-  A_{\mathrm{macro}} = C_0(\mathbb{R}) \otimes C(\Sigma^3)
-  \cong C_0(\mathbb{R} \times \Sigma^3) = C_0(M^4)
+  A_{\mathrm{macro}} = C_0(\mathbb{R}) \otimes C(S^3)
+  \cong C_0(\mathbb{R} \times S^3) = C_0(M^4).
 \end{equation}
+The spectral triple product formula (Connes 1996; Chamseddine--Connes 1997) gives the Dirac
+operator $D = D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\mathrm{int}}$ on the product with the
+finite triple. $\square$
 
-The spectral triple product formula (Connes 1996; Chamseddine--Connes 1997) gives the Dirac operator $D = D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\mathrm{int}}$ on the product.
+\emph{Lorentzian signature} (T-53, overall \status{C}). Two logically separate steps.
+\textbf{(i) The $(1,3)$-split}~\status{T}: the Page--Wootters clock register (T-87, steps
+1--3,~\status{T}) singles out exactly one timelike direction (the PW time \emph{axis} ---
+not to be confused with the seven tick states of the clock register), while the spatial
+sector is the three-dimensional $S^3$ of T-119; the split is
+$(\operatorname{rank}\mathfrak{u}(1)_O, \operatorname{rank}\mathfrak{u}(3)) = (1,3)$.
+\textbf{(ii) The relative sign} $g_{aa} < 0$~\status{T at reflection positivity}: it
+follows from requiring the PW generator to be bounded below (Osterwalder--Schrader
+reflection positivity across the PW slice), not from an ansatz. The Krein spectral triple
+with fundamental symmetry $\beta = \gamma^0 \otimes 1$, in which $D$ is Krein-self-adjoint,
+realizes the signature $(+1,-1,-1,-1)$, but is a consistency check rather than a
+derivation: the Euclidean set $\{\gamma^0, i\gamma^i\}$ is Krein-self-adjoint just as
+exactly with $\beta = 1$. (An earlier version assigned to a KO-dimension-6 real structure
+$J$, T-53, the role of fixing the even/odd grading; no such structure exists on
+$\mathbb{C}^7$, and the step is withdrawn.) Theorem~48c gives a second route to the same
+signature without reflection positivity: the sign of $\det$ on $\mathfrak h_2(\mathbb{C}_O)$,
+\status{T} as mathematics, \status{C at (L)} as spacetime.
 
-\emph{Lorentzian signature.} Two logically separate steps. \textbf{(i) The
-$(1,3)$-split}~\status{T}: the Page--Wootters constraint (T-87~\status{T})
-singles out exactly one timelike direction (the PW time \emph{axis} --- not to
-be confused with the seven tick states of the clock register), while the
-spatial sector is the three-dimensional $\Sigma^3$ of T-120b.
-\textbf{(ii) The relative sign} $g_{aa} < 0$~\status{T at reflection
-positivity}: it follows from requiring the PW generator to be bounded below
-(Osterwalder--Schrader reflection positivity across the PW slice), not from an
-ansatz. The KO-dimension-6 real structure $J$ ($J^2 = +1$, $J\chi = -\chi J$,
-T-53~\status{T}) fixes the even/odd \emph{grading} --- excluding the Euclidean
-$J$-type of KO-dim 0/4~\cite{barrett2007} --- but does not by itself fix the
-metric signature; the rigorous realization is the Krein spectral triple with
-fundamental symmetry $\beta = \gamma^0 \otimes 1$, in which $D$ is
-Krein-self-adjoint and the signature $(+1,-1,-1,-1)$ is read off the
-$\beta$-inner product. $\square$
+\paragraph{Former proof of T-120b (retracted in part).}
+The earlier proof took the vacuum $\rho^* = \vp(\Gam)$ to be invariant under
+$\mathrm{SU}(3) \subset G_2$ acting on a spatial $\mathbf{3}$-sector, and obtained constant
+positive curvature from $\Lambda_{\mathrm{Gap}} > 0$ via T-186(c). Both inputs are gone: the
+spatial sector was the axis triple of row 48a, the vacuum of the $G_2$-invariant
+$V_{\mathrm{Gap}}$ keeps no $SU(3)$ sector pattern (T-64, T-331; the sector values are the
+hypothesis (SV)), and T-186(c) (``$\Delta F > 0$ unconditionally'') is retracted
+\status{$\times$}. Hence part~(i) now comes from T-119 and part~(ii) is conditional.
 
-\paragraph{Proof of T-120b.}
-The vacuum state $\rho^* = \vp(\Gam)$ (T-96~\status{T}) is invariant under
-the stabilizer $\mathrm{SU}(3) \subset G_2$ of the O-direction. The
-$\mathrm{SU}(3)$ action on the $\mathbf{3}$-sector (= spatial sector) is
-\emph{transitive} on the unit sphere $S^5 \subset \mathbb{C}^3$ (fundamental
-representation), with isotropy group $\mathrm{SU}(2)$, so
-$\mathrm{SU}(3)/\mathrm{SU}(2) \cong S^5$; the vacuum $3$-manifold $\Sigma^3$
-is the fixed-radius orbit of the residual $\mathrm{SO}(4)$ acting on the
-spatial section (it arises from the constant-curvature homogeneous structure,
-not directly as an $\mathrm{SU}(3)$-orbit). The induced metric inherits a
-6-dimensional isometry algebra --- precisely the maximal dimension for a
-3-manifold ($\dim\mathrm{Isom}(\Sigma^3) \leq \tfrac{1}{2} \cdot 3 \cdot 4 = 6$).
-By Thurston's classification, the unique compact orientable 3-manifold with
-6-dimensional isometry group and constant positive curvature (from
-$\Lambda_{\mathrm{Gap}} > 0$, T-186(c)~\status{T}) is $S^3$. $\square$
+\subsection{Step 4b: The gauge group}
 
-\subsection{Step 4b: Gauge group from Morita equivalence (T-175a)}
+An earlier version of this step reduced $A_{\mathrm{int}} = \mathbb{C} \oplus
+M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ to the Connes--Chamseddine algebra
+$A_F = \mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ through the KO-dimension-6 real
+structure, the Fano--Higgs line $\{A,E,U\}$ and a quaternionic selection on the
+$\{E,U\}$ block, and claimed a Morita equivalence $A_{\mathrm{int}} \sim A_F$ with the
+Standard-Model group as $\mathrm{Inn}(A_F)$ (T-175a). This is retracted \status{$\times$}:
+Morita equivalence preserves the centre, and $Z(A_{\mathrm{int}}) = \mathbb{C}^3$ (real
+dimension~6) differs from $Z(A_F) = \mathbb{C} \oplus \mathbb{R} \oplus \mathbb{C}$ (real
+dimension~5); the unitary groups differ as well ($U(1)\times U(3)\times U(3)$, dimension~19,
+against $U(1)\times SU(2)\times U(3)$, dimension~13); and the real structure does not exist.
+Nothing replaces the claim within the spectral-triple route.
 
-The internal algebra $A_{\mathrm{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus
-M_3(\mathbb{C})$ does not immediately give the Standard Model gauge group.
-Three steps reduce it to the Connes--Chamseddine algebra
-$A_F = \mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$:
+The Standard-Model group is obtained instead from the Clifford system of
+$\mathbb{C}\otimes\Oct$: $(SU(3)\times SU(2)\times U(1))/\mathbb{Z}_6$ is the normaliser of
+colour in $\mathrm{Spin}(9)$, and the electroweak algebra is the centraliser of colour
+(T-326); the doublets are chiral (T-327), families are horizontal (T-328), and one complete
+generation with right-handed fields follows from the complexified spinor (T-329). These are
+\status{T} as mathematics and \status{C at (Cl)} in UHM, where (Cl$_0$) states that fermions
+are vectors of the spinor module $\mathcal{S} = \mathbb{C}\otimes\Oct$.
 
-\begin{enumerate}[leftmargin=2em,nosep]
-  \item The KO-dimension-6 real structure $J$ (with $J^2 = +1$, $J\chi = -\chi J$)
-        and the first-order condition $[[D,a],Jb^*J^*] = 0$ restrict the
-        $\bar{\mathbf{3}}$-sector algebra $M_3(\mathbb{C})_{\bar{3}}$.
-  \item The Fano--Higgs line $\{A,E,U\}$ decomposes
-        $\bar{\mathbf{3}} \to \mathbf{2}_{EU} \oplus \mathbf{1}_L$, yielding
-        $M_3(\mathbb{C})_{\bar{3}} \to M_2(\mathbb{C})_{EU} \oplus \mathbb{C}_L$.
-  \item On the $2 \times 2$ block $\{E,U\}$, the self-adjointness condition
-        $[a, JbJ^*] = 0$ with $J = $ complex conjugation selects the quaternionic
-        subalgebra: $\mathbb{H} \subset M_2(\mathbb{C})$ (self-adjoint $2 \times 2$
-        matrices form a real 4-algebra isomorphic to~$\mathbb{H}$).
-\end{enumerate}
+\subsection{Step 5: Einstein--Hilbert action (T-65, T-121)}
 
-\noindent
-Result: $A_{\mathrm{int}} \xrightarrow{J + \mathrm{EW}}
-\mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C}) = A_F$.
-The inner automorphism group is
-$\mathrm{Inn}(A_F) = \mathrm{U}(1) \times \mathrm{SU}(2) \times
-\mathrm{SU}(3)\,/\,\mathbb{Z}_6$, identical to the Standard Model gauge
-group~\cite{connes1996,chamseddine2007}.
-
-\subsection{Step 5: Einstein--Hilbert action via Lovelock (T-121)}
-
-\begin{theorembox}[T-121: Einstein equations \status{T}]
-The spectral action on the product spectral triple
-$(M^4, A_{\mathrm{int}})$ yields the Einstein--Hilbert action plus the Standard Model
-Lagrangian:
+\begin{theorembox}[T-65: Spectral action \status{T} for the Einstein--Hilbert term]
+The spectral action on the product $(M^4 \times A_{\mathrm{int}})$ yields the
+Einstein--Hilbert action,
 \begin{equation}
   S = \frac{1}{16\pi G}\int_{M^4} (R_{\mathrm{scalar}} - 2\Lambda)\,\sqrt{-g}\,d^4x
-  + S_{\mathrm{SM}}
+  + S_{\mathrm{SM}},
+  \qquad G_N = \frac{3\pi}{7 f_2 \Lambda_{\mathrm{cut}}^2},
   \label{eq:einstein-hilbert}
 \end{equation}
-closing gaps 1 and 2 in Lovelock's uniqueness argument~\cite{lovelock1971}.
+where the heat-kernel coefficient $a_2$ sees the internal space only through
+$\mathrm{Tr}(1) = 7$. The Standard-Model part $S_{\mathrm{SM}}$ is imported with
+Connes' finite Hilbert space $H_F$, not derived (see below).
+\end{theorembox}
+
+\begin{theorembox}[T-121: Lovelock closure \status{T}]
+Lovelock's uniqueness argument~\cite{lovelock1971} applies to the emergent $M^4$ and is
+supplementary to the spectral one.
 \end{theorembox}
 
 \paragraph{Proof.}
@@ -243,37 +269,30 @@ its first two derivatives is:
   \label{eq:lovelock}
 \end{equation}
 where $G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}Rg_{\mu\nu}$ is the Einstein tensor.
-Lovelock's theorem has three gaps:
+Its premises are met as follows.
 
 \begin{enumerate}[leftmargin=2em]
-  \item \textbf{Gap 1: Why $d = 4$?} Lovelock's theorem holds in any dimension, but the
-        result simplifies to Einstein gravity only in $d = 4$. In higher dimensions,
-        Gauss--Bonnet and higher Lovelock terms appear.
+  \item \textbf{Smooth four-dimensional manifold (discreteness $\to$ continuity).}
+        $M^4 = \mathbb{R}\times S^3$ is a smooth 4-manifold (T-120~\status{T} as
+        mathematics), one dimension from the depth register (T-118) and three from the
+        rank of $\mathfrak{u}(3)$ (T-119).
 
-        \emph{UHM closure:} $d = 4$ is derived, not assumed. The temporal manifold
-        contributes 1 dimension (T-118) and the spatial manifold contributes 3 (T-119,
-        from the $\mathbf{3}$-sector of $\mathrm{SU}(3)$). $d = 1 + 3 = 4$.
+  \item \textbf{Covariance.} Four-dimensional diffeomorphism covariance is inherited from
+        the diffeomorphism invariance of the Chamseddine--Connes spectral action. An
+        earlier leg ``$G_2 \to SU(3) \to SO(3) \subset \mathrm{Diff}(M^4)$'' is retracted
+        \status{$\times$}: no non-trivial homomorphism $SU(3) \to SO(3)$ exists, and the
+        axis triples are not $SU(3)$ sectors.
 
-  \item \textbf{Gap 2: Why smooth manifold?} Lovelock's theorem assumes a smooth
-        differentiable manifold with a metric tensor.
-
-        \emph{UHM closure:} The smooth manifold structure is derived via Connes
-        reconstruction (T-119). The metric emerges from the Dirac operator of the
-        spectral triple.
-
-  \item \textbf{Gap 3: Why Lorentzian signature?} Lovelock's theorem works for any
-        signature. This gap is reclassified (T-121): the Lorentzian signature follows
-        from the KO-dimension~6 real structure $J$ of the internal spectral triple
-        (T-53~\status{T}). The Page--Wootters constraint forces opposite-signed eigenvalues
-        for the temporal and spatial blocks of $D_{\mathrm{int}}$:
-        $\mathrm{spec}(D_O) = \{+\omega_0\}$ (temporal) versus
-        $\mathrm{spec}(D_{\{A,S,D\}}) \subset \{-\lambda_a\}$ (spatial). The Connes
-        distance formula then gives $g_{00} > 0$ and $g_{aa} < 0$, yielding
-        signature $(+,-,-,-)$.
+  \item \textbf{Signature.} Lovelock's theorem works for any signature, so this gap is
+        irrelevant to the argument; the Lorentzian signature is Step~4 (T-53, \status{C}).
+        An earlier version derived it from the KO-dimension-6 real structure $J$ via
+        opposite-signed eigenvalues of $D_{\mathrm{int}}$ on the temporal and spatial
+        blocks and the Connes distance formula; that route is withdrawn with the real
+        structure, and the ansatz $g_{\mu\mu} = \chi_{\mu\mu}/\|D_\mu\|^2$ is retired.
 \end{enumerate}
 
-The spectral action principle~\cite{chamseddine1997} (Connes--Chamseddine) applied to the product spectral triple
-$(M^4, A_{\mathrm{int}})$ yields:
+The spectral action principle~\cite{chamseddine1997} (Connes--Chamseddine) applied to the
+product spectral triple $(M^4, A_{\mathrm{int}})$ yields:
 \begin{equation}
   \Tr\bigl(f(D^2/\Lambda_{\mathrm{cut}}^2)\bigr)
   = \frac{1}{16\pi G}\int_{M^4} R_{\mathrm{scalar}}\,\sqrt{-g}\,d^4x
@@ -282,32 +301,45 @@ $(M^4, A_{\mathrm{int}})$ yields:
   + O(\Lambda_{\mathrm{cut}}^{-2})
   \label{eq:spectral-action}
 \end{equation}
-where $f$ is a smooth cutoff function, $\Lambda_{\mathrm{cut}}$ is the energy cutoff,
-and the Standard Model Lagrangian arises from the internal spectral triple
-$(A_{\mathrm{int}}, H_{\mathrm{int}}, D_{\mathrm{int}})$ with KO-dimension 6 (T-53).
+where $f$ is a smooth cutoff function and $\Lambda_{\mathrm{cut}}$ is the energy cutoff; the
+value of $G_N$ needs the cutoff convention $f_2$ and the scale $\Lambda_{\mathrm{cut}}$
+\status{D}. The product is a spectral triple but not a real one in Connes' sense, and the
+Einstein--Hilbert term does not use a real structure.
+
+\emph{Status of the Standard-Model term.} The earlier text derived the Standard-Model
+Lagrangian from the internal triple $(A_{\mathrm{int}}, H_{\mathrm{int}}, D_{\mathrm{int}})$
+with KO-dimension~6. This is withdrawn \status{$\times$}: $H_{\mathrm{int}} = \mathbb{C}^7$
+carries no such real structure and has dimension~7 while one generation needs 32 states,
+so the Standard-Model content comes from Connes' imported $H_F$ (the bimodule derivation
+T-178 is retracted as a derivation). The import brings its history: under the ``big
+desert'' assumption Chamseddine, Connes and Marcolli (2007) obtained a Higgs mass around
+170\,GeV, excluded at 95\% C.L.\ by CDF and D0 in 2008; the Higgs was found at 125\,GeV, and
+the 2012 rescue adds a real singlet and a fitted parameter.
 
 The variation $\delta S / \delta g^{\mu\nu} = 0$ yields the Einstein field equations:
 \begin{equation}
   G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G\, T_{\mu\nu}
   \label{eq:einstein-equations}
 \end{equation}
-where $T_{\mu\nu}$ is the energy-momentum tensor of the Standard Model fields. $\square$
+where $T_{\mu\nu}$ is the energy-momentum tensor of the matter fields. $\square$
 
 \subsection{Summary of the derivation chain}
 
 \begin{equation}
   \underbrace{\Gam \in \Dens(\mathbb{C}^7)}_{\text{Axiom}}
-  \xrightarrow{\text{T-117}}
-  \underbrace{[A_{\mathrm{macro}}] = 0}_{\text{commutative}}
   \xrightarrow{\text{T-118, T-119}}
   \underbrace{M^4 = \mathbb{R} \times S^3}_{\text{manifold}}
-  \xrightarrow{\text{T-121}}
+  \xrightarrow{\text{T-120, T-65}}
   \underbrace{G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}}_{\text{Einstein}}
   \label{eq:derivation-chain}
 \end{equation}
 
-Every step uses either previously proven theorems of UHM (T-39a, T-53, T-62, T-96) or
-standard mathematical results (Gelfand's theorem, Connes reconstruction, quantum CLT,
-Lovelock's theorem). No new axioms, postulates, or hypotheses are introduced. The Einstein
-equations are a \emph{consequence} of the same axioms that define consciousness ---
-because spacetime and experience are two aspects of the same coherence matrix $\Gam$.
+Every step of the gravitational chain uses either previously proven theorems of UHM (T-39a,
+T-53b, T-62, T-118--T-120) or standard mathematical results (Gelfand's theorem, the Dirac
+triple of $S^3$, quantum CLT, heat-kernel expansion, Lovelock's theorem), and is
+\status{T} as mathematics. What is not derived is stated: the reading of $M^4$ as physical
+spacetime \status{I} (or, by the colour-commuting route of Theorem~48c, \status{C at (L)}),
+the Lorentzian sign at reflection positivity, the cutoff convention that fixes the value of
+$G_N$, and the Standard-Model part of the action, which is imported. Within these limits the
+Einstein--Hilbert term is a \emph{consequence} of the same axioms that define consciousness
+--- because spacetime and experience are two aspects of the same coherence matrix $\Gam$.

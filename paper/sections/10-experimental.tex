@@ -50,7 +50,7 @@ prediction.
 \textbf{Exp.} & \textbf{Prediction tested} & \textbf{Key metric} & \textbf{Falsification} \\
 \midrule
 I.1 & Pred 1 (No-Zombie) & $\tau_{\mathrm{death}}$ after E-suppression & $\tau_E \geq \tau_A$ \\
-I.2 & Pred 7 (Stability radius) & $h_{\mathrm{crit}}^2$ vs.\ $P - 2/7$ & $R^2 < 0.9$ \\
+I.2 & Pred 7 (Stability radius) & Bures $d_{\mathrm{crit}}$ vs.\ $r_{\mathrm{stab}}(P)$ & $d_{\mathrm{crit}} < r_{\mathrm{stab}}$ \\
 I.3 & Pred 8 (Info capacity) & $I(\mathrm{obs};\delta\Gam)$ & $I > 2.81$ bits \\
 I.4 & Pred 10 ($N=7$ learning) & Accuracy at $N=5$ & $> 75\%$ at $N=5$ \\
 I.5 & Pred 12 (SAD ceiling) & $\mathrm{SAD}(\Gam)$ via T-136 & $\exists\,\Gam:\mathrm{SAD}(\Gam)\geq 4$ \\
@@ -64,6 +64,14 @@ I.11 & Pred 11 ($N=7$ social) & Coordination at $N=5$ & ToM+ISL+Nash at $N=5$ \\
 \end{tabular}
 \end{table}
 
+\noindent
+Status notes (registry of predictions): Pred~7 is \status{C} (T-104; the closed
+form $r_{\mathrm{stab}} \approx K(\sqrt{P-1/7}-\sqrt{1/7})$, $K = \sqrt{35}\,6^{1/4}/10$,
+holds on the one-dominant spectral family and is a lower bound \status{H}
+otherwise; the earlier $h_{\mathrm{crit}} = r_{\mathrm{stab}}^2 = P - 2/7$ is refuted
+\status{$\times$}); Pred~11 is \status{C}; Pred~17 is \status{C at the $\mathbb{Z}_2$
+symmetry $m \to -m$} (T-161; without it the generic swallowtail gives $\beta = 1/2$).
+
 \paragraph{Go/no-go criterion.}
 All 11 Phase~I experiments must be confirmed before proceeding to Phase~II. Any L1 or L2
 falsification halts the programme pending theoretical revision.
@@ -73,8 +81,15 @@ falsification halts the programme pending theoretical revision.
 
 The central task of Phase~II is to build the bridge
 $\pi_{\mathrm{bio}}: (\mathrm{EEG}, \mathrm{fMRI}, \mathrm{HRV}) \to \Gam \in
-\Dens(\mathbb{C}^7)$ and verify that $\Pcrit = 2/7$ coincides with the empirical PCI
-threshold $\mathrm{PCI}^* = 0.31$~\cite{casali2013}.
+\Dens(\mathbb{C}^7)$ and test the threshold $\Pcrit = 2/7$ out of sample: with
+$\pi_{\mathrm{bio}}$ frozen on wakefulness, the purity $\widehat P$ at the
+report-defined loss of consciousness is compared with $2/7$, and the UHM verdict
+$\mathrm{Cons}(\widehat\Gam)$ with the independently validated PCI verdict
+$\mathrm{PCI}_{\max} > \mathrm{PCI}^* = 0.31$~\cite{casali2013} by Cohen's $\kappa$.
+The two numbers $2/7 \approx 0.286$ and $0.31$ live on unrelated scales (PCI is a
+normalised Lempel--Ziv complexity of a binarised TMS response, $P$ a function of
+$\Gam$), so their nearness carries no evidential weight; the earlier reading of it
+as a ``coincidence within 8\%'' is withdrawn \status{$\times$}.
 
 \paragraph{Formal definition of $\pi_{\mathrm{bio}}$.}
 The neural anchor map is a CPTP channel
@@ -85,7 +100,11 @@ entropy, theta-gamma coupling, PCI, HRV, mean PLI) corresponding to the 7 UHM
 dimensions $\{A,S,D,L,E,O,U\}$;
 (2)~normalise to a density matrix diagonal via softmax:
 $\gamma_{kk} = \exp(\beta z_k)/\sum_j \exp(\beta z_j)$, where $z_k = (x_k - \mu_k)/\sigma_k$
-is standardised and $\beta$ is calibrated to match PCI$^* \leftrightarrow \Pcrit$;
+is standardised and $\beta$, $\mu_k$, $\sigma_k$ are fixed on wakefulness sessions
+only (no sleep, anaesthesia or disorder-of-consciousness label enters the fit; never
+tuned to a PCI$^* \leftrightarrow \Pcrit$ match); in the confirmatory concordance run
+PCI is removed from the feature set and E is read from a pre-registered non-PCI
+observable;
 (3)~reconstruct off-diagonal coherences from pairwise coherence and phase-locking values,
 regularised by Cholesky decomposition to guarantee positivity;
 (4)~align to canonical gauge via $G_2$-covariant Procrustes (T-123~\status{T}).
@@ -171,18 +190,27 @@ MRI-compatible neuronavigation            & TMS targeting accuracy \\
 
 \paragraph{Key experiments.}
 \begin{itemize}[leftmargin=2em]
-  \item \textbf{Exp.~II.1: $\Pcrit \leftrightarrow \mathrm{PCI}^*$} (the most important
-        experiment). Propofol-induced loss of consciousness with TMS-EEG, $N = 50$ subjects.
-        At five propofol target levels ($C_e = 0.5, 1.0, 1.5, 2.0, 2.5$\,$\mu$g/ml), apply
-        $\pi_{\mathrm{bio}}$ and compute $P$. Primary outcome:
-        $P_{\mathrm{boundary}} = 2/7 \pm 0.05$ (95\% CI includes $2/7$). Statistical plan:
+  \item \textbf{Exp.~II.1: $\Pcrit$ out of sample, concordance with $\mathrm{PCI}^*$}
+        (the most important experiment). Propofol-induced loss of consciousness with
+        TMS-EEG, $N = 50$ subjects. At five propofol target levels
+        ($C_e = 0.5, 1.0, 1.5, 2.0, 2.5$\,$\mu$g/ml) the boundary is fixed by reports
+        (verbal report and isolated-forearm response), not by PCI; $\pi_{\mathrm{bio}}$,
+        frozen on the wakefulness baseline, gives $P$ and $\mathrm{Cons}(\widehat\Gam)$.
+        Primary outcome: $P_{\mathrm{boundary}} = 2/7 \pm 0.05$ (95\% CI includes $2/7$);
+        secondary: Cohen's $\kappa$ between $\mathrm{Cons}(\widehat\Gam)$ and
+        $\mathrm{PCI}_{\max} > 0.31$ over all 300 sessions ($\kappa \geq 0.8$
+        corroborates, $\kappa < 0.4$ falsifies). Statistical plan:
         one-sample $t$-test, $\alpha = 0.01$, power $> 0.95$ at $\mathrm{SD} = 0.06$.
         Falsification: $|P_{\mathrm{boundary}} - 2/7| > 0.1$ at $p < 0.01$.
   \item \textbf{Exp.~II.2: Critical exponents} (the riskiest experiment). TMS-EEG during
         full-night polysomnography (W$\to$N1$\to$N2$\to$N3$\to$REM$\to$W), $N = 50$
         subjects, 100 TMS trials every 15 minutes, yielding $\sim$1600 data points. For
-        each: compute PCI and $P$. Fit $\mathrm{PCI} \sim (P - \Pcrit)^\beta$. Prediction:
-        $\beta = 1/4 \pm 0.05$. Additional: $\nu = 1/2$ from spatial extent of the TMS-evoked
+        each: compute PCI and $P$. Split by the sign of $P - \Pcrit$ (not by
+        $\mathrm{PCI} > \mathrm{PCI}^*$) and fit $\mathrm{PCI} \sim (P - \Pcrit)^\beta$ ---
+        PCI serves as the order parameter only under the monotone-relation hypothesis
+        \status{H}, so the fit tests $\beta$ jointly with it. Prediction:
+        $\beta = 1/4 \pm 0.05$ (T-161, \status{C at the $\mathbb{Z}_2$ symmetry $m \to -m$};
+        without it $\beta = 1/2$). Additional: $\nu = 1/2$ from spatial extent of the TMS-evoked
         response; $\gamma = 1$ from amplitude of PCI variability near threshold. Analysis:
         nonlinear regression, bootstrap 95\% CI, comparison with ordinary mean-field ($\beta = 1/2$)
         and 3D~Ising ($\beta \approx 0.326$). Falsification: $\beta \notin [0.20, 0.30]$
@@ -211,8 +239,8 @@ have the most direct clinical significance.
         conscious state [MCS], 20 vegetative state [VS/UWS], 20 healthy controls). TMS-EEG
         + fMRI + HRV $\to \pi_{\mathrm{bio}} \to \Gam$. Prediction:
         $P(\Gam_{\mathrm{MCS}}) > 2/7$ for $\geq 90\%$ of MCS patients;
-        $P(\Gam_{\mathrm{VS}}) < 2/7$ for $\geq 80\%$. Falsification: sensitivity $< 80\%$
-        or specificity $< 75\%$.
+        $P(\Gam_{\mathrm{VS}}) < 2/7$ for $\geq 80\%$ (Pred~21 is \status{H}).
+        Falsification: sensitivity $< 80\%$ or specificity $< 75\%$.
   \item \textbf{Exp.~III.2: E-coherence and recovery} (Pred~2). $N = 60$, stroke
         rehabilitation. Measure $\CohE$ at admission via EEG $\to \pi_{\mathrm{bio}}$.
         Assess recovery at 3 months (Barthel Index, modified Rankin Scale). Prediction:
@@ -220,7 +248,8 @@ have the most direct clinical significance.
         physical health. Falsification: $r \leq 0$ at $N = 60$, $p < 0.05$.
   \item \textbf{Exp.~III.3: Resting-state attractor} (Pred~15). $N = 30$, healthy,
         5 sessions on different days. EEG + fMRI $\to \pi_{\mathrm{bio}} \to P$. Prediction:
-        $P_{\mathrm{rest}} \to 3/7 \pm 0.05$ (T-124). Falsification:
+        $P_{\mathrm{rest}} \to 3/7 \pm 0.05$ (T-124; Pred~15 is \status{C}, for an
+        embodied holon with backbone injection). Falsification:
         $|P_{\mathrm{mean}} - 3/7| > 0.1$ at $N = 30$.
 \end{itemize}
 
@@ -237,11 +266,15 @@ and language independence.
         reliability: Cohen's $\kappa$. Prediction: 100\% coverage (every stressor maps to
         $\geq 1$ component); residual category is empty. Falsification: a stressor
         unclassifiable by $\geq 4/5$ experts.
-  \item \textbf{Exp.~IV.2: Collective consciousness} (Pred~5). Hyperscanning EEG
+  \item \textbf{Exp.~IV.2: Collective consciousness} (Pred~5, restated). Hyperscanning EEG
         ($4 \times 32$-ch, synchronization via LSL). Ten jazz quartets (coordinated) vs.\
-        ten random musician groups (uncoordinated). Compute $\Phi_\otimes$ for each group.
-        Falsification: $\Phi_\otimes(\mathrm{coordinated}) \leq
-        \Phi_\otimes(\mathrm{uncoordinated})$ at $p < 0.05$ (Mann--Whitney).
+        ten random musician groups (uncoordinated). Compute the total correlation
+        $\sum_i S(\rho_i) - S(\rho_{1\ldots n})$ of the reconstructed joint state.
+        Prediction: positive for coordinated groups, absent for unconnected ones --- a
+        necessary condition \status{T}; that a correlated group is a subject is
+        \status{H}. The former criterion $\Phi_\otimes > \Phi_{\min}$ is retracted
+        \status{$\times$}: on a product state $1 + \Phi_\otimes = \prod_i(1+\Phi_i)$, so
+        any uncoupled group of conscious members already has $\Phi_\otimes \geq 3$.
   \item \textbf{Exp.~IV.3: Pre-linguistic cognition} (Pred~4). $N = 30$ (15 Broca's aphasia,
         15 healthy controls). Battery of nonverbal cognitive tests: K1 (perception),
         K2 (emotions), K3 (categorization), K4 (planning). Prediction: K1--K4 scores in

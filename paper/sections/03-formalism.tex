@@ -7,11 +7,11 @@
 
 This section develops the mathematical machinery of UHM from the axioms
 stated in Section~\ref{sec:axioms}. Every definition and formula is derived
-from the primitive $\mathfrak{T} = (\ShInf(\mathcal{C}),\; J_{\mathrm{Bures}},\; \omega_0)$;
-nothing is postulated ad hoc. The flagship results — $\Pcrit = 2/7$, the
+from the primitive $\mathfrak{T} = (\ShInf(\mathcal{C}),\; J_{\mathrm{Bures}},\; \omega_0)$
+and the premises listed in Section~\ref{subsec:premises}; nothing else is postulated ad hoc. The flagship results — $\Pcrit = 2/7$, the
 critical exponents, the spectral-action derivation — are proved fully in the
-appendices. The complete formalization (over 248 theorems, including
-sub-indexed results T-1 through T-248) constitutes the UHM theory archive;
+appendices. The complete formalization (a status registry of 405 rows,
+T-1 through T-345 including sub-indexed results) constitutes the UHM theory archive;
 the present paper proves the principal results in full, and the companion
 online supplement at \url{https://holon.sh} provides the remaining proofs
 and computational details.
@@ -37,8 +37,11 @@ satisfying three properties:
 \paragraph{Degrees of freedom.}
 A $7 \times 7$ Hermitian matrix has $7^2 = 49$ real parameters. The trace constraint
 removes one, leaving 48 independent parameters. The automorphism group $G_2 = \mathrm{Aut}(\Oct)$
-acts as a gauge group with $\dim(G_2) = 14$, yielding $48 - 14 = 34$ physically
-distinguishable (gauge-invariant) parameters.
+has $\dim(G_2) = 14$, so $48 - 14 = 34$ parameters are kinematic $G_2$-invariants (spectrum
+and $\varphi_3$-relative angles). The dynamics pins the frame up to the finite octonionic
+frame group $\Gamma_{\mathrm{oct}} \subset G_2$ (frame decision D-0910~\status{D}), so all
+48 parameters are physical; with the 14 frame-orientation parameters the 34 invariants make
+up the 48 ($G_2$-rigidity~\status{T}).
 
 \paragraph{Diagonal and off-diagonal.}
 The diagonal elements $\gamma_{kk}$ represent the weight of each dimension (how much
@@ -107,7 +110,7 @@ viability threshold (\emph{excluded}, strict inequality $P > 2/7$) and
 the filled circle at $(3/7,\,1/3)$ marks the upper boundary
 (\emph{included}). For $P > 3/7$ the L2 criterion fails through the canonical identity
 $R = 1/(7P) < 1/3$ (T-126~\status{T}); the differentiation condition
-$D_{\mathrm{diff}} \geq D_{\min} = 2$ (T-151~\status{T}) is an
+$D_{\mathrm{diff}} \geq D_{\min} = 2$ (T-151~\status{D}) is an
 independent fourth constraint, not visible in this 2D projection.}
 \label{fig:phase-diagram}
 \end{figure}
@@ -120,20 +123,21 @@ conditions). It was subsequently validated on a benchmark of 150 subjects
 of consciousness) by Casarotto et al.~\cite{casarotto2016}, who identified an
 empirical cutoff $\mathrm{PCI}^* = 0.31$ that discriminated conscious from
 unconscious states with 100\,\% sensitivity and specificity on the benchmark,
-and 94.7\,\% sensitivity in a clinical MCS cohort. The theoretical prediction
-$\Pcrit = 2/7 \approx 0.286$ differs from the empirical cutoff by approximately
-$8\,\%$, within the calibration uncertainty of any neural-to-$\Gam$ mapping
-$\pi_{\mathrm{bio}}$ (see Section~\ref{sec:experimental}). The value $2/7$ was
+and 94.7\,\% sensitivity in a clinical MCS cohort. The value $\Pcrit = 2/7$ was
 \emph{derived} from the theory, not fitted.
 
-It must be emphasised that PCI and purity $P$ are mathematically distinct
-quantities: PCI is a normalised Lempel--Ziv complexity of TMS-evoked
-spatiotemporal responses, while $P = \Tr(\Gam^2)$ is a Hilbert--Schmidt norm
-on density matrices. The numerical proximity $0.286 \approx 0.31$ is
-suggestive but does not itself constitute evidence; it becomes evidence only
-once the mapping $\pi_{\mathrm{bio}}$ is calibrated (Phase~II,
-\S\ref{sec:experimental}). The coincidence is presented as motivation for
-experimental investigation, not as empirical confirmation.
+PCI and purity $P$ are mathematically distinct quantities: PCI is a normalised
+Lempel--Ziv complexity of TMS-evoked spatiotemporal responses, while
+$P = \Tr(\Gam^2)$ is a Hilbert--Schmidt norm on density matrices. No numerical
+conversion between them is derived, and the closeness of $0.31$ to
+$2/7 \approx 0.286$ is a coincidence of two unrelated scales that carries no
+evidential weight; an earlier version of this paragraph read it as an $8\,\%$
+agreement within calibration uncertainty, which is withdrawn. The bridge that
+can be tested is a \emph{concordance of verdicts} on the same sessions: the
+consciousness predicate of the reconstructed $\hat\Gam$ against
+$\mathrm{PCI}_{\max} > 0.31$, with Cohen's $\kappa \geq 0.8$ corroborating and
+$\kappa < 0.4$ falsifying, the reconstruction $\pi_{\mathrm{bio}}$ frozen on
+wakefulness (Section~\ref{sec:experimental}).
 
 \subsection{The evolution equation}
 \label{subsec:evolution}
@@ -161,7 +165,7 @@ dissipation. Death is the regime where it does not.}
 \end{equation}
 
 \paragraph{Term 1: Unitary dynamics.}
-The effective Hamiltonian emerges from the Page--Wootters mechanism (T-87~\status{T}):
+The effective Hamiltonian emerges from the Page--Wootters mechanism (clock register T-87~\status{T}; the constraint is the postulated part of A5):
 \begin{equation}
   H_{\mathrm{eff}}(\tau) = H_{6D} + \langle\tau|H_{\mathrm{int}}|\tau\rangle_O
   \label{eq:heff}
@@ -297,7 +301,11 @@ physical realization (T-62~\status{T}) is the replacement channel with dissipati
 \end{equation}
 where $\rho^*_{\mathrm{diss}} = I/7$ is the \emph{dissipative attractor} of the linear
 part $\Lind_0 = -i[H,\cdot] + \mathcal D_\Omega$ (T-39a~\status{T}: primitivity of
-$\Lind_0$) and $k = 1-R$ is the compression parameter.
+$\Lind_0$) and $k = 1-R$ is the compression parameter. With this anchor $I/7$ the
+self-model is unital, and an isolated holon with a unital self-model is dead: its only
+stationary state is $I/7$ and $P$ never increases (dead isolation, T-96~\status{T}). A
+living attractor of an isolated holon needs a non-unital self-model --- the
+self-registering $\vp_s$ or the collineation anchor $\vp_J$ (T-124c, T-334).
 
 \paragraph{Three $\rho^*$ contexts: a canonical disambiguation.}
 UHM uses the symbol $\rho^*$ in three structurally distinct roles (matching the
@@ -306,12 +314,15 @@ canonical doc hierarchy at \url{https://holon.sh/docs/core/dynamics/evolution}):
 \emph{without} regeneration; appears in the replacement channel of Eq.~\ref{eq:phi-physical}.
 (ii)~$\rho^*_\Omega$ --- a nontrivial stationary state of the full $\Lind_\Omega$
 \emph{with} regeneration (T-96~\status{T}: $P > 1/7$; its existence depends on the
-self-model), and the regeneration target $\rho_* = \vp(\Gam)$, the categorical
+self-model, and with a unital self-model there is none), and the regeneration target
+$\rho_* = \vp(\Gam)$, the categorical
 self-model of the current state; the two differ at stationarity,
 $\vp(\rho^*_\Omega) \neq \rho^*_\Omega$ (T-96), and fixed points belong to $\vp$
 itself, not to $\Lind_\Omega$.
 (iii)~$\rho^*_{\mathrm{coupled}}$ --- equilibrium of an embodied holon coupled to an
-environment (T-149~\status{T}: $P(\rho^*_{\mathrm{coupled}}) > 2/7$ unconditionally).
+environment (T-149: its existence~\status{T}; $P(\rho^*_{\mathrm{coupled}}) > 2/7$ is
+\status{C at the backbone-injection lower bound}, the former ``unconditionally'' being
+withdrawn).
 In what follows, $\rho^*$ without subscript refers to context (i) when written inside
 $\vp_k$ and to context (ii) when written as $\vp(\Gam)$.
 
@@ -325,21 +336,27 @@ holon under backbone dominance (T-191~\status{T};
 Eq.~\ref{eq:fixed-point}). No circularity arises: the definition is \emph{iterative},
 not recursive.
 
-\paragraph{Fixed-point theorem \status{T} (Banach).}
-Iterating $\vp$ converges to a fixed point:
+\paragraph{Fixed-point theorem \status{T} (Banach, for constant weight and anchor).}
+For the replacement channel with \emph{constant} weight and anchor and a unital
+$\mathcal P$ (or in the trace norm), iterating $\vp$ converges to its fixed point:
 \begin{equation}
   \vp^n(\Gam_0) \to \Gam^*, \qquad
-  \|\vp^n(\Gam_0) - \Gam^*\|_F \leq k^n \|\Gam_0 - \Gam^*\|_F
+  \|\vp^n(\Gam_0) - \Gam^*\| \leq c^n \|\Gam_0 - \Gam^*\|, \quad c < 1.
   \label{eq:fixed-point}
 \end{equation}
-This convergence is the mathematical content of ``stable self-knowledge'': the system's
-self-model approaches a fixed point that represents its best possible self-understanding.
-The operator-level convergence of the full $\vp$-tower ---
-$\|\vp^{(n)} - \vp^*\|_{\mathrm{op}} \leq q^n$ with
-$q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min}) < 1$ --- is proved
-as T-191~\status{T} (Section~\ref{subsec:foundational-closure}), resolving any
-residual circularity: the definition is iterative, not circular, and the
-limit is independent of the initial anchor. The categorical target of the
+The UHM self-models $\vp_{\mathrm{coh}}$, $\vp_s$, $\vp_J$ have a state-dependent weight
+$k = 1 - 1/(7P)$ and are not global contractions: a fixed point exists by Brouwer's theorem
+on the compact convex $\Dens(\Hil)$, and uniqueness, where it holds, comes from their
+closed form ($\vp_s$ has at least eight fixed points); the former reading ``$\vp$ is a
+contraction with constant $k$'' is restricted to constant $k$ and anchor. The convergence of
+the $\vp$-tower is T-191~\status{T} (restated): for an embodied holon under backbone
+dominance, $\mu > L_{\mathcal R} + \kappa_{\max}$, the tower converges geometrically with
+$q = \kappa_{\max}/(\mu - L_{\mathcal R}) < 1$ to one self-model from any anchor
+(Section~\ref{subsec:foundational-closure}). The former statement --- convergence for every
+holon with $q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min})$ --- is
+retracted~\status{$\times$}: for an isolated holon the gate makes the flow bistable. The
+circularity of self-reference is resolved by the closed form of $\vp_{\mathrm{coh}}$ and
+$\vp_s$, not by the tower. The categorical target of the
 phenomenal functor $F$ induced by $\vp$ is a strict 2-category
 $\mathbf{Exp}^{(2)}$ (T-192~\status{T}), ensuring that the experiential
 structure has proper compositional laws (vertical and horizontal composition,
@@ -369,7 +386,7 @@ structured but furthest from its dissipative reference). Key values:
   \item $R = 1/(7 \cdot 2/7) = 1/2$: at $P = 2/7$ (viability threshold)
 \end{itemize}
 
-The inverse relationship between $R$ and $P$ reflects a fundamental feature: a more organized system (higher $P$) is further from its dissipative attractor $I/7$, making self-modeling \emph{harder} (lower $R$). The L2 consciousness window $P \in (2/7, 3/7]$ is thus a Goldilocks zone: enough structure to be viable, but not so much that self-modeling becomes impossible. Above $P = 3/7$, the system is too rigid for adaptive self-observation: by the canonical identity $R = 1/(7P)$, reflection falls below $\Rth = 1/3$ (T-126~\status{T}); the differentiation condition $D_{\mathrm{diff}} \geq \Dmin = 2$ (T-151~\status{T}) remains an independent fourth constraint. The corpus additionally distinguishes the canonical $R$ from the \emph{self-model quality} $R_\varphi = 1 - \|\Gam - \vp(\Gam)\|_F^2 / \|\Gam\|_F^2$ (independent of $P$; it carries the phenomenology of practice and ego-dissolution) and from the higher-order fidelity tower $R^{(n)}$ --- three related but distinct reflection quantities, told apart at \url{https://holon.sh}.
+The inverse relationship between $R$ and $P$ reflects a fundamental feature: a more organized system (higher $P$) is further from its dissipative attractor $I/7$, making self-modeling \emph{harder} (lower $R$). The L2 consciousness window $P \in (2/7, 3/7]$ is thus a Goldilocks zone: enough structure to be viable, but not so much that self-modeling becomes impossible. Above $P = 3/7$, the system is too rigid for adaptive self-observation: by the canonical identity $R = 1/(7P)$, reflection falls below $\Rth = 1/3$ (T-126~\status{T}); the differentiation condition $D_{\mathrm{diff}} \geq \Dmin = 2$ (T-151~\status{D}) remains an independent fourth constraint. The corpus additionally distinguishes the canonical $R$ from the \emph{self-model quality} $R_\varphi = 1 - \|\Gam - \vp(\Gam)\|_F^2 / \|\Gam\|_F^2$ (independent of $P$; it carries the phenomenology of practice and ego-dissolution) and from the higher-order fidelity tower $R^{(n)}$ --- three related but distinct reflection quantities, told apart at \url{https://holon.sh}.
 
 \begin{theorembox}[Reflection threshold (T-40b) \status{T}]
 The reflection threshold for cognitive (L2) consciousness is:
@@ -420,14 +437,18 @@ of the E-sector reduced density matrix.
 \end{definition}
 
 $D_{\mathrm{diff}}$ measures the diversity of accessible experience states. The threshold
-$\Dmin = 2$~\status{T} (T-151) means the system must distinguish at least two qualitatively
-different experiences for consciousness to obtain.\footnote{The partial trace
+$\Dmin = 2$~\status{D} (T-151) means the system must distinguish at least two qualitatively
+different experiences for consciousness to obtain; it is one of four independent L2
+thresholds (T-124b), and its earlier derivation from $\Phith = 1$ is retracted (a state
+with $\Phi \approx 1.03$ has $D_{\mathrm{diff}} \approx 1.42$).\footnote{The partial trace
 $\rho_E = \Tr_{-E}(\Gam)$ requires the extended 42D formalism (since 7 is prime and
-$\Hil$ does not factor as a tensor product). In the minimal 7D setting, $D_{\mathrm{diff}}$
-is exactly representable via T-128~\status{T}: $D_\mathrm{diff}^\mathrm{7D} = 1 + \mathrm{Coh}_E(\Gam)/\mathrm{Coh}_E^{\max}\cdot(N-1)$,
-which agrees with the 42D partial-trace expression by Morita equivalence (T-58~\status{T}):
-$\ShInf(\mathcal{C}_7) \simeq \ShInf(\mathcal{C}_{42}^\mathrm{PW})$. All UHM observables
-$P, R, \Phi, D_\mathrm{diff}$ are computable in the minimal 7D formalism.}
+$\Hil$ does not factor as a tensor product). In the minimal 7D setting, T-128 \emph{defines}
+differentiation~\status{D}: $D_\mathrm{diff}^\mathrm{7D} = 1 + \mathrm{Coh}_E(\Gam)/\mathrm{Coh}_E^{\max}\cdot(N-1)$.
+It is not an exact representation of $e^{S_{\mathrm{vN}}(\rho_E)}$, which is not expressible in
+7D; the former Morita equivalence $\ShInf(\mathcal{C}_7) \simeq \ShInf(\mathcal{C}_{42}^\mathrm{PW})$
+(T-58) is retracted~\status{$\times$} --- it fails on dimension --- and is replaced by the
+section--retraction $\pi\circ\iota = \mathrm{id}$ (T-58$'$~\status{T}). The observables
+$P, R, \Phi$ and $D_\mathrm{diff}^{\mathrm{7D}}$ are computable in the minimal 7D formalism.}
 
 \subsection{Consciousness measure $C$}
 \label{subsec:consciousness-measure}
@@ -465,13 +486,13 @@ Table~\ref{tab:levels}.
 \input{figures/consciousness-levels}
 \caption{\textbf{Hierarchy of consciousness levels L0--L4.} Each transition requires
 crossing a mathematical threshold. L0 is universal (any $\Gam$); L2 requires all four
-conditions simultaneously; L4 is the geometric ceiling imposed by Fano contraction.}
+conditions simultaneously; L4 is a limit, unreachable in finitely many steps (T-86).}
 \label{fig:levels}
 \end{figure}
 
 \begin{table}[H]
 \centering
-\caption{Levels of consciousness and their thresholds. All thresholds are theorems, not postulates.}
+\caption{Levels of consciousness and their thresholds. $\Pcrit$ and $\Rth$ are theorems; $\Dmin = 2$ is an independent threshold by definition (T-151), and the choice of the least $\Phi$-threshold is definitional (T-129). The self-awareness depth of any holon is capped at $\mathrm{SAD}_{\max} = 3$ (T-142).}
 \label{tab:levels}
 \small
 \begin{tabular}{@{}clp{4.5cm}p{3.8cm}l@{}}
@@ -482,7 +503,7 @@ L0 & Formal interiority & $\Gam \in \Dens(\Hil)$ & Any system has an internal as
 L1 & Proto-consciousness & $\mathrm{rank}(\rho_E) > 1$ & Non-trivial E-sector & Thermostat \\
 L2 & Cognitive & $P > \tfrac{2}{7},\; R \geq \tfrac{1}{3},\; \Phi \geq 1,\; D_{\mathrm{diff}} \geq 2$ & Full qualia, self-awareness & Waking human \\
 L3 & Meta & L2 $+\; R^{(2)} \geq 1/4$ & Reflects on reflecting & Meditation \\
-L4 & Limit & $\mathrm{SAD} = 3$ (T-142) & Maximum self-reflection depth & Theoretical ceiling \\
+L4 & Limit & $\lim_{n\to\infty} R^{(n)} > 0$, $P > 6/7$ & Unreachable in finitely many steps (T-86); an attractor, not a state & Theoretical ceiling \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -494,22 +515,31 @@ a specific pathological state --- noise-dominated ($P \leq 2/7$, no
 structure), fragmented ($\Phi < 1$, unbound dimensions), crystallised
 ($R < 1/3$, no self-observation), or undifferentiated
 ($D_{\mathrm{diff}} < 2$, no qualia diversity). The conjunction is
-\emph{minimal}. Furthermore, the nontrivial attractor $\rhostar \neq I/7$
-is unique in the viable set (T-124c~\status{T}), and perturbations of
+\emph{minimal}. The count of nontrivial attractors depends on the self-model
+(T-124c~\status{T}, restated): none for an isolated holon with $\vp_{\mathrm{coh}}$; at
+least seven with $P > 2/7$ with $\vp_s$ and small $\|H\|$; exactly one, globally
+attracting, for an embodied holon under backbone dominance; with the collineation
+anchor $\vp_J$ at $H = 0$ a sink in the window for $\kappa > \kappa_c(\alpha)$. The former
+``the nontrivial attractor is unique in the viable set'' is retracted~\status{$\times$}.
+Perturbations of
 order $\varepsilon$ in $\Gam$ produce only $O(\varepsilon)$ perturbations in
 all thresholds (T-124d~\status{T}, with crossover width
-$\delta P \sim \varepsilon^4$ from $\beta = 1/4$).
+$\delta P \sim \varepsilon^4$ from $\beta = 1/4$, itself \status{C} under the
+$\mathbb{Z}_2$ symmetry of T-161).
 
 \subsection{Emergent time}
 \label{subsec:emergent-time}
 
-Time in UHM is not postulated as an external parameter. It emerges from the internal
-structure of $\Gam$ via the Page--Wootters mechanism (T-87~\status{T}).
+Time in UHM is not postulated as an external parameter. The clock register emerges from
+the internal structure of $\Gam$ (T-87, steps 1--3~\status{T}); its Page--Wootters link, the
+constraint below, is the postulated part of A5~\status{P}.
 
 The O-dimension (ground/energy) acts as an internal clock. The total system satisfies the
-constraint:
+constraint
 \begin{equation}
-  [\hat{C},\, \Gam_{\mathrm{total}}] = 0
+  \hat{C}\,\Gam_{\mathrm{total}} = 0
+  \qquad (\mathrm{supp}\,\Gam_{\mathrm{total}} \subseteq \ker\hat C;
+  \ \text{stationarity alone gives only } [\hat{C},\, \Gam_{\mathrm{total}}] = 0)
   \label{eq:pw-constraint}
 \end{equation}
 where $\hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{\mathrm{int}}$
@@ -520,6 +550,10 @@ is the total energy operator. Conditioning on the O-sector yields effective dyna
 \end{equation}
 
 Discrete time from the temporal modality $\triangleright: S_i \mapsto S_{(i+1) \bmod 7}$
-gives $\tau_n = \triangleright^n(\mathrm{now})$ with period $\mathbb{Z}_7$. In the
-thermodynamic limit of $M$ coupled holons: $\mathbb{Z}_{7^M} \to \mathbb{R}$
-(continuous time emerges, T-118~\status{T}).
+gives $\tau_n = \triangleright^n(\mathrm{now})$ with period $\mathbb{Z}_7$; the cyclic tick
+carries no arrow. The dynamics runs in the parameter of the Lindblad semigroup, whose
+finite carrier is the \emph{depth register}: one state-independent Feynman--Kitaev
+constraint gives the conditional states exactly $e^{n\Delta t\,\Lind}\rho_0$ at every
+reading (T-53b~\status{T}), and the reading algebras converge to $C_0(\mathbb{R})$ in the
+scaling limit (continuous time, T-118~\status{T}). The earlier derivation through the
+$7^M$ readings of the summed clock of $M$ holons is withdrawn: that clock is periodic.
