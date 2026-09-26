@@ -6,7 +6,7 @@ description: Operationalization of coherence matrix measurement for AI systems
 
 # Γ Measurement Protocol for AI Systems
 
-:::warning Document Status: [P] Research Program
+:::warning Document Status: [Pr] Research Program
 This document describes a **research program** for operationalizing the coherence matrix $\Gamma$ for AI systems. The protocol requires **experimental validation**.
 :::
 
@@ -527,7 +527,7 @@ For a valid measurement:
 
 ## "Dual Interview" Protocol for Biological Systems {#протокол-двойного-интервью-для-биологических-систем}
 
-:::warning Status: [P] Research Program
+:::warning Status: [Pr] Research Program
 The protocol is developed theoretically. Experimental validation is absent.
 :::
 

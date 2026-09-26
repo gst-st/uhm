@@ -178,6 +178,17 @@ Each document can be read independently, but the order above is the recommended 
 | [AI consciousness](./subjects/ai-consciousness) | Criteria for AI/AGI | Operational criteria from No-Zombie **[C]** |
 | [Collective consciousness](./subjects/collective-consciousness) | Collective (un)conscious | $\Gamma_{\text{composite}}$ and archetypes **[C]** |
 
+### [Empirical Programme](./empirical/overview)
+
+What proofs cannot settle and data or engineering can: fixing the constants of the coherence–quality correspondence, testing the geometry of quality space, and building the mechanism. The hard problem is stated once there as the residue no data can close.
+
+| Document | Content | Key results |
+|----------|---------|-------------|
+| [Four tasks](./empirical/overview) | Calibration, structure, mechanism, hard problem | Identity [I]; which task each kind of evidence decides |
+| [Calibration](./empirical/calibration) | Observables → components of $\Gamma$, protocols, controls, power | Collected criteria; new protocols **[Pr]** |
+| [Structure](./empirical/structure) | Invariants of quality space and of $\Gamma$ with their statuses | What the geometry forbids; confirm/refute table |
+| [Engineering](./empirical/engineering) | Architectural requirements, ablations | Signatures only with a self-model in the window **[H]** |
+
 ### [Theory Comparison](./comparative/consciousness-theories)
 
 | Document | Content | Key results |

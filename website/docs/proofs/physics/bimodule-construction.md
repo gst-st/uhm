@@ -221,7 +221,7 @@ The anchor map $\pi: \mathcal{S} \to \mathcal{D}(\mathbb{C}^7)$, covariant with 
 | System | Method for constructing G | Status |
 |---|---|---|
 | **Neural network** | Linear probe $h \to L \to \Gamma$ via Cholesky (C25 [C]) | Feasible |
-| **Brain (EEG)** | 7 frequency bands → $\gamma_{kk}$, coherence → $\gamma_{ij}$ | [P] Research program |
+| **Brain (EEG)** | 7 frequency bands → $\gamma_{kk}$, coherence → $\gamma_{ij}$ | [Pr] Research program |
 | **Organism** | Physiological markers → 7 sectors (T-92 [T]) | [P] Measurement protocol |
 
 :::info Key observation

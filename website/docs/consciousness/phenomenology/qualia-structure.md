@@ -541,7 +541,7 @@ $$
 
 and it holds for phase-carrying content with no exceptions at all. At the crossing — where $\lambda_{\min} = -2.4495$ and $\Phi$ sits exactly at $1.0000$ — the typical line holonomy is $0.6387$ radians, about thirty-seven degrees.
 
-**So a conscious state does carry quality, and carries roughly a third of a radian of it before the gate shuts.** The spectral criterion is the general law; the figure in radians is what that law permits for content twisted evenly away from balance, and a differently-shaped twist would trade the same budget differently. What does not change is the shape of the answer: experience is bounded not by how *much* coherence a mind holds but by how much of its phase refuses to be explained away.
+**So a conscious state does carry quality, and carries about $0.64$ radian of it (some $37°$) before the gate shuts.** The spectral criterion is the general law; the figure in radians is what that law permits for content twisted evenly away from balance, and a differently-shaped twist would trade the same budget differently. What does not change is the shape of the answer: experience is bounded not by how *much* coherence a mind holds but by how much of its phase refuses to be explained away.
 
 **A last word on whether any of this acts.** Everything above is a statement about a matrix, and a statement about a matrix is cheap. So the same structure was put into a world: seven hidden angles, situations that ask for the difference between two of them, and a hit counted when the answer lands within thirty degrees. A learner whose writes carry phase gets the answer right $71\%$ of the time after twenty-one encounters, where a table with perfect memory manages $48\%$ — twenty-four points ahead, because seven angles determine twenty-one differences and the table must be shown each one. The gap closes as the table fills, to a single point by the four-hundredth encounter, which is what a *sample-efficiency* advantage looks like and what a tuned one does not. A learner restricted to real writes never rises above $30\%$ against a chance of $17\%$: it can point only along $0$ or $\pi$, and scores when the truth happens to lie near one of them. And where the world's answers have no angles behind them, the phase-carrying learner falls *behind* the table by forty points, having spent the whole time completing a structure that was not there. The channel is a commitment, not a gift.
 
@@ -738,6 +738,7 @@ If questions remain after this, they are good questions: carry them to [interior
 
 ## Related Documents
 
+- [Empirical Programme: structure](/docs/consciousness/empirical/structure) — how the geometry of this chapter (channels, holonomies, fading) is tested against similarity data and reconstructed $\Gamma$, and what would refute it
 - [Coherence matrix](/docs/core/dynamics/coherence-matrix) — canonical definition of $\Gamma$ and $\gamma_{ij}$
 - [7D minimality theorem](/docs/proofs/minimality/theorem-minimality-7) — justification of $N = 7$ and closure
 - [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0–L4

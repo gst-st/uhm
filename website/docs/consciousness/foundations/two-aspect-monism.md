@@ -624,7 +624,7 @@ UHM is no 'worse' than other fundamental theories — each pays its own 'primiti
 6. The **relational completeness** of qualia (Theorem [relational definiteness](#теорема-реляционная-определённость))
 7. The **immanence** of description — an external observer is not required ([self-referential closure](#теорема-самореферентная-замкнутость))
 
-### What UHM Does Not Explain
+### What UHM Does Not Explain {#что-угм-не-объясняет}
 
 1. **Why** mathematical structure is experienced — a meta-theoretical question, equivalent to 'why do the laws of nature exist?'
 2. **Calibration of qualia** — which specific $[|q\rangle]$ corresponds to 'red'? This is an empirical question, analogous to determining the mass of the electron
@@ -632,6 +632,8 @@ UHM is no 'worse' than other fundamental theories — each pays its own 'primiti
 :::warning Critical Honesty
 UHM establishes that the spectral decomposition of $\rho_E$ is the **only** permissible form of experiential content (Uniqueness theorem FV), and a quality is determined by relational structure up to isomorphism (Yoneda's lemma; the earlier "the identity of qualia is fully determined" is retracted with "identical" in the theorem above). However, **calibration** — which specific $[|q\rangle]$ corresponds to 'red' — remains an empirical question, analogous to determining the mass of the electron in the Standard Model.
 :::
+
+How this calibration is done — and the structural and engineering tests that go with it — is collected in the [Empirical Programme](/docs/consciousness/empirical/overview): calibration and structure are decided by data, the mechanism by engineering, and the question of item 1 by neither.
 
 ### Calibration and the $G_2$-Frame: a retracted identification {#калибровка-как-g2-репер}
 
@@ -904,7 +906,7 @@ The categorical gap **is not eliminated**, but **is stripped of the status of an
 | Meditative states | Increase in self-model quality $R_\varphi$ ([forms of R](./self-observation#формы-r)); deep absorption is a purity excursion — canonical $R = 1/(7P)$ *narrows*, and at the peak qualia access closes ([depth tower §7.3](/docs/consciousness/hierarchy/depth-tower#лицензированная-экскурсия)) |
 | Flow states | High $\Phi$ and $R$ with specific context |
 
-### For Researchers of Inner Landscapes
+### For Researchers of Inner Landscapes {#граница-карты-и-территории}
 
 **Key thesis for practice:** According to UHM, subjective experience is not an illusion and not an epiphenomenon. It is the **internal side** of the same reality that science describes 'from outside'.
 

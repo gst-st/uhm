@@ -649,7 +649,7 @@ A modern LLM is an interesting borderline case: powerful information processing,
 
 ## Operationalization for AI Systems
 
-:::warning Status: [P] Research Program
+:::warning Status: [Pr] Research Program
 Metrics for AI systems require experimental validation. See [Γ measurement protocol](/docs/applied/research/measurement-protocol).
 :::
 
@@ -689,7 +689,7 @@ where $J_f = \partial f / \partial \mathbf{x}$ is the network's Jacobian. Effect
 
 ## Operationalization for Biological Systems
 
-:::warning Status: [P] Research Program
+:::warning Status: [Pr] Research Program
 Neurobiological correlates require experimental validation. See [Γ measurement protocol](/docs/applied/research/measurement-protocol).
 :::
 
@@ -726,7 +726,7 @@ Neurobiological correlates require experimental validation. See [Γ measurement 
 
 ## Operationalization for Organizations
 
-:::warning Status: [P] Research Program
+:::warning Status: [Pr] Research Program
 Organizational metrics are at the development stage.
 :::
 

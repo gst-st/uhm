@@ -6,7 +6,7 @@ description: "Reference protocol for empirical validation of UHM: 4 phases, 23 p
 
 # UHM Validation Experimental Protocol
 
-:::warning Document status: [P] Research programme
+:::warning Document status: [Pr] Research programme
 This document describes a **maximally complete experimental protocol** for the empirical validation of the Universal Holographic Model (UHM). The protocol is designed on the principle of maximal falsifiability: every experiment specifies a **concrete numerical result** that would refute the theory.
 :::
 
