@@ -291,6 +291,16 @@ where:
 - Why the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ has an "inner side"
 - Why this particular mathematical structure and not another
 
+**Premises in use (2026-09-26).** The single list, with where each premise is used, its status, the independence models and the mergers, is [Premises of UHM](/docs/reference/premises). In short:
+- **Axioms [P]:** A1–A4 and the constraint $\hat C\Gamma = 0$ of A5 (the form of the timeless state; the clock register itself is [T], T-87); the metatheory, the CPTP formalism and the frame decision D-0910 are definitions [D].
+- **Bridge premises of physics [H]:** (Cl₀) — fermions are vectors of the spinor module $\mathcal S = \mathbb C\otimes\mathbb O$; (P) — spacetime's tangent vectors are the Hermitian forms on the spinor factor of the fermion field, with a causal form preserved by every internal-structure-preserving transformation (⟺ (L) ∧ (W)). (P) as stated names $\mathcal S$, but the two are independent inputs; (W₀), a complex spinor factor, is not a separate premise.
+- **Principle of the self-model [Pr]:** (MaxΦ) — the anchor is maximally integrated, $\Phi(\rho_a) = 6$ (⟺ (Eq-V)); it is independent of the axioms and of life in the window, and no variational principle of the corpus yields it.
+- **Strict necessity of $N = 7$ [H]:** (P1₆); $N \geq 7$ needs no premise.
+- **Free parameters:** the associator coupling $\kappa$ of $V_{\text{Gap}}$ (free, T-331), $\mu^2$, $\lambda_4$, the regeneration rate and the Fano weight $\alpha$, $\omega_0$, $\bar\theta_{\mathrm{QCD}}$.
+- **Identification hypotheses [H]:** (SV), (GC) in broken form, (UP) at leading order, (PQ) (strong CP open [Pr]), (FE) and (SA) in the axis frame, the Higgs identification, T-186(a), the reconstruction and aperiodic-clock conditions of T-119/T-120 as physics, (HOL) [I].
+
+Results labelled "[T] as mathematics" use only the axioms; their physical readings carry the premises above. The former inputs (Alt), (MP), (MM), (Q), (RT), (Col), (Pure), (AGG), (ND) are discharged.
+
 :::info Minimality of the primitive
 UHM's primitive is **minimal** among all possible axiomatic choices: one axiom instead of two or three ([justification](/docs/consciousness/foundations/two-aspect-monism#минимальность-аксиомы)). From it are **derived**: the form of experiential content ([unique functor](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв)), identity of qualia ([Yoneda lemma](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность)), immanence of description ([closure via φ](/docs/consciousness/foundations/two-aspect-monism#самореферентная-замкнутость)).
 

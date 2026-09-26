@@ -6313,6 +6313,90 @@ def test_line_instrument_divergences_fix_no_coupling_and_no_gap_phase():
         assert abs(np.trace(K @ G @ K.conj().T) - np.trace(K @ G2 @ K.conj().T)) < 1e-15
 
 
+def _real_commutant_dim(ops, n):
+    G = np.zeros((n * n, n * n))
+    I = np.eye(n)
+    for X in ops:
+        ad = np.kron(X, I) - np.kron(I, X.T)
+        G += ad.T @ ad
+    return int(np.sum(np.linalg.eigvalsh(G) < 1e-8))
+
+
+def test_spinor_factor_premise_and_fermion_module_premise_are_independent():
+    """Посылки УГМ (reference/premises): (P) и (Кл₀) независимы — модели «все, кроме одной».
+
+    (Кл₀) без (P): Fₙ = ℂⁿ ⊗ 𝒮_ℂ при n = 3 — всё о поколении верно (48e(f)), но SL(W)-инвариантных
+    квадратичных форм на Herm(ℂ³) нет (0), причинной формы нет — (P) ложна.
+    (P) без (Кл₀): F = W ⊗_ℂ M с M = ℂ⁷ (векторы голонома, 𝔤₂ и i пространства ℋ): коммутант этой
+    внутренней структуры в End_ℝ(ℝ¹⁴) двумерен (= ℂ), значит преобразования W, сохраняющие её, —
+    GL(W), и при W = ℂ² инвариантная форма одна (det) — (P) выполнена; но dim_ℝ ℂ⁷ = 14 не кратно 16,
+    ℂ⁷ не модуль Cl₇ — (Кл₀) ложна. Объединение (P) и (Кл₀) в одну фразу возможно (так и записана (P)),
+    сокращения числа независимых входов — нет.
+    """
+    J = np.kron(np.array([[0.0, -1.0], [1.0, 0.0]]), np.eye(7))
+    ops = [np.kron(np.eye(2), X) for X in G2] + [J]
+    assert _real_commutant_dim(ops, 14) == 2
+    assert _real_commutant_dim([np.kron(np.eye(2), X) for X in G2], 14) == 4        # без i: M₂(ℝ)
+    assert 14 % 16 != 0 and 32 % 16 == 0
+    assert len(_invariant_quadratic_forms(2)) == 1 and len(_invariant_quadratic_forms(3)) == 0
+
+
+def _top_window_sink(d, s, kap, alpha, n=20001):
+    """Верхний сток в окне при постоянном якоре (T-335): η = F(P), F = B/A, P = d + η²s; None, если нет."""
+    c = (1 - alpha) / 3
+    Fp = lambda P: np.divide(*_anchor_window_parts(P, kap, c)[::-1])
+    h = lambda e: Fp(d + e * e * s) - e
+    eta = np.linspace(1e-6, 1, n)
+    P = d + eta ** 2 * s
+    v = h(eta)
+    idx = np.where((P[:-1] > 2 / 7) & (v[:-1] > 0) & (v[1:] <= 0))[0]
+    if not len(idx):
+        return None
+    lo, hi = eta[idx[-1]], eta[idx[-1] + 1]
+    for _ in range(80):
+        m = (lo + hi) / 2
+        lo, hi = (m, hi) if h(m) > 0 else (lo, m)
+    return lo
+
+
+def test_anchor_principle_is_independent_and_attractor_integration_does_not_replace_it():
+    """Посылки УГМ: (МаксΦ) независима от аксиом и от жизни в окне; максимум Φ аттрактора её не заменяет.
+
+    Якорь ρ_t = (1 − t)I/7 + t uu†, t = 0,9 (α = ½, κ = 100 > κ_c(0,9) = 75,56): (Eq) выполнено,
+    Φ(ρ_t) = 6t² = 4,86 < 6, а сток в окне есть — P ∈ (2/7, 3/7]. Унитальный якорь I/7: Φ = 0, (Eq) верно,
+    голоном мёртв. Аттрактор постоянного якоря зависит лишь от d = Σ(ρ_a)ᵢᵢ² и s = P(ρ_a) − d, и его
+    интеграция равна η²s/d; при фиксированном d она растёт с s (чистый якорь лучше). Принцип
+    «наибольшая интеграция аттрактора» выбирает uu† лишь при κ выше κ_* ≈ 1,012 κ_c(α): при α = 0,
+    κ = 16,8 чистый якорь с d = 1/7 + 10⁻⁴ даёт Φ_att = 1,25155 > 1,25148 у uu†; при κ = 20 uu† выигрывает
+    у всех якорей сетки (чистых и смешанных).
+    """
+    alpha, kap, t = 0.5, 100.0, 0.9
+    u = np.ones(7) / np.sqrt(7)
+    rho = (1 - t) * np.eye(7) / 7 + t * np.outer(u, u)
+    assert np.allclose(np.diag(rho), 1 / 7) and abs(integration(rho) - 6 * t * t) < 1e-12
+    e = _top_window_sink(1 / 7, 6 * t * t / 7, kap, alpha)
+    G0 = (1 - e) * np.eye(7) / 7 + e * rho
+    f = _living_generator(np.zeros((7, 7)), lambda Y: rho.astype(complex), kap, alpha)
+    G = _stationary(f, G0.astype(complex))
+    assert np.linalg.norm(f(G)) < 1e-10 and 2 / 7 < purity(G) <= 3 / 7 and np.allclose(G, G0, atol=1e-6)
+    assert integration(np.eye(7) / 7) == 0
+    phi_att = lambda d, s, k, a: (lambda x: None if x is None else x * x * s / d)(_top_window_sink(d, s, k, a))
+    a0, b0 = phi_att(1 / 7, 6 / 7, 16.8, 0.0), phi_att(1 / 7 + 1e-4, 6 / 7 - 1e-4, 16.8, 0.0)
+    assert b0 > a0 + 3e-5
+    best = phi_att(1 / 7, 6 / 7, 20.0, 0.0)
+    for d in np.linspace(1 / 7 + 1e-4, 0.5, 40):
+        for frac in (1.0, 0.9, 0.6):
+            v = phi_att(d, frac * (1 - d), 20.0, 0.0)
+            assert v is None or v < best
+    for a, kc in ((0.0, 16.63), (0.5, 29.25), (1.0, 59.34)):                     # κ_* ∈ (1,005; 1,02)·κ_c
+        slope = [phi_att(1 / 7 + 1e-6, 6 / 7 - 1e-6, r * kc, a) - phi_att(1 / 7, 6 / 7, r * kc, a)
+                 for r in (1.005, 1.02)]
+        assert slope[0] > 0 > slope[1]
+    for s_lo, s_hi in ((0.5, 0.6), (0.7, 0.8)):
+        x_lo, x_hi = _top_window_sink(0.2, s_lo, 60.0, 0.0), _top_window_sink(0.2, s_hi, 60.0, 0.0)
+        assert x_lo is not None and x_hi * x_hi * s_hi > x_lo * x_lo * s_lo
+
+
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
     bad = 0
