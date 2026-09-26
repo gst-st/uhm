@@ -243,6 +243,26 @@ def headerless_table_rows(roots, *, files=None):
 HEADERLESS_BASE = 0
 
 
+CONFLICT_MARK = re.compile(r"^(<{7} |={7}$|>{7} )")
+
+
+def merge_conflict_marks(roots):
+    """ПРЕДПОЛЁТ ПО ИСХОДНИКУ: маркеры неразрешённого слияния git.
+
+    26.09.2026 слияние ветки было закоммичено с «<<<<<<< / ======= / >>>>>>>» в
+    реестре обеих локалей — и все пять стражей вернули 0: строки с маркерами не
+    похожи ни на цитату, ни на строку реестра, и их никто не читал. Маркер —
+    отдельный класс порчи, и ловится он только прямым поиском.
+    """
+    bad = []
+    for root in roots:
+        for f in sorted(root.rglob("*.md*")):
+            for i, line in enumerate(f.read_text(encoding="utf-8").split("\n"), 1):
+                if CONFLICT_MARK.match(line):
+                    bad.append((f, i, line[:20]))
+    return bad
+
+
 def fence_nesting(docs: pathlib.Path):
     """ПРЕДПОЛЁТ ПО ИСХОДНИКУ: вложенная врезка тем же числом двоеточий.
 
@@ -291,6 +311,13 @@ def main() -> int:
         print(f"  {f.relative_to(ROOT)}:{i}: {why}")
     if nesting:
         print("  правило: внешняя врезка — больше двоеточий, чем внутренняя; иначе фенс уходит в текст")
+        return 1
+    marks = merge_conflict_marks((DOCS, RU_DOCS))
+    print(f"маркеры неразрешённого слияния (по исходнику, обе локали): {len(marks)}")
+    for f, i, m in marks[:10]:
+        print(f"  {f.relative_to(ROOT)}:{i}: {m}")
+    if marks:
+        print("  правило: слияние с маркерами не коммитится — разрешите хунки")
         return 1
     pipes = pipe_in_table_math((DOCS, RU_DOCS))
     print(f"черта внутри формулы в строке таблицы (по исходнику, обе локали): нарушений {len(pipes)}")
