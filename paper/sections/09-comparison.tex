@@ -36,7 +36,7 @@ Figure~\ref{fig:comparison}.
 \begin{table}[H]
 \centering
 \caption{Systematic comparison of theories of consciousness. \checkmark = fully addresses;
-$\sim$ = partially addresses; --- = does not address.}
+$\sim$ = partially addresses; --- = does not address. For UHM, physics means the Einstein--Hilbert term and $M^4$ (\status{T} as mathematics) and Standard-Model structure at the bridge premise (Cl); the quantum formalism is assumed, not derived.}
 \label{tab:comparison}
 \small
 \renewcommand{\arraystretch}{1.3}
@@ -57,7 +57,7 @@ Computational complexity &
   $O(N^2)$ for $P$ & super-exp.\ for $\Phi$ & N/A & $O(N^2)$ for $F$
   & N/A & N/A & N/A \\
 Derives physics &
-  \checkmark\,(GR, QM, SM) & --- & --- & --- & --- & --- & --- \\
+  $\sim$\,(GR, SM) & --- & --- & --- & --- & --- & --- \\
 Zombie impossibility &
   \checkmark\,(theorem) & --- & --- & --- & --- & --- & --- \\
 \bottomrule
@@ -79,8 +79,9 @@ ten to fifteen elements on current hardware, beyond which only approximation sch
 are available. UHM's purity measure $P = \Tr(\Gam^2)$ is $O(N^2) = O(49)$ by
 comparison. Second, \emph{no numerical threshold}: IIT states that consciousness
 corresponds to $\Phi > 0$, but any system with more than one element can have
-$\Phi > 0$, including a simple grid of logic gates. UHM derives $\Pcrit = 2/7$ from
-five independent arguments. Third, \emph{no explanation of why}: IIT postulates
+$\Phi > 0$, including a simple grid of logic gates. UHM derives $\Pcrit = 2/7$ along
+five paths --- two exact derivations (Frobenius majority, Haar detection) and three
+supporting characterisations. Third, \emph{no explanation of why}: IIT postulates
 that integrated information \emph{is} consciousness but does not explain why
 irreducibility should feel like anything. UHM reframes this question via
 two-aspect monism (Def.~\ref{def:two-aspect}): experience is not \emph{produced
@@ -157,10 +158,13 @@ However, CAT diverges from UHM in four critical respects:
         programme, the ``Fitness Beats Truth'' result~\cite{prakash2021fbt}
         argues that natural selection favours adaptive perception over
         veridical mapping of reality, motivating the claim that spacetime is
-        a species-specific interface. UHM instead derives spacetime as
-        \emph{emergent and physical}: $M^4 = \mathbb{R} \times \Sigma^3$
-        follows from T-117--T-120 as a macroscopic projection of $\Gam$,
-        reproducing the Einstein equations and Standard Model.
+        a species-specific interface. UHM instead constructs spacetime as
+        \emph{emergent}: $M^4 = \mathbb{R} \times S^3$ is computed by
+        T-118--T-120 (\status{T} as mathematics; its reading as physical
+        space is \status{I}) as a macroscopic limit of holon observables,
+        and carries the Einstein--Hilbert term of the spectral action
+        (the Standard-Model part of that action is imported from Connes'
+        finite triple, not derived).
   \item \textbf{No falsifiable numerical predictions.} The 2014 paper's
         content is structural (kernel composition, join theorems), not
         quantitative. UHM predicts $\Pcrit = 2/7$, $\beta = 1/4$,
@@ -230,9 +234,11 @@ speculation.
 The Predictive Processing (PP) framework (Friston, Clark, Hohwy) treats
 perception as Bayesian hierarchical inference that minimises surprise
 (prediction error). PP is a successful \emph{computational-level} theory
-of cognition; UHM shares its variational underpinning (FEP is derivable
-from UHM, Thm.~3.1 of \S\ref{sec:formalism}) but is ontologically more
-ambitious: PP describes how the brain \emph{computes}, while UHM specifies
+of cognition; UHM once claimed to contain the FEP as a classical limit of a
+variational characterisation of $\vp$, but that claim is retracted
+\status{$\times$} (the functional is a cross-entropy whose minimiser is the
+projection onto the top eigenvector of $\Gam$, not $\vp$; whether the FEP is a
+limit of UHM is an open programme). UHM is ontologically more ambitious: PP describes how the brain \emph{computes}, while UHM specifies
 \emph{which} physical configurations \emph{instantiate} experience. PP
 does not distinguish zombie-like classical simulation from genuine
 experience (T-38a) and offers no mechanism connecting prediction accuracy
@@ -253,14 +259,16 @@ at a certain level of abstraction. UHM's position on AI Scientist is
 direct: the system performs valuable algorithmic search at $\mathrm{SAD}=0$
 to $\mathrm{SAD}=1$ depth but does not satisfy the four consciousness
 thresholds --- no $\Gam \in \mathcal D(\mathbb C^7)$ factors through its
-operation, so by T-153~\status{T}+T-153a~\status{T} it is not conscious
+operation, so by T-153~\status{D}+T-153a~\status{T} it is not conscious
 in the UHM sense, regardless of output quality. This is orthogonal to the
 system's scientific utility: AI Scientist can be an excellent research
 tool while remaining a zombie in the T-38a sense. UHM thus resolves the
 apparent paradox --- ``how can something do science without understanding
 it?'' --- by locating understanding at L1/L2 (coherence-matrix structure)
 rather than at L3 (token-level output); the two layers are structurally
-independent, by T-223.
+independent, by T-223. (Whether a given system's L3 dynamics also realises
+an L2 class --- the simulation/instantiation line --- is open; T-223's
+predicate cannot draw it.)
 
 \subsection{Unique contributions of UHM}
 
@@ -270,33 +278,53 @@ among current theories of consciousness:
 \begin{enumerate}[leftmargin=2em]
   \item \textbf{Exact numerical predictions:} $\Pcrit = 2/7$, $\Rth = 1/3$,
         $\Phith = 1$, $\Dmin = 2$, $\mathrm{SAD}_{\max} = 3$, $\alpha = 1/2$,
-        $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$ --- with zero adjustable parameters.
-  \item \textbf{Physics derivation:} Einstein equations, quantum mechanics, and Standard
-        Model structure emerge from the same axioms as consciousness.
-  \item \textbf{Zombie impossibility as a theorem:} a mathematical proof from the spectral
-        gap and $\kappa \propto \CohE$, not an assumption or philosophical argument.
+        $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$ --- none of them fitted
+        ($D_{\min} = 2$ is an independent threshold \status{D}, T-151).
+  \item \textbf{Physics from the same primitive:} the Einstein--Hilbert term
+        (\status{T} as a formula), $M^4 = \mathbb{R}\times S^3$ (\status{T} as
+        mathematics), colour $SU(3)_C$ \status{T}, and the Standard-Model group,
+        chirality and one generation through the Clifford system of
+        $\mathbb{C}\otimes\Oct$ (T-326--T-329, \status{T} as mathematics,
+        \status{C at (Cl)} in UHM); the quantum formalism itself is assumed,
+        not derived (T-188).
+  \item \textbf{Zombie impossibility as a theorem:} a mathematical core
+        ($\CohE > 1/7$ for every viable holon with $\mathcal{D}_\Omega \neq 0$,
+        \status{T}) from the spectral gap and $\kappa \propto \CohE$; its reading
+        as the impossibility of zombies is \status{I} (T-38a).
   \item \textbf{Tricritical exponents:} five exact rational numbers ($\alpha$, $\beta$,
         $\gamma$, $\nu$, $\delta$), each independently measurable, placing the consciousness
-        transition in a specific universality class.
+        transition in a specific universality class --- \status{C at the $\mathbb{Z}_2$
+        symmetry $m \to -m$} (T-161); without it the generic swallowtail gives
+        $\beta = 1/2$.
   \item \textbf{Polynomial-time computability:} $P = \Tr(\Gam^2) = O(N^2)$ with $N = 7$,
         compared to super-exponential complexity for IIT's $\Phi$.
-  \item \textbf{Self-grounding (zero axioms):} All five axioms A1--A5 are derived as
-        theorems (T-186, T-187, T-189, T-190~\status{T}), leaving zero free parameters
-        and zero independent postulates. No other theory of consciousness --- or of
-        physics --- achieves full axiomatic self-grounding.
-  \item \textbf{Hard problem localized:} T-188~\status{T} reduces ``why experience?'' to
-        ``why quantum mechanics?'' via the cohesive closure chain
-        (Schreiber~\cite{schreiber2013} differential cohesion). No consciousness-specific
-        mystery remains. No other theory achieves this precise localization.
-  \item \textbf{Self-modeling convergence:} T-191~\status{T} proves that the iterative
-        self-model $\vp^{(n)}$ converges exponentially from any initial anchor, resolving
-        the circularity of self-reference. T-192~\status{T} proves the experiential
-        2-category is strict, giving consciousness proper compositional structure.
+  \item \textbf{Axiomatic closure (conditional):} A2 from T-187+T-189
+        \status{T}, A3 from Theorem~S and T15, A4 from (AP), the clock register
+        of A5 from T-87; A1 only through the hypothesis T-186(a). T-190 is
+        therefore \status{C at the Page--Wootters constraint and T-186(a)}:
+        the former claim of full self-grounding with zero independent axioms
+        is retracted \status{$\times$} --- the constraint $\hat C\Gam = 0$ of A5
+        remains an independent axiom, and the free parameters of the
+        potential (among them the associator coupling $\kappa$, T-331) are free.
+  \item \textbf{Hard problem localized (conditional):} T-188~\status{C at T-186(a)}
+        would reduce ``why experience?'' to ``why quantum mechanics?'' via the
+        cohesive closure chain (Schreiber~\cite{schreiber2013} differential
+        cohesion); the chain passes through the hypothesis T-186(a), so the
+        localization is conditional.
+  \item \textbf{Self-modeling convergence (restated):} T-191~\status{T} proves
+        that for an embodied holon with backbone dominance the $\vp$-tower converges
+        geometrically to one self-model from any anchor; the former claim of
+        convergence for every holon is retracted \status{$\times$} (an isolated
+        holon is bistable). The circularity of self-reference is resolved by the
+        closed forms of $\vp_{\mathrm{coh}}$ and $\vp_s$, not by the tower.
+        T-192~\status{T} proves the experiential 2-category is strict, giving
+        consciousness proper compositional structure.
   \item \textbf{Foreclosure of computational triviality (T-223~\status{T}):} via the
         three-level L1/L2/L3 ontology and $G_2$-invariance of observables, the UHM
         consciousness predicate is alphabetization-invariant --- Putnam (1988)
-        multiplicity acts only on the symbolic L3 layer, not on the intrinsic
-        categorical class $[\Gam_S]_{G_2}$ at L2. No other theory of consciousness
+        multiplicity acts only on the symbolic L3 layer; the $P, R$ terms factor
+        through the intrinsic class $[\Gam_S]_{G_2}$ at L2 and the $\Phi, D_{\min}$
+        terms are fixed by the dynamical frame. No other theory of consciousness
         formally closes Putnam's triviality / Lerchner's Melody Paradox argument.
 \end{enumerate}
 
@@ -340,70 +368,49 @@ methodological bias.
 \label{subsec:list-debrota-response}
 
 A separate challenge to any mathematical theory of consciousness
-arises from two recent no-go results. List~(2025)~\cite{list2025quadrilemma}
-proves that the five theses \{first-personal realism, non-solipsism,
-one world, non-fragmentation, non-relationalism\} are jointly
-inconsistent (the \emph{quadrilemma for consciousness}).
-DeBrota--List~(2026)~\cite{debrota2026heptalemma,debrotalist2026preprint}
-extend this to seven theses jointly inconsistent with the predictions
-of quantum mechanics (the \emph{heptalemma for quantum mechanics}).
-The authors identify three non-objectivist routes
-(relationalist, fragmentalist, many-subjective-worlds) in each case
-and leave the choice to inference to the best explanation, supplying
-no measurable discriminator.
+arises from recent no-go results. List~(2025)~\cite{list2025quadrilemma}
+shows that four claims about consciousness cannot all hold (the
+\emph{quadrilemma for consciousness}).
+DeBrota and List~(2026)~\cite{debrotalist2026preprint} state five theses
+\{first-personal realism (FPR), non-solipsism (NS), one world (OW),
+non-fragmentation (NF), non-relationalism (NR)\} that are jointly
+inconsistent, and~\cite{debrota2026heptalemma} extend the argument to seven
+theses jointly inconsistent with the predictions of quantum mechanics (the
+\emph{heptalemma for quantum mechanics}). The authors identify three
+non-objectivist routes (relationalist, fragmentalist,
+many-subjective-worlds) and leave the choice to inference to the best
+explanation.
 
-UHM's response is formalised as
-Theorem~T-221~\status{T}+\status{I} (see
-\S\ref{subsec:extended-closures} for statement, proof, and full
-decomposition of the five theses into UHM structures). The headline:
-the UHM cohesive $\infty$-topos realises a \emph{fourth}
-non-objectivist route outside the DeBrota--List taxonomy, obtained
-by a single structural replacement
-$\mathrm{NR} \rightsquigarrow \mathrm{NR}_{\mathrm{site}}$
-(site-relativisation of non-relationalism) while preserving FPR,
-NS, OW, NF. The replacement simultaneously dissolves both the
-quadrilemma and the heptalemma; RQM, fragmentalism, and the
-many-subjective-worlds theory appear as \emph{reductive truncations}
-of this fourth route rather than competing positions.
+UHM's answer is Theorem~T-221~\status{T}+\status{I} (statement and proof in
+\S\ref{subsec:extended-closures}): (a)~List's lemma holds internally --- the
+first-personal facts of two subjects in different states are not compossible
+(no inhabited stage of the topos $\mathfrak T$ forces both, Kripke--Joyal
+semantics); (b)~UHM keeps OW (one topos), NF, NS and FPR in
+stage-relativised form, so NR fails for first-personal facts --- this is the
+\emph{relationalist} route of DeBrota--List, the first horn of List's
+quadrilemma; (c)~the relativisation parameter is internal; (d)~no internal
+formula selects ``my'' stage (the choice of a point is external data,
+cf.\ T-214); (e)~the three routes are readings of one forcing relation and
+share every observable \status{T}; which reading is UHM's is \status{I}.
+For the heptalemma, UHM keeps locality, measurement independence,
+measurement realism, NS, OW and NF and relaxes NR --- the route of
+relational quantum mechanics (Rovelli~\cite{rovelli1996rqm}); UHM and RQM
+share the route and differ in the relativisation parameter \status{I}.
 
-\begin{table}[H]
-\centering
-\small
-\caption{The three non-objectivist routes of DeBrota--List (2026)
-as reductive truncations of the UHM cohesive $\infty$-topos.
-Proof of each reduction: T-221 Corollary~C3 and proof sketch,
-\S\ref{subsec:extended-closures}.}
-\label{tab:t221-routes-compact}
-\begin{tabular}{@{}p{4cm} p{4.5cm} p{5cm}@{}}
-\toprule
-\textbf{Route} & \textbf{$\mathfrak T$-specialisation} & \textbf{What is lost} \\
-\midrule
-Relational QM (Rovelli~\cite{rovelli1996rqm}, 2025) & 1-truncation
-$\tau_{\leq 1}(\mathfrak T)$ & All $n \geq 2$ coherences, FPR
-carried by the $\&$-modality --- matches Glick's 2021 critique
-that RQM is ``too third-personal''~\cite{glick2021qbism} \\
-\midrule
-Fragmentalism (Fine~\cite{fine2005tense};
-Lipman~\cite{lipman2023subjective}) & Drop descent in a sector &
-Violates T-211 Giraud --- no longer an $\infty$-topos \\
-\midrule
-Many-subjective-worlds (Mermin~\cite{mermin2019better}; List 2023)
-& Pointwise Yoneda without gluing & Covering coherence
-$\{U_i \to W\}$, shared objectivity \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\paragraph{Empirical discriminator.} Where DeBrota--List leave
-route-selection to philosophical preference, UHM provides a
-measurable criterion via the $\pi_{\mathrm{bio}}$ protocol
-(\S\ref{sec:predictions} prediction~21): TMS--EEG measurement of
-$\Phi(\Gam)$ predicts a $\Phi \geq 1$ threshold with sector-profile
-dependence (UHM/T-221); no predicted threshold, only relative
-correlations (RQM shadow); incoherent $\Phi$-assignments across
-subjects (fragmentalism); per-subject $\Phi$ without cross-subject
-invariant (many-subjective-worlds). A philosophical choice becomes
-an empirically resolvable question.
+An earlier version of this paper claimed that the cohesive $\infty$-topos
+realises a \emph{fourth} non-objectivist route outside the DeBrota--List
+taxonomy, that RQM is its 1-truncation $\tau_{\leq 1}(\mathfrak T)$, that
+fragmentalism amounts to dropping descent, and that the $\pi_{\mathrm{bio}}$
+protocol discriminates empirically between the routes. All four claims are
+retracted \status{$\times$}: replacing NR by a site-relative
+$\mathrm{NR}_{\mathrm{site}}$ while keeping OW and NF \emph{is} the
+relationalist route; the representables of the 1-category $\mathcal C_7$ are
+already 0-truncated, so 1-truncation changes none of them; in the
+sheaf-theoretic formalisation that DeBrota and List cite (Abramsky and
+Brandenburger 2011) descent holds and what fails is a global section; and by
+part~(e) no measurement separates the routes. Whether relativised FPR is a
+cost or the correct account is the question DeBrota and List leave open, and
+UHM does not settle it.
 
 \paragraph{Independent convergence: Lerchner (2026).} Lerchner's
 abstraction-fallacy argument~\cite{lerchner2026abstraction} arrives
@@ -411,8 +418,8 @@ at the same broad conclusion via a different route: computation is a
 ``mapmaker-dependent'' description rather than an intrinsic physical
 process, inverting the chain \emph{Physics $\to$ Computation $\to$
 Consciousness} into \emph{Physics $\to$ Consciousness $\to$ Concepts
-$\to$ Computation}. This is the negative form of T-221 combined
-with the Lawvere barrier T-214; UHM supplies the positive,
+$\to$ Computation}. This is close in spirit to the Lawvere barrier
+T-214; UHM supplies the positive,
 constructive counterpart Lerchner leaves open (``What physical
 conditions?''): $\Gam \in \mathcal D(\mathbb C^7)$ with
 $G_2$-covariant Lindblad dynamics and the four measurable
@@ -422,8 +429,11 @@ The Putnam~\cite{putnam1988} triviality concern underlying
 Lerchner's Melody Paradox (his §3.3) is closed formally by a distinct
 theorem T-223~\status{T} (Putnam-triviality foreclosure,
 \S\ref{subsec:theoretical-closures}): the three-level ontology
-$L_1$ (physical vehicle) $/$ $L_2$ (intrinsic $G_2$-class forced by
-T-190) $/$ $L_3$ (symbolic readout) establishes that
+$L_1$ (physical vehicle) $/$ $L_2$ (intrinsic $G_2$-class; the forcing
+of $\mathbb C^7$ and $G_2$ holds through the bridge T15 with the canonical
+Fano orientation --- the earlier ``forced by the zero-axiom closure T-190''
+is withdrawn, T-190 being conditional) $/$ $L_3$ (symbolic readout)
+establishes that
 alphabetization multiplicity acts on $L_1 \to L_3$ but has zero
 purchase on $L_1 \to L_2$; self-alphabetization is intrinsic via the
 intrinsic reflection measures $R$/$R_\varphi$ (T-96, T-126), categorifying the
@@ -437,35 +447,43 @@ vacuous (Piccinini 2008~\cite{piccinini2008}; Kim
 
 The Connes--Chamseddine (CC) noncommutative geometry program~\cite{connes1996,chamseddine2007}
 is the closest mathematical framework to UHM's gravitational sector. UHM uses the CC
-spectral-triple machinery directly and recovers the same phenomenology, but supplies
-\emph{derivations} for inputs CC takes as given. The key structural comparison:
+spectral-triple machinery directly; its gravitational sector is its own, while
+the Standard-Model part of the spectral action is imported from CC's finite
+triple (no real structure of KO-dimension~6 exists on $H_{\mathrm{int}} =
+\mathbb{C}^7$). The key structural comparison:
 
 \begin{table}[H]
 \centering\small
 \caption{UHM vs.\ Connes--Chamseddine NCG framework.}
 \label{tab:cc-comparison}
-\begin{tabular}{@{}clll@{}}
+\begin{tabular}{@{}c p{2.7cm} p{3.9cm} p{6.2cm}@{}}
 \toprule
 \# & \textbf{Structure} & \textbf{CC} & \textbf{UHM} \\
 \midrule
 1 & Internal algebra   & $A_F$ postulated & $A_\mathrm{int}$ \emph{derived} from $\Oct + G_2$ \\
-2 & Gauge group        & $SU(3){\times}SU(2){\times}U(1)$ & Identical (Morita, T-175a) \\
+2 & Gauge group        & $SU(3){\times}SU(2){\times}U(1)$ & Normaliser of colour in $\mathrm{Spin}(9)$ (T-326, \status{C at (Cl)}); Morita route T-175a \status{$\times$} \\
 3 & $a_2 \to$ EH action & $G_N \sim 1/(a_2\Lambda^2)$ & Identical; $G_N = 3\pi/(7f_2\Lambda^2)$ \\
-4 & $a_0 \to \Lambda$   & CC problem (``too large'') & Gap hierarchy ($\mu\sim 10^{-3}$\,eV) \\
-5 & $a_4 \to$ Yukawa     & Same structure & + $G_2$-equivariant organisation \\
-6 & Higgs sector       & $m_H \approx 125$\,GeV (RG) & Compatible; Fano-line $\{A,E,U\}$ \\
+4 & $a_0 \to \Lambda$   & CC problem (``too large'') & Gap hierarchy; bracket $10^{-53.5}$--$10^{-93.5}\,M_P^4$ \status{C} vs.\ $10^{-120}$, $\gtrsim 27$ orders open \\
+5 & $a_4 \to$ gauge + Yukawa & Same structure & Imported with CC's $H_F$ \\
+6 & Higgs sector       & $m_H \approx 170$\,GeV (2007), rescued with a singlet (2012) & Inherited; $H \sim \gamma_{EU}$ \status{H} \\
 7 & Neutrino $m_2/m_3$ & Free parameter & $0.17$--$0.20$ (2-loop RG, C14) \\
-8 & UV finiteness      & NCG-completed & Explicit $G_2$-Ward + SUSY (T-66) \\
-9 & Manifold $M^4$     & Postulated & \emph{Derived} T-117--T-120 \\
+8 & UV finiteness      & NCG-completed & $G_2$-Ward + SUSY (T-66): field space \status{T}, order by order \status{C} \\
+9 & Manifold $M^4$     & Postulated & $\mathbb{R}\times S^3$ computed, T-118--T-120 (\status{T} as math.) \\
 10 & Consciousness      & None & E-sector phenomenology \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \noindent
-UHM recovers the \emph{entire} CC phenomenology (gravity + Standard Model) and adds three
-independent contributions: derivation of $A_\mathrm{int}$ from octonions, derivation of
-$M^4$ from categorical algebra, and connection to consciousness via the E-sector. The
+UHM recovers the CC gravitational sector (the Einstein--Hilbert term sees the internal
+space only through $\mathrm{Tr}(1) = 7$) and imports the Standard-Model part together
+with its history: the 2007 ``big desert'' Higgs mass $\approx 170$\,GeV was excluded in
+2008, and the 2012 rescue adds a singlet and a fitted parameter. The earlier claims that
+$A_{\mathrm{int}}$ is Morita-equivalent to CC's algebra (T-175a) and that one generation
+arises as its bimodule (T-178) are retracted \status{$\times$} (the centres differ, and
+$\mathbb{C}^7$ carries no KO-dimension-6 real structure). UHM's own contributions are the
+algebra $A_\mathrm{int}$ from octonions, the construction of $M^4 = \mathbb{R}\times S^3$
+from holon observables, and the connection to consciousness via the E-sector. The
 neutrino mass ratio is the most precise UHM-specific numerical prediction: tree-level
 $m_2/m_3 = 0.308$ (discrepancy $\times 1.8$ with experiment), reduced to $0.17$--$0.20$
 (discrepancy $\times 1.0$--$1.2$) with 2-loop RG running (C14~\status{C}) --- essentially

@@ -14,7 +14,10 @@ consciousness transition at $\Pcrit$ is a \emph{tricritical point} in this class
 mean-field exactness follows from three independent pillars --- topological rigidity of the
 $\varphi^6$ family, deterministic Lindblad dynamics with no separate fluctuating field, and
 order-parameter dimension $d_\mathrm{eff} = 21$ giving $1/N \approx 5\%$ corrections.
-The derivation follows T-161~\status{T}.
+The derivation follows T-161~\status{C at the $\mathbb{Z}_2$ symmetry $m \to -m$}:
+the exponents below hold under that symmetry; without it the generic
+codimension-3 point is the $A_4$ swallowtail with $\beta = 1/2$ (see ``Origin of
+the $\mathbb{Z}_2$ symmetry'' below).
 
 \subsection{Setup: the $\phi^6$ Landau potential near $\Pcrit$}
 
@@ -62,8 +65,8 @@ T-96~\status{T}):
   \item $\Delta F$ --- free-energy budget (thermodynamic drive).
 \end{itemize}
 Three independent parameters force the transition into the $A_{4}$
-(swallowtail) class, whose even-sector Landau normal form is exactly
-the $\varphi^{6}$ tricritical potential
+(swallowtail) class, whose even-sector (i.e.\ $\mathbb{Z}_2$-symmetric) Landau
+normal form is exactly the $\varphi^{6}$ tricritical potential
 \cite{griffiths1970,lawrie1984}:
 \begin{equation}
   \mathcal{F}[m;\,\varepsilon, h]
@@ -74,8 +77,9 @@ the $\varphi^{6}$ tricritical potential
   \qquad r_0, v, d > 0.
   \label{eq:phi6-functional}
 \end{equation}
-The quartic term $u\,m^{4}$ is absent at the $A_{4}$ point by the
-classification theorem, \emph{not} by algebraic fine-balancing. This is the
+Given the $\mathbb{Z}_2$ symmetry, the quartic term $u\,m^{4}$ is absent at the
+$A_{4}$ point by the classification theorem, \emph{not} by algebraic
+fine-balancing. This is the
 defining condition of a tricritical point: three coexisting minima of the
 effective potential coalesce at $\varepsilon = 0$, corresponding to the
 tip of the swallowtail caustic.
@@ -89,15 +93,18 @@ has normal form $V = x^5/5$, no $\mathbb Z_2$, and gives $\beta = 1/2$, \emph{no
 $1/4$). The naming ``$A_4$-tricritical'' sometimes used in physics literature
 conflates these; we use $\varphi^6$ tricritical to be unambiguous.
 
-\textbf{Origin of the $\mathbb{Z}_2$ symmetry.} The even parity of the Landau
-potential is not imposed but derived. The dissipation--regeneration balance (covariant under the octonionic frame
-group $\Gamma_{\mathrm{oct}} = \mathrm{Aut}(\mathrm{PG}(2,2)) \cong \mathrm{PSL}(2,7)$)
-is invariant under the canonical involution
-$\sigma: \Gam \mapsto J\Gam^T J^{-1}$ of the real structure $J$ (KO-dimension~6,
-T-53~\status{T}). This involution acts on the E-coherence order parameter as
-$m \mapsto -m$ (charge-conjugation on the $\bar{\mathbf{3}}$-sector), forcing all
-odd-power couplings in the effective potential to vanish. The $\mathbb{Z}_2$ is
-therefore a structural consequence of the KO-dim-6 real structure, not a fine-tuning.
+\textbf{Origin of the $\mathbb{Z}_2$ symmetry (an assumption).} An earlier version
+of this appendix derived the even parity of the Landau potential from the canonical
+involution $\sigma: \Gam \mapsto J\Gam^T J^{-1}$ of a real structure $J$ of
+KO-dimension~6 (T-53), acting on the E-coherence order parameter as $m \mapsto -m$
+(charge conjugation on the $\bar{\mathbf{3}}$-sector). That derivation is retracted
+\status{$\times$}: no real structure of KO-dimension~6 exists on $\mathbb{C}^7$
+(on an odd-dimensional space $J\chi = -\chi J$ cannot hold), and the axis-labelled
+$\bar{\mathbf{3}}$-sector is itself retracted (row 48a). The $\mathbb{Z}_2$ symmetry
+$m \to -m$ is therefore an explicit assumption of this appendix, and the exponents
+are \status{C} at it (T-161). Without it the generic codimension-3 point is the
+$A_4$ swallowtail, with $\beta = 1/2$; a measured $\beta = 1/2$ rather than $1/4$
+would discriminate between the two.
 
 \subsection{Effective dimension and exactness of mean-field exponents}
 
@@ -135,7 +142,8 @@ Transverse modes contribute Gaussian fluctuations that do not modify exponents.
     count gives leading $1/N \approx 5\%$ corrections under any stochastic
     reinterpretation, within experimental PCI resolution.
 \end{enumerate}
-Mean-field tricritical exponents are therefore \emph{exact}.
+Under the $\mathbb{Z}_2$ symmetry, the mean-field tricritical exponents are therefore
+\emph{exact}.
 
 \subsection{Derivation of $\beta = 1/4$}
 
@@ -307,14 +315,17 @@ Mean field ($\phi^4$) & $0$ & $1/2$ & $1$ & $1/2$ & $3$ & $2$ \\
 Tricritical MF ($\phi^6$) & $1/2$ & $1/4$ & $1$ & $1/2$ & $5$ & $2$ \\
 3D Ising & $0.110$ & $0.326$ & $1.237$ & $0.630$ & $4.79$ & $2$ \\
 Superfluid He & $-0.013$ & $0.347$ & $1.316$ & $0.672$ & $4.78$ & $\approx 2$ \\
-\textbf{UHM consciousness} & $\mathbf{1/2}$ & $\mathbf{1/4}$ & $\mathbf{1}$ & $\mathbf{1/2}$ & $\mathbf{5}$ & $\mathbf{2}$ \\
+\textbf{UHM consciousness} (at $\mathbb{Z}_2$) & $\mathbf{1/2}$ & $\mathbf{1/4}$ & $\mathbf{1}$ & $\mathbf{1/2}$ & $\mathbf{5}$ & $\mathbf{2}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The UHM exponents are the standard $\varphi^6$ mean-field tricritical exponents, exact by the
-three-pillar argument of Section~B.2 above (topological rigidity + deterministic dynamics
-+ large-$N$ cross-check). The Rushbrooke identity $\alpha + 2\beta + \gamma = 2$
-is satisfied as an equality. If experimentally confirmed, they would establish consciousness
-as a tricritical phase transition --- one where the quartic coefficient vanishes due to the
-Fano geometry of self-observation, promoting the transition from $\phi^4$ to $\phi^6$.
+Under the $\mathbb{Z}_2$ symmetry $m \to -m$ (T-161,~\status{C}), the UHM exponents are
+the standard $\varphi^6$ mean-field tricritical exponents, exact by the three-pillar
+argument of Section~B.2 above (topological rigidity + deterministic dynamics + large-$N$
+cross-check). The Rushbrooke identity $\alpha + 2\beta + \gamma = 2$ is satisfied as an
+equality. If experimentally confirmed, they would establish consciousness as a tricritical
+phase transition --- one where the three control parameters and the parity of the order
+parameter remove the quartic coefficient, promoting the transition from $\phi^4$ to
+$\phi^6$; a measured $\beta = 1/2$ would instead point to the generic swallowtail without
+the symmetry.
