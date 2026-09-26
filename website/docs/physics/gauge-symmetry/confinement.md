@@ -603,6 +603,8 @@ For the one-generation fermion content of Step 3 — the Standard-Model fermions
 $$\mathrm{tr}(T^a \{T^b, T^c\}) = 0 \quad \text{for all gauge generators}$$
 :::
 
+**Frame of the premise (2026-09-26).** (FE) is the premise of the axis frame. In the Clifford frame it is replaced by (Cl₀), and there the cancellation is no longer imported: the generation $\mathcal S_{\mathbb C}$ is the $\mathbf{16}$ of $\mathrm{Spin}(10)$, which has no cubic invariant, so every anomaly vanishes (T-329(e), [T] as mathematics, [C at (Cl)] in UHM; [Standard Model §2.6](/docs/physics/gauge-symmetry/standard-model#поколение-t329), [Premises of UHM](/docs/reference/premises#гипотезы-отождествления)).
+
 **Proof.**
 
 **Step 1 (Unimodularity = anomaly cancellation).** Alvarez, Gracia-Bondia, Martin (Phys. Lett. B364, 1995) proved: in the NCG model of the Standard Model the unimodularity condition $\det(u)|_{\mathcal{H}_{\text{int}}} = 1$ is **strictly equivalent** to the cancellation of gauge anomalies (in the absence of right-handed neutrinos; with right-handed neutrinos — also true with automatic adjustment of hypercharges).

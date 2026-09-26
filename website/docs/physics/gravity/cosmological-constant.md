@@ -828,10 +828,10 @@ $$
 
 Dark energy's equation of state is not a fluid property: it is the **logarithmic coupling of the temporal (O) Gap sector to the spatial (A,S,D) Gap sector of the vacuum state**, with the universal factor $2/3$ (the $2$ from quarticity in $D_{\text{int}}$, the $3$ from FRW dilution).
 
-**(iv) Floor and exclusions.** $\Lambda_\infty := \Lambda_{\text{phys}}(\rho^*) > 0$ by the [structural necessity](#теорема-лямбда-положительна) [T]; under the T-222 relaxation of the vacuum state toward the terminal $\rho^*$ (Markov domain) with the exponential memory kernel (T-94):
+**(iv) Floor and exclusions.** $\Lambda_\infty := \Lambda_{\text{phys}}(\rho^*) > 0$ by the [structural necessity](#теорема-лямбда-положительна) [T]; under relaxation of the vacuum state to a stationary state $\rho^*$ of $\mathcal{L}_\Omega$ that is a hyperbolic sink (as the attractors of T-96 are for the self-registering $\varphi_s$), with the exponential memory kernel (T-94) — the convergence is the condition; until 2026-09-26 it was read off T-222 as "relaxation toward the terminal $\rho^*$", retracted [✗]: the restated T-222 is about states and supplies no flow:
 - **no Big Rip** — $\mathcal{G}_O \to \mathcal{G}_O(\rho^*)$ finite, so $\rho_{\text{DE}}$ is bounded for all internal time **[T]**;
 - **no vacuum Big Crunch** — $\rho_{\text{DE}} \to \Lambda_\infty > 0$, never $\leq 0$ at late times **[T]**;
-- **$w \to -1$** asymptotically: permanent $w \neq -1$ is excluded; any measured $|1+w| > 0$ is a *transient* — a direct measurement of the vacuum's residual distance-rate from the terminal state **[T at T-222/T-94]**.
+- **$w \to -1$** asymptotically: permanent $w \neq -1$ is excluded; any measured $|1+w| > 0$ is a *transient* — a direct measurement of the vacuum's residual distance-rate from the stationary state **[T at convergence to the sink (T-96)/T-94]**.
 :::
 
 **Proof.** (i) For the arrow matrix $D$ with $D_{Oj} = d_j$: $(D^2)_{OO} = \sum_j |d_j|^2$, $(D^2)_{jk} = d_j^* d_k$ ($j,k \neq O$), hence $\mathrm{Tr}(D^4) = \lVert D^2\rVert_F^2 = (\sum|d_j|^2)^2 + \sum_{jk}|d_j|^2|d_k|^2 = 2(\sum_j |d_j|^2)^2 = \tfrac12(\mathrm{Tr}\,D^2)^2$, since $\mathrm{Tr}\,D^2 = 2\sum_j|d_j|^2 = \omega_0^2\mathcal{G}_O$. The non-O block adds $\mathrm{Tr}(D^4) = \tfrac12\omega_0^4[\mathcal{G}_O^2 + 2\mathcal{G}_O\mathcal{G}_{\text{non-O}} + O(\mathcal{G}_{\text{non-O}}^2)]$ — relative correction $O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O) \sim 10^{-3}$. (ii) Substitution into the $f_4$-term. (iii) Chain rule on $\ln\rho_{\text{DE}} = \text{const} + 2\ln\mathcal{G}_O$; the second form is M3's $d\ln a = -d\ln\mathrm{Gap}_s$. (iv) Positivity of the floor from §4b evaluated at $\rho^*$; boundedness and the asymptote from convergence $\Gamma_{\text{vac}} \to \rho^*$. $\blacksquare$
@@ -869,7 +869,7 @@ $$
 | Level | Statement used | Status |
 |---|---|---|
 | A5 / Page–Wootters | all drifts are internal-relational; the total state stays static | [P] |
-| Γ-dynamics | T-222 terminal $\rho^*$ = the floor; T-94 kernel ⟹ exponential/oscillatory response | [T] (Markov domain → H1.1 [C]) |
+| Γ-dynamics | the stationary sink $\rho^*$ of $\mathcal{L}_\Omega$ (T-96) = the floor; T-94 kernel ⟹ exponential/oscillatory response (until 2026-09-26: "T-222 terminal $\rho^*$", withdrawn with the former T-222 — see (iv) of T-254) | [T] at convergence of the vacuum to the sink |
 | Structural necessity (§4b) | $\Lambda_\infty > 0$ | [T] |
 | Spectral action (§4a) | $f_4$-term is the physical Λ; quartic identity | [T] |
 | Emergent metric (M3) | $a = 1/\mathrm{Gap}_s$ ⟹ two-sector form of the law | [T] |

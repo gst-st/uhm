@@ -115,7 +115,7 @@ systematically absent, and they are exactly the seven UHM supplies as mathematic
 2. a **complete typed taxonomy of couplings** — supplied by the 21 coherences of Γ;
 3. **numeric viability invariants** with proven thresholds — P, R, Φ, D [T];
 4. **dynamics as first-class** — the three-flow decomposition of ℒ_Ω, T-262 [T];
-5. a **self-model with an anti-Goodhart theorem** — φ(Γ), T-96/T-191 [T] + MRQT;
+5. a **self-model with an anti-Goodhart theorem** — φ(Γ), T-96/T-191 [T]; T-222 [T] adds that no resource vector can stand in for the target, since the viable window has no resource optimum (the former "+ MRQT" completeness is retracted [✗], 2026-09-26);
 6. a **composition algebra with a measurable gain** — T-77 [T];
 7. a **depth ceiling with a federation rule** — T-142 [Т/С].
 

@@ -419,7 +419,7 @@ is isomorphic to the stabilizer of $\Gamma$ in $U(7)$.
 
 ### 6.2 Gauge Group from $G_2$
 
-**Gauge group: $SU(3)_C$ [T]; $SU(2)_L \times U(1)_Y$ [C at (FE)]; the former theorem is retracted [✗] (2026-09-25).**
+**Gauge group: $SU(3)_C$ [T]; $SU(2)_L \times U(1)_Y$ [C at (FE)]; the former theorem is retracted [✗] (2026-09-25).** (FE) belongs to the axis frame; in the Clifford frame it is replaced by (Cl₀), under which the whole group is the normaliser of colour in $\mathrm{Spin}(9)$, [C at (Cl)] ([T-326](/docs/physics/gauge-symmetry/standard-model#sm-из-клиффорда), [Premises of UHM](/docs/reference/premises#гипотезы-отождествления)).
 
 Former statement, "[T] Theorem (Gauge group, T-53 + sector decomposition)": from $G_2 = \mathrm{Aut}(\mathbb{O})$ and the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$,
 
