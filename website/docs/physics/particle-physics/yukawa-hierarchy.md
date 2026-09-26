@@ -422,7 +422,7 @@ The perturbation series converges in powers of $\varepsilon_{\text{eff}}$, **not
 
 **Step 3 (RG suppression at physical scales).** By Mechanism 2 (`lambda-budget.md` [T]), $\lambda_3(\mu) = \lambda_3^{(\mathrm{UV})}(\mu/\omega_{\text{Planck}})^{\Delta_3}$ with $\Delta_3 = 5/42 \approx 0.119$. At the electroweak scale $\mu_{\text{EW}} \sim 100$ GeV $\sim 10^{11.2}$ Hz this gives $\lambda_3(\mu_{\text{EW}}) = 74 \cdot 10^{-3.82} \approx 0.011 \ll 4\pi$: at the **physical** scale perturbativity is unconditional. $\square$
 
-**Step 4 (Non-perturbative backstop).** By T-170'' [T] the functional integral $Z_{\text{UHM}}^{(M)}$ is defined **non-perturbatively** as a finite-dimensional integral over the compact orbifold $(S^1)^{21M}/G_2^M$; even at the UV value $\lambda_3 = 74$ it is finite, the integrand being bounded on a compact domain. $\square$
+**Step 4 (Non-perturbative backstop).** By [T-170''](/docs/proofs/physics/toe-embeddings#т-170-double-prime) (ii) [T] the functional integral $Z_{\text{UHM}}^{(M)}$ is defined **non-perturbatively** as a finite-dimensional integral over the compact torus $(S^1)^{21M}$ of the Gap phases; even at the UV value $\lambda_3 = 74$ it is finite, the integrand being bounded on a compact domain. (Corrected 2026-09-26: the domain read "the compact orbifold $(S^1)^{21M}/G_2^M$"; $G_2$ has no action on the torus of phases, and the quotient is withdrawn with Lemma T-170'.1. Finiteness never used it.) $\square$
 
 **Conclusion.** The problem $\lambda_3 \approx 74 > 4\pi$ is **resolved** on three levels:
 
@@ -430,7 +430,7 @@ The perturbation series converges in powers of $\varepsilon_{\text{eff}}$, **not
 |---|---|---|
 | Effective parameter | $\varepsilon_{\text{eff}} = \lambda_3\varepsilon/(4\pi) \approx 0.059 \ll 1$ — perturbative | [T] |
 | RG at physical scales | $\lambda_3(\mu_{\text{EW}}) \approx 0.011 \ll 4\pi$ | [T] |
-| Non-perturbative | $Z_{\text{UHM}}$ finite on a compact space (T-170'' [T]) | [T] |
+| Non-perturbative | $Z_{\text{UHM}}$ finite on the compact torus $(S^1)^{21M}$ (T-170'' [T]) | [T] |
 
 **Status.** Results depending on loop corrections with $\lambda_3$ are **upgraded** from [H] to **[C at the numerical coefficients]**: the qualitative mass hierarchy and mixing structure are **[T]** (Fano combinatorics); the exact numerical values are **[C]** (they depend on the perturbative order and on the specific value of $\varepsilon_{\text{eff}}$).
 
