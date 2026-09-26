@@ -323,9 +323,9 @@ Measurement of the correlation between members for groups with varying degrees o
 
 :::warning Prediction
 $$
-\mathrm{Viable}(\mathbb{H}) \Rightarrow P(\Gamma) > P_{\text{crit}} \land \mathrm{Coh}_E(\Gamma) > \mathrm{Coh}_E^{\min}
+\mathrm{Viable}(\mathbb{H}) \Rightarrow P(\Gamma) > P_{\text{crit}} = 2/7
 $$
-[Viability](/docs/core/dynamics/viability) requires minimum [purity](/docs/core/dynamics/viability#определение-чистоты) and E-coherence above the minimum $\mathrm{Coh}_E^{\min} = 1/7$ (completely mixed state).
+[Viability](/docs/core/dynamics/viability) requires minimum [purity](/docs/core/dynamics/viability#определение-чистоты), with the threshold derived, not fitted ([theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical), registry Level 1 row 5 [T]); a nontrivial attractor has $P > 1/7$ (T-96 [T]). *Corrected 2026-09-26:* the formula also required $\mathrm{Coh}_E(\Gamma) > \mathrm{Coh}_E^{\min} = 1/7$ and cited T-151. Viability does not imply it — the pure axis state $\lvert A\rangle\langle A\rvert$ has $P = 1$ and $\mathrm{Coh}_E = 0$ — and T-151 makes the E-row condition ($D_{\min} = 2$) an independent L2 condition, not a consequence of $P > 2/7$. The E-coherence remarks below concern that L2 condition, not viability.
 :::
 
 :::info L2 thresholds
@@ -355,7 +355,7 @@ Intuition: $1/7$ — "one voice out of seven". $2/7$ — "two voices out of seve
 3. **Prediction:** the consciousness/unconsciousness transition occurs where $\widehat P$ crosses $2/7$, and $\mathrm{Cons}(\widehat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ at Cohen's $\kappa \geq 0.8$ (P8.4). *(Until 2026-09-25 step 2 read "calibrate $\pi_{\mathrm{bio}}$ to obtain $P$ from PCI": no conversion between the two scales exists, and calibrating to PCI would make agreement with it automatic.)*
 
 **Verifiability:**
-Measurement of E-coherence in systems approaching $P_{\text{crit}}$ must show a drop below the threshold.
+Measurement of purity in systems approaching loss of viability must show $P$ crossing $2/7$ (E-coherence is tested separately, as the L2 differentiation condition).
 
 **Clinical consequences:**
 - Coma states: $\mathrm{Coh}_E \to 1/7$ (minimum), $P \to P_{\text{crit}}$
@@ -395,32 +395,31 @@ The stability radius — the Bures distance to the viability shell $\{P = 2/7\}$
 - *Medicine:* computation of a patient's "safety margin" before surgical intervention.
 - *Risk management:* quantitative assessment of an organisation's resilience to shocks.
 
-### Prediction 15: Attractor at the upper boundary of the consciousness window {#предсказание-15}
+### Prediction 15: Attractor inside the consciousness window, below its upper edge {#предсказание-15}
 
-**Intuition.** Where does consciousness "tend"? CC predicts: not toward maximum purity ($P = 1$) and not toward the threshold ($P = 2/7$), but toward the *upper boundary of the Goldilocks zone* — $P = 3/7$. This is the "optimal zone": coherent enough for consciousness, but flexible enough for adaptation. The dynamics $\mathcal{L}_\Omega$ "attracts" the system to this boundary, as a ball rolls into a hole.
+**Intuition.** Where does consciousness "settle"? Not at maximum purity ($P = 1$), not at the threshold ($P = 2/7$), and — contrary to the earlier form of this prediction — not at the upper edge $3/7$ of the window either. The living attractor sits strictly inside the window, in its lower half: coherent enough to pass every threshold, with a margin below the edge.
 
-:::info Prediction [C] — falsifiable
-For an embodied holon with backbone injection the attractor
-tends toward the upper boundary of the Goldilocks zone:
+:::info Prediction [C at (MaxΦ)] — falsifiable
+For a holon whose self-model is the collineation anchor $\varphi_J$ (selected by the principle (MaxΦ) [Pr], [premises](/docs/reference/premises#посылка-максфи)) at $H = 0$ and $\kappa > \kappa_c(\alpha)$, the living attractor is a hyperbolic sink with
 
-$$P(\rho^*_{\mathrm{coupled}}) \to 3/7 = P_{\max}^{(\mathrm{Goldilocks})}$$
+$$P^* \in \bigl(P_c(\alpha),\ P_\infty(\alpha)\bigr) \subset \bigl(2/7,\ 5/14\bigr], \qquad P_\infty(\alpha) \leq 5/14 < 3/7,$$
 
-**Interpretation:** The dynamics $\mathcal{L}_\Omega$ optimise P within the viability window.
-The upper boundary $3/7$ ([T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124)) acts as an asymptotic limit.
+$\Phi \in (1, 3/2]$, $R \geq 2/5$, every diagonal entry $1/7$; $P_c = 0.318, 0.308, 0.301$ and $P_\infty = 5/14, 0.334, 0.317$ at $\alpha = 0, 1/2, 1$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне), T-124c(4) [T]); it persists for $\|H\| < h_0$.
 
-**Status:** [C] (requires proof that backbone+$\mathcal{R}$ tends to max P in $V_{\mathrm{full}}$).
-Numerically: $P = 0.4286 \approx 3/7 = 0.42857\ldots$ (agreement to $10^{-4}$).
+**Status:** [T] as mathematics for the $\varphi_J$ dynamics; [C at (MaxΦ)] as a prediction about a real holon, whose anchor the axioms leave open. For an embodied holon with backbone rate $\mu > L_{\mathcal{R}}$ the attractor is unique and globally attracting (T-124c(3)), but its purity depends on the backbone target and has no universal value.
+
+*Restated 2026-09-26:* the prediction read "$P(\rho^*_{\mathrm{coupled}}) \to 3/7$ for an embodied holon with backbone injection [C]", with the numerical value $P = 0.4286$. No theorem gives $3/7$: every living stationary state of the $\varphi_J$ family has $P \leq 5/14$ (none has $P \geq 3/7$), and the embodied attractor inherits its purity from the backbone target, so $0.4286$ was a property of one chosen target, not a law.
 
 **Status in other theories:** Absent.
 :::
 
-**See:** [Consciousness window](/docs/proofs/consciousness/conscious-window#t-124)
+**See:** [Consciousness window](/docs/proofs/consciousness/conscious-window#t-124), [living attractor](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне)
 
-**Verifiability:** For an embodied agent with backbone injection, measure the attractor $P^*$. **Numerical falsification criterion:** $|P^* - 3/7| > 0.05$ at $n > 100$ independent measurements → falsification ($p < 0.01$, one-sided t-test). If $P^* \ll 3/7$ or $P^* > 3/7$ — Prediction 15 is falsified.
+**Verifiability:** For an isolated agent with the $\varphi_J$ anchor and $\kappa > \kappa_c(\alpha)$, measure the attractor $P^*$. **Numerical falsification criterion:** $P^* \geq 3/7$, or $P^*$ outside $(P_c(\alpha), P_\infty(\alpha))$ beyond the measurement error, at $n > 100$ independent measurements ($p < 0.01$) → falsification of the $\varphi_J$ dynamics or of its implementation. (The former criterion $|P^* - 3/7| > 0.05$ is withdrawn with the old form.)
 
 **Interdisciplinary consequences:**
-- *Neuroscience:* predicts that a healthy brain at rest (resting state) is near $P \approx 3/7$, not at an arbitrary value.
-- *Psychology:* the "optimal state" (flow) corresponds to $P \approx 3/7$ — the balance between order and chaos.
+- *Neuroscience:* predicts that a healthy brain at rest sits inside the window with a margin below its upper edge, not at $3/7$.
+- *Psychology:* the "optimal state" (flow) is an interior point of the window, not its boundary.
 
 ---
 
@@ -830,7 +829,7 @@ A prediction earns scientific weight only with an explicit **decision rule**: wh
 | 3 | [7-dimensional stress](#предсказание-3) | $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ | **[T]** math. / **[C]** emp. | Absent |
 | 4 | [Pre-linguistic cognition](#предсказание-4) | $\mathrm{Cognition} \not\Rightarrow \mathrm{Language}$ | **[I]** | Partial in [FEP](/docs/reference/glossary#связанные-теории) |
 | 5 | [Collective consciousness](#предсказание-5) | $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$ necessary; criterion $\Phi_{\otimes} > \Phi_{\min}$ retracted | **[T]** necessary / **[H]** sufficiency | [IIT](/docs/reference/glossary#связанные-теории): exclusion — a group is a subject only as a maximum of integrated information |
-| 6 | [Minimum coherence](#предсказание-6) | $P > P_{\text{crit}} \land \mathrm{Coh}_E > 0$ | **[T]** | Absent |
+| 6 | [Minimum coherence](#предсказание-6) | $P > P_{\text{crit}} = 2/7$ | **[T]** | Absent |
 | 7 | [Stability radius](#предсказание-7) | $r_{\mathrm{stab}} \approx K(\sqrt{P-1/7}-\sqrt{1/7})$ | **[C]** (T-104) | Absent |
 | 8 | [Enc capacity](#предсказание-8) | $C_{\mathrm{Enc}} \leq \log_2 7$ | **[T]** | Absent |
 | 9 | [Learning bound](#предсказание-9) | $n_{\mathrm{opt}} = \max(n_{\mathrm{info}}, n_{\mathrm{dyn}}, n_{\mathrm{stab}})$ | **[T]** | Absent |
@@ -839,7 +838,7 @@ A prediction earns scientific weight only with an explicit **decision rule**: wh
 | 12 | [SAD ceiling](#предсказание-12) | $\mathrm{SAD}_\text{max} = 3$ | **[T]** (T-142) | SYNARC: 500+ Γ |
 | 13 | [Genesis time](#предсказание-13) | $n_{\mathrm{genesis}} \leq \lceil\ln\Delta / \ln(1/\beta)\rceil$ | **[T]** | Absent |
 | 14 | [Phase coherence](#предсказание-14) | $\rho^*_{ij}(t) \propto e^{-i(E_i-E_j)t}$ for $\Phi \geq 1$ | **[T]** | Absent |
-| 15 | [Attractor $P \to 3/7$](#предсказание-15) | $P(\rho^*_{\mathrm{coupled}}) \to 3/7$ | **[C]** | Absent |
+| 15 | [Attractor inside the window](#предсказание-15) | $P^* \in (P_c, P_\infty)$, $P_\infty \leq 5/14 < 3/7$ (was $\to 3/7$) | **[C at (MaxΦ)]** | Absent |
 | 16 | [Avalanche dynamics L1→L2](#предсказание-16) | $T_{\mathrm{ign}} \sim (P - P_{\mathrm{crit}})^{-1} \cdot \kappa_0^{-1}$ | **[T]** | Absent |
 | 17 | [Critical exponents](#предсказание-17) | $\alpha = 1/2,\; \beta = 1/4,\; \gamma = 1,\; \nu = 1/2,\; \delta = 5$ | **[C at the ℤ₂ symmetry m → −m]** | Absent |
 | 18 | [Ward suppression 19/49](#предсказание-18) | Gap fluctuations $\times\, 19/49$ | **[T]** | Absent |

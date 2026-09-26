@@ -24,7 +24,12 @@ HERE = Path(__file__).resolve().parent
 # рапортует об успехе.
 TOOLS = ["check_theorem_refs.py", "check_status_markers.py",
          "check_mixed_names.py", "natal_startup_verify.py"]
-SITE_TOOLS = [Path("website") / "scripts" / "render_lint.py"]
+# Шестой — страж согласованности статусов (website/scripts/check_status_consistency.py):
+# читает ИСХОДНИК обеих локалей против реестра и сборки не требует; живёт рядом с
+# сайтом по месту реестра. До 26.09.2026 вентиль его не звал, и его храповики
+# (R1…R7, включая опору на отозванное) держались только ручным запуском.
+SITE_TOOLS = [Path("website") / "scripts" / "render_lint.py",
+              Path("website") / "scripts" / "check_status_consistency.py"]
 
 
 # ОХВАТ. Прибор, не назвавший, сколько файлов он прочитал, объявляет чистым

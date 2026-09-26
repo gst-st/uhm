@@ -225,7 +225,7 @@ where $P_{\text{sym}} = \mathrm{Tr}(\mathrm{Re}(\Gamma)^2)$ is the "symmetric pu
 #### Theorem 5.1 / T-73 (Gap = curvature from the spectral triple) [T] {#теорема-gap-серра}
 
 :::tip Theorem 5.1
-Within the [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) of UHM (T-53 [T]), the measure $\mathrm{Gap}(i,j)$ **exactly coincides** with the norm of the connection curvature on the [Serre bundle](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра) $\mathrm{Bundle}(\Gamma, \Omega) \to B_{\mathrm{ext}}$:
+Within the finite [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) $(A_{\text{int}}, \mathbb C^7, D_{\text{int}})$ of UHM (its existence, T-53 steps 1–4, is [T]; the Lorentzian sign of T-53, [C], is not used), the measure $\mathrm{Gap}(i,j)$ **exactly coincides** with the norm of the connection curvature on the [Serre bundle](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра) $\mathrm{Bundle}(\Gamma, \Omega) \to B_{\mathrm{ext}}$:
 
 $$
 \|\mathrm{Curv}\|_{ij}^2 = |[D_{\mathrm{int}}]_{ij}|^2 = \omega_0^2 |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2

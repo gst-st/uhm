@@ -47,7 +47,7 @@ The protocol is organised in decreasing order of risk: first — what is cheaper
 |-------|----------|------|-----------|
 | **I. Digital** | 0–6 mo. | 12 predictions in silico (Γ-native agent) | Free, no ethics, tests the foundation |
 | **II. Neurocalibration** | 6–18 mo. | π_bio, concordance of Cons(Γ̂) with the PCI* verdict (κ), critical exponents | Main point of contact with neurodata |
-| **III. Clinical** | 12–36 mo. | Disorders of consciousness, recovery, 3/7 attractor | Clinical significance |
+| **III. Clinical** | 12–36 mo. | Disorders of consciousness, recovery, window attractor | Clinical significance |
 | **IV. Cognitive** | 12–24 mo. | 7D stress, collective consciousness, prelinguistic cognition | Interdisciplinary validation |
 
 ---
@@ -101,9 +101,9 @@ Any implementation used for Phase I must satisfy:
 4. Record h_crit — the critical amplitude
 5. Repeat for 50 different P₀ ∈ [0.3, 0.9]
 
-**Prediction:** h_crit² = P₀ − 2/7 (T-104).
+**Prediction:** h_crit tracks the stability radius r_stab(P₀) ≈ K(√(P₀ − 1/7) − √(1/7)), K ≈ 0.9259, on the one-dominant family (T-104 [C]). *Corrected 2026-09-26:* the prediction read h_crit² = P₀ − 2/7, the refuted closed form of T-104 [✗].
 
-**Falsification:** R² < 0.9 for linear regression of h_crit² vs (P₀ − 2/7) at N=50.
+**Falsification:** R² < 0.9 for linear regression of h_crit vs r_stab(P₀) at N=50.
 
 #### Exp. I.3: Information capacity (Pred 8) {#exp-1-3}
 
@@ -461,7 +461,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 
 **Falsification:** r ≤ 0 (zero or negative correlation) at N=60 (p < 0.05).
 
-### 4.3. Experiment III.3: Attractor P=3/7 (Pred 15) {#exp-3-3}
+### 4.3. Experiment III.3: Attractor inside the window (Pred 15) {#exp-3-3}
 
 **Subjects:** N=30, healthy, resting state.
 
@@ -470,9 +470,9 @@ This is the **first ever** test of critical exponents of a phase transition for 
 2. Compute P
 3. Repeat 5 sessions (different days) for each subject
 
-**Prediction:** P(resting state) → 3/7 ± 0.05 (T-124).
+**Prediction:** P(resting state) ∈ (2/7, 5/14], below the upper edge 3/7 of the window (T-124c(4); [C at (MaxΦ)]). *Corrected 2026-09-26:* the prediction read P → 3/7 ± 0.05 (T-124); no theorem gives 3/7, and the living attractor has P ≤ 5/14.
 
-**Falsification:** |P_mean − 3/7| > 0.1 at N=30.
+**Falsification:** P_mean ≥ 3/7 or P_mean ≤ 2/7 at N=30.
 
 ---
 
@@ -497,12 +497,12 @@ This is the **first ever** test of critical exponents of a phase transition for 
 
 **Protocol:**
 1. Simultaneous EEG recording of 4 participants during joint performance
-2. Compute Φ_⊗ for the group as a whole (cross-correlation matrix → integration)
+2. Compute the total correlation I of the group (the necessary condition; the integration Φ_⊗ of the whole is not a criterion, see below)
 3. Compare coordinated vs uncoordinated groups
 
-**Prediction:** Φ_⊗ > Φ_min for coordinated; Φ_⊗ < Φ_min for random (T-86).
+**Prediction:** I > 0 is necessary for a collective subject [T]; sufficiency is a hypothesis [H]. *Corrected 2026-09-26:* the prediction read "Φ_⊗ > Φ_min for coordinated; Φ_⊗ < Φ_min for random (T-86)"; that criterion is retracted [✗] — every uncoupled group meets it (two window holons give Φ_⊗ ≥ 3 at I = 0).
 
-**Falsification:** Φ_⊗(coordinated) ≤ Φ_⊗(uncoordinated) (p < 0.05, Mann-Whitney).
+**Falsification:** I(coordinated) ≤ I(uncoordinated) (p < 0.05, Mann-Whitney).
 
 ### 5.3. Experiment IV.3: Prelinguistic cognition (Pred 4) {#exp-4-3}
 
@@ -526,9 +526,9 @@ This is the **first ever** test of critical exponents of a phase transition for 
 | 2 | Coh_E ↔ recovery | III.2 | r ≤ 0 | [T] |
 | 3 | 7D stress | IV.1 | Unclassifiable stressor | [T]/[C] |
 | 4 | Prelinguistic cognition | IV.3 | K3/K4 impaired in aphasia | [I] |
-| 5 | Collective consciousness | IV.2 | Φ_⊗(coord) ≤ Φ_⊗(random) | [T] |
+| 5 | Collective consciousness | IV.2 | I(coord) ≤ I(random) | [T] necessary / [H] sufficiency |
 | 6 | P > 2/7 | II.1 | Threshold ≠ 2/7 ± 0.1 | [T] |
-| 7 | Stability radius | I.2 | h_crit² ≠ P−2/7 | [T] |
+| 7 | Stability radius | I.2 | h_crit does not track r_stab(P₀) | [C] |
 | 8 | Info capacity ≤ log₂7 | I.3 | I > 2.81 bits | [T] |
 | 9 | Learning speed | I.10 | n < n_info | [T] |
 | 10 | N=7 for learning | I.4 | N=5 learns | [T] |
@@ -536,9 +536,9 @@ This is the **first ever** test of critical exponents of a phase transition for 
 | 12 | SAD_max = 3 | I.5 | SAD ≥ 4 | [T] |
 | 13 | Genesis time | I.6 | n > n_genesis | [T] |
 | 14 | Phase coherence | I.7 | Φ ≥ 1 without co-rotation | [T] |
-| 15 | 3/7 attractor | III.3 | $\|P-3/7\| > 0.1$ | [C] |
+| 15 | Attractor inside the window | III.3 | $P \geq 3/7$ or $P \leq 2/7$ | [C at (MaxΦ)] |
 | 16 | Ignition dynamics | II.3 | T_ign ⊥ (P−P_c) | [T] |
-| 17 | Exponents β=1/4 | I.8 + II.2 | β ∉ [0.20, 0.30] | [T] |
+| 17 | Exponents β=1/4 | I.8 + II.2 | β ∉ [0.20, 0.30] | [C at the ℤ₂ symmetry m → −m] |
 | 18 | Ward suppression 19/49 | — | Λ-budget incompatible | [T] |
 | 19 | CPTP anchor | I.9 | $\|\pi-\pi_{\mathrm{can}}\| > 0.1$ | [T] |
 | 20 | ε_eff ≈ 0.059 | — | ε ∉ [0.04, 0.08] | [C] |

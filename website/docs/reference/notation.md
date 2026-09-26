@@ -427,7 +427,7 @@ Symbols related to the [Gap operator](/docs/core/dynamics/gap-dynamics), [Gap th
 
 ## Spectral Geometry and Bimodular Construction
 
-Symbols related to the [bimodular construction](/docs/proofs/physics/bimodule-construction) of SM representations (T-178–T-181).
+Symbols related to the [bimodular construction](/docs/proofs/physics/bimodule-construction) of SM representations (T-178–T-181). The finite space $H_F$ is Connes' imported one: the derivation from the UHM spectral triple (T-178) is retracted [✗] (2026-09-25), and T-179 is retracted as stated.
 
 | Notation | Meaning |
 |----------|---------|
@@ -453,4 +453,4 @@ Symbols related to the [bimodular construction](/docs/proofs/physics/bimodule-co
 - [Gap dynamics](/docs/core/dynamics/gap-dynamics) — Gap operator $\hat{G}$, bifurcations, non-Markovian dynamics
 - [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — $T_{\mathrm{eff}}$, variational principle, FDT
 - [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — $P_{\mathrm{Fano}}$, $\Pi_p$, Yukawa hierarchy
-- [Bimodular construction](/docs/proofs/physics/bimodule-construction) — SM representations from bimodules of the spectral triple (T-178–T-181)
+- [Bimodular construction](/docs/proofs/physics/bimodule-construction) — SM representations from bimodules of Connes' imported finite space $H_F$ (T-178–T-181; the derivation from the UHM spectral triple, T-178, is retracted [✗] 2026-09-25, T-179 as stated)

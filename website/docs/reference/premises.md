@@ -9,7 +9,7 @@ description: "Every premise the current UHM corpus uses: axioms, named principle
 :::info What this page is
 One list of everything the corpus **assumes** rather than proves, as of 2026-09-26. Each entry names the premise, its status, the results that use it and what is known about deriving it. The [status registry](/docs/reference/status-registry) remains the canonical record of each result; this page is the canonical record of the inputs. A result that uses none of the premises in sections 2–4 is listed in section 6.
 
-Status letters are those of the registry: **[P]** postulate (an axiom), **[H]** hypothesis (a named physical assumption), **[Pr]** principle kept as an open programme (neither assumed as an axiom nor claimed proven), **[D]** definition by convention. A free parameter is not a statement and has no letter.
+Status letters are those of the registry: **[P]** postulate (an axiom), **[H]** hypothesis (formulated, not proven — here a named assumption), **[Pr]** research programme, here a principle kept open (neither assumed as an axiom nor claimed proven), **[D]** definition by convention; **[I]** interpretation and **[C]** conditional theorem appear only where a row names them, as in the registry. A free parameter is not a statement and has no letter.
 :::
 
 ## 1. How to read the list {#как-читать}
@@ -28,7 +28,7 @@ A premise counts as **used** when a live registry row or theorem carries `[C at 
 |---|---|---|---|
 | **Metatheory** | ∞-categories / homotopy type theory as the language; intuitionistic internal logic | every page | outside the theory ([honest axiomatics](/docs/core/foundations/axiom-omega#аксиоматика)) |
 | **A1** | reality is the ∞-topos $\mathbf{Sh}_\infty(\mathcal C)$ over $\mathcal D(\mathbb C^N)$ | all results | [P]; derivable from the operational basis only through the hypothesis T-186(a) (T-190) |
-| **A2** | the Grothendieck topology is induced by the Bures metric | the topology, the stratification, T-173 | [P]; supported by the maximum-entropy characterisation (T-189) |
+| **A2** | the Grothendieck topology is induced by the Bures metric | the topology, the stratification, T-173 | [P]; its topology is forced (every continuous distance on the compact $\mathcal D$ induces the standard one), and within the CPTP-monotone metrics Bures is canonical (T-187; the maximum-entropy recasting T-189) — what stays postulated is the monotonicity of the enrichment |
 | **A3** | $N = 7$ | all results | [P]; $N \geq 7$ is [T] (Theorem S); strict necessity needs (P1₆), section 3 |
 | **A4** | the scale $\omega_0 > 0$ | dynamics, calibration | [P]; its value is a free parameter, section 4 |
 | **A5 constraint** | $\hat C\,\Gamma = 0$, the support condition $\mathrm{supp}\,\Gamma \subseteq \ker\hat C$ of Property 2 — the form of the timeless state | the Page–Wootters link of the clock (T-87, step 4), T-190 | [P]; the clock register and the tensor factor of A5 are [T] (T-87, steps 1–3); the constraint is not derived ([A5](/docs/core/foundations/axiom-omega#pw-constraint)) |
@@ -95,7 +95,7 @@ T-329 uses only that the spinor factor of the fermion field is a complex space o
 | **(SA)** | sector asymmetry of the vacuum Gap profile | neutrino generation assignments, T-219 | [H]; T-52 retired as a theorem |
 | **Higgs identification** | $H \sim \gamma_{EU}$ (axis frame); the colour-free plane as the Higgs doublet (Clifford frame, T-329(f)) | the Higgs sector | [H] in both frames |
 | **T-186(a)** | the cohesive route to A1 | T-190 (axiomatic closure) | [H] |
-| **Reconstruction and time conditions** | an aperiodic time parameter; the open reconstruction conditions of T-119/T-120 for reading $M^4$ as physical spacetime | T-120 as physics, T-120b(ii), T-87 as a Page–Wootters mechanism | [C] where used; T-119 and T-120 are [T] as mathematics |
+| **Physical reading of $M^4$** | the reconstructed $M^4 = \mathbb R \times S^3$ (T-118, T-119, T-120) is physical spacetime | T-120 and T-121 as physics | [I], as in the registry rows T-119 and T-120, which are [T] as mathematics; the former reconstruction conditions of T-119 and the aperiodic time parameter are discharged (section 5); T-120b(ii) stays [C at the vacuum symmetry] through T-64 and (SV), and T-87 as a Page–Wootters mechanism uses the A5 constraint of section 2 |
 | **(HOL)** | a composite of holons is itself a holon, with its own dynamics on $\mathcal D(\mathbb C^7)$ | the literal reading of CC-5 and of the population rungs | [I]; not derivable (dimension 49, not 7); CC-5 and CC-6 hold at weak coupling without it |
 
 ## 4. Free parameters {#свободные-параметры}
@@ -123,6 +123,8 @@ T-329 uses only that the spinor factor of the fermion field is a complex space o
 | (AGG) | Theorem 9.5 at weak coupling (CC-5, CC-6) | 2026-09-25 |
 | (ND) | CC-7 for almost every anchor | 2026-09-25 |
 | (CG) | T6, uniform contraction from $S_7$-equivariance | earlier |
+| the open reconstruction conditions of T-119 | T-119 restated: the spatial algebra is $C(S^3)$, and all seven of Connes' conditions hold for its Dirac triple (T-120 and T-121 raised to [T] as mathematics with it) | 2026-09-25 |
+| an aperiodic time parameter | the depth register: $A_{\text{time}} \cong C_0(\mathbb R)$ as its scaling limit (T-118, T-53b) | 2026-09-25 |
 
 ## 6. Results that use no premise of sections 3–4 {#безусловные}
 

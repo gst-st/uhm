@@ -21,7 +21,7 @@ $$
 D_{\text{diff}}^{7D} := 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)
 $$
 
-**Status errata 2026-09-10: [T] → [D].** The literal quantity $e^{S_{vN}(\rho_E)}$ is **not expressible in 7D**: there $\rho_E = \gamma_{EE}$ is a scalar, so $S_{vN}(\rho_E) \equiv 0$ and $e^{S_{vN}} \equiv 1$ ([canonical box](/docs/core/structure/dimension-e#rho-e-7d-42d) [T]). The formula above is therefore a **definition** chosen to agree with the 42D notion at its two endpoints ($\mathrm{Coh}_E = 0 \Rightarrow 1$; $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max} \Rightarrow N$), not an exact representation of it; and the bridge it leans on, Morita equivalence T-58, is itself [C].
+**Status errata 2026-09-10: [T] → [D].** The literal quantity $e^{S_{vN}(\rho_E)}$ is **not expressible in 7D**: there $\rho_E = \gamma_{EE}$ is a scalar, so $S_{vN}(\rho_E) \equiv 0$ and $e^{S_{vN}} \equiv 1$ ([canonical box](/docs/core/structure/dimension-e#rho-e-7d-42d) [T]). The formula above is therefore a **definition** chosen to agree with the 42D notion at its two endpoints ($\mathrm{Coh}_E = 0 \Rightarrow 1$; $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max} \Rightarrow N$), not an exact representation of it. The bridge it once leaned on, the Morita equivalence T-58, is retracted [✗] (2026-09-10, second pass: it fails on dimension); what survives is the section–retraction T-58′ [T], which carries 7D data upward but does not make a 42D-only quantity a function of the 7D state.
 :::
 
 **Proof (4 steps).**
