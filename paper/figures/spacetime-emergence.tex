@@ -52,28 +52,27 @@
 % {L,E,U} group:  x in [-0.70,  3.70]  (contains L,E,U at [-0.6,  3.6])
 % {O}     group:  x in [ 3.80,  5.20]  (contains O     at [ 3.9,  5.1])
 % Gaps of 0.10 between consecutive groups, no overlap anywhere.
-\draw[blue,           grp] (-5.20, 3.50) rectangle (-0.80, 4.50);
-\draw[orange,         grp] (-0.70, 3.50) rectangle ( 3.70, 4.50);
-\draw[green!50!black, grp] ( 3.80, 3.50) rectangle ( 5.20, 4.50);
+% (The former dashed groups {A,S,D} | {L,E,U} | {O} drew the axis-labelled
+% sector split 48a, retracted: SU(3) acts irreducibly on the six non-O axes.)
 
 % === Group labels (compact, centred just below each group box) ===
 \node[font=\scriptsize, blue, text width=3.8cm, align=center,
       inner sep=2pt]
   at (-3.0, 2.75)
-  {\textbf{Space} $\{A,S,D\}$\\
-   fundamental $\mathbf{3}$ of $\mathrm{SU}(3)$};
+  {\textbf{Space}: three commuting\\
+   rotation charges};
 
 \node[font=\scriptsize, orange, text width=3.8cm, align=center,
       inner sep=2pt]
   at ( 1.5, 2.75)
-  {\textbf{Internal} $\{L,E,U\}$\\
-   $\bar{\mathbf{3}}$: gauge\,+\,exp.\,+\,unity};
+  {\textbf{Colour}: $\mathrm{SU}(3) = \mathrm{Stab}_{G_2}(e_O)$\\
+   irreducible on the six non-$O$ axes};
 
 \node[font=\scriptsize, green!50!black, text width=1.3cm, align=center,
       inner sep=2pt]
   at ( 4.5, 2.75)
-  {\textbf{Time} $\{O\}$\\
-   singlet $\mathbf{1}$};
+  {\textbf{Time}\\
+   clock $O$};
 
 % === Projection arrows with tight midway labels ===
 % Labels are anchored to the arrow midpoint with near-zero
@@ -82,12 +81,12 @@
 \draw[arr=blue!60] (-3.0, 1.95) -- (-3.0, -0.05)
   node[midway, left=2pt, font=\footnotesize, blue!60,
        text width=2.1cm, align=right]
-  {Gelfand\,+\,Connes\\ reconstr.\ (T-119)};
+  {$C(S^3)$ from the\\ charge spectrum (T-119)};
 
 \draw[arr=green!50!black] (4.5, 1.95) -- (4.5, -0.05)
   node[midway, right=2pt, font=\footnotesize, green!50!black,
        text width=2.1cm, align=left]
-  {Page--Wootters\\ clock algebra (T-118)};
+  {depth register\\ $\to C_0(\mathbb{R})$ (T-118)};
 
 % === M^4 level ===
 \node[rectangle, rounded corners=8pt, draw=plospurple, fill=plospurple!10,
@@ -96,22 +95,21 @@
   {$M^{4} = \mathbb{R}\times\Sigma^{3}$ \quad (T-120)};
 
 \node[font=\footnotesize, color=plosgray] at (0, -1.85)
-  {Product spectral triple $\to$ Einstein--Hilbert action
-   $+$ Standard Model (T-121)};
+  {Product spectral triple $\to$ Einstein--Hilbert term (T-65);
+   SM part imported from Connes' triple};
 
 % === Vacuum topology ===
 \node[font=\footnotesize, color=plospurple] at (0, -2.45)
-  {Vacuum: $\Sigma^{3}\cong S^{3}$ (de Sitter), $\Lambda > 0$
+  {$\Sigma^{3}\cong S^{3}$ [T]; de Sitter vacuum, $\Lambda > 0$ [C]
    \quad (T-120b)};
 
 % === Key insight (bottom caption inside figure) ===
 \node[font=\footnotesize\itshape, color=gray,
       text width=11cm, align=center]
   at (0, -3.30) {
-  Spacetime is not fundamental. It is the macroscopic projection of
-  the 7-dimensional coherence matrix onto the
-  $\{A,S,D\}\!\cup\!\{O\}$ sector. Gravity is coherence seen from the
-  external aspect.
+  Spacetime is not fundamental: $M^4$ is computed from the
+  7-dimensional coherence matrix ([T] as mathematics); its reading as
+  physical spacetime is an interpretation [I].
 };
 
 \end{tikzpicture}

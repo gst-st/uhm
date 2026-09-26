@@ -25,12 +25,19 @@ statements are collected here.
         state $I/7$ and a spectral gap
         $\lambda_{\mathrm{gap}} := \min_{\lambda \neq 0}|\mathrm{Re}(\lambda)| > 0$.
         Convergence to $I/7$ is exponential with rate $\lambda_{\mathrm{gap}}$.
-  \item \textbf{T-53 \status{T} (Internal spectral triple, KO-dim 6):}
+  \item \textbf{T-53 (Internal spectral triple):}
         The internal algebra $A_{\mathrm{int}} = \mathbb{C} \oplus M_3(\mathbb{C})
-        \oplus M_3(\mathbb{C})$ with Dirac operator $D_{\mathrm{int}}$,
-        grading $\chi = \mathrm{diag}(+1,-1,-1,-1,+1,+1,+1)$, and real
-        structure $J$ ($J^2 = +1$, $JD = DJ$, $J\chi = -\chi J$) forms a
-        spectral triple of KO-dimension 6.
+        \oplus M_3(\mathbb{C})$ with Dirac operator $D_{\mathrm{int}}$ on
+        $H_{\mathrm{int}} = \mathbb{C}^7$ forms a finite spectral triple, but
+        not a \emph{real} one. The former real structure $J$ ($J^2 = +1$,
+        $J\chi = -\chi J$, grading $\chi = \mathrm{diag}(+1,-1,-1,-1,+1,+1,+1)$)
+        of KO-dimension~6 is retracted~\status{$\times$}: with $J^2 = 1$ the
+        relation $J\chi = -\chi J$ makes $J$ exchange the $\chi = \pm 1$
+        eigenspaces, which then need equal dimension --- impossible on the
+        odd-dimensional $\mathbb{C}^7$. The registry row T-53 now records the
+        Lorentzian signature $(1,3)$ built on this triple, \status{C} (one time
+        direction from the Page--Wootters clock \status{T}; the Lorentzian sign
+        at reflection positivity).
   \item \textbf{T-55 \status{T} (Gap $> 0$ via Lawvere):}
         For any viable holon ($P > \Pcrit$), the Gap operator
         $\hat{\mathcal{G}} = \mathrm{Im}(\Gam)$ satisfies
@@ -49,13 +56,25 @@ statements are collected here.
         $\vp_{\mathrm{coh}}$) an isolated holon's only stationary state is
         $I/7$; with the self-registering $\vp_s$ seven locally stable
         attractors with $P > 2/7$ persist for $\|H\| < h_0$.
-  \item \textbf{T-185 \status{T} (Differentially cohesive $\infty$-topos):}
-        The UHM $\infty$-topos $\mathfrak{T} = \ShInf(\mathcal{C}, J_B)$ admits
-        a differentially cohesive structure (in the sense of Lawvere's axiomatic
-        cohesion refined by Schreiber~\cite{schreiber2013}) with seven canonical
-        modalities $\{\mathrm{Id}, \Pi, \flat, \mathrm{Im}, \sharp, \&, \mathrm{Rh}\}$
-        corresponding to the $1 \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$
-        sector decomposition of the seven dimensions.
+  \item \textbf{T-185 (Differentially cohesive modalities; stratified):}
+        (i)~In any differentially cohesive $\infty$-topos (Lawvere's axiomatic
+        cohesion refined by Schreiber~\cite{schreiber2013}) the modalities
+        $\Pi \dashv \flat \dashv \sharp$ and $\Re \dashv \Im \dashv \&$ exist
+        \status{T}. (ii)~That the UHM $\infty$-topos
+        $\mathfrak{T} = \ShInf(\mathcal{C}, J_B)$ is differentially cohesive is
+        \status{C} under the assumption of differential cohesion of the UHM
+        site, not proven (the $\infty$-cohesive-site criterion needs finite
+        products). (ii$'$)~\status{T}: $\mathcal{D}(\mathbb{C}^7)$ with its rank
+        strata is an object of the differentially cohesive
+        $\mathrm{SynthDiff}\infty\mathrm{Grpd}$; the strata $\mathcal{D}_k$ are
+        submanifolds of dimension $14k - k^2 - 1$. (iii)~The count of seven
+        modalities --- identity plus the two adjoint triples --- \status{T}; the
+        former list $\{\mathrm{Id}, \Pi, \flat, \Im, \sharp, \&, \mathrm{Rh}\}$
+        with the rheonomy modality Rh in place of Red ($\Re$) is retracted
+        \status{$\times$} (Rh belongs to solid cohesion and preserves global
+        points), and the assignment of the modalities to the seven dimensions
+        and to $1 \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ is an
+        interpretation \status{I}.
 \end{itemize}
 
 \subsection{No-Zombie Theorem (T-8.1)}
@@ -174,33 +193,38 @@ access to consciousness observed empirically~\cite{delcul2007}.
 \subsection{Stability radius (T-104)}
 \label{subsec:stability-radius}
 
-\begin{theorembox}[Stability radius \status{T}]
-The maximum perturbation amplitude a system can withstand while remaining viable:
+\begin{theorembox}[Stability radius \status{C}]
+The maximum perturbation a system can withstand while remaining viable is the
+Bures distance to the viability wall,
+$r_{\mathrm{stab}} := \min\{d_B(\rho,\sigma) : P(\sigma) = 2/7\}$. On the
+one-dominant spectral family it has the closed form
+$r_{\mathrm{stab}} = \sqrt{2\bigl(1 - \sqrt{a a_c} - \sqrt{(1-a)(1-a_c)}\bigr)}$,
+$a(P) = (1 + \sqrt{42P - 6})/7$, $a_c = (1+\sqrt{6})/7$; on the window it is
+approximated to $1.13\%$ by
 \begin{equation}
-  r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - \frac{2}{7}}
+  r_{\mathrm{stab}} \;\approx\; K\Bigl(\sqrt{P - \tfrac{1}{7}} - \sqrt{\tfrac{1}{7}}\Bigr),
+  \qquad K = \frac{\sqrt{35}\,\sqrt[4]{6}}{10} \approx 0.926 .
   \label{eq:stability-radius}
 \end{equation}
+For general spectra the closed form is a conservative lower bound \status{H}.
 \end{theorembox}
 
-This is a single-parameter formula: robustness depends \emph{only} on the purity margin
-above threshold.
+Robustness still depends essentially on the purity margin above threshold, but
+near the wall the law is \emph{linear}, $r_{\mathrm{stab}} \approx 1.225\,(P - 2/7)$,
+not a square root.
 
-\paragraph{Proof sketch.}
-The viability condition is $P > 2/7$. The maximum perturbation $h$ that a system at
-attractor $\rho^*_\Omega$ can absorb without crossing the threshold is determined by the
-Bures distance from $\rho^*_\Omega$ to the viability boundary $\partial\mathcal{V}_P$.
-For a perturbation $\Gam \to \Gam + \delta\Gam$ with $\|\delta\Gam\|_F = h$, the purity
-changes by $\delta P \approx 2\Tr(\Gam\,\delta\Gam)$. At the attractor, the critical
-perturbation satisfies $P - h_{\mathrm{crit}}^2 = 2/7$, yielding
-$r_{\mathrm{stab}} = \sqrt{P - 2/7}$. The full Lyapunov-stability analysis
-(T-104~\status{T}) combines this radius with the spectral gap $\lambda_\mathrm{gap}$
-of the linearized dissipator: trajectories within $r_\mathrm{stab}$ converge
-exponentially with rate $c \ge \min(\lambda_\mathrm{gap}, \kappa\cdot g_V) > 0$.
+\paragraph{Erratum: the former radius $\sqrt{P - 2/7}$ \status{$\times$}.}
+An earlier version stated $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$ as a
+theorem. It is refuted: at $P = 0.300$ the true infimum is $0.01708$ against
+$\sqrt{0.300 - 2/7} = 0.11952$, so the claimed bound fails by a factor of seven
+\emph{toward danger}; the Fuchs--van de Graaf step it cited bounds $d_B$ from
+above by the trace norm and cannot yield it. The minimiser commutes with $\rho$,
+so the Bures distance reduces to the Hellinger distance on spectra, which gives
+the closed form above.
 
 \paragraph{Examples.}
-A system with $P = 0.5$ has $r_{\mathrm{stab}} = \sqrt{0.5 - 0.286}
-\approx 0.46$; a system barely above threshold ($P = 0.3$) has $r_{\mathrm{stab}}
-\approx 0.12$ and is fragile.
+A system with $P = 0.5$ has $r_{\mathrm{stab}} \approx 0.20$; a system barely above
+threshold ($P = 0.3$) has $r_{\mathrm{stab}} \approx 0.017$ and is fragile.
 
 \begin{figure}[H]
 \centering
@@ -213,8 +237,9 @@ perturbations (green/blue curves); below threshold, purity decays exponentially 
 
 \paragraph{Clinical significance.}
 This formula predicts a patient's ``safety margin'' before interventions: their purity
-surplus determines how much perturbation they can absorb. Falsification: if $h_{\mathrm{crit}}^2$
-does not scale linearly with $P - 2/7$ across 50 measurements ($R^2 < 0.9$).
+surplus determines how much perturbation they can absorb. Falsification: if $h_{\mathrm{crit}}$
+does not follow Eq.~\eqref{eq:stability-radius} (linear in $P - 2/7$ near threshold)
+across 50 measurements ($R^2 < 0.9$).
 
 \subsection{SAD ceiling: maximum depth of self-awareness (T-142)}
 \label{subsec:sad-ceiling}
@@ -291,21 +316,25 @@ $\Pcrit^{(4)} \leq 1$, equivalently, a chain of four successive self-observation
 surviving at $P \leq 1$.
 
 \paragraph{Triple foundation.}
-After T-217~\status{T} and T-218~\status{T} (Sec.~\ref{subsec:extended-closures}),
+After T-217~\status{T} and T-218 (Sec.~\ref{subsec:extended-closures}),
 $\mathrm{SAD}_{\max} = 3$ admits a \emph{second} derivation, independent of the
-dynamical argument above. The cognitive Kan complex $\mathrm{Cog} =
-\mathrm{Sing}(B_\bullet \mathcal C_{\mathrm{FKraus}})$ is 3-coskeletal
-($\tau_{\leq 3}\mathrm{Cog} \simeq \mathrm{Cog}$) because 4-simplices are suppressed
-below distinguishability. A \emph{third}, algebraic derivation (T-268~\status{T})
-closes the circle: the octonionic Hermitian matrices $\mathcal{H}_n(\mathbb{O})$
-form a formally real Jordan algebra iff $n \leq 3$ (Jordan--von~Neumann--Wigner),
-so a fourth unified level would require the non-existent $\mathcal{H}_4(\mathbb{O})$.
-The metric bound ($P_{\mathrm{crit}}^{(4)} > 1$), the homotopical bound
-(3-coskeletal truncation), and the algebraic bound (Jordan-rank ceiling) converge
-on the same integer through independent structures. SAD$_{\max} = 3$ is thus
-\textbf{structurally triple-locked}: analytic (purity balance), topological
-(simplicial coskeletality), and algebraic (octonionic non-associativity) all rule
-out the fourth level. The coordination symmetry of a maximal subject
+dynamical argument above. The cognitive complex $\mathrm{Cog} =
+\mathrm{Sing}(B_\bullet \mathcal C_{\mathrm{FKraus}})$ is Kan \status{T}, and it
+is 3-coskeletal ($\tau_{\leq 3}\mathrm{Cog} \simeq \mathrm{Cog}$) because
+4-simplices are suppressed below distinguishability --- \status{C}, on the
+SYNARC-viable subset only: that step bridges simplicial and Bures-metric
+viability and is not a simplicial identity. A \emph{third}, algebraic derivation
+(T-268~\status{T}+\status{C}) closes the circle: the octonionic Hermitian
+matrices $\mathcal{H}_n(\mathbb{O})$ form a formally real Jordan algebra iff
+$n \leq 3$ (Jordan--von~Neumann--Wigner) \status{T}, so a fourth unified level
+would require the non-existent $\mathcal{H}_4(\mathbb{O})$; identifying
+composition depth with Jordan rank is a structural reading \status{C}, not yet
+functorial. The metric bound ($P^{(4)} > 1$, unconditional), the homotopical
+bound (3-coskeletal truncation), and the algebraic bound (Jordan-rank ceiling)
+converge on the same integer through independent structures: analytic (purity
+balance), topological (simplicial coskeletality), and algebraic (octonionic
+non-associativity) all rule out the fourth level, the latter two at the stated
+conditions. The coordination symmetry of a maximal subject
 correspondingly climbs $G_2 \subset F_4 = \mathrm{Aut}(\mathcal{H}_3(\mathbb{O}))$,
 its pure-state space the octonionic projective plane $\mathbb{O}P^2$ (the terminal
 division-algebra projective geometry) --- the base of the octonion-generated
@@ -345,7 +374,8 @@ $\mathbb{1}/7$ ($S = \ln 7$); and at any steady state the regeneration is a net
 entropy \emph{sink}, $\dot S_{\Regen} = -\dot S_{\mathcal{D}} \leq 0$ ---
 negentropy is the thermodynamic cost of maintenance (``staying alive''). The
 maintained steady entropy is strictly below $\ln 7$ and \emph{decreases}
-monotonically with $\kappa/\gamma$; since $\kappa \propto \CohE$, a more
+monotonically with $\kappa/\gamma$ (this part \status{C}, T-271(iv); the three
+signs above are \status{T}); since $\kappa \propto \CohE$, a more
 coherent --- more conscious --- system holds a strictly lower entropy, further
 from heat death. This formalises the previously-conceptual second-law connection:
 it is the mechanism behind the viability window sitting \emph{away} from
@@ -456,8 +486,9 @@ This is among the most specific falsifiable predictions in consciousness
 science, and the one with no analogue in any other theory
 (Figure~\ref{fig:exponents}).
 
-\begin{theorembox}[Critical exponents \status{T}]
-Near the viability threshold $\Pcrit = 2/7$, the consciousness phase transition is a
+\begin{theorembox}[Critical exponents \status{C at the $\mathbb{Z}_2$ symmetry $m \to -m$}]
+Assume the reduced potential carries the $\mathbb{Z}_2$ symmetry $m \to -m$.
+Then, near the viability threshold $\Pcrit = 2/7$, the consciousness phase transition is a
 \emph{tricritical point} in the $\varphi^6$ Landau universality class
 (Griffiths 1970, Lawrie--Sarbach 1984). The order-parameter dimension is
 $d_{\mathrm{eff}} = \binom{7}{2} = 21$ (off-diagonal coherence modes in $\mathfrak{su}(7)$).
@@ -487,8 +518,12 @@ Landau functional
 \end{equation*}
 The transition belongs to the $\varphi^6$ tricritical Landau universality class
 (Griffiths 1970, Lawrie–Sarbach 1984), characterised by an even-parity potential
-with $\mathbb{Z}_2$ symmetry $m \to -m$ inherited from the $G_2$-canonical involution
-on the order-parameter direction. UHM has exactly three physically independent
+with $\mathbb{Z}_2$ symmetry $m \to -m$. This symmetry is the condition of the
+theorem: its former derivation from a KO-dimension-6 real structure of the
+internal triple (T-53) is retracted \status{$\times$}, since no such structure
+exists on $\mathbb{C}^7$, and without it the generic codimension-3 point is the
+$A_4$ swallowtail, which gives $\beta = 1/2$ (the theorem read \status{T} until
+2026-09-25). UHM has exactly three physically independent
 control parameters --- regeneration rate $\kappa$, dissipation rate $\gamma$, and
 free-energy budget $\Delta F$ --- matching the codimension of the $\varphi^6$ tricritical
 deformation $(r, u, h)$. The reduction from the 21-dimensional configuration space
@@ -504,7 +539,8 @@ saddle-point exponents and contains no separate fluctuating field requiring reno
 under any stochastic reinterpretation. Note: the historical name "$A_4$-tricritical"
 sometimes used in the physics literature conflates the Arnold $A_4$ swallowtail
 ($V_0 = x^5/5$, $\beta = 1/2$) with the $\varphi^6$ Landau tricritical ($V = rm^2/2 + vm^6$,
-$\beta = 1/4$); UHM transitions belong to the latter. The full derivation, including
+$\beta = 1/4$); UHM transitions belong to the latter under the $\mathbb{Z}_2$
+symmetry, and to the former without it. The full derivation, including
 all five exponents and verification of Rushbrooke, Widom, and Fisher scaling relations,
 is given in Appendix~\ref{app:exponents}.
 
@@ -553,35 +589,60 @@ which the Landau expansion is no longer physically valid.}
 
 \paragraph{Falsification.}
 TMS-EEG at the sleep/wake transition, $N = 50$ subjects. Fit power law $\mathrm{PCI}
-\sim (P - \Pcrit)^\beta$. If $\beta \notin [0.20, 0.30]$ at $p < 0.01$ --- the theory
-is falsified at the structural level (L2 falsification).
+\sim (P - \Pcrit)^\beta$. If $\beta \notin [0.20, 0.30]$ at $p < 0.01$ --- the
+conditional theorem is falsified at the structural level (L2 falsification); a
+value near $\beta = 1/2$ would single out the swallowtail branch without the
+$\mathbb{Z}_2$ symmetry.
 
 \subsection{Emergent spacetime (T-117 through T-121)}
 \label{subsec:emergent-spacetime}
 
-UHM derives the Einstein field equations from the dynamics of $\Gam$ without any additional
-postulates. The derivation chain:
+UHM computes an emergent four-manifold from the dynamics of $\Gam$ and obtains the
+Einstein--Hilbert term from its spectral action. The chain below is \status{T} as
+mathematics; its reading as physical spacetime is an interpretation \status{I}
+(for $\Sigma^3$) and, for the Lorentzian sign, conditional on reflection
+positivity (T-53, \status{C}). The derivation chain:
 
 \begin{enumerate}[leftmargin=2em]
   \item \textbf{T-117 \status{T}:} Commutativity of the macroscopic algebra. In the
         thermodynamic limit ($M \to \infty$ coupled holons), macroscopic observables
-        commute at spacelike separation: $[\bar{O}_1(x), \bar{O}_2(y)] \to 0$ for
-        $|x-y| > \ell$. (Proof via Goderis--Verbeure--Vets quantum CLT + primitivity
-        of $\Lind_0$.)
-  \item \textbf{T-118 \status{T}:} The temporal algebra $A_{\mathrm{time}} \cong C_0(\mathbb{R})$.
-        The clock algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$ converges to $C(S^1)$ and
-        decompactifies to $\mathbb{R}$.
-  \item \textbf{T-119 \status{T}:} The spatial algebra $A_{\mathrm{space}} \cong C(\Sigma^3)$.
-        Spectral dimension 3 from the $\{A,S,D\}$-sector (fundamental representation of
-        $\mathrm{SU}(3) \subset G_2$). Gelfand + Connes reconstruction yields a unique
-        smooth compact orientable spin 3-manifold $\Sigma^3$.
-  \item \textbf{T-120 \status{T}:} Product spectral triple $M^4 = \mathbb{R} \times \Sigma^3$.
-  \item \textbf{T-120b \status{T}:} Vacuum topology $\Sigma^3 \cong S^3$ (de Sitter metric),
-        from T-71~\status{T} ($\Lambda_{\mathrm{Gap}} > 0$) + T-64~\status{T} (unique minimum) +
-        $SU(3)$-invariance of the Fano dissipator.
-  \item \textbf{T-121 \status{T}:} Closure of Lovelock gaps 1 and 2. The spectral action
-        on $(M^4, A_{\mathrm{int}})$ yields the Einstein--Hilbert action $+$ Standard
-        Model, closing the gaps in Lovelock's uniqueness argument (1971).
+        commute: $[\bar{O}_1, \bar{O}_2] \to 0$. (Proof via Goderis--Verbeure--Vets
+        quantum CLT + clustering, T-39a; it holds for any local observables.)
+  \item \textbf{T-118 \status{T}:} The temporal algebra $A_{\mathrm{time}} \cong C_0(\mathbb{R})$
+        is the scaling limit of the reading algebras $\mathbb{C}^{N+1}$ of the
+        \emph{depth register} (chronon $\Delta t \to 0$, window $\to \infty$). The
+        former derivation from the summed clock $\mathbb{C}[\mathbb{Z}_{7^M}]$ of $M$
+        holons is retracted \status{$\times$}: the summed clock has $6M+1$ readings and
+        the fixed period $2\pi/\omega_0$; the $7^M$ ordered readings belong to the
+        registers read positionally under a Feynman--Kitaev constraint.
+  \item \textbf{T-119 \status{T} as mathematics (reading as physical space
+        \status{I}):} For three commuting rotation charges of the holon (a maximal
+        torus of $\mathrm{U}(3) = \mathrm{Stab}_{\mathrm{SO}(7)}(e_O) \cap C(L_{e_O})$;
+        $\operatorname{rank}\mathrm{SO}(7) = 3$), the joint spectra of the
+        fluctuations $\sqrt{M}(\bar H - \mu)$ fill $\mathbb{R}^3$, and the spatial
+        algebra --- the minimal unitization --- is $C(S^3)$; the Dirac triple of
+        $\Sigma^3 = S^3$ satisfies all seven of Connes' conditions. Colour-singlet
+        charges give only two dimensions, so this $\Sigma^3$ has colour-charged
+        coordinates (a Coleman--Mandula obstacle for the physical reading). The former
+        derivation --- spectral dimension 3 from the $\{A,S,D\}$-sector via a Weyl law
+        --- is retracted \status{$\times$}: a finite-dimensional $\bigotimes_m
+        \mathbb{C}^3$ has no Weyl law, and the axis sector $\{A,S,D\}$ is not an
+        $\mathrm{SU}(3)$ sector (row 48a).
+  \item \textbf{T-120 \status{T} as mathematics:} Product spectral triple on
+        $M^4 = \mathbb{R} \times S^3$; the product carries no real structure, so no
+        first-order condition arises (the former KO-dimension count $4+6$ is
+        retracted).
+  \item \textbf{T-120b (split):} (i)~$\Sigma^3 \cong S^3$ \status{T}, now part of
+        T-119 and independent of the vacuum; (ii)~constant curvature $k = +1$, de Sitter
+        metric, \status{C at the vacuum symmetry}: it uses the unique sector vacuum,
+        which is the hypothesis (SV) (T-64 gives no $SU(3)$-symmetric sector vacuum).
+  \item \textbf{T-121 \status{T}:} Closure of Lovelock gaps 1 and 2: continuity, since
+        $M^4 = \mathbb{R} \times S^3$ is smooth (T-120), and covariance, by the
+        diffeomorphism invariance of the Chamseddine--Connes spectral action (the leg
+        ``$G_2 \to SU(3) \to SO(3) \subset \mathrm{Diff}(M^4)$'' is retracted: no
+        non-trivial homomorphism $SU(3) \to SO(3)$ exists). The spectral action yields
+        the Einstein--Hilbert term; its Standard-Model part is imported from Connes'
+        finite triple, not derived.
 \end{enumerate}
 
 \paragraph{New structural results.}
@@ -593,35 +654,61 @@ Fifteen results strengthen the foundations (nine new theorems + six structural u
         is independently necessary for L2 consciousness. Constructive counterexamples
         demonstrate four distinct pathologies (noise-dominated, fragmented, crystallised,
         undifferentiated) when any single condition is dropped.
-  \item \textbf{T-124c \status{T} (Uniqueness of the nontrivial attractor):}
-        The full nonlinear dynamics $\Lind_\Omega = \Lind_0 + \mathcal{R}$ has at most
-        one nontrivial fixed point $\rho^*_\Omega \neq I/7$ in the viable set. Proof via
-        Banach contraction on the iterative $\Psi$-map, using the spectral gap of $\Lind_0$
-        (T-39a) and the replacement channel contractivity $k = 1 - R < 1$.
-  \item \textbf{T-188 \status{T} (Localization of the hard problem):}
+  \item \textbf{T-124c \status{T} (Count of nontrivial attractors; restated):}
+        (1)~An isolated holon with the canonical $\vp_{\mathrm{coh}}$ has no
+        stationary state besides $I/7$; (2)~with the self-registering $\vp_s$ and
+        $\|H\| < h_0$ it has at least seven locally stable ones with $P > 2/7$;
+        (3)~an embodied holon whose backbone rate exceeds the trace-norm Lipschitz
+        constant of regeneration, $\mu > L_{\mathcal{R}}$, has exactly one, globally
+        attracting at rate $\mu - L_{\mathcal{R}}$; (4)--(5)~with a constant anchor
+        (the collineation anchor $\vp_J$, or any anchor with uniform diagonal) at
+        $H = 0$ it has none with $P > 2/7$ below a critical $\kappa_c$ and exactly
+        two above it --- a sink in $\mathcal{V}_{\mathrm{full}}$ and a saddle. The
+        former statement ``at most one nontrivial fixed point in the viable set''
+        is retracted \status{$\times$}: it is false by (1) and (2); its proof treated
+        $\kappa(\Gam)g_V(P)$ as constants and assumed
+        $\kappa_{\max} < \lambda_{\mathrm{gap}}$.
+  \item \textbf{T-188 \status{C under the hypothesis T-186(a)} (Localization of the hard problem):}
         The chain $A2 \xrightarrow{\text{T-187}} J_B \xrightarrow{\text{T-185}} (\Pi \dashv \flat)
-        \xrightarrow{\text{T-186(a)}} F \cong \&|_\mathcal{D}$ reduces the hard problem of
-        consciousness to ``why CPTP?'' $=$ ``why quantum mechanics?'' No consciousness-specific
-        mystery remains after cohesive closure.
+        \xrightarrow{\text{T-186(a)}} F \cong \&|_\mathcal{D}$ would reduce the hard problem of
+        consciousness to ``why CPTP?'' $=$ ``why quantum mechanics?'' The chain passes
+        through the hypothesis T-186(a) \status{H} (the phenomenal functor as the
+        infinitesimal flat modality, asserted without a construction), so the
+        localization is conditional (lowered 2026-09-25); the cohesion assumed in
+        T-185 is discharged by T-185(ii$'$) \status{T}.
   \item \textbf{T-189 \status{T} (MaxEnt derivation of Bures, Char-IV):}
-        The maximum entropy principle on $\mathcal{D}(\mathbb{C}^7)$ uniquely identifies the
-        inverse metric tensor with the quantum covariance matrix: $G^{ij} = C^{ij}$.
-        Combined with SLD-Fisher $= 4g_B$ (Braunstein--Caves 1994), this derives $g_B$
-        from statistical structure without information-geometric choice. Char-IV is a
+        Set $g_{ij} = \tfrac14 C^{\mathrm{SLD}}_{ij}$, where
+        $C^{\mathrm{SLD}}_{ij} = \tfrac12\Tr(\rho\{L_i,L_j\})$ is the SLD bilinear
+        form, defined without reference to any metric; Bures is the unique solution
+        of this selector equation, equivalently $g_B^{-1} = 4\,C_{\mathrm{est}}$ with
+        $C_{\mathrm{est}} = \mathcal{F}_{\mathrm{SLD}}^{-1}$ (Braunstein--Caves 1994:
+        $\mathcal{F}_{\mathrm{SLD}} = 4g_B$). The earlier form ``$G^{ij} = C^{ij}$''
+        dropped the factor 4 and inverted the tensor (corrected 2026-08-06). This
+        derives $g_B$ from statistical structure without information-geometric
+        choice. Char-IV is a
         \emph{physical recasting} of Char-III rather than a logically independent fourth
         witness (audit 2026-04-17): it strengthens the \emph{physical} motivation of
         T-187 without adding mathematical redundancy; T-187 retains \status{T} on Char-I
         (Petz extremality) alone.
-  \item \textbf{T-190 \status{T} (Axiomatic Closure):}
-        All five axioms A1--A5 are \emph{theorems} derivable from (AP)\allowbreak+(PH)\allowbreak+(QG)\allowbreak+(V)\allowbreak+MaxEnt:
-        A1 via T-76+T-186, A2 via T-187+T-189, A3 via Theorem~S+T15, A4 from (AP) necessity,
-        A5 via T-87. UHM is \textbf{self-grounding}: zero independent axioms beyond the
-        defining conditions of viable holons.
-  \item \textbf{T-191 \status{T} ($\varphi$-tower convergence):}
-        The iterative self-modeling tower $\varphi^{(0)}, \varphi^{(1)}, \ldots$ converges
-        exponentially ($\|\varphi^{(n)} - \varphi^*\| \leq q^n$, $q < 1$) to the unique
-        $\varphi^*$ from any initial anchor. Resolves the apparent $\varphi$-circularity.
-        Proof via Banach contraction + Perron--Frobenius.
+  \item \textbf{T-190 \status{C} (Axiomatic Closure):}
+        A1--A5 are derivable from (AP)\allowbreak+(PH)\allowbreak+(QG)\allowbreak+(V)\allowbreak+MaxEnt
+        under two conditions: the Page--Wootters constraint $\hat C\Gam = 0$ is assumed
+        (T-87, step~4) and the route to A1 through T-186 is a hypothesis. A2 via
+        T-187+T-189, A3 via Theorem~S+T15, A4 from (AP) necessity, the clock register
+        of A5 via T-87 steps 1--3. The earlier claim that UHM is \emph{self-grounding}
+        with zero independent axioms is withdrawn (lowered 2026-09-25): the constraint
+        remains an independent assumption, and the independent axiomatic content is
+        A1--A4 plus the constraint of A5.
+  \item \textbf{T-191 \status{T} ($\varphi$-tower convergence; restated):}
+        For an embodied holon with backbone $\mu(\sigma - \Gam)$ and
+        $\mu > L_{\mathcal{R}} + \kappa_{\max}$ every iterate of the tower
+        ``target $a_n \to$ stationary state $a_{n+1}$'' is defined, and the tower
+        converges geometrically, $q = \kappa_{\max}/(\mu - L_{\mathcal{R}}) < 1$, to
+        one self-model from any anchor (T-124c(3) + Banach). The former statement
+        --- convergence for every holon from any anchor --- is retracted
+        \status{$\times$}: for an isolated holon the gate makes the flow bistable, so
+        the iterate depends on the start. The $\varphi$-circularity is resolved by the
+        closed forms of $\vp_{\mathrm{coh}}$ and $\vp_s$, not by the tower.
   \item \textbf{T-192 \status{T} ($\mathbf{Exp}^{(2)}$ is a strict 2-category):}
         The experiential 2-category satisfies all five Mac~Lane axioms (vertical/horizontal
         composition, identity 2-cells, interchange law, identity 1-cells). The lax 2-functor
@@ -630,7 +717,7 @@ Fifteen results strengthen the foundations (nine new theorems + six structural u
         Perturbations of order $\varepsilon$ in $\Gamma$ produce $O(\varepsilon)$
         perturbations in $P$, $\Phi$, $R$. No threshold has divergent sensitivity.
         Crossover width $\delta P \sim \varepsilon^{1/\beta} = \varepsilon^4$ (from
-        $\beta = 1/4$, T-161). The system is overwhelmingly robust for macroscopic noise
+        $\beta = 1/4$, T-161, i.e.\ under its $\mathbb{Z}_2$ condition). The system is overwhelmingly robust for macroscopic noise
         levels.
 \end{itemize}
 
@@ -639,8 +726,16 @@ Fifteen results strengthen the foundations (nine new theorems + six structural u
   \item \textbf{Octonionic correspondence upgraded $[\mathfrak{I}] \to$ \status{T}:}
         The assignment $e_k \leftrightarrow$ dimension (e.g.\ $A = e_1$, $S = e_2$, \ldots,
         $O = e_7$) is a \emph{theorem}, not an interpretation: the T15 bridge chain
-        (all steps \status{T}) derives the octonionic structure from (AP)+(PH)+(QG)+(V);
-        T-177 and T-183 prove combinatorial and functional uniqueness.
+        derives the octonionic structure from (AP)+(PH)+(QG)+(V) \status{T}, its
+        step $\mathrm{PG}(2,2) \to \mathbb{O}$ taking the canonical orientation of
+        the Fano lines --- the unique orientation class invariant under the 168
+        collineations (T15-canon; the orientation input (Alt) is discharged).
+        T-177~\status{T} (restated): the collineation group acts regularly on
+        ordered non-collinear triples, so $O$ and the $\kappa_0$ pair $\{E,U\}$ fix
+        $O$, $A$, $D$ and leave one binary choice $E \leftrightarrow U$ (with
+        $L \leftrightarrow S$), which T-183 records as a convention
+        \status{T}+\status{D}; the earlier uniqueness from the axis sectors of
+        T-48a is retracted \status{$\times$}.
         The specific assignment is fixed up to $G_2$-gauge equivalence (T-42a~\status{T}).
   \item \textbf{Grothendieck site axioms (explicit proof):}
         The three axioms (identity, stability under pullback, transitivity) for the Bures
@@ -649,18 +744,25 @@ Fifteen results strengthen the foundations (nine new theorems + six structural u
         (Johnstone, \emph{Elephant} C2.1.9--12).
   \item \textbf{7D sufficiency \status{T}:}
         The minimal 7D formalism $\Gam \in \Dens(\mathbb{C}^7)$ is sufficient for all
-        consciousness observables: $P$, $R$, $\Phi$, $\CohE$, $D_{\mathrm{diff}}$, $C$.
-        Morita equivalence T-58~\status{T} gives zero reconstruction error between 7D
-        and 42D formalisms.
+        consciousness observables: $P$, $R$, $\Phi$, $\CohE$, $D_{\mathrm{diff}}$, $C$;
+        the 7D statements stand on their own \status{T}. They survive the round trip
+        to the 42D formalism through the section--retraction $\pi \circ \iota =
+        \mathrm{id}$ (T-58$'$~\status{T}). The former Morita equivalence
+        $\ShInf(\mathcal{C}|_7) \simeq \ShInf(\mathcal{C}|_{42})$ (T-58) and the
+        ``zero reconstruction error'' built on it are retracted \status{$\times$}:
+        the equivalence fails on dimension ($\le 35$ real parameters on
+        $\mathcal{D}(\ker\hat C)$ against 48 on $\mathcal{D}(\mathbb{C}^7)$).
   \item \textbf{Gap dynamics from non-associativity (Theorem 9.1 \status{T}):}
         For triples $(i,j,k)$ not on a Fano line, the octonionic associator
         $[e_i, e_j, e_k] \neq 0$ contributes to phase dynamics of coherences:
         $d\theta_{ij}/d\tau|_{\mathrm{assoc}} \propto \sum_{k} |\gamma_{ik}||\gamma_{jk}|$.
         Non-associativity is the microscopic mechanism for Gap $> 0$ (T-55).
-  \item \textbf{Subjective time dilation $[\mathfrak{C}] \to$ \status{T}:}
+  \item \textbf{Subjective time dilation \status{C under T-186(a)}:}
         $\delta\tau_{\mathrm{subj}}/\delta\tau_{\mathrm{phys}} \propto |\gamma_{OE}|/\gamma_{OO}$
-        is a theorem following from T-87 (O = clock), T-186(a) (E = experience),
-        and T-88 ($\kappa_0 \propto |\gamma_{OE}|$).
+        follows from T-87 steps 1--3 (O = clock register), T-186(a) (E = experience)
+        and T-88 ($\kappa_0 \propto |\gamma_{OE}|$); since T-186(a) is now a
+        hypothesis \status{H}, the result inherits its condition (it was listed as an
+        upgrade to \status{T}).
   \item \textbf{The $(\mathcal{D}_\Omega, \mathcal{R})$ pair is a guiding duality
         \status{I}, not an adjunction:} $\mathcal{D}_\Omega(\Gam) = \mathrm{Hom}(\Gam,\Omega)$
         is contravariant, and the would-be Hom-set bijection fails already in
@@ -676,12 +778,17 @@ Fifteen results strengthen the foundations (nine new theorems + six structural u
 \subsection{Foundational closure: proofs of T-188 through T-192}
 \label{subsec:foundational-closure}
 
-The five theorems T-188--T-192 close the foundational arc of UHM: they
-localize the hard problem (T-188), derive the metric from first principles
-(T-189), prove that the theory is self-grounding (T-190), resolve the
-self-modeling circularity (T-191), and verify the categorical target of
-the phenomenal functor (T-192). Together they establish that UHM has
-\textbf{zero free parameters and zero independent axioms}.
+The five theorems T-188--T-192 form the foundational arc of UHM: they
+localize the hard problem under a hypothesis (T-188), derive the metric
+from first principles (T-189), derive the axioms from the characterising
+properties under two conditions (T-190), bound the self-modeling tower for
+embodied holons (T-191), and verify the categorical target of the
+phenomenal functor (T-192). The earlier summary --- that together they
+establish \textbf{zero free parameters and zero independent axioms} --- is
+withdrawn: the independent axiomatic content is A1--A4 plus the
+Page--Wootters constraint of A5, and the premises and free parameters
+(among them the associator coupling $\kappa$ of $V_{\mathrm{Gap}}$, free by
+T-331) are listed on the corpus page \emph{Premises of UHM}.
 
 \begin{figure}[H]
 \centering
@@ -698,7 +805,7 @@ the phenomenal functor (T-192). Together they establish that UHM has
   \node[box] (A1) at (0,-3) {A1: $\infty$-topos};
   \node[box] (A2) at (3,-3) {A2: $J_B$};
   \node[box] (A5) at (1.5,-4.5) {A5: PW};
-  \node[box, fill=theoremcolor] (T190) at (6,-2.25) {\textbf{T-190}\\zero axioms};
+  \node[box, fill=theoremcolor] (T190) at (6,-2.25) {\textbf{T-190} [C]\\constraint of A5\\and T-186(a) open};
   \draw[arr] (AP) -- node[left,font=\scriptsize] {T-15} (A3);
   \draw[arr] (AP) -- node[right,font=\scriptsize] {(AP)} (A4);
   \draw[arr] (A3) -- node[left,font=\scriptsize] {T-76} (A1);
@@ -711,64 +818,76 @@ the phenomenal functor (T-192). Together they establish that UHM has
   \draw[arr, dashed] (A4) -- (T190);
   \draw[arr, dashed] (A5) -- (T190);
 \end{tikzpicture}
-\caption{\textbf{Axiomatic Closure (T-190).} Every axiom A1--A5 is derivable
-from the defining properties of viable holons (AP, PH, QG, V) plus MaxEnt.
-Dashed arrows indicate that each axiom feeds into T-190's conclusion.}
+\caption{\textbf{Axiomatic Closure (T-190) \status{C}.} A1--A4 and the clock
+register of A5 are derivable from the defining properties of viable holons
+(AP, PH, QG, V) plus MaxEnt, with the route to A1 through the hypothesis
+T-186(a); the Page--Wootters constraint $\hat C\Gam = 0$ of A5 is not derived
+and stays an independent assumption. Dashed arrows indicate that each axiom
+feeds into T-190's conclusion.}
 \label{fig:axiomatic-closure}
 \end{figure}
 
-\begin{theorembox}[T-188: Localization of the hard problem \status{T}]
+\begin{theorembox}[T-188: Localization of the hard problem \status{C under the hypothesis T-186(a)}]
 \label{thm:t188-localization}
-The hard problem of consciousness reduces, within UHM, to a single physical
-question via:
+The chain
 \begin{equation}
   A2 \xrightarrow{\text{T-187}} J_B
   \xrightarrow{\text{T-185}} (\Pi \dashv \flat)
   \xrightarrow{\text{T-186(a)}} F \cong \&\big|_{\Dens}
   \label{eq:localization-chain}
 \end{equation}
-No consciousness-specific mystery remains: ``why experience?'' $=$ ``why CPTP?''
-$=$ ``why quantum mechanics?''
+would reduce the hard problem of consciousness, within UHM, to a single
+physical question: ``why experience?'' $=$ ``why CPTP?'' $=$ ``why quantum
+mechanics?''. The chain passes through the hypothesis T-186(a), so the
+localization is conditional (lowered 2026-09-25 from \status{T}).
 \end{theorembox}
 
 \begin{proof}
 (i) T-187~\status{T}: axiom A2 uniquely determines $J_B$ (triple
-characterization Char-I/II/III plus T-189 MaxEnt physical recasting). (ii) T-185~\status{T}: the Bures-enriched
-$\infty$-topos is differentially cohesive (Lawvere axiomatic cohesion +
-Schreiber~\cite{schreiber2013} DCCT), generating modalities
-$\Pi \dashv \flat \dashv \sharp$ and $\iota^* \dashv \mathrm{Inf}$.
-(iii) T-186(a)~\status{T}: the phenomenal functor $F$ is naturally
+characterization Char-I/II/III plus T-189 MaxEnt physical recasting).
+(ii) T-185: modalities $\Pi \dashv \flat \dashv \sharp$ and
+$\Re \dashv \Im \dashv \&$ exist in any differentially cohesive
+$\infty$-topos \status{T}; the cohesion of the UHM setting enters through
+T-185(ii$'$) \status{T} ($\mathcal{D}(\mathbb{C}^7)$ with its rank strata as
+an object of $\mathrm{SynthDiff}\infty\mathrm{Grpd}$).
+(iii) T-186(a)~\status{H}: the phenomenal functor $F$ is naturally
 isomorphic to $\&\big|_{\Dens}$ (infinitesimal flat modality restricted
-to density matrices); this is forced by the adjunction, not stipulated.
-Therefore, given A2, experience \emph{is} the infinitesimal flat
-modality --- a structural theorem, not an interpretation. The only
-remaining question is ``why A2?'' $=$ ``why is the Bures metric
-canonical?'' $=$ ``why are CPTP maps the physical transformations?''
-$=$ ``why quantum mechanics?'' $\blacksquare$
+to density matrices). This step is asserted without a construction; the
+earlier claim that it is ``forced by the adjunction, not stipulated'' is
+withdrawn. Given A2 and T-186(a), experience \emph{is} the infinitesimal
+flat modality, and the only remaining question is ``why A2?'' $=$ ``why
+is the Bures metric canonical?'' $=$ ``why are CPTP maps the physical
+transformations?'' $=$ ``why quantum mechanics?'' $\blacksquare$
 \end{proof}
 
 \begin{theorembox}[T-189: MaxEnt derivation of Bures (Char-IV) \status{T}]
 \label{thm:t189-maxent}
-The maximum entropy principle uniquely identifies the inverse metric tensor
-with the quantum covariance: $G^{ij}_B(\Gam) = C^{ij}(\Gam) :=
-\mathrm{Cov}_\Gam(\hat{O}_i, \hat{O}_j)$.
+Set $g_{ij} = \tfrac14\, C^{\mathrm{SLD}}_{ij}(\Gam)$, with
+$C^{\mathrm{SLD}}_{ij} = \tfrac12\Tr\bigl(\Gam\{L_i, L_j\}\bigr)$ the SLD
+bilinear form, defined from $\partial_i\Gam = \tfrac12(L_i\Gam + \Gam L_i)$
+without reference to any metric. The Bures metric is the unique solution of
+this selector equation; equivalently $g_B^{-1} = 4\,C_{\mathrm{est}}$ with
+$C_{\mathrm{est}} = \mathcal{F}_{\mathrm{SLD}}^{-1}$.
 \end{theorembox}
 
 \begin{proof}
-In Riemannian normal coordinates at $\Gam$, the MaxEnt distribution
-(Jaynes 1957) subject to $\langle\Gam'\rangle = \Gam$ and
-$\langle d_B^2(\Gam',\Gam)\rangle = \sigma^2$ is Gaussian with
-covariance $c^{rs} = \delta^{rs}$ (up to scale). Under coordinate
-change to arbitrary coordinates, both $G^{ij}$ and $C^{ij}$ transform
-as $(2,0)$-tensors identically, so $G^{ij} = C^{ij}$ in all coordinates.
-Since $C^{ij}$ is a physical observable (independent of metric choice),
-only one metric satisfies $G^{ij} = C^{ij}$: the SLD Fisher metric
-$\mathcal{F}_{\mathrm{SLD}} = 4g_B$ (Braunstein--Caves~\cite{braunstein1994}).
-Hence $g_B$ is uniquely selected by MaxEnt. $\blacksquare$
+The object $\tfrac12\Tr(\Gam\{L_i,L_j\})$ \emph{is} the SLD Fisher
+information $\mathcal{F}_{\mathrm{SLD}}$ (lower indices), and
+$\mathcal{F}_{\mathrm{SLD}} = 4g_B$ (Braunstein--Caves~\cite{braunstein1994});
+hence $g_B$ solves the selector equation. Uniqueness: distinct monotone
+(Petz) means give distinct Fisher tensors, so no other monotone metric
+solves it. $\blacksquare$
+
+\noindent\emph{Correction.} An earlier version stated the selector as
+$G^{ij} = C^{ij}$ (inverse metric equal to the covariance). That form is
+false on two counts --- the SLD object is $\mathcal{F}_{\mathrm{SLD}}$, not its
+inverse, and the factor 4 was dropped; chaining both gives $g_B^2 = \tfrac14 I$.
+Uniqueness is unaffected (corrected 2026-08-06).
 \end{proof}
 
 \begin{remark}[Vanchurin correspondence]
-The identification $G^{ij} = C^{ij}$ resonates with Vanchurin's
+The identification of the metric with the state's own fluctuation (SLD)
+structure resonates with Vanchurin's
 geometric learning theory~\cite{vanchurin2026geo}, where the metric
 on the space of neural network configurations is identified with the
 covariance of parameter fluctuations. In Vanchurin's framework, a
@@ -835,28 +954,33 @@ reader's reference, they are collected here:
   \item \textbf{(V) Viability:} the system has a non-trivial stationary
         state $\rhostar \neq I/7$ (it is alive, not thermally dead).
   \item \textbf{(MaxEnt) Maximum entropy:} the system's fluctuation
-        structure is Jaynes-maximal --- the inverse metric tensor equals
-        the SLD covariance (T-189~\status{T}). This is a physical
+        structure is Jaynes-maximal --- the metric equals one quarter of
+        the SLD form, $g_{ij} = \tfrac14 C^{\mathrm{SLD}}_{ij}$ (T-189~\status{T}). This is a physical
         recasting of SLD-Cram\'er--Rao saturation (Char-III), not an
         additional logically independent constraint.
 \end{enumerate}
 These are not axioms but \textbf{definitions}: they specify what it
 means for a physical system to be a viable self-sustaining holon. T-190
-proves that A1--A5 follow from (AP)--(MaxEnt). A complementary
+derives A1--A4 and the clock register of A5 from (AP)--(MaxEnt) under its
+two conditions. A complementary
 \emph{inverse} closure T-181~\status{T} (Bimodule construction) derives
 (AP), (PH), (QG), (V) themselves from the axioms A1--A4: (QG) from A1,
 (AP) from A1, (PH) from A1+A3, (V) from A2+A3. The pair (T-181, T-190)
-establishes the full equivalence of ``axioms'' and ``characterising
-properties'' --- neither layer is logically prior to the other; UHM is
-self-grounded in both directions.
+relates ``axioms'' and ``characterising properties'' in both directions,
+but it is not a full equivalence: the Page--Wootters constraint of A5 and
+the hypothesis T-186(a) stay outside the circle, so UHM is not
+self-grounded (the earlier claim is withdrawn with the lowering of T-190).
 \end{defbox}
 
-\begin{theorembox}[T-190: Axiomatic Closure \status{T}]
+\begin{theorembox}[T-190: Axiomatic Closure \status{C}]
 \label{thm:t190-closure}
-All five axioms A1--A5 are derivable from (AP)+(PH)+(QG)+(V)+MaxEnt
-(Figure~\ref{fig:axiomatic-closure}). UHM has zero independent axioms.
-The converse direction (A1--A4 $\Rightarrow$ (AP)+(PH)+(QG)+(V)) is
-T-181~\status{T}, closing the equivalence into a circle.
+Under the constraint assumption of T-87 (step~4) and the hypothesis
+T-186(a), A1--A5 are derivable from (AP)+(PH)+(QG)+(V)+MaxEnt
+(Figure~\ref{fig:axiomatic-closure}). The converse direction
+(A1--A4 $\Rightarrow$ (AP)+(PH)+(QG)+(V)) is T-181~\status{T}. The earlier
+statement ``UHM has zero independent axioms'' is withdrawn (lowered
+2026-09-25): the constraint $\hat C\Gam = 0$ remains an independent
+assumption, and its independence of A1--A4 is \status{T}.
 \end{theorembox}
 
 \begin{proof}
@@ -869,41 +993,53 @@ the consistency loop on the same number.
 \emph{A4} ($\omega_0 > 0$): $\omega_0 = 0 \Rightarrow H_{\mathrm{eff}} = 0
 \Rightarrow$ no dynamics $\Rightarrow$ (AP) violated. Hence $\omega_0 > 0$
 is necessary for autopoiesis.
-\emph{A1} ($\infty$-topos): T-76~\status{T} + T-186~\status{T}: the Bures
+\emph{A1} ($\infty$-topos): T-76~\status{T} at site level: the Bures
 topology on $\Dens(\mathbb{C}^7)$ generates a Grothendieck site whose
-sheaves form an $\infty$-topos (Lurie HTT~6.2.2.7).
+sheaves form an $\infty$-topos (Lurie HTT~6.2.2.7); the route from the
+operational basis to A1 goes through T-186(a), a hypothesis \status{H}.
 \emph{A2} ($J_B$): T-187~\status{T} + T-189~\status{T}: triple mathematical
 characterization (Char-I Petz extremality + Char-II Uhlmann + Char-III
 SLD-Fisher) plus MaxEnt physical recasting (Char-IV) uniquely selects Bures.
-\emph{A5} (Page--Wootters): T-87~\status{T}: derived from A1--A4 via
-the spectral triple construction. $\blacksquare$
+\emph{A5} (Page--Wootters): T-87, steps 1--3~\status{T}: the Wedderburn
+decomposition of $A_{\mathrm{int}}$ isolates the clock summand and the tensor
+factor $\mathcal{H}_O = \mathbb{C}[\mathbb{Z}_7]$, so the clock register follows
+from A1--A4. Step~4, the constraint $\hat C\Gam = 0$, is \status{C} under the
+support condition of Property~2: stationarity of a mixed state gives only
+$[\hat C, \Gam] = 0$, and the earlier ``A5 is a consequence of A1--A4'' is
+withdrawn. $\blacksquare$
 \end{proof}
 
-\begin{theorembox}[T-191: $\vp$-tower convergence \status{T}]
+\begin{theorembox}[T-191: $\vp$-tower convergence, restated \status{T}]
 \label{thm:t191-convergence}
-The iterative self-modeling tower $\vp^{(0)}, \vp^{(1)}, \ldots$ converges
-exponentially to the unique $\vp^*$ from any initial anchor:
+Let the holon be embodied, with backbone $\mu(\sigma - \Gam)$ and
+$\mu > L_{\mathcal{R}} + \kappa_{\max}$, where $L_{\mathcal{R}}$ is the
+trace-norm Lipschitz constant of regeneration, uniform in the target. Then
+every iterate of the tower ``target $a_n \to$ stationary state $a_{n+1}$''
+is defined, and the tower converges geometrically to one self-model from
+any anchor:
 \begin{equation}
-  \|\vp^{(n)} - \vp^*\|_{\mathrm{op}} \leq q^n\,\|\vp^{(0)} - \vp^*\|_{\mathrm{op}},
-  \quad q = \frac{\kappa_{\max}}{\lambda_{\mathrm{gap}} + \kappa_{\min}} < 1.
+  \|a_{n} - a^*\|_1 \leq q^n\,\|a_0 - a^*\|_1,
+  \quad q = \frac{\kappa_{\max}}{\mu - L_{\mathcal{R}}} < 1.
   \label{eq:phi-tower-convergence}
 \end{equation}
 \end{theorembox}
 
 \begin{proof}
-Define $\Psi(\vp) := \lim_{\tau \to \infty} e^{\tau\Lind_\Omega[\cdot;\vp]}$.
-For two candidates $\vp_1, \vp_2$, the resolvent estimate
-$\|(\Lind_0 - z)^{-1}\| \leq 1/\lambda_{\mathrm{gap}}$ at $z = 0$
-(T-39a~\status{T}) gives
-$\|\Psi(\vp_1) - \Psi(\vp_2)\|_{\mathrm{op}} \leq q\,\|\vp_1 - \vp_2\|_{\mathrm{op}}$
-with $q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min}) < 1$
-(since $\kappa_{\max} < \lambda_{\mathrm{gap}}$ by T-96~\status{T} and
-$\kappa_{\min} = \omega_0/7 > 0$). By Banach's fixed-point theorem
-on the complete space of CPTP operators, $\Psi$ has a unique fixed point
-$\vp^*$ and $\vp^{(n)} \to \vp^*$ exponentially. The choice of
-initial anchor ($\vp^{(0)} = I/7$ or any other) is irrelevant.
-This resolves the $\vp$-circularity: the definition is iterative,
-not circular. $\blacksquare$
+Under backbone dominance each target has exactly one stationary state,
+globally attracting at rate $\mu - L_{\mathcal{R}}$ (T-124c(3)); a
+variation-of-constants estimate bounds the dependence of that state on
+the target by $q$, and Banach's fixed-point theorem gives the geometric
+convergence. $\blacksquare$
+
+\noindent\emph{Erratum \status{$\times$}.} The former statement ---
+convergence for every holon from any anchor with
+$q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min}) < 1$ by T-39a +
+T-96 --- is retracted: for an isolated holon the gate $g_V$ makes the flow
+bistable, so the iterate $\lim_\tau \exp(\tau\Lind^{(n)})$ depends on the
+start (from $I/7$ it stays dead, from $|0\rangle$ it lives), and T-96 gives
+no bound $\kappa_{\max} < \lambda_{\mathrm{gap}}$. The $\vp$-circularity is
+resolved by the closed forms of $\vp_{\mathrm{coh}}$ and $\vp_s$, not by
+the tower.
 \end{proof}
 
 \begin{theorembox}[T-192: $\mathbf{Exp}^{(2)}$ is a strict 2-category \status{T}]
@@ -924,7 +1060,7 @@ $(\beta \circ_h \alpha)_\rho := \beta_{\Phi_2(\rho)} \circ \Psi_1(\alpha_\rho)$.
 = (\beta_2 \circ_h \alpha_2) \circ_v (\beta_1 \circ_h \alpha_1)$
 by the Eckmann--Hilton argument.
 (v)~Identity 1-cells: $F(\mathrm{id}_\rho) = \mathrm{id}_{F(\rho)}$
-(T-186~\status{T}). All hold with equalities (strict), so
+(functoriality of $F$). All hold with equalities (strict), so
 $\mathbf{Exp}^{(2)}$ is strict. The lax 2-functor $F_2$ has a valid
 target. $\blacksquare$
 \end{proof}
@@ -945,7 +1081,8 @@ the fundamental closures of Section~\ref{subsec:fundamental-closures}.
         computable, Kolmogorov-free formulation in T-213 below.
   \item \textbf{T-194~\status{T} (Cram\'er--Rao saturation):}
         Bures-gradient learning attains the quantum Cram\'er--Rao bound
-        up to a factor $C_2 \leq 4$.
+        up to a constant factor ($C_2 \leq 16$; the earlier $C_2 \leq 4$ did not
+        follow from the stated ingredients, corrected 2026-08-06).
   \item \textbf{T-195~\status{T} (L-III $\Phi$-monotonicity):}
         refinements of the epistemic topology are non-decreasing in
         $\Phi$; strengthened to strict monotonicity on viable states in
@@ -965,9 +1102,16 @@ the fundamental closures of Section~\ref{subsec:fundamental-closures}.
         \mathrm{On} \to \mathbf{Cat}_\infty$ with $G_2$-preserving
         inclusions admit, at each step, a representable sheaf
         non-equivalent to any in the previous layer.
-  \item \textbf{T-199--T-202~\status{T} (Value structure, L-IV
+  \item \textbf{T-199--T-202 (Value structure, L-IV
         modification, KS contextuality, meaning as $G_2$-orbit):}
-        SYNARC Appendix H, Theorems H.2--H.5.
+        SYNARC Appendix H, Theorems H.2--H.5; T-199, T-200~\status{T},
+        T-202~\status{T}+\status{I}. T-201 in its original form ---
+        Fano-line projectors admit no joint distribution --- is retracted
+        \status{$\times$}: those projectors are diagonal in the pointer basis
+        and commute, and $p_i = \gamma_{ii}$ reproduces every context. The
+        corrected T-201$'$~\status{T}: the 63 rays of the $E_7$ configuration
+        in $\mathbb{R}^7$, built from the Fano plane and the Hamming code, form
+        135 orthonormal bases admitting no Kochen--Specker assignment.
   \item \textbf{T-203~\status{T}+\status{I} (Qualia as Gap spectral
         eigenvectors):} the mathematical core (eigenvector class of
         $\hat{\mathcal G}|_E$, $G_2$-covariant and Gap-faithful) is
@@ -989,17 +1133,25 @@ the fundamental closures of Section~\ref{subsec:fundamental-closures}.
         single-agent identity predicate. Finite truncation is
         unconditionally \status{T}; the identity choice is made explicit
         in T-215 below.
-  \item \textbf{T-206--T-209~\status{T} (Operational protocols, S-13):}
+  \item \textbf{T-206--T-209 (Operational protocols, S-13):}
         qualia tomography, inverse value-alignment, constructive
-        existence of $G_2$-invariant value sets, and the operational
-        closure meta-theorem (SYNARC Appendix I).
+        existence of $G_2$-invariant value sets (T-206--T-208~\status{T};
+        in T-208 the integration-based family is invariant only under the
+        finite frame group $\Gamma_{\mathrm{oct}}$, since $\Phi$ is
+        frame-pinned), and the operational closure meta-theorem
+        (T-209~\status{T}+\status{D}; SYNARC Appendix I).
 \end{itemize}
 
 \subsection{Fundamental closures: T-210--T-216}
 \label{subsec:fundamental-closures}
 
-The following seven theorems close the last mathematical and
-categorical gaps of the UHM framework. Full proofs are collected in the
+The following seven theorems address mathematical and categorical gaps
+of the UHM framework; of the fourteen closures T-210--T-223, eleven stand
+as \status{T} (T-211 and T-212 in corrected forms), T-221 is stratified
+into \status{T} and \status{I} parts, T-216 is \status{C} and T-219 is
+\status{H}. The earlier summary ``no open mathematical or categorical gaps
+remain'' is retracted \status{$\times$}: the \status{C} and \status{H} rows
+are open conditions. Full proofs are collected in the
 companion document \emph{Fundamental Closures}; the statements are
 reproduced here for self-containment.
 
@@ -1022,7 +1174,7 @@ $\Phi(\Gam \mid J) = \bigl(\sum_{(i,j) \in \mathrm{supp}(J) \cap
 \sum_k \gamma_{kk}^2$. On $\mathcal D_7$, every off-diagonal contributes
 strictly positively; proper refinement adds at least one pair
 $(i^*, j^*)$ with $|\gamma_{i^*j^*}|^2 > 0$. Since $\mathrm{supp}(J)
-\subsetneq \mathrm{supp}(J')$ and $\mathrm{rank}\,\Gam \geq 2$ (T-151),
+\subsetneq \mathrm{supp}(J')$ and $\Gam$ has full rank on $\mathcal D_7$,
 the interior hypothesis is non-vacuous. $\blacksquare$
 \end{proof}
 
@@ -1036,46 +1188,61 @@ obstruction threshold $\omega(J_{\mathrm{ep}}) > \omega_{\mathrm{th}}$};
 continuous strict improvement outside these conditions remains
 \status{C} (pending T-197 refinement).
 
-\begin{theorembox}[T-211: Higher infinity-coherences of PhysTheory \status{T}]
+\begin{theorembox}[T-211: PhysTheory is an $(\infty,1)$-category \status{T}]
 \label{thm:t211-phystheory}
-The category $\mathbf{PhysTheory}$ of physical theories with finite
-NCG algebra and CPTP dynamics (T-174) is a full $(\infty,1)$-subcategory
-of Lurie's $\mathbf{Topoi}_\infty$. Pentagon, Mac\,Lane associator,
-interchange law, and all higher simplicial identities are inherited
-via HTT 5.2.7.
+$\mathbf{PhysTheory}$ (physical theories with CPTP dynamics, T-174) is
+the cartesian unstraightening of $E \mapsto \mathrm{Fun}(B\mathbb{R},
+\mathrm{Alg}(E))$ over Lurie's $\mathbf{Topoi}_\infty$ (HTT~\S3.2), a
+Grothendieck construction. It is a quasicategory, so associativity up to
+coherent homotopy, the pentagon, the interchange law and all higher
+simplicial identities hold; the forgetful functor to
+$\mathbf{Topoi}_\infty$ is not faithful.
 \end{theorembox}
 
 \begin{proof}
-Every object $(E, \mathcal A, D, \alpha, \beta)$ maps to the
-$\infty$-topos $E[\mathcal A] \simeq \ShInf(\Dens(\mathbb C^7))$ via
-T-119~\status{T} (Connes reconstruction with all six axioms
-verified) + T-178~\status{T} (bimodule Morita compatibility). By
-T-173~\status{T} (rigidity), the embedding
-$\iota: \mathbf{PhysTheory} \to \mathbf{Topoi}_\infty$ is fully
-faithful. $\mathbf{Topoi}_\infty$ is presentable (HTT 6.3.1.16), and
-HTT 5.2.7 gives automatic coherence inheritance for full
-$(\infty,1)$-subcategories. $\blacksquare$
+Straightening/unstraightening (HTT Thm.~3.2.0.1) turns the functor
+$E \mapsto \mathrm{Fun}(B\mathbb{R}, \mathrm{Alg}(E))$ into a cartesian
+fibration over $\mathbf{Topoi}_\infty$, whose total space is a
+quasicategory; the mapping space over a geometric morphism $f$ is
+$\mathrm{Map}_{\mathrm{Dyn}(E_1)}(x_1, f^*x_2)$, i.e.\ the triples
+$(f^*, \alpha, \beta)$ of T-174. Complex conjugation of $(\mathbb{C},\cdot)$
+over $\mathrm{id}_{\mathcal S}$ shows the forgetful functor is not faithful.
+$\blacksquare$
+
+\noindent\emph{Erratum \status{$\times$}.} The earlier statement ---
+$\mathbf{PhysTheory}$ is a \emph{full} $(\infty,1)$-subcategory of
+$\mathbf{Topoi}_\infty$, fully faithful via T-173, with coherences
+inherited through HTT~5.2.7 --- is retracted; its proof also invoked
+T-178 (retracted as a derivation) and the reconstruction of T-119, which
+the corrected statement does not need. (Status history: \status{T}, then
+\status{C at T-119}, then \status{T} in the corrected form, 2026-09-25.)
 \end{proof}
 
-\begin{theorembox}[T-212: Rheonomy modality $\mathrm{Rh}$
-\status{T}]
+\begin{theorembox}[T-212$'$: U-projection --- the $G_2$-twirl \status{T}]
 \label{thm:t212-rh}
-The seventh canonical modality of T-185 is explicitly the right
-adjoint to the bosonic-grade forgetful functor in the super-cohesive
-extension (Schreiber DCCT~\cite{schreiber2013} \S3.10;
-Sati--Schreiber~\cite{sati-schreiber2018}):
-$\mathrm{Rh}(F)(\Gam) := \Tr(F(\Gam)) \cdot \mathbf{1}_{\mathcal C_7}$.
-All modal axioms --- idempotence $\mathrm{Rh}^2 = \mathrm{Rh}$, comonad
-unit $\eta: \mathrm{Id} \Rightarrow \mathrm{Rh}$, and commutation
-$[\sharp, \mathrm{Rh}] = 0$ --- hold by direct computation using the
-Weyl integration formula on the compact $G_2$.
+For $G_2$ acting on $\mathbb{C}^7$ by its seven-dimensional
+representation, $\int_{G_2} gXg^\dagger\,dg = \tfrac17\Tr(X)\,\mathbf 1$:
+the commutant is $\mathbb{C}\mathbf 1$ (Schur), and this is the unique
+trace-preserving map onto $\mathbb{C}\mathbf 1$, idempotent only with the
+normalisation $\tfrac17$. Its reading as the U dimension (Unity) is an
+interpretation \status{I}.
 \end{theorembox}
 
-The seven modalities bijectively correspond to the seven UHM
-dimensions: $\mathrm{Id} \leftrightarrow O$, $\Pi \leftrightarrow A$,
-$\flat \leftrightarrow S$, $\mathrm{Im} \leftrightarrow D$,
-$\sharp \leftrightarrow L$, $\& \leftrightarrow E$, and
-$\mathrm{Rh} \leftrightarrow U$ (Unity = $G_2$-invariant trace).
+\noindent\emph{Erratum \status{$\times$}.} T-212 earlier identified this
+map with the rheonomy modality Rh, ``the seventh canonical modality of
+T-185'', right adjoint to the bosonic-grade forgetful functor in a
+super-cohesive extension (citing DCCT~\cite{schreiber2013} \S3.10). The
+identification is retracted: Rh of solid cohesion preserves global points,
+whereas the formula sends every state to $I/7$; Rh is not among the seven
+modalities of differential cohesion (T-185(iii)); it does not occur in DCCT
+v1, whose \S3.10 is ``Structures in a differentially cohesive
+$\infty$-topos''; and idempotence fails with the unnormalised trace. The
+former bijection of the seven modalities with the seven dimensions
+($\mathrm{Id} \leftrightarrow O$, $\Pi \leftrightarrow A$,
+$\flat \leftrightarrow S$, $\Im \leftrightarrow D$,
+$\sharp \leftrightarrow L$, $\& \leftrightarrow E$,
+$\mathrm{Rh} \leftrightarrow U$) is an interpretation \status{I} at most,
+with Rh replaced by Red ($\Re$) (T-185(iii)).
 
 \begin{theorembox}[T-213: Yoneda representability via Bures
 description length \status{T}]
@@ -1119,9 +1286,9 @@ $\tilde W$ can simultaneously be faithful to external content and
 surjective. The bridge must be external. $\blacksquare$
 \end{proof}
 
-Combined with T-188 (WHY-localisation to ``why CPTP?'') and T-203
-(WHAT-structure up to $G_2$-gauge), T-214 completes the constructive
-resolution of the hard problem: the residual \status{P}/\status{I} status
+Combined with T-188 (WHY-localisation to ``why CPTP?'', conditional on
+the hypothesis T-186(a)) and T-203 (WHAT-structure up to $G_2$-gauge),
+T-214 shows that the residual \status{P}/\status{I} status
 of phenomenal identification is structurally inevitable, not
 a remediable weakness. Further internal progress is impossible by
 Lawvere incompleteness, and this is positively proven.
@@ -1145,37 +1312,47 @@ the latter holds only for the $\iota_{\max}$ convention with
 resource abstraction.
 
 \begin{theorembox}[T-216: Closed-form analytical
-$\varepsilon_{\mathrm{eff}}$ \status{T at T-64}]
+$\varepsilon_{\mathrm{eff}}$ \status{C at (SV)}]
 \label{thm:t216-eps-eff}
-The effective sectoral parameter in the Yukawa hierarchy admits the
-closed form
+Under the hypothesis (SV) of sector values of the Gap vacuum, the
+effective sectoral parameter in the Yukawa hierarchy has the symbolic
+form
 \[
-  \varepsilon_{\mathrm{eff}} \;=\;
-  \frac{4\, N_{33}^{\mathrm{Fano}}}
+  \varepsilon_{\mathrm{eff}} \;\propto\;
+  \frac{N_{33}^{\mathrm{Fano}}}
        {9\, |\bar\gamma|\,\bigl(1 + r_4\,\Sigma_0/2\bigr)},
 \]
-with $N_{33}^{\mathrm{Fano}} = 1$ (the unique Fano line
-$\{L, E, U\}$ entirely within $\bar{\mathbf 3}$), $|\bar\gamma|$ the
+with $N_{33}^{\mathrm{Fano}}$ the number of non-$O$ Fano lines meeting
+the $\mathbf 3$-sector in exactly two points, $|\bar\gamma|$ the
 sectoral average of off-diagonal coherences at the vacuum $\theta^*$,
 $r_4 = V_4/V_2|_{\theta^*}$, and $\Sigma_0 = \sum_i \theta_i^{*2}$.
-Evaluation at the T-64 vacuum gives
-$\varepsilon_{\mathrm{eff}} \approx 0.059$.
+The value $\varepsilon_{\mathrm{eff}} \approx 0.059$ is the
+phenomenological sectoral value, \status{C}, pending a corrected
+symbolic evaluation.
 \end{theorembox}
 
 Derivation: symbolic minimisation of $V_{\mathrm{Gap}}$ (T-74~\status{T})
 in the sectoral variables $\boldsymbol\varepsilon$, with the Fano
 selection rule (T-43d~\status{T}) and the Schur-unique $G_2$-invariant
 cubic term (T-50~\status{T}) supplying the combinatorial content.
-This upgrades T-176 from ``claimed analytical'' to an explicit algebraic
-expression.
+\emph{Corrections.} (1)~The earlier ``$N_{33}^{\mathrm{Fano}} = 1$, the
+unique Fano line $\{L,E,U\}$ within $\bar{\mathbf 3}$'' is false:
+$\{L,E,U\}$ is not a line, and no line lies wholly within
+$\bar{\mathbf 3}$. (2)~The printed $0.059$ does not follow from the stated
+$|\bar\gamma| \approx 0.15$ (the ratio is $O(1)$). (3)~The status was
+\status{T at T-64}; the sectoral reduction rested on the axis-labelled
+decomposition T-48a, retracted, and T-64 as corrected produces no sector
+pattern, so the structure rests on (SV) (corrected 2026-09-25).
 
 \subsection{Extended closures: T-217--T-223 + clarifications}
 \label{subsec:extended-closures}
 
 A follow-up audit (2026-04-17) identified three further open
-mathematical questions and three implicit assumptions. All are now
-closed with full proofs. A further closure (T-221, 2026-04 v1.5)
-integrates UHM's response to the recent no-go results of List
+mathematical questions and three implicit assumptions; T-217 and T-220
+are \status{T}, T-218 is \status{T} for the Kan property with its
+3-coskeletal step \status{C}, and T-219 is a hypothesis \status{H}
+(corrected 2026-09-25). A further theorem (T-221, 2026-04 v1.5; corrected
+2026-09-25) locates UHM with respect to the recent no-go results of List
 (2025)~\citep{list2025quadrilemma} and DeBrota--List
 (2026)~\citep{debrota2026heptalemma,debrotalist2026preprint}. The
 resource-theoretic theorem T-222 (restated 2026-09-26; the former
@@ -1226,8 +1403,11 @@ $\mathrm{Cog} := \mathrm{Sing}(B_\bullet \mathcal C_{\mathrm{FKraus}})$,
 defined as the singular complex of the classifying space of the
 Fano-Kraus category, is a Kan complex: every horn $\Lambda^n_k \to
 \mathrm{Cog}$ (inner or outer) admits a filler $\Delta^n \to \mathrm{Cog}$.
-Its 3-coskeletal truncation $\tau_{\leq 3}\mathrm{Cog}$ matches
-$\mathrm{SAD}_{\max} = 3$ at the categorical level.
+Its 3-coskeletal truncation $\tau_{\leq 3}\mathrm{Cog} \simeq \mathrm{Cog}$
+matches $\mathrm{SAD}_{\max} = 3$ at the categorical level --- \status{C},
+on the SYNARC-viable subset only (the step bridging simplicial and
+Bures-metric viability is not a simplicial identity; off that subset
+$\tau_{\leq 3}$ is the ordinary truncation and no equivalence).
 \end{theorembox}
 
 \begin{proof}[Proof sketch]
@@ -1248,21 +1428,28 @@ general. The singular-classifying-space construction above closes this
 gap with a textbook-level application of algebraic topology.
 
 \begin{theorembox}[{T-219: $\Lambda$ SUSY-suppression via sector product
-\status{T at T-64}}]
+\status{H}}]
 \label{thm:t219-lambda-susy}
-In UHM's $\mathcal N = 1$ spectral action on $M^4 \times A_{\mathrm{int}}$
-(T-65~\status{T}), the residual cosmological constant from SUSY-broken
-loops is suppressed by
+\emph{Hypothesis} (corrected 2026-09-25 from \status{T at T-64}). In UHM's
+$\mathcal N = 1$ spectral action on $M^4 \times A_{\mathrm{int}}$
+(T-65), the residual cosmological constant from SUSY-broken
+loops would be suppressed by
 \[
   \Lambda_{\mathrm{SUSY}} \;\sim\; \varepsilon^{12}\, M_P^4 \;=\;
   \varepsilon^{4 \cdot k_{\mathrm{sec}}}\, M_P^4, \qquad k_{\mathrm{sec}} = 3,
 \]
 where $k_{\mathrm{sec}} = 3$ is the number of sectors
-($\mathbf 1_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$, T-48a~\status{T})
+($\mathbf 1_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$)
 and the factor $4$ per sector is the standard one-loop supertrace
 $\mathrm{STr}(M_k^4) \sim (\varepsilon M_P)^4$ of SUSY-broken
 spectrum-splitting (Martin 2010, \emph{SUSY Primer} \S7.2).
 \end{theorembox}
+
+\noindent Why a hypothesis: the sectors were the axis triples of T-48a,
+retracted \status{$\times$} in its axis-labelled form; their breaking scales
+rest on (SA) \status{H} and (FE); and the proof's own one-loop sum
+$\sim 3\varepsilon^4 M_P^4$ exceeds $\varepsilon^{12} M_P^4$ unless the
+lower orders cancel, which is not shown.
 
 \textbf{Error correction.} The previous formulation claimed
 12-order suppression via decomposition of the $G_2$ adjoint
@@ -1270,11 +1457,12 @@ $\mathbf{14} \to \mathbf{7}_{\mathrm{light}} \oplus
 \mathbf{7}_{\mathrm{heavy}}$. This is \emph{mathematically invalid}:
 the $G_2$ adjoint representation $\mathbf{14}$ is irreducible under
 $G_2$, and no $7+7$ decomposition exists. T-219 replaces this with a
-valid sector-product mechanism: the three sectors of the UHM state
-space each contribute one factor of $\varepsilon^4$ in the leading
-three-loop correction, giving $\varepsilon^{12}$ rigorously via
+sector-product mechanism: the three sectors of the UHM state
+space would each contribute one factor of $\varepsilon^4$ in the leading
+three-loop correction, giving $\varepsilon^{12}$ via
 $G_2$-invariant Fano coupling (T-43d~\status{T}) instead of invoking a
-reducibility that does not hold.
+reducibility that does not hold --- a hypothesis for the reasons above,
+not a rigorous derivation.
 
 \paragraph{Three clarifications (implicit assumptions made explicit).}
 \begin{itemize}[leftmargin=2em,nosep]
@@ -1290,7 +1478,8 @@ reducibility that does not hold.
   \item \textbf{Bures boundary.} Rank-deficient boundary strata of
         $\mathcal D(\mathbb C^7)$ are handled via the stratified site
         (Ayala--Francis--Rozenblyum 2017). The viability condition
-        $P > \Pcrit$ together with $D_{\min} \geq 2$ (T-151~\status{T})
+        $P > \Pcrit$ together with $D_{\min} \geq 2$ (an independent L2
+        threshold \status{D}, T-151)
         restricts attention to the interior stratum $\mathcal D_7$
         where the Bures metric is non-degenerate. Boundary handling is
         needed only for pathological-state analysis.
@@ -1382,126 +1571,103 @@ generations of the Standard Model. This connects to the
 Dubois-Violette and Boyle--Farnsworth octonionic-SM programmes, but
 requires a separate empirical study.
 
-\begin{theorembox}[{T-221: Categorical-monistic response to List/DeBrota
-no-go results \status{T}~formal + \status{I}~interpretive}]
+\begin{theorembox}[{T-221: UHM realises the relationalist route through
+the List/DeBrota no-go results \status{T}~formal + \status{I}~interpretive}]
 \label{thm:t221-categorical-monistic}
 Let $\mathfrak T = \mathbf{Sh}_\infty(\mathcal C_7, J_{\mathrm{Bures}},
-\omega_0)$ be the UHM cohesive $\infty$-topos (A1--A5 + T-211~\status{T}
-Giraud; in the sense of Schreiber~\cite{schreiber2013}). Formalise the five theses of List~\citep{list2025quadrilemma}
-and DeBrota--List~\citep{debrota2026heptalemma,debrotalist2026preprint}
-as follows: \emph{FPR} (first-personal realism) --- the interior
-functor $\mathrm{Map}_{\mathrm{int}}(\Gam,-) = \&(\Gam) :
-\mathcal C_7 \to \mathcal S$ is non-trivial for viable $\Gam$;
-\emph{NS} (non-solipsism) --- the site $\mathcal C_7$ contains at
-least two non-isomorphic viable objects; \emph{OW} (one world) ---
-there exists a world-object $W \in \mathfrak T$, unique up to
-equivalence, such that every viable $\Gam$ admits a canonical
-geometric morphism $y(\Gam) \to W$; \emph{NF}
-(non-fragmentation) --- every world-object satisfies descent;
-\emph{NR}$_{\mathrm{site}}$ (site-relative realism) --- facts are
-$\infty$-sheaf sections $\mathcal F(\Gam) \in \mathcal S$, absolute up
-to isomorphism in $\mathfrak T$ but indexed by the internal site
-object $\mathcal C_7 \in \mathfrak T$ (site-relative in the
-Grothendieck sense). Then:
+\omega_0)$ be the UHM $\infty$-topos, with propositions read in its
+internal language by Kripke--Joyal forcing. A fact holds
+\emph{absolutely} (in the sense of NR) when it is forced at the terminal
+object $1$, and \emph{relative to a stage} $U$ when it is forced at $U$; a
+subject is a viable state $\Gam$ taken as the stage $y(\Gam)$, and ``I am
+in state $X$'' is the formula $[s = X]$. List's
+quadrilemma~\citep{list2025quadrilemma} has four claims (FPR, NS, NF, OW);
+the five-thesis form (FPR, NS and objectivism $=$ OW $\wedge$ NF $\wedge$ NR)
+is DeBrota--List~\citep{debrotalist2026preprint}, and the heptalemma for
+quantum mechanics is DeBrota--List~\citep{debrota2026heptalemma}. Then:
 
-\begin{enumerate}[label=(\roman*),nosep]
-  \item \emph{FPR is forced} by T-186 ($F \cong \&|_{\mathcal D}$) ---
-        a theorem of UHM, not an optional postulate.
-  \item \emph{NS is conventional} by T-215: choice of
-        $\iota \in \{\iota_{\min}, \iota_{\max}\}$ resolves whether a
-        fractal tower is many agents or one compound.
-  \item \emph{OW is derived} by T-120: $M^4 = \mathbb R \times \Sigma^3$
-        follows uniquely (up to $G_2 \times \mathbb R_{>0}$ by T-173)
-        from the spectral triple.
-  \item \emph{NF is definitional} by T-211 Giraud: descent is the
-        defining property of $\infty$-sheaves.
-  \item \emph{NR relaxes to} NR$_{\mathrm{site}}$: by presentability
-        of $\mathfrak T$ (HTT 6.3.1.16), $\mathcal C_7$ is internal to
-        $\mathfrak T$, so the relativisation parameter $\Gam$ is
-        $\mathfrak T$-internal, not external.
+\begin{enumerate}[label=(\alph*),nosep]
+  \item \emph{The no-go holds inside UHM} \status{T}: if $X \neq Y$, no
+        inhabited stage forces $[s = X] \wedge [s = Y]$; the first-personal
+        facts of two subjects in different states are not compossible.
+  \item \emph{Route} \status{T}: UHM keeps OW (one topos, by the choice of
+        primitive), NF ($1 \nVdash \bot$), NS (under $\iota_{\min}$ of T-215)
+        and FPR \emph{in relativised form}, each subject's facts forced at its
+        own stage; by (a) NR fails for them. This is the relationalist route
+        of DeBrota--List; in List's four-claim map it is the first horn.
+  \item \emph{The relativisation parameter is internal} \status{T}: it is
+        the stage $y(\Gam)$, an object of $\mathfrak T$ (the site is
+        essentially small), which answers Fine's~\citep{fine2005tense}
+        ``pure metaphysical self outside the world''.
+  \item \emph{The first objection stands} \status{T}: automorphisms of the
+        site preserve forcing, so nothing internal selects ``my'' stage;
+        selecting one is the choice of a point of $\mathfrak T$, external
+        data (cf.\ T-214).
+  \item \emph{The mathematics does not choose the route} \status{T}: the
+        relationalist, fragmentalist and many-subjective-worlds routes are
+        three readings of one forcing relation and share every observable,
+        so no measurement discriminates them; which reading is UHM's is
+        \status{I}.
 \end{enumerate}
 
 \noindent
 \textbf{Corollaries.}
 \begin{itemize}[leftmargin=2em,nosep]
-  \item \emph{C1 (quadrilemma).} Under $\iota_{\min}$, $\{\mathrm{FPR},
-        \mathrm{NS}, \mathrm{OW}, \mathrm{NF}, \mathrm{NR}_{\mathrm{site}}\}$
-        is jointly consistent in $\mathfrak T$, resolving the List
-        (2025) quadrilemma by a single structural replacement
-        $\mathrm{NR} \rightsquigarrow \mathrm{NR}_{\mathrm{site}}$.
-  \item \emph{C2 (heptalemma).} $\{\mathrm{Loc}, \mathrm{MI},
-        \mathrm{MR}, \mathrm{NS}, \mathrm{OW}, \mathrm{NF},
-        \mathrm{NR}_{\mathrm{site}}\}$ is jointly consistent with
-        QM predictions in $\mathfrak T$ (Loc from Lindblad locality on
-        $\mathbb C^7$; MI from autonomy of $\mathcal R$, T-62~\status{T};
-        MR from $\rho^* = \vp(\Gam)$, T-96/T-98~\status{T}).
-  \item \emph{C3 (RQM as shadow).} Relational quantum mechanics
-        (Rovelli~\citep{rovelli1996rqm}) is the 1-truncation
-        $\tau_{\leq 1}(\mathfrak T)$: collapsing $n \geq 2$ coherences
-        yields ``facts relative to observer''. The first-personal content
-        absent in RQM~\citep{glick2021qbism} is encoded in UHM by the
-        $\&$-modality of T-186, invisible to 1-truncation.
+  \item \emph{T-221.1} \status{T}: UHM sits on the relationalist route of the
+        five-thesis map and on the first horn of List's four-claim map.
+  \item \emph{T-221.2 (heptalemma)} \status{T}: UHM keeps locality (the
+        full dynamics does not signal, Theorem~8.5 of the physics
+        correspondence), measurement independence (T-62), measurement
+        realism (T-96, T-98), NS, OW and NF, and relaxes NR --- the route of
+        relational quantum mechanics; the joint consistency of these six with
+        quantum predictions is the theorem of DeBrota--List.
+  \item \emph{T-221.3} \status{I}: UHM and relational quantum mechanics
+        (Rovelli~\citep{rovelli1996rqm}) take the same route and differ in
+        the relativisation parameter (a viable $\Gam$-stage against any
+        physical system).
 \end{itemize}
 \end{theorembox}
 
 \begin{proof}[Proof sketch]
-Part~(i) is T-186; (ii) is T-215; (iii) is T-117--T-121 + T-173; (iv) is
-T-211 Giraud. For (v): since $\mathfrak T$ is presentable and
-$\mathcal C_7$ is essentially small (bounded by $\dim \mathcal D(\mathbb C^7) =
-49$), the $\infty$-Yoneda embedding $y : \mathcal C_7 \hookrightarrow
-\mathfrak T$ lands in $\mathfrak T$ itself. Hence $\Gam$ is
-$\mathfrak T$-internal, resolving Fine's~\citep{fine2005tense} worry
-that relationalism requires a ``pure metaphysical self'' outside the
-world. C1 and C2 follow because joint satisfaction in a model
-(namely $\mathfrak T$) implies joint consistency. C3: the truncation
-$\tau_{\leq 1}$ is a reflective left-exact localisation (HTT 5.5.6);
-representable sheaves $y(\Gam)$ collapse to hom-sets
-$\mathrm{Map}_{\mathcal C}(-,\Gam)$, reproducing Rovelli's relative
-facts; the 2-cell data of the $\&$-modality (naturality squares of
-$F : \mathbf{Phys} \to \mathbf{Phen}$) is discarded. $\blacksquare$
+(a) A stage forcing both $[s = X]$ and $[s = Y]$ would carry a state equal to
+both. (b) OW and NF hold by construction; NS is T-215; FPR is forced at each
+subject's own stage, and by (a) not at $1$. (c) Since $\mathfrak T$ is
+presentable and $\mathcal C_7$ essentially small, the $\infty$-Yoneda
+embedding $y : \mathcal C_7 \hookrightarrow \mathfrak T$ lands in
+$\mathfrak T$. (d) Conjugation by a unitary is an automorphism of the site
+preserving CPTP maps and the Bures distance, hence forcing. (e) Every
+observable is a function of the forcing relation, which the three readings
+share. $\blacksquare$
 \end{proof}
 
-\textbf{Reconstruction of the three other non-objectivist routes.}
-Each of the routes identified by DeBrota--List~(2026) is a reductive
-truncation of $\mathfrak T$:
-
-\begin{table}[H]
-\centering\small
-\begin{tabular}{@{}p{4.2cm} p{4.5cm} p{5cm}@{}}
-\toprule
-\textbf{Route} & \textbf{Specialisation of $\mathfrak T$} & \textbf{What is lost} \\
-\midrule
-Relationalist (RQM, relativist FPR) & $\tau_{\leq 1}(\mathfrak T)$ & all $n \geq 2$ coherences, FPR via $\&$-modality \\
-\midrule
-Fragmentalist (Fine, Lipman) & drop descent in a sector & violates T-211 Giraud (no longer an $\infty$-topos) \\
-\midrule
-Many-subjective-worlds (Mermin~\citep{mermin2019better}, List 2023) & pointwise Yoneda without gluing & covering coherence $\{U_i \to W\}$, shared objectivity \\
-\bottomrule
-\end{tabular}
-\caption{The three non-objectivist routes of DeBrota--List (2026) as reductive truncations of the UHM cohesive $\infty$-topos. They are \emph{compatible shadows} of a single structure, not competing positions. UHM realises the \emph{fourth} (categorical-monistic) route, absent from the DeBrota--List taxonomy.}
-\label{tab:t221-routes}
-\end{table}
-
-\textbf{Empirical discriminator (absent from DeBrota--List 2026).}
-The external no-go results leave route-selection to inference to the
-best explanation. UHM provides a measurable discriminator via the
-$\pi_{\mathrm{bio}}$ protocol (TMS--EEG measurement of $\Phi(\Gam)$,
-see \S\ref{sec:predictions} prediction~21):
-\emph{UHM (T-221)} predicts $\Phi \geq 1$ threshold with
-sector-profile dependence; \emph{RQM shadow} predicts no threshold,
-only relative correlations; \emph{fragmentalism} predicts incoherent
-$\Phi$-assignments across subjects (fails descent);
-\emph{many-subjective-worlds} predicts per-subject $\Phi$ with no
-cross-subject invariant. This converts a philosophical choice into
-an empirically resolvable question.
+\paragraph{Erratum: the former T-221 \status{$\times$}.}
+Earlier versions of this paper stated T-221 as a \emph{fourth},
+``categorical-monistic'' route, absent from the DeBrota--List taxonomy,
+with NR replaced by a site-relative NR$_{\mathrm{site}}$. Replacing NR in
+this way while keeping OW and NF \emph{is} the relationalist route, so the
+following are retracted: the fourth route; ``FPR is forced'' (it rested on
+the hypothesis T-186(a), and UHM keeps FPR only in relativised form);
+``OW is derived by T-120''; the ``resolution'' of the quadrilemma
+(its consistency is that of the relationalist route, which the authors
+grant); ``RQM $= \tau_{\leq 1}(\mathfrak T)$'' (the representables of the
+1-category $\mathcal C_7$ are already 0-truncated, so 1-truncation changes
+none of them); the table reading the three non-objectivist routes as
+reductive truncations of $\mathfrak T$, with fragmentalism as ``dropping
+descent'' (in the sheaf-theoretic formalisation that DeBrota--List cite,
+descent holds and what fails is a global section); the ``empirical
+discriminator'' through the $\pi_{\mathrm{bio}}$ protocol (by (e) the routes
+share every observable); and the quotation of the quadrilemma as five
+theses (it has four).
 
 \textbf{Position in UHM's axiomatic architecture.}
-Axiomatic closure T-190 is \emph{internal} (every UHM axiom is a
-theorem of the remaining structure). T-221 is the \emph{external}
-axiomatic closure --- UHM's position in the contemporary debate over
-scientific objectivism and the status of first-personal facts in
-science. Together, T-190 + T-221 complete the axiomatic
-self-grounding against both internal and external critiques.
+Axiomatic closure T-190 is \emph{internal} and conditional (the
+Page--Wootters constraint of A5 and the hypothesis T-186(a) stay open).
+T-221 is UHM's position in the \emph{external} debate over scientific
+objectivism and the status of first-personal facts: it locates UHM on the
+relationalist route and leaves the choice among routes, as DeBrota and
+List do, to inference to the best explanation. The earlier claim that
+T-190 + T-221 ``complete the axiomatic self-grounding against both
+internal and external critiques'' is withdrawn.
 
 \begin{theorembox}[{T-222: resource geometry of the viable window
 (restated 2026-09-26) \status{T}}]
@@ -1660,12 +1826,12 @@ depolarisation without leaving the window.
 \paragraph{Position in UHM's axiomatic architecture (revised).}
 The closure chain reads:
 \begin{itemize}[leftmargin=2em,nosep]
-  \item T-190: \emph{internal} axiomatic closure (axioms as
-        theorems).
+  \item T-190: \emph{internal} axiomatic closure, \status{C} (the
+        Page--Wootters constraint and T-186(a) stay open).
   \item T-220: \emph{structural} closure (no reduction
         $F_4$-UHM $\to$ $G_2$-UHM).
-  \item T-221: \emph{external} closure (answer to List/DeBrota
-        no-go results).
+  \item T-221: \emph{external} position (the relationalist route
+        through the List/DeBrota no-go results).
   \item T-222: \emph{resource-theoretic} answer, negative: the
         viable window has no single resource optimum, so the
         multi-resource critique is answered by a map of the Pareto
@@ -1703,14 +1869,21 @@ denote Lerchner (2026) Melody-Paradox corollary. Then:
         on UHM-compatible representations; the $G_2$-orbit
         $[\Gamma_S]_{G_2}$ is invariant under the alphabetizer
         freedom of $(\mathsf{PT})$.
-  \item[(b)] (Observable invariance.) All UHM-relevant observables
-        $P, R, \Phi, \mathrm{Coh}_E, \Lambda, H, \pi_{\mathrm{bio}}$
-        are $G_2$-invariants, hence descend to
-        $\mathcal D(\mathbb C^7)/G_2$.
+  \item[(b)] (Observable invariance.) $P$ and $R$ are $G_2$-invariants
+        and descend to $\mathcal D(\mathbb C^7)/G_2$; the frame
+        observables $\Phi, \mathrm{Coh}_E, \Lambda, H$ are
+        alphabetization-invariant because admissible alphabetizers
+        preserve the dynamical frame (they are frame-relative, not
+        orbit-invariants).
   \item[(c)] (Predicate invariance.) The consciousness predicate
         $\mathrm{Cons}(S) := (P > 2/7) \wedge (R \geq 1/3) \wedge
-        (\Phi \geq 1) \wedge (\Dmin \geq 2)$ factors through
-        $[\Gamma_S]_{G_2}$, hence is alphabetization-invariant.
+        (\Phi \geq 1) \wedge (\Dmin \geq 2)$ is alphabetization-invariant:
+        its $P, R$ terms factor through $[\Gamma_S]_{G_2}$, its $\Phi,
+        \Dmin$ terms are fixed by the dynamical frame. The predicate as a
+        whole does \emph{not} factor through $[\Gamma_S]_{G_2}$: an explicit
+        $g \in G_2$ sends $\Phi$ from $0$ to $1$ (frame rigidity; corrected
+        2026-09-25, together with the removal of $\pi_{\mathrm{bio}}$,
+        an estimator with pre-registered parameters, from the list in (b)).
   \item[(d)] (Dichotomy on non-compatible alphabetizers.) Any
         alphabetizer outside the UHM-compatible class (violating
         dynamical covariance with $\mathcal L_\Omega$) carries zero
@@ -1731,7 +1904,10 @@ intrinsic, \emph{categorically forced} stratum:
 \begin{itemize}[leftmargin=2em,nosep]
   \item L1: $p: [0,T] \to \mathsf{Phys}(S)$ --- physical substrate.
   \item L2: $[\Gamma_S]_{G_2} \in \mathcal D(\mathbb C^7)/G_2$ ---
-        forced by T-190 \status{T} (zero-axiom closure).
+        $\mathbb C^7$ and $G_2$ forced through the Bridge T15 with the
+        canonical orientation (the earlier ``forced by T-190, zero-axiom
+        closure'' is withdrawn: T-190 is conditional and clauses (a)--(e)
+        do not use it).
   \item L3: $f: \mathsf{Phys}(S) \to \Sigma^*$ --- external
         mapmaker, Lerchner-variable.
 \end{itemize}
@@ -1743,12 +1919,13 @@ orthogonal; $(\mathsf{PT})$ does not propagate to $(c)$.
 \textit{L1.} The Hilbert-space dimension $\dim = 7$ and gauge
 group $G_2 = \mathrm{Aut}(\mathbb O)$ are categorically forced by
 T-82 \status{T} (BIBD$(7,3,1)$ / Fano plane uniqueness via
-Fisher--Veblen--Wedderburn), T-42a \status{T} ($G_2$-rigidity of the
-Fano dissipator), T-120 \status{T}
-($M^4 = \mathbb R \times \Sigma^3$), T-151 \status{T}
-($\Dmin = 2$), T-149 \status{T} (unconditional viability of the
-embodied attractor), T-190 \status{T} (zero-axiom categorical closure);
-the 12-step Bridge~T-15 chains them without parameter freedom.
+Fisher--Veblen--Wedderburn) and T-42a \status{T} ($G_2$-rigidity);
+the 12-step Bridge~T-15, with the canonical orientation of the Fano
+lines (T15-canon), chains them without parameter freedom. (The earlier
+list also cited T-120, T-151, T-149 and T-190 as \status{T}; the
+threshold $\Dmin = 2$ is an independent definition \status{D}, T-149 is
+stratified with a conditional step~3, and T-190 is \status{C}; none is
+needed for the forcing.)
 
 \textit{L2.} A UHM-admissible representation $(\mathbb C^7,
 \mathcal B, G_S)$ satisfies the covariance gate $\frac{d}{d\tau}
@@ -1758,10 +1935,12 @@ G_S(s(\tau)) = \mathcal L_\Omega[G_S(s(\tau))]$ enforced by A1--A5.
 Representation), any two admissible representations are related
 by $U \in G_2$. Hence $[\Gamma_S]_{G_2}$ is well-defined.
 
-\textit{L4.} Each of $P, R, \Phi, \mathrm{Coh}_E$ is
-$U(7)$-invariant (hence $G_2$-invariant) by direct computation;
-$\Lambda, H, \pi_{\mathrm{bio}}$ are defined as $G_2$-averages
-and invariant via Schur's lemma.
+\textit{L4.} $P$ and $R = 1/(7P)$ are $U(7)$-invariant (hence
+$G_2$-invariant) by direct computation; $\Phi$, $\mathrm{Coh}_E$,
+$\Lambda$, $H$ are frame observables, fixed once the dynamical frame is
+fixed, and admissible alphabetizers preserve that frame. (The earlier
+lemma called all of them $G_2$-invariant and included
+$\pi_{\mathrm{bio}}$; both are corrected.)
 
 \textit{L5.} Any alphabetizer whose induced dynamics admits a
 CPTP realisation commuting with $\mathcal L_\Omega$ defines an
@@ -1796,8 +1975,9 @@ Maturana--Varela (1980) / Thompson (2019) enactivist thesis that
 (cited by Lerchner himself).
 
 \textit{Combination.} L1+L2+L3 give existence and $G_2$-uniqueness;
-L5 bounds alphabetizer-freedom to $G_2$; L4 makes the seven
-observables $G_2$-invariant; (c) follows; L6 handles
+L5 bounds alphabetizer-freedom to $G_2$; L4 makes $P, R$
+$G_2$-invariant and the frame observables alphabetization-invariant;
+(c) follows; L6 handles
 non-compatible $f$; L7 + T-214 localise the residual externality
 to the phenomenal bridge. $\blacksquare$
 
@@ -1805,9 +1985,9 @@ to the phenomenal bridge. $\blacksquare$
 T-123 \status{T} handles the residual $G_2$ freedom at L2 but
 not the L1$\to$L2 forcing (where \emph{a priori} one might
 suspect mapmaker choice). Full foreclosure needs six ingredients:
-(1) intrinsic-forcing of L2 (T-190+T-149+T-82+T-120+T-151);
+(1) intrinsic-forcing of L2 (T-82 + Bridge T15 with canonical orientation);
 (2) $G_2$-gauge boundedness (T-42a+T-82); (3) observable
-$G_2$-invariance (L4); (4) dynamic-covariance gate (L2+L6);
+invariance under admissible alphabetizers (L4); (4) dynamic-covariance gate (L2+L6);
 (5) intrinsic self-alphabetization via $R$ (T-96+T-98); (6)
 Lawvere residual localisation (T-214). T-223 packages the
 cascade.
@@ -1816,8 +1996,8 @@ cascade.
 \begin{enumerate}[leftmargin=2em,nosep]
   \item[F1:] Any experiment producing two physically realisable
         UHM-compatible alphabetizations of the same $S$ yielding
-        distinct $G_2$-invariants $(P, R, \Phi, \mathrm{Coh}_E)$
-        would refute (a)--(c).
+        distinct $(P, R)$ or distinct frame observables
+        $(\Phi, \mathrm{Coh}_E)$ would refute (a)--(c).
   \item[F2:] Any alphabetization of $S$ commuting with
         $\mathcal L_\Omega$ but not factoring through a
         $G_2$-conjugate representation would refute L5.
@@ -1838,8 +2018,13 @@ Life}; Lerchner 2026 ``The Abstraction Fallacy'' (DeepMind
 preprint, 2026-03-19); Lawvere 1969, Yanofsky 2003 (via T-214).
 
 \paragraph{Summary.}
-After T-210--T-223, UHM's foundational framework has no remaining
-mathematical or categorical gaps. Three classes of open questions
+After T-210--T-223, open mathematical conditions remain: T-216 is
+\status{C at (SV)}, T-219 is \status{H}, T-190 and T-188 are
+conditional, and the premises of the corpus (the Page--Wootters
+constraint, the bridge premises (Cl$_0$) and (P), the principle (Max$\Phi$),
+(P1$_6$) and the free parameters, $\kappa$ among them) stay inputs. The
+earlier sentence ``no remaining mathematical or categorical gaps'' is
+retracted \status{$\times$}. Beyond these, three classes of open questions
 persist, all with explicit specifications:
 \begin{itemize}[leftmargin=2em,nosep]
   \item \textbf{Computational:} numerical minimisation of
@@ -1859,10 +2044,13 @@ persist, all with explicit specifications:
 \begin{figure}[H]
 \centering
 \input{figures/spacetime-emergence}
-\caption{\textbf{Emergence of $M^4$ from the seven dimensions of $\Gam$.} The spatial sector
-$\{A,S,D\}$ yields $\Sigma^3$ via Connes reconstruction (T-119). The temporal dimension O
-yields $\mathbb{R}$ via Page--Wootters (T-118). The product spectral triple gives $M^4$
-(T-120), from which the Einstein--Hilbert action follows (T-121).}
+\caption{\textbf{Emergence of $M^4$ from the seven dimensions of $\Gam$.} Schematic.
+$\Sigma^3 = S^3$ is the
+minimal unitization of the fluctuation spectrum of three commuting rotation charges
+(T-119, \status{T} as mathematics, reading \status{I}); the axis sector $\{A,S,D\}$ is not an
+$SU(3)$ sector (48a \status{$\times$}). The time line $\mathbb{R}$ is the scaling limit of the
+depth register (T-118). The product spectral triple gives $M^4$ (T-120), whose spectral
+action yields the Einstein--Hilbert term (T-121).}
 \label{fig:spacetime}
 \end{figure}
 
@@ -1876,38 +2064,34 @@ $\Omega$. Gravity is what coherence looks like from the external (physical) aspe
 \subsection{Theoretical closures T1--T6: residual specification}
 \label{subsec:theoretical-closures}
 
-The foundational theorems T-210 through T-223 close all identified gaps of
-UHM's categorical and physical structure. Six residual technical items (T1--T6)
-concern explicit specifications or scope declarations rather than open research
-questions; this subsection records each closure. The classification follows the
+The foundational theorems T-210 through T-223 address the identified gaps of
+UHM's categorical and physical structure, with the open conditions listed in
+the summary above (the earlier ``close all identified gaps'' is withdrawn). Six
+residual technical items (T1--T6) concern explicit specifications or scope
+declarations; this subsection records each, with its current status. The classification follows the
 four-level taxonomy: \textbf{[T]} proved, \textbf{[C]} conditional on an
 explicit assumption, \textbf{[D]} accepted as data/empirical input,
 \textbf{[scope]} domain of applicability declaration.
 
 \paragraph{T1 --- Multiplicative \texorpdfstring{$\varepsilon^{12}$}{epsilon-12}
-in T-219 \status{C}.}
+in T-219 \status{H}.}
 T-219 asserts $\Lambda_{\mathrm{SUSY}} \sim \varepsilon^{12} M_P^4 =
 \varepsilon^{4 \cdot k_{\mathrm{sec}}} M_P^4$ with $k_{\mathrm{sec}} = 3$. The
 standard one-loop SUSY correction per sector gives additive contributions
 $\delta\Lambda_k \sim \varepsilon^4 M_P^4$, which sum to
 $3\varepsilon^4 M_P^4$ rather than multiply to $\varepsilon^{12} M_P^4$. The
-multiplicative exponent arises at three-loop order through nested sector--sector
-interactions governed by the $G_2$-invariant trilinear Fano coupling (T-43d~\status{T}),
-which forces each sector to contribute one independent factor $\varepsilon^4$ in
-the leading correction to $\Lambda$.
+proposed mechanism is that the multiplicative exponent arises at three-loop
+order through nested sector--sector interactions governed by the
+$G_2$-invariant trilinear Fano coupling (T-43d~\status{T}).
 
-\begin{closurebox}[{Status of T-219 \status{C at non-factorable spectral triple}}]
-T-219 holds rigorously under the condition that the finite UHM Dirac operator
-$D_F$ is \emph{non-factorable} across the three sectors, i.e.\ possesses
-non-zero cross-sector coupling blocks $V_{ij}$ for all pairs
-$i, j \in \{\mathbf 1_O, \mathbf 3, \bar{\mathbf 3}\}$. Under this condition,
-the effective three-loop vacuum correction factorises multiplicatively as
-$\prod_k \delta\Lambda_k / M_P^4 \sim \varepsilon^{12}$.
-
-If $D_F$ is block-diagonal (factorable), the correction reverts to additive
-$3\varepsilon^4$. The non-factorability is encoded in the Fano trilinear coupling
-T-43d and is therefore a structural consequence of UHM's sector geometry,
-not an external assumption.
+\begin{closurebox}[{Status of T-219 \status{H}}]
+T-219 is a hypothesis (corrected 2026-09-25 from \status{T at T-64}; this
+closure earlier read \status{C at non-factorable spectral triple} and called
+the non-factorability of $D_F$ a structural consequence of UHM's sector
+geometry). The one-loop sum $\sim 3\varepsilon^4 M_P^4$ exceeds
+$\varepsilon^{12} M_P^4$ unless the lower orders cancel, which is not shown;
+the three sectors were the axis triples of the retracted T-48a; and their
+breaking scales rest on the hypothesis (SA).
 \end{closurebox}
 
 \paragraph{T2 --- Koide relation as empirical input \status{D}.}
@@ -1940,25 +2124,26 @@ $v_{A_1} = v_{\mathrm{EW}}$) were tested and rejected. The hypothesis T-220-H
 reproducing Koide) is speculative and beyond current UHM scope.
 \end{closurebox}
 
-\paragraph{T3 --- CKM non-circularity \status{T at T-173}.}
-The derivation of CKM in UHM follows the Connes--Chamseddine non-circular
-principle: masses and CKM are simultaneous outputs of diagonalising the finite
-Dirac operator $D_F$. UHM fixes $D_F$ up to $G_2 \times \mathbb R_{>0}$ by
-T-173 rigidity; Fritzsch texture emerges from $G_2$-invariance plus Fano
-selection rules (Y$_{ij}$ nonzero iff $(i,j,k)$ lies on a Fano line for some $k$),
-not as an ansatz. The observed-mass substitution criticised by external audits
-does not apply to the actual derivation path.
+\paragraph{T3 --- CKM: no derivation \status{$\times$}.}
+An earlier version of this closure read ``CKM non-circularity \status{T at
+T-173}'': masses and CKM as simultaneous outputs of diagonalising $D_F$, the
+Fritzsch texture emerging from $G_2$-invariance plus Fano selection rules, and
+a single residual normalisation $C_{\mathrm{norm}} \approx 26$ tuned to
+$V_{us}$ and reducible to a computation. This is retracted (T-345(e),
+2026-09-26): the Fritzsch texture gives $|V_{cb}| \geq 0.073$ against the
+measured $0.0418$; with $C_{\mathrm{norm}}$ fitted to the Cabibbo angle, the
+agreement with $\theta_C$ is the fit, and the Cabibbo derivation it normalised
+is retracted; the Fano angle ratios $2:3:1$ stand against the measured
+$60.8:11.2:1$.
 
-Residual input: the normalisation $C_{\mathrm{norm}} \approx 26$ in the current
-analytical form of CKM is tuned to match $V_{us}$. This reduces CKM from four
-independent Wolfenstein parameters to one normalisation constant --- a structural
-success. Deriving $C_{\mathrm{norm}}$ from the canonically fixed spectral-action
-moments (see T5 below) is a well-defined computational task.
-
-\begin{closurebox}[{CKM status \status{T at T-173; $C_{\mathrm{norm}}$ computational}}]
-CKM is non-circular in principle under T-173 rigidity. The single residual
-numerical input $C_{\mathrm{norm}}$ is reducible to a concrete computation from
-the canonical spectral-action moments and does not constitute circularity.
+\begin{closurebox}[{CKM status: open programme}]
+What T-345 proves \status{T} as mathematics is negative: every parameter-free
+structure of the clock register (Fano incidence, the quadratic-residue Gauss
+sum, the cyclic Hamming code, $H_O$, the family-invariant time state) either
+leaves $|V_{\mathrm{CKM}}|$ a permutation or is refuted by the measured
+masses and mixings; a three-channel frame with free flavour matrices remains
+a hypothesis \status{H}. The Yukawa structure ($m_t/m_b$, $y_t$, CKM) stays an
+open programme (T-332). The CKM numbers are therefore not predictions of UHM.
 \end{closurebox}
 
 \paragraph{T4 --- Markovian scope declaration \status{T}.}
@@ -2006,32 +2191,34 @@ not on the cut-off function. Only dimensional ratios ($G_N$, $\Lambda_{\mathrm{c
 gauge-unification scale) depend on $f$ and are fixed by the canonical choice above.
 \end{closurebox}
 
-\paragraph{T6 --- M$_R$ derivation path \status{T at $V_{\mathrm{Gap}}$}.}
+\paragraph{T6 --- M$_R$ derivation path \status{T}.}
 The right-handed neutrino mass $M_R \sim 2.9 \times 10^{14}\,\mathrm{GeV}$
-enters the see-saw formula $m_\nu \sim m_D^2 / M_R$. In UHM, $M_R$ is derived
-from the $V_{\mathrm{Gap}}$ minimisation on $(S^1)^{21}/G_2$, which selects a
-specific intermediate scale consistent with the sector hierarchy parameter
-$\varepsilon \approx 10^{-3}$ of T-64. This is a \emph{computational derivation}
-from UHM structure, not a see-saw-fit of observed neutrino masses.
+enters the see-saw formula $m_\nu \sim m_D^2 / M_R$. In UHM, $M_R$ follows
+from the $O$-sector scale (T-51): $\mathrm{Gap}(O,\cdot) = O(1)$ from the
+Page--Wootters phase precession plus viability, giving
+$M_{G_2}^{(\mathrm{extra})} = O(\varepsilon M_P)$ and $M_R \sim 10^{14}$ GeV.
+This is a derivation from UHM structure, not a see-saw fit of observed
+neutrino masses.
 
-\begin{closurebox}[{M$_R$ status \status{T at T-64 computational task}}]
-$M_R$ is structurally derived from the unique minimum of $V_{\mathrm{Gap}}$ on
-$(S^1)^{21}/G_2$ (T-64 \status{T}). The numerical value $M_R \approx
-2.9 \times 10^{14}$ GeV follows from the same minimisation that fixes $\varepsilon$
-and hence the CKM-normalisation constant (T3 closure). A precise value requires
-HMC Monte Carlo simulation on the $21$-dimensional compact target space.
+\begin{closurebox}[{M$_R$ status \status{T} (T-51)}]
+The earlier form of this closure derived $M_R$ from ``the unique minimum of
+$V_{\mathrm{Gap}}$ on $(S^1)^{21}/G_2$ (T-64 \status{T})'' and tied it to the
+CKM normalisation of T3. Both links are withdrawn: T-64, corrected on
+2026-09-25, gives the vacuum $I/7$ or one orbit $S^6$ as a function of the
+free coupling $\kappa$ and no sector values, which are the hypothesis (SV);
+and the CKM normalisation is retracted (T3).
 \end{closurebox}
 
 \paragraph{Cumulative closure summary.}
-After T1--T6, UHM contains \emph{no open theoretical questions} of the
-kind ``requires further research''; every previously-ambiguous item has been
-transformed into either a conditional theorem with explicit assumption ({T1, T3,
-T6}), a declared empirical input ({T2}), a scope declaration ({T4}), or a
-canonical specification ({T5}). Residual work items are \emph{computational}
-(HMC minimisation on $(S^1)^{21}/G_2$, deriving $C_{\mathrm{norm}}$ from
-canonical $f$-moments) or \emph{empirical} (testing FSQCE predictions;
-LHC/future-collider tests of $M_{\mathrm{SUSY}} \sim 10^9$ GeV from T-219
-closure). Categorical and mathematical structure of UHM is complete.
+After T1--T6: T1 is a hypothesis \status{H}, T2 a declared empirical input,
+T3 a retraction with the CKM question left as an open programme, T4 a scope
+declaration, T5 a canonical specification, and T6 a theorem through T-51.
+The earlier summary --- ``no open theoretical questions'' and ``categorical
+and mathematical structure of UHM is complete'' --- is withdrawn: open
+conditions and premises remain (see the summary of T-210--T-223 above).
+Residual work items include \emph{computational} tasks (HMC minimisation of
+$V_{\mathrm{Gap}}$ on $(S^1)^{21}/G_2$) and \emph{empirical} ones (testing
+FSQCE predictions).
 
 \subsection{Consistency with quantum mechanics (sub-threshold limit)}
 \label{subsec:qm-limit}
