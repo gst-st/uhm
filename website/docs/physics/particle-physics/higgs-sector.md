@@ -563,6 +563,10 @@ In UHM the role of the UV cutoff $\Lambda$ is played by the scale $\mu_\text{phy
 Dynamical stability of the chiral vacuum follows conditional on the sector-vacuum hypothesis (SV): Step 2 uses the unique sector vacuum with positive-definite Hessian (hypothesis (SV); the corrected T-64 gives a different vacuum) and Step 3 the barrier of T-69, both conditional on (SV) since 2026-09-25 (earlier stated as proved from [T]-results).
 :::
 
+:::warning[Correction 2026-09-26 (T-166, T-99 corrected): the corrected vacuum selects no chirality]
+The theorem below is kept for the retracted cubic $V_3$, [C at (SV)]. Its step 1 has no carrier in the $G_2$-invariant potential, which has no PT-odd term (T-331). The corrected vacuum $\Gamma_v$ is invariant under $\Theta_v\otimes1$, an element of $\mathrm{Spin}(10)$ that exchanges $V_L$ and $V_R$ ([T-333(a)](/docs/physics/gauge-symmetry/confinement#pt-на-фермионах-t341)), so the Gap vacuum does not distinguish left from right. What holds instead, [T] as mathematics and [C at (Cl)] in UHM: chirality is a property of the fermion module. The $\mathbf{16}$ is chiral and forced ([T-329](/docs/physics/gauge-symmetry/standard-model#поколение-t329)), and a left–right flip changes the $\mathrm{SU}(2)_L\times\mathrm U(1)_Y$ representation, so it needs a Yukawa mass insertion — no vacuum barrier is involved.
+:::
+
 The cubic potential $V_3$ (and the associated orientational $V_\varphi$-contribution) ensures **dynamical stability** of chiral distinction in the $E$-$U$ channel:
 
 **(a)** In the $\bar{3}$-sector $V_\varphi$ takes the form:
@@ -735,7 +739,7 @@ $$\Gamma_{\text{tunnel}} = \mu \cdot \exp\!\left(-\frac{B}{\hbar}\right), \quad 
 
 In physical units with $\mu \sim M_{\text{Planck}}$: the exponent $e^{10.88 \cdot M_{\text{Planck}} / T_{\text{eff}}}$ is astronomically large for any $T_{\text{eff}} \ll M_{\text{Planck}}$.
 
-**Falsifiable prediction.** Observation of spontaneous chirality flipping (a right-handed neutrino appearing from a left-handed one without a mass insertion) at any sub-Planckian energy would falsify the topological protection theorem T-69 [C at (SV)] and the cubic potential $V_3$ (T-99 [T]).
+**Falsifiable prediction.** Observation of spontaneous chirality flipping (a right-handed neutrino appearing from a left-handed one without a mass insertion) at any sub-Planckian energy would falsify the topological protection theorem T-69 [C at (SV)] and the cubic potential $V_3$ (T-99 [T]). *(Since 2026-09-26: step 2 of T-99 is a property of the retracted $V_3$ only, and T-99's conclusion is [✗]; what forbids an L→R flip without a mass insertion in the corrected frame is gauge invariance of the forced $\mathbf{16}$ — box in §4.4.)*
 
 **Status.** [C at (SV)] — follows from T-69 [C at (SV)] (topological barrier), the hypothesis (SV) [H] (unique vacuum with positive Hessian; the corrected T-64 does not give its values), and step 2 of T-99 ($V_3$ is the unique $PT$-odd term — true of the retracted cubic only; the corrected potential is PT-even, T-331); corrected from [T] on 2026-09-25.
 

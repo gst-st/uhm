@@ -6,7 +6,7 @@ title: "Confinement"
 # Confinement
 
 :::info Who This Chapter Is For
-Topological derivation of confinement in the Gap formalism. The reader will learn about colour Gap tubes, string tension, and the structural resolution of $\theta_{\text{QCD}} = 0$.
+Topological derivation of confinement in the Gap formalism. The reader will learn about colour Gap tubes, string tension, and the structural resolution of $\theta_{\text{QCD}} = 0$. *(Since 2026-09-26 that derivation is retracted [✗] and strong CP is open in UHM [Pr]; what the Gap potential can and cannot say about $\bar\theta$ is in [§3.1c](#тета-не-из-потенциала).)*
 :::
 
 
@@ -18,7 +18,7 @@ The derivation of confinement in the Gap formalism is proved **topologically**. 
 - String tension $\sqrt{\sigma} \approx 457$ MeV — **[C at (SV)]**: sectoral hierarchy [T] (soft Hessian mode), numerical value $|\gamma_{3\to\bar{3}}| \approx 2.8\bar{\varepsilon}$ depends on vacuum parameters T-64
 - Diagnostics of the $\sqrt{\sigma}$ discrepancy — **[T]**: the naive $\sim 7\times$ discrepancy is explained by using average parameters instead of sectoral ones ([details](#диагностика-расхождения-σ))
 - Asymptotic freedom, ABJ anomaly — **[T]** (standard physics)
-- $\theta_{\mathrm{QCD}} = 0$ — **[C at (SV)]** (T-99: step 2 stays [T], the conclusion uses the unique vacuum of (SV); corrected 2026-09-25; the route through the vacuum's antiunitary symmetry is closed, T-333)
+- $\theta_{\mathrm{QCD}} = 0$ — **retracted [✗] as a derivation; strong CP open in UHM [Pr]** (T-99, corrected 2026-09-26: step 4 fails for $V_3$ itself, whatever the sector values; the Gap potential fixes no $\bar\theta$ — [§3.1c](#тета-не-из-потенциала)). Earlier: [C at (SV)] (T-99: step 2 stays [T], the conclusion uses the unique vacuum of (SV); corrected 2026-09-25; the route through the vacuum's antiunitary symmetry is closed, T-333)
 :::
 
 Confinement is a non-perturbative phenomenon in which coloured particles (quarks and gluons) are not observed as free states. In the Gap formalism confinement is **proved topologically**: T-73 [T] (Gap = Serre curvature) provides the flux energy density, T-69 [T] (topological protection $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$) stabilises the colour flux tubes, and the sectoral correction from the unique vacuum T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)) gives the specific numerical value $\sqrt{\sigma} \approx 457$ MeV. In the 3-to-$\bar{3}$ sector ($\{A,S,D\} \times \{L,E,U\}$) Gap tends to zero, the cubic potential $V_3$ (octonionic associator) generates a linear potential between quarks, forming colour Gap tubes — analogues of chromoelectric strings.
@@ -251,7 +251,15 @@ Three standard approaches: (1) Peccei–Quinn axion (dynamical relaxation), (2) 
 
 **Gap approach:** $\theta_{\mathrm{QCD}} = 0$ **exactly** — a structural consequence of the octonionic algebra. No axion required for CP, no fine-tuning. This is a genuine prediction of the theory, distinguishing it from standard approaches. *(Status since 2026-09-25: [C at (SV)] through the $V_3$ chain only; the route through the symmetry of the corrected vacuum is closed by T-333, §3.1a.)*
 
-### 3.1 Theorem T-99 (Structural vanishing of $\theta_{\mathrm{QCD}}$) [T]+[C at (SV)] {#теорема-структурное-theta-qcd}
+:::warning[Retracted 2026-09-26 (T-99): $\theta_{\mathrm{QCD}} = 0$ is not a prediction of UHM]
+The paragraph above is kept as the former claim. The $V_3$ chain fails at step 4 for $V_3$ itself, at every value of the sector moduli, so (SV) cannot rescue it; the corrected potential is PT-even and fixes no $\bar\theta$; and with the fields that (Cl) forces none of the three standard routes is available (§3.1a–§3.1b). $\bar\theta$ is a free parameter of UHM, bounded only by experiment, and the strong CP problem is open [Pr] — [§3.1c](#тета-не-из-потенциала).
+:::
+
+### 3.1 Theorem T-99 (Structural vanishing of $\theta_{\mathrm{QCD}}$) — former derivation, retracted [✗] 2026-09-26 {#теорема-структурное-theta-qcd}
+
+:::warning[Correction 2026-09-26 (T-99): the conclusion is retracted, not conditional]
+Until today the conclusion stood as [C at (SV)] (heading: [T]+[C at (SV)]). It is retracted [✗], because step 4 is false for the potential it uses, and (SV) — the sector *moduli* of the vacuum — does not touch that step. On every real $\Gamma$ (all $\theta_{ij} \in \{0,\pi\}$) the page's $V_2 + V_3 + V_4$ vanishes identically ($\mathcal G_{\text{total}} = \lVert\mathrm{Im}\,\Gamma\rVert^2 = 0$, $V_3 = 0$), while the first variation of $V_3$ in a direction $iX$ is non-zero (0.028 on the witness state). So for every $\lambda_3 \neq 0$ a small imaginary shift lowers $V$ below zero, and no vacuum has all phases zero. Minimising over all states: at the page's constants $\lambda_3/\mu^2 = 9.25$, $\lambda_4/\mu^2 = 32.2$ the minimum is $V = -0.197\mu^2$ with $\mathcal G_{\text{total}} = 0.0155$; at $\lambda_3/\mu^2 = 0.01$, $\lambda_4/\mu^2 = 10$ it is $-2.3\times10^{-6}\mu^2$ with $\mathcal G_{\text{total}} = 2.4\times10^{-6}$. A PT-odd term is minimised at phases away from zero; it does not set them to zero. Step 5 has no ground in the Clifford content either: there $\bar\theta = \theta + \arg\det(M_uM_d)$ with $M_{u,d}$ from Yukawa inputs (T-333(h)), not from $\lambda_3$ and moduli of Gap coherences. What holds instead, and the list of routes tried, is [§3.1c](#тета-не-из-потенциала). Witness: `test_theta_route_through_the_gap_potential_fails_for_v3_and_for_pt_odd_quartics`. The text below is the former derivation.
+:::
 
 :::tip[Status: \[T\] for step 2, \[C at (SV)\] for the conclusion (T-99, stratified 2026-09-25)]
 Step 2 ($V_3$ is the only $PT$-odd term of $V_{\text{Gap}}$) is exact for the retracted cubic $V_3$; the $G_2$-invariant potential has no $PT$-odd term (T-331). The conclusion uses the unique sector vacuum, which is the hypothesis (SV): the corrected T-64 gives a different vacuum. So $\theta_{\mathrm{QCD}} = 0$ is conditional on (SV). Earlier summary: 7-step derivation of $\theta_{\mathrm{QCD}} = 0$ from axioms A1–A5. Reality of $f_{ijk} \in \mathbb{R}$ (A1) → uniqueness of the PT-odd $V_3$ → unique vacuum (T-64) → isotropy of phases → $\theta = 0$ exactly. Non-perturbative stability from T-69, radiative from T-66.
@@ -285,6 +293,8 @@ Step 2 is a property of the retracted cubic $V_3$ only. Every $G_2$-invariant cu
 
 Conclusion: **all phases vanish** in the vacuum.
 
+*Refuted 2026-09-26 [✗]:* $\sin$ is not minimised at $0$; real states are not even stationary points of $V_2 + V_3 + V_4$ when $\lambda_3 \neq 0$, and the vacuum has $\mathcal G_{\text{total}} > 0$ (box at the head of §3.1).
+
 **Step 5** (Vanishing of $\theta_{\mathrm{QCD}}$). The parameter $\theta_{\mathrm{QCD}}$ in the Gap formalism:
 
 $$\theta_{\mathrm{QCD}} = \arg\left(\det(M_u \cdot M_d)\right) = \arg\left(\lambda_3^2 \cdot \prod_{(i,j) \in 3\text{-to-}\bar{3}} |\gamma_{ij}|\right)$$
@@ -292,6 +302,8 @@ $$\theta_{\mathrm{QCD}} = \arg\left(\det(M_u \cdot M_d)\right) = \arg\left(\lamb
 From steps 1–4: $\lambda_3 \in \mathbb{R}$ (step 1), $|\gamma_{ij}| \in \mathbb{R}_+$ (moduli are real), all phases $\theta_{ij} = 0$ (step 4). Consequently, the argument of the product of real positive numbers is **identically zero**:
 
 $$\theta_{\mathrm{QCD}} = 0 \quad \text{(exactly, not approximately)}$$
+
+*Retracted 2026-09-26 [✗]:* the formula identifies the quark mass matrices with $\lambda_3$ and the moduli of Gap coherences; with the fields that (Cl) forces the quark masses come from Yukawa couplings whose phases are inputs (T-333(h)), and the $\theta$ of the gauge action enters $\bar\theta$ on its own.
 
 **Step 6** (Non-perturbative stability). From T-69 [T] ([topological protection](/docs/core/dynamics/composite-systems#теорема-тополог-защита)): $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ guarantees **topological stability** of the vacuum. Energy barrier:
 
@@ -354,18 +366,51 @@ So under (Cl) none of the three routes of T-333 is open without a field that the
 
 Witness: `test_no_peccei_quinn_symmetry_in_the_clifford_content`.
 
+### 3.1c What the Gap potential says about $\bar\theta$ (T-99, corrected) {#тета-не-из-потенциала}
+
+:::tip[Status: Theorem 3.1c is \[T\] as mathematics and \[C at (Cl)\] in UHM; $\theta_{\mathrm{QCD}} = 0$ is not derived, strong CP is open \[Pr\] (2026-09-26)]
+This replaces the conclusion of T-99. T-99 set out to show that the Gap sector makes $\bar\theta$ vanish. The true statement is weaker and exact: the Gap sector is CP-neutral, and no term of a $G_2$-invariant Gap potential can make $\bar\theta$ vanish. Registry row T-99; checks in `website/scripts/check_core_numbers.py`.
+:::
+
+**Theorem 3.1c (T-99, corrected).**
+
+**(a) The corrected Gap sector is CP-neutral [T].** Every $G_2$-invariant polynomial of degree $\le 3$ on $\mathrm{Herm}(\mathbb C^7)$ is PT-even ([T-331](/docs/core/dynamics/gap-thermodynamics#g2-инвариантный-кубик)), so $V_{\text{Gap}} = \mu^2\mathcal G + \lambda_4\mathcal G^2 - \kappa\mathcal A$ is PT-invariant. Each of its vacua keeps an antiunitary symmetry: $\mathrm{PT}$ at $I/7$, $g_v\circ\mathrm{PT}$ on the orbit $S^6$ ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)). The Gap sector carries no CP-odd phase of its own.
+
+**(b) CP-neutrality does not reach $\bar\theta$ [T].** The canonical lift of that symmetry to the fermions is an element of $\mathrm{Spin}(10)$ and leaves the $\theta$-term unchanged; the lifts that act as P or CP contradict $m_t \neq m_b$ or $J \neq 0$ ([§3.1a](#pt-на-фермионах-t341)). With one doublet and three $\mathbf{16}$ CP must be broken explicitly in the Yukawa couplings, and then nothing protects $\bar\theta = \theta + \arg\det(M_uM_d)$ ([§3.1b](#пк-и-нб)).
+
+**(c) A PT-odd Gap term is a source of phases, not a guard [T].** The first PT-odd $G_2$-invariants appear in degree 4. There are three (T-331), of types $SX_{\mathbf 7}^2X_{\mathbf{14}}$, $SX_{\mathbf 7}X_{\mathbf{14}}^2$ and $S^3X_{\mathbf 7}$, where $S$ is the traceless part of $\mathrm{Re}\,\Gamma$ and $X = \mathrm{Im}\,\Gamma$. The last one is $Q_{\rm odd} = \langle \varphi\cdot X, \varphi\cdot(NS)\rangle$ with $N_{pq} = \varphi_{pab}S_{ac}S_{bd}\varphi_{qcd}$. A potential containing any PT-odd term is invariant under no $g\circ\mathrm{PT}$ with $g \in G_2$, since $f(g\bar\Gamma g^{-1}) = f(\bar\Gamma) = -f(\Gamma)$. $Q_{\rm odd}$ is linear in $X$; on a real state with $S \neq 0$ its first variation in $\mathrm{Im}\,\Gamma$ is non-zero (0.0019 on the witness state). So $\mu^2\mathcal G + \lambda_4\mathcal G^2 + \varepsilon Q_{\rm odd}$ goes below zero off the real states (minimum $-0.0042\mu^2$ with $\mathcal G = 0.0034$ at $\varepsilon = 0.5\mu^2$, $\lambda_4 = 10\mu^2$). The cubic $V_3$ of the former derivation behaves the same way (box at the head of §3.1).
+
+**(d) Consequence.** In UHM with the fields that (Cl) forces, $\bar\theta$ is a free parameter, fixed by no axiom, no Gap potential and no symmetry of the vacuum. UHM predicts no value of the neutron EDM; the bound $\lvert\bar\theta\rvert \lesssim 10^{-10}$ is an input. The strong CP problem is open in UHM [Pr].
+
+**Routes tried before the retraction.**
+
+| route | outcome | where |
+|---|---|---|
+| $V_3$ chain of T-99 under (SV) | step 4 false for every $\lambda_3 \neq 0$; (SV) fixes moduli, not phases | box at the head of §3.1 |
+| antiunitary symmetry of the corrected vacuum | the linear lift is a gauge element; P- or CP-type lifts give $m_t = m_b$ or $J = 0$ | §3.1a, T-333(a)–(d) |
+| PT-odd $G_2$-invariant quartics | break every $g\circ\mathrm{PT}$; move the vacuum off the real states | (c) above |
+| Peccei–Quinn axion | no colour-anomalous $\mathrm U(1)$ with all quarks massive; needs a second doublet or new coloured fermions | §3.1b(e)–(g) |
+| Nelson–Barr | no vector-like quark, no spontaneous CP violation | §3.1b(h) |
+| left–right parity | needs a complex bidoublet (two doublets, against T-296) | §3.1a, T-332(c) |
+| massless $u$ quark | $m_u = 2.16$ MeV (PDG) | §3.1b(e) |
+
+**Proof.** (a) is T-331 with T-64. (b) is T-333. (c): invariance under $G_2$ and the sign under PT are computed on random states; the first variation at a real state is linear in $X$ and is evaluated directly, and a shift $R \to R + itX$ with the sign of $t$ opposite to it lowers $V$ below its value $0$ on the real states. (d) follows from (a)–(c) and T-333(e)–(h). $\blacksquare$
+
+Witness: `test_theta_route_through_the_gap_potential_fails_for_v3_and_for_pt_odd_quartics`.
+
 ### 3.2 Corollary: Axion without PQ Mechanism {#следствие-аксион-без-pq}
 
 :::info[Reinterpretation of the axion's role]
 In standard physics the Peccei–Quinn axion solves the strong CP problem via dynamical relaxation $\theta \to 0$. In the Gap formalism $\theta_{\mathrm{QCD}} = 0$ follows **structurally** (T-99), so an axion is **not needed** for CP. Its role is purely as a DM candidate.
 *Conditional (2026-09-25):* this holds only through the $V_3$ chain of T-99, [C at (SV)]. The route through the vacuum's antiunitary symmetry is closed (T-333), and a Peccei–Quinn axion is one of the three routes left open. *Update (T-333(e)–(h), [§3.1b](#пк-и-нб)):* in the Clifford content no $\mathrm{U}(1)$ with a colour anomaly survives the quark masses, so the Gap axion has no $G\tilde G$ coupling there. It is not a QCD axion and relaxes nothing. The table below describes it only on the hypothesis (PQ) of an added Peccei–Quinn sector.
+*Update 2026-09-26 (T-99 corrected, [§3.1c](#тета-не-из-потенциала)):* the $V_3$ chain is retracted [✗] as well, so the premise of this box — "$\theta_{\mathrm{QCD}} = 0$ follows structurally" — no longer holds; strong CP is open [Pr].
 :::
 
 The Gap axion (§3.4, definition in [dark matter, §3.1](/docs/physics/cosmology-phys/dark-matter#31-определение)) — a pseudoscalar field $a(x)$, the zero mode of phases $\theta_{ij}$ in the 3-to-$\bar{3}$ sector — **exists** as a particle (Goldstone boson from the $(S^1)^{21}$ compactification). But its role is **fundamentally different**:
 
 | | Standard axion | Gap axion |
 |---|---|---|
-| Solves strong CP? | Yes (dynamical relaxation) | **No** (T-99: $\theta = 0$ structurally) |
+| Solves strong CP? | Yes (dynamical relaxation) | **No** (T-99: $\theta = 0$ structurally — retracted 2026-09-26; strong CP open [Pr], §3.1c) |
 | DM candidate? | Yes ($\sim 100\%$ at $f_a \sim 10^{12}$ GeV) | Yes, **subdominant** ($\sim 1\%$ DM) |
 | Mass | $m_a \sim 10^{-5}$ eV | $m_a \sim 3$ neV (from $f_a \sim 2 \times 10^{15}$ GeV) |
 | $f_a$ | Free parameter | **Fixed**: $f_a = \varepsilon \cdot M_P$ |
@@ -376,7 +421,7 @@ Cross-reference: [dark matter from Gap, §3](/docs/physics/cosmology-phys/dark-m
 
 The cubic potential $V_3$ (octonionic associator) plays a **dual role**:
 
-**(a)** Cause of $\theta_{\mathrm{QCD}} = 0$ (as argued with the retracted cubic; see the box after step 2 of T-99). $V_3$ is the unique PT-odd term of the potential. At the minimum of $V_{\mathrm{Gap}}$ it fixes **all** phases to $\theta_{ij} = 0$, making $\theta_{\mathrm{QCD}} = 0$ a structural result (T-99, steps 2 and 4).
+**(a)** Cause of $\theta_{\mathrm{QCD}} = 0$ (as argued with the retracted cubic; see the box after step 2 of T-99). $V_3$ is the unique PT-odd term of the potential. At the minimum of $V_{\mathrm{Gap}}$ it fixes **all** phases to $\theta_{ij} = 0$, making $\theta_{\mathrm{QCD}} = 0$ a structural result (T-99, steps 2 and 4). *Retracted [✗] 2026-09-26:* a PT-odd term does not fix the phases at zero; the vacuum of $V_2 + V_3 + V_4$ has $\mathcal G_{\text{total}} > 0$ ([§3.1c](#тета-не-из-потенциала)).
 
 **(b)** Unique source of CP violation in CKM. *(For the retracted $V_3$ only: the $G_2$-invariant potential is PT-even (T-331) and contains no source of CP violation, so the CKM phase is an input of the Yukawa sector, T-333.)* The same $V_3$ generates complex phases in the Yukawa matrices $Y^u$, $Y^d$ via generation mixing, giving a non-zero phase $\delta_{\mathrm{CP}} \neq 0$ in the CKM matrix.
 
@@ -402,7 +447,7 @@ where 9 is the number of coherences in the 3-to-$\bar{3}$ sector.
 
 $$|\theta\rangle = \sum_{n=-\infty}^{\infty} e^{in\theta} |n\rangle$$
 
-From T-99 (step 5): $\theta_{\mathrm{QCD}} = 0$ **exactly**, so the physical vacuum = $|0\rangle$ — the unique instanton sector without a phase factor.
+From T-99 (step 5): $\theta_{\mathrm{QCD}} = 0$ **exactly**, so the physical vacuum = $|0\rangle$ — the unique instanton sector without a phase factor. *Retracted 2026-09-26:* step 5 is retracted [✗]; the physical vacuum is $|\bar\theta\rangle$ with $\bar\theta$ a free parameter ([§3.1c](#тета-не-из-потенциала)).
 
 ---
 
@@ -667,7 +712,7 @@ Confinement in Gap theory is self-consistent:
 3. $\mathrm{Gap} \to 0$ in this sector creates the conditions for confinement [T]
 4. $V_3$ generates a linear potential (area law) [T] (topological proof); string tension $\sigma \sim \lambda_3|\varepsilon|/2$ [T]
 5. String tension expressed via Gap parameters [C at (SV)] (naive discrepancy $\sim 7\times$; [diagnostics](#диагностика-расхождения-σ): sectoral correction from the soft Hessian mode $\to$ $\sim 457$ MeV; hierarchy [T], numerical value [C at (SV)])
-6. $\theta_{\mathrm{QCD}} = 0$ — [C at (SV)] (T-99: step 2 holds for the retracted cubic only; the corrected potential is PT-even, and no lift of its vacuum's antiunitary symmetry gives $\bar\theta = 0$ with $m_t \neq m_b$ and $J \neq 0$ — T-333)
+6. $\theta_{\mathrm{QCD}} = 0$ — retracted [✗] 2026-09-26, strong CP open [Pr]: the Gap sector is CP-neutral but fixes no $\bar\theta$ ([§3.1c](#тета-не-из-потенциала)). Earlier: [C at (SV)] (T-99: step 2 holds for the retracted cubic only; the corrected potential is PT-even, and no lift of its vacuum's antiunitary symmetry gives $\bar\theta = 0$ with $m_t \neq m_b$ and $J \neq 0$ — T-333)
 7. Deconfinement at $T_c \sim \Lambda_{\mathrm{QCD}} \sim 170$ MeV [C at (SV)]; order parameter — Polyakov loop [T] (from $\mathbb{Z}_3$ centre of $\mathrm{SU}(3)_C$ = Stab$_{G_2}(e_O)$ [T-42e]); crossover with quarks [H]
 8. Asymptotic freedom reproduced in the standard way [T]; relation to [RG flow](/docs/physics/gauge-symmetry/rg-flow) via $\lambda_4$ [T]
 9. ABJ anomaly from $\mathrm{Cliff}(7)$: $\partial_\mu j_5^\mu = (N_f g_s^2/16\pi^2)\,G\tilde{G}$ [T]
@@ -683,7 +728,8 @@ Confinement in Gap theory is self-consistent:
 | Wilson loop: topological area law | [T] |
 | String tension $\sqrt{\sigma} \approx 457$ MeV from Gap tube: Hessian hierarchy [T], numerical value [C at (SV)] | [C at (SV)] |
 | String tension from Gap parameters (naive $\sim 60$ MeV; sectoral correction from soft Hessian mode $\sim 457$ MeV vs 440 MeV) | [C at (SV)] |
-| Structural $\theta_{\mathrm{QCD}} = 0$ (T-99): 7-step derivation from A1–A5 | [C at (SV)] (step 2 [T] for $V_3$ only; the vacuum-symmetry route closed, T-333) |
+| Structural $\theta_{\mathrm{QCD}} = 0$ (T-99): 7-step derivation from A1–A5 | [✗] (retracted 2026-09-26: step 4 false for $V_3$; earlier [C at (SV)], step 2 [T] for $V_3$ only; the vacuum-symmetry route closed, T-333) |
+| Gap sector CP-neutral; no $G_2$-invariant Gap term fixes $\bar\theta$ (T-99 corrected, §3.1c) | [T] as mathematics, [C at (Cl)] in UHM; strong CP open [Pr] |
 | Polyakov loop as deconfinement order parameter (from $\mathbb{Z}_3$ centre of $\mathrm{SU}(3)_C$ [T-42e]) | [T] |
 | Critical temperature $T_c \sim 170$ MeV | [C at (SV)] |
 | Crossover with dynamical quarks ($N_f = 2+1$) | [H] |
