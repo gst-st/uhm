@@ -371,6 +371,8 @@ Anarchic $M_R$ + nearly-diagonal $m_D$ $\to$ large PMNS mixing [C under anarchic
 
 ## 5. PMNS angles from anarchic structure of $M_R$ [C under anarchic $M_R$] {#pmns}
 
+*Note 2026-09-26 ([T-345](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов)).* This section uses the axis reading of the generations. In the harmonic reading (GC) no parameter-free structure of the clock fixes the lepton mixing: tick-commuting structures leave a PMNS column of modulus 1, and a two-channel frame with a rank-one channel cannot fit the charged-lepton and quark masses together. In the Clifford frame the Majorana mass of $\nu^c$ comes from the $\overline{\mathbf{126}}$ channel with the same flavour matrix as its Dirac coupling; the minimal viable frame (real $\mathbf{10}_H$, real $\mathbf{120}_H$, complex $\overline{\mathbf{126}}_H$; Babu, Bajc, Saad, *JHEP* **02** (2017) 136) predicts normal ordering, $m_{\beta\beta}\approx2$ meV and $\delta_{\mathrm{PMNS}}\approx3°$ with type-I seesaw — [H] for UHM, since UHM does not fix its flavour matrices.
+
 ### 5.1 Qualitative prediction [T]
 
 :::tip Theorem 5.1 (PMNS $\gg$ CKM) [T]

@@ -6161,6 +6161,201 @@ def test_one_clause_principle_for_the_anchor_is_maximal_integration():
     assert all(1.25 < r < 1.27 for r in ratios)
 
 
+
+# ---------------------------------------------------------------------------
+# T-345 (26.09.2026): вкус с часов — что может нарушить семейную ℤ₃ и что исключают данные.
+# Данные: PDG 2024 (обзор «CKM quark-mixing matrix», ур. 12.26–12.28); массы — Huang, Zhou,
+# PRD 103, 016010 (2021), полная СМ при μ = M_Z; NuFIT 6.0 (JHEP 12 (2024) 216).
+
+def _clock_bases():
+    z = np.exp(2j * np.pi / 7)
+    tau = np.array([[z ** (-k * n) for k in range(7)] for n in range(7)]) / np.sqrt(7)   # строка n — |τ_n⟩
+    return z, tau
+
+
+def _circulant(offsets):
+    N = np.zeros((7, 7))
+    for t in range(7):
+        for d in offsets:
+            N[(t + d) % 7, t] += 1
+    return N
+
+
+def _left_ckm(Mu, Md):
+    _, Uu = np.linalg.eigh(Mu @ Mu.conj().T)
+    _, Ud = np.linalg.eigh(Md @ Md.conj().T)
+    return Uu.conj().T @ Ud
+
+
+def test_tick_commuting_clock_structures_are_generation_diagonal():
+    """T-345(a) [Т]: всё, что коммутирует с тиком часов, диагонально в базисе гармоник.
+
+    Инцидентность Фано {0,1,3}, множество вычетов QR = {1,2,4} (суммы Гаусса), коллинеарность
+    2I + J, H_O и проектор тривиальной гармоники — циркулянты времени; в энергетическом базисе
+    они диагональны. |собственное число| круговой инцидентности Фано = √2 на всех шести
+    нетривиальных гармониках (разностное множество, λ = 1); у QR-циркулянта — b₇ = (−1 + i√7)/2
+    на вычетах. Любые юкавы из таких структур в любом числе каналов дают |V| — перестановку.
+    """
+    z, tau = _clock_bases()
+    U = tau.T                                    # столбец n — |τ_n⟩ в энергетическом базисе
+    shift = _circulant([1])
+    for N in (_circulant([0, 1, 3]), _circulant([1, 2, 4]), 2 * np.eye(7) + np.ones((7, 7)),
+              np.ones((7, 7)) / 7):
+        assert np.allclose(N @ shift, shift @ N)
+        E = U.conj().T @ N @ U
+        assert np.allclose(E, np.diag(np.diag(E)), atol=1e-12)
+    ev = np.diag(U.conj().T @ _circulant([0, 1, 3]) @ U)
+    assert np.allclose(np.abs(ev[1:]), np.sqrt(2))
+    evq = np.diag(U.conj().T @ _circulant([1, 2, 4]) @ U)
+    b7 = (-1 + 1j * np.sqrt(7)) / 2
+    assert all(min(abs(evq[k] - b7), abs(evq[k] - np.conj(b7))) < 1e-12 for k in range(1, 7))
+    assert abs(abs(evq[1]) - abs(evq[3])) < 1e-12              # равные модули: массы вырождены
+    rng = np.random.default_rng(345)
+    for _ in range(50):                                       # диагональные юкавы → |V| = перестановка
+        Mu = np.diag(rng.normal(size=3) + 1j * rng.normal(size=3))
+        Md = np.diag(rng.normal(size=3) + 1j * rng.normal(size=3))
+        A = np.abs(_left_ckm(Mu, Md))
+        assert np.allclose(np.sort(A.ravel())[-3:], 1) and np.allclose(np.sort(A.ravel())[:6], 0, atol=1e-12)
+
+
+def test_the_automorphism_fixed_instant_is_the_democratic_rank_one_matrix():
+    """T-345(b) [Т]: из мгновений |τ_n⟩ умножения t → 2t, 4t оставляют только τ₀; на гармониках
+    QR = {1,2,4} проектор |τ₀⟩⟨τ₀| — демократическая матрица J/7 ранга 1 (одно тяжёлое поколение)."""
+    z, tau = _clock_bases()
+    fixed = [n for n in range(7) if (2 * n) % 7 == n]
+    assert fixed == [0]
+    P0 = np.outer(tau[0], tau[0].conj())
+    C = P0[np.ix_([1, 2, 4], [1, 2, 4])]
+    assert np.allclose(C, np.ones((3, 3)) / 7)
+    assert np.linalg.matrix_rank(C) == 1
+
+
+def test_flavour_matrices_in_a_common_plane_give_a_unit_ckm_entry():
+    """T-345(c) [Т]: если образы всех матриц обоих секторов лежат в общей 2-плоскости,
+    в каждом секторе есть безмассовое состояние и у |V| есть элемент 1. Данные: min |V_ij| = |V_ub| = 0,00373."""
+    rng = np.random.default_rng(3451)
+    for _ in range(50):
+        Q, _ = np.linalg.qr(rng.normal(size=(3, 2)) + 1j * rng.normal(size=(3, 2)))
+        mats = [Q @ (rng.normal(size=(2, 3)) + 1j * rng.normal(size=(2, 3))) for _ in range(2)]
+        V = np.abs(_left_ckm(*mats))
+        assert abs(V.max() - 1) < 1e-9
+        assert np.linalg.svd(mats[0], compute_uv=False).min() < 1e-9
+
+
+def test_two_channels_with_a_rank_one_channel_cannot_fit_quarks_and_leptons():
+    """T-345(d) [Т]: M_f = α_f A + β_f B, A ранга 1 несёт тяжёлое поколение, B общая для u, d, e.
+
+    (1) Формула: при x = β/α малом m₁/m₂ = |det B̃ − x c| / s₁(B̃)² · (1 + O(x)), где B̃ — сжатие B
+    на дополнения A, c — постоянная: линейна по комплексному x. Проверено на случайных A, B.
+    (2) Данные (Huang–Zhou, M_Z): h = m₂/m₃ = 0,00368 / 0,01872 / 0,05887, R = m₁/m₂ = 0,00198 /
+    0,0502 / 0,00475 для u / d / e. Неравенства треугольника: |κ| ≥ 2,15 из u и d и |κ| ≤ 0,122 из u и e.
+    """
+    rng = np.random.default_rng(3452)
+    for _ in range(40):
+        a = rng.normal(size=3) + 1j * rng.normal(size=3); b = rng.normal(size=3) + 1j * rng.normal(size=3)
+        a /= np.linalg.norm(a); b /= np.linalg.norm(b)
+        A = np.outer(a, b.conj())
+        B = rng.normal(size=(3, 3)) + 1j * rng.normal(size=(3, 3))
+        Qa = np.linalg.svd(np.eye(3) - np.outer(a, a.conj()))[0][:, :2]
+        Qb = np.linalg.svd(np.eye(3) - np.outer(b, b.conj()))[0][:, :2]
+        Bt = Qa.conj().T @ B @ Qb
+        s1 = np.linalg.svd(Bt, compute_uv=False)[0]
+        # c из двух точек малого x: det эффективного лёгкого блока линеен по x
+        def ratio(x):
+            s = np.sort(np.linalg.svd(A + x * B, compute_uv=False)); return s[0] / s[1]
+        xs = 1e-4 * np.exp(1j * rng.uniform(0, 2 * np.pi))
+        Cm = (Qa.conj().T @ B @ b[:, None]) @ (a[None, :].conj() @ B @ Qb)
+        c = np.trace(np.array([[Bt[1, 1], -Bt[0, 1]], [-Bt[1, 0], Bt[0, 0]]]) @ Cm)
+        pred = abs(np.linalg.det(Bt) - xs * c) / s1 ** 2
+        assert abs(ratio(xs) / pred - 1) < 1e-2
+    h = {'u': 0.620 / 168.26, 'd': 53.16e-3 / 2.839, 'e': 0.101766 / 1.72856}
+    R = {'u': 1.23e-3 / 0.620, 'd': 2.67e-3 / 53.16e-3, 'e': 0.48307e-3 / 0.101766}
+    kmin = (R['d'] - R['u']) / (h['u'] + h['d'])
+    kmax = (R['e'] + R['u']) / (h['e'] - h['u'])
+    assert kmin > 2.1 and kmax < 0.125 and kmin / kmax > 17
+
+
+def test_fritzsch_six_zero_texture_overshoots_vcb():
+    """T-345(e) [Т]: текстура Фрича (M₁₁ = M₁₃ = M₂₂ = 0, эрмитова) с массами M_Z (Huang–Zhou)
+    даёт min по фазам |V_cb| = 0,073 > 0,0418 (PDG 2024) — страница CKM [T] → [✗]."""
+    def U(m, p1, p2):
+        m1, m2, m3 = m
+        C = m1 - m2 + m3
+        A2 = m1 * m2 * m3 / C
+        B2 = -(-m1 * m2 + m1 * m3 - m2 * m3) - A2
+        P = np.diag([1, np.exp(1j * p1), np.exp(1j * (p1 + p2))])
+        M = P @ np.array([[0, np.sqrt(A2), 0], [np.sqrt(A2), 0, np.sqrt(B2)], [0, np.sqrt(B2), C]]) @ P.conj().T
+        w, v = np.linalg.eigh(M)
+        return v[:, np.argsort(np.abs(w))]
+    Uu = U((1.23e-3, 0.620, 168.26), 0, 0)
+    vcb = min(abs((Uu.conj().T @ U((2.67e-3, 53.16e-3, 2.839), p, q))[1, 2])
+              for p in np.linspace(0, 2 * np.pi, 91) for q in np.linspace(0, 2 * np.pi, 91))
+    assert 0.070 < vcb < 0.076
+
+
+def test_ckm_phase_does_not_run_in_the_sm():
+    """T-345(e) [Т]: одна петля СМ, M_Z → 2·10¹⁶ ГэВ: sin δ меняется на 2·10⁻⁵ (Δδ ≈ 0,003°),
+    |V_us| — на 2·10⁻⁵, |V_cb| растёт на 13 %. «Двухпетлевая поправка 12,6°» к δ страницы CKM ложна."""
+    from scipy.integrate import solve_ivp
+    v = 246.22
+    s12, s13, s23, dl = 0.22501, 0.003732, 0.04183, 1.147
+    c12, c13, c23 = [np.sqrt(1 - x * x) for x in (s12, s13, s23)]
+    e = np.exp(1j * dl)
+    V0 = np.array([[c12 * c13, s12 * c13, s13 / e],
+                   [-s12 * c23 - c12 * s23 * s13 * e, c12 * c23 - s12 * s23 * s13 * e, s23 * c13],
+                   [s12 * s23 - c12 * c23 * s13 * e, -c12 * s23 - s12 * c23 * s13 * e, c23 * c13]])
+    Yu = np.diag([1.23e-3, 0.620, 168.26]) * np.sqrt(2) / v
+    Yd = V0 @ np.diag([2.67e-3, 53.16e-3, 2.839]) * np.sqrt(2) / v
+    Ye = np.diag([0.48307e-3, 0.101766, 1.72856]) * np.sqrt(2) / v
+    g0 = np.array([np.sqrt(5 / 3) * 0.3583, 0.6517, np.sqrt(4 * np.pi * 0.1179)])
+    bb = np.array([41 / 10, -19 / 6, -7])
+
+    def pack(Yu, Yd, Ye, g):
+        c = np.concatenate([Yu.ravel(), Yd.ravel(), Ye.ravel()]); return np.concatenate([c.real, c.imag, g])
+
+    def unpack(y):
+        c = y[:27] + 1j * y[27:54]; return c[:9].reshape(3, 3), c[9:18].reshape(3, 3), c[18:27].reshape(3, 3), y[54:]
+
+    def rhs(t, y):
+        Yu, Yd, Ye, g = unpack(y)
+        Hu, Hd, He = Yu @ Yu.conj().T, Yd @ Yd.conj().T, Ye @ Ye.conj().T
+        T = np.real(3 * np.trace(Hu) + 3 * np.trace(Hd) + np.trace(He))
+        g1, g2, g3 = g ** 2; k = 1 / (16 * np.pi ** 2); I = np.eye(3)
+        return pack(k * ((1.5 * (Hu - Hd) + (T - (17 / 20 * g1 + 9 / 4 * g2 + 8 * g3)) * I) @ Yu),
+                    k * ((1.5 * (Hd - Hu) + (T - (1 / 4 * g1 + 9 / 4 * g2 + 8 * g3)) * I) @ Yd),
+                    k * ((1.5 * He + (T - (9 / 4 * g1 + 9 / 4 * g2)) * I) @ Ye), k * bb * g ** 3)
+
+    def obs(Yu, Yd):
+        V = _left_ckm(Yu, Yd); a = np.abs(V)
+        J = np.imag(V[0, 1] * V[1, 2] * np.conj(V[0, 2]) * np.conj(V[1, 1]))
+        s13 = a[0, 2]; s12 = a[0, 1] / np.sqrt(1 - s13 ** 2); s23 = a[1, 2] / np.sqrt(1 - s13 ** 2)
+        c = lambda x: np.sqrt(1 - x * x)
+        return a[0, 1], a[1, 2], J / (c(s12) * c(s23) * c(s13) ** 2 * s12 * s23 * s13)
+    sol = solve_ivp(rhs, [0, np.log(2e16 / 91.1876)], pack(Yu, Yd, Ye, g0), rtol=1e-9, atol=1e-12)
+    Yu2, Yd2, _, _ = unpack(sol.y[:, -1])
+    vus0, vcb0, sd0 = obs(Yu, Yd)
+    vus1, vcb1, sd1 = obs(Yu2, Yd2)
+    assert abs(sd1 - sd0) < 1e-4 and abs(vus1 - vus0) < 1e-4
+    assert 1.10 < vcb1 / vcb0 < 1.16
+    assert np.degrees(abs(np.arcsin(sd1) - np.arcsin(sd0))) < 0.01
+
+
+def test_parameter_free_clock_pairs_miss_the_up_quark_ratios():
+    """T-345(d) [Т], частный перебор: пары (демократическая |τ₀⟩⟨τ₀|, H_O) и (H_O, время T) на
+    гармониках QR = {1,2,4}: M = A + xB по всей комплексной плоскости x (|x| от e⁻¹¹ до e⁶) не
+    достигает (m_u/m_t, m_c/m_t) ближе множителя e^2,4 ≈ 11 (полный перебор 112 пар — там же)."""
+    z, tau = _clock_bases()
+    Hc = np.diag([1., 2., 4.]).astype(complex)
+    P0 = np.outer(tau[0], tau[0].conj())[np.ix_([1, 2, 4], [1, 2, 4])]
+    Tfull = sum(n * np.outer(tau[n], tau[n].conj()) for n in range(7))
+    Tc = Tfull[np.ix_([1, 2, 4], [1, 2, 4])]
+    target = np.log([1.23e-3 / 168.26, 0.620 / 168.26])
+    LR = np.linspace(-11, 6, 240); PH = np.exp(1j * np.linspace(0, 2 * np.pi, 120, endpoint=False))
+    X = (np.exp(LR)[:, None] * PH[None, :]).ravel()
+    for A, B in ((P0, Hc), (Hc, P0), (Hc, Tc), (P0, Tc)):
+        s = np.linalg.svd(A[None] + X[:, None, None] * B[None], compute_uv=False)
+        d = np.max(np.abs(np.log(s[:, [2, 1]] / s[:, [0]]) - target), axis=1)
+        assert d.min() > 2.0
 # ── T13 (усилена 26.09.2026) и T-331(g): острый минимальный инструмент и расходимости его считывания ──────
 
 def _sharp_minimal_kraus_solutions():

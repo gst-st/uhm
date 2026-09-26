@@ -294,9 +294,13 @@ $$Y^u \approx \begin{pmatrix} y_u & \epsilon_{12} & \epsilon_{13} \\ \epsilon_{2
 
 where $y_t \sim 1$, $y_c \sim \epsilon^2$, $y_u \sim \epsilon^4$, $\epsilon_{i3}, \epsilon_{3j} \sim \epsilon$, $\epsilon_{12}, \epsilon_{21} \sim \epsilon^3$.
 
-### Theorem 5.2 (Hierarchical Fritzsch Texture) [C] {#thm-5-2}
+### Theorem 5.2 (Hierarchical Fritzsch Texture) [✗] {#thm-5-2}
 
-:::warning [C] Conditional
+:::danger[Retracted 2026-09-26 (T-345(e)): the Fritzsch texture is refuted by the data]
+Whatever its derivation, the six-zero Fritzsch texture cannot describe the quarks: with the running masses at $M_Z$ it gives $\lvert V_{cb}\rvert\ge0.073$ over all phases, against $0.04183^{+0.00079}_{-0.00069}$ (PDG 2024) ([CKM §6.3](/docs/physics/particle-physics/ckm-matrix#derivation-vus), [§11](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов)). Its inputs are also retracted or hypothetical: the cubic $V_3$ (T-331), $H\sim\gamma_{EU}$ [H], and the axis reading of the generations (T-328(a)). The former status [C] and its box follow.
+:::
+
+:::warning [C] Conditional (former status)
 The Fritzsch texture follows from the Fano selection rule under the assumption that loop corrections via $V_3$ generate entries in a strict hierarchy $\epsilon \ll 1$, and that non-perturbative corrections do not violate the zero structure.
 :::
 
@@ -708,7 +712,7 @@ Mass predictions: the order of magnitude is correct for all 9 particles; the bes
 
 2. **Ratio $m_b/m_\tau$**: $m_b/m_\tau \approx 2.35$ from sectoral RG [T]. Observation: $4.18/1.78 = 2.35$. **Exact agreement**.
 
-3. **Gatto-Sartori-Tonin relation (GST)**: $|V_{us}| \approx \sqrt{m_d/m_s} \approx 0.22$. From the Fritzsch texture (Theorem 5.2): $|V_{us}| \approx 0.22$. Observation: $|V_{us}| = 0.2243 \pm 0.0005$. **Agreement at 2%**.
+3. **Gatto-Sartori-Tonin relation (GST)**: $|V_{us}| \approx \sqrt{m_d/m_s} \approx 0.22$. From the Fritzsch texture (Theorem 5.2): $|V_{us}| \approx 0.22$. Observation: $|V_{us}| = 0.2243 \pm 0.0005$. **Agreement at 2%**. *Corrected 2026-09-26:* the Fritzsch texture is refuted by $\lvert V_{cb}\rvert$ (Theorem 5.2, [✗]); GST is an empirical relation of any texture with a zero $(1,1)$ entry, not a test of UHM. PDG 2024: $\lvert V_{us}\rvert=0.22501\pm0.00068$.
 
 4. **Falsification**: if the exact non-perturbative computation of $\varepsilon_{33}^*$ gives a value incompatible with $\varepsilon_{\mathrm{eff}} \in [0.04, 0.08]$, formula 9.1 is falsified.
 

@@ -13,9 +13,10 @@ description: "Derivation of the CKM matrix, Cabibbo angle, CP phase, and Jarlsko
 - **[✗]** Retracted — contains an error, corrected or replaced
 
 **Important note on levels:**
-- **Level 1 [T]:** Fano topology → Fritzsch texture (structural prediction: hierarchical $3 \times 3$ mass matrix with zeros on the diagonal for light generations).
+- **Level 1, retracted [✗] (2026-09-26, T-345(e)):** Fano topology → Fritzsch texture. The six-zero Fritzsch texture is refuted by the data whatever its origin: with the running masses at $M_Z$ it gives $|V_{cb}|\ge0.073$ for every choice of phases, against $0.04183^{+0.00079}_{-0.00069}$ (PDG 2024). The line read "Level 1 [T]: Fano topology → Fritzsch texture (structural prediction)". See [§11](#11-вкус-с-часов).
 - **Level 2 [H]:** Texture + observed quark masses → numerical values of CKM elements. Formulas like $|V_{us}| \sim \sqrt{m_d/m_s}$ are standard consequences of Fritzsch texture (Fritzsch, 1977), not original predictions of UHM.
 - **Harmonic reading (T-328, 2026-09-25):** this page uses the axis reading of the generations. In the harmonic reading (hypothesis (GC)) an exact family $\mathbb{Z}_3$ would make $|V_{\mathrm{CKM}}|$ a permutation matrix, which $|V_{us}|\approx0.224$ refutes. Mixing then measures the breaking of the family $\mathbb{Z}_3$, and no value of it is derived ([Fermion generations, §5.3(d)](/docs/physics/particle-physics/fermion-generations#поколения-t328)).
+- **What the clock can supply (T-345, 2026-09-26):** [§11](#11-вкус-с-часов) lists every parameter-free structure of the clock register and shows which of them can break the family $\mathbb{Z}_3$ and which data exclude them. The numerical claims of §§2–7 below ($\theta_{12}=2\pi/7$ with a tuned $C_{\mathrm{norm}}$, $\delta_{\mathrm{CP}}=64.5°$ from a "two-loop correction", the Fritzsch-texture values) are corrected there and in place.
 :::
 
 ## Contents
@@ -28,6 +29,9 @@ description: "Derivation of the CKM matrix, Cabibbo angle, CP phase, and Jarlsko
 6. [CKM from Mismatch of Yukawa Textures](#6-ckm-из-несовпадения-юкавских-текстур) — including [derivation of $|V_{us}| \sim \sqrt{m_d/m_s}$](#derivation-vus)
 7. [Wolfenstein Parameters](#7-вольфенштейновские-параметры)
 8. [Honest Assessment of Status](#8-честная-оценка-статуса)
+9. [Non-circularity of the CKM derivation](#ckm-non-circularity)
+10. [UHM and the Cabibbo Angle Anomaly](#10-cabibbo-angle-anomaly)
+11. [Flavour from the clock: what can break the family ℤ₃ (T-345)](#11-вкус-с-часов)
 
 ---
 
@@ -79,7 +83,9 @@ where $\delta_\text{Fano}$ is the phase determined by the associator ($V_3$).
 
 ## 2. Mixing Angles from Fano Geometry {#2-углы-смешивания-из-фано-геометрии}
 
-### Theorem 2.1 (Mixing angles from Fano geometry) [H] {#thm-2-1}
+### Theorem 2.1 (Mixing angles from Fano geometry) [✗] {#thm-2-1}
+
+*Status corrected 2026-09-26 from [H] to [✗] (T-345(e)).* The angles $2\pi\lvert k_n-k_m\rvert/7$ are refuted by the data, and the running that was to repair them does not exist: see the note after §2.2.
 
 **Theorem.** The three Fano lines through $O$ determine three mixing angles:
 
@@ -127,14 +133,18 @@ Observed angle ratios: $\theta_{12} : \theta_{23} : \theta_{13} \approx 13° : 2
 
 $$\theta_{12} \sim \sqrt{m_u/m_c}, \quad \theta_{23} \sim \sqrt{m_c/m_t}, \quad \theta_{13} \sim \sqrt{m_u/m_t}$$
 
+:::warning[Correction 2026-09-26 (T-345(e)): the ratios 2 : 3 : 1 are refuted, and running does not repair them]
+With PDG 2024 ($\sin\theta_{12}=0.22501$, $\sin\theta_{23}=0.04183$, $\sin\theta_{13}=0.003732$) the angles are $13.00°$, $2.397°$, $0.2138°$, in the ratio $60.8:11.2:1$ (the "$65:12:1$" above is an older rounding). The Fano differences give $2:3:1$, so $\theta_{23}$ would exceed $\theta_{12}$; the data have $\theta_{12}/\theta_{23}=5.4$. Renormalisation cannot turn one pattern into the other. In one-loop Standard Model running from $M_Z$ to $2\times10^{16}$ GeV $\lvert V_{us}\rvert$ changes by $2\times10^{-5}$, $\sin\delta$ by $2\times10^{-5}$, and $\lvert V_{cb}\rvert$, $\lvert V_{ub}\rvert$ grow by 13 % (`test_ckm_phase_does_not_run_in_the_sm`). The formulas of (e) are the Fritzsch texture, which the data refute separately ([§6.3](#derivation-vus)). Theorem 2.1 is therefore [✗].
+:::
+
 ---
 
 ## 3. Cabibbo Angle {#3-угол-кабиббо}
 
 ### Theorem 3.1 (V₃ correction to mixing angles) {#thm-3-1}
 
-:::warning [H] Hypothesis
-Qualitative agreement is established. The normalization factor $C_\text{norm} \approx 26$ is tuned from the unitarity condition, not derived from first principles.
+:::warning [✗] Retracted 2026-09-26 (T-345(e))
+Earlier status [H]: "Qualitative agreement is established. The normalization factor $C_\text{norm} \approx 26$ is tuned from the unitarity condition, not derived from first principles." Retracted on three grounds. (i) The cubic $V_3$ whose running is used here is retracted: every $G_2$-invariant cubic is PT-even ([T-331](/docs/core/dynamics/gap-thermodynamics#g2-инвариантный-кубик)). (ii) With $C_{\mathrm{norm}}$ fitted to $\theta_C$, the agreement with $\theta_C$ is the fit; the suppression factor $0.0097\times26=0.25$ is $\theta_C/(2\pi/7)$ by construction. (iii) Mixing angles do not run appreciably in the Standard Model (note after §2.2), so no RG factor of order $10^{-2}$ can act on an angle.
 :::
 
 **Theorem.** The cubic potential $V_3$ contributes a **multiplicative** correction to the bare Fano angles:
@@ -189,7 +199,9 @@ From RG: $f_\text{RG} = (y_2/y_3)^{1/2} \approx (0.975/0.434)^{1/2} \approx 1.5$
 
 ## 4. CP-Violation Phase {#4-фаза-cp-нарушения}
 
-### Theorem 4.1 (δ_CP from the octonionic associator) [H] {#thm-4-1}
+### Theorem 4.1 (δ_CP from the octonionic associator) [✗] {#thm-4-1}
+
+*Status corrected 2026-09-26 from [H] to [✗] (T-345(e)).* Its source, the PT-odd cubic $V_3$, is retracted: every $G_2$-invariant cubic is PT-even ([T-331](/docs/core/dynamics/gap-thermodynamics#g2-инвариантный-кубик)), and with the corrected potential the Gap sector has no CP violation ([T-333](/docs/physics/gauge-symmetry/confinement#pt-на-фермионах-t341)). The values it gives are refuted in [Theorem 4.2](#thm-4-2). The text of 4.1–4.3 is the former derivation.
 
 **Theorem.** The CP-violation phase in the CKM matrix is determined by the structure of $V_3$:
 
@@ -242,6 +254,10 @@ Magnitude: $|\delta_\text{CP}| \approx 51.4°$.
 
 ### Theorem 4.2 (Updated phase δ_CP) {#thm-4-2}
 
+:::warning[Retracted 2026-09-26 (T-345(e)): the 12.6° correction does not exist]
+The value $64.5°$ below is $77.1°-12.6°$, and the $12.6°$ is not a property of the Standard Model. In one-loop running of the full Yukawa matrices from $M_Z$ to $2\times10^{16}$ GeV the phase moves by $0.003°$ and $\sin\delta$ by $2\times10^{-5}$ (`test_ckm_phase_does_not_run_in_the_sm`); the rephasing invariants $J$ and $\sin\delta$ run only through products of small Yukawa couplings. The estimate $y_t^2/(16\pi^2)\cdot\ln(\mu_{\mathrm{GUT}}/\mu_{\mathrm{EW}})\cdot2\pi/7$ multiplies a phase by the running of a coupling, which is not how a phase runs, and its sign was chosen to fit. Without it the prediction is $\lvert\delta\rvert=77.1°$ (or $51.4°$ for the first assignment), against $65.7°\pm1.5°$ (PDG 2024, $\delta=1.147\pm0.026$ rad): $7.6\sigma$ (resp. $9.5\sigma$). The phase source $V_3$ is retracted (T-331), and in the Clifford frame the CKM phase is a Yukawa input ([T-333](/docs/physics/gauge-symmetry/confinement#pt-на-фермионах-t341)). The text below is kept as the former derivation; its status is [✗]. A parameter-free phase from the clock's own Gauss sum, $\pi-\arg b_7=\arctan\sqrt7=69.30°$ with $b_7=(-1+i\sqrt7)/2$, was also tried: $2.4\sigma$ from the global fit, and it has no mechanism behind it ([§11](#11-вкус-с-часов)).
+:::
+
 **Theorem.** With the new assignment ($k=2 \to$ 1st, $k=4 \to$ 2nd, $k=1 \to$ 3rd):
 
 **(a)** Phase:
@@ -282,9 +298,11 @@ The negative sign means that $J$ **decreases** when moving from IR to UV (i.e. i
 - **Magnitude** $|\delta^{(2)}| \sim 12.6°$ depends on threshold corrections at the GUT scale — **[H]**
 :::
 
-### Final prediction [C under SM 2-loop RG] / [H]:
+### Former final prediction, retracted [✗]:
 
-$$|\delta_\text{CP}| \approx 64.5° \quad \text{(sign of correction [C under SM 2-loop RG], magnitude [H])}$$
+$$|\delta_\text{CP}| \approx 64.5° \quad \text{(former: sign of correction [C under SM 2-loop RG], magnitude [H])}$$
+
+*Retracted 2026-09-26 (T-345(e)):* the correction it rests on is absent in the Standard Model (box under Theorem 4.2); the uncorrected value $77.1°$ is $7.6\sigma$ from the data.
 
 :::warning Discrepancy with experiment
 Observed value $\delta_\text{CP} = 65.7° \pm 1.5°$ (PDG 2024). Predicted value $\approx 64.5°$ deviates from the central experimental value by $\sim 1.2°$ ($< 1\sigma$). Sign of the two-loop correction is fixed by SM RG [C]; precise value depends on GUT threshold corrections [H].
@@ -338,8 +356,8 @@ Correct formulation: with Fano-predicted phase $\delta = 64.5°$ and **observed*
 
 ### Theorem 6.1 (CKM matrix in the Fano formalism) {#thm-6-1}
 
-:::tip [T] Level 1 — structural prediction
-Fano topology predicts Fritzsch texture. This is an original prediction of UHM.
+:::warning [✗] Retracted 2026-09-26 (T-345(e))
+Earlier: "[T] Level 1 — structural prediction. Fano topology predicts Fritzsch texture. This is an original prediction of UHM." The Fritzsch texture is refuted by $\lvert V_{cb}\rvert$ ([§6.3](#derivation-vus)); the formulas (a)–(b) below are the generic small-angle expansion of $V=U_u^\dagger U_d$ and hold for any hierarchical texture.
 :::
 
 **Theorem.** CKM matrix $V = U_u^\dagger U_d$, where $U_{u,d}$ diagonalize $Y^{u,d} Y^{u,d\dagger}$:
@@ -398,7 +416,11 @@ The formula $|V_{us}| \sim \sqrt{m_d/m_s}$ is **not** an original prediction of 
 
 The derivation chain consists of two fundamentally distinct steps:
 
-**Step 1 [T]: Fano topology $\to$ Fritzsch texture.** From the Fano selection rule ([Theorem 5.2](/docs/physics/particle-physics/yukawa-hierarchy#thm-5-2)) the down-quark mass matrix has the structure:
+:::danger[The Fritzsch texture is refuted (T-345(e), 2026-09-26)]
+Whatever its derivation, the texture below cannot describe the quarks. Its $(2,3)$ sector fixes $\lvert V_{cb}\rvert=\lvert\sqrt{m_s/m_b}-e^{i\phi}\sqrt{m_c/m_t}\rvert$ up to small corrections, and with the running masses at $M_Z$ (Huang and Zhou, *Phys. Rev. D* **103**, 016010 (2021): $m_s/m_b=0.01872$, $m_c/m_t=0.00368$) the exact diagonalisation gives $\lvert V_{cb}\rvert\ge0.073$ over all phases, against $0.04183^{+0.00079}_{-0.00069}$ (PDG 2024) — about $40\sigma$ (`test_fritzsch_six_zero_texture_overshoots_vcb`). That the original Fritzsch texture predicts too large a $\lvert V_{cb}\rvert$ and too small a $\lvert V_{ub}/V_{cb}\rvert$ is standard (B. Belfatto, Z. Berezhiani, *JHEP* **08** (2023) 162, arXiv:2305.00069). Step 1 was also derived in the axis reading of the generations (only $k=1$ on the Higgs line $\{A,E,U\}$), which cannot carry a family symmetry ([T-328(a)](/docs/physics/particle-physics/fermion-generations#поколения-t328)), and with $H\sim\gamma_{EU}$, which is [H]. The agreement $\lvert V_{us}\rvert\approx\sqrt{m_d/m_s}$ (Gatto–Sartori–Tonin) survives as an empirical relation of any texture with a zero in the $(1,1)$ entries; it is not a prediction of UHM.
+:::
+
+**Former Step 1 [✗] (was [T]): Fano topology $\to$ Fritzsch texture.** From the Fano selection rule ([Theorem 5.2](/docs/physics/particle-physics/yukawa-hierarchy#thm-5-2)) the down-quark mass matrix has the structure:
 
 $$M^d_\text{Fritzsch} = \begin{pmatrix} 0 & A_d & 0 \\ A_d^* & 0 & B_d \\ 0 & B_d^* & C_d \end{pmatrix}$$
 
@@ -423,7 +445,7 @@ $$|V_{us}| \approx \sqrt{\frac{m_d}{m_s}} \approx 0.222$$
 Substituting experimental masses (PDG): $m_d = 4.7$ MeV, $m_s = 93.5$ MeV, $m_u = 2.2$ MeV, $m_c = 1.3$ GeV. Result $|V_{us}| \approx 0.222$ — in agreement with the observed $0.2243 \pm 0.0005$.
 
 :::info Distinction of rigor levels
-**What the theory predicts [T]:** hierarchical texture $M^d$ with $M^d_{11} = M^d_{22} = 0$ (zeros on the diagonal), from which $|V_{us}| \sim \sqrt{m_d/m_s}$ follows **structurally**.
+**What the theory was said to predict (retracted [✗], was [T]):** hierarchical texture $M^d$ with $M^d_{11} = M^d_{22} = 0$ (zeros on the diagonal), from which $|V_{us}| \sim \sqrt{m_d/m_s}$ follows **structurally**.
 
 **What depends on experiment [H]:** the specific numerical value $0.222$ is determined by substituting the experimental masses $m_d$ and $m_s$, which are themselves not predicted by the theory with sufficient accuracy. From the Gap formalism: $m_d \sim \epsilon_\text{eff}^4 \cdot v$ and $m_s \sim \epsilon_\text{eff}^2 \cdot v$, whence $|V_{us}| \sim \epsilon_\text{eff}$ — only the order of magnitude $O(0.01\text{--}0.1)$.
 :::
@@ -444,10 +466,12 @@ Observed: $|V_{ub}| \approx 0.0037$. **Agreement** within 3%.
 
 | Parameter | Fano prediction | Observation | Status |
 |---|---|---|---|
-| $\lambda = \lvert V_{us}\rvert$ | $0.222$ | $0.2243$ | 1% |
-| $A = \lvert V_{cb}\rvert/\lambda^2$ | $0.044/0.049 = 0.89$ | $0.836$ | 6% |
-| $\bar{\rho}$ | depends on $\delta$ | $0.122$ | [H] |
-| $\bar{\eta}$ | depends on $\delta$ | $0.356$ | [H] |
+| $\lambda = \lvert V_{us}\rvert$ | $0.222$ | $0.22501 \pm 0.00068$ | [✗] (Fritzsch input, §6.3) |
+| $A = \lvert V_{cb}\rvert/\lambda^2$ | $0.044/0.049 = 0.89$ | $0.826^{+0.016}_{-0.015}$ | [✗] ($0.044$ is not the Fritzsch value; that one is $\ge0.073$) |
+| $\bar{\rho}$ | depends on $\delta$ | $0.1591 \pm 0.0094$ | [H] |
+| $\bar{\eta}$ | depends on $\delta$ | $0.3523^{+0.0073}_{-0.0071}$ | [H] |
+
+*Observations updated 2026-09-26 to the PDG 2024 fit (Eq. 12.26 of the CKM review); the column read $0.2243$, $0.836$, $0.122$, $0.356$.*
 
 Precise values of $\bar{\rho}$, $\bar{\eta}$ depend on the phases of the Yukawa matrices, which require non-perturbative computation.
 
@@ -455,14 +479,15 @@ Precise values of $\bar{\rho}$, $\bar{\eta}$ depend on the phases of the Yukawa 
 
 ## 8. Honest Assessment of Status {#8-честная-оценка-статуса}
 
-### 8.1 What the Theory Actually Predicts [T]
+### 8.1 What the Theory Actually Predicts
 
-:::tip [T] Structural predictions
-1. **Fritzsch texture** from Fano topology — hierarchical $3 \times 3$ mass matrix.
-2. **Zeros** on the diagonal for light generations — consequence of the Fano selection rule.
-3. **CP phase** determined by $\mathbb{Z}_7$-structure — discrete set of possible values.
+:::tip Structural statements (items 1–3 retracted 2026-09-26, T-345(e); items 5–6 [T])
+1. ~~**Fritzsch texture** from Fano topology — hierarchical $3 \times 3$ mass matrix.~~ [✗]: refuted by $\lvert V_{cb}\rvert$ (§6.3).
+2. ~~**Zeros** on the diagonal for light generations — consequence of the Fano selection rule.~~ [✗]: same texture.
+3. ~~**CP phase** determined by $\mathbb{Z}_7$-structure — discrete set of possible values.~~ [✗]: the multiples of $2\pi/7$ nearest the data, $51.4°$ and $77.1°$, are $9.5\sigma$ and $7.6\sigma$ away (Theorem 4.2).
 4. **Strong CP: $\theta_\text{QCD} = 0$** — [T-99, \[C at (SV)\]](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd) (corrected 2026-09-25 from [T]): only through the chain of the retracted cubic $V_3$. The corrected potential is PT-even, and no lift of its vacuum's antiunitary symmetry gives $\bar\theta = 0$ with $m_t \neq m_b$ and $J \neq 0$ ([T-333](/docs/physics/gauge-symmetry/confinement#pt-на-фермионах-t341)). With the fields the Clifford frame forces there is no Peccei–Quinn symmetry and no spontaneous CP violation, so $\bar\theta$ is a free parameter there ([T-333(e)–(h)](/docs/physics/gauge-symmetry/confinement#пк-и-нб)).
 5. **One channel gives no mixing [T]** ([T-332(g)](/docs/physics/particle-physics/higgs-sector#юкавы-t340)): if every generation couples through one flavour matrix times the same internal Clifford operator, $M_u \propto M_d$ and $V_{\mathrm{CKM}} = 1$. Mixing needs at least two channels (in $\mathrm{SO}(10)$ language, $\mathbf{10}$ with $\overline{\mathbf{126}}$ or $\mathbf{120}$). Under the hypothesis (UP) the down-type matrix is subleading, so the whole CKM matrix comes from subleading down-type terms. These must be tree-level, of relative size $\varepsilon\approx0.03$: the exact (UP), with a vanishing down-type matrix, is refuted, and loops cannot generate it ([T-332(h)–(k)](/docs/physics/particle-physics/higgs-sector#голоморфность-вп)). Its hierarchy is not derived [Pr].
+6. **What the clock can and cannot supply [T]** ([§11](#11-вкус-с-часов), T-345): every structure of the clock register that commutes with its tick — the Fano incidence, the quadratic residues and Gauss sums, the clock Hamiltonian, the anchor on the trivial harmonic — is diagonal on the generations and gives $\lvert V\rvert$ a permutation matrix in any number of channels; the only automorphism-fixed instant gives the democratic rank-one matrix; and two channels one of which is rank one cannot fit the quark and lepton masses together.
 :::
 
 ### 8.2 What Follows from Standard Formulas [H]
@@ -504,20 +529,21 @@ The discrepancy of $J_\text{pred}$ and $J_\text{obs}$ is determined **only** by 
 
 | Result | Original status | Current status |
 |---|---|---|
-| **Fritzsch texture from Fano topology** | [T] | **[T]** (genuine structural prediction) |
+| **Fritzsch texture from Fano topology** | [T] | **[✗]** (2026-09-26: $\lvert V_{cb}\rvert\ge0.073$ against $0.0418$) |
 | **$\lVert V_{us}\rVert$, $\lVert V_{ub}\rVert$ numerical** | [T] (1%) | **[H]** (consequence of Fritzsch + observed masses) |
 | **$\lVert V_{cb}\rVert$ numerical** | [T] (4%) | **[H]** (depends on phase; standard Fritzsch) |
 | **$J \approx 3.1 \times 10^{-5}$** | [T] (1%) | **[H]** (3 out of 4 parameters are observables; real accuracy $\sim 3\%$ in $\sin\delta$) |
-| **$\sin\delta \approx 0.90$** | [H] | **[C under SM 2-loop RG]** (sign of correction fixed by SM RG; magnitude **[H]**) |
-| **$\delta_\text{CP}$ from $V_3$-phase** | [H] | **[H]** ($V_3$ — unique source of CP violation; discrete values from $\mathbb{Z}_7$) |
+| **$\sin\delta \approx 0.90$** | [H] | **[✗]** (2026-09-26: the $12.6°$ correction is absent in the SM; $\delta$ runs by $0.003°$) |
+| **$\delta_\text{CP}$ from $V_3$-phase** | [H] | **[✗]** (2026-09-26: $V_3$ retracted, T-331; values $7.6\sigma$ and $9.5\sigma$ off) |
+| **Mixing angles $2\pi\lvert\Delta k\rvert/7$ with RG suppression** | [H] | **[✗]** (2026-09-26: $2:3:1$ against $60.8:11.2:1$; angles do not run) |
 | **Normalization of $\epsilon_{23}$ via Fritzsch formula** | [T] | **[H]** (direct computation from Gap formalism gives $V_{cb} \approx 2.5$; transition to Fritzsch formula — post-hoc correction) |
 
 ### 8.6 What is a Genuine Prediction and What is Not
 
-:::tip [P] Full list of genuine CKM-sector predictions
-1. **Fritzsch texture** from Fano topology — $M^{u,d}_{11} = M^{u,d}_{22} = 0$ for light generations [T].
-2. **Form** of the mixing formulas ($|V_{us}| \sim \sqrt{m_d/m_s}$ etc.) as a **structural** consequence of the texture [T].
-3. **CP-violation phase** $\delta_\text{CP}$ determined by $V_3$ and $\mathbb{Z}_7$-structure, not a free parameter [H].
+:::tip [P] Full list of genuine CKM-sector predictions (corrected 2026-09-26)
+1. ~~**Fritzsch texture** from Fano topology — $M^{u,d}_{11} = M^{u,d}_{22} = 0$ for light generations [T].~~ Retracted [✗] (§6.3).
+2. ~~**Form** of the mixing formulas ($|V_{us}| \sim \sqrt{m_d/m_s}$ etc.) as a **structural** consequence of the texture [T].~~ Retracted [✗] with the texture.
+3. ~~**CP-violation phase** $\delta_\text{CP}$ determined by $V_3$ and $\mathbb{Z}_7$-structure, not a free parameter [H].~~ Retracted [✗] (Theorem 4.2).
 4. **$\theta_\text{QCD} = 0$** — consequence of the isotropy of the Gap vacuum of the retracted $V_3$, [C at (SV)] (corrected 2026-09-25 from [T]; T-333 closes the route through the corrected vacuum).
 :::
 
@@ -527,6 +553,8 @@ The discrepancy of $J_\text{pred}$ and $J_\text{obs}$ is determined **only** by 
 :::
 
 ### 8.7 Open Questions
+
+*Corrected 2026-09-26 (T-345(e)):* the first two items are void — Theorems 3.1 and 4.2 are retracted — and the last one is answered in the negative for the clock structures ([§11](#11-вкус-с-часов)).
 
 - The normalization factor $C_\text{norm} \approx 26$ is tuned, not derived.
 - The sign of the two-loop correction to $\delta_\text{CP}$ is fixed by SM 2-loop RG (negative) **[C under SM 2-loop RG]**; the precise magnitude $|\delta^{(2)}|$ depends on GUT threshold corrections **[H]**.
@@ -583,6 +611,8 @@ The UHM derivation of the CKM matrix is **non-circular**, meaning: no observed q
 :::
 
 ### 9.4. What Fritzsch texture actually is in UHM
+
+*Note 2026-09-26 (T-345(e)).* The texture this subsection calls emergent is refuted by $\lvert V_{cb}\rvert$ ([§6.3](#derivation-vus)), so the non-circularity argument of §9 concerns a derivation that does not reproduce the data; the claim below that the texture is "a prediction of UHM" is retracted [✗]. §9.1–9.3 remain a statement of method.
 
 The Fritzsch texture in UHM context is **not** an ansatz substituted with observed masses; it is a **structural consequence** of:
 1. **Hermiticity** of Yukawa matrices: $Y = Y^\dagger$.
@@ -670,6 +700,42 @@ If the CAA is established to **require** a fourth generation, a vector-like quar
 :::
 
 **Proof sketch.** (1) $N_{\text{gen}}=3$ is [T] ([§1](/docs/physics/particle-physics/fermion-generations#1-число-поколений-из-топологии-gap-вакуума), [fermion generations Thm 6.1](/docs/physics/particle-physics/fermion-generations#thm-6-1)): the associator-free Fano triplet is unique, $\{1,2,4\}$, and equals the unique order-3 subgroup of $\mathbb{Z}_7^\ast$. Hence exactly three generations and a $3\times3$ mixing matrix — given that these three classes are the physical generations, which registry row 43c records as [I]. (2) The Yukawa matrices are $3\times3$; their bi-unitary diagonalisation yields a $3\times3$ **unitary** CKM ([Thm 1.1](#thm-1-1)); with no further quark states, first-row unitarity is exact. (3) ~~Chirality (γ₅ definite on $\chi_{\text{int}}$) forbids vector-like partners;~~ (retracted 2026-09-25: the γ₅ written there has eigenvalues $\pm i$, so no exclusion of vector-like partners follows); the unique Higgs line forbids leptoquark scalars; the seesaw spectrum has no light sterile. (4) Therefore any observed unitarity deficit is not a property of the fundamental $V_{\text{CKM}}$ and must originate in the extraction — the SM radiative/lattice inputs. $\blacksquare$
+
+---
+
+## 11. Flavour from the clock: what can break the family ℤ₃ (T-345) {#11-вкус-с-часов}
+
+:::tip[Status: (a)–(d) \[T\] as mathematics; with the data they refute \[✗\] every parameter-free structure of the clock register in any number of channels and every two-channel frame with a rank-one channel; (e) the former numerical claims of this page \[✗\]; (f) the three-channel frame \[H\]]
+Registry row T-345 (2026-09-26). The question: under the hypothesis (GC) of [T-328](/docs/physics/particle-physics/fermion-generations#поколения-t328) the family $\mathbb{Z}_3$ must be broken ([T-328(d)](/docs/physics/particle-physics/fermion-generations#поколения-t328)) and mixing needs at least two Clifford channels ([T-332(g)](/docs/physics/particle-physics/higgs-sector#юкавы-t340)). Can a structure the clock already carries, with no free parameter, supply the breaking and predict masses and mixing?
+:::
+
+**Setting.** Under (GC) a generation is a non-trivial real harmonic of $\mathbb{Z}_7$ on the clock register $\mathcal{H}_{\text{clock}}\cong\mathbb{C}^7$. The energy states $\lvert k\rangle$ of $H_O=\omega_0\sum_k k\lvert k\rangle\langle k\rvert$ are the harmonics, grouped into the planes $\{k,7-k\}$; the time states are $\lvert\tau_n\rangle=7^{-1/2}\sum_k e^{-2\pi i kn/7}\lvert k\rangle$, and the tick $V_O$ maps $\lvert\tau_n\rangle$ to $\lvert\tau_{n+1}\rangle$ ([emergent time](/docs/proofs/dynamics/emergent-time)). The family $\mathbb{Z}_3$ is multiplication of the labels by $2$ and $4$. In the $\mathrm{Spin}(10)$ Clifford frame ([T-329](/docs/physics/gauge-symmetry/standard-model), [T-332](/docs/physics/particle-physics/higgs-sector#юкавы-t340)) a whole generation is one $\mathbf{16}$, and each channel $c$ ($\mathbf{10}$, $\overline{\mathbf{126}}$, $\mathbf{120}$) couples $\psi_i\psi_j$ through one flavour matrix $Y_c$ on the generations: $M_f=\sum_c v_f^{(c)}Y_c$, with the same $Y_c$ in the up, down, charged-lepton and neutrino-Dirac masses and only the coefficients depending on the sector (for example $v_e^{(126)}=-3v_d^{(126)}$).
+
+The candidates without free parameters are: (i) the circulants of the clock — the Fano incidence (lines $\{t,t+1,t+3\}$), its collinearity $2I+J$, the quadratic-residue sum $\sum_{q\in\mathrm{QR}}V_O^{\,q}$ whose eigenvalues are the Gauss sum $b_7=(-1+i\sqrt7)/2$ and its conjugate, and the cyclic Hamming code, which is the quadratic-residue code of length 7; (ii) the clock Hamiltonian $H_O$ and its functions; (iii) the self-model anchor $uu^\dagger$ with $u$ uniform, which on the clock register is either the projector onto the trivial harmonic ($u$ uniform over time states) or $\lvert\tau_0\rangle\langle\tau_0\rvert$ ($u$ uniform over energy states); (iv) time-localised structures — the instants $\lvert\tau_n\rangle\langle\tau_n\rvert$ and the time operator $T=\sum_n n\lvert\tau_n\rangle\langle\tau_n\rvert$, which is what the depth register ([emergent time §11.4](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)) adds to one clock: its digits are ordered readings of the same $\mathbb{Z}_7$.
+
+**Theorem 11.1 (T-345).**
+
+**(a) Everything that commutes with the tick is diagonal on the generations [T].** An operator that commutes with $V_O$ is diagonal in the energy basis and so maps each harmonic plane to itself. All of (i), (ii) and the first placement of (iii) are of this kind. Yukawa matrices built from them, in any number of channels, are diagonal in one basis in every sector, so $\lvert V_{\mathrm{CKM}}\rvert$ is a permutation matrix and a PMNS column has modulus 1. This is refuted by $\lvert V_{us}\rvert=0.22501\pm0.00068$ (PDG 2024). Besides, the Fano circulants have eigenvalues of modulus $\sqrt2$ on all six non-trivial harmonics (a difference set with $\lambda=1$), the residue sum has $b_7$ or $\bar b_7$ with $\lvert b_7\rvert=\sqrt2$, and the collinearity is $2$ on all of them: equal moduli on the three generations and degenerate masses, refuted by $m_c/m_t=0.00368$. $H_O$ separates them only as $1:2:4$ (or $1:2:3$), refuted by the hierarchy.
+
+**(b) The instant fixed by the family is democratic [T].** Of the seven time states only $\lvert\tau_0\rangle$ is fixed by $n\mapsto2n$. On the generations $\lvert\tau_0\rangle\langle\tau_0\rvert$ is the democratic matrix $J/7$ (all entries equal), of rank one; the anchor in the second placement is exactly this matrix. It is invariant under all permutations of the generations, so it keeps the family $\mathbb{Z}_3$. Alone it gives one massive generation and two massless ones in every sector — the leading form of the observed hierarchy — and no mixing. The other instants $\lvert\tau_n\rangle\langle\tau_n\rvert$ are the same matrix up to a rephasing of the generations.
+
+**(c) Structures in a common plane leave a unit entry [T].** If the ranges of all flavour matrices of both quark sectors lie in one two-dimensional subspace (for example two instants), each sector has a massless state and $\lvert V\rvert$ has an entry of modulus 1. Refuted by $m_u=1.23$ MeV at $M_Z$ and by $\min_{ij}\lvert V_{ij}\rvert=\lvert V_{ub}\rvert=0.003732$.
+
+**(d) Two channels, one of rank one, cannot carry quarks and leptons [T].** Let $M_f=\alpha_f A+\beta_f B$ with $A$ of rank one and $A$, $B$ common to $u$, $d$, $e$, and let the rank-one channel carry the heavy generation, $x_f=\beta_f/\alpha_f$ small (normalise $\lVert A\rVert=1$). Write $\tilde B$ for the compression of $B$ to the complements of the range and co-range of $A$, and $s_1$ for its larger singular value. Then
+
+$$\frac{m_2}{m_3}=\lvert x_f\rvert s_1\,\bigl(1+O(x_f)\bigr),\qquad \frac{m_1}{m_2}=\frac{\lvert\det\tilde B-x_f\,c\rvert}{s_1^{2}}\,\bigl(1+O(x_f)\bigr),$$
+
+with a constant $c$ fixed by $A$ and $B$: $m_1/m_2=\lvert\rho-\kappa\xi_f\rvert$, where $\lvert\xi_f\rvert=m_2/m_3$ and $\rho$, $\kappa$ are the same in every sector. With the running masses at $M_Z$ (Huang, Zhou, *Phys. Rev. D* **103**, 016010 (2021)) $m_2/m_3=0.00368,\ 0.01872,\ 0.05887$ and $m_1/m_2=0.00198,\ 0.0502,\ 0.00475$ for $u$, $d$, $e$. The triangle inequality gives $\lvert\kappa\rvert\ge(0.0502-0.00198)/(0.00368+0.01872)=2.15$ from $u$ and $d$, and $\lvert\kappa\rvert\le(0.00475+0.00198)/(0.05887-0.00368)=0.122$ from $u$ and $e$. The two bounds differ by a factor of 17.7, while the neglected terms are of relative size $\lesssim0.06$. So every two-channel frame with a rank-one channel is refuted — in particular the democratic instant of (b) with any second channel, clock-built or not. A direct scan says the same for full-rank pairs of clock structures: over all 112 ordered pairs from $\{1, H_O, H_O^2, \lvert\tau_0\rangle\langle\tau_0\rvert, T, T^2, \{H_O,T\}/2, i[H_O,T]\}$ on the harmonics $\{1,2,4\}$ or $\{1,2,3\}$, the pencil $A+xB$ over the whole complex plane never comes closer to $(m_u/m_t, m_c/m_t)$ than a factor $e^{2.46}=11.7$, nor to the down-type ratios than a factor $e^{0.69}=2.0$.
+
+**(e) The former claims of this page [T for the computations; the claims are ✗].** The six-zero Fritzsch texture gives $\lvert V_{cb}\rvert\ge0.073$ (§6.3). The Fano angle ratios $2:3:1$ stand against $60.8:11.2:1$ (§2.2). In one-loop Standard Model running from $M_Z$ to $2\times10^{16}$ GeV the CKM phase moves by $0.003°$, so the "two-loop correction" $12.6°$ of Theorem 4.2 does not exist, and the uncorrected $\lvert\delta\rvert=77.1°$ ($51.4°$) is $7.6\sigma$ ($9.5\sigma$) from $65.7°\pm1.5°$. The parameter-free phase of the Gauss sum, $\pi-\arg b_7=\arctan\sqrt7=69.30°$, is $2.4\sigma$ away and has no mechanism behind it.
+
+**(f) Three channels with the canonical clock structures [numbers; the frame [H]].** By (d), and by the two-Higgs no-go of Babu, Bajc and Saad — a real $\mathbf{10}_H$ with a $\overline{\mathbf{126}}_H$ forces $\lvert v_u\rvert=\lvert v_d\rvert$ in the $\mathbf{10}$ and cannot split $m_t$ from $m_b$ (the equal-moduli statement of T-332(b)), and $\overline{\mathbf{126}}_H$ with $\mathbf{120}_H$ gives $m_\tau/m_b\simeq3$ at the GUT scale against $1.4$–$1.7$ — the Clifford frame needs all three channels. With the canonical clock structures in them — $\mathbf{10}\propto\lvert\tau_0\rangle\langle\tau_0\rvert$ of (b), $\overline{\mathbf{126}}$ tick-commuting (any diagonal matrix), $\mathbf{120}\propto$ the $\mathbb{Z}_3$-covariant antisymmetric matrix ($A_{12}=A_{23}=A_{31}=1$) — and free complex coefficients, a numerical search over the ten quark observables at $10^{12}$ GeV (one-loop running from $M_Z$) found no fit. The best maximal deviation is a factor $e^{0.34}=1.40$ with the diagonal free (14 real parameters, 360 seeded starts and 300 local restarts from the best), where $m_s$ comes out 43 % high, $m_b$ 31 % low and $\lvert V_{cb}\rvert$ 25 % low together, and $e^{1.34}=3.8$ with the diagonal fixed to $H_O$. This is a search, not a proof. The most constrained frame known to be viable is the minimal renormalizable non-supersymmetric $\mathrm{SO}(10)$ with a real $\mathbf{10}_H$, a real $\mathbf{120}_H$, a complex $\overline{\mathbf{126}}_H$ and free flavour matrices: K. S. Babu, B. Bajc, S. Saad, *JHEP* **02** (2017) 136 (arXiv:1612.04329) fit all fermion masses and mixings with it and, with a type-I seesaw, predict normal ordering, a nearly massless lightest neutrino ($m_1=1.5\times10^{-4}$ eV at the GUT scale), $m_{\beta\beta}=2.1$ meV, $m_\beta=5.1$ meV and $\delta_{\mathrm{PMNS}}=2.8°$ (their Table 4; with type I+II, $\delta_{\mathrm{PMNS}}=-151°$ and $m_{\beta\beta}=4.1$ meV). Against NuFIT 6.0 (normal ordering without SK atmospheric data, $\delta=177^{+19}_{-20}\,°$, $3\sigma$ range $96°$–$422°$) both phases lie inside $3\sigma$ and outside $1\sigma$; inverted ordering is disfavoured there by $\Delta\chi^2=6.1$. The real $\mathbf{10}_H$ of that model is what the colour-free Clifford plane of T-332 is. Taking this frame for UHM is a hypothesis [H]. It is refuted by inverted ordering, by $m_{\beta\beta}$ well above $5$ meV, or by $\delta_{\mathrm{PMNS}}$ established near $180°$ at more than $3\sigma$. Its numbers belong to the $\mathrm{SO}(10)$ fit, not to UHM: nothing in UHM fixes its flavour matrices.
+
+**Proof.** (a) $V_O$ has seven distinct eigenvalues, so its commutant is the diagonal algebra; circulants in time are functions of $V_O$. The eigenvalue of the circulant with offset set $S$ on the harmonic $k$ is $\sum_{s\in S}e^{-2\pi iks/7}$, and $\lvert\sum_{s\in S}\zeta^{ks}\rvert^2=\lvert S\rvert-\lambda+\lambda\cdot7\,\delta_{k0}$ for a $(7,3,1)$ difference set, i.e. $2$ for $k\neq0$; for $S=\mathrm{QR}$ it is the Gauss sum. Simultaneously diagonal $M_u$, $M_d$ give $V$ a permutation. (b) $2n\equiv n\pmod7$ only for $n=0$; $\langle k\vert\tau_0\rangle=7^{-1/2}$ for all $k$. (c) A vector orthogonal to the common plane is annihilated by $M_u^\dagger$ and $M_d^\dagger$, so it is a left null vector of both, and the corresponding row and column of $V$ are a unit vector. (d) In the bases $\{a,Q_a\}$, $\{b,Q_b\}$ adapted to $A=ab^\dagger$ the light $2\times2$ block after removing the heavy state is $x\tilde B-x^2 C+O(x^3)$ with $C$ of rank one; $\det(\tilde B-xC)=\det\tilde B-x\,\mathrm{tr}(\mathrm{adj}\tilde B\,C)$ is exactly linear in $x$, and $m_1m_2m_3=\lvert\det M\rvert$. The inequalities are the triangle inequality for $\lvert\rho-\kappa\xi_f\rvert$. (e) Diagonalisation and integration of the one-loop equations for the full Yukawa matrices. $\blacksquare$
+
+Witnesses in `check_core_numbers.py`: `test_tick_commuting_clock_structures_are_generation_diagonal`, `test_the_automorphism_fixed_instant_is_the_democratic_rank_one_matrix`, `test_flavour_matrices_in_a_common_plane_give_a_unit_ckm_entry`, `test_two_channels_with_a_rank_one_channel_cannot_fit_quarks_and_leptons` (the formula of (d) is checked on random $A$, $B$), `test_parameter_free_clock_pairs_miss_the_up_quark_ratios`, `test_fritzsch_six_zero_texture_overshoots_vcb`, `test_ckm_phase_does_not_run_in_the_sm`.
+
+**What this changes.** No structure the clock carries predicts a mass ratio or a mixing angle. The tick-invariant ones — which include everything built from the Fano plane, the quadratic residues and the anchor — cannot break the family $\mathbb{Z}_3$ in a way that mixes, and most of them cannot split the masses. The one that breaks translations and keeps the family, the fixed instant $\tau_0$, gives the right leading pattern (one heavy generation per sector) but, used as one of two channels, is excluded by the lepton masses. A flavour prediction would need a principle that fixes the coefficients of at least three channels, and the corpus has none [Pr]. (GC) keeps its two consequences — three generations, no fourth sequential one — and gains no third.
 
 ---
 
