@@ -26,7 +26,7 @@ $$
 is the **unique** value satisfying the following conditions (1, 3 and 5 are exact and equivalent; 2 and 4 are the approximate informational and the spectral readings of the same threshold):
 
 1. **Geometric:** $\|\Gamma - I_N/N\|_F^2 = \|I_N/N\|_F^2$
-2. **Informational (convention, quadratic approximation only):** $\tfrac{N}{2}\left(P - \tfrac1N\right) = \frac{1}{2}$ nat — the exact $D_{KL}(\Gamma \| I_N/N)$ at $P = 2/N$ lies in $[0.359, 0.622]$ nat and equals $0.344$ nat on the extremal spectrum (§3.2)
+2. **Informational (convention, quadratic approximation only):** $\tfrac{N}{2}\left(P - \tfrac1N\right) = \frac{1}{2}$ nat — the exact $D_{KL}(\Gamma \| I_N/N)$ at $P = 2/7$ lies in $[0.344, 0.648]$ nat, with $0.344$ nat on the extremal spectrum (§3.2)
 3. **Structural:** $|\mathbf{r}|^2 = 2\sigma^2$ (SNR = 1)
 4. **Spectral:** $\lambda_{\max} = (1 + \sqrt{N-1})/N \approx 1/2$
 5. **Autopoietic:** minimal breaking of $U(N)$ symmetry
@@ -174,7 +174,7 @@ Path 2 uses the **quadratic approximation** D_KL(Γ ‖ I/N) ≈ (N/2)(P − 1/N
 Two facts, both machine-verified:
 
 1. **The threshold sits exactly where the approximation fails.** At $P = 2/N$ we have $P - 1/N = 1/7 \approx 0.143$, which is not $\ll 1$.
-2. **$D_{\mathrm{KL}}(\Gamma\,\|\,I/N)$ is not a function of purity alone.** Over all states with $P = 2/7$ the exact divergence spans $[0.359,\,0.622]$ nat — $0.344$ for one dominant mode plus six equal, $0.437$ for two dominant plus five — against the approximation's $0.500$. So the correspondence "$D_{\mathrm{KL}} = 1/2 \iff P = 2/N$" holds for *some* spectra and not others; it is not an equivalence.
+2. **$D_{\mathrm{KL}}(\Gamma\,\|\,I/N)$ is not a function of purity alone.** Over all states with $P = 2/7$ the exact divergence spans $[0.344,\,0.648]$ nat — the minimum $0.344$ for one dominant mode plus six equal, $0.437$ for two dominant plus five, the maximum $0.648$ for three equal modes $(21+\sqrt{21})/84$ plus one smaller and three zero — against the approximation's $0.500$. (An earlier version gave $[0.359,\,0.622]$, a sampled range that excluded its own extremal value $0.344$; corrected 2026-09-26, witness `living_holon_costs_at_least_0344_nats_below_the_trace` in `check_core_numbers.py`.) So the correspondence "$D_{\mathrm{KL}} = 1/2 \iff P = 2/N$" holds for *some* spectra and not others; it is not an equivalence.
 
 By contrast **Path 1 is exact and state-independent**: $\|\Gamma - I/N\|_F^2 = P - 1/N$ identically (verified to $10^{-16}$), and $\|I/N\|_F^2 = 1/N$, so the majority criterion *is* $P > 2/N$ with no approximation anywhere. Path 3 is likewise exact — the Weingarten constant $1/(N(N+1)) = 1/56$ multiplies both sides and cancels. Read the "convergence of five paths" accordingly: two are proofs, the rest are corroboration.
 :::
@@ -522,7 +522,7 @@ $$
 S_{vN} \approx \log N - \frac{N}{2}\left(\frac{2}{N} - \frac{1}{N}\right) = \log N - \frac{1}{2} \quad \text{(quadratic approximation)}
 $$
 
-In the quadratic approximation the system contains 1/2 nat less entropy than maximal chaos. Exactly, the entropy deficit $\log N - S_{vN} = D_{KL}(\Gamma\|I/N)$ depends on the spectrum: $0.344$ nat for the extremal spectrum $\lambda_1 = (1+\sqrt6)/7$ and up to $0.622$ nat for other spectra with $P = 2/7$ (§3.2).
+In the quadratic approximation the system contains 1/2 nat less entropy than maximal chaos. Exactly, the entropy deficit $\log N - S_{vN} = D_{KL}(\Gamma\|I/N)$ depends on the spectrum: $0.344$ nat for the extremal spectrum $\lambda_1 = (1+\sqrt6)/7$ and up to $0.648$ nat for other spectra with $P = 2/7$ (§3.2).
 
 ### 7.4 For information theorists
 

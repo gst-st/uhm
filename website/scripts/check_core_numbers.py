@@ -7038,6 +7038,96 @@ def test_enrichment_monotonicity_is_not_forced_by_the_holon_and_follows_from_ope
     assert min(gaps) > 0.2, min(gaps)
 
 
+def _ptrace_last(rho, d_keep, d_drop=7):
+    """След по последнему множителю ℂ^{d_drop}: состояние уровня M+1 → уровня M башни."""
+    return np.einsum("ajbj->ab", rho.reshape(d_keep, d_drop, d_keep, d_drop))
+
+
+def test_holon_tower_trace_entropy_is_nonpositive_and_monotone():
+    """T-348(а): башня ⊗(M₇, tr₇) — след согласован, S_tr = S − M ln 7 ≤ 0, равенство только в I/7^M.
+
+    Энтропия относительно нормированного следа есть −D(ρ‖I/7^M); сужение на меньший уровень
+    (след по последнему голоному) её не уменьшает — это монотонность относительной энтропии.
+    """
+    rng = np.random.default_rng(348)
+    a = rng.normal(size=(49, 49)) + 1j * rng.normal(size=(49, 49))
+    assert abs(np.trace(np.kron(a, np.eye(7))).real / 343 - np.trace(a).real / 49) < 1e-12
+    for M in (1, 2, 3):
+        d = 7 ** M
+        assert abs(entropy(np.eye(d) / d) - M * np.log(7)) < 1e-9          # S_tr(I/7^M) = 0
+        for _ in range(3):
+            rho = random_state(rng, d)
+            s_tr = entropy(rho) - M * np.log(7)
+            assert s_tr < 0
+            if M > 1:
+                red = _ptrace_last(rho, 7 ** (M - 1))
+                assert entropy(red) - (M - 1) * np.log(7) >= s_tr - 1e-12
+    # проекторы уровня M имеют след k/7^M; 7^M нечётно — след 1/2 недостижим ни на каком уровне
+    for M in range(1, 9):
+        assert 7 ** M % 2 == 1
+        assert abs(min(abs(k / 7 ** M - 0.5) for k in range(7 ** M + 1)) - 0.5 / 7 ** M) < 1e-15
+    # показания регистра глубины, вложенные измельчением (новый голоном — младшая цифра):
+    # проектор на показания n/7^M ∈ [a, b) имеет след, отличающийся от b − a не более чем на 2/7^M
+    for M in (2, 4, 6):
+        n = np.arange(7 ** M) / 7 ** M
+        for lo, hi in ((0.1, 0.35), (1 / 3, 0.9)):
+            assert abs(np.mean((n >= lo) & (n < hi)) - (hi - lo)) <= 2 / 7 ** M
+
+
+def test_living_holon_costs_at_least_0344_nats_below_the_trace():
+    """T-348(г): каждый живой голоном (P > 2/7) снижает S_tr больше чем на D* = 0,34406 нат.
+
+    D* = ln 7 − S((1+√6)/7, (6−√6)/42 ×6) — минимум D(ρ‖I/7) при P = 2/7 (одна доминирующая мода
+    плюс шесть равных); максимум при P = 2/7 — 0,64817 на (a, a, a, b, 0, 0, 0), a = (21+√21)/84.
+    Для двух голономов D(ρ₁₂‖I/49) = D(ρ₁‖I/7) + D(ρ₂‖I/7) + I(1:2) ≥ сумме — отсюда S_tr ≤ −L·D*.
+    Верность I/7 бесконечному произведению живых голономов ≤ 0,85505^M → 0: оно не нормально на R.
+    """
+    lam = np.array([(1 + np.sqrt(6)) / 7] + [(6 - np.sqrt(6)) / 42] * 6)
+    d_star = np.log(7) - entropy(np.diag(lam))
+    assert abs((lam ** 2).sum() - 2 / 7) < 1e-12 and abs(d_star - 0.34406) < 1e-5
+    a = (21 + np.sqrt(21)) / 84
+    top = np.array([a, a, a, 1 - 3 * a, 0, 0, 0])
+    assert abs((top ** 2).sum() - 2 / 7) < 1e-12
+    assert abs(np.log(7) - entropy(np.diag(top)) - 0.64817) < 1e-5
+    rng = np.random.default_rng(2348)
+    hits = 0
+    for _ in range(4000):
+        x = rng.exponential(size=7) ** rng.uniform(0.5, 4)
+        p = x / x.sum()
+        P = (p ** 2).sum()
+        if P > 2 / 7:
+            hits += 1
+            assert np.log(7) - entropy(np.diag(p)) > d_star
+        if abs(P - 2 / 7) < 2e-3:
+            assert d_star - 1e-3 < np.log(7) - entropy(np.diag(p)) < 0.64817 + 1e-3
+    assert hits > 500
+    fid = np.sqrt(lam).sum() ** 2 / 7
+    assert abs(fid - 0.85504) < 1e-5 and fid ** 100 < 2e-7
+    for _ in range(20):                                   # два голонома с живыми маргиналами
+        v = rng.normal(size=(49, 3)) + 1j * rng.normal(size=(49, 3))
+        rho = v @ v.conj().T
+        rho /= np.trace(rho).real
+        m1 = _ptrace_last(rho, 7)
+        m2 = np.einsum("jajb->ab", rho.reshape(7, 7, 7, 7))
+        if purity(m1) > 2 / 7 and purity(m2) > 2 / 7:
+            assert entropy(rho) - 2 * np.log(7) < -2 * d_star
+
+
+def test_lambda_as_a_holon_count_is_a_reparametrisation():
+    """T-348(е): e^{S_dS} = 7^M при наблюдаемом Λ даёт M = 1,677·10¹²² — пересчёт Λ, не вывод.
+
+    S_dS = 3π/(Λ ℓ_P²), Λ = 1,1056·10⁻⁵² м⁻², ℓ_P² = 2,6123·10⁻⁷⁰ м²; M ↦ Λ — строго
+    убывающая биекция, и ни одно утверждение корпуса не фиксирует M.
+    """
+    lam_obs, lp2 = 1.1056e-52, 2.61226e-70
+    s_ds = 3 * np.pi / (lam_obs * lp2)
+    M = s_ds / np.log(7)
+    assert abs(s_ds / 3.2633e122 - 1) < 1e-4 and abs(M / 1.6770e122 - 1) < 1e-4
+    Ms = np.array([1e120, 1e121, M, 1e123])
+    lams = 3 * np.pi / (lp2 * Ms * np.log(7))
+    assert np.all(np.diff(lams) < 0) and abs(lams[2] / lam_obs - 1) < 1e-12
+
+
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
     bad = 0
