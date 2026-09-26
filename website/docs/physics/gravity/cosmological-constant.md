@@ -956,3 +956,4 @@ $$
 - [Einstein equations from Gap](/docs/physics/gravity/einstein-equations)
 - [Zeta-regularization](/docs/physics/dual-aspect/zeta-regularization)
 - [Emergent geometry](/docs/physics/gravity/emergent-geometry)
+- [The de Sitter observer algebra and the holon tower](/docs/proofs/dynamics/emergent-time#t-348) — T-348(f): type II₁ fixes neither $\Lambda$ nor its sign

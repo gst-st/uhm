@@ -956,3 +956,4 @@ $$
 - [Уравнения Эйнштейна из Gap](/docs/physics/gravity/einstein-equations)
 - [Дзета-регуляризация](/docs/physics/dual-aspect/zeta-regularization)
 - [Эмерджентная геометрия](/docs/physics/gravity/emergent-geometry)
+- [Алгебра наблюдателя де Ситтера и башня голономов](/docs/proofs/dynamics/emergent-time#t-348) — T-348(f): тип II₁ не фиксирует ни $\Lambda$, ни её знак

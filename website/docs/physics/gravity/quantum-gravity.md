@@ -613,6 +613,10 @@ where $T_H = \hbar c^3 / (8\pi G M_{\text{BH}} k_B)$ is the Hawking temperature.
 
 **(d)** In the final stage ($M_{\text{BH}} \to M_P$): $\text{Gap} \to 0$, the horizon disappears, all information is released. The Planck remnant contains $\sim 42$ degrees of freedom (one lattice site).
 
+### 6.6 The de Sitter observer algebra and the holon tower (T-348) {#алгебра-наблюдателя-де-ситтера}
+
+With an observer, the algebra of the static patch of de Sitter space is a type II₁ factor whose trace is the state of maximal entropy (Chandrasekaran–Longo–Penington–Witten, arXiv:2206.10780). The holon has the same kind of object at finite size: $M_7(\mathbb C)$ with its trace $I/7$. T-348 [T] makes the relation exact and bounds it. The tower of $M$ holons, $\bigotimes(M_7, \mathrm{tr}_7)$, closes to the hyperfinite II₁ factor $R$. If the matter net has the split property (proved for the free massive Klein–Gordon field), the CLPW algebra is also $R$, and every isomorphism carries the trace to the trace: empty de Sitter space corresponds to all holons at $I/7$, a state below the viability window. In any normal state only finitely many holons are alive, and each costs more than $0.344$ nat of entropy. A finite clock, including the O-clock and the depth register, gives a type I algebra that sees no field. Nothing in the identification fixes $\Lambda$, its sign or $\kappa$: $7^M = e^{S_{\text{dS}}}$ only renames $\Lambda$ as $M = 1.677 \times 10^{122}$ holons. The literature, the proof and what stays open are in [emergent time §11.5](/docs/proofs/dynamics/emergent-time#t-348).
+
 ---
 
 ## 7. Open Problems [P] {#открытые-проблемы}
@@ -641,3 +645,4 @@ where $T_H = \hbar c^3 / (8\pi G M_{\text{BH}} k_B)$ is the Hawking temperature.
 - [Noether charges](/docs/physics/gauge-symmetry/noether-charges) — Ward identities
 - [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold) — derivation of $M^4$ from categorical structure (T-117 — T-121)
 - [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) — 41.5 orders
+- [Emergent time §11.5](/docs/proofs/dynamics/emergent-time#t-348) — the de Sitter observer algebra and the holon tower (T-348)
