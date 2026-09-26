@@ -139,6 +139,16 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Empirical Programme',
+      items: [
+        'consciousness/empirical/overview',
+        'consciousness/empirical/calibration',
+        'consciousness/empirical/structure',
+        'consciousness/empirical/engineering',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Ethics & Meaning',
       items: [
         'consciousness/ethics-meaning/value-consciousness',

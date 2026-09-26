@@ -27,7 +27,7 @@ Head-to-head predictions against competing theories at every live experimental f
 
 The extended theory makes testable predictions:
 
-#### 1. Isospectral discrimination
+#### 1. Isospectral discrimination {#isospectral-discrimination}
 
 Two states $\rho_1$, $\rho_2$ with $\mathrm{Spec}(\rho_1) = \mathrm{Spec}(\rho_2)$ but $\mathrm{Eigvec}(\rho_1) \neq \mathrm{Eigvec}(\rho_2)$ should yield:
 - Identical experience intensity (spectrum determines intensity)
@@ -40,7 +40,7 @@ Two states $\rho_1$, $\rho_2$ with $\mathrm{Spec}(\rho_1) = \mathrm{Spec}(\rho_2
 
 **Test:** Create isospectral neural states, measure phenomenal reports.
 
-#### 2. Contextual modulation
+#### 2. Contextual modulation {#contextual-modulation}
 
 Changing [context](/docs/reference/specification#полное-экспериенциальное-пространство) $\Gamma_{-E}$ with fixed $\rho_E$ should alter the *quality* of experience without changing *intensity*.
 
@@ -52,7 +52,7 @@ Changing [context](/docs/reference/specification#полное-экспериен
 
 **Test:** Modulate context (attention, mood) at constant stimulus, measure changes in perceptual quality.
 
-#### 3. Adaptation dynamics
+#### 3. Adaptation dynamics {#adaptation-dynamics}
 
 [Experiential content](/docs/proofs/categorical/categorical-formalism#2-категория-exp) (levels [L1–L2](/docs/proofs/consciousness/interiority-hierarchy)) should follow the adaptation law:
 
@@ -77,7 +77,7 @@ This prediction follows from the fact that perception encodes *changes* relative
 
 **Test:** Measure the temporal dynamics of adaptation, compare with prediction.
 
-#### 4. Metric relations
+#### 4. Metric relations {#metric-relations}
 
 Distances in phenomenal space ([L1](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry)) should correspond to the [Fubini-Study metric](/docs/reference/specification#метрика-фубини-штуди):
 
@@ -95,7 +95,7 @@ where $[|q\rangle] \in \mathbb{P}(\mathcal{H}_E)$ — equivalence class in [proj
 
 **Test:** Build a phenomenal quality map (L1), compare with predicted geometry.
 
-## Refutation Criterion
+## Refutation Criterion {#refutation-criterion}
 
 The theory is falsified if:
 
@@ -495,7 +495,7 @@ Acknowledging boundaries is not a weakness, but a strength of a scientific theor
 | Spacetime dimensionality $3+1$ | **[C at (L)], (L) ⟺ (P) — [48e(f)–(i)](/docs/core/foundations/spacetime#теорема-48c)**; the mathematics [T] | [Theorem 48c](/docs/core/foundations/spacetime#теорема-48c): the colour-singlet part of $\mathfrak h_2(\mathbb O)$ is $\mathfrak h_2(\mathbb C_O)$, signature $(1,3)$, rotations $SO(3)$ commuting with colour [T]; its reading as physical spacetime is [C at (L)], (L) ⟺ (P) — [48e(f)–(i)](/docs/core/foundations/spacetime#теорема-48c). One time direction [T] (PW clock); three spatial ones also at T-119 [T] (rank count, the colour triplet read as space [I]); the former "sectoral decomposition + Connes reconstruction [T]" is retracted with the axis-labelled split (row 48a) |
 | Constants $c$, $G$, $\hbar$ | $G$ **[T]** derived, $c$, $\hbar$ not explained | $G_N = 3\pi/(7f_2\Lambda^2)$ (T-65); $c$, $\hbar$ — fundamental |
 
-### Phenomenal Boundaries (what is taken as axiom)
+### Phenomenal Boundaries (what is taken as axiom) {#phenomenal-boundaries}
 
 1. **Categorical gap:** The theory does not explain *why* mathematical structures are 'felt.' The identity of being and experience — [Axiom Ω⁷](/docs/core/foundations/axiom-omega), not a theorem.
 
@@ -504,6 +504,8 @@ Acknowledging boundaries is not a weakness, but a strength of a scientific theor
 :::info Qualia calibration — an empirical question
 Which specific $[|q\rangle] \in \mathbb{P}(\mathcal{H}_E)$ corresponds to 'red' is an empirical question, not a theoretical defect. This is analogous to how the electron mass is not derived from the Standard Model. The structure of experience (spectral decomposition) is the [unique functor](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв) compatible with the axiomatics, but the specific calibration is determined experimentally.
 :::
+
+The protocols, controls and power calculations for this calibration, and the structural tests that go with it, are collected in the [Empirical Programme](/docs/consciousness/empirical/overview).
 
 3. **Absolute qualia:** The question of the existence of context-independent qualia remains open.
 
@@ -550,6 +552,7 @@ Boundaries do not mean a halt to development. Open directions:
 |-------------|------|-----------|
 | Quantum gravity | Derive $g_{\mu\nu}$ from $\Gamma$ | High |
 | Experimental validation of thresholds | Verify $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$ empirically | High |
+| Calibration and structure of quality space | Fix the map from perceived dissimilarity to $d_{\mathrm{FS}}$; test realisability and the Fano structure ([Empirical Programme](/docs/consciousness/empirical/structure)) | High |
 | Isospectral experiments | Test prediction 1 with numerical tolerances | High |
 | ISF analysis of fMRI | Verify [F-Gap-1](#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного), [F-Gap-2](#f-gap-2-блоковая-прозрачность-по-фано-триплетам), [F-ISF](#f-isf-isf-компоненты-в-фмрт) | High |
 | Non-perturbative computations | Refine [F-Higgs](#f-higgs-отклонение-самосвязи-хиггса), [F-τ_p](#f-τ_p-время-жизни-протона) | High |

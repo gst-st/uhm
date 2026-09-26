@@ -51,6 +51,10 @@
     "message": "Субъекты сознания",
     "description": "The label for category 'Subjects of Consciousness' in sidebar 'consciousness'"
   },
+  "sidebar.consciousness.category.Empirical Programme": {
+    "message": "Эмпирическая программа",
+    "description": "The label for category 'Empirical Programme' in sidebar 'consciousness'"
+  },
   "sidebar.consciousness.category.Ethics & Meaning": {
     "message": "Этика и смысл",
     "description": "The label for category 'Ethics & Meaning' in sidebar 'consciousness'"
