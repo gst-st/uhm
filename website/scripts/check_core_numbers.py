@@ -177,6 +177,12 @@ m_a = 2,9 нэВ, изокривизна — Ω_a/Ω_c ≲ 3·10⁻⁵).
 у φ_s не меньше восьми; Im φ(Γ) = kc Im Γ; итерации φ_J сходятся лишь при α < α* = 0,790) и
 `one_clause_principle_for_the_anchor_is_maximal_integration` ((Рав-Ж) ⇔ Φ(ρ_a) = 6 ⇔ C_rel = log 7).
 
+Одна — за третьим условием T-190 (26.09.2026, лемма M §5.4 когезивного замыкания):
+`enrichment_monotonicity_is_not_forced_by_the_holon_and_follows_from_operational_distinguishability`
+(метрика ГШ, в которой записано (V), растёт в √2 раз под частичным следом на ℂ⁷ при неизменном угле Бюреса;
+SLD-информация Фишера под 1000 случайными каналами не растёт — наибольшее отношение 0,497; измерение
+Фукса–Кейвса достигает верности, 200 случайных базисов превышают её не меньше чем на 0,214).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -6944,6 +6950,92 @@ def test_no_holon_property_maximality_or_minimality_gives_the_bridge_premises():
     assert len(_invariant_quadratic_forms(2)) == 1
     q = np.ones(7)
     assert q.sum() == 7 and (q ** 3).sum() == 7
+
+
+def _psd_sqrt(A):
+    w, V = np.linalg.eigh((A + A.conj().T) / 2)
+    return (V * np.sqrt(np.clip(w, 0, None))) @ V.conj().T
+
+
+def _uhlmann_fidelity(r, s):
+    q = _psd_sqrt(r)
+    return float(np.real(np.trace(_psd_sqrt(q @ s @ q))) ** 2)
+
+
+def _sld_fisher(G, dG):
+    w, V = np.linalg.eigh(G)
+    D = V.conj().T @ dG @ V
+    S = w[:, None] + w[None, :]
+    keep = S > 1e-14
+    return float((2 * np.abs(D[keep]) ** 2 / S[keep]).sum())
+
+
+def _random_kraus(rng, k, d=7):
+    A = rng.normal(size=(k * d, d)) + 1j * rng.normal(size=(k * d, d))
+    Q, _ = np.linalg.qr(A)
+    return [Q[i * d:(i + 1) * d] for i in range(k)]
+
+
+def test_enrichment_monotonicity_is_not_forced_by_the_holon_and_follows_from_operational_distinguishability():
+    """T-190, третье условие (лемма M): монотонность обогащения A2 не следует из свойств холона, а следует из (O).
+
+    (а) Метрика Гильберта–Шмидта — та, в которой записано (V): P − 1/7 = ‖Γ − I/7‖²_ГШ — непрерывна и индуцирует
+    стандартную топологию, но не монотонна: канал K_b = |0⟩⟨b| + |1⟩⟨2+b| (b = 0, 1; частичный след на
+    span{0,1,2,3} ≅ ℂ²⊗ℂ²) плюс |6⟩⟨j| (j = 4, 5, 6) разносит пару полного ранга в √2 раз, угол Бюреса — отношение 1;
+    на касательном ρ − σ в (ρ+σ)/2 ГШ растёт в √2 раз, SLD-информация Фишера — нет.
+    (б) При (O) — супремум по измерениям — монотонность есть теорема: SLD-информация Фишера (= sup по POVM
+    классической) под 1000 случайными каналами с 2–3 операторами Крауса не растёт, наибольшее отношение 0,497.
+    (в) Фукс–Кейвс: измерение в собственном базисе ρ^{-1/2}(ρ^{1/2}σρ^{1/2})^{1/2}ρ^{-1/2} достигает верности
+    Ульмана (невязка ≤ 10⁻¹²), 200 случайных базисов превышают её не меньше чем на 0,2.
+    """
+    d = 7
+    K = []
+    for b in range(2):
+        M = np.zeros((d, d))
+        M[0, b], M[1, 2 + b] = 1.0, 1.0
+        K.append(M)
+    for j in range(4, 7):
+        M = np.zeros((d, d))
+        M[6, j] = 1.0
+        K.append(M)
+    assert np.allclose(sum(k.T @ k for k in K), np.eye(d))
+    ch = lambda X: sum(k @ X @ k.T for k in K)
+    eps = 0.02
+    r = (1 - eps) * np.diag([.5, .5, 0, 0, 0, 0, 0]) + eps * np.eye(d) / d
+    s = (1 - eps) * np.diag([0, 0, .5, .5, 0, 0, 0]) + eps * np.eye(d) / d
+    assert abs((np.trace(r @ r) - 1 / d) - np.linalg.norm(r - np.eye(d) / d) ** 2) < 1e-15
+    hs = np.linalg.norm(ch(r) - ch(s)) / np.linalg.norm(r - s)
+    ang = lambda a, b: np.arccos(min(1.0, np.sqrt(_uhlmann_fidelity(a, b))))
+    assert abs(hs - np.sqrt(2)) < 1e-12
+    assert ang(ch(r), ch(s)) <= ang(r, s) + 1e-12
+    G0, dG0 = (r + s) / 2, r - s
+    assert abs(np.linalg.norm(ch(dG0)) / np.linalg.norm(dG0) - np.sqrt(2)) < 1e-12
+    assert _sld_fisher(ch(G0), ch(dG0)) <= _sld_fisher(G0, dG0) * (1 + 1e-12)
+    rng = np.random.default_rng(11)
+    worst = 0.0
+    for _ in range(1000):
+        G = random_state(rng)
+        H = rng.normal(size=(d, d)) + 1j * rng.normal(size=(d, d))
+        H = H + H.conj().T
+        dG = H - np.trace(H) / d * np.eye(d)
+        Ks = _random_kraus(rng, int(rng.integers(2, 4)))
+        c = lambda X: sum(k @ X @ k.conj().T for k in Ks)
+        worst = max(worst, _sld_fisher(c(G), c(dG)) / _sld_fisher(G, dG))
+    assert worst < 1.0 and abs(worst - 0.497) < 5e-4, worst
+    G, S = random_state(rng), random_state(rng)
+    F = _uhlmann_fidelity(G, S)
+    q = _psd_sqrt(G)
+    qi = np.linalg.inv(q)
+    M = qi @ _psd_sqrt(q @ S @ q) @ qi
+    _, V = np.linalg.eigh((M + M.conj().T) / 2)
+    cf = lambda B: float(np.sum(np.sqrt(np.einsum("ij,ik,kj->j", B.conj(), G, B).real
+                                        * np.einsum("ij,ik,kj->j", B.conj(), S, B).real)) ** 2)
+    assert abs(cf(V) - F) < 1e-12
+    gaps = []
+    for _ in range(200):
+        U, _ = np.linalg.qr(rng.normal(size=(d, d)) + 1j * rng.normal(size=(d, d)))
+        gaps.append(cf(U) - F)
+    assert min(gaps) > 0.2, min(gaps)
 
 
 def main():
