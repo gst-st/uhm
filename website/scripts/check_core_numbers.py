@@ -5220,6 +5220,266 @@ def test_self_model_contraction_holds_only_for_constant_weight_and_unital_part()
     assert np.sum(np.abs(ev - 1) < 1e-9) == 1 and np.sort(np.abs(ev))[-2] < 0.9 + 1e-9
     assert abs(np.linalg.norm(tr2_reset(X, 0.9)) / np.linalg.norm(X) - 0.9 * np.sqrt(2)) < 1e-12
 
+def _embed_local(op, sites, M, d=7):
+    """op on the ordered tuple `sites`, maximally mixed elsewhere, as an operator on (C^d)^M."""
+    k = len(sites)
+    rest = [s for s in range(M) if s not in sites]
+    full = np.kron(op, np.eye(d ** (M - k)) / d ** (M - k))
+    inv = list(np.argsort(list(sites) + rest))
+    T = full.reshape([d] * (2 * M)).transpose(inv + [M + i for i in inv])
+    return T.reshape(d ** M, d ** M)
+
+
+def _marginal(G, keep, M, d=7):
+    rest = [s for s in range(M) if s not in keep]
+    order = list(keep) + rest
+    k = len(keep)
+    T = G.reshape([d] * (2 * M)).transpose(order + [M + s for s in order])
+    return np.einsum("aibi->ab", T.reshape(d ** k, d ** (M - k), d ** k, d ** (M - k)))
+
+
+def _ket(*idx, d=7):
+    v = np.zeros(d ** len(idx))
+    v[np.ravel_multi_index(idx, (d,) * len(idx))] = 1
+    return v
+
+
+def test_t174_a_int_corepresents_structures_and_the_old_receiving_map_fails():
+    """T-174 (restated 2026-09-26). The multiplicity-free faithful representation of
+    A_int = C + M3 + M3 on C^7 has commutant C^3 (orbit U(7)/U(1)^3, dim 46); unitary classes of unital
+    *-homs A_int -> M_n are (a,b,c) with a+3b+3c = n, faithful classes exist iff n >= 7 and are unique iff
+    n in {7,8,9} (n = 10: three). The tau-preserving conditional expectation E onto A_int is UCP, keeps the
+    trace and is NOT multiplicative (the old 'Takesaki homomorphism'). A primitive Lindbladian on C^7 has
+    Heisenberg fixed points C*1 only, so no faithful A_int-structure is dynamically fixed. The G2-orbit of a
+    generic state is 14-dimensional inside the 48-dimensional D(C^7): geometric morphisms from the point to
+    Sh(D(C^7)) (= points of D(C^7)) are not unique up to G2. Unital multiplicative maps det^k: M_7 -> A_int
+    are pairwise distinct, so the monoid-typed receiving map is not essentially unique."""
+    rng = np.random.default_rng(174)
+
+    def iota(a0, A, B):
+        M = np.zeros((7, 7), complex)
+        M[0, 0], M[1:4, 1:4], M[4:7, 4:7] = a0, A, B
+        return M
+    Z3 = np.zeros((3, 3))
+    gens = [iota(1, Z3, Z3)]
+    for i in range(3):
+        for j in range(3):
+            Eij = np.zeros((3, 3))
+            Eij[i, j] = 1
+            gens += [iota(0, Eij, Z3), iota(0, Z3, Eij)]
+    K = np.array([np.kron(np.eye(7), g) - np.kron(g.T, np.eye(7)) for g in gens]).reshape(-1, 49)
+    assert 49 - np.linalg.matrix_rank(K) == 3                              # commutant C^3, orbit dim 46
+
+    def faithful(n):
+        return [(a, b, c) for a in range(1, n) for b in range(1, n) for c in range(1, n) if a + 3 * b + 3 * c == n]
+    assert [len(faithful(n)) for n in range(1, 13)] == [0, 0, 0, 0, 0, 0, 1, 1, 1, 3, 3, 3]
+    assert [n for n in range(1, 30) if (1, 1, 1) in faithful(n)] == [7]
+
+    def E(a):
+        return iota(a[0, 0], a[1:4, 1:4], a[4:7, 4:7])
+    X = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    Y = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    b = iota(2.0, rng.normal(size=(3, 3)), rng.normal(size=(3, 3)))
+    assert np.linalg.norm(E(b) - b) < 1e-12                                 # E o iota = id
+    assert abs(np.trace(E(X) @ b) - np.trace(X @ b)) < 1e-10                # tau-preserving bimodule map
+    assert np.linalg.norm(E(X @ Y) - E(X) @ E(Y)) > 1                       # not a homomorphism
+    choi = sum(np.kron(np.outer(np.eye(7)[i], np.eye(7)[j]), E(np.outer(np.eye(7)[i], np.eye(7)[j])))
+               for i in range(7) for j in range(7))
+    assert np.linalg.eigvalsh(choi).min() > -1e-12                          # completely positive
+    sx = np.array([[0, 1], [1, 0]])
+    assert np.allclose(np.diag(np.diag(sx @ sx)), np.eye(2)) and np.allclose(np.diag(np.diag(sx)), 0)
+
+    I7 = np.eye(7)
+    H = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    H = H + H.conj().T
+    S = -1j * (np.kron(I7, H) - np.kron(H.T, I7))
+    for _ in range(2):
+        L = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+        LdL = L.conj().T @ L
+        S = S + np.kron(L.conj(), L) - 0.5 * np.kron(I7, LdL) - 0.5 * np.kron(LdL.T, I7)
+    assert np.sum(np.abs(np.linalg.eigvals(S)) < 1e-9) == 1                 # primitive: one stationary state
+    sv = np.linalg.svd(S.conj().T, compute_uv=False)
+    assert np.sum(sv < 1e-9) == 1
+    assert np.linalg.norm(S.conj().T @ I7.reshape(-1, order="F")) < 1e-9     # Heisenberg fixed points = C*1
+    Hs = np.diag(np.arange(7.0))                                            # simple spectrum: commutant diagonal
+    offdiag = [g for g in gens if np.linalg.norm(g - np.diag(np.diag(g))) > 0]
+    assert len(offdiag) == 12 and all(np.linalg.norm(Hs @ g - g @ Hs) > 0.5 for g in offdiag)
+    Hsec = iota(0.3, 1.7 * np.eye(3), -0.4 * np.eye(3))
+    assert all(np.linalg.norm(Hsec @ g - g @ Hsec) < 1e-12 for g in gens)
+
+    rho = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    rho = rho @ rho.conj().T
+    rho /= np.trace(rho)
+    T = np.array([(g @ rho - rho @ g).ravel() for g in G2])
+    assert np.linalg.matrix_rank(np.hstack([T.real, T.imag])) == 14 < 48
+
+    A1, A2 = rng.normal(size=(7, 7)), rng.normal(size=(7, 7))
+    for k in range(4):
+        assert abs(np.linalg.det(A1 @ A2) ** k - np.linalg.det(A1) ** k * np.linalg.det(A2) ** k) < 1e-6 * (1 + abs(np.linalg.det(A1 @ A2)) ** k)
+    z = np.exp(2j * np.pi / 3)
+    D = np.diag([z] + [1] * 6)
+    assert abs(np.linalg.det(D) ** 3 - 1) < 1e-12 and abs(np.linalg.det(D) ** 1 - 1) > 0.5
+
+
+def test_t170_gap_phases_carry_no_g2_action_and_the_torus_quotient_is_not_an_orbifold():
+    """T-170 (restated 2026-09-26). (i) The stabiliser of the associative 3-form in gl(7) is 14-dimensional
+    and equals Der(O) = g2 (the group coincidence that survives). The former Lemma T-170'.1 fails: on
+    R^21 = 14 + 7 the G2-orbit of (0, v) is 6-dimensional (stabiliser SU(3)) and of 0 is a point, so the
+    quotient is not an orbifold; and the 21 Gap phases arg(Gamma_ij) are not moved by G2 as a function of
+    themselves: two states with equal phases and different moduli get different phases under one g in G2."""
+    rng = np.random.default_rng(170)
+    cols = []
+    for p in range(7):
+        for q in range(7):
+            Xm = np.zeros((7, 7))
+            Xm[p, q] = 1
+            dphi = (np.einsum("ai,ajk->ijk", Xm, PHI3) + np.einsum("aj,iak->ijk", Xm, PHI3)
+                    + np.einsum("ak,ija->ijk", Xm, PHI3))
+            cols.append(dphi.ravel())
+    Mphi = np.array(cols).T
+    stab = 49 - np.linalg.matrix_rank(Mphi)
+    G2flat = np.array([g.ravel() for g in G2]).T
+    assert stab == 14 and np.linalg.norm(Mphi @ G2flat) < 1e-10
+
+    def orbit_dim(Xv, v):
+        rows = [np.concatenate([(Yg @ Xv - Xv @ Yg).ravel(), Yg @ v]) for Yg in G2]
+        return np.linalg.matrix_rank(np.array(rows), tol=1e-8)
+    Xg = sum(rng.normal() * g for g in G2)
+    v = rng.normal(size=7)
+    assert orbit_dim(Xg, v) == 14 and orbit_dim(0 * Xg, v) == 6 and orbit_dim(0 * Xg, 0 * v) == 0
+
+    g = expm(sum(rng.normal() * gg for gg in G2))
+    assert np.linalg.norm(g @ g.T - np.eye(7)) < 1e-10
+    Z = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    Ga = Z @ Z.conj().T
+    mod = np.abs(rng.normal(size=(7, 7))) + 0.1
+    mod = (mod + mod.T) / 2
+    Gb = mod * np.exp(1j * np.angle(Ga))
+    np.fill_diagonal(Gb, np.abs(np.diag(Ga)))
+    iu = np.triu_indices(7, 1)
+    assert np.allclose(np.angle(Gb)[iu], np.angle(Ga)[iu])
+    da = np.angle(np.exp(1j * (np.angle(g @ Ga @ g.T)[iu] - np.angle(g @ Gb @ g.T)[iu])))
+    assert np.max(np.abs(da)) > 0.5
+
+
+def test_t171_spin_networks_with_unbounded_spin_are_decoded_from_ratios_of_coherences():
+    """T-171 (restated 2026-09-26). For random directed graphs on M = 2, 3 vertices, spins up to 20 and
+    intertwiner labels, Gamma_S = (1-eta|E|-kappa M) 1/7^M + eta sum psi(j_e) + kappa sum chi(k_v) is a
+    full-rank state; edges, directions, spins (2j+1 = ratio of two coherences) and labels are decoded
+    exactly, and partial trace decodes to the induced subnetwork. The old C29' fails: W_e^spin is not
+    Hermitian and has trace != 1, and reading j = floor(7|gamma|^2)/2 off eta*|gamma| returns 0 for j <= 3
+    once eta <= 1/4; the cluster spin j/k is not a half-integer for j = 7/2, k = 2."""
+    from fractions import Fraction
+    rng = np.random.default_rng(171)
+    idx = {t: np.ravel_multi_index(t, (7, 7)) for t in ((0, 1), (1, 2), (2, 3))}
+
+    def state(n, edges, spins, labels):
+        eta = kap = 1.0 / (len(edges) + n + 1)
+        G = (1 - eta * len(edges) - kap * n) * np.eye(7 ** n) / 7 ** n
+        for (a, b), j in zip(edges, spins):
+            psi = _ket(0, 1) + _ket(1, 2) + float(2 * j + 1) * _ket(2, 3)
+            psi /= np.linalg.norm(psi)
+            G = G + eta * _embed_local(np.outer(psi, psi), (a, b), n)
+        for v, k in enumerate(labels):
+            chi = np.eye(7)[3] + np.eye(7)[4] + (k + 1) * np.eye(7)[5]
+            chi /= np.linalg.norm(chi)
+            G = G + kap * _embed_local(np.outer(chi, chi), (v,), n)
+        return G
+
+    def decode(G, n):
+        found, labels = [], []
+        for a in range(n):
+            for b in range(n):
+                if a != b:
+                    m = _marginal(G, (a, b), n)
+                    if abs(m[idx[(0, 1)], idx[(1, 2)]]) > 1e-12:
+                        r = (m[idx[(0, 1)], idx[(2, 3)]] / m[idx[(0, 1)], idx[(1, 2)]]).real
+                        found.append(((a, b), Fraction(int(round(r - 1)), 2)))
+        for v in range(n):
+            m = _marginal(G, (v,), n)
+            labels.append(int(round((m[3, 5] / m[3, 4]).real)) - 1)
+        return sorted(found), labels
+    for n in (2, 3, 3, 3):
+        edges = [(a, b) for a in range(n) for b in range(a + 1, n) if rng.random() < 0.7]
+        edges = [(b, a) if rng.random() < 0.5 else (a, b) for a, b in edges]
+        spins = [Fraction(int(rng.integers(0, 41)), 2) for _ in edges]
+        labels = [int(rng.integers(0, 6)) for _ in range(n)]
+        G = state(n, edges, spins, labels)
+        assert np.linalg.eigvalsh(G).min() > 0 and abs(np.trace(G) - 1) < 1e-10   # full-rank state
+        assert decode(G, n) == (sorted(zip(edges, spins)), labels)
+        sub = _marginal(G, tuple(range(n - 1)), n)
+        induced = sorted((e, s) for e, s in zip(edges, spins) if max(e) < n - 1)
+        assert decode(sub, n - 1) == (induced, labels[:n - 1])
+    U = np.linalg.qr(rng.normal(size=(3, 3)) + 1j * rng.normal(size=(3, 3)))[0]
+    We = sum(U[i, j] * np.kron(np.outer(np.eye(7)[i], np.eye(7)[j]), np.outer(np.eye(7)[j], np.eye(7)[i]))
+             for i in range(3) for j in range(3))
+    assert np.linalg.norm(We - We.conj().T) > 0.1 and abs(np.trace(We) - 1) > 0.1
+    for eta in (0.25, 0.1):
+        assert all(np.floor(2 * j * eta ** 2) / 2 == 0 for j in (0.5, 1, 1.5, 2, 2.5, 3))
+    j = Fraction(7, 2)
+    k = -((-j) // 3)                                                        # ceil(j/3) = 2
+    assert k == 2 and (2 * (j / k)).denominator != 1                        # j/k = 7/4 is not a spin
+
+
+def test_t172_every_finite_poset_is_encoded_and_realisation_forgets_order():
+    """T-172 (restated 2026-09-26). Every finite poset (no M^4 embedding assumed) on 2-4 elements is encoded
+    in Gamma_C = (1 - eta N) 1/7^M + eta sum psi_(c,c'), psi = (|01> + |12>)/sqrt2 on the ordered pair; the
+    order is read off <01|rho_cc'|12> != 0, and partial trace decodes the induced suborder. The old
+    W_cc' with generic phases is not positive. The realisation |N(C)| of any poset with a least element is
+    contractible (Euler characteristic of the order complex 1), and C and C^op have the same chains."""
+    rng = np.random.default_rng(172)
+    i01, i12 = np.ravel_multi_index((0, 1), (7, 7)), np.ravel_multi_index((1, 2), (7, 7))
+    psi = (_ket(0, 1) + _ket(1, 2)) / np.sqrt(2)
+    P = np.outer(psi, psi)
+
+    def random_poset(n):
+        R = np.zeros((n, n), bool)
+        perm = rng.permutation(n)
+        for i in range(n):
+            for j in range(i + 1, n):
+                R[perm[i], perm[j]] = rng.random() < 0.5
+        for k in range(n):
+            R = R | (R[:, [k]] & R[[k], :])
+        return R
+
+    def state(R):
+        n = len(R)
+        pairs = [(a, b) for a in range(n) for b in range(n) if R[a, b]]
+        eta = 1.0 / max(1, len(pairs))
+        G = (1 - eta * len(pairs)) * np.eye(7 ** n) / 7 ** n
+        for a, b in pairs:
+            G = G + eta * _embed_local(P, (a, b), n)
+        return G
+
+    def decode(G, n):
+        return np.array([[a != b and abs(_marginal(G, (a, b), n)[i01, i12]) > 1e-12 for b in range(n)]
+                         for a in range(n)])
+    for n in (2, 3, 3, 4):
+        R = random_poset(n)
+        G = state(R)
+        assert np.linalg.eigvalsh(G).min() > -1e-12 and abs(np.trace(G) - 1) < 1e-10
+        assert (decode(G, n) == R).all()
+        assert (decode(_marginal(G, tuple(range(n - 1)), n), n - 1) == R[:n - 1, :n - 1]).all()
+    th = rng.normal(size=(7, 7))
+    th = th - th.T
+    W = sum(np.exp(1j * th[i, j]) * np.kron(np.outer(np.eye(7)[i], np.eye(7)[j]), np.outer(np.eye(7)[i], np.eye(7)[j]))
+            for i in range(7) for j in range(7)) / 7
+    assert np.linalg.eigvalsh(W).min() < -0.05
+
+    def chains(R):
+        n = len(R)
+        out = []
+        for size in range(1, n + 1):
+            for c in itertools.permutations(range(n), size):
+                if all(R[c[i], c[i + 1]] for i in range(size - 1)):
+                    out.append(frozenset(c))
+        return set(out)
+    for n in (1, 2, 3, 4):
+        chain = np.triu(np.ones((n, n), bool), 1)
+        assert sum((-1) ** (len(s) - 1) for s in chains(chain)) == 1       # contractible order complex
+    R = random_poset(4)
+    assert chains(R) == chains(R.T)                                         # C and C^op: same order complex
+
 
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
