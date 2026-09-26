@@ -493,7 +493,9 @@ $$P = \frac{1}{N_c}\mathrm{Tr}\left[\mathcal{P}\exp\left(i\oint_0^{1/T} A_0^a T_
 
 In the Gap formalism $A_0^a \sim \partial_\tau \theta_{ij}^{(a)}$, and the Polyakov loop measures the holonomy of the Gap connection along the temporally compactified coordinate $\tau \in [0, 1/T]$.
 
-:::tip Theorem (Polyakov loop as order parameter) [T] {#теорема-полякова-порядок}
+<a id="теорема-полякова-порядок"></a>
+
+:::tip Theorem (Polyakov loop as order parameter) [T]
 The Polyakov loop $\langle P \rangle$ is the order parameter of deconfinement for pure $\mathrm{SU}(3)_C$. Proof: $\mathrm{SU}(3)_C = \mathrm{Stab}_{G_2}(e_O)$ [T-42e [T]]. The centre $Z(\mathrm{SU}(3)) = \mathbb{Z}_3$ acts on the Polyakov loop as $P \mapsto e^{2\pi i k/3} P$, $k=0,1,2$. In the confinement phase $\mathbb{Z}_3$-symmetry is exact → $\langle P \rangle = 0$ (the unique $\mathbb{Z}_3$-invariant value). Deconfinement = spontaneous breaking of $\mathbb{Z}_3$ → $\langle P \rangle \neq 0$. This is the standard result (Svetitsky–Yaffe, 1982), applied to $\mathrm{SU}(3)_C$ derived from the $G_2$-structure. $\blacksquare$
 :::
 

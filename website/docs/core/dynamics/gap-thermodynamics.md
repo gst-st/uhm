@@ -756,7 +756,7 @@ The $G_2$-covariant dissipator of [Theorem 5.1c](/docs/proofs/gap/fano-channel#g
 
 The sources that remain are the holon's own dynamics — the living self-model $\varphi_J$ and its attractor, the Fano dissipator, the depth register — and the three-copy structure of composites. The next theorem closes all of them at once. Its reason is that $\mathcal A$ tells a Fano line from a triple off the lines, while the dynamics of an isolated holon treats every triple of axes alike: every pair of axes lies on exactly one line, so $\mathcal D_\Omega$ and $\mathcal P_\alpha$ are covariant under all $5040$ permutations of the axes ([Fano channel, Theorem 11.1](/docs/proofs/gap/fano-channel#s7-эквивариантность)), and the anchor $uu^\dagger$ of $\varphi_J$ is fixed by all of them ([T-334](/docs/core/operators/phi-operator#t-334), item 5).
 
-<span id="t-331f"></span>
+<a id="t-331f"></a>
 
 :::tip T-331(f): the associator is invisible to every source that does not resolve triples of axes [T]
 **(a)** For every diagonal unitary $D$ the average of $\mathcal A(D\sigma\Gamma\sigma^{\mathsf T}D^\dagger)$ over the $5040$ axis permutations $\sigma$ — and already over the $720$ that fix one axis — is $\tfrac{96}{5}\,e_3(\Gamma)$, where $e_3$ is the third elementary symmetric function of the eigenvalues of $\Gamma$. Over the $168$ collineations, or over the $24$ permutations that fix three axes, the average is not spectral.
@@ -778,7 +778,7 @@ Checks: `test_axis_permutations_average_the_associator_to_a_spectral_cubic`, `te
 
 The question left open is whether the line decomposition of the dissipator is itself canonical. If it were forced, the functionals of the line readout would be physical and could fix $\kappa$. The next theorem answers the question — yes, it is forced — and shows what follows for $\kappa$.
 
-<span id="t-331g"></span>
+<a id="t-331g"></a>
 
 :::tip T-331(g): the canonical line instrument fixes where the associator is read, not $\kappa$; its large-deviation functionals give no Gap phase [T]
 Let $p_p(\Gamma) = \mathrm{Tr}(\Pi_p\Gamma)/3$ be the outcome distribution of the line instrument — the unique sharp, minimal, $\Gamma_{\!\text{oct}}$-covariant instrument of $\mathcal D_\Omega$ ([T13, strengthened](/docs/core/operators/lindblad-operators#t13-sharp)) — and $\delta_p = \mathrm{Tr}(\Pi_p\Delta)/3$ at $\Gamma = I/7 + \Delta$.

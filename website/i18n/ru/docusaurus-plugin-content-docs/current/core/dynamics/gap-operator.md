@@ -32,7 +32,9 @@ Gap-оператор $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma)$ — это **ка
 
 Gap-оператор $\hat{\mathcal{G}}$ — центральный объект [Gap-динамики](/docs/core/dynamics/gap-dynamics), формализующий **антисимметричную часть** [матрицы когерентности](/docs/core/dynamics/coherence-matrix) $\Gamma$. Он измеряет суммарную непрозрачность системы и принадлежит алгебре Ли $\mathfrak{so}(7)$, связывая [дуально-аспектную семантику](/docs/physics/dual-aspect/gap-semantics) с [G₂-структурой](/docs/physics/gauge-symmetry/g2-structure).
 
-:::warning Конвенции обозначений Gap {#конвенции-gap}
+<a id="конвенции-gap"></a>
+
+:::warning Конвенции обозначений Gap
 
 | Обозначение | Значение | Формула |
 |-------------|----------|---------|

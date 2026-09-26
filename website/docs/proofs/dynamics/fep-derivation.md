@@ -325,7 +325,9 @@ The channel degenerates into a **stochastic matrix** $T$ — a classical Markov 
 
 ### 4.3 Reduction of the quantum functional {#43-редукция}
 
-:::warning Theorem 4.1 (Classical limit of the variational principle) [T] {#теорема-41-классический-предел}
+<a id="теорема-41-классический-предел"></a>
+
+:::warning Theorem 4.1 (Classical limit of the variational principle) [T]
 In the classical limit ($\Gamma_{ij} \to 0$ for $i \neq j$), the UHM variational functional (Definition 3.3) reduces to the classical functional below — the cross-entropy $-\sum_i q_i \ln p_i$, which is **not** Friston's variational free energy (§4.1):
 
 $$
@@ -401,7 +403,9 @@ $$
 
 The first term is complexity (deviation from prior), the second is accuracy (expected likelihood). Minimization of $F$ = **balance of accuracy and complexity** — this is the classical analog of balancing spectral entropy and KL-divergence in Theorem 3.1.
 
-:::tip Theorem 4.2 (UHM → Friston's FEP) — (iii)–(iv) retracted 2026-09-25 [✗] {#теорема-42-угм-fep}
+<a id="теорема-42-угм-fep"></a>
+
+:::tip Theorem 4.2 (UHM → Friston's FEP) — (iii)–(iv) retracted 2026-09-25 [✗]
 Let $\Gamma$ be the state of a holon in the classical limit ($\Gamma_{ij} = 0$ for $i \neq j$). Then:
 
 **(i)** The self-modeling operator $\varphi$ in the classical limit is identified with the **recognition density**: $\varphi(\Gamma) \leftrightarrow q^*(s|o)$.
@@ -451,7 +455,9 @@ In the classical limit $S_{vN}(\Gamma) = H(p) = -\sum_i p_i \log p_i$, and the i
 
 This subsection claimed to show **explicitly** how minimization of the quantum functional $S_{spec} + D_{KL}$ in the classical limit becomes minimization of Friston's variational free energy; Steps 3 and 4 are wrong (marked).
 
-:::warning Theorem 4.3 (Complete reduction) — retracted 2026-09-25 [✗] {#теорема-43-полная-редукция}
+<a id="теорема-43-полная-редукция"></a>
+
+:::warning Theorem 4.3 (Complete reduction) — retracted 2026-09-25 [✗]
 Let $\Gamma \in \mathcal{D}(\mathbb{C}^N)$ be a diagonal density matrix, $\psi$ a CPTP channel preserving diagonality. Then the problem
 
 $$
@@ -594,7 +600,9 @@ $$
 
 Despite the losses, the **core** of the variational principle survives the classical limit:
 
-:::tip Corollary 4.1 (Invariance of the minimization principle) — retracted 2026-09-25 [✗] {#следствие-41}
+<a id="следствие-41"></a>
+
+:::tip Corollary 4.1 (Invariance of the minimization principle) — retracted 2026-09-25 [✗]
 The principle "the system minimizes a functional balancing accuracy and complexity" is preserved across all regimes:
 
 | Regime | Functional | Accuracy | Complexity |

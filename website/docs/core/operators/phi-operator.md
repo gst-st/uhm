@@ -107,7 +107,9 @@ This form **destroys** all coherences ($\gamma_{ij} \to 0$ for $i \neq j$), whic
 3. **Purity monotonicity:** $P(\varphi_{\text{base}}(\Gamma)) \leq P(\Gamma)$ for the base form (decoherence decreases purity); $P(\varphi_{\text{coh}}(\Gamma))$ depends on the parameter $\alpha$ — at $\alpha < 1$ the Fano component partially preserves coherences. The fixed point of the canonical $\varphi_{\mathrm{coh}}$ is $I/7$, with $P = 1/7$ (the value $2/7$ printed here earlier is retracted, see below)
 4. **Fixed point:** $\exists! \, \Gamma^*_{\mathrm{coh}}: \varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$, namely $\Gamma^*_{\mathrm{coh}} = I/7$
 
-:::tip Theorem: Fixed point of φ_coh (corrected 2026-09-25) {#неподвижная-точка-phi-coh}
+<a id="неподвижная-точка-phi-coh"></a>
+
+:::tip Theorem: Fixed point of φ_coh (corrected 2026-09-25)
 The canonical $\varphi_{\mathrm{coh}}$ (anchor $I/7$, $k = 1 - R < 1$) has exactly one fixed point, $\Gamma^*_{\mathrm{coh}} = I/7$, with $P = 1/7$.
 
 *Proof.* A fixed point has $\gamma_{ij} = \tfrac{k(1-\alpha)}{3}\gamma_{ij}$ for $i \neq j$, and $k(1-\alpha)/3 < 1$, so $\gamma_{ij} = 0$; on the diagonal $\gamma_{ii} = k\gamma_{ii} + (1-k)/7$, and $1 - k = R > 0$ gives $\gamma_{ii} = 1/7$. $\blacksquare$ This agrees with Corollary 2.1 of [Formalisation of φ](/docs/proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) (uniform anchor, fixed point $I/7$). Status: **[T]**. The earlier statement "$P(\Gamma^*_{\mathrm{coh}}) = P_{\text{crit}} = 2/7$" is retracted [✗]: 200 iterations of $\varphi_{\mathrm{coh}}$ from a random pure state end at $P = 1/7$ to $10^{-12}$ (`test_unital_self_model_keeps_an_isolated_holon_dead`).
@@ -375,7 +377,7 @@ Let a self-model have the replacement form $\varphi(\Gamma) = k\,\mathcal{P}_\al
 
 What does fix the anchor is the frame group read at the level where it is compatible with life.
 
-<span id="t-334"></span>
+<a id="t-334"></a>
 
 :::tip Theorem T-334 (The collineation anchor, derived up to gauge) [T]
 Let the self-model have the replacement form $\varphi(\Gamma) = k\,\mathcal{P}_\alpha(\Gamma) + R\,\rho_a$ with a $\Gamma$-independent anchor, and let the isolated holon evolve by the gated dynamics with the Fano dissipator ([evolution](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне)); $c = (1 - \alpha)/3$.

@@ -155,7 +155,9 @@ $$
 
 from which $G_{\mathrm{Gap}}$ is identified.
 
-:::tip Lemma (Linearized bridge derivation) [T under $|\delta\Gamma| \ll 1$] {#лемма-линеаризованный-мост}
+<a id="лемма-линеаризованный-мост"></a>
+
+:::tip Lemma (Linearized bridge derivation) [T under $|\delta\Gamma| \ll 1$]
 
 **Setup.** Let $\Gamma_0$ be a vacuum configuration with coherences of the ST sector $\gamma_{\mu\nu}^{(0)} = \varepsilon_0 e^{i\phi_{\mu\nu}^{(0)}}$, $\mu,\nu \in \{A,S,D,L\}$. Consider a spatially dependent perturbation $\gamma_{\mu\nu}(x) = \gamma_{\mu\nu}^{(0)} + \delta\gamma_{\mu\nu}(x)$ with $|\delta\gamma_{\mu\nu}| \ll \varepsilon_0$.
 

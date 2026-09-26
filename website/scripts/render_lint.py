@@ -263,6 +263,33 @@ def merge_conflict_marks(roots):
     return bad
 
 
+ADMONITION_ID = re.compile(r"^\s*:::+\S*.*\{#[^}\s]+\}\s*$")
+SPAN_ID = re.compile(r'<span id="[^"]+"></span>')
+
+
+def unregistered_anchors(roots):
+    """ПРЕДПОЛЁТ ПО ИСХОДНИКУ: якорь, которого Docusaurus не видит.
+
+    26.09.2026: 34 метки «{#id}» стояли в заголовках врезок (`:::tip Теорема … {#id}`)
+    — Docusaurus не делает из них якоря и печатает «{#id}» читателю как текст, а
+    ссылки на них битые. 13 якорей «<span id>» в HTML доходят, но проверка
+    битых ссылок сборки их не регистрирует и шумит ложными предупреждениями.
+    Правило: якорь врезки — строкой `<a id="…"></a>` перед ней.
+    """
+    bad = []
+    for root in roots:
+        for f in sorted(root.rglob("*.md*")):
+            fence = False
+            for i, line in enumerate(f.read_text(encoding="utf-8").split("\n"), 1):
+                if line.lstrip().startswith("```"):
+                    fence = not fence
+                if fence:
+                    continue
+                if ADMONITION_ID.match(line) or SPAN_ID.search(line):
+                    bad.append((f, i, line.strip()[:80]))
+    return bad
+
+
 def fence_nesting(docs: pathlib.Path):
     """ПРЕДПОЛЁТ ПО ИСХОДНИКУ: вложенная врезка тем же числом двоеточий.
 
@@ -311,6 +338,13 @@ def main() -> int:
         print(f"  {f.relative_to(ROOT)}:{i}: {why}")
     if nesting:
         print("  правило: внешняя врезка — больше двоеточий, чем внутренняя; иначе фенс уходит в текст")
+        return 1
+    unreg = unregistered_anchors((DOCS, RU_DOCS))
+    print(f"якорь вне учёта сборки (метка в заголовке врезки, span id; обе локали): {len(unreg)}")
+    for f, i, body in unreg[:10]:
+        print(f"  {f.relative_to(ROOT)}:{i}: {body}")
+    if unreg:
+        print("  правило: якорь врезки — строкой <a id=\"…\"></a> перед ней")
         return 1
     marks = merge_conflict_marks((DOCS, RU_DOCS))
     print(f"маркеры неразрешённого слияния (по исходнику, обе локали): {len(marks)}")

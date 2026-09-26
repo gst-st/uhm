@@ -789,7 +789,7 @@ Fractal closure and scale invariance concern what the composite inherits. The ne
 #### Theorem 9.3 (CC-7: Emergence) [T for almost every anchor] {#теорема-93-эмерджентность}
 
 <!-- preserve old anchor for backward compatibility -->
-<span id="гипотеза-93-эмерджентность"></span>
+<a id="гипотеза-93-эмерджентность"></a>
 
 :::warning Retracted (2026-09-25): "interacting holons always have a correlated stationary state" [✗]
 The earlier statement read: for two interacting viable holons with non-zero inter-system coherence $|\gamma_{12}| > 0$, the stationary state of the composite has $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$; status [T]. It is false, and two steps of its proof fail.
@@ -956,7 +956,7 @@ For a physician the analogy is direct: instead of checking dozens of tests separ
 ### Theorem 10.1 / T-92 (Equivalence of Full Viability Conditions) [T] {#теорема-101-эквивалентность-условий}
 
 <!-- preserve old anchor for backward compatibility -->
-<span id="теорема-101-эквивалентность-условий-с"></span>
+<a id="теорема-101-эквивалентность-условий-с"></a>
 
 :::note In Plain Terms
 Imagine a car's instrument panel. One gauge — engine temperature. Another — oil level. Third — tyre pressure. Fourth — battery charge. Each gauge shows the "stress" in its channel. The car is "alive" if and only if **none** of the gauges is in the red zone.

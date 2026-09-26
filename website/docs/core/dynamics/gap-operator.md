@@ -32,7 +32,9 @@ A remarkable fact: $\hat{\mathcal{G}}$ belongs to the Lie algebra $\mathfrak{so}
 
 The Gap operator $\hat{\mathcal{G}}$ is the central object of [Gap dynamics](/docs/core/dynamics/gap-dynamics), formalizing the **antisymmetric part** of the [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma$. It measures the total opacity of the system and belongs to the Lie algebra $\mathfrak{so}(7)$, linking [dual-aspect semantics](/docs/physics/dual-aspect/gap-semantics) with the [G₂ structure](/docs/physics/gauge-symmetry/g2-structure).
 
-:::warning Gap notation conventions {#конвенции-gap}
+<a id="конвенции-gap"></a>
+
+:::warning Gap notation conventions
 
 | Notation | Meaning | Formula |
 |-------------|----------|---------|

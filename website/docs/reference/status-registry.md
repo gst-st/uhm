@@ -26,7 +26,9 @@ Each UHM result carries one of seven statuses:
 **Where the assumptions are listed.** Every assumption named in a `[C at (X)]` here — the axioms, the bridge premises (Cl₀) and (P), the principle (MaxΦ), (P1₆), the free parameters and the identification hypotheses — is listed once, with where it is used, its status, independence models and the discharged ones, on [Premises of UHM](/docs/reference/premises).
 :::
 
-:::warning What this registry does not cover {#ранние-номера}
+<a id="ранние-номера"></a>
+
+:::warning What this registry does not cover
 **Early numbers (below the registry):** T-1.1, T-1a, T-2a, T-2f, T-4.2, T-6.1,
 T-8.1, T-11.1, T-11.2, T-48b — ten variant numbers, 23 citations, no rows.
 
@@ -89,7 +91,9 @@ Machine: `scripts/check_theorem_refs.py` — every `T-n` reference must resolve 
 a row here, and the check fails while these do not.
 :::
 
-:::warning No canonical status field — the measured debt (2026-09-10) {#долг-канонической-записи}
+<a id="долг-канонической-записи"></a>
+
+:::warning No canonical status field — the measured debt (2026-09-10)
 An external review named the mechanism, not the individual rows, as the root defect: the corpus
 has **no machine-readable canonical record of a result's status**, so propagation is done by hand
 and drifts. Measured by `scripts/check_status_consistency.py` over the 388 numbered rows:

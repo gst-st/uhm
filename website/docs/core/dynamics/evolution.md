@@ -194,7 +194,7 @@ Analogue: operator splitting in numerical PDE. *Corrected 2026-09-25:* the box s
 
 ## Components of the equation
 
-<span id="1-унитарный-член"></span>
+<a id="1-унитарный-член"></a>
 
 ### 1. Unitary term {#1-unitary-term}
 
@@ -973,7 +973,9 @@ The rate over the decoherence rate, $\kappa/(2/3)$, is therefore a free paramete
 
 The reflection measure $R$ uses $\rho^*_{\mathrm{diss}} = I/7$ as **reference** (distance from thermal death), not as the regeneration target. More details: [self-observation](/docs/consciousness/foundations/self-observation#иерархия-аттракторов).
 
-:::tip Unified lemma: three contexts of $\rho_*$ are compatible [T] {#лемма-единство-rho-star}
+<a id="лемма-единство-rho-star"></a>
+
+:::tip Unified lemma: three contexts of $\rho_*$ are compatible [T]
 Three contexts in which the symbol $\rho_*$ (or $\rho^*$) appears in UHM dynamics are **related but distinct** objects; the iterative scheme above reconciles them unambiguously.
 
 | Context | Object | Definition | Role |

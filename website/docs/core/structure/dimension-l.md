@@ -44,7 +44,9 @@ Aristotle → Boole → Brouwer → Heyting → HoTT — this is not simply "pro
 Note: each historical step **expanded** the space of logically admissible. Aristotle allowed only "yes/no". Brouwer added "undetermined". HoTT added an infinite hierarchy of "ways of being true". UHM claims that reality uses **all** these levels simultaneously: elementary particles "live" in Boolean logic (spin up or down), borderline states of consciousness — in Heyting logic (neither waking nor sleeping), and the full ∞-topos structure — in HoTT. The deeper the level of reality, the richer the logic.
 :::
 
-:::warning Notation conventions: three meanings of the letter L {#конвенции-l}
+<a id="конвенции-l"></a>
+
+:::warning Notation conventions: three meanings of the letter L
 In UHM the letter **L** is used for three related but distinct objects:
 
 | Notation | Font | Meaning |

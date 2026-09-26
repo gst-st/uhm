@@ -156,7 +156,9 @@ $$D_{\text{diff}}^{7D} = 1 + 6 \cdot \mathrm{Coh}_E(\Gamma) / \mathrm{Coh}_E^{\m
 
 4. **Zero error — [✗] retracted.** The claim $\|\rho_E^{7D} - \rho_E^{42D}\|_{\mathrm{tr}} = 0$ rested on the equivalence, which is retracted above. What holds instead: $\pi(\iota(\Gamma)) = \Gamma$ exactly, so *7D quantities* survive the round trip; $\rho_E^{42D}$ is not among them, being lift-dependent.
 
-:::info Operational separation 7D / 42D {#операциональное-разделение-7d-42d}
+<a id="операциональное-разделение-7d-42d"></a>
+
+:::info Operational separation 7D / 42D
 The number 7 is prime, so $\mathbb{C}^7$ **does not admit** the tensor decomposition $\mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$, and the partial trace $\mathrm{Tr}_{\bar{E}}$ is not defined in 7D. This is resolved by the Page–Wootters extension: $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, where the partial trace is standard.
 
 The equivalence that would have guaranteed "all observables coincide with zero error" is **retracted** (box above). The 7D quantities ($\gamma_{EE}$, $\gamma_{Ei}$, $\mathrm{Coh}_E$, $C$) stand on their own [T] and need no lift; the 42D-only quantities are lift-dependent and therefore not determined by the 7D state.

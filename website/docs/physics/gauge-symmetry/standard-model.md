@@ -30,7 +30,9 @@ $\mathrm{SU}(3)_C$ from $G_2$ is a standard mathematical fact.
 The formula $\kappa_0$ [T] categorically singles out the **unique** pair $(E,U)$ via $\mathrm{Hom}(O,E)$ and $\mathrm{Hom}(O,U)$, and the only Fano line through $E$ and $U$ is $\{A,E,U\}$ — both [T]. That these data determine $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ is [C at (FE)]; the step "the Higgs line canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$" that used to carry it is retracted [✗]. Proof and its status: [sect. 2.3a](#теорема-единственности-фэ).
 :::
 
-:::warning Distinction between [T] and [C] in the electroweak sector {#электрослабое-разграничение}
+<a id="электрослабое-разграничение"></a>
+
+:::warning Distinction between [T] and [C] in the electroweak sector
 Two levels of results must be clearly separated:
 
 - **[T] (proven):** combinatorial uniqueness of the pair $(E,U)$ from $\kappa_0$, uniqueness of the Higgs line $\{A,E,U\}$. The "canonical decomposition $\bar{3} \to 2_{EU} \oplus 1_L$" listed here before is retracted [✗]

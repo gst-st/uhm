@@ -157,7 +157,9 @@ $$
 The atomic subobjects $S_k$ and the composite Fano subobjects $S_p$ together form the lattice of subobjects of the classifier $\Omega$. The transition from atomic to composite atoms corresponds to an enrichment of the classifier's logic — from Boolean (point-like) to projective (linear). This reflects the structure of the $\infty$-topos, where $\Omega$ contains a hierarchy of truth-value types.
 :::
 
-:::info Distinction between the two forms of $L_k$ {#разграничение-форм-lk}
+<a id="разграничение-форм-lk"></a>
+
+:::info Distinction between the two forms of $L_k$
 UHM employs **two distinct forms** of the operators $L_k$ that should not be conflated:
 
 | Form | Notation | Definition | Role |
@@ -561,7 +563,7 @@ $k=3$ is the **unique** admissible size with optimal coherence preservation (the
 
 **Proof.** (a) Regularity: CPTP preservation $[\Phi]_{ii} = \gamma_{ii}$ requires $r_i = r$ for all $i$; from $7r = 21$: $r = 3$. (b) Uniform coverage: contraction $c = 1/3$ for **all** pairs (T1 [T]) gives $\lambda_{ij}/r = 1/3$, hence $\lambda_{ij} = 1$. (c) Parameters $v=7, b=7, k=3, r=3, \lambda=1$ define a BIBD$(7,3,1)$. By uniqueness (Kirkman 1847): $S(2,3,7) = \text{PG}(2,2)$. $\blacksquare$
 
-<span id="t13-sharp"></span>
+<a id="t13-sharp"></a>
 
 :::tip T13, strengthened (2026-09-26): the sharp minimal instrument of the Fano channel [T]
 Let $\Phi_c(\Gamma) = c\,\Gamma + (1-c)\,\mathrm{diag}\,\Gamma$ on $\mathbb C^7$, $0 \le c < 1$; then $\Phi_{1/3} = \mathcal P_{\text{Fano}} = \mathrm{id} + \mathcal D_\Omega$ and $\mathcal P_\alpha = \Phi_{(1-\alpha)/3}$. Call a Kraus representation **sharp** if each Kraus operator is a positive multiple of an orthogonal projector (the Lüders coarsening of T12) and **minimal** if it has as many operators as the Choi rank, $7$ (T11).
