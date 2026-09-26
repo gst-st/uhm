@@ -184,9 +184,9 @@ Mentalizing and SAD are different operations (modelling *others* vs modelling *o
 
 ### PCI ≈ 0.31: Consciousness Threshold {#pci-031-порог-сознания}
 
-Casali et al. (2013): Perturbational Complexity Index with threshold PCI $\approx 0.31$ reliably distinguishes conscious from unconscious states (sensitivity ~95%). This threshold was found *empirically*, without theoretical justification.
+Casali et al. (2013) introduced the Perturbational Complexity Index; its cut-off $\mathrm{PCI}^* = 0.31$ (Casarotto et al. 2016) separates conscious from unconscious states (36 of 38 minimally conscious patients above it, sensitivity 94.7%). This threshold was found *empirically*, without theoretical justification.
 
-UHM predicts a sharp phase transition (cusp bifurcation $A_3$ [Т]) at $P = 2/7 \approx 0.286$. Calibration PCI $\leftrightarrow$ $\Phi(\Gamma)$ — [Pred 21 [Г]](/docs/applied/coherence-cybernetics/predictions#предсказание-21): empirical PCI $\approx 0.31$ coincides with the theoretical viability threshold. If the calibration is confirmed — this is the first *quantitative prediction* of a theory of consciousness to match experiment.
+UHM predicts a sharp phase transition (cusp bifurcation $A_3$ [Т]) at $P = 2/7 \approx 0.286$. The two numbers are not to be matched: PCI is a normalised Lempel–Ziv complexity of a binarised response to TMS, $P$ a function of $\Gamma$, and the nearness of 0.31 to 0.286 carries no evidential weight. The test that can fail is a concordance of verdicts ([P8.4](/docs/applied/research/measurement-protocol#substitution-position)): with $\pi_{\mathrm{bio}}$ frozen on wakefulness, $\mathrm{Cons}(\widehat\Gamma)$ against $\mathrm{PCI}_{\max} > 0.31$ on the same sessions, Cohen's $\kappa \geq 0.8$ corroborates, $\kappa < 0.4$ falsifies. If it holds, a derived — not fitted — threshold will have been confirmed out of sample. *(Corrected 2026-09-26: this paragraph read "Calibration PCI ↔ Φ(Γ) — Pred 21: empirical PCI ≈ 0.31 coincides with the theoretical viability threshold"; a two-point calibration line puts that coincidence in for any anchor.)*
 
 ### Bimodality of Perception {#бимодальность-восприятия}
 

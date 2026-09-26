@@ -20,7 +20,7 @@ Every sensor is an [estimator](/docs/applied/console/anchors#измерение)
 |---|---|---|---|
 | Consumer | wrist HRV, actigraphy, light logger, dry-EEG headband | purity proxy, chronobiology channel, coarse coherences | `[research]` (V1) |
 | Prosumer | multi-channel dry EEG, respiration, EDA | resolved Gap map (phases), better $\Phi$ | `[research]` |
-| Research/clinical | high-density EEG, TMS-EEG (PCI) | the keystone $P$ via direct PCI; validated coherences | `[research]`→`[medical]` |
+| Research/clinical | high-density EEG, TMS-EEG (PCI) | the keystone $P$ from $\widehat\Gamma$, checked against the PCI verdict (κ, not a PCI → $P$ conversion); validated coherences | `[research]`→`[medical]` |
 
 The design rule: a gadget is admissible iff it maps to a **licensed** channel ([T-257](/docs/applied/research/one-grammar#t-257)) — physiological signals and the solar/lunar chronobiology drivers. No gadget reads "the sky" beyond those two channels, because the theory prices every other external coupling below the noise floor. Measurement hardware is therefore a bounded, well-specified engineering roadmap, not a frontier.
 

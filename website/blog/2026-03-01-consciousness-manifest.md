@@ -221,7 +221,7 @@ Concrete tasks with clear completion conditions:
 | 2 | Verification of [F-ISF](/docs/reference/falsifiability) | 6–12 slow features in fMRI | [Г] — experiment needed |
 | 3 | CPTP compatibility of neural bridge | Hypotheses H1–H4 | Partially closed |
 | 4 | Meditators: shifts of Goldstone modes | $\delta\Gamma(\tau)$ as function of $\kappa$ | Open |
-| 5 | PCI for SYNARC agents | Perturbational complexity index → $\Phi(\Gamma)$ | Open |
+| 5 | PCI for SYNARC agents | Perturbational complexity against $\Phi(\widehat\Gamma)$: monotone relation (P8.3 form), no numerical PCI → $\Phi$ conversion | Open |
 | 6 | $G$ for biological neural networks | 1 neuron $\neq$ 1 node (Beniaguev et al. 2021) | Open |
 | 7 | Adversarial collaboration | UHM vs IIT vs GWT, modelled on COGITATE | Planned |
 | 8 | Recursive introspection | $\mathrm{SAD}_{\text{max}} = 3$ [Т] → experimental verification with humans | [Т] numerical, experiment needed |

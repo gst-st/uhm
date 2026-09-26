@@ -570,7 +570,7 @@ These results require Bures-specific properties that do **not** generalise to ot
 
 **Bures-specific** (essential): the **canonicity claim itself** (T-187 uses Char-I/II/III which select Bures uniquely), and the cohesive $\infty$-topos enrichment used in T-185/T-186 to derive emergent time.
 
-In particular, the **falsifiable empirical predictions** of UHM (PCI ↔ $\Phi$, $P > 2/7$ for viability, tricritical exponents, no-zombie via $\mathrm{Coh}_E$, neutrino mass formula T-63) are all in R1 or R3 — they would survive choice of Kubo–Mori with at most a recalibration of threshold numerical values, never a change of qualitative behaviour. UHM is therefore **structurally robust** to the Petz-family choice; the Bures-specificity is concentrated in the canonicity argument and in two derivation routes (Uhlmann/SLD), neither of which affects the empirical predictions.
+In particular, the **falsifiable empirical predictions** of UHM (concordance of the verdict $\mathrm{Cons}(\widehat\Gamma)$ with the PCI verdict (P8.4) and the monotone PCI–$\Phi$ relation (P8.3) — not a numerical PCI ↔ $\Phi$ conversion, which does not exist; $P > 2/7$ for viability, tricritical exponents, no-zombie via $\mathrm{Coh}_E$, neutrino mass formula T-63) are all in R1 or R3 — they would survive choice of Kubo–Mori with at most a recalibration of threshold numerical values, never a change of qualitative behaviour. UHM is therefore **structurally robust** to the Petz-family choice; the Bures-specificity is concentrated in the canonicity argument and in two derivation routes (Uhlmann/SLD), neither of which affects the empirical predictions.
 
 #### Substrate-independence vs Bures-essentiality: two abstraction levels {#уровни-абстракции}
 

@@ -25,11 +25,11 @@ This document describes a **maximally complete experimental protocol** for the e
 
 UHM is one of the most formally developed theories of consciousness: ~210 theorems, 23 predictions (21 of them unique and numerical), categorical foundation. But **not a single prediction has been experimentally verified**. A theory without empirics is philosophy, no matter how rigorous the mathematics.
 
-### 1.2. Key observation: PCI* ≈ P_crit
+### 1.2. Key observation: PCI* is an independent verdict, not a number to match
 
-Perturbational Complexity Index (PCI, Casali et al. 2013, Massimini et al.) is an empirically established consciousness threshold: **PCI* = 0.31** (100% sensitivity and specificity on a benchmark of 150 subjects). UHM critical purity: **P_crit = 2/7 ≈ 0.286**. The discrepancy of ~8% is within the normalisation calibration of π_bio.
+The Perturbational Complexity Index (PCI, introduced by Casali et al. 2013) carries the only clinically validated consciousness cut-off: **PCI* = 0.31**, fixed by an ROC analysis on a benchmark of 150 subjects (540 sets of TMS-evoked potentials) with the presence or absence of a subjective report as ground truth, 100% sensitivity and specificity there (Casarotto et al. 2016). UHM's threshold is **P_crit = 2/7** on the purity scale. The two numbers live on unrelated scales — PCI is a normalised Lempel–Ziv complexity of a binarised response to TMS, $P$ is a function of Γ — so their nearness (0.31 against 0.286) carries no evidential weight, and no normalisation of π_bio may be tuned to close it: a line through $(0, 1/7)$ and $(c, 2/7)$ "coincides" with any anchor $c$ ([measurement §6.3](/docs/applied/coherence-cybernetics/measurement#калибровка)). *Corrected 2026-09-26:* the subsection was titled "PCI* ≈ P_crit" and read the ~8% discrepancy as "within the normalisation calibration of π_bio".
 
-This is the **first point of contact** between the theory and empirical data. If the match is not accidental, UHM is the first theory of consciousness with a confirmed numerical threshold.
+This is still the **first point of contact** between the theory and empirical data, in the form in which it can fail: with π_bio frozen on wakefulness, the UHM verdict Cons(Γ̂) and the PCI verdict PCI_max > 0.31 are computed independently on the same sessions and compared by Cohen's κ ([P8.4, SUB-5](/docs/applied/research/measurement-protocol#substitution-position)); κ ≥ 0.8 corroborates, κ < 0.4 falsifies.
 
 ### 1.3. Principle: from maximally risky to complex
 
@@ -46,7 +46,7 @@ The protocol is organised in decreasing order of risk: first — what is cheaper
 | Phase | Timeline | What | Why first |
 |-------|----------|------|-----------|
 | **I. Digital** | 0–6 mo. | 12 predictions in silico (Γ-native agent) | Free, no ethics, tests the foundation |
-| **II. Neurocalibration** | 6–18 mo. | π_bio, P_crit ↔ PCI*, critical exponents | Main point of contact with neurodata |
+| **II. Neurocalibration** | 6–18 mo. | π_bio, concordance of Cons(Γ̂) with the PCI* verdict (κ), critical exponents | Main point of contact with neurodata |
 | **III. Clinical** | 12–36 mo. | Disorders of consciousness, recovery, 3/7 attractor | Clinical significance |
 | **IV. Cognitive** | 12–24 mo. | 7D stress, collective consciousness, prelinguistic cognition | Interdisciplinary validation |
 
@@ -224,7 +224,7 @@ Any implementation used for Phase I must satisfy:
 
 ### 3.1. Rationale
 
-Central task: build the bridge **π_bio: (EEG, fMRI, HRV) → Γ ∈ D(ℂ⁷)** and verify that the theoretical threshold P_crit = 2/7 coincides with the empirical PCI* = 0.31.
+Central task: build the bridge **π_bio: (EEG, fMRI, HRV) → Γ ∈ D(ℂ⁷)** and test the theoretical threshold P_crit = 2/7 out of sample: with π_bio frozen on wakefulness, P̂ at the report-defined loss of consciousness against 2/7, and the verdict Cons(Γ̂) against the independently validated PCI verdict PCI_max > 0.31 by Cohen's κ (P8.4). *(Until 2026-09-26: "verify that P_crit = 2/7 coincides with the empirical PCI* = 0.31" — a comparison of unrelated scales.)*
 
 ### 3.1b. Formal Definition of π_bio [H → T upon calibration] {#pi-bio-definition}
 
@@ -252,13 +252,15 @@ where $\mathcal{O}_{\text{neural}} = \mathbb{R}^d$ is the space of neural observ
 | O (Ground) | Heart rate variability (RMSSD) | ECG/HRV |
 | U (Unity) | Global functional connectivity (mean PLI) | EEG connectivity |
 
+*In the confirmatory concordance run (SUB-5) PCI is removed from the feature set and E is read from a pre-registered non-PCI observable: with PCI as an input, the agreement of Cons(Γ̂) with the PCI verdict would be partly by construction.*
+
 **Step 2 (Normalization to density matrix diagonal).** Apply softmax normalization to ensure $\sum_k \hat{\gamma}_{kk} = 1$ and $\hat{\gamma}_{kk} > 0$:
 
 $$
 \gamma_{kk} = \frac{\exp(\beta \cdot z_k)}{\sum_{j=1}^{7} \exp(\beta \cdot z_j)}, \quad z_k = \frac{x_k - \mu_k}{\sigma_k}
 $$
 
-where $x_k$ is the raw observable, $\mu_k, \sigma_k$ are population mean and standard deviation (from calibration cohort), and $\beta > 0$ is a temperature parameter calibrated to match the empirical PCI* = 0.31 ↔ P_crit = 2/7.
+where $x_k$ is the raw observable, $\mu_k, \sigma_k$ are population mean and standard deviation (from calibration cohort), and $\beta > 0$ is a temperature parameter fixed, together with $\mu_k, \sigma_k$, on wakefulness sessions only ([SUB-1](/docs/applied/research/measurement-protocol#substitution-position)); no sleep, anaesthesia or disorder-of-consciousness label enters the fit. *(Until 2026-09-26 $\beta$ was "calibrated to match the empirical PCI* = 0.31 ↔ P_crit = 2/7": a $\beta$ tuned so that $P$ crosses 2/7 where PCI crosses 0.31 puts the tested coincidence into the estimator.)*
 
 **Step 3 (Off-diagonal coherences via Cholesky).** Reconstruct off-diagonal elements from pairwise neural correlations:
 
@@ -283,11 +285,11 @@ where $\Gamma_{\text{ref}}$ is the population-average $\Gamma$ from the wakefuln
 | CPTP | [T] | Softmax + Cholesky → positive, trace-preserving; composition of CPTP channels is CPTP |
 | $G_2$-covariant | [T] | Step 4 Procrustes alignment |
 | Unique up to $G_2$ | [T] | T-123 |
-| Calibratable | [H] | Requires empirical $\beta$-fitting to PCI* ↔ P_crit matching |
+| Calibratable | [H] | $\beta, \mu_k, \sigma_k$ fixed on wakefulness only (SUB-1); never fitted to a PCI* ↔ P_crit match |
 
-**Status:** The construction is **formally well-defined** [T] (Steps 1-4 are explicit CPTP operations). The **calibration** (choice of $\beta$ and population norms $\mu_k, \sigma_k$) is empirical [H] — it requires the Phase II experiment (§3.3) to be completed. After calibration, π_bio becomes a validated measurement instrument [T].
+**Status:** The construction is **formally well-defined** [T] (Steps 1-4 are explicit CPTP operations). The **calibration** (choice of $\beta$ and population norms $\mu_k, \sigma_k$) is empirical [H] — it is fixed on the wakefulness baseline before any test session is seen, and the Phase II experiment (§3.3) tests it out of sample. After calibration, π_bio becomes a validated measurement instrument [T].
 
-**Falsification criterion:** If no value of $\beta$ exists such that $P_{\text{boundary}} = 2/7 \pm 0.05$ across all 50 subjects (p < 0.01), π_bio is falsified in its current form. This does not falsify UHM — only this specific operationalization. Alternative operationalizations (different neural observables, different normalization) would be explored.
+**Falsification criterion:** With $\beta, \mu_k, \sigma_k$ frozen on wakefulness, if $P_{\text{boundary}}$ at the report-defined boundary differs from $2/7$ by more than 0.1 (p < 0.01), or the concordance with the PCI verdict gives κ < 0.4, π_bio is falsified in its current form. *(Until 2026-09-26 the criterion asked whether "a value of $\beta$ exists such that $P_{\text{boundary}} = 2/7 \pm 0.05$" — a search over $\beta$ that places the threshold cannot fail.)* This does not falsify UHM — only this specific operationalization. Alternative operationalizations (different neural observables, different normalization) would be explored.
 
 ### 3.2. Equipment
 
@@ -302,10 +304,10 @@ where $\Gamma_{\text{ref}}$ is the population-average $\Gamma$ from the wakefuln
 
 **Total equipment budget:** ~\$420K (given fMRI access).
 
-### 3.3. Experiment II.1: P_crit ↔ PCI* (key experiment) {#exp-2-1}
+### 3.3. Experiment II.1: the threshold P_crit out of sample, concordance with PCI* (key experiment) {#exp-2-1}
 
 :::warning This is the most important experiment of the entire protocol
-If P at the consciousness/unconsciousness boundary = 2/7 ± 0.05, UHM receives its first empirical confirmation of a numerical prediction. If not — the theory requires fundamental revision.
+If, with π_bio frozen on wakefulness, P̂ at the report-defined consciousness/unconsciousness boundary = 2/7 ± 0.05 and the UHM verdict agrees with the PCI verdict at κ ≥ 0.8, UHM receives its first empirical confirmation of a numerical prediction. If not — the theory requires fundamental revision.
 :::
 
 **Subjects:** N=50, healthy, 18–45 years, no neurological/psychiatric pathology.
@@ -328,21 +330,27 @@ If P at the consciousness/unconsciousness boundary = 2/7 ± 0.05, UHM receives i
      - Verbal consciousness report (if possible)
      - Isolated Forearm Technique (IFT) for confirming/refuting consciousness
 
-3. **Threshold determination:**
-   - PCI* = 0.31 (empirical threshold, Casali et al.)
-   - For each subject: Ce_threshold — concentration at the PCI = PCI* boundary
+3. **Threshold determination (inference data):**
+   - For each subject: Ce_threshold — the lowest concentration at which both the verbal report and the IFT response are lost; the boundary is fixed by reports, not by PCI
+   - At each level record the PCI verdict PCI_max > PCI* = 0.31 (Casarotto et al. 2016) separately; it is compared with the UHM verdict in step 6 and never used to place the boundary
 
 4. **Γ reconstruction:**
    - Apply π_bio to EEG data at each level
    - π_bio algorithm: 7 metrics → Γ diagonal → Cholesky regularisation (see [Γ measurement protocol](/docs/applied/research/measurement-protocol))
-   - Compute P = Tr(Γ²) at each level
+   - Parameters $\beta, \mu_k, \sigma_k$ frozen on the wakefulness baseline ([SUB-1](/docs/applied/research/measurement-protocol#substitution-position)); $\lambda_2 = 0$ (SUB-2); E from a non-PCI observable
+   - Compute P = Tr(Γ²) and Cons(Γ̂) at each level
 
-5. **Calibration:**
+5. **Readout (no fitting):**
    - Plot P(Ce) dependence for all 50 subjects
    - Determine P at the consciousness boundary: P_boundary = P(Ce_threshold)
 
+6. **Concordance of verdicts (P8.4, SUB-5):**
+   - At each level, Cons(Γ̂) and PCI_max > 0.31 computed independently
+   - Cohen's κ over all 300 sessions (50 subjects × baseline + 5 levels); κ ≥ 0.8 corroborates, κ < 0.4 falsifies; raw agreement is not the measure
+
 **Statistical plan:**
 - Primary outcome: P_boundary (mean ± SD across 50 subjects)
+- Secondary outcome: Cohen's κ between Cons(Γ̂) and the PCI verdict (step 6)
 - H₀: P_boundary = 2/7 ≈ 0.286
 - H₁: |P_boundary − 2/7| > 0.05
 - Test: one-sample t-test, α = 0.01
@@ -372,8 +380,8 @@ This is the **first ever** test of critical exponents of a phase transition for 
 
 **Analysis:**
 1. For each data point: x = P − P_crit = P − 2/7
-2. Divide into "conscious" (PCI > PCI*) and "unconscious" (PCI < PCI*)
-3. For conscious (x > 0): fit PCI ~ x^β
+2. Divide by the sign of x (the UHM side of the threshold, from Γ̂ with π_bio frozen on wakefulness), not by PCI > PCI*: the two partitions are compared (P8.4), not identified
+3. For x > 0: fit PCI ~ x^β — PCI serves as the order parameter only under the monotone-relation hypothesis P8.3 [H], so this fit tests β jointly with P8.3
 4. Extract β, 95% CI
 
 **Prediction:** β = 1/4 ± 0.05 (T-161, [C] at the ℤ₂ symmetry m → −m; without it the swallowtail value β = 1/2).
@@ -553,7 +561,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 | Formal criterion | Experiment | Operationalisation |
 |---|---|---|
 | $\exists \rho_1, \rho_2: \mathcal{I}(\rho_1) = \mathcal{I}(\rho_2)$, but $\mathcal{F}(\rho_1) \neq \mathcal{F}(\rho_2)$ | III.1 (DOC) | Two patients with identical P, R, Φ but different consciousness levels (CRS-R) |
-| $\|\mathrm{Spec}(\rho_1) - \mathrm{Spec}(\rho_2)\|_2 < 0.01$ (spectral identity) | II.1 (P_crit) | Two states with P within 0.01 but different PCI (one > PCI*, the other < PCI*) |
+| $\|\mathrm{Spec}(\rho_1) - \mathrm{Spec}(\rho_2)\|_2 < 0.01$ (spectral identity) | II.1 (P_crit) | Two states with spectra within 0.01 (not only P) but different report-based verdicts; a split PCI verdict (one > PCI*, the other < PCI*) corroborates but does not decide — PCI is not a function of the spectrum |
 | $P > 2/7 \not\Rightarrow$ consciousness | II.1 (P_crit) | Subject with P > 2/7 per π_bio but clinically unconscious |
 | $N < 7$ sufficient for autopoiesis | I.4, I.11 | Agent N=5 learns autonomously or coordinates socially |
 
@@ -593,7 +601,7 @@ gantt
 
     section Phase II: Neuro
     Equipment + IRB                :ii0, 2026-09, 3M
-    Exp II.1 (P_crit ↔ PCI*)     :ii1, 2026-12, 6M
+    Exp II.1 (P_crit and PCI* verdicts) :ii1, 2026-12, 6M
     Exp II.2 (exponents)          :ii2, 2027-01, 8M
     Exp II.3-II.4                 :ii3, 2027-03, 4M
 
@@ -621,7 +629,7 @@ This protocol covers **23 out of 23 predictions** of UHM/CC:
 
 The riskiest test is **critical exponents β=1/4** (Pred 17). No other theory of consciousness makes such a concrete numerical prediction about a phase transition. Confirmation means: consciousness belongs to the tricritical mean-field universality class ($\varphi^6$ Landau). Refutation means: UHM is fundamentally wrong about the structure of the transition.
 
-The most valuable test is **P_crit = 2/7 ↔ PCI* = 0.31** (Pred 6/21). If the theoretical threshold coincides with the empirical one — this is the first case in history where a theory of consciousness predicts a specific numerical value that matches an independently established experimental threshold.
+The most valuable test is the **threshold P_crit = 2/7 out of sample** (Pred 6/21): with π_bio frozen on wakefulness, P̂ at the report-defined loss of consciousness against 2/7, and the UHM verdict against the independently validated PCI verdict (Cohen's κ, P8.4). If both hold, a derived — not fitted — threshold will have been confirmed on sessions that did not fix the reconstruction. *(Until 2026-09-26 the test was named "P_crit = 2/7 ↔ PCI* = 0.31" and awaited a coincidence of two numbers on scales that no derivation connects.)*
 
 UHM does not hide from falsification — it presents 23 targets and points where to shoot.
 
@@ -636,6 +644,6 @@ UHM does not hide from falsification — it presents 23 targets and points where
 
 **External resources:**
 - [COGITATE Results (Nature 2025)](https://www.nature.com/articles/s41586-025-08888-1) — Cogitate Consortium, adversarial collaboration IIT vs GNWT, *Nature* 642, 133–142
-- [PCI Benchmark (Casali et al. 2013)](https://www.science.org/doi/10.1126/scitranslmed.3006294) — PCI* = 0.31
+- [PCI (Casali et al. 2013)](https://www.science.org/doi/10.1126/scitranslmed.3006294) — the index; the cut-off PCI* = 0.31 validated in Casarotto et al. 2016, *Ann. Neurol.* 80: 718–729, doi:10.1002/ana.24779
 - [ConTraSt Database](https://contrastdb.tau.ac.il/) — 412 experiments on theories of consciousness
 - [Del Cul et al. 2007](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.0050260) — nonlinear threshold of consciousness

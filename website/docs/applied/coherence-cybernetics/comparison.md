@@ -77,7 +77,7 @@ Full analysis of 42 theories of consciousness (including the 8 below) with histo
 
 ### 2.1 IIT (Tononi) {#iit}
 
-**Bridge:** $\Phi_{\text{IIT}} \approx \Phi_{\text{CC}}$ at $P \to 1$. At $P \to 2/7$ the divergence grows. PCI in the laboratory is a proxy for $P$ ([Measurement Methodology](./measurement#измерение-чистоты)).
+**Bridge:** $\Phi_{\text{IIT}} \approx \Phi_{\text{CC}}$ at $P \to 1$. At $P \to 2/7$ the divergence grows. PCI in the laboratory is not a proxy for $P$: $P$ is read from the reconstruction $\widehat\Gamma$ ([Measurement Methodology](./measurement#измерение-чистоты)), and PCI supplies an independent verdict compared with $\mathrm{Cons}(\widehat\Gamma)$ by Cohen's $\kappa$ ([P8.4](/docs/applied/research/measurement-protocol#substitution-position)). (Until 2026-09-26: "PCI in the laboratory is a proxy for $P$".)
 
 | Aspect | IIT | CC |
 |---|---|---|

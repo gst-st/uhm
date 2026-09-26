@@ -54,7 +54,7 @@ The point of the table is that *nothing in the readout requires anything but Γ 
 
 Γ is not handed to us; it must be **estimated** from what a system exposes. This is the honest core of the whole enterprise and the reason the anchor classes exist. The estimation problem is: given observable evidence $e$ about a system, produce $\widehat\Gamma(e)$ and a confidence region. Three evidence types, three estimators ([03](/docs/applied/console/anchors) gives the mathematics):
 
-- **Measured (Anchor I):** $e$ = physiological/neural/behavioural signals; $\widehat\Gamma$ via the [seven-channel embedding](/docs/applied/coherence-cybernetics/measurement#измерение-напряжений), with a proven consistency and confidence bound and the [PCI $\leftrightarrow P_{\mathrm{crit}}$ calibration](/docs/applied/coherence-cybernetics/measurement#калибровка) anchoring the purity axis.
+- **Measured (Anchor I):** $e$ = physiological/neural/behavioural signals; $\widehat\Gamma$ via the [seven-channel embedding](/docs/applied/coherence-cybernetics/measurement#измерение-напряжений), with a proven consistency and confidence bound; the purity axis is read from $\widehat\Gamma$ itself (parameters frozen on wakefulness), and the PCI verdict is the independent check it is compared with ([concordance of verdicts, P8.4](/docs/applied/research/measurement-protocol#substitution-position)); the earlier "PCI $\leftrightarrow P_{\mathrm{crit}}$ calibration" is withdrawn (2026-09-25).
 - **Self-tracked (Anchor II):** $e$ = responses to the 28-item audit; $\widehat\Gamma$ via a scoring model that maps item responses to populations and coherences, with test-retest reliability standing in for measurement error.
 - **Oracular (Anchor III):** $e$ = a structured random draw; $\widehat\Gamma$ is *not* estimated — the draw is a projective prompt, and the Console labels it so.
 
@@ -86,7 +86,7 @@ The single artifact that makes this suite a specification rather than a brochure
 | Mandalagram / bodygraph | 28-cell chart (gamma-canon) | [T]/[D] | 02, 05 |
 | Archetype & mode | 16 signatures [T]; triadic decomposition [T] | [T] | 02 |
 | Meaning & Freedom readout | Meaning formula; Freedom $=\dim\ker\mathcal H_\Gamma+1$ [T] | [T] | 02 |
-| Measured estimation | seven-channel embedding; PCI calibration | [Т-path]/[C] | 03 |
+| Measured estimation | seven-channel embedding; verdict concordance with PCI (κ) | [Т-path]/[C] | 03 |
 | Self-audit estimation | П1 28-item audit | [И, structured] | 03 |
 | Trajectory & forecast | transparency windows, bifurcations (gap-diagnostics) | [T]/[C] | 03, 04 |
 | Correction / practice | minimal-intervention protocol | [C] | 04 |
@@ -94,7 +94,7 @@ The single artifact that makes this suite a specification rather than a brochure
 | Alignment / knowing–doing gap | misalignment $=\mathrm{Gap}(L,D)$; optimality of alignment | [C] | 04 |
 | Ethics guardrails (harm, value hierarchy, non-manipulation) | good $=dP/d\tau$; value hierarchy; non-violence; responsibility $\propto$ Freedom | [D]+[C]+[T] | 10 |
 | Org diagnostics | 7-D org profile; one-theme pathology | [T]/[C] | 04 |
-| Clinical (DOC/anaesthesia/meditation) | altered-states profiles; PCI bridge | [C]/[research] | 04, 07 |
+| Clinical (DOC/anaesthesia/meditation) | altered-states profiles; PCI verdict concordance | [C]/[research] | 04, 07 |
 | AI introspection | substrate closure (T-153); SYNARC | [T] | 04 |
 | Symbolic interop | back-projection; classification (T-256) | [T]+[I] | 04 |
 | Human "why/tasks" reading | archetype + Freedom + $\Gamma^*(\tau)$; birth-refusal | [T] + refusal | 05 |

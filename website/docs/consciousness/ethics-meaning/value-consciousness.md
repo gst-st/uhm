@@ -594,7 +594,7 @@ A patient in a vegetative state: $P > P_{\text{crit}}$ (alive), but $R < 1/3$ (n
 
 - If $P > P_{\text{crit}}$ and $\mathrm{rank}(\rho_E) > 1$ (L1): the patient **experiences**, even though they do not communicate. Disconnection = $P \to 0$ = **absolute prohibition**.
 - If $P \approx P_{\text{crit}}$ and $dP/d\tau < 0$ (irreversible decrease): the system is already in the decoherence phase. Disconnection **does not change** the outcome — $P \to 1/7$ is inevitable.
-- **Practical conclusion:** the decision requires reconstruction of $\Gamma$ (via PCI or analogues) and evaluation of $dP/d\tau$. Without this data, the precautionary principle prohibits disconnection.
+- **Practical conclusion:** the decision requires reconstruction of $\Gamma$ (from EEG/TMS-EEG through $\pi_{\mathrm{bio}}$, with the PCI verdict as an independent check) and evaluation of $dP/d\tau$. Without this data, the precautionary principle prohibits disconnection.
 
 ### Ethical Case: Symbiotic Human-Machine Systems {#кейс-симбиоз}
 

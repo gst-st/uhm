@@ -478,7 +478,7 @@ graph TD
 ### 4.4 Diagnostic Protocol
 
 :::info Phase identification protocol [I]
-1. **Measure $P$** (purity): EEG coherence or PCI
+1. **Measure $P$** (purity): EEG coherence through the reconstruction $\widehat\Gamma$; PCI is not a measure of $P$ — its verdict is an independent check (P8.4)
 2. **Estimate $\sigma^2_{\text{Gap}}$** (anisotropy): dispersion of correlations between 7 sectors
 3. **Compute $r$**: ratio of recovery rate to degradation rate
 4. **Identify phase:**

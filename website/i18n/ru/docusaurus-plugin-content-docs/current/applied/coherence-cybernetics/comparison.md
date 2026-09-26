@@ -77,7 +77,7 @@ graph TD
 
 ### 2.1 IIT (Тонони) {#iit}
 
-**Мост:** $\Phi_{\text{IIT}} \approx \Phi_{\text{КК}}$ при $P \to 1$. При $P \to 2/7$ расхождение растёт. PCI в лаборатории — прокси для $P$ ([Методология измерений](./measurement#измерение-чистоты)).
+**Мост:** $\Phi_{\text{IIT}} \approx \Phi_{\text{КК}}$ при $P \to 1$. При $P \to 2/7$ расхождение растёт. PCI в лаборатории — не прокси для $P$: $P$ считывается с реконструкции $\widehat\Gamma$ ([Методология измерений](./measurement#измерение-чистоты)), а PCI даёт независимый вердикт, сравниваемый с $\mathrm{Cons}(\widehat\Gamma)$ каппой Коэна $\kappa$ ([P8.4](/docs/applied/research/measurement-protocol#substitution-position)). (До 2026-09-26: «PCI в лаборатории — прокси для $P$».)
 
 | Аспект | IIT | КК |
 |---|---|---|
