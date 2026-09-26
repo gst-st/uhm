@@ -168,6 +168,15 @@ q/p = −0,349; ветвь ранга 4 на 94 из 99 точек) и `no_pecce
 (при det Y_u, det Y_d ≠ 0 КХД-аномалия нулевая на 300 носителях; 𝟏𝟔 кирален; Γ_v коммутирует с (B−L)/2;
 m_a = 2,9 нэВ, изокривизна — Ω_a/Ω_c ≲ 3·10⁻⁵).
 
+
+Четыре — за источником κ, одним условием для якоря и неподвижными точками самомодели (26.09.2026):
+`axis_permutations_average_the_associator_to_a_spectral_cubic` (среднее 𝒜 по перестановкам осей — уже по S₆ —
+равно (96/5)e₃ при всякой калибровке; не по 168 коллинеациям), `symmetric_sources_carry_no_associator_weight_and_fano_readouts_carry_any`
+(вес ассоциатора у S₇-инвариантных источников 0; у Фано-считываний 1/144, 1/72, 1/168, 49/11664 — зависит от функционала),
+`fixed_points_of_self_models_and_the_gap_reflection_hierarchy` (Брауэр, а не Банах: у φ_J одна неподвижная точка Γ_η∞,
+у φ_s не меньше восьми; Im φ(Γ) = kc Im Γ; итерации φ_J сходятся лишь при α < α* = 0,790) и
+`one_clause_principle_for_the_anchor_is_maximal_integration` ((Рав-Ж) ⇔ Φ(ρ_a) = 6 ⇔ C_rel = log 7).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -5941,6 +5950,215 @@ def test_no_peccei_quinn_symmetry_in_the_clifford_content():
     PS_max = 0.038 / (1 - 0.038) * 2.1e-9
     frac = np.sqrt(PS_max / (4 / 60))                                     # P_δ ≈ 4/N, N = 60
     assert 2e-5 < frac < 5e-5 and 1e-2 / frac > 200
+
+
+def _sym_basis_27():
+    """Ортонормированный базис бесследовых вещественных симметричных 7×7 (27 = представление G₂)."""
+    B = []
+    for i in range(7):
+        for j in range(i + 1, 7):
+            M = np.zeros((7, 7))
+            M[i, j] = M[j, i] = 1 / np.sqrt(2)
+            B.append(M)
+    Q, _ = np.linalg.qr(np.column_stack([np.ones(7)] + [np.eye(7)[:, k] - np.eye(7)[:, k + 1] for k in range(6)]))
+    B += [np.diag(Q[:, k]) for k in range(1, 7)]
+    return np.array(B)
+
+
+def _sym3(T):
+    return sum(T.transpose(p) for p in itertools.permutations(range(3))) / 6
+
+
+def _associator_weight_tools():
+    """Вес ассоциатора κ[F] кубика F на вещественном секторе: κ[F] = −⟨F, 𝒜°⟩/⟨𝒜°, 𝒜°⟩ (Фишер),
+    𝒜° = 𝒜 − (96/5)e₃ = 𝒜 − (32/5)tr Δ³. Возвращает базис, тензор 𝒜°, функцию веса."""
+    B = _sym_basis_27()
+    A = _assoc4()
+    K = np.einsum('ijkl,abcl->iajbkc', A, A)
+    TA = _sym3(np.einsum('iajbkc,pia,qjb,rkc->pqr', K, B, B, B, optimize=True))
+    X3 = np.einsum('pab,qbc,rca->pqr', B, B, B)
+    T3 = _sym3((X3 + X3.transpose(0, 2, 1)) / 2)
+    To = TA - 32 / 5 * T3
+    w = lambda T: -float(np.sum(T * To)) / float(np.sum(To * To))
+    return B, TA, T3, To, w
+
+
+def _e3(G):
+    ev = np.linalg.eigvalsh(G)
+    return float(sum(ev[i] * ev[j] * ev[k] for i, j, k in itertools.combinations(range(7), 3)))
+
+
+def test_axis_permutations_average_the_associator_to_a_spectral_cubic():
+    """T-331(f) [Т]: среднее 𝒜 по перестановкам осей — спектральный кубик (96/5)e₃(Γ), при всякой калибровке.
+
+    Π₇ (проектор Λ³ℂ⁷ на Λ³₇) усредняется по S₇ в I/5: Λ³ℂ⁷ = Λ³V₆ ⊕ Λ²V₆ (20 + 15), а
+    Tr(Π₇ dΓ(M)) = 3 Tr M для всякого M (линейный G₂-инвариант на End ℂ⁷ один — след), так что
+    Tr(Π₇ E_w) = 3 для всякого единичного w ∈ ℂ⁷, E_w = dΓ(ww†). То же — по стабилизатору S₆ одной
+    оси (им ограничена динамика с κ = κ_b + κ₀Coh_E) и по S₅ двух осей; не по 168 коллинеациям
+    и не по S₄, закрепляющему три оси: Фано видно лишь тому, кто различает тройки осей.
+    """
+    rng = np.random.default_rng(401)
+    perms = [np.eye(7)[:, list(p)] for p in itertools.permutations(range(7))]
+    for _ in range(2):
+        G = random_state(rng)
+        D = np.diag(np.exp(2j * np.pi * rng.random(7)))
+        avg = np.mean([_cal_a(D @ P @ G @ P.T @ D.conj().T) for P in perms])
+        assert abs(avg - 96 / 5 * _e3(G)) < 1e-12
+        s6 = [P for P in perms if P[4, 4] == 1]
+        assert abs(np.mean([_cal_a(D @ P @ G @ P.T @ D.conj().T) for P in s6]) - 96 / 5 * _e3(G)) < 1e-12
+    G = random_state(rng)
+    lines = [set(x - 1 for x in l) for l in LINES]
+    coll = [P for P in perms if all(set(int(np.argmax(P[:, i])) for i in l) in lines for l in lines)]
+    fix3 = [P for P in perms if P[0, 0] == P[1, 1] == P[2, 2] == 1]
+    assert len(coll) == 168 and len(fix3) == 24
+    for grp in (coll, fix3):
+        assert abs(np.mean([_cal_a(P @ G @ P.T) for P in grp]) - 96 / 5 * _e3(G)) > 1e-3
+    # Tr(Π₇ dΓ(M)) = 3 Tr M
+    trip = list(itertools.combinations(range(7), 3))
+    psi = _assoc4() / 2
+    Q, _ = np.linalg.qr(np.array([[psi[a, b, c, l] for (a, b, c) in trip] for l in range(7)]).T)
+    P7 = Q @ Q.T
+    M = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+
+    def lam3(X):
+        return np.array([[np.linalg.det(X[np.ix_(a, b)]) for b in trip] for a in trip])
+    t = 1e-6
+    dG = (lam3(np.eye(7) + t * M) - lam3(np.eye(7) - t * M)) / (2 * t)
+    assert abs(np.trace(P7 @ dG) - 3 * np.trace(M)) < 1e-7
+
+
+def test_symmetric_sources_carry_no_associator_weight_and_fano_readouts_carry_any():
+    """T-331(f) [Т]: вес ассоциатора κ[F] канонически определён на вещественном секторе и равен нулю у всякого
+    S₇-инвариантного функционала; различающие тройки осей (Фано-считывания) дают разные веса.
+
+    G₂-инвариантных кубиков на бесследовых вещественных Δ два (tr Δ³ и 𝒜(Δ)), так что κ[F] —
+    коэффициент при −𝒜 в G₂-среднем кубического члена F при I/7; κ[−𝒜] = 1, κ[V_Gap] = κ.
+    S₇-инвариантные кубики (оси, треугольники, диагональные тройки, их образы при диагональной
+    калибровке) — вес 0. Фано-разрешения: Σ_p det Γ|_p (момент крауссова разложения D_Ω по проекторам
+    линий) — 1/144; Σ_p (Tr Π_pΔ)³ (кубик Фано-считывания) — 1/72; ⟨φ|Λ³Γ|φ⟩/7 — 1/168; энтропия
+    Фано-считывания — 49/11664. Разложение по осевым проекторам даёт тот же D_Ω и вес 0.
+    """
+    assert _g2_invariant_counts()[(3, 0, 0)] == 2
+    B, TA, T3, To, w = _associator_weight_tools()
+    assert abs(float(np.sum(T3 * To))) < 1e-10 and abs(w(-TA) - 1) < 1e-12
+    mask = np.array([[[1.0 if len({i, j, k}) == 3 else 0.0 for k in range(7)] for j in range(7)] for i in range(7)])
+    rng = np.random.default_rng(402)
+    D = np.diag(np.exp(2j * np.pi * rng.random(7)))
+    Bd = np.array([D.conj() @ b @ D for b in B])
+    J = np.ones((7, 7))
+    s7 = [np.einsum('pii,qii,rii->pqr', B, B, B),
+          np.real(np.einsum('pij,qjk,rki,ijk->pqr', Bd, Bd, Bd, mask)),
+          np.einsum('p,q,r->pqr', *[np.real(np.einsum('pij,ij->p', Bd, J))] * 3),
+          np.real(np.einsum('pab,bc,qcd,de,rea->pqr', Bd, J, Bd, J, Bd))]
+    for T in s7:
+        assert abs(w(_sym3(T))) < 1e-12
+    eps = np.zeros((3, 3, 3))
+    for p in itertools.permutations(range(3)):
+        eps[p] = round(np.linalg.det(np.eye(3)[list(p)]))
+    lines = [[x - 1 for x in l] for l in LINES]
+    Tdet = sum(np.einsum('abc,def,pad,qbe,rcf->pqr', eps, eps, *[B[:, l][:, :, l]] * 3) / 6 for l in lines)
+    vread = np.array([[np.trace(b[np.ix_(l, l)]) for l in lines] for b in B])
+    Tread = np.einsum('pl,ql,rl->pqr', vread, vread, vread)
+    Tphi = np.einsum('abc,def,pad,qbe,rcf->pqr', PHI3, PHI3, B, B, B) / 42
+    assert abs(w(Tdet) - 1 / 144) < 1e-12 and abs(w(Tread) - 1 / 72) < 1e-12
+    assert abs(w(Tphi) - 1 / 168) < 1e-12 and abs(49 / 162 * w(Tread) - 49 / 11664) < 1e-14
+    # вещественное тождество калибровок: ⟨φ|Λ³R|φ⟩ + 𝒜(R)/24 = e₃(R) (φ² + |χ|² = |x∧y∧z|²)
+    for _ in range(3):
+        W = rng.normal(size=(7, 7))
+        R = W @ W.T / np.trace(W @ W.T)
+        lhs = np.einsum('abc,def,ad,be,cf->', PHI3, PHI3, R, R, R) / 6 + _cal_a(R) / 24
+        assert abs(lhs - _e3(R)) < 1e-12
+    # два разложения одного D_Ω = (2/3)(diag − id): по осям и (с весом 1/3) по линиям Фано
+    G = random_state(rng)
+    Pl = [np.diag([1.0 if i in l else 0.0 for i in range(7)]) for l in lines]
+    ax = (2 / 3) * (np.diag(np.diag(G)) - G)
+    ln = (1 / 3) * sum(P @ G @ P - (P @ G + G @ P) / 2 for P in Pl)
+    assert np.linalg.norm(ax - ln) < 1e-14
+
+
+def test_fixed_points_of_self_models_and_the_gap_reflection_hierarchy():
+    """Теоремы 10.1–10.2 термодинамики Gap в верной форме [Т].
+
+    10.1: неподвижная точка всякой непрерывной самомодели есть (Брауэр); у φ_coh она одна — I/7, у φ_J одна —
+    Γ_η∞ = (1 − η∞)I/7 + η∞uu†, η∞ — корень 6(1 − c)η³ + η − 1 = 0 (P = 5/14 при α = 0), у φ_s их не меньше
+    восьми (I/7 и e_m). Липшицевы константы 54/49 и 1,129 > 1 — Банах неприменим.
+    10.2: у самомоделей замещающей формы с вещественным якорем Im φ(Γ) = k c Im Γ точно, так что оператор Gap
+    сжимается при каждой рефлексии в k c ≤ 2/7 раза и сходится к 0; фазовый Gap у φ_J ≤ (49/2)(2/7)ⁿ при n ≥ 4,
+    у φ_coh фазы не меняются. Итерации φ_J сходятся к Γ_η∞ при α < α* (корень 27α³ − 8α² − 8α − 2 = 0,
+    α* = 0,790) и уходят в 2-цикл при α > α*: собственное значение вдоль семейства −6η²(2 − 3c)/(1 + 6η²).
+    """
+    u = np.ones(7) / np.sqrt(7)
+    uu = np.outer(u, u).astype(complex)
+
+    def phi(G, alpha, anchor):
+        c = (1 - alpha) / 3
+        R = 1 / (7 * purity(G))
+        D = np.diag(np.diag(G))
+        return (1 - R) * (D + c * (G - D)) + R * anchor(G)
+    a_star = [x.real for x in np.roots([27, -8, -8, -2]) if abs(x.imag) < 1e-12][0]
+    assert abs(a_star - 0.7900) < 1e-4
+    rng = np.random.default_rng(403)
+    dist = {}
+    for alpha in (0.0, 0.25, 0.5, 0.75, 0.8, 0.9, 1.0):
+        c = (1 - alpha) / 3
+        eta = [x.real for x in np.roots([6 * (1 - c), 0, 1, -1]) if abs(x.imag) < 1e-12 and x.real > 0][0]
+        Gs = (1 - eta) * np.eye(7) / 7 + eta * uu
+        assert np.linalg.norm(phi(Gs, alpha, lambda G: uu) - Gs) < 1e-14
+        slope = -6 * eta ** 2 * (2 - 3 * c) / (1 + 6 * eta ** 2)
+        assert (abs(slope) < 1) == (alpha < a_star)
+        dist[alpha] = 0.0
+        for _ in range(20):
+            X = random_state(rng) if rng.random() < 0.5 else random_pure(rng)
+            for n in range(1, 3001):
+                k = 1 - 1 / (7 * purity(X))
+                Xn = phi(X, alpha, lambda G: uu)
+                assert abs(np.linalg.norm(Xn.imag) - k * c * np.linalg.norm(X.imag)) < 1e-13
+                X = Xn
+                if 4 <= n <= 20:
+                    off = ~np.eye(7, dtype=bool)
+                    assert np.min(X[off].real) >= 1 / 49 - 1e-15
+                    assert np.max(np.abs(np.sin(np.angle(X[off])))) <= 24.5 * (2 / 7) ** n + 1e-15
+            dist[alpha] = max(dist[alpha], np.linalg.norm(X - Gs))
+            conv = np.linalg.norm(X - Gs) < 1e-13
+            assert conv == (alpha < a_star)
+            if not conv:
+                assert np.linalg.norm(phi(phi(X, alpha, lambda G: uu), alpha, lambda G: uu) - X) < 1e-10
+    assert abs(dist[0.8] - 0.056) < 5e-3 and abs(dist[0.9] - 0.21) < 1e-2 and abs(dist[1.0] - 0.31) < 1e-2
+    assert abs((1 + 6 * 0.25) / 7 - 5 / 14) < 1e-15
+    # φ_s: I/7 и базисные состояния — восемь неподвижных точек
+    sig = lambda G: G @ G / purity(G)
+    for m in range(7):
+        e = np.zeros((7, 7), complex)
+        e[m, m] = 1
+        assert np.linalg.norm(phi(e, 0.5, sig) - e) < 1e-14
+    assert np.linalg.norm(phi(np.eye(7) / 7, 0.5, sig) - np.eye(7) / 7) < 1e-15
+    # φ_coh: фазы когерентностей не меняются
+    X = random_state(rng)
+    Y = phi(X, 0.5, lambda G: np.eye(7) / 7)
+    off = ~np.eye(7, dtype=bool)
+    assert np.max(np.abs(np.angle(Y[off] / X[off]))) < 1e-12
+
+
+def test_one_clause_principle_for_the_anchor_is_maximal_integration():
+    """T-334(6) [Т]: (Eq-V) ⇔ якорь — состояние наибольшей интеграции Φ = 6 ⇔ C_rel = log 7 ⇔ s = 6/7.
+
+    Φ = P_coh/P_diag ≤ (1 − P_diag)/P_diag ≤ 6, равенство только у чистого состояния с равномерной
+    диагональью, т. е. у D uu† D†. На 2000 случайных состояниях (чистых и смешанных) Φ < 6, C_rel < log 7.
+    """
+    rng = np.random.default_rng(404)
+    u = np.ones(7) / np.sqrt(7)
+    for _ in range(2000):
+        G = random_pure(rng) if rng.random() < 0.5 else random_state(rng)
+        ev = np.clip(np.linalg.eigvalsh(G), 1e-300, None)
+        d = np.real(np.diag(G))
+        crel = -np.sum(d * np.log(d)) + np.sum(ev * np.log(ev))
+        assert integration(G) < 6 - 1e-9 and crel < np.log(7) - 1e-9
+    D = np.diag(np.exp(2j * np.pi * rng.random(7)))
+    M = D @ np.outer(u, u) @ D.conj().T
+    assert abs(integration(M) - 6) < 1e-12
+    assert abs(purity(M) - np.sum(np.real(np.diag(M)) ** 2) - 6 / 7) < 1e-12
+    ratios = [16.63 / 13.11, 29.25 / 23.21, 59.34 / 47.35]      # κ_c(φ_J) / порог T-336 при H = 0
+    assert all(1.25 < r < 1.27 for r in ratios)
 
 
 def main():
