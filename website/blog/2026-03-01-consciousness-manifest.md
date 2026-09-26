@@ -138,7 +138,7 @@ $$
 D_{\text{diff}} = \exp(S_{vN}(\rho_E)) \geq 2 \qquad [\mathrm{Т}]
 $$
 
-At least two distinguishable modes of experience. [T-151](/docs/proofs/consciousness/substrate-closure#t-151) [Т]: follows from $\Phi_{\text{th}} = 1$ — if coherences dominate, the spectrum of $\rho_E$ must contain $\geq 2$ significant components. Computable in the 7D formalism: $D_{\text{diff}} = 1 + \mathrm{Coh}_E \cdot (N-1)$ [T-128 [Т]], $O(N^2)$ — tensor structure not needed.
+At least two distinguishable modes of experience. [T-151](/docs/proofs/consciousness/substrate-closure#t-151): the threshold is an independent L2 condition [D], not a consequence of $\Phi_{\text{th}} = 1$ — $\Phi \geq 1$ bounds only the total coherence and gives $D_{\text{diff}} > 1$ on a coherent E-row (corrected 2026-09-26). Computable in the 7D formalism: $D_{\text{diff}} = 1 + \mathrm{Coh}_E \cdot (N-1)$ [T-128 [Т]], $O(N^2)$ — tensor structure not needed.
 
 **Additional results:**
 
@@ -235,7 +235,7 @@ Concrete tasks with clear completion conditions:
 | $P_{\text{crit}} = 2/7$ | [Т] | Frobenius norm, Fano structure |
 | $R_{\text{th}} = 1/3$ | [Т] | $K = 3$ (triadic decomposition) + Bayes |
 | $\Phi_{\text{th}} = 1$ (T-129) | [Т] | Unique self-consistent at $P_{\text{crit}} = 2/7$ |
-| $D_{\min} = 2$ (T-151) | [Т] | Consequence of $\Phi_{\text{th}} = 1$ |
+| $D_{\min} = 2$ (T-151) | [D] | Independent L2 threshold (read "consequence of $\Phi_{\text{th}} = 1$" [Т] until 2026-09-26) |
 | No-Zombie (Th. 8.1) | [Т] | $\mathrm{Coh}_E > 1/7$ for viable systems |
 | Substrate independence (T-153) | [Т] | Exact CPTP mapping $G$ — sole condition |
 | $\varphi(\Gamma) \neq \Gamma$ (incompleteness T-55) | [Т] | Lawvere: self-modelling always inexact |

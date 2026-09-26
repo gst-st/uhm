@@ -376,7 +376,7 @@ Isospectral states can have **equal intensity** but **different quality** of exp
 
 ## Examples of Cognitive Qualia (L2)
 
-When L2 conditions are met: $R \geq 1/3$ [T], $\Phi \geq 1$ [T] (T-129), $D_{\text{diff}} \geq 2$ [T] (T-151) ([L2 thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)) the components of experience become reflexively accessible — the system does not merely "experience," but **knows that it experiences**.
+When L2 conditions are met: $R \geq 1/3$ [T], $\Phi \geq 1$ [T] (T-129), $D_{\text{diff}} \geq 2$ [D] (T-151) ([L2 thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)) the components of experience become reflexively accessible — the system does not merely "experience," but **knows that it experiences**.
 
 ### The colour red
 

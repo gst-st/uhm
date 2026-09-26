@@ -31,7 +31,7 @@ In this document:
 - $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты); $P_{\text{crit}} = 2/7$ — [critical threshold](/docs/core/dynamics/viability#критическая-чистота) **[T]**
 - $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), canonically $R = 1/(7P)$; threshold $R_{\text{th}} = 1/3$ **[T]**
 - $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ); threshold $\Phi_{\text{th}} = 1$ **[T]** (T-129)
-- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — differentiation measure; threshold $D_{\min} = 2$ **[T]** (T-151)
+- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — differentiation measure; threshold $D_{\min} = 2$ **[D]** (T-151, an independent L2 threshold)
 - $C = \Phi \times R$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) (T-140)
 - $\varphi$ — [self-modelling operator](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке); $\Gamma^* = \varphi(\Gamma^*)$ — its fixed point (identity)
 - $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ — [evolution equation](/docs/core/dynamics/evolution); $\mathcal{R}$ — the regenerative term
@@ -130,7 +130,7 @@ The threshold $R \geq R_{\text{th}} = 1/3$ (derived from the triadic decompositi
 
 **Integration.** $\Phi = \sum_{i \neq j} \lvert\gamma_{ij}\rvert^2 / \sum_i \gamma_{ii}^2$: the weight of connections against the weight of localisation. $\Phi \geq 1$ **[T]** (T-129) — coherences at least match the diagonal — is the integration threshold.
 
-**Differentiation.** $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$: the effective number of distinguishable experiential states. $D_{\text{diff}} \geq 2$ **[T]** (T-151) — at least two.
+**Differentiation.** $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$: the effective number of distinguishable experiential states. $D_{\text{diff}} \geq 2$ **[D]** (T-151) — at least two.
 
 Consciousness is the conjunction of all four, and the first two conspire to produce a *window*: $P > 2/7$ from viability, $P \leq 3/7$ from reflection, giving the Goldilocks zone $P \in (2/7,\ 3/7]$ (T-124 **[T]**). Consciousness is neither maximal order nor maximal chaos but a narrow ridge between them. The consciousness measure is the product $C = \Phi \times R$ (T-140): zero if either factor is zero.
 

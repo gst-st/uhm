@@ -268,7 +268,7 @@ The two formulas **coincide at the boundaries** and give **the same result** for
 
 :::tip Claim [D] — a definitional bridge, not an equivalence
 **Status note (2026-09-10).** The statement below was carried as a theorem [T]. It is a **definitional bridge**: the 7D side is *defined* by $D_{\text{diff}}^{7D} := 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max}\cdot(N-1)$, so the biconditional records that the definition was chosen to agree with the 42D notion at the two endpoints, not that two independently defined quantities coincide. In addition, the embedding used here ($\iota(\Gamma) = \Gamma \otimes I_6/6$) is a **third** lift, differing from the history-state lift of the [PW-reconstruction algorithm](#канонический-алгоритм-pw) and from the pure-clock lift of the [coherence matrix](/docs/core/dynamics/coherence-matrix#теорема-морита-эквивалентность); with the canonical factorisation ($\mathbb{C}^7$ = clock) $\mathrm{Tr}_{\bar E}$ is not defined at all, and the well-posed object is the clock-block contraction of the [canonical box](#rho-e-7d-42d).
-For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and the threshold $D_{\min} = 2$ (T-151 [T]):
+For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and the threshold $D_{\min} = 2$ ([D], T-151):
 
 $$
 D_{\text{diff}}^{7D}(\Gamma) \geq D_{\min} \iff D_{\text{diff}}^{42D}(\iota(\Gamma)) \geq D_{\min}

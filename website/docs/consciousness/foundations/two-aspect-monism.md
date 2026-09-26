@@ -192,12 +192,12 @@ In UHM such a primitive is the **coherence matrix $\Gamma \in \mathcal{D}(\mathb
 The key idea: $\Gamma$ does not 'generate' experience and is not 'accompanied' by it. $\Gamma$ **has** physical and interiority aspects as inseparable facets:
 
 - From the **external side** $\Gamma$ looks like 'physics' (structure, dynamics, interactions)
-- From the **internal side** $\Gamma$ is experienced as 'experience' (interiority L0 for all systems; cognitive qualia L2 — access at $R \geq 1/3$ [T] and $\Phi \geq 1$ [T] (T-129), with viability $D_{\text{diff}} \geq 2$ [T] (T-151) as a separate condition)
+- From the **internal side** $\Gamma$ is experienced as 'experience' (interiority L0 for all systems; cognitive qualia L2 — access at $R \geq 1/3$ [T] and $\Phi \geq 1$ [T] (T-129), with viability $D_{\text{diff}} \geq 2$ [D] (T-151) as a separate condition)
 
 :::info Key Thesis
 There are no 'physical processes' separate from 'subjective experience'. There is only $\Gamma$, which:
 - From the **external side** looks like 'physics' (structure, dynamics)
-- From the **internal side** is experienced as 'experience' (interiority L0 for all systems; cognitive qualia L2 — access at $R \geq 1/3$ [T] and $\Phi \geq 1$ [T] (T-129), with viability $D_{\text{diff}} \geq 2$ [T] (T-151) as a separate condition)
+- From the **internal side** is experienced as 'experience' (interiority L0 for all systems; cognitive qualia L2 — access at $R \geq 1/3$ [T] and $\Phi \geq 1$ [T] (T-129), with viability $D_{\text{diff}} \geq 2$ [D] (T-151) as a separate condition)
 :::
 
 Asking 'why does physics give rise to experience?' is like asking 'why does the obverse of a coin give rise to the reverse?'. They do not give rise to each other — they **are one**.

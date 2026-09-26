@@ -747,7 +747,7 @@ $$
 C \geq C_{\text{th}} := \Phi_{\text{th}} \times R_{\text{th}} = 1 \times \frac{1}{3} = \frac{1}{3}
 $$
 
-subject to $D_{\text{diff}} \geq D_{\min} = 2$ **[T]** (T-151) — a separate viability condition.
+subject to $D_{\text{diff}} \geq D_{\min} = 2$ **[D]** (T-151) — a separate viability condition.
 
 ## For Different Audiences
 
