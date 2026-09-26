@@ -6651,6 +6651,121 @@ def test_t222_window_has_no_resource_optimum_and_the_renyi_family_splits():
     assert not majorized and s1.max() > 1 / 3
 
 
+def test_t346_regeneration_rate_is_fixed_by_no_route():
+    """T-346: темп регенерации κ не фиксируется ни одним из пяти путей — числа каждого запрета.
+
+    (a) Порог κ_c(α) = 2/(3 max Q) — единственный вещественный корень неприводимого целого многочлена
+    степени 7 с группой Галуа S₇ (разложения mod p типов (7) и (2,5)): в радикалах не выражается.
+    (b) Ветвь стока η₊(κ) строго растёт; Φ(κ) = 6η₊² строго вогнута, растёт от Φ_c = 1,2261 к Φ_∞ = 3/2
+    (α = 0); зазор якобиана, Ω_c, зазор/κ и Ω_c/κ монотонны — внутреннего экстремума нет. Оптимум
+    (Φ − a)/κ есть при всяком κ > κ_c ровно для одного a = Φ − κΦ′: a = 0 → 1,0102κ_c, a = 1 → 1,1512κ_c.
+    (c) При κ = κ_c: Ω_c = 0, и всякий диагональный H с ненулевым разбросом снимает все состояния с
+    P > 2/7; Ω_c ≈ C√(κ − κ_c), C = 0,547 / 0,472 / 0,393. (d) Во всяком стационарном состоянии V_full
+    κg_V ≥ 4/(3(√6 − 2 + c)) = 1,703 / 2,164 / 2,966, а равновесие любых унитарно-инвариантных норм
+    κg_V‖φ − id‖ = ‖D_Ω‖ даёт κg_V ≤ 1 (сингулярные числа R ×6, 1 − kc ≥ ⅔ ×42 против 0 ×6, ⅔ ×42).
+    Канонический κ(Γ) = ω₀(1/7 + |γ_OE||γ_OU|/γ_OO·Coh_E) с φ_J держит окно лишь при ω₀ > 111,35 /
+    196,45 / 399,40. (e) Огрубление, ковариантное относительно коллинеаций и калибровки, действует на
+    семействе как η ↦ tη; κ′ = κ лишь при t = 1, при t = 0,99 от 2κ_c сток уходит с ветви за 8 шагов.
+    """
+    import sympy as sp
+    from scipy.optimize import brentq, minimize_scalar
+    polys = {0.0: [317898, -5257737, -455850, -245068, 65616, -13040, 672, -64],
+             0.5: [33870825, -989701632, -31625712, -55111328, 13010688, -1893376, 110592, -8192],
+             1.0: [181521, -10774620, 147258, -680400, 139644, -16848, 1056, -64]}
+    primes = {0.0: (37, 53), 0.5: (13, 29), 1.0: (5, 89)}
+    x = sp.symbols("x")
+    lo, hi = 1 / np.sqrt(6), 1 / np.sqrt(3)
+    kcs, cs = {}, {}
+    for alpha, co in polys.items():
+        c = (1 - alpha) / 3
+        r = minimize_scalar(lambda e: -_q_window(e, c), bounds=(lo, hi), method="bounded",
+                            options={"xatol": 1e-13})
+        kc, es = (2 / 3) / (-r.fun), r.x
+        kcs[alpha] = (kc, es)
+        roots = np.roots(co)
+        real = roots[np.abs(roots.imag) < 1e-9].real
+        assert len(real) == 1 and abs(real[0] - kc) < 1e-6 * kc                    # единственный корень
+        f = sp.Poly(co, x)
+        p7, p25 = primes[alpha]
+        for p, want in ((p7, [7]), (p25, [2, 5])):
+            degs = sorted(sp.Poly(g, x, modulus=p).degree() for g, m in
+                          sp.Poly(f.as_expr(), x, modulus=p).factor_list()[1] for _ in range(m))
+            assert degs == want and co[0] % p != 0                                 # (7): неприводим; (2,5): транспозиция
+        assert sp.discriminant(f) % p25 != 0
+        # (b) ветвь стока, параметризованная η: κ(η) = 2/(3Q), Φ = 6η²
+        einf = brentq(lambda e: _q_window(e, c), es, hi)
+        e = np.linspace(es + 1e-6, einf - 1e-6, 100001)
+        k = (2 / 3) / _q_window(e, c)
+        dk = np.gradient(k, e)
+        phik = 12 * e / dk
+        assert np.all(dk > 0) and np.all(np.diff(phik)[5:-5] < 0)                   # η₊ растёт, Φ вогнута
+        a = 6 * e ** 2 - k * phik
+        assert np.all(np.diff(a) > 0) and a[0] < -1e3 and abs(a[-1] - 6 * einf ** 2) < 1e-2
+        g, R = 6 * e ** 2 - 1, 1 / (1 + 6 * e ** 2)
+        lam_y = k * e * np.gradient(_q_window(e, c), e)
+        gap = np.minimum(np.minimum(-lam_y, k * g * R), 2 / 3 + k * g * (1 - (1 - R) * c))
+        assert np.all(np.diff(gap) > 0) and np.all(np.diff(gap / k) > 0)
+        if alpha == 0.0:
+            assert abs(6 * es ** 2 - 1.2261) < 1e-4 and abs(einf - 0.5) < 1e-9
+            for off, want in ((0.0, 1.0102), (1.0, 1.1512)):
+                assert abs(k[np.argmax((6 * e ** 2 - off) / k)] / kc - want) < 5e-4
+        # (c) Ω_c(κ) — наибольший разброс диагональных энергий, при котором окно живёт
+        P = np.linspace(2 / 7 + 1e-9, 3 / 7, 200001)
+
+        def om2(kap):
+            A, B = _anchor_window_parts(P, kap, c)
+            return np.max(6 / 7 * B ** 2 / (P - 1 / 7) - A ** 2)
+        assert abs(om2(kc)) < 1e-8
+        C = np.sqrt(om2(kc * 1.001) / (kc * 0.001))
+        assert abs(C - {0.0: 0.5476, 0.5: 0.4722, 1.0: 0.3932}[alpha]) < 1e-3
+        oms = [np.sqrt(om2(kc * s)) / (kc * s) for s in (1.01, 1.1, 2, 10, 100)]
+        assert np.all(np.diff(oms) > 0)
+        # при κ = κ_c и любом разбросе ω: G(P) < G₀(P) ≤ 0 на всём окне
+        w = np.array([0.0, 1e-3, 0, 0, 0, 0, 0])
+        A, B = _anchor_window_parts(P, kc, c)
+        G = sum(B ** 2 / (A ** 2 + (w[i] - w[j]) ** 2) for i in range(7) for j in range(7) if i != j) / 49 - (P - 1 / 7)
+        assert np.max(G) < 0
+        # (d) нижняя граница κg_V в V_full и равновесие норм
+        R = 1 / (7 * P)
+        den = R * (1 + np.sqrt(6 * (7 * P - 1))) / 7 - 1 / 7 - (1 - R) * (1 - c) * P / 2
+        req = np.where(den > 0, (P / 3) / np.where(den > 0, den, 1), np.inf)
+        edge = 4 / (3 * (np.sqrt(6) - 2 + c))
+        assert np.argmin(req) == 0 and abs(req[0] - edge) < 1e-6
+        assert abs(edge - {0.0: 1.7032, 0.5: 2.1640, 1.0: 2.9663}[alpha]) < 1e-4
+        for Pv in (0.29, 0.32, 0.4):
+            Rv, kv = 1 / (7 * Pv), 1 - 1 / (7 * Pv)
+            s_reg = np.sort([Rv] * 6 + [1 - kv * c] * 42)[::-1]
+            s_d = np.sort([0.0] * 6 + [2 / 3] * 42)[::-1]
+            assert np.all(np.cumsum(s_reg) >= np.cumsum(s_d))                     # Ки Фан: ‖D_Ω‖ ≤ ‖φ − id‖
+        m = lambda eta: 1 / 7 + (eta ** 2 / 7) * (1 + 12 * eta ** 2) / (7 * (1 + 6 * eta ** 2))
+        r = minimize_scalar(lambda eta: -m(eta) * _q_window(eta, c), bounds=(lo, hi), method="bounded",
+                            options={"xatol": 1e-13})
+        assert abs((2 / 3) / (-r.fun) - {0.0: 111.352, 0.5: 196.447, 1.0: 399.395}[alpha]) < 2e-3
+        cs[alpha] = c
+    # (d) частичные проверки операторов: сингулярные числа φ_Γ − id и D_Ω на бесследовых
+    E = _jacobian_basis()
+    c, P0 = cs[0.5], 0.32
+    R0 = 1 / (7 * P0)
+    u = np.ones(7) / np.sqrt(7)
+    uu = np.outer(u, u)
+    reg = lambda X: (1 - R0) * (np.diag(np.diag(X)) + c * (X - np.diag(np.diag(X)))) + R0 * np.trace(X) * uu - X
+    dom = lambda X: (np.diag(np.diag(X)) + (X - np.diag(np.diag(X))) / 3) - X
+    for op, want in ((reg, sorted([R0] * 6 + [1 - (1 - R0) * c] * 42)), (dom, sorted([0.0] * 6 + [2 / 3] * 42))):
+        M = np.array([[np.real(np.trace(Ea.conj().T @ op(Eb))) for Eb in E] for Ea in E])
+        assert np.allclose(np.sort(np.linalg.svd(M, compute_uv=False)), want, atol=1e-12)
+    # (e) огрубление η ↦ tη уводит с ветви стока
+    c = cs[0.0]
+    kc, es = kcs[0.0]
+    einf = brentq(lambda e: _q_window(e, c), es, hi)
+    eta = brentq(lambda e: 2 * kc * _q_window(e, c) - 2 / 3, es, einf)
+    k1 = (2 / 3) / _q_window(0.99 * eta, c)
+    assert abs(k1 - 26.341) < 2e-3 and k1 < 2 * kc
+    n = 0
+    while eta > es:
+        eta, n = 0.99 * eta, n + 1
+    assert n == 8
+
+
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
     bad = 0
