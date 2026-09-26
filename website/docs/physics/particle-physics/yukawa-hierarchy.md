@@ -721,7 +721,7 @@ Mass predictions: the order of magnitude is correct for all 9 particles; the bes
 ## Connection to Other Sections
 
 - **Three generations:** Uniqueness of $(1,2,4)$, assignment $k=1 \to$ 3rd [T], $k=4 \to$ 2nd, $k=2 \to$ 1st [T] → [Three Fermion Generations](./fermion-generations.md)
-- **CKM matrix:** Fritzsch texture → mixing angles → [CKM Matrix](./ckm-matrix.md)
+- **CKM matrix:** Fritzsch texture → mixing angles (the texture is retracted [✗], T-345(e)) → [CKM Matrix](./ckm-matrix.md)
 - **Sectoral $\varepsilon$ hierarchy:** $\varepsilon_\text{eff} \sim 0.06$ as sectoral average, self-consistent vacuum equation → [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε)
 - **Higgs sector:** Unique Higgs line $\{A,E,U\}$ → [Higgs Sector](./higgs-sector.md)
 - **NCG**: Chamseddine-Connes spectral action → [arXiv: 1208.1030](https://arxiv.org/abs/1208.1030); Devastato-Lizzi-Martinetti → [arXiv: 1403.7567](https://arxiv.org/abs/1403.7567)

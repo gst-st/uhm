@@ -627,8 +627,8 @@ $$\epsilon := \frac{\lambda_3(\mu_{\mathrm{EW}})}{\lambda_3(\mu_{\mathrm{Planck}
 
 ### 8.5 Fritzsch Texture from Fano Topology
 
-:::tip[Status: Theorem \[T\]]
-The Fano texture (Section 8.4) approximately reproduces the Fritzsch texture (Fritzsch, 1977).
+:::warning[Retracted 2026-09-26 (T-345(e)); the status was Theorem \[T\]]
+**Status [✗].** The six-zero Fritzsch texture is refuted by the data whatever its origin: with the running masses at $M_Z$ it gives $\lvert V_{cb}\rvert\ge0.073$ for every choice of phases, against $0.04183^{+0.00079}_{-0.00069}$ (PDG 2024) ([CKM §6.3](/docs/physics/particle-physics/ckm-matrix#derivation-vus)). The agreement in (d) is the Gatto–Sartori–Tonin relation, an empirical relation of any texture with a zero $(1,1)$ entry, not a prediction of UHM. The loop parameter $\epsilon$ of Section 8.4 comes from the running of the retracted cubic $V_3$ (T-331). Former box: "The Fano texture (Section 8.4) approximately reproduces the Fritzsch texture (Fritzsch, 1977)."
 :::
 
 **(a)** The standard Fritzsch texture has the form:
@@ -656,7 +656,7 @@ $$|V_{us}| \approx \left|\sqrt{\frac{m_d}{m_s}} - \sqrt{\frac{m_u}{m_c}} \cdot e
 From observed masses: $\sqrt{m_d/m_s} \approx 0.22$, $\sqrt{m_u/m_c} \approx 0.04$. Prediction: $|V_{us}| \approx 0.22$ — **agreement** with the observed $\theta_C = 0.225$.
 
 :::info[Remark]
-The numerical CKM values from the Fritzsch texture use **observed** quark masses as input. The theoretical prediction is the **texture structure** [T], while the numerical CKM values have status [H].
+The numerical CKM values from the Fritzsch texture use **observed** quark masses as input. The theoretical prediction is the **texture structure** [T], while the numerical CKM values have status [H]. *Corrected 2026-09-26 (T-345(e)):* the texture structure is retracted [✗] (box above).
 :::
 
 ### 8.6 Effective Suppression Parameter and Mass Eigenvalues
@@ -737,8 +737,8 @@ From the vacuum sector structure (Section 7.2): physical generations (by mass) c
 
 ### 9.2 Theorem 8.1 (Updated CKM Angles)
 
-:::warning[Status: Hypothesis \[H\] — heuristic formula]
-With the new assignment: Fano differences for [CKM angles](/docs/physics/particle-physics/ckm-matrix).
+:::warning[Retracted 2026-09-26 (T-345(e)); the status was Hypothesis \[H\] — heuristic formula]
+**Status [✗].** With PDG 2024 the angles are $13.00°$, $2.397°$, $0.2138°$, in the ratio $60.8:11.2:1$; the Fano differences give $2:3:1$, so $\theta_{23}$ would exceed $\theta_{12}$, while the data have $\theta_{12}/\theta_{23}=5.4$. Running cannot turn one pattern into the other: in one-loop Standard Model running from $M_Z$ to $2\times10^{16}$ GeV $\lvert V_{us}\rvert$ changes by $2\times10^{-5}$. The formulas of (e) are the Fritzsch texture, refuted separately by $\lvert V_{cb}\rvert\ge0.073$ ([CKM, note after §2.2](/docs/physics/particle-physics/ckm-matrix#thm-2-1), [§11](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов)). Former box: "With the new assignment: Fano differences for [CKM angles](/docs/physics/particle-physics/ckm-matrix)."
 :::
 
 **(a)** $\theta_{12}$ (Cabibbo angle) — mixing of the 1st and 2nd generations ($k=2$ and $k=4$):
@@ -767,8 +767,8 @@ From observed masses: $\sqrt{m_u/m_c} \approx 0.04$, $\sqrt{m_c/m_t} \approx 0.0
 
 ### 9.3 Theorem 8.2 (Updated CP Phase $\delta_{\mathrm{CP}}$)
 
-:::warning[Status: Hypothesis \[H\] — heuristic formula, $1\sigma$ from observation]
-The CP phase is computed with the new assignment.
+:::warning[Retracted 2026-09-26 (T-345(e)); the status was Hypothesis \[H\] — heuristic formula]
+**Status [✗].** The value $64.5°$ in (c) is $77.1°-12.6°$, and the $12.6°$ is not a property of the Standard Model: in one-loop running of the full Yukawa matrices from $M_Z$ to $2\times10^{16}$ GeV the phase moves by $0.003°$ and $\sin\delta$ by $2\times10^{-5}$. The estimate multiplies a phase by the running of a coupling, and its sign was chosen to fit. Without it the Fano value $\lvert\delta\rvert=77.1°$ is $7.6\sigma$ from $65.7°\pm1.5°$ (PDG 2024). The phase source, the PT-odd cubic $V_3$, is retracted: every $G_2$-invariant cubic is PT-even (T-331). See [CKM, Theorem 4.2](/docs/physics/particle-physics/ckm-matrix#thm-4-2) and [§11](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов). The text below is the former derivation. Former box: "The CP phase is computed with the new assignment" ($1\sigma$ from observation).
 :::
 
 **(a)** $\delta_{\mathrm{CP}} = \arg(e^{2\pi i(k_{1\mathrm{st}} + k_{2\mathrm{nd}} - k_{3\mathrm{rd}})/7}) = \arg(e^{2\pi i(2+4-1)/7}) = \arg(e^{10\pi i/7})$
@@ -791,6 +791,8 @@ Discrepancy with the direct $64.6° \pm 2.8°$: $\sim 0.1°$ ($\approx 0.04\sigm
 
 :::warning[Status: Hypothesis \[H\] — numerical CKM values depend on observed masses]
 The Wolfenstein parameters are extracted from the Fritzsch texture (Section 8.5) and observed quark masses.
+
+*Corrected 2026-09-26 (T-345(e)):* the Fritzsch texture is retracted [✗] (Section 8.5): its own $\lvert V_{cb}\rvert$ is $\ge0.073$, so the $0.044$ in (a) is not a Fritzsch value, and $A$ in (b) is [✗] with it; $\lambda$ is the Gatto–Sartori–Tonin relation, not a prediction. The phase $64.5°$ used in (c) is retracted (Section 9.3), so $J$ in (c) is not a prediction: with the observed angles substituted, $J$ follows the phase put in, and with the observed $\delta$ it reproduces the observed $J$ by construction. Observations (PDG 2024): $\lambda=0.22501\pm0.00068$, $A=0.826^{+0.016}_{-0.015}$, $\bar\rho=0.1591\pm0.0094$, $\bar\eta=0.3523^{+0.0073}_{-0.0071}$.
 :::
 
 **(a)** Quantitative CKM elements from the Fritzsch texture:
@@ -821,7 +823,7 @@ $$J \approx 0.974 \times 0.999 \times 0.9999 \times 0.225 \times 0.042 \times 0.
 Observed: $J = (3.08 \pm 0.15) \times 10^{-5}$. Discrepancy $\sim 3\%$, determined by the discrepancy in $\delta$.
 
 :::info[Remark]
-Of the 4 formula parameters ($s_{12}$, $s_{23}$, $s_{13}$, $\delta$), only **one** ($\delta$) is predicted by the theory; the rest are observables. Real predictive power: $\sin\delta = 0.903$ vs observed $0.934$ ($\sim 3\%$ discrepancy).
+Of the 4 formula parameters ($s_{12}$, $s_{23}$, $s_{13}$, $\delta$), only **one** ($\delta$) is predicted by the theory; the rest are observables. Real predictive power: $\sin\delta = 0.903$ vs observed $0.934$ ($\sim 3\%$ discrepancy). *Corrected 2026-09-26 (T-345(e)):* that one parameter is retracted (Section 9.3), so none of the four is predicted, and this $J$ is not a prediction.
 :::
 
 ---
@@ -940,7 +942,7 @@ Both assignment variants give **identical** testable predictions:
 - $\delta_{\mathrm{CP}} = \arg(e^{2\pi i(k_{1\mathrm{st}} + k_{2\mathrm{nd}} - k_{3\mathrm{rd}})/7})$ — invariant under the swap $k=2 \leftrightarrow k=4$ (same sum).
 - CKM angles (Fritzsch texture) depend on mass ratios, not on the assignment $\to$ also invariant.
 
-The only distinction: predictions for CP violation in $B$-meson decays. Status: [H], but harmless for the testable results of this document.
+The only distinction: predictions for CP violation in $B$-meson decays. Status: [H], but harmless for the testable results of this document. *Note 2026-09-26 (T-345(e)):* both testable results named here are retracted [✗] — the $\delta_{\mathrm{CP}}$ formula (Section 9.3) and the Fritzsch-texture angles (Section 8.5).
 
 ### 12.6 [N-1] Formula $\delta_{\mathrm{CP}}$: 'Reduction to the First Half-plane'
 
@@ -952,7 +954,7 @@ The formula:
 
 $$\delta_{\mathrm{CP}} = \arg(e^{2\pi i(k_{1\mathrm{st}} + k_{2\mathrm{nd}} - k_{3\mathrm{rd}})/7})$$
 
-is an **heuristic** formula connecting the CP phase to Fano indices. It is not derived from the diagonalisation of the Yukawa matrices $Y^u$, $Y^d$. In standard physics: $\delta_{\mathrm{CP}}$ is defined as the phase remaining after removing 5 unphysical phases from the $3 \times 3$ Yukawa matrices. The connection to the 'sum of generation indices' is nontrivial and unproved. The formula works empirically ($64.5°$ vs the direct $64.6° \pm 2.8°$, $\approx 0.04\sigma$; $< 1\sigma$ vs the fit $65.7°$), but its status is [H], not [T].
+is an **heuristic** formula connecting the CP phase to Fano indices. It is not derived from the diagonalisation of the Yukawa matrices $Y^u$, $Y^d$. In standard physics: $\delta_{\mathrm{CP}}$ is defined as the phase remaining after removing 5 unphysical phases from the $3 \times 3$ Yukawa matrices. The connection to the 'sum of generation indices' is nontrivial and unproved. ~~The formula works empirically ($64.5°$ vs the direct $64.6° \pm 2.8°$, $\approx 0.04\sigma$; $< 1\sigma$ vs the fit $65.7°$), but its status is [H], not [T].~~ *Retracted [✗] 2026-09-26 (T-345(e)):* the formula itself gives $77.1°$ ($51.4°$ for the first assignment), $7.6\sigma$ ($9.5\sigma$) from $65.7°\pm1.5°$; the $64.5°$ needed the $12.6°$ correction, which is absent in the Standard Model (Section 9.3).
 
 ---
 
@@ -965,14 +967,14 @@ is an **heuristic** formula connecting the CP phase to Fano indices. It is not d
 | **Resolution of K-1 (IR FP paradox)** | **[T]** (consequence of selection rule [T]) | 3.2 |
 | $V_3$ vertex on $\{1,2,4\}$ | **[D]** (error: $\{1,2,4\}$ is Fano, $V_3$ does not contain it) | 12.2 |
 | $V_3$-mixing through D | **[T]** (via non-Fano triples with $D=3$) | 4.2, 12.2 |
-| **Fritzsch texture from Fano topology** | **[T]** (hierarchical $3 \times 3$ matrix) | 8.5 |
+| **Fritzsch texture from Fano topology** | **[✗]** (2026-09-26, T-345(e): $\lvert V_{cb}\rvert\ge0.073$ against $0.0418$; was [T], hierarchical $3 \times 3$ matrix) | 8.5 |
 | **Distinction between $Y^u$ and $Y^d$ from Fano orientation** | **[T]** ($E \to U$ vs $U \to E$) | 8.7 |
 | Mass eigenvalues with $\epsilon_{\mathrm{eff}}$ | [H] (parametric estimate) | 8.6 |
 | Reassignment: $k=1 \to$ 3rd, $k=4 \to$ 2nd, $k=2 \to$ 1st | [H] | 7.2 |
 | $m_t \approx 173$ GeV (IR FP for unique $O(1)$ Yukawa) | [T] | 6.1 |
 | $m_c \sim$ GeV, $m_u \sim$ MeV (loop suppression) | [H] (order of magnitude) | 6.2–6.3 |
-| $\delta_{\mathrm{CP}} \approx 64.5°$ (with new assignment) | [H] ($\approx 0.04\sigma$ from direct $64.6° \pm 2.8°$; heuristic formula) | 9.3 |
-| Wolfenstein parameters and Jarlskog invariant | [H] (from Fritzsch texture + observed masses) | 9.4 |
+| $\delta_{\mathrm{CP}} \approx 64.5°$ (with new assignment) | **[✗]** (2026-09-26, T-345(e): the $12.6°$ correction is absent in the SM; uncorrected $77.1°$ is $7.6\sigma$ off; was [H]) | 9.3 |
+| Wolfenstein parameters and Jarlskog invariant | **[✗]** (2026-09-26, T-345(e): Fritzsch texture refuted; $J$ with the observed $\delta$ substituted is not a prediction; was [H]) | 9.4 |
 | $m_b/m_t \approx 0.024$ from sectoral RG | [✗] as a loop mechanism (T-332(i), corrected 2026-09-26 from [T]); the fitted number is [H] (C17) | 12.4 |
 | Masses of light generations via $V_3$-mixing and D-dimension | [H] | 4–7 |
 | Normal neutrino mass hierarchy from selection rule | [H] (ad hoc reference for $M_R$) | 10.1 |

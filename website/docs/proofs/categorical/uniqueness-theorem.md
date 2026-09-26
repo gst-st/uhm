@@ -483,7 +483,7 @@ Question 3 (predictivity) is **epistemological**, not mathematical: it is closed
 | QM | Stone–von Neumann (1931) | $U(\mathcal{H})$ | Spectra, interference |
 | GR | Birkhoff (spherical symmetry) | $\mathrm{Diff}(M)$ | Light deflection, gravitational waves |
 | SM | Coleman–Mandula / Haag–Łopuszański–Sohnius | Poincaré $\times$ gauge | Accelerators, PDG |
-| **UHM** | **$G_2$-rigidity** (this theorem) | **$G_2 = \mathrm{Aut}(\mathbb{O})$** | Cabibbo angle, thresholds, Gap profiles |
+| **UHM** | **$G_2$-rigidity** (this theorem) | **$G_2 = \mathrm{Aut}(\mathbb{O})$** | thresholds, Gap profiles (the Cabibbo angle was listed here; withdrawn 2026-09-26, T-345(e): its agreement came from a fitted $C_{\mathrm{norm}}\approx26$) |
 
 ---
 

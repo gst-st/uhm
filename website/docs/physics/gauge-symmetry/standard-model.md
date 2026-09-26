@@ -1184,8 +1184,8 @@ Detection of proton decay at scales $\tau_p \lesssim 10^{40}$ years would **fals
 
 ### 14.1 Theorem 14.1 (Updated Phase $\delta_{\text{CP}}$)
 
-:::warning[Hypothesis 14.1 (CP-violation phase) \[H\]]
-The formula $\delta_{\text{CP}} = \arg(e^{2\pi i(k_{1\text{st}} + k_{2\text{nd}} - k_{3\text{rd}})/7})$ is heuristic, not derived from diagonalization of Yukawa matrices.
+:::warning[Retracted 2026-09-26 (T-345(e)); the status was Hypothesis 14.1 (CP-violation phase) \[H\]]
+**Status [✗].** The value $64.5°$ in (c) is $77.1°-12.6°$, and the $12.6°$ of (b) is not a property of the Standard Model: in one-loop running of the full Yukawa matrices from $M_Z$ to $2\times10^{16}$ GeV the phase moves by $0.003°$ and $\sin\delta$ by $2\times10^{-5}$. The estimate multiplies a phase by the running of a coupling, and its sign was chosen to fit. Without it the Fano value $\lvert\delta\rvert=77.1°$ is $7.6\sigma$ from $65.7°\pm1.5°$ (PDG 2024). The phase source, the PT-odd cubic $V_3$, is retracted: every $G_2$-invariant cubic is PT-even (T-331), and in the Clifford frame the CKM phase is a Yukawa input (T-333). See [CKM, Theorem 4.2](/docs/physics/particle-physics/ckm-matrix#thm-4-2) and [§11](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов). The text below is the former derivation. Former box: "The formula $\delta_{\text{CP}} = \arg(e^{2\pi i(k_{1\text{st}} + k_{2\text{nd}} - k_{3\text{rd}})/7})$ is heuristic, not derived from diagonalization of Yukawa matrices."
 :::
 
 With the assignment $k_{\text{1st}}=2$, $k_{\text{2nd}}=4$, $k_{\text{3rd}}=1$:
@@ -1209,7 +1209,7 @@ $$|\delta_{\text{CP}}^{(\text{phys})}| \approx 77.1° - 12.6° = 64.5° \pm 5°$
 Observed: $65.7° \pm 1.5°$ (PDG 2024 global fit); the LHCb tree-level combination gives $64.6° \pm 2.8°$ (ICHEP 2024). The predicted $64.5°$ agrees within $\sim 0.1°$ ($\approx 0.04\sigma$) with the direct value and within $\sim 1\sigma$ of the fit. The older $69° \pm 4°$ is superseded. See [CKM §4.2](/docs/physics/particle-physics/ckm-matrix#thm-4-2) for the canonical value.
 
 :::info[Note on the sign]
-The sign of the two-loop correction is determined from $\mathrm{Im}\,\mathrm{Tr}(Y_u Y_u^\dagger Y_d Y_d^\dagger [Y_u Y_u^\dagger, Y_d Y_d^\dagger])$ (Antusch et al., 2003). With positive sign: $77.1° + 12.6° = 89.7°$ — discrepancy $> 8\sigma$ from the direct $64.6° \pm 2.8°$. The new assignment **predicts a negative sign** of the correction. Full range: $|\delta_{\text{CP}}| = 77.1° \pm 12.6°$ (from $64.5°$ to $89.7°$).
+The sign of the two-loop correction is determined from $\mathrm{Im}\,\mathrm{Tr}(Y_u Y_u^\dagger Y_d Y_d^\dagger [Y_u Y_u^\dagger, Y_d Y_d^\dagger])$ (Antusch et al., 2003). With positive sign: $77.1° + 12.6° = 89.7°$ — discrepancy $> 8\sigma$ from the direct $64.6° \pm 2.8°$. The new assignment **predicts a negative sign** of the correction. Full range: $|\delta_{\text{CP}}| = 77.1° \pm 12.6°$ (from $64.5°$ to $89.7°$). *Retracted 2026-09-26 (T-345(e)):* there is no correction of either sign to choose; the phase runs by $0.003°$ (box above).
 :::
 
 ### 14.2 Updated CKM Angles
@@ -1227,6 +1227,10 @@ $$\Delta k_{13} = |k_{\text{1st}} - k_{\text{3rd}}| = |2 - 1| = 1$$
 $$\theta_{12} \sim \sqrt{m_u/m_c}, \quad \theta_{23} \sim \sqrt{m_c/m_t}, \quad \theta_{13} \sim \sqrt{m_u/m_t}$$
 
 Angles are determined by effective Yukawa couplings, not by the Fano differences directly.
+
+:::warning[Retracted 2026-09-26 (T-345(e)): the ratios 2 : 3 : 1 are refuted, and running does not repair them]
+**Status [✗].** With PDG 2024 the angles are $13.00°$, $2.397°$, $0.2138°$, in the ratio $60.8:11.2:1$ (the "$65:12:1$" above is an older rounding); the Fano differences give $2:3:1$, so $\theta_{23}$ would exceed $\theta_{12}$, while the data have $\theta_{12}/\theta_{23}=5.4$. In one-loop Standard Model running from $M_Z$ to $2\times10^{16}$ GeV $\lvert V_{us}\rvert$ changes by $2\times10^{-5}$, so no RG suppression acts on an angle. The formulas of (b) are the Fritzsch texture, refuted separately by $\lvert V_{cb}\rvert\ge0.073$ against $0.0418$ ([CKM, note after §2.2](/docs/physics/particle-physics/ckm-matrix#thm-2-1), [§6.3](/docs/physics/particle-physics/ckm-matrix#derivation-vus)).
+:::
 
 ### 14.3 Lepton Sector
 
@@ -1284,7 +1288,7 @@ The large PMNS mixing angles ($\theta_{12} \sim 34°$, $\theta_{23} \sim 45°$) 
 | $m_{3/2} \sim 10^{13}$ GeV | **[T]** (T-50: $m_{3/2} \sim \varepsilon^3 M_P$ from uniqueness of $W$, Schur's lemma) |
 | $m_{\tilde{q}} \sim 10^{13}$ GeV (absence at LHC) | [H] |
 | $\tau_p \sim 4\times10^{47}$ years ($G_2$-extra channel) | [H] (proton effectively stable) |
-| $\delta_{\text{CP}} \approx 64.5°$ | [H] ($\approx 0.04\sigma$ from direct $64.6° \pm 2.8°$; $<1\sigma$ from fit $65.7°$) |
+| $\delta_{\text{CP}} \approx 64.5°$ | **[✗]** (2026-09-26, T-345(e): the $12.6°$ correction is absent in the SM, uncorrected $77.1°$ is $7.6\sigma$ from $65.7°\pm1.5°$; was [H], $\approx 0.04\sigma$ from direct $64.6° \pm 2.8°$) |
 | Normal neutrino mass hierarchy | **[C]** (O-sector Yukawa; C14: $m_2/m_3$ with RG-correction) |
 
 

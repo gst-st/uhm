@@ -802,8 +802,8 @@ The prediction $m_t \approx 173$ GeV from IR fixed point **is preserved** (stand
 
 ### Theorem 8.1 (Refined Cabibbo angle) {#thm-8-1}
 
-:::tip Theorem 8.1 (Refined Cabibbo angle) [T]
-With the selection principle $(k_1,k_2,k_3) = (1,2,4)$ taken into account, specific predictions are obtained for ratios of CKM matrix angles.
+:::warning[Retracted 2026-09-26 (T-345(e)); the status was Theorem 8.1 (Refined Cabibbo angle) \[T\]]
+**Status [✗].** The suppression factor $0.0097$ is the running of the cubic $V_3$, which is retracted: every $G_2$-invariant cubic is PT-even (T-331). Mixing angles do not run appreciably in the Standard Model: from $M_Z$ to $2\times10^{16}$ GeV $\lvert V_{us}\rvert$ changes by $2\times10^{-5}$. The bare angle $2\pi/7$ reaches $\theta_C$ only with the factor $C_{\mathrm{norm}}\approx26$ fitted to $\theta_C$ ([CKM, Theorem 3.1](/docs/physics/particle-physics/ckm-matrix#thm-3-1)), and the Fano ratios $2:3:1$ stand against the observed $60.8:11.2:1$ ([CKM §11](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов)). The text below is the former derivation. Former box: "With the selection principle $(k_1,k_2,k_3) = (1,2,4)$ taken into account, specific predictions are obtained for ratios of CKM matrix angles."
 :::
 
 **Theorem.** With the selection principle $(k_1,k_2,k_3) = (1,2,4)$ and RG evolution:
@@ -824,8 +824,8 @@ Details of CKM structure from Fano differences $\Delta k$ — see [CKM Matrix fr
 
 ### Theorem 8.2 (Refined CP phase) {#thm-8-2}
 
-:::warning [H] Hypothesis 8.2 (Refined CP phase)
-The sign of the two-loop correction $\delta^{(2)}$ is not determined a priori. With $\delta^{(2)} > 0$: agreement $64^\circ$ vs the direct $64.6° \pm 2.8°$ ($\approx 0.2\sigma$). With $\delta^{(2)} < 0$: $39^\circ$ — excluded by observations. The data select the positive branch; until the sign is derived, the status is a hypothesis.
+:::warning[Retracted 2026-09-26 (T-345(e)); the status was Hypothesis 8.2 (Refined CP phase) \[H\]]
+**Status [✗].** The correction $\lvert\delta^{(2)}\rvert\sim12.6°$ of (b) is not a property of the Standard Model: in one-loop running of the full Yukawa matrices from $M_Z$ to $2\times10^{16}$ GeV the phase moves by $0.003°$ and $\sin\delta$ by $2\times10^{-5}$; the estimate multiplies a phase by the running of a coupling. Without it the bare value is $51.4°$, $9.5\sigma$ from $65.7°\pm1.5°$ (PDG 2024) ($77.1°$ and $7.6\sigma$ for the updated assignment). The phase source $V_3$ is retracted (T-331). $J$ in (d) inherits the retracted phase and is not a prediction. See [CKM, Theorem 4.2](/docs/physics/particle-physics/ckm-matrix#thm-4-2). The text below is the former derivation. Former box: "The sign of the two-loop correction $\delta^{(2)}$ is not determined a priori. With $\delta^{(2)} > 0$: agreement $64^\circ$ vs the direct $64.6° \pm 2.8°$ ($\approx 0.2\sigma$). With $\delta^{(2)} < 0$: $39^\circ$ — excluded by observations. The data select the positive branch; until the sign is derived, the status is a hypothesis."
 :::
 
 **Theorem.** With $(k_1,k_2,k_3) = (1,2,4)$:
