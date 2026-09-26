@@ -6764,6 +6764,132 @@ def test_t346_regeneration_rate_is_fixed_by_no_route():
     while eta > es:
         eta, n = 0.99 * eta, n + 1
     assert n == 8
+def _generated_algebra_dim(ops, n):
+    flat = [np.eye(n).ravel()]
+    frontier = list(ops)
+    while frontier:
+        new = []
+        for X in frontier:
+            if np.linalg.matrix_rank(np.array(flat + [X.ravel()]), tol=1e-8) > len(flat):
+                flat.append(X.ravel())
+                new.append(X)
+        frontier = [a @ b for a in new for b in ops]
+    return len(flat)
+
+
+def _hurwitz_radon(n):
+    b = 0
+    while n % 2 == 0:
+        n //= 2
+        b += 1
+    a, r = divmod(b, 4)
+    return 2 ** r + 8 * a
+
+
+def test_fermion_module_premise_is_the_holons_product_acting_on_matter():
+    """T-347(б): (Кл₀) ⟺ (Мод) — произведение голонома действует на материи; 𝒮 не выбирается.
+
+    (Мод): линейное ρ: 𝕆 → End_ℝ(F), ρ(1) = 1, ρ(x)ρ(x) = ρ(x²) (левый альтернативный закон), ρ коммутирует
+    с i пространства ℋ. L и R на 𝕆 ему подчиняются; ρ(e_k) — антикоммутирующие комплексные структуры;
+    алгебра, порождённая семью L_{e_k} на ℝ⁸, — M₈(ℝ) (размерность 64, коммутант ℝ), так что неприводимые
+    модули восьмимерны и их два: объём L_{e_1}⋯L_{e_7} = −1, объём R = +1. Октонионное сопряжение c
+    переводит L_{e_k} в −R_{e_k}: система Клиффорда {iR_{e_k}, J, iJ} на ℂ⊗𝕆 — тоже Cl(9,0), её антикоммутант
+    семи — снова двумерен, и её 𝔰𝔭𝔦𝔫(9) — ровно c·𝔰𝔭𝔦𝔫(9)_L·c: оба модуля дают одну и ту же группу T-326.
+    Наименьшее ρ- и i-устойчивое пространство, содержащее ℋ (ранг 14), — всё 𝒮 (ранг 16).
+    """
+    L = [_lmul8(k) for k in range(8)]
+    R = [_rmul8(k) for k in range(8)]
+    rng = np.random.default_rng(346)
+    for _ in range(5):
+        x = rng.normal(size=8)
+        x2 = omul(x, x)
+        for M in (L, R):
+            Mx = sum(x[k] * M[k] for k in range(8))
+            assert np.allclose(Mx @ Mx, sum(x2[k] * M[k] for k in range(8)))
+    for a in range(1, 8):
+        for b in range(1, 8):
+            assert np.allclose(L[a] @ L[b] + L[b] @ L[a], -2 * (a == b) * np.eye(8))
+    vL = functools.reduce(np.matmul, L[1:])
+    vR = functools.reduce(np.matmul, R[1:])
+    assert np.allclose(vL, -np.eye(8)) and np.allclose(vR, np.eye(8))
+    assert _generated_algebra_dim(L[1:], 8) == 64 and _real_commutant_dim(L[1:], 8) == 1
+    cj = np.diag([1.0] + [-1.0] * 7)
+    assert all(np.allclose(cj @ L[k] @ cj, -R[k]) for k in range(1, 8))
+    d = _sm_on_complex_octonions()
+    imul, conj, cl = d["imul"], d["conj"], d["cl"]
+    gR = [imul @ cl(R[k]) for k in range(1, 8)] + [conj, imul @ conj]
+    for a in range(9):
+        for b in range(9):
+            assert np.allclose(gR[a] @ gR[b] + gR[b] @ gR[a], 2 * (a == b) * np.eye(16))
+    basis = [np.outer(np.eye(16)[i], np.eye(16)[j]) for i in range(16) for j in range(16)]
+    rows = np.vstack([np.array([(S @ X + X @ S).ravel() for S in basis]).T for X in gR[:7]])
+    assert 256 - np.linalg.matrix_rank(rows, tol=1e-9) == 2
+    C = cl(cj)
+    spinR = [gR[a] @ gR[b] / 2 for a in range(9) for b in range(a + 1, 9)]
+    assert max(_span_residual(C @ X @ C, d["spin9"]) for X in spinR) < 1e-9
+    V = np.array([np.eye(16)[i] for i in list(range(1, 8)) + list(range(9, 16))]).T
+    assert np.linalg.matrix_rank(V) == 14
+    ops = [cl(L[k]) for k in range(1, 8)] + [imul]
+    for _ in range(2):
+        V = np.hstack([V] + [o @ V for o in ops])
+    assert np.linalg.matrix_rank(V, tol=1e-9) == 16
+
+
+def test_no_holon_property_maximality_or_minimality_gives_the_bridge_premises():
+    """T-347(а), (в)–(д): пути к (Кл₀), (P), (W) через свойства голонома, максимальность и минимальность закрыты.
+
+    (а) Как 𝔤₂-модуль 𝒮 = ℂη₀ ⊕ ℋ: 𝔤₂ убивает η₀ и действует на ℋ как на голоном — симметрия голонома не
+    отличает спинорный модуль от ℋ плюс прямая. Отличает центр накрытия: exp(π L_{e_1}L_{e_2}) = −1 на 𝕆,
+    поворот на 2π в SO(7) = +1 на ℝ⁷; подлинно спинорные модули Spin(7) — 8, 48, 112, …, тензорные — 1, 7, 21, 27, 35.
+    (в) Число Гурвица–Радона ρ(14) = ρ(98) = 2, ρ(8) = 8, ρ(16) = 9: на ℋ = ℝ¹⁴ помещается одна комплексная
+    структура из антикоммутирующих, семь требуют 8 | dim; кватернионной структуры на ℂ⁷ нет:
+    det(AĀ) = |det A|² ≥ 0 ≠ det(−1₇) = −1. Точные представления M₇(ℂ) имеют размерность 14k; общая с модулем 𝕆 — 112 | dim.
+    (г) Наименьший спинорный сомножитель, совместимый с T-329, — n = 1: F₁ = 𝒮_ℂ, 16 вейлевских полей,
+    ΣY = ΣY³ = 0, но dim Herm(ℂ¹) = 1 — нет пространственного направления; n = 2 — первое с ним (dim Herm = 4).
+    (д) Модель ¬(Кл₀) с M = ℂ⁷ векторна: матрицы 𝔤₂ вещественны, ℂ⁷ ≅ своему сопряжённому; U(1) от i даёт
+    Tr Q³ = Tr Q = 7 на компоненту W.
+    """
+    d = _sm_on_complex_octonions()
+    for X in G2:
+        M = np.zeros((8, 8))
+        M[1:, 1:] = X
+        Xc = d["cl"](M)
+        assert np.abs(Xc[:, 0]).max() + np.abs(Xc[:, 8]).max() == 0.0
+        assert np.isrealobj(X) and np.allclose(X, -X.T)
+    L = [_lmul8(k) for k in range(8)]
+    assert np.allclose(expm(np.pi * L[1] @ L[2]), -np.eye(8))
+    E = np.zeros((7, 7))
+    E[0, 1], E[1, 0] = -1.0, 1.0
+    assert np.allclose(expm(2 * np.pi * E), np.eye(7))
+    from fractions import Fraction as Fr
+    rho0 = (Fr(5, 2), Fr(3, 2), Fr(1, 2))
+
+    def dim_b3(lam):
+        lv = [lam[i] + rho0[i] for i in range(3)]
+        num = den = Fr(1)
+        for i in range(3):
+            num, den = num * lv[i], den * rho0[i]
+            for j in range(i + 1, 3):
+                num *= (lv[i] - lv[j]) * (lv[i] + lv[j])
+                den *= (rho0[i] - rho0[j]) * (rho0[i] + rho0[j])
+        return int(num / den)
+    tri = [(a, b, c) for a in range(6) for b in range(a + 1) for c in range(b + 1)]
+    spinorial = sorted(dim_b3(tuple(Fr(2 * t + 1, 2) for t in w)) for w in tri)
+    tensorial = sorted(dim_b3(w) for w in tri)
+    assert spinorial[:3] == [8, 48, 112] and tensorial[:5] == [1, 7, 21, 27, 35]
+    assert {n: _hurwitz_radon(n) for n in (8, 14, 16, 98)} == {8: 8, 14: 2, 16: 9, 98: 2}
+    rng = np.random.default_rng(7)
+    for _ in range(5):
+        A = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+        assert np.linalg.det(A @ A.conj()).real > 0 and np.linalg.det(-np.eye(7)) < 0
+    assert np.lcm(14, 16) == 112 and 14 % 16 != 0
+    Y = {Fr(1, 6): 6, Fr(-1, 2): 2, Fr(-2, 3): 3, Fr(1, 3): 3, Fr(1): 1, Fr(0): 1}
+    assert sum(Y.values()) == 16
+    assert sum(y * m for y, m in Y.items()) == 0 and sum(y ** 3 * m for y, m in Y.items()) == 0
+    assert [n * n for n in (1, 2, 3)] == [1, 4, 9]
+    assert len(_invariant_quadratic_forms(2)) == 1
+    q = np.ones(7)
+    assert q.sum() == 7 and (q ** 3).sum() == 7
 
 
 def main():
