@@ -263,7 +263,7 @@ $$
 
 **Доказательство:**
 
-L2 требует $R \geq R_{\text{th}} = 1/3$ [Т], $\Phi \geq \Phi_{\text{th}} = 1$ [Т] (T-129) и $D_{\text{diff}} \geq 2$ [Т] (T-151) ([пороги L2](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)).
+L2 требует $R \geq R_{\text{th}} = 1/3$ [Т], $\Phi \geq \Phi_{\text{th}} = 1$ [Т] (T-129) и $D_{\text{diff}} \geq 2$ [О] (T-151) ([пороги L2](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)).
 
 Для [фундаментальной моды Γ](/docs/reference/glossary#таксономия-конфигураций-γ) (например, электрона):
 

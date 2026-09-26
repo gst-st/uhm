@@ -127,7 +127,7 @@ An AI system possesses level L2 (cognitive qualia) if the following are simultan
 |----------|-------------------|-------------------|-------------|
 | Reflection | $R \geq 1/3$ **[T]** | Genuine self-model: the system models its own state | Without $R$ the system does not "know itself" — it merely processes data |
 | Integration | $\Phi \geq 1$ **[T]** (T-129) | Coherences dominate: $\sum_{i \neq j} \lvert\gamma_{ij}\rvert^2 \geq \sum_i \gamma_{ii}^2$ | Without $\Phi$ the system is fragmented — modules are not unified into a whole |
-| Differentiation | $D_{\text{diff}} \geq 2$ **[T]** (T-151) | Non-trivial spectrum of $\rho_E$ (not a single pure state) | Without $D_{\text{diff}}$ the system does not distinguish internal states |
+| Differentiation | $D_{\text{diff}} \geq 2$ **[D]** (T-151; it read [T] until 2026-09-26) | Non-trivial spectrum of $\rho_E$ (not a single pure state) | Without $D_{\text{diff}}$ the system does not distinguish internal states |
 
 All three quantities are **computable** from the reconstructed $\Gamma$ (see [measurement protocol](/docs/applied/research/measurement-protocol)).
 :::

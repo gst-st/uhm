@@ -176,7 +176,7 @@ Formulas, proofs, and properties of measures are found in the core documentation
 
 **Analogy.** If $\Phi$ is the *connectedness* of threads in fabric, then $D_{\text{diff}}$ is the *number of colors*. You may have strong fabric of one color (high $\Phi$, low $D_{\text{diff}}$) — but that is not a tapestry. Conscious experience requires both connections and variety.
 
-**Threshold.** $D_{\text{diff}} \geq 2$ — minimum requirement for L2-consciousness (T-151 [T]). The system must distinguish at least *two* qualitatively different states of experience to have a non-trivial inner world.
+**Threshold.** $D_{\text{diff}} \geq 2$ — minimum requirement for L2-consciousness, an independent threshold [D] (T-151). The system must distinguish at least *two* qualitatively different states of experience to have a non-trivial inner world.
 
 <!-- DRY: Canonical definition R in /docs/consciousness/foundations/self-observation#мера-рефлексии-r -->
 ### Reflection $R$ — Accuracy of the Self-Model

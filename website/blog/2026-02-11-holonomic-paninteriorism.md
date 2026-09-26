@@ -123,7 +123,7 @@ The theory derives five levels, each with a strict threshold condition:
 | **L3** | Network consciousness | $R^{(2)} \geq 1/4$ | Mycelium, swarm, deep meditation |
 | **L4** | Unitary consciousness | $\lim_n R^{(n)} > 0$ | Theoretical limit |
 
-L0 is a definitional consequence of Axiom Ω: if a system is described by a coherence matrix $\Gamma$ in the extended formalism, then $\rho_E$ exists mathematically. Transitions between levels are not gradual but threshold-based: the thresholds are justified by theorems and definitions: $R_{\text{th}} = 1/3$ [Т] (from triadic decomposition + Bayesian dominance), $\Phi_{\text{th}} = 1$ [Т] (T-129: unique self-consistent value at $P_{\text{crit}} = 2/7$), $D_{\text{diff}} \geq 2$ [Т] (T-151: unconditional consequence of $\Phi_{\text{th}} = 1$ [Т]).
+L0 is a definitional consequence of Axiom Ω: if a system is described by a coherence matrix $\Gamma$ in the extended formalism, then $\rho_E$ exists mathematically. Transitions between levels are not gradual but threshold-based: the thresholds are justified by theorems and definitions: $R_{\text{th}} = 1/3$ [Т] (from triadic decomposition + Bayesian dominance), $\Phi_{\text{th}} = 1$ [Т] (T-129: unique self-consistent value at $P_{\text{crit}} = 2/7$), $D_{\text{diff}} \geq 2$ [D] (T-151: an independent L2 threshold, not a consequence of $\Phi_{\text{th}} = 1$; corrected 2026-09-26).
 
 ### Philosophy of Thresholds
 

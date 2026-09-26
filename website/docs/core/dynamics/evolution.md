@@ -132,7 +132,7 @@ Under these conditions, second-order perturbation in coupling yields a time-loca
 - Spectral gap $\omega_0 > 0$ of $\mathcal{L}_\Omega$ (T-39a [T]) — primitivity of unitary part $\mathcal{L}_0$.
 - Existence and uniqueness of $\rho^*$ (T-96 [T]) — categorical self-model well-defined.
 - Bounded off-diagonal coherences (Fano contraction $\alpha = 2/3$, T-142 [T]).
-- $D_\mathrm{min} = 2$ stratification (T-151 [T]) — boundary of density-matrix manifold handled.
+- $D_\mathrm{min} = 2$ stratification (threshold [D], T-151) — boundary of density-matrix manifold handled.
 
 **Non-Markovian extensions** are **outside current UHM scope**. This is an **explicit limitation**, not a gap: attempting to apply UHM to strongly memory-coupled dynamics (e.g., sub-picosecond quantum optics, spin-bath decoherence at fs scale) would violate the Petz–Ruskai premise and invalidate categorical guarantees.
 :::

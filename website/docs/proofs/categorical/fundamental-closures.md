@@ -955,7 +955,7 @@ Putnam–Lerchner triviality concerns L1→L3. UHM's consciousness predicate con
 
 **Proof of T-223 (seven lemmas).**
 
-**L1 (Categorical necessity of $\mathbb C^7$ and $G_2$) — context; clauses (a)–(e) do not use it.** Combine T-82 (BIBD(7,3,1) / Fano plane uniqueness via Fisher + Veblen–Wedderburn), T-42a ($G_2$-rigidity of the Fano dissipator), T-151 ($D_{\min} = 2$ from Φ-threshold), T-149 (viability of the embodied attractor). The Bridge T15 (row 41n) chains them:
+**L1 (Categorical necessity of $\mathbb C^7$ and $G_2$) — context; clauses (a)–(e) do not use it.** Combine T-82 (BIBD(7,3,1) / Fano plane uniqueness via Fisher + Veblen–Wedderburn), T-42a ($G_2$-rigidity of the Fano dissipator), T-151 ($D_{\min} = 2$, an independent L2 threshold [D]; the Φ-threshold gives only $D_{\mathrm{diff}} > 1$ on a coherent E-row), T-149 (viability of the embodied attractor). The Bridge T15 (row 41n) chains them:
 $$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{[T]} \mathrm{BIBD}(7,3,1) \xrightarrow{[T]} \mathrm{PG}(2,2) \xrightarrow{\text{canonical orientation, [T]}} \mathbb O \xrightarrow{[T]} G_2.$$
 The step $\mathrm{PG}(2,2) \to \mathbb O$ needs an orientation of the seven lines, and only 16 of the 128 orientations give a normed algebra; they form the only orientation class invariant under the collineations of PG(2,2), so the algebra canonically attached to the design is $\mathbb O$ ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), and $\dim = 7$ and $G_2$ are forced for it [T]. (Until 2026-09-25 this step was [C at (Alt)].) *Corrected 2026-09-25:* the lemma read "no step admits parameter freedom; $\dim = 7$ and $G_2$ are forced with zero external input" and also listed T-120 ($M^4$ from the quantum CLT), which plays no role in the Putnam argument, and T-190 as "zero-axiom categorical closure" — withdrawn: T-190 is [C] (the Page–Wootters constraint is assumed and the route to A1 via T-186(a) is a hypothesis). ∎
 
@@ -1017,7 +1017,7 @@ T-223 packages exactly this cascade.
 - **F-223-2**: Any alphabetization of $S$ commuting with $\mathcal L_\Omega$ but not factoring through a $G_2$-conjugate representation would refute L5.
 - **F-223-3**: Any physical process realising a Lerchner "Mapping C" (Market Data on a Beethoven trajectory) with non-zero contribution to $R$ or $\Phi$ would refute L6.
 
-**Dependencies**: T-42a [T] ($G_2$-rigidity), T-82 [T] (BIBD(7,3,1) uniqueness), T-96 [T] (regeneration target $\rho_* = \varphi(\Gamma)$), Theorem 10.1 of Gap thermodynamics [T] (fixed points of $\varphi$), T-98 [T] (balance formula for $R$), T-123 [T] ($G_2$-uniqueness of holonomic representation), T-148 [T] (embodiment requirement), T-149 [T] (Fano plane minimality), T-151 [T] ($D_{\min} = 2$), T-153a [T] (consciousness predicate C1–C3), T-214 [T] (hard-problem meta-theorem, Lawvere positivity).
+**Dependencies**: T-42a [T] ($G_2$-rigidity), T-82 [T] (BIBD(7,3,1) uniqueness), T-96 [T] (regeneration target $\rho_* = \varphi(\Gamma)$), Theorem 10.1 of Gap thermodynamics [T] (fixed points of $\varphi$), T-98 [T] (balance formula for $R$), T-123 [T] ($G_2$-uniqueness of holonomic representation), T-148 [T] (embodiment requirement), T-149 [T] (Fano plane minimality), T-151 ($D_{\min} = 2$ [D]), T-153a [T] (consciousness predicate C1–C3), T-214 [T] (hard-problem meta-theorem, Lawvere positivity).
 
 *Corrected 2026-09-25:* the dependency list also named the emergent-manifold theorem (the $M^4$ derivation, now conditional) and the axiomatic closure T-190 (conditional); neither is used by (a)–(e), which concern UHM-compatible representations whose existence is the premise — they entered only the context lemma L1.
 
@@ -1056,7 +1056,7 @@ is well-defined and finite. No regularisation ambiguity. The formula $f_0$ is th
 $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_r := \{\Gamma : \mathrm{rank}\,\Gamma = r\}.$$
 - On each **open stratum** $\mathcal D_r$, the Bures metric is non-degenerate (rank-$r$ Fisher metric).
 - Between strata, Bures distance extends continuously (Uhlmann 1976) but the metric tensor degenerates.
-- The viability condition $P > P_\mathrm{crit} = 2/7$ restricts attention to strata $r \geq 2$ (T-151 [T] $D_{\min} = 2$); the conscious window is entirely interior to $\mathcal D_7$.
+- The viability condition $P > P_\mathrm{crit} = 2/7$ restricts attention to strata $r \geq 2$ ($D_{\min} = 2$ [D], T-151); the conscious window is entirely interior to $\mathcal D_7$.
 
 **Update 2026-09-25.** The strata are submanifolds of dimension $14k - k^2 - 1$ whose shapes are the Grassmannians $\mathrm{Gr}_k(\mathbb{C}^7)$, and the whole stratified space is an object of the differentially cohesive $\mathrm{SynthDiff}\infty\mathrm{Grpd}$ ([T-185 (ii′)](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime)); no separate stratified site is needed.
 

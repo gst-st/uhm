@@ -287,7 +287,7 @@ T-153 asserts substrate-independence **given** a faithful CPTP map $G: \mathrm{S
 
 **Non-trivial content.** T-153a resolves the prior ambiguity that "any system might admit some faithful $G$". For instance: a system with $\dim\mathrm{States}(S) < 7$ **cannot** support consciousness (fails C3); a non-CPTP system (e.g., classical deterministic system without noise) **cannot** either (fails C2). These are structurally excluded classes, not handwaved.
 
-**Dependencies:** [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) (G₂-rigidity), [T-57 [T]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS), [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (section–retraction; the Morita reading is retracted), [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (exponential kernel), [T-151 [T]](#t-151) ($D_{\min} = 2$), [T-253](#t-253) (constructive sufficiency). Standard mathematics: Stinespring 1955, Choi 1975.
+**Dependencies:** [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) (G₂-rigidity), [T-57 [T]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS), [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (section–retraction; the Morita reading is retracted), [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (exponential kernel), [T-151](#t-151) ($D_{\min} = 2$, an independent threshold [D]), [T-253](#t-253) (constructive sufficiency). Standard mathematics: Stinespring 1955, Choi 1975.
 :::
 
 #### T-253 {#t-253}

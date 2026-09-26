@@ -94,7 +94,7 @@ $$
 P(\Gamma) > \frac{2}{7}, \quad R(\Gamma) \geq \frac{1}{3}, \quad \Phi(\Gamma) \geq 1, \quad D_{\text{diff}}(\Gamma) \geq 2 \qquad [\text{Т}]
 $$
 
-Each threshold is derived from axioms, not fitted. $P_{\text{crit}} = 2/7$ — from the Frobenius norm on $\mathcal{D}(\mathbb{C}^7)$ and Fano structure. $R_{\text{th}} = 1/3$ — from $K = 3$. $\Phi_{\text{th}} = 1$ — the unique self-consistent value at $P_{\text{crit}} = 2/7$ (T-129 [Т]). $D_{\min} = 2$ — consequence of $\Phi \geq 1$ (T-151 [Т]).
+Each threshold is derived from axioms, not fitted. $P_{\text{crit}} = 2/7$ — from the Frobenius norm on $\mathcal{D}(\mathbb{C}^7)$ and Fano structure. $R_{\text{th}} = 1/3$ — from $K = 3$. $\Phi_{\text{th}} = 1$ — the unique self-consistent value at $P_{\text{crit}} = 2/7$ (T-129 [Т]). $D_{\min} = 2$ — an independent threshold by definition [D], not a consequence of $\Phi \geq 1$ (T-151; corrected 2026-09-26).
 
 **Prediction**: Beautiful Loop will predict consciousness in systems with high $R$ but low $\Phi$ (e.g., a recursive autoencoder without integration). UHM — will not. This is experimentally distinguishable.
 

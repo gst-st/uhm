@@ -692,9 +692,10 @@ Fifteen results strengthen the foundations (nine new theorems + six structural u
         (Petz extremality) alone.
   \item \textbf{T-190 \status{C} (Axiomatic Closure):}
         A1--A5 are derivable from (AP)\allowbreak+(PH)\allowbreak+(QG)\allowbreak+(V)\allowbreak+MaxEnt
-        under two conditions: the Page--Wootters constraint $\hat C\Gam = 0$ is assumed
-        (T-87, step~4) and the route to A1 through T-186 is a hypothesis. A2 via
-        T-187+T-189, A3 via Theorem~S+T15, A4 from (AP) necessity, the clock register
+        under three conditions: the Page--Wootters constraint $\hat C\Gam = 0$ is assumed
+        (T-87, step~4), the route to A1 through T-186 is a hypothesis, and
+        the enrichment of A2 is CPTP-monotone (implied by reading the enrichment as the best distinguishability over measurements, not by the holon's properties). A2 via monotonicity +
+        T-187 + T-189, A3 via Theorem~S+T15, A4 from (AP) necessity, the clock register
         of A5 via T-87 steps 1--3. The earlier claim that UHM is \emph{self-grounding}
         with zero independent axioms is withdrawn (lowered 2026-09-25): the constraint
         remains an independent assumption, and the independent axiomatic content is
@@ -781,7 +782,7 @@ Fifteen results strengthen the foundations (nine new theorems + six structural u
 The five theorems T-188--T-192 form the foundational arc of UHM: they
 localize the hard problem under a hypothesis (T-188), derive the metric
 from first principles (T-189), derive the axioms from the characterising
-properties under two conditions (T-190), bound the self-modeling tower for
+properties under three conditions (T-190), bound the self-modeling tower for
 embodied holons (T-191), and verify the categorical target of the
 phenomenal functor (T-192). The earlier summary --- that together they
 establish \textbf{zero free parameters and zero independent axioms} --- is
@@ -805,7 +806,7 @@ T-331) are listed on the corpus page \emph{Premises of UHM}.
   \node[box] (A1) at (0,-3) {A1: $\infty$-topos};
   \node[box] (A2) at (3,-3) {A2: $J_B$};
   \node[box] (A5) at (1.5,-4.5) {A5: PW};
-  \node[box, fill=theoremcolor] (T190) at (6,-2.25) {\textbf{T-190} [C]\\constraint of A5\\and T-186(a) open};
+  \node[box, fill=theoremcolor] (T190) at (6,-2.25) {\textbf{T-190} [C]\\constraint of A5,\\T-186(a) and\\monotonicity open};
   \draw[arr] (AP) -- node[left,font=\scriptsize] {T-15} (A3);
   \draw[arr] (AP) -- node[right,font=\scriptsize] {(AP)} (A4);
   \draw[arr] (A3) -- node[left,font=\scriptsize] {T-76} (A1);
@@ -822,7 +823,9 @@ T-331) are listed on the corpus page \emph{Premises of UHM}.
 register of A5 are derivable from the defining properties of viable holons
 (AP, PH, QG, V) plus MaxEnt, with the route to A1 through the hypothesis
 T-186(a); the Page--Wootters constraint $\hat C\Gam = 0$ of A5 is not derived
-and stays an independent assumption. Dashed arrows indicate that each axiom
+and stays an independent assumption, and A2 needs, besides T-187 and T-189, the
+CPTP-monotonicity of the enrichment, which the holon's properties do not give
+(Lemma~M). Dashed arrows indicate that each axiom
 feeds into T-190's conclusion.}
 \label{fig:axiomatic-closure}
 \end{figure}
@@ -962,20 +965,23 @@ reader's reference, they are collected here:
 These are not axioms but \textbf{definitions}: they specify what it
 means for a physical system to be a viable self-sustaining holon. T-190
 derives A1--A4 and the clock register of A5 from (AP)--(MaxEnt) under its
-two conditions. A complementary
+three conditions. A complementary
 \emph{inverse} closure T-181~\status{T} (Bimodule construction) derives
 (AP), (PH), (QG), (V) themselves from the axioms A1--A4: (QG) from A1,
 (AP) from A1, (PH) from A1+A3, (V) from A2+A3. The pair (T-181, T-190)
 relates ``axioms'' and ``characterising properties'' in both directions,
-but it is not a full equivalence: the Page--Wootters constraint of A5 and
-the hypothesis T-186(a) stay outside the circle, so UHM is not
+but it is not a full equivalence: the Page--Wootters constraint of A5,
+the hypothesis T-186(a) and the monotonicity of the enrichment of A2 stay
+outside the circle, so UHM is not
 self-grounded (the earlier claim is withdrawn with the lowering of T-190).
 \end{defbox}
 
 \begin{theorembox}[T-190: Axiomatic Closure \status{C}]
 \label{thm:t190-closure}
-Under the constraint assumption of T-87 (step~4) and the hypothesis
-T-186(a), A1--A5 are derivable from (AP)+(PH)+(QG)+(V)+MaxEnt
+Under the constraint assumption of T-87 (step~4), the hypothesis
+T-186(a) and the CPTP-monotonicity of the enrichment of A2 (Lemma~M:
+implied by the operational reading of the enrichment, not by
+(AP)+(PH)+(QG)+(V)+MaxEnt; named 2026-09-26), A1--A5 are derivable from (AP)+(PH)+(QG)+(V)+MaxEnt
 (Figure~\ref{fig:axiomatic-closure}). The converse direction
 (A1--A4 $\Rightarrow$ (AP)+(PH)+(QG)+(V)) is T-181~\status{T}. The earlier
 statement ``UHM has zero independent axioms'' is withdrawn (lowered
@@ -997,9 +1003,21 @@ is necessary for autopoiesis.
 topology on $\Dens(\mathbb{C}^7)$ generates a Grothendieck site whose
 sheaves form an $\infty$-topos (Lurie HTT~6.2.2.7); the route from the
 operational basis to A1 goes through T-186(a), a hypothesis \status{H}.
-\emph{A2} ($J_B$): T-187~\status{T} + T-189~\status{T}: triple mathematical
-characterization (Char-I Petz extremality + Char-II Uhlmann + Char-III
-SLD-Fisher) plus MaxEnt physical recasting (Char-IV) uniquely selects Bures.
+\emph{A2} ($J_B$) \status{C} (monotonicity): the topology is forced (every
+continuous distance on the compact $\Dens(\mathbb{C}^7)$ induces the standard
+one); \emph{within the CPTP-monotone metrics} T-187~\status{T} +
+T-189~\status{T}: triple mathematical characterization (Char-I Petz extremality
++ Char-II Uhlmann + Char-III SLD-Fisher) plus MaxEnt physical recasting
+(Char-IV) uniquely selects Bures. The monotonicity is not derived: the
+Hilbert--Schmidt distance, in which (V) is written, satisfies every property
+and MaxEnt, yet a partial-trace channel on $\mathbb{C}^7$ moves a full-rank
+pair $\sqrt2 = 1.41421$ times farther apart in it while their Bures angle keeps
+the ratio $1.00000$. Under the operational reading (O),
+$d(\rho,\sigma) = \sup_M \delta\bigl(p_M(\rho), p_M(\sigma)\bigr)$ over POVMs
+$M$, monotonicity is a theorem (the adjoint of a channel maps POVMs to POVMs),
+and (O) with the Bhattacharyya angle gives the Bures angle
+directly~\cite{fuchs1995} (Lemma~M; this step read \status{T} until
+2026-09-26).
 \emph{A5} (Page--Wootters): T-87, steps 1--3~\status{T}: the Wedderburn
 decomposition of $A_{\mathrm{int}}$ isolates the clock summand and the tensor
 factor $\mathcal{H}_O = \mathbb{C}[\mathbb{Z}_7]$, so the clock register follows
@@ -1661,7 +1679,8 @@ theses (it has four).
 
 \textbf{Position in UHM's axiomatic architecture.}
 Axiomatic closure T-190 is \emph{internal} and conditional (the
-Page--Wootters constraint of A5 and the hypothesis T-186(a) stay open).
+Page--Wootters constraint of A5, the hypothesis T-186(a) and the
+monotonicity of the enrichment of A2 stay open).
 T-221 is UHM's position in the \emph{external} debate over scientific
 objectivism and the status of first-personal facts: it locates UHM on the
 relationalist route and leaves the choice among routes, as DeBrota and
@@ -1827,7 +1846,8 @@ depolarisation without leaving the window.
 The closure chain reads:
 \begin{itemize}[leftmargin=2em,nosep]
   \item T-190: \emph{internal} axiomatic closure, \status{C} (the
-        Page--Wootters constraint and T-186(a) stay open).
+        Page--Wootters constraint, T-186(a) and the monotonicity of the
+        enrichment stay open).
   \item T-220: \emph{structural} closure (no reduction
         $F_4$-UHM $\to$ $G_2$-UHM).
   \item T-221: \emph{external} position (the relationalist route

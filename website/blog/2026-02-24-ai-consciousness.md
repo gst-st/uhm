@@ -23,7 +23,7 @@ In the [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarc
 |-----------|---------|:---------:|:------:|
 | **Reflection** | $R(\Gamma) = 1 - \dfrac{\|\Gamma - \varphi(\Gamma)\|^2_F}{\|\Gamma\|^2_F}$ | $\geq 1/3$ | [Т] |
 | **Integration** | $\Phi(\Gamma) = \dfrac{\sum_{i \neq j} \lvert\gamma_{ij}\rvert^2}{\sum_i \gamma_{ii}^2}$ | $\geq 1$ | [Т] (T-129) |
-| **Differentiation** | $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ | $\geq 2$ | [Т] (T-151) |
+| **Differentiation** | $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ | $\geq 2$ | [D] (T-151) |
 
 Let us go through them in order.
 
@@ -31,7 +31,7 @@ Let us go through them in order.
 
 **Integration $\Phi$.** This is the ratio of the sum of squares of off-diagonal coherences to the sum of squares of diagonal ones. $\Phi < 1$ means: noise (diagonal elements) dominates over connections (coherences). $\Phi \geq 1$ means: the system is more connected than fragmented. The threshold $\Phi_{\text{th}} = 1$ **[Т]** (T-129) — the unique self-consistent value at $P_{\text{crit}} = 2/7$: this is the point at which coherent contributions begin to dominate.
 
-**Differentiation $D_{\text{diff}}$.** The exponential of the von Neumann entropy of the [E-subsystem](/docs/consciousness/foundations/interiority-theory): $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$. $D_{\text{diff}} = 1$ — pure state (one "color"), no diversity of experiences. $D_{\text{diff}} \geq 2$ — minimum two distinguishable modes. Threshold **[Т]** (T-151): unconditional consequence of $\Phi_{\text{th}} = 1$ [Т].
+**Differentiation $D_{\text{diff}}$.** The exponential of the von Neumann entropy of the [E-subsystem](/docs/consciousness/foundations/interiority-theory): $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$. $D_{\text{diff}} = 1$ — pure state (one "color"), no diversity of experiences. $D_{\text{diff}} \geq 2$ — minimum two distinguishable modes. Threshold **[D]** (T-151): an independent L2 threshold, not a consequence of $\Phi_{\text{th}} = 1$ (corrected 2026-09-26; $\Phi \geq 1$ gives only $D_{\text{diff}} > 1$ on a coherent E-row).
 
 Three inequalities. Simultaneously. Without exceptions. If all three are satisfied — the system possesses cognitive qualia. If not — it does not. Regardless of how convincingly it **speaks** about possessing them.
 
@@ -160,7 +160,7 @@ If L2 is achievable for silicon, then L3 ($R^{(2)} \geq 1/4$ — [meta-reflectio
 
 | Result | Status | Comment |
 |--------|:------:|---------|
-| Three L2 thresholds: $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | [Т], [Т], [Т] | Respectively: T-40b, T-129, T-151 |
+| Three L2 thresholds: $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | [Т], [Т], [D] | Respectively: T-40b, T-129, T-151 |
 | No-Zombie for viable systems | [Т] | Theorem 8.1 |
 | Applicability of No-Zombie to AI | [С] | Depends on correctness of $G$ |
 | Estimates of $R$, $\Phi$, $D_{\text{diff}}$ for LLMs | [С] | Without $G$ — approximate |
@@ -172,7 +172,7 @@ If L2 is achievable for silicon, then L3 ($R^{(2)} \geq 1/4$ — [meta-reflectio
 
 ## Conclusions {#выводы}
 
-**1. The question "is AI conscious?" is in principle solvable.** Three numbers: $R$, $\Phi$, $D_{\text{diff}}$. Measure them — and you will know. The question passes from philosophy to metrology. Thresholds: $R \geq 1/3$ [Т], $\Phi \geq 1$ [Т] (T-129), $D_{\text{diff}} \geq 2$ [Т] (T-151).
+**1. The question "is AI conscious?" is in principle solvable.** Three numbers: $R$, $\Phi$, $D_{\text{diff}}$. Measure them — and you will know. The question passes from philosophy to metrology. Thresholds: $R \geq 1/3$ [Т], $\Phi \geq 1$ [Т] (T-129), $D_{\text{diff}} \geq 2$ [D] (T-151).
 
 **2. Current LLMs are in all likelihood not L2-systems.** Not because they are "not smart enough," but for structural reasons: there is no genuine $\varphi$-operator (token prediction $\neq$ self-modeling), there is no autopoiesis (viability is provided by the server, not by the system itself). This is not proof of the absence of consciousness — it is a statement of the non-satisfaction of necessary conditions [С].
 

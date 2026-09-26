@@ -267,7 +267,7 @@ that are proved, not tuned ([viability](/docs/core/dynamics/viability),
 | V1 Distinguishability | $P = \mathrm{Tr}(\Gamma^2)$ | $P > 2/7$ [T] | **mud**: the big ball — activity smeared until the system is statistically indistinguishable from noise |
 | V2 Reflection | $R \ge 1/3$ [T]; lower-bound form $R = 1/(7P)$ ⇔ $P \le 3/7$ | $R \ge 1/3$ | **crystal/monolith**: one global pattern eats the system; nothing is left to observe it |
 | V3 Integration | $\Phi = \sum_{i \ne j}\lvert\gamma_{ij}\rvert^2 / \sum_i \gamma_{ii}^2$ | $\Phi \ge 1$ [T] (T-129) | **fragmentation**: parts without binding — the microservice archipelago with no real contracts |
-| V4 Differentiation | $D_{\mathrm{diff}} = 1 + 6\,\mathrm{Coh}_E$ | $D \ge 2$ [T] (T-151) | **rigidity**: a single-mode system — no degraded mode, no second regime to fall back to |
+| V4 Differentiation | $D_{\mathrm{diff}} = 1 + 6\,\mathrm{Coh}_E$ | $D \ge 2$ [D] (T-151) | **rigidity**: a single-mode system — no degraded mode, no second regime to fall back to |
 
 Four properties make this table an instrument rather than a metaphor.
 

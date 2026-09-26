@@ -105,7 +105,7 @@ The rate of [regeneration](/docs/core/dynamics/evolution#3-регенерати�
 **Uniqueness of the prediction.** This is the only prediction in consciousness science that connects *quality of experience* with *physical robustness* quantitatively. IIT measures $\Phi$ but does not connect it to regeneration. FEP describes free energy minimisation but does not postulate that the quality of experience affects the rate of that minimisation.
 
 **Experimental verification:**
-1. *Clinical protocol:* Measure $\mathrm{Coh}_E$ (via $\pi_{\mathrm{bio}}$) and recovery rate after a standard stressor in a group of $n \geq 30$ subjects.
+1. *Clinical protocol:* Measure $\mathrm{Coh}_E$ (via $\pi_{\mathrm{bio}}$) and recovery rate after a standard stressor in a group of $n \geq 85$ subjects: a two-sided test of the correlation at $\alpha = 0.05$ (Fisher transformation, $\operatorname{artanh} 0.3 = 0.3095$) detects $r = 0.3$ with power $0.80$ at $n = 85$ ($0.796$ at $n = 84$). *(Until 2026-09-26 the protocol read "$n \geq 30$": at $r = 0.3$ that gives power $0.36$, so a true effect would be missed about two times in three.)*
 2. *Prediction:* positive correlation $r > 0.3$ between $\mathrm{Coh}_E$ and recovery rate.
 3. *Control:* exclude physical health and age as confounds.
 

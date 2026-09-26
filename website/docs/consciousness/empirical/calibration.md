@@ -97,7 +97,7 @@ Intensity follows $\mathcal{Q}(t) \sim \log(\lambda_{\max}(t)/\langle\lambda_{\m
 
 ### K8. Regeneration and $E$-coherence — existing protocol, underpowered as written {#k8-regeneration}
 
-Prediction 2 [T] ($\kappa \propto \mathrm{Coh}_E$) is tested by correlating $\widehat{\mathrm{Coh}}_E$ with recovery rate after a standard stressor, with $n \geq 30$ and a predicted $r > 0.3$ ([prediction 2](/docs/applied/coherence-cybernetics/predictions#предсказание-2)). At $n = 30$ a true $r = 0.3$ is detected with power 0.36 (two-sided $\alpha = 0.05$, Fisher $z$); power 0.8 needs $n = 85$. A null result at $n = 30$ would therefore say almost nothing.
+Prediction 2 [T] ($\kappa \propto \mathrm{Coh}_E$) is tested by correlating $\widehat{\mathrm{Coh}}_E$ with recovery rate after a standard stressor, with $n \geq 85$ and a predicted $r > 0.3$ ([prediction 2](/docs/applied/coherence-cybernetics/predictions#предсказание-2)): at $n = 85$ a true $r = 0.3$ is detected with power 0.80 (two-sided $\alpha = 0.05$, Fisher $z$). The protocol read $n \geq 30$ until 2026-09-26; at $n = 30$ the power is 0.36, and a null result would have said almost nothing.
 
 ## Controls {#controls}
 

@@ -10,8 +10,8 @@ stated in Section~\ref{sec:axioms}. Every definition and formula is derived
 from the primitive $\mathfrak{T} = (\ShInf(\mathcal{C}),\; J_{\mathrm{Bures}},\; \omega_0)$
 and the premises listed in Section~\ref{subsec:premises}; nothing else is postulated ad hoc. The flagship results — $\Pcrit = 2/7$, the
 critical exponents, the spectral-action derivation — are proved fully in the
-appendices. The complete formalization (a status registry of 405 rows,
-T-1 through T-345 including sub-indexed results) constitutes the UHM theory archive;
+appendices. The complete formalization (a status registry of 408 rows,
+T-1 through T-348 including sub-indexed results) constitutes the UHM theory archive;
 the present paper proves the principal results in full, and the companion
 online supplement at \url{https://holon.sh} provides the remaining proofs
 and computational details.
@@ -557,3 +557,25 @@ constraint gives the conditional states exactly $e^{n\Delta t\,\Lind}\rho_0$ at 
 reading (T-53b~\status{T}), and the reading algebras converge to $C_0(\mathbb{R})$ in the
 scaling limit (continuous time, T-118~\status{T}). The earlier derivation through the
 $7^M$ readings of the summed clock of $M$ holons is withdrawn: that clock is periodic.
+
+\paragraph{Many holons and the de Sitter observer algebra (T-348).}
+Embedding the O-registers of $M$ holons by $x \mapsto x \otimes 1$, the tower
+$\bigotimes_M (M_7(\mathbb{C}), \mathrm{tr}_7)$ closes in the trace representation to the hyperfinite
+II$_1$ factor $R$ (\status{T} as mathematics); the trace entropy
+$S_{\mathrm{tr}} = S - M\ln 7 = -D(\rho\,\Vert\,I/7^M) \leq 0$ is monotone under
+restriction, and the $7$ is lost in the closure ($\bigotimes(M_2, \mathrm{tr}_2)$ gives
+the same $R$). Under the split property of the matter net (proven for the free massive
+Klein--Gordon field) the algebra of a de Sitter observer~\cite{clpw2023} is injective,
+hence $\cong R$~\cite{connes1976}. Every isomorphism carries the trace to the trace: the
+maximal-entropy state (empty de Sitter) corresponds to $\bigotimes I/7$, entropies are
+preserved, and nothing else is transported --- no observer Hamiltonian, modular flow or
+geometry. In a normal state only finitely many holons are viable, and $L \geq 1$ viable
+holons give $S_{\mathrm{tr}} < -0.34406\,L$~nat. A clock with pure point spectrum (the
+O-register, the depth register at finite $N$) gives a type~I invariant algebra
+(\status{T} under $\mathcal{A}^H = \mathbb{C}$, the assumption of~\cite{clpw2023}).
+Type and trace depend neither on $\Lambda > 0$ nor on the observer mass or the factor
+dimension, and II$_1$ also arises in flat space: the tower fixes no $\Lambda$, no sign of
+$\Lambda$ and no regeneration rate $\kappa$; $7^M = e^{S_{\mathrm{dS}}}$ gives
+$M = 1.677 \times 10^{122}$, a reparametrisation of $\Lambda$, not a derivation. The
+physical reading is \status{I}; a UHM clock with continuous spectrum bounded below is
+open~\status{Pr}.

@@ -2092,7 +2092,7 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 | Hard problem | Not directly addressed | Reframed via two-aspect monism (T-186 [H]) |
 | Target | **Spatial** consciousness (sub-problem) | Full hierarchy L0–L4, all content |
 | Physical substrate | Thalamus / insect central body | Substrate-independent (categorical) |
-| Consciousness threshold | None | $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ (T-160, T-40b, T-129, T-151 [T]) |
+| Consciousness threshold | None | $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ (T-160, T-40b, T-129 [T]; the threshold $D_{\mathrm{diff}} \geq 2$ is [D], T-151) |
 | Numerical predictions | None | 23 predictions with falsification criteria |
 | Derivation of physics | None | GR on an emergent $M^4$ (T-117–T-121, [T] as mathematics since 2026-09-25); quantum mechanics postulated, not derived ([QM reduction](/docs/physics/quantum-mechanics/qm-reduction)); Standard-Model colour from $G_2$ [T], electroweak [C at (FE)], finite space imported from Connes (T-186 [H]) |
 | Group structure | $PGL(4,\mathbb{R})$ (projective) | $G_2 = \mathrm{Aut}(\mathbb{O})$ (exceptional, finite-dim) |
