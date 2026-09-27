@@ -364,131 +364,17 @@
   "homepage.hero.title": {
     "message": "Унитарный Голономный Монизм"
   },
-  "homepage.hero.subtitle": {
-    "message": "Что если у реальности есть единственная математическая структура?"
-  },
-  "homepage.hero.description": {
-    "message": "Пять аксиом — среди них открыто названная размерность N = 7, обоснованная как минимальный случай, — порождают ∞-топос, из которого выводятся время, пространство и квантовая динамика. Теория называет свои константы (соглашение об обрезании, масштаб Λ, частоту ω₀), а не прячет их. Внутренний аспект системы оказывается не побочным продуктом, а необходимым условием её существования."
-  },
   "homepage.hero.cta": {
     "message": "Введение"
   },
   "homepage.matrix.title": {
     "message": "Матрица Когерентности"
   },
-  "homepage.matrix.description": {
-    "message": "Центральный математический объект — эрмитова матрица 7×7. Диагональ — населённости измерений (A, S, D, L, E, O, U). Внедиагональные элементы — когерентности между ними."
-  },
-  "homepage.matrix.purity": {
-    "message": "мера целостности"
-  },
-  "homepage.matrix.threshold": {
-    "message": "условие жизнеспособности"
-  },
-  "homepage.matrix.consciousness": {
-    "message": "интеграция × рефлексия"
-  },
-  "homepage.matrix.levels": {
-    "message": "от интериорности до единства"
-  },
   "homepage.matrix.cta": {
     "message": "Формальное определение"
   },
   "homepage.layout.title": {
     "message": "Формальная теория реальности"
-  },
-  "homepage.layout.description": {
-    "message": "Унитарный Голономный Монизм — аксиоматическая теория на основе ∞-топоса Sh∞(C). Время, структура и сознание выводятся как следствия пяти аксиом."
-  },
-  "homepage.docs.primitive.title": {
-    "message": "Единственный Примитив"
-  },
-  "homepage.docs.primitive.description": {
-    "message": "Пять Аксиом Ω⁷"
-  },
-  "homepage.docs.primitive.item.0": {
-    "message": "∞-топос Sh∞(C) — единственный примитив; структура, время и динамика выводятся из пяти аксиом"
-  },
-  "homepage.docs.primitive.item.1": {
-    "message": "Логика, время и пространство — следствия"
-  },
-  "homepage.docs.primitive.item.2": {
-    "message": "Принцип информационной различимости"
-  },
-  "homepage.docs.structure.title": {
-    "message": "Структура"
-  },
-  "homepage.docs.structure.description": {
-    "message": "Семь Измерений Голонома"
-  },
-  "homepage.docs.structure.item.0": {
-    "message": "Голоном — целостная единица бытия"
-  },
-  "homepage.docs.structure.item.1": {
-    "message": "Семь измерений: A, S, D, L, E, O, U"
-  },
-  "homepage.docs.structure.item.2": {
-    "message": "Матрица когерентности Γ ∈ ℂ⁷ˣ⁷"
-  },
-  "homepage.docs.octonionic.title": {
-    "message": "Октонионное Основание"
-  },
-  "homepage.docs.octonionic.description": {
-    "message": "Почему именно 7"
-  },
-  "homepage.docs.octonionic.item.0": {
-    "message": "P1 + P2 → O → dim(Im(O)) = 7"
-  },
-  "homepage.docs.octonionic.item.1": {
-    "message": "Плоскость Фано и симметрия G₂"
-  },
-  "homepage.docs.octonionic.item.2": {
-    "message": "Код Хэмминга H(7,4) и граница Кэли-Диксона"
-  },
-  "homepage.docs.dynamics.title": {
-    "message": "Динамика"
-  },
-  "homepage.docs.dynamics.description": {
-    "message": "Уравнение Эволюции"
-  },
-  "homepage.docs.dynamics.item.0": {
-    "message": "dΓ/dτ = −i[H,Γ] + D[Γ] + ℛ[Γ,E]"
-  },
-  "homepage.docs.dynamics.item.1": {
-    "message": "Диссипация от декогеренции, регенерация от интериорности"
-  },
-  "homepage.docs.dynamics.item.2": {
-    "message": "Глобальный аттрактор"
-  },
-  "homepage.docs.time.title": {
-    "message": "Эмерджентное Время"
-  },
-  "homepage.docs.time.description": {
-    "message": "Время из Структуры"
-  },
-  "homepage.docs.time.item.0": {
-    "message": "Время не постулируется — оно выводится"
-  },
-  "homepage.docs.time.item.1": {
-    "message": "O-измерение как внутренние часы"
-  },
-  "homepage.docs.time.item.2": {
-    "message": "Дискретность τ ∈ ℤ₇ и стрела времени"
-  },
-  "homepage.docs.viability.title": {
-    "message": "Жизнеспособность"
-  },
-  "homepage.docs.viability.description": {
-    "message": "Условия Существования"
-  },
-  "homepage.docs.viability.item.0": {
-    "message": "Чистота P — мера целостности"
-  },
-  "homepage.docs.viability.item.1": {
-    "message": "P_crit = 2/7 (теорема, пять путей)"
-  },
-  "homepage.docs.viability.item.2": {
-    "message": "Область устойчивости"
   },
   "homepage.docs.gap.title": {
     "message": "Gap-Семантика"
@@ -505,82 +391,313 @@
   "homepage.docs.gap.item.2": {
     "message": "Фазовая диаграмма когерентных состояний"
   },
-  "homepage.docs.consciousness.title": {
-    "message": "Сознание"
-  },
-  "homepage.docs.consciousness.description": {
-    "message": "От Квалиа до Коллективного Разума"
-  },
-  "homepage.docs.consciousness.item.0": {
-    "message": "Таксономия квалиа из 21 пары Γ"
-  },
-  "homepage.docs.consciousness.item.1": {
-    "message": "Эмоции, внимание, память — из формализма"
-  },
-  "homepage.docs.consciousness.item.2": {
-    "message": "Сознание ИИ: операциональные критерии"
-  },
-  "homepage.docs.physics.title": {
-    "message": "Физическое Соответствие"
-  },
-  "homepage.docs.physics.description": {
-    "message": "От Γ к Стандартной Модели"
-  },
-  "homepage.docs.physics.item.0": {
-    "message": "Калибровочная симметрия G₂ и поколения"
-  },
-  "homepage.docs.physics.item.1": {
-    "message": "Иерархия Юкавы из текстур Фано"
-  },
-  "homepage.docs.physics.item.2": {
-    "message": "Космологическая постоянная: бюджет Λ"
-  },
-  "homepage.docs.proofs.title": {
-    "message": "Доказательства"
-  },
-  "homepage.docs.proofs.description": {
-    "message": "Формальные Теоремы"
-  },
-  "homepage.docs.proofs.item.0": {
-    "message": "Минимальность 7 измерений (Track A)"
-  },
-  "homepage.docs.proofs.item.1": {
-    "message": "393 строки реестра (T-1..T-325): от P_crit = 2/7 до субстрат-независимости"
-  },
-  "homepage.docs.proofs.item.2": {
-    "message": "Категорный формализм и lax 2-функтор"
-  },
-  "homepage.docs.cybernetics.title": {
-    "message": "Кибернетика Когерентности"
-  },
-  "homepage.docs.cybernetics.description": {
-    "message": "Инженерные Применения"
-  },
-  "homepage.docs.cybernetics.item.0": {
-    "message": "Протокол измерения Γ в ИИ"
-  },
-  "homepage.docs.cybernetics.item.1": {
-    "message": "Условная теорема No-Zombie"
-  },
-  "homepage.docs.cybernetics.item.2": {
-    "message": "Панинтериоризм ≠ панпсихизм"
-  },
-  "homepage.docs.reference.title": {
-    "message": "Справочник"
-  },
-  "homepage.docs.reference.description": {
-    "message": "Верификация и Нотация"
-  },
-  "homepage.docs.reference.item.0": {
-    "message": "Фальсифицируемые предсказания теории"
-  },
-  "homepage.docs.reference.item.1": {
-    "message": "Реестр статусов [Т]/[С]/[О]/[И]/[Г]/[П]"
-  },
-  "homepage.docs.reference.item.2": {
-    "message": "Глоссарий, нотация, спецификация"
-  },
   "homepage.matrix.caption": {
     "message": "Матрица когерентности Γ ∈ ℂ⁷ˣ⁷"
+  },
+  "homepage.fano.aria": {
+    "message": "Плоскость Фано: семь измерений A, S, D, L, E, U, O и ориентированные линии умножения октонионов"
+  },
+  "homepage.fano.caption": {
+    "message": "Семь измерений, семь линий: каждая ориентированная линия — одно правило умножения октонионов. O в центре несёт часы."
+  },
+  "homepage.gauge.label": {
+    "message": "Чистота P = Tr Γ² — окно жизнеспособности 2/7 < P ≤ 3/7"
+  },
+  "homepage.hero.subtitle.v2": {
+    "message": "Одна математическая структура — для материи, времени и внутренней стороны вещей."
+  },
+  "homepage.hero.description.v2": {
+    "message": "Единственный примитив — ∞-топос над состояниями Γ семимерной системы — и пять аксиом. Из них доказано: время как показание внутренних часов и окно жизнеспособности 2/7 < P ≤ 3/7 для всего живого. Если поместить материю на комплексифицированные октонионы, а пространство-время прочесть из их эрмитовых форм — две посылки, которые теория называет, а не прячет, — то группа Стандартной модели с одним полным поколением фермионов и пространство-время 3+1 следуют как теоремы. У каждого утверждения — свой статус: доказано, условно, гипотеза или отозвано."
+  },
+  "homepage.hero.ctaPremises": {
+    "message": "Что теория принимает"
+  },
+  "homepage.status.title": {
+    "message": "Где стоит теория"
+  },
+  "homepage.status.lead": {
+    "message": "Каждое утверждение корпуса несёт один из статусов реестра. Здесь — краткий итог."
+  },
+  "homepage.status.proved": {
+    "message": "Доказано как математика"
+  },
+  "homepage.status.conditional": {
+    "message": "Условно или как прочтение"
+  },
+  "homepage.status.open": {
+    "message": "Открыто или свободно"
+  },
+  "homepage.status.registry": {
+    "message": "Реестр статусов"
+  },
+  "homepage.status.falsifiability": {
+    "message": "Как её опровергнуть"
+  },
+  "homepage.status.proved.time": {
+    "message": "Время как показание внутренних часов: регистр глубины даёт прямую времени ℝ"
+  },
+  "homepage.status.proved.window": {
+    "message": "Окно жизнеспособности 2/7 < P ≤ 3/7; внутри него нет единого ресурсного оптимума"
+  },
+  "homepage.status.proved.sm": {
+    "message": "Группа Стандартной модели (ядро ℤ₆) и одно полное поколение с ν_R без аномалий — в ℂ⊗𝕆"
+  },
+  "homepage.status.proved.spacetime": {
+    "message": "Лоренцево 3+1, вращения которого коммутируют с цветом"
+  },
+  "homepage.status.proved.tower": {
+    "message": "Башня голономов замыкается в гиперфинитный фактор II₁ — при свойстве расщепления это алгебра наблюдателя в де Ситтере, след в след"
+  },
+  "homepage.status.conditional.bridge": {
+    "message": "Физическое прочтение сказанного держится на двух мостовых посылках, (Кл₀) и (P); из аксиом ни одна не следует"
+  },
+  "homepage.status.conditional.closure": {
+    "message": "Аксиомы следуют из свойств жизнеспособного голонома при трёх названных условиях"
+  },
+  "homepage.status.conditional.interior": {
+    "message": "То, что внутренняя сторона Γ — это переживание, есть прочтение; его структура проверяется эмпирически"
+  },
+  "homepage.status.open.kappa": {
+    "message": "Темп регенерации κ свободен — ни один путь его не фиксирует"
+  },
+  "homepage.status.open.theta": {
+    "message": "Сильная CP: θ̄ — свободный параметр; значение ЭДМ нейтрона не предсказывается"
+  },
+  "homepage.status.open.flavour": {
+    "message": "Юкавские константы и матрица CKM не выведены"
+  },
+  "homepage.status.open.lambda": {
+    "message": "Космологическая постоянная Λ алгеброй наблюдателя не фиксируется"
+  },
+  "homepage.matrix.purity.v2": {
+    "message": "чистота, от 1/7 (максимально смешанное) до 1 (чистое)"
+  },
+  "homepage.matrix.threshold.v2": {
+    "message": "окно жизнеспособности"
+  },
+  "homepage.matrix.consciousness.v2": {
+    "message": "мера сознания: интеграция × рефлексия, порог 1/3"
+  },
+  "homepage.matrix.levels.v2": {
+    "message": "уровни интериорности, разделённые бифуркацией A₄ (ласточкин хвост)"
+  },
+  "homepage.docs.title": {
+    "message": "Корпус"
+  },
+  "homepage.layout.description.v2": {
+    "message": "Унитарный Голономный Монизм — одна математическая структура для материи, времени и внутренней стороны вещей: ∞-топос над матрицами когерентности 7×7, пять аксиом, названные посылки и статус у каждого утверждения."
+  },
+  "homepage.docs.primitive.v2.title": {
+    "message": "Единственный Примитив"
+  },
+  "homepage.docs.primitive.v2.description": {
+    "message": "Пять Аксиом Ω⁷"
+  },
+  "homepage.docs.primitive.v2.item.0": {
+    "message": "∞-топос Sh∞(𝒞) над состояниями Γ — единственный примитив"
+  },
+  "homepage.docs.primitive.v2.item.1": {
+    "message": "Пять аксиом; всякий иной вход назван на странице посылок"
+  },
+  "homepage.docs.primitive.v2.item.2": {
+    "message": "Различимость как метрика Бюреса"
+  },
+  "homepage.docs.structure.v2.title": {
+    "message": "Структура"
+  },
+  "homepage.docs.structure.v2.description": {
+    "message": "Семь Измерений Голонома"
+  },
+  "homepage.docs.structure.v2.item.0": {
+    "message": "Голоном — единица, моделирующая саму себя"
+  },
+  "homepage.docs.structure.v2.item.1": {
+    "message": "Семь измерений: A, S, D, L, E, O, U"
+  },
+  "homepage.docs.structure.v2.item.2": {
+    "message": "Все семь необходимы и функционально различны (теорема 7/7)"
+  },
+  "homepage.docs.octonionic.v2.title": {
+    "message": "Октонионное Основание"
+  },
+  "homepage.docs.octonionic.v2.description": {
+    "message": "Почему семь"
+  },
+  "homepage.docs.octonionic.v2.item.0": {
+    "message": "Гурвиц: dim Im 𝕆 = 7; N ≥ 7 — теорема, ровно N = 7 — посылка (P1₆)"
+  },
+  "homepage.docs.octonionic.v2.item.1": {
+    "message": "Плоскость Фано, каноническая ориентация и G₂"
+  },
+  "homepage.docs.octonionic.v2.item.2": {
+    "message": "Код Хэмминга H(7,4) и граница Кэли — Диксона"
+  },
+  "homepage.docs.dynamics.v2.title": {
+    "message": "Динамика"
+  },
+  "homepage.docs.dynamics.v2.description": {
+    "message": "Уравнение Эволюции"
+  },
+  "homepage.docs.dynamics.v2.item.0": {
+    "message": "dΓ/dτ = −i[H,Γ] + 𝒟[Γ] + ℛ[Γ,E]"
+  },
+  "homepage.docs.dynamics.v2.item.1": {
+    "message": "Диссипация — от декогеренции, регенерация — от самомодели"
+  },
+  "homepage.docs.dynamics.v2.item.2": {
+    "message": "Живые аттракторы в окне; темп регенерации свободен (T-346)"
+  },
+  "homepage.docs.time.v2.title": {
+    "message": "Эмерджентное Время"
+  },
+  "homepage.docs.time.v2.description": {
+    "message": "Время из Структуры"
+  },
+  "homepage.docs.time.v2.item.0": {
+    "message": "Время не постулируется: регистр часов A5 (T-87)"
+  },
+  "homepage.docs.time.v2.item.1": {
+    "message": "Прямая времени ℝ из регистра глубины (T-53b, T-118)"
+  },
+  "homepage.docs.time.v2.item.2": {
+    "message": "Стрела времени нумеруется глубиной страт"
+  },
+  "homepage.docs.viability.v2.title": {
+    "message": "Жизнеспособность"
+  },
+  "homepage.docs.viability.v2.description": {
+    "message": "Условия Существования"
+  },
+  "homepage.docs.viability.v2.item.0": {
+    "message": "Чистота P — мера целостности"
+  },
+  "homepage.docs.viability.v2.item.1": {
+    "message": "Критическая чистота P_crit = 2/7 — теорема"
+  },
+  "homepage.docs.viability.v2.item.2": {
+    "message": "Окно 2/7 < P ≤ 3/7 и его ресурсная геометрия (T-222)"
+  },
+  "homepage.docs.consciousness.v2.title": {
+    "message": "Сознание"
+  },
+  "homepage.docs.consciousness.v2.description": {
+    "message": "От Квалиа до Коллективного Разума"
+  },
+  "homepage.docs.consciousness.v2.item.0": {
+    "message": "Структура квалиа из геометрии Γ (обогащённая Йонеда)"
+  },
+  "homepage.docs.consciousness.v2.item.1": {
+    "message": "Эмпирическая программа: калибровка, структура, инженерия"
+  },
+  "homepage.docs.consciousness.v2.item.2": {
+    "message": "Сознание ИИ: операциональные критерии"
+  },
+  "homepage.docs.physics.v2.title": {
+    "message": "Физическое Соответствие"
+  },
+  "homepage.docs.physics.v2.description": {
+    "message": "От Γ к Стандартной Модели"
+  },
+  "homepage.docs.physics.v2.item.0": {
+    "message": "Группа Стандартной модели и одно поколение в ℂ⊗𝕆 — при (Кл₀)"
+  },
+  "homepage.docs.physics.v2.item.1": {
+    "message": "Вкус: что часы могут и чего не могут зафиксировать (T-345)"
+  },
+  "homepage.docs.physics.v2.item.2": {
+    "message": "Сильная CP и Λ: честные теоремы о невозможности"
+  },
+  "homepage.docs.proofs.v2.title": {
+    "message": "Доказательства"
+  },
+  "homepage.docs.proofs.v2.description": {
+    "message": "Формальные Теоремы"
+  },
+  "homepage.docs.proofs.v2.item.0": {
+    "message": "Минимальность семи измерений"
+  },
+  "homepage.docs.proofs.v2.item.1": {
+    "message": "Критическая чистота, окно жизнеспособности, ядро No-Zombie"
+  },
+  "homepage.docs.proofs.v2.item.2": {
+    "message": "Категорный формализм: конструкция Гротендика (T-211)"
+  },
+  "homepage.docs.cybernetics.v2.title": {
+    "message": "Кибернетика Когерентности"
+  },
+  "homepage.docs.cybernetics.v2.description": {
+    "message": "Инженерные Применения"
+  },
+  "homepage.docs.cybernetics.v2.item.0": {
+    "message": "Протокол измерения Γ в ИИ"
+  },
+  "homepage.docs.cybernetics.v2.item.1": {
+    "message": "No-Zombie: математическое ядро [Т], прочтение [И]"
+  },
+  "homepage.docs.cybernetics.v2.item.2": {
+    "message": "Панинтериоризм ≠ панпсихизм"
+  },
+  "homepage.docs.reference.v2.title": {
+    "message": "Справочник"
+  },
+  "homepage.docs.reference.v2.description": {
+    "message": "Верификация и Нотация"
+  },
+  "homepage.docs.reference.v2.item.0": {
+    "message": "Критерии фальсификации и их текущие вердикты"
+  },
+  "homepage.docs.reference.v2.item.1": {
+    "message": "Реестр статусов: [Т] [С] [Г] [О] [И] [П] [Пр] [✗]"
+  },
+  "homepage.docs.reference.v2.item.2": {
+    "message": "Посылки, глоссарий, нотация"
+  },
+  "homepage.status.badge.proved": {
+    "message": "[Т]"
+  },
+  "homepage.status.badge.conditional": {
+    "message": "[С] [И]"
+  },
+  "homepage.status.badge.open": {
+    "message": "[Пр]"
+  },
+  "homepage.status.proved.time.ref": {
+    "message": "T-53b, T-118"
+  },
+  "homepage.status.proved.window.ref": {
+    "message": "P_crit, T-222"
+  },
+  "homepage.status.proved.sm.ref": {
+    "message": "T-326, T-329"
+  },
+  "homepage.status.proved.spacetime.ref": {
+    "message": "48c"
+  },
+  "homepage.status.proved.tower.ref": {
+    "message": "T-348"
+  },
+  "homepage.status.conditional.bridge.ref": {
+    "message": "T-347"
+  },
+  "homepage.status.conditional.closure.ref": {
+    "message": "T-190"
+  },
+  "homepage.status.conditional.interior.ref": {
+    "message": "[И]"
+  },
+  "homepage.status.open.kappa.ref": {
+    "message": "T-346"
+  },
+  "homepage.status.open.theta.ref": {
+    "message": "Теор. 3.1c"
+  },
+  "homepage.status.open.flavour.ref": {
+    "message": "T-345"
+  },
+  "homepage.status.open.lambda.ref": {
+    "message": "T-348(f)"
+  },
+  "homepage.matrix.description.v3": {
+    "message": "Центральный объект — состояние голонома: матрица плотности 7×7 — эрмитова, положительная, со следом единица. На диагонали — населённости семи измерений, 21 внедиагональный элемент — когерентности между ними. Наведите на клетку или коснитесь, чтобы прочесть её смысл."
   }
 }

@@ -91,31 +91,298 @@
   align-items: center;
 }
 
-/* Orbital SVG Visualization */
-.orbitalSvg {
+/* Hero figure: the Fano plane with the canonical orientation */
+.fanoFigure {
   width: 100%;
-  max-width: 480px;
+  max-width: 500px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fanoSvg {
+  width: 100%;
   height: auto;
+  overflow: visible;
 }
 
-/* Central core */
-.coreGroup {
-  transition: transform 0.1s ease-out;
+.fanoLine {
+  fill: none;
+  stroke: var(--ifm-color-primary);
+  stroke-width: 1.4;
+  opacity: 0.32;
+  transition: opacity 0.6s ease, stroke-width 0.6s ease;
 }
 
-.coreCircle {
-  transition: all 0.3s ease;
+.fanoLineActive {
+  opacity: 0.95;
+  stroke-width: 2.6;
 }
 
-.coreSymbol {
+.fanoArrow {
+  fill: var(--ifm-color-primary);
+  opacity: 0.4;
+  transition: opacity 0.6s ease;
+}
+
+.fanoArrowActive {
+  opacity: 1;
+}
+
+.fanoNode circle {
+  fill: var(--ifm-background-color);
+  stroke: var(--ifm-color-primary);
+  stroke-width: 1.6;
+  transition: fill 0.6s ease, stroke-width 0.6s ease;
+}
+
+.fanoNode text {
+  fill: var(--ifm-color-primary-darkest);
+  font-family: 'Exo 2', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  transition: fill 0.6s ease;
+  pointer-events: none;
+}
+
+[data-theme='dark'] .fanoNode text {
+  fill: var(--ifm-color-primary-lightest);
+}
+
+.fanoFactor circle {
+  fill: var(--ifm-color-primary-lightest);
+  stroke-width: 2.6;
+}
+
+[data-theme='dark'] .fanoFactor circle {
+  fill: var(--ifm-color-primary-darker);
+}
+
+.fanoProduct circle {
+  fill: var(--ifm-color-primary);
+  stroke-width: 2.6;
+}
+
+.fanoProduct text,
+[data-theme='dark'] .fanoProduct text {
   fill: white;
-  font-size: 26px;
-  font-weight: 400;
-  font-family: 'Times New Roman', 'STIX Two Math', serif;
 }
 
-[data-theme='dark'] .coreCircle {
-  fill: var(--ifm-color-primary-light);
+.fanoCaption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+.fanoProductText {
+  font-family: 'STIX Two Math', 'Times New Roman', serif;
+  font-size: 1.35rem;
+  color: var(--ifm-color-primary);
+  min-height: 1.8rem;
+}
+
+.fanoNote {
+  font-size: 0.82rem;
+  color: var(--ifm-color-emphasis-600);
+  max-width: 26rem;
+  line-height: 1.5;
+}
+
+/* Purity gauge */
+.gauge {
+  width: 100%;
+  max-width: 26rem;
+  margin-top: 1.1rem;
+}
+
+.gaugeTrack {
+  position: relative;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--ifm-color-emphasis-200);
+}
+
+.gaugeWindow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-radius: 5px;
+  background: var(--ifm-color-primary-lightest);
+  border: 1px solid var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .gaugeWindow {
+  background: var(--ifm-color-primary-darkest);
+}
+
+.gaugeMarker {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+}
+
+.gaugeMarker span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: var(--ifm-color-primary-darkest);
+  animation: livingState 9s ease-in-out infinite alternate;
+}
+
+[data-theme='dark'] .gaugeMarker span {
+  background: var(--ifm-color-primary-lightest);
+}
+
+@keyframes livingState {
+  0% { left: 22%; }
+  30% { left: 68%; }
+  55% { left: 40%; }
+  80% { left: 84%; }
+  100% { left: 30%; }
+}
+
+.gaugeScale {
+  position: relative;
+  height: 1.2rem;
+  margin-top: 0.3rem;
+  font-size: 0.72rem;
+  color: var(--ifm-color-emphasis-600);
+  font-family: 'Exo 2', sans-serif;
+}
+
+.gaugeScale span {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.gaugeLabel {
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-700);
+  text-align: center;
+  margin-top: 0.2rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fanoLine,
+  .fanoArrow,
+  .fanoNode circle,
+  .fanoNode text {
+    transition: none;
+  }
+
+  .gaugeMarker span {
+    animation: none;
+    left: 50%;
+  }
+}
+
+/* Status section */
+.statusSection {
+  padding: 4rem 0 3.5rem;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.sectionLead {
+  text-align: center;
+  color: var(--ifm-color-emphasis-700);
+  max-width: 44rem;
+  margin: 0 auto 2rem;
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 996px) {
+  .statusGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.statusCol {
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-top: 4px solid var(--status-accent);
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+}
+
+.statusProved { --status-accent: var(--ifm-color-success); }
+.statusConditional { --status-accent: var(--ifm-color-warning); }
+.statusOpen { --status-accent: var(--ifm-color-emphasis-500); }
+
+.statusCol h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.9rem;
+}
+
+.statusBadge {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.8rem;
+  color: var(--status-accent);
+  margin-right: 0.3rem;
+}
+
+.claimList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.claimList li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.claimList li:last-child {
+  border-bottom: none;
+}
+
+.claimList a {
+  color: var(--ifm-color-emphasis-800);
+}
+
+.claimList a:hover {
+  color: var(--ifm-color-primary);
+}
+
+.claimRef {
+  flex-shrink: 0;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.75rem;
+  color: var(--ifm-color-emphasis-600);
+  white-space: nowrap;
+}
+
+.statusFooter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 /* Matrix Section */
@@ -205,6 +472,9 @@
 
 .matrixCell {
   aspect-ratio: 1;
+  border: none;
+  padding: 0;
+  font: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,6 +482,11 @@
   font-family: 'Exo 2', sans-serif;
   transition: transform 0.2s;
   cursor: pointer;
+}
+
+.matrixCell:focus-visible {
+  outline: 2px solid var(--ifm-color-primary-darkest);
+  outline-offset: 1px;
 }
 
 .matrixCell:hover {
@@ -272,7 +547,7 @@
 
 /* Documentation Section */
 .docsSection {
-  padding: 4rem 0;
+  padding: 3.5rem 0 4rem;
   background: var(--ifm-color-emphasis-100);
 }
 
