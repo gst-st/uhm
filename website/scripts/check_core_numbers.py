@@ -183,6 +183,13 @@ m_a = 2,9 нэВ, изокривизна — Ω_a/Ω_c ≲ 3·10⁻⁵).
 SLD-информация Фишера под 1000 случайными каналами не растёт — наибольшее отношение 0,497; измерение
 Фукса–Кейвса достигает верности, 200 случайных базисов превышают её не меньше чем на 0,214).
 
+Одна — за спинорами из тензорного примитива (28.09.2026, T-350):
+`spinors_from_the_tensorial_holon_triality_kahler_dirac_and_bosonic_textures` (π₃ изоспектральной орбиты ненулевая
+лишь у полного флага — 1 из 15 разбиений семи, у него нечётных когомологий нет, у G₂ степени 3 и 11; тройственность:
+поворот осей ↦ ½L₁L₂, ½R₁R₂, exp(2π·) = +1, −1, −1, на 𝔤₂ слоты совпадают; Spin(9) на ℂ⁷ не действует (9 > 7);
+централизатор цвета в 𝔲(7) 3-мерен; идеал Cl(ℝ⁷)·(1 + vol)(1 + φ)/16 восьмимерен и изоморфен (𝕆, R);
+ни один из 21 клиффордова бивектора не сохраняет число частиц).
+
 Запуск: `python3 scripts/check_core_numbers.py` или `pytest scripts/check_core_numbers.py`.
 """
 import functools
@@ -7126,6 +7133,226 @@ def test_lambda_as_a_holon_count_is_a_reparametrisation():
     Ms = np.array([1e120, 1e121, M, 1e123])
     lams = 3 * np.pi / (lp2 * Ms * np.log(7))
     assert np.all(np.diff(lams) < 0) and abs(lams[2] / lam_obs - 1) < 1e-12
+
+
+def _svd_null(A, tol=1e-9):
+    _, s, Vt = np.linalg.svd(A)
+    return Vt[np.sum(s > tol):].T
+
+
+def _triality_triples():
+    """Тройки (A, B, C) ∈ 𝔰𝔬(8)³ с A(xy) = (Bx)y + x(Cy) — алгебра Ли тройственности."""
+    so8 = []
+    for i in range(8):
+        for j in range(i + 1, 8):
+            M = np.zeros((8, 8))
+            M[i, j], M[j, i] = -1.0, 1.0
+            so8.append(M)
+    E = [unit(k) for k in range(8)]
+    rows = []
+    for x in range(8):
+        for y in range(8):
+            blk = np.zeros((8, 84))
+            for t, M in enumerate(so8):
+                blk[:, t] = M @ omul(E[x], E[y])
+                blk[:, 28 + t] = -omul(M @ E[x], E[y])
+                blk[:, 56 + t] = -omul(E[x], M @ E[y])
+            rows.append(blk)
+    Rm = np.vstack(rows)
+    to_m = lambda v: sum(v[t] * so8[t] for t in range(28))
+    trip = [(to_m(v[:28]), to_m(v[28:56]), to_m(v[56:])) for v in _svd_null(Rm).T]
+    return trip, Rm
+
+
+def _cl7_blade_mul(a, b):
+    """Произведение базисных лезвий Cl_{0,7} (e_k² = −1), лезвия — битовые маски."""
+    s, x = 1, a >> 1
+    while x:
+        s *= (-1) ** bin(x & b).count("1")
+        x >>= 1
+    return s * (-1) ** bin(a & b).count("1"), a ^ b
+
+
+def _cl7_mult(v, left=True):
+    D = 128
+    M = np.zeros((D, D))
+    for a in np.nonzero(v)[0]:
+        for b in range(D):
+            s, c = _cl7_blade_mul(a, b) if left else _cl7_blade_mul(b, a)
+            M[c, b] += s * v[a]
+    return M
+
+
+def _form_derivation(X):
+    """Тензорное действие X ∈ 𝔰𝔬(7) на Λ•ℝ⁷ (дифференцирование, продолженное с Λ¹)."""
+    D = 128
+    M = np.zeros((D, D))
+    for b in range(D):
+        idx = [i for i in range(7) if b >> i & 1]
+        for pos, i in enumerate(idx):
+            for j in range(7):
+                if X[j, i] == 0 or (j != i and b >> j & 1):
+                    continue
+                new = idx.copy()
+                new[pos] = j
+                sgn = np.linalg.det(np.eye(len(new))[np.argsort(new)])
+                M[(b & ~(1 << i)) | (1 << j), b] += X[j, i] * sgn
+    return M
+
+
+def _weyl_dim_b(lam):
+    """Размерность неприводимого представления B_n со старшим весом lam (ортогональный базис)."""
+    from fractions import Fraction as Fr
+    n = len(lam)
+    rho = [Fr(2 * (n - i) - 1, 2) for i in range(n)]
+    lv = [Fr(lam[i]) + rho[i] for i in range(n)]
+    num = den = Fr(1)
+    for i in range(n):
+        num, den = num * lv[i], den * rho[i]
+        for j in range(i + 1, n):
+            num *= lv[i] ** 2 - lv[j] ** 2
+            den *= rho[i] ** 2 - rho[j] ** 2
+    return int(num / den)
+
+
+def test_spinors_from_the_tensorial_holon_triality_kahler_dirac_and_bosonic_textures():
+    """T-350: спиноры из тензорного примитива — что даёт каждый путь; (Кл₀) не выводится, но уточняется.
+
+    (а) Текстуры: π₃ изоспектральной орбиты Γ с кратностями (n₁, …, n_r) — ℤ лишь при всех n_i = 1 (1 из 15
+    разбиений семи); у полного флага нечётных когомологий нет (Пуанкаре: 5040 клеток, все чётные), у G₂ степени
+    3 и 11 — H⁵ = 0, нет члена Весса–Зумино; π₁ сектора Map_Q(S³, Fl) = coker(ℤ⁷ → ℤ) = 0; D(ℂ⁷) выпукло.
+    c₁(Gr_k(ℂ⁷)) = 7 нечётно — пространство чистых состояний ℂP⁶ не спинорно; c₁(Fl) = 2ρ чётно.
+    (в) Тройственность: алгебра троек (A, B, C) с A(xy) = (Bx)y + x(Cy) — 28-мерна, каждая проекция —
+    изоморфизм; неподвижная A = B = C — 14 = 𝔤₂; при A(1) = 0 — 21 = 𝔰𝔬(7): в слоте A 1 ⊕ 7 (коммутант 2),
+    в слотах B, C неприводимо (коммутант 1). Поворот осей в плоскости (e₁, e₂) в слоте A — это ½L₁L₂ в B
+    и ½R₁R₂ в C; exp(2π·) = +1, −1, −1. На 𝔤₂ B = C = A.
+    (г) Наведённые действия: наименьшее нетривиальное представление Spin(9) — 9 > 7, спинорное — 16;
+    представления Spin(7) размерности ≤ 7 — 1 и 7; спинорные Spin(3) чётномерны, 7^m нечётно;
+    централизатор цвета в 𝔲(7) — 3-мерен (𝔲(1)³), 𝔰𝔲(2) нет.
+    (д) Кэлер–Дирак: на Λ•ℝ⁷ (128) c(v) = v∧ − ι_v — система Клиффорда; φ как элемент Cl имеет спектр
+    ±7 (по 8), ±1 (по 56); p = (1 + vol)(1 + φ)/16 — примитивный идемпотент (ранг L(p) — 8); идеал Cl·p
+    8-мерен, неприводим (алгебра 64), G₂-устойчив (коммутант 2); x ↦ xp переводит c(e_k) в R_{e_k} и
+    тензорное 𝔤₂ в дифференцирования. Тензорный поворот на 2π — +1, левый клиффордов — −1; из 21 бивектора
+    c_k c_l ни одна комбинация не сохраняет степень (число частиц), сохраняющая часть c₁c₂ — тензорный поворот.
+    """
+    from math import factorial
+    # (а) текстуры
+    def parts(n, m=None):
+        m = n if m is None else m
+        if n == 0:
+            yield ()
+            return
+        for k in range(min(n, m), 0, -1):
+            for rest in parts(n - k, k):
+                yield (k,) + rest
+    pi3 = {p: int(all(k == 1 for k in p)) for p in parts(7)}
+    assert len(pi3) == 15 and sum(pi3.values()) == 1 and pi3[(1,) * 7] == 1
+    poly = np.array([1])
+    for k in range(1, 8):
+        f = np.zeros(2 * k - 1, dtype=int)
+        f[::2] = 1
+        poly = np.convolve(poly, f)
+    assert poly.sum() == factorial(7) == 5040 and not poly[1::2].any()
+    deg = lambda exps: {2 * e + 1 for e in exps}
+    assert 5 not in deg((1, 5)) and 5 in deg(range(7)) and 5 in deg((1, 2)) and deg((1,)) == {3}
+    assert np.gcd.reduce(np.ones(7, dtype=int)) == 1
+    rng = np.random.default_rng(350)
+    A = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+    G = A @ A.conj().T
+    G /= np.trace(G).real
+    for t in np.linspace(0, 1, 11):
+        H = (1 - t) * G + t * np.eye(7) / 7
+        assert np.linalg.eigvalsh(H).min() > -1e-12 and abs(np.trace(H) - 1) < 1e-12
+    c1_grassmannian = {k: 7 for k in range(1, 7)}             # c₁(Gr_k(ℂⁿ)) = n·σ₁
+    two_rho = [6 - 2 * i for i in range(7)]                    # c₁(U(7)/T) = 2ρ
+    assert all(v % 2 == 1 for v in c1_grassmannian.values()) and all(r % 2 == 0 for r in two_rho)
+    assert [14 * k - k * k - 1 == 2 * k * (7 - k) + k * k - 1 for k in range(1, 8)] == [True] * 7
+    # (в) тройственность
+    trip, Rm = _triality_triples()
+    assert len(trip) == 28
+    assert all(np.linalg.matrix_rank(np.array([tp[s].ravel() for tp in trip])) == 28 for s in range(3))
+    assert _svd_null(Rm[:, :28] + Rm[:, 28:56] + Rm[:, 56:]).shape[1] == 14
+    K = _svd_null(np.array([tp[0][:, 0] for tp in trip]).T)
+    assert K.shape[1] == 21
+    sub = [tuple(sum(k[t] * trip[t][s] for t in range(28)) for s in range(3)) for k in K.T]
+    assert [_real_commutant_dim([s[i] for s in sub], 8) for i in range(3)] == [2, 1, 1]
+    F = np.array([s[0].ravel() for s in sub]).T
+    slot = lambda M, i: sum(c * s[i] for c, s in zip(np.linalg.lstsq(F, M.ravel(), rcond=None)[0], sub))
+    A0 = np.zeros((8, 8))
+    A0[1, 2], A0[2, 1] = -1.0, 1.0
+    L8, R8 = [_lmul8(k) for k in range(8)], [_rmul8(k) for k in range(8)]
+    assert np.allclose(slot(A0, 0), A0)
+    assert np.allclose(slot(A0, 1), L8[1] @ L8[2] / 2) and np.allclose(slot(A0, 2), R8[1] @ R8[2] / 2)
+    assert np.allclose(expm(2 * np.pi * A0), np.eye(8))
+    assert np.allclose(expm(2 * np.pi * slot(A0, 1)), -np.eye(8))
+    assert np.allclose(expm(2 * np.pi * slot(A0, 2)), -np.eye(8))
+    for X in G2:
+        M = np.pad(X, ((1, 0), (1, 0)))
+        assert np.allclose(slot(M, 1), M) and np.allclose(slot(M, 2), M)
+    # (г) наведённые действия
+    small9 = [(1, 0, 0, 0), (0.5, 0.5, 0.5, 0.5), (1, 1, 0, 0), (2, 0, 0, 0)]
+    assert [_weyl_dim_b(w) for w in small9] == [9, 16, 36, 44]
+    b4 = [w for w in itertools.product(*[np.arange(0, 3, 0.5)] * 4)
+          if all(w[i] >= w[i + 1] for i in range(3)) and len({x % 1 for x in w}) == 1 and any(w)]
+    assert min(_weyl_dim_b(w) for w in b4) == 9
+    b3 = [w for w in itertools.product(*[np.arange(0, 4, 0.5)] * 3)
+          if all(w[i] >= w[i + 1] for i in range(2)) and len({x % 1 for x in w}) == 1]
+    assert sorted(_weyl_dim_b(w) for w in b3 if _weyl_dim_b(w) <= 7) == [1, 7]
+    assert min(_weyl_dim_b(w) for w in b3 if w[0] % 1) == 8
+    assert all((2 * j + 1) % 2 == 0 for j in np.arange(0.5, 10, 1.0))
+    assert all(7 ** m % 2 == 1 for m in range(1, 6))
+    assert _real_commutant_dim(_su3_of_e_o(), 7) == 3
+    # (д) Кэлер–Дирак
+    e = lambda i: np.eye(128)[1 << (i - 1)]
+    one = np.eye(128)[0]
+    c = [_cl7_mult(e(i)) for i in range(1, 8)]
+    for a in range(7):
+        for b in range(7):
+            assert np.allclose(c[a] @ c[b] + c[b] @ c[a], -2 * (a == b) * np.eye(128))
+    for i in range(7):
+        W = np.zeros((128, 128))
+        for b in range(128):
+            s = (-1) ** bin(b & ((1 << i) - 1)).count("1")
+            W[b ^ (1 << i), b] = -s if b >> i & 1 else s
+        assert np.allclose(c[i], W)
+    vol = functools.reduce(np.matmul, c)
+    assert np.allclose(vol @ vol, np.eye(128)) and all(np.allclose(vol @ m, m @ vol) for m in c)
+    phi = sum(c[i - 1] @ c[j - 1] @ e(k) for i, j, k in LINES)
+    Lphi = _cl7_mult(phi)
+    ev = np.round(np.linalg.eigvalsh(Lphi)).astype(int)
+    assert np.allclose(Lphi, Lphi.T)
+    assert {v: int((ev == v).sum()) for v in (-7, -1, 1, 7)} == {-7: 8, -1: 56, 1: 56, 7: 8}
+    p = (np.eye(128) + vol) @ (np.eye(128) + Lphi) @ one / 16
+    Lp = _cl7_mult(p)
+    assert np.allclose(Lp @ Lp, Lp) and np.linalg.matrix_rank(Lp) == 8
+    assert np.allclose(np.abs(p[np.abs(p) > 1e-12]), 1 / 16) and np.count_nonzero(np.abs(p) > 1e-12) == 16
+    Rp = _cl7_mult(p, left=False)
+    U, s, _ = np.linalg.svd(Rp)
+    assert int(np.sum(s > 1e-9)) == 8
+    B = U[:, :8]
+    ops = [B.T @ m @ B for m in c]
+    assert all(np.allclose(B @ o, m @ B) for o, m in zip(ops, c))
+    assert _real_commutant_dim(ops, 8) == 1 and _generated_algebra_dim(ops, 8) == 64
+    Tg = [_form_derivation(X) for X in G2]
+    assert all(np.allclose(B @ (B.T @ t @ B), t @ B) for t in Tg)
+    assert _real_commutant_dim([B.T @ t @ B for t in Tg], 8) == 2
+    Psi = np.array([Rp @ b for b in [one] + [e(k) for k in range(1, 8)]]).T
+    assert np.linalg.matrix_rank(Psi) == 8
+    assert all(np.allclose(c[k - 1] @ Psi, Psi @ R8[k]) for k in range(1, 8))
+    assert not all(np.allclose(c[k - 1] @ Psi, Psi @ L8[k]) for k in range(1, 8))
+    assert all(np.allclose(t @ Psi, Psi @ np.pad(X, ((1, 0), (1, 0)))) for t, X in zip(Tg, G2))
+    Erot = np.zeros((7, 7))
+    Erot[0, 1], Erot[1, 0] = -1.0, 1.0
+    T12 = _form_derivation(Erot)
+    assert np.allclose(expm(2 * np.pi * T12), np.eye(128))
+    assert np.allclose(expm(np.pi * c[0] @ c[1]), -np.eye(128))
+    Nop = np.diag([bin(b).count("1") for b in range(128)]).astype(float)
+    biv = [c[k] @ c[l] for k in range(7) for l in range(k + 1, 7)]
+    comm = np.array([(Nop @ X - X @ Nop).ravel() for X in biv]).T
+    assert np.linalg.matrix_rank(comm, tol=1e-9) == 21
+    keep = lambda X: sum(np.diag(np.diag(Nop) == d).astype(float) @ X @ np.diag(np.diag(Nop) == d).astype(float)
+                         for d in range(8))
+    assert np.allclose(keep(c[0] @ c[1]), T12)
 
 
 def main():
