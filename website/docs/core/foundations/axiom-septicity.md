@@ -1095,7 +1095,7 @@ $$
 | 9 | $(7,3,1)$-BIBD ≅ PG(2,2) | **[T]** Hall 1967 |
 | 10–12 | PG(2,2) → $\mathbb{O}$ → $G_2$ → P1+P2 | **[T]**: step 10 takes the canonical orientation (T15-canon; it was the input (Alt) earlier on 2026-09-25); $\mathbb{O}$ → $G_2$ → P1+P2 is standard algebra [T] |
 
-**Cascade:** P1, P2 — **[T]**. Track B — **[T]**. Fano PG(2,2) and Hamming $H(7,4)$ as combinatorics — **[T]** (steps 1–9); $G_2 = \mathrm{Aut}(\mathbb{O})$ — **[T]**. The maximality half of the double extremality (via Track B) excludes other dimensions through Hurwitz, which needs P1 for a competing decomposition; it carries the same condition as the strict necessity of $N = 7$, [C at (P1₆)]. The cascade read "all [T]" until 2026-09-25, then [C at (Alt)] until T15-canon the same day.
+**Cascade:** P1, P2 — **[T]**. Track B — **[T]**. Fano PG(2,2) and Hamming $H(7,4)$ as combinatorics — **[T]** (steps 1–9); $G_2 = \mathrm{Aut}(\mathbb{O})$ — **[T]**. The maximality half of the double extremality (via Track B) excludes other dimensions through Hurwitz, which needs P1 for a competing decomposition; it was [C at (P1₆)] until 2026-09-28 and is now [C at (Σ₆⁺)] — perfect diagnosability of every decomposition with a rigid grammar — while the strict necessity of $N = 7$ needs only (Σ₆) ([T-349](/docs/proofs/minimality/theorem-minimality-7#t-349)). The cascade read "all [T]" until 2026-09-25, then [C at (Alt)] until T15-canon the same day.
 
 More: [Lindblad operators](../../core/operators/lindblad-operators#редукция-моста), [Octonionic derivation](../../proofs/minimality/theorem-octonionic-derivation#мост).
 

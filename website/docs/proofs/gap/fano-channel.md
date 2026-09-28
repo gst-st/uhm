@@ -472,7 +472,7 @@ The code H(7,4) is the unique perfect single-error-correcting binary code of len
 :::
 
 :::tip Theorem 14.2 (H(7,4) = PG(2,2), T9) [T] (standard)
-The codewords of weight 3 of the simplex code $S(3,7)$ (dual of H(7,4)) form **exactly 7 triples** coinciding with the lines of the Fano plane PG(2,2). The parity-check matrix of H(7,4) uniquely determines PG(2,2).
+The codewords of weight 3 of H(7,4) form **exactly 7 triples** coinciding with the lines of the Fano plane PG(2,2); they are the complements of the 7 non-zero words of its dual, the simplex code $S(3,7)$, all of weight 4 (corrected 2026-09-28: the theorem placed the weight-3 words in $S(3,7)$). The parity-check matrix of H(7,4) uniquely determines PG(2,2).
 :::
 
 **Interpretation:** Autopoiesis as self-correction of errors — the system distinguishes 8 situations ({no perturbation} ∪ {perturbation in dimension $i$}), which requires at least $\lceil\log_2 8\rceil = 3$ independent observations. The perfect code H(7,4) implements optimal correction.

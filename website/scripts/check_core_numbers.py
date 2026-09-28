@@ -7128,6 +7128,188 @@ def test_lambda_as_a_holon_count_is_a_reparametrisation():
     assert np.all(np.diff(lams) < 0) and abs(lams[2] / lam_obs - 1) < 1e-12
 
 
+def _hamming_code(r):
+    """Двоичный код Хэмминга длины 2^r − 1: ядро проверочной матрицы из всех ненулевых столбцов."""
+    n = 2 ** r - 1
+    H = np.array([[(j >> b) & 1 for j in range(1, n + 1)] for b in range(r)])
+    G = []
+    for v in itertools.product([0, 1], repeat=n):
+        if not (H @ np.array(v) % 2).any():
+            G.append(np.array(v))
+    return G
+
+
+def test_diagnosability_premise_gives_strict_necessity_without_hurwitz():
+    """T-349(a)–(c): (Σ₆) = (D1)–(D3) теоремы Σ для всякого разложения даёт N ≥ 7 без Гурвица.
+
+    Упаковка шаров: (N+1)|C| = 2^N ⇒ N + 1 — степень двойки (N = 6: 7 ∤ 64); N = 1, 3 дают
+    |C| = 1, 2 — против (D3). При N = 7 грамматика — H(7,4), веса 1 + 7x³ + 7x⁴ + x⁷, семь слов
+    веса 3 — прямые Фано. Сила: код Хэмминга длины 15 совершенен (16·2¹¹ = 2¹⁵), (D1)–(D3)
+    выполнены, а нормированной алгебры с делением размерности 16 нет; его слов веса 3 — 35
+    (прямые PG(3,2)), не 15.
+    """
+    ladder = [n for n in range(1, 41) if 2 ** n % (n + 1) == 0]
+    assert ladder == [1, 3, 7, 15, 31]
+    assert 2 ** 6 % 7 != 0
+    assert [2 ** n // (n + 1) for n in (1, 3, 7, 15)] == [1, 2, 16, 2 ** 11]
+    code7 = _hamming_code(3)
+    assert len(code7) == 16
+    w = [int(c.sum()) for c in code7]
+    assert {k: w.count(k) for k in set(w)} == {0: 1, 3: 7, 4: 7, 7: 1}
+    dmin = min(int(((a + b) % 2).sum()) for a, b in itertools.combinations(code7, 2))
+    assert dmin == 3
+    # радиус-1 шары вокруг 16 слов разбивают все 128 профилей
+    cover = {tuple((c + e) % 2) for c in code7 for e in [np.zeros(7, int)] + list(np.eye(7, dtype=int))}
+    assert len(cover) == 128 and 16 * 8 == 2 ** 7
+    lines = {frozenset(np.nonzero(c)[0]) for c in code7 if c.sum() == 3}
+    pairs = [frozenset(p) for p in itertools.combinations(range(7), 2)]
+    assert len(lines) == 7 and all(sum(p <= L for L in lines) == 1 for p in pairs)
+    assert all(len(a & b) == 1 for a, b in itertools.combinations(lines, 2))
+    # N = 15: совершенный код, 35 слов веса 3 (прямые PG(3,2)); 16 не размерность Гурвица
+    r, n = 4, 15
+    H = np.array([[(j >> b) & 1 for j in range(1, n + 1)] for b in range(r)])
+    w3 = [c for c in itertools.combinations(range(n), 3) if not H[:, list(c)].sum(axis=1).__mod__(2).any()]
+    assert len(w3) == 35 == n * (n - 1) // 6
+    assert (1 + n) * 2 ** (n - r) == 2 ** n
+    assert n + 1 not in (1, 2, 4, 8)
+
+
+def test_hosting_route_needs_hurwitz_and_does_not_exclude_quaternions():
+    """T-349(d): путь хостинга (Основания математики, Часть XVIII, гл. 11) не заменяет (P1₆).
+
+    |QR(N)| = (N−1)/2 при N = 3, 5, 7, 11, 13; кратность Пэли (N−3)/4 при N ≡ 3 (mod 4).
+    Перестановки единиц, сохраняющие ориентированную таблицу: у 𝕆 — 21 (аффинные x ↦ ax + b,
+    a ∈ QR(7) = {1,2,4}; F₂₁), у ℍ — 3 (циклы i → j → k), свободно и транзитивно на {i,j,k} —
+    три равных различимых сектора есть и у ℍ. Невычеты 3, 5, 6 переводят прямые в дополнительный
+    дизайн; ×2 действует на прямых с цикловым типом 1 + 3 + 3; у репера ℍ одна прямая (b = 1).
+    """
+    for n, size, lam in [(3, 1, 0), (5, 2, None), (7, 3, 1), (11, 5, 2), (13, 6, None)]:
+        qr = {x * x % n for x in range(1, n)}
+        assert len(qr) == size == (n - 1) // 2
+        if lam is not None:
+            diffs = [(a - b) % n for a in qr for b in qr if a != b]
+            assert all(diffs.count(d) == lam == (n - 3) // 4 for d in range(1, n))
+
+    def table(lines):
+        t = {}
+        for a, b, c in lines:
+            for x, y, z in [(a, b, c), (b, c, a), (c, a, b)]:
+                t[(x, y)] = (1, z)
+                t[(y, x)] = (-1, z)
+        return t
+
+    def perm_auts(t, n):
+        return [p for p in itertools.permutations(range(n))
+                if all(t[(p[x], p[y])] == (s, p[z]) for (x, y), (s, z) in t.items())]
+
+    fano = [((t + 1) % 7, (t + 2) % 7, (t + 4) % 7) for t in range(7)]
+    auts7 = perm_auts(table(fano), 7)
+    affine = {tuple((a * x + b) % 7 for x in range(7)) for a in (1, 2, 4) for b in range(7)}
+    assert len(auts7) == 21 and set(auts7) == affine
+    auts3 = perm_auts(table([(0, 1, 2)]), 3)
+    assert sorted(auts3) == [(0, 1, 2), (1, 2, 0), (2, 0, 1)]
+    assert all(all(p[i] != i for i in range(3)) for p in auts3 if p != (0, 1, 2))
+    lineset = {frozenset(L) for L in fano}
+    comp = {frozenset((-x) % 7 for x in L) for L in fano}
+    for a in range(1, 7):
+        img = {frozenset(a * x % 7 for x in L) for L in fano}
+        assert (img == lineset) == (a in (1, 2, 4)) and (img == comp) == (a in (3, 5, 6))
+    order = list(lineset)
+    perm = [order.index(frozenset(2 * x % 7 for x in L)) for L in order]
+    cycles, seen = [], set()
+    for i in range(7):
+        c = 0
+        while i not in seen:
+            seen.add(i)
+            i = perm[i]
+            c += 1
+        if c:
+            cycles.append(c)
+    assert sorted(cycles) == [1, 3, 3]
+    # множество Пэли p = 3: сдвиги {1} — одноточечные, не таблица кватернионов
+    assert [{(1 + t) % 3} for t in range(3)] == [{1}, {2}, {0}]
+
+
+def test_fano_lines_are_weight_three_words_of_hamming_not_of_the_simplex_code():
+    """T9 (исправлено 28.09.2026): прямые Фано — слова веса 3 кода H(7,4), а не его дуального.
+
+    Дуальный S(3,7) натянут на строки проверочной матрицы: 7 ненулевых слов, все веса 4; он
+    лежит в H(7,4), как и вектор из единиц, так что дополнения слов S(3,7) — семь слов веса 3
+    кода H(7,4), и их носители — семь прямых Фано.
+    """
+    H = np.array([[(j >> b) & 1 for j in range(1, 8)] for b in range(3)])
+    simplex = {tuple(np.array(m) @ H % 2) for m in itertools.product([0, 1], repeat=3)}
+    assert sorted(sum(w) for w in simplex) == [0] + [4] * 7
+    ham = {tuple(c) for c in _hamming_code(3)}
+    assert simplex <= ham and tuple([1] * 7) in ham
+    w3 = {c for c in ham if sum(c) == 3}
+    assert w3 == {tuple(1 - x for x in w) for w in simplex if sum(w) == 4}
+
+
+def test_three_self_model_maps_lipschitz_constants_and_the_fed_loop():
+    """φ-оператор, «Какой φ сжимает» (28.09.2026): три отображения φ и петля с питанием.
+
+    φ_coh = kP_α(Γ) + (1−k)I/7, k = 1 − R: радиальная производная t(t+3)/(1+t)², t = 7‖Γ − I/7‖²,
+    максимум 9/8 при t = 3 (P = 4/7), 54/49 в чистом состоянии, при α = 0, ½, 1 — константа
+    Липшица 9/8, а не «до 54/49». Форма замены RΓ + (1−R)I/7 и замена к ней (1−k²)Γ + k²I/7
+    («канонический φ» Оснований, Часть XVIII, гл. 9) нерастягивающие: производные в [−1/8, 1] и
+    [−17/108, 1]. Замкнутая форма R_φ = 1 − (1−R)⁴‖Γ − I/7‖²/‖Γ‖² точна лишь для третьей,
+    R_φ = 1 − (1−R)³ — для второй. Петля U[(1−μ)φ + μΘ]U†: Lip = (1−μ)Lip φ; с φ_coh при
+    μ = 0,05 две диагональные точки у P = 4/7 расходятся в 1,069 раза.
+    """
+    I7 = np.eye(7) / 7
+
+    def coh(G, alpha):
+        D = np.diag(np.diag(G))
+        R = 1 / (7 * purity(G))
+        return (1 - R) * (D + (1 - alpha) / 3 * (G - D)) + R * I7
+
+    def rep(G):
+        R = 1 / (7 * purity(G))
+        return R * G + (1 - R) * I7
+
+    def cat(G):
+        k = 1 - 1 / (7 * purity(G))
+        return (1 - k * k) * G + k * k * I7
+
+    e0 = np.diag(np.eye(7)[0]).astype(complex)
+    ray = lambda s: (1 - s) * I7 + s * e0
+    h = 1e-7
+
+    def radial(f, s):
+        return np.linalg.norm(f(ray(s + h)) - f(ray(s))) / np.linalg.norm(ray(s + h) - ray(s))
+
+    grid = np.linspace(0.002, 1 - 2e-7, 1500)
+    for alpha in (0.0, 0.5, 1.0):
+        f = lambda G: coh(G, alpha)
+        vals = [radial(f, s) for s in grid]
+        assert abs(max(vals) - 9 / 8) < 1e-5 and abs(grid[int(np.argmax(vals))] - 2 ** -0.5) < 2e-3
+        assert abs(radial(f, 1 - 2e-7) - 54 / 49) < 1e-5
+    t = np.linspace(0, 6, 60001)
+    assert abs((t * (t + 3) / (1 + t) ** 2).max() - 9 / 8) < 1e-12
+    hr, hk = (1 - t) / (1 + t) ** 2, 1 - t ** 2 * (t + 5) / (1 + t) ** 3
+    assert abs(hr.min() + 1 / 8) < 1e-9 and hr.max() <= 1 + 1e-12
+    assert abs(hk.min() + 17 / 108) < 1e-9 and hk.max() <= 1 + 1e-12
+    rng = np.random.default_rng(28)
+    for f in (rep, cat):
+        for _ in range(400):
+            A, B = random_state(rng), random_state(rng)
+            B = A + 1e-3 * (B - A) if rng.random() < 0.5 else B
+            assert np.linalg.norm(f(A) - f(B)) <= np.linalg.norm(A - B) * (1 + 1e-9)
+    for _ in range(100):
+        G = random_state(rng)
+        R, dev, P = 1 / (7 * purity(G)), np.linalg.norm(G - I7) ** 2, purity(G)
+        r_phi = lambda f: 1 - np.linalg.norm(G - f(G)) ** 2 / P
+        assert abs(r_phi(cat) - (1 - (1 - R) ** 4 * dev / P)) < 1e-12
+        assert abs(r_phi(rep) - (1 - (1 - R) ** 3)) < 1e-12
+    mu = 0.05
+    loop = lambda f, G: (1 - mu) * f(G) + mu * e0
+    a, b = ray(2 ** -0.5 - 1e-4), ray(2 ** -0.5 + 1e-4)
+    ratio = np.linalg.norm(loop(lambda G: coh(G, 0.5), a) - loop(lambda G: coh(G, 0.5), b)) / np.linalg.norm(a - b)
+    assert abs(ratio - (1 - mu) * 9 / 8) < 1e-6 and ratio > 1.068
+    assert np.linalg.norm(loop(cat, a) - loop(cat, b)) < (1 - mu) * np.linalg.norm(a - b)
+
+
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
     bad = 0
