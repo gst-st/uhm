@@ -436,7 +436,7 @@ $$
 
 **(b) Uniqueness depends on the self-model.** $\varphi_{\mathrm{coh}}$ has exactly one fixed point, $I/7$. $\varphi_J$ has exactly one, $\Gamma_{\eta_\infty} = (1 - \eta_\infty)\,I/7 + \eta_\infty\,uu^\dagger$, where $\eta_\infty$ is the unique positive root of $6(1 - c)\eta^3 + \eta - 1 = 0$, $c = (1 - \alpha)/3$; its purity $(1 + 6\eta_\infty^2)/7$ is $5/14$, $0.334$, $0.317$ at $\alpha = 0, 1/2, 1$ — the upper end $P_\infty$ of the [living attractor](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне). $\varphi_s$ has at least eight: $I/7$ and the seven basis states.
 
-**(c) No contraction.** Banach's theorem applies to none of them: near pure states $\varphi_{\mathrm{coh}}$ stretches Frobenius distances by up to $54/49$ and $\varphi_J$ by $1.129$.
+**(c) No contraction.** Banach's theorem applies to none of them: $\varphi_{\mathrm{coh}}$ stretches Frobenius distances by up to $9/8$ (at $P = 4/7$; $54/49$ at pure states; "up to $54/49$" until 2026-09-28) and $\varphi_J$ by $1.129$ at a basis state ([which maps contract](/docs/core/operators/phi-operator#три-отображения-сжатие)).
 
 Applying Gap to both sides, we obtain the self-referential Gap:
 
