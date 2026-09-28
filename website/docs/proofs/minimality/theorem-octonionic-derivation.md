@@ -370,9 +370,9 @@ Below are the 15 bridge steps with full inline proofs. The dependencies of each 
 
 #### Step T9. T8 → support of H(7,4) = PG(2,2) [T] {#шаг-t9}
 
-**Statement.** The codewords of weight 3 of the simplex code $S(3,7)$ (dual to $H(7,4)$) form exactly 7 triples — the lines of the Fano plane PG(2,2).
+**Statement.** The codewords of weight 3 of $H(7,4)$ form exactly 7 triples — the lines of the Fano plane PG(2,2); they are the complements of the 7 non-zero words of the simplex code $S(3,7)$, the dual of $H(7,4)$. (Corrected 2026-09-28: the statement placed the weight-3 words in $S(3,7)$, whose non-zero words all have weight 4.)
 
-**Proof.** The parity-check matrix of $H(7,4)$ consists of all 7 nonzero columns of $\mathbb{F}_2^3$. The dual code $S(3,7)$ has $2^3 - 1 = 7$ codewords of weight 3. Each such word is the characteristic vector of a 3-element subset of $\{1,\ldots,7\}$. These 7 triples are the lines of the projective plane $\text{PG}(2,2)$: each line contains 3 points, each point lies on 3 lines, through any 2 points there is exactly 1 line. Standard result (see §1.5, §1.7). $\square$
+**Proof.** The parity-check matrix of $H(7,4)$ consists of all 7 nonzero columns of $\mathbb{F}_2^3$. The dual code $S(3,7)$, spanned by the rows of that matrix, has $2^3 - 1 = 7$ non-zero words, all of weight 4; it lies inside $H(7,4)$, which also contains $\mathbf{1}$, so their complements are the 7 codewords of weight 3 of $H(7,4)$ (weight distribution $1 + 7x^3 + 7x^4 + x^7$). Each such word is the characteristic vector of a 3-element subset of $\{1,\ldots,7\}$. These 7 triples are the lines of the projective plane $\text{PG}(2,2)$: each line contains 3 points, each point lies on 3 lines, through any 2 points there is exactly 1 line. Standard result (see §1.5, §1.7). $\square$
 
 **Status:** **[T]** — standard algebra of finite fields.
 
@@ -492,7 +492,7 @@ $k=3$ **strictly dominates** by the first three criteria; the decisive selectors
 | T6 | (PH) ⟹ $\operatorname{rank}(\rho_E) > 1$ | (PH) | Non-triviality of qualia | **[T]** |
 | T7 | T4 ⟹ $c > 0$ | T4 | Exponential suppression of $\kappa_0$ at $c=0$ | **[T]** |
 | T8 | T7 + $N{=}7$ ⟹ $H(7,4)$ | T7, Theorem S (Track A: $N=7$) | Hamming bound, uniqueness | **[T given Track A]** |
-| T9 | T8 ⟹ PG(2,2) | T8 | Dual code $S(3,7)$ | **[T]** |
+| T9 | T8 ⟹ PG(2,2) | T8 | Weight-3 words of $H(7,4)$ (complements of $S(3,7)$) | **[T]** |
 | T10 | T9 ⟹ Fano optimality | T9, T7 | T4 (dominance of $k=3$) | **[T]** |
 | T11 | T10 ⟹ Choi rank = 7 | T10 | 7 independent projectors | **[T]** |
 | T12 | T11 ⟹ BIBD$(7,3,1)$ | T11 | L-unification + coverage of 21 pairs | **[T]** |
@@ -551,7 +551,7 @@ Theorem T6 (uniform contraction) [T] proves democraticity of contraction **uncon
 
 **Theorem T8 (Hamming bound) [T] (standard).** Code H(7,4) is the unique perfect single-error binary code of length 7: $2^3 = 7 + 1$.
 
-**Theorem T9 (H(7,4) = PG(2,2)) [T] (standard).** The codewords of weight 3 of the simplex code $S(3,7)$ (dual to H(7,4)) form **exactly 7 triples** = lines of the Fano plane.
+**Theorem T9 (H(7,4) = PG(2,2)) [T] (standard).** The codewords of weight 3 of H(7,4) — the complements of the 7 non-zero words of its dual, the simplex code $S(3,7)$ — form **exactly 7 triples** = lines of the Fano plane.
 
 **Theorem T10 (Autopoietic optimality of Fano) [T].** Among $S_7$-invariant BIBD$(7,k,1)$-channels satisfying $c > 0$ (T7), coverage completeness (T2), democraticity (T6), the unique optimal one is the Fano channel ($k = 3$, $c = 1/3$).
 
@@ -598,7 +598,7 @@ The Hamming code H(7,4) gives an **information-theoretic justification** of the 
 | 7 code positions | 7 dimensions {A,S,D,L,E,O,U} | Information carriers |
 | 4 information bits | 4 "free" degrees of freedom | Self-model content |
 | 3 check bits | 3 "control" observations | Perturbation syndrome |
-| 7 rows of $S(3,7)$ of weight 3 | 7 Fano lines | Composite observations |
+| 7 words of $H(7,4)$ of weight 3 | 7 Fano lines | Composite observations |
 | $d = 3$ (code distance) | Distinguishability of 1-errors | Minimum for correction |
 
 **The number 3** appears in four independent contexts:

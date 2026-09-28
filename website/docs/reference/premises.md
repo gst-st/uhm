@@ -7,7 +7,7 @@ description: "Every premise the current UHM corpus uses: axioms, named principle
 # Premises of UHM
 
 :::info What this page is
-One list of everything the corpus **assumes** rather than proves, as of 2026-09-26. Each entry names the premise, its status, the results that use it and what is known about deriving it. The [status registry](/docs/reference/status-registry) remains the canonical record of each result; this page is the canonical record of the inputs. A result that uses none of the premises in sections 2–4 is listed in section 6.
+One list of everything the corpus **assumes** rather than proves, as of 2026-09-28. Each entry names the premise, its status, the results that use it and what is known about deriving it. The [status registry](/docs/reference/status-registry) remains the canonical record of each result; this page is the canonical record of the inputs. A result that uses none of the premises in sections 2–4 is listed in section 6.
 
 Status letters are those of the registry: **[P]** postulate (an axiom), **[H]** hypothesis (formulated, not proven — here a named assumption), **[Pr]** research programme, here a principle kept open (neither assumed as an axiom nor claimed proven), **[D]** definition by convention; **[I]** interpretation and **[C]** conditional theorem appear only where a row names them, as in the registry. A free parameter is not a statement and has no letter.
 :::
@@ -29,7 +29,7 @@ A premise counts as **used** when a live registry row or theorem carries `[C at 
 | **Metatheory** | ∞-categories / homotopy type theory as the language; intuitionistic internal logic | every page | outside the theory ([honest axiomatics](/docs/core/foundations/axiom-omega#аксиоматика)) |
 | **A1** | reality is the ∞-topos $\mathbf{Sh}_\infty(\mathcal C)$ over $\mathcal D(\mathbb C^N)$ | all results | [P]; derivable from the operational basis only through the hypothesis T-186(a) (T-190) |
 | **A2** | the Grothendieck topology is induced by the Bures metric | the topology, the stratification, T-173, T-190 | [P]; its topology is forced (every continuous distance on the compact $\mathcal D$ induces the standard one), and within the CPTP-monotone metrics Bures is canonical (T-187; the maximum-entropy recasting T-189) — what stays postulated is the monotonicity of the enrichment. It is not derivable from (AP)+(PH)+(QG)+(V)+MaxEnt, so it is the third condition of T-190; it follows from the operational reading (O) — the enrichment is the best distinguishability reachable by measurement — which also gives Bures directly (Fuchs–Caves), so the postulated content can be stated as (O) ([Lemma M](/docs/proofs/categorical/cohesive-closure#лемма-монотонность-обогащения)) |
-| **A3** | $N = 7$ | all results | [P]; $N \geq 7$ is [T] (Theorem S); strict necessity needs (P1₆), section 3 |
+| **A3** | $N = 7$ | all results | [P]; $N \geq 7$ is [T] (Theorem S); strict necessity needs (Σ₆), section 3 (T-349; (P1₆) until 2026-09-28) |
 | **A4** | the scale $\omega_0 > 0$ | dynamics, calibration | [P]; its value is a free parameter, section 4 |
 | **A5 constraint** | $\hat C\,\Gamma = 0$, the support condition $\mathrm{supp}\,\Gamma \subseteq \ker\hat C$ of Property 2 — the form of the timeless state | the Page–Wootters link of the clock (T-87, step 4), T-190 | [P]; the clock register and the tensor factor of A5 are [T] (T-87, steps 1–3); the constraint is not derived ([A5](/docs/core/foundations/axiom-omega#pw-constraint)) |
 | **(QG)'s formalism** | states are density matrices, admissible maps are CPTP (definition O3) | all dynamics | [D]; "why quantum theory" stays external (T-188) |
@@ -77,13 +77,18 @@ T-329 uses only that the spinor factor of the fermion field is a complex space o
 
 **Not derivable from the axioms**: the self-modelling adjunction and the terminal object make $\varphi$ a CPTP left adjoint and leave its anchor open (every anchor gives a channel of the same form). Routes closed in T-334: Curie's principle (gives the family $D((1-t)I/7 + t\,uu^\dagger)D^\dagger$, not $t = 1$), the terminal object (gives (Eq) only), Lawvere and Brouwer (fixed points, not anchors), viability alone. Section 7 adds the routes through the corpus's variational principles.
 
-### (P1₆) — P1 for a competing decomposition [H] {#посылка-p16}
+<a id="посылка-сигма6"></a>
+<a id="посылка-p16"></a>
 
-**Statement.** P1 holds for any decomposition covering (AP)+(PH)+(QG), not only for the seven-dimensional one ([strict necessity of N = 7](/docs/proofs/minimality/theorem-minimality-7#теорема-строгая-необходимость-7)).
+### (Σ₆) — every decomposition is perfectly diagnosable [H]
 
-**Used by.** The strict necessity of $N = 7$ (excluding a rival six-function decomposition) and the maximality half of the double extremality through Track B. $N \geq 7$ does not use it.
+**Statement.** Every decomposition of a viable holon into axes covering (AP)+(PH)+(QG) has a grammar of admissible status profiles $\mathcal{C} \subseteq \mathbb{F}_2^N$ with (D1) $d(\mathcal{C}) \geq 3$, (D2) perfect localisation of a single faulty axis (the radius-1 balls around $\mathcal{C}$ partition $\mathbb{F}_2^N$) and (D3) $\lvert\mathcal{C}\rvert > 2$ ([Theorem Σ](/docs/applied/research/syndrome-calculus#аксиомы)). **(Σ₆⁺)** adds (D4): the grammar is unique up to relabelling and translation.
 
-**Status.** The chain T1–T15 proves P1 for the frame it starts from, whose step T8 consumes $N = 7$ from Track A; the orientation input (Alt) of that chain is discharged (T15-canon, section 5). No model of a competing decomposition is known, so independence is open.
+**Used by.** The strict necessity of $N = 7$ — no decomposition with fewer than seven axes — [C at (Σ₆)] ([T-349](/docs/proofs/minimality/theorem-minimality-7#t-349)(a)). With (D4): the maximality half of the double extremality and the statement (P1₆) below, [C at (Σ₆⁺)] (T-349(b)). $N \geq 7$ for F1–F7 does not use it.
+
+**Status.** [H]. For the seven-dimensional frame it is what Step T8 of the bridge asks; [Corollary Σ.1](/docs/applied/research/syndrome-calculus#следствие-диагностика) calls the reading of UHM's axes as diagnosable status bits interpretive [I]. It is strictly weaker than the input it replaced — (P1₆) together with P2 for the competitor implies (Σ₆⁺), while the Hamming grammar of length 15 satisfies (Σ₆) and admits no normed division algebra (T-349(c)). No model of a competing decomposition covering the axioms is known, so its independence from A1–A5 is open.
+
+**Replaced 2026-09-28: (P1₆) — P1 for a competing decomposition.** P1 holds for any decomposition covering (AP)+(PH)+(QG), not only for the seven-dimensional one. It was the premise of the [strict necessity of N = 7](/docs/proofs/minimality/theorem-minimality-7#теорема-строгая-необходимость-7) from 2026-09-25 to 2026-09-28, and the Hurwitz route that used it also needed P2 for the competitor (P1 alone leaves $\mathbb{H}$, $N = 3$). The chain T1–T15 proves P1 for the frame it starts from, and its Step T8 takes $N = 7$ from Track A; the orientation input (Alt) of that chain is discharged (T15-canon, section 5). (P1₆) is now [C at (Σ₆⁺)]: at $N = 7$ the grammar is $H(7,4)$ and Steps T9–T15 give P1 for the competitor (T-349(b)). The hosting route of the foundations corpus (Foundations of Mathematics, Part XVIII, ch. 11) does not discharge it: it starts from Hurwitz's list (T-349(d)).
 
 ### Flavour, vacuum and identification hypotheses [H] {#гипотезы-отождествления}
 
@@ -115,6 +120,7 @@ T-329 uses only that the spinor factor of the fermion field is a complex space o
 
 | Former premise | Discharged by | Date |
 |---|---|---|
+| (P1₆): P1 for a competing decomposition, as the premise of the strict necessity of $N = 7$ | [T-349](/docs/proofs/minimality/theorem-minimality-7#t-349): replaced by the strictly weaker (Σ₆); (P1₆) itself follows at (Σ₆⁺) | 2026-09-28 |
 | (Alt): the Fano orientation is the normed one | [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация): the unique orientation class invariant under the 168 collineations | 2026-09-25 |
 | (MP) | T11–T13 (Choi rank, L-unification, forced BIBD) | earlier |
 | (MM): elementary systems can be entangled | 48e(b): a theorem inside UHM | 2026-09-25 |
@@ -154,7 +160,7 @@ These are [T] from the axioms of section 2 alone (the metatheory, A1–A4, the c
 | $\kappa$ | $V_{\text{Gap}}$ with two values of $\kappa$ | both are consistent with every other premise and give different vacua (T-64) |
 | A5 constraint | a state off $\ker\hat C$ | section 2 |
 
-(P1₆) and the flavour hypotheses of section 3.4 are not in the table: no model of a competing decomposition is known, and the flavour hypotheses are stated inside the frame of (Cl₀), so they presuppose it.
+(Σ₆) and the flavour hypotheses of section 3.4 are not in the table: no model of a competing decomposition covering the axioms is known, and the flavour hypotheses are stated inside the frame of (Cl₀), so they presuppose it.
 
 ### (P) and (Cl₀): one sentence, two independent inputs {#слияние-p-кл0}
 
@@ -254,9 +260,9 @@ is a $G_2$-invariant primitive idempotent. The left ideal $\mathrm{Cl}(\mathbb R
 ### Other pairs {#другие-пары}
 
 - **(P) and (MaxΦ)** live in different factors (the spinor factor of matter, the anchor on $\mathbb C^7$); the $F_3$ model with anchor $uu^\dagger$ satisfies (MaxΦ) and not (P), the $\rho_t$ model with $n = 2$ satisfies (P) and not (MaxΦ). Independent.
-- **(P1₆) and (P)**: (P1₆) concerns the dimension of the state space, (P) the spinor factor of matter; no implication is known either way. Open.
+- **(Σ₆) and (P)**: (Σ₆) concerns the decompositions of the state space, (P) the spinor factor of matter; no implication is known either way. Open.
 - **$\kappa$ and (MaxΦ)**: $\kappa$ weights a cubic of $V_{\text{Gap}}$, which the isolated dynamics does not see (T-331(f)); the anchor lives in the self-model. Independent.
 
 ## 8. Count {#итог}
 
-After the four waves of 2026-09-25/26 the free inputs of UHM are: the axioms A1–A4 and the constraint of A5 [P]; two bridge premises of physics, (Cl₀) and (P) relative to it [H]; one principle of the self-model, (MaxΦ) [Pr]; the strict-necessity premise (P1₆) [H]; the free parameters of section 4, $\kappa$ among them; and the identification hypotheses of section 3.4, three of which, (SV), (GC) and (UP), survive only in weakened form. Every other input used earlier has been discharged (section 5). (Cl₀) has an equivalent form, (Mod), in which the holon's product acts on matter; T-347 closes the routes that would derive it or (P) from a property of the holon, from maximality or from minimality; T-350 closes the routes that would make spinors out of the tensorial holon (textures, the spin lift, triality, second quantisation) and shows that (Cl₀) is incompatible with any principle under which the holon induces the internal symmetry of matter.
+After the four waves of 2026-09-25/26 the free inputs of UHM are: the axioms A1–A4 and the constraint of A5 [P]; two bridge premises of physics, (Cl₀) and (P) relative to it [H]; one principle of the self-model, (MaxΦ) [Pr]; the strict-necessity premise (Σ₆) [H], perfect diagnosability of every decomposition, which replaced the stronger (P1₆) on 2026-09-28 (T-349); the free parameters of section 4, $\kappa$ among them; and the identification hypotheses of section 3.4, three of which, (SV), (GC) and (UP), survive only in weakened form. Every other input used earlier has been discharged (section 5). (Cl₀) has an equivalent form, (Mod), in which the holon's product acts on matter; T-347 closes the routes that would derive it or (P) from a property of the holon, from maximality or from minimality; T-350 closes the routes that would make spinors out of the tensorial holon (textures, the spin lift, triality, second quantisation) and shows that (Cl₀) is incompatible with any principle under which the holon induces the internal symmetry of matter.

@@ -449,15 +449,17 @@ Articulation is the primary act of reality: "Draw a distinction" (Spencer-Brown)
 
 **Therefore:** $\dim(\mathcal{H}) \geq 7$
 
-#### Theorem (Strict necessity of N = 7) **[C at (P1₆)]** {#теорема-строгая-необходимость-7}
+#### Theorem (Strict necessity of N = 7) **[C at (Σ₆)]** {#теорема-строгая-необходимость-7}
 
-*Status corrected 2026-09-25 (it read [T]; then [C at (Alt)]).* Steps 1–2 apply Hurwitz's theorem to the state space through P1 — "the space of internal degrees of freedom is $\mathrm{Im}(\mathcal{A})$ for a normed division algebra $\mathcal{A}$". The orientation assumption (Alt) of the bridge T15 is discharged by [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация), so P1 holds for the seven-dimensional Fano frame. That is not yet enough here: to exclude a *competing* six-function decomposition, Hurwitz must be applied to that decomposition, and the T15 chain proves P1 only for the frame it starts from — its Step T8 consumes $N = 7$ from Track A. The named assumption is therefore (P1₆): P1 holds for any decomposition covering (AP)+(PH)+(QG), not only for the seven-dimensional one. Without P1, Step 3 and Theorem S show that each of the seven listed functions is needed ($N \geq 7$, [T]), not that no other six-function decomposition exists.
+*Status history: [T] until 2026-09-25; the same day [C at (Alt)], then [C at (P1₆)]; [C at (Σ₆)] since 2026-09-28 by [T-349](#t-349).* The question is whether some *other* decomposition — not the seven functions F1–F7 — could cover the axioms with fewer axes. Step 3 and Theorem S show that each of F1–F7 is needed ($N \geq 7$ for this decomposition, [T]); about a competitor they say nothing. The Hurwitz route below reaches a competitor only through P1 for it — "the space of internal degrees of freedom is $\mathrm{Im}(\mathcal{A})$ for a normed division algebra $\mathcal{A}$" — and the T15 chain proves P1 only for the frame it starts from: its orientation input (Alt) is discharged by [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация), but its Step T8 consumes $N = 7$ from Track A. That route therefore needs (P1₆), P1 for every decomposition covering (AP)+(PH)+(QG), and also P2 for the competitor, because P1 alone leaves $\mathbb{H}$ with $N = 3$. [T-349](#t-349) replaces both by one weaker premise, (Σ₆): every decomposition of a viable holon is perfectly single-fault diagnosable with a grammar of more than two states — the $N$-generic content of Step T8 itself.
 
-**Statement.** There is no alternative set of 6 functions covering the requirements (AP)+(PH)+(QG). The minimal dimensionality $N = 7$ is strictly necessary.
+**Statement.** There is no alternative set of 6 functions, or of fewer than 7, covering the requirements (AP)+(PH)+(QG) for a viable holon. The minimal dimensionality $N = 7$ is strictly necessary.
 
-**Proof (3 steps).**
+**Proof (Track Σ, [C at (Σ₆)]).** By (Σ₆) the grammar $\mathcal{C} \subseteq \mathbb{F}_2^N$ of a competing decomposition satisfies (D1)–(D3) of [Theorem Σ](/docs/applied/research/syndrome-calculus#аксиомы). Sphere packing gives $(N+1)\,\lvert\mathcal{C}\rvert = 2^N$, so $N + 1$ is a power of two. $N = 6$ fails ($7 \nmid 64$), and $N \in \{1, 3\}$ gives $\lvert\mathcal{C}\rvert \in \{1, 2\}$, against (D3). Hence every decomposition has $N \geq 7$, and F1–F7 attain $7$ (Theorem 4.1). $\blacksquare$ (This is [T-349](#t-349)(a).)
 
-**Step 1 (Octonionic track [C at (P1₆)]).** By [T-15](/docs/proofs/minimality/theorem-octonionic-derivation#мост) — [T] for the seven-dimensional frame with its canonical orientation — and (P1₆) for a competing decomposition:
+**Second proof (Hurwitz route, [C at (P1₆) and P2 for the competitor], 3 steps).** It is the route the corpus took first; by [T-349](#t-349)(c) its input implies (Σ₆).
+
+**Step 1 (Octonionic track).** By [T-15](/docs/proofs/minimality/theorem-octonionic-derivation#мост) — [T] for the seven-dimensional frame with its canonical orientation — and by (P1₆) with P2 for a competing decomposition:
 - (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1 (normed division algebra) + P2 (non-associativity)
 - By the Hurwitz theorem: $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$
 - P2 excludes $\mathbb{R}$ ($\dim = 1$), $\mathbb{C}$ ($\dim = 2$), $\mathbb{H}$ ($\dim = 4$) — all associative
@@ -474,8 +476,43 @@ The value 6 is **absent** from this set $\Rightarrow$ an alternative 6D set is i
 **Step 3 (Functional uniqueness).** The 7 functions F1–F7 are pairwise independent ([40f [T]](#итог-части-iii)). $\mathrm{rank}(\text{dependency matrix } F \times \{AP, PH, QG\}) = 7$. $\blacksquare$
 
 :::info Historical context
-Previously, the strict necessity $N \geq 7$ had status **[C]**, since it had not been proven that **no alternative 6-dimensional decomposition** can cover (AP)+(PH)+(QG). The Hurwitz theorem (Step 2) definitively closes this gap: $\dim(\mathrm{Im}(\mathcal{A})) = 6$ is impossible for normed division algebras.
+Previously, the strict necessity $N \geq 7$ had status **[C]**, since it had not been proven that **no alternative 6-dimensional decomposition** can cover (AP)+(PH)+(QG). The Hurwitz theorem (Step 2) closes this gap for decompositions that carry a normed division algebra, that is, at (P1₆): $\dim(\mathrm{Im}(\mathcal{A})) = 6$ is impossible for normed division algebras. (Until 2026-09-25 the box said that it closes the gap "definitively".) Track Σ closes it at the weaker premise (Σ₆), [T-349](#t-349).
 :::
+
+<a id="t-349"></a>
+
+#### T-349: strict necessity from diagnosability, and the hosting route checked
+
+*Added 2026-09-28.* Two ways were open to remove (P1₆) from the strict necessity. One is the corpus's own Track Σ ([§9.3](#трек-сигма), [T-224](/docs/applied/research/syndrome-calculus#t-224)), which never mentions an algebra. The other is the lower bound of the foundations corpus (Foundations of Mathematics, Part XVIII, ch. 11: Theorem 11.8, Corollary 11.9, Lemmas 11.10–11.12), which pins $\mathbb{O}$ by *hosting* the three LGKS sectors in the orientation classes of the multiplication, counted as $\lvert\mathrm{QR}(N)\rvert = (N-1)/2$. T-349 takes the first and shows, with numbers, why the second does not replace (P1₆).
+
+**Setting.** A *decomposition* is a set of $N$ axes covering (AP)+(PH)+(QG) for a viable holon (V); its *grammar* is the set $\mathcal{C} \subseteq \mathbb{F}_2^N$ of admissible status profiles of [Theorem Σ](/docs/applied/research/syndrome-calculus#аксиомы) (Definition Σ.1: a fault flips the status of one axis). The premise **(Σ₆)**: the grammar of every decomposition satisfies (D1) $d(\mathcal{C}) \geq 3$, (D2) the radius-1 balls around $\mathcal{C}$ partition $\mathbb{F}_2^N$, and (D3) $\lvert\mathcal{C}\rvert > 2$. The premise **(Σ₆⁺)** adds (D4): the grammar is unique up to relabelling of the axes and translation.
+
+:::tip Theorem T-349 — [T] as mathematics; the strict necessity [C at (Σ₆)], (P1₆) [C at (Σ₆⁺)]
+**(a) Lower half.** Under (Σ₆) every decomposition has $N \in \{7, 15, 31, \dots\}$. In particular no decomposition has 6 axes ($7 \nmid 2^6 = 64$) or fewer than 7; with F1–F7 attaining 7, the minimal dimensionality is 7 for every decomposition, not only for F1–F7.
+
+**(b) P1 for a competitor.** At $N = 7$ the grammar is equivalent to the Hamming code $H(7,4)$, and its seven words of weight 3 are the lines of the Fano plane. Steps T9–T15 of the bridge then run on the competitor with $N$ supplied by (a), not by Track A, and give P1 and P2 for it. Under (Σ₆⁺) every decomposition has $N = 7$, so (P1₆) holds.
+
+**(c) Strength.** (Σ₆) does not imply (P1₆): at $N = 15$ the Hamming code $[15, 11, 3]$ satisfies (D1)–(D3) — $(1 + 15)\cdot 2^{11} = 2^{15}$ — while no normed division algebra has dimension 16, and its words of weight 3 form $\mathrm{PG}(3,2)$, 35 lines on 15 points. Conversely, (P1₆) together with P2 for the competitor — the input the Hurwitz route actually uses — implies (Σ₆⁺): the competitor is then the octonionic frame, whose grammar is $H(7,4)$ ([T-246](/docs/applied/research/syndrome-calculus#атом-верности)). So (Σ₆) is strictly weaker than the input it replaces.
+
+**(d) The hosting route does not replace (P1₆).**
+1. It starts from Hurwitz's list $\{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$, that is, from P1 for the competitor. $N = 6$ is excluded there by Hurwitz alone, and $\mathrm{QR}(N)$ is defined for prime $N$ only. At most, hosting could replace P2, not P1.
+2. In the reading "orientation symmetries = permutations of the units" it does not replace P2 either. The permutations of the imaginary units that preserve the oriented multiplication table form the Frobenius group $F_{21}$ of order 21 for $\mathbb{O}$ (the translations $\mathbb{Z}/7$ and the multipliers $\mathrm{QR}(7) = \{1, 2, 4\}$), and the cyclic group $\{e, (i\,j\,k), (i\,k\,j)\}$ of order 3 for $\mathbb{H}$, which acts freely and transitively on $\{i, j, k\}$. By the criterion of Lemma 11.10 there (three equal, distinguishable sectors ⟺ a free transitive $\mathbb{Z}/3$-action), $\mathbb{H}$ hosts three sectors. The count $\lvert\mathrm{QR}(3)\rvert = 1$ belongs to the Paley set $\{1\} \subset \mathbb{Z}/3$, whose translates are the singletons $\{0\}, \{1\}, \{2\}$, not to the quaternion table, whose single line is $\{i, j, k\}$.
+3. In the Kraus reading (sectors as free $\mathbb{Z}/3$-orbits on the line projectors, Lemma 11.12 there) it does exclude $\mathbb{H}$: its frame has one line, $b = 1$, and a free orbit needs three operators, while $\mathbb{O}$ has $b = 7$ with cycle type $1 + 3 + 3$ under $\times 2$. This is again a statement inside Hurwitz's list.
+4. The three sectors do not depend on $N$ ([T-57](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции): the parts $\mathcal{L}_{\mathrm{Ham}}$, $\mathcal{L}_{\mathrm{diss}}$, $\mathcal{L}_{\mathrm{reg}}$ are defined in every dimension; $R_{\mathrm{th}} = 1/3$ from $K = 3$). So $3 = (7 - 1)/2$ is a coincidence of two counts at $N = 7$, not a derivation of $N$. Track Σ accounts for it: $\mathrm{QR}(7) = \{1, 2, 4\}$ is the set of check positions of $H(7,4)$ ([Remark Σ-QR](/docs/applied/research/syndrome-calculus#замечание-qr)).
+:::
+
+**Proof.** (a) (D1) makes the radius-1 balls around the words disjoint, each with $1 + N$ profiles; (D2) makes them cover $\mathbb{F}_2^N$; hence $(1 + N)\lvert\mathcal{C}\rvert = 2^N$ and $N = 2^r - 1$ (Lemma Σ.1). $N = 1$ gives $\lvert\mathcal{C}\rvert = 1$ and $N = 3$ gives $\lvert\mathcal{C}\rvert = 2$ (Lemma Σ.2), both excluded by (D3). F1–F7 with the construction of Theorem 4.1 give a decomposition with 7 axes.
+(b) Lemmas Σ.3–Σ.5: at $N = 7$ a code with (D1)+(D2) containing $0$ is linear and equivalent to $H(7,4)$, with weight distribution $1 + 7x^3 + 7x^4 + x^7$; the supports of the seven words of weight 3 form $S(2,3,7)$, the Fano plane. Steps T9–T15 use $N$ only through Step T8, and T8 asks for exactly this: a perfect single-error-correcting organisation of length $N$. T15 with T15-canon then gives $\mathbb{O}$, hence P1 and P2. For (Σ₆⁺): by T-224(iv) (D4) fails at every $N = 2^r - 1 \geq 15$ (Vasil'ev's non-linear perfect codes are inequivalent to the Hamming code), so $N = 7$.
+(c) The Hamming code of length 15 is perfect by the count above, and Hurwitz's theorem admits dimensions 1, 2, 4, 8 only; its words of weight 3 are the lines of $\mathrm{PG}(3,2)$, $15 \cdot 14 / 6 = 35$ of them. For the converse, P1 and P2 for the competitor give $\mathcal{A} = \mathbb{O}$ and $N = 7$; on the division frame the minimal equivalences are the seven Fano lines, so $d_{\min} = 3$ (T-246), and the code they span is $H(7,4)$, perfect because $16 \cdot 8 = 2^7$; (D4) holds at $N = 7$ by T-224(iii).
+(d) Direct computation over the $5040$ permutations of seven units and the $6$ of three: exactly $21$ preserve the oriented Fano table $\{e_{t+1}e_{t+2} = e_{t+4}\}$, and they are the affine maps $x \mapsto ax + b$ with $a \in \{1,2,4\}$; exactly $3$ preserve $ij = k$ with its cyclic images, and none but the identity fixes a unit. The multipliers $3, 5, 6$ carry the lines $\{1,2,4\} + t$ to the complementary design $\{3,5,6\} + t$. Under $\times 2$ the seven lines split into one fixed line and two 3-cycles. $\blacksquare$
+
+*Numbers* (`test_diagnosability_premise_gives_strict_necessity_without_hurwitz`, `test_hosting_route_needs_hurwitz_and_does_not_exclude_quaternions`):
+- $N + 1 \mid 2^N$ for $N \leq 40$ exactly at $N = 1, 3, 7, 15, 31$; $\lvert\mathcal{C}\rvert = 1, 2, 16, 2^{11}$ at $N = 1, 3, 7, 15$;
+- $H(7,4)$: 16 words, weights $1 + 7x^3 + 7x^4 + x^7$, the seven weight-3 supports are the seven Fano lines; the Hamming code of length 15 has 35 words of weight 3;
+- $\mathrm{QR}(N)$ for $N = 3, 5, 7, 11, 13$: sizes $1, 2, 3, 5, 6 = (N-1)/2$; the Paley multiplicity $\lambda = (N-3)/4 = 0, 1, 2$ at $N = 3, 7, 11$;
+- permutation automorphisms of the oriented tables: $21$ for $\mathbb{O}$ ($= F_{21}$), $3$ for $\mathbb{H}$, acting freely on $\{i, j, k\}$; signed-permutation automorphisms of $\mathbb{H}$: $24$; both tables are normed to $2 \times 10^{-15}$ on random pairs.
+
+**What T-349 changes.** The strict necessity of $N = 7$ goes from [C at (P1₆)] to [C at (Σ₆)], with a premise that is strictly weaker than the one it replaces and uses no algebra, norm or continuity. (P1₆) stops being an input: it follows at (Σ₆⁺), and so does the maximality half of the double extremality ([axiom of septicity](/docs/core/foundations/axiom-septicity)). What (Σ₆) asks is what Step T8 already asks of the seven-dimensional frame — perfect localisation of a single faulty axis — now of every decomposition; that UHM's axes must satisfy it is the interpretive step of [Corollary Σ.1](/docs/applied/research/syndrome-calculus#следствие-диагностика). The hosting route of the foundations corpus stays a statement inside Hurwitz's list: in the Kraus reading it replaces P2, in the permutation reading it does not exclude $\mathbb{H}$, and in no reading does it replace P1.
 
 ---
 
@@ -962,16 +999,16 @@ Regeneration **does not depend on the phenomenological state**, which violates (
 
 7. **Orthogonality of E and O:** E and O cannot be merged — the causal argument (External ≠ Internal) is reinforced by the categorical argument from κ₀: for $O=E$ regeneration loses phenomenological feedback. [Proof →](#ортогональность-eo)
 
-8. **Strict necessity of N = 7:** The impossibility of an alternative 6D set follows via the Hurwitz theorem ($\dim(\mathrm{Im}(\mathcal{A})) \in \{0,1,3,7\}$) + functional uniqueness 40f [T] — at (P1₆), since Hurwitz reaches a competing decomposition only through P1 for it (the orientation input (Alt), named here earlier on 2026-09-25, is discharged by T15-canon). [Proof →](#теорема-строгая-необходимость-7)
+8. **Strict necessity of N = 7:** The impossibility of an alternative decomposition with 6 or fewer axes follows from perfect diagnosability — sphere packing gives $N = 2^r - 1$, and a non-trivial grammar gives $N \geq 7$ — at (Σ₆), [T-349](#t-349). The Hurwitz route ($\dim(\mathrm{Im}(\mathcal{A})) \in \{0,1,3,7\}$ + functional uniqueness 40f [T]) needs (P1₆) and P2 for the competitor, an input that implies (Σ₆) (the orientation input (Alt), named here earlier on 2026-09-25, is discharged by T15-canon). [Proof →](#теорема-строгая-необходимость-7)
 
 ### 8.2 What Remains Conditional
 
 1. **Functional uniqueness of E:** **[T]** — [proven](#единственность-e)
 2. **Functional uniqueness of O:** **[T]** — [proven](#единственность-o)
 3. **Orthogonality of E and O:** **[T]** — [proven](#ортогональность-eo)
-4. **Strict necessity of N = 7 (S1):** **[C at (P1₆)]** — [proven given P1](#теорема-строгая-необходимость-7) (Hurwitz theorem + 40f [T]; P1 proven for the seven-dimensional frame with its canonical orientation, assumed for a competing decomposition)
+4. **Strict necessity of N = 7 (S1):** **[C at (Σ₆)]** — [proven given perfect diagnosability of every decomposition](#теорема-строгая-необходимость-7) (Track Σ, [T-349](#t-349); [C at (P1₆)] from 2026-09-25 to 2026-09-28, with the Hurwitz theorem + 40f [T] and P1 proven for the seven-dimensional frame, assumed for a competing decomposition)
 
-Three of the four gaps are closed; the fourth, S1, is conditional at (P1₆) (it was named (Alt) until the canonical-orientation theorem). (An earlier version read "All four gaps are closed. There are no remaining conditional results in the minimality theorem"; corrected 2026-09-25 with the status of the bridge T15.)
+Three of the four gaps are closed; the fourth, S1, is conditional at (Σ₆) (the condition was named (Alt) until the canonical-orientation theorem and (P1₆) until T-349). (An earlier version read "All four gaps are closed. There are no remaining conditional results in the minimality theorem"; corrected 2026-09-25 with the status of the bridge T15.)
 
 ### 8.3 What Remains Open
 
@@ -1055,7 +1092,7 @@ See [detailed analysis](/docs/proofs/minimality/theorem-octonionic-derivation#м
 
 ### 9.3 Track Σ: the diagnosability derivation {#трек-сигма}
 
-**Theorem Σ (T-224) [T]** adds a fourth independent selector of seven, using no algebra at all — only sphere packing and design counting: perfect single-fault localizability (D1–D2) forces $n = 2^r - 1$; a nontrivial state grammar (D3) forces $n \geq 7$; and grammar rigidity (D4) holds **only** at $n = 7$ (nonlinear Vasil'ev perfect codes break uniqueness from $n = 15$ on). The identification of UHM axes with internally diagnosable status bits is the interpretive step [I]. See [Σ-calculus](/docs/applied/research/syndrome-calculus#t-224).
+**Theorem Σ (T-224) [T]** adds a fourth independent selector of seven, using no algebra at all — only sphere packing and design counting: perfect single-fault localizability (D1–D2) forces $n = 2^r - 1$; a nontrivial state grammar (D3) forces $n \geq 7$; and grammar rigidity (D4) holds **only** at $n = 7$ (nonlinear Vasil'ev perfect codes break uniqueness from $n = 15$ on). The identification of UHM axes with internally diagnosable status bits is the interpretive step [I]. See [Σ-calculus](/docs/applied/research/syndrome-calculus#t-224). Applied to a *competing* decomposition, (D1)–(D3) are the premise (Σ₆) of the strict necessity, which replaces (P1₆) ([T-349](#t-349)).
 
 | Aspect | Track A | Track B | Track Σ |
 |--------|---------|---------|---------|
@@ -1077,13 +1114,15 @@ See [detailed analysis](/docs/proofs/minimality/theorem-octonionic-derivation#м
    - Functional uniqueness of E (axiomatic, categorical from κ₀, mathematical arguments)
    - Functional uniqueness of O (from the form of ℛ [T], from κ₀ [T], from Page–Wootters, from functional independence)
    - Orthogonality of E and O (causal + categorical from κ₀)
-   - Strict necessity of N = 7 (impossibility of 6D alternative via Hurwitz theorem + 40f [T])
    - Octonionic derivation (Track B): P1+P2 via the chain T15 — [T] with the canonical orientation of the Fano lines (see [Step T15](/docs/proofs/minimality/theorem-octonionic-derivation#шаг-t15) and [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация))
 
-2. **Accepted as axiom:**
+2. **[C] Conditional:**
+   - Strict necessity of N = 7 — no decomposition with fewer than 7 axes — [C at (Σ₆)], perfect diagnosability of every decomposition ([T-349](#t-349)); until 2026-09-28 it was [C at (P1₆)], and the [T] list above still carried it, three days after the status had been lowered on 2026-09-25
+
+3. **Accepted as axiom:**
    - Identity of being and experience ([Axiom Ω⁷](/docs/core/foundations/axiom-omega))
 
-3. **[Pr] Remains a research program:**
+4. **[Pr] Remains a research program:**
    - Topological connection with the Poincaré theorem
    - Emergence of spacetime
 

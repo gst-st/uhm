@@ -450,7 +450,7 @@ const docSections: DocSection[] = [
     description: 'Why Seven',
     link: '/docs/proofs/minimality/theorem-octonionic-derivation',
     items: [
-      'Hurwitz: dim Im 𝕆 = 7; N ≥ 7 is a theorem, N = 7 exactly is premise (P1₆)',
+      'Hurwitz: dim Im 𝕆 = 7; N ≥ 7 is a theorem, no decomposition below 7 — premise (Σ₆), T-349',
       'Fano plane, the canonical orientation and G₂',
       'Hamming code H(7,4) and the Cayley–Dickson boundary',
     ],
