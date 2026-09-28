@@ -6824,6 +6824,131 @@ def test_t346_regeneration_rate_is_fixed_by_no_route():
     while eta > es:
         eta, n = 0.99 * eta, n + 1
     assert n == 8
+def test_t351_population_principles_move_the_rate_into_the_environment():
+    """T-351: популяционные принципы не фиксируют κ — свобода переходит в среду или в цену.
+
+    (а) Общий ресурс, одномерная обратная связь: минимальная (ландауэровская) плата за удержание Γ_η —
+    производство энтропии диссипатора σ(η) = (4/7)η ln((1 + 6η)/(1 − η)), строго растущее по κ на ветви
+    стока; приспособленность мутанта s_κ(κ′) = σ(κ) − σ(κ′): особой стратегии нет, отбор ведёт к складке.
+    В среде с диагональным H порог жизни κ_H — корень max_P G = 0 (G растёт по κ); κ_H = κ_c лишь при
+    нулевом разбросе, κ_H ≤ κ_Ω; при равном шаге ω_i = Ωi/6 (α = ½): 29,541 / 30,358 / 33,171 при
+    Ω = 0,5 / 1 / 2. Доход ∝ Φ при плате σ + m: (σ + m)/Φ убывает — конечного оптимума нет.
+    (б) (i) Гамильтонова связь g·H_int двух голонов (каноническое расширение ℛ): среднее маргиналов
+    сдвигается на −ψg² (ψ > 0), κ_agg < κ; связь из коммутанта Γ_η ⊗ Γ_η (обмен S) сдвига не даёт.
+    (ii) Обмен g(Γ̄ − Γ) сводится к одной переменной точно: резидент стоит при всяком κ; особая стратегия
+    при доходе Φ и цене wκ — w*(κ) = 12η²Q/(g − κηQ′), убывающая биекция на (0, 8η_*²/(gκ_c));
+    безрегенеративный мутант жив при g > (2/3)/(√6η̄ − 1): 5,662 при α = ½, κ = 40.
+    (в) σ строго растёт — максимум производства энтропии даёт κ → ∞; при ландауэровском бюджете полное
+    производство популяции равно притоку при всяком κ; максимумы σ/κ и D/κ — 1,0084κ_c и 1,0082κ_c (α = 0).
+    """
+    from scipy.optimize import brentq, minimize_scalar
+    from scipy.integrate import solve_ivp
+    lo, hi = 1 / np.sqrt(6), 1 / np.sqrt(3)
+
+    def branch(c):
+        r = minimize_scalar(lambda e: -_q_window(e, c), bounds=(lo, hi), method="bounded",
+                            options={"xatol": 1e-14})
+        es = r.x
+        return es, brentq(lambda e: _q_window(e, c), es, hi), (2 / 3) / _q_window(es, c)
+
+    def etap(k, c):
+        es, ei, _ = branch(c)
+        return brentq(lambda e: k * _q_window(e, c) - 2 / 3, es, ei, xtol=1e-15)
+
+    sigma = lambda e: (4 / 7) * e * np.log((1 + 6 * e) / (1 - e))
+    P = np.linspace(2 / 7 + 1e-9, 3 / 7, 20001)
+    # (а) плата растёт вдоль ветви; обратная связь одномерна → направленный отбор к складке
+    for alpha in (0.0, 0.5, 1.0):
+        c = (1 - alpha) / 3
+        es, ei, kc = branch(c)
+        e = np.linspace(es + 1e-7, ei - 1e-7, 20001)
+        assert np.all(np.diff(sigma(e)) > 0) and np.all(np.diff((2 / 3) / _q_window(e, c)) > 0)
+        for m in (0.0, 0.5, 5.0):
+            assert np.all(np.diff((sigma(e) + m) / (6 * e ** 2)) < 0)          # доход ∝ Φ: оптимум уходит в ∞
+    assert abs(sigma(0.5) - (2 / 7) * np.log(8)) < 1e-15
+    c = 1 / 6
+    es, ei, kc = branch(c)
+
+    def gmax(k, om):
+        A, B = _anchor_window_parts(P, k, c)
+        d2 = np.array([(om[i] - om[j]) ** 2 for i in range(7) for j in range(7) if i != j])
+        G = np.sum(B[:, None] ** 2 / (A[:, None] ** 2 + d2[None, :]), axis=1) / 49 - (P - 1 / 7)
+        return np.max(G)
+
+    def om_c(k):
+        A, B = _anchor_window_parts(P, k, c)
+        return np.sqrt(max(np.max(6 / 7 * B ** 2 / (P - 1 / 7) - A ** 2), 0))
+    for Om, want in ((0.5, 29.541), (1.0, 30.358), (2.0, 33.171)):
+        om = Om * np.arange(7) / 6
+        kH = brentq(lambda k: gmax(k, om), kc * (1 + 1e-9), 1e3, xtol=1e-9)
+        kO = brentq(lambda k: om_c(k) - Om, kc * (1 + 1e-9), 1e4)
+        assert abs(kH - want) < 2e-3 and kc < kH < kO
+        assert gmax(kH * 1.01, om) > 0 > gmax(kH * 0.99, om)                     # порог — граница жизни
+    # (б-i) два голона, гамильтонова связь: сдвиг среднего маргиналов ~ −ψg²
+    n = 7
+    u = np.ones(n) / np.sqrt(n)
+    U = np.outer(u, u)
+    ia = np.repeat(np.arange(n), n)
+    ib = np.tile(np.arange(n), n)
+    maskA = (ia[:, None] == ia[None, :]).astype(float)
+    maskB = (ib[:, None] == ib[None, :]).astype(float)
+    gv = lambda p: min(max(7 * p - 2, 0.0), 1.0)
+    k = 40.0
+    e0 = etap(k, c)
+    G1 = (1 - e0) * np.eye(n) / n + e0 * U
+
+    def rhs(G, H):
+        G4 = G.reshape(n, n, n, n)
+        GA, GB = np.einsum("ibjb->ij", G4), np.einsum("aiaj->ij", G4)
+        pa, pb = np.trace(GA @ GA).real, np.trace(GB @ GB).real
+        F = -1j * (H @ G - G @ H) + (2 / 3) * (maskA * G - G) + (2 / 3) * (maskB * G - G)
+        F += k * gv(pa) * ((1 - 1 / (7 * pa)) * np.where(maskA > 0, 1, c) * G + np.kron(U, GB) / (7 * pa) - G)
+        F += k * gv(pb) * ((1 - 1 / (7 * pb)) * np.where(maskB > 0, 1, c) * G + np.kron(GA, U) / (7 * pb) - G)
+        return F
+    rng = np.random.default_rng(351)
+    X = rng.normal(size=(49, 49)) + 1j * rng.normal(size=(49, 49))
+    Hr = (X + X.conj().T) / 2
+    Hr -= np.trace(Hr) / 49 * np.eye(49)
+    Hr /= np.linalg.norm(Hr, 2)
+    S = np.zeros((49, 49))
+    S[ia * n + ib, ib * n + ia] = 1
+    G0 = np.kron(G1, G1).astype(complex)
+    assert np.abs(rhs(G0, 0 * S)).max() < 1e-13
+    shifts = {}
+    for name, H, g in (("r", Hr, 0.1), ("r", Hr, 0.2), ("S", S, 0.2)):
+        sol = solve_ivp(lambda t, y: rhs(y.reshape(49, 49), g * H).ravel(), (0, 25), G0.ravel(),
+                        rtol=1e-10, atol=1e-12)
+        G = sol.y[:, -1].reshape(49, 49)
+        assert np.abs(rhs(G, g * H)).max() < 1e-8
+        G4 = G.reshape(n, n, n, n)
+        Gm = (np.einsum("ibjb->ij", G4) + np.einsum("aiaj->ij", G4)) / 2
+        shifts[(name, g)] = ((7 * (u @ Gm @ u).real - 1) / 6 - e0) / g ** 2
+    assert abs(shifts[("S", 0.2)]) < 1e-9                                            # обмен коммутирует: сдвига нет
+    psi = shifts[("r", 0.1)]
+    assert -2e-3 < psi < -5e-4 and abs(shifts[("r", 0.2)] / psi - 1) < 2e-2          # −ψg², ψ > 0
+    assert (2 / 3) / _q_window(e0 + psi * 0.01, c) < k                              # κ_agg < κ
+    # (б-ii) обмен: особая стратегия w*(κ) убывает от 8η_*²/(gκ_c) к 0
+    for g in (0.5, 2.0):
+        ks = np.linspace(kc * 1.0001, kc * 20, 300)
+        ws = []
+        for kk in ks:
+            e = etap(kk, c)
+            dq = (_q_window(e + 1e-7, c) - _q_window(e - 1e-7, c)) / 2e-7
+            ws.append(12 * e * e * _q_window(e, c) / (g - kk * e * dq))
+        assert np.all(np.diff(ws) < 0) and ws[0] < 8 * es ** 2 / (g * kc)
+    e = etap(40.0, c)
+    assert abs((2 / 3) / (np.sqrt(6) * e - 1) - 5.662) < 1e-3                          # безбилетник жив
+    # (в) максимумы σ/κ и D/κ при α = 0
+    c = 1 / 3
+    es, ei, kc = branch(c)
+    e = np.linspace(es + 1e-9, ei - 1e-9, 200001)
+    kk = (2 / 3) / _q_window(e, c)
+    l1, l2 = (1 + 6 * e) / 7, (1 - e) / 7
+    D = np.log(7) + l1 * np.log(l1) + 6 * l2 * np.log(l2)
+    assert abs(kk[np.argmax(sigma(e) / kk)] / kc - 1.0084) < 5e-4
+    assert abs(kk[np.argmax(D / kk)] / kc - 1.0082) < 5e-4
+
+
 def _generated_algebra_dim(ops, n):
     flat = [np.eye(n).ravel()]
     frontier = list(ops)
