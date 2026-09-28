@@ -7480,6 +7480,70 @@ def test_spinors_from_the_tensorial_holon_triality_kahler_dirac_and_bosonic_text
     assert np.allclose(keep(c[0] @ c[1]), T12)
 
 
+def _path_laplacian(N):
+    L = np.zeros((N + 1, N + 1))
+    for n in range(1, N + 1):
+        L[n, n] += 1
+        L[n - 1, n - 1] += 1
+        L[n, n - 1] -= 1
+        L[n - 1, n] -= 1
+    return L
+
+
+def test_depth_register_constraint_is_a_continuous_clock_bounded_below():
+    """T-352(c): одетая связь регистра глубины — лапласиан пути Λ_N; спектр — квантили арксинуса.
+
+    E_k = 2 − 2cos(πk/(N+1)) лежат ровно в квантилях k/(N+1) закона F(E) = (2/π)arcsin(√E/2)
+    на [0,4]: расстояние Колмогорова 1/(N+1), достигается; косинус-векторы cos((n+½)k)
+    диагонализуют Λ_N; в пределе спектр [0,4] чисто а.н. — показание ≤ 10 покидается
+    (N = 4000, старт |0⟩: 0,377 при s = 10, 0,0175 при s = 200, 0,00233 при s = 1500),
+    ⟨n⟩/s → 4/π = 1,273, за n = 2,05 s веса нет.
+    """
+    F = lambda E: (2 / np.pi) * np.arcsin(np.sqrt(np.clip(E, 0, 4)) / 2)
+    for N in (6, 48, 342, 2400):
+        L = _path_laplacian(N)
+        k = np.arange(N + 1)
+        E = 2 - 2 * np.cos(np.pi * k / (N + 1))
+        assert np.abs(np.linalg.eigvalsh(L) - E).max() < 1e-12
+        assert np.abs(F(E) - k / (N + 1)).max() < 1e-12
+        emp = np.arange(1, N + 2) / (N + 1)
+        ks = max(np.abs(emp - F(E)).max(), np.abs(emp - 1 / (N + 1) - F(E)).max())
+        assert abs(ks * (N + 1) - 1) < 1e-9
+        n = np.arange(N + 1)
+        V = np.cos(np.pi * np.outer(n + 0.5, k) / (N + 1))
+        V /= np.linalg.norm(V, axis=0)
+        assert np.abs(L @ V - V * E).max() < 2e-13 and np.abs(V.T @ V - np.eye(N + 1)).max() < 1e-12
+    N = 4000
+    w, U = np.linalg.eigh(_path_laplacian(N))
+    c = U[0, :]
+    pk = []
+    for s in (10, 200, 1500):
+        p = np.abs(U @ (np.exp(-1j * w * s) * c)) ** 2
+        pk.append(p[:11].sum())
+        if s == 1500:
+            assert abs((np.arange(N + 1) * p).sum() / s - 4 / np.pi) < 1e-3
+            assert p[int(2.05 * s) + 1:].sum() < 1e-12
+    assert abs(pk[0] - 0.3772) < 1e-3 and abs(pk[1] - 0.01752) < 1e-4 and abs(pk[2] - 0.002334) < 1e-5
+
+
+def test_depth_readings_form_a_category_with_contractible_groupoid_completion():
+    """T-352(a),(b): χ(нерв [N]) = Σ(−1)^k C(N+1,k+1) = 1; шаг на ℓ²(ℕ) — изометрия, не унитарен.
+
+    SS* = 1 − |0⟩⟨0|; всякое |λ| < 1 — собственное значение S* с вектором Σλⁿ|n⟩.
+    """
+    from math import comb
+    for N in (1, 6, 48, 342):
+        assert sum((-1) ** k * comb(N + 1, k + 1) for k in range(N + 1)) == 1
+    Nn = 400
+    S = np.diag(np.ones(Nn - 1), -1)
+    assert np.allclose((S.T @ S)[:-1, :-1], np.eye(Nn - 1))
+    P0 = np.eye(Nn)[:, :1] @ np.eye(Nn)[:1, :]
+    assert np.allclose(S @ S.T + P0 - np.diag([0] * (Nn - 1) + [1]), np.eye(Nn) - np.diag([0] * (Nn - 1) + [1]))
+    for lam in (0.5, 0.9, 0.3 + 0.4j):
+        v = lam ** np.arange(Nn)
+        assert np.linalg.norm(S.T @ v - lam * v) / np.linalg.norm(v) < 1e-15
+
+
 def main():
     tests = [(n, f) for n, f in sorted(globals().items()) if n.startswith("test_")]
     bad = 0
