@@ -10,8 +10,8 @@ stated in Section~\ref{sec:axioms}. Every definition and formula is derived
 from the primitive $\mathfrak{T} = (\ShInf(\mathcal{C}),\; J_{\mathrm{Bures}},\; \omega_0)$
 and the premises listed in Section~\ref{subsec:premises}; nothing else is postulated ad hoc. The flagship results — $\Pcrit = 2/7$, the
 critical exponents, the spectral-action derivation — are proved fully in the
-appendices. The complete formalization (a status registry of 408 rows,
-T-1 through T-348 including sub-indexed results) constitutes the UHM theory archive;
+appendices. The complete formalization (a status registry of 412 rows,
+T-1 through T-352 including sub-indexed results) constitutes the UHM theory archive;
 the present paper proves the principal results in full, and the companion
 online supplement at \url{https://holon.sh} provides the remaining proofs
 and computational details.
@@ -348,7 +348,17 @@ The UHM self-models $\vp_{\mathrm{coh}}$, $\vp_s$, $\vp_J$ have a state-dependen
 $k = 1 - 1/(7P)$ and are not global contractions: a fixed point exists by Brouwer's theorem
 on the compact convex $\Dens(\Hil)$, and uniqueness, where it holds, comes from their
 closed form ($\vp_s$ has at least eight fixed points); the former reading ``$\vp$ is a
-contraction with constant $k$'' is restricted to constant $k$ and anchor. The convergence of
+contraction with constant $k$'' is restricted to constant $k$ and anchor. Three maps
+called $\vp$ differ in the Frobenius norm: the canonical
+$\vp_{\mathrm{coh}} = k\,\mathcal P_\alpha(\Gam) + (1-k)\,I/7$ has Lipschitz constant $9/8$
+for every $\alpha$, attained at $P = 4/7$ ($54/49$ only at pure states); the replacement
+forms $R\,\Gam + (1-R)\,I/7$ (Eq.~\ref{eq:phi-physical}) and
+$(1-k^2)\,\Gam + k^2\,I/7$ are non-expanding, the latter being the ``canonical $\vp$'' of
+math-foundations Part~XVIII, ch.~9, on which
+$R_\vp = 1 - (1-R)^4\lVert\Gam - I/7\rVert_F^2/\lVert\Gam\rVert_F^2$ holds exactly. With a
+feed of weight $\mu$ the loop has Lipschitz constant $(1-\mu)\,\mathrm{Lip}(\vp)$: a
+contraction for every $\mu > 0$ for the replacement forms, for $\vp_{\mathrm{coh}}$ only
+for $\mu > 1/9$. All three have the single fixed point $I/7$. The convergence of
 the $\vp$-tower is T-191~\status{T} (restated): for an embodied holon under backbone
 dominance, $\mu > L_{\mathcal R} + \kappa_{\max}$, the tower converges geometrically with
 $q = \kappa_{\max}/(\mu - L_{\mathcal R}) < 1$ to one self-model from any anchor
@@ -577,5 +587,26 @@ Type and trace depend neither on $\Lambda > 0$ nor on the observer mass or the f
 dimension, and II$_1$ also arises in flat space: the tower fixes no $\Lambda$, no sign of
 $\Lambda$ and no regeneration rate $\kappa$; $7^M = e^{S_{\mathrm{dS}}}$ gives
 $M = 1.677 \times 10^{122}$, a reparametrisation of $\Lambda$, not a derivation. The
-physical reading is \status{I}; a UHM clock with continuous spectrum bounded below is
-open~\status{Pr}.
+physical reading is \status{I}; a UHM clock with continuous spectrum bounded below, open
+here, is given by T-352 at a stated premise.
+
+\paragraph{The directed depth register and its continuous clock (T-352).}
+The arrow of time lives in a category of readings, not in a groupoid (\status{T} as
+mathematics): the readings $[N] = (0 < \cdots < N)$ form a category whose $\infty$-groupoid
+completion is contractible, so on an $\infty$-groupoid every non-increasing functional is
+constant on components; the history is a functor $[N] \to \mathbf{Chan}_7$ with no
+invertible arrow, and $D(\cdot\,\Vert\,I/7)$ makes it a functor to $(\mathbb{R}_{\geq 0},
+\geq)$ --- such category objects exist inside every $\infty$-topos. Sharp readings with a
+first reading admit no Hamiltonian, and energy bounded below admits no sharp covariant
+readings (Paley--Wiener, Pauli). The dressed Feynman--Kitaev constraint $\Lambda_N$ of
+the depth register has eigenvalues exactly at the quantiles $k/(N+1)$ of the arcsine
+law on $[0,4]$; its limit $\Lambda_\infty$ on $\ell^2(\mathbb{N})$ has spectrum $[0,4]$,
+purely absolutely continuous, simple, with no kernel: a clock with continuous spectrum
+bounded below. At the premise that the observer's clock is the depth register with
+Hamiltonian $\varepsilon\Lambda_\infty$, $\varepsilon = \hbar/\delta\tau$, the invariant
+algebra in the model of~\cite{clpw2023} is a factor of type II$_1$
+($\cong R$ under the split property), with $\mathrm{Tr}\,\Pi = 1 - e^{-4\beta\varepsilon}$
+for the projection onto observer energies in $[0, 4\varepsilon]$; every finite $N$ gives
+type~I, so the passage I~$\to$~II$_1$ happens exactly at $N = \infty$. Neither the chronon
+$\delta\tau$ nor $\beta$ is fixed, and, as in T-348, neither $\Lambda$ nor $\kappa$; the
+convergence of the finite type~I algebras to the II$_1$ algebra is open~\status{Pr}.
