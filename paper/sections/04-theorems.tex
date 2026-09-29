@@ -349,19 +349,24 @@ channels by $\mathbb{Z}/7$, the product is carried by the seven Fano lines --- t
 cyclic shifts of the quadratic-residue set $\mathrm{QR}(7) = \{1,2,4\}$. A
 multiplier $a \in (\mathbb{Z}/7)^\ast$, $i \mapsto a\,i$, preserves the Fano-line
 set (hence the product orientation $e_i e_j = \pm e_k$) \emph{iff}
-$a \in \mathrm{QR}(7)$; the non-residues $\{3,5,6\}$ reverse it. Thus the
-orientation-preserving symmetry group is exactly $\mathrm{QR}(7) \cong \mathbb{Z}/3$
-(the $\mathbb{Z}/3$-part of the Frobenius group $F_{21} = \mathbb{Z}/7 \rtimes
-\mathbb{Z}/3$, normaliser of the Singer cycle in $\mathrm{PSL}(2,7)$), so
+$a \in \mathrm{QR}(7)$; the non-residues $\{3,5,6\}$ carry it to the complementary
+design $\{3,5,6\} + t$. The permutations of the units preserving the oriented product
+form the Frobenius group $F_{21} = \mathbb{Z}/7 \rtimes \mathbb{Z}/3$ (translations and
+residue multipliers; normaliser of the Singer cycle in $\mathrm{PSL}(2,7)$), whose
+multiplier part is $\mathrm{QR}(7) \cong \mathbb{Z}/3$, so
 $c_F = R_{\mathrm{th}} = 1/\lvert\mathrm{QR}(7)\rvert = 1/3$. This unifies the four
 coincident 3's --- triadic LGKS decomposition, Fano block size, Hamming code
 distance, and residue count --- as one number-theoretic fact, and generalises to
-$\lvert\mathrm{QR}(N)\rvert = (N-1)/2$: among division-algebra dimensions
-$\{0,1,3,7\}$ only $N = 7$ supplies the three orientation classes needed to host
-the three triadic sectors ($\lvert\mathrm{QR}(N)\rvert \geq 3 \Leftrightarrow N \geq 7$).
-The value $1/3$ is fixed by the $N$-independent LGKS triad (T-57); the orientation
-root supplies its name and the dimensional selection (machine-verified;
-math-foundations Part~XVIII, Thm.~11.6/11.8).
+$\lvert\mathrm{QR}(N)\rvert = (N-1)/2$, with $\lvert\mathrm{QR}(N)\rvert \geq 3
+\Leftrightarrow N \geq 7$ (machine-verified; math-foundations Part~XVIII,
+Thm.~11.6/11.8, Cor.~11.9). The value $1/3$ is fixed by the $N$-independent LGKS
+triad (T-57); the orientation root supplies its name. The dimensional pin holds
+only inside Hurwitz's list and only when the three sectors are read on the line
+projectors: by permutations of the units the quaternion table has the free
+transitive $\mathbb{Z}/3$ $(i\,j\,k)$ as well. It therefore does not bear on the
+strict necessity of $N = 7$, which rests on diagnosability (T-349(d); until
+2026-09-28 this paragraph said that only $\Oct$ among division algebras hosts the
+three sectors and that the non-residues reverse the orientation).
 
 \subsection{The entropy law: regeneration as negentropy (T-271)}
 \label{subsec:entropy-law}
@@ -990,8 +995,9 @@ assumption, and its independence of A1--A4 is \status{T}.
 \end{theorembox}
 
 \begin{proof}
-\emph{A3} ($N = 7$): Theorem~S (functional minimality) derives the
-\emph{number} $N = 7$ from (AP)+(PH)+(QG); the bridge chain
+\emph{A3} ($N = 7$): Theorem~S (functional minimality) derives
+$N \geq 7$ from (AP)+(PH)+(QG), and strict necessity of $N = 7$ is
+\status{C at ($\Sigma_6$)} (T-349); the bridge chain
 T-15~\status{T given Theorem S} then forces the \emph{structure} of the
 seven-dimensional system --- $\mathrm{BIBD}(7,3,1) \to \mathrm{PG}(2,2) \to
 \mathbb{O}$ --- and $\dim\mathrm{Im}(\mathbb{O}) = 7$ (Hurwitz--Adams) closes
@@ -2042,7 +2048,7 @@ After T-210--T-223, open mathematical conditions remain: T-216 is
 \status{C at (SV)}, T-219 is \status{H}, T-190 and T-188 are
 conditional, and the premises of the corpus (the Page--Wootters
 constraint, the bridge premises (Cl$_0$) and (P), the principle (Max$\Phi$),
-(P1$_6$) and the free parameters, $\kappa$ among them) stay inputs. The
+($\Sigma_6$) and the free parameters, $\kappa$ among them) stay inputs. The
 earlier sentence ``no remaining mathematical or categorical gaps'' is
 retracted \status{$\times$}. Beyond these, three classes of open questions
 persist, all with explicit specifications:
