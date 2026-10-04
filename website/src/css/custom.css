@@ -342,24 +342,24 @@ tr:last-child td:last-child {
   opacity: 0.6;
 }
 
-/* Heading sizes - explicit overrides */
-h1 {
+/* Keep compact article headings without overriding custom page typography. */
+.markdown h1 {
   font-size: 1.75rem !important;
 }
 
-h2 {
+.markdown h2 {
   font-size: 1.35rem !important;
 }
 
-h3 {
+.markdown h3 {
   font-size: 1.15rem !important;
 }
 
-h4 {
+.markdown h4 {
   font-size: 1.05rem !important;
 }
 
-h5, h6 {
+.markdown h5, .markdown h6 {
   font-size: 1rem !important;
 }
 

@@ -38,9 +38,13 @@ npm run test:status
 npm run build
 npm run test:render
 npm run test:mermaid
+npm run test:homepage:model
+npm run test:homepage
 ```
 
 The numerical checks exercise specified identities, counterexamples and the density-preserving integration scheme. They supplement proofs and do not certify physical or phenomenal identifications. Python checks require NumPy and SciPy; diagram checks require Chrome or the configured Playwright browser. Set `MERMAID_BROWSER_PATH` to use another already installed Chromium executable.
+
+Homepage checks exercise both locales at desktop and mobile widths, light/dark themes, keyboard navigation, state invariants and reduced motion. Run them after a fresh build. Set `HOMEPAGE_BROWSER_PATH` to an installed Chromium executable; optionally set `HOMEPAGE_SCREENSHOTS` to a screenshot output directory. The interactive state family is tested independently by `test:homepage:model`.
 
 ## Deployment
 
