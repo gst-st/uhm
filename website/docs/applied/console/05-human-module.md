@@ -40,7 +40,7 @@ Three readouts answer "what am I built to do, and where am I free" structurally:
 
 - **Capacities** — the archetype (which of the sixteen signatures the diagonal expresses) and the dominant block: the durable strengths.
 - **Constraints** — the Gap map's jammed channels and the deficient block's failure pattern: where the structure resists, and how it fails when pushed.
-- **Freedom** — $\dim\ker\mathcal H_\Gamma + 1$: the *actual* number of flat directions, with the directions themselves rendered. This is the honest, quantitative answer to "how much room do I have to change, and along which axes" — not a personality label but a count of real degrees of freedom with their directions named.
+- **Freedom score [D/I]** — $1+\dim\ker\operatorname{Hess}V$ for an explicit fitted potential and domain. Interpret as quadratic degeneracy at a critical point; actual flat directions require Morse–Bott hypotheses. Personal options and agency need independent task data and uncertainty, not this score alone.
 
 ## §5. The identity trajectory {#траектория}
 

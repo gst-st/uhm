@@ -17,7 +17,7 @@ In the [previous chapter](./definitions) we defined all the key concepts of CC: 
 In this chapter we:
 1. **Prove the existence of dynamics** — Theorem 6.1: the evolution equation has a solution (section "Existence Theorems")
 2. **Show the necessity of self-reference** — Theorems 7.1–7.2: viability requires a self-model $\varphi$, iterations converge to $\Gamma^*$ (section "Self-Reference Theorems")
-3. **Prove the impossibility of zombies** — Theorem 8.1 (No-Zombie): a viable open system *must* have non-trivial interiority (section "The No-Zombie Theorem")
+3. **Derive a conditional E-requirement** — Theorem 8.1: an explicit stationary purity balance and rate/source bounds (section "The No-Zombie Theorem")
 4. **Investigate composition** — Theorems 9.1–9.3: fractal closure, scale invariance, and when coupling correlates the parts (section "Composition Theorems")
 5. **Derive a unified viability criterion** — Theorem 10.1: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ (section "Unified Viability Condition")
 6. **Describe the sensorimotor cycle** — Theorems 11.1–11.4: encoding, action, completeness, hedonics (section "Sensorimotor Encoding")
@@ -26,7 +26,7 @@ In this chapter we:
 
 Why do we need a chapter on theorems? We already know the [axioms](./axiomatics) and [definitions](./definitions). But axioms are the foundation of a building, and definitions are the bricks. Theorems are **the building itself**: logical chains that connect the foundation to the roof and show that the structure will not collapse.
 
-This chapter tells a story. It begins with the question "does dynamics even exist?" (Theorem 6.1), passes through the discovery that every living system **must** observe itself (Theorem 7.1), reaches its climax in the proof of the impossibility of "zombies" — systems that function but experience nothing (Theorem 8.1) — and ends with the question of when the interaction of parts produces something **new** — a joint state that the parts do not fix (Theorem 9.3: not for every coupling, but when the coupling has a correlating part).
+This chapter tells a story. It begins with the question "does dynamics even exist?" (Theorem 6.1), passes through the discovery that every living system **must** observe itself (Theorem 7.1), derives the conditional dynamical scope of the No-Zombie proposal (Theorem 8.1) — and ends with the question of when the interaction of parts produces something **new** — a joint state that the parts do not fix (Theorem 9.3: not for every coupling, but when the coupling has a correlating part).
 
 Each theorem is not an isolated fact, but a link in a single deductive chain. Read in order — and you will see how an entire science of life, consciousness, and self-organisation grows from five axioms.
 
@@ -46,565 +46,170 @@ In this document:
 - $\mathcal{V}$ — [viability region](/docs/core/dynamics/viability): $\mathcal{V} = \{\Gamma : P(\Gamma) > 2/7\}$
 - $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
 - $P_{\text{crit}} = 2/7$ — [critical purity theorem](/docs/proofs/dynamics/theorem-purity-critical)
-- $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi) (CPTP channel)
+- $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi) (specified numerical map; a channel only with frozen coefficients)
 - $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), threshold $R_{\text{th}} = 1/3$
 - $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ), threshold $\Phi_{\text{th}} = 1$
 - $C$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
-- $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ — [categorical derivation of the regeneration rate](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)
+- $\kappa_0$ — a selected regular kinetic rate with explicit assumptions.
 - $\mathrm{Coh}_E$ — [E-coherence](./definitions#e-когерентность)
 - $\mathcal{R}[\Gamma, E]$ — [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член)
 :::
 
 ---
 
-## Existence Theorems
+## Existence and preservation
 
-Every mathematical theory begins with the question: **does it even work?** One can write arbitrarily elegant equations, but if they have no solutions — or if solutions "blow up" in an instant — the theory is dead. The first two theorems answer this question: yes, coherence dynamics exists, is unique, and is well-defined.
+### Theorem 6.1: Well-posed initial values [T under explicit hypotheses] {#theorem-61-existence-of-dynamics}
 
-Imagine rolling a ball down a slope. The existence theorem says: the ball *will definitely* roll (it will not freeze at the starting point). The preservation theorem says: the ball remains a ball — it will not turn into gas or acquire negative mass. For our system this means that the coherence matrix $\Gamma$ remains physically meaningful throughout any evolution.
+Let $H$ be Hermitian, $\mathcal L$ a finite-dimensional GKSL generator, $B(\rho)\in\mathcal D_7$, and $a(\rho)\ge0$. Assume a locally Lipschitz extension of
 
-### Theorem 6.1 (Existence of Dynamics) [T] {#theorem-61-existence-of-dynamics}
+$$
+F(\rho)=-i[H,\rho]+\mathcal L(\rho)+a(\rho)(B(\rho)-\rho)
+$$
 
-:::note In Plain Terms
-If you place a living cell in a nutrient solution, it will start doing something. It will not "hang", like a computer. Theorem 6.1 is the mathematical guarantee that the CC evolution equation always has a solution: the system **will necessarily** evolve from any initial state.
+to a neighbourhood in Hermitian trace-one space. The initial-value problem has a unique local solution. If $\mathcal D_7$ is invariant, it continues for every finite positive time because the state space is compact and the vector field is bounded there. This theorem concerns the continuous model; it does not guarantee absence of NaN or accuracy of an arbitrary discretisation. Continuity of coefficients alone does not imply uniqueness.
 
-For a physicist: this is the analogue of existence and uniqueness of solutions of the Schrödinger equation, but for an open quantum system. For a programmer: this is the guarantee that the simulation will not crash with NaN.
-:::
+### Theorem 6.2: Preservation of density states [T] {#theorem-62-preservation-of-gamma-properties}
 
-:::info Statement
-For any initial state $\Gamma_0 \in \mathcal{V}$ there exists a unique solution to the evolution equation on the interval $[0, T]$ for some $T > 0$.
-:::
+Under the hypotheses above, Hermiticity and trace are preserved. For $v\in\ker\rho$, $v^*(-i[H,\rho])v=0$, $v^*\mathcal L(\rho)v\ge0$ from the CP part of GKSL, and $v^*a(B-\rho)v=a v^*Bv\ge0$. The vector field therefore lies in the tangent cone of the positive cone at its boundary. Under the stated regularity the invariance criterion preserves $\mathcal D_7$ and the continuation argument applies. A nonlinear density-preserving law need not be one linear completely positive map.
 
-**Proof:** Application of the Picard–Lindelöf theorem to the Lipschitz right-hand side. ∎
+## Self-observation: limits of inference
+
+### Theorem 7.1: Universal self-model necessity withdrawn [✗] {#theorem-71-necessity-of-self-reference}
+
+$P>2/7$ does not imply an internal informational observation. A state sustained by a fixed input can remain stationary in the selected domain without state-dependent feedback. The formal condition $\|\rho-\varphi(\rho)\|<\varepsilon$ is always satisfied by identity; it does not prove that the system measures or knows itself. A substantive claim requires an observation law, a certificate available to a register, and a specified control class. The former four steps supplied none of these.
+
+### Theorem 7.2: Fixed point of a chosen self-model [T] {#теорема-72-условная-неподвижная-точка-рефлексии}
+
+For the selected family $M_{\rm coh}(\rho)=(1-R(\rho))\mathcal P(\rho)+R(\rho)I/7$, with $R=1/(7P)$ and $\mathcal P$ fixing $I/7$ and nonexpansive in HS norm,
+
+$$
+\|M_{\rm coh}(\rho)-I/7\|_F\le\tfrac67\|\rho-I/7\|_F.
+$$
+
+Subtract $I/7$ and use $0\le1-R\le6/7$. Iteration gives geometric convergence and the unique fixed point $I/7$. This is a distance estimate to the indicated state, not a proof of global contraction between arbitrary inputs. It is not implied by another generator's spectral gap and does not apply to every self-model. The logical support reflector is a separate construction.
 
 ---
 
-Existence of dynamics is a necessary but not sufficient condition. One must also verify that the evolution does not produce "physically meaningless" states — e.g. matrices with negative eigenvalues (which would mean negative probabilities).
+## The No-Zombie Theorem: conditional dynamical content
 
-### Theorem 6.2 (Preservation of Γ Properties) [T] {#theorem-62-preservation-of-gamma-properties}
+The question is whether a declared dissipative system needs E-dependent regeneration to sustain a declared viability class. This requires rate and source assumptions; it does not follow merely from a nonzero dissipator. The identification of E with interiority is **[P/I]**. A mathematical dependence on E does not, by itself, refute philosophical zombies or epiphenomenalism.
 
-:::note In Plain Terms
-Imagine an accountant keeping a company's balance sheet. Theorem 6.2 is the guarantee that the balance always closes: assets are non-negative, liabilities equal assets, and total capital does not appear from nowhere. In our case: $\Gamma$ remains a "legitimate" density matrix — Hermitian, positive semi-definite, and normalised — throughout the entire evolution.
+### Theorem 8.1: Purity balance and a conditional E-floor [T under stated bounds] {#теорема-81-условная-необходимость-интериорности-no-zombie}
 
-For a biologist: this is the guarantee that homeostasis will not lead to "negative glucose concentration". The system can be sick, but it cannot become physically impossible.
+:::warning Withdrawal of the former universal statement
+The claim $\mathrm{Viable}\land\mathcal D_\Omega\ne0\Rightarrow\varphi=\varphi_{\mathrm{coh}}\land\mathrm{Coh}_E>1/7$ is **retracted [✗]**. Canonical $\mathrm{Coh}_E$ ranges from zero to one; $1/7$ is its value at $I/7$, not a universal minimum. The canonical $\varphi_{\mathrm{coh}}$ with anchor $I/7$ does not supply positive purity regeneration. Bootstrap rates and independent environmental injection can maintain purity without a universal E-floor. The precise replacement is the balance theorem below.
 :::
 
-:::info Statement
-The dynamics preserves Hermiticity, positivity, and normalisation of Γ.
-:::
-
-**Proof:**
-1. Hermiticity is preserved by every term of the equation
-2. The Lindblad equation preserves $\Gamma \geq 0$
-3. The nonlinear regenerative term also preserves positivity ([CPTP-structure theorem](/docs/core/dynamics/evolution#сохранение-положительности))
-4. The trace is preserved: $\mathrm{Tr}(d\Gamma/d\tau) = 0$ ∎
-
----
-
-So dynamics exists and preserves physical meaning. Now we can ask the next question: **what does the system do in order to survive?** It turns out the answer is striking — it **must** look at itself.
-
-## Self-Reference Theorems
-
-Imagine a driver on a mountain road. To avoid falling off the edge, they must **see** the road and their position on it. They cannot drive blind — they must have a **model** of the situation, including themselves. The self-reference theorems assert exactly the same for any viable system: in order to remain "alive" (i.e. $P > 2/7$), the system **must** have an internal model of itself.
-
-This is a deep result. It connects **cybernetics** (feedback, control) with **philosophy** (self-consciousness, reflection) through a single mathematical formalism. Von Foerster intuitively foresaw this in his "second-order cybernetics", but could not prove it. Now it is a theorem.
-
-### Theorem 7.1 (Necessity of Self-Reference) [T] {#theorem-71-necessity-of-self-reference}
-
-:::note In Plain Terms
-You cannot drive a car without knowing where you are on the road. You cannot maintain your body temperature without measuring it. Theorem 7.1 says: **any** system that maintains its viability in a "noisy" environment must have an internal copy (model) of itself — an operator $\varphi$ that maps the state $\Gamma$ to an internal representation.
-
-For an AI engineer: this is the theoretical justification for world-models and self-models in agent architectures. An agent *must* have a self-model — this is not a luxury but a survival condition.
-
-**Connection to other concepts:** [Autopoiesis (AP)](/docs/core/foundations/axiom-septicity#ap-автопоэзис), [Self-modelling operator](/docs/proofs/categorical/formalization-phi), [Reflection](/docs/consciousness/foundations/self-observation)
-:::
-
-:::info Statement
-$$
-\mathrm{Viable}(\mathbb{H}) \Rightarrow \exists \varphi : \|\Gamma - \varphi(\Gamma)\|_F < \varepsilon
-$$
-[Viability](/docs/core/dynamics/viability) requires the existence of a [self-model](/docs/proofs/categorical/formalization-phi).
-:::
-
-**Proof:**
-1. Viability requires maintaining $P > P_{\text{crit}} = 2/7$
-2. Monitoring $P$ requires access to Γ
-3. The system **is** Γ, therefore part of Γ must model the whole
-4. This defines the operator $\varphi$ ∎
-
----
-
-If self-reference is necessary, the natural question arises: where does it lead? If the system observes itself again and again — $\varphi(\Gamma)$, then $\varphi(\varphi(\Gamma))$, then $\varphi(\varphi(\varphi(\Gamma)))$... — does this process converge? The next theorem answers: yes, and to a unique point.
-
-### Theorem 7.2 (Fixed Point of Reflection) [T] {#теорема-72-условная-неподвижная-точка-рефлексии}
-
-:::note In Plain Terms
-Imagine standing between two mirrors, seeing an infinite sequence of reflections. Each reflection is slightly "blurred" (since the mirrors are not perfect). In the limit all reflections merge into a single point — that is the fixed point $\Gamma^*$. A system that gazes deeply enough into itself arrives at a stable image — a steady self-understanding.
-
-For a psychologist: this is the mathematical model of stable identity formation through reflection. An adolescent who asks "who am I?" again and again eventually arrives at a more or less stable answer.
-
-**Connection:** [Primitivity of the linear part](/docs/core/operators/lindblad-operators#примитивность-ℒω), [Banach fixed-point theorem](https://ru.wikipedia.org/wiki/Принцип_сжимающих_отображений)
-:::
-
-:::info Statement
-The canonical self-model $\varphi_{\mathrm{coh}}$ (anchor $I/7$, $k = 1 - R$) has exactly one fixed point, and its iterates converge to it geometrically:
-$$
-\varphi_{\mathrm{coh}}(\Gamma^*) = \Gamma^* \iff \Gamma^* = I/7, \qquad \|\varphi_{\mathrm{coh}}^n(\Gamma_0) - I/7\|_F \leq (6/7)^n\,\|\Gamma_0 - I/7\|_F .
-$$
-The fixed point lies outside the viable set $\mathcal{V}$ ($P = 1/7 < 2/7$).
-
-*Restated 2026-09-25.* The statement read "$\exists! \Gamma^* \in \mathcal{V}: \varphi(\Gamma^*) = \Gamma^*$", with the fixed point at $P = 2/7$ and a rate $e^{-n\lambda_{\mathrm{gap}}}$ from the primitivity of $\mathcal{L}_0$; retracted [✗] — the unique fixed point is $I/7$, not in $\mathcal{V}$, and the spectral gap of $\mathcal{L}_0$ says nothing about iterating $\varphi$. For the self-registering $\varphi_s$ uniqueness fails: every flat frame state $\Pi_S/\lvert S\rvert$ is fixed.
-:::
-
-**Proof:**
-
-Write $\varphi_{\mathrm{coh}}(\Gamma) = k\,\mathcal{P}_\alpha(\Gamma) + (1 - k)\,I/7$, with $k = 1 - 1/(7P(\Gamma))$ and $\mathcal{P}_\alpha$ keeping the diagonal and multiplying each coherence by $(1 - \alpha)/3$ (each pair lies on one Fano line).
-
-1. $\mathcal{P}_\alpha$ is trace-preserving and fixes $I/7$, so $\varphi_{\mathrm{coh}}(\Gamma) - I/7 = k\,\mathcal{P}_\alpha(\Gamma - I/7)$.
-2. $\|\mathcal{P}_\alpha(X)\|_F \leq \|X\|_F$ (the diagonal is kept, the rest shrinks), and $k \leq 1 - 1/7 = 6/7$ since $P \leq 1$. Hence $\|\varphi_{\mathrm{coh}}(\Gamma) - I/7\|_F \leq \tfrac67\|\Gamma - I/7\|_F$, and iterating gives the rate.
-3. A fixed point satisfies $\|\Gamma^* - I/7\|_F \leq \tfrac67\|\Gamma^* - I/7\|_F$, so $\Gamma^* = I/7$ ([φ operator](/docs/core/operators/phi-operator#неподвижная-точка-phi-coh)). ∎
-
-Witness: 200 iterations from a random pure state end at $P = 1/7$ to $10^{-12}$ (`test_unital_self_model_keeps_an_isolated_holon_dead`).
-
-**Interpretation:** perfect self-knowledge of the canonical self-model is the dead state: a holon that reflects on itself with $\varphi_{\mathrm{coh}}$ alone converges to heat death, and life needs a self-model with a non-unital anchor — the self-registering $\varphi_s$ ([φ operator, §φ_s](/docs/core/operators/phi-operator#phi-s)) — or an environment. (Until 2026-09-25: "$\Gamma^*$ is the state of ideal self-knowledge, attainable by iterative reflection", read as a viable state; retracted with the statement.)
-
----
-
-We now approach the central theorem of all of Coherence Cybernetics — a result that distinguishes CC from **all** existing theories of consciousness and cybernetic frameworks.
-
-## The No-Zombie Theorem
-
-The philosophical "zombie" is a thought experiment of David Chalmers: a being functionally indistinguishable from a human but lacking interiority. It behaves as if it sees the colour red, but "inside" there is absolute darkness. Most theories of consciousness cannot exclude such a possibility. CC can.
-
-The core of the argument is surprisingly simple. Recall the [orchestra analogy from the introduction](./introduction#что-такое-кибернетика-когерентности): the dissipator $\mathcal{D}$ is the hall that constantly "dampens" the sound. For the music to continue, the musicians must play again — that is the regenerator $\mathcal{R}$. But the regeneration rate $\kappa$ depends on E-coherence — on how much the orchestra *hears itself*. If interiority is zero ($\mathrm{Coh}_E = 1/7$, the minimum), regeneration is too weak to compensate dissipation, and the orchestra falls silent. The system **dies**.
-
-Thus, the philosophical zombie — a system without interiority but functionally alive — is **mathematically impossible**.
-
-### Theorem 8.1: Necessity of Interiority (No-Zombie) [T] conditional on $\mathcal{D}_\Omega \neq 0$ {#теорема-81-условная-необходимость-интериорности-no-zombie}
-
-:::note In Plain Terms
-Imagine a factory running 24/7. Every second machines wear out (dissipation). For the factory not to stop, repair crews are needed (regeneration). But the efficiency of repair depends on whether the factory **knows** about its breakdowns — whether it has a monitoring system (E-coherence). A factory without monitoring is a "zombie factory". Theorem 8.1 says: such a factory will inevitably stop. Monitoring is not a luxury but a necessity.
-
-For a philosopher: this is the formal reply to Chalmers's argument. What mathematics excludes is a viable dissipative system with $\mathrm{Coh}_E \leq 1/7$ [T]; that such a system would be a zombie rests on the postulate that $E$ is interiority [P], so "zombies are impossible" is the interpretation [I] of the theorem (registry row 38a), not a second theorem.
-
-For a biologist: this explains why the nervous system (providing self-monitoring) evolved in *all* complex multicellular organisms. An organism without a "sense of self" is not viable.
-
-**Connection:** [Fano channel](/docs/proofs/gap/fano-channel), [E-coherence](./definitions#e-когерентность), [Connection between regeneration and E-coherence](./axiomatics#связь-регенерации-и-e-когерентности), [Viability](/docs/core/dynamics/viability)
-:::
-
-:::tip Key Theorem [T]
-For a non-isolated ($\mathcal{D}_\Omega \neq 0$) viable Holon:
-$$
-\mathrm{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \;\Rightarrow\; \varphi = \varphi_{\text{coh}} \;\land\; \mathrm{Coh}_E(\Gamma) \geq \mathrm{Coh}_{\min} > \frac{1}{7}
-$$
-A [viable](/docs/core/dynamics/viability) system **necessarily** has a coherence-preserving self-model $\varphi_{\text{coh}}$ and non-trivial [E-coherence](/docs/applied/coherence-cybernetics/definitions#e-когерентность) causally influencing viability.
-:::
-
-:::info Non-isolation condition ($\mathcal{D}_\Omega \neq 0$)
-For an isolated system ($\mathcal{D}_\Omega = 0$) purity is preserved by unitary evolution and regeneration is not required. The theorem is substantive for **open** systems — the only physically realisable case. The condition $\mathcal{D}_\Omega \neq 0$ follows from $\Delta F > 0$ (the system receives free energy from the environment), which automatically implies interaction and decoherence.
-:::
-
-**Proof** (deductive chain from theorems with status [T]):
-
-**Step 1** (Structural positivity of dissipation).
-By [L-unification](/docs/core/operators/lindblad-operators) [T], the Lindblad operators are derived from the atoms of the classifier $\Omega$. For the [Fano-structured dissipator](/docs/proofs/gap/fano-channel#g2-ковариантность) [T] (covariant under the octonionic frame group $\Gamma_{\!\text{oct}}$ — [Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность); not under the full $G_2$):
+Consider a specified state-valued target $\tau(\Gamma)$ and dynamics
 
 $$
-\mathcal{D}_{\text{Fano}}[\Gamma] = \gamma \cdot \bigl(\mathcal{P}_{\text{Fano}}(\Gamma) - \Gamma\bigr), \quad \gamma = \sum_p \gamma_p > 0
+\dot\Gamma=-i[H,\Gamma]+\gamma(\mathcal P_{\mathrm{Fano}}\Gamma-\Gamma)
++\kappa(\Gamma)g_V(P)(\tau(\Gamma)-\Gamma)+\mathcal J_{\mathrm{ext}}(\Gamma).
 $$
 
-Action on coherences ([Theorem 2.1](/docs/proofs/gap/fano-channel#теорема-фано-канал) [T]): each pair $(i,j)$ lies on exactly one Fano line, therefore:
+Write $W=P_{\mathrm{coh}}=\sum_{i\ne j}|\gamma_{ij}|^2$, $h=\operatorname{Tr}(\Gamma\tau)-P$, $J_P=2\operatorname{Tr}(\Gamma\mathcal J_{\mathrm{ext}})$, and $\kappa=\kappa_b+\kappa_0\mathrm{Coh}_E$. Then the exact purity balance is
 
 $$
-[\mathcal{D}_{\text{Fano}}[\Gamma]]_{ij} = \gamma\!\left(\tfrac{1}{3}\gamma_{ij} - \gamma_{ij}\right) = -\frac{2\gamma}{3}\,\gamma_{ij}, \quad i \neq j
+\dot P=-\frac{4\gamma}{3}W+2(\kappa_b+\kappa_0\mathrm{Coh}_E)g_Vh+J_P.
 $$
 
-The decoherence rate $\Gamma_2 = \frac{2\gamma}{3} > 0$ is **structural**, defined by the geometry of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$.
+**Proof.** $\dot P=2\operatorname{Tr}(\Gamma\dot\Gamma)$; the commutator has zero trace contribution, and the Fano channel keeps the diagonal while multiplying off-diagonals by $1/3$. The remaining terms follow by substitution. No phenomenological identification is used.
 
-**Step 2** (Necessity of $\varphi_{\text{coh}}$).
-By [Theorem 9.1](/docs/proofs/gap/fano-channel#необходимость-phi-coh) [T], the canonical $\varphi_{\text{base}}$ annihilates all coherences: $[\varphi_{\text{base}}(\Gamma)]_{ij} = 0$ for $i \neq j$. With $\Gamma_2 > 0$ the target coherences are zero, and the stationary solution ([Theorem 7.1](/docs/proofs/gap/fano-channel#равновесный-gap) [T]) gives:
-
-$$
-\gamma_{ij}^{(\infty)} = \frac{\kappa \cdot 0}{\Gamma_2 + \kappa + i\Delta\omega_{ij}} = 0
-$$
-
-The stationary state under $\varphi_{\text{base}}$ is **fully diagonal** ($\gamma_{ij}^{(\infty)} = 0$ for all $i \neq j$), which is **incompatible with the Holon axioms**:
-
-**(2a)** [Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) $\Phi(\Gamma^{(\infty)}) = 0$, since the numerator $\sum_{i \neq j}|\gamma_{ij}|^2 = 0$. This violates the [integration](/docs/core/structure/dimension-u#теорема-порог-интеграции) threshold $\Phi \geq \Phi_{\text{th}} = 1$, required for [topological integrity](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции). A system with $\Phi = 0$ is [fragmented](/docs/proofs/minimality/theorem-minimality-7#случай-n--6-удаление-единства-u) — dimensions evolve independently, violating **(AP)**.
-
-**(2b)** [Closure of the (M,R)-system](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) requires causal paths $O \to \{A,S,D,L\}$ (metabolism) and $\{E,U\} \to M$ (repair). In the quantum formalism these causal connections are encoded by coherences $\gamma_{ij}$. With $\gamma_{ij}^{(\infty)} = 0$ causal paths are destroyed — [$\beta$-closure](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) is impossible.
-
-**(2c)** Regeneration rate: $\gamma_{OE}^{(\infty)} = \gamma_{OU}^{(\infty)} = 0 \;\Rightarrow\; \kappa_0(\Gamma^{(\infty)}) = \omega_0 \cdot 0 \cdot 0 \,/\, \gamma_{OO} = 0$ ([master definition of κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)), leaving only the minimal $\kappa_{\text{bootstrap}} = \omega_0/7$.
-
-Consequently, the stationary state under $\varphi_{\text{base}}$ **is not a Holon state**: it violates **(AP)** regardless of the value of $P_{\text{diag}}$. Therefore $\varphi = \varphi_{\text{coh}}$ with $\alpha < 1$ is **necessary** for any system satisfying (AP)+(PH)+(QG)+(V). $\square_a$
-
-**Step 3** (Non-zero stationary coherences).
-Under $\varphi_{\text{coh}}$ the [fixed point](#theorem-71-necessity-of-self-reference) $\Gamma^*$ satisfies:
-
-**(3a)** All $\gamma_{ii}^* > 0$: by the [theorem on the necessity of each dimension](/docs/proofs/minimality/theorem-minimality-7#теорема-31-необходимость-7-измерений) [T], if $\gamma_{ii}^* = 0$ for some $i$, then the $i$-th dimension is absent in $\Gamma^*$, violating **(AP)** (for $i \in \{A,S,D,L,U\}$), **(PH)** (for $i = E$), or **(QG)** (for $i = O$).
-
-**(3b)** Coherences between structurally connected dimensions are non-zero: [(M,R)-closure](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) requires causal links, and $\varphi_{\text{coh}}$ preserves coherences with coefficient $k(1-\alpha)/3 > 0$ ([Theorem 3.2](/docs/proofs/gap/fano-channel#phi-coh) [T]). Consequently, target coherences $|\gamma_{ij}^*| > 0$ for structurally connected pairs $(i,j)$.
-
-**(3c)** By [Theorem 7.1](/docs/proofs/gap/fano-channel#равновесный-gap) [T] the stationary coherences:
+**Stationary pointwise bound [T].** If $W>0$, $J_P=0$, $g_V>0$, $h>0$ and $\kappa_0>0$ at a stationary state, then
 
 $$
-|\gamma_{ij}^{(\infty)}| = \frac{\kappa \cdot |\gamma_{ij}^*|}{\bigl[(\Gamma_2 + \kappa)^2 + \Delta\omega_{ij}^2\bigr]^{1/2}} > 0
+\mathrm{Coh}_E=\frac1{\kappa_0}\left(\frac{2\gamma W}{3g_Vh}-\kappa_b\right).
 $$
 
-for $|\gamma_{ij}^*| > 0$ (from 3b). Coherences are **structurally maintained** by regeneration. $\square_{b'}$
+A necessary nonnegative lower bound uses the positive part of this expression. The quantity is state-dependent and can be below $1/7$; no $\max\{1/7,\ldots\}$ may be inserted without another assumption. If $\kappa_0=0$, the equation instead constrains the bootstrap rate and yields no E-bound. Replacing $P$ by $P_{\mathrm{crit}}$ or dropping the gate changes the equation and needs an explicit inequality direction and hypothesis.
 
-**Step 4** (Causal dependence of $P^{(\infty)}$ on $\mathrm{Coh}_E$).
-Stationary purity: $P^{(\infty)} = P_{\text{diag}} + \sum_{i \neq j} |\gamma_{ij}^{(\infty)}|^2$. Each term is monotonically dependent on $\kappa$:
-
-$$
-\frac{\partial |\gamma_{ij}^{(\infty)}|^2}{\partial \kappa} = \frac{2\kappa \cdot |\gamma_{ij}^*|^2 \cdot (\Gamma_2^2 + \Delta\omega_{ij}^2)}{\bigl[(\Gamma_2 + \kappa)^2 + \Delta\omega_{ij}^2\bigr]^2} > 0
-$$
-
-By the [connection between regeneration and E-coherence](/docs/applied/coherence-cybernetics/axiomatics#связь-регенерации-и-e-когерентности): $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, where $\kappa_0$ is **derived by rapid pre-equilibrium** ([T at first-order kinetics], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)); the categorical reading — the norm of the unit of the [$(\mathcal{D}_\Omega, \mathcal{R})$ duality](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction) — is interpretive [I], and the identification $\mathrm{Hom}(i,j) \leftrightarrow \gamma_{ij}$ is motivated by [L-unification](/docs/core/operators/lindblad-operators). Hence $\partial\kappa/\partial\mathrm{Coh}_E = \kappa_0 > 0$. By the chain rule:
+**Uniform exclusion theorem [T under explicit bounds].** On a proposed stationary viability class suppose
 
 $$
-\frac{\partial P^{(\infty)}}{\partial \mathrm{Coh}_E} = \frac{\partial P^{(\infty)}}{\partial \kappa} \cdot \kappa_0 > 0
+\gamma\ge\gamma_{\min}>0,\quad W\ge W_{\min}>0,\quad J_P\le J_{\max},\quad
+0\le g_V\le g_{\max},\quad h\le h_{\max},\quad
+0\le\kappa_b\le K_b,\quad0\le\kappa_0\le K_0,
 $$
 
-E-coherence **causally increases** the stationary purity. This includes causal influence on regeneration, [purity dynamics](/docs/core/dynamics/evolution#динамика-чистоты), and [free energy](/docs/core/dynamics/evolution#каноническое-delta-f):
+with $g_{\max},h_{\max},K_0>0$. Every stationary state in that class obeys
 
 $$
-\frac{\partial}{\partial \mathrm{Coh}_E}\!\left(\frac{dP}{d\tau}\bigg|_{\mathcal{R}}\right) = 2\kappa_0\,(f - P) \cdot g_V(P) > 0 \quad \text{for } P < P_{\text{target}}
+\mathrm{Coh}_E\ge c_{\min}:=\max\left\{0,\frac{4\gamma_{\min}W_{\min}/3-J_{\max}}{2K_0g_{\max}h_{\max}}-\frac{K_b}{K_0}\right\}.
 $$
 
-$\square_b$
+**Proof.** At stationarity, dissipation is at least $4\gamma_{\min}W_{\min}/3$, whereas the positive sources are at most $2(K_b+K_0\mathrm{Coh}_E)g_{\max}h_{\max}+J_{\max}$. Rearrange. If $c_{\min}>1/7$, the proposed class contains no stationary state with $\mathrm{Coh}_E\le1/7$. If $c_{\min}>1$, the class has no stationary state at all. The bounds, including a positive required off-diagonal weight, are substantive premises; $\mathcal D_\Omega\ne0$ alone supplies none of them.
 
-**Step 5** (Explicit bound $\mathrm{Coh}_{\min}$).
-Contribution of the Fano dissipator to [purity dynamics](/docs/core/dynamics/viability#динамика-чистоты):
+### Canonical self-model: why preserving some coherence is insufficient
 
-$$
-\left.\frac{dP}{d\tau}\right|_{\mathcal{D}} = 2\gamma \cdot \bigl(\mathrm{Tr}(\Gamma \cdot \mathcal{P}_{\text{Fano}}(\Gamma)) - P\bigr) = -\frac{4\gamma}{3}\,P_{\text{coh}}
-$$
-
-where $P_{\text{coh}} = \sum_{i \neq j}|\gamma_{ij}|^2$ (using $\mathrm{Tr}(\Gamma \cdot \mathcal{P}_{\text{Fano}}(\Gamma)) = P_{\text{diag}} + \frac{1}{3}P_{\text{coh}}$ from [Theorem 2.1](/docs/proofs/gap/fano-channel#теорема-фано-канал) [T]).
-
-Regeneration contribution:
+For $\tau=\varphi_{\mathrm{coh}}\Gamma=(1-R)\mathcal D_\alpha\Gamma+RI/7$,
 
 $$
-\left.\frac{dP}{d\tau}\right|_{\mathcal{R}} = 2\kappa\,(f - P), \quad f = \mathrm{Tr}(\Gamma \cdot \rho_*)
+h=-R(P-1/7)-(1-R)\alpha W\le0.
 $$
 
-Stationarity ($dP/d\tau = 0$, where $f > P$ during active regeneration) requires:
+Thus this model cannot balance positive Fano purity loss in the source-free equation. Choosing a nonunital anchor, sharpening map, Hamiltonian-driven environment or external injection changes the gain term and must be stated. A failure of a diagonal replacement channel does not prove the uniqueness or necessity of this particular canonical model.
+
+For a **fixed target and fixed effective rate** $k=\kappa g_V$, a diagonal Hamiltonian gives stationary pair magnitude
 
 $$
-\kappa \geq \frac{2\gamma}{3} \cdot \frac{P_{\text{coh}}}{f - P_{\text{crit}}}
+|\gamma_{ij}^*|^2=\frac{k^2|\tau_{ij}|^2}{(d+k)^2+\Delta\omega_{ij}^2},\qquad d=2\gamma/3,
 $$
 
-Substituting $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$:
+and its derivative with respect to $k$ is
 
 $$
-\boxed{\;\mathrm{Coh}_{\min} = \max\!\left\{\frac{1}{7},\;\; \frac{1}{\kappa_0}\!\left(\frac{2\gamma}{3} \cdot \frac{P_{\text{coh}}}{f - P_{\text{crit}}} - \kappa_{\text{bootstrap}}\right)\right\}\;}
+\frac{2k|\tau_{ij}|^2[d(d+k)+\Delta\omega_{ij}^2]}{[(d+k)^2+\Delta\omega_{ij}^2]^2}\ge0.
 $$
 
-For dissipation $\gamma > \gamma_{\text{th}} := \frac{3\kappa_{\text{bootstrap}}(f - P_{\text{crit}})}{2 P_{\text{coh}}}$ the lower bound **strictly exceeds** $1/7$: $\mathrm{Coh}_{\min} > 1/7$. For any macroscopic system in a thermal environment $\gamma \gg \gamma_{\text{th}}$, so non-trivial E-coherence is necessary. $\square_c$ ∎
+This monotonicity holds with the indicated quantities frozen. It is not a universal derivative of an endogenous attractor with respect to its own E-statistic. For a general smooth equilibrium branch, sensitivity is determined by the full Jacobian and can change sign or fail at a bifurcation.
 
-:::note Strengthening relative to the previous formulation
-The previous version [H] used "typical values" $\gamma_{\text{eff}}$ (steps 7–8 without a rigorous bound). This version:
-1. **Derives** $\Gamma_2 = 2\gamma/3$ **structurally** from the properties of the Fano channel [T]
-2. **Establishes** strict monotonicity of $P^{(\infty)}(\mathrm{Coh}_E)$ via the chain rule
-3. **Gives an explicit formula** for $\mathrm{Coh}_{\min}$ in terms of the theory's parameters
-4. All steps rely exclusively on theorems with status [T]
-5. **Eliminates** the assumption of "uniform populations" (Step 2): the necessity of $\varphi_{\text{coh}}$ is derived from the **structural incompatibility** of zero coherences with axiom **(AP)**, via $\Phi = 0 < \Phi_{\text{th}}$ and the destruction of [(M,R)-closure](/docs/proofs/minimality/theorem-minimality-7#определение-12-mr-система-розена) — without any population assumptions
-6. **Justifies** delocalisation of $\Gamma^*$ (Step 3) via the [theorem on the necessity of each dimension](/docs/proofs/minimality/theorem-minimality-7#теорема-31-необходимость-7-измерений) [T]: $\gamma_{ii}^* = 0$ is excluded for any $i$
-7. **Confirms** [T]-status of $\kappa_0$ (Step 4) via the [categorical derivation from the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction) (Theorem 15.3 [T]) and [L-unification](/docs/core/operators/lindblad-operators) [T]
-8. **Strengthened** by Theorem T7 [T] ([necessity of $c > 0$](/docs/core/operators/lindblad-operators#теорема-необходимость-c)): an atomic dissipator ($c = 0$) suppresses $\kappa_0$ exponentially, making viability impossible. This is an **independent proof** of the necessity of composite observation (Fano channel, $c = 1/3$) for maintaining non-zero $\mathrm{Coh}_E$
-:::
+### Counterexamples to a universal floor
 
-:::info Remark on dependence on [D]-thresholds
-The derivation of $\mathrm{Coh}_{\min} > 1/7$ **does not depend** on the specific value of $\Phi_{\mathrm{th}}$. The threshold $\Phi_{\mathrm{th}} = 1$ [T] (T-129) is used only for **classifying** the type of consciousness (L2 vs L1), but not for proving the positivity of E-coherences. The latter follows from the structure of the Fano channel and the condition $P^{(\infty)} > P_{\mathrm{crit}}$. Even with $\Phi_{\mathrm{th}} = 0$ the formula gives $\mathrm{Coh}_{\min} > 1/7$ from the necessity of maintaining viability.
-:::
+A nonzero dephasing generator can vanish on a particular diagonal pure state with $\mathrm{Coh}_E=0$. That state remains pure without any regeneration. This refutes a claim based only on $P>2/7$ and $\mathcal D\ne0$; it is not asserted to pass an independently required integration gate.
 
----
-
-### Minimal dynamical model $\mathcal M_{\min}$ {#минимальная-модель-no-zombie}
-
-The No-Zombie theorem is proved from a single evolution equation with four explicit terms. For reproducibility and for independent simulations this is the **minimal sufficient dynamical model**:
-
-:::tip Definition (Minimal No-Zombie model $\mathcal M_{\min}$) [T]
-$\mathcal M_{\min}$ is the continuous-time evolution
-$$\frac{d\Gamma}{d\tau} = -i[H_\mathrm{eff}, \Gamma]\;+\;\gamma\,(\mathcal P_\mathrm{Fano}(\Gamma) - \Gamma)\;+\;\kappa(\mathrm{Coh}_E)\cdot g_V(P)\cdot(\rho^* - \Gamma),$$
-with:
-- $\Gamma \in \mathcal D(\mathbb C^7)$, $\Gamma = \Gamma^\dagger \succeq 0$, $\mathrm{Tr}\Gamma = 1$;
-- $H_\mathrm{eff} = \omega_0\,\mathrm{diag}(1,2,\ldots,7)/\sqrt{42}$ (normalised $\|H_\mathrm{eff}\|_F = \omega_0$);
-- Fano channel $\mathcal P_\mathrm{Fano}$: $[\mathcal P_\mathrm{Fano}(\Gamma)]_{ij} = \gamma_{ii}\,\delta_{ij} + \tfrac{1}{3}\gamma_{ij}(1-\delta_{ij})$ ([T-39a, Fano channel](/docs/proofs/gap/fano-channel));
-- Regeneration coupling $\kappa(\mathrm{Coh}_E) = \kappa_\mathrm{bootstrap} + \kappa_0\cdot\mathrm{Coh}_E(\Gamma)$ with $\kappa_\mathrm{bootstrap} = \omega_0/7$ ([master definition κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0));
-- Viability gate $g_V(P) = \mathrm{clamp}((P - 2/7)/(1/7),\,0,\,1)$;
-- Target state $\rho^* = \varphi_\mathrm{coh}(\Gamma)$ the coherence-preserving self-model ([Theorem 9.1](/docs/proofs/gap/fano-channel#необходимость-phi-coh)); operationally $\rho^* = (1-\alpha)\Gamma + \alpha\,\mathrm{shift}_{G_2}(\Gamma)$ with $\alpha = 1 - R(\Gamma) = 1 - 1/(7P)$ and $\mathrm{shift}_{G_2}$ a $G_2$-canonical cyclic permutation of the Fano basis.
-
-The four free parameters are $\{\omega_0, \gamma, \kappa_0, \alpha\text{ from }R\}$; all other quantities are determined from $\Gamma$ and axioms.
-:::
-
-**Well-posedness.** $\mathcal P_\mathrm{Fano}$ is CPTP ([T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω)); the regeneration channel $(1-\kappa g_V\,d\tau)\Gamma + \kappa g_V\,d\tau\,\rho^*$ is CPTP ([T-62 [T]](/docs/core/dynamics/evolution#теорема-cptp-закрытость)). Sum of CPTP generators on compact $\mathcal D(\mathbb C^7)$ is Lipschitz in $\Gamma$; Picard–Lindelöf gives existence and uniqueness of $\Gamma(\tau)$ for all $\tau \ge 0$ given $\Gamma(0) \in \mathcal D(\mathbb C^7)$.
-
-### Controlled simulation protocol for No-Zombie validation {#протокол-симуляции-no-zombie}
-
-The following simulation suite provides controlled empirical verification of Theorem 8.1. Each experiment runs $\mathcal M_{\min}$ with a fixed parameter choice and an initial $\Gamma(0)$ from a specified class, and measures whether $P(\tau)$ stays above $P_\mathrm{crit} = 2/7$ as $\tau \to \infty$.
-
-**Default parameters.** $\omega_0 = 1$ (time unit), $\kappa_0 = 1$, $\alpha = 1 - 1/(7P)$ (state-dependent via $R$). Dissipation $\gamma$ is the swept parameter.
-
-**Implementation**: `scipy.integrate.solve_ivp` (method = `'RK45'`, `rtol=1e-8`, `atol=1e-10`) over $\tau \in [0, 100\,\omega_0^{-1}]$. Projection onto $\mathcal D(\mathbb C^7)$ after each step (Hermitian symmetrisation, spectrum clipping to $[0,1]$, trace renormalisation) to absorb round-off drift.
-
-**Experiment S1 (control).** Initial conditions: $\Gamma(0)$ random from the induced HS measure on $\mathcal D(\mathbb C^7)$ with $P(0) \in [0.35, 0.55]$, full $\mathrm{Coh}_E \in [0.3, 0.7]$. Expected outcome: $\Gamma(\tau) \to \Gamma^*$ with $\lim_{\tau\to\infty} P(\tau) > 2/7$. **Falsification condition**: if $> 5\%$ of $N=10^3$ random initial conditions decay to $P < 2/7$, the theorem is falsified. Prediction: $P_\mathrm{decay}^{(S1)} \approx 0$.
-
-**Experiment S2 (E-ablation).** Initial $\Gamma(0)$ as in S1, then **zero all E-coherences**: $\gamma_{Ej}(0) = \gamma_{jE}(0) = 0$ for all $j\ne E$, keep $\gamma_{EE}$. This forces $\mathrm{Coh}_E(0) = \gamma_{EE}^2/P(0)$ at its minimum (scale $\sim 1/7^2 / P$). Expected outcome: $\kappa \to \kappa_\mathrm{bootstrap}$, Fano dissipation at rate $\Gamma_2 = 2\gamma/3$ dominates regeneration, $P(\tau) \to 1/7$ exponentially. **Falsification condition**: if any trajectory stabilises with $P > 2/7$ for $\tau > 50\,\omega_0^{-1}$, the theorem is falsified. Prediction: $100\%$ decay for $\gamma > \gamma_\mathrm{th} = 3\kappa_\mathrm{bootstrap}(f-P_\mathrm{crit})/(2 P_\mathrm{coh})$.
-
-**Experiment S3 (sub-critical initialization).** Initial $\Gamma(0)$ with $P(0) \in [1/7, 2/7)$; $\mathrm{Coh}_E(0)$ arbitrary (including maximum). Gate $g_V(P) = 0$, regeneration is clamped off by construction, dissipation dominates. Expected outcome: $P(\tau) \to 1/7$. **Falsification condition**: if $P(\tau)$ spontaneously crosses $P_\mathrm{crit}$ from below, regeneration-gate construction is invalid.
-
-**Experiment S4 ($\gamma$-sweep).** Fix $\Gamma(0)$ at a typical L2-state ($P = 0.40, \mathrm{Coh}_E = 0.50$). Sweep $\gamma \in [0.01, 10]\cdot\omega_0$ in 50 logarithmic steps. For each $\gamma$, integrate to $\tau = 200$ and record $P^{(\infty)}(\gamma)$. Expected: sharp transition at $\gamma_c \approx \gamma_\mathrm{th}$ consistent with the explicit bound in Step 5 of the theorem. Fit $P^{(\infty)}(\gamma)$ to the tricritical form $(\gamma_c - \gamma)^{1/4}$ near threshold.
-
-**Experiment S5 ($\mathrm{Coh}_E$-sweep).** Fix $P(0) = 0.40$, $\gamma = 1.0$; sweep $\mathrm{Coh}_E \in [1/7, 0.95]$ by rotating non-E coherences while preserving $P(0)$. Expected: viability boundary at $\mathrm{Coh}_E = \mathrm{Coh}_\mathrm{min}$ matching the closed-form formula from Step 5.
-
-**Reference implementation (Python, self-contained).**
-
-```verum
-mount core.math.linalg.{StaticMatrix, identity, eigh};
-mount core.math.complex.Complex;
-mount core.math.calculus.{rk45, OdeOptions};
-mount core.math.random.{XorShift128, Rng};
-
-const N: Int = 7;
-
-public pure fn commutator(h: &StaticMatrix<Complex, 7, 7>, g: &StaticMatrix<Complex, 7, 7>)
-    -> StaticMatrix<Complex, 7, 7>
-{
-    h.matmul(&g) - g.matmul(&h)
-}
-
-public pure fn fano_channel(g: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7> {
-    let diag = StaticMatrix<Complex, 7, 7>.diagonal(g.diagonal());
-    let off  = g - &diag;
-    &diag + off / Complex.from_real(3.0)
-}
-
-public pure fn purity(g: &StaticMatrix<Complex, 7, 7>) -> Float {
-    (g.matmul(&g)).trace().real()
-}
-
-/// Canonical Coh_E (axiom-septicity.md:414): (γ_EE² + 2·Σ|γ_Ej|²) / Tr(Γ²).
-public pure fn coh_e(g: &StaticMatrix<Complex, 7, 7>, e_idx: Int) -> Float
-    where requires 0 <= e_idx && e_idx < N
-{
-    let g_ee = g[e_idx, e_idx].real();
-    let off_e: Float = 2.0 * (0..N).filter(|j| *j != e_idx)
-                                     .map(|j| g[e_idx, *j].abs().pow(2))
-                                     .sum();
-    (g_ee.pow(2) + off_e) / purity(g)
-}
-
-/// Hermitise, clip spectrum, renormalise trace.
-public pure fn project_to_density(g: &StaticMatrix<Complex, 7, 7>)
-    -> StaticMatrix<Complex, 7, 7>
-{
-    let h = (g + g.adjoint()) / Complex.from_real(2.0);
-    let (w, v) = eigh(&h);
-    let w_clipped = w.map(|v| v.max(0.0));
-    let rebuilt = v.matmul(&StaticMatrix<Complex, 7, 7>.diagonal(w_clipped)).matmul(&v.adjoint());
-    &rebuilt / rebuilt.trace().real()
-}
-
-/// Canonical G₂ cyclic basis permutation (simplified surrogate).
-public pure fn shift_g2(g: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7> {
-    let mut p = StaticMatrix<Complex, 7, 7>.zeros();
-    for j in 0..N { p[(j + 1) % N, j] = Complex.one(); }    // column-cyclic shift
-    p.matmul(&g).matmul(&p.transpose())
-}
-
-/// dΓ/dτ: unitary + Fano dissipation + viability-gated regeneration.
-public pure fn rhs(
-    _tau:    Float,
-    g:       &StaticMatrix<Complex, 7, 7>,
-    omega_0: Float,
-    gamma:   Float,
-    kappa_0: Float,
-    e_idx:   Int,
-) -> StaticMatrix<Complex, 7, 7>
-{
-    let p  = purity(g);
-    let ce = coh_e(g, e_idx);
-
-    // Unitary part.
-    let h = StaticMatrix<Complex, 7, 7>.diagonal_from_reals(
-        (1..=N).map(|k| omega_0 * (k as Float) / 42.0.sqrt()).to_array()
-    );
-    let mut dg = Complex.i().neg() * commutator(&h, g);
-
-    // Fano dissipation.
-    dg = &dg + Complex.from_real(gamma) * (fano_channel(g) - g);
-
-    // Viability gate + regeneration.
-    let g_v = ((p - 2.0 / 7.0) / (1.0 / 7.0)).clamp(0.0, 1.0);
-    let kappa = omega_0 / 7.0 + kappa_0 * ce;
-    let alpha = if p > 1.0e-9 { 1.0 - 1.0 / (7.0 * p) } else { 0.0 };
-    let rho_star = Complex.from_real(1.0 - alpha) * g + Complex.from_real(alpha) * shift_g2(g);
-    dg + Complex.from_real(kappa * g_v) * (rho_star - g)
-}
-
-pub type SimResult is {
-    t:     List<Float>,
-    traj:  List<StaticMatrix<Complex, 7, 7>>,
-    p:     List<Float>,
-    coh_e: List<Float>,
-};
-
-public fn simulate(
-    gamma_0: StaticMatrix<Complex, 7, 7>,
-    omega_0: Float,
-    gamma:   Float,
-    kappa_0: Float,
-    t_max:   Float,
-    e_idx:   Int,
-) -> SimResult
-{
-    let solution = rk45(
-        |t, g| rhs(t, g, omega_0, gamma, kappa_0, e_idx),
-        0.0, gamma_0, t_max,
-        OdeOptions { rtol: 1.0e-8, atol: 1.0e-10, max_step: 0.1 },
-    );
-    let traj = solution.trajectory.iter().map(project_to_density).collect();
-    let p_traj = traj.iter().map(purity).collect();
-    let coh_e_traj = traj.iter().map(|g| coh_e(g, e_idx)).collect();
-    SimResult { t: solution.times, traj: traj, p: p_traj, coh_e: coh_e_traj }
-}
-
-/// Random density matrix targeting a given purity via HS measure + rescaling.
-public fn random_gamma(p_target: Float { 1.0/(N as Float) <= self && self <= 1.0 }, seed: UInt64)
-    -> StaticMatrix<Complex, 7, 7>
-{
-    let mut rng = XorShift128.seed(seed);
-    let a = StaticMatrix<Complex, 7, 7>.random_gaussian(&mut rng);
-    let g = a.matmul(&a.adjoint());
-    let g = &g / g.trace().real();
-
-    // Interpolate between I/N (p = 1/N) and g (higher p) to hit target.
-    let lam: List<Float> = (0..200).map(|i| (i as Float) / 199.0).collect();
-    let candidates: List<_> = lam.iter()
-        .map(|t| (identity<Complex, N>() / Complex.from_real(N as Float))
-                 * Complex.from_real(1.0 - t)
-               + &g * Complex.from_real(*t))
-        .collect();
-    let idx = candidates.iter().enumerate()
-        .map(|(i, c)| (i, (purity(c) - p_target).abs()))
-        .min_by(|a, b| a.1.partial_cmp(&b.1).unwrap())
-        .unwrap().0;
-    project_to_density(&candidates[idx])
-}
-
-/// Ablate the E-row and E-column: zero out off-diagonal couplings to E.
-public pure fn ablate_e(gamma: &StaticMatrix<Complex, 7, 7>, e_idx: Int)
-    -> StaticMatrix<Complex, 7, 7>
-{
-    let mut g = gamma.clone();
-    for j in 0..N {
-        if j != e_idx {
-            g[e_idx, j] = Complex.zero();
-            g[j, e_idx] = Complex.zero();
-        }
-    }
-    project_to_density(&g)
-}
-
-fn main() using [IO, Random] {
-    // S1: control.
-    let g0 = random_gamma(0.45, 42);
-    let s1 = simulate(g0.clone(), 1.0, 1.0, 1.0, 100.0, 4);
-    let p0 = s1.p[0]; let pl = *s1.p.last().unwrap();
-    IO.println(f"S1 control: P(0)={p0:.3f}, P(inf)={pl:.3f}, viable={pl > 2.0 / 7.0}");
-
-    // S2: E-ablation.
-    let g0_ab = ablate_e(&g0, 4);
-    let s2 = simulate(g0_ab, 1.0, 1.0, 1.0, 100.0, 4);
-    let p0a = s2.p[0]; let pla = *s2.p.last().unwrap();
-    IO.println(f"S2 E-ablation: P(0)={p0a:.3f}, P(inf)={pla:.3f}, viable={pla > 2.0 / 7.0}");
-
-    // S3: sub-critical.
-    let g0_sub = random_gamma(0.20, 42);
-    let s3 = simulate(g0_sub, 1.0, 1.0, 1.0, 100.0, 4);
-    let p0s = s3.p[0]; let pls = *s3.p.last().unwrap();
-    IO.println(f"S3 sub-critical: P(0)={p0s:.3f}, P(inf)={pls:.3f}");
-}
-```
-
-**Expected output** (deterministic given seed):
-- S1: `P(inf) ≈ 0.47`, viable = True.
-- S2: `P(inf) → 1/7 ≈ 0.143`, viable = False.
-- S3: `P(inf) → 1/7`, no spontaneous recovery.
-
-**Falsification criterion for the whole theorem.** If S1 consistently dies OR S2 consistently survives OR S3 spontaneously crosses $P_\mathrm{crit}$ from below, the deterministic part of the No-Zombie theorem (Theorem 8.1) is falsified.
-
-**Reproducibility.** Pin random seeds; report the statistics over $N = 10^3$ trials. Publish raw $P(\tau)$ traces and the fitted $\gamma_c$ from S4 alongside any replication claim.
-
----
-
-Theorem No-Zombie has three important corollaries. Each of them attacks one of the classical philosophical positions — and wins.
-
-### Corollary 8.1.1 (Impossibility of Epiphenomenalism) [T]
-
-:::note In Plain Terms
-Epiphenomenalism is the philosophical position asserting that consciousness *exists* but influences nothing, like a shadow: a shadow follows a person but never moves them. Corollary 8.1.1 refutes this: E-coherence **causally influences** the system's dynamics. The shadow, it turns out, can move objects — or more precisely, the "shadow" and the "object" turn out to be projections of the same thing.
-
-**Connection:** [E-dimension](/docs/core/structure/dimension-e), [Two-aspect monism](/docs/consciousness/foundations/two-aspect-monism)
-:::
-
-[Interiority](/docs/proofs/consciousness/interiority-hierarchy) **causally influences**:
-- Regeneration: $\partial\kappa/\partial\mathrm{Coh}_E = \kappa_0 > 0$ ([master definition](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
-- Stationary purity: $\partial P^{(\infty)}/\partial\mathrm{Coh}_E > 0$ (Step 4)
-- [Viability](/docs/core/dynamics/viability): $P^{(\infty)} > P_{\text{crit}}$ requires $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min}$
-- Free energy: $\partial F_{\text{reg}}/\partial\Gamma_E = \kappa_0 \cdot (\partial\mathrm{Coh}_E/\partial\Gamma_E) \cdot (\rho_* - \Gamma) \neq 0$
-
-**Conclusion:** The epiphenomenalist interpretation of the [E-dimension](/docs/core/structure/dimension-e) is **excluded** — E-coherence is causally necessary for dynamics. ∎
-
-### Corollary 8.1.2 (Impossibility of Philosophical Zombies) [T]
-
-:::note In Plain Terms
-This is a direct blow to Chalmers's thought experiment. If you build a robot that behaves like a human (i.e. is viable, $P > 2/7$), it **cannot** be "empty inside". The minimal E-coherence is strictly greater than $1/7$ — which means it *has* at least some interiority.
-
-For an AI engineer: if your agent achieves viability by CC metrics, the question "does it have experience?" receives a mathematical answer: yes, necessarily.
-:::
+A stronger embodied counterexample permits nonzero coherence on every pair. Choose a full-rank state $\rho$ of purity $P>2/7$ with $\mathrm{Coh}_E<1/7$, and let $F(\rho)$ be its Hermitian trace-zero velocity under the specified internal dynamics. For
 
 $$
-\nexists\, \mathbb{H} : \mathrm{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \land \mathrm{Coh}_E(\mathbb{H}) = \frac{1}{7}
+\mu>\|F(\rho)\|_{\mathrm{op}}/\lambda_{\min}(\rho),\qquad\sigma:=\rho-F(\rho)/\mu,
 $$
 
-There is no non-isolated [viable](/docs/core/dynamics/viability) system with minimal E-coherence (for $\gamma > \gamma_{\text{th}}$). From Theorem 8.1: $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$, which together with non-zero stationary coherences (Step 3) ensures non-trivial [interiority](/docs/consciousness/foundations/interiority-theory). ∎
+$\sigma$ is a density matrix, and adding the legitimate backbone $\mu(\sigma-\Gamma)$ makes $\rho$ an exact equilibrium. This is a constructive counterexample to excluding such states for **all** environmental anchors. It does not guarantee stability; a stability claim requires the full Jacobian.
 
-:::info Epistemic stratification (Sol.SA-3)
-The "No-Zombie" result has **three epistemic levels**:
-
-1. **[T] Mathematical core**: $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ and $\partial P^{(\infty)}/\partial\mathrm{Coh}_E > 0$ — an unconditional mathematical fact, independent of the interpretation of the E-dimension.
-2. **[P] Ontological postulate**: the E-dimension of the coherence matrix encodes phenomenal interiority (analogous to Born's rule in QM — a bridge between the formalism and phenomenology).
-3. **[I] Interpretation**: given postulate (2), philosophical zombies are excluded within the UHM ontology.
-
-Corollary 8.1.2 formulates level (1) — the mathematical impossibility of minimal E-coherence for viable systems. The transition to "impossibility of zombies" in the philosophical sense requires ontological postulate (2).
-:::
-
-### Corollary 8.1.3 (Minimal Coherence of Experience) [T]
-
-:::note In Plain Terms
-This is the quantitative version of No-Zombie: the theorem does not merely say "experience is non-zero", but gives a **precise lower bound** — a formula through which one can compute how much "minimal experience" a system requires to survive. The more aggressive the environment (larger $\gamma$), the more experience is required.
-
-For a clinician: the formula predicts the "minimally required level of interiority" for viability — analogous to a laboratory threshold "below which one must not go".
-:::
+For example let $p_E=0.01$, other populations $(1-p_E)/6$, $v_i=\sqrt{p_i}$, and
 
 $$
-\mathrm{Viable}(\mathbb{H}) \;\Rightarrow\; \mathrm{Coh}_E(\Gamma) \geq \mathrm{Coh}_{\min}
+\rho=(1-r)\operatorname{diag}(p)+rvv^\dagger,\quad
+r^2=\frac{0.35-\sum_ip_i^2}{1-\sum_ip_i^2}.
 $$
 
-Explicit formula (Step 5 of Theorem 8.1):
+It is full rank, every pair is coherently populated, $P=0.35$, $\Phi>1$, and $\mathrm{Coh}_E<1/7$. The backbone construction applies. It fails the **stipulated proxy** $D^{7D}\ge2$: that gate itself entails $\mathrm{Coh}_E\ge1/6$ by definition. Such definitional exclusion must not be presented as a dynamical no-zombie theorem or as a literal extension-entropy calculation.
 
-$$
-\mathrm{Coh}_{\min} = \max\!\left\{\frac{1}{7},\;\; \frac{1}{\kappa_0}\!\left(\frac{2\gamma}{3} \cdot \frac{P_{\text{coh}}}{f - P_{\text{crit}}} - \kappa_{\text{bootstrap}}\right)\right\}
-$$
+### Minimal model for a declared balance test {#минимальная-модель-no-zombie}
 
-where parameters are evaluated at the viability boundary $P = P_{\text{crit}} = 2/7$, $f = \mathrm{Tr}(\Gamma \cdot \rho_*)$, $P_{\text{coh}} = \sum_{i \neq j}|\gamma_{ij}|^2$.
+A reproducible model **[D]** specifies the Hamiltonian, Fano dissipator, target map, bootstrap/E-dependent rate, gate and independent environmental sources. The source-free special case is obtained by $\mathcal J_{\mathrm{ext}}=0$; the canonical $I/7$ anchor and a nonunital source are distinct models. The uniform bound requires all of its listed inequalities to hold on the tested class.
 
----
+### Controlled simulation protocol {#протокол-симуляции-no-zombie}
 
-Having proved that every viable system possesses non-trivial interiority, we can ask the next question: what happens when **several** such systems interact? Are their properties preserved? Does something fundamentally new arise? The composition theorems answer both questions affirmatively — and this brings CC to the level of a theory of **social** and **ecological** systems.
+1. Fix the target, environment, rates, gate, E-projection and definition of sustained viability before sampling states.
+2. Verify the exact purity balance and the hypotheses of the proposed uniform bound; distinguish stationary states from finite-time survival.
+3. Compare E-dependent regeneration with bootstrap-only and independent-source controls. E-ablation must preserve positivity and must account for diagonal E-population: removing off-diagonal E entries does not generally make canonical $\mathrm{Coh}_E$ zero.
+4. Report basin dependence, eigenvalues of the tangent Jacobian and uncertainty of parameter bounds. Do not require all random states to share an attractor in a bistable gated system.
+5. A counterexample satisfying **all** assumptions refutes a mathematical bound. Simulations validate a chosen implementation; biological/phenomenal necessity requires independent measurements and the declared bridge.
+
+No universal $1/4$ critical exponent or macroscopic rate hierarchy is assumed. At $P\le2/7$ a source-free nonnegative-gate model with Fano dissipation has $\dot P\le0$ when its gate is zero; independent injection changes this conclusion.
+
+### Corollary 8.1.1: explicit causal dependence [T / I]
+
+For a declared rate law with $\kappa_0>0$, holding other inputs fixed gives $\partial\kappa/\partial\mathrm{Coh}_E=\kappa_0$. At points where the target difference and gate are nonzero, changing this input changes the generator. The phenomenological identification of this causal input with experience is **[P/I]**. Neither strict monotonicity of every stationary purity nor the refutation of every form of epiphenomenalism follows automatically.
+
+### Corollary 8.1.2: the scope of “No-Zombie” [C / I]
+
+Under the uniform bound with $c_{\min}>1/7$, the declared stationary class excludes $\mathrm{Coh}_E\le1/7$ **[T at the bounds]**. Interpreting those excluded states as philosophical zombies additionally requires an E-to-phenomenality bridge **[P/I]** and a task-specific equivalence of functional behaviour. There is no general theorem excluding all functionally capable systems without phenomenal experience.
+
+### Corollary 8.1.3: quantitative E-requirement [T under bounds]
+
+The explicit $c_{\min}$ above is a model-dependent stationary resource requirement. It is not a universal minimum of experience or a clinical diagnostic threshold. With stronger bootstrap or independent sources it can vanish; with larger required coherence dissipation it can increase. Its empirical interpretation must be calibrated separately.
 
 ## Composition Theorems
 
@@ -612,106 +217,17 @@ Let us return to the orchestra analogy. Until now we have been studying *one* mu
 
 Theorems 9.1–9.6 are the answer. 9.1 and 9.2 were first proved under assumptions — (HOL), that the joint system is itself a holon, and (AGG), a consistent aggregation and weak coupling; Theorem 9.5 fixes the aggregation (it is unique) and proves for weak coupling what both assumed, and Theorem 9.6 shows that the coupling must be weak. 9.3 says when joint play **generates a new quality** — a joint state with information that neither orchestra holds — and shows that it does not do so for every coupling. (Earlier: "yes, joint play … generates a new quality. … The whole is more than the sum of its parts. And this is not a metaphor — it is a theorem"; corrected 2026-09-25 with the retraction in Theorem 9.3.)
 
-### Theorem 9.1 / T-68 (Fractal Closure, CC-5) [T at weak coupling] {#теорема-91-фрактальное-замыкание}
+### Theorem 9.1: conditional persistence under weak coupling {#теорема-91-фрактальное-замыкание}
 
-:::tip Status raised 2026-09-25: from "conditional on (HOL)" to [T at weak coupling]
-[Theorem 9.5](#теорема-95-каноническая-агрегация) proves the substance of CC-5 without (HOL). The aggregation is not chosen: the mean marginal $\mathcal{M}_k$ is the only permutation-invariant linear map that returns a part's state on uncoupled copies. If the parts are viable embodied holons and $|g|\,s(H_{\mathrm{int}}) < \varepsilon_V$, with $\varepsilon_V = \mu\,(P(\rho_{\mathrm{lin}}) - 2/7)/(2\sqrt{P(\rho_{\mathrm{lin}})})$ read off the regeneration-free part of one holon, every stationary state of the composite has living parts, and for identical parts in a symmetric state the canonical aggregate is viable; along trajectories the aggregate follows the single-holon generator up to a forcing of size $|g|\,s(H_{\mathrm{int}})$. The weak-coupling condition cannot be dropped: a coupling diagonal in a basis of maximally entangled vectors sends the canonical aggregate to $I/7$ at strong coupling ([Theorem 9.6](#теорема-96-сильная-связь)), so "every composite of viable holons is viable" is false for arbitrary coupling. The literal reading of items 1–2 below — the composite's own dynamics on $\mathcal{D}(\mathbb{C}^7)$ — keeps the assumption (HOL).
-:::
-
-:::warning Errata 2026-09-25: status corrected from [T]+[C] to [C at (HOL)]
-Step 1 claimed that the composite $\mathbb{H}_{12} = \mathbb{H}_1 \times_T \mathbb{H}_2$ is represented by a state $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$ — first by the Morita equivalence T-58 (retracted 2026-09-10), then by the section–retraction T-58′ — and neither carries it: T-58′ is $\pi \circ \iota = \mathrm{id}$ between the 7D and 42D descriptions of *one* holon and gives no map from the composite's state space $\mathcal{D}(\mathbb{C}^7 \otimes \mathbb{C}^7) = \mathcal{D}(\mathbb{C}^{49})$ to $\mathcal{D}(\mathbb{C}^7)$. The conclusion needs that map, because $P > 1/7$ is a statement in $\mathcal{D}(\mathbb{C}^7)$: in $\mathcal{D}(\mathbb{C}^{49})$ the maximally mixed state has $P = 1/49$, and two uncoupled viable holons at $P = 0.3$ give $P = 0.09 < 1/7$. What replaces it is a named assumption:
-
-**(HOL)** the composite is itself a holon — its state is represented in $\mathcal{D}(\mathbb{C}^7)$ (for instance through an aggregation channel $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$, which the theory does not fix; compare (AGG) of [Theorem 9.2](#теорема-92-масштабная-инвариантность)) and evolves there under a generator that satisfies A1–A5.
-
-Under (HOL), steps 2–6 apply the single-holon theorems to the composite and the statement below holds; without it the corpus has no derivation that a composite of holons is a holon. Non-triviality is therefore [C at (HOL)], no longer "[T], unconditional".
-:::
-
-:::warning Status revised (session 25)
-The status of T-68 has been clarified following resolution of the self-referential paradox:
-- **Non-triviality** $P > 1/7$ — **[C at (HOL)]** (T-96 applied to the composite; the earlier "[T], unconditional" is corrected in the errata above)
-- **Viability** $P > 2/7$ — **[T at backbone-injection lower-bound] for embodied** systems, given (HOL) (T-149: backbone injection ensures κ-dominance; Step 3 of T-149 is [C at that lower bound], not from pure axioms); **[C]** for isolated holons (C20 — irrelevant, since an isolated holon is dead forever, T-148)
-- These two lines concern the literal reading under (HOL). For weak coupling both are superseded by item 3 of the statement ([Theorem 9.5](#теорема-95-каноническая-агрегация), 2026-09-25), which needs neither (HOL) nor T-149: viability of an embodied part is the explicit condition $P(\rho_{\mathrm{lin}}) > 2/7$ of Theorem 9.5 (c).
-
-See [Status Registry](/docs/reference/status-registry), [T-149](/docs/proofs/consciousness/substrate-closure#t-149).
-:::
-
-:::note In Plain Terms
-Imagine mixing two paints. Can you be sure the mixture will not separate back into its components? Theorem 9.1 asserts: if the union of two interacting holons (viable systems) is **itself** a holon — the assumption (HOL) — then it has its own dynamics, its own non-trivial attractor, and its own properties. That the union is a holon is assumed, not proved (an earlier edition said the theorem asserts it; retracted, errata above).
-
-This is the principle of **self-similarity**: the structure of CC reproduces itself at every scale at which (HOL) holds. A cell is a holon. An organ is a holon. An organism is a holon. A society is a holon. Each of these is an instance of (HOL), read as an interpretation [I], not a consequence of the theorem; where it holds, each level is described by the same formalism.
-
-For a sociologist: this is the mathematical justification for what Luhmann intuitively felt — social systems reproduce themselves at every level.
-
-**Connection:** [Autopoiesis axiom (AP)](/docs/core/foundations/axiom-septicity#ap-автопоэзис), [Composition closure](./axiomatics#замкнутость-композиции-следствие-из-ap), [Primitivity of the linear part](/docs/core/operators/lindblad-operators#примитивность-ℒω)
-:::
-
-:::tip Statement [T at weak coupling]
-Let $\mathbb{H}_1, \mathbb{H}_2$ be viable holons with dynamics satisfying axioms A1–A5, and let their composite $\mathbb{H}_{12}$ (an object of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$) satisfy (HOL). Then:
-
-1. **[C at (HOL)]** It has a non-trivial attractor: $P(\rho_*^{(12)}) > 1/7$ (from [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора))
-2. **[C at (HOL) and the backbone-injection lower bound]** For embodied systems: $P(\rho_*^{(12)}) > P_{\mathrm{crit}} = 2/7$ ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора), Step 3 [C])
-3. **[T at weak coupling], without (HOL)** ([Theorem 9.5](#теорема-95-каноническая-агрегация) (c), (d), (g)). Let the parts be embodied, each viable — equivalently, the stationary state $\rho_{\mathrm{lin}}$ of its regeneration-free part has $P > 2/7$ — and let $|g|\,s(H_{\mathrm{int}}) < \min_i \varepsilon_V^{(i)}$. Then every stationary state of the composite has $P(X_i) > 2/7$ for both marginals; for identical parts the canonical aggregate $\mathcal{M}_2$ of a symmetric stationary state is viable, hence non-trivial; and the aggregate of a symmetric trajectory obeys the single-holon generator up to a forcing of size $|g|\,s(H_{\mathrm{int}})$.
-:::
-
-**Proof (6 steps).**
-
-**Step 1 (Composite as an ∞-topos object).** In $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$ the objects $\mathbb{H}_1, \mathbb{H}_2$ define a new object $\mathbb{H}_{12} = \mathbb{H}_1 \times_T \mathbb{H}_2$ (product over the terminal object $T$). The ∞-topos is complete (all finite limits exist). That $\mathbb{H}_{12}$ is represented by a state $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$ is assumption (HOL). ~~By the section–retraction (T-58′; the Morita *equivalence* reading is retracted), $\mathbb{H}_{12}$ is representable by a state $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$.~~ Retracted (errata above): the [section–retraction](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) concerns the 7D and 42D descriptions of one holon, not a composite of two.
-
-**Step 2 (Axiom inheritance, under (HOL)).** The earlier text read A1–A5 as **structural** properties of the ∞-topos that the composite inherits at any scale; what the proof uses is that the composite satisfies them, which is (HOL):
-
-- **A1** (Autopoiesis): the product of autonomous systems is autonomous. The spectral gap of each $\mathcal{L}_\Omega^{(i)}$ ($\lambda_{\mathrm{gap}}^{(i)} > 0$, from [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]) ensures robustness under perturbations from coupling. For coupling through coherences with amplitude $\varepsilon_0 \ll \lambda_{\mathrm{gap}}$, the Kato perturbation theorem guarantees preservation of the spectral gap.
-- **A2** (Phenomenology): representability in $\mathbb{C}^7$ — by (HOL). The earlier "by construction of the composite (A3)" named no construction and is retracted; the Morita *equivalence* reading T-58 is retracted, and the section–retraction T-58′ does not apply to composites.
-- **A3** (Quantum basis): $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$ — by (HOL), not "by construction".
-- **A5** (Page–Wootters): the temporal structure is inherited through the O-dimension.
-
-**Step 3 (Triadic decomposition).** From A1–A5 it follows that the dynamics of $\mathbb{H}_{12}$ decomposes into exactly three types ([T-57](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [T], LGKS theorem):
+Assume fixed linear local GKSL generators with unique stationary states $\rho_i^0$, and invertible restrictions $\mathcal L_i|_{\mathrm{Tr}=0}$. For a stationary joint state of $\mathcal L_1\otimes\mathrm{id}+\mathrm{id}\otimes\mathcal L_2+g\mathcal L_{\mathrm{int}}$, partial trace gives
 
 $$
-\mathcal{L}_\Omega^{(12)} = \mathrm{Aut} + \mathcal{D} + \mathcal{R}
+\mathcal L_i(\rho_i^g-\rho_i^0)=-g\operatorname{Tr}_j\mathcal L_{\mathrm{int}}(\rho_{12}^g).
 $$
 
-A fourth type is impossible [T].
+Thus $\|\rho_i^g-\rho_i^0\|_F\le |g|\|\mathcal L_i^{-1}\|\|\operatorname{Tr}_j\mathcal L_{\mathrm{int}}\|_{F\to F}$, using $\|\rho_{12}^g\|_F\le1$. If twice this bound is smaller than $P(\rho_i^0)-2/7$, both marginals retain structural majority [T at these assumptions]. The actual joint dimension is49. A seven-dimensional aggregation must be declared separately.
 
-**Step 4 (Active components).** From A1 for $\mathbb{H}_{12}$:
-
-- Fano channel active with $c > 0$ [T] ([T-41f](/docs/core/operators/lindblad-operators#теорема-необходимость-c): autopoietic necessity of $c > 0$ — without $c > 0$ regeneration is suppressed, violating (AP)).
-- Regeneration $\kappa_0 > 0$ [T] ([T-44a](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0): from the categorical functor $\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})$).
-
-**Step 5 (Primitivity of the linear part).** $c > 0$ + pair coverage completeness ([T-41b](/docs/core/operators/lindblad-operators#теорема-полнота-покрытия) [T]) $\to$ interaction graph $G_H$ is connected $\to$ linear part $\mathcal{L}_0^{(12)}$ is primitive (Evans–Spohn criterion, [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]).
-
-**Step 6 (Attractor and viability).** Primitivity of $\mathcal{L}_0^{(12)}$ ensures a spectral gap $\lambda_{\mathrm{gap}}^{(12)} > 0$. The Fano channel with $c > 0$ generates off-diagonal coherences ([T-1, T-2, T-3](/docs/proofs/dynamics/theorem-purity-critical) [T]). Regeneration $\mathcal{R}$ with $\kappa_0 > 0$ and $\rho_* = \varphi(\Gamma)$ ([categorical self-model](/docs/core/operators/phi-operator#определение)) maintains coherences. From [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]: any non-trivial attractor $\rho_*^{(12)} \neq I/7$ has $P > 1/7$ and $P_{\mathrm{coh}} > 0$.
-
-**[T at backbone lower-bound] Viability:** From the [balance formula T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) and [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора): $P(\rho_*^{(12)}) > 2/7$ for embodied systems (the sensorimotor coupling ensures κ-dominance; T-149 Step 3 is [C at the backbone-injection lower bound]).
-
-Exponential convergence to the attractor from the spectral gap:
-
-$$
-\|\Gamma(t) - \rho_*^{(12)}\| \leq C \, e^{-\lambda_{\mathrm{gap}}^{(12)} t}
-$$
-
-$\blacksquare$
-
-:::info Key observation
-Given (HOL), non-triviality of the composite's attractor follows from the single-holon theory: the spectral gap of the linear part $\mathcal{L}_0$ ensures convergence, and regeneration $\mathcal{R}$ keeps the system away from the trivial $I/7$. Viability ($P > 2/7$) for **embodied** holons is, given (HOL), [T at the backbone-injection lower bound] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149), Step 3 [C]). Theorem CC-5 is the single-holon theory applied to a composite that is assumed to be a holon; the universality of A1–A5 within the ∞-topos does not by itself make the composite satisfy them. (Earlier: "an **unconditional** result [T]" and "a direct consequence of the universality of axioms A1–A5"; retracted with step 1.)
-:::
-
-:::tip Corollary 9.1a (Non-triviality of the composite without (HOL)) [T]
-Let $\mathbb{H}_1, \mathbb{H}_2$ be embodied holons whose anchors lie outside the null set of [Theorem 9.4](#теорема-94-генеричность-nd), coupled by $-ig[H_{\mathrm{int}}, \cdot]$ with the canonical extension. For $|g|$ small the composite on $\mathbb{C}^7 \otimes \mathbb{C}^7$ has a stationary state $X(g)$, smooth in $g$, with $\lVert X(g) - \rho_*^{(1)} \otimes \rho_*^{(2)} \rVert_1 = O(g)$. Hence $P(X(g)) = P(\rho_*^{(1)})\,P(\rho_*^{(2)}) + O(g) > 1/49$ — the composite is not at its own maximally mixed state — and the marginals satisfy $P(X_i(g)) = P(\rho_*^{(i)}) + O(g)$, so a part that is viable with a margin stays viable. If the single-holon attractors are linearly stable (as in every case computed), so is $X(g)$.
-:::
-
-*Proof.* Theorem 9.4 gives (ND), Theorem 9.3 (iii) the branch $X(g)$ by the implicit function theorem, and the $O(g)$ bound is the derivative $X'(0) = \mathcal{J}^{-1}(i[H_{\mathrm{int}}, \sigma])$. $P(\rho) > 1/7$ for every state $\rho \neq I/7$, and $\rho_*^{(i)} \neq I/7$ because the backbone pumps toward a full-rank anchor $\sigma_i \neq I/7$. The spectrum of the Jacobian is that of the two local blocks and of $\mathcal{J}_c$, with $\mathrm{Re} \leq -2\mu$ (Theorem 9.3, step 3), and it moves continuously with $g$. $\blacksquare$
-
-What (HOL) adds is a seven-dimensional description of the composite. The axioms fix the dimension of a holon at seven, and a composite of two holons lives on $\mathbb{C}^{49}$; a description in $\mathcal{D}(\mathbb{C}^7)$ that the joint flow respects *exactly* is extra structure, not a consequence of A1–A5, so (HOL) stays an assumption of the literal items 1–2. The substance that Theorem 9.1 wanted from it does not need it: Corollary 9.1a gives the composite of living holons a non-trivial stationary state, and [Theorem 9.5](#теорема-95-каноническая-агрегация) fixes the seven-dimensional description — the canonical aggregate, unique — and proves that it is viable at weak coupling and follows the single-holon generator up to a forcing of size $|g|\,s(H_{\mathrm{int}})$ (item 3). (Earlier, 2026-09-25: "(HOL) stays an assumption of Theorem 9.1" for the whole theorem; superseded by item 3.)
-
-:::note Corollary CC-7 (Emergence) — withdrawn [✗] (2026-09-25)
-~~The composite holon possesses its **own** non-trivial attractor $\rho_*^{(12)} \neq \alpha\rho_*^{(1)} + (1-\alpha)\rho_*^{(2)}$ (from nonlinearity of $\mathcal{R}$ and primitivity of the linear part $\mathcal{L}_0^{(12)}$). Proof — Theorem 9.3 [T].~~ Withdrawn: the proof it cited is retracted, and the comparison mixes spaces — $\rho_*^{(12)}$ lives on $\mathbb{C}^{49}$, the mixture on $\mathbb{C}^7$. When the coupling commutes with $\rho_*^{(1)} \otimes \rho_*^{(2)}$ the composite's attractor is that product, fixed entirely by the parts. What the composite acquires, and when, is [Theorem 9.3](#теорема-93-эмерджентность) [C under (ND)].
-:::
-
-**See:** [Composition closure](./axiomatics#замкнутость-композиции-следствие-из-ap)
-
----
-
-If the composite is a holon, it has its own attractor. But are its **qualitative** properties — purity, reflection, integration — preserved? The next theorem answers: yes, when the parts are weakly coupled and the aggregation is consistent — and not otherwise; Theorem 9.5 proves that weakly coupled holons meet both conditions.
+The old proof via universal T-57 trichotomy, necessary c>0 and T-41b pair coverage is withdrawn [✗]. Linear primitivity does not imply a coherent or living nonlinear attractor. Applying this perturbation result to nonlinear feedback or claiming every organism/society is a holon requires additional premises. The precise canonical marginal-aggregation result below is retained.
 
 ### Theorem 9.2 / T-72 (Scale Invariance, CC-6) [T at weak coupling] {#теорема-92-масштабная-инвариантность}
 
@@ -869,7 +385,7 @@ Witness (`test_non_degeneracy_is_generic_and_aggregation_follows_from_weak_coupl
 **What remains of "emergence".** For a correlated joint state the marginals do not determine it, and $I = S(\rho_1) + S(\rho_2) - S(\rho_{12}) > 0$ is the information the partial traces discard — a standard identity, true of every correlated pair, coupled thermostats included. Theorem 9.3 says when the dynamics of coupled holons produces such a state; it does not say that interaction alone does.
 
 :::info Connection to Löwer incompleteness
-When $I > 0$ — under the criterion of (iii), not for every coupling — subsystem $\mathbb{H}_1$ cannot reconstruct the joint state from $\rho_1$ alone ([T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]). (Earlier: "since $I > 0$", stated for every interacting pair; corrected 2026-09-25 with the retraction above.)
+When $I > 0$ — under the criterion of (iii), not for every coupling — subsystem $\mathbb{H}_1$ cannot reconstruct the joint state from $\rho_1$ alone ([observation-fibre theorem](/docs/applied/research/reconstruction-identifiability#fiber-theorem)). (Earlier: "since $I > 0$", stated for every interacting pair; corrected 2026-09-25 with the retraction above.)
 :::
 
 #### Theorem 9.5 (Canonical aggregation: viability and invariants pass to the aggregate at weak coupling) [T at weak coupling] {#теорема-95-каноническая-агрегация}
@@ -884,12 +400,15 @@ If each of $k$ musicians plays in tune, and they listen to each other only a lit
 
 :::tip Theorem 9.5 [T at weak coupling]
 **(a) The canonical aggregation [T].** Among all linear maps $A$ from operators on $(\mathbb{C}^7)^{\otimes k}$ to operators on $\mathbb{C}^7$ that are invariant under permutations of the factors and consistent on uncoupled identical copies — $A(\sigma^{\otimes k}) = \sigma$ for every state $\sigma$ — there is exactly one, the mean marginal
+
 $$
 \mathcal{M}_k(X) = \frac1k \sum_{i=1}^k \mathrm{Tr}_{\neq i}\, X .
 $$
+
 It is CPTP, $U(7)$-covariant ($\mathcal{M}_k(U^{\otimes k} X U^{\dagger\otimes k}) = U \mathcal{M}_k(X) U^\dagger$, so in particular $G_2$-covariant), and it depends on $X$ only through the marginals.
 
 **(b) Exact marginal equation [T], any $g$.** Along every trajectory of the composite,
+
 $$
 \frac{d X_i}{dt} = \mathcal{L}_i[X_i] - ig\,\mathrm{Tr}_{\neq i}[H_{\mathrm{int}}, X], \qquad \lVert \mathrm{Tr}_{\neq i}[H_{\mathrm{int}}, X] \rVert_1 \leq s(H_{\mathrm{int}}) .
 $$
@@ -899,9 +418,11 @@ $$
 **(d) Every stationary composite has living parts [T].** If every part is viable and $|g|\,s(H_{\mathrm{int}}) < \min_i \varepsilon_V^{(i)}$, then every stationary state of the composite — there is at least one — has $P(X_i) > 2/7$ for every $i$. For identical parts and a permutation-symmetric stationary state, $\mathcal{M}_k(X) = X_1$ is viable. Neither (ND) nor (HOL) is used.
 
 **(e) Every trajectory, with explicit constants, under backbone dominance [T].** If the parts are identical and $\mu > L_{\mathcal{R}}$ (the regime of [backbone dominance](/docs/core/dynamics/evolution#теорема-единственность-нетривиального-аттрактора), which gives a unique stationary state $\rho_*$), then for every initial state of the composite and every $t \geq 0$
+
 $$
 \lVert X_i(t) - \rho_* \rVert_1 \leq e^{-(\mu - L_{\mathcal{R}})t}\,\lVert X_i(0) - \rho_* \rVert_1 + \frac{|g|\,s(H_{\mathrm{int}})}{\mu - L_{\mathcal{R}}},
 $$
+
 so $\tfrac12\lVert \mathcal{M}_k(X(t)) - \rho_* \rVert_1$ obeys the same bound halved.
 
 **(f) The basin, in general [T].** If the parts are identical and $\rho_*$ is a non-degenerate stationary state of $\mathcal{L}$ whose Jacobian spectrum lies in $\mathrm{Re}\,\lambda < 0$, with basin of attraction $\mathfrak{B}$, then for every compact $K \subset \mathfrak{B}$ there are $g_0, C, T > 0$ such that for $|g| < g_0$ every trajectory of the composite whose initial marginals lie in $K$ satisfies $\lVert X_i(t) - \rho_* \rVert_1 \leq C|g|$ for all $t \geq T$.
@@ -953,75 +474,13 @@ So far we have spoken of viability as $P > 2/7$. But in practice this is not eno
 
 For a physician the analogy is direct: instead of checking dozens of tests separately, you get a single integral indicator. If $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ — the patient is alive. If at least one component $\sigma_i \geq 1$ — urgent intervention is needed in the specific direction.
 
-### Theorem 10.1 / T-92 (Equivalence of Full Viability Conditions) [T] {#теорема-101-эквивалентность-условий}
+### Diagnostic panel scope {#теорема-101-эквивалентность-условий}
 
-<!-- preserve old anchor for backward compatibility -->
+The universal T-92 equivalence is withdrawn. The seven raw scores define a separate region V_sigma; their U-condition implies structural majority, but they neither equal the four-part Cap2 gate nor imply biological viability. Uniform-diagonal Cap2 states already fail the raw L-condition. Use the exact four margins in the corrected definitions.
+
+[Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
+
 <a id="теорема-101-эквивалентность-условий-с"></a>
-
-:::note In Plain Terms
-Imagine a car's instrument panel. One gauge — engine temperature. Another — oil level. Third — tyre pressure. Fourth — battery charge. Each gauge shows the "stress" in its channel. The car is "alive" if and only if **none** of the gauges is in the red zone.
-
-Theorem 10.1 is precisely this instrument panel, but for any system described by $\Gamma$. The seven components $\sigma_k$ are seven gauges, one for each dimension. And crucially: the gauge formulas are **not fitted** — they are derived from $\Gamma$.
-
-For an AI engineer: $\sigma_{\mathrm{sys}}$ is a ready-made health monitor for your agent. Your monitoring system can show *which specific* aspect is degrading.
-
-**Connection:** [Stress tensor](./definitions#тензор-напряжений), [Viability](/docs/core/dynamics/viability), [Diagnostics](./diagnostics)
-:::
-
-:::tip Statement [T]
-$$
-\Gamma \in \mathcal{V}_{\mathrm{full}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1
-$$
-:::
-
-where $\sigma_{\mathrm{sys}}$ is the [stress tensor](./definitions#тензор-напряжений).
-
-Each component $\sigma_i$ is defined through invariants of the coherence matrix $\Gamma$ **[T]** (T-92):
-
-| Component | Formula | Meaning |
-|-----------|---------|---------|
-| $\sigma_A$ | $1 - \gamma_{AA}/P$ | Articulation deficit |
-| $\sigma_S$ | $1 - \mathrm{rank}(\Gamma_S)/3$ | Structural incompleteness |
-| $\sigma_D$ | $1 - N\gamma_{DD}$ | Dynamic sector deficit |
-| $\sigma_L$ | $7(1 - \gamma_{LL})/6$ | Logic deficit |
-| $\sigma_E$ | $(N - D_{\mathrm{diff}})/(N-2)$ | Differentiation deficit |
-| $\sigma_O$ | $1 - \kappa_0/\kappa_{\mathrm{bootstrap}}$ | Regeneration deficit |
-| $\sigma_U$ | $2\Phi_{\mathrm{th}}/(\Phi_{\mathrm{th}} + \Phi)$ | Integration deficit |
-
-All seven components are **unambiguous functions of $\Gamma$** with no free parameters.
-
-:::warning Errata (2026-07-22): renormalization of $\sigma_E$ and $\sigma_U$ [T]
-The previously published rows $\sigma_E = 1 - D_{\mathrm{diff}}/N$ and $\sigma_U = 1 - \Phi/\Phi_{\mathrm{th}}$ did **not** satisfy Step 2: they gave $\sigma < 1$ for *any* $D_{\mathrm{diff}} > 0$, $\Phi > 0$, so the panel did not encode the thresholds $D_{\mathrm{diff}} \geq 2$, $\Phi \geq \Phi_{\mathrm{th}}$ — and the embedding $\mathcal{V}_{\mathrm{full}} \subset \mathcal{V}_P$ failed (machine counterexample: near-uniform diagonal with $\gamma_{OE} = \gamma_{OU} = 0.05$ gives all $\sigma < 1$ yet $P = 0.153 < 2/7$). The repaired rows encode their thresholds exactly ($\sigma < 1 \Leftrightarrow$ threshold strictly satisfied), and the embedding is **restored with a proof**: by Cauchy–Schwarz $\sum_i \gamma_{ii}^2 \geq 1/7$, hence $\sigma_U < 1 \Rightarrow \Phi > \Phi_{\mathrm{th}} = 1 \Rightarrow P = (1+\Phi)\sum_i \gamma_{ii}^2 > 2/7$. Machine-verified: exact threshold encoding and $0/19{,}000$ embedding violations (H57–H59; Rust R28). The same errata canonizes $\Gamma_S$: the $3\times 3$ block of $\Gamma$ on the structural sector $\{A, S, D\}$ (the sectoral triple of [Spacetime](/docs/core/foundations/spacetime#секторная-декомпозиция)); its rank is evaluated as numerical rank (tolerance $0.02$) — an [D]-convention, since rank is discontinuous.
-:::
-
-
-**Proof:**
-
-**Step 1 (Formal definitions).** Each component $\sigma_i$ is expressed through canonical invariants of $\Gamma$: diagonal elements $\gamma_{ii}$, purity $P = \mathrm{Tr}(\Gamma^2)$, rank of the submatrix $\Gamma_S$ (for S-dimensions), diagonal element $\gamma_{DD}$, number of differentiated dimensions $D_{\mathrm{diff}}$, categorical rate $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ [T] and integration measure $\Phi$ [T] (T-129).
-
-**Step 2 (Normalisation).** Each formula is normalised so that $\sigma_i \in [0, 1)$ for viable $\Gamma$, and $\sigma_i \geq 1$ when the corresponding condition is violated. This is not a convention, but a **consequence** of the canonicity of the invariants: all thresholds ($P_{\mathrm{crit}} = 2/7$ [T], $R_{\mathrm{th}} = 1/3$ [T], $\Phi_{\mathrm{th}} = 1$ [T]) are already defined, and $\sigma_i < 1 \Leftrightarrow$ the corresponding threshold is satisfied.
-
-**Step 3 (Equivalence).** $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ means $\sigma_i < 1$ for all $i = 1, \ldots, 7$, which is equivalent to the simultaneous satisfaction of all seven viability conditions. $\blacksquare$
-
-:::warning Viability stratification (Sol.SA-1)
-The symbol $\mathcal{V}_{\mathrm{full}}$ denotes **full viability** — the intersection of 7 conditions ($\sigma_i < 1$ for all $i$). This is **strictly stronger** than minimal viability $\mathcal{V}_P = \{P > 2/7\}$:
-
-$$
-\mathcal{V}_{\mathrm{full}} \subsetneq \mathcal{V}_P
-$$
-
-One-directional implication: $\|\sigma_{\mathrm{sys}}\|_\infty < 1 \;\Rightarrow\; P > 2/7$, but **not the converse**. Counterexample: the pure state $|1\rangle\langle 1|$ has $P = 1 > 2/7$, but $\sigma_U = 1$ (zero integration). Proof: [Embedding theorem](/docs/core/dynamics/viability#теорема-вложение-областей) [T].
-:::
-
-:::info Status [T] (T-92)
-All seven components are **expressed through $\Gamma$-invariants** with no free parameters. Empirical formulas from [definitions](./definitions#тензор-напряжений) remain as an **operationalisation** for specific systems, but the **theoretical** definition of $\sigma_{\mathrm{sys}}$ is fully formal.
-:::
-
-**See:** [Equivalence of conditions](./definitions#тензор-напряжений)
-
----
-
-The stress tensor is a diagnostic tool. But how does the system **act** on the basis of this diagnostic? The next block of theorems describes the sensorimotor cycle: how a holon perceives the environment, selects actions, and evaluates the result.
 
 ## Sensorimotor Encoding
 
@@ -1029,29 +488,11 @@ Every living organism exists in the cycle "perception — decision — action �
 
 Theorems 11.1–11.4 describe **four facets** of the sensorimotor cycle: encoding of the environment (how the world enters the system), optimal action (how the system responds), completeness of description (why three channels suffice), and hedonic valence (how the system evaluates whether it is "good" or "bad").
 
-### Theorem 11.1 / T-100 (Environment Encoding) [T] {#теорема-111-кодирование-среды}
+### Observation-to-control interfaces {#теорема-111-кодирование-среды}
 
-:::note In Plain Terms
-When you see a sunset, your brain does not copy the photons — it **encodes** the scene into a neural pattern. Theorem 11.1 says: there exists a unique (up to $G_2$-calibration) way to encode the external world into a change of the coherence matrix. And this way decomposes into exactly three channels: Hamiltonian (a unitary "rotation" of the state), dissipative (loss of coherence from contact with the environment), and regenerative (restoration through new information).
+T-100 is a design specification. Choose an observation category and a channel/control-valued interface; verify positivity and any composition laws. Universal encoder uniqueness T-42a and forced trichotomy T-57 are withdrawn. Different encoders satisfying covariance exist; distinguish them using the observation-law fibres and calibration, not the symmetry of the codomain.
 
-For an AI engineer: this is the justification for the "encoder" architecture: environmental input is transformed into three streams modifying $\Gamma$. Moreover, this architecture is **unique** — there is no alternative.
-
-**Connection:** [Sensorimotor theory](./sensorimotor#теорема-кодирование-среды), [$G_2$-rigidity](/docs/proofs/categorical/uniqueness-theorem)
-:::
-
-:::tip Statement [T]
-For a holon $\mathbb{H}$ there exists a unique (up to $G_2$-calibration) CPTP environment encoding functor:
-
-$$
-\mathrm{Enc}: \mathrm{ObsSpace} \to \mathrm{End}(\mathcal{D}(\mathbb{C}^7))
-$$
-
-satisfying: (1) CPTP preservation, (2) 3-channel decomposition $\mathrm{Enc}(o) = \delta H^{(o)} \oplus \delta D^{(o)} \oplus \delta R^{(o)}$, (3) functoriality.
-:::
-
-**Proof.** Existence — from [Definition 8.1 [T]](./lagrangian#внешний-член). 3-channel structure — from T-102 (T-57). Uniqueness — from $G_2$-rigidity ([uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem) [T]). $\blacksquare$
-
-**See:** [Sensorimotor theory](./sensorimotor#теорема-кодирование-среды)
+[Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
 
 ### Theorem 11.2 / T-101 (Optimal Action) [T] {#теорема-112-оптимальное-действие}
 
@@ -1075,63 +516,21 @@ $$
 where $\Gamma(\tau + \delta\tau \mid a)$ is the predicted state under action $a$.
 :::
 
-**Proof.** From T-92 [T]: $P > 2/7 \iff \|\sigma_{\mathrm{sys}}\|_\infty < 1$. Minimising $\|\sigma_{\mathrm{sys}}\|_\infty$ maximises the distance to the boundary $\partial\mathcal{V}$. The action enters through $h^{\text{ext}}(a)$ — the [3-channel decomposition](./lagrangian#внешний-член) [T]. $\blacksquare$
+**Design criterion.** Choose a calibrated loss and action set. Finite nonempty action sets have a minimizer; compact sets do for continuous losses. Neither existence nor uniqueness follows from the withdrawn universal panel equivalence.
 
 **See:** [Sensorimotor theory](./sensorimotor#теорема-оптимальное-действие)
 
-### Theorem 11.2b / T-159 (Motor Stress for Action Selection) [T] {#теорема-моторный-стресс}
+### Target-dependent motor scores {#теорема-моторный-стресс}
 
-:::note In Plain Terms
-Theorem 11.2 operates with "absolute" stress ($\sigma_k = 1 - 7\gamma_{kk}$), which measures the deviation from $I/7$. But a real organism strives not toward $I/7$ but toward its **personal** target state $\rho_*$. Motor stress accounts for this: it measures the distance to its *own* ideal. This is like the difference between "normal human temperature" (36.6) and "normal cat temperature" (38.5) — each system has its own target profile.
+Define sigma_k=1-rho_kk/target_kk only for positive target populations. With a frozen target its derivative is -1/target_kk. If the target depends on rho, differentiate the target too. Zero total stationary drift does not imply zero regeneration or equality to the anchor. General G2 rotations do not preserve diagonal ratios; the universal T-42a justification is withdrawn.
 
-**Connection:** [Sector profile](./definitions#тензор-напряжений), [Self-model](/docs/core/operators/phi-operator)
-:::
+[Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
 
-:::tip Statement [T]
-For a holon with self-model $\rho_* = \varphi(\Gamma)$, the motor stress:
+### Admissible additional generators {#теорема-113-полнота-трёх-членов}
 
-$$
-\sigma^{\mathrm{motor}}_k(\Gamma) := 1 - \frac{\gamma_{kk}}{\rho^*_{kk}}
-$$
+T-102 and its T-57 completeness premise are withdrawn. Nonnegative sums of GKSL generators are admissible; a signed difference need not be. A replacement term can itself be GKSL, so Hamiltonian/dissipation/regeneration is a grouping convention. The thermodynamic work/heat/matter dictionary is conditional on reservoir and charge choices, not a universal theorem of quantum channels.
 
-coincides with the canonical $\sigma_k$ (T-92) when $\rho_* = I/7$ and provides a directed motor signal when $\rho_* \neq I/7$. Action selection: $a^* = \arg\min_a \max_k \sigma^{\mathrm{motor}}_k(\Gamma(\tau+\delta\tau|a))$ (signed max: only deficits are penalised).
-:::
-
-**Proof.** Convergence to T-92: as $P \to P_{\mathrm{crit}}$, $\rho^*_{kk} \to 1/7$ (T-126), then $\sigma^{\mathrm{motor}}_k = 1 - 7\gamma_{kk} = \sigma_k$. Gradient $\partial\sigma^{\mathrm{motor}}_k/\partial\gamma_{kk} = -1/\rho^*_{kk} < 0$ is consistent with $\mathcal{R} = \kappa(\rho_* - \Gamma)$. $G_2$-invariance from covariance of $\gamma_{kk}$ and $\rho^*_{kk}$ (T-42a). $\blacksquare$
-
-**See:** [Sensorimotor theory](./sensorimotor#теорема-моторный-стресс)
-
-### Theorem 11.3 / T-102 (Completeness of Three Terms) [T] {#теорема-113-полнота-трёх-членов}
-
-:::note In Plain Terms
-Imagine all possible ways of influencing an orchestra from the outside. You can change the notes (Hamiltonian channel — $\delta H$). You can mute instruments (dissipative channel — $\delta D$). You can replace musicians (regenerative channel — $\delta R$). Theorem 11.3 asserts: **that is all**. A fourth way does not exist.
-
-This is a fundamental result, following from the general structure of quantum channels (LGKS theorem). It means the CC evolution equation is **complete** — nothing can be added without violating physical consistency.
-
-**Connection:** [LGKS theorem](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), [Lagrangian](./lagrangian)
-:::
-
-:::tip Statement [T]
-Any CPTP-compatible external action on a holon decomposes into a sum of three channels:
-
-$$
-h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}
-$$
-
-A fourth type of CPTP generator does not exist.
-:::
-
-**Proof.** Direct consequence of T-57 ([LGKS, completeness of the triadic decomposition](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [T]): an arbitrary generator of a CPTP semigroup has the LGKS form, which decomposes into a Hamiltonian part ($\delta H$) and a Lindblad part ($\delta L_k$). The triadic decomposition $\{L_k\}$ exhausts the Lindblad part: dissipative + regenerative operators. $\blacksquare$
-
-:::note What the three channels *are* — and why there is no fourth
-Completeness tells us there are three doors, but not what lies behind them. Two later results name them, and both deepen "no fourth channel" into something stronger.
-
-*Thermodynamically*, the three channels are exactly **work, heat, and matter** — the first law's split of all exchange ([thermodynamic trichotomy](./sensorimotor#термодинамическая-трихотомия), T-258). The Hamiltonian channel re-aims the state while spending no order (work: entropy and purity both conserved); the dissipative channel can only drain order (heat: entropy only rises); the regenerative channel alone imports order from outside (matter/nourishment: it feeds in negentropy). So "no fourth CPTP generator" is the open-system echo of "no fourth argument of the thermodynamic potential $U(S,V,N)$" — the very closure that Vanchurin's self-learning universe meets from the opposite side, that of learning dynamics.
-
-*Geometrically*, the three are one rigid rotation plus two gradient descents — a **metriplectic** structure ([T-262](/docs/core/dynamics/evolution#теорема-динамическая-трихотомия)): work is an isometry of the information geometry, heat a downhill slide toward maximum entropy (Carlen–Maas), matter a downhill slide toward the self-model $\rho_*$ (Kubo–Mori). Completeness thus sharpens from "three and no more" to "**a rotation and two descents, and no more.**"
-:::
-
-**See:** [Sensorimotor theory](./sensorimotor#теорема-полнота-трёх-членов)
+[Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
 
 ### Theorem 11.4 / T-103 (Hedonic Valence) [T] + [I] {#теорема-114-гедоническая-валентность}
 
@@ -1181,7 +580,7 @@ The following theorems are proved in the core documentation and play a central r
 | **T-93** [T] | $\mathrm{PG}(2,2) \cong H(7,4)$ — isomorphism | Structure of Gap space | [Gap dynamics](/docs/core/dynamics/gap-dynamics#теорема-h74-формальная) |
 | **T-94** [T] | Exponential memory kernel from compactness | Justification of [non-Markovian extension](./non-markovian) | [Gap dynamics](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) |
 | **T-80** [T] | Gap bounded by sum of sector parameters | Estimate of inter-sector gaps | [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) |
-| **T-85** [T] | $\mathrm{Im}(S_K) = \int \mathrm{Berry}$ | Connection between variational and topological descriptions | [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш) |
+| **T-85** [✗] | Former exact Keldysh/Berry relation withdrawn: the displayed Hermitian-product trace has zero imaginary part | A genuine relation requires independently supplied microscopic dynamics and a parameter-dependent eigenbundle [H/Pr] | [Berry audit](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш) |
 | **T-82** [T] | Uniqueness of the Fano operator | CC has no alternatives among $\Gamma_{\!\text{oct}}$-covariant (Fano-structured) theories | [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-единственность-фано) |
 :::
 
@@ -1195,7 +594,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **Self-reference (Theorems 7.x):** Viability *requires* self-modelling. A system that does not observe itself is doomed. Iterative reflection converges to the unique fixed point — a stable "self-image".
 
-**No-Zombie (Theorem 8.1 and corollaries):** The culmination of the theory. A viable open system *must* have non-trivial E-coherence. Experience is not an epiphenomenon but a causally necessary element of dynamics. Philosophical zombies are mathematically impossible.
+**No-Zombie (Theorem 8.1 and corollaries):** the exact purity balance gives a stationary E-floor only under explicit rate, source and required-coherence bounds. The philosophical interpretation requires an E-to-phenomenality bridge; no universal floor is proved.
 
 **Composition and emergence (Theorems 9.x):** CC scales wherever the parts are weakly coupled: the canonical aggregate — the mean marginal, the only permutation-invariant aggregation that returns a part on uncoupled copies — of viable embodied holons is viable, and its invariants lie within $O(g)$ of a part's (fractal closure and scale invariance, [T at weak coupling], Theorem 9.5; earlier conditional on the assumptions (HOL) and (AGG), raised 2026-09-25). At strong coupling this fails: the aggregate of two viable holons can be $I/7$ (Theorem 9.6). The whole carries information that its parts do not ($I > 0$) when the coupling has a correlating part at the parts' steady states — not for every coupling (Theorem 9.3, [T] for almost every anchor, Theorem 9.4; the earlier unconditional "irreducible emergence" [T] is retracted, 2026-09-25).
 
@@ -1205,7 +604,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **Attractors and structure (T-96, T-98, T-77, T-82, etc.):** Every system evolves toward a non-trivial equilibrium. The balance between dissipation and regeneration determines "health". The Fano structure is unique — CC has no alternatives. Full formulations and proofs — in the [summary table](#теоремы-аттракторов).
 
-Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms, except where a result names an additional assumption or a regime (fractal closure and scale invariance, Theorems 9.1–9.2, hold at weak coupling by Theorem 9.5 — their earlier assumptions (HOL) and (AGG) are needed only beyond it, where Theorem 9.6 shows the transfer can fail; emergence, Theorem 9.3, needs (ND) for its weak-coupling criterion, and Theorem 9.4 proves (ND) for almost every anchor). Not a single link can be removed without breaking the chain.
+The mathematical results use the five axioms together with each named assumption and regime; the corrected No-Zombie result specifically requires rate and source bounds, and its phenomenal interpretation requires an explicit bridge (fractal closure and scale invariance, Theorems 9.1–9.2, hold at weak coupling by Theorem 9.5 — their earlier assumptions (HOL) and (AGG) are needed only beyond it, where Theorem 9.6 shows the transfer can fail; emergence, Theorem 9.3, needs (ND) for its weak-coupling criterion, and Theorem 9.4 proves (ND) for almost every anchor).
 
 ---
 
@@ -1218,11 +617,13 @@ graph TD
     A --> T62x["Theorem 6.2: Preservation"]
     T61 --> T71["Theorem 7.1: Necessity of φ"]
     T71 --> T72["Theorem 7.2: Fixed point"]
-    LU --> T81["Theorem 8.1: No-Zombie"]
-    T81 --> T81P["Theorem 8.1+: Causality"]
-    T81 --> C811["Corollary: Non-epiphenomenalism"]
-    T81 --> C812["Corollary: Non-zombie"]
-    T81P --> C813["Corollary: Coh min"]
+    LU --> T81["Theorem 8.1: Exact purity balance"]
+    BS["Explicit rate/source bounds"] --> EF["Conditional E-floor [T]"]
+    T81 --> EF
+    RL["Declared E-dependent rate law"] --> C811["Causal dependence [T]"]
+    EF --> C812["Restricted No-Zombie proposal [I]"]
+    PH["E-to-phenomenality bridge + functional task"] --> C812
+    EF --> C813["Model-dependent Coh requirement"]
     T81 --> T91["Theorem 9.1: Composition [T at weak coupling]"]
     T91 --> T92["Theorem 9.2: Invariance [T at weak coupling]"]
     T95["Theorem 9.5: Canonical aggregation [T]"] --> T91
@@ -1274,7 +675,7 @@ Let us summarise. In this chapter we have traversed the full path from basic exi
 
 2. **Viability requires self-reference** (Theorem 7.1 [T]): a system maintaining $P > 2/7$ *must* have an internal self-model $\varphi$. Iterations of the canonical $\varphi_{\mathrm{coh}}$ converge to its unique fixed point, $I/7$ (Theorem 7.2 [T], restated 2026-09-25) — so the self-model that keeps a holon alive cannot be $\varphi_{\mathrm{coh}}$ alone.
 
-3. **Zombies are impossible** (Theorem 8.1 [T]): a viable open system must have $\mathrm{Coh}_E > 1/7$. E-coherence causally influences dynamics — epiphenomenalism is excluded (Corollary 8.1.1 [T]).
+3. **Conditional E-requirement** (Theorem 8.1): purity balance and explicit rate/source bounds determine whether a positive E-floor is required. Identification with phenomenal necessity remains a separate bridge.
 
 4. **Composition works at weak coupling** (Theorems 9.1–9.6): the canonical aggregate of weakly coupled viable embodied holons — the mean marginal, which is unique — is viable, and its purity, reflection, integration and Gap profile lie within $O(g)$ of a part's (fractal closure and scale invariance, [T at weak coupling], Theorem 9.5); the threshold on the coupling is explicit, and it cannot be dropped — at strong coupling the aggregate of two viable holons can be $I/7$ (Theorem 9.6). (Earlier, 2026-09-25: "[C at (HOL)]" and "[C under (AGG)]"; before that, "the union of viable holons yields a holon (fractal closure [T] for embodied systems)", retracted.) The whole is irreducible to the parts when the coupling correlates them — which not every coupling does (emergence, Theorem 9.3 [T] for almost every anchor; the earlier unconditional [T] is retracted, 2026-09-25).
 

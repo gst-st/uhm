@@ -7,17 +7,19 @@ description: Formal mathematical specification of UHM
 
 # Mathematical Apparatus
 
+The numerical specification uses **selected** $N=7$ and a semantic frame [P]. The Hilbert-space dimension is 7; the density-matrix state space $D_7$ has real dimension 48. The [kernel](/docs/reference/mathematical-kernel) records minimality assumptions and the distinct types of channels, support and dynamics.
+
 :::note On notation
 In this document:
 - $\mathcal{H}$ — Hilbert space. Not to be confused with $H$ — the Hamiltonian.
 - $\mathcal{C}$ — context space. Not to be confused with $C$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c).
 - $\mathcal{R}[\Gamma, E]$ — regenerative term of the evolution equation. Not to be confused with $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
-- $N = 7$ — dimensionality of the state space of the [Holon](/docs/core/structure/holon).
+- $N = 7$ — selected Hilbert-space dimensionality of the [Holon](/docs/core/structure/holon).
 :::
 
 ## State Space
 
-The state space of the [Holon](/docs/core/structure/holon) is a 7-dimensional complex Hilbert space (see [Seven dimensions](/docs/core/structure/dimensions)):
+The selected state Hilbert space of the [Holon](/docs/core/structure/holon) is a 7-dimensional complex Hilbert space (see [Seven dimensions](/docs/core/structure/dimensions)):
 
 $$
 \mathcal{H} = \mathbb{C}^7 = \mathrm{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}
@@ -135,6 +137,7 @@ For $\mathcal{H}_E = \mathbb{C}^N$: $\dim_\mathbb{C}(\mathbb{P}(\mathbb{C}^N)) =
 ### Fubini-Study Metric {#метрика-фубини-штуди}
 
 **Definition:**
+
 $$
 d_{\mathrm{FS}}([|\psi\rangle], [|\varphi\rangle]) := \arccos(|\langle\psi|\varphi\rangle|) \in [0, \pi/2]
 $$
@@ -145,6 +148,7 @@ $$
 - $d_{\mathrm{FS}}$ — Riemannian metric on $\mathbb{P}(\mathcal{H}_E)$
 
 **Infinitesimal form:**
+
 $$
 ds^2 = \langle d\psi|d\psi\rangle - |\langle\psi|d\psi\rangle|^2
 $$
@@ -164,19 +168,15 @@ where:
 
 ### Context Space $\mathcal{C}$
 
-**Definition:** The context space contains the states of all dimensions except [E](/docs/core/structure/dimension-e):
+For the selected frame set $Q=I-\lvert E\rangle\langle E\rvert$, $Q\mathcal H\cong\mathbb C^6$ and $\mathcal C=D(Q\mathcal H)$. This is an orthogonal direct-sum complement, not a tensor factor. Thus $\operatorname{Tr}_E(\Gamma)$ is not defined on a single $\mathbb C^7$.
+
+When $p=\operatorname{Tr}(Q\Gamma)>0$, the conditional readout $c=Q\Gamma Q/p$ is a state in $D_6$; it is nonlinear and undefined at $p=0$. For a global CPTP readout, **choose** $\sigma_0\in D_6$ and define
 
 $$
-\mathcal{C} := \mathcal{D}(\mathcal{H}_{-E}) \cong \mathcal{D}(\mathbb{C}^6)
+\mathcal C_{-E}(X)=QXQ+\operatorname{Tr}((I-Q)X)\sigma_0.
 $$
 
-where $\mathcal{H}_{-E} = \mathrm{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |O\rangle, |U\rangle\}$.
-
-**Elements:** A context $c \in \mathcal{C}$ is the reduced density matrix:
-
-$$
-c = \rho_{-E} = \mathrm{Tr}_E(\Gamma)
-$$
+It is trace-preserving and completely positive, with output algebra $M(Q\mathcal H)$. This is a selected context convention [D], not a partial trace or automatic experience functor. A literal reduction requires a declared tensor extension and readout.
 
 **Topology:** $\mathcal{C}$ inherits its topology from $\mathcal{D}(\mathbb{C}^6)$:
 - Compact (closed subset of the unit ball in $\mathbb{C}^{6 \times 6}$)
@@ -242,18 +242,24 @@ $$
 
 **Kraus representation:** $\Psi$ — CPTP $\Leftrightarrow \exists\{K_i\}: \Psi(\rho) = \sum_i K_i \rho K_i^\dagger$, $\sum_i K_i^\dagger K_i = I$
 
-:::info CPTP structure of regeneration
-The UHM regenerative operator is a CPTP channel:
+:::info Regeneration: numerical update and frozen channel
+Specify $M:D_N\to D_N$ and $a(\Gamma)=\kappa(\Gamma)g_V(P)\ge0$. The substep
 
 $$
-\mathcal{R}_\alpha(\rho) = (1-\alpha)\rho + \alpha\varphi(\rho)
+\Gamma^+=(1-ha(\Gamma))\Gamma+ha(\Gamma)M(\Gamma)
 $$
 
-with $\alpha = \kappa(\Gamma) \cdot g_V(P) \cdot \Delta\tau \in [0,1]$. Kraus representation: $\tilde{K}_0 = \sqrt{1-\alpha}I$, $\tilde{K}_k = \sqrt{\alpha}K_k$.
+preserves the state by convexity when $0\le ha(\Gamma)\le1$. Input dependence makes this generally a nonlinear map, not a single CPTP channel.
 
-**Correctness condition:** $\alpha < 1 \Leftrightarrow \Delta\tau < 1/\kappa_{\max}$.
+For **fixed** $\alpha\in[0,1]$ and $\sigma\in D_N$, the linear compilation
 
-See [preservation of positivity](/docs/core/dynamics/evolution#сохранение-положительности).
+$$
+\mathcal T_{\alpha,\sigma}(X)=(1-\alpha)X+\alpha\operatorname{Tr}(X)\sigma
+$$
+
+is CPTP. If $\sigma=\sum_mp_m|u_m\rangle\langle u_m|$, its Kraus operators are $\sqrt{1-\alpha}I$ and $\sqrt{\alpha p_m}|u_m\rangle\langle n|$. Freezing $\alpha=ha(\Gamma)$ and $\sigma=M(\Gamma)$ gives a channel family, not linearity of the overall map.
+
+If $a\le a_{\max}>0$, $h\le1/a_{\max}$ is **sufficient** for positivity of the substep, not an equivalent or necessary criterion. For the full dynamics use the [GKSL substep and convex regeneration](/docs/core/dynamics/evolution#сохранение-положительности); this first-order scheme preserves states but is not the exact nonlinear flow $\Phi_t$.
 :::
 
 See [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) for details of CPTP channels.
@@ -261,6 +267,7 @@ See [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) f
 ### Experience Functor
 
 **Definition of F on objects:**
+
 $$
 F: \mathrm{Ob}(\mathbf{DensityMat}) \to \mathrm{Ob}(\mathbf{Exp})
 $$
@@ -269,15 +276,11 @@ $$
 F(\rho) := (\mathrm{Spectrum}(\rho_E), \mathrm{Quality}(\rho_E), \mathrm{Context}(\Gamma_{-E}), \mathrm{History}(t))
 $$
 
-**[Theorem (Functoriality)](/docs/proofs/categorical/categorical-formalism#5-доказательство-функториальности):** $F$ is a functor.
-
-*Proof:*
-1. $F(\mathrm{id}_\rho) = \mathrm{id}_{F(\rho)}$ ✓
-2. $F(\Psi \circ \Phi) = F(\Psi) \circ F(\Phi)$ ✓
+**Scope of $F$.** The spectral record on objects requires a supplied experiential readout and context; spectral projectors are canonical, individual rays inside degenerate eigenspaces are not. Functoriality additionally requires an action on arrows and proofs that it preserves identities and composition. Writing those two equations without defining the arrow action is not a proof. They hold by construction for a channel-record functor; a quotient forgetting the underlying channel needs a separate check. See [categorical formalism](/docs/proofs/categorical/categorical-formalism#5-доказательство-функториальности).
 
 ## Grothendieck Topology {#топология-гротендика}
 
-To construct the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$, the Grothendieck topology on the base category must be explicitly specified.
+The canonical state-space topos uses the explicitly specified open-cover site below.
 
 ### Bures Metric
 
@@ -297,58 +300,25 @@ UHM uses two forms of the Bures metric. Here the **chord** form is applied ($d_B
 - $d_B^{\mathrm{chord}} \in [0, \sqrt{2}]$
 - $d_B^{\mathrm{chord}}(\Gamma, \Gamma) = 0$
 - Monotonicity: $d_B^{\mathrm{chord}}(\Psi(\rho), \Psi(\sigma)) \leq d_B^{\mathrm{chord}}(\rho, \sigma)$ for CPTP $\Psi$
-- Riemannian metric on the manifold of density matrices
+- Riemannian tensor on the full-rank stratum; continuous distance on all density matrices
 
 ### Bures Coverings
 
-**Definition (DensityMat Site):**
-
-A family of morphisms $\{\Psi_i: \Gamma_i \to \Gamma\}_{i \in I}$ forms a **covering** of object $\Gamma$ if:
-
-$$
-\forall \epsilon > 0, \exists \delta > 0: \quad B_B(\Gamma, \delta) \subseteq \bigcup_{i \in I} \Psi_i(B_B(\Gamma_i, \epsilon))
-$$
-
-**Site axioms:**
-
-1. **Identity:** $\{\mathrm{id}_\Gamma\}$ covers $\Gamma$
-2. **Stability:** Pullback of a covering is a covering
-3. **Transitivity:** Composition of coverings is a covering
+The site is $\mathcal O_N=\operatorname{Open}(D_N,d_B)$ with inclusions as arrows. A family $(U_i\subseteq U)$ covers $U$ iff $\bigcup_iU_i=U$. Identity, stability under intersections and transitivity follow from ordinary properties of unions. The former CPTP ball-image covering condition is withdrawn [✗]; channel contractivity proves neither inverse lifts nor the required pullbacks in the process category.
 
 ### Connection to the ∞-topos
 
-The superscript "loc" in the definition of $\mathbf{Sh}_\infty(\mathcal{C})^{loc}$ denotes localisation relative to Bures coverings:
-
 $$
-F \text{ — sheaf} \Leftrightarrow F(X) \xrightarrow{\sim} \lim_{\{U \to X\} \in \text{Cov}(X)} F(U)
+\mathcal E_N=\operatorname{Sh}_\infty(\mathcal O_N,J_{\mathrm{open}}).
 $$
 
-**Subobject classifier:**
+The sheaf condition is descent along open covers, using the limit of the Čech diagram in the ∞-case. The subobject classifier is the sheaf $\Omega(U)=\operatorname{Open}(U)$, not a matrix algebra of seven projections. A continuous CPTP channel $D_N\to D_M$ induces a geometric morphism $\mathcal E_N\to\mathcal E_M$ through inverse images of opens. See the [kernel](/docs/reference/mathematical-kernel#bures-site).
 
-$$
-\Omega := \mathcal{O}(\mathcal{C}, d_B)
-$$
+<a id="теорема-невозможность-спектрального-функтора"></a>
 
-— lattice of open sets in the Bures topology.
+### Theorem on the Impossibility of a Spectral Functor
 
-See [Categorical formalism: Grothendieck topology](/docs/proofs/categorical/categorical-formalism#63-топология-гротендика-на-densitymat-и-exp) for the full specification.
-
----
-
-### Theorem on the Impossibility of a Spectral Functor {#теорема-невозможность-спектрального-функтора}
-
-:::warning Theorem
-There is no functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ that factors *only* through the spectrum.
-:::
-
-**Proof:**
-1. Suppose $F = G \circ \mathrm{Spec}$, where $\mathrm{Spec}: \rho \mapsto \mathrm{Spectrum}(\rho)$
-2. Consider isospectral $\rho_1 \neq \rho_2$
-3. Then $F(\rho_1) = F(\rho_2)$
-4. But $\rho_1$ and $\rho_2$ can describe distinguishable experiences
-5. Contradiction ∎
-
-**Corollary:** The full functor $F$ must account for eigenvectors, context, and history.
+**Exact scope [T].** An object map factoring only through spectrum cannot separate isospectral states. If a supplied experience model requires separation of such a pair, a spectrum-only record is insufficient for that model [C]. This does not prohibit every spectral functor: a constant functor exists. The former universal statement is withdrawn [✗]. Eigenprojectors, context and history are additional data of the selected model, not automatic consequences of the spectral theorem.
 
 ## Consciousness Measures
 
@@ -482,7 +452,7 @@ $$
 - [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}}$
 - [Self-observation](/docs/consciousness/foundations/self-observation) — measures $R$, $C$, $D_{\text{diff}}$
 - [Unity dimension](/docs/core/structure/dimension-u) — measure $\Phi$
-- [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
+- [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — typed support, numerical self-models and frozen CPTP realizations
 - [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, ∞-groupoid $\mathbf{Exp}_\infty$
 - [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4 and n-truncations of the ∞-groupoid
 - [Bimodular construction](/docs/proofs/physics/bimodule-construction) — SM representations from bimodules of Connes' imported finite space $H_F$; the derivation from the UHM spectral triple (T-178) is retracted [✗] (2026-09-25) — $H_{\text{int}} = \mathbb{C}^7$ has 7 states, one generation needs 32, and no KO-dimension-6 real structure exists on $\mathbb{C}^7$; T-179 is retracted as stated (T-178–T-181)

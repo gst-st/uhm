@@ -1,1252 +1,214 @@
 ---
 sidebar_position: 2
-title: Septicity Axiom (AP+PH+QG+V)
-description: Autopoiesis, phenomenology, quantum grounding, and viability requirements
+title: Holon Requirements and Operational Definitions
+description: Typed AP, PH, QG and viability assumptions with exact matrix identities
 ---
 
-# Septicity Axiom (AP+PH+QG+V)
+# Holon requirements and operational definitions
 
-:::info Who this chapter is for
-This chapter specifies **what properties a holon must have**—a self-sustaining configuration of reality able to be “alive” in a mathematical sense. The four conditions (AP, PH, QG, V) are not a new axiom; they follow from [Axiom Ω⁷](./axiom-omega) but are kept as a separate section for historical reasons and pedagogical clarity.
+The revision of 2026-10-03 replaces the former claim that AP+PH+QG+V follow automatically from a topos with a typed model specification. These are chosen requirements and interpretation bridges, not consequences of the existence of a classifier or seven matrix coordinates. The [mathematical kernel](/docs/reference/mathematical-kernel) governs their use throughout the theory.
 
-**The four conditions in plain terms:**
+## Autonomy {#предварительное-условие-автономность}
 
-- **(AP) Autopoiesis**—like a fire that sustains itself. The system reproduces its own structure; it needs an internal model of itself (the operator $\varphi$). A fire consumes fuel and yields heat that dries new fuel that feeds the flame. A holon consumes free energy and yields coherence that sustains the mechanism of energy uptake.
+First declare a system/environment tensor factorization and observation boundary. A reduced state is $\rho_S=\operatorname{Tr}_{E}\rho_{SE}$. For a quantum Markov condition use **disjoint factors** $S,B,E$ and $I(S:E\mid B)=S(SB)+S(BE)-S(B)-S(SBE)=0$. Calling $B$ both a part of $S$ and a separate factor makes the expression ill typed.
 
-- **(PH) Phenomenology**—the system has an “inner side.” This is not metaphor: the $E$ dimension (**Interiority**) mathematically captures what the system “experiences from within.” Even the simplest holon has L0 interiority—a minimal “reverse side.”
+Approximate autonomy requires a specified time interval, effective generator and tolerance. A residual bound $\|\dot\rho_S-\mathcal L_S\rho_S\|\le\epsilon\omega_0\|\rho_S\|$ has consistent units. Energetic autonomy additionally needs an energy/free-energy balance with declared units; it does not follow from purity or matrix rank.
 
-- **(QG) Quantum grounding**—the system is quantum at base. Its state is a density matrix $\Gamma$ (not a classical vector), and the dynamics includes coherences—quantum correlations across dimensions. Without quantum structure, neither entanglement ($\Phi$) nor regeneration ($\mathcal{R}$) is possible.
+## Requirements {#ap-автопоэзис}
 
-- **(V) Viability**—the system is coherent enough to “live.” Quantitatively, purity $P = \mathrm{Tr}(\Gamma^2)$ must exceed the critical threshold $2/7$. Below that threshold the system is indistinguishable from noise—it “dissolves” into the background.
+- **AP [P/I]:** declare a self-model $M:D_7\to D_7$ and mechanisms maintaining organization. A continuous $M$ has a fixed point by Brouwer, but arbitrary self-models need not be continuous, and a fixed point does not imply biological autopoiesis.
+- **PH [P/I]**: declare an experiential realization and the interpretation linking it to observation. Population of the $E$ axis alone is a scalar. In seven dimensions it is not a tensor factor with a rank-greater-than-one reduced density matrix.
+- **QG [P]:** use positive trace-one operators and a stated quantum process model. Diagonal states are valid quantum states; their status does not force nonzero frame coherences, entanglement or full rank.
+- **V [D/H]:** separate structural majority from trajectory survival and from its proposed biological interpretation.
 
-**Chapter structure.** We first relate (AP+PH+QG+V) to the Ω⁷ axioms. We then state the prerequisite—**autonomy** (how the system is delineated from its environment). Next we formalize each of the four conditions. Finally we derive the key constants: critical purity $P_{\text{crit}} = 2/7$, reflection threshold $R_{\text{th}} = 1/3$, integration threshold $\Phi_{\text{th}} = 1$, and the regeneration rate $\kappa$.
-:::
+## Structural majority {#v-жизнеспособность}
 
-## Characterizing properties of viable holons
+For $\rho\in D_N$, $P=\operatorname{Tr}\rho^2$,
 
-:::note Status of (AP+PH+QG+V)
-The conditions (AP)+(PH)+(QG)+(V) are **not an independent axiom** but **characterizing properties** (structural consequences) of [Axiom Ω⁷](./axiom-omega). The name “Septicity Axiom” is retained for historical reasons. The **explicit derivation** of all four properties from A1–A4 is theorem T-181 [T]; see [Bimodule construction](/docs/proofs/physics/bimodule-construction#вывод-apphqgv).
-:::
-
-:::info Full axiomatic closure — T-190 extends (AP+PH+QG+V) with (MaxEnt)
-For **local theorem work**—Theorem S (N ≥ 7), Bridge T-15, regeneration $\kappa$, threshold derivations—the 4-tuple **(AP)+(PH)+(QG)+(V)** is sufficient and used throughout this chapter.
-
-For the **closure-level claim** (the axioms from the holon's properties — conditional: the Page–Wootters constraint and the monotonicity of the enrichment stay assumptions, see T-190; the zero-axiom reading is retracted), one additional characterizing principle is required:
-
-- **(MaxEnt) Maximum entropy**—Jaynes 1957: among monotone quantum metrics the Bures metric is the unique one induced by maximum-entropy covariance (T-189 [T], Char-IV of T-187 [T]).
-
-With the extended 5-tuple **(AP)+(PH)+(QG)+(V)+(MaxEnt)**, theorem **[T-190 [C] Axiomatic Closure](/docs/proofs/categorical/cohesive-closure#теорема-аксиоматическое-замыкание)** derives the axioms A1–A5 under three conditions — the Page–Wootters constraint is assumed (T-87, step 4), the cohesive route to A1 is a hypothesis (T-186(a)), and the enrichment of A2 is CPTP-monotone, which follows from none of the five properties but from the operational reading (O) of the enrichment ([Lemma M](/docs/proofs/categorical/cohesive-closure#лемма-монотонность-обогащения)); an earlier wording, "promotes all five axioms A1–A5 to theorems", is retracted. (MaxEnt) enters only through A2 (Bures) via T-189; it does **not** change any preconditions of individual theorems stated below. The 4-tuple remains the working characterization; the 5-tuple is the closure-level characterization.
-:::
-
-:::info Axiom (AP+PH+QG+V)
-A **holon** is an autonomous sub-system with 7D structure satisfying four conditions:
-- **(AP) Autopoiesis**—self-reproduction by self-modeling
-- **(PH) Phenomenology**—presence of an inner side (interiority at L0 and above)
-- **(QG) Quantum grounding**—coherent dynamics with the possibility of regeneration
-- **(V) Viability**—purity above the critical threshold: $P > P_{\text{crit}}$
-
-**Note:** The value $P_{\text{crit}} = 2/7$ is **derived** from distinguishability from noise (see [below](#v-жизнеспособность)).
-:::
-
-### Relation to the explicit Ω⁷ axiomatics
-
-:::info Two-track justification of N = 7
-Axiom 3 ($N = 7$) is supported by two independent routes:
-- **Track A** (this document): Theorem S—(AP)+(PH)+(QG) → N ≥ 7
-- **Track B**: [Structural derivation via octonions](../../proofs/minimality/theorem-octonionic-derivation)—P1+P2 → $\mathbb{O}$ → $\dim \mathrm{Im}(\mathbb{O})$ = 7
-:::
-
-[Axiom Ω⁷](./axiom-omega#аксиоматика) fixes **five explicit axioms** of the theory:
-- **Axiom 1 (Structure):** ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$
-- **Axiom 2 (Metric):** Grothendieck topology $J_{Bures}$
-- **Axiom 3 (Dimension):** $N = 7$
-- **Axiom 4 (Scale):** $\omega_0 > 0$
-- **Axiom 5 (Page–Wootters):** Tensor decomposition
-
-The conditions (AP+PH+QG+V) are **characterizing properties** of viable configurations $\Gamma \in \text{Ob}(\mathcal{C})$:
-- **(AP)** and **(QG)** follow from dynamics in the ∞-topos
-- **(PH)** is the interpretation of the E dimension (Axiom 3)
-- **(V)** is the mathematical condition ($P > P_{\text{crit}}$ [T]); its ontological reading is via PID ([definition [D] (T16 [T])](/docs/core/foundations/axiom-septicity#формулировка-пир), built into A1+A2)
-
-## Prerequisite: Autonomy {#предварительное-условие-автономность}
-
-:::warning Individuation criterion
-Before applying (AP)+(PH)+(QG)+(V), one must fix **the boundaries of the system**. This is handled by the **autonomy** criterion.
-:::
-
-### Definition (Sub-system)
-
-Let $\mathcal{H}_{\text{global}} = \mathcal{H}_S \otimes \mathcal{H}_E$ be a tensor factorization of global space. **Sub-system** $S$ is defined by the reduced density matrix:
-
-$$
-\Gamma_S := \mathrm{Tr}_E(\Gamma_{\text{global}})
-$$
-
-### Definition (Autonomous sub-system) {#определение-автономная-подсистема}
-
-Sub-system $S$ is **autonomous** if three conditions hold:
-
-**(A1) Markov property (informational closure):**
-
-$$
-\mathcal{I}(S:E|\partial S) = 0
-$$
-
-where $\mathcal{I}(X:Y|Z)$ is conditional mutual information and $\partial S$ denotes boundary degrees of freedom.
-
-**Interpretation:** $S$ and environment $E$ are conditionally independent given knowledge of $\partial S$.
-
-**(A2) Dynamical closure:**
-
-$$
-\left\| \frac{d\Gamma_S}{d\tau} - \mathcal{L}_S[\Gamma_S] \right\|_F \leq \varepsilon \cdot \|\Gamma_S\|_F
-$$
-
-where $\mathcal{L}_S$ is the effective super-operator acting only on $\Gamma_S$, and $\varepsilon < 1$.
-
-**Interpretation:** The dynamics of the system is approximately closed.
-
-**(A3) Energetic autonomy:**
-
-$$
-\Delta F_S = \Delta F_{\text{internal}} + O(\varepsilon)
-$$
-
-**Interpretation:** Free-energy changes are governed by internal processes.
-
-### Theorem (Consistency of the definition hierarchy) {#теорема-непротиворечивость-иерархии-определений}
-
-**Claim:** The definitions form a **directed acyclic graph** (DAG) of dependencies.
-
-**Level hierarchy:**
-
-| Level | Definition | Depends on |
-|---------|-------------|------------|
-| 0 | ∞-topos $\text{Sh}_\infty(\mathcal{C})$ (Axiom Ω⁷) | — (axiomatic) |
-| 1 | Sub-system $\Gamma_S$ (partial trace) | Level 0 |
-| 2 | Autonomy (A1)+(A2)+(A3) | Levels 0, 1 |
-| 3 | 7D structure ($\mathcal{H}_S \cong \mathbb{C}^7 \otimes \mathcal{H}_{\text{int}}$) | Levels 0, 1, 2 |
-| 4 | Holon (AP)+(PH)+(QG)+(V) | Levels 0, 1, 2, 3 |
-
-**Extended operator hierarchy (levels 5–10):**
-
-| Level | Object | Definition | Depends on |
-|---------|--------|-------------|------------|
-| 5 | $\mathcal{L}_\Omega$ | Logical Liouvillian from Ω | Level 0 |
-| 6 | $\rho^*_{\mathrm{diss}} = I/7$ | Unique stationary state of $\mathcal{D}_\Omega$ | Level 5 (primitivity [T]) |
-| 7 | $R(\Gamma)$ | $R := 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$ | Level 6 + state $\Gamma$ |
-| 8 | $\kappa(\Gamma)$ | $\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ | Level 0 (adjunction $\mathcal{D} \dashv \mathcal{R}$) |
-| 9 | $\varphi_k(\Gamma)$ | Replacement channel: $\varphi_k = (1-k)\Gamma + k\rho^*_{\mathrm{diss}}$, $k = 1-R$ | Levels 6, 7 |
-| 10 | $\varphi_J(\Gamma)$ | Collineation-anchored self-model $k\,\mathcal{P}_\alpha(\Gamma) + R\,uu^\dagger$, $k = 1 - R$; the anchor is fixed up to the phase gauge by the principle (Eq-V) ([T-334](/docs/core/operators/phi-operator#t-334)); fixed point $\Gamma_{\eta_\infty}$ inside the window | Levels 3 (frame group $\Gamma_{\mathrm{oct}}$), 6, 7 |
-
-:::info Canonical order of definitions
-$$\Omega \xrightarrow{\text{L-unification}} \mathcal{L}_\Omega \xrightarrow{\text{primitivity}} \rho^*_{\mathrm{diss}} \xrightarrow{\text{proximity}} R(\Gamma) \xrightarrow{k=1-R} \varphi_k$$
-
-The operator $\varphi$ is a **consequence** of the dynamics, not a premise. The stationary state $\rho^*_{\mathrm{diss}} = I/7$ is fixed **before** $\varphi$ via primitivity of the linear part $\mathcal{L}_0$ [T-39a]. There is no cycle: each level depends only on earlier ones.
-:::
-
-:::warning Three distinct stationary objects
-The documentation uses three objects denoted $\rho^*$:
-
-| Object | Definition | Purity | Role |
-|--------|-------------|---------|------|
-| $\rho^*_{\mathrm{diss}} = I/7$ | Attractor of dissipation $\mathcal{D}_\Omega$ | $P = 1/7$ | Target state in the definition of $R$ |
-| $\Gamma^*_{\mathrm{coh}}$ | Fixed point of $\varphi_{\mathrm{coh}}$ | $P = 1/7$ ($\Gamma^*_{\mathrm{coh}} = I/7$) | Exact self-knowledge of the canonical self-model; coincides with $\rho^*_{\mathrm{diss}}$ (the row read "$P = 2/7$, viability threshold" until 2026-09-25); the fixed point of $\varphi_J$ is $\Gamma_{\eta_\infty}$, inside the window |
-| $\rho^*_{\mathrm{full}}$ | Attractor of the full $\mathcal{L}_\Omega$ other than $I/7$ | $P > 1/7$; $P > 2/7$ at the seven attractors of $\varphi_s$; $P \in (2/7, 5/14)$, in $\mathcal{V}_{\mathrm{full}}$, at the attractor of $\varphi_J$ for $\kappa > \kappa_c(\alpha)$ | Physical stationary state of a living system; none for an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ (dead isolation, T-124c) |
-
-The canonical definition of $R$ uses $\rho^*_{\mathrm{diss}} = I/7$—a constant independent of $\varphi$, $\kappa$, or the dynamics.
-:::
-
-**Proof (topological sorting):**
-
-The dependency graph $G = (V, E)$ with $V = \{0, 1, \ldots, 10\}$ and $E = \{(i, j) : i < j,\ \text{dependency}\}$ is a **DAG**: along any path $v_0 \to v_1 \to \cdots \to v_m$ we have $v_0 < v_1 < \cdots < v_m$, hence $v_m \neq v_0$.
-
-Therefore **no circular dependencies** exist. ∎
-
-## (V) Viability {#v-жизнеспособность}
-
-The fourth condition, supplementing (AP)+(PH)+(QG):
-
-:::info Condition (V)—Viability
-A system is **viable** if the full condition holds:
-
-$$
-(V) = (AP) \wedge (PH) \wedge (QG) \wedge (P > P_{\text{crit}})
-$$
-:::
-
-:::warning Completeness of the viability condition
-The inequality $P > 2/7$ is **necessary but not sufficient** for viability. Full (V) = (AP)∧(PH)∧(QG)∧(P > 2/7) entails, in particular:
-- $\mathrm{rank}(\Gamma) = 7$ (from (QG)—all seven dimensions are functionally active)
-- A connected interaction graph (from (AP)—closed reproduction cycle)
-- $\Delta F > 0$ (consequence of full (V): from $\mathrm{rank}(\Gamma) = 7$ and stationarity at $\rho^*$)
-
-A system with $P > 2/7$ but broken (AP) or (QG)—e.g. $\Gamma = \mathrm{diag}(0.3, 0.3, 0.4, 0, 0, 0, 0)$—is **not viable**, despite $P \approx 0.34 > 2/7$.
-:::
-
-### Critical purity: Theorem—master definition {#критическая-чистота-теорема}
-
-:::note Why exactly 2/7?
-The number $2/7 \approx 0.286$ is not an arbitrary choice but the **unique** value at which five independent criteria align. Intuition: a seven-dimensional system in maximal chaos has purity $1/7$ (dimensions equiprobable—“white noise”). For the system to become *distinguishable* from noise, its structural deviation must *double* the noise scale. Hence $P_{\text{crit}} = 2 \times (1/7) = 2/7$. This is the “structure $\geq$ chaos” principle: to be something, one must be at least twice as organized as nothing.
-:::
-
-:::info DRY: Master definition of $P_{\text{crit}}$
-This is the **canonical definition** of critical purity $P_{\text{crit}} = 2/7$. Full proof: [theorem-purity-critical](../../proofs/dynamics/theorem-purity-critical).
-:::
-
-:::tip Status: [T] proved
-The value $P_{\text{crit}} = 2/7$ is **strictly derived** from several mathematically equivalent formulations (routes 1–4) and an independent autopoietic argument (route 5). All routes converge to one value, supporting the fundamentality of this threshold.
-
-[Full proof →](../../proofs/dynamics/theorem-purity-critical)
-:::
-
-**Value:**
-
-$$
-P_{\text{crit}} = \frac{2}{N} = \frac{2}{7} \approx 0.286
-$$
-
-**Theorem (critical purity):** [Full proof →](../../proofs/dynamics/theorem-purity-critical)
-
-For a holonomic system of dimension $N$, critical purity $P_{\text{crit}} = 2/N$ is the **unique** value satisfying five equivalent criteria:
-
-| Route | Criterion | Result |
-|------|----------|-----------|
-| **Geometric** [T] | $\lVert\Gamma - I_N/N\rVert_F^2 > \lVert I_N/N\rVert_F^2$ | $P > 2/N$ |
-| **Information-theoretic** [C] | $D_{KL}(\Gamma \| I_N/N) \geq \frac{1}{2}$ nat | $P > 2/N$ |
-| **Structural** [C] | SNR $\geq 1$ | $P > 2/N$ |
-| **Spectral** [T] | $\lambda_{\max} \approx 1/2$ | $P = 2/N$ |
-| **Autopoietic** [I] | Breaking $U(N)$ symmetry | $P > 2/N$ |
-
-**Interpretation (majority of the Frobenius weight):**
-
-$$
-\|\Gamma - I_N/N\|_F^2 > \|I_N/N\|_F^2 \quad \Leftrightarrow \quad P > \frac{2}{N} \quad \Leftrightarrow \quad s := \frac{\|\Gamma - I_N/N\|_F^2}{P} > \frac{1}{2}
-$$
-
-The split $P = \|I/N\|_F^2 + \|\Delta\|_F^2$ is orthogonal (Pythagoras), so the criterion says exactly: the **structural component holds the strict majority** of the state's Frobenius weight. Majority is the unique parameter-free dominance threshold between two orthogonal components — the same plurality principle that gives $R_{\text{th}} = 1/3$ for $K = 3$ hypotheses gives $P_{\text{crit}} = 2/N$ for $K = 2$ components. The "factor 2" is the arithmetic of the majority cut, not a chosen constant.
-
-**Spectral characterization [T]:**
-
-At $P = 2/7$ the dominant mode carries ~50% of coherence weight:
-
-$$
-\lambda_{\max} = \frac{1 + \sqrt{N-1}}{N} = \frac{1 + \sqrt{6}}{7} \approx 0.493
-$$
-
-Direct calculation: for a $7 \times 7$ density matrix with $P = \text{Tr}(\Gamma^2) = 2/7$, spectral bound $\lambda_{\max} \leq \sqrt{P} = \sqrt{2/7} \approx 0.535$. The most symmetric configuration ($\lambda_1 = \lambda_{\max}$, others equal) gives $\lambda_{\max} \approx 1/2$. The formula above is exact.
-
-:::info Definition: Viability
-A **viable system** is an autonomous sub-system with 7D structure satisfying (V):
-
-$$
-P = \mathrm{Tr}(\Gamma^2) > P_{\text{crit}} = \frac{2}{7}
-$$
-:::
-
-## Principle of Informational Distinguishability (PID) {#принцип-информационной-различимости}
-
-:::note PID in plain language
-The Principle of Informational Distinguishability answers: *what does it mean “to exist”?* In UHM the answer is simple: to exist is to be *distinguishable from noise*. If state $\Gamma$ cannot be told apart from a random fluctuation of the background ($I/7$) by any measurement, it “does not exist” ontologically. PID formalizes this via Bures distance: existence is nonzero distance from noise. Under earnest acceptance of Axiom Ω⁷ (reality as an $\infty$-topos), PID becomes a **tautology**—it unpacks what is already in the definition of the $\infty$-topos with Bures topology.
-:::
-
-:::tip PID is definition [D] (T16 [T])
-The **Principle of Informational Distinguishability (PID)** is **definition [D]** (T16 [T]): given earnest acceptance of A1 (∞-topos) and A2 ($J_{\text{Bures}}$), PID is tautological—distinguishability via $J_{\text{Bures}}$-coverings coincides with ontological distinguishability. Relabeling does not affect the computational results ($P_{\text{crit}}, R_{\text{th}}, \Phi_{\text{th}}$).
-
-Given earnest acceptance of A1 (reality = ∞-topos), “ontological significance” = “truth in the internal logic of $\mathbf{Sh}_\infty(\mathcal{C})$” = “nontrivial $J_{Bures}$-covering”—a tautology, not a deep theorem. Kripke–Joyal semantics only makes explicit what is already built into A1+A2.
-:::
-
-### Formulation of PID [D] {#формулировка-пир}
-
-:::info DRY: Master definition of PID
-This is the canonical definition of the Principle of Informational Distinguishability. Cross-references should point to `axiom-septicity#формулировка-пир`.
-:::
-
-**Definition T16 (PID).** PID is the tautological consequence of A1+A2: distinguishability in the $J_{\text{Bures}}$ topology **is** ontological distinguishability by definition of the ∞-topos.
-
-Let $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{Bures}, \omega_0)$. Then:
-
-$$
-\text{Significant}(\Gamma) \Leftrightarrow d_B(\Gamma, \Gamma_{\text{noise}}) \geq d_B^{\text{th}}
-$$
-
-**Compatibility with $J_{Bures}$:**
-1. Grothendieck topology $J_{Bures}$ defines “distinguishability” via coverings
-2. A $J_{Bures}$-cover separates points ⟺ they lie at positive Bures distance
-3. Identifying “ontological significance” with “separability by coverings” is the content of PID (T16)
-
-:::tip Why PID is definition [D], not theorem [T]
-Given earnest acceptance of A1 (reality = ∞-topos), step (3) is a **tautology**: “to exist” = “to be true in the internal logic of $\mathbf{Sh}_\infty(\mathcal{C})$” (Kripke–Joyal) = “to admit a nontrivial $J_{Bures}$-covering” (A2). Because this is a **tautology**, not a substantive claim, PID is definition [D], not theorem [T].
-
-**Remark:** Kripke–Joyal semantics ([Lurie, HTT, §6.2.2]) only **explicates** the identification built into A1+A2: “$\varphi$ is true at point $U$” ⟺ “$\exists$ a covering family $\{U_i \to U\} \in J_{Bures}$ on which $\varphi$ is verifiable.” This is not a proof but a clarification of definitions.
-:::
-
-where:
-- $d_B$ is the [Bures metric](/docs/core/foundations/axiom-omega#топология-гротендика)
-- $\Gamma_{\text{noise}} = I/N$ is the maximally mixed state (noise)
-- $d_B^{\text{th}}$ is the characteristic distinguishability scale
-
-### Unifying thresholds via PID
-
-All three UHM thresholds admit an **ontological reading** through PID:
-
-| Threshold | PID reading | Value |
-|-------|-----------------|----------|
-| $P_{\text{crit}}$ | $d_B(\Gamma, I/N) \geq d_B^{\text{crit}}$ | $2/N$ |
-| $R_{\text{th}}$ | $d_B(\Gamma, \varphi(\Gamma)) \leq d_B^{\text{ref}}$ | $1/3$ |
-| $\Phi_{\text{th}}$ | $d_B(\Gamma, \Gamma_{\text{diag}}) \geq d_B^{\text{class}}$ | $1$ |
-
-**Theorem (unity of thresholds) [T]:** All thresholds descend from a single metric—the Bures metric, which is the [canonical monotone Riemannian metric](/docs/proofs/dynamics/emergent-time#41-метрика-бурес) on quantum state space: classically unique (Chentsov 1982), and in the quantum case the **minimal** element of the Petz family of monotone Riemannian metrics (Petz 1996), uniquely characterized by three independent properties — Petz extremality, Uhlmann purification universality, and SLD-Fisher/Cramér-Rao saturation (T-187 [T], see [Cohesive Closure §5.3](/docs/proofs/categorical/cohesive-closure#53-closing-the-last-open-question-why-bures-t-187)). PID is definition [D] (T16) built into A1+A2.
-
-## Formal statement
-
-### (AP) Autopoiesis {#ap-автопоэзис}
-
-:::note Intuition: mirror inside the mirror
-*Autopoiesis* literally means self-production (Greek *auto*—self, *poiesis*—making). Chilean biologists Maturana and Varela introduced the term in 1972 for living cells. In UHM autopoiesis is formalized by the operator $\varphi$—the system’s “internal mirror.” The system regards itself ($\varphi(\Gamma)$ models $\Gamma$), compares image to original, and corrects itself. When image and original coincide ($\varphi(\Gamma^*) = \Gamma^*$), the system reaches self-consistency—a fixed point. This is not “freeze” but dynamical balance: the system ceaselessly reproduces itself, like a candle flame that is ever new yet “the same.”
-:::
-
-There exists a self-modeling map $\varphi$ with a fixed point:
-
-$$
-\exists \, \varphi: \mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H}), \quad \exists \, \Gamma^*: \varphi(\Gamma^*) = \Gamma^*
-$$
-
-:::info DRY: Master definition of $\varphi$
-Full formalization of $\varphi$ (three equivalent definitions, equivalence proof, algorithms): [Formalization of $\varphi$](/docs/proofs/categorical/formalization-phi).
-:::
-
-**Properties of $\varphi$:**
-- Categorical: $\varphi$ is left adjoint to the inclusion $\text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$
-- The map preserves density-matrix properties (CPTP)
-- Fixed point $\Gamma^*$ corresponds to a self-consistent system state
-- **Reflection** measures self-model quality: $R_\varphi = 1 - \|\Gamma - \varphi(\Gamma)\|^2 / \|\Gamma\|^2$
-
-:::note On the notation $R$
-The theory uses three distinct symbols built on the letter R:
-- $R_\varphi$ — **reflection as self-model quality**, $R_\varphi \in [0,1]$. Not to be conflated with the canonical threshold measure: the two coincide neither numerically nor semantically — see [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)
-- $R$ — the **canonical reflection measure** $R = 1/(7P) \in [1/7, 1]$ ([master definition](/docs/consciousness/foundations/self-observation#мера-рефлексии-r); T-126), owner of the threshold $R_{\text{th}} = 1/3$
-- $\mathcal{R}[\Gamma, E]$—the **regenerative term** in the evolution equation
-:::
-
-### Categorical derivation of $\kappa_0$—master definition {#структурный-анзац-kappa0}
-
-:::info DRY: Master definition of $\kappa_0$
-This is the **sole canonical definition** of the formula for $\kappa_0$. Other documents should cite this section rather than duplicate the formula.
-:::
-
-:::tip Status: canonical ansatz [D] + categorical interpretation [I]
-**Categorical reading [I]:** $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$—the norm of a natural transformation between the (posited) adjoint functors $\mathcal{D}_\Omega \dashv \mathcal{R}$. The adjunction and the norm identity are *motivated* by [L-unification](/docs/core/foundations/axiom-omega#внутренняя-логика) but not proven; the **operational formula** $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ is **[T at the first-order-kinetics model]** — forced by the rapid pre-equilibrium (quasi-steady-state) argument (see the status note and [§Derivation](#вывод-kappa0-cycle-flux) at the end of this section).
-
-**Operational formula [T at first-order kinetics]:** $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ — the product form is **forced** as the rapid pre-equilibrium (quasi-steady-state) rate of the regeneration branching (first-order kinetics excludes min and geometric-mean; see [§Derivation](#вывод-kappa0-cycle-flux)). The identification $|\mathrm{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ (Yoneda + Bures + Stinespring) supplies the categorical reading of the same formula.
-:::
-
-Regeneration rate is determined by the structure of Γ:
-
-$$
-\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)
-$$
-
-where:
-- $\kappa_{\text{bootstrap}}$ is minimal regeneration from the [adjunction unit](/docs/core/foundations/axiom-omega#genesis-protocol)
-- $\kappa_0$ is the base regeneration rate (see [categorical derivation below](#категориальный-вывод-kappa0))
-
-### Value of $\kappa_{\text{bootstrap}}$ [D] {#теорема-kappa-bootstrap}
-
-:::warning Convention definition [D] (value of $\kappa_{\text{bootstrap}}$)
-Minimal regeneration rate is **fixed** as:
-
-$$
-\kappa_{\text{bootstrap}} = \frac{\omega_0}{N} = \frac{\omega_0}{7}
-$$
-
-**Status [D]:** The numerical value $\omega_0/N$ is motivated by a physical argument (one clock tick per full $N$-dimensional cycle) and categorical normalization ($\min_i(\gamma_{Oi}) = 1/N$) but **is not a strict theorem**: there is no proof that the adjunction-unit norm $\|\eta\|$ equals this number exactly. It is a **scale convention**, consistent with $P_{\text{crit}}$ and $\omega_0$.
-:::
-
-**Definition (norm of the adjunction unit):**
-
-$$
-\|\eta\| := \sup_{\Gamma: P(\Gamma) \leq P_{\text{crit}}} \frac{\|\eta_\Gamma\|_F}{\|\Gamma\|_F}
-$$
-
-where $\eta_\Gamma$ is the [adjunction unit](/docs/core/foundations/axiom-omega#genesis-protocol) for $\mathcal{D}_\Omega \dashv \mathcal{R}$.
-
-**Proof:**
-
-**(a) Physical argument (minimal regeneration):**
-
-Minimal regeneration corresponds to one clock tick per full cycle through all $N$ dimensions:
-
-$$
-\kappa_{\text{bootstrap}} = \frac{\omega_0}{N}
-$$
-
-**(b) Categorical argument:**
-
-From the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$:
-
-$$
-\kappa_{\text{bootstrap}} = \omega_0 \cdot \frac{\min_i(\gamma_{Oi})}{\gamma_{OO}}
-$$
-
-Under normalization $\min_i(\gamma_{Oi}) = 1/N$ and $\gamma_{OO} = 1$:
-
-$$
-\kappa_{\text{bootstrap}} = \frac{\omega_0}{N} = \frac{\omega_0}{7}
-$$
-
-**(c) Consistency with $P_{\text{crit}}$:**
-
-At $P = P_{\text{crit}} = 2/N$, minimal regeneration $\kappa_{\text{bootstrap}} = \omega_0/N$ ensures:
-- One regeneration cycle per period $T = 2\pi/\omega_0$
-- Sufficient rate to sustain $P > P_{\text{crit}}$ — *corrected 2026-09-26:* only when $\omega_0$ is large against the decoherence rate. In the units of $\mathcal{D}_\Omega$ (decoherence rate $2/3$) a stationary state in the conscious window needs $\kappa \ge 11.83$ for every self-model ([T-336](/docs/core/dynamics/evolution#t-336)), and $\kappa(\Gamma) \le 9\omega_0/14$, so $\omega_0 \ge 18.4$; with the collineation anchor $\omega_0 > 111.35$ ($\alpha = 0$). $\kappa_{\text{bootstrap}} = \omega_0/7$ alone would need $\omega_0 \ge 82.8$. The convention fixes $\kappa$ in units of $\omega_0$; the ratio $\omega_0$ to the decoherence rate stays free ([T-346](/docs/core/dynamics/evolution#t-346))
-
-∎
-
-**Corollary:**
-
-For UHM with $N = 7$:
-
-$$
-\kappa_{\text{bootstrap}} = \frac{\omega_0}{7} \approx 0.143 \cdot \omega_0
-$$
-
-:::warning Resolving the bootstrap paradox
-$\kappa_{\text{bootstrap}} > 0$ guarantees regeneration in every state, resolving the circularity “low Coh_E → low κ → no regeneration.”
-:::
-
-#### Definition: E-coherence {#e-coherence-definition}
-
-<!-- DRY: Master definition Coh_E — canonical HS-projection formula -->
-
-E-coherence measures the alignment of the Interiority dimension within the coherence matrix Γ.
-
-##### Canonical formula [T] {#coh-e-canonical}
-
-$$
-\mathrm{Coh}_E(\Gamma) := \frac{\gamma_{EE}^2 + 2\sum_{i \neq E} |\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)} = \frac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2}
-$$
-
-:::tip Status: Theorem [T]
-$\mathrm{Coh}_E$ is an **exact** measure of the E contribution to purity, not a proxy. It is the ratio of squared Hilbert–Schmidt norms for the orthogonal projection $\pi_E$ (HS projection theorem below).
-:::
-
-**Range:** $\mathrm{Coh}_E \in [0, 1]$ globally: the minimum $0$ is attained by states with an empty E-sector (e.g. a pure state on any other axis, $\Gamma = |A\rangle\langle A|$), the maximum $1$ by a pure E state. The maximally mixed state sits at exactly $1/7$, and the No-Zombie floor (T-38a) keeps every viable state **sustained by the Ω-dynamics** ($\mathcal{D}_\Omega \neq 0$ — the theorem's hypothesis, as the [decision protocol states it](/docs/applied/coherence-cybernetics/predictions#decision-protocols)) strictly above $1/7$ — on that class the operational range is $(1/7, 1]$. The dynamical qualifier is load-bearing: a matrix that merely has $P > 2/7$ can sit far below the floor — the pure state $|A\rangle\langle A|$ above is the trivial example, and construction-layer natal $\Gamma$ does it in bulk (machine check 2026-07-25, hhg engine: 87 of 175 viable natal charts below the floor, minimum $0.0279$ (re-measured 2026-07-28; 90 of 162 at $0.0247$ before the encoder defaults were corrected)). The floor is a property of dissipatively sustained states, not of arbitrary matrices above $P_{\text{crit}}$; an embedding that claims to measure a *living* system should therefore CHECK the floor as a sanity test, not assume it. *(Corrected 2026-07-11: earlier text stated the range as $[1/7, 1]$ with the minimum attributed to $I/7$ — the maximally mixed state is the viable-class minimizer, not the global one. Found by the SYNARC M1 machine self-test.)*
-
-##### C*-algebraic justification: Hilbert–Schmidt projection {#hs-projection}
-
-In $\mathbb{C}^7$, tensor factorization is impossible (7 is prime), yet defining a sub-system **does not require** a tensor product. In algebraic quantum field theory (Haag, 1996; Bratteli–Robinson, 1987) a sub-system is specified by **embedding a C*-subalgebra**, and partial trace is realized as a **conditional expectation**.
-
-**Definition (Hilbert–Schmidt space).** The space $B(\mathbb{C}^7)$ of linear operators is a Hilbert space with inner product $\langle A, B \rangle_{\mathrm{HS}} = \mathrm{Tr}(A^\dagger B) = \sum_{i,j} \overline{A_{ij}} B_{ij}$ and norm $\|A\|_{\mathrm{HS}}^2 = \mathrm{Tr}(A^\dagger A)$.
-
-**Definition ($E$-projection).** Let $P_E = |E\rangle\langle E|$, $P_{\bar{E}} = I - P_E$. The map $\pi_E: B(\mathbb{C}^7) \to B(\mathbb{C}^7)$ is
-
-$$
-\pi_E(\Gamma) := P_E \Gamma + \Gamma P_E - P_E \Gamma P_E
-$$
-
-**Lemma (explicit form of $\pi_E$).** In the basis $\{A, S, D, L, E, O, U\}$,
-
-$$[\pi_E(\Gamma)]_{ij} = \begin{cases} \gamma_{ij}, & i = E \text{ or } j = E \\ 0, & \text{otherwise} \end{cases}$$
-
-i.e. $\pi_E$ extracts the E row and E column of Γ.
-
-*Proof.* $[P_E\Gamma]_{ij} = \delta_{iE}\gamma_{Ej}$ (E-row); $[\Gamma P_E]_{ij} = \gamma_{iE}\delta_{Ej}$ (E-column); $[P_E\Gamma P_E]_{ij} = \delta_{iE}\gamma_{EE}\delta_{Ej}$ (the $(E,E)$ entry). Summing: $(E,E) \to \gamma_{EE}$; $(E,j\neq E) \to \gamma_{Ej}$; $(i\neq E, E) \to \gamma_{iE}$; $(i\neq E, j\neq E) \to 0$. ∎
-
-#### Theorem (HS projection) [T] {#теорема-hs-проекция}
-
-$\pi_E$ is an **orthogonal projection** in Hilbert–Schmidt space:
-
-**(a)** Idempotence: $\pi_E^2 = \pi_E$.
-
-**(b)** Self-adjointness: $\langle \pi_E(A), B \rangle_{\mathrm{HS}} = \langle A, \pi_E(B) \rangle_{\mathrm{HS}}$.
-
-*Proof (a).* $\pi_E(\pi_E(\Gamma)) = P_E\pi_E(\Gamma) + \pi_E(\Gamma)P_E - P_E\pi_E(\Gamma)P_E$. Since $[\pi_E(\Gamma)]_{Ej} = \gamma_{Ej}$ for all $j$: $P_E\pi_E(\Gamma) = P_E\Gamma$. Similarly $\pi_E(\Gamma)P_E = \Gamma P_E$ and $P_E\pi_E(\Gamma)P_E = P_E\Gamma P_E$. Hence $\pi_E^2(\Gamma) = P_E\Gamma + \Gamma P_E - P_E\Gamma P_E = \pi_E(\Gamma)$. ∎
-
-*Proof (b).* $\langle \pi_E(A), B\rangle_{\mathrm{HS}} = \sum_{i,j}\overline{[\pi_E(A)]_{ij}}B_{ij}$. Only $i=E$ or $j=E$ contribute. This equals $\sum_j \overline{A_{Ej}}B_{Ej} + \sum_{i\neq E}\overline{A_{iE}}B_{iE}$. The expression for $\langle A, \pi_E(B)\rangle_{\mathrm{HS}}$ is identical. ∎
-
-#### Theorem ($\mathrm{Coh}_E$ equals HS-share) [T] {#теорема-coh-e-exact}
-
-$$\mathrm{Coh}_E(\Gamma) = \frac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2}$$
-
-*Proof.* Numerator: $\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 = \sum_{i,j}|[\pi_E(\Gamma)]_{ij}|^2 = |\gamma_{EE}|^2 + \sum_{j\neq E}|\gamma_{Ej}|^2 + \sum_{i\neq E}|\gamma_{iE}|^2$. By Hermiticity ($|\gamma_{Ei}| = |\gamma_{iE}|$): $= \gamma_{EE}^2 + 2\sum_{i\neq E}|\gamma_{Ei}|^2$. Denominator: $\|\Gamma\|_{\mathrm{HS}}^2 = \mathrm{Tr}(\Gamma^2)$ for Hermitian Γ. ∎
-
-#### Theorem (Umegaki conditional expectation) [T] {#теорема-условное-ожидание}
-
-The map $\mathcal{E}_{E|\bar{E}}(\Gamma) := P_E\Gamma P_E + P_{\bar{E}}\Gamma P_{\bar{E}}$ is the conditional expectation of $M_7(\mathbb{C})$ onto the block-diagonal subalgebra $\mathcal{A}_{E|\bar{E}} \cong \mathbb{C} \oplus M_6(\mathbb{C})$:
-
-**(a)** $\mathcal{E}_{E|\bar{E}}$ is CPTP (Kraus operators $K_1 = P_E$, $K_2 = P_{\bar{E}}$, $K_1^\dagger K_1 + K_2^\dagger K_2 = I$).
-
-**(b)** It removes precisely E coherences: $\Gamma - \mathcal{E}_{E|\bar{E}}(\Gamma) = P_E\Gamma P_{\bar{E}} + P_{\bar{E}}\Gamma P_E$.
-
-**(c)** Pythagorean purity split: $\|\Gamma\|_{\mathrm{HS}}^2 = \|\mathcal{E}_{E|\bar{E}}(\Gamma)\|_{\mathrm{HS}}^2 + \|\Gamma - \mathcal{E}_{E|\bar{E}}(\Gamma)\|_{\mathrm{HS}}^2$.
-
-**Corollary.** $\mathrm{Coh}_E$ splits into classical and quantum contributions:
-
-$$\mathrm{Coh}_E = \underbrace{\frac{\gamma_{EE}^2}{\mathrm{Tr}(\Gamma^2)}}_{\text{E population}} + \underbrace{\frac{2\sum_{i\neq E}|\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)}}_{\text{quantum E coherences}}$$
-
-:::info Role of the 42D formalism
-With $\mathrm{Coh}_E$ established as an exact HS-projection measure [T], the Page–Wootters 42D formalism ($\mathcal{H} = \mathbb{C}^7 \otimes \mathbb{C}^6$, [Axiom A5](/docs/core/foundations/axiom-omega#pw-constraint)) still plays its role for:
-- **Emergent time** (PW mechanism)
-- **Gauge symmetries** of the electroweak sector
-- **Tensor entanglement** between sub-systems
-
-Yet the **definition of E-coherence** is completely closed in 7D. The relation $\mathrm{Coh}_E$(7D) ≈ $\mathrm{Tr}(\rho_E^2)$(42D) is now read as **calibration** between two valid measures, not proxy vs exact.
-:::
-
-#### Generalization: $\pi_X$ for an arbitrary dimension {#pi-x-generalization}
-
-The HS-projection construction extends to **any** dimension $X \in \{A, S, D, L, E, O, U\}$:
-
-$$
-\pi_X(\Gamma) := P_X \Gamma + \Gamma P_X - P_X \Gamma P_X, \quad P_X = |X\rangle\langle X|
-$$
-
-and the coherence of dimension $X$:
-
-$$
-\mathrm{Coh}_X(\Gamma) := \frac{\|\pi_X(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2} = \frac{\gamma_{XX}^2 + 2\sum_{i \neq X}|\gamma_{Xi}|^2}{\mathrm{Tr}(\Gamma^2)}
-$$
-
-All theorems (HS projection, Coh = HS share, Umegaki conditional expectation) apply to arbitrary $X$ **[T]**. Completeness: $\sum_{X} \mathrm{Coh}_X(\Gamma) = 1 + 2\sum_{i < j}|\gamma_{ij}|^2 / \mathrm{Tr}(\Gamma^2)$.
-
-#### Fano projections {#fano-projections}
-
-For a [Fano line](/docs/core/structure/dimensions#октонионная-интерпретация) $\ell = \{i, j, k\}$ define
-
-$$
-P_\ell = |i\rangle\langle i| + |j\rangle\langle j| + |k\rangle\langle k|, \quad \pi_\ell(\Gamma) := P_\ell \Gamma + \Gamma P_\ell - P_\ell \Gamma P_\ell
-$$
-
-Fano-line coherence: $\mathrm{Coh}_\ell(\Gamma) = \|\pi_\ell(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$—projection onto the **associative subalgebra** corresponding to a quaternion triple. All seven Fano projections $\pi_\ell$ are orthogonal in HS **[T]**.
-
-**Completeness:** Each point lies on exactly three Fano lines, so $\sum_{\ell=1}^{7} P_\ell = 3I$. This does **not** give $\sum_\ell \mathrm{Coh}_\ell = 3$ in general: $\pi_\ell$ keeps the entries on the row/column of the three line-points, and a diagonal entry lies on 3 lines while an off-diagonal *pair* lies on $3+3-\lambda = 5$ lines (Fisher $\lambda=1$). Hence
-
-$$
-\sum_{\ell=1}^{7} \mathrm{Coh}_\ell(\Gamma) = \frac{3\,P_{\mathrm{diag}} + 5\,P_{\mathrm{coh}}}{P} = 5 - \frac{2}{1+\Phi},
-$$
-
-which equals $3$ **only** for diagonal $\Gamma$ ($\Phi=0$) and rises with $\Phi$. On $\mathcal{D}(\mathbb{C}^7)$ the integration measure is bounded, $\Phi \leq 7P - 1 \leq 6$ ([interiority hierarchy, Definition 2.4](/docs/proofs/consciousness/interiority-hierarchy)), with $\Phi = 6$ exactly for pure states with a uniform diagonal, so the sum never exceeds $5 - \tfrac27 = \tfrac{33}{7} \approx 4.714$. (It read "rises toward $5$ as $\Phi\to\infty$" until 2026-09-25; in dimension 7 the measure $\Phi$ does not grow without bound.) This gives a clean operational witness for the L2 integration threshold:
-
-$$
-\Phi \geq 1 \iff \sum_{\ell=1}^{7}\mathrm{Coh}_\ell(\Gamma) \geq 4. \qquad \textbf{[T]}
-$$
-
-:::note Categorical interpretation
-In the categorical formalism ($\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$):
-- $\pi_E$ ↔ **subobject inclusion** $E \hookrightarrow \Omega$
-- $\mathrm{Coh}_E$ ↔ value of the **characteristic morphism** $\chi_E: \Gamma \to [0,1]$
-- $\mathcal{E}_{E|\bar{E}}$ ↔ **geometric morphism** from $\mathrm{Sh}_\infty(\mathcal{C})$ to $\mathrm{Sh}_\infty(\mathcal{C}_{E|\bar{E}})$
-:::
-
-**Interpretation:** $\mathrm{Coh}_E \in [0, 1]$. The value $1/7 \approx 0.14$ is the **maximally-mixed** value ($\mathrm{Coh}_E(I/7)=1/7$), **not** the minimum: any state with empty E row/column (e.g. $|A\rangle\langle A|$) has $\mathrm{Coh}_E = 0$. The maximum $\mathrm{Coh}_E = 1$ is a pure E state. High E-coherence means strong activation of the Interiority dimension. (Downstream bounds must therefore **not** assume $\mathrm{Coh}_E \geq 1/7$ — cf. the [T-151 correction](/docs/proofs/consciousness/substrate-closure#t-151).)
-
-See also [Genesis protocol](/docs/core/foundations/axiom-omega#genesis-protocol) and [coherence definitions](/docs/applied/coherence-cybernetics/definitions#e-когерентность).
-
-:::warning Prerequisite [D]
-The formula for $\kappa_0$ requires $\gamma_{OO} > 0$ (the O dimension is populated). If $\gamma_{OO} = 0$ the system fails (QG)—see [singularity handling](#обработка-сингулярности-gamma-oo).
-:::
-
-**Formula for $\kappa_0$:**
-
 $$
-\kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}}
+P=1/N+\|\rho-I/N\|_F^2,\qquad
+\|\rho-I/N\|_F^2>1/N\iff P>2/N.
 $$
 
-where $\omega_0$ is the [fundamental clock frequency](/docs/core/structure/dimension-o#гамильтониан-часов-h_o) (sets the time scale).
+This exact theorem gives $2/7$ **after choosing** majority [D]. Ordinary state discrimination has advantage for every $\rho\ne I/N$; there is no universal positive purity cut. At fixed $P$, for $N\ge2$,
 
-### Categorical derivation of $\kappa_0$ {#категориальный-вывод-kappa0}
-
-:::warning Theorem ($\kappa_0$ from adjunction $\mathcal{D} \dashv \mathcal{R}$)
-Regeneration $\mathcal{R}$ is **right adjoint** to dissipation $\mathcal{D}_\Omega$:
-
 $$
-\mathcal{D}_\Omega \dashv \mathcal{R}
+\lambda_{\max}\le\frac{1+\sqrt{(N-1)(NP-1)}}N,
 $$
 
-Regeneration rate is given by the norm of the natural transformation:
+with equality only when the remaining eigenvalues are equal. Neither a universal $\lambda_{\max}\approx1/2$, nor an entropy cut, nor $U(N)$ symmetry breaking independently establishes $2/N$. See the [complete threshold proof](/docs/proofs/dynamics/theorem-purity-critical).
 
-$$
-\kappa(\Gamma) = \|\text{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|
-$$
-:::
+All seven diagonal populations can be positive in a rank-one state (the uniform pure vector). Hence functional activation does not imply rank seven. Purity and rank do not establish a connected interaction graph or positive free-energy consumption. These require separate assumptions.
 
-**Computation:**
+## Informational distinguishability {#формулировка-пир}
 
-For category $\mathcal{C}$ with objects Γ, dissipation and regeneration functors are defined via [classifier Ω](/docs/core/foundations/axiom-omega#внутренняя-логика):
+The matrix statement $\rho\ne I/N\iff d_B(\rho,I/N)>0$ is a metric fact [T]. Identifying distinguishability with ontological existence is PID [I/P], and is not a tautology of Kripke–Joyal semantics. A metric fact cannot imply the additional majority cut or phenomenal existence.
 
-$$
-\|\text{Nat}(\mathcal{D}_\Omega, \mathcal{R})\| = \omega_0 \cdot \frac{|\text{Hom}(O, E)| \cdot |\text{Hom}(O, U)|}{\text{End}(O)}
-$$
+## $E$-share: exact algebra {#e-coherence-definition}
 
-Given the canonical identification $|\text{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ [D] ([motivation](#теорема-kappa0-функториальность)):
+For the declared orthonormal frame, let $P_E=|E\rangle\langle E|$ and
 
 $$
-\kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}} \quad \blacksquare
+\pi_E(X)=P_EX+XP_E-P_EXP_E,\qquad
+\mathrm{Coh}_E(\rho)=\frac{\rho_{EE}^2+2\sum_{i\ne E}|\rho_{Ei}|^2}{P}.
 $$
 
-**Interpretation:**
-- $|\text{Hom}(O, E)|$—“path strength” from Ground to Interiority
-- $|\text{Hom}(O, U)|$—“path strength” from Ground to Unity
-- $\text{End}(O)$—Ground self-action (normalization)
+### Hilbert–Schmidt projection [T] {#теорема-hs-проекция}
 
-:::note System parameter $\omega_0$
-$\omega_0$ is a **property of the concrete system** (analogous to mass in physics), not a universal constant. Across systems it spans many orders of magnitude: ~10¹⁵ Hz for elementary processes down to ~1 Hz for cognitive ones. Its value is fixed empirically per system or chosen as the unit of time.
-:::
+$\pi_E$ retains exactly the $E$ row and column. In the orthonormal matrix-unit basis it is a diagonal mask with entries zero or one. Hence $\pi_E^2=\pi_E=\pi_E^\dagger$ as an operator on Hilbert–Schmidt space. Therefore
 
-**Dimensional analysis:**
-- $\gamma_{ij}$—dimensionless (entries of a normalized density matrix)
-- $\omega_0$—dimension $[\text{time}]^{-1}$
-- $\kappa_0$—dimension $[\text{time}]^{-1}$ ✓
-
-**Modulus for complex entries:** Coherences $\gamma_{OE}, \gamma_{OU}$ may be complex (phase information). Regeneration rate depends only on **coupling strength**, not phase, hence the modulus $|\cdot|$.
-
-#### Handling the singularity $\gamma_{OO} \to 0$ {#обработка-сингулярности-gamma-oo}
-
-As $\gamma_{OO} \to 0$ the system loses contact with Ground. Formally,
-$$
-\gamma_{OO} = 0 \Rightarrow \kappa_0 = \text{undefined} \Rightarrow \text{system is not viable}
-$$
-
-This matches [(QG)](#qg-квантовое-основание): without Ground there is no regeneration.
-
-:::warning Numerical regularization
-Implementations use the regularized form
 $$
-\kappa_0^{reg}(\Gamma) = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO} + \varepsilon_\Gamma}
+\mathrm{Coh}_E=\|\pi_E\rho\|_F^2/\|\rho\|_F^2\in[0,1].
 $$
-with $\varepsilon_\Gamma = 0.01 \cdot P_{crit} = 0.01 \cdot \frac{2}{7} \approx 0.00286$—a floor ensuring numerical stability.
-
-**Rationale:** $\varepsilon_\Gamma$ is 1% of critical purity, since for $\gamma_{OO} < \varepsilon_\Gamma$ the system already lies in the non-viable regime ($P < P_{crit}$).
-:::
-
-In practice, $\gamma_{OO} > \varepsilon_\Gamma$ holds for any viable system ($P > P_{crit}$) because $\sum_i \gamma_{ii} = 1$ and $P > 2/7$ force sufficiently large diagonal entries.
-
-**Physical interpretation** (from the categorical derivation):
-
-1. Regeneration originates in Ground (O)—the source of morphisms
-2. It acts on Interiority (E) via O–E coupling ($\gamma_{OE}$)—Hom(O, E)
-3. It integrates via O–U coupling ($\gamma_{OU}$)—Hom(O, U)
-4. It normalizes to Ground occupancy ($\gamma_{OO}$)—End(O)
 
-**Consistency checks** (limiting cases; they concern the $\kappa_0$-component — the bootstrap floor $\kappa_{\text{bootstrap}} = \omega_0/7$ remains in force, which is exactly how the bootstrap paradox above is resolved):
-- $\gamma_{OE} \to 0$: no *coherence-driven* regeneration, $\kappa \to \kappa_{\text{bootstrap}}$ ✓ (no morphisms O → E)
-- $\gamma_{OU} \to 0$: no *coherence-driven* integration, $\kappa \to \kappa_{\text{bootstrap}}$ ✓ (no morphisms O → U)
-- $\gamma_{OO} \to 0$: singularity (loss of Ground) ✓ (End(O) = 0)
+The image is an operator subspace, generally **not** a subalgebra, and $\pi_E$ is **not** a positive map. For $\rho=(|E\rangle+|A\rangle)(\langle E|+\langle A|)/2$, its nonzero block is $\tfrac12\begin{pmatrix}1&1\\1&0\end{pmatrix}$, whose smaller eigenvalue is $(1-\sqrt5)/4<0$. Orthogonal projection in operator space does not imply a quantum channel or a subobject of a topos.
 
-**Status:** the operational formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ is now **[T at the first-order-kinetics model]** — it is **forced**, not merely selected, by the rapid pre-equilibrium (quasi-steady-state) rate of the regeneration branching (see [§Derivation by rapid pre-equilibrium](#вывод-kappa0-cycle-flux)). The earlier concern that "min- and geometric-mean forms also satisfy the requirements" is **removed**: those alternatives violate the fifth requirement (first-order/linear-response kinetics) — the geometric mean is sublinear (degree $\tfrac12$, divergent derivative) and the minimum is non-analytic, so neither is an admissible first-order kinetic law. The only residual assumption is that regeneration is a first-order Markov process, which is itself guaranteed by the CPTP/Lindblad structure of the dynamics. The **categorical reading** $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ remains a separate **interpretation [I]** / **[C at the adjunction]** (the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ and the Nat-norm identity are posited, not proven) — but the operational formula no longer depends on it. Downstream results use the formula, whose status is now [T at first-order kinetics].
+### A genuine conditional expectation [T] {#теорема-условное-ожидание}
 
-#### Functoriality of $\kappa_0$ [D]+[I] {#теорема-kappa0-функториальность}
+With $\bar P_E=I-P_E$,
 
-:::warning Canonical ansatz (not a uniqueness theorem)
-The identification $|\text{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ is **motivated** by Yoneda + Bures + Stinespring: in $\mathcal{C}_7$ with Bures topology, the natural "strength" scalar of the CPTP channel $|i\rangle\langle i| \to |j\rangle\langle j|$ is $|\gamma_{ij}|$. Given this identification, the formula $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ is the **product-type** coupling on $\{O,E,U\}$ — and the product form itself is now **forced** (not merely motivated) by the first-order-kinetics / rapid-pre-equilibrium argument in [§Derivation by rapid pre-equilibrium](#вывод-kappa0-cycle-flux). **Status:** the operational formula is **[T at first-order kinetics]**; the *categorical* identification $|\text{Hom}(i,j)|\leftrightarrow|\gamma_{ij}|$ (and the underlying adjunction) is the part that remains an interpretive **[I]** choice.
-:::
-
-**Proof (four steps).**
-
-**Step 1 (Yoneda).** For each object $S_i \in \mathcal{C}_7$ define representable $h_i = \text{Hom}(-, i): \mathcal{C}_7^{op} \to \mathbf{Set}$. Yoneda: $\text{Nat}(h_i, h_j) \cong \text{Hom}(i, j)$.
-
-**Step 2 (Bures metric on $\mathcal{D}(\mathbb{C}^7)$).** Category $\mathcal{C}_7$ carries Bures distance $d_B$ (Axiom 2). On $\text{Hom}(S_i, S_j)$ induce $|\text{Hom}(i,j)| := d_B(S_i, \Phi_{ij}(S_i))$ where $\Phi_{ij}$ is CPTP $|i\rangle\langle i| \to |j\rangle\langle j|$.
-
-**Step 3 (Stinespring).** Each CPTP $\Phi_{ij}$ has Stinespring dilation $\Phi_{ij}(\rho) = \text{Tr}_E[V\rho V^\dagger]$. For the elementary channel $S_i \to S_j$, $\Phi_{ij}(S_i) = |\gamma_{ij}|^2 S_j + (1-|\gamma_{ij}|^2) \sigma_{ij}$, whence $F(S_i, \Phi_{ij}(S_i)) = 1 - |\gamma_{ij}|^2 + O(|\gamma_{ij}|^4)$ and chordal Bures distance $d_B = \sqrt{2(1-\sqrt{F})} \approx |\gamma_{ij}|$ for $|\gamma_{ij}| \ll 1$. For general amplitudes $|\text{Hom}(i,j)| := |\gamma_{ij}|$ is the unique functorial norm compatible with CPTP monotonicity of Bures distance (Čencov–Petz uniqueness of monotone metrics).
-
-**Step 4 (formula for $\kappa_0$).** Substitute $|\text{Hom}(i,j)| = |\gamma_{ij}|$ into the categorical definition:
-
 $$
-\kappa_0 = \|\text{Nat}(\mathcal{D}_\Omega, \mathcal{R})\| = \omega_0 \cdot \frac{|\text{Hom}(O, E)| \cdot |\text{Hom}(O, U)|}{\text{End}(O)} = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}} \quad \blacksquare
+\mathcal E_E(X)=P_EXP_E+\bar P_EX\bar P_E
 $$
-
-**Uniqueness:** Any functorial $|\text{Hom}(i,j)|$ compatible with Bures topology and CPTP contractivity equals $|\gamma_{ij}|$.
-
-### Derivation of $\kappa_0$ by rapid pre-equilibrium — the product form is forced {#вывод-kappa0-cycle-flux}
-
-The product form is **not** merely "selected" among alternatives — it is the **unique** form consistent with first-order regeneration kinetics, via the **quasi-steady-state (rapid pre-equilibrium)** analysis of the regeneration branching. This upgrades $\kappa_0$ from a canonical ansatz **[D]** to a **[T at the first-order-kinetics model]**.
-
-:::note Distinction: a branching rate, not a cyclic flux
-This is a rapid pre-equilibrium (branching) rate, **not** the King–Altman cyclic flux of a Markov cycle $O\!\to\!E\!\to\!U\!\to\!O$ — the latter is the product of the *three* forward rates *around* the cycle over a spanning-tree sum, $\propto\gamma_{OE}\gamma_{EU}\gamma_{UO}/(\text{sum})$, a structurally different object from $\gamma_{OE}\gamma_{OU}/\gamma_{OO}$ (two couplings *out of* $O$ over the $O$-return).
-:::
-
-**The regeneration branching.** Bootstrap regeneration requires the ground node $O$ to feed **both** the interiority channel $O\to E$ (regeneration source) **and** the unity channel $O\to U$ (integration), with $O$-self-persistence $\gamma_{OO}=\mathrm{End}(O)$ setting the ground residence rate. Model $\{O,E,U\}$ as a continuous-time Markov chain with first-order rate constants $\gamma_{OE},\gamma_{OU}$ and return scale $\gamma_{OO}$.
 
-**Rapid pre-equilibrium (quasi-steady state).** When the ground node equilibrates fast relative to the regeneration timescale, the $E$-channel reaches a quasi-steady **branching ratio** relative to $O$ (a forward-to-return ratio, not a probability — it may exceed 1),
-$$p_{E\mid O} \;=\; \frac{\gamma_{OE}}{\gamma_{OO}}\quad(\text{forward-to-return ratio, Briggs–Haldane}),$$
-and the integration step then fires at rate $\gamma_{OU}$ from this $E$-primed ground. The regeneration rate is the product
+is CPTP, unital, idempotent and a trace-preserving conditional expectation onto $\mathbb C\oplus M_6(\mathbb C)$. The Kraus completeness relation is $P_E+\bar P_E=I$. Its image is the block-diagonal algebra and it has the bimodule property. Orthogonality gives
 
 $$
-\kappa_0 \;=\; \omega_0\,\gamma_{OU}\,p_{E\mid O} \;=\; \omega_0\,\frac{\gamma_{OE}\,\gamma_{OU}}{\gamma_{OO}} \qquad\textbf{[T at first-order kinetics].}
+P=\|\mathcal E_E\rho\|_F^2+2\sum_{i\ne E}|\rho_{Ei}|^2.
 $$
 
-This is the standard pseudo-first-order (Michaelis–Menten-type) rate for a two-channel branching process — bilinear in the two couplings, inversely proportional to the ground residence. **Exact stationary form** (audit verification 2026-08-05, three-node cycle $O \xrightarrow{\gamma_{OE}} E \xrightarrow{\gamma_{OO}\,\text{return}\;\lor\;\gamma_{OU}\,\text{fire}} O$): the fire rate is $J = \omega_0\,\gamma_{OE}\gamma_{OU}/(\gamma_{OE}+\gamma_{OO}+\gamma_{OU})$, whose leading order in the rapid-return limit $\gamma_{OO} \gg \gamma_{OE},\gamma_{OU}$ is precisely $\kappa_0 = \omega_0\,\gamma_{OE}\gamma_{OU}/\gamma_{OO}$ (numerically: $J/\kappa_0 = 0.986$ at $\gamma_{OO}/\gamma_{OE} = 100$). The King–Altman cyclic flux $f_1f_2f_3/(f_1f_2{+}f_2f_3{+}f_3f_1)$ is structurally different, as claimed.
+The two maps $\pi_E$ and $\mathcal E_E$ have different images and purposes.
 
-**Requirements on the form of $\kappa_0$** (now five, the fifth being load-bearing):
+### Population and coupling {#теорема-coh-e-exact}
 
-1. **Non-negativity:** $\kappa_0 \geq 0$
-2. **Both channels required:** $\kappa_0 = 0$ when $\gamma_{OE} = 0$ or $\gamma_{OU} = 0$
-3. **Dimensionless normalization:** divide by $\gamma_{OO}$
-4. **Monotonicity:** increasing in $|\gamma_{OE}|$ and $|\gamma_{OU}|$
-5. **First-order (linear-response) kinetics** — analyticity + degree-1 homogeneity in each channel: $\partial\kappa_0/\partial\gamma_{OE}$ is finite, nonzero, and **independent of $\gamma_{OE}$** (the regeneration flux is first-order in each coupling, the defining property of a first-order branching process).
+Positivity of every $2\times2$ principal minor gives $|\rho_{Ei}|^2\le\rho_{EE}\rho_{ii}$. Thus
 
-**Candidate forms:**
-
-| Form | 1–4? | Req. 5 (first-order kinetics)? | Verdict |
-|-------|:----:|:---:|--------|
-| $\frac{\lVert\gamma_{OE}\rVert \cdot \lVert\gamma_{OU}\rVert}{\gamma_{OO}}$ | + | **+** ($\partial_{\gamma_{OE}}\kappa_0 = \gamma_{OU}/\gamma_{OO}$, degree-1) | **Forced** — the unique rapid-equilibrium rate |
-| $\frac{\lVert\gamma_{OE}\rVert + \lVert\gamma_{OU}\rVert}{\gamma_{OO}}$ | — | — | Breaks (2): nonzero at $\gamma_{OE}=0$ |
-| $\frac{\min(\lVert\gamma_{OE}\rVert, \lVert\gamma_{OU}\rVert)}{\gamma_{OO}}$ | + | **—** ($\partial_{\gamma_{OE}}\kappa_0$ jumps $0\!\leftrightarrow\!1/\gamma_{OO}$ — **non-analytic**) | Excluded: not first-order |
-| $\frac{\sqrt{\lVert\gamma_{OE}\rVert \cdot \lVert\gamma_{OU}\rVert}}{\gamma_{OO}}$ | + | **—** ($\partial_{\gamma_{OE}}\kappa_0 \propto \sqrt{\gamma_{OU}/\gamma_{OE}}\to\infty$ as $\gamma_{OE}\to0$ — **degree $\tfrac12$, sublinear**) | Excluded: not first-order |
-
-**Conclusion.** Requirement 5 (first-order branching kinetics) is satisfied **only** by the product form: the geometric mean is sublinear (degree $\tfrac12$, with a divergent derivative), and the minimum is non-analytic (a derivative jump at the bottleneck). Both are ruled out as first-order kinetic laws for the branching rate. Hence the product form is **forced**, not chosen — $\kappa_0 = \omega_0\,\gamma_{OE}\gamma_{OU}/\gamma_{OO}$ **[T at the first-order-kinetics model]**, with residual model-dependence only in the choice to treat regeneration as a first-order Markov process (itself justified by the CPTP/Lindblad structure of the dynamics, which is first-order by construction).
-
-**Empirical discrimination (a genuine prediction).** The three candidates predict different responses to independent variation of $\gamma_{OE}$: product $\propto\gamma_{OU}$ (constant slope), geometric mean $\propto\sqrt{\gamma_{OU}/\gamma_{OE}}$ (divergent), minimum a step — measurable in a controlled regeneration assay.
-
-### Positivity preservation {#сохранение-положительности-s7}
-
-:::info Theorem (CPTP structure of regeneration)
-Despite nonlinearity, the regenerative term **preserves positivity** $\Gamma \geq 0$ and trace $\mathrm{Tr}(\Gamma) = 1$.
-:::
-
-**Interpolation formulation:**
-
-Regeneration is a convex combination of CPTP maps:
-
 $$
-\mathcal{R}_\alpha(\rho) := (1-\alpha)\rho + \alpha\varphi(\rho)
+\mathrm{Coh}_E>0\iff\rho_{EE}>0.
 $$
-
-with $\alpha = \kappa(\Gamma) \cdot g_V(P) \cdot \Delta\tau \in [0, 1]$.
 
-**Kraus form:** If $\varphi(\rho) = \sum_k K_k \rho K_k^\dagger$ is CPTP, then $\mathcal{R}_\alpha$ is CPTP with operators $\tilde{K}_0 = \sqrt{1-\alpha}I$, $\tilde{K}_k = \sqrt{\alpha}K_k$.
+This is a population criterion, even when every off-diagonal $E$ entry vanishes. Write $Q_E=2\sum_{i\ne E}|\rho_{Ei}|^2/P$ for the separate coupling share. At $I/7$, $\mathrm{Coh}_E=1/7$ and $Q_E=0$. A pure $E$ state has share one and zero von Neumann entropy. These scalars do not by themselves prove differentiated experience. There is no universal lower bound $\mathrm{Coh}_E\ge1/7$ on all majority states; any claimed dynamical floor needs its own model-specific proof.
 
-**Well-posedness:** $\alpha < 1$ requires
+For any axis $X$, the same mask construction works, but its shares overlap:
 
 $$
-\Delta\tau < \frac{1}{\kappa_{\max}} = \frac{1}{\kappa_{\text{bootstrap}} + \kappa_0}
+\sum_X\mathrm{Coh}_X=1+q/P.
 $$
 
-See [full proof](/docs/core/dynamics/evolution#сохранение-положительности).
+### Fano-line masks {#fano-projections}
 
-### (PH) Phenomenology {#ph-феноменология}
+For an already chosen Fano plane, use $P_\ell=\sum_{i\in\ell}|i\rangle\langle i|$ and $\pi_\ell(X)=P_\ell X+XP_\ell-P_\ell XP_\ell$. Each mask is an orthogonal HS projection; the seven masks are **not pairwise orthogonal**. Their images contain rows and columns outside the line and are not quaternionic subalgebras. A diagonal entry is counted three times, an off-diagonal entry five times. Hence
 
-:::note Why interiority is not a postulate but a consequence
-In most theories of consciousness an “inner side” is added as extra postulate (e.g. IIT’s information axiom, Chalmers’ “further fact”). In UHM interiority is **not postulated separately**—it arises as a mathematical feature of 7D structure: at $N = 7$ one dimension (E) is **functionally distinguished** as the carrier of interiority by [Theorem S](/docs/proofs/minimality/theorem-minimality-7). (PH) merely records that this dimension is nontrivial.
-:::
-
-**Formal definition.** There is nontrivial interiority—the reduced density matrix $\rho_E$:
-
 $$
-\rho_E = \mathrm{Tr}_{\bar{E}}(\Gamma) \in \mathcal{D}(\mathcal{H}_E)
+\sum_\ell\mathrm{Coh}_\ell=(3d+5q)/P=5-2/(1+\Phi),\qquad
+\Phi\ge1\iff\sum_\ell\mathrm{Coh}_\ell\ge4.
 $$
-
-where $\mathrm{Tr}_{\bar{E}}$ is the partial trace over all dimensions except $E$ (Interiority).
 
-**Mathematical necessity of E [T].** By [Theorem S](/docs/proofs/minimality/theorem-minimality-7): (AP) requires self-modeling $\varphi$. Self-modeling needs a **reflexive subspace**—the projection in which $\varphi$ “reflects” the state. That subspace **is** the E dimension. Without E ($\rho_E = 0$ for all $\Gamma$):
-- $\varphi$ degenerates: $\varphi(\Gamma) = I/7$ (no information to model)
-- Reflection $R = 0$ (no self-observation)
-- [Functor F](/docs/core/categories/functor-f) is trivial: $F(\Gamma) = \text{const}$ (no experiential content)
+Since $\Phi\le6$, the sum lies in $[3,33/7]$. These are exact frame-dependent identities, not a categorical derivation of the frame.
 
-Hence $\rho_E \neq 0$ is **necessary for autopoiesis**, not an extra stipulation.
+## A rate model with declared assumptions {#структурный-анзац-kappa0}
 
-**Conditions across interiority levels:**
+The retained rate convention [D] is
 
-| Level | Condition | Interpretation | Mathematical content |
-|---------|---------|---------------|--------------------------|
-| **L0** (Interiority) | $\rho_E \neq 0$ | Inner state exists | $\mathrm{Tr}_{\bar{E}}(\Gamma) \neq 0$—E projection nontrivial |
-| **L1** (Phenomenal geometry) | $\mathrm{rank}(\rho_E) > 1$ | Quality structure with $d_{FS}$ | At least two distinguishable experiential aspects |
-| **L2** (Cognitive qualia) | $R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$ | Reflexive access | Self-model beats noise; system integrated |
-
-:::note Full hierarchy
-Only L0–L2 appear here. The full interiority ladder L0→L4 (including L3—network consciousness, L4—unitary consciousness) is in [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy).
-
-**Links to thresholds:**
-- L0 → L1: need $\mathrm{rank}(\rho_E) \geq 2$ (differentiated experience)
-- L1 → L2: need triple threshold ($R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$) — $R$ and $\Phi$ **derived** as [T], $D \geq 2$ an independent threshold [D] (see [below](#пороги-l2-строгий-вывод); it read "all three derived as [T]" until 2026-09-25)
-- L2 → L3: need gap entanglement between holons ($I(\mathbb{H}_1:\mathbb{H}_2) > 0$)
-:::
-
-### L2 thresholds: three theorems [T] and one independent threshold [D] {#пороги-l2-строгий-вывод}
-
-:::tip Status of L2 thresholds
-| Threshold | Value | Status | Ground |
-|-------|----------|--------|-------------|
-| $P_{\text{crit}}$ | $2/7$ | **[T]** | Noise distinguishability in $d_B$ ([proof](/docs/proofs/dynamics/theorem-purity-critical)) |
-| $R_{\text{th}}$ | $1/3$ | **[T]** | $K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + [Bayesian dominance](#теорема-порог-рефлексии) |
-| $\Phi_{\text{th}}$ | $1$ | **[T]** | Unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129), [derivation](#теорема-порог-интеграции)) |
-| $D_{\min}$ | $2$ | **[D]** | Independent L2 threshold — **not** a consequence of $\Phi_{\text{th}} = 1$ (counterexample $\Phi \approx 1.03$, $D_{\text{diff}} \approx 1.42$); the independence of the four thresholds is T-124b, and $D_{\text{diff}} \geq 2$ holds on the embodied attractor ([T-151](/docs/proofs/consciousness/substrate-closure#t-151), [section](#теорема-порог-дифференциации)). It read "[T] — consequence of $\Phi_{\text{th}} = 1$" until 2026-09-25 |
-:::
-
 $$
-R_{\text{th}} = \frac{1}{3}, \quad \Phi_{\text{th}} = 1, \quad D_{\min} = 2
+\kappa=\kappa_b+\kappa_0\mathrm{Coh}_E,\qquad
+\kappa_b=\omega_0/7,\qquad
+\kappa_0=\omega_0\frac{|\rho_{OE}||\rho_{OU}|}{\rho_{OO}}\quad(\rho_{OO}>0).
 $$
-
----
-
-### Definition of the integration threshold $\Phi_{\text{th}} = 1$ {#теорема-порог-интеграции}
-
-:::info Definition (coherent integration threshold)
-A system is **coherently integrated** when coherences dominate populations:
-
-$$\Phi(\Gamma) \geq \Phi_{\text{th}} = 1 \quad \Longleftrightarrow \quad \sum_{i \neq j} |\gamma_{ij}|^2 \geq \sum_i \gamma_{ii}^2$$
-:::
-
-:::note Status of $\Phi_{\text{th}} = 1$—theorem [T] (T-129)
-The value $\Phi_{\text{th}} = 1$ is **proved from first principles** ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129)):
-
-1. Purity split: $P = P_{\mathrm{diag}}(1 + \Phi)$
-2. Cauchy–Schwarz: $P_{\mathrm{diag}} \geq 1/7$ (equality ⟺ $\gamma_{ii} = 1/7$ for all $i$)
-3. Extreme uniform diagonal state: $P_{\mathrm{diag}} = 1/7$, $P = (1+\Phi)/7$
-4. Viability $P > P_{\mathrm{crit}} = 2/7$: $(1+\Phi)/7 > 2/7 \iff \Phi > 1$
-5. **Uniqueness:** $\Phi_{\text{th}} = 1$ is the sharp boundary; any $\Phi_{\text{th}} \neq 1$ either admits non-viable states or rules out extreme viable ones
-
-:::
-
-**Definition and support:** see [Integration measure Φ](/docs/core/structure/dimension-u#мера-интеграции-φ) and [Integration threshold](/docs/core/structure/dimension-u#теорема-эквивалентность-порогов).
-
-**Interpretation:** $\Phi = 1$ marks a **structural phase transition** between:
-- **Fragmented systems** ($\Phi < 1$): populations dominate; sub-systems quasi-independent
-- **Integrated systems** ($\Phi \geq 1$): coherences dominate; sub-systems causally linked
-
----
-
-### Theorem (reflection threshold $R_{\text{th}} = 1/3$) {#теорема-порог-рефлексии}
-
-::::tip Theorem [T]+[I] (reflection threshold via Bayesian dominance)
-A system has **reflexive autonomy** (governed by its self-model, not noise or environment) iff
-
-$$R(\Gamma) := \frac{1}{7P(\Gamma)} \geq R_{\text{th}} = \frac{1}{3}$$
-
-(See [canonical definition of $R$](/docs/consciousness/foundations/self-observation#мера-рефлексии-r))
-
-:::info Boundary convention, stated exactly (harmonised 2026-08-06)
-The inequality on $R$ is **non-strict**, while the one on $P$ is strict. The full consciousness gate is therefore
-
-$$P > P_{\text{crit}} \;\wedge\; R \geq R_{\text{th}} \;\wedge\; \Phi \geq \Phi_{\text{th}} \;\wedge\; D \geq D_{\min},$$
-
-which is exactly what the implementation evaluates (: `p > P_CRIT && r >= R_THRESHOLD && phi >= PHI_THRESHOLD`). This is not a cosmetic choice, and it is what makes the interval notation used throughout the corpus correct:
-
-$$R \geq \tfrac13 \iff \tfrac{1}{7P} \geq \tfrac13 \iff P \leq \tfrac37 ,$$
-
-so together with $P > 2/7$ the window is the half-open $(2/7,\,3/7]$ — closed at the top. Earlier versions of this page wrote $R > R_{\text{th}}$, which would give the open $(2/7,\,3/7)$ and contradict both the notation and the code.
-
-**Why the closed end is load-bearing.** At $P = 3/7$ with a uniform diagonal, $P_{\mathrm{diag}} = 1/7$ gives $\Phi = P/P_{\mathrm{diag}} - 1 = 2$ and $R = 1/3$, hence the capability product $C = \Phi\cdot R = 2/3$ — precisely the maximum reported by [T-274](/docs/reference/status-registry). Under the strict reading that maximum would be a supremum that is never attained.
-
-**The honest tension.** The Bayesian-dominance *motivation* (order $m$ competes against $K = m+2$ hypotheses, so the self-model must out-weigh the others) argues for strictness: at $R = 1/3$ exactly the three posterior weights are tied and no hypothesis dominates. The corpus adopts the **closure** instead, so the boundary point $P = 3/7$ — the exactly-tied case, and the T-124 attractor — counts as conscious. The difference is a single point of a $48$-dimensional space and no theorem turns on it; but it must be stated once rather than left to vary between pages. The reflection ladder in [Depth Tower](/docs/consciousness/hierarchy/depth-tower) writes $R^{(m)} > R_{\text{th}}^{(m)}$ for the same reason of motivation; the order-1 consciousness gate is the closure of that condition.
-:::
-
-**Triadic decomposition ($K = 3$ [T]):** The number of competing hypotheses $K = 3$ is **derived** from axioms A1–A5 via [triadic decomposition of holonomic dynamics](/docs/core/operators/lindblad-operators#триадная-декомпозиция). The axiom system yields **exactly three** structurally distinct dynamical contributions:
-
-| Type | Source | Attractor | Bayesian hypothesis |
-|-----|----------|-----------|---------------------|
-| Automorphism (Aut) | A5 (Page–Wootters) | Kernel $[H, \cdot]$ | $H_3$: external steering |
-| Dissipation ($\mathcal{D}_\Omega$) | A1 (∞-topos) | $I/N$ | $H_2$: loss of structure |
-| Regeneration ($\mathcal{R}$) | A1+A4 (adjunction) | $\rho_*$ | $H_1$: self-model true |
-
-A fourth type is ruled out: [L-unification](/docs/core/operators/lindblad-operators) (Thm. 15.1, [T]) forces uniqueness of classifier Ω, uniqueness of $\mathcal{D}_\Omega \dashv \mathcal{R}$, hence exhaustion by three types.
-
-Status: **[T]**
-::::
-
-**Full proof (plurality criterion).**
-
-**(a)** Distinguish three hypotheses:
-- $H_1$: state = $\Gamma$ (self-model true)
-- $H_2$: state = $\chi$ (chaos/noise = $I/N$)
-- $H_3$: state = $\varepsilon$ (environment/external drive)
-
-**(b)** **Plurality criterion:** Hypothesis $H_1$ **beats each** competitor separately:
-$$P(H_1|\text{data}) > \max\{P(H_2|\text{data}), P(H_3|\text{data})\}$$
-
-**(c)** Symmetric case $P(H_2) = P(H_3) = (1-P(H_1))/2$:
-$$P(H_1) > \frac{1 - P(H_1)}{2}$$
-$$2P(H_1) > 1 - P(H_1)$$
-$$3P(H_1) > 1$$
-$$P(H_1) > \frac{1}{3}$$
-
-**(d)** **General $K$ alternatives:**
-For $K$ equiprobable competitors, plurality gives
-$$P(H_1) > \frac{1-P(H_1)}{K-1}$$
-$$(K-1)P(H_1) > 1 - P(H_1)$$
-$$KP(H_1) > 1$$
-$$P(H_1) > \frac{1}{K}$$
-
-**(e)** For $K = 3$ (Aut / $\mathcal{D}$ / ℛ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) [T]):
-$$P(H_1) > \frac{1}{3}$$
-
-**(f)** Identifying $P(H_1) = R$, where $R$ measures proximity of $\Gamma$ to $\varphi(\Gamma)$:
-$$R_{\text{th}} = \frac{1}{3} \quad \blacksquare$$
-
-:::warning Epistemic status of $R = P(H_1)$ (C2)
-Step (f) uses an **interpretive bridge** [I]: identifying formal $R = 1/(7P)$ with Bayesian posterior $P(H_1)$. The bridge is motivated structurally—both gauge “degree of self-steering”—but is not a deductive consequence of the axioms. Formal status: **[T] under interpretive bridge [I]**.
-
-Without the bridge:
-- $R \geq 1/3$ ⇔ $P \leq 3/7$, which with $P > 2/7$ yields Goldilocks zone $P \in (2/7, 3/7]$
-- Geometrically: $R_{\mathrm{th}} = 1/3$ is the unique value with nonempty Goldilocks zone and $R_{\mathrm{th}} > P_{\mathrm{crit}}$
-:::
-
-**Remark on equal priors.** Equal priors ($\pi_1 = \pi_2 = \pi_3 = 1/3$) are **not** an extra assumption but follow structural symmetry: none of the three types is a priori privileged (each stems from an independent axiom source), and maximum-entropy on the hypothesis simplex without mode information yields uniformity.
-
-**Remark:** Plurality ($R > 1/K$) is weaker than absolute dominance ($R > 1/2$). We choose plurality: the self-model must beat **each** rival, not necessarily their **sum**.
-
-**Barycentric picture:**
-
-On simplex $\mathcal{D}(\mathcal{H})$ three influences act:
-- Pull toward self-model $\varphi(\Gamma)$ (weight $w_m$)
-- Thermodynamic dissipation toward $I/N$ (weight $w_c$)
-- External perturbation toward $\Gamma_{\text{env}}$ (weight $w_e$)
-
-$R > 1/3$ ⇔ $w_m > \max(w_c, w_e)$ when $w_m + w_c + w_e = 1$ and $w_c = w_e$.
 
-**Interpretation:** $R_{\text{th}} = 1/3$ is the minimal “self-knowledge” share for **plural dominance** over each competitor.
+$\omega_0>0$ is a calibrated inverse-time scale. A categorical adjunction does not define a norm on a set of natural transformations, and Yoneda does not identify a hom-space with a matrix entry. The old derivation $\|\operatorname{Nat}(\mathcal D,\mathcal R)\|=\kappa$ is withdrawn [✗]. Nor does GKSL first-order evolution imply that rates are first order in these state entries.
 
-#### Formalizing the $R \leftrightarrow P(H_1)$ bridge: quantum-discrimination monotonicity {#формализация-моста-r}
+### A controlled kinetic approximation {#вывод-kappa0-cycle-flux}
 
-:::tip Theorem (monotonicity of $R$ and Bayesian posterior) [T on the isospectral family] + [I] in general
-On the **isospectral family** $\Gamma_\lambda = (1-\lambda)\,I/7 + \lambda\,|\psi\rangle\langle\psi|$ (the one-parameter deformation used throughout, e.g. [T-124](/docs/proofs/consciousness/conscious-window#t-124)), reflection $R = 1/(7P)$ is **monotonically coupled** to the optimal posterior $P_{\text{opt}}(H_1)$ in three-state discrimination, and $R \geq 1/3 \Leftrightarrow P_{\text{opt}}(H_1) \geq 1/3$ **[T]**. For arbitrary $\Gamma$ the coupling is an **[I]** bridge (see the epistemic refinement below), because $F(\Gamma,I/7)$ and $\|\Gamma-I/7\|_1$ are **not** functions of $P$ alone.
-:::
+Choose a two-state kinetic system with transition $O\to B$ at rate $a$, and two labelled transitions $B\to O$, return at $b$ and productive firing at $c$. If $p_O+p_B=1$, then
 
-**Proof.**
-
-**(a) Three quantum states.** Triadic decomposition [T] yields three hypotheses with states:
-- $H_1$: current state = self-model $\varphi(\Gamma)$
-- $H_2$: current state = dissipative attractor $I/7$
-- $H_3$: current state = environmental drive $\Gamma_{\text{env}}$
-
-**(b) Fidelity and $R$.** $R = 1/(7P)$ relates to $F(\Gamma, I/7)$ via
-
-$$F(\Gamma, I/7) = \left(\mathrm{Tr}\sqrt{\sqrt{\Gamma} \cdot I/7 \cdot \sqrt{\Gamma}}\right)^2 = \frac{1}{7}\left(\sum_i \sqrt{\lambda_i}\right)^2$$
-
-where $\lambda_i$ are eigenvalues of $\Gamma$, and $P = \sum_i \lambda_i^2$.
-
-**(c) Isospectral monotonicity.** On the family $\Gamma_\lambda$ the spectrum is $\{(1+6\lambda)/7\,(\times1),\,(1-\lambda)/7\,(\times6)\}$, a **single monotone function of $\lambda$**; hence both $P(\lambda) = (1+6\lambda^2)/7$ and $F(\Gamma_\lambda,I/7)$ are monotone in $\lambda$, so $R = 1/(7P)$ is a genuine increasing function of $F$ **on this family**. **Caveat (general $\Gamma$):** $F$ is *not* a function of $P$ alone — e.g. the spectra $(\tfrac12,\tfrac12,0,\dots)$ and $(0.696,\,0.0506^{\times6})$ both have $P=\tfrac12$ but $F=0.286$ vs $0.681$. So "$R=g(F)$ for increasing $g$" holds only on the isospectral family, not for arbitrary $\Gamma$.
-
-**(d) Optimal discrimination.** For $K=3$ equiprobable states the Helstrom **bound** gives $P_{\text{opt}}(H_1) \le \frac{1}{3}\left(1 + \|\rho_1 - \bar{\rho}\|_1\right)$ (an exact closed form exists only for $K=2$; for $K=3$ this is an upper bound). On the isospectral family $\|\Gamma_\lambda - I/7\|_1$ is monotone in $\lambda$, hence in $P$, so $R$ and the $P_{\text{opt}}(H_1)$-bound are monotonically linked **on the family**.
-
-**(e) Threshold.** On the isospectral family $R = 1/3$ at $P = 3/7$, and monotonicity yields $R \geq 1/3 \iff P_{\text{opt}}(H_1) \geq 1/3$ there. For general $\Gamma$ this is the interpretive **[I]** bridge. $\blacksquare$
-
-:::warning Epistemic refinement
-The theorem narrows [I] in $R = P(H_1)$: monotonicity of $R$ vs $P_{\text{opt}}(H_1)$ is proved [T]. Residual [I] is essentially **norm choice** (Frobenius in $R$ vs trace norm in $P_{\text{opt}}$)—standard in quantum information, not a substantive extra assumption.
-:::
-
----
-
-### Differentiation threshold $D_{\min} = 2$: an independent L2 condition {#теорема-порог-дифференциации}
-
-:::warning Retracted [✗] (2026-09-25): "$D_{\min} = 2$ follows from $\Phi \geq 1$"
-This section stated a theorem [T]: "Differentiation threshold $D_{\min} = 2$ **follows** from $\Phi \geq 1$ (T-129, T-151)", read as "an integrated system automatically has at least one bit of phenomenal differentiation". The derivation was retracted on the [T-151 page](/docs/proofs/consciousness/substrate-closure#t-151) on 2026-07-09 and is retracted here: $\Phi \geq 1$ bounds only the **total** off-diagonal mass, not the E-row share. Counterexample: uniform diagonal $\gamma_{kk} = 1/7$, coherence $0.07$ on the 15 pairs without E — $P \approx 0.290$, $R \approx 0.49$, $\Phi \approx 1.03$, yet in the 7D reading of T-128 $D_{\text{diff}} = 1 + 6\,\mathrm{Coh}_E \approx 1.42 < 2$. The former proof failed at step 1, which read the total coherence $\Phi$ as a statement about the spectrum of $\rho_E$, and at step 2: two significant components do not give $D_{\text{diff}} = 2$ — the spectrum $(0.9, 0.1)$ has $D_{\text{diff}} \approx 1.38$.
-:::
-
-What stands (T-151): $D_{\min} = 2$ is one of the **four independent** L2 thresholds — definitional [D], with the independence of the four proved in T-124b; $\Phi \geq 1$ gives $D_{\text{diff}} > 1$ whenever the E-row is coherent; on the embodied attractor $D_{\text{diff}} \geq 2$.
-
-**Definition:**
-$$D_{\text{diff}} := \exp(S_{vN}(\rho_E))$$
-
-where $S_{vN}(\rho_E) = -\text{Tr}(\rho_E \log \rho_E)$ is von Neumann entropy of phenomenal content.
-
----
-
-### Completeness of the threshold system {#полнота-порогов}
-
-:::tip DRY: Canonical threshold digest
-This is the **single source of truth** for all UHM thresholds. Other documents should cite this section instead of duplicating definitions.
-
-**Canonical values:**
-- $P_{\text{crit}} = 2/7 \approx 0.286$ — [proof](#критическая-чистота-теорема)
-- $R_{\text{th}} = 1/3 \approx 0.333$ — [proof](#теорема-порог-рефлексии)
-- $\Phi_{\text{th}} = 1$ — [theorem [T]](#теорема-порог-интеграции) (T-129)
-- $D_{\min} = 2$ — [independent L2 threshold [D]](#теорема-порог-дифференциации) (T-151, T-124b; it read "theorem [T]" until 2026-09-25)
-- $C_{\text{th}} = 1/3 \approx 0.33$ — [combined](#комбинированный-порог-сознательности) ([T], T-140)
-:::
-
-:::info Theorem (completeness)
-The triple $(P_{\text{crit}}, R_{\text{th}}, \Phi_{\text{th}})$ is **complete**:
-
-| Threshold | Distinguishability | Formula | Value |
-|-------|-------------|---------|----------|
-| $P_{\text{crit}}$ | State vs. noise | $d_B(\Gamma, I/N) \geq d_B^{crit}$ | $2/N = 2/7$ |
-| $R_{\text{th}}$ | State vs. self-model | Bayesian dominance | $1/3$ |
-| $\Phi_{\text{th}}$ | Whole vs. parts | $P_{\text{coh}} \geq P_{\text{diag}}$ | $1$ |
-
-~~Any other threshold (e.g. $D_{\min}$) either follows from these three or lies outside core UHM structure.~~ Retracted [✗] (2026-09-25): $D_{\min} = 2$ does neither — it does not follow from the three (T-151) and it is one of the four independent L2 conditions (T-124b). The triple is complete for the three distinguishability tests in the table, not for L2.
-:::
-
-**Threshold ordering:**
-$$P_{\text{crit}} = \frac{2}{7} \approx 0.286 < R_{\text{th}} = \frac{1}{3} \approx 0.333$$
-
-This yields proper nesting:
-$$\text{L0 (structure)} \subseteq \text{L1 (phenomenology)} \subseteq \text{L2 (cognition)}$$
-
-### Combined consciousness threshold $C_{\text{th}}$ {#комбинированный-порог-сознательности}
-
-Canonical [consciousness](/docs/consciousness/foundations/self-observation#мера-сознательности-c) measure ([T-140 [T]](/docs/proofs/consciousness/operational-closure#t-140)):
-
 $$
-C = \Phi \times R
+\dot p_B=ap_O-(b+c)p_B,\qquad p_B^*=a/(a+b+c),\qquad J=c p_B^*=ac/(a+b+c).
 $$
-
-$D_{\text{diff}} \geq 2$ is a **separate** requirement for full viability $V$ ([details](/docs/core/dynamics/viability#полная-жизнеспособность)), not part of scalar $C$.
 
-L2 cognitive qualia threshold:
+Thus $J=(ac/b)[1+(a+c)/b]^{-1}$ and
 
 $$
-C_{\text{th}} := \Phi_{\text{th}} \times R_{\text{th}} = 1 \times \frac{1}{3} = \frac{1}{3} \approx 0.33
+\frac{ac/b-J}{ac/b}=\frac{a+c}{a+b+c}\le\frac{a+c}{b}.
 $$
-
-Full L2: $P > 2/7 \;\land\; R \geq 1/3 \;\land\; \Phi \geq 1 \;\land\; D_{\text{diff}} \geq 2$.
-
-See [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy) for the full picture.
-
-### (QG) Quantum grounding {#qg-квантовое-основание}
-
-:::note Why quantum structure is not a postulate but a necessity
-Quantum description ($\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$) is not a philosophical stance but a **mathematical demand** of autopoiesis. Three arguments:
-
-1. **Coherences are needed for $\Phi \geq 1$.** Integration $\Phi$ uses off-diagonal $\gamma_{ij}$ ($i \neq j$). A classical diagonal system ($\gamma_{ij} = 0$) has $\Phi = 0 < \Phi_{\text{th}} = 1$ and cannot reach L2 ([theorem](./consequences#классификация-вычислений)).
-
-2. **Regeneration $\mathcal{R}$ needs CPTP structure.** The replacement channel $\mathcal{R}[\Gamma] = \kappa(\rho_* - \Gamma)g_V$ is CPTP—meaningful for density matrices, not classical probability vectors.
 
-3. **Emergent time needs tensor product.** Page–Wootters uses $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$—tensor structure inherent to quantum theory.
+Only under rapid return $a+c\ll b$ and the additional identification $a=\omega_0|\rho_{OE}|$, $b=\omega_0\rho_{OO}$, $c=\omega_0|\rho_{OU}|$ does the leading approximation equal $\kappa_0$. The exact flux is not the product-over-occupancy formula. Other reaction networks give other laws. This replacement strengthens the kinetic claim by specifying the model and an error bound [T], while retaining the rate/coherence bridge as an assumption.
 
-Thus (QG) follows from (AP) + (PH) + emergent-time requirements.
-:::
+### Boundary and regularity {#обработка-сингулярности-gamma-oo}
 
-The system is a quantum density matrix with extended Lindblad dynamics. Time $\tau$ is [emergent internal time](../../proofs/dynamics/emergent-time):
+PSD gives
 
 $$
-\Gamma \geq 0, \quad \mathrm{Tr}(\Gamma) = 1, \quad \frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
+\frac{|\rho_{OE}||\rho_{OU}|}{\rho_{OO}}\le\sqrt{\rho_{EE}\rho_{UU}}\le1/2.
 $$
 
-where:
-- $\tau$—internal time from correlations with dimension O (Page–Wootters)
-- $H_{eff}$—[effective Hamiltonian](../dynamics/evolution#вывод-h_eff) from the Page–Wootters constraint
-- $-i[H_{eff}, \Gamma]$—unitary evolution (preserves purity $P$)
-- $\mathcal{D}[\Gamma] = \sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)$—Lindblad dissipation
-- $\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$—regeneration [T] ([full derivation](../dynamics/evolution#вывод-формы-регенерации)), with $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$—[V-preservation gate](../dynamics/evolution#теорема-v-preservation-gate)
+The quotient is bounded but has no unique continuous extension at $\rho_{OO}=0$. Along pure states with $O$ amplitude tending to zero and nonzero $E,U$ amplitudes it tends to their product; along diagonal states it is zero. Positivity forces numerator zero at the boundary, giving $0/0$, not a proof of death. Also $P>2/7$ does not bound $\rho_{OO}$ away from zero.
 
-**Target state $\rho_*$ [T]**
+For global well-posedness choose and disclose a regularization, e.g.
 
 $$
-\rho_* := \varphi(\Gamma)
+\kappa_0^{\varepsilon}=\omega_0\frac{|\rho_{OE}||\rho_{OU}|}{\rho_{OO}+\varepsilon},\qquad\varepsilon>0,
 $$
 
-where $\varphi(\Gamma)$ is the [categorical self-model](/docs/core/operators/phi-operator) of Γ (left adjoint to subobject inclusion, CPTP [T]). For each $\Gamma$, $\varphi(\Gamma)$ is **uniquely fixed** by categorical structure.
+or use the exact kinetic flux with its boundary convention. Regularization changes the model; the number $0.01P_{\mathrm{crit}}$ is a numerical choice, not a theorem. A bootstrap coefficient is likewise a chosen parameter, and cannot cause genesis when multiplied by a gate that vanishes at the initial state.
 
-:::note Interpretation
-Regeneration restores coherence toward $\rho_*$. The direction $(\rho_* - \Gamma)$ is the privileged CPTP relaxation (replacement channel) and steepest Bures descent [T]. Gate $g_V(P)$ follows from Landauer + V-preservation [T] ([derivation](../dynamics/evolution#теорема-v-preservation-gate)). Full derivation: [Evolution → form of ℛ](../dynamics/evolution#вывод-формы-регенерации).
-:::
+## State preservation {#сохранение-положительности-s7}
 
-## Theorem S (minimality of seven dimensions) {#теорема-s-семимерность--следствие-из-аксиомы}
+For a state-preserving map $M$ and frozen $0\le\alpha\le1$, $(1-\alpha)\rho+\alpha M(\rho)$ is a state. It is a CPTP map on operators only if the complete map is affine with a CP linear extension. State-dependent coefficients do not supply this property. The invariant-cone proof for the nonlinear ODE, including local Lipschitz assumptions and global continuation, is in the [typed kernel](/docs/reference/mathematical-kernel#dynamics).
 
-:::warning Theorem S: justification for Axiom 3 ([full proof](../../proofs/minimality/theorem-minimality-7))
-**Status:** Theorem S does **not** derive $N = 7$ ex nihilo. It **supports the axiomatic choice** $N = 7$ by showing this is minimal for the class of systems under study.
+## Capability gates {#пороги-l2-строгий-вывод}
 
-**Statement:** If $\dim(\mathcal{H}) = N$ and (AP), (PH), (QG) all hold, then
+The canonical definitions are
 
 $$
-N \geq 7
+R=1/(7P),\quad\Phi=q/d,\quad
+\mathrm{Cap}_2=(P>2/7)\land(R\ge1/3)\land(\Phi\ge1)\land(D_{\mathrm{diff}}\ge2).
 $$
 
-If $N < 7$, at least one condition fails. Hence
+$D_{\mathrm{diff}}$ is defined for a declared experiential realization, or as an explicitly labelled proxy. The use of these cuts as consciousness criteria is a bridge [I]/[H]; algebraic identities do not validate it experimentally.
 
-$$
-\min\{\dim(\mathcal{H}) : \text{(AP)} \land \text{(PH)} \land \text{(QG)}\} = 7
-$$
-:::
+### Integration {#теорема-порог-интеграции}
 
-:::tip Structural octonion derivation (Track B) — [T] with the canonical orientation (T15-canon)
-Aside from Theorem S, $N = 7$ has a **second route** via division algebras (not an independent count: step T8 of the chain takes $N = 7$ from Theorem S):
-- **[T] P1:** state space ≅ Im($\mathcal{A}$), $\mathcal{A}$ division (via bridge T15 [T], canonical orientation)
-- **[T] P2:** $\mathcal{A}$ nonassociative (via bridge T15 [T], canonical orientation)
-- **[T] Hurwitz** → $\mathcal{A} = \mathbb{O}$ → $N = 7$
+The chosen coherent-majority criterion $q\ge d$ is exactly $\Phi\ge1$. Also $d\ge1/7$ implies $\Phi\le7P-1$. Therefore $\Phi\ge1$ implies $P\ge2/7$, but the converse is false, even for a pure diagonal state. Uniform diagonals give $\Phi=7P-1$; the old extension of this equality to every state is withdrawn [✗]. Coherence in a selected frame is not tensor entanglement.
 
-Bridge (AP)+(PH)+(QG)+(V) → P1+P2—[full chain T1–T16](../../proofs/minimality/theorem-octonionic-derivation#мост): the steps up to the design PG(2,2) are [T], the step PG(2,2) → $\mathbb{O}$ needs an orientation of the seven lines, and only 16 of the 128 orientations give a normed algebra (registry row 41n). (T16/PID relabeled [D] in A1+A2; numerics unchanged.) Until 2026-09-25 this box read "[T]" and "all 12 steps [T]".
+### Reflection and posterior probabilities {#теорема-порог-рефлексии}
 
-[Full derivation →](../../proofs/minimality/theorem-octonionic-derivation)
-:::
+A three-hypothesis posterior $(w_1,w_2,w_3)$ has $w_1\ge\max(w_2,w_3)$ iff $w_1\ge1/3$ **under the additional equality** $w_2=w_3=(1-w_1)/2$. Equal priors alone do not imply equal posteriors. Without that equality $(0.4,0.5,0.1)$ disproves the implication. A likelihood and priors must independently justify identifying $R$ with $w_1$; none is supplied by the three displayed terms of the evolution equation.
 
-### Bridge to P1+P2 [T] (Theorem T15) {#мост-p1p2}
+Consequently $R_{\mathrm{th}}=1/3$ is a model definition, with a conditional Bayesian realization. Within the isotropic family $\rho_t=(1-t)I/7+tuu^\dagger$, $R$ and Bures proximity to $I/7$ are monotonically related. That does not identify either scalar with a posterior or a discrimination success probability. The family is not isospectral.
 
-:::tip Bridge: [T] — closed with the canonical orientation of the Fano lines
-$(AP)+(PH)+(QG)+(V) \Longrightarrow P1+P2$ via a **12-step formal chain** (Theorems T1–T16; T16/PID is [D] in A1+A2): the steps up to BIBD$(7,3,1)$ = PG(2,2) are [T]; the step PG(2,2) → $\mathbb{O}$ needs an orientation of the lines — only 16 of the 128 orientations make the multiplication alternative, equivalently normed (`test_only_16_of_128_fano_orientations_are_normed`, registry row 41n) — and these 16 are the only orientation class invariant under the collineations of the design, so the orientation the design determines is octonionic ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация), [T]). Legacy condition (MP) is removed—it follows from T11–T13 (Choi rank + L-unification + forced BIBD). Until 2026-09-25 the heading and this box read "[T] fully closed … all [T]" without naming the orientation; earlier that day they read [C at (Alt)], an input that T15-canon discharged.
-:::
+### Differentiation and the product {#теорема-порог-дифференциации}
 
-**Full chain (Theorem T15):**
+The cut $D_{\mathrm{diff}}\ge2$ is an independent convention. A literal experiential entropy cannot be obtained by partially tracing a single basis vector out of $\mathbb C^7$: specify a tensor extension and its readout. The proxy $1+6\mathrm{Coh}_E$ may be used only under that name.
 
-$$
-(AP)+(PH)+(QG)+(V) \xrightarrow{[\text{T}]} N = 7 \xrightarrow{[\text{T}]} \text{connectedness } G_H \xrightarrow{[\text{T}]} \forall(i,j):\,\lambda_{ij} \geq 1
-$$
+$C=\Phi R\ge1/3$ is necessary for $R\ge1/3$ and $\Phi\ge1$, but is not sufficient. For a uniform pure state $R=1/7$, $\Phi=6$, so $C=6/7$ passes while access fails. Use the conjunction, not a product gate. The first two conjuncts give $P\in(2/7,3/7]$; that interval does not guarantee the other two.
 
-$$
-\xrightarrow{[\text{T}]} S_7\text{-uniformity} \xrightarrow{[\text{T}]} k = 3 \xrightarrow{[\text{T}]} \text{rank-3 projectors} \xrightarrow{[\text{T}]} b = 7
-$$
+## Dimension and interpretation {#теорема-s-семимерность--следствие-из-аксиомы}
 
-$$
-\xrightarrow{[\text{T}]} \text{BIBD}(7,3,1) = \text{PG}(2,2) \xrightarrow{[\text{T}]\ \text{canonical orientation}} \mathbb{O} \xrightarrow{[\text{T}]} G_2 \xrightarrow{[\text{T}]} P1 + P2
-$$
+The chosen frame $(A,S,D,L,E,O,U)$ has seven orthogonal axes by definition. Functional names do not prove independence. The former unconditional Theorem S and semantic uniqueness claims are withdrawn [✗]. The [replacement minimality theorems](/docs/proofs/minimality/theorem-minimality-7) establish:
 
-| Step | Implication | Status |
-|-----|-----------|--------|
-| 1 | (AP)+(PH)+(QG) ⇒ $N \geq 7$ | **[T]** Theorem S |
-| 2 | $N=7$ + (V) ⇒ connected $G_H$ | **[T]** Evans–Spohn + (V) |
-| 3 | Connectedness + primitivity ⇒ $\lambda_{ij} \geq 1$ | **[T]** Theorem T2 |
-| 4 | $S_7$-equivariance ⇒ uniform contraction | **[T]** Theorems T5, T6 |
-| 5 | Admissibility + (AP)+(V) ⇒ $k=3$ | **[T]** Theorems T4, T7, T10 |
-| 6 | L-unification + $k=3$ ⇒ rank-3 projective ops | **[T]** Theorem T12 |
-| 7 | Choi rank = 7 ⇒ $b \geq 7$ | **[T]** Theorem T11 |
-| 8 | $b=7, k=3, v=7$, contraction $1/3$ ⇒ BIBD$(7,3,1)$ | **[T]** Theorem T13 |
-| 9 | $(7,3,1)$-BIBD ≅ PG(2,2) | **[T]** Hall 1967 |
-| 10–12 | PG(2,2) → $\mathbb{O}$ → $G_2$ → P1+P2 | **[T]**: step 10 takes the canonical orientation (T15-canon; it was the input (Alt) earlier on 2026-09-25); $\mathbb{O}$ → $G_2$ → P1+P2 is standard algebra [T] |
-
-**Cascade:** P1, P2 — **[T]**. Track B — **[T]**. Fano PG(2,2) and Hamming $H(7,4)$ as combinatorics — **[T]** (steps 1–9); $G_2 = \mathrm{Aut}(\mathbb{O})$ — **[T]**. The maximality half of the double extremality (via Track B) excludes other dimensions through Hurwitz, which needs P1 for a competing decomposition; it was [C at (P1₆)] until 2026-09-28 and is now [C at (Σ₆⁺)] — perfect diagnosability of every decomposition with a rigid grammar — while the strict necessity of $N = 7$ needs only (Σ₆) ([T-349](/docs/proofs/minimality/theorem-minimality-7#t-349)). The cascade read "all [T]" until 2026-09-25, then [C at (Alt)] until T15-canon the same day.
-
-More: [Lindblad operators](../../core/operators/lindblad-operators#редукция-моста), [Octonionic derivation](../../proofs/minimality/theorem-octonionic-derivation#мост).
-
-:::info $G_2$ gauge structure from axioms [T]
-Closing T15 yields $(AP)+(PH)+(QG)+(V) \Rightarrow \mathbb{O} \Rightarrow G_2 = \text{Aut}(\mathbb{O})$, with the canonical orientation of the Fano lines (T15-canon); the statements below are theorems (the heading read [T] until 2026-09-25, then [C at (Alt)] until T15-canon discharged the orientation input the same day). [$G_2$ rigidity](../../proofs/categorical/uniqueness-theorem) proves more:
-
-**Lemma G4 [T]:** the **largest** subgroup of $U(7)$ preserving the octonionic 3-form $\varphi_3$ is $G_2 \times \mu_3$, and the scalars $\mu_3$ ($\omega^3 = 1$) act trivially on states, so on states it is $G_2$ (it read "$G_2$ is the largest subgroup" until 2026-09-25); the remaining axiomatic data $(\mathcal{D}_\Omega, \mathcal{R}, \kappa_0, \text{PW})$ are frame data, preserved only by the finite frame group $\Gamma_{\!\text{oct}} \subset G_2$ ([frame decision D-0910](../../proofs/categorical/uniqueness-theorem#g2-ригидность)).
-
-**Consequences:**
-- Kinematic orbit space $\mathcal{D}(\mathbb{C}^7)/G_2$: $\dim = 48 - 14 = 34$; physical state space $\mathcal{D}(\mathbb{C}^7)/\Gamma_{\!\text{oct}}$: 48 parameters (D-0910)
-- $P$, $R$ are $G_2$-invariant; $\Phi$, $\text{Coh}_E$, $\kappa$ are frame-pinned observables: $\Phi$ is invariant under the whole $\Gamma_{\!\text{oct}}$, $\text{Coh}_E$ only under its $192$ elements that keep the $E$-axis, $\kappa$ only under the elements that keep the axes it references (the line read "invariant under $\Gamma_{\!\text{oct}}$" for all three until 2026-09-25)
-- Inverse problem: $\Gamma(0)$ recoverable from trajectory (Picard–Lindelöf on compact $\mathcal{D}(\mathbb{C}^7)$)
-:::
-
-### Theorem (uniqueness of the basis)
-
-:::tip Status: [T] fully rigorous ([proof](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса))
-The basis $\{A, S, D, L, E, O, U\}$ is the **unique** (up to isomorphism) 7-way split satisfying (AP)+(PH)+(QG).
-
-**Rigor levels:**
-- [T] **A, S, D, L, U**—algebraic uniqueness (proved)
-- [T] **E**—functional uniqueness: (PH) + category ($\kappa_0$ needs Hom(O,E)) + math (rank > 1)
-- [T] **O**—functional uniqueness: ℛ form [T] + $\kappa_0$ [T] + Page–Wootters (A5) + functional independence
-:::
-
-### Proof of necessity (by contradiction)
-
-Removing a dimension breaks an axiom:
-
-| Missing dimension | Broken axiom | Reason |
-|-------------------------|-------------------|---------|
-| **A** (Articulation) | (AP), (PH), (QG) | No distinctions—no system |
-| **S** (Structure) | (AP) | No invariants—no identity |
-| **D** (Dynamics) | (AP), (QG) | No process—no self-reproduction |
-| **L** (Logic) | (AP) | No consistency—no causal closure |
-| **E** (Interiority) | (PH) | No interiority—no inner side |
-| **O** (Ground) | (QG) | No regeneration—irreversible decoherence |
-| **U** (Unity) | (AP) | No integration—system falls apart |
-
-### Proof of sufficiency (constructive)
-
-A 7D system $\mathcal{H} = \mathbb{C}^7$ satisfying all axioms is constructed explicitly. See [Part IV of the proof](../../proofs/minimality/theorem-minimality-7#часть-iv-доказательство-достаточности-конструктивное).
-
-## Relation to Rosen (M,R)-systems
-
-The seven UHM dimensions **correspond structurally** to Rosen’s minimal (M,R)-system, extended by phenomenology and quantum grounding.
-
-:::tip On the nature of the correspondence
-This is not a sharp isomorphism but a **structural analogy**: functional roles align, formalisms differ. Rosen uses categorical maps; UHM uses density matrices.
-:::
-
-```mermaid
-graph LR
-    subgraph "Rosen: (M,R)-system"
-        M["M — Metabolism<br/>(transformation)"]
-        RP["Φ — Repair<br/>(restoration)"]
-        B["β — Closure<br/>(self-reproduction)"]
-    end
-    subgraph "UHM: Base dimensions"
-        D["D — Dynamics"]
-        AL["A+L — Articulation + Logic"]
-        U["U — Unity"]
-    end
-    subgraph "UHM: Extensions"
-        E["E — Interiority"]
-        O["O — Ground"]
-        S["S — Structure"]
-    end
-    M -.->|"maps to"| D
-    RP -.->|"maps to"| AL
-    B -.->|"maps to"| U
-```
-
-| Rosen (M,R) | UHM | Function | Note |
-|-------------|-----|---------|------------|
-| $M$ (metabolism) | $D$ (Dynamics) | Substrate transformation | Unitary $-i[H_{eff},\Gamma]$ |
-| $\Phi$ (repair) | $A + L$ | Restoration and alignment | Projectors + commutators |
-| $\beta$ (closure) | $U$ (Unity) | System self-closure | Trace $\mathrm{Tr}$ as integrator |
-| — | $E$ (Interiority) | Phenomenology | **Extension** (M,R) → (M,R,P) |
-| — | $O$ (Ground) | Coherence regeneration | **Extension** for (QG) |
-| — | $S$ (Structure) | Invariant preservation | **Extension** for identity |
-
-:::caution Symbol clash on Φ
-Here $\Phi$ is Rosen’s repair map; do not confuse with [integration measure $\Phi$](/docs/core/structure/dimension-u#мера-интеграции-φ).
-:::
-
-**Minimality:** Rosen argued $(M,R)$ needs at least three parts. UHM adds four extensions for phenomenology and quantum grounding: $7 = 3 + 4$.
-
-## Why each dimension is necessary
-
-### Why not fewer than seven?
-
-Each dimension has an irreplaceable role:
-
-| Dimension | Role | Why it is necessary |
-|-----------|---------|-------------------|
-| **A** (Articulation) | Distinction, boundaries | No distinctions—no information, form, or being. $P: P^2 = P$ |
-| **S** (Structure) | Shape preservation | No invariants—no identity over time. $H^\dagger = H$ |
-| **D** (Dynamics) | Change | No process—no self-reproduction. $U(\tau) = e^{-iH_{eff}\tau}$ |
-| **L** (Logic) | Consistency | No coherence—no causal closure. $[A,B]$ |
-| **E** (Interiority) | Experience | No interiority—no inner side. $\rho_E$ |
-| **O** (Ground) | Regeneration | No vacuum link—irreversible decoherence. $\vert 0\rangle$ |
-| **U** (Unity) | Integration | No unification—fragmentation. $\mathrm{Tr}$ |
-
-### Why not more than seven?
-
-Extra dimensions are **not forbidden**, but:
-1. **Seven suffice** for (AP), (PH), (QG)—constructively shown
-2. **Parsimony** (Occam): do not multiply entities beyond need
-3. **Open question:** what new properties appear when $\dim(\mathcal{H}) > 7$?
-
-## Mathematical representation
-
-State space:
+1. $N\ge7$ under perfect binary single-fault diagnosability $(\Sigma_6)$ with more than two codewords;
+2. $N\ge7$ for a faithful representation of $\mathbb C\oplus M_3(\mathbb C)\oplus M_3(\mathbb C)$, with a unique minimal representation up to unitary equivalence.
 
-$$
-\mathcal{H} = \mathbb{C}^7 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}
-$$
+Applying either premise to all autonomous or phenomenal systems is an additional physical assumption. Rosen's $(M,R)$ roles suggest a correspondence [I], not an isomorphism without specified categories, functors and inverse transformations. The octonionic channel and canonical-orientation theorems are retained with their actual inputs in the [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation).
 
-Orthonormal basis:
+## Historical link targets
 
-$$
-\langle i | j \rangle = \delta_{ij} \quad \text{for all } i, j \in \{A, S, D, L, E, O, U\}
-$$
+The old proof claims at these addresses are withdrawn; their corrected scope is specified above.
 
-## Summary
-
-:::tip Main claims of (AP+PH+QG+V)
-1. **Autonomy:** A holon is an autonomous sub-system (A1+A2+A3) with 7D structure
-2. **(AP):** A self-modeling map $\varphi$ with fixed point exists
-3. **(PH):** Interiority dimension $E$ has nontrivial reduced matrix $\rho_E$
-4. **(QG):** Dynamics with regeneration $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$
-5. **(V):** Viability means $P > P_{\text{crit}} = 2/7$
-6. **Theorem S:** Minimal dimension is 7
-7. **Uniqueness theorem:** Basis $\{A,S,D,L,E,O,U\}$ is unique **[T]** (A,S,D,L,U algebraically; E,O via $\kappa_0$ and functional independence; [proof](/docs/proofs/minimality/theorem-minimality-7#единственность-e))
-8. **Thresholds** (three [T]; $D_{\min}$ an independent threshold [D]):
-   - $P_{\text{crit}} = 2/7$—noise distinguishability (Frobenius) **[T] proved**
-   - $R_{\text{th}} = 1/3$—Bayesian dominance at $K = 3$ **[T]** ($K = 3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция))
-   - $\Phi_{\text{th}} = 1$—coherent dominance **[T]** (T-129: unique self-consistent value)
-   - $D_{\min} = 2$—independent L2 threshold **[D]** (T-151, T-124b; it read "consequence of $\Phi_{\text{th}} = 1$ [T]" until 2026-09-25)
-   - $C_{\text{th}} = 1/3$—product $\Phi_{\text{th}} \times R_{\text{th}}$ **[T]** (T-140; $D_{\text{diff}}$ is separate for $V$, not in $C$)
-:::
-
----
-
-**Related documents:**
-- [Axiom Ω⁷](./axiom-omega)—five UHM axioms (∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ as sole primitive)
-- [Consequences](./consequences)—derivations from the axioms
-- [7D minimality theorem](../../proofs/minimality/theorem-minimality-7)—full formal proof (Track A)
-- [Octonion structural derivation](../../proofs/minimality/theorem-octonionic-derivation)—P1+P2 → $\mathbb{O}$ → N=7 (Track B)
-- [Emergent time](../../proofs/dynamics/emergent-time)—$\tau$ from structure of Γ
-- [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy)—levels L0→L1→L2→L3→L4
-- [Evolution equation](../dynamics/evolution)—dynamics of $\Gamma(\tau)$
-- [Viability](../dynamics/viability)—condition $P > P_{\text{crit}}$
+<a id="coh-e-canonical"></a>
+<a id="hs-projection"></a>
+<a id="ph-феноменология"></a>
+<a id="pi-x-generalization"></a>
+<a id="qg-квантовое-основание"></a>
+<a id="категориальный-вывод-kappa0"></a>
+<a id="комбинированный-порог-сознательности"></a>
+<a id="критическая-чистота-теорема"></a>
+<a id="мост-p1p2"></a>
+<a id="определение-автономная-подсистема"></a>
+<a id="полнота-порогов"></a>
+<a id="принцип-информационной-различимости"></a>
+<a id="теорема-kappa-bootstrap"></a>
+<a id="теорема-kappa0-функториальность"></a>
+<a id="теорема-непротиворечивость-иерархии-определений"></a>
+<a id="формализация-моста-r"></a>

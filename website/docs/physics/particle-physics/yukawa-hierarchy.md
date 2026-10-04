@@ -47,7 +47,9 @@ Strictly proved. Follows from the axiomatics of the projective plane PG(2,2).
 
 **Proof.** In $\mathrm{PG}(2,2)$, exactly one line passes through any two points. The points are $E=5$ and $U=6$. From the table of Fano lines:
 
-$$\{5,6,1\} = \{A, E, U\}$$
+$$
+\{5,6,1\} = \{A, E, U\}
+$$
 
 This is the unique line containing both 5 and 6. $\blacksquare$
 
@@ -67,21 +69,29 @@ Strictly proved. Follows directly from the octonion algebra $\mathbb{O}$ via the
 
 **Theorem.** The tree-level Yukawa coupling of generation $k_n$ to the Higgs field $\gamma_{EU}$ is proportional to the Fano structure coefficient:
 
-$$y_n^{(\text{tree})} = g_W \cdot \varepsilon_{k_n, E, U}^\text{Fano} \cdot \sin\left(\frac{2\pi k_n}{7}\right) \cdot |\gamma_\text{vac}^{(EU)}|$$
+$$
+y_n^{(\text{tree})} = g_W \cdot \varepsilon_{k_n, E, U}^\text{Fano} \cdot \sin\left(\frac{2\pi k_n}{7}\right) \cdot |\gamma_\text{vac}^{(EU)}|
+$$
 
 where $\varepsilon_{ijk}^\text{Fano} = 1$ if $(i,j,k)$ is a Fano line, and $0$ otherwise.
 
 **(a)** For $k_n = 1$: the triple $(1, 5, 6) = \{A, E, U\}$ is a Fano line. $\varepsilon_{1,5,6}^\text{Fano} = 1$.
 
-$$y_1^{(\text{tree})} = g_W \cdot 1 \cdot \sin(2\pi/7) \cdot |\gamma_\text{vac}| \neq 0$$
+$$
+y_1^{(\text{tree})} = g_W \cdot 1 \cdot \sin(2\pi/7) \cdot |\gamma_\text{vac}| \neq 0
+$$
 
 **(b)** For $k_n = 2$: the triple $(2, 5, 6)$. The line through 2 and 5: $\{2,3,5\}$ (contains 3, not 6). The line through 2 and 6: $\{6,7,2\}$ (contains 7, not 5). $\varepsilon_{2,5,6}^\text{Fano} = 0$.
 
-$$y_2^{(\text{tree})} = 0$$
+$$
+y_2^{(\text{tree})} = 0
+$$
 
 **(c)** For $k_n = 4$: the triple $(4, 5, 6)$. The line through 4 and 5: $\{4,5,7\}$ (contains 7, not 6). The line through 4 and 6: $\{3,4,6\}$ (contains 3, not 5). $\varepsilon_{4,5,6}^\text{Fano} = 0$.
 
-$$y_4^{(\text{tree})} = 0$$
+$$
+y_4^{(\text{tree})} = 0
+$$
 
 **(d)** **Summary of the selection rule:**
 
@@ -95,7 +105,9 @@ The assignment $k=1 \to$ 3rd generation is **[T]** (the unique nonzero tree-leve
 
 **Proof.** The correct derivation proceeds via the octonion structure constants $f_{ijk}$. The Yukawa coupling of three dimensions $(a,b,c)$ is proportional to the octonion structure constant:
 
-$$y_{abc}^{(\text{tree})} \propto f_{abc}$$
+$$
+y_{abc}^{(\text{tree})} \propto f_{abc}
+$$
 
 where $f_{abc} = \pm 1$ if and only if $\{a,b,c\}$ is a Fano line of $\mathrm{PG}(2,2)$, and $f_{abc} = 0$ otherwise. This follows from the $\mathbb{O}$ multiplication table: $e_a e_b = f_{abc} e_c + \delta_{ab}$.
 
@@ -120,11 +132,15 @@ The Fano selection rule makes $y_t$ the **unique** $O(1)$ Yukawa coupling — th
 
 **(a)** Tree-level Yukawa:
 
-$$y_1^{(\text{tree})} = g_W \cdot \sin(2\pi/7) \cdot |\gamma_\text{vac}^{(EU)}| \approx 0.65 \cdot 0.78 \cdot |\gamma| \sim O(1)$$
+$$
+y_1^{(\text{tree})} = g_W \cdot \sin(2\pi/7) \cdot |\gamma_\text{vac}^{(EU)}| \approx 0.65 \cdot 0.78 \cdot |\gamma| \sim O(1)
+$$
 
 **(b) The IR quasi-fixed point, honestly.** The Pendleton–Ross / Hill IR quasi-fixed point of a single $O(1)$ top Yukawa evaluates (with $c_1=9/2$, $c_3=8$, $c_4=9/4$, $g_s^2(\mu_\text{EW})\approx1.48$, $g_W^2\approx0.42$) to
 
-$$y_t^{(\text{FP})} = \sqrt{\frac{c_3 g_s^2(\mu_\text{EW}) + c_4 g_W^2}{c_1}} \approx \sqrt{\frac{8\cdot1.48 + 2.25\cdot0.42}{4.5}} \approx 1.7,$$
+$$
+y_t^{(\text{FP})} = \sqrt{\frac{c_3 g_s^2(\mu_\text{EW}) + c_4 g_W^2}{c_1}} \approx \sqrt{\frac{8\cdot1.48 + 2.25\cdot0.42}{4.5}} \approx 1.7,
+$$
 
 i.e. $m_t^{\text{FP}} = y_t^{\text{FP}}\,v/\sqrt2 \approx 210\text{–}230$ GeV — the well-known SM quasi-fixed-point **overshoot**. The physical top, $y_t(m_t)\approx0.94$ ($m_t\approx173$ GeV), sits **below** this attractor: it is $O(1)$ but not exactly at the fixed point. UHM therefore predicts the *qualitative* fact "exactly one $O(1)$ Yukawa" **[T]**; the precise $m_t$ is a boundary condition below the FP, status **[C]**.
 
@@ -142,21 +158,29 @@ The mass hierarchy mechanism via quasi-IR fixed point (Pendleton-Ross) **does no
 
 **(b)** **Resolution:** The initial Yukawa couplings are **not** all $O(1)$. The selection rule gives:
 
-$$y_1^{(0)} \sim O(1), \quad y_2^{(0)} = 0, \quad y_4^{(0)} = 0$$
+$$
+y_1^{(0)} \sim O(1), \quad y_2^{(0)} = 0, \quad y_4^{(0)} = 0
+$$
 
 Loop corrections generate $y_{2,4} \sim \epsilon \ll 1$, but **not** $O(1)$.
 
 **(c)** RG system with one $O(1)$ Yukawa + two small ones:
 
-$$\frac{dy_1}{d\ln\mu} \approx \frac{y_1}{16\pi^2}(c_1 y_1^2 - c_3 g_s^2 - c_4 g_W^2)$$
+$$
+\frac{dy_1}{d\ln\mu} \approx \frac{y_1}{16\pi^2}(c_1 y_1^2 - c_3 g_s^2 - c_4 g_W^2)
+$$
 
-$$\frac{dy_n}{d\ln\mu} \approx \frac{y_n}{16\pi^2}(c_2 y_1^2 - c_3 g_s^2 - c_4 g_W^2) \quad (n = 2, 4; \, y_n \ll 1)$$
+$$
+\frac{dy_n}{d\ln\mu} \approx \frac{y_n}{16\pi^2}(c_2 y_1^2 - c_3 g_s^2 - c_4 g_W^2) \quad (n = 2, 4; \, y_n \ll 1)
+$$
 
 $y_1$ is attracted to $y^{(\text{FP})} = \sqrt{(c_3 g_s^2 + c_4 g_W^2)/c_1} \approx 1$.
 
 $y_{2,4}$ run with the anomalous dimension determined by $y_1$:
 
-$$y_n(\mu_\text{EW}) = y_n(\mu_\text{GUT}) \times \left(\frac{\mu_\text{EW}}{\mu_\text{GUT}}\right)^{\gamma_n}$$
+$$
+y_n(\mu_\text{EW}) = y_n(\mu_\text{GUT}) \times \left(\frac{\mu_\text{EW}}{\mu_\text{GUT}}\right)^{\gamma_n}
+$$
 
 **(d)** When $c_2 y_1^2 \approx c_3 g_s^2 + c_4 g_W^2$: $\gamma_n \approx 0$, the small Yukawa couplings **preserve** their values from GUT to EW.
 
@@ -182,17 +206,23 @@ Generations $k=2$ (S) and $k=4$ (L) have $y^{(\text{tree})} = 0$. Their masses a
 
 **(a)** $V_3$ contains a vertex on the line $\{1,2,4\}$:
 
-$$V_3 \supset \lambda_3 |\gamma_{12}| |\gamma_{24}| |\gamma_{14}| \sin(\theta_{12} + \theta_{24} - \theta_{14})$$
+$$
+V_3 \supset \lambda_3 |\gamma_{12}| |\gamma_{24}| |\gamma_{14}| \sin(\theta_{12} + \theta_{24} - \theta_{14})
+$$
 
 This is a three-point coupling between the Gap fields of dimensions $A=1$, $S=2$, $L=4$.
 
 **(b)** After electroweak breaking ($\gamma_{EU} \to v$), the vertex $\{1,5,6\}$ gives mass to generation $k=1$:
 
-$$m_1 \propto \lambda_3 |\gamma_{15}| |\gamma_{56}| |\gamma_{16}| \to \lambda_3 v \cdot |\gamma_{A,E}| \cdot |\gamma_{A,U}|$$
+$$
+m_1 \propto \lambda_3 |\gamma_{15}| |\gamma_{56}| |\gamma_{16}| \to \lambda_3 v \cdot |\gamma_{A,E}| \cdot |\gamma_{A,U}|
+$$
 
 **(c)** The combination of vertices $\{1,2,4\}$ and $\{1,5,6\}$ via the **intermediate** state of dimension $A=1$ generates an effective coupling of generations $k=2$ and $k=4$ to the Higgs:
 
-$$y_n^{(\text{eff})} \sim \frac{\langle n | V_3^{(\{1,2,4\})} | 1 \rangle}{m_1^{(\text{Gap})}} \times y_1^{(\text{tree})} \quad (n = 2, 4)$$
+$$
+y_n^{(\text{eff})} \sim \frac{\langle n | V_3^{(\{1,2,4\})} | 1 \rangle}{m_1^{(\text{Gap})}} \times y_1^{(\text{tree})} \quad (n = 2, 4)
+$$
 
 ### 4.2 Alternative Fano Paths to the Higgs
 
@@ -248,7 +278,9 @@ Each generation is coupled to the Higgs $(E,U)$ via a **unique active path**:
 
 **(d)** However: confinement simultaneously generates the **confinement scale** $\Lambda_\text{QCD} \sim 200$ MeV, which suppresses the effective Yukawa coupling:
 
-$$y_4^{(\text{eff})} \sim y_1 \times f_\text{conf}(\Lambda_\text{QCD} / M_\text{GUT})$$
+$$
+y_4^{(\text{eff})} \sim y_1 \times f_\text{conf}(\Lambda_\text{QCD} / M_\text{GUT})
+$$
 
 ---
 
@@ -258,7 +290,9 @@ $$y_4^{(\text{eff})} \sim y_1 \times f_\text{conf}(\Lambda_\text{QCD} / M_\text{
 
 **Definition.** The Yukawa matrix $Y^{u}_{nm}$ for up-type quarks ($u, c, t$) is a $3 \times 3$ complex matrix, where $n, m$ are generation indices (ordered by mass: $n,m = 1$(1st), $2$(2nd), $3$(3rd)):
 
-$$\mathcal{L}_Y = Y^{u}_{nm} \bar{Q}_n^L \tilde{H} u_m^R + Y^{d}_{nm} \bar{Q}_n^L H d_m^R + \text{h.c.}$$
+$$
+\mathcal{L}_Y = Y^{u}_{nm} \bar{Q}_n^L \tilde{H} u_m^R + Y^{d}_{nm} \bar{Q}_n^L H d_m^R + \text{h.c.}
+$$
 
 Mass matrix: $M^{u} = Y^{u} \cdot v / \sqrt{2}$, $v = 246$ GeV.
 
@@ -272,25 +306,33 @@ The texture structure is a strict consequence of the Fano selection rule.
 
 **(a)** Tree level. From the selection rule: the only nonzero entry is $(3,3)$:
 
-$$Y^{u(0)} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & y_t \end{pmatrix}$$
+$$
+Y^{u(0)} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & y_t \end{pmatrix}
+$$
 
 where $y_t = g_W \sin(2\pi/7) |\gamma_\text{vac}| \sim O(1)$.
 
 **(b)** One-loop level. $V_3$-vertices generate additional entries via Fano paths:
 
-$$Y^{u(1)} = \begin{pmatrix} 0 & 0 & \delta_{S \to A} y_t \\ 0 & 0 & \delta_{L \to A} y_t \\ \delta_{A \to S} y_t & \delta_{A \to L} y_t & 0 \end{pmatrix}$$
+$$
+Y^{u(1)} = \begin{pmatrix} 0 & 0 & \delta_{S \to A} y_t \\ 0 & 0 & \delta_{L \to A} y_t \\ \delta_{A \to S} y_t & \delta_{A \to L} y_t & 0 \end{pmatrix}
+$$
 
 Nonzero entries appear **only** in the row and column of the 3rd generation (via the generation line $\{A,S,L\}$ + the Higgs line $\{E,U,A\}$).
 
 **(c)** Two-loop level. Entries of the $2 \times 2$ block for light generations:
 
-$$Y^{u(2)} = \begin{pmatrix} y_u & \delta_{S \to L} & 0 \\ \delta_{L \to S} & y_c & 0 \\ 0 & 0 & 0 \end{pmatrix}$$
+$$
+Y^{u(2)} = \begin{pmatrix} y_u & \delta_{S \to L} & 0 \\ \delta_{L \to S} & y_c & 0 \\ 0 & 0 & 0 \end{pmatrix}
+$$
 
 Diagonal: $y_c$ is generated via the path $L \to D \to U \to A \to \text{Higgs}$ (lines $\{D,L,U\}$ + $\{E,U,A\}$). $y_u$ — via $S \to D \to E \to A \to \text{Higgs}$ (lines $\{S,D,E\}$ + $\{E,U,A\}$).
 
 **(d)** Full texture up to two loops:
 
-$$Y^u \approx \begin{pmatrix} y_u & \epsilon_{12} & \epsilon_{13} \\ \epsilon_{21} & y_c & \epsilon_{23} \\ \epsilon_{31} & \epsilon_{32} & y_t \end{pmatrix}$$
+$$
+Y^u \approx \begin{pmatrix} y_u & \epsilon_{12} & \epsilon_{13} \\ \epsilon_{21} & y_c & \epsilon_{23} \\ \epsilon_{31} & \epsilon_{32} & y_t \end{pmatrix}
+$$
 
 where $y_t \sim 1$, $y_c \sim \epsilon^2$, $y_u \sim \epsilon^4$, $\epsilon_{i3}, \epsilon_{3j} \sim \epsilon$, $\epsilon_{12}, \epsilon_{21} \sim \epsilon^3$.
 
@@ -308,7 +350,9 @@ The Fritzsch texture follows from the Fano selection rule under the assumption t
 
 **(a)** Fritzsch texture:
 
-$$M^u_\text{Fritzsch} = \begin{pmatrix} 0 & A_u & 0 \\ A_u^* & 0 & B_u \\ 0 & B_u^* & C_u \end{pmatrix}$$
+$$
+M^u_\text{Fritzsch} = \begin{pmatrix} 0 & A_u & 0 \\ A_u^* & 0 & B_u \\ 0 & B_u^* & C_u \end{pmatrix}
+$$
 
 with $|C_u| \gg |B_u| \gg |A_u|$.
 
@@ -320,7 +364,9 @@ with $|C_u| \gg |B_u| \gg |A_u|$.
 
 **(c)** The Fritzsch texture predicts:
 
-$$|V_{us}| \approx \left|\sqrt{\frac{m_d}{m_s}} - \sqrt{\frac{m_u}{m_c}} \cdot e^{i\phi}\right|$$
+$$
+|V_{us}| \approx \left|\sqrt{\frac{m_d}{m_s}} - \sqrt{\frac{m_u}{m_c}} \cdot e^{i\phi}\right|
+$$
 
 From observed masses: $\sqrt{m_d/m_s} \approx 0.22$, $\sqrt{m_u/m_c} \approx 0.04$. $|V_{us}| \approx 0.22$ — **agreement** with $\theta_C = 0.225$.
 
@@ -348,7 +394,9 @@ The $b$-quark mass arises through a **one-loop** correction with an intermediate
 
 **(d)** The texture $Y^d$ is analogous to $Y^u$, but with different **phases** (due to the conjugate Higgs):
 
-$$Y^d = Y^u \cdot e^{i\delta_\text{Fano}} + \Delta Y^d$$
+$$
+Y^d = Y^u \cdot e^{i\delta_\text{Fano}} + \Delta Y^d
+$$
 
 where $\delta_\text{Fano} = 2\pi/7$ is the Fano phase, and $\Delta Y^d$ are corrections from the difference in RG coefficients for $u$-type vs $d$-type.
 
@@ -360,7 +408,9 @@ where $\delta_\text{Fano} = 2\pi/7$ is the Fano phase, and $\Delta Y^d$ are corr
 
 **Definition.** The effective loop suppression parameter:
 
-$$\epsilon := \frac{\lambda_3(\mu_\text{EW})}{\lambda_3(\mu_\text{Planck})} \approx 0.01$$
+$$
+\epsilon := \frac{\lambda_3(\mu_\text{EW})}{\lambda_3(\mu_\text{Planck})} \approx 0.01
+$$
 
 From RG: $\lambda_3(\text{EW})/\lambda_3(\text{Planck}) = e^{-4.63} \approx 0.0097$.
 
@@ -374,7 +424,9 @@ The value $\epsilon_\text{eff} \approx 0.06$ is structurally justified as a sect
 
 Taking into account that the $V_3$-vertex carries a factor $\lambda_3 \sim 74$ (not 1), the effective mixing parameter is:
 
-$$\epsilon_\text{eff} = \lambda_3 \cdot \epsilon / (4\pi) \approx 74 \times 0.01 / 12.6 \approx 0.059$$
+$$
+\epsilon_\text{eff} = \lambda_3 \cdot \epsilon / (4\pi) \approx 74 \times 0.01 / 12.6 \approx 0.059
+$$
 
 :::info Sectoral origin of $\varepsilon_\text{eff}$ [C]
 The parameter $\varepsilon_\text{eff} \sim 0.06$ is **not** the non-O mean $\bar{\varepsilon} \approx 0.027$ (under (SV); $0.023$ until 2026-09-25), but a sectoral average determined by the [sectoral coherence hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε). The homogeneous vacuum ($|\gamma_{ij}| = \varepsilon = \mathrm{const}$) is not an exact solution; the vacuum has a **sectoral structure** $7 = 1_O \oplus 3 \oplus \bar{3}$:
@@ -393,55 +445,23 @@ The Yukawa texture is determined by the **sectors coupling generations to the Hi
 
 #### Status of Parameter $\lambda_3$ {#предупреждение-λ3}
 
-:::note Status of parameter $\lambda_3$ [T]
-The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [C at (SV)]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness for any value of $\lambda_3$. The loop estimates in this section are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$).
+:::note Coupling input and perturbative scope [D/H/Pr]
+The relation $\lambda_3=2\mu^2/(3|\bar\gamma|)$ and the value $\lambda_3\approx74$ are chosen effective-model inputs, not coefficients uniquely derived from the spectral action: universal T-74 is withdrawn [✗]. A self-consistency equation determines a value only after its functional, other couplings and state/field space are supplied. Compactness of a finite integration domain does not establish continuum UV finiteness, perturbative convergence or a universal factor-five error bound.
+
+Quantitative mass, mixing or gravitational predictions require independently fixed spectral data, renormalization/matching scales and physical readouts. If $\bar\gamma$ or $\lambda_3$ is inferred from those same observables, the result is calibration; held out data are needed for prediction. A small proposed $\lambda_3\varepsilon/(4\pi)$ is a power-counting estimate only after a definite action and propagators are supplied; factorially many diagrams can still yield a divergent asymptotic expansion. [The audited coupling discussion](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative) records these conditions.
 :::
 
-#### Non-Perturbative Regime (C7) {#c7-nonperturbative}
+#### Coupling and perturbative regime (C7) {#c7-nonperturbative}
 
-::::warning Non-perturbative regime of $\lambda_3$
-$\lambda_3 \approx 74 > 4\pi \approx 12.6$ — deeply in the non-perturbative regime. All loop computations involving $\lambda_3$ are formally unreliable: the perturbation theory series does not converge. Status of loop results: **[C at perturbativity]**. A non-perturbative approach (lattice or Bootstrap) is required for rigorous results.
+A dimensionless number $\lambda_3\simeq74$ or the proposed combination $\lambda_3\varepsilon/(4\pi)\simeq0.059$ does not by itself certify a perturbative regime. One must derive vertex factors, propagators, loop integrals and the relevant dimensionless scale combinations from a specified action [H/Pr]. A coherence modulus is not automatically a propagator, and the phase torus dimension does not imply a Feynman graph Euler identity.
 
-All loop computations depending on $\lambda_3$ (light generation masses, $\varepsilon_{\text{eff}}$, $m_b/m_t$, CKM angles) are in the **non-perturbative regime** and are formally unreliable.
+#### The former convergence claim: withdrawn [✗] {#теорема-lambda3-resolution}
 
-**Status**: see the resolution immediately below — the bare-coupling reading of $\lambda_3$ was the wrong parameter to expand in.
+The previous proof inferred absolute convergence from $|c_n|\le C^n n!$. That bound instead allows factorial divergence: the permitted sequence $c_n=C^nn!$ makes successive terms of $\sum c_nx^{2n}$ have ratio $C(n+1)x^2$, unbounded for every $x\ne0$. Borel summability, if established with additional analyticity and continuation estimates, is distinct from ordinary convergence and has not been proved for this UHM action.
 
-#### Theorem (Resolution of the $\lambda_3$ perturbativity problem) [T] {#теорема-lambda3-resolution}
+The arithmetic $74\cdot0.01/(4\pi)\simeq0.0589$ is correct [T at the chosen inputs]. The proposed RG exponent and matching scale are additional effective-model data; neither this arithmetic nor T-74 (withdrawn [✗]) derives them. A finite integral of a bounded continuous integrand over a specified compact phase domain is finite [T]; this gives no continuum-limit control, perturbative error bound or physical prediction.
 
-:::tip Theorem (Perturbative validity of the Gap dynamics)
-The loop expansion of the Gap dynamics is controlled by the **effective expansion parameter**
-
-$$
-\varepsilon_{\text{eff}} = \frac{\lambda_3 \varepsilon}{4\pi} \approx \frac{74 \times 0.01}{12.6} \approx 0.059 \ll 1 .
-$$
-
-The perturbation series converges in powers of $\varepsilon_{\text{eff}}$, **not** in powers of $\lambda_3$. The value $\lambda_3 \approx 74 > 4\pi$ is a property of the **bare coupling** (UV), not of the physical expansion parameter.
-:::
-
-**Proof.**
-
-**Step 1 (Diagram counting).** In the Feynman expansion in $V_{\text{Gap}}$: each $V_3$ vertex contributes $\lambda_3$; each propagator contributes $\varepsilon^2 = |\gamma_{ij}|^2$ (the coherence amplitude); each loop contributes $1/(4\pi)^2$ (the standard loop integral on the compact $(S^1)^{21}$). A diagram with $n$ loops and $k$ vertices scales as $\lambda_3^k \varepsilon^{2(k-n)} (4\pi)^{-2n}$. Euler's relation for planar diagrams on $(S^1)^{21}/G_2$ gives $k = 2n + \text{ext}$, so vacuum diagrams ($\text{ext} = 0$) contribute $(\lambda_3\varepsilon/4\pi)^{2n} = \varepsilon_{\text{eff}}^{2n}$.
-
-**Step 2 (Convergence).** Since $\varepsilon_{\text{eff}} \approx 0.059 < 1$, the series $\sum_n c_n \varepsilon_{\text{eff}}^{2n}$ converges absolutely for bounded coefficients $|c_n| \leq C^n n!$ — the standard Borel-summability estimate for compact $\sigma$-models (Rivasseau, *From Perturbative to Constructive Renormalization*, 1991). With $C \sim O(1)$ for finite-dimensional models the radius is $\varepsilon_{\text{eff}}^{\text{crit}} \sim 1 \gg 0.059$. $\square$
-
-**Step 3 (RG suppression at physical scales).** By Mechanism 2 (`lambda-budget.md` [T]), $\lambda_3(\mu) = \lambda_3^{(\mathrm{UV})}(\mu/\omega_{\text{Planck}})^{\Delta_3}$ with $\Delta_3 = 5/42 \approx 0.119$. At the electroweak scale $\mu_{\text{EW}} \sim 100$ GeV $\sim 10^{11.2}$ Hz this gives $\lambda_3(\mu_{\text{EW}}) = 74 \cdot 10^{-3.82} \approx 0.011 \ll 4\pi$: at the **physical** scale perturbativity is unconditional. $\square$
-
-**Step 4 (Non-perturbative backstop).** By [T-170''](/docs/proofs/physics/toe-embeddings#т-170-double-prime) (ii) [T] the functional integral $Z_{\text{UHM}}^{(M)}$ is defined **non-perturbatively** as a finite-dimensional integral over the compact torus $(S^1)^{21M}$ of the Gap phases; even at the UV value $\lambda_3 = 74$ it is finite, the integrand being bounded on a compact domain. (Corrected 2026-09-26: the domain read "the compact orbifold $(S^1)^{21M}/G_2^M$"; $G_2$ has no action on the torus of phases, and the quotient is withdrawn with Lemma T-170'.1. Finiteness never used it.) $\square$
-
-**Conclusion.** The problem $\lambda_3 \approx 74 > 4\pi$ is **resolved** on three levels:
-
-| Level | Resolution | Status |
-|---|---|---|
-| Effective parameter | $\varepsilon_{\text{eff}} = \lambda_3\varepsilon/(4\pi) \approx 0.059 \ll 1$ — perturbative | [T] |
-| RG at physical scales | $\lambda_3(\mu_{\text{EW}}) \approx 0.011 \ll 4\pi$ | [T] |
-| Non-perturbative | $Z_{\text{UHM}}$ finite on the compact torus $(S^1)^{21M}$ (T-170'' [T]) | [T] |
-
-**Status.** Results depending on loop corrections with $\lambda_3$ are **upgraded** from [H] to **[C at the numerical coefficients]**: the qualitative mass hierarchy and mixing structure are **[T]** (Fano combinatorics); the exact numerical values are **[C]** (they depend on the perturbative order and on the specific value of $\varepsilon_{\text{eff}}$).
-
-*Ported from the RU mirror 2026-07-28: the resolution existed only in Russian, while this page still read «downgraded to [H]» — the two locales gave opposite verdicts on whether the loop results may be trusted.*
-
-**Corollary**: qualitative predictions (number of generations, mass hierarchy, CP violation) **do not depend** on the specific value of $\lambda_3$ — they follow from the combinatorics of the Fano plane. Quantitative predictions (exact mass ratios, mixing angles) **do depend** on it and require non-perturbative confirmation.
-::::
+Consequently the older upgrade of all loop masses/mixings to theorems is withdrawn [✗]. The mechanism remains [H/Pr], conditional on an independently specified field model, spectral/Yukawa coefficients and a controlled expansion or non-perturbative calculation. Fitting $\varepsilon$ to measured masses is calibration, not a prediction of those masses. Exact combinatorial counts survive for the declared Fano grammar; their physical generation and mass interpretations require their own bridges.
 
 ### 6.1 Phenomenological Constraint
 
@@ -457,13 +477,17 @@ The perturbation series converges in powers of $\varepsilon_{\text{eff}}$, **not
 
 **(b)** Suppression $\sim 10^{-2}$ for the second generation is consistent with **one** loop factor:
 
-$$\epsilon_\text{1-loop} \sim \frac{\lambda_3}{16\pi^2} \times (\text{Gap factor}) \sim 10^{-2}$$
+$$
+\epsilon_\text{1-loop} \sim \frac{\lambda_3}{16\pi^2} \times (\text{Gap factor}) \sim 10^{-2}
+$$
 
 at $\lambda_3 \sim 74$, $\text{Gap factor} \sim 0.02$.
 
 **(c)** Suppression $\sim 10^{-5}$ for the first generation is consistent with **two** loop factors:
 
-$$\epsilon_\text{2-loop} \sim \left(\frac{\lambda_3}{16\pi^2}\right)^2 \times (\text{Gap factors}) \sim 10^{-4} \text{--} 10^{-5}$$
+$$
+\epsilon_\text{2-loop} \sim \left(\frac{\lambda_3}{16\pi^2}\right)^2 \times (\text{Gap factors}) \sim 10^{-4} \text{--} 10^{-5}
+$$
 
 **(d)** Hypothesis: **the second generation acquires mass via a one-loop $V_3$ process, the first — via a two-loop process.** The number of loops is determined by the minimum length of the Fano path from $k_n$ to the Higgs that does not pass through the O-sector ($\text{Gap} \sim 1$).
 
@@ -481,11 +505,17 @@ Numerical mass predictions depend on the parameter $\epsilon_\text{eff}$, justif
 
 **(a)** From the texture with $y_t \sim 1$, $\epsilon_{23} \sim \epsilon$, $\epsilon_{13} \sim \epsilon$, $y_c \sim \epsilon^2$, $\epsilon_{12} \sim \epsilon^3$, $y_u \sim \epsilon^4$:
 
-$$m_t \approx y_t \cdot v/\sqrt{2} \approx 174 \text{ GeV}$$
+$$
+m_t \approx y_t \cdot v/\sqrt{2} \approx 174 \text{ GeV}
+$$
 
-$$m_c \approx y_c \cdot v/\sqrt{2} - \frac{|\epsilon_{23}|^2}{y_t} \cdot v/\sqrt{2} \approx \epsilon^2 \cdot 174 \text{ GeV}$$
+$$
+m_c \approx y_c \cdot v/\sqrt{2} - \frac{|\epsilon_{23}|^2}{y_t} \cdot v/\sqrt{2} \approx \epsilon^2 \cdot 174 \text{ GeV}
+$$
 
-$$m_u \approx y_u \cdot v/\sqrt{2} - \frac{|\epsilon_{13}|^2 y_c - |\epsilon_{12}|^2 y_t}{y_c y_t} \cdot v/\sqrt{2} \approx \epsilon^4 \cdot 174 \text{ GeV}$$
+$$
+m_u \approx y_u \cdot v/\sqrt{2} - \frac{|\epsilon_{13}|^2 y_c - |\epsilon_{12}|^2 y_t}{y_c y_t} \cdot v/\sqrt{2} \approx \epsilon^4 \cdot 174 \text{ GeV}
+$$
 
 Corrections from off-diagonal entries have the character of seesaw suppression: the mass of each generation is reduced by mixing with a heavier one.
 
@@ -542,7 +572,9 @@ The mechanism for generating $m_b/m_t$ is fully determined **[T]**: the $\times 
 
 **Theorem.**
 
-$$\frac{m_b(m_t)}{m_t(m_t)} = \frac{y_b^{(\text{tree})} \cdot \varepsilon_{\text{eff}}}{y_t^{(\text{FP})}} \cdot \left(\frac{\alpha_s(m_b)}{\alpha_s(M_R)}\right)^{12/(33-2N_f)} \cdot (1 + \delta_\tau)$$
+$$
+\frac{m_b(m_t)}{m_t(m_t)} = \frac{y_b^{(\text{tree})} \cdot \varepsilon_{\text{eff}}}{y_t^{(\text{FP})}} \cdot \left(\frac{\alpha_s(m_b)}{\alpha_s(M_R)}\right)^{12/(33-2N_f)} \cdot (1 + \delta_\tau)
+$$
 
 **Proof (4 steps).**
 
@@ -550,19 +582,27 @@ $$\frac{m_b(m_t)}{m_t(m_t)} = \frac{y_b^{(\text{tree})} \cdot \varepsilon_{\text
 
 The $b$-quark mass is generated by a loop correction via the intermediate $3$-sector with $\varepsilon_{33} \approx 0.06$ ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум)):
 
-$$y_b^{(\text{1-loop})} = \frac{\lambda_3 \varepsilon_{33}}{16\pi^2} \cdot y_t \approx \frac{74 \times 0.06}{16\pi^2} \times 1.0 \approx 0.028$$
+$$
+y_b^{(\text{1-loop})} = \frac{\lambda_3 \varepsilon_{33}}{16\pi^2} \cdot y_t \approx \frac{74 \times 0.06}{16\pi^2} \times 1.0 \approx 0.028
+$$
 
 **Step 2.** One-loop QCD **enhancement** factor under the running coupling from $M_R$ to $m_b$:
 
-$$\eta_{\text{QCD}} = \left(\frac{\alpha_s(m_b)}{\alpha_s(M_R)}\right)^{12/(33-2N_f)}$$
+$$
+\eta_{\text{QCD}} = \left(\frac{\alpha_s(m_b)}{\alpha_s(M_R)}\right)^{12/(33-2N_f)}
+$$
 
 With $\alpha_s(m_b) \approx 0.22$, $\alpha_s(M_R) \approx 0.02$, $N_f = 5$:
 
-$$\eta_{\text{QCD}} = (11)^{0.522} \approx 3.46$$
+$$
+\eta_{\text{QCD}} = (11)^{0.522} \approx 3.46
+$$
 
 This is an **enhancement** factor (not suppression!), since $\alpha_s$ grows in the IR. The Yukawa coupling $y_b$ grows from UV to IR:
 
-$$y_b(m_b) \approx 0.028 \times 3.46 \approx 0.097$$
+$$
+y_b(m_b) \approx 0.028 \times 3.46 \approx 0.097
+$$
 
 :::info Direction of QCD running
 The QCD beta function **enhances** Yukawa couplings of light quarks in the IR, compensating the loop suppression. Direction of running: $\alpha_s(m_b) > \alpha_s(M_R)$ $\Rightarrow$ $\eta_{\text{QCD}} > 1$.
@@ -572,14 +612,18 @@ The QCD beta function **enhances** Yukawa couplings of light quarks in the IR, c
 
 **Step 4.** Final ratio:
 
-$$\frac{m_b}{m_t} = \frac{y_b(m_b)}{y_t(m_t)} \approx \frac{0.097}{1.0} \approx 0.097$$
+$$
+\frac{m_b}{m_t} = \frac{y_b(m_b)}{y_t(m_t)} \approx \frac{0.097}{1.0} \approx 0.097
+$$
 
 Observed: $m_b/m_t \approx 4.18/172.7 \approx 0.024$. Residual discrepancy $\sim \times 4$ when using the average $\varepsilon$.
 
 :::warning Resolution of the $\times 4$ discrepancy — [H] (corrected 2026-09-25 from [T]; $r_{33}$ is chosen)
 The $\times 4$ discrepancy in $m_b/m_t$ is an **artifact** of using the average $\varepsilon$ instead of the sectoral $\varepsilon_{33}^*(\theta^*)$. In the self-consistent vacuum $\theta^*$ (T-79 [C at (SV)]):
 
-$$y_b = \frac{\lambda_3 \cdot \varepsilon_{33}^*}{16\pi^2} \cdot \eta_{\text{QCD}} \cdot y_t$$
+$$
+y_b = \frac{\lambda_3 \cdot \varepsilon_{33}^*}{16\pi^2} \cdot \eta_{\text{QCD}} \cdot y_t
+$$
 
 With sectoral correction $r_{33} \approx 0.25$: $y_b \approx 0.024$ — agreement by the choice of $r_{33}$. Mechanism [H]; its inputs are $V_3$ (retracted as the vacuum potential), (SV) and $H\sim\gamma_{EU}$.
 :::
@@ -621,7 +665,11 @@ The rigorous budget $10^{-41.5}$ includes the contribution from RG suppression o
 
 :::tip Strengthening: full analytic closed form ([T-216 [C at (SV)]](/docs/proofs/categorical/fundamental-closures#t-216))
 The analytic closed form (amended 2026-08-10 per instrument E26)
-$$\varepsilon_\mathrm{eff}=\frac{4\,|\bar\gamma|_\mathrm{sect}}{9\,(1+\Sigma_0/4)}$$
+
+$$
+\varepsilon_\mathrm{eff}=\frac{4\,|\bar\gamma|_\mathrm{sect}}{9\,(1+\Sigma_0/4)}
+$$
+
 is derived from symbolic $V_\mathrm{Gap}$ minimisation plus Schur's lemma in [T-216](/docs/proofs/categorical/fundamental-closures#t-216); formula (c) below is the **self-consistency equation** for $\varepsilon_{33}$ (its $|\bar\gamma|$ comes from the constant $\lambda_3 = 2\mu^2/(3|\bar\gamma|)$ and itself depends on $\varepsilon_{33}$), not a closed value — reading it as one was what manufactured the former "two-order gap". Solving the self-consistency (E26, no fitted parameters) gives $\varepsilon_\mathrm{eff} = 0.0569$ vs the loop route's $0.0587$ — $3\%$; the value stays [C] only on the sector-ansatz caveat.
 :::
 
@@ -631,13 +679,17 @@ is derived from symbolic $V_\mathrm{Gap}$ minimisation plus Schur's lemma in [T-
 
 **(b)** For the intra-sectoral coherence $\varepsilon_{33}$ (which determines the Yukawa texture), the stationarity condition $\partial V / \partial \varepsilon_{33} = 0$ gives:
 
-$$\varepsilon_{33}^* = \frac{2\lambda_3 \cdot N_{33}^{(\mathrm{Fano})}}{3 \cdot (2\mu^2 + \lambda_4 \cdot \Sigma_0)}$$
+$$
+\varepsilon_{33}^* = \frac{2\lambda_3 \cdot N_{33}^{(\mathrm{Fano})}}{3 \cdot (2\mu^2 + \lambda_4 \cdot \Sigma_0)}
+$$
 
 where $N_{33}^{(\mathrm{Fano})} = 2$ is the number of Fano triples containing exactly two points from the $\mathbf{3}$-sector $\{A,S,D\}$, and $\Sigma_0 = 2(3\varepsilon_{33}^2 + 3\varepsilon_{\bar{3}\bar{3}}^2 + \ldots)$ is the sum of squared coherence moduli.
 
 **(c)** Substituting the canonical values $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|)$ and $\lambda_4 = \mu^2/(2\mathcal{G}^{(0)}_{\mathrm{total}})$ from [Theorem 13.5](/docs/core/dynamics/gap-thermodynamics#константы-из-параметров-угм) [T]:
 
-$$\varepsilon_{33}^* = \frac{4N_{33}^{(\mathrm{Fano})}}{9|\bar{\gamma}| \cdot (1 + \Sigma_0/(2\mathcal{G}^{(0)}_{\mathrm{total}}))}$$
+$$
+\varepsilon_{33}^* = \frac{4N_{33}^{(\mathrm{Fano})}}{9|\bar{\gamma}| \cdot (1 + \Sigma_0/(2\mathcal{G}^{(0)}_{\mathrm{total}}))}
+$$
 
 :::warning The symbolic form does not yet reproduce the phenomenological number
 Substituting $N_{33}^{(\mathrm{Fano})} = 2$ and $|\bar{\gamma}| \approx 0.15$ into the numerator and the leading denominator gives $8/(9 \cdot 0.15) = 5.93$ — that is $O(1)$, roughly **two orders above** the phenomenological $\varepsilon_{\mathrm{eff}} \approx 0.059$. Earlier revisions of this page printed the chain as though it evaluated to $0.059$; it does not, and the discrepancy is a factor of $100$.
@@ -651,7 +703,9 @@ What is established, therefore, splits in two. The **structural** expression abo
 
 **(d)** The global average $\bar{\varepsilon}$ is determined via the weighted combination of sectoral coherences:
 
-$$\bar{\varepsilon} = \frac{1}{21}\left(3\varepsilon_{33}^* + 3\varepsilon_{\bar{3}\bar{3}}^* + 9\varepsilon_{3\bar{3}}^* + 6\varepsilon_{O}^*\right) \approx 0.023$$
+$$
+\bar{\varepsilon} = \frac{1}{21}\left(3\varepsilon_{33}^* + 3\varepsilon_{\bar{3}\bar{3}}^* + 9\varepsilon_{3\bar{3}}^* + 6\varepsilon_{O}^*\right) \approx 0.023
+$$
 
 at $\varepsilon_{3\bar{3}}^* \approx 0$ (confinement) and $\varepsilon_{\bar{3}\bar{3}}^* \approx 10^{-17}$ (electroweak suppression). *Erratum 2026-09-25 (audit A-83):* with the table's own $\varepsilon_O \sim 1$ (T-80, $\mathrm{Gap}(O,i) \approx 1$) this weighted mean is $(3 \cdot 0.06 + 6)/21 \approx 0.29$; the value $0.023$ needs $\varepsilon_O \approx 0.04$. The global average over all 21 pairs is dominated by the six O-pairs and is not the suppression parameter. The corpus now uses the root mean square over the 15 non-O pairs, $\bar\varepsilon = \varepsilon_{33}/\sqrt5 \approx 0.027$ at $\varepsilon_{33} = 0.06$ — [C at (SV)], [sector hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε).
 
@@ -661,11 +715,15 @@ $\blacksquare$
 
 Extracting dimensionless combinations $r_3 := \lambda_3/\mu$ and $r_4 := \lambda_4/\mu^2$:
 
-$$\varepsilon_{\mathrm{eff}} = f(r_3, r_4) = \frac{r_3 \cdot N_{33}^{(\mathrm{Fano})}}{3(1 + r_4 \cdot \Sigma_0 / 2)}$$
+$$
+\varepsilon_{\mathrm{eff}} = f(r_3, r_4) = \frac{r_3 \cdot N_{33}^{(\mathrm{Fano})}}{3(1 + r_4 \cdot \Sigma_0 / 2)}
+$$
 
 This is an **algebraic function** of the potential parameters — not transcendental, requiring no numerical solution. In the limit $r_4 \to 0$ (cubic term dominance):
 
-$$\varepsilon_{\mathrm{eff}} \xrightarrow{r_4 \to 0} \frac{r_3 \cdot N_{33}^{(\mathrm{Fano})}}{3} = \frac{2N_{33}^{(\mathrm{Fano})}}{9|\bar{\gamma}|}$$
+$$
+\varepsilon_{\mathrm{eff}} \xrightarrow{r_4 \to 0} \frac{r_3 \cdot N_{33}^{(\mathrm{Fano})}}{3} = \frac{2N_{33}^{(\mathrm{Fano})}}{9|\bar{\gamma}|}
+$$
 
 Numerically: $\varepsilon_{\mathrm{eff}} \approx 4/(9 \times 0.15) \approx 0.06$ — the suppression parameter is **analytically computable** from the structural constants of the theory.
 
@@ -697,7 +755,9 @@ UHM complements NCG: the **Fano selection rule** fixes $y_1 \sim O(1)$, $y_2 = y
 :::tip Result P6
 The parameter $\varepsilon_{\mathrm{eff}} \approx 0.059$ is an **analytic expression** in terms of $N_{33}^{(\mathrm{Fano})}$, $|\bar{\gamma}|$, and the parameters of $V_{\mathrm{Gap}}$:
 
-$$\boxed{\varepsilon_{\mathrm{eff}} = \frac{4\,|\bar{\gamma}|_{\mathrm{sect}}}{9\,(1 + \Sigma_0/4)}}$$
+$$
+\boxed{\varepsilon_{\mathrm{eff}} = \frac{4\,|\bar{\gamma}|_{\mathrm{sect}}}{9\,(1 + \Sigma_0/4)}}
+$$
 
 *(Amended 2026-08-10 per E26 — see [§9](#9-аналитическая-формула-ε): $|\bar\gamma|$ in the numerator, $N_{33}$ once inside the self-consistency, $\Sigma_0$ the amplitude sum, $r_4 \equiv 1/2$; self-consistent evaluation $0.0569$/$0.0549$ vs the loop $0.0587$.)*
 
@@ -725,7 +785,6 @@ Mass predictions: the order of magnitude is correct for all 9 particles; the bes
 - **Sectoral $\varepsilon$ hierarchy:** $\varepsilon_\text{eff} \sim 0.06$ as sectoral average, self-consistent vacuum equation → [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε)
 - **Higgs sector:** Unique Higgs line $\{A,E,U\}$ → [Higgs Sector](./higgs-sector.md)
 - **NCG**: Chamseddine-Connes spectral action → [arXiv: 1208.1030](https://arxiv.org/abs/1208.1030); Devastato-Lizzi-Martinetti → [arXiv: 1403.7567](https://arxiv.org/abs/1403.7567)
-
 
 ---
 

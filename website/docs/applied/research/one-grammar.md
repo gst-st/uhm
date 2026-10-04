@@ -30,7 +30,7 @@ This is the "primary principle each tradition glimpsed partially": not a shared 
 #### Theorem T-256 (chart classification) [T] {#t-256}
 
 :::tip Theorem T-256 (every possible partial chart, up to gauge) [T]
-Let a partial chart be a subset of the seven axes and/or of the twenty-one channels, considered up to the collineation group of the Fano grammar ($|\mathrm{Aut}| = 168$; the $G_2$-Weyl alphabetization gauge of T-223). Then:
+Let a partial chart be a subset of the seven axes and/or of the twenty-one channels, considered up to the collineation group of the Fano grammar ($|\mathrm{Aut}|=168$; a selected finite action; universal T-223 withdrawn [✗]). Then:
 
 **(a) Axis alphabets.** The $k$-subsets of axes fall into exactly **nine orbit types** ($k = 1\ldots 7$): one each for $k = 1, 2, 5, 6, 7$ and two each for $k = 3$ (a **triad** — one of the 7 lines — vs a **triangle**, 28 gauge copies) and $k = 4$ (a **triangle complement**, containing exactly one line, vs a **quadrilateral** — a line complement containing none).
 

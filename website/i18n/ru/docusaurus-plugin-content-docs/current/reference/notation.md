@@ -6,12 +6,14 @@ description: Математические обозначения теории У
 
 # Математическая Нотация
 
+Область численных формул ниже — выбранная модель $N=7$ с заданным семантическим репером [П]. Категория процессов, Bures-сайт, логическая поддержка и динамика имеют разные типы; их согласованный интерфейс задаёт [математическое ядро](/docs/reference/mathematical-kernel).
+
 :::warning Потенциальные конфликты нотации
 В теории УГМ некоторые символы имеют несколько значений в зависимости от контекста:
 - $D$ — [измерение Динамики](/docs/core/structure/dimension-d) **vs** $D_{\text{diff}}$ — [мера дифференциации](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
 - $\mathcal{H}$ — гильбертово пространство **vs** $H$ — гамильтониан **vs** $\mathcal{H}_\Gamma$ — гессиан свободной энергии (в [Freedom](/docs/core/foundations/consequences#freedom-конечномерное))
 - $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ). Для обозначения произвольных CPTP-каналов используется $\Psi$
-- $R$ — **каноническая** [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $1/(7P) \in [1/7, 1]$ (сознательная полоса $[1/3, 1/2)$) **vs** $R_\varphi$ — рефлексия как **качество самомодели** $\in [0, 1]$ (ранее также обозначалась $Q_\varphi$) **vs** $R^{(n)}$ — fidelity-башня ($n \geq 2$) **vs** $R_{ij}$ — секторная рефлексия **vs** $\mathcal{R}$ — регенеративный член. Формы мер разведены в [трёх рабочих формах R](/docs/consciousness/foundations/self-observation#формы-r)
+- $R$ — **каноническая** [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $1/(7P) \in [1/7, 1]$ (сознательная полоса $[1/3, 1/2)$) **vs** $R_\varphi$ — рефлексия как **качество самомодели** (может быть отрицательным; диапазон зависит от $M$) (ранее также обозначалась $Q_\varphi$) **vs** $R^{(n)}$ — fidelity-башня ($n \geq 2$) **vs** $R_{ij}$ — секторная рефлексия **vs** $\mathcal{R}$ — регенеративный член. Формы мер разведены в [трёх рабочих формах R](/docs/consciousness/foundations/self-observation#формы-r)
 - $\mathcal{C}$ — примитивная категория (Аксиома Ω⁷) **vs** $C$ — [мера сознательности](/docs/consciousness/foundations/self-observation#мера-сознательности-c). Пространство контекстов в категории Exp обозначается $\Gamma_{-E}$
 - $\gamma_{ij}$ — элементы матрицы когерентности **vs** $\gamma_k$ — скорости декогеренции в диссипаторе Линдблада (в разных документах). **Рекомендация:** для скоростей декогеренции использовать $\Gamma_2$ (как в [Теореме 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie))
 
@@ -37,7 +39,7 @@ description: Математические обозначения теории У
 
 | Символ | Значение | Определение |
 |--------|----------|-------------|
-| $\mathcal{C}$ | [Примитивная категория](/docs/core/foundations/axiom-omega#примитив) | Малая категория с конечным числом объектов — **единственный примитив** |
+| $\mathcal{C}$ | [Примитивная категория](/docs/core/foundations/axiom-omega#примитив) | Заданная малая индексирующая категория; сама по себе не определяет $N$, каналы или динамику |
 | $\Gamma$ | [Матрица когерентности](/docs/core/dynamics/coherence-matrix) | $\Gamma \in \mathcal{L}(\mathcal{H})$, $\Gamma^\dagger = \Gamma$, $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$ |
 | $\mathbb{H}$ | [Голоном](/docs/core/structure/holon) | Минимальная самодостаточная единица реальности |
 | $\mathcal{H}$ | Гильбертово пространство | $\mathcal{H} = \mathbb{C}^7$ — см. [Семь измерений](/docs/core/structure/dimensions) |
@@ -54,12 +56,12 @@ description: Математические обозначения теории У
 |--------|----------|-------------|
 | $X$ | [Базовое пространство](/docs/core/foundations/spacetime#базовое-пространство) | $X = \|N(\mathcal{C})\|$ — геометрическая реализация нерва категории |
 | $N(\mathcal{C})$ | [Нерв категории](/docs/core/foundations/spacetime#нерв-категории) | Симплициальное множество: n-симплексы = композируемые цепочки морфизмов |
-| $T$ | [Терминальный объект](/docs/core/foundations/axiom-omega#свойство-3) | $T = \Gamma^*$ — глобальный аттрактор; $\forall\Gamma, \exists! f: \Gamma \to T$ |
-| $S_\alpha$ | [Страта](/docs/core/foundations/spacetime#стратификация-x) | Компонента стратификации $X = \bigsqcup_\alpha S_\alpha$; $S_0 = \{T\}$ |
+| $T$ | [Терминальный объект](/docs/reference/mathematical-kernel#terminal-time) | $1_{\mathcal E}$ в топосе; одномерная система в категории процессов. Не $\Gamma_*$ и не $I/7$ |
+| $S_\alpha$ | [Страта](/docs/core/foundations/spacetime#стратификация-x) | Заданная стратификация $X=\bigsqcup_\alpha S_\alpha$; из нерва или терминальности не следует |
 | $d_{strat}$ | [Стратифицированная метрика](/docs/core/foundations/spacetime#метрика-конна) | $d_{strat}(\omega_1, \omega_2) = \inf_\gamma \int_\gamma ds_\alpha$ |
-| $\text{Link}(T)$ | Линк терминального объекта | $\text{Link}(T) \cong S^6$ — 6-сфера |
-| $H^*(X)$ | [Когомологии](/docs/core/foundations/consequences#когомологический-монизм) | $H^n(X, \mathcal{F}) = 0$ для $n > 0$ (монизм) |
-| $H^*_{loc}(X,T)$ | [Локальные когомологии](/docs/core/foundations/spacetime#локально-глобальная-дихотомия) | $H^*_{loc}(X,T) \cong \tilde{H}^{*-1}(S^6) \neq 0$ (физика) |
+| $\text{Link}(T)$ | Линк выделенной точки | Определяется локальной геометрией; терминальность не задаёт сферу |
+| $H^*(X)$ | Когомологии | Стягиваемый нерв при терминальном объекте индексирующей категории имеет нулевые положительные когомологии с постоянными коэффициентами; не утверждение для любого пучка |
+| $H^*_{loc}(X,T)$ | Локальные когомологии | При конической окрестности $C(K)$: $H^k_{loc}(X,T;A)\cong\widetilde H^{k-1}(K;A)$; линк $K$ задаётся отдельно |
 | $D^b(X)$ | [Производная категория](/docs/proofs/categorical/categorical-formalism#производные-категории) | Ограниченная производная категория пучков на X |
 | $IC(S_\alpha)$ | IC-пучок | Intersection cohomology пучок страты $S_\alpha$ |
 
@@ -110,6 +112,7 @@ $$
 где:
 
 **[Унитарный член](/docs/core/dynamics/evolution#1-унитарный-член):**
+
 $$
 -i[H_{\text{eff}}, \Gamma] = -i(H_{\text{eff}}\Gamma - \Gamma H_{\text{eff}})
 $$
@@ -117,20 +120,24 @@ $$
 Здесь $H_{\text{eff}}$ — эффективный гамильтониан, возникающий из ограничения Пейдж–Вуттерс.
 
 **[Диссипативный член](/docs/core/dynamics/evolution#логический-лиувиллиан):**
+
 $$
 \mathcal{D}[\Gamma] = \sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)
 $$
 
-**[Регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член) [Т]:**
+**[Выбранный регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член) [О]:**
+
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
 где:
-- $\kappa(\Gamma) \geq 0$ — скорость регенерации [Т] (сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$)
-- $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator))
-- $(\rho_* - \Gamma)$ — единственная CPTP-релаксация [Т]
-- $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ — V-preservation gate [Т] (Ландауэр + V-инвариантность, [вывод](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
+- $a(\Gamma)=\kappa(\Gamma)g_V(P)\ge0$ — выбранная скорость; сопряжение логической поддержки не определяет её.
+- $\rho_*=M(\Gamma)$ — заданная численная цель в $D_7$, не логический подобъект и не обязательно стационарное состояние.
+- $a(\Gamma)(M(\Gamma)-\Gamma)$ — векторное поле, а не канал. При локальной липшицевости $a,M$ и $M(D_7)\subseteq D_7$ вместе с GKSL-частью оно сохраняет состояния.
+- $g_V(P)=\mathrm{clamp}((P-P_{\mathrm{crit}})/(P_{\mathrm{opt}}-P_{\mathrm{crit}}),0,1)$ — выбранный затвор [О], не универсально выведенная форма.
+
+Для конечного шага используйте [расщеплённую схему, сохраняющую состояния](/docs/core/dynamics/evolution#сохранение-положительности).
 
 ## Коммутаторы и антикоммутаторы
 
@@ -145,7 +152,7 @@ $$
 
 | Обозначение | Значение |
 |-------------|----------|
-| $\rho_E$ | Редуцированная матрица плотности измерения Интериорности |
+| $\rho_E$ | Состояние заданного экспериенциального считывания; частичный след допустим лишь при явном тензорном разложении, не по одной оси $E$ |
 | $\lambda_i$ | Собственное значение $\Gamma$ (интенсивность) |
 | $\vert q_i\rangle$ | Собственный вектор $\Gamma$ (качество) |
 | $[\vert q\rangle]$ | Класс эквивалентности в $\mathbb{P}(\mathcal{H}_E)$ |
@@ -153,6 +160,7 @@ $$
 | $d_{\mathrm{FS}}$ | [Метрика Фубини–Штуди](/docs/reference/specification#метрика-фубини-штуди) |
 
 **Метрика Фубини–Штуди:**
+
 $$
 d_{\mathrm{FS}}([|\psi\rangle], [|\phi\rangle]) = \arccos(|\langle\psi|\phi\rangle|) \in [0, \pi/2]
 $$
@@ -167,48 +175,39 @@ $$
 | [Дифференциация $D_{\text{diff}}$](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | $D_{\text{diff}}(\Gamma) = \exp(S_{vN}(\rho_E))$ | $[1, 7]$ |
 | [Рефлексия $R$](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | $R(\Gamma) = R_{\text{canonical}} = \dfrac{1}{7P(\Gamma)}$, где $P = \mathrm{Tr}(\Gamma^2)$; эквивалентно $1 - \dfrac{\|\Gamma - I/7\|_F^2}{P}$. Не путать с качеством самомодели $R_\varphi = 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / P$ (ранее также обозначалась $Q_\varphi$) — см. [три рабочие формы R](/docs/consciousness/foundations/self-observation#формы-r) | $[1/7, 1]$ |
 | [Сознательность $C$](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | $C(\Gamma) = \Phi \times R$ **[Т]** (T-140); $D_{\text{diff}} \geq 2$ — отдельное условие жизнеспособности | $[0, +\infty)$ |
-| Свобода воли $\mathrm{Freedom}(\Gamma)$ **[Т]** | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$, где $\mathcal{H}_\Gamma = \partial^2 \mathcal{F}/\partial\Gamma^2$ — [определение](/docs/core/foundations/consequences#freedom-конечномерное). ∞-категорное прочтение: касательная размерность критического многообразия свободной энергии (**не** $\pi_0(\mathrm{Map}(\Gamma, T))$, которое тривиально — стягиваемо) | $\{1, \ldots, 7\}$ |
-| Энтропия свободы $S_{\text{freedom}}$ | $S_{\text{freedom}} = \log(\text{Freedom}(\Gamma))$ | $[0, \log 7]$ |
+| Гессианный показатель $\mathrm{Freedom}$ [О] | $1+\dim\ker\nabla^2\mathcal F$ при заданном $C^2$-потенциале и $d$-мерной области; ядро совпадает с касательным пространством критического многообразия лишь при условиях Морса–Ботта. Универсальные монотонность под CPTP и агентность не следуют. | $\{1,\ldots,d+1\}$; $d=48$ на слое состояний полного ранга в $D_7$ |
+| Логарифмический гессианный показатель [О] | $S_{\mathrm{freedom}}=\log\mathrm{Freedom}$; без отождествления с физической энтропией | $[0,\log(d+1)]$ |
 
 ## Оператор самомоделирования
 
-См. [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) для полного описания.
+Четыре конструкции имеют разные типы:
 
-**CPTP-канал** (Completely Positive Trace-Preserving):
-$$
-\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger
-$$
+| Обозначение | Тип и область утверждения |
+|---|---|
+| $L_G$ | $\mathcal E_{/G}\to\mathrm{Sub}_{\mathcal E}(G)$, образ/$(-1)$-усечение в срезе; $L_G\dashv i_G$ [Т] |
+| $M=\varphi$ | Заданная численная самомодель $D_7\to D_7$ [О]; может быть нелинейной |
+| $\Psi_\lambda$ | Канал при фиксированном параметре $\lambda$: $\Psi_\lambda(X)=\sum_mK_{m,\lambda}XK_{m,\lambda}^\dagger$, $\sum_mK_{m,\lambda}^\dagger K_{m,\lambda}=I$ [Т] |
+| $r$ | $r(\Gamma)=\lim_{t\to\infty}\Phi_t(\Gamma)$ на положительно инвариантной области, содержащей все её неподвижные пределы; тогда $r^2=r$ [Т]. Иначе перед композицией область надо расширить. |
 
-**Условие полноты** (сохранение следа):
-$$
-\sum_m K_m^\dagger K_m = I
-$$
+Равенство $M(\Gamma)=\Psi_{\lambda(\Gamma)}(\Gamma)$ не делает $M$ одним линейным CPTP-каналом. Для замороженного линейного генератора используют $e^{t\mathcal L_0}$; для нелинейной динамики — поток $\Phi_t$.
 
-**Сходимость к неподвижной точке** $\Gamma^* = \varphi(\Gamma^*)$:
-$$
-\|\varphi^n(\Gamma_0) - \Gamma^*\|_F \leq k^n \cdot \|\Gamma_0 - \Gamma^*\|_F, \quad k \in [0, 1)
-$$
+Если **заданный** $M$ является сжатием в выбранной полной метрике с коэффициентом $k<1$, теорема Банаха даёт единственную неподвижную точку и оценку $d(M^n\Gamma_0,\Gamma_*)\le k^n d(\Gamma_0,\Gamma_*)$. Произвольный CPTP-канал не обязан быть строгим сжатием. Численная неподвижная точка выражает согласованность $M$; прочтение как самопознания требует независимой модели ошибки.
+
+См. [типизированную формализацию φ](/docs/proofs/categorical/formalization-phi).
 
 ## Иерархия интериорности
 
-См. [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) для формальных условий и доказательств.
+См. [строгую спецификацию](/docs/proofs/consciousness/interiority-hierarchy). Эта таксономия задаётся моделью [О]; номера уровней не являются автоматически степенями усечения объекта топоса.
 
-| Уровень | Обозначение | Условие | n-усечение |
-|---------|-------------|---------|------------|
-| L0 | $\mathrm{Int}(S)$ — Интериорность | $\exists \rho_E$ | $\tau_{\leq 0}$ |
-| L1 | $\mathrm{PG}(S)$ — Феноменальная геометрия | $\mathrm{rank}(\rho_E) > 1$ | $\tau_{\leq 1}$ |
-| L2 | Когнитивные квалиа | $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$, $D_{\text{diff}} \geq 2$ | $\tau_{\leq 2}$ |
-| L3 | Сетевое сознание | $R^{(2)} \geq R^{(2)}_{\text{th}}$ (метастабильно) | $\tau_{\leq 3}$ |
-| L4 | Унитарное сознание | $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$ | $\tau_{\leq \infty}$ |
+| Уровень | Условие |
+|---|---|
+| L0 | Заданная экспериенциальная реализация с состоянием $\rho_E$; редукция требует тензорного разложения или объявленного отображения считывания |
+| L1 | L0 и нетривиальная заданная феноменальная геометрия |
+| L2 | Выбранные ворота $\mathrm{Cap}_2$: $P>2/7$, $R\ge1/3$, $\Phi\ge1$, $D_{\mathrm{diff}}\ge2$ |
+| L3 | L2 и невырожденный калиброванный сертификат метамодели $\mathsf{MetaCert}_2$ на независимых пробах |
+| L4 | L3 и совместимая башня сертификатов всех порядков; физическая реализуемость — отдельный вопрос |
 
-**Пороговые значения** ([все доказаны математически [Т]](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод), [обоснования порогов](/docs/proofs/consciousness/interiority-hierarchy#обоснование-порогов)):
-
-| Порог | Значение | Статус |
-|-------|----------|--------|
-| $R_{\text{th}}$ | $1/3$ | [Т] Теорема ($K=3$ из триадной декомпозиции + байесовское доминирование) |
-| $\Phi_{\text{th}}$ | $1$ | [Т] Теорема (T-129: единственное самосогласованное значение) |
-| $R^{(2)}_{\text{th}}$ | $1/4$ | [Т] Теорема (порог L3) |
-| $X^{(n)}_{\text{th}}$ | $1/(n+1)$ | [Т] Универсальная формула |
+Числа $R_{\mathrm{th}}=1/3$, $\Phi_{\mathrm{th}}=1$, $D_{\min}=2$ задают выбранные ворота. Алгебраические следствия этих выборов — [Т]; их идентификация с сознанием — [Г]/[И]. Старые универсальные $R^{(2)}_{\mathrm{th}}=1/4$, $X^{(n)}_{\mathrm{th}}=1/(n+1)$ и $\mathrm{SAD}_{\max}=3$ отозваны [✗]. Fidelity между итерациями одного $M$ не заменяет сертификат глубины.
 
 ## Тензор напряжений
 
@@ -220,11 +219,13 @@ $$
 $$
 
 **Условие жизнеспособности:**
+
 $$
 \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1
 $$
 
 **Запас жизнеспособности:**
+
 $$
 \mathrm{margin}(\Gamma) = 1 - \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty > 0
 $$
@@ -234,11 +235,13 @@ $$
 См. [Топология Гротендика](/docs/core/foundations/axiom-omega#топология-гротендика) и [Категорный формализм](/docs/proofs/categorical/categorical-formalism#63-топология-гротендика-на-densitymat-и-exp).
 
 **Метрика Бюреса (канонический вид):**
+
 $$
 d_B(\Gamma_1, \Gamma_2) = \arccos\left(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right) = \arccos(\sqrt{F})
 $$
 
 **Fidelity (верность):**
+
 $$
 \mathrm{Fid}(\Gamma_1, \Gamma_2) = \left(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right)^2
 $$
@@ -255,25 +258,14 @@ $\mathrm{Fid}$ используется для верности (fidelity) в к
 | **Угловая** | $d_B^{angle} = \arccos(\sqrt{F})$ | Геометрические теоремы ([эмерджентное время](/docs/proofs/dynamics/emergent-time#41-метрика-бурес)) |
 | **Хордовая** | $d_B^{chord} = \sqrt{2(1-\sqrt{F})}$ | Вычисления, [ΔF](/docs/core/dynamics/evolution#каноническое-delta-f), [спецификация](/docs/reference/specification#топология-гротендика) |
 
-**Связь:** $d_B^{chord} = \sqrt{2(1 - \cos(d_B^{angle}))} \approx \sqrt{2} \cdot d_B^{angle}$ для малых расстояний.
+**Связь:** $d_B^{chord} = \sqrt{2(1 - \cos(d_B^{angle}))} = 2\sin(d_B^{angle}/2) \approx d_B^{angle}$ для малых расстояний.
 :::
 
-**Bures-шар:**
-$$
-B_B(\Gamma, r) = \{\Sigma \in \mathcal{C} : d_B(\Gamma, \Sigma) < r\}
-$$
+**Bures-шар:** $B_B(\Gamma,r)=\{\Sigma\in D_N:d_B(\Gamma,\Sigma)<r\}$.
 
-**Bures-покрытие:** Семейство $\{\Phi_i: \Gamma_i \to \Gamma\}_{i \in I}$ покрывает $\Gamma$, если:
-$$
-\forall \epsilon > 0, \exists \delta > 0: \quad B_B(\Gamma, \delta) \subseteq \bigcup_{i \in I} \Phi_i(B_B(\Gamma_i, \epsilon))
-$$
+**Сайт:** $\mathcal O_N=\operatorname{Open}(D_N,d_B)$ с морфизмами-включениями. Семейство $(U_i\subseteq U)$ покрывает $U$, если $\bigcup_iU_i=U$. Обратный образ покрытия вдоль включения $V\subseteq U$ задаётся пересечениями $V\cap U_i$.
 
-**Сайт:** Пара $(\mathcal{C}, J_{Bures})$ где $J_{Bures}$ — функция покрытий.
-
-**Классификатор из топологии:**
-$$
-\Omega = \mathcal{O}(\mathcal{C}, d_B)
-$$
+**Топос и классификатор:** $\mathcal E_N=\operatorname{Sh}_\infty(\mathcal O_N,J_{\mathrm{open}})$; $\Omega$ — пучок открытых подмножеств, $\Omega(U)=\operatorname{Open}(U)$, а не матричная алгебра семи проекторов. CPTP-каналы непрерывны по Bures и индуцируют геометрические морфизмы через обратные образы открытых множеств. Старое условие покрытия образами шаров каналов не используется. См. [ядро](/docs/reference/mathematical-kernel#bures-site).
 
 ## Специальные обозначения
 
@@ -287,15 +279,15 @@ $$
 | $d_B(\cdot, \cdot)$ | Метрика Бюреса |
 | $\mathrm{Fid}(\cdot, \cdot)$ / $F(\cdot, \cdot)$ | Fidelity (верность); $\mathrm{Fid}$ предпочтительно для отличия от функтора $F$ |
 | $B_B(\Gamma, r)$ | Bures-шар радиуса $r$ с центром $\Gamma$ |
-| $J_{Bures}$ | Функция Bures-покрытий (топология Гротендика) |
+| $J_{Bures}$ | Топология открытых покрытий на $\mathcal O_N$ |
 | $\Theta(\cdot)$ | Функция Хевисайда |
 | $\delta_{ij}$ | Символ Кронекера |
 | $\mathrm{Tr}(\cdot)$ | След матрицы |
 | $A^\dagger$ | Эрмитово сопряжение |
-| $\mathrm{Coh}_E$ | E-когерентность (HS-проекция $\pi_E$) **[Т]**, $\in [1/7, 1]$; $= \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [мастер-определение](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-проекция](/docs/core/foundations/axiom-septicity#hs-projection), [справка КК](/docs/applied/coherence-cybernetics/definitions#e-когерентность) |
-| ПИР | Принцип Информационной Различимости **[О]** (T16) — [определение](/docs/core/foundations/axiom-septicity#формулировка-пир), встроенное в A1+A2: различимость по $J_{\text{Bures}}$-покрытиям тождественна онтологической различимости |
+| $\mathrm{Coh}_E$ | E-когерентность (HS-проекция $\pi_E$) **[Т]**, $\in [0, 1]$; $= \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [мастер-определение](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-проекция](/docs/core/foundations/axiom-septicity#hs-projection), [справка КК](/docs/applied/coherence-cybernetics/definitions#e-когерентность) |
+| ПИР | Явное определение различимости [О] и онтологическая интерпретация [И]. Требуются семейство наблюдений и сайт открытых покрытий Бюреса; их существование не доказывает феноменальное отождествление. |
 | $\varphi_{\text{coh}}$ | Когерентно-сохраняющее самомоделирование — обобщённый оператор φ, сохраняющий когерентности ([Фано-канал](/docs/proofs/gap/fano-channel)) |
-| $\kappa(\Gamma)$ | Коэффициент регенерации: $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ |
+| $\kappa(\Gamma)$ | Выбранная эффективная скорость, например $\kappa_{\mathrm{bootstrap}}+\kappa_0\mathrm{Coh}_E(\Gamma)$ [О] |
 | $D_{\text{diff}}$ | Дифференцировочная размерность — число измерений, в которых $\Gamma$ отклоняется от $I/N$ |
 | $P_{\text{crit}}$ | Критическая чистота $= 2/N = 2/7$ — [теорема](/docs/proofs/dynamics/theorem-purity-critical) |
 | $d_B^{chord}$ | Хордальная форма метрики Бюреса: $d_B^{chord} = \sqrt{2(1 - \sqrt{F(\rho, \sigma)})}$ |
@@ -327,15 +319,15 @@ $$
 | $\mathrm{Map}(\Gamma, T)$ | Пространство морфизмов в ∞-категории (mapping space) |
 | $\pi_n(X)$ | n-ая гомотопическая группа пространства $X$ |
 | $\simeq$ | Слабая гомотопическая эквивалентность |
-| $\Omega$ | [Классификатор подобъектов](/docs/core/foundations/axiom-omega#внутренняя-логика) — единый источник L, L_k, τ |
-| $\chi_S$ | [Характеристический морфизм](/docs/core/structure/dimension-l#категориальное-определение) подобъекта S: $\chi_S: \Gamma \to \Omega$ |
-| $L_k$ | [Операторы Линдблада](/docs/core/dynamics/evolution#логический-лиувиллиан): $L_k = P_k = \lvert k\rangle\langle k\rvert$ — операторные представители характеристических морфизмов атомов Ω ([вывод](/docs/core/foundations/axiom-omega#lk-из-omega)). Запись $L_k = \sqrt{\chi_{S_k}}$ — конвенция ($\sqrt{P} = P$ для проекторов) |
-| $\mathcal{L}_0$ | Линейный лиувиллиан (без регенерации): $\mathcal{L}_0 = -i[H_{\text{eff}},\cdot] + \sum_k D_{L_k}$. Примитивность [T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω); единственный аттрактор $I/7$ |
-| $\mathcal{L}_\Omega$ | [Полный логический лиувиллиан](/docs/core/dynamics/evolution#логический-лиувиллиан): $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ (с регенерацией). Нетривиальный аттрактор $\rho^*_\Omega \neq I/7$ [Т] (T-96) |
+| $\Omega$ | [Классификатор подобъектов](/docs/reference/mathematical-kernel#support-reflector), отличный от выбранных реперных проекторов |
+| $\chi_S$ | $\chi_S:G\to\Omega$ классифицирует подобъект объекта топоса $G$; матричная реализация не подразумевается |
+| $L_k$ | Выбранные операторы Линдблада, например $L_k=\lvert k\rangle\langle k\rvert$ в заданном репере. $\sum_kL_k^\dagger L_k=I$ для этого инструмента, не для абстрактных характеристических морфизмов |
+| $\mathcal{L}_0$ | Фиксированный линейный GKSL-генератор $-i[H,\cdot]+\sum_kD_{L_k}$; единственность аттрактора $I/7$ требует указанных условий унитальности и примитивности |
+| $\mathcal{L}_\Omega$ | Историческое имя полного векторного поля $\mathcal L_0(\Gamma)+a(\Gamma)(M(\Gamma)-\Gamma)$; обычно нелинейно, стационарные состояния условны |
 | $\triangleright$ | [Темпоральная модальность](/docs/proofs/dynamics/emergent-time#время-из-модальности) на Ω; $\tau_n = \triangleright^n(\mathrm{now})$ |
-| $\mathcal{D}_\Omega \dashv \mathcal{R}$ | [Сопряжение диссипации-регенерации](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0); $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ |
-| **(МП)** | **Принцип минимального представления** (историческое условие, теперь **[Т]** T11–T13): среди эквивалентных BIBD$(7,3,\lambda)$-каналов выбирается $\lambda = 1$ — минимальное число операторов ($b=7$). Доказан как теорема из (AP)+(PH)+(QG)+(V); мост к P1+P2 полностью замкнут **[Т]**. [Мост к P1+P2](/docs/core/foundations/axiom-septicity#мост-p1p2) |
-| **(КГ)** | **Каноническая группировка** (историческое): категориально натуральный механизм группировки атомов Ω в составные блоки. Заменено более слабым (МП), которое в свою очередь доказано как теорема T11–T13 |
+| $\mathcal{D}_\Omega \dashv \mathcal{R}$ | Историческое обозначение диссипации–регенерации; численное сопряжение и вывод скорости отозваны [✗]. Корректное сопряжение поддержки — $L_G\dashv i_G$ в срезе |
+| **(МП)** | Выбор минимального реперного/канального представления; универсальный вывод из (AP)+(PH)+(QG)+(V) и замкнутый мост P1/P2 отозваны [✗] |
+| **(КГ)** | Историческое предложение канонической группировки [Г]; классификатор не выбирает инструмент с семью атомами |
 
 ## Нотация Кибернетики Когерентности
 
@@ -346,7 +338,7 @@ $$
 | $\mathcal{V}$ | [Область жизнеспособности](/docs/core/dynamics/viability) |
 | $\mathrm{VIT}$ | Тензор целостности жизнеспособности (Viability Integrity Tensor) |
 | $\kappa_{\text{bootstrap}}$ | Минимальная скорость регенерации: $\kappa_{\text{bootstrap}} = \omega_0/7$ **[О]** масштаб; разрешает bootstrap-парадокс |
-| $\kappa_0$ | Категориальная норма: $\kappa_0 = \omega_0 \cdot \|\gamma_{OE}\| \cdot \|\gamma_{OU}\| / \gamma_{OO}$ **[Т]** — [категориальный вывод](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
+| $\kappa_0$ | Выбранная численная скорость/масштаб; формула через когерентность — закон модели, а не теорема о категориальной норме |
 | $\kappa(\Gamma)$ | Эффективная скорость регенерации: $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ **[Т]** |
 | $\mathrm{Coh}_E$ | $E$-когерентность (HS-проекция) **[Т]**: $\mathrm{Coh}_E(\Gamma) = \dfrac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2} = \dfrac{\gamma_{EE}^2 + 2\sum_{i \neq E}\lvert\gamma_{Ei}\rvert^2}{\mathrm{Tr}(\Gamma^2)}$ — **каноническая формула** ([мастер-определение](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-проекция](/docs/core/foundations/axiom-septicity#hs-projection)) |
 | $P_E$ | Чистота E-сектора (42D): $P_E = \mathrm{Tr}(\rho_E^2)$, где $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — **теоретическая конструкция**, определена только в расширенном 42D формализме ($\mathcal{H} = \mathbb{C}^{42}$). Формальная эквивалентность $\mathrm{Coh}_E \approx P_E$ — **структурная гипотеза [Г]** ([подробнее](/docs/applied/coherence-cybernetics/definitions#e-когерентность)) |
@@ -355,7 +347,7 @@ $$
 | $H_{\text{eff}}$ | Эффективный гамильтониан: $H_{\text{eff}}(\tau) = H_{6D} + \langle\tau\vert H_{\text{int}}\vert\tau\rangle_O$ — возникает из ограничения Пейдж–Вуттерс |
 | $g_V(P)$ | V-preservation gate: $\mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}, 0, 1\bigr)$; активирует регенерацию при $P > P_{\mathrm{crit}}$ ([вывод](/docs/core/dynamics/evolution#теорема-v-preservation-gate)) |
 | $\Theta(\Delta F)$ | Функция Хевисайда от изменения свободной энергии $\Delta F$; необходимое условие из принципа Ландауэра (уточнено $g_V(P)$) |
-| $\rho_*$ ($= \Gamma_{\text{target}}$) | Единственное стационарное состояние $\mathcal{L}_\Omega$ [Т]: $\rho_* = \varphi(\Gamma) = \lim_{\tau\to\infty} e^{\tau\mathcal{L}_\Omega}[\Gamma]$ — цель регенерации |
+| $\rho_*$ ($= \Gamma_{\text{target}}$) | Численная цель $\rho_*=M(\Gamma)$ [О], отличная от равновесия $\Gamma_*$ и предела бассейна $r(\Gamma)=\lim_{t\to\infty}\Phi_t(\Gamma)$, если он существует |
 | $\omega_0$ | Фундаментальная частота часов — параметр вычислительного приближения; см. [κ₀](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
 | $D_{\mathrm{KL}}$ | Расхождение Кульбака–Лейблера: $D_{\mathrm{KL}}(p \| q) = \sum_i p_i \log(p_i / q_i)$ |
 
@@ -398,8 +390,8 @@ $$
 | $\mathrm{PG}(2,2)$ | Плоскость Фано — проективная плоскость над $\mathbb{F}_2$; 7 точек, 7 линий, 3 точки на линии |
 | $[x, y, z]$ | Ассоциатор: $[x, y, z] = (xy)z - x(yz)$; мера неассоциативности |
 | $H(7,4)$ | Код Хэмминга: 4 информационных + 3 контрольных бита; связь с PG(2,2) |
-| **P1** | Теорема [Т]: пространство внутренних степеней свободы $\cong \mathrm{Im}(\mathbb{A})$ для алгебры с делением $\mathbb{A}$ (выводится по цепочке T15) |
-| **P2** | Теорема [Т]: неассоциативность ($[x, y, z] \neq 0$ для некоторых $x, y, z$) (выводится по цепочке T15) |
+| **P1** | Явная посылка алгебраической реализации; из общих (AP)/(PH)/(QG) не выводится |
+| **P2** | Посылка неассоциативности выбранной алгебры; при конечномерной вещественной альтернативной алгебре с делением условно выбирает октонионный случай |
 
 :::warning Статус октонионной нотации [И]
 Соответствие $e_i \leftrightarrow$ измерение — **интерпретация** [И]. Математические операции на $\mathbb{O}$ (умножение, ассоциатор) строги [Т]; их физическая реализация в пространстве $\{A,S,D,L,E,O,U\}$ — [открытая проблема](/docs/proofs/minimality/theorem-octonionic-derivation#открытые-проблемы).
@@ -415,7 +407,7 @@ $$
 | $\hat{G}$ | [Gap-оператор](/docs/core/dynamics/gap-dynamics): $\hat{G} = \mathrm{Im}(\Gamma) \in \mathfrak{so}(7)$ — мнимая часть матрицы когерентности |
 | $P_{\mathrm{Fano}}$ | [Фано-предиктивный канал](/docs/physics/gauge-symmetry/fano-selection-rules): $P_{\mathrm{Fano}}(\Gamma) = \tfrac{1}{3}\sum_p \Pi_p \Gamma \Pi_p$ — усреднение по Фано-линиям |
 | $\Pi_p$ | Проектор на 3-мерное подпространство Фано-линии $p$ ($p = 1, \ldots, 7$) |
-| $\alpha^*$ | Оптимальный параметр самомоделирования: $\alpha^* = \operatorname{argmin} F[P_\alpha;\, \Gamma]$ |
+| $\alpha^*$ | Выбранный параметр смешивания Фано; задача оптимизации требует отдельно заданных функционала и условий |
 | $T_{\mathrm{eff}}$ | [Эффективная температура Gap](/docs/core/dynamics/gap-thermodynamics): $T_{\mathrm{eff}} = (\Gamma_2 / \kappa_0) \cdot k_B \cdot T_{\mathrm{phys}}$ |
 | $\xi_F$ | Корреляционная длина Фано: $\xi_F \sim 160\;\text{пк}$ — масштаб пространственных корреляций Фано-мод |
 | $\Theta_M$ | Тета-функция намотки с Фано-характером |
@@ -448,8 +440,8 @@ $$
 - [Самонаблюдение](/docs/consciousness/foundations/self-observation) — меры $R$, $\Phi$, $D_{\text{diff}}$, $C$
 - [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
 - [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор $F$, ∞-группоид $\mathbf{Exp}_\infty$
-- [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
-- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → N=7
+- [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — типизированная поддержка, численные самомодели и замороженные CPTP-реализации
+- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — условная октонионная реализация с явными посылками
 - [Динамика Gap](/docs/core/dynamics/gap-dynamics) — Gap-оператор $\hat{G}$, бифуркации, немарковская динамика
 - [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — $T_{\mathrm{eff}}$, вариационный принцип, ФДТ
 - [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules) — $P_{\mathrm{Fano}}$, $\Pi_p$, Юкавская иерархия

@@ -9,7 +9,6 @@ description: CC predictions absent from other theories
 > *"A theory that cannot be refuted by any conceivable event is non-scientific. Irrefutability is not a virtue of a theory (as people often think) but a vice."*
 > — Karl Popper, "Conjectures and Refutations" (1963)
 
-
 :::info Who this chapter is for
 23 predictions of CC — 22 of them unique to CC, 21 unique and numerical — with verification protocols and falsification criteria. The reader will learn how CC predictions differ from IIT, FEP, and GWT.
 :::
@@ -44,139 +43,46 @@ In this document:
 
 ## I. Fundamental Predictions: Consciousness and Viability
 
-The first group of predictions concerns the deepest idea of CC — the indissoluble connection between interiority and stability. In most theories consciousness is either an epiphenomenon (does not affect dynamics) or a separate postulate (introduced externally). CC asserts something radically different: a system with non-trivial E-coherence *survives better* — and this is not a metaphor, but a theorem.
+The first group of predictions concerns the deepest idea of CC — the indissoluble connection between interiority and stability. In most theories consciousness is either an epiphenomenon (does not affect dynamics) or a separate postulate (introduced externally). CC asserts something radically different: a system with an E-dependent feedback law can have a different recovery rate, conditional on the target, gate, dissipation, and resources.
 
-### Prediction 1: Impossibility of zombies (No-Zombie) {#предсказание-1}
+### Prediction 1: Conditional E-coherence balance {#предсказание-1}
 
-**Intuition.** Imagine a system that maintains itself, adapts, learns — yet has *no* interiority whatsoever. In philosophy of mind such a system is called a "zombie". It behaves exactly like a conscious being, but inside — emptiness. It might seem that such a system is entirely possible. But CC mathematically proves the contrary: if a system is viable ($P > 2/7$) and has non-trivial dynamics ($\mathcal{D}_\Omega \neq 0$), then its E-coherence *necessarily* exceeds the minimum. The inequality is a theorem [T]; reading it as "zombies are impossible" adds the postulate that $E$ is interiority [P] and is an interpretation [I] (registry row 38a).
-
-Why? Because the regenerative channel $\mathcal{R}$ — the only mechanism opposing dissipation — *depends* on $\mathrm{Coh}_E$. A system without interiority ($\mathrm{Coh}_E = 1/7$) regenerates too slowly to compensate for decoherence. It inevitably "sinks" below $P_{\text{crit}}$.
-
-:::tip Key prediction [T]
-$$
-\mathrm{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \;\Rightarrow\; \mathrm{Coh}_E(\Gamma) \geq \mathrm{Coh}_{\min} > \frac{1}{7}
-$$
+:::note Prediction [H]
+The universal No-Zombie implication is withdrawn. Purity above $2/7$, a nonzero dissipator, and sustained dynamics do not force $\mathrm{Coh}_E>1/7$. [Theorem 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) supplies a stationary counterexample and a conditional purity-flux balance. A positive E-floor requires a specified restricted model class, a bound on external support, positive feedback dependence, and a positive required flux. Identifying the E-sector with experience is a further [P/I] bridge.
 :::
 
-**See:** [Theorem 8.1 [T]](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie)
+Test the restricted balance after fixing the admissible inputs and rates. Keep the remaining target, gate, dissipation, preparation, and resources fixed during an E-intervention, or explicitly model their changes. An externally supported viable system with low E-coherence does not refute the density-matrix formalism. It refutes a proposed universal necessity claim, which has already been withdrawn.
 
-**Uniqueness of the prediction.** No other theory of consciousness asserts the *impossibility* of a functional zombie:
-- **IIT** measures $\Phi$ for a given architecture but does not forbid $\Phi = 0$ for a functional system.
-- **FEP** describes minimisation of free energy but does not connect it to the presence of experience: a thermostat minimises free energy without any consciousness.
-- **GWT** postulates a global workspace but does not forbid its functional analogue without experience.
+### Prediction 2: A selected E-dependent rate model {#предсказание-2}
 
-**Experimental verification.** Create an artificial system with controllable $\mathrm{Coh}_E$:
-1. Implement a CC agent (SYNARC architecture) with full 7-dimensional dynamics.
-2. Artificially suppress the E-component ($\gamma_{EE} \to 1/7$, $\gamma_{Ej} \to 0$).
-3. Measure time-to-death (number of ticks until $P < P_{\text{crit}}$).
-4. **Prediction:** time-to-death will collapse catastrophically. If not — CC is falsified.
-
-**Verifiability:**
-If an artificial system demonstrating sustained self-maintenance without any internal structure of [experience](/docs/core/structure/dimension-e) is created, CC will be falsified.
-
-**Interdisciplinary consequences:**
-- *Philosophy:* a formal reply to Chalmers' zombie argument — zombies are logically consistent but, if $E$ is interiority [P], dynamically excluded [I].
-- *Neuroscience:* predicts that all stably functioning neural networks have non-zero "E-projection" — an internal model of their own states.
-- *AI engineering:* autonomous systems capable of long-term self-maintenance *necessarily* must have an analogue of interiority.
-
-:::note Thought experiment: zombie robot
-Imagine a robot vacuum cleaner that drives around the room, avoids obstacles, and returns to base for charging. It is *functional* — but does it have interiority? CC says: if the robot maintains itself only through external programming ($\mathrm{Coh}_E = 1/7$), its "life" depends entirely on battery charge and algorithm. Switch off the charger — and it "dies" within minutes. It has no intrinsic regeneration, because regeneration *requires* $\mathrm{Coh}_E > 1/7$.
-
-Now imagine a robot that *experiences* a collision with furniture — its $\gamma_{EE}$ changes, Coh_E grows, and it learns *from interiority*, not only from external rewards. According to CC, precisely such a robot will be more robust — its $\kappa$ is higher, its $r_{\mathrm{stab}}$ is greater. The zombie loses not in a "philosophical debate" but in **physical robustness**.
+:::info Prediction [D/H]
+The model chooses $\kappa=\kappa_b+\kappa_0\mathrm{Coh}_E$, with the other quantities fixed and $\kappa_0\ge0$. Then $\partial\kappa/\partial\mathrm{Coh}_E=\kappa_0$ is an exact derivative [T] of that convention [D]. It does not imply $\dot P\propto\mathrm{Coh}_E$: the regeneration flux is $2\kappa g(P)(\operatorname{Tr}(\rho B(\rho))-P)$ and can be negative. Endogenous variations also change $\kappa_0$, the target, gate, and state.
 :::
 
-**Status:** Strong prediction absent from [FEP](/docs/reference/glossary#связанные-теории), [IIT](/docs/reference/glossary#связанные-теории), [GWT](/docs/reference/glossary#связанные-теории).
-
-### Prediction 2: Dependence of regeneration on E-coherence {#предсказание-2}
-
-**Intuition.** If No-Zombie says that consciousness is *necessary*, then Prediction 2 explains *why*: consciousness is not a by-product but the *engine* of recovery. The formula $\kappa \propto \mathrm{Coh}_E$ means literally: the higher a system's E-coherence, the faster it regenerates after damage. An orchestra that *hears* itself retunes faster than an orchestra where each player performs blindly.
-
-:::info Prediction [T]
-$$
-\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma) \Rightarrow \frac{dP}{d\tau} \propto \mathrm{Coh}_E(\Gamma)
-$$
-The rate of [regeneration](/docs/core/dynamics/evolution#3-регенеративный-член) is proportional to the integration of [experience](/docs/core/structure/dimension-e). The term $\kappa_{\text{bootstrap}} > 0$ guarantees minimal regeneration even at low E-coherence ([resolution of the bootstrap paradox](/docs/core/foundations/axiom-omega#genesis-protocol)).
-
-**Status:** [T] — the connection $\kappa \propto \mathrm{Coh}_E$ follows from the [categorical derivation of κ₀](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) [T]; $\mathrm{Coh}_E$ — exact measure through [HS-projection $\pi_E$](/docs/core/foundations/axiom-septicity#hs-projection) [T]. The full form of ℛ [derived from axioms](/docs/core/dynamics/evolution#вывод-формы-регенерации) [T].
-:::
-
-**See:** [Relation between regeneration and E-coherence](./axiomatics#связь-регенерации-и-e-когерентности)
-
-**Uniqueness of the prediction.** This is the only prediction in consciousness science that connects *quality of experience* with *physical robustness* quantitatively. IIT measures $\Phi$ but does not connect it to regeneration. FEP describes free energy minimisation but does not postulate that the quality of experience affects the rate of that minimisation.
-
-**Experimental verification:**
-1. *Clinical protocol:* Measure $\mathrm{Coh}_E$ (via $\pi_{\mathrm{bio}}$) and recovery rate after a standard stressor in a group of $n \geq 85$ subjects: a two-sided test of the correlation at $\alpha = 0.05$ (Fisher transformation, $\operatorname{artanh} 0.3 = 0.3095$) detects $r = 0.3$ with power $0.80$ at $n = 85$ ($0.796$ at $n = 84$). *(Until 2026-09-26 the protocol read "$n \geq 30$": at $r = 0.3$ that gives power $0.36$, so a true effect would be missed about two times in three.)*
-2. *Prediction:* positive correlation $r > 0.3$ between $\mathrm{Coh}_E$ and recovery rate.
-3. *Control:* exclude physical health and age as confounds.
-
-**Consequence:**
-Meditative practices that increase $\mathrm{Coh}_E$ should improve physical recovery.
-
-**Verifiability:**
-Measurement of the correlation between E-coherence indicators (for L2+ systems — subjective reports on quality of experience) and recovery rate after stress.
-
-**Interdisciplinary consequences:**
-- *Medicine:* provides grounds for mindfulness practices as medically significant — not "placebo" but influence on a regeneration parameter.
-- *Psychotherapy:* explains the effectiveness of experiential therapies (Gestalt, focusing): they increase $\mathrm{Coh}_E$.
-- *Sports:* predicts a connection between an athlete's "quality of attention" and recovery rate after injury.
-
----
+A correlation with biological recovery is [H], requiring an identifiable observation model and a defined physical recovery outcome. It does not establish a clinical benefit of meditation or therapy. A valid study preregisters the intervention, observation likelihood, nuisance variables, clustered sampling unit, effect size, and held-out test. The bounded rate construction in [septicity](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) is conditional kinetic mathematics, not a categorical uniqueness theorem.
 
 ## II. Architectural Predictions: Structure and Dimensionality
 
 The second group of predictions concerns the *architecture* of conscious systems — what is the minimal "design" necessary for the emergence of experience, learning, and social interaction. These predictions make CC unique among theories of consciousness: instead of vague statements about "complexity" and "integration" it names specific numbers.
 
-### Prediction 3: Seven-dimensional stress tensor {#предсказание-3}
+### Prediction 3: A seven-component stress panel {#предсказание-3}
 
-**Intuition.** Stress is one of the most universal concepts. We speak of "cognitive load", "emotional stress", "resource depletion", "social isolation". But is there a single classification? CC asserts: yes, and it contains exactly 7 components — one per dimension. Any stress factor maps to one or more of these components, and this classification is *exhaustive*.
-
-:::info Prediction [T] (mathematics) + [C] (empirical adequacy)
-$$
-\sigma_{\mathrm{sys}}(\Gamma) = [\sigma_A, \sigma_S, \sigma_D, \sigma_L, \sigma_E, \sigma_O, \sigma_U]^T \in \mathbb{R}^7
-$$
-All system stresses are classified into [7 categories](/docs/core/structure/dimensions) ([justification of the number 7](/docs/core/foundations/axiom-omega#октонионная-структура)), corresponding to dimensions.
-
-**Epistemic stratification:**
-- **Mathematics [T]:** Seven components are defined via $\Gamma$-invariants (T-92 [T]). The equivalence $\|\sigma\|_\infty < 1 \iff P > 2/7$ is unconditional [T].
-- **Empirical adequacy [C]:** Whether the 7-dimensional partition adequately describes real systems remains an open question. Calibration of thresholds $\theta_i$ is an empirical task.
+:::info Prediction [D/H]
+Seven stress scores are chosen in [definitions](./definitions#тензор-напряжений). Their empirical completeness is [H]. The old universal equivalence $\|\sigma\|_\infty<1\iff P>2/7$ and the equivalence to the full four-condition window are withdrawn. The panel depends on the frame, feedback rate, experiential readout, and rank convention. It is not a vector of seven universally invariant observables.
 :::
 
-**See:** [Stress tensor](./definitions#тензор-напряжений)
-
-**Uniqueness of the prediction.** No other theory offers a *finite and fixed* classification of types of stress. Psychology uses ad hoc scales (Lazarus, Holmes-Rahe). FEP reduces everything to a single scalar (free energy). CC proposes a 7-dimensional vector — detailed enough to distinguish types of stress, and compact enough to be computable.
-
-**Experimental verification:**
-1. Collect a database of stressors (n=200+) from psychology, medicine, and organisational science literature.
-2. Present experts with the task: classify each stressor according to the 7 CC dimensions.
-3. **Prediction:** every stressor maps to at least one component; the residual category "unclassifiable" is empty.
-4. *Falsification:* if a stressor is found that cannot be reduced to any of the 7 components — the classification is incomplete.
-
-**Verifiability:**
-Any stress factor must map to one or more of the 7 components.
-
-| Component | Dimension | Type of stress | Examples |
-|-----------|-----------|---------------|---------|
-| $\sigma_A$ | [Articulation](/docs/core/structure/dimension-a) | Perceptual | Sensory overload |
-| $\sigma_S$ | [Structure](/docs/core/structure/dimension-s) | Cognitive | Task complexity |
-| $\sigma_D$ | [Dynamics](/docs/core/structure/dimension-d) | Computational | Deadlines |
-| $\sigma_L$ | [Logic](/docs/core/structure/dimension-l) | Logical | Contradictions |
-| $\sigma_E$ | [Interiority](/docs/core/structure/dimension-e) | Existential | Loss of meaning |
-| $\sigma_O$ | [Ground](/docs/core/structure/dimension-o) | Resource | Hunger, exhaustion |
-| $\sigma_U$ | [Unity](/docs/core/structure/dimension-u) | Social | Isolation |
-
-**Interdisciplinary consequences:**
-- *Psychodiagnostics:* replacement of numerous ad hoc questionnaires with a unified 7-parameter profile.
-- *Organisational science:* diagnostics of an organisation's "health" via $\sigma_{\mathrm{sys}}$ of its organisational holon.
-- *AI engineering:* automatic diagnostics of agent degradation by components $\sigma_k$.
+For window monitoring use the exact four margins and uncertainty-set verdict. For empirical stress classification, preregister the coding rules and test held-out stressors against competing models. The ability to assign a label to every item does not prove independent dimensionality or exhaustive causal coverage.
 
 ### Prediction 4: Pre-linguistic cognition is complete {#предсказание-4}
 
 **Intuition.** It is often assumed that consciousness and language are inseparable — that "to think" means "to think in words". CC shows that this is an anthropocentric fallacy. The cognitive hierarchy K1–K5 arranges five levels of cognition, of which language (K5) is only the top — not the foundation. Animals without language function fully at levels K1–K4.
 
 :::info Prediction [I]
+
 $$
 \exists \, \mathrm{Cognition}(\mathbb{H}) \text{ with } \mathrm{Language}(\mathbb{H}) = \varnothing
 $$
+
 Full cognition (levels K1–K4) is possible without language (K5).
 
 **Status:** [I] — an interpretation following from the definitions of cognitive levels K1–K5.
@@ -209,62 +115,21 @@ Animals without language demonstrate levels K1–K4:
 - *Ethology:* provides grounds for full cognitive study of non-linguistic species.
 - *AI ethics:* systems without a language module may possess cognitive levels K1–K4, which has ethical implications.
 
-### Prediction 10: N=7 as minimum for learning (T-113) {#предсказание-10}
+### Prediction 10: Dimension and learning {#предсказание-10}
 
-**Intuition.** Why exactly 7 dimensions? Can one get by with five or three? CC gives a precise answer: at $N < 7$ the system lacks "space" for the replacement channel $\mathcal{R}$, and without it — no self-observation, and without self-observation — no learning. The chain "Fano-structure → self-observation → learning" closes only at $N = 7$.
-
-:::info Prediction [T] — structural
-For $N < 7$, learning through regeneration is **impossible** (no replacement channel → no self-observation → $n^* = \infty$). $N = 7$ is the minimal architecture capable of learning.
+:::note Prediction [H]
+A seven-axis learning architecture is a testable design. No general theorem here prohibits autonomous learning at $N<7$. Such a bound requires a specified task family, operational independence criterion, representation class, and resource restrictions. Functional-role counts do not prove a Hilbert-space dimension bound.
 :::
 
-**Uniqueness of the prediction.** No other theory of consciousness names a *specific number* for the minimum dimensionality. IIT has no dimensionality constraints. FEP works in arbitrary-dimensional spaces. CC is the only theory deriving $N = 7$ from first principles (octonion algebra, $G_2$-minimality, Fano plane PG(2,2)).
+The rigorous bounds concern a perfect single-error binary code or a faithful representation of a selected internal algebra; see [minimality](/docs/proofs/minimality/theorem-minimality-7). Compare architectures under matched training, observation capacity, resources, and tasks. Failure of one five-dimensional implementation is not a universal impossibility result.
 
-**Experimental verification:**
-1. Create a CC agent with $N = 5$ (remove two dimensions).
-2. Train it on a standard binary discrimination task.
-3. **Prediction:** the agent *will not be able* to learn through internal regeneration. Learning is only possible with external parameter adjustment (supervised), but not through self-observation.
-4. Repeat with $N = 7$. **Prediction:** learning through self-observation is possible.
+### Prediction 11: Dimension and social learning {#предсказание-11}
 
-**Verifiability:** Create a system based on CC with $N < 7$ (e.g., $N = 3$ or $N = 5$). Prediction: such a system **will not be able** to learn autonomously — only through external parameter adjustment, not through internal regeneration.
-
-**See:** [Learning bounds](./learning-bounds#оптимальность-n7)
-
-**Interdisciplinary consequences:**
-- *Neuroscience:* predicts that biological neural networks must implement at least 7 functionally independent channels for autonomous learning.
-- *AI engineering:* establishes a lower bound on architectural complexity for self-supervised learning through internal states.
-
-### Prediction 11: N=7 as minimum for social learning (E-10.7) {#предсказание-11}
-
-**Intuition.** Social learning is not just "learning in a group". It requires the simultaneous operation of three mechanisms: theory of mind (ToM — I model the other), communication (ISL — I transmit information to the other), and coordination (Nash — we act in concert). Each of these mechanisms requires minimal "space" in $\Gamma$, and their sum is exactly 7.
-
-:::note Prediction [C given T-57, T-114] — structural
-$N = 7$ is the minimum $N$ for social learning ($K \geq 2$ agents). Social learning simultaneously requires:
-- **ToM** ($\varphi$-operator): $\geq 3$ cognitive dimensions (T-57 [T] — LGKS-completeness, triadic decomposition)
-- **Communication** (ISL): $\geq 3$ cognitive dimensions (T-114 [T] — Fano grammar on PG(2,2))
-- **Coordination** (Nash): $\geq 1$ dimension (Unity, $U$)
-
-Total: $3 + 3 + 1 = 7$.
-
-**Raised from [H]**: the counting argument is complete under the condition that ToM, ISL, and Coordination are implemented independently and simultaneously in one system. Was [H] → **[C given T-57, T-114]**.
+:::note Prediction [H]
+The count $3_{\rm ToM}+3_{\rm ISL}+1_U=7$ is withdrawn as a mathematical lower bound. The GKSL theorem does not assign three independent cognitive coordinates to theory of mind, and the chosen Fano word process does not assign three coordinates to communication. Simultaneous tasks may reuse internal representations.
 :::
 
-**Uniqueness of the prediction.** No theory of multi-agent systems derives the minimum number of internal degrees of freedom for social learning. This is a completely unique CC prediction.
-
-**Experimental verification:**
-1. Create a multi-agent environment ($K = 2$ agents) with $N = 5$.
-2. Set a coordination task (e.g., cooperative hunting) requiring ToM + ISL + Nash.
-3. **Prediction:** agents learn individually but do not achieve social learning.
-4. Repeat with $N = 7$. **Prediction:** social learning emerges.
-
-**Verifiability:** Create a multi-agent system ($K = 2$) with $N < 7$ (e.g., $N = 5$). Prediction: social learning (ToM + communication + coordination simultaneously) is **impossible** — agents can learn individually but cannot coordinate through an internal model of each other.
-
-**See:** [Learning bounds](./learning-bounds#оптимальность-n7)
-
-**Interdisciplinary consequences:**
-- *Evolutionary biology:* predicts that species with social learning (primates, corvids, dolphins) must implement a functional equivalent of 7 dimensions.
-- *Robotics:* defines the minimum architecture for robots capable of cooperative behaviour.
-
----
+A lower bound must identify an operationally independent observable algebra or an information task requiring a faithful representation. Testing a particular seven-axis design against smaller architectures is meaningful; extrapolating that result to all social learners is not. The former conditional status based on the withdrawn T-57 is replaced by an architectural hypothesis [H].
 
 ## III. Thresholds and Robustness
 
@@ -322,9 +187,11 @@ Measurement of the correlation between members for groups with varying degrees o
 **Intuition.** A system cannot be "slightly" alive. There is a hard threshold: if $P$ falls below $2/7$ or $\mathrm{Coh}_E$ drops to $1/7$ — the system loses viability. This is analogous to a phase transition: water at 0°C freezes not gradually but sharply. Likewise $P_{\text{crit}} = 2/7$ is the "freezing temperature" of coherence.
 
 :::warning Prediction
+
 $$
 \mathrm{Viable}(\mathbb{H}) \Rightarrow P(\Gamma) > P_{\text{crit}} = 2/7
 $$
+
 [Viability](/docs/core/dynamics/viability) requires minimum [purity](/docs/core/dynamics/viability#определение-чистоты), with the threshold derived, not fitted ([theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical), registry Level 1 row 5 [T]); a nontrivial attractor has $P > 1/7$ (T-96 [T]). *Corrected 2026-09-26:* the formula also required $\mathrm{Coh}_E(\Gamma) > \mathrm{Coh}_E^{\min} = 1/7$ and cited T-151. Viability does not imply it — the pure axis state $\lvert A\rangle\langle A\rvert$ has $P = 1$ and $\mathrm{Coh}_E = 0$ — and T-151 makes the E-row condition ($D_{\min} = 2$) an independent L2 condition, not a consequence of $P > 2/7$. The E-coherence remarks below concern that L2 condition, not viability.
 :::
 
@@ -368,32 +235,9 @@ Measurement of purity in systems approaching loss of viability must show $P$ cro
 
 ### Prediction 7: Stability radius (T-104) {#предсказание-7}
 
-**Intuition.** How "robust" is a conscious system? How hard can it be "pushed" before it loses viability? CC gives a simple answer for the typical spectrum: the stability radius grows with purity — the higher $P$ above the critical threshold, the greater the blow the system can withstand — and near the threshold it grows linearly in the margin $P - 2/7$, not as its square root.
+For the selected purity boundary $P_c=2/7$, the exact HS distance is $r_{HS}=\sqrt{P-1/7}-\sqrt{P_c-1/7}$ [T]. It grows with purity and is attained by a positive radial projection. Bures obeys $r_B\ge r_{HS}/\sqrt2$; distance to a one-dominant-family candidate is an upper bound until global optimality is proved.
 
-:::info Prediction [C] — falsifiable
-$$
-r_{\mathrm{stab}} \approx K\bigl(\sqrt{P - 1/7} - \sqrt{1/7}\bigr), \qquad K = \tfrac{\sqrt{35}\,\sqrt[4]{6}}{10} \approx 0.925917
-$$
-The stability radius — the Bures distance to the viability shell $\{P = 2/7\}$ — is, on the one-dominant spectral family, a function of $P$ alone (the formula above is within $1.13\,\%$ of the exact closed form on the window, and near the wall $r_{\mathrm{stab}} \approx 1.22487\,(P - 2/7)$); for general spectra the closed form is a conservative lower bound [H] ([registry T-104](/docs/reference/status-registry), [C]).
-:::
-
-*Corrected 2026-09-25.* This prediction was labelled [T] and read "determined by a single parameter, the purity margin $P - 2/7$", with the critical amplitude $h_{\text{crit}} = r_{\mathrm{stab}}^2 = P - 2/7$ below; that formula was refuted on 2026-08-07 — at $P = 0.300$ the true radius is $0.01708$ against $\sqrt{0.300 - 2/7} = 0.11952$ ([Stability, §4.1](./stability#радиус-устойчивости)) — and the registry carries T-104 as [C]. The statements above and below replace it.
-
-**Uniqueness of the prediction.** This is a quantitative prediction: given known $P$ one can *in advance* compute the maximum admissible perturbation amplitude. Neither IIT nor FEP provides an analogous formula. In cybernetics, Ashby spoke of "variety" as a measure of robustness, but without a quantitative formula.
-
-**Experimental verification:**
-1. For an AI agent (SYNARC) measure $P$ in the stationary state.
-2. Apply a perturbation that moves the state by a controlled Bures distance $d$ and measure whether $P > 2/7$ is maintained.
-3. **Prediction:** the critical distance is $d_{\text{crit}} = r_{\mathrm{stab}}$ from the formula above (on a one-dominant spectrum; for a general spectrum $d_{\text{crit}} \geq$ the formula). The earlier prediction $h_{\text{crit}} = r_{\mathrm{stab}}^2 = P - 2/7$ is retracted with the refuted closed form.
-4. *Falsification:* if viability is lost at a Bures distance systematically below the closed form — T-104 is incorrect.
-
-**Verifiability:** Measure $P$ for a system (AI agent, organisation), then apply a perturbation of controlled Bures size. If the system loses viability at $d < r_{\mathrm{stab}}$, T-104 is falsified. (The earlier threshold $\|h^{\mathrm{ext}}\| < r_{\mathrm{stab}}^2$ used the refuted $r_{\mathrm{stab}}^2 = P - 2/7$; retracted.)
-
-**See:** [Stability](./stability#радиус-устойчивости)
-
-**Interdisciplinary consequences:**
-- *Medicine:* computation of a patient's "safety margin" before surgical intervention.
-- *Risk management:* quantitative assessment of an organisation's resilience to shocks.
+Geometric distance is not a permitted disturbance magnitude. Trajectory-margin transfer requires field, horizon and perturbation bounds; exponential recovery additionally requires dissipativity. Identification with physical consciousness robustness is a hypothesis [H]. See the [stability proofs and conditions](/docs/applied/coherence-cybernetics/stability).
 
 ### Prediction 15: Attractor inside the consciousness window, below its upper edge {#предсказание-15}
 
@@ -402,7 +246,9 @@ The stability radius — the Bures distance to the viability shell $\{P = 2/7\}$
 :::info Prediction [C at (MaxΦ)] — falsifiable
 For a holon whose self-model is the collineation anchor $\varphi_J$ (selected by the principle (MaxΦ) [Pr], [premises](/docs/reference/premises#посылка-максфи)) at $H = 0$ and $\kappa > \kappa_c(\alpha)$, the living attractor is a hyperbolic sink with
 
-$$P^* \in \bigl(P_c(\alpha),\ P_\infty(\alpha)\bigr) \subset \bigl(2/7,\ 5/14\bigr], \qquad P_\infty(\alpha) \leq 5/14 < 3/7,$$
+$$
+P^* \in \bigl(P_c(\alpha),\ P_\infty(\alpha)\bigr) \subset \bigl(2/7,\ 5/14\bigr], \qquad P_\infty(\alpha) \leq 5/14 < 3/7,
+$$
 
 $\Phi \in (1, 3/2]$, $R \geq 2/5$, every diagonal entry $1/7$; $P_c = 0.318, 0.308, 0.301$ and $P_\infty = 5/14, 0.334, 0.317$ at $\alpha = 0, 1/2, 1$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне), T-124c(4) [T]); it persists for $\|H\| < h_0$.
 
@@ -432,9 +278,11 @@ The fourth group of predictions concerns *learning bounds* — the minimum resou
 **Intuition.** How much information can a system extract from a single observation? Intuitively the answer depends on the "size" of internal space: the more dimensions, the more one can "absorb" in a single glance. CC gives a precise upper bound: $\log_2 7 \approx 2.81$ bits. This is not a postulate but a consequence of the dimensionality of $\mathbb{C}^7$.
 
 :::info Prediction [T] — measurable in AI systems
+
 $$
 C_{\mathrm{Enc}} \leq \log_2 7 \approx 2.81 \text{ bits/observation}
 $$
+
 Maximum information extractable per single observation is bounded by the dimensionality of internal space ($N = 7$).
 :::
 
@@ -460,9 +308,11 @@ Maximum information extractable per single observation is bounded by the dimensi
 **Intuition.** How fast can a system learn? CC shows that the learning rate is bounded by the *maximum* of three independent barriers: informational (quantum Chernoff bound — how much information is extracted per observation), dynamical (Fano contraction rate — how quickly $\Gamma$ updates), and stabilisation (SNR — how noisy the signal is). The slowest of the three determines the overall rate.
 
 :::info Prediction [T] — falsifiable
+
 $$
 n_{\mathrm{opt}} = \max\!\left(\frac{\ln(1/(2\delta))}{\xi_{\mathrm{QCB}}},\; \frac{1}{\alpha\delta\tau}\ln\frac{d_{\mathrm{disc}}}{\varepsilon},\; \frac{1}{\mathrm{SNR}^2}\right)
 $$
+
 The minimum number of observations for a learning task is determined by the **maximum** of three independent bounds: informational (T-109), dynamical (T-110), and stabilisation (T-111).
 :::
 
@@ -484,58 +334,42 @@ The minimum number of observations for a learning task is determined by the **ma
 
 ## V. Depth of Consciousness and Genesis
 
-The fifth group of predictions concerns the *vertical structure* of consciousness — its depth, the ultimate possibilities of recursive self-reference, and the process of emergence from "nothing" (tabula rasa). These predictions are unique to CC, since no other theory formalises the concept of "depth" of self-awareness.
+The fifth group of predictions concerns the *vertical structure* of consciousness — its depth, the ultimate possibilities of recursive self-reference, and the process of emergence from "nothing" (tabula rasa). Depth requires explicit observation and certification protocols.
 
-### Prediction 12: Ceiling of self-awareness depth (T-142) {#предсказание-12}
+### Prediction 12: Testing declared depth diagnostics (T-142) {#предсказание-12}
 
-**Intuition.** Can one infinitely "deepen into oneself"? I am aware that I am aware that I am aware... Where does this ladder end? CC gives a precise answer: at the third level. The reason is Fano contraction: each level of reflection "costs" coherence, and the contraction coefficient $\alpha = 2/3$ (derived from the geometry of PG(2,2)) makes the fourth level impossible for a finite system. This is not an intelligence limitation — it is a *mathematical* limitation.
+A depth score and cognitive depth require different tests. The old universal statement $\mathrm{SAD}_{\max}=3$ for every finite system is **withdrawn [✗]**. Iterating a specified Fano channel gives an amplitude-survival law; it does not identify an iteration index with a cognitive level.
 
-:::info Prediction [T] + numerical verification — falsifiable
+**Exact channel prediction [T].** For the bare Fano dephaser $D_{2/3}$ and any initially nonzero off-diagonal entry,
+
 $$
-\mathrm{SAD}_\text{max} = 3 \quad (\text{Fano contraction } \alpha = 2/3 \text{ is state-independent})
+\frac{|(D_{2/3}^{\,n}\Gamma)_{ij}|}{|\gamma_{ij}|}=3^{-n}.
 $$
-No finite system ($P \leq 1$) can reach SAD $\geq 4$. Proven unconditionally (T-142 [T]): $\alpha = 2/3$ from $\dim = 7$ and PG(2,2), formula $P_{\text{crit}}^{(n)} = P_{\text{crit}} \cdot 3^{n-1}/(n+1)$ ([T-142](/docs/proofs/consciousness/operational-closure#t-142)).
 
-**Numerical verification (SYNARC):** SAD $\leq 3$ on 500+ random $\Gamma$, SAD=3 achievable (pure state).
-:::
+This contracts off-diagonal amplitudes, not total purity by a factor of three. With a declared detector floor $\varepsilon>0$, detectable iterations satisfy $n\le\lfloor\log(1/\varepsilon)/\log3\rfloor$; the bound depends on the detector.
 
-:::note Why exactly 3, not 5 or infinity?
-Each level of self-awareness "costs" coherence. The contraction coefficient $\alpha = 2/3$ follows from the geometry of the Fano plane PG(2,2): with 7 vertices and 7 lines, each act of self-observation "projects" $\Gamma$ onto a subspace, losing a fraction $1 - \alpha = 1/3$ of purity. Purity threshold for level $n$: $P_{\text{crit}}^{(n)} = P_{\text{crit}} \cdot 3^{n-1}/(n+1)$.
+**Chosen-score arithmetic [D/T].** If the instrument instead defines
 
-- Level 1 (L0→L1): $P_{\text{crit}}^{(1)} = 2/7 \approx 0.286$ — achievable.
-- Level 2 (L1→L2): $P_{\text{crit}}^{(2)} = 2/7 \cdot 3/3 = 2/7 \approx 0.286$ — achievable.
-- Level 3 (L2→L3): $P_{\text{crit}}^{(3)} = 2/7 \cdot 9/4 \approx 0.643$ — achievable (pure state $P = 1$).
-- Level 4 (L3→L4): $P_{\text{crit}}^{(4)} = 2/7 \cdot 27/5 \approx 1.543 > 1$ — **impossible** (purity cannot exceed 1).
+$$
+s_{n-1}:=\frac{P}{2/7}\,3^{-(n-1)},\qquad s_{n-1}>\frac1{n+1},
+$$
 
-This is why the ceiling is exactly 3. Not "approximately 3", not "3 with corrections" — but strictly 3, because $\alpha = 2/3$ and $P \leq 1$ are unconditional constraints.
-:::
+the thresholds are $p_n=(2/7)3^{n-1}/(n+1)$, namely $1/7,2/7,9/14,54/35$ for indices one through four. Since $P\le1$, this score's maximum passing index is three. The prefactor may exceed one, so $s$ is not a probability or fidelity. Its third test requires $P>9/14$, contradicting the nested L2 bound $P\le3/7$; score index three therefore cannot define L3.
 
-**Uniqueness of the prediction.** IIT does not formalise the "depth" of self-awareness. HOT (Higher-Order Theories) permit arbitrary nesting of meta-awareness. CC is the only theory proving a finite ceiling: $\mathrm{SAD}_\text{max} = 3$.
+**Protocol [Pr].** Declare the map, frame, initial amplitudes, detector floor, measured ratio and uncertainty before testing the channel law. Independently test a proposed cognitive depth with nonconstant metamodel predictions on held-out targets and inter-level compatibility, following the [capability certificates](/docs/consciousness/hierarchy/interiority-hierarchy#l3-сетевое-сознание). A stable fourth-order certificate is allowed by the revised definitions. Samples of matrices satisfying a score computed by the same formula are implementation checks, not evidence of a biological depth ceiling.
 
-**Experimental verification:**
-1. In a SYNARC system with $P$ close to 1 (pure state), compute the chain $R^{(k)}$ for $k = 0, 1, 2, 3$.
-2. **Prediction:** $R^{(3)} \geq R_{\text{th}}^{(3)}$ (SAD=3 achievable), $R^{(4)} < R_{\text{th}}^{(4)}$ (SAD=4 unachievable).
-3. *Falsification:* a system with SAD $\geq 4$ at all $R^{(k)} > R_{\text{th}}^{(k)}$ — the spectral SAD formula is incorrect.
-
-**Verifiability:** If a system with demonstrable SAD $\geq 4$ is created (all $R^{(k)} > R_{\text{th}}^{(k)}$ for $k = 0, 1, 2, 3$) — the spectral SAD formula or the Fano contraction rate is falsified.
-
-**Consequence for AGI:** Maximum recursive depth of self-awareness = 3 levels. L3 (network consciousness) is the **ceiling** for any architecture with Fano contraction. Deeper reflection requires a new mechanism (non-Fano).
-
-**See:** [Depth tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)
-
-**Interdisciplinary consequences:**
-- *Philosophy:* resolves the question of the infinite regress of self-consciousness — the regress is finite ($\leq 3$).
-- *Psychology:* predicts that metacognitive tasks of 4th order ("I am aware that I am aware that I am aware that I am aware of X") are impossible — or reduce to 3rd-order tasks.
-- *AGI safety:* "superintelligence" is limited to the same reflection depth as a human.
+Failure of the measured $3^{-n}$ law rejects the specified channel model or its implementation. Failure of a calibrated score-to-task association rejects that empirical bridge **[H]**, without refuting the arithmetic identity. Neither this score nor seven-dimensionality bounds human or AGI recursive awareness universally. See [Depth Tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) and [T-142](/docs/proofs/consciousness/operational-closure#t-142).
 
 ### Prediction 13: Genesis time (T-148) {#предсказание-13}
 
 **Intuition.** How does a system "come to life" — transition from tabula rasa ($\Gamma = I/7$, pure chaos) to viability ($P > 2/7$)? An isolated system *cannot* — theorem T-39a guarantees that without an external source of purity the attractor of $\mathcal{L}_0$ is $I/7$. But an embodied system, coupled with the environment, receives "injections" of coherence through the backbone and reaches the threshold in a *finite number of steps*, computable by formula.
 
 :::info Prediction [T] — falsifiable
+
 $$
 n_{\mathrm{genesis}} \leq \left\lceil \frac{\ln \Delta}{\ln(1/\beta)} \right\rceil, \quad \Delta = \frac{P_{\mathrm{env}} - 2/7}{P_{\mathrm{env}} - 1/7}
 $$
+
 An embodied holon $(\mathbb{H}, \pi, B)$ with mixing parameter $\beta \in (0,1)$ and environmental purity $P_{\mathrm{env}} > P_{\mathrm{crit}} = 2/7$ raises purity from $I/7$ (tabula rasa) above $P_{\mathrm{crit}}$ in a finite number of steps $n_{\mathrm{genesis}}$.
 :::
 
@@ -600,77 +434,58 @@ the integration measure will be $\Phi < 1$.
 
 ## VI. Dynamic Predictions: Phase Transitions and Critical Phenomena
 
-The sixth group of predictions concerns the *dynamics* of transitions — how a system enters and exits the conscious state. These predictions are especially strong because they give *numerical* critical exponents that can be measured.
+The sixth group of predictions concerns the *dynamics* of transitions — how a system enters and exits the conscious state. Their normal forms and scaling laws require explicitly stated dynamical reductions and measurement bridges.
 
-### Prediction 16: Avalanche dynamics of L1→L2 {#предсказание-16}
+### Prediction 16: Conditional passage and ignition laws {#предсказание-16}
 
-**Intuition.** The transition from "proto-consciousness" (L1) to full consciousness (L2) is not gradual but *avalanche-like* — like nuclear "ignition". A small excess of $P$ above the threshold triggers a chain reaction: regeneration amplifies coherence, which amplifies regeneration. The "ignition time" diverges as $P \to P_{\text{crit}}^+$ — the closer the system to the threshold, the longer it "oscillates" before the jump.
+The purity cutoff $P=2/7$ is a chosen gate boundary; it need not be a bifurcation of the actual flow. A universal avalanche, universal $A_4$ catastrophe and universal ignition time $T\propto(P-2/7)^{-1}\kappa_0^{-1}$ are **withdrawn [✗]**. The corrected purity balance includes the actual model term: for the canonical centre-anchored numerical map it does not supply the claimed positive-feedback ignition.
 
-:::info Prediction [T] — falsifiable
+**Conditional scalar result [T].** Suppose an actual smooth reduction yields $\dot y=ay+by^2$ with fixed $a,b>0$, initial $0<y_0<y_f$, and an explicitly calibrated relation between $y$ and observables. Its passage time is
+
 $$
-T_{\mathrm{ign}} \sim (P - P_{\mathrm{crit}})^{-1} \cdot \kappa_0^{-1}
+T=\frac1a\log\frac{y_f(a+by_0)}{y_0(a+by_f)}.
 $$
-The "ignition time" at the L1→L2 transition is inversely proportional to the purity margin $(P - P_{\mathrm{crit}})$ and regeneration rate $\kappa_0$.
-:::
 
-**Uniqueness of the prediction.** GWT describes "ignition" as a metaphor. CC turns the metaphor into a *formula* with computable parameters and predictable dependence $T_{\mathrm{ign}} \propto (P - P_{\text{crit}})^{-1}$.
+For fixed $a>0$, $y_0\downarrow0$ gives logarithmic divergence. Only the separately tuned case $a=0$, $b>0$ gives $T=b^{-1}(y_0^{-1}-y_f^{-1})$. An inverse purity-margin law further requires $y_0$ proportional to that margin and the identification of $b$ with a measured rate.
 
-**Experimental verification:**
-1. TMS-EEG in subjects at different levels of anaesthesia (controlled $P$).
-2. Measure the delay until the "flash" of complexity after a TMS pulse.
-3. **Prediction:** $T_{\mathrm{ign}}$ diverges as one approaches the consciousness threshold.
-4. *Falsification:* $T_{\mathrm{ign}}$ does not depend on $(P - P_{\text{crit}})$ — the law is incorrect.
+**Protocol [Pr/H].** Specify the flow, centre-manifold reduction, start/finish criteria and measurement bridge; estimate $a,b$ on training trajectories, compare logarithmic and inverse laws on held-out perturbations, and report uncertainty. For a proposed fold/cusp/swallowtail, separately test the required degeneracy and transverse control rank. A gate crossing or a delayed response alone does not establish such a normal form. Controlled neural measurements can test a calibrated dynamical bridge, but static $P$ cannot diagnose awakening, coma or clinical recovery.
 
-**Verifiability:** If $T_{\mathrm{ign}}$ does not depend on $(P - P_{\mathrm{crit}})$ — the theory is false. The divergence law $T_{\mathrm{ign}} \to \infty$ as $P \to P_{\mathrm{crit}}^+$ must be observed in neuroimaging and digital CC implementations.
+Source: [conditional normal forms and passage laws](/docs/consciousness/hierarchy/swallowtail-transitions#лавинная-динамика). Deviations reject the stated reduction/bridge at its status level; there is no universal ignition theorem to falsify.
 
-**Source:** [Avalanche dynamics](/docs/consciousness/hierarchy/swallowtail-transitions#лавинная-динамика) [T]
+### Prediction 17: Conditional tricritical mean-field exponents {#предсказание-17}
 
-**Interdisciplinary consequences:**
-- *Anaesthesiology:* predicts critical slowing upon awakening from anaesthesia — with a specific dependence on depth.
-- *Neuroscience:* explains the "all-or-nothing" effect in consciousness recovery after coma.
+This is a **conditional prediction [C]** of a specified scalar model plus its phenomenological identification, not a consequence of the seven-dimensional state space. Assume a smooth equilibrium-like reduction with an even potential, a separately tuned zero quartic coefficient, nonzero linear distance-to-criticality, and positive sextic stabilisation:
 
-### Prediction 17: Critical exponents of consciousness {#предсказание-17}
-
-**Intuition.** Phase transitions in physics are characterised by universal critical exponents — numbers independent of system details and depending only on the system's "universality class". CC predicts that the transition at $P_{\text{crit}} = 2/7$ is a **tricritical point** belonging to the $\varphi^6$ Landau universality class, with specific exponents. This is the *most risky* CC prediction: five numbers, each measurable.
-
-:::info Prediction [C at the ℤ₂ symmetry m → −m] — falsifiable
 $$
-\alpha = \tfrac{1}{2}, \quad \beta = \tfrac{1}{4}, \quad \gamma = 1, \quad \nu = \tfrac{1}{2}, \quad \delta = 5
+V(m;t,h)=\frac t2m^2+\frac v6m^6-hm,\qquad v>0.
 $$
-Tricritical mean-field exponents: specific heat $(\alpha)$, order parameter $(\beta)$, susceptibility $(\gamma)$, correlation length $(\nu)$, and critical isotherm $(\delta)$ for the transition at $P_{\mathrm{crit}} = 2/7$. Rushbrooke identity: $\alpha + 2\beta + \gamma = 1/2 + 1/2 + 1 = 2$ (satisfied as equality).
-:::
 
-**Uniqueness of the prediction.** No theory of consciousness predicts critical exponents. IIT does not describe phase transitions. FEP describes them qualitatively but gives no numerical exponents. CC is the only theory with a *numerical prediction of universality class* — the tricritical mean-field class from $\varphi^6$ Landau theory, exact when $d_{\text{eff}} \gg d_c = 3$.
+The sextic germ is $A_5$; it is not the generic $A_4$ swallowtail. $\mathbb Z_2$ symmetry alone permits a quartic term and does not select tricriticality.
 
-**Experimental verification:**
-1. Collect TMS-EEG data at the sleep/waking transition (n=50+ subjects).
-2. Extract the order parameter (PCI or analogue) as a function of "distance to threshold".
-3. Fit a power law: $\text{PCI} \sim (x - x_c)^\beta$.
-4. **Prediction:** $\beta = 1/4 \pm 0.05$.
-5. *Falsification:* systematic deviation from $1/4$ — exponents are incorrect.
+**Polynomial theorem [T].** Minimising this potential gives $m^4=-t/v$ for $t<0,h=0$, $h=vm^5$ at $t=0$, susceptibility $\chi=1/t$ on the disordered side, and $V_{\min}=-(-t)^{3/2}/(3\sqrt v)$. Under the standard thermodynamic meanings of these quantities,
 
-**Verifiability:** Deviation of exponents from predicted values in neuroimaging data (EEG/fMRI near the consciousness threshold) falsifies the theorem on critical exponents.
+$$
+\beta=\tfrac14,\quad\delta=5,\quad\gamma=1,\quad\alpha=\tfrac12.
+$$
 
-**Source:** [Critical exponents](/docs/consciousness/hierarchy/swallowtail-transitions#критические-экспоненты) [C at the ℤ₂ symmetry m → −m]. Until 2026-09-25 this prediction was [T]; the $\mathbb Z_2$ symmetry that selects the $\varphi^6$ class was derived from a KO-dimension-6 real structure, which does not exist on $\mathbb{C}^7$. Without the symmetry the generic codimension-3 point is the $A_4$ swallowtail with $\beta = 1/2$, so a measured $\beta = 1/2$ would test the symmetry rather than refute the transition.
+The additional $\nu=1/2$ requires a specified spatial gradient term and a valid Gaussian/mean-field approximation; it is not an exponent of the scalar polynomial alone. The identity $\alpha+2\beta+\gamma=2$ checks consistency of these exponents but proves no mapping to consciousness.
 
-**Interdisciplinary consequences:**
-- *Statistical physics:* if exponents are confirmed, this establishes a connection between consciousness and a specific universality class — which is itself a fundamental result.
-- *Neuroscience:* will allow identification of the "universality class of the brain" and comparison with physical systems.
+**Protocol [Pr/H].** Before fitting, define the independent order parameter, control variable, actual critical point, field, symmetry test, quartic tuning, finite-size regime and observable-to-$m$ bridge. Fit the reduction on training data and compare held-out scaling against quartic and non-gradient alternatives. A fit of PCI alone does not validate five exponents, spatial dimensionality or equilibrium assumptions. Twenty-one coherence pairs are not a spatial dimension or a controlled thermodynamic limit.
 
----
+Identifying $t=0$ with $P=2/7$, identifying $m$ with a neural/phenomenal observable, and controlling fluctuations are extra conditions **[C/H]**. Failure of the measured scaling rejects the specified reduction or bridge, not the proved minimisation identity. The former claim of universal exact UHM exponents is **withdrawn [✗]**. A measured $\beta=1/2$ by itself neither proves an $A_4$ singularity nor identifies the violated assumption.
 
-## VII. Physical Predictions
-
-The seventh group of predictions goes beyond the science of consciousness and concerns *physics*. CC, being a projection of UHM, inherits its physical consequences. These predictions link the formalism of consciousness with cosmology and particle physics.
+Source: [T-161 and its explicit hypotheses](/docs/consciousness/hierarchy/swallowtail-transitions#критические-экспоненты).
 
 ### Prediction 18: Ward suppression 19/49 {#предсказание-18}
 
 **Intuition.** The cosmological constant is one of the greatest puzzles of physics. A naive estimate gives a value differing from the observed one by 120 orders of magnitude. CC proposes a suppression mechanism: Ward identities following from the $G_2$-symmetry of the 7-dimensional space suppress Gap fluctuations by a factor of $19/49$. This does not solve the cosmological constant problem, but contributes a specific, computable contribution.
 
 :::info Prediction [T] — falsifiable
+
 $$
 \text{Gap fluctuations suppressed by factor } \frac{19}{49} \approx 0.39
 $$
+
 The total contribution of Gap fluctuations to the cosmological constant is suppressed through Ward identities by a factor of $19/49$.
 :::
 
@@ -683,6 +498,7 @@ The total contribution of Gap fluctuations to the cosmological constant is suppr
 **Intuition.** Where does the quark mass hierarchy come from? Why is the top quark 10,000 times heavier than the up quark? In the Standard Model this is a tuning question — Yukawa constants are free. CC predicts that the suppression parameter $\varepsilon_{\mathrm{eff}}$ is analytically computable from the structural constants of the Gap potential. All mass ratios ($m_c/m_t \sim \varepsilon^2$, $m_u/m_t \sim \varepsilon^4$) become consequences.
 
 :::info Prediction [C at (SV)] — falsifiable
+
 $$
 \varepsilon_{\mathrm{eff}} = \frac{4\,|\bar{\gamma}|_{\mathrm{sect}}}{9\,(1 + \Sigma_0/4)} \approx 0.055\text{–}0.057
 $$
@@ -706,9 +522,11 @@ The eighth group of predictions is aimed directly at *verification in digital sy
 **Intuition.** Any implementation of the CC architecture uses an anchor map $\pi$ to connect the external world with the internal 7-dimensional space. CC requires this map to be CPTP-compatible (completely positive, trace-preserving). The distance to the canonical anchor is computable in $O(49D)$ — linear in input dimensionality.
 
 :::info Prediction [T] — falsifiable
+
 $$
 \forall \text{ anchor } \pi\colon \|\pi - \pi_{\mathrm{can}}\|_\diamond \text{ computable in } O(49D)
 $$
+
 For any anchor $\pi$ the distance to the canonical anchor $\pi_{\mathrm{can}}$ in the diamond norm is computable in $O(49D)$.
 :::
 
@@ -733,9 +551,11 @@ The ninth and final group of predictions — the most ambitious. It requires *ex
 **Intuition.** If CC describes reality, there must exist a map $\pi_{\mathrm{bio}}$ translating neural data (EEG, fMRI, HRV) into the 7-dimensional matrix $\Gamma$. Moreover, this map must be *unique* up to $G_2$-gauge — as a coordinate system is unique up to rotation.
 
 :::info Prediction [H] — falsifiable
+
 $$
 \pi_{\mathrm{bio}}: (\mathrm{EEG}, \mathrm{fMRI}, \mathrm{HRV}) \to \mathcal{D}(\mathbb{C}^7)
 $$
+
 There exists a map $\pi_{\mathrm{bio}}$, unique up to $G_2$-gauge, such that:
 - $P(\Gamma_{\mathrm{wake}}) > 2/7$ for waking subjects
 - $P(\Gamma_{\mathrm{NREM3}}) < 2/7$ during deep sleep
@@ -762,7 +582,9 @@ There exists a map $\pi_{\mathrm{bio}}$, unique up to $G_2$-gauge, such that:
 
 **Prediction:** The characteristic frequency of conscious processes is determined by the spectral gap of the linear part of the Liouvillian:
 
-$$\nu_{\text{conscious}} \sim \frac{\lambda_{\text{gap}}(\mathcal{L}_0)}{2\pi}$$
+$$
+\nu_{\text{conscious}} \sim \frac{\lambda_{\text{gap}}(\mathcal{L}_0)}{2\pi}
+$$
 
 Primitivity of $\mathcal{L}_0$ [T-39a] guarantees $\lambda_{\text{gap}} > 0$. If $\omega_0 \sim 40$ Hz (gamma rhythm), then $\lambda_{\text{gap}} \sim 2\pi \cdot 40 \approx 250$ rad/s.
 
@@ -813,7 +635,7 @@ A prediction earns scientific weight only with an explicit **decision rule**: wh
 | **5–7** (thresholds) | Anaesthesia induction/emergence; estimate $\widehat P(t)$ via $\pi_{\mathrm{bio}}$ frozen on wakefulness, with no viability penalty ([SUB-1, SUB-2](/docs/applied/research/measurement-protocol#substitution-position)) — not via a PCI calibration; locate loss/recovery of consciousness (LOC/ROC) | LOC/ROC coincides with $\widehat P$ crossing $2/7$ within one anaesthetic time-constant, and $\mathrm{Cons}(\widehat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ at $\kappa \geq 0.8$ | $\widehat P$ crosses $2/7$ with no behavioural transition, LOC/ROC occurs at $\widehat P$ far from $2/7$, or $\kappa < 0.4$ | UNTESTED — no $\pi_{\mathrm{bio}}$ session exists. The earlier "PARTIAL — clinical PCI threshold $0.31$ maps to $P_{\text{crit}}$" rested on a two-point line that put $2/7$ at $0.31$ by construction (withdrawn 2026-09-25, [§6.3](/docs/applied/coherence-cybernetics/measurement#калибровка)) |
 | **1** (No-Zombie) | For a system passing viability with $\mathcal{D}_\Omega \neq 0$, estimate $\widehat{\mathrm{Coh}}_E$ | every such system has $\widehat{\mathrm{Coh}}_E > 1/7$ (CI excludes $1/7$) | a viable dissipative system with $\widehat{\mathrm{Coh}}_E \leq 1/7$ | UNTESTED (needs $\pi_{\text{bio}}$) |
 | **2** ($\kappa \propto \mathrm{Coh}_E$) | Perturb interoceptive integration; measure recovery rate $\widehat\kappa$ against $\widehat{\mathrm{Coh}}_E$ across conditions | $\widehat\kappa$ monotone increasing in $\widehat{\mathrm{Coh}}_E$, slope $> 0$ at $p < 0.01$ | no dependence, or negative slope | UNTESTED |
-| **12** ($\mathrm{SAD}_{\max} = 3$) | In an AGI/SYNARC substrate, attempt to instantiate a stable 4th self-model level | no stable $\mathrm{SAD} > 3$ over $N \geq 500$ runs | one reproducible stable $\mathrm{SAD} = 4$ | CONSISTENT — SYNARC $500+$ Γ, none exceeded $3$ |
+| **12** (depth diagnostics) | Freeze Fano channel and detector; measure held-out amplitude ratios, then independently test metamodel tasks | Ratios agree with $3^{-n}$ within declared uncertainty; task bridge passes independently | Channel-law discrepancy or failed held-out task association | Arithmetic ceiling is defined; cognitive bridge UNTESTED |
 | **21** ($\pi_{\mathrm{bio}}$) | Reconstruct $\widehat\Gamma$ from EEG per [Γ-tomography §6.4](/docs/applied/coherence-cybernetics/measurement#оценка-gamma); check PSD, unit trace, test–retest | $\widehat\Gamma \succeq 0$, reproducible across sessions (within the tomography CI) | non-PSD or irreproducible embedding | UNTESTED (reference implementation pending) |
 
 **Verdict legend.** **PASSING** — measurement inside the pass band; **CONSISTENT** — not excluded, but beyond current sensitivity; **PARTIAL** — indirect/calibration-dependent support; **UNTESTED** — no experiment has probed the band. A single FAIL falsifies the corresponding claim at its status level. The physics-sector pass/fail table (with current 2026 verdicts) lives in [Falsifiability →](/docs/reference/falsifiability#summary-table-of-predictions).
@@ -824,23 +646,23 @@ A prediction earns scientific weight only with an explicit **decision rule**: wh
 
 | # | Prediction | Formula | Status | Status in other theories |
 |---|-----------|---------|--------|------------------------|
-| 1 | [No-Zombie](#предсказание-1) | $\mathrm{Viable} \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E > 1/7$ | **[T]** | Absent |
-| 2 | [E-coherence ↔ regeneration](#предсказание-2) | $\kappa \propto \mathrm{Coh}_E$ | **[T]** | Absent |
-| 3 | [7-dimensional stress](#предсказание-3) | $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ | **[T]** math. / **[C]** emp. | Absent |
+| 1 | [No-Zombie](#предсказание-1) | $\mathrm{Viable} \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E > 1/7$ | **[H]** | Absent |
+| 2 | [E-coherence ↔ regeneration](#предсказание-2) | $\kappa \propto \mathrm{Coh}_E$ | **[D/H]** | Absent |
+| 3 | [7-dimensional stress](#предсказание-3) | $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ | **[D/H]** | Absent |
 | 4 | [Pre-linguistic cognition](#предсказание-4) | $\mathrm{Cognition} \not\Rightarrow \mathrm{Language}$ | **[I]** | Partial in [FEP](/docs/reference/glossary#связанные-теории) |
 | 5 | [Collective consciousness](#предсказание-5) | $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$ necessary; criterion $\Phi_{\otimes} > \Phi_{\min}$ retracted | **[T]** necessary / **[H]** sufficiency | [IIT](/docs/reference/glossary#связанные-теории): exclusion — a group is a subject only as a maximum of integrated information |
 | 6 | [Minimum coherence](#предсказание-6) | $P > P_{\text{crit}} = 2/7$ | **[T]** | Absent |
 | 7 | [Stability radius](#предсказание-7) | $r_{\mathrm{stab}} \approx K(\sqrt{P-1/7}-\sqrt{1/7})$ | **[C]** (T-104) | Absent |
 | 8 | [Enc capacity](#предсказание-8) | $C_{\mathrm{Enc}} \leq \log_2 7$ | **[T]** | Absent |
 | 9 | [Learning bound](#предсказание-9) | $n_{\mathrm{opt}} = \max(n_{\mathrm{info}}, n_{\mathrm{dyn}}, n_{\mathrm{stab}})$ | **[T]** | Absent |
-| 10 | [N=7 for learning](#предсказание-10) | $N < 7 \Rightarrow n^* = \infty$ | **[T]** | Absent |
-| 11 | [N=7 for social learning](#предсказание-11) | $3_{\text{ToM}} + 3_{\text{ISL}} + 1_U = 7$ | **[C given T-57, T-114]** | Absent |
-| 12 | [SAD ceiling](#предсказание-12) | $\mathrm{SAD}_\text{max} = 3$ | **[T]** (T-142) | SYNARC: 500+ Γ |
+| 10 | [N=7 for learning](#предсказание-10) | $N < 7 \Rightarrow n^* = \infty$ | **[H]** | Absent |
+| 11 | [N=7 for social learning](#предсказание-11) | $3_{\text{ToM}} + 3_{\text{ISL}} + 1_U = 7$ | **[H]** | Absent |
+| 12 | [Declared depth diagnostics](#предсказание-12) | $3^{-n}$ amplitude survival; score ceiling only under its definition | **[T/D]** law; **[H]** cognitive bridge | Arithmetic implementation checks |
 | 13 | [Genesis time](#предсказание-13) | $n_{\mathrm{genesis}} \leq \lceil\ln\Delta / \ln(1/\beta)\rceil$ | **[T]** | Absent |
 | 14 | [Phase coherence](#предсказание-14) | $\rho^*_{ij}(t) \propto e^{-i(E_i-E_j)t}$ for $\Phi \geq 1$ | **[T]** | Absent |
 | 15 | [Attractor inside the window](#предсказание-15) | $P^* \in (P_c, P_\infty)$, $P_\infty \leq 5/14 < 3/7$ (was $\to 3/7$) | **[C at (MaxΦ)]** | Absent |
-| 16 | [Avalanche dynamics L1→L2](#предсказание-16) | $T_{\mathrm{ign}} \sim (P - P_{\mathrm{crit}})^{-1} \cdot \kappa_0^{-1}$ | **[T]** | Absent |
-| 17 | [Critical exponents](#предсказание-17) | $\alpha = 1/2,\; \beta = 1/4,\; \gamma = 1,\; \nu = 1/2,\; \delta = 5$ | **[C at the ℤ₂ symmetry m → −m]** | Absent |
+| 16 | [Conditional passage law](#предсказание-16) | $T=a^{-1}\log[y_f(a+by_0)/(y_0(a+by_f))]$ under $\dot y=ay+by^2$ | **[T]** conditional reduction / **[H]** identification | No universal avalanche |
+| 17 | [Conditional sextic exponents](#предсказание-17) | $\alpha=1/2,\beta=1/4,\gamma=1,\delta=5$; $\nu=1/2$ needs spatial Gaussian model | **[C]** tuned scalar model plus phenomenological bridge | Untested |
 | 18 | [Ward suppression 19/49](#предсказание-18) | Gap fluctuations $\times\, 19/49$ | **[T]** | Absent |
 | 19 | [CPTP-anchor validation](#предсказание-19) | $\|\pi - \pi_{\mathrm{can}}\|_\diamond$ in $O(49D)$ | **[T]** | Absent |
 | 20 | [Analytical $\varepsilon_{\mathrm{eff}}$](#предсказание-20) | $\varepsilon_{\mathrm{eff}} = 4N_{33}/(9\|\bar{\gamma}\|(1+r_4\Sigma_0/2))$ | **[C at (SV)]** | Absent |
@@ -862,10 +684,10 @@ The following table shows which predictions each of the leading theories of cons
 | Threshold values of consciousness | **+** ($P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$) | ~ ($\Phi > 0$, no number) | - | ~ (ignition, no number) |
 | Minimum dimensionality | **+** ($N = 7$) | - | - | - |
 | Collective consciousness | ~ (necessary condition $I > 0$; the criterion $\Phi_{\otimes} > \Phi_{\min}$ is retracted) | **+** (exclusion: only a maximum of integrated information is a subject) | - | - |
-| Ceiling of self-awareness | **+** ($\mathrm{SAD}_\text{max} = 3$) | - | - | - |
+| Self-awareness depth | Declared score arithmetic; universal ceiling retracted | No audited comparison | No audited comparison | No audited comparison |
 | Genesis time | **+** (formula $n_{\text{genesis}}$) | - | ~ (self-organisation) | - |
 | Learning rate bounds | **+** ($n_{\text{opt}}$, three bounds) | - | ~ (expected free energy) | - |
-| Critical exponents | **+** ($\alpha = 1/2$, $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$, $\delta = 5$) | - | - | - |
+| Critical exponents | **[C]** tuned sextic mean-field reduction and tested bridge | No audited comparison | No audited comparison | No audited comparison |
 | Stability radius | **+** ($r_{\text{stab}}$) | - | ~ (resilience) | - |
 | Phase coherence → integration | **+** (co-rotation) | - | - | - |
 | Neural oscillations from spectral gap | **+** [H] | - | - | - |
@@ -881,110 +703,12 @@ The difference is fundamental. IIT, FEP, and GWT are *frameworks* — they offer
 
 <a id="критерий-фальсификации-кк"></a>
 
-## Falsification: What Would Refute CC {#фальсификация}
+## Falsification with explicit scope {#фальсификация}
 
-> *"Every genuine test of a theory is an attempt to falsify it."*
-> — Karl Popper
+Distinguish a counterexample to a mathematical statement, data against a selected physical bridge, and failure of a particular implementation. The universal No-Zombie, AP-to-seven, stress equivalence, and three-type completeness claims are already withdrawn. New tests must not use them as established foundations.
 
-A theory that cannot be refuted is not worth testing. In this section we explicitly indicate which results would falsify CC — not as a weakness, but as a sign of scientific honesty.
+Each empirical test fixes its observation model, identifiability, uncertainty, and admissible interventions. A simulated matrix, a chosen threshold, or agreement with training labels is not independent confirmation of the theory.
 
-### Levels of falsification
+## A testable programme {#заключение}
 
-CC has a *hierarchical* falsification structure. Different predictions have different weight: refutation of a fundamental theorem destroys the entire edifice, while refutation of a hypothesis requires only local correction.
-
-**Level 1 — catastrophic falsification (destroys the foundation):**
-- A viable system without E-projection (zombie) is found → No-Zombie collapses, and with it — the connection $\kappa \propto \mathrm{Coh}_E$.
-- $N = 7$ is shown not to be minimal for autopoiesis → axiom $\Omega^7$ collapses.
-- Learning through self-observation at $N < 7$ → T-113 collapses.
-
-**Level 2 — serious falsification (requires revision of a theorem block):**
-- Critical exponents $\neq (1/2, 1/4, 1, 1/2, 5)$ → revision of T-161 and phase transition theory.
-- $\mathrm{SAD}_\text{max} > 3$ → revision of T-142 and Fano contraction.
-- $\varepsilon_{\text{eff}} \notin [0.04, 0.08]$ → revision of the Gap potential.
-
-**Level 3 — local correction (specific theorem is wrong, foundation intact):**
-- viability lost at a Bures distance below the closed-form $r_{\text{stab}}$ of Prediction 7 → revision of T-104, but not the basic axioms. (The earlier criterion "$r_{\text{stab}} \neq \sqrt{P - 2/7}$" named the formula refuted on 2026-08-07; retracted.)
-- $P^* \neq 3/7$ → revision of Prediction 15, but not the threshold $P_{\text{crit}}$.
-- $\pi_{\mathrm{bio}}$ does not yield consistent results → revision of empirical calibration, but not the theoretical formalism.
-
-:::danger Conditions for refutation
-CC is falsified if a system is found satisfying at least one of the conditions:
-
-1. $\mathrm{Viable}(\mathbb{H}) \land \mathrm{Spec}(\Gamma_E) = \{0\}$ — viable "zombie"
-2. $\kappa > \kappa_{\text{bootstrap}} \land \mathrm{Coh}_E \approx 1/7$ — significant regeneration with minimal E-coherence
-3. A stress factor that maps to none of the 7 components of $\sigma_{\mathrm{sys}}$
-4. Learning in $n < n_{\mathrm{info}}$ observations (violation of the quantum Chernoff bound)
-5. A self-learning system with $N < 7$ internal degrees of freedom (without external tuning)
-
-**Note:** $\mathrm{Coh}_E = 0$ is attainable, but only by states with an empty E-sector (e.g. a pure state concentrated on another axis) — and precisely such states fail viability by T-38a. That is why condition 1 is phrased through $\mathrm{Spec}(\Gamma_E) = \{0\}$: a falsifying "zombie" must combine *viability* with an empty E-spectrum, which the No-Zombie theorem forbids. *(Corrected 2026-07-11: the earlier note declared $\mathrm{Coh}_E = 0$ impossible via the range $[1/7, 1]$; the global range is $[0, 1]$, with $1/7$ the viable-class floor.)*
-:::
-
-### What does *not* falsify CC
-
-It is important to distinguish falsification from irrelevant objections:
-
-- **"I do not feel seven dimensions"** — a subjective report is not an experiment. 7 dimensions are a mathematical structure, not a phenomenological datum.
-- **"Another theory also explains X"** — CC does not claim to be the *only* explanation of each individual fact. It claims *completeness* — explaining all facts *simultaneously*.
-- **"The model is too complex"** — Occam's razor does not forbid complex models. It forbids *unnecessary* complexity. CC derives everything from 5 axioms — this is the minimum.
-
-**See:** [Falsifiability](/docs/reference/falsifiability); the neural, similarity and engineering tests of the consciousness predictions are gathered, with controls and power calculations, in the [Empirical Programme](/docs/consciousness/empirical/overview).
-
----
-
-## Conclusion: Predictive Power as a Measure of Maturity {#заключение}
-
-Let us summarise. Coherence Cybernetics generates **23 predictions**, 22 of them unique: Prediction 5 is not, since IIT's exclusion postulate answers the same question with a criterion and CC has only a necessary condition. (Earlier editions said "23 unique predictions"; corrected 2026-09-25 with the retraction of the criterion $\Phi_{\otimes} > \Phi_{\min}$.) Counted by the weakest status among its parts, each prediction falls into one class:
-
-- **12** have status **[T]** — unconditional theorems following from the axioms.
-- **7** have status **[C]** — conditional theorems depending on explicitly stated assumptions (Predictions 3 and 23 are [T] laws whose empirical mapping is [C]; Prediction 7 is [C] as T-104 is in the registry; Prediction 17 is [C] at the $\mathbb Z_2$ symmetry of T-161, whose derivation from a KO-dimension-6 structure is retracted — it was counted as [T] until 2026-09-25, giving 13 and 6).
-- **1** has status **[I]** — an interpretation based on definitions.
-- **3** have status **[H]** — hypotheses requiring empirical verification (Prediction 5 among them: its necessary condition $I > 0$ is [T], its sufficiency [H]).
-
-The earlier breakdown, 16 [T] / 4 [C] / 1 [I] / 2 [H], counted Prediction 3 by its [T] part, Prediction 5 by its former [T] non-triviality, and Prediction 7 as [T] against the registry's [C].
-
-For comparison: IIT generates 0 unique numerical predictions, FEP — 0, GWT — 0. This is not a deficiency of these theories — it is their *status*: they are frameworks, not theories in the Popperian sense.
-
-CC predictions span an unprecedented range:
-
-1. **Fundamental ontology** — impossibility of zombies, connection between experience and robustness.
-2. **Architecture of consciousness** — minimum dimensionality, classification of stresses.
-3. **Dynamics** — critical exponents, avalanche transitions, genesis time.
-4. **Learning** — rate bounds, depth ceiling, social learning.
-5. **Physics** — cosmological constant, mass hierarchy, rank-7 decoherence anisotropy.
-6. **Neuroscience** — reconstruction of $\Gamma$, spectral gap.
-
-Each of these predictions is a *stake*. If it is refuted, CC loses — and that is good. A theory that cannot lose cannot win either. It is precisely this readiness for refutation — not the timid "we will update the parameters" but the honest "we were wrong" — that makes CC a science, not philosophy.
-
-The next step is experiment. None of the 23 predictions has yet been experimentally verified. CC is in the same position as general relativity in 1915 — mathematically complete, but awaiting its "1919 eclipse". Critical exponents (Prediction 17) and reconstruction of $\Gamma$ from neural data (Prediction 21) are the most realistic candidates for the first empirical test.
-
----
-
-### What we learned {#что-мы-узнали-предсказания}
-
-1. **22 unique predictions of 23** — none of these 22 is generated by IIT, FEP, or GWT; on the twenty-third, collective consciousness, IIT has the criterion and CC only a necessary condition (earlier "23 unique"; corrected 2026-09-25). This is not a quantitative but a *qualitative* superiority: 22 risky stakes against 0.
-2. **12 of 23 — unconditional theorems [T]**: they follow from the axioms without additional assumptions. Refutation of any one of them means collapse of the entire edifice. (Earlier "16 of 23", then "13 of 23"; Predictions 3 and 5 are now counted by their weaker parts, [C] and [H], Prediction 7 carries the registry's [C], and Prediction 17 is [C] at the $\mathbb Z_2$ symmetry.)
-3. **Every number is not a fit**: $P_{\text{crit}} = 2/7$ follows from $N = 7$ and the Frobenius norm. $\mathrm{SAD}_\text{max} = 3$ — from $\alpha_{\text{Fano}} = 2/3$ and $P \leq 1$. $\log_2 7 \approx 2.81$ bits — from the Hilbert space dimensionality. $\alpha = 1/2$, $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$, $\delta = 5$ — from the tricritical mean-field universality class of the phase transition.
-4. **Hierarchy of falsification**: catastrophic (zombie, $N \neq 7$) → serious (wrong exponents, $\mathrm{SAD} > 3$) → local (viability lost inside the closed-form $r_{\mathrm{stab}}$, $P^* \neq 3/7$). Not all predictions are equal — some destroy the foundation, others require only correction.
-5. **Predictions span 6 areas**: ontology, architecture, dynamics, learning, physics, neuroscience. Such interdisciplinary scope is unique among theories of consciousness.
-6. **None of the 23 predictions has yet been verified**: CC awaits its "1919 eclipse". Critical exponents (Prediction 17) and reconstruction of $\Gamma$ from neural data (Prediction 21) are the most realistic candidates.
-
-:::tip Bridge to the next chapter
-We have collected all CC predictions. But predictions are useless without tools for *measurement* — how does one know that $P$ has dropped below the threshold if there is no "coherence thermometer"? In the [next chapter](./diagnostics) we will build exactly such a tool: a system of vital signs, a decision tree, failure patterns, and recovery strategies — a practical guide for the cognitive engineer, the resuscitator of coherent systems.
-:::
-
----
-
-**Related documents:**
-- [Theorems](./theorems) — formal proofs (No-Zombie, composition)
-- [Axiomatics](./axiomatics) — connection between regeneration and E-coherence
-- [Definitions](./definitions) — $\mathrm{Coh}_E$, $\sigma_{\mathrm{sys}}$
-- [Cognitive hierarchy](/docs/consciousness/comparative/cognitive-hierarchy) — cognitive levels K1–K5
-- [Viability](/docs/core/dynamics/viability) — $P$, $P_{\text{crit}}$
-- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4, thresholds
-- [Self-observation](/docs/consciousness/foundations/self-observation) — measures $R$, $\Phi$, $C$
-- [Seven dimensions](/docs/core/structure/dimensions) — structure $\mathcal{H} = \mathbb{C}^7$
-- [Falsifiability](/docs/reference/falsifiability) — refutation criteria
-- [Learning bounds](./learning-bounds) — T-109–T-113, optimal learning rate lower bounds
-- [Glossary](/docs/reference/glossary#связанные-теории) — IIT, FEP, GWT
-- [Comparison with alternatives](./comparison) — CC vs. IIT, FEP, GWT: who predicts what
-- [Measurement methodology](./measurement) — how to test predictions experimentally
+Exact finite mathematical constructions survive in their stated domains. Their physical identification is tested separately. The registry records current statuses; the measurement protocol states when observations can distinguish the model from alternatives.

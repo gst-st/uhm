@@ -85,6 +85,7 @@ determines the **truth value** of the statement "state $\Gamma$ belongs to subsp
 $$
 \{\chi_{S_k}(\Gamma)\}_{k=0}^{N-1}
 $$
+
 :::
 
 *Proof:*
@@ -148,17 +149,20 @@ which corresponds to "collapse" into a classical mixture.
 *Proof.* Suppose the Lindblad operators $L_m = \chi_{S_m}$ are diagonal in the pointer basis $\{|a_k\rangle\}$ (ensured by the fact that $\{|a_k\rangle\}$ is a simultaneous eigenbasis of all characteristic morphisms $\chi_{S_m}$). Denote $(L_m)_{kk} \equiv \langle a_k | L_m | a_k \rangle \in \mathbb{R}$ (real, since $L_m$ is Hermitian).
 
 Computing the matrix element of the Lindblad equation for $k \neq l$:
+
 $$
 \frac{d}{dt}\Gamma_{kl} = \sum_m \gamma_m \Bigl[\underbrace{\langle a_k | L_m \Gamma L_m^\dagger | a_l \rangle}_{(L_m)_{kk}(L_m)_{ll}\,\Gamma_{kl}} - \frac{1}{2}\underbrace{\langle a_k | \{L_m^\dagger L_m, \Gamma\} | a_l \rangle}_{(|(L_m)_{kk}|^2 + |(L_m)_{ll}|^2)\,\Gamma_{kl}}\Bigr]
 $$
 
 Since $L_m$ is diagonal:
+
 $$
 = \sum_m \gamma_m \Bigl[(L_m)_{kk}(L_m)_{ll} - \tfrac{1}{2}\bigl((L_m)_{kk}^2 + (L_m)_{ll}^2\bigr)\Bigr]\Gamma_{kl}
 = -\frac{1}{2}\sum_m \gamma_m \bigl[(L_m)_{kk} - (L_m)_{ll}\bigr]^2 \Gamma_{kl}
 $$
 
 where the last equality is the identity $ab - \tfrac{1}{2}(a^2+b^2) = -\tfrac{1}{2}(a-b)^2$ for real $a,b$. Therefore:
+
 $$
 \Gamma_{kl}(t) = \Gamma_{kl}(0)\,e^{-\gamma_{kl} t}, \quad \gamma_{kl} = \frac{1}{2}\sum_m \gamma_m \bigl|({\chi_{S_m}})_{kk} - ({\chi_{S_m}})_{ll}\bigr|^2
 $$
@@ -366,6 +370,7 @@ Measurement is the **limit of fast decoherence**: as $\gamma_k \to \infty$, cont
 $$
 \lim_{\gamma_k \to \infty} e^{\mathcal{D}_\Omega t} (\Gamma) = \sum_k p_k P_k \Gamma P_k / \text{Tr}(P_k \Gamma)
 $$
+
 :::
 
 ### 5.3 Entropy and Measurement
@@ -400,6 +405,7 @@ For a system with Hamiltonian $H$ and structure $\Omega$:
 $$
 \text{Measurement basis} = \text{Atoms of } \Omega \cap \text{Eigenspaces of } H
 $$
+
 :::
 
 *Proof:*
@@ -466,29 +472,30 @@ $$
 \Gamma_{regen} = \Gamma_{decoh} + \kappa \cdot (\Gamma_{model} - \Gamma_{decoh}) \cdot g_V(P) \cdot \delta\tau
 $$
 
-### 7.3 Self-Consistency Condition
+<a id="73-self-consistency-condition"></a>
 
-:::tip [T] Theorem 7.1 (Self-consistent measurement)
-For systems with $R \geq 1/3$, there exists a **unique stationary solution** to self-measurement:
+### 7.3 Self-consistency of a specified map
+
+:::tip Theorem 7.1: fixed replacement channel [T under fixed parameters]
+Fix $\sigma\in D_7$ and $0<k\le1$ independently of the input. The linear operator map
 
 $$
-\varphi(\Gamma^*) = \Gamma^*
+T_{k,\sigma}(X)=(1-k)X+k\operatorname{Tr}(X)\sigma
 $$
 
-i.e., a fixed point of the self-modeling operator. This fixed point is the **terminal object** $T$ in the category of Holons.
+is CPTP and has the unique fixed state $\Gamma^*=\sigma$. On states, the fixed-point equation reduces to $k(\sigma-\Gamma)=0$. Moreover
 
-Physical meaning: a system that has reached $\Gamma^*$ is at the fixed point of the $\varphi$-operator — its self-model coincides with reality (complete self-consistency).
+$$
+T_{k,\sigma}^n(\Gamma)=\sigma+(1-k)^n(\Gamma-\sigma),\qquad
+\|T_{k,\sigma}(\Gamma)-T_{k,\sigma}(\eta)\|_F=(1-k)\|\Gamma-\eta\|_F.
+$$
 
-**Proof.** Self-consistency of self-measurement $\varphi(\Gamma) = (1-k)\Gamma + k\rho^*$ follows from three established theorems:
-
-1. **Existence and uniqueness of $\rho^*$** ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]): the nontrivial attractor $\rho^*$ exists and is unique in $\mathcal{D}(\mathbb{C}^7)$. The fixed point $\varphi(\Gamma^*) = \Gamma^*$ is realized at $\Gamma^* = \rho^*$.
-
-2. **CPTP property** ([T-62](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) [T]): the operator $\varphi$ is a CPTP channel (completely positive, trace-preserving), so $\varphi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ is a well-defined map that does not leave the state space. Self-reference (the system measures itself) does not generate a paradox: $\varphi$ is a contracting map in the Bures metric.
-
-3. **Incompleteness** ([T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]): $\varphi \neq \mathrm{id}$, meaning the self-model always differs from reality (an analogue of Gödel's theorem). The parameter $k \in (0,1)$ ensures $\Gamma^* \neq I/7$ (nontriviality) and $\Gamma^* \neq \Gamma$ for $\Gamma \neq \rho^*$ (non-coincidence of model and state outside the fixed point).
-
-Thus, self-measurement $\varphi$ is **well-defined** (CPTP), has a **unique fixed point** $\rho^*$ (T-96), and is **nontrivial** (T-55). The self-referential paradox is resolved by the structure of the replacement channel. $\blacksquare$
+Thus the chosen discrete iteration converges to $\sigma$. CPTP follows from the fixed replacement channel construction in [self-observation](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi). At $k=0$ the map is identity and every state is fixed. $\sigma\ne I/7$ is an additional choice; $k>0$ does not force it. $R\ge1/3$ neither selects the target nor proves this theorem's hypotheses.
 :::
+
+A fixed state of this iteration is not automatically a stationary state of the full Hamiltonian–dissipation–regeneration flow; that requires the full vector field to vanish. A terminal object of a specified category and a density-matrix fixed point have different types. The conditional attractor result [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) does not select a universal anchor for all self-models. When $k$ or $\sigma$ depends on $\Gamma$, the frozen-channel proof does not establish linearity, CPTP or contraction of the resulting nonlinear map.
+
+[T-55](/docs/core/foundations/consequences#неполнота-ловера) concerns $\mathrm{Th}_m=\operatorname{Eq}(m^*,\mathrm{id}_{\Omega^G})$ for a chosen $m:G\to G$. Properness needs predicate separation and $m\ne\mathrm{id}$; it is not Gödel incompleteness or a theorem that $\varphi(\Gamma)$ always differs from $\Gamma$. In the channel above the nonidentity map explicitly fixes $\sigma$. Interpreting agreement at a fixed state as faithful self-measurement also requires an independently identifiable observation model.
 
 ---
 
@@ -516,6 +523,7 @@ where the canonical extension of regeneration is:
 $$
 \tilde{\mathcal{R}}_A[\Gamma_{AB}] := \kappa_A(\Gamma_A) \cdot \left((\varphi_A \otimes \text{id}_B)(\Gamma_{AB}) - \Gamma_{AB}\right) \cdot g_V(P_A)
 $$
+
 :::
 
 *Proof:*

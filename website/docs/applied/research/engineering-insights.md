@@ -420,7 +420,6 @@ as the task it routes measurably recovers less than half the gain
 The $O(M \log M)$ figure above is a heuristic about connection counts; the
 per-node bound of 21 is the operative constraint.
 
-
 #### 8.2. SAD Depth and Computational Cost
 
 From [theorem T-110](/docs/reference/status-registry) (dynamic learning limit) and [SAD_MAX = 3](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad):
@@ -505,7 +504,7 @@ implement CoherentService {
         CoherentService { sector: sector, gamma_kk: gamma_kk.clamp(0.0, 1.0) }
     }
 
-    /// σ_k = clamp(1 − N·γ_kk, 0, 1) (T-92 [T]).
+    /// σ_k = clamp(1 − N·γ_kk, 0, 1) (T-92 [D]).
     public pure fn stress(&self) -> Float { 0.0 <= self && self <= 1.0 } {
         (1.0 - (N_DIM as Float) * self.gamma_kk).clamp(0.0, 1.0)
     }
@@ -1160,7 +1159,6 @@ benchmark and would have removed the mind from the machine. The decisive column 
 therefore not accuracy but ignition, which is exactly the column that moved when
 the tree was introduced and stayed put when the shadow was.
 
-
 ### The tension resolves, because it is not symmetric {#натяжение-разрешается}
 
 Left there it would read as a dilemma: bind loosely and forget, bind tightly and
@@ -1197,7 +1195,6 @@ Full memory, full ignition, and the state still carrying the mind — because th
 shadow answers only what it was told and is silent everywhere else, which is why
 the held-out column is identical in every row of every sweep above.
 
-
 ### A narrow body cannot light a mind {#узкое-тело-не-зажигает-ума}
 
 The threshold above was measured at one body size, and a number measured at one
@@ -1227,7 +1224,6 @@ cells before it splits, which is why the product governs ignition and why it sit
 near the carrier's capacity. **Ignition is not about how much a holon knows but
 about how long it is left alone to fill.** A tree that splits eagerly is a tree of
 holons none of which ever gets written enough to wake.
-
 
 And then the question the rule invites: is there a body too small to host a mind
 at any binding at all? There is, and it is sharply located.
@@ -1405,7 +1401,9 @@ on the six Interiority cells first — and the over-capacity hash routed through
 a fixed permutation with the same six first, because a hash must remain a pure
 function of the context —
 
-$$D:\ 1.59 \;\longrightarrow\; 3.79,$$
+$$
+D:\ 1.59 \;\longrightarrow\; 3.79,
+$$
 
 and the root meets **all four criteria** on rows nobody generated to be
 learnable, with answers and cost untouched. Operationally, "one mind over a
@@ -1518,4 +1516,3 @@ The bound is part of the design: the loop does not choose its goals — seeking
 takes one from the caller. Where goals come from is the storey above this one,
 and it starts with a question about currency — what a system that wants nothing
 but its own viability could legitimately want — not with code.
-

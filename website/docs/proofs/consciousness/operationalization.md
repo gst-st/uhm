@@ -1,464 +1,212 @@
 ---
 sidebar_position: 3
 title: "Operationalization of consciousness"
-description: "Theorems T-128 — T-138: formalization of operational aspects of UHM"
+description: "Declared readouts, conditional error bounds, sampling and the scope of T-128–T-138"
 ---
 
 # Operationalization of consciousness
 
-:::info Status
-All results on this page are proven theorems **[T]** with complete proofs and explicit dependencies.
+:::info Result scope
+Definitions [D], empirical/functional hypotheses [H] and conditional mathematical results [T] are distinguished. A computable state function is not automatically identified from observations. Universal encoder uniqueness, scalar purity as a full gate and automatic hypothesis upgrades are withdrawn.
 :::
 
----
+## §1. T-128: a selected 7D differentiation proxy [D] {#t-128}
 
-## §1. T-128: the 7D definition of D_diff {#t-128}
-
-:::tip T-128 [D]: the 7D definition of differentiation
-$D_{\text{diff}}$ is **defined** in the 7D formalism, without a PW-embedding, by
+In the fixed frame, let $\pi_E(X)=P_EX+XP_E-P_EXP_E$ retain the E row and column. Then
 
 $$
-D_{\text{diff}}^{7D} := 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)
+\mathrm{Coh}_E=\frac{\|\pi_E\Gamma\|_F^2}{P}\in[0,1],\qquad
+D_{\mathrm{diff}}^{7D}:=1+6\mathrm{Coh}_E.
 $$
 
-**Status errata 2026-09-10: [T] → [D].** The literal quantity $e^{S_{vN}(\rho_E)}$ is **not expressible in 7D**: there $\rho_E = \gamma_{EE}$ is a scalar, so $S_{vN}(\rho_E) \equiv 0$ and $e^{S_{vN}} \equiv 1$ ([canonical box](/docs/core/structure/dimension-e#rho-e-7d-42d) [T]). The formula above is therefore a **definition** chosen to agree with the 42D notion at its two endpoints ($\mathrm{Coh}_E = 0 \Rightarrow 1$; $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max} \Rightarrow N$), not an exact representation of it. The bridge it once leaned on, the Morita equivalence T-58, is retracted [✗] (2026-09-10, second pass: it fails on dimension); what survives is the section–retraction T-58′ [T], which carries 7D data upward but does not make a 42D-only quantity a function of the 7D state.
-:::
+The range and endpoints follow from an orthogonal **operator-space** projection; $\pi_E$ is generally neither positive nor an algebra conditional expectation. Its maximum is attained at $|E\rangle\langle E|$ ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)); zero is attained by states supported outside E.
 
-**Proof (4 steps).**
+This formula is a proxy choice [D], not $e^{S(\rho_E)}$ derived from partial trace. A prime seven-dimensional Hilbert space has no nontrivial tensor factor selected by naming an E coordinate. The unnormalized scalar $\gamma_{EE}$ is not a density matrix for reduced entropy; a normalized one-dimensional state has entropy zero. A declared extended lift and partial trace can define a different $\rho_E$, which must be written explicitly. A section–retraction alone does not make every quantity of the larger space a function of the smaller state.
 
-**Step 1.** By [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность): $\pi\circ\iota = \mathrm{id}$ — a 7D state lifts and returns unchanged. (The stronger reading $\mathrm{Sh}_\infty(\mathcal{C}_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}_{42}^{PW})$ is retracted; it is not needed here, since the formula below is a definition.)
+The proxy is not even a universal endpoint match to global entropy: at the pure E state, $D_{\mathrm{diff}}^{7D}=7$ while $e^{S(\Gamma)}=1$. At $I/7$, the proxy is $13/7$ while global $e^S=7$. Claims of equality, CPTP monotonicity or reconstruction of reduced entropy from this scalar are withdrawn. The score $\sigma_E^{\mathrm{diff}}=(7-D_{\mathrm{diff}}^{7D})/5$ is another definition, with range $[0,6/5]$. Use it consistently with the declared gate; it is not the diagonal clamp score of [T-158](/docs/proofs/consciousness/substrate-closure#t-158).
 
-**Step 2.** $\mathrm{Coh}_E$ — [HS-projection onto the E-subalgebra [T]](/docs/core/foundations/axiom-septicity#hs-projection) — is an invariant independent of the choice of representation (7D or 42D).
+## §2. T-129: integration threshold selection and sharp algebra {#t-129}
 
-**Step 3.** In 42D: $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$, where $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$. Via equivalence, $\rho_E$ is uniquely reconstructed from $\mathrm{Coh}_E(\Gamma)$ by the [4-step algorithm T-95](/docs/core/structure/dimension-e#канонический-алгоритм-pw).
-
-**Step 4 (Linear formula).** Corollary:
-- $\mathrm{Coh}_E = 0 \Longrightarrow D_{\text{diff}} = 1$ (pure E-state)
-- $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max} \Longrightarrow D_{\text{diff}} = N$ (maximal differentiation)
-- Monotonicity from CPTP-contractivity ([T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi))
-
-$\blacksquare$
-
-**Dependencies:** T-58′ [T] (section–retraction), T-95 [C], $\mathrm{Coh}_E$ [T]. Normalization: $\mathrm{Coh}_E^{\max} = 1$ [T] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
-
-**Corollary:** $\sigma_E = (N - D_{\text{diff}}^{7D})/(N-2)$ is computable in 7D, closing the full 7D-computability of $\sigma_{\text{sys}}$ (see [T-137](#t-137)). With $\mathrm{Coh}_E^{\max} = 1$: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N-1)$.
-> **Errata 2026-07-22**: renormalized form — see the errata note at [T-92](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
-
----
-
-## §2. T-129: Φ_th = 1 from self-consistency {#t-129}
-
-:::tip Theorem T-129 [T]: Integration threshold Φ_th = 1
-$\Phi_{\text{th}} = 1$ is the unique value at which the integration threshold is self-consistent with $P_{\text{crit}} = 2/7$ on the extremal (uniform-diagonal) state.
-
-**What is theorem and what is definition.** The theorem-level content is the inequality $\Phi \geq 1 \Rightarrow P \geq 2/7$ on all of $\mathcal{D}(\mathbb{C}^7)$ (T-129a, Cauchy–Schwarz) and its sharpness on the uniform-diagonal stratum, where $\Phi = 7P - 1$ identically. Calling the *least* threshold with this property "$\Phi_{\text{th}}$" is the definition [D] that the theorem makes canonical. $\Phi$ itself is a frame-pinned observable ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).
-:::
-
-**Proof.**
-
-**Step 1.** Purity decomposition: $P = P_{\text{diag}} + P_{\text{coh}} = P_{\text{diag}}(1 + \Phi)$.
-
-**Step 2.** By Cauchy–Schwarz: $P_{\text{diag}} = \sum_i \gamma_{ii}^2 \geq 1/N = 1/7$ (equality iff $\gamma_{ii} = 1/7\;\forall i$).
-
-**Step 3.** On the extremal uniform-diagonal state: $P_{\text{diag}} = 1/7$, $P = (1 + \Phi)/7$.
-
-**Step 4.** Viability condition $P > P_{\text{crit}} = 2/7$ ([Т](/docs/core/dynamics/viability#определение-чистоты)):
-$$\frac{1 + \Phi}{7} > \frac{2}{7} \iff \Phi > 1$$
-
-**Step 5.** $\Phi_{\text{th}} = 1$ is the exact boundary: for $\Phi < 1$ and uniform diagonal, viability is impossible.
-
-**Step 6 (Uniqueness).** Any $\Phi_{\text{th}} \neq 1$ is not the smallest threshold compatible with $P_{\text{crit}} = 2/7$:
-- $\Phi_{\text{th}} < 1$: **too weak a threshold** — admits non-viable states (uniform diagonal with $\Phi \in (\Phi_{\text{th}}, 1)$ gives $P = (1+\Phi)/7 < 2/7$, violating viability despite $\Phi \geq \Phi_{\text{th}}$).
-- $\Phi_{\text{th}} > 1$: **too strict a threshold** — excludes states that are actually viable (the uniform-diagonal state with $\Phi = 1 < \Phi_{\text{th}}$ gives $P = 2/7 = P_{\text{crit}}$ — a boundary viable state, yet $\Phi < \Phi_{\text{th}}$ erroneously signals "L2 not reached"). This violates necessity: $\Phi_{\text{th}}$ must be the **smallest** value guaranteeing $P \geq P_{\text{crit}}$.
-
-$\blacksquare$
-
-#### The two thresholds as nested majority criteria {#вложенные-мажоритарные-критерии}
-
-:::tip Theorem (nested dominance structure of $P_{\text{crit}}$ and $\Phi_{\text{th}}$) [T]
-Decompose $\Gamma$ into **three mutually HS-orthogonal components**,
+Write $d=\sum_i\gamma_{ii}^2$, $q=\sum_{i\ne j}|\gamma_{ij}|^2$, $P=d+q$, $\Phi=q/d$. Trace one gives $d\ge1/7$. Consequently
 
 $$
-\Gamma \;=\; \underbrace{\tfrac{I}{7}}_{\text{isotropic}} \;+\; \underbrace{\big(\mathrm{diag}(\Gamma)-\tfrac{I}{7}\big)}_{\text{population structure}} \;+\; \underbrace{\Gamma_{\text{hollow}}}_{\text{coherences}},
-\qquad P = \underbrace{\tfrac17}_{c_1} + \underbrace{\|\mathrm{diag}(\Gamma)-\tfrac I7\|_F^2}_{c_2} + \underbrace{P_{\text{coh}}}_{c_3}.
+P=d(1+\Phi),\qquad\Phi\le7P-1,\qquad\Phi\ge1\Rightarrow P\ge2/7.
 $$
 
-Then the two L2 thresholds are **dominance criteria on this one decomposition**:
+These are theorems [T] for the fixed-frame measure. Selecting $\Phi\ge1$ as an access criterion is [D]; the inequalities do not force a consciousness criterion, Bayes posterior or universal biological normalization. Purity above $2/7$ need not imply $\Phi\ge1$: a pure diagonal state has $P=1$, $\Phi=0$.
 
-- $P > P_{\text{crit}} = 2/7 \iff c_2 + c_3 > c_1$ — the **structural majority** (structure outweighs the isotropic part);
-- $\Phi \geq 1 \iff c_3 \geq c_1 + c_2$ — the **coherence majority** (coherences outweigh all diagonal weight).
+#### Nested HS weight criteria {#вложенные-мажоритарные-критерии}
 
-The coherence majority **implies** the structural majority: $c_3 \geq c_1 + c_2 \Rightarrow c_2 + c_3 \geq c_1 + 2c_2 \geq c_1$, with equality exactly when $c_2 = 0$ and $c_3 = c_1$ — the unique uniform-diagonal boundary state of T-129a. Thus T-129a is precisely the **nesting consistency** of the two majority criteria, and both thresholds are instances of the same plurality-dominance principle that yields $R_{\text{th}} = 1/3$ ($K=3$ hypotheses $\to$ plurality $1/3$; two-component splits $\to$ majority $1/2$ of the Frobenius weight). Verified numerically: no nesting violations over $2\times10^4$ random states; the boundary is attained by the PSD state $\tfrac I7 + c(J - I)$, $c = 1/\sqrt{294}$.
-:::
-
-**Frame note.** $P$ and the isotropic/traceless split are basis-invariant; the diagonal/hollow split (hence $\Phi$) is taken in the **canonical dimension frame** $(A,S,D,L,E,O,U)$ — the same frame data as $\mathrm{Coh}_E$ and $\kappa_0$ (see [Corollary 5 of the uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem)).
-
-**Status:** [D] → **[T]**. $\Phi_{\text{th}} = 1$ is now derived from $P_{\text{crit}} = 2/7$ [T], not postulated.
-
-**Dependencies:** $P_{\text{crit}} = 2/7$ [T], Cauchy–Schwarz inequality.
-
-#### Corollary (Universality of Φ_th = 1 on all D(ℂ⁷)) [T] {#t-129a-универсальность}
-
-:::tip Corollary T-129a [T]
-The threshold $\Phi_{\text{th}} = 1$ is **universal** on the entire space $\mathcal{D}(\mathbb{C}^7)$: for any state $\Gamma$ with $\Phi(\Gamma) \geq 1$, we have $P(\Gamma) \geq P_{\text{crit}}$. The strict inequality $P > P_{\text{crit}}$ holds for all states except the unique boundary case: $\Phi = 1$ and $P_{\text{diag}} = 1/7$ (uniform-diagonal).
-:::
-
-**Proof.** Let $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ be an arbitrary state.
-
-**(a)** Purity decomposition: $P = P_{\text{diag}}(1 + \Phi)$ (identity, independent of the specific $\Gamma$).
-
-**(b)** Cauchy–Schwarz inequality: $P_{\text{diag}} = \sum_i \gamma_{ii}^2 \geq \frac{(\sum_i \gamma_{ii})^2}{7} = \frac{1}{7}$, with equality if and only if $\gamma_{ii} = 1/7$ for all $i$.
-
-**(c)** If $\Phi \geq 1$, then $P = P_{\text{diag}}(1 + \Phi) \geq P_{\text{diag}} \cdot 2 \geq \frac{2}{7} = P_{\text{crit}}$. Thus $P \geq P_{\text{crit}}$.
-
-**(d)** Equality $P = P_{\text{crit}}$ is achieved only when $P_{\text{diag}} = 1/7$ (uniform-diagonal, equality in Cauchy–Schwarz) **and** $\Phi = 1$ — this is the unique boundary case. At the viability boundary the system exists, but with zero margin.
-
-**(e)** For all other states (either $P_{\text{diag}} > 1/7$ or $\Phi > 1$), the condition $\Phi \geq 1$ gives $P > P_{\text{crit}}$ **strictly**.
-
-**(f)** The threshold $\Phi_{\text{th}} = 1$ is the **smallest** universal threshold: for $\Phi_{\text{th}} < 1$ there exist extremal states with $P_{\text{diag}} = 1/7$ and $\Phi \in (\Phi_{\text{th}}, 1)$ for which $P < P_{\text{crit}}$. $\blacksquare$
-
-**Interpretation:** T-129 established $\Phi_{\text{th}} = 1$ on the extremal family. T-129a shows that this threshold is a **binding constraint** on all of $\mathcal{D}(\mathbb{C}^7)$: the extremal case determines the universal threshold ($P \geq P_{\text{crit}}$), while all other states satisfy it with margin ($P > P_{\text{crit}}$). The unique equality point is the boundary (uniform-diagonal with $\Phi = 1$), practically unstable.
-
----
-
-## §3. T-130: CPTP-anchor approximation bound {#t-130}
-
-:::tip Theorem T-130 [T]: CPTP-anchor approximation bound (H3 → CLOSED)
-For a CPTP-compatible anchor map $\pi: \mathbb{R}^D \to \mathcal{D}(\mathbb{C}^7)$:
+The orthogonal decomposition $\Gamma=I/7+(\operatorname{diag}\Gamma-I/7)+\operatorname{offdiag}\Gamma$ gives weights $c_1=1/7$, $c_2=d-1/7$, $c_3=q$. Hence
 
 $$
-|R_{\text{impl}} - R_{\text{UHM}}| \leq 2 \|\pi - \pi_{\text{canonical}}\|_\diamond \cdot C(P)
+P>2/7\iff c_2+c_3>c_1,\qquad\Phi\ge1\iff c_3\ge c_1+c_2.
 $$
 
-where $C(P) = 7P/(P - 1/7)$ is bounded for $P > 2/7$.
-:::
+Coherence majority implies **non-strict** structural majority; equality requires $c_2=0$, $c_3=c_1$. This is an equality locus, not one unique matrix. It does not make HS weights posterior probabilities or derive $R_{\mathrm{th}}=1/3$ from three operator terms. The diagonal/hollow split is pinned to a declared frame; $\Phi$ generally changes under $G_2$ rotations.
 
-**Corollary (H3 → [T]):** For $\|\pi - \pi_{\text{canonical}}\|_\diamond < \varepsilon_0$:
+#### T-129a: sharp universal implication on the specified state space [T] {#t-129a-универсальность}
 
-$$(R_{\text{impl}} \geq 1/3) \Longrightarrow (R_{\text{UHM}} \geq 1/3 - 2\varepsilon_0 \cdot C(P))$$
+The proof is $P=d(1+\Phi)\ge2d\ge2/7$. Equality occurs iff $d=1/7$ and $\Phi=1$; every other state satisfying $\Phi\ge1$ has strict $P>2/7$. There are many equality states, including phase-conjugate families with the same norm.
 
-For sufficiently small $\varepsilon_0$, the threshold property transfers.
+The least scalar cut $t$ such that $\Phi\ge t$ guarantees $P\ge2/7$ for all states is $t=1$. Sharpness follows from $\Gamma_\lambda=(1-\lambda)I/7+\lambda|u\rangle\langle u|$, $u=(1,\ldots,1)/\sqrt7$: $\Phi=6\lambda^2$ ranges below one with $P=(1+\Phi)/7<2/7$. This proves that selected extremal guarantee; it does not imply strict viability at equality or independence of every gate. The complete conjunction remains [Cap₂](/docs/reference/mathematical-kernel#thresholds), with a separately realized differentiation variable.
 
-**Proof.**
+## §3. T-130: correctly typed state/readout error bounds {#t-130}
 
-**Step 1.** $\pi$ is CPTP-compatible: $\pi \circ \Lambda_{\text{hidden}} = \Lambda_\Gamma \circ \pi$ for admissible channels $\Lambda$.
+A feature map $\pi:\mathbb R^D\to\mathcal D_7$ has no diamond norm or Choi matrix by this type. It needs a calibrated observation model; the withdrawn T-123/T-42a do not provide a canonical comparator. Compare state estimates or declared identifiable targets on a specified domain.
 
-**Step 2.** By the data processing inequality: CPTP channels are contractions in trace-norm.
-
-**Step 3.** $R_{\text{UHM}} = 1/(7P(\Gamma))$ [T-126](/docs/proofs/consciousness/conscious-window#t-126), $R_{\text{impl}}$ is defined via $\|s - \varphi(s)\|^2$ in $\mathbb{R}^D$.
-
-**Step 4.** Relation: $R_{\text{impl}} = R_{\text{UHM}} \circ \pi + \delta$, where $|\delta| \leq 2\|\pi - \pi_{\text{canonical}}\|_\diamond \cdot C(P)$.
-
-**Step 5.** From universal approximation of CPTP maps: $\forall\varepsilon > 0\;\exists$ neural network $\pi$: $\|\pi - \pi_{\text{canonical}}\|_\diamond < \varepsilon$.
-
-$\blacksquare$
-
-**Corollary for convergence rate:** $n_{\text{train}} \geq f(D, \varepsilon, \delta)$ — from standard PAC-bounds for CPTP approximation (connection to [T-109 [T]](/docs/applied/coherence-cybernetics/learning-bounds#теорема-информационная-граница)).
-
-**Dependencies:** [T-100 [T]](/docs/applied/coherence-cybernetics/sensorimotor#теорема-кодирование-среды) (existence of Enc), [T-126 [T]](/docs/proofs/consciousness/conscious-window#t-126) (canonicity of R), data processing inequality.
-
----
-
-## §4. T-131: Canonical discretization δτ {#t-131}
-
-:::tip Theorem T-131 [T]: Canonical discretization scale
-The canonical discretization scale for a digital agent:
+**Conditional theorem [T].** If two valid states $\rho,\sigma$ satisfy $\|\rho-\sigma\|_F\le\varepsilon$ (or the stronger trace-norm bound), then
 
 $$
-\delta\tau = \frac{\pi}{2 \|\mathcal{L}_0\|_{\mathrm{op}}}
+|P(\rho)-P(\sigma)|\le2\varepsilon.
 $$
 
-where $\|\mathcal{L}_0\|_{\mathrm{op}}$ is the operator norm of the linear Liouvillian.
-:::
-
-**Proof.**
-
-**Step 1.** Spectrum of $\mathcal{L}_0$: eigenvalues $\lambda_k$ with $\mathrm{Re}(\lambda_k) \leq 0$ and $|\mathrm{Im}(\lambda_k)| \leq \|\mathcal{L}_0\|_{\mathrm{op}} =: \omega_{\max}$.
-
-**Step 2.** Nyquist–Shannon: to reconstruct dynamics without aliasing, $\delta\tau \leq \pi/\omega_{\max}$.
-
-**Step 3.** Optimal choice (minimal lossless discretization): $\delta\tau = \pi/(2\omega_{\max})$ — with a $2\times$ margin for Suzuki–Trotter error.
-
-**Step 4.** From [T-116 [T]](/docs/core/foundations/axiom-omega#теорема-pw-suzuki-trotter): split-step error $\|\Gamma_{\text{exact}}(\delta\tau) - \Gamma_{\text{split}}(\delta\tau)\|_F \leq C \cdot \delta\tau^2$. At $\delta\tau = \pi/(2\omega_{\max})$: error $\propto \pi^2/(4\omega_{\max}^2)$, exponentially small for large spectral gaps.
-
-**Step 5.** For SYNARC: $\omega_{\max}$ is determined by parameters $H_\Omega$ and $D_k$ from configuration → $\delta\tau$ is canonical (not a free parameter).
-
-$\blacksquare$
-
-**Connection to PW-time:** $\delta\tau_{\text{PW}} = 2\pi/(7\omega_0)$ ([T-87 [T]](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки)). Canonical $\delta\tau \leq \delta\tau_{\text{PW}}$ — a digital agent can "think faster" than the PW-bound, through discrete integration.
-
-**Dependencies:** [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω) (spectral gap), [T-116 [T]](/docs/core/foundations/axiom-omega#теорема-pw-suzuki-trotter) (Suzuki–Trotter), [T-87 [T]](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки) (PW-time).
-
----
-
-## §5. T-132: Necessity of complex Γ for Gap-structure {#t-132}
-
-:::tip Theorem T-132 [T]: Necessity of complex Γ
-For a non-trivial Gap-structure ($\exists(i,j): \mathrm{Gap}(i,j) > 0$), the coherence matrix $\Gamma$ MUST be complex ($\gamma_{ij} \in \mathbb{C}$, not all $\gamma_{ij} \in \mathbb{R}$).
-:::
-
-**Proof.**
-
-**Step 1.** $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$. For $\gamma_{ij} \in \mathbb{R}$: $\arg(\gamma_{ij}) \in \{0, \pi\}$, $\sin \in \{0, 0\}$. Therefore $\mathrm{Gap} = 0$ identically.
-
-**Step 2.** Hermiticity $\Gamma^\dagger = \Gamma$ admits $\gamma_{ij} \in \mathbb{C}$ with $\gamma_{ji} = \gamma_{ij}^*$ — standard property of density matrices [T].
-
-**Step 3.** Hamiltonian part of $\mathcal{L}_0$: $d\Gamma/d\tau|_H = -i[H_\Omega, \Gamma]$. For real $H$ and real $\Gamma(0)$:
-
-$$\left(\frac{d\Gamma}{d\tau}\right)_{ij} = -i(H_{ik}\Gamma_{kj} - \Gamma_{ik}H_{kj}) \in i\mathbb{R}$$
-
-Therefore $\Gamma(\delta\tau)$ is already complex after the first step.
-
-**Step 4.** Primitivity of $\mathcal{L}_0$ ([T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω)) guarantees a unique stationary state. If $\mathcal{L}_0$ contains a Hamiltonian part ($H_\Omega \neq 0$), the stationary state has non-trivial phases $\arg(\gamma_{ij}) \neq 0, \pi$.
-
-$\blacksquare$
-
-**Corollary for SYNARC:** `DensityMatrix7` must use `Complex<f64>`, not `f64`. This is an architectural requirement, not an engineering choice.
-
-**Dependencies:** [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω) (primitivity), [definition of Gap](/docs/core/dynamics/gap-operator#определение).
-
----
-
-## §6. T-133: Transfer of R thresholds via CPTP-bridge {#t-133}
-
-:::tip Theorem T-133 [T]: Transfer of R thresholds (strengthening of T-130)
-For a CPTP channel $\pi: \mathbb{R}^D \to \mathcal{D}(\mathbb{C}^7)$ with diamond-norm error $\|\pi - \pi_{\text{can}}\|_\diamond \leq \varepsilon$:
+If both purities are at least $p_{\min}>0$, the defined HS reflection $R=1/(7P)$ satisfies
 
 $$
-(R_{\text{impl}} \geq 1/3 + \delta) \Longrightarrow (R_{\text{UHM}} \geq 1/3)
+|R(\rho)-R(\sigma)|\le\frac{2\varepsilon}{7p_{\min}^2}.
 $$
 
-for $\delta = 2\varepsilon \cdot C(P)$, $C(P) = 7P/(P - 1/7) \leq 21$ for $P \in (2/7, 3/7]$.
-:::
+**Proof.** Factor $P(\rho)-P(\sigma)=\operatorname{Tr}[(\rho-\sigma)(\rho+\sigma)]$ and use $\|\rho\|_F,\|\sigma\|_F\le1$. Divide by $7P(\rho)P(\sigma)$. On all $\mathcal D_7$ one may use $p_{\min}=1/7$, giving $14\varepsilon$; on a certified purity region the tighter constant applies. $\blacksquare$
 
-**Proof.** Direct corollary of [T-130](#t-130) (transfer of inequality via $\varepsilon$-bound). $\blacksquare$
+If $\mathcal A,\mathcal B:M_d\to M_7$ are genuinely **linear** channels with $\|\mathcal A-\mathcal B\|_\diamond\le\varepsilon$, their outputs on any state meet the trace-norm premise. [T-152](/docs/proofs/consciousness/substrate-closure#t-152) states the corresponding Choi bounds. A neural universal-approximation statement for continuous feature functions does not prove diamond-norm channel approximation, calibration or a finite training guarantee. A feature-space “reflection” defined by another norm needs its own bridge, not a renamed $R$.
 
-**Key clarification on three R formulas:**
-- $R_{\text{UHM}} = 1/(7P)$ [T-126] — canonical, in $\mathcal{D}(\mathbb{C}^7)$, $\rho^*_{\text{diss}} = I/7$ ALWAYS
-- $R_{\text{impl}} \approx R_{\text{UHM}}$ with quality anchor [T-130] — in $\mathbb{R}^D$, hypothesis H3 CLOSED
-- $\rho_{RC}$ — diagnostic approximation, linear norm, $\rho_{RC} \geq 6/7 \Longrightarrow R_{\text{impl}} \geq 48/49$ [Т trivially]. Converse is false, but sufficient for monitoring
+## §4. T-131: discretization is accuracy/model dependent {#t-131}
 
-**Status H3:** [H] → **closed** (theorems T-130 + T-133).
+The former unique step $h=\pi/(2\|\mathcal L_0\|)$ is a heuristic [D], not a lossless sampling or numerical theorem. A dissipative mode $e^{-\gamma t}\mathbf1_{t\ge0}$ has Fourier transform $1/(\gamma+i\omega)$, nonzero at all frequencies. Bounded imaginary eigenvalues therefore do not establish Shannon band limitation. Even scalar samples alias unknown frequencies differing by $2\pi/h$; identifying a generator requires a specified observation and frequency model.
 
----
-
-## §7. T-134: Domain of diagonal freeze {#t-134}
-
-:::tip Theorem T-134 [T]: Domain of T-122 (diagonal freeze)
-[T-122](/docs/core/dynamics/evolution#теорема-диагональный-freeze) ($d\gamma_{kk}/d\tau = 0$) holds ONLY on the attractor $\rho^*_\Omega$, not during transient dynamics. General formula:
+For a **known fixed** GKSL generator, $e^{h\mathcal L_0}$ is a state-valid exact propagator for every $h\ge0$. For numerical ODE integration select $h$ using a specified method and tolerance. If an autonomous field is $L$-Lipschitz and bounded by $M$ on a neighborhood containing the exact and numerical trajectories, explicit Euler has local truncation error at most $LMh^2/2$ and global error at grid time $T$ at most
 
 $$
-\frac{d\gamma_{kk}}{d\tau} = (\mathcal{L}_0)_{kk}[\Gamma] + \kappa(\rho^*_{kk} - \gamma_{kk})
-$$
-:::
-
-**Proof.**
-
-**Step 1.** On the attractor: $\Gamma = \rho^*_\Omega$, so $\mathcal{R}(\Gamma) = \kappa(\rho^* - \Gamma) = 0$. Together with $(\mathcal{L}_0)_{kk}[\rho^*] = 0$ (stationarity) → $d\gamma_{kk}/d\tau = 0$. $\blacksquare$
-
-**Step 2.** Off the attractor: $\gamma_{kk} \neq \rho^*_{kk}$ in general → $d\gamma_{kk}/d\tau = \kappa(\rho^*_{kk} - \gamma_{kk}) \neq 0$.
-
-**Step 3.** Genesis from $I/7$ does NOT contradict T-122: at $\Gamma(0) = I/7$, $\gamma_{kk}(0) = 1/7$, while $\rho^*_{kk} \neq 1/7$ ([T-96 [T]](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)), so $d\gamma_{kk}/d\tau = \kappa(\rho^*_{kk} - 1/7) \neq 0$ — the diagonal GROWS.
-
-**Step 4.** Learning is possible: $\gamma_{EE}$ can grow, $\kappa$ can increase — freeze only at steady state.
-
-$\blacksquare$
-
-**Corollary:** "Sector profile = character" is invariant only **after convergence** to the attractor. During training the profile is plastic.
-
----
-
-## §8. T-135: Discrete convolution of non-Markovian kernel {#t-135}
-
-:::tip Theorem T-135 [T]: Discrete convolution O(1)
-The non-Markovian kernel [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) is discretized via Z-transform with $O(1)$ complexity per step:
-
-$$
-\Gamma[n+1] = \Gamma[n] + \delta\tau \cdot \mathcal{L}_0[\Gamma[n]] + \delta\tau \cdot M[n]
+\frac{Mh}{2}(e^{LT}-1).
 $$
 
-where $M[n]$ is an auxiliary variable with recurrence:
+The local bound follows by integrating $\|F(\Gamma(t))-F(\Gamma(0))\|\le LMt$; summing the discrete error recurrence proves the global bound. These are conditional accuracy statements [T], not PSD preservation: Euler may violate positivity. A split product of fixed CPTP propagators preserves states; its order and error require regularity/commutator bounds for that splitting. State-dependent freezing introduces its own approximation error. A polynomial $h^2$ error is not “exponentially small” because a spectral gap is large. Clock ticks, sensor sampling and integrator steps need not coincide and do not order themselves without a declared rate model.
+
+## §5. T-132: complex entries for nonzero phase Gap in a fixed frame {#t-132}
+
+For a nonzero entry, define $\mathrm{Gap}_{ij}=|\sin\arg\gamma_{ij}|$. Then
 
 $$
-M[n+1] = e^{-\omega_c \delta\tau} M[n] + (-\Gamma_2 \omega_c) \cdot \Gamma[n+1]
-$$
-:::
-
-**Proof.**
-
-**Step 1.** Continuous kernel $K(t) = -\Gamma_2 \cdot \omega_c \cdot \exp(-\omega_c \cdot t)$ [T-94].
-
-**Step 2.** Discretization $K[n] = K(n \cdot \delta\tau) = -\Gamma_2 \cdot \omega_c \cdot \exp(-\omega_c \cdot n \cdot \delta\tau)$ — geometric progression.
-
-**Step 3.** Convolution: $\sum_{k=0}^{n} K[n-k] \cdot \Gamma[k] = \sum_{k=0}^{n} (-\Gamma_2 \cdot \omega_c) \cdot r^{n-k} \cdot \Gamma[k]$, where $r = \exp(-\omega_c \cdot \delta\tau)$.
-
-**Step 4.** Define $M[n] = \sum_{k=0}^{n} r^{n-k} \cdot (-\Gamma_2 \cdot \omega_c) \cdot \Gamma[k]$. Then:
-
-$$M[n+1] = r \cdot M[n] + (-\Gamma_2 \cdot \omega_c) \cdot \Gamma[n+1]$$
-
-Recurrence $O(1)$.
-
-**Step 5.** Instead of $O(T^2)$, store one additional matrix $M \in \mathcal{D}(\mathbb{C}^7)$.
-
-$\blacksquare$
-
-**Connection to context window:** $\omega_c$ defines the "effective memory length" $\tau_{\text{mem}} = 1/\omega_c$. In ticks: $n_{\text{mem}} = \tau_{\text{mem}}/\delta\tau = 1/(\omega_c \cdot \delta\tau)$. At typical parameters ($\omega_c \cdot \delta\tau \sim 0.1$): $n_{\text{mem}} \sim 10$ ticks — comparable to attention window.
-
-**Dependencies:** [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное), [T-131 [T]](#t-131) ($\delta\tau$).
-
----
-
-## §9. T-136: SAD as a G₂-invariant spectral observable {#t-136}
-
-:::tip Theorem T-136 [T]: SAD — deterministic G₂-invariant function of Γ
-SAD is a deterministic $G_2$-invariant function of $\Gamma$, computable in $O(\mathrm{SAD}_{\max} \cdot N^2)$ operations without constructing autoencoders:
-
-$$
-\mathrm{SAD}(\Gamma) = \max\{k : r_0 \cdot (1/3)^{k-1} > 1/(k+1)\}
+\mathrm{Gap}_{ij}>0\iff\operatorname{Im}\gamma_{ij}\ne0.
 $$
 
-where $r_0 = P/P_{\text{crit}} = 7P/2$ is the normalized purity.
-:::
+Thus a matrix real in the declared frame has zero entrywise phase Gap. This is the valid conditional theorem [T]; the quantity at a zero entry needs an explicit convention. A diagonal phase change alters these entry phases, so the statement is frame-dependent. Complex data are required for reconstructing signed phases in this representation, not a theorem of irreducible complex ontology.
 
-**Proof.**
+For real $H,\Gamma$, the Hamiltonian derivative is imaginary only when their commutator is nonzero. If $[H,\Gamma]=0$, it remains zero. Primitivity and $H\ne0$ do not force nontrivial stationary phases: a primitive unital generator has stationary $I/7$, a real diagonal state. The former stronger dynamical claim is withdrawn. Magnitudes or Gap alone do not determine signed phases; [explicit positive-state counterexamples](/docs/applied/research/reconstruction-identifiability#phase-counterexamples) remain indistinguishable by those observations.
 
-**Step 1.** From [spectral formula (depth-tower.md §3.4 [C])](/docs/consciousness/hierarchy/depth-tower#спектральная-формула-sad): $R^{(n)} = F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma)) \leq R^n \cdot (1-\alpha)^n$.
+## §6. T-133: conditional threshold transfer {#t-133}
 
-**Step 2.** At $\alpha = 2/3$ [T] (Fano): $R^{(k)} = r_0 \cdot (1/3)^k$.
-
-**Step 3.** $\mathrm{SAD} = \max\{k : R^{(k-1)} > R_{\text{th}}^{(k-1)}\} = \max\{k : r_0 \cdot (1/3)^{k-1} > 1/(k+1)\}$.
-
-**Step 4 ($G_2$-invariance).** $P = \mathrm{Tr}(\Gamma^2)$ is an invariant of unitary conjugation. $G_2 \subset U(7) \Longrightarrow P$ is $G_2$-invariant $\Longrightarrow r_0$ is $G_2$-invariant $\Longrightarrow \mathrm{SAD}$ is $G_2$-invariant.
-
-**Step 5 (Computational complexity).** Determine $P$ ($O(N^2)$), compute $r_0$ ($O(1)$), check $k = 1, 2, 3$ ($O(1)$). Total: $O(N^2) = O(49)$.
-
-**Step 6 (Autoencoders — implementation, not definition).** $\varphi^{(k)}$ in a multi-scale tower is one IMPLEMENTATION of spectral SAD. For $D_k = 48$, $\pi_k = \mathrm{id}$, the formulas coincide exactly ([depth-tower.md §3.4](/docs/consciousness/hierarchy/depth-tower#спектральная-формула-sad)).
-
-$\blacksquare$
-
-**Resolution of "observable vs constructive":** SAD is a mathematical observable (function of $\Gamma$), computable directly. Autoencoders are one way to APPROXIMATE this observable, neither unique nor definitional.
-
-**Dependencies:** Spectral formula SAD [T] (§3.4, commutativity via [T-150 [T]](/docs/proofs/consciousness/substrate-closure#t-150)), [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω), $\alpha = 2/3$ [T].
-
----
-
-## §10. T-137: Full 7D-computability of σ_sys {#t-137}
-
-:::tip T-137 [T at the T-128 definition]: full 7D-computability of σ_sys
-All 7 components of the stress tensor $\sigma_{\text{sys}}$ are computable in the 7D formalism $\mathcal{D}(\mathbb{C}^7)$ without 42D-embedding.
-:::
-
-| $\sigma_k$ | Formula | 7D-computability |
-|-----|---------|-----------------|
-| $\sigma_A$ | $1 - \gamma_{AA}/P$ | Directly from $\Gamma$ |
-| $\sigma_S$ | $1 - \mathrm{rank}(\Gamma_S)/3$ | $\Gamma_S$ = submatrix $\{A,S,D\}$, $\mathrm{rank} \leq 3$ |
-| $\sigma_D$ | $1 - 7\gamma_{DD}$ | Directly from $\Gamma$ |
-| $\sigma_L$ | $7(1 - \gamma_{LL})/6$ | Directly from $\Gamma$ |
-| $\sigma_E$ | $(N - D_{\text{diff}}^{7D})/(N-2)$ | **T-128**: $D_{\text{diff}}^{7D}$ from $\mathrm{Coh}_E$ |
-| $\sigma_O$ | $1 - \kappa_0/\kappa_{\text{bootstrap}}$ | $\kappa_0$ from $\gamma_{OE}, \gamma_{OU}, \gamma_{OO}$; **T-132**: complex $\Gamma$ |
-| $\sigma_U$ | $2\Phi_{\text{th}}/(\Phi_{\text{th}} + \Phi)$ | $\Phi$ directly from $\Gamma$, **T-129**: $\Phi_{\text{th}} = 1$ |
-
-**Proof (enumerative, per component).**
-
-- $\sigma_A, \sigma_D, \sigma_L$: directly from diagonal elements $\gamma_{kk}$.
-- $\sigma_S$: $\Gamma_S$ — submatrix of rows/columns $\{A, S, D\}$ (first 3 of 7 dimensions, structural sector). $\mathrm{rank}(\Gamma_S) \in \{1, 2, 3\}$. Computed via determinants of $3\times 3$ submatrix minors.
-- $\sigma_E$: closed via [T-128](#t-128) ($D_{\text{diff}}$ in 7D).
-- $\sigma_O$: requires $|\gamma_{OE}|$ = modulus of complex coherence → [T-132](#t-132) (complex $\Gamma$ is necessary).
-- $\sigma_U$: closed via [T-129](#t-129) ($\Phi_{\text{th}} = 1$ from first principles).
-
-$\blacksquare$
-
-**Dependencies:** [T-128 [D]](#t-128) — a **definition**, not a theorem, so $\sigma_E$ and with it the completeness of $\sigma_{\mathrm{sys}}$ inherit that status ([canonical box](/docs/core/structure/dimension-e#rho-e-7d-42d)); [T-129 [T]](#t-129), [T-132 [T]](#t-132), [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
-
----
-
-## §11. T-138: Mean-field approximation of holon composition {#t-138}
-
-:::tip Theorem T-138 [T]: Mean-field approximation of holon composition
-For $k$ viable holons $H_1, \ldots, H_k$, the mean-field approximation:
+If the **same declared** scalar readout has a verified error bound $|R_{\rm estimate}-R_{\rm target}|\le\eta_R$, then
 
 $$
-\Gamma_{\text{mf}} = \Gamma_1 \otimes \cdots \otimes \Gamma_k
+R_{\rm estimate}\ge1/3+\eta_R\Rightarrow R_{\rm target}\ge1/3.
 $$
 
-satisfies:
-1. **Computability:** $O(k \cdot N^2)$ instead of $O(N^{2k})$
-2. **Error bound:** $\|\Gamma_{\text{exact}} - \Gamma_{\text{mf}}\|_F \leq \|\gamma_{\text{cross}}\|_F$, where $\gamma_{\text{cross}}$ are the total cross-coherences
-3. **Viability preservation:** $P(\Gamma_{\text{mf}}) = \prod P(\Gamma_i) > (2/7)^k$ (individual viability)
-:::
+This is a direct subtraction theorem [T]; T-130 supplies $\eta_R$ under its state/channel premises. Strict cuts require strict certified margins. Other readouts and all other Cap₂ conjuncts need their own error bounds or ranges over the observation confidence set. A small error without a margin cannot transfer a boundary verdict.
 
-**Proof.**
+No dimension-free feature-space bridge or unique empirical target has been proved. Similarity scores, another norm's reflection and an arbitrary $\rho_{RC}$ are not automatically this $R$. H3 remains an empirical identification/calibration question [H]; T-130/T-133 close only the stated mathematical error-transfer problem.
 
-**Step 1.** $\Gamma_{\text{exact}} = \Gamma_{\text{mf}} + \delta\Gamma$, where $\delta\Gamma$ contains all cross-correlations between holons.
+## §7. T-134: population dynamics and stationarity {#t-134}
 
-**Step 2.** The product $\Gamma_{\text{mf}}$ is a state of the composite, and its purity is the product of the purities (item 3). (An earlier step cited "[T-91 [T]](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени) (CC-5): if $H_i$ are viable, then the tensor product is non-trivial"; T-91 is the ∞-groupoid $\mathbf{Exp}_\infty$, CC-5 is T-68 and is [T at weak coupling], and none of the three items uses it.)
+For the specified equation $\dot\Gamma=-i[H,\Gamma]+\mathcal D(\Gamma)+a(\varphi(\Gamma)-\Gamma)+B(\Gamma)$,
 
-**Step 3.** $\|\delta\Gamma\|_F = \|\gamma_{\text{cross}}\|_F$ — total amplitude of inter-holon coherences.
+$$
+\dot\gamma_{kk}=2\sum_j\operatorname{Im}(H_{kj}\gamma_{jk})+\mathcal D(\Gamma)_{kk}+a(\varphi(\Gamma)_{kk}-\gamma_{kk})+B(\Gamma)_{kk}.
+$$
 
-**Step 4.** For weakly coupled systems ($\|\gamma_{\text{cross}}\| \ll \|\Gamma_{\text{mf}}\|$): the error is small.
+This follows by expanding the commutator and is [T]. Hermiticity makes $[H,\Gamma]_{kk}$ imaginary; multiplying it by $-i$ gives a real, possibly nonzero population derivative. For $H=\sigma_x$, $\Gamma=|(1,i)/\sqrt2\rangle\langle(1,i)/\sqrt2|$ on a two-dimensional subspace, $\dot\gamma_{00}|_H=1$.
 
-**Step 5 (First correction).** $\Gamma^{(1)} = \Gamma_{\text{mf}} + \delta\Gamma^{(1)}$, where $\delta\Gamma^{(1)}$ is computed via pairwise interactions $h_{\text{ext}}^{(ij)}$: $O(k^2 \cdot N^2)$.
+At any actual stationary point the **sum** is zero. Stationarity does not imply that each term vanishes or that $\varphi(\Gamma_*)=\Gamma_*$; living stationarity can have nonzero turnover. Away from stationarity populations may change or remain frozen, depending on the field. A sufficient freeze condition is diagonal $H$, population-preserving dephasing, matching target populations and no population-changing input. See the corrected [T-122](/docs/core/dynamics/evolution#теорема-диагональный-freeze).
 
-$\blacksquare$
+An unital linear part, $g_V(1/7)=0$ and no external input make the initial $I/7$ stationary. Positive bootstrap alone gives no genesis there. Neither a stationary diagonal nor a transient rate proves a universal personality or learning mechanism.
 
-**Hierarchical scheme:** For $k > 10$: grouping by clusters (super-holons), mean-field between clusters. Scaling: $O(k \cdot N^2 + k_{\text{clusters}}^2 \cdot N^2)$.
+## §8. T-135: finite-dimensional exponential memory realization {#t-135}
 
-**Dependencies:** [T-97 [T]](/docs/core/dynamics/viability#теорема-вложение-областей).
+For a specified constant linear operator $C$ and $\omega>0$, set
 
-*Corrected 2026-09-25:* the list also named "T-91 [T] (CC-5)" — a mislabel (T-91 is the ∞-groupoid $\mathbf{Exp}_\infty$; CC-5 is T-68, [T at weak coupling]), and not used by the three items.
+$$
+M(t)=\int_0^te^{-\omega(t-s)}C\Gamma(s)\,ds.
+$$
 
----
+Differentiation gives the exact auxiliary equation $\dot M=C\Gamma-\omega M$, $M(0)=0$. With zero-order hold $\Gamma(s)=\Gamma_n$ within a step of size $h$,
 
-## §12. Hypothesis status upgrades
+$$
+M_{n+1}=qM_n+\frac{1-q}{\omega}C\Gamma_n,\qquad q=e^{-\omega h}.
+$$
 
-### SAD–L equivalence (T-136) {#г-89-повышение}
+For a chosen rectangle discrete convolution $M_n=h\sum_{j=0}^nCq^{n-j}\Gamma_j$, the different recurrence is $M_{n+1}=qM_n+hC\Gamma_{n+1}$. Both identities are [T] for their respective conventions; neither is an exact discretization of an unspecified coupled nonlinear dynamics.
 
-**Formulation (refined):** L-hierarchy is a refinement of SAD. The map $L \to \mathrm{SAD}(L)$ is monotone:
-- L2 ($R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$) $\Longrightarrow$ $\mathrm{SAD} \geq 1$
-- L3 ($R^{(1)} \geq 1/4$) $\Longrightarrow$ $\mathrm{SAD} \geq 2$
-- L4 ($\lim R^{(n)} > 0$) $\Longrightarrow$ $\mathrm{SAD} = \infty$
+A fixed number of exponential terms needs a fixed number of auxiliaries, independent of history length. For $m$ stored state coordinates, memory costs $O(m)$ per term and applying a dense $C$ costs $O(m^2)$; “$O(1)$” refers only to the number of past steps at fixed dimension/operator cost. General kernels need approximation with an error bound. A negative exponential kernel and Euler state update do not automatically preserve PSD, trace or a non-Markovian CPTP family; a physical embedding or separate validity proof is required.
 
-**Proof.** L2 requires $R \geq 1/3 = R_{\text{th}}^{(0)}$ → $R^{(0)} \geq R_{\text{th}}^{(0)}$ → $\mathrm{SAD} \geq 1$. L3 requires $R^{(1)} \geq 1/4 = R_{\text{th}}^{(1)}$ → $\mathrm{SAD} \geq 2$. L4: $\lim R^{(n)} > 0$ → for any $k$: $R^{(k)} > R_{\text{th}}^{(k)}$ for large $k$ → $\mathrm{SAD} = \infty$. Converse implications are incomplete: SAD does not encode $\Phi$ and $D_{\text{diff}}$. $\blacksquare$
+## §9. T-136: score arithmetic versus certified depth {#t-136}
 
-### Commutativity of the φ-tower (T-150) {#г-90-повышение}
+The historical score (the universal T-136 identification is withdrawn [✗]) $s_{n-1}=(P/(2/7))3^{-(n-1)}$ is a definition [D]. Since it depends only on purity it is unitarily invariant and cheap to compute from a known matrix. Its stipulated gate $s_{n-1}>1/(n+1)$ yields the arithmetic cuts $(1/7,2/7,9/14,54/35)$ for levels one to four, and a score cap three. This score can exceed one and is not reflection, a survival probability or a universal cognitive-depth observable.
 
-**Upgraded to [T]** via [T-150](/docs/proofs/consciousness/substrate-closure#t-150): for $D_k = 7$ for all $k$, $\varphi^{(n)} = \varphi^n$ — iterates of a single CPTP channel, commutativity $\varphi^n \circ \varphi^m = \varphi^{n+m}$ is an identity. The spectral formula for SAD is a corollary, not a premise.
+Bare Fano off-diagonal attenuation is $S_n=3^{-n}$, with a detector-dependent cutoff. A certified meta-depth instead uses the declared nonconstant probes and compatibility tests in [depth tower](/docs/consciousness/hierarchy/depth-tower). A probe is observable from a reduced state exactly when it is constant on the relevant encoder fibers; T-150's iteration identity does not prove that condition. The former equivalence of all autoencoder towers, a purity-only canonical SAD and universal SAD–L implications is withdrawn. Architectural certification remains [D/Pr], with empirical tests [H].
 
-### [H]-91 → [T]: Genesis via environmental coupling {#г-91-обоснование}
+## §10. T-137: computability of selected stress functions {#t-137}
 
-**Upgraded to [T]** via [T-148](/docs/proofs/consciousness/substrate-closure#t-148): an embodied holon with backbone injection ($\beta \in (0,1)$, $P_{\mathrm{env}} > 2/7$) raises purity above $P_{\mathrm{crit}}$ in finite time. An isolated holon at $I/7$ is dead forever (T-39a [T]) — consciousness requires embodiment.
+Fix the frame, proxy variant, rate parameters and boundary conventions first. The following are **raw proposed scores**, not equivalent universal definitions:
 
-### H3: Transfer of R via anchor — CLOSED {#h3-закрыта}
+| Score | Declared expression | Required input / limitation |
+|---|---|---|
+| $\sigma_A$ | $1-\gamma_{AA}/P$ | State; can be negative |
+| $\sigma_S$ | $1-\operatorname{rank}(\Gamma_{ASD})/3$ | State; rank may be zero and is discontinuous at rank changes |
+| $\sigma_D$ | $1-7\gamma_{DD}$ | State; range $[-6,1]$ |
+| $\sigma_L$ | $7(1-\gamma_{LL})/6$ | State; range $[0,7/6]$ |
+| $\sigma_E^{\mathrm{diff}}$ | $(7-D_{\mathrm{diff}}^{7D})/5$ | Chosen T-128 proxy; range $[0,6/5]$ |
+| $\sigma_O$ | $1-\kappa_0/\kappa_{\mathrm{bootstrap}}$ | Declared rate model/parameters, positive denominator and singular-boundary treatment |
+| $\sigma_U$ | $2/(1+\Phi)$ | State in fixed frame; range $[2/7,2]$ |
 
-Closed by theorems [T-130](#t-130) + [T-133](#t-133). For a quality CPTP-anchor ($\|\pi - \pi_{\text{can}}\|_\diamond < \varepsilon_0$), the threshold property $R_{\text{impl}} \geq 1/3 \Longrightarrow R_{\text{UHM}} \geq 1/3 - O(\varepsilon_0)$ transfers.
+From a fully known state and those extra declared inputs, these expressions can be evaluated; clamping a raw score defines a different function. This conditional evaluation statement [T] does not select the scores, prove continuity of rank or their empirical/clinical meaning. In particular, T-137's full-state formulas do not supply seven observed neural targets. A function is identified from data iff it is constant on the [observation fiber](/docs/applied/research/reconstruction-identifiability#fiber-theorem), with noise requiring a confidence range. $\kappa_0$ is not fixed by state data without the kinetic calibration. A real matrix may have nonzero E population or coherence magnitude, so complex arithmetic is not required for every one of these scalar evaluations.
 
----
+## §11. T-138: product representation and correlation error {#t-138}
 
-## §13. Summary closure table
+For declared marginals $\Gamma_1,\ldots,\Gamma_k$, the product $\Gamma_{\mathrm{mf}}=\bigotimes_i\Gamma_i$ is a valid state and
 
-| Problem | Theorem | Status |
-|----------|---------|--------|
-| $D_{\text{diff}}$ 7D vs 42D (partial trace in prime dimension) | [T-128 [D]](#t-128) | CLOSED |
-| $\Phi_{\text{th}} = 1$ — justification of integration threshold | [T-129 [T]](#t-129) | CLOSED, [D]→[T] |
-| Enc/Dec: threshold transfer via CPTP-bridge | [T-130 [T]](#t-130) | CLOSED |
-| Canonical time for digital agent | [T-131 [T]](#t-131) | CLOSED |
-| Gap-structure for real Γ | [T-132 [T]](#t-132) | CLOSED |
-| Three R formulas, hypothesis H3 | [T-133 [T]](#t-133) | CLOSED, H3→[T] |
-| Domain of diagonal freeze (T-122) | [T-134 [T]](#t-134) | CLOSED |
-| Non-Markovian memory: discrete convolution | [T-135 [T]](#t-135) | CLOSED |
-| SAD: observable vs constructive | [T-136 [T]](#t-136) (via [T-150](/docs/proofs/consciousness/substrate-closure#t-150)) | CLOSED |
-| Full 7D-computability of $\sigma_{\text{sys}}$ | [T-137 [T]](#t-137) | CLOSED |
-| Exponential explosion in holon composition | [T-138 [T]](#t-138) | CLOSED |
+$$
+P(\Gamma_{\mathrm{mf}})=\prod_iP(\Gamma_i).
+$$
 
-**Hypotheses:**
-- [H]-89 → **[T]** (SAD–L equivalence)
-- [H]-90 → **[T]** (commutativity of φ-tower, [T-150](/docs/proofs/consciousness/substrate-closure#t-150))
-- [H]-91 → **[T]** (genesis via environmental coupling, [T-148](/docs/proofs/consciousness/substrate-closure#t-148))
-- H3 → **CLOSED** (T-130 + T-133)
+If every factor has $P_i>2/7$, the product has $P>(2/7)^k$. This is an algebraic purity statement [T], not the full seven-dimensional Cap₂ predicate for a compressed composite. The composite lives in dimension $7^k$ before any declared coarse-graining.
 
----
+Storing the **factorized representation** costs $O(kN^2)$; materializing its dense matrix costs $O(N^{2k})$. Computing arbitrary correlated observables or interaction corrections may also require larger representations. A general pair density matrix already has $N^4-1$ parameters, so pairwise corrections do not universally cost $O(k^2N^2)$.
 
-**Related documents:**
-- [Operational closure](/docs/proofs/consciousness/operational-closure) — theorems T-139–T-147: closure of operational gaps
-- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0–L4, SAD and connection to φ-tower
-- [Self-observation](/docs/consciousness/foundations/self-observation) — reflection measure R and operational criterion
+Let $\rho$ be the actual joint state and $\delta_{\rm corr}=\rho-\bigotimes_i\rho_i$. Then the approximation error is exactly $\|\delta_{\rm corr}\|_F$; it is small only with a verified bound on the **full** correlation tensor. Off-diagonal cross-coherences alone do not bound it: for $\rho=(|00\rangle\langle00|+|11\rangle\langle11|)/2$ (embedded in $\mathbb C^7\otimes\mathbb C^7$), all off-diagonal entries vanish but $\|\rho-\rho_1\otimes\rho_2\|_F=1/2$. Weak bare coupling without a time/state-dependent correlation estimate supplies no uniform error guarantee. Cluster approximation is a chosen algorithm [D/H], whose truncation, observable errors and state validity require separate checks.
+
+## §12. Scope of the former hypothesis upgrades
+
+### SAD–L equivalence {#г-89-повышение}
+
+Hyp-89 remains a probe/bridge hypothesis. A stipulated score, one successful level or a positive late limit does not certify the entire preceding prefix of meta-tests. No universal equivalence follows from T-136.
+
+### Iteration and tower compatibility {#г-90-повышение}
+
+[T-150](/docs/proofs/consciousness/substrate-closure#t-150) proves $M^nM^m=M^{n+m}$ for iterates of the **same specified map**, which can be nonlinear. Equal dimensions do not identify different maps or prove heterogeneous compatibility $\pi_kM_{k+1}=M_k\pi_k$. That diagram remains a separately stated/tested requirement.
+
+### Conditional genesis {#г-91-обоснование}
+
+[T-148](/docs/proofs/consciousness/substrate-closure#t-148) gives crossing exactly in its specified affine model when $w>1/\sqrt{7P_{\rm env}-1}$. A pure environment and positive coupling alone need not suffice. Stationarity of one isolated initial $I/7$ does not prove embodiment necessary for every living or conscious state.
+
+### H3: calibration and threshold transfer {#h3-закрыта}
+
+T-130/T-133 give conditional error transfer after a correctly typed state/channel bound and strict margin are established. They do not close empirical calibration, observation identifiability or an arbitrary feature-space reflection bridge.
+
+## §13. Status summary
+
+| Result | Current scope |
+|---|---|
+| T-128 | Proxy definition [D]; entropy/lift equality withdrawn |
+| T-129 / T-129a | Sharp algebra [T]; access cut selected [D], only one-way purity implication |
+| T-130 | State/readout error theorem [T under certified error]; feature-map diamond claim withdrawn |
+| T-131 | Step choice [D]; conditional accuracy bounds [T], no general Shannon/Nyquist derivation |
+| T-132 | Entrywise complex necessity [T in a fixed frame]; stationary-phase claim withdrawn |
+| T-133 | Margin transfer [T]; empirical H3 remains [H] |
+| T-134 | Exact population derivative/stationarity [T]; universal diagonal freeze withdrawn |
+| T-135 | Exponential auxiliary/declared convolution identities [T]; general validity and cost not automatic |
+| T-136 | Historical score [D], attenuation arithmetic [T]; universal SAD equivalence withdrawn |
+| T-137 | Selected scores [D]; evaluation [T with full state and extra model inputs], observation identification separate |
+| T-138 | Product validity, purity and factorized storage [T]; coherence-only correlation bound withdrawn |
+
+Related: [operational closure](/docs/proofs/consciousness/operational-closure), [conscious window](/docs/proofs/consciousness/conscious-window), [reconstruction and identifiability](/docs/applied/research/reconstruction-identifiability).

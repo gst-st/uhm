@@ -139,20 +139,7 @@ not parallel worlds.*
 
 ### 2.6 "Where was Shor computed?" — UHM's answer [T]/[I]
 
-Deutsch's M6 argument takes exponential quantum speed-up as direct
-evidence of parallel worlds. UHM answers without multiplying
-ontology: the computation lives in the **off-diagonal sector of one
-$\Gamma$** — the same coherences whose Frobenius weight defines
-$\Phi$ ([integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ))
-and whose cooperative surplus is exactly
-$P(\rho^{(12)}_*) - P(\rho_{\text{diag}}) = 2\lVert\gamma_{\text{cross}}\rVert_F^2$
-([T-77](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация)).
-Amplitude paths interfering within one state are *resources*, not
-*places*. The quantitative UHM-native measure of "how much parallel
-room" a configuration has is
-$\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$
-([finite-dimensional theorem [T]](/docs/core/foundations/consequences#freedom-конечномерное)) —
-flat directions of one landscape, bounded by 7, never $2^n$ worlds.
+Quantum algorithms use amplitudes and interference in a specified Hilbert-space circuit model. A seven-dimensional effective readout is not a lossless representation of an arbitrary n-qubit computation. The selected integration statistic measures basis-dependent coherence, not a general complexity or speedup theorem. The Hessian score $1+\dim\ker\operatorname{Hess}V$ is a definition [D] for a specified potential and domain, not the number of computational branches or available choices. Its bound is $d+1$ (49 on the full-rank $D_7$ stratum), and its interpretation as agency is [I/H]. None of these constructions proves or refutes a many-worlds ontology. See [Freedom](/docs/consciousness/ethics-meaning/freedom).
 
 ### 2.7 The falsifiable fork [P]
 
@@ -286,12 +273,14 @@ complement.
 
 **What UHM strictly says about parallel universes:**
 
-1. **No ontological branching** [Т-level argument]: the fundamental
-   state is mixed (viability forces $P < 1$), mixed states have no
-   canonical decomposition, and the law itself is the non-unitary
-   triad — three independent blockers, any one of which suffices.
-   The topos is one; there is no outside for worlds to sit in
-   ([T-55/T-56, No Outside](/docs/core/foundations/consequences#структурная-toe)).
+1. **A single-world reading** [P/I]: UHM can choose one ontic density
+   matrix and one ambient topos. Nonunique ensemble decompositions
+   and a supplied nonunitary dynamics do not by themselves prove
+   that all branching interpretations are impossible. “No outside”
+   is an ontological thesis, not T-55's predicate theorem. That theorem
+   concerns $\mathrm{Th}_m\hookrightarrow\Omega^G$ for a chosen map;
+   T-56 does not establish logical or ontological completeness
+   ([revised statements](/docs/core/foundations/consequences#структурная-toe)).
 2. **Maximal kinship at Page–Wootters** [T]: UHM is a
    relative-state theory *of time* — seven co-present
    clock-conditioned states of one $\Gamma$; Everett's machinery,

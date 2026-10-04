@@ -6,12 +6,14 @@ description: Mathematical notation of UHM theory
 
 # Mathematical Notation
 
+The numerical formulas below use the selected $N=7$ model with a declared semantic frame [P]. Processes, the Bures site, logical support and dynamics have different types; the [mathematical kernel](/docs/reference/mathematical-kernel) fixes their interface.
+
 :::warning Potential notation conflicts
 In UHM theory, some symbols have multiple meanings depending on context:
 - $D$ — [Dynamics dimension](/docs/core/structure/dimension-d) **vs** $D_{\text{diff}}$ — [differentiation measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
 - $\mathcal{H}$ — Hilbert space **vs** $H$ — Hamiltonian **vs** $\mathcal{H}_\Gamma$ — Hessian of free energy (in [Freedom](/docs/core/foundations/consequences#freedom-конечномерное))
 - $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ). For denoting arbitrary CPTP channels, $\Psi$ is used
-- $R$ — the **canonical** [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $1/(7P) \in [1/7, 1]$ (conscious band $[1/3, 1/2)$) **vs** $R_\varphi$ — reflection as **self-model quality** $\in [0, 1]$ (formerly also written $Q_\varphi$) **vs** $R^{(n)}$ — the fidelity tower ($n \geq 2$) **vs** $R_{ij}$ — sectoral reflection **vs** $\mathcal{R}$ — regenerative term. The measure forms are told apart in [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)
+- $R$ — the **canonical** [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $1/(7P) \in [1/7, 1]$ (conscious band $[1/3, 1/2)$) **vs** $R_\varphi$ — reflection as **self-model quality** (can be negative; its range depends on $M$) (formerly also written $Q_\varphi$) **vs** $R^{(n)}$ — the fidelity tower ($n \geq 2$) **vs** $R_{ij}$ — sectoral reflection **vs** $\mathcal{R}$ — regenerative term. The measure forms are told apart in [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)
 - $\mathcal{C}$ — primitive category (Axiom Ω⁷) **vs** $C$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c). The context space in the Exp category is denoted $\Gamma_{-E}$
 - $\gamma_{ij}$ — elements of the coherence matrix **vs** $\gamma_k$ — decoherence rates in the Lindblad dissipator (in different documents). **Recommendation:** use $\Gamma_2$ for decoherence rates (as in [Theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie))
 
@@ -37,7 +39,7 @@ UHM generalises IIT: the consciousness measure $C = \Phi \times R$ **[T T-140]**
 
 | Symbol | Meaning | Definition |
 |--------|---------|------------|
-| $\mathcal{C}$ | [Primitive category](/docs/core/foundations/axiom-omega#примитив) | Small category with a finite number of objects — **sole primitive** |
+| $\mathcal{C}$ | [Primitive category](/docs/core/foundations/axiom-omega#примитив) | A declared small indexing category; it does not alone determine $N$, channels or dynamics |
 | $\Gamma$ | [Coherence matrix](/docs/core/dynamics/coherence-matrix) | $\Gamma \in \mathcal{L}(\mathcal{H})$, $\Gamma^\dagger = \Gamma$, $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$ |
 | $\mathbb{H}$ | [Holon](/docs/core/structure/holon) | Minimal self-sufficient unit of reality |
 | $\mathcal{H}$ | Hilbert space | $\mathcal{H} = \mathbb{C}^7$ — see [Seven dimensions](/docs/core/structure/dimensions) |
@@ -54,12 +56,12 @@ UHM generalises IIT: the consciousness measure $C = \Phi \times R$ **[T T-140]**
 |--------|---------|------------|
 | $X$ | [Base space](/docs/core/foundations/spacetime#базовое-пространство) | $X = \|N(\mathcal{C})\|$ — geometric realisation of the nerve of the category |
 | $N(\mathcal{C})$ | [Nerve of the category](/docs/core/foundations/spacetime#нерв-категории) | Simplicial set: n-simplices = composable chains of morphisms |
-| $T$ | [Terminal object](/docs/core/foundations/axiom-omega#свойство-3) | $T = \Gamma^*$ — global attractor; $\forall\Gamma, \exists! f: \Gamma \to T$ |
-| $S_\alpha$ | [Stratum](/docs/core/foundations/spacetime#стратификация-x) | Component of the stratification $X = \bigsqcup_\alpha S_\alpha$; $S_0 = \{T\}$ |
+| $T$ | [Terminal object](/docs/reference/mathematical-kernel#terminal-time) | $1_{\mathcal E}$ in the topos; the one-dimensional system in the process category. Distinct from $\Gamma_*$ and $I/7$ |
+| $S_\alpha$ | [Stratum](/docs/core/foundations/spacetime#стратификация-x) | A specified stratification $X=\bigsqcup_\alpha S_\alpha$; it does not follow from the nerve or terminality |
 | $d_{strat}$ | [Stratified metric](/docs/core/foundations/spacetime#метрика-конна) | $d_{strat}(\omega_1, \omega_2) = \inf_\gamma \int_\gamma ds_\alpha$ |
-| $\text{Link}(T)$ | Link of the terminal object | $\text{Link}(T) \cong S^6$ — 6-sphere |
-| $H^*(X)$ | [Cohomology](/docs/core/foundations/consequences#когомологический-монизм) | $H^n(X, \mathcal{F}) = 0$ for $n > 0$ (monism) |
-| $H^*_{loc}(X,T)$ | [Local cohomology](/docs/core/foundations/spacetime#локально-глобальная-дихотомия) | $H^*_{loc}(X,T) \cong \tilde{H}^{*-1}(S^6) \neq 0$ (physics) |
+| $\text{Link}(T)$ | Link of a distinguished point | Determined by local geometry; terminality does not specify a sphere |
+| $H^*(X)$ | Cohomology | A contractible nerve of an indexing category with a terminal object has zero positive cohomology with constant coefficients; this is not a claim for every sheaf |
+| $H^*_{loc}(X,T)$ | Local cohomology | For a conical neighbourhood $C(K)$: $H^k_{loc}(X,T;A)\cong\widetilde H^{k-1}(K;A)$; the link $K$ is specified separately |
 | $D^b(X)$ | [Derived category](/docs/proofs/categorical/categorical-formalism#производные-категории) | Bounded derived category of sheaves on X |
 | $IC(S_\alpha)$ | IC sheaf | Intersection cohomology sheaf of stratum $S_\alpha$ |
 
@@ -110,6 +112,7 @@ $$
 where:
 
 **[Unitary term](/docs/core/dynamics/evolution#1-unitary-term):**
+
 $$
 -i[H_{\text{eff}}, \Gamma] = -i(H_{\text{eff}}\Gamma - \Gamma H_{\text{eff}})
 $$
@@ -117,20 +120,24 @@ $$
 Here $H_{\text{eff}}$ is the effective Hamiltonian arising from the Page–Wootters constraint.
 
 **[Dissipative term](/docs/core/dynamics/evolution#логический-лиувиллиан):**
+
 $$
 \mathcal{D}[\Gamma] = \sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)
 $$
 
-**[Regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) [T]:**
+**[Chosen regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) [D]:**
+
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
 where:
-- $\kappa(\Gamma) \geq 0$ — regeneration rate [T] (adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$)
-- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [T] ([φ-operator](/docs/core/operators/phi-operator))
-- $(\rho_* - \Gamma)$ — unique CPTP relaxation [T]
-- $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ — V-preservation gate [T] (Landauer + V-invariance, [derivation](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
+- $a(\Gamma)=\kappa(\Gamma)g_V(P)\ge0$ is a chosen rate; the logical support adjunction does not determine it.
+- $\rho_*=M(\Gamma)$ is a specified numerical target in $D_7$, not a logical subobject or necessarily a stationary state.
+- $a(\Gamma)(M(\Gamma)-\Gamma)$ is a vector field, not a channel. With locally Lipschitz $a,M$ and $M(D_7)\subseteq D_7$, it preserves states together with the GKSL part.
+- $g_V(P)=\mathrm{clamp}((P-P_{\mathrm{crit}})/(P_{\mathrm{opt}}-P_{\mathrm{crit}}),0,1)$ is a chosen gate [D], not a universally derived form.
+
+Use the [state-preserving split step](/docs/core/dynamics/evolution#сохранение-положительности) for a finite update.
 
 ## Commutators and Anticommutators
 
@@ -145,7 +152,7 @@ See [Interiority Dimension](/docs/core/structure/dimension-e) and [Exp Category]
 
 | Notation | Meaning |
 |----------|---------|
-| $\rho_E$ | Reduced density matrix of the Interiority dimension |
+| $\rho_E$ | State of a specified experiential readout; partial trace requires an explicit tensor factorization, not a single named axis $E$ |
 | $\lambda_i$ | Eigenvalue of $\Gamma$ (intensity) |
 | $\vert q_i\rangle$ | Eigenvector of $\Gamma$ (quality) |
 | $[\vert q\rangle]$ | Equivalence class in $\mathbb{P}(\mathcal{H}_E)$ |
@@ -153,6 +160,7 @@ See [Interiority Dimension](/docs/core/structure/dimension-e) and [Exp Category]
 | $d_{\mathrm{FS}}$ | [Fubini-Study metric](/docs/reference/specification#метрика-фубини-штуди) |
 
 **Fubini-Study metric:**
+
 $$
 d_{\mathrm{FS}}([|\psi\rangle], [|\phi\rangle]) = \arccos(|\langle\psi|\phi\rangle|) \in [0, \pi/2]
 $$
@@ -167,48 +175,39 @@ See [Self-observation](/docs/consciousness/foundations/self-observation) for ful
 | [Differentiation $D_{\text{diff}}$](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | $D_{\text{diff}}(\Gamma) = \exp(S_{vN}(\rho_E))$ | $[1, 7]$ |
 | [Reflection $R$](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | $R(\Gamma) = R_{\text{canonical}} = \dfrac{1}{7P(\Gamma)}$, where $P = \mathrm{Tr}(\Gamma^2)$; equivalent to $1 - \dfrac{\|\Gamma - I/7\|_F^2}{P}$. Not to be confused with the self-model quality $R_\varphi = 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / P$ (formerly also written $Q_\varphi$) — see [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r) | $[1/7, 1]$ |
 | [Consciousness $C$](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | $C(\Gamma) = \Phi \times R$ **[T]** (T-140); $D_{\text{diff}} \geq 2$ — separate viability condition | $[0, +\infty)$ |
-| Free will $\mathrm{Freedom}(\Gamma)$ **[T]** | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$, where $\mathcal{H}_\Gamma = \partial^2 \mathcal{F}/\partial\Gamma^2$ — [definition](/docs/core/foundations/consequences#freedom-конечномерное). ∞-categorical reading: tangent dimension of the free-energy critical manifold (**not** $\pi_0(\mathrm{Map}(\Gamma, T))$, which is trivial — contractible) | $\{1, \ldots, 7\}$ |
-| Freedom entropy $S_{\text{freedom}}$ | $S_{\text{freedom}} = \log(\text{Freedom}(\Gamma))$ | $[0, \log 7]$ |
+| Hessian score $\mathrm{Freedom}$ [D] | $1+\dim\ker\nabla^2\mathcal F$ for a specified $C^2$ potential and $d$-dimensional domain; the kernel equals the critical-manifold tangent space only under Morse–Bott hypotheses. No universal CPTP monotonicity or agency follows. | $\{1,\ldots,d+1\}$; $d=48$ on the full-rank $D_7$ stratum |
+| Logarithmic Hessian score [D] | $S_{\mathrm{freedom}}=\log\mathrm{Freedom}$; no identification with physical entropy | $[0,\log(d+1)]$ |
 
 ## Self-Modelling Operator
 
-See [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) for a full description.
+Four constructions have different types:
 
-**CPTP channel** (Completely Positive Trace-Preserving):
-$$
-\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger
-$$
+| Symbol | Type and scope |
+|---|---|
+| $L_G$ | $\mathcal E_{/G}\to\mathrm{Sub}_{\mathcal E}(G)$, image/$(-1)$-truncation in the slice; $L_G\dashv i_G$ [T] |
+| $M=\varphi$ | A specified numerical self-model $D_7\to D_7$ [D]; it may be nonlinear |
+| $\Psi_\lambda$ | A channel with fixed parameter $\lambda$: $\Psi_\lambda(X)=\sum_mK_{m,\lambda}XK_{m,\lambda}^\dagger$, $\sum_mK_{m,\lambda}^\dagger K_{m,\lambda}=I$ [T] |
+| $r$ | $r(\Gamma)=\lim_{t\to\infty}\Phi_t(\Gamma)$ on a forward-invariant domain containing all its fixed-point limits; then $r^2=r$ [T]. Otherwise extend the domain before composing. |
 
-**Completeness condition** (trace preservation):
-$$
-\sum_m K_m^\dagger K_m = I
-$$
+The equality $M(\Gamma)=\Psi_{\lambda(\Gamma)}(\Gamma)$ does not make $M$ a single linear CPTP channel. Use $e^{t\mathcal L_0}$ for a frozen linear generator and $\Phi_t$ for nonlinear dynamics.
 
-**Convergence to fixed point** $\Gamma^* = \varphi(\Gamma^*)$:
-$$
-\|\varphi^n(\Gamma_0) - \Gamma^*\|_F \leq k^n \cdot \|\Gamma_0 - \Gamma^*\|_F, \quad k \in [0, 1)
-$$
+If the **specified** $M$ is a contraction in a chosen complete metric with constant $k<1$, Banach's theorem gives a unique fixed point and $d(M^n\Gamma_0,\Gamma_*)\le k^n d(\Gamma_0,\Gamma_*)$. An arbitrary CPTP channel need not be a strict contraction. A numerical fixed point expresses consistency of $M$; interpreting it as self-knowledge requires an independent error model.
+
+See the [typed formalization of φ](/docs/proofs/categorical/formalization-phi).
 
 ## Interiority Hierarchy
 
-See [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) for formal conditions and proofs.
+See the [rigorous specification](/docs/proofs/consciousness/interiority-hierarchy). This taxonomy is a model definition [D]; its level numbers do not automatically denote truncation degrees of a topos object.
 
-| Level | Notation | Condition | n-truncation |
-|-------|----------|-----------|--------------|
-| L0 | $\mathrm{Int}(S)$ — Interiority | $\exists \rho_E$ | $\tau_{\leq 0}$ |
-| L1 | $\mathrm{PG}(S)$ — Phenomenal geometry | $\mathrm{rank}(\rho_E) > 1$ | $\tau_{\leq 1}$ |
-| L2 | Cognitive qualia | $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$, $D_{\text{diff}} \geq 2$ | $\tau_{\leq 2}$ |
-| L3 | Network consciousness | $R^{(2)} \geq R^{(2)}_{\text{th}}$ (metastable) | $\tau_{\leq 3}$ |
-| L4 | Unitary consciousness | $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$ | $\tau_{\leq \infty}$ |
+| Level | Condition |
+|---|---|
+| L0 | A specified experiential realization with state $\rho_E$; reduction requires a tensor factorization or a declared readout |
+| L1 | L0 and a nontrivial specified phenomenal geometry |
+| L2 | The chosen $\mathrm{Cap}_2$ gate: $P>2/7$, $R\ge1/3$, $\Phi\ge1$, $D_{\mathrm{diff}}\ge2$ |
+| L3 | L2 and a nonvacuous calibrated metamodel certificate $\mathsf{MetaCert}_2$ on independent probes |
+| L4 | L3 and a compatible tower of certificates at all orders; physical realizability is a separate question |
 
-**Threshold values** ([all proved mathematically [T]](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод), [threshold justifications](/docs/proofs/consciousness/interiority-hierarchy#обоснование-порогов)):
-
-| Threshold | Value | Status |
-|-----------|-------|--------|
-| $R_{\text{th}}$ | $1/3$ | [T] Theorem ($K=3$ from triadic decomposition + Bayesian dominance) |
-| $\Phi_{\text{th}}$ | $1$ | [T] Theorem (T-129: unique self-consistent value) |
-| $R^{(2)}_{\text{th}}$ | $1/4$ | [T] Theorem (L3 threshold) |
-| $X^{(n)}_{\text{th}}$ | $1/(n+1)$ | [T] Universal formula |
+The numbers $R_{\mathrm{th}}=1/3$, $\Phi_{\mathrm{th}}=1$, $D_{\min}=2$ specify the chosen gate. Algebraic consequences of these choices are [T]; identifying them with consciousness is [H]/[I]. The former universal $R^{(2)}_{\mathrm{th}}=1/4$, $X^{(n)}_{\mathrm{th}}=1/(n+1)$ and $\mathrm{SAD}_{\max}=3$ are withdrawn [✗]. Fidelity between iterations of one $M$ does not replace a depth certificate.
 
 ## Stress Tensor
 
@@ -220,11 +219,13 @@ $$
 $$
 
 **Viability condition:**
+
 $$
 \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1
 $$
 
 **Viability margin:**
+
 $$
 \mathrm{margin}(\Gamma) = 1 - \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty > 0
 $$
@@ -234,11 +235,13 @@ $$
 See [Grothendieck topology](/docs/core/foundations/axiom-omega#топология-гротендика) and [Categorical formalism](/docs/proofs/categorical/categorical-formalism#63-топология-гротендика-на-densitymat-и-exp).
 
 **Bures metric (canonical form):**
+
 $$
 d_B(\Gamma_1, \Gamma_2) = \arccos\left(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right) = \arccos(\sqrt{F})
 $$
 
 **Fidelity:**
+
 $$
 \mathrm{Fid}(\Gamma_1, \Gamma_2) = \left(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right)^2
 $$
@@ -255,25 +258,14 @@ UHM uses **both forms** depending on context:
 | **Angular** | $d_B^{angle} = \arccos(\sqrt{F})$ | Geometric theorems ([emergent time](/docs/proofs/dynamics/emergent-time#41-метрика-бурес)) |
 | **Chord** | $d_B^{chord} = \sqrt{2(1-\sqrt{F})}$ | Computations, [ΔF](/docs/core/dynamics/evolution#каноническое-delta-f), [specification](/docs/reference/specification#топология-гротендика) |
 
-**Relation:** $d_B^{chord} = \sqrt{2(1 - \cos(d_B^{angle}))} \approx \sqrt{2} \cdot d_B^{angle}$ for small distances.
+**Relation:** $d_B^{chord} = \sqrt{2(1 - \cos(d_B^{angle}))} = 2\sin(d_B^{angle}/2) \approx d_B^{angle}$ for small distances.
 :::
 
-**Bures ball:**
-$$
-B_B(\Gamma, r) = \{\Sigma \in \mathcal{C} : d_B(\Gamma, \Sigma) < r\}
-$$
+**Bures ball:** $B_B(\Gamma,r)=\{\Sigma\in D_N:d_B(\Gamma,\Sigma)<r\}$.
 
-**Bures covering:** Family $\{\Phi_i: \Gamma_i \to \Gamma\}_{i \in I}$ covers $\Gamma$ if:
-$$
-\forall \epsilon > 0, \exists \delta > 0: \quad B_B(\Gamma, \delta) \subseteq \bigcup_{i \in I} \Phi_i(B_B(\Gamma_i, \epsilon))
-$$
+**Site:** $\mathcal O_N=\operatorname{Open}(D_N,d_B)$ with inclusions as arrows. A family $(U_i\subseteq U)$ covers $U$ iff $\bigcup_iU_i=U$. Pullback along an inclusion $V\subseteq U$ is the family of intersections $V\cap U_i$.
 
-**Site:** Pair $(\mathcal{C}, J_{Bures})$ where $J_{Bures}$ is the coverage function.
-
-**Classifier from topology:**
-$$
-\Omega = \mathcal{O}(\mathcal{C}, d_B)
-$$
+**Topos and classifier:** $\mathcal E_N=\operatorname{Sh}_\infty(\mathcal O_N,J_{\mathrm{open}})$; $\Omega$ is the sheaf of opens, $\Omega(U)=\operatorname{Open}(U)$, not a matrix algebra of seven projections. CPTP channels are Bures-continuous and induce geometric morphisms through inverse images of opens. The former channel-ball image-cover condition is not used. See the [kernel](/docs/reference/mathematical-kernel#bures-site).
 
 ## Special Notation
 
@@ -287,15 +279,15 @@ $$
 | $d_B(\cdot, \cdot)$ | Bures metric |
 | $\mathrm{Fid}(\cdot, \cdot)$ / $F(\cdot, \cdot)$ | Fidelity; $\mathrm{Fid}$ preferred to distinguish from functor $F$ |
 | $B_B(\Gamma, r)$ | Bures ball of radius $r$ centred at $\Gamma$ |
-| $J_{Bures}$ | Bures coverage function (Grothendieck topology) |
+| $J_{Bures}$ | Open-cover topology on $\mathcal O_N$ |
 | $\Theta(\cdot)$ | Heaviside function |
 | $\delta_{ij}$ | Kronecker delta |
 | $\mathrm{Tr}(\cdot)$ | Matrix trace |
 | $A^\dagger$ | Hermitian conjugate |
-| $\mathrm{Coh}_E$ | E-coherence (HS-projection $\pi_E$) **[T]**, $\in [1/7, 1]$; $= \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [master definition](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-projection](/docs/core/foundations/axiom-septicity#hs-projection), [CC reference](/docs/applied/coherence-cybernetics/definitions#e-когерентность) |
-| IDP | Information Distinguishability Principle **[D]** (T16) — [definition](/docs/core/foundations/axiom-septicity#формулировка-пир), built into A1+A2: distinguishability via $J_{\text{Bures}}$-coverings is identical to ontological distinguishability |
+| $\mathrm{Coh}_E$ | E-coherence (HS-projection $\pi_E$) **[T]**, $\in [0, 1]$; $= \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [master definition](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-projection](/docs/core/foundations/axiom-septicity#hs-projection), [CC reference](/docs/applied/coherence-cybernetics/definitions#e-когерентность) |
+| IDP | Declared distinguishability definition [D] and ontological interpretation [I]. Specify the observation family and Bures open site; their existence does not prove a phenomenal identification. |
 | $\varphi_{\text{coh}}$ | Coherence-preserving self-modelling — generalised φ-operator preserving coherences ([Fano channel](/docs/proofs/gap/fano-channel)) |
-| $\kappa(\Gamma)$ | Regeneration coefficient: $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ |
+| $\kappa(\Gamma)$ | Chosen effective rate, e.g. $\kappa_{\mathrm{bootstrap}}+\kappa_0\mathrm{Coh}_E(\Gamma)$ [D] |
 | $D_{\text{diff}}$ | Differentiation dimension — number of dimensions in which $\Gamma$ deviates from $I/N$ |
 | $P_{\text{crit}}$ | Critical purity $= 2/N = 2/7$ — [theorem](/docs/proofs/dynamics/theorem-purity-critical) |
 | $d_B^{chord}$ | Chord form of the Bures metric: $d_B^{chord} = \sqrt{2(1 - \sqrt{F(\rho, \sigma)})}$ |
@@ -327,15 +319,15 @@ See [Categorical formalism](/docs/proofs/categorical/categorical-formalism) for 
 | $\mathrm{Map}(\Gamma, T)$ | Morphism space in an ∞-category (mapping space) |
 | $\pi_n(X)$ | n-th homotopy group of space $X$ |
 | $\simeq$ | Weak homotopy equivalence |
-| $\Omega$ | [Subobject classifier](/docs/core/foundations/axiom-omega#внутренняя-логика) — unified source of L, L_k, τ |
-| $\chi_S$ | [Characteristic morphism](/docs/core/structure/dimension-l#категориальное-определение) of subobject S: $\chi_S: \Gamma \to \Omega$ |
-| $L_k$ | [Lindblad operators](/docs/core/dynamics/evolution#логический-лиувиллиан): $L_k = P_k = \lvert k\rangle\langle k\rvert$ — operator representatives of characteristic morphisms of atoms of Ω ([derivation](/docs/core/foundations/axiom-omega#lk-из-omega)). Notation $L_k = \sqrt{\chi_{S_k}}$ — convention ($\sqrt{P} = P$ for projectors) |
-| $\mathcal{L}_0$ | Linear Liouvillian (without regeneration): $\mathcal{L}_0 = -i[H_{\text{eff}},\cdot] + \sum_k D_{L_k}$. Primitivity [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω); unique attractor $I/7$ |
-| $\mathcal{L}_\Omega$ | [Full logical Liouvillian](/docs/core/dynamics/evolution#логический-лиувиллиан): $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ (with regeneration). Non-trivial attractor $\rho^*_\Omega \neq I/7$ [T] (T-96) |
+| $\Omega$ | [Subobject classifier](/docs/reference/mathematical-kernel#support-reflector), distinct from chosen frame projectors |
+| $\chi_S$ | $\chi_S:G\to\Omega$ classifies a subobject of the topos object $G$; no implicit density-matrix realization |
+| $L_k$ | Chosen Lindblad operators, e.g. $L_k=\lvert k\rangle\langle k\rvert$ in a declared frame. $\sum_kL_k^\dagger L_k=I$ holds for this instrument, not for abstract characteristic maps |
+| $\mathcal{L}_0$ | Fixed linear GKSL generator $-i[H,\cdot]+\sum_kD_{L_k}$; a unique $I/7$ attractor requires the stated unitality and primitivity hypotheses |
+| $\mathcal{L}_\Omega$ | Historical name for the full vector field $\mathcal L_0(\Gamma)+a(\Gamma)(M(\Gamma)-\Gamma)$; generally nonlinear, with conditional stationary states |
 | $\triangleright$ | [Temporal modality](/docs/proofs/dynamics/emergent-time#время-из-модальности) on Ω; $\tau_n = \triangleright^n(\mathrm{now})$ |
-| $\mathcal{D}_\Omega \dashv \mathcal{R}$ | [Dissipation–regeneration adjunction](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0); $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ |
-| **(МП)** | **Minimal representation principle** (historical condition, now **[T]** T11–T13): among equivalent BIBD$(7,3,\lambda)$ channels, $\lambda = 1$ is chosen — minimum number of operators ($b=7$). Proved as a theorem from (AP)+(PH)+(QG)+(V); bridge to P1+P2 fully closed **[T]**. [Bridge to P1+P2](/docs/core/foundations/axiom-septicity#мост-p1p2) |
-| **(КГ)** | **Canonical grouping** (historical): categorically natural mechanism for grouping atoms of Ω into composite blocks. Replaced by the weaker (МП), which in turn has been proved as theorem T11–T13 |
+| $\mathcal{D}_\Omega \dashv \mathcal{R}$ | Historical dissipation–regeneration notation; the claimed numerical adjunction/rate derivation is withdrawn [✗]. The valid support adjunction is $L_G\dashv i_G$ in the slice |
+| **(МП)** | A chosen minimal frame/channel representation; the universal derivation from (AP)+(PH)+(QG)+(V) and the closed P1/P2 bridge are withdrawn [✗] |
+| **(КГ)** | Historical canonical-grouping proposal [H]; the classifier does not select a seven-atom instrument |
 
 ## Coherence Cybernetics Notation
 
@@ -346,7 +338,7 @@ See [Coherence Cybernetics](/docs/applied/coherence-cybernetics/definitions) for
 | $\mathcal{V}$ | [Viability domain](/docs/core/dynamics/viability) |
 | $\mathrm{VIT}$ | Viability Integrity Tensor |
 | $\kappa_{\text{bootstrap}}$ | Minimum regeneration rate: $\kappa_{\text{bootstrap}} = \omega_0/7$ **[D]** scale; resolves the bootstrap paradox |
-| $\kappa_0$ | Categorical norm: $\kappa_0 = \omega_0 \cdot \|\gamma_{OE}\| \cdot \|\gamma_{OU}\| / \gamma_{OO}$ **[T]** — [categorical derivation](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
+| $\kappa_0$ | Chosen numerical rate/scale; the displayed coherence formula is a model law, not a categorical norm theorem |
 | $\kappa(\Gamma)$ | Effective regeneration rate: $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ **[T]** |
 | $\mathrm{Coh}_E$ | $E$-coherence (HS-projection) **[T]**: $\mathrm{Coh}_E(\Gamma) = \dfrac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2} = \dfrac{\gamma_{EE}^2 + 2\sum_{i \neq E}\lvert\gamma_{Ei}\rvert^2}{\mathrm{Tr}(\Gamma^2)}$ — **canonical formula** ([master definition](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-projection](/docs/core/foundations/axiom-septicity#hs-projection)) |
 | $P_E$ | E-sector purity (42D): $P_E = \mathrm{Tr}(\rho_E^2)$, where $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — **theoretical construction**, defined only in the extended 42D formalism ($\mathcal{H} = \mathbb{C}^{42}$). Formal equivalence $\mathrm{Coh}_E \approx P_E$ — **structural hypothesis [H]** ([details](/docs/applied/coherence-cybernetics/definitions#e-когерентность)) |
@@ -355,7 +347,7 @@ See [Coherence Cybernetics](/docs/applied/coherence-cybernetics/definitions) for
 | $H_{\text{eff}}$ | Effective Hamiltonian: $H_{\text{eff}}(\tau) = H_{6D} + \langle\tau\vert H_{\text{int}}\vert\tau\rangle_O$ — arises from the Page–Wootters constraint |
 | $g_V(P)$ | V-preservation gate: $\mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}, 0, 1\bigr)$; activates regeneration at $P > P_{\mathrm{crit}}$ ([derivation](/docs/core/dynamics/evolution#теорема-v-preservation-gate)) |
 | $\Theta(\Delta F)$ | Heaviside function of the free-energy change $\Delta F$; necessary condition from Landauer's principle (refined by $g_V(P)$) |
-| $\rho_*$ ($= \Gamma_{\text{target}}$) | Unique stationary state of $\mathcal{L}_\Omega$ [T]: $\rho_* = \varphi(\Gamma) = \lim_{\tau\to\infty} e^{\tau\mathcal{L}_\Omega}[\Gamma]$ — regeneration target |
+| $\rho_*$ ($= \Gamma_{\text{target}}$) | Numerical target $\rho_*=M(\Gamma)$ [D], distinct from an equilibrium $\Gamma_*$ and a basin limit $r(\Gamma)=\lim_{t\to\infty}\Phi_t(\Gamma)$ when that limit exists |
 | $\omega_0$ | Fundamental clock frequency — parameter of the computational approximation; see [κ₀](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
 | $D_{\mathrm{KL}}$ | Kullback–Leibler divergence: $D_{\mathrm{KL}}(p \| q) = \sum_i p_i \log(p_i / q_i)$ |
 
@@ -398,8 +390,8 @@ See [Structural derivation via octonions](/docs/proofs/minimality/theorem-octoni
 | $\mathrm{PG}(2,2)$ | Fano plane — projective plane over $\mathbb{F}_2$; 7 points, 7 lines, 3 points per line |
 | $[x, y, z]$ | Associator: $[x, y, z] = (xy)z - x(yz)$; measure of non-associativity |
 | $H(7,4)$ | Hamming code: 4 information + 3 check bits; connection to PG(2,2) |
-| **P1** | Theorem [T]: space of internal degrees of freedom $\cong \mathrm{Im}(\mathbb{A})$ for a division algebra $\mathbb{A}$ (derived along the T15 chain) |
-| **P2** | Theorem [T]: non-associativity ($[x, y, z] \neq 0$ for some $x, y, z$) (derived along the T15 chain) |
+| **P1** | Explicit algebraic realization premise; it is not derived from generic (AP)/(PH)/(QG) |
+| **P2** | Nonassociativity premise for the selected algebra; with a finite-dimensional real alternative division algebra it selects the octonionic case conditionally |
 
 :::warning Status of octonionic notation [I]
 The correspondence $e_i \leftrightarrow$ dimension — **interpretation** [I]. Mathematical operations on $\mathbb{O}$ (multiplication, associator) are strict [T]; their physical realisation in the space $\{A,S,D,L,E,O,U\}$ — [open problem](/docs/proofs/minimality/theorem-octonionic-derivation#открытые-проблемы).
@@ -415,7 +407,7 @@ Symbols related to the [Gap operator](/docs/core/dynamics/gap-dynamics), [Gap th
 | $\hat{G}$ | [Gap operator](/docs/core/dynamics/gap-dynamics): $\hat{G} = \mathrm{Im}(\Gamma) \in \mathfrak{so}(7)$ — imaginary part of the coherence matrix |
 | $P_{\mathrm{Fano}}$ | [Fano predictive channel](/docs/physics/gauge-symmetry/fano-selection-rules): $P_{\mathrm{Fano}}(\Gamma) = \tfrac{1}{3}\sum_p \Pi_p \Gamma \Pi_p$ — averaging over Fano lines |
 | $\Pi_p$ | Projector onto the 3-dimensional subspace of Fano line $p$ ($p = 1, \ldots, 7$) |
-| $\alpha^*$ | Optimal self-modelling parameter: $\alpha^* = \operatorname{argmin} F[P_\alpha;\, \Gamma]$ |
+| $\alpha^*$ | Chosen Fano mixing parameter; a specified optimization problem needs its own objective and hypotheses |
 | $T_{\mathrm{eff}}$ | [Effective Gap temperature](/docs/core/dynamics/gap-thermodynamics): $T_{\mathrm{eff}} = (\Gamma_2 / \kappa_0) \cdot k_B \cdot T_{\mathrm{phys}}$ |
 | $\xi_F$ | Fano correlation length: $\xi_F \sim 160\;\text{pc}$ — spatial correlation scale of Fano modes |
 | $\Theta_M$ | Winding theta-function with Fano character |
@@ -448,8 +440,8 @@ Symbols related to the [bimodular construction](/docs/proofs/physics/bimodule-co
 - [Self-observation](/docs/consciousness/foundations/self-observation) — measures $R$, $\Phi$, $D_{\text{diff}}$, $C$
 - [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4
 - [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, ∞-groupoid $\mathbf{Exp}_\infty$
-- [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
-- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → N=7
+- [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — typed support, numerical self-models and frozen CPTP realizations
+- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — conditional octonionic realization with explicit premises
 - [Gap dynamics](/docs/core/dynamics/gap-dynamics) — Gap operator $\hat{G}$, bifurcations, non-Markovian dynamics
 - [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — $T_{\mathrm{eff}}$, variational principle, FDT
 - [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — $P_{\mathrm{Fano}}$, $\Pi_p$, Yukawa hierarchy

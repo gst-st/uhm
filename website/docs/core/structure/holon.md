@@ -6,11 +6,7 @@ description: Self-sustaining configuration Γ
 
 # Holon ($\mathbb{H}$)
 
-:::info Who this chapter is for
-The central concept of UHM: the self-sustaining configuration Γ. A basic familiarity with the [coherence matrix](/docs/core/dynamics/coherence-matrix) and [Axiom Ω⁷](/docs/core/foundations/axiom-omega) is assumed.
-:::
-
-This chapter is the heart of the Unitary Holonomic Monism. Here we learn what a Holon is — the central concept of the theory around which everything else is built. A Holon is not a thing or a particle, but a **self-sustaining pattern** in the unified substance of reality $\Gamma$. To understand this idea, one must abandon the habit of thinking about the world as a set of separate objects and see reality as a unified field of configurations in which stable structures arise. By the end of the chapter you will understand what makes a configuration $\Gamma$ "alive", how Holons nest inside one another, and why there is a sharp mathematical boundary between "life" and "noise".
+A **Holon** is a proposed model of a system that maintains a specified organisation under declared environmental conditions **[D/H]**. This chapter distinguishes the numerical state, its physical readout, dynamics and capability certificates. The categorical primitive is a chosen structured sheaf model, not a unique density matrix containing all of reality. See the [typed mathematical kernel](/docs/reference/mathematical-kernel).
 
 ## Historical precursors
 
@@ -30,465 +26,191 @@ The Holon in UHM **unifies and formalises** all three ideas: the whole/part dual
 | Maturana/Varela (1972) | Autopoiesis = self-production | Condition (AP): closure of the autopoietic cycle |
 | Rosen (1991) | (M,R)-closure = repair of the repairer | Condition (QG): operator $\mathcal{R}$ regenerates itself as well |
 
+**Mapping scope [I/H].** These precursors motivate the vocabulary; the correspondences to a numerical feedback model are additional hypotheses, not proofs that a physical system satisfies the Holon predicates.
+
 ## Intuitive explanation
 
-:::tip Analogy: a whirlpool in a river
-Imagine a whirlpool in a river. It **exists** — you can see it, point to it, describe its shape, size, speed of rotation. But what is it "made of"? Of water. The very same water that flows around it. The whirlpool is not an object distinct from the water; it is a **configuration** of water.
-
-Yet the whirlpool is something more than "just water". It has:
-- **Shape** — it is round, not square
-- **Direction** — it rotates clockwise or counter-clockwise
-- **Size** — it has a boundary
-- **Lifetime** — it arises and disappears
-- **Stability** — it resists small perturbations
-- **Self-sustenance** — it exists as long as there is flow
-
-A Holon is the "whirlpool" in $\Gamma$. The unified substance of reality ($\Gamma$) is the "river". A Holon is a stable configuration of that substance which sustains itself. A cell is a Holon: it is composed of molecules, but it is not "just a set of molecules" — it has organisation, a boundary, internal time, the capacity for self-repair. A brain is a Holon: it is composed of neurons, but it is not "just a set of neurons" — it has holistic states that individual neurons do not possess.
-:::
-
-The key difference from an ordinary whirlpool: a Holon in UHM possesses an **interior side** (interiority). A whirlpool in a river does not "experience" its own existence. A Holon does, and the degree of that experience is determined by precise mathematical measures.
+The whirlpool analogy describes persistence of a pattern despite exchange of components **[I]**. It motivates a distinction between a state and the mechanisms maintaining it. It does not prove that every pattern has phenomenal experience or that seven numbers completely describe a cell or brain. Physical autonomy, self-maintenance and experience require independently specified tests.
 
 ## Ontological status
 
-:::warning Key clarification
-**Category $\mathcal{C}$ is the only primitive.** The coherence matrix $\Gamma$ is an **object** of that category. A Holon ($\mathbb{H}$) is **not a separate entity**, but a special type of configuration $\Gamma \in \text{Ob}(\mathcal{C})$ satisfying conditions (AP)+(PH)+(QG)+(V).
-:::
+The categorical layer is the chosen $\mathcal E_N=\operatorname{Sh}_\infty(\operatorname{Open}(D_N,d_B),J_{\mathrm{open}})$; process maps live in the separate channel category. A numerical state $\Gamma\in D_7$ belongs to an effective state model. Connecting it to a sheaf object and a physical system requires declared representation and observation maps **[P/H]**.
 
-:::info Taxonomy: hierarchy of Γ configurations
-All Γ configurations form a hierarchy by degree of autonomy:
-- **Fundamental mode Γ:** unitary dynamics, R = 0, passive stability
-- **Composite configuration Γ:** quasi-autonomous, 0 < R ≪ 1, passive stability
-- **Holon:** full closure (AP)+(PH)+(QG)+(V), active stability (autopoiesis)
-- **L2-Holon:** + cognitive qualia (R ≥ R_th, Φ ≥ Φ_th)
-
-Only configurations with full autopoietic closure are called "Holons". Fundamental modes and composite configurations are objects of category **Hol**, but are **not** Holons: they do not satisfy conditions (AP)+(QG). See [Taxonomy](#таксономия-по-уровням-организации) below.
-:::
-
-To say "a Holon exists" means: "there exists a configuration of the unified substance Γ that sustains itself".
-
-**Analogy:** Γ is the ocean (the unique substance), $\mathbb{H}$ is the whirlpool (a self-sustaining pattern in the ocean). The whirlpool is not composed of anything other than water — it *is* water in a particular configuration.
+The model distinguishes autonomy and maintenance conditions (AP)+(PH)+(QG)+(V) from the operational hierarchy. $R=1/(7P)$ lies in $[1/7,1]$, so “fundamental mode $R=0$” is impossible in this definition. Vanishing regeneration rate or absent tested self-model can be recorded separately. An organisational hierarchy is not a cognitive-depth hierarchy.
 
 ## Hierarchical definition
 
-The definition of a Holon is stratified into levels, where each level depends only on the preceding ones. This is like building a house: first the foundation, then the walls, then the roof — each storey rests on the previous one, with no circular dependencies.
+The following levels organise a model specification [D]. Their numbering does not assert a universal self-reference depth or an empirically established L-level.
 
 ### Level 0: Global Γ
 
-Everything begins with unified reality. By [Axiom Ω](../foundations/axiom-omega), there exists one and only one coherence matrix describing **all** of reality as a whole:
+Choose a Hilbert space $\mathcal H_{\mathrm{global}}$ and, when appropriate, a trace-class state
 
 $$
-\exists! \, \Gamma_{\text{global}} \in \mathcal{L}(\mathcal{H}_{\text{global}}): \Gamma_{\text{global}}^\dagger = \Gamma_{\text{global}}, \; \Gamma_{\text{global}} \geq 0, \; \mathrm{Tr}(\Gamma_{\text{global}}) = 1
+\Gamma_{\mathrm{global}}=\Gamma_{\mathrm{global}}^\dagger\succeq0,\qquad
+\operatorname{Tr}\Gamma_{\mathrm{global}}=1.
 $$
 
-Intuitively: this is "the entire ocean". A single whole that completely describes everything that exists. The three conditions — Hermiticity ($\Gamma^\dagger = \Gamma$), positive semidefiniteness ($\Gamma \geq 0$), and normalisation ($\mathrm{Tr}(\Gamma) = 1$) — guarantee that $\Gamma$ is a valid quantum density matrix.
-
-:::note Why a density matrix and not a wave function?
-In quantum mechanics there are two ways to describe a state: the wave function $|\psi\rangle$ (for "pure" states) and the density matrix $\rho$ (for arbitrary, including "mixed", states). UHM uses the density matrix because:
-1. A Holon is an **open system** interacting with its environment. Such systems are almost always in a mixed state.
-2. The density matrix naturally describes **subsystems** via the partial trace.
-3. The density matrix contains information about both populations (diagonal) and coherences (off-diagonal) — which is necessary for describing connections between dimensions.
-:::
+These conditions define valid density matrices; they do not select a unique state. A topos has a terminal object, but it is not $I_7/7$ or a cosmological attractor. In the channel category the tensor unit is the one-dimensional system with its discarding map. A global physical state and its relation to the categorical layer are additional model inputs **[P/H]**.
 
 ### Level 1: Subsystem
 
-Within the global $\Gamma$ one can single out a **part** — a subsystem. Mathematically this is done by splitting the full space into "system" and "environment" and taking the partial trace:
+Given an actual factorization $\mathcal H_{\mathrm{global}}=\mathcal H_S\otimes\mathcal H_{\mathrm{env}}$, define
 
-Let $\mathcal{H}_{\text{global}} = \mathcal{H}_S \otimes \mathcal{H}_E$ be the tensor decomposition. **Subsystem** $S$:
 $$
-\Gamma_S := \mathrm{Tr}_E(\Gamma_{\text{global}})
+\Gamma_S=\operatorname{Tr}_{\mathrm{env}}\Gamma_{\mathrm{global}}.
 $$
 
-What does "partial trace" mean? Imagine looking at a city from above. You see everything: every house, every tree, every car. Now imagine you decide to focus on one neighbourhood, "forgetting" everything else. The partial trace is the mathematical operation of such "forgetting": we average over everything that does not belong to the subsystem of interest.
+The partial trace preserves positivity and trace **[T]**. Its existence uses the supplied tensor factorization; a semantic axis or arbitrary vector-space summand does not supply that factor. Purity may increase or decrease: $|u\rangle\langle u|\otimes I_7/7$ has joint purity $1/7$ and a pure system marginal. A marginal alone does not reconstruct its correlations with the environment.
 
 ### Level 2: Autonomy
 
-Not every subsystem "has a life of its own". A stone in a river is a subsystem of the river, but it is not autonomous in the sense that a living cell is autonomous. A subsystem is **autonomous** if conditions (A1)+(A2)+(A3) are satisfied, which define a sufficient degree of separation from the environment. See [Prerequisite: Autonomy](../foundations/axiom-septicity#предварительное-условие-автономность).
-
-Autonomy means: the subsystem has its own dynamics that are not entirely determined by the environment. It can "act" on its own, not merely "react".
-
-The three autonomy conditions at the intuitive level:
-- **(A1) Separability**: the subsystem can be meaningfully separated from the environment. A cell is separated by a membrane. The brain — by the skull and the blood–brain barrier. An electron in an atom, by contrast, is not fully separable — its "boundary" is diffuse.
-- **(A2) Stability**: the subsystem preserves its identity under small perturbations. If you poke a whirlpool with a stick, it recovers. If you destroy half a cell membrane, the cell dies. Autonomy requires that the system "knows" how to restore itself.
-- **(A3) Dynamical closure**: the subsystem generates its own processes. A cell synthesises proteins itself rather than receiving them from outside. The brain generates neural activity on its own rather than merely responding to stimuli.
+Autonomy is a declared criterion involving the subsystem, environment, allowed perturbations and dynamics **[D/H]**. The linked conditions [A1–A3](../foundations/axiom-septicity#предварительное-условие-автономность) must be operationalised. A physical boundary is not the quantum separability condition: separable mixed states can have classical correlations, and a chosen tensor factor need not be dynamically autonomous. Stability requires an actual stability or recovery estimate; it is not implied by naming a boundary.
 
 ### Level 3: 7D structure
 
-An autonomous subsystem possesses a **7D structure** if:
-$$
-\mathcal{H}_S \cong \mathbb{C}^7 \otimes \mathcal{H}_{\text{internal}}
-$$
+A seven-dimensional effective state is a selected representation **[P]**, conditional on a readout. If an actual factorization $\mathcal H_S\cong\mathbb C^7\otimes\mathcal H_{\mathrm{internal}}$ is supplied, then $\Gamma_S^{(7)}=\operatorname{Tr}_{\mathrm{internal}}\Gamma_S\in D_7$. More generally one can declare a CPTP readout $\Lambda$ into $D_7$ and test its sufficiency for a specified family of tasks.
 
-Effective 7D matrix:
-$$
-\Gamma_S^{(7)} := \mathrm{Tr}_{\text{internal}}(\Gamma_S) \in \mathcal{L}(\mathbb{C}^7)
-$$
-
-The seven dimensions — A (Articulation), S (Structure), D (Dynamics), L (Logic), E (Interiority), O (Ground), U (Unity) — are the minimal set of "tools" required for self-sustenance. A detailed description of each is given in the chapter [Seven Dimensions](./dimensions).
+The names $A,S,D,L,E,O,U$ are semantic assignments, not a proof that every autonomous system has seven independent physical degrees of freedom. The [minimality result](../../proofs/minimality/theorem-minimality-7) retains its distinguishability premises. In particular the basis axis $O$ is not a nontrivial tensor-factor clock.
 
 ### Relation to quantum mechanics
 
-:::info Status: Effective theory
-The $\mathbb{C}^7$ of UHM is an **effective description** for autonomous systems. The connection to standard QM ($L^2(\mathbb{R}^3)$ — an infinite-dimensional space) is established via projection.
-:::
+A chosen contraction/compression $\Pi_7:\mathcal H_{\mathrm{full}}\to\mathbb C^7$ with $\Pi_7^\dagger\Pi_7\le I$ gives a subnormalised state $\widetilde\Gamma=\Pi_7\rho\Pi_7^\dagger$. For $p=\operatorname{Tr}\widetilde\Gamma>0$, the conditional state is $\Gamma_{\mathrm{eff}}=\widetilde\Gamma/p$. Report $p$: this conditioning is not a deterministic linear CPTP readout. Alternatively specify a genuine CPTP reduction including the excluded outcomes.
 
-**Definition (Effective Holon):**
-
-For a system with the full Hilbert space $\mathcal{H}_{\text{full}} = L^2(\mathbb{R}^3)$ (standard QM), the **effective Holon** is defined as the projection onto the 7-dimensional subspace of relevant degrees of freedom:
-
-$$
-\Gamma_{\text{eff}} = \Pi_7 \, \rho_{\text{full}} \, \Pi_7^\dagger
-$$
-
-where $\Pi_7: \mathcal{H}_{\text{full}} \to \mathbb{C}^7$ is the projection onto the 7 selected modes.
-
-**Interpretation of dimensions for a quantum system:**
-
-| Dimension | Standard QM | Example (H atom) |
-|-----------|-------------|------------------|
-| **A** (Articulation) | Projectors onto subspaces | $P_{1s}, P_{2s}, P_{2p}$ |
-| **S** (Structure) | Hamiltonian | $H = -\nabla^2/2m - e^2/r$ |
-| **D** (Dynamics) | Unitary evolution | $U(\tau) = e^{-iH\tau}$ |
-| **L** (Logic) | Commutators | $[L_x, L_y] = i\hbar L_z$ |
-| **E** (Interiority) | Reduced matrix | $\rho_{\text{spin}}$ |
-| **O** (Ground) | Vacuum/ground state | $\vert 1s\rangle$ |
-| **U** (Unity) | Normalisation | $\mathrm{Tr}(\rho) = 1$ |
-
-**Important:** UHM **does not claim** to reproduce all predictions of standard QM (spectra, cross-sections, etc.). $\mathbb{C}^7$ is a sufficient description for:
-- Autonomous agents
-- Phenomenology of consciousness
-- Dynamics of self-modelling
-
-The full embedding of standard QM into UHM is an **open research direction**.
+Mapping operators, populations or a spin marginal to semantic roles requires a representation bridge **[H/I]**. It is not a consequence of standard quantum mechanics and does not claim that $D_7$ suffices for every spectrum, physical system or conscious phenomenon.
 
 ### Level 4: Holon (definition)
 
-A **Holon** ($\mathbb{H}$) is an autonomous subsystem with 7D structure satisfying conditions [(AP)+(PH)+(QG)+(V)](../foundations/axiom-septicity):
+**Definition [D].** A Holon model is an augmented record
 
 $$
-\mathbb{H} := \langle \Gamma_S^{(7)}, \mathcal{H}_S, H_S, \{L_k\}, \mathcal{E}, \varphi_S \rangle
+\mathbb H=(\Gamma,\mathsf{Readout},\mathsf{Dynamics},\mathsf{Environment},M,\mathsf{Tests}),\qquad\Gamma\in D_7,
 $$
 
-What each of the four conditions means in intuitive terms:
+with the declared autonomy and maintenance predicates (AP)+(PH)+(QG)+(V). The readout specifies the physical-to-state map and uncertainty; the dynamics specifies $H$, dissipative channels and any feedback; tests specify operational targets. PH as an experiential interpretation retains **[I/H]**. The numerical cut V is a definition, not a theorem about biological survival.
 
-- **(AP) — Autopoiesis**: the system reproduces itself. Just as a cell continuously renews its proteins, a Holon continuously "reassembles" its configuration.
-- **(PH) — Phenomenology**: the system has an interior side. Not everything about it reduces to an external description — there is "what it is like" to be that system.
-- **(QG) — Quantum ground**: the system has a regeneration mechanism from a deep source (the O dimension).
-- **(V) — Viability**: the system is sufficiently "coherent" to be distinguished from noise. Formally: $P > 2/7$.
-
-:::info All components are aspects of Γ
-The tuple is a **description** of the configuration, not a claim about additional primitives:
-
-| Component | Ontological status |
-|-----------|-------------------|
-| $\Gamma_S^{(7)} \in \mathcal{L}(\mathbb{C}^7)$ | Effective 7D state matrix |
-| $\mathcal{H}_S$ | State space of the subsystem |
-| $H_S$ | Hamiltonian — structure of the configuration |
-| $\{L_k\}$ | Lindblad operators — dissipative dynamics |
-| $\mathcal{E}$ | Environment — the part of the global Γ external to the given configuration |
-| $\varphi_S$ | Self-modelling operator — [CPTP channel](../../reference/glossary#категорные-термины) |
-
-All these "components" are not separate entities, but **mathematical tools** for describing the properties of the configuration Γ.
-:::
-
-:::note Consistency of the definition
-The hierarchical definition contains no circular dependencies: each level (0→1→2→3→4) depends only on the preceding ones. See [Consistency Theorem](../foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
-:::
+A numerical self-model $M:D_7\to D_7$ is distinct from the logical support reflector $\varphi$. A state-preserving $M$ need not be affine or CPTP. Frozen channel parameters may define CPTP maps; state-dependent selection generally gives a nonlinear map. Neither $H$, $M$, environmental coupling nor observation law can be reconstructed uniquely from a single $\Gamma$.
 
 ## Fundamental properties
 
 ### 1. Structural self-similarity
 
-:::warning Clarification
-This is **not** the holographic principle in the sense of "every part contains complete information about the whole". This is **isomorphism of state spaces**: all Holons have the same *dimension* and *type* of structure, but **different content**.
-:::
-
-**Formally:** State spaces are isomorphic:
-
-$$
-\forall \mathbb{H} \text{ (viable)}: \mathcal{H}_{\mathbb{H}} \cong \mathbb{C}^7
-$$
-
-The concrete states $\Gamma_{\mathbb{H}_1}$ and $\Gamma_{\mathbb{H}_2}$ **differ** — only the spaces are isomorphic.
-
-Analogy: all chessboards have the same structure (8×8 squares), but the positions on them differ. In the same way, all Holons "live" in the same type of space ($\mathbb{C}^7$), but each has its own concrete configuration $\Gamma$. A cell and a brain are both described by a $7 \times 7$ matrix, but the numbers in those matrices are entirely different.
-
-This property is deeply non-obvious. It means that a bacterium and a human brain, for all their difference in complexity, are described by **the same type** of mathematical object. The difference lies not in the structure of the space, but in the concrete state: in the values of the populations $\gamma_{ii}$, the coherences $\gamma_{ij}$, and in the measures $R$, $\Phi$, $P$ that determine the level of reflexion, integration, and viability.
+Within the selected effective model, different systems have states in the same type of space $D_7$ **[D]**. This is a common representation, not an isomorphism of all physical Hilbert spaces or a lossless description of every system. Readout, dynamics, stored records and task capabilities can differ even when $\Gamma$ is identical.
 
 ### 2. Partiality (boundary)
 
-A Holon has a boundary separating it from its environment. The state of the Holon is the reduced density matrix:
-
-$$
-\Gamma_{\mathbb{H}} = \mathrm{Tr}_{\mathcal{E}}(\Gamma_{\text{total}})
-$$
-
-where $\mathrm{Tr}_{\mathcal{E}}$ is the partial trace over the degrees of freedom of the environment.
-
-The boundary of a Holon is not a "wall", but a mathematical operation: we separate what is "inside" from what is "outside". For a cell the boundary is the membrane. For an organism — the skin. For an ecosystem — the landscape. In each case the boundary defines where one Holon ends and its environment begins.
+A supplied tensor factorization permits $\Gamma_{\mathbb H}=\operatorname{Tr}_{\mathrm{env}}\Gamma_{\mathrm{total}}$ **[T]**. The physical boundary and its relation to that factorization are separate modeling inputs. A basis partition or compressed block is not automatically a partial trace or a subsystem with independent dynamics.
 
 ### 3. Dynamicity
 
-<!-- DRY: Canonical definition of the evolution equation in /docs/core/dynamics/evolution -->
-A Holon continuously evolves according to the equation with [emergent internal time](../../proofs/dynamics/emergent-time) τ:
+The canonical candidate flow is
 
 $$
-\frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma(\tau)] + \mathcal{D}[\Gamma(\tau)] + \mathcal{R}[\Gamma(\tau), E]
+\dot\Gamma=-i[H,\Gamma]+\mathcal D(\Gamma)+a(\Gamma)(M(\Gamma)-\Gamma),\qquad a\ge0.
 $$
 
-> For the canonical definition and derivation of the equation's terms see [Evolution of Γ](../dynamics/evolution#полное-уравнение-движения).
+For locally Lipschitz $a,M$, $M(D_7)\subseteq D_7$, and a fixed GKSL linear part, the density-state domain is forward invariant and solutions continue globally **[T]**; see the [kernel](../../reference/mathematical-kernel#dynamics). This nonlinear flow is not automatically a linear CPTP semigroup.
 
-where:
-- $\tau$ — internal time arising from correlations with the O dimension
-- $H_{eff}$ — effective Hamiltonian from the Page–Wootters constraint
-- $-i[H_{eff}, \Gamma(\tau)]$ — unitary (reversible) evolution
-- $\mathcal{D}[\Gamma(\tau)]$ — dissipation (decoherence)
-- $\mathcal{R}[\Gamma(\tau), E]$ — regeneration (restoration of coherence)
-
-A Holon is not a static object, but a **process**. It exists only as long as it evolves. Cessation of evolution = cessation of existence (dissolution of the configuration). This accords deeply with intuition: the living is always a process, never a thing.
-
-The three terms of the evolution equation describe three fundamental processes:
-- **Unitary evolution** $-i[H_{eff}, \Gamma]$ — "ideal" dynamics without loss. Like a frictionless pendulum: it oscillates forever, losing no energy.
-- **Dissipation** $\mathcal{D}[\Gamma]$ — "friction". The environment destroys coherence; the system "forgets" its structure. Without a counterweight — inevitable decay.
-- **Regeneration** $\mathcal{R}[\Gamma, E]$ — "counterweight to friction". The Holon restores coherence, drawing resources from the environment (via the O dimension). This term is precisely what distinguishes the living from the non-living: non-living systems have only $-i[H, \Gamma] + \mathcal{D}[\Gamma]$ and inevitably degrade to thermal equilibrium.
+A stationary solution is compatible with maintenance; $\dot\Gamma=0$ does not mean the system ceases to exist. Unitary motion preserves spectrum. General dissipation can purify as well as mix; convergence to $I_7/7$ requires the relevant unital mixing assumptions. The feedback term need not raise purity in every state. A physical energy/resource balance requires specified Hamiltonians, reservoirs and currents; the scalar feedback rate and semantic O-axis do not supply it. Internal time needs a separately supplied clock and constraint, not the basis axis alone.
 
 ### 4. Interiority
 
-Every Holon has an interior side — **interiority**. This is perhaps the most radical claim of UHM: not only the brain, but also a cell, and any Holon, possesses an "inner" aspect. The difference lies not in the presence or absence of interiority, but in its **level**:
+Interiority is the ontological interpretation **[I]** of the model. Formal capabilities use an augmented record and the [canonical hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy).
 
-- **L0** (interiority): $\exists \rho_E \neq 0$ — the system has a non-zero E dimension. This is minimal interiority: "something is happening inside", but without distinctions. Analogy: dreamless deep sleep — you "exist", but distinguish nothing.
-- **L1** (phenomenal geometry): $\mathrm{rank}(\rho_E) > 1$ — there are **distinctions** inside. Not merely "something", but "something red and something warm". Analogy: dreaming sleep — you see images, distinguish colours, hear sounds.
-- **L2** (cognitive qualia): $R \geq 1/3$, $\Phi \geq 1$ — the system **knows** that it has an inner world. Reflexion: "I see red and I know that it is I who sees". Analogy: wakefulness — you are aware of your experience.
+$$
+\mathrm{Cap}_2=(P>2/7)\land(R\ge1/3)\land(\Phi\ge1)\land(D_{\mathrm{diff}}\ge2),
+\quad R=1/(7P),\quad\Phi=P/\sum_i\gamma_{ii}^2-1.
+$$
 
-The L2 thresholds are mathematically proven; PIR [D] provides the ontological interpretation. The key point: the transition from L1 to L2 is not gradual, but **threshold-like**. The reflexion measure $R$ must reach the critical value $1/3$, and the integration measure $\Phi$ the value $1$. Below the thresholds — the system "experiences" (L1), but does not "know" (L2). Above — consciousness in the full sense arises.
-
-See [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy) and [L2 thresholds](../foundations/axiom-septicity#пороги-l2-строгий-вывод).
-
-:::note Full hierarchy
-The full interiority hierarchy L0→L4 is defined in [Levels of interiority](/docs/consciousness/foundations/interiority-theory). Here L0–L2 are shown as the basic levels. Levels L3 (network consciousness, metastable) and L4 (unitary consciousness, theoretical limit) are described in [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy).
-:::
+L1 requires the declared experiential realization or proxy; a 7D basis axis is not a multidimensional $\rho_E$. L3 adds nontrivial held-out metamodel prediction tests; L4 is an ideal compatible tower. The former $P>6/7$ clause contradicts inherited $P\le3/7$ and is withdrawn. A fixed point or successive fidelity equal to one does not certify these tests. Neither Gap nor a chosen SAD score fixes the physical level, and no universal depth ceiling of three follows.
 
 ## Examples of Holons
 
-To give flesh to the abstract definition, let us consider concrete examples of systems that (within UHM) are interpreted as Holons of various levels.
+The examples are motivating interpretations [I/H], not reconstructed state certificates or proofs of physical L-levels.
 
 ### Cell
 
-A living cell is the canonical example of a Holon. It satisfies all four conditions:
-
-- **(AP)**: the cell continuously produces its components (proteins, membrane, organelles) from incoming substrates. The protein machinery produces proteins which, in turn, support the protein machinery. This is autopoietic closure.
-- **(PH)**: the cell possesses internal states (ion concentrations, gene expression levels) that do not reduce to an external description.
-- **(QG)**: the cell regenerates — damaged components are replaced by new ones, the membrane is restored, DNA is repaired.
-- **(V)**: the cell maintains purity $P > 2/7$ — its internal organisation is sufficiently coherent to be distinguished from thermal noise.
-
-In terms of the seven dimensions: $A$ — discrimination of molecular signals (receptors); $S$ — stable structure (cytoskeleton, membrane); $D$ — metabolic processes; $L$ — genetic regulation (logic of expression); $E$ — internal states (ion balance, pH); $O$ — energy substrate (ATP, NADH); $U$ — integrity of the cell as a unit.
+A cell motivates the autonomy and self-maintenance vocabulary [I]. Assigning receptors, structure, metabolism, regulation, internal records, resources and integration to the seven roles is a candidate encoding [H]. It does not measure purity or establish a phenomenal state. The readout and closure tests must be supplied independently.
 
 ### Brain
 
-The brain is an example of an **L2-Holon**: it not only sustains itself, but also possesses reflexion ($R \geq 1/3$) and high integration ($\Phi \geq 1$). The brain models *itself* — this is precisely what makes conscious experience possible. The key difference from a cell: the brain does not merely "experience" (L0/L1), but **knows that it experiences** (L2). This "knowledge about knowledge" is formalised through the reflexion measure $R$ — the ability of the self-modelling operator $\varphi$ to accurately reflect its own state.
+A brain motivates tests of self-model predictions and task-dependent access [H]. Its physical L-label cannot be inferred from the word “brain”, an unmeasured R, or an assumed cell-to-brain distinction. The canonical gate and higher-order certificates require a validated observation model and actual task data.
 
 ### Ecosystem
 
-A forest, a coral reef, a savanna — these are examples of **meta-Holons**: composite systems in which individual Holons (organisms) form a connected whole. An ecosystem sustains itself (regenerates species, recycles matter), has a stable structure, and evolves. However, its level of interiority is an open question.
+An ecosystem can motivate a composite model [H]. Whether it has autonomous maintenance or a collective capability is an open empirical question requiring joint dynamics and a declared collective readout; mutual information alone does not decide it.
 
 ### What is NOT a Holon
 
-For contrast, it is useful to understand which systems are **not** Holons:
-
-- **A stone.** A stone has structure (a crystal lattice), but no autopoiesis: it does not recover after damage, does not produce its own components, and has no internal dynamics. A stone is a composite configuration $\Gamma$ with $R = 0$: its stability is passive (provided by chemical bonds, not by active regeneration).
-- **A thermostat.** A thermostat maintains temperature, but does not produce its own components. It responds to the environment (feedback), but lacks autopoietic closure. In UHM terms: a thermostat has D (dynamics) and rudiments of L (feedback logic), but does not have the full set of 7 dimensions with conditions (AP)+(QG).
-- **A computer program.** A program can model itself (reflexion), but it is not self-sustaining physically: switch off the power — and it "dies". A program is not a Holon; it exists **inside** a Holon (computer + operator) that provides its physical existence.
-
-:::note Limits of applicability
-The question "is a given specific system a Holon?" is **empirical**, not purely theoretical. UHM specifies the formal conditions (AP)+(PH)+(QG)+(V); verifying their fulfilment for specific systems requires measurement. The examples above are motivating illustrations, not formal proofs.
-:::
+A feedback device, passive material structure or software description is not automatically a Holon. Evaluate the stipulated autonomy and closure predicates rather than inferring their failure from a name or setting R=0. Dependence on environmental resources alone does not exclude self-maintenance: the allowed environment is part of the criterion.
 
 ## Nesting hierarchy
 
-Holons can contain sub-Holons and be part of meta-Holons:
-
-```mermaid
-graph TB
-    subgraph "Meta-Holon (composite)"
-        H1["ℍ₁"]
-        H2["ℍ₂"]
-        H3["ℍ₃"]
-    end
-    subgraph "ℍ₁ (Holon)"
-        h1a[sub-system a]
-        h1b[sub-system b]
-    end
-```
-
-:::info Key distinction
-A **Holon** is an autonomous subsystem with 7D structure satisfying (AP)+(PH)+(QG)+(V). A **sub-system** is any part obtained by partial trace. A subsystem is a Holon if and only if the autonomy conditions (A1–A3) and the conditions (AP)+(PH)+(QG)+(V) are satisfied.
-:::
-
-This nesting is not merely a convenient classification, but a fundamental property of the theory. It explains why reality is organised hierarchically: atoms → molecules → cells → organs → organisms → ecosystems → planet. At each level new Holons arise, containing the previous ones as subsystems.
-
-:::tip Analogy: a matryoshka
-The nesting hierarchy is easy to picture as a matryoshka doll. The smallest — an elementary particle (a fundamental mode, not yet a Holon). Inside a larger one — an atom (a composite configuration). Inside a still larger one — a cell (the first true Holon, with autopoiesis). Larger still — an organism. And then — an ecosystem.
-
-But the matryoshka analogy is incomplete: unlike matryoshkas, Holons **interact** at every level. Cells are not merely "nested" inside an organ — they exchange signals, form correlations (entanglement), creating new degrees of freedom that individual cells do not possess.
-:::
+A declared subsystem can be contained in a composite system. Nesting of physical boundaries, tensor factors and effective models must be specified separately. Neither a partial trace nor a hierarchy of organisational names guarantees that every part or aggregate satisfies the Holon predicates.
 
 ### Taxonomy by levels of organisation {#таксономия-по-уровням-организации}
 
-| Class | Hierarchy level | Formal condition | Stability | Examples |
-|-------|---|---|---|---|
-| **Fundamental mode Γ** | 0–1 | $R = 0$, purely unitary | Passive (symmetries) | Quarks, leptons, bosons |
-| **Composite configuration Γ** | 1–2 | $0 < R \ll 1$, quasi-autonomous | Passive (bonds) | Atoms, simple molecules |
-| **Holon** (ℍ) | 2–4 | (AP)+(PH)+(QG)+(V), $P > P_{\text{crit}}$ | Active (autopoiesis) | Cells, organisms |
-| **L2-Holon** | 4+ | + $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$ | + reflexion | *(empirical question)* |
-| **L3-Holon** | 4+ | + $R^{(2)} \geq 1/4$ (metastable) | + meta-reflexion | Deep meditation, swarm |
-| **L4-Holon** | 4+ | + $P > 6/7$, full ∞-structure | + full integration | Theoretical limit |
+| Model class [D/H] | Required evidence |
+|---|---|
+| State configuration | Valid state and readout |
+| Holon | Declared autonomy and (AP)+(PH)+(QG)+(V) tests |
+| L2-capable Holon | Full $\mathrm{Cap}_2$ and experiential test |
+| L3-capable Holon | L2 plus nontrivial metamodel prediction certificate |
+| Ideal L4 model | Compatible certificates at every order |
 
-:::warning Terminological convention
-The term "Holon" is reserved for configurations with **full autopoietic closure** (AP)+(PH)+(QG)+(V). Fundamental modes and composite configurations are **not** Holons: they lack autopoiesis (AP) and regeneration (QG). They are objects of the category **Hol**, but in the degenerate regime $R \to 0$, where the evolution equation [reduces to the Schrödinger equation](../../proofs/physics/physics-correspondence#3-редукция-к-квантовой-механике).
-:::
-
-**Thresholds ([threshold statuses](../foundations/axiom-septicity#пороги-l2-строгий-вывод)):**
-- $P_{\text{crit}} = 2/7$ — [T] [Critical purity theorem](../../proofs/dynamics/theorem-purity-critical)
-- $R_{\text{th}} = 1/3$ — [T] [Reflexion threshold](../foundations/axiom-septicity#теорема-порог-рефлексии) ($K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция))
-- $\Phi_{\text{th}} = 1$ — [T] [Integration threshold](../foundations/axiom-septicity#теорема-порог-интеграции) (T-129)
-
-See [Hierarchy of Γ configurations](../foundations/consequences#6-иерархия-конфигураций-γ).
+These are model predicates, not universal labels for particles, cells, meditators or societies. The numerical cuts are chosen operational criteria; their algebraic consequences are theorems, and their physical interpretation retains its bridge hypotheses.
 
 ## Life cycle of a Holon
 
-A Holon is not a static construction. It is born, lives, and can die. The life cycle of a Holon is determined by the dynamics of purity $P(\tau)$:
-
-1. **Birth (emergence)**: when a configuration with $P > P_{\text{crit}}$ and closure (AP)+(QG) spontaneously arises in some region of $\Gamma$. Analogy: the formation of the first living cell from a "chemical soup". Mathematically — a bifurcation: a new stable attractor appears in the system.
-
-2. **Life (stable existence)**: the Holon maintains $P > P_{\text{crit}}$ through the balance between dissipation $\mathcal{D}$ (destroying coherence) and regeneration $\mathcal{R}$ (restoring it). The equilibrium purity $P^*$ depends on the parameters of the environment: abundance of resources, strength of external perturbations, efficiency of regeneration.
-
-3. **Stress (risk zone)**: under unfavourable conditions $P$ drops towards the critical threshold. The system enters a "stress regeneration" regime — all resources are directed towards maintaining coherence. Analogy: an organism under illness redirects energy away from growth and reproduction towards the immune response.
-
-4. **Death (dissolution)**: if $P$ falls below $2/7$, regeneration is impossible and the system irreversibly degrades to maximum entropy ($P \to 1/7$). The configuration dissolves into the surrounding $\Gamma$. Analogy: the death of an organism — its matter returns to the environment.
+Emergence, persistence and loss of an organisation require a model of the relevant processes and an independent identification criterion [H]. They are not determined by a single purity trajectory. A new attractor or bifurcation requires a parameterized flow and its stability conditions; loss of a certificate does not by itself establish biological death or irreversible loss of personal records.
 
 ## Composition of Holons
 
 ### Tensor product
 
-When two Holons interact, they form a **composite system**. Mathematically this is described by the tensor product — an operation that combines two state spaces into one.
-
-:::tip Intuition: tensor product
-Imagine two people. Each can be described by a set of 7 characteristics (one per dimension). When they meet and begin to interact, their joint description is no longer just "the set of characteristics of the first + the set of characteristics of the second". **Correlations** arise between them: the state of one influences the state of the other. The tensor product is the mathematical formalism that accounts for all such correlations.
-
-For one Holon the state space is $\mathbb{C}^7$ (7 dimensions). For two — $\mathbb{C}^7 \otimes \mathbb{C}^7 = \mathbb{C}^{49}$ (49 dimensions). The additional $49 - 14 = 35$ degrees of freedom describe precisely the correlations (entanglement) between the two Holons.
-:::
-
-For two Holons $\mathbb{H}_1$ and $\mathbb{H}_2$ the composite system is:
+For two supplied seven-dimensional factors,
 
 $$
-\mathbb{H}_{12} := \langle \Gamma_{12}, \mathcal{H}_{12}, H_{12}, \{L_{12,k}\}, \mathcal{E}_{12}, \varphi_{12} \rangle
+\mathcal H_{12}=\mathbb C^7\otimes\mathbb C^7\cong\mathbb C^{49},\qquad
+\Gamma_{12}\in D_{49},\qquad\Gamma_i=\operatorname{Tr}_{\bar i}\Gamma_{12}.
 $$
 
-where:
+A declared interaction Hamiltonian may be $H_{12}=H_1\otimes I+I\otimes H_2+V_{12}$. Its channels, feedback and environment must also be specified. The joint density-state affine space has dimension $49^2-1=2400$; at fixed marginals, its correlation degrees have dimension $2400-2(7^2-1)=2304$. The difference $49-14$ is not a correlation count.
+
+Total mutual information is
 
 $$
-\mathcal{H}_{12} = \mathcal{H}_1 \otimes \mathcal{H}_2 = \mathbb{C}^{49}
+I(1:2)=S(\Gamma_1)+S(\Gamma_2)-S(\Gamma_{12})
+=D(\Gamma_{12}\|\Gamma_1\otimes\Gamma_2)\ge0.
 $$
 
-$$
-H_{12} = H_1 \otimes I_2 + I_1 \otimes H_2 + V_{12}
-$$
+It vanishes exactly for a product state **[T]**. Separable mixtures can have positive classical correlations: $\sum_i p_i|ii\rangle\langle ii|$ has $I=H(p)$ without entanglement. Thus mutual information is not an entanglement criterion or a numerical proof of collective agency.
 
-Here $V_{12}$ is the interaction operator. The first two terms describe the "independent" evolution of each Holon, $V_{12}$ — their mutual influence.
-
-:::note On the dimension of the composite
-The composite system lives in $\mathbb{C}^{49}$, but this does not contradict Theorem S: the minimality of 7 dimensions refers to an **individual** Holon. The composite is a higher-order system that can be **effectively described** as a Holon with $\mathcal{H} = \mathbb{C}^7$ when projected onto the collective degrees of freedom.
-:::
-
-**State of the composite:**
-
-In the presence of correlations (entanglement):
-
-$$
-\Gamma_{12} \neq \Gamma_1 \otimes \Gamma_2
-$$
-
-The degree of correlation is measured by mutual information:
-
-$$
-I(\mathbb{H}_1 : \mathbb{H}_2) = S(\Gamma_1) + S(\Gamma_2) - S(\Gamma_{12})
-$$
-
-where $S(\Gamma) = -\mathrm{Tr}(\Gamma \log \Gamma)$ is the von Neumann entropy.
-
-Mutual information $I$ shows "how much" two Holons know about each other. If $I = 0$ — they are completely independent (no correlations). If $I$ is large — they are strongly entangled, and the state of one cannot be described without the other. This is precisely the measure that determines whether two Holons can form a meta-Holon: if their mutual information $I > I_{\text{crit}}$, the composite becomes a new whole object, not merely "two objects side by side".
+An effective joint state in $D_7$ needs a declared readout $\Lambda_{12}:D_{49}\to D_7$ and task-sufficiency tests. No generic projection preserves all marginals or proves one collective subject. See [Composite systems](../dynamics/composite-systems).
 
 ### Closure of composition
 
-:::info Consequence of (AP)
-The composition of viable Holons with sufficient integration forms a viable Holon:
-
-$$
-\text{Viable}(\mathbb{H}_1) \land \text{Viable}(\mathbb{H}_2) \land I > I_{\text{crit}} \Rightarrow \text{Viable}(\mathbb{H}_{12})
-$$
-
-where $I_{\text{crit}}$ is the critical value of mutual information for integration. This is not an axiom, but a consequence of condition (AP) — autopoiesis is preserved under integration.
-:::
+Tensor composition preserves the density-state types, but does not automatically preserve autopoiesis, viability or capability. These predicates must be tested on the joint model with its environment and readout [D/H]. An interaction can disrupt the maintenance of either component; no universal mutual-information threshold proves closure.
 
 ## Viability condition
 
-A Holon is **viable** when:
+The chosen structural-majority criterion V is $P>2/7$ **[D/I]**. The exact identity
 
 $$
-P(\Gamma) > P_{\text{crit}} = \frac{2}{7} \approx 0.286
+P=1/7+\|\Gamma-I_7/7\|_F^2
 $$
 
-where $P = \mathrm{Tr}(\Gamma^2)$ is the [purity](../dynamics/viability). The value $P_{\text{crit}} = 2/N$ is a **proven theorem** about the minimal distinguishability from noise. See [Critical purity theorem](../../proofs/dynamics/theorem-purity-critical).
+implies that $I_7/7$ is the only state at $P=1/7$ **[T]**. Every different state is mathematically distinguishable from it by some measurement; no universal $2/7$ detection threshold follows without a sample/noise model.
 
-:::tip Analogy: body temperature
-The viability condition $P > 2/7$ can be compared with body temperature. A healthy person has a temperature of about 36.6°C. If it falls below 35°C — hypothermia sets in, life-threatening. If it falls below 28°C — cardiac arrest.
+**Counterexample to irreversible dissolution at the cut.** The valid driven flow $\dot\Gamma=\lambda(\rho_a-\Gamma)$, $\lambda>0$, with pure $\rho_a$ and initial $I_7/7$ has
 
-Analogously, purity $P$ is the "temperature" of a Holon (only in reverse: the higher, the "healthier"):
-- $P = 1$ — ideal state (full coherence)
-- $P > 0.5$ — healthy state
-- $P \approx 0.29$ — threshold, "hypothermia"
-- $P < 2/7 \approx 0.286$ — irreversible dissolution, "death"
-- $P = 1/7 \approx 0.143$ — maximum chaos (thermal noise)
+$$
+\Gamma(\tau)=e^{-\lambda\tau}I_7/7+(1-e^{-\lambda\tau})\rho_a,
+\qquad P(\tau)=\frac{1+6(1-e^{-\lambda\tau})^2}{7}.
+$$
 
-As with temperature, the transition through the critical value $P_{\text{crit}}$ is not gradual, but **sharp**: below the threshold the system loses the capacity for regeneration and degrades irreversibly.
-:::
-
-:::warning Irreversibility of dissolution
-The transition through $P_{\text{crit}}$ is **irreversible**. If purity has fallen below $2/7$, regeneration $\mathcal{R}$ cannot bring the system back: it is already indistinguishable from noise, and the self-modelling operator $\varphi$ has nothing to work from. This is the analogue of biological death: below a certain damage threshold a cell cannot recover, and the degradation process becomes self-accelerating.
-:::
-
-The mathematical meaning of the threshold $P_{\text{crit}} = 2/7$ is profound: it is the **minimal purity at which a state is statistically distinguishable from noise**. If $P \leq 1/7$, the state $\Gamma$ is indistinguishable from "white noise" (the maximally mixed state $I/7$). At $P = 2/7$ the system for the first time acquires sufficient structure to carry information. Below this threshold the regeneration operator $\mathcal{R}$ cannot "grip" the structure — it has nothing to work from — and the system irreversibly degrades to maximum entropy.
-
-| State | $P$ | Characteristic |
-|-------|-----|----------------|
-| Pure | $= 1$ | Full coherence, rank 1 |
-| Healthy | $> 0.5$ | High integration |
-| Stressed | $0.29 - 0.5$ | Requires regeneration |
-| Dissolving | $< 2/7$ | Irreversible decoherence |
-| Minimum | $= 1/7$ | Maximum entropy |
+It crosses $2/7$ from below. Consequently neither positivity nor a GKSL realization forbids recovery of the chosen numerical score below that cut. Imposing a vanishing input/feedback rate there would be an extra dynamical assumption. Conversely a replacement channel preserves trace one while erasing every input record, so normalization is not conservation of identity. Physical survival and record continuity require independent criteria.
 
 ## Open questions
 
-Despite the mathematical rigour of the definitions, a number of questions about Holons remain open:
-
-1. **Empirical identification.** How do we measure $P$, $R$, $\Phi$ for a specific biological system? What experimental protocols allow us to distinguish a Holon from a composite configuration? This is the central question of applied UHM — without it the theory remains "beautiful mathematics".
-
-2. **The boundary between L1 and L2.** Is the transition to consciousness (L2) continuous or discrete? The theorems give threshold values ($R \geq 1/3$, $\Phi \geq 1$), but real systems may fluctuate near the threshold. What happens to a system that "flickers" between L1 and L2?
-
-3. **Minimal Holon.** What is the simplest physical system that is a Holon? A cell is an uncontested candidate. But are viruses Holons? Mitochondria? Ribosomes? The answer depends on whether conditions (AP)+(QG) are satisfied for them — and that is an empirical question.
-
-4. **Meta-Holons.** Under what conditions does a group of Holons form a meta-Holon? Is the critical value $I_{\text{crit}}$ of mutual information a single number, or does it depend on context? Is human society a meta-Holon?
-
-5. **The golden zone of consciousness.** Theorem T-124 [T] establishes that a conscious Holon lives in a "golden zone" of purity: $P \in (2/7, \, 3/7]$. Too low purity — dissolution. Too high — loss of complexity (the system becomes "frozen" in a pure state). Why precisely this range? How does it relate to observed neurobiological data?
-
-These questions define the **research programme** of UHM for the coming years. More on predictions and verification paths — in [Research programme](/docs/applied/research/symbolic-correspondence#программа).
-
----
-
-**Related documents:**
-- [Axiom of Septicity](../foundations/axiom-septicity) — autonomy criterion (A1–A3) and conditions (AP+PH+QG+V)
-- [Seven dimensions](./dimensions) — structure of the state space
-- [Coherence matrix](../dynamics/coherence-matrix) — mathematical description of the state
-- [Emergent time](../../proofs/dynamics/emergent-time) — τ from the structure of Γ
-- [Viability](../dynamics/viability) — conditions of existence
-- [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4
-- [Consequences of the axioms](../foundations/consequences) — taxonomy of configurations
+Open questions concern an identifiable physical-to-state readout, independent autonomy/maintenance tests, task sufficiency of D7, collective readouts from D49, operational higher-order certificates and record continuity. The scalar window (2/7,3/7] is an algebraic consequence of the chosen gate; its phenomenal or biological interpretation needs evidence. The [research programme](/docs/applied/research/symbolic-correspondence#программа) must retain those bridges explicitly.

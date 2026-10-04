@@ -1,695 +1,113 @@
 ---
-slug: /proofs/dynamics/theorem-purity-critical
+title: Structural Majority and Critical Purity
 sidebar_position: 1
-title: "Theorem on Critical Purity"
-description: "Rigorous proof of P_crit = 2/N from first principles of UHM"
+description: Exact threshold theorem, operational discrimination and explicit biological bridge
 ---
 
-# Theorem on Critical Purity
+# Structural majority and critical purity
 
-:::tip Status: [T] Proven
-The value $P_{\text{crit}} = 2/N$ is derived from two parameter-free ingredients, both exact: the canonical reference $I/N$ (Path 5, Schur's lemma) and the Frobenius majority criterion (Path 1). Path 3 realises the same criterion operationally (exact); Path 4 characterises the threshold spectrum; Path 2 (relative entropy) is a **convention** valid only in the quadratic approximation — at the threshold the exact $D_{\mathrm{KL}}$ is spectrum-dependent ($0.344$ nat for the extremal spectrum, not $1/2$; §3.2). The logical structure — one core, three supports — is laid out in §4.2.
-:::
+The revision of 2026-10-03 separates an exact matrix theorem from its interpretation as survival. The number $2/N$ is retained as the canonical structural-majority cut [D]. It is not a universal threshold of distinguishability, symmetry breaking or biological life.
 
-## 1. Theorem Statement
+## Exact theorem {#теорема-фробениусова-различимость}
 
-### 1.1 Main assertion {#теорема-фробениусова-различимость}
+Let $\rho\in D_N$, $P=\operatorname{Tr}\rho^2$ and $\Delta=\rho-I/N$. Since $\operatorname{Tr}\Delta=0$,
 
-**Theorem (Critical Purity):**
-
-For a holonomic system of dimension $N$, the critical purity:
-
-$$
-P_{\text{crit}} = \frac{2}{N}
-$$
-
-is the **unique** value satisfying the following conditions (1, 3 and 5 are exact and equivalent; 2 and 4 are the approximate informational and the spectral readings of the same threshold):
-
-1. **Geometric:** $\|\Gamma - I_N/N\|_F^2 = \|I_N/N\|_F^2$
-2. **Informational (convention, quadratic approximation only):** $\tfrac{N}{2}\left(P - \tfrac1N\right) = \frac{1}{2}$ nat — the exact $D_{KL}(\Gamma \| I_N/N)$ at $P = 2/7$ lies in $[0.344, 0.648]$ nat, with $0.344$ nat on the extremal spectrum (§3.2)
-3. **Structural:** $|\mathbf{r}|^2 = 2\sigma^2$ (SNR = 1)
-4. **Spectral:** $\lambda_{\max} = (1 + \sqrt{N-1})/N \approx 1/2$
-5. **Autopoietic:** minimal breaking of $U(N)$ symmetry
-
-### 1.2 For UHM (N = 7)
-
-$$
-P_{\text{crit}} = \frac{2}{7} \approx 0.286
-$$
-
-**At this threshold:**
-- Structural deviation = scale of chaos
-- Informational contribution ≈ 1/2 nat in the quadratic approximation ($0.344$ nat exact on the extremal spectrum)
-- Dominant mode ≈ 49% coherence
-- $U(7)$ symmetry broken to distinguishability level
-
----
-
-## 2. Necessary Definitions
-
-### 2.1 Coherence matrix
-
-The [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathcal{L}(\mathbb{C}^N)$ satisfies:
-
-$$
-\Gamma^\dagger = \Gamma, \quad \Gamma \geq 0, \quad \mathrm{Tr}(\Gamma) = 1
-$$
-
-### 2.2 Purity
-
-$$
-P = \mathrm{Tr}(\Gamma^2) \in \left[\frac{1}{N}, 1\right]
-$$
-
-| State | Purity | Description |
-|-----------|---------|----------|
-| Pure | P = 1 | Γ = \|ψ⟩⟨ψ\| |
-| Maximally mixed | P = 1/N | Γ = I_N/N (chaos) |
-
-### 2.3 Frobenius norm
-
-$$
-\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^\dagger \Gamma) = \mathrm{Tr}(\Gamma^2) = P
-$$
-
----
-
-## 3. Five Derivation Paths (a core of two ingredients + three supports)
-
-### 3.1 Path 1: Geometric (structural doubling principle)
-
-**Principle:** A system is distinguishable from chaos if its deviation from chaos exceeds the scale of chaos.
-
-**Criterion:**
-
-$$
-\|\Gamma - I_N/N\|_F^2 > \|I_N/N\|_F^2
-$$
-
-**Left-hand side computation:**
-
-$$
-\begin{aligned}
-\|\Gamma - I_N/N\|_F^2 &= \mathrm{Tr}\left((\Gamma - I_N/N)^2\right) \\
-&= \mathrm{Tr}(\Gamma^2) - \frac{2}{N}\mathrm{Tr}(\Gamma) + \mathrm{Tr}\left(\frac{I_N^2}{N^2}\right) \\
-&= P - \frac{2}{N} + \frac{1}{N} \\
-&= P - \frac{1}{N}
-\end{aligned}
-$$
-
-**Right-hand side computation:**
-
-$$
-\|I_N/N\|_F^2 = \mathrm{Tr}\left(\frac{I_N^2}{N^2}\right) = \frac{N}{N^2} = \frac{1}{N}
-$$
-
-**Threshold derivation:**
-
-$$
-P - \frac{1}{N} > \frac{1}{N} \quad \Rightarrow \quad \boxed{P > \frac{2}{N}}
-$$
-
-**Exact reformulation (majority of the Frobenius weight).** The decomposition $\Gamma = I_N/N + \Delta$ is **orthogonal** in the Hilbert–Schmidt inner product ($\langle I_N/N, \Delta\rangle_F = \mathrm{Tr}(\Delta)/N = 0$), so Pythagoras gives the exact split of the state's total Frobenius weight into a noise part and a structural part:
-
-$$
-P = \|\Gamma\|_F^2 = \underbrace{\|I_N/N\|_F^2}_{1/N\ \text{(noise)}} + \underbrace{\|\Delta\|_F^2}_{\text{structure}}, \qquad s := \frac{\|\Delta\|_F^2}{P}\ \text{(structural share)}.
-$$
-
-The criterion $\|\Delta\|_F^2 > \|I_N/N\|_F^2$ is then **exactly** the statement that the structural component holds the **strict majority** of the state's Frobenius weight:
-
-$$
-P > \frac{2}{N} \iff s > \frac{1}{2}.
-$$
-
-Between exactly two orthogonal components, *majority* is the unique dominance threshold containing no free parameter — any other cut $s > c$ would introduce an arbitrary constant $c$. The apparent "factor 2" is therefore not a chosen constant: it is the arithmetic consequence of the majority criterion, $\tfrac1N + \tfrac1N = \tfrac2N$.
-
-:::info Interpretation: one dominance principle for both thresholds
-This is the same **plurality-dominance principle** that fixes the reflection threshold: for $R_{\mathrm{th}}$ the self-model must dominate each of $K = 3$ competing hypotheses (plurality $\Rightarrow 1/3$); for $P_{\mathrm{crit}}$ the structural component must dominate the single competing component, noise ($K = 2$ orthogonal parts $\Rightarrow$ majority $1/2$ of the weight $\Rightarrow P > 2/N$). One principle, two thresholds.
-:::
-
----
-
-### 3.2 Path 2: Information-theoretic
-
-**Principle:** A system carries sufficient information for distinguishability if its divergence from chaos exceeds an information quantum.
-
-**Kullback–Leibler divergence:**
-
-$$
-D_{KL}(\Gamma \| I_N/N) = \mathrm{Tr}(\Gamma \log \Gamma) - \mathrm{Tr}\left(\Gamma \log \frac{I_N}{N}\right)
-$$
-
-Using $\log(I_N/N) = -\log(N) \cdot I_N$:
-
-$$
-D_{KL}(\Gamma \| I_N/N) = -S_{vN}(\Gamma) + \log(N)
-$$
-
-where $S_{vN}(\Gamma) = -\mathrm{Tr}(\Gamma \log \Gamma)$ is the [von Neumann entropy](/docs/core/dynamics/coherence-matrix#энтропия-фон-неймана).
-
-**Expansion for states close to $I_N/N$:**
-
-For $\Gamma = I_N/N + \delta\Gamma$ with small $\delta\Gamma$:
-
-$$
-D_{KL}(\Gamma \| I_N/N) \approx \frac{N}{2} \cdot \mathrm{Tr}(\delta\Gamma^2) = \frac{N}{2} \cdot \left(P - \frac{1}{N}\right)
-$$
-
-**Minimum distinguishability:**
-
-The distinguishability threshold in the quadratic approximation = $\frac{1}{2}$ nat.
-
-$$
-\frac{N}{2} \cdot \left(P - \frac{1}{N}\right) \geq \frac{1}{2}
-$$
-
-$$
-P - \frac{1}{N} \geq \frac{1}{N} \quad \Rightarrow \quad \boxed{P \geq \frac{2}{N}}
-$$
-
-::::warning Scope of applicability
-Path 2 uses the **quadratic approximation** D_KL(Γ ‖ I/N) ≈ (N/2)(P − 1/N), valid when P − 1/N ≪ 1. The threshold D_KL = 1/2 nat is a **convention** (analogous to p-value 0.05 in statistics). Path 2 is a **supporting argument**, consistent with P_crit = 2/N, not an independent rigorous derivation — and the audit below makes precise how much weight it can bear.
-
-:::warning How far Path 2 actually is from exact (measured 2026-08-06)
-Two facts, both machine-verified:
-
-1. **The threshold sits exactly where the approximation fails.** At $P = 2/N$ we have $P - 1/N = 1/7 \approx 0.143$, which is not $\ll 1$.
-2. **$D_{\mathrm{KL}}(\Gamma\,\|\,I/N)$ is not a function of purity alone.** Over all states with $P = 2/7$ the exact divergence spans $[0.344,\,0.648]$ nat — the minimum $0.344$ for one dominant mode plus six equal, $0.437$ for two dominant plus five, the maximum $0.648$ for three equal modes $(21+\sqrt{21})/84$ plus one smaller and three zero — against the approximation's $0.500$. (An earlier version gave $[0.359,\,0.622]$, a sampled range that excluded its own extremal value $0.344$; corrected 2026-09-26, witness `living_holon_costs_at_least_0344_nats_below_the_trace` in `check_core_numbers.py`.) So the correspondence "$D_{\mathrm{KL}} = 1/2 \iff P = 2/N$" holds for *some* spectra and not others; it is not an equivalence.
-
-By contrast **Path 1 is exact and state-independent**: $\|\Gamma - I/N\|_F^2 = P - 1/N$ identically (verified to $10^{-16}$), and $\|I/N\|_F^2 = 1/N$, so the majority criterion *is* $P > 2/N$ with no approximation anywhere. Path 3 is likewise exact — the Weingarten constant $1/(N(N+1)) = 1/56$ multiplies both sides and cancels. Read the "convergence of five paths" accordingly: two are proofs, the rest are corroboration.
-:::
-::::
-
-:::info Interpretation for engineers
-**Information threshold:** The system must carry at least 1/2 nat of information beyond maximum entropy. This is a fundamental distinguishability limit in information theory.
-
-**In practice:** At $P = 2/N$ the structural information is one *binary distinction* — "structure exists" versus "no structure". Note that this is a qualitative reading, not a numerical one: the convention $D_{\mathrm{KL}} = 1/2$ nat equals $0.5/\ln 2 \approx 0.72$ bits, **not** $1$ bit. Demanding exactly one bit would set the threshold at $\ln 2$ nat and give $P = (1 + 2\ln 2)/N \approx 0.341$, not $2/N \approx 0.286$.
-:::
-
----
-
-### 3.3 Path 3: Helstrom / Haar single-shot detection
-
-**Principle:** A Haar-random single-shot measurement on $\Gamma$ produces a statistically detectable deviation from the noise reference $I/N$ iff $P > 2/N$.
-
-**Setup.** Let $\Pi = |\psi\rangle\langle\psi|$ with $|\psi\rangle$ Haar-uniform on the unit sphere of $\mathbb{C}^N$. For a self-adjoint $A$, the $\Pi$-induced observable is $\mathrm{Tr}(A\Pi)$.
-
-**First-moment (Haar invariance).** $\mathbb E_\Pi[\Pi] = I/N$ (unitary invariance), hence $\mathbb E_\Pi[\mathrm{Tr}(A\Pi)] = \mathrm{Tr}(A)/N$.
-
-**Second-moment (Weingarten).** The standard $U(N)$-Weingarten formula gives
-$$\mathbb E_\Pi[\Pi\otimes\Pi] = \frac{1}{N(N+1)}(I + \mathrm{SWAP}).$$
-For $N=7$: $\mathbb E_\Pi[\Pi\otimes\Pi] = (I+\mathrm{SWAP})/56$. Hence
-$$\mathbb E_\Pi[\mathrm{Tr}(A\Pi)^2] = \mathrm{Tr}((A\otimes A)\cdot\mathbb E[\Pi\otimes\Pi]) = \frac{1}{N(N+1)}(\mathrm{Tr}(A)^2 + \|A\|_F^2).$$
-
-**Variance formula.**
-$$\mathrm{Var}_\Pi(\mathrm{Tr}(A\Pi)) = \mathbb E[\mathrm{Tr}(A\Pi)^2] - \mathbb E[\mathrm{Tr}(A\Pi)]^2 = \frac{\|A\|_F^2}{N(N+1)} - \frac{\mathrm{Tr}(A)^2}{N^2(N+1)}$$
-
-(using $\tfrac{1}{N(N+1)} - \tfrac{1}{N^2} = -\tfrac{1}{N^2(N+1)}$; verified numerically against Haar sampling).
-
-**Applied to $A = \Delta = \Gamma - I/N$** (traceless, $\mathrm{Tr}(\Delta)=0$):
-$$\mathrm{Var}_\Pi(\mathrm{Tr}(\Delta\Pi)) = \frac{\|\Delta\|_F^2}{N(N+1)} = \frac{P - 1/N}{N(N+1)}.$$
-
-**Detection threshold.** The observer's expected single-shot quadratic detection signal (above the zero-signal noise baseline) exceeds the reference scale $\|I/N\|_F^2/(N(N+1)) = 1/(N^2(N+1))$ iff
-$$\|\Delta\|_F^2 > \|I/N\|_F^2 \iff P > 2/N.$$
-
-$$\boxed{P > \frac{2}{N}}$$
-
-:::info Interpretation: operational realization of the majority criterion
-The Weingarten computation of the variance is exact **[T]**, and the Haar constant $1/(N(N+1)) = 1/56$ (for $N=7$) multiplies **both** sides of the comparison and drops out — so the threshold is basis-independent and realizable by a physical Haar-random single-shot probe. What Path 3 adds is thus **operational content**: the Frobenius-majority criterion of Path 1 is not merely geometric bookkeeping but the detectability condition of an implementable random-basis measurement. The comparison scale itself ($\|I/N\|_F^2$, i.e. the majority criterion) is the same dominance principle as in Path 1 — Path 3 realizes it operationally rather than forcing the constant independently.
-:::
-
----
-
-### 3.4 Path 4: Spectral condition (characterization, not an independent derivation) {#34-путь-4-спектральное-условие-характеристика-не-независимый-вывод}
-
-**Principle:** For an identity to exist, the system must have a dominant mode.
-
-**Spectrum of $\Gamma$:**
-
-$$
-\mathrm{Spectrum}(\Gamma) = \{\lambda_1, \lambda_2, \ldots, \lambda_N\}, \quad \lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_N \geq 0
-$$
-
-With constraints:
-
-$$
-\sum_i \lambda_i = 1, \quad \sum_i \lambda_i^2 = P
-$$
-
-**Optimization problem:**
-
-Find the maximum $\lambda_1$ for a given $P$:
-
-$$
-\max \lambda_1 \quad \text{subject to} \quad \sum_i \lambda_i = 1, \quad \sum_i \lambda_i^2 = P, \quad \lambda_i \geq 0
-$$
-
-**Solution (Lagrange method):**
-
-By symmetry, the optimum is reached when $\lambda_2 = \lambda_3 = \cdots = \lambda_N = \lambda$:
-
-$$
-\lambda_1 + (N-1)\lambda = 1 \quad \Rightarrow \quad \lambda = \frac{1 - \lambda_1}{N-1}
-$$
-
-$$
-\lambda_1^2 + (N-1)\lambda^2 = P
-$$
-
-Substituting:
-
-$$
-\lambda_1^2 + \frac{(1 - \lambda_1)^2}{N-1} = P
-$$
-
-Solving the quadratic equation:
-
 $$
-\lambda_1 = \frac{1 + \sqrt{(N-1)(NP - 1)}}{N}
+\langle I/N,\Delta\rangle_F=0,\qquad P=1/N+\|\Delta\|_F^2.
 $$
 
-**At $P = 2/N$:**
+**Structural-majority theorem [T].**
 
 $$
-\lambda_{\max} = \frac{1 + \sqrt{(N-1)(2 - 1)}}{N} = \frac{1 + \sqrt{N-1}}{N}
+\|\Delta\|_F^2>\|I/N\|_F^2\quad\Longleftrightarrow\quad P>2/N.
 $$
 
-For $N = 7$:
+**Proof.** $\|I/N\|_F^2=1/N$. Substitute into the orthogonal decomposition. Equality occurs at $P=2/N$. For $N=1$ the cut is unattainable; for $N=2$ strict majority is unattainable ($P\le1$); for $N>2$ it is nonempty. $\square$
 
-$$
-\lambda_{\max} = \frac{1 + \sqrt{6}}{7} \approx 0.493 \approx \frac{1}{2}
-$$
-
-:::info Interpretation
-**~50% dominance threshold:** At $P = 2/N$ the dominant mode captures approximately half of the coherence. This is the 1:1 threshold — structure is barely distinguishable from the uniform distribution.
-
-**Spectral structure at $P = 2/7$:**
-- $\lambda_1 \approx 0.493$ (49.3% of coherence)
-- $\lambda_2 = \cdots = \lambda_7 \approx 0.085$ (8.5% each)
-:::
-
----
-
-### 3.5 Path 5: Symmetry breaking ($U(N)$ stabilizer)
-
-**Principle:** Sufficient structure is required for [self-modeling](/docs/proofs/categorical/formalization-phi) $\varphi(\Gamma)$: chaos $I/N$ has maximal symmetry and admits no preferred direction; structure exists only when the symmetry is broken non-trivially.
-
-**Stabilizer group.** For $\Gamma \in \mathcal D(\mathbb C^N)$:
-$$\mathrm{Stab}(\Gamma) = \{U \in U(N) : U\Gamma U^\dagger = \Gamma\}.$$
-
-**Lemma (Schur's lemma applied to $I/N$).** $\mathrm{Stab}(\Gamma) = U(N)$ iff $\Gamma = I/N$.
-
-*Proof.* $I/N$ is scalar, hence commutes with every $U$. Conversely, if $\Gamma$ commutes with every $U \in U(N)$, then $\Gamma$ lies in the commutant of the standard $U(N)$-action on $\mathbb C^N$; since this action is irreducible, Schur gives $\Gamma \in \mathbb C \cdot I$; trace-1 forces $\Gamma = I/N$. $\square$
-
-**Stabilizer dimension bound.** If $\Gamma$ has $k$ distinct eigenvalues with multiplicities $m_1,\ldots,m_k$ (with $\sum m_i = N$), then $\mathrm{Stab}(\Gamma) = U(m_1)\times\cdots\times U(m_k)$, real Lie dimension $\sum m_i^2$. For $k=1$ this is $N^2$ (the $I/N$ case). For $k\ge 2$ the maximum is attained at the most unequal split $(1, N-1)$, giving $1 + (N-1)^2 = N^2 - 2N + 2 < N^2$. For $N = 7$: max non-constant stabilizer dimension is $37 < 49$.
-
-**Strengthened symmetry-breaking criterion.** Mere inequality $\mathrm{Stab}(\Gamma)\subsetneq U(N)$ is equivalent to $\|\Delta\|_F > 0$, which is satisfied for any $\Gamma \ne I/N$ (arbitrarily small breaking). The **strengthened** criterion requires that the traceless component dominate the scalar reference:
-$$\|\Gamma - I_N/N\|_F \ge \|I_N/N\|_F.$$
-By Path 1 this is equivalent to:
-$$\boxed{P \ge \frac{2}{N}}.$$
-
-:::info Dependence on Path 1 — clarified
-The strengthened criterion $\|\Delta\|_F \ge \|I/N\|_F$ coincides with Path 1 at the algebraic level. Path 5's **independent content** is the representation-theoretic statement that $I/N$ is the unique $U(N)$-symmetric density matrix (Schur's lemma on the irreducible fundamental representation), making $I/N$ the canonical "maximally symmetric" reference. This is what justifies the choice of reference used in Path 1 — without it, the critical purity would depend on an arbitrary reference state.
-:::
-
----
-
-### 3.6 Path 6: Octonionic norm [I] {#путь-6-октонионная-норма}
-
-:::note Interpretation [I]
-In the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация), purity $P = \mathrm{Tr}(\Gamma^2)$ is connected to the norm on $\mathrm{Im}(\mathbb{O})$. The normativity $|xy| = |x||y|$ ensures a multiplicative metric. The threshold $P_{\text{crit}} = 2/7$ can be interpreted as the minimum norm of a vector in $\mathrm{Im}(\mathbb{O})$ ≅ ℝ⁷ at which its projection onto structural directions (Fano triplets) exceeds the noise projection.
-
-**Status:** [T], bridge [T] (closed, T15). Compatible with the other five paths. See [structural derivation](../minimality/theorem-octonionic-derivation).
-:::
-
----
-
-## 4. Convergence of All Paths
-
-### 4.1 Results table
-
-| Path | Principle | Main tool | Result |
-|------|---------|----------|-----------|
-| 1. Geometric | Frobenius structural dominance | HS Pythagoras | P > 2/N ✓ |
-| 2. Informational | Relative entropy, quadratic approximation | Operator Taylor of $\log$ | $P = 2/N$ at $\tfrac N2(P - \tfrac1N) = \tfrac12$ nat (convention; exact $D_{KL}$ spectrum-dependent) |
-| 3. Single-shot detection | Haar-averaged observable variance | Weingarten 2nd moment ($1/(N(N+1))$) | P > 2/N ✓ |
-| 4. Spectral | Dominant eigenvalue optimum | Lagrange multipliers | λ_max = (1+√(N−1))/N at P = 2/N ✓ |
-| 5. Symmetry breaking | Stabilizer dimension | Schur's lemma + Cauchy-Schwarz | P > 2/N ✓ |
-
-### 4.2 Uniqueness theorem
-
-**Theorem:** The value $P_{\text{crit}} = 2/N$ is the unique one at which the exact criteria (1, 3, 5) coincide and the supporting readings (2, 4) are consistent with them.
-
-**Proof:**
-Uniqueness follows from the algebraic equivalence of conditions 1, 3 and 5 (all express the same majority requirement $\|\Delta\|_F^2 = \|I/N\|_F^2$ in different terms; condition 5 supplies the canonical reference $I/N$ — the unique $U(N)$-invariant density matrix, §3.5). Condition 4 is the spectral characterisation of that threshold and condition 2 its quadratic-approximation reading; neither forces the constant independently (§3.2, §3.4). All exact formulations lead to $P - 1/N = 1/N$. ∎
-
-:::info Logical structure of the five paths
-
-The derivation has **one load-bearing core of two ingredients (Paths 5 and 1) and three structural supports (Paths 3, 4, 2)**, each with a precisely delimited role:
-
-**Core (the derivation proper).** $P_{\mathrm{crit}} = 2/N$ follows from two ingredients, both parameter-free:
-
-| Ingredient | Content | Status |
-|------|----------------------|--------|
-| **Reference canonicity (Path 5)** | $I/N$ is the *unique* $U(N)$-invariant density matrix (Schur's lemma on the irreducible fundamental representation) — the only canonical "chaos" reference | **[T]** |
-| **Majority criterion (Path 1)** | With the orthogonal split $P = \|I/N\|_F^2 + \|\Delta\|_F^2$, distinguishability = the structural component holds the **strict majority** of the Frobenius weight, $s > 1/2$ — the unique dominance threshold between two orthogonal components containing no free constant | **[T]** equivalence; the majority principle is the same plurality-dominance rule that fixes $R_{\mathrm{th}} = 1/3$ |
-
-Together: $s > \tfrac12 \iff P > 2/N$, with no adjustable parameter anywhere.
-
-**Supports (delimited roles, per their own sections):**
-
-| Path | Role | Relation to the core |
-|------|-------------------|-----------------|
-| **3 (Haar detection)** | **Operational realization [T]**: exact Weingarten variance; the Haar constant drops out of the comparison, so the majority criterion is basis-independent and physically measurable by a random single-shot probe | Realizes the Path-1 criterion operationally; does not force the constant independently |
-| **4 (Spectral)** | **Characterization [T]** (per §3.4: *not* an independent derivation): at $P = 2/N$ the extremal spectrum has $\lambda_{\max} = (1+\sqrt{N-1})/N \approx 1/2$ | Describes what the threshold state looks like spectrally |
-| **2 (KL entropy)** | **Interpretive confirmation**: reduces to Path 1 in the quadratic approximation; the $D_{KL} = 1/2$ nat cut is a **convention** | Information-theoretic reading of the same inequality |
-
-The theorem-level content is therefore: *given the canonical reference (Schur) and the parameter-free majority criterion, $P_{\mathrm{crit}} = 2/N$ is forced* **[T]** — with operational measurability (Path 3), spectral shape (Path 4), and informational meaning (Path 2) established as corollaries, not as independent forcings.
-:::
-
----
-
-## 5. Spectral Characterization
-
-### 5.1 Optimal spectrum at the boundary
-
-**Theorem (Spectrum at $P = P_{\text{crit}}$):**
-
-At $P = 2/N$, the optimal spectrum (maximizing $\lambda_{\max}$) has the form:
-
-$$
-\begin{aligned}
-\lambda_1 &= \frac{1 + \sqrt{N-1}}{N} \\
-\lambda_2 = \lambda_3 = \cdots = \lambda_N &= \frac{N - 1 - \sqrt{N-1}}{N(N-1)}
-\end{aligned}
-$$
-
-### 5.2 Numerical values
-
-| N | P_crit = 2/N | λ_max at P_crit |
-|---|--------------|------------------|
-| 2 | 1.000 | 1.000 |
-| 3 | 0.667 | 0.789 |
-| 4 | 0.500 | 0.683 |
-| 5 | 0.400 | 0.618 |
-| 6 | 0.333 | 0.573 |
-| **7** | **0.286** | **0.493** |
-| 8 | 0.250 | 0.457 |
-
-### 5.3 Verification for N = 7
-
-$$
-\lambda_1 = \frac{1 + \sqrt{6}}{7} \approx 0.493
-$$
-
-$$
-\lambda_2 = \cdots = \lambda_7 = \frac{6 - \sqrt{6}}{42} \approx 0.085
-$$
-
-**Verification:**
-$$
-\lambda_1 + 6\lambda_2 = 0.493 + 6 \times 0.085 = 1.000 \quad \checkmark
-$$
-
-$$
-\lambda_1^2 + 6\lambda_2^2 = 0.243 + 6 \times 0.0072 = 0.286 = \frac{2}{7} \quad \checkmark
-$$
-
----
-
-## 6. Hierarchy of Purity Thresholds
-
-### 6.1 Full hierarchy
-
-$$
-P_{\text{crit}}^{\text{regen}} < P_{\text{crit}}^{\text{geom}} < P_{\text{safe}} < P_{\text{target}}
-$$
-
-| Threshold | Formula | Value (N=7) | Purpose |
-|-------|---------|----------------|------------|
-| P_crit^regen | γ/(κ_rate · Coh_E^min) | ≈ 0.033 | Dynamical (κ > γ) |
-| P_crit^geom | 2/N | ≈ 0.286 | **Structural (main)** |
-| P_safe | P_crit^geom + margin | 0.30 | Operational (with margin) |
-| P_target | — | 0.50 | Recommended |
-
-### 6.2 Interpretation
-
-- **$P_{\text{crit}}^{\text{regen}} \approx 0.033$:** Minimum for [regeneration](/docs/core/dynamics/evolution#3-регенеративный-член) to exceed dissipation
-- **$P_{\text{crit}}^{\text{geom}} = 2/7 \approx 0.286$:** Minimum for structural distinguishability from chaos (**main threshold**)
-- **$P_{\text{safe}} = 0.30$:** Operational threshold with 5% margin
-- **$P_{\text{target}} = 0.50$:** Recommended operating point
-
-:::warning Important
-A system with $P_{\text{crit}}^{\text{regen}} < P < P_{\text{crit}}^{\text{geom}}$ can regenerate, but **has no structural identity** — it is indistinguishable from noise.
-:::
+Choosing majority is a definition, not a consequence of the uniqueness of $I/N$. More generally a prescribed structural share $s=\|\Delta\|_F^2/P>c$ gives $P>1/[N(1-c)]$ for $0<c<1$. Majority selects $c=1/2$. A parameter-free convention still needs an operational justification.
 
----
+For UHM, $P_{\mathrm{crit}}=2/7$. The bridge (V-majority) says that an operational survival criterion corresponds to this cut. It is a hypothesis [H], separately from the exact theorem. Its test must reconstruct states without imposing the cut in the estimator.
 
-## 7. Practical Applications
+## Ordinary discrimination has no positive purity cut
 
-### 7.1 For AI systems engineers
+For equally likely $\rho$ and $I/N$, the Holevo–Helstrom theorem gives
 
-**Viability criterion:**
-
-```verum
-/// Viability check: P > P_crit = 2/N (T-39a [T]).
-public pure fn is_viable<const N: Int>(gamma: &StaticMatrix<Complex, N, N>) -> Bool
-    where requires N >= 2
-{
-    let p = (gamma.matmul(&gamma)).trace().real();
-    p > 2.0 / (N as Float)
-}
-```
-
-**Structural deviation computation:**
-
-```verum
-/// Structural deviation ‖Γ − I/N‖_F² = P − 1/N.
-///
-/// **Interpretation**:
-/// - deviation < 1/N: indistinguishable from noise
-/// - deviation = 1/N: viability boundary
-/// - deviation > 1/N: structured system
-public pure fn structural_deviation<const N: Int>(gamma: &StaticMatrix<Complex, N, N>) -> Float
-    where requires N >= 2
-{
-    let p = (gamma.matmul(&gamma)).trace().real();
-    p - 1.0 / (N as Float)
-}
-```
-
-**Dominance threshold:**
-
-```verum
-/// Dominant eigenvalue threshold λ_max at P = P_crit = 2/N.
-///
-/// For N = 7: returns ≈ 0.493.
-public pure fn dominant_eigenvalue_threshold(n: Int { self >= 2 }) -> Float {
-    (1.0 + ((n - 1) as Float).sqrt()) / (n as Float)
-}
-```
-
-### 7.2 For consciousness researchers
-
-**Connection with interiority levels:**
-
-| Level | Condition | Interpretation |
-|---------|---------|---------------|
-| L0 (Interiority) | ρ_E ≠ 0 | Inner state exists |
-| L1 (Phenomenal geometry) | rank(ρ_E) > 1 | Structure of qualities |
-| **Viability** | P > 2/7 | Distinguishability from chaos |
-| L2 (Cognitive qualia) | R ≥ 1/3, Φ ≥ 1, D_diff ≥ 2* | Reflexive access |
-
-*$D_{\text{diff}}$ requires tensor structure; in the minimal 7D formalism $C_{\min} = \Phi \times R$ is used — see [dimension-e.md](/docs/core/structure/dimension-e#tensor-factorization-ddiff).
-
-**Key conclusion:** $P > 2/N$ is a **necessary** condition for L1 and L2. Without structural distinguishability, phenomenology is impossible.
-
-### 7.3 For physicists
-
-**Analogies with phase transitions:**
-
-| UHM | Statistical physics | Meaning |
-|-----|----------------------|-------|
-| P = 2/N | Critical temperature T_c | Ordering threshold |
-| P − 1/N | Order parameter | Measure of structure |
-| λ_max ≈ 1/2 | Macroscopic occupancy | Condensation into one mode |
-
-**Entropic interpretation:**
-
-At $P = 2/N$:
-
 $$
-S_{vN} \approx \log N - \frac{N}{2}\left(\frac{2}{N} - \frac{1}{N}\right) = \log N - \frac{1}{2} \quad \text{(quadratic approximation)}
+p_{\mathrm{succ}}=\frac12+\frac14\|\rho-I/N\|_1.
 $$
 
-In the quadratic approximation the system contains 1/2 nat less entropy than maximal chaos. Exactly, the entropy deficit $\log N - S_{vN} = D_{KL}(\Gamma\|I/N)$ depends on the spectrum: $0.344$ nat for the extremal spectrum $\lambda_1 = (1+\sqrt6)/7$ and up to $0.648$ nat for other spectra with $P = 2/7$ (§3.2).
+Thus every $\rho\ne I/N$ is distinguishable with advantage. For
 
-### 7.4 For information theorists
-
-**Channel capacity:**
-
-Distinguishing state $\Gamma$ from $I_N/N$ is equivalent to transmitting information over a channel with capacity:
-
-$$
-C = D_{KL}(\Gamma \| I_N/N) \approx \frac{N}{2}(P - 1/N)
-$$
-
-At $P = 2/N$: $C \approx 1/2$ nat in the quadratic approximation (the exact value is spectrum-dependent, §3.2) = distinguishability boundary.
-
-**Holevo bound:**
-
 $$
-\chi(\{p_i, \rho_i\}) \leq S(\bar{\rho}) - \sum_i p_i S(\rho_i)
+\rho=\operatorname{diag}(1/7+0.1,1/7-0.1,1/7,1/7,1/7,1/7,1/7)
 $$
 
-To distinguish $\Gamma$ from $I_N/N$ one needs $\chi \gtrsim 1/2$ nat, which in the quadratic approximation corresponds to $P \geq 2/N$.
+we have $P=1/7+0.02<2/7$ and $p_{\mathrm{succ}}=0.55$. This counterexample withdraws the former reading “$P\le2/7$ is indistinguishable from chaos” [✗]. The trace-distance and Frobenius criteria answer different questions.
 
----
+## Haar probes: a conditional operational realization
 
-## 8. Universality of the Factor 2
+For a Haar-random unit vector $\psi$ and a traceless Hermitian $\Delta$,
 
-### 8.1 Appearance in various contexts
-
-| Context | Formula | Interpretation |
-|----------|---------|---------------|
-| Detection theory | SNR = 1 | Signal = noise |
-| Quantum distinguishability | F(ρ, σ) = 1/2 | Distinguishability limit |
-| Information theory | ΔS = k ln 2 | One bit of information |
-| Statistics | 2σ rule | Significant deviation |
-| UHM | P = 2/N | Structure = chaos |
-
-### 8.2 Physical meaning
-
-The factor of 2 is the arithmetic footprint of the **majority criterion**: with the orthogonal split $P = \|I/N\|_F^2 + \|\Delta\|_F^2$, the boundary is exactly
-
 $$
-s = \frac{\|\Delta\|_F^2}{P} = \frac{1}{2} \quad\text{(structure holds half the total weight)},
+\mathbb E\langle\psi|\Delta|\psi\rangle=0,\qquad\mathbb E\langle\psi|\Delta|\psi\rangle^2=\frac{\operatorname{Tr}\Delta^2}{N(N+1)}.
 $$
-
-equivalently $\|\text{deviation}\|^2 = \|\text{baseline}\|^2$, i.e.
-
-$$
-P = 2 \times P_{\min} = \frac{2}{N}.
-$$
-
-The "2" is thus not a tuned constant but the denominator of the parameter-free majority threshold $1/2$ — the $K=2$ instance of the same plurality-dominance principle whose $K=3$ instance gives $R_{\mathrm{th}} = 1/3$.
 
----
+**Proof.** $\mathbb E(|\psi\rangle\langle\psi|)^{\otimes2}=(I+\mathrm{Swap})/[N(N+1)]$; contract with $\Delta\otimes\Delta$. This is a second moment of a *probability shift*. It is not the noise variance of a Bernoulli single-shot outcome. Comparing it to a stipulated reference variance can implement a chosen majority rule; it does not independently select $2/N$.
 
-## 9. Conclusion
+## Sharp spectral bound {#34-путь-4-спектральное-условие-характеристика-не-независимый-вывод}
 
-### 9.1 Main result
+For $N\ge2$, let $a=\lambda_{\max}(\rho)$. Cauchy–Schwarz for the other $N-1$ eigenvalues gives
 
-:::tip Theorem (formulation)
-For a holonomic system of dimension $N$:
-
-$$
-P_{\text{crit}} = \frac{2}{N}
-$$
-
-This value is **unique**, at which:
-- The exact formulations (geometric, single-shot detection, symmetry breaking) coincide; the spectral and informational readings are consistent with them (§4.2)
-- The factor of 2 arises naturally (signal = noise)
-- The dominant mode captures ~50% of coherence
-:::
-
-### 9.2 For N = 7 (UHM)
-
 $$
-P_{\text{crit}} = \frac{2}{7} \approx 0.286
+P\ge a^2+\frac{(1-a)^2}{N-1},\qquad a\le\frac{1+\sqrt{(N-1)(NP-1)}}N.
 $$
-
-**Spectral structure at the boundary:**
-- $\lambda_1 \approx 0.493$ (~50%)
-- $\lambda_2 = \cdots = \lambda_7 \approx 0.085$ (~8.5% each)
-
-### 9.3 Methodological significance
 
-1. **Two exact, parameter-free ingredients** (canonical reference + majority criterion) fix the threshold; the other paths corroborate it
-2. **Factor 2** — universal distinguishability threshold in information systems
-3. **Spectral characterization** connects purity with mode dominance
+Equality holds exactly when the remaining eigenvalues are equal. At $P=2/N$ the upper bound is $(1+\sqrt{N-1})/N$. This is the **largest possible** eigenvalue at that purity, not the eigenvalue of every threshold state. Purity does not determine a spectrum.
 
----
+For $N=7$ the uniform-ray family
 
-## Appendix A: Complete Computations
-
-### A.1 Derivation of λ_max at P = 2/N
-
-Problem:
-
 $$
-\max \lambda_1 \quad \text{subject to} \quad \sum_{i=1}^N \lambda_i = 1, \quad \sum_{i=1}^N \lambda_i^2 = \frac{2}{N}
+\rho_t=(1-t)I/7+t\,uu^\dagger,\quad u=(1,\ldots,1)/\sqrt7
 $$
-
-Lagrangian:
 
-$$
-\mathcal{L} = \lambda_1 - \mu\left(\sum_i \lambda_i - 1\right) - \nu\left(\sum_i \lambda_i^2 - \frac{2}{N}\right)
-$$
+has $P=(1+6t^2)/7$ and crosses the majority boundary at $t=1/\sqrt6$. In particular $t=0.3$ gives $P=0.22$, not a viable state under the structural-majority definition.
 
-Optimality conditions:
+## Entropy and symmetry {#путь-6-октонионная-норма}
 
 $$
-\frac{\partial \mathcal{L}}{\partial \lambda_1} = 1 - \mu - 2\nu\lambda_1 = 0
+D(\rho\|I/N)=\log N-S(\rho).
 $$
 
-$$
-\frac{\partial \mathcal{L}}{\partial \lambda_k} = -\mu - 2\nu\lambda_k = 0 \quad (k = 2, \ldots, N)
-$$
+Its quadratic expansion near $I/N$ is $\tfrac N2\operatorname{Tr}\Delta^2$; that expansion is not exact at the majority boundary and purity alone does not determine entropy. The former universal “one bit” interpretation is withdrawn [✗].
 
-From the second condition: $\lambda_2 = \cdots = \lambda_N = -\mu/(2\nu) = \lambda$.
+$I/N$ is the unique state invariant under all $U(N)$ conjugations [T]: commuting with every matrix forces a scalar, and trace one fixes it. Every $\rho\ne I/N$ has a smaller stabilizer; symmetry breaking therefore starts at $P>1/N$, not only at $2/N$. Octonionic norm multiplicativity does not select a purity cut by itself.
 
-Substituting into the constraints:
+## Integration and reflexive access
 
-$$
-\lambda_1 + (N-1)\lambda = 1
-$$
+In a fixed frame let $d=\sum_i\rho_{ii}^2$, $\Phi=P/d-1$ and $R=1/(NP)$. Then
 
 $$
-\lambda_1^2 + (N-1)\lambda^2 = \frac{2}{N}
+d\ge1/N,\quad\Phi\le NP-1,\quad\Phi\ge1\Rightarrow P\ge2/N.
 $$
-
-From the first: $\lambda = (1 - \lambda_1)/(N-1)$.
-
-Substituting into the second:
 
-$$
-\lambda_1^2 + \frac{(1 - \lambda_1)^2}{N-1} = \frac{2}{N}
-$$
+Equality in the last implication requires both uniform diagonal and $\Phi=1$. The converse is false: a diagonal pure state has $P=1$ and $\Phi=0$. For $N=7$, $P>2/7$ and the chosen access threshold $R\ge1/3$ give $(2/7,3/7]$; the integration and differentiation conditions remain additional conjuncts. Neither the interval nor $\Phi R\ge1/3$ alone establishes consciousness. See the [typed kernel](/docs/reference/mathematical-kernel#thresholds).
 
-$$
-(N-1)\lambda_1^2 + (1 - \lambda_1)^2 = \frac{2(N-1)}{N}
-$$
+## Dynamical viability
 
-$$
-N\lambda_1^2 - 2\lambda_1 + 1 = \frac{2(N-1)}{N}
-$$
+A static majority predicate differs from forward invariance or survival under disturbances. For a chosen dynamics and region $V$, viability requires an admissible trajectory staying in $V$; robust viability also quantifies over an explicitly stated disturbance class. A stationary state with $P>2/7$ is sufficient for an unperturbed constant trajectory, but stability and persistence under perturbations need separate estimates.
 
-$$
-N^2\lambda_1^2 - 2N\lambda_1 + N - 2(N-1) = 0
-$$
+For $\dot\rho=\mathcal L_0\rho+a(\rho)(M(\rho)-\rho)$,
 
 $$
-N^2\lambda_1^2 - 2N\lambda_1 + 2 - N = 0
+\dot P=2\operatorname{Tr}(\rho\mathcal L_0\rho)+2a(\rho)\bigl(\operatorname{Tr}(\rho M(\rho))-P\bigr).
 $$
 
-By the quadratic formula:
+The regeneration contribution can have either sign. Its sign is not fixed by an imported free-energy scalar alone. If $a(\rho)=0$ below the threshold, autonomous genesis from $I/N$ is impossible under a unital linear part: an external preparation/non-unital environment is required. Existence of viable sinks for specific anchors and rate regimes is a conditional dynamical result, not a consequence of the static cut.
 
-$$
-\lambda_1 = \frac{2N \pm \sqrt{4N^2 - 4N^2(2-N)}}{2N^2} = \frac{2N \pm 2N\sqrt{N-1}}{2N^2} = \frac{1 \pm \sqrt{N-1}}{N}
-$$
+## Verification and primary sources
 
-Taking $+$ (maximum):
-
-$$
-\boxed{\lambda_{\max} = \frac{1 + \sqrt{N-1}}{N}}
-$$
+The counterexamples and identities are checked by `website/scripts/check_mathematical_kernel.py`; original spectral and dynamical tests remain in `check_core_numbers.py`.
 
----
-
-**Related documents:**
-- [Viability](/docs/core/dynamics/viability) — application of the theorem
-- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — axiom context
-- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of Γ
-- [7D Minimality theorem](/docs/proofs/minimality/theorem-minimality-7) — why N = 7
-- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0 → L2
+- John Watrous, [The Theory of Quantum Information, chapter 3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.double.3.pdf): optimal discrimination.
+- Petz and Sudár, [Geometries of Quantum States](https://www.esi.ac.at/preprints/esi204.pdf): monotone quantum geometry, distinct from a biological majority bridge.
+- [Measurement protocol](/docs/applied/research/measurement-protocol): frozen reconstruction and empirical test conditions.

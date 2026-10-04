@@ -40,7 +40,10 @@ for (const base of ["docs", "i18n"]) {
   }
 }
 
-const browser = await chromium.launch({ channel: "chrome" }).catch(() => chromium.launch());
+// An explicit path permits an already installed browser without downloading one.
+const browser = process.env.MERMAID_BROWSER_PATH
+  ? await chromium.launch({ executablePath: process.env.MERMAID_BROWSER_PATH })
+  : await chromium.launch({ channel: "chrome" }).catch(() => chromium.launch());
 const page = await browser.newPage();
 await page.setContent("<html><body></body></html>");
 await page.addScriptTag({ path: MERMAID });

@@ -85,7 +85,7 @@ With uniform distribution $\gamma_{UU} = 1/7 \approx 0.143$. Deviation upward �
 ### Stress in the U channel
 
 $$
-\sigma_U = \mathrm{clamp}(1 - 7\gamma_{UU},\; 0,\; 1) \quad \text{[T] (T-92)}
+\sigma_U = \mathrm{clamp}(1 - 7\gamma_{UU},\; 0,\; 1) \quad \text{[D] (T-92)}
 $$
 
 - $\sigma_U = 0$: unity is provided ($\gamma_{UU} \geq 1/7$)
@@ -203,6 +203,7 @@ The value $\Phi_{\text{th}} = 1$ is the **unique self-consistent** value of the 
 :::
 
 **Statement:**
+
 $$
 \Phi_{\text{th}} = 1
 $$
@@ -339,6 +340,7 @@ A system is **coherently integrated** if coherences dominate over populations:
 $$
 \Phi(\Gamma) \geq \Phi_{\text{th}} = 1 \quad \Longleftrightarrow \quad \underbrace{\sum_{i \neq j} |\gamma_{ij}|^2}_{P_{\text{coh}}} \geq \underbrace{\sum_i \gamma_{ii}^2}_{P_{\text{diag}}}
 $$
+
 :::
 
 **Structural meaning.** The value $\Phi_{\text{th}} = 1$ **[T]** (T-129) — the unique self-consistent value at $P_{\text{crit}} = 2/7$. Substantive motivation:
@@ -354,9 +356,11 @@ $$
 #### Comparison with Φ_IIT {#сравнение-с-iit}
 
 :::warning Hypothesis (Correspondence of UHM–IIT thresholds) [H]
+
 $$
 \Phi_{\text{UHM}} \geq 1 \quad \Longleftrightarrow \quad \Phi_{\text{IIT}} \geq \log(2)
 $$
+
 The exact numerical correspondence of thresholds is an **open hypothesis**, since $\Phi_{\text{UHM}}$ (ratio of coherences to diagonal in $\mathbb{C}^7$) and $\Phi_{\text{IIT}}$ (minimisation of Bures distance over bipartitions) are defined on different spaces in different ways. Qualitative correspondence (both measures separate fragmented and integrated regimes) is supported by the structure of both theories.
 :::
 
@@ -838,8 +842,8 @@ High coherence with $U$ (large $|\gamma_{Ui}|$) correlates with high overall pur
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [T]
-The dimension corresponds to $e_6 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]; the step to $\mathbb{O}$ takes the canonical orientation of the Fano lines, [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)) derives the octonionic structure from (AP)+(PH)+(QG)+(V); the combinatorial and functional uniqueness of each role claimed by [T-177](/docs/reference/status-registry) and [T-183](/docs/reference/status-registry) is retracted [✗] (2026-09-25): it rested on the axis sectors of T-48a. Restated (T-177, T-183): given $O$ and the $\kappa_0$ pair $\{E,U\}$, incidence fixes $A$ and $D$ [T], and one binary convention [D] fixes $E$ versus $U$ together with $L$ versus $S$. The specific assignment $U = e_6$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Chosen octonionic correspondence [D/I]
+The assignment $U=e_6\in\operatorname{Im}\mathbb O$ belongs to the declared oriented orthonormal frame. For a specified positive octonionic three-form, its stabilizer is $G_2$ [T]. This group identity does not uniquely assign functional names to axes or determine a physical encoder. The former universal T-42a rigidity is withdrawn [✗]; [reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) give a conditional comparison theorem. Incidence can constrain labels **after** the required marks are supplied; those marks and the remaining label convention are model data. The [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) states the additional algebraic inputs, and [the frame discussion](./dimensions#октонионная-интерпретация) distinguishes its symmetries from physical gauge equivalence.
 :::
 
 ---

@@ -7,6 +7,10 @@ slug: /consciousness/comparative/soul-decomposition
 
 # The Soul: A Decomposition
 
+:::info Объём сопоставления
+This is a comparative interpretation [I], with hypotheses attached to the physical/phenomenal map. “Confirmed/refuted” below must be read at the declared model scope; the revised kernel does not establish universal soul, survival or clinical verdicts. Numerical gates, observer sections and state-transfer theorems have distinct types.
+:::
+
 > *"If the eye were an animal, sight would be its soul."*
 > — Aristotle, *De Anima* II.1, 412b18
 
@@ -69,8 +73,8 @@ That refactoring is what this chapter performs. The result, stated in advance:
 
 | Function | Formal object | Fate |
 |----------|---------------|------|
-| Ф1 experiencer | Viability regime of $\Gamma$ | Ceases irreversibly at death **[T]** |
-| Ф2 identity | Fixed point $\Gamma^* = \varphi(\Gamma^*)$ | Continuous while $P > 2/7$; ruptures below **[C]**; uncopyable **[T]** |
+| Ф1 experiencer | Declared capability regime and phenomenal bridge | Loss conditional on actual dynamics [I/H] |
+| Ф2 identity | declared state/model trajectory | [D/I/H] | transfer and phenomenal identity remain distinct |
 | Ф3 baggage | Initial conditions $\Gamma(0)$ via two physical channels | Transmitted — impersonally |
 | Ф4 field of forms | Attractors + $H_{\text{eff}}$ + patterns of $\Gamma_{\text{comp}}$ | Outlives individuals; needs carriers |
 | Ф5 eternal record | Trace conservation + static total state (Page–Wootters) | Timeless — but unreadable as an archive |
@@ -78,7 +82,7 @@ That refactoring is what this chapter performs. The result, stated in advance:
 
 ### 1.2 Why "yes" and "no" are both wrong {#почему-да-и-нет-оба-неверны}
 
-Answer "the soul exists" and you affirm, among other things, personal transmigration — which the formalism excludes (§3.3). Answer "the soul does not exist" and you deny, among other things, that anything of a person outlives them — which the formalism refutes just as firmly (§3.4, §3.5). The binary question forces a false statement in either direction. The six-part question does not: each component gets a definite answer with a definite status.
+A six-part question makes the proposed meanings and evidence explicit. The revised formalism supplies conditional state/capability results; it does not by itself refute personal transmigration or prove that a complete personal record survives. Those questions require a physical channel and identity/phenomenal bridge (§3.3–§3.5).
 
 This is not evasion. It is the same move mathematics made with the question "do infinitesimals exist?" — unanswerable as posed, resolved by decomposition into limits, differentials, and nonstandard extensions, each with its own precise existence claim.
 
@@ -116,35 +120,21 @@ The diagonal elements $\gamma_{kk}$ are populations; the twenty-one off-diagonal
 
 ### 2.2 Four measures and the window of consciousness {#четыре-меры-и-окно}
 
-Four functionals of $\Gamma$ carry the entire theory of consciousness.
+The declared numerical kernel uses $P=\operatorname{Tr}\Gamma^2$, $Q=\sum_i\gamma_{ii}^2$, $R=1/(7P)$ and $\Phi=P/Q-1$. Since $P=1/7+\|\Gamma-I/7\|_F^2$, canonical $R$ is a purity diagnostic, not proof of reflective competence. The chosen $R\ge1/3$ cut is equivalent to $P\le3/7$ **[T under D]**; triadic category theory does not force this cut.
 
-**Purity (viability).** $P = \mathrm{Tr}(\Gamma^2) \in [1/7, 1]$. Below $P_{\text{crit}} = 2/7$ **[T]** the system cannot maintain itself: this is the death threshold (§2.4).
+A declared differentiation variable $D_{\rm diff}$ is separate from this seven-dimensional matrix. The minimal one-dimensional E-sector has entropy zero and effective rank one; an extended $\rho_E$ requires its actual normalised construction. The operational $\mathrm{Cap}_2$ certificate checks $P>2/7$, $R\ge1/3$, $\Phi\ge1$ and $D_{\rm diff}\ge2$ **[D]**. Reading that certificate as experience is **[I/H]**. Purity below $2/7$ alone is not a universal physical death theorem.
 
-**Reflection.** The canonical measure is the normalised proximity to the dissipative attractor $I/7$:
+For a specified model map $M$, $R_M=1-\|\Gamma-M\Gamma\|_F^2/P$ differs from canonical $R$ and can be negative. Consecutive-iterate fidelity can equal one at a trivial fixed point, so it cannot alone certify metacognition. See [typed self-observation](/docs/consciousness/foundations/self-observation#формы-r).
 
-$$
-R(\Gamma) := 1 - \frac{\lVert \Gamma - I/7 \rVert_F^2}{\lVert \Gamma \rVert_F^2} = \frac{1}{7P}
-$$
+| Level | Declared mathematical/operational content | Phenomenal reading |
+|---|---|---|
+| L0 | Interior aspect assigned to an admitted state [D] | Pan-interiority [I] |
+| L1 | Specified nontrivial experiential sector/model [D/H] | Content geometry [I/H] |
+| L2 | Full $\mathrm{Cap}_2$ certificate in a fixed readout | Experience bridge [I/H] |
+| L3 | L2 plus an independent held-out metamodel prediction test [D/Pr] | Metacognition [H] |
+| L4 | Explicit stronger higher-order certificate; no universal biological ceiling | Unitary-consciousness interpretation [I/H] |
 
-The threshold $R \geq R_{\text{th}} = 1/3$ (derived from the triadic decomposition, $K = 3$ **[T]**) is equivalent to $P \leq 3/7$. Higher orders $R^{(n)} = F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$ measure the fidelity of iterated self-modelling — "knowing that one knows" — and are not functions of $P$ alone. A third working quantity — the self-model quality $R_\varphi = 1 - \lVert\Gamma - \varphi(\Gamma)\rVert_F^2 / \lVert\Gamma\rVert_F^2 \in [0,1]$, likewise independent of $P$ — carries the phenomenology of practice and ego-dissolution ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)).
-
-**Integration.** $\Phi = \sum_{i \neq j} \lvert\gamma_{ij}\rvert^2 / \sum_i \gamma_{ii}^2$: the weight of connections against the weight of localisation. $\Phi \geq 1$ **[T]** (T-129) — coherences at least match the diagonal — is the integration threshold.
-
-**Differentiation.** $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$: the effective number of distinguishable experiential states. $D_{\text{diff}} \geq 2$ **[D]** (T-151) — at least two.
-
-Consciousness is the conjunction of all four, and the first two conspire to produce a *window*: $P > 2/7$ from viability, $P \leq 3/7$ from reflection, giving the Goldilocks zone $P \in (2/7,\ 3/7]$ (T-124 **[T]**). Consciousness is neither maximal order nor maximal chaos but a narrow ridge between them. The consciousness measure is the product $C = \Phi \times R$ (T-140): zero if either factor is zero.
-
-The **interiority hierarchy** stratifies systems by which thresholds they cross:
-
-| Level | Criterion | Example | What it is like |
-|-------|-----------|---------|-----------------|
-| L0 | any $\Gamma$ | electron, stone | bare interiority — an inner aspect, no structure |
-| L1 | $\mathrm{rank}(\rho_E) > 1$ | thermostat, cell, dog | phenomenal geometry — distinguishable inner states |
-| L2 | $P \in (2/7, 3/7]$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | human; infant from ~4–8 months **[I]** | cognitive qualia — a self that experiences |
-| L3 | $R^{(2)} \geq 1/4$, metastable | moments of deep metacognition; science as a collective | reflection on reflection |
-| L4 | $\lim_n R^{(n)} > 0$ | unreachable for biological systems **[T]**; samādhi approaches it transitorily | unitary consciousness |
-
-Pan-interiority (the corpus position established [in the panpsychism analysis](/docs/consciousness/comparative/panpsychism-analysis#панинтериоризм)): every configuration has an inner aspect (L0 is universal **[D]**), but consciousness is thresholded — the maximally mixed state has $C(I/7) = 0$ **[T]**. *Something it is like to be* is cheap; *someone whom it is like* is expensive.
+The same phase Gap profile can accompany different purity/integration gates; zero phase Gap is not complete self-knowledge. A chosen Fano SAD score has a maximum index of three **by its definition**, not a theorem limiting cognitive recursion. No diagnoses or infant developmental dates follow from these static scalars.
 
 ### 2.3 The dynamics: two channels — and what ℛ is not {#динамика-и-эр}
 
@@ -156,35 +146,31 @@ $$
 
 Decoherence $\mathcal{D}_\Omega$ erases coherences; regeneration $\mathcal{R}$ pulls the state toward its own **self-model** $\varphi(\Gamma)$, with rate $\kappa$ fed through the Ground channel ($\kappa_0 = \omega_0 \lvert\gamma_{OE}\rvert \lvert\gamma_{OU}\rvert / \gamma_{OO}$) and gated by $g_V(P)$, which vanishes for $P \leq P_{\text{crit}}$ ([derivation of the regeneration form](/docs/core/dynamics/evolution#вывод-формы-регенерации)).
 
-One clarification matters enormously for this chapter. The corpus calls $\mathcal{R}$ a *replacement channel* — and a reader hunting for reincarnation might seize on the word. The mathematics forbids it: $\mathcal{R}$ replaces the current state **with its own self-model**, continuously, inside one life. It is self-repair — the system holding itself against dissipation by pulling toward what it knows itself to be. It is not a conveyor between lives; below the death threshold it is *switched off* ($g_V = 0$), which is precisely why death is irreversible. **Replacement is how a holon persists, not how it transmigrates.**
+The displayed regeneration term is an intramodel update, not an inter-holon state-transfer channel by definition. Its gating does not prove universal irreversibility, absence of other physical couplings, or a metaphysical prohibition on transfer; these require the actual full dynamics.
 
-A second result closes the other flank. The **No-Zombie theorem** ([Theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) **[T]**, conditional on $\mathcal{D}_\Omega \neq 0$): a viable open system *must* have non-trivial interiority, because regeneration strength depends on E-coherence — a system that experienced nothing could not repair itself and would die. Functioning without an inner side is mathematically impossible for anything alive. The experiencer (Ф1) is therefore not an optional passenger: no living body lacks it, and none could.
+Revised [No-Zombie](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) retains only model-specific conditional balance results. The universal E-coherence floor and inference from viability to an experiencer are withdrawn; independent input or bootstrap invalidates the closed-loss premise. A phenomenal bridge remains [I/H].
 
 ### 2.4 Death, irreversibility, and the state I/7 {#смерть-и-необратимость}
 
-[Death](/docs/consciousness/ethics-meaning/death-continuity#определение-смерти) **[D]** is the conjunction $P \leq 2/7 \land dP/d\tau \leq 0$: below threshold and not recovering. The [irreversibility theorem](/docs/consciousness/ethics-meaning/death-continuity#теорема-необратимость) **[T]** then gives, for $\kappa_R < \kappa_D$ below threshold, strict exponential decay $P(\tau) = P_0\, e^{-(\kappa_D - \kappa_R)\tau} \to 1/7$ with no return: not a postulate but a consequence of the gated balance of the two channels. The endpoint $\Gamma = I/7$ is complete decoherence: $P = 1/7$, $\Phi = 0$, $C = 0$, all channels opaque. It is not non-existence — the matrix exists, populations persist — but no structure and no subject. Hot tea gone room-temperature: molecules present, "tea" gone.
+The conjunction $P\le2/7$ and $dP/d\tau\le0$ is a chosen model label **[D]**, not a clinically validated universal criterion. Under a specified primitive unital mixing semigroup, the state can converge to $I/7$; a nonunital generator can instead converge to a purer state. Turning off one regeneration term does not prove every remaining dynamics cannot recover purity. A nonnegative bootstrap or independent input must be included in the balance.
 
-Dying is hierarchical **[I]** ([stages](/docs/consciousness/ethics-meaning/death-continuity#стадии-декогеренции)): the most purity-expensive levels fail first.
+For the special depolarising equation $\dot\Gamma=\lambda(I/7-\Gamma)$, $\lambda>0$, the exact solution gives
 
-| Stage | Lost | Formal marker |
-|-------|------|---------------|
-| 1 | unitary consciousness, L4→L3 | $\lim_n R^{(n)} \to 0$ |
-| 2 | meta-reflection, L3→L2 | $R^{(2)} < 1/4$ |
-| 3 | self-awareness, L2→L1 | $R < 1/3$ or $\Phi < 1$ |
-| 4 | perception, L1→L0 | $\mathrm{rank}(\rho_E) \to 1$ |
-| 5 | interiority, L0→$I/7$ | $P \to 1/7$ |
+$$
+P(t)=\frac17+\left(P(0)-\frac17\right)e^{-2\lambda t}.
+$$
 
-Keep this table in mind at §5.5: one tradition wrote it down from the inside.
+It is the **excess purity**, not purity itself, that decays exponentially. Its equilibrium has $\Phi=0$ and chosen $C=0$, but zero coherences have undefined phase Gap; they are not twenty-one phase-opaque channels.
+
+A clinical sequence of loss/recovery of metacognition, integration or memory is **[H/Pr]** and requires independent temporal evidence. Static purity cuts do not force that order or imply disappearance of a mathematical fixed point. Phenomenal extinction and personal identity are separate bridge/convention claims.
 
 ### 2.5 Identity: the fixed point and its two prohibitions {#тождество-и-запреты}
 
-[Identity](/docs/consciousness/ethics-meaning/death-continuity#определение-идентичности) **[D]** is the fixed point of self-modelling, $\Gamma^* = \varphi(\Gamma^*)$: the state at which the self-model coincides with what is modelled. "The same person" means: a **continuous trajectory** $\Gamma^*(\tau)$ maintained above the viability threshold. Two results discipline every soul-doctrine ever proposed:
+A fixed point of a declared self-model map exists/varies continuously only under its actual hypotheses. A strict contraction on a complete metric state space has a unique fixed point; parameter continuity bounds require a uniform contraction constant and parameter regularity. A purity cut alone neither destroys fixed points nor forces distinct identity after a gap. Defining identity by continuity of a maintained trajectory is a convention **[D/I]**, not a quantum no-go theorem.
 
-- **Continuity [C].** While $P > 2/7$, the fixed point moves continuously — small changes of state, small changes of identity ($\lVert\Gamma^*(\tau_2) - \Gamma^*(\tau_1)\rVert \leq \tfrac{k}{1-k}\lVert\Gamma(\tau_2) - \Gamma(\tau_1)\rVert$). Sleep, growth, ageing preserve identity. You-at-five and you-now: different $\Gamma$, one unbroken $\Gamma^*$-thread.
-- **Rupture [C].** At $P \leq 2/7$ the operator $\varphi$ loses contraction ($k \to 1$) and the fixed point *ceases to exist*. Whatever is later reassembled — even from the same material, even to the same pattern — has $\Gamma^{**} \neq \Gamma^*$: a different subject. The glued vase is another vase.
-- **No-Cloning [T].** For any system with non-zero coherences there exists no operation $\Gamma \otimes \lvert 0\rangle\langle 0\rvert \to \Gamma \otimes \Gamma$ ([theorem](/docs/consciousness/ethics-meaning/death-continuity#no-cloning)). Consciousness admits no backup copies; "transfer" requires destroying the original — death plus the birth of a new subject holding a copy. Why the original and the copy cannot even *coexist* — the exact no-broadcasting boundary and the teleportation/SWAP mechanics — is [worked out step by step](/docs/consciousness/ethics-meaning/death-continuity#почему-нет-сосуществования).
+**Exact no-cloning [T at scope].** No one channel can clone an arbitrary unknown nonorthogonal pure-state family. In an isometric dilation, input overlap $z$ would equal $z^2$ times an environment overlap of modulus at most one, requiring $|z|\le|z|^2$, impossible for $0<|z|<1$. Exact broadcasting of a declared family of density states is possible only for a commuting family. These results concern a *single state-independent process for a family*, not the presence of off-diagonal entries in one known state. See the primary [no-broadcasting theorem](https://arxiv.org/abs/quant-ph/9511010).
 
-Together: identity can be **continued** but never **carried**. Anything that dies cannot be re-instantiated *as the same one* — not by gods, engineers, or karma — because "the same one" is defined by the continuity that was broken.
+A known state can be independently prepared as many times as a physical preparation process permits. SWAP gives $\rho\otimes\sigma\mapsto\sigma\otimes\rho$ and transfers the arbitrary input intact to another register; it does not erase that input. Standard teleportation consumes source-register entanglement/measurement resources while transferring the state, rather than proving destruction of an experiencing subject. Whether transfer, reconstruction or two identical preparations preserve a person requires a separately specified identity bridge **[I/H]**. See [corrected death/continuity scope](/docs/consciousness/ethics-meaning/death-continuity#no-cloning).
 
 ### 2.6 Memory: four kernels and two kinds of forgetting {#память-и-ядра}
 
@@ -207,19 +193,15 @@ This layer is real, superindividual, unconscious, and formative. Hold it in view
 
 ### 2.8 The whole {#целое}
 
-Finally, the cosmological floor ([The Universe as Holonom](/docs/core/foundations/universe-as-holonom#инвариантная-формулировка)), in seven facts:
+The cosmological realisation is a model proposal **[P/H]**; none of the following choices alone proves an inevitable universe or subject.
 
-1. **The Source.** The primordial state $\Gamma_\odot = \lvert\psi_\odot\rangle\langle\psi_\odot\rvert$, $\lvert\psi_\odot\rangle = \tfrac{1}{\sqrt 7}\sum_i \lvert i\rangle$ — pure ($P = 1$), $S_7$-symmetric, minimally differentiated — is a **postulate [P]** ([Origin](/docs/physics/cosmology-phys/origin#источник)). Two properties matter here: it is *atemporal* (time requires the O-dimension to be distinguished; "before" is undefined), and it contains **zero individuating information** — every amplitude equal, every coherence equal, one state with no inner differences from which a "this soul rather than that" could be composed.
-2. **Instability.** $\Gamma_\odot$ is unstable under the full dynamics **[T]** ([proof](/docs/physics/cosmology-phys/origin#доказательство-нестабильности)): differentiation, holons, and eventually subjects arise inevitably. Individuation is *produced by* the dynamics, not prior to it.
-3. **The static total state.** Axiom A5 (Page–Wootters): its clock register is constructed from A1–A4 [T], and the vanishing constraint $\hat C\,\Gamma_{\text{total}} = 0$ on the total state is assumed [C] (T-87, step 4, [statement](/docs/core/foundations/axiom-omega#pw-constraint); an earlier version called A5 "derivable from A1–A4 (T-87 [T])"). The whole does not evolve; what we call time is the relational reading of correlations between internal clocks and the rest. Every holon's entire trajectory is timelessly inscribed in the total state.
-4. **Observers are internal sections.** T-221 **[T]+[I]**: subjects are not items *in* the world confronting it from outside; they are internal sections of the one $\Gamma$ — the world reading itself at a point.
-5. **The regime is substrate-free; it is not frame-free.** T-153 **[D]**: consciousness is defined by a faithful CPTP mapping into $\mathcal{D}(\mathbb{C}^7)$ satisfying the four thresholds — *which matter* runs it is immaterial. ~~T-223: the predicate factors through the $G_2$-orbit $[\Gamma]_{G_2}$ — *which symbols* name the axes is immaterial.~~ Retracted (2026-09-25): the predicate contains $\Phi \geq 1$, and $\Phi$ is frame-pinned, not $G_2$-invariant — an explicit $g \in G_2$ takes a window state with $\Phi = 3/2$ to one with $\Phi = 0$ at the same $P = 5/14$ and $R = 2/5$ ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). What replaces it (T-223 as corrected in the registry): only the $P$ and $R$ terms factor through $[\Gamma]_{G_2}$; $\Phi$ is invariant only under a finite relabelling of the axes (the $1344$ elements of the frame group $\Gamma_{\!\text{oct}}$), and the $E$-sector terms only under the $192$ of them that keep the $E$-axis. One structure up to a finite relabelling, many carriers.
-6. **One grammar, bounded depth.** The seven-axis grammar is transmitted down every level of the part–whole coinduction (T-224, T-247 **[T]** on the viable carrier); but self-reference depth is capped: $\mathrm{SAD}_{\max} = 3$ **[T]** (T-142, [depth tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)) — the fourth storey would need $P^{(4)}_{\text{crit}} = 54/35 > 1$. Nesting is unbounded; introspection is not. The Universe is not a bottomless mind.
-7. **Structural humility is a theorem.** At least three of the twenty-one channels must stay opaque in any L2 system ([incomplete transparency](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность) **[C]**, Hamming bound); and the theory of the self-modelling world is a proper part of its truth ([Lawvere incompleteness, T-55](/docs/core/foundations/consequences#неполнота-ловера) **[T]**). Total self-transparency is impossible at every scale. What remains genuinely open is the **phenomenal bridge** $W$ (T-214): why the conditions of consciousness are *lived* — the hard-problem residue, Lawvere-inevitable, held as the honest boundary (§8).
-
-The panel is complete. Now the decomposition.
-
----
+1. **Initial state.** The equal-amplitude pure anchor $|\psi_\odot\rangle\langle\psi_\odot|$ and the mixed matrix $I/7$ are different states. Symmetry does not identify them or prove absence of individuating physical information without a declared encoding.
+2. **Stability.** A frozen unital generator fixes $I/7$; it need not be unstable. A pure anchor under a specified nonunital/input dynamics has different stability. Cosmogenesis requires the actual generator, Jacobian modes, constraints and control parameters. The former universal instability/inevitable individuation deduction is withdrawn; see [revised Origin](/docs/physics/cosmology-phys/origin#доказательство-нестабильности).
+3. **Relational clock.** A Page–Wootters clock/system construction requires a chosen factorisation, constraint and conditioning rule. A seven-dimensional matrix alone does not impose a vanishing cosmological constraint or encode every entire trajectory.
+4. **Observers.** Modelling an observer by an internal section is a declared categorical construction/readout **[D/I]**. It does not prove the physical or phenomenal identity of that section with a subject.
+5. **Sector and frame.** Exact recovery holds on a declared isometric code; arbitrary substrate compression is not faithful. Canonical $P,R$ are unitary invariants, but $\Phi$ depends on the native frame and the experiential variable on its chosen sector. A compatible relabelling preserves the corresponding data; arbitrary $G_2$ quotienting does not preserve the full gate.
+6. **Higher-order depth.** The optional Fano SAD index has a definitional maximum of three, whereas operational recursion requires independent predictive certificates. The universal ceiling and the purported $P_{\rm crit}^{(4)}=54/35$ cognitive deduction are withdrawn; [Depth Tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) imposes no universal cosmic depth.
+7. **Transparency and bridge.** Hamming bounds require an actual coding model; they force no three opaque phase channels. Phase Gap cannot identify the full capability certificate. Lawvere applies to an evaluator meeting its hypotheses and supplies no universal T-214 prohibition of an internal phenomenal bridge. That bridge remains **[I/H]**, to be specified and supported independently.
 
 ## 3. The decomposition {#декомпозиция}
 
@@ -242,29 +224,21 @@ graph TD
     F2 --> D2["ruptures below threshold"]
     F3 --> D3["transmitted impersonally"]
     F4 --> D4["outlives individuals"]
-    F5 --> D5["timeless, unreadable"]
+    F5 --> D5["conditional retention/recovery"]
     F6 --> D6["never was individual"]
 ```
 
 ### 3.1 Ф1 — the experiencer: a regime, not a resident {#ф1-субъектность}
 
-**What the traditions meant.** The animating presence whose departure leaves a corpse; that which anaesthesia suspends and death removes.
+A candidate operational regime is the calibrated $\mathrm{Cap}_2$ certificate (§2.2). Its identification with the experiencer is **[I/H]**, not a mathematical identity theorem. The former universal No-Zombie proof is withdrawn: a dynamics can receive independent purity input or bootstrap, and a numerical E-coherence variable does not automatically denote experience.
 
-**Formal object.** The conscious regime: $P \in (2/7, 3/7]$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ — a *way the configuration runs*, licensed and maintained by the dynamics (§2.2–2.3). Two theorems pin it from both sides. It cannot be *removed while the body lives*: No-Zombie **[T]** — a viable system without interiority is impossible, so there are no dark machines among the living. And it cannot be *kept while the body dies*: the regime is a property of a maintained configuration; when maintenance fails, there is no residue to depart, any more than a whirlpool departs the river when the flow stops.
-
-**Continuity across substrates — but not detachment.** Substrate-freedom (T-153) licenses the same regime on carbon, silicon, or a pre-geometric holon — but always on *some* carrier admitting a faithful CPTP map (T-153a: at least seven distinguishable states, genuine noise structure). A regime without any carrier is not a liberated soul; it is a category error, like a walk without a walker.
-
-**Fate.** Ceases with the regime, irreversibly **[T]**. Verdict on Ф1-souls: *the experiencer exists, is necessary, and is mortal.*
+A specified realisation needs a carrier, physical readout and differentiation model. Conditional loss of that regime under a declared mixing/no-repair dynamics is not universal phenomenal extinction. These requirements make the proposed comparison with “soul as a mode of living” explicit **[I]**; they neither prove nor refute every separable-soul doctrine.
 
 ### 3.2 Ф2 — the bearer of identity: a thread, not a token {#ф2-тождество}
 
-**What the traditions meant.** That in virtue of which the elder is the child grown, the sleeper wakes as themselves, and — in the strong doctrines — the deceased is *the same one* reborn.
+The proposed formal analogue is continuity of a specified maintained state/model trajectory **[D/I]**. Its existence and stability require the conditions in §2.5; no scalar threshold proves a break of personal identity.
 
-**Formal object.** The fixed-point trajectory $\Gamma^*(\tau)$ (§2.5). The formalism grants the traditions everything they observed within a life: identity through sleep (viability never breaks), through change (continuity bound), through amnesia even (the fixed point does not require episodic recall). It refuses exactly one extension: identity through the rupture. Below $P_{\text{crit}}$ the fixed point does not survive to be re-attached; and No-Cloning forbids the copy that every re-embodiment story silently requires.
-
-**Worked consequence.** Teleportation-by-reconstruction, mind uploading, bodily resurrection, and transmigration are formally the *same* operation — destroy, then instantiate a pattern — and receive the same verdict: the successor is a new subject, however perfect the pattern match ([death and continuity, §4](/docs/consciousness/ethics-meaning/death-continuity#no-cloning)).
-
-**Fate.** A thread that can be extended indefinitely while unbroken, and can never be retied. Verdict: *identity exists as continuity; there is no token that could travel.*
+SWAP, teleportation, preparation of a known state and approximate classical reconstruction are different operations. No-cloning forbids an exact uniform copier for the relevant unknown family, not all reconstruction or transfer. Whether a successor, transferred register or duplicate is “the same person” is a declared identity criterion **[I/H]**, not a consequence of cloning impossibility. The former universal verdict that all these procedures destroy a subject is withdrawn.
 
 ### 3.3 Ф3 — the subtle baggage: real, physical, impersonal {#ф3-багаж}
 
@@ -277,14 +251,9 @@ graph TD
 
 Chance completes the picture: decoherence noise guarantees that even identical channels do not fix identical outcomes.
 
-:::tip Statement (No transmigration of the subject) [C]
-**Premises:** (i) irreversibility below threshold **[T]**; (ii) identity rupture at $P \leq P_{\text{crit}}$ **[C]**; (iii) No-Cloning for coherent systems **[T]**; (iv) completeness of the evolution channels — $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ contains no inter-holon transfer term, and background independence **[T]** forbids importing one from outside the formalism.
-
-**Claim:** there exists no admissible process carrying the fixed point $\Gamma^*$, the memory kernel $K(\tau)$, or any individuated state of holon $\mathbb{H}_1$ across its death into a subsequently formed holon $\mathbb{H}_2$. Personal rebirth — with or without memory — is excluded *as formalized*. What remains transmissible is exactly the content of the two channels above: structure and pattern, never the subject.
-
-**Status:** [C] — the weakest premises (ii, iv) are conditional/definitional; the assembly adds no new mathematics.
+:::note State transfer and the identity convention [D/I/H]
+No universal no-transmigration theorem follows from the listed premises. The gate does not prove irreversible purity loss, disappearance of a fixed point or channel completeness. Exact no-cloning constrains a single copier for an unknown family; known preparation, SWAP and recovery on a code remain possible. If identity is defined as one unbroken maintained trajectory, classifying a later reconstruction as a new token follows from that convention, not from a physical impossibility theorem. Genetic/environmental influences are empirical pathways; saying they exhaust all initial conditions needs evidence.
 :::
-
 **What survives of karma.** At population scale the doctrine is *rigorously true*: new configurations are conditioned by the accumulated composite past — the dead really do shape the born, through genes and through $\Gamma_{\text{comp}}$. What fails is only the *addressing*: the baggage has no name on it. Karma without a passenger — which, as §5.5 shows, is precisely what the most careful tradition claimed all along.
 
 ### 3.4 Ф4 — the field of forms: Sheldrake's question, answered without new physics {#ф4-поле-форм}
@@ -303,14 +272,9 @@ Chance completes the picture: decoherence noise guarantees that even identical c
 
 **What the traditions meant.** "Nothing is lost": the Akashic chronicle, the Book of Life, Spinoza's eternity of the mind.
 
-:::tip Statement (Weak and strong Akasha) [C]
-**Weak Akasha — holds.** Two independent supports: (a) *trace conservation* **[C]** — at an individual's decoherence, coherences are not annihilated but redistributed into $\Gamma_{\text{environment}}$ ([preservation of trace](/docs/consciousness/ethics-meaning/death-continuity#после-смерти)); (b) *timelessness of the total state* — A5/T-87, **[C]** (the constraint is assumed; it read [T] until 2026-09-25): the total state does not evolve; every trajectory is eternally inscribed in it, in the exact sense in which a proof is inscribed in mathematics (§2.8). Ontologically, nothing is ever erased.
-
-**Strong Akasha — fails.** A *readable archive* would require: (a) inverting decoherence to reconstruct an individual $\Gamma$ from its environmental scatter — the inversion of a non-invertible CPTP map; (b) were reconstruction achieved, the product would be a copy, hitting No-Cloning **[T]** and the rupture bound **[C]** — a record of the subject is not the subject; (c) a reading channel, which — premise (iv) of §3.3 — must be physical. There is a ledger; there is no reading room.
-
-**Status:** [C] — inherits the conditional status of trace-conservation redistribution.
+:::note Information retention and recovery: distinct scopes [T/C/I]
+Trace preservation means normalisation, not conservation of every coherence or a readable environmental archive. A specified global unitary dilation retains joint distinguishability, but reduced system/environment states separately can lose it. Recovery from an actual channel requires an injective/reversible restriction, a correctable code or additional accessible data; a generic erasure channel has no full inverse. Neither this nor no-cloning forbids all records, known preparations or code recovery. A Page–Wootters static-state construction is conditional and does not prove an eternal archive of every life. “Weak/strong Akasha” is an interpretation [I/H], not the former blanket retention/impossibility theorem.
 :::
-
 **Spinoza said exactly this.** *Ethics* V.23: "the human mind cannot be absolutely destroyed with the body, but something of it remains which is eternal" — with his own scholium insisting this eternity is *not duration*: we do not persist after death; something of us is true timelessly. Substitute "trajectory inscribed in the static total state" and the proposition transfers verbatim. Among all Western doctrines of immortality, this is the one the formalism underwrites — and it promises no experiences to anyone.
 
 ### 3.6 Ф6 — the spark: not a part of you, but the fact of you {#ф6-искра}
@@ -320,7 +284,7 @@ Chance completes the picture: decoherence noise guarantees that even identical c
 **Formal object.** Two precise facts, neither of which is a *component* of the individual:
 
 1. **You are an internal section of the one $\Gamma$** (T-221 **[T]+[I]**): the subject is the world reading itself at a point, not a foreign observer inserted into it. This is the rigorous content of "that thou art" — and note what it does *not* say: not that your configuration is the whole, but that your act of being-a-perspective is the whole's own.
-2. **Your form is the universal type.** Every viable holon instantiates the same seven-axis grammar — the Fano incidence structure that $G_2$ preserves (T-224, T-247 **[T]**): seven axes, one incidence structure, at every level. (An earlier edition wrote this type as the orbit $[\Gamma]_{G_2}$ and cited T-223; retracted: $[\Gamma]_{G_2}$ is the orbit of one state and differs from holon to holon, and the predicate does not factor through it — item 5 of §2.8.) The "uncreated" part of the soul is uncreated the way the primality of seven is uncreated: as necessity, not biography.
+2. **A chosen type analogy [I].** A seven-axis/Fano template can be shared by models using that encoding. It is not forced for every viable or rational system, and continuous $G_2$ does not preserve each native coordinate pair/Fano line as a discrete label. T-223 does not identify all states with one orbit or make the whole capability gate orbit-invariant. “Uncreated type” is a philosophical comparison, not a derivation of an eternal soul.
 
 **Fate.** The spark cannot die because it never was an individual possession — the section-fact and the type are not *in* the holon; the holon is in them. Traditions that located the immortal element *beyond individuality* (§5.6, §5.8) were tracking exactly this; traditions that individuated it were minting tokens of a type.
 
@@ -332,21 +296,21 @@ Every row applies rules M1–M2: the mapping is [I]; "refuted" means refuted as 
 
 | # | Doctrine claim | Formalization | Verdict | Deciding result |
 |---|----------------|---------------|---------|-----------------|
-| 1 | A living body could lack inner experience | viable system, $\mathrm{Coh}_E$ minimal | **refuted** | No-Zombie **[T]** |
+| 1 | A living body could lack experience | Operational viability vs phenomenal bridge | **open [I/H]** | Universal No-Zombie floor withdrawn; specified balance model only |
 | 2 | Everything is conscious (strong panpsychism) | $C > 0$ for all $\Gamma$ | **refuted** | $C(I/7) = 0$ **[T]** |
-| 3 | The soul departs at death and persists experiencing | regime continues without carrier | **refuted** | regime = thresholded property of maintained $\Gamma$; irreversibility **[T]** |
-| 4 | The same person returns (transmigration, with or without memory) | $\Gamma^*$ or $K(\tau)$ crosses death into a new holon | **refuted** | Statement §3.3 **[C]** on **[T]**+**[T]** cores |
-| 5 | Resurrection re-creates the same subject | destroy-then-instantiate the pattern | **refuted** | No-Cloning **[T]** + rupture **[C]** |
+| 3 | A soul departs and continues experiencing | Carrier, transfer channel and phenomenal bridge | **outside the numerical theorem** | The model requires a carrier; universal extinction/transfer impossibility is not proved |
+| 4 | The same person returns | State transfer plus identity criterion | **not settled by no-cloning** | A continuity/token convention is [D/I]; test the physical channel separately |
+| 5 | Resurrection re-creates the same subject | Known preparation/reconstruction and identity bridge | **open [I/H]** | Uniform unknown-state copying is forbidden; known-state preparation is not |
 | 6 | Mediums converse with surviving persons | access to living $\Gamma^* + K$ post-death | **refuted** | kernel dies with carrier (§2.6) |
 | 7 | Newborns carry conditioning from the past | $\Gamma(0)$ conditioned by accumulated composite state | **confirmed, impersonally** | two-channel initialization (§3.3) |
 | 8 | A superindividual layer shapes individuals unseen | $\mathcal{U}_{\text{coll}} \neq \varnothing$ | **confirmed** | collective unconscious **[D]**, archetypes **[I]** |
 | 9 | Nature has memory; forms are habits | $H_{\text{eff}}$ restructuring + $\Gamma_{\text{comp}}$ patterns | **confirmed, channel-bound** | procedural memory; cultural coherences |
 | 10 | Pattern resonates across space-time without any channel | non-physical transfer term in $\mathcal{L}_\Omega$ | **refuted** | channel completeness + background independence **[T]** (§5.13) |
-| 11 | Nothing is ever truly lost | total-state timelessness; trace redistribution | **confirmed (weak)** | Statement §3.5 |
-| 12 | The record of all lives can be read | inverse decoherence + cloning + non-physical channel | **refuted (strong)** | Statement §3.5 |
-| 13 | The innermost self is identical with the absolute | subject = internal section; one $G_2$ type | **confirmed at type level, refuted at token level** | T-221, T-223/T-247 |
-| 14 | The absolute is an infinitely deep Self | unbounded self-reference | **refuted** | $\mathrm{SAD}_{\max} = 3$ **[T]** |
-| 15 | Complete enlightenment: total self-transparency | $\overline{\mathrm{Gap}} = 0$, $\varphi(\Gamma) = \Gamma$ exactly | **refuted** | Hamming bound **[C]**; Lawvere T-55 **[T]** |
+| 11 | Nothing is ever lost | Declared global unitary dilation/static model | **conditional [C/I]** | Trace preservation alone is insufficient |
+| 12 | The record of all lives can be read | Actual channel and recovery code | **unsupported [H]** | Generic erasure is not invertible; this does not prohibit every record |
+| 13 | The innermost self is identical with the absolute | Declared observer section/type analogy | **interpretation [I/H]** | Revised T-221/T-223 do not prove phenomenal identity or one universal orbit type |
+| 14 | The absolute is infinitely deep | Higher-order operational certificates | **not refuted by SAD** | Fano score ceiling is [D]; universal depth ceiling withdrawn |
+| 15 | Total self-transparency | Phase Gap and model recovery | **not refuted by Hamming** | Zero Gap does not identify the full state/gate; coding/diagonal bridges need actual hypotheses |
 | 16 | Individual souls existed before the world's differentiation | individuated states in $\Gamma_\odot$ | **refuted** | Source is one state, zero individuating bits, atemporal **[P/T]** (§7.2) |
 | 17 | What happens "after" — annihilation, legacy, or stream | choice among the three interpretations | **outside jurisdiction** | metatheoretical **[I]** (§8) |
 
@@ -370,7 +334,7 @@ Chronology is not a courtroom order; we proceed roughly east of Greece and forwa
 
 **Doctrine.** The Orphic current: *sōma sēma* — "the body a tomb" (reported at Plato, *Cratylus* 400c) — the soul a fallen divine spark cycling through bodies until purified. Pythagoras taught transmigration across species; Xenophanes mocked him for it — "stop beating the dog; I recognized a friend's soul in its yelp" (DK 21 B7) — incidentally preserving the doctrine's clearest witness. Plato systematized: the soul is immortal (*Phaedo*: four arguments), pre-exists (*Meno* 81–86: the slave boy "recollects" geometry never taught — anamnesis), transmigrates (*Republic* X 614b: the myth of Er — souls choose their next lives, then drink of Lethe and forget), and is tripartite (*Republic* IV: *logistikon* reason, *thymoeides* spirit, *epithymētikon* appetite).
 
-**Mapping [I] and engagement.** Take the *Phaedo* arguments in order. The **cyclical argument** (opposites generate opposites, so the dead must return as the living return to death) fails against the panel's one *asymmetric* theorem: irreversibility **[T]** breaks the symmetry of coming-to-be and passing-away exactly where Plato needed it unbroken. The **recollection argument** is the interesting one: the boy does produce geometry from within — but what is "within" is the *type*, not a biography: the seven-axis $G_2$ grammar constitutive of any viable configuration (T-224/T-247). Anamnesis is real and is the recall of *structure*, misread as the recall of *experience* — pre-existence of the form, not of the person (§7.2). The **affinity argument** (the soul, being form-like, shares the Forms' immortality) makes precisely the type/token slip §3.6 diagnoses. The **final argument** (soul is the principle of life, and cannot admit its opposite) is regime-talk: true that the regime cannot "be dead," false that it cannot *cease* — Epicurus' point, already canonized [in the corpus](/docs/consciousness/ethics-meaning/death-continuity). The Er myth encodes the strongest pre-modern intuition of the rupture: even the doctrine's friends knew memory does not cross — Lethe is kernel decoherence, mythologized. The tripartite soul maps loosely onto sector dominances (L-led, D/E-led, S/O-led profiles) — architecture again sounder than metaphysics.
+**Mapping [I] and engagement.** The Phaedo’s cyclical, recollection, affinity and life-principle arguments can be compared to trajectory, learning, type/token and regime constructions. The comparison does not prove a universal irreversible death asymmetry, instantiate recollection through a forced seven-axis grammar, or settle rebirth. Testing a proposed continuity or memory-transfer claim requires its actual dynamics, observable channel and identity bridge; metaphysical analogies carry no matrix-theorem status.
 
 **Verdict.** Transmigration: **refuted** (row 4). Anamnesis: **relocated** to type level — and there, **confirmed**. Tripartition: structural echo. Lethe: the tradition refuting its own strong claim from inside.
 
@@ -386,7 +350,7 @@ Chronology is not a courtroom order; we proceed roughly east of Greece and forwa
 | sensitive soul | $\mathrm{rank}(\rho_E) > 1$ | L1 |
 | rational soul | the full window: $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | L2 |
 
-And the *nous poiētikos* dispute resolves in one line: what is "separable, unmixed, one-for-all" in cognition is the **type** — the invariant grammar every rational holon instantiates (T-223/T-247). Alexander and Averroes were right against the personal-immortality reading: the immortal intellect is not *yours*; it is what you are an instance of.
+The nous poiētikos comparison is interpretive [I]. Revised T-223 preserves specified frame/sector relabelling properties, not a theorem that every rational system instantiates one forced invariant grammar or that the historic dispute about a common immortal intellect is resolved. A state orbit $[\Gamma]_{G_2}$ is neither a universal soul type nor a quotient preserving the full canonical gate; $\Phi$ remains frame-dependent. Claims about personal immortality therefore need their own physical and phenomenal bridge.
 
 **Verdict.** The core doctrine: **confirmed** — UHM's account of Ф1/Ф2 is Aristotelian to the letter, with the thresholds Aristotle lacked. The active-intellect residue: **relocated** to type level. Aristotle also drew the mortality consequence himself; the theory adds only the proof.
 
@@ -424,9 +388,9 @@ One honest friction: *nibbāna* as an unconditioned that is nonetheless — in s
 
 **Mapping [I].** Advaita's central equation receives the sharpest formal reading in this chapter: **tat tvam asi = T-221**. You are an internal section of the one total state — not *like* it: that is the theorem's content. Jīva = ātman + upādhi translates as: the token = the type + the configuration's particulars; and Śaṅkara's insistence that the jīva's individuality is *adventitious* is the type/token diagnosis of §3.6 made two levels of formality early. Adhyāsa — taking the regime for a substance — is the very category error §1 dismantles. The kośas ladder §6.1 tabulates. The Māṇḍūkya's four states map cleanly: waking and dream are Γ-profiles ([altered states](/docs/consciousness/states/altered-states)); deep sleep is low-$\Phi$ maintenance above viability; and *turīya* is — precisely as the text insists — **not a fourth profile** but the section-fact itself (T-221), which is why it is called the witness of the other three rather than their sibling.
 
-Two corrections, both theorems. The sūkṣma-śarīra as a trans-death saṃskāra courier: Statement §3.3 — refuted; the *phenomena* it explained (newborn endowment) route through the two channels. And Brahman as bottomless self-luminous consciousness: the depth tower caps self-reference at three storeys ($\mathrm{SAD}_{\max} = 3$ **[T]**); the whole grows *ecologically* — in breadth of federation — not by deepening one infinite gaze (§2.8). Dvaita's eternally distinct souls fall at the token level for the same reasons as every substance-soul.
+The mapping remains interpretive [I]. Neither exact no-cloning nor the chosen Fano SAD index universally refutes reincarnation, infinite introspection or a spiritual doctrine: the former constrains a specified unknown-state family, the latter is a finite score convention. A physical transfer/identity claim needs an explicit channel and phenomenal criterion before it can be tested.
 
-**Verdict.** Tat tvam asi, jīva/ātman, turīya, adhyāsa: **confirmed at type level** — Advaita is the tradition the theory most nearly *is*, at that level. Subtle-body transmigration: **refuted**. Infinite divine introspection: **refuted** (row 14). Dvaita: **refuted at token level**.
+**Verdict [I/H].** The proposed Advaita/type analogy is interpretive. The corpus provides no universal depth-three refutation of divine introspection and no state-transfer theorem settling personal rebirth. Those doctrines require independently stated physical/identity claims to enter an empirical test.
 
 ### 5.7 Kabbalah: five names and gilgul {#каббала}
 
@@ -445,7 +409,7 @@ Two corrections, both theorems. The sūkṣma-śarīra as a trans-death saṃsk�
 3. **Where souls come from.** The old dispute: **creationism** (each soul freshly created by God — Jerome, and dominant later) versus **traducianism** (the soul propagated from the parents' souls — Tertullian); Augustine famously could not decide.
 4. **The mystical strands.** Gregory Palamas (*Triads*): God's **essence** (*ousia*) is absolutely imparticipable; His **energies** (*energeiai*) are genuinely participable — deification (*theōsis*) is real contact with the energies, never possession of the essence. Meister Eckhart (German sermons): the **Fünklein**, the little spark, the "ground of the soul" that is one with the "ground of God" — "the eye with which I see God is the eye with which God sees me."
 
-**Mapping [I] and engagement.** (1) The Thomist core is the Aristotelian core: **confirmed** — the regime-and-fixed-point reading of §3.1–3.2 *is* forma corporis with proofs. The subsistent-survival rider fails cleanly: a form without its carrier is a *type*, and a type has no purity, no reflection, no experience — T-153 requires an actual system under a faithful CPTP map. Aquinas's own concession that the separated soul is an *incomplete substance in an unnatural state* registers the problem with complete honesty; the formalism converts the discomfort into a verdict. (2) Resurrection as re-creation of the same subject is the corpus's own standing verdict: **incompatible** — No-Cloning **[T]** plus the rupture **[C]** ([tradition table](/docs/consciousness/ethics-meaning/death-continuity#после-смерти)); as formalized within the dynamics, the raised one is a new subject bearing the pattern. What lies beyond the dynamics is beyond jurisdiction — but then it is not a claim *about this world's states*. (3) The patristic dispute is the Γ(0) question wearing robes: traducianism says initialization from the parental channels; creationism says injection from outside the physical channels. §3.3 sides with Tertullian on structure and with neither on souls: the two channels are the whole story, and both are physical. That a fourth-century polemic isolated exactly the right question is the strand's real distinction. (4) Palamas's distinction transfers with uncanny precision: the *essence* — the total state as it is — is imparticipable from inside **by theorem** (Lawvere T-55: the internal theory is a proper part of the truth; no section reads the whole), while the *energies* — the dynamics, the O-channel influx, the Gap-reductions of practice — are exactly what a holon *can* participate in. Theōsis as asymptotic approach along real gradients, never terminating in possession: the corpus phrases the same structure as "no edge to reach, only the loop to keep traversing" ([Universe as Holonom §2](/docs/core/foundations/universe-as-holonom#статическая-структура)). Eckhart's spark is §3.6's second fact under its oldest name; and his "one eye" sentence is the fixed point of the self-model — the reading and the read coinciding — in a single line of Middle High German.
+**Mapping [I] and engagement.** The regime/type reading can be compared to forma corporis and the essence/energies distinction as an interpretation. Exact no-cloning of an unknown nonorthogonal family does not prove resurrection impossible; known-state preparation and SWAP have different scopes. Identity across reconstruction is a bridge/convention, and the former unconditional Lawvere claim that no internal section can describe the whole is withdrawn unless a real evaluator/diagonal system is exhibited. These qualifications preserve the comparison without presenting a historical or theological verdict as a matrix theorem.
 
 **Verdict.** Forma corporis: **confirmed**. Separated-soul subsistence and same-subject resurrection: **refuted as formalized**. Traducianism vs creationism: **resolved in traducianism's favor, minus the soul**. Palamas and Eckhart: **confirmed at type/participation level** — the strongest Western matches after Aristotle and Spinoza.
 
@@ -501,7 +465,7 @@ The disagreement is thus perfectly localized, and it is **experimentally live**:
 
 **Doctrine.** In Indian cosmology **ākāśa** is the fifth element — space itself as the subtle medium, carrier of sound (*śabda*). Theosophy (Blavatsky, *The Secret Doctrine*, 1888) transformed it into the **Akashic records**: a permanent, universal, *readable* register of all events, thoughts, and lives, consulted by clairvoyance (Leadbeater; Steiner's *Aus der Akasha-Chronik*; Edgar Cayce's "readings").
 
-**Mapping.** Statement §3.5 was built for this row. The weak claim — an indelible universal register — **holds**, on two supports, both conditional [C]: the timeless total state (A5/T-87, the constraint assumed) and trace-conserving redistribution (an earlier version called them "theorem-grade"). The strong claim — *readability* — **fails** three times over: inverse decoherence, No-Cloning, and the physicality of any channel a reader could use. The old ākāśa (space as the medium in which nothing is finally lost) survives better than its modern upgrade (a library with borrowing privileges). A ledger, not a reading room; and the ledger's entries are not experiences waiting to be visited but facts, in the mode in which theorems are facts.
+**Mapping [I/H].** An archive analogy needs an actual retention and recovery channel. Trace conservation supplies no immutable register; a static constrained model does not prove that every accessible environmental state contains every life. Generic erasure prevents full inversion, while reversible restrictions and correctable codes can permit recovery. No-cloning of an unknown family does not forbid reading a classical record or preparing a known state. The weak/strong archive verdict remains model-dependent (§3.5).
 
 **Verdict.** Weak: **confirmed**. Strong: **refuted**. Claimed readings: to the extent they contain real information, they are $\Gamma_{\text{comp}}$-retrievals — culture remembering itself — which is retrieval through channels, and impressive without being occult.
 
@@ -577,7 +541,7 @@ Not in the sense that dissolves the question. Spacetime and the emergent levels 
 
 ### 7.4 Does the soul need a bigger mathematics? {#новая-математика}
 
-The question presumes the phenomena outrun the instruments. Inventory says otherwise: every function of the soul that survived scrutiny is expressed with mathematics already on the panel — fixed points of CPTP maps (Ф2), non-Markovian kernels (memory), exponential-family composites $\mathcal{D}(\mathbb{C}^{7^N})$ (Ф4), coinductive part–whole types and a constrained static total state (Ф5, Ф6). What would need *new* mathematics is exactly what the theorems exclude: a channel-free resonance, a subject-courier, a readable universal archive. And those demand not a richer formalism but a **different theory** — one that gives up channel completeness or background independence, i.e., gives up the monism that makes the rest derivable. The soul does not need a bigger mathematics; it needed a sharper question. The refactoring *was* the mathematics.
+The existing mathematics supplies several candidate models, not a complete inventory theorem. Fixed points, memory kernels, composite states and constrained clocks each require specified hypotheses. A new transfer/recovery channel need not violate monism merely by being absent from one displayed effective equation. The need for a richer model is decided by an explicit empirical or logical deficiency, not the withdrawn universal no-go claims.
 
 ---
 
@@ -586,7 +550,7 @@ The question presumes the phenomena outrun the instruments. Inventory says other
 Three boundaries, stated without decoration, so that this chapter closes no gap by rhetoric (the discipline of the [epistemic vertical](/docs/reference/epistemic-vertical)):
 
 1. **The three interpretations of "after."** Annihilation, informational legacy, composite continuity — all compatible with the formalism; the choice is metatheoretical **[I]** ([canonized here](/docs/consciousness/ethics-meaning/death-continuity#после-смерти)). Note, though, what the three *share*: in none does the subject continue. The freedom the formalism leaves concerns the dignity of the remainder, not the survival of the person.
-2. **The phenomenal bridge.** Why the conditions of consciousness are *lived* — the constitution of experience, as opposed to its criteria — remains the Lawvere-inevitable residue $W$ (T-214). The theory formalizes when there is someone; not what being-someone is made of. Every verdict above is robust to this openness: it concerns the criteria, which are theorems.
+2. **The phenomenal bridge.** The state/report/experience relation requires its own declared map and evidence [I/H]. T-214’s universal internal-map prohibition is withdrawn: Lawvere’s evaluator hypotheses do not apply to every predicate. Unresolved identity does not make every operational criterion a theorem or every historical verdict immune to new evidence.
 3. **The Universe's own stage.** Whether the whole is itself inside a viability window (hole H1.2, [floor register](/docs/core/foundations/universe-as-holonom#регистр-дыр-этажа)) is neither derived nor measured. Cosmic-soul questions inherit this openness.
 
 The theory does not answer "is there a soul?" It **replaces** the question with six answerable ones — and answers them, with statuses attached and two falsifiable edges exposed (rows 10 and 12).
@@ -597,25 +561,25 @@ The theory does not answer "is there a soul?" It **replaces** the question with 
 
 | Component | Formal object | Status of the mapping | Fate |
 |-----------|---------------|----------------------|------|
-| Ф1 experiencer | conscious regime: window + No-Zombie | [I] on [T] cores | ceases irreversibly |
-| Ф2 identity | fixed-point trajectory $\Gamma^*(\tau)$ | [I] on [D]+[C]+[T] | continuable, uncopyable, ruptures |
+| Ф1 experiencer | calibrated capability certificate + phenomenal bridge | [D] + [I/H] | conditional on actual dynamics |
+| Ф2 identity | declared state/model trajectory | [D/I/H] | transfer and phenomenal identity remain distinct |
 | Ф3 baggage | $\Gamma(0)$: genetic + composite channels | [I]; Statement §3.3 [C] | transmitted impersonally |
 | Ф4 field of forms | attractors, $H_{\text{eff}}$, $\Gamma_{\text{comp}}$ | [I] on [D]/[I] cores | outlives individuals, needs carriers |
-| Ф5 eternal record | static total state + trace conservation | Statement §3.5 [C] | timeless ledger, no reading room |
+| Ф5 eternal record | declared dilation/recovery/static construction | [T/C] at scope; archive [I/H] | no universal archive or universal no-reading theorem |
 | Ф6 spark | internal section (T-221) + $G_2$ type | [I] on [T] cores | never individual, never born |
 
 ### What we learned {#что-мы-узнали}
 
 1. **"Does the soul exist?" is ill-typed.** The word bundles six functions with six different fates; the binary question forces a false answer in either direction (§1).
-2. **The experiencer is necessary and mortal.** No zombies among the living **[T]**; no regime without a carrier; no return below the threshold **[T]** (§3.1).
-3. **Identity is a thread, not a token.** Continuable without limit, never carryable: rupture **[C]** plus No-Cloning **[T]** close every re-embodiment door — upload, resurrection, transmigration alike (§3.2).
+2. **Experience needs an explicit bridge [I/H].** The chosen operational certificate is not a universal No-Zombie or mortality theorem; conditional loss is tested under an actual dynamics (§3.1).
+3. **Identity is a declared criterion [D/I].** Continuity, transfer and reconstruction have different meanings; exact unknown-family copying is forbidden, but SWAP and known-state preparation are not (§3.2).
 4. **Karma is real and has no addressee.** New lives are conditioned by the accumulated past through exactly two physical channels; the baggage travels, the passenger does not (§3.3).
 5. **The morphic field exists and is called $\Gamma_{\text{comp}}$.** Superindividual, invisible, formative, channel-bound; Sheldrake's phenomena survive, his carrier does not — with a zero-prediction at the boundary (§3.4, §5.13).
-6. **Eternity is weak-Akasha.** Nothing is erased — the total state is timeless, coherences redistribute; and nothing is readable — no inverse decoherence, no cloning, no non-physical channels (§3.5).
+6. **Retention and recovery require a physical model.** Trace preservation supplies no complete archive; reversible restrictions/codes can permit recovery. Cosmic timelessness is conditional (§3.5).
 7. **The spark is the section-fact.** *Tat tvam asi* is T-221; the uncreated in you is the type, not the token — confirmed at exactly the level the apophatic traditions insisted on (§3.6, §5.6, §5.8).
 8. **The traditions converge on architecture.** Layered souls with mortal lower storeys everywhere; the dispute was always the top of the stack, and the top rows are the non-individual ones (§6.1).
 9. **Spirit types as the Ground.** Every spirit-word is a breath-word because breath is the visible O-influx: energy and clock in one — one spirit, many souls, correctly (§6.2).
-10. **The theory's silence is exact.** Three interpretations of the remainder, one phenomenal bridge, one cosmic stage — open; everything indexed to a person — decided (§8).
+10. **Scope remains explicit.** Cosmic stage, subject individuation, phenomenal identity and retention/recovery channels remain open under their actual assumptions; the comparison does not settle every person-indexed question (§8).
 
 :::tip Closing the comparative section
 This chapter completes the comparative arc: [forty-two theories of consciousness](/docs/consciousness/comparative/consciousness-theories), [panpsychism](/docs/consciousness/comparative/panpsychism-analysis), and now the oldest theory of all. The formal ground it stands on is the ethics-and-meaning sequence — especially [Death and Continuity](/docs/consciousness/ethics-meaning/death-continuity), whose theorems decide most of the register. Where the traditions were right, they were right about structure; where they were wrong, they were wrong about carriers. The soul was never one thing — and everything it named is accounted for.

@@ -16,7 +16,7 @@ We are accustomed to thinking of logic as something abstract — a set of rules 
 
 In this chapter you will learn:
 - why logic in UHM is not a tool of human thinking but a **filter of reality**, sieving out the impossible;
-- how three completely different meanings of the letter "L" (dimension, Lindblad operator, logical Liouvillian) turn out to be the same object;
+- how the L-role, Lindblad operators and Liouvillian are related through an explicitly chosen realization;
 - what three levels of logic exist — from the full (HoTT) to the classical (Boolean);
 - why Gödel's incompleteness theorem is not a problem but a **resource** for evolution;
 - how logic is connected with causal relations and the other dimensions of the Holon;
@@ -55,49 +55,16 @@ In UHM the letter **L** is used for three related but distinct objects:
 | $L_k$ (with index) | Italic | **Lindblad operators** — dissipative channels |
 | $\mathcal{L}_\Omega$ (calligraphic) | Script | **Liouvillian** — full generator of evolution |
 
-This is **not a notational coincidence**, but a manifestation of L-unification [T]: the subobject classifier $\Omega$ generates the logical structure (the L-dimension), from whose atoms the operators $L_k$ are derived, forming the generator $\mathcal{L}_\Omega$:
-
-$$\Omega \xrightarrow{\text{logic}} L \xrightarrow{\text{atoms}} L_k \xrightarrow{\text{generator}} \mathcal{L}_\Omega$$
-
-More details: [L-unification](/docs/core/operators/lindblad-operators#примитивность-ℒω).
+The logical role L, Lindblad operators and the Liouvillian have different mathematical types. Their related notation reflects a proposed model correspondence [I], not an identity derived from the subobject classifier. The [typed realization](../../proofs/categorical/categorical-formalism#l-унификация) replaces the former L-unification theorem [✗].
 :::
-
-## Intuitive explanation
-
-### L-unification: three meanings of one letter
-
-In UHM the letter "L" appears in three seemingly completely different contexts:
-
-1. **L-dimension** — the fourth column/row of the coherence matrix $\Gamma$, describing the logical consistency of the system
-2. **$L_k$ (Lindblad operators)** — dissipation operators in the evolution equation, determining how the system loses coherence when interacting with the environment
-3. **$\mathcal{L}$ (logical Liouvillian)** — the generator of evolution in the space of density operators
-
-At first glance this looks like a notational coincidence. But UHM proves that all three are **manifestations of one object**: the subobject classifier $\Omega$ of the ∞-topos.
-
-:::info Analogy: three meanings of the word "key"
-Imagine the word "key". It can mean:
-1. **A door key** — a tool for opening a lock
-2. **A musical clef** — a symbol on a staff
-3. **A spring** — an underground water source
-
-These are homonyms — words that happen to sound the same. But imagine someone proved: a door key, a musical clef, and a spring are **the same object**, merely observed from different sides. This is precisely what L-unification does: the three "meanings" of the letter L turn out to be the same mathematical object — the projection of $\Omega$ onto $\Gamma$.
-:::
-
-### How L-unification works: from abstract to concrete {#как-работает-l-унификация}
-
-To understand L-unification intuitively, imagine a **water filter**. The filter is one object, but it performs three functions simultaneously:
-
-1. **Determines what is admissible** (which molecules pass through) — this is the L-dimension: it determines which configurations $\Gamma$ are consistent.
-2. **Sets the flow rate** (membrane throughput) — this is the Liouvillian $\mathcal{L}$: it determines how quickly the system evolves.
-3. **Creates waste** (retained impurities) — these are the Lindblad operators $L_k$: they determine what information is *lost* in filtration.
-
-The filter is one, but it can be described in three ways. The subobject classifier $\Omega$ is the "filter of reality", and its three "descriptions" are the three meanings of the letter L.
 
 ## Function
 
 **To connect, to coordinate, to verify consistency.**
 
 ## Description
+
+The following functional descriptions are model interpretations [I/H]. Positivity of Γ is a mathematical constraint; logical competence is not determined by a single population.
 
 Logic is the dimension of **self-consistency**. It determines which configurations $\Gamma$ are possible and which are contradictory. Logic is the filter of reality: states with $\gamma_{LL} \to 0$ cannot exist stably.
 
@@ -113,167 +80,24 @@ The L-dimension **is not a filter** acting on Γ from outside. L is an **aspect*
 - **Low $\gamma_{LL} \ll 1/7$:** the system weakly applies rules (creativity, but potential incoherence)
 - **$\gamma_{LL} = 1/7$:** equilibrium — the logical function receives its "fair share" of resource
 
-Stress of the L-dimension: $\sigma_L = \mathrm{clamp}(1 - 7\gamma_{LL}, 0, 1)$ — [formula T-92 [T]](/docs/core/structure/dimension-a#вывод-формулы-напряжения).
+Stress of the L-dimension: $\sigma_L = \mathrm{clamp}(1 - 7\gamma_{LL}, 0, 1)$ — [formula T-92 [D]](/docs/core/structure/dimension-a#вывод-формулы-напряжения).
 :::
 
-## Categorical definition (L-unification) {#категориальное-определение}
+## Logical and numerical structures {#категориальное-определение}
 
-:::warning Key theorem
-Dimension L is **identical** to the projection of the subobject classifier Ω onto the state Γ:
+In the canonical sheaf topos on state-space opens, $\Omega(U)=\operatorname{Open}(U)$, with restriction by intersection. A logical predicate is a characteristic morphism of a subobject; its truth value is not a matrix or a probability. $\Omega$ is already $0$-truncated in the $\infty$-topos. Internal homotopy type theory encompasses other higher types; it is not obtained by equating higher cognitive levels with $\Omega$ truncations.
 
-$$
-L = \Omega \cap \Gamma
-$$
+### Logic and a chosen finite context {#три-уровня-логики}
 
-From this identification the Lindblad operators $L_k$ are **derived**.
-:::
+The topology's open-set logic is Heyting logic. A chosen orthonormal seven-axis frame gives the different Boolean context of diagonal projections $P_S=\sum_{i\in S}|i\rangle\langle i|$. This context is isomorphic to $2^7$ [T at the chosen frame]. It is not $\operatorname{Dec}(\Omega)$: global decidable opens of the connected density-matrix space are only empty and full. The old $L=\Omega\cap\Gamma$ and $L_k=\sqrt{\chi_{S_k}}$ formulas are withdrawn [✗] as untyped identifications.
 
-### L as a projection of the classifier
+### Numerical filters and dynamical roles {#иерархия-lk}
 
-In the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ (built on the [Grothendieck topology](/docs/core/foundations/axiom-omega#топология-гротендика)) there exists a [subobject classifier](/docs/core/foundations/axiom-omega#внутренняя-логика) Ω, which determines the **internal logic** of the theory.
+For **chosen** effects $E_a\ge0$, $\sum_a E_a=I$, the Kraus operators $K_a=\sqrt{E_a}$ define a CPTP nonselective channel. For chosen Fano coordinate line projectors, $K_p=\Pi_p/\sqrt3$ satisfy $\sum_pK_p^\dagger K_p=I$, since each point lies on three lines. This correct incidence calculation does not require or establish the withdrawn categorical T-41b derivation. All these projectors commute; products are intersections, with at most fifteen nonempty-word maps and the identity for the empty word.
 
-**Definition (L-dimension categorically):**
+Physical dissipators, rates, clock constraints and the interpretation of an L-role require additional data. An internal temporal modality must be supplied and verified separately; the existence of $\Omega$ does not derive a clock shift or a state-dependent regenerative rate. Cognitive metaphors for Boolean/Heyting/homotopy structures are [I], not levels derived from a mathematical truncation.
 
-$$
-L := \{\chi \in \Omega : \chi(\Gamma) = \text{true}\}
-$$
-
-— the set of logical predicates that are true for the given state Γ.
-
-:::tip Formalisation of the L-dimension [T]
-The L-dimension is the **internal logic** of the ∞-topos via the subobject classifier Ω. Formally:
-
-$$
-L(\Gamma) := \{p \in \Omega : p(\Gamma) = \top\}
-$$
-
-— the set of predicates true on $\Gamma$. The logical structure has **three levels** [T]:
-
-| Level | Logic | Structure | Role |
-|-------|-------|-----------|------|
-| ∞-categorical | **HoTT** (homotopy type theory) | Full $\Omega \in \mathbf{Sh}_\infty(\mathcal{C})$ | [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) (n-truncations) |
-| 1-categorical | **Heyting algebra** (intuitionistic) | $\tau_{\leq 0}(\Omega)$ — 0-truncation | Standard topos theory |
-| Decidable | **Boolean** (classical) | $\mathrm{Dec}(\Omega) \cong 2^7$ | [L-unification](/docs/core/foundations/axiom-omega#lk-из-omega): derivation of $L_k$ |
-
-The full internal logic of the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ is HoTT, with temporal modality $\triangleright$ ([emergent time](../../proofs/dynamics/emergent-time#время-в-hott)). Its 0-truncation $\tau_{\leq 0}(\Omega)$ is Heyting algebra (standard result of topos theory). The **decidable fragment** $\mathrm{Dec}(\Omega)$ is a Boolean subalgebra generated by 7 orthogonal projectors $S_k = |k\rangle\langle k|$. L-unification uses precisely this decidable fragment.
-:::
-
-### Three levels of logic: in detail {#три-уровня-логики}
-
-The three levels of logic are not an arbitrary classification, but a **mathematical consequence** of the structure of the ∞-topos. Each level "sees" reality with a certain depth.
-
-#### Level 1: Boolean logic (decidable fragment)
-
-This is the logic familiar to everyone: every statement is either **true** or **false**. In UHM Boolean logic arises in the **decidable fragment** $\mathrm{Dec}(\Omega)$, generated by 7 orthogonal projectors $S_k = |k\rangle\langle k|$.
-
-**Example.** "Is the population $\gamma_{LL}$ above the threshold 0.1?" — a Boolean predicate. Answer: yes or no. There are $2^7 = 128$ Boolean predicates (all yes/no combinations for 7 projectors).
-
-**Role in UHM:** from this level the Lindblad operators $L_k$ are derived. It is Boolean logic that determines the **dissipation channels** — through which "gaps" exactly the system loses coherence.
-
-:::info Analogy: Boolean logic as a black-and-white photo
-Boolean logic is like a black-and-white photograph: every pixel is either black or white. Coarse, but useful for many tasks. It is precisely in "black-and-white" mode that reality determines *through which channels* decoherence flows. This coarseness is not a flaw but a feature: the Boolean level is sufficient for deriving concrete physical operators.
-:::
-
-#### Level 2: Heyting algebra (intuitionistic logic)
-
-This is a logic in which a statement can be **true**, **false**, or **undetermined**. The law of the excluded middle ($P \lor \neg P = \top$) is **not** an axiom — it must be proved for each particular case.
-
-**Example.** "Is the system conscious?" In Boolean logic the answer is: yes or no. In Heyting logic — it may be **undetermined**: if $P$ is close to $P_{\text{crit}} = 2/7$, the system is in a "borderline" state that cannot be unambiguously classified. This is not the observer's ignorance, but **objective indeterminacy**.
-
-**Role in UHM:** describes the standard topos theory in which most of the mathematical constructions of UHM operate. The 0-truncation $\tau_{\leq 0}(\Omega)$ gives Heyting algebra.
-
-:::info Analogy: Heyting logic as a greyscale photo
-If Boolean logic is a black-and-white photo, Heyting logic is a photograph in shades of grey. Intermediate tones, nuances, half-tones appear. "Is this pixel black?" — may not have a definite answer if it is grey. Borderline states of consciousness, transitional phases, "twilight zones" between waking and sleep — all of this lives in Heyting logic.
-:::
-
-#### Level 3: HoTT (full ∞-categorical logic)
-
-The deepest level. In HoTT "truth" is not a point but an entire **space of proofs**. Two proofs of the same statement can be **non-equivalent**, and between them there can be non-trivial paths (homotopies), between the paths — paths of paths, and so on to infinity.
-
-**Example.** "In what way is dimension A connected with dimension E?" At the Boolean level — simply: connected ($\gamma_{AE} \neq 0$) or not ($\gamma_{AE} = 0$). At the HoTT level — each particular path of connection (through different Fano lines, through different chains of intermediate coherences) is a **separate element** of the proof space. The topology of this space carries information about the [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy).
-
-**Role in UHM:** the full logic of the ∞-topos, including the temporal modality $\triangleright$ (time) and n-truncations (levels of reflection). HoTT is the "native language" of UHM at the deepest level.
-
-:::info Analogy: HoTT as a full-colour photo with depth
-HoTT is a full-colour three-dimensional photograph with infinite resolution. Each "pixel" is not just a colour, but an entire space of shades with its own topology. At this level the statement "A is connected with E" contains **all** the information about *exactly how*, *through what*, *by how many paths*, and *how deeply* they are connected. It is precisely HoTT that is needed to describe the **full** interiority hierarchy: the levels of self-awareness (SAD-depth, [depth tower](/docs/consciousness/hierarchy/interiority-hierarchy)) are n-truncations of the proof space.
-:::
-
-### Derivation of the Lindblad operators L_k
-
-**Theorem (L_k from Ω):**
-
-The dissipation operators in the [evolution equation](/docs/core/dynamics/evolution) are determined by the [basis predicates](/docs/core/foundations/axiom-omega#атомы-классификатора) of the classifier:
-
-$$
-L_k := \sqrt{\chi_{S_k}}
-$$
-
-where $S_k$ is the k-th canonical basis predicate of the classifier Ω.
-
-**Corollary (TP automatically):**
-
-$$
-\sum_k L_k^\dagger L_k = \sum_k \chi_{S_k} = \mathbb{1}
-$$
-
-:::info CPTP from Kraus representation [T]
-[Fano operators](/docs/core/operators/lindblad-operators) $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ define a CPTP channel in the Kraus representation. By [Choi's theorem](https://en.wikipedia.org/wiki/Choi%27s_theorem_on_completely_positive_maps) (1975): a channel in Kraus form $\Phi(\rho) = \sum_k A_k \rho A_k^\dagger$ is **completely positive** automatically. Trace preservation: $\sum_p L_p^\dagger L_p = \frac{1}{3}\sum_p \Pi_p = \frac{1}{3} \cdot 3\mathbb{I}_7 = \mathbb{I}_7$ ✓ (each dimension belongs to exactly 3 Fano lines, T-41b [T]). Complete positivity **does not depend** on stratification.
-:::
-
-### Hierarchy of L_k by strata {#иерархия-lk}
-
-| Stratum | System type | Classifier | L_k operator | Interpretation |
-|---------|-------------|-----------|--------------|----------------|
-| I | Matter | $\Omega_{sym}$ — group invariants | $P_{Casimir}$ | Symmetry |
-| II | Life | $\Omega_{viable}$ — P > [P_crit](/docs/proofs/dynamics/theorem-purity-critical) | $\sum_j R_j P_j$ | QECC |
-| III | Mind | $\Omega_{pred}$ — min F | $\nabla_\Gamma F$ | Bayes |
-| IV | Consciousness | $\Omega_{coh}$ — H¹ = 0 | $\check{\delta}$ | Gluing |
-
-**Important:** L_k are **not arbitrary** — they are determined by the stratum on which the system exists.
-
-:::info What each stratum means
-- **Stratum I (Matter):** Logic is **symmetry**. Conservation laws ($[A, H] = 0$), Pauli exclusion, rotational invariance — these are all logical constraints determining the admissible states of physical matter.
-- **Stratum II (Life):** Logic is **error correction**. A living system must maintain $P > P_{\text{crit}}$, and the operators $L_k$ implement a quantum error-correcting code (QECC), "repairing" damaged coherences.
-- **Stratum III (Mind):** Logic is **Bayesian inference**. The operators $L_k$ minimise the free energy $F$ — systematically updating beliefs as new data arrives.
-- **Stratum IV (Consciousness):** Logic is **gluing**. The cohomological condition $H^1 = 0$ means that all local descriptions can be **globally reconciled** — there are no "gaps" in conscious experience.
-:::
-
-### Examples of each level of logic in everyday life {#примеры-уровней-логики}
-
-To make the three levels of logic truly comprehensible, let us examine them in familiar situations:
-
-#### Boolean logic in everyday life
-
-- **Traffic light:** red = stop, green = go. Two states, no third option. This is a Boolean predicate: "May one go?" — yes or no.
-- **Light switch:** on or off. The entire digital world (computers, smartphones, the internet) is built on this elementary logic.
-- **Court verdict:** "Guilty" or "not guilty". The court *must* give a Boolean answer, even if reality is more complex.
-
-#### Heyting logic in everyday life
-
-- **Doctor's diagnosis:** "You may have an allergy" — neither "yes" nor "no", but **indeterminacy**, which requires additional tests. The doctor operates in Heyting logic: the truth of a statement depends on whether it can be *verified*.
-- **Weather:** "Will it rain tomorrow?" — for the distant future this is *objectively* undetermined, not merely "we don't know". The chaotic dynamics of the atmosphere makes the statement undecidable.
-- **Transitional states of consciousness:** falling asleep, meditation, the state of "flow". "Am I asleep?" — may not have a definite answer.
-
-#### HoTT in everyday life
-
-- **"How did you get to work?"** At the Boolean level — "got there" or "didn't". At the HoTT level — each route (metro, bus, on foot, bicycle) is a **separate element of the path space**. Two metro routes are different if one goes via the circle line and the other via the radial. Between routes there are "paths between paths" — ways of deforming one route into another (if there is a transfer at one station).
-- **Proofs of the Pythagorean theorem:** Hundreds of different proofs exist. In Boolean logic they are all "the same" — the theorem is true, end of story. In HoTT each proof is a separate element of the space, and **the relations between them** carry information.
-
-### Connection between L and time
-
-The temporal modality ▷ on Ω generates [discrete time](/docs/proofs/dynamics/emergent-time):
-
-$$
-\tau_n := \triangleright^n(\text{now})
-$$
-
-The evolution of predicates χ ∈ L under the action of ▷ **is** the dynamics of the system.
-
-:::warning Connection with autopoiesis
-Removing dimension $L$ violates **(AP)** — there is no logical closure, no self-consistency. Without $L$, contradictory configurations $\Gamma$ are not filtered out, and the system can evolve into logically impossible states. See [proof](../../proofs/minimality/theorem-minimality-7#случай-n--3-удаление-логики-l).
-:::
-
-**Logic provides Rosen closure:** In Rosen's (M,R)-system, $\beta$-closure requires that causes be consistent with effects. Dimension $L$ implements this function — without it the causal cycle breaks.
+<a id="примеры-уровней-логики"></a>
 
 ## Mathematical representation
 
@@ -309,105 +133,27 @@ Physical interpretation: $\gamma_{LL}$ is a measure of how internally consistent
 - **$\gamma_{LL} = 0$:** Logic is completely absent. Such a system cannot exist stably — without a logical "framework" any configuration immediately falls apart.
 :::
 
-### Logical consistency as an invariant {#логическая-согласованность}
+### Logical load and the population diagnostic {#логическая-согласованность}
 
-:::info Status: [D] Definitions; 7D formula σ_L — [C]
-The definitions of $I_{\text{verify}}$, $\theta_L$, and $\sigma_L$ are given via the subobject classifier Ω and the von Neumann entropy. The approximate formula for $\sigma_L$ in 7D is conditional [C] (depends on the assumption $\gamma_{LL} \ll 1$).
-:::
-
-For a viable system it is required that the load on logical verification does not exceed the throughput:
+The canonical stress is the chosen population diagnostic
 
 $$
-\sigma_L := \frac{I_{\text{verify}}}{\theta_L} < 1
+\sigma_L=\max(0,1-7\gamma_{LL})\in[0,1].
 $$
 
-#### Definition of I_verify (verification information) {#определение-i-verify}
+It is not a quantum mutual information or a consequence of $\Omega$. A state with $\gamma_{LL}=0$ can be a stationary density matrix (for example under zero dynamics); its stability must be checked for the supplied vector field.
 
-**Definition (I_verify via mutual information):**
+#### Verification information requires a measurement {#определение-i-verify}
 
-$$
-I_{\text{verify}}(\Gamma) := S_{vN}(\rho) - S_{vN}(\rho | L) = I(\Gamma : L)
-$$
+Choose an ensemble label $X$ and an implemented verification instrument with classical outcome $Y$. The operational information is $I_{\mathrm{verify}}:=I(X:Y)$ [D], computed from their joint distribution. If a bipartite quantum realization is declared instead, its mutual information is $I(A:B)=S(\rho_A)+S(\rho_B)-S(\rho_{AB})$. The native L-axis is a one-dimensional summand, not a tensor subsystem. The former $S(\rho)-S(\rho\mid L)=I(\Gamma:L)$ without an instrument or tensor factor is withdrawn [✗].
 
-where:
-- $S_{vN}(\rho) = -\mathrm{Tr}(\rho \log \rho)$ — von Neumann entropy
-- $I(\Gamma : L)$ — quantum mutual information between the state Γ and the L-dimension
-- $\rho | L$ — conditional state for a known value of the L-projection
+#### Capacity requires a timescale {#определение-theta-l}
 
-**Interpretation:** $I_{\text{verify}}$ is the amount of information extractable from Γ in logical verification through the L-dimension.
+An entropy budget $b_L:=\gamma_{LL}\log7$ can be stipulated [D]. A throughput additionally needs a time unit: for example $\theta_L=b_L/t_L$ with calibrated $t_L>0$. Neither the timescale nor this capacity model follows from the classifier. A verification information *rate* $\dot I_{\mathrm{verify}}$ may then be compared to $\theta_L$.
 
-#### Definition of θ_L (throughput) {#определение-theta-l}
+#### Distinct load and stress {#строгое-определение-sigma-l}
 
-**Definition (θ_L via maximum entropy):**
-
-$$
-\theta_L(\Gamma) := \gamma_{LL} \cdot \log(N)
-$$
-
-where:
-- $\gamma_{LL}$ — population of the L-dimension (diagonal element of the coherence matrix)
-- $\log(N) = \log(7)$ — maximum entropy of an $N$-dimensional system
-
-**Interpretation:** $\theta_L$ is the throughput of the L-dimension, defined as the product of the population by the maximum possible entropy.
-
-#### Definition of σ_L [C] {#строгое-определение-sigma-l}
-
-**Definition (σ_L via reduced matrix):**
-
-$$
-\sigma_L(\Gamma) := \frac{S_{vN}(\rho_L)}{\gamma_{LL} \cdot \log(N)}
-$$
-
-where $\rho_L = \mathrm{Tr}_{-L}(\Gamma)$ is the reduced density matrix of the L-dimension in the extended formalism.
-
-**For the minimal 7D formalism** (single-level $7 \times 7$ matrix):
-
-$$
-\sigma_L(\Gamma) \approx \frac{7(1 - \gamma_{LL})}{6}
-$$
-
-:::warning Status: [C] Conditional formula
-The approximate formula for 7D is obtained under the assumption $\gamma_{LL} \ll 1$ and a uniform distribution of the remaining populations. The approximation **is not a rigorous derivation**: the transition $\rho_L \approx \gamma_{LL}$ (scalar) is correct only in the extended formalism, and in 7D (7 is prime) the partial trace $\mathrm{Tr}_{-L}$ is not defined due to the absence of tensor factorisation.
-:::
-
-**Approximate derivation of the formula for 7D:**
-
-In the minimal formalism $\rho_L \approx \gamma_{LL}$ (scalar), therefore:
-
-$$
-S_{vN}(\rho_L) \approx -\gamma_{LL} \log(\gamma_{LL}) - (1-\gamma_{LL})\log\left(\frac{1-\gamma_{LL}}{6}\right)
-$$
-
-For $\gamma_{LL} \ll 1$:
-
-$$
-\sigma_L \approx \frac{1 - \gamma_{LL}}{\gamma_{LL}} \cdot \frac{1}{\log 7} \approx \frac{7(1-\gamma_{LL})}{6}
-$$
-
-**Definitions of components (summary):**
-
-| Parameter | Definition | Status |
-|-----------|------------|--------|
-| $I_{\text{verify}}$ | $I(\Gamma : L) = S_{vN}(\rho) - S_{vN}(\rho \| L)$ — mutual information | [D] Definition |
-| $\theta_L$ | $\gamma_{LL} \cdot \log(N)$ — throughput | [D] Definition |
-| $\gamma_{LL}$ | Population of dimension L | [D] Definition |
-| $\sigma_L$ | $S_{vN}(\rho_L) / (\gamma_{LL} \cdot \log N)$ — logical load | [D] Definition; 7D formula [C] |
-
-**Interpretation:** $\sigma_L \in [0, \infty)$ — a measure of the **logical load** on the system:
-- $\sigma_L < 1$: logical verification keeps pace with dynamics
-- $\sigma_L \geq 1$: bottleneck — the system loses consistency
-
-**Connection with the viability condition:**
-
-As $\sigma_L \to 1$ the system approaches the boundary of logical coherence. This corresponds to a situation where the L-dimension is overloaded — the verification of consistency becomes a bottleneck.
-
-:::note Connection with PID
-The condition $\sigma_L < 1$ is a consequence of the [Principle of Informational Distinguishability](/docs/core/foundations/axiom-omega#примитив): the system must be capable of distinguishing consistent from inconsistent configurations.
-:::
-
-:::info Analogy: σ_L as processor load
-Imagine a computer. $\sigma_L$ is the "load on the logic processor". When $\sigma_L < 1$ the processor copes: it verifies the consistency of all data and keeps pace with the information flow. When $\sigma_L \to 1$ the processor is at its limit: "lags" appear, the system begins to "hang". When $\sigma_L > 1$ — overload: the system "freezes", loses consistency. In a living organism this can manifest as cognitive collapse (information overload), a nervous breakdown, or loss of consciousness.
-:::
+Define an operational load $\ell_L:=\dot I_{\mathrm{verify}}/\theta_L$ when the denominator is positive [D]. It is a separate diagnostic from $\sigma_L$. The former reduced-entropy formula and approximation $7(1-\gamma_{LL})/6$ are withdrawn [✗]: no native partial trace over the other six axes exists, and the stated small-population expansion did not imply that approximation. Population stress, verification information and throughput require their own data and should not share an unproved equality.
 
 ## Types of logical relations
 
@@ -464,51 +210,17 @@ The four constraints above are not arbitrary rules, but **necessary conditions**
 Imagine a building. The walls are the logical constraints. They do not "restrict" life inside the building — they **make it possible**. Without walls there is no roof, no protection from rain, no rooms. The L-constraints work the same way: they do not narrow the space of admissible states — they **create** that space, cutting off meaningless (negative probabilities, normalisation violation) configurations.
 :::
 
-## Connection with causality {#связь-с-каузальностью}
+## Causality requires a directed process model {#связь-с-каузальностью}
 
-Logic determines causal relations through the structure of dynamics:
-
-$$
-\text{Cause}(A \to B) \Leftrightarrow \exists\, U(\tau): \text{supp}\!\left(U(\tau)\rho_A U^\dagger(\tau)\right) \cap \text{supp}(\rho_B) \neq \emptyset
-$$
-
-where:
-- $\rho_A$, $\rho_B$ — states corresponding to events $A$ and $B$
-- $U(\tau)$ — unitary evolution operator in [internal time](../../proofs/dynamics/emergent-time)
-- $\text{supp}(\rho)$ — support of the density matrix — the subspace onto which $\rho$ projects non-zero weight
-
-```mermaid
-graph LR
-    C["Cause (ρ_A)"] -->|"U(τ), L-consistent"| E["Effect (ρ_B)"]
-    C -->|"L-forbidden"| X["∅"]
-```
+Closure of CPTP maps under composition proves closure of allowed quantum operations. It does not define a causal partial order. With all CPTP maps allowed, every state reaches every other state by the reset $X\mapsto\operatorname{Tr}(X)\rho$, so reachability is not antisymmetric.
 
 ### Causality in detail {#каузальность-подробнее}
 
-Causality in UHM is not a postulate, but a **consequence** of the structure of the L-dimension. Cause $A$ can lead to effect $B$ **only** if there exists an admissible (CPTP) evolution that transfers the support of $\rho_A$ to a region intersecting with the support of $\rho_B$.
+Unitary channels have CPTP inverses; reset channels can reduce von Neumann entropy. Thus CPTP alone neither forbids loops nor proves an entropy arrow. A causal model must additionally specify events, their time ordering, admissible operations/interventions and any spacetime or no-signalling constraints. A selected semigroup has its own irreversible behavior; contraction of relative entropy to a common stationary state is a theorem only under its stated hypotheses.
 
-This gives three important properties:
+### Causality and agency {#каузальность-и-свобода}
 
-**1. Causal order.** If $A$ is a cause of $B$, and $B$ is a cause of $C$, then $A$ is a cause of $C$ (transitivity). This follows from the fact that the composition of CPTP channels is also a CPTP channel.
-
-**2. Prohibition of causal loops.** If $A$ is a cause of $B$ and $B$ is a cause of $A$, then $A$ and $B$ are **the same event** (in the sense of indistinguishability by $\Gamma$). There are no causal loops, because a CPTP channel is irreversible — it increases entropy.
-
-**3. Logical filter.** Not all evolutions that "can be imagined" are actually admissible. The L-dimension cuts off those that violate CPTP, Hermiticity, or positivity. This is the **physical** realisation of the principle of non-contradiction: from true premises only true conclusions follow.
-
-:::note Example: why information cannot be sent to the past
-In UHM "sending information to the past" would mean: there exists a CPTP channel $\Phi$ such that $\Phi(\rho_{\text{future}})$ has non-zero overlap with $\rho_{\text{past}}$ for $\tau < 0$. But the arrow of time (a consequence of CPTP, see [Dynamics (D)](./dimension-d)) forbids this: physically realisable paths have $\sigma(\gamma) = +1$, meaning monotonic growth of entropy.
-:::
-
-### Causality and free will {#каузальность-и-свобода}
-
-The connection of logic with causality raises a deep question: if causal relations are **fully** determined by the L-dimension, is there room for free will?
-
-In UHM the answer is non-trivial: at the **Boolean** level of logic causality is deterministic (a given cause inevitably leads to a given effect). But at the **Heyting** and especially the **HoTT level** causality acquires new properties:
-
-- **Heyting level:** there are causes with an *undetermined* effect — not because we do not know the result, but because the result is objectively undetermined.
-- **HoTT level:** one cause can lead to an effect *by many paths*, and the choice of path is information not contained in the cause. At stratum IV (consciousness) the system can *observe* the space of possible paths and choose between them.
-
-This is not classical free will ("I could have done otherwise"), but something deeper: **navigation in the space of causal paths**, accessible only to systems with sufficiently deep reflection ($R \geq 1/3$).
+Attributing intentions or agency to the L-role is an interpretation [I/H]. The classifier and positivity constraints do not prove either determinism or free will. They delimit well-typed logical predicates and valid quantum states; a causal/behavioral bridge remains separate.
 
 ## Examples
 
@@ -695,18 +407,13 @@ Note that L shares Fano line $\{D, L, U\}$ with [dimension D (Dynamics)](./dimen
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [T]
-The dimension corresponds to $e_4 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]; the step to $\mathbb{O}$ takes the canonical orientation of the Fano lines, [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)) derives the octonionic structure from (AP)+(PH)+(QG)+(V); the combinatorial and functional uniqueness of each role claimed by [T-177](/docs/reference/status-registry) and [T-183](/docs/reference/status-registry) is retracted [✗] (2026-09-25): it rested on the axis sectors of T-48a. Restated (T-177, T-183): given $O$ and the $\kappa_0$ pair $\{E,U\}$, incidence fixes $A$ and $D$ [T], and one binary convention [D] fixes $E$ versus $U$ together with $L$ versus $S$. The specific assignment $L = e_4$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Chosen octonionic correspondence [D/I]
+The assignment $L=e_4\in\operatorname{Im}\mathbb O$ belongs to the declared oriented orthonormal frame. For a specified positive octonionic three-form, its stabilizer is $G_2$ [T]. This group identity does not uniquely assign functional names to axes or determine a physical encoder. The former universal T-42a rigidity is withdrawn [✗]; [reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) give a conditional comparison theorem. Incidence can constrain labels **after** the required marks are supplied; those marks and the remaining label convention are model data. The [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) states the additional algebraic inputs, and [the frame discussion](./dimensions#октонионная-интерпретация) distinguishes its symmetries from physical gauge equivalence.
 :::
 
 ## Key conclusions of the chapter {#ключевые-выводы}
 
-1. **Logic is an aspect of reality, not a tool of thought.** The L-dimension determines which configurations $\Gamma$ are consistent and which cannot exist.
-2. **L-unification: three = one.** The L-dimension, Lindblad operators $L_k$, and the Liouvillian $\mathcal{L}$ are manifestations of a single object: the subobject classifier $\Omega$.
-3. **Three levels of logic.** Boolean (for concrete physical operators) → Heyting (for boundary states) → HoTT (for the full ∞-structure of reality).
-4. **Incompleteness is an engine, not a bug.** Gödelian incompleteness of the L-dimension forces the system to turn to O for new information, ensuring evolution.
-5. **Causality is derived.** Cause-and-effect relations are a consequence of the CPTP structure filtered by the L-dimension.
-6. **L is combinatorially unique.** The only $\bar{\mathbf{3}}$-element outside the Higgs line — the "independent referee" of the system.
+Logical predicates, state validity, numerical filtering and causal models have distinct types. A chosen frame supplies the Fano incidence and the L-name [D/I]; it does not establish functional uniqueness or a causal arrow. The canonical population stress and separately calibrated verification load must be kept distinct.
 
 ---
 

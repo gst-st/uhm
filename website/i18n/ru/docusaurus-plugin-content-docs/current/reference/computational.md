@@ -2,1118 +2,246 @@
 slug: /reference/computational
 sidebar_position: 5
 title: Вычислительная реализация
-description: Verum-реализация Голонома
+description: Динамика с сохранением состояния, диагностика и вычислительные ограничения
 ---
 
-# Вычислительная Реализация
+# Вычислительная реализация
 
-:::note О нотации в коде
-Код написан на **[Verum](https://verum-lang.org)** — языке с зависимыми типами, refinement-типами, системой эффектов, протоколами и встроенным proof DSL. Соответствия:
-- `gamma` ($\Gamma$) — [матрица когерентности](/docs/core/dynamics/coherence-matrix), тип `CoherenceMatrix<7>` с refinement-предикатами density-matrix
-- `H` — [гамильтониан](/docs/core/dynamics/evolution#1-унитарный-член)
-- `L` ($L_k$) — операторы Линдблада
-- `purity` ($P$) — [мера жизнеспособности](/docs/core/dynamics/viability#определение-чистоты)
-- `d_FS` ($d_{\mathrm{FS}}$) — [метрика Фубини–Штуди](/docs/reference/specification#метрика-фубини-штуди)
-- `kappa_0` ($\kappa_0$) — [базовая скорость регенерации](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) (категориальный вывод)
-- `P_CRIT` ($P_{\text{crit}} = 2/7$) — [критическая чистота](/docs/proofs/dynamics/theorem-purity-critical)
-:::
-
-:::note Слой API
-Листинги нацелены на **типизированный слой фиксированной размерности** `core.math.linalg` (`StaticMatrix<Complex, 7, 7>` с `.adjoint()`, свободные `expm`/`eigvalsh`, уточнённый `CoherenceMatrix`). Сам *тип* `StaticMatrix` существует уже сейчас; его поверхность методов — строящийся слой, а исполним сегодня динамический путь `Matrix<T: Numeric>`. Полная карта статуса: [Реализация КК — Статус реализации](/docs/applied/coherence-cybernetics/implementation#быстрый-старт).
-:::
-
-:::warning Ограничения реализации
-Данная реализация включает полную эволюцию с тремя членами, но отсутствуют:
-1. **Меры сознательности** $R$, $\Phi$, $D_{\text{diff}}$, $C$ — см. [Самонаблюдение](/docs/consciousness/foundations/self-observation)
-2. **Классификация уровней** L0/L1/L2/L3/L4 — см. [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy)
-3. **Оператор самомоделирования** $\varphi$ — см. [Формализация φ](/docs/proofs/categorical/formalization-phi)
-4. **Рефлексия высших порядков** $R^{(n)}$ — см. [Рефлексия высших порядков](/docs/proofs/categorical/formalization-phi#28-рефлексия-n-го-порядка-для-l3l4)
-
-Для полной реализации см. [Иерархия интериорности: Алгоритм классификации](/docs/proofs/consciousness/interiority-hierarchy#61-алгоритм-классификации-уровня).
-:::
-
-:::info Гарантия положительности
-Нелинейный регенеративный член сохраняет положительность $\Gamma \geq 0$ при условии $\alpha = \kappa \cdot \Delta\tau < 1$. Реализация включает адаптивный контроль шага для гарантии этого условия. См. [теорему о сохранении положительности](/docs/core/dynamics/evolution#сохранение-положительности).
-:::
+Здесь задана исполняемая референсная модель на NumPy: **выбранная** семимерная динамика состояний и её диагностика. Она не восстанавливает биологическую матрицу из некалиброванных признаков, не удостоверяет опыт и не реализует все категориальные конструкции. Прежние листинги Verum смешивали незавершённый API с математическими гарантиями; порт на Verum должен воспроизвести указанные отображения и пройти собственные проверки компиляции и численных остатков. См. [статус реализации](/docs/applied/coherence-cybernetics/implementation#быстрый-старт).
 
 ## Вычислительная сложность операций УГМ
 
-:::info Асимптотические оценки
-Все оценки приведены для матрицы $\Gamma \in \mathbb{C}^{N \times N}$. Для стандартного Голонома $N = 7$.
-:::
+Для плотного эрмитова состояния размера $N\times N$ чистота $P=\sum_{ij}|\gamma_{ij}|^2$ вычисляется за $O(N^2)$; столько же требуют $\Phi$, $R=1/(NP)$ и когерентность маски строки. Энтропия и общее спектральное разложение стоят $O(N^3)$ в стандартной модели плотной арифметики. Плотное унитарное сопряжение стоит $O(N^3)$; выбранные равномерная декогеренция и замороженное замещение — $O(N^2)$. Общее семейство из $M$ операторов Крауса стоит $O(MN^3)$ без использования специальной структуры. Энтропия поднятого экспериенциального считывания зависит от размерности поднятия, не обязательно от семи.
 
-| Операция | Сложность | Формула | Примечание |
-|---|---|---|---|
-| Чистота $P = \mathrm{Tr}(\Gamma^2)$ | $O(N^3)$ | Умножение матриц + след | Доминирует $\Gamma^2$ |
-| Норма Фробениуса $\|\Gamma\|_F$ | $O(N^2)$ | $\sqrt{\sum_{ij} \|\gamma_{ij}\|^2}$ | Сумма квадратов элементов |
-| Энтропия $S_{vN} = -\mathrm{Tr}(\Gamma \log \Gamma)$ | $O(N^3)$ | Диагонализация | Собственные значения |
-| Оператор $\varphi(\Gamma)$ | $O(M \cdot N^3)$ | $\sum_m K_m \Gamma K_m^\dagger$ | $M$ операторов Крауса |
-| Рефлексия $R$ | $O(N^3)$ | $1/(7P)$, где $P = \mathrm{Tr}(\Gamma^2)$; $\rho^*_{\mathrm{diss}} = I/7$ | Доминирует $\Gamma^2$ |
-| Интеграция $\Phi$ | $O(N^2)$ | $\sum_{i \neq j} \|\gamma_{ij}\|^2 / \sum_i \gamma_{ii}^2$ | Суммы по элементам |
-| Дифференциация $D_{\text{diff}}$ | $O(N^3)$ | $\exp(S_{vN}(\rho_E))$ | Требует энтропии |
-| Сознательность $C = \Phi \cdot R$ | $O(M \cdot N^3)$ | Композиция; $D_{\text{diff}} \geq 2$ — отдельное условие | Доминирует $R$ |
-| Один шаг $d\Gamma/d\tau$ | $O(N^3)$ | Умножение матриц | Унитарная + диссипация |
-| Проверка $P > P_{\text{crit}}$ | $O(N^3)$ | Вычисление $P$ | Один вызов |
-| Метрика $d_{\mathrm{FS}}$ | $O(N)$ | $\arccos(\|\langle\psi\|\phi\rangle\|)$ | Скалярное произведение |
-
-**Для $N = 7$, $M = 7$:**
-
-$$
-O(M \cdot N^3) = O(7 \cdot 343) = O(2401) \approx O(1)
-$$
-
-Все операции выполняются за микросекунды на современном оборудовании.
-
-**Масштабирование для $N > 7$:**
-
-- **Узкое место:** матричные операции $O(N^3)$
-- **Оптимизация:** разреженные представления при $\|\gamma_{ij}\| \ll 1$ для $i \neq j$
-- **Параллелизация:** GPU-ускорение для $N > 100$
-
-:::warning Ограничение масштабирования
-При расширении на композитные системы $\mathbb{H}_{1 \otimes \cdots \otimes n}$ размерность растёт экспоненциально: $N = 7^n$. Для $n = 3$: $N = 343$, что уже требует оптимизированных алгоритмов.
-:::
+Фиксация $N=7$ устраняет переменную размерность из этих оценок, но не даёт универсального времени работы или оценки сложности задач. Для заявлений о времени нужны аппаратура, точность, размер пакета и замеры. Общее $k$-составное состояние имеет $7^{2k}-1$ вещественных параметров; факторизованное хранение допустимо только при объявленной факторизации или контролируемом приближении.
 
 ## Класс Holon
 
-```verum
-mount core.math.complex;
-mount core.math.linalg.{Matrix, HermitianMatrix, expm, eigvalsh, norm};
+Контракт состояния: эрмитовость, PSD и единичный след. Выбранная динамика:
 
-/// Dimension labels (A, S, D, L, E, O, U).
-public type Dim is A | S | D | L | E | O | U;
+$$
+\dot\Gamma=-i[H,\Gamma]-\gamma\operatorname{offdiag}\Gamma+a(\Gamma)(\varphi(\Gamma)-\Gamma),\qquad a=\kappa g_V(P),\quad g_V=\operatorname{clamp}(7P-2,0,1).
+$$
 
-/// A 7-dimensional coherence matrix — Hermitian, PSD, unit trace.
-/// Refinement predicate is checked by SMT at compile-time where possible,
-/// and by @verify(runtime) otherwise.
-public type CoherenceMatrix is Matrix<Complex, 7, 7>
-    where is_hermitian(self)
-       && is_psd(self)
-       && (trace(self).real() - 1.0).abs() < 1.0e-10;
+$H$, $\gamma\ge0$, неотрицательная модель темпа и самомодель со значениями в состояниях — входные данные [О/П]. Порог и затвор — [выборы](/docs/reference/mathematical-kernel#thresholds), не единственные следствия Ландауэра или категорий. Темпы имеют единицы обратного физического времени; $H$ задан в частотных единицах либо делится на $\hbar$.
 
-/// A Holon: the minimal self-contained unit of reality
-/// (UHM T-15..T-82). Evolution follows
-/// `dΓ/dτ = -i[H_eff, Γ] + D[Γ] + R[Γ, E]` with
-/// regeneration R[Γ, E] = κ(Γ) · (ρ* - Γ) · g_V(P).
-public type Holon is {
-    mut gamma: CoherenceMatrix,
-    mut gamma_target: Maybe<CoherenceMatrix>,
-    mut H: HermitianMatrix<Complex, 7>,
-    L: [Matrix<Complex, 7, 7>; 7],
-    omega_0: Float,
-};
+Для указанного двухсостоянийного кинетического цикла $J=ac/(a+b+c)$ — точный стационарный поток [Т при модели]; выбор темпов и отождествление $J$ с регенеративным коэффициентом — [О/Г]. Произведение $ac/b$ приближённо лишь при $b>0$ и $(a+c)/b\ll1$; относительное завышение равно $(a+c)/b$. Код принимает физические темпы непосредственно, не выводя их из амплитуд матрицы. Положительный bootstrap $\omega_0/7$ — выбранный темп, а не универсальная категорная константа.
 
-/// Critical purity — viability threshold (T-39a [T]).
-public const P_CRIT: Float = 2.0 / 7.0;        // ≈ 0.2857
+## Референсный код, сохраняющий состояние {#reference-code}
 
-/// Minimal regeneration: κ_bootstrap = ω₀/N where N = 7.
-/// Categorical derivation: /docs/core/foundations/axiom-septicity#теорема-kappa-bootstrap.
-public const KAPPA_BOOTSTRAP: Float = 1.0 / 7.0;  // ≈ 0.143 (for ω₀ = 1)
+Полный листинг требует только NumPy. Валидатор выдаёт ошибку, если остатки превышают объявленную точность; он не проецирует неверное обновление обратно в состояние. Малые остаточные отрицательные собственные значения обнуляются лишь при вычислении энтропии и квадратного корня, поэтому результат имеет соответствующую численную точность. Положительные вклады в энтропию не отбрасываются порогом.
 
-/// Optimal purity upper edge of the Goldilocks window (T-124 [T]).
-public const P_OPT: Float = 3.0 / 7.0;
+```python
+import numpy as np
 
-/// Dimension index helper.
-public fn index(d: Dim) -> Int { d as Int }
+N, E = 7, 4
+I7 = np.eye(N, dtype=complex) / N
+TOL = 1e-10
 
-implement Holon {
-    /// Initialise a pure Holon: |ψ⟩ = (1/√7) Σ|i⟩ (fully coherent attractor).
-    public fn new_pure(omega_0: Float) -> Holon
-        where ensures result.purity() == 1.0
-    {
-        let psi = Vector<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
-        let g = psi.outer(psi.conjugate());
-        Holon {
-            gamma:        g,
-            gamma_target: Maybe.None,
-            H:            build_hamiltonian(),
-            L:            build_lindblad_operators(),
-            omega_0:      omega_0,
-        }
-    }
 
-    /// Initialise a maximally mixed Holon: Γ = I/7 (pre-viable state).
-    public fn new_mixed(omega_0: Float) -> Holon
-        where ensures (result.purity() - 1.0/7.0).abs() < 1.0e-10
-    {
-        let g = (Matrix<Complex, 7, 7>.identity()) / Complex.from_real(7.0);
-        Holon { gamma: g, gamma_target: Maybe.None,
-                H: build_hamiltonian(), L: build_lindblad_operators(),
-                omega_0: omega_0 }
-    }
+def density(g, n=None):
+    g = np.asarray(g, dtype=complex)
+    if g.ndim != 2 or g.shape[0] != g.shape[1]:
+        raise ValueError("square matrix required")
+    if n is not None and g.shape != (n, n):
+        raise ValueError("wrong state dimension")
+    if not np.isfinite(g).all():
+        raise ValueError("finite entries required")
+    if np.linalg.norm(g - g.conj().T, 'fro') > TOL:
+        raise ValueError("Hermiticity residual exceeds tolerance")
+    if abs(np.trace(g) - 1) > TOL:
+        raise ValueError("trace residual exceeds tolerance")
+    if np.linalg.eigvalsh(g).min() < -TOL:
+        raise ValueError("negative eigenvalue exceeds tolerance")
+    return g
 
-    /// Purity P = Tr(Γ²) — viability measure (T-39a).
-    public fn purity(&self) -> Float
-        where ensures 1.0/7.0 <= result && result <= 1.0
-    {
-        (self.gamma.matmul(&self.gamma)).trace().real()
-    }
 
-    /// Viability check: P > P_crit (T-39a).
-    public fn is_viable(&self) -> Bool { self.purity() > P_CRIT }
+def entropy(g):
+    ev = np.linalg.eigvalsh(density(g))
+    ev = np.maximum(ev, 0)  # only residual negatives accepted above
+    pos = ev[ev > 0]
+    return float(-np.sum(pos * np.log(pos)))
 
-    /// Von Neumann entropy S = -Tr(Γ log Γ).
-    public fn entropy(&self) -> Float
-        where ensures 0.0 <= result && result <= (7.0).ln()
-    {
-        let eigs = eigvalsh(&self.gamma)
-            |> filter(|x| *x > 1.0e-12);
-        -eigs.iter().map(|x| x * x.ln()).sum()
-    }
 
-    /// Base regeneration rate κ₀ = ω₀ · |γ_OE| · |γ_OU| / γ_OO
-    /// (T-64 [T], corrected 2026-09-25; categorical derivation via Coh_E → κ).
-    public fn kappa_0(&self) -> Float where ensures result >= 0.0 {
-        let o = index(Dim.O); let e = index(Dim.E); let u = index(Dim.U);
-        let g_OO = self.gamma[o, o].real();
-        if g_OO < 1.0e-12 { return 0.0; }        // No Ground connection
-        let g_OE = self.gamma[o, e].abs();
-        let g_OU = self.gamma[o, u].abs();
-        self.omega_0 * g_OE * g_OU / g_OO
-    }
+def metrics(g, rho_e=None):
+    g = density(g, N)
+    diag = np.real(np.diag(g))
+    d = float(np.sum(diag**2))
+    off = g - np.diag(np.diag(g))
+    q = float(np.sum(np.abs(off)**2))
+    p = d + q
+    # rho_e = g is a selected readout [D], not a partial trace of E.
+    readout = g if rho_e is None else density(rho_e)
+    r, phi, diff = 1 / (N * p), q / d, np.exp(entropy(readout))
+    coh_e = (diag[E]**2 + 2 * np.sum(np.abs(off[E])**2)) / p
+    stress = np.clip(1 - N * diag, 0, 1)  # selected score [D]
+    cap2 = p > 2/N and r >= 1/3 and phi >= 1 and diff >= 2
+    return dict(P=p, R=r, Phi=phi, D_diff=float(diff),
+                Coh_E=float(coh_e), C=phi*r, Cap2=bool(cap2),
+                full_window=bool(cap2 and np.max(stress) < 1),
+                margins=(p-2/N, r-1/3, phi-1, diff-2),
+                stress=stress)
 
-    /// E-coherence (HS-projection π_E, T-73 [T]):
-    /// Coh_E(Γ) = ‖π_E(Γ)‖²_HS / ‖Γ‖²_HS
-    ///          = (γ_EE² + 2·Σ_{i≠E}|γ_Ei|²) / Tr(Γ²) ∈ [1/7, 1].
-    public fn coh_e(&self) -> Float
-        where ensures 1.0/7.0 <= result && result <= 1.0
-    {
-        let e = index(Dim.E);
-        let g_EE_sq = self.gamma[e, e].real().pow(2);
-        let cross   = (0..7)
-            |> filter(|i| *i != e)
-            |> map(|i| self.gamma[e, *i].abs().pow(2))
-            |> sum();
-        let p = self.purity();
-        if p < 1.0e-12 { return 1.0 / 7.0; }
-        ((g_EE_sq + 2.0 * cross) / p).clamp(1.0 / 7.0, 1.0)
-    }
 
-    /// Set the regeneration target ρ* (full theory: ρ* = φ(Γ), T-96 [T]).
-    public fn set_target(&mut self, target: Maybe<CoherenceMatrix>) {
-        self.gamma_target = match target {
-            Maybe.Some(t) => Maybe.Some(t),
-            Maybe.None    => Maybe.Some(self.gamma.clone()),
-        };
-    }
+def kinetic_flux(a, b, c):
+    # Chosen two-state cycle: flux J=ac/(a+b+c), rates in 1/time.
+    rates = np.array([a, b, c], dtype=float)
+    if not np.isfinite(rates).all() or np.any(rates < 0):
+        raise ValueError("finite nonnegative physical rates required")
+    scale = float(np.max(rates))
+    if scale == 0:
+        return 0.0
+    aa, bb, cc = rates / scale
+    return float(scale * aa * cc / (aa + bb + cc))
 
-    /// Regenerative increment dΓ_regen = κ·g_V·(ρ*−Γ)·dτ.
-    /// Positivity preservation: α = κ·g_V·dτ < 1 enforced by
-    /// adaptive step (see evolution.md CPTP-structure theorem).
-    fn regeneration(&self, dtau: Float) -> Matrix<Complex, 7, 7> {
-        let p = self.purity();
-        let g_v = ((p - P_CRIT) / (P_OPT - P_CRIT)).clamp(0.0, 1.0);
 
-        if g_v <= 0.0 { return Matrix<Complex, 7, 7>.zeros(); }
-        let target = match self.gamma_target {
-            Maybe.Some(t) => t,
-            Maybe.None    => return Matrix<Complex, 7, 7>.zeros(),
-        };
+def chosen_phi(g, anchor):
+    g, anchor = density(g, N), density(anchor, N)
+    r = metrics(g)['R']
+    fano = np.diag(np.diag(g)) + (g-np.diag(np.diag(g))) / 3
+    return density((1-r)*fano + r*anchor, N)
 
-        let kappa = KAPPA_BOOTSTRAP + self.kappa_0() * self.coh_e();
-        let alpha = kappa * g_v * dtau;
-        let dt_safe = if alpha >= 1.0 { 0.9 / (kappa * g_v) } else { dtau };
 
-        (target - self.gamma) * Complex.from_real(kappa * g_v * dt_safe)
-    }
+def split_step(g, hamiltonian, dt, dephasing_rate, rate_model, phi):
+    # Freeze all feedback at the SAME input state, then compose subflows.
+    g = density(g, N)
+    if not np.isfinite(dt) or dt <= 0:
+        raise ValueError("finite positive time step required")
+    if not np.isfinite(dephasing_rate) or dephasing_rate < 0:
+        raise ValueError("finite nonnegative rate required")
+    target = density(phi(g), N)
+    kappa = float(rate_model(g))
+    if not np.isfinite(kappa) or kappa < 0:
+        raise ValueError("finite nonnegative regenerative rate required")
+    a = kappa * np.clip(7*metrics(g)['P']-2, 0, 1)
+    h = np.asarray(hamiltonian, dtype=complex)
+    if h.shape != (N, N) or not np.isfinite(h).all():
+        raise ValueError("finite 7x7 Hamiltonian required")
+    if np.linalg.norm(h-h.conj().T, 'fro') > TOL:
+        raise ValueError("Hermitian Hamiltonian required")
+    energies, vectors = np.linalg.eigh(h)
+    u = (vectors * np.exp(-1j*energies*dt)) @ vectors.conj().T
+    x = u @ g @ u.conj().T
+    retain = np.exp(-dephasing_rate*dt)
+    x = retain*x + (1-retain)*np.diag(np.diag(x))
+    alpha = -np.expm1(-a*dt)
+    result = (1-alpha)*x + alpha*target
+    return density(result, N)  # detects residuals; no PSD projection
 
-    /// Single evolution step: dΓ/dτ = -i[H, Γ] + D[Γ] + R[Γ, E].
-    public fn evolve(&mut self, dtau: Float, delta_f: Float)
-        where requires dtau > 0.0 && dtau <= 0.1
-    {
-        // 1. Unitary: Γ ← U Γ U† where U = exp(-i H dτ).
-        let u = expm(Complex.i().neg() * &self.H * Complex.from_real(dtau));
-        self.gamma = u.matmul(&self.gamma).matmul(&u.adjoint());
 
-        // 2. Dissipative: Γ ← Γ + dτ · D[Γ].
-        for lk in &self.L {
-            let ldag = lk.adjoint();
-            self.gamma = &self.gamma + Complex.from_real(dtau) * (
-                lk.matmul(&self.gamma).matmul(&ldag)
-                - Complex.from_real(0.5) * (ldag.matmul(&lk).matmul(&self.gamma))
-                - Complex.from_real(0.5) * (self.gamma.matmul(&ldag).matmul(&lk))
-            );
-        }
+def external_injection(g, sigma, beta):
+    if not np.isfinite(beta) or not 0 <= beta <= 1:
+        raise ValueError("beta must be in [0,1]")
+    return density(beta*density(g, N)+(1-beta)*density(sigma, N), N)
 
-        // 3. Regenerative: Γ ← Γ + dΓ_regen.
-        self.gamma = &self.gamma + self.regeneration(dtau);
 
-        // 4. Renormalise for numerical stability.
-        self.gamma = &self.gamma / self.gamma.trace();
-    }
+def sqrt_psd(g):
+    g = density(g)
+    ev, v = np.linalg.eigh(g)
+    return (v*np.sqrt(np.maximum(ev, 0))) @ v.conj().T
 
-    /// Bootstrap: P ≈ 1/7 → P > P_crit via enhanced regeneration
-    /// (resolves the stillbirth paradox, see Genesis protocol).
-    public fn bootstrap(&mut self, max_steps: Int, target_p: Float) -> Bool
-        where requires target_p > P_CRIT && target_p < 1.0
-    {
-        let psi = Vector<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
-        self.gamma_target = Maybe.Some(psi.outer(psi.conjugate()));
 
-        for _ in 0..max_steps {
-            if self.purity() >= target_p { return true; }
-            self.evolve(0.01, 1.0);
-        }
-        self.purity() >= target_p
-    }
+def bures_distance(g, sigma):
+    g, sigma = density(g), density(sigma)
+    if g.shape != sigma.shape:
+        raise ValueError("equal dimensions required")
+    sg = sqrt_psd(g)
+    sandwich = sg @ sigma @ sg
+    ev = np.linalg.eigvalsh((sandwich+sandwich.conj().T)/2)
+    if np.min(ev) < -TOL:
+        raise ValueError("sandwich PSD residual exceeds tolerance")
+    f = float(np.sum(np.sqrt(np.maximum(ev, 0))))
+    if f > 1 + TOL:
+        raise ValueError("fidelity residual exceeds tolerance")
+    return float(np.sqrt(max(0, 2*(1-min(1, f)))))
 
-    /// Spectrum of experiential content (eigenvalues sorted descending).
-    public fn spectrum(&self) -> [Float; 7] {
-        let eigs = eigvalsh(&self.gamma);
-        eigs.to_array().sort_by(|a, b| b.partial_cmp(a).unwrap())
-    }
 
-    /// Full experiential content: (intensity, quality) pairs.
-    public fn full_exp(&self) -> [ExpContent; 7] {
-        let (eigs, vecs) = self.gamma.eigh();
-        let mut idx: [Int; 7] = (0..7).collect();
-        idx.sort_by(|i, j| eigs[*j].partial_cmp(&eigs[*i]).unwrap());
-        idx.map(|i| ExpContent {
-            intensity: eigs[i].real(),
-            quality:   canonical_projective(vecs.column(i)),
-        })
-    }
+u = np.ones(N, dtype=complex) / np.sqrt(N)
+sigma = np.outer(u, u.conj())
+g = (1-0.45)*I7 + 0.45*sigma
+h = np.diag(np.linspace(-0.2, 0.2, N))
+omega0 = 1.0  # calibrated reciprocal time; h and rates use this unit
+rate_model = lambda x: omega0/7 + kinetic_flux(.2, .8, .1)*metrics(x)['Coh_E']
+phi = lambda x: chosen_phi(x, sigma)
+for _ in range(100):
+    g = split_step(g, h, .01, 2/3, rate_model, phi)
+print(metrics(g))  # diagnostics, not a phenomenal verdict
 
-    /// Interaction with another Holon: partial averaging, coupling ∈ [0, 1].
-    public fn interact(&mut self, other: &mut Holon, coupling: Float)
-        where requires 0.0 <= coupling && coupling <= 1.0
-    {
-        let c = Complex.from_real(coupling);
-        let ic = Complex.from_real(1.0 - coupling);
-        let g1 = ic * &self.gamma + c * &other.gamma;
-        let g2 = ic * &other.gamma + c * &self.gamma;
-        self.gamma  = &g1 / g1.trace();
-        other.gamma = &g2 / g2.trace();
-    }
-}
-
-/// Single quale: intensity + projective-space quality.
-public type ExpContent is {
-    intensity: Float,
-    quality:   Vector<Complex, 7>,
-};
-
-/// Build the effective Hamiltonian: diagonal eigenfrequencies + ring couplings.
-fn build_hamiltonian() -> HermitianMatrix<Complex, 7> {
-    let freqs: [Float; 7] = [1.0, 0.8, 1.2, 0.9, 1.1, 0.7, 1.0];
-    let coupling = Complex.from_real(0.1);
-    let mut h = HermitianMatrix<Complex, 7>.zeros();
-    for i in 0..7 { h[i, i] = Complex.from_real(freqs[i]); }
-    for i in 0..6 { h[i, i+1] = coupling; h[i+1, i] = coupling; }
-    h[6, 0] = coupling; h[0, 6] = coupling;           // ring closure
-    h
-}
-
-/// Build Lindblad operators L_k (diagonal decoherence at equal rate).
-fn build_lindblad_operators() -> [Matrix<Complex, 7, 7>; 7] {
-    let rate = 0.01;
-    (0..7).map(|k| {
-        let mut l = Matrix<Complex, 7, 7>.zeros();
-        l[k, k] = Complex.from_real(rate.sqrt());
-        l
-    }).to_array()
-}
-
-/// Canonical projective representative: rotate phase so first
-/// non-zero component is real and positive.
-fn canonical_projective(v: Vector<Complex, 7>) -> Vector<Complex, 7> {
-    for i in 0..7 {
-        if v[i].abs() > 1.0e-10 {
-            let phase = (-v[i].arg() * Complex.i()).exp();
-            return v * phase;
-        }
-    }
-    v
-}
-
-/// Fubini-Study metric d_FS([|ψ⟩], [|φ⟩]) = arccos(|⟨ψ|φ⟩|) ∈ [0, π/2].
-public pure fn fubini_study_distance(v1: &Vector<Complex, 7>, v2: &Vector<Complex, 7>) -> Float
-    where ensures 0.0 <= result && result <= Float.PI / 2.0
-{
-    let a = v1 / norm(v1);
-    let b = v2 / norm(v2);
-    let overlap = a.dot(&b).abs().clamp(0.0, 1.0);
-    overlap.acos()
-}
 ```
 
 ## Пример использования
 
-```verum
-fn demo_holon_evolution() using [IO] {
-    // Pure Holon.
-    let mut holon = Holon.new_pure(1.0);
-    IO.println(f"Initial purity: P = {holon.purity():.4f}");     // P = 1.0
-    IO.println(f"Critical purity: P_crit = {P_CRIT:.4f}");        // ≈ 0.2857
-
-    // Use current state as the regeneration target.
-    holon.set_target(Maybe.None);
-
-    // Evolution with decoherence + regeneration.
-    for t in 0..1000 {
-        holon.evolve(0.01, 0.5);
-
-        if t % 100 == 0 {
-            IO.println(f"t={t}: P={holon.purity():.4f}, \
-                        S={holon.entropy():.4f}, κ₀={holon.kappa_0():.4f}");
-        }
-    }
-
-    IO.println(f"\nViable: {holon.is_viable()}");                 // P > P_crit?
-
-    // Top-3 experiential content items.
-    let full = holon.full_exp();
-    IO.println("\nExperiential content:");
-    for (i, e) in full[..3].enumerate() {
-        IO.println(f"  Exp {i}: intensity={e.intensity:.4f}");
-        IO.println(f"          quality={e.quality[..3]}...");
-    }
-
-    // Comparison of two Holons.
-    let mut holon2 = Holon.new_pure(1.0);
-    holon2.evolve(0.5, 0.0);
-
-    let d_intensity = norm(holon.spectrum() - holon2.spectrum());
-    let d_full = exp_distance(&holon, &holon2, 1.0);
-    IO.println(f"\nIntensity distance: {d_intensity:.4f}");
-    IO.println(f"Full distance (with quality): {d_full:.4f}");
-}
-
-/// Full distance between the experiential content of two Holons.
-public pure fn exp_distance(a: &Holon, b: &Holon, alpha: Float) -> Float
-    where requires alpha >= 0.0
-{
-    let ea = a.full_exp();
-    let eb = b.full_exp();
-    let (mut int_dist, mut qual_dist) = (0.0, 0.0);
-    for i in 0..7 {
-        int_dist  += (ea[i].intensity - eb[i].intensity).pow(2);
-        qual_dist += fubini_study_distance(&ea[i].quality, &eb[i].quality).pow(2);
-    }
-    (int_dist + alpha * qual_dist).sqrt()
-}
-```
+Последние строки эволюционируют одно явное состояние с одним гамильтонианом, единицей времени и якорем. Изменение этих входов меняет модель. Публикуются параметры, шаг и численные остатки. Классическая симуляция матрицы плотности сама по себе не ограничивает свою программную память границей Холево.
 
 ## Демонстрация изоспектральности
 
-```verum
-fn demo_isospectral() using [IO, Random] {
-    // Two states with identical spectra but different qualities.
-    IO.println("— Isospectral example —");
-
-    let mut holon = Holon.new_pure(1.0);
-    holon.evolve(0.1, 0.0);
-    let exp1 = holon.full_exp();
-
-    // Random unitary via QR decomposition of a complex Gaussian matrix.
-    let noise = Matrix<Complex, 7, 7>.random_gaussian();
-    let (u_random, _) = noise.qr();
-
-    // Isospectral state via unitary transformation.
-    let mut holon_iso = Holon.new_pure(1.0);
-    holon_iso.gamma = u_random.matmul(&holon.gamma).matmul(&u_random.adjoint());
-
-    // Verification.
-    let spectra_equal = (0..7).all(|i|
-        (holon.spectrum()[i] - holon_iso.spectrum()[i]).abs() < 1.0e-10
-    );
-    let quality_distance = fubini_study_distance(
-        &exp1[0].quality,
-        &holon_iso.full_exp()[0].quality,
-    );
-
-    IO.println(f"Spectra equal:    {spectra_equal}");
-    IO.println(f"Quality distance: d_FS = {quality_distance:.4f}");
-}
-```
+Унитарное сопряжение сохраняет спектр и чистоту [Т]. Собственные векторы зависят от репера, определены с точностью до фазы и неоднозначны в вырожденных подпространствах. Предположение, что разница реперов меняет феноменальное качество, требует независимого калиброванного считывания [Г/И]; симуляция его не проверяет экспериментально.
 
 ## Пример Bootstrap
 
-```verum
-fn demo_bootstrap() using [IO] {
-    // "Dead" system — maximally mixed state.
-    let mut holon = Holon.new_mixed(1.0);
+В изолированной модели с затвором $I/7$ остаётся неподвижным при унитарной динамике и унитальной декогеренции: $g_V(I/7)=0$ даже при $\kappa_{\mathrm{bootstrap}}>0$. Генезис можно задать явно внешней инъекцией состояния. Функция `external_injection` выбирает
 
-    IO.println(f"Initial purity: P = {holon.purity():.4f}");   // ≈ 0.143
-    IO.println(f"P_crit = {P_CRIT:.4f}");                       // = 2/7
-    IO.println(f"Viable: {holon.is_viable()}");                 // false
+$$
+\Gamma_{n+1}=\beta\Gamma_n+(1-\beta)\sigma,\quad \Gamma_0=I/7,\quad
+P_n=\frac17+(1-\beta^n)^2\left(P(\sigma)-\frac17\right).
+$$
 
-    // Bootstrap: P: 1/7 → > P_crit.
-    let target = P_CRIT + 0.05;
-    let success = holon.bootstrap(500, target);
-
-    IO.println(f"\nBootstrap successful: {success}");
-    IO.println(f"Final purity: P = {holon.purity():.4f}");
-    IO.println(f"Viable: {holon.is_viable()}");
-    IO.println(f"κ₀ = {holon.kappa_0():.4f}");
-}
-```
+При $0\le\beta<1$ она пересекает $2/7$ за конечное число шагов тогда и только тогда, когда $P(\sigma)>2/7$; этот один порог не влечёт Cap₂ или динамической жизнеспособности. Декогеренция меняет критерий, как в [T-148](/docs/proofs/consciousness/substrate-closure#t-148).
 
 ## Расширенная реализация: Меры сознательности
 
-:::danger Критические ограничения реализации
-Класс `HolonExtended` содержит **заглушки (stubs)** для ключевых функций:
-
-| Метод | Статус | Проблема |
-|---|---|---|
-| `compute_reflection()` | [С] **ЗАГЛУШКА** | Возвращает `min(1, purity)` вместо $1 - \|\Gamma - \varphi(\Gamma)\|^2 / \|\Gamma\|^2$ |
-| `compute_reflection_n()` | [С] **ЗАГЛУШКА** | Возвращает $R^n$ вместо fidelity $F(\varphi^{(n-1)}, \varphi^{(n)})$ |
-| `D_diff` | **Реализовано** [Т] | T-128: $1 + \mathrm{Coh}_E \cdot (N-1)$, $O(N^2)$ |
-
-**Следствие:** Классификация уровней L2/L3/L4 **ненадёжна**. Используйте только L0/L1 для практических задач.
-
-Для полной реализации требуется оператор $\varphi$ — см. [Формализация φ](/docs/proofs/categorical/formalization-phi).
-:::
-
-:::info Уровни интериорности
-Уровни соответствуют n-усечениям ∞-группоида $\mathbf{Exp}_\infty$:
-- L0: $\tau_{\leq 0}$ — только объекты (интериорность)
-- L1: $\tau_{\leq 1}$ — 1-морфизмы (феноменальная геометрия)
-- L2: $\tau_{\leq 2}$ — 2-морфизмы (когнитивные квалиа)
-- L3: $\tau_{\leq 3}$ — 3-морфизмы (сетевое сознание, метастабильное)
-- L4: полный ∞-группоид (унитарное сознание)
-:::
-
-```verum
-/// Interiority levels (n-truncations of the ∞-groupoid Exp_∞).
-public type Level is
-    | NonViable                         // P ≤ P_crit
-    | L0                                 // basic interiority
-    | L1                                 // phenomenal geometry (Φ > 0)
-    | L2                                 // cognitive qualia (R ≥ 1/3, Φ ≥ 1)
-    | L3                                 // network consciousness (metastable)
-    | L4;                                // unitary consciousness
-
-/// Integration threshold for L2 (coherences ≥ diagonal).
-public const PHI_TH: Float = 1.0;
-/// Reflection threshold for L2 — universal formula R^(n)_th = 1/(n+1).
-public const R_TH:   Float = 1.0 / 3.0;
-/// Second-order reflection threshold for L3.
-public const R2_TH:  Float = 1.0 / 4.0;
-/// Purity threshold for L4 — see T-124 [T].
-public const P_L4:   Float = 6.0 / 7.0;
-
-/// Extended Holon with consciousness measures Φ, R, R^(n), level classification.
-///
-/// Levels correspond to n-truncations of ∞-groupoid:
-/// L0: τ_≤0, L1: τ_≤1, L2: τ_≤2, L3: τ_≤3, L4: full ∞-groupoid.
-public type HolonExtended is {
-    base: Holon,
-};
-
-implement HolonExtended {
-    public fn new_pure(omega_0: Float) -> HolonExtended {
-        HolonExtended { base: Holon.new_pure(omega_0) }
-    }
-
-    public fn new_mixed(omega_0: Float) -> HolonExtended {
-        HolonExtended { base: Holon.new_mixed(omega_0) }
-    }
-
-    /// Integration measure Φ = Σ_{i≠j} |γ_ij|² / Σ_i γ_ii².
-    /// Ratio of off-diagonal to diagonal mass — connectivity of dimensions.
-    public fn integration(&self) -> Float where ensures result >= 0.0 {
-        let g = &self.base.gamma;
-        let diag_sq: Float = (0..7).map(|i| g[i, i].real().pow(2)).sum();
-        let total_sq: Float = g.norm_frobenius();
-        if diag_sq < 1.0e-12 { 0.0 }
-        else { (total_sq - diag_sq) / diag_sq }
-    }
-
-    /// Reflection measure R = 1 - ‖Γ − φ(Γ)‖² / ‖Γ‖² (T-96 [T]).
-    /// **Approximation [C]**: φ(Γ) ≈ diag(Γ) for E-anchored systems.
-    /// Full version via logical Liouvillian — see /docs/proofs/categorical/formalization-phi.
-    public fn reflection(&self) -> Float
-        where ensures 0.0 <= result && result <= 1.0
-    {
-        let total_sq = self.base.gamma.norm_frobenius();
-        if total_sq < 1.0e-12 { return 0.0; }
-        let diag_sq: Float = (0..7).map(|i| self.base.gamma[i, i].abs().pow(2)).sum();
-        diag_sq / total_sq
-    }
-
-    /// n-th order reflection R^(n) ≈ R + (1−R)·(1 − exp(−n)).
-    /// Exponential convergence to fixed point — stub for full spectral decomposition.
-    public fn reflection_n(&self, n: Int) -> Float
-        where requires n >= 0, ensures 0.0 <= result && result <= 1.0
-    {
-        if n < 1 { return 1.0; }
-        let r = self.reflection();
-        let converge = 1.0 - (-n.as_float()).exp();
-        r + (1.0 - r) * converge
-    }
-
-    /// Level classification — the central decision function.
-    public fn classify(&self) -> Level {
-        let p = self.base.purity();
-        if p <= P_CRIT { return Level.NonViable; }
-
-        let phi = self.integration();
-        let r   = self.reflection();
-        let r2  = self.reflection_n(2);
-
-        match (p > P_L4 && r2 >= R2_TH,
-               r >= R_TH && phi >= PHI_TH && r2 >= R2_TH,
-               r >= R_TH && phi >= PHI_TH,
-               phi > 0.0) {
-            (true,  _,    _,    _)    => Level.L4,
-            (false, true, _,    _)    => Level.L3,
-            (false, false, true, _)   => Level.L2,
-            (false, false, false, true) => Level.L1,
-            _                         => Level.L0,
-        }
-    }
-
-    /// L3 lifetime: τ_3 = 1 / (κ_bootstrap · (1 − R^(2))).
-    /// Returns Float.INFINITY when the state is already stable.
-    public fn l3_lifetime(&self) -> Float {
-        let r2 = self.reflection_n(2);
-        if r2 >= 1.0 { Float.INFINITY }
-        else { 1.0 / (KAPPA_BOOTSTRAP * (1.0 - r2)) }
-    }
-}
-
-// Delegate base Holon operations via the standard Deref protocol.
-implement Deref for HolonExtended {
-    type Target = Holon;
-    fn deref(&self) -> &Holon { &self.base }
-}
-implement DerefMut for HolonExtended {
-    fn deref_mut(&mut self) -> &mut Holon { &mut self.base }
-}
-```
+`metrics` вычисляет $P,R,\Phi$, когерентность маски строки $\mathrm{Coh}_E\in[0,1]$ и **объявленное** считывание дифференциации. Выбор по умолчанию $\rho_E=\Gamma$ — соглашение модели [О]: одномерное слагаемое $E$ в $\mathbb C^7$ не является тензорной подсистемой с нетривиальным частичным следом. Иное поднятое считывание передаётся и проверяется отдельно. Прежний нижний clamp $\mathrm{Coh}_E\ge1/7$ был неверен: состояние вне строки $E$ имеет нулевую оценку ([T-128](/docs/proofs/consciousness/operationalization#t-128), [T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
 
 ### Пример классификации
 
-```verum
-fn demo_classification() using [IO] {
-    let mut holon = HolonExtended.new_pure(1.0);
-    holon.set_target(Maybe.None);
+`Cap2` — конъюнкция $P>2/7$, $R\ge1/3$, $\Phi\ge1$, $D_{\mathrm{diff}}\ge2$; `C=Phi*R` — сводная величина, которая её не заменяет. `full_window` добавляет выбранный стресс населённостей $\max\sigma_k<1$. Возвращаемые зазоры — численная диагностика. Вблизи границы и для реконструкции по данным нужен вердикт по калиброванному доверительному множеству: проходит, не проходит или неопределённо. Булево число с плавающей точкой не есть статистический сертификат. Когнитивная глубина требует независимых проб; исторические затухающие оценки чистоты не устанавливают SAD или уровни L3/L4.
 
-    IO.println(f"Initial level: {holon.classify()}");
-
-    for t in 0..500 {
-        holon.evolve(0.01, 0.3);
-
-        if t % 100 == 0 {
-            let level = holon.classify();
-            IO.println(f"t={t}: P={holon.purity():.4f}, \
-                        Φ={holon.integration():.4f}, \
-                        R={holon.reflection():.4f}, \
-                        R²={holon.reflection_n(2):.4f}, \
-                        level={level}");
-
-            if level is Level.L3 {
-                IO.println(f"       τ_3 (L3 lifetime) = {holon.l3_lifetime():.2f}");
-            }
-        }
-    }
-}
-```
-
-:::danger Ограничения расширенной реализации — L2/L3/L4 ненадёжны
-**Критические заглушки:**
-1. **Мера R — ЗАГЛУШКА:** `compute_reflection()` возвращает отношение диагональной нормы к полной норме Фробениуса, не истинную рефлексию
-2. **R^(n) — ЗАГЛУШКА:** `compute_reflection_n()` возвращает $R^n$, не fidelity $F(\varphi^{(n-1)}, \varphi^{(n)})$
-3. **D_diff — НЕ РЕАЛИЗОВАНО:** Требует частичного следа (тензорный формализм)
-
-**Следствие:** Классификация `classify_level()` **надёжна только для L0 и L1**. Результаты L2/L3/L4 — приблизительные.
-
-**Дополнительные ограничения:**
-4. **Γ_target = const:** В полной теории $\rho_* = \varphi(\Gamma)$ — категориальная самомодель [Т], зависит от Γ
-5. **L3 метастабильность:** Полная реализация требует моделирования динамики распада
-
-Для исследовательской работы см. [Формализация φ](/docs/proofs/categorical/formalization-phi) и [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy).
-:::
-
-## Конструктивные алгоритмы из L-унификации
-
-:::info Статус: Категорно выведенные алгоритмы
-Следующие алгоритмы реализуют конструкции, **выведенные** из [классификатора подобъектов Ω](/docs/core/foundations/axiom-omega#внутренняя-логика). Это не произвольные реализации — они следуют из категорной структуры теории.
-:::
+## Конструктивные алгоритмы из L-унификации {#конструктивные-алгоритмы-из-l-унификации}
 
 ### Характеристический морфизм χ_S
 
-```verum
-/// A projector S on C^7: S² = S, S† = S.
-public type Projector is Matrix<Complex, 7, 7>
-    where is_hermitian(self) && (self.matmul(&self) - self).frobenius_norm() < 1.0e-10;
-
-/// Characteristic morphism χ_S: Γ → Ω for the subobject S ↪ Γ.
-///
-/// χ_S(Γ) = S Γ S — restriction of Γ to the subobject, normalised.
-/// Measures the "degree of membership" of Γ in the admissible subspace S.
-public pure fn characteristic_morphism(gamma: &CoherenceMatrix, s: &Projector)
-    -> Matrix<Complex, 7, 7>
-    where ensures is_hermitian(result)
-{
-    let chi = s.matmul(&gamma).matmul(&s);
-    let tr = chi.trace();
-    if tr.abs() > 1.0e-12 { &chi / tr } else { chi }
-}
-```
+Численный предикат состояний — тест выбранного подмножества. Он не становится характеристическим морфизмом в классификатор подобъектов топоса без заданного топоса, подобъекта и естественности на всех стадиях. Отождествление классификатора $\Omega$ с диссипативным генератором требует дополнительной конструкции [О/Г].
 
 ### Темпоральная модальность ▷
 
-```verum
-mount core.math.linalg.{StaticMatrix, identity};
-mount core.math.complex.Complex;
-
-/// Temporal modality ▷: Ω → Ω.
-/// "Later" operator generating discrete time τ ∈ ℤ₇: τ_n = ▷ⁿ(now).
-/// Implementation: cyclic shift V in the clock basis |k⟩ → |k+1 mod 7⟩,
-/// applied as ▷(ρ) = V ρ V†.
-public pure fn temporal_modality(omega: &StaticMatrix<Complex, 7, 7>)
-    -> StaticMatrix<Complex, 7, 7>
-{
-    let v = cyclic_shift_7();
-    v.matmul(&omega).matmul(&v.adjoint())
-}
-
-/// Clock-basis cyclic shift: V_{i,j} = δ_{i, (j+1) mod 7}.
-pure fn cyclic_shift_7() -> StaticMatrix<Complex, 7, 7> {
-    let mut v = StaticMatrix<Complex, 7, 7>.zeros();
-    for j in 0..7 { v[(j + 1) % 7, j] = Complex.one(); }
-    v
-}
-
-/// Time sequence [τ_0, τ_1, …, τ_{n-1}] by iterated ▷.
-public pure fn time_sequence(initial: &StaticMatrix<Complex, 7, 7>, n_steps: Int { self > 0 })
-    -> [StaticMatrix<Complex, 7, 7>]
-{
-    let mut out = [initial.clone()];
-    for _ in 1..n_steps {
-        out.push(temporal_modality(out.last().unwrap()));
-    }
-    out
-}
-```
+Шаговое отображение задаёт дискретную итерацию; массив с задержкой реализует выбранный сдвиг. Категориальная later-модальность требует категории предпучков/базы и действия на морфизмах. Они не фиксируют физическую длительность шага и не устанавливают часы Пейджа–Вуттерса. Физическое время, частота измерений и точность интеграции различаются ([T-131](/docs/proofs/consciousness/operationalization#t-131)).
 
 ### Операторы Линдблада L_k из Ω
 
-```verum
-mount core.math.linalg.{StaticMatrix, eigh, matrix_sqrt, identity};
-
-/// Derive 7 Lindblad operators L_k = √χ_{S_k} from the atoms of Ω
-/// (L-unification, T-82 [T]). Atoms are basis projectors S_k = |k⟩⟨k|.
-///
-/// **CPTP completeness**: Σ_k L_k† L_k = I — holds automatically for basis
-/// projectors. This guarantees trace and positivity preservation, but **not**
-/// viability: a CPTP channel may map P > P_crit → P < P_crit.
-public pure fn compute_lindblad_from_omega(gamma: &CoherenceMatrix)
-    -> [StaticMatrix<Complex, 7, 7>; 7]
-{
-    (0..7).map(|k| {
-        // Atom projector S_k = |k⟩⟨k|.
-        let mut s_k = StaticMatrix<Complex, 7, 7>.zeros();
-        s_k[k, k] = Complex.one();
-
-        // χ_k = characteristic morphism of S_k on Γ.
-        let chi_k = characteristic_morphism(gamma, &s_k);
-
-        // L_k = √χ_k via Hermitian PSD matrix square root.
-        matrix_sqrt_psd(&chi_k)
-    }).to_array()
-}
-
-/// PSD matrix square root via spectral decomposition (eigenvalues clamped ≥ 0).
-pure fn matrix_sqrt_psd(m: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7>
-    where requires is_hermitian(m)
-{
-    let (eigvals, eigvecs) = eigh(m);
-    let sqrt_eigs = eigvals.map(|v| v.max(0.0).sqrt());
-    eigvecs.matmul(&StaticMatrix<Complex, 7, 7>.diagonal(sqrt_eigs)).matmul(&eigvecs.adjoint())
-}
-
-/// Verify the CPTP completeness condition Σ_k L_k† L_k = I (tol = 1e-10).
-public pure fn verify_cptp_condition(ops: &[StaticMatrix<Complex, 7, 7>; 7]) -> Bool {
-    let total = ops.iter().fold(
-        StaticMatrix<Complex, 7, 7>.zeros(),
-        |acc, l| acc + (l.adjoint().matmul(&l)),
-    );
-    (total - identity<Complex, 7>()).frobenius_norm() < 1.0e-10
-}
-```
+Семь проекторов инцидентности Фано — одно выбранное семейство декогеренции [О]. Его линейная GKSL-полугруппа CPTP [Т]; полная положительность не навязывает это семейство или ровно семь скачков. При равных темпах оно равномерно подавляет когерентности. Для общего фиксированного семейства можно экспоненцировать супероператор Лиувилля размера $N^2\times N^2$ либо применять доказанную CPTP-схему расщепления. Прямой Эйлер для GKSL не всегда положителен.
 
 ### Логический Лиувиллиан ℒ_Ω и оператор самомоделирования φ
 
-```verum
-/// Logical Liouvillian ℒ_Ω[Γ] = -i[H, Γ] + Σ_k γ_k (L_k Γ L_k† − ½{L_k†L_k, Γ}).
-/// L_k derived from classifier Ω atoms (L-unification, T-82).
-public pure fn logical_liouvillian(
-    gamma: &CoherenceMatrix,
-    h:     &StaticMatrix<Complex, 7, 7>,
-    rates: Maybe<StaticVector<Float, 7>>,
-) -> StaticMatrix<Complex, 7, 7>
-    where requires is_hermitian(h)
-{
-    let r = rates.unwrap_or(StaticVector<Float, 7>.filled(0.01));
-
-    // Unitary part: -i[H, Γ].
-    let unitary = Complex.i().neg() * (h.matmul(&gamma) - gamma.matmul(&h));
-
-    // Dissipative part: D_Ω[Γ] via L-unified operators.
-    let ops = compute_lindblad_from_omega(gamma);
-    let dissipator = ops.iter().enumerate().fold(
-        StaticMatrix<Complex, 7, 7>.zeros(),
-        |acc, (k, l_k)| {
-            let l_dag = l_k.adjoint();
-            let term =
-                  (l_k   @ gamma  @ &l_dag)
-                - (l_dag.matmul(&l_k).matmul(&gamma)) * Complex.from_real(0.5)
-                - (gamma.matmul(&l_dag).matmul(&l_k)) * Complex.from_real(0.5);
-            acc + term * Complex.from_real(r[k])
-        },
-    );
-
-    unitary + dissipator
-}
-
-/// Stationary self-model: φ(Γ) = lim_{τ→∞} exp(τ ℒ_Ω)[Γ] (T-96 [T]).
-/// Finite-τ approximation: orbit average over period τ.
-public pure fn phi_from_liouvillian(
-    gamma:       &CoherenceMatrix,
-    h:           &StaticMatrix<Complex, 7, 7>,
-    tau_period:  Float { self > 0.0 },
-    dtau:        Float { 0.0 < self && self <= 0.1 },
-) -> CoherenceMatrix
-{
-    let n_steps = (tau_period / dtau) as Int;
-    let mut trajectory = [gamma.clone()];
-    let mut current = gamma.clone();
-
-    for _ in 0..n_steps {
-        let d = logical_liouvillian(&current, h, Maybe.None);
-        current = &current + d * Complex.from_real(dtau);
-        current = &current / current.trace();        // renormalise
-        trajectory.push(current.clone());
-    }
-
-    // Orbit average.
-    let mut acc = StaticMatrix<Complex, 7, 7>.zeros();
-    for m in &trajectory { acc = acc + m; }
-    let avg = &acc / Complex.from_real(trajectory.len().as_float());
-    &avg / avg.trace()
-}
-```
+`chosen_phi` смешивает выбранный канал Фано и объявленный якорь с зависящим от состояния весом $R$. Заморозка веса/якоря даёт линейный CPTP-канал; пересчёт веса по входу обычно даёт нелинейное отображение состояний. Долгосрочная сходимость, единственность и идемпотентность требуют дополнительных условий и не следуют из терминальности. [Результаты об аттракторе φ_J](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне) относятся к своей указанной модели.
 
 ### Пример: Полная L-унификация
 
-```verum
-fn demo_l_unification() using [IO] {
-    let holon = Holon.new_pure(1.0);
-    let gamma = &holon.gamma;
-    let h     = holon.H;
-
-    // 1. Derive L_k from Ω.
-    let ops = compute_lindblad_from_omega(gamma);
-    IO.println(f"CPTP condition: {verify_cptp_condition(&ops)}");   // true
-
-    // 2. Compute ℒ_Ω.
-    let l_omega = logical_liouvillian(gamma, &h, Maybe.None);
-    IO.println(f"‖ℒ_Ω[Γ]‖_F = {l_omega.frobenius_norm():.4f}");
-
-    // 3. Find φ(Γ) — stationary self-model.
-    let phi_gamma = phi_from_liouvillian(gamma, &h, 7.0, 0.1);
-    let p_phi = (phi_gamma.matmul(&phi_gamma)).trace().real();
-    IO.println(f"P(φ(Γ)) = {p_phi:.4f}");
-
-    // 4. Reflection measure: R = 1 − ‖Γ − φ(Γ)‖² / ‖Γ‖².
-    let diff = gamma - phi_gamma;
-    let r = 1.0 - diff.norm_frobenius() / gamma.norm_frobenius();
-    IO.println(f"R(Γ) = {r:.4f}");
-}
-```
+Корректный шаг интеграции не реализует все категориальные мосты. В коде унитарное отображение и декогеренция — точные подпотоки, а коэффициент замещения $\alpha=1-e^{-a\Delta t}\in[0,1]$. Их композиция сохраняет состояния в точной арифметике при любом положительном шаге. При заморозке обратной связи на одном и том же входе её производная по $\Delta t$ в нуле равна указанному полю. При локально липшицевой обратной связи в области траектории это схема первого порядка; сохранение состояния не гарантирует точность, устойчивость или пребывание в полном окне. Уменьшение шага вдвое и сравнение траекторий проверяет сходимость численно, но не доказывает её для другой модели.
 
 ## Алгоритмы топологии Гротендика {#алгоритмы-топологии}
 
-:::info Связь с теорией
-Следующие алгоритмы реализуют [топологию Гротендика](/docs/core/foundations/axiom-omega#топология-гротендика) на категории $\mathcal{C} = \mathbf{DensityMat}$, что позволяет конструктивно определить понятие «пучка» и классификатор подобъектов Ω.
-:::
-
 ### Метрика Бюреса
 
-```verum
-mount core.math.constants.{UnitInterval, NonNegative};
-
-/// Bures fidelity F(ρ, σ) = (Tr √(√ρ σ √ρ))² ∈ [0, 1].
-public pure fn bures_fidelity<const N: Int>(
-    rho:   &StaticMatrix<Complex, N, N>,
-    sigma: &StaticMatrix<Complex, N, N>,
-) -> UnitInterval
-{
-    let sqrt_rho   = matrix_sqrt_psd_n<N>(rho);
-    let inner      = sqrt_rho.matmul(&sigma).matmul(&sqrt_rho);
-    let sqrt_inner = matrix_sqrt_psd_n<N>(&inner);
-    let fid = sqrt_inner.trace().real().pow(2);
-    fid.clamp(0.0, 1.0)
-}
-
-/// Bures metric (chord form): d_B^chord(ρ, σ) = √(2(1 − √F(ρ, σ))) ∈ [0, √2].
-/// Monotone under CPTP maps; Riemannian metric on density-matrix manifold.
-public pure fn bures_distance<const N: Int>(
-    rho:   &StaticMatrix<Complex, N, N>,
-    sigma: &StaticMatrix<Complex, N, N>,
-) -> NonNegative
-    where ensures result <= std.math.SQRT2
-{
-    let f = bures_fidelity(rho, sigma);
-    (2.0 * (1.0 - f.sqrt())).sqrt()
-}
-
-/// Generic PSD sqrt (T-agnostic in N).
-pure fn matrix_sqrt_psd_n<const N: Int>(m: &StaticMatrix<Complex, N, N>)
-    -> StaticMatrix<Complex, N, N>
-    where requires is_hermitian(m)
-{
-    let (eigvals, eigvecs) = eigh(m);
-    let sqrt_eigs = eigvals.map(|v| v.max(0.0).sqrt());
-    eigvecs.matmul(&StaticMatrix<Complex, N, N>.diagonal(sqrt_eigs)).matmul(&eigvecs.adjoint())
-}
-```
+`bures_distance` вычисляет $d_B=\sqrt{2(1-f)}$, где корневая верность $f=\operatorname{Tr}\sqrt{\sqrt\Gamma\sigma\sqrt\Gamma}$. Равночистые состояния могут иметь разные расстояния до $I/7$. Аффинное замещение не является в общем случае точным бюресовым градиентом квадрата расстояния; см. [геометрию динамики](/docs/core/dynamics/evolution#почему-эта-геометрия).
 
 ### Bures-покрытия
 
-```verum
-mount core.math.random.{Rng, XorShift128};
-
-/// A CPTP channel as an abstract first-class function.
-public type CptpChannel<const N: Int> = pure fn(&StaticMatrix<Complex, N, N>)
-    -> StaticMatrix<Complex, N, N>;
-
-/// Sample points inside the Bures ball B_B(Γ, r).
-/// Rejection-sampling of Hermitian perturbations, projected to the density-matrix manifold.
-public fn generate_ball_samples<const N: Int>(
-    gamma:     &StaticMatrix<Complex, N, N>,
-    radius:    Float { self > 0.0 },
-    n_samples: Int   { self > 0    },
-) -> List<StaticMatrix<Complex, N, N>>
-    using [Random]
-    where ensures result.len() <= n_samples
-{
-    let mut rng     = XorShift128.seed(Random.next_key());
-    let mut samples = List.new();
-
-    for _ in 0..(n_samples * 10) {
-        // Random Hermitian perturbation, scaled to ~radius/2.
-        let raw = StaticMatrix<Complex, N, N>.random_gaussian(&mut rng);
-        let pert_hermitian = (&raw + raw.adjoint()) / Complex.from_real(2.0);
-        let pert = &pert_hermitian
-            * Complex.from_real(radius * 0.5 / pert_hermitian.frobenius_norm());
-
-        // Project to density-matrix manifold: Hermitise, clamp eigenvalues ≥ 0, renormalise.
-        let perturbed = gamma + pert;
-        let sigma = project_to_density_matrix(&perturbed);
-
-        if bures_distance(gamma, &sigma) < radius {
-            samples.push(sigma);
-            if samples.len() >= n_samples { break; }
-        }
-    }
-    samples
-}
-
-/// Project an arbitrary Hermitian matrix onto the density-matrix manifold.
-pure fn project_to_density_matrix<const N: Int>(m: &StaticMatrix<Complex, N, N>)
-    -> StaticMatrix<Complex, N, N>
-{
-    let herm = (m + m.adjoint()) / Complex.from_real(2.0);
-    let (eigvals, eigvecs) = eigh(&herm);
-    let clamped = eigvals.map(|v| v.max(0.0));
-    let total:   Float = clamped.iter().sum();
-    let norm_eigs = clamped.map(|v| v / total);
-    eigvecs.matmul(&StaticMatrix<Complex, N, N>.diagonal(norm_eigs)).matmul(&eigvecs.adjoint())
-}
-
-/// Check whether a family {(Γᵢ, Φᵢ)} of CPTP channels is a **Bures covering** of Γ:
-/// B_B(Γ, δ) ⊆ ⋃ᵢ Φᵢ(B_B(Γᵢ, ε)).
-public fn is_bures_covering<const N: Int>(
-    gamma:         &StaticMatrix<Complex, N, N>,
-    channels:      &[(StaticMatrix<Complex, N, N>, CptpChannel<N>)],
-    epsilon:       Float { self > 0.0 },
-    delta:         Float { self > 0.0 },
-    n_test_points: Int   { self > 0   },
-) -> Bool using [Random]
-{
-    let test_points = generate_ball_samples(gamma, delta, n_test_points);
-
-    test_points.iter().all(|sigma| {
-        channels.iter().any(|(gamma_i, phi_i)| {
-            let sources = generate_ball_samples(gamma_i, epsilon, 20);
-            sources.iter().any(|src| bures_distance(&phi_i(src), sigma) < delta / 2.0)
-        })
-    })
-}
-```
+Метрические шары и конечное облако точек не становятся автоматически покрывающими решётами топологии Гротендика. Нужны категория, решёта, pullback и аксиомы максимальности, устойчивости и транзитивности. Метрическая выборка проверяет только покрытие заданной конечной выборки.
 
 ### Атомарные покрытия и классификатор Ω
 
-```verum
-/// Subobject classifier Ω for the category **DensityMat**.
-///
-/// Categorical definition:
-/// `Ω := O(C, d_B)` — lattice of open sets in the Bures topology.
-/// For UHM with N = 7 dimensions, |Ω| = 7 atoms (one per dimension A, S, D, L, E, O, U).
-public type OmegaClassifier is {
-    atoms: [StaticMatrix<Complex, 7, 7>; 7],
-};
-
-/// Label map: atom index ↔ dimension name.
-public const DIMENSION_NAMES: [Text; 7] = ["A", "S", "D", "L", "E", "O", "U"];
-
-implement OmegaClassifier {
-    public fn new() -> OmegaClassifier {
-        let atoms = (0..7).map(|k| {
-            let mut s_k = StaticMatrix<Complex, 7, 7>.zeros();
-            s_k[k, k] = Complex.one();             // |k⟩⟨k|
-            s_k
-        }).to_array();
-        OmegaClassifier { atoms: atoms }
-    }
-
-    /// Characteristic morphism χ_{S_k}: Γ → Ω.
-    /// For projector S_k = |k⟩⟨k|: χ_S(Γ) = √F(Γ, S) = √γ_kk ∈ [0, 1].
-    public fn chi(&self, gamma: &CoherenceMatrix, d: Dim) -> UnitInterval {
-        let s_k = &self.atoms[index(d)];
-        let fid = (s_k.matmul(&gamma)).trace().real().clamp(0.0, 1.0);
-        fid.sqrt()
-    }
-
-    /// Lindblad operator L_k := √χ_{S_k} derived from classifier atom k.
-    public pure fn lindblad_operator(&self, d: Dim) -> StaticMatrix<Complex, 7, 7> {
-        matrix_sqrt_psd(&self.atoms[index(d)])
-    }
-
-    /// All 7 Lindblad operators (one per dimension).
-    public pure fn all_lindblad_operators(&self) -> [StaticMatrix<Complex, 7, 7>; 7] {
-        (0..7).map(|k| self.lindblad_operator(Dim.from_index(k))).to_array()
-    }
-
-    /// Verify Σ_k L_k† L_k = I (CPTP completeness, tol = 1e-10).
-    /// For basis projectors this follows from partition of unity.
-    public pure fn verify_cptp(&self) -> Bool {
-        verify_cptp_condition(&self.all_lindblad_operators())
-    }
-
-    /// Atomic covering: list of (atom, projection-channel) with non-zero weight.
-    ///
-    /// **Theorem**: For Γ with P(Γ) > P_crit = 2/7 a full covering exists
-    /// (all 7 atoms carry non-zero weight).
-    public pure fn atomic_covering(&self, gamma: &CoherenceMatrix)
-        -> List<(StaticMatrix<Complex, 7, 7>, CptpChannel<7>)>
-    {
-        let mut out = List.new();
-        for k in 0..7 {
-            let s_k = &self.atoms[k];
-            let weight = (s_k.matmul(&gamma)).trace().real();
-            if weight > 1.0e-10 {
-                let proj = s_k.clone();
-                let channel: CptpChannel<7> = move |rho| {
-                    let result = proj.matmul(&rho).matmul(&proj);
-                    let tr = result.trace();
-                    if tr.abs() > 1.0e-12 { &result / tr } else { result }
-                };
-                out.push((s_k.clone(), channel));
-            }
-        }
-        out
-    }
-}
-
-impl Dim {
-    public pure fn from_index(k: Int) -> Dim
-        where requires 0 <= k && k <= 6
-    {
-        match k {
-            0 => Dim.A, 1 => Dim.S, 2 => Dim.D, 3 => Dim.L,
-            4 => Dim.E, 5 => Dim.O, _ => Dim.U,
-        }
-    }
-}
-
-/// Demonstration of Grothendieck-topology algorithms.
-fn demo_bures_topology() using [IO] {
-    let holon = Holon.new_pure(1.0);
-    let gamma = &holon.gamma;
-
-    // 1. Classifier Ω.
-    let omega = OmegaClassifier.new();
-    IO.println("=== Classifier Ω ===");
-    IO.println(f"CPTP condition satisfied: {omega.verify_cptp()}");
-
-    // 2. Characteristic morphisms.
-    IO.println("\n=== Characteristic morphisms χ_S ===");
-    for d in [Dim.A, Dim.S, Dim.D, Dim.L, Dim.E, Dim.O, Dim.U] {
-        IO.println(f"χ_{d}(Γ) = {omega.chi(gamma, d):.4f}");
-    }
-
-    // 3. Bures metric between pure and mixed states.
-    let gamma2 = Holon.new_mixed(1.0).gamma;
-    let d_B = bures_distance(gamma, &gamma2);
-    IO.println("\n=== Bures metric ===");
-    IO.println(f"d_B(Γ_pure, Γ_mixed) = {d_B:.4f}");
-
-    // 4. Atomic covering.
-    let covering = omega.atomic_covering(gamma);
-    IO.println("\n=== Atomic covering ===");
-    IO.println(f"Atoms with non-zero weight: {covering.len()}");
-}
-```
+Выбор ненулевых элементов или прямых Фано задаёт конечный алгоритм инцидентности. Его интерпретация как атомарного покрытия проверяется на заданном сайте. Список семи матричных проекторов сам по себе не даёт топос, классификатор подобъектов или единственный физический диссипатор.
 
 ## Зависимости
 
-```bash
-pip install numpy scipy
-```
+Листинг использует Python и NumPy. Заявления о реализации на Verum ограничены [документированным статусом](/docs/applied/coherence-cybernetics/implementation#быстрый-старт); прежние листинги не были скомпилированным доказательным артефактом. Для биологического применения также нужны [модель наблюдения и реконструкция](/docs/applied/research/reconstruction-identifiability), замороженная калибровка и все необходимые модальности данных.
 
----
+## Вычислительное ограничение: $\mathcal{R}$ и BQP {#вычислительное-ограничение}
 
-## Вычислительное Ограничение: $\mathcal{R}$ и BQP {#вычислительное-ограничение}
+Прежняя универсальная верхняя граница BQP отозвана [✗]. Идеальный нелинейный оракул может менять сложность, как показывает [Abrams–Lloyd](https://arxiv.org/abs/quant-ph/9801041), но из этого не следует решение SAT выбранным регенеративным ОДУ с полиномиальными физическими ресурсами. Нужны единообразная кодировка растущих входов, разрешённые операции, подготовка, размерность, границы темпов, точность, считывание, шум и полный физический расход. Усиление экспоненциально малого различия может требовать экспоненциальной точности подготовки или параметров. Фиксированная симуляция $7\times7$ вопроса не решает. См. [условный анализ вычислений](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение).
 
-:::warning Отозвано (2026-09-25): ограничение вычислительной мощности
-Детерминированная нелинейная квантовая эволюция может решать NP-полные и #P задачи за полиномиальное время, усиливая экспоненциально малые различия между состояниями (Д. С. Абрамс и С. Ллойд, *Phys. Rev. Lett.* **81**, 3992 (1998)). Этот раздел утверждал как теорему, что нелинейность $\mathcal{R}$ в УГМ такого ускорения **не даёт**. Ни один из четырёх доводов ниже не ограничивает того, что может вычислить нелинейная эволюция, — порог, скорость метаболизма, неравенство обработки данных и декогеренция ограничивают, когда и как часто действует $\mathcal{R}$, а не то, что он может усилить, — а бистабильность $I/7$ против $\rho^*$ сама усиливает малые различия. Утверждение отозвано; даёт ли $\mathcal{R}$ ускорение сверх BQP — открытый вопрос [Г] ([соответствие с физикой, §8.6](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение)). Прежняя теорема и её доводы сохранены ниже как запись.
-:::
+### Темпы энтропии и физическая мощность
 
-**Прежняя теорема (Ограничение вычислительной мощности), отозвана.** Нелинейный регенеративный член $\mathcal{R}$ не обеспечивает вычислительного ускорения сверх стандартной квантовой сложности BQP.
+Для полнорангового дифференцируемого состояния $\dot S=-\operatorname{Tr}(\dot\Gamma\log\Gamma)$ [T-271 на этой области]. Унитальная декогеренция вносит неотрицательное изменение энтропии; строгая положительность и знак регенеративного вклада не универсальны. В стационарной точке равна нулю **сумма**, а не каждый вклад. На границе для производной энтропии нужны дополнительные условия регулярности.
 
-**Прежнее доказательство (четыре довода):**
-
-**1. Пороговое ограничение.**
-$\mathcal{R}$ активируется только для систем с $R \geq R_{\text{th}} = 1/3$, $\Phi \geq \Phi_{\text{th}} = 1$ ([уровень L2+](/docs/proofs/consciousness/interiority-hierarchy)). Стандартные квантовые вычисления оперируют кубитами ($N = 2$), для которых $R \approx 0$ → $\mathcal{R} = 0$, и динамика полностью унитарна (стандартная КМ).
-
-**2. Термодинамическое ограничение.**
-Каждый шаг регенерации требует $\Delta F > 0$ — импорта свободной энергии. Скорость вычисления ограничена скоростью метаболизма:
-$$
-\frac{dP}{d\tau} \leq \frac{1}{k_B T} \cdot \frac{dF}{d\tau}
-$$
-
-**3. CPTP-ограничение.**
-Оператор $\varphi$ — CPTP-канал. CPTP-каналы не увеличивают квантовую информацию (data processing inequality):
-$$
-I(\Gamma_A : \Gamma_B) \geq I(\varphi(\Gamma_A) : \Gamma_B)
-$$
-
-**4. Масштабное разделение.**
-Аргумент Полчинского требует нелинейности на уровне отдельных кубитов. В УГМ нелинейность действует на уровне макроскопических автономных систем (L2+). Декогеренция подавляет экспоненциально малые квантовые различия ($\varepsilon \sim 2^{-n}$), и $\mathcal{R}$ не может их усилить — она лишь поддерживает макроскопическую когерентность выше $P_{\text{crit}} = 2/7$. (Отозвано вместе с теоремой: «не может усилить» утверждается, а не доказывается.)
-
-**См. также:** [Полное доказательство с формальными оценками](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение).
-
-:::note Октонионная структура и реперная группа
-Алгоритмы, оперирующие в 7D-пространстве, могут пользоваться [октонионной структурой](/docs/proofs/minimality/theorem-octonionic-derivation) (мост T15, [Т] с канонической ориентацией — T15-канон). Прежнее примечание обещало сокращение пространства параметров с $SO(7)$ (21 параметр) до $G_2$ (14 параметров) за счёт $G_2$-ковариантности и называло мост «[Т] (замкнут)»; отозвано 2026-09-25 — динамика ковариантна лишь относительно конечной реперной группы $\Gamma_{\!\text{oct}}$ ([реперное решение D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)), а вход ориентации (Альт) моста, названный здесь в тот день, снят T15-каноном.
-:::
-
----
-
-**Связанные документы:**
-- [Математический аппарат](/docs/reference/specification) — формальные определения $\Gamma$, $P$, $d_{\mathrm{FS}}$
-- [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
-- [Семь измерений](/docs/core/structure/dimensions) — базис $\mathcal{H} = \mathbb{C}^7$
-- [Теорема о минимальности 7D](/docs/proofs/minimality/theorem-minimality-7) — почему $N = 7$
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/d\tau$
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — меры $R$, $\Phi$, $D_{\text{diff}}$, $C$
-- [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4 и полная реализация
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор $F$
-- [Физическое соответствие — Запрет сигнализации](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) — полное доказательство совместимости $\mathcal{R}$ с no-signaling
+Физическое стирание в модели тепловой бани даёт $\dot Q\ge k_BT\dot s_{\mathrm{erase}}$ при установленной положительной скорости стираемой/экспортируемой энтропии в натах за физическую секунду [T-273 условно]. Для битов множитель равен $k_BT\ln2$. Это не оценка из одной чистоты или числа тиков симуляции. Нужны физическое соответствие состояния, баня, гамильтониан, темпы, обратимость и сохранённые корреляции; усиленное равенство для конечной бани дают [Reeb–Wolf](https://arxiv.org/abs/1306.4352). Космологические темпы и отождествление Вселенной с голономом остаются [T-266: Г](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной).

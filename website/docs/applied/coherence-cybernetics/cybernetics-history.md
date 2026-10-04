@@ -10,7 +10,6 @@ description: CC's relationship to first-, second-, and third-order cybernetics
 A 2500-year history of cybernetic ideas — from Plato through Wiener and von Foerster to CC. The reader will learn why CC is a metatheory that unifies all previous approaches.
 :::
 
-
 In the [previous chapter](./g2-noether-cc) we saw how $G_2$-symmetry generates 14 conservation laws of consciousness — precise mathematical constraints on coherent dynamics. This is a powerful formalism, but it did not emerge from nothing. Every key concept of CC — feedback, observer, self-reproduction, social system — has predecessors. In this chapter we trace the 2500-year history of ideas that led to Coherence Cybernetics, and show why CC is not a "fourth cybernetics" but a **metatheory** that unifies all previous approaches.
 
 :::tip Chapter Roadmap
@@ -337,7 +336,7 @@ Bateson formulated several ideas ahead of their time:
 
 | Bateson | CC |
 |---------|-----|
-| Difference that makes a difference | $\sigma_k = 1 - 7\gamma_{kk}$ (T-92/T-158 [T]) — stress as the difference between state and norm |
+| Difference that makes a difference | $\sigma_k = 1 - 7\gamma_{kk}$ (T-92/T-158 [D]) — stress as the difference between state and norm |
 | Double bind | Contradiction between $\gamma_{DD}$ (command) and $\gamma_{EE}$ (experience) |
 | Deutero-learning | SAD levels: L0 → L1 → L2 ([depth tower](/docs/consciousness/hierarchy/interiority-hierarchy)) |
 | Ecology of mind | The Holon is not isolated — $\Gamma$ includes interaction with the environment |

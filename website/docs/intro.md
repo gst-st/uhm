@@ -6,329 +6,130 @@ description: Unitary Holonomic Monism — a formal theory of reality and conscio
 
 # Unitary Holonomic Monism
 
-## A Formal Theory of Reality and Consciousness
+UHM is a mathematical research programme on organization, state dynamics and consciousness. It proposes a seven-role numerical model together with a psychophysical interpretation. Its verified constructions, chosen definitions and unverified physical bridges have different statuses; the [mathematical kernel](/docs/reference/mathematical-kernel) and [premise ledger](/docs/reference/premises) make these distinctions explicit.
 
-**Unitary Holonomic Monism (UHM)** is a formal theory describing the structure, dynamics, and phenomenology of reality through a single mathematical primitive — the **∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$**.
+## What is mathematically specified
 
-:::info Meta-theory status
-UHM claims the role of a **meta-theory** (unifying physics, consciousness, and information within a single axiomatic framework). What is proven about this claim, as of 2026-09-26: **The universal property [T] (T-174, restated)** is carried by the kinematic object $u_0 = (A_{\text{int}}, \text{trivial dynamics})$, $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$, and goes *from* UHM *to* a theory: morphisms $u_0 \to (A, \sigma)$ in the $C^*$-typed part of $\mathbf{PhysTheory}$ are exactly the $A_{\text{int}}$-structures (a projection and two systems of $3 \times 3$ matrix units summing to 1) in the dynamically fixed algebra $A^\sigma$; on $\mathbb{C}^n$ a faithful one exists iff $n \geq 7$, and the multiplicity-free one exists only for $n = 7$, where it is unique up to $U(7)$; on states it acts through the unique trace-preserving conditional expectation — for $n = 7$ the sector pinching. The former claim — an essentially unique *receiving* morphism from every theory with $A_{\text{int}} \subset \mathcal{A}$, CPTP dynamics and $\leq 7$ observables into $\mathfrak{T}$, up to $G_2 \times \mathbb{R}_{>0}$ — is retracted [✗]: no $*$-homomorphism $M_7(\mathbb{C}) \to A_{\text{int}}$ exists, as monoid maps such morphisms are not unique, and the proof's "subtopos of modules", "$\mathrm{Mod}(A_{\text{int}}) \simeq \mathcal{D}(\mathbb{C}^7)$" and "Takesaki homomorphism" are false. $\mathbf{PhysTheory}$ is an $(\infty,1)$-category as a Grothendieck construction over $\mathbf{Topoi}_\infty$ ([T-211](./proofs/categorical/fundamental-closures#t-211) [T]; its former full embedding into $\mathbf{Topoi}_\infty$ is retracted). Rigidity of the primitive is stated [T] (T-173); T-174 no longer uses it. **Alternative programmes** ([ToE embeddings](./proofs/physics/toe-embeddings)): **T-170** — [T] for the group coincidence $\mathrm{Stab}_{GL(7)}(\varphi_0) = \mathrm{Aut}(\mathbb{O}) = G_2$ (the holonomy group of M-theory compactifications), finiteness of the UHM integral at finite $M$ and existence of limit states; the equality of UHM and M-theory partition functions is a hypothesis [H] (its M-theory side is not defined). **T-171 [T]**: every finite spin network, with unbounded spin, is encoded injectively in a state of $\lvert V\rvert$ holons (T-171' is its corollary; the cluster construction is retracted). **T-172 [T]**: every finite causal set is encoded in a state, and finite posets embed fully faithfully as internal categories of $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7))$. These are encodings and a shared symmetry group, not derivations of LQG, causal-set or M-theory dynamics. The Standard Model in its NCG form ($\mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$) contains no copy of $A_{\text{int}}$; it is reached from $A_{\text{int}}$ by *construction* ([T-176](./proofs/physics/bimodule-construction)). "Meta" therefore means: the $A_{\text{int}}$-structure of UHM is universal (corepresenting) and rigid exactly on $\mathbb{C}^7$, and the SM and gravity are derived from the primitive — not that the primitive receives every theory, nor that every known theory embeds into it.
-:::
-
-The theory:
-- **Derives** space, time, and metric from categorical structure
-- Formalizes the connection between physics and consciousness
-- Defines an interiority hierarchy (L0→L4): from minimal internal structure to reflective consciousness
-- Derives the minimal structure of a self-sustaining system (7 dimensions)
-- Establishes [bounds of explanation](./reference/falsifiability) — what the theory explains and what it takes as primitive
-
-### Etymology of the Name
-
-- **Unitary** — from Lat. *unus* (one): reality is described by a single ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$; the underlying unitary evolution preserves information
-- **Holonomic** — from Gr. *holon* (whole) + *nomos* (law): every part (Holonom) contains an image of the whole and obeys universal laws
-- **Monism** — from Gr. *monos* (one): reality is one — there are no independent "layers" or "substances." In UHM this is a corollary of the terminal-object axiom ($H^*(X) = 0$ follows from Property 3), read ontologically through the PID definition — a theorem relative to the axioms, not an independent discovery
-
-## Theory Structure
-
-```mermaid
-graph TB
-    C["Sh_∞(C) — ∞-topos<br/>(sole primitive)"] --> X["X = |N(C)|<br/>Base space"]
-    C --> Ob["Ob(C) = {Γ}<br/>Coherence matrices"]
-    C --> Mor["Mor(C)<br/>CPTP channels"]
-    X --> H0["H*(X) = 0<br/>Cohomological monism"]
-    X --> Hloc["H*_loc ≠ 0<br/>Local physics"]
-    C --> T["T = Γ*<br/>Terminal object"]
-    T --> Arrow["Arrow of time<br/>Stratal collapse toward T"]
-    Ob --> Holon["Holonom ℍ<br/>7 dimensions"]
-```
-
-## Five Structural Properties of the Sole Primitive (Ω⁷)
-
-:::info Sole primitive
-The **∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$** is the sole primitive of UHM theory. The notion of a "sheaf" in the ∞-topos is defined via a [Grothendieck topology](./core/foundations/axiom-omega#топология-гротендика) on the category $\mathcal{C}$.
-:::
-
-| # | Property | Formulation |
-|---|----------|-------------|
-| 1 | **[Finite-dimensionality](./core/foundations/axiom-omega#свойство-1)** | $\text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42})$ |
-| 2 | **[Constraint](./core/foundations/axiom-omega#свойство-2)** | $\hat{C} \cdot \Gamma = 0$ (Page–Wootters) |
-| 3 | **[Terminal object](./core/foundations/axiom-omega#свойство-3)** | $\forall \Gamma, \exists! f: \Gamma \to T$ |
-| 4 | **[Self-modeling](./core/foundations/axiom-omega#свойство-4)** | $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty$ (adjunction)* |
-| 5 | **[Stratification](./core/foundations/axiom-omega#свойство-5)** | $X = \bigsqcup_\alpha S_\alpha$, $S_0 = \{T\}$ |
-
-*The variational characterization $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ was stated as a **theorem** about the categorically defined φ; it is **retracted** (2026-09-25): the functional equals the cross-entropy $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$ and is minimised by a projection onto the top eigenvector of $\Gamma$, not by φ ([FEP derivation](./proofs/dynamics/fep-derivation), retraction box).
-
-:::note Connection to the Septicity Axiom
-The [Septicity Axiom](./core/foundations/axiom-septicity) (AP+PH+QG+V) is a set of **consequences** of Ω⁷ — operational requirements that any viable system must satisfy.
-:::
-
-:::info Theorem on degrees of freedom (consequence of Ω⁷)
-The number of structurally distinct directions of development of a configuration $\Gamma$ — $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ — is a topological invariant. Systems with sufficient coherence possess a nontrivial choice space ($\mathrm{Freedom} > 1$).
-:::
-
-:::info Theorem S (justification of Axiom 3) [T]
-N = 7 (Axiom 3) is the **minimal** dimension for satisfying (AP)+(PH)+(QG). All 7 dimensions are **necessary and functionally unique** [T]: A, S, D, L, U — algebraically; E, O — categorically (via the κ₀ formula). [Proof →](./proofs/minimality/theorem-minimality-7)
-
-**Second justification** (not independent of Theorem S: step T8 of the chain takes $N = 7$ from it; it read "second, independent" until 2026-09-25): theorems P1+P2 [T] (derived from (AP)+(PH)+(QG)+(V) via the T15 chain, whose step PG(2,2) → $\mathbb{O}$ takes the canonical orientation of the seven Fano lines — only 16 of the 128 orientations give a normed algebra, and they are the only orientation class invariant under the collineations of the design, [T15-canon](./proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация), registry row 41n; [C at (Alt)] earlier on 2026-09-25) yield $N = \dim(\mathrm{Im}(\mathbb{O})) = 7$ through the Hurwitz theorem. [Structural derivation →](./proofs/minimality/theorem-octonionic-derivation)
-:::
-
-## Key Results
-
-| Construction | Formula | Status |
-|-------------|---------|--------|
-| **Base space** | $X = \|N(\mathcal{C})\|$ | [T] Derived |
-| **Cohomological monism** | $H^n(X) = 0$ for $n > 0$ (locally constant coefficients) | [T] corollary of Property 3 |
-| **Local physics** | $H^*_{loc}(X, T) \neq 0$ | [T] Theorem |
-| **Time** | Clock register $\tau \in \mathbb{Z}_7$ (Page–Wootters) | Clock register [T]; the Page–Wootters link (constraint $\hat{C}\Gamma = 0$) [C] (T-87, step 4); the dynamics runs relative to the [depth register](./proofs/dynamics/emergent-time#114-регистр-глубины) — [T] (T-53b), with the time line $C_0(\mathbb{R})$ as its scaling limit (T-118 [T]); read "[T] Derived" until 2026-09-25 |
-| **Arrow of time** | $\dim(X_n) \geq \dim(X_{n+1})$ along the stratal depth $n \in \mathbb{N}$, monotone in the parameter $t$ of the Lindblad semigroup — the free energy $F$ is the Lyapunov functional of the full flow; $S_{vN}$ is monotone only for the unital part (the reset channel lowers it); the cyclic tick $\tau \in \mathbb{Z}_7$ carries no arrow; along the readings of the depth register the purity of the unital primitive part falls strictly (emergent time, Theorems 11.1–11.2) | [T] relative to the depth register (T-53b; "[T] Theorem" until 2026-09-25, then [C at an aperiodic time parameter] the same day) |
-| **Metric** | $d_{strat}$ (Connes on strata) | [T] Derived |
-| **Evolution equation** | All 3 terms ($H_{\text{eff}}$, $\mathcal{D}_\Omega$, $\mathcal{R}$) derived from axioms | [T] Fully |
-| **Conscious window (Goldilocks zone)** | $P \in (2/7, 3/7]$: viability $\wedge$ reflexivity ($R \geq 1/3$ when $P \leq 3/7$) | [T] ([T-124](./proofs/consciousness/conscious-window#t-124)) |
-| **Octonionic structure** | (AP)+(PH)+(QG) →[T1–T10]→ $\mathbb{O}$ → N=7, $G_2$, Fano, H(7,4) | [T]: steps 1–9 give the unoriented design PG(2,2) [T]; step 10 takes the canonical orientation, the unique collineation-invariant class ([T15-canon](./proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация), row 41n; [C at (Alt)] earlier on 2026-09-25); the strict necessity of $N = 7$ stays [C at (P1₆)] |
-
-## 7 Dimensions of the Holonom
-
-| Symbol | Dimension | Function | Mathematical operator |
-|--------|-----------|---------|----------------------|
-| **A** | Articulation | Distinction, boundaries | Projector $P: P^2 = P$ |
-| **S** | Structure | Form retention | Hamiltonian $H: H^\dagger = H$ |
-| **D** | Dynamics | Change | Unitary operator $U(\tau) = e^{-iH_{eff}\tau}$ |
-| **L** | Logic | Coordination | Commutator $[A,B] = AB - BA$ |
-| **E** | Interiority | Experience | Density matrix $\rho_E$ |
-| **O** | Foundation | Vacuum coupling + **internal clock** | Page–Wootters, $H_O$, $V_O$ |
-| **U** | Unity | Integration | Trace $\mathrm{Tr}$ |
-
-State space:
-$$
-\mathcal{H}_{total} = \mathcal{H}_O \otimes \mathcal{H}_{6D} = \mathbb{C}^7 \otimes \mathbb{C}^6 = \mathbb{C}^{42}
-$$
-
-:::warning Two formalisms: 7D and 42D
-The theory uses **two related formalisms**:
-
-| Formalism | Dimension | Application |
-|-----------|-----------|------------|
-| **Minimal** | $\mathbb{C}^7$ | Conceptual basis, minimality theorems |
-| **Page–Wootters** | $\mathbb{C}^{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$ | Operational calculations, emergent time |
-
-In the minimal formalism, $\mathcal{H}_O$ is **one of the 7 dimensions** (basis vector $|O\rangle$).
-In the extended formalism, $\mathcal{H}_O \cong \mathbb{C}^7$ is the **internal clock space** with 7 time states τ ∈ ℤ₇.
-
-The formalisms are related by **Morita equivalence** [T]: $\mathrm{Sh}_\infty(\mathcal{C}|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}|_{42})$ (Lurie comparison theorem). All 7D formulas are exact, not approximations. See [Coherence matrix](/docs/core/dynamics/coherence-matrix#согласование-формализмов).
-:::
-
-## Central Concepts
-
-### Coherence Matrix Γ (object of category $\mathcal{C}$)
+For a chosen finite dimension $N$, the state space is
 
 $$
-\Gamma \in \text{Ob}(\mathcal{C}), \quad \Gamma^\dagger = \Gamma, \quad \Gamma \geq 0, \quad \mathrm{Tr}(\Gamma) = 1
+X_N=\mathcal D(\mathbb C^N)=\{\Gamma=\Gamma^\dagger\geq0:\operatorname{Tr}\Gamma=1\}.
 $$
 
-- **Diagonal elements** $\gamma_{ii}$: probabilities of being in dimension $i$
-- **Off-diagonal elements** $\gamma_{ij}$: coherences (quantum correlations) between dimensions
+Linear CPTP channels form a category of quantum systems. Pairs $(\mathcal H,\Gamma)$ and channels sending the distinguished source state to the target state form the state-preserving process category. Separately, the site $\operatorname{Open}_B(X_N)$ with ordinary open covers defines the $\infty$-topos $\mathcal E_N=\operatorname{Sh}_\infty(X_N)$ [T]. Channels are continuous maps and induce geometric morphisms between these sheaf topoi. They are not automatically internal arrows of one topos.
 
-### Purity
+Choosing this topos as a common language or ontological framework is [D/I]. Its existence does not select $N=7$, a numerical self-model, a clock, a Hamiltonian or phenomenal experience. The subobject classifier is a sheaf of opens, not seven basis projectors.
+
+## Seven roles and their scope
+
+The native model chooses $\mathcal H=\mathbb C^7$ and a labelled orthonormal frame [D]:
+
+| Label | Role |
+|---|---|
+| A | Articulation |
+| S | Structure |
+| D | Dynamics |
+| L | Logic |
+| E | Experience |
+| O | Ground |
+| U | Unity |
+
+Functional names alone prove neither independence nor minimal Hilbert-space dimension. The [replacement minimality results](/docs/proofs/minimality/theorem-minimality-7) give $N\geq7$ under explicit coding/diagnosability assumptions, or for a faithful representation of the chosen algebra $\mathbb C\oplus M_3(\mathbb C)\oplus M_3(\mathbb C)$. Applying either premise to every autonomous or conscious system is an additional hypothesis.
+
+For a specified positive octonionic three-form, its symmetry group is $G_2$ [T]. Deriving that form from physical organization requires the explicit premises of the [structural construction](/docs/proofs/minimality/theorem-octonionic-derivation). A seven-dimensional role list or an unoriented Fano incidence diagram does not supply the whole structure without those inputs.
+
+## Central quantities
+
+The native numerical state has $7^2-1=48$ real parameters. Its purity and the model's canonical reflection scalar are
 
 $$
-P = \mathrm{Tr}(\Gamma^2) \in \left[\frac{1}{7}, 1\right]
+P=\operatorname{Tr}\Gamma^2,\qquad R=\frac1{7P},\qquad \frac17\leq P\leq1.
 $$
 
-- $P = 1$: pure state (maximal coherence)
-- $P = 1/7$: maximally mixed state (complete decoherence)
-- $P > P_{\text{crit}} = 2/7 \approx 0.286$: viability condition ([theorem](./proofs/dynamics/theorem-purity-critical))
-- $P \in (2/7,\, 3/7]$: **conscious window** (Goldilocks zone) — viability $\wedge$ reflexivity $R \geq 1/3$; $P = 3/7$ is the **upper** bound ([T-124](./proofs/consciousness/conscious-window#t-124))
-
-### Terminal Object T
+In the selected frame put
 
 $$
-T = \Gamma^* : \varphi(T) = T, \quad \forall \Gamma \in \mathcal{C}, \exists! f: \Gamma \to T
+d=\sum_i\gamma_{ii}^2,\quad q=\sum_{i\ne j}|\gamma_{ij}|^2,\quad
+P=d+q,\quad\Phi=q/d.
 $$
 
-**Interpretation:** T is the global attractor toward which all trajectories converge. The arrow of time is the **stratal collapse** toward T.
+One has $d\geq1/7$, $0\leq\Phi\leq6$, and $\Phi\leq7P-1$ [T]. A pure coordinate state has $P=1$ and $\Phi=0$, so purity alone does not imply integration. Unlike $P$, $\Phi$ depends on the declared frame.
 
-### Evolution Equation
+The orbit quotient by a specified $G_2$ action has **generic** dimension $48-14=34$ [T on the principal stratum]. It is not a universal count of physical parameters: stabilizers change on exceptional strata, and the dynamics may distinguish frames. A unique encoder of physical systems is not inferred from this dimension count or from uniqueness of a forward flow; [reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) and an empirical measurement bridge are required.
 
-With [emergent internal time](./proofs/dynamics/emergent-time) τ:
+## Self-models, dynamics and viability
+
+Four constructions are distinguished in [formalization of φ](/docs/proofs/categorical/formalization-phi): a slice-category support reflector, a numerical finite-step self-model $M$, an asymptotic limit map when convergence is proved, and a linear CPTP reset. Their types and hypotheses differ. Idempotence alone proves neither an adjunction nor complete positivity.
+
+A declared dynamical model can take the form
 
 $$
-\frac{d\Gamma(\tau)}{d\tau} = \underbrace{-i[H_{eff}, \Gamma]}_{\text{unitary}} + \underbrace{\mathcal{D}[\Gamma]}_{\text{dissipation}} + \underbrace{\mathcal{R}[\Gamma, E]}_{\text{regeneration}}
+\dot\Gamma=-i[H,\Gamma]+\mathcal D(\Gamma)
++a(\Gamma)\bigl(M(\Gamma)-\Gamma\bigr).
 $$
 
-where:
-- τ — internal time (parameter of conditional states relative to O)
-- $H_{eff} = H_{6D} + \langle\tau|H_{int}|\tau\rangle_O$ — effective Hamiltonian (from the Page–Wootters constraint)
-- $\mathcal{D}[\Gamma]$ — Lindblad dissipator
-- $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ — [regenerative term](./core/dynamics/evolution#3-регенеративный-член) [T] ([full derivation](./core/dynamics/evolution#вывод-формы-регенерации) from axioms)
+$H$, the dissipator, nonnegative rate $a$ and state-preserving $M$ are supplied data. Local Lipschitz regularity and the stated positivity conditions give well-posed state evolution; state-dependent feedback is generally nonlinear and is not a single CPTP semigroup. Stability and convergence require their own estimates. A stationary state is not a terminal object of the process category. The terminal quantum system is one-dimensional and does not pick the preparation $I_7/7$.
 
-## Interiority Hierarchy
+The identity
 
-| Level | Name | Condition | n-truncation |
-|-------|------|-----------|-------------|
-| **L0** | Interiority | $\exists \rho_E$ | $\tau_{\leq 0}$ (set) |
-| **L1** | Phenomenal geometry | $\mathrm{rank}(\rho_E) > 1$ | $\tau_{\leq 1}$ (groupoid) |
-| **L2** | Cognitive qualia | $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | $\tau_{\leq 2}$ (bicategory) |
-| **L3** | Network consciousness | $R^{(2)} \geq 1/4$ (metastable) | $\tau_{\leq 3}$ (tricategory) |
-| **L4** | Unitary consciousness | $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$ | $\tau_{\leq \infty}$ (∞-groupoid) |
+$$
+P=\frac17+\|\Gamma-I_7/7\|_F^2
+$$
 
-**Threshold values ([L2 thresholds](./core/foundations/axiom-septicity#пороги-l2-строгий-вывод)):**
-- **R** (reflexivity) — measure of proximity to the dissipative attractor: $R = 1/(7P)$, where $P = \mathrm{Tr}(\Gamma^2)$
-- **Φ** (integration) — connectivity measure: $\Phi = \sum_{i \neq j} |\gamma_{ij}|^2 / \sum_i \gamma_{ii}^2$
-- **$R^{(n)}$** (n-th order reflexivity) — meta-reflexivity measure: $R^{(n)} = \mathrm{Fid}(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$
+gives $P>2/7$ after choosing the **structural-majority convention** $\|\Gamma-I_7/7\|_F^2>1/7$ [D]. Ordinary statistical distinguishability is nonzero for every state different from $I_7/7$; it does not impose this threshold. Survival of an open-system trajectory, structural majority and the proposed biological interpretation are separate claims.
 
-**Threshold value statuses:**
-- $P_{\text{crit}} = 2/7$ **[T]** — lower bound of viability (Frobenius norm distinguishability)
-- $P_{\text{max}} = 3/7$ **[T]** — **upper** bound of the conscious window: $R = 1/(7P) \geq 1/3$ holds if and only if $P \leq 3/7$; the Goldilocks zone $P \in (2/7, 3/7]$ is nonempty ([T-124](/docs/proofs/consciousness/conscious-window#t-124))
-- $R_{\text{th}} = 1/3$ **[T]** — $K = 3$ from the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + Bayesian dominance
-- $\Phi_{\text{th}} = 1$ **[T]** — the unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129))
-- $D_{\min} = 2$ **[D]** — an independent L2 threshold, not a consequence of $\Phi_{\text{th}} = 1$ ([T-151](/docs/proofs/consciousness/substrate-closure#t-151); it read "[T] — unconditional consequence of $\Phi_{\text{th}} = 1$" until 2026-09-25)
+## Consciousness and interiority
 
-:::note Level statuses
-- **L0–L2**: stable states for biological systems
-- **L3**: metastable state (finite lifetime $\tau_3$); threshold $K = 4$ **[T]** from quadratic decomposition ([T-67](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l3-k4))
-- **L4**: theoretical limit; categorical unreachability **[T]** ([T-86](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l4-категориальная): $L4=\mathrm{colim}_{n}\tau_{\leq n}(\mathbf{Exp}_\infty)$ not reachable in finitely many steps, + Lawvere incompleteness T-55) — an attractor, not a physical state (the coherence-survival ratio $S^{(n)}\to 0$; the fidelity $R^{(n)}_{\mathrm{fid}}\to 1$ is a different quantity, see [disambiguation](/docs/proofs/consciousness/interiority-hierarchy#теорема-4-3))
-- **SAD metric** [T], SAD_MAX = 3 [T] (T-142): generalization of L0–L4 to the continuous case via the representational tower; SAD = max{k : R^(k) > 1/(k+2)}, spectral formula [T], stress-dependent regime [T] — [Depth tower](/docs/consciousness/hierarchy/depth-tower#sad)
-:::
+AP, PH, QG and viability are [declared requirements and bridges](/docs/core/foundations/axiom-septicity). Nonzero occupancy of the $E$ axis is a scalar condition; it does not automatically yield phenomenality. That rank-one axis is not a tensor register with a nontrivial reduced density matrix. An extended register and its readout must be specified if experiential entropy or ray geometry is used.
 
-## Formal Results
+The proposed functional-access predicate combines majority, reflection, integration and a declared differentiation measure. The scalar cuts and their interpretation as consciousness criteria are model choices [D/I/H], not empirical consequences of a topos. The first two inequalities, $P>2/7$ and $R\geq1/3$, give $P\in(2/7,3/7]$ [T]; this interval alone does not guarantee integration, differentiation or experience.
 
-| Theorem | Statement | Status | Reference |
-|---------|-----------|--------|-----------|
-| **Cohomological monism** | $H^n(X) = 0$ for $n > 0$ (locally constant coefficients; corollary of Property 3) | [T] | [Consequences](./core/foundations/consequences#когомологический-монизм) |
-| **Local nontriviality** | $H^*_{loc}(X, T) \neq 0$ | [T] | [Consequences](./core/foundations/consequences#локально-глобальная-дихотомия) |
-| **7D minimality** | $n < 7 \Rightarrow$ violation of (AP), (PH), or (QG) | [T] | [Proof](./proofs/minimality/theorem-minimality-7) |
-| **Fixed point of φ** | $\exists! \Gamma^* : \varphi(\Gamma^*) = \Gamma^*$ for a fixed anchor; for the canonical $\varphi_{\mathrm{coh}}$ it is $I/7$, $P = 1/7$ (not $2/7$, retracted 2026-09-25) | [T] | [Proof](./proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) |
-| **Attractors of an isolated holon** | With a unital self-model (the canonical $\varphi_{\mathrm{coh}}$, every $G_2$- or $\Gamma_{\!\text{oct}}$-covariant linear one) the only stationary state is $I/7$ and $P$ never increases — [dead isolation](./core/dynamics/evolution#теорема-мёртвая-изоляция); with the self-registering $\varphi_s(\Gamma) = k\mathcal{P}_\alpha(\Gamma) + R\,\Gamma^2/\mathrm{Tr}\,\Gamma^2$ there are seven attractors with $P > 2/7$ for $\lVert H\rVert < h_0$ — [self-sustaining attractors](./core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор); under backbone dominance an embodied holon has exactly one (T-124c, restated). The former "at most one nontrivial attractor" and "the φ-tower converges for every holon" are retracted (T-124c, T-191 restated) | [T] | [Theorem](./core/dynamics/evolution#теорема-единственность-нетривиального-аттрактора) |
-| **Emergent time** | Three constructions of the cyclic clock $\tau \in \mathbb{Z}_7$ (Page–Wootters, Bures, ∞-groupoid) are equivalent [T] (T-53a); the dynamics runs in the parameter of the Lindblad semigroup, whose finite carrier is the [depth register](./proofs/dynamics/emergent-time#114-регистр-глубины): one state-independent Feynman–Kitaev constraint gives the conditional states exactly $e^{n\Delta t\,\mathcal{L}}\rho_0$ at every reading (T-53b), and the reading algebras converge to $C_0(\mathbb{R})$ (T-118) | [T]; dynamics [T] (it read [C at an assumed aperiodic time] until 2026-09-25) | [Theorem](./proofs/dynamics/emergent-time) |
-| **Arrow of time** | Stratal collapse along the depth $n \in \mathbb{N}$: $\dim(X_n) \geq \dim(X_{n+1})$, monotone in the semigroup parameter $t$ (Lyapunov functional $F$; $S_{vN}$ only for the unital part), exact along the readings of the depth register; on a ring of readings the arrow breaks exactly once per period, which is optimal | [T] (it read [C at an aperiodic time parameter] until 2026-09-25) | [Theorem](./proofs/dynamics/emergent-time#10-стратификационное-время) |
-| **Critical purity** | $P_{\text{crit}} = 2/N = 2/7$ | [T] | [Theorem](./proofs/dynamics/theorem-purity-critical) |
-| **Necessity of interiority** | $\text{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | [T] | [Theorem 8.1](./applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
-| **$G_2$-rigidity** | The holonomic representation is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$ kinematically and up to the finite frame group $\Gamma_{\!\text{oct}}$ dynamically; 34 kinematic $G_2$-invariants, 48 physical parameters (frame decision D-0910) | [T] | [Theorem](./proofs/categorical/uniqueness-theorem#g2-ригидность) |
-| **Electroweak sector** | $SU(2)_L \times U(1)_Y$ from the pair $(E,U)$ of $\kappa_0$ and the Higgs line $\{A,E,U\}$ (both [T]) — the group [C at (FE)]; its uniqueness [H]: no uniqueness theorem for $SU(2)\times U(1)$ exists, and the octonionic routes that derive Standard-Model structure end with an extra $U(1)$ (Furey and Hughes 2022: SM + $B-L$). Listed as "unique rank-4 construction [T]" until 2026-09-25. Through the Clifford system of $\mathbb{C}\otimes\mathbb{O}$ the whole group $(SU(3)\times SU(2)\times U(1))/\mathbb{Z}_6$ is the normaliser of colour in $\mathrm{Spin}(9)$ and the electroweak algebra is the centraliser of colour ([T-326](./physics/gauge-symmetry/standard-model#sm-из-клиффорда)); in the doublet sector there is no extra $U(1)$, and $B-L$ returns only with the right-handed fields (T-329) | axis construction [C at (FE)], uniqueness there [H]; through T-326 [T] as mathematics, [C at (Cl)] in UHM | [Theorem](./physics/gauge-symmetry/standard-model#теорема-единственности-фэ) |
-| **Chirality of the doublets** (T-327) | On $\mathcal{S} = \mathbb{C}\otimes\mathbb{O}$: $(\mathbf 3,\mathbf 2)_{1/6}\oplus(\mathbf 1,\mathbf 2)_{-1/2}$, not self-conjugate for every $G_{\mathrm{SM}}$-invariant complex structure — the Distler–Garibaldi test passed without a choice; right-handed singlets not derived | [T] as mathematics; [C at (Cl)] | [Theorem](./physics/gauge-symmetry/standard-model#киральность-t327) |
-| **Three generations** | $N_{\text{gen}} = 3$: exact count $\|\mathrm{QR}(7)\| = (7-1)/2 = 3$ **[T]**; physical identification [I]. Families must be horizontal (T-328): on one copy of $\mathcal S$ only $U(1)_B\times U(1)_L$ commutes with $G_{\mathrm{SM}}$, triality is not a family symmetry, and the clock register gives a horizontal three (three real harmonics of $\mathbb Z_7$) [T]; the identification with generations is [C at (GC)] — [families](./physics/particle-physics/fermion-generations#поколения-t328) | [T]+[I]; T-328 identification [C at (GC)] | [Theorem](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
-| **Fano Yukawa selection** | $y_k = g_W \cdot f_{k,E,U} \cdot \|\gamma_{\text{vac}}^{(EU)}\|$ via octonionic $f_{ijk}$; the selection by $f_{k,E,U}$ is [T], and reading $\gamma^{(EU)}_{\text{vac}}$ as the Higgs vacuum value rests on $H \sim \gamma_{EU}$, a hypothesis [H] | [T] for the selection | [Theorem](./physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk) |
-| **Source instability** | $\Gamma_\odot = I/7$ is non-stationary: $F_0 \neq 0$, drift toward $\rho^*$, self-amplification | [T] | [Proof](./physics/cosmology-phys/origin#доказательство-нестабильности) |
-| **Free will** | $\mathrm{Freedom}(\Gamma) = \dim\ker(H_\Gamma) + 1$; monotonicity under CPTP, $G_2$-invariance | [T] | [Theorem](./core/foundations/consequences#freedom-конечномерное) |
-| **$A_4$-bifurcation** | Swallowtail from 3 parameters $(\kappa, \alpha, \Delta F)$ + $\mathbb{Z}_2$-purity symmetry | [T] | [Theorem](./consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация) |
-| **Gap-injection of L-levels** | $L(\Gamma_1) \neq L(\Gamma_2) \Rightarrow [\mathrm{Gap}(\Gamma_1)] \neq [\mathrm{Gap}(\Gamma_2)]$ | [T] | [Theorem](./consciousness/hierarchy/interiority-hierarchy#теорема-gap-инъекция) |
-| **Generation assignment** | $k=1 \to$ 3rd [T] (unique nonzero tree-level Yukawa); $k=4 \to$ 2nd, $k=2 \to$ 1st [C at (SA)], with (SA) a hypothesis (it read [T] until 2026-09-25) | [T]; ordering [C at (SA)] | [Theorem](./physics/particle-physics/fermion-generations#thm-gen-4-1) |
-| **Superpotential** | $W = \mu_W \sum f_{ijk}\Theta\Theta\Theta$ — unique $G_2$-invariant (Schur's lemma) | [T] | [Theorem](./physics/particle-physics/susy#теорема-суперпотенциал) |
-| **Right-handed neutrino mass** | $M_R \sim 2.9 \times 10^{14}$ GeV from PW clock + viability | [T] | [Theorem](./physics/particle-physics/neutrino-masses#теорема-mr-из-gap) |
-| **3+1 from sector decomposition** | Former statement: $7 = 1_O \oplus 3_{A,S,D} \oplus \bar{3}_{L,E,U}$; $\dim(\text{space}) = 3$. Retracted 2026-09-25: as an axis-labelled real decomposition it is false — $\mathrm{SU}(3)$ acts irreducibly on the six non-$O$ axes, and no three of them span an invariant subspace; the complexified $\mathbb{C}^7 = \mathbb{C} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ is Günaydın and Gürsey (1973) and gives colour, not space | [✗] | [Retraction](./core/foundations/spacetime#секторная-декомпозиция) |
-| **3+1 that commutes with colour** (48c) | $SU(3)_C$ fixes in the spin factor $\mathfrak h_2(\mathbb O) \cong \mathbb R^{1,9}$ exactly $\mathfrak h_2(\mathbb C_O)$: dimension 4, signature $(1,3)$ (the sign of $\det$, no reflection positivity needed); $SL(2,\mathbb C_O)$ acts on it commuting with colour, so Coleman–Mandula is respected; no rotation of the seven axes commutes with colour | [T] as mathematics; [C at (L)], (L) ⟺ (P) — [48e(f)–(i)](/docs/core/foundations/spacetime#теорема-48c) as physical spacetime | [Theorem](./core/foundations/spacetime#теорема-48c) |
-| **Sector hierarchy $\varepsilon$** | The homogeneous vacuum is not stationary [T] (T-61, Theorem 14.1). Corrected 2026-09-25: the vacuum of the $G_2$-invariant $V_{\text{Gap}}$ is unique up to $G_2$ — for every $\kappa > 0$ off the transition curves [T]: $I/7$ (always for $\kappa \le \mu^2/48$) or one colour-invariant orbit $S^6$ (T-64); $\kappa$ itself is fixed by no derived source (T-331(e)), and the no-go is strengthened by T-331(f) [T]: the associator weight vanishes for every functional that does not tell triples of axes apart — everything the dynamics of an isolated holon determines — and a readout that does resolve the Fano lines can carry any weight, so $\kappa$ stays a free coupling — and has no sector structure, so the sector values are the hypothesis (SV) [H]. $\bar\varepsilon$ is the root mean square over the 15 non-O pairs, $\approx 0.027$ under (SV) — order $10^{-2}$ [C at (SV)] (registry C35); the earlier $0.023$ came from substituting $\varepsilon_O \approx 0.04$ against the table's $\varepsilon_O \sim 1$, with which the 21-pair mean is $0.53$ | [T]; uniqueness [T]; value [C at (SV)] | [Theorem](./core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) |
-| **No topological $\Lambda$-term** | $H^{n>0}(X) = 0$ forbids a $\Lambda$-contribution of the form $\int_X c$; the vacuum energy is **not** cancelled (a degree-0 quantity) | [T] narrow; the "global cancellation" reading retracted 2026-09-10 ([Λ-budget §4.1](/docs/proofs/gap/lambda-budget#когомологическое-обнуление)) | [Theorem](./proofs/gap/lambda-budget#когомологическое-обнуление) |
-| **Einstein equations from spectral action** | Full triple (T-53) → $S = \mathrm{Tr}(f(D_A/\Lambda))$ → EH, $G_N = 3\pi/(7f_2\Lambda^2)$: the heat-kernel coefficient $a_2$ sees the internal space only through $\mathrm{Tr}(1) = 7$. The "+ SM" part is imported from Connes' finite triple (no KO-dimension-6 structure exists on $\mathbb{C}^7$; T-178 is retracted as a derivation) and inherits its history: $m_H \approx 170$ GeV (Chamseddine–Connes–Marcolli 2007), excluded by CDF and D0 in 2008; the 2012 rescue adds a singlet $\sigma$ and a fitted parameter | EH [T] for the formula; the value needs the cut-off convention $f_2$ and the scale $\Lambda$ [D]; SM part imported | [Theorem](./physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) |
-| **UV-finiteness of Gap theory** | Compactness of $(S^1)^{21}$ + $G_2$-Ward ($21 \to 7$) + $\mathcal{N}=1$ SUSY (Seiberg) + $\varepsilon^{12}$ suppression (T-219, a hypothesis [H] since 2026-09-25) | field-space **[T]**, full order-by-order **[C]** (structural, with the [H] ingredient T-219) | [Theorem](./physics/gravity/quantum-gravity#теорема-уф-конечность) |
-| **Lorentzian signature** | $(1,3)$: one time direction from the Page–Wootters clock [T] as a count (the time line $\mathbb{R}$ itself is T-118, [T] through the depth register; [C at an aperiodic clock] earlier on 2026-09-25); three space directions from $S^3$ (T-119, [T] as mathematics since 2026-09-25, reading [I]); Lorentzian sign at reflection positivity (bounded-below PW generator / Osterwalder–Schrader). The row read "$(1,3)$-split [T]" until 2026-09-25. A second route to the same signature, without reflection positivity: [Theorem 48c](./core/foundations/spacetime#теорема-48c), [T] as mathematics, [C at (L)], (L) ⟺ (P) — [48e(f)–(i)](/docs/core/foundations/spacetime#теорема-48c) as spacetime | [C] (registry row T-53) | [Theorem](./core/foundations/spacetime#теорема-спектральная-тройка) |
-| **7D↔42D: section–retraction (T-58′)** | $\pi\circ\iota = \mathrm{id}$; 7D formulas exact on their own. The Morita **equivalence** $\mathrm{Sh}_\infty(\mathcal{C}\|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}\|_{42})$ is **retracted** — it fails on dimension | [T] / [✗] | [Theorem](./core/structure/dimension-e) |
-| **Spectral gap of Fano dissipator** | $\lambda_{\text{deco}} = 5\gamma/(3N)$ (BIBD symmetry); $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ | [T] | [Theorem](./core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
-| **φ-operator (replacement channel)** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ — CPTP, monotonicity, fixed point $\rho_*$ | [T] | [Theorem](./consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
-| **Global minimization of $V_{\text{Gap}}$** (T-64) | Corrected 2026-09-25: the page's cubic term is not $G_2$-invariant; every $G_2$-invariant cubic is PT-even, and the associator cubic $\mathcal A$ is the one that goes through the associator (T-331). For $V = \mu^2\mathcal G + \lambda_4\mathcal G^2 - \kappa\mathcal A$: vacuum $I/7$, unique, for $0 < \kappa \le \mu^2/48$; spontaneous Gap for $\kappa > \min(7\mu^2/48, \kappa_1)$ [T]; the vacuum is one orbit $S^6 = G_2/\mathrm{SU}(3)$ with colour unbroken [T] (the real twirl inequality (RT) proven 2026-09-25; two orbits coexist only on the transition curves). The $G_2$-orbit reduction $21D \to 5D$ and the Hessian $18/6/12\mu^2$ are retracted; the sector values are the hypothesis (SV) | [T]; (SV) [H] | [Theorem](./core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) |
-| **No-signalling of the full dynamics** (Theorem 8.5) | The only state of a part that nothing done to the rest can change is its marginal, so the regeneration acts on unconditioned marginals, the selective (Lüders-in-the-dynamics) reading is not a UHM dynamics, and no operation at a distant partner changes a holon's statistics | [T] (the reading is forced; it was [C] until 2026-09-25) | [Theorem](./proofs/physics/physics-correspondence#88-прочтение-вынуждено) |
-| **Computational power** (Theorem 8.6) | The Abrams–Lloyd amplification runs on marginals: at the saddle of $\varphi_s$ the ideal regenerative dynamics decides satisfiability in time linear in $n$, so "UHM computes no more than BQP" would imply NP $\subseteq$ BQP; with noise open | [T] for the ideal dynamics; with noise [H] | [Theorem](./proofs/physics/physics-correspondence#86-вычислительное-ограничение) |
-| **Higgs identification** $H \sim \gamma_{EU}$ (Theorem 1.0) | A vacuum value of $\gamma_{EU}$ breaks $SU(3)_C$; no doublet on $\mathbb C^7$ nor among the operators on $\mathbb C\otimes\mathbb O$ or in the vector of $\mathrm{Spin}(9)$; the Higgs doublet is the colour-free Clifford plane of $\mathrm{Spin}(10)$ (standard model, Theorem 2.6(f); identification [H]) | [H] (it read [T] until 2026-09-25) | [Theorem](./physics/particle-physics/higgs-sector#теорема-отождествление-хиггса) |
-| **Fixing of semantic roles** (T-177) | The collineation group of the Fano plane (168) acts regularly on ordered non-collinear triples; $O$ and the $\kappa_0$ pair $\{E,U\}$ fix $O$, $A$, $D$ and leave one binary choice $E\leftrightarrow U$ (with $L\leftrightarrow S$) | [T] (new form; the uniqueness from the axis sectors is retracted) | [Registry](./reference/status-registry) |
-| **CC-7: Emergence** (Theorem 9.3) | Weakly coupled embodied holons: a product stationary state exists iff the correlation part of $[H_{\mathrm{int}}, \rho_*^{(1)}\otimes\rho_*^{(2)}]$ vanishes; otherwise $I = \Theta(g^2) > 0$. The non-degeneracy (ND) holds off a closed set of anchors of measure zero (Theorem 9.4) | [T] for almost every anchor (it read [C at (ND)] earlier on 2026-09-25) | [Theorem](./applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) |
-| **Neutrino O-sector Yukawa** | $m_D^{(k)} \propto \varepsilon_0 \sin(2\pi k/7)$; discrepancy $m_2/m_3$: $\times 50 \to \times 1.8$ | [C] | [Theorem](./physics/particle-physics/neutrino-masses#теорема-нейтрино-o-сектор) |
-| **PMNS from anarchic $M_R$** | O-isotropy → dense $M_R$ → angles $O(30°\text{–}60°)$ | [C] | [Theorem](./physics/particle-physics/neutrino-masses#теорема-pmns-анархия) |
-| **Justification of $K=4$ for L3** | Quadratic decomposition $3+1=4$; Bayesian dominance $R^{(2)} \geq 1/4$ | [T] | [Theorem](./consciousness/hierarchy/interiority-hierarchy#теорема-l3-k4) |
-| **Unattainability of L4 for biosystems** | Categorical: $L4=\mathrm{colim}_n\tau_{\leq n}(\mathbf{Exp}_\infty)$ not finitely reachable (T-86) + $S^{(n)}\sim 3^{-n}\to 0$; L4 = attractor | [T] | [Theorem T-86](./consciousness/hierarchy/interiority-hierarchy#теорема-l4-категориальная) |
-| **CC-5: Fractal closure** | The canonical aggregate of a composite — the mean of the parts' marginals, the only permutation-invariant aggregation that returns a part on uncoupled copies — is viable whenever the parts are viable embodied holons and the coupling is weak, $\lvert g\rvert\,s(H_{\mathrm{int}}) < \varepsilon_V$ with $\varepsilon_V$ explicit (Theorem 9.5); at strong coupling it can be $I/7$ (Theorem 9.6). Earlier on 2026-09-25 conditional on (HOL), "the composite is itself a holon", which is still not derived in its full sense; before that an unconditional [T] from the retracted Morita equivalence T-58 | [T at weak coupling] | [Theorem](./applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) |
-| **Topological protection of Gap vacuum** | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ [T]; the barrier values ($\geq 6\mu^2$) are Hessian eigenvalues of the retracted sector parametrisation of T-64, so the protection of the vacuum is [C at (SV)] | [T]+[C at (SV)] (it read [T] until 2026-09-25) | [Theorem](./core/dynamics/composite-systems#теорема-тополог-защита) |
-| **Canonical definition of $f_0$** | $f_0\Lambda^4 = \frac{1}{7}[V_{\text{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\text{Gap}}}(0)]$; UV-finiteness + the unique vacuum, now the hypothesis (SV) (T-70) | [C at (SV)] (it read [T] until 2026-09-25) | [Theorem](./physics/particle-physics/higgs-sector#теорема-f0-канонический) |
-| **Structural necessity of $\Lambda > 0$** | Autopoiesis + local cohomology → $\rho_{\text{vac}} > 0$; Lawvere incompleteness | [T] | [Theorem](./core/foundations/consequences#теорема-лямбда-положительна) |
-| **CC-6: Scale invariance** (T-72) | Under (AGG) — the aggregation returns a part's state on uncoupled copies, and the coupling is weak — $P$, $R$, $\Phi$ and Gap of the aggregate stay within $O(\delta)$ of a part's; Theorem 9.5 proves (AGG) for weakly coupled embodied holons with $\delta = O(g)$, at the stationary state and along trajectories from the basin; preservation under *any* CPTP aggregation is retracted (the depolarising channel gives $I/7$), and at strong coupling the transfer fails (Theorem 9.6) | [T at weak coupling] | [Theorem](./applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность) |
-| **Gap = curvature of Serre fibration** | Spectral triple T-53 + NCG curvature → exact identification | [T] | [Theorem](./core/dynamics/gap-operator#теорема-gap-серра) |
-| **Internal theory** (T-54) | $\mathrm{Th}_{\mathrm{UHM}} = \mathrm{Sub}_{\mathrm{closed}}(\Omega)$ — φ-invariant predicates | [T] | [Theorem](./core/foundations/consequences#внутренняя-теория) |
-| **Lawvere incompleteness** (T-55) | $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$ — from Cartesian closedness + nontriviality of φ | [T] | [Theorem](./core/foundations/consequences#неполнота-ловера) |
-| **Structural ToE** (T-56) | φ-closed, finitely axiomatizable, principally incomplete, evolutionarily open | [T] | [Theorem](./core/foundations/consequences#структурная-toe) |
-| **Completeness of triadic decomposition** (T-57) | LGKS theorem: unique decomposition $\mathcal{L} = \mathrm{Ham} + \mathrm{diss} + \mathrm{reg}$ | [T] | [Theorem](./core/operators/lindblad-operators#полнота-триадной-декомпозиции) |
-| **∞-groupoid $\mathbf{Exp}_\infty$** (T-91) | $\mathrm{Sing}(\mathcal{E})$ — Kan complex (Milnor's theorem); + T-76 → HoTT logic, Postnikov truncations | [T] | [Theorem](./proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени) |
-| **Compression parameter $k = 1 - R$** (T-62) | $k$ is not free: $k = 1 - R$, $R = 1 - \|\Gamma - \rho^*\|_F^2/\|\Gamma\|_F^2$; adaptive self-modeling | [T] | [Theorem](./consciousness/foundations/self-observation#теорема-k-из-r) |
-| **PW reconstruction algorithm** (T-95) | 4-step procedure $\Gamma \to \rho_E, D_{\text{diff}}, \sigma_L, C$; the 7D quantities survive the round trip $\pi\circ\iota = \mathrm{id}$ (T-58′). Registry: [T] → [C] (2026-09-10); the "zero error" step is retracted — it rested on the Morita equivalence T-58, and in 7D $\rho_E = \gamma_{EE}$ is a scalar compared with a 42D clock block | [C] | [Theorem](./core/structure/dimension-e#канонический-алгоритм-pw) |
-| **Structural $\theta_{\mathrm{QCD}} = 0$** (T-99) | 7-step derivation: reality of $f_{ijk} \in \mathbb{R}$ (A1) + unique vacuum (T-64) → $\theta_{\mathrm{QCD}} = 0$. Stratified 2026-09-25: step 2 ($V_3$ the only $PT$-odd term) [T] for the retracted cubic only — the $G_2$-invariant potential is PT-even (T-331); the conclusion uses the unique sector vacuum, the hypothesis (SV). Axion is purely DM. **Retracted 2026-09-26:** step 4 is false for $V_3$ itself; the Gap sector is CP-neutral but fixes no $\bar\theta$ (Theorem 3.1c), so $\bar\theta$ is free and strong CP is open [Pr] | [✗] (was [T]+[C at (SV)]) | [Theorem](./physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd) |
-| **Environment encoding** (T-100) | CPTP functor Enc: ObsSpace → End(D(C⁷)), unique up to G₂. 3-channel decomposition from T-57 | [T] | [Theorem](./applied/coherence-cybernetics/sensorimotor#теорема-кодирование-среды) |
-| **Optimal action** (T-101) | $a^* = \arg\min \|\sigma_{\mathrm{sys}}\|_\infty$ — from T-92 (equivalence of P and σ) | [T] | [Theorem](./applied/coherence-cybernetics/sensorimotor#теорема-оптимальное-действие) |
-| **Completeness of the 3-term equation** (T-102) | $h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}$, 4th type impossible (from T-57 LGKS) | [T] | [Theorem](./applied/coherence-cybernetics/sensorimotor#теорема-полнота-трёх-членов) |
-| **Hedonic valence** (T-103) | $\mathcal{V}_{\text{hed}} = dP/d\tau\|_{\mathcal{R}}$: formula [T], observability at L2 [T] (T-77), phenomenal interpretation [I] | [T]+[I] | [Theorem](./applied/coherence-cybernetics/sensorimotor#теорема-гедоническая-валентность) |
-| **Stability radius** (T-104) | $r_{\text{stab}} \approx K\bigl(\sqrt{P-1/7}-\sqrt{1/7}\bigr)$, $K=\sqrt{35}\sqrt[4]{6}/10$ — Bures distance to $\{P=2/7\}$; the old $\sqrt{P-2/7}$ is [refuted](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости); most dangerous channel is $h^{(D)}$ | [C] | [Theorem](./applied/coherence-cybernetics/stability#радиус-устойчивости) |
-| **Landauer energy balance** (T-105) | $\Delta F_{\min} = k_B T_{\text{eff}} \cdot \ln 2 \cdot \dot{S}_{\text{diss}}$; three metabolic regimes | [T] | [Theorem](./applied/coherence-cybernetics/stability#энергетический-баланс) |
-| **Information capacity of Enc** (T-107) | $C_{\text{Enc}} \leq \log_2 7 \approx 2.81$ bits/observation (Holevo bound + T-102) | [T] | [Theorem](./applied/coherence-cybernetics/sensorimotor#информационная-ёмкость) |
-| **Compositionality of Enc/Dec** (T-108) | $\text{Enc}_{12} = \Phi_{\text{agg}} \circ (\text{Enc}_1 \otimes \text{Enc}_2)$ is CPTP for every CPTP aggregation (T-100 + closure of channels under $\otimes$ and $\circ$); that the diagnostics carry over across scales holds at weak coupling through the canonical aggregation (T-72, Theorem 9.5); the uniqueness claim is retracted | [T]; transfer [T at weak coupling] | [Theorem](./applied/coherence-cybernetics/sensorimotor#композициональность-enc-dec) |
-| **Information learning bound** (T-109) | $n \geq \ln(1/(2\delta))/\xi_{\text{QCB}}$, $\xi_{\text{QCB}} \leq \ln 7$ (quantum Chernoff bound + T-107) | [T] | [Theorem](./applied/coherence-cybernetics/learning-bounds#теорема-информационная-граница) |
-| **Optimal learning bound** (T-112) | $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$ — three regimes | [T] | [Theorem](./applied/coherence-cybernetics/learning-bounds#теорема-оптимальная-граница) |
-| **N=7 minimality for learning** (T-113) | Learning via regeneration is impossible for $N < 7$; $N = 7$ is Pareto-optimal | [T] | [Theorem](./applied/coherence-cybernetics/learning-bounds#теорема-минимальность-n7) |
-| **Fano grammar** (T-114) | Markov chain on PG(2,2) is ergodic, stationary distribution $\pi_i = 1/7$ | [T] | [Theorem](./core/operators/lindblad-operators#теорема-фано-грамматика) |
-| **Composition distinguishability** (T-115) | $\|\mathrm{Comp}(n)\| = 7^n$ for generic $\Gamma$ (algebraic distinguishability) | [T] | [Theorem](./core/operators/lindblad-operators#теорема-различимость-композиций) |
-| **PW Suzuki-Trotter** (T-116) | $\varepsilon(T) \leq C_p \cdot T \cdot (\delta\tau)^{2p+1}$, for $p=2$: $\varepsilon \leq 10^{-5}$ | [T] | [Theorem](./core/foundations/axiom-omega#теорема-pw-suzuki-trotter) |
-| **Landauer calibration** (C22) | $\Delta F^{(k)} \geq k_B T_\mathrm{eff} \ln(2) \cdot k$ — linear growth | [C] | [Theorem](./consciousness/hierarchy/depth-tower#ландауэровская-калибровка) |
+The [L hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) describes functional capacities under its stated assumptions. Homotopy truncations exist mathematically, but identifying cognitive levels with Postnikov degrees requires a comparison theorem. For a specified ray-quality space, the [enriched Yoneda results](/docs/proofs/categorical/categorical-formalism#enriched-yoneda) provide an exact relational geometry and finite-probe bounds; identifying those rays with experience remains [I/H].
 
-:::note Status legend
-- **[T] STRICT** — mathematically proven without additional assumptions
-- **[C] CONDITIONAL** — proven under explicit interpretational assumptions
-- **[P] PROGRAM** — research direction
-:::
+## Clocks, extensions and physical interpretation
 
-## What the Theory Derives
+A chosen seven-by-six tensor extension has dimension $42$. A specified section and retraction can satisfy $\pi\iota=\mathrm{id}$, but do not imply a Morita equivalence between all seven- and forty-two-dimensional states or their sheaf topoi. Clock-block data cannot be recovered from a scalar native $E$ weight without additional information.
 
-### From the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$:
-1. **Base space** X = $|N(\mathcal{C})|$ — geometric realization of the nerve
-2. **Monism** — H*(X) = 0 as a mathematical theorem
-3. **Local physics** — H*_loc(X, T) ≠ 0 near the terminal object
-4. **Time** — the cyclic clock τ ∈ ℤ₇ via the Page–Wootters mechanism (the clock register [T]; the constraint is assumed, [C])
-5. **Arrow of time** — stratal collapse toward the terminal T, in the parameter of the dissipative semigroup, carried by the depth register ([T], T-53b)
-6. **Metric** — d_strat (stratified Connes metric)
-7. **Dimensionality** — dim(X) = 6 from N = 7
-8. **Octonionic structure** — P1+P2 → $\mathbb{O}$ → N=7, $G_2$-symmetry, Fano plane, Hamming code, with the canonical orientation of the Fano lines ([T15-canon](./proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация); [Track B](./proofs/minimality/theorem-octonionic-derivation))
+Page–Wootters and Feynman–Kitaev clock constraints are additional model input. A finite periodic register does not by itself give an unbounded time line. A specified singular complex is an $\infty$-groupoid [T]; its invertible paths do not derive the physical direction of irreversible dynamics.
 
-### Research program:
-- **Compactification 6D → 4D** — connection to observed spacetime
-- **Einstein equations** — **[T]** (T-53): full spectral action, see [theorem](./physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)
-- Connection to the Standard Model — [formalized program](./proofs/physics/physics-correspondence)
+Gauge-group and algebraic identities are assessed separately from their identification with observed fields, particles or spacetime. The programme requires physical bridge premises, fitted couplings and operational tests. It currently supplies no derivation of all observed physics or experience from zero assumptions.
 
-### Takes as primitive ([categorical gap](/docs/consciousness/foundations/two-aspect-monism#теорема-нетривиальность)):
-- Why the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ has an "inner side"
-- Why this particular mathematical structure and not another
+## Reading the results
 
-**Premises in use (2026-09-26).** The single list, with where each premise is used, its status, the independence models and the mergers, is [Premises of UHM](/docs/reference/premises). In short:
-- **Axioms [P]:** A1–A4 and the constraint $\hat C\Gamma = 0$ of A5 (the form of the timeless state; the clock register itself is [T], T-87); the metatheory, the CPTP formalism and the frame decision D-0910 are definitions [D].
-- **Bridge premises of physics [H]:** (Cl₀) — fermions are vectors of the spinor module $\mathcal S = \mathbb C\otimes\mathbb O$; (P) — spacetime's tangent vectors are the Hermitian forms on the spinor factor of the fermion field, with a causal form preserved by every internal-structure-preserving transformation (⟺ (L) ∧ (W)). (P) as stated names $\mathcal S$, but the two are independent inputs; (W₀), a complex spinor factor, is not a separate premise.
-- **Principle of the self-model [Pr]:** (MaxΦ) — the anchor is maximally integrated, $\Phi(\rho_a) = 6$ (⟺ (Eq-V)); it is independent of the axioms and of life in the window, and no variational principle of the corpus yields it.
-- **Strict necessity of $N = 7$ [H]:** (Σ₆) — every decomposition is perfectly single-fault diagnosable ([T-349](/docs/proofs/minimality/theorem-minimality-7#t-349)); it replaced the stronger (P1₆) on 2026-09-28. $N \geq 7$ for the seven listed functions needs no premise.
-- **Free parameters:** the associator coupling $\kappa$ of $V_{\text{Gap}}$ (free, T-331), $\mu^2$, $\lambda_4$, the regeneration rate and the Fano weight $\alpha$, $\omega_0$, $\bar\theta_{\mathrm{QCD}}$.
-- **Identification hypotheses [H]:** (SV), (GC) in broken form, (UP) at leading order, (PQ) (strong CP open [Pr]), (FE) and (SA) in the axis frame, the Higgs identification, T-186(a), the reconstruction and aperiodic-clock conditions of T-119/T-120 as physics, (HOL) [I].
-
-Results labelled "[T] as mathematics" use only the axioms; their physical readings carry the premises above. The former inputs (Alt), (MP), (MM), (Q), (RT), (Col), (Pure), (AGG), (ND) are discharged.
-
-:::info Minimality of the primitive
-UHM's **psychophysical** primitive is one: the identity of being and experience (the inner side of the ∞-topos above), against two levels plus emergence for physicalism and two substances plus a causal link for dualism — a count of primitives about how experience relates to the physical, compared among these three types, [I] ([justification](/docs/consciousness/foundations/two-aspect-monism#минимальность-аксиомы)). It is not a count of the theory's axioms. The independent axiomatic content is A1–A4 plus the constraint of A5 — five inputs, each independent (the independence of the constraint is [T]) — and the bridge premises and (MaxΦ) of the list above come on top; the identity of being and experience is not a sixth axiom but the reading of axiom Ω⁷ as a whole. (Until 2026-09-26 the box read "minimal among all possible axiomatic choices: one axiom instead of two or three"; the phrase is withdrawn as a count of axioms.) From it are **derived**: the form of experiential content ([unique functor](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв)), identity of qualia ([Yoneda lemma](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность)), immanence of description ([closure via φ](/docs/consciousness/foundations/two-aspect-monism#самореферентная-замкнутость)).
-
-The relational identity of qualia via the Yoneda lemma was proposed before UHM: Tsuchiya and Saigo stated it for a category of experiences in an April 2020 preprint (doi:10.31219/osf.io/68nhy) and in *Neurosci. Conscious.* 2021, niab034; the category-theoretic approach to consciousness goes back to Tsuchiya, Taguchi and Saigo (*Neurosci. Res.* 107, 1–7, 2016), and a graded (enriched-category) version is in Tsuchiya, Phillips and Saigo (*Conscious. Cogn.* 101, 103319, 2022). UHM applies the lemma to its own category of experiences — rays of $\mathbb{P}(\mathcal{H}_E)$ with Fubini–Study distances.
-:::
+**[T]** means a theorem under its stated assumptions, **[D]** a definition or chosen model, **[C]** a conditional conclusion, **[H]** a hypothesis, **[I]** an interpretation, **[Pr]** a research programme, and **[✗]** a withdrawn statement. A theorem inside a chosen numerical model is not automatically a theorem about every physical or conscious system. Historical claims corrected during the audit are recorded at their original links.
 
 ## Navigation
 
-| Section | Contents |
-|---------|----------|
-| **[Axiom Ω⁷](./core/foundations/axiom-omega)** | Five structural properties with the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ as primitive |
-| **[Consequences](./core/foundations/consequences)** | Cohomological monism, local-global dichotomy |
-| **[Structure](./core/structure/holon)** | Holonom and 7 dimensions |
-| **[Dynamics](./core/dynamics/evolution)** | Evolution equations with terminal object T |
-| **[Spacetime](./core/foundations/spacetime)** | Base space X, metric d_strat |
-| **[Consciousness](/docs/consciousness/hierarchy/interiority-hierarchy)** | Hierarchy L0→L1→L2→L3→L4 |
-| **[Emergent time](./proofs/dynamics/emergent-time)** | Page–Wootters, stratificational time |
-| **[Categorical formalism](./proofs/categorical/categorical-formalism)** | ∞-topos, derived categories, IC cohomologies |
-| **[Uniqueness theorem](./proofs/categorical/uniqueness-theorem)** | G₂-rigidity: 34 kinematic invariants, 48 physical parameters (frame decision D-0910) |
-| **[Standard Model](./physics/gauge-symmetry/standard-model)** | Colour $SU(3)$ from G₂ [T]; electroweak sector [C at (FE)], uniqueness [H]; 3 generations (count [T], identification [I]) |
-| **[Physics](/docs/physics/overview)** | Gauge symmetry, particles, gravity, cosmology |
-| **[Neutrino masses](./physics/particle-physics/neutrino-masses)** | Seesaw from Gap, $M_R$ [T], O-sector Yukawa (formula [T] / numbers [C]), PMNS [C] |
-| **[SUSY from $G_2$](./physics/particle-physics/susy)** | Superpotential [T] (Schur), superpartner spectrum, gravitino |
-| **[Gap thermodynamics](./core/dynamics/gap-thermodynamics)** | Potential $V_{\text{Gap}}$, global minimization [T], sector hierarchy $\varepsilon$ |
-| **[Quantum gravity](./physics/gravity/quantum-gravity)** | Spectral action [T], UV-finiteness (field-space **[T]**, order-by-order **[C]**), Einstein equations [T] |
-| **[Cosmological constant](./physics/gravity/cosmological-constant)** | $\Lambda > 0$ [T], spectral formula [T], honest bracket $10^{-53.5}$–$10^{-93.5}$ [C] ($\gtrsim 27$ orders open) |
-| **[Composite systems](./core/dynamics/composite-systems)** | CC-5 (viability of the canonical aggregate at weak coupling, [T at weak coupling]), topological protection of Gap [T], emergent geometry |
-| **[Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy)** | L0–L4, $K=4$ for L3 [T], categorical unattainability of L4 [T] (T-86) |
-| **[Depth tower](/docs/consciousness/hierarchy/depth-tower)** | SAD metric [T], depth dynamics (A₄-bifurcation, energy, stress, social), morphological agnosticism [H] |
-| **[Glossary](./reference/glossary)** | Term definitions |
-| **[Notation](./reference/notation)** | Mathematical notation |
+| Start here | Contents |
+|---|---|
+| [Mathematical kernel](/docs/reference/mathematical-kernel) | Types, proven constructions and bridge requirements |
+| [Premise ledger](/docs/reference/premises) | Inputs and dependencies |
+| [Categorical formalism](/docs/proofs/categorical/categorical-formalism) | Processes, sites, interpretation and corrected claims |
+| [Coherence matrix](/docs/core/dynamics/coherence-matrix) | State coordinates and quantities |
+| [Self-model φ](/docs/core/operators/phi-operator) | Numerical models, bounds and fixed points |
+| [Representation theorem](/docs/proofs/categorical/uniqueness-theorem) | Conditional rigidity and informational completeness |
+| [Measurement protocol](/docs/applied/research/measurement-protocol) | Calibration, interventions and observation limits |
+| [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) | Functional criteria and interpretations |
+| [Status registry](/docs/reference/status-registry) | Theorem and hypothesis audit |
+
+## Historical introductory links
+
+The statements at these addresses now have the scope and statuses specified above.
+
+<a id="7-dimensions-of-the-holonom"></a>
+<a id="a-formal-theory-of-reality-and-consciousness"></a>
+<a id="central-concepts"></a>
+<a id="coherence-matrix-γ-object-of-category-mathcalc"></a>
+<a id="etymology-of-the-name"></a>
+<a id="evolution-equation"></a>
+<a id="five-structural-properties-of-the-sole-primitive-ω⁷"></a>
+<a id="formal-results"></a>
+<a id="from-the--topos-mathrmsh_inftymathcalc"></a>
+<a id="interiority-hierarchy"></a>
+<a id="key-results"></a>
+<a id="purity"></a>
+<a id="research-program"></a>
+<a id="takes-as-primitive-categorical-gap"></a>
+<a id="terminal-object-t"></a>
+<a id="theory-structure"></a>
+<a id="what-the-theory-derives"></a>

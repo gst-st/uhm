@@ -25,167 +25,37 @@ This document develops the thermodynamic formalism for the [gap measure](/docs/p
 
 ---
 
-## 1. Serre bundle geometry {#геометрия-расслоения-серра}
+## 1. State coordinates and supplied bundle geometry {#геометрия-расслоения-серра}
 
-### Map bundle
+Write $\gamma_{ij}=r_{ij}e^{i\theta_{ij}}$ only where $r_{ij}>0$. Positivity couples these coordinates. Forgetting phases does not automatically define a Serre fibration: fibers change when a coherence vanishes or the matrix changes rank. $\mathrm{Map}(G,\Omega)$ in a topos is not this matrix-coordinate bundle. The former Theorem 1.1 and its exact curvature bridge are withdrawn [✗].
 
-:::tip Theorem 1.1 (Serre bundle) [T]
-The space of maps $\mathrm{Map}(\Gamma, \Omega)$ admits the structure of a **Serre bundle**:
+A connection, its curvature and holonomy can be introduced only on a specified bundle with a chosen differential calculus. The surviving T-73 is the [Dirac-entry norm identity](/docs/core/dynamics/gap-operator#теорема-gap-серра), not an identification with a curvature two-form or Chern number. A proposed observation/geometry bridge has status [D/H/Pr].
 
-$$
-\mathrm{Bundle}(\Gamma, \Omega) \to B_{\mathrm{ext}}
-$$
+## 2. Information geometry with a declared statistical model {#информационная-геометрия}
 
-with fiber $F_{\mathrm{int}}$, where:
-- **Base** $B_{\mathrm{ext}}$ — space of external observables (moduli $|\gamma_{ij}|$ and populations $\gamma_{ii}$)
-- **Fiber** $F_{\mathrm{int}}$ — space of internal phases $\{\theta_{ij}\}$ at fixed moduli
-- **Projection** $\pi: \mathrm{Bundle} \to B_{\mathrm{ext}}$ forgets the phase information
-:::
+For strictly positive states, the symmetric logarithmic derivatives satisfy $\partial_a\Gamma=(\Gamma L_a+L_a\Gamma)/2$. Their quantum Fisher metric is $g^{\rm SLD}_{ab}=\tfrac12\operatorname{Tr}\Gamma\{L_a,L_b\}$ [T]. In the usual normalization the Bures metric is one quarter of it. Boundary ranks require separate strata/limits. Other monotone quantum metrics exist; this choice does not uniquely determine an observation map.
 
-### Bundle curvature
+The phase-Gap map is many-to-one and is discontinuous at zero coherence under the assigned cutoff convention. It has no canonical inverse derivative $\partial\Gamma/\partial G_{ij}$. To obtain a pullback metric one must choose a smooth section $G\mapsto\Gamma(G)$ on a stated chart; different sections can give different metrics.
 
-The connection curvature on the bundle defines the **topological obstruction** to global transparency:
+All profiles of the cube $[0,1]^{21}$ are realizable before a nonzero experimental cutoff: choose diagonal $1/7$, off-diagonal modulus $0<\epsilon<1/42$ and phases $\arcsin G_{ij}$. Gershgorin bounds give a strictly positive matrix because each row has six entries of modulus $\epsilon$. The cube is a space with corners, not an automatically smooth compact quotient manifold. A positive operational amplitude cutoff further restricts the chosen realization class.
+
+For a specified outcome likelihood $p(x|G)$ the classical Fisher matrix is
 
 $$
-\|R_H\|_{ij} \propto |\gamma_{ij}| \cdot \mathrm{Gap}(i,j)
+I_{ab}(G)=\sum_{x:p(x|G)>0}\frac{\partial_a p(x|G)\partial_b p(x|G)}{p(x|G)}.
 $$
 
-**Interpretation:** The curvature is nonzero if and only if simultaneously:
-- coherence $|\gamma_{ij}| \neq 0$ (the connection exists)
-- $\mathrm{Gap}(i,j) \neq 0$ (the gap is nonzero)
+Under regularity, identifiability, independent sampling and local unbiasedness, the multiparameter Cramér–Rao inequality is $\operatorname{Cov}\widehat G\succeq I(G)^{-1}/n$ [T]. Singular parameters require restriction to identifiable directions, not an arbitrary inverse. The statistical model and instrument are extra input [D/H].
 
-### Holonomy
+## 3. No universal Gap lower bound from the associator {#нижняя-оценка-gap}
 
-:::info Interpretation (Gap holonomy) [I]
-Holonomy of a closed loop $C$ in parameter space:
+The former Theorem 3.2 is withdrawn [✗]. For the chosen octonion algebra, off-line associators have norm two, but a real strictly positive state with nonzero off-diagonal entries has phase Gap zero everywhere. For example
 
 $$
-\mathrm{Hol}(C) = \mathcal{P}\exp\left(\oint_C A\right)
+\Gamma_t=(1-t)I/7+t\,uu^\dagger,\qquad u=(1,\ldots,1)/\sqrt7,\quad0<t<1.
 $$
 
-where $A$ is the connection on the bundle, $\mathcal{P}$ is the path-ordering operator.
-
-Nontrivial holonomy $\mathrm{Hol}(C) \neq \mathbb{1}$ means that under a cyclic change of external parameters the system **does not return** to its original internal state — the phases $\theta_{ij}$ acquire a geometric shift (analogue of the Berry phase).
-:::
-
----
-
-## 2. Information geometry {#информационная-геометрия}
-
-### Manifold of Gap profiles $\mathcal{M}_{\mathrm{Gap}}$
-
-:::info Definition (Manifold of Gap configurations) [T]
-The space of Gap profiles is defined as:
-
-$$
-\mathcal{M}_{\mathrm{Gap}} := \{G = (G_{ij})_{1 \leq i < j \leq 7} : G_{ij} \in [0,1]\} \subset [0,1]^{21}
-$$
-
-with the additional realizability condition: $\exists\, \Gamma \in \mathcal{D}(\mathbb{C}^7)$ such that $\mathrm{Gap}(\Gamma)_{ij} = G_{ij}$.
-:::
-
-**Remark.** Not all points of the cube $[0,1]^{21}$ are realizable as Gap profiles of admissible density matrices. The set of realizable Gap profiles is a compact submanifold $\mathcal{M}_{\mathrm{Gap}} \subset [0,1]^{21}$.
-
-### Quantum Fisher metric on $\mathcal{D}(\mathbb{C}^7)$
-
-:::tip Theorem 2.0 (Quantum Fisher metric) [T]
-The quantum Fisher metric on the space of density matrices $\mathcal{D}(\mathbb{C}^7)$:
-
-$$
-g_{ab}^{(F)}(\Gamma) = \frac{1}{2}\mathrm{Tr}\left(\Gamma\{L_a, L_b\}\right)
-$$
-
-where $L_a$ are logarithmic derivatives: $\partial_a \Gamma = \frac{1}{2}\{\Gamma, L_a\}$.
-
-**Induced metric on $\mathcal{M}_{\mathrm{Gap}}$.** Via the projection $\Pi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{M}_{\mathrm{Gap}}$, $\Pi(\Gamma) := (\mathrm{Gap}(\Gamma)_{ij})$, an induced metric is defined:
-
-$$
-\tilde{g}_{(ij),(kl)} := \sum_{a,b} \frac{\partial \Gamma_a}{\partial G_{ij}} \, g_{ab}^{(F)} \, \frac{\partial \Gamma_b}{\partial G_{kl}}
-$$
-:::
-
-### Fisher metric on Gap profiles
-
-:::tip Theorem 2.1 (Fisher metric) [T]
-The space of Gap profiles $\{G_{ij}\} = \{\mathrm{Gap}(i,j)\}$ is endowed with the **Fisher information metric**:
-
-$$
-\tilde{g}_{(ij),(kl)}^{(F)} = \sum_x \frac{1}{p(x|\{G\})} \frac{\partial p}{\partial G_{ij}} \frac{\partial p}{\partial G_{kl}}
-$$
-
-where $p(x|\{G\})$ is the probability of observing data $x$ at a fixed Gap profile $\{G\}$.
-:::
-
-**Properties of the Fisher metric:**
-- Positive semi-definite: $\tilde{g}^{(F)} \geq 0$
-- Invariant under reparametrization
-- Defines the natural geometry on the space of Gap configurations
-
-### Cramér–Rao inequality
-
-:::tip Theorem 2.2 (Lower bound for Gap estimation) [T]
-For any unbiased estimator $\hat{G}_{ij}$ from $N$ observations:
-
-$$
-\mathrm{Var}(\hat{G}_{ij}) \geq \frac{1}{N \cdot \tilde{g}^{(F)}_{(ij),(ij)}}
-$$
-
-**Corollary:** The accuracy of Gap profile recovery is bounded by the information geometry — the flatter the landscape $p(x|\{G\})$, the more data is required for estimation.
-:::
-
-### Fisher distance between Gap profiles
-
-The geodesic distance between two Gap profiles $G_1$ and $G_2$:
-
-$$
-d_F(G_1, G_2) = \inf_\gamma \int_0^1 \sqrt{\sum_{(ij),(kl)} \tilde{g}_{(ij),(kl)} \dot{G}_{ij} \dot{G}_{kl}} \, dt
-$$
-
-where the infimum is taken over all smooth paths $\gamma: [0,1] \to \mathcal{G}$ between $G_1$ and $G_2$.
-
-**Interpretation:** $d_F$ is the number of "statistical distinguishabilities" between two Gap configurations. The larger $d_F$, the easier it is to distinguish one state from another from observable data.
-
-:::info Interpretation (Geodesics as therapeutic path) [I]
-A geodesic in $\mathcal{M}_{\mathrm{Gap}}$ defines the **optimal therapeutic path** — a sequence of minimally distinguishable Gap changes leading from a pathological to a healthy profile. The geodesic length $d_F$ is a measure of the "therapeutic work" required for the transition.
-:::
-
----
-
-## 3. Lower Gap bound from the octonionic associator {#нижняя-оценка-gap}
-
-The connection between the Gap operator and the octonionic cross product is discussed in [Gap operator, section 7.2](/docs/core/dynamics/gap-operator#октонионное-крестное-произведение). Here we derive the key consequence: the **lower Gap bound** from the non-associativity of $\mathbb{O}$.
-
-The octonionic **associator** $[e_i, e_j, e_k] := (e_i e_j)e_k - e_i(e_j e_k)$ vanishes for triples lying on [Fano lines](/docs/proofs/minimality/theorem-octonionic-derivation), and is nonzero for non-Fano triples.
-
-:::tip Theorem 3.2 (Lower Gap bound from the associator) [T]
-For any pair $(i,j)$ with $i \neq j$:
-
-$$
-\mathrm{Gap}(i,j) \geq C \sum_{k \notin \mathrm{Fano}(i,j)} \|[e_i, e_j, e_k]\| \cdot |\gamma_{ik}| \cdot |\gamma_{jk}|
-$$
-
-where:
-- $C = 4/(\omega_0^2 \|D_{\text{int}}\|^2)$ — a constant uniquely determined by the spectral triple
-- $\mathrm{Fano}(i,j) = \{k : (i,j,k) \in \text{Fano line}\}$ — the set of indices completing $(i,j)$ to a Fano line
-- $\|[e_i, e_j, e_k]\| = 2$ for normalized $e_i$ and non-Fano triples (for Fano triplets $\|[e_i, e_j, e_k]\| = 0$ by Artin's theorem)
-:::
-
-**Corollaries:**
-
-| Pair type | Associator | Gap |
-|---|---|---|
-| On a Fano line | $[e_i, e_j, e_k] = 0$ | Can be zero (transparency possible) |
-| Off a Fano line | $[e_i, e_j, e_k] \neq 0$ | **Strictly positive** for nonzero coherences |
-
-:::info Interpretation [I]
-Octonionic non-associativity is the **algebraic source** of opacity. Pairs of dimensions connected through associative (Fano) subalgebras admit full transparency. Pairs connected through non-associative triples have an **irreducible minimum gap** — a fundamental limit on self-knowledge set by the algebraic structure of the octonions.
-:::
-
-:::info Status of Theorem 3.2 [T]
-From [T-73](/docs/core/dynamics/gap-operator#теорема-gap-серра) [T] (Gap = Serre curvature) and [T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T] (spectral triple): $\text{Gap}(i,j) \geq 4/(\omega_0^2 \|D_{\text{int}}\|^2) > 0$ for non-associative pairs. The constant $C = 4/(\omega_0^2 \|D_{\text{int}}\|^2)$ is uniquely determined by the spectral triple **[T]**.
-:::
-
----
+Its off-line products have nonzero amplitudes and its phases all vanish. Thus algebraic nonassociativity does not force a positive scalar phase Gap or its claimed curvature bound. A specified phase coupling/noise model can yield a conditional bound, but its derivation must use that vector field and its parameter assumptions [C/H].
 
 ## 4. Variational principle {#вариационный-принцип}
 
@@ -443,29 +313,16 @@ Applying Gap to both sides, we obtain the self-referential Gap:
 $$
 \mathrm{Gap}^{(2)}(i,j) = \mathrm{Gap}(\varphi(\Gamma))_{ij}
 $$
+
 :::
 
-*Erratum 2026-09-26.* The box read: "a **unique fixed point** exists: $\varphi$ is contractive with $k = 1 - R < 1$ (T-62 [T]), $\mathcal{D}(\mathbb{C}^7)$ is compact ⇒ complete metric space, Banach FPT gives unique $\Gamma^*$". The factor $k$ multiplies the deviation from the anchor, not distances, so it is not a Lipschitz constant (item (c)), and $\varphi_s$ has several fixed points. What survives is existence, which is Brouwer's theorem, not Banach's; uniqueness holds for $\varphi_{\mathrm{coh}}$ and $\varphi_J$ by the computation below. Lawvere's theorem gives, in a topos, a fixed point of every endomorphism of an object $Y$ that receives a point-surjection $A \to Y^A$; it is the categorical reading of (a) and says nothing about uniqueness.
+*Erratum 2026-09-26.* The box read: "a **unique fixed point** exists: $\varphi$ is contractive with $k = 1 - R < 1$ (T-62 [T]), $\mathcal{D}(\mathbb{C}^7)$ is compact ⇒ complete metric space, Banach FPT gives unique $\Gamma^*$". The factor $k$ multiplies the deviation from the anchor, not distances, so it is not a Lipschitz constant (item (c)), and $\varphi_s$ has several fixed points. What survives is existence, which is Brouwer's theorem, not Banach's; uniqueness holds for $\varphi_{\mathrm{coh}}$ and $\varphi_J$ by the computation below. Lawvere's theorem gives, in a topos, a fixed point of every endomorphism of an object $Y$ that receives a point-surjection $A \to Y^A$; its weak-surjectivity hypothesis is extra and has not been supplied for these numerical maps; it neither replaces Brouwer here nor gives uniqueness.
 
 **Proof.** (a) $\mathcal{D}(\mathbb{C}^7)$ is a compact convex subset of the 48-dimensional real space of trace-one Hermitian matrices, and Brouwer's theorem applies to every continuous self-map of it. (b) $\varphi_{\mathrm{coh}}$: [φ operator](/docs/core/operators/phi-operator#неподвижная-точка-phi-coh). $\varphi_J$: $\mathcal{P}_\alpha$ keeps the diagonal and multiplies coherences by $c$, so the diagonal of $\varphi_J(\Gamma) = \Gamma$ reads $k\gamma_{ii} + R/7 = \gamma_{ii}$, i.e. $R(1/7 - \gamma_{ii}) = 0$, and every $\gamma_{ii} = 1/7$; each coherence obeys $kc\,\gamma_{ij} + R/7 = \gamma_{ij}$, so all equal $\eta/7$ with the real $\eta = R/(1 - kc)$. Then $P = (1 + 6\eta^2)/7$, $R = 1/(1 + 6\eta^2)$, $k = 6\eta^2/(1 + 6\eta^2)$, and $\eta(1 - kc) = R$ becomes $\eta + 6(1 - c)\eta^3 = 1$, whose left side increases strictly: one root, in $(0, 1)$. $\varphi_s$: $\mathcal{P}_\alpha(e_m) = e_m$ and $e_m^2/\mathrm{Tr}\,e_m^2 = e_m$, so $\varphi_s(e_m) = e_m$; and $\varphi_s(I/7) = I/7$. (c) [Evolution, iterative scheme](/docs/core/dynamics/evolution#итеративная-схема) (`test_phi_coh_contracts_toward_i7_but_is_not_a_contraction`, `test_self_model_contraction_holds_only_for_constant_weight_and_unital_part`). $\blacksquare$
 
-### Self-referential Gap
+### Distinct self-reference diagnostics
 
-**Definition.** The second-order Gap is the discrepancy between how the system **models** its own Gap and the actual Gap:
-
-$$
-\mathrm{Gap}^{(2)}(i,j) := |\mathrm{Gap}_{\text{perceived}}(i,j) - \mathrm{Gap}_{\text{actual}}(i,j)|
-$$
-
-At [level L4](/docs/consciousness/hierarchy/interiority-hierarchy) (terminal object):
-
-$$
-\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}
-$$
-
-i.e. $\mathrm{Gap}^{(2)} = 0$ — the meta-Gap vanishes (fixed point of Gap reflection).
-
-*(Scope, 2026-09-26: read with the Gap operator $\hat{\mathcal G} = \mathrm{Im}\,\Gamma$, a self-model of replacement form with a real anchor — $\varphi_{\mathrm{coh}}$, $\varphi_J$ — registers exactly the fraction $kc \leq 2/7$ of the Gap operator (Theorem 10.2), so $\mathrm{Gap}^{(2)} = (1 - kc)\,|\hat{\mathcal G}_{ij}|$ and vanishes only where the Gap does. The equality above holds at the fixed points of Theorem 10.1, where $\hat{\mathcal G} = 0$; it is not a property of a level of interiority.)*
+Choose a implemented Gap prediction and independently measured target; their discrepancy is an operational diagnostic [D]. It is not identical to the raw phase Gap of $M(\Gamma)$ or to the norm $\|\operatorname{Im}M(\Gamma)-\operatorname{Im}\Gamma\|$. A density-state fixed point can have trivial prediction data. L4 is the cumulative compatible prediction tower, not a terminal object or vanishing phase diagnostic. [Canonical definition](/docs/consciousness/hierarchy/interiority-hierarchy).
 
 ### Hierarchy of Gap reflection
 
@@ -496,33 +353,28 @@ the hierarchy converges to $\hat{\mathcal G}^* = 0$ at a rate of at most $2/7$ p
 
 ### Lagrangian structure
 
-:::tip Theorem 11.1 (Full Lagrangian) [T]
+:::note Effective Lagrangian ansatz [D/H]
 Full Lagrangian of Gap theory:
 
 $$
 \mathcal{L}_{\text{Gap}} = \mathcal{L}_{\text{kin}} + \mathcal{L}_{\text{pot}} + \mathcal{L}_{\text{top}} + \mathcal{L}_{\text{diss}} + \mathcal{L}_{\text{reg}} + \mathcal{L}_{\text{ext}}
 $$
+
 :::
 
-:::info Derivation of Lagrangian from Lindbladian [T]
-The full Lagrangian $\mathcal{L}_{\text{Gap}}$ (including dissipative and regenerative terms) is the **classical limit** of the Schwinger–Keldysh action for the Lindbladian $\mathcal{L}_\Omega$ ([T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]) in the coherent-phase representation.
+:::note Chosen effective phase model [D/H/Pr]
 
-**Keldysh action.** For the Markovian master equation $\partial_t \rho = \mathcal{L}_\Omega(\rho)$, the functional integral on the Keldysh contour (Sieberer, Buchhold, Diehl, *Rep. Prog. Phys.* 79, 2016):
+The displayed six-term expression is an effective ansatz. It is not a uniquely derived Lindbladian action. T-57's exhaustive three-type classification is withdrawn [✗]; Hamiltonian, dissipation and a selected reset/feedback can be grouped for a specified model, with additional Hamiltonians, channels or controller variables allowed.
+
+For diagonal Lindblad operators $L_a=\operatorname{diag}(\ell_{ai})$, real in the Fano construction, the coherence damping rate is $\Gamma_2^{ij}=\tfrac12\sum_a|\ell_{ai}-\ell_{aj}|^2$ [T]. Real diagonal dephasing changes amplitudes and supplies no phase friction by itself. For regeneration $F_{\rm reg}=a(\Gamma)(M(\Gamma)-\Gamma)$ the exact nonzero-coherence phase contribution is
 
 $$
-S_K[\rho_+, \rho_-] = \int dt \left[\mathrm{Tr}(\rho_q \cdot \mathcal{L}_\Omega(\rho_{\mathrm{cl}})) + i \, \mathrm{Tr}(\rho_q \cdot \mathcal{D} \cdot \rho_q)\right]
+\dot\theta_{ij}|_{\rm reg}=a(\Gamma)\operatorname{Im}\frac{M_{ij}(\Gamma)}{\gamma_{ij}}.
 $$
 
-where $\rho_{\mathrm{cl}} = (\rho_+ + \rho_-)/2$, $\rho_q = \rho_+ - \rho_-$, $\mathcal{D}_{ij,kl} = \sum_\alpha [L_\alpha]_{ik}[L_\alpha^\dagger]_{jl}$.
+With a chosen complex target it is a sine response weighted by the target/current amplitude ratio, not generally $-\kappa|\gamma_{ij}|^2(\theta_{ij}-\theta^{\rm target}_{ij})$.
 
-**Decomposition.** The Lindbladian $\mathcal{L}_\Omega = \mathcal{L}_{\mathrm{Ham}} + \mathcal{L}_{\mathrm{diss}} + \mathcal{L}_{\mathrm{reg}}$ ([T-57](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [T]) gives in the coherent-phase representation:
-- **$\mathcal{L}_{\mathrm{Ham}} \to \mathcal{L}_{\mathrm{kin}} + \mathcal{L}_{\mathrm{pot}} + \mathcal{L}_{\mathrm{top}}$**: the commutator $-i[H_{\mathrm{Fano}}, \rho]$ generates the kinetic, potential ($V_{\mathrm{Gap}}$ from the [spectral action](#вывод-vgap-из-спектрального-действия)) and topological terms.
-- **$\mathcal{L}_{\mathrm{diss}} \to \mathcal{L}_{\mathrm{diss}}$**: the Lindblad dissipator $\sum_k L_k\rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \rho\}$ acts on coherences as decay $-\Gamma_2^{(ij)} \gamma_{ij}$, where $\Gamma_2^{(ij)} = \frac{1}{2}\sum_k |\langle i|L_k|i\rangle - \langle j|L_k|j\rangle|^2$.
-- **$\mathcal{L}_{\mathrm{reg}} \to \mathcal{L}_{\mathrm{reg}}$**: regeneration $\kappa_0(\varphi(\rho) - \rho)$ ([T-62](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) [T]) gives $-\kappa|\gamma_{ij}|^2(\theta_{ij} - \theta_{ij}^{\mathrm{target}})$.
-
-**Classical limit** ($\theta_q \to 0$) reproduces the equations of motion for $\mathcal{L}_{\mathrm{Gap}}$ **exactly**. The dissipative and regenerative terms are not "ad hoc," but **necessary consequences** of the Lindblad structure of the dynamics. The external field $\mathcal{L}_{\mathrm{ext}}$ is the standard linear term in the presence of an external source.
-
-**Self-consistency of stationarity.** At $\dot{\theta} = 0$ and $\theta = \theta^{\mathrm{target}}$ the equation of motion reduces to $\partial V_{\mathrm{Gap}}/\partial\theta = 0$: the nontrivial attractor $\rho_*$ of the full Lindbladian $\mathcal{L}_\Omega$, where one exists (T-96 [T]; it needs a non-unital self-model or an environment — an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ has none, [T-124c](/docs/core/dynamics/evolution#теорема-единственность-нетривиального-аттрактора)) coincides with a minimum of $V_{\mathrm{Gap}}$ (for the $G_2$-invariant potential this minimum is unique up to $G_2$ — [T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация), corrected 2026-09-25: [T] for every $\kappa > 0$ off the transition curves, §14).
+A Schwinger–Keldysh derivation additionally needs the microscopic action, variables, noise/unravelling and controlled approximation. No such calculation is supplied by merely writing three summands of the master equation. The [Sieberer–Buchhold–Diehl, *Keldysh Field Theory for Driven Open Quantum Systems*](https://arxiv.org/abs/1512.00637) develops the method for specified microscopic open systems. A nonlinear adaptive $M$ has no single linear Lindbladian; frozen-parameter channel families are a different type. A dynamical attractor need not minimize an independently selected potential. Establishing that relation requires a proved gradient/Lyapunov structure and matching stationary equations [C/H].
 :::
 
 ### (a) Kinetic term
@@ -543,8 +395,8 @@ Detailed structure $V_{\text{Gap}} = V_2 + V_3 + V_4$ — see [section 11](#по
 
 ### (c) Topological term (from Im($S_{\text{Keldysh}}$)) {#топологический-член-лагранжиана}
 
-:::tip Theorem (Coefficient $\beta$ from first principles) [T]
-The coefficient $\beta = \lambda_3/(2\pi)$ is uniquely determined by the imaginary part of the Keldysh action. See [full derivation](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш).
+:::note Chosen Berry coefficient [H/Pr]
+The equality $\beta=\lambda_3/(2\pi)$ is an ansatz, not an exact consequence of the written master equation or T-75 (withdrawn [✗]). A microscopic Keldysh derivation, a well-defined parameter bundle and globally consistent Berry connection are required to determine a coefficient. See the [audited Berry proposal](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш).
 :::
 
 $$
@@ -554,9 +406,9 @@ $$
 where:
 - $\varepsilon^{\text{Fano}}_{ijk} = \pm 1$ — structure constants of the Fano plane
 - summation over 7 Fano lines
-- $\beta = \lambda_3/(2\pi)$ — derived from $\mathrm{Im}(S_{\text{Keldysh}})$ [T]
+- $\beta = \lambda_3/(2\pi)$ — chosen coefficient [H]
 
-**Origin:** This term is the **Berry phase** in the space of Gap configurations $(S^1)^{21}$, arising from the imaginary part of the Keldysh action. The CS derivation is refuted ([full derivative in 1D](/docs/physics/cosmology-phys/berry-phase#9-опровержение-cs-вывода) [T]). It is **topological** — independent of the metric, determined only by the combinatorial structure of the Fano plane.
+**Scope [H/Pr].** This local first-order phase expression is a proposed Berry term. The displayed form alone supplies neither a globally defined line bundle on the phase torus nor integral curvature, quantized coefficient or metric-independent topological observable. The CS argument is retracted; establishing a Berry term needs a specified parameter-dependent eigenbundle and microscopic dynamics.
 
 ### (d) Dissipative term (Rayleigh function)
 
@@ -566,7 +418,7 @@ $$
 
 where $\Gamma_2 \geq 0$ is the decoherence rate (phase dissipation).
 
-**Origin:** The dissipative term is derived from the Lindblad dissipator $\sum_k L_k\rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \rho\}$ in the coherent-phase representation [T]. The decoherence rate $\Gamma_2^{(ij)} = \frac{1}{2}\sum_k |\langle i|L_k|i\rangle - \langle j|L_k|j\rangle|^2$ is determined by the Fano operators [T].
+**Scope.** The displayed Rayleigh expression is phenomenological [H]; real diagonal GKSL dephasing gives the amplitude damping proved above, rather than this phase friction. Additional noise/response data would be needed to obtain phase damping or a positive Rayleigh function.
 
 ### (e) Regenerative term
 
@@ -575,9 +427,9 @@ $$
 $$
 
 where:
-- $\kappa = \kappa_0 k$ — regeneration rate (from [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) [T] and replacement channel [T-62](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) [T])
+- $\kappa$ is a supplied effective rate [D/H]. A chosen reset rate in the master equation does not derive this quadratic phase functional or its coefficients.
 - $\theta_{ij}^{\text{target}} = \arg(\varphi(\Gamma)_{ij})$ — target phase from [self-modeling](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ)
-- **Origin:** The regenerative term is derived from $\mathcal{L}_{\mathrm{reg}}(\rho) = \kappa_0(\varphi(\rho) - \rho)$ in the coherent-phase representation [T]
+- **Scope [H]:** a quadratic near-target approximation requires a nonzero-coherence chart, small phase differences and matching to the exact phase response above; it does not follow from a categorical adjunction.
 
 ### (f) External influence term
 
@@ -587,94 +439,29 @@ $$
 
 where $h^{\text{ext}}_{ij}$ are external fields (see [section 12](#три-канала-h-ext)).
 
-### Lagrangian symmetries
+### Symmetries must be checked for the chosen terms
 
-| Symmetry | $\mathcal{L}_{\text{kin}}$ | $\mathcal{L}_{\text{pot}}$ | $\mathcal{L}_{\text{top}}$ | $\mathcal{L}_{\text{diss}}$ | $\mathcal{L}_{\text{reg}}$ | $\mathcal{L}_{\text{ext}}$ |
-|---|---|---|---|---|---|---|
-| $G_2$-invariance | + | + | + | + | + | + |
-| $\mathbb{Z}_2(\mathrm{PT})$ | + | Partially | + | + | + | + |
-| $U(1)$ | + | — | — | + | — | — |
-
-**Comments:**
-- **$G_2$-invariance** [T] — all terms preserve [octonionic automorphisms](/docs/physics/gauge-symmetry/g2-structure)
-- **$\mathbb{Z}_2(\mathrm{PT})$** — broken by the cubic term $V_3$ of the potential (see [section 11](#потенциал-v-gap))
-- **$U(1)$** — broken by the regenerative term $\mathcal{L}_{\text{reg}}$ (the target phase singles out a direction)
-
----
+A positive three-form has group $G_2$, but a fixed coordinate Fano instrument or target can break that symmetry. $V_2,V_4$ are even and real-orthogonal invariant under their displayed definitions. The old $V_3$ is not continuously $G_2$ invariant (proved below); external forcing and regeneration have the symmetries of their supplied coefficients/targets. No blanket $G_2$-invariance or fourteen conserved charges follow for all six terms.
 
 ## 11. Potential $V_{\text{Gap}}$: "Higgs for opacity" {#потенциал-v-gap}
 
 ### Full form
 
-#### Derivation of $V_{\text{Gap}}$ from the spectral action [T] {#вывод-vgap-из-спектрального-действия}
+#### T-74: selected spectral functional and its limits {#вывод-vgap-из-спектрального-действия}
 
-:::tip Theorem (V_Gap from spectral action) [T]
-The potential $V_{\text{Gap}}(\{\theta_{ij}\})$ is uniquely determined by the spectral action of the internal [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) $(A_{\mathrm{int}}, H_{\mathrm{int}}, D_{\mathrm{int}})$ (T-53 [T]):
-
-$$
-V_{\text{Gap}} = \left.\mathrm{Tr}(f(D_A / \Lambda))\right|_{\mathrm{int}} = V_2 + V_3 + V_4
-$$
-
-where $D_A = D_{\mathrm{int}} + A + \varepsilon J A J^{-1}$ is the fluctuated Dirac operator.
-:::
-
-**Proof.**
-
-**Step 1 (Identity $\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \, \mathcal{G}_{\mathrm{total}}$).** From T-53 [T]: $[D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}$, $[D_{\mathrm{int}}]_{ii} = 0$ (block off-diagonal structure $O \leftrightarrow 3 \leftrightarrow \bar{3}$). Therefore:
+For the [chosen Hermitian $D$](/docs/core/dynamics/gap-operator#теорема-gap-серра),
 
 $$
-\mathrm{Tr}(D_{\mathrm{int}}^2) = \sum_{i \neq j} |[D_{\mathrm{int}}]_{ij}|^2 = \omega_0^2 \sum_{i \neq j} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2 = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
+\operatorname{Tr}D^2=\omega_0^2\mathcal G_{\rm total}
 $$
 
-(the last equality is the [definition of $\mathcal{G}_{\mathrm{total}}$](/docs/core/dynamics/gap-operator#g-total-definition) [D]). This identity confirms [T-73](/docs/core/dynamics/gap-operator#теорема-gap-серра) [T] (Gap = curvature).
+is an exact matrix identity [T]. It gives no curvature, unique physical geometry or unique potential.
 
-:::info Worked numerical example
-For a holon at $P = 0.35$ with three representative off-diagonal coherences $\gamma_{EO} = 0.08\,e^{i\pi/3}$, $\gamma_{AE} = 0.06\,e^{i\pi/4}$, $\gamma_{OU} = 0.05\,e^{i\pi/5}$:
+The spectral action $\operatorname{Tr}f(D_A/\Lambda)$ is a **selected** functional with supplied spectral data, cutoff $f$, scale $\Lambda$ and fluctuation. For a suitable compact Riemannian product geometry, heat-kernel asymptotics can expand it in Seeley–DeWitt coefficients under their standard hypotheses [T/C]. For a finite matrix one can instead diagonalize and evaluate the trace exactly. The [Chamseddine–Connes principle](https://arxiv.org/abs/hep-th/9606001) proposes this action; it does not prove that it is the only $G_2$-invariant function or fix UHM's spectral triple. Invariants such as purity and independent polynomials already give different functions.
 
-$$\mathcal{G}_{\text{total}} \geq 0.08^2 \cdot \sin^2(\pi/3) + 0.06^2 \cdot \sin^2(\pi/4) + 0.05^2 \cdot \sin^2(\pi/5) = 0.0048 + 0.0018 + 0.0009 \approx 0.0075$$
+The previous T-74 claim of uniquely deriving $V_2+V_3+V_4$ from primitive dynamics is withdrawn [✗]. Universal T-42a/T-173 rigidity and T-57 exhaustion cannot fix the spectral input. Even powers $\operatorname{Tr}D^4$ and $(\operatorname{Tr}D^2)^2$ are independent before additional restrictions. The proposed old triangle $V_3$ is not $G_2$ invariant; the precise obstruction and a chosen invariant associator functional are proved below in T-331. Neither that coupling nor its numerical coefficient follows from the trace-square identity.
 
-At $\omega_0 = 40$ Hz: $\mathrm{Tr}(D_{\text{int}}^2) = 1600 \cdot 0.0075 = 12.0 > 0$. The spectral action contribution is strictly positive — reflecting the thermodynamic fuel for regeneration. By T-55 [T], $\mathcal{G}_{\text{total}} = 0$ requires all $\sin\theta_{ij} = 0$ (purely real coherences), which Lawvere incompleteness forbids for viable systems.
-:::
-
-**Step 2 ($V_2$ from the Seeley–DeWitt coefficient $a_2$).** The [spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [T]) for the product $M_4 \times F_7$:
-
-$$
-\mathrm{Tr}(f(D_{\mathrm{total}}/\Lambda)) = f_0 \Lambda^4 \, a_0 + f_2 \Lambda^2 \, a_2 + f_4 \, a_4 + \ldots
-$$
-
-The coefficient $a_2$ contains the internal contribution $\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \mathcal{G}_{\mathrm{total}}$. Identification:
-
-$$
-V_2 = \mu^2 \cdot \mathcal{G}_{\mathrm{total}}, \qquad \mu^2 := \frac{f_2 \Lambda^2 \omega_0^2}{(4\pi)^2}
-$$
-
-**Step 3 ($V_4$ from coefficient $a_4$).** Quartic invariants $\mathrm{Tr}(D_{\mathrm{int}}^4)$ and $(\mathrm{Tr}(D_{\mathrm{int}}^2))^2 = \omega_0^4 \mathcal{G}_{\mathrm{total}}^2$ give:
-
-$$
-V_4 = \lambda_4 \cdot \mathcal{G}_{\mathrm{total}}^2, \qquad \lambda_4 := \frac{f(0) \beta \omega_0^4}{(4\pi)^2}
-$$
-
-**Step 4 ($V_3$ from internal fluctuations).** Internal fluctuations $D_{\mathrm{int}} \to D_A = D_{\mathrm{int}} + \phi$ (Chamseddine–Connes) in the algebra $A_{\mathrm{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ generate a cubic invariant via the $G_2$-gauge 3-form $\varphi$ and the octonionic associator $[e_i, e_j, e_k]$ (nonzero only for non-Fano triples):
-
-$$
-a_4(D_A^2) \supset \lambda_3 \sum_{(i,j,k) \notin \mathrm{Fano}} \|[e_i, e_j, e_k]\| \cdot |\gamma_{ij}||\gamma_{jk}||\gamma_{ik}| \cdot \sin(\theta_{ij} + \theta_{jk} - \theta_{ik})
-$$
-
-**Step 5 (Uniqueness).** The spectral triple is unique up to $G_2$-equivalence ([T-42a](/docs/proofs/categorical/uniqueness-theorem) [T]). The spectral action is the unique $G_2$-invariant functional on $(S^1)^{21}$, compatible with NCG (Chamseddine–Connes theorem). $\blacksquare$
-
-**Derivation chain:**
-
-$$
-\mathrm{A1\text{--}A5} \xrightarrow{\mathrm{T\text{-}57}} \mathcal{L}_\Omega \xrightarrow{\mathrm{T\text{-}39a}} \rho_* \xrightarrow{\mathrm{T\text{-}53}} D_{\mathrm{int}} \xrightarrow{\mathrm{T\text{-}65}} V_{\mathrm{Gap}}
-$$
-
-:::tip Theorem 13.4 (Gap potential) [T]
-The potential $V_{\text{Gap}}$ has a three-term structure:
-
-$$
-V_{\text{Gap}} = V_2 + V_3 + V_4
-$$
-:::
+A replacement construction must state independent spectral data and its actual expansion, and then prove that a specified density-state flow has the claimed relation to this effective action [Pr/H]. The three displayed terms below describe the old chosen polynomial model [D]; its corrected invariance/no-go statements remain valid. Minimization results for a chosen potential do not establish its derivation from dynamics or physical interpretation.
 
 ### (a) Quadratic term (mass)
 
@@ -692,8 +479,8 @@ $$
 
 Summation over triples **not** lying on Fano lines. For non-Fano triples $\|[e_i, e_j, e_k]\| = 2$; for Fano triplets the associator vanishes (Artin's theorem), so the corresponding terms do not contribute.
 
-:::info Remark (Phase dependence of $V_3$) [I]
-The combination $\sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$ is the unique function antisymmetric under permutation of arguments and invariant under global phase shift $\theta \to \theta + \alpha$. It vanishes on Fano lines, where $\theta_{ij} + \theta_{jk} = \theta_{ik}$ (associativity). The impossibility of satisfying this condition **globally** due to the non-associativity of $\mathbb{O}$ generates **frustration** — a third independent argument for the irremovability of Gap.
+:::note Scope of triangle phases [D]
+Triangle products $\gamma_{ij}\gamma_{jk}\gamma_{ki}$ are invariant under diagonal axis rephasings. Their sine is not invariant under an arbitrary common additive shift of all pair phases, and many functions of the triangle holonomy have the same rephasing symmetry. Octonion associativity of a selected triple does not impose a phase-sum identity on arbitrary density entries. Real and rank-one states can have zero triangle phases everywhere regardless of the algebraic associator.
 :::
 
 ### (c) Quartic term (stabilization)
@@ -1145,7 +932,6 @@ What stands: Theorem 14.1 [T] (the homogeneous vacuum is not a stationary point)
 
 *(Update 2026-09-25, T-64 corrected: the three repairs above used the retracted cubic $V_3$. With the $G_2$-invariant potential of §11 the vacuum is unique up to $G_2$ for every $\kappa > 0$ off the transition curves [T]: the point $I/7$ in the symmetric phase (always for $\kappa \le \mu^2/48$), one orbit $S^6$ of colour-invariant states in the Gap phase; on a transition curve two orbits coexist (T-64 (g); [(RT)](#теорема-ву) proven 2026-09-25). Repair 2 then works: the colour-invariant family does carry a spontaneous Gap, because the associator cubic, unlike $V_3$, does not vanish on it. The sector values remain the hypothesis (SV), which this vacuum does not produce. The self-consistency relations of Theorem 13.5 were derived for $V_3$ and are not claimed for $\kappa$.)*
 
-
 *Earlier statement (retracted):* $V_{\text{Gap}}$ has a unique minimum (up to $G_2$-conjugation) on the 21-dimensional space of coherences $\{\gamma_{ij}\}$ with the sector structure $7 = 1_O \oplus 3 \oplus \bar{3}$.
 
 **Sector values:** $\varepsilon_{3\to\bar{3}} \approx 0$ (confinement), $\varepsilon_{\bar{3}\to\bar{3}} \approx 10^{-17}$ (electroweak), $\varepsilon_{33} \approx 0.06$ (Yukawa hierarchy), $\bar{\varepsilon} \approx 0.023$ (mean coherence).
@@ -1233,7 +1019,6 @@ Checked with the page's own potential, $V_{\text{Gap}} = \mu^2\mathcal{G}_{\text
 **Consequence.** The vacuum of $V_{\text{Gap}}$ has no $SU(3)$ sector structure and none of the (SV) values: its $O$-coherences are $0.08$–$0.20$, not $\sim 1$, and its mean coherence is of order $10^{-1}$, not $10^{-2}$. Results that were "[C at T-64]" used the (SV) values, so they are [C at (SV)].
 :::
 
-
 :::note Earlier statement (Theorem 14.3, retracted [✗])
 The $G_2$-invariant potential $V_{\text{Gap}}$ on the space $\mathcal{M} = (S^1)^{21}/G_2$ has a **unique global minimum** (up to $G_2$-conjugation). The minimum coincides with the sector solution from the [unique vacuum theorem](#теорема-единственный-вакуум).
 :::
@@ -1246,7 +1031,7 @@ $$
 \mathcal{M}_{\text{phys}} = (S^1)^{21}/G_2, \quad \dim(\mathcal{M}_{\text{phys}}) = 21 - 14 = 7
 $$
 
-From [$G_2$-rigidity](/docs/proofs/categorical/uniqueness-theorem) [T]: 34 real parameters of $\Gamma$, of which 14 are gauge → 20 physical parameters of the matrix $\Gamma$. But the potential $V_{\text{Gap}}$ depends only on the **moduli** of coherences $|\gamma_{ij}|$ and the **phases** $\theta_{ij} = \arg(\gamma_{ij})$, with $G_2$ fixing phases through the Fano structure.
+The old count 34−14=20 is withdrawn [✗]. Native states have 48 real parameters; a chosen generic G₂ orbit quotient has 34, without automatically being a physical gauge. G₂ does not act on a phase-only torus at fixed populations/moduli. But the potential $V_{\text{Gap}}$ depends only on the **moduli** of coherences $|\gamma_{ij}|$ and the **phases** $\theta_{ij} = \arg(\gamma_{ij})$, with $G_2$ fixing phases through the Fano structure.
 
 **Step 2 (Sector parametrization).** From the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ [T] (see [spacetime](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция)), the $G_2$-invariant potential depends only on 5 sector parameters:
 
@@ -1295,7 +1080,6 @@ It is not derived. Neither potential of this page gives it: the retracted cubic 
 
 **Decision (2026-09-25, with T-64 [T]).** No value of $\kappa$ makes (SV) the vacuum of the $G_2$-invariant $V_{\text{Gap}}$: for $\kappa \le 0$ the minimum is not unique (T-64 (a)); for $\kappa > 0$ every vacuum has $O$-coherences $0$ and $\bar\varepsilon < \sqrt5/40$ (T-64, consequences (i)–(ii)); and $\kappa$ itself is fixed by no derived source (T-331(e)–(f)). As a consequence of $V_{\text{Gap}}$, (SV) is refuted [✗]; it remains only an independent hypothesis [H].
 :::
-
 
 ### Sector hierarchy of $\varepsilon$ [C at (SV)] {#теорема-секторная-иерархия-ε}
 
@@ -1361,7 +1145,7 @@ Under hypothesis (SV) [H] the sector structure has the consequences below, each 
 | Interiority hierarchy | Levels L0--L4, L3 metastability | [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) |
 | Self-observation | Operator $\varphi$, reflection measure $R$ | [Self-observation](/docs/consciousness/foundations/self-observation) |
 | Axiom Ω⁷ | $\infty$-topos, subobject classifier, terminal object | [Axiom Ω⁷](/docs/core/foundations/axiom-omega) |
-| Axiom of Septicity | Derivation of $\kappa_0$, $P_{\text{crit}}$, categorical adjunction $D \dashv R$ | [Axiom of Septicity](/docs/core/foundations/axiom-septicity) |
+| Septicity framework | Chosen rates and coding dimension assumptions [D/C]; no categorical rate theorem | [Septicity](/docs/core/foundations/axiom-septicity) |
 | Emergent time | Page–Wootters mechanism, $H_{\text{eff}}$, internal clock | [Emergent time](/docs/proofs/dynamics/emergent-time) |
 | Zeta regularization | Regularization of Gap sums, UV-limit safety | [Zeta regularization](/docs/physics/dual-aspect/zeta-regularization) |
 | Landauer bound (physics) | Connection to information thermodynamics | [Standard model](/docs/physics/gauge-symmetry/standard-model) |
@@ -1370,7 +1154,7 @@ Under hypothesis (SV) [H] the sector structure has the consequences below, each 
 | Cosmological constant | $\varepsilon^6$ budget from sector hierarchy | [Cosmological constant](/docs/physics/gravity/cosmological-constant) |
 | Yukawa hierarchy | $\varepsilon_{\text{eff}} \sim 0.06$ from sector averages | [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) |
 | Topological vacuum protection | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$; barrier $\geq 6\mu^2$ [C at (SV)] | [Composite systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) |
-| Gap = Serre curvature | Exact identification via spectral triple [T] | [Gap operator](/docs/core/dynamics/gap-operator#теорема-gap-серра) |
+| Gap geometry | Curvature bridge withdrawn [✗]; trace-square identity [T], supplied connection [Pr/H] | [Gap operator](/docs/core/dynamics/gap-operator#теорема-gap-серра) |
 
 ---
 

@@ -1,16 +1,12 @@
 # UHM Documentation
 
-Documentation website for **Unitary Holonomic Monism (UHM)** — a formal theory of reality and consciousness.
+Documentation website for **Unitary Holonomic Monism (UHM)** — a mathematical research programme on organization, state dynamics and consciousness.
 
 ## Overview
 
-UHM describes the structure, dynamics, and phenomenology of reality through a single mathematical object — the Coherence Matrix (Γ).
+The rigorous kernel separates finite-dimensional density matrices and linear CPTP processes from the open-cover site of their Bures state space and its sheaf ∞-topos. The native model chooses seven labelled roles, a numerical self-model and dynamics. Seven-dimensional necessity has explicit additional hypotheses; physical state encoding and the phenomenal bridge remain separate model-identification questions.
 
-Key concepts:
-- **Holon** — minimal self-sufficient unit of reality
-- **7 Dimensions** — A (Articulation), S (Structure), D (Dynamics), L (Logic), E (Experience), O (Ground), U (Unity)
-- **Interiority Hierarchy** — L0 (interiority) → L1 (phenomenal geometry) → L2 (cognitive qualia)
-- **Viability** — condition for system existence: P > P_crit = 2/7
+Start with [the mathematical kernel](docs/reference/mathematical-kernel.md), [the premise ledger](docs/reference/premises.md), and [the corrected categorical formalism](docs/proofs/categorical/categorical-formalism.md). Results distinguish proven mathematics from definitions, conditional bridges, interpretations and open research programmes. The majority cut `P > 2/7` is a chosen structural criterion, rather than a universal proof of physical existence or consciousness.
 
 ## Installation
 
@@ -34,6 +30,18 @@ npm run build
 
 Generates static content in the `build` directory.
 
+## Verification
+
+```bash
+npm run test:math
+npm run test:status
+npm run build
+npm run test:render
+npm run test:mermaid
+```
+
+The numerical checks exercise specified identities, counterexamples and the density-preserving integration scheme. They supplement proofs and do not certify physical or phenomenal identifications. Python checks require NumPy and SciPy; diagram checks require Chrome or the configured Playwright browser. Set `MERMAID_BROWSER_PATH` to use another already installed Chromium executable.
+
 ## Deployment
 
 The site is deployed to GitHub Pages via GitHub Actions (see `.github/workflows/deploy.yml`).
@@ -48,7 +56,7 @@ GIT_USER=<username> npm run deploy
 ```
 docs/
 ├── core/                 # Core theory
-│   ├── foundations/      # Axioms Ω and Septicity
+│   ├── foundations/      # Typed foundation and model requirements
 │   ├── structure/        # Holon and 7 dimensions
 │   ├── dynamics/         # Evolution equations
 │   └── consciousness/    # Interiority hierarchy
@@ -68,4 +76,4 @@ See [LICENSE](../LICENSE) for details.
 ## Links
 
 - Website: https://holon.sh
-- Theory version: 0.1.3
+- Theory version: 0.8.1

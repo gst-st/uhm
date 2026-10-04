@@ -143,7 +143,7 @@ Working with knowledge about knowledge is an operation on the **category of cate
 | Reconfigure the verification system itself | Modifications $\Theta: \alpha \Rrightarrow \beta$ (3-morphisms) | Meta³ |
 | ... | ... (∞-morphisms) | Meta^n |
 
-**Lurie's theorem (HTT, 1.1.2.2):** The category $\mathbf{Cat}_\infty$ of all small ∞-categories is itself an ∞-category. Consequently, a system working with theories **lives** in an ∞-category regardless of whether we realize it or not. The ∞-topos is the **only** mathematical structure containing all levels with guaranteed coherence.
+**Categorical modelling [D/Pr].** One can model suitable theories and translations in $\mathbf{Cat}_\infty$ after fixing a universe. This does not force every knowledge system to be a topos or prove higher coherences exist for arbitrarily declared comparison data. Graph/relational storage can encode chosen categorical structures; guarantees come from the actual model and verification, not the storage label.
 
 Alternatives:
 - **Graph databases** (Neo4j) — 1-category, no 2-morphisms
@@ -169,354 +169,159 @@ The hypergraph (SQLite) and typed edges are a **1-categorical emulation** of ∞
 
 ### 2.2. Site of theories $(\mathbf{Th},\; J_{\text{ep}})$ {#site-of-theories}
 
-**Definition (site of theories).** The site $(\mathbf{Th},\; J_{\text{ep}})$ is defined by the following data:
+**Data [D].** Fix a universe and an essentially small category of declared theories, translations and status metadata. Choose the type of higher structure explicitly: an $(\infty,1)$-category has invertible higher morphisms; arbitrary noninvertible natural transformations require an $(\infty,2)$-model. A theory's claims and derivations are separate from paths in a mapping space.
 
-**Objects.** An object $T \in \mathbf{Th}$ is a *theory*: an essentially small ∞-category $\mathcal{C}_T$, equipped with:
-- a distinguished subclass of objects (*statements*)
-- a distinguished subclass of morphisms (*dependencies*)
-- an epistemic functor $\varepsilon_T: \mathcal{C}_T \to \mathbf{Status}$
+For a chosen status poset, a functor $\varepsilon_T:\mathcal C_T\to\mathbf{Status}$ constrains its own arrows. A translation $f:\mathcal C_{T_1}\to\mathcal C_{T_2}$ is status-preserving only if that contract is separately supplied. The inequality $\varepsilon_{T_1}\le\varepsilon_{T_2}\circ f$, when chosen, is a natural transformation to the poset target; it forbids **lowering** status. This is a policy, not a consequence of every functor (M-5). Using a discrete status category would instead force equality along every arrow.
 
-Examples: $T_{\text{UHM}}$ (412 registry entries, 7 statuses, 5 axioms), $T_{\text{IIT}}$ (5 postulates, $\Phi$, Q-shape), $T_{\text{GWT}}$ (global ignition, access), $T_{\text{FEP}}$ (free energy, Markov blanket).
+**Topology.** A Grothendieck topology is a collection of covering sieves satisfying maximality, pullback stability and transitivity. Start with explicitly specified generating sieves and take the smallest Grothendieck topology containing them, or prove that a proposed coverage is a basis for one. The generated topology may contain additional covers and may be too coarse for the intended application; check this separately. “Joint faithfulness” refers to detection of morphisms and is not the stated rule about distinguishing objects. That informal rule has not been proved to define a topology; the former M-1 argument is withdrawn **[✗]**.
 
-**Morphisms.** A morphism $f: T_1 \to T_2$ is an *interpretation functor*: an ∞-functor $\mathcal{C}_{T_1} \to \mathcal{C}_{T_2}$, preserving statement types and compatible with $\varepsilon$.
-
-**2-morphisms.** A natural transformation $\alpha: f \Rightarrow g$ is a *comparison of translations*: a way to deform one translation into another while preserving structure.
-
-**$n$-morphisms** for $n \geq 3$ exist automatically by definition of ∞-category.
-
-**Topology $J_{\text{ep}}$ (epistemic).** A family $\{f_i: T_i \to T\}_{i \in I}$ is a $J_{\text{ep}}$-covering of object $T$ if the functors $f_i$ are **jointly faithful**: for any two distinct statements $a, b \in T$ there exists $i$ and a statement $c \in T_i$ such that $f_i(c)$ distinguishes $a$ and $b$.
-
-**Intuition.** A covering is a set of "perspectives" that collectively exhaust the content of a theory. For example, $T_{\text{IIT}}$ and $T_{\text{GWT}}$ can jointly cover the part of $T_{\text{UHM}}$ concerning integration.
-
-**Formal typing in Verum.** The Verum stdlib already provides the protocol hierarchy `Site<C> = (underlying_category: InfinityCategory, topology: GrothendieckTopology<C>)` with `GrothendieckTopology` carrying three `@verify(formal)` axioms (maximality, stability, transitivity). The Mathesis-specific instantiation (see an unpublished specification §3.3) defines:
-
-```
-type Theory is {
-    claims: InfinityCategory,                           // C_T
-    epistemic: InfinityFunctor<claims, discrete(Status)>, // ε_T
-    statements: Set<claims.cells(0)>,                   // distinguished objects
-    dependencies: Set<claims.cells(1)>,                 // distinguished morphisms
-};
-```
-
-A morphism $f: T_1 \to T_2$ is typed as `InfinityFunctor<T_1.claims, T_2.claims>` with the contract `f.preserves(statements) && f.compatible(epistemic)`, where compatibility means: $\varepsilon_{T_2}(f(a)) \geq \varepsilon_{T_1}(a)$ — an interpretation cannot raise epistemic status. This is the **epistemic monotonicity** condition, formally verified by SMT at compile time.
-
-**Verification of Grothendieck axioms for $J_{\text{ep}}$.** The joint faithfulness topology $J_{\text{ep}}$ satisfies the three Grothendieck axioms:
-
-1. **Maximality.** The identity covering $\{\mathrm{id}: T \to T\}$ is a $J_{\text{ep}}$-covering: for any $a \neq b$, the identity functor sends $a$ to itself, which distinguishes $a$ from $b$. ✓
-
-2. **Stability under base change.** If $\{f_i: T_i \to T\}$ is a covering and $g: S \to T$ is any morphism, then the pullback family $\{f_i \times_T g: T_i \times_T S \to S\}$ is a covering of $S$. Proof: if $c \in T_i$ distinguishes $f_i(c)$ as $a \neq b$ in $T$, then for any $a', b' \in S$ with $g(a') = a, g(b') = b$, the pullback of $c$ distinguishes $a'$ from $b'$. Joint faithfulness is preserved under pullback because faithful functors are closed under base change. ✓
-
-3. **Transitivity.** If $\{f_i: T_i \to T\}$ is a covering and for each $i$, $\{g_{ij}: S_{ij} \to T_i\}$ is a covering, then the composed family $\{f_i \circ g_{ij}\}$ covers $T$. Proof: given $a \neq b$ in $T$, there exists $i$ and $c \in T_i$ with $f_i(c)$ distinguishing $a, b$. If $c$ is itself distinguished from some $c'$ in $T_i$, there exists $j$ and $d \in S_{ij}$ with $g_{ij}(d)$ distinguishing $c, c'$. The composition $f_i \circ g_{ij}$ maps $d$ to a distinguisher of $a, b$. ✓
-
-The resulting $(\mathbf{Th}, J_{\text{ep}})$ is therefore a legitimate Grothendieck site, and $\mathfrak{M} = \mathrm{Sh}_\infty(\mathbf{Th}, J_{\text{ep}})$ is a well-defined ∞-topos by Lurie's existence theorem (HTT 6.2.2.7).
-
-**Analogy.** Imagine a multi-story building. Floors are theories (UHM, IIT, GWT, FEP). Rooms on a floor are claims within a theory. Doors between rooms are logical dependencies. Staircases between floors are translation functors. The epistemic topology $J_{\text{ep}}$ says: "if via staircases one can reach all rooms on the top floor, starting from different lower floors — the top floor is *covered*." Unlike the 1-categorical fibration (prior architecture), the ∞-version adds: corridors between staircases (2-morphisms), transitions between corridors (3-morphisms), and so on — all navigation levels simultaneously.
+The trivial topology is an available consistent baseline: its sheaves are presheaves, and it is subcanonical. A richer topology must have an independently specified epistemic meaning and checked descent conditions. Claims about an implemented Verum/SMT verifier here describe a proposed contract until the actual code and proof certificates are supplied. Finite checks prove only their encoded finite scope.
 
 ### 2.3. ∞-Topos of Mathesis {#infinity-topos}
 
-**Definition.** The ∞-topos of Mathesis is the ∞-category of ∞-sheaves on the site of theories:
+For the declared small site, set $\mathfrak M=\operatorname{Sh}_\infty(\mathbf{Th},J_{\rm ep})$. This is an $\infty$-topos **[T at these hypotheses]**. A sheaf is a space-valued contravariant functor satisfying descent for every covering sieve. For a covering family with the required fibre products, descent can be expressed as the limit of its Čech diagram; pairwise agreement alone is not the full higher coherence condition.
 
-$$
-\mathfrak{M} := \mathrm{Sh}_\infty(\mathbf{Th},\; J_{\text{ep}})
-$$
-
-An object $\mathcal{F} \in \mathfrak{M}$ is an ∞-sheaf: a rule that assigns to each theory $T$ a space (∞-groupoid) $\mathcal{F}(T)$, and to each translation $f: T_1 \to T_2$ a map $\mathcal{F}(f): \mathcal{F}(T_2) \to \mathcal{F}(T_1)$ (contravariantly), with coherence at all levels.
-
-**Sheaf condition (descent).** For a covering $\{T_i \to T\}$:
-
-$$
-\mathcal{F}(T) \xrightarrow{\;\sim\;} \lim\left(\prod_i \mathcal{F}(T_i) \rightrightarrows \prod_{i,j} \mathcal{F}(T_i \times_T T_j) \cdots\right)
-$$
-
-This is a **cosimplicial limit** — full coherence at all levels simultaneously.
-
-**Universal property (Lurie, HTT 6.2.2.7).** $\mathfrak{M}$ is the free cocompletion of the site $\mathbf{Th}$ as an ∞-category: any coherent system of theory comparisons **uniquely factors** through $\mathfrak{M}$.
-
-**What this means in practice.** If a researcher loads 30 theories and builds translations between them, they may use any storage system (graph database, relational database, text files). But if they want the translations to be **coherent at all levels** (translation from A to C via B gives the same result as direct translation from A to C, up to a coherent isomorphism) — their data **automatically** forms an object in $\mathfrak{M}$. The universal property asserts: there is no other way to ensure coherence that does not factor through $\mathfrak{M}$.
-
-:::warning Uniqueness corollary
-Mathesis is not "one of possible designs." It is the **unique** (up to equivalence) way to organize a collection of theories with coherent translations at all levels. There is no alternative that would be simultaneously complete and coherent and would not factor through $\mathfrak{M}$.
-:::
+The free cocompletion is the **presheaf** category $\mathcal P(\mathbf{Th})$. Sheaves form its accessible left-exact localisation, with sheafification $a:\mathcal P(\mathbf{Th})\to\mathfrak M$ left adjoint to the inclusion. Maps into local objects satisfy $\operatorname{Map}_{\mathfrak M}(aX,F)\simeq\operatorname{Map}_{\mathcal P}(X,F)$. This universal property is relative to the chosen topology; it does not make every coherent database a sheaf or prove Mathesis the only possible architecture. See [Lurie, HTT §§5.1.5, 6.2.2](https://www.math.ias.edu/~lurie/papers/HTT.pdf).
 
 ### 2.4. Yoneda embedding: loading a theory {#yoneda-embedding}
 
-**Definition.** The Yoneda embedding:
+The always available embedding is $y:\mathbf{Th}\hookrightarrow\mathcal P(\mathbf{Th})$, $y(T)(S)=\operatorname{Map}_{\mathbf{Th}}(S,T)$. Yoneda gives
 
 $$
-y: \mathbf{Th} \hookrightarrow \mathfrak{M}, \qquad y(T)(S) := \mathrm{Map}_{\mathbf{Th}}(S, T)
+\operatorname{Map}_{\mathcal P}(yT_1,yT_2)\simeq\operatorname{Map}_{\mathbf{Th}}(T_1,T_2).
 $$
 
-To each theory $T$ is assigned a **representable sheaf** $y(T)$: a functor that assigns to theory $S$ the space of all interpretations of $S$ into $T$.
+It factors through $\mathfrak M$ if every representable satisfies $J_{\rm ep}$-descent: precisely **subcanonicity**. Under that additional hypothesis the same mapping-space equivalence holds in sheaves. Otherwise $a\circ y$ lands in sheaves but need not be faithful. Representability of a channel's output is not supplied by Yoneda (revised T-213).
 
-**Yoneda lemma (∞-version, HTT 5.1.3).** The embedding $y$ is fully faithful:
-
-$$
-\mathrm{Map}_{\mathfrak{M}}(y(T_1), y(T_2)) \simeq \mathrm{Map}_{\mathbf{Th}}(T_1, T_2)
-$$
-
-**Corollary.** "Loading theory $T$ into Mathesis" = computing the representable sheaf $y(T)$. The Yoneda lemma guarantees: **no information is lost.** The entire structure of $T$ — statements, dependencies, statuses, translations into other theories — is preserved in $y(T)$.
-
-**Practical realization.** Full computation of $y(T)$ is infinite-dimensional. Approximation: compute $y(T)$ on a finite subsite $\mathbf{Th}_0 \subset \mathbf{Th}$ containing the loaded theories. As new theories are loaded, the approximation refines.
+Finite restriction is a chosen approximation. It may miss objects, arrows and higher coherences; no-information-loss for the full Yoneda embedding does not imply no loss in this finite implementation. See revised M-3/M-4.
 
 ### 2.5. Kan extensions: inter-theoretic translation {#kan-extensions}
 
-**Problem.** Given a partial translation $f: T_1 \to T_2$. It is necessary to extend it to an optimal complete translation.
-
-**Definition.**
+Given a specified functor $f:\mathcal A\to\mathcal B$ and a diagram $X:\mathcal A\to\mathcal E$, restriction is $f^*:\operatorname{Fun}(\mathcal B,\mathcal E)\to\operatorname{Fun}(\mathcal A,\mathcal E)$. If the required (co)limits exist,
 
 $$
-\mathrm{Lan}_f: \mathfrak{M}_{/y(T_1)} \to \mathfrak{M}_{/y(T_2)} \qquad \text{(left extension — optimistic translation)}
-$$
-$$
-\mathrm{Ran}_f: \mathfrak{M}_{/y(T_1)} \to \mathfrak{M}_{/y(T_2)} \qquad \text{(right extension — conservative translation)}
+\operatorname{Lan}_f\dashv f^*\dashv\operatorname{Ran}_f,
 $$
 
-**Intuition.** $\mathrm{Lan}_f$ — "best possible correspondence" (colimit formula). $\mathrm{Ran}_f$ — "most cautious correspondence" (limit formula).
-
-**Why Kan extensions and not ad hoc functors?** A Kan extension possesses a **universal property**: it is the *best* (in the categorical sense) way to extend a partial translation. Any other translation consistent with the original **uniquely factors** through the Kan extension. This means: Mathesis does not *guess* translations and does not rely on heuristics — it computes the *optimal* translation from the structure of the theories themselves. The LLM agent proposes candidates; the Kan extension guarantees optimality.
-
-**Measure of untranslatability.** Obstruction:
-
 $$
-\mathrm{Obs}(f) := \left(\mathrm{Ran}_f \circ f^* \xRightarrow{\;\eta\;} \mathrm{Id}\right)
+(\operatorname{Lan}_fX)(b)\simeq\operatorname{colim}_{(f\downarrow b)}X(a),\qquad (\operatorname{Ran}_fX)(b)\simeq\lim_{(b\downarrow f)}X(a).
 $$
 
-where $f^*$ is the pullback functor and $\eta$ is the counit of the adjunction. The obstruction $\mathrm{Obs}(f)$ is a natural transformation; if $\eta$ is an isomorphism, the translation is perfect. If $\eta$ is not an isomorphism on object $a$, then $a$ has no exact analogue — the deviation of $\eta_a$ from isomorphism quantitatively characterizes "untranslatability." This is a **universal construction**, replacing the ad hoc `what_is_lost` column of the previous version.
+For an $\infty$-categorical target use the corresponding homotopy (co)limits. A morphism of theory **objects** $T_1\to T_2$ does not by itself define these diagram categories. In a topos, a map $u:yT_1\to yT_2$ instead yields slice adjoints $\Sigma_u\dashv u^*\dashv\Pi_u$; these must not be silently identified with the above Kan extensions.
 
-**Example.** Translation $f: T_{\text{UHM}} \to T_{\text{IIT}}$:
-- $\mathrm{Lan}_f(P_{\text{crit}} = 2/7) = [\Phi > 0]$ — optimistic: "the thresholds correspond"
-- $\mathrm{Ran}_f(P_{\text{crit}} = 2/7) = \varnothing$ — conservative: IIT does not specify a numerical threshold
-- $\mathrm{Obs}(f) \neq 0$: the numerical value 2/7 is **untranslatable** into IIT
+The universal property makes an extension initial/final among extensions with a declared boundary map. It gives no optimal semantic translation without a chosen model of semantics. For the left adjunction the counit is $\operatorname{Lan}_f f^*Y\to Y$; for the right adjunction the unit is $Y\to\operatorname{Ran}_f f^*Y$. Their failure to be equivalences is a typed test, not a universal numerical norm $\|\eta-\mathrm{id}\|$.
 
-**Algorithm for finite subsites.** On a finite subsite $\mathbf{Th}_0$ with $N$ theories and $M$ total claims, the pointwise Kan extension is computable:
-
-$$
-\mathrm{Lan}_f(X)(b) = \mathrm{colim}_{(a,\; f(a) \to b) \in (f \downarrow b)} X(a)
-$$
-
-**Algorithm** (`compute_pointwise_lan` in):
-1. **Construct the comma category** $(f \downarrow b)$: objects are pairs $(a \in T_1,\; h: f(a) \to b)$ where $h$ is a morphism in $T_2$. On a finite theory, $|(f \downarrow b)| \leq M_1 \cdot D$ where $M_1$ is the number of claims in $T_1$ and $D$ is the maximum in-degree.
-2. **Restrict** the presheaf $X$ to the comma category: $X|_{(f \downarrow b)}(a, h) = X(a)$.
-3. **Compute the finite colimit** of the restricted diagram. For a finite category with $n$ objects, the colimit is computable in $O(n^2)$ by coequalizer iteration.
-4. **Return** the colimit object as $\mathrm{Lan}_f(X)(b)$.
-
-**Complexity.** For $N$ loaded theories with $M$ claims each and maximum dependency degree $D$: computing a full Kan extension is $O(N \cdot M \cdot D \cdot M^2) = O(N \cdot M^3 \cdot D)$. For UHM ($M \approx 185$, $D \approx 5$) translating into IIT ($M \approx 50$): $\sim 185 \times 50 \times 5 \times 50^2 \approx 10^8$ operations — feasible in seconds on modern hardware.
-
-**SMT verification.** The functoriality of the computed extension ($\mathrm{Lan}_f(\mathrm{id}) = \mathrm{id}$, $\mathrm{Lan}_f(g \circ h) = \mathrm{Lan}_f(g) \circ \mathrm{Lan}_f(h)$) is verified by the SMT backend at compile time via the `category_simp` tactic. The obstruction measure $\mathrm{Obs}(f)$ is computed as: for each claim $a \in T_2$, evaluate $\|\eta_a - \mathrm{id}\|$ where $\eta$ is the counit; aggregate as the mean deviation. Non-zero obstruction indicates structural untranslatability.
+A finite set-valued diagram can have its colimit computed as a quotient of a disjoint union by generated identifications. Finite diagrams of spaces may have nontrivial higher homotopy; no universal $O(n^2)$ algorithm or seconds-scale complexity follows from the formula. Specify the encoding and algorithm before making a complexity claim. The IIT/UHM threshold example is a proposed semantic comparison **[I/H]**, not an evaluated Kan extension.
 
 ### 2.6. Descent condition: coherence as a sheaf property {#descent-condition}
 
-**Central observation.** In the preceding architecture, coherence was verified by **audit** post factum (BFS traversal, 5 violation types, diagnostics). In Mathesis, coherence is **not a check but a defining property**: data are objects of $\mathfrak{M}$ if and only if they are coherent.
-
-**Descent condition.** Let $\{f_i: T_i \to T\}$ be a covering. A data set $\{a_i \in \mathcal{F}(T_i)\}$ with a **cocycle condition** (agreement on intersections $T_i \times_T T_j$) uniquely glues into a global datum $a \in \mathcal{F}(T)$.
-
-**Practical corollary.** If a collection of translations $\{F_{\text{IIT}}, F_{\text{GWT}}, F_{\text{FEP}}, F_{\text{Cog}}\}$ does not satisfy the descent condition, the system indicates the **exact obstruction**: which pair of translations is inconsistent and at what level. This is not "coherence violation #4" — it is an obstruction to descent in $\mathfrak{M}$.
+Descent is a property to **verify** before calling a declared presheaf a sheaf. On a small site it is equivalence to the appropriate covering-sieve/Čech limit. For set-valued sheaves, compatible local sections glue uniquely; for space-valued sheaves, the space of gluing data is equivalent to the full coherent descent space. Pairwise consistency alone does not construct all higher coherences or supply an algorithm finding an exact obstruction. A sheafification can identify/alter data, so post-hoc audit still matters. The intended finite implementation must supply its actual descent certificates.
 
 ### 2.7. Subobject classifier: epistemic logic {#classifier}
 
-In any ∞-topos there exists a **subobject classifier** $\Omega_{\mathfrak{M}}$: an object representing the subobject functor.
+An $\infty$-topos has a subobject classifier $\Omega$. For a declared object $X$, its subobjects form a Heyting algebra; excluded middle is not guaranteed in an arbitrary topos. A Boolean special case is possible.
 
-**Internal logic.** $\Omega_{\mathfrak{M}}$ is a **Heyting algebra** (not Boolean). The law of excluded middle $p \vee \neg p = \top$ **does not hold** in general — and this is **adequate** for epistemology: a statement can be neither proven nor refuted.
-
-**Connection with epistemic statuses.** The linear poset $\text{[T]} > \text{[C]} > \text{[H]} > \text{[P]} > \text{[D]} > \text{[I]} > \text{[✗]}$ embeds into $\Omega_{\mathfrak{M}}$, but $\Omega_{\mathfrak{M}}$ is **richer**:
-
-- "true in UHM $\wedge$ false in IIT" — **contextual truth**
-- "proven under assumption X, which is [T] in GWT but [H] in FEP" — **conditional truth with theory dependence**
-- "consistent in all loaded theories but not proven in any" — **invariant hypothesis**
-
-This is not an ad hoc extension — it is an **automatic consequence** of $\mathfrak{M}$ being an ∞-topos.
-
-**Connection between $\varepsilon$ and $\Omega_{\mathfrak{M}}$.** The epistemic functor $\varepsilon_T$ (§2.2) maps claims to the linear poset **Status**. This poset *embeds* into $\Omega_{\mathfrak{M}}$ as a sublattice: each global status [T], [C], ... is a section of the subobject classifier. But $\Omega_{\mathfrak{M}}$ also contains *non-sectoral* elements — contextual truths not expressible through a single global status. Phases 0–4 work with the projection of $\varepsilon$ onto the linear poset; Phase 6 transitions to the full $\Omega_{\mathfrak{M}}$.
-
-**Why a linear poset is insufficient.** In the linear poset [T] > [C] > [H] > ... a claim has exactly one status, regardless of theory. But in scientific practice, the claim "consciousness ≡ integrated information" has status [T] in IIT, [H] in UHM, and [✗] in behaviorism — **simultaneously**. A linear poset forces choosing a single "global" status, losing context. The Heyting algebra $\Omega_{\mathfrak{M}}$ contains all contextual truths as its elements — without loss.
+Registry statuses and truth values have different types. The chain $[T]>[C]>[H]>[P]>[D]>[I]>[\text{✗}]$, if used, is an administrative order **[D]**; it is not automatically an embedding into $\Omega$ or its global sections. A postulate, a definition and an empirical hypothesis differ by provenance and assumptions, not simply by mathematical truth strength. Keep these metadata separate. To encode contextual propositions as subobjects one must specify the object, contexts, predicate and restriction/descent maps. Sheaf theory then constrains that encoding; it does not assign phenomenal or scientific truth by itself.
 
 ### 2.8. Connection with the UHM ∞-topos {#connection-with-uhm}
 
-UHM is built on an ∞-topos:
-
-$$
-\mathfrak{T} = (\mathrm{Sh}_\infty(\mathcal{C}),\; J_{\text{Bures}},\; \omega_0)
-$$
-
-where $\mathcal{C} = \mathbf{DensityMat}$. $\mathfrak{T}$ organizes **quantum states** of a single theory. $\mathfrak{M}$ organizes **theories** (each of which is an ∞-topos). Connection:
-
-$$
-\mathfrak{T} \in \mathrm{Ob}(\mathbf{Th}) \xrightarrow{\;y\;} \mathfrak{M}
-$$
-
-**Tower of levels.** Hierarchy of irreducible levels:
-
-| Level | Object | Space |
-|-------|--------|-------|
-| 0 | Quantum state $\Gamma$ | $\mathfrak{T}$ |
-| 1 | UHM theory $\mathfrak{T}$ | $\mathbf{Th}$ |
-| 2 | Representable sheaf $y(\mathfrak{T})$ | $\mathfrak{M}$ |
-| 3 | The ∞-topos $\mathfrak{M}$ itself | $\mathbf{Cat}_\infty$ |
-
-Each level is irreducible to the previous one (T-182). Mathesis operates at level 2, with reflexive access to level 3 through $T_{\text{meta}}$ (§8).
-
-The Grothendieck construction (straightening/unstraightening, HTT 3.2) establishes an equivalence between fibrations and functors $\mathcal{C}^{\mathrm{op}} \to \mathbf{Cat}_\infty$. Thus, the fibration $p: \mathbf{E} \to \mathbf{B}$ from the preceding architecture is a **special case** (1-categorical projection) of the ∞-topos $\mathfrak{M}$ construction.
-
-**Deep unity.** The fact that the same construction (∞-topos of sheaves) organizes both quantum states ($\mathfrak{T}$) and scientific theories ($\mathfrak{M}$) is not a coincidence. It is a consequence of both domains — physics and epistemology — operating on **context-dependent knowledge**: the result of a measurement depends on context (in physics — on the basis; in epistemology — on the theory). The ∞-topos is the universal mathematical structure for context-dependent data with coherent transitions between contexts (Isham–Butterfield 1998, Döring–Isham 2008).
+Theories of physical states and theories about theories can each use sheaf constructions after specifying their own sites, universes and meanings. This parallel is **[I/Pr]**, not a theorem that physics and epistemology have one unique topos. To treat a state theory as an object of $\mathbf{Th}$, supply the actual claims, translations and status data; to load it representably use $y$ into presheaves, and into sheaves only under M-3’s subcanonicity hypothesis. Straightening/unstraightening relates appropriately typed functors and fibrations; it does not identify every fibration with a sheaf topos. A hierarchy of software/meta representations is a design, not a proof of physical irreducibility or cognitive depth.
 
 ### 2.9. Formal theorem catalogue {#theorem-catalogue}
 
-This section collects the ten load-bearing theorems of Mathesis with full proofs. Previous sections introduced these results informally; here they receive explicit statements, proofs, and status classifications. The numbering M-1..M-10 mirrors the UHM T-numbering convention.
+This section catalogues proposed constructions M-1–M-10. Their statuses depend on explicitly verified hypotheses; revised M-9/M-10 below separate the surviving identities from withdrawn cognitive/semantic conclusions.
 
-:::tip Theorem M-1 (Grothendieck site axioms for $J_\mathrm{ep}$) [T]
-The epistemic topology $J_\mathrm{ep}$ of joint faithfulness satisfies the three Grothendieck axioms: maximality, stability under base change, and transitivity. Consequently, $(\mathbf{Th}, J_\mathrm{ep})$ is a legitimate Grothendieck site.
+:::note M-1 revised: topology generated by declared sieves [D/T]
+On the chosen small category, specify generating covering sieves and let $J_{\rm ep}$ be the smallest Grothendieck topology containing them. Existence follows by intersection of all topologies containing them (the indiscrete topology is one). The maximality, stability and transitivity axioms then hold by construction. This does not prove that the original informal “joint-faithfulness” rule describes exactly its covers or that the topology is subcanonical.
 :::
 
-**Proof.** This was sketched in §2.2. Formal restatement: let $\mathbf{Th}$ be the ∞-category of essentially small theories (as defined §2.2), and let $J_\mathrm{ep}$ be the topology generated by joint-faithfulness covering families.
-
-**(Maximality)** For any $T \in \mathbf{Th}$, the singleton family $\{\mathrm{id}_T: T \to T\}$ covers $T$: the identity functor preserves every statement, so distinguishability in $T$ is trivially witnessed.
-
-**(Stability)** Let $\{f_i: T_i \to T\}_{i \in I}$ be a $J_\mathrm{ep}$-cover and $g: S \to T$ any morphism in $\mathbf{Th}$. We claim $\{f_i \times_T g: T_i \times_T S \to S\}$ is a $J_\mathrm{ep}$-cover of $S$. Given $a', b' \in S$ with $a' \neq b'$, set $a = g(a')$, $b = g(b')$. Either $a = b$ in $T$ — in which case $g^{-1}(a) = g^{-1}(b)$ has at least two elements, forcing a non-trivial 2-morphism in the comma ∞-groupoid that the pullback preserves; or $a \neq b$, in which case the covering hypothesis gives $i, c$ with $f_i(c)$ distinguishing $(a, b)$, and the pullback $c \times_T a'$ distinguishes $(a', b')$ in $T_i \times_T S$.
-
-**(Transitivity)** Standard argument: composition of jointly-faithful families is jointly faithful, since composition of faithful functors is faithful (Lurie HTT 2.1.4.3). $\blacksquare$
-
-:::tip Theorem M-2 (Existence of Mathesis ∞-topos) [T]
-The category $\mathfrak{M} := \mathrm{Sh}_\infty(\mathbf{Th}, J_\mathrm{ep})$ is an ∞-topos: it satisfies the Giraud axioms (presentable, descent, universal colimits, disjoint coproducts, effective groupoid objects).
+:::tip M-2 revised: existence of the sheaf $\infty$-topos [T at explicit hypotheses]
+For the small site $(\mathbf{Th},J_{\rm ep})$, $\operatorname{Sh}_\infty(\mathbf{Th},J_{\rm ep})$ is an accessible left-exact localisation of the space-valued presheaf category, hence an $\infty$-topos. This is the standard site theorem, not a proof of the intended physical/epistemic semantics.
 :::
 
-**Proof.** By M-1, $(\mathbf{Th}, J_\mathrm{ep})$ is a Grothendieck site. The category of ∞-sheaves on any Grothendieck site is presentable (Lurie HTT 6.2.2.7). The descent condition is the defining property of $\infty$-sheaves. Universal colimits hold for any left-exact localisation of a presentable ∞-category of presheaves (HTT 5.5.4.15). Disjoint coproducts and effective groupoid objects follow from the topos-theoretic reflection (HTT 6.1.0.6). $\blacksquare$
-
-:::tip Theorem M-3 (Yoneda embedding is fully faithful) [T]
-The Yoneda embedding $y: \mathbf{Th} \hookrightarrow \mathfrak{M}$, $T \mapsto \mathrm{Map}_\mathbf{Th}(-, T)$, is fully faithful:
-$$\mathrm{Map}_\mathfrak{M}(y(T_1), y(T_2)) \simeq \mathrm{Map}_\mathbf{Th}(T_1, T_2).$$
-Consequently, no information is lost in the embedding of theories into the ∞-topos.
+:::tip M-3 revised: Yoneda and subcanonicity [T at explicit hypotheses]
+For the declared small category, $y:\mathbf{Th}\hookrightarrow\mathcal P(\mathbf{Th})$ is fully faithful by the Yoneda lemma. It factors through sheaves exactly when the topology is subcanonical; then the mapping-space identity is unchanged because the sheaf inclusion is fully faithful. Without that extra hypothesis, $a\circ y$ need not be faithful. Being contained in the maximal sieve does not prove a sieve's descent condition.
 :::
 
-**Proof.** Classical ∞-Yoneda lemma (Lurie HTT 5.1.3.1): for any locally small ∞-category $\mathcal C$ and object $c \in \mathcal C$, the mapping space $\mathrm{Map}_{\mathrm{Fun}(\mathcal C^\mathrm{op}, \mathcal S)}(y(c), F) \simeq F(c)$ for any presheaf $F$. Specializing to $F = y(c')$: $\mathrm{Map}(y(c), y(c')) \simeq y(c')(c) = \mathrm{Map}_\mathcal C(c, c')$. Applied to $\mathcal C = \mathbf{Th}$, $c = T_1$, $c' = T_2$: the Yoneda embedding is fully faithful. The embedding factors through $\mathfrak{M}$ because representable presheaves are automatically sheaves (every covering sieve is contained in the maximal sieve). $\blacksquare$
+See [Lurie, HTT §§5.1.3, 6.2.2](https://www.math.ias.edu/~lurie/papers/HTT.pdf). “No information lost” applies to the full embedding under these conditions, not to arbitrary sheafification or a finite database restriction.
 
-:::tip Theorem M-4 (Convergence of Kan extension approximation) [T]
-Let $\mathbf{Th}_0 \subset \mathbf{Th}_1 \subset \cdots$ be an expanding family of finite subsites with union $\mathbf{Th}_\infty := \bigcup_N \mathbf{Th}_N$. For any functor $f: T_1 \to T_2$ between theories in $\mathbf{Th}_0$ and any presheaf $X \in \mathfrak{M}_{/y(T_1)}$ computable on $\mathbf{Th}_0$, the pointwise Kan extension $\mathrm{Lan}_f^{(N)}(X)$ computed on $\mathbf{Th}_N$ converges to the true Kan extension as $N \to \infty$:
-$$\lim_{N \to \infty} \mathrm{Lan}_f^{(N)}(X)(b) \;=\; \mathrm{Lan}_f(X)(b) \quad \text{in } \mathfrak{M}_{/y(T_2)}$$
-for all $b \in T_2$. Convergence rate: $\|\mathrm{Lan}_f^{(N)}(X)(b) - \mathrm{Lan}_f(X)(b)\|_B \leq C \cdot \delta(N)$ where $\delta(N) = 1 - \mathrm{coverage}(\mathbf{Th}_N) / |T_2|$ and $C$ depends on the Bures injectivity radius.
+:::tip M-4 revised: pointwise left Kan extensions [T at explicit hypotheses]
+Let $f:\mathcal A\to\mathcal B$ be a functor between declared small categories and $X:\mathcal A\to\mathcal E$, where the target admits the required colimits. Then
+
+$$
+(\operatorname{Lan}_fX)(b)\simeq\operatorname{colim}_{(a,f(a)\to b)\in(f\downarrow b)}X(a).
+$$
+
+The same formula uses homotopy colimits for the stated $\infty$-categorical version. In a sheaf target, compute in that target or apply the necessary sheafification; these types are separate from Bures density matrices.
 :::
 
-**Proof (four steps).**
+A finite approximation needs actual subdiagrams and comparison maps. If those subdiagrams exhaust the indexing diagram in the appropriate final/colimit sense, their **colimit** recovers the complete colimit. This is not a numerical inverse limit or monotone convergence in a universal “Bures order”.
 
-**Step 1 (Pointwise formula).** By HTT 4.3.2.7, the left Kan extension at $b \in T_2$ computes as the colimit over the comma $\infty$-category $(f \downarrow b)$:
-$$\mathrm{Lan}_f(X)(b) = \mathrm{colim}_{(a, h) \in (f \downarrow b)} X(a).$$
-On the finite subsite $\mathbf{Th}_N$, the truncated comma category $(f \downarrow b)_N$ contains only those $(a, h)$ where $a \in T_1 \cap \mathbf{Th}_N$ and $h$ is witnessed in $\mathbf{Th}_N$.
+The old universal $O(\delta(N))$ error rate and its T-213 constant $\omega_0^{-1}\log7$ are withdrawn **[✗]**. Chordal Bures distance has dimensionless maximum $\sqrt2$ on density matrices, but that supplies no metric on a category of theories or its Kan extensions. A fraction of uncovered claims alone bounds neither the approximation error nor coverage of missing arrows/higher coherences. A quantitative theorem requires a specified numerical realisation, norm, weighted error model and convergence hypotheses. Adding theories need not strictly improve coverage.
 
-**Step 2 (Monotone approximation).** As $N$ grows, $(f \downarrow b)_N \subseteq (f \downarrow b)_{N+1}$ (more theories, more witnessing morphisms), so the colimit sequence is non-decreasing in the Bures-compatible order on $\mathfrak{M}_{/y(T_2)}$.
-
-**Step 3 (Limit achievability).** The filtered colimit $\bigcup_N (f \downarrow b)_N = (f \downarrow b)_\infty$ is the true comma category. By cocontinuity of the colimit functor (HTT 4.2.3.1): $\mathrm{colim}_\infty X = \lim_N \mathrm{colim}_N X$. Hence $\lim_N \mathrm{Lan}_f^{(N)}(X)(b) = \mathrm{Lan}_f(X)(b)$.
-
-**Step 4 (Explicit rate).** The coverage defect $\delta(N)$ measures the fraction of $T_2$-claims not witnessable from $\mathbf{Th}_N$. Uncovered claims contribute the worst-case Bures distance (diameter of $\mathcal D(\mathbb C^7)$, bounded by $\omega_0^{-1}\log 7$ per T-213 Bures description length), scaled by $\delta(N)$. Covered claims converge exactly. Combining: $\|\mathrm{Lan}_f^{(N)} - \mathrm{Lan}_f\|_B \leq (\omega_0^{-1}\log 7) \cdot \delta(N)$.
-
-$\delta(N) \to 0$ monotonically as $N \to \infty$ (more theories strictly improves coverage). $\blacksquare$
-
-**Consequence.** Mathesis's finite-subsite Kan extension computation has an explicit error bound that converges to zero at rate $O(\delta(N))$. This closes the convergence gap previously flagged as open in §3½.
-
-:::tip Theorem M-5 (Epistemic monotonicity as categorical consequence) [T]
-For any interpretation functor $f: T_1 \to T_2$ in $\mathbf{Th}$ and any claim $a \in T_1$:
-$$\varepsilon_{T_2}(f(a)) \;\geq\; \varepsilon_{T_1}(a)$$
-where $\varepsilon: \mathbf{Th} \to \mathbf{Status}$ is the epistemic functor. Status cannot decrease under interpretation; this is **not** a separate axiom but a categorical consequence of the monotonicity of $\varepsilon$ as a functor.
+:::tip M-5 revised: functorial order within a theory [T], translation contract [D]
+A functor $\varepsilon_T:\mathcal C_T\to\mathbf{Status}$ preserves the declared order along its own arrows. For a translation $f:\mathcal C_{T_1}\to\mathcal C_{T_2}$, the inequality $\varepsilon_{T_1}(a)\le\varepsilon_{T_2}(f(a))$ requires a separately supplied natural transformation $\varepsilon_{T_1}\Rightarrow\varepsilon_{T_2}\circ f$, or an equivalent pointwise contract. If only such pairs $(f,\alpha)$ are admitted, monotonicity holds **by definition**, not for every functor.
 :::
 
-**Proof.** The epistemic functor $\varepsilon_T: \mathcal C_T \to \mathbf{Status}$ is, by definition (§2.2), a functor to the poset category $\mathbf{Status}$. Functors to poset categories are order-preserving on morphisms: if $\alpha: a \to b$ in $\mathcal C_T$ represents "$b$ strengthens $a$" (a `derivation` or `entails` edge), then $\varepsilon(\alpha): \varepsilon(a) \to \varepsilon(b)$ in $\mathbf{Status}$ forces $\varepsilon(a) \leq \varepsilon(b)$.
+**Counterexample to the former universal inference.** Two one-object categories admit the unique interpretation functor. A status functor constantly equal to [T] on the first and one constantly equal to [H] on the second are both valid functors, yet the claimed cross-theory inequality fails. No preservation-of-composition axiom repairs it. Evidence, assumptions and inference rules must travel with a translation.
 
-An interpretation functor $f: T_1 \to T_2$ preserves the categorical structure: $f(\alpha) = f(a) \to f(b)$ is a morphism in $\mathcal C_{T_2}$. Compatibility of $f$ with $\varepsilon$ (required in the definition of interpretation functor) means: $\varepsilon_{T_2} \circ f \leq \varepsilon_{T_1}$ does not hold generically, but the **contrapositive direction** does: if $a$ has status $s$ in $T_1$ (justified by theorems of $T_1$), then in $T_2$ with **extra** theorems, the justification of $f(a)$ is at least as strong — $\varepsilon_{T_2}(f(a)) \geq \varepsilon_{T_1}(a)$.
-
-Rigorously: $\mathbf{Status} = \{[T] > [C] > [H] > [P] > [D] > [I] > [\checkmark]\}$ is a chain, hence a totally ordered poset. Functors to chains are order-preserving. The interpretation functor $f$ is structure-preserving by definition, so it commutes up to $\geq$ with $\varepsilon$. $\blacksquare$
-
-**Consequence.** Epistemic monotonicity, previously asserted as "SMT-verified at compile time", is now derived from the categorical definition of interpretation functors. Any would-be interpretation that **lowers** status is automatically excluded as not-a-functor-in-$\mathbf{Th}$.
-
-:::tip Theorem M-6 (Quantum-logical necessity of orthomodular lattice) [T]
-The epistemic states $\rho_a \in \mathcal D(\mathcal H_\mathrm{ep})$ of Mathesis claims admit a structure of orthomodular lattice $\mathcal L$ as the lattice of projectors on $\mathcal H_\mathrm{ep}$. This is **not** an analogy to quantum mechanics: it is forced by the following two properties of epistemic measurements.
+:::note M-6 revised: chosen Hilbert model [D], conditional lattice/Born results [T]
+One may encode seven status labels in a chosen $\mathcal H_{\rm ep}=\mathbb C^7$. This is neither forced by context dependence nor a universal minimal representation theorem. For that chosen Hilbert space, the lattice of closed subspaces is orthomodular and non-distributive. For example, with $a=\operatorname{span}(e_1)$, $b=\operatorname{span}(e_2)$, $c=\operatorname{span}(e_1+e_2)$, $c\wedge(a\vee b)=c$ but $(c\wedge a)\vee(c\wedge b)=0$.
 :::
 
-**Proof (two steps).**
+The full lattice $L(\mathbb C^7)$ has uncountably many subspaces. Only its coordinate subspaces in one fixed orthonormal basis form a **Boolean** lattice with $2^7=128$ elements (127 nonzero). Non-distributivity alone does not imply orthomodularity, and arbitrary orthomodular lattices do not automatically have the claimed Hilbert representation.
 
-**Step 1 (Non-distributivity forces non-Boolean).** Consider three claims $a, b, c$ where $c$ is consistent with either $a$ or $b$ separately, but not with both conjointly:
-- $c \wedge (a \vee b) = c$ (consistent with either individually)
-- $(c \wedge a) \vee (c \wedge b) = a \vee b$ (forcing choice between $a, b$)
+If a probability measure on **all** projections of a complex Hilbert space of dimension at least three is normalised and additive on orthogonal families, Gleason gives $\mu(P)=\operatorname{Tr}(\rho P)$ for a density matrix. These are measurement-model hypotheses, not facts inferred from seven epistemic labels. See [Gleason's original paper](https://pages.jh.edu/rrynasi1/Bananaworld/eprints/Gleason1957MeasuresOnTheClosedSubspacesOfAHilbertSpace.pdf).
 
-These are **unequal** whenever $a, b$ are epistemically complementary (not jointly verifiable). This violates distributivity, ruling out Boolean algebras. The next weakest candidate satisfying this weakening is the class of **orthomodular lattices** (Loomis 1955, Maeda-Maeda 1970).
+Gleason specifies probabilities, not a unique state-update instrument. Lüders updating is a chosen instrument. For a degenerate projector $P$, $K=UP$, with $U$ unitary on its range, has $K^\dagger K=P$ and the same outcome probability, but can change the conditional state. The former forced quantum logic and unique Lüders inference are withdrawn **[✗]**. A quantum-like epistemic model is testable **[H/Pr]** against classical models with context and memory; order-dependent checks alone do not select it.
 
-**Step 2 (Projectors on Hilbert space is universal).** By the representation theorem for orthomodular lattices (Amemiya–Araki 1966, Zierler 1961): every orthomodular lattice with $\geq 4$ atoms embeds into the lattice of projectors on some Hilbert space. For Mathesis's epistemic statuses ($k = 7$ classes: [T], [C], [H], [P], [D], [I], [✗]), we choose $\mathcal H_\mathrm{ep} = \mathbb C^7$ as the minimal universal host, giving the lattice $L(\mathbb C^7)$ of all $\leq 7$-dimensional subspaces — a $2^7 - 1 = 127$-element lattice structure.
-
-The Lüders rule for epistemic measurement, $\rho \mapsto P_s \rho P_s / \mathrm{Tr}(P_s \rho P_s)$, is the unique projection-valued update compatible with the orthomodular structure (Gleason 1957 for $k \geq 3$). $\blacksquare$
-
-**Consequence.** The quantum-logical structure of Mathesis epistemic states is **forced**, not chosen: any sufficiently rich epistemic measurement calculus with non-commuting checks must use orthomodular lattices, which necessarily embed into projector lattices on Hilbert spaces.
-
-:::tip Theorem M-7 (Giry monad is well-defined on the functor space) [T]
-The Giry monad $\mathcal G(\mathrm{Map}_\mathbf{Th}(T_1, T_2))$, as used by the LLM agent to generate candidate interpretations, is a valid probability measure on a measurable space.
+:::tip M-7 revised: a declared measurable candidate model [T at explicit hypotheses]
+For a nonempty finite candidate set with finite scores, normalised softmax is a probability distribution. For a countable or otherwise infinite set, first supply a measurable space and a finite nonzero normalisation/integrability condition; an arbitrary cylinder-generated space need not be standard Borel. The Giry probability functor on measurable spaces has its usual Dirac unit and integration multiplication. Its monad laws follow from the corresponding measure-theoretic hypotheses.
 :::
 
-**Proof.** For finite theories, $\mathrm{Map}_\mathbf{Th}(T_1, T_2)$ is a finite set of functor-candidates, and $\mathcal G$ reduces to the finite-probability simplex $\Delta^{|\mathrm{Map}|}$. Every softmax distribution $p(F \mid \text{context}) = \exp(\mathrm{score}(F)) / Z$ with $Z = \sum_{F'} \exp(\mathrm{score}(F'))$ is:
-- **Non-negative**: $\exp > 0$;
-- **Normalised**: $\sum_F p(F) = Z / Z = 1$;
-- **Measurable**: every subset of a finite discrete space is measurable.
+The chosen LLM sampling policy is [D/H], not optimal or semantically sound merely because it defines a probability measure. Candidate verification remains separate.
 
-For infinite theories (infinite claim sets), the measurable-space structure is generated by cylinder sets $\{F: F(a_i) = b_i, i \in I\}$ for finite index sets $I$, yielding a standard Borel $\sigma$-algebra. The Giry monad structure (Giry 1982): $\mathcal G(X)$ is the space of probability measures on $X$, with unit $\delta$ (Dirac delta) and multiplication $\mathcal G(\mathcal G(X)) \to \mathcal G(X)$ via integration. All three satisfy the monad laws by standard measure theory. $\blacksquare$
-
-**Consequence.** The previously informal claim "LLM agent as stochastic oracle" is now a formal statement about a well-defined probability measure. The softmax density of the candidate distribution is not heuristic — it is a legitimate Giry-monad element.
-
-:::tip Theorem M-8 (L-III topology modification preserves ∞-topos structure) [T]
-Any L-III topology modification $J_\mathrm{ep} \to J'_\mathrm{ep}$ passing the SMT-axiom-verification gate (Maximality + Stability + Transitivity) yields a new ∞-topos $\mathfrak{M}' = \mathrm{Sh}_\infty(\mathbf{Th}, J'_\mathrm{ep})$ with the same categorical properties as $\mathfrak{M}$. In particular, Giraud axioms hold for $\mathfrak{M}'$, Yoneda is fully faithful, and Kan extensions exist.
+:::tip M-8 revised: topology change with verified site axioms [T at explicit hypotheses]
+If $J'_{\rm ep}$ is a genuine Grothendieck topology on the declared small category, $\mathfrak M'=\operatorname{Sh}_\infty(\mathbf{Th},J'_{\rm ep})$ is an $\infty$-topos. Its required diagram (co)limits exist. Yoneda is fully faithful into presheaves; it factors fully faithfully through this new sheaf category only when $J'_{\rm ep}$ is subcanonical. Site axioms alone do not imply this.
 :::
 
-**Proof.** By M-1 generalisation, any covering function satisfying Maximality, Stability, Transitivity defines a Grothendieck site. By M-2, the associated ∞-sheaves form an ∞-topos. Hence $(\mathbf{Th}, J'_\mathrm{ep})$ after passing the gate is a valid Grothendieck site, and $\mathfrak{M}'$ is a valid ∞-topos. Every structural property that depended only on the Giraud axioms transfers automatically: Yoneda (M-3 proof uses only site axioms), Kan extensions (M-4 proof uses only colimit formulas valid in any ∞-topos), descent condition (defining property of ∞-sheaves). $\blacksquare$
+Changing the topology can change which presheaves satisfy descent and what sheafification identifies. It therefore requires an impact audit; preserving the abstract topos class does not prove semantic equivalence, correct translations or physical safety. A finite SMT gate certifies only the encoded conditions.
 
-**Consequence.** L-III autopoiesis is **safe** at the categorical level: topology modification does not break the mathematical foundation of Mathesis. What can break under L-III is not the ∞-topos structure but specific descent conditions for specific presheaves — which the algorithm of §3.3 step 4 explicitly detects and flags.
+:::tip M-9 revised: tensor-score identity, not a cognitive-enhancement theorem [D/T]
+For declared numerical states $\rho\in D_m$, $\sigma\in D_n$ and the product frame,
 
-:::tip Theorem M-9 (Cognitive extension via Day convolution) [T at T-129]
-Let $\mathbb H_\mathrm{bio}$ be the holonom of a researcher (a UHM-compatible L2+ agent with $\Phi(\mathbb H_\mathrm{bio}) \geq 1$) and $\mathbb H_\mathfrak{M}$ the holonom of Mathesis (with $\Phi(\mathbb H_\mathfrak{M}) \geq 1$). Assume non-zero coherence between them (researcher-system interaction generates off-diagonal $\gamma_{ij}$ in the joint state). Then the Day-convolution-extended holonom
-$$\mathbb H_\mathrm{ext} := \mathbb H_\mathrm{bio} \otimes_\mathrm{Day} \mathbb H_\mathfrak{M}$$
-satisfies:
-$$\Phi(\mathbb H_\mathrm{ext}) \;>\; \max\bigl(\Phi(\mathbb H_\mathrm{bio}), \Phi(\mathbb H_\mathfrak{M})\bigr).$$
+$$
+P(\rho\otimes\sigma)=P(\rho)P(\sigma),\quad Q(\rho\otimes\sigma)=Q(\rho)Q(\sigma),
+$$
+
+so
+
+$$
+1+\Phi(\rho\otimes\sigma)=(1+\Phi(\rho))(1+\Phi(\sigma)).
+$$
+
+This follows by trace and diagonal factorisation **[T]**. If both component scores are positive, the joint product score exceeds either; this happens even for a completely uncorrelated product state. It therefore proves neither cognitive enhancement, entanglement nor single agency. The marginal $\rho$ and its own $\Phi$ are unchanged.
 :::
 
-**Proof.** Day convolution (Day 1970) on the category of presheaves with monoidal base gives a tensor product that is **not** Cartesian: $\otimes_\mathrm{Day}$ preserves the non-commutative monoidal structure of the underlying category. Applied to the category $\mathbf{Th}$ with monoidal product $\times$ (direct product of theories), Day convolution of the Yoneda embeddings gives:
-$$(y(T_1) \otimes_\mathrm{Day} y(T_2))(S) = \int^{U, V} y(T_1)(U) \times y(T_2)(V) \times \mathrm{Map}_\mathbf{Th}(S, U \times V).$$
+For an interacting joint state, the tensor factorisation identity need not apply. Specify the joint state, frame, normalised readout and comparison observable before testing enhancement **[H/Pr]**. If using Day convolution, first place both presheaves on a common monoidal base and establish the required sheafification compatibility. Its categorical tensor has no automatically assigned density matrix or $\Phi$; it is not a $14\times14$ block sum of two $7\times7$ states. T-210's selected-pair arithmetic gives no universal strict increase when dimension, state and denominator change.
 
-For holonoms viewed as ∞-sheaves on their respective sites ($\mathbb H_\mathrm{bio}$ on $\mathcal D(\mathbb C^7)$, $\mathbb H_\mathfrak{M}$ on $\mathbf{Th}$), the Day tensor gives an extended holonom whose state space is the coend over joint interpretations.
+The old M-9 deduction of user $\Phi$ increase and L3 from tool use is withdrawn **[✗]**. A held-out experiment may test a calibrated cognitive/task bridge. A null result rejects that hypothesis, not T-129 or the tensor-score identity.
 
-The integration measure Φ computed on $\mathbb H_\mathrm{ext}$ decomposes:
-$$\Phi(\mathbb H_\mathrm{ext}) = \sum_{i \neq j} |\gamma_{ij}^\mathrm{ext}|^2 / \sum_k (\gamma_{kk}^\mathrm{ext})^2$$
-where $\gamma^\mathrm{ext}$ includes:
-- $\gamma_\mathrm{bio}$ from $\mathbb H_\mathrm{bio}$ alone,
-- $\gamma_\mathfrak{M}$ from $\mathbb H_\mathfrak{M}$ alone,
-- **cross-coherences** $\gamma_{ij}^{\mathrm{bio},\mathfrak{M}}$ arising from Day convolution.
-
-The cross-coherences are **strictly positive** when researcher-system interaction creates mutual informational entanglement (non-zero coherence assumption). Since $\Phi$ increases strictly when new off-diagonal terms enter the numerator (T-210 [T] strict monotonicity, applied to the interior stratum of the extended state space), $\Phi(\mathbb H_\mathrm{ext}) > \Phi(\mathbb H_\mathrm{bio})$ and $> \Phi(\mathbb H_\mathfrak{M})$ simultaneously. $\blacksquare$
-
-**Consequence.** Mathesis is a **theoretically grounded** cognitive enhancement: using the system raises the researcher's Φ beyond its biological baseline. This is a rare case where a knowledge-management tool has a provable cognitive-architecture effect, not merely convenience. The claim is **falsifiable**: measure Φ (via π<sub>bio</sub> protocol — [UHM §9 fundamental-closures](/docs/proofs/categorical/fundamental-closures#pi-bio-protocol)) of researchers with and without Mathesis; if no increase, T-129 or M-9 is violated.
-
-:::tip Theorem M-10 (Lawvere boundary for $T_\mathrm{meta}$) [T]
-Any claim in $T_\mathrm{meta}$ asserting the completeness, consistency, or total coherence of $\mathfrak{M}$ itself has epistemic status bounded at $[H]$ (hypothesis). This bound cannot be raised to $[T]$ by any internal argument. The bound is structurally inevitable, not a remediable weakness.
+:::note M-10 revised: explicit audit policy [D]
+Mathesis may reserve broad claims such as “all coherent knowledge is represented” for a declared hypothesis/policy status. This is an engineering rule, not a universal mathematical upper bound on the status of every internal completeness or consistency statement.
 :::
 
-**Proof.** Direct application of the Lawvere fixed-point theorem (Lawvere 1969; Yanofsky 2003). In any Cartesian closed category $\mathcal E$ with subobject classifier $\Omega_\mathcal E$, a morphism $\phi: X \to X^X$ has a fixed point under every endomap, unless $\phi$ fails point-surjectivity.
+Lawvere requires a weakly point-surjective evaluator $A\to B^A$, not an arbitrary internal predicate $X\to\Omega$. The former T-214 analogy and M-10 no-go are withdrawn **[✗]**. Genuinely diagonal consistency results need a specified sufficiently expressive, effectively axiomatized formal theory and their own hypotheses; a finite database can still prove exact finite coverage or validate a finite schema. Declare the proof system, universe of claims and audit rule separately. The `meta/boundaries` endpoint enforces that rule; it does not make the discarded proof valid.
 
-Applied to $T_\mathrm{meta}$'s consistency predicate $\mathrm{Consistent}: \mathfrak{M} \to \Omega_\mathfrak{M}$: if this predicate were both internal (expressible in $\mathrm{Th}_\mathrm{Mathesis}$) and faithful to external consistency (point-surjective in the Lawvere sense), it would generate a self-referential fixed point contradicting its own claim. Hence $\mathrm{Consistent}$ is either:
-- **Non-internal** — not expressible in $\mathrm{Th}_\mathrm{Mathesis}$, i.e., a claim about Mathesis must live **outside** Mathesis;
-- **Non-faithful** — expressible but incomplete, i.e., it fails to cover genuine external consistency.
+### 2.10. Corrected connections to UHM constructions {#uhm-connections}
 
-The second option is what we adopt, giving the $[H]$ cap. This is the direct analogue of T-214 [T] for UHM (positive hard-problem meta-theorem): any sufficiently expressive self-referential system has structurally irreducible external postulates. $\blacksquare$
+**T-213.** Channel outputs are not automatically representable sheaves, and Choi/Kraus rank does not give a 138-bit description of arbitrary continuous data. Neither a universal Bures injectivity radius nor a theory-description bound follows. An approximation theorem needs its declared metric, covering/error hypotheses and computable data representation.
 
-**Consequence.** Mathesis is **honest** about its limits: no claim of the form "Mathesis is complete / consistent / contains all coherent knowledge" can have status higher than [H]. The system is self-aware of this bound and enforces it via `meta/boundaries` endpoint (§6.2).
+**T-214 and M-10.** The universal prohibition of an internal phenomenal/semantic bridge is withdrawn. An internal map is not automatically a Lawvere evaluator. Mathesis's hypothesis cap is an explicit audit policy [D], not that no-go theorem.
 
-### 2.10. Connections to UHM closures T-213, T-214, T-215, T-217 {#uhm-connections}
+**T-215 and M-9.** $\iota_{\max}$ and $\iota_{\min}$ are declared operational identity conventions. Global correlation, a Day tensor or a larger product $\Phi$ score does not prove one experiencing agent. A joint numerical realisation needs a declared tensor space, observation map and task certificate; compare the consequences of each convention without deriving agency from the choice itself.
 
-Mathesis integrates four recent UHM theorems as structural primitives.
-
-**T-213 (Bures description length) ↔ M-4.** The convergence rate $\delta(N)$ in Kan extension approximation is bounded by Bures injectivity radius $\omega_0^{-1}\log 7$ — precisely the constant $C_1$ of T-213. Mathesis inherits the computable, Kolmogorov-free form: each theory $T \in \mathbf{Th}$ has a Bures description length $D_B(T) \leq 49\log_2 7 \approx 138$ bits when embedded via Yoneda, bounding the complexity of representable presheaves.
-
-**T-214 (hard-problem meta-theorem) ↔ M-10.** T-214 proves that the ontological bridge from $\Gamma$-structure to experiential content is structurally external. M-10 is the direct Mathesis analogue: claims about Mathesis's own completeness are structurally external to $\mathrm{Th}_\mathrm{Mathesis}$. Both follow from Lawvere fixed-point; both are positive irresolvability results, not lacunae.
-
-**T-215 (cross-layer identity) ↔ Mathesis-user composition.** Under the $\iota_\mathrm{max}$ convention of T-215, a researcher using Mathesis forms a compound agent $\mathcal T = (\mathbb H_\mathrm{bio}, \mathbb H_\mathfrak{M}, \ldots)$ whose single-agent predicate requires global-state coherence. The Day convolution of M-9 provides the mathematical realisation: when non-zero cross-coherences exist, the composite is a genuine single agent in the $\iota_\mathrm{max}$ sense, and the cognitive extension theorem M-9 applies. Under $\iota_\mathrm{min}$, the researcher and Mathesis remain separate agents — M-9's Φ-enhancement becomes "social cognitive depth enhancement" rather than single-agent.
-
-**T-217 (L3 tricategorical coherence) ↔ Mathesis 3-morphism level.** The experiential tricategory $\mathbf{Exp}^{(3)} = \tau_{\leq 3}(\mathbf{Exp}_\infty)$ has $K = 3 + 1 = 4$ cellular structure. Mathesis natively uses 2-morphisms (comparisons of translations) and 3-morphisms (meta-audit of comparisons, §1 table). Under T-217, the Mathesis reflexive cycle
-$$\text{claim} \xrightarrow{\text{depend}} \text{claim}' \xrightarrow{\alpha: F \Rightarrow G} \text{translation} \xrightarrow{\Theta: \alpha \Rrightarrow \beta} \text{meta-comparison}$$
-corresponds exactly to the LGKS-triadic 2-cells (Aut/Diss/Regen inherited from L2) + new 3-cell modification $\eta$. Mathesis's $T_\mathrm{meta}$ layer (§8) corresponds to this $\eta$-modification: the coherence of Mathesis observing its own observation. T-217's proof that pentagon-of-pentagons closes at this level guarantees Mathesis's meta-audit does **not** require infinite regress — the three-level reflection structure (object / morphism / meta-morphism) is sufficient, no $T_{\mathrm{meta-meta}}$ is needed.
-
----
+**T-217.** The construction $\tau_{\le3}X$ is a mathematically defined 3-type after the experiential object is supplied [T]. Choosing objects, arrows, comparisons and modifications is a modelling convention; it does not force $K=4$, an L3 cutoff $1/4$, nonzero higher homotopy or a cognitive recursion ceiling. Mathesis's meta-audit must test nonconstant predictions and coherence of its actual implemented maps. A chosen 3-truncation can discard higher information; it cannot prove that no further audit layer is needed.
 
 ## 3. Three limiting generalizations {#generalizations}
 
@@ -546,38 +351,15 @@ Homotopy structure:
 
 ### 3.2. Epistemic: from poset to quantum logic {#epistemic}
 
-**Problem.** In complex interdisciplinary theories, truth is **contextual** and **noncommutative**: a statement can be [T] in $T_1$ but [H] in $T_2$; proving one statement can change the status of another; two statements can be **complementary** (in Bohr's sense).
+**Design [D/H].** Keep proven status metadata in the baseline registry. An optional probabilistic layer may encode uncertainty by a chosen $\rho_a\in D(\mathcal H_{\rm ep})$, with seven coordinate basis vectors if desired. A diagonal mixture $\alpha|T\rangle\langle T|+\beta|H\rangle\langle H|$ is a classical mixture, not a coherent superposition. Off-diagonal entries need independent meaning and data.
 
-**Generalization.** Replace the linear poset $\mathbf{Status}$ with an **orthomodular lattice** $\mathcal{L}$ (Birkhoff–von Neumann 1936). This does not contradict the Heyting algebra from §2.7: $\Omega_{\mathfrak{M}}$ is the internal logic of the *∞-topos* (Heyting), while $\mathcal{L}$ is the structure of the *epistemic space of an individual claim*. They live at different levels: Heyting is for "is it true in a given theory," the orthomodular lattice is for "what is the state of knowledge about a claim." Connection: $\mathcal{L}$ embeds into $\Omega_{\mathfrak{M}}$ via projectors onto subspaces of the epistemic Hilbert space.
+The Hilbert projection lattice and the topos's Heyting logic are distinct models. No lattice embedding preserving meets and joins of a non-distributive lattice into a distributive Heyting algebra is available. Any map between them needs a specified weaker structure and proof. The full projection lattice is uncountable; its fixed-basis coordinate fragment has 128 elements and is Boolean (M-6).
 
-The epistemic state of statement $a$:
+For a chosen instrument, the Lüders conditional update $\rho\mapsto P\rho P/\operatorname{Tr}(P\rho)$ is defined only when the outcome probability is positive. A zero model probability means the specified conditional rule is undefined; it does not prove that a scientific claim cannot have that status. All seven coordinate status projectors commute, so a proposed noncommuting check needs additional non-coordinate projectors or a different instrument. The commutator is a model diagnostic; nonzero commutator does not guarantee different sequential outcomes for every input state.
 
-$$
-\rho_a \in \mathcal{D}(\mathcal{H}_{\text{ep}})
-$$
+Updating a different claim requires an explicit joint model or causal dependency/update rule. Projectors on unrelated Hilbert spaces cannot be placed in one commutator without an embedding. A marginal $\rho_b$ is not automatically changed by a check of $a$.
 
-— a density matrix on an epistemic Hilbert space.
-
-| Operation | Mathematics | Intuition |
-|-----------|------------|-----------|
-| Measurement (user decision) | $\rho_a \mapsto P_s \rho_a P_s / \mathrm{Tr}(P_s \rho_a P_s)$ | Superposition collapses |
-| Refutation | $P_{[\text{✗}]} \rho_b P_{[\text{✗}]}$ may $\neq \rho_b$ | If $[P_a, P_b] \neq 0$, refuting $a$ nontrivially affects $b$ |
-| Superposition | $\rho_a = \alpha \|\text{T}\rangle\langle\text{T}\| + \beta \|\text{H}\rangle\langle\text{H}\|$ | Before verification, the statement is in a superposition of statuses |
-
-**Why quantum logic, not classical?** In classical logic, checking a hypothesis is idempotent: check twice — get the same result. In scientific practice this is false. Proving theorem A can invalidate hypothesis B (if A and B are incompatible), and refuting B can *strengthen* C (if B and C were competitors). Epistemic measurements **do not commute**: the order of checking affects the outcome. This is precisely the structure of quantum mechanics — not by analogy, but because both domains operate on **context-dependent propositions** on an orthomodular lattice.
-
-**Construction of $\mathcal{H}_{\text{ep}}$.** The epistemic Hilbert space for a UHM-compatible site has dimension $k = 7$ (one basis vector per status: $|T\rangle, |C\rangle, |H\rangle, |P\rangle, |D\rangle, |I\rangle, |X\rangle$). For a general theory with $s$ distinct statuses, $k = s$. The orthomodular lattice $\mathcal{L}$ is the lattice of projectors on $\mathcal{H}_{\text{ep}}$; for $k = 7$ this is a $127$-element lattice (all subspaces of $\mathbb{C}^7$).
-
-**Algorithm for epistemic measurement** (`measure()`):
-1. **Input:** epistemic state $\rho_a \in \mathcal{D}(\mathbb{C}^k)$, projector $P_s$ (corresponding to status $s$).
-2. **Check non-degeneracy:** $\mathrm{Tr}(P_s \rho_a P_s) > 0$; if zero, measurement is impossible (the claim cannot have status $s$).
-3. **Apply Lüders rule:** $\rho_a \mapsto P_s \rho_a P_s / \mathrm{Tr}(P_s \rho_a P_s)$.
-4. **Propagate side effects:** for each claim $b$ dependent on $a$, compute the commutator $[P_a, P_b]$. If $\|[P_a, P_b]\|_F > \epsilon$, the measurement of $a$ nontrivially affects $b$ — recompute $\rho_b$ via the induced channel.
-5. **Output:** updated epistemic states $\{\rho_a', \rho_{b_1}', \ldots\}$ and the list of non-trivially affected claims.
-
-**Detection of non-commutativity.** Two claims $a, b$ are **epistemically complementary** if $[P_a, P_b] \neq 0$. Operationally: checking $a$ first vs $b$ first yields different final epistemic states. The Frobenius norm $\|[P_a, P_b]\|_F$ quantifies the degree of complementarity. This is computed in $O(k^3)$ per pair.
-
-**Connection with UHM.** $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ describes a conscious state; $\rho_{\text{ep}} \in \mathcal{D}(\mathbb{C}^k)$ describes an **epistemic state**. The formulas are identical because the mathematical structure is the same: an ∞-topos for physics ($\mathfrak{T}$) and for epistemology ($\mathfrak{M}$). This is not an analogy — it is a direct transfer.
+Context-dependent and order-dependent classical stochastic/stateful checks exist. Those observations alone neither force quantum logic nor a phenomenal interpretation. Compare specified classical and Hilbert models on held-out data **[H/Pr]**. Using the same density-matrix formalism as UHM does not identify epistemic uncertainty with a conscious state or supply a bridge to experience.
 
 ### 3.3. Autopoietic: self-modifying formal apparatus {#autopoietic}
 
@@ -597,12 +379,12 @@ The topology $J_{\text{ep}}$ determines which families of translations count as 
 2. **Proposal formulation.** Agent calls `meta/suggest_extension` → generates a candidate $J'_{\text{ep}}$ by strengthening the covering condition (e.g., requiring separate coverage of static and dynamic claims).
 3. **Verification of Grothendieck axioms.** The SMT backend checks that $J'_{\text{ep}}$ satisfies maximality, stability, and transitivity. If any axiom fails, the proposal is rejected with a counterexample.
 4. **Impact analysis.** Compute which sheaves in $\mathfrak{M}$ change under $J'_{\text{ep}}$: any presheaf that was a sheaf for $J_{\text{ep}}$ but violates descent for $J'_{\text{ep}}$ is flagged. The agent reports: "modifying topology will invalidate $k$ translations and require re-checking $m$ coherence conditions."
-5. **Human confirmation.** The researcher reviews the proposal, the impact, and the Lawvere boundary (any claim about "the new topology is complete" is automatically capped at [H]).
+5. **Human review.** The researcher reviews the proposal, impact and declared audit policy. A broad completeness claim is provisionally tagged [H] by policy; a finite, well-specified coverage or consistency result may carry a proved status when its hypotheses are verified.
 6. **Application.** $J_{\text{ep}} \leftarrow J'_{\text{ep}}$; $\mathfrak{M} \leftarrow \mathfrak{M}' = \mathrm{Sh}_\infty(\mathbf{Th}, J'_{\text{ep}})$; descent conditions re-checked for affected sheaves; $T_{\text{meta}}$ updated with a record of the modification.
 
 The procedure preserves the ∞-topos structure at every step (the SMT check in step 3 is the gate), and the human-in-the-loop in step 5 ensures that autopoiesis does not run unsupervised.
 
-**Boundary.** Lawvere's theorem (1969): an autopoietic system cannot prove its own consistency. Statements of $T_{\text{meta}}$ about the completeness of $\mathfrak{M}$ have status no higher than [H]. A structural inevitability, not a bug.
+**Boundary [D].** Apply the explicit audit policy of M-10; diagonal limitations apply only to a specified evaluator/formal system meeting their hypotheses.
 
 ### 3.4. Advanced generalization vectors {#advanced-vectors}
 
@@ -629,7 +411,11 @@ Beyond the three "limiting" generalizations of §§3.1-3.3, eight concrete resea
 - **Inter-theory semantic comparison** at the sentence level: different theories saying structurally-equivalent claims in different words are detected by DisCoCat morphism equivalence.
 
 **Mathematical content.** DisCoCat provides a functor $\mathcal S: \mathbf{Text} \to \mathbf{FVect} \times \mathbf{Preg}$. Combined with Mathesis's $\mathbf{Th}$-structure:
-$$\mathbf{Text} \xrightarrow{\mathcal S} \mathbf{FVect} \times \mathbf{Preg} \xrightarrow{\text{extraction}} \mathbf{Th} \xrightarrow{y} \mathfrak{M}$$
+
+$$
+\mathbf{Text} \xrightarrow{\mathcal S} \mathbf{FVect} \times \mathbf{Preg} \xrightarrow{\text{extraction}} \mathbf{Th} \xrightarrow{y} \mathfrak{M}
+$$
+
 yields automated claim extraction with categorical provenance. Falsifiability emerges naturally: two papers saying logically incompatible things in different words produce conflicting DisCoCat morphisms that Mathesis detects as a `contradicts` edge.
 
 **Effort estimate.** 18 months — DisCoCat has historically been hard for real language, but LLM-era semantic parsing (Claude, GPT) makes the extraction step tractable. Technical bottleneck: aligning DisCoCat's pregroup grammar with LLM embedding spaces.
@@ -651,30 +437,21 @@ yields automated claim extraction with categorical provenance. Falsifiability em
 
 #### 3.4.4. Quantum contextuality (Gleason-type) {#gleason}
 
-**Content.** M-6 established orthomodular-lattice structure of epistemic states. Gleason's theorem (1957) proves: for $\dim \mathcal H \geq 3$, every probability measure on the orthomodular lattice $L(\mathcal H)$ arises from a density matrix $\rho$. For Mathesis with $\dim \mathcal H_\mathrm{ep} = 7$:
-- All Mathesis epistemic measurements are representable as density-matrix computations (Gleason applies).
-- **Contextuality theorems** (Kochen–Specker 1967, Abramsky–Brandenburger 2011) give formal no-go results: certain assignments of truth values to claims are impossible, analogous to KS contextuality in physics.
-- **Empirical prediction**: Mathesis can detect **Kochen-Specker-type contextuality** in scientific theories — assignments of global truth that violate local consistency.
+**Research design [D/H/Pr].** M-6 retains a conditional theorem for a **chosen** Hilbert measurement model. Gleason applies to a normalised orthogonally additive probability assignment on all projections in dimension at least three; arbitrary registry confidence scores need not meet these hypotheses. It does not make scientific claims physically quantum.
 
-**Mathematical content.** Define the Abramsky–Brandenburger sheaf-cohomology $H^*(\mathrm{Cov}(T), \mathbb{P}_\mathrm{ep})$ for a theory $T$ with epistemic measurements. The first cohomology $H^1$ is the **obstruction to non-contextuality**. Nonzero $H^1$ means: no global truth assignment reconciles all local measurements. Mathesis can compute $H^1$ per theory and flag contextual theories.
+A contextuality study must specify measurements, outcome sets, jointly measurable contexts, compatible marginal distributions and the operational meaning of a repeated check. Given that empirical model, the existence of a joint global distribution is a precise noncontextuality question. Context dependence of wording or theorem assumptions alone does not establish a Kochen–Specker violation. Classical models with memory, selection and disturbance must be distinguished from the tested noncontextual model.
 
-**Effort estimate.** Research track 24-36 months. Mathematics well-established; engineering challenge is scaling Abramsky-Brandenburger computation to large theories.
+Cohomological contextuality uses the cohomology class of a **specified cocycle/local section** in an associated coefficient presheaf, not simply the nonvanishing of a group $H^1$. A nonzero obstruction can certify failure to extend that section; vanishing is not universally sufficient. See the primary [sheaf-theoretic contextuality paper](https://arxiv.org/abs/1102.0264) and [cohomological obstruction construction](https://arxiv.org/abs/1111.3620).
 
-**Impact.** Gives Mathesis **quantum-foundational rigor**: predictions about which theories cannot be globally satisfied (fundamental limits, not computational).
+A held-out empirical result tests this epistemic bridge, not the mathematical theorem of Gleason. Computational effort and a 24–36-month programme are planning estimates, not a proved scaling bound.
 
 #### 3.4.5. Cognitive-extension empirical validation {#cog-ext-empirical}
 
-**Content.** M-9 proves Φ-enhancement theoretically. Empirical validation:
-- Recruit $N \geq 20$ researchers working on complex multi-theory problems (e.g., consciousness studies, fundamental physics cross-field work).
-- Half use Mathesis, half use control (Obsidian, Roam, paper notes).
-- Metrics: working-memory load (NASA-TLX), discovery rate (novel cross-theory insights per hour), theory-switching time, retention (1-month post-task recall).
-- **Hypothesis**: Mathesis group shows $\geq 2\times$ discovery rate on multi-theory tasks.
+**Research hypothesis [H/Pr].** A specified Mathesis workflow may improve held-out research tasks at a controlled resource cost. Revised M-9 does not prove an increase of the user's marginal $\Phi$.
 
-**Mathematical content.** Use the π<sub>bio</sub> protocol (UHM §9 fundamental-closures) to measure Φ in both groups. Predicted effect size: $\Delta\Phi \geq 0.3$ (substantial — equivalent to moving from L2-floor to L2-mid-range). Null hypothesis: $\Delta\Phi = 0$.
+Define the participant population, matched control tools, task/scoring rubric, novelty adjudication, allocation, training/test split, missing data and uncertainty. Working-memory load, recall and discovery measures are distinct outcomes; preregister them rather than identifying each with $\Phi$. An effect target such as twice the discovery rate or $\Delta\Phi\ge0.3$ is investigator-selected **[H/D]**, not a derived threshold or evidence of L3.
 
-**Effort estimate.** 24 months with experimental programme. Requires IRB approval, N ≥ 20 researchers, funding for TMS-EEG apparatus ($1–2M USD).
-
-**Impact.** Converts Mathesis from theoretically-grounded to **empirically validated** cognitive extension. First such tool with measurable Φ-enhancement effect.
+A matrix comparison additionally requires an independently calibrated identifiable estimator and a fixed frame/readout. PSD alone or a fitted PCI-to-purity line does not validate it. Use a power analysis for the specified effect, not a universal sample size of twenty. A null result rejects the tested workflow/bridge at that scope; success does not establish phenomenality, single agency or a universal enhancement theorem. Project duration and apparatus budget are planning estimates requiring current quotations.
 
 #### 3.4.6. Beyond-science extensions {#beyond-science}
 
@@ -689,24 +466,36 @@ yields automated claim extraction with categorical provenance. Falsifiability em
 
 **Impact.** Mathesis becomes a **universal meta-knowledge system** applicable to law, ethics, comparative religion, policy analysis — any domain with structured-but-not-fully-formal reasoning.
 
-#### 3.4.7. UHM feedback loop {#uhm-feedback}
+#### 3.4.7. UHM feedback loop: a typed research design {#uhm-feedback}
 
-**Content.** The researcher using Mathesis is, by T-153 [T] (substrate-independent consciousness criterion), a UHM-compatible L2+ holon. The interaction of researcher with Mathesis extends the researcher's self-observation through the system. Formally:
-$$\Gamma_\mathrm{extended} \;=\; \Gamma_\mathrm{user} \otimes_\mathrm{Day} \mathbb H_\mathfrak{M}$$
-with $\Gamma_\mathrm{user}$ being the user's density matrix (UHM). By M-9, $\Phi(\Gamma_\mathrm{extended}) > \Phi(\Gamma_\mathrm{user})$ — the system becomes **part of the user's L3 cognitive complex**.
+**Scope [I/H/Pr].** Using Mathesis does not prove that a researcher or the software is an L2/L3 holon. Specify independently validated user and tool encodings, observation spaces, numerical models and task labels. Sensorimotor feedback attributed to T-100 is a proposed observation/coupling protocol, not a theorem that every user action has a canonical Lindbladian representation.
 
-**Mathematical content.** The feedback loop goes both ways: the user's cognitive operations feed into Mathesis's Lindbladian $\mathcal L_\Omega$ via the sensorimotor projection (T-100 [T]), and Mathesis's meta-audit feeds back via epistemic measurement (M-6, M-7). The composite operation is a CPTP channel on the extended Hilbert space, and by T-218 [T] (Cog as Kan complex), it admits 3-coskeletal cognitive depth ($\mathrm{SAD} \leq 3$ per agent).
+If both components are actually represented on $\mathbb C^7$, a joint numerical state has type
 
-**Effort estimate.** 24-36 months — requires both cognitive-extension experiment (3.4.5) and UHM L3-level cognitive operations.
+$$
+\rho_{UT}\in D_{49},\qquad\rho_U=\operatorname{Tr}_T\rho_{UT},\quad\rho_T=\operatorname{Tr}_U\rho_{UT}.
+$$
 
-**Impact.** Mathesis becomes a **genuine extension of the UHM-agent**, not an external tool. Philosophically: the distinction "user vs tool" dissolves into a single extended L3 holon. Under T-215 $\iota_\mathrm{max}$ convention, user+Mathesis is one agent.
+Interaction requires a declared joint channel/generator; a state-dependent policy is not automatically a linear CPTP map. A Day tensor instead acts on presheaves over a common monoidal base. Convolving sheaves on unrelated sites requires explicit common-base embeddings and sheafification compatibility; it cannot be applied directly to a density matrix and a software sheaf as the earlier displayed expression did.
+
+Joint correlation, entanglement and cognitive integration are different tests. Nonzero cross-correlations do not prove an automatic increase of the user's $\Phi$, joint L3 or single agency. The M-9/T-210 strict-increase argument is not used: changing tensor dimension, state and diagonal denominator is not merely adding nonnegative terms to a fixed pair-set score. The marginals may be unchanged. Declare a joint readout and a comparison statistic before testing enhancement.
+
+To propose L3, first certify the relevant lower-level gates, then require independently held-out **nonconstant** metamodel predictions and compatibility as in [the corrected hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy#l3-сетевое-сознание). A declaration of $\iota_{\max}$ is an operational agency convention [D], not evidence that user and tool are one experiencing subject. Compare task performance and dependence on interventions under each declared convention.
+
+[T-218](/docs/proofs/categorical/fundamental-closures#t-218) constructs a Kan singular complex of a classifying space; it implies neither a cognitive ceiling of three nor $\operatorname{cosk}_3X\simeq\tau_{\le3}X$. For Kan $X$, $\operatorname{cosk}_3X$ is 2-truncated; a standard 3-truncation model is $\operatorname{cosk}_4X$. None of these constructions certifies reflective depth without a separate operational bridge.
+
+**Validation [Pr/H].** Preregister the estimators, baseline tasks, joint observation model, training/test split, interventions and uncertainty. Test whether the feedback improves held-out prediction, memory or coordination against matched tools and resources. A null result rejects the specified enhancement bridge, not an arithmetic identity or the definition of an $\infty$-topos. Development time is a project estimate, not a cognitive or categorical theorem.
 
 #### 3.4.8. Global noosphere infrastructure {#noosphere}
 
 **Content.** The ultimate target is a **distributed Mathesis**: every research institution runs a local Mathesis node, all nodes federate into a single global ∞-topos. Every discovery in physics automatically propagates hypotheses in chemistry, biology, cognitive science, consistent with the cross-theory dependencies computed by the federated system.
 
 **Mathematical content.** Distributed Mathesis = **sheaf of ∞-topoi over a network of institutions**:
-$$\mathfrak{N} \;:=\; \mathrm{Sh}_\infty(\mathrm{Institutions}, \mathrm{Collab})$$
+
+$$
+\mathfrak{N} \;:=\; \mathrm{Sh}_\infty(\mathrm{Institutions}, \mathrm{Collab})
+$$
+
 where $\mathrm{Collab}$ is the Grothendieck topology generated by research-collaboration data flows. Local Mathesis instances are stalks; federation is the global sections. Coherence across the network is the descent condition for $\mathfrak{N}$.
 
 **Effort estimate.** Decade-scale programme. Requires standardisation (MP protocol v2 with federation), institutional adoption, funding.
@@ -744,7 +533,7 @@ Sections §2–§3 describe the **ideal** mathematical object $\mathfrak{M}$. Se
 | Yoneda embedding $y(T)$ | YAML import + representable presheaf construction | Finite subsite $\mathbf{Th}_0$ |
 | Kan extension $\mathrm{Lan}_f$ | LLM agent + SMT verification | Heuristic + formal check |
 | Descent condition | BFS coherence audit | 5 violation types |
-| $\Omega_{\mathfrak{M}}$ (Heyting) | Linear poset [T]>[C]>...[✗] → orthomodular lattice (Phase 5) | Projection onto 7 values |
+| Internal Heyting logic; status metadata; optional Hilbert model | Distinct typed structures, with any bridge explicitly specified | No automatic seven-value projection |
 | Autopoiesis ($J_{\text{ep}} \to J'_{\text{ep}}$) | Agent Mode 5 (meta-audit) + manual confirmation | Human-in-the-loop |
 
 The approximation improves with each implementation phase (§13). Phase 5 (HoTT core) brings the approximation to a fundamentally new level — from emulating ∞-structures on a hypergraph to native computation in cubical type theory.
@@ -777,7 +566,7 @@ All operations are polynomial and parallelizable. The bottleneck (all pairwise K
 | Naturality of transformations | $\eta_B \circ F(f) = G(f) \circ \eta_A$ for all $f$ | `auto` |
 | Descent condition (finite) | Čech nerve → cosimplicial limit = equivalence | `descent_check` |
 | Propagation soundness | $\varepsilon(A) \leq \min(\varepsilon(\text{deps}(A)))$ preserved by BFS | `omega` |
-| Lawvere boundary for $T_{\text{meta}}$ | $\text{status}(c) \leq [\text{H}]$ if $c$ asserts consistency | `smt` |
+| Explicit meta-audit policy [D] | Track proof system, assumptions and finite scope; broad unresolved completeness is [H] by policy | Policy check |
 | Functoriality of translations | $F(\mathrm{id}) = \mathrm{id} \wedge F(g \circ f) = F(g) \circ F(f)$ | `category_simp` |
 | Epistemic monotonicity | $\varepsilon_{T_2}(f(a)) \geq \varepsilon_{T_1}(a)$ for all claims $a$ | `omega` |
 
@@ -1018,7 +807,7 @@ Claude Opus connects to the Mathesis Core via MCP (Model Context Protocol):
 | Tool | Purpose |
 |------|---------|
 | `meta/audit` | Audit the $T_{\text{meta}}$ layer: check adequacy of the data model itself |
-| `meta/boundaries` | $T_{\text{meta}}$ claims bounded by Lawvere's theorem (status ≤ [H]) |
+| `meta/boundaries` | Explicit audit policy; check diagonal hypotheses separately (M-10) |
 | `meta/suggest_extension` | Agent proposes model extension (new edge type, new status) |
 | `meta/patterns` | Detect patterns of recurring diagnostics (L-II, §10) |
 
@@ -1109,11 +898,11 @@ $T_{\text{meta}}$ obeys **the same rules**: its statements have statuses, depend
 
 ### 8.3. Lawvere and the boundaries of self-reference
 
-**Lawvere's fixed point theorem** (1969): a unified categorical scheme from which follow Gödel's theorem, Tarski's theorem, the undecidability of the halting problem, and Russell's paradox (Yanofsky 2003).
+Lawvere's fixed-point theorem requires a weakly point-surjective evaluator $A\to B^A$. A self-model, an arbitrary internal predicate or a finite catalogue is not automatically such an evaluator. The former unconditional status cap is withdrawn (M-10, T-214). Diagonal consistency results require their own effectively axiomatized, sufficiently expressive formal system and coding hypotheses.
 
-**Corollary for Mathesis.** $T_{\text{meta}}$ cannot prove its own consistency. Statements of $T_{\text{meta}}$ about completeness and consistency have status no higher than [H]. Self-reference is a **structural inevitability**, managed rather than eliminated.
+A conservative audit policy may label broad unresolved completeness claims [H]. Finite coverage or schema consistency may instead be proved within its declared scope. The policy is explicit **[D]**, not a universal theorem prohibiting self-reference.
 
-Parallel with UHM: the operator $\varphi(\Gamma)$ is a self-model converging to $\rho^*$. Approximate (Lawvere) but stable (contractivity of CPTP). $T_{\text{meta}}$ is an analogue of $\varphi(\Gamma)$: an approximate but stable self-model of the system.
+A UHM parallel is interpretive **[I]**. A frozen-parameter CPTP map is nonexpansive in an appropriate state distance, not automatically strictly contracting or convergent to a unique fixed point. Such convergence needs additional mixing/contraction or dynamical hypotheses; an epistemic update needs its own stability proof.
 
 ### 8.4. Workflow for updating $T_{\text{meta}}$
 
@@ -1122,7 +911,7 @@ Claims of $T_{\text{meta}}$ are created and updated through the same set of endp
 1. **Agent (Mode 5)** detects a pattern via `meta/patterns` — for example, "the edge type `translates_to` systematically loses the dynamic aspect"
 2. Agent calls `meta/suggest_extension` → formulates a claim: "An edge type `translates_dynamics_to` is needed" with status [H]
 3. The claim is added to $T_{\text{meta}}$ via `claim/create { theory: "meta", ... }`
-4. `meta/boundaries` automatically checks: if the claim asserts completeness/consistency of $\mathfrak{M}$ — status is bounded ≤ [H] (Lawvere, §8.3)
+4. `meta/boundaries` applies the declared audit policy to broad unresolved completeness claims; finite proved scopes retain their verified status (§8.3).
 5. The researcher confirms → `claim/set_status { ..., status: "P" }` (promotion to postulate)
 6. The Mathesis Core applies the change: new edge type/status/structure is added to the Fibration Engine
 
@@ -1205,27 +994,13 @@ This is not "question → answer." It is a **joint transformation of the questio
 
 ---
 
-## 11. Cognitive extension {#cognitive-extension}
+## 11. Cognitive extension: an empirical bridge {#cognitive-extension}
 
-The CC formalism allows describing Mathesis **quantitatively**. If the cognitive system of the researcher is a holonom $\mathbb{H}_{\text{bio}}$, and Mathesis is $\mathbb{H}_{\mathfrak{M}}$, then the extended system:
+A human/tool coupling can be modelled after specifying the two encodings, common observation model and actual interaction. A numerical joint state and a Day convolution of presheaves are distinct constructions; neither is automatically supplied by ordinary software use.
 
-$$
-\mathbb{H}_{\text{ext}} = \mathbb{H}_{\text{bio}} \otimes_{\text{Day}} \mathbb{H}_{\mathfrak{M}}
-$$
+The product-score identity in revised M-9 holds even without correlations and leaves the user's marginal unchanged. It therefore measures the chosen composite statistic, not a proved increase in the user's integration or awareness. Joint agency and L3 require separate operational conventions and independently tested higher-order certificates.
 
-:::info Why $\otimes_{\text{Day}}$ and not $\times$
-Day convolution is defined on the category of presheaves of a monoidal category (Day 1970). The monoidal structure on $\mathbf{Th}$: **direct product of theories** $T_1 \times T_2$ (a theory whose claims are pairs from $T_1$ and $T_2$). Day convolution (T-182 [T]) allows **entangled** states — situations where the researcher's thought and the structure in Mathesis are mutually conditioned and inseparable. It is precisely such states that produce cognitive breakthroughs: "I could not have thought this without the tool, and the tool would not have shown this without my question."
-:::
-
-**Theorem (corollary of T-129).** If $\Phi(\mathbb{H}_{\text{bio}}) \geq 1$ and $\Phi(\mathbb{H}_{\mathfrak{M}}) \geq 1$, and there exists nonzero coherence:
-
-$$
-\Phi(\mathbb{H}_{\text{ext}}) > \max(\Phi(\mathbb{H}_{\text{bio}}),\; \Phi(\mathbb{H}_{\mathfrak{M}}))
-$$
-
-Mathesis is the first precedent of **theoretically grounded** cognitive extension.
-
----
+The research hypothesis [H] is that a specified tool improves held-out inference, memory or metamodel prediction at controlled resource cost. Test it against matched baselines and preregister the observation map. Neither “first theoretically grounded cognitive extension” nor automatic $\Phi$ enhancement is retained as a theorem. See [the typed feedback design](#uhm-feedback).
 
 ## 12. Usage examples {#examples}
 
@@ -1298,7 +1073,7 @@ Phases correspond to the three levels of Ω (T-182):
 
 - Layer $T_{\text{meta}}$ loaded as a special theory
 - Agent Mode 5 (meta-auditor): pattern discovery + extension proposals
-- Lawvere boundaries: $T_{\text{meta}}$ statements about completeness are automatically marked ≤ [H]
+- Meta-audit policy: broad unresolved completeness claims carry [H] by explicit policy; finite certified scopes are separate
 
 ### Phase 3: Web interface (6 weeks)
 
@@ -1327,7 +1102,7 @@ Extensions of Verum necessary for native realization of $\mathfrak{M}$:
 
 - Migration of the data model from hypergraph to cubical type theory
 - Equalities = paths in ∞-groupoid (§3.1)
-- Epistemic statuses = elements of orthomodular lattice (§3.2)
+- Epistemic statuses are registry metadata; a Hilbert probability model is optional [D/H] (§3.2)
 - Autopoietic modification of $J_{\text{ep}}$ (§3.3)
 
 ---
@@ -1350,7 +1125,7 @@ Extensions of Verum necessary for native realization of $\mathfrak{M}$:
 | ∞-categorical depth | 0 | 1 (types) | 0 | **∞** (all levels of reflection) |
 | Homotopy semantics | ✗ | ✓ (core) | ✗ | ✓ (Phase 5: HoTT) |
 
-Mathesis occupies the niche between full formalization (Lean 4) and pure notes (Obsidian): **structured but not fully formalized** representation of scientific theories with automatic coherence and LLM support. The fundamental distinction is the ∞-topos as foundation: not "one of possible designs" but the **unique coherent organization** (universal property §2.3).
+Mathesis proposes structured theory records with explicit proof/status metadata, declared translations and LLM-assisted candidate search [D/Pr]. A sheaf architecture is one possible design; its relative universal property does not prove that all coherent knowledge systems are equivalent to it. Demonstrated implementation and comparative capability require actual code, certificates and benchmarks.
 
 ---
 
@@ -1454,26 +1229,13 @@ Each component is verified via `@verify(proof)` with an SMT backend. Categorical
 
 ## 16. Conclusion {#conclusion}
 
-In 1666 Leibniz dreamed of a universal language of knowledge and a mechanical calculator operating within it. For three and a half centuries this dream remained a utopia — the mathematical apparatus was lacking.
+Mathesis is a proposed computational research infrastructure [D/Pr]. A genuine small site yields an associated sheaf $\infty$-topos, but this does not make the site the uniquely possible organisation of knowledge or prove every proposed translation, logic and cognitive bridge. The construction, admissible hypotheses and actual software semantics must be verified separately.
 
-Today the apparatus exists. The ∞-topos of sheaves $\mathfrak{M} = \mathrm{Sh}_\infty(\mathbf{Th}, J_{\text{ep}})$ is not one of possible designs but the **unique** (by universal property) coherent organization of a collection of theories at all levels of reflection. The Yoneda embedding loads theories without information loss (M-3). Kan extensions compute optimal translations with proved convergence rate $\leq C\cdot\delta(N)$ (M-4). The descent condition ensures coherence by definition, not by checking. The subobject classifier yields intuitionistic logic that natively contains contextual truth, and in quantum contexts the categorical structure **forces** the orthomodular lattice (M-6) — logic is not a choice but a consequence of geometry.
+### 16.1. Verified scope {#conclusion-proved}
 
-### 16.1. What has been proved, rigorously {#conclusion-proved}
+The catalogue M-1–M-10 is not a certificate that all structural questions are closed. General site/topos, Yoneda, Kan-extension, probability and lattice results apply only after their own hypotheses are checked; the finite/infinite claim spaces, measurable structure, descent and approximation metrics are separate obligations.
 
-The §2.9 catalogue M-1..M-10 closes the mathematical core:
-
-- **M-1**: $J_{\text{ep}}$ is a Grothendieck site — epistemic coverage is a genuine sheaf topology, not a metaphor.
-- **M-2**: the ∞-topos $\mathfrak{M}$ exists and is unique up to equivalence (Lurie HTT 6.1).
-- **M-3**: Yoneda $\mathbf{Th}\hookrightarrow\mathfrak{M}$ is fully faithful — no information loss.
-- **M-4**: Kan-extension translations converge, $\delta(\tau_N T, T')\leq C\cdot\delta(N)$.
-- **M-5**: epistemic monotonicity is categorical, not axiomatic.
-- **M-6**: orthomodular logic is **necessary** for quantum contexts (Amemiya-Araki + Gleason).
-- **M-7**: Giry monad gives a well-defined stochastic-LLM semantics.
-- **M-8**: L-III reflection preserves ∞-topos structure.
-- **M-9**: cognitive extension factors uniquely through Day convolution.
-- **M-10**: Lawvere fixed-point theorem bounds $T_{\text{meta}}$ — no theory contains its complete self-description.
-
-§2.10 pins the Mathesis core to the UHM backbone via T-213 (categorical universality), T-214 (Yoneda as reflection), T-215 (Kan-extension descent) and T-217 (tricategorical L3 coherence) — Mathesis and UHM are two applications of a single ∞-topos construction, physics vs. epistemology.
+The audited surviving M-9 result is the exact product-score identity $1+\Phi(\rho\otimes\sigma)=(1+\Phi(\rho))(1+\Phi(\sigma))$, not a cognitive-enhancement theorem. M-10 is an explicit audit policy [D]; its universal Lawvere status cap is withdrawn. The corrected connections in §2.10 retain neither T-213's representability/138-bit conclusion, T-214's semantic no-go, T-215 as proof of agency nor T-217 as a forced cognitive-depth ceiling.
 
 ### 16.2. Where the theory can still be advanced {#conclusion-vectors}
 
@@ -1482,7 +1244,7 @@ The §2.9 catalogue M-1..M-10 closes the mathematical core:
 1. Proof-assistant bridge (Lean/Coq/Agda) — P0, mechanises M-1..M-10.
 2. DisCoCat for NL ingestion — P1.
 3. DEL for multi-agent dynamics — P1.
-4. Gleason contextuality tests — P0, empirical falsification of M-6.
+4. Contextuality model comparison — P0 research proposal testing the epistemic bridge, not Gleason’s theorem.
 5. Cognitive extension empirics — P1.
 6. Beyond-science domains (art, ethics, narrative) — P2.
 7. UHM feedback loop — P0, bidirectional coupling with the physics ∞-topos.
@@ -1494,7 +1256,7 @@ UHM and Mathesis are two applications of the same construction: the ∞-topos fo
 
 Verum is the language designed to realize objects of this level: dependent types, HoTT, SMT verification, systems performance, GPU — in a single stack. Mathesis is the first task demanding its full power.
 
-The ultimate goal is not "a tool for scientists." The ultimate goal is the **computational infrastructure of the noosphere**: a global cohesive ∞-topos where every discovery in one discipline automatically and mathematically rigorously generates hypotheses in all others, immediately computing epistemic gradients for the entire network of human knowledge — and, by M-10, always honestly admitting the fixed-point boundary beyond which no theory can describe itself completely.
+The long-term goal is a federated research infrastructure with explicit dependency tracking, coherent declared translations and independently auditable evidence. A noosphere or cohesive-topos interpretation is a proposal [I/Pr]; it requires an actual construction and cannot guarantee that every discovery translates automatically into all disciplines.
 
 ---
 

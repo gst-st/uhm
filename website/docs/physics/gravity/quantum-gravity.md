@@ -14,7 +14,7 @@ The Gap functional integral as an alternative formulation of quantum gravity. Th
 The Gap functional integral as an alternative formulation of quantum gravity: well-definedness on the compact target space $(S^1)^{21}$, **field-space finiteness [T]** (compact target), full order-by-order UV-finiteness **[C]** (structural), full spectral action [T], Gap resolution of the black hole information paradox.
 
 :::info Status
-Spectral action [T]: the full spectral triple from T-53 reproduces the Einstein–Hilbert action + Standard Model (the Standard-Model part is imported from Connes' model and inherits its Higgs-mass history — see the box under Theorem 2.2). **Field-space (large-field) finiteness [T]:** the lattice partition function $Z_N$ is finite for every $N$ because the target $(S^1)^{21}/G_2$ is **compact** (finite volume, bounded integrand) — a rigorous result (§3), with the continuum limit remaining [P]. **Full order-by-order UV-finiteness [C]** (structural): compactness + $G_2$ Ward identities + $\mathcal{N}=1$ holomorphy (Seiberg) + the sector-product $\varepsilon^{12}$ suppression (T-219) — **not** the retracted exact "$7-7=0$" trace. Information paradox — [C] (unitarity [T], Gap description of the horizon — ansatz). Entropy $S_{\text{BH}}$ — [C under T-65, T-73, Wald]: leading term $A/(4G_N)$ [T] from Wald's formula + spectral action; Gap correction coefficient $c_{\mathrm{Gap}}$ explicitly computed [C under T-65, T-73, T-74] (§6.3). Lattice verification — [P].
+For supplied spectral geometry, standard spectral-action calculations are conditional [C], and finite-domain bounded-integrand partition functions are finite [T]. A general G₂ phase-only quotient is not supplied. Neither compactness nor the group identity alone proves continuum UV finiteness, physical SUSY cancellation or a black-hole information solution. Those physical bridges remain [H/Pr]. Wald entropy follows from a supplied gravitational action; the previous universal Gap-curvature correction is withdrawn [✗].
 :::
 
 ---
@@ -133,18 +133,23 @@ whence Newton's constant: $G_N = \frac{3\pi}{7 f_2 \Lambda^2}$, the factor $7 = 
 ### Canonical choice of cut-off function $f$ and its consequences {#canonical-f}
 
 The Chamseddine–Connes spectral action
+
 $$
 S_\mathrm{spec}[D, \Lambda] = \mathrm{Tr}\, f(D^2 / \Lambda^2)
 $$
+
 depends on the choice of cut-off (test) function $f: [0, \infty) \to \mathbb{R}_{\geq 0}$, appearing through its **moments**
+
 $$
 f_0 = \int_0^\infty u \, f(u) \, du, \qquad f_2 = \int_0^\infty f(u) \, du, \qquad f_4 = f(0).
 $$
 
 The asymptotic expansion for $\Lambda \to \infty$ in a four-dimensional almost-commutative spectral triple gives (Gilkey 1984; Connes–Chamseddine 1996, 2010):
+
 $$
 \mathrm{Tr}\, f(D^2/\Lambda^2) \;\sim\; f_0 \, \Lambda^4 \, a_0(D^2) \;+\; f_2 \, \Lambda^2 \, a_2(D^2) \;+\; f_4 \, a_4(D^2) \;+\; \mathcal O(\Lambda^{-2}),
 $$
+
 where $a_{2k}(D^2)$ are the heat-kernel (Seeley–de Witt) coefficients.
 
 :::note Moment-labeling convention (corpus-wide)
@@ -161,9 +166,11 @@ Since $f_0, f_2, f_4$ are free parameters of the choice of $f$, naively this giv
 #### Theorem (canonical choice of $f$ in UHM) [T]
 
 UHM adopts the canonical cut-off function
+
 $$
 \boxed{f(u) = e^{-u}, \qquad \Lambda = M_P}
 $$
+
 where $M_P = 1.22 \times 10^{19}$ GeV is the Planck mass.
 
 :::note Scope: canonical vs. derived cutoff
@@ -202,28 +209,11 @@ which changes by $\mathcal O(1)$ factor across reasonable choices of $f$. More i
 
 #### $f$-independence {#f-independence}
 
-:::info $f$-independence of UHM-structural predictions [T]
-The following UHM predictions are **manifestly $f$-independent**:
+:::note Scope of cutoff independence [T at D / C / H]
 
-1. **Sector count**: $\mathbb{C}^7 = \mathbb{C}e_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ under $SU(3) \subset G_2$ — representation theory (Günaydın and Gürsey, 1973); the axis-labelled form $7 = \mathbf{1}_O \oplus \mathbf{3}_{A,S,D} \oplus \bar{\mathbf{3}}_{L,E,U}$ of T-48a is retracted [✗] (2026-09-25).
-2. **Fano contraction** $\alpha = 2/3$ (Corollary 2.1a [T]) — from replication number $r = 3$ in PG(2,2).
-3. **Critical purity** $P_\mathrm{crit} = 2/7$ ([theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical), registry Level 1 row 5 [T]) — from spectral optimization on $\mathbb{C}^7$.
-4. **Reflection threshold** $R_\mathrm{th} = 1/3$ ([Bayesian dominance](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) [T], with $K = 3$ from the triadic decomposition T-40a, T-40b) — the reading $R = P(H_1)$ is [I] (registry row C1).
-5. **Integration threshold** $\Phi_\mathrm{th} = 1$ (T-129 [T]) — self-consistent value.
-6. **Differentiation threshold** $D_\mathrm{min} = 2$ — an independent L2 condition, set by definition [D]: T-151 [T] proves only $\Phi \geq 1 \Rightarrow D_\mathrm{diff} > 1$ when the E-row is coherent, and that $D_\mathrm{min} = 2$ does not follow (until 2026-09-26 this item read "(T-151 [T]) — geometric bound").
-7. **SAD ceiling** $\mathrm{SAD}_\mathrm{max} = 3$ (T-142 [T]) — from $\alpha = 2/3$ and $P \leq 1$.
-8. **Three-generation structure** (T-220 Obstruction I) — from $\mathcal J_3(\mathbb O)|_{A_1 \times G_2}$ branching.
-9. **Gauge group $G_2$** — from $\mathrm{Aut}(\mathbb O)$.
-10. **No-reduction theorem** (T-220 [T negative]) — topological.
+Changing the spectral cutoff does not change a separately supplied finite representation, chosen Fano incidence or native diagnostic definition. This is an independence statement about those **inputs**, not proof that UHM fixes them or their physical interpretation. $\operatorname{Aut}(\mathbb O)=G_2$ is [T for the chosen algebra]; declaring it a physical gauge group needs a bridge. The coordinate Fano off-diagonal factor $1/3$ and dephasing factor $2/3$ follow from its chosen incidence. The majority cut $2/7$, reflection cut $1/3$, integration cut one and differentiation cut two are specified model predicates [D]; their algebraic consequences are [T]. T-40a/T-57's count of three dynamical types is withdrawn [✗] and cannot determine a Bayesian hypothesis count. The native E-row is not a tensor factor and cannot supply an experiential entropy. A universal SAD ceiling or generation spectrum does not follow from a cutoff-independent scalar definition; these require separate model hypotheses/representation data.
 
-These depend only on the **discrete structure** of the spectral triple (dimensions, group representations, combinatorial incidence), not on the continuous cut-off function $f$.
-
-**$f$-dependent quantities** (dimensional constants only):
-- Newton's constant $G_N$.
-- Cosmological constant $\Lambda_\mathrm{cc}$.
-- Gauge coupling unification scale.
-
-These are fixed by the canonical choice $f(u) = e^{-u}$, $\Lambda = M_P$ above.
+The quantum-gravity and Standard-Model identifications discussed here remain conditional physical constructions [C/H/Pr]. Cutoff independence alone does not validate them.
 :::
 
 #### Physical interpretation of the canonical choice
@@ -493,80 +483,44 @@ for $x$ inside and $x'$ outside the horizon. Information is preserved but become
 
 **(d)** Correspondence with Page curve: during evaporation the Gap profile on the horizon becomes "transparent" ($\text{Gap} \to 0$) → information is released → Bekenstein entropy decreases. The transition occurs when the horizon area decreases by half (Page time).
 
-**(e)** Prediction — Bekenstein entropy via Gap:
+**(e)** Historical Gap-entropy hypothesis [H], whose former derivation is withdrawn [✗]:
 
 $$
 S_{\text{BH}} = \frac{A}{4\ell_P^2} = \sum_{i<j} \int_{\text{horizon}} \text{Gap}(i,j)^2 \, d^2\sigma
 $$
 
-The entropy of a black hole is the **total opacity** of the Gap configuration on the horizon.
+The displayed opacity identification is a physical ansatz; it does not follow from Wald entropy or the finite matrix trace (see §6.3).
 :::
 
-### 6.3 Status of the Entropy Formula
+### 6.3 Entropy with specified gravitational data
 
-:::info [C under T-65, T-73, Wald] Derivation of the Bekenstein–Hawking entropy
-**Outline of derivation (conditional):**
+The former derivation of a universal Gap entropy correction from T-73/T-74 is withdrawn [✗]. Gap entries have not been identified with spacetime curvature, and a finite spectral trace does not determine the complete gravitational action or its coefficients.
 
-1. **T-53 [T]**: a full spectral triple $(A, H, D)$ for UHM exists.
-2. **T-65 [T]**: the spectral action reproduces the Einstein–Hilbert action with $G_N = 3\pi/(7f_2\Lambda^2)$.
-3. **T-73 [T]**: Gap is the Serre bundle curvature over $M^4$; the internal space carries $\sum_{i<j}\text{Gap}(i,j)^2$ as a contribution to the action.
-4. **Wald's formula (standard GR)**: for any diffeomorphism-invariant action $\mathcal{L}$ the horizon entropy is determined by:
-$$S_{\text{Wald}} = -2\pi \oint_{\text{horizon}} \frac{\partial\mathcal{L}}{\partial R_{\mu\nu\rho\sigma}} \, \varepsilon_{\mu\nu}\varepsilon_{\rho\sigma} \, d^2\sigma$$
-5. **Leading term (Einstein)**: from step 2, $\mathcal{L} \supset R/(16\pi G_N)$, so $\partial\mathcal{L}/\partial R_{\mu\nu\rho\sigma} \propto 1/(16\pi G_N)$, and Wald's formula reduces to Bekenstein–Hawking:
-$$S_{\text{BH}}^{(\text{EH})} = \frac{A}{4G_N} \quad \textbf{[T]}$$
-6. **Gap contribution (internal spectral term)**: from step 3, the internal spectral action contains $\sum_{i<j}\text{Gap}(i,j)^2$ as a term of order $\Lambda^0$. Applying Wald's formula to this term on the horizon:
-$$\Delta S_{\text{Gap}} = \sum_{i<j} \oint_{\text{horizon}} \text{Gap}(i,j)^2 \, d^2\sigma$$
-7. **Summary [C under T-65, T-73, Wald]**:
-$$S_{\text{BH}} = \frac{A}{4G_N} + \sum_{i<j} \oint_{\text{horizon}} \text{Gap}(i,j)^2 \, d^2\sigma$$
-
-**Computation of the Gap correction coefficient [C under T-65, T-73, T-74].** {#коэффициент-gap-поправки}
-
-The spectral action contains:
+For a supplied diffeomorphism-invariant Lagrangian depending on curvature without its derivatives, a stationary black hole with a regular bifurcate Killing horizon has the [Wald entropy](https://arxiv.org/abs/gr-qc/9307038)
 
 $$
-S = f_0\Lambda^4 a_0 + f_2\Lambda^2 a_2 + f_4 a_4 + \ldots
+S_{\rm Wald}=-2\pi\int_\Sigma\frac{\partial L}{\partial R_{abcd}}\epsilon_{ab}\epsilon_{cd}\,dA,
 $$
 
-Coefficient $a_4$ includes terms quadratic in curvature. For Schwarzschild vacuum spacetime ($R = 0$, $R_{\mu\nu} = 0$), from the Chamseddine–Connes formula:
+with the prescribed binormal normalization. More general higher-derivative Lagrangians require the corresponding variational derivative. The Einstein–Hilbert term $R/(16\pi G_N)$ yields $A/(4G_N)$ [T at these hypotheses]. A purely internal potential or constant spectral moment with **no explicit spacetime-curvature dependence** contributes zero directly to $\partial L/\partial R_{abcd}$; it may change a solution and its area indirectly. It does not produce $\int_\Sigma\mathrm{Gap}_{ij}^2dA$ by Wald differentiation.
+
+#### The withdrawn Gap coefficient {#коэффициент-gap-поправки}
+
+For the selected antisymmetric $G=\operatorname{Im}\Gamma$ and $D=i\omega_0G$, with eigenvalues of $G$ equal to $0,\pm i\lambda_1,\pm i\lambda_2,\pm i\lambda_3$,
 
 $$
-a_4 \supset \frac{f_4}{360} \int R_{\mu\nu\rho\sigma}^2 \sqrt{g}\, d^4x \cdot \mathrm{Tr}_{\mathrm{int}}(1) + \mathrm{Tr}_{\mathrm{int}}(D_{\mathrm{int}}^4)\int \sqrt{g}\, d^4x + \ldots
+\operatorname{Tr}D^4=2\omega_0^4\sum_{k=1}^3\lambda_k^4.
 $$
 
-Kretschmann scalar on the Schwarzschild horizon $r = 2GM$:
+This is an exact finite-matrix identity [T]. It is not the former coordinate sum $\omega_0^4\sum_{i<j}|\gamma_{ij}|^4\mathrm{Gap}_{ij}^4$: even a single nonzero edge gives twice that value, and general matrices contain mixed cycles. Nor does the identity define a curvature-squared coupling or fix its physical units.
+
+One may posit $L=L_{\rm EH}+a(\Gamma)C_{abcd}C^{abcd}+\cdots$ [H]. If $a$ is treated as an independent field coefficient in differentiating curvature, its direct correction is
 
 $$
-R_{\mu\nu\rho\sigma}^2\big|_{r=2GM} = \frac{48 G^2 M^2}{r^6}\bigg|_{r=2GM} = \frac{3}{(GM)^4}
+\Delta S=-4\pi\int_\Sigma a(\Gamma)C^{abcd}\epsilon_{ab}\epsilon_{cd}\,dA,
 $$
 
-By Wald's formula, the contribution of the term $f_4 C_{\mu\nu\rho\sigma}^2/360$ to the horizon entropy (in the vacuum case $C_{\mu\nu\rho\sigma} = R_{\mu\nu\rho\sigma}$):
-
-$$
-\Delta S_{C^2} = -2\pi \cdot \frac{2 f_4}{360}\, \mathrm{Tr}_{\mathrm{int}}(D_{\mathrm{int}}^4) \oint_{\text{horizon}} C_{\mu\nu\rho\sigma}\, \varepsilon^{\mu\nu}\varepsilon^{\rho\sigma}\, d^2\sigma
-$$
-
-On the Schwarzschild horizon $C_{\mu\nu\rho\sigma}\varepsilon^{\mu\nu}\varepsilon^{\rho\sigma} = 1/(2GM)^2$. From T-74 [T]:
-
-$$
-\mathrm{Tr}_{\mathrm{int}}(D_{\mathrm{int}}^4) = \omega_0^4 \sum_{i<j} |\gamma_{ij}|^4\, \mathrm{Gap}(i,j)^4
-$$
-
-The resulting Gap correction coefficient:
-
-$$
-c_{\mathrm{Gap}} = \frac{f_4\,\omega_0^4}{360 \cdot 4G^2M^2}\sum_{i<j}|\gamma_{ij}|^4\,\mathrm{Gap}(i,j)^4
-$$
-
-Full entropy formula **[C under T-65, T-73, T-74]**:
-
-$$
-S_{\text{BH}} = \frac{A}{4G_N} - \frac{\pi f_4\,\omega_0^4}{90\, G^2M^2}\sum_{i<j}|\gamma_{ij}|^4\,\mathrm{Gap}_{ij}^4 \cdot A + O(\Lambda^{-2})
-$$
-
-For astrophysical black holes $c_{\mathrm{Gap}} \sim f_4\omega_0^4/(M/M_P)^2 \ll 1$ — the correction is negligibly small, yet in principle computable from the spectrum of the internal Dirac operator [T-53]. The conditionality [C] pertains to T-74 (identification of $\mathrm{Tr}(D_{\mathrm{int}}^4)$ via Gap summation) and to the Gap description of the horizon as an ansatz.
-
-**Open questions:** non-perturbative computation of $f_4$ requires going beyond the $\Lambda$-expansion; the precise normalization $\omega_0$ is determined from the spectrum of $D_{\mathrm{int}}$ [T-53]. The sign of the correction is negative, consistent with the expectation: $C^2$ corrections decrease the entropy relative to the Bekenstein–Hawking leading term.
-:::
+with any other terms treated separately [C at that supplied action]. A sign or size requires the actual solution, conventions and independently fixed coupling. The previous explicit negative $c_{\rm Gap}$ and its Schwarzschild estimate are withdrawn [✗]; no such coupling follows from the withdrawn T-73/T-74. Matching a UHM field model to this action remains [Pr/H].
 
 ### 6.4 Distinction from Other Approaches
 
@@ -587,9 +541,17 @@ Key advantage of the Gap approach: **absence of singularity**. Since $\text{Gap}
 
 :::tip Theorem (Hawking temperature from the spectral action) [T]
 From T-65 [T] (spectral action → Einstein–Hilbert) the Schwarzschild solution follows. From QFT on curved background (standard Hawking 1975 result):
-$$T_H = \frac{\hbar c^3}{8\pi G_N M k_B}, \quad G_N = \frac{3\pi}{7 f_2 \Lambda^2}$$
+
+$$
+T_H = \frac{\hbar c^3}{8\pi G_N M k_B}, \quad G_N = \frac{3\pi}{7 f_2 \Lambda^2}
+$$
+
 where $G_N$ is derived from spectral triple T-53 [T]. Evaporation rate (Stefan–Boltzmann):
-$$\frac{dM}{dt} = -\sigma_{\text{SB}} T_H^4 A_{\text{horizon}} \times \sum_s \Gamma_s$$
+
+$$
+\frac{dM}{dt} = -\sigma_{\text{SB}} T_H^4 A_{\text{horizon}} \times \sum_s \Gamma_s
+$$
+
 where the sum is over spins of SM particles (derived from $G_2$-structure). $\blacksquare$
 :::
 
@@ -622,13 +584,13 @@ With an observer, the algebra of the static patch of de Sitter space is a type I
 ## 7. Open Problems [P] {#открытые-проблемы}
 
 :::info Program [P]
-1. **Exact lattice computation** of the partition function on $(S^1)^{21}$ with $G_2$-symmetry (Monte Carlo for $SU(3)$ × scalar phases + fermions)
+1. **Exact lattice computation** of the partition function on a specified positivity-compatible field domain with an actual symmetry action (Monte Carlo for $SU(3)$ × scalar phases + fermions)
 2. **Non-perturbative continuum limit**: proof of the existence of $\lim_{N\to\infty} Z_N$ and its independence of the regularization
 3. **Inflation** from the Gap potential: $V_2 + V_4$ at small $\theta$ $\sim$ quadratic inflaton. Quantitative computation of slow-roll parameters
 4. **Cosmogenesis**: initial conditions for the Gap configuration of the Universe
 5. **Holographic limit**: exact correspondence between the bulk Gap theory and the boundary. Derivation of the holographic principle from the freezing of degrees of freedom
 6. **Connection with M-theory**: interpretation of the Gap functional integral as an approximation to the M-theory functional integral
-7. **Refinement of the coefficient in the Gap term** of the formula $S_{\text{BH}}$ (§6.3): leading term $A/(4G_N)$ **[C under T-65, T-73, Wald]**; Gap correction coefficient $c_{\mathrm{Gap}} = f_4\omega_0^4/(360 \cdot 4G^2M^2)\sum|\gamma|^4\mathrm{Gap}^4$ — **[C under T-65, T-73, T-74]** (explicitly computed in §6.3); non-perturbative computation of $f_4$ and $\omega_0$ remains **[P]**
+7. **Entropy-coupling programme**: fix an independent spacetime action and curvature couplings before applying Wald; the former Gap correction and its coefficient are withdrawn [✗]. A supplied Einstein–Hilbert term gives the leading area law [C]; additional corrections remain [H/Pr].
 8. **Nonlinear Einstein equations**: the fully nonlinear case (beyond the linearized approximation of §2.2) requires accounting for the back-reaction of curvature on the Gap dynamics. The linear case is solved [T]
 
 :::

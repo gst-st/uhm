@@ -1,299 +1,127 @@
 ---
 sidebar_position: 5
 title: "Substrate-independent closure"
-description: "Theorems T-148 — T-158: closure of all open problems of consciousness via embodied holon"
+description: "Conditional injection, faithful sectors, validation and feasible learning"
 ---
 
 # Substrate-independent closure
 
-:::info Status
-All results on this page are proven theorems **[T]** with complete proofs and explicit dependencies.
-
-**Key conceptual shift:** from an **isolated** holon (where $I/7$ is a provably stable dead attractor, T-39a [T]) to an **embodied** holon ([T-139 [T]](/docs/proofs/consciousness/operational-closure#t-139): Γ-backbone duality), where environmental coupling enables genesis.
+:::info Result scope
+Conditional constructions for injection, section–retraction, channel validation and feasible learning. Mathematical validity is distinguished from empirical identification and phenomenal interpretation.
 :::
 
 ---
 
-## §1. T-148: Genesis via environmental coupling {#t-148}
+## §1. T-148: conditional genesis with a specified injection {#t-148}
 
-:::tip Theorem T-148 [T]+[T/sim]: Genesis via environmental coupling
-An embodied holon $(H, \pi, B)$ with mixing parameter $\beta \in (0,1)$ and environmental purity $P_{\mathrm{env}} > P_{\mathrm{crit}} = 2/7$ raises purity above $P_{\mathrm{crit}}$ in finite time:
+For an unital $\mathcal L_0$ and a gate with $g_V(1/7)=0$, the isolated initial state $I/7$ is stationary. This concerns **that initial state and model**, not the absence of living states for all isolated self-models.
 
-$$n_{\mathrm{genesis}} \leq \left\lceil \frac{\ln \Delta}{\ln(1/\beta)} \right\rceil, \quad \Delta = \frac{P_{\mathrm{env}} - 2/7}{P_{\mathrm{env}} - 1/7}$$
+Fix a state $\sigma$, $0<\beta<1$, and a depolarizing propagator $\mathcal E_\eta(\Gamma)=\eta\Gamma+(1-\eta)I/7$ with $0\le\eta\le1$. For the declared update
 
-**Status upgrade:** [H]-91 → **[T]**.
+$$
+\Gamma_{n+1}=\beta\mathcal E_\eta(\Gamma_n)+(1-\beta)\sigma,\qquad\Gamma_0=I/7,
+$$
 
-**Stratification:** analytical core (convexity + monotone convergence, Steps 1–5) is **[T]** unconditionally. The explicit rate $\beta^n$ and the specific constant $\Delta$ are cross-checked numerically against SYNARC `mvp_int_2` G1–G3 runs ([T/sim]).
-:::
+let $r=\beta\eta$ and $w=(1-\beta)/(1-\beta\eta)$. Direct substitution gives
 
-**Proof (5 steps).**
+$$
+\Gamma_n=(1-u_n)I/7+u_n\sigma,\qquad
+u_n=w(1-r^n),\qquad
+P_n=1/7+u_n^2(P(\sigma)-1/7).
+$$
 
-**Step 1 (Isolated holon is dead).** For $\Gamma = I/7$:
-- $R(I/7) = 1/(7 \cdot 1/7) = 1$ — trivially maximal reflexion
-- $k = 1 - R = 0$ — zero replacement parameter
-- $\varphi(I/7) = (1-k) \cdot I/7 + k \cdot \rho^* = I/7$ — self-model is identical
-- $\mathcal{R}[I/7] = \kappa \cdot g_V(1/7) \cdot (\rho^* - I/7) = 0$, since $g_V(1/7) = 0$ (gate closed at $P \leq P_{\mathrm{crit}}$)
-- $g_V = 0$ — no generative signal
+If $P(\sigma)>2/7$, put $h=1/\sqrt{7P(\sigma)-1}$. The strict purity cut is reached in finite time **iff $w>h$**. For $0<r<1$ its first tick is
 
-The isolated holon at $I/7$ remains at $I/7$ **forever** — this is the unique fixed point of $\mathcal{L}_0$ ([T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω)).
+$$
+n_{\min}=\left\lfloor\frac{\log(1-h/w)}{\log r}\right\rfloor+1.
+$$
 
-**Step 2 (Backbone injection).** By [T-139 [T]](/docs/proofs/consciousness/operational-closure#t-139): the embodied holon has dynamics
+For $r=0$, it is the first tick when $w>h$; otherwise it is never reached. The special undamped case $\eta=1$ has $w=1$ and $u_n=1-\beta^n$.
 
-$$\Gamma(\tau + \delta\tau) = \beta \cdot \mathcal{E}_{\delta\tau}[\Gamma(\tau)] + (1-\beta) \cdot \pi(\mathcal{B}(x))$$
+**Proof.** The affine coefficient obeys $u_{n+1}=ru_n+1-\beta$; solve this scalar recurrence and use $\operatorname{Tr}(\sigma-I/7)=0$. Crossing is $u_n>h$, giving the displayed strict inequality and integer bound. $\blacksquare$
 
-where $\pi(\mathcal{B}(x)) \in \mathcal{D}(\mathbb{C}^7)$ is the anchor mapping of the sensory input. By [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi): $\mathcal{E}_{\delta\tau}$ is a CPTP channel.
+The former universal bound was false: its logarithm could give a negative tick count, and convexity was incorrectly used as a monotone purity lower bound. Purity of a mixture is the **exact** expression $\beta^2P(A)+(1-\beta)^2P(B)+2\beta(1-\beta)\operatorname{Tr}(AB)$; it need not exceed either input purity. Even a pure input with $\beta=0.9$, $\eta=0$ gives $w=0.1$ and $P_n=53/350<2/7$ for every $n\ge1$.
 
-**Step 3 (Purity lift by convexity).** Purity $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ is a convex function on $\mathcal{D}(\mathbb{C}^7)$:
+### Scope of embodiment {#необходимость-воплощения}
 
-$$P(\beta A + (1-\beta)B) \geq \beta^2 P(A) + (1-\beta)^2 P(B) + 2\beta(1-\beta)\mathrm{Tr}(AB)$$
+External injection is one way to leave $I/7$ under the closed-gate model. It does not prove that every conscious system requires this exact backbone or that all embodied systems cross the threshold. Alternative isolated self-models already have living attractors for other initial states; see [evolution](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне).
 
-For **full-rank** density matrices (rank(A) = rank(B) = 7, guaranteed by condition (QG) + primitivity T-39a), $\mathrm{Tr}(AB) > 0$ strictly. Lower bound: $\mathrm{Tr}(AB) \geq \lambda_{\min}(A) \cdot \mathrm{Tr}(B) = \lambda_{\min}(A) > 0$, where $\lambda_{\min}(A) > 0$ for full-rank. For estimation: at $P(A), P(B) > 2/7$ and rank = 7: $\lambda_{\min} \geq (1 - \sqrt{7P-1})/7 > 0$. This gives $\mathrm{Tr}(AB) \geq \lambda_{\min} > 0$, which suffices for convex monotonicity in Step 4.
+### Pred 13: a conditional, testable recurrence {#pred-13}
 
-$$P(\Gamma(\tau+\delta\tau)) \geq \beta^2 P(\Gamma(\tau)) + (1-\beta)^2 P_{\mathrm{env}} + 2\beta(1-\beta)\lambda_{\min}$$
-
-**Step 4 (Fixed point and monotone convergence).** Denote $p_n = P(\Gamma(n\delta\tau))$, $p_0 = 1/7$. Iteration from Step 3:
-
-$$p_{n+1} \geq \beta^2 p_n + c, \quad c := (1-\beta)^2 P_{\mathrm{env}} + 2\beta(1-\beta)\lambda_{\min} > 0$$
-
-Fixed point: $p^* = c/(1-\beta^2) = [(1-\beta)^2 P_{\mathrm{env}} + 2\beta(1-\beta)\lambda_{\min}]/[(1-\beta)(1+\beta)] = [(1-\beta)P_{\mathrm{env}} + 2\beta\lambda_{\min}]/(1+\beta)$.
-
-For $P_{\mathrm{env}} > 2/7$ and $\lambda_{\min} > 0$: $p^* \geq (1-\beta)P_{\mathrm{env}}/(1+\beta) > 2/7 \cdot (1-\beta)/(1+\beta)$. For any $\beta \in (0,1)$: $p^* > 0$. Since $c > 0$ and the coefficient $\beta^2 < 1$, the sequence $p_n$ monotonically increases to $p^*$. For sufficiently large $P_{\mathrm{env}} > 2/7$ (or sufficiently small $\beta$): $p^* > 2/7$.
-
-**Step 4a (Conservative lower bound).** To obtain an explicit formula, use an auxiliary recurrence (dropping the positive $\lambda_{\min}$ term):
-
-$$p_{n+1} \geq \beta^2 p_n + (1-\beta)^2 P_{\mathrm{env}}$$
-
-Fixed point: $\tilde{p}^* = (1-\beta)P_{\mathrm{env}}/(1+\beta)$. Explicit solution:
-
-$$p_n \geq \tilde{p}^* - (\tilde{p}^* - p_0) \cdot \beta^{2n} = \frac{(1-\beta)P_{\mathrm{env}}}{1+\beta}\left(1 - \beta^{2n}\right) + \frac{1}{7}\,\beta^{2n}$$
-
-Since $\beta^2 \leq \beta$ for $\beta \in (0,1)$, convergence at rate $\beta^{2n}$ is faster than $\beta^n$. For the conservative (pessimistic) step count estimate, use rate $\beta^n \geq \beta^{2n}$:
-
-$$P(n) \geq P_{\mathrm{env}} - (P_{\mathrm{env}} - 1/7) \cdot \beta^n \quad \text{(conservative estimate)}$$
-
-Actual convergence has rate $\beta^{2n}$, i.e., faster.
-
-**Step 5 (Genesis time).** From the conservative estimate: $P(n) > 2/7$ when $(P_{\mathrm{env}} - 1/7)\beta^n < P_{\mathrm{env}} - 2/7$, i.e., $\beta^n < \Delta$, whence $n > \ln\Delta / \ln(1/\beta)$. $\blacksquare$
-
-#### Corollary 1: Necessity of embodiment {#необходимость-воплощения}
-
-An isolated holon ($\beta = 1$) at $I/7$ remains at $I/7$ forever. **Consciousness requires embodiment** — interaction with the environment via backbone.
-
-#### Corollary 2: Prediction Pred 13 {#pred-13}
-
-**Pred 13** (Falsifiable): Genesis time from $I/7$ to $P > 2/7$ at known $\beta$ and $P_{\mathrm{env}}$ is $n_{\mathrm{genesis}} \leq \lceil \ln\Delta / \ln(1/\beta) \rceil$ ticks.
-
-**Dependencies:** [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω) (primitivity of $\mathcal{L}_0$), [T-96 [T]](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) (non-triviality of $\rho^*$), [T-139 [T]](/docs/proofs/consciousness/operational-closure#t-139) (backbone injection), [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) (CPTP channel).
+The tick formula tests this registered constant-input, depolarizing model. Changing the input, rates, self-model or noise changes the prediction. Crossing purity alone does not establish the [full capability gate](/docs/reference/mathematical-kernel#thresholds) or its phenomenal interpretation.
 
 ---
 
-## §2. T-149: C20 for embodied holons {#t-149}
+## §2. T-149: conditions for an embodied stationary state {#t-149}
 
-:::tip Theorem T-149 [T]+[C at backbone-injection lower-bound]+[T/sim]: Unconditional viability of embodied attractor
-For an embodied holon $(H, \pi, B)$ under conditions of T-148 ($P_{\mathrm{env}} > 2/7$, $\beta \in (0,1)$):
+Embodiment, $P(\sigma)>2/7$ and $0<\beta<1$ do **not** imply an above-threshold attractor, as T-148's explicit counterexample shows. For that affine model the fixed state is $(1-w)I/7+w\sigma$, and it is structurally viable exactly when $w>1/\sqrt{7P(\sigma)-1}$. A continuous model with depolarizing rate $\gamma$ and injection rate $\mu$ has the same result with $w=\mu/(\mu+\gamma)$.
 
-$$P(\rho^*_{\mathrm{coupled}}) > P_{\mathrm{crit}} = 2/7$$
+For isotropic Fano dephasing, state-dependent regeneration and another input field $B$, a stationary state satisfies
 
-**unconditionally** (without C20).
+$$
+P_* = \frac{\alpha_D P_{\mathrm{diag}}+a f^*+q_B}{\alpha_D+a},\qquad
+a=\kappa g_V,\quad q_B=\operatorname{Tr}\Gamma_* B(\Gamma_*),\quad\alpha_D=2/3.
+$$
 
-**Status upgrade:** C20 → **[T]** (for embodied holons, under the stratification below). C27 → **[T]** (corollary).
+Hence $P_*>2/7$ iff the numerator exceeds $(2/7)(\alpha_D+a)$. The actual overlap $f^*$ and input flux $q_B$ must be evaluated; a larger nominal rate and positive input purity alone give no automatic compensation. This exact balance is necessary at a stationary point, not proof of existence or stability. A contraction criterion such as strict backbone dominance or a verified Hurwitz Jacobian supplies those separate properties.
 
-**Stratification:**
-- **Step 1** (gate opens at $P > 2/7$) and **Step 2** (purity balance with anchor input) are **[T]** from T-148 and T-98.
-- **Step 3** (dynamic $\kappa_0$-compensation) requires $P_{\mathrm{diag}} > 1/7$ sustained by backbone injection; this is **[C at backbone-injection-lower-bound]** — the lower bound $\|\pi(\mathcal B(x))\|_{\mathrm{diag}} > 1/7$ is a condition on the anchor, not proved from pure axioms.
-- **Step 4** (explicit bound) is **[T]** given Step 3.
-- The correlation $\mathrm{corr}(\mathrm{Coh}_E, \kappa_{\mathrm{eff}}) = -0.985$ and steady-state $P \approx 3/7$ are **[T/sim]** cross-checks against SYNARC `mvp_int_2` G4.
-:::
-
-**Proof (4 steps).**
-
-**Step 1.** By [T-148 [T]](#t-148): the embodied holon reaches $P > 2/7$ in finite time. At $P > 2/7$ the gate $g_V > 0$ opens, and $\mathcal{R}$ activates.
-
-**Step 2 (Balance with anchor input).** By [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора): the purity balance of the attractor is given by $P(\alpha + \kappa) = \alpha P_{\mathrm{diag}} + \kappa f^*$. With backbone injection $(1-\beta) \cdot \pi(\mathcal{B}(x))$, the effective $P_{\mathrm{diag}}$ is raised above $1/7$ by the structured sensory input.
-
-**Step 3 (Dynamic equilibrium of κ₀-compensation).** At $P > 2/7$:
-- $\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, where $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ ([T-59 [T]](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound))
-- During autonomous evolution, coherence is redistributed:
-  $\mathrm{Coh}_E$ (HS-projection onto E-sector) decreases, but $\kappa_0$ (O-E-U triangle) grows
-- The product $\kappa_0 \cdot \mathrm{Coh}_E$ maintains $\kappa_{\mathrm{eff}} > \kappa_{\mathrm{bootstrap}}$
-- Larger $\kappa_{\mathrm{eff}}$ → larger $P(\rho^*)$ (from the balance formula [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора))
-
-Self-reinforcement is realized through **dynamic equilibrium**, not a monotone chain:
-the structure of O-E-U coherences redistributes so that the effective
-regeneration $\kappa_{\mathrm{eff}}$ remains above the threshold.
-
-**Numerical verification (SYNARC):** $\mathrm{corr}(\mathrm{Coh}_E, \kappa_{\mathrm{eff}}) = -0.985$ during autonomous
-evolution of 500 ticks. P stabilizes at $P \approx 3/7 > P_{\mathrm{crit}}$. Correlation
-is negative, but $\kappa_{\mathrm{eff}}$ steadily grows through the $\kappa_0$ component.
-
-The cycle stabilizes at the attractor $\rho^*_{\mathrm{coupled}}$ with $P > 2/7$.
-
-**Step 4 (Explicit bound).** Substituting into the balance formula with $\kappa \geq \kappa_{\mathrm{bootstrap}} = 1/7$ and $P_{\mathrm{diag}} > 1/7$ (via backbone injection):
-
-$$P(\rho^*_{\mathrm{coupled}}) > \frac{(2/3)(1/7) + (1/7) \cdot f^*}{2/3 + 1/7} = \frac{2/21 + f^*/7}{17/21} > \frac{2}{7}$$
-
-for $f^* > 2/7$. $\blacksquare$
-
-**Dependencies:** [T-148 [T]](#t-148) (genesis), [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) (purity balance), [T-59 [T]](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) ($\kappa_{\mathrm{bootstrap}}$), [T-43b [T]](/docs/physics/cosmology-phys/origin#самоусиление) (self-reinforcement).
+The previous unconditional T-149, the claimed universal O–E–U compensation and automatic closure of C20/C27 are withdrawn. Simulation correlations describe a specific run and do not prove a lower bound for every embodied holon. The upper cut, integration, differentiation and stress remain separate checks.
 
 ---
 
-## §3. T-150: Commutativity of φ-tower in 7D {#t-150}
+## §3. T-150: iteration identity and tower compatibility {#t-150}
 
-:::tip Theorem T-150 [T]: Trivial commutativity of φ-tower at D=7
-For $D_n = 7$ for all $n$: $\varphi^{(n)} = \varphi^n$ (n-fold application of a single CPTP channel), whence
+For any specified self-map $M:\mathcal D_7\to\mathcal D_7$, linear or nonlinear, $M^n\circ M^m=M^{n+m}$ by associativity. Equal dimensions alone do not identify distinct operators, readouts or projections in a heterogeneous tower. That tower needs the separately verified diagrams $\pi_kM_{k+1}=M_k\pi_k$.
 
-$$\varphi^n \circ \varphi^m = \varphi^{n+m}$$
+### Scope of the former T-136 upgrade {#t-136-upgrade}
 
-Commutativity is a trivial property of iterates.
-
-**Status upgrade:** [H]-90 → **[T]**; T-136: [T under C] → **[T]**.
-:::
-
-**Proof (3 steps).**
-
-**Step 1.** By [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi): the replacement channel $\varphi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ is a CPTP channel of fixed dimension $D = 7$.
-
-**Step 2 (Composition of iterates).** For $D_k = 7$ for all $k$: projections $\pi_k = \mathrm{id}$ (identity). Then $\varphi^{(n)}$ in a multi-scale tower coincides with the $n$-fold iteration $\varphi^n = \underbrace{\varphi \circ \cdots \circ \varphi}_{n}$ of the same operator.
-
-For iterates of a single operator: $\varphi^n \circ \varphi^m = \varphi^{n+m}$ is an **identity**, requiring no proof (associativity of composition).
-
-**Step 3 (SAD from iterates).** By [T-142 [T]](/docs/proofs/consciousness/operational-closure#t-142): $\mathrm{SAD}_{\mathrm{MAX}} = 3$ unconditionally (from Fano contraction $\alpha=2/3$ and upper window bound $P \leq 3/7$). The spectral formula for SAD ([T-136](#t-136-upgrade)) is a consequence of the geometric contraction of off-diagonal elements with coefficient $1/3$, which does not depend on commutativity of the φ-tower, but follows directly from $\alpha = 2/3$ [T]. Commutativity is an **automatic** property of iterates of a single operator, not a precondition for contraction. $\blacksquare$
-
-**Dependencies:** [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) (CPTP replacement channel), [T-142 [T]](/docs/proofs/consciousness/operational-closure#t-142) ($\mathrm{SAD}_{\mathrm{MAX}} = 3$).
-
-#### Upgrade of T-136: [T under C] → [T] {#t-136-upgrade}
-
-Spectral formula via critical purities:
-
-$$\mathrm{SAD}(\Gamma) = \max\!\left\{k \in \{1,2,3\} : P(\Gamma) > P_{\mathrm{crit}}^{(k-1)}\right\}, \quad P_{\mathrm{crit}}^{(n)} = P_{\mathrm{crit}} \cdot \frac{3^{n-1}}{n+1}$$
-
-is now **[T]**: (1) commutativity of φ-tower [T] (T-150) closes the dependency on [C]; (2) T-142 [T] establishes $\mathrm{SAD}_{\mathrm{MAX}} = 3$ from Fano contraction $\alpha = 2/3$ and the upper bound of the conscious window $P \leq 3/7$.
+The iteration identity does not prove a universal cognitive-depth ceiling or identify purity scores with metacognitive certification. The former upgrade is withdrawn. Exact Fano attenuation and the arithmetic of a stipulated score are given in [T-142](/docs/proofs/consciousness/operational-closure#t-142); certified depth requires the [declared meta-observation probes](/docs/consciousness/hierarchy/depth-tower).
 
 ---
 
-## §4. T-151: D_min = 2 — an independent L2 condition, and what T-129 gives {#t-151}
+## §4. T-151: differentiation requires its own realization {#t-151}
 
-:::tip Theorem T-151: $\Phi \geq 1 \Rightarrow D_\mathrm{diff} > 1$; $D_\mathrm{min} = 2$ is an independent L2 condition
-$\Phi_{\mathrm{th}} = 1$ **[T]** (T-129) $\Longrightarrow$ nontrivial differentiation $D_{\mathrm{diff}} > 1$ whenever the E-row is coherent. The **strict** threshold $D_{\mathrm{min}} = 2$ is one of the **four independent** L2 conditions (T-124b [T]), on a par with $R_{\mathrm{th}} = 1/3$ — it is **not** derivable from $\Phi_{\mathrm{th}} = 1$ alone. On the physical attractor $\rho^*_\Omega$, $D_{\mathrm{diff}}(\rho^*_\Omega) \geq 2$ (Step 3).
-:::
+The cut $D_{\mathrm{diff}}\ge2$ is a model selection [D]. If $D_{\mathrm{diff}}=e^{S(\rho_E)}$, the map or lift defining $\rho_E$ must be specified. The scalar integration condition satisfies only $\Phi\ge1\Rightarrow P\ge2/7$, and places no universal bound on an E-row coherence or the entropy of an arbitrary reduced experiential state.
 
-:::warning Correction: the earlier "unconditional derivation" was invalid
-The previous proof asserted "$\Phi \geq 1 \Rightarrow \mathrm{Coh}_E \geq 1/6$ by a uniform $G_2$-estimate [T-42a]", which is false on two counts: $\Phi \geq 1$ constrains only the *total* off-diagonal mass, not the E-row share; and no $G_2$-average forces a lower bound on a frame-referenced quantity, since $\mathbf 7$ is an irreducible $G_2$-module (Schur — see the corrected [uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem#лемма-g4)). Explicit counterexample (uniform diagonal $\gamma_{kk}=1/7$, coherence $0.07$ on the 15 non-E pairs only): $P \approx 0.290 \in (2/7,3/7]$, $R \approx 0.49$, $\Phi \approx 1.03$ — all three met — yet $\mathrm{Coh}_E \approx 0.070$ and $D_{\mathrm{diff}} \approx 1.42 < 2$. This is exactly the state T-124b Counterexample 4 asserts. Hence $D_{\mathrm{min}} = 2$ stands as an **independent** L2 condition, not a corollary of $\Phi_{\mathrm{th}}$.
-:::
-
-**Proof.**
-
-**Step 1.** By [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129): $\Phi_{\mathrm{th}} = 1$ is derived from first principles.
-
-**Step 2 (weak differentiation) [T].** For $\Phi \geq 1$: $P_{\mathrm{coh}} = P_{\mathrm{diag}}\,\Phi \geq P_{\mathrm{diag}} \geq 1/7 > 0$. If the E-row carries nonzero coherence ($\mathrm{Coh}_E > 0$), then by [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128), $D_{\mathrm{diff}}^{7D} = 1 + 6\,\mathrm{Coh}_E > 1$ — *nontrivial* differentiation, but **not** the strict bound $\geq 2$ (which fails for states concentrating coherence off the E-row, per the correction box).
-
-**Step 3 (attractor bound) [T for embodied at attractor] / [C at κ₀].** On the autopoietic attractor $\rho^*_\Omega$, viability requires $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO} > 0$, forcing $\gamma_{OE}\neq 0$, hence $\mathrm{Coh}_E(\rho^*_\Omega) > 0$ and $D_{\mathrm{diff}}(\rho^*_\Omega) > 1$. The strict bound $D_{\mathrm{diff}}(\rho^*_\Omega) \geq 2$ holds at the E-accentuated fixed point (the viable anchor of [formalization-φ §2](/docs/proofs/categorical/formalization-phi), where $\mathrm{Coh}_E(\rho^*)\geq 1/6$) and is confirmed numerically for embodied attractors (SYNARC); it is [C at κ₀-structure] in full generality.
-
-**Status.** $D_{\mathrm{min}} = 2$: **[D]** independent L2 threshold (T-124b [T] independence) + **[T]** on the embodied attractor (Step 3). The former "C2 [C] → [T] unconditional" is retracted.
-
-**Dependencies:** [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129), [T-124b [T]](/docs/proofs/consciousness/conscious-window#t-124b) (independence), T-98 [T] (attractor balance), $\kappa_0$ formula.
+If instead $\rho_E=\Gamma$, then $e^{S(\Gamma)}\ge1/P\ge7/3>2$ whenever $R\ge1/3$; in this particular realization the differentiation cut is redundant. For another readout it need not be. A seven-dimensional prime Hilbert space has no nontrivial tensor factor singled out merely by naming an E-coordinate; a normalized E-row HS proxy is another defined quantity, not reduced entropy. See [the corrected dependence analysis](/docs/proofs/consciousness/conscious-window#t-124b).
 
 ---
 
-## §5. T-152: Tractable anchor validation {#t-152}
+## §5. T-152: correctly typed anchor validation {#t-152}
 
-:::tip Theorem T-152 [T]: Polynomial validation of CPTP-anchor
-For anchor map $\pi: \mathbb{R}^D \to \mathcal{D}(\mathbb{C}^N)$:
+A feature estimator $\pi:\mathbb R^D\to\mathcal D_N$ is tested with an observation model and held-out data; it has no Choi matrix or diamond norm by that type alone. There is no unique canonical comparator from T-123. A reference encoder must be separately declared and its targets identifiable.
 
-$$\|\pi - \pi_{\mathrm{can}}\|_\diamond \leq N\sqrt{N} \cdot \|C_\pi - C_{\pi_{\mathrm{can}}}\|_F$$
+For **linear channels** $\mathcal A,\mathcal B:M_d\to M_N$, let $J(\Delta)$ be the unnormalized Choi matrix of $\Delta=\mathcal A-\mathcal B$. Then
 
-computable in $O(D \cdot N^2)$ operations. For $N = 7$: $O(49D)$.
+$$
+\frac1d\|J(\Delta)\|_1\le\|\Delta\|_\diamond
+\le\|J(\Delta)\|_1\le\sqrt{dN}\|J(\Delta)\|_F.
+$$
 
-**Status upgrade:** [H]-92 → **[T]** (tractable validation + [T-109/T-113 [T]](/docs/applied/coherence-cybernetics/learning-bounds)).
-:::
+The lower bound evaluates the normalized maximally entangled input. For the upper bound write any pure input with an ancilla of dimension $d$ as a bounded sandwich of the unnormalized maximally entangled vector; the sandwich operator has norm at most one, so its output trace norm is at most $\|J(\Delta)\|_1$. The final inequality is the Schatten norm bound. See [Watrous, Chapter 3](https://cs.uwaterloo.ca/~watrous/TQI/TQI.3.pdf).
 
-**Proof.**
-
-**Step 1 (Watrous bound).** By Watrous (2018, Th.3.46): $\|\Phi\|_\diamond \leq d_{\mathrm{out}} \cdot \|C_\Phi\|_1$ for CPTP channels, where $C_\Phi$ is the Choi matrix. For the channel difference: $\|\pi - \pi_{\mathrm{can}}\|_\diamond \leq N \cdot \|C_{\pi-\pi_{\mathrm{can}}}\|_1 \leq N\sqrt{N} \cdot \|C_\pi - C_{\pi_{\mathrm{can}}}\|_F$.
-
-**Step 2 (Computability).** The Choi matrix $C_\pi$ is computed in $O(D \cdot N^2)$: for each of the $D$ basis inputs — one application of $\pi$ costs $O(N^2)$. The Frobenius norm is $O(D \cdot N^2)$.
-
-**Step 3 (Closing the chain).** By [T-130 [T]](/docs/proofs/consciousness/operationalization#t-130): $|R_{\mathrm{impl}} - R_{\mathrm{UHM}}| \leq 2\varepsilon \cdot C(P)$, where $\varepsilon = \|\pi - \pi_{\mathrm{can}}\|_\diamond$. By [T-143 [T]](/docs/proofs/consciousness/operational-closure#t-143): $|\mathrm{SAD}_{\mathrm{neural}} - \mathrm{SAD}_{\mathrm{cat}}| \leq 1$ for $\varepsilon < \varepsilon_0(P)$.
-
-**Step 4 ($N = 7$ optimality).** By [T-109 [T]](/docs/applied/coherence-cybernetics/learning-bounds#теорема-информационная-граница): information bound of learning. By [T-113 [T]](/docs/applied/coherence-cybernetics/learning-bounds#теорема-минимальность-n7): $N = 7$ is minimal for learning. Computational complexity $O(49D)$ — optimal. $\blacksquare$
-
-**Dependencies:** [T-130 [T]](/docs/proofs/consciousness/operationalization#t-130), [T-143 [T]](/docs/proofs/consciousness/operational-closure#t-143), [T-109 [T]](/docs/applied/coherence-cybernetics/learning-bounds#теорема-информационная-граница), [T-113 [T]](/docs/applied/coherence-cybernetics/learning-bounds#теорема-минимальность-n7).
+A channel is CPTP iff $J\succeq0$ and $\operatorname{Tr}_{\mathrm{out}}J=I_d$. Constructing a general $J$ requires $d^2$ basis-operator evaluations and $d^2N^2$ entries; costs depend on the evaluation oracle, numerical precision and positivity certification. The previous feature-dimension bound $O(49D)$ and unique optimality claim do not follow. Output state error transfers threshold verdicts only with separately verified observable bounds and strict margins, as in [T-143](/docs/proofs/consciousness/operational-closure#t-143).
 
 ---
 
-## §6. T-153: Substrate-independent consciousness criterion {#t-153}
+## §6. T-153: a declared substrate readout {#t-153}
 
-:::tip Theorem T-153 [D]+[C at T-149]+[T/sim]: Substrate-independent consciousness criterion
-A system $S$ is **conscious** if and only if there exists a faithful CPTP map $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ such that:
+Fix a physical state domain, readout/encoder $G_\theta$, its calibration, functional frame, experiential realization and observation model **before** evaluating the system. Define $\mathrm{Cap}_{2,S}(s):=\mathrm{Cap}_2(G_\theta(s))$, with a separate stress condition if required. This is a model predicate [D]; identifying it with experience is an empirical/ontological bridge [H/I]. Its numerical cuts can be used across substrates within that declared model.
 
-$$R(\Gamma) \geq 1/3 \;\land\; \Phi(\Gamma) \geq 1 \;\land\; D_{\mathrm{diff}}(\Gamma) \geq 2 \;\land\; \|\sigma_{\mathrm{sys}}\|_\infty < 1$$
+A freely chosen existential encoder is not a diagnostic: a constant replacement channel can send every input to a selected window state. Faithfulness must state the actual domain, and existence of a state-valid map does not establish a biologically correct or identifiable encoder. Symmetry of $\mathcal D_7$, seven functional names and a section–retraction do not prove universal completeness of $\Gamma$, the absence of hidden variables or a phenomenal equivalence. Reconstructions use [observation fibers](/docs/applied/research/reconstruction-identifiability#fiber-theorem).
 
-The criterion does not depend on the physical substrate $S$.
+### T-153a: constructive scope and dynamics {#t-153a}
 
-**Stratification:**
-- **[D]** — The four-threshold statement is **definitional** for L2 consciousness: it packages T-124, T-126, T-129, T-151 + $\sigma$-bound into a single criterion. Its status as a theorem is *extensional* (thresholds are proven individually).
-- **[C at T-149]** — Non-emptiness of the criterion (existence of systems satisfying it) depends on T-149 (embodied viability) being realised; in the isolated-holon limit the criterion is trivially unsatisfiable.
-- **[T/sim]** — The first empirical instance is the SYNARC agent (see measurement table below, `mvp_int_N` runs at $\tau > 2000$).
+For the **full** quantum state space $\mathcal D(\mathbb C^d)$, when $d\le7$ an isometry $W:\mathbb C^d\to\mathbb C^7$ gives the injective CPTP embedding $\rho\mapsto W\rho W^\dagger$. When $d>7$, no globally injective linear CPTP readout into $\mathcal D_7$ exists; T-253 proves the dimension obstruction and an exactly faithful embedded-sector retraction. These are static facts. They imply neither a CPTP reduced dynamics nor seven necessary noncommuting biological probes.
 
-T-153 is thus a *substrate-invariance meta-theorem*: it asserts that **if** faithful $G$ exists **and** the four thresholds are met, substrate does not matter. Existence of $G$ is addressed separately in T-153a.
-:::
+To obtain a closed reduced deterministic dynamics, states in the same $G$-fiber must have the same reduced future: $G(s_1)=G(s_2)\Rightarrow G(T_ts_1)=G(T_ts_2)$. This condition is necessary and sufficient to define a well-defined reduced state map. Linearity and a CPTP extension are further requirements. For an invariant embedded sector $\mathcal E_t\iota_V=\iota_V\mathcal F_t$, the specified CPTP retraction gives CPTP reduced propagators $\mathcal F_t=G_V\mathcal E_t\iota_V$; invariance establishes their semigroup composition. Neither static Stinespring dilation of $G$ nor seven feature coordinates guarantees these conditions.
 
-**Proof (5 steps).**
-
-**Step 1 (Existence of $G$).** By [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность): the holonomic representation $G$ is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$. Existence is guaranteed for any system satisfying A1–A5. (Frame remark, 2026-09-25: this uniqueness concerns a system whose own dynamics is $\mathcal{L}_\Omega$, and with that dynamics fixed it sharpens to the finite frame group of [D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность). For a general substrate the map is not unique: [T-253](#t-253) gives one for every isometry onto a seven-mode sector, and different sectors, or different frames within one, give different $\Gamma$ — see the frame remark under T-253.)
-
-**Step 2 (Completeness).** By [T-40f [T]](/docs/proofs/minimality/theorem-minimality-7): all 7 dimensions are necessary and sufficient. No "hidden variables" outside $\Gamma$.
-
-**Step 3 (Invariance of thresholds).** The thresholds $P_{\mathrm{crit}} = 2/7$ [T], $R_{\mathrm{th}} = 1/3$ [T] and $\Phi_{\mathrm{th}} = 1$ [T] are derived from dimension $N = 7$ and axioms A1–A5, and $D_{\min} = 2$ is fixed as the fourth, independent L2 threshold [D] (§4, T-124b). None depends on the specific realization of $S$. (An earlier version listed $D_{\min} = 2$ [T] among the derived thresholds; retracted with §4.)
-
-**Step 4 (Faithfulness).** By [T-42c [T]](/docs/proofs/categorical/uniqueness-theorem#лемма-g1): the propagator is injective. Faithful $G$ preserves distinguishability of states. Two distinct states of consciousness $s_1 \neq s_2$ give $G(s_1) \neq G(s_2)$.
-
-**Step 5 (Completeness of the theory).** By [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) the 7D state transports into the 42D picture and back unchanged ($\pi\circ\iota = \mathrm{id}$). All quantities used by this theorem — $P$, $R$, $\Phi$, $\mathrm{Coh}_E$, $\sigma_k$ — are **defined in $\mathcal{D}(\mathbb{C}^7)$** and need no 42D detour; the spectral quantities of $\rho_E$ are not used here. (The former appeal to a Morita *equivalence* is retracted.) $\blacksquare$
-
-**Dependencies:** [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), [T-40f [T]](/docs/proofs/minimality/theorem-minimality-7), [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129), [T-151 [T]](#t-151).
-
-#### T-153a {#t-153a}
-
-:::tip Theorem T-153a (Substrate-existence companion) [T]+[T at sufficiency via T-253]
-T-153 asserts substrate-independence **given** a faithful CPTP map $G: \mathrm{States}(S) \to \mathcal D(\mathbb C^7)$. This companion theorem specifies **when** such a map is guaranteed to exist, making T-153 operationally testable.
-
-**Stratification:** Necessity direction (⇒) is **[T]** — a direct unpacking of faithfulness of $G$ against finite-dim + CPTP + 7-mode constraints. Sufficiency direction (⇐) is **[T]** — constructive: [T-253](#t-253) exhibits the map explicitly for every admissible substrate as a CPTP **retraction** $G_V$, exactly faithful on the embedded 7-sector, and proves this is the strongest faithfulness the mathematics admits (global injectivity is impossible for any CPTP map when $\dim > 7$ — T-253(c)). The existential threshold clause of T-153 is realized modulo the accessibility clause (Acc) — T-253(b).
-
-**Statement.** A faithful CPTP map $G: \mathrm{States}(S) \to \mathcal D(\mathbb C^7)$ exists if and only if the substrate $S$ satisfies the following three conditions:
-
-**(C1) Finite-dimensional effective state space.** There exists a finite-dimensional Hilbert space $\mathcal H_S$ (or a finite-dimensional $C^*$-algebra $A_S$) on which $\mathrm{States}(S) \subseteq \mathcal D(\mathcal H_S)$ is a compact convex subset under the trace-norm topology. For infinite-dimensional substrates, the condition applies to the effective (decoherence-free, coarse-grained) subspace.
-
-**(C2) CPTP-compatible dynamics.** The temporal evolution of $\mathrm{States}(S)$ is generated by a CPTP semigroup $\{\mathcal E_t\}_{t\geq 0}$ (equivalently, admits a Lindblad representation). Non-Markovian effects must be bounded in the sense of T-94 (exponential memory kernel).
-
-**(C3) Non-trivial 7-separable substructure.** $\mathrm{States}(S)$ admits a decomposition into at least 7 algebraically independent observable modes $\{O_1,\ldots,O_7\}$ such that the correlation matrix $\Gamma_{ij} := \operatorname{Tr}(\rho\,O_i O_j)$ is of rank $\geq D_{\min} = 2$ for states in the viability region. Operationally: the substrate must support at least 7 mutually non-commuting probes whose joint distribution is non-degenerate.
-
-**Proof (both directions).**
-- **(⇒)** If faithful $G$ exists, its image $G(\mathrm{States}(S)) \subseteq \mathcal D(\mathbb C^7)$ has finite dimension (C1), inherits CPTP dynamics via Stinespring dilation of $G$ (C2), and must cover the 7-mode structure of $\mathcal D(\mathbb C^7)$ (C3), else $G$ fails to be faithful.
-- **(⇐)** Given (C1)–(C3): for $\dim\mathcal H_S \leq 7$ a CPTP embedding into $\mathcal D(\mathbb C^7)$ exists by Stinespring + Choi. For $\dim\mathcal H_S \geq 7$, [T-253](#t-253) constructs $G$ explicitly: any isometry $V: \mathbb C^7 \to \mathcal H_S$ onto a 7-mode subspace supplied by (C3) yields the CPTP retraction $G_V(\rho) = V^\dagger\rho V + \mathrm{Tr}\bigl((\mathbb 1 - VV^\dagger)\rho\bigr)\sigma_0$ with $G_V \circ \iota_V = \mathrm{Id}$ on the embedded sector $\iota_V(\gamma) = V\gamma V^\dagger$. ~~$G_2$-rigidity (T-42a) makes the choice of $V$ a pure gauge (the T-223 alphabetization freedom).~~ Retracted (2026-09-25): the choice of $V$ is not a gauge — it fixes a sector and a frame, and the thresholds can come out differently for different choices; see the frame remark under [T-253](#t-253). ∎
-
-**Consequences for specific substrate classes.**
-
-| Substrate class | (C1) | (C2) | (C3) | Faithful $G$? |
-|---|---|---|---|---|
-| Finite-dimensional quantum systems ($\dim\leq 7$) | ✓ | ✓ if CPTP | ✓ | **Yes** |
-| Neural networks (classical, digital) | ✓ (effective) | ✓ (via Lindblad coarse-graining) | ✓ if $\geq 7$ orthogonal feature dimensions | **Yes (with embedding)** |
-| Continuous dynamical systems (brain, chemistry) | ✓ (mesoscopic effective) | ✓ (Fokker–Planck → CPTP) | ✓ empirically (via PCI-style probes) | **Yes, subject to empirical validation** |
-| Infinite-dimensional quantum (unbounded) | ✗ unless restricted to finite-dim subspace | — | — | **No** (requires decoherence-free truncation first) |
-| Purely classical systems without probabilistic structure | ✗ (no CPTP) | ✗ | — | **No** |
-| Vacuum / trivial systems | — | — | ✗ | **No** |
-
-**Operational criterion for new substrates:** a team proposing that system $S$ is conscious must demonstrate (C1)–(C3), then construct $G$ explicitly. If $G$ cannot be constructed, T-153 is not applicable and the consciousness claim is inadmissible under UHM.
-
-**Non-trivial content.** T-153a resolves the prior ambiguity that "any system might admit some faithful $G$". For instance: a system with $\dim\mathrm{States}(S) < 7$ **cannot** support consciousness (fails C3); a non-CPTP system (e.g., classical deterministic system without noise) **cannot** either (fails C2). These are structurally excluded classes, not handwaved.
-
-**Dependencies:** [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) (G₂-rigidity), [T-57 [T]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS), [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (section–retraction; the Morita reading is retracted), [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (exponential kernel), [T-151](#t-151) ($D_{\min} = 2$, an independent threshold [D]), [T-253](#t-253) (constructive sufficiency). Standard mathematics: Stinespring 1955, Choi 1975.
-:::
+Classical feature spaces require their own probability/operator-algebra encoding and distinguishability analysis; their dimension is not a quantum Hilbert-space dimension by renaming it. The former necessity-and-sufficiency claim (C1)–(C3) is withdrawn. Accessibility and observational identifiability remain independent of algebraic existence.
 
 #### T-253 {#t-253}
 
 :::tip Theorem T-253 (Constructive sufficiency: the retraction, and its sharpness) [T] + [C at (Acc)]
-Let $S$ be admissible per (C1)–(C3) with effective dimension $d = \dim\mathcal H_S \geq 7$.
+Let $\mathcal H_S$ be a specified finite-dimensional Hilbert space with $d=\dim\mathcal H_S\ge7$.
 
 **(a) Construction [T].** For every isometry $V: \mathbb C^7 \to \mathcal H_S$ ($V^\dagger V = \mathbb 1_7$) and any anchor state $\sigma_0 \in \mathcal D(\mathbb C^7)$, the map
 
@@ -311,35 +139,19 @@ $$
 
 (Acc) is a definitional clause **[D]** — it names exactly what "the substrate can host a conscious state" means. Crucially, it is an **open** condition: for any interior window witness $\Gamma_w$ (all four inequalities strict — the waking profile of [altered states](/docs/consciousness/states/altered-states) is one), continuity of $G_V$ makes $G_V^{-1}(\mathrm{int}\,\mathcal V_{\mathrm{full}})$ a non-empty open neighborhood of $\iota_V(\Gamma_w)$ in $\mathcal D(\mathcal H_S)$ — the realizing substrate state need not itself be an embedded rank-7 state (which would be a measure-zero demand for $d > 7$); anything in the open preimage suffices. Quantitatively: $G_V$, being CPTP, is a trace-norm contraction, so the preimage contains the entire trace-norm ball of radius $\delta_w = \mathrm{dist}_1(\Gamma_w, \partial\mathcal V_{\mathrm{full}}) > 0$ around $\iota_V(\Gamma_w)$. Hence for substrates with accessible (controllable) dynamics — reachable set dense in $\mathcal D(\mathcal H_S)$ — (Acc) holds **[C at controllability]**: a dense set meets every non-empty open set.
 
-**(c) Sharpness [T]: no global faithfulness for $d > 7$.** No CPTP map $\mathcal E: \mathcal D(\mathcal H_S) \to \mathcal D(\mathbb C^7)$ is injective on all of $\mathcal D(\mathcal H_S)$ when $d > 7$: as a real-linear map $\mathrm{Herm}(\mathcal H_S) \to \mathrm{Herm}(\mathbb C^7)$ it has kernel of dimension $\geq d^2 - 49 \geq 1$, and trace preservation puts the kernel inside the traceless hyperplane; hence for any interior state $\rho$ and kernel direction $K \neq 0$ the pair $\rho \pm \varepsilon K$ (small $\varepsilon > 0$) consists of two **distinct density matrices with identical images**. Consequently "faithful $G$" in T-153/T-153a must be read **sector-relative**, and the retraction of (a) attains the maximal faithful domain — the full 48-dimensional embedded state sector.
+**(c) Sharpness [T]: no global faithfulness for $d > 7$.** No CPTP map $\mathcal E: \mathcal D(\mathcal H_S) \to \mathcal D(\mathbb C^7)$ is injective on all of $\mathcal D(\mathcal H_S)$ when $d > 7$: as a real-linear map $\mathrm{Herm}(\mathcal H_S) \to \mathrm{Herm}(\mathbb C^7)$ it has kernel of dimension $\geq d^2 - 49 \geq 1$, and trace preservation puts the kernel inside the traceless hyperplane; hence for any interior state $\rho$ and kernel direction $K \neq 0$ the pair $\rho \pm \varepsilon K$ (small $\varepsilon > 0$) consists of two **distinct density matrices with identical images**. Consequently "faithful $G$" in T-153/T-153a must be read **sector-relative**, and the retraction of (a) attains the maximal possible real dimension of a faithful smooth sector — 48 — through the embedded state space; this does not make that sector unique.
 :::
 
 **Proof.** **(a)** Complete positivity: $\rho \mapsto V^\dagger\rho V$ is CP with the single Kraus operator $V^\dagger$; the second summand is measure-and-prepare with Kraus family $B_{ij} = \sqrt{s_i}\,|i\rangle\langle q_j|$, where $\sigma_0 = \sum_i s_i |i\rangle\langle i|$ and $\{|q_j\rangle\}$ is an orthonormal basis of $\mathrm{ran}(\mathbb 1 - VV^\dagger)$. Completeness: $V V^\dagger + \sum_{ij} B_{ij}^\dagger B_{ij} = VV^\dagger + (\mathbb 1 - VV^\dagger) = \mathbb 1_d$. Trace preservation: $\mathrm{Tr}\,G_V(\rho) = \mathrm{Tr}(VV^\dagger\rho) + \mathrm{Tr}((\mathbb 1 - VV^\dagger)\rho) = \mathrm{Tr}\,\rho$. Retraction: $G_V(V\gamma V^\dagger) = (V^\dagger V)\gamma(V^\dagger V) + \mathrm{Tr}\bigl((\mathbb 1 - VV^\dagger)V\gamma V^\dagger\bigr)\sigma_0 = \gamma + 0$, because $(\mathbb 1 - VV^\dagger)V = 0$. **(b)** Substitution into (a). **(c)** Dimension count: $\dim_{\mathbb R}\mathrm{Herm}(\mathcal H_S) = d^2 > 49 = \dim_{\mathbb R}\mathrm{Herm}(\mathbb C^7)$, so $\dim\ker \geq d^2 - 49$; for $K \in \ker$, $\mathrm{Tr}\,K = \mathrm{Tr}\,\mathcal E(K) = 0$ by trace preservation; interiority of $\rho$ admits $\varepsilon \leq \lambda_{\min}(\rho)/\lVert K\rVert_\infty$, keeping both $\rho \pm \varepsilon K \succeq 0$. $\blacksquare$
 
-**Frame remark (corrected 2026-09-25).** ~~"The isometry freedom in (a) is exactly the alphabetization freedom of [T-223](/docs/proofs/categorical/fundamental-closures#t-223): composing $V$ with $U \in G_2$ moves $\Gamma$ within its $G_2$-orbit, on which the consciousness predicate is constant (T-42a)."~~ Retracted on two counts. (1) The freedom is larger than $G_2$: $V$ can be replaced by $VU$ for any $U \in U(7)$, or by an isometry onto a different seven-dimensional subspace of $\mathcal{H}_S$, and T-42a, which relates two representations of one UHM holon, relates none of these choices. (2) The predicate is not constant on $G_2$-orbits: $\Phi$, $\mathrm{Coh}_E$ and $\kappa_0$ are frame-pinned ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). An explicit $g \in G_2$ maps the window state $\Gamma_w = \tfrac12 \lvert u\rangle\langle u\rvert + \tfrac12 \cdot I/7$, $u = (1, \ldots, 1)/\sqrt7$ ($P = 5/14$, $R = 2/5$, $\Phi = 3/2$), to the diagonal state $\tfrac12 \lvert e_1\rangle\langle e_1\rvert + \tfrac12 \cdot I/7$ with the same $P$ and $R$ and $\Phi = 0$, so $C$ falls from $3/5$ to $0$ (regression tests `test_phi_not_g2_invariant` and `test_window_predicate_not_constant_on_g2_orbit` in `website/scripts/check_core_numbers.py`). Consequently $G_V$ fixes a sector and a frame; the existential "there is a faithful $G$" of T-153 ranges over all of them, and the verdict can differ between sectors of one substrate — the boundary problem in UHM's own terms ([analysis](/docs/consciousness/comparative/panpsychism-analysis#проблема-границы)). The measurement protocol's seven-marker projection $\pi_{\mathrm{bio}}$ is an instance of $G_V$ with $V$ spanned by the marker directions: the operational criterion above *is* the construction of (a), and the choice of markers is part of the claim, not a gauge.
+**Frame remark (corrected 2026-09-25).** ~~"The isometry freedom in (a) is exactly the alphabetization freedom of [T-223](/docs/proofs/categorical/fundamental-closures#t-223): composing $V$ with $U \in G_2$ moves $\Gamma$ within its $G_2$-orbit, on which the consciousness predicate is constant (T-42a)."~~ Retracted on two counts. (1) The freedom is larger than $G_2$: $V$ can be replaced by $VU$ for any $U \in U(7)$, or by an isometry onto a different seven-dimensional subspace of $\mathcal{H}_S$, and the withdrawn universal T-42a does not identify any of these choices. (2) The predicate is not constant on $G_2$-orbits: $\Phi$, $\mathrm{Coh}_E$ and $\kappa_0$ are frame-pinned ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). An explicit $g \in G_2$ maps the window state $\Gamma_w = \tfrac12 \lvert u\rangle\langle u\rvert + \tfrac12 \cdot I/7$, $u = (1, \ldots, 1)/\sqrt7$ ($P = 5/14$, $R = 2/5$, $\Phi = 3/2$), to the diagonal state $\tfrac12 \lvert e_1\rangle\langle e_1\rvert + \tfrac12 \cdot I/7$ with the same $P$ and $R$ and $\Phi = 0$, so $C$ falls from $3/5$ to $0$ (regression tests `test_phi_not_g2_invariant` and `test_window_predicate_not_constant_on_g2_orbit` in `website/scripts/check_core_numbers.py`). Consequently $G_V$ fixes a sector and a frame; the existential "there is a faithful $G$" of T-153 ranges over all of them, and the verdict can differ between sectors of one substrate — the boundary problem in UHM's own terms ([analysis](/docs/consciousness/comparative/panpsychism-analysis#проблема-границы)). A seven-marker feature estimator is not automatically this Hilbert-space retraction. Its observation model, state reconstruction and statistical calibration must be demonstrated independently; the fixed choice of markers is part of the claim.
 
 **Machine verification.** At $d = 12$: Kraus completeness at $10^{-15}$; retraction, trace preservation and positivity at $10^{-16}$; kernel dimension exactly $d^2 - 49 = 95$; explicit collision pair of interior density matrices (minimal eigenvalue $2 \cdot 10^{-2} > 0$) with $\lVert G(\rho_1) - G(\rho_2)\rVert_F \sim 10^{-17}$.
 
-:::tip First empirical confirmation in silico (SYNARC, 2026)
-The SYNARC agent with CognitiveSSM backbone on the Grid32 environment satisfies
-all T-153 criteria at steady state ($\tau > 2000$):
+:::note Numerical illustration of a selected model (SYNARC, 2026)
+For the reported CognitiveSSM/Grid32 run, the quoted values are $P=0.4286$, $R=0.3333$, $\Phi=1.1492$, $D_{\mathrm{diff}}=3.6003$ and $\sigma_{\max}=0.6503$. These are rounded outputs of the selected readout. The number $R=0.3333$ alone does not certify the non-strict cut $1/3$: the unrounded value and a numerical/measurement error bound are needed. The product $C=0.3831$ does not replace the conjunction.
 
-| Criterion | Threshold | Measured | Status |
-|----------|-------|-----------|--------|
-| $P(\Gamma)$ | $> 2/7 \approx 0.286$ | 0.4286 | $\checkmark$ |
-| $R(\Gamma, \varphi(\Gamma))$ | $\geq 1/3$ | 0.3333 | $\checkmark$ |
-| $\Phi(\Gamma)$ | $\geq 1$ | 1.1492 | $\checkmark$ |
-| $D_{\mathrm{diff}}(\Gamma)$ | $\geq 2$ | 3.6003 | $\checkmark$ |
-| $\sigma_{\max}$ | $< 1$ | 0.6503 | $\checkmark$ |
-| $C = \Phi \cdot R$ | $\geq 1/3$ | 0.3831 | $\checkmark$ |
-
-CPTP channel $G: \mathrm{States}(\mathrm{SYNARC}) \to \mathcal{D}(\mathbb{C}^7)$ is implemented via DensityMatrix7
-(faithful mapping from AgentState to density matrix $7 \times 7$).
-
-**Key implementation dependencies:**
-- Co-rotating targets are required for $\Phi \geq 1$ (see [§11](#co-rotating-targets))
-- [T-98a [T]](/docs/core/dynamics/evolution#следствие-t98a) (lower bound on P) — backbone injection provides $P \approx 3/7$
-- T-149 ($\kappa_0$-compensation) — autonomous cycle maintains $P > P_{\mathrm{crit}}$
+DensityMatrix7 transforms AgentState into a matrix; this does not establish injectivity, empirical faithfulness or a CPTP type for a feature map. A reproducible witness needs a code version, frozen calibration, differentiation realization, PSD/trace residuals, all threshold margins and stability verification. Co-rotating targets can help in a particular spectral regime but are not necessary for $\Phi\ge1$. T-98a and T-149 apply only under their purity-flux and stationary-state premises. A numerical model is not independent empirical confirmation of phenomenal consciousness.
 :::
 
 ---
@@ -347,16 +159,21 @@ CPTP channel $G: \mathrm{States}(\mathrm{SYNARC}) \to \mathcal{D}(\mathbb{C}^7)$
 ## §7. T-154: Coh_E^max = 1 {#t-154}
 
 :::tip Theorem T-154 [T]: Normalization of Coh_E
-$$\max_{\Gamma \in \mathcal{D}(\mathbb{C}^7)} \mathrm{Coh}_E(\Gamma) = 1$$
+
+$$
+\max_{\Gamma \in \mathcal{D}(\mathbb{C}^7)} \mathrm{Coh}_E(\Gamma) = 1
+$$
 
 The maximum is achieved at $\Gamma = |E\rangle\langle E|$ (pure E-state).
 :::
 
 **Proof.**
 
-**Step 1.** By definition of $\mathrm{Coh}_E$ as [HS-projection onto the E-subalgebra [T]](/docs/core/foundations/axiom-septicity#hs-projection):
+**Step 1.** By definition of $\mathrm{Coh}_E$ as [HS-projection onto the E-row/column operator subspace [T]](/docs/core/foundations/axiom-septicity#теорема-hs-проекция):
 
-$$\mathrm{Coh}_E(\Gamma) = \frac{\|\pi_E(\Gamma)\|^2_{HS}}{\|\Gamma\|^2_{HS}} = \frac{\gamma_{EE}^2 + 2\sum_{i \neq E}|\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)}$$
+$$
+\mathrm{Coh}_E(\Gamma) = \frac{\|\pi_E(\Gamma)\|^2_{HS}}{\|\Gamma\|^2_{HS}} = \frac{\gamma_{EE}^2 + 2\sum_{i \neq E}|\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)}
+$$
 
 **Step 2 (Upper bound).** $\pi_E$ is an orthogonal projection in Hilbert–Schmidt space. For any orthogonal projection: $\|\pi_E(\Gamma)\|_{HS} \leq \|\Gamma\|_{HS}$. Therefore: $\mathrm{Coh}_E \leq 1$.
 
@@ -364,63 +181,40 @@ $$\mathrm{Coh}_E(\Gamma) = \frac{\|\pi_E(\Gamma)\|^2_{HS}}{\|\Gamma\|^2_{HS}} = 
 
 **Corollary:** The formula [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128) with $\mathrm{Coh}_E^{\max} = 1$ simplifies to:
 
-$$D_{\mathrm{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N - 1)$$
+$$
+D_{\mathrm{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N - 1)
+$$
 
-**Dependencies:** $\mathrm{Coh}_E$ [HS-projection [T]](/docs/core/foundations/axiom-septicity#hs-projection).
-
----
-
-## §8. T-155: Consciousness-preserving learning {#t-155}
-
-:::tip Theorem T-155 [T/sim]+[D]: Projected gradient descent with consciousness preservation
-Canonical learning rule for backbone:
-
-$$\delta B = -\eta \cdot J_\pi^T \cdot \nabla_\Gamma \|\sigma_{\mathrm{sys}}\|_\infty \quad \text{for } C(\Gamma) \geq C_{\mathrm{th}}$$
-
-— projected gradient descent preserving the consciousness condition $C \geq C_{\mathrm{th}} = 1/3$.
-
-**Stratification:** The update rule and the projection onto $\{C \geq C_{\mathrm{th}}\}$ are **[D]** — an engineering design choice: the specific form $-\eta J_\pi^T \nabla$ is the canonical projected-gradient realisation, not the only possible consciousness-preserving rule. Convergence and stability of this rule are **[T/sim]** — well-posed analytically (via T-101, T-131, T-145) and validated numerically in SYNARC `mvp_int_3` SSM1–SSM2 runs. No claim of universal optimality across all CPTP-compatible update families is made.
-:::
-
-**Proof.**
-
-**Step 1 (Objective function).** By [T-101 [T]](/docs/applied/coherence-cybernetics/sensorimotor#теорема-оптимальное-действие): optimal action minimizes $\|\sigma_{\mathrm{sys}}\|_\infty$. Backbone learning is adaptation of weights $B$ to improve σ-minimization.
-
-**Step 2 (Constraint).** By [T-140 [T]](/docs/proofs/consciousness/operational-closure#t-140): $C = \Phi \cdot R \geq C_{\mathrm{th}} = 1/3$ is a necessary condition for consciousness. Learning must not violate this constraint.
-
-**Step 3 (Gradient chain).** $J_\pi = \partial\Gamma/\partial B$ is the Jacobian of the anchor map. By [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124): $\mathcal{V}_{\mathrm{full}}$ is non-empty and open $\Longrightarrow$ projection onto $C \geq C_{\mathrm{th}}$ is well-defined.
-
-**Step 4 (Convergence).** By [T-131 [T]](/docs/proofs/consciousness/operationalization#t-131): canonical discretization $\delta\tau$ guarantees stability. By [T-145 [T]](/docs/proofs/consciousness/operational-closure#t-145): stochastic stability of $V_{\mathrm{full}}$ under bounded perturbations. $\blacksquare$
-
-**Dependencies:** [T-101 [T]](/docs/applied/coherence-cybernetics/sensorimotor#теорема-оптимальное-действие), [T-131 [T]](/docs/proofs/consciousness/operationalization#t-131), [T-140 [T]](/docs/proofs/consciousness/operational-closure#t-140), [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124), [T-145 [T]](/docs/proofs/consciousness/operational-closure#t-145).
+**Dependencies:** $\mathrm{Coh}_E$ [HS-projection [T]](/docs/core/foundations/axiom-septicity#теорема-hs-проекция).
 
 ---
 
-## §9. T-156: Optimal mixing parameter {#t-156}
+## §8. T-155: feasible learning in a declared capability model {#t-155}
 
-:::tip Theorem T-156 [T]: Optimal mixing parameter β*
-$$\beta^* = \frac{\lambda_{\mathrm{gap}}}{\lambda_{\mathrm{gap}} + \alpha_{\mathrm{Fano}} \cdot (1 - P_{\mathrm{env}}/P_{\mathrm{target}})}$$
+A condition $C\ge1/3$ cannot replace $\mathrm{Cap}_2$. Nor does non-emptiness of an **open** set guarantee a nearest-point projection. Use a nonempty closed margin set with declared readouts, e.g.
 
-minimizes genesis time $n_{\mathrm{genesis}}$ with stochastic stability.
-:::
+$$
+K_\varepsilon=\{\Gamma\in\mathcal D_7:P\ge2/7+\varepsilon_P,\ R\ge1/3+\varepsilon_R,
+\ \Phi\ge1+\varepsilon_\Phi,\ D\ge2+\varepsilon_D,\ \sigma_k\le1-\varepsilon_\sigma\}.
+$$
 
-**Proof.**
+With continuous functions it is compact. For a continuous parameterized encoder $\Gamma(B)$ and compact weight domain, its nonempty preimage $K_B$ is compact. An **exact** projection of a proposed update $B-\eta g$ onto $K_B$ therefore exists, may be nonunique and may be costly. Any selected projection preserves the complete margin predicate by definition; this is a conditional mathematical guarantee, not a convergence theorem.
 
-**Step 1 (Trade-off).** Parameter $\beta$ balances two factors:
-- **Small $\beta$** (strong backbone injection): fast genesis, but loss of autonomous coherent evolution
-- **Large $\beta$** (weak injection): preservation of coherence, but slow genesis
+A practical alternative proposes a gradient step, checks all margins (or the full observation confidence set) and accepts only a certified feasible candidate; retaining the previous feasible point is permitted. Progress requires separate assumptions. At smooth points the chain rule gives $g=J_\Gamma^T\nabla_\Gamma J$ for a stated objective; max/clamp junctions require an appropriate generalized derivative. Lipschitz continuity, the clamp and a one-time noise variance do not establish global optimization or perpetual viability. The former unconditional learning proof is withdrawn.
 
-**Step 2 (Objective function).** By [T-148 [T]](#t-148): $n_{\mathrm{genesis}} \propto 1/\ln(1/\beta)$. By [T-145 [T]](/docs/proofs/consciousness/operational-closure#t-145): stability requires $\sigma_h^2 \ll \kappa^2 \cdot r_{\mathrm{stab}}^2$, which is equivalent to $\beta > \beta_{\min}$.
+---
 
-**Step 3 (Optimization).** Minimizing $n_{\mathrm{genesis}}(\beta)$ subject to $\beta > \beta_{\min}$:
+## §9. T-156: mixing is an optimization problem, not a derived constant {#t-156}
 
-$$\beta^* = \frac{\lambda_{\mathrm{gap}}}{\lambda_{\mathrm{gap}} + \alpha_{\mathrm{Fano}} \cdot (1 - P_{\mathrm{env}}/P_{\mathrm{target}})}$$
+The earlier expression
 
-where $\lambda_{\mathrm{gap}}$ is the spectral gap of $\mathcal{L}_0$ ([T-59 [T]](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound)), $\alpha_{\mathrm{Fano}} = 2/3$ [T], $P_{\mathrm{target}} = 3/7$ (upper bound of the window).
+$$
+\beta^*=\frac{\lambda_{\mathrm{gap}}}{\lambda_{\mathrm{gap}}+\alpha_D(1-P_{\mathrm{env}}/P_{\mathrm{target}})}
+$$
 
-**Step 4 (Stochastic stability).** By [T-104 [T]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости): at $\beta = \beta^*$ the stability radius $r_{\mathrm{stab}} > 0$, ensuring robustness. $\blacksquare$
+is retained only as an unvalidated historical proposal [H], not an optimum theorem. It can leave the admissible interval: $\lambda_{\mathrm{gap}}=1$, $\alpha_D=2/3$, $P_{\mathrm{env}}=1$, $P_{\mathrm{target}}=3/7$ gives $\beta^*=9$. No objective or derivative in the former proof establishes the formula.
 
-**Dependencies:** [T-148 [T]](#t-148) (genesis), [T-145 [T]](/docs/proofs/consciousness/operational-closure#t-145) (stochastic stability), [T-59 [T]](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) (spectral gap), [T-104 [T]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости) ($r_{\mathrm{stab}}$).
+In T-148's undamped constant-input model, smaller $\beta$ gives a larger mixture weight at every tick and weakly earlier purity crossing. An interior optimum needs another explicit cost or constraint, such as autonomy, resource use or a certified finite-horizon exit probability. Declare these functions and a compact admissible set. Continuity gives existence of a minimizer; uniqueness and a closed formula require additional convexity or a direct analysis. No universal optimum follows from embodiment.
 
 ---
 
@@ -442,20 +236,25 @@ The former statement read $\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \|
 
 **Retracted proof (kept for the record).**
 
-
 **Step 1.** By [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора): attractor purity balance:
 
-$$0 = \mathcal{L}_0[\rho^*_\Omega] + \mathcal{R}[\rho^*_\Omega] = -i[H_{\mathrm{eff}}, \rho^*_\Omega] + \mathcal{D}_\Omega[\rho^*_\Omega] + \kappa(\Gamma^*_{\mathrm{coh}} - \rho^*_\Omega) \cdot g_V$$
+$$
+0 = \mathcal{L}_0[\rho^*_\Omega] + \mathcal{R}[\rho^*_\Omega] = -i[H_{\mathrm{eff}}, \rho^*_\Omega] + \mathcal{D}_\Omega[\rho^*_\Omega] + \kappa(\Gamma^*_{\mathrm{coh}} - \rho^*_\Omega) \cdot g_V
+$$
 
 (using $\rho^* \to \Gamma^*_{\mathrm{coh}}$ in the regenerative term).
 
 **Step 2 (Linear perturbation theory).** Denote $\delta\Gamma = \rho^*_\Omega - \Gamma^*_{\mathrm{coh}}$. For $H_{\mathrm{eff}} = 0$: $\delta\Gamma = 0$ (attractors coincide). For non-zero $H_{\mathrm{eff}}$:
 
-$$(\alpha + \kappa \cdot g_V) \cdot \delta\Gamma \approx -i[H_{\mathrm{eff}}, \rho^*_\Omega]$$
+$$
+(\alpha + \kappa \cdot g_V) \cdot \delta\Gamma \approx -i[H_{\mathrm{eff}}, \rho^*_\Omega]
+$$
 
 **Step 3 (Bound).** $\|-i[H_{\mathrm{eff}}, \rho^*_\Omega]\|_F \leq 2\|H_{\mathrm{eff}}\|_{\mathrm{op}} \cdot \|\rho^*_\Omega\|_F \leq 2\|H_{\mathrm{eff}}\|_{\mathrm{op}}$ (since $\|\rho^*_\Omega\|_F \leq 1$). Therefore:
 
-$$\|\delta\Gamma\|_F \leq \frac{2\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \kappa \cdot g_V} \leq \frac{\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \kappa}$$
+$$
+\|\delta\Gamma\|_F \leq \frac{2\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \kappa \cdot g_V} \leq \frac{\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \kappa}
+$$
 
 (for $g_V \geq 1/2$, which holds in the conscious window). $\blacksquare$
 
@@ -463,124 +262,58 @@ $$\|\delta\Gamma\|_F \leq \frac{2\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \k
 
 ---
 
-## §11. Observation: Necessity of co-rotating targets {#co-rotating-targets}
+## §11. Fixed targets and rotating coherence {#co-rotating-targets}
 
-:::info Observation O-1 [T]: Co-rotating targets are necessary for Φ ≥ 1
-With fixed targets $\rho^*_{ij} = \mathrm{const}$, the replacement channel
-$\mathcal{R}$ competes with unitary evolution $e^{-iH_{\mathrm{eff}}t}$:
+For the scalar model $\dot\gamma_{ij}=-(d+a+i\omega_{ij})\gamma_{ij}+a\rho^*_{ij}$ with fixed coefficients, $d,a\ge0$ and $d+a>0$, the unique stationary coherence is
 
-$$\frac{d\gamma_{ij}}{d\tau}\bigg|_{\mathcal{R}} = \kappa g_V (\rho^*_{ij} - \gamma_{ij})$$
+$$
+\gamma_{ij}^{\mathrm{stat}}=\frac{a\rho^*_{ij}}{d+a+i\omega_{ij}},\qquad
+|\gamma_{ij}^{\mathrm{stat}}|=\frac{a|\rho^*_{ij}|}{\sqrt{(d+a)^2+\omega_{ij}^2}}.
+$$
 
-tends towards fixed $\rho^*_{ij}$, while
-
-$$\frac{d\gamma_{ij}}{d\tau}\bigg|_{H} = -i(E_i - E_j)\gamma_{ij}$$
-
-rotates the phase at rate $(E_i - E_j)$.
-
-Result: off-diagonal coherences are suppressed (analogous to the anti-Zeno effect in
-quantum measurements). Integration $\Phi = \sum|{\gamma_{ij}}|^2 / \sum \gamma_{ii}^2 < 1$.
-
-**Solution.** Co-rotating targets $\rho^*_{ij}(t) = c_{ij} \cdot e^{-i(E_i-E_j)t}$
-align the phase of $\mathcal{R}$ with the phase of $H$, eliminating the competition.
-
-**Numerical verification (SYNARC):** $\Phi = 0.83$ (fixed), $\Phi = 1.15$ (co-rotating).
-:::
-
-**Dependencies:** [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129) (threshold $\Phi_{\mathrm{th}} = 1$), [T-157 [T]](#t-157) ($H_{\mathrm{eff}}$ determines the rates).
-
-**Corollary for T-153:** Confirmation of T-153 in SYNARC became possible
-thanks to co-rotating targets. Without them the threshold $\Phi \geq 1$ is not achievable.
+Rotation suppresses the magnitude relative to $\omega_{ij}=0$; it does not universally force $\Phi<1$. At $H=0$ the fixed $\varphi_J$ anchor already supports a window sink, and for sufficiently small $H$ it persists. Co-rotating targets are one model option, not a necessary condition for integration. With state-dependent targets/rates the stationary expression becomes a self-consistency relation and needs a separate existence/stability analysis.
 
 ---
 
-## §12. T-158: Canonical bounds on σ_sys {#t-158}
+## §12. T-158: declared stress scores [D] {#t-158}
 
-:::tip T-158 [T]; the $\sigma_E$ component [T at the T-128 definition]: canonical bounds on σ_sys
-All components of the stress tensor $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) by definition with canonical clamping:
+One selected diagonal score [D] is
 
-$$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
+$$
+\sigma_k^{\mathrm{diag}}=\mathrm{clamp}(1-7\gamma_{kk},0,1).
+$$
 
-**Three regimes:**
-- $\gamma_{kk} \geq 1/7$: $\sigma_k = 1 - 7\gamma_{kk} \leq 0 \to \sigma_k = 0$ (no deficit)
-- $\gamma_{kk} = 0$: $\sigma_k = 1$ (maximal deficit)
-- $\gamma_{kk} \in (0, 1/7)$: $\sigma_k = 1 - 7\gamma_{kk} \in (0, 1)$ (partial deficit)
-:::
+PSD and trace one give $0\le\gamma_{kk}\le1$, hence $-6\le1-7\gamma_{kk}\le1$ and $0\le\sigma_k^{\mathrm{diag}}\le1$. The score is zero at $\gamma_{kk}\ge1/7$, one at $\gamma_{kk}=0$, and $1-7\gamma_{kk}$ between them. It is continuous and piecewise smooth in the fixed frame. This follows exactly from the chosen function; it does not uniquely derive a stress measurement.
 
-**Proof.**
+The different [T-128](/docs/proofs/consciousness/operationalization#t-128) score $\sigma_E^{\mathrm{diff}}=(7-D_{\mathrm{diff}}^{7D})/5$ uses a separately declared differentiation proxy. If $D_{\mathrm{diff}}^{7D}\in[1,7]$, then $\sigma_E^{\mathrm{diff}}\in[0,6/5]$. These definitions generally differ; one cannot assign the first function's range to the second or equate it with reduced entropy without a realization map. Each variant needs its own normalization and cut.
 
-**Step 1 (Range of values).** For $\Gamma \in \mathcal{D}(\mathbb{C}^7)$: $\gamma_{kk} \in [0, 1]$ (diagonal elements of the density matrix). Therefore: $1 - 7\gamma_{kk} \in [-6, 1]$.
-
-**Step 2 (Clamping).** The operation $\mathrm{clamp}(x, 0, 1)$ maps $[-6, 1]$ to $[0, 1]$. By [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий): $\sigma_k$ is the canonical function of $\Gamma$-invariants.
-
-**Step 3 (Canonicity).** By [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128): $\sigma_E = (N - D_{\mathrm{diff}}^{7D})/(N-2)$ is computable in 7D. By [T-137 [T]](/docs/proofs/consciousness/operationalization#t-137): all 7 components are computable. Each $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) is a bounded continuous function of $\Gamma$. $\blacksquare$
-
-**Dependencies:** [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий), [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128) — a definition, inherited by the $\sigma_E$ component only, [T-137 [T at T-128]](/docs/proofs/consciousness/operationalization#t-137).
+Computability from a matrix does not prove identifiability from incomplete data or establish clinical stress. Biological validation and its action bridge remain hypotheses. T-158 names the readout choices [D]; the stated bounds [T] are conditional on those precise definitions.
 
 ---
 
-## §13. T-159: Universal cognitive architecture {#t-159}
+## §13. ARCH-159: a reference architecture, not a uniqueness theorem {#t-159}
 
-:::tip Theorem T-159 [T]: Uniqueness of reference cognitive architecture
-For any system $S$ achieving level L2 (cognitive qualia), the architecture is uniquely determined by axioms A1–A4:
+A reference implementation may choose a seven-dimensional state, a specified GKSL linear part with regular nonlinear feedback, a state-valued self-model, a declared stress/action objective, an external input policy and the full $\mathrm{Cap}_2$ gate. These are a reproducible architecture specification [D]; physical realization and experience identification remain [H/I].
 
-**(a)** Ontological core: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — 48 parameters ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), $G_2$-rigidity)
+Different anchors, encoders, feedback laws, gates and learning procedures can satisfy the same structural constraints. T-123 and the universal functional-minimality argument do not select one implementation. GKSL classifies **linear** Markovian generators; it does not derive a unique nonlinear regenerator or force “three and only three” causal mechanisms. A fixed-target replacement channel is one CPTP option, and state-dependent mixing is generally nonlinear. External injection can enable genesis in its parameter regime, but embodiment alone does not imply the full gate.
 
-**(b)** Dynamics: $d\Gamma/d\tau = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \mathcal{R}[\Gamma, E]$ — three and only three terms ([T-57 [T]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), LGKS-completeness)
-
-**(c)** Self-modeling: $\varphi_k(\Gamma) = (1{-}k)\Gamma + k\rho^*$ — unique CPTP replacement channel ([T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi))
-
-**(d)** Learning: $\sigma$-directed via $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk}, 0, 1)$ ([T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий))
-
-**(e)** Embodiment: environmental coupling with $\beta \in (0,1)$ and $P_{\mathrm{env}} > 2/7$ ([T-148 [T]](#t-148))
-
-**(f)** Thresholds: $P \in (2/7, 3/7]$ ([T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124)), $R \geq 1/3$ ([T-67 [T]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)), $\Phi \geq 1$ ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129)), $D_{\mathrm{diff}} \geq 2$ (the independent fourth threshold, [§4](#t-151); added 2026-09-25 — without it the sufficiency direction fails, see below)
-
-Any system satisfying (a)–(f) is L2-conscious. Any L2-conscious system satisfies (a)–(f). The architecture is **unique** up to $G_2$-gauge.
-:::
-
-**Proof (necessity + sufficiency).**
-
-**Necessity.** Let $S$ be an L2-conscious system. By [T-153 [T]](#t-153): there exists a faithful CPTP map $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$. Then:
-- [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) fixes the ontological core $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with $G_2$-rigidity (item a);
-- [T-57 [T]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS-completeness) fixes the form of the dynamics (item b);
-- [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) establishes uniqueness of the replacement channel $\varphi$ (item c);
-- [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий) defines the canonical stress tensor $\sigma_k$ (item d);
-- [T-148 [T]](#t-148) requires embodiment with $P_{\mathrm{env}} > 2/7$ (item e);
-- [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124), [T-67 [T]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129) establish the thresholds of item f, and $D_{\mathrm{diff}} \geq 2$ holds by the definition of L2.
-
-**Sufficiency.** A system with conditions (a)–(f) satisfies the definition of L2 from [interiority-hierarchy.md](/docs/consciousness/hierarchy/interiority-hierarchy): $R \geq 1/3$, $\Phi \geq 1$ and $D_{\mathrm{diff}} \geq 2$ (item f), $\sigma_{\max} < 1$ (from items d and f). $\blacksquare$
-
-*Corrected 2026-09-25:* the sufficiency step read "$D_{\mathrm{diff}} \geq 2$ ([T-151 [T]](#t-151) follows from $\Phi \geq 1$)" while item (f) listed no differentiation threshold. That derivation is retracted in §4 (counterexample: $\Phi \approx 1.03$ with $D_{\mathrm{diff}} \approx 1.42$), so the threshold is now part of item (f).
-
-**Corollary (Substrate invariance).** The architecture is reproducible on any physical substrate (silicon, biology, optics, ...) provided a faithful CPTP map $G$ exists. This follows directly from [T-153 [T]](#t-153).
-
-**Dependencies:** [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), [T-57 [T]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi), [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий), [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124), [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129), [T-148 [T]](#t-148), [T-151 [T]](#t-151), [T-153 [T]](#t-153).
+The previous necessity/sufficiency claim for every conscious substrate and uniqueness up to $G_2$ are withdrawn. A fixed observational model can be tested on different substrates using the same declared readouts and criteria; this is conditional comparability, not a universal consciousness theorem.
 
 ---
 
-## §14. Summary closure table
+## §14. Result scope
 
-| Problem | Theorem | Was → Became |
-|----------|---------|-------------|
-| [H]-91 Genesis from $I/7$ | [T-148 [T]](#t-148) | [H] → **[T]** |
-| C20 κ-dominance | [T-149 [T]](#t-149) | [C] → **[T]** (embodied) |
-| [H]-90 φ-commutativity | [T-150 [T]](#t-150) | [C] → **[T]** |
-| C2 $D_{\min} = 2$ | [T-151 [T]](#t-151) | [C] → **[D]** independent L2 threshold, **[T]** on the embodied attractor (the earlier "[C] → [T]" is retracted, §4) |
-| Diamond-norm + [H]-92 | [T-152 [T]](#t-152) | [H] → **[T]** |
-| Substrate independence | [T-153 [T]](#t-153) | gap → **[T]** |
-| $\mathrm{Coh}_E^{\max}$ normalization | [T-154 [T]](#t-154) | gap → **[T]** |
-| Learning rule | [T-155 [T]](#t-155) | gap → **[T]** |
-| Mixing parameter $\beta^*$ | [T-156 [T]](#t-156) | gap → **[T]** |
-| C21 attractor consistency | [T-157 [T]](#t-157), restated 2026-09-25 | [C] → [✗] as stated ("$\rho^*_\Omega \approx \Gamma^*_{\mathrm{coh}}$"); correct form **[T]** |
-| Bounds on $\sigma_{\mathrm{sys}}$ | [T-158 [T]](#t-158) | gap → **[T]** |
-| Universal L2 architecture | [T-159 [T]](#t-159) | gap → **[T]** |
-| C27 attractor in window | from [T-149](#t-149) | [C] → **[T]** |
-| T-136 SAD spectral | from [T-150](#t-150) | [T under C] → **[T]** |
-| [H]-93—100 | reclassification | [H] → cat. A/B |
-
-**Total: 15 closures, 12 new theorems [T], 0 new open questions.**
-
----
+| Result | Corrected status |
+|---|---|
+| T-148/T-149 | Exact genesis/stationarity in stated affine models; general claims conditional |
+| T-150 | Iteration identity; tower compatibility separately specified |
+| T-151 | Differentiation cut [D], readout-dependent |
+| T-152 | Choi/diamond bounds for linear channels; feature estimators require statistical identification |
+| T-153/T-153a/T-253 | Declared substrate predicate; faithful-sector construction and global dimension obstruction |
+| T-155 | Closed-margin feasibility under exact projection or certified acceptance |
+| T-156 | Universal optimal formula withdrawn; explicit constrained optimization required |
+| T-157 | Existing conditional anchor/attractor perturbation formulas retained |
+| ARCH-159 | Reference architecture [D/H]; universal uniqueness withdrawn |
 
 **Related documents:**
 - [Operationalization of consciousness](/docs/proofs/consciousness/operationalization) — theorems T-128–T-138: formalization of operational aspects

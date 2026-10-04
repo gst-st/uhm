@@ -1,453 +1,139 @@
 ---
 sidebar_position: 8
-title: "Gap Phase Diagram"
+title: "Gap Regimes and Conditional Phase Models"
 slug: /core/dynamics/gap-phase-diagram
-description: "Three Gap phases (ordered, intermediate, disordered), bifurcations, Whitney catastrophes, swallowtail and levels L0→L4, non-Markovian oscillations, critical phenomena"
+description: "Measured phase profiles, weighted observables, conditional bifurcations, memory kernels and symmetry tests"
 ---
 
-# Gap Phase Diagram
+# Gap Regimes and Conditional Phase Models
 
-:::info Who this chapter is for
-Three phases of coherence, critical phenomena, bifurcations. Assumes familiarity with the [Gap operator](/docs/core/dynamics/gap-operator) and [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics).
-:::
+A distribution of matrix phases is an observable in a fixed semantic frame. It is not, by itself, a thermodynamic phase, cognitive level or clinical state. This page uses the [typed kernel](/docs/reference/mathematical-kernel) and corrects the old universal three-phase/swallowtail claims **[✗]**. A proposed phase model must specify dynamics, ensemble, controls and a measurement bridge.
 
-This chapter presents a **map of all possible states** of holon opacity. Just as the phase diagram of water shows at what temperature and pressure water exists as ice, liquid, or steam, the Gap phase diagram shows under what conditions the system's opacity is **ordered** (specific channels are transparent, others are not), **disordered** (all channels are equally murky), or **dead** (coherences have disappeared).
+## 1. Controls and dimensions {#параметры}
 
-The reader will learn:
-- The three Gap phases and how they relate to clinical states
-- Critical phenomena and phase transitions between phases
-- How the swallowtail catastrophe connects Gap to levels of consciousness L0--L4
-- Five independent mechanisms protecting Gap from disappearing
+A rate ratio $r=\kappa/\Gamma_2$ is dimensionless if both are rates in the same units and $\Gamma_2>0$. A reduced temperature $t=T_{\mathrm{eff}}/T_c$ needs independently specified positive quantities with the same units. The former formulas for $T_c$, $r_c$, and a unique boundary are not consequences of $P,R,\Phi$ or the number 21. Nonlinear targets, bootstrap terms and environmental sources change the stationary equation. Their full parameter dependence must be retained.
 
-:::tip Water analogy
-The three Gap phases are strikingly similar to the three phases of water:
+## 2. Descriptive regimes, not three universal phases {#три-фазы}
 
-| Water phase | Gap phase | What happens |
-|-----------|----------|----------------|
-| **Ice** (ordered) | **Phase I** — ordered Gap | Water molecules are arranged in a crystal lattice. Analogously: some channels are transparent, others opaque — there is **structure**. The system "knows" where its blind spots are. |
-| **Water** (liquid) | **Phase II** — disordered Gap | Molecules move chaotically but remain bound. Analogously: all channels are **equally murky**. Opacity exists, but without structure — a "diffuse fog." |
-| **Steam** (gas) | **Phase III** — dead zone | Molecules have dispersed, no bonds remain. Analogously: coherences have **disappeared**, Gap is undefined. The system is non-viable. |
-
-The ice $\to$ water transition (phase I $\to$ II) is **continuous** (2nd order): the structure gradually "blurs." The ice $\to$ steam transition (phase I $\to$ III) is **discontinuous** (1st order): the system abruptly loses coherence, as in acute decompensation.
-:::
-
-The full phase diagram of [Gap dynamics](/docs/core/dynamics/gap-dynamics) describes the stationary opacity regimes of the holon in the plane of control parameters $(T_{\text{eff}}, \kappa/\Gamma_2)$. Three main phases, critical phenomena, and Whitney catastrophes connect Gap thermodynamics with [levels of interiority](/docs/consciousness/hierarchy/interiority-hierarchy) and clinical observations.
-
----
-
-## 1. Control parameters {#параметры}
-
-Two dimensionless parameters determine the stationary Gap state:
-
-**(a)** Dimensionless temperature:
+For detected coherences $S_\eta=\{(i,j):i<j,|\gamma_{ij}|\ge\eta\}$, define
 
 $$
-t := \frac{T_{\text{eff}}}{T_c} = \frac{\Gamma_2}{\kappa_0} \cdot \frac{k_B T_{\text{phys}} \ln 21}{\mu^2}
+g_{ij}=|\operatorname{Im}\gamma_{ij}|/|\gamma_{ij}|,\quad
+W=\sum_{i\ne j}|\gamma_{ij}|^2,\quad A_\eta=\operatorname{Var}_{S_\eta}(g_{ij}).
 $$
 
-where $T_{\text{eff}} = (\Gamma_2 / \kappa_0) \cdot k_B T_{\text{phys}}$ is the [effective temperature](/docs/core/dynamics/gap-thermodynamics#эффективная-температура).
+The amplitude threshold and empty-support convention must be stated. A detection mask is not inferred as zero phase. Choose $w_0,a_0$ and optionally describe:
 
-**(b)** Ratio of regeneration to dissipation:
+| Descriptive regime [D] | Declared test |
+|---|---|
+| Nonuniform supported profile | $W>w_0$, $A_\eta>a_0$ |
+| Nearly uniform supported profile | $W>w_0$, $A_\eta\le a_0$ |
+| Low coherent weight | $W\le w_0$ |
 
-$$
-r := \kappa / \Gamma_2
-$$
+If support data are inadequate, return unknown. These tests neither prove symmetry breaking nor distinguish spontaneous thermodynamic phases. They do not imply awareness of blind spots, dissociation or death. A pure diagonal state has $W=0$ and $P=1$: loss of off-diagonal weight alone does not imply loss of the purity gate, although the integration gate fails.
 
-— dimensionless "viability" parameter.
-
----
-
-## 2. Three phases {#три-фазы}
-
-:::tip Theorem 2.1 (Gap phase diagram) [T]
-In the $(t, r)$ plane the system has three phases:
-
-**(a) Phase I — Ordered Gap** ($t < 1$, $r > r_c$):
-a few channels with high Gap, the rest transparent. $G_2 \to H$ spontaneously broken. Goldstone modes exist. Order parameter: $\mathcal{G}_{\text{total}} > 0$, rank $\hat{\mathcal{G}} \in \{1, 2, 3\}$.
-
-**(b) Phase II — Disordered Gap** ($t > 1$, $r > r_c$):
-Gap distributed uniformly across all channels. Anisotropy $\sigma^2_{\text{Gap}} \to 0$. $G_2$ approximately preserved. Note: the stationary formula $\mathrm{Gap}^{(\infty)}(i,j) = |\sin(\theta_{ij} - \arctan(\ldots))|$ from the [unified theorem](/docs/core/dynamics/gap-dynamics#единая-теорема) admits inhomogeneous $\theta_{ij}$, but at $T_{\text{eff}} > T_c$ thermal fluctuations randomize phases, making the **time-averaged** Gap isotropic.
-
-**(c) Phase III — Dead zone** ($r < r_c$):
-regeneration is too weak, coherences decay: $|\gamma_{ij}| \to 0$. The system is not [viable](/docs/core/dynamics/viability).
-:::
-
-### Order parameters of the three phases
-
-For each phase, explicit order parameters are defined to quantitatively distinguish regimes:
-
-| Phase | Primary order parameter | Secondary parameter | Behavior |
-|---|---|---|---|
-| I (ordered) | $\sigma^2_{\text{Gap}} := \mathrm{Var}\bigl(\{\mathrm{Gap}(i,j)\}\bigr) > 0$ | $\mathrm{rank}(\hat{\mathcal{G}}) \in \{1,2,3\}$ | Nonzero anisotropy, G₂ broken to $H_{\hat{\mathcal{G}}_*}$ |
-| II (disordered) | $\sigma^2_{\text{Gap}} \to 0$ | $\mathcal{G}_{\text{total}} > 0$, but $\mathrm{Gap}(i,j) \approx \mathrm{const}$ | Isotropic murkiness, G₂ approximately preserved |
-| III (dead) | $\mathcal{G}_{\text{total}} \to 0$ | $\lvert\gamma_{ij}\rvert \to 0 \;\forall\, (i,j)$ | Coherences die out, Gap undefined |
-
-:::note Remark [T]
-The order parameter $\sigma^2_{\text{Gap}}$ vanishes continuously on the transition line I $\leftrightarrow$ II ($t = 1$), characterizing a **second-order** transition. On the line I $\leftrightarrow$ III ($r = r_c$) the total Gap $\mathcal{G}_{\text{total}}$ undergoes a **discontinuity** — a first-order transition.
-:::
-
-Critical value:
+A continuous weighted observable is
 
 $$
-r_c = \frac{P_{\text{crit}}}{7P} \approx \frac{2}{49P}
+J^2:=\|\operatorname{Im}\Gamma\|_F^2=2\sum_{i<j}|\gamma_{ij}|^2g_{ij}^2.
 $$
 
-(a dimensional heuristic [I] marking the topology of the boundary; the exact microscopic boundary — a saddle-node fold of the living branch — and the closed-form consciousness window in $r$ are given by [T-259](/docs/applied/coherence-cybernetics/phase-diagram-cc#теорема-окно-питания))
+It distinguishes phase power from amplitude-free means and remains continuous when a coherence vanishes. All-zero phases can occur both inside and outside $\mathsf{Cap}_2$; see [the exact counterexample](/docs/consciousness/hierarchy/gap-characterization#gap-инъекция).
 
-### Phase diagram visualization
-
-```
-    t (T_eff/T_c)
-    │
-  2 ┤         Phase II: Disordered Gap
-    │        (uniform, recoverable)
-    │
-  1 ┤─ ─ ─ ─ ─ ─ ─ ─ ╋ ─ ─ ─ ─ ─ ─ ─ ─ ─
-    │               ╱ (t*,r*)
-    │   Phase I   ╱   ← 2nd order (continuous)
-    │  Ordered   ╱
-    │   Gap     ╱
-    │          ╱
-  0 ┤─────────╱─────────────────────────────
-    │ Ph. III │
-    │  Dead   │
-    └────────┼────────┼─────────────────── r (κ/Γ₂)
-             r_c      1
-```
-
-### Phase transition lines
-
-| Transition | Line | Order | Characteristic |
-|---|---|---|---|
-| I ↔ II | $t = 1$ at $r > r_c$ | 2nd (continuous) | $\beta = 1/2$ (Landau class) |
-| I ↔ III | $r = r_c$ at $t < 1$ | 1st (discontinuous) | $\mathcal{G}_{\text{total}}$ jumps → 0 |
-| Tricritical | $(t^*, r^*) = (1, r_c)$ | Order change | $\beta = 1/4$, $\gamma = 1$, $\delta = 5$ |
-
----
-
-## 3. Clinical correspondence {#клиническое-соответствие}
-
-:::info Theorem 3.1 (Correspondence of phases to clinical states) [I]
-
-| Phase | Clinical analogue | Characteristic |
-|---|---|---|
-| I (ordered) | Normal functioning | Specific opacities (repression), transparency in other channels |
-| II (disordered) | Diffuse dissociative state | All channels equally murky |
-| III (dead) | Dementia, coma, clinical death | Loss of coherences |
-| I ↔ II transition | Psychotic episode | "Melting" of structured opacity |
-| I ↔ III transition | Acute decompensation | Discontinuous collapse under resource exhaustion |
-| Tricritical | Borderline state | Oscillation between ordered and chaotic Gap |
-:::
-
----
-
-## 4. Gap-landscape bifurcations {#бифуркации}
-
-:::note Canonical definition
-The definition of the Gap landscape ($\mathcal{G}: \mathcal{D}(\mathbb{C}^7) \to [0,1]^{21}$), three types of bifurcations (pitchfork, saddle-node, Hopf), and their clinical analogues are described in detail in [Gap Dynamics, sections 3.1–3.3](/docs/core/dynamics/gap-dynamics#бифуркации). Only aspects specific to the phase diagram are considered here.
-:::
-
-In the $(t, r)$ plane, bifurcations of the Gap landscape generate the phase transition lines (section 2). Key types: **pitchfork** (spontaneous breaking of Gap-profile symmetry), **saddle-node** (disappearance of a stationary profile), and **Hopf** (transition to an oscillatory regime). Detailed formulas and proofs are given in [Gap dynamics](/docs/core/dynamics/gap-dynamics#бифуркации).
-
----
-
-## 5. Whitney catastrophes {#катастрофы-уитни}
-
-The basic catastrophes (fold, cusp) are described in [Gap Dynamics, section 3.4](/docs/core/dynamics/gap-dynamics#бифуркации). Here we consider their extension to the **swallowtail** ($A_4$) with 3 control parameters and the connection with [levels of interiority](/docs/consciousness/hierarchy/interiority-hierarchy).
-
-### Swallowtail and levels L0 → L4
-
-:::tip Theorem 5.2 (Swallowtail cascade and L-levels) [T]
-With 3 control parameters $(\kappa, \alpha, \Delta F)$, a **swallowtail** appears — a catastrophe with 4 sheets. Proved via Arnold's theorem (1972): codimension 3, approximate $\mathbb{Z}_2$-symmetry of purity $\Rightarrow$ $A_4$-bifurcation. See [$A_4$-bifurcation](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация).
-
-Correspondence of swallowtail sheets to [interiority levels](/docs/consciousness/hierarchy/interiority-hierarchy):
-
-| Swallowtail sheet | Level | Characteristic |
-|---|---|---|
-| Outer stable | L0–L1 | Stationary Gap, unconscious |
-| Intermediate | L2 | Partially conscious Gap, metastable |
-| Inner unstable | L3 | Near-full Gap awareness |
-| Self-intersection point | L4 | Fixed point $\varphi(\Gamma^*) = \Gamma^*$ |
-:::
-
-### Tristability and quantitative swallowtail model
-
-Normal form of the swallowtail catastrophe ($A_4$) for the effective Gap potential:
+**Random-phase calculation [T under a declared distribution].** If a selected phase is uniform on $[0,2\pi)$, its Gap has density
 
 $$
-V_{\text{eff}}(G) = G^5 + a\,G^3 + b\,G^2 + c\,G
+p(g)=\frac{2}{\pi\sqrt{1-g^2}},\quad0<g<1,
 $$
 
-where $(a, b, c)$ are the three control parameters. The stationary condition $\partial V_{\text{eff}}/\partial G = 0$ gives a degree-four polynomial admitting up to **three stable minima** under the standard swallowtail catastrophe conditions (Arnold, 1975):
+mean $2/\pi$ and variance $1/2-4/\pi^2$. Uniform phase does not give uniform Gap. Equal time averages across channels need a common stationary law and ergodicity; thermalisation or invariance under general $G_2$ rotations does not follow from that equality.
+
+## 3. Clinical correspondence is an empirical bridge {#клиническое-соответствие}
+
+The former assignments of regimes to coma, dementia, psychosis, dissociation and clinical death are hypotheses **[H]**, not diagnoses from a static scalar. A test requires independent clinical labels, longitudinal measurements, an identifiable reconstruction model, relevant confounders and held-out validation. The physical-to-phenomenal bridge remains separate **[I]**. No patient measurements or treatment outcomes are established by this page.
+
+## 4. Verified dynamical bifurcations {#бифуркации}
+
+Find equilibria of the specified flow on the trace-one tangent space and compute its Jacobian. A saddle-node needs a simple zero eigenvalue, nonzero quadratic centre coefficient and transverse parameter variation. A Hopf bifurcation needs a simple imaginary eigenvalue pair, transverse crossing and a Lyapunov-coefficient calculation. A pitchfork requires the appropriate exact symmetry and nondegeneracy. None follows from a crossing of $P=2/7$ or a phase-variance threshold.
+
+## 5. Catastrophes and level labels {#катастрофы-уитни}
+
+A scalar smooth gradient reduction and the explicit degeneracy/unfolding hypotheses are needed. The $A_4$ potential $x^5/5+a x^3/3+b x^2/2+c x$ has a quartic derivative and at most **two** nondegenerate interior minima, not three. A confining even sextic can have three minima in some parameter regimes; its tricritical germ is $A_5$. Three controls alone do not select either model.
+
+Sheets and stationary roots receive no L-label from the normal form. L2 uses the full $\mathsf{Cap}_2$ and typed differentiation; L3 additionally uses independent metamodel tests. A fixed point is not L4. Full corrected prerequisites, discriminants and conditional exponents: [transition models](/docs/consciousness/hierarchy/swallowtail-transitions).
+
+## 6. Memory: a solvable conditional linear model {#немарковские-осцилляции}
+
+For a **signed fluctuation** $x$ around a declared stationary point, consider
 
 $$
-|a| > \sqrt[3]{27b^2/4}, \quad c \in (c_{\min}(a,b),\, c_{\max}(a,b))
+\dot x(t)=-\int_0^tK(t-s)x(s)\,ds+f(t)+\xi(t).
 $$
 
-:::tip Theorem 5.3 (Three minima of the Gap potential and L-levels) [T]
-Three stable Gap profiles are identified with ranges of the interiority hierarchy:
-
-| Minimum | $G$ | Reflection | L-level | Clinical |
-|---|---|---|---|---|
-| $G_{\text{high}} \approx 0.8$ | High | $R \approx 0$ | L0/L1 | Basic interiority, alexithymia |
-| $G_{\text{mid}} \approx 0.4$ | Medium | $R > 0$ | L2 | Normal functioning |
-| $G_{\text{low}} \approx 0.1$ | Low | $R \gg 0$ | L3+ | Reflective / metacognitive consciousness |
-:::
-
-**Transitions between L-levels** — first-order phase transitions (fold bifurcations): [T]
-
-- **L1 $\to$ L2** (awakening of consciousness): fold bifurcation at $\kappa > \kappa_{\text{fold}}$; Gap drops discontinuously from $G_{\text{high}}$ to $G_{\text{mid}}$.
-- **L2 $\to$ L3** (insight): fold bifurcation at $\kappa > \kappa'_{\text{fold}}$; Gap drops discontinuously from $G_{\text{mid}}$ to $G_{\text{low}}$.
-- Reverse transitions occur at **smaller** values of $\kappa$ (hysteresis). Hysteresis width:
+This linear equation is a model **[D]**, not an equation for a bounded absolute phase globally. With Fourier convention $e^{i\omega t}$, a stationary causal response has
 
 $$
-\Delta\kappa_{L1 \to L2} = \frac{\lambda_3 \bar{A}_1}{\mu^2}, \qquad \Delta\kappa_{L2 \to L3} = \frac{\lambda_3 \bar{A}_2}{\mu^2}
+\chi(\omega)=\frac1{-i\omega+\widetilde K(\omega)},\qquad S_x(\omega)=|\chi(\omega)|^2S_\xi(\omega).
 $$
 
-- **Direct jump L1 $\to$ L3** is possible with simultaneous control of all three parameters — a swallowtail path bypassing the intermediate minimum. Necessary condition:
+The second identity assumes a stationary linear response and a specified noise spectrum. A fluctuation–dissipation relation further requires the equilibrium/noise assumptions and its precise convention; an arbitrary memory kernel does not supply them.
+
+For $K(t)=(a/\tau)e^{-t/\tau}$, $a,\tau>0$, introduce $y(t)=\int_0^tK(t-s)x(s)ds$. In the homogeneous equation,
 
 $$
-\lambda_3 \bar{A} < \frac{4\mu^6}{27\lambda_4^2}
+\dot x=-y,\quad\dot y=(a x-y)/\tau,\quad
+\ddot x+\dot x/\tau+a x/\tau=0.
 $$
 
-— suppression of octonionic non-associativity below the swallowtail threshold. [T]
+Its eigenvalues are $[-1\pm\sqrt{1-4a\tau}]/(2\tau)$ **[T]**. Oscillation requires $4a\tau>1$; the other cases are critical/overdamped. This makes no therapeutic frequency recommendation or universal neuronal prediction.
 
-:::tip Status of the swallowtail model [T]
-Theorems 5.2 and 5.3 are proved via Arnold's theorem (1972): three physically independent control parameters $(\kappa, \alpha, \Delta F)$ and the approximate $\mathbb{Z}_2$-symmetry of purity uniquely determine codimension 3 and catastrophe type $A_4$ (swallowtail). The identification of sheets with L-levels is a consequence of the structure of the evolution equation. Full proof: [$A_4$-bifurcation](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация).
-:::
+**Frequency correction.** For diagonal unitary dynamics $\gamma_{ij}(t)=e^{-i(\omega_i-\omega_j)t}\gamma_{ij}(0)$, the supported Gap follows the corresponding absolute sine **[T]**. The tuple $(0,1,2,3,5,8,13)$ has integer differences: all nonzero frequency ratios are rational and all profiles share a period. The limit of Fibonacci-number ratios does not make this finite tuple irrational. Arbitrary phases need not simultaneously become zero, but fully real stationary states show that total phase transparency is possible. Quasiperiodic laws require genuinely incommensurate frequencies and retain the nonlinear Gap distribution above.
 
----
+## 7. Conditional critical phenomena {#критические-явления}
 
-## 6. Non-Markovian Gap oscillations {#немарковские-осцилляции}
+An explicitly tuned even sextic mean-field potential gives $\beta=1/4,\gamma=1,\delta=5,\alpha=1/2$; an ordinary positive-quartic Landau model gives its own mean-field values. The parameter-to-temperature and state-to-order-parameter maps must be nonsingular and specified. A spatial correlation length additionally needs a spatial field and gradient term. Exactness for a physical model requires fluctuation and finite-size control. Internal mode count 21 is not spatial dimension, and deterministic flow does not prove universal exactness. See corrected [T-161](/docs/consciousness/hierarchy/swallowtail-transitions#критические-экспоненты).
 
-The basic theory of non-Markovian oscillations (exponential memory kernel, three regimes: Markovian, oscillatory, overdamped) is presented in [Gap Dynamics, section 4](/docs/core/dynamics/gap-dynamics#немарковские-эффекты). Here we consider extensions specific to the phase diagram: the generalized FDT and Fibonacci frequencies.
+## 8. Symmetry and linearised modes {#голдстоуновские-моды}
 
-### 6.1 Non-Markovian FDT for Gap [T]
+For the **actual matrix** $A=\operatorname{Im}\Gamma\in\mathfrak{so}(7)$, rank is $0,2,4,6$. The frame-indexed absolute phase array does not transform by this adjoint representation.
 
-For non-Markovian dynamics with an arbitrary memory kernel $K(\tau)$, the fluctuation-dissipation theorem is generalized. Equation of motion:
+### Stabiliser of a specified tensor {#стабилизатор-gap}
 
-$$
-\frac{d\,\mathrm{Gap}(i,j;\tau)}{d\tau} = -\int_0^\tau K(\tau - \tau')\,\mathrm{Gap}(i,j;\tau')\,d\tau' + \xi_{ij}(\tau)
-$$
-
-Generalized FDT in frequency space:
+If an actual tensor $A_*$ carries the adjoint action, define
 
 $$
-\chi_{ij}(\omega) = \frac{1}{T_{\text{eff}}} \cdot \frac{\widetilde{C}_{ij}(\omega)}{\mathrm{Re}\bigl[\widetilde{K}(\omega)\bigr]}
+H_{A_*}=\{g\in G_2:gA_*g^{-1}=A_*\},\qquad\dim(G_2/H_{A_*})=14-\dim H_{A_*}.
 $$
 
-where $\widetilde{K}(\omega) = \int_0^\infty K(\tau)\,e^{i\omega\tau}\,d\tau$ is the Fourier transform of the memory kernel.
+This orbit-dimension identity is **[T]**. Rank alone does not determine $H$ or the number of dynamical modes. A global symmetry must be proved for the action/generator and distinguished from a gauge redundancy or an explicit semantic frame.
 
-For the exponential kernel $K(\tau) = (\Gamma_2^2/\tau_M)\,e^{-\tau/\tau_M}$:
-
-$$
-\chi_{ij}(\omega) = \frac{1 + \omega^2\tau_M^2}{T_{\text{eff}}\,\Gamma_2^2\,\tau_M} \;\widetilde{C}_{ij}(\omega)
-$$
-
-At $\omega\tau_M \gg 1$: $\chi \propto \omega^2$ — **anti-resonance**. A system with memory responds more strongly to high-frequency perturbations. This explains the effectiveness of repeated short therapeutic sessions compared to infrequent long ones. [C]
-
-:::warning Status of non-Markovian FDT [C]
-The generalized FDT for non-Markovian dynamics is correct provided that the memory kernel $K(\tau)$ describes linear response (regime of small deviations from the stationary state). Applicability to real neurobiological systems, where nonlinearities are significant, is not established.
-:::
-
-### 6.2 Fibonacci frequencies and the golden ratio [I]
-
-:::warning Hypothesis (Fibonacci frequencies of Gap oscillations) [I]
-If the eigenfrequencies of the effective Hamiltonian $H_{\text{eff}}$ follow the Fibonacci series:
+**Conditional zero-mode statement [T].** For a differentiable equivariant vector field $F$ with $F(A_*)=0$, differentiating $F(gA_*g^{-1})=0$ along the orbit gives
 
 $$
-\omega = (0, 1, 2, 3, 5, 8, 13) \quad \text{(normalized)}
+DF(A_*)[T,A_*]=0.
 $$
 
-then the difference frequencies $|\omega_i - \omega_j|$ determine Gap oscillations:
+Thus independent orbit tangents are Jacobian zero directions. A symmetry-breaking term may lift them, but its rates/frequencies come from the full Jacobian. No universal mass, 6/10/12-mode table or fMRI frequency follows from phase rank. A finite system's symmetry orbit is not automatically a thermodynamic spontaneously broken phase.
+
+## 9. Claims of unavoidable Gap {#защита-gap}
+
+Hamming bounds count code redundancy, associators describe a specified nonassociative algebra, an energy barrier needs a potential and separated sets, and homotopy classes classify spatial maps with boundary data. Lawvere's theorem has its own representability/diagonal assumptions. None separately or together proves a nonzero phase floor for every seven-dimensional state. The positive real $\Gamma(t)$ family supplies a direct all-zero-phase counterexample. See [Gap identifiability](/docs/consciousness/hierarchy/gap-characterization) and [actual energy-separation theorem](./composite-systems#теорема-тополог-защита).
+
+## 10. Correct symmetry tests {#тождества-уорда}
+
+For a specified real linear representation $D(g)$ on an observable vector $X$ and an invariant probability law with finite second moments, its covariance obeys
 
 $$
-\mathrm{Gap}(i,j;\tau) = \bigl|\sin\bigl(\theta_{ij}(0) + (\omega_i - \omega_j)\tau\bigr)\bigr|
+C=D(g)CD(g)^T,\qquad A_aC+CA_a^T=0,
 $$
 
-Pairs with rational ratios $\Delta\omega/\Delta\omega'$ have **periodic** transparency windows. Pairs with irrational ratios fill $[0,1]$ **ergodically** — Gap takes all values with equal probability.
+where $A_a=dD(T_a)$ **[T]**, by differentiating invariance. These are equations whose independent rank must be computed; 14 generators do not subtract exactly 14 scalar degrees of freedom. For example, in the irreducible real seven-vector representation, invariant symmetric covariance is a multiple of the identity, leaving one parameter rather than $28-14$.
 
-Since the ratio of successive Fibonacci numbers converges to the **golden ratio** $\varphi = (1+\sqrt{5})/2 \approx 1.618$ — the most irrational number — most difference frequencies are mutually irrational. Consequence: full transparency ($\mathrm{Gap} = 0$) is an unreachable **limit**, not a stationary state.
-:::
-
-If this hypothesis is correct, it entails a concrete prediction: the power spectrum of Gap oscillations must contain peaks at frequencies $f_n = (\omega_i - \omega_j) \cdot f_0$, where $f_0$ is the base frequency and the ratios of peaks approach $\varphi$. Verification — via analysis of infra-slow fluctuations in resting-state fMRI. [I]
-
----
-
-## 7. Critical phenomena {#критические-явления}
-
-:::tip Theorem 7.1 (Critical exponents) [T]
-Near the critical point $t = 1$ (transition I ↔ II) the system exhibits scale-invariant behavior:
-
-**(a)** Order parameter: $\sigma_{\text{Gap}}^2 \propto (1 - t)^{2\beta}$, $\beta = 1/2$ (mean-field)
-
-**(b)** Susceptibility: $\chi \propto |1 - t|^{-\gamma}$, $\gamma = 1$
-
-**(c)** Correlation length: $\xi \propto |1 - t|^{-\nu}$, $\nu = 1/2$
-:::
-
-The universality class is **Landau** (mean-field), which is natural for a system with long-range coherences.
-
-### 7.1 Full table of critical exponents [T]
-
-Near the transition line I $\leftrightarrow$ II ($t = 1$) and at the tricritical point $(t^*, r^*) = (1, r_c)$ the critical exponents take the following values:
-
-| Exponent | Definition | On line $t = 1$ (Landau) | At tricritical point | Physical meaning |
-|---|---|---|---|---|
-| $\beta$ | $\sigma_{\text{Gap}}^2 \propto (1-t)^{2\beta}$ | $1/2$ | $1/4$ | Growth of order parameter |
-| $\gamma$ | $\chi \propto \lvert 1-t\rvert^{-\gamma}$ | $1$ | $1$ | Divergence of susceptibility |
-| $\nu$ | $\xi \propto \lvert 1-t\rvert^{-\nu}$ | $1/2$ | $1/2$ | Divergence of correlation length |
-| $\alpha$ | $C \propto \lvert 1-t\rvert^{-\alpha}$ | $0$ (log.) | $1/2$ | Heat capacity anomaly |
-| $\delta$ | $h \propto \sigma_{\text{Gap}}^{\delta}$ at $t = 1$ | $3$ | $5$ | Critical isotherm |
-
-:::tip Theorem 7.2 (Accuracy of mean-field exponents) [T]
-Mean-field critical exponents are **exact** for the Gap system by three independent rigorous mechanisms — Thom-Arnold topological rigidity of the $A_4$ (swallowtail) catastrophe, deterministic (non-stochastic) UHM dynamics, and large-$N$ cross-check with $d_{\mathrm{eff}} = \binom{7}{2} = 21$ order-parameter modes — unified in [Exactness mechanism](/docs/consciousness/hierarchy/swallowtail-transitions#механизм-точности) [T].
-
-**(a)** Order-parameter dimension $d_{\text{eff}} = 21$ = number of independent off-diagonal coherences of $\Gamma \in \mathcal D(\mathbb C^7)$. This is the genuine count of fluctuation modes in any stochastic reinterpretation of the dynamics.
-
-**(b)** The spatial-dimension form of the Ginzburg criterion does **not** apply, because UHM is $(0{+}1)$-dimensional (no spatial integration). Mean-field exactness is instead established topologically (Thom-Arnold) and dynamically (deterministic flow).
-
-**(c)** Near the tricritical point the effective theory is $\varphi^6$, an $A_4$ catastrophe with codimension 3 matching UHM's three physical control parameters $(\kappa, \gamma_{\text{Lindblad}}, \Delta F)$. Exponents $\{\alpha,\beta,\gamma,\nu,\delta\} = \{1/2, 1/4, 1, 1/2, 5\}$ are topological invariants of the $A_4$ class.
-:::
-
-:::note On independence of the 21 coherence modes
-The count $d_{\text{eff}} = \binom{7}{2} = 21$ refers to the 21 independent off-diagonal pairs $(i,j)$ with $1 \le i < j \le 7$, matching the $42 = 21\cdot 2$ real off-diagonal components of $\mathfrak{su}(7)$. $G_2 \subset SO(7)$ reduces this to $21 - 14 = 7$ $G_2$-invariant modes in the deep-broken phase, but the full $21$ enter the fluctuation counting near threshold (before $G_2$-fixing) — consistent with the catastrophe-theoretic count of codimension-3 $A_4$ deformations. This does not change the topological protection of the exponents in (I).
-:::
-
-Scaling relations:
-
-$$
-\alpha + 2\beta + \gamma = 0 + 1 + 1 = 2 \quad \checkmark \quad \text{(Rushbrooke's law)}
-$$
-
-:::info Remark on Josephson's law [D]
-The hyperscaling relation $d\nu = 2 - \alpha$ holds at $d = d_c = 4$ (upper critical dimension), but **fails** at $d_{\text{eff}} = 21 > d_c$. This is expected behavior: above the upper critical dimension hyperscaling does not hold, mean-field exponents apply without hyperscaling corrections.
-:::
-
----
-
-## 8. Goldstone modes {#голдстоуновские-моды}
-
-Under spontaneous breaking $G_2 \to H_{\hat{\mathcal{G}}_*}$, Goldstone modes arise — slow collective oscillations of the Gap profile.
-
-:::tip Theorem 8.1 (Quasi-Goldstone modes) [T]
-In an open (dissipative) system:
-
-**(a)** Modes are **quasi-massive** (not strictly massless): $m_{\text{Gold}}^2 = \Gamma_2 \cdot \kappa_0 / |\gamma|^2$.
-
-**(b)** Each mode redistributes Gap between pairs while preserving $\mathcal{G}_{\text{total}}$:
-
-$$
-\delta\mathrm{Gap}(i,j) = \sum_a \epsilon_a \cdot [T_a, \hat{\mathcal{G}}_*]_{ij}
-$$
-
-**(c)** The number of modes depends on the opacity rank:
-
-| Rank | $n_{\text{Gold}}$ | Prediction for ISF |
-|---|---|---|
-| 1 | 6 | 6 independent ISF components |
-| 2 | 10 | 10 ISF components |
-| 3 | 12 | 12 ISF components |
-
-**(d)** Frequency: $f_{\text{Gold}} \sim 0.005$–$0.02$ Hz — coincides with infra-slow neuronal fluctuations (ISF) in fMRI.
-:::
-
-### 8.1 Excitation spectrum around spontaneous Gap [T]
-
-Near the minimum of $V_{\text{Gap}}$, the full space of small oscillations $\theta_{ij} = \theta^*_{ij} + \delta\theta_{ij}$ splits into three sectors:
-
-| Sector | Number of modes | Frequency | Physical meaning |
-|---|---|---|---|
-| Massive | $21 - n_{\text{broken}} - n_{\text{top}}$ | $\omega_{\text{mass}}^2 = \mu_{\text{eff}}^2 + \kappa/m$ | Oscillations perpendicular to the $G_2$ orbit |
-| Quasi-Goldstone | $n_{\text{broken}} = 14 - \dim(H)$ | $\omega_{\text{Gold}}^2 = \kappa/m - \Gamma_2^2/(4m^2)$ | Slow redistribution of Gap along the orbit |
-| Topologically protected | $0$ or $1$ | Determined by $Q_{\text{top}}$ | Cannot decay without a phase transition |
-
-Total number of modes: $n_{\text{mass}} + n_{\text{Gold}} + n_{\text{top}} = 21$ — equal to the number of independent coherences $\binom{7}{2}$.
-
-At $\kappa > \Gamma_2^2/(4m)$ quasi-Goldstone modes undergo **damped oscillations**. At $\kappa < \Gamma_2^2/(4m)$ — **aperiodic decay** (overdamped regime). In the limiting case of an isolated system ($\Gamma_2 \to 0$), Goldstone modes become strictly massless: $\omega_{\text{Gold}} \to \sqrt{\kappa/m}$ as $m_{\text{Gold}} \to 0$. [T]
-
-### 8.2 Broken symmetries and number of modes [T]
-
-**Definition [D].** {#стабилизатор-gap} Isotropy subgroup (stabilizer) of the stationary Gap configuration:
-
-$$H_{\hat{\mathcal{G}}_*} := \{g \in G_2 : \mathrm{Ad}_g(\hat{\mathcal{G}}_*) = \hat{\mathcal{G}}_*\}$$
-
-where $\mathrm{Ad}_g$ is the adjoint action of $G_2$ on $\mathfrak{so}(7)$. Number of broken generators: $n_{\text{broken}} = 14 - \dim(H_{\hat{\mathcal{G}}_*})$.
-
-The full $G_2$-symmetry of the Lagrangian is broken by the stationary state to the stabilizer subgroup:
-
-$$
-G_2 \to H_{\hat{\mathcal{G}}_*}, \quad n_{\text{broken}} = 14 - \dim(H_{\hat{\mathcal{G}}_*})
-$$
-
-| Rank $\hat{\mathcal{G}}_*$ | Stabilizer $H$ | $\dim(H)$ | $n_{\text{broken}}$ | Space $G_2/H$ |
-|---|---|---|---|---|
-| $0$ | $G_2$ | $14$ | $0$ | $\{\mathrm{pt}\}$ |
-| $1$ | $SU(3)$ | $8$ | $6$ | $G_2/SU(3) \cong S^6$ |
-| $2$ | $SU(2) \times U(1)$ | $4$ | $10$ | $10$-dim. |
-| $3$ (generic) | $T^2$ | $2$ | $12$ | $12$-dim. |
-| $3$ (degen.) | $SU(2)$ | $3$ | $11$ | $11$-dim. |
-
-The discrete $PT$-symmetry ($\theta \to -\theta$, $\tau \to -\tau$) is broken by the cubic term $V_3$ of the potential already at the Lagrangian level — the stationary state inherits this breaking. [T]
-
----
-
-## 9. Five types of Gap protection {#защита-gap}
-
-Taking all results into account, **five independent mechanisms** of Gap irremovability are established:
-
-| # | Protection type | Source | Mechanism |
-|---|---|---|---|
-| 1 | Code-theoretic | [Gap dynamics](/docs/core/dynamics/gap-dynamics#код-хэмминга) | Hamming bound H(7,4): $\geq 3$ nonzero Gaps |
-| 2 | Algebraic | [Gap operator](/docs/core/dynamics/gap-operator#g2-разложение) | Octonionic associator $[e_i,e_j,e_k] \neq 0$ |
-| 3 | Energetic | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) | Spontaneous minimum $V_{\text{Gap}} \neq 0$ from $V_3$ |
-| 4 | Categorical | [Self-observation](/docs/consciousness/foundations/self-observation) | Lawvere's theorem: the fixed point cannot be trivial |
-| 5 | Topological | [Gap operator](/docs/core/dynamics/gap-operator#стабилизаторы) | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ |
-
----
-
-## 10. Ward identities for Gap correlators {#тождества-уорда}
-
-$G_2$-invariance of the Lagrangian generates **14 linear relations** between Gap correlators — an analogue of Ward identities in quantum field theory. [T]
-
-:::tip Theorem 10.1 (Ward identities) [T]
-For the $n$-point correlator $G^{(n)}\bigl((i_1,j_1,\tau_1),\ldots,(i_n,j_n,\tau_n)\bigr) := \langle\mathrm{Gap}(i_1,j_1;\tau_1)\cdots\mathrm{Gap}(i_n,j_n;\tau_n)\rangle$:
-
-**(a)** For each generator $T_a \in \mathfrak{g}_2$:
-
-$$
-\sum_{i<j} [T_a]_{ij}\,\frac{\partial}{\partial\theta_{ij}}\,G^{(n)} = 0
-$$
-
-**(b)** For the two-point correlator $C_{(ij),(kl)}(\tau) = \langle\mathrm{Gap}(i,j;\tau)\;\mathrm{Gap}(k,l;0)\rangle$:
-
-$$
-\sum_{m}\bigl([T_a]_{im}\,C_{(mj),(kl)} + [T_a]_{jm}\,C_{(im),(kl)}\bigr) = 0
-$$
-
-**(c)** Number of independent two-point correlators accounting for the 14 identities:
-
-$$
-N_{\text{corr}} = \frac{21 \times 22}{2} - 14 = 217
-$$
-:::
-
-**Experimental verification of $G_2$-symmetry.** The degree of Ward identity violation is a measure of $G_2$-symmetry breaking:
-
-$$
-\Delta_{G_2}^{(\text{exp})} := \max_a \Bigl\|\sum_m [T_a]_{im}\,C_{(mj),(kl)} + [T_a]_{jm}\,C_{(im),(kl)}\Bigr\|
-$$
-
-At $\Delta_{G_2}^{(\text{exp})} = 0$: full $G_2$-symmetry. At $\Delta_{G_2}^{(\text{exp})} > 0$: partial breaking. This is the first operational protocol for verifying $G_2$-structure in experimental data (neuroimaging, AI metrics, psychometrics). [D]
-
----
+Absolute pairwise Gap is not automatically the linear representation used in these identities. Its induced law may be tested by nonlinear pushforwards, with an identified observation model. Passing finitely many covariance equations does not establish invariance of every distribution or prove that the biological encoder is unique. The former count 217 and universal phase-Ward equations are **withdrawn [✗]**.
 
 ## Related documents
 
-- [Gap operator](/docs/core/dynamics/gap-operator) — definition of $\hat{\mathcal{G}}$, spectrum, G₂ decomposition
-- [Gap dynamics](/docs/core/dynamics/gap-dynamics) — bifurcations, Choi–Jamiołkowski, Hamming
-- [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — Lagrangian, $V_{\text{Gap}}$, $T_{\text{eff}}$
-- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0–L4
-- [Proofs: Fano channel](/docs/proofs/gap/fano-channel) — G₂-covariance of the Fano dissipator
-- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\gamma_{ij}$, order parameter
-- [Symbolic systems](/docs/core/structure/symbolic-systems) — octonionic algebra and structure constants
+- [Typed kernel](/docs/reference/mathematical-kernel)
+- [Gap definition and identification](/docs/consciousness/hierarchy/gap-characterization)
+- [Conditional transition models](/docs/consciousness/hierarchy/swallowtail-transitions)
+- [Composite systems](./composite-systems)

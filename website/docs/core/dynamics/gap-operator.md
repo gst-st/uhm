@@ -2,7 +2,7 @@
 sidebar_position: 7
 title: "Gap Operator"
 slug: /core/dynamics/gap-operator
-description: "Definition of Ĝ = Im(Γ), antisymmetry, spectrum, opacity rank, relation to purity, Serre bundle curvature, G₂/⊥ decomposition"
+description: "Definition of Ĝ = Im(Γ), antisymmetry, spectrum, opacity rank, relation to purity, chosen Dirac norm and the withdrawn curvature bridge, G₂/⊥ decomposition"
 ---
 
 # Gap Operator
@@ -16,7 +16,7 @@ This chapter introduces the **Gap operator** $\hat{\mathcal{G}}$ — a mathemati
 The reader will learn:
 - What $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma)$ is and why it is antisymmetric
 - How the spectrum of $\hat{\mathcal{G}}$ determines the **opacity rank** (from 0 to 3)
-- Why Gap is **literally the curvature** of a finite noncommutative geometry
+- What a chosen Dirac-entry norm establishes and why curvature needs additional data
 - How the $G_2$ decomposition separates "healthy" and "pathological" Gap
 
 :::tip Intuitive explanation
@@ -48,7 +48,7 @@ In this document $\hat{\mathcal{G}}$ denotes the Gap operator (antisymmetric mat
 
 #### Convention: vanishing coherence {#конвенция-нулевой-когерентности}
 
-**[D]** For $|\gamma_{ij}| < \varepsilon_{\min}$ the phase $\arg(\gamma_{ij})$ — and with it $\sin(\arg\gamma_{ij})$ — is undefined, and operationally the channel carries no information flow. The convention is: $\mathrm{Gap}(i,j) := 1$ (maximal opacity) for vanishing coherence. This is the limit instantiated by the phenomenology of states ("$\gamma_{AE} \to 0 \Rightarrow \mathrm{Gap}(A,E) \to 1$" in sleep and anaesthesia). Note the distinction the convention encodes: $\mathrm{Gap}$ measures *phase* transparency, so a weak but in-phase channel above $\varepsilon_{\min}$ has small $\mathrm{Gap}$ (transparent) yet low capacity — transparency and strength are independent axes, and the convention closes the degenerate corner where the phase axis loses meaning. A frame note rides with all of this (the T-301 erratum): per-pair phases are read in the native semantic frame and move under an axis re-phasing — the *handwriting*; the gauge-invariant phase content of a triple is its Fano holonomy (see [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure#язык-качества)).
+**[D]** At exactly $\gamma_{ij}=0$, the phase is mathematically undefined. At a nonzero entry its argument remains defined even if small. A chosen experimental cutoff $\varepsilon_{\min}$ may exclude weak entries from reporting and assign $\mathrm{Gap}_{\rm op}(i,j):=1$ below the cutoff. That diagnostic convention is discontinuous and does not assert a mathematical limit $|\sin\arg\gamma|\to1$ as $\gamma\to0$: approaching along a real ray gives zero. The exact weighted identity uses the unthresholded phase at nonzero entries, $|G_{ij}|=|\gamma_{ij}|\,|\sin\arg\gamma_{ij}|$, with zero at the zero entry. It generally fails with $\mathrm{Gap}_{\rm op}$ below a nonzero cutoff. Per-pair phase diagnostics depend on the chosen frame; triple products can be rephasing invariant without thereby becoming holonomy of a supplied connection. Phenomenological interpretations of cutoff crossings are [I/H].
 
 ---
 
@@ -63,7 +63,7 @@ $$
 \hat{\mathcal{G}} := \frac{1}{2i}(\Gamma - \Gamma^T) = \mathrm{Im}(\Gamma)
 $$
 
-— the purely imaginary part of the coherence matrix.
+— the entrywise imaginary part, a real skew-symmetric matrix.
 :::
 
 Since $\Gamma^\dagger = \Gamma$ (Hermiticity), the transposed matrix $\Gamma^T = \Gamma^*$ (complex conjugate), hence:
@@ -91,7 +91,7 @@ $$
 The Gap operator combines **connection strength** $|\gamma_{ij}|$ and **opacity** $\mathrm{Gap}(i,j)$ into a single object.
 
 :::info Necessity of complex Γ [T-132]
-A nontrivial Gap structure ($\mathrm{Gap}(i,j) > 0$) **requires** complex coherences: for $\gamma_{ij} \in \mathbb{R}$ the measure $\mathrm{Gap} = |\sin(\arg(\gamma_{ij}))| = 0$ identically. Details: [T-132 [T]](/docs/proofs/consciousness/operationalization#t-132).
+At a nonzero coherence, a nonzero phase Gap **requires** a nonzero imaginary part: for $\gamma_{ij} \in \mathbb{R}$ the measure $\mathrm{Gap} = |\sin(\arg(\gamma_{ij}))| = 0$ identically. Details: [T-132 [T]](/docs/proofs/consciousness/operationalization#t-132).
 :::
 
 ### 1.3 Full table of 21 coherence pairs {#таблица-21-пара}
@@ -162,6 +162,7 @@ $\mathcal{G}_{\text{total}}$ is defined as the **full** Frobenius norm (counting
 #### Identity with the Dirac operator [T] {#тождество-tr-d2}
 
 :::tip Corollary (Spectral identity)
+
 $$
 \mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
 $$
@@ -189,7 +190,7 @@ Let $\mathrm{spec}(\hat{\mathcal{G}}) = \{0, \pm i\lambda_1, \pm i\lambda_2, \pm
 
 | Rank | $\lambda$-spectrum | Interpretation |
 |------|------------------|---------------|
-| 0 | $(0, 0, 0)$ | Full transparency (all $\mathrm{Gap} = 0$) |
+| 0 | $(0, 0, 0)$ | Zero weighted imaginary part; a zero-coherence reporting convention may still give phase Gap 1 |
 | 1 | $(\lambda, 0, 0)$ | One-dimensional opacity — one "break channel" |
 | 2 | $(\lambda_1, \lambda_2, 0)$ | Two-dimensional opacity |
 | 3 | $(\lambda_1, \lambda_2, \lambda_3)$ | Full opacity (maximum rank) |
@@ -199,7 +200,7 @@ The maximum opacity rank = 3 coincides with the number of "check" dimensions (E,
 :::
 
 :::info Connection between Gap rank and the Hamming code
-The maximum rank of $\hat{\mathcal{G}}$ equals **6** (three pairs of nonzero eigenvalues $\pm i\lambda_k$), corresponding to 3 independent "rotation planes" in $\mathbb{R}^7$. The number **3** coincides with the number of check bits in the Hamming code $H(7,4)$: 7 data bits, 3 check bits. The connection is not coincidental — both structures are determined by the Fano plane PG(2,2). Details: [Theorem T9](/docs/core/operators/lindblad-operators#теорема-хемминг-фано).
+Any real antisymmetric $7\times7$ matrix has rank at most six, with three rotation planes. This follows from skew-symmetry and odd dimension, independently of a Fano structure. The Hamming code H(7,4) separately has three check bits; their numerical equality establishes no dynamical or coding equivalence.
 :::
 
 ---
@@ -222,87 +223,31 @@ where $P_{\text{sym}} = \mathrm{Tr}(\mathrm{Re}(\Gamma)^2)$ is the "symmetric pu
 
 ---
 
-## 5. Serre bundle curvature {#кривизна-серра}
+## 5. Dirac-entry norm and the withdrawn curvature identification {#кривизна-серра}
 
-#### Theorem 5.1 / T-73 (Gap = curvature from the spectral triple) [T] {#теорема-gap-серра}
+### T-73: what the identity establishes {#теорема-gap-серра}
 
-:::tip Theorem 5.1
-Within the finite [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) $(A_{\text{int}}, \mathbb C^7, D_{\text{int}})$ of UHM (its existence, T-53 steps 1–4, is [T]; the Lorentzian sign of T-53, [C], is not used), the measure $\mathrm{Gap}(i,j)$ **exactly coincides** with the norm of the connection curvature on the [Serre bundle](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра) $\mathrm{Bundle}(\Gamma, \Omega) \to B_{\mathrm{ext}}$:
-
-$$
-\|\mathrm{Curv}\|_{ij}^2 = |[D_{\mathrm{int}}]_{ij}|^2 = \omega_0^2 |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
-$$
-:::
-
-**Proof (5 steps).**
-
-**Step 1 (Connection from $D_{\mathrm{int}}$).** The internal Dirac operator $D_{\mathrm{int}}$ ([T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T]) defines a connection on the bundle of internal phases. Elements of $D_{\mathrm{int}}$:
+Choose a Hermitian matrix $D$ with zero diagonal and
 
 $$
-[D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}
+D_{ij}=\omega_0|\operatorname{Im}\gamma_{ij}|e^{i\arg\gamma_{ij}},\quad i\ne j,
 $$
 
-This is the **covariant derivative** along internal directions. When $\gamma_{ij} = 0$, the connection breaks (no transport). When $\gamma_{ij} \neq 0$, transport is determined by $D_{\mathrm{int}}$.
-
-**Step 2 (Connection curvature).** The bundle curvature is the commutator of covariant derivatives. In terms of $D_{\mathrm{int}}$:
+setting zero-coherence entries to zero. Then [T at this definition]
 
 $$
-\|F\|_{ij}^2 = \sum_{k} |[D_{\mathrm{int}}]_{ik} \cdot [D_{\mathrm{int}}]_{kj} - [D_{\mathrm{int}}]_{jk} \cdot [D_{\mathrm{int}}]_{ki}|^2
+|D_{ij}|^2=\omega_0^2|\operatorname{Im}\gamma_{ij}|^2,\qquad \operatorname{Tr}D^2=\omega_0^2\|\operatorname{Im}\Gamma\|_F^2.
 $$
 
-**Step 3 (Dominant contribution).** For pairs $(i,j)$ with a direct Gap, the dominant contribution to the curvature is the direct element:
+For nonzero coherences this is also $\omega_0^2|\gamma_{ij}|^2\mathrm{Gap}(i,j)^2$. The experimental small-coherence cutoff is a reporting convention and does not change this exact matrix identity.
 
-$$
-\|F\|_{ij}^{\mathrm{direct}} = \omega_0^2 \cdot |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
-$$
+The former **Gap = curvature** and **second Chern number = $\operatorname{Tr}D^2/(8\pi^2\omega_0^2)$** are withdrawn [✗]. A spectral triple does not equate an entry of $D$ with a curvature two-form. One needs a module/bundle, differential calculus, connection $\nabla$ and its curvature $\nabla^2$ (in a chosen calculus, $dA+A^2$); Chern–Weil pairing also needs a cycle and normalization. In finite spectral geometry the differential calculus includes its junk quotient. [Connes, *C* algebras and differential geometry](https://arxiv.org/abs/hep-th/0101093).
 
-This coincides with $\|R_H\|_{ij}^2 \propto |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$ from Theorem 1.1 of [gap-thermodynamics](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра).
-
-**Step 4 (Second Chern class).** Chern–Weil theory on the bundle:
-
-$$
-c_2(\mathrm{Bundle}) = \frac{1}{8\pi^2}\int \mathrm{Tr}(F \wedge F) = \frac{1}{8\pi^2}\sum_{i < j}|\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2 = \frac{1}{8\pi^2}\mathrm{Tr}(D_{\mathrm{int}}^2) / \omega_0^2
-$$
-
-This is a **topological invariant**, defined via the spectral triple [T] (T-53), not via analogy.
-
-**Step 5 (Rigor from NCG).** In Connes' noncommutative geometry, curvature is defined through "junk" $a[D,b]$. For the finite triple $(A_{\mathrm{int}}, H_{\mathrm{int}}, D_{\mathrm{int}})$:
-
-$$
-\mathrm{Curv} = \sum_{i \neq j} [D_{\mathrm{int}}, e_{ij}]
-$$
-
-where $e_{ij}$ are matrix units. Curvature norm:
-
-$$
-\|\mathrm{Curv}\|_{ij}^2 = |[D_{\mathrm{int}}]_{ij}|^2 = \omega_0^2 |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
-$$
-
-This is an **exact** identification, not an approximation, justified by the spectral triple [T]. $\blacksquare$
-
-:::info Clarification: norm vs. full curvature 2-form
-The identification $\|\mathrm{Curv}\|_{ij}^2 = \omega_0^2|\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$ relates the connection norm to the square of the norm of the curvature 2-form. This is an **exact** identity at the level of norms. However, the full curvature 2-form $F$ carries additional geometric information not captured by the norm alone: holonomy of closed loops, Chern classes (topological invariants such as $c_2$ in Step 4), and the structure of the connection on the bundle (parallel transport). The norm $\|F\|^2$ determines the **energetics** (Yang–Mills action), but not the **topology** of the bundle in full.
-:::
-
-**Interpretation:**
-- **Zero Gap** = flat connection = parallel transport is path-independent (the external description uniquely determines the internal one).
-- **Nonzero Gap** = curvature $\neq 0$ = under a cyclic change of external parameters, the internal state acquires a geometric shift (analogue of the [Berry phase](/docs/physics/cosmology-phys/berry-phase)).
-
-:::info Corollary (Geometric nature of Gap)
-Gap is not an "analogy" with curvature — it is **literally the curvature** of a finite noncommutative geometry. All properties of Gap (antisymmetry, $G_2$-covariance, phase diagram) are direct consequences of the bundle geometry, not special postulates. The canonical metric of information geometry [gap-thermodynamics](/docs/core/dynamics/gap-thermodynamics#информационная-геометрия) is defined via $\mathrm{Tr}(D_{\mathrm{int}}^2)$.
-:::
+There is also a direct obstruction to the proposed Chern identity: the RHS changes continuously under $\Gamma_t=I/7+t(\Gamma-I/7)$, as $t^2\|\operatorname{Im}\Gamma\|^2/(8\pi^2)$. It is not an integral characteristic number. The native density-state space is convex and contractible; every vector bundle over it is topologically trivial and has zero positive-degree Chern classes. Nonzero local curvature can still exist on a trivial bundle, but its choice is additional geometry [D/H].
 
 ### Holonomy
 
-Nontrivial holonomy of a closed loop $C$:
-
-$$
-\mathrm{Hol}(C) = \mathcal{P}\exp\left(\oint_C \mathcal{A}\right) \neq \mathbb{1}
-$$
-
-means that a system that has traversed a closed cycle of external influences has an **altered internal state** — a geometric formalization of "post-traumatic growth."
-
----
+Holonomy belongs to a supplied connection and paths. Coordinate phases of $\Gamma$ and invariant triangle products can be specified as numerical observables, but are not automatically the holonomy of a Serre bundle. The proposed bridge remains a research construction [Pr], rather than an exact curvature theorem.
 
 ## 6. G₂/⊥ decomposition {#g2-разложение}
 
@@ -315,14 +260,16 @@ $$
 \hat{\mathcal{G}} = \hat{\mathcal{G}}_{G_2} + \hat{\mathcal{G}}_{\perp}
 $$
 
-where $\hat{\mathcal{G}}_{G_2} \in \mathfrak{g}_2 \subset \mathfrak{so}(7)$ is the projection onto the 14-dimensional subalgebra $G_2$, and $\hat{\mathcal{G}}_{\perp} \in \mathfrak{so}(7) / \mathfrak{g}_2$ is the complement (7-dimensional, since $\dim\,\mathfrak{so}(7) = 21$, $\dim\,\mathfrak{g}_2 = 14$).
+where $\hat{\mathcal{G}}_{G_2} \in \mathfrak{g}_2 \subset \mathfrak{so}(7)$ is the projection onto the 14-dimensional subalgebra $G_2$, and $\hat{\mathcal{G}}_{\perp} \in \mathfrak g_2^\perp$ is the orthogonal complement (7-dimensional, since $\dim\,\mathfrak{so}(7) = 21$, $\dim\,\mathfrak{g}_2 = 14$).
 
-**(b)** $\hat{\mathcal{G}}_{G_2}$ **preserves** the [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules): the flow generated by $\hat{\mathcal{G}}_{G_2}$ transforms $\Gamma$ while preserving the octonionic multiplication.
+**(b)** Exponentiating $\hat{\mathcal G}_{G_2}$ preserves the chosen positive three-form and octonion multiplication [T]. It need not preserve the seven coordinate Fano-line projectors individually or as a set; that is a stronger finite-frame condition.
 
-**(c)** $\hat{\mathcal{G}}_{\perp}$ **breaks** the Fano structure: the flow generated by $\hat{\mathcal{G}}_{\perp}$ mixes the Fano triplets.
+**(c)** A nonzero complementary generator does not infinitesimally preserve the chosen three-form [T]. This describes the chosen algebraic structure, not a derived pathology, flux tube or phenomenological failure.
 
 **(d)** The complement is 7-dimensional: exactly one "breaking" direction per [dimension](/docs/core/structure/dimensions).
 :::
+
+The positive three-form and conjugation determine this equivariant decomposition. Preserving the three-form does not preserve a fixed coordinate Fano list; only its frame stabilizer does. The complement is an orthogonal vector subspace, not a quotient matrix Lie algebra. Its therapeutic interpretation is [I/H].
 
 ### Two types of Gap
 
@@ -337,122 +284,61 @@ A healthy system has Gap predominantly in the $G_2$ sector. Pathological Gap is 
 
 ---
 
-## 7. Commutator algebra {#коммутаторная-алгебра}
+## 7. Commutator algebra and cross-product typing {#коммутаторная-алгебра}
 
-### 7.1 Properties of the commutator [Ĝ, Γ]
+### 7.1 Correct adjoints and rotation flow [T]
 
-:::tip Theorem 7.1 (Commutator of the Gap operator with Γ) [T]
-**(a)** $[\hat{\mathcal{G}}, \Gamma]$ is **anti-Hermitian**: $[\hat{\mathcal{G}}, \Gamma]^\dagger = -[\hat{\mathcal{G}}, \Gamma]$.
-
-**(b)** $\mathrm{Tr}([\hat{\mathcal{G}}, \Gamma]) = 0$.
-
-**(c)** The commutator generates a **unitary flow**:
+Write $G=\operatorname{Im}\Gamma$. Then $G$ is real skew-symmetric, hence $G^\dagger=-G$. Consequently $[G,\Gamma]^\dagger=[G,\Gamma]$ and $\operatorname{Tr}[G,\Gamma]=0$. For frozen $G$,
 
 $$
-\Gamma(\epsilon) = e^{i\epsilon\hat{\mathcal{G}}}\,\Gamma\,e^{-i\epsilon\hat{\mathcal{G}}} = \Gamma + i\epsilon[\hat{\mathcal{G}}, \Gamma] + O(\epsilon^2)
-$$
-:::
-
-The Gap operator generates a rotation of the coherence matrix: strong Gap in pair $(i,j)$ rotates $\Gamma$ in the $(i,j)$ plane.
-
-### 7.2 Octonionic cross product {#октонионное-крестное-произведение}
-
-The Gap operator is related to the **cross product** on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$:
-
-$$
-x \times y := \frac{1}{2}(xy - yx) = \mathrm{Im}(xy)
+\Gamma(\epsilon)=e^{\epsilon G}\Gamma e^{-\epsilon G}=\Gamma+\epsilon[G,\Gamma]+O(\epsilon^2)
 $$
 
-:::tip Theorem 7.2 (Gap via cross product) [T]
-**(a)** $\mathrm{Im}(\gamma_{ij})$ corresponds to the component of the cross product $(\hat{e}_i \times \hat{e}_j)_k \propto \epsilon_{ijk}$, arising from the non-commutativity of octonionic multiplication $e_i \cdot e_j \neq e_j \cdot e_i$.
+is unitary (indeed real orthogonal) conjugation. The previous anti-Hermitian-commutator statement and $e^{i\epsilon G}$ unitary formula were incorrect [✗]. Equivalently use the Hermitian generator $H=iG$ with $e^{-i\epsilon H}=e^{\epsilon G}$. A state-dependent generator defines a separate nonlinear isospectral ODE.
 
-**(b)** For pairs within a [Fano triplet](/docs/physics/gauge-symmetry/fano-selection-rules) $(i,j,k) \in PG(2,2)$: $e_i \times e_j = \pm e_k$ — the cross product is associative along the line (subalgebra $\cong \mathbb{H}$).
+### 7.2 Scalar two-forms and the octonionic cross product {#октонионное-крестное-произведение}
 
-**(c)** For pairs **outside** a Fano triplet: the associator $[e_i, e_j, e_k] \neq 0$ generates an additional phase shift that increases Gap.
-:::
+Choose a positive three-form $\varphi$ and its oriented orthonormal frame [D]. It defines the vector-valued cross product by $\langle x\times y,z\rangle=\varphi(x,y,z)$. The corresponding $G_2$ action is equivariant: $(gx)\times(gy)=g(x\times y)$. In contrast, $G$ is a state-dependent **scalar** two-form/matrix, not the vector-valued product. Covariance of a state under conjugation does not make its entries invariant. The fixed coordinate Fano dissipator has only its declared frame covariance, not automatic continuous $G_2$ covariance.
 
-:::info Proof: Gap = octonionic product [T]
+The representation identity $\Lambda^2\mathbb R^7\simeq\mathbf7\oplus\mathbf{14}$ has no trivial summand, so
 
-**Step 1 (Two $G_2$-invariant 2-forms).** (a) The imaginary parts $\mathrm{Im}(\gamma_{ij})$ of the coherence matrix entries define an antisymmetric bilinear form $\omega_\Gamma \in \Lambda^2(\mathbb{C}^7)$ via $\omega_\Gamma(e_i, e_j) = \mathrm{Im}(\gamma_{ij})$. (b) The imaginary part of the octonionic product $\omega_\mathbb{O}(e_i, e_j) = \mathrm{Im}(e_i \cdot e_j)$ defines an antisymmetric form on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$.
+$$
+\operatorname{Hom}_{G_2}(\Lambda^2\mathbb R^7,\mathbb R)=0.
+$$
 
-**Step 2 ($G_2$-invariance of both forms).** (a) Under $g \in G_2$: $\omega_\Gamma(ge_i, ge_j) = \mathrm{Im}((g\Gamma g^\dagger)_{ij}) = \mathrm{Im}(\gamma_{ij})$ by the $G_2$-covariance of the Fano dissipator (T-42a [T]). (b) $\omega_\mathbb{O}$ is $G_2$-invariant by definition: $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves the product.
+The former one-dimensional invariant-two-form proof and proportionality $G=c\,\operatorname{Im}(e_i e_j)$ are withdrawn [✗]. Contracting $\varphi$ with a **chosen nonzero vector** gives a two-form preserved by its $SU(3)$ stabilizer, not by all $G_2$. This supplies the seven-dimensional component of $G$ after the form is chosen; it does not eliminate the fourteen-dimensional component. [Baez, *The Octonions*](https://arxiv.org/abs/math/0105155).
 
-**Step 3 (Schur's lemma).** The 7-dimensional representation $\mathbf{7}$ of $G_2$ is irreducible (standard, see Slansky 1981). By Schur's lemma, $\dim \mathrm{Hom}_{G_2}(\Lambda^2(\mathbf{7}), \mathbb{R}) = 1$ (the space of $G_2$-invariant 2-forms on $\mathbb{R}^7$ is one-dimensional). This is because $\Lambda^2(\mathbf{7}) = \mathbf{7} \oplus \mathbf{14}$ as $G_2$-representations, and $\mathrm{Hom}_{G_2}(\mathbf{7}, \mathbb{R}) = \{0\}$, $\mathrm{Hom}_{G_2}(\mathbf{14}, \mathbb{R}) = \{0\}$, but the invariant form arises from the $G_2$-invariant associative 3-form $\varphi \in \Lambda^3(\mathbf{7})$ via contraction with a fixed vector $v$: $\iota_v \varphi \in \Lambda^2(\mathbf{7})$. This gives exactly one independent 2-form.
+## 8. Stabilizers need the representation component {#стабилизаторы}
 
-**Step 4 (Proportionality and normalization).** Since both $\omega_\Gamma$ and $\omega_\mathbb{O}$ are $G_2$-invariant elements of the same 1-dimensional space, they are proportional: $\omega_\Gamma = c \cdot \omega_\mathbb{O}$ for some $c \in \mathbb{R}$. The coefficient $c$ is fixed by comparing on any Fano line: for $(i,j,k) \in PG(2,2)$, $\mathrm{Im}(e_i \cdot e_j) = \pm 1$ and $\mathrm{Im}(\gamma_{ij}) = |\gamma_{ij}| \sin\theta_{ij}$, giving $c = |\gamma_{ij}| \sin\theta_{ij} = |\gamma_{ij}| \cdot \mathrm{Gap}(i,j)$.
+The spectrum classifies skew matrices up to $SO(7)$ conjugacy, not up to the smaller $G_2$. For $G=G_7+G_{14}$ in the chosen decomposition,
 
-**Conclusion:** $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))| = |\omega_\Gamma(e_i, e_j)| / |\gamma_{ij}|$ is the normalized projection of the coherence onto the octonionic product structure. $\blacksquare$
-:::
+$$
+\operatorname{Stab}_{G_2}(G)=\operatorname{Stab}_{G_2}(G_7)\cap\operatorname{Stab}_{G_2}(G_{14}).
+$$
 
----
+The old rank-only table is withdrawn [✗]. For $G=0$ the stabilizer is $G_2$. For a nonzero pure seven-component $G=\iota_v\varphi$, it is $SU(3)_v$; the operator has real rank six, not rank two. For a regular element of $\mathfrak g_2$ with zero seven-component, the stabilizer is a maximal torus $T^2$. Arbitrary sums need the displayed intersection, and can have a discrete stabilizer.
 
-## 8. Stabilizers and topological protection {#стабилизаторы}
+For the specified orbit $G_2/T^2$, the fibration gives $\pi_2(G_2/T^2)\cong\mathbb Z^2$ [T]. This describes maps into that orbit under fixed-spectrum constraints; it does not prevent a state from continuously reducing its Gap. The valid path $I/7+t(\Gamma-I/7)$ sends $G$ to $tG$ and reaches zero. Topological protection requires a field domain, boundary conditions and an admissible homotopy class [H/C].
 
-The stabilizer of a Gap configuration determines topological protection against continuous deformations.
+## 9. Phase dynamics requires a specified vector field {#gap-от-неассоциативности}
 
-:::tip Theorem 8.1 (Stabilizer classification) [T]
-For the Gap operator $\hat{\mathcal{G}}$ with fixed spectrum $\{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$, the stabilizer $H_{\hat{\mathcal{G}}} = \{g \in G_2 : g\hat{\mathcal{G}}g^{-1} = \hat{\mathcal{G}}\}$:
+For the chosen normed octonion multiplication, a distinct basis triple on a Fano line has zero associator, while an off-line triple has associator $\pm2e_l$ [T]. Each pair lies on one line and has four off-line third axes. These algebraic identities do not determine the density-state evolution.
 
-| Rank | Spectrum of $\hat{\mathcal{G}}$ | $H$ | $\dim(H)$ | $G_2/H$ | $\pi_2(G_2/H)$ |
-|------|---------------------------|-----|-----------|---------|-----------------|
-| 0 | $(0,0,0)$ | $G_2$ | 14 | $\{pt\}$ | 0 |
-| 1 | $(\lambda,0,0)$ | $\mathrm{SU}(3)$ | 8 | $S^6$ | 0 |
-| 2 | $(\lambda_1,\lambda_2,0)$ | $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 4 | 10-dim. | 0 |
-| 3 (generic) | $(\lambda_1,\lambda_2,\lambda_3)$ | $T^2$ | 2 | 12-dim. | $\mathbb{Z}^2$ |
-| 3 (degen.) | $(\lambda,\lambda,\lambda)$ | $\mathrm{SU}(2)$ | 3 | 11-dim. | 0 |
-:::
+For a specified Hermitian, trace-preserving vector field $\dot\Gamma=F(\Gamma)$ and a nonzero coherence,
 
-**Corollary.** Only at rank 3 with generic spectrum is the second homotopy group $\pi_2(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$, which provides **topological protection**: nondegenerate Gap configurations cannot be continuously contracted to trivial ones ($G_2$ is simply connected, so $\pi_1(G_2/T^2) = 1$; the nontrivial invariant lives in $\pi_2$, equal to $\pi_1(T^2) = \mathbb{Z}^2$). This is one of the [five types of Gap protection](/docs/core/dynamics/gap-phase-diagram#защита-gap).
+$$
+\dot\theta_{ij}=\operatorname{Im}\frac{F_{ij}(\Gamma)}{\gamma_{ij}}.
+$$
 
----
+Away from zeros of $\sin\theta$, the exact derivative is
 
-## 9. Gap dynamics from octonionic non-associativity [T] {#gap-от-неассоциативности}
+$$
+\frac{d}{d\tau}|\sin\theta|=\operatorname{sgn}(\sin\theta)\cos\theta\,\dot\theta,
+$$
 
-The octonionic associator is the fundamental source of Gap dynamics. This section derives the explicit contribution of non-associativity to the evolution of Gap.
+which may be negative. At a zero use one-sided derivatives; at zero coherence the phase is undefined. For a diagonal Hamiltonian alone, $\dot\theta_{ij}=-(h_i-h_j)$.
 
-:::tip Theorem 9.1 (Associator contribution to Gap dynamics) [T]
-
-For three dimensions $(i,j,k)$ **not** on a common Fano line, the octonionic associator
-
-$$[e_i, e_j, e_k] := (e_i \cdot e_j) \cdot e_k - e_i \cdot (e_j \cdot e_k)$$
-
-is non-zero and contributes to the phase dynamics of coherences:
-
-$$\frac{d\theta_{ij}}{d\tau}\bigg|_{\text{assoc}} = \omega_0 \sum_{k \notin \text{line}(i,j)} \mathrm{Im}\left(\frac{[e_i, e_j, e_k]}{\|[e_i, e_j, e_k]\|}\right) \cdot |\gamma_{ik}| \cdot |\gamma_{jk}|$$
-
-where $\theta_{ij} = \arg(\gamma_{ij})$ and the sum runs over the 4 dimensions $k$ that do **not** share a Fano line with $(i,j)$.
-:::
-
-**Proof.**
-
-**Step 1 (Associator structure).** In the octonions, the associator vanishes for triples on a Fano line (Artin's theorem: $\mathbb{O}$ is alternative, so any two elements generate an associative subalgebra $\cong \mathbb{H}$). For triples $(i,j,k)$ NOT on a Fano line:
-
-$$[e_i, e_j, e_k] = \pm 2 e_l$$
-
-where $l$ is determined by the Fano plane structure (standard octonion algebra, Baez 2002). The factor 2 arises from the alternating property.
-
-**Step 2 (Fano line count).** Each pair $(i,j)$ lies on **exactly one** Fano line containing a third element $k_0$. The remaining 4 elements $k \in \{1,\ldots,7\} \setminus \{i,j,k_0\}$ are NOT on the $(i,j)$-line. For each such $k$, the associator $[e_i, e_j, e_k] \neq 0$.
-
-**Step 3 (Phase contribution).** The unitary part of the evolution $-i[H_{\text{eff}}, \Gamma]$ generates phase rotation of coherences: $d\theta_{ij}/d\tau = \Delta\omega_{ij}$ (frequency detuning). The Hamiltonian $H_{\text{eff}}$ contains terms from the octonionic multiplication table. For triples outside Fano lines, the non-associativity introduces **additional** phase terms proportional to the associator magnitude and the coherence amplitudes of the third-party connections $|\gamma_{ik}|$, $|\gamma_{jk}|$.
-
-**Step 4 (Gap dynamics).** Since $\mathrm{Gap}(i,j) = |\sin\theta_{ij}|$, the rate of change:
-
-$$\frac{d\,\mathrm{Gap}(i,j)}{d\tau} = |\cos\theta_{ij}| \cdot \frac{d\theta_{ij}}{d\tau}$$
-
-The associator contribution (Step 3) adds a **positive** term to $|d\theta_{ij}/d\tau|$ for triples outside Fano lines, driving $\theta_{ij}$ away from 0 and $\pi$ (where Gap = 0). This means:
-
-- **On Fano lines:** associator = 0, no additional phase drift → Gap can be zero (associative subalgebra)
-- **Off Fano lines:** associator ≠ 0, phase drift → Gap > 0 is dynamically maintained
-
-This provides a **microscopic mechanism** for Lawvere incompleteness (T-55 [T]): the non-associativity of octonions **structurally prevents** full phase alignment, ensuring Gap > 0 for any viable system. $\blacksquare$
-
-:::warning Physical consequence
-Non-associativity is not a mathematical curiosity — it is the **engine of the explanatory gap**. The fact that $(e_i \cdot e_j) \cdot e_k \neq e_i \cdot (e_j \cdot e_k)$ for off-line triples means that triple interactions **cannot be decomposed** into sequences of pairwise ones. This irreducible triplicity is the mathematical source of the [Map splitting](/docs/consciousness/foundations/two-aspect-monism) (T-186 [H]): the internal and external descriptions cannot be simultaneously exact because the algebraic structure itself forbids full associativity.
-:::
-
-**Numerical example.** For the triple (A,E,U) = (e₁,e₅,e₆), which is a Fano line: $[e_1, e_5, e_6] = 0$ (associative subalgebra). For the triple (A,E,D) = (e₁,e₅,e₃), which is NOT a Fano line: $[e_1, e_5, e_3] = \pm 2e_l \neq 0$, contributing a phase shift of order $2\omega_0 |\gamma_{13}| \cdot |\gamma_{53}|$ to $d\theta_{15}/d\tau$.
-
----
+The former T.9.1 phase equation is withdrawn [✗]: its RHS used a vector-valued octonionic imaginary part as a scalar phase rate, supplied no Hamiltonian/coupling derivation, and incorrectly inferred positive Gap drift. Associator couplings must be declared and shown to preserve valid states [D/H]. Octonion nonassociativity does not change associativity of ordinary matrix/channel composition. Real states, zero Hamiltonian, real targets and diagonal dissipators give counterexamples to any universal forced complex phase or opacity; Lawvere's fixed-point theorem supplies no such dynamical implication.
 
 ## Related documents
 

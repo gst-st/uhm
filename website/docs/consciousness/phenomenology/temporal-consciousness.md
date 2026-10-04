@@ -173,38 +173,27 @@ Note: during the accident $\gamma_{OO}$ increases slightly (adrenaline intensifi
 
 ## Temporal Dilation (C.1) {#дилатация}
 
-:::tip Statement C.1 (Subjective time dilation) [T]
-The ratio of subjective to physical time increments is proportional to the subjective tempo:
+:::note Subjective tempo hypothesis [H/I]
+For $\gamma_{OO}>0$, define the frame-dependent statistic $\mathcal T=|\gamma_{OE}|/\gamma_{OO}$ [D]. A proposed proportionality of reported subjective tempo to $\mathcal T$ is an empirical hypothesis requiring independent time judgments, a calibrated state observation model and uncertainty. It follows neither from the logical support adjunction nor from declaring O and E roles.
 
-$$
-\frac{\delta\tau_{\text{subj}}}{\delta\tau_{\text{phys}}} \propto \mathcal{T}(\tau) = \frac{|\gamma_{OE}|}{\gamma_{OO}}
-$$
-
-**Derivation [T].** The connection of $\gamma_{OE}$ to the experience of time is **not** a semantic postulate but a **theorem** following from three [T]-results:
-1. **T-87 [T]:** O is the clock dimension — time $\tau$ emerges from correlations between O and the rest via the Page–Wootters mechanism.
-2. **T-186(a) [T]:** E is the experience dimension — the phenomenal functor $F \cong \&|_{\mathcal{D}}$ extracts the E-sector as the carrier of subjective content.
-3. **T-88 [T]:** The coupling $\gamma_{OE}$ appears in the regeneration rate $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$, which governs the speed at which the system updates its experiential state.
-
-The ratio $|\gamma_{OE}|/\gamma_{OO}$ is therefore the **rate of experiential content production per clock tick** — a derived quantity, not a convention. $\square$
-
-At high $\mathcal{T}$ subjective time "stretches" (more experience per unit of physical time). At low $\mathcal{T}$ subjective time "compresses".
+A tensor clock, reading instrument and support constraint are independent inputs (T-87 [C under those supplied data]). The phenomenal correspondence T-186(a) is [H/I]; the rate formula T-88 is a selected model with a declared domain, not a universal generator of experience. At $\gamma_{OO}=0$ the quotient is undefined, and a population floor or separately specified extension is required. Vanishing $\gamma_{OE}$ does not prove absence of time experience. Numerical profiles in this chapter are illustrations or candidate associations, not measured biological constants.
 :::
 
 ### Mechanism
 
-Dimension O, via the [Page–Wootters mechanism](/docs/core/operators/emergent-time#page-wootters), acts as the internal clock:
+For an independently supplied clock factor and system, the [Page–Wootters protocol](/docs/core/operators/emergent-time#page-wootters) conditions their joint state. A labelled O basis axis in $D_7$ is not this tensor factor:
 
 $$
 \mathcal{H}_{\text{total}} = \mathcal{H}_O \otimes \mathcal{H}_{6D}
 $$
 
-Conditional state at a fixed "tick" $|\tau_n\rangle_O$:
+Conditional state at a specified tick $|\tau_n\rangle_O$, provided $p(\tau_n)>0$:
 
 $$
 \Gamma(\tau_n) = \frac{\mathrm{Tr}_O\!\left[(|\tau_n\rangle\langle\tau_n|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{\text{total}}\right]}{p(\tau_n)}
 $$
 
-The coherence $\gamma_{OE}$ determines how non-trivial the **E-component of the correlation** with the O clock is. If $\gamma_{OE} = 0$, the Interiority dimension is "disconnected" from the clock — subjective time is not registered.
+The conditional state depends on the supplied joint density operator and clock instrument. The seven-dimensional $\gamma_{OE}$ is a separate readout; no equation above identifies it with joint clock correlations or subjective tempo. That identification requires a specified lift/readout and an empirical bridge.
 
 **Analogy.** Imagine a metronome (O) and a dancer (E). If the dancer is listening to the metronome ($\gamma_{OE}$ is high), each beat is filled with movement — "time is marked out". If the dancer is wearing headphones ($\gamma_{OE} = 0$), the metronome ticks, but the dance is not linked to it — for the dancer "there is no time", even though the metronome keeps running.
 

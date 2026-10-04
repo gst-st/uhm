@@ -12,32 +12,26 @@ One list of everything the corpus **assumes** rather than proves, as of 2026-09-
 Status letters are those of the registry: **[P]** postulate (an axiom), **[H]** hypothesis (formulated, not proven — here a named assumption), **[Pr]** research programme, here a principle kept open (neither assumed as an axiom nor claimed proven), **[D]** definition by convention; **[I]** interpretation and **[C]** conditional theorem appear only where a row names them, as in the registry. A free parameter is not a statement and has no letter.
 :::
 
-## 1. How to read the list {#как-читать}
+## 1. Proof obligations {#как-читать}
 
-Three kinds of input are kept apart.
+The [mathematical kernel](/docs/reference/mathematical-kernel) fixes the revised domains. Each result must list its model inputs, mathematical hypotheses, and physical or phenomenal bridge. A chosen convention is not derived merely because consequences of that convention are theorems. Numerical checks verify specified instances; they are not universal proofs.
 
-- **Axioms** fix the mathematical object: the ∞-topos, its metric, the dimension, the scale and the Page–Wootters constraint. Everything labelled "[T] as mathematics" in the corpus uses only these.
-- **Bridge premises** say which part of that object is physical spacetime, matter or a self-model. They are the reason a result reads "[T] as mathematics, [C at (X)] as physics".
-- **Identification hypotheses** of the flavour and vacuum sectors attach numbers to particle data. Several have been refuted in their exact form and survive only in a weaker one.
+## 2. Axioms and model choices {#аксиомы}
 
-A premise counts as **used** when a live registry row or theorem carries `[C at (X)]` for it, or when its statement is an explicit step of a proof. A premise that has since become a theorem is listed in section 5 and is no longer an input.
+| Input | Exact scope | Status |
+|---|---|---|
+| Metatheory | Spaces and higher categories; a specified universe and size convention | Language choice |
+| A1 | $\mathbf{Sh}_\infty(\operatorname{Open}_B(\mathcal D_N))$, with covers by unions of open subsets | [P]; the old channel-image ball site proof is withdrawn |
+| A2 | Bures distance as the selected distinguishability metric | [P]; topology alone does not determine a metric. CPTP-monotone quantum metrics form a family, not a unique metric |
+| A3 | A designated seven-dimensional subsystem | [P]; $N\ge7$ follows only under the declared perfect-code hypothesis $\Sigma_6$ or a faithful representation of the selected algebra $\mathbb C\oplus M_3\oplus M_3$ |
+| A4 | Calibrated frequency $\omega_0>0$ | [P/D]; $\min\operatorname{Spec}H$ is not an invariant calibration because $H\mapsto H+cI$ preserves the state dynamics |
+| A5 | A clock register, an embedding, and a Page–Wootters support constraint on their joint state | [P]; all three require an explicit model. A seven-axis vector does not supply a tensor clock factor |
+| QG | Density matrices and linear CPTP processes; GKSL generators for the stated Markov semigroup scope | [D/P]; nonlinear density-preserving feedback is specified separately |
+| Octonionic frame | A fixed real positive 3-form, frame, and its stabilizer $G_2$ | [D]; the frame does not prove encoder uniqueness or $G_2$-invariance of every scalar score |
+| Window conventions | $P>2/7$, $R\ge1/3$, $\Phi\ge1$, $D_{\rm diff}\ge2$ on an augmented state record | [D]; the purity cut follows from the chosen HS-majority rule. Physical viability needs a separate bridge |
+| Experiential data | An E-extension and specified readout; its identification with experience | Extension [D], phenomenal identification [P/I] |
 
-## 2. Axioms [P] {#аксиомы}
-
-| Premise | Statement | Used by | Status and what is known |
-|---|---|---|---|
-| **Metatheory** | ∞-categories / homotopy type theory as the language; intuitionistic internal logic | every page | outside the theory ([honest axiomatics](/docs/core/foundations/axiom-omega#аксиоматика)) |
-| **A1** | reality is the ∞-topos $\mathbf{Sh}_\infty(\mathcal C)$ over $\mathcal D(\mathbb C^N)$ | all results | [P]; derivable from the operational basis only through the hypothesis T-186(a) (T-190) |
-| **A2** | the Grothendieck topology is induced by the Bures metric | the topology, the stratification, T-173, T-190 | [P]; its topology is forced (every continuous distance on the compact $\mathcal D$ induces the standard one), and within the CPTP-monotone metrics Bures is canonical (T-187; the maximum-entropy recasting T-189) — what stays postulated is the monotonicity of the enrichment. It is not derivable from (AP)+(PH)+(QG)+(V)+MaxEnt, so it is the third condition of T-190; it follows from the operational reading (O) — the enrichment is the best distinguishability reachable by measurement — which also gives Bures directly (Fuchs–Caves), so the postulated content can be stated as (O) ([Lemma M](/docs/proofs/categorical/cohesive-closure#лемма-монотонность-обогащения)) |
-| **A3** | $N = 7$ | all results | [P]; $N \geq 7$ is [T] (Theorem S); strict necessity needs (Σ₆), section 3 (T-349; (P1₆) until 2026-09-28) |
-| **A4** | the scale $\omega_0 > 0$ | dynamics, calibration | [P]; its value is a free parameter, section 4 |
-| **A5 constraint** | $\hat C\,\Gamma = 0$, the support condition $\mathrm{supp}\,\Gamma \subseteq \ker\hat C$ of Property 2 — the form of the timeless state | the Page–Wootters link of the clock (T-87, step 4), T-190 | [P]; the clock register and the tensor factor of A5 are [T] (T-87, steps 1–3); the constraint is not derived ([A5](/docs/core/foundations/axiom-omega#pw-constraint)) |
-| **(QG)'s formalism** | states are density matrices, admissible maps are CPTP (definition O3) | all dynamics | [D]; "why quantum theory" stays external (T-188) |
-| **Frame decision D-0910** | the dynamical frame group is $\Gamma_{\mathrm{oct}}$, 48 physical parameters | the dynamical half of the $G_2$-rigidity (42a), T-334 | [D] ([uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)) |
-
-The independent content of the axioms is A1–A4 plus the constraint of A5. **Independence of the constraint** [T]: A1–A4 admit every density matrix on $\mathcal H_O \otimes \mathcal H_{\text{rest}}$, and $\ker\hat C$ is a proper subspace whenever $\hat C \neq 0$, so a state such as $\lvert\tau_0\rangle\langle\tau_0\rvert \otimes \rho$ with $\hat C(\lvert\tau_0\rangle \otimes \cdot) \neq 0$ satisfies A1–A4 and violates the constraint.
-
-**Independence of the monotonicity of A2** [T]: the Hilbert–Schmidt distance — the one in which (V) is written, $P - 1/7 = \lVert\Gamma - I/7\rVert_{\mathrm{HS}}^2$ — is Riemannian, induces the standard topology and gives a stable ε-δ coverage, and every property (AP), (PH), (QG), (V) and MaxEnt is indifferent to it; yet a partial-trace channel on $\mathbb C^7$ moves a full-rank pair $\sqrt2 = 1.41421$ times farther apart in it while their Bures angle keeps the ratio $1.00000$ ([Lemma M](/docs/proofs/categorical/cohesive-closure#лемма-монотонность-обогащения)).
+The open-site construction, the support reflector, and the numerical self-model are different objects. The terminal sheaf is not $I/7$, and there is no terminal seven-dimensional object in the CPTP process category. The old T-190 axiomatic equivalence is withdrawn. The exact operational monotonicity lemma survives for a distinguishability distance defined as a supremum over POVMs; it does not reconstruct A1, dimension, clock, or a unique monotone metric.
 
 ## 3. Bridge premises {#мостовые-посылки}
 
@@ -67,28 +61,24 @@ These are the free inputs that remain after four waves of repair (2026-09-25/26)
 
 T-329 uses only that the spinor factor of the fermion field is a complex space of some dimension, (W₀). It is **implied** by (P), whose $W$ is complex. Given (Cl₀) it is **equivalent** to the requirement that one generation be chiral and anomaly-free [T, 48e(f),(h)]: with a real Lorentz factor every fermion space on $\mathcal S$ is anomalous or vector-like (h), and with a complex one it is chiral and anomaly-free for every $n$ (f). (W₀) is therefore a consistency condition of a chiral gauge theory together with the observed chirality, not an independent input.
 
-### (MaxΦ) — the self-model's anchor is maximally integrated [Pr] {#посылка-максфи}
+### (MaxΦ) — maximal integration of the anchor [Pr] {#посылка-максфи}
 
-**Statement.** The anchor $\rho_a$ of the replacement-form self-model $k\,\mathcal P_\alpha(\Gamma) + R\,\rho_a$ is a state of maximal integration, $\Phi(\rho_a) = 6$ ([T-334](/docs/core/operators/phi-operator#t-334)).
+The replacement model chooses an anchor $\rho_a$ with $\Phi(\rho_a)=6$. This is equivalent to a pure state with uniform diagonal, $\rho_a=Duu^\dagger D^\dagger$, $u_i=1/\sqrt7$, and diagonal unitary $D$. Proof: $P\le1$, $d\ge1/7$, and $\Phi=P/d-1\le6$; equality requires both equalities. This is a mathematical characterisation [T] of a selected anchor principle [Pr].
 
-**Equivalent forms** [T, T-334(6)]: (Eq-V) — the self-model privileges no axis (its atomic reading is $\Gamma_{\mathrm{oct}}$-covariant) and is the most viable such; $\rho_a = D\,uu^\dagger D^\dagger$ with $D$ diagonal unitary; maximal relative entropy of coherence, $C_{\mathrm{rel}}(\rho_a) = \log 7$; coherent purity $s = 6/7$. It splits into two halves: (Eq), uniform diagonal, and (Pure), a pure anchor.
-
-**Used by.** The choice of $\varphi_J$ among the self-models the axioms allow: the living attractor of an isolated holon in the window ([evolution](/docs/core/dynamics/evolution#t-335)), the isolated-holon half of C27, the collineation-anchored level of the septicity table. The dynamics of each anchor — T-334 (1)–(5), T-335, T-336 — is [T] without it; the premise decides only which anchor a physical holon has.
-
-**Not derivable from the axioms**: the self-modelling adjunction and the terminal object make $\varphi$ a CPTP left adjoint and leave its anchor open (every anchor gives a channel of the same form). Routes closed in T-334: Curie's principle (gives the family $D((1-t)I/7 + t\,uu^\dagger)D^\dagger$, not $t = 1$), the terminal object (gives (Eq) only), Lawvere and Brouwer (fixed points, not anchors), viability alone. Section 7 adds the routes through the corpus's variational principles.
+A support adjunction does not select $\rho_a$. The terminal object does not imply its uniform diagonal or purity. $I/7$ is another valid anchor, with $\Phi=0$. Anchor-specific attractor formulae in T-334–T-336 require the specified replacement family, Hamiltonian, gate, and rates; they are not universal statements about every self-model.
 
 <a id="посылка-сигма6"></a>
 <a id="посылка-p16"></a>
 
-### (Σ₆) — every decomposition is perfectly diagnosable [H]
+### (Σ₆) — perfect single-error diagnosis [H]
 
-**Statement.** Every decomposition of a viable holon into axes covering (AP)+(PH)+(QG) has a grammar of admissible status profiles $\mathcal{C} \subseteq \mathbb{F}_2^N$ with (D1) $d(\mathcal{C}) \geq 3$, (D2) perfect localisation of a single faulty axis (the radius-1 balls around $\mathcal{C}$ partition $\mathbb{F}_2^N$) and (D3) $\lvert\mathcal{C}\rvert > 2$ ([Theorem Σ](/docs/applied/research/syndrome-calculus#аксиомы)). **(Σ₆⁺)** adds (D4): the grammar is unique up to relabelling and translation.
+A binary code $\mathcal C\subset\mathbb F_2^N$ has minimum distance at least 3, its radius-one Hamming balls partition $\mathbb F_2^N$, and $|\mathcal C|>2$. Counting gives $(N+1)|\mathcal C|=2^N$, hence $N=2^r-1$ and $N\ge7$. The Hamming code of length 7 attains the bound. Length 15 also satisfies this hypothesis: the result is a minimum, not a universal equality. The interpretation of axes as diagnosable bits is a physical hypothesis [H/I]. Functional-role names alone do not imply it.
 
-**Used by.** The strict necessity of $N = 7$ — no decomposition with fewer than seven axes — [C at (Σ₆)] ([T-349](/docs/proofs/minimality/theorem-minimality-7#t-349)(a)). With (D4): the maximality half of the double extremality and the statement (P1₆) below, [C at (Σ₆⁺)] (T-349(b)). $N \geq 7$ for F1–F7 does not use it.
+This coding condition does not imply a multiplicative norm on every competing decomposition. Hurwitz requires a separately specified unital real normed algebra with multiplicative positive norm; nonassociativity then selects $\mathbb O$. The orientation theorem applies after the Fano plane and its collineation symmetry are given, as detailed in [the conditional octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation).
 
-**Status.** [H]. For the seven-dimensional frame it is what Step T8 of the bridge asks; [Corollary Σ.1](/docs/applied/research/syndrome-calculus#следствие-диагностика) calls the reading of UHM's axes as diagnosable status bits interpretive [I]. It is strictly weaker than the input it replaced — (P1₆) together with P2 for the competitor implies (Σ₆⁺), while the Hamming grammar of length 15 satisfies (Σ₆) and admits no normed division algebra (T-349(c)). No model of a competing decomposition covering the axioms is known, so its independence from A1–A5 is open.
+### (RI) — strong reconstruction comparison [H] {#посылка-ri}
 
-**Replaced 2026-09-28: (P1₆) — P1 for a competing decomposition.** P1 holds for any decomposition covering (AP)+(PH)+(QG), not only for the seven-dimensional one. It was the premise of the [strict necessity of N = 7](/docs/proofs/minimality/theorem-minimality-7#теорема-строгая-необходимость-7) from 2026-09-25 to 2026-09-28, and the Hurwitz route that used it also needed P2 for the competitor (P1 alone leaves $\mathbb{H}$, $N = 3$). The chain T1–T15 proves P1 for the frame it starts from, and its Step T8 takes $N = 7$ from Track A; the orientation input (Alt) of that chain is discharged (T15-canon, section 5). (P1₆) is now [C at (Σ₆⁺)]: at $N = 7$ the grammar is $H(7,4)$ and Steps T9–T15 give P1 for the competitor (T-349(b)). The hosting route of the foundations corpus (Foundations of Mathematics, Part XVIII, ch. 11) does not discharge it: it starts from Hurwitz's list (T-349(d)).
+To compare encoders up to $G_2$, assume bijective encoders onto the full density space, whose transition and inverse are CPTP and preserve the fixed positive real 3-form. Their comparison is then unitary and lies in the form stabilizer, with the stated central phases. Covariance alone does not imply this hypothesis. A biological feature estimator generally has neither a quantum-channel domain nor a CPTP inverse. Its identifiability must be proved from its observation law, not from the symmetry of its codomain.
 
 ### Flavour, vacuum and identification hypotheses [H] {#гипотезы-отождествления}
 
@@ -101,9 +91,9 @@ T-329 uses only that the spinor factor of the fermion field is a complex space o
 | **(FE)** | the electroweak group acts on $\mathrm{span}\{L,E,U\}$ of the system factor | the axis-frame electroweak construction (T-175b, T-219, T-265) | [H]; replaced by (Cl₀) in the Clifford frame, still carried by the axis-frame pages |
 | **(SA)** | sector asymmetry of the vacuum Gap profile | neutrino generation assignments, T-219 | [H]; T-52 retired as a theorem |
 | **Higgs identification** | $H \sim \gamma_{EU}$ (axis frame); the colour-free plane as the Higgs doublet (Clifford frame, T-329(f)) | the Higgs sector | [H] in both frames |
-| **T-186(a)** | the cohesive route to A1 | T-190 (axiomatic closure) | [H] |
-| **Physical reading of $M^4$** | the reconstructed $M^4 = \mathbb R \times S^3$ (T-118, T-119, T-120) is physical spacetime | T-120 and T-121 as physics | [I], as in the registry rows T-119 and T-120, which are [T] as mathematics; the former reconstruction conditions of T-119 and the aperiodic time parameter are discharged (section 5); T-120b(ii) stays [C at the vacuum symmetry] through T-64 and (SV), and T-87 as a Page–Wootters mechanism uses the A5 constraint of section 2 |
-| **(HOL)** | a composite of holons is itself a holon, with its own dynamics on $\mathcal D(\mathbb C^7)$ | the literal reading of CC-5 and of the population rungs | [I]; not derivable (dimension 49, not 7); CC-5 and CC-6 hold at weak coupling without it |
+| **T-186(a)** | cohesive/phenomenal bridge | The universal T-190 axiom closure is withdrawn [✗]; supplied cohesion and numerical realization remain independent inputs. | [H] |
+| **Physical reading of $M^4$** | The supplied spatial algebra and clock limit are interpreted as spacetime. | T-118–T-121 as physics | [I]; T-120b additionally requires the specified positive cosmological constant and maximally symmetric 4D vacuum; a global closed spatial slice needs separate topology/foliation. Algebraic symmetry of the selected Gap potential does not supply this field model. |
+| **(HOL)** | A composite is assigned a seven-dimensional effective readout with its own chosen dynamics. | CC-5, CC-6 and population models | [D/I]; the native joint carrier is dimension49. A readout requires a channel or estimator and validated retained observables. Weak coupling alone does not identify the joint state or supply autonomous closure. |
 
 ## 4. Free parameters {#свободные-параметры}
 
@@ -111,42 +101,26 @@ T-329 uses only that the spinor factor of the fermion field is a complex space o
 |---|---|---|
 | $\kappa$, weight of the associator cubic in $V_{\text{Gap}}$ | T-64, T-331 | **Free** [T]: no derived source carries it (T-331(e)); its weight is $0$ for every functional of the isolated dynamics (T-331(f)). Both phases occur: for $0 < \kappa \leq \mu^2/48$ the vacuum is $I/7$, for $\kappa > \min(7\mu^2/48, \kappa_1)$ the Gap is spontaneous with orbit $S^6$ (T-64) |
 | $\mu^2$, $\lambda_4$ | $V_{\text{Gap}}$ (T-64) | free couplings of the potential |
-| regeneration rate $\kappa$, Fano weight $\alpha$ | the evolution equation, T-334–T-336, T-346, T-351 | **Free** [T]: the window needs $\kappa \geq 11.83,\ 20.91,\ 42.64$ at $\alpha = 0,\ \tfrac12,\ 1$ for every self-model (T-336); no route fixes the value above it (T-346) — the threshold $\kappa_c$ of $\varphi_J$ has Galois group $S_7$, the attractor has no interior optimum, the fold survives no detuning, every norm balance with $\mathcal{D}_\Omega$ gives $\kappa g_V \le 1$ against the needed $\ge 1.70$, the categorical $\kappa(\Gamma)$ moves the freedom into $\omega_0$, and composition has only trivial fixed points; nor does a population of holons (T-351) — selection on a common resource runs to the fold, or to the edge $\kappa_H$ set by the energy spread of the environment, Hamiltonian coupling only lowers the effective rate, exchange coupling makes regeneration a public good whose stable level is set by a price, and maximal entropy production selects $\kappa \to \infty$ |
+| regeneration rate $\kappa$, Fano weight $\alpha$ | The selected replacement dynamics, T-334–T-336, T-346, T-351 | [T under the specified model] The positive-branch window calculation gives minima 11.8335,20.9126,42.6381 at $\alpha=0,1/2,1$ in its selected units. The anchor, $R$, gate, Hamiltonian, baseline generator and branch condition $B_\alpha(P)>0$ are required. No bound for every self-model or universal physical rate follows; fitting and resource optimisation need a specified physical model. |
 | $\omega_0$ | A4 | the scale; its value differs between holons |
 | phase reference $D$ of $\varphi_J$ | T-334(4) | a gauge of the $H$-free dynamics; physical only relative to a non-diagonal $H$ |
 | $\bar\theta_{\mathrm{QCD}}$ | T-333, T-99 (corrected 2026-09-26) | free in the Clifford content [Pr]; no $G_2$-invariant Gap term fixes it ([Confinement §3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)) |
 
-## 5. Premises discharged — no longer inputs {#снятые-посылки}
+## 5. What is actually discharged {#снятые-посылки}
 
-| Former premise | Discharged by | Date |
-|---|---|---|
-| (P1₆): P1 for a competing decomposition, as the premise of the strict necessity of $N = 7$ | [T-349](/docs/proofs/minimality/theorem-minimality-7#t-349): replaced by the strictly weaker (Σ₆); (P1₆) itself follows at (Σ₆⁺) | 2026-09-28 |
-| (Alt): the Fano orientation is the normed one | [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация): the unique orientation class invariant under the 168 collineations | 2026-09-25 |
-| (MP) | T11–T13 (Choi rank, L-unification, forced BIBD) | earlier |
-| (MM): elementary systems can be entangled | 48e(b): a theorem inside UHM | 2026-09-25 |
-| (Q) = (Q1) ∧ (Q2) | replaced by the weaker (L), now (P); (Q) still suffices | 2026-09-25/26 |
-| second sentence of (Cl) | T-329: the clock's stabiliser | 2026-09-25 |
-| (RT), the real twirl inequality | proven (T-64, Lemma 3) | 2026-09-25 |
-| (Col), (Pure) | (Col) follows from (Eq-V); (Pure) is equivalent to maximal viability under (Eq) (T-334) | 2026-09-25 |
-| (AGG) | Theorem 9.5 at weak coupling (CC-5, CC-6) | 2026-09-25 |
-| (ND) | CC-7 for almost every anchor | 2026-09-25 |
-| (CG) | T6, uniform contraction from $S_7$-equivariance | earlier |
-| the open reconstruction conditions of T-119 | T-119 restated: the spatial algebra is $C(S^3)$, and all seven of Connes' conditions hold for its Dirac triple (T-120 and T-121 raised to [T] as mathematics with it) | 2026-09-25 |
-| an aperiodic time parameter | the depth register: $A_{\text{time}} \cong C_0(\mathbb R)$ as its scaling limit (T-118, T-53b) | 2026-09-25 |
+The canonical orientation theorem is valid **given** the Fano plane and its collineation invariance. The sharp minimal realisation of attenuation $1/3$ is classified **given** that attenuation and the projector class. Primitivity alone does not force the Fano plane, repeated jump operators do not change a generator, and dephasing with a connected Hamiltonian already gives primitive dynamics without pair-covering rank-three projectors.
 
-## 6. Results that use no premise of sections 3–4 {#безусловные}
+Finite-dimensional module and Clifford calculations remain mathematical results about their stated algebras. Interpreting those modules as matter, their spinor factor as spacetime, a clock register as physical time, or a depth scaling limit as a continuum requires the bridges listed here. Earlier dates of discharge are historical records and do not supply omitted assumptions.
 
-These are [T] from the axioms of section 2 alone (the metatheory, A1–A4, the constraint where stated, the definitions O3 and D-0910):
+## 6. Results with explicit mathematical scope {#безусловные}
 
-- **Structure of the primitive.** Cohomological monism and local non-triviality; the octonionic structure from (AP)+(PH)+(QG)+(V) through T15 with the canonical orientation (row 41n); $N \geq 7$ (Theorem S); $G_2$-rigidity (42a, T-123); rigidity of the primitive (T-173); the universal property of the kinematic object (T-174); PhysTheory as a Grothendieck construction (T-211); the encodings T-171 and T-172.
-- **Time.** The clock register (T-87, steps 1–3); the depth register and its dissipative arrow (T-53b); the time line as its scaling limit (T-118).
-- **Dynamics and consciousness.** Non-emptiness of the conscious window (T-124); dead isolation for every unital self-model; the anchor theorems T-334 (1)–(5), T-335, T-336 for every anchor; no-signalling of the full dynamics (Theorem 8.5).
-- **Vacuum.** The $G_2$-invariant potentials (T-331) and the vacuum phases of $V_{\text{Gap}}$ as functions of the free $\kappa$ (T-64).
-- **As mathematics.** 48c, 48d, 48e; T-119, T-120; T-326–T-329, T-332, T-333. Their physical readings carry the premises named in section 3.
+The exact HS identity, the spectral bound, support-image adjunction, open-site construction, Fano attenuation computation, sharp-minimal projector classification, and finite orientation calculation are mathematical results with domains specified in the [kernel](/docs/reference/mathematical-kernel). The $N\ge7$ bounds require $\Sigma_6$ or the selected internal algebra. Encoder rigidity requires (RI). Nonemptiness of the augmented window requires the declared experiential lift. No-signalling requires a local, well-defined tensor extension; density-preserving nonlinear evolution alone does not imply it.
+
+The detailed physics module arguments below are relative to the chosen octonionic/Clifford model. They do not restore the withdrawn AP-to-seven, terminal-anchor, or axiomatic-closure proofs.
 
 ## 7. Independence and mergers {#независимость}
 
-**Method.** A premise X is independent of the others when there is a model in which all the others hold and X fails. Two premises merge when one statement is proven equivalent to their conjunction and is strictly weaker than asserting them separately — that is, when the merged form reduces the number of independent inputs. Numerical witnesses are in `website/scripts/check_core_numbers.py` (`test_spinor_factor_premise_and_fermion_module_premise_are_independent`, `test_anchor_principle_is_independent_and_attractor_integration_does_not_replace_it`, `test_fermion_module_premise_is_the_holons_product_acting_on_matter`, `test_no_holon_property_maximality_or_minimality_gives_the_bridge_premises`, `test_spinors_from_the_tensorial_holon_triality_kahler_dirac_and_bosonic_textures`).
+**Method.** A premise X is independent of the others when there is a model in which all the others hold and X fails. An equivalent reformulation of a conjunction does not reduce its independent content. A weaker replacement must state which consequences of the conjunction remain provable. Numerical witnesses are in `website/scripts/check_core_numbers.py` (`test_spinor_factor_premise_and_fermion_module_premise_are_independent`, `test_anchor_principle_is_independent_and_attractor_integration_does_not_replace_it`, `test_fermion_module_premise_is_the_holons_product_acting_on_matter`, `test_no_holon_property_maximality_or_minimality_gives_the_bridge_premises`, `test_spinors_from_the_tensorial_holon_triality_kahler_dirac_and_bosonic_textures`).
 
 ### Independence [T] {#модели-независимости}
 
@@ -179,18 +153,18 @@ So the merger exists as a statement and does not reduce the inputs: the conjunct
 **Proposition.** None of the variational principles that the corpus states yields (MaxΦ):
 
 1. **The retracted cross-entropy principle** ([FEP derivation](/docs/proofs/dynamics/fep-derivation)): its minimiser is the projector onto the top eigenvector of $\Gamma$, an intrinsic anchor; intrinsic anchors are spectral and phase-covariant, so they hold no hyperbolic attractor in $\mathcal V_{\mathrm{full}}$ near $H = 0$ ([phase-reference obstruction](/docs/core/dynamics/evolution#теорема-фазовое-препятствие)), and they are not constant [T].
-2. **(MaxEnt)** of the operational basis selects the Bures metric (T-189). Applied to the anchor itself it gives $I/7$, $\Phi = 0$, the opposite of (MaxΦ); applied to the atomic reading of the anchor it gives only (Eq) [T].
+2. **(MaxEnt)** does not by itself select the Bures metric; a specified operational distinguishability rule is required. Applied to the anchor itself it gives $I/7$, $\Phi = 0$, the opposite of (MaxΦ); applied to the atomic reading of the anchor it gives only (Eq) [T].
 3. **(V), viability**: the anchor $\rho_t$ of the table lives in the window with $\Phi(\rho_t) < 6$ [T, numerical witness]. **Maximal viability** alone picks anchors with non-uniform diagonal (T-334(6)).
 4. **Maximal integration of the living attractor** (a new candidate, not stated in the corpus). For a constant anchor the window attractor at $H = 0$ depends only on $d = \sum_i (\rho_a)_{ii}^2$ and $s = P(\rho_a) - d$, and its integration is $\eta^2 s/d$ with $\eta$ the top root of $\eta = B(P)/A(P)$, $P = d + \eta^2 s$ (T-335). At fixed $d$ it grows with $s$ [T: the root moves right as $s$ grows], so the maximiser is pure. But in the band $\kappa_c(\alpha) < \kappa < \kappa_*(\alpha)$, $\kappa_* \approx 1.012\,\kappa_c$, a pure anchor with slightly non-uniform diagonal beats $uu^\dagger$: at $\alpha = 0$, $\kappa = 16.8$, $d = 1/7 + 10^{-4}$ gives $\Phi_{\mathrm{att}} = 1.25155$ against $1.25148$ [T by the witness]. Above the band $uu^\dagger$ wins on every tested grid (40 diagonals × 3 purities at $\alpha = 0$, $\kappa = 20$), [H] as a global statement. So this principle agrees with (MaxΦ) only above $\kappa_*$, and below $\kappa_c$ — where $uu^\dagger$ has no living attractor and non-uniform anchors do — it contradicts it.
 
-(MaxΦ) therefore stays [Pr]. What the analysis adds: it is the conjunction of two independent halves, (Eq) and (Pure); (Eq) is the terminal object read on the axes and (Pure) is maximal viability under (Eq); a principle about the observable attractor rather than the anchor reproduces it except in a band of relative width $1.2\,\%$ above $\kappa_c$.
+(MaxΦ) therefore stays [Pr]. What the analysis adds: it is the conjunction of two independent halves, (Eq) and (Pure); (Eq) is a chosen uniform-diagonal constraint and (Pure) is maximal purity under (Eq); a principle about the observable attractor rather than the anchor reproduces it except in a band of relative width $1.2\,\%$ above $\kappa_c$.
 
 ### Routes from the holon to (Cl₀), (P) and (W): T-347 {#t-347}
 
 The independence table shows that (Cl₀) and (P) do not follow from the present axioms. T-347 takes the next question: which property of the holon, which extremal principle or which minimal strengthening would give them. It answers route by route.
 
 :::tip Theorem T-347 (the bridge premises of physics against the holon) — [T] as mathematics
-**(a) No property of the holon decides the bridge premises.** (Cl₀), (P) and (W₀) are statements about the fermion field $F$, which A1–A5 do not mention. Each model of the independence table can be built over one and the same holon: any $\Gamma$, anchor, $\alpha$ and $\kappa$, in particular a living holon in the window $2/7 < P \le 3/7$ with the anchor $uu^\dagger$. Viability, the window, the self-model and its anchor, regeneration, the 168 Fano collineations and the $G_2$-rigidity therefore hold or fail in those models exactly as in the intended one. The holon's symmetry does not see the difference either: as a $\mathfrak g_2$-module, $\mathcal S = \mathbb C\eta_0 \oplus \mathcal H$ is the holon's Hilbert space plus a trivial line. What separates $\mathcal S$ from every space built from $\mathcal H$ is the centre of the spin cover. The rotation by $2\pi$ in the plane of two axes is $\exp(\pi L_{e_1}L_{e_2}) = -1$ on $\mathbb O$ and $+1$ on $\mathbb R^7$ and on every tensor built from it. The genuinely spinorial modules of $\mathrm{Spin}(7)$ have dimensions $8, 48, 112, \dots$; the tensorial ones have $1, 7, 21, 27, 35, \dots$.
+**(a) No property of the holon decides the bridge premises.** (Cl₀), (P) and (W₀) are statements about the fermion field $F$, which A1–A5 do not mention. Each model of the independence table can be built over one and the same holon: any $\Gamma$, anchor, $\alpha$ and $\kappa$, in particular a living holon in the window $2/7 < P \le 3/7$ with the anchor $uu^\dagger$. Viability, the window, the self-model and its anchor, regeneration, the 168 Fano collineations and the chosen $G_2$-frame properties therefore hold or fail in those models exactly as in the intended one. The holon's symmetry does not see the difference either: as a $\mathfrak g_2$-module, $\mathcal S = \mathbb C\eta_0 \oplus \mathcal H$ is the holon's Hilbert space plus a trivial line. What separates $\mathcal S$ from every space built from $\mathcal H$ is the centre of the spin cover. The rotation by $2\pi$ in the plane of two axes is $\exp(\pi L_{e_1}L_{e_2}) = -1$ on $\mathbb O$ and $+1$ on $\mathbb R^7$ and on every tensor built from it. The genuinely spinorial modules of $\mathrm{Spin}(7)$ have dimensions $8, 48, 112, \dots$; the tensorial ones have $1, 7, 21, 27, 35, \dots$.
 
 **(b) (Cl₀) is equivalent to the holon's product acting on matter.** Let (Mod) be the statement: there is a real-linear map $\rho:\mathbb O\to\mathrm{End}_{\mathbb R}(F)$ with $\rho(1) = 1$ and $\rho(x)\rho(x) = \rho(x^2)$ for every $x$ — the left alternative law of the holon's octonions — that commutes with the imaginary unit $i$ of $\mathcal H$. Then (Mod) ⟺ (Cl₀): $F \cong U \otimes_{\mathbb R} \mathcal S$ for a real multiplicity space $U$, and on every copy the Clifford system of T-326 is forced. The smallest $\rho$- and $i$-stable space containing $\mathcal H$ is $\mathcal S$. The independence model $M = \mathbb C^7$ fails exactly (Mod).
 
@@ -223,7 +197,7 @@ The independence table shows that (Cl₀) and (P) do not follow from the present
 T-347 placed (Cl₀) at the centre of the spin cover: the holon and its symmetries are tensorial, and matter is spinorial. Physics knows several ways of getting spinors or fermions out of bosonic, tensorial data. T-350 takes each of them to the holon and states what it gives.
 
 :::tip Theorem T-350 (spinors from the tensorial primitive) — [T] as mathematics
-Let the holon be as in A1–A5, with symmetry group $G_2$ (42a, D-0910). Space is a three-dimensional slice ($S^3$ of T-119, or $\mathbb R^3$ with a constant limit at infinity), and a field theory of $\Gamma$ has a local Lagrangian.
+Let the holon be as in A1–A5, with a specified $G_2$-frame (D-0910; encoder comparison additionally requires (RI)). Space is a three-dimensional slice ($S^3$ of T-119, or $\mathbb R^3$ with a constant limit at infinity), and a field theory of $\Gamma$ has a local Lagrangian.
 
 **(a) Textures of $\Gamma$ are bosons.** A texture is a map from space to a manifold $X$ on which $\Gamma$ lives, and its topological sectors are $[S^3, X]$. For $X = \mathcal D(\mathbb C^7)$ and for the full-rank stratum ($X$ convex) there are no sectors. The rank-$k$ stratum (dimension $14k - k^2 - 1$) retracts onto the Grassmannian $\mathrm{Gr}_k(\mathbb C^7)$, whose $\pi_3$ vanishes; so do $\pi_3(\mathbb{CP}^6)$, $\pi_3(S^6)$ for $S^6 = G_2/\mathrm{SU}(3)$, and $\pi_3(S^7)$ for $S^7 = \mathrm{Spin}(7)/G_2$. An isospectral orbit $\mathrm U(7)/(\mathrm U(n_1)\times\dots\times\mathrm U(n_r))$ has $\pi_3 = \mathbb Z$ only when all eigenvalues are distinct (the full flag manifold $\mathrm{Fl}$; one of the 15 partitions of 7); a $G_2$-valued field has $\pi_3(G_2) = \mathbb Z$. In every sector with $Q = 0$ the constant map is a rotation-fixed point, and $\mathrm{SU}(2)$ has no non-trivial character, so the rotation by $2\pi$ acts as $+1$. For $\mathrm{Fl}$ and $G_2$ the sectors $Q \ne 0$ exist, but $\pi_1$ of each sector is $0$ ($\operatorname{coker}(\mathbb Z^7 \to \mathbb Z) = 0$ for $\mathrm{Fl}$, $\pi_4(G_2) = 0$), so there is no Finkelstein–Rubinstein sign, and $H^5(X;\mathbb R) = 0$ (the cohomology of $\mathrm{Fl}$ is even; that of $G_2$ sits in degrees 3 and 11), so there is no Wess–Zumino term. The two known mechanisms therefore both fail: $\mathrm{SU}(2)$ has $\pi_4(S^3) = \mathbb Z_2$, $\mathrm{SU}(3)$ has $H^5 \ne 0$, the spaces of $\Gamma$ have neither. The dyon route (a charge bound to a monopole) needs $\pi_2$ of the vacuum manifold; the vacua of T-64 are the point $I/7$ and the orbit $S^6$, and $\pi_2(S^6) = 0$.
 
@@ -239,7 +213,11 @@ Let the holon be as in A1–A5, with symmetry group $G_2$ (42a, D-0910). Space i
 So among fermion modules whose internal symmetry is induced there are no doublets at all, and chirality and anomaly freedom have nothing to select from. Among modules on which the holon's product acts, every module is $U \otimes_{\mathbb R} \mathcal S$ (T-347(b)). What selects $\mathcal S$ is the Clifford action, not chirality. (Cl₀) is incompatible with every principle that makes the internal symmetry of matter induced by the holon.
 
 **(e) The spinor module is built from the holon's tensors (Kähler–Dirac).** On the exterior algebra $\Lambda^\bullet\mathbb R^7$ of the holon's axes (dimension 128), $c(v) = v\wedge{} - \iota_v$ satisfies $c(v)^2 = -\lvert v\rvert^2$. So $\rho(a + v) = a + c(v)$ satisfies (Mod) on $\Lambda^\bullet_{\mathbb C}\mathbb R^7$, with multiplicity $16$. The Fano 3-form $\varphi$ (T15), read as a Clifford element, has eigenvalues $\pm7$ (8 each) and $\pm1$ (56 each), and
-$$p_\varphi = \tfrac1{16}(1 + \mathrm{vol})(1 + \varphi)$$
+
+$$
+p_\varphi = \tfrac1{16}(1 + \mathrm{vol})(1 + \varphi)
+$$
+
 is a $G_2$-invariant primitive idempotent. The left ideal $\mathrm{Cl}(\mathbb R^7)\,p_\varphi$ is 8-dimensional, $G_2$-stable, irreducible under $c$, and $x \mapsto x\,p_\varphi$ is an isomorphism from $(\mathbb O, R)$ that carries $c(e_k)$ to $R_{e_k}$ and the tensorial $G_2$ to the derivations. Its complexification is $\mathcal S$ with the group of T-326. The spinor module is thus a canonical subspace of a tensor space of the holon. What is not tensorial is the action: the rotation of the forms by $2\pi$ is $+1$, the Clifford one $\exp(\pi c(e_1)c(e_2))$ is $-1$, and by (d) the Clifford action is induced by no transformation of the holon. The same space is the fermionic Fock space of the seven axes ($v\wedge$ creates, $\iota_v$ annihilates). In that reading none of the 21 Clifford bivectors $c(e_k)c(e_l)$, and no combination of them, conserves the particle number, and the number-conserving part of $c(e_1)c(e_2)$ is the tensorial rotation. So second quantisation of the holon gives (Mod) only on many-particle space and at the price of pair creation.
 :::
 
@@ -263,6 +241,6 @@ is a $G_2$-invariant primitive idempotent. The left ideal $\mathrm{Cl}(\mathbb R
 - **(Σ₆) and (P)**: (Σ₆) concerns the decompositions of the state space, (P) the spinor factor of matter; no implication is known either way. Open.
 - **$\kappa$ and (MaxΦ)**: $\kappa$ weights a cubic of $V_{\text{Gap}}$, which the isolated dynamics does not see (T-331(f)); the anchor lives in the self-model. Independent.
 
-## 8. Count {#итог}
+## 8. Input accounting {#итог}
 
-After the four waves of 2026-09-25/26 the free inputs of UHM are: the axioms A1–A4 and the constraint of A5 [P]; two bridge premises of physics, (Cl₀) and (P) relative to it [H]; one principle of the self-model, (MaxΦ) [Pr]; the strict-necessity premise (Σ₆) [H], perfect diagnosability of every decomposition, which replaced the stronger (P1₆) on 2026-09-28 (T-349); the free parameters of section 4, $\kappa$ among them; and the identification hypotheses of section 3.4, three of which, (SV), (GC) and (UP), survive only in weakened form. Every other input used earlier has been discharged (section 5). (Cl₀) has an equivalent form, (Mod), in which the holon's product acts on matter; T-347 closes the routes that would derive it or (P) from a property of the holon, from maximality or from minimality; T-350 closes the routes that would make spinors out of the tensorial holon (textures, the spin lift, triality, second quantisation) and shows that (Cl₀) is incompatible with any principle under which the holon induces the internal symmetry of matter.
+The full accounting includes the state object, site and metric, selected dimension and frame, dynamical and control families, preparation, clocks and time calibration, experiential extension and readout, physical module bridges, and observation law. Free parameters and selected thresholds are listed separately. The assertion that everything else has been derived is withdrawn: each result must provide its own dependency list. Strong mathematical results survive with these explicit hypotheses.

@@ -1,42 +1,25 @@
 ---
 sidebar_position: 3
 title: "Attention and Memory"
-description: "Attention as redistribution of coherence, types of memory from the non-Markovian kernel, forgetting as decoherence"
+description: "Attention control, temporal kernels and recall: conditional mathematics and testable cognitive hypotheses"
 slug: /consciousness/states/attention-memory
 ---
 
 # Attention and Memory
 
-:::info Bridge from the previous chapter
-In [the Unconscious](/docs/consciousness/states/unconscious) we saw that the boundary between conscious and unconscious is determined by the Gap-structure — the opacity of channels. But what governs this boundary *in real time*? Two mechanisms: **attention** (redistribution of coherence 'here and now') and **memory** (the influence of the past through the non-Markovian kernel). Attention decides *what* enters the focus of consciousness. Memory determines *how long* it remains accessible.
+[The Unconscious](/docs/consciousness/states/unconscious) separates phase statistics from access to content. This chapter proposes models of attention and memory; the correspondence to cognitive processes is an empirical hypothesis **[H]**.
+
+:::note Typed quantities
+$\Gamma\in\mathcal D(\mathbb C^7)$ is a density matrix in a declared native frame, $P=\mathrm{Tr}(\Gamma^2)$ and $\Phi=P/\sum_i\gamma_{ii}^2-1$. Trace normalization constrains populations and bounds coherences, but does not conserve an attention resource or personal identity. For $\gamma_{ij}\ne0$, $\mathrm{Gap}(i,j)=|\sin\arg\gamma_{ij}|$ is a phase statistic; at zero coherence the phase is undefined. A memory kernel describes dependence of an evolution equation on earlier states. It is not a stored memory or a recall score by definition.
 :::
 
-:::note On notation
-In this document:
-- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — its elements
-- $\mathrm{Tr}(\Gamma) = 1$ — normalisation (trace condition)
-- $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты)
-- $\gamma_{AX}$ — coherences between dimension $A$ (articulation/attention) and other dimensions $X$
-- $K(\tau)$ — memory kernel ([non-Markovian dynamics](/docs/applied/coherence-cybernetics/non-markovian#ядро-памяти))
-- $H_{\text{eff}}$ — effective Hamiltonian ([evolution of Γ](/docs/core/dynamics/evolution))
-- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- Full notation table — see [Notation](/docs/reference/notation)
-:::
-
-:::warning Document status
-Definitions of attention and memory via the structure of $\Gamma$ — **[D]** (definitions by convention). Memory typology via forms of the kernel $K(\tau)$ — **[C]** (conditional on non-Markovian dynamics of coherences). Phenomenological interpretations — **[I]**.
+:::warning Scope
+Matrix inequalities below are **[T]**. Chosen control objectives and kernel families are **[D]**; their identification with attention, recall and phenomenology is **[H/I]**, requiring an observation model and task validation. Neither $P$, $\Phi$, Gap nor a fixed-point score alone determines physical consciousness, clinical condition or treatment efficacy. See the [mathematical kernel](/docs/reference/mathematical-kernel).
 :::
 
 ### Chapter roadmap
 
-1. **Historical perspective** — from William James through filter models to UHM
-2. **Attention** — definition, spotlight mechanism, three types, connection to Gap
-3. **Historical perspective on memory** — from Ebbinghaus through multi-level models to UHM
-4. **Memory** — four types from the form of kernel $K(\tau)$: sensory, working, long-term, procedural
-5. **Forgetting** — two mechanisms (kernel decoherence and Gap increase)
-6. **Integration** — how attention, memory and Gap form a unified system
-
----
+Historical models; constrained coherence control; operational tests of attention; kernel families; recoverability and forgetting; interaction with memory.
 
 ## 1. Historical perspective: attention {#история-внимание}
 
@@ -46,15 +29,19 @@ Definitions of attention and memory via the structure of $\Gamma$ — **[D]** (d
 >
 > — William James, *The Principles of Psychology* (1890), ch. 11
 
-James formulated the key intuition: attention is a *selection* from a set of possible contents. This intuition translates directly into the UHM formalism: 'the set of possible objects' = the set of coherences $\{\gamma_{AX}\}$; 'taking possession of one' = increasing $|\gamma_{AE_{\text{target}}}|$ at the expense of the others.
+James's description motivates a selective-control model [I/H]. Increasing a chosen coherence relative to others is a possible objective; the transfer of a conserved budget requires an additional controller law, not the historical description or trace normalization.
+
+**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
 
 ### 1.2 Filter models (1950–1970s)
 
 **Broadbent (1958): early selection filter.** Information passes through a narrow 'bottleneck' — only one channel is fully processed, the rest are blocked. In UHM: $|\gamma_{AE_{\text{target}}}| \gg |\gamma_{AE_{\text{distractor}}}|$ — hard filtering.
 
-**Treisman (1964): attenuation model.** Non-target channels are not fully blocked but *attenuated*. In UHM: $|\gamma_{AE_{\text{distractor}}}| > 0$, but $|\gamma_{AE_{\text{distractor}}}| \ll |\gamma_{AE_{\text{target}}}|$ — soft filtering. This explains the 'cocktail party effect': you can hear your own name in a nearby conversation because the distractor channel is not fully blocked.
+**Treisman (1964): attenuation model.** Non-target channels are not fully blocked but *attenuated*. In UHM: $|\gamma_{AE_{\text{distractor}}}| > 0$, but $|\gamma_{AE_{\text{distractor}}}| \ll |\gamma_{AE_{\text{target}}}|$ — soft filtering. Its proposed matrix counterpart would require an independently tested access/response readout [H].
 
 **Deutsch and Deutsch (1963): late selection filter.** All information is fully processed; selection occurs at the response stage. In UHM: all $|\gamma_{AX}|$ are moderate; selection occurs via channel $(A,D)$ — attention influences *action* ($D$), not *perception* ($E$).
+
+**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
 
 ### 1.3 Posner: components of attention (1980–1990s)
 
@@ -63,7 +50,9 @@ Michael Posner identified three neural 'attention networks':
 - **Orienting** (orientation) — redirecting coherence: $\gamma_{AE_1} \to \gamma_{AE_2}$
 - **Executive** (executive control) — resolving conflict between channels
 
-In UHM, all three networks are described by the unified mechanism of redistribution of A-sector coherences.
+Mapping these networks to A-sector features is a candidate hypothesis [H]; naming a matrix entry does not establish its neural implementation.
+
+**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
 
 ### 1.4 From classical models to UHM
 
@@ -78,134 +67,56 @@ In UHM, all three networks are described by the unified mechanism of redistribut
 
 ---
 
+**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
+
 ## 2. Attention as redistribution of coherence {#внимание}
 
 ### 2.1 Definition
 
-:::info Definition (Attention) [D]
-**Attention** to a pair of dimensions $(i,j)$ is a temporary increase in the modulus of coherence $|\gamma_{AX}|$ with a simultaneous decrease in other $|\gamma_{AY}|$ ($Y \neq X$), constrained by the normalisation $\mathrm{Tr}(\Gamma) = 1$:
-
-$$
-\text{Attention to } X: \quad |\gamma_{AX}|(\tau) \uparrow \quad \Rightarrow \quad \sum_{Y \neq X} |\gamma_{AY}|(\tau) \downarrow
-$$
-
-More formally: attention is a unitary (or near-unitary) transformation of $\Gamma$ that redistributes coherence from A-sector channels into the target channel $(A,X)$.
-:::
+**Definition [D].** A candidate attention controller changes selected A-sector entries toward a declared task objective. Selectivity can be represented by increasing $|\gamma_{AX}|$ relative to declared distractor entries, sustained control by maintaining a target over an interval, and divided control by several simultaneous targets. These are alternative objectives, not consequences of normalization. An empirical attention measure must specify the task, stimulus, response and independent performance readout **[H/Pr]**. Unitary control is one model choice; general open-system control need not be unitary.
 
 ### 2.2 The 'spotlight' mechanism: detailed derivation
 
-Why does increasing one coherence *inevitably* lead to decreasing others? This is a direct consequence of trace normalisation.
-
-**Step 1.** Trace condition: $\mathrm{Tr}(\Gamma) = \sum_{k=1}^{7} \gamma_{kk} = 1$.
-
-**Step 2.** Cauchy-Schwarz inequality for each element:
+**Theorem [T].** Positivity of each $2\times2$ principal minor gives $|\gamma_{AX}|^2\le\gamma_{AA}\gamma_{XX}$. Summing and using trace one yields
 
 $$
-|\gamma_{AX}|^2 \leq \gamma_{AA} \cdot \gamma_{XX}
+\sum_{X\ne A}|\gamma_{AX}|^2\le\gamma_{AA}(1-\gamma_{AA}).
 $$
 
-**Step 3.** The sum of all A-sector coherences is bounded:
+This is an upper bound, not a fixed sum. The former inference “one coherence rises, another must fall” is false when the bound has slack.
+
+**Counterexample in the proof.** Let $u=(1,\ldots,1)/\sqrt7$ and
 
 $$
-\sum_{X \neq A} |\gamma_{AX}|^2 \leq \gamma_{AA} \cdot \sum_{X \neq A} \gamma_{XX} = \gamma_{AA} \cdot (1 - \gamma_{AA})
+\Gamma(t)=(1-t)I_7/7+tuu^\dagger,\qquad 0\le t\le1.
 $$
 
-The right-hand side is a fixed constant for a given $\gamma_{AA}$. Consequently, the sum of squared moduli is bounded, and increasing one term requires decreasing at least one other. This is the **'spotlight' mechanism**.
+These states are positive and trace one. Every diagonal is $1/7$, every off-diagonal modulus is $t/7$, and $P=(1+6t^2)/7$. All six A-sector moduli can increase together while the trace and diagonal populations stay fixed.
 
-**Everyday analogy.** You have a limited attention budget — like a limited amount of water in a bucket. You can water one bed abundantly (focused attention on $\gamma_{AE}$) and leave the others dry. Or water all of them a little (distributed attention). But the total volume of water is fixed — that is $\mathrm{Tr}(\Gamma) = 1$. You cannot 'create' more attention, you can only redistribute it.
-
-**Numerical example: attention budget.** Let $\gamma_{AA} = 0.15$ (the fraction of attention in the total 'energy'). Then:
-
-$$
-\sum_{X \neq A} |\gamma_{AX}|^2 \leq 0.15 \cdot (1 - 0.15) = 0.1275
-$$
-
-This is the 'budget'. It can be distributed as follows:
-
-| Scenario | $\|\gamma_{AE}\|$ | $\|\gamma_{AS}\|$ | $\|\gamma_{AD}\|$ | $\|\gamma_{AL}\|$ | Sum $\|\cdot\|^2$ | SNR for $E$ |
-|----------|:---:|:---:|:---:|:---:|:---:|:---:|
-| Full focus | $0.12$ | $0.01$ | $0.01$ | $0.01$ | $0.0147$ | $36.0$ |
-| Moderate focus | $0.10$ | $0.04$ | $0.03$ | $0.03$ | $0.0134$ | $3.7$ |
-| Distributed | $0.06$ | $0.06$ | $0.06$ | $0.06$ | $0.0144$ | $1.0$ |
-
-With full focus, the SNR (signal-to-noise ratio) for the target channel $E$ is 36 — excellent 'reception'. With distributed attention, SNR = 1 — on the detection threshold. This is why attempting to simultaneously read, listen, and think about a third thing results in none of the activities being performed well.
+A spotlight tradeoff follows **conditionally** if an additional controller enforces the fixed budget $B_A=\sum_{X\ne A}|\gamma_{AX}|^2$. Then $d|\gamma_{AX}|^2/d\tau>0$ implies $\sum_{Y\ne A,X}d|\gamma_{AY}|^2/d\tau<0$. This conservation is an extra dynamical hypothesis **[D/H]**, to be tested rather than derived from $\mathrm{Tr}\Gamma=1$.
 
 ### 2.3 Connection to the [21-pair taxonomy of qualia](/docs/consciousness/phenomenology/qualia-structure#таксономия)
 
-From the [qualia table](/docs/consciousness/phenomenology/qualia-structure#полная-таблица-21-типа-квалиа):
-- $\gamma_{AE}$ — **Apperception** (quale #4): discrimination that has entered interiority
-- $\gamma_{AS}$ — **Morphogenesis** (quale #1): crystallisation of forms
-- $\gamma_{AD}$ — **Actualisation** (quale #2): actualisation of distinction in process
-- $\gamma_{AL}$ — **Predication** (quale #3): distinction as logical predicate
-
-The direction of attention = the choice of which qualitative type dominates. When you contemplate a painting, $\gamma_{AS}$ dominates (forms); when listening to an argument — $\gamma_{AL}$ (logic); when meditating — $\gamma_{AE}$ (pure awareness).
+The proposed names apperception $(A,E)$, morphogenesis $(A,S)$, actualisation $(A,D)$ and predication $(A,L)$ belong to the linked interpretive taxonomy **[I]**. Matrix indices alone do not establish these cognitive functions. Test a proposed mapping by independently manipulating task demands and estimating the corresponding entries with a fixed observation model; include competing mappings and held-out tasks **[Pr]**.
 
 ### 2.4 Types of attention
 
-:::tip Theorem (Types of attention from normalisation) [D]
-From the normalisation $\mathrm{Tr}(\Gamma) = 1$ and the Cauchy-Schwarz inequality $|\gamma_{AX}|^2 \leq \gamma_{AA} \cdot \gamma_{XX}$ three attention modes follow:
+The three labels selective, sustained and divided attention are a chosen taxonomy **[D/H]**. Sustained control may impose $|\gamma_{AX}(\tau)|\ge\theta$ on a declared interval; selective control may maximize a target-to-distractor ratio. Neither objective establishes energetic cost, fatigue, a neural network identity or a universal performance loss.
 
-**(a) Selective (focused) attention:**
-
-$$
-|\gamma_{AE_{\text{target}}}| \uparrow, \quad |\gamma_{AE_{\text{distractor}}}| \downarrow
-$$
-
-One target channel is amplified at the expense of the others. Signal-to-noise ratio:
-
-$$
-\mathrm{SNR} = \frac{|\gamma_{AE_{\text{target}}}|^2}{\sum_{X \neq E_{\text{target}}} |\gamma_{AX}|^2}
-$$
-
-Example: reading a book in a noisy room. $|\gamma_{AL}| \uparrow$ (text), $|\gamma_{AS}| \downarrow$ (visual distractors), $|\gamma_{AD}| \downarrow$ (background sounds).
-
-**(b) Sustained attention:**
-
-Maintaining elevated $|\gamma_{AE}|$ over the interval $[\tau_0, \tau_0 + \Delta\tau]$:
-
-$$
-|\gamma_{AE}(\tau)| \geq |\gamma_{AE}|_{\text{th}} \quad \forall\, \tau \in [\tau_0, \tau_0 + \Delta\tau]
-$$
-
-Energy cost — maintaining $\gamma_{AA}$ against [dissipation](/docs/core/dynamics/evolution#полное-уравнение-движения). Over time $\gamma_{AA}$ decreases due to dissipation, and attention 'tires' — active maintenance is required (effort of will).
-
-Example: driving a car on a long straight road. $|\gamma_{AE}| > \theta$ must be maintained continuously, which requires constant 'expenditure' of $\gamma_{AA}$.
-
-**(c) Distributed (divided) attention:**
-
-Several $|\gamma_{AX_k}|$ are simultaneously elevated, but each is lower than under focused attention:
-
-$$
-\sum_k |\gamma_{AX_k}|^2 \leq \gamma_{AA} \cdot \sum_k \gamma_{X_k X_k} \quad \Rightarrow \quad |\gamma_{AX_k}| < |\gamma_{AX_k}|_{\text{focus}}
-$$
-
-Consequence: distributed attention is **inevitably weaker** than focused attention for each individual channel — a direct consequence of normalisation.
-
-Example: driving while simultaneously talking on the phone. $|\gamma_{AS}|$ (road) and $|\gamma_{AL}|$ (conversation) are both elevated, but each is lower than under focused attention. Research shows a 30–50% reduction in reaction speed — a direct spotlight effect.
-:::
+The ratio $|\gamma_{AX}|^2/\sum_{Y\ne A,X}|\gamma_{AY}|^2$ is a matrix contrast **[D]** when its denominator is positive. Calling it an SNR requires an observation model in which the denominator actually measures noise power. A zero denominator requires separate handling. Positivity must be checked for the full matrix; specifying a few entries below their individual bounds is not sufficient.
 
 ### 2.5 Attention and Gap
 
-Directing attention at channel $(i,j)$ can reduce $\mathrm{Gap}(i,j)$ — this is the mechanism underlying [meditative practices](/docs/consciousness/states/altered-states#медитация):
+**Theorem [T].** In polar coordinates $\gamma_{ij}=r_{ij}e^{i\theta_{ij}}$, $r_{ij}>0$,
 
 $$
-\frac{\partial\,\mathrm{Gap}(i,E)}{\partial |\gamma_{AE}|} < 0
+\mathrm{Gap}(i,j)=|\sin\theta_{ij}|,\qquad
+\left.\frac{\partial\mathrm{Gap}(i,j)}{\partial r_{ij}}\right|_{\theta_{ij}}=0.
 $$
 
-**Motivation.** Why does attention reduce Gap? Formally: increasing $|\gamma_{AE}|$ intensifies the information flow between $A$ and $E$. The intensified flow allows the $\varphi$-operator to more accurately 'see' the state of channel $(i,E)$. A more accurate self-model leads to detection of misalignment (Gap), and detected misalignment triggers correction (Gap-reduction).
+**Counterexample to automatic Gap reduction.** Varying $r$ in $re^{i\theta}$ at fixed phase changes amplitude but leaves Gap unchanged. The family in §2.2 changes all amplitudes while every defined pairwise Gap remains zero. Cross-channel derivatives have no sign without a specified coupled evolution. Even along a flow, where the derivative exists, $\dot G_{ij}=\operatorname{sgn}(\sin\theta_{ij})\cos\theta_{ij}\dot\theta_{ij}$ depends on phase velocity.
 
-**Numerical example.** A mindfulness practitioner directs attention at the breath (channel $S \to E$):
-
-| Time | $\|\gamma_{AE}\|$ | $\mathrm{Gap}(S,E)$ | $\mathrm{Gap}(D,E)$ | Subjective experience |
-|-------|:---:|:---:|:---:|:---|
-| $\tau = 0$ | $0.08$ | $0.40$ | $0.45$ | Distracted |
-| $\tau = 5$ min | $0.15$ | $0.30$ | $0.42$ | "Starting to feel the breath" |
-| $\tau = 15$ min | $0.20$ | $0.18$ | $0.35$ | "I see tension in the body" |
-| $\tau = 30$ min | $0.22$ | $0.12$ | $0.25$ | "I notice emotions as bodily sensations" |
-
-Strengthening the attention–experience channel correlates with a reduction in opacity in E-sector channels. This formalises the intuition: 'that to which attention is directed becomes more transparent'. Formally, this means that attention is one of the mechanisms by which content transitions from the [unconscious](/docs/consciousness/states/unconscious#динамика) to the conscious.
-
----
+Attention training could affect phase, access or model prediction through an independently specified controller **[H]**. The proposed test compares task performance, amplitude and oriented phase before and after the intervention; it does not equate a decrease of this phase statistic with awareness or clinical benefit **[Pr]**.
 
 ## 3. Historical perspective: memory {#история-память}
 
@@ -213,11 +124,13 @@ Strengthening the attention–experience channel correlates with a reduction in 
 
 Ebbinghaus was the first researcher to apply the experimental method to the study of memory. His main discoveries:
 
-- **Forgetting curve**: information is forgotten according to a *power* law — quickly at first, then ever more slowly. Ebbinghaus approximated this as $b(\tau) \sim \tau^{-\beta}$, $\beta \approx 0.3$.
+- **Forgetting curve**: retention was studied across delays. A particular power-law fit and its exponent require the measured retention data; neither is fixed by the kernel formalism.
 - **Learning curve**: repetition improves retention, but with diminishing returns.
 - **Spacing effect**: distributed repetition is more effective than massed practice.
 
-In the UHM formalism, Ebbinghaus's forgetting curve is a direct consequence of the **power-law kernel** $K(\tau) \sim \tau^{-\alpha}$ (section 4.5).
+In UHM, a power-law retention fit is a candidate hypothesis; §4.5 does not derive its exponent from the kernel alone.
+
+**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
 
 ### 3.2 Atkinson and Shiffrin (1968): modal model
 
@@ -226,13 +139,15 @@ The 'three-store' model:
 - **Short-term (working) memory** — 7 ± 2 items, duration ~20 s
 - **Long-term memory** — virtually unlimited capacity and duration
 
-In UHM, these three 'stores' are not separate systems, but **three forms** of the same kernel $K(\tau)$:
+A proposed UHM comparison assigns different kernel families to these stores [H]; it does not show that their distinct mechanisms reduce to one kernel:
 
 | Atkinson-Shiffrin model | UHM formalism |
 |---------------------------|---------------|
 | Sensory register | $K(\tau) \sim \delta(\tau)$ — Markovian limit |
 | Working memory | $K(\tau) \sim e^{-\tau/\tau_{WM}}$ — exponential kernel |
 | Long-term memory | $K(\tau) \sim \tau^{-\alpha}$ — power-law kernel |
+
+**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
 
 ### 3.3 Tulving (1972): types of memory
 
@@ -242,266 +157,106 @@ Endel Tulving introduced the distinction:
 - **Procedural memory** — skills ('how to ride a bicycle')
 
 In UHM:
-- Episodic and semantic memory differ in the *shape* of the power-law kernel (different values of $\alpha$)
-- Procedural memory is fundamentally different — it is embedded in $H_{\text{eff}}$ (section 4.6)
+- Different fitted retention functions could model episodic and semantic tasks [H]; no unique kernel exponent is derived.
+- Learned generator parameters are a candidate model of skill retention [H], with the limitations in §4.6.
 
 ---
+
+**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
 
 ## 4. Types of memory from the non-Markovian kernel {#память}
 
+A temporal kernel and cognitive memory have different types. The former belongs to an evolution law; the latter requires encoded information and a recall task. The following families are candidate models **[D/H]**, not a theorem deriving four cognitive stores.
+
 ### 4.1 The memory kernel and cognitive memory
 
-[Non-Markovian dynamics](/docs/applied/coherence-cybernetics/non-markovian) describes coherences with **memory**: the current evolution $\gamma_{ij}(\tau)$ depends on the entire preceding history through the kernel $K(\tau - s)$:
-
-$$
-\frac{d\gamma_{ij}}{d\tau} = -i\Delta\omega_{ij}\,\gamma_{ij}(\tau) + \int_0^\tau K_{ij}(\tau - s)\, \gamma_{ij}(s)\, ds + \mathcal{R}_{ij}
-$$
-
-(see [Gap-dynamics, section 4](/docs/core/dynamics/gap-dynamics#немарковские-эффекты))
-
-Let us examine each term:
-- **$-i\Delta\omega_{ij}\,\gamma_{ij}(\tau)$** — free evolution (phase accumulation)
-- **$\int_0^\tau K_{ij}(\tau - s)\, \gamma_{ij}(s)\, ds$** — *memory*: the influence of all past states. This is a *convolutional* integral — the current state depends on a weighted sum of past states
-- **$\mathcal{R}_{ij}$** — regeneration ([operator ℛ](/docs/core/dynamics/evolution))
-
-The form of the kernel $K(\tau)$ determines the **type of cognitive memory**. Analogy: $K(\tau)$ is a 'filter of the past'. Delta function = 'I remember only the present'. Exponential = 'I remember recent events, but forget quickly'. Power function = 'I remember for a long time, I forget slowly'.
+A candidate equation is $\dot z(\tau)=\int_0^\tau K(\tau-s)z(s)\,ds+f(\tau)$. The kernel has units of inverse time squared for dimensionless $z$. In a matrix model, a scalar kernel per entry does not by itself ensure positivity, trace preservation or complete positivity of the evolution. Those conditions must be established for the whole map. A nonzero history kernel alone does not show that task-relevant information can be recalled; a Markovian dynamical system may carry records in its state.
 
 ### 4.2 Memory typology
 
-:::info Definition (Types of memory) [C]
-Condition: [non-Markovian dynamics of coherences](/docs/core/dynamics/gap-dynamics#немарковские-эффекты). Four types of memory are defined by the form of the kernel $K(\tau)$:
+| Candidate family [D] | Mathematical property | Cognitive bridge [H] |
+|---|---|---|
+| Delta kernel | Local evolution law | Short persistence on a sensory task |
+| Exponential kernel | Finite kernel timescale | A fitted working-memory task |
+| Power-law kernel | Long temporal tail | A fitted long-retention task |
+| Learned generator parameters | Persistent change of evolution law | Skill learning |
 
-| Memory type | Kernel $K(\tau)$ | Characteristic | Time scale |
-|------------|----------------|----------------|-------------------|
-| **Sensory** | $K(\tau) \sim \delta(\tau - \tau')$ | Instantaneous, no persistence | $\tau_{\text{mem}} \to 0$ |
-| **Working** | $K(\tau) \sim e^{-\tau/\tau_{WM}}$ | Exponential decay | $\tau_{WM} \sim$ seconds |
-| **Long-term** | $K(\tau) \sim (\tau)^{-\alpha}$, $\alpha \in (0,1)$ | Power-law decay, slow fading | $\tau_{\text{mem}} \to \infty$ |
-| **Procedural** | Embedded in $H_{\text{eff}}$ | Structure of evolution | Unbounded |
-
-:::
+The temporal form, observed retention curve and psychological category must be estimated separately. None of the families fixes a universal human timescale or a memory capacity.
 
 ### 4.3 Sensory memory
 
-$$
-K_{\text{sens}}(\tau) = -\Gamma_2 \cdot \delta(\tau)
-$$
-
-**Markovian limit** — no memory. The current coherence state is determined only by current conditions. Physical analogue: an instantaneous sensory imprint that disappears when the stimulus ceases.
-
-**Motivation.** Why introduce 'zero memory' as a separate type? Because it is the *limiting case* required for completeness of the classification. The delta function $\delta(\tau)$ means: 'the past does not influence the present'. Formally: the convolution integral degenerates:
-
-$$
-\int_0^\tau K_{\text{sens}}(\tau - s)\, \gamma_{ij}(s)\, ds = -\Gamma_2\, \gamma_{ij}(\tau)
-$$
-
-— simply exponential decay with constant $\Gamma_2$.
-
-**Analogy.** Sensory memory is like a fingerprint on a fogged-up window: it exists while the finger is on the glass and disappears instantly. In the formalism: kernel $K = \delta$, there is no 'tail' — the past does not influence the present.
-
-**Numerical example.** Iconic memory (visual sensory buffer): at $\Gamma_2 = 4$ Hz, the half-life is $\tau_{1/2} = \ln 2 / \Gamma_2 \approx 170$ ms. Sperling's experiment (1960): subjects remembered up to 12 letters for ~300 ms, then complete loss. Prediction: $\tau_{\text{mem}} \propto 1/\Gamma_2 = 250$ ms — consistent with the data.
+Under a one-sided delta convention, $K=-\lambda\delta$, $\lambda>0$, gives $\dot z=-\lambda z$ and $z(\tau)=z(0)e^{-\lambda\tau}$ **[T]**. Its half-life is $\log2/\lambda$, not zero. The delta kernel removes dependence on earlier values from the evolution law; it does not remove stored information instantaneously. Identification with sensory retention requires an independent task readout **[H]**.
 
 ### 4.4 Working memory
 
-$$
-K_{WM}(\tau) = -\Gamma_2 \omega_c \cdot e^{-\omega_c \tau}, \quad \tau_{WM} = 1/\omega_c
-$$
-
-Exponential kernel — the standard model from [non-Markovian dynamics](/docs/applied/coherence-cybernetics/non-markovian#экспоненциальное-ядро).
-
-**Detailed derivation.** By [Theorem 5.1 of Gap-dynamics](/docs/core/dynamics/gap-dynamics#немарковские-эффекты), at finite $\omega_c$ the solution of the convolution equation contains damped oscillations:
+For the scalar model $K(\tau)=-c e^{-\omega_c\tau}$, $c,\omega_c>0$, with no forcing and $z(0)=z_0$, differentiation of the convolution equation gives
 
 $$
-\gamma_{ij}(\tau) \propto e^{-\gamma\tau} \cos(\omega_r \tau), \quad \omega_r = \sqrt{\omega_c \Gamma_2 - \gamma^2}
+\ddot z+\omega_c\dot z+cz=0,\qquad\dot z(0)=0.
 $$
 
-where $\gamma$ is the decay rate, $\omega_r$ is the oscillation frequency (refresh rate).
+Oscillations occur only if $c>\omega_c^2/4$. Then, with $\Omega=\sqrt{c-\omega_c^2/4}$,
 
-**Interpretation of oscillations.** Coherence does not simply decay, but *oscillates*: the subject 'returns' to the content before its final disappearance. Each oscillation cycle is one 'run' of working memory (subvocal rehearsal, visual revision). While $|\gamma_{ij}(\tau)| > \varepsilon_{\min}$, content is 'held'; when damping prevails — content is lost.
+$$
+z(\tau)=z_0e^{-\omega_c\tau/2}
+\left(\cos\Omega\tau+\frac{\omega_c}{2\Omega}\sin\Omega\tau\right).
+$$
 
-**Numerical example (detailed).** Holding a phone number:
-
-- $\tau_{WM} = 1/\omega_c = 5$ s (typical working memory duration without rehearsal)
-- $\Gamma_2 = 0.3$ s$^{-1}$ (decoherence rate)
-- $\omega_c = 0.2$ Hz (kernel frequency)
-- Refresh frequency: $\omega_r = \sqrt{0.2 \times 0.3 - \gamma^2} \approx 0.15$ Hz at $\gamma = 0.1$ s$^{-1}$
-- During holding (5 s): $\omega_r \times 5 \approx 0.75$ cycles — ~6 'runs'
-
-This is consistent with data on subvocal rehearsal: internally articulating the number at ~2 syllables/s, one can complete ~6 rehearsals of a 7-digit number in 5 seconds.
-
-:::info Interpretation [I]
-Working memory oscillations correspond to 'cycling through' the content: coherence does not simply decay but oscillates — the subject 'returns' to the content before its final disappearance. The frequency $\omega_r$ determines the 'refresh rate' of working memory.
-
-Neurophysiological correlate: gamma oscillations (30–80 Hz) in the prefrontal cortex during information maintenance in working memory. These oscillations are the neural implementation of $\omega_r$.
-:::
+**Proof and counterexample to universal refresh oscillations [T].** Introduce $y=\int_0^\tau e^{-\omega_c(\tau-s)}z(s)ds$; $\dot z=-cy$ and $\dot y=z-\omega_c y$ imply the second-order equation. At $c<\omega_c^2/4$ its two characteristic roots are real; an exponential memory kernel therefore need not produce oscillations. $\Omega$ is an angular frequency; the cycle count in duration $T$ is $\Omega T/(2\pi)$, not $\Omega T$. A neural rehearsal frequency or retained item count does not follow from these roots **[H]**.
 
 ### 4.5 Long-term memory
 
-$$
-K_{LTM}(\tau) \sim -\Gamma_2 \cdot \tau^{-\alpha}, \quad 0 < \alpha < 1
-$$
-
-Power-law decay — the kernel decreases more slowly than an exponential. This is a 'heavy tail': information is preserved indefinitely, though the intensity gradually falls.
-
-**Motivation.** Why specifically a power law? Exponential decay ($e^{-\tau/\tau_0}$) implies a *characteristic scale* $\tau_0$: information 'lives' for approximately $\tau_0$, then disappears. But empirical data show that memory has no characteristic scale — forgetting does not speed up or slow down at a particular time horizon. The power law $\tau^{-\alpha}$ is the only function without a characteristic scale (scale invariance).
-
-:::tip Theorem (Power law of forgetting) [C]
-Condition: power-law kernel $K(\tau) \sim \tau^{-\alpha}$. The coherence amplitude under a power-law kernel decays as:
+A power-law kernel does not determine a retention exponent by itself. For the explicit scalar equation $\dot z=K*z$, $K(\tau)=-c\tau^{-\alpha}/\Gamma_{\!\mathrm{Euler}}(1-\alpha)$, $0<\alpha<1$, with $c$ in units of time$^{\alpha-2}$, its Laplace transform satisfies
 
 $$
-|\gamma_{ij}(\tau)| \sim |\gamma_{ij}(0)| \cdot \tau^{-\beta}, \quad \beta = \frac{\alpha}{2}
+(s+c s^{\alpha-1})\widehat z(s)=z_0,\qquad
+\widehat z(s)=\frac{z_0s^{1-\alpha}}{s^{2-\alpha}+c}.
 $$
 
-This reproduces the **Ebbinghaus forgetting curve** at $\alpha \approx 0.5$–$0.7$ (empirical result $\beta \approx 0.25$–$0.35$).
+**Correction of the former proof.** The initial term $z_0$ cannot be dropped from $s\widehat z-z_0=\widehat K\widehat z$. The displayed resolvent does not justify the claimed universal exponent $\beta=\alpha/2$; no step permits replacing one inverse transform by that power. Generator terms, initial conditions and the recall readout change the retention law.
 
-**Argument.** Laplace image $\hat{K}(s) \sim s^{\alpha - 1}$ at $\alpha < 1$ (fractional operator). The convolution equation $d\gamma/d\tau = \int_0^\tau K(\tau-s)\gamma(s)ds$ in Laplace representation: $s\hat{\gamma} = \hat{K} \cdot \hat{\gamma}$, solution: $\hat{\gamma}(s) \sim s^{-1} \cdot s^{1-\alpha} = s^{-\alpha}$. Inverse transform: $\gamma(\tau) \sim \tau^{\alpha-1}$. Accounting for the initial condition and factor $\Gamma_2$: $|\gamma(\tau)| \sim |\gamma(0)| \cdot \tau^{-\alpha/2}$, i.e. $\beta = \alpha/2$.
-:::
-
-**Numerical example: Ebbinghaus forgetting curve.** A learned poem with initial coherence $|\gamma_{ij}(0)| = 0.30$ and $\alpha = 0.6$ ($\beta = 0.3$):
-
-| Time $\tau$ | $\|\gamma_{ij}(\tau)\|$ | Fraction of initial | Subjectively |
-|:---:|:---:|:---:|:---|
-| 1 day | $0.30 \cdot 1^{-0.3} = 0.30$ | 100% | Remember well |
-| 7 days | $0.30 \cdot 7^{-0.3} \approx 0.17$ | 56% | Remember the main points |
-| 30 days | $0.30 \cdot 30^{-0.3} \approx 0.10$ | 34% | Remember individual stanzas |
-| 365 days | $0.30 \cdot 365^{-0.3} \approx 0.05$ | 17% | Remember the theme, individual lines |
-| 10 years ($3650$ days) | $0.30 \cdot 3650^{-0.3} \approx 0.025$ | 8% | Vague recollection |
-| 50 years ($18250$ days) | $0.30 \cdot 18250^{-0.3} \approx 0.015$ | 5% | Traces remain |
-
-Note: even after 50 years $|\gamma| = 0.015 > 0$ — traces remain! This is a fundamental difference from exponential decay, under which after 50 years $|\gamma| \approx e^{-50/5} \approx 5 \times 10^{-5}$ — practically zero. The power-law tail explains why elderly people remember events from 60 years ago — the 'tail' of the kernel decays slowly.
+A candidate empirical retention fit is $b(\tau)=b_0(1+\tau/\tau_0)^{-\beta}$ **[D/H]**. Its exponent and timescale must be fitted and compared with alternatives. A nonzero long tail of a dynamical quantity alone does not establish readable autobiographical content, permanent storage or identity preservation.
 
 ### 4.6 Procedural memory
 
-$$
-\text{Procedural memory:} \quad K \hookrightarrow H_{\text{eff}}
-$$
-
-Procedural memory is not a kernel in the coherence equation, but the **structure of the Hamiltonian itself** $H_{\text{eff}}$. A skill is 'encoded' in the parameters of evolution: frequencies $\omega_i$, coupling constants, Lindblad operators.
-
-**Motivation.** Why does procedural memory differ so fundamentally from the others? Because it stores not *content* (coherence $\gamma_{ij}$), but a *rule* (how $\gamma_{ij}$ evolves). Declarative memory is the 'what', procedural is the 'how'.
-
-:::info Interpretation [I]
-Procedural memory is fundamentally different from all other types: it does not decay, since it does not depend on the kernel $K(\tau)$, but is embedded in the mechanism of evolution itself. To 'forget' procedural memory = to change $H_{\text{eff}}$, which requires a structural restructuring of the system, not merely the decoherence of individual coherences.
-
-**Analogy.** Declarative memory (working + long-term) — notes on a blackboard that gradually fade. Procedural memory — the shape of the blackboard itself: you can erase all the notes, but the board will remain rectangular. The ability to ride a bicycle is 'encoded' not in the coherences $\gamma_{ij}$ (which decay), but in the structure of $H_{\text{eff}}$ (which is restructured only under fundamental changes).
-
-Another analogy: declarative memory — the source code of a program (data that can be deleted); procedural — the compiler (the tool that processes the data). The compiler can only be 'forgotten' by reinstalling the operating system.
-:::
-
-**Numerical example: why cycling is not forgotten.** A person learned to ride a bicycle at age 7. By age 70:
-
-| Memory type | Content | Kernel | After 63 years |
-|------------|-----------|------|:---:|
-| Episodic | "Dad was holding the handlebars" | $K \sim \tau^{-0.6}$ | $\|\gamma\| \approx 0.01$ (faintly) |
-| Semantic | "A bicycle has two wheels" | $K \sim \tau^{-0.4}$ | $\|\gamma\| \approx 0.05$ (remembers) |
-| Procedural | Riding skill | $K \hookrightarrow H_{\text{eff}}$ | Fully preserved |
-
-Procedural memory does not depend on the kernel — it is 'hardwired' into $H_{\text{eff}}$. Neurophysiological correlate: procedural memory is stored in the cerebellum and basal ganglia, not the hippocampus (like declarative memory) — different neural substrates for different 'records'.
-
----
+Learned parameters of $H_{\mathrm{eff}}$ or of an open-system generator may encode a persistent change of policy **[D/H]**. This does not give a canonical embedding $K\hookrightarrow H_{\mathrm{eff}}$: kernels and Hamiltonians have different types and units. Persistence requires an evolution law for the parameters and a performance test. Parameters may drift or be overwritten; being stored in a generator does not prove a skill is never forgotten.
 
 ## 5. Forgetting as kernel decoherence {#забывание}
 
-:::info Definition (Forgetting) [D]
-**Forgetting** — a decrease in the amplitude of the memory kernel $|K(\tau)|$ over time, leading to a weakening of the influence of past states on the current dynamics:
-
-$$
-\text{Forgetting:} \quad |K(\tau)| \to 0 \quad \text{as} \quad \tau \to \infty
-$$
-
-In the Markovian limit ($K \to \delta$) forgetting is instantaneous. With a finite kernel — it is gradual.
-:::
+Operational forgetting is a decline of performance on a declared recall task **[D]**. It may be modeled through changing dynamics, stored records or access. Decay of a history kernel is one candidate mechanism **[H]**, not an equivalent definition.
 
 ### 5.1 Two mechanisms of forgetting
 
-| Mechanism | Description | Formula | Reversibility | Analogy |
-|----------|----------|---------|:-----------:|----------|
-| **Kernel decoherence** | $K(\tau)$ decreases | $\lvert K(\tau)\rvert \to 0$ | Irreversible | Book burned |
-| **Gap increase** | Coherence opaque | $\mathrm{Gap}(i,j) \to 1$ | Reversible | Book locked in a safe |
+Recoverability depends on the encoding, channel and allowed decoder. A channel can erase a record while preserving trace one; another can preserve a record while a particular decoder fails to access it. Thus loss of a record and loss of access are distinct, but neither is identified by Gap or $K$ alone.
 
-The distinction is fundamental: if content is 'forgotten' through kernel decoherence, recovery is impossible — information is physically lost. If — through Gap increase, the content is preserved in $\gamma_{ij}$ but inaccessible (= in the [unconscious](/docs/consciousness/states/unconscious#определение)). Therapy and meditation work with the second case.
-
-**Analogy (extended).** Kernel decoherence — the book has burned: the text is lost forever, and no archaeologist can restore the letters from ash. Gap increase — the book is locked in a safe: the text is intact but inaccessible; the key can be picked (therapy), the safe forced open (crisis), or a spare key found (meditation). The difference is colossal for [corrective strategies](/docs/consciousness/states/pathological#коррекция): there is no point in 'opening the safe' if the book has already burned.
-
-**Numerical example: two types of 'forgotten' phone number.**
-
-Case 1 (kernel decoherence): a number heard 5 years ago without being written down. $K_{WM}(\tau)$ has long decayed ($\tau_{WM} = 5$ s), and the power-law kernel $K_{LTM}$ as well: $|\gamma| \approx 0.001$. Recovery is impossible.
-
-Case 2 (Gap increase): a former partner's number, consciously 'forgotten' after a breakup. $|\gamma_{LE}| = 0.08$ (coherence preserved — you 'know' the number), but $\mathrm{Gap}(L,E) = 0.90$ (consciously blocked). With an unexpected stimulus (meeting on the street) Gap can temporarily decrease — and the number is 'remembered'.
+**Counterexamples.** A Markovian identity channel preserves all encoded states without a history kernel. A replacement channel maps every input to the same trace-one state and destroys distinguishability of the records at its output. Conversely, an invertible phase rotation changes Gap yet permits exact recovery by its inverse. These examples invalidate “$K$ decay = irreversible information loss” and “Gap increase = intact recoverable memory”. Recovery from an environment is a separate question requiring access to that environment.
 
 ### 5.2 Forgetting rate and viability
 
-:::tip Theorem (Forgetting and viability) [C]
-Condition: non-Markovian dynamics. The forgetting rate (rate of decrease of $|K|$) is bounded from below by the [viability](/docs/core/dynamics/viability) condition:
+**Conditional result [T].** Suppose a positive differentiable scalar kernel amplitude $k=|K|$ is nonincreasing and, as an additional model assumption, satisfies
 
 $$
-\frac{d|K|}{d\tau} \geq -\frac{\kappa}{P - P_{\text{crit}}} \cdot |K|
+\dot k\ge-\frac{\kappa}{P-P_{\mathrm{crit}}}k,
+\qquad P>P_{\mathrm{crit}},\quad\kappa\ge0.
 $$
 
-At $P \to P_{\text{crit}} = 2/7$ forgetting **accelerates** without bound — a system at the edge of viability loses memory faster.
+Dividing by $k$ and changing the sign gives an **upper** bound on the nonnegative forgetting rate:
 
-**Derivation.** Viability $P$ determines the 'resource' available for maintaining coherences. The closer $P$ is to $P_{\text{crit}}$, the less resource for maintaining the kernel $K(\tau)$, and the faster it decays. Formally: the decay rate $\propto 1/(P - P_{\text{crit}})$, which gives a singularity at $P = P_{\text{crit}}$.
-:::
+$$
+0\le r:=-\dot k/k\le\frac{\kappa}{P-P_{\mathrm{crit}}}.
+$$
 
-**Numerical example: cognitive decline.**
+**Counterexample in the proof.** The constant kernel amplitude $k(\tau)=k_0>0$ has $r=0$ and satisfies the inequality for every allowed $P$. Letting $P$ approach the cutoff makes the upper bound weaker; it does not force $r$ to diverge. Non-Markovianity does not imply the assumed inequality either.
 
-| State | $P$ | $P - P_{\text{crit}}$ | Relative forgetting rate | Clinical analogue |
-|-----------|:---:|:---:|:---:|:---|
-| Healthy adult | $0.36$ | $0.074$ | $\times 1$ (baseline) | Normal memory |
-| Onset of decline | $0.33$ | $0.044$ | $\times 1.7$ | Mild cognitive impairment |
-| Moderate dementia | $0.30$ | $0.014$ | $\times 5.3$ | Noticeable memory loss |
-| Severe dementia | $0.29$ | $0.004$ | $\times 18.5$ | Catastrophic |
-| Critical | $0.2875$ | $0.0015$ | $\times 49$ | Loss of identity |
-
-This explains the clinical observation: in dementia, cognitive decline *accelerates* — slowly at first, then catastrophically. A small decrease in $P$ near $P_{\text{crit}}$ leads to a dramatic acceleration of forgetting. The formula $\propto 1/(P - P_{\text{crit}})$ reproduces this nonlinear pattern.
-
----
+The equality $r=\kappa/(P-P_{\mathrm{crit}})$ would be an extra constitutive law **[D/H]**, valid only on an explicitly declared domain, with a separate model at its singular boundary. Neither this law nor the bound identifies dementia stages, a person's survival or loss of identity. Those claims and the former clinical numerical table are withdrawn.
 
 ## 6. Integration: attention, memory and Gap {#интеграция}
 
-```mermaid
-graph TD
-    subgraph ATT["Attention (A-sector)"]
-        direction TB
-        SEL["Selective<br/>|γ_AE_target| ↑"]
-        SUS["Sustained<br/>|γ_AE| > θ, Δτ"]
-        DIV["Distributed<br/>Σ|γ_AXk| ↑, each ↓"]
-    end
-    subgraph MEM["Memory (kernel K)"]
-        direction TB
-        SENS["Sensory<br/>K ~ δ(τ), ~250ms"]
-        WM["Working<br/>K ~ exp(-τ/τ_WM), ~5s"]
-        LTM["Long-term<br/>K ~ τ^(-α), years"]
-        PROC["Procedural<br/>K → H_eff, forever"]
-    end
-    subgraph GAP["Gap-dynamics"]
-        direction TB
-        RED["Gap-reduction<br/>attention → transparency"]
-        INC["Gap-increase<br/>forgetting → opacity"]
-    end
-
-    SEL --> |"coherence direction"| RED
-    WM --> |"refresh oscillations"| RED
-    LTM --> |"kernel decay"| INC
-    RED --> |"awareness of unconscious"| UNC["Unconscious<br/>Gap → 1"]
-    INC --> |"repression"| UNC
-```
-
-**Key cycle:** Attention ($|\gamma_{AE}| \uparrow$) reduces Gap — content transitions from unconscious to conscious. Kernel decay ($|K| \to 0$) raises Gap — content recedes back into the unconscious. Working memory keeps content 'afloat' through oscillations. Procedural memory exits this cycle — it is embedded in the structure of the system.
+Attention control, stored records, temporal dependence and phase statistics can interact in a specified model. No universal cycle attention → Gap reduction → awareness → permanent memory follows from the definitions.
 
 ### 6.1 Interaction of attention and memory
 
-```mermaid
-graph LR
-    A["Attention<br/>|γ_AE| ↑"] --> B["Gap(i,E) ↓<br/>awareness"]
-    B --> C["K(τ) locks in<br/>working memory"]
-    C --> D{"Repetition?"}
-    D -->|"Yes"| E["K(τ) → τ^(-α)<br/>long-term"]
-    D -->|"No"| F["K(τ) → 0<br/>forgetting"]
-    E --> G["H_eff restructuring<br/>procedural"]
-    F --> H["Gap(i,E) ↑<br/>unconscious"]
-```
-
-This cycle formalises the intuition of 'attention as the key to consciousness' and explains why mindfulness practices are therapeutically effective: systematically directing attention ($|\gamma_{AE}| \uparrow$) gradually reduces Gap in the channels to which it is directed. With regular repetition, content transitions from working memory ($K \sim e^{-\tau/\tau_{WM}}$) to long-term ($K \sim \tau^{-\alpha}$), and the mindfulness skill — to procedural ($K \hookrightarrow H_{\text{eff}}$). For more detail — see the [CC theorems](/docs/applied/coherence-cybernetics/theorems) (T-103, T-104).
+A testable joint model specifies an encoding $x\mapsto\Gamma_x$, an attention controller, the state evolution, a recall decoder and a task score. Compare changes in that score with estimated amplitudes, oriented phases and kernel parameters on held-out data **[Pr]**. Improvements in a surrogate statistic cannot substitute for an improvement in recall or an independently assessed intervention outcome. The following machine experiment concerns an explicit architecture; its numerical results do not by themselves validate the biological mapping.
 
 ### 6.2 Measured: mood as address — state-dependent memory in silicon {#настроение-как-адрес}
 
@@ -521,20 +276,12 @@ One step deeper, and the address hit an honest wall — worth telling, because t
 
 ### What we learned {#итоги}
 
-1. **Historical line of attention**: James (1890, 'everyone knows what attention is') → Broadbent (1958, filter) → Treisman (1964, attenuation) → Posner (1980s, three networks) → UHM (redistribution of A-sector coherences)
-2. **Attention** = redistribution of coherence in the A-sector; three types (selective, sustained, distributed) follow from the normalisation $\mathrm{Tr}(\Gamma) = 1$
-3. Attention **reduces Gap** in target channels — formal justification for mindfulness practices
-4. **Historical line of memory**: Ebbinghaus (1885, forgetting curve) → Atkinson-Shiffrin (1968, three stores) → Tulving (1972, types of memory) → UHM (forms of kernel $K(\tau)$)
-5. **Four types of memory** are determined by the form of kernel $K(\tau)$: sensory ($\delta$), working ($e^{-\tau/\tau_{WM}}$), long-term ($\tau^{-\alpha}$), procedural ($H_{\text{eff}}$)
-6. The Ebbinghaus forgetting curve is reproduced by the power-law kernel at $\alpha \approx 0.5$–$0.7$ [C]
-7. **Two mechanisms of forgetting**: kernel decoherence (irreversible, 'book burned') and Gap increase (reversible, 'book in a safe')
-8. At $P \to P_{\text{crit}}$ forgetting **accelerates** by the law $\propto 1/(P - P_{\text{crit}})$ — formal explanation of cognitive decline in dementia
-9. **State-dependent memory is an anti-interference strategy** (machine-measured): indexing knowledge by the mood that learned it wins both switches of a returning contradictory world ($0.94/0.98$ against bare memory's $0.70/0.69$), and a change-detector that wipes the transition map is a precise null — the map and the policy are two different memory organs
-10. **Melody is the orientation of a line, and the compass is real but infrared** (machine-measured): a slow walk around a theme's three notes pumps the line's paint with the sign of the direction — exactly antisymmetric under reversal, resonant near eight ticks per note, and *stronger in a dissipative mind* (a non-equilibrium needle); yet paint born of the internal Hamiltonian alone lives below the qualia carrier threshold, so direction cannot enter the address until the food itself carries phase — a named seam of the architecture
-
-:::tip Bridge to the next chapter
-Attention and memory are normal mechanisms of coherence control. But what happens when these mechanisms *break down*? Specific failures of the Gap-profile give rise to pathological states: alexithymia, dissociation, depression, psychosis. In the next chapter — [Pathology of consciousness](/docs/consciousness/states/pathological) — we will show that each pathology = a characteristic Gap-pattern, and that therapy = targeted Gap-reduction.
-:::
+1. Positivity and trace one give an upper bound on A-sector coherence; a conserved attention budget requires an extra controller assumption.
+2. At fixed phase, increasing coherence amplitude leaves phase Gap unchanged. Access and task performance require independent readouts.
+3. Delta, exponential and power-law kernels describe temporal dependence, not a uniquely derived taxonomy of cognitive memory. Exponential kernels oscillate only in their underdamped parameter regime.
+4. Forgetting is assessed by recall performance and recoverability of an encoding. Trace one, nonzero coherence and a long kernel tail do not prove preservation of memories or personal identity.
+5. The proposed purity-dependent inequality bounds the decay rate from above; its constant-kernel counterexample rules out the claimed mandatory divergence.
+6. The architectural experiment in §6.2 is a separate measured case, with an explicit scope; biological and clinical interpretation remains a research hypothesis.
 
 ## Connections
 

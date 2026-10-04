@@ -24,7 +24,6 @@ The idea of the emergence of geometry traces back to several traditions:
 UHM synthesizes these approaches: the metric is determined by quantum information geometry (Fisher–Rao / Bures), the dimensionality is fixed by the algebra of octonions, and the Einstein equations follow from Connes' spectral action.
 :::
 
-
 ## Overview
 
 In UHM, spacetime is not a fundamental structure but **emerges** from the coherence matrix $\Gamma$. The metric reflects the "logical distance" between configurations $\Gamma$ — the geometry of space is determined by the **structure of distinctions** imposed by the classifier $\Omega$.
@@ -142,10 +141,16 @@ In the **classical** case the Fisher–Rao metric is the unique (up to normaliza
 :::warning Theorem (Privileged status of the Bures metric) [T]
 The Bures metric (Axiom A2 of UHM) is distinguished within the Petz class as the **minimal** monotone metric:
 
-$$g_{\text{Bures}}(\rho) \leq g_f(\rho) \quad \text{for any monotone } g_f \text{ (Petz, 1996)}$$
+$$
+g_{\text{Bures}}(\rho) \leq g_f(\rho) \quad \text{for any monotone } g_f \text{ (Petz, 1996)}
+$$
 
 Explicit formula:
-$$d_B(\rho_1, \rho_2) = \sqrt{2\left(1 - \mathrm{Tr}\sqrt{\sqrt{\rho_1}\rho_2\sqrt{\rho_1}}\right)}$$
+
+$$
+d_B(\rho_1, \rho_2) = \sqrt{2\left(1 - \mathrm{Tr}\sqrt{\sqrt{\rho_1}\rho_2\sqrt{\rho_1}}\right)}
+$$
+
 :::
 
 **Physical meaning of minimality.** Bures is the most "conservative" metric: it gives the smallest distance between states. This means that the emergent geometry of spacetime is determined by the **minimal distinguishability** — distance between points of space = minimal informational difference between the corresponding configurations $\Gamma$.
@@ -216,7 +221,7 @@ $$
 S_{\text{spec}} = \frac{1}{16\pi G}\int_{M^4}\!(R - 2\Lambda_{\text{CC}})\sqrt{g}\,d^4x + S_{\text{SM}} + O(\Lambda^{-2})
 $$
 
-The first term is the **Einstein–Hilbert action** with cosmological constant. The second is the Standard Model action. All constants ($G$, $\Lambda_{\text{CC}}$, boson masses) are determined by the spectrum of the Dirac operator $D_{\text{int}}$, which in turn is determined by the Gap parameters.
+The first term is the **Einstein–Hilbert action** with cosmological constant. The second is the Standard Model action. For a specified spectral action its coefficients depend on the Dirac spectrum and cutoff moments. This expansion does not by itself derive a positive $\Lambda_{\text{CC}}$ from a matrix Gap; the physical energy readout and its calibration are separate inputs.
 
 ### 5.2 Summary of Results
 
@@ -224,9 +229,9 @@ The first term is the **Einstein–Hilbert action** with cosmological constant. 
 |-----------|--------|---------|
 | Manifold $M^4 = \mathbb{R} \times \Sigma^3$ assembled | **[T]** as mathematics (depth register; restated T-119, 2026-09-25) | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
 | Einstein equations from spectral action | **[T]** | [T-65](/docs/physics/gravity/einstein-equations) |
-| Cosmological constant $\Lambda_{\text{CC}} > 0$ | **[T]** | [T-71](/docs/core/foundations/consequences#теорема-лямбда-положительна) |
+| Cosmological constant $\Lambda_{\text{CC}} > 0$ | **[H]** physical bridge; positivity follows conditionally for the selected positive readout | [T-71](/docs/core/foundations/consequences#теорема-лямбда-положительна) |
 | Lovelock gaps closed | **[T]** (with T-120, 2026-09-25) | [T-121](/docs/proofs/physics/emergent-manifold#теорема-лавлок-замыкание) |
-| Vacuum topology $\Sigma^3 \cong S^3$ | **[T]** for the topology (T-119); curvature $k=+1$ **[C at the vacuum symmetry]** | [T-120b](/docs/proofs/physics/emergent-manifold#следствие-вакуумная-топология) |
+| Vacuum topology $\Sigma^3 \cong S^3$ | **[T]** for the selected spatial algebra (T-119); round metric and $k=+1$ slicing **[C at supplied field, symmetry and global conditions]** | [T-120b](/docs/proofs/physics/emergent-manifold#следствие-вакуумная-топология) |
 
 ### 5.3 Lovelock Gaps and Their Closure
 
@@ -236,7 +241,7 @@ The Lovelock theorem (1971) states: the unique second-order tensor constructed f
 |--------|--------|-----------|---------|
 | 1 | Why $d = 4$? | Rank count $1 + 3$ of T-119 (the colour triplet read as space, [I]); the former "sector decomposition $7 = 1 + 3 + 3$" is retracted with the axis-labelled split | T-120 [T] |
 | 2 | Why Lorentzian signature? | $(1,3)$ [C]: one time direction [T], three spatial ones at T-119; the sign at reflection positivity (bounded-below PW generator; KO-dimension does not fix it, and KO-dimension 6 on $\mathbb{C}^7$ is retracted) | T-53 [C] |
-| 3 | Why $\Lambda > 0$? | Autopoiesis requires $\rho_{\text{vac}} > 0$ | T-71 [T] |
+| 3 | Why $\Lambda > 0$? | A supplied energy readout may have positive sign under explicit state and parameter conditions; autopoiesis and cohomology do not fix it | T-71 [H] |
 
 ---
 
@@ -250,7 +255,6 @@ The Lovelock theorem (1971) states: the unique second-order tensor constructed f
 | Berry phase | [Berry phase and topological protection](/docs/physics/cosmology-phys/berry-phase) | Topological protection of Gap and emergent geometry |
 | $G_2$-structure | [$G_2$-structure and Fano plane](/docs/physics/gauge-symmetry/g2-structure) | Algebraic basis of the decomposition 7 = 1 + 3 + 3 |
 | Coherence matrix | [Coherence matrix](/docs/core/dynamics/coherence-matrix) | Definition of $\Gamma$ and coherences $\gamma_{ij}$ |
-
 
 ---
 

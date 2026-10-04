@@ -51,7 +51,9 @@ The original argument via $S_4$-orbits on 6 points is not strictly defined, and 
 
 **(d)** From the Fano structure: 7 Fano lines define 7 "privileged" triplets. From Fano duality (point ↔ line): each point lies on 3 lines → 3 inequivalent "types" of vacuum alignment:
 
-$$N_\text{gen} = 3$$
+$$
+N_\text{gen} = 3
+$$
 
 **Justification (d).** The vacuum configuration selects an O-direction. The remaining 6 directions form a Fano graph with 3 lines passing through each point. Three classes of inequivalent orientations of the triplet $(A,S,D)$ relative to the Fano structure give 3 generations.
 
@@ -65,7 +67,9 @@ Lower bound $N_{\text{gen}}\geq 3$ — from the unique order-3 subgroup $(1,2,4)
 
 **Theorem.** The number of fermionic generations in UHM equals **exactly 3**:
 
-$$N_{\text{gen}} = 3$$
+$$
+N_{\text{gen}} = 3
+$$
 
 **Proof.**
 
@@ -105,15 +109,21 @@ The group $\text{PSL}(2,7)$ acts faithfully on 7 points of PG(2,2) (trivial kern
 
 **Step 3. Numerical coincidence $\Rightarrow$ free transitive action.**
 
-$$|\text{PSL}(2,7)| = 168 = |\widetilde{X}|.$$
+$$
+|\text{PSL}(2,7)| = 168 = |\widetilde{X}|.
+$$
 
 Choose an arbitrary ordered non-collinear triple $\tilde{t} \in \widetilde{X}$ and consider its orbit $G \cdot \tilde{t} \subseteq \widetilde{X}$. By the orbit-stabilizer formula:
 
-$$|G \cdot \tilde{t}| = \frac{|G|}{|\text{Stab}_G(\tilde{t})|} = \frac{168}{|\text{Stab}_G(\tilde{t})|}.$$
+$$
+|G \cdot \tilde{t}| = \frac{|G|}{|\text{Stab}_G(\tilde{t})|} = \frac{168}{|\text{Stab}_G(\tilde{t})|}.
+$$
 
 PSL(2,7) acts **faithfully** on points, so the only element fixing an ordered triple $(p_1, p_2, p_3)$ of pairwise distinct points is the identity (an automorphism of the projective plane fixing 3 points in general position is trivial). Hence $|\text{Stab}_G(\tilde{t})| = 1$, giving:
 
-$$|G \cdot \tilde{t}| = 168 = |\widetilde{X}|.$$
+$$
+|G \cdot \tilde{t}| = 168 = |\widetilde{X}|.
+$$
 
 Since the orbit $G \cdot \tilde{t}$ exhausts the entire set $\widetilde{X}$, the action is **transitive** on ordered non-collinear triples.
 
@@ -209,7 +219,9 @@ The three fermion generations are defined by three Fano phases $\phi_n = 2\pi k_
 
 **(b)** Three Fano lines through $O$ define a specific partition of $\{1,2,3,4,5,6\}$ into three pairs. Each line $l_n = \{O, X_n, Y_n\}$ gives a pair $(X_n, Y_n)$. Number of such partitions:
 
-$$\frac{6!}{(2!)^3 \cdot 3!} = 15$$
+$$
+\frac{6!}{(2!)^3 \cdot 3!} = 15
+$$
 
 **(c)** Each partition defines a triple $(k_1, k_2, k_3)$, where $k_n = X_n$ (one of the two elements of the pair; the choice determines the orientation of the generation).
 
@@ -227,13 +239,17 @@ Strictly proved. Based on standard representation theory of $\mathrm{PSL}(2,7)$.
 
 By Burnside's lemma:
 
-$$|X/S_4| = \frac{1}{|S_4|} \sum_{g \in S_4} |X^g|$$
+$$
+|X/S_4| = \frac{1}{|S_4|} \sum_{g \in S_4} |X^g|
+$$
 
 where $X$ is the set of 15 partitions.
 
 **(c)** $S_4$ acts on $\{1,\ldots,6\}$ via the isomorphism $S_4 \cong \mathrm{PGL}(2,3)$ (a subgroup of $\mathrm{PSL}(2,7)$ fixing the point). From the representation theory of $S_4$:
 
-$$|X / S_4| = 2$$
+$$
+|X / S_4| = 2
+$$
 
 Two equivalence classes:
 
@@ -254,7 +270,9 @@ The condition $\sum_n \sin(2\pi k_n/7) = 0$ is not satisfied for any triplet fro
 
 **(a)** The ABJ anomaly is determined by the sum over fermionic generations. The condition for absence of gravitational anomaly:
 
-$$\sum_{n=1}^{3} Y_n = 0$$
+$$
+\sum_{n=1}^{3} Y_n = 0
+$$
 
 where $Y_n$ is the hypercharge of the $n$-th generation. In the Gap formalism: $Y_n \propto \sin(2\pi k_n / 7)$.
 
@@ -262,11 +280,15 @@ where $Y_n$ is the hypercharge of the $n$-th generation. In the Gap formalism: $
 
 **Proof (and refutation).** $\sum_n \sin(2\pi k_n/7)$ vanishes $\iff$ points $e^{2\pi i k_n/7}$ on the unit circle have zero center of mass (imaginary part). From the identity: for $k_1+k_2+k_3 = 7m$:
 
-$$\sum_n e^{2\pi i k_n/7} = e^{2\pi i k_1/7}(1 + e^{2\pi i(k_2-k_1)/7} + e^{2\pi i(k_3-k_1)/7})$$
+$$
+\sum_n e^{2\pi i k_n/7} = e^{2\pi i k_1/7}(1 + e^{2\pi i(k_2-k_1)/7} + e^{2\pi i(k_3-k_1)/7})
+$$
 
 For $(k_1,k_2,k_3) = (1,2,4)$: sum $e^{2\pi i/7} + e^{4\pi i/7} + e^{8\pi i/7}$. The set $\{1,2,4\}$ is the multiplicative subgroup of order 3 in $\mathbb{Z}_7^*$ (quadratic residues). The sum $\omega + \omega^2 + \omega^4$ (where $\omega = e^{2\pi i/7}$) is the value of the Gauss character:
 
-$$\eta_1 = \omega + \omega^2 + \omega^4 = \frac{-1 + i\sqrt{7}}{2}$$
+$$
+\eta_1 = \omega + \omega^2 + \omega^4 = \frac{-1 + i\sqrt{7}}{2}
+$$
 
 Imaginary part: $\mathrm{Im}(\eta_1) = \sqrt{7}/2 \neq 0$. (The same sum is the trace of an order-7 element in the complex triplet of $\mathrm{PSL}_2(7)$ that Luhn, Nasri and Ramond used as a flavour group in 2007, with the number three taken as input; §1.3.)
 
@@ -286,7 +308,9 @@ The main result $(1,2,4)$ = quadratic residues is correct, but the claim of equi
 
 **(a)** Definition. Associator measure of a triplet:
 
-$$\mathcal{A}(k_1, k_2, k_3) := \|[e_{k_1}, e_{k_2}, e_{k_3}]\|^2 = \|(e_{k_1} \cdot e_{k_2}) \cdot e_{k_3} - e_{k_1} \cdot (e_{k_2} \cdot e_{k_3})\|^2$$
+$$
+\mathcal{A}(k_1, k_2, k_3) := \|[e_{k_1}, e_{k_2}, e_{k_3}]\|^2 = \|(e_{k_1} \cdot e_{k_2}) \cdot e_{k_3} - e_{k_1} \cdot (e_{k_2} \cdot e_{k_3})\|^2
+$$
 
 where $e_k$ are the imaginary units of the octonions.
 
@@ -295,7 +319,9 @@ where $e_k$ are the imaginary units of the octonions.
 - For a Fano triplet $(i,j,k)$: $[e_i, e_j, e_k] = 0$ (associator zero).
 - For a non-Fano triplet: $[e_i, e_j, e_k] \neq 0$. Norm:
 
-$$\|[e_i, e_j, e_k]\|^2 = 4 \quad \text{for all non-Fano triplets}$$
+$$
+\|[e_i, e_j, e_k]\|^2 = 4 \quad \text{for all non-Fano triplets}
+$$
 
 (from the identity $\|ab \cdot c - a \cdot bc\| = 2|a||b||c|\sin\alpha$ with $|e_i|=1$, and $\sin\alpha$ determined by the angle in the Fano plane).
 
@@ -313,7 +339,9 @@ $$\|[e_i, e_j, e_k]\|^2 = 4 \quad \text{for all non-Fano triplets}$$
 
 **(e)** Selection principle. From $V_3$-dynamics: the vacuum configuration minimizes the energy. Contribution of three generations to $V_3$:
 
-$$V_3^{(\text{gen})} \propto \mathcal{A}(k_1, k_2, k_3) \cdot \lambda_3 \prod_n |\gamma_n|$$
+$$
+V_3^{(\text{gen})} \propto \mathcal{A}(k_1, k_2, k_3) \cdot \lambda_3 \prod_n |\gamma_n|
+$$
 
 **The minimum is achieved at $\mathcal{A} = 0$** → Class I.
 
@@ -321,7 +349,9 @@ $$V_3^{(\text{gen})} \propto \mathcal{A}(k_1, k_2, k_3) \cdot \lambda_3 \prod_n 
 
 **(g)** **Prediction:** Three generations are determined by quadratic residues $\bmod 7$:
 
-$$(k_1, k_2, k_3) = (1, 2, 4)$$
+$$
+(k_1, k_2, k_3) = (1, 2, 4)
+$$
 
 This is the subgroup of index 2 in $\mathbb{Z}_7^*$, isomorphic to $\mathbb{Z}_3$.
 
@@ -356,11 +386,15 @@ The claim that the triplets $(1,2,4)$ and $(3,5,6)$ are physically equivalent vi
 
 **(c)** Three generations of fermionic spinors:
 
-$$\chi_1 = \eta_0 \cdot e^{i\phi_1}, \quad \chi_2 = \eta_0 \cdot e^{i\phi_2}, \quad \chi_3 = \eta_0 \cdot e^{i\phi_3}$$
+$$
+\chi_1 = \eta_0 \cdot e^{i\phi_1}, \quad \chi_2 = \eta_0 \cdot e^{i\phi_2}, \quad \chi_3 = \eta_0 \cdot e^{i\phi_3}
+$$
 
 where the phases $\phi_\text{gen} = \{\phi_1, \phi_2, \phi_3\}$ are determined by the orientation of the vacuum relative to the three Fano classes:
 
-$$\phi_n = \frac{2\pi}{7} \cdot k_n, \quad k_n \in \{1, 2, 4\}$$
+$$
+\phi_n = \frac{2\pi}{7} \cdot k_n, \quad k_n \in \{1, 2, 4\}
+$$
 
 ### 4.2 Theorem 4.1 (Assignment of the 3rd generation) {#thm-gen-4-1}
 
@@ -372,7 +406,9 @@ Index $k=1$ **uniquely** corresponds to the 3rd generation (t, b, τ). Strictly 
 
 **Proof.** From the Fano selection rule for Yukawa couplings [T] ([Theorem on Fano selection $f_{ijk}$](/docs/physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk)):
 
-$$y_k^{(\text{tree})} = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|$$
+$$
+y_k^{(\text{tree})} = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|
+$$
 
 where $f_{ijk}$ are the structure constants of the octonions. $f_{ijk} \neq 0$ if and only if $\{i,j,k\}$ is a Fano line.
 
@@ -450,21 +486,27 @@ It read: "proved via confinement [T] and asymptotic freedom [T]":
 
 **Step 3.** In the intermediate sector (Gap $\sim \varepsilon$) the 1-loop amplitude is suppressed by a factor:
 
-$$\delta_{S \to A} \sim \frac{\lambda_3}{16\pi^2} \cdot \frac{|\gamma_{SD}|^2}{m_D^2} \sim \frac{\lambda_3 \varepsilon^2}{16\pi^2} \sim \varepsilon_{\text{eff}}^2$$
+$$
+\delta_{S \to A} \sim \frac{\lambda_3}{16\pi^2} \cdot \frac{|\gamma_{SD}|^2}{m_D^2} \sim \frac{\lambda_3 \varepsilon^2}{16\pi^2} \sim \varepsilon_{\text{eff}}^2
+$$
 
-:::note Status of parameter $\lambda_3$ [T]
-The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [C at (SV)]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the right order of magnitude (error $\lesssim \times 5$). For details — see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
+:::note Coupling input and perturbative scope [D/H/Pr]
+The relation $\lambda_3=2\mu^2/(3|\bar\gamma|)$ and the value $\lambda_3\approx74$ are chosen effective-model inputs, not coefficients uniquely derived from the spectral action: universal T-74 is withdrawn [✗]. A self-consistency equation determines a value only after its functional, other couplings and state/field space are supplied. Compactness of a finite integration domain does not establish continuum UV finiteness, perturbative convergence or a universal factor-five error bound.
 
-**⚠ C7**: $\lambda_3 \approx 74 \gg 4\pi$ — non-perturbative regime. All loop computations with $\lambda_3$ are formally unreliable and downgraded to **[H]**. See [warning](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative).
+Quantitative mass, mixing or gravitational predictions require independently fixed spectral data, renormalization/matching scales and physical readouts. If $\bar\gamma$ or $\lambda_3$ is inferred from those same observables, the result is calibration; held out data are needed for prediction. A small proposed $\lambda_3\varepsilon/(4\pi)$ is a power-counting estimate only after a definite action and propagators are supplied; factorially many diagrams can still yield a divergent asymptotic expansion. [The audited coupling discussion](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative) records these conditions.
 :::
 
 **Step 4.** Given (SA) — i.e. that the pair $(L,D)$ lies in the Gap $\approx0$ regime where confinement [T] and asymptotic freedom [T] make the amplitude non-perturbative — the amplitude through $(L,D)$ dominates the perturbative one through $(S,D)$:
 
-$$y_4^{(\text{eff})} > y_2^{(\text{eff})} \quad \Longrightarrow \quad m(k=4) > m(k=2)$$
+$$
+y_4^{(\text{eff})} > y_2^{(\text{eff})} \quad \Longrightarrow \quad m(k=4) > m(k=2)
+$$
 
 **Step 5.** Therefore: $k=4$ is the heavier of the light generations = **2nd**, $k=2$ is the lightest = **1st**.
 
-$$\boxed{k=1 \to \text{3rd (t,b,τ)}, \quad k=4 \to \text{2nd (c,s,μ)}, \quad k=2 \to \text{1st (u,d,e)}}$$
+$$
+\boxed{k=1 \to \text{3rd (t,b,τ)}, \quad k=4 \to \text{2nd (c,s,μ)}, \quad k=2 \to \text{1st (u,d,e)}}
+$$
 
 $\blacksquare$
 
@@ -496,7 +538,9 @@ Mixing angles are now defined by Fano differences with the specific assignment: 
 
 **(a)** Tree-level formula (only for $k$ on the Higgs line):
 
-$$y_k^{(\text{tree})} = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|$$
+$$
+y_k^{(\text{tree})} = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|
+$$
 
 **(b)** For $(k_1, k_2, k_3) = (1, 2, 4)$:
 - $y_1^{(\text{tree})} \neq 0$ ($k=1$ on Higgs line $\{A,E,U\}$)
@@ -529,11 +573,17 @@ Strictly proved. Standard algebra of automorphisms of the Fano plane.
 
 **(a)** Action of $\sigma$ on $\mathbb{Z}_7$:
 
-$$1 \to 2 \to 4 \to 1 \quad (\text{cycle } (1\,2\,4))$$
+$$
+1 \to 2 \to 4 \to 1 \quad (\text{cycle } (1\,2\,4))
+$$
 
-$$3 \to 6 \to 5 \to 3 \quad (\text{cycle } (3\,6\,5))$$
+$$
+3 \to 6 \to 5 \to 3 \quad (\text{cycle } (3\,6\,5))
+$$
 
-$$7 \to 7 \quad (\text{fixed: } 14 \equiv 0 \equiv 7)$$
+$$
+7 \to 7 \quad (\text{fixed: } 14 \equiv 0 \equiv 7)
+$$
 
 **(b)** Verification: $\sigma$ preserves Fano lines.
 
@@ -553,11 +603,15 @@ All 7 Fano lines map to Fano lines. $\sigma \in \mathrm{Aut}(\mathrm{PG}(2,2)) =
 
 **Corollary.** The automorphism $\sigma$ generates a subgroup $\mathbb{Z}_3 \subset \mathrm{PSL}(2,7)$, acting on the Fano line $\{1,2,4\}$ as a cyclic permutation:
 
-$$\sigma: 1 \to 2 \to 4 \to 1$$
+$$
+\sigma: 1 \to 2 \to 4 \to 1
+$$
 
 **(a)** Any Fano-invariant functional $F(k_1, k_2, k_3)$ satisfies:
 
-$$F(1,2,4) = F(\sigma(1), \sigma(2), \sigma(4)) = F(2,4,1) = F(1,2,4)$$
+$$
+F(1,2,4) = F(\sigma(1), \sigma(2), \sigma(4)) = F(2,4,1) = F(1,2,4)
+$$
 
 i.e., $F$ is **equal** for all three generations.
 
@@ -635,7 +689,9 @@ Strictly proved. Follows from the algebra of octonions and the structure of the 
 
 Step 1. From the table of 7 Fano lines of $\mathrm{PG}(2,2)$:
 
-$$\{1,2,4\}, \{2,3,5\}, \{3,4,6\}, \{4,5,7\}, \{5,6,1\}, \{6,7,2\}, \{7,1,3\}$$
+$$
+\{1,2,4\}, \{2,3,5\}, \{3,4,6\}, \{4,5,7\}, \{5,6,1\}, \{6,7,2\}, \{7,1,3\}
+$$
 
 Step 2. Lines containing $O = 7$: $\{4,5,7\}$, $\{6,7,2\}$, $\{7,1,3\}$ — excluded, since $O$ is not a generation.
 
@@ -671,17 +727,25 @@ Formulas for bare Yukawas are a direct consequence of the Fano structure. Initia
 
 **(a)** General formula:
 
-$$y_n^{(0)} = g_W \cdot \langle\chi_n|\Gamma_{EU}|\chi_n'\rangle \propto \sin\left(\frac{2\pi k_n}{7}\right) \cdot C_n$$
+$$
+y_n^{(0)} = g_W \cdot \langle\chi_n|\Gamma_{EU}|\chi_n'\rangle \propto \sin\left(\frac{2\pi k_n}{7}\right) \cdot C_n
+$$
 
 where $C_n$ is a normalization constant depending on the Fano structure.
 
 **(b)** For $(k_1, k_2, k_3) = (1, 2, 4)$:
 
-$$y_1^{(0)} \propto \sin(2\pi/7) \approx 0.782$$
+$$
+y_1^{(0)} \propto \sin(2\pi/7) \approx 0.782
+$$
 
-$$y_2^{(0)} \propto \sin(4\pi/7) \approx 0.975$$
+$$
+y_2^{(0)} \propto \sin(4\pi/7) \approx 0.975
+$$
 
-$$y_3^{(0)} \propto \sin(8\pi/7) = -\sin(\pi/7) \approx -0.434$$
+$$
+y_3^{(0)} \propto \sin(8\pi/7) = -\sin(\pi/7) \approx -0.434
+$$
 
 Moduli: $|y_1^{(0)}| : |y_2^{(0)}| : |y_3^{(0)}| = 0.782 : 0.975 : 0.434 \approx 1.8 : 2.2 : 1$.
 
@@ -697,37 +761,49 @@ All three $O(1)$ Yukawas converge to a single IR fixed point, since $c_1 > c_2 >
 
 **(a)** The Yukawa coupling runs under RG:
 
-$$\frac{dy_n}{d\ln\mu} = \frac{y_n}{16\pi^2}\left(c_1 y_n^2 + c_2 \sum_{m \neq n} y_m^2 - c_3 g_s^2 - c_4 g_W^2\right)$$
+$$
+\frac{dy_n}{d\ln\mu} = \frac{y_n}{16\pi^2}\left(c_1 y_n^2 + c_2 \sum_{m \neq n} y_m^2 - c_3 g_s^2 - c_4 g_W^2\right)
+$$
 
 where $c_1 = 9/2$ (self-coupling), $c_2 = 3/2$ (inter-generational), $c_3 = 8$ (QCD), $c_4 = 9/4$ (electroweak).
 
 **(b)** Quasi-IR fixed point (Pendleton–Ross, 1981; Hill, 1981). At $\mu \to 0$ the third generation (maximum $|y_3^{(0)}|$ accounting for sign) approaches a fixed point:
 
-$$y_3^{(\text{IR})} = \sqrt{\frac{c_3 g_s^2 + c_4 g_W^2}{c_1}} = \sqrt{\frac{8\alpha_s + (9/4)\alpha_W}{9/(32\pi^2)}}$$
+$$
+y_3^{(\text{IR})} = \sqrt{\frac{c_3 g_s^2 + c_4 g_W^2}{c_1}} = \sqrt{\frac{8\alpha_s + (9/4)\alpha_W}{9/(32\pi^2)}}
+$$
 
 This predicts $m_t \sim v \cdot y_3^{(\text{IR})} \approx 174$ GeV (Hill, 1981) — in agreement with the observed $m_t \approx 173$ GeV.
 
 **(c)** Hierarchy mechanism (original claim). From the initial condition $y_1/y_3 \approx 1.8$ at $\mu_{\text{GUT}}$: the third generation is attracted to the fixed point (IR attractor), while the first and second — run away from it (zero IR attractor). At the electroweak scale:
 
-$$\frac{y_1(\mu_{\text{EW}})}{y_3(\mu_{\text{EW}})} \approx \frac{y_1^{(0)}}{y_3^{(0)}} \cdot \exp\left(-\frac{c_1}{16\pi^2} (y_3^{(0)2} - y_1^{(0)2}) \ln\frac{\mu_{\text{GUT}}}{\mu_{\text{EW}}}\right)$$
+$$
+\frac{y_1(\mu_{\text{EW}})}{y_3(\mu_{\text{EW}})} \approx \frac{y_1^{(0)}}{y_3^{(0)}} \cdot \exp\left(-\frac{c_1}{16\pi^2} (y_3^{(0)2} - y_1^{(0)2}) \ln\frac{\mu_{\text{GUT}}}{\mu_{\text{EW}}}\right)
+$$
 
 **(d)** Numerical estimate. $\Delta y^2 = y_3^{(0)2} - y_1^{(0)2} \approx 0.19 - 0.61 = -0.42$ (negative, i.e., $|y_1| > |y_3|$ at GUT scale).
 
 **Renormalization.** Accounting for the correct generation identification: $k_3 = 4$ → third generation (t-quark). Bare coupling $|y_3^{(0)}| = |\sin(8\pi/7)| = 0.434$ — the **smallest**. However, for the t-quark the Yukawa fixed point is an **IR attractor**:
 
-$$y_t(\mu_{\text{EW}}) \approx y_t^{(\text{FP})} = \sqrt{\frac{8g_s^2(\mu_{\text{EW}}) + (9/4)g_W^2}{9/2}} \approx 1.0$$
+$$
+y_t(\mu_{\text{EW}}) \approx y_t^{(\text{FP})} = \sqrt{\frac{8g_s^2(\mu_{\text{EW}}) + (9/4)g_W^2}{9/2}} \approx 1.0
+$$
 
 independently of the initial $y_3^{(0)}$.
 
 **(e)** Key observation (original): **the third generation reaches the fixed point**, while the first and second — do not (their Yukawa couplings remain small). Mass ratio:
 
-$$\frac{m_t}{m_c} \approx \frac{y_t^{(\text{FP})}}{y_c^{(\text{EW}})} \approx \frac{1.0}{y_2^{(0)} \cdot (\alpha_s(\mu_{\text{GUT}})/\alpha_s(\mu_{\text{EW}}))^{12/(33-2N_f)}}$$
+$$
+\frac{m_t}{m_c} \approx \frac{y_t^{(\text{FP})}}{y_c^{(\text{EW}})} \approx \frac{1.0}{y_2^{(0)} \cdot (\alpha_s(\mu_{\text{GUT}})/\alpha_s(\mu_{\text{EW}}))^{12/(33-2N_f)}}
+$$
 
 With anomalous mass dimension: $m_q(\mu) \propto (\alpha_s(\mu))^{12/(33-2N_f)}$.
 
 **(f)** Result (original). Third generation: $m_t \approx 173$ GeV (from IR fixed point). Second: $m_c \approx 1.3$ GeV (from $y_2^{(0)} \approx 0.975$ with RG suppression). First: $m_u \approx 2$ MeV (from $y_1^{(0)} \approx 0.782$ with maximum RG suppression). Hierarchy:
 
-$$m_t : m_c : m_u \approx 173 : 1.3 : 0.002 \text{ GeV}$$
+$$
+m_t : m_c : m_u \approx 173 : 1.3 : 0.002 \text{ GeV}
+$$
 
 — **exponential** hierarchy from initial $O(1)$ differences in Yukawa couplings, amplified by RG.
 
@@ -741,7 +817,9 @@ The mechanism of mass hierarchy via RG evolution of three $O(1)$ Yukawa coupling
 
 **Error.** From the RG equation (7.2a) with $c_1 = 9/2$, $c_2 = 3/2$, with **three** Yukawa couplings $O(1)$, the fixed point:
 
-$$y_n^{(\text{FP})} = \sqrt{\frac{c_3 g_s^2 + c_4 g_W^2}{c_1 + 2c_2}} = \sqrt{\frac{8g_s^2 + \frac{9}{4}g_W^2}{\frac{9}{2} + 3}} = \sqrt{\frac{8g_s^2 + \frac{9}{4}g_W^2}{\frac{15}{2}}}$$
+$$
+y_n^{(\text{FP})} = \sqrt{\frac{c_3 g_s^2 + c_4 g_W^2}{c_1 + 2c_2}} = \sqrt{\frac{8g_s^2 + \frac{9}{4}g_W^2}{\frac{9}{2} + 3}} = \sqrt{\frac{8g_s^2 + \frac{9}{4}g_W^2}{\frac{15}{2}}}
+$$
 
 The stability matrix near this point has eigenvalues:
 
@@ -750,7 +828,9 @@ The stability matrix near this point has eigenvalues:
 
 Since $c_1 > c_2 > 0$, **all three** Yukawa couplings simultaneously converge to a single fixed point. The initial $O(1)$ difference **decays**, not amplifies. Result:
 
-$$y_1(\mu_{\text{EW}}) \approx y_2(\mu_{\text{EW}}) \approx y_3(\mu_{\text{EW}}) \approx y^{(\text{FP})}$$
+$$
+y_1(\mu_{\text{EW}}) \approx y_2(\mu_{\text{EW}}) \approx y_3(\mu_{\text{EW}}) \approx y^{(\text{FP})}
+$$
 
 No hierarchy arises.
 
@@ -766,11 +846,15 @@ The mechanism is a hypothesis. Requires: (a) explicit computation of $c_i(\phi_n
 
 **Proposed fix.** In the Gap formalism each generation is defined by a Fano phase $\phi_n = 2\pi k_n / 7$, which enters the interaction vertices. Instead of **universal** $c_1, c_2, c_3, c_4$ one needs **generation-dependent** coefficients:
 
-$$c_3^{(n)} = 8 \cdot f(\phi_n), \quad f(\phi_n) = 1 + \kappa \cos(2\phi_n)$$
+$$
+c_3^{(n)} = 8 \cdot f(\phi_n), \quad f(\phi_n) = 1 + \kappa \cos(2\phi_n)
+$$
 
 where $\kappa$ is a parameter determined from $V_3$-dynamics. For $\kappa \neq 0$ the fixed points of different generations are **distinct**:
 
-$$y_n^{(\text{FP})} = \sqrt{\frac{c_3^{(n)} g_s^2 + c_4 g_W^2}{c_1}}$$
+$$
+y_n^{(\text{FP})} = \sqrt{\frac{c_3^{(n)} g_s^2 + c_4 g_W^2}{c_1}}
+$$
 
 If $c_3^{(1)} \gg c_3^{(3)}$ (due to the difference $\phi_1 = 2\pi/7$ vs $\phi_3 = 8\pi/7$), then $y_1^{(\text{FP})} > y_3^{(\text{FP})}$, and the first generation is "washed out" by the QCD coupling faster → $m_u \ll m_t$.
 
@@ -812,11 +896,15 @@ The prediction $m_t \approx 173$ GeV from IR fixed point **is preserved** (stand
 
 **(b)** Concretization: $|k_1 - k_2| = 1$, $|k_2 - k_3| = 2$, $|k_1 - k_3| = 3$. Ratios:
 
-$$\theta_{23}/\theta_{12} = |k_2-k_3|/|k_1-k_2| \cdot f_{\text{RG}} = 2 \cdot f_{\text{RG}}$$
+$$
+\theta_{23}/\theta_{12} = |k_2-k_3|/|k_1-k_2| \cdot f_{\text{RG}} = 2 \cdot f_{\text{RG}}
+$$
 
 From RG: $f_{\text{RG}} = (y_2/y_3)^{1/2} \approx (0.975/0.434)^{1/2} \approx 1.5$.
 
-$$\theta_{23}/\theta_{12} \approx 2 \times 1.5 \times \lambda_3(\text{EW})/\lambda_3(\text{GUT})$$
+$$
+\theta_{23}/\theta_{12} \approx 2 \times 1.5 \times \lambda_3(\text{EW})/\lambda_3(\text{GUT})
+$$
 
 **(c)** Observed: $\theta_{23}/\theta_{12} \approx 0.040/0.227 \approx 0.18$. From prediction: $\lambda_3^{1/2} \sim 0.1$ → prediction: $\theta_{23}/\theta_{12} \sim 2 \times 0.1 / 1.5 \approx 0.13$. Order of magnitude agrees.
 
@@ -832,17 +920,25 @@ Details of CKM structure from Fano differences $\Delta k$ — see [CKM Matrix fr
 
 **(a)** Bare value of the CP phase:
 
-$$\delta_{\text{CP}}^{(0)} = \arg(e^{2\pi i(k_1+k_2-k_3)/7}) = \arg(e^{2\pi i(-1)/7}) = -\frac{2\pi}{7} \approx -51.4°$$
+$$
+\delta_{\text{CP}}^{(0)} = \arg(e^{2\pi i(k_1+k_2-k_3)/7}) = \arg(e^{2\pi i(-1)/7}) = -\frac{2\pi}{7} \approx -51.4°
+$$
 
 **(b)** RG correction to $\delta_\text{CP}$. $V_3$ runs under RG: $\lambda_3(\mu_{\text{EW}})/\lambda_3(\mu_{\text{GUT}}) \approx 0.01$. However, the phase $\delta$ is a topological parameter (determined by the $\mathbb{Z}_7$-structure), and RG does not change its value at leading order. Corrections — from two-loop effects:
 
-$$\delta_{\text{CP}}^{(\text{phys})} = -\frac{2\pi}{7} + \delta^{(2)}, \quad |\delta^{(2)}| \sim \frac{y_t^2}{16\pi^2} \cdot \ln\frac{\mu_{\text{GUT}}}{\mu_{\text{EW}}} \cdot \frac{2\pi}{7}$$
+$$
+\delta_{\text{CP}}^{(\text{phys})} = -\frac{2\pi}{7} + \delta^{(2)}, \quad |\delta^{(2)}| \sim \frac{y_t^2}{16\pi^2} \cdot \ln\frac{\mu_{\text{GUT}}}{\mu_{\text{EW}}} \cdot \frac{2\pi}{7}
+$$
 
-$$|\delta^{(2)}| \sim \frac{1.0}{16\pi^2} \times 39 \times 0.898 \approx 0.22 \text{ rad} \approx 12.6°$$
+$$
+|\delta^{(2)}| \sim \frac{1.0}{16\pi^2} \times 39 \times 0.898 \approx 0.22 \text{ rad} \approx 12.6°
+$$
 
 **(c)** Prediction (accounting for sign uncertainty):
 
-$$|\delta_{\text{CP}}| = 51.4° \pm 12.6° \quad (\text{range } 39°\text{--}64°)$$
+$$
+|\delta_{\text{CP}}| = 51.4° \pm 12.6° \quad (\text{range } 39°\text{--}64°)
+$$
 
 Observed: $65.7° \pm 1.5°$ (PDG 2024 global fit); $64.6° \pm 2.8°$ (LHCb tree-level combination, ICHEP 2024). With $\delta^{(2)} > 0$: $|\delta_{\text{CP}}| \approx 64°$ — **agreement within $\approx 0.2\sigma$** of the direct value. With $\delta^{(2)} < 0$: $|\delta_{\text{CP}}| \approx 39°$ — **excluded** ($> 9\sigma$). The older $69° \pm 4°$ is superseded; see [CKM §4.2](/docs/physics/particle-physics/ckm-matrix#thm-4-2).
 
@@ -850,7 +946,9 @@ The sign of the two-loop correction is determined by the sign of $\mathrm{Im}\,\
 
 **(d)** Updated Jarlskog invariant:
 
-$$J \approx 3.5 \times 10^{-5} \times \frac{\sin(64°)}{\sin(51.4°)} \approx 3.5 \times 10^{-5} \times 1.15 \approx 4.0 \times 10^{-5}$$
+$$
+J \approx 3.5 \times 10^{-5} \times \frac{\sin(64°)}{\sin(51.4°)} \approx 3.5 \times 10^{-5} \times 1.15 \approx 4.0 \times 10^{-5}
+$$
 
 Observed: $J = (3.08 \pm 0.15) \times 10^{-5}$. Discrepancy ~30% — within the expected accuracy of the one-loop approximation.
 
@@ -861,6 +959,7 @@ Observed: $J = (3.08 \pm 0.15) \times 10^{-5}$. Discrepancy ~30% — within the 
 ### Empirical statement
 
 The Koide relation (Yoshio Koide, *Lett. Nuovo Cimento* 1981, *Phys. Rev. D* 28:252, 1983) is an empirical identity observed in charged lepton masses:
+
 $$
 \boxed{K \equiv \frac{m_e + m_\mu + m_\tau}{\bigl(\sqrt{m_e} + \sqrt{m_\mu} + \sqrt{m_\tau}\bigr)^2} = \frac{2}{3}}
 $$
@@ -886,6 +985,7 @@ Setting $x_i = \sqrt{m_i}$, $s_k = \sum_i x_i^k$, and $e_k$ the elementary symme
 **Form B (elementary polynomials):** $s_2 = 4 e_2$, or equivalently $e_2 / s_2 = 1/4$.
 
 **Form C (geometric):** the vector $(x_1, x_2, x_3)$ lies on a cone:
+
 $$
 4(x_1 x_2 + x_2 x_3 + x_1 x_3) = x_1^2 + x_2^2 + x_3^2
 $$
@@ -897,6 +997,7 @@ Each form defines a **2-dimensional surface** in $\mathbb{R}^3_+$ (one equation,
 ### The UHM numerical coincidence
 
 UHM derives a state-independent contraction coefficient $\alpha_\mathrm{Fano} = 2/3$ for the Fano channel (Corollary 2.1a in [Fano Channel](/docs/proofs/gap/fano-channel)). This originates from the combinatorial replication number $r = 3$ of the Steiner triple system $S(2,3,7) = \mathrm{PG}(2,2)$:
+
 $$
 \alpha_\mathrm{Fano} = 1 - \frac{1}{r} = 1 - \frac{1}{3} = \frac{2}{3}.
 $$
@@ -910,6 +1011,7 @@ Whether these are manifestations of a single underlying structure is a structura
 ### Structural analysis via T-220 branching
 
 Theorem T-220 Obstruction I establishes the decomposition
+
 $$
 \mathcal{J}_3(\mathbb{O}) \big|_{A_1 \times G_2} = (\mathbf{4}, \mathbf{1}) \oplus (\mathbf{2}, \mathbf{7}) \oplus (\mathbf{1}, \mathbf{7}) \oplus (\mathbf{1}, \mathbf{1}).
 $$
@@ -930,6 +1032,7 @@ This gives the central mass $m_d = (m_\mu + m_\tau)/2 = 941.263$ MeV and splitti
 ### Koide equation in UHM parametrisation
 
 Substituting into $s_2 = (2/3) s_1^2$:
+
 $$
 m_e + (m_d - v) + (m_d + v) = \frac{2}{3}\bigl(\sqrt{m_e} + \sqrt{m_d - v} + \sqrt{m_d + v}\bigr)^2
 $$
@@ -995,7 +1098,6 @@ Both involve a 3-element structure; this motivates the T-220-H hypothesis that a
 - **Higgs sector:** Unique Fano–Higgs line $\{A,E,U\}$ → [Higgs Sector](/docs/physics/particle-physics/higgs-sector)
 - **Octonionic structure:** Derivation of the Fano plane from $\mathbb{O}$ → [Octonionic Derivation](/docs/proofs/minimality/theorem-octonionic-derivation)
 - **G₂-structure and gauge symmetry:** $G_2$-holonomy and SM → [G₂-Structure](/docs/physics/gauge-symmetry/g2-structure)
-
 
 ---
 

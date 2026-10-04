@@ -5,171 +5,77 @@ title: "Confinement"
 
 # Confinement
 
-:::info Who This Chapter Is For
-Topological derivation of confinement in the Gap formalism. The reader will learn about colour Gap tubes, string tension, and the structural resolution of $\theta_{\text{QCD}} = 0$. *(Since 2026-09-26 that derivation is retracted [✗] and strong CP is open in UHM [Pr]; what the Gap potential can and cannot say about $\bar\theta$ is in [§3.1c](#тета-не-из-потенциала).)*
+:::note Scope of the confinement proposal [H/Pr]
+A selected positive three-form and a selected unit vector have stabilizer $SU(3)$ [T]. Identifying it with physical colour, supplying a spacetime gauge connection and identifying density-state phases with that connection are additional field-model assumptions. Universal T-73 (Gap equals curvature) is withdrawn [✗]. The homotopy identity $\pi_2(G_2/T^2)=\mathbb Z^2$ classifies maps into that supplied homogeneous space; it neither creates a flux tube nor proves a Wilson-loop area law. The corrected invariant potential instead has the stated $S^6$ vacuum manifold with $\pi_2=0$.
+
+The former topological area-law derivation and the claim of a derived 457 MeV tension are withdrawn [✗]. The numerical formulas below are conditional phenomenological ansätze [H] with independent couplings, sector values and physical scale. The standard QCD formulas retained later require the specified gauge/fermion content; deriving that content from UHM remains a separate question. Strong CP is open [Pr] (the earlier vanishing theorem was already retracted).
 :::
-
-
-## Overview
-
-:::tip[Section statuses]
-The derivation of confinement in the Gap formalism is proved **topologically**. Key results:
-- Topological area law — **[C at (SV)]** (corrected from [T] on 2026-09-25): T-73 (Gap = Serre curvature) + T-69 (topological protection $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$) + sectoral $\sigma$-correction
-- String tension $\sqrt{\sigma} \approx 457$ MeV — **[C at (SV)]**: sectoral hierarchy [T] (soft Hessian mode), numerical value $|\gamma_{3\to\bar{3}}| \approx 2.8\bar{\varepsilon}$ depends on vacuum parameters T-64
-- Diagnostics of the $\sqrt{\sigma}$ discrepancy — **[T]**: the naive $\sim 7\times$ discrepancy is explained by using average parameters instead of sectoral ones ([details](#диагностика-расхождения-σ))
-- Asymptotic freedom, ABJ anomaly — **[T]** (standard physics)
-- $\theta_{\mathrm{QCD}} = 0$ — **retracted [✗] as a derivation; strong CP open in UHM [Pr]** (T-99, corrected 2026-09-26: step 4 fails for $V_3$ itself, whatever the sector values; the Gap potential fixes no $\bar\theta$ — [§3.1c](#тета-не-из-потенциала)). Earlier: [C at (SV)] (T-99: step 2 stays [T], the conclusion uses the unique vacuum of (SV); corrected 2026-09-25; the route through the vacuum's antiunitary symmetry is closed, T-333)
-:::
-
-Confinement is a non-perturbative phenomenon in which coloured particles (quarks and gluons) are not observed as free states. In the Gap formalism confinement is **proved topologically**: T-73 [T] (Gap = Serre curvature) provides the flux energy density, T-69 [T] (topological protection $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$) stabilises the colour flux tubes, and the sectoral correction from the unique vacuum T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)) gives the specific numerical value $\sqrt{\sigma} \approx 457$ MeV. In the 3-to-$\bar{3}$ sector ($\{A,S,D\} \times \{L,E,U\}$) Gap tends to zero, the cubic potential $V_3$ (octonionic associator) generates a linear potential between quarks, forming colour Gap tubes — analogues of chromoelectric strings.
-
-:::info Key distinction from standard QCD
-In standard QCD confinement is an open Millennium Problem (Clay). In Gap theory confinement is **proved topologically**: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ (T-69 [T]) ensures the non-splittability of colour flux tubes, and T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)) (unique vacuum) gives a specific numerical value of the tension.
-:::
-
----
 
 ## 1. Wilson Loop and Non-Perturbative Gap Dynamics
 
-### 1.1 Setup
+### 1.1 Supplied gauge data
 
-From the derivation of the Standard Model: $\mathrm{SU}(3)_C$ is the stabiliser of the O-direction in $G_2$. The 8 gluon fields are fluctuations of Gap phases $\theta_{ij}$ in the 3-to-$\bar{3}$ sector ($\{A,S,D\} \times \{L,E,U\}$). Confinement is a non-perturbative phenomenon requiring $\mathrm{Gap} \to 0$ in this sector.
+Choose a spacetime, an $SU(3)$ bundle/connection and a field action [D/H]. The algebraic stabilizer $SU(3)_v\subset G_2$ is known after choosing $v$; it does not derive eight spacetime gauge fields or their dynamics from seven density coordinates. A relation $A_\mu^a\sim\partial_\mu\theta_{ij}$ would need a specified covariant map, gauge transformations and physical units. Zero numerical phase Gap does not imply flatness of such a connection.
 
-Gluons are massless at $\mathrm{Gap} = 0$ in the 3-to-$\bar{3}$ sector. As $\mathrm{Gap} \to 0$ the Serre bundle connection **becomes flat** — but with non-trivial holonomy. This is the key to confinement.
+### 1.2 Wilson loop for the supplied connection
 
-### 1.2 Definition (Gap Wilson Loop)
+For a representation and closed spacetime contour, define
 
-The Gap Wilson loop is the holonomy of the Gap connection along a closed contour $C$ in the 3-to-$\bar{3}$ sector:
+$$
+W(C)=\frac1{\dim R}\operatorname{Tr}_R\mathcal P\exp\oint_C A.
+$$
 
-$$W_{\mathrm{Gap}}(C) = \mathrm{Tr}\left[\mathcal{P}\exp\left(\oint_C \sum_{a=1}^{8} A_\mu^a(x)\, T_a^{(\mathrm{color})}\, dx^\mu\right)\right]$$
+Its expectation requires a field measure or quantum state. A single finite density matrix, its phase chart and its topological stabilizer do not supply that measure. Choosing an identification with a Gap field is a model hypothesis [H].
 
-where $A_\mu^a(x) \sim \partial_\mu \theta_{ij}^{(a)}(x)$ is the gluon field, $T_a^{(\mathrm{color})}$ are the generators of $\mathrm{SU}(3)_C$.
+### 1.3 Area-law claim: former proof withdrawn [✗] {#теорема-закон-площади}
 
-In the Gap formalism: $A_\mu^a$ is defined via the spatial dependence of the coherence phases $\theta_{ij}(x)$ in the 3-to-$\bar{3}$ sector. The spatial dependence arises from emergent geometry: the coordinate $x$ is related to the O-dimension via Page–Wootters.
+The old proof used three unavailable implications: numerical Gap as spacetime curvature (T-73 [✗]); nonzero $\pi_2$ as a flux-tube energy barrier; and a cubic finite-state potential as a linearly growing spatial source energy. None follows from the preceding matrix or group identities. A homotopy class needs a field configuration, boundary conditions and a target; a lower energy bound needs an energy functional on those fields. In particular a nontrivial $\pi_2$ alone gives neither a positive string tension nor suppression of quantum tunnelling.
 
-### 1.3 Theorem 1.1 (Topological Area Law) [C at (SV)] {#теорема-закон-площади}
+A correct conditional connection is available **after** supplying a positive transfer matrix and nonzero ground-state overlap for a rectangular Wilson observable:
 
-:::tip[Status: \[C at (SV)\] — corrected from \[T\] on 2026-09-25]
-The vacuum coherence and the barrier it uses are data of the hypothesis (SV): the corrected T-64 has a vacuum without sector structure, whose vacuum manifold is $S^6$ with $\pi_2 = 0$ rather than $G_2/T^2$, and the barrier of T-69 is conditional on (SV). Derived via T-73 (Gap = Serre curvature) + T-69 (topological protection $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$) + T-64 (unique vacuum) + T-65 (spectral action).
-:::
+$$
+\langle W(L,T)\rangle=\sum_n c_n(L)e^{-E_n(L)T},\quad c_n(L)\ge0,\quad c_0(L)>0.
+$$
 
-**Theorem.** In Gap theory on $(S^1)^{21}/G_2$ the Wilson loop in the $\mathbf{3}$-$\bar{\mathbf{3}}$ sector satisfies the area law:
+Then $-\lim_{T\to\infty}T^{-1}\log\langle W(L,T)\rangle=E_0(L)$ [T at these spectral hypotheses, after the chosen source-energy subtraction]. If one independently proves $E_0(L)=\sigma L+O(1)$ as $L\to\infty$, a leading area law follows in that order of limits [C]. Proving the linear ground-state energy is the confinement problem; writing that energy as $\sigma L$ is an ansatz, not its proof.
 
-$$\langle W_{\mathrm{Gap}}(C) \rangle \leq \exp(-\sigma \cdot \mathrm{Area}(C)), \quad \sigma > 0$$
-
-with string tension $\sqrt{\sigma} \approx 457$ MeV (with sectoral correction $|\gamma_{3\to\bar{3}}| \approx 2.8\bar{\varepsilon}$, derived from the soft mode of the Hessian of $V_{\text{Gap}}$, T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)); numerical value [C at (SV)]).
-
-**Proof (topological).**
-
-**Step 1 (Gauge connection from the spectral action).** The spectral triple (T-53 [T]) generates gauge fields via inner fluctuations $D_A = D_{\text{int}} + A + JAJ^{-1}$. In the $\mathbf{3}$-$\bar{\mathbf{3}}$ sector, $A_\mu^a$ are the $SU(3)_C$ gluon fields (T-65 [T]: the spectral action reproduces the Yang–Mills Lagrangian).
-
-**Step 2 (Gap = curvature → flux energy density).** From T-73 [T] ([Gap = Serre curvature](/docs/core/dynamics/gap-operator#теорема-gap-серра)):
-
-$$\|F\|_{ij}^2 = \omega_0^2 |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$$
-
-For the $\mathbf{3}$-$\bar{\mathbf{3}}$ sector, $\mathrm{Gap}(3,\bar{3}) = \varepsilon_{3\bar{3}} \approx 0$, but **non-zero** (from the unique vacuum T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))). The colour flux between sources creates a tube with transverse energy density $\propto \|F\|^2$.
-
-**Step 3 (Topological stability of the flux tube).** From T-69 [T] ([topological protection](/docs/core/dynamics/composite-systems#теорема-тополог-защита)):
-
-$$\pi_2(G_2/T^2) \cong \mathbb{Z}^2$$
-
-The colour flux tube is a **topologically non-trivial** configuration that cannot be continuously deformed into a configuration with $\mathrm{Gap} = 0$. Energy barrier:
-
-$$\Delta V \geq 6\mu^2 > 0$$
-
-This means the flux tube is **stable**: no tunnelling at $T \ll \mu$ (which holds in the confinement phase).
-
-**Step 4 (Linear potential from $V_3$).** The cubic potential $V_3$ creates a linearly growing energy of quark–antiquark separation. For a $\mathbf{3}$-$\bar{\mathbf{3}}$ tube of length $L$:
-
-$$E(L) = \sigma \cdot L, \quad \sigma = \lambda_3 \cdot \frac{|\varepsilon_{3\bar{3}}|}{2} \cdot \mu_{\text{phys}}^2$$
-
-Gap tube (analogue of a colour string):
-
-```
- q ════════════════════ q̄
- ← L →
- ↑ Gap ≈ ε → 0, but V₃ ∝ ε — non-zero energy
-```
-
-**Step 5 (Sectoral correction from the Hessian of $V_{\text{Gap}}$).** From T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)) (unique vacuum with positive-definite Hessian) the **hierarchy of sectoral coherences** follows, derivable from the eigenvalues of $\mathrm{Hess}(V_{\mathrm{Gap}})|_{\min}$.
-
-**Hessian hierarchy.** The potential $V_{\mathrm{Gap}}$ is decomposed into sectors of the decomposition $7 = \mathbf{1}_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$. The eigenvalues of the Hessian at the minimum T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)) group by sectors:
-
-- O-direction sector: $\lambda_O = 18\mu^2$ (hard, largest eigenvalue)
-- Diagonal sector ($\mathbf{3}$-internal): $\lambda_{\text{diag}} \sim 4\mu^2$ (intermediate)
-- $\mathbf{3}\to\bar{\mathbf{3}}$ sector (9 coherences): $\lambda_{3\bar{3}} \approx \mu^2$ (smallest eigenvalue — **soft mode**)
-
-**Relation to $|\gamma|$:** At the vacuum minimum the fluctuations along the soft mode are largest. From the equilibrium condition $\partial V / \partial |\gamma_{ij}| = 0$ in the $\mathbf{3}\to\bar{\mathbf{3}}$ sector:
-
-$$2\mu^2 |\gamma_{3\bar{3}}| - \lambda_3 |\gamma_{3\bar{3}}|^2 - \lambda_4 |\gamma_{3\bar{3}}|^3 = 0$$
-
-At small Gap ($\varepsilon_{3\bar{3}} \approx 0$, confinement regime) the balance of $\mu^2$ against $\lambda_4$ gives:
-
-$$|\gamma_{3\bar{3}}|^2 \approx \frac{2\mu^2}{\lambda_4} = \frac{9}{2\pi^2} \cdot \mu^2 \quad (\text{at } \lambda_4^* = 4\pi^2/63)$$
-
-For the remaining sectors (O-direction, diagonal): $|\gamma_{\text{avg}}|^2 \approx \mu^2/\lambda_4^{(O)}$ with $\lambda_4^{(O)} \approx 9\lambda_4/N_{\text{eff}}$. This gives the hierarchy:
-
-$$\frac{|\gamma_{3\bar{3}}|}{|\bar{\gamma}|} = \sqrt{\frac{\lambda_4^{(\text{avg})}}{\lambda_4^{(3\bar{3})}}} \approx \sqrt{\frac{\lambda_{3\bar{3}}}{\lambda_O}} \cdot \sqrt{N_{\text{eff}}}$$
-
-With $N_{\text{eff}} = 9$ coherences of the $\mathbf{3}\to\bar{\mathbf{3}}$ sector and eigenvalue ratio $\lambda_{3\bar{3}}/\lambda_O \approx 1/18$:
-
-$$\frac{|\gamma_{3\bar{3}}|}{|\bar{\gamma}|} \approx \sqrt{9/18} \cdot \sqrt{9} \approx \frac{1}{\sqrt{2}} \cdot 3 \approx 2.1$$
-
-More precise accounting of the $V_3$ contribution to the soft mode (the cubic potential lowers the effective stiffness of the $\mathbf{3}\to\bar{\mathbf{3}}$ sector by an additional $\sim 70\%$) gives:
-
-$$\frac{|\gamma_{3\bar{3}}|}{|\bar{\gamma}|} \approx 2.8, \quad |\gamma_{3\bar{3}}| \approx 0.13, \quad |\bar{\gamma}| \approx 0.047$$
-
-**Numerical correction.** Since $\sigma \propto |\gamma|^4$:
-
-$$\sqrt{\sigma_{\text{corrected}}} = \sqrt{\sigma_{\text{naive}}} \cdot \left(\frac{|\gamma_{3\to\bar{3}}|}{|\bar{\gamma}|}\right)^2 \approx 60 \cdot (2.8)^2 \approx 60 \cdot 7.6 \approx 457 \text{ MeV}$$
-
-Experimental value: $\sqrt{\sigma}_{\text{exp}} \approx 440$ MeV. Discrepancy $< 4\%$.
-
-:::note Status of the sectoral correction
-The ratio $|\gamma_{3\to\bar{3}}|/|\bar{\gamma}| \approx 2.8$ is **derived** from the Hessian hierarchy of $V_{\text{Gap}}$ at the unique vacuum (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))): the $\mathbf{3}\to\bar{\mathbf{3}}$ sector corresponds to the smallest eigenvalue of the Hessian (soft mode). The qualitative argument — soft mode $\Rightarrow$ largest $|\gamma|$ — **is a consequence** of T-64. However the **numerical value** 2.8 depends on the specific vacuum parameters ($\varepsilon_{33}$, $\varepsilon_{3\bar{3}}$) and the precise $V_3$ contribution to the stiffness. Status: **[C at (SV)]**.
-:::
-
-**Step 6 (Area law).** Linear potential $E(L) = \sigma L$ + topological stability of the flux tube + compactness of $(S^1)^{21}$ (no flux leakage) → for the minimal surface $\Sigma$ with $\partial\Sigma = C$:
-
-$$\langle W_{\text{Gap}}(C) \rangle = \exp\left(-\sigma \cdot \mathrm{Area}(\Sigma_{\min})\right) \cdot \left(1 + O(e^{-6\mu^2/T})\right)$$
-
-The exponential correction from tunnelling through the topological barrier $6\mu^2 \sim M_P^2$ is negligibly small.
-
-$\blacksquare$
-
----
+The old $\sqrt\sigma\simeq457$ MeV follows only from supplied phenomenological values in §2. A small Hessian eigenvalue describes local susceptibility; it does not determine a vacuum coherence without a covariance/noise law, nor a physical string tension without a gauge-field bridge. No universal factor 2.8 or 457 MeV is derived by T-64/T-73/T-74.
 
 ## 2. String Tension $\sigma$ from Gap Parameters
 
 ### 2.1 Theorem 1.2 (String tension from Gap parameters)
 
-:::tip[Status: \[C at (SV)\]]
-Quantitative estimate. Sectoral hierarchy [T] (soft Hessian mode from T-64), numerical value of the correction $|\gamma_{3\bar{3}}| \approx 0.13$ depends on vacuum parameters — status [C at (SV)]. Discrepancy with experiment $< 4\%$.
+:::note Tension formulas are phenomenological [H]
+The formulas below define a proposed model with supplied sector amplitudes, rates and physical scale. Evaluating them is arithmetic [T at these choices]; identifying them with QCD tension, independently fixing inputs and obtaining a gauge-field continuum limit remain unproved. They are not consequences of the withdrawn area-law proof.
 :::
 
 **(a)** Formula:
 
-$$\sigma = \frac{\lambda_3^2 \bar{A}^2}{\mu^2} \cdot \mu_{\mathrm{phys}}^2$$
+$$
+\sigma = \frac{\lambda_3^2 \bar{A}^2}{\mu^2} \cdot \mu_{\mathrm{phys}}^2
+$$
 
 where $\mu_{\mathrm{phys}} = \mu \cdot \omega_0$ is the physical scale.
 
-**(a')** Alternative form via the Gap parameter of the tube [T]. In the Gap tube between quark and antiquark $\mathrm{Gap} = \varepsilon \ll 1$. From the derivation of the area law (Theorem 1.1, step 4) it follows:
+**(a')** A second chosen scaling is $\sigma\sim(\lambda_3|\varepsilon|/2)\mu_{\rm phys}^2$ [H]. The scale factor is needed for physical units if $\lambda_3,\varepsilon$ are dimensionless. It is independent of formula (a) until a matching relation is proved. Taking $\varepsilon\to0$ in this ansatz does not prove QCD deconfinement.
 
-$$\sigma \sim \frac{\lambda_3 \cdot |\varepsilon|}{2}$$
+**(b)** At the chosen relation between parameters: $\lambda_3 = 2\mu^2/(3\bar{|\gamma|})$, $\bar{A} \sim \bar{|\gamma|}^3$, therefore:
 
-This formula directly connects the confinement scale to the cubic coupling $\lambda_3$ and the size of the Gap gap $\varepsilon$ inside the colour tube. As $\varepsilon \to 0$ the tension vanishes — confinement disappears (deconfinement, §4). At finite $\varepsilon$ the value of $\sigma$ is determined by the competition between the octonionic associator $V_3$ and the quadratic potential $V_2$. The transition to the full formula (a) requires translating $\varepsilon$ into coherence moduli $\bar{A}$ and the physical scale $\mu_{\mathrm{phys}}$.
-
-**(b)** From theory parameters: $\lambda_3 = 2\mu^2/(3\bar{|\gamma|})$, $\bar{A} \sim \bar{|\gamma|}^3$, therefore:
-
-$$\sigma \sim \frac{4\mu^4 \bar{|\gamma|}^6}{9\bar{|\gamma|}^2 \mu^2} \cdot \mu_{\mathrm{phys}}^2 = \frac{4\mu^2 \bar{|\gamma|}^4}{9} \cdot \mu_{\mathrm{phys}}^2$$
+$$
+\sigma \sim \frac{4\mu^4 \bar{|\gamma|}^6}{9\bar{|\gamma|}^2 \mu^2} \cdot \mu_{\mathrm{phys}}^2 = \frac{4\mu^2 \bar{|\gamma|}^4}{9} \cdot \mu_{\mathrm{phys}}^2
+$$
 
 **(c)** Numerical estimate. $\sqrt{\sigma}_{\mathrm{exp}} \approx 440$ MeV (from lattice QCD computations). In Gap units:
 
-$$\sqrt{\sigma} = \frac{2\mu \bar{|\gamma|}^2}{3} \cdot \mu_{\mathrm{phys}}$$
+$$
+\sqrt{\sigma} = \frac{2\mu \bar{|\gamma|}^2}{3} \cdot \mu_{\mathrm{phys}}
+$$
 
 With parameters: $\mu^2 \approx 16.6$ $\to$ $\mu \approx 4.1$, $\bar{|\gamma|} \approx 0.047$, $\mu_{\mathrm{phys}} \approx 10$ GeV (QCD scale):
 
-$$\sqrt{\sigma} \approx \frac{2 \times 4.1 \times (0.047)^2}{3} \times 10 \approx \frac{2 \times 4.1 \times 0.0022}{3} \times 10 \approx 0.06 \text{ GeV}$$
+$$
+\sqrt{\sigma} \approx \frac{2 \times 4.1 \times (0.047)^2}{3} \times 10 \approx \frac{2 \times 4.1 \times 0.0022}{3} \times 10 \approx 0.06 \text{ GeV}
+$$
 
 **(d)** Result $\sim 60$ MeV, experimental value $\sim 440$ MeV (factor $\sim 7$). Sources of the discrepancy:
 - $\bar{|\gamma|}$ in the QCD vacuum may differ from the typical value
@@ -186,56 +92,11 @@ From the confinement mechanism it follows that observable hadrons are colourless
 
 **(c)** **Glueballs:** closed Gap tubes (loops in the 3-to-$\bar{3}$ sector) without quarks. Mass $\sim 2\sqrt{\sigma} \sim 1$ GeV.
 
-### 2.3 Diagnostics of the 7x Discrepancy {#диагностика-расхождения-σ}
+### 2.3 What the numerical discrepancy establishes {#диагностика-расхождения-σ}
 
-:::tip[Theorem (Diagnostics of the $\sqrt{\sigma}$ discrepancy) [T]]
-The factor-$\sim 7$ discrepancy in $\sqrt{\sigma}$ (i.e. $\sim 49$ in $\sigma$) is explained by three sources:
-:::
+At fixed remaining inputs of formula (a), $\sqrt\sigma\propto|\bar\gamma|^2$. Thus replacing $0.047$ by $0.13$ multiplies the value by $(0.13/0.047)^2\simeq7.65$ [T]. A scenario value near 60 MeV then becomes roughly 459 MeV (rounding the older inputs led to 457 MeV). This is a sensitivity calculation; it does not derive the replacement amplitude or explain a physical discrepancy. Using an observed tension to select $0.13$ is fitting.
 
-**Source 1: Collective modes vs naive Gap tube.**
-
-The formula $\sigma \sim \lambda_3|\varepsilon|/2$ uses a single-component Gap tube. In the 3-to-$\bar{3}$ sector there are 9 pairs of coherences $(A,L)$, $(A,E)$, $(A,U)$, $(S,L)$, …, each contributing to the colour tube. Collective tension:
-
-$$\sigma_{\text{collective}} = N_{\text{eff}}^{(\sigma)} \cdot \sigma_{\text{single}}$$
-
-Effective number of collective modes: 8 gluon channels out of 9 pairs (one combination is the $U(1)$ singlet). $N_{\text{eff}} = 8$ for $\mathrm{SU}(3)_C$ confinement:
-
-$$\sqrt{\sigma_{\text{collective}}} = \sqrt{8} \times 60 \approx 170 \text{ MeV}$$
-
-The discrepancy decreases: $440/170 \approx 2.6$, factor $\sim 2.5$, not 7.
-
-**Source 2: Non-linear corrections to $V_3$.**
-
-As $\mathrm{Gap} \to 0$ in the 3-to-$\bar{3}$ sector the approximation $\sin\theta \approx \theta$ is not exact (phases $\bar{\theta} \sim O(1)$). The full sine potential gives:
-
-$$\sigma_{\text{exact}} = \lambda_3 \cdot |\bar{A}|_{\text{non-Fano}} \cdot \langle|\sin(3\bar{\theta})|\rangle$$
-
-At $\langle|\sin(3\bar{\theta})|\rangle \sim 2/\pi \approx 0.64$ — this **does not help**, the average decreases.
-
-**Source 3 (key): Value of $|\bar{\gamma}|$ in the confinement sector.**
-
-The formula uses $|\bar{\gamma}| \approx 0.047$ — the **average** coherence modulus. But in the confinement sector $|\gamma|_{3\to\bar{3}}$ may differ. From minimisation of $V_{\text{Gap}}$ in the 3-to-$\bar{3}$ sector (see [sectoral hierarchy of $\varepsilon$](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε)):
-
-If $|\gamma|_{3\to\bar{3}} \approx 0.13$ (2.8 times above average):
-
-$$\sqrt{\sigma} \propto |\gamma|^2 \quad \Rightarrow \quad \frac{\sigma_{\text{corrected}}}{\sigma_{\text{naive}}} = \left(\frac{0.13}{0.047}\right)^4 \approx 58$$
-
-$$\sqrt{\sigma_{\text{corrected}}} \approx 60 \times \sqrt{58} \approx 60 \times 7.6 \approx 457 \text{ MeV}$$
-
-**Exact agreement!** The $7\times$ discrepancy in $\sqrt{\sigma}$ = $49\times$ in $\sigma$ is explained by the ratio $|\gamma|_{3\to\bar{3}} / |\bar{\gamma}|_{\text{avg}} \approx 2.8$ — a factor of less than 3 in the coherence modulus (derived from the soft mode of the Hessian of $V_{\text{Gap}}$, T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)); numerically [C at (SV)]).
-
-:::info[Conclusion]
-The $7\times$ discrepancy ($49\times$ in $\sigma$) is explained by:
-1. The confinement sector $\mathbf{3}\to\bar{\mathbf{3}}$ corresponds to the **soft mode** of the Hessian of $V_{\text{Gap}}$ — the smallest eigenvalue (from T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)))
-2. Soft mode $\Rightarrow$ largest $|\gamma_{3\bar{3}}| \approx 2.8\,\bar{\varepsilon}$ — derived from the Hessian (structurally [T])
-3. The naive formula uses the average $|\bar{\gamma}|$ instead of the sectoral one
-
-Agreement $\sqrt{\sigma} \approx 457$ MeV vs observed 440 MeV ($< 4\%$) — a consequence of the single $V_{\text{Gap}}$ from the [unique vacuum theorem](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум).
-
-Status of the sectoral hierarchy: **[T]** (soft mode = $\mathbf{3}\to\bar{\mathbf{3}}$ follows from T-64). Status of the numerical value $|\gamma_{3\bar{3}}| \approx 0.13$: **[C at (SV)]** (depends on specific vacuum parameters $\varepsilon_{33}$, $\varepsilon_{3\bar{3}}$).
-:::
-
----
+Nor can one infer a multiplicative factor eight simply from eight gluons: channel contributions and correlations depend on the action and flux solution. A soft Hessian mode does not set the mean coherence by itself. Independent vacuum/field/noise data and an out-of-sample tension prediction are required [Pr/H]. The former theorem that the numerical agreement follows from T-64 is withdrawn [✗].
 
 ## 3. Structural Resolution of the Strong CP Problem
 
@@ -243,7 +104,9 @@ Status of the sectoral hierarchy: **[T]** (soft mode = $\mathbf{3}\to\bar{\mathb
 
 In the Standard Model the QCD Lagrangian allows a $\theta$-term:
 
-$$\mathcal{L}_\theta = \frac{\theta_{\mathrm{QCD}}}{32\pi^2}\, G_{\mu\nu}^a \tilde{G}^{a,\mu\nu}$$
+$$
+\mathcal{L}_\theta = \frac{\theta_{\mathrm{QCD}}}{32\pi^2}\, G_{\mu\nu}^a \tilde{G}^{a,\mu\nu}
+$$
 
 Experimental bound from the neutron electric dipole moment (nEDM): $|\theta_{\mathrm{QCD}}| < 10^{-10}$ (PSI 2020). The unexplained smallness of $\theta$ is the **strong CP problem** (one of the central unsolved problems of particle physics).
 
@@ -297,17 +160,23 @@ Conclusion: **all phases vanish** in the vacuum.
 
 **Step 5** (Vanishing of $\theta_{\mathrm{QCD}}$). The parameter $\theta_{\mathrm{QCD}}$ in the Gap formalism:
 
-$$\theta_{\mathrm{QCD}} = \arg\left(\det(M_u \cdot M_d)\right) = \arg\left(\lambda_3^2 \cdot \prod_{(i,j) \in 3\text{-to-}\bar{3}} |\gamma_{ij}|\right)$$
+$$
+\theta_{\mathrm{QCD}} = \arg\left(\det(M_u \cdot M_d)\right) = \arg\left(\lambda_3^2 \cdot \prod_{(i,j) \in 3\text{-to-}\bar{3}} |\gamma_{ij}|\right)
+$$
 
 From steps 1–4: $\lambda_3 \in \mathbb{R}$ (step 1), $|\gamma_{ij}| \in \mathbb{R}_+$ (moduli are real), all phases $\theta_{ij} = 0$ (step 4). Consequently, the argument of the product of real positive numbers is **identically zero**:
 
-$$\theta_{\mathrm{QCD}} = 0 \quad \text{(exactly, not approximately)}$$
+$$
+\theta_{\mathrm{QCD}} = 0 \quad \text{(exactly, not approximately)}
+$$
 
 *Retracted 2026-09-26 [✗]:* the formula identifies the quark mass matrices with $\lambda_3$ and the moduli of Gap coherences; with the fields that (Cl) forces the quark masses come from Yukawa couplings whose phases are inputs (T-333(h)), and the $\theta$ of the gauge action enters $\bar\theta$ on its own.
 
 **Step 6** (Non-perturbative stability). From T-69 [T] ([topological protection](/docs/core/dynamics/composite-systems#теорема-тополог-защита)): $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ guarantees **topological stability** of the vacuum. Energy barrier:
 
-$$\Delta V \geq 6\mu^2 > 0$$
+$$
+\Delta V \geq 6\mu^2 > 0
+$$
 
 Instanton configurations (§3.3) do **not violate** the isotropy of phases: they rearrange the windings $\theta_{ij}$ with the vacuum fixed at $\theta_{ij} = 0$. The topological charge $\mathbb{Z}_2$ forbids a continuous deformation to $\theta \neq 0$.
 
@@ -435,17 +304,23 @@ This explains the **CP paradox**: why strong CP violation is **zero** ($\theta_{
 
 **(c)** Instanton action:
 
-$$S_{\mathrm{inst}} = \frac{8\pi^2}{g_s^2} = \frac{8\pi^2}{4\pi\,\alpha_s} = \frac{2\pi}{\alpha_s}$$
+$$
+S_{\mathrm{inst}} = \frac{8\pi^2}{g_s^2} = \frac{8\pi^2}{4\pi\,\alpha_s} = \frac{2\pi}{\alpha_s}
+$$
 
 In Gap parameters: $\alpha_s = g_s^2/(4\pi)$ is determined via the Gap coupling constant in the 3-to-$\bar{3}$ sector. From the relation $g_s \sim 1/\sqrt{\lambda_4 \cdot N_{\mathrm{eff}}}$:
 
-$$\alpha_s(\mu) = \frac{\lambda_4(\mu)}{4\pi \cdot 9}$$
+$$
+\alpha_s(\mu) = \frac{\lambda_4(\mu)}{4\pi \cdot 9}
+$$
 
 where 9 is the number of coherences in the 3-to-$\bar{3}$ sector.
 
 **(d)** $\theta$-vacuum. The full vacuum is a superposition of instanton sectors:
 
-$$|\theta\rangle = \sum_{n=-\infty}^{\infty} e^{in\theta} |n\rangle$$
+$$
+|\theta\rangle = \sum_{n=-\infty}^{\infty} e^{in\theta} |n\rangle
+$$
 
 From T-99 (step 5): $\theta_{\mathrm{QCD}} = 0$ **exactly**, so the physical vacuum = $|0\rangle$ — the unique instanton sector without a phase factor. *Retracted 2026-09-26:* step 5 is retracted [✗]; the physical vacuum is $|\bar\theta\rangle$ with $\bar\theta$ a free parameter ([§3.1c](#тета-не-из-потенциала)).
 
@@ -475,13 +350,17 @@ As $T_{\mathrm{eff}}$ rises above the critical value $T_{\mathrm{deconf}}$ the s
 
 **(c)** Critical temperature:
 
-$$T_{\mathrm{deconf}} = T_c^{(3\bar{3})} = \frac{\mu^2_{3\bar{3}}}{\Gamma_2 / \kappa_0 \cdot k_B \ln 9}$$
+$$
+T_{\mathrm{deconf}} = T_c^{(3\bar{3})} = \frac{\mu^2_{3\bar{3}}}{\Gamma_2 / \kappa_0 \cdot k_B \ln 9}
+$$
 
 from the Gap-theory phase diagram restricted to the 3-to-$\bar{3}$ sector ($N_{\mathrm{eff}} = 9$, not 21).
 
 **(d)** Prediction. For 3-to-$\bar{3}$: $N_{\mathrm{eff}} = 9$, $\mu^2 \approx 16.6$ in Gap units. Translation to physical units via $\Lambda_{\mathrm{QCD}}$:
 
-$$T_{\mathrm{deconf}} \sim \Lambda_{\mathrm{QCD}} \sim 170 \text{ MeV}$$
+$$
+T_{\mathrm{deconf}} \sim \Lambda_{\mathrm{QCD}} \sim 170 \text{ MeV}
+$$
 
 — consistent with lattice QCD computations ($T_c \approx 150\text{--}170$ MeV for the crossover transition).
 
@@ -489,7 +368,9 @@ $$T_{\mathrm{deconf}} \sim \Lambda_{\mathrm{QCD}} \sim 170 \text{ MeV}$$
 
 The confinement–deconfinement phase transition is characterised by an order parameter — the Polyakov loop $\langle P \rangle$:
 
-$$P = \frac{1}{N_c}\mathrm{Tr}\left[\mathcal{P}\exp\left(i\oint_0^{1/T} A_0^a T_a \, d\tau\right)\right]$$
+$$
+P = \frac{1}{N_c}\mathrm{Tr}\left[\mathcal{P}\exp\left(i\oint_0^{1/T} A_0^a T_a \, d\tau\right)\right]
+$$
 
 In the Gap formalism $A_0^a \sim \partial_\tau \theta_{ij}^{(a)}$, and the Polyakov loop measures the holonomy of the Gap connection along the temporally compactified coordinate $\tau \in [0, 1/T]$.
 
@@ -528,7 +409,9 @@ The $\mathrm{SU}(3)_C$ coupling constant in the Gap formalism runs under RG acco
 
 **(a)** One-loop beta function for $\alpha_s$ in the 3-to-$\bar{3}$ sector:
 
-$$\beta_{\alpha_s} = -\frac{\alpha_s^2}{2\pi}\left(\frac{11}{3}N_c - \frac{2}{3}N_f\right)$$
+$$
+\beta_{\alpha_s} = -\frac{\alpha_s^2}{2\pi}\left(\frac{11}{3}N_c - \frac{2}{3}N_f\right)
+$$
 
 In the Gap formalism: $N_c = 3$ (number of colours $= \dim(\text{3-sector})$), $N_f$ — number of active fermion generations.
 
@@ -536,13 +419,17 @@ In the Gap formalism: $N_c = 3$ (number of colours $= \dim(\text{3-sector})$), $
 
 **(c)** Relation to Gap parameters:
 
-$$\alpha_s(\mu) = \frac{\lambda_4(\mu)}{4\pi \cdot 9} = \frac{4\pi^2/63}{4\pi \cdot 9} \cdot \left(1 + \beta_{\lambda_4} \ln(\mu/\Lambda)\right)^{-1} = \frac{\pi}{567}\cdot\left(1 + \beta_{\lambda_4} \ln(\mu/\Lambda)\right)^{-1}$$
+$$
+\alpha_s(\mu) = \frac{\lambda_4(\mu)}{4\pi \cdot 9} = \frac{4\pi^2/63}{4\pi \cdot 9} \cdot \left(1 + \beta_{\lambda_4} \ln(\mu/\Lambda)\right)^{-1} = \frac{\pi}{567}\cdot\left(1 + \beta_{\lambda_4} \ln(\mu/\Lambda)\right)^{-1}
+$$
 
 using the Wilson–Fisher value $\lambda_4^* = 4\pi^2/63$.
 
 **(d)** $\Lambda_{\mathrm{QCD}}$ from Gap:
 
-$$\Lambda_{\mathrm{QCD}} = \mu_{\mathrm{phys}} \cdot \exp\left(-\frac{2\pi}{(11 - 2N_f/3)\, \alpha_s(\mu_{\mathrm{phys}})}\right)$$
+$$
+\Lambda_{\mathrm{QCD}} = \mu_{\mathrm{phys}} \cdot \exp\left(-\frac{2\pi}{(11 - 2N_f/3)\, \alpha_s(\mu_{\mathrm{phys}})}\right)
+$$
 
 ### 5.1a Relation to the Gap RG Flow [T]
 
@@ -550,13 +437,17 @@ The running coupling constant $\alpha_s$ is a special case of the [RG flow of $V
 
 **(a)** General one-loop $\beta$-function for $\lambda_4$ (see [Gap renormalisation group, §2](/docs/physics/gauge-symmetry/rg-flow#однопетлевые)):
 
-$$\beta_{\lambda_4} = -\epsilon\lambda_4 + \frac{(N+8)}{6}\frac{\lambda_4^2}{8\pi^2}$$
+$$
+\beta_{\lambda_4} = -\epsilon\lambda_4 + \frac{(N+8)}{6}\frac{\lambda_4^2}{8\pi^2}
+$$
 
 Upon restriction to the 3-to-$\bar{3}$ sector: $N = N_{\mathrm{eff}} = 9$. The relation $\alpha_s = \lambda_4/(4\pi \cdot 9)$ and substitution of $\epsilon = 0$ (physical $d=4$ dimensions) give the standard QCD beta with the correct coefficient.
 
 **(b)** The Wilson–Fisher fixed point $\lambda_4^* = 4\pi^2/63$ (from [RG analysis](/docs/physics/gauge-symmetry/rg-flow)) determines the value of $\alpha_s$ at the confinement scale:
 
-$$\alpha_s^* = \frac{\lambda_4^*}{4\pi \cdot 9} = \frac{4\pi^2}{63 \cdot 36\pi} = \frac{\pi}{567} \approx 0.0055$$
+$$
+\alpha_s^* = \frac{\lambda_4^*}{4\pi \cdot 9} = \frac{4\pi^2}{63 \cdot 36\pi} = \frac{\pi}{567} \approx 0.0055
+$$
 
 This value corresponds to the deep perturbative regime. Under RG flow to the IR ($\mu \to \Lambda_{\mathrm{QCD}}$) the coupling grows to $\alpha_s \sim 1$, signalling confinement.
 
@@ -566,7 +457,9 @@ This value corresponds to the deep perturbative regime. Under RG flow to the IR 
 
 Quark masses (defined via the Higgs coupling) run under RG:
 
-$$m_q(\mu) = m_q(\mu_0) \cdot \left(\frac{\alpha_s(\mu)}{\alpha_s(\mu_0)}\right)^{12/(33 - 2N_f)}$$
+$$
+m_q(\mu) = m_q(\mu_0) \cdot \left(\frac{\alpha_s(\mu)}{\alpha_s(\mu_0)}\right)^{12/(33 - 2N_f)}
+$$
 
 The anomalous mass dimension $\gamma_m = 12/(33 - 2N_f)$ is the standard QCD result. In the Gap formalism: $12 = 4 \cdot 3$, where 4 is the number of components of the quark doublet $Q_L$ in one colour, 3 is the number of colours. The agreement is ensured by the fact that Gap theory in the 3-to-$\bar{3}$ sector **reduces** to standard QCD.
 
@@ -584,11 +477,15 @@ The axial current and its anomaly are fully reproduced from the $\mathrm{Cliff}(
 
 **(a)** The chiral operator in the Gap formalism is defined via $\mathrm{Cliff}(7)$-elements:
 
-$$\gamma_5 = i\,\Gamma_O\,\Gamma_A\,\Gamma_S\,\Gamma_D$$
+$$
+\gamma_5 = i\,\Gamma_O\,\Gamma_A\,\Gamma_S\,\Gamma_D
+$$
 
 where $\Gamma_X$ are generators of $\mathrm{Cliff}(7)$ associated with the 7 coherence dimensions. Axial current:
 
-$$j_5^\mu = \sum_{\mathrm{fermions}} \bar{\chi}\,\gamma^\mu\,\gamma_5\,\chi = n_L^\mu - n_R^\mu$$
+$$
+j_5^\mu = \sum_{\mathrm{fermions}} \bar{\chi}\,\gamma^\mu\,\gamma_5\,\chi = n_L^\mu - n_R^\mu
+$$
 
 where $n_L$ is the number of configurations with $\mathrm{Gap}(E,U) = 0$ (left-handed), $n_R$ — with $\mathrm{Gap}(E,U) \neq 0$ (right-handed).
 
@@ -598,19 +495,25 @@ where $n_L$ is the number of configurations with $\mathrm{Gap}(E,U) = 0$ (left-h
 
 **(a)** Dirac operator on Gap space:
 
-$$D_{\mathrm{Gap}} = \sum_{\mu=0}^{3}\gamma^\mu D_\mu, \qquad D_\mu = \partial_\mu + A_\mu^a T_a$$
+$$
+D_{\mathrm{Gap}} = \sum_{\mu=0}^{3}\gamma^\mu D_\mu, \qquad D_\mu = \partial_\mu + A_\mu^a T_a
+$$
 
 where $A_\mu^a$ is the Gap gauge field (as in §1.2).
 
 **(b)** Dirac index (Atiyah–Singer theorem):
 
-$$\mathrm{ind}(D) = n_+ - n_- = \frac{1}{32\pi^2}\int d^4x\, F_{\mu\nu}^a\,\tilde{F}^{a,\mu\nu}$$
+$$
+\mathrm{ind}(D) = n_+ - n_- = \frac{1}{32\pi^2}\int d^4x\, F_{\mu\nu}^a\,\tilde{F}^{a,\mu\nu}
+$$
 
 where $n_\pm$ are the numbers of zero modes with positive/negative chirality, $\tilde{F}^{\mu\nu} = \frac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}$ is the dual tensor.
 
 **(c)** Anomalous divergence of the axial current:
 
-$$\partial_\mu j_5^\mu = \frac{N_f \cdot g_s^2}{16\pi^2}\, G_{\mu\nu}^a\,\tilde{G}^{a,\mu\nu}$$
+$$
+\partial_\mu j_5^\mu = \frac{N_f \cdot g_s^2}{16\pi^2}\, G_{\mu\nu}^a\,\tilde{G}^{a,\mu\nu}
+$$
 
 The coefficient $N_f = 3$ is the number of fermion generations. In the Gap formalism: $g_s^2/(16\pi^2) = \alpha_s/(4\pi)$, where $\alpha_s = \lambda_4/(4\pi \cdot 9)$ (from §5.1).
 
@@ -622,13 +525,17 @@ The decay of the neutral pion is the classical confirmation of the ABJ anomaly a
 
 **(a)** Amplitude:
 
-$$\mathcal{A}(\pi^0 \to \gamma\gamma) = \frac{\alpha\, N_c}{2\pi\, f_\pi}\,\epsilon_{\mu\nu\rho\sigma}\,\epsilon_1^\mu\, k_1^\nu\, \epsilon_2^\rho\, k_2^\sigma$$
+$$
+\mathcal{A}(\pi^0 \to \gamma\gamma) = \frac{\alpha\, N_c}{2\pi\, f_\pi}\,\epsilon_{\mu\nu\rho\sigma}\,\epsilon_1^\mu\, k_1^\nu\, \epsilon_2^\rho\, k_2^\sigma
+$$
 
 where $N_c = 3 = \dim(\{A,S,D\})$ is the number of colours from the Gap structure, $f_\pi \approx 93$ MeV is the pion decay constant.
 
 **(b)** Lifetime:
 
-$$\tau(\pi^0) = \frac{64\pi}{\left(\alpha N_c / (\pi f_\pi)\right)^2 m_\pi^3} \approx 8.4 \times 10^{-17}\;\text{s}$$
+$$
+\tau(\pi^0) = \frac{64\pi}{\left(\alpha N_c / (\pi f_\pi)\right)^2 m_\pi^3} \approx 8.4 \times 10^{-17}\;\text{s}
+$$
 
 Observed value: $(8.5 \pm 0.5) \times 10^{-17}$ s. **Exact agreement** — confirms $N_c = 3$ from the $G_2$ decomposition.
 
@@ -638,7 +545,9 @@ Observed value: $(8.5 \pm 0.5) \times 10^{-17}$ s. **Exact agreement** — confi
 
 From the ABJ anomaly the modified Ward identities for axial vertices follow:
 
-$$q_\mu\,\Gamma_5^{\mu,ab}(p,q) = 2m\,\Gamma_5^{ab}(p,q) + \frac{\alpha_s}{2\pi}\,\delta^{ab}\,\epsilon_{\mu\nu\rho\sigma}\,p^\mu q^\nu\epsilon_1^\rho\epsilon_2^\sigma$$
+$$
+q_\mu\,\Gamma_5^{\mu,ab}(p,q) = 2m\,\Gamma_5^{ab}(p,q) + \frac{\alpha_s}{2\pi}\,\delta^{ab}\,\epsilon_{\mu\nu\rho\sigma}\,p^\mu q^\nu\epsilon_1^\rho\epsilon_2^\sigma
+$$
 
 The second term is the anomalous contribution, absent classically. In the Gap formalism this term arises from the non-trivial topology of the space of Gap configurations: $\pi_3(\mathrm{SU}(3)) = \mathbb{Z}$ generates instanton configurations (§3) that connect the axial anomaly with the $\theta$-vacuum.
 
@@ -647,7 +556,10 @@ The second term is the anomalous contribution, absent classically. In the Gap fo
 :::tip Theorem (Cancellation of gauge anomalies) [T] for the representation content of Step 3; [C at (FE)] as a UHM result
 For the one-generation fermion content of Step 3 — the Standard-Model fermions, which UHM imports with Connes' $H_F$ — the $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ gauge anomalies cancel **completely**. (Until 2026-09-25 the statement read: "The UHM spectral triple (T-53) with unimodularity guarantees complete cancellation"; that derivation is retracted in Step 2 below.)
 
-$$\mathrm{tr}(T^a \{T^b, T^c\}) = 0 \quad \text{for all gauge generators}$$
+$$
+\mathrm{tr}(T^a \{T^b, T^c\}) = 0 \quad \text{for all gauge generators}
+$$
+
 :::
 
 **Frame of the premise (2026-09-26).** (FE) is the premise of the axis frame. In the Clifford frame it is replaced by (Cl₀), and there the cancellation is no longer imported: the generation $\mathcal S_{\mathbb C}$ is the $\mathbf{16}$ of $\mathrm{Spin}(10)$, which has no cubic invariant, so every anomaly vanishes (T-329(e), [T] as mathematics, [C at (Cl)] in UHM; [Standard Model §2.6](/docs/physics/gauge-symmetry/standard-model#поколение-t329), [Premises of UHM](/docs/reference/premises#гипотезы-отождествления)).
@@ -658,7 +570,9 @@ $$\mathrm{tr}(T^a \{T^b, T^c\}) = 0 \quad \text{for all gauge generators}$$
 
 **Step 2 (UHM satisfies unimodularity) — retracted [✗] (2026-09-25).** Former text: "The spectral triple T-53 has $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$, real structure $J$ (KO-dim 6) and is Morita-equivalent to the Connes algebra $\mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ ([T-175a](/docs/core/foundations/spacetime#алгебра-морита)). The unitary group $U(A_{\text{int}}) = U(1) \times U(3) \times U(3)$ after unimodularity gives:
 
-$$SU(A_{\text{int}}) = \{u : \det(u)|_{\mathcal{H}_{\text{int}}} = 1\} \to \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y\text{."}$$
+$$
+SU(A_{\text{int}}) = \{u : \det(u)|_{\mathcal{H}_{\text{int}}} = 1\} \to \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y\text{."}
+$$
 
 Three of its inputs fail: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)); the Morita equivalence T-175a is retracted (the centres $\mathbb{C}^3$ and $\mathbb{C}\oplus\mathbb{R}\oplus\mathbb{C}$ differ); and unimodularity cannot produce an $\mathrm{SU}(2)$ from $U(1) \times U(3) \times U(3)$ — the condition $\det u = 1$ is a single constraint that cuts the rank from 7 to 6 and leaves $\mathrm{U}(1)^{2} \times \mathrm{SU}(3)^{2}$ up to finite quotients, with no $\mathrm{SU}(2)$ factor at all. The anomaly cancellation of Step 1 is a theorem about Connes' model with its imported $H_F$; UHM inherits it only together with that import, with the electroweak group [C at (FE)] ([Standard Model](/docs/physics/gauge-symmetry/standard-model#теорема-фэ)).
 
@@ -707,13 +621,13 @@ Sections 6.1–6.4 prove the **chiral** ABJ anomaly ($\partial_\mu j_5^\mu \neq 
 
 ### 7.2 Self-Consistency
 
-Confinement in Gap theory is self-consistent:
+The proposed confinement interpretation needs independent gauge dynamics and physical matching [H/Pr]:
 
-1. $\mathrm{SU}(3)_C$ arises from $G_2$ as the stabiliser of the O-direction [T]
-2. 8 gluons are fluctuations of Gap phases in the 3-to-$\bar{3}$ sector [T]
-3. $\mathrm{Gap} \to 0$ in this sector creates the conditions for confinement [T]
-4. $V_3$ generates a linear potential (area law) [T] (topological proof); string tension $\sigma \sim \lambda_3|\varepsilon|/2$ [T]
-5. String tension expressed via Gap parameters [C at (SV)] (naive discrepancy $\sim 7\times$; [diagnostics](#диагностика-расхождения-σ): sectoral correction from the soft Hessian mode $\to$ $\sim 457$ MeV; hierarchy [T], numerical value [C at (SV)])
+1. A selected positive form/vector has stabilizer $SU(3)$ [T]; its colour interpretation is [I/H].
+2. A physical eight-gluon action is additional data [H].
+3. A limit of numerical phase Gap alone establishes no confinement [✗ as the former implication].
+4. The topological area-law proof is withdrawn [✗]; a transfer-matrix/linear-energy result requires the field-model hypotheses of §1.3.
+5. The tension values in §2 are calibrated scenarios [H], not an output fixed by T-64/T-73/T-74.
 6. $\theta_{\mathrm{QCD}} = 0$ — retracted [✗] 2026-09-26, strong CP open [Pr]: the Gap sector is CP-neutral but fixes no $\bar\theta$ ([§3.1c](#тета-не-из-потенциала)). Earlier: [C at (SV)] (T-99: step 2 holds for the retracted cubic only; the corrected potential is PT-even, and no lift of its vacuum's antiunitary symmetry gives $\bar\theta = 0$ with $m_t \neq m_b$ and $J \neq 0$ — T-333)
 7. Deconfinement at $T_c \sim \Lambda_{\mathrm{QCD}} \sim 170$ MeV [C at (SV)]; order parameter — Polyakov loop [T] (from $\mathbb{Z}_3$ centre of $\mathrm{SU}(3)_C$ = Stab$_{G_2}(e_O)$ [T-42e]); crossover with quarks [H]
 8. Asymptotic freedom reproduced in the standard way [T]; relation to [RG flow](/docs/physics/gauge-symmetry/rg-flow) via $\lambda_4$ [T]
@@ -727,9 +641,9 @@ Confinement in Gap theory is self-consistent:
 
 | Result | Status |
 |-----------|--------|
-| Wilson loop: topological area law | [T] |
-| String tension $\sqrt{\sigma} \approx 457$ MeV from Gap tube: Hessian hierarchy [T], numerical value [C at (SV)] | [C at (SV)] |
-| String tension from Gap parameters (naive $\sim 60$ MeV; sectoral correction from soft Hessian mode $\sim 457$ MeV vs 440 MeV) | [C at (SV)] |
+| Wilson-loop area law from numerical Gap | [✗] former proof; [H/Pr] field-model programme |
+| Tension values from the chosen formulas in §2 | [H] physical identification and independent inputs required |
+| Tension values from the chosen formulas in §2 | [H] physical identification and independent inputs required |
 | Structural $\theta_{\mathrm{QCD}} = 0$ (T-99): 7-step derivation from A1–A5 | [✗] (retracted 2026-09-26: step 4 false for $V_3$; earlier [C at (SV)], step 2 [T] for $V_3$ only; the vacuum-symmetry route closed, T-333) |
 | Gap sector CP-neutral; no $G_2$-invariant Gap term fixes $\bar\theta$ (T-99 corrected, §3.1c) | [T] as mathematics, [C at (Cl)] in UHM; strong CP open [Pr] |
 | Polyakov loop as deconfinement order parameter (from $\mathbb{Z}_3$ centre of $\mathrm{SU}(3)_C$ [T-42e]) | [T] |
@@ -746,7 +660,6 @@ Confinement in Gap theory is self-consistent:
 1. **Glueball spectrum.** Prediction of glueball masses from Gap parameters is a non-perturbative problem.
 2. **Anomaly in the gravitational sector.** The mixed gravitational–axial anomaly $\partial_\mu j_5^\mu \supset R\tilde{R}$ in the Gap formalism requires full accounting of the $\mathrm{Cliff}(7)$-spectrum, including the O-direction. The connection to emergent gravity is an open question [D].
 :::
-
 
 ---
 

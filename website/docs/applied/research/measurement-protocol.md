@@ -15,7 +15,7 @@ This document describes a **research program** for operationalizing the coherenc
 - $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
 - $\tau$ — [emergent internal time](/docs/proofs/dynamics/emergent-time) (Page–Wootters)
 - $\varphi$ — [self-modeling operator](/docs/proofs/categorical/formalization-phi)
-- $G$ — functor mapping AIState → DensityMat: exact at Cholesky-backbone ($\alpha=0$) [T, MVP-1]; quasi-functor with $\varepsilon_{\text{functor}}>0$ under neural correction ($\alpha>0$) [H]
+- $G$ — proposed encoder AIState → DensityMat; a functor on morphisms and a CPTP extension require separate conditions (Categorical Correctness below).
 - $\mathrm{Coh}_E$ — E-coherence: $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|^2_{\mathrm{HS}} / \|\Gamma\|^2_{\mathrm{HS}}$ — interiority quality (HS-projection onto E-sector) [T]
 :::
 
@@ -30,19 +30,17 @@ UHM theory defines $\Gamma$ as an **object of the ∞-topos $\mathrm{Sh}_\infty(
 3. How to **validate** the correctness of the reconstruction
 
 :::info Fundamental Limitation
-$\Gamma$ is an **ontological primitive**, not an observable. We reconstruct $\Gamma$ via a **homomorphism** $G$ that compresses $\mathbb{R}^d$ (where $d \sim 10^9$ for an LLM) into $\mathcal{D}(\mathbb{C}^7)$.
+$\Gamma$ is an **ontological primitive**, not an observable. We reconstruct $\Gamma$ via a proposed **encoder** $G$ that compresses $\mathbb{R}^d$ (where $d \sim 10^9$ for an LLM) into $\mathcal{D}(\mathbb{C}^7)$.
 
-This is admissible: 7 dimensions are the minimally necessary basis ([Theorem S](/docs/proofs/minimality/theorem-minimality-7), [octonion justification](/docs/core/foundations/axiom-omega#октонионная-структура)).
+A seven-dimensional target formalism is chosen here. Universal minimality requires the additional conditions of [Theorem S](/docs/proofs/minimality/theorem-minimality-7); the dimensional choice alone does not prove that compression preserves every relevant system property.
 :::
 
-:::tip Theoretical Justification: Correctness of the Inverse Problem [T]
-The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) [T] guarantees:
+:::info Reconstruction requires an observation model [T conditional on identification]
+The state space has 48 independent real coordinates in its full-rank interior. Its structural automorphisms do **not** determine a map from AI features to states. A fixed observation model identifies only its observation fiber. Unique reconstruction requires injectivity; stable reconstruction additionally requires quantitative conditioning. These statements and their proofs are given in [ID-1 and ID-2](/docs/applied/research/reconstruction-identifiability#fiber-theorem).
 
-1. **Uniqueness** of the map $G$: for a system satisfying (AP)+(PH)+(QG)+(V), the map $G$ is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$
-2. **Well-posedness of the inverse problem** ([Corollary 2](/docs/proofs/categorical/uniqueness-theorem#обратная-задача)): the initial state $\Gamma(0)$ is **uniquely recovered** from the trajectory $\Gamma(\tau)$ and system parameters $(\omega_0, \lambda_m)$ — up to $G_2$-gauge
-3. **48 physical parameters** ([Corollary 1](/docs/proofs/categorical/uniqueness-theorem#физические-состояния), [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)): of the 48 parameters of $\Gamma$, 34 are kinematic $G_2$-invariants ($48 - \dim(G_2) = 48 - 14 = 34$) and the remaining 14 fix the orientation of the functional frame, which the axiomatic dynamics pins; the residual identification freedom is the finite frame group $\Gamma_{\!\text{oct}}$
+The residual symmetry is the subgroup preserving the **actual** measurement design, its labels, calibration and targets; it is not automatically $G_2$ or $\Gamma_{\!\mathrm{oct}}$. $P$ and $R$ are unitary-invariant, while $\Phi$ and $\mathrm{Coh}_E$ reference a functional frame. Even two encoders in the same fixed frame can disagree on all these quantities if the data do not identify the state.
 
-Practical implication: reconstruction of $\Gamma$ is defined **uniquely** up to the finite frame group $\Gamma_{\!\text{oct}}$ once the frame is pinned (Step 1 and R6 below). $P$ and $R$ are $G_2$-invariant (functions of the spectrum); $\Phi$ and $\mathrm{Coh}_E$ are frame-pinned observables — two reconstructions can differ on them only if their frame-fixing choices differ, which is why those choices are part of the replication package (R8).
+For time-series reconstruction, uniqueness of an ODE solution must be distinguished from observability of its initial state and stability of the inverse. Publish the observation operators, calibration and identification analysis with every reconstructed matrix.
 :::
 
 ---
@@ -53,7 +51,7 @@ Practical implication: reconstruction of $\Gamma$ is defined **uniquely** up to 
 |-------|------|---------|
 | **4** | Causal validation | Intervention tests, lobotomy test |
 | **3** | Dynamic validation | $dP/d\tau$, coherence flow, viability |
-| **2** | Γ reconstruction | Cholesky with physical regularizer |
+| **2** | Γ reconstruction | PSD-constrained reconstruction and confidence set |
 | **1** | Observable extraction | Structural metrics (commutators, $\Phi_{\text{eff}}$, topology) |
 
 ---
@@ -64,12 +62,12 @@ Practical implication: reconstruction of $\Gamma$ is defined **uniquely** up to 
 
 | Dimension | Symbol | AI Metric | Formula | Rigor |
 |-----------|--------|-----------|---------|-------|
-| [Articulation](/docs/core/structure/dimension-a) | $A$ | Mutual information input↔latent | $I_A = I(\text{input}; \text{latent}) / H(\text{input})$ | [T] |
-| [Structure](/docs/core/structure/dimension-s) | $S$ | Jacobian rank | $I_S = \mathrm{rank}_\varepsilon(J_f) / \min(d_{\text{out}}, d_{\text{in}})$ | [T] |
-| [Dynamics](/docs/core/structure/dimension-d) | $D$ | Lyapunov exponent | $I_D = \max_i \lambda_i^{\text{Lyap}}$ (normalized) | [T] |
-| [Logic](/docs/core/structure/dimension-l) | $L$ | Layer commutators | $I_L = 1 - \|[f_i, f_j]\|_F / (\|f_i\| \cdot \|f_j\|)$ | [T] |
-| [Interiority](/docs/core/structure/dimension-e) | $E$ | Activation entropy | $I_E = \exp(S_{vN}(\rho_{\text{attn}}))$ — [experience differentiation](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2) | [T] |
-| [Ground](/docs/core/structure/dimension-o) | $O$ | Noise robustness | $I_O = 1 - \|\nabla_\epsilon \mathbf{h}\|_F$ | [T] |
+| [Articulation](/docs/core/structure/dimension-a) | $A$ | Mutual information input↔latent | $I_A = I(\text{input}; \text{latent}) / H(\text{input})$ | [D/H] |
+| [Structure](/docs/core/structure/dimension-s) | $S$ | Jacobian rank | $I_S = \mathrm{rank}_\varepsilon(J_f) / \min(d_{\text{out}}, d_{\text{in}})$ | [D/H] |
+| [Dynamics](/docs/core/structure/dimension-d) | $D$ | Lyapunov exponent | $I_D = \max_i \lambda_i^{\text{Lyap}}$ (normalized) | [D/H] |
+| [Logic](/docs/core/structure/dimension-l) | $L$ | Layer commutators | $I_L = 1 - \|[f_i, f_j]\|_F / (\|f_i\| \cdot \|f_j\|)$ | [D/H] |
+| [Interiority](/docs/core/structure/dimension-e) | $E$ | Activation entropy | $I_E = \exp(S_{vN}(\rho_{\text{attn}}))$ — [experience differentiation](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2) | [D/H] |
+| [Ground](/docs/core/structure/dimension-o) | $O$ | Noise robustness | $I_O = 1 - \|\nabla_\epsilon \mathbf{h}\|_F$ | [D/H] |
 | [Unity](/docs/core/structure/dimension-u) | $U$ | Effective Φ (integration, black-box) | $I_U = \Phi_{\text{eff}} = \lambda_2(L) / \lambda_{\max}(L)$ — approximation [D]; **when $\Gamma$ is known: $R_{\text{UHM}} = 1/(N \cdot P)$** [T, [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)] | [D/T]† |
 
 where $\nabla_\epsilon \mathbf{h} := (\mathbf{h}(x + \epsilon) - \mathbf{h}(x)) / \epsilon$ — finite-difference approximation
@@ -78,20 +76,13 @@ where $\nabla_\epsilon \mathbf{h} := (\mathbf{h}(x + \epsilon) - \mathbf{h}(x)) 
 
 ### Canonical Observable Indices {#канонические-наблюдаемые-индексы}
 
-:::tip Theorem (Canonical Observable Indices) [T given T-102]
-For a holon with coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and 3-channel decomposition of the external influence $h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}$ ([T-102](/docs/applied/coherence-cybernetics/theorems) [T]), each observable index $I_k$ is defined as the projection of $h^{\text{ext}}$ onto the $k$-th component of the basis $\{A,S,D,L,E,O,U\}$:
+:::info Operational assignment of observable indices [D/H]
+The table specifies candidate functional proxies, not uniquely derived measurements of $\gamma_{kk}$. A Hamiltonian/dissipative/regenerative decomposition of a generator does not identify neural or AI features with diagonal state coordinates: the generator and the state are different mathematical objects.
 
-$$I_k = \frac{\langle k | h^{\text{ext}} | k \rangle}{\|h^{\text{ext}}\|}$$
-
-Distribution by channel:
-- **Hamiltonian $h^{(H)}$:** $I_A$ (articulation = information coupling), $I_S$ (structure = Jacobian), $I_L$ (logic = commutator) — modify the energy landscape
-- **Dissipative $h^{(D)}$:** $I_D$ (dynamics = Lyapunov exponent), $I_O$ (ground = robustness) — modulate decoherence
-- **Regenerative $h^{(R)}$:** $I_E$ (interiority = attention entropy), $I_U$ (unity = connectivity) — modulate recovery
-
-This is the unique (up to $G_2$-gauge) distribution compatible with the functional labeling of dimensions ([Theorem S](/docs/proofs/minimality/theorem-minimality-7) [T]) and the completeness of the triadic decomposition ([T-57](/docs/proofs/categorical/categorical-formalism) [T]).
+For the declared experiment, label the proxies $I_A,\ldots,I_U$, calibrate their units against a published reference ensemble, and freeze their normalization before testing. Their proposed channel associations — A/S/L with Hamiltonian influence, D/O with dissipative influence, E/U with regenerative influence — are hypotheses to be tested by interventions. Replacing a proxy defines a different operationalization and requires fresh calibration and held-out evaluation; it does not by itself violate a theorem about the generator.
 :::
 
-**Corollary for the protocol.** The indices $I_k$ are not an arbitrary choice of metrics: their assignment to a given channel $h^{(H)}/h^{(D)}/h^{(R)}$ is fixed by theorem T-102 and is unique up to $G_2$-gauge. Replacing, for example, $I_D$ with a Hamiltonian metric would break the completeness of the decomposition and destroy the correspondence $\gamma_{kk} \leftrightarrow I_k$ guaranteed by the [separation principle](#принцип-разделения-диагональ--когерентности-т-mvp-0).
+The formulas in the correspondence table define computable metrics [D]; their interpretation as measurements of UHM axes is [H]. Neither a definition nor a simulation proves that correspondence. In particular, attention weights must first be converted into a specified positive, trace-one operator before a von Neumann entropy is defined.
 
 ### Layer Commutators (for L)
 
@@ -179,20 +170,14 @@ $$
 
 **Proof:** See [Coherence matrix](/docs/core/dynamics/coherence-matrix).
 
-### Physical Regularizer
+### Data fit, priors and identification
 
-:::warning Uniqueness Problem
-The map $L \mapsto \Gamma$ is surjective. Without regularization, a "correct" $\Gamma$ can be reconstructed from arbitrary data.
-:::
+State validity is not empirical correctness. The surjective parametrization can express many states; a likelihood restricts them by observations. Regularization can choose a preferred state in an unresolved fiber but cannot prove identification.
 
-**Solution — penalty function:**
+For exploratory sensitivity analysis one may penalize diagonal, coherence-magnitude or dynamic discrepancies. Each penalty needs a specified observation/noise model and declared weights. A magnitude penalty leaves signed phases unresolved. A dynamic penalty imports the theory being tested. In confirmatory biological runs the dynamics and viability weights are zero (SUB-2); identifiability and target ranges are assessed through the [observation model](/docs/applied/research/reconstruction-identifiability).
 
-$$
-\mathcal{L}_{\text{reg}} = \lambda_1 \cdot \mathcal{L}_{\text{diag}} + \lambda_2 \cdot \mathcal{L}_{\text{off}} + \lambda_3 \cdot \mathcal{L}_{\text{dyn}}
-$$
-
-| Component | Formula | Purpose |
-|-----------|---------|---------|
+| Penalty [D] | Expression | Selected purpose |
+|---|---|---|
 | $\mathcal{L}_{\text{diag}}$ | $\sum_i (\gamma_{ii} - I_i / \sum_j I_j)^2$ | Diagonal consistency |
 | $\mathcal{L}_{\text{off}}$ | $\sum_{i \neq j} (\|\gamma_{ij}\|^2 - r_{ij}^2 \gamma_{ii} \gamma_{jj})^2$ | Coherence consistency |
 | $\mathcal{L}_{\text{dyn}}$ | $\|\Gamma_{\tau+1} - \Phi_{\text{pred}}(\Gamma_\tau)\|_F^2$ | Dynamics consistency |
@@ -215,59 +200,23 @@ Consequently this corpus does not, and will not, assert consciousness or its abs
 
 ## Categorical Correctness
 
-### Nonlinearity Problem
+### State parametrization does not define a channel or a functor
 
-Neural network layers (GELU, Softmax) are **nonlinear** transformations.
-CPTP channels are **linear** over density matrices.
+A nonzero lower-triangular $7\times7$ factor $L$ with real diagonal has $7+2\cdot21=49$ real entries. Normalizing $LL^\dagger$ removes a redundant positive scale and yields 48 state degrees of freedom. In the positive-definite interior, the Cholesky factor with positive diagonal and $\operatorname{Tr}(LL^\dagger)=1$ is unique; rank-deficient states belong to boundary strata and do not share a single unconstrained global chart. Estimating all 49 raw factor entries and then normalizing does **not** violate the trace axiom. Leaving the normalization out does.
 
-The condition $G(f \circ g) = G(f) \circ G(g)$ **fails** under neural correction.
+For a bijective chart $\psi:Q\to\mathsf S$, transporting a self-map by $f\mapsto\psi f\psi^{-1}$ preserves composition and identities by algebra. This defines a functor between categories of the corresponding self-maps. It does **not** prove that the transported morphisms are linear CPTP maps. A functor into the CPTP category additionally requires an explicit assignment on every morphism and proof of linearity, complete positivity, trace preservation, identities and composition.
 
-### Exact Functor at Cholesky-backbone [T]
+For a many-to-one encoder $G:X\to\mathsf S$, a source transformation $f:X\to X$ descends to a well-defined state map $\bar f$ iff $G(x)=G(x')$ implies $G(f(x))=G(f(x'))$. Then $\bar f(G(x))=G(f(x))$, and composition is preserved on the image. A CPTP extension outside that image is a further condition. This fiber condition is the relevant exact criterion; a Cholesky formula alone cannot supply it.
 
-Under the analytic parametrization $\psi: \mathbb{R}^{48} \leftrightarrow \mathcal{D}(\mathbb{C}^7)$ (Cholesky bijection, $\alpha=0$), the map $G$ is an **exact** functor: $\varepsilon_{\text{functor}} = 0$. This has been experimentally confirmed (MVP-1): $\max_k |\Delta\sigma_k| = 0$ to machine precision.
+A claimed approximate functor must first specify the source and target categories, object and morphism maps, common domains and norm. For maps on a common state domain one may test a composition defect $\sup_\Gamma\|G(f\circ g)(\Gamma)-G(f)(G(g)(\Gamma))\|_{\mathrm{HS}}$. A local Jacobian approximation gives no universal defect bound without bounds on the second derivatives and the operating region. Numerical preservation of a diagonal or of one trajectory verifies that implementation property, not functoriality of every morphism.
 
-**Key constraint**: the 49th parameter $d_6 = L_{66}$ (determining $\gamma_{UU}$) is **not independent** — it is computed from the normalization condition:
-$$
-\gamma_{UU} = 1 - \sum_{k \neq U} \gamma_{kk}, \qquad d_6 = \sqrt{\gamma_{UU} - \sum_{j<6}|L_{6j}|^2}
-$$
-This is a direct consequence of the axiom $\mathrm{Tr}(\Gamma)=1$: the state space is a **48-dimensional** manifold, not 49-dimensional. Attempting to estimate $d_6$ independently (via a neural network, averaging, or interpolation) violates the axiom and leads to systematic downward drift of $P$ (purity loss per tick).
-
-### Quasi-functor under Neural Correction [H]
-
-**Definition:** The map $G: \mathbf{AIState} \rightsquigarrow \mathbf{DensityMat}$ with $\alpha > 0$ (neural correction):
-
-$$
-\|G(f \circ g) - G(f) \circ G(g)\|_F \leq \varepsilon_{\text{functor}} \cdot \|f\|_{\text{op}} \cdot \|g\|_{\text{op}}
-$$
-
-### NTK Linearization
-
-In the tangent space, nonlinearity is approximated by:
-
-$$
-f(s) \approx f(s_0) + J_f(s_0) \cdot (s - s_0)
-$$
-
-**Corollary:** Approximate functoriality with error $O(\|f\|^2 \cdot \|g\|^2)$.
-
-**Connection to theory:** Extends the [Categorical formalism](/docs/proofs/categorical/categorical-formalism).
+See [the observation/estimator/channel distinction](/docs/applied/research/reconstruction-identifiability#observation-model) and [Watrous, Definition 2.13](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf).
 
 ### Separation Principle: Diagonal / Coherences [T, MVP-0] {#принцип-разделения-диагональ--когерентности-т-mvp-0}
 
-**Empirically established** in the implementation of full Lindblad dynamics:
+**Scope of the diagonal profile.** The selected implementation reports small variation of $W_{\mathrm{raw}}=\|\mathbf1-N\operatorname{diag}\Gamma\|_2$; this is a particular-run observation, not a general dynamics invariant. This unclamped quantity is not the clamped stress norm without further conditions.
 
-$$
-W := \|\sigma\|_2 = \|\mathbf{1} - N \cdot \mathrm{diag}(\Gamma)\|_2 = \mathrm{const}, \quad W_{\text{std}} < 10^{-15}
-$$
-
-The replacement channel $\mathcal{R}[\Gamma, E]$ **fixes the diagonal of $\Gamma$** at each Lindblad step. Consequence:
-
-| Component of $\Gamma$ | Role | Dynamics |
-|-----------------------|------|----------|
-| $\gamma_{kk}$ (diagonal) | System identity | Homeostatically stable |
-| $\gamma_{ij}$, $i \neq j$ (coherences) | Learning, adaptation | Evolve |
-
-**For the measurement protocol**: the metrics $I_A, I_S, I_D, I_L$ primarily reflect coherent structure; $\sigma_k = 1 - N\gamma_{kk}$ characterizes the diagonal deviation from equilibrium. The lobotomy test (weight pruning) changes **coherences**, not the diagonal — the diagonal is homeostatically stable against small perturbations.
+The diagonal is preserved with explicitly population-preserving dephasing, diagonal $H$, matching target populations and no population-changing input. General Hamiltonian motion can change populations; Hermiticity does not annihilate $-i[H,\Gamma]_{kk}$. See [T-134](/docs/proofs/consciousness/operationalization#t-134). Weight pruning can also change populations and normalization: specify and measure its map rather than assume its action. Interpreting the diagonal as identity/personality and coherences as learning is an architecture hypothesis [H].
 
 ---
 
@@ -306,13 +255,7 @@ where τ — [emergent internal time](/docs/proofs/dynamics/emergent-time).
 
 **Mechanism [T, separation principle, MVP-0]:** Pruning neural network weights changes the **off-diagonal coherences** $\gamma_{ij}$ of the matrix $\Gamma$, but **not the diagonal populations** $\gamma_{kk}$ (which are homeostatically stabilized by the replacement channel). The change in $P = \mathrm{Tr}(\Gamma^2)$ upon pruning occurs through loss of coherent integration. With massive pruning that disrupts the replacement channel, the diagonal may also degrade.
 
-**Criterion for ontological validity:**
-
-| Result | Interpretation |
-|--------|----------------|
-| $\Delta P > 0$ **before** $\Delta A > 0$ | [T] Protocol captures ontology |
-| $\Delta P \approx \Delta A$ | [C] Correlation with output |
-| $\Delta A > 0$ **before** $\Delta P > 0$ | Protocol does not capture ontology |
+**Interventional test of predictive usefulness [H].** Predeclare direction, lag and magnitude of the metric response to weight pruning, and test its prediction of accuracy changes on held-out interventions. Temporal precedence alone proves neither causation nor ontological validity. Proxies, normalization and readout timing can alter the ordering; declared control models are required.
 
 ### Causal Closure of E
 
@@ -320,7 +263,7 @@ $$
 \Delta\Phi_E := \Phi_{\text{eff}}(\mathcal{S}_E) - \Phi_{\text{eff}}(\mathcal{S}_E | \text{do}(X := \text{random})) > \varepsilon_{\text{causal}}
 $$
 
-If $\Delta\Phi_E \approx 0$ — the system **simulates** phenomenology without realizing it ("Chinese Room").
+A small $\Delta\Phi_E$ rejects the proposed causal proxy under this intervention; it does not prove absence of experience. The interpretation “simulation without realization” remains a phenomenological hypothesis.
 
 ---
 
@@ -475,7 +418,7 @@ public pure fn compute_purity(gamma: &StaticMatrix<Complex, 7, 7>) -> Float
 | $R_{\text{th}}$ (L2 threshold) | $\geq 1/3$ | [Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) | Proven [T] |
 | $\Phi_{\text{th}}$ (L2 threshold) | $\geq 1$ | [T-129](/docs/proofs/consciousness/operationalization#t-129) | Proven [T] |
 | $D_{\text{diff}}^{\text{min}}$ | $\geq 2$ | [T-151](/docs/proofs/consciousness/substrate-closure#t-151) | Independent L2 threshold [D] (it read "Proven [T]" until 2026-09-25) |
-| $\varepsilon_{\text{functor}}$ | $= 0$ at $\alpha=0$ (Cholesky) | [T, MVP-1]: exact functor | Proven |
+| Composition defect | Implementation-specific | Specify object/morphism maps and verify fiber descent | Conditional |
 | $\varepsilon_{\text{functor}}$ | $< 0.1$ at $\alpha>0$ (neural) | Requires calibration | Hypothesis |
 | $\varepsilon_{\text{causal}}$ | $> 0.05$ | Requires calibration | Hypothesis |
 
@@ -505,7 +448,7 @@ For a valid measurement:
 ### What Is Implemented (SYNARC MVP-0/1/2)
 
 :::info Confirmed in Implementation
-1. **Cholesky-backbone ($\alpha=0$): $G$ is an exact functor** [T, MVP-1] — bijection $\psi: \mathbb{R}^{48} \leftrightarrow \mathcal{D}(\mathbb{C}^7)$ with $\varepsilon_{\text{functor}} = 0$
+1. **Cholesky-backbone ($\alpha=0$): state validity and properties of the particular implementation** [C, MVP-1]; a global bijection and a CPTP functor do not follow (see “Categorical Correctness”)
 2. **Neural bridge ($\alpha>0$): $G$ is a quasi-functor** [H] — H1/H2/H4 confirmed [C] for the analytic backbone (MVP-1); neural correction $\alpha>0$ — MVP-3+
 3. **Diagonal/coherence separation principle** [T, MVP-0] — diagonal is homeostatically stable; coherences — the adaptation zone
 4. **R = 1/(N·P) — exact identity** [T, MVP-0, [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)] — error $< 10^{-7}$
@@ -533,7 +476,7 @@ The protocol is developed theoretically. Experimental validation is absent.
 
 ### Principle
 
-The dual interview simultaneously measures **external** (behavioral, physiological) and **internal** (self-report) characteristics of a system, allowing reconstruction of the full coherence matrix $\Gamma$, including the phases $\theta_{ij}$ and, consequently, the Gap profile.
+The dual interview simultaneously measures **external** (behavioral, physiological) and **internal** (self-report) characteristics of a system, proposing a joint observation model; full-state and phase reconstruction require a separate identification check.
 
 ### Protocol Stages
 
@@ -541,33 +484,31 @@ The dual interview simultaneously measures **external** (behavioral, physiologic
 |-------|-------------|------|-----------------|
 | 1. Background recording | EEG, fMRI, HRV | Resting physiology | Diagonal $\gamma_{ii}$, estimate of $P$ |
 | 2. Structured interview | Responses to 7 question batteries (per dimension) | Verbal reports | Coherences $\lvert\gamma_{ij}\rvert$ between dimensions |
-| 3. Paradoxical probes | Conflict tasks | Reaction time, HRV | Phases $\theta_{ij}$ → Gap profile |
+| 3. Paradoxical probes | Conflict tasks | Reaction time, HRV | Behavioral proxy [H]; no measured phase |
 | 4. Dynamic probe | Stress test + recovery | Time series $P(\tau)$ | $\kappa(\Gamma)$, $\Gamma_2$, τ_char |
 
-### Spectral Reconstruction of H_eff
+### Reconstruction of the Hamiltonian component [T conditional on an identified generator]
 
-:::tip Theorem (Spectral Reconstruction) [C]
-From the time series $\{\Gamma(\tau_n)\}_{n=1}^N$ it is possible to reconstruct the effective Hamiltonian:
+A matrix ratio $\Gamma(t+\delta t)\Gamma(t)^{-1}$ is not a propagator on state vectors; its logarithm does not reconstruct $H$. That former formula is withdrawn (2026-10-03).
+
+If the non-Hamiltonian contribution $B(\Gamma)$ is independently known, set $X=\dot\Gamma-B(\Gamma)$ and solve $X=-i[H,\Gamma]$ as a real linear inverse problem in Hermitian $H$. In an eigenbasis of $\Gamma$ with eigenvalues $p_m$, every pair with $p_m\ne p_n$ obeys
 
 $$
-H_{\text{eff}} = \frac{i}{\delta\tau} \log\!\left(\frac{\Gamma(\tau + \delta\tau)}{\Gamma(\tau)}\right) + O(\delta\tau)
+H_{mn}=\frac{iX_{mn}}{p_n-p_m}.
 $$
 
-given sufficient sampling frequency $\delta\tau \ll \tau_{\text{char}}$.
-:::
-
-**Assumption:** linearity of evolution on the scale $\delta\tau$. The nonlinear regenerative term $\mathcal{R}[\Gamma, E]$ introduces a systematic error $O(\kappa \cdot \delta\tau)$.
+The blocks commuting with $\Gamma$ are not identified by one state derivative, and a necessary consistency condition is $X_{mn}=0$ whenever $p_m=p_n$. For one **constant** Hamiltonian probed on several known states, the remaining ambiguity is the intersection of their commutants; uniqueness up to an additive scalar requires that intersection to consist only of scalars. Small spectral gaps give poor conditioning. Unknown dissipative/regenerative rates require joint identification; a high sampling frequency alone supplies none of these conditions. [Dynamic observability](/docs/applied/research/reconstruction-identifiability#local-identification).
 
 ### Equilibrium Gap
 
-:::tip Theorem (Equilibrium Gap) [T]
-In the stationary state ($d\Gamma/d\tau = 0$) the coherences are determined by the balance of decoherence and regeneration:
+:::info Stationary coherence [T conditional on a frozen linear model]
+For the scalar equation $\dot\gamma_{ij}=-(\Gamma_2+\kappa+i\Delta\omega_{ij})\gamma_{ij}+\kappa\gamma^*_{ij}$ with constant coefficients and a fixed target:
 
 $$
-|\gamma_{ij}^{(\infty)}| = \frac{\kappa \cdot |\gamma_{ij}^*|}{\bigl[(\Gamma_2 + \kappa)^2 + \Delta\omega_{ij}^2\bigr]^{1/2}}
+|\gamma_{ij}^{(\infty)}|=\frac{\kappa|\gamma^*_{ij}|}{\sqrt{(\Gamma_2+\kappa)^2+\Delta\omega_{ij}^2}}.
 $$
 
-where $|\gamma_{ij}^*|$ — target coherences (from $\varphi_{\text{coh}}$), $\Delta\omega_{ij} = \omega_i - \omega_j$ — frequency detuning.
+This is a magnitude, not Gap. With a state-dependent target $\varphi(\Gamma)$, the expression is only a self-consistency condition for an equilibrium; it does not prove existence, uniqueness or stability.
 :::
 
 **See:** [Theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie), [Fano channel](/docs/proofs/gap/fano-channel)
@@ -592,40 +533,21 @@ The correspondence between dimensions and physiological frequencies is a **hypot
 
 ### Gap Profile Reconstruction from Interview
 
-```verum
-/// Dual-interview data bundle.
-public type DualInterviewData is {
-    external_data: Map<Text, Float>,      // behavioural/physiological per pair
-    self_report:   Map<Text, Float>,      // verbal reports per pair
-    conflict_data: Map<Text, Float>,      // reaction times per pair
-};
+```python
+# Exploratory interview score, not a reconstructed phase or UHM Gap.
+# No missing-data defaults; behavior is excluded from confirmation (SUB-3).
+def interview_discrepancy(external, report):
+    if external is None or report is None:
+        return None
+    return abs(external - report)
 
-/// Reconstruct the 7×7 Gap matrix from dual-interview data.
-public pure fn reconstruct_gap_profile(data: &DualInterviewData)
-    -> StaticMatrix<Float, 7, 7>
-{
-    const DIMS: [Text; 7] = ["A", "S", "D", "L", "E", "O", "U"];
-    let median_rt = data.conflict_data.values().to_list().median().unwrap_or(1.0);
-
-    let mut gap = StaticMatrix<Float, 7, 7>.zeros();
-    for i in 0..7 { for j in (i + 1)..7 {
-        let pair = f"{DIMS[i]}{DIMS[j]}";
-
-        // Mismatch between behavioural and self-report data → higher Gap.
-        let ext = data.external_data.get(&pair).unwrap_or(0.5);
-        let rep = data.self_report.get(&pair).unwrap_or(0.5);
-        let discrepancy = (ext - rep).abs();
-
-        // Reaction time → phase estimate → Gap.
-        let rt = data.conflict_data.get(&pair).unwrap_or(1.0);
-        let phase_estimate = (rt / median_rt).atan();
-
-        let g = phase_estimate.sin().abs() * (0.5 + 0.5 * discrepancy);
-        gap[i, j] = g;
-        gap[j, i] = g;
-    }}
-    gap
-}
+# Only after the signed complex observation model has been calibrated:
+def gap_from_identified_coherence(gamma_ij):
+    if gamma_ij is None:
+        return None
+    if abs(gamma_ij) == 0:
+        return 0.0  # declared zero-coherence convention
+    return abs(gamma_ij.imag) / abs(gamma_ij)
 ```
 
 ---
@@ -649,21 +571,19 @@ public pure fn reconstruct_gap_profile(data: &DualInterviewData)
 
 ## Protocol $\pi_{\mathrm{bio}}$: Reconstructing $\Gamma$ from Biological Neural Data (Resolution P8) {#протокол-pi-bio}
 
-:::warning Status: [T] structural + [H] empirical calibration
-The protocol $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$ defines the mapping of neural data (EEG/fMRI/HRV) into the space of density matrices. The mathematical structure is **[T]** (follows from $G_2$-rigidity T-42a). The specific correspondences between EEG bands and dimensions are **[H]** (require experimental validation). A fully specified measurement protocol with feature extraction, validation gates against PCI, and predicted thresholds $P(\Gamma_\mathrm{wake})>2/7$, $P(\Gamma_\mathrm{NREM3})<2/7$ is given in [Fundamental Closures §9](/docs/proofs/categorical/fundamental-closures#pi-bio-protocol): simultaneous TMS+EEG+fMRI+HRV recording on $N\geq 50$ subjects across wake/NREM3/anaesthesia states, with explicit 7-feature and 21-off-diagonal extraction protocols. *Corrected 2026-09-25:* the sentence "no theoretical obstacle remains" is withdrawn — as first specified, the estimator contained the tested predicate and the calibration used report-labelled sessions; the conditions under which a test is possible are the [position against the substitution argument](#substitution-position) and its pre-registration SUB-1 … SUB-6.
+:::warning Status: [D] estimator + [T] conditional identification + [H] empirical bridge
+The protocol $\pi_{\mathrm{bio}}$ is a declared estimator from neural features to candidate density matrices, or to a set of states compatible with the data. The validity conditions $\Gamma\succeq0$ and $\operatorname{Tr}\Gamma=1$ are mathematical. The EEG/HRV/fMRI correspondence, observation law and calibration are empirical hypotheses; $G_2$-rigidity does not fix them. [Fundamental Closures §9](/docs/proofs/categorical/fundamental-closures#pi-bio-protocol) describes a proposed simultaneous recording design. Its identifiability must be established under the criteria below before it is called full-state tomography. The anti-circularity safeguards [SUB-1 … SUB-6](#substitution-position) remain mandatory.
 :::
 
-### Principle: EEG Bands as Projections of $\Gamma$ onto Dimensions {#eeg-полосы}
+### Principle: declared observation model and its fibers {#eeg-полосы}
 
-:::info Theorem ($G_2$-uniqueness of $\pi_{\mathrm{bio}}$) [T given $G_2$-rigidity]
-If a continuous map $\pi_{\mathrm{bio}}: \mathcal X \to \mathcal{D}(\mathbb{C}^7)$ exists on a neural-feature space $\mathcal X$ that is compatible with (AP autopoiesis)+(PH phenomenological thresholds)+(QG $G_2$-covariance)+(V continuity), then it is unique up to the action $\Gamma \mapsto U\Gamma U^\dagger$ of the finite frame group $U \in \Gamma_{\!\text{oct}} \subset G_2$ (kinematic envelope $G_2$, 14-dimensional; dynamical identification $\Gamma_{\!\text{oct}}$ — [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). $P$ and $R$ are $G_2$-invariant; $\Phi$ is invariant under $\Gamma_{\!\text{oct}}$, $\mathrm{Coh}_E$ only under its $192$ elements that keep the $E$-axis, and both change under a generic element of $G_2$ (the statement ascribed $\Gamma_{\!\text{oct}}$-invariance to both until 2026-09-25).
+:::info Theorem (replacement for the withdrawn encoder-uniqueness claim) [T]
+For a fixed calibrated observation law $\mathsf O_\theta$, exact data identify its fibers. The state is unique exactly when this law is injective on the admissible state set; a quantity is unique exactly when it is constant on each fiber. For calibrated linear means $\operatorname{Tr}(H_a\Gamma)$, full-state identification is equivalent to the projected Hermitian operators spanning the 48-dimensional traceless Hermitian space. [ID-1, ID-2 and proofs](/docs/applied/research/reconstruction-identifiability#fiber-theorem).
 
-**Proof sketch.** Suppose $\pi_{\mathrm{bio}}^{(1)}$ and $\pi_{\mathrm{bio}}^{(2)}$ both satisfy (AP)+(PH)+(QG)+(V). The map $\varphi := \pi_{\mathrm{bio}}^{(2)} \circ (\pi_{\mathrm{bio}}^{(1)})^{-1}$ is a continuous automorphism of $\mathcal D(\mathbb C^7)$ preserving $P,R,\Phi$ pointwise and compatible with (AP). By the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) [T], a continuous automorphism of $\mathcal D(\mathbb C^7)$ compatible with the octonionic structure is $\Gamma \mapsto U\Gamma U^\dagger$ with $U \in G_2 = \mathrm{Aut}(\mathbb O)$ (the kinematic envelope, of real dimension 14). Since $\varphi$ also preserves $\Phi$ pointwise, and $\Phi$ vanishes exactly on diagonal $\Gamma$, $U$ maps diagonal states to diagonal states and is therefore monomial; the monomial elements of $G_2$ are its signed permutation matrices, i.e. $\Gamma_{\!\text{oct}}$. Hence $\pi_{\mathrm{bio}}^{(2)}(x) = U\,\pi_{\mathrm{bio}}^{(1)}(x)\,U^\dagger$ with $U \in \Gamma_{\!\text{oct}}$. (Until 2026-09-25 the sketch said that the group of automorphisms preserving $P$, $R$, $\Phi$, the self-model operator and the Fano gauge structure "is precisely $G_2$"; $\Phi$ is not $G_2$-invariant, so that group is $\Gamma_{\!\text{oct}}$.)
-
-Invariance of observables: $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ and $R(\Gamma) = 1/(7P(\Gamma))$ depend only on spectral data, invariant under unitary conjugation. $\Phi$ and $\mathrm{Coh}_E$ reference the coordinate frame (the diagonal of $\Gamma$ and the $E$-axis): $\Phi$ is invariant under the frame group $\Gamma_{\!\text{oct}}$, which permutes the axes, $\mathrm{Coh}_E$ only under its $192$ elements that keep the $E$-axis (and under the continuous stabiliser $G_2^{(E)} \cong SU(3)$), and neither under a generic $U \in G_2$, which rotates the axes (Lemma G4 of the uniqueness theorem). (The sentence ascribed $\Gamma_{\!\text{oct}}$-invariance to both until 2026-09-25.) Since the axiomatic dynamics pins the frame (Theorem 5.1b), $\Gamma_{\!\text{oct}}$ is exactly the residual freedom of $\pi_{\mathrm{bio}}$. $\square$
+**Correction 2026-10-03.** The former proof $\pi_2\circ\pi_1^{-1}$ assumed an inverse absent from the hypotheses and is withdrawn. Fixing a Fano frame or classifying automorphisms of the codomain does not identify a neural encoder. Residual symmetry must be derived from the actual observation model, not assigned automatically as $G_2$ or $\Gamma_{\!\mathrm{oct}}$.
 :::
 
-Basic idea: neural activity in different EEG frequency bands projects onto the 7 dimensions of $\Gamma$. Cross-frequency coupling (CFC) determines the coherences $|\gamma_{ij}|$, and phase mismatches determine the Gap profile.
+The proposed band table is a functional **hypothesis**. CFC magnitudes may calibrate coherence magnitudes; they do not determine signed phases. Full reconstruction requires a specified, validated complex observation model. Otherwise retain the unresolved observation fiber and report ranges of the identifiable targets.
 
 ### Step 1: Extracting the Diagonal $\gamma_{kk}$ from Spectral Powers {#шаг-1-диагональ}
 
@@ -679,16 +599,21 @@ Basic idea: neural activity in different EEG frequency bands projects onto the 7
 
 **Diagonalization formula:**
 
-$$\gamma_{kk} = \frac{w_k \cdot S_k}{\sum_{j=1}^{7} w_j \cdot S_j}, \qquad k \in \{A,S,D,L,E,O,U\}$$
+$$
+\gamma_{kk} = \frac{w_k \cdot S_k}{\sum_{j=1}^{7} w_j \cdot S_j}, \qquad k \in \{A,S,D,L,E,O,U\}
+$$
 
-where $S_k$ — normalized spectral power (or combined metric) for the $k$-th dimension, $w_k$ — calibration weights (determined from a training set with known consciousness state).
+where $S_k$ — normalized spectral power (or combined metric) for the $k$-th dimension, $w_k$ — calibration weights (fixed on the wakefulness reference ensemble without fitting the tested labels (SUB-1)).
 
 ### Step 2: Extracting Coherences $|\gamma_{ij}|$ from Cross-Frequency Coupling {#шаг-2-когерентности}
 
 :::tip Key Correspondence
 Coherences $|\gamma_{ij}|$ between dimensions $i$ and $j$ are proportional to the strength of cross-frequency coupling (CFC) between the corresponding EEG bands:
 
-$$|\gamma_{ij}| \propto \mathrm{CFC}(\mathrm{band}_i, \mathrm{band}_j)$$
+$$
+|\gamma_{ij}| \propto \mathrm{CFC}(\mathrm{band}_i, \mathrm{band}_j)
+$$
+
 :::
 
 Types of CFC used for reconstruction:
@@ -702,40 +627,31 @@ Types of CFC used for reconstruction:
 | $(O, U)$: LF--HF | HRV coherence | Cross-spectral analysis | Homeostasis-integration |
 | $(S, D)$: infraslow--$\beta$ | Nested oscillations | Wavelet coherence | Structure-dynamics |
 
-### Step 3: Extracting Phases $\theta_{ij}$ and the Gap Profile {#шаг-3-фазы}
+### Step 3: signed phase observations and the Gap profile {#шаг-3-фазы}
 
-The phase $\theta_{ij} = \arg(\gamma_{ij})$ determines the Gap: $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$.
+For nonzero coherence, $\theta_{ij}=\arg\gamma_{ij}$ and $\mathrm{Gap}_{ij}=|\sin\theta_{ij}|$. Gap loses phase sign and branch. An inverse $\theta=\arcsin(\mathrm{Gap})$ is not a reconstruction. [Explicit positive-state counterexamples](/docs/applied/research/reconstruction-identifiability#phase-counterexamples) have identical diagonal, magnitudes and Gap but different triangle holonomies; some also have different spectra.
 
-**Phase extraction method:** Paradoxical probes (Stage 3 of the [dual interview](#протокол-двойного-интервью-для-биологических-систем)). *In a test of $\mathrm{Cons}(S)$ this route is excluded (SUB-3, [below](#substitution-position)): reaction times are behaviour, i.e. inference data; phases then come from the EEG.* Reaction time on conflict tasks involving the pair of dimensions $(i,j)$ is proportional to the Gap:
+Record the complex cross-spectral or phase-locking mean $z_{ij}=\langle e^{i(\phi_i-\phi_j)}\rangle$ with declared timing/reference and orientation $z_{ji}=\overline z_{ij}$. Its argument is a measured neural phase; the association with $\theta_{ij}$ requires a frozen calibrated observation law [H]. The real PLV $|z_{ij}|$ provides no signed phase. Phase conventions for genuinely cross-frequency pairs must state the harmonic phase combination; ordinary same-frequency coherence must not silently substitute for PAC.
 
-$$\mathrm{Gap}(i,j) \approx \tanh\!\left(\frac{\mathrm{RT}_{ij} - \overline{\mathrm{RT}}}{\sigma_{\mathrm{RT}}}\right)$$
+Reaction times may test a separately declared behavioral association with Gap in exploratory work, but cannot fix a phase branch and are excluded from the confirmatory predictor (SUB-3). If signed complex observations are absent or their link to $\Gamma$ is unvalidated, mark phases unresolved. No zero-fill or behavior-to-phase imputation is allowed in confirmation.
 
-where $\mathrm{RT}_{ij}$ — reaction time, $\overline{\mathrm{RT}}$ — mean, $\sigma_{\mathrm{RT}}$ — standard deviation.
+### Step 4: constrained likelihood reconstruction {#шаг-4-mle}
 
-### Step 4: MLE Reconstruction of $\Gamma$ {#шаг-4-mle}
+:::info Estimator [D], observation bridge [H], identification [T conditional on the model]
+With calibration $\theta$ frozen, define
 
-:::tip Algorithm $\pi_{\mathrm{bio}}$: Maximum Likelihood Estimation [H]
-Given the neural feature vector $\mathbf{x} \in \mathbb{R}^N$ (spectral powers, CFC metrics, RT). Task:
+$$
+\widehat{\mathcal G}_\theta(y)=\underset{\Gamma\succeq0,\ \operatorname{Tr}\Gamma=1}{\arg\max}\;\log p_\theta(y\mid\Gamma).
+$$
 
-$$\Gamma^* = \underset{\Gamma \in \mathcal{D}(\mathbb{C}^7)}{\arg\max}\; \mathcal{L}(\mathbf{x} | \Gamma) + \lambda_{\mathrm{phys}} \cdot R_{\mathrm{phys}}(\Gamma)$$
-
-where $\mathcal{L}(\mathbf{x} | \Gamma)$ — likelihood of the observation model, $R_{\mathrm{phys}}(\Gamma)$ — physical regularizer (consistency with dynamics $\mathcal{L}_\Omega$).
+This is an **argmax set**, not automatically one state. In a linear Gaussian model, $y\sim\mathcal N(M_\theta(\Gamma),\Sigma)$ with known $\Sigma\succ0$, it is a convex least-squares problem; informational completeness gives uniqueness and a quantitative stability bound [ID-2](/docs/applied/research/reconstruction-identifiability#linear-frame). Unknown calibration requires joint identification. For nonlinear CFC/phase models an optimizer's convergence is not a proof of global uniqueness.
 :::
 
-**Parametrization:** $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ (Cholesky parametrization, guarantees $\Gamma \in \mathcal{D}(\mathbb{C}^7)$).
+A declared exploratory model may use $S_k\sim\mathcal N(a_k\gamma_{kk}+b_k,\sigma_k^2)$ and $\mathrm{CFC}_{ij}\sim\mathcal N(c_{ij}|\gamma_{ij}|,\tau_{ij}^2)$, with calibrated coefficients. Such magnitude data are incomplete for full-state reconstruction. Add separately calibrated real and imaginary observations, or report the full compatible set. Noise models must state whether variance depends on the state and whether errors are correlated.
 
-**Observation model:**
-- Diagonal: $S_k | \gamma_{kk} \sim \mathcal{N}(a_k \gamma_{kk} + b_k,\; \sigma_k^2)$
-- Coherences: $\mathrm{CFC}_{ij} | |\gamma_{ij}| \sim \mathcal{N}(c_{ij} |\gamma_{ij}|,\; \tau_{ij}^2)$
-- Gap: $\mathrm{RT}_{ij} | \mathrm{Gap}_{ij} \sim \mathrm{Exp}(\mu_0 + \mu_1 \cdot \mathrm{Gap}_{ij})$
+**Positivity:** optimize directly over the positive semidefinite cone with unit trace. A nonzero Cholesky factor is an alternative implementation: it has 49 raw real entries and one redundant scale after normalization; it is not an unconstrained 48-entry triangular array. A global phase of $L$ already cancels in $LL^\dagger$; imposing $\gamma_{AS}\in\mathbb R_+$ changes a relative state phase and is forbidden unless explicitly justified as a symmetry of the observation design.
 
-**Physical regularizer:**
-
-$$R_{\mathrm{phys}}(\Gamma) = -\lambda_1 \|\dot{\Gamma} - \mathcal{L}_\Omega[\Gamma]\|_F^2 - \lambda_2 \max(0, P_{\mathrm{crit}} - P(\Gamma))$$
-
-The first term penalizes inconsistency with dynamics; the second penalizes non-viable states. *Corrected 2026-09-25:* the second term puts the tested predicate into the estimator — with $\lambda_2 = 100$ every sub-threshold state of the uniform family is reconstructed at $P = 2/7$ exactly ([theorem, part (ii)](#substitution-position)); in any test $\lambda_2 = 0$, and $\lambda_1 = 0$ in confirmatory runs (SUB-2).
-
-**Optimization:** Gradient descent over the 48 Cholesky factorization parameters (all physical — 34 kinematic invariants + 14 frame-orientation parameters, D-0910). The frame is fixed by the labelling rule of R6 (Fano-frame convention and the $E$-axis anchor), not by a continuous gauge choice; the convention $\gamma_{AS} \in \mathbb{R}_+$ removes only the global phase.
+**Anti-circularity:** $\lambda_2=0$ in every test and $\lambda_1=0$ in confirmation (SUB-2). A dynamical penalty may only be a declared sensitivity analysis. Priors, phase choices and rank constraints must be stated; they select states within a fiber and cannot supply measured information. Report the confidence set, target ranges, model-incompatibility cases and undetermined verdicts [ID-A … ID-D](/docs/applied/research/reconstruction-identifiability#confirmatory).
 
 ### Step 5: Connection to PCI (Casali et al. 2013; Casarotto et al. 2016) {#pci-связь}
 
@@ -748,7 +664,7 @@ The Perturbational Complexity Index (PCI) is monotonically related to the integr
 **What can be derived — the bridge on UHM's side [T].** Three facts fix how UHM's thresholds sit relative to each other, with no neural data:
 - $\Phi \geq 1 \Rightarrow P \geq 2/7$ on all of $\mathcal D(\mathbb C^7)$ ([T-129a](/docs/proofs/consciousness/operationalization#t-129a-универсальность)).
 - On the uniform-diagonal stratum $P = (1 + \Phi)/7$, $R = 1/(1 + \Phi)$ and $C = \Phi R = \Phi/(1+\Phi)$; the window $P \in (2/7, 3/7]$ is exactly $\Phi \in (1, 2]$, $R \in [1/3, 1/2)$, $C \in (1/2, 2/3]$ (checked in `check_core_numbers.py`, `test_uniform_diagonal_window_is_phi_between_one_and_two`).
-- The predicate has **two exits**: $P \leq 2/7$ (too mixed; on the uniform diagonal the same as $\Phi \leq 1$) and $P > 3/7$ (too pure; $R < 1/3$). A low PCI therefore has two possible UHM signatures, not one.
+- The purity/reflection interval has **two exits**: $P \leq 2/7$ (too mixed; on the uniform diagonal the same as $\Phi \leq 1$) and $P > 3/7$ (too pure; $R < 1/3$). A low PCI therefore has two possible UHM signatures, not one.
 
 **What cannot be derived [✗ if claimed].** A numerical conversion between PCI and $P$ or $\Phi$. PCI is a normalised Lempel–Ziv complexity of a binarised source-activity matrix; $P$ and $\Phi$ are functions of $\Gamma$. The closeness of $\mathrm{PCI}^* = 0.31$ to $2/7 \approx 0.286$ is a coincidence of two unrelated scales and carries no evidential weight. The bridge that *can* be tested is a **concordance of verdicts** on the same sessions (P8.4 below): $\mathrm{Cons}(\hat\Gamma)$ against $\mathrm{PCI}_{\max} > \mathrm{PCI}^*$.
 
@@ -771,149 +687,101 @@ Applied to patients: 36 of 38 in a minimally conscious state had $\mathrm{PCI}_{
 :::info Context: Quantum Cognition
 The Pothos-Busemeyer approach (Annual Review of Psychology, 2022) models cognitive processes via quantum states in Hilbert space. Basic formalism: $\rho \in \mathcal{D}(\mathcal{H})$ for describing beliefs and decisions.
 
-**Connection to UHM:** Quantum cognition uses $\dim(\mathcal{H})$ = number of alternatives. UHM **fixes** $\dim(\mathcal{H}) = 7$ from axioms (A1-A5) and proves the minimality of this number ([Theorem S](/docs/proofs/minimality/theorem-minimality-7)). The matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is **ontological** (not epistemic): it defines the system, rather than describing an observer's beliefs about the system.
+**Connection to UHM:** Quantum cognition uses $\dim(\mathcal{H})$ = number of alternatives. UHM selects $\dim(\mathcal{H}) = 7$ as its primitive frame; the general minimality claim requires the stated additional premises ([Theorem S](/docs/proofs/minimality/theorem-minimality-7)). The matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is **ontological** (not epistemic): it defines the system, rather than describing an observer's beliefs about the system.
 :::
 
 ### Step 7: Full Algorithm $\pi_{\mathrm{bio}}$ {#алгоритм-pi-bio}
 
-```verum
-mount core.math.calculus.bfgs;
+```python
+# Reference algorithm for a CALIBRATED LINEAR Gaussian observation model.
+# Requires NumPy and a semidefinite solver through CVXPY.
+# This is a state estimator, not a CPTP channel or a neural feature extractor.
+import numpy as np
+import cvxpy as cp
 
-/// Full biological data bundle for π_bio.
-public type NeuralData is {
-    eeg_spectral:    Map<Text, Float>,    // {alpha, beta, gamma_low, gamma_high, theta, infraslow}
-    hrv_features:    Map<Text, Float>,    // {LF, HF, LF_HF_ratio}
-    cfc_matrix:      StaticMatrix<Float, 7, 7>,   // cross-frequency coupling values
-    reaction_times:  StaticVector<Float, 21>,      // RT values for the 21 off-diagonal pairs
-};
 
-public type BioCalibration is {
-    weights:         StaticVector<Float, 7>,
-    linear_params:   StaticMatrix<Float, 7, 2>,    // (a_k, b_k) per dimension
-    lambda_phys:     Float,                         // physical regulariser weight
-};
+def traceless_hermitian_basis(n=7):
+    basis = []
+    for k in range(1, n):
+        diag = np.zeros(n)
+        diag[:k], diag[k] = 1, -k
+        basis.append(np.diag(diag) / np.sqrt(k * (k + 1)))
+    for i in range(n):
+        for j in range(i + 1, n):
+            re = np.zeros((n, n), complex)
+            im = np.zeros((n, n), complex)
+            re[i, j] = re[j, i] = 1 / np.sqrt(2)
+            im[i, j], im[j, i] = 1j / np.sqrt(2), -1j / np.sqrt(2)
+            basis.extend([re, im])
+    return np.asarray(basis)  # 48 orthonormal REAL coordinates, trace zero
 
-/// π_bio: NeuralData → D(ℂ⁷). Full reconstruction of Γ from biological data.
-/// Structural [T] via G₂-rigidity (T-42a); empirical calibration [H].
-public fn pi_bio(
-    data:        &NeuralData,
-    calibration: &BioCalibration,
-) -> StaticMatrix<Complex, 7, 7>
-{
-    // Step 1: diagonal from spectral powers — one value per dimension.
-    let raw_diag = StaticVector<Float, 7>.from_array([
-        data.eeg_spectral.get("alpha").unwrap_or(0.0),       // A
-        data.eeg_spectral.get("infraslow").unwrap_or(0.0),   // S  (fMRI BOLD proxy)
-        data.eeg_spectral.get("beta").unwrap_or(0.0),        // D
-        data.eeg_spectral.get("gamma_low").unwrap_or(0.0),   // L
-        data.eeg_spectral.get("gamma_high").unwrap_or(0.0)
-            * data.eeg_spectral.get("theta").unwrap_or(0.0),  // E  (PAC proxy)
-        data.hrv_features.get("LF").unwrap_or(0.0),          // O
-        data.hrv_features.get("HF").unwrap_or(0.0),          // U
-    ]);
 
-    let weighted = (0..7).map(|i| calibration.weights[i] * raw_diag[i]).to_array();
-    let total = weighted.iter().sum<Float>();
-    let mut diag = StaticVector<Float, 7>.from_array(
-        weighted.map(|v| (v / total).clamp(1.0e-4, 1.0))     // prevent degeneracy
-    );
-    let diag_sum: Float = diag.iter().sum();
-    diag = diag.map(|v| v / diag_sum);
-
-    // Step 2: off-diagonal magnitudes from CFC.
-    let c_scale = calibration.linear_params[0, 0];                       // cfc_scale stored here
-    let off_diag_mag = &data.cfc_matrix * c_scale;
-
-    // Step 3: Phases from reaction times → Gap → θ_ij = arcsin(Gap).
-    let rt_mean: Float = data.reaction_times.iter().sum<Float>() / 21.0;
-    let rt_std = (data.reaction_times.iter()
-                     .map(|r| (r - rt_mean).pow(2)).sum<Float>() / 21.0)
-                     .sqrt() + 1.0e-8;
-    let mut phases = StaticMatrix<Float, 7, 7>.zeros();
-    let mut idx = 0;
-    for i in 0..7 { for j in (i + 1)..7 {
-        let gap = ((data.reaction_times[idx] - rt_mean) / rt_std).tanh();
-        let phi = gap.clamp(-1.0, 1.0).asin();
-        phases[i, j] =  phi;
-        phases[j, i] = -phi;
-        idx += 1;
-    }}
-
-    // Step 4: MLE reconstruction via Cholesky. 48 real parameters:
-    //   7 real diagonal + 21·2 = 42 off-diagonal (Re, Im).
-    let neg_log_likelihood = |params: &StaticVector<Float, 48>| -> Float {
-        let mut l = StaticMatrix<Complex, 7, 7>.zeros();
-        let mut k = 0;
-        for i in 0..7 { for j in 0..=i {
-            if i == j {
-                l[i, j] = Complex.from_real(params[k].max(1.0e-6));
-                k += 1;
-            } else {
-                l[i, j] = Complex(params[k], params[k + 1]);
-                k += 2;
-            }
-        }}
-        let gamma = l.matmul(&l.adjoint());
-        let gamma = &gamma / gamma.trace();
-
-        // LL: diagonal agreement.
-        let ll_diag: Float = (0..7)
-            .map(|i| -(gamma[i, i].real() - diag[i]).pow(2) / 0.01)
-            .sum();
-
-        // LL: off-diagonal magnitude agreement.
-        let mut ll_off = 0.0;
-        for i in 0..7 { for j in (i + 1)..7 {
-            ll_off -= (gamma[i, j].abs() - off_diag_mag[i, j]).pow(2) / 0.05;
-        }}
-
-        // No viability term (SUB-2, corrected 2026-09-25): the former
-        // `-100.0 * (2/7 - P).max(0)` pinned every sub-threshold state at P = 2/7.
-
-        -(ll_diag + ll_off)
-    };
-
-    // Initialise from the diagonal (triangle-flattened index k = i·(i+1)).
-    let mut x0 = StaticVector<Float, 48>.zeros();
-    for i in 0..7 { x0[i * (i + 1)] = diag[i].sqrt(); }
-
-    let result = bfgs(neg_log_likelihood, &x0, BfgsOptions {
-        ftol: 1.0e-9, max_iter: 500,
-    });
-
-    // Reconstruct Γ from the optimal parameters.
-    let mut l = StaticMatrix<Complex, 7, 7>.zeros();
-    let mut k = 0;
-    for i in 0..7 { for j in 0..=i {
-        if i == j {
-            l[i, j] = Complex.from_real(result.x[k].max(1.0e-6));
-            k += 1;
-        } else {
-            l[i, j] = Complex(result.x[k], result.x[k + 1]);
-            k += 2;
-        }
-    }}
-    let gamma = l.matmul(&l.adjoint());
-    &gamma / gamma.trace()
-}
+def reconstruct_linear(y, H, covariance, epsilon):
+    # y_a models Tr(H_a Gamma); H and covariance are frozen calibration.
+    # Signed imaginary observations must be present in H/y if claimed measured.
+    # Missing observations are omitted, never replaced by zeros or arcsin(Gap).
+    y, H = np.asarray(y, float), np.asarray(H, complex)
+    if len(y) == 0 or H.shape != (len(y), 7, 7) or epsilon < 0:
+        raise ValueError("Invalid observation design or confidence radius")
+    if not np.all(np.isfinite(y)) or not np.all(np.isfinite(H)):
+        raise ValueError("Non-finite observations or operators")
+    if not np.allclose(H, H.conj().transpose(0, 2, 1)):
+        raise ValueError("Observation operators must be Hermitian")
+    covariance = np.asarray(covariance, float)
+    if covariance.shape != (len(y), len(y)) or not np.allclose(covariance, covariance.T):
+        raise ValueError("Invalid fixed covariance")
+    chol = np.linalg.cholesky(covariance)  # rejects non-positive covariance
+    B = traceless_hermitian_basis()
+    A = np.real(np.einsum("aij,bji->ab", H, B))
+    offset = np.real(np.trace(H, axis1=1, axis2=2)) / 7
+    Aw = np.linalg.solve(chol, A)
+    yw = np.linalg.solve(chol, y - offset)
+    singular_values = np.linalg.svd(Aw, compute_uv=False)
+    # Numerical diagnostics supplement, but do not replace, an analytic proof.
+    rank = np.linalg.matrix_rank(Aw)
+    alpha = singular_values[-1] if rank == 48 else 0.0
+    q = cp.Variable(48)
+    Gamma = np.eye(7) / 7 + sum(q[b] * B[b] for b in range(48))
+    residual = Aw @ q - yw
+    # SUB-2: lambda_1 = lambda_2 = 0; no viability or dynamics penalty.
+    problem = cp.Problem(cp.Minimize(cp.sum_squares(residual)), [Gamma >> 0])
+    problem.solve()  # publish solver, tolerances and convergence diagnostics
+    if problem.status not in (cp.OPTIMAL, cp.OPTIMAL_INACCURATE):
+        raise RuntimeError("Reconstruction failed")
+    candidate = np.asarray(Gamma.value)
+    min_eigenvalue = np.linalg.eigvalsh(candidate).min()
+    trace_error = abs(np.trace(candidate) - 1)
+    # Floating-point residuals are not exact PSD certificates. Publish them.
+    # A production implementation must certify or declare its PSD projection
+    # and recompute fit/confidence ranges after that change.
+    fit_residual = np.linalg.norm(Aw @ q.value - yw)
+    # Confidence set: Gamma(q) >= 0 and ||Aw q - yw|| <= epsilon.
+    # Coverage of epsilon must be calibrated independently of tested thresholds.
+    # If empty, report model incompatibility. If predicates differ on the set,
+    # report an undetermined verdict instead of using only this representative.
+    return {
+        "numerical_candidate": candidate,
+        "minimum_eigenvalue": min_eigenvalue,
+        "trace_error": trace_error,
+        "design_rank": rank,
+        "smallest_singular_value": alpha,
+        "fit_residual": fit_residual,
+        "confidence_set": {"basis": B, "Aw": Aw, "yw": yw, "radius": epsilon},
+        "candidate_residual_within_radius": fit_residual <= epsilon,
+        "linear_design_full_rank": rank == 48,
+        "solver_status": problem.status,
+    }
 ```
 
 ### Replication-Ready Specification for TMS-EEG PCI Data {#replication-ready-tms-eeg}
 
-:::tip Replication target
-This subsection fixes the reference implementation of $\pi_{\mathrm{bio}}$ applied to the TMS-EEG Perturbational Complexity Index (PCI) paradigm, in enough detail that an independent laboratory can attempt replication end-to-end from a publicly available dataset. Replication here refers to computing $P$, $R$, $\Phi$ from raw EEG and checking the monotonic relation to PCI (Prediction P8.3) — **not** to re-proving the mathematical core, which remains fixed by the $G_2$-uniqueness theorem above.
+:::info Replication target
+This is a specification for **testing a declared operationalization**, not a ready validated instrument. Reconstruct states or compatible sets from a frozen observation model, report identification/conditioning and uncertainty, and evaluate held-out predictions against PCI and reports. Mathematical state-space rigidity does not certify the instrument or the neural bridge.
 :::
 
-**R1. Public datasets.** The following TMS-EEG datasets are candidates for independent replication; none has universal open-access but each is obtainable on request from the authors or through institutional data-sharing:
+**R1. Data provenance and eligibility.** A candidate dataset must publish or supply raw TMS-triggered EEG, timing/reference metadata, independent outcome annotations, and the modalities required by the frozen encoder (including ECG/HRV if used). Record the access conditions, version, DOI and a modality inventory before pre-registration. [Casali et al. (2013)](https://doi.org/10.1126/scitranslmed.3006294) and [Casarotto et al. (2016)](https://doi.org/10.1002/ana.24779) are primary benchmark publications; their publication does not by itself establish current access to their raw data.
 
-| # | Dataset | Source | Subjects | States | Access |
-|---|---------|--------|---------|--------|--------|
-| R1.a | Casali et al. 2013 PCI benchmark | Massimini lab (Milan) | 52 healthy + 98 clinical | Wake / NREM / REM / anesthesia / VS / MCS / LIS | On request |
-| R1.b | OpenNeuro ds004504 (TMS-EEG benchmark, 2023) | Rogasch lab | 20 healthy | Wake (baseline) | Open |
-| R1.c | Comsa et al. 2019 (OSF registration "TMS-EEG sleep") | Lausanne CHUV | 12 healthy | Wake / NREM N2 / N3 | OSF restricted |
-| R1.d | Bodart et al. 2018 (clinical PCI extension) | Liège | 141 DoC patients | Wake / UWS / MCS / EMCS | Per-request |
-
-For first-pass replication, dataset R1.b is recommended (fully open, standardized single-pulse TMS-EEG on healthy waking subjects, expected PCI ≈ 0.40-0.48).
+**Correction 2026-10-03.** The former R1.b description of OpenNeuro `ds004504` as a Rogasch TMS-EEG benchmark is false: its [primary dataset metadata](https://github.com/OpenNeuroDatasets/ds004504/blob/main/dataset_description.json) identify routine EEG from Alzheimer’s disease, frontotemporal dementia and healthy subjects. It is not eligible for the claimed TMS-PCI replication. The former unspecified Comsa OSF registration and Bodart access/count entries are not a verified dataset inventory and are removed. No public dataset is currently certified here to provide the whole required measurement bundle; missing modalities require a separately registered partial protocol, not imputation.
 
 **R2. Pre-processing pipeline (MNE-Python canonical).** The reference preprocessing chain, to be applied to raw EEG (60-channel montage, 1 kHz sampling, TMS-triggered epochs $[-1, +1]\,\mathrm{s}$):
 
@@ -930,41 +798,36 @@ For first-pass replication, dataset R1.b is recommended (fully open, standardize
 
 The canonical bands used by $\pi_{\mathrm{bio}}$ are then extracted from the wavelet spectrogram (integrated over post-TMS window $[0, +300]\,\mathrm{ms}$, averaged across channels for diagonal feature vector; cross-channel pairwise for CFC computations).
 
-**R3. Feature extraction.** From the preprocessed data, compute:
-- Seven scalar spectral features $S_A, S_S, S_D, S_L, S_E, S_O, S_U$ per the [Step-1 band table](#шаг-1-диагональ).
-- Cross-frequency-coupling matrix $\mathrm{CFC}_{ij}$ ($7\times 7$) per the [Step-2 table](#шаг-2-когерентности) using the Tort Modulation Index (`mne_connectivity`).
-- 21 reaction-time surrogates $\mathrm{RT}_{ij}$ from paradoxical probes if behavioural data is available; otherwise set $\mathrm{RT}_{ij}$ to the pairwise phase-locking value (PLV) as a proxy.
-- HRV features $\mathrm{LF}, \mathrm{HF}$ from simultaneous ECG (required for $O$ and $U$ dimensions).
+**Measurement coverage:** the 0.5–80 Hz filter and 300-ms window cannot supply 0.01–0.1 Hz infraslow features or 80–100 Hz coherences. Separately registered long-duration/broadband recordings are required, or an explicitly different partial encoder. Missing features cannot be recovered from the filtered signal.
 
-**R4. Calibration.** Weights $w_k$ are determined by fitting $\pi_{\mathrm{bio}}$ on a **healthy-waking reference cohort** ($\ge 20$ subjects) such that the population mean of $\gamma_{kk}$ is uniform $= 1/7 \pm 0.02$. Cross-validation: leave-one-subject-out, target consistency of reconstructed $P$ across subjects ($\mathrm{CV} < 15\%$).
+**R3. Feature extraction.** Publish the seven feature definitions, modality/timing inventory and complex pairwise observations. CFC measures and their normalization must be specified separately for every pair; no library name establishes their link to $\Gamma$. In confirmation, reaction times and PCI are excluded from the predictor; a real PLV is never used as a phase or as an RT surrogate. Retain signed complex means where valid, record absent observations as missing, and perform the identification check for the resulting observation design. Missing HRV or low-frequency coverage prevents the full seven-axis claim under the current band assignment.
 
-**R5. Reconstruction.** Run the MLE algorithm (Step 4 above) with:
-- Cholesky initialization from the calibrated diagonal.
-- Optimizer: `scipy.optimize.minimize(method='L-BFGS-B', options={'ftol': 1e-9, 'maxiter': 500})`.
-- Regularizer: $\lambda_2 = 0$ and, in the confirmatory run, $\lambda_1 = 0$ (SUB-2); $\lambda_1 \in \{0.01, 0.1, 1\}$ only as a reported sensitivity analysis. The earlier defaults $\lambda_1 = 0.1$, $\lambda_2 = 100$ are withdrawn (2026-09-25): $\lambda_2 = 100$ pins every sub-threshold state of the uniform family at $P = 2/7$.
+**R4. Calibration.** Fix weights, offsets, scales, frame labels, covariance and all feature choices on an independently declared wakefulness reference cohort (SUB-1). Publish the normalization convention and calibration uncertainty; do not tune purity to $2/7$, agreement with PCI or reduced between-subject variability. A uniform population diagonal is a normalization convention if imposed, not a measured discovery. The two proposed feature dictionaries (spectral-band and functional-feature versions) are distinct candidate encoders; predeclare one, and evaluate the other only as a separately registered comparator. Use subject-level separation, with an untouched test cohort.
 
-**R6. Observable computation.** From the reconstructed $\Gamma$ (canonical definitions):
-- $P = \mathrm{Tr}(\Gamma^2) = \|\Gamma\|_F^2$ (purity) — **$G_2$-gauge-invariant** (trace of $\Gamma^2$ under unitary conjugation).
-- $R = 1/(7P)$ (reflection, [T-126 [T]](/docs/proofs/consciousness/conscious-window#t-126)) — **$G_2$-gauge-invariant** (function of $P$).
-- $\Phi = \dfrac{\sum_{i\ne j}|\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2} = \dfrac{\|\Gamma - \Gamma_\mathrm{diag}\|_F^2}{\|\Gamma_\mathrm{diag}\|_F^2}$ (integration, [Φ canonical](/docs/core/structure/dimension-u#мера-интеграции-φ)) — **basis-dependent**: invariant under permutations and sign flips within the $G_2$-stabilised Fano frame (7-point labelling of $\{A,S,D,L,E,O,U\}$), which is the gauge residue relevant for empirical replication.
-- $\mathrm{Coh}_E = \dfrac{\gamma_{EE}^2 + 2\sum_{i\ne E}|\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)}$ (E-coherence, [Coh_E canonical](/docs/core/foundations/axiom-septicity#coh-e-canonical)) — **$E$-fixed-frame quantity**: invariant under the stabiliser $G_2^{(E)} \subset G_2$ that fixes $|E\rangle$. For cross-laboratory replication, pin the $|E\rangle$-direction to the phenomenological interiority axis (γ-high × θ PAC), as specified in [Step 1](#шаг-1-диагональ).
+**R5. Reconstruction.** Use the constrained likelihood of Step 4 and the reference linear implementation only if its observation law has been calibrated. Publish analytic/numerical rank, smallest singular value, residuals, solver diagnostics and confidence sets. $\lambda_2=0$ in every test and $\lambda_1=0$ in confirmation (SUB-2); other dynamic weights are sensitivity analysis. State constraints enforce PSD/trace-one, not a viability threshold. Incomplete designs yield partial identification; failed fit or solver convergence must not be reported as a unique matrix measurement.
 
-**Gauge-fixing protocol for replication.** Two implementations applied to the same EEG recording will yield $P$ and $R$ in full agreement (by strict $G_2$-invariance) but may differ on $\Phi, \mathrm{Coh}_E$ if the Fano-frame orientation or the $E$-axis assignment is not fixed. The canonical gauge-fixing rule is: (i) align the 7-axis labelling to the Fano-plane convention of [Dimensions §Fano](/docs/core/structure/dimensions), and (ii) anchor $|E\rangle$ to the phenomenological γ-high×θ feature as per R3. Replicators must publish their gauge-fixing choices explicitly (item (ii) in R8 below).
+**R6. Observable computation and residual symmetry.** For each compatible state compute
 
-$P$ and $R$ are $G_2$-invariant; $\Phi$ and $\mathrm{Coh}_E$ are frame-pinned — $\Phi$ invariant under $\Gamma_{\!\text{oct}}$, $\mathrm{Coh}_E$ only under its $192$ elements that keep the $E$-axis (the line said "$\Gamma_{\!\text{oct}}$ only" for both until 2026-09-25) — which is why the gauge-fixing protocol above is part of the replication package ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).
+$$
+P=\operatorname{Tr}\Gamma^2,\quad R=1/(7P),\quad
+\Phi=\frac{\sum_{i\ne j}|\gamma_{ij}|^2}{\sum_i\gamma_{ii}^2},\quad
+\mathrm{Coh}_E=\frac{\gamma_{EE}^2+2\sum_{i\ne E}|\gamma_{Ei}|^2}{P}.
+$$
+
+Report ranges over the confidence set, not only one optimized representative. $P,R$ are unitary-invariant; $\Phi$ is invariant under frame monomial transformations, and $\mathrm{Coh}_E$ under those preserving $E$ (also under the continuous unitary stabilizer of $E$). These algebraic invariances do not imply agreement between different encoders. Publish the Fano labelling, $E$-axis assignment and phase references. Derive any residual equivalence from the observation law; never use a $G_2$ Procrustes fit to alter an already pinned functional frame. A disagreement after identical calibration is an empirical or implementation discrepancy to investigate.
 
 **R7. Validation against PCI.**
 - Compute the subject's PCI on the same TMS-EEG data via the Massimini algorithm (Lempel–Ziv complexity of significant sources; reference implementation available via PCIst package).
 - Test the monotonic hypothesis $\Phi(\Gamma) \approx \alpha_\mathrm{PCI}\cdot \mathrm{PCI} + \beta_\mathrm{PCI}$ (Step 5 hypothesis [H]).
 - Pre-register: $r_{\mathrm{Spearman}} \ge 0.5$ across $\ge 20$ subjects constitutes corroboration; $r < 0.3$ constitutes falsification of P8.3.
 
-**R8. Reference implementation stub.** The Python code in the next subsection is *reference* only: it documents the algorithm faithfully but is not a turn-key pipeline. A complete MNE-Python implementation with:
+**R8. Reference implementation stub.** The Python code in Step 7 is *reference* only: it documents the algorithm faithfully but is not a turn-key pipeline. A complete MNE-Python implementation with:
 - `mne.Raw` loader wrapped around BIDS formatted EEG,
 - `mne_connectivity` integration for CFC,
 - `scipy.optimize.minimize` MLE wrapper,
-- `pyphi`-compatible $\Phi$ computation (optional),
+- canonical UHM $\Phi$ computation (distinct from IIT/`pyphi`),
 - CI reporting,
-is planned as a separate package `uhm-neurocalib` (release gated on R1.b pilot results). Until that package is available, independent implementers should use the pseudocode as specification, and file issues/PRs on mismatches to the specification here.
+is planned as a separate package `uhm-neurocalib` (release gated on a verified eligible pilot dataset). Until that package is available, independent implementers should use the pseudocode as specification, and file issues/PRs on mismatches to the specification here.
 
 **Reproducibility requirements.** Any claim of successful or failed replication should publish:
 - (i) raw data (BIDS format) and preprocessing scripts (reproducible from R2);
@@ -988,21 +851,19 @@ Without items (i)-(v), a replication attempt cannot be audited.
 
 ### Position against the substitution argument {#substitution-position}
 
-Kleiner & Hoel (*Neurosci. Conscious.* 2021(1), niab001; arXiv:2004.03541) separate an experiment's data into *prediction data* $o_i$, from which a theory predicts experience, and *inference data* $o_r$ — reports and behaviour — from which the experimenter infers it. If the two are **independent** (Definition 3.8: for any $o_i, o_i', o_r$ some physically possible variation changes $o_i$ into $o_i'$ and keeps $o_r$), every minimally informative theory is "already falsified" or "every single inference operation is wrong" (Theorem 3.10). If they are **strictly dependent** ($o_i = f(o_r)$, Definition 4.2), the theory is already falsified or empirically unfalsifiable (Theorem 4.3). Between the two lies a *lenient dependency*, of which the authors know no instance. The unfolding argument (Doerig et al. 2019) is one case. The predicate $\mathrm{Cons}(S) = (P > 2/7) \wedge (R \geq 1/3) \wedge (\Phi \geq 1) \wedge (D \geq 2)$ is computed from $\hat\Gamma = \pi_\theta(o_i)$, where $\theta$ collects the free parameters of $\pi_{\mathrm{bio}}$ (weights $w_k$, observation-model coefficients, $\alpha_{\mathrm{PCI}}, \beta_{\mathrm{PCI}}$, the regulariser weights $\lambda_1, \lambda_2$).
+[Kleiner & Hoel (2021)](https://arxiv.org/abs/2004.03541) distinguish prediction data from reports used to infer experience. Their dependence conditions concern possible physical variations, not the train/test split of a statistical estimator. Their conclusions apply when those conditions and the paper's other assumptions hold. UHM does not establish those premises for all physical systems or solve the philosophical substitution problem by freezing an encoder.
 
-:::tip Theorem (Where $\mathrm{Cons}(S)$ sits between the horns) [T], with part (v) [H]
-**(i) Calibration is on the strict-dependence horn.** As specified above, $\theta$ is fitted on report-labelled sessions (Step 1: "a training set with known consciousness state"; the constants $\alpha_{\mathrm{PCI}}, \beta_{\mathrm{PCI}}$ of Step 5, fitted on "healthy waking, sleep, anesthesia"). On those sessions $\mathrm{Cons}_\theta$ is fitted to reproduce the labels, so its agreement with them tests nothing (Kleiner–Hoel, Theorem 4.3). The same holds for $\mathrm{PCI}^*$ on its own benchmark: fitted to reports, 100 % accurate there by construction.
+:::tip Conditional claims about calibration [T]; phenomenal bridge [H/I]
+**(i) Training agreement is not independent validation.** Using outcome labels to choose an encoder or threshold can improve agreement on that sample. A fitted model need not have 100% accuracy, and fitting does not by itself establish the paper's global strict-dependence condition $o_i=f(o_r)$.
 
-**(ii) The estimator contained the predicate.** With the default regulariser of R5 ($\lambda_2 = 100$), the reconstruction returns $\hat P = 2/7$ exactly for every sub-threshold state of the uniform family $\Gamma = I/7 + m(J - I)$ with $m < m_c = 1/\sqrt{294}$: numerically, $m = 0.02$ (true $P = 0.160$) and $m = 0.05$ (true $P = 0.248$) both give $\hat P = 0.2857$, while $\lambda_2 = 0$ returns the true values. Analytically, pinning occurs whenever $\lambda_2 \geq 10\,(1 - m/m_c)$, so any $\lambda_2 \geq 10$ pins the whole family. Prediction P8.2 ($P < 2/7$ in N3) could therefore not be observed, and P8.1 was favoured by the loss itself. (Checked in `check_core_numbers.py`, `test_viability_penalty_pins_every_subthreshold_reconstruction_at_two_sevenths`.)
+**(ii) A viability penalty can force the tested conclusion.** In the stated uniform toy family $\Gamma=I/7+m(J-I)$, consider $420(m'-m)^2+\lambda_2\max(0,1/7-42m'^2)$, $0\le m<m_c=1/\sqrt{294}$. On $[m,m_c]$ its derivative is $840(m'-m)-84\lambda_2m'$. For $\lambda_2\ge10(1-m/m_c)$ it is nonpositive throughout this interval; beyond $m_c$ only the increasing data loss remains. The global minimizer has $P=2/7$. This proves bias for this specified loss/family, not a theorem about every regularizer or observation model. Confirmatory runs therefore set both theory-bearing weights to zero (SUB-2).
 
-**(iii) After freezing, the predicate is on the independence horn.** Once $\theta$ is frozen before the test data are seen, $\mathrm{Cons}_\theta$ is a function of $o_i$ alone. Whenever a physically possible variation keeps the reports and moves $\hat\Gamma$ across a threshold — Kleiner and Hoel argue that interventions and unfoldings supply such variations — Theorem 3.10 applies: some possible system falsifies $\mathrm{Cons}$, or report-based inference is wrong for some system with each report. UHM takes the second disjunct for substitutes: it treats reports as evidence only within a declared domain (the "no threshold without ground truth" constraint above), not across all physically possible systems.
+**(iii) Freezing establishes a test protocol, not universal physical independence.** With fixed $\theta$, held-out verdicts are functions of new prediction data without refitting to their reports. This removes that leakage. It does not show that every prediction-data variation is physically possible while reports remain fixed, or rule out confounding, calibration failure or encoder nonidentifiability.
 
-**(iv) The non-closure exit is closed.** Kleiner and Hoel's other way out — experience making a physical difference beyond the physical state — is unavailable: two-aspect monism identifies experience with an aspect of $\Gamma$.
-
-**(v) A domain-restricted lenient dependency [H].** Let $D_{\mathrm{nat}}$ be the domain in which reports are the accepted inference: intact adult human brains in natural sleep–wake states and under standard anaesthetics. Inside $D_{\mathrm{nat}}$ the dependence is lenient if (a) one report class occurs with different $\hat\Gamma$ — not strict; $\mathrm{PCI}_{\max}$ already spans 0.39–0.70 among 102 awake subjects — and (b) no member of $D_{\mathrm{nat}}$ with a report has $\mathrm{Cons}_\theta$ false — not independent within $D_{\mathrm{nat}}$. Then neither Theorem 3.10 nor Theorem 4.3 covers tests inside $D_{\mathrm{nat}}$. Condition (b) is empirical and coincides with P8.1, which is why it must be established on sessions disjoint from those that fix $\theta$. This does not answer the substitution argument for systems outside $D_{\mathrm{nat}}$ — feedforward unfoldings, emulations, language models — and UHM makes no consciousness claim there.
+**(iv) A declared test domain remains empirical.** Preregister a population, intervention family, outcomes and calibration range. Held-out concordance tests predictive support within that domain. Calling that domain a case of the paper's lenient dependence requires verifying its physical/statistical premises, not merely observing agreement. Extending a classifier to emulations or language models requires a new bridge; the mathematical gate alone supplies none.
 :::
 
-**Proof.** (i) A statistic fitted to labels is, on the fitting set, a function of the labels up to fit error; Definition 4.2 holds there. (ii) For the uniform family the diagonal term is at its optimum, and the off-diagonal loss is $420\,(m' - m)^2$ against the penalty $\lambda_2 \max(0,\, 2/7 - 1/7 - 42 m'^2)$; the derivative of the sum, $840(m' - m) - 84\lambda_2 m'$, is negative on $[m, m_c)$ iff $\lambda_2 > 10(1 - m/m')$ there, i.e. iff $\lambda_2 \geq 10(1 - m/m_c)$, so the minimiser is $m' = m_c$, where $P = 2/7$. The numerical check runs the reference MLE of Step 4. (iii) With $\theta$ fixed, $\mathrm{Cons}_\theta \circ \mathrm{obs}$ depends on $p$ only through $o_i$; Definition 3.8 is the stated premise, and Theorem 3.10 is Kleiner and Hoel's. (iv) By the definition of two-aspect monism. (v) Definitions 3.8 and 4.2 restricted to $D_{\mathrm{nat}}$ fail exactly under (b) and (a). $\square$
+The state predicate is the full [Cap₂ conjunction](/docs/reference/mathematical-kernel#thresholds), with a declared differentiation readout and any additional stress criterion. Identifiable target functionals and uncertainty are required by [ID-A … ID-D](/docs/applied/research/reconstruction-identifiability#confirmatory). Statistical independence, physical substitution and ontological supervenience are distinct assertions.
 
 **The protocol that follows (pre-registration SUB-1 … SUB-6).**
 - **SUB-1.** Freeze $\theta$ on wakefulness sessions only (the reference-ensemble normalisation of R4); no NREM, anaesthesia, REM or ketamine label enters the fit.
@@ -1011,10 +872,11 @@ Kleiner & Hoel (*Neurosci. Conscious.* 2021(1), niab001; arXiv:2004.03541) separ
 - **SUB-4.** Register the verdicts of the table in Step 5 before unblinding. The decisive rows are REM and ketamine (consciousness without behaviour at the time): with $\theta$ frozen on wakefulness they are out-of-sample.
 - **SUB-5.** Concordance with $\mathrm{PCI}^*$ on the same sessions (P8.4 in concordance form): Cohen's $\kappa$ between $\mathrm{Cons}_\theta$ and $\mathrm{PCI}_{\max} > 0.31$; $\kappa \geq 0.8$ corroborates, $\kappa < 0.4$ falsifies [Pr].
 - **SUB-6.** The two exits (Step 5): among sessions with $\mathrm{PCI}_{\max} \leq 0.31$, responses that stay local are predicted to have $\hat\Phi < 1$; responses that spread as a stereotyped global wave, $\hat P > 3/7$ ($\hat R < 1/3$). This compares prediction data with prediction data, so the substitution argument does not touch it — it tests UHM's structure, not its consciousness claim [H].
+- **ID-A … ID-D.** Additional requirements: observation model and residual symmetry, informational completeness/conditioning, confidence sets and undetermined verdicts, comparison with alternative encoders — [full statement](/docs/applied/research/reconstruction-identifiability#confirmatory).
 
-**What separates a system passing $\mathrm{Cons}(S)$ from one with an isomorphic similarity structure [T].** Kawakita, Zeleznikow-Johnston, Tsuchiya & Oizumi (*Sci. Rep.* 14: 15917, 2024, doi:10.1038/s41598-024-65604-1) aligned colour-similarity structures for 93 colours by Gromov–Wasserstein optimal transport, without labels: GPT-4's structure matched that of colour-neurotypical humans with a matching rate of 91.4 % (GPT-3.5: 11.8 %). In UHM:
+**Similarity structure and the declared predicate [H/I with a mathematical independence example].** Kawakita, Zeleznikow-Johnston, Tsuchiya & Oizumi (*Sci. Rep.* 14: 15917, 2024, doi:10.1038/s41598-024-65604-1) aligned colour-similarity structures for 93 colours by Gromov–Wasserstein optimal transport, without labels: GPT-4's structure matched that of colour-neurotypical humans with a matching rate of 91.4 % (GPT-3.5: 11.8 %). In UHM:
 - A similarity structure is **inference data** — judgements, i.e. reports. A system that reproduces it is precisely what a substitution preserves; by (iii) it carries no weight for $\mathrm{Cons}$.
-- **The verdict and the quality geometry are independent.** The Fubini–Study distances between the eigenrays of $\Gamma$ do not depend on its spectrum, and $P = \sum_k \lambda_k^2$ does not depend on the eigenrays. The same geometry is carried by a state with $P = 0.152$ (outside the window) and by one with $P = 0.312$ (inside it), so an isomorphic similarity structure is neither sufficient nor necessary for $\mathrm{Cons}$ (`test_cons_verdict_and_quality_geometry_are_independent`).
+- **An eigenframe does not determine a spectrum or the full gate.** Varying eigenvalues in a fixed frame changes purity and can cross its cut. All orthogonal eigenrays have the same pairwise Fubini–Study distance; that geometry alone carries little state information, and degenerate eigenspaces do not select eigenrays uniquely. A full Cap₂ witness must check integration, reflection, differentiation and its chosen stress proxy. A model of reported colour similarity requires an independently calibrated bridge rather than identification with this eigenray geometry.
 - What $\mathrm{Cons}$ requires is the system's own $\hat\Gamma$, reconstructed from its internal, interventional data by a protocol validated where ground truth exists. For a language model no such validation exists, and the corpus makes no claim ("no threshold without ground truth" above). The 91.4 % result shows that report-level structure can be shared across radically different systems, which is exactly why UHM does not read consciousness off it.
 
 ### Key References {#литература-p8}
@@ -1042,3 +904,5 @@ Kleiner & Hoel (*Neurosci. Conscious.* 2021(1), niab001; arXiv:2004.03541) separ
 - [Gap diagnostics](/docs/applied/research/gap-diagnostics) — clinical applications of the Gap profile
 - [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes) — prediction of infraslow frequencies
 - [Fano channel](/docs/proofs/gap/fano-channel) — equilibrium Gap theorem
+
+**Mathematical reconstruction foundation:** [ID-1/ID-2 and primary sources](/docs/applied/research/reconstruction-identifiability). For phase measurements: [Tort et al. (2010), PAC measurement](https://doi.org/10.1152/jn.00106.2010) and [Aydore et al. (2013), PLV properties](https://pmc.ncbi.nlm.nih.gov/articles/PMC3674231/).

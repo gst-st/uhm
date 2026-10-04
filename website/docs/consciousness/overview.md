@@ -1,364 +1,108 @@
 ---
 sidebar_position: 0
 title: "Consciousness: Overview"
-description: "Consciousness in UHM — a complete derivation from five Ω⁷ axioms via the coherence matrix Γ"
+description: "Typed model of consciousness, operational capability criteria and independently tested interpretive bridges"
 slug: /consciousness/overview
 ---
 
-# Consciousness in UHM
+# Consciousness in UHM: Model, Interpretation and Tests
 
-## Why Consciousness Is the Central Puzzle
+UHM develops a matrix/category model and proposes that physical and experiential descriptions are aspects of one structure **[I]**. The mathematical results concern explicitly defined states, maps, metrics and operational predicates. A mathematical content record does not itself establish that the represented system feels. Biological, clinical and philosophical identifications require additional premises and independent observations.
 
-For two and a half thousand years philosophers have been asking the same question: **what is consciousness?** Plato divided the soul into three parts. In the 17th century Descartes split the world in two: into thinking substance (*res cogitans*) and extended substance (*res extensa*) — and since then no one has managed to convincingly glue them back together. 20th-century behaviorists tried to strike consciousness from the scientific vocabulary. Cognitivists brought it back, but did not explain it. In 1995 David Chalmers formulated the problem with ruthless clarity:
+The [typed kernel](/docs/reference/mathematical-kernel) is the common reference: it distinguishes a numerical density matrix, a genuine Bures site, a sheaf object, a logical support reflector, a fixed linear channel and a nonlinear numerical self-model. These types cannot be interchanged merely because they all describe the same proposed holon.
 
-> Why are physical processes in the brain accompanied by subjective experience?
+## Numerical state and readout
 
-This is the "hard problem of consciousness." Not "how does the brain process information" (those are "easy" problems, solvable by neuroscience), but **why information processing feels like something from the inside at all**.
-
-Neuroscience has found correlates of consciousness — brain regions active during conscious perception. But correlation is not explanation. A scanner shows which neurons are excited when you see red — but does not explain **why** neural excitation is experienced as red.
-
-**Unitary Holonomic Monism (UHM)** offers a fundamentally different approach. Instead of trying to "derive" consciousness from physics (which has failed for 350 years), UHM shows that **physics and consciousness are two sides of a single mathematical object** — the coherence matrix $\Gamma$.
-
-:::info Where We Come From
-This section is a continuation of the [core theory](/docs/intro): the axioms $\Omega^7$, the seven dimensions of the Holon, the coherence matrix $\Gamma$ and its dynamics. If you are not yet familiar with the [axioms](/docs/core/foundations/axiom-omega) and the [coherence matrix](/docs/core/dynamics/coherence-matrix), we recommend starting with them.
-:::
-
-:::note About Notation
-This section uses:
-- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
-- $\varphi$ — [φ-self-modeling operator](/docs/core/operators/phi-operator)
-- $\hat{G}$ — [Gap operator](/docs/core/dynamics/gap-operator)
-- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability)
-- $R$, $\Phi$, $C$ — [measures of reflection, integration, consciousness](/docs/consciousness/foundations/self-observation)
-- L0→L4 — [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy)
-:::
-
-## Historical Context: From Descartes to UHM
-
-Before presenting UHM's position, it is useful to understand which approaches have been tried and why each of them hit a wall.
-
-### Cartesian Dualism (1641)
-
-Descartes claimed: there exist two fundamentally different substances — thinking and extended. The brain (extended matter) somehow interacts with the soul (thinking substance) via the pineal gland.
-
-**Problem:** How can an immaterial soul move material atoms? This violates the laws of conservation of energy. In 350 years, not a single dualist has proposed a convincing mechanism of interaction.
-
-### Physicalism (20th century)
-
-Physicalists answer: there is no separate "soul." Consciousness is what the brain "does," just as digestion is what the stomach does.
-
-**Problem:** Digestion can be fully described in the language of biochemistry, without mentioning the "subjectivity of digestion." But consciousness cannot. Having explained all neural processes, we still do not explain **why** they are accompanied by experience. This is Chalmers's hard problem.
-
-### Panpsychism (Strawson, 2006; Goff, 2019)
-
-A radical alternative: consciousness (or its rudiments) is inherent in **all** matter. An electron "feels," however primitively.
-
-**Combination problem:** If an electron is slightly conscious, and a proton is too — how does one unified human consciousness assemble from billions of "micro-consciousnesses"? The combination problem is no less difficult than the original hard problem.
-
-### Integrated Information Theory (IIT, Tononi, 2004)
-
-IIT proposes: consciousness = integrated information ($\Phi$). The more a system integrates information, the more conscious it is.
-
-**Problem:** IIT does not explain **why** information integration feels like something. Moreover, IIT attributes consciousness to some trivial systems (e.g., grids with the right connectivity structure), which is counterintuitive.
-
-### UHM's Position: Two-Aspect Monism
-
-UHM takes Spinoza's old idea (1677) — **two attributes of one substance** — and gives it a precise mathematical form:
-
-> The coherence matrix $\Gamma$ is a unified ontological primitive. From the **external side** it appears as physics (structure, dynamics). From the **internal side** it is experienced as experience (interiority).
-
-To ask "why does physics give rise to consciousness?" is like asking why the obverse of a coin "gives rise" to the reverse. They do not give rise to each other — they are one.
-
-**Why is Spinoza the closest predecessor?** Of all philosophers, Spinoza most precisely anticipated the structure of UHM: single substance (E1P14) → $\Gamma$; *ordo et connexio* (E2P7) → functor $F$; conatus (E3P6) → $\mathcal{R}$; three kinds of knowledge (E5P25–28) → levels L1/L2/L3; necessitas (E1P33) → primitivity of $\mathcal{L}_0$ (T-39a). What Spinoza lacked was formalism: category theory, quantum mechanics, and computability. UHM provides precisely this formalism, turning a 17th-century philosophical program into a testable mathematical theory. A detailed analysis is in the sections [two-aspect monism](/docs/consciousness/foundations/two-aspect-monism) and [Spinozian structure](/docs/consciousness/ethics-meaning/value-consciousness#спинозианская-структура).
-
-```mermaid
-graph TB
-    subgraph "350 years of deadlock"
-        D["Dualism: 2 substances"] -->|"how do they interact?"| FAIL1["No answer"]
-        F["Physicalism: matter only"] -->|"where does experience come from?"| FAIL2["No answer"]
-        PAN["Panpsychism: consciousness everywhere"] -->|"how does it combine?"| FAIL3["No answer"]
-    end
-    subgraph "UHM: two-aspect monism"
-        G["Γ — unified primitive"]
-        G -->|"external aspect"| PHYS["Physics"]
-        G -->|"internal aspect"| EXP["Experience"]
-    end
-    style G fill:#f9f,stroke:#333
-```
-
-## Central Thesis
-
-In UHM, consciousness is **not a superstructure** over physics and not a separate substance. Consciousness is the **way the coherence matrix $\Gamma$ experiences its own configuration**. Every phenomenon of consciousness is strictly derived from the five axioms $\Omega^7$ via the chain:
+The chosen single-register state is
 
 $$
-\Omega^7 \;\to\; \Gamma \in \mathcal{D}(\mathbb{C}^7) \;\to\; \varphi,\; \hat{G},\; \rho_E \;\to\; \text{all phenomena}
+\Gamma\in D_7=\{\rho\in M_7(\mathbb C):\rho=\rho^\dagger,\rho\succeq0,\operatorname{Tr}\rho=1\}.
 $$
 
-No ad hoc postulates — only consequences of the formalism.
-
-What does this mean in practice? $\Gamma$ is a $7 \times 7$ Hermitian density matrix with seven dimensions: **A**(rticulation), **S**(tructure), **D**(ynamics), **L**(ogic), **E**(xperience), **O**(ground), **U**(nity). The diagonal elements $\gamma_{kk}$ show how much "resource" is concentrated in each dimension. The off-diagonal $\gamma_{ij}$ describe connections between dimensions. Everything is derived from this matrix: from qualia (via projection onto dimension $E$) to emotions (via the purity gradient $\nabla P$) and the unconscious (via the [Gap operator](/docs/core/dynamics/gap-operator)).
-
-**Analogy.** Imagine a coin: the obverse is "physics," the reverse is "experience." To ask why heads "gives rise to" tails is meaningless — they are two aspects of one object. Likewise, $\Gamma$ does not "give rise to" experience: it **is** experience, observed from within, and physics, observed from without.
-
-## Section Roadmap
-
-The section is organized as an ascent from philosophical foundations to concrete phenomena. Each step rests on the previous one:
-
-```mermaid
-graph TD
-    A["1. Foundations<br/>Hard problem, interiority, φ-operator"] --> B["2. Hierarchy L0–L4<br/>From stone to complete self-knowledge"]
-    B --> C["3. Phenomenology<br/>Qualia, emotions, subjective time"]
-    B --> D["4. States<br/>Sleep, meditation, pathology"]
-    C --> E["5. Subjects<br/>Animals, AI, collectives"]
-    D --> E
-    E --> F["6. Theory comparison<br/>IIT, GWT, HOT, panpsychism"]
-    F --> G["7. Ethics and meaning<br/>Values, freedom, death"]
-
-    style A fill:#e8f4fd,stroke:#333
-    style B fill:#e8f4fd,stroke:#333
-    style C fill:#fef3e2,stroke:#333
-    style D fill:#fef3e2,stroke:#333
-    style E fill:#f3e8fd,stroke:#333
-    style F fill:#e8fde8,stroke:#333
-    style G fill:#fde8e8,stroke:#333
-```
-
-1. **Foundations** — [hard problem](./foundations/two-aspect-monism), [interiority theory](./foundations/interiority-theory), [self-observation operator $\varphi$](./foundations/self-observation)
-2. **Hierarchy L0--L4** — five levels from stone to complete self-knowledge
-3. **Phenomenology** — qualia, emotions, subjective time
-4. **States** — sleep, meditation, pathology
-5. **Subjects** — animals, AI, collectives
-6. **Theory comparison** — IIT, GWT, HOT, panpsychism
-7. **Ethics and meaning** — values, freedom, death
-
-Each document can be read independently, but the order above is the recommended route.
-
-## Section Map
-
-### [Mathematical Foundations](./foundations/two-aspect-monism)
-
-| Document | Content | Key results |
-|----------|---------|-------------|
-| [Two-aspect monism](./foundations/two-aspect-monism) | Hard problem of consciousness | FV uniqueness theorem **[T]**, relational identity **[T]** |
-| [Interiority theory](./foundations/interiority-theory) | Experiential content | Spectral decomposition of $\rho_E$, Fubini-Study metric **[T]** |
-| [Self-observation](./foundations/self-observation) | Operator $\varphi$ and measure $R$ | Fixed-point theorem **[T]**, measure $C = \Phi \times R$ **[T T-140]** |
-
-### [Hierarchy L0→L4](./hierarchy/interiority-hierarchy)
-
-| Document | Content | Key results |
-|----------|---------|-------------|
-| [Interiority hierarchy](./hierarchy/interiority-hierarchy) | Five levels | L0: $\Gamma \neq 0$ → L4: $\lim_n R^{(n)} > 0$ **[T/C/D]** |
-| [Gap characterization of levels](./hierarchy/gap-characterization) | Gap profiles by level | Gap signatures L0–L4 **[C]**, Gap injection **[T]** |
-| [Swallowtail transitions](./hierarchy/swallowtail-transitions) | Transition catastrophes between L levels | $A_4$-bifurcation (Arnold) **[T]**; Postnikov **[T]** |
+It has 48 real affine degrees of freedom. Two such systems have a joint state in $D_{49}$; a named basis axis is not a tensor subsystem. A normalised experiential state $\rho_E$ therefore requires a declared lift/factorisation or a conditioned construction. An entropy-based differentiation measure is different from an independently stipulated 7D proxy.
 
-### [Structure of Experience](./phenomenology/qualia-structure)
+In a fixed semantic frame, set
 
-| Document | Content | Key results |
-|----------|---------|-------------|
-| [Qualia structure](./phenomenology/qualia-structure) | 21-pair taxonomy | $\binom{7}{2} = 21$ coherence types **[I]** |
-| [Emotional taxonomy](./phenomenology/emotional-taxonomy) | Emotions from $\nabla P$ | Emotion $:= (dP/d\tau,\, d^2P/d\tau^2,\, \Gamma\text{-signature})$ **[C]** |
-| [Temporal consciousness](./phenomenology/temporal-consciousness) | Time from O-dimension | $dt_{\text{subj}}/dt_{\text{phys}} = \lvert\gamma_{OE}\rvert/\gamma_{OO}$ **[C]** |
-| [Intentionality](./phenomenology/intentionality) | Directionality of consciousness | Morphism $f: \Gamma_A \to \Gamma_B$ in **Hol** **[D]** |
+$$
+P=\operatorname{Tr}\Gamma^2,\quad Q=\sum_i\gamma_{ii}^2,\quad
+R=\frac1{7P},\quad\Phi=\frac{P-Q}{Q},\quad C=\Phi R.
+$$
 
-### [States of Consciousness](./states/altered-states)
+The exact identities and bounds are
 
-| Document | Content | Key results |
-|----------|---------|-------------|
-| [Altered states](./states/altered-states) | Sleep, meditation, psychedelics | Trajectories in $\Gamma$-space **[C]** |
-| [Unconscious](./states/unconscious) | Unconscious as high Gap | Theorem on incomplete transparency **[C]** |
-| [Attention and memory](./states/attention-memory) | Attention and memory types | Attention from $\mathrm{Tr}(\Gamma) = 1$; memory from kernel **[D/C]** |
-| [Pathology](./states/pathological) | Diagnostics via Gap profiles | Gap diagnostic patterns **[I]** |
+$$
+P=\frac17+\|\Gamma-I/7\|_F^2,\qquad\frac17\le R\le1,\qquad
+0\le\Phi\le7P-1,\qquad0\le C\le1-R.
+$$
 
-### [Subjects of Consciousness](./subjects/pre-linguistic)
+Canonical $R$ carries no information beyond purity; it is not model-prediction accuracy. $R_M=1-\|\Gamma-M\Gamma\|_F^2/P$ and iteration fidelity compare different states and require different calibration. See [Self-Observation](./foundations/self-observation).
 
-| Document | Content | Key results |
-|----------|---------|-------------|
-| [Pre-linguistic consciousness](./subjects/pre-linguistic) | Consciousness without language | L1-L2 without dimension $L$ **[C]** |
-| [Animal consciousness](./subjects/animal-consciousness) | L-levels for taxa | Taxonomic scale L0–L3 **[I]** |
-| [AI consciousness](./subjects/ai-consciousness) | Criteria for AI/AGI | Operational criteria from No-Zombie **[C]** |
-| [Collective consciousness](./subjects/collective-consciousness) | Collective (un)conscious | $\Gamma_{\text{composite}}$ and archetypes **[C]** |
+## The scalar capability window {#сознательное-окно}
 
-### [Empirical Programme](./empirical/overview)
+The adopted gate combines $P>2/7$ and $R\ge1/3$, so its exact scalar consequence is
 
-What proofs cannot settle and data or engineering can: fixing the constants of the coherence–quality correspondence, testing the geometry of quality space, and building the mechanism. The hard problem is stated once there as the residue no data can close.
+$$
+2/7<P\le3/7.
+$$
 
-| Document | Content | Key results |
-|----------|---------|-------------|
-| [Four tasks](./empirical/overview) | Calibration, structure, mechanism, hard problem | Identity [I]; which task each kind of evidence decides |
-| [Calibration](./empirical/calibration) | Observables → components of $\Gamma$, protocols, controls, power | Collected criteria; new protocols **[Pr]** |
-| [Structure](./empirical/structure) | Invariants of quality space and of $\Gamma$ with their statuses | What the geometry forbids; confirm/refute table |
-| [Engineering](./empirical/engineering) | Architectural requirements, ablations | Signatures only with a self-model in the window **[H]** |
+The lower cutoff expresses the chosen HS-majority criterion; the upper cutoff is algebraically equivalent to the chosen canonical $R$ threshold. Their identification with universal physical viability or phenomenal access is **[H/I]**, not a theorem independent of the definitions. A purity value in the window does not imply adequate integration, differentiation, sustained dynamics or metamodel knowledge.
 
-### [Theory Comparison](./comparative/consciousness-theories)
+## Complete numerical gate {#полные-критерии}
 
-| Document | Content | Key results |
-|----------|---------|-------------|
-| [Theories of consciousness](./comparative/consciousness-theories) | IIT, FEP, GWT, HOT | Categorical meta-analysis **[I]** |
-| [Panpsychism](./comparative/panpsychism-analysis) | Panpsychism vs pan-interiority | Categorical analysis of 5 positions **[I]** |
-| [Cognitive hierarchy](./comparative/cognitive-hierarchy) | K1–K5 levels | Phylogenetic scale **[I]** |
+The common operational definition is
 
-### [Ethics and Meaning](./ethics-meaning/value-consciousness)
+$$
+\mathsf{Cap}_2=(P>2/7)\land(R\ge1/3)\land(\Phi\ge1)\land(D_{\mathrm{diff}}\ge2).
+$$
 
-| Document | Content | Key results |
-|----------|---------|-------------|
-| [UHM ethics](./ethics-meaning/value-consciousness) | Axiology, aesthetics, moral theory | Good $:= dP/d\tau > 0$ **[D]**, Golden Rule from $\Gamma_{\text{composite}}$ **[C]** |
-| [Meaning of existence](./ethics-meaning/meaning) | Teleology and meaning in Γ-space | $\text{Meaning}_{\text{peak}} = \max[P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi]$ **[I]** |
-| [Freedom of will](./ethics-meaning/freedom) | Freedom via the Hessian of free energy | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ **[T]** |
-| [Death and continuity](./ethics-meaning/death-continuity) | What happens as $P \to 0$ | Theorem on irreversibility at $P < P_{\text{crit}}$ **[T]** |
+| Quantity | Mathematical meaning | Extra interpretation |
+|---|---|---|
+| $P>2/7$ | HS deviation from the centre exceeds the centre's HS weight | Physical viability [H] |
+| $R\ge1/3$ | $P\le3/7$ | Reflective competence [H/I] |
+| $\Phi\ge1$ | Off-diagonal HS weight at least diagonal HS weight | Cognitive integration [I/H] |
+| $D_{\mathrm{diff}}\ge2$ | Declared differentiation test; entropy version requires a normalised extension | Minimal experiential diversity [I/H] |
 
-## Derivation Chains from Axioms
+Stress, rates, persistence and a specific policy can be additional operational constraints. They are not universally equivalent to the four scalar gates. Passing a stress panel or setting all populations positive does not prove consciousness. $C\ge1/3$ is a necessary consequence of $\mathsf{Cap}_2$, not a replacement for all four inequalities.
 
-Every phenomenon is traced back to the axioms $\Omega^7$. Below is the complete map: from five axioms to specific consciousness phenomena.
+## Cumulative levels and depth
 
-```mermaid
-graph TD
-    AX["Ω⁷ (∞-topos)"] --> OM["Ω (subobject classifier)"]
-    OM --> CHI["χ_{S_k} (characteristic morphisms)"]
-    OM --> GAM["Γ ∈ ℂ⁷ˣ⁷ (coherence matrix)"]
-    CHI --> LK["L_k (Lindblad operators)"]
-    GAM --> P["P = Tr(Γ²) → viability"]
-    GAM --> PHI["φ(Γ) → R (reflection) → L0-L4"]
-    GAM --> GAP["Gap(i,j) → duality → unconscious"]
-    GAM --> DG["dΓ/dτ → ∇P → emotions"]
-    GAM --> RHO["ρ_E = Tr_{-E}(Γ) → qualia"]
-    GAM --> COMP["Γ_composite → collective consciousness"]
-    P --> PCRIT["P_crit = 2/7"]
-    DG --> ATT["attention → memory"]
-    RHO --> INT["intentionality"]
-    COMP --> EMP["empathy"]
-    GAP --> UCON["unconscious"]
-```
+| Level | Typed requirement |
+|---|---|
+| L0 | Valid represented state; its “interiority” reading is [I] |
+| L1 | Declared nontrivial experiential proxy or extension test [D/I] |
+| L2 | L1 and $\mathsf{Cap}_2$ [D] |
+| L3 | L2 and independently tested nonconstant metamodel predictions [D/Pr] |
+| L4 | L3 and compatible nontrivial certificates at every higher order [D] |
 
-### Conscious Window (Goldilocks Zone) [T T-124] {#сознательное-окно}
+The phase Gap profile does not determine these gates. The same all-zero phase profile occurs at different purity/reflection values. Iteration fidelity can equal one at a trivial fixed point. An optional Fano score has an arithmetic maximum index of three, but it does not impose a universal ceiling on cognitive recursion. A finite resource bound needs actual independent per-order costs. See [canonical hierarchy](./hierarchy/interiority-hierarchy), [Gap identifiability](./hierarchy/gap-characterization#gap-инъекция) and [Depth Tower](./hierarchy/depth-tower).
 
-One of the most elegant consequences of the theory is the existence of a **Goldilocks zone** for consciousness. Just as life is possible only within a certain temperature range (not too hot, not too cold), L2-level consciousness is possible only within a certain range of purity $P$:
+## What the categorical results establish
 
-$$P \in \left(\frac{2}{7},\; \frac{3}{7}\right]$$
+A logical support reflector is unique for its fixed slice and inclusion. It does not uniquely select a numerical self-model or a physical-to-phenomenal functor. Partial trace is uniquely determined by all retained-subsystem expectation values **after a tensor factorisation has been supplied**. The spectral theorem gives eigenvalues and spectral projectors of that chosen state; it does not select the experiential lift or its phenomenal meaning.
 
-Where do these numbers come from?
+Yoneda identifies objects up to isomorphism within a declared category. A distance profile identifies a point in a declared metric space. These mathematical facts can support relational models; they do not prove that phenomenality has no properties outside them.
 
-**Lower threshold** $P > 2/7$. [Purity](/docs/core/dynamics/viability) $P = \mathrm{Tr}(\Gamma^2)$ measures how much $\Gamma$ differs from the maximally chaotic state $I/7$ (for which $P = 1/7$). The threshold $P_{\text{crit}} = 2/7$ is the minimal purity at which a system is distinguishable from chaos. It is derived via five independent routes: [T-39](/docs/core/foundations/axiom-septicity#критическая-чистота-теорема).
+The former universal E-coherence floor/No-Zombie implication T-38a, forced experiential splitting, FV uniqueness, and Lawvere no-go T-214 are withdrawn. No universal $\mathrm{Coh}_E>1/7$ floor follows in models with bootstrap or independent purity input. Lawvere requires its actual evaluator $A\to B^A$; it does not prohibit an arbitrary internal map. T-213 does not identify channel outputs with representable sheaves or establish a universal 138-bit description. The old T-210 implication “refining $J$ strictly raises canonical $\Phi$” is withdrawn: at a fixed state/frame, $\Phi=P/Q-1$ is independent of $J$. Only a separately chosen sum over nested pair sets with the same nonnegative terms and fixed denominator is monotone; strictness additionally requires a positive new term. It proves no automatic increase in cognitive capability when state, dimension or readout changes. See [Two-Aspect Monism](./foundations/two-aspect-monism) and [corrected closure statements](/docs/proofs/categorical/fundamental-closures).
 
-**Upper threshold** $P \leq 3/7$. The reflection measure $R = 1/(7P)$ ([definition](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)) decreases as $P$ grows. For L2-level consciousness, $R \geq 1/3$ is required, which is equivalent to $P \leq 3/7$ ([T-126](/docs/proofs/consciousness/conscious-window#t-126)).
+## Dynamics versus level labels
 
-**Why does $R$ decrease as $P$ grows?** This is not a paradox, but a deep property. $R$ measures the "thermal reserve" — the normalized distance from thermal death ($I/7$). High-purity systems ($P \to 1$) are "frozen" in one state — they are far from chaos, but lack the flexibility needed for self-modeling. Consciousness requires balance: organized enough to exist, but flexible enough to observe itself.
+Crossing a numerical boundary need not change attractor count or stability. A fold, cusp, swallowtail or Hopf requires a specified flow, nondegeneracy and appropriate control transversality. The $A_4$ potential germ is quintic and its quartic derivative has at most two nondegenerate interior minima; an even sextic tricritical germ is $A_5$. Neither supplies a universal three-level cognitive hierarchy.
 
-**Numerical example.** For $P = 0.35$ (midpoint of the window): $R = 1/(7 \times 0.35) = 0.408 > 1/3$ — reflection is sufficient. For $P = 0.5$: $R = 1/(7 \times 0.5) = 0.286 < 1/3$ — too rigid, L2 is impossible.
+Classical tricritical exponents are exact for the declared tuned sextic mean-field model. Their applicability to neural or phenomenal measurements requires a separate reduction, observation bridge and control of fluctuations/finite size. Clinical labels cannot be read from a static purity or phase array. See [conditional transitions](./hierarchy/swallowtail-transitions) and [the phase diagram](/docs/core/dynamics/gap-phase-diagram).
 
-Non-emptiness proof: [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124). The consciousness measure $C = \Phi \cdot R$ has its optimum inside the window ([T-140 [T]](/docs/proofs/consciousness/operational-closure#t-140)).
+## Reading map
 
-### Complete Consciousness Criteria [T T-153, T-155] {#полные-критерии}
+| Page | Purpose |
+|---|---|
+| [Two-Aspect Monism](./foundations/two-aspect-monism) | Interpretive premise and precise limits of categorical claims |
+| [Interiority Theory](./foundations/interiority-theory) | Candidate experiential records, spectral/metric structure and bridges |
+| [Self-Observation](./foundations/self-observation) | Numerical map, frozen channels, exact R identities and prediction tests |
+| [Interiority Hierarchy](./hierarchy/interiority-hierarchy) | Nested capability predicates and independent higher-order certificates |
+| [Gap Characterization](./hierarchy/gap-characterization) | Actual phase invariants, fibre identifiability and readout bounds |
+| [Depth Tower](./hierarchy/depth-tower) | Iteration, score arithmetic and conditional resource bounds |
+| [Swallowtail Transitions](./hierarchy/swallowtail-transitions) | Conditional normal forms and corrected dynamical laws |
+| [Unconscious](./states/unconscious) | Explicit detector proposals and the limits of Hamming/phase arguments |
+| [Empirical Programme](./empirical/overview) | Calibration, structural tests, implementation and interpretation |
+| [Reconstruction Identifiability](/docs/applied/research/reconstruction-identifiability) | Observation equations and latent-state counterexamples |
 
-The conscious window $P \in (2/7, 3/7]$ is a **necessary** but not sufficient condition. The full set of criteria ([T-153 [T]](/docs/proofs/consciousness/substrate-closure#t-153)):
-
-| Criterion | Threshold | Meaning | Theorem |
-|-----------|-----------|---------|---------|
-| $P > P_{\text{crit}}$ | $2/7$ | System is distinguishable from chaos | T-39 |
-| $R \geq R_{\text{th}}$ | $1/3$ | System is capable of modeling itself | T-126 |
-| $\Phi \geq \Phi_{\text{th}}$ | $1$ | Dimensions are connected into a unified whole | T-129 |
-| $D_{\text{diff}} \geq D_{\min}$ | $2$ | Sufficiently rich content | T-151 |
-| $\|\sigma_{\text{sys}}\|_\infty < 1$ | $< 1$ | No sector is blocked | [T-155 [T]](/docs/proofs/consciousness/substrate-closure#t-155) |
-
-The fifth criterion $\|\sigma\|_\infty < 1$ (T-155, consciousness gate) deserves explanation. The [stress vector](/docs/applied/coherence-cybernetics/definitions) $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk}, 0, 1)$ measures how much sector $k$ is underpopulated. If even one sector is in full stress ($\sigma_{\max} = 1$), the cognitive channel is blocked and learning is impossible — the system has "frozen."
-
-## Section Roadmap (24 Documents)
-
-The section is organized into 7 subsections, each revealing a specific aspect of consciousness:
-
-### Foundations (foundations/)
-
-| # | Document | Topic | Key result |
-|---|----------|-------|------------|
-| 1 | [Two-aspect monism](./foundations/two-aspect-monism) | Philosophical foundation | Hard problem — a category error |
-| 2 | [Interiority theory](./foundations/interiority-theory) | Mathematical formalization | E-dimension and $\rho_E$ |
-| 3 | [Self-observation](./foundations/self-observation) | Operators $\varphi$, $R$, $C$ | L2 thresholds: $R \geq 1/3$, $\Phi \geq 1$ |
-| 4 | [Learning](/docs/applied/coherence-cybernetics/learning-bounds) | Learning bounds | T-109 — T-113 [T] |
-
-### Hierarchy (hierarchy/)
-
-| # | Document | Topic | Key result |
-|---|----------|-------|------------|
-| 5 | [Interiority hierarchy](./hierarchy/interiority-hierarchy) | Levels L0→L4 | Formal definitions of 5 levels |
-| 6 | [Gap characterization](./hierarchy/gap-characterization) | Gap at each level | Quantitative profiles |
-| 7 | [Depth tower](./hierarchy/depth-tower) | SAD and recursion | SAD_MAX = 3 [T] |
-
-### Phenomenology (phenomenology/)
-
-| # | Document | Topic | Key result |
-|---|----------|-------|------------|
-| 8 | [Qualia structure](./phenomenology/qualia-structure) | 21 types of qualia | Taxonomy from Fano geometry |
-| 9 | [Intentionality](./phenomenology/intentionality) | Directionality of consciousness | Morphisms in Exp |
-| 10 | [Emotional taxonomy](./phenomenology/emotional-taxonomy) | Emotions from $\nabla P$ | 7 basic + 21 composite emotions |
-| 11 | [Temporal consciousness](./phenomenology/temporal-consciousness) | Consciousness time | Chronon and subjective duration |
-| 12 | [Attention and memory](./states/attention-memory) | Cognitive mechanisms | Sectoral $\Gamma$-signature |
-| 13 | [Pre-linguistic](./subjects/pre-linguistic) | Pre-linguistic experience | L1 structures |
-
-### States (states/)
-
-| # | Document | Topic | Key result |
-|---|----------|-------|------------|
-| 14 | [Altered states](./states/altered-states) | ASC, meditation, psychedelics | Gap profiles of ASC |
-| 15 | [Unconscious](./states/unconscious) | Opaque channels | Hamming bound H(7,4) |
-| 16 | [Pathology](./states/pathological) | Consciousness disorders | Dissociation, coma, delirium |
-| 17 | [Swallowtail](./hierarchy/swallowtail-transitions) | Phase transitions | Thom catastrophe |
-
-### Subjects (subjects/)
-
-| # | Document | Topic | Key result |
-|---|----------|-------|------------|
-| 18 | [AI consciousness](./subjects/ai-consciousness) | Criteria for AI | No-Zombie theorem |
-| 19 | [Animal consciousness](./subjects/animal-consciousness) | Animal consciousness | Threshold by species |
-| 20 | [Collective consciousness](./subjects/collective-consciousness) | Groups, swarms, networks | $\Gamma_{\text{composite}}$ |
-
-### Comparative Analysis (comparative/)
-
-| # | Document | Topic | Key result |
-|---|----------|-------|------------|
-| 21 | [42 theories of consciousness](./comparative/consciousness-theories) | Meta-analysis | UHM vs IIT, GNW, HOT, PWT, the category theory of qualia, etc. |
-| 22 | [Panpsychism](./comparative/panpsychism-analysis) | Critical analysis | Pan-interiority as panprotopsychism; the combination problem restated as a criterion — *when*, not *how* [I] (an earlier edition listed a "solution"; withdrawn) |
-| 23 | [Cognitive hierarchy](./comparative/cognitive-hierarchy) | K1–K5 levels | Operationalization |
-
-### Ethics and Meaning (ethics-meaning/)
-
-| # | Document | Topic | Key result |
-|---|----------|-------|------------|
-| 24 | [Value and freedom](./ethics-meaning/value-consciousness) | Ethics of consciousness | Freedom = dim ker(H) + 1 |
-
-## Key Innovations of the Section
-
-1. **Closed taxonomy of qualia** — all 21 coherence types ($\binom{7}{2}$) have specific phenomenological content
-2. **Emotions from formalism** — not postulated, but derived via $\nabla P$ and the sectoral $\Gamma$-signature
-3. **Inevitability of the unconscious** — from the Hamming bound $H(7,4)$ it follows that any L2-system has opaque channels
-4. **Operational criteria for AI consciousness** — computable conditions from the [No-Zombie](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) theorem
-5. **Collective unconscious** — rigorous definition via $\Gamma_{\text{composite}}$
-
-## Status Map
-
-| Status | Meaning | Results in section |
-|--------|---------|-------------------|
-| **[T]** Theorem | Strictly proven | 5 |
-| **[C]** Conditional | Under explicit assumption | 14 |
-| **[D]** Definition | Convention | 4 |
-| **[I]** Interpretation | Philosophical | 6 |
-
-### What We Learned
-
-- Consciousness in UHM is **not a superstructure** and not a separate substance, but the way in which $\Gamma$ experiences its own configuration.
-- All consciousness phenomena are derived from the five axioms $\Omega^7$ via the chain $\Omega^7 \to \Gamma \to \varphi, \hat{G}, \rho_E \to$ phenomena.
-- The conscious window $P \in (2/7, 3/7]$ defines the Goldilocks zone — not too chaotic, not too rigid.
-- Full set of L2 criteria: $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$, $\|\sigma\|_\infty < 1$.
-- The section's 24 documents cover everything — from philosophy to operational criteria for AI.
-
-:::tip Where to Go Next
-Start with [Two-Aspect Monism](./foundations/two-aspect-monism) — the philosophical foundation explaining UHM's position on the hard problem of consciousness. Then proceed to [Interiority Theory](./foundations/interiority-theory) for the mathematical formalization of experience.
-
-For an engineering perspective, go directly to [Coherence Cybernetics definitions](/docs/applied/coherence-cybernetics/definitions) — operational formulas for $\sigma$, $\kappa$, $\Delta F$ are there.
-:::
-
----
-
-**Related sections:**
-- [Theory](/docs/intro) — axioms and structure
-- [Proofs](/docs/proofs/minimality/theorem-minimality-7) — formal theorems
-- [Physics](/docs/physics/overview) — physical correspondences
-- [Coherence Cybernetics](/docs/applied/coherence-cybernetics/introduction) — engineering applications
+Phenomenology, comparative theories, clinical states, animal/AI/collective subjects and ethics are applications of these proposals with their own **[I/H/Pr]** bridges. They are not all consequences of five axioms. Research can strengthen them through independently labelled predictions, competing models, valid interventions and held-out validation; simulation of the same defining formulas checks the implementation at its stated scope.

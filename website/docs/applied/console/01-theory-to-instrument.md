@@ -85,7 +85,7 @@ The single artifact that makes this suite a specification rather than a brochure
 | State readout (invariants) | definitions of $P,R,\Phi,D,R_\varphi$ + thresholds | [T]/[C] | 02 |
 | Mandalagram / bodygraph | 28-cell chart (gamma-canon) | [T]/[D] | 02, 05 |
 | Archetype & mode | 16 signatures [T]; triadic decomposition [T] | [T] | 02 |
-| Meaning & Freedom readout | Meaning formula; Freedom $=\dim\ker\mathcal H_\Gamma+1$ [T] | [T] | 02 |
+| Meaning & Freedom readout | Selected meaning model and Hessian score, with explicit potential/domain and empirical validation | [D/I/H] | 02 |
 | Measured estimation | seven-channel embedding; verdict concordance with PCI (κ) | [Т-path]/[C] | 03 |
 | Self-audit estimation | П1 28-item audit | [И, structured] | 03 |
 | Trajectory & forecast | transparency windows, bifurcations (gap-diagnostics) | [T]/[C] | 03, 04 |

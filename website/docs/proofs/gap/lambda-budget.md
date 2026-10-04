@@ -7,11 +7,15 @@ description: "Complete chain of 6 perturbative suppression mechanisms Λ → 10�
 
 # Proof: Cosmological Constant Λ Budget
 
+:::warning Scope of the numerical ledger
+This page records conditional numerical constructions, not a proved cosmological-constant prediction. Primitive rigidity cannot determine the physical spectral input. The proposed suppression factors require specified correlators, measures, couplings and a map to vacuum energy; their independence/multiplication must be proved before a product is a physical bound. The corrected Ward and Fano-code sections below remove two claimed universal factors. Historical order-of-magnitude totals elsewhere on this page are bookkeeping for those supplied assumptions [H], not rigorous bounds or closure.
+:::
+
 :::info Who this chapter is for
 The reader will find here the complete chain of 6 perturbative mechanisms suppressing the cosmological constant within the framework of Gap dynamics and G₂-structure, as well as the spectral formula [T] and cohomological cancellation argument.
 :::
 
-Complete chain of **6 perturbative mechanisms** suppressing the contribution to the cosmological constant $\Lambda$ within [Gap dynamics](/docs/core/dynamics/gap-dynamics) and [G₂-structure](/docs/physics/gauge-symmetry/g2-structure). The perturbative budget gives suppression of **41.5 orders of magnitude** out of the required 120. The spectral formula for $\Lambda_{\text{CC}}$ **[T]** establishes the structural formula via moments of the internal Dirac operator, upgrading the SUSY compensation ($\varepsilon^{12}$) from [C] to **[T]**. The cohomological argument ($\Lambda_{\text{global}} = 0$ [T]), SUSY compensation (**[T]**), and the sector structure from [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] supplement the budget to an estimate of **$\sim 10^{-120 \pm 10}$** [C]. The remaining gap is a **computational** problem (numerical minimization on $(S^1)^{21}$ with $G_2$), not a conceptual one.
+This page records a proposed numerical ledger for vacuum-energy suppression [H/Pr]. The arithmetic of chosen factors can be checked, but the factors do not form a derived physical prediction: the Ward coefficient, coding-to-energy map, spectral input, couplings, covariance measure, and relation of a chosen potential to dynamics require independent specification. The older estimates 41.5 and 120 orders are scenario values, not consequences of T-73, T-74 or T-75, all withdrawn [✗] in their universal scope. Mathematical zeta identities and conditional potential minimization do not identify the physical cosmological constant.
 
 ---
 
@@ -150,8 +154,8 @@ At $\varepsilon = 10^{-2}$ (central value of the range, see Theorem 2.0 [T]) six
 |---|----------|-----------|-------------|
 | 1 | $\varepsilon^6$ (small coupling parameter) | $10^{-12}$ | $\checkmark$ at $\varepsilon = 10^{-2}$ |
 | 2 | RG suppression $\lambda_3^2$ | $10^{-14.5}$ | $\checkmark$ ($\lambda_3^{-7.26} \to \lambda_3^2 = 10^{-14.52}$) |
-| 3 | Ward identities ($19/49$) | $10^{-0.41}$ | $\checkmark$ ($19/49 = 0.388$) |
-| 4 | Fano code (1/8) | $10^{-0.9}$ | $\checkmark$ ($1/8 = 0.125$) |
+| 3 | Ward identities ($19/49$) | $10^{-0.41}$ | [D/H] — chosen covariance; Ward derivation withdrawn [✗] |
+| 4 | Fano code (1/8) | $10^{-0.9}$ | [✗] universal 1/8 factor; coding/energy bridge unproved |
 | 5 | $\sqrt{N_F}$ (fluctuation factor) | $10^{-11.9}$ | $\checkmark$ ($N_F \sim 6.8 \times 10^{23}$) |
 | 6 | O-sector isolation $(6/21)^3$ | $10^{-1.7}$ | $\approx$ ($10^{-1.63}$, rounded) |
 | | **Total** | **$10^{-41.41}$** | **$\approx 10^{-41.4}$** |
@@ -215,45 +219,27 @@ $$
 \lambda_3^2 \to 10^{-14.52} \approx 10^{-14.5}
 $$
 
-### 2.3 Mechanism 3: Ward identities [T] {#механизм-3}
+### 2.3 A chosen correlator factor, not a Ward prediction {#механизм-3}
 
-The 14 conserved [Noether charges](/docs/physics/gauge-symmetry/noether-charges) of $G_2$-symmetry impose Ward identities on vacuum Gap correlators. The vacuum two-point correlator is uniquely determined:
+The [correct invariant-covariance theorem](/docs/physics/gauge-symmetry/noether-charges#тождества-уорда-разложение) has two free amplitudes $c_7,c_{14}$. Continuous $G_2$ symmetry does not fix their ratio. The fixed Fano-coordinate action/channel is not automatically continuously $G_2$ invariant, and the unsigned incidence matrix is not automatically its wedge-representation intertwiner.
 
-$$
-C = \alpha \cdot \mathbf{1}_{21} + \beta \cdot \mathbf{F}_{21} + \gamma \cdot \mathbf{F}_{21}^2
-$$
-
-where $\mathbf{F}_{21}$ is the Fano operator (projection onto the 7-dimensional subspace of Fano-connected pairs out of 21). Ward identities fix:
+For the chosen edge-coordinate model
 
 $$
-\beta = -\frac{3\alpha}{7}, \quad \gamma = \frac{3\alpha}{49}
+C=\alpha I-\frac{3\alpha}{7}F_{21}+\frac{3\alpha}{49}F_{21}^2,
 $$
 
-Eigenvalues of the correlator: $\lambda_+ = 19\alpha/49$ (Fano-symmetric sector $V_7$, multiplicity 7) and $\lambda_- = 73\alpha/49$ (adjoint sector $\mathfrak{g}_2$, multiplicity 14). The vector $\mathbf{1}_{21}$ lies entirely in $V_7$ ($P_7\mathbf{1} = \mathbf{1}$), so the total Gap fluctuation contribution to $\Lambda$ is determined only by $\lambda_+$:
+the block calculation gives eigenvalues $19\alpha/49$ and $73\alpha/49$ [T at the supplied coefficients]. Its uniform-vector ratio is $19/49$. This arithmetic does not derive the coefficients, their vacuum measure, or a cosmological suppression. The previous unique Ward factor is withdrawn [✗]; using it in a budget is an extra covariance assumption [D/H].
+
+### 2.4 Incidence rank does not suppress vacuum energy {#механизм-4}
+
+Let $A$ be the $7\times7$ real point-line incidence matrix of the chosen Fano plane. Then
 
 $$
-\frac{\mathbf{1}^T C \mathbf{1}}{\mathbf{1}^T (\alpha I_{21}) \mathbf{1}} = \frac{\lambda_+}{\alpha} = \frac{19}{49} \approx 0.388 \quad \Rightarrow \quad 10^{-0.41}
+AA^{\mathsf T}=2I+J,\qquad\operatorname{rank}_{\mathbb R}A=7,\qquad|\det A|=24.
 $$
 
-### 2.4 Mechanism 4: Fano code [T] {#механизм-4}
-
-The [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$ restricts the allowed contributions to the vacuum $\Lambda$. Of the 7 intra-Fano charges, 6 are linearly independent (rank of the Fano incidence matrix = 6), and each imposes a constraint on the Gap:
-
-$$
-Q_p = \oint_{\text{Fano}_p} \hat{\mathcal{G}} \cdot d\ell = 0 \quad \text{for } p = 1, \ldots, 7
-$$
-
-From the theory of Hamming codes $[7,4,3]$: $|\text{det}(\mathcal{M}_{\text{Fano}})| = 2^3 = 8$. Therefore:
-
-$$
-\mathcal{G}_{\text{total}}^{(O),\text{constrained}} = \frac{\mathcal{G}_{\text{total}}^{(O),\text{free}}}{8}
-$$
-
-Of 8 possible sectors only 1 makes an unconstrained contribution:
-
-$$
-\frac{1}{8} = 0.125 \quad \Rightarrow \quad 10^{-0.9}
-$$
+The old rank six and determinant eight are false [✗]. A binary Hamming $[7,4,3]$ code has its own $3\times7$ parity-check matrix and eight syndromes; this does not force equal physical sector weights or eliminate seven eighths of a vacuum contribution. No universal factor $1/8$ follows. A coding-to-energy bridge needs a probability measure, dynamical constraints and a physical observable [Pr/H].
 
 ### 2.5 Mechanism 5: Fluctuation factor $\sqrt{N_F}$ [T] {#механизм-5}
 
@@ -394,8 +380,8 @@ $$
 Exact shell-by-shell computation at $S_0 = 20$: $|\delta| = |\Theta_M/\Theta_0 - 1| < 2 \times 10^{-9}$ — **the Gaussian sum does not work**.
 :::
 
-:::tip Theorem 3.3 (Uniqueness of $B^{(b)}$) [T]
-The bilinear form $B^{(b)}$ on $(S^1)^{21}$ is unique up to a scalar. Proof via $S_3$-symmetry of the Fano line stabilizer.
+:::note Scope of the cyclic form [D/T]
+The declared off-diagonal cyclic form with independent line blocks and a common coefficient is unique up to that coefficient **at those restrictions**. General S₃-invariant quadratic forms also permit an independent diagonal term; continuous G₂ invariance on the fixed phase torus is not defined. Thus the former unique physical bilinear-form claim is withdrawn [✗].
 :::
 
 :::tip Theorem 3.4 ($Z_\Phi(-k) = 0$ for $k \geq 1$) [T]
@@ -493,7 +479,9 @@ $$
 
 **Status [H] via T-219** (corrected from T at T-64 on 2026-09-25): the earlier "14 → 7_light ⊕ 7_heavy" decomposition of the G₂ adjoint was **mathematically invalid** — $\mathrm{adj}(G_2) = \mathbf{14}$ is irreducible under G₂ and admits no such splitting. **T-219** ([Fundamental Closures §13](/docs/proofs/categorical/fundamental-closures#t-219); [H] since 2026-09-25) replaces this with a derivation that is itself a hypothesis:
 
-$$\Lambda_\mathrm{SUSY}\;\sim\;\varepsilon^{12}\,M_P^4 \;=\; \varepsilon^{4\cdot k_\mathrm{sec}}\,M_P^4, \qquad k_\mathrm{sec}=3.$$
+$$
+\Lambda_\mathrm{SUSY}\;\sim\;\varepsilon^{12}\,M_P^4 \;=\; \varepsilon^{4\cdot k_\mathrm{sec}}\,M_P^4, \qquad k_\mathrm{sec}=3.
+$$
 
 The exponent $12 = 4 \cdot 3$ arises **product-structurally** from:
 - $k_\mathrm{sec}=3$ sectors (O, $\mathbf 3$, $\bar{\mathbf 3}$) in UHM sector decomposition (T-48a — retracted [✗] 2026-09-25 in its axis-labelled form; the count 3 survives for the complexified $\mathbb C^7$, the per-sector derivation of T-219 does not);
@@ -519,21 +507,21 @@ The mechanisms below fall into **three non-composable classes**; naively multipl
 | sign | $\Lambda > 0$ from autopoiesis | sign fixed | **[T]** |
 | calibration | $f_0$ canonical | parameter fixed | **[T]** |
 
-**Composed estimate under the stated absorption rules:** the rigorously-multipliable mean suppression is $10^{-53.5}$ (class A); combined with the cohomological exact-zero (class B, which reframes the problem as "why is the *local* residual small?") and the [C] sector-minimization programme (class C), the current honest bracket is $\Lambda \sim 10^{-53.5}\ \text{to}\ 10^{-93.5}$ depending on how much of the sector/fluctuation programme is realized — **not** the full $10^{-120}$. Closing the remaining $\gtrsim27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task (numerical minimization on $(S^1)^{21}/G_2$ **plus** a proof that the local residual saturates the cohomological bound), not a completed multiplication.
+**Composed estimate under the stated absorption rules:** the rigorously-multipliable mean suppression is $10^{-53.5}$ (class A); combined with the cohomological exact-zero (class B, which reframes the problem as "why is the *local* residual small?") and the [C] sector-minimization programme (class C), the current honest bracket is $\Lambda \sim 10^{-53.5}\ \text{to}\ 10^{-93.5}$ depending on how much of the sector/fluctuation programme is realized — **not** the full $10^{-120}$. Closing the remaining $\gtrsim27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task (numerical minimization on a properly specified state-space model **plus** a proof that the local residual saturates the cohomological bound), not a completed multiplication.
 
 $Z_\Phi(-2)=0$ and the enhancement $Z'_\Phi(-2)\times10^{+10}$ are structural [Т math.] but their physical interpretation is open; they are **not** included in the mean-suppression product.
 
 :::info Numerical programme specification ([Fundamental Closures §8](/docs/proofs/categorical/fundamental-closures#lambda-programme))
-The numerical closure of the Λ-deficit reduces to **Hybrid Monte-Carlo** on the $G_2$-reduced phase space $(S^1)^{21}/G_2$: $N=128$ points per circle, $G_2$-gauge-fixed (21→7 independent dims), Wilson-type lattice discretisation of $V_\mathrm{Gap}$, $10^4$ thermalisation sweeps + $10^4$ measurements. Total cost $\sim 2\times 10^{21}$ flops (≈ 23 CPU-days on 1000-GPU cluster, $<10^5$ USD on cloud HPC). Output validation: must reproduce known perturbative $10^{-41.5}$ at tree level, give unique minimum (T-64 Hessian positivity), and yield $\Lambda \approx 10^{-120}$ within ±5 orders (tighter than current ±10). No theoretical obstacle remains.
+A valid numerical program must first specify the state/phase chart, positivity constraints, probability measure, chosen potential and energy readout. General G₂ conjugation changes populations and coherence moduli, so it does not act on a fixed phase-only torus; the old $(S^1)^{21}/G_2$ and 21→7 reduction are withdrawn [✗]. A native density-state model has 48 real variables; a chosen generic G₂ orbit quotient has 34 only where an actual invariant model and quotient are supplied. Algorithmic cost and uniqueness cannot be inferred from dimension subtraction or a local Hessian. Independent couplings, the relation of minima to dynamics, and the vacuum-energy bridge remain conceptual inputs [Pr/H].
 :::
 ::::
 
-### 4.4 Spectral formula for $\Lambda_{\text{CC}}$ [Т-structural, С-numerical] {#спектральная-формула}
+### 4.4 Chosen spectral-moment energy [D/H] {#спектральная-формула}
 
-#### Theorem (Spectral formula for $\Lambda_{\text{CC}}$) [T] {#теорема-спектральная-лямбда}
+#### Spectral ansatz 4.3 [D/H] {#теорема-спектральная-лямбда}
 
-:::tip Theorem 4.3 (Spectral formula for $\Lambda_{\text{CC}}$) [T]
-The cosmological constant in the Gap formalism is expressed via moments of the internal Dirac operator $D_{\text{int}}$ of the finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ [T] ([spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка)):
+:::note A selected functional, not a physical derivation
+For supplied finite spectral data and moments, consider the following effective energy expression [D/H]. The displayed symbol is a model parameter until a physical vacuum-energy bridge and dimensional normalization are proved:
 
 $$
 \Lambda_{\text{CC}} = \frac{f_0 \Lambda^4}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(1) - \frac{f_2 \Lambda^2}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(D_{\text{int}}^2) + \frac{f_4}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(D_{\text{int}}^4)
@@ -542,13 +530,11 @@ $$
 All traces are taken over the internal space $H_{\text{int}} = \mathbb{C}^7$.
 :::
 
-**Proof.** Direct consequence of the expansion of the coefficient $a_0$ of the spectral action $S = \mathrm{Tr}(f(D/\Lambda))$ ([spectral action](/docs/physics/gravity/quantum-gravity)). The expansion over moments $f_0, f_2, f_4$ of the test function $f$ is standard in Connes–Chamseddine noncommutative geometry. The finite spectral triple exists [T], which makes the formula rigorous. The parameter $f_0$ is uniquely determined via the vacuum effective action: $f_0\Lambda^4 = \frac{1}{7}[V_{\text{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\text{Gap}}}(0)]$ [T] ([canonical $f_0$](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический)). $\blacksquare$
+**Scope [H/C].** The displayed expression can be selected as an effective spectral-moment energy model; finite traces are well-defined once D is supplied. The standard spectral-action expansion on a product geometry does not by itself establish this precise identification with the physical cosmological constant or a canonical cutoff moment. One must calculate the coefficients with dimensional conventions, include all specified fields/counterterms and independently fix the spectral/normalization data. Universal uniqueness from primitive rigidity is withdrawn [✗]; the assumed vacuum-energy equality defining f₀ is additional input, not a derived cancellation.
 
-#### Numerical computation [C] {#числовое-вычисление-лямбда}
+#### Inputs and withdrawn compensation {#числовое-вычисление-лямбда}
 
-1. **Bosonic sector:** $\mathrm{Tr}(1) = 7$ (dimension of $H_{\text{int}} = \mathbb{C}^7$).
-
-2. **Fermionic sector:** From $\mathcal{N}=1$ SUSY ($G_2$-holonomy) the algebra $\mathfrak{g}_2$ carries $\dim \mathfrak{g}_2 = 14$ gaugino modes. Gravitinos (spin $3/2$, 4 modes) live on $M^4$ and do not enter $\mathrm{Tr}_{\text{int}}(1)$. The leading vacuum term is controlled by the **sector-product suppression** of [T-219](/docs/proofs/categorical/fundamental-closures#t-219), **not** by an exact bose–fermi trace cancellation (see the retraction of Theorem 4.4 below).
+For the **chosen** carrier $H_{\rm int}=\mathbb C^7$, $\operatorname{Tr}I=7$ [T]. The adjoint of $G_2$ has dimension fourteen, but the number of physical fermions and their vacuum contributions need a specified field model [H]. These two representation dimensions do not supply a supersymmetric spectral triple or cancellation.
 
 #### Theorem 4.4 (Exact $G_2$-SUSY compensation) — **[✗] RETRACTED** {#теорема-susy-компенсация}
 
@@ -563,51 +549,23 @@ The previous claim $\mathrm{Tr}_{\text{int}}(\gamma_{\text{int}}) = 7_{\text{bos
 **Status:** **[✗] retracted**; superseded by T-219, itself [H] since 2026-09-25 (structural $\varepsilon^{12}$), + the honest [H] for exact compensation.
 :::
 
-**Results used:**
-- T-42a [T] ($G_2$-rigidity, 7-dimensional representation $\mathbf{7}_{G_2}$);
-- T-53 [T] (sector decomposition $1 \oplus 3 \oplus \bar{3}$, $H_{\text{int}} = \mathbb{C}^7$);
-- T-83 (its inputs "Barrett" and "KO-dim 6" are retracted — registry row T-83);
-- Connes' classification theorem for finite spectral triples (Connes 1994);
-- Cartan's theorem on simple Lie groups ($\mathbf{7}_{G_2}$ — the unique 7-dimensional representation).
+**Data in the retracted compensation argument.** A chosen positive octonion form supplies its seven-dimensional fundamental representation [D/T], not universal primitive T-42a rigidity (withdrawn [✗]) or physical supersymmetry. Its adjoint remains irreducible. The given odd-dimensional grading obstruction is algebraic and needs no inverse-encoder theorem. A physical spectral triple, fermionic carrier, grading/real structure and energy normalization are additional data; they cannot be inferred from the native E row or fixed Fano names. A consistent supersymmetric cancellation must be proved on that supplied carrier. The sector-product law remains a hypothesis, not exact trace compensation.
 
-**Consistency check:**
-- Dependencies T-42a, T-53, T-83 — an earlier version called them all [T]; T-83 is stratified and its KO-dimension input is retracted;
-- $\mathbb{Z}_2$-grading $\gamma_{\text{int}}$ — the earlier "standard for KO-dim 6 (Connes-Dungen)" is retracted: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка));
-- Consistent with the spectral formula Theorem 4.3 [T];
-- Consistent with the $\varepsilon^{12}$-estimate of residual $\Lambda$ under SUSY breaking.
+The ansatz $m_{3/2}\sim\varepsilon^3M_P$ would imply $m_{3/2}^4\sim\varepsilon^{12}M_P^4$ by arithmetic [T at that hypothesis]; it does not derive either mass relation or a vacuum cancellation. A zero of a chosen zeta function is likewise a mathematical fact about that function; identifying its residue or derivative with four-dimensional vacuum energy is an additional physical bridge [H]. Vanishing positive-degree cohomology does not set degree-zero energy to zero.
 
-3. **SUSY breaking** at $m_{3/2} \sim \varepsilon^3 M_P$:
+A theorem about minima of a supplied potential gives those minima conditional on its coefficients. It does not fix the coefficients, a path-integral measure, SUSY content, matching scale or conversion from minimum values to a measured cosmological constant. The old claim that the only remaining task was a numerical integral on $(S^1)^{21}/G_2$ is withdrawn [✗]; that fixed-phase quotient is not defined by general $G_2$ conjugation.
 
-$$
-\Lambda_{\text{CC}} \sim f_0 \cdot m_{3/2}^4 \sim \varepsilon^{12} \cdot M_P^4 \sim 10^{-24} \, M_P^4
-$$
+#### Provenance requirements for the Λ-budget [Pr/H] {#структурное-замыкание-лямбда}
 
-4. **Sector structure:** $Z_\Phi(-2) = 0$ [T] cancels the winding contribution; physical $\Lambda$ is determined by the residue from $Z'_\Phi(-2)$.
+A predictive calculation must specify, before fitting the target:
 
-5. **RG suppression of $\lambda_3$:** factor $\sim 10^{-7.26}$ squared → $10^{-14.52}$.
+1. The actual state/field space, spectral triple, microscopic action and valid symmetry action.
+2. Couplings, spectral cutoff/moments, renormalization conditions and probability measure from independent inputs.
+3. The coarse-graining or effective approximation, with controlled errors and a proved relation between dynamical stationary states and potential extrema.
+4. A vacuum-energy observable with physical units and matching to gravity, including fermions and counterterms.
+5. Which measurements are calibration inputs and which are held out predictions, with uncertainties.
 
-6. **Cohomological argument:** gives only the absence of a *topological* $\Lambda$-term [T]; it does **not** cancel the vacuum energy (retracted 2026-09-10 — degree-0 data are untouched by $H^{n>0} = 0$).
-
-7. **Sector minimization**: [global minimization of $V_{\text{Gap}}$](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] refines the sector contribution to $\sim 10^{-40}$ [C].
-
-:::info Status
-SUSY component **[T]** (spectral action, [details](/docs/physics/gravity/quantum-gravity)). Sector component refined via [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]. Remaining gap: exact computation of the sector factor is a **computational** problem (numerical minimization on $(S^1)^{21}$ with $G_2$), not a conceptual one.
-:::
-
-#### Structural closure of the Λ-budget [Т-structural] {#структурное-замыкание-лямбда}
-
-The entire chain is closed: every coefficient is determined via $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) **[C at (SV)]**), $\theta^*$ being a consequence of T-53 and T-66. The uncertainty of $\pm 10$ orders is an artifact of analytic estimates; the exact value is a computational problem on $(S^1)^{21}/G_2$.
-
-Full chain for determining $\Lambda_{\text{CC}}$:
-
-1. **Zeta regularization** [T]: $Z_\Phi(-2) = 0$ — winding contribution cancelled
-2. **$\Lambda > 0$ from autopoiesis** ([T-71](/docs/core/foundations/consequences#теорема-лямбда-положительна) [T]): sign determined structurally
-3. **O-sector dominance** ([](/docs/physics/gravity/cosmological-constant#теорема-лямбда-o-доминирование) [T]): $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$
-4. **Spectral formula** ([](#теорема-спектральная-лямбда) [T]): $\Lambda_{\text{CC}}$ via $\mathrm{Tr}(D_{\text{int}}^n)$
-5. **Canonical $f_0$** ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) [C at (SV)]): parameter determined from UV finiteness
-6. **SUSY compensation** [T]: $\varepsilon^{12}$ from spectral action
-
-No coefficient contains free parameters — all are determined via the fixed point $\theta^*$ of the self-consistent map $\mathcal{F}$ (T-79 [C at (SV)]). Status C18: **structural formula [T]**, numerical precision — computational problem.
+A fixed point of a self-consistency map determines these values only after the map and its supplied parameters are defined and existence/uniqueness are proved. Universal primitive rigidity and the withdrawn T-73/T-74/T-75 cannot close this list. The old “no free coefficients / structural closure” claim is withdrawn [✗].
 
 ---
 
@@ -616,48 +574,48 @@ No coefficient contains free parameters — all are determined via the fixed poi
 | Sector | Suppression | Status |
 |--------|-----------|--------|
 | **Perturbative (6 mechanisms)** | | |
-| $\varepsilon^6$ (smallness of coherences) | $10^{-12}$ | **[T]** |
-| RG suppression $\lambda_3^2$ (IR-irrelevance) | $10^{-14.5}$ | **[T]** |
-| Ward identities (Gap anticorrelation, $19/49$) | $10^{-0.41}$ | **[T]** |
-| Fano code (6 linear constraints) | $10^{-0.9}$ | **[T]** |
-| $\sqrt{N_F}$ (uncorrelated Fano modes) | $10^{-11.9}$ | **[T]** |
-| O-sector isolation $(6/21)^3$ | $10^{-1.7}$ | **[T]** |
-| **Perturbative total** | **$10^{-41.5}$** | **[C]** (at $\varepsilon = 10^{-2}$ [C at (SV)]) |
+| $\varepsilon^6$ (smallness of coherences) | $10^{-12}$ | **[T at supplied model inputs; H physically]** |
+| RG suppression $\lambda_3^2$ (IR-irrelevance) | $10^{-14.5}$ | **[T at supplied model inputs; H physically]** |
+| Ward identities (Gap anticorrelation, $19/49$) | $10^{-0.41}$ | [D/H] — chosen covariance; Ward derivation withdrawn [✗] |
+| Fano code (6 linear constraints) | $10^{-0.9}$ | [✗] universal 1/8 factor; coding/energy bridge unproved |
+| $\sqrt{N_F}$ (uncorrelated Fano modes) | $10^{-11.9}$ | **[T at supplied model inputs; H physically]** |
+| O-sector isolation $(6/21)^3$ | $10^{-1.7}$ | **[T at supplied model inputs; H physically]** |
+| **Perturbative total** | **$10^{-41.5}$** | **[H: scenario, not prediction]** (at $\varepsilon = 10^{-2}$ [C at (SV)]) |
 | **Cohomological + SUSY + spectral** | | |
-| Cohomological argument | no *topological* $\Lambda$-term; **no** cancellation of the vacuum energy (retracted 2026-09-10) | **[T]** narrow / **[✗]** wide |
-| $Z_\Phi(-2) = 0$ (winding) | winding cancellation | **[T]** |
-| SUSY-breaking $\varepsilon^{12}$ | $10^{-24}$ | **[T]** (spectral action, ) |
-| $Z'_\Phi(-2)$ | $\times 10^{10}$ | **[T]** (math.) |
-| RG $\lambda_3^2$ | $10^{-14.5}$ | **[T]** |
-| Sector ([](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)) | $10^{-40}$ | **[C]** (full minimization) |
+| Cohomological argument | no *topological* $\Lambda$-term; **no** cancellation of the vacuum energy (retracted 2026-09-10) | **[T at supplied model inputs; H physically]** narrow / **[✗]** wide |
+| $Z_\Phi(-2) = 0$ (winding) | winding cancellation | **[T at supplied model inputs; H physically]** |
+| SUSY-breaking $\varepsilon^{12}$ | $10^{-24}$ | [H] — mass/energy identification required |
+| $Z'_\Phi(-2)$ | $\times 10^{10}$ | **[T at supplied model inputs; H physically]** (math.) |
+| RG $\lambda_3^2$ | $10^{-14.5}$ | **[T at supplied model inputs; H physically]** |
+| Sector ([](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)) | $10^{-40}$ | **[H: scenario, not prediction]** (full minimization) |
 | **Non-perturbative** | | |
 | Instanton ($e^{-150}$) | $10^{-65.5}$ (additive) | [T] |
 | Gaussian sum | — (does not work at $S_0 = 20$) | **[D]** |
 | Modular hypothesis | — (irrelevant at $S_0 = 20$) | **[D]** |
 | Zeta $Z_\Phi(-k) = 0$ | Structural cancellation; requires QFT interpretation | [T] math., [Г*] phys. |
 | **Total (conservative)** | **41.5 of 120** | |
-| **Total (with cohomological + SUSY + sector)** | **$\sim 10^{-120 \pm 10}$** | **[C]** |
+| **Total (with cohomological + SUSY + sector)** | **$\sim 10^{-120 \pm 10}$** | **[H: scenario, not prediction]** |
 
 :::warning Warning about double counting
 The RG suppression $\lambda_3^2 = 10^{-14.5}$ is already included in the perturbative total (41.5 orders). Its separate listing in the spectral section is for illustration of the mechanism, not for summation. **Do not add again.** Similarly, SUSY $\varepsilon^{12}$ and perturbative $\varepsilon^6$ describe **overlapping** mechanisms ($m_{3/2} \propto \varepsilon^3$): SUSY $\varepsilon^{12}$ **absorbs** $\varepsilon^6$, rather than being added to it.
 :::
 
-:::info Summary
-Correct perturbative budget: **$10^{-41.5}$**. Taking into account the spectral formula [T], cohomological cancellation [T], and sector minimization [C] — estimated budget: **$\sim 10^{-120 \pm 10}$** [C].
+:::info Scenario status
+The listed numbers are conditional scenario factors. Since the coding-energy factor, Ward coefficient and physical spectral/sector bridges are unproved, neither $10^{-41.5}$ nor $10^{-120\pm10}$ is a prediction or a completed suppression theorem.
 :::
 
 ---
 
 ## 6. Closure Program {#программа}
 
-Structural closure has been achieved: the [spectral formula](#теорема-спектральная-лямбда) [T] establishes SUSY compensation to $\varepsilon^{12}$ rigorously, [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] refines the sector contribution. All coefficients are determined via the fixed point $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) [C at (SV)]). Estimated budget $\sim 10^{-120 \pm 10}$ [C]. The remaining gap is a **computational** problem, not a conceptual one: exact computation of the sector factor requires numerical minimization on $(S^1)^{21}$ with $G_2$-symmetry.
+The quantitative program remains [Pr/H]: supplied spectral data, state-space dynamics, covariance measure, couplings and vacuum-energy identification must be fixed and validated before a numerical total is a prediction. Existing conditional minimization results do not eliminate these inputs.
 
 :::info Closure program [Pr]
 To close the 79-order deficit, the following directions are considered:
 
 1. **Full functional integral** (bosons + fermions + SUSY) in winding sectors. Compensation between bosonic and fermionic modes may substantially change the residual contribution.
 
-2. **Lattice computation** of the partition function on $(S^1)^{21}$ with $G_2$-symmetry. Quantitative estimation of destructive interference of winding sectors requires non-perturbative computations.
+2. **Lattice computation** of the partition function on a specified positivity-compatible state space with an actual symmetry action. Quantitative estimation of destructive interference of winding sectors requires non-perturbative computations.
 
 3. **Physical interpretation** of $Z'_\Phi(-2) \approx 2.6 \times 10^{10}$. Determine which zeta function controls the 4D vacuum energy, and compute the full winding contribution in the zeta formalism.
 

@@ -6,587 +6,187 @@ description: Verification criteria and predictions of UHM theory
 
 # Falsifiability and Predictions
 
-:::note On notation
-In this document:
-- $\rho$, $\rho_E$ — [density matrix](/docs/core/dynamics/coherence-matrix), reduced density matrix of the Interiority dimension
-- $\Gamma_{-E}$ — [context](/docs/reference/specification#полное-экспериенциальное-пространство) (states of all dimensions except $E$)
-- $\lambda_i$ — eigenvalues of $\Gamma$ (intensities)
-- L0, L1, L2 — [interiority hierarchy levels](/docs/proofs/consciousness/interiority-hierarchy)
-- $d_{\mathrm{FS}}$ — [Fubini-Study metric](/docs/reference/specification#метрика-фубини-штуди)
-- $R_{\text{th}}$, $\Phi_{\text{th}}$ — [threshold values](/docs/proofs/consciousness/interiority-hierarchy#обоснование-порогов)
-:::
+An empirical claim consists of a specified model, a calibrated observation law, a declared population/intervention domain and an outcome prediction. Matrix identities and simulation checks test mathematical or implementation consistency; they do not independently validate a phenomenal or physical identification. Use the [status registry](/docs/reference/status-registry) and [premise register](/docs/reference/premises) to keep these dependencies explicit.
 
 ## Falsification Criteria
 
-:::tip Frontier ledger
-Head-to-head predictions against competing theories at every live experimental frontier — [Frontier Ledger](/docs/reference/frontier-ledger).
-:::
-
+Compare models on held-out data after freezing encoders, calibration, frame, outcomes, thresholds, noise law and stopping rules. Report confidence intervals, effect sizes, power and multiplicity control. Calibration data are not confirmatory data. A fit to previously observed physical constants is not a new prediction.
 
 ### Experimental Predictions
 
-The extended theory makes testable predictions:
+The following are research hypotheses [H] conditional on identifiable state/readout models. The numerical tolerances are protocol choices [D], not universal constants.
 
 #### 1. Isospectral discrimination {#isospectral-discrimination}
 
-Two states $\rho_1$, $\rho_2$ with $\mathrm{Spec}(\rho_1) = \mathrm{Spec}(\rho_2)$ but $\mathrm{Eigvec}(\rho_1) \neq \mathrm{Eigvec}(\rho_2)$ should yield:
-- Identical experience intensity (spectrum determines intensity)
-- Distinguishable experience quality (eigenvectors determine [quality](/docs/proofs/categorical/categorical-formalism#2-категория-exp))
-
-**Numerical criteria:**
-- Spectra 'identical': $\|\mathrm{Spec}(\rho_1) - \mathrm{Spec}(\rho_2)\|_2 < \varepsilon_{\text{spec}} = 0.01$
-- Vectors 'distinguishable': $\min_i |\langle v_i^{(1)} | v_i^{(2)} \rangle| < 1 - \varepsilon_{\text{vec}}$, where $\varepsilon_{\text{vec}} = 0.1$
-- Quality 'distinguishable': $d_{\text{FS}}([|q_1\rangle], [|q_2\rangle]) > \varepsilon_{\text{qual}} = 0.05$ rad
-
-**Test:** Create isospectral neural states, measure phenomenal reports.
+Test whether specified states with equivalent spectra but different **identified** eigenspaces produce a preregistered report difference while the predicted intensity remains equivalent. Spectral projectors, rather than arbitrary eigenvectors, are required at degeneracy. Comparing vectors requires a fixed frame and allowed residual symmetry. Establish the spectral equivalence margin and power before looking at outcomes. Spectrum/frame dependence of phenomenal quality is [H/I]; unitary invariance of the spectrum is [T]. An isospectral numerical pair alone supports only the latter.
 
 #### 2. Contextual modulation {#contextual-modulation}
 
-Changing [context](/docs/reference/specification#полное-экспериенциальное-пространство) $\Gamma_{-E}$ with fixed $\rho_E$ should alter the *quality* of experience without changing *intensity*.
-
-**Numerical criteria:**
-- $\rho_E$ 'fixed': $\|\rho_E^{(1)} - \rho_E^{(2)}\|_F < \varepsilon_{\rho} = 0.02$
-- Context 'changed': $\|\Gamma_{-E}^{(1)} - \Gamma_{-E}^{(2)}\|_F > \delta_{\Gamma} = 0.1$
-- Intensity 'constant': $|\mathrm{Tr}((\rho_E^{(1)})^2) - \mathrm{Tr}((\rho_E^{(2)})^2)| < \varepsilon_P = 0.05$
-- Quality 'changed': phenomenal report distinguishable with $p < 0.01$ (statistical test)
-
-**Test:** Modulate context (attention, mood) at constant stimulus, measure changes in perceptual quality.
+Choose a context encoding and experiential readout, then test interventions predicted to preserve the readout's intensity and alter reported quality. Holding the stimulus fixed does not establish that $\rho_E$ is fixed. In $\mathbb C^7$ the named $E$ axis is a summand, not a tensor subsystem; “discarding $E$” is not automatically a partial trace. A block restriction or a lift to a tensor product must be defined and calibrated. Declare confounders and equivalence margins; an attention effect alone does not confirm this matrix model.
 
 #### 3. Adaptation dynamics {#adaptation-dynamics}
 
-[Experiential content](/docs/proofs/categorical/categorical-formalism#2-категория-exp) (levels [L1–L2](/docs/proofs/consciousness/interiority-hierarchy)) should follow the adaptation law:
+A candidate response model is
 
 $$
-\mathcal{Q}(t) \sim \log\left(\frac{\lambda_{\max}(t)}{\langle\lambda_{\max}\rangle_\tau}\right)
+\mathcal Q(t)=b_0+b_1\log\frac{\lambda_{\max}(t)}{\langle\lambda_{\max}\rangle_\tau}+\epsilon(t).
 $$
 
-where:
-- $\mathcal{Q}(t)$ — subjective experience intensity at time $t$
-- $\lambda_{\max}(t)$ — maximum eigenvalue of $\Gamma(t)$
-- $\langle\lambda_{\max}\rangle_\tau$ — average over adaptation period $\tau$
-
-:::info Interpretation
-This prediction follows from the fact that perception encodes *changes* relative to baseline (Weber-Fechner law), not absolute values.
-:::
-
-**Numerical criteria:**
-- Correlation $r(\mathcal{Q}_{\text{measured}}, \mathcal{Q}_{\text{predicted}}) > r_{\min} = 0.7$
-- Regression slope $\beta \in [0.8, 1.2]$ (close to 1)
-- RMSE $< \sigma_{\mathcal{Q}} / 2$ (error less than half the standard deviation)
-- Adaptation period $\tau \in [100, 1000]$ ms (typical range)
-
-**Test:** Measure the temporal dynamics of adaptation, compare with prediction.
+The readout, baseline window $\tau$, response units, coefficients and noise are chosen or calibrated on training data [D/H]. Compare held-out likelihood and error with competing adaptation models, including conventional signal-based predictors. Similarity to a logarithmic psychophysical law does not derive this law from matrix axioms. Preregister an effect/error interval and analyse dependent observations at their appropriate subject/session level.
 
 #### 4. Metric relations {#metric-relations}
 
-Distances in phenomenal space ([L1](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry)) should correspond to the [Fubini-Study metric](/docs/reference/specification#метрика-фубини-штуди):
+A selected quality readout predicts $d_{\mathrm{perceived}}$ from $d_{\mathrm{FS}}([q_1],[q_2])=\arccos|\langle q_1,q_2\rangle|$ [H]. The rays and correspondence with reports must be identified independently. Fit scales and maps on training data, test similarity structure on new observations and compare alternative geometries.
 
-$$
-d_{\mathrm{perceived}}(q_1, q_2) \sim d_{\mathrm{FS}}([|q_1\rangle], [|q_2\rangle])
-$$
-
-where $[|q\rangle] \in \mathbb{P}(\mathcal{H}_E)$ — equivalence class in [projective space](/docs/reference/specification#проективное-пространство-качеств).
-
-**Numerical criteria:**
-- Spearman correlation $\rho_S(d_{\text{perceived}}, d_{\text{FS}}) > 0.6$
-- Monotonicity: violations $< 10\%$ of the total number of pairs
-- Metric consistency: $|d(a,b) + d(b,c) - d(a,c)| < \varepsilon_{\triangle} = 0.15$ (triangle inequality)
-- MDS reconstruction: stress $< 0.1$ when mapping to $\mathbb{R}^k$
-
-**Test:** Build a phenomenal quality map (L1), compare with predicted geometry.
+The metric requirement is $d(a,c)\le d(a,b)+d(b,c)$, with a declared measurement-error allowance. The former criterion $|d(a,b)+d(b,c)-d(a,c)|<\varepsilon$ incorrectly demanded near equality for every triangle; ordinary nondegenerate metric triangles need not satisfy it. Metricity itself does not pick a unique phenomenal geometry.
 
 ## Refutation Criterion {#refutation-criterion}
 
-The theory is falsified if:
+The ideal claim “equal complete physical/model state gives equal predicted experience” is supervenience [I/H], distinct from a specified empirical response function. Exact spectrum plus spectral projectors determines $\Gamma$, but a finite dataset does not establish exact equality. If history or context enters the prediction, those inputs cannot be dropped from a test of it.
 
-$$
-\exists \rho_1, \rho_2 : \mathcal{I}(\rho_1) = \mathcal{I}(\rho_2), \text{ but } F(\rho_1) \neq F(\rho_2)
-$$
+For a concrete response law $F_\theta$ and observation model $O_\theta$, form calibrated compatible state sets $\mathsf C(y)$. A report contrast can contradict the **joint** model only when its uncertainty interval is disjoint from the range predicted over every admissible pair of states and calibration parameters. A broad observation fiber may leave the predicted contrast undetermined. The [fiber theorem](/docs/applied/research/reconstruction-identifiability#fiber-theorem) gives the exact identification criterion.
 
-where:
-- $\mathcal{I}(\rho) := (\mathrm{Spec}(\rho), \mathrm{Eigvec}(\rho), \Gamma_{-E}, \mathrm{Hist})$ — full invariant
-- $F: \mathbf{DensityMat} \to \mathbf{Exp}$ — [experience functor](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах)
+Covariance of $\mathcal D(\mathbb C^7)$ does not make an encoder unique. A transformation is an allowed gauge only if the observation law, calibration and functional labels leave it unresolved; a group orbit need not exhaust a fiber. Signed complex phases and triangle holonomies cannot be recovered from diagonal entries and coherence magnitudes or unsigned Gap alone. See [phase counterexamples](/docs/applied/research/reconstruction-identifiability#phase-counterexamples).
 
-That is, if two states with *identical* full invariants (spectrum + eigenvectors + context + history) yield *distinguishable* experience.
-
-:::info Gauge precision [T]
-The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) [T] refines the notion of 'identity': two states $\rho_1, \rho_2$ are considered **physically identical** if $\rho_2 = U\rho_1 U^\dagger$ for some $U$ in the finite octonionic frame group $\Gamma_{\!\text{oct}} \subset G_2$ — a relabelling of the functional axes ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). The full invariant $\mathcal{I}(\rho)$ is therefore defined on $\mathcal{D}(\mathbb{C}^7)/\Gamma_{\!\text{oct}}$ (48 parameters); its $G_2$-orbit part (34 parameters: spectrum and $\varphi_3$-relative angles) is invariant even before the frame is pinned. The eigenvectors in the table below are taken in the pinned functional frame; under a relabelling $v_i \to Uv_i$ the inner products $|\langle v_i^{(1)} | v_i^{(2)} \rangle|$ are unchanged.
-:::
-
-**Operational tolerances:**
-
-| Invariant component | 'Identity' criterion |
-|---------------------|------------------------|
-| Spectrum | $\|\mathrm{Spec}(\rho_1) - \mathrm{Spec}(\rho_2)\|_2 < 0.01$ |
-| Eigenvectors | $\forall i: \lvert\langle v_i^{(1)} \vert v_i^{(2)} \rangle\rvert > 0.99$ |
-| Context | $\|\Gamma_{-E}^{(1)} - \Gamma_{-E}^{(2)}\|_F < 0.02$ |
-| History | $d_{\text{edit}}(\mathrm{Hist}_1, \mathrm{Hist}_2) < 0.05 \cdot \lvert\mathrm{Hist}\rvert$ |
-
-| Interiority | 'Distinguishability' criterion |
-|------|------------------------|
-| Phenomenal report | Statistically distinguishable ($p < 0.01$, Wilcoxon test) |
-| Behavioural marker | AUC > 0.7 in discrimination task |
-
-:::note Practical criterion
-For experimental verification it is sufficient to compare the spectrum and eigenvectors (without history): if $\mathrm{spec}(\rho_1) = \mathrm{spec}(\rho_2)$ and $|q_i^{(1)}\rangle = |q_i^{(2)}\rangle$, but $\mathcal{F}(\rho_1) \neq \mathcal{F}(\rho_2)$, the theory is falsified.
-:::
-
-:::warning What this criterion is — and what it is not
-Spectrum and eigenvectors determine $\rho$, and $\Gamma_{-E}$ together with $\mathrm{Hist}$ complete the state. The criterion above therefore says that experience is a *function* of the full state $(\Gamma, \mathrm{Hist})$ — a **supervenience** claim. It is falsifiable only jointly with a fixed reconstruction protocol $\pi_{\mathrm{bio}}$ (frame pinned by the [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), gauge-fixing choices published per R8), and by itself it does not predict *which* experience a state carries. The theory's contentful falsifiers are the numerical ones: $P(\Gamma_{\mathrm{wake}}) > 2/7 > P(\Gamma_{\mathrm{NREM3}})$ and the monotone $\Phi$–PCI relation (P8.3) in the [measurement protocol](/docs/applied/research/measurement-protocol), the No-Zombie simulation criterion S1–S3 in [CC Theorems](/docs/applied/coherence-cybernetics/theorems#протокол-симуляции-no-zombie), and the physics rows of the [frontier ledger](/docs/reference/frontier-ledger). Where these numerical falsifiers stand against the substitution argument of Kleiner & Hoel is a [theorem of the measurement protocol](/docs/applied/research/measurement-protocol#substitution-position): calibration on report-labelled sessions is on the strict-dependence horn, a test with parameters frozen in advance is on the independence horn, and a lenient dependency exists at best inside a declared domain [H]. Until 2026-09-25 the reference estimator of $\pi_{\mathrm{bio}}$ contained a viability penalty that reconstructed every sub-threshold state of the uniform family at $P = 2/7$ exactly, so $P(\Gamma_{\mathrm{NREM3}}) < 2/7$ could not be observed; the penalty is removed (SUB-2).
-:::
-
-:::info Note on operationalisation
-The full invariant $\mathcal{I}(\rho) = (\mathrm{Spec}, \mathrm{Eigvec}, \Gamma_{-E}, \mathrm{Hist})$ is a **theoretical ideal**. Operational realisation:
-- **Spec(ρ):** measurable via quantum state tomography
-- **Eigvec(ρ):** measurable via full tomography (neural correlates)
-- **Γ_{-E}:** approximately measurable via partial trace — discarding the E-component
-- **Hist:** approximated via time correlators $\langle O(\tau)O(0) \rangle$ (two-point functions, accessible via fMRI/EEG)
-
-The falsification criterion is **strict in the theoretical sense** and **approximate in the experimental sense**. This is the standard situation for theories with directly unobservable objects (cf. the wave function in QM).
-:::
-
-**See also:** [КК falsification criteria](/docs/applied/coherence-cybernetics/predictions#критерий-фальсификации-кк) — additional operational criteria for the applied theory.
+For a full-rank linear calibrated observation frame, there are 48 independent real state parameters. Informational completeness identifies the state in the noiseless model; finite-sample uncertainty and conditioning remain. fMRI/EEG features are not automatically quantum tomography, and a two-point correlator is not a complete record of arbitrary history.
 
 ## Current Empirical Status
 
-| Prediction | Status | Comment |
-|--------------|--------|-------------|
-| Isospectral discrimination | Open | Requires neurophenomenological experiments |
-| Contextual modulation | Partially confirmed | Consistent with attention influence data |
-| Adaptation dynamics | Consistent | Consistent with Weber-Fechner law |
-| Metric relations | Open | Requires phenomenal space mapping ([L1](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry)) |
-| Functional purity | Programme | $P > P_{\text{crit}}$ for $\geq 90\%$ of functioning systems |
-| P-quality correlation | Programme | Correlation of $P$ with functional quality: $r > 0.5$ |
-| [F-m_t](#f-m_t-масса-top-кварка-из-неподвижной-точки-пендлтона-росса): $m_t \approx 173$ GeV | Consistent | Observation: $172.57 \pm 0.29$ GeV |
-| [F-Cabibbo](#f-cabibbo-угол-кабиббо-из-rg-подавления-фано-угла): $\theta_{12} \approx 13°$ | Withdrawn (T-345(e)) | Observation: $12.96°$ ($\|V_{us}\| = 0.2243$) |
-| [F-δ_CP](#f-δ_cp-cp-фаза-ckm-из-фано-фазы): $\delta_{\text{CP}} \approx 64.5°$ | Withdrawn (T-345(e)) | Observation: $64.6° \pm 2.8°$ (LHCb tree, ICHEP 2024); $65.7° \pm 1.5°$ (PDG 2024 fit) |
-| [F-Gap-1](#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного): Gap_intra < Gap_inter | Open; machine check narrowed the scope | Requires ISF analysis of fMRI. **Machine check:** across 180 construction-layer natal Γ the gauge-invariant triangle holonomy $\lvert\arg(\gamma_{ab}\gamma_{bc}\gamma_{ca})\rvert$ on the 7 canonical oriented Fano lines is statistically indistinguishable from the 28 non-lines (t ≈ +1.0, difference +0.03 ± 0.39 rad) — consistent with the earlier amplitude-covariance null: **the Fano structure is dynamical wiring (what the dissipator preserves), not a static imprint on natal Γ**. The signature should be sought in states that have passed through the Fano channel (live dynamics, fMRI) — not in the construction. Note: the pairwise Gap_intra/Gap_inter form is not literally operational — in the Fano plane every pair lies on exactly one line, so there are no inter-triplet pairs; the testable form is triple holonomy (7 lines vs 28 non-lines). Machine-probed. |
-| [F-ISF](#f-isf-isf-компоненты-в-фмрт): 6–12 ISF components | Open | Requires systematic fMRI analysis |
-| [F-ξ](#f-ξ-корреляционная-длина-фано): $\xi_F \sim 160$ pc | Open | Testable through LSS surveys |
-| [F-nEDM](#f-nedm-нейтронный-эдм): $d_n = 0$ (T-99) | Withdrawn (T-99 corrected, 2026-09-26; was "Consistent") | $\|d_n\| < 1.8 \times 10^{-26}$ e·cm (PSI 2020); UHM predicts no value — $\bar\theta$ is a free parameter |
-| [F-τ_p](#f-τ_p-время-жизни-протона): $\tau_p \sim 6.7 \times 10^{37}$ years | Open | Hyper-K: sensitivity $\sim 10^{35}$ years |
-| [F-Higgs](#f-higgs-отклонение-самосвязи-хиггса): $\delta\lambda/\lambda \sim 10^{-2}$–$10^{-3}$ | Open | Awaiting FCC-hh |
-| [F-Gap-2](#f-gap-2-блоковая-прозрачность-по-фано-триплетам): block transparency | Open | Requires coherence-resolved fMRI; the same caveat as F-Gap-1 — the signature lives in states that have passed through the Fano channel, not in the construction |
-| [F-rank7](#f-rank7-ранг-7-анизотропия-декогеренции): 14 exact sum-rules | Open | Needs Γ-native rate tomography; no experiment has probed the 7-dimensional incidence subspace |
-| [F-Neural](#f-neural-нейронные-корреляты): threshold at $P = 2/7$ | Open | Untested. The testable bridge is a concordance of verdicts with $\mathrm{PCI}^* = 0.31$ on the same sessions (P8.4, SUB-5 of the [measurement protocol](/docs/applied/research/measurement-protocol#substitution-position)); the entry read "Partial — clinical PCI threshold 0.31 maps to $P_{\text{crit}}$" until 2026-09-25, but no such mapping is derived: the two numbers live on unrelated scales |
-| [F-w](#f-w-форма-дрейфа-тёмной-энергии): no Big Rip, $-1$-crossing only | Consistent | DESI DR2 quadrant and phantom→quintessence orientation match at $2.8$–$4.2\sigma$; the reality of the crossing is not yet established non-parametrically |
-| [F-Band](#f-band-две-суммы-живого-состояния): $s_1 \in [1/7,\,3/14]$, $s_2 \in [1/7,\,2/7]$ | Consistent | Zero counterexamples over $20\,000$ states per band, and both bands are attained — an internal falsifier needing no bridge assumption |
+This page specifies a programme and its conditional predictions. It does not certify independent validation of a biological encoder, a phenomenal readout, or a fundamental physical rate law. Evidence must identify the dataset/release, preregistration, calibration and held-out subjects, acquisition coverage, complex phase observability, estimation uncertainty and comparison models. A general resemblance to attention, adaptation or known particle data is preliminary compatibility, not validation of the proposed bridge.
+
+The [measurement protocol](/docs/applied/research/measurement-protocol#substitution-position) retains SUB-1 … SUB-6: wakefulness-only frozen calibration, $\lambda_1=\lambda_2=0$ in confirmatory runs, measured complex phases, outcome-blind verdict rules, a separately benchmarked PCI comparison and predefined low-complexity signatures. ID-A … ID-D add observational identification, conditioning and honest undetermined verdicts. Freezing prevents refitting to test labels; it neither proves physical independence under every substitution nor establishes consciousness in a new domain.
 
 ## Falsifiable predictions from Fano integration
 
-:::info Source
-Predictions are derived from the integration of [Fano geometry](/docs/physics/gauge-symmetry/fano-selection-rules) with [Gap dynamics](/docs/core/dynamics/gap-dynamics), [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics), and [RG flow](/docs/physics/gauge-symmetry/rg-flow). Each prediction is assigned a rigour status in accordance with the [registry](/docs/reference/status-registry).
-:::
+Choose the Fano incidence structure, rate family, coordinate frame and physical observation map before testing. Each Fano pair belongs to exactly one line, and lines overlap; there are no disjoint “within-line” versus “between-line” pair classes. Equal-rate Fano dephasing attenuates every off-diagonal entry by the same factor, so it does not alone generate preferred coherence blocks.
 
 ### F-Gap-1: Intra-triplet Gap below inter-triplet {#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного}
 
-$$
-\langle \mathrm{Gap}_{\mathrm{intra}} \rangle < \langle \mathrm{Gap}_{\mathrm{inter}} \rangle
-$$
-
-The mean [Gap](/docs/physics/dual-aspect/gap-semantics) within [Fano triplets](/docs/physics/gauge-symmetry/fano-selection-rules) is lower than between them. Coherences belonging to the same Fano line are more transparent (closer to $\mathrm{Gap}=0$) than coherences connecting different lines.
-
-**Testability:** ISF components (independent slow features) in fMRI. Intra-triplet correlations should systematically exceed inter-triplet correlations.
-
-**Status:** [H] Hypothesis — consequence of [Gap semantics](/docs/physics/dual-aspect/gap-semantics) and [G₂-covariance](/docs/physics/gauge-symmetry/g2-structure).
-
----
+The old pairwise contrast is ill-defined for the complete Fano plane. A replacement hypothesis [H] can compare signed triangle holonomy $\arg(\gamma_{ab}\gamma_{bc}\gamma_{ca})$ on its seven lines with that on the 28 nonline triples, with amplitude eligibility and circular statistics preregistered. No difference follows from incidence alone; simulation and neural prediction require an explicit dynamics and observation model. Magnitude-only data cannot test the signed version.
 
 ### F-Gap-2: Block transparency by Fano triplets {#f-gap-2-блоковая-прозрачность-по-фано-триплетам}
 
-Coherences within the same [Fano line](/docs/physics/gauge-symmetry/fano-selection-rules) are more strongly correlated, forming a block structure in the coherence matrix $\Gamma$. The Fano dissipator preserves triplet coherences ([T], [G₂-structure](/docs/physics/gauge-symmetry/g2-structure)), generating distinguished block transparency.
-
-**Testability:** Correlation analysis of the coherence matrix — 7 blocks of $3 \times 3$ (by Fano lines) should be statistically separated from off-block elements.
-
-**Status:** [T] Theorem — consequence of theorems 10.1–10.3 (Fano channel preserves coherences, [status registry](/docs/reference/status-registry)).
-
----
+Preferential triplet structure is a dynamics/architecture hypothesis [H], not a consequence of uniform Fano dephasing. Specify unequal rates, selected interactions or a triple observable that could distinguish the hypotheses. Seven overlapping $3\times3$ submatrices are not a partition into blocks. Test an explicitly predicted contrast against matched controls; do not count a simulation implementing that contrast as independent confirmation.
 
 ### F-ξ: Fano correlation length {#f-ξ-корреляционная-длина-фано}
 
-$$
-\xi_F \sim 160 \; \text{pc}
-$$
-
-The correlation length of [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules) in [large-scale structure](/docs/physics/cosmology-phys/dark-matter). The scale is determined by [RG suppression](/docs/physics/gauge-symmetry/rg-flow) of the cubic coupling $\lambda_3$ and the [phase diagram](/docs/core/dynamics/gap-phase-diagram) of the Gap potential.
-
-**Testability:** Large-scale structure of the Universe — correlation function on scales $\sim 100$–$200$ pc. Absence of a preferred scale $\sim 160$ pc falsifies the prediction.
-
-**Status:** [T] Theorem — theorems 9.1–9.2 ([status registry](/docs/reference/status-registry)).
-
----
+The historical $\xi_F\sim160\,\mathrm{pc}$ estimate requires a physical spatial field, gradient stiffness, potential curvature, unit conversion and parameter calibration [H/C]. A matrix potential or incidence diagram alone supplies none of these. A correlation-length test is meaningful only after these inputs yield a fixed interval and a specified observable; absence of a chosen scale without adequate sensitivity is inconclusive. See [dark-matter models](/docs/physics/cosmology-phys/dark-matter).
 
 ### F-τ_p: Proton lifetime {#f-τ_p-время-жизни-протона}
 
-$$
-\tau_p \sim 6.7 \times 10^{37} \; \text{years}
-$$
-
-The proton lifetime, computed from the masses of [$X,Y$-leptoquarks](/docs/physics/particle-physics/proton-decay) via the [Gap hierarchy](/docs/physics/gauge-symmetry/standard-model).
-
-**Testability:** Hyper-Kamiokande experiment (sensitivity up to $\sim 10^{35}$ years). Current Super-K limit: $\tau_p > 2.4 \times 10^{34}$ years. The prediction lies 2–3 orders of magnitude above Hyper-K sensitivity — direct detection of decay at this $\tau_p$ is unlikely, but **detection of decay at $\tau_p < 10^{36}$ years** falsifies the prediction.
-
-:::warning Note on testability
-The prediction $\tau_p \sim 10^{37}$–$10^{38}$ years **exceeds the sensitivity** of Hyper-K ($\sim 10^{35}$ years for $p \to e^+\pi^0$) by 2–3 orders of magnitude. Direct verification is **impossible** in the foreseeable future. Indirect constraints are possible via neutron-antineutron oscillations.
-:::
-
-**Status:** [H] Hypothesis — depends on the precision of the $M_X$ computation ([proton decay](/docs/physics/particle-physics/proton-decay)).
-
----
+The historical $\tau_p\sim6.7\times10^{37}$ year estimate is a particle-model hypothesis [H], requiring actual decay operators, couplings, masses and hadronic matrix elements. Preregister a decay-channel distribution/rate interval from those inputs and compare a documented confidence limit or detection. Non-detection well below the predicted sensitivity does not verify a lifetime. See [proton decay](/docs/physics/particle-physics/proton-decay).
 
 ### F-m_t: Exactly one $O(1)$ Yukawa (top) {#f-m_t-масса-top-кварка-из-неподвижной-точки-пендлтона-росса}
 
-$$
-\text{exactly one } O(1) \text{ Yukawa: } y_t(m_t) \approx 0.94, \quad m_t \approx 173\ \text{GeV}
-$$
-
-The unique Fano–Higgs line $\{A, E, U\}$ admits a tree-level Yukawa coupling [only for the third generation](/docs/physics/particle-physics/higgs-sector#1-единственность-хиггсовой-линии-aeu) — hence **exactly one $O(1)$ Yukawa** in the spectrum **[T]**. The Pendleton–Ross IR quasi-fixed point *overshoots* ($m_t^{\text{FP}} \approx 210$–$230$ GeV); the physical top sits below the attractor, so the numerical $m_t \approx 173$ GeV is a boundary condition, status **[C]** ([Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#3-quasi-ir-fixed-point-и-масса-t-кварка)).
-
-**Testability:** the [T] part is falsified by discovery of a **second** $O(1)$ Yukawa coupling (e.g. a fourth-generation or vector-like quark with $y \sim 1$ coupling to the same Higgs), or by $y_t$ drifting far from $O(1)$. The [C] part is falsified by a significant shift of $m_t^{\text{exp}}$ (current: $172.57 \pm 0.29$ GeV).
-
-**Status:** "exactly one $O(1)$ Yukawa" — **[T]**; numerical $m_t$ — **[C]**. **Current verdict: PASSING** (one and only one $O(1)$ Yukawa observed; $y_t \approx 0.94$).
-
----
+A selected generation/action model may have a tree-level selection rule [T within that model]. The mapping of a Fano line to physical fields and the allowed operators are additional [C/H] inputs. “$O(1)$” must be replaced by a fixed energy-dependent interval to become falsifiable. A top mass near $173\,\mathrm{GeV}$ used as a boundary condition is not an independently predicted mass. A new Yukawa coupling tests the specified particle model, not incidence geometry alone; see [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy).
 
 ### F-ISF: ISF components in fMRI {#f-isf-isf-компоненты-в-фмрт}
 
-$$
-N_{\text{ISF}} \in [6, 12]
-$$
+A count such as 6–12 is an analysis/bridge hypothesis [H]. Gap-entry count, observable rank, statistical components and physical degrees of freedom are different quantities. Specify extraction method, sampling, noise threshold, population and out-of-sample reproducibility. No chosen seven-axis state model forces a universal fMRI component count.
 
-The number of ISF components (independent slow features) in fMRI data is determined by the opacity rank of the [Gap operator](/docs/core/dynamics/gap-dynamics). At full transparency (all $\mathrm{Gap}(i,j) = 0$) the rank is 0 and all 21 coherences are active; at full opacity the rank is maximal (21). For biologically realistic regimes the rank is $\sim 9$–$15$, giving $21 - 15 = 6$ to $21 - 9 = 12$ active independent components.
+### F-Neural: Neural correlates of L-levels {#f-neural-нейронные-корреляты}
 
-**Testability:** ISF component analysis of fMRI data. Systematic detection of $N_{\text{ISF}} < 6$ or $N_{\text{ISF}} > 12$ falsifies the prediction. The dependence of $N_{\text{ISF}}$ on the state of consciousness (wakefulness / sleep / anaesthesia) should correlate with the rank of the Gap operator.
+The matrix implication $\Phi\ge1\Rightarrow P\ge2/7$ is [T], with a one-way direction. The full Cap₂ gate is a definition [D] plus an empirical/ontological bridge [H/I]; a physical transition at its threshold is not automatic. Sharpness, continuity, scaling and connectivity monotonicity depend on the dynamics and measurement model.
 
-**Status:** [H] Hypothesis — consequence of [Gap dynamics](/docs/core/dynamics/gap-dynamics) and the [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy).
-
----
-
-### F-Neural: Neural correlates of L-levels [C with bridge assumption] {#f-neural-нейронные-корреляты}
-
-The form of scaling relations (threshold at $P = 2/7$, monotonic dependence of $\Phi$ on connectivity) is derived [C with bridge assumption]. Numerical coefficients are empirical. Experimental protocol: fMRI/EEG during anaesthesia$\leftrightarrow$wakefulness transitions to verify the threshold.
-
-**Testability:** Measurement of the $\Phi$ jump under pharmacological control of anaesthesia depth (sevoflurane, propofol). Prediction: existence of a sharp transition $P \approx 2/7$, not gradual sliding. The $\Phi(\text{connectivity})$ dependence is monotonic.
-
-**Status:** [C with bridge assumption] — the scaling form is derived from theory; numerical coefficients require empirical calibration.
-
-**Bridge to PCI (2026-09-25).** On UHM's side the thresholds are tied without data: $\Phi \geq 1 \Rightarrow P \geq 2/7$ (T-129a), and on the uniform diagonal the window $P \in (2/7, 3/7]$ is exactly $\Phi \in (1, 2]$ [T]. No numerical conversion between PCI and $P$ exists; the test is the concordance of $\mathrm{Cons}(\hat\Gamma)$ with $\mathrm{PCI}_{\max} > 0.31$ on the sessions of Casarotto et al. (2016), with the reconstruction frozen on wakefulness alone — the REM and ketamine sessions (consciousness without behaviour) are the out-of-sample cases — and the prediction that low-complexity responses split into two UHM signatures ($\hat\Phi < 1$ for local responses, $\hat P > 3/7$ for stereotyped global ones) [H]. Details: [measurement protocol, Step 5 and the substitution theorem](/docs/applied/research/measurement-protocol#substitution-position).
-
----
+Test a frozen estimator on new sessions using the [experimental protocol](/docs/applied/research/experimental-protocol). PCI and $P$ have different scales; no numerical conversion follows from the thresholds. Concordance with an independently defined PCI benchmark tests classification support. REM and ketamine signatures and the two proposed low-complexity exits remain registered hypotheses; every gate conjunct and any declared stress criterion needs an identifiable readout with uncertainty.
 
 ### F-Higgs: Higgs self-coupling deviation {#f-higgs-отклонение-самосвязи-хиггса}
 
-$$
-\frac{\delta\lambda}{\lambda_{\text{SM}}} \sim O(10^{-2} \text{–} 10^{-3})
-$$
-
-The octonionic correction to the [Higgs sector](/docs/physics/particle-physics/higgs-sector#4-масса-хиггса-с-октонионной-коррекцией) modifies the Higgs self-coupling at the level of $\sim 1\%$–$0.1\%$ relative to the Standard Model prediction.
-
-**Testability:** FCC-hh collider (sensitivity to $\delta\lambda/\lambda_{\text{SM}} \sim$ several percent). If FCC-hh measures $\lambda_{hhh}$ with $\sim 5\%$ precision and detects a deviation of order $1\%$ — that is confirmation. Absence of deviations at precision $\ll 0.1\%$ — falsification.
-
-**Status:** [H] Hypothesis — depends on non-perturbative computations in the [Higgs sector](/docs/physics/particle-physics/higgs-sector).
-
----
+The historical $10^{-2}$–$10^{-3}$ fractional deviation is [H], conditional on a specified physical action and calculation. Provide a fixed uncertainty interval and experimental definition of the coupling. A measurement with an uncertainty wider than the proposed deviation cannot verify that deviation merely because its central value lies near it. See [Higgs sector](/docs/physics/particle-physics/higgs-sector).
 
 ### F-δ_CP: CKM CP-phase from the Fano phase {#f-δ_cp-cp-фаза-ckm-из-фано-фазы}
 
-$$
-\delta_{\text{CP}} \approx 64.5° \pm 5°
-$$
-
-The [CKM matrix](/docs/physics/particle-physics/ckm-matrix#4-фаза-cp-нарушения) CP-phase is derived from the geometric phase of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules). The cleanest tree-level determination — the LHCb combination at ICHEP 2024 — gives $\delta_{\text{CP}}^{\text{exp}} \equiv \gamma = 64.6° \pm 2.8°$; the PDG 2024 global fit gives $65.7° \pm 1.5°$. Against the direct value the predicted $64.5°$ deviates by only $0.1°$ ($\approx 0.04\sigma$); against the fit, by $1.2°$ ($< 1\sigma$). The older "$69° \pm 4°$" figure is superseded.
-
-**Testability:** Refinement of the experimental value at LHCb and Belle II. The prediction is falsified if $\delta_{\text{CP}}^{\text{exp}}$ settles beyond $\sim 2\sigma$ from $64.5°$ (i.e. outside $[54°, 75°]$).
-
-**Status:** [✗] Withdrawn 2026-09-26 ([T-345(e)](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов)); it was [H] with verdict PASSING. The agreement with the data stands, the derivation does not: the value came from a PT-odd cubic $V_3$, and every $G_2$-invariant cubic is PT-even ([T-331](/docs/core/dynamics/gap-thermodynamics#g2-инвариантный-кубик)); the "two-loop correction" of $12.6°$ that brought $77.1°$ down to $64.5°$ is absent in the Standard Model, where $\sin\delta$ changes by $2\times10^{-5}$ between $M_Z$ and $2\times10^{16}$ GeV; the Fritzsch texture it assumed gives $\lvert V_{cb}\rvert\ge0.073$ against $0.0418$. Uncorrected, the Fano phase gives $77.1°$, $7.6\sigma$ from the data. The criterion is kept here as a record, not as a prediction. What the clock register can and cannot supply for flavour is listed in [CKM §11](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов).
-
----
+The numerical phase derivation is withdrawn [✗] (T-345(e)); the old $64.5^\circ$ figure is retained only as a historical model value. Agreement of a withdrawn or adjusted derivation with known data is not evidence for a prediction. A future replacement requires a specified action, physical complex phases and a computation of the chosen CKM invariant; see [CKM](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов).
 
 ### F-Cabibbo: Cabibbo angle from RG suppression of the Fano angle {#f-cabibbo-угол-кабиббо-из-rg-подавления-фано-угла}
 
-$$
-\theta_{12} \approx 13°
-$$
+The old $13^\circ$ derivation is withdrawn [✗] (T-345(e)); its adjusted normalization was not predicted. It is not a live falsifier. See [CKM](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов).
 
-The [Cabibbo angle](/docs/physics/particle-physics/ckm-matrix#3-угол-кабиббо) is derived from [RG suppression](/docs/physics/gauge-symmetry/rg-flow) of the fundamental Fano angle $2\pi/7 \approx 51.4°$. Observed value: $\theta_{12}^{\text{exp}} \approx 13.0°$.
+### F-nEDM: Neutron EDM {#f-nedm-нейтронный-эдм}
 
-**Testability:** Consistent with current data ($|V_{us}| = 0.2243 \pm 0.0005$, corresponding to $\theta_{12} \approx 12.96°$). The prediction is falsified by a significant revision of $|V_{us}|$.
+The claim $\bar\theta=0$ from the axioms is withdrawn [✗] (T-99). Strong-CP parameters and other possible CP-odd operators remain physical inputs. Geometry alone predicts no universal neutron EDM, including an exactly zero total EDM. A specified action may yield a conditional prediction; see [QCD](/docs/physics/gauge-symmetry/confinement).
 
-**Status:** [✗] Withdrawn 2026-09-26 ([T-345(e)](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов)); it was [H] with verdict PASSING. The suppression factor $0.0097\times C_{\mathrm{norm}}$ used $C_{\mathrm{norm}}\approx26$ fitted to $\theta_C$, so the agreement is the fit; the cubic whose running supplied $0.0097$ is retracted (T-331); and mixing angles do not run appreciably in the Standard Model ($\lvert V_{us}\rvert$ changes by $2\times10^{-5}$ from $M_Z$ to $2\times10^{16}$ GeV). The Fano ratios $2:3:1$ also contradict the observed $60.8:11.2:1$. The criterion is kept here as a record, not as a prediction.
+### F-w: Dark-energy drift shape {#f-w-форма-дрейфа-тёмной-энергии}
 
-:::note The Cabibbo Angle Anomaly — a UHM hypothesis about the resolution channel (T-265, [H])
-Independently of the central value, first-row CKM unitarity currently shows a $\sim 3.2\sigma$ deficit: $|V_{ud}|^2 + |V_{us}|^2 + |V_{ub}|^2 = 0.9985(5)$ (the "Cabibbo Angle Anomaly", 2024–2026 lattice + $\beta$/kaon determinations). UHM's fixed spectrum was read as a **falsifiable prediction** ([T-265, CKM §10](/docs/physics/particle-physics/ckm-matrix#thm-10-1-t-265)): the fundamental CKM is exactly $3\times3$ unitary, so the deficit **cannot** be a mixing-matrix effect. Since 2026-09-25 T-265 is a hypothesis [H], because its exclusions have different standing: a fourth generation is excluded [C] at the identification of the three $\mathrm{QR}(7)$ classes with the physical generations (row 43c; the count $N_{\text{gen}} = 3$ itself is [T]); vector-like quarks [H] — the chirality ground is retracted, since $i\Gamma_O\Gamma_A\Gamma_S\Gamma_D$ has eigenvalues $\pm i$ and all $G_2$ representations are real; leptoquarks and extra bosons [H] — the "exactly Standard-Model gauge content" rests on (FE), [C at (FE)], and on T-297, [H]; MeV sterile neutrinos [C]. Read as a hypothesis, UHM expects the anomaly to resolve in the **SM extraction sector** ($\gamma W$-box / nuclear radiative corrections, lattice $K/\pi$ form factors, the $K$–$\pi$ $V_{us}$ tension), **not** via new states — and is **falsified** if the CAA is shown to require any such new state. The **magnitude** of the $\sim 0.15\%$ deficit is SM hadronic/nuclear physics and remains genuinely open [D]; the resolution-**channel** exclusion is [H] (it was labelled "[T-structural]+[C]" until 2026-09-25).
-:::
-
----
-
-### F-nEDM: Neutron EDM ($\theta_{\mathrm{QCD}} = 0$ exactly) {#f-nedm-нейтронный-эдм}
-
-:::warning[Withdrawn 2026-09-26 (T-99 corrected): UHM makes no prediction for $d_n$]
-The derivation of $\theta_{\mathrm{QCD}} = 0$ is retracted [✗]. Its step 4 is false for the cubic $V_3$ itself: on real states $V_2 + V_3 + V_4 \equiv 0$, and for every $\lambda_3 \neq 0$ the vacuum has non-zero phases ($V_{\min} = -0.197\mu^2$ with $\mathcal G_{\text{total}} = 0.0155$ at the page's constants). The corrected $G_2$-invariant potential is PT-even and fixes no $\bar\theta$, and with the fields that (Cl) forces no Peccei–Quinn, Nelson–Barr or left–right route is available ([Confinement §3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала), T-333). $\bar\theta$ is a free parameter, strong CP is open [Pr], and a measured $d_n \neq 0$ would refute nothing in UHM. The agreement with $\lvert d_n\rvert < 1.8\times10^{-26}$ e·cm no longer counts for the theory. The text below is kept as a record.
-:::
-
-$$
-d_n = 0 \quad \text{(exactly)}
-$$
-
-Prediction [T] (T-99): $\theta_{\mathrm{QCD}} = 0$ **exactly** ([structural proof](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd)), not $\theta < 10^{-10}$. Neutron electric dipole moment:
-
-$$
-d_n = \frac{e \cdot m_q}{m_n^2} \cdot \theta_{\mathrm{QCD}} = 0
-$$
-
-Current experimental limit: $|d_n| < 1.8 \times 10^{-26}$ e·cm (PSI 2020), i.e. $d_n = (0.0 \pm 1.1) \times 10^{-26}$ e·cm — consistent with the predicted strict zero. **n2EDM** (PSI) began commissioning data-taking in late 2024 (>50% design UCN flux, systematics verified below $0.5 \times 10^{-26}$ e·cm) and targets $\sim 10^{-27}$ e·cm after ~500 days — the decisive near-term test. nEDM@SNS aims further, at $\sim 10^{-28}$ e·cm.
-
-**Falsification:** Detection of $d_n \neq 0$ at **any** level → direct refutation of T-99.
-
-**Difference from axion solution:** The axion allows $\theta \sim m_a / f_a \cdot T \sim 10^{-18}$ — non-zero, albeit ultra-small. Gap theory predicts a **strict zero**.
-
-**Status:** [✗] Withdrawn 2026-09-26 (T-99 corrected, [Confinement §3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)); it read "[T] Theorem — T-99" with verdict PASSING, and [C at (SV)] from 2026-09-25 in the registry ([status registry](/docs/reference/status-registry), [confinement](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd)). The criterion is kept here as a record, not as a prediction.
-
----
-
-### F-w: Dark-energy drift shape (Λ-drift law) {#f-w-форма-дрейфа-тёмной-энергии}
-
-**Prediction ([T-254](/docs/physics/gravity/cosmological-constant#теорема-лямбда-дрейф) [T] / [T-255](/docs/physics/gravity/cosmological-constant#теорема-трихотомия-ветвей) [Т-structural]+[C]).** The dark-energy equation of state is a state functional, not a dial: $1+w_{\text{eff}} = -\tfrac{2}{3}\,d\ln\mathcal{G}_O/d\ln a$ with the positive floor $\Lambda_\infty = \Lambda_{\text{phys}}(\rho^*) > 0$. Consequences, branch-independent: **no Big Rip** (unbounded phantom excluded), **no vacuum-driven collapse** ($\rho_{\text{DE}} \not\to 0^-$), $w \to -1$ asymptotically. Branch-dependent: the DESI quadrant $(w_0 > -1,\ w_a < 0)$ is reachable **only** through a genuine $-1$-crossing (oscillatory branch); the final crossing runs phantom → quintessence in the orientation fixed by the $V_3$ arrow of inner time [C]; the $\dot G_N$ co-drift must carry the **same sign** as $(1+w)$ with magnitude $\chi(\omega_0/\Lambda)^2(\mathcal{G}_O/7)\tfrac32(1+w)\,H$.
-
-**Falsification criteria:** (i) a confirmed *permanent* $w \neq -1$ (constant non-cosmological-constant EoS across epochs at high significance); (ii) reconstructed $\rho_{\text{DE}}(z)$ growing without bound or crossing zero; (iii) the DESI CPL quadrant confirmed while non-parametric reconstruction *excludes* any $-1$-crossing; (iv) a final crossing in the direction opposite to the $V_3$ arrow (falsifies the [C]-link); (v) a confirmed drift with a $\dot G_N/G_N$ measurement of the *opposite* sign (falsifies the co-drift).
-
-**Experiments:** DESI DR2+, Euclid, Roman ($w(z)$ reconstruction); lunar laser ranging ($\dot G_N$).
-
-**Current verdict (2026):** CONSISTENT — the DESI DR2 preference (March 2025; $2.8$–$4.2\sigma$ for $w_0 > -1,\ w_a < 0$ depending on the supernova sample) lies exactly in the only quadrant UHM reaches via a crossing, and the best-fit CPL trajectory runs phantom (past) → quintessence (today) with a $-1$-crossing near $z \approx 0.5$ — the orientation UHM predicts. No Rip-like or permanent-$w$ signal; the co-drift sign test awaits a confirmed drift.
-
-:::warning Caveat — the crossing itself is not yet established
-The phantom → quintessence crossing is inferred from the two-parameter CPL fit $(w_0, w_a)$, not from a physical model. Non-parametric / model-independent reconstructions of $w(z)$ do **not** yet robustly confirm a genuine $-1$-crossing — the feature is partly a parametrisation artifact, and the literature (2025–2026) treats its reality as unsettled. This matters for the [C]-link: UHM's falsification criterion (iii) — "DESI quadrant confirmed **while** reconstruction *excludes* any crossing" — is **not** triggered (reconstructions neither confirm nor exclude), so the prediction is safe but the key discriminator remains open. The quantitative discriminator to watch is whether the oscillatory (quintom-like) branch survives once reconstructions sharpen.
-:::
+A source equation of state and universe-as-holon mapping are additional cosmological hypotheses [H] (T-266), not outputs of a local matrix Lyapunov law. No universal exclusion of Big Rip, enforced $w=-1$ crossing, or co-drift sign of $G_N$ follows from those matrix equations alone. Specify the stress-energy source, conservation law, calibration, expansion model and permitted parameter class before deriving $w(z)$ or a linked variation of $G_N$. A fit using one expansion parametrization does not establish a unique physical crossing. See [cosmological constant](/docs/physics/gravity/cosmological-constant).
 
 ### F-rank7: Rank-7 decoherence anisotropy {#f-rank7-ранг-7-анизотропия-декогеренции}
 
+For the **specified diagonal Fano-jump family**,
+
 $$
-r_{ij}=\tfrac{1}{6}\!\!\sum_{|\ell_p \cap \{i,j\}| = 1}\!\!\gamma_p
+r_{ij}=\frac16\sum_{|\ell_p\cap\{i,j\}|=1}\gamma_p,
+\qquad r=A\gamma,\quad \gamma\in\mathbb R_{\ge0}^7.
 $$
 
-The twenty-one inter-channel decoherence rates are not free. Each pair $(i,j)$ meets
-exactly one Fano line, and the rate between them is fixed by the seven line rates
-$\gamma_p$ through the incidence pattern alone. Twenty-one numbers determined by
-seven leaves **fourteen exact sum-rules** — a prediction with no adjustable
-parameters, which is why it is the sharpest structural test the theory offers.
+The incidence map $A\in\mathbb R^{21\times7}$ has rank seven, so this model implies 14 linear relations [T under that family] and the stronger feasibility constraint $r\in A\mathbb R_{\ge0}^7$. They do not constrain every possible GKSL generator. A test must identify **temporal decay rates**, distinguish Hamiltonian oscillations, population motion and feedback, and include covariance and acquisition resolution. State magnitudes at one time do not identify rates.
 
-**Testability:** rate tomography in the $\Gamma$ basis, in silico now and through
-PCI-style perturbation protocols later. The test is a projection: fit the measured
-$r_{ij}$ and ask whether the residual off the seven-dimensional incidence subspace
-is statistically distinguishable from zero.
-
-**Falsified by:** a significant residual outside that subspace. Unlike the neural
-predictions this needs no bridge assumption — it is a statement about the
-dissipator, testable wherever the dissipator can be measured.
-
-**Status:** [T]+[C] — the sum-rules are proved (T-262, Prediction 23); the
-identification of a measured rate matrix with $r_{ij}$ is the conditional part.
-
----
+Fit the constrained rate model and compare residuals with their calibrated sampling distribution and alternative dissipators. A residual outside the subspace/cone rejects this calibrated family; its physical application remains [C/H]. The model has seven fitted rates, so the phrase “no adjustable parameters” was incorrect even though its 14 relations contain no additional free rates.
 
 ### F-Band: the two sums of a living state {#f-band-две-суммы-живого-состояния}
 
+Write $d=\sum_i\gamma_{ii}^2$, $q=\sum_{i\ne j}|\gamma_{ij}|^2$. The canonical gate implies $q\ge d\ge1/7$ and $d+q\le3/7$, hence
+
 $$
-\text{alive}\;\Longrightarrow\; s_1 \in \left[\tfrac{1}{7},\,\tfrac{3}{14}\right]
-\quad\text{and}\quad s_2 \in \left[\tfrac{1}{7},\,\tfrac{2}{7}\right]
+\frac17\le d\le\frac3{14},\qquad \frac17<q\le\frac27.
 $$
 
-Every gate is a formula in three sums, of which two are $s_1 = \sum_i d_i^2$, the
-purity of the diagonal, and $s_2 = \sum_{i \neq j}|\gamma_{ij}|^2$, the total weight
-of the binding. Integration needs $s_2 \geq s_1$; reflexivity needs
-$s_1 + s_2 \leq 3/7$; and Cauchy–Schwarz needs $s_1 \geq 1/7$ of every state
-whatsoever. Chaining them confines **both** sums to narrow bands, the second
-exactly twice as wide as the first.
-
-This is the theory's own internal falsifier, and it is unusually cheap to run: it
-needs no bridge assumption, no phenomenal mapping, and no experiment beyond
-computing two sums from a $\Gamma$.
-
-**Falsified by:** any state meeting all four criteria whose $s_1$ or $s_2$ falls
-outside its band — which would mean the four criteria are not what the three sums
-say they are. Or, from the other side, a system that independent measurement calls
-conscious whose reconstructed $\Gamma$ sits outside the bands — which would
-falsify the reconstruction rather than the algebra.
-
-**Testability:** immediate in silico; through $\Gamma$-reconstruction from fMRI or
-EEG once that reconstruction is trusted.
-
-**Status:** [T] — zero counterexamples over twenty thousand states in each band,
-and both bands are attained rather than vacuous: a flat diagonal carrying balanced
-content at half strength lands inside (T-321, T-323).
-
----
+The strict lower bound for $q$ also uses $P>2/7$: $q=1/7$ would force $d=1/7$ and equality at the excluded purity boundary. The weaker inclusive bands T-321/T-323 remain valid. These are exact algebraic checks, not empirical confirmations of life. A counterexample state passing the declared gate would reveal a derivation or implementation error. Data outside a band can reject the **joint** encoder/readout/gate hypothesis only after accounting for observational uncertainty; it cannot falsify a proved matrix identity.
 
 ### Summary table of predictions {#summary-table-of-predictions}
 
-| Code | Prediction | Falsification criterion | Experiment | Status | Current verdict (2026) |
-|-----|-------------|------------------------|-------------|--------|--------|
-| **F-Gap-1** | $\langle\mathrm{Gap}_{\mathrm{intra}}\rangle < \langle\mathrm{Gap}_{\mathrm{inter}}\rangle$ | Systematically $\mathrm{Gap}_{\mathrm{intra}} \geq \mathrm{Gap}_{\mathrm{inter}}$ | fMRI (ISF) | [H] | UNTESTED |
-| **F-Gap-2** | Block transparency by Fano triplets | Absence of block structure in coherences | fMRI | [T] | UNTESTED |
-| **F-rank7** | Rank-7 decoherence anisotropy: the 21 inter-channel rates obey $r_{ij}=\tfrac16\!\sum_{\|\ell_p\cap\{i,j\}\|=1}\gamma_p$ (14 exact sum-rules; Prediction 23, T-262) | A statistically significant residual off the 7-dim Fano incidence subspace | Γ-native rate tomography (in silico) / PCI-style perturbations | [T]+[C] | UNTESTED |
-| **F-ξ** | $\xi_F \sim 160$ pc | Absence of preferred scale $\sim 160$ pc | LSS surveys | [T] | UNTESTED |
-| **F-τ_p** | $\tau_p \sim 6.7 \times 10^{37}$ years | $\tau_p < 10^{36}$ years | Hyper-K | [H] | CONSISTENT (above sensitivity; $\tau_p > 2.4\times10^{34}$) |
-| **F-m_t** | Exactly one $O(1)$ Yukawa [T]; $m_t \approx 173$ GeV [C] | A second $O(1)$ Yukawa; significant $m_t$ shift | Colliders | [T]+[C] | **PASSING** ($y_t \approx 0.94$, unique) |
-| **F-ISF** | 6–12 ISF components | $N_{\text{ISF}} \notin [6, 12]$ | fMRI | [H] | PARTIAL (canonical resting-state decompositions report 7–17 networks) |
-| **F-Neural** | Threshold $P = 2/7$, monotonic $\Phi$(connectivity) | Gradual transition without threshold | fMRI/EEG (anaesthesia) | [C with bridge] | UNTESTED (test: concordance of verdicts with PCI* = 0.31, [SUB-5](/docs/applied/research/measurement-protocol#substitution-position); "PARTIAL — PCI 0.31 maps to $P_{\text{crit}}$" withdrawn 2026-09-25) |
-| **F-Higgs** | $\delta\lambda/\lambda_{\text{SM}} \sim 10^{-2}$–$10^{-3}$ | No deviations at precision $\ll 0.1\%$ | FCC-hh | [H] | UNTESTED (ATLAS+CMS 2025: $-0.71 < \kappa_\lambda < 6.1$ — $\sim O(1)$, far above the predicted band) |
-| **F-δ_CP** | $\delta_{\text{CP}} \approx 64.5° \pm 5°$ | $\delta_{\text{CP}}^{\text{exp}} \notin [54°, 75°]$ | LHCb, Belle II | [✗] | **WITHDRAWN** (derivation retracted, T-345(e); data $64.6° \pm 2.8°$) |
-| **F-Cabibbo** | $\theta_{12} \approx 13°$ | Significant revision of $\|V_{us}\|$ | Kaon experiments | [✗] | **WITHDRAWN** (fitted $C_{\mathrm{norm}}$, T-345(e)) |
-| **F-nEDM** | $d_n = 0$ (T-99: $\theta_{\mathrm{QCD}} = 0$ exactly) | $d_n \neq 0$ at any level | n2EDM, nEDM@SNS | [✗] | **WITHDRAWN** (derivation retracted, T-99 corrected 2026-09-26; $\bar\theta$ free; data $\|d_n\| < 1.8\times10^{-26}\,e\cdot$cm; was [T], PASSING) |
-| **F-w** | No Big Rip; no permanent $w \neq -1$; DESI quadrant only via a $-1$-crossing; $\dot G_N$ co-drift same-sign (T-254/T-255) | Permanent $w \neq -1$; unbounded/negative $\rho_{\text{DE}}$; crossing-free DESI quadrant; opposite co-drift sign | DESI/Euclid/Roman + LLR | [T]+[C] | CONSISTENT (DESI DR2 quadrant + phantom→quintessence orientation match, $2.8$–$4.2\sigma$; crossing reality not yet established non-parametrically) |
-| **F-Band** | $s_1 \in [1/7,\,3/14]$ and $s_2 \in [1/7,\,2/7]$ for anything alive (T-321, T-323) | A state meeting all four criteria with either sum outside its band | Two sums computed from any $\Gamma$ | [T] | **PASSING** (zero counterexamples over $20\,000$ states per band; both bands attained) |
+| Claim | Mathematical content | Empirical/physical status |
+|---|---|---|
+| Isospectral/context/metric/adaptation | Specified response model and state diagnostics | [H], calibrated readout needed |
+| F-Gap-1 / F-Gap-2 | Incidence and selected dissipator; old pair/block implication invalid | [H], defined triple observable needed |
+| F-rank7 | Rank-seven incidence map and nonnegative rate cone for chosen jumps | [C/H], rate identification needed |
+| F-Band | Exact consequence of the stated gate | [T] algebra; biological bridge [H/I] |
+| F-Neural / F-ISF | Selected thresholds/component analysis | [H], frozen calibrated observations needed |
+| F-ξ / F-τ_p / F-m_t / F-Higgs / F-w | Conditional field/action/cosmological models | [H/C], explicit physical inputs needed |
+| F-δ_CP / F-Cabibbo / F-nEDM | Former universal numerical derivations | [✗] withdrawn |
 
-**Where the fourteen stand.** Two **PASSING**, two **CONSISTENT**, two **PARTIAL**, five **UNTESTED**, three **WITHDRAWN** (F-δ_CP and F-Cabibbo, 2026-09-26: the numbers agree with the data, but their derivations are retracted, T-345(e); F-nEDM, 2026-09-26: $\theta_{\mathrm{QCD}} = 0$ is not derived and $\bar\theta$ is a free parameter, T-99 corrected). *Until 2026-09-26 the count read three PASSING and two WITHDRAWN, with F-nEDM among the passing.* Nothing has moved to FAIL: the five untested ones all wait on instruments that do not yet exist at the needed precision (coherence-resolved fMRI, $\Gamma$-native rate tomography, LSS at $\sim 160$ pc, FCC-hh).
-
-**Verdict legend.** **PASSING** — measured value lies inside the pass band; **CONSISTENT** — not excluded, but the prediction lies beyond current sensitivity; **PARTIAL** — indirect or calibration-dependent support; **UNTESTED** — no experiment has probed the band yet; **WITHDRAWN** — the derivation is retracted, so agreement with the data no longer counts for the theory. A single entry moving to FAIL falsifies the corresponding claim at its stated status level ([T]/[C]/[H]).
-
-:::warning Status of predictions
-Predictions marked [T] are based on rigorously proved theorems (see [status registry](/docs/reference/status-registry)). The [octonionic bridge](/docs/proofs/minimality/theorem-octonionic-derivation) is closed with the canonical orientation of the Fano lines: [T] (T15, [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация), registry row 41n; it read "fully closed [T]" until 2026-09-25 without the orientation step, then [C at (Alt)] the same day). Predictions marked [H] require additional computations or contain gaps in the physical arguments.
-:::
+“Passing” numerical checks, compatibility with known data, held-out predictive agreement and independent physical confirmation are different evidence categories. Count them separately; this page does not assign unsupported counts of confirmed predictions.
 
 ## Completeness of Theory
 
-The theory is complete in the following sense:
+The theory is a specified mathematical framework with conditional model results and open empirical bridges. It is not proved universally complete, contradiction-free across every interpretation, self-sufficient in physical inputs, or uniquely applicable to every self-referential system. Successful simulation establishes implementation of its chosen equations. Experience identification, biological survival, spacetime/action mapping and physical rates require additional premises.
 
-1. **Self-sufficiency:** Requires no external postulates or references
-2. **Universality:** Applicable to structural aspects of self-referential systems — from quantum to cognitive
-3. **Internal consistency:** Contains no contradictions
-4. **Operationality:** Can be computationally implemented
-5. **Explanatory power:** Resolves traditional philosophical problems
-6. **Falsifiability:** Makes testable predictions about the structure of experience
-7. **Formal rigour:** Key theorems proved ([7D minimality](/docs/proofs/minimality/theorem-minimality-7), [operator φ](/docs/proofs/categorical/formalization-phi), [functor F](/docs/proofs/categorical/categorical-formalism))
-8. **Compatibility with QM:** the regenerative term keeps the [marginal identity](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) [T] (CPTP property of $\varphi$, conditions [NS1-NS3](/docs/core/dynamics/evolution#запрет-сигнализации)); no-signalling of the full dynamics is [T]: it holds in the non-selective reading, and the axioms force that reading ([Theorem 8.5](/docs/proofs/physics/physics-correspondence#88-прочтение-вынуждено)) — the Lüders-conditioned regeneration, under which the gate $g_V$ would signal, is not a UHM dynamics (this item read [C] until 2026-09-25; an earlier item called no-signalling a consequence of the CPTP structure, which is retracted)
-9. **Ensemble independence:** the evolution map is a function of $\Gamma$ (density matrix), not of its decomposition [D]; the physical reading "two preparations of the same $\Gamma$ evolve identically" is [retracted](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)
-10. **Computational consistency:** the claim that the nonlinearity $\mathcal{R}$ gives no acceleration beyond BQP is [retracted](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение): the ideal regenerative dynamics decides satisfiability in time linear in $n$ (Theorem 8.6 [T]), so "≤ BQP" would imply NP ⊆ BQP; what noise leaves of the speed-up is open [H] (this item called the whole question open [H] until 2026-09-26)
+A nonlinear state-valued ODE need not be a linear CPTP channel on joint systems. No-signalling and ensemble-independence require a defined extension/physical reading; they are not consequences of writing a valid local density-matrix equation. No universal BQP upper bound or physically efficient SAT algorithm follows from the regenerative ansatz. See [computational limits](/docs/reference/computational#вычислительное-ограничение).
 
 ## Vulnerability analysis {#анализ-уязвимостей}
 
-Systematic analysis of five main vulnerabilities of the theory (2026):
-
-| # | Vulnerability | Initial status | Result | New status |
-|---|-----------|----------------|-----------|-------------|
-| 1 | $\dim = 7$ as postulate | Not empirically verified | 15+ independent derivations [T]: Theorem S (minimality) + octonionic derivation + T15 (bridge) | **Closed** (theoretically) |
-| 2 | $D_{\mathrm{diff}} \geq 2$ [C] | Conditional theorem | The derivation "T-129 → T-151: $D_{\min} = 2$ unconditionally" is retracted (counterexample $\Phi \approx 1.03$, $D_{\mathrm{diff}} \approx 1.42$; T-151); $D_{\min} = 2$ is kept as an independent L2 threshold [D], the independence of the four thresholds being T-124b | **Closed as a threshold**, not as a theorem (it read "Closed (fully)" until 2026-09-25) |
-| 3 | $R = 1/(7P)$ counterintuitive | Requires empirical verification | Algebraic identity [T], [physical interpretation](/docs/proofs/consciousness/conscious-window#физическая-интерпретация-r), T-124 [T] (non-emptiness of Goldilocks zone) | **Closed** (theoretically) |
-| 4 | No experiments | 412 registry entries without lab verification | 23 numbered [predictions](/docs/applied/coherence-cybernetics/predictions) and the 14 falsification criteria below; 2 post-hoc coincidences (F-m\_t, Weber-Fechner; F-Cabibbo and F-δ\_CP withdrawn 2026-09-26, T-345(e); F-nEDM withdrawn 2026-09-26, T-99 corrected — it read 3 with F-nEDM) | **Confirmed** (requires experiment) |
-| 5 | Quantum nature of $\Gamma$ | Tegmark decoherence | **[T-267 [T]](/docs/consciousness/foundations/two-aspect-monism#t-267)**: Tegmark bounds microscopic position-basis superpositions; $\Gamma$ is coarse-grained *collective* structure on a decoherence-free subspace (T-153a), complex by *algebra* not superposition (T-132), and classically realizable — the objection targets a claim UHM does not make. Residual = the categorical gap (Axiom Ω⁷), a distinct primitive | **Closed** (Tegmark objection) |
-
-**Summary:** 4 of 5 vulnerabilities closed theoretically (the Tegmark objection to #5 closed by [T-267](/docs/consciousness/foundations/two-aspect-monism#t-267)); 1 is fundamentally experimental. The categorical gap (why structure is *felt*) is not a vulnerability but the acknowledged [Axiom Ω⁷](/docs/core/foundations/axiom-omega) primitive — distinct from the Tegmark decoherence question, which is now settled.
+| Question | Established scope | Outstanding condition |
+|---|---|---|
+| Why seven? | Exact representation/code bounds under named premises | Functional/physical seven-axis bridge; no universal minimum for learning |
+| Differentiation | A declared entropy readout or proxy | Identification of that readout; under $\rho_E=\Gamma$, $R\ge1/3$ already implies $e^S\ge7/3$ |
+| Reflection | Algebraic identity $R=1/(7P)$ for the selected HS definition | Physical meaning and threshold choice [D/H/I] |
+| Experimental support | Preregistered, identifiable predictions can be tested | Independent data and competing models; simulation is not laboratory validation |
+| Quantum realization | T-267 [C]: conditional encoding/protected-sector dynamics can be analyzed | Actual substrate, noise, coupling and sector invariance; no universal decoherence-free subspace |
 
 ## Theory Boundaries {#границы-теории}
 
-:::info Philosophy of boundaries
-Acknowledging boundaries is not a weakness, but a strength of a scientific theory. A theory that claims to explain everything without exception is most likely unscientific.
-:::
+### Structural Boundaries
 
-### Structural Boundaries (what is not proved)
-
-| Question | Status | Comment |
-|--------|--------|-------------|
-| Why 7 dimensions? | [Minimality proved](/docs/proofs/minimality/theorem-minimality-7) | But not uniqueness |
-| Values of constants $\omega_i$, $J_{ij}$, $\gamma_k$ | Empirical (holon-specific) | Not derived from axioms — **except** the cosmological $\omega_0$, pinned to $\sim 10^{-2} M_{\text{Pl}}$ [C] via the $G_2$-extra/neutrino sector ($M_{G_2} = \omega_0\sqrt{\mathcal{G}_O/2} \sim 10^{17}$ GeV; used by [T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной)) |
-| Uniqueness of $\Gamma$ | Not proved | Other 'universes' possible |
-| Uniqueness of partition $\{A,S,D,L,E,O,U\}$ | **Proved [T]** | All 7 dimensions are [functionally unique](/docs/proofs/minimality/theorem-minimality-7#единственность-e) (A,S,D,L,U — algebraically; E,O — via κ₀) |
+Seven labels do not imply seven independent coordinates or a unique partition. Codomain symmetry does not identify an encoder; the observations determine a fiber. Local fixed-metric steepest descent T-263 has no universal learning, cosmological-time or complexity consequence. Values and units of $H$, jumps and regeneration rates require calibration. T-266 remains [H]; no measured cosmological purity or fundamental rate follows from the selected local potential.
 
 ### Physical Boundaries
 
-| Question | Status | Comment |
-|--------|--------|-------------|
-| Einstein equations | **[T]** on the product triple; $M^4$ itself **[T]** as mathematics (reading [I]) | Spectral action (T-65); $M^4$ assembled at T-120 [T] as mathematics (restated T-119, 2026-09-25) |
-| Standard Model | Colour **[T]**; electroweak **[C at (Cl)]** through T-326 (axis construction [C at (FE)], uniqueness there [H]); parameters partially | $SU(3)_C = \mathrm{Stab}_{G_2}(e_O)$ [T]; $G_{\mathrm{SM}}$ as the normaliser of colour in the $\mathrm{Spin}(9)$ of $\mathbb C\otimes\mathbb O$ ([T-326](/docs/physics/gauge-symmetry/standard-model#sm-из-клиффорда); chirality T-327, horizontal families T-328, $B-L$ with the right-handed fields T-329; $Z'$ stratified — none in the doublet sector [C at (Cl)], "at any energy" [H]); $SU(2)_L \times U(1)_Y$ from (FE); the former "$G_2 \to SU(3)_C \times SU(2)_L \times U(1)_Y$ [T]" is retracted ($\mathrm{rank}\,G_2 = 2 < 4$, row T-275); specific masses — partially |
-| Spacetime dimensionality $3+1$ | **[C at (L)], (L) ⟺ (P) — [48e(f)–(i)](/docs/core/foundations/spacetime#теорема-48c)**; the mathematics [T] | [Theorem 48c](/docs/core/foundations/spacetime#теорема-48c): the colour-singlet part of $\mathfrak h_2(\mathbb O)$ is $\mathfrak h_2(\mathbb C_O)$, signature $(1,3)$, rotations $SO(3)$ commuting with colour [T]; its reading as physical spacetime is [C at (L)], (L) ⟺ (P) — [48e(f)–(i)](/docs/core/foundations/spacetime#теорема-48c). One time direction [T] (PW clock); three spatial ones also at T-119 [T] (rank count, the colour triplet read as space [I]); the former "sectoral decomposition + Connes reconstruction [T]" is retracted with the axis-labelled split (row 48a) |
-| Constants $c$, $G$, $\hbar$ | $G$ **[T]** derived, $c$, $\hbar$ not explained | $G_N = 3\pi/(7f_2\Lambda^2)$ (T-65); $c$, $\hbar$ — fundamental |
+Spectral actions, representation embeddings and group stabilizers yield conditional mathematical statements only with their specified geometry, matter representation, action and normalization. These inputs are needed before identifying physical gravity/gauge fields, particle masses, $G_N$, a cosmological source or an equation of state. A formula for $G_N$ in a selected spectral-action normalization is not a parameter-free derivation of its observed value.
 
-### Phenomenal Boundaries (what is taken as axiom) {#phenomenal-boundaries}
+For a full-rank state and specified field, T-271 gives $\dot S=-\operatorname{Tr}(\dot\Gamma\log\Gamma)$. Unital entropy production is nonnegative, but it can vanish; regenerative entropy flux has no universal sign. Physical power T-273 [C] requires thermal erasure assumptions and a **positive measured physical entropy-export rate**: $\dot Q\ge k_BT\dot s_{\mathrm{erase}}$ in nats/second. Purity and numerical tick frequency alone give neither such a rate nor a positive hardware power floor; see [Reeb & Wolf](https://arxiv.org/abs/1306.4352).
 
-1. **Categorical gap:** The theory does not explain *why* mathematical structures are 'felt.' The identity of being and experience — [Axiom Ω⁷](/docs/core/foundations/axiom-omega), not a theorem.
+### Phenomenal Boundaries {#phenomenal-boundaries}
 
-2. **Qualia calibration:** The correspondence between specific eigenvalues/eigenvectors and specific qualities of experience is established empirically.
-
-:::info Qualia calibration — an empirical question
-Which specific $[|q\rangle] \in \mathbb{P}(\mathcal{H}_E)$ corresponds to 'red' is an empirical question, not a theoretical defect. This is analogous to how the electron mass is not derived from the Standard Model. The structure of experience (spectral decomposition) is the [unique functor](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв) compatible with the axiomatics, but the specific calibration is determined experimentally.
-:::
-
-The protocols, controls and power calculations for this calibration, and the structural tests that go with it, are collected in the [Empirical Programme](/docs/consciousness/empirical/overview).
-
-3. **Absolute qualia:** The question of the existence of context-independent qualia remains open.
-
-4. **Thresholds [L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia):** $R_{\text{th}} = 1/3$ **[T]** — derived from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) ($K = 3$ types of dynamics from axioms) + [Bayesian dominance](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии). $\Phi_{\text{th}} = 1$ **[T]** — unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129)).
+The identification of structural predicates with experience is an axiom/interpretation plus a tested bridge [I/H]. A report classifier does not prove the ontology. The cuts $P>2/7$, $R\ge1/3$, $\Phi\ge1$, $D\ge2$ retain their [defined scope](/docs/reference/mathematical-kernel#thresholds): $\Phi\ge1\Rightarrow P\ge2/7$ is one-way, and the value one is selected [D]. A three-term generator decomposition is not a Bayesian prior that uniquely derives $R_{\mathrm{th}}=1/3$. A physical quality readout, allowable gauge and calibration must be specified rather than deduced from a purported universal functor uniqueness theorem.
 
 ### Categorical Boundaries
 
-1. **$\mathbf{Exp}$ is not a topos:** [It is proved](/docs/proofs/categorical/categorical-formalism#6-топосная-структура) that the category $\mathbf{Exp}$ is not a topos — there is no internal logic of experiential content.
-
-2. **Functor $F$ is non-invertible:** One cannot uniquely recover $\rho$ from experiential content — different states may yield 'identical' experience.
-
-3. **Problem of time:** The category $\mathbf{DensityMat}$ is static; time requires an external parameter.
-
-### Status of Boundaries
-
-These boundaries are **not a deficiency**, but an acknowledgement:
-- The theory describes *structure*, not the question of 'why this particular structure'
-- Some questions may be *beyond* any possible explanation
-- Honest acknowledgement of boundaries is a mark of a mature theory
-
-**Comparison with physics:**
-Physics does not explain *why* the laws of nature exist — it describes their structure. Analogously, UHM describes the structure of experience, acknowledging the boundaries of explanation.
+Name the source/target categories, objects and arrows before claiming a functor, classifier, reflector, topology or temporal modality. A many-to-one state encoder transports source dynamics only if it preserves observation/state fibers. A set-map idempotent need not be a CPTP idempotent or categorical reflector. A tensor-clock lift needs a retraction/readout; it is not automatically Morita equivalence.
 
 ### Octonionic Falsification Criteria
 
-[The structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) through octonions generates additional testable predictions:
-
-| Prediction | Falsification criterion | Status |
-|--------------|------------------------|--------|
-| **Fano symmetries of coherences** | 7 triplets $(e_i, e_j, e_k)$ of the Fano plane should be distinguishable in the structure of coherences $\gamma_{ij}$ | [T] |
-| **$G_2$-covariance** | The dynamics of $\Gamma$ must be covariant with respect to $G_2 \subset SO(7)$, not the full $SO(7)$ | [T] |
-| **Associator anomalies** | Triple interactions of dimensions should exhibit non-associativity: $[x, y, z] \neq 0$ | [T] |
-| **Hamming threshold** | Structure $H(7,4)$, exactly as in the canon ([T-93](/docs/core/dynamics/gap-dynamics#код-хэмминга)): **1** coherence violation is corrected automatically by the regenerator, **2** are detected via the syndrome measurements (E, O, U); beyond two the code is unreliable ($d = 3$). *Erratum 2026-07-25: this previously read «viable with loss of up to 3 of 7» — unsupported by T-93 and inconsistent with $d=3$ (the guarantee is $\lfloor(d-1)/2\rfloor = 1$ correction, $d-1 = 2$ detections); found by machine-checking the table against the canon.* | [T] |
-
-:::tip Bridge [T] — closed with the canonical orientation (T15, T15-canon)
-The connection (AP)+(PH)+(QG)+(V) → P1+P2 is established via the formal chain T15 (12 steps): the steps up to PG(2,2) are [T], the step to $\mathbb{O}$ takes the canonical orientation, the unique collineation-invariant class (T15-canon), so the chain is [T] (registry row 41n; it read "all [T]" until 2026-09-25 without the orientation step, then [C at (Alt)] the same day). T11–T13 prove the former condition (МП). The octonionic predictions are consequences of the structural derivation and carry no orientation condition.
-:::
+Fano wiring, covariance and associators become physical tests only with an independently calibrated realization. An associative matrix encoding is not made nonassociative by naming its coordinates octonionic; specify the triple observable or product being measured. Covariance is a property of a specified action and dynamics, not a universal empirical prediction. Hamming one-error correction is a coding theorem for its stated alphabet/noise/decoder; it is not a guarantee that an arbitrary regenerative ODE corrects one coherence error or detects two.
 
 ### Research programme
 
-Boundaries do not mean a halt to development. Open directions:
-
-| Direction | Goal | Priority |
-|-------------|------|-----------|
-| Quantum gravity | Derive $g_{\mu\nu}$ from $\Gamma$ | High |
-| Experimental validation of thresholds | Verify $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$ empirically | High |
-| Calibration and structure of quality space | Fix the map from perceived dissimilarity to $d_{\mathrm{FS}}$; test realisability and the Fano structure ([Empirical Programme](/docs/consciousness/empirical/structure)) | High |
-| Isospectral experiments | Test prediction 1 with numerical tolerances | High |
-| ISF analysis of fMRI | Verify [F-Gap-1](#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного), [F-Gap-2](#f-gap-2-блоковая-прозрачность-по-фано-триплетам), [F-ISF](#f-isf-isf-компоненты-в-фмрт) | High |
-| Non-perturbative computations | Refine [F-Higgs](#f-higgs-отклонение-самосвязи-хиггса), [F-τ_p](#f-τ_p-время-жизни-протона) | High |
-| Correlation length $\xi_F$ | Verify [F-ξ](#f-ξ-корреляционная-длина-фано) through LSS surveys | Medium |
-| Connection with Hoffman | Prove equivalence with the theory of conscious agents | Medium |
-| $\infty$-topos | Construct $\infty$-topos on $\mathbf{Exp}$ | Low |
-| Standard Model | Close the derivation of $\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)$ from the [Gap hierarchy](/docs/physics/gauge-symmetry/standard-model) | Long-term |
-
----
-
-**Related documents:**
-- [Glossary](./glossary) — definitions of terms
-- [Status registry](/docs/reference/status-registry) — complete registry of results with classification [T]/[H]/[P]/[I]/[D]
-- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ as primitive
-- [Mathematical apparatus](/docs/reference/specification) — formal definitions of $\Gamma$, $d_{\mathrm{FS}}$
-- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4, thresholds $R_{\text{th}}$, $\Phi_{\text{th}}$, $R^{(n)}_{\text{th}}$
-- [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, categories $\mathbf{DensityMat}$ and $\mathbf{Exp}$
-- [7D minimality theorem](/docs/proofs/minimality/theorem-minimality-7) — proof of $N = 7$
-- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → $\mathbb{O}$ → N=7
-- [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
-- [Theorems](/docs/applied/coherence-cybernetics/theorems) — formal results
-- [CC predictions](/docs/applied/coherence-cybernetics/predictions) — CC-specific falsification criteria
-- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — Fano selection rule for Yukawa couplings
-- [Gap semantics](/docs/physics/dual-aspect/gap-semantics) — dual-aspect semantics of 49 elements
-- [Gap dynamics](/docs/core/dynamics/gap-dynamics) — Gap operator, bifurcations, non-Markovian dynamics
-- [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — information geometry, potential $V_{\text{Gap}}$
-- [RG flow of Gap](/docs/physics/gauge-symmetry/rg-flow) — $\beta$-functions, fixed points, RG suppression of $\lambda_3$
-- [Higgs sector](/docs/physics/particle-physics/higgs-sector) — uniqueness of the line $\{A,E,U\}$, Higgs mass
-- [CKM matrix](/docs/physics/particle-physics/ckm-matrix) — flavour from the clock and what can break the family $\mathbb{Z}_3$ (T-345); the former Fritzsch texture, Cabibbo angle and CP phase claims are retracted there
-- [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) — Pendleton–Ross fixed point, $m_t$
-- [Proton decay](/docs/physics/particle-physics/proton-decay) — $X,Y$-leptoquarks, $\tau_p$
-- [Dark matter](/docs/physics/cosmology-phys/dark-matter) — $O$-sector relic, $\xi_F$
-- [G₂ structure](/docs/physics/gauge-symmetry/g2-structure) — covariance of the Fano dissipator
+First establish the observation law and identification of the target functionals. Then fit physical rates from informative trajectories, freeze competing models and preregister interventions. Test all declared gate conditions with confidence sets, report unresolved fibers and indeterminate verdicts, and retain separate ledgers for mathematical checks, simulation benchmarks, observational compatibility and independent experiments. Primary starting points are [Watrous on measurements/channels](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf), [Rothenberg on identifiability](https://doi.org/10.2307/1913267), and [Kleiner & Hoel on consciousness falsification](https://arxiv.org/abs/2004.03541).

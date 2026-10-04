@@ -306,6 +306,7 @@ For UHM with $N = 7$: $\tau \in \mathbb{Z}_7$.
 **Connection to the 42D formalism:**
 
 Full Page–Wootters state space:
+
 $$
 \mathcal{H}_{total} = \mathcal{H}_O \otimes \mathcal{H}_{6D}, \quad \dim = 7 \times 6 = 42
 $$
@@ -394,7 +395,7 @@ with $G_N = 3\pi/(7 f_2 \Lambda^2)$. Details: [Einstein Equations](/docs/physics
 
 ### 5.3 Cosmological Constant
 
-**[T]** The cosmological constant is computed from the Gap of the O-sector: $\Lambda_{\text{Gap}} > 0$ (T-71 [T]), which determines the vacuum topology $\Sigma^3 \cong S^3$ (T-120b: the topology $S^3$ [T] from T-119, the curvature [C at the vacuum symmetry]). Details: [Cosmological Constant](/docs/physics/gravity/cosmological-constant).
+**[H]** Identifying a selected Gap readout with a positive physical cosmological constant is T-71's independent physical bridge. Its positivity is conditional on the supplied energy formula, state and positive parameters; neither cohomology nor predicate noninvariance derives it. Given $\Lambda>0$ and a maximally symmetric four-dimensional vacuum field, the Einstein equation gives local de Sitter curvature **[T under these inputs]**. It does not fix spatial topology or slicing. The $S^3$ spectrum in T-119 belongs to a selected spatial algebra; T-120b's round closed slicing additionally requires the stated global and symmetry conditions **[C]**. Details: [Cosmological Constant](/docs/physics/gravity/cosmological-constant) and [conditional vacuum geometry](/docs/proofs/physics/emergent-manifold#следствие-вакуумная-топология).
 
 ---
 
@@ -593,9 +594,11 @@ An earlier version stated as a theorem that the nonlinear regenerative term prov
 **[T] Theorem 8.6 (Abrams–Lloyd amplification runs on marginals).** Let a holon regenerate toward the self-registering $\varphi_s$ ([φ operator](/docs/core/operators/phi-operator#phi-s)) with a Hamiltonian diagonal in the frame, a constant rate $\kappa > 0$ and the Fano dissipator. Then:
 
 1. $F = \mathrm{diag}(\tfrac12, \tfrac12, 0, \ldots, 0)$ is stationary, and on the invariant line $p = (\tfrac12 + \varepsilon, \tfrac12 - \varepsilon, 0, \ldots, 0)$ the flow is exactly
+
 $$
 \dot\varepsilon = \frac{2\kappa}{7}\,\frac{\varepsilon\,(1 - 4\varepsilon^2)}{(1 + 4\varepsilon^2)^2},
 $$
+
 so $F$ is a saddle with unstable rate $\mu = 2\kappa/7$, and $\varepsilon$ grows from $\varepsilon_0$ to $0.4$ in time $\tfrac{7}{2\kappa}\bigl(\ln(1/\varepsilon_0) + O(1)\bigr)$.
 2. For a Boolean function $f$ on $n$ bits with a fraction $s$ of satisfying inputs, a circuit of $\mathrm{poly}(n)$ standard gates — Hadamards on an input register and a coin qubit, a reversible circuit for $f$, and a controlled exchange of $|e_1\rangle, |e_2\rangle$ in the holon — leaves the holon's marginal at $\mathrm{diag}(\tfrac12 + \tfrac s2, \tfrac12 - \tfrac s2, 0, \ldots)$. By Theorem 8.5 the holon's regeneration acts on this marginal. If $s = 0$ the holon stays at $F$; if $s \geq 2^{-n}$ it reaches $p_1 \geq 0.9$ within time $\tfrac{7}{2\kappa}(n\ln 2 + O(1))$. One measurement of the holon in the frame distinguishes the two cases with bounded error.
 
@@ -628,9 +631,11 @@ Witness (`test_abrams_lloyd_amplification_runs_on_marginals`): $\kappa = 1$, $H 
 3. Let $\Phi_t(\rho) = e^{tL}\rho / \mathrm{Tr}(e^{tL}\rho)$ with $e^{tL}$ positive — the class of J. Rembieliński and P. Caban, generator $\dot\rho = L\rho - \rho\,\mathrm{Tr}(L\rho)$. If this generator vanishes on a non-empty open set of states, it vanishes everywhere; and of two fixed states at most one attracts along the segment joining them.
 
 *Proof.* (1) The trace-one states have non-empty interior in the real affine hyperplane of trace-one Hermitian matrices; an affine map vanishing on an open subset of it vanishes on the hyperplane. (2) $\Phi_t((1-s)\sigma + s\tau) = (1-s)\sigma + s\tau$ by affinity. (3) The generator vanishes at $\rho$ exactly when $L\rho = \mu\rho$ with $\mu = \mathrm{Tr}(L\rho)$. If this holds on a ball of states, then for two linearly independent states of the ball their mixtures, which lie in the ball, are eigenvectors too, which forces equal eigenvalues; the ball spans the operator space, so $L = \mu\,\mathrm{id}$ and the generator is zero. For fixed states $L\sigma = \mu\sigma$, $L\tau = \mu'\tau$, the point $(1-s)\sigma + s\tau$ goes to the point with
+
 $$
 s(t) = \frac{s\,e^{\mu' t}}{(1-s)\,e^{\mu t} + s\,e^{\mu' t}},
 $$
+
 so for $\mu' > \mu$ the state $\sigma$ repels along the segment, for $\mu' < \mu$ the state $\tau$ does, and for $\mu' = \mu$ the whole segment is fixed. $\blacksquare$
 
 Witnesses: the segment law holds to $8 \cdot 10^{-16}$ for a random normalised-linear generator on $\mathbb{C}^7$, whose flow carries all seven basis states to the one with the largest eigenvalue. The canonical gated flow $\gamma(I/7 - \Gamma) + \kappa\, g_V(P)(\rho_* - \Gamma)$ with $\gamma = 0.3$, $\kappa = 10$ is bistable: on the segment $(1-\lambda)I/7 + \lambda\rho_*$ the starts with $\lambda \le 0.6$ ($P \le 0.252$) end at $I/7$, those with $\lambda \ge 0.8$ ($P \ge 0.336$) end at a living state with $P = 0.4275$. The same flow with the gate removed has one attractor (three starts end within $10^{-15}$ of each other).

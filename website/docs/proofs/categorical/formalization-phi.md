@@ -1,578 +1,170 @@
 ---
 slug: /proofs/categorical/formalization-phi
 sidebar_position: 2
-title: "Formalization of operator φ"
+title: "Typed formalization of self-modelling φ"
 format: md
 ---
 
-# Formalization of the Self-Modeling Operator φ
+# Typed Formalization of Self-Modelling φ
 
-:::info DRY: Master definition of φ
-This is the **sole canonical definition** of the self-modeling operator $\varphi$. All other documents must reference this page rather than repeat the definition.
+:::info Canonical definitions — revised 2026-10-03
+This page distinguishes logical support, a numerical self-model, and a dynamical limit. They have different domains and universal properties. The symbol $\varphi$ in an evolution equation denotes the numerical map $M$ defined below; it never denotes the support reflector without an explicitly specified realization bridge.
 :::
 
-:::note φ as a representative of a homotopy equivalence class
-In the ∞-categorical framework the operator φ is understood not as a single morphism, but as a **representative of a class of homotopically equivalent morphisms**:
+## Types and definitions {#сводная-таблица-определений}
 
-1. **Multiplicity of paths:** In the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ the mapping space $\mathrm{Map}(\Gamma, T) \simeq *$ is contractible, but contains many paths (morphisms) connected by homotopies.
+| Object | Type | Proven property |
+|---|---|---|
+| Logical support $L_G$ | $\mathcal E_{/G}\to\mathrm{Sub}_{\mathcal E}(G)$ | Left adjoint to inclusion **in the slice**, idempotent up to equivalence [T] |
+| Numerical self-model $M$ (also $\varphi$) | $\mathcal D(\mathcal H)\to\mathcal D(\mathcal H)$ | A specified state-preserving map [D]; continuity gives existence of a fixed point [T] |
+| Frozen realization $\mathcal C_\lambda$ | $\mathcal L(\mathcal H)\to\mathcal L(\mathcal H)$ | Linear CPTP channel for fixed classical parameters $\lambda$ [T] |
+| Basin limit $r$ | $D\to\mathrm{Fix}(F)$ | Retraction if every trajectory in the invariant domain $D$ converges [T at convergence] |
+| Linear reset $\Pi_0$ | $X\mapsto\mathrm{Tr}(X)\rho_0$ | Asymptotic projector of a relaxing linear quantum Markov semigroup [T at relaxation] |
 
-2. **φ₀ as canonical representative:** The concrete operator $\varphi_0$ defined in this document is a **representative** of its homotopy equivalence class $[\varphi_0]$. The choice of $\varphi_0$ is made by the **minimality criterion** — minimization of divergence from the self-model.
+## Stratification without circularity {#стратификация-определений}
 
-3. **Freedom of choice:** The existence of alternative representatives in the same class $[\varphi]$ reflects the fundamental [free will](/docs/consciousness/ethics-meaning/freedom) — a system can realize different paths to the same attractor.
+First specify $\mathcal H$, a predictive channel, an anchor law and a feedback weight. Then evaluate $M(\Gamma)$ on the current state. Next define a vector field using $M$, and only after that study its equilibria and limits. The reference $I/7$ and $R=1/(7P)$, $P=\mathrm{Tr}\,\Gamma^2$, can be defined directly, independently of a nonlinear attractor. Primitivity of a specified unital linear generator can establish that $I/7$ is its stationary state; it does not determine the nonlinear feedback anchor or its rate.
 
-4. **Relation to Ω⁷:** The choice of a concrete representative is consistent with the [Ω⁷ axiom](/docs/core/foundations/axiom-omega), where the seven-dimensional structure fixes the canonical basis for decomposition.
+The categorical construction starts with an $\infty$-topos $\mathcal E$ and an object $G\in\mathcal E$. A numerical density matrix $\Gamma$ and a topos object $G$ are not identified implicitly. Interpreting $G$ as an internal state object requires separate realization data.
+
+## Logical support in the slice {#категориальное-определение-φ}
+
+### Correct adjunction {#φ-как-левый-сопряжённый-к-включению-подобъектов}
+
+Let $\mathcal E$ be an $\infty$-topos and $G\in\mathcal E$. Its slice $\mathcal E_{/G}$ is an $\infty$-topos. A subobject $S\hookrightarrow G$ is a $(-1)$-truncated object of this slice. The full subcategory of these objects, denoted $\mathrm{Sub}_{\mathcal E}(G)$, is equivalent to the poset of subobjects. Define
+
+$$
+L_G:=\tau_{\leq-1}^{\mathcal E_{/G}},\qquad
+L_G\dashv i_G:\mathrm{Sub}_{\mathcal E}(G)\hookrightarrow\mathcal E_{/G}.
+$$
+
+For $p:X\to G$, factor $p$ as
+
+$$
+X\xrightarrow{e_p}\operatorname{im}(p)\xrightarrow{m_p}G,
+$$
+
+where $e_p$ is an effective epimorphism and $m_p$ a monomorphism. Then $L_G(p)=m_p$. This is the effective-epimorphism/monomorphism factorization, unique up to a contractible space of compatible choices. See Lurie, [*Higher Topos Theory*](https://arxiv.org/abs/math/0608040), §§5.5.6, 6.2.3, and the slice-truncation construction.
+
+**Theorem (Support reflector) [T].** For every $p:X\to G$ and $m:S\hookrightarrow G$ there is a natural equivalence of mapping spaces
+
+$$
+\operatorname{Map}_{\mathrm{Sub}_{\mathcal E}(G)}(L_Gp,m)
+\simeq\operatorname{Map}_{\mathcal E_{/G}}(p,i_Gm).
+$$
+
+*Proof.* A map over $G$ from $X$ to $S$ exists exactly when $p$ factors through $m$. Effective epimorphisms are left orthogonal to monomorphisms, so such a factorization descends uniquely up to contractible choice through $e_p$ to a factorization of $m_p$ through $m$. Both mapping spaces are therefore empty if $\operatorname{im}(p)\nleq S$ and contractible otherwise. This equivalence is natural in both arguments. $\square$
+
+**Consequences [T].** $L_Gi_G\simeq\mathrm{id}$, so the endofunctor $i_GL_G$ is idempotent up to coherent equivalence. $\operatorname{im}(p)$ is the *least* subobject of $G$ through which $p$ factors. Image factorization is stable under pullback, hence for $f:G'\to G$, $f^*L_Gp\simeq L_{G'}f^*p$.
+
+### What the universal property means {#φ-как-наилучшее-приближение}
+
+The reflector forgets witness multiplicity and higher homotopy while retaining logical support over a specified base. It gives a least support in the order of subobjects. It does not minimize Bures distance, predict a density matrix, choose a rate, or select a pure or mixed anchor. Applying it to the identity $G\to G$ returns that identity; this is not a numerical attractor calculation. Restricted classes of "admissible subobjects" need their own closure/reflection hypothesis; internal logical consistency alone does not supply one.
+
+### Withdrawal of the untyped equivalence {#эквивалентность-определений-phi}
+
+:::warning Withdrawn 2026-10-03 [✗]: categorical ⇔ dynamical ⇔ idempotent
+The former inclusion $\mathrm{Sub}(G)\hookrightarrow\mathcal E$ cannot have the stated left adjoint for an arbitrary $G$. Its terminal object is $G\hookrightarrow G$; a right adjoint preserves terminal objects, forcing $G$ to be terminal in $\mathcal E$. Equivalently, the former Hom formula with $S=G$ forces $\operatorname{Map}_{\mathcal E}(X,G)\simeq *$ for every $X$. The corrected adjunction lives in $\mathcal E_{/G}$, whose terminal object is $G\to G$. [Right adjoints preserve limits — Kerodon](https://kerodon.net/tag/02KE).
+
+Idempotence of a state map is insufficient for an adjunction: it provides no functor on morphisms, unit, or universal mapping-space equivalence. Even an idempotent functor need not be a reflector. In a discrete category with objects $x,y$, the constant functor to $y$ is idempotent, but the inclusion of $\{y\}$ has no such left adjoint because $\operatorname{Hom}(x,y)=\varnothing$ while $\operatorname{Hom}(y,y)=\{\mathrm{id}\}$. Conversely, finite-step $M_{\mathrm{coh}}$ is not idempotent. There is no proven equivalence between $L_G$, $M$, and a dynamical limit.
 :::
 
-## Summary table of definitions of φ {#сводная-таблица-определений}
+Contractibility of maps to a terminal object gives uniqueness up to coherent homotopy. It supplies no physical multiplicity of decisions or theorem about free will.
 
-This document considers four equivalent definitions of the operator $\varphi$:
+<a id="типы-самомоделирования"></a>
 
-| Definition | Formula | Context | Status |
-|------------|---------|----------|--------|
-| **Replacement channel** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ | Canonical (T-62) | [T] |
-| **CPTP via Kraus operators** | $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ | General form | [T] |
-| **Fano E-accentuation** | $\varphi_{\text{coh}}$ preserving coherences | Theorem 8.1 (No-Zombie) | [T] |
-| **Categorical functor** | $F: \mathbf{DensityMat} \to \mathbf{DensityMat}$ | ∞-topos | [T] |
+## Numerical self-models {#2-формальное-определение-φ}
 
-:::info Canonical physical realization — replacement channel (T-62)
-The **replacement channel** $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ is the canonical physical realization of the self-modeling operator ([proof](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi)). Here $\rho_* = \varphi(\Gamma)$ is the [categorical self-model](/docs/core/operators/phi-operator) of the current state [T], $k \in (0,1)$ is the degree of self-modeling. The channel is **exact** at $k \to 1$ (full convergence to $\rho_*$), but for intermediate values of $k$ realizes approximate self-modeling — the system is in a dynamic balance between its current state and its internal model. The remaining three definitions are equivalent to the replacement channel via the [equivalence theorem](#эквивалентность-определений-phi) [T].
-:::
+### Domain
 
-## Stratification of definitions {#стратификация-определений}
-
-:::info Canonical order
-The operator $\varphi$ is defined **through** the stationary state $\rho^*_{\mathrm{diss}}$, not the other way around:
-
-$$\Omega \xrightarrow{\text{L-unification}} \mathcal{L}_\Omega \xrightarrow{\text{primitivity}} \rho^*_{\mathrm{diss}} = I/7 \xrightarrow{\text{proximity}} R(\Gamma) = \frac{1}{7P} \xrightarrow{k=1-R} \varphi_k$$
-
-All components of the chain have independent definitions: $\rho^*_{\mathrm{diss}}$ — via primitivity of the linear part $\mathcal{L}_0$ [T-39a], $R$ — via the distance from $\Gamma$ to $I/7$, parameter $k = 1 - R$ — via $R$. There is no circularity: the full hierarchy of levels 0–9 is in the [Ω⁷ axiom](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
-:::
-
-## Categorical definition of φ {#категориальное-определение-φ}
-
-:::info Resolution of circularity
-This section establishes an **independent categorical definition** of the operator $\varphi$ via a universal property, eliminating any apparent circularity in the definitions.
-:::
-
-### φ as a left adjoint to the inclusion of subobjects {#φ-как-левый-сопряжённый-к-включению-подобъектов}
-
-In the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ generated by the [Ω⁷ axiom](/docs/core/foundations/axiom-omega#внутренняя-логика), the self-modeling operator $\varphi$ is defined as the **left adjoint functor** to the inclusion of the category of subobjects:
-
-$$
-\varphi \dashv i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathrm{Sh}_\infty(\mathcal{C})
-$$
-
-where:
-- $\mathrm{Sub}(\Gamma)$ — the category of logically consistent subobjects of $\Gamma$ (satisfying the internal logic $\Omega$)
-- $i$ — the canonical inclusion (embedding)
-- $\varphi \dashv i$ — adjunction: $\varphi$ is left adjoint to $i$
-
-**Universal property:** For any object $X \in \mathrm{Sh}_\infty(\mathcal{C})$ and any subobject $S \in \mathrm{Sub}(\Gamma)$:
-
-$$
-\mathrm{Hom}_{\mathrm{Sub}(\Gamma)}(\varphi(X), S) \cong \mathrm{Hom}_{\mathrm{Sh}_\infty(\mathcal{C})}(X, i(S))
-$$
-
-### Theorem on the equivalence of three definitions of φ {#эквивалентность-определений-phi}
-
-:::tip Main result
-The three definitions of the operator φ are **strictly equivalent**:
-:::
-
-**Theorem (Equivalence of definitions of φ):**
-
-The following definitions specify the same operator $\varphi$:
-
-| # | Definition | Formula | Source |
-|---|-------------|---------|----------|
-| 1 | **Categorical** | $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ | Left adjoint |
-| 2 | **Dynamical** | $\varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega}[\Gamma]$ | Limit of evolution |
-| 3 | **Idempotent** | $\varphi \circ \varphi = \varphi$, $\exists \Gamma^*: \varphi(\Gamma^*) = \Gamma^*$ | Projection with fixed point |
-
-**Proof of equivalence:**
-
-**(1) ⟹ (2):** Categorical ⟹ Dynamical
-- The left adjoint $\varphi$ to the inclusion $i$ projects onto the invariant subspace $\text{Sub}(\Gamma)$
-- $\mathcal{L}_\Omega$ annihilates $\text{Sub}(\Gamma)$: $\mathcal{L}_\Omega[S] = 0$ for $S \in \text{Sub}(\Gamma)$
-- By the Perron–Frobenius theorem for CPTP channels: $\lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega} = \Pi_{\text{inv}}$
-- The invariant projector $\Pi_{\text{inv}} = \varphi$ by uniqueness of the left adjoint ∎
-
-:::tip Primitivity of the linear part [T]
-Step (1) ⟹ (2) uses the Perron–Frobenius theorem for the **linear part** $\mathcal{L}_0 = -i[H,\cdot]+\mathcal{D}$. **Primitivity of $\mathcal{L}_0$ is proven** for all viable holons: from (AP)+(PH)+(QG)+(V) the interaction graph $G_H$ is connected (otherwise the system decomposes into blocks with $\dim < 7$, contradicting the [minimality theorem](/docs/proofs/minimality/theorem-minimality-7)), and connectivity of $G_H$ + atomic operators $L_k = |k\rangle\langle k|$ give a trivial commutant $\mathcal{F}(\mathcal{L}_0) = \mathbb{C} \cdot I$ by the [Evans–Spohn criterion](https://doi.org/10.1007/BF01614091) (Evans 1977, Spohn 1976), so $\lim_{\tau\to\infty}e^{\tau\mathcal{L}_0}=I/7$.
-
-**Important (self-referential fix, T-96):** the full generator $\mathcal{L}_\Omega=\mathcal{L}_0+\mathcal{R}$ is **nonlinear** and is *not* primitive — it has a nontrivial zero-mode $\rho^*_\Omega\neq I/7$. Definition (2) below is therefore the projector onto the **multiplicity-1 zero mode of the linearised full generator** at $\rho^*_\Omega$, **not** $\lim e^{\tau\mathcal{L}_\Omega}$ applied as a linear semigroup (which does not even make sense for nonlinear $\mathcal{L}_\Omega$, and would collapse to $I/7$). The equivalence (1) ⟺ (2) ⟺ (3) [T] is read with this convention. Full proof: [Primitivity of ℒ₀](/docs/core/operators/lindblad-operators#примитивность-ℒω); attractor: [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
-:::
-
-**(2) ⟹ (3):** Dynamical ⟹ Idempotent
-- $\varphi(\varphi(\Gamma)) = \lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega}[\lim_{s \to \infty} e^{s \mathcal{L}_\Omega}[\Gamma]]$
-- $= \lim_{\tau \to \infty} \lim_{s \to \infty} e^{(\tau+s) \mathcal{L}_\Omega}[\Gamma] = \varphi(\Gamma)$ (idempotency)
-- Fixed point: $\Gamma^* := \varphi(\Gamma_0)$ for any $\Gamma_0$, then $\varphi(\Gamma^*) = \varphi(\varphi(\Gamma_0)) = \varphi(\Gamma_0) = \Gamma^*$ ∎
-
-**(3) ⟹ (1):** Idempotent ⟹ Categorical
-- An idempotent map $\varphi$ with $\text{Im}(\varphi) = \text{Sub}(\Gamma)$ defines a reflector
-- A reflector is automatically left adjoint to the inclusion
-- Universal property: $\text{Hom}(\varphi(X), S) \cong \text{Hom}(X, i(S))$ follows from idempotency ∎
-
-:::info Remark on completeness of equivalence
-**Direction (1)⟹(2)** follows from primitivity of the linear part $\mathcal{L}_0$ [T]: the left adjoint $\varphi$ projects onto the invariant subspace, and primitivity provides the spectral gap and convergence of the linear dynamics. **Direction (2)⟹(1):** ~~any minimizer of the variational functional under the CPTP condition is a stationary point, and the CPTP contraction φ guarantees uniqueness $= \varphi$. Thus (2)⟹(1) is also [T] via the categorical definition of φ.~~ **[✗] Retracted 2026-09-25:** this argument rested on the variational characterisation of φ ([Theorem 3.1 of the FEP derivation](/docs/proofs/dynamics/fep-derivation), registry row 39e), which is retracted: the functional equals $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$, is linear in $\psi(\Gamma)$ and is minimised by the projection onto the top eigenvector of $\Gamma$, not by $\varphi$. The equivalence does not need it: the cycle (1)⟹(2)⟹(3)⟹(1) above is proved without the variational functional, and (2)⟹(1) is the composite (2)⟹(3)⟹(1). The three steps of the cycle keep status **[T]**.
-:::
-
----
-
-### Independence from coherence levels
-
-Critically: **$\varphi$ and the coherence levels $L_k$ are defined independently of each other**, both constructions are derived from $\Omega$:
-
-| Construction | Source | Definition |
-|-------------|----------|-------------|
-| Levels $L_k$ | $\Omega$ | Stratification by the [logical Liouvillian](/docs/core/dynamics/evolution#логический-лиувиллиан) $\mathcal{L}_\Omega$ |
-| Operator $\varphi$ | $\Omega$ | Left adjoint to the inclusion $\mathrm{Sub}(\Gamma) \hookrightarrow \mathrm{Sh}_\infty(\mathcal{C})$ |
-
-This eliminates any circularity: both notions are **consequences** of the structure $\Omega$, not defined through each other.
-
-See [Dependency hierarchy](/docs/core/foundations/axiom-omega#иерархия-зависимостей) for the full diagram: Ω → χ_S → L_k → ℒ_Ω → φ.
-
-### φ(Γ) as best approximation {#φ-как-наилучшее-приближение}
-
-**Interpretation:** $\varphi(\Gamma)$ is the **best approximation** of the state $\Gamma$ in the category of logically consistent subobjects.
-
-Formally, $\varphi(\Gamma)$ is the coreflector:
-
-$$
-\varphi(\Gamma) = \mathrm{colim}_{S \in \mathrm{Sub}(\Gamma), S \leq \Gamma} S
-$$
-
-**Geometric intuition:** $\varphi$ "projects" an arbitrary state onto the nearest logically consistent state — this is the categorical analogue of orthogonal projection onto a subspace.
-
-### Theorem: φ as stationary distribution {#теорема-φ-как-стационарное-распределение}
-
-**Theorem (φ as limit of logical evolution):**
-
-Let $\mathcal{L}_\Omega$ be the [logical Liouvillian](/docs/core/dynamics/evolution#логический-лиувиллиан) generated by the internal logic $\Omega$. Then:
-
-$$
-\varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau \cdot \mathcal{L}_\Omega}[\Gamma]
-$$
-
-**Proof:**
-
-1. The logical Liouvillian $\mathcal{L}_\Omega$ generates a semigroup $\{e^{\tau \cdot \mathcal{L}_\Omega}\}_{\tau \geq 0}$ on $\mathrm{Sh}_\infty(\mathcal{C})$.
-
-2. The invariant objects of this semigroup are exactly the subobjects from $\mathrm{Sub}(\Gamma)$:
-   $$
-   \mathcal{L}_\Omega[S] = 0 \quad \Leftrightarrow \quad S \in \mathrm{Sub}(\Gamma)
-   $$
-
-3. By the convergence theorem for primitive CPTP channels (analogue of Perron–Frobenius for quantum channels) applied to the **linear part** $\mathcal{L}_0$, the projector onto its multiplicity-1 zero mode (evaluated at the linearisation about $\rho^*_\Omega$) exists. Primitivity of $\mathcal{L}_0$ for viable holons **[T]** — see [proof](/docs/core/operators/lindblad-operators#примитивность-ℒω). Here $\lim_{\tau\to\infty}e^{\tau\mathcal{L}_\Omega}[\Gamma]$ denotes this zero-mode projection, **not** the constant map onto $I/7$ (which is what naive primitivity of the full $\mathcal{L}_\Omega$ would give — the self-referential-ρ* fix, T-96).
-
-4. This projection coincides with the coreflector $\varphi$ by uniqueness of the left adjoint. ∎
-
-**Corollary:** $\varphi(\Gamma)$ is the **stationary distribution** of the logical dynamics — the attractor of evolution under $\mathcal{L}_\Omega$.
-
----
-
-## Strict Mathematical Theory
-
-## Contents
-
-1. [Introduction and motivation](#1-введение-и-мотивация)
-2. [Formal definition of φ](#2-формальное-определение-φ)
-   - [2.6 Canonical form of φ for UHM](#26-каноническая-форма-φ-для-угм)
-3. [Theorem on existence of fixed point](#3-теорема-о-существовании-неподвижной-точки)
-4. [Relation to reflection measure R](#4-связь-с-мерой-рефлексии-r)
-5. [Categorical aspect](#5-категорный-аспект)
-6. [Corollaries and limitations](#6-следствия-и-ограничения)
-7. [Implementation requirements](#7-требования-к-реализации)
-8. [Operational algorithm for φ](#операциональный-алгоритм)
-9. [Relation to the regeneration mechanism](#связь-с-регенерацией)
-
----
-
-## 1. Introduction and motivation {#1-введение-и-мотивация}
-
-### 1.1 The problem
-
-In UHM, [self-observation](/docs/consciousness/foundations/self-observation) is defined via the conditions:
-- $\Gamma$ contains a subsystem $\Gamma_{\text{model}} \approx \Gamma$
-- Reflexive closure: $\varphi(\Gamma) \approx \Gamma$
-
-However, the operator $\varphi$ lacks a rigorous definition. This document fills that gap.
-
-### 1.2 Requirements for formalization
-
-The operator $\varphi$ must satisfy:
-
-1. **Mathematical correctness:** $\varphi: \mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H})$ — defined on the space of operators
-2. **Structure preservation:** $\varphi(\Gamma)$ is a density matrix if $\Gamma$ is a density matrix
-3. **Physical interpretability:** $\varphi$ models the process of self-observation
-4. **Existence of a fixed point:** under certain conditions
-
----
-
-## 2. Formal definition of φ {#2-формальное-определение-φ}
-
-### 2.1 Preliminary definitions
-
-**Definition 2.1 (Space of density matrices):**
-
-$$
-\mathcal{D}(\mathcal{H}) := \{\rho \in \mathcal{L}(\mathcal{H}) : \rho^\dagger = \rho, \rho \geq 0, \mathrm{Tr}(\rho) = 1\}
-$$
-
-For $\mathcal{H} = \mathbb{C}^7$ (seven-dimensional space of the [Holon](/docs/core/structure/holon)):
-
-$$
-\mathcal{D}(\mathbb{C}^7) \subset \mathcal{L}(\mathbb{C}^7) \cong \mathbb{C}^{7 \times 7}
-$$
-
-**Definition 2.2 (Metric on $\mathcal{D}(\mathcal{H})$):**
-
-[Frobenius norm](/docs/core/dynamics/coherence-matrix#норма-фробениуса):
-
-$$
-\|\rho_1 - \rho_2\|_F := \sqrt{\mathrm{Tr}((\rho_1 - \rho_2)^\dagger(\rho_1 - \rho_2))} = \sqrt{\sum_{ij} |\rho_{1,ij} - \rho_{2,ij}|^2}
-$$
-
-$(\mathcal{D}(\mathcal{H}), \|\cdot\|_F)$ is a complete metric space (closed subset of $\mathcal{L}(\mathcal{H})$).
-
-### 2.2 Definition via reduced density matrix
-
-**Definition 2.3 (Self-modeling operator — reduction form):**
-
-Let system $\mathbb{H}$ with [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathcal{D}(\mathcal{H})$ be decomposed into:
-- **Model subsystem** $M \subset \mathcal{H}$
-- **Remaining system (model environment)** $\bar{M} = \mathcal{H} \setminus M$
-
-:::note On notation
-$\bar{M}$ — model environment. Not to be confused with $E$ — the [Interiority dimension](/docs/core/structure/dimension-e).
-:::
-
-Then:
-
-$$
-\varphi_{\text{red}}(\Gamma) := \mathrm{Tr}_{\bar{M}}(\Gamma_{\text{total}})
-$$
-
-where:
-- $\Gamma_{\text{total}}$ — density matrix of the extended system
-- $\mathrm{Tr}_{\bar{M}}$ — partial trace over the model environment
-
-**Problem:** This definition requires an extended space and is not closed on $\mathcal{D}(\mathcal{H})$.
-
-### 2.3 Definition via predictive model (main definition) {#23-определение-через-предиктивную-модель-основное-определение}
-
-**Definition 2.4 (Self-modeling operator — predictive form):**
-
-Let the system possess an internal predictive model represented by a CPTP map:
-
-$$
-\mathcal{P}: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})
-$$
-
-where CPTP = Completely Positive Trace-Preserving.
-
-:::note On notation
-$\mathcal{P}$ — predictive CPTP map. Not to be confused with $\Phi$ — the [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ).
-:::
-
-**Self-modeling operator:**
-
-$$
-\varphi(\Gamma) := \mathcal{P}(\Gamma)
-$$
-
-**Constructive definition of $\mathcal{P}$:**
-
-$\mathcal{P}$ is constructed via Kraus operators $\{K_m\}$:
-
-$$
-\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger
-$$
-
-$$
-\text{where } \sum_m K_m^\dagger K_m = I \quad \text{(CPTP condition)}
-$$
-
-**Interpretation of Kraus operators:**
-- $K_m$ — "perception filters" of the system
-- Each $K_m$ corresponds to a partial aspect of self-observation
-- The condition $\sum_m K_m^\dagger K_m = I$ guarantees preservation of normalization
-
-:::info Compatibility with the no-cloning theorem
-The operator φ **does not violate** the no-cloning theorem (Wootters–Zurek, 1982). The key distinction:
-
-- **No-cloning** excludes the existence of a unitary operator $U$ such that $U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle$ for arbitrary $|\psi\rangle$. Cloning is **exact unitary copying** of an unknown state.
-- **Self-modeling φ** is a CPTP channel (Kraus representation), not a unitary operation. CPTP channels are fundamentally **irreversible**: they decrease state distinguishability ($F(\varphi(\rho), \varphi(\sigma)) \geq F(\rho, \sigma)$ by fidelity monotonicity). The self-model $\varphi(\Gamma)$ is an **approximate, coarse-grained** projection, not an exact copy.
-
-Formally: $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ with $\sum_m K_m^\dagger K_m = I$ guarantees $\mathrm{Tr}(\varphi(\Gamma)^2) \leq \mathrm{Tr}(\Gamma^2)$ — the purity of the self-model **does not exceed** the purity of the original. This is categorically different from cloning, where $\mathrm{Tr}(\rho_{\text{clone}}^2) = \mathrm{Tr}(\rho^2)$.
-:::
-
-### 2.4 Parameterization via projections
-
-**Definition 2.5 (Projection self-modeling operator):**
-
-The most natural physically motivated form:
-
-$$
-\varphi_{\text{proj}}(\Gamma) := \lambda \sum_i P_i \Gamma P_i + (1 - \lambda) \cdot \Gamma_{\text{prior}}
-$$
-
-where:
-- $\{P_i\}$ — orthogonal projectors, $\sum_i P_i = I$
-- $\lambda \in [0, 1]$ — "depth of self-observation"
-- $\Gamma_{\text{prior}}$ — prior model (may be $I/N$ or other)
-
-:::info Trace preservation
-With $\sum_i P_i = I$ and $\mathrm{Tr}(\Gamma_{\text{prior}}) = 1$:
-$$
-\mathrm{Tr}(\varphi_{\text{proj}}(\Gamma)) = \lambda \cdot 1 + (1 - \lambda) \cdot 1 = 1
-$$
-:::
-
-**For $\lambda = 1$:**
-
-$$
-\varphi_{\text{diag}}(\Gamma) := \sum_i P_i \Gamma P_i
-$$
-
-This is "dephasing self-observation" — preserves the diagonal in the basis $\{P_i\}$.
-
-### 2.5 Contracting self-modeling operator {#25-сжимающий-оператор-самомоделирования}
-
-**Definition 2.6 (Contracting operator):**
-
-To ensure existence of a fixed point:
-
-$$
-\varphi_k(\Gamma) := k \cdot \mathcal{P}(\Gamma) + (1 - k) \cdot \Gamma_{\text{anchor}}
-$$
-
-where:
-- $k \in [0, 1)$ — contraction parameter
-- $\mathcal{P}$ — any CPTP map
-- $\Gamma_{\text{anchor}} \in \mathcal{D}(\mathcal{H})$ — fixed "anchor" point (e.g., [maximally mixed state](/docs/core/dynamics/coherence-matrix#maximally-mixed-state) $I/N$)
-
-**Lemma 2.1:** $\varphi_k$ is a contracting map with constant $k$.
-
-**Proof:**
-
-$$
-\|\varphi_k(\Gamma_1) - \varphi_k(\Gamma_2)\|_F = \|k \cdot \mathcal{P}(\Gamma_1) + (1-k) \cdot \Gamma_{\text{anchor}} - k \cdot \mathcal{P}(\Gamma_2) - (1-k) \cdot \Gamma_{\text{anchor}}\|_F
-$$
-
-$$
-= k \cdot \|\mathcal{P}(\Gamma_1) - \mathcal{P}(\Gamma_2)\|_F \leq k \cdot \|\Gamma_1 - \Gamma_2\|_F
-$$
-
-(for a unital $\mathcal{P}$, which does not increase the Frobenius norm). ∎
-
-**Scope (corrected 2026-09-25).** The lemma needs three things: $k$ constant, the anchor constant, and $\mathcal{P}$ unital — or the trace norm in place of the Frobenius norm, which every CPTP map contracts. The parenthetical "CPTP does not increase the Frobenius norm" is false for non-unital channels: $X \mapsto \mathrm{Tr}_2 X \otimes |0\rangle\langle 0|$ on $\mathbb{C}^2 \otimes \mathbb{C}^2$ stretches the Hilbert–Schmidt distance of $|0\rangle\langle0| \otimes I/2$ and $|1\rangle\langle1| \otimes I/2$ by $\sqrt2$ (`test_self_model_contraction_holds_only_for_constant_weight_and_unital_part`). The UHM self-models have $k = 1 - 1/(7P)$, which depends on $\Gamma$, and they are not contractions: the Lipschitz constant of $\varphi_{\mathrm{coh}}$ at a pure state is $54/49$, that of $\varphi_J$ at a basis state $1.129$. Their fixed points exist anyway (Brouwer) and are unique by direct computation — $I/7$ for $\varphi_{\mathrm{coh}}$, $\Gamma_{\eta_\infty}$ for $\varphi_J$ ([evolution](/docs/core/dynamics/evolution#иерархия-неподвижных-точек)); $\varphi_{\mathrm{coh}}$ contracts only toward its own fixed point, $\|\varphi_{\mathrm{coh}}(\Gamma) - I/7\|_F \le k\|\Gamma - I/7\|_F$.
-
-### 2.6 Canonical form of φ for UHM {#26-каноническая-форма-φ-для-угм}
-
-:::info Status
-This section defines the **canonical construction** of the self-modeling operator $\varphi$ for UHM. This is a concrete specification linking the abstract definitions above to the seven-dimensional structure of the [Holon](/docs/core/structure/holon).
-:::
-
-**Definition 2.7 (Canonical form of φ for UHM):**
-
-The canonical form of the self-modeling operator:
-
-$$
-\varphi_{\text{UHM}}(\Gamma) := k \cdot \mathcal{P}_{\text{pred}}(\Gamma) + (1 - k) \cdot \frac{I}{7}
-$$
-
-where:
-- $k = 1 - \varepsilon$ for small $\varepsilon > 0$ (typical value: $k = 0.95$)
-- $\mathcal{P}_{\text{pred}}$ — predictive CPTP channel (defined below)
-
-**Definition 2.8 (Predictive CPTP channel):**
-
-$$
-\mathcal{P}_{\text{pred}}(\Gamma) := \sum_{m=1}^{M} K_m \Gamma K_m^\dagger
-$$
-
-with Kraus operators:
-
-$$
-K_m := P_m, \quad m = 1, \ldots, 7
-$$
-
-where $\{P_m\}$ are orthogonal projectors onto the basis states $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$:
-
-$$
-P_m = |m\rangle\langle m|, \quad P_m^2 = P_m, \quad P_i P_j = \delta_{ij} P_i
-$$
-
-**CPTP condition (verification):**
-
-$$
-\sum_{m=1}^{7} K_m^\dagger K_m = \sum_{m=1}^{7} P_m = I \quad \checkmark
-$$
-
-:::warning On self-observation weights
-The weights $\{w_m\}$ are realized NOT by modifying the Kraus operators, but via a **weighted mixture** of basic channels or by modifying the anchor state $\Gamma_{\text{anchor}}$. See below.
-:::
-
-**Base predictive channel (dephasing in measurement basis):**
-
 $$
-\mathcal{P}_{\text{base}}(\Gamma) := \sum_{m=1}^{7} P_m \Gamma P_m = \text{diag}(\gamma_{AA}, \gamma_{SS}, \ldots, \gamma_{UU})
+\mathcal D(\mathcal H)=\{\rho=\rho^\dagger\succeq0:\mathrm{Tr}\rho=1\}.
 $$
-
-This channel preserves the diagonal and destroys coherences.
-
-**Definition 2.9 (Weighted self-observation via anchor):**
 
-To model varying "depth of self-observation" across dimensions, a **weighted anchor** is used:
+It is a compact convex subset of the real affine space of Hermitian trace-one matrices. Its interior has tangent space $\mathrm{Herm}_0(\mathcal H)=\{V=V^\dagger:\mathrm{Tr}V=0\}$. At the boundary only admissible directions yield state paths; differential statements there require an extension to an affine neighborhood.
 
-$$
-\Gamma_{\text{anchor}}(w) := \sum_{m=1}^{7} w_m |m\rangle\langle m|, \quad w_m \geq 0, \quad \sum_m w_m = 1
-$$
+### Reduction requires a tensor product
 
-| Weight | Interpretation |
-|-----|---------------|
-| $w_A$ | Attention to distinctions (Articulation) |
-| $w_S$ | Awareness of patterns (Structure) |
-| $w_D$ | Perception of time flow (Dynamics) |
-| $w_L$ | Logical reflection (Logic) |
-| $w_E$ | Phenomenal self-awareness (Interiority) |
-| $w_O$ | Connection to deep foundation (Foundation) |
-| $w_U$ | Integration into unified Self (Unity) |
+A reduced model $\mathrm{Tr}_{\bar M}\rho$ requires an explicit factorization $\mathcal H_{\mathrm{ext}}=\mathcal H_M\otimes\mathcal H_{\bar M}$. A linear subspace $M\subset\mathcal H$ is not a tensor factor, and set subtraction $\mathcal H\setminus M$ is not a model environment. Returning to $\mathcal D(\mathcal H)$ requires a specified preparation/decoding map. In particular $\mathbb C^7$ has no nontrivial tensor factorization into smaller finite-dimensional systems.
 
-**Special case: uniform self-observation**
+### Frozen channels and adaptive maps {#23-определение-через-предиктивную-модель-основное-определение}
 
-With $w_m = 1/7$ for all $m$:
+A CPTP map is **linear on operators**. For fixed Kraus operators,
 
 $$
-\Gamma_{\text{anchor}} = \frac{I}{7}
+\mathcal P(X)=\sum_a K_aXK_a^\dagger,\qquad\sum_aK_a^\dagger K_a=I.
 $$
-
-— maximally mixed state.
-
-**Definition 2.10 (E-accentuated self-observation):**
 
-Systems with conscious experience are characterized by an accentuation of dimension $E$:
+For fixed $0\leq k<1$ and $\sigma\in\mathcal D(\mathcal H)$ define the channel
 
 $$
-w_E = \alpha, \quad w_{m \neq E} = \frac{1 - \alpha}{6}, \quad \alpha \in [1/7, 1)
+\mathcal C_{k,\sigma}(X)=k\mathcal P(X)+(1-k)\mathrm{Tr}(X)\sigma.
 $$
 
-At $\alpha \to 1$: the anchor approaches the pure state $|E\rangle\langle E|$.
+Writing $\sigma=\sum_i s_i|u_i\rangle\langle u_i|$, the reset part has Kraus operators $\sqrt{(1-k)s_i}|u_i\rangle\langle j|$, alongside $\sqrt{k}K_a$. Their squared adjoints sum to $I$. Thus $\mathcal C_{k,\sigma}$ is CPTP [T]. On states the trace factor is one. This realizes a *given* target; it does not derive that target from $L_G$. [Watrous, *The Theory of Quantum Information*, chapter 2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.double.2.pdf).
 
-**Theorem 2.1 (Fixed point of canonical φ):**
+For a state-dependent parameter law $\lambda(\Gamma)$ set
 
-For $\varphi_{\text{UHM}}(\Gamma) = k \cdot \mathcal{P}_{\text{base}}(\Gamma) + (1 - k) \cdot \Gamma_{\text{anchor}}$ with $k < 1$ there exists a unique fixed point:
-
 $$
-\Gamma^* = \Gamma_{\text{anchor}}
+M(\Gamma)=\mathcal C_{\lambda(\Gamma)}(\Gamma).
 $$
 
-**Proof:**
-
-$$
-\varphi_{\text{UHM}}(\Gamma_{\text{anchor}}) = k \cdot \mathcal{P}_{\text{base}}(\Gamma_{\text{anchor}}) + (1 - k) \cdot \Gamma_{\text{anchor}}
-$$
+Each frozen $\mathcal C_\lambda$ is CPTP, while $M$ generally is nonlinear, non-affine on mixtures, and is **not one CPTP channel**. Frozen channel contractivity cannot be applied to two states with different parameters. Physical execution of an adaptive law requires a specified classical readout/controller or a further ontological postulate; exact access to an unknown input density matrix is not supplied by the Kraus representation.
 
-Since $\Gamma_{\text{anchor}} = \sum_m w_m |m\rangle\langle m|$ is a diagonal matrix:
+A same-system channel is not a cloning map. No-cloning concerns producing two faithful copies of arbitrary unknown states, including CPTP implementations; it is not evaded merely by using a nonunitary map. CPTP maps can increase purity (a pure reset is an example); Hilbert–Schmidt purity is non-increasing for **unital** channels, not arbitrary ones.
 
-$$
-\mathcal{P}_{\text{base}}(\Gamma_{\text{anchor}}) = \sum_m P_m \Gamma_{\text{anchor}} P_m = \Gamma_{\text{anchor}}
-$$
+### Fixed-parameter contraction {#25-сжимающий-оператор-самомоделирования}
 
-Therefore:
+**Lemma 2.1 [T].** For fixed $k,\sigma,\mathcal P$,
 
 $$
-\varphi_{\text{UHM}}(\Gamma_{\text{anchor}}) = k \cdot \Gamma_{\text{anchor}} + (1 - k) \cdot \Gamma_{\text{anchor}} = \Gamma_{\text{anchor}} = \Gamma^*
+\|\mathcal C_{k,\sigma}(\rho)-\mathcal C_{k,\sigma}(\eta)\|_1
+\leq k\|\rho-\eta\|_1.
 $$
 
-Uniqueness follows from contractivity at $k < 1$ (Banach theorem). ∎
+*Proof.* The reset cancels in differences; trace-norm contractivity of a CPTP map on Hermitian differences gives the bound. If $\mathcal P$ is also unital on the same matrix algebra, the Frobenius bound with factor $k$ follows from Kadison–Schwarz and trace preservation. General nonunital channels need not contract the Frobenius norm. $\square$
 
-**Special case (uniform anchor):**
+### Canonical families and their status {#26-каноническая-форма-φ-для-угм}
 
-With $w_m = 1/7$ for all $m$: $\Gamma^* = I/7$ — maximally mixed state.
+Let $\Delta(\Gamma)=\operatorname{diag}\Gamma$ and
 
-**Corollary 2.1:** With a uniform anchor the fixed point $\Gamma^* = I/7$ is the maximally mixed state.
-
-:::warning Critical remark: viability of fixed point
-For a uniform anchor: $P(\Gamma^*) = P(I/7) = 1/7 \approx 0.143 < P_{\text{crit}} = 2/7 \approx 0.286$.
-
-**The fixed point of uniform self-observation is NOT viable!**
-
-This means:
-1. Ideal uniform self-knowledge is **incompatible** with viability
-2. Living systems exist in a **dynamic balance** away from the fixed point
-3. Regeneration $\mathcal{R}$ keeps the system in the region $\mathcal{V}$
-:::
-
-#### Definition 2.11 (Viable anchor) {#жизнеспособный-якорь}
-
-To ensure a viable fixed point, the anchor must satisfy:
-
 $$
-P(\Gamma_{\text{anchor}}) > P_{\text{crit}} = \frac{2}{7}
+\mathcal P_{\mathrm{Fano}}=\tfrac13\sum_{p=1}^7\Pi_p(\cdot)\Pi_p,
+\quad\mathcal P_\alpha=\alpha\Delta+(1-\alpha)\mathcal P_{\mathrm{Fano}},\quad0\leq\alpha\leq1.
 $$
-
-:::info Theorem (Canonicity of E-accentuation)
-The E-accentuated anchor is **not an arbitrary choice**, but a **consequence** of the L2-definition of consciousness.
-:::
 
-**Theorem 2.2 (E-accentuation from L2-definition):**
+The diagonal is fixed and off-diagonal entries are multiplied by $c=(1-\alpha)/3$. The equally weighted Fano channel therefore equals $\tfrac13\mathrm{id}+\tfrac23\Delta$; pairwise damping alone does not reveal the incidence structure. Define $R=1/(7P)$, $k=1-R$. These weights and the following anchors are explicit specifications [D], with properties proved conditionally on them:
 
-Let the system satisfy the cognitive qualia condition (L2):
-- $R \geq R_{th} = 1/3$ — reflection
-- $\Phi \geq \Phi_{th} = 1$ — integration
-
-Then its anchor state is **necessarily** E-accentuated:
-
 $$
-w_E > \frac{1}{7}
+M_{\mathrm{coh}}(\Gamma)=k\mathcal P_\alpha(\Gamma)+R I/7,
 $$
-
-**Proof:**
-
-1. **Consciousness measure** $C = \Phi \times R$ **[Т T-140]** and the separate viability condition $D_{\text{diff}} = \exp(S_{vN}(\rho_E)) \geq 2$ (differentiation by E).
-
-2. **Reduced matrix** $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ singles out the [Interiority dimension](/docs/core/structure/dimension-e) as privileged.
-
-3. **For L2-systems:** High $D_{\text{diff}}$ requires a rich structure precisely in $\mathcal{H}_E$.
 
-4. **Consequence for anchor:** The self-model of a conscious system inevitably accentuates E — the dimension through which the system **is aware of itself**.
-
-5. **Formally:** Minimization of $\|\Gamma - \varphi(\Gamma)\|_F$ subject to $C \geq C_{th}$ gives:
-
 $$
-w_E^* = \arg\min_{w} \|\Gamma - \varphi_w(\Gamma)\|_F \quad \text{s.t.} \quad C(\varphi_w(\Gamma)) \geq C_{th}
+M_s(\Gamma)=k\mathcal P_\alpha(\Gamma)+R\Gamma^2/P,
+\qquad M_J(\Gamma)=k\mathcal P_\alpha(\Gamma)+Ruu^\dagger,
+\quad u=(1,\ldots,1)/\sqrt7.
 $$
-
-Solution: $w_E^* > 1/7$ at $C_{th} > 0$. ∎
 
-**Corollary 2.2:** The uniform anchor ($w_m = 1/7$) corresponds to systems **without self-awareness** (L0/L1), for which the question of viability of the fixed point does not arise — they do not strive toward φ(Γ).
+Each is continuous, state-preserving, and generally nonlinear. The frozen realization is the channel above with the current weight and anchor held fixed. The spectral-sharpening law of $M_s$ is not a state-independent Lüders instrument: the effect itself depends on $\Gamma$, and the normalized update is conditional.
 
-**Canonical value of α:**
+$M_{\mathrm{coh}}$ has the unique fixed point $I/7$ and
+$\|M_{\mathrm{coh}}(\Gamma)-I/7\|_F\leq(6/7)\|\Gamma-I/7\|_F$.
+This proves convergence of its iterates to $I/7$, but not contraction of arbitrary pairs: its Lipschitz constant is $9/8$. The full regenerative dynamics using this unital target cannot sustain an isolated viable holon. The separate $M_s$ and $M_J$ constructions and their actual attractors are described in [φ operator](/docs/core/operators/phi-operator#phi-s) and [evolution](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне). A fixed point of $M$ need not be a stationary state of the full vector field.
 
-For systems at the L2 boundary ($R = R_{th}$, $\Phi = \Phi_{th}$):
+#### Anchor constraints {#жизнеспособный-якорь}
 
-$$
-\alpha^* = 1 - \frac{6 \cdot P_{\text{crit}}}{7} = 1 - \frac{12}{49} \approx 0.755
-$$
+For fixed $k<1$ and a **diagonal** anchor $\sigma=\sum_iw_i|i\rangle\langle i|$, the map $k\Delta+(1-k)\sigma$ has the unique fixed point $\sigma$ (Theorem 2.1). For a general fixed anchor and fixed channel, the fixed point is
 
-**Example:** E-accentuated anchor with $\alpha = 0.6$ (conservative estimate):
-
 $$
-\Gamma_{\text{anchor}} = 0.6 |E\rangle\langle E| + 0.067 \sum_{m \neq E} |m\rangle\langle m|
+\rho_*=(1-k)(I-k\mathcal P)^{-1}\sigma
+=(1-k)\sum_{n\geq0}k^n\mathcal P^n(\sigma).
 $$
-
-has $P = 0.36 + 6 \times 0.0045 = 0.387 > 2/7$. ✓
 
-:::warning Physical interpretation
-E-accentuation is not a "privilege" of dimension E, but a **structural consequence** of the fact that conscious systems are defined through experience. Non-conscious systems (L0) do not have this constraint — their anchor can be uniform, and the question $P(\Gamma^*) < P_{\text{crit}}$ is not relevant for them (see [theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical)).
-:::
+The positive series has trace one; it equals $\sigma$ only if $\mathcal P(\sigma)=\sigma$.
 
-:::warning Potential circularity — resolved by the closed form of φ, not by the tower
-The choice of anchor depends on the interiority level (L2), which is defined via R, which is defined via φ. The circularity is only apparent: the canonical $\varphi_{\mathrm{coh}}$ and the self-registering $\varphi_s$ are closed-form functions of the current $\Gamma$ ([φ operator](/docs/core/operators/phi-operator)), with $R = 1/(7P)$ read on the same $\Gamma$, so no fixed point has to be found first. The convergence theorem below settles the second question — whether iterating "self-model → attractor → self-model" converges — and it does so only for an embodied holon under backbone dominance. (Until 2026-09-25 this box said the circularity is resolved by T-191 for every holon.)
-:::
+**Withdrawn 2026-10-03 [✗]: Theorem 2.2, compulsory E-accentuation.** The scalar conditions $R\geq1/3$, $\Phi\geq1$, and differentiation of a specified subsystem do not force $w_E>1/7$ in a feedback anchor. State conditions do not constrain an independent anchor law without a linking premise. The former $\alpha^*=37/49$ had no valid derivation. An E-accentuated anchor can be an explicit hypothesis; it is not a consequence of L2.
 
+For the family $\sigma(a)=a|E\rangle\langle E|+(1-a)\sum_{i\ne E}|i\rangle\langle i|/6$, the exact purity is $a^2+(1-a)^2/6$. For $a\geq1/7$, $P(\sigma)>2/7$ holds iff $a>(1+\sqrt6)/7\approx0.4928$ [T within this family]. A diagonal anchor has $\Phi=0$, so its viable purity does not establish an integrated conscious fixed point. The maximal-integration anchor of $M_J$ follows from (MaxΦ)/(Eq-V) [Pr], not from the support adjunction.
 #### Theorem T-191 (Convergence of the φ-tower; restated 2026-09-25) [T] {#t-191-сходимость-φ-башни}
 
 :::warning Retracted (2026-09-25): convergence "from any anchor" for every holon, $q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min})$ [✗]
@@ -581,9 +173,17 @@ The former statement — the tower converges for every holon, from any anchor, w
 
 :::tip Theorem T-191 (restated) [T]
 Let an embodied holon carry the backbone term $\mu(\sigma - \Gamma)$ ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)); let $L_{\mathcal{R}}$ be a trace-norm Lipschitz constant on $\mathcal{D}(\mathbb{C}^7)$ of $\Gamma \mapsto \kappa(\Gamma)g_V(P)(a - \Gamma)$, uniform in the target state $a$, and $\kappa_{\max} = \sup \kappa\,g_V$. If
-$$\mu > L_{\mathcal{R}} + \kappa_{\max},$$
+
+$$
+\mu > L_{\mathcal{R}} + \kappa_{\max},
+$$
+
 then the tower of self-models — $a_0$ any state, $a_{n+1}$ the stationary state of the dynamics with regeneration target $a_n$ (so that $\varphi^{(n)}$ is the replacement channel $\Gamma \mapsto a_n$) — is well defined, and
-$$\|a_n - a^*\|_1 \leq \frac{q^n}{1 - q}\,\|a_1 - a_0\|_1, \qquad q = \frac{\kappa_{\max}}{\mu - L_{\mathcal{R}}} < 1,$$
+
+$$
+\|a_n - a^*\|_1 \leq \frac{q^n}{1 - q}\,\|a_1 - a_0\|_1, \qquad q = \frac{\kappa_{\max}}{\mu - L_{\mathcal{R}}} < 1,
+$$
+
 with one limit $a^*$ for every initial anchor: $a^*$ is the stationary state of the dynamics that regenerates toward $a^*$ itself.
 :::
 
@@ -595,1282 +195,270 @@ with one limit $a^*$ for every initial anchor: $a^*$ is the stationary state of 
 
 *Constants.* $\kappa$ constant: $\lvert P(X) - P(Y)\rvert = \lvert\mathrm{Tr}\,(X + Y)(X - Y)\rvert \leq 2\|X - Y\|_1$ and $g_V = \mathrm{clamp}(7P - 2, 0, 1)$ give $L_{\mathcal{R}} \leq \kappa(1 + 2 \cdot 14) = 29\kappa$. Witness (`test_phi_tower_converges_only_under_backbone_dominance`): $\kappa = 0.1$, $\mu = 3.5$, $P(\sigma) > 3/7$, so $q \leq 1/6$; from $I/7$, $|0\rangle$ and a random pure anchor the towers meet to $10^{-10}$, each step contracts by at most $0.028$, and the limit has residual $< 10^{-10}$ with the gate open; the isolated counterexample of the box above is in the same check.
 
-**Corollary (SAD tower).** The Self-Awareness Depth tower $\mathrm{SAD} = 1, 2, 3$ (T-142 [T]) corresponds to the first three iterates. Under the hypothesis of the theorem the differences $\|a_{n+1} - a_n\|_1$ decrease geometrically. By T-142 [T], SAD$_{\max} = 3$ — the fourth iterate would require $P > 9/14 > 3/7$, violating $R \geq 1/3$ — so the tower terminates at finite depth whatever the hypothesis; convergence matters only for the realisable levels.
+**Dependencies:** T-124c (3) [T] (backbone dominance: existence, uniqueness and rate of the stationary state), T-148 [T] (backbone term). Standard mathematics: Banach fixed-point theorem, the variation-of-constants estimate for a flow contracting in trace norm. (The dependencies read "T-39a (spectral gap), T-59, T-96 ($\kappa < \kappa_{\max}$), T-124c (attractor uniqueness)" until 2026-09-25; the uniqueness statement of T-124c is retracted, and T-96 bounds no $\kappa$.)
+## Dynamical limits and spectral projectors {#теорема-φ-как-стационарное-распределение}
 
-**Dependencies:** T-124c (3) [T] (backbone dominance: existence, uniqueness and rate of the stationary state), T-148 [T] (backbone term), T-142 [T] (SAD$_{\max} = 3$). Standard mathematics: Banach fixed-point theorem, the variation-of-constants estimate for a flow contracting in trace norm. (The dependencies read "T-39a (spectral gap), T-59, T-96 ($\kappa < \kappa_{\max}$), T-124c (attractor uniqueness)" until 2026-09-25; the uniqueness statement of T-124c is retracted, and T-96 bounds no $\kappa$.)
+### Nonlinear basin retraction [T at convergence]
 
-### 2.7 Spectral formula for φ (explicit computation) {#27-спектральная-формула-для-φ-явное-вычисление}
+Let $F_t:D\to D$ be a continuous autonomous semiflow, $F_{t+s}=F_tF_s$, on an invariant domain of states. Suppose $r(x)=\lim_{t\to\infty}F_t(x)$ exists in $D$ for every $x\in D$. Then
 
-:::info Key result
-This section provides an **explicit computable formula** for the operator $\varphi$ via the spectral decomposition of the logical Liouvillian $\mathcal{L}_\Omega$. This makes the theory fully constructive.
-:::
-
-**Theorem 2.3 (Spectral formula for φ):**
-
-$$
-\varphi(\Gamma) = \sum_{k: \mathrm{Re}(\lambda_k) = 0} \langle L_k | \Gamma \rangle R_k
-$$
-
-where:
-- $\{R_k, L_k\}$ — right and left eigenvectors of $\mathcal{L}_\Omega$
-- $\lambda_k$ — eigenvalues of $\mathcal{L}_\Omega$
-- Sum over $k$ with $\mathrm{Re}(\lambda_k) = 0$ (stationary modes)
-- $\langle L_k | \Gamma \rangle := \mathrm{Tr}(L_k^\dagger \cdot \Gamma_{\text{vec}})$ — inner product in vectorized space
-
-**Proof:**
-
-1. By definition (see [Theorem: φ as stationary distribution](#теорема-φ-как-стационарное-распределение)):
-   $$\varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega}[\Gamma]$$
-
-2. Decomposition into eigenfunctions:
-   $$e^{\tau \mathcal{L}_\Omega}[\Gamma] = \sum_k e^{\lambda_k \tau} \langle L_k | \Gamma \rangle R_k$$
-
-3. As $\tau \to \infty$:
-   - $\mathrm{Re}(\lambda_k) < 0$: $e^{\lambda_k \tau} \to 0$ (decay)
-   - $\mathrm{Re}(\lambda_k) > 0$: excluded by CPTP structure (divergence impossible)
-   - $\mathrm{Re}(\lambda_k) = 0$: $e^{\lambda_k \tau}$ bounded (stationary modes)
-
-4. Therefore:
-   $$\varphi(\Gamma) = \sum_{k: \mathrm{Re}(\lambda_k) = 0} \langle L_k | \Gamma \rangle R_k \quad \blacksquare$$
-
-:::tip Simplification under primitivity of linear part [T]
-[Primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) ensures a spectral gap. In the vicinity of the non-trivial attractor $\rho^*_\Omega$ the formula simplifies to projection onto the zero mode ($\lambda_0 = 0$, multiplicity 1):
-
-$$
-\varphi(\Gamma) = \langle L_0 | \Gamma \rangle \, R_0 = \mathrm{Tr}(L_0^\dagger\,\Gamma) \cdot \rho^*_\Omega
-$$
-
-where $R_0 = \rho^*_\Omega$ is the stationary state of the full dynamics (categorical self-model, [Definition 1](/docs/core/operators/phi-operator#определение)), $L_0$ is the corresponding left eigenvector.
-:::
-
-**Algorithm for computing φ (spectral method):**
-
-```verum
-mount core.math.linalg.{StaticMatrix, StaticVector, eig, inverse};
-
-/// Compute φ(Γ) via spectral decomposition of the logical Liouvillian.
-///
-/// The Liouvillian ℒ_Ω is vectorised as a 49×49 superoperator; φ projects Γ
-/// onto the kernel (stationary modes with Re(λ) ≈ 0).
-public pure fn compute_phi_spectral(
-    gamma:   &StaticMatrix<Complex, 7, 7>,
-    l_omega: &StaticMatrix<Complex, 49, 49>,
-) -> StaticMatrix<Complex, 7, 7>
-{
-    let (eigvals, r_vectors) = eig(l_omega);
-    let l_vectors = inverse(&r_vectors).unwrap().transpose();        // left eigenvectors
-
-    let gamma_vec = gamma.flatten();                                 // 49-vector
-    let mut phi_vec = StaticVector<Complex, 49>.zeros();
-    const TOL: Float = 1.0e-10;
-
-    for k in 0..49 {
-        if eigvals[k].real().abs() < TOL {                           // stationary mode
-            let coeff = l_vectors.column(k).conjugate().dot(&gamma_vec);
-            phi_vec  = &phi_vec + r_vectors.column(k) * coeff;
-        }
-    }
-
-    let phi_gamma = phi_vec.reshape<7, 7>();
-    let hermitised = (&phi_gamma + phi_gamma.adjoint()) / Complex.from_real(2.0);
-    &hermitised / hermitised.trace()                                  // renormalise Tr = 1
-}
-```
-
-**Computational complexity:**
-
-| Operation | Complexity |
-|----------|-----------|
-| Spectral decomposition of $\mathcal{L}_\Omega$ | $O(N^6)$ for $N=7$, i.e. $O(49^3) \approx 10^5$ |
-| Projection onto stationary modes | $O(N^4)$ |
-| Total complexity | $O(N^6)$, but $\mathcal{L}_\Omega$ is computed once |
-
-**Relation to contracting form:**
-
-The spectral formula is equivalent to the canonical definition with the correct choice of $\mathcal{L}_\Omega$. Advantages of the spectral form:
-
-1. **Explicit computation** — no iterations required
-2. **Uniqueness** — no dependence on initial state
-3. **Categorical consistency** — corresponds to the left adjoint to inclusion $\mathrm{Sub}(\Gamma)$
-
-### 2.8 n-th order reflection (for L3/L4) {#28-рефлексия-n-го-порядка-для-l3l4}
-
-:::info Extension for post-reflective levels
-Defining levels L3 and L4 of the [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) requires an **iterated** operator φ.
-:::
-
-**Definition 2.12 (Iterated operator φ):**
-
-$$
-\varphi^{(n)}(\Gamma) := \underbrace{\varphi \circ \varphi \circ \cdots \circ \varphi}_{n}(\Gamma)
-$$
-
-with $\varphi^{(0)}(\Gamma) := \Gamma$.
-
-**Definition 2.13 (n-th order reflection):**
-
-$$
-R^{(n)}(\Gamma) := \mathrm{Fid}(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))
-$$
-
-where $\mathrm{Fid}(\rho_1, \rho_2) := |\mathrm{Tr}(\sqrt{\sqrt{\rho_1}\rho_2\sqrt{\rho_1}})|^2$ — fidelity.
-
-**Thresholds for L3/L4:**
-
-| Transition | Threshold | Universal formula |
-|---------|-------|----------------------|
-| L1→L2 | $R^{(1)} \geq 1/3$ | $X^{(2)}_{\text{th}} = 1/3$ |
-| L2→L3 | $R^{(2)} \geq 1/4$ | $X^{(3)}_{\text{th}} = 1/4$ |
-| L3→L4 | $\lim_n R^{(n)} > 0$ | — |
-
-**Algorithm for computing $R^{(2)}$:**
-
-```verum
-mount core.math.linalg.matrix_sqrt;
-
-/// Second-order reflection R^(2) = Fid(φ(Γ), φ(φ(Γ))).
-/// Fidelity F(ρ₁, ρ₂) = |Tr √(√ρ₁ ρ₂ √ρ₁)|².
-public pure fn compute_r2(
-    gamma:   &StaticMatrix<Complex, 7, 7>,
-    l_omega: &StaticMatrix<Complex, 49, 49>,
-) -> Float { 0.0 <= self && self <= 1.0 }
-{
-    let phi_gamma     = compute_phi_spectral(gamma, l_omega);
-    let phi_phi_gamma = compute_phi_spectral(&phi_gamma, l_omega);
-
-    let sqrt_phi = matrix_sqrt(&phi_gamma);
-    let inner = sqrt_phi.matmul(&phi_phi_gamma).matmul(&sqrt_phi);
-    let trace_sqrt = matrix_sqrt(&inner).trace().abs();
-    (trace_sqrt * trace_sqrt).clamp(0.0, 1.0)
-}
-```
-
----
-
-## 3. Theorem on existence of fixed point {#3-теорема-о-существовании-неподвижной-точки}
-
-### 3.1 Main theorem {#31-основная-теорема}
-
-**Theorem 3.1 (Existence of reflexion fixed point):**
-
-Let $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ be a contracting map with constant $k < 1$:
-
-$$
-\forall \Gamma_1, \Gamma_2 \in \mathcal{D}(\mathcal{H}): \|\varphi(\Gamma_1) - \varphi(\Gamma_2)\|_F \leq k \cdot \|\Gamma_1 - \Gamma_2\|_F
-$$
-
-Then:
-
-$$
-\exists! \, \Gamma^* \in \mathcal{D}(\mathcal{H}): \varphi(\Gamma^*) = \Gamma^*
-$$
-
-and for any $\Gamma_0 \in \mathcal{D}(\mathcal{H})$:
-
-$$
-\lim_{n \to \infty} \varphi^n(\Gamma_0) = \Gamma^*
-$$
-
-with convergence rate:
-
-$$
-\|\varphi^n(\Gamma_0) - \Gamma^*\|_F \leq k^n \cdot \|\Gamma_0 - \Gamma^*\|_F
-$$
-
-**Proof:**
-
-**Step 1: Completeness of the space**
-
-$\mathcal{D}(\mathcal{H})$ is a closed subset of the Banach space $(\mathcal{L}(\mathcal{H}), \|\cdot\|_F)$.
-
-Checking closedness:
-- The limit of a sequence of Hermitian matrices is Hermitian
-- The limit of a sequence of positive semi-definite matrices is positive semi-definite (closed cone)
-- $\mathrm{Tr}$ is a continuous function, $\mathrm{Tr}(\lim \rho_n) = \lim \mathrm{Tr}(\rho_n) = 1$
-
-Therefore, $\mathcal{D}(\mathcal{H})$ is a complete metric space.
-
-**Step 2: Applying the Banach theorem**
-
-$\varphi$ is a contracting map on a complete metric space.
-
-By the Banach fixed point theorem:
-- There exists a unique fixed point $\Gamma^*$
-- Iterations converge to $\Gamma^*$ for any initial condition
-
-**Step 3: Structure preservation**
-
-Show that $\Gamma^* \in \mathcal{D}(\mathcal{H})$:
-
-$\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ (by construction of $\varphi_k$ or as CPTP map).
-
-$\Gamma^* = \lim_{n \to \infty} \varphi^n(\Gamma_0)$, where $\Gamma_0 \in \mathcal{D}(\mathcal{H})$ and $\varphi^n(\Gamma_0) \in \mathcal{D}(\mathcal{H})$ for all $n$.
-
-$\mathcal{D}(\mathcal{H})$ is closed $\Rightarrow \Gamma^* \in \mathcal{D}(\mathcal{H})$. ∎
-
-**Scope (2026-09-25).** Theorem 3.1 is Banach's theorem and is true as a conditional; its hypothesis — a global contraction with constant $k$ — is met by the form of Lemma 2.1 with constant $k$ and anchor and a unital $\mathcal{P}$, not by the UHM self-models $\varphi_{\mathrm{coh}}$, $\varphi_s$, $\varphi_J$, whose weight $k = 1 - 1/(7P)$ varies with the state (Lipschitz constants $54/49$ and $1.129$ above; $\varphi_s$ has at least eight fixed points). For them a fixed point exists by Brouwer's theorem on the compact convex $\mathcal{D}(\mathcal{H})$, and uniqueness, where it holds, comes from the explicit computation.
-
-### 3.2 Approximate fixed points
-
-**Definition 3.1 ($\varepsilon$-fixed point):**
-
-$\Gamma$ is called an $\varepsilon$-fixed point if $\|\Gamma - \varphi(\Gamma)\|_F < \varepsilon$.
-
-**Theorem 3.2 (Existence of $\varepsilon$-fixed point for non-contracting $\varphi$):**
-
-Let $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ be a continuous map (not necessarily contracting).
-
-Then for any $\varepsilon > 0$ there exists $\Gamma_\varepsilon \in \mathcal{D}(\mathcal{H})$ such that:
-
-$$
-\|\Gamma_\varepsilon - \varphi(\Gamma_\varepsilon)\|_F < \varepsilon
-$$
-
-**Proof:**
-
-Consider the family of maps:
-
-$$
-\varphi_\lambda(\Gamma) := \lambda \cdot \varphi(\Gamma) + (1 - \lambda) \cdot \Gamma_c
-$$
-
-where $\Gamma_c = I/N$ is the center of $\mathcal{D}(\mathcal{H})$.
-
-For $\lambda < 1$: if $\varphi$ is non-expansive, $\varphi_\lambda$ is a contracting map with constant $\lambda$ (as in Lemma 2.1). *Corrected 2026-09-25:* for a merely continuous $\varphi$ this step fails, and the theorem needs no approximation at all — Brouwer's theorem gives an exact fixed point of every continuous $\varphi$ on the compact convex $\mathcal{D}(\mathcal{H})$, so $\varepsilon = 0$ is attained. The argument below is kept for the non-expansive case.
-
-By Theorem 3.1: $\exists \, \Gamma^*_\lambda : \varphi_\lambda(\Gamma^*_\lambda) = \Gamma^*_\lambda$.
-
-Consider:
-
-$$
-\|\Gamma^*_\lambda - \varphi(\Gamma^*_\lambda)\|_F = \|\Gamma^*_\lambda - \varphi_\lambda(\Gamma^*_\lambda) + \varphi_\lambda(\Gamma^*_\lambda) - \varphi(\Gamma^*_\lambda)\|_F
-$$
-
-$$
-= \|\varphi_\lambda(\Gamma^*_\lambda) - \varphi(\Gamma^*_\lambda)\|_F \quad (\Gamma^*_\lambda \text{ is a fixed point of } \varphi_\lambda)
-$$
-
-$$
-= \|\lambda \cdot \varphi(\Gamma^*_\lambda) + (1-\lambda) \cdot \Gamma_c - \varphi(\Gamma^*_\lambda)\|_F = (1-\lambda) \cdot \|\Gamma_c - \varphi(\Gamma^*_\lambda)\|_F
-$$
-
-$$
-\leq (1-\lambda) \cdot \mathrm{diam}(\mathcal{D}(\mathcal{H}))
-$$
-
-where $\mathrm{diam}(\mathcal{D}(\mathcal{H})) = \sup_{\rho_1, \rho_2} \|\rho_1 - \rho_2\|_F \leq \sqrt{2}$ (diameter of the density matrix space).
-
-Choosing $\lambda = 1 - \varepsilon / (2 \cdot \mathrm{diam}(\mathcal{D}(\mathcal{H})))$, we get:
-
-$$
-\|\Gamma^*_\lambda - \varphi(\Gamma^*_\lambda)\|_F < \varepsilon
-$$
-∎
-
-### 3.3 Contraction conditions for CPTP maps
-
-**Theorem 3.3 (Contraction criterion):**
-
-A CPTP map $\mathcal{P}$ is contracting with constant $k < 1$ if and only if:
-
-$$
-\exists \, \rho_{\text{inv}} \in \mathcal{D}(\mathcal{H}) : \mathcal{P}(\rho_{\text{inv}}) = \rho_{\text{inv}} \land \mathrm{spec}(\mathcal{P}|_{\rho_{\text{inv}}^\perp}) \subset \{z \in \mathbb{C} : |z| < 1\}
-$$
-
-where $\mathcal{P}|_{\rho_{\text{inv}}^\perp}$ is the restriction of $\mathcal{P}$ to the orthogonal complement of $\rho_{\text{inv}}$.
-
-**Interpretation:** $\mathcal{P}$ is contracting if it has a unique invariant state and all perturbations decay.
-
-**Corrected 2026-09-25 [✗ as "if and only if"].** The spectral condition makes some power $\mathcal{P}^m$ a contraction (and $\mathcal{P}$ one in a suitably chosen norm); it does not make $\mathcal{P}$ itself a contraction in the Frobenius norm. The channel $0.9\,(\mathrm{Tr}_2 X \otimes |0\rangle\langle0|) + 0.1\,\mathrm{Tr}(X)\,|00\rangle\langle00|$ on $\mathbb{C}^2 \otimes \mathbb{C}^2$ has the unique invariant state $|00\rangle\langle00|$ and its other eigenvalues in $|z| \le 0.9$, yet stretches a Hilbert–Schmidt distance by $0.9\sqrt2 = 1.27$. The converse (a contraction has a unique fixed point) is Banach.
-
-**Examples of contracting CPTP:**
-
-1. **Thermalization:**
-
-$$
-\mathcal{P}_{\text{therm}}(\rho) = \lambda \rho + (1-\lambda) \rho_{\text{thermal}}, \quad \lambda < 1
-$$
-
-2. **Depolarizing channel:**
-
-$$
-\mathcal{P}_{\text{depol}}(\rho) = p \rho + (1-p) \frac{I}{N}, \quad p < 1
-$$
-
-3. **Amplitude damping:**
-
-$$
-\mathcal{P}_{\text{damp}}(\rho) = K_0 \rho K_0^\dagger + K_1 \rho K_1^\dagger
-$$
-
-$$
-K_0 = |0\rangle\langle 0| + \sqrt{1-\gamma}|1\rangle\langle 1|, \quad K_1 = \sqrt{\gamma}|0\rangle\langle 1|
-$$
-
-Contracting for $\gamma > 0$.
-
----
-
-## 4. Relation to reflection measure R {#4-связь-с-мерой-рефлексии-r}
-
-### 4.1 Definition of R
-
-**Definition 4.1 ([Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)):**
-
-$$
-R(\Gamma) := \frac{1}{7P(\Gamma)}, \quad P = \mathrm{Tr}(\Gamma^2)
-$$
-
-Equivalent form: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$, where $\rho^*_{\mathrm{diss}} = I/7$, $\|\Gamma\|_F = \sqrt{P}$ (square root of [purity](/docs/core/dynamics/viability#определение-чистоты)).
-
-:::warning Distinction between R_canonical and R_φ
-$R_{\text{canonical}} := 1/(7P)$ is the **canonical definition** used in all thresholds ($R_{\text{th}} = 1/3$). It is a measure of proximity to the maximally mixed state $I/7$, **NOT** a measure of quality of self-modeling.
-
-The quality of self-modeling is defined separately (formerly also written $Q_\varphi$; unified notation — [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)):
-
-$$
-R_\varphi(\Gamma) := 1 - \frac{\|\Gamma - \varphi(\Gamma)\|^2_F}{\|\Gamma\|^2_F}
-$$
-
-Comparison at characteristic states:
-- At $\Gamma = I/7$ (dissipative attractor): $R_{\text{canonical}} = 1$, $R_\varphi = 1$.
-- At a pure state ($P = 1$): $R_{\text{canonical}} = 1/7$, $R_\varphi$ depends on $\varphi$.
-
-Sections 4.2–4.3 below analyse the convergence of the self-model quality and are written in $R_\varphi$; in all other sections and in threshold conditions $R = R_{\text{canonical}} = 1/(7P)$.
-:::
-
-### 4.2 Convergence of R_φ as fixed point is approached
-
-**Theorem 4.1 ($R_\varphi \to 1$ as $\Gamma \to \Gamma^*$):**
-
-Let $\varphi$ be a contracting map with fixed point $\Gamma^*$.
-
-Then:
-
-$$
-\lim_{\Gamma \to \Gamma^*} R_\varphi(\Gamma) = 1
-$$
-
-**Proof:**
-
-As $\Gamma \to \Gamma^*$:
-
-$$
-\|\Gamma - \varphi(\Gamma)\|_F \to \|\Gamma^* - \varphi(\Gamma^*)\|_F = \|\Gamma^* - \Gamma^*\|_F = 0
-$$
-
-Therefore:
-
-$$
-R_\varphi(\Gamma) = 1 - \frac{\|\Gamma - \varphi(\Gamma)\|^2_F}{\|\Gamma\|^2_F} \to 1 - \frac{0}{P(\Gamma^*)} = 1
-$$
-
-(The denominator is bounded away from zero for any density matrix: $\|\Gamma^*\|^2_F = P(\Gamma^*) \geq 1/N > 0$.) ∎
-
-### 4.3 Estimate of rate of convergence of R_φ
-
-**Theorem 4.2 (Rate of convergence of $R_\varphi$):**
-
-For contracting $\varphi$ with constant $k$ and sequence $\Gamma_n = \varphi^n(\Gamma_0)$:
-
-$$
-1 - R_\varphi(\Gamma_n) \leq 4 k^{2n} \cdot \frac{\|\Gamma_0 - \Gamma^*\|^2_F}{P_{\min}}
-$$
-
-where $P_{\min} = \min_{\rho \in \mathcal{D}(\mathcal{H})} P(\rho) = 1/N$.
-
-**Proof:**
-
-$$
-1 - R_\varphi(\Gamma_n) = \frac{\|\Gamma_n - \varphi(\Gamma_n)\|^2_F}{\|\Gamma_n\|^2_F} = \frac{\|\varphi^n(\Gamma_0) - \varphi^{n+1}(\Gamma_0)\|^2_F}{P(\Gamma_n)}
-$$
-
-$$
-\leq \frac{(k^n \cdot \|\Gamma_0 - \varphi(\Gamma_0)\|_F)^2}{P(\Gamma_n)} \quad \text{(contraction)}
-$$
-
-$$
-\leq \frac{k^{2n} \cdot (\|\Gamma_0 - \Gamma^*\|_F + \|\Gamma^* - \varphi(\Gamma_0)\|_F)^2}{P_{\min}}
-$$
-
-$$
-\leq \frac{k^{2n} \cdot (\|\Gamma_0 - \Gamma^*\|_F + k \cdot \|\Gamma^* - \Gamma_0\|_F)^2}{P_{\min}} = \frac{k^{2n} \cdot (1 + k)^2 \cdot \|\Gamma_0 - \Gamma^*\|^2_F}{P_{\min}}
-$$
-
-For $k < 1$: $(1 + k)^2 < 4$, giving the bound:
-
-$$
-1 - R_\varphi(\Gamma_n) \leq \frac{4 \cdot k^{2n} \cdot \|\Gamma_0 - \Gamma^*\|^2_F}{P_{\min}}
-$$
-∎
-
-:::tip Strengthening: unconditional convergence [T]
-[Primitivity of $\mathcal{L}_\Omega$](/docs/core/operators/lindblad-operators#примитивность-ℒω) guarantees exponential convergence $R_\varphi \to 1$ for **any** initial state $\Gamma_0 \in \mathcal{D}(\mathbb{C}^7)$, without additional conditions on initial data.
-:::
-
-### 4.4 Relation of R to consciousness measure C
-
-**Theorem 4.3 (reflection factors at the fixed point):**
-
-The consciousness measure $C = \Phi \times R$ **[Т T-140]** takes the **canonical** $R = 1/(7P)$; the convergence results of §4.2–4.3 concern the **self-model quality** $R_\varphi$. At the fixed point the two factor cleanly:
-
-$$
-R_\varphi(\Gamma^*) = 1, \qquad C(\Gamma^*) = \Phi(\Gamma^*) \cdot \frac{1}{7P(\Gamma^*)},
-$$
-
-with $R(\Gamma^*) = 1/(7P(\Gamma^*)) \in [1/3, 1/2)$ whenever $\Gamma^*$ lies inside the conscious window. (An earlier reading substituted $R_\varphi(\Gamma^*) = 1$ into $C$, yielding $C(\Gamma^*) = \Phi(\Gamma^*)$; under the canonical $R$ that value is attained only at $\Gamma^* = I/7$, where $\Phi = 0$ — the reading is withdrawn.)
-
-:::note On notation
-Differentiation $D_{\text{diff}} \geq D_{\min} = 2$ enters as a separate viability condition, not as a factor of $C$.
-:::
-
-**Corollary:** Ideal self-knowledge ($\Gamma = \Gamma^*$) maximizes the self-model-quality factor $R_\varphi$ — the quantity carried by the meaning functional and the $R^{(n)}$-towers — while the canonical factor of $C$ is pinned by purity.
-
-### 4.5 The derivative of the self-model: Dφ {#дф-производная}
-
-Everything dynamical about $R_\varphi$ is carried by one object: how the self-model *responds* to a change of state. The exact flow identity of [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r),
-
-$$
-\frac{dR_\varphi}{d\tau} = (1 - R_\varphi)\,\frac{\dot P}{P} \;-\; \frac{2}{P}\,\bigl\langle \Gamma - \varphi(\Gamma),\; (\mathrm{Id} - D\varphi)[\dot\Gamma] \bigr\rangle_F,
-$$
-
-contains the derivative $D\varphi$ of the self-model map — the **response kernel of self-modelling**. This subsection computes it for the canonical family and verifies the identity by an independent route.
-
-**Definition ($D\varphi$) [D].** The Gateaux derivative of $\varphi$ at $\Gamma$ along a tangent direction $V$ (Hermitian, traceless): $D\varphi[V] := \lim_{\varepsilon \to 0} (\varphi(\Gamma + \varepsilon V) - \varphi(\Gamma))/\varepsilon$. For a Lipschitz (contracting) $\varphi$ it exists almost everywhere (Rademacher, finite dimension); for the smooth families below — everywhere.
-
-:::tip Theorem 4.4 (Dφ of the canonical family; T-249) [T]
-For the canonical dissipative family $\varphi(\Gamma) = (1 - k(\Gamma))\,\Gamma + k(\Gamma)\, I/7$ with $k = 1 - 1/(7P)$:
-
-$$
-D\varphi[V] = R\,V \;-\; \frac{2}{7P^2}\,\langle \Gamma, V\rangle_F\,(\Gamma - I/7), \qquad R = \frac{1}{7P}.
-$$
-
-$D\varphi$ preserves the Hermitian-traceless tangent space and is $G_2$-equivariant.
-:::
-
-**Proof.** Product rule on $\varphi = (1-k)\Gamma + k\,I/7$: the $\Gamma$-slot contributes $(1-k)V = RV$; the $k$-slot contributes $Dk[V]\,(I/7 - \Gamma)$ with $Dk[V] = \tfrac{1}{7P^2}DP[V] = \tfrac{2}{7P^2}\langle\Gamma, V\rangle_F$ (since $DP[V] = 2\,\mathrm{Tr}(\Gamma V)$); the reference $I/7$ is constant. Trace preservation: $\mathrm{Tr}\,D\varphi[V] = R\cdot 0 - \tfrac{2}{7P^2}\langle\Gamma,V\rangle\,\mathrm{Tr}(\Gamma - I/7) = 0$. Equivariance: $P$, $R$, $\langle\cdot,\cdot\rangle_F$ are unitarily invariant and $I/7$ is the unique $G_2$-invariant state, so $D\varphi$ commutes with conjugation by $U \in G_2$. $\blacksquare$
-
-**Two-route consistency (part of T-249) [T].** For this family the closed form $R_\varphi = 1 - (1-R)^3$ holds pointwise, whence directly $\dot R_\varphi = -3(1-R)^2 \dot P/(7P^2)$. Substituting Theorem 4.4 into the flow identity must give the same. Indeed, with $\Delta = \Gamma - \varphi(\Gamma) = k(\Gamma - I/7)$:
-
-$$
-(\mathrm{Id} - D\varphi)[\dot\Gamma] = k\,\dot\Gamma + \frac{\dot P}{7P^2}(\Gamma - I/7), \qquad
-\langle \Gamma - I/7, \dot\Gamma\rangle_F = \frac{\dot P}{2}
-$$
-
-(the latter by trace preservation, $\mathrm{Tr}\,\dot\Gamma = 0$), and $\|\Gamma - I/7\|_F^2 = P - 1/7 = kP$. Collecting terms with $1 - R_\varphi = k^3$:
-
-$$
-\dot R_\varphi = k^3\frac{\dot P}{P} - k^2\frac{\dot P}{P} - 2k^2 R\,\frac{\dot P}{P} = \frac{\dot P}{P}\,k^2\,(k - 1 - 2R) = -3R\,k^2\,\frac{\dot P}{P} = -\frac{3(1-R)^2\dot P}{7P^2}. \;\blacksquare
-$$
-
-**Machine verification.** Finite-difference check of $D\varphi$ and three-route agreement (identity / closed form / numerical derivative along random density-matrix paths): maximal discrepancy $\sim 10^{-10}$ over $200$ random states.
-
-### 4.6 The bandwidth theorem for R_φ {#теорема-полосы-rφ}
-
-:::tip Theorem 4.5 (Bandwidth bound; T-250) [Т — for φ differentiable along the trajectory]
-Along any trajectory of the dynamics,
-
-$$
-\Bigl|\dot R_\varphi - (1 - R_\varphi)\frac{\dot P}{P}\Bigr| \;\leq\; \frac{2}{\sqrt{P}}\,\sqrt{1 - R_\varphi}\;C_\varphi\,\|\dot\Gamma\|_F, \qquad C_\varphi := \|\mathrm{Id} - D\varphi\|_{\mathrm{op}}.
-$$
-
-For the canonical family, $C_\varphi \leq (1-R) + 2R\sqrt{1-R}$ (numerically $\approx 1.21$ across the conscious window).
-:::
-
-**Proof.** Cauchy–Schwarz on the flow identity, with $\|\Delta\|_F = \sqrt{(1 - R_\varphi)P}$ by the definition of $R_\varphi$. For the family bound: $\|(\mathrm{Id} - D\varphi)[V]\| \leq (1-R)\|V\| + \tfrac{2}{7P^2}\,\|\Gamma\|\,\|\Gamma - I/7\|\,\|V\|$ and $\|\Gamma\| = \sqrt P$, $\|\Gamma - I/7\| = \sqrt{kP} = \sqrt{1-R}\,\sqrt P$, so the second term is $2\sqrt{1-R}/(7P) = 2R\sqrt{1-R}$. $\blacksquare$
-
-**Corollary (path-length law) [T].** Let $u := \sqrt{1 - R_\varphi}$ — the *mismatch amplitude*. On segments with $\dot P = 0$:
-
-$$
-\bigl|u(\tau_2) - u(\tau_1)\bigr| \;\leq\; \frac{C_\varphi}{\sqrt P}\,\int_{\tau_1}^{\tau_2}\|\dot\Gamma\|_F\,d\tau
-$$
-
-— **reorganizing the self-model is paid for in state-space path length**. *Proof:* $\dot u = -\dot R_\varphi/(2u)$, and the theorem's right side divided by $2u$ collapses to $C_\varphi\|\dot\Gamma\|/\sqrt P$. $\blacksquare$
-
-**Remark (discrete instance).** Theorem 4.2 above is exactly this law along the $\varphi$-tower: $u(\Gamma_n) \leq 2k^n\|\Gamma_0 - \Gamma^*\|_F/\sqrt{P_{\min}}$, with the geometric path $\sum_n \|\Gamma_{n+1} - \Gamma_n\| \leq \|\Gamma_1 - \Gamma_0\|/(1-k)$ (T-191 convergence). The continuous and discrete forms are two readings of one bandwidth constraint.
-
-**Remark ($G_2$).** $R_\varphi$, $u$, $C_\varphi$, $\|\dot\Gamma\|_F$ are $G_2$-invariant; the law is observer-independent.
-
-**Numerical anchor [I].** At the psychedelic-peak profile of [altered states](/docs/consciousness/states/altered-states) ($P \approx 0.32$; $R_\varphi: 0.45 \to 0.25$): $\Delta u = \sqrt{0.75} - \sqrt{0.55} \approx 0.124$, so the trajectory must traverse at least $\Delta u\,\sqrt P/C_\varphi \approx 0.058$ Frobenius units of state motion between onset and peak. The collapse of the "I" costs actual movement of the state; a short (micro-dose) trajectory cannot produce it.
-
-### 4.7 Mechanisms: dissolution, training, two timescales {#механизмы-rφ}
-
-**Ego dissolution [C].** Fast state motion with a lagging self-model — $\|\dot\Gamma\|$ large while $(\mathrm{Id} - D\varphi)[\dot\Gamma]$ stays comparable to $\dot\Gamma$ — drives $u$ up at the bandwidth-permitted rate: the phenomenological "φ does not have time to restructure" becomes the quantitative statement that $u$ grows no faster, and generically as fast, as $C_\varphi\|\dot\Gamma\|/\sqrt P$.
-
-**Two-timescale training model [С structure; [I] numbers].** Let the self-model carry a trainable target: $\varphi_\theta(\Gamma) = (1-k)\Gamma + k\,\rho_\theta$, with $\theta$ evolving on the slow timescale of $H_{\text{eff}}$-restructuring (procedural memory; the T-155 learning channel). Then $R_\varphi = 1 - k^2\|\Gamma - \rho_\theta\|_F^2/P$, and training that aligns $\rho_\theta$ with the practiced state raises the **baseline** $R_\varphi$ at fixed $P$ — the mechanism behind the cumulative shift in the shamatha progression. The samādhi signature ($P$ and $R_\varphi$ rising *simultaneously*) is thereby resolved: the information the categorical $\varphi$ carries beyond purity is exactly the learned target $\rho_\theta$.
-
-**Training law (exact within the alignment model) [C].** If the slow variable follows the gradient-alignment flow $\dot\rho_\theta = 2\eta\,(\bar\Gamma - \rho_\theta)$ toward a practiced state $\bar\Gamma$ (the gradient of the alignment loss $\lVert\bar\Gamma - \rho_\theta\rVert_F^2$ at mobility $\eta$), the solution is the convex path $\rho_\theta(t) = (1 - e^{-2\eta t})\,\bar\Gamma + e^{-2\eta t}\rho_\theta(0)$ — automatically a density matrix for every $t$ — and the baseline self-model quality obeys the **exponential saturation law**
-
-$$
-R_\varphi^{\text{base}}(t) \;=\; 1 \;-\; \frac{k^2\,e^{-4\eta t}\,\lVert\bar\Gamma - \rho_\theta(0)\rVert_F^2}{P}.
-$$
-
-Practice approaches its ceiling exponentially, at twice the flow rate ($e^{-4\eta t}$: the distance enters squared), with the rate constant set by the slow T-155 channel — the cumulative shift of the shamatha progression acquires a closed form. Status [C] at the gradient-alignment model; within the model the law is exact (machine-checked against direct integration of the flow, $2\cdot 10^5$ steps).
-
-**The gate condition and the threshold.** Define **(G) [D]**: *the $K = 3$ channel-class discriminator factors through the self-model readout, with classification accuracy bounded below by $R_\varphi$.* **Statement [C at (G)]:** (G) implies $R_{\varphi,\text{th}} = 1/3$ — Bayesian plurality among three equiprobable alternatives requires accuracy above $1/K$.
-
-**Register of the module (closed).** Both items of the original register are closed below: (i) the gate is now a theorem-level bound — §4.9 (T-252); the residual freedom is the accuracy model $A_D$ and the exact placement of the working threshold inside the derived band **[C]**; (ii) $D\varphi$ for implicitly defined $\varphi$ — §4.8 (T-251); the residual condition is $C^1$-smoothness of the abstract categorical generator in the Bures topology **[C]**, satisfied by every corpus-realized family.
-
-### 4.8 Dφ for implicitly defined self-models {#дф-неявная}
-
-Theorem 4.4 covers the explicit canonical family. The categorical $\varphi$, however, is given *implicitly* — as the fixed point of a generator whose iteration is the T-191 tower. Its derivative follows from the implicit function theorem with a Neumann series — which is also the categorical answer: differentiating a reflector along its universal property is inverting $\mathrm{Id}$ minus the derivative in the model slot.
-
-:::tip Theorem 4.6 (Dφ of an implicit self-model; T-251) [T]
-Let $G: \mathcal{D}(\mathbb{C}^7) \times \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ be $C^1$ with $\sup \lVert D_2 G\rVert_{\mathrm{op}} \leq q < 1$ (uniform contraction in the model slot), and let $\varphi(\Gamma)$ be the unique fixed point of $\rho \mapsto G(\Gamma, \rho)$. Then $\varphi$ is $C^1$ and, evaluated at $(\Gamma, \varphi(\Gamma))$,
-
-$$
-D\varphi \;=\; (\mathrm{Id} - D_2 G)^{-1} \circ D_1 G \;=\; \sum_{n \geq 0} (D_2 G)^n\, D_1 G,
-$$
-
-with $\lVert D\varphi\rVert_{\mathrm{op}} \leq \lVert D_1 G\rVert_{\mathrm{op}}/(1 - q)$; consequently $C_\varphi \leq 1 + \lVert D_1 G\rVert_{\mathrm{op}}/(1-q)$, and the bandwidth theorem T-250 applies to **every** contraction-defined self-model.
-:::
-
-**Proof.** Set $F(\Gamma, \rho) := \rho - G(\Gamma, \rho)$; then $D_2 F = \mathrm{Id} - D_2 G$ is invertible by the Neumann series ($q < 1$). The finite-dimensional $C^1$ implicit function theorem yields $\varphi \in C^1$ with $D\varphi = -(D_2 F)^{-1} D_1 F = (\mathrm{Id} - D_2 G)^{-1} D_1 G$; the series and the norm bound are the Neumann expansion. $\blacksquare$
-
-Three readings. **Tower:** the $n$-th term $(D_2 G)^n D_1 G$ is the sensitivity transmitted through $n$ storeys of the T-191 tower — the geometric decay of storey-sensitivities *is* the tower's convergence, differentiated. **Degenerate check:** for $G$ independent of $\rho$ ($q = 0$) the series collapses to $D_1 G$ — Theorem 4.4 (T-249) is the zeroth-order case. **Machine verification:** for a genuinely nonlinear generator ($q \approx 0.7$–$0.8$), the predicted $D\varphi$ and the brute-force finite-difference derivative of the re-solved fixed point agree at $\sim 10^{-10}$ (numeric $48 \times 48$ Jacobians); the degenerate case reproduces T-249 at $10^{-11}$.
-
-### 4.9 The gate theorem: discrimination through the self-model {#гейт-теорема}
-
-This closes the gate condition (G) of §4.7. First the structure **[Т — structural reading]**: in $\mathcal{L}_\Omega$ the *only* feedback channel computed from the self-model is the regeneration $\mathcal{R} = \kappa(\Gamma)(\varphi(\Gamma) - \Gamma)\,g_V$ — the system's sole endogenous corrective action reads the state through $\varphi(\Gamma)$. Endogenous *adaptive* discrimination — discrimination the system can act on — is therefore $\varphi$-mediated by construction (the identification of "adaptive" with "$\mathcal{R}$-actionable" is definitional **[D]**).
-
-:::tip Theorem 4.7 (Gate bound; T-252) [T]
-Let $\{E_c\}_{c=1..K}$ be any POVM implementing a $K$-hypothesis decision, and $\Delta := \Gamma - \varphi(\Gamma)$ (traceless). Then:
-
-**(a)** $|\mathrm{Tr}(E_c \Delta)| \leq \tfrac{1}{2}\lVert\Delta\rVert_1$ for every $c$, and the outcome distributions satisfy $\mathrm{TV}\bigl(p(\Gamma), p(\varphi(\Gamma))\bigr) \leq \tfrac{1}{2}\lVert\Delta\rVert_1$;
-
-**(b)** $\lVert\Delta\rVert_1 \leq \sqrt{48/7}\,\lVert\Delta\rVert_F = 4\sqrt{3/7}\,\sqrt{P\,(1 - R_\varphi)}$, and the constant $\sqrt{48/7} = 4\sqrt{3/7} \approx 2.619$ is **tight** on traceless $\mathrm{Herm}(7)$;
-
-**(c)** hence the $\varphi$-mediated success probability obeys $p_\varphi \geq A_D - 2\sqrt{3/7}\,\sqrt{P(1-R_\varphi)}$, where $A_D$ is the true-state accuracy of the decision rule, and Bayesian dominance $p_\varphi > 1/K$ is **guaranteed** whenever
-
 $$
-R_\varphi \;\geq\; 1 - \frac{7}{12P}\,\Bigl(A_D - \frac{1}{K}\Bigr)^{2}.
+F_s(r(x))=\lim_{t\to\infty}F_s(F_t(x))
+=\lim_{t\to\infty}F_{t+s}(x)=r(x).
 $$
-
-Both inequalities of the chain are individually saturated: (a) by the Jordan projector $E = \Pi_+$ of $\Delta$, (b) by the $(3,4)$-split spectrum — so no smaller constants exist.
-:::
-
-**Proof.** (a) Jordan-decompose $\Delta = \Delta_+ - \Delta_-$; tracelessness gives $\mathrm{Tr}\,\Delta_+ = \mathrm{Tr}\,\Delta_- = \tfrac{1}{2}\lVert\Delta\rVert_1$; with $0 \leq E_c \leq I$: $|\mathrm{Tr}\,E_c\Delta| \leq \max(\mathrm{Tr}\,E_c\Delta_+, \mathrm{Tr}\,E_c\Delta_-) \leq \tfrac{1}{2}\lVert\Delta\rVert_1$, and $\mathrm{TV} = \tfrac{1}{2}\sum_c |\mathrm{Tr}\,E_c\Delta| \leq \tfrac{1}{2}\sum_c \mathrm{Tr}\,E_c(\Delta_+ + \Delta_-) = \tfrac{1}{2}\lVert\Delta\rVert_1$. Equality at $E = \Pi_+$ (the positive-eigenspace projector): $\mathrm{Tr}(\Pi_+\Delta) = \mathrm{Tr}\,\Delta_+ = \tfrac12\lVert\Delta\rVert_1$. (b) Maximize $\lVert\lambda\rVert_1$ over $\sum_i\lambda_i = 0$, $\sum_i\lambda_i^2 = 1$ in dimension 7: the KKT condition $\mathrm{sign}(\lambda_i) = \alpha + 2\beta\lambda_i$ forces at most one positive value $a$ ($p$ copies) and one negative $-b$ ($q$ copies), $pa = qb$; then $\lVert\lambda\rVert_1^2/\lVert\lambda\rVert_2^2 = 4pq/(p+q)$, increasing in the support size $p + q \leq 7$ and maximal at the balanced split $\{p, q\} = \{3, 4\}$: $4 \cdot 12/7 = 48/7$. Witness attaining it exactly: $\Delta^* = \mathrm{diag}(4,4,4,-3,-3,-3,-3)$ ($\lVert\Delta^*\rVert_1 = 24$, $\lVert\Delta^*\rVert_F = \sqrt{84}$, ratio $= \sqrt{48/7}$). Finally $\lVert\Delta\rVert_F^2 = P(1 - R_\varphi)$ by the definition of $R_\varphi$. (c) Substitution. $\blacksquare$
-
-**Remark (the constant is an odd-dimension effect).** The generic $d$-dimensional constant is $\sqrt{4\lfloor d/2\rfloor\lceil d/2\rceil / d}$: in even dimension it equals $\sqrt d$ exactly, in odd dimension it sits strictly below. At $d = 7$ the balanced split is forced to be $(3,4)$ and gives $\sqrt{48/7} \approx 2.619 < \sqrt 7 \approx 2.646$. The naive rank bound $\sqrt 7$ (Cauchy–Schwarz) is therefore **not attainable**: tracelessness forbids the aligned spectra that would saturate it. (No structural weight is placed on the $(3,4)$ split here — it is the arithmetic of odd $d$, recorded per the anti-numerology register.)
-
-**Corollary (the working threshold) [С — canonical alignment].** For $K = 3$ with an ideal true-state discriminator ($A_D = 1$) the sufficient bound $R_\varphi \geq 1 - 7/(27P)$ sweeps the band $[5/54,\ 32/81]$ across the conscious window $P \in (2/7, 3/7]$ ($5/54 \approx 0.093$ at the viability edge, $32/81 \approx 0.395$ at the ceiling); the working threshold $R_{\varphi,\text{th}} = 1/3$ lies inside this derived band and is fixed at the canonical value by alignment with Char-R-III. What §4.7 posited as the bare condition (G) is now the theorem-level bound (a)–(c) with **tight** constants; the only remaining freedom is the accuracy model $A_D$ and the placement of the working value inside the band.
-
-**Corollary (sectoral gate: the per-channel threshold) [T].** Fix a coherence channel $(i,j)$ and its canonical three-outcome readout $E_\pm = \tfrac12(\Pi_{ij} \pm X_{ij})$, $E_0 = \mathbb 1 - \Pi_{ij}$, where $\Pi_{ij}$ projects onto $\mathrm{span}\{e_i, e_j\}$ and $X_{ij} = |i\rangle\langle j| + |j\rangle\langle i|$ (a valid POVM: $E_\pm \succeq 0$, $E_+ + E_- + E_0 = \mathbb 1$). The $\varphi$-mediated shift of each outcome probability is bounded by $|\Delta_{ij}| + \tfrac12|\Delta_{ii} + \Delta_{jj}|$, and the off-diagonal part is **exactly** the sectoral reflection: $|\Delta_{ij}| = |\gamma_{ij}|\sqrt{1 - R_{ij}}$ by the definition of $R_{ij}$. In the coherence-dominated regime (diagonal mismatch negligible — precisely the regime in which the sectoral form is deployed) the per-channel discrimination loss is governed by $\sqrt{1 - R_{ij}}$ alone, so the $K = 3$ dominance argument transfers channel-wise verbatim: the sectoral working threshold $R_{ij} \geq 1/3$ carries the same theorem-level gate as the global $R_\varphi$. This derives the per-channel threshold previously inherited by analogy in [the unconscious](/docs/consciousness/states/unconscious).
-
-**Machine verification.** $500$ random $3$-outcome POVMs: (a) and (b) hold with margin; Jordan-projector saturation of (a) at $10^{-15}$; sharp constant confirmed — random traceless search reaches $2.504 < \sqrt{48/7} = 2.6186\ldots$, the $(3,4)$-witness attains it exactly; band endpoints $5/54$ and $32/81$; sectoral identity, POVM validity and shift bound on $200$ random states.
-
----
-
-## 5. Categorical aspect {#5-категорный-аспект}
-
-:::info Section status
-The categorical formalism provides additional structure for understanding $\varphi$, but is not necessary for practical computations in UHM. See also [categorical formalism](/docs/proofs/categorical/categorical-formalism).
-:::
 
-### 5.1 Category of density matrices
+Thus $r(x)$ is an equilibrium and $r(r(x))=r(x)$. This proves a set-theoretic retraction onto equilibria [T]; it supplies no categorical adjunction. Continuity of $r$ requires additional hypotheses, for example locally uniform convergence; it may fail at basin boundaries. Periodic or recurrent attractors generally do not give a pointwise limit. A unique stationary state alone does not prove global convergence.
 
-:::info DRY: Category DensityMat
-The canonical definition of category **DensityMat** (objects — density matrices, morphisms — CPTP channels) and proof of category axioms are in [Categorical formalism, §1](/docs/proofs/categorical/categorical-formalism#1-категория-densitymat).
-:::
+### Linear spectral formula, with the correct hypotheses {#27-спектральная-формула-для-φ-явное-вычисление}
 
-**Definition 5.2 (Category of CPTP channels):**
+**Theorem 2.3 (revised) [T].** Let $\mathcal L$ be a finite-dimensional **linear** GKSL generator. Its bounded CPTP semigroup has semisimple peripheral eigenvalues. The Cesàro limit
 
 $$
-\mathbf{CPTP} := (\mathrm{Ob}, \mathrm{Mor})
+\overline\Pi_0=\lim_{T\to\infty}\frac1T\int_0^T e^{t\mathcal L}\,dt
 $$
 
-$$
-\mathrm{Ob} = \{\mathcal{H}_n = \mathbb{C}^n : n \in \mathbb{N}\} \quad \text{(objects — Hilbert spaces)}
-$$
-
-$$
-\mathrm{Mor}(\mathcal{H}_n, \mathcal{H}_m) = \{\mathcal{P}: \mathcal{D}(\mathcal{H}_n) \to \mathcal{D}(\mathcal{H}_m) : \mathcal{P} \text{ — CPTP}\}
-$$
+exists, is CPTP and idempotent, and equals the spectral projector onto $\ker\mathcal L$. The ordinary limit $\lim_{t\to\infty}e^{t\mathcal L}$ equals this projector if there are **no nonzero purely imaginary eigenvalues**. If in addition the stationary space is one-dimensional with normalized state $\rho_0$, the projector is $X\mapsto\mathrm{Tr}(X)\rho_0$.
 
-This is a well-defined category:
-- Composition: $\mathcal{P} \circ \mathcal{Q}$ is CPTP if $\mathcal{P}$ and $\mathcal{Q}$ are CPTP
-- Identity: $\mathrm{id}_\mathcal{H}(\rho) = \rho$ — trivial CPTP channel
+*Proof.* Jordan normal form: boundedness forbids nontrivial Jordan blocks on $\operatorname{Re}\lambda=0$; negative-real-part modes decay. Time averaging kills each nonzero imaginary frequency and leaves precisely the zero eigenspace. CPTP maps form a closed convex set, hence the averaged limit is CPTP. If $\lambda=i\omega\ne0$, $e^{i\omega t}$ does not converge, so the former sum over all $\operatorname{Re}\lambda=0$ was not an ordinary asymptotic limit. In the one-dimensional case trace preservation fixes the coefficient of $\rho_0$ to $\mathrm{Tr}(X)$. $\square$
 
-### 5.2 φ as endomorphism
+For a diagonalizable $\mathcal L$, using Hilbert–Schmidt biorthogonal eigenoperators,
 
-**Definition 5.3 ($\varphi$ as endofunctor):**
-
-$\varphi: \mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H})$ induces an endofunctor:
-
 $$
-F_\varphi: \mathbf{CPTP}|_\mathcal{H} \to \mathbf{CPTP}|_\mathcal{H}
+\overline\Pi_0(X)=\sum_{a:\lambda_a=0}R_a\,\mathrm{Tr}(L_a^\dagger X),
+\qquad\mathrm{Tr}(L_a^\dagger R_b)=\delta_{ab}.
 $$
-
-On objects: $F_\varphi(\mathcal{H}) = \mathcal{H}$ (identity)
 
-On morphisms: $F_\varphi(\mathcal{Q}) = \varphi \circ \mathcal{Q} \circ \varphi^{-1}$ (if $\varphi$ is invertible)
+Diagonalizability is needed for this eigenvector formula, not for existence of the spectral projector. In computation use a nullspace or Schur decomposition with an explicitly checked spectral separation; checking only $|\operatorname{Re}\lambda|<\varepsilon$ incorrectly includes oscillatory modes. Hermitization/trace normalization cannot repair a wrong projector or certify complete positivity.
 
-**Problem:** A general CPTP channel is not invertible.
+**Withdrawn [✗]: nonlinear Jacobian as self-model projector.** At a hyperbolic attracting equilibrium of a $C^1$ trace-preserving vector field, the Jacobian **on $\mathrm{Herm}_0(7)$** has all eigenvalues with negative real part; it has no zero mode. Trace conservation is a left-annihilation identity on an ambient extension, not a stationary right eigenvector of the tangent Jacobian. Primitivity of $\mathcal L_0$ says nothing by itself about the Jacobian spectrum of $\mathcal L_0+\mathcal R$. There is no linear superoperator $e^{t\mathcal L_\Omega}$ for a general nonlinear vector field. Its semiflow must be denoted $F_t$ and computed as such.
 
-**Solution:** We consider $\varphi$ as an endomorphism in the category with a single object:
+### Iteration and depth {#28-рефлексия-n-го-порядка-для-l3l4}
 
-**Definition 5.4 (Monoid of CPTP channels):**
+Define $M^{(n)}$ by ordinary composition, $M^{(0)}=\mathrm{id}$, and if useful define $\widehat R^{(n)}=F(M^{(n-1)}\Gamma,M^{(n)}\Gamma)$ using squared Uhlmann fidelity. This quantity is different from canonical $R=1/(7P)$ and from $R_M$ below. If $M$ is idempotent, $\widehat R^{(n)}=1$ for $n\geq2$; it cannot resolve higher levels by itself. Thresholds for L3/L4 or a maximum phenomenological depth require separate definitions and bridge hypotheses; the existence of iterates does not derive them.
 
-$$
-\mathrm{End}(\mathcal{H}) := \mathrm{Mor}(\mathcal{H}, \mathcal{H}) \quad \text{in category } \mathbf{CPTP}
-$$
+## Fixed-point theorems {#3-теорема-о-существовании-неподвижной-точки}
 
-This is a monoid with the composition operation.
+**Theorem 3.1 [T].** A self-map of $\mathcal D(\mathcal H)$ contracting with factor $q<1$ in a specified complete norm has a unique fixed point and convergent iterates with error at most $q^n\|\rho-\rho_*\|$. This is Banach's theorem. Lemma 2.1 verifies the hypothesis in trace norm for fixed parameters. It does not verify it for adaptive $M_{\mathrm{coh}},M_s,M_J$.
 
-$\varphi \in \mathrm{End}(\mathcal{H})$ — an element of this monoid.
+**Theorem 3.2 (strengthened) [T].** Every continuous $M:\mathcal D(\mathcal H)\to\mathcal D(\mathcal H)$ has an **exact** fixed point by Brouwer's theorem. Continuity gives neither uniqueness nor convergence of iterations. No approximate fixed-point regularization is necessary in finite dimension.
 
-### 5.3 Relation to monads
+**Correct contraction criterion (Theorem 3.3).** For a linear channel, one-step Frobenius contraction on states is equivalent to an operator norm $<1$ on the Hermitian traceless subspace (the largest singular value there), not merely eigenvalue moduli $<1$. Spectral radius $<1$ on that subspace ensures decay of powers, and eventually a power contracts; a nonnormal map can expand a distance in one step. This distinction also applies to stability Jacobians.
 
-**Definition 5.5 (Monad of self-modeling):**
+## Reflection and response {#4-связь-с-меры-рефлексии-r}
 
-Consider the functor $T: \mathbf{Set} \to \mathbf{Set}$:
+### Two distinct quantities
 
 $$
-T(X) = \mathcal{D}(\mathbb{C}^{|X|}) \quad \text{(set of density matrices of size } |X| \text{)}
+R(\Gamma)=\frac1{7P}\in[1/7,1],\qquad
+R_M(\Gamma)=1-\frac{\|\Gamma-M(\Gamma)\|_F^2}{P}.
 $$
-
-Monad structure:
-- **Unit ($\eta$):** $\eta_X: X \to T(X)$, $\eta_X(x) = |x\rangle\langle x|$ (pure state)
-- **Mult ($\mu$):** $\mu_X: T(T(X)) \to T(X)$, $\mu_X(P) = \sum_{\rho \in \mathrm{supp}(P)} P(\rho) \cdot \rho$ (mixing)
 
-$\varphi$ induces a morphism of monads:
+$R_M$ is also written $R_\varphi$ in the corpus. It measures normalized mismatch and is bounded above by one, but can be **negative**: for two orthogonal pure states with $M(\Gamma)$ equal to the other one, $R_M=-1$. It is not a probability unless an additional admissibility bound is imposed. At any fixed point $R_M=1$, while $R=1/(7P)$ is still controlled by purity. The model-independent consciousness measure $C=\Phi R$ does not become $\Phi$ merely because $R_M=1$.
 
-$$
-\varphi^*: (T, \eta, \mu) \to (T, \eta, \mu)
-$$
+Continuity at a fixed point gives $R_M\to1$. For a Frobenius contraction with factor $q<1$, $\Gamma_n=M^n\Gamma_0$ obeys
 
-Naturality conditions:
-
 $$
-\varphi \circ \eta = \eta \quad \text{(self-observation of a pure state is pure)}
+1-R_M(\Gamma_n)
+\leq\frac{q^{2n}}{P_{\min}}\|\Gamma_0-M\Gamma_0\|_F^2
+\leq\frac{(1+q)^2q^{2n}}{P_{\min}}\|\Gamma_0-\Gamma_*\|_F^2,
+\quad P_{\min}=1/N.
 $$
 
-$$
-\varphi \circ \mu = \mu \circ T(\varphi) \quad \text{(consistency with mixing)}
-$$
+These are conditional estimates (Theorems 4.1–4.2). There is no unconditional convergence theorem from primitivity of the linear dissipator for every nonlinear self-model.
 
-**Theorem 5.1 (Fixed point as monad algebra):**
+### Derivative of a numerical self-model {#дф-производная}
 
-The fixed point $\Gamma^* = \varphi(\Gamma^*)$ defines a $T$-algebra:
+For a differentiable $M$ along a state path, let $\Delta=\Gamma-M(\Gamma)$. The chain rule gives the exact identity
 
 $$
-\alpha: T(\Gamma^*) \to \Gamma^*, \quad \alpha = \mu_{\Gamma^*} \circ T(\eta_{\Gamma^*})
+\dot R_M=(1-R_M)\frac{\dot P}{P}
+-\frac2P\langle\Delta,(I-DM)[\dot\Gamma]\rangle_F.
 $$
 
-**Interpretation:** A system in the state of ideal self-knowledge is an "algebra over the self-modeling monad."
+**T-249 [T].** For the dissipative replacement family $M(\Gamma)=R\Gamma+(1-R)I/7$,
 
-### 5.4 2-categorical structure
-
-**Definition 5.6 (2-category of quantum systems QSys):**
-
-| Level | Elements |
-|---------|----------|
-| 0-morphisms (objects) | Hilbert spaces $\mathcal{H}$ |
-| 1-morphisms | CPTP channels $\mathcal{P}: \mathcal{D}(\mathcal{H}_1) \to \mathcal{D}(\mathcal{H}_2)$ |
-| 2-morphisms | Natural transformations between channels |
-
-$\varphi$ defines a 2-cell:
-
 $$
-\varphi: \mathrm{id}_{\mathcal{D}(\mathcal{H})} \Rightarrow \mathrm{id}_{\mathcal{D}(\mathcal{H})}
+DM[V]=RV-\frac{2}{7P^2}\langle\Gamma,V\rangle_F(\Gamma-I/7).
 $$
-
-(endo-2-morphism of the identity 1-morphism)
-
-**Fixed point condition in 2-categorical language:**
-
-$\Gamma^*$ is an object such that $\varphi_{\Gamma^*} = \mathrm{id}_{\Gamma^*}$ (the 2-morphism reduces to the identity).
-
----
-
-## 6. Corollaries and limitations {#6-следствия-и-ограничения}
-
-### 6.1 Corollaries of formalization
-
-**Corollary 6.1 (Necessity of contraction for ideal self-knowledge):**
-
-~~For the existence of exact $\Gamma^* = \varphi(\Gamma^*)$ it is necessary that $\varphi$ be contracting (or have an invariant subspace).~~ **Retracted 2026-09-25 [✗]:** every continuous $\varphi$ on $\mathcal{D}(\mathcal{H})$ has an exact fixed point (Brouwer); contraction gives uniqueness and geometric convergence of the iterates, not existence. $\varphi_{\mathrm{coh}}$ and $\varphi_J$ are not contractions and have exactly one fixed point each.
-
-**Corollary 6.2 (Approximate self-knowledge is always possible):**
-
-For any continuous $\varphi$ and any $\varepsilon > 0$ there exists an $\varepsilon$-fixed point.
-
-**Corollary 6.3 (Relation to thermodynamics):**
-
-Contracting CPTP channels correspond to systems with [dissipation](/docs/core/dynamics/evolution#логический-лиувиллиан) (attraction to equilibrium).
-
-The fixed point of $\varphi$ is the "thermodynamic equilibrium of self-observation."
 
-### 6.2 Limitations of formalization
+*Proof.* Differentiate $R=1/(7P)$ using $DP[V]=2\langle\Gamma,V\rangle_F$. Both terms have trace zero. The family is unitarily equivariant. Its mismatch satisfies $R_M=1-(1-R)^3$ and therefore
+$\dot R_M=-3(1-R)^2\dot P/(7P^2)$, also recovered by substitution into the chain rule. This family differs from $M_{\mathrm{coh}}$; its derivative must not be substituted for that of another family. $\square$
 
-**Limitation 6.1 (Contraction requirement):**
+### Bandwidth bound {#теорема-полосы-rφ}
 
-Theorem 3.1 requires $k < 1$. For $k = 1$ (isometric $\varphi$) the fixed point may be non-unique; it always exists (Brouwer; the text said "may not exist" until 2026-09-25).
+**T-250 [T at differentiability].** With $C_M(\Gamma)=\|I-DM_\Gamma\|_{F\to F}$,
 
-**Limitation 6.2 (Finite-dimensionality):**
-
-The proofs use finite-dimensionality of $\mathcal{H}$. Generalization to the infinite-dimensional case requires additional conditions (compactness of $\varphi$).
-
-**Limitation 6.3 (Stationarity):**
-
-The formalization treats $\varphi$ as a fixed operator. In a dynamical system $\varphi$ may depend on time: $\varphi = \varphi(t)$.
-
-**Open question:** Does a "moving fixed point" $\Gamma^*(t)$ exist for $\varphi(t)$? See Appendix C.
-
-### 6.3 Physical interpretation
-
-**Interpretation 6.1 (Self-modeling as quantum channel):**
-
-$\varphi$ = CPTP channel means that self-observation:
-- Preserves positivity (does not create negative probabilities)
-- Preserves normalization (total probability = 1)
-- Can decrease information (does not increase distinguishability)
-
-**Interpretation 6.2 (Fixed point as self-consistency):**
-
-$\Gamma^* = \varphi(\Gamma^*)$ means: "What the system sees coincides with what it is."
-
-This is the state of ideal self-knowledge — the system has no "blind spots."
-
-**Interpretation 6.3 (Contraction as humility):**
-
-$k < 1$ means that each act of self-observation "approaches" the truth.
-
-The system gradually corrects its self-model, converging to an accurate representation.
-
-### 6.4 Relation to UHM
-
-**Relation 6.1 (Reflexive closure):**
-
-The condition of [self-observation](/docs/consciousness/foundations/self-observation):
-
 $$
-\varphi(\Gamma) \approx \Gamma
+\left|\dot R_M-(1-R_M)\dot P/P\right|
+\leq\frac{2}{\sqrt P}\sqrt{1-R_M}\,C_M(\Gamma)\|\dot\Gamma\|_F.
 $$
-
-is formalized as: $R(\Gamma) \geq 1 - \varepsilon$ for some $\varepsilon > 0$.
-
-**Relation 6.2 (Consciousness):**
 
-$C = \Phi \times R$ **[Т T-140]** includes $R$ as a factor.
+*Proof.* Cauchy–Schwarz and $\|\Delta\|_F=\sqrt{P(1-R_M)}$. For the T-249 family, $C_M\leq(1-R)+2R\sqrt{1-R}$. $\square$
 
-At $R \to 1$: $C \to \Phi$ (maximum contribution of integration).
+At constant $P$, putting $u=\sqrt{1-R_M}=\|\Delta\|_F/\sqrt P$ yields the rigorous path estimate
 
-**Relation 6.3 (No-zombie theorem):**
-
-From [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy#34-теорема-о-жизнеспособности-no-zombie-theorem):
-
 $$
-\mathrm{Viable}(\mathbb{H}) \Rightarrow R(\Gamma) > 0
+|u(t_2)-u(t_1)|\leq\frac1{\sqrt P}
+\int_{t_1}^{t_2}C_M(\Gamma(t))\|\dot\Gamma(t)\|_F\,dt.
 $$
-
-The formalization of $\varphi$ ensures: $R(\Gamma) > 0 \Leftrightarrow \Gamma \neq \varphi(\Gamma)$ with finite precision.
 
----
+A constant outside the integral must be a uniform bound along the path. The norm formulation also handles $u=0$ without dividing by zero. Invariance under a group holds only when $M$ is equivariant under that group. The bound alone fixes neither sign nor a generic rate of change and does not derive a phenomenological interpretation such as ego dissolution.
 
-## 7. Implementation requirements {#7-требования-к-реализации}
+### Learning and additional parameters {#механизмы-rφ}
 
-:::info Section status
-This section contains **mathematical requirements** for implementing the self-modeling operator φ. Concrete architectures and code are the subject of separate specifications.
-:::
+For $M_\theta(\Gamma)=(1-k)\Gamma+k\rho_\theta$ at fixed $k$, a hypothesized alignment law $\dot\rho_\theta=2\eta(\bar\Gamma-\rho_\theta)$ stays in the state space and has the exact solution
+$\rho_\theta(t)=(1-e^{-2\eta t})\bar\Gamma+e^{-2\eta t}\rho_\theta(0)$.
+At fixed practiced $\bar\Gamma$, this gives
+$R_{M_\theta}(\bar\Gamma)=1-k^2e^{-4\eta t}\|\bar\Gamma-\rho_\theta(0)\|_F^2/P$.
+The learning law and its experiential reading are additional model assumptions [H]/[I]; the formula is [T within that law]. For time-varying parameters the derivative of the mismatch contains $\partial_\theta M\,\dot\theta$ as well as $D_\Gamma M\,\dot\Gamma$.
 
-### 7.1 Requirements for implementing φ
+### Implicit numerical models {#дф-неявная}
 
-**Requirement 7.1 (Predictive self-modeling operator):**
+**T-251 [T, explicit regularity].** Suppose $G(x,y)$ extends to a $C^1$ function on open neighborhoods in the trace-one affine spaces, the state space is invariant for $y\mapsto G(x,y)$, and $\|D_2G\|\leq q<1$. For each $x$ let $M(x)$ be its unique fixed point. Locally where the extension assumptions hold, the implicit function theorem gives
 
-The implementation of $\varphi$ must satisfy:
-
 $$
-\varphi(\Gamma) = k \cdot \mathcal{P}_\theta(\Gamma) + (1-k) \cdot \Gamma_{\text{prior}}
+DM=(I-D_2G)^{-1}D_1G=\sum_{n\geq0}(D_2G)^nD_1G,
+\qquad\|DM\|\leq\frac{\|D_1G\|}{1-q}.
 $$
-
-where:
-- $k \in (0, 1)$ — contraction parameter ensuring contractivity
-- $\mathcal{P}_\theta: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ — parameterized map
-- $\Gamma_{\text{prior}} = I/7$ — prior state (maximum entropy)
 
-**Implementation guarantees:**
-1. Output — valid density matrix (Hermitian, PSD, trace=1)
-2. Contracting map at $k < 1$
-3. Differentiability with respect to parameters $\theta$
+*Proof.* Differentiate $y-G(x,y)=0$; $I-D_2G$ is invertible by the Neumann series. $\square$ Smoothness cannot be inferred from a support adjunction, from Bures continuity, or merely from writing a function on a closed convex set. This theorem differentiates a **numerical** fixed-point equation, not a logical support reflector.
 
-**Recommended method:** Cholesky parameterization $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ guarantees PSD.
+### Discrimination bound, with sharp constants {#гейт-теорема}
 
-### 7.2 Requirements for sensor encoder
+**T-252 [T].** For any POVM and $\Delta=\Gamma-M\Gamma$,
 
-**Requirement 7.2 (Encoder: sensors → Γ):**
-
 $$
-\Gamma = \text{Encoder}_\psi(s) = \frac{L(s) \cdot L(s)^\dagger}{\mathrm{Tr}(L(s) \cdot L(s)^\dagger)}
+\mathrm{TV}(p_\Gamma,p_{M\Gamma})\leq\tfrac12\|\Delta\|_1,
+\qquad\|\Delta\|_1\leq\sqrt{48/7}\|\Delta\|_F.
 $$
-
-where $L(s)$ is a lower-triangular matrix parameterized from sensor input $s$.
-
-### 7.3 Requirements for action decoder
 
-**Requirement 7.3 (Decoder: Γ → actions):**
+The second constant is sharp on $\mathrm{Herm}_0(7)$. If positive and negative eigenvalues have multiplicities $p,q$ and common total magnitude $s$, Cauchy–Schwarz gives $\|\Delta\|_F^2\geq s^2(1/p+1/q)$ and $\|\Delta\|_1=2s$. Thus the ratio squared is at most $4pq/(p+q)\leq48/7$, attained by $\operatorname{diag}(4,4,4,-3,-3,-3,-3)$ up to scale. The POVM step is saturated by the projector on the positive spectrum.
 
-For discrete actions:
-$$
-\pi(a|\Gamma) = \text{softmax}(W \cdot \text{vec}(\Gamma) + b)
-$$
+For a decision rule whose true-state success is $A_D$, the corresponding success evaluated on the model obeys
 
-For continuous actions:
 $$
-\mu, \sigma = \text{Decoder}(\Gamma), \quad a \sim \mathcal{N}(\mu, \sigma^2)
+p_M\geq A_D-2\sqrt{3/7}\sqrt{P(1-R_M)}.
 $$
-
-### 7.4 Training
 
-Minimization of self-prediction error:
+Here a multi-hypothesis task requires this estimate statewise or averaged over its specified ensemble; a POVM on a single state does not define an ensemble accuracy by itself. If $A_D>1/K$, **strict** superiority $p_M>1/K$ is guaranteed by
 
 $$
-\mathcal{L}(\theta) = \mathbb{E}_{\Gamma \sim \text{trajectories}}[\|\Gamma_{t+1} - \mathcal{P}_\theta(\Gamma_t)\|_F^2]
+R_M>1-\frac7{12P}(A_D-1/K)^2.
 $$
-
-:::note Implementation status
-The requirements in this section are sufficient for building a concrete implementation. Cholesky parameterization guarantees correctness of the output density matrices.
-:::
-
----
-
-## 8. Operational algorithm for φ {#операциональный-алгоритм}
 
-:::info Status: Engineering specification
-This section provides a **concrete algorithm** for computing the self-modeling operator φ, suitable for software implementation.
-:::
+Equality gives only $p_M\geq1/K$. For $K=3$, $A_D=1$ the sufficient boundary varies with $P$ from $5/54$ to $32/81$ over $(2/7,3/7]$; this does not select a universal threshold $1/3$.
 
-### 8.1 Algorithm: Basic self-modeling
+For the valid sector POVM $E_\pm=(\Pi_{ij}\pm X_{ij})/2$, $E_0=I-\Pi_{ij}$, the outcome shift is bounded by $|\Delta_{ij}|+|\Delta_{ii}+\Delta_{jj}|/2$. If $\gamma_{ij}\ne0$ and $R_{ij}:=1-|\Delta_{ij}|^2/|\gamma_{ij}|^2$, then $|\Delta_{ij}|=|\gamma_{ij}|\sqrt{1-R_{ij}}$ exactly. The amplitude and diagonal mismatch remain in the bound. Hence the former claim that this **derives** $R_{ij}\geq1/3$ is withdrawn [✗]; that working threshold needs a separate calibration/interpretation. No comparison of decision accuracy with canonical $R=1/(7P)$ follows from these mismatch bounds without an additional bridge.
+## Categories, monads, and realization {#5-категорный-аспект}
 
-**Input:** Coherence matrix $\Gamma \in \mathbb{C}^{7 \times 7}$
+A frozen CPTP channel is an endomorphism of a matrix algebra in the category of channels; it is not automatically an endofunctor or a natural transformation. Conjugation by an inverse channel defines a channel-category automorphism only for a specified reversible channel with CPTP inverse. A numerical state map $M$ need not act on morphisms at all.
 
-**Parameters:**
-- $k \in (0, 1)$ — contraction coefficient (recommended $k = 0.95$)
-- $w \in \Delta^6$ — anchor weight vector (default $w = (1/7, \ldots, 1/7)$)
+The genuine support adjunction defines an **idempotent monad on $\mathcal E_{/G}$**, $T_G=i_GL_G$, with unit the image factorization and multiplication induced by the counit $L_Gi_G\simeq\mathrm{id}$. Its algebras are precisely $(-1)$-truncated objects over $G$, not density matrices satisfying an unrelated feedback equation.
 
-**Algorithm:**
+For probabilistic mixing, the well-typed standard construction is the finite probability-distribution monad $\mathsf{Dist}_f$ on sets. A convex state space is its algebra via $(p_a,\rho_a)\mapsto\sum_ap_a\rho_a$. A linear channel preserves this convex structure; a general adaptive $M$ does not. The former expression $T(X)=\mathcal D(\mathbb C^{|X|})$ together with $T(T(X))$ and a density-matrix "support" was not a defined monad on Set. The former Theorem 5.1 identifying a single fixed density matrix with such an algebra is withdrawn [✗]. Channels alone also do not supply the stated 2-category of "natural transformations between channels"; a 2-categorical enhancement requires explicit hom-categories and composition laws.
 
-```
-FUNCTION φ_basic(Γ, k, w):
-    # Step 1: Extract diagonal (dephasing in measurement basis)
-    diag_Γ := diagonal(Γ)  # vector of size 7
+A bridge from logical support to numerical self-modelling would have to specify a state representation, a readout/model category, and a realization functor with a compatibility statement. No such bridge is inferred from an adjunction merely by using the same symbol $\varphi$. Establishing one remains a research task [Pr].
 
-    # Step 2: Build predictive state
-    P_pred := diag(diag_Γ)  # diagonal matrix 7×7
+## Scope and interpretation {#6-следствия-и-ограничения}
 
-    # Step 3: Build anchor state
-    Γ_anchor := diag(w)
+Existence, uniqueness, convergence, dynamical stability, and physical realization are different claims with separate hypotheses. A fixed point gives equality of a chosen map's input and output; interpreting this as accurate self-knowledge requires an independent error/readout model [I]. It need not be a thermodynamic equilibrium. Fixed-point equality makes regeneration vanish, but the other terms of the vector field may still move the state.
 
-    # Step 4: Mix with contraction coefficient
-    φ_Γ := k * P_pred + (1 - k) * Γ_anchor
+## Implementation requirements {#7-требования-к-реализации}
 
-    RETURN φ_Γ
-```
+Specify the map and its parameters before testing its output. A neural state-to-state model may use $LL^\dagger/\mathrm{Tr}(LL^\dagger)$ with $L\ne0$ to ensure a valid state; this does not establish affinity, complete positivity as a linear operation, contraction, or correspondence with a logical reflector. For a neural CPTP channel, parameterize a Stinespring isometry or a positive Choi matrix with the trace-preservation constraint. Mixing a general neural output with $I/7$ contracts only if a separately proved Lipschitz bound $L$ gives $kL<1$.
 
-**Guarantees:**
-- Output — valid density matrix (Hermitian, PSD, trace=1)
-- Contracting map with constant $k$
-- Computational complexity: $O(N)$ where $N = 7$
-
-### 8.2 Algorithm: Neural network self-modeling
-
-For trainable φ with parameters θ:
-
-```
-FUNCTION φ_neural(Γ, θ):
-    # Step 1: Vectorize input matrix
-    x := flatten_upper_triangular(Γ)  # 28 parameters (7 diag + 21 coh)
-
-    # Step 2: Pass through neural network
-    h := ReLU(W₁ · x + b₁)
-    L_vec := W₂ · h + b₂  # 28 parameters for lower-triangular matrix
-
-    # Step 3: Reconstruct lower-triangular matrix (Cholesky)
-    L := unflatten_lower_triangular(L_vec)  # 7×7
-
-    # Step 4: Build PSD matrix and normalize
-    Γ_raw := L · L†
-    φ_Γ := Γ_raw / Tr(Γ_raw)
-
-    # Step 5: Apply contraction to anchor
-    k := sigmoid(θ_k)  # trainable coefficient ∈ (0, 1)
-    φ_Γ := k * φ_Γ + (1 - k) * I/7
-
-    RETURN φ_Γ
-```
-
-**Training:** Minimize next-state prediction error:
-
-$$
-\mathcal{L}(\theta) = \mathbb{E}_{(\Gamma_t, \Gamma_{t+1}) \sim \tau}[\|\Gamma_{t+1} - \varphi_\theta(\Gamma_t)\|_F^2]
-$$
+A Hermitian $7\times7$ input has 49 real coordinates before the trace constraint and 48 independent ones: 7 real diagonal entries and 21 complex off-diagonal entries. A complex lower-triangular Cholesky factor with real diagonal likewise uses 49 real coordinates; enforce nonzero norm, for example by positive diagonal entries. A 28-real-coordinate network cannot represent all complex states.
 
-### 8.3 Computing reflection measure R {#83-вычисление-меры-рефлексии-r}
+## Operational algorithms {#операциональный-алгоритм}
 
-```
-FUNCTION compute_R_canonical(Γ):
-    # Canonical definition of R (used in thresholds)
-    P := Tr(Γ† · Γ)       # purity
+```text
+FUNCTION numerical_self_model(Gamma, alpha, anchor_kind):
+    REQUIRE Gamma Hermitian, PSD, trace = 1; 0 <= alpha <= 1
+    P := trace(Gamma * Gamma)
     R := 1 / (7 * P)
-    RETURN R
+    c := (1 - alpha) / 3
+    prediction := diag(Gamma) + c * (Gamma - diag(Gamma))
+    IF anchor_kind == "coh": anchor := I / 7
+    IF anchor_kind == "s":   anchor := Gamma * Gamma / P
+    IF anchor_kind == "J":   anchor := u * u_dagger
+    RETURN (1 - R) * prediction + R * anchor
+    # State-preserving nonlinear map; parameters freeze only inside a channel step.
 
-FUNCTION compute_Q_phi(Γ, φ):
-    # Quality of self-modeling (separate measure, see WARNING above)
-    φ_Γ := φ(Γ)
-    error := Γ - φ_Γ
-    error_norm_sq := Tr(error† · error)
-    Γ_norm_sq := Tr(Γ† · Γ)  # = P (purity)
-    Q := 1 - error_norm_sq / Γ_norm_sq
-    RETURN Q
+FUNCTION reflection_readouts(Gamma, M):
+    P := trace(Gamma * Gamma)
+    R_canonical := 1 / (7 * P)
+    R_model := 1 - norm_F(Gamma - M(Gamma))^2 / P
+    RETURN R_canonical, R_model  # Do not clip or identify them.
 ```
 
-### 8.4 Checking L2 threshold
+For a primitive **linear** generator, solve $\mathcal L\rho_0=0$ with $\mathrm{Tr}\rho_0=1$ and verify positivity, residual and uniqueness; return $X\mapsto\mathrm{Tr}(X)\rho_0$. For a nonlinear vector field, integrate from specified initial states and test residuals, invariant domains and basin dependence. A 49-by-49 Jacobian projection is not a general numerical self-model algorithm.
 
-:::warning Limitation of 7D formalism
-The function `Tr_not_E` (partial trace) requires tensor structure. In the minimal 7D formalism ($\mathcal{H} = \mathbb{C}^7$) use `is_L2_minimal` without $D_{\text{diff}}$ — see [dimension-e.md](/docs/core/structure/dimension-e#tensor-factorization-ddiff).
-:::
+### Canonical reflection readout {#83-вычисление-меры-рефлексии-r}
 
-```
-FUNCTION is_L2_conscious(Γ, φ):
-    # Compute three measures
-    R := compute_R(Γ, φ)
-    Φ := compute_integration(Γ)  # Σ|γ_ij|² / Σγ_ii²
-    D_diff := exp(von_neumann_entropy(Tr_not_E(Γ)))
+The reduced seven-dimensional L2 screen uses $P>2/7$, $R_{\mathrm{canonical}}\geq1/3$ and $\Phi\geq1$. It is only a screen: the full differentiation condition requires a specified tensor extension and model of the E-subsystem. Omitting it does not certify the full L2 predicate. These are formal criteria [D], with empirical interpretation assessed independently.
 
-    # Check thresholds
-    RETURN (R ≥ 1/3) AND (Φ ≥ 1) AND (D_diff ≥ 2)
+## Regeneration and state preservation {#связь-с-регенерацией}
 
-# Minimal version without D_diff (for 7D formalism)
-FUNCTION is_L2_minimal(Γ, φ):
-    R := compute_R(Γ, φ)
-    Φ := compute_integration(Γ)
-    RETURN (R ≥ 1/3) AND (Φ ≥ 1)
-```
-
----
-
-## 9. Relation to the regeneration mechanism {#связь-с-регенерацией}
-
-:::info Key relation
-The self-modeling operator $\varphi$ defines the target state of regeneration: $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [T] ([operator φ](/docs/core/operators/phi-operator)). For each $\Gamma$ the self-model $\varphi(\Gamma)$ is unique (CPTP channel).
-:::
-
-### 9.1 Regeneration as striving toward the self-model
-
-The [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) of the evolution equation for $\Gamma$ is **fully derived** from the axioms [T]:
+Given a numerical law $M$ and a nonnegative effective rate $a(\Gamma)=\kappa(\Gamma)g_V(P)$, define [D]
 
 $$
-\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
+\mathcal R(\Gamma)=a(\Gamma)(M(\Gamma)-\Gamma).
 $$
 
-where:
-- $\kappa(\Gamma)$ — [regeneration coefficient](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) [T] (categorical derivation from adjunction)
-- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [T] ([operator φ](/docs/core/operators/phi-operator))
-- $(\rho_* - \Gamma)$ — unique CPTP relaxation [T] (replacement channel + Bures optimality)
-- $g_V(P)$ — V-preservation gate [T] (refines $\Theta(\Delta F)$ from Landauer, see [evolution](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
+For $0\leq h\,a(\Gamma)\leq1$, the explicit feedback step $(1-ha)\Gamma+haM(\Gamma)$ is a density matrix by convexity [T]. Its frozen realization is CPTP if a channel family has been specified, but the adaptive update is generally nonlinear. Combined with a linear CPTP flow this gives a positivity-preserving split scheme under the stated step restriction. A locally Lipschitz continuous vector field with this tangent-cone property preserves the finite-dimensional state set; existence and convergence still require their own hypotheses.
 
-Full derivation: [Evolution → Derivation of regeneration form](/docs/core/dynamics/evolution#вывод-формы-регенерации).
-
-**Interpretation:** The system regenerates by striving toward state $\varphi(\Gamma)$ — how it "sees itself." Regeneration is an **active process of self-realization**, where the system becomes its own model.
-
-### 9.2 Fixed point and viable equilibrium
-
-**Theorem 9.1 (Regeneration equilibrium):**
-
-At $\Gamma = \Gamma^* = \varphi(\Gamma^*)$ the regenerative term vanishes:
+At $M(\Gamma)=\Gamma$ regeneration vanishes. Conversely it may also vanish where $a=0$. Along regeneration its exact purity derivative is
 
 $$
-\mathcal{R}[\Gamma^*, E] = \kappa(\Gamma^*) \cdot (\varphi(\Gamma^*) - \Gamma^*) \cdot g_V(P) = 0
+\dot P\big|_{\mathcal R}=2a(\Gamma)\bigl(\mathrm{Tr}(\Gamma M(\Gamma))-P\bigr).
 $$
 
-**Proof:** $\varphi(\Gamma^*) = \Gamma^*$ by definition of fixed point. ∎
+The purity of the target alone does **not** determine this sign: a high-purity target orthogonal to a pure current state gives a negative initial derivative. For the unital target $M_{\mathrm{coh}}$ the overlap does not exceed $P$; the nonunital anchors require an actual overlap and stability analysis. With $g_V=\operatorname{clamp}(7P-2,0,1)$ regeneration vanishes at and below the purity threshold for every finite rate. Thus a viable target does not prove global invariance of the viable region. The living $M_J$ attractor and saddle boundary remain the explicit conditional result in [evolution](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне).
 
-**Corollary 9.1:** At the fixed point $\Gamma^*$ the system is in a state of **ideal self-knowledge** — regeneration is not required, as the current state coincides with the self-model.
+The exact amplitude is $\|\mathcal R\|_F=a\sqrt{P(1-R_M)}$, not $a\sqrt{P(1-R)}$ for an arbitrary model. Rates and feedback gates are dynamical specifications; a support adjunction fixes neither. A fixed-target replacement flow can have an independently proved BKM gradient interpretation; a moving target requires its derivative and does not inherit the fixed-target Lyapunov theorem automatically.
 
-### 9.3 Dynamics outside the fixed point
+## Time-dependent models and octonionic interpretation {#октонионный-контекст}
 
-At $\Gamma \neq \Gamma^*$ a "pull" toward the self-model arises:
-
-$$
-\rho_* - \Gamma = \varphi(\Gamma) - \Gamma \neq 0
-$$
-
-**Direction of regeneration:**
-
-1. If $P(\varphi(\Gamma)) > P(\Gamma)$: regeneration **increases** purity
-2. If $P(\varphi(\Gamma)) < P(\Gamma)$: regeneration **decreases** purity
-
-:::warning Critical condition: viability of self-model
-For regeneration to support viability, it is necessary that:
+For a continuous family $M_t$ uniformly contracting with factor $q<1$, each instantaneous fixed point exists uniquely and varies continuously. If $M_t$ is $C^1$ on an affine neighborhood, then
 
 $$
-P(\varphi(\Gamma)) \geq P_{\text{crit}} = \frac{2}{7}
+\dot\Gamma_*(t)=(I-D_\Gamma M_t)^{-1}\partial_tM_t(\Gamma_*(t)).
 $$
 
-With an incorrectly constructed $\varphi$ the system may regenerate **toward a non-viable state**. This places constraints on the choice of anchor $\Gamma_{\text{anchor}}$ (see [Definition 2.11](#жизнеспособный-якорь)).
-:::
+Continuity alone gives no derivative. An instantaneous fixed point is not necessarily a solution trajectory or an adiabatically tracked state.
 
-### 9.4 Relation to reflection measure R
+Octonionic alternativity constrains octonion multiplication, not composition of arbitrary matrix-state maps: composition of $M$ is associative. The association of Fano lines with an octonionic product can structure chosen filters [D]/[I]; it does not make a CPTP or nonlinear self-model "nonassociative" or derive its anchor.
 
-The [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R$ and the regenerative term $\mathcal{R}$ are related:
+## Composite systems and local channel compilation {#тензорная-факторизация}
 
-$$
-1 - R(\Gamma) = \frac{\|\Gamma - I/7\|^2_F}{P(\Gamma)} = 1 - \frac{1}{7P}
-$$
+**Withdrawn [✗]: categorical derivation of tensor factorization.** In general $\mathrm{Sub}(A\times B)\not\simeq\mathrm{Sub}(A)\times\mathrm{Sub}(B)$, even in Set: the diagonal in a two-point square is not a Cartesian rectangle. Probabilistic conditional independence does not imply this lattice identity. Cartesian products in a topos and Hilbert tensor products are not interchangeable. The support adjunction therefore does not derive $M_{AB}=M_A\otimes M_B$; a tensor product of nonlinear state maps is not defined without extension data.
 
-$$
-\|\mathcal{R}[\Gamma, E]\| \propto \|\rho^*_{\mathrm{diss}} - \Gamma\| = \|I/7 - \Gamma\| = \sqrt{P \cdot (1 - R)}
-$$
-
-**Interpretation:**
-- High $R$ (proximity to self-model) → small amplitude of regeneration
-- Low $R$ (divergence from self-model) → large amplitude of regeneration
-
-A system with good self-knowledge ($R \to 1$) requires minimal regeneration.
-
-### 9.5 Stability of viable region
-
-**Theorem 9.2 (Regeneration keeps system in $\mathcal{V}$):**
-
-Let $\varphi$ be a contracting map with fixed point $\Gamma^* \in \mathcal{V}$ ([viable region](/docs/core/dynamics/viability#область-жизнеспособности)).
-
-Then at sufficiently large $\kappa$ regeneration counteracts dissipation and keeps the system in $\mathcal{V}$:
+For a specified frozen local channel $\mathcal C_{A,\lambda}$ its spectator extension is, by definition,
 
 $$
-\left.\frac{dP}{d\tau}\right|_{\mathcal{R}} + \left.\frac{dP}{d\tau}\right|_{\mathcal{D}} > 0 \quad \text{at } P < P(\Gamma^*)
+\widetilde{\mathcal C}_{A,\lambda}=\mathcal C_{A,\lambda}\otimes\mathrm{id}_B.
 $$
 
-**Interpretation:** Regeneration is a **protective mechanism** that uses the self-model as a guide for restoring coherence.
+For an adaptive local law choose $\lambda=\lambda(\rho_A)$, $\rho_A=\mathrm{Tr}_B\rho_{AB}$, and apply this frozen channel to the joint state. This defines an extension **relative to the chosen channel family**. Different compilations of the same numerical marginal law may act differently on correlations; the marginal state map alone does not ensure a unique extension.
 
-**Corrected 2026-09-25 [✗ as stated].** The gate $g_V(P) = \mathrm{clamp}(7P - 2, 0, 1)$ switches regeneration off for $P \le 2/7$, where $dP/d\tau = -\tfrac43 P_{\mathrm{coh}} \le 0$ for every $\kappa$; the UHM self-models are not contractions (Lemma 2.1, scope). What holds [T], for $\varphi_J$ and $\kappa > \kappa_c(\alpha)$ at $H = 0$: on the family $\Gamma_\eta$, $dP/d\tau = \tfrac{12}{7}\eta\,h(\eta)$ is negative below the saddle $P_-$, positive on $(P_-, P_+)$ and negative above the sink $P_+$ — regeneration protects the window from the saddle up, not from the threshold $2/7$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне); the admissible $\kappa$ in [T-336](/docs/core/dynamics/evolution#t-336)).
-
-### 9.6 Preservation of positivity under regeneration
-
-:::info Theorem (CPTP structure of regeneration)
-The regenerative operator $R_\alpha = (1 - \alpha) \cdot \mathcal{E} + \alpha \cdot \varphi$ with $\alpha = \kappa \cdot \Delta\tau < 1$ is a **CPTP channel**:
+**Marginal identity [T].** Trace preservation gives
 
 $$
-R_\alpha[\Gamma] = \sum_k \tilde{K}_k \Gamma \tilde{K}_k^\dagger
+\mathrm{Tr}_A[(\mathcal C_{A,\lambda}\otimes\mathrm{id}_B)(\rho_{AB})]=\rho_B.
 $$
 
-with Kraus operators $\tilde{K}_0 = \sqrt{1-\alpha}\,I$ and $\tilde{K}_k = \sqrt{\alpha} K_k$ (from attractor $\varphi$).
-:::
+*Proof.* Test against any $O_B$; the channel adjoint is unital, so $(\mathcal C_{A,\lambda}^*\otimes\mathrm{id})(I_A\otimes O_B)=I_A\otimes O_B$. Equality of all expectations proves the identity. It holds for each frozen parameter, hence also pointwise for the adaptive choice and a scalar multiple of the corresponding increment. $\square$
 
-**Corollary:** Regeneration toward self-model $\varphi(\Gamma)$ **guarantees** preservation of:
-- Positivity: $\Gamma \geq 0$
-- Normalization: $\mathrm{Tr}(\Gamma) = 1$
+For fixed local channels, their tensor product is CPTP and compositions on separate factors commute. This is a statement about a specified product channel, not a categorical theorem forcing all composite models to factorize. The marginal identity alone does not prove relativistic no-signalling with arbitrary measurement updates: state-dependent feedback requires the explicit non-selective marginal prescription of [physical correspondence](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). That dynamical prescription is distinct from the support reflector.
 
-[More on CPTP structure of regeneration →](/docs/core/dynamics/evolution#сохранение-положительности)
+## Sources and dependencies
 
----
+- Lurie, [*Higher Topos Theory*](https://arxiv.org/abs/math/0608040): truncation, slices and image factorization.
+- [Kerodon, Corollary 7.1.4.28](https://kerodon.net/tag/02KE): a right adjoint preserves limits.
+- Watrous, [*The Theory of Quantum Information*, chapter 2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.double.2.pdf): linear channels, Kraus representations and tensor extensions.
+- [φ operator](/docs/core/operators/phi-operator): explicit $M_{\mathrm{coh}},M_s,M_J$ and anchor premises.
+- [Evolution](/docs/core/dynamics/evolution): equilibria of the full vector field and their separate stability conditions.
 
-## Appendix A: Computation examples
-
-### A.1 Depolarizing channel as φ
-
-$$
-\varphi_p(\rho) = p \cdot \rho + (1 - p) \cdot \frac{I}{N}
-$$
-
-**Fixed point:**
-
-$$
-\Gamma^* = p \cdot \Gamma^* + (1 - p) \cdot \frac{I}{N}
-$$
-
-$$
-(1 - p) \cdot \Gamma^* = (1 - p) \cdot \frac{I}{N} \quad \Rightarrow \quad \Gamma^* = \frac{I}{N}
-$$
-
-**Contraction constant:** $k = p < 1$
-
-**Reflection measure at fixed point:**
-
-$$
-R(\Gamma^*) = R\left(\frac{I}{N}\right) = 1 - \frac{\|I/N - \varphi(I/N)\|^2_F}{\|I/N\|^2_F} = 1 - \frac{0}{1/N} = 1
-$$
-
-### A.2 Projection self-observation
-
-Let $\{|i\rangle\}$ be an orthonormal basis, $P_i = |i\rangle\langle i|$.
-
-$$
-\varphi_{\text{diag}}(\rho) = \sum_i P_i \rho P_i = \sum_i \rho_{ii} |i\rangle\langle i|
-$$
-
-(Diagonalization in the given basis)
-
-**Fixed points:**
-
-$$
-\varphi_{\text{diag}}(\Gamma) = \Gamma \quad \Leftrightarrow \quad \Gamma \text{ is diagonal}
-$$
-
-The set of fixed points is an $(N-1)$-dimensional simplex:
-
-$$
-\mathrm{Fix}(\varphi_{\text{diag}}) = \left\{\sum_i p_i |i\rangle\langle i| : p_i \geq 0, \sum_i p_i = 1\right\} \cong \Delta^{N-1}
-$$
-
-where $N = \dim(\mathcal{H}) = 7$ for the [Holon](/docs/core/structure/holon).
-
-**Remark:** This is not a contracting map ($k = 1$ on the set of fixed points).
-
----
-
-## Appendix B: Proof of CPTP structure preservation
-
-**Lemma B.1:** If $\mathcal{P}$ is CPTP and $\rho \in \mathcal{D}(\mathcal{H})$, then $\mathcal{P}(\rho) \in \mathcal{D}(\mathcal{H})$.
-
-**Proof:**
-
-1. **Hermiticity:**
-
-$$
-\mathcal{P}(\rho)^\dagger = \left(\sum_m K_m \rho K_m^\dagger\right)^\dagger = \sum_m K_m \rho^\dagger K_m^\dagger = \sum_m K_m \rho K_m^\dagger = \mathcal{P}(\rho)
-$$
-
-2. **Positivity:**
-
-For any $|\psi\rangle$:
-
-$$
-\langle\psi|\mathcal{P}(\rho)|\psi\rangle = \sum_m \langle\psi|K_m \rho K_m^\dagger|\psi\rangle = \sum_m \langle K_m^\dagger\psi|\rho|K_m^\dagger\psi\rangle \geq 0
-$$
-
-(since $\rho \geq 0$)
-
-3. **Normalization:**
-
-$$
-\mathrm{Tr}(\mathcal{P}(\rho)) = \mathrm{Tr}\left(\sum_m K_m \rho K_m^\dagger\right) = \sum_m \mathrm{Tr}(K_m^\dagger K_m \rho) = \mathrm{Tr}\left(\left(\sum_m K_m^\dagger K_m\right) \rho\right) = \mathrm{Tr}(I \cdot \rho) = 1
-$$
-∎
-
----
-
-## Appendix C: Generalization to time-dependent φ
-
-**Definition C.1 (Dynamic self-modeling operator):**
-
-$$
-\varphi: [0, \infty) \times \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})
-$$
-
-$$
-(\tau, \Gamma) \mapsto \varphi(\tau, \Gamma)
-$$
-
-**Dynamic fixed point equation:**
-
-$$
-\Gamma^*(\tau) = \varphi(\tau, \Gamma^*(\tau))
-$$
-
-**Theorem C.1 (Existence of dynamic fixed point):**
-
-If $\varphi(\tau, \cdot)$ is contracting with constant $k < 1$ for all $\tau$, and $\varphi$ is continuous in $\tau$, then:
-
-1. $\Gamma^*(\tau)$ exists and is unique for each $\tau$
-2. $\Gamma^*(\tau)$ is continuous in $\tau$
-3. $\frac{d\Gamma^*}{d\tau} = \frac{\partial \varphi}{\partial \tau} + (D\varphi)\left(\frac{d\Gamma^*}{d\tau}\right)$ (implicit equation)
-
-**Proof:** Follows from applying the implicit function theorem in a Banach space.
-
-### Octonionic context of self-modeling {#октонионный-контекст}
-
-:::note Self-modeling and alternativity [I]
-In the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация), the self-modeling operator $\varphi$ acts on the space $\mathrm{Im}(\mathbb{O})$. Alternativity of octonions (Artin's theorem [T]) guarantees that $\varphi$ is associative when acting on any pair of dimensions, but may exhibit non-associativity when acting simultaneously on three or more dimensions.
-
-This is consistent with the fixed point property $\varphi(\Gamma^*) = \Gamma^*$: self-consistency is achieved in the full 7-dimensional space where non-associativity is integrated into the structure. Bridge [T] (closed, T15). See [structural derivation](../minimality/theorem-octonionic-derivation).
-:::
-
----
-
-## Tensor factorization of φ for composite systems {#тензорная-факторизация}
-
-:::info Relation to no-signaling prohibition and preservation of holonomic character
-Tensor factorization of $\varphi$ is the key property behind the [marginal identity](/docs/proofs/physics/physics-correspondence#запрет-сигнализации): the regeneration of an autonomous subsystem does not change the unconditioned state of its partner. It does not by itself exclude superluminal signalling: with a Lüders update after a measurement on one side, a state-dependent regeneration on the other side makes its statistics depend on the choice of measurement (Gisin 1990; Polchinski 1991; §8.5 of the page linked). No-signalling of the full dynamics is [C] under the non-selective reading. An earlier sentence here said that factorization guarantees no superluminal channels; retracted.
-
-**Preservation of holonomic character.** Factorization $\varphi_{A \otimes B} = \varphi_A \otimes \varphi_B$ concerns **only** the regenerative term $\mathcal{R}$. The full dynamics $\mathcal{L}_\Omega = -i[H, \cdot] + \mathcal{D}[\cdot] + \mathcal{R}[\cdot]$ contains:
-- **$H$ (Hamiltonian):** creates and preserves entanglement — **non-local** ✓
-- **$\mathcal{D}$ (dissipation):** may destroy entanglement, but through **common** decoherence — **non-local** in general
-- **$\mathcal{R}$ (regeneration via $\varphi$):** local (factorizes) — keeps the partner's unconditioned marginal unchanged
-
-"Holonomy" (the whole > sum of parts) is realized through $H + \mathcal{D}$, not through $\mathcal{R}$. Self-modeling ($\varphi$) is a **local** process (each agent models itself, not another). Entanglement is a property of $H$ (Hamiltonian dynamics). The theory is **not** a "local hidden variable theory": only $\mathcal{R}$ is local, while $H + \mathcal{D}$ are non-local.
-
-**Refinement: SSB, not gauge freedom.** The more precise qualification is **spontaneous symmetry breaking** (SSB), not gauge freedom:
-
-1. **Before $V_{\text{Gap}}$ minimization:** $G_2$-symmetry **unbroken**, all bases equivalent.
-2. **Upon $V_{\text{Gap}}$ minimization** (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))): system "rolls" into a **specific** vacuum $\Gamma_{\text{vac}}$ on the manifold of minima $(S^1)^{21}/G_2$. One minimum is selected.
-3. **After SSB:** $G_2 \to H$ (vacuum stabilizer). Boolean fragment $\mathrm{Dec}(\Omega)$ **crystallizes** as pointer basis fixed by the vacuum.
-4. **Goldstone modes** (see [goldstone-modes](/docs/applied/coherence-cybernetics/goldstone-modes)): massless excitations along broken directions $G_2/H$.
-
-Analogy: not coordinates in GR, but the **Higgs mechanism** — $SU(2) \times U(1) \to U(1)_{\text{em}}$ generates W/Z masses. In UHM: $G_2 \to H$ generates **classical objectivity** (Dec(Ω) = Boolean logic).
-:::
-
-### Canonical extension of φ to composite system
-
-**Definition (Canonical extension $\varphi_A$).** For an autonomous holon $A$ in a composite system $A \otimes B$, the extension $\varphi_A$ is defined as:
-
-$$
-\tilde{\varphi}_A := \varphi_A \otimes \mathrm{id}_B
-$$
-
-This is the unique extension compatible with the CPTP structure of $\varphi_A$ and the tensor structure of category $\mathbf{DensityMat}$.
-
-### Theorem: tensor factorization
-
-:::warning Theorem (Tensor factorization of φ)
-
-For a composite system of two autonomous holons $A$ and $B$:
-
-$$
-\varphi_{A \otimes B} = \varphi_A \otimes \varphi_B
-$$
-:::
-
-**Proof:**
-
-1. By the definition of autonomy [(A1)](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность): $\mathcal{I}(A:B|\partial A) = 0$ — conditional independence of $A$ and $B$.
-
-2. The operator $\varphi$ is defined as [left adjoint to the inclusion of subobjects](#φ-как-левый-сопряжённый-к-включению-подобъектов):
-$$
-\varphi \dashv i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathcal{E}
-$$
-
-3. For autonomous subsystems the lattice of subobjects factorizes:
-$$
-\mathrm{Sub}(\Gamma_{AB}) \cong \mathrm{Sub}(\Gamma_A) \times \mathrm{Sub}(\Gamma_B)
-$$
-
-4. The left adjoint to the product of inclusions is the product of left adjoints:
-$$
-\varphi_{A \otimes B} = \varphi_A \times \varphi_B \cong \varphi_A \otimes \varphi_B \quad \blacksquare
-$$
-
-### Corollary: annihilation of nonlinear contribution
-
-**Lemma (Annihilation of regeneration under partial trace).** For any CPTP channel $\Phi_A$ and scalar $\alpha \in \mathbb{R}$:
-
-$$
-\mathrm{Tr}_A\left[\alpha \cdot ((\Phi_A \otimes \mathrm{id}_B)(\rho_{AB}) - \rho_{AB})\right] = 0
-$$
-
-**Corollary:** The regenerative term $\tilde{\mathcal{R}}_A[\Gamma_{AB}] = \kappa_A \cdot ((\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) - \Gamma_{AB}) \cdot g_V(P_A)$ contributes nothing to $\Gamma_B = \mathrm{Tr}_A[\Gamma_{AB}]$ — the marginal identity. This is not yet no-signalling of the full dynamics, which fails with the Lüders update and holds only in the non-selective reading [C]; an earlier wording said the term "automatically satisfies the no-signaling prohibition", which is retracted.
-
-Full proof: [Physical correspondence — No-signaling prohibition](/docs/proofs/physics/physics-correspondence#запрет-сигнализации).
-
----
-
-**Related documents:**
-- [Self-observation](/docs/consciousness/foundations/self-observation) — definitions of $\varphi$, $R$ and $R^{(n)}$
-- [Evolution](/docs/core/dynamics/evolution) — equation of motion, regenerative term $\mathcal{R}$ and canonical $\Delta F$
-- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$
-- [Viability](/docs/core/dynamics/viability) — purity measure $P$ and region $\mathcal{V}$
-- [Unity dimension](/docs/core/structure/dimension-u) — integration measure $\Phi$
-- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — regeneration coefficient $\kappa_0$
-- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4, thresholds $R^{(n)}_{\text{th}}$
-- [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — categorical structure of UHM, n-truncations and [no-signaling prohibition as natural transformation](/docs/proofs/categorical/categorical-formalism#запрет-сигнализации-естественная-трансформация)
-- [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
-- [Physical correspondence — No-signaling prohibition](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) — complete proofs
+<a id="1-введение-и-мотивация"></a>
+<a id="31-основная-теорема"></a>
+<a id="4-связь-с-мерой-рефлексии-r"></a>

@@ -198,7 +198,7 @@ Thus, articulation is not an abstract capacity: it is **measurable** through the
 
 ### Derivation of the stress formula σ from first principles {#вывод-формулы-напряжения}
 
-The stress formula $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$ is not an arbitrary choice, but the **unique** linear measure of deficit following from the structure of the state space $\mathcal{D}(\mathbb{C}^7)$. We derive it step by step.
+The stress formula $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$ is a model definition [D]. It is unique only within the declared affine interpolation with the two endpoint values; state-space geometry alone does not select it.
 
 **Step 1. Motivation from equilibrium.** The maximally mixed state $\Gamma = I/7$ is the quantum analogue of thermodynamic equilibrium. In it all diagonal elements are equal: $\gamma_{kk} = 1/7$ for all $k$. No dimension is singled out, none is suppressed. It is natural to define stress as the **deficit** of population relative to this equilibrium value.
 
@@ -215,7 +215,7 @@ $$
 \sigma_k = 1 - N \cdot \gamma_{kk} = 1 - 7\gamma_{kk}
 $$
 
-Linearity is not arbitrary: for small deviations from equilibrium ($\gamma_{kk} \approx 1/7$) any smooth dependence reduces to the linear one up to $O((\gamma_{kk} - 1/7)^2)$. Thus, the linear formula is the leading term of the expansion.
+The affine assumption is explicit. Smoothness alone gives a local linear approximation with an unspecified derivative; it does not select the global slope or interpolation.
 
 **Step 4. Clamping.** The population $\gamma_{kk}$ can exceed $1/7$ (up to $1$ for a pure state in the given dimension). When $\gamma_{kk} > 1/7$ the unclamped formula gives $\sigma_k < 0$, which would mean "surplus" — but stress is by definition **non-negative** (the absence of deficit is zero, not negative stress). Likewise, $\sigma_k > 1$ is impossible since $\gamma_{kk} \geq 0$. Therefore:
 
@@ -223,49 +223,9 @@ $$
 \sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)
 $$
 
-**Step 5. Universality.** The formula is the same for all seven dimensions, and this is a **consequence**, not an assumption:
+**Step 5. Declared interpolation and covariance.** Choose a population-only stress with the same function on every labelled axis [D]. If it is affine on $[0,1/7]$, equals one at zero and zero at $1/7$, elementary interpolation uniquely gives $1-7\gamma_{kk}$ on that interval. Nonnegative continuation by zero gives the displayed clamp. Permuting axes then permutes the stress vector [T at this choice]. Atomic dissipator symmetry does not force a population-only diagnostic, the affine assumption, or full-dynamics symmetry when the Hamiltonian and feedback distinguish axes. The atomic operator list is the model convention T-5 [D].
 
-(a) $S_7$-equivariance of the atomic dissipator [T-5 **[T]**](../../core/operators/lindblad-operators) means that the evolution equation for $\Gamma$ does not distinguish one dimension from another. If the dissipator is $S_7$-symmetric, then the natural measure of deficit must also be $S_7$-invariant: $\sigma_k$ depends only on $\gamma_{kk}$, and the functional form does not depend on the index $k$.
-
-(b) The function $f(\gamma) = \mathrm{clamp}(1 - 7\gamma,\; 0,\; 1)$ is the **unique** monotonically decreasing function on $[0,\, 1/7] \to [0,\, 1]$ that simultaneously (i) is linear, (ii) vanishes at $\gamma = 1/7$, and (iii) equals one at $\gamma = 0$. Uniqueness follows from the fact that a linear function with two fixed points is uniquely determined.
-
-**Step 6. Connection with T-92.** The derived formula is **Theorem T-92 [T]** (canonical stress tensor). The formal proof and the equivalence of the stress and purity viability conditions are given in [CC Theorems](../../applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
-
-:::tip Theorem: Canonical stress formula [T] (T-92)
-For the coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with diagonal elements $\gamma_{kk}$, the **canonical stress** of dimension $k$:
-
-$$
-\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1) \quad (k = A, S, D, L, E, O, U)
-$$
-
-— the unique linear $S_7$-invariant measure of population deficit relative to equilibrium $I/7$.
-:::
-
-:::info Universality: for all dimensions
-This derivation applies to **all seven** dimensions without modification. The formulas $\sigma_S$, $\sigma_D$, $\sigma_L$, $\sigma_E$, $\sigma_O$, $\sigma_U$ in the corresponding files ([dimension-s](./dimension-s), [dimension-d](./dimension-d), [dimension-l](./dimension-l), [dimension-e](./dimension-e), [dimension-o](./dimension-o), [dimension-u](./dimension-u)) are special cases of the same formula derived here.
-:::
-
----
-
-The [stress variable](../../core/operators/lindblad-operators) $\sigma_A$ (T-92 **[T]**) characterises the **deficit** of articulation:
-
-$$
-\sigma_A = \mathrm{clamp}(1 - 7\gamma_{AA},\; 0,\; 1)
-$$
-
-The value of $\sigma_A$ shows how strongly the system **needs** to strengthen its distinguishing capacity:
-
-| $\sigma_A$ | State | Interpretation |
-|------------|-------|----------------|
-| $0$ | $\gamma_{AA} \geq 1/7$ | Articulation is sufficient or in excess |
-| $0.5$ | $\gamma_{AA} \approx 1/14$ | Moderate deficit of distinctions |
-| $1$ | $\gamma_{AA} \to 0$ | Critical deficit — the system makes no distinctions |
-
-Stress $\sigma_A$ enters the [hedonic signal formula](../../consciousness/foundations/self-observation#мера-рефлексии-r) and influences the direction of learning: high $\sigma_A$ "pushes" the system towards seeking information that strengthens its distinguishing capacity.
-
-:::info Stress and motivation
-At the cognitive level, high $\sigma_A$ is experienced as **confusion**, **sensory deprivation**, or **boredom from monotony** — states that motivate the search for new distinctions. Low $\sigma_A$ — as **clarity of perception**, confidence in categories and boundaries.
-:::
+**Step 6. Scope of the formula.** The diagnostic is $\sigma_k=\max(0,1-7\gamma_{kk})$. Many nonlinear functions have the same endpoints; the affine choice selects this one. A smooth local Taylor expansion does not fix its slope from two global endpoints. A population-only vector cannot determine purity for arbitrary states: states with the same diagonal and different coherences have the same stress but different $P$. Any stress/viability equivalence must state additional model restrictions; see [the corrected CC theorem](../../applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
 
 ## Articulation in dynamics {#артикуляция-в-динамике}
 
@@ -397,8 +357,8 @@ graph TD
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [T]
-The dimension corresponds to $e_1 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]; the step to $\mathbb{O}$ takes the canonical orientation of the Fano lines, [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)) derives the octonionic structure from (AP)+(PH)+(QG)+(V); the combinatorial and functional uniqueness of each role claimed by [T-177](/docs/reference/status-registry) and [T-183](/docs/reference/status-registry) is retracted [✗] (2026-09-25): it rested on the axis sectors of T-48a. Restated (T-177, T-183): given $O$ and the $\kappa_0$ pair $\{E,U\}$, incidence fixes $A$ and $D$ [T], and one binary convention [D] fixes $E$ versus $U$ together with $L$ versus $S$. The specific assignment $A = e_1$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Chosen octonionic correspondence [D/I]
+The assignment $A=e_1\in\operatorname{Im}\mathbb O$ belongs to the declared oriented orthonormal frame. For a specified positive octonionic three-form, its stabilizer is $G_2$ [T]. This group identity does not uniquely assign functional names to axes or determine a physical encoder. The former universal T-42a rigidity is withdrawn [✗]; [reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) give a conditional comparison theorem. Incidence can constrain labels **after** the required marks are supplied; those marks and the remaining label convention are model data. The [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) states the additional algebraic inputs, and [the frame discussion](./dimensions#октонионная-интерпретация) distinguishes its symmetries from physical gauge equivalence.
 :::
 
 ## Gradations of articulation {#градации-артикуляции}

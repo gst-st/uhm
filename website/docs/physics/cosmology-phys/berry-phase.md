@@ -11,7 +11,6 @@ description: "Berry phase as the source of topological protection of the Gap, co
 The Berry phase as the source of topological protection of the Gap structure. The reader will learn about the connection between the geometric phase and $G_2$-orbits and the Fano Gap bound.
 :::
 
-
 ## Overview
 
 The topological term of the Gap Lagrangian is determined not by the Chern-Simons functional (that derivation has been **refuted**), but by the **Berry phase** (geometric phase) given by the associative 3-form of $G_2$. The Berry phase provides **topological protection** of the Gap: there exist pairs of dimensions for which $\mathrm{Gap}(i,j) > 0$ for structural reasons that cannot be eliminated by any local deformation of the parameters.
@@ -158,13 +157,23 @@ Replacing theorem: [Sectoral Gap Bound](#теорема-секторная-gap-�
 In the unique vacuum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) the Gap configuration $\theta^*$ satisfies:
 
 **(a)** For all non-O pairs ($i,j \in \{A,S,D,L,E,U\}$):
-$$\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.027 \ll 1/2$$
+
+$$
+\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.027 \ll 1/2
+$$
 
 **(b)** For O-sectoral pairs ($i \in \{A,S,D,L,E,U\}$):
-$$\mathrm{Gap}(O,i) = 1 - O(\bar{\varepsilon}^2) \approx 1$$
+
+$$
+\mathrm{Gap}(O,i) = 1 - O(\bar{\varepsilon}^2) \approx 1
+$$
 
 **(c)** The total Gap is dominated by the O-sector:
-$$\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2), \quad \mathcal{G}_O := 2\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2$$
+
+$$
+\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2), \quad \mathcal{G}_O := 2\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2
+$$
+
 :::
 
 **Proof.**
@@ -180,13 +189,17 @@ $$\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2), \quad \ma
 
 **Step 2 (Upper bound for non-O pairs).** The potential $V_2 = \mu^2 \mathcal{G}_{\text{total}}$ quadratically suppresses large phases. The competing $V_3$ (cubic) and $V_4$ (quartic) terms generate a non-zero minimum, but:
 
-$$\mathrm{Gap}(i,j) \leq \varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll \frac{1}{2}$$
+$$
+\mathrm{Gap}(i,j) \leq \varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll \frac{1}{2}
+$$
 
 The mean coherence $\bar{\varepsilon} = \bigl(\frac{1}{15}\sum_{i<j, \, i,j \neq O} \varepsilon_{ij}^2\bigr)^{1/2} = \varepsilon_{33}/\sqrt5 \approx 0.027$ ([C at (SV)]; the value $0.023$ written here until 2026-09-25 is retracted with the audit A-83), and the maximum $\varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll 1/2$.
 
 **Step 3 (O-sector — necessity of Gap $\approx$ 1).** The Page–Wootters mechanism (A5) requires the O-subsystem to serve as a clock. The rate of time flow (from the [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) T-53 [T]):
 
-$$\frac{d\tau}{d\sigma} = \omega_0 \cdot \sqrt{\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2}$$
+$$
+\frac{d\tau}{d\sigma} = \omega_0 \cdot \sqrt{\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2}
+$$
 
 For $d\tau/d\sigma > 0$ it is necessary that $\mathrm{Gap}(O,i) > 0$ for at least one $i$. Minimising $V_{\text{Gap}}$ subject to PW-viability gives $\mathrm{Gap}(O,i) \approx 1$ — the maximum value, providing the most accurate "clock". $\blacksquare$
 
@@ -206,7 +219,9 @@ For $d\tau/d\sigma > 0$ it is necessary that $\mathrm{Gap}(O,i) > 0$ for at leas
 
 The mean Gap for non-O coherences is strictly lower than for O-sectoral coherences:
 
-$$\langle\mathrm{Gap}_{\text{non-O}}\rangle \ll \langle\mathrm{Gap}_O\rangle \approx 1$$
+$$
+\langle\mathrm{Gap}_{\text{non-O}}\rangle \ll \langle\mathrm{Gap}_O\rangle \approx 1
+$$
 
 Specifically: $\langle\mathrm{Gap}_{\text{non-O}}\rangle \leq \bar{\varepsilon} \approx 0.027$, i.e. non-O pairs are nearly transparent while O-pairs are maximally opaque.
 
@@ -383,6 +398,7 @@ The Chern-Simons functional for a $\mathfrak{g}_2$-connection on a 1D base is a 
 $$
 CS_1[\mathcal{A}] = \frac{\kappa}{2}\sum_a A_a \dot{A}_a = \frac{d}{d\tau}\!\left(\frac{\kappa}{4}\sum_a A_a^2\right)
 $$
+
 :::
 
 **Proof.**
@@ -411,57 +427,33 @@ This is a **total derivative** with respect to $\tau$. Upon integration over a c
 $CS_1$ on a 1D base **does not generate** a topological phase for winding sectors. The identification "$CS_1 = \sum_{\mathrm{Fano}} \theta_{ij}\dot{\theta}_{jk}$" does not follow from $\mathrm{Tr}(\mathcal{A}\dot{\mathcal{A}})$, since the latter is a total derivative.
 :::
 
-### 9.2 Topological Term from Im($S_{\text{Keldysh}}$) [T] {#теорема-l-top-кельдыш}
+### 9.2 Audit of the Keldysh/Berry proposal [✗; replacement Pr] {#теорема-l-top-кельдыш}
 
-:::tip Theorem (Topological Lagrangian from Im($S_{\text{Keldysh}}$)) [T]
-The topological contribution to the action of Gap theory is uniquely determined by the imaginary part of the Keldysh action ([T-75](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан) [T]):
+The claimed unique topological term and coefficient $\beta=\lambda_3/(2\pi)$ do not follow from the written expression or T-75 (withdrawn [✗]). There is a direct obstruction. For positive definite density matrices $\rho_-,\rho_+$ and a Hermiticity-preserving generator $\mathcal L$, both $\log\rho_-$ and $\mathcal L(\rho_+)$ are Hermitian. For any two Hermitian matrices $A,B$,
 
-$$\mathcal{L}_{\text{top}} = \mathrm{Im}\left(\frac{\partial S_{\text{Keldysh}}}{\partial \tau}\right)\bigg|_{\text{cyclic}} = \frac{\lambda_3}{2\pi} \cdot \varphi_{ijk} \, \theta^{ij} \dot{\theta}^{jk}$$
+$$
+\overline{\operatorname{Tr}(AB)}=\operatorname{Tr}(BA)=\operatorname{Tr}(AB).
+$$
 
-where $\varphi_{ijk}$ is the gauge 3-form of $G_2$.
-:::
+Thus
 
-**Proof.**
+$$
+\operatorname{Im}\operatorname{Tr}\big[\rho_+\log\rho_--\mathcal L(\rho_+)\log\rho_-\big]=0.
+$$
 
-**Step 1 (Keldysh action — complex structure).** From the [derivation of the Lagrangian from the Lindbladian](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан) [T]:
+The former linear phase formula for this imaginary trace is false. At singular $\rho_-$ the logarithm also requires a support restriction or regularization. Taking a real part and then claiming a nonzero imaginary part is not a microscopic Keldysh construction.
 
-$$S_K[\rho_+, \rho_-] = \mathrm{Re}\,\mathrm{Tr}[\rho_+ \ln\rho_- - \mathcal{L}_\Omega[\rho_+]\ln\rho_-]$$
+A Berry term can be defined separately for a specified smooth nondegenerate eigenline over a parameter region. In a local normalized gauge $u(x)$, choose
 
-The full Keldysh action $S_K = S_{\text{Re}} + i S_{\text{Im}}$ also contains an imaginary part:
+$$
+\mathcal A=i\langle u,du\rangle,\qquad \gamma(C)=\oint_C\mathcal A\pmod{2\pi}.
+$$
 
-$$S_{\text{Im}} = \mathrm{Im}\,\mathrm{Tr}[\rho_+ \ln\rho_- - \mathcal{L}_\Omega[\rho_+]\ln\rho_-]$$
+Gauge changes alter $\mathcal A$ by an exact form; global consistency uses transition functions and a supplied line bundle. Degeneracies need a higher-rank bundle/non-Abelian connection. Its existence, adiabatic regime and relation to UHM's physical fields are additional model hypotheses [H/Pr]. A local polynomial $\beta B_{ab}\theta_a\dot\theta_b$ on lifted angular coordinates is not automatically a global one-form on a torus or a quantized topological term.
 
-**Step 2 (Imaginary part = geometric phase).** Under cyclic evolution ($\rho(\tau + T) = \rho(\tau)$):
+The fixed coordinate phase torus has no general continuous $G_2$ conjugation action: conjugation changes coherence moduli and populations. A selected positive three-form therefore does not make these phase polynomials $G_2$ invariant or determine their coefficient. Even for three variables permuted by $S_3$, symmetric quadratic forms have two independent terms $a\sum x_i^2+b\sum_{i<j}x_ix_j$; symmetry alone does not fix an off-diagonal ansatz. Finite cyclic-sum arithmetic in the next sections remains a chosen-form calculation; the former continuous covariance/unique physical derivation is withdrawn [✗].
 
-$$S_{\text{Im}}[C] = \oint_C \mathrm{Im}(\mathcal{A}) = \oint_C \sum_{ij} A_{ij}^{\text{Berry}} \, d\theta_{ij}$$
-
-This is the **Berry phase** in the space of Gap configurations $(S^1)^{21}$.
-
-**Step 3 (Berry connection from $V_3$).** The imaginary part of the logarithm $\ln\rho$ for a density matrix with coherences $\gamma_{ij} = |\gamma_{ij}|e^{i\theta_{ij}}$:
-
-$$\mathrm{Im}(\mathrm{Tr}[\rho_+ \ln\rho_-]) = \sum_{ij} |\gamma_{ij}|^2 \cdot \theta_{ij} + O(\theta^3)$$
-
-Contribution of the $\mathcal{L}_\Omega$-term via $V_3$:
-
-$$\mathrm{Im}(\mathrm{Tr}[\mathcal{L}_\Omega[\rho_+]\ln\rho_-]) \supset \lambda_3 \sum_{(i,j,k) \notin \text{Fano}} |\gamma_{ij}||\gamma_{jk}||\gamma_{ik}| \cdot \cos(\theta_{ij}+\theta_{jk}-\theta_{ik}) \cdot (\dot{\theta}_{ij}+\dot{\theta}_{jk}-\dot{\theta}_{ik})$$
-
-**Step 4 ($G_2$-covariant contraction).** The gauge 3-form of $G_2$:
-
-$$\varphi = \sum_{(i,j,k) \in \text{Fano}} e^i \wedge e^j \wedge e^k$$
-
-Using Fano/non-Fano duality ($\varphi_{ijk} = \varepsilon^{\text{Fano}}_{ijk}$), the imaginary part of $S_K$ in the linear approximation reduces to:
-
-$$S_{\text{Im}} = \int d\tau \, \frac{\lambda_3}{2\pi} \cdot \varphi_{ijk} \, \theta^{ij} \dot{\theta}^{jk}$$
-
-**Step 5 (Uniqueness of the form).** From [Theorem 4.1](#единственность-билинейной-формы-bb) [T]: the cyclic $S_3$-invariant bilinear form $B^{(b)}(\mathbf{n})$ on winding numbers is **unique** (up to a scalar) and $G_2$-covariant. Variant (b) is the only non-degenerate one. Consequently, $\mathcal{L}_{\text{top}} = \beta \cdot \varphi_{ijk} \theta^{ij} \dot{\theta}^{jk}$ with $\beta = \lambda_3/(2\pi)$ is the **unique** $G_2$-covariant topological Lagrangian. $\blacksquare$
-
-:::info Key Point: CS Replaced by Keldysh
-Chern-Simons gave a total derivative (trivial contribution, [Theorem 2.1](#9-опровержение-cs-вывода) [T]). The Keldysh formalism gives a **non-trivial** geometric phase via the imaginary part of $S_K$. $G_2$-covariance $+$ uniqueness of the bilinear form $=$ a unique $\mathcal{L}_{\text{top}}$. The coefficient $\beta = \lambda_3/(2\pi)$ is determined from first principles.
-:::
-
-Physically: $\varphi$ defines a "magnetic field" in the phase space of the Gap, and $\mathcal{L}_{\mathrm{top}}$ is the analogue of $A \cdot \dot{x}$ for a charged particle.
-
----
+A controlled open-system action must be derived from its microscopic dynamics and noise, as in [Sieberer–Buchhold–Diehl](https://arxiv.org/abs/1512.00637). That method does not establish the previously displayed UHM action.
 
 ## 10. $G_2$-Orientational Symmetry
 
@@ -469,7 +461,7 @@ Physically: $\varphi$ defines a "magnetic field" in the phase space of the Gap, 
 
 When computing the winding phase $\Phi(\mathbf{n})$ from the topological term, the question arises as to the range of summation:
 
-| Variant | Terms | Rank | $G_2$-covariance |
+| Variant | Terms | Rank | Chosen-form symmetry (continuous $G_2$ claim withdrawn) |
 |---------|-----------|------|---------------------|
 | (a) Full antisymmetrisation | 42 | **0** (identically zero) | Yes |
 | (b) Cyclic sum | 21 | **21** (non-degenerate) | **Yes** |
@@ -503,7 +495,7 @@ Sum: $+\varepsilon_l(n_{ab}n_{bc} + n_{bc}n_{ac} + n_{ac}n_{ab}) - \varepsilon_l
 ### 10.3 Cyclic Formula
 
 :::tip Theorem 3.2 [T]
-The oriented cyclic sum gives a **non-zero non-degenerate** quadratic form:
+At the declared oriented cyclic convention, the sum gives a **non-zero non-degenerate** quadratic form [T at that convention]:
 
 $$
 B^{(b)}(\mathbf{n}) = \sum_{l=1}^{7} \varepsilon_l \left(n_{ab}n_{bc} + n_{bc}n_{ca} + n_{ca}n_{ab}\right)
@@ -548,36 +540,19 @@ The monomial formula is **not invariant** under $\mathbb{Z}_3$ — this is a coo
 
 ---
 
-## 11. Uniqueness of the Bilinear Form $B^{(b)}$
+## 11. Chosen bilinear form and the failed uniqueness argument
 
-#### Theorem 4.1 (Uniqueness of the Bilinear Form) {#единственность-билинейной-формы-bb}
+#### Scope of former Theorem 4.1 {#единственность-билинейной-формы-bb}
 
-:::tip Theorem 4.1 (Uniqueness of the Bilinear Form $B^{(b)}$) [T]
-The oriented cyclic sum is the **unique** non-zero $G_2$-covariant quadratic form on winding numbers defined by the Fano structure.
-
-**Status:** **[T]**. The topological Lagrangian is derived from the imaginary part of the Keldysh action ([Theorem L_top from Keldysh](#теорема-l-top-кельдыш) [T]), and the uniqueness of the form follows from the $S_3$-argument below $+$ the uniqueness of $\mathrm{Im}(S_K)$.
-:::
-
-**Proof (alternative, via $S_3$-argument).**
-
-**(a)** The stabiliser of a Fano line in $\mathrm{PSL}(2,7)$ contains the full $S_3$, acting on the 3 points of the line. $S_3$-invariance requires:
-- All 3 cyclic permutations — common coefficient $\alpha$
-- All 3 anti-cyclic permutations — common coefficient $\beta$
-
-**(b)** Using $n_{ij} = n_{ji}$: anti-cyclic terms $=$ minus cyclic ones.
-
-**(c)** Full form on the line:
+The universal unique $G_2$-covariant winding-form claim is withdrawn [✗]. There is no such continuous action on the fixed-modulus phase torus. Even a single line with its three **unsigned unordered edge variables** has the two-dimensional space of $S_3$-invariant quadratic forms
 
 $$
-Q_l = (\alpha - \beta)\varepsilon_l(n_{ab}n_{bc} + n_{bc}n_{ca} + n_{ca}n_{ab}) = c \cdot B^{(b)}_l
+Q=a(x_1^2+x_2^2+x_3^2)+b(x_1x_2+x_2x_3+x_3x_1).
 $$
 
-The non-zero form is unique up to scale. $\blacksquare$
+Permutations impose equality of diagonal entries and equality of off-diagonal entries, leaving $a,b$ independent [T]. The identity $n_{ij}=n_{ji}$ does not remove diagonal terms. An oriented weight acquires signs under orientation-reversing permutations, so it needs an explicitly supplied representation/action before invariance is tested.
 
-The proof **does not use** representation theory of $G_2$, but is based on:
-1. $G_2$-transitivity on Fano lines
-2. $S_3$-invariance of the line stabiliser
-3. The identity $n_{ij} = n_{ji}$
+If one **declares** zero diagonal, independent line blocks, common line coefficient and an oriented cyclic ordering, its off-diagonal cyclic form is fixed up to that coefficient [T at those additional restrictions]. Those restrictions are model data [D], not consequences of $G_2$, Keldysh or physical vacuum uniqueness. The finite rank/Gauss-sum calculations below concern this chosen arithmetic form; their use for physical winding sectors requires a measure and energy bridge [H].
 
 ### 11.1 Recovery of 9 Orders
 
@@ -591,7 +566,7 @@ $$
 |--------|-----------------|-----------------|
 | Rank | 14 | **21** |
 | Suppression | $10^{-5.9}$ | **$10^{-8.9}$** |
-| $G_2$-covariance | No | **Yes** |
+| Chosen-form symmetry (continuous $G_2$ claim withdrawn) | No | **Yes** |
 
 :::info Caveat
 Although the mathematical result of the Gaussian sum is rigorous, at physical $S_0 = 20$ destructive interference **does not work** (dominant sectors have zero phase). See the [Cosmological Constant](/docs/physics/gravity/cosmological-constant#7-сумма-гаусса-для-фано-фаз) page for details.
@@ -610,7 +585,6 @@ Although the mathematical result of the Gaussian sum is rigorous, at physical $S
 | Emergent Geometry | [Emergent Geometry](/docs/physics/gravity/emergent-geometry) | Metric from coherences |
 | Gap Dynamics | [Gap Dynamics](/docs/core/dynamics/gap-dynamics) | Topological term $\mathcal{L}_{\mathrm{top}}$ in the Gap Lagrangian |
 | Fano Selection Rules | [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules) | Fano triplets and cyclic orientation |
-
 
 ---
 

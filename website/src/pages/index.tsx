@@ -21,9 +21,9 @@ import styles from './index.module.css';
  * the inscribed circle (the line (3,4,6)).
  *
  * The animation plays the multiplication table one line at a time; the gauge
- * below shows purity P between 1/7 and 1 with the viability window
+ * below shows purity P between 1/7 and 1 with the selected operational window; further dynamical conditions are required
  * 2/7 < P ≤ 3/7, and a marker that stays inside it (an illustration of a
- * living state, not a simulation).
+ * state in the selected window, not a simulation).
  */
 const LABEL: Record<number, string> = {1: 'A', 2: 'S', 3: 'D', 4: 'L', 5: 'E', 6: 'U', 7: 'O'};
 const LINES: [number, number, number][] = [
@@ -177,7 +177,7 @@ function FanoFigure() {
           e<sub>{LABEL[i]}</sub> · e<sub>{LABEL[j]}</sub> = e<sub>{LABEL[k]}</sub>
         </span>
         <span className={styles.fanoNote}>
-          <Translate id="homepage.fano.caption">Seven dimensions, seven lines: each oriented line is one rule of octonion multiplication. O, at the centre, carries the clock.</Translate>
+          <Translate id="homepage.fano.caption">Seven selected roles and seven lines: each oriented line illustrates a rule of octonion multiplication. The O role is assigned to the clock.</Translate>
         </span>
       </figcaption>
       <PurityGauge />
@@ -203,7 +203,7 @@ function PurityGauge() {
         <span style={{left: '100%'}}>1</span>
       </div>
       <div className={styles.gaugeLabel}>
-        <Translate id="homepage.gauge.label">Purity P = Tr Γ² — the viability window 2/7 &lt; P ≤ 3/7</Translate>
+        <Translate id="homepage.gauge.label">Purity P = Tr Γ² — the selected window 2/7 &lt; P ≤ 3/7</Translate>
       </div>
     </div>
   );
@@ -286,7 +286,7 @@ function HomepageHeader() {
             <Translate id="homepage.hero.subtitle.v2">One mathematical structure — for matter, time and the inner side of things.</Translate>
           </p>
           <p className={styles.heroDescription}>
-            <Translate id="homepage.hero.description.v2">A single primitive — an ∞-topos over the states Γ of a seven-dimensional system — and five axioms. Proved from them: time as the reading of an internal clock and a viability window 2/7 &lt; P ≤ 3/7 for anything alive. Once matter is placed on the complexified octonions and spacetime is read from its Hermitian forms — two premises the theory names rather than hides — the Standard Model group with one complete generation of fermions and a 3+1 spacetime follow as theorems. Every claim carries its status: proved, conditional, hypothesis, or retracted.</Translate>
+            <Translate id="homepage.hero.description.v2">A theory built around density matrices, quantum processes and sheaf semantics. Its mathematical kernel specifies the domains, assumptions and proofs: an open-cover site, a logical support mirror, state-preserving dynamics and conditions for identifiable measurements. Seven roles, clocks, physical representations and the interpretation as experience require explicit additional data. Each result distinguishes mathematics, model choice, physical hypothesis and interpretation.</Translate>
           </p>
           <div className={styles.heroButtons}>
             <Link className="button button--primary button--lg" to="/docs/intro">
@@ -308,16 +308,16 @@ function HomepageHeader() {
 type Claim = {id: string; text: string; ref: string; link: string};
 
 const proved: Claim[] = [
-  {id: 'time', text: 'Time as the reading of an internal clock: the depth register gives the time line ℝ', ref: 'T-53b, T-118', link: '/docs/proofs/dynamics/emergent-time'},
-  {id: 'window', text: 'Viability window 2/7 < P ≤ 3/7; inside it no single resource optimum', ref: 'P_crit, T-222', link: '/docs/core/dynamics/viability#критическая-чистота'},
-  {id: 'sm', text: 'Standard Model group (kernel ℤ₆) and one complete generation with ν_R, anomaly-free, in ℂ⊗𝕆', ref: 'T-326, T-329', link: '/docs/physics/gauge-symmetry/standard-model'},
-  {id: 'spacetime', text: 'Lorentzian 3+1 whose rotations commute with colour', ref: '48c', link: '/docs/core/foundations/spacetime'},
-  {id: 'tower', text: 'A tower of holons closes to the hyperfinite II₁ factor — given the split property, the algebra of a de Sitter observer, trace to trace', ref: 'T-348', link: '/docs/proofs/dynamics/emergent-time#t-348'},
+  {id: 'time', text: 'The open-cover Bures site and its sheaf semantics, with explicit domains and geometric morphisms', ref: '[T]', link: '/docs/reference/mathematical-kernel#bures-site'},
+  {id: 'window', text: 'Exact bound Φ ≤ 7P − 1; Φ ≥ 1 requires P ≥ 2/7, while purity alone does not certify integration', ref: '[T], [D]', link: '/docs/core/dynamics/viability#критическая-чистота'},
+  {id: 'sm', text: 'Standard Model representations in the supplied octonionic construction; physical selection requires bridge premises', ref: 'T-326, T-329', link: '/docs/physics/gauge-symmetry/standard-model'},
+  {id: 'spacetime', text: 'Lorentzian 3+1 from the supplied Hermitian-form construction, with rotations commuting with colour', ref: '48c', link: '/docs/core/foundations/spacetime'},
+  {id: 'tower', text: 'The specified tracial tensor tower gives a hyperfinite II₁ factor; an observer identification needs further hypotheses', ref: 'T-348', link: '/docs/proofs/dynamics/emergent-time#t-348'},
 ];
 
 const conditional: Claim[] = [
-  {id: 'bridge', text: 'The physical reading of the above rests on two bridge premises, (Cl₀) and (P); neither follows from the axioms', ref: 'T-347', link: '/docs/reference/premises'},
-  {id: 'closure', text: 'The axioms follow from the properties of a viable holon under three named conditions', ref: 'T-190', link: '/docs/proofs/categorical/cohesive-closure#теорема-аксиоматическое-замыкание'},
+  {id: 'bridge', text: 'Physical correspondence requires specified representations, clocks, spectral data and calibrated observation laws', ref: 'T-347', link: '/docs/reference/premises'},
+  {id: 'closure', text: 'Seven roles and the operational window are explicit model choices; the former universal axiom closure is withdrawn', ref: '[D]; T-190 [✗]', link: '/docs/core/foundations/axiom-septicity'},
   {id: 'interior', text: 'That the inner aspect of Γ is experience is an interpretation; its structure is tested empirically', ref: '[I]', link: '/docs/consciousness/empirical/overview'},
 ];
 
@@ -359,7 +359,7 @@ function StatusSection() {
             <ClaimList items={proved} group="proved" />
           </div>
           <div className={clsx(styles.statusCol, styles.statusConditional)}>
-            <h3><span className={styles.statusBadge}>{translate({id: 'homepage.status.badge.conditional', message: '[C] [I]'})}</span> <Translate id="homepage.status.conditional">Conditional or interpretive</Translate></h3>
+            <h3><span className={styles.statusBadge}>{translate({id: 'homepage.status.badge.conditional', message: '[C] [D] [I]'})}</span> <Translate id="homepage.status.conditional">Conditional or interpretive</Translate></h3>
             <ClaimList items={conditional} group="conditional" />
           </div>
           <div className={clsx(styles.statusCol, styles.statusOpen)}>
@@ -393,8 +393,8 @@ function MatrixSection() {
             <ul className={styles.matrixProperties}>
               <li><strong>P = Tr Γ²</strong> — <Translate id="homepage.matrix.purity.v2">purity, from 1/7 (maximally mixed) to 1 (pure)</Translate></li>
               <li><strong>2/7 &lt; P ≤ 3/7</strong> — <Translate id="homepage.matrix.threshold.v2">the viability window</Translate></li>
-              <li><strong>C = Φ · R</strong> — <Translate id="homepage.matrix.consciousness.v2">consciousness measure: integration × reflection, threshold 1/3</Translate></li>
-              <li><strong>L0 → L4</strong> — <Translate id="homepage.matrix.levels.v2">levels of interiority, separated by an A₄ (swallowtail) bifurcation</Translate></li>
+              <li><strong>C = Φ · R</strong> — <Translate id="homepage.matrix.consciousness.v2">a selected score; empirical calibration and a bridge to experience are required</Translate></li>
+              <li><strong>L0 → L4</strong> — <Translate id="homepage.matrix.levels.v2">operational and interpretive levels; an A₄ model requires an explicit potential</Translate></li>
             </ul>
           </div>
           <div className={styles.matrixVisual}>
@@ -424,13 +424,13 @@ type DocSection = {
 const docSections: DocSection[] = [
   {
     id: 'primitive.v2',
-    title: 'The Single Primitive',
-    description: 'Five Axioms Ω⁷',
-    link: '/docs/core/foundations/axiom-omega',
+    title: 'Mathematical Kernel',
+    description: 'Domains, Structures and Bridges',
+    link: '/docs/reference/mathematical-kernel',
     items: [
-      'The ∞-topos Sh∞(𝒞) over the states Γ — the single primitive',
-      'Five axioms; every further input named on the premises page',
-      'Distinguishability as the Bures metric',
+      'Sheaves on the explicitly specified open-cover site of states',
+      'Independent inputs and the limits of axiom closure',
+      'Bures geometry within the family of monotone quantum metrics',
     ],
   },
   {
@@ -441,7 +441,7 @@ const docSections: DocSection[] = [
     items: [
       'Holon — the unit that models itself',
       'Seven dimensions: A, S, D, L, E, O, U',
-      'All seven are necessary and functionally distinct (theorem 7/7)',
+      'Role distinctness and minimality require a specified task architecture',
     ],
   },
   {
@@ -450,7 +450,7 @@ const docSections: DocSection[] = [
     description: 'Why Seven',
     link: '/docs/proofs/minimality/theorem-octonionic-derivation',
     items: [
-      'Hurwitz: dim Im 𝕆 = 7; N ≥ 7 is a theorem, no decomposition below 7 — premise (Σ₆), T-349',
+      'Hurwitz: dim Im 𝕆 = 7 under the normed-division-algebra assumptions; separate coding bounds',
       'Fano plane, the canonical orientation and G₂',
       'Hamming code H(7,4) and the Cayley–Dickson boundary',
     ],
@@ -463,7 +463,7 @@ const docSections: DocSection[] = [
     items: [
       'dΓ/dτ = −i[H,Γ] + 𝒟[Γ] + ℛ[Γ,E]',
       'Dissipation by decoherence, regeneration by the self-model',
-      'Living attractors in the window; the regeneration rate is free (T-346)',
+      'State preservation is proved; attractors and window invariance need further conditions',
     ],
   },
   {
@@ -472,9 +472,9 @@ const docSections: DocSection[] = [
     description: 'Time from Structure',
     link: '/docs/proofs/dynamics/emergent-time',
     items: [
-      'Time is not postulated: the clock register of A5 (T-87)',
-      'The time line ℝ from the depth register (T-53b, T-118)',
-      'The arrow of time is indexed by stratal depth',
+      'An explicit clock register and an independently supplied constraint',
+      'Continuous reading limits under the specified scaling (T-118)',
+      'A directed channel history; entropy monotonicity requires unital dynamics',
     ],
   },
   {
@@ -483,9 +483,9 @@ const docSections: DocSection[] = [
     description: 'Conditions of Existence',
     link: '/docs/core/dynamics/viability',
     items: [
-      'Purity P — a measure of integrity',
-      'Critical purity P_crit = 2/7 — theorem',
-      'The window 2/7 < P ≤ 3/7 and its resource geometry (T-222)',
+      'Purity P and basis-dependent integration Φ are distinct',
+      'P ≥ 2/7 is necessary for Φ ≥ 1; a strict threshold is a convention',
+      'Selected window 2/7 < P ≤ 3/7; viability also needs dynamics and resources',
     ],
   },
   {
@@ -493,7 +493,7 @@ const docSections: DocSection[] = [
     title: 'Gap Semantics',
     description: 'Interiority / Exteriority',
     link: '/docs/core/dynamics/gap-operator',
-    items: ['Gap(i,j) = |sin(arg(γᵢⱼ))| — duality', 'Fano channel: dissipation via PG(2,2)', 'Phase diagram of coherent states'],
+    items: ['Gap(i,j) = |Im γᵢⱼ|/|γᵢⱼ| for nonzero coherence; a partial statistic', 'Fano channel: dissipation via PG(2,2)', 'Phase diagram of coherent states'],
   },
   {
     id: 'consciousness.v2',
@@ -501,9 +501,9 @@ const docSections: DocSection[] = [
     description: 'From Qualia to Collective Mind',
     link: '/docs/consciousness/overview',
     items: [
-      'Qualia structure from the geometry of Γ (enriched Yoneda)',
+      'Mathematical representations of reports and explicit interpretive bridges',
       'Empirical programme: calibration, structure, engineering',
-      'AI consciousness: operational criteria',
+      'AI: operational certificates and testable observation models',
     ],
   },
   {
@@ -514,7 +514,7 @@ const docSections: DocSection[] = [
     items: [
       'The Standard Model group and one generation in ℂ⊗𝕆 — under (Cl₀)',
       'Flavour: what the clock can and cannot fix (T-345)',
-      'Strong CP and Λ: honest no-go results',
+      'Strong CP, flavour and Λ: stated limits of the supplied construction',
     ],
   },
   {
@@ -523,8 +523,8 @@ const docSections: DocSection[] = [
     description: 'Formal Theorems',
     link: '/docs/proofs/minimality/theorem-minimality-7',
     items: [
-      'Minimality of the seven dimensions',
-      'Critical purity, the viability window, the No-Zombie core',
+      'Conditional dimension and coding theorems',
+      'Exact integration bounds and observation-fibre counterexamples',
       'Categorical formalism: the Grothendieck construction (T-211)',
     ],
   },
@@ -534,8 +534,8 @@ const docSections: DocSection[] = [
     description: 'Engineering Applications',
     link: '/docs/applied/coherence-cybernetics/introduction',
     items: [
-      'Measurement protocol for Γ in AI',
-      'No-Zombie: mathematical core [T], reading [I]',
+      'Identifiable observation models and reconstruction protocols',
+      'Behavioural equivalence needs a specified separating observation family',
       'Paninteriorism ≠ panpsychism',
     ],
   },
@@ -585,7 +585,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={translate({id: 'homepage.layout.title', message: 'A Formal Theory of Reality'})}
-      description={translate({id: 'homepage.layout.description.v2', message: 'Unitary Holonomic Monism — one mathematical structure for matter, time and the inner side of things: an ∞-topos over 7×7 coherence matrices, five axioms, named premises, and a status on every claim.'})}>
+      description={translate({id: 'homepage.layout.description.v2', message: 'Unitary Holonomic Monism: a typed mathematical kernel of density matrices, quantum channels and sheaf semantics, explicit physical bridges and a registry of result statuses.'})}>
       <HomepageHeader />
       <main>
         <StatusSection />

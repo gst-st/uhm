@@ -10,8 +10,6 @@ description: Complete map of UHM physical results classified by rigor — includ
 Overview of physical results of UHM theory: gauge symmetries, particle physics, gravity, cosmology, and the dual aspect. The proof status is indicated for each result.
 :::
 
-
-
 ## Status Marking
 
 Each result is marked with one of the canonical statuses:
@@ -21,7 +19,8 @@ Each result is marked with one of the canonical statuses:
 | **\[T\]** | Theorem — rigorously proven | Green |
 | **\[C\]** | Conditional — conditional on an explicit assumption | Yellow |
 | **\[H\]** | Hypothesis — mathematically formulated, requires proof | Yellow |
-| **\[P\]** | Program — research direction | Blue |
+| **\[P\]** | Postulate — accepted fundamental input | Blue |
+| **[Pr]** | Research programme — open direction | Blue |
 | **\[D\]** | Definition — definition by convention | Gray |
 | **\[I\]** | Interpretation — philosophical/physical interpretation | Gray |
 | **\[✗\]** | Retracted — refuted | Red |
@@ -43,7 +42,7 @@ Complete map of the "Physics" section pages with subsections and key topics.
 | | [Standard Model from G₂](/docs/physics/gauge-symmetry/standard-model) | SM from $G_2$ + Fano-electroweak (FE) construction |
 | | [Confinement](/docs/physics/gauge-symmetry/confinement) | Color Gap tubes, linear potential |
 | | [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules) | Fano channel, selection rule, Higgs line |
-| | [Noether Charges](/docs/physics/gauge-symmetry/noether-charges) | 14 conserved charges, Ward identities |
+| | [Noether Charges](/docs/physics/gauge-symmetry/noether-charges) | conditional Noether charges for a supplied symmetric field action |
 | | [Gap RG Flow](/docs/physics/gauge-symmetry/rg-flow) | β-functions (1/2/3-loop), fixed points, conformal window, RG suppression $\lambda_3$ |
 | **Particle Physics** | [Fermion Generations](/docs/physics/particle-physics/fermion-generations) | Triplet (1,2,4), Fritzsch texture (retracted [✗] 2026-09-26, T-345(e)) |
 | | [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) | Mass hierarchy from Fano topology, sectoral RG for $m_b/m_t$ [T] |
@@ -77,8 +76,8 @@ Complete map of the "Physics" section pages with subsections and key topics.
 | [Topology, phase diagram, charges](/docs/core/dynamics/gap-phase-diagram) | CS term (**refuted**), Ward identities, phases | Medium (CS cascade) |
 | [RG flow, 3+1](/docs/physics/gauge-symmetry/rg-flow) | Bridge AP+PH+QG+V $\Rightarrow$ P1+P2 **[T]** (T15, 12 steps) | High (all steps [T]) |
 | [Einstein from Gap, two-loop RG, $\Lambda$](/docs/physics/gravity/einstein-equations) | RG suppression $\lambda_3$ [T], swallowtail [T], spectral action [T] | High (spectral triple [T]) |
-| [SM from $G_2$, three-loop RG, $\Lambda$](/docs/physics/gauge-symmetry/standard-model) | $SU(3)_C$ from $G_2$ [T], factor $19/49$ [T] | Medium (rank SM > rank $G_2$) |
-| [Confinement, CKM, neutrinos, $\xi_F$](/docs/physics/gauge-symmetry/confinement) | $\xi_F \sim 160$ pc [C], ABJ [T], CKM [H], $\sqrt{\sigma} \approx 457$ MeV **[C at (SV)]**, $\theta_{\mathrm{QCD}} = 0$ **[✗]** (T-99, retracted 2026-09-26, was [C at (SV)]; strong CP open [Pr], [§3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)) | High (T-73 + T-69 + T-64 + T-99) |
+| [SM from $G_2$, three-loop RG, $\Lambda$](/docs/physics/gauge-symmetry/standard-model) | $SU(3)_C$ from $G_2$ [T], chosen-covariance $19/49$ [T/D], physical suppression [H] | Medium (rank SM > rank $G_2$) |
+| [Confinement, CKM, neutrinos, $\xi_F$](/docs/physics/gauge-symmetry/confinement) | $\xi_F \sim 160$ pc [C], ABJ [T], CKM [H], $\sqrt{\sigma} \approx 457$ MeV **[C at (SV)]**, $\theta_{\mathrm{QCD}} = 0$ **[✗]** (T-99, retracted 2026-09-26, was [C at (SV)]; strong CP open [Pr], [§3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)) | [H/Pr]; curvature/area-law route withdrawn [✗] |
 | [Standard Model, SUSY, proton, $\Lambda$](/docs/physics/gauge-symmetry/standard-model) | (1,2,4) unique [T], **IR FP error [✗]** | Low (5 critical vulnerabilities) |
 | [Fano selection rule](/docs/physics/gauge-symmetry/fano-selection-rules) | **Uniqueness of Higgs line [T]**, selection rule **[T]** (via $f_{ijk}$) | High |
 | [Full Fano architecture, synthesis](/docs/physics/particle-physics/fermion-generations) | Fritzsch texture [✗] (was [C]; 2026-09-26, T-345(e)), budget 41.5 [C], **deficit 79** | Medium (CKM numbers overstated) |
@@ -108,12 +107,8 @@ Standard decomposition of the adjoint representation of $G_2$ under restriction 
 **See:** [Gauge Symmetries](/docs/physics/gauge-symmetry/g2-structure)
 :::
 
-:::tip Theorem: Factor $19/49$ from Ward identities
-**Details:** [Standard Model from G₂](/docs/physics/gauge-symmetry/standard-model)
-
-From the spectrum of operator $F_{21}$: $\lambda_+/\alpha = 19/49 \approx 0.388$, $\log_{10} \approx -0.41$. Contribution to the $\Lambda$ budget: suppression $10^{-0.41}$.
-
-**See:** [Gauge Symmetries](/docs/physics/gauge-symmetry/g2-structure)
+:::note Ward factor: selected covariance, not a universal prediction
+For the chosen unsigned edge matrix, block eigenvalue arithmetic is exact. The covariance $C=\alpha I-3\alpha F_{21}/7+3\alpha F_{21}^2/49$ has uniform-vector eigenvalue $19\alpha/49$ [T at the supplied coefficients]. Continuous $G_2$ Ward invariance on $\Lambda^2\mathbb R^7=\mathbf7\oplus\mathbf{14}$ instead permits two independent coefficients on its **actual representation projectors**. It does not identify the unsigned coordinate matrix with those projectors or fix $19/49$. Its use as a vacuum suppression needs independent covariance and energy-readout data [H]; the old unique Ward derivation is withdrawn [✗]. See [Noether/Ward audit](/docs/physics/gauge-symmetry/noether-charges#тождества-уорда-разложение).
 :::
 
 :::tip Theorem: ABJ anomaly from Cliff(7)
@@ -219,7 +214,7 @@ Proven via octonion structure constants $f_{ijk}$ — the unique $G_2$-invariant
 
 Formulas such as $|V_{us}| \sim \sqrt{m_d/m_s}$ are standard consequences of the Fritzsch texture with **observed** quark masses as input. "Agreement at 1-4%" is not a prediction of the theory, but a consequence of substituting empirical data.
 
-**Verdict:** The prediction is **structure** (Fritzsch texture). Numbers are a consequence of structure + data. "1% agreement" for $J$ is actually 3% in $\sin(\delta)$.
+The former AP/PH-to-seven-primitive closure is withdrawn [✗]. The selected Fano incidence/algebra and chosen positive form have precise conditional mathematics; universal role completeness, coding rigidity, a unique generator and the physical bridge do not follow from them. Rates and field/spectral data are supplied inputs. [Canonical scope](/docs/reference/mathematical-kernel).
 
 *Corrected 2026-09-26 (T-345(e)):* the structure is retracted as well [✗] — the Fritzsch texture gives $\lvert V_{cb}\rvert\ge0.073$ against $0.0418$ — and $J$ computed with $\delta = 64.5°$ is not a prediction: that phase rests on a "two-loop correction" of $12.6°$ which the Standard Model does not have. No parameter-free structure of the clock predicts a mixing angle or a mass ratio ([CKM §11](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов)).
 :::
@@ -406,20 +401,12 @@ The full spectral triple $(A, H, D)$ from [T-53 [T]](/docs/core/foundations/spac
 **See:** [Gravity](/docs/physics/gravity/emergent-geometry) | [Einstein Equations](/docs/physics/gravity/einstein-equations) | [Quantum Gravity](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)
 :::
 
-:::tip Theorem: Gap = curvature of the Serre bundle [T]
-**Details:** [Gap Operator](/docs/core/dynamics/gap-operator#теорема-gap-серра)
-
-Spectral triple T-53 [T] + NCG curvature → exact identification Gap$(i,j) = \|F\|_{ij}$ via the internal Dirac operator $D_{\text{int}}$. Gap is literally the curvature of the finite noncommutative geometry.
-
-**See:** [Gap Operator](/docs/core/dynamics/gap-operator#теорема-gap-серра) | [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics)
+:::note T-73 curvature bridge withdrawn [✗]
+For the selected matrix $D=i\omega_0\operatorname{Im}\Gamma$, $\operatorname{Tr}D^2=\omega_0^2\|\operatorname{Im}\Gamma\|_F^2$ is a numerical identity [T]. It does not make Gap a curvature two-form or give an integral Chern number. A bundle/module, connection, differential calculus and geometric/physical readout are additional data [D/H/Pr]. Therefore the earlier exact identification cannot derive flux energy, confinement, a gravitational correction or their coefficients. See the [canonical Gap audit](/docs/core/dynamics/gap-operator#теорема-gap-серра).
 :::
 
-:::tip Theorem: Topological protection of the Gap vacuum [T]+[C at (SV)] (T-69, stratified 2026-09-25: $\pi_2$ exact, barrier from the (SV) Hessian)
-**Details:** [Composite Systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита)
-
-$\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ + positive-definite Hessian (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) + compactness $(S^1)^{21}$ → the vacuum is separated from configurations with $\text{Gap} = 0$ by a finite energy barrier $\geq 6\mu^2$.
-
-**See:** [Composite Systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) | [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics)
+:::note Topological data require a supplied field model
+The exact homotopy group of a specified homogeneous space does not establish a flux-tube barrier or confinement. A positive local Hessian does not fix a global energy barrier, and the corrected invariant vacuum manifold is S⁶ with π₂=0. A physical protection theorem needs the configuration space, boundary conditions, action and a global energy estimate [H/Pr].
 :::
 
 :::tip Theorem: $\varepsilon$ from global minimization of $V_{\text{Gap}}$ [C at (SV)] (T-64 restated as a hypothesis on 2026-09-25)
@@ -446,7 +433,7 @@ Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is **UV 
 |-----------|------------|--------|--------|
 | $\varepsilon^6$ | $10^{-12}$ | [Einstein Equations](/docs/physics/gravity/einstein-equations) | **[T]** (sectoral hierarchy [T]) |
 | RG $\lambda_3^2$ | $10^{-14.5}$ | [Einstein Equations](/docs/physics/gravity/einstein-equations) | [T] |
-| Ward identities ($19/49$) | $10^{-0.41}$ | [Standard Model from G₂](/docs/physics/gauge-symmetry/standard-model) | [T] |
+| Ward identities ($19/49$) | $10^{-0.41}$ | [Standard Model from G₂](/docs/physics/gauge-symmetry/standard-model) | [D/H] chosen covariance and energy bridge; universal derivation [✗] |
 | Fano code | $10^{-0.9}$ | [Einstein Equations](/docs/physics/gravity/einstein-equations) | [T] |
 | $\sqrt{N_F}$ | $10^{-11.9}$ | [Confinement](/docs/physics/gauge-symmetry/confinement) | [C] ($N_F$ via $\xi_F$) |
 | O-sector $(6/21)^3$ | $10^{-1.7}$ | [CKM Matrix](/docs/physics/particle-physics/ckm-matrix) | [T] |
@@ -629,7 +616,7 @@ Total derivative. CS cascade affects:
 - Equations of motion with topological term
 - Bridge closure via $V_3 \neq 0$
 
-**Resolution:** Reinterpretation via [Berry phase](/docs/physics/cosmology-phys/berry-phase). The formula $L_{top}$ may be salvaged, but its derivation from CS on 1D is incorrect.
+The CS argument is retracted. A genuine Berry replacement needs a supplied parameter eigenbundle and microscopic derivation [H/Pr]; the former Keldysh replacement has the zero-imaginary-trace obstruction of §9.2.
 :::
 
 :::danger Refuted: Energy cost of Gap
@@ -683,19 +670,19 @@ Wave function reduction as projection onto the atom $\chi_{S_k}$ of the classifi
 - Equations of motion with topological term
 - Bridge closure via $V_3 \neq 0$
 
-**Resolution:** Reinterpretation via [Berry phase](/docs/physics/cosmology-phys/berry-phase). The formula $L_{top}$ may be salvaged, but its derivation from CS on 1D is incorrect. Full rework of the topological part of the dynamics is required.
+The CS argument is retracted. A genuine Berry replacement needs a supplied parameter eigenbundle and microscopic derivation [H/Pr]; the former Keldysh replacement has the zero-imaginary-trace obstruction of §9.2.
 
-### 2. Gap-theory Lagrangian [T]
+### 2. Effective Gap action [H/Pr]
 
 **Details:** [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан)
 
-Schwinger-Keldysh formalism: $S_{Gap} = \mathrm{Re}\,\mathrm{Tr}[\rho_+ \ln\rho_- - \mathcal{L}_\Omega[\rho_+]\ln\rho_-]$. Classical limit ($\hbar \to 0$, $\rho_\pm = \rho \pm \delta\rho/2$) exactly reproduces all three components: kinetics ($L_{kin}$), potential ($V_{Gap}$), and dissipation ($\Gamma_2$). The origin of dissipative terms — from the openness of the system in the Keldysh contour. See [theorem T-75](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан).
+T-75's unique exact Keldysh derivation is withdrawn [✗]. Writing $\operatorname{Re}\operatorname{Tr}[\rho_+\log\rho_--\mathcal L(\rho_+)\log\rho_-]$ does not derive kinetic, potential, noise or Berry terms. In fact each displayed trace of Hermitian products is real, so that particular imaginary-part route gives zero. A microscopic action, contour variables, specified noise and controlled reduction must be supplied before an effective six-term ansatz or its coefficients are derived. [Gap action audit](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан), [Berry obstruction](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш).
 
-### 3. Bridge closure: [T] (T15)
+### 3. Scope of the primitive bridge
 
 **Details:** [Axiom of Septicity — Bridge](/docs/core/foundations/axiom-septicity#мост-p1p2), [Gap RG Flow](/docs/physics/gauge-symmetry/rg-flow)
 
-**Verdict:** Bridge (AP)+(PH)+(QG)+(V) ⟹ P1+P2 **closed [T] with the canonical orientation of the Fano lines** — chain T15 of 12 steps: the steps up to PG(2,2) are [T], and the step to $\mathbb{O}$ takes the unique collineation-invariant orientation class ([T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация); registry row 41n; it read "fully closed … all [T]" until 2026-09-25 without the orientation step, then [C at (Alt)] the same day). Condition (MP) proven in T11–T13 (Hoy rank = 7, L-unification, forced BIBD).
+The former AP/PH-to-seven-primitive closure is withdrawn [✗]. The selected Fano incidence/algebra and chosen positive form have precise conditional mathematics; universal role completeness, coding rigidity, a unique generator and the physical bridge do not follow from them. Rates and field/spectral data are supplied inputs. [Canonical scope](/docs/reference/mathematical-kernel).
 
 ### 4. SM from $G_2$: electroweak sector
 
@@ -707,7 +694,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 
 ## VIII. Full Rigor Hierarchy {#hierarchy}
 
-### Level 1: Impeccably rigorous theorems [T] (22 results)
+### Level 1: Mathematical identities and audited effective proposals
 
 1. Fano channel preserves coherences — [Fano Channel](/docs/proofs/gap/fano-channel)
 2. Covariance group of the Fano dissipator ($\Gamma_{\!\text{oct}}$, not full $G_2$) — [Fano Channel](/docs/proofs/gap/fano-channel#g2-ковариантность)
@@ -720,7 +707,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 9. Uniqueness of Higgs line $\{A,E,U\}$ — [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules)
 10. $m_t \sim 173$ GeV (Pendleton-Ross) — [Higgs Sector](/docs/physics/particle-physics/higgs-sector)
 11. RG suppression $\lambda_3^2$: $10^{-14.5}$ — [Einstein Equations](/docs/physics/gravity/einstein-equations)
-12. Factor $19/49$ from Ward identities — [Standard Model](/docs/physics/gauge-symmetry/standard-model)
+12. $19/49$ is selected-covariance arithmetic [T/D]; its unique Ward and vacuum-energy derivation is withdrawn [✗], physical use [H] — [Noether audit](/docs/physics/gauge-symmetry/noether-charges#тождества-уорда-разложение).
 13. ABJ anomaly from Cliff(7) — [Confinement](/docs/physics/gauge-symmetry/confinement)
 14. Instanton additive, $\Lambda_{inst} \sim 10^8$ GeV$^4$ — [Cosmological Constant](/docs/physics/gravity/cosmological-constant)
 15. CS on 1D — total derivative — [Berry Phase](/docs/physics/cosmology-phys/berry-phase)
@@ -728,15 +715,15 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 17. $\Theta_M/\Theta_0 \approx 1 - O(10^{-9})$ at $S_0 = 20$ — [Zeta Regularization](/docs/physics/dual-aspect/zeta-regularization)
 18. $B^{(b)}$ unique up to scalar — [Zeta Regularization](/docs/physics/dual-aspect/zeta-regularization)
 19. $Z_\Phi(-k) = 0$ for $k \geq 1$ — [Zeta Regularization](/docs/physics/dual-aspect/zeta-regularization)
-20. $V_{Gap}$ from spectral action (T-74): $\mathrm{Tr}(D_{\text{int}}^2) = \omega_0^2 G_{\text{total}}$ — [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия)
-21. $S_{Gap}$ from Schwinger-Keldysh (T-75): dissipation + kinetics + potential — [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан)
+20. Exact trace-square identity for the **chosen** D [T]; unique potential derivation T-74 withdrawn [✗], replacement spectral model [D/H] — [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия).
+21. Unique exact action derivation T-75 withdrawn [✗]; specified effective action [H/Pr] — [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан).
 22. Spectral self-closure (T-79): axioms → spectral triple → axioms — [Consequences](/docs/core/foundations/consequences#теорема-самозамыкание)
 
 ### Level 1a: Conditional results [C] (3 results listed, item 20 retracted 2026-09-26)
 
 20. ~~Fritzsch texture from Fano topology — **[C]** (structure [T], full texture conditional on $\epsilon \ll 1$)~~ — retracted [✗] 2026-09-26 (T-345(e)): $\lvert V_{cb}\rvert\ge0.073$ against $0.0418$ — [Fermion Generations](/docs/physics/particle-physics/fermion-generations)
 21. $\xi_F \sim 160$ pc — **[C]** (RG equation [T], numerical value conditional on vacuum parameters) — [Confinement](/docs/physics/gauge-symmetry/confinement)
-22. Perturbative $\Lambda$ budget $= 10^{-41.5}$ — **[C]** (at $\varepsilon = 10^{-2}$; without $\varepsilon$: 29.5 [T]) — [Cosmological Constant](/docs/physics/gravity/cosmological-constant)
+22. The older $10^{-41.5}$ vacuum suppression is a scenario ledger [H]; covariance, coding-energy and spectral/physical bridges require independent inputs — [audited budget](/docs/proofs/gap/lambda-budget).
 
 ### Level 1c: Definiteness and structure [T] (3 results)
 
@@ -763,17 +750,17 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 
 38. Dual-aspect interpretation of Hermitian conjugation — [Gap Semantics](/docs/physics/dual-aspect/gap-semantics) — **[P]**
 39. Conjugate pair principle — [Gap Semantics](/docs/physics/dual-aspect/gap-semantics) — **[I]**
-40. Topological protection of Gap — **[T]** (T-69): $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$, barrier $\Delta V \geq 6\mu^2 > 0$ — [Composite Systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита)
+40. Homotopy of a specified homogeneous space [T]; physical barrier/flux protection from it alone is withdrawn [✗], field-model protection [H/Pr].
 41. Fano Gap bound — **[✗]** ($\leq 1/2$ for all pairs); **replacement**: sectoral Gap bound **[T]** (T-80) — [Berry Phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница)
 42. Canonical Schrödinger/Heisenberg duality — [Composite Systems](/docs/core/dynamics/composite-systems) — **[I]**
-43. Bridge closure P1+P2 — **[T]**: T15 — chain of 12 steps, the step PG(2,2) → $\mathbb{O}$ takes the canonical orientation of the Fano lines (T15-canon; row 41n; listed as [C at (Alt)] earlier on 2026-09-25) — [Axiom of Septicity](/docs/core/foundations/axiom-septicity#мост-p1p2)
+43. Universal primitive/physics closure T15 is withdrawn [✗]; selected-frame/coding constructions are conditional — [Septicity](/docs/core/foundations/axiom-septicity#мост-p1p2).
 44. 3+1 from sectoral decomposition — **retracted [✗]** (2026-09-25; listed as [T] with "$7 = 1 \oplus 3 \oplus \bar{3}$ [T]; compactification of $\bar{\mathbf{3}}$ at scale $v_{\text{EW}}$ [T]"): no three of the six non-$O$ axes span an $SU(3)$-invariant subspace; the complexified $\mathbb{C}^7 = \mathbb{C} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ is Günaydın and Gürsey (1973) and gives colour, not space; the compactification falls with the split — [Spacetime](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция). Replaced by [Theorem 48c](/docs/core/foundations/spacetime#теорема-48c): the colour-singlet part of $\mathfrak h_2(\mathbb O)$ is $\mathfrak h_2(\mathbb C_O)$ of signature $(1,3)$, with $SL(2,\mathbb C_O)$ commuting with colour — [T] as mathematics, [C at (Q)] as physical spacetime
 45. Einstein equations from spectral action — **[T]** (T-65): full spectral action from finite spectral triple T-53 — [Einstein Equations](/docs/physics/gravity/einstein-equations)
 46. SM from $G_2$ — colour $SU(3)$ from $G_2$ **[T]**; electroweak sector **[C at (FE)]** — the pair $(E,U)$ from $\kappa_0$ is [T], its former reading as the HS-projection of a "$\bar{3}$-sector" is retracted, and the uniqueness of the group is [H] in the axis picture (listed as [T] until 2026-09-25); through the Clifford system of $\mathbb C\otimes\mathbb O$ it is [C at (Cl)] ([T-326](/docs/physics/gauge-symmetry/standard-model#sm-из-клиффорда)) — [Standard Model](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ)
 47. 3 generations from Fano — **count [T], identification [I]**: $N_{\text{gen}} = 3$ is the exact count $|\mathrm{QR}(7)| = |\mathbb{Z}_7^*/\{\pm1\}| = (7-1)/2 = 3$ **[T]** (group-theoretic, topology-independent); physical identification of the 3 classes with generations [I] — [Fermion Generations](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)
-48. Confinement from Gap — [Confinement](/docs/physics/gauge-symmetry/confinement) — **[C at (SV)]**; $\sqrt{\sigma} \approx 457$ MeV **[C at (SV)]** after sectoral correction
+48. Confinement/457 MeV from Gap: old area-law proof withdrawn [✗]; independently specified gauge-field and tension model [H/Pr] — [Confinement](/docs/physics/gauge-symmetry/confinement#теорема-закон-площади).
 49. Fano selection rule — **[T]**: proven via octonion structure constants $f_{ijk}$ (unique $G_2$-invariant trilinear operator) — [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk)
-50. Gap as Serre curvature — **[T]** (T-73): spectral triple T-53 + NCG curvature → exact identification — [Gap Operator](/docs/core/dynamics/gap-operator#теорема-gap-серра)
+50. Universal Gap-curvature identification T-73 withdrawn [✗]; geometric bridge with supplied connection [Pr/H] — [Gap operator](/docs/core/dynamics/gap-operator#теорема-gap-серра).
 51. Sectoral hierarchy $\varepsilon$ — **[C at (SV)]** since 2026-09-25 (T-64 restated as a hypothesis: the vacuum of $V_{\text{Gap}}$ is unique only up to its symmetries, numerically; the $G_2$-orbit reduction 21D→5D and the sectoral structure are retracted [✗]) — [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)
 52. Type-I seesaw: $M_R \sim 10^{14}$ GeV — **[T]**: $M_R = g^4_{G_2}/(16\pi^2) \cdot M_{G_2}^{(\text{extra})} \sim 2.9 \times 10^{14}$ GeV from loop mechanism of $G_2$-extra bosons — [Neutrino Masses](/docs/physics/particle-physics/neutrino-masses#теорема-mr-из-gap)
 53. PMNS from anarchic $M_R$ — **[C]**: O-sector isotropy → angles $\theta_{12} \approx 34°$, $\theta_{23} \approx 45°$, $\theta_{13} \approx 9°$ — [Neutrino Masses](/docs/physics/particle-physics/neutrino-masses#теорема-pmns-анархия)
@@ -811,7 +798,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 9. **Exact lattice computation** of the partition function on $(S^1)^{21}$ with $G_2$-symmetry (Monte Carlo) → [Quantum Gravity](/docs/physics/gravity/quantum-gravity#открытые-проблемы)
 10. **Inflation** from Gap potential ($V_2 + V_4$ at small $\theta$) → [Quantum Gravity](/docs/physics/gravity/quantum-gravity#открытые-проблемы)
 11. **Holographic limit** — exact correspondence between bulk Gap theory and the boundary → [Quantum Gravity](/docs/physics/gravity/quantum-gravity#открытые-проблемы)
-12. **Neutrino $m_2/m_3$ discrepancy** — O-sector spectral triple gives Dirac neutrino masses; residual discrepancy $\times 1.8$ [C] requires RG correction → [Neutrino Masses](/docs/physics/particle-physics/neutrino-masses#теорема-отношение-нейтринных-масс)
+12. $19/49$ is selected-covariance arithmetic [T/D]; its unique Ward and vacuum-energy derivation is withdrawn [✗], physical use [H] — [Noether audit](/docs/physics/gauge-symmetry/noether-charges#тождества-уорда-разложение).
 
 ### Computational
 
@@ -822,15 +809,9 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 
 ---
 
-## X. Final Verdict {#verdict}
+## X. Scope of validation {#verdict}
 
-| Criterion | Score | Comment |
-|-----------|-------|---------|
-| **Completeness** | 9/10 | Theory covers from quantum gravity to consciousness. Added: RG flow, neutrino masses, SUSY, proton decay, quantum gravity, Fano-electroweak construction (FE), superpotential $W$ [T], generation counting [T], $M_R$ from loop mechanism [T], 3+1 from sectoral decomposition (retracted [✗] 2026-09-25), $\varepsilon$ from sectoral hierarchy [C], Berry derivation of $L_{\text{top}}$ [T] (T-85). Unclosed: $\gtrsim 27$ orders of $\Lambda$ (beyond the net $10^{-53.5}$), Kähler metric $G_2$ |
-| **Consistency** | 9/10 | $\Lambda$ budget is arithmetically flawless. Bridge (AP)+(PH)+(QG)+(V) → P1+P2 closed with the canonical orientation, [T] (T15, T15-canon; [C at (Alt)] earlier on 2026-09-25). Superpotential $W$ closes the SUSY sector [T]. $\varepsilon$ partially from sectoral hierarchy [C]. $\sqrt{\sigma}$ after sectoral correction $\approx 457$ MeV (vs 440 MeV observed). $L_{\text{top}}$ from Keldysh [T] (T-85). Residual inconsistency: $T_{eff}$. Theory **self-corrects** |
-| **Mathematical rigor** | 8/10 | 140+ impeccable theorems [T] (Level 1) + ~20 conditional [C]. CS cascade closed (T-85) |
-| **Categorical rigor** | 5/10 | $\infty$-topos and dagger-category are mentioned but not rigorously formalized. Ehresmann connection, duality functor — postulated, not constructed |
-| **Integration readiness** | 7/10 | ~16 results ready for transfer (after editing). ~10 require substantial rework. ~8 not suitable for integration |
+The physical programme remains open. Computations in a supplied finite model do not establish physical identification, field dynamics, scale calibration or experimental accuracy. Universal T-85 and T-184 are withdrawn [✗]. Each retained result has its own assumptions in the [registry](/docs/reference/status-registry) and [mathematical kernel](/docs/reference/mathematical-kernel); numerical self-ratings of completeness and rigour have been removed.
 
 ---
 
@@ -842,7 +823,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 - [Gap RG Flow](/docs/physics/gauge-symmetry/rg-flow) — β-functions, fixed points, conformal window
 - [Confinement](/docs/physics/gauge-symmetry/confinement) — color Gap tubes
 - [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules) — Fano channel
-- [Noether Charges](/docs/physics/gauge-symmetry/noether-charges) — 14 charges, Ward identities
+- [Noether Charges](/docs/physics/gauge-symmetry/noether-charges) — conditional Noether charges and audited Ward covariance
 
 *Particle physics:*
 - [Fermion Generations](/docs/physics/particle-physics/fermion-generations) — triplet (1,2,4), Fritzsch texture (retracted, T-345(e))
@@ -871,7 +852,6 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 - [Emergent Time](/docs/proofs/dynamics/emergent-time) — Page-Wootters mechanism
 - [Zeta Regularization](/docs/physics/dual-aspect/zeta-regularization) — $Z_\Phi(-k) = 0$
 - [Gap Semantics](/docs/physics/dual-aspect/gap-semantics) — dual-aspect interpretation
-
 
 ---
 

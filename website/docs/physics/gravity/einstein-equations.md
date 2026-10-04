@@ -11,7 +11,6 @@ description: "Derivation of the Einstein equations from the Gap action via the L
 Derivation of the Einstein equations from the Gap action via the Chamseddine–Connes spectral action. The reader will learn why gravity is emergent in UHM.
 :::
 
-
 ## Overview
 
 The central result of the gravitational sector of UHM: **the Einstein equations are derived** from the Gap action via the Chamseddine–Connes spectral action [T]. The full spectral triple from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) reproduces the Einstein–Hilbert action + the Standard Model. An additional argument is the Lovelock theorem. Gravity **is not** a fundamental interaction — it emerges from Gap curvature.
@@ -91,6 +90,7 @@ The Gap action upon projection onto the 4D sector takes the form:
 $$
 S_{\mathrm{Gap}}^{(4D)} = \int d^4x \sqrt{-g} \left[\frac{1}{16\pi G_{\mathrm{Gap}}} \mathcal{R}^{(4D)} + \Lambda_{\mathrm{Gap}} + \mathcal{L}_{\mathrm{matter}}^{(4D)}\right]
 $$
+
 :::
 
 where:
@@ -162,30 +162,48 @@ from which $G_{\mathrm{Gap}}$ is identified.
 **Setup.** Let $\Gamma_0$ be a vacuum configuration with coherences of the ST sector $\gamma_{\mu\nu}^{(0)} = \varepsilon_0 e^{i\phi_{\mu\nu}^{(0)}}$, $\mu,\nu \in \{A,S,D,L\}$. Consider a spatially dependent perturbation $\gamma_{\mu\nu}(x) = \gamma_{\mu\nu}^{(0)} + \delta\gamma_{\mu\nu}(x)$ with $|\delta\gamma_{\mu\nu}| \ll \varepsilon_0$.
 
 **(a) Metric identification** [definition]:
-$$h_{\mu\nu}(x) \equiv \frac{2\,\mathrm{Re}(\delta\gamma_{\mu\nu}(x))}{\varepsilon_0}, \quad g_{\mu\nu}(x) = \eta_{\mu\nu} + h_{\mu\nu}(x)$$
+
+$$
+h_{\mu\nu}(x) \equiv \frac{2\,\mathrm{Re}(\delta\gamma_{\mu\nu}(x))}{\varepsilon_0}, \quad g_{\mu\nu}(x) = \eta_{\mu\nu} + h_{\mu\nu}(x)
+$$
 
 The imaginary part $\mathrm{Im}(\delta\gamma_{\mu\nu})$ parametrizes the $B$-field (2-form), which is inessential in this sector.
 
 **(b) Kinetic term → Fierz–Pauli action** [T]:
 
 The kinetic term of the Gap action for the $x$-dependent configuration in the ST sector (arising from the product spectral triple $D = D_\mathrm{ext} \otimes \mathbf{1} + \gamma_5 \otimes D_\mathrm{int}$, T-53):
-$$S_\mathrm{kin}^{(ST)} = \frac{\varepsilon_0^2}{4\mu^2} \int \sum_{\mu < \nu \in \mathrm{ST}} \partial_\rho h_{\mu\nu}(x)\,\partial^\rho h^{\mu\nu}(x)\;d^4x$$
+
+$$
+S_\mathrm{kin}^{(ST)} = \frac{\varepsilon_0^2}{4\mu^2} \int \sum_{\mu < \nu \in \mathrm{ST}} \partial_\rho h_{\mu\nu}(x)\,\partial^\rho h^{\mu\nu}(x)\;d^4x
+$$
 
 After integration by parts (boundary terms vanish under the asymptotic condition $h_{\mu\nu}(x) \to 0$ as $|\mathbf{x}| \to \infty$, standard asymptotic flatness) and imposing the de Donder gauge $\partial^\mu \bar{h}_{\mu\nu} = 0$ (where $\bar{h}_{\mu\nu} = h_{\mu\nu} - \frac{1}{2}\eta_{\mu\nu} h$):
-$$S_\mathrm{kin}^{(ST)} \supset \frac{1}{32\pi G_N^{(ST)}} \int \!\!\left[-\tfrac{1}{2}\partial_\rho h_{\mu\nu}\partial^\rho h^{\mu\nu} + \tfrac{1}{4}\partial_\rho h\,\partial^\rho h\right]d^4x$$
+
+$$
+S_\mathrm{kin}^{(ST)} \supset \frac{1}{32\pi G_N^{(ST)}} \int \!\!\left[-\tfrac{1}{2}\partial_\rho h_{\mu\nu}\partial^\rho h^{\mu\nu} + \tfrac{1}{4}\partial_\rho h\,\partial^\rho h\right]d^4x
+$$
 
 This is the standard massless spin-2 Fierz–Pauli action with:
-$$G_N^{(ST)} = \frac{4\pi\mu^2}{\varepsilon_0^2}$$
+
+$$
+G_N^{(ST)} = \frac{4\pi\mu^2}{\varepsilon_0^2}
+$$
 
 The tensor structure of $R_{\mu\nu}$ (not just the scalar $R$) is reproduced in full, since $S_\mathrm{kin}^{(ST)}$ is quadratic in all components of $h_{\mu\nu}$ and contains the correct cross-terms from $\partial_\rho h_{\mu\nu}\partial^\rho h^{\mu\nu}$.
 
 **(c) On-shell closure of Step 3** [T under small $\delta\theta$]:
 
 The potential $V_2^{(ST)} \approx \mu^2 \varepsilon_0^2 \sum_{\mu<\nu} \theta_{\mu\nu}^2(x)$ plays the role of a source $T_{\mu\nu}$. Equations of motion:
-$$\Box\, h_{\mu\nu}(x) = 8\pi G_N^{(ST)}\,T_{\mu\nu}^{(\mathrm{Gap})}(x) = 8\pi G_N^{(ST)}\cdot \mu^2\varepsilon_0^2\sin^2(\theta_{\mu\nu}(x))\cdot \eta_{\mu\nu}$$
+
+$$
+\Box\, h_{\mu\nu}(x) = 8\pi G_N^{(ST)}\,T_{\mu\nu}^{(\mathrm{Gap})}(x) = 8\pi G_N^{(ST)}\cdot \mu^2\varepsilon_0^2\sin^2(\theta_{\mu\nu}(x))\cdot \eta_{\mu\nu}
+$$
 
 Hence on-shell:
-$$R^{(4D)} \sim \partial^2 h \sim \mu^2\sin^2(\theta) \qquad \blacksquare$$
+
+$$
+R^{(4D)} \sim \partial^2 h \sim \mu^2\sin^2(\theta) \qquad \blacksquare
+$$
 
 The relation of Step 3 is a **field equation** (on-shell), not a kinematic identity. It holds rigorously in the classical limit at small $\theta$. The nonlinear generalization is via T-53 [T] (arbitrary $\theta$, full Einstein tensor, no weak-field assumption).
 :::
@@ -386,6 +404,7 @@ The two definitions of the gravitational constant — from the Gap action ($G_{\
 $$
 G_{\mathrm{Gap}} = G_{\mathrm{Connes}} \cdot (1 + O(\mathrm{Gap}^4))
 $$
+
 :::
 
 **Proof (outline).** $G_{\mathrm{Connes}}$ is defined via the spectral triple $(A_\alpha, H_\alpha, D_\alpha)$ and the Connes–Chamseddine formula for the spectral action. $G_{\mathrm{Gap}}$ is defined via the Gap action. Both constructions are based on the same object ($\Gamma$) but use different projections. Consistency follows from the fact that both expressions for $G$ are proportional to $1/\langle|\gamma|^2\rangle$ with a difference of $O(\mathrm{Gap}^4)$ corrections from the nonlinear terms $V_3$, $V_4$. $\blacksquare$
@@ -461,6 +480,7 @@ The tensor $T_{\mu\nu}^{(\mathrm{Gap})}$ satisfies the covariant conservation co
 $$
 \nabla_\mu T^{\mu\nu} = 0
 $$
+
 :::
 
 **Proof.** From $G_2$-invariance of the Gap action: the projection $G_2 \to \mathrm{SO}(3,1)$ (via $\mathrm{SU}(3) \subset G_2 \to \mathrm{SO}(3) \subset \mathrm{SO}(3,1)$) guarantees invariance of the 4D action under local Lorentz transformations. By Noether's second theorem: $\nabla_\mu T^{\mu\nu} = 0$. $\blacksquare$
@@ -471,51 +491,21 @@ $$
 
 ### 6.1 Beta Functions with Fano Combinatorics
 
-:::note Parameter $\lambda_3$ [T]
-The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively through the self-consistent vacuum $\theta^*$ (T-79 [C at (SV)]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$). For details see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
+:::note Coupling input and perturbative scope [D/H/Pr]
+The relation $\lambda_3=2\mu^2/(3|\bar\gamma|)$ and the value $\lambda_3\approx74$ are chosen effective-model inputs, not coefficients uniquely derived from the spectral action: universal T-74 is withdrawn [✗]. A self-consistency equation determines a value only after its functional, other couplings and state/field space are supplied. Compactness of a finite integration domain does not establish continuum UV finiteness, perturbative convergence or a universal factor-five error bound.
+
+Quantitative mass, mixing or gravitational predictions require independently fixed spectral data, renormalization/matching scales and physical readouts. If $\bar\gamma$ or $\lambda_3$ is inferred from those same observables, the result is calibration; held out data are needed for prediction. A small proposed $\lambda_3\varepsilon/(4\pi)$ is a power-counting estimate only after a definite action and propagators are supplied; factorially many diagrams can still yield a divergent asymptotic expansion. [The audited coupling discussion](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative) records these conditions.
 :::
 
-#### Theorem T-184 [T]: Non-perturbative extractability {#непертурбативная-извлекаемость}
+#### T-184: scope of non-perturbative spectral evaluation {#непертурбативная-извлекаемость}
 
-:::warning Theorem T-184 [T]: Non-perturbative extractability of the spectral action
-All physical predictions of UHM are extractable from the spectral action **without perturbative expansion** in any coupling constant. $\lambda_3 \gg 4\pi$ is not a computational wall.
-:::
+The universal claim “all UHM physical predictions are extractable from its spectral action” is withdrawn [✗]. For a **supplied finite Hermitian matrix** $D$, diagonalization exactly gives $\operatorname{Tr}f(D^2/\Lambda^2)$ at any chosen coupling [T]. For a supplied elliptic operator on a compact manifold with suitable boundary conditions and cutoff, heat-kernel asymptotics are available under their analytic hypotheses [T/C]. Compactness of a phase parameter domain alone does not ensure compact resolvent for an arbitrary operator.
 
-**Proof (T-184).**
+These statements compute a chosen functional. They do not derive the operator, cutoff, physical field content, correlation measure, masses or coupling matching. Heat-kernel asymptotics are not a convergence theorem for a loop series. A Euclidean finite matrix has no canonical Lorentzian spacetime or universal Wick rotation; a real structure/KO-dimension and positivity/causality data must be checked in the supplied geometry. The withdrawn T-74 uniqueness claim cannot fix these inputs.
 
-**Step 1 (Well-definedness of the spectral action).** The spectral action
+The beta-functions displayed below are effective-model hypotheses [H] until an action, propagators, regulator, diagrams and renormalization conditions derive their coefficients. The equalities $441=21^2$, $147=21\cdot7$, $49=7^2$ are arithmetic [T]; those counts alone do not establish the associated loop coefficients, errors or physical mass spectrum.
 
-$$S = \mathrm{Tr}\left(f\left(\frac{D_A^2}{\Lambda^2}\right)\right)$$
-
-is defined for **any** self-adjoint operator $D_A$ on a compact space. The internal space $(S^1)^{21}$ (torus of Gap phases $\theta_{ij} \in [0, 2\pi)$) is compact, so $D_{\mathrm{int}}$ has a discrete spectrum. The eigenvalues of $D_{\mathrm{int}}$ are computed from $D_{\mathrm{int}} \psi = \lambda \psi$, which is well-posed for **all** values of $\lambda_3$, including $\lambda_3 \approx 74$. $\square_1$
-
-**Step 2 (Seeley–DeWitt coefficients do not use loop expansion).** The heat kernel expansion
-
-$$\mathrm{Tr}(e^{-tD_A^2}) \sim \sum_{k \geq 0} a_k(D_A^2) \; t^{(k-d)/2}$$
-
-is an **asymptotic expansion in the regularisation parameter** $t \to 0^+$, not an expansion in coupling constants. The coefficients $a_k$ are functionals of the **spectrum** of $D_A^2$, computed via the resolvent $(D_A^2 - z)^{-1}$. For the compact operator $D_{\mathrm{int}}$, the resolvent exists for all $z$ outside the spectrum. Physical quantities via $a_k$:
-
-| Coefficient | Physical content | Dependence on $\lambda_3$ |
-|-------------|----------------------|---------------------------|
-| $a_0$ | Cosmological constant $\Lambda_{\mathrm{CC}}$ | Through the spectrum of $D_{\mathrm{int}}$ — **exact** |
-| $a_2$ | Einstein–Hilbert action $R/16\pi G_N$ | Through the spectrum of $D_{\mathrm{int}}$ — **exact** |
-| $a_4$ | Standard Model Lagrangian $\mathcal{L}_{\mathrm{SM}}$ | Through the spectrum of $D_{\mathrm{int}}$ — **exact** |
-
-$\lambda_3$ enters as a **spectral parameter**, not an expansion variable. The coefficients $a_k$ are polynomials in the eigenvalues of $D_{\mathrm{int}}^2$, finite for any $\lambda_3$. $\square_2$
-
-**Step 3 (Lorentzian signature — [C], registry row T-53).** For the UHM finite triple the KO-dimension-6 claim is retracted — no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)). The following sentences describe Connes' finite space, where KO-dimension 6 fixes the real structure $J$ with $J^2 = +1$, $J\chi = -\chi J$ (the correct mod-8 values for KO-dim 6; the earlier "$J^2=-1$" was a mod-8 table error, and is the value for KO-dim 2/6 only under the *opposite* convention — the Chamseddine–Connes SM uses $J^2=+1$ at KO-6, Euclidean). KO-dim 6 is **internal fermion-doubling data and does not by itself fix the spacetime signature.** The Lorentzian sign is fixed by the physical requirement that the Page–Wootters generator be bounded below (Osterwalder–Schrader reflection positivity); its rigorous realisation is a **Krein-space fundamental symmetry** $\beta$ (Franco–Eckstein; van den Dungen) with the PW constraint supplying the timelike direction (see [Spacetime §Lorentzian signature](/docs/core/foundations/spacetime#лоренцева-сигнатура)). Under that construction the Wick rotation $\mathcal{W}: D_{\mathrm{Lor}} \mapsto iD_{\mathrm{Eucl}}$ transforms the spectral action:
-
-$$S_{\mathrm{Lor}} = -i \cdot S_{\mathrm{Eucl}}$$
-
-For the finite-dimensional internal part this identity is trivial (all algebras are finite-dimensional; no convergence issues). The Einstein–Hilbert coefficient:
-
-$$a_2^{\mathrm{Lor}} = -a_2^{\mathrm{Eucl}} \quad \Rightarrow \quad S_{\mathrm{EH}} = +\frac{c_2 R}{16\pi G_N}$$
-
-yields the **correct sign** for gravitational attraction (ref.: van Suijlekom 2015, Ch. 12; Franco–Eckstein 2014). $\square_3$
-
-**Corollary.** The problem $\lambda_3 \approx 74 \gg 4\pi$ is fully resolved: it is not a perturbative coupling but a geometric spectral parameter. All UHM predictions (fermion masses T-180 [C at (SV)], cosmological constant, gauge couplings) are determined by the spectrum of $D_{\mathrm{int}}$ — a finite operator on a compact space — and require no loop expansion. $\blacksquare$
-
-:::tip Theorem 4.1 (Two-loop beta functions) [T]
+:::note Proposed two-loop beta functions [H]
 :::
 
 **(a)** Mass parameter:
@@ -566,6 +556,7 @@ Anomalous dimension of the Gap field in the two-loop approximation:
 $$
 \eta_{\mathrm{Gap}} = \frac{7\lambda_4^2}{2(8\pi^2)^2} - \frac{\lambda_3^2}{4(8\pi^2)^2 \mu^2} \approx 1.1 \times 10^{-4}
 $$
+
 :::
 
 The mean-field approximation remains accurate to ~0.01%.
@@ -638,7 +629,6 @@ Global minimum — $G_1$ (L3), but L2 and L1 are metastable. Barrier L1 $\to$ L2
 | Cosmological constant | [Cosmological constant](/docs/physics/gravity/cosmological-constant) | Computation of $\Lambda_{\mathrm{Gap}}$ and suppression mechanisms |
 | $G_2$-structure | [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure) | Fano plane and combinatorics of beta functions |
 | Berry phase | [Berry phase](/docs/physics/cosmology-phys/berry-phase) | Topological protection of Gap |
-
 
 ---
 

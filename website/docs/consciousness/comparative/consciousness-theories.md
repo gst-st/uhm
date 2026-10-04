@@ -289,7 +289,11 @@ Predictive coding **is derived** from the φ-operator dynamics:
 **Proof (3 steps).**
 
 **Step 1.** The replacement channel $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ [T] (T-62) is rewritten as:
-$$\varphi_k(\Gamma) = \Gamma - k(\Gamma - \rho^*) = \Gamma - k \cdot \varepsilon$$
+
+$$
+\varphi_k(\Gamma) = \Gamma - k(\Gamma - \rho^*) = \Gamma - k \cdot \varepsilon
+$$
+
 where $\varepsilon = \Gamma - \rho^*$ is the **prediction error**, $k = 1-R$ is the **precision**.
 
 **Step 2.** At $R \to 1$ (good self-model): $k \to 0$, correction is minimal — the system "trusts" its model (high precision prior). At $R \to 0$ (poor self-model): $k \to 1$, maximum correction — the system "trusts" sensory data (high precision likelihood).
@@ -305,13 +309,13 @@ where $\varepsilon = \Gamma - \rho^*$ is the **prediction error**, $k = 1-R$ is 
 | Prior | $\rho^* = \varphi(\Gamma)$ | **[T]** (categorical self-model) |
 | Likelihood update | $\Gamma \to (1-k)\Gamma + k\rho^*$ | **[T]** (replacement channel) |
 | Free energy | $\mathcal{F} = S_{vN} + D_{KL}$ (a cross-entropy) | **[✗]** — Theorem 3.1 retracted 2026-09-25 (registry row 39e) |
-| Hierarchical prediction | SAD tower $\varphi^{(n)}$ | **[T]** (T-142) |
+| Hierarchical prediction | Chosen SAD score or explicit predictive metamodel protocol | [D/H]; no universal ceiling from T-142 |
 
 **What UHM adds:**
 - PP postulates prediction error minimisation; UHM **derives** it from the categorical definition of φ
 - PP does not define quantum structure; UHM provides quantum generalisation (density matrices instead of probabilities)
 - PP has no consciousness thresholds; UHM defines $R_{\text{th}} = 1/3$ [T]
-- Hierarchical PP = SAD tower with SAD_MAX = 3 [T] (T-142)
+- Hierarchical PP can be compared to a declared prediction protocol [I/H]; the optional Fano SAD score has a conventional maximum index of three, but no universal cognitive-depth ceiling follows.
 
 ## 7. Attention Schema Theory (AST) {#ast-section}
 
@@ -336,7 +340,7 @@ where $\varepsilon = \Gamma - \rho^*$ is the **prediction error**, $k = 1-R$ is 
 | Self-model inaccuracy | $R < 1$: $\varphi(\Gamma) \neq \Gamma$ by definition |
 | Social attribution | Generalisation of $\varphi$ to other holons through $\Gamma_{\text{ext}}$ |
 
-**Critical difference:** AST claims that consciousness **=** self-model (eliminativism). CC claims that self-modelling is a **necessary** condition ($R \geq 1/3$), but not sufficient: integration ($\Phi \geq 1$) and differentiation ($D_{\text{diff}} \geq 2$) are also required. AST does not explain **why** the self-model gives rise to experience; CC shows that E-coherence ($\mathrm{Coh}_E > 1/7$) is **necessary** for viability (No-Zombie [T]).
+**Critical difference [I/H].** The UHM operational gate separately checks purity, canonical $R$, integration and a declared differentiation variable. Canonical $R=1/(7P)$ is not proof of an actual self-model. The former universal No-Zombie/E-coherence floor is withdrawn: viable dynamics with independent purity input or bootstrap do not establish it. A model-specific necessity result needs a closed balance equation with its own strict positive loss and regeneration assumptions; identifying the E-variable with experience is a separate bridge.
 
 ## 8. Quantum Cognition
 
@@ -402,7 +406,7 @@ In September 2023 a letter signed by 124 scholars was posted on PsyArXiv: IIT-Co
 - Tononi G., Albantakis L., Barbosa L., Boly M., et al. (22 authors, among them C. Koch, E. Hoel and N. Tsuchiya), "Consciousness or pseudo-consciousness? A clash of two paradigms", *Nature Neuroscience* 28, 694–702 (2025), doi:10.1038/s41593-025-01880-y. The label, they answer, exposes "a crisis in the dominant computational-functionalist paradigm, which is challenged by IIT's consciousness-first paradigm".
 - Gomez-Marin A., Seth A.K., "A science of consciousness beyond pseudo-science and pseudo-consciousness", *Nature Neuroscience* 28, 703–706 (2025), doi:10.1038/s41593-025-01913-6 — a critical assessment of the charge that tries to turn the clash into lessons for the field.
 
-**Why this matters for UHM [I].** The charge is aimed at IIT's identity claim: that an experience *is* a certain mathematical structure. UHM makes an identity claim of the same kind — experience as an aspect of $\Gamma$ — and its own [falsifiability page](/docs/reference/falsifiability) states that its main criterion is a supervenience claim, testable only together with a fixed reconstruction protocol $\pi_{\mathrm{bio}}$. The corpus goes further against itself: by [T-214](/docs/proofs/categorical/fundamental-closures#t-214), registered as a theorem, the bridge from states to experience cannot be an internal morphism of the theory, so the identifications "E-sector = interiority" and "qualia = eigenvectors" are necessarily external postulates. The "untestable in principle" criticism therefore reaches UHM's identity claim at least as directly as IIT's. What UHM can set against it are only its numeric predictions — and those meet the formal critiques of the next section.
+**Why this matters for UHM [I/H].** A state–experience identity and a reconstruction protocol must be stated separately and tested at their joint empirical scope. T-214’s universal claim that a phenomenal bridge cannot be internal is withdrawn: Lawvere requires an actual evaluator $A\to B^A$, not any internal map. This neither establishes the identity nor proves it untestable. Structural alignments and calibrated numeric predictions supply evidence only for their declared bridges.
 
 ## Formal Critiques That Bind UHM's Consciousness Predicate {#formal-critiques}
 
@@ -432,7 +436,7 @@ Three well-known formal arguments were aimed at IIT. Each applies to any theory 
 - **Independence horn.** If $\pi_{\mathrm{bio}}$ is fixed from anatomy and physiology alone, internal data can vary while reports stay fixed — Kleiner and Hoel argue that interventions such as transcranial magnetic stimulation probably allow this even within human brains — and the theorem applies: some possible system falsifies the predicate, or the inferences are wrong.
 - **Strict-dependence horn.** The corpus's own row [F-Neural](/docs/reference/falsifiability#f-neural-нейронные-корреляты) mapped the clinical PCI cut-off 0.31 onto $P_{\text{crit}} = 2/7$ and called the support "calibration-dependent, not direct" (until 2026-09-25). A threshold calibrated on the inference data cannot be falsified by the same data; the row now tests a concordance of verdicts on sessions that did not fix the reconstruction (SUB-1, SUB-5).
 - **The supervenience criterion** — "same full invariant, different experience" — is not refuted by substitutions (they change $\Gamma$ and keep the reports, which supervenience allows), but only because it predicts nothing about *which* experience a state carries; the falsifiability page says as much.
-- **The ways out.** No lenient dependency is constructed in the corpus. The second way out is closed to UHM as formulated: two-aspect monism identifies experience with an aspect of $\Gamma$, so experience makes no causal difference beyond $\Gamma$. Whether the No-Zombie link ([Theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie): viability forces $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min}$) ties the differentiation conjunct $D \geq 2$ to observable viability — and so puts it on the unfalsifiable horn — is not analysed in the corpus.
+- **The ways out.** A lenient dependency or an independent phenomenal intervention must be explicitly constructed before it answers the cited falsification issue. The former No-Zombie floor does not bind differentiation to observable viability in every model; bootstrap/input counterexamples defeat that universal premise. Whether a specified model is distinguishable requires its actual observation map and rival hypotheses.
 - **Where the predicate sits, proved (2026-09-25).** [Theorem of the measurement protocol](/docs/applied/research/measurement-protocol#substitution-position) [T]: (i) calibration of $\pi_{\mathrm{bio}}$ on report-labelled sessions is on the strict-dependence horn; (ii) the reference estimator contained the predicate — its viability penalty reconstructed every sub-threshold state of the uniform family at $P = 2/7$ exactly, so the NREM prediction could not be observed (removed); (iii) with parameters frozen in advance the predicate is on the independence horn, and UHM takes the second disjunct of Theorem 3.10 for substitutes; (iv) the non-closure exit is closed; (v) a lenient dependency restricted to intact human brains in natural and pharmacological states is possible and testable [H]. The same page shows that a similarity structure shared with humans — GPT-4's 91.4 % Gromov–Wasserstein match on 93 colours (Kawakita et al., *Sci. Rep.* 14: 15917, 2024) — is inference data and independent of the verdict.
 
 ### Aaronson's "unconscious expander" (2014) {#aaronson-expander}
@@ -532,7 +536,7 @@ Against the relationalist route the authors raise two objections: the table of r
 | FPR | kept **only in relativised form** — each subject's facts are forced at its own stage | T-221(a), (b) |
 | NR | **given up** for first-personal facts | T-221(a): the first-personal facts of two subjects are not compossible, so they cannot all be absolute |
 
-So UHM is on the **relationalist** route of DeBrota & List; in List's (2025) four-claim map, where NR is part of FPR, it is on the **first horn** — the one List assigns, "arguably", to double-aspect monisms. What is specific to UHM within that route: the relativisation parameter is an object of the world itself (T-221(c)), which answers Fine's objection. What is not answered: the objection that the table of relativised facts does not say which subject *I* am. In $\mathfrak{T}$ no internal formula selects "my" stage; the choice is a point of the topos, an external datum (T-221(d)) — the same shape as the hard-problem meta-theorem [T-214](/docs/proofs/categorical/fundamental-closures#t-214).
+UHM can interpret stage-relative facts along a relationalist route [I]. A chosen topos point or observer index is additional model data; that does not prove every possible “which subject am I?” predicate must be external. T-214’s universal no-go is withdrawn, and the declared mathematical stage model must be kept separate from the phenomenal individuation bridge.
 
 :::warning Retracted 2026-09-25 [✗]
 This section claimed that UHM realises a "fourth, categorical-monistic route" beyond the three, keeping FPR, NS, OW and NF while "relaxing NR into site-relativisation", with FPR "forced" by T-186. Site-relativisation of facts is the relationalist route itself, and T-186(a) is a hypothesis. Also retracted: "RQM is recovered as the 1-truncation $\tau_{\leq 1}(\mathfrak{T})$" (the site is a 1-category, its representables are 0-truncated, and 1-truncation changes none of them); "the other routes are truncations of $\mathfrak{T}$" — fragmentalism as "dropping descent" misreads the route (descent can hold while the local facts fail to form one coherent collection, which is the sheaf-theoretic picture the authors cite); and the "empirical discriminator": the routes are readings of one forcing relation, share every observable (T-221(e)), and $\pi_{\mathrm{bio}}$ cannot tell them apart — in agreement with the authors.
@@ -540,13 +544,13 @@ This section claimed that UHM realises a "fourth, categorical-monistic route" be
 
 ### Connection with UHM's hard-problem meta-theorem
 
-T-214 states that a sufficiently rich self-referential system has irreducible external postulates (Lawvere fixed point). T-221(d) places one of them exactly: the fact "I am *this* subject" is not among the facts of $\mathfrak{T}$; it is the choice of a point. What in the no-go literature appears as the price of relationalism — the "vertiginous question" (Hellie 2013) left open — is in UHM an instance of T-214, not something the categorical machinery removes.
+Revised T-214 retains no universal Lawvere theorem forcing all experiential postulates outside the model. The fixed-point theorem applies only with its evaluator and expressivity assumptions. T-221’s selected point/index construction is a particular formalisation [D/I], not a proof that no alternative internal identification is possible. The philosophical “vertiginous question” remains open under the stated bridge.
 
 ### Independent convergence: Lerchner (2026, Google DeepMind)
 
 An independent argument by Alexander Lerchner (*The Abstraction Fallacy: Why AI Can Simulate But Not Instantiate Consciousness*, Google DeepMind working paper, 2026-03) reaches the same broad conclusion — that algorithmic symbol manipulation cannot **instantiate** experience, only **simulate** it — via a different route. Lerchner argues that computation is a "mapmaker-dependent" description of physics rather than an intrinsic physical process, and therefore inverts the standard chain "Physics → Computation → Consciousness" into "Physics → Consciousness → Concepts → Computation".
 
-In UHM terms this is the **negative** form of T-221 (rejection of naive non-relationalism in favour of an agent-indexed view of computation) combined with the Lawvere barrier of T-214. UHM supplies the **positive, constructive** counterpart that Lerchner's paper leaves open — "What physical conditions are needed for consciousness?" — namely the specific structure $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with $G_2$-covariant Lindblad dynamics, the four measurable thresholds $(P, R, \Phi, D)$, and the $\pi_\text{bio}$ protocol as the operational discriminator. Lerchner's terminology (*abstraction fallacy*, *mapmaker*, *alphabetization*, *transduction fallacy*, *simulation vs. instantiation*) translates into UHM formalism via: simulation ↔ 1-truncation $\tau_{\leq 1}(\mathfrak{T})$; instantiation ↔ full cohesive section; causality gap ↔ T-214 Lawvere barrier; mapmaker-dependency ↔ the stage-relativisation of facts in T-221 (the relationalist route).
+A comparison with Lerchner’s simulation/instantiation argument is interpretive [I/H]. The withdrawn T-214 cannot supply a universal causality barrier, and a simulation cannot be identified with $\tau_{\le1}(\mathfrak T)$ without a constructed comparison. UHM’s operational proposal instead requires a calibrated physical readout, canonical gate and independently tested higher-order predictive protocol; these do not prove that all software lacks experience or that every satisfying system instantiates it.
 
 **Formal foreclosure of the Melody Paradox**: Lerchner's core §3.3 argument (the Melody Paradox / Putnam triviality) is fully closed in UHM by [T-223](/docs/proofs/categorical/fundamental-closures#t-223) via a three-level ontology L1 (physical vehicle) / L2 (intrinsic categorical class $[\Gamma_S]_{G_2}$, forced through the Bridge T15 with the canonical orientation; the earlier "forced by T-190 zero-axiom closure" is withdrawn, T-190 being conditional) / L3 (symbolic readout, Lerchner-variable). The putnam-freedom acts on L1→L3 but has zero purchase on L1→L2; UHM's consciousness predicate $\mathrm{Cons}(S) := (P > 2/7) \wedge (R \geq 1/3) \wedge (\Phi \geq 1) \wedge (D_{\min} \geq 2)$ factors through L2 via $G_2$-invariance of observables, hence is alphabetization-invariant. The seven-lemma proof additionally shows that non-UHM-compatible alphabetizers (Lerchner's Fig. 3 "Market Data on a Beethoven trajectory") are physically vacuous (Piccinini–Kim), and that self-alphabetization via the intrinsic reflection measures $R$ and $R_\varphi$ (T-96/T-126) categorifies the Maturana–Varela enactivist thesis that Lerchner himself cites.
 
@@ -745,7 +749,9 @@ UHM formalises PP: Gap-operators are explicit prediction errors; $\sigma_k$ are 
 
 Friston's free energy can be expressed as a monotone function of $P$:
 
-$$F(\Gamma) = -\ln P(\Gamma) + \text{const}$$
+$$
+F(\Gamma) = -\ln P(\Gamma) + \text{const}
+$$
 
 Minimisation of $F$ $\Longleftrightarrow$ maximisation of $P$. Lindblad $\mathcal{L}_0$ implements gradient descent on $F$ (dissipation reduces purity; regeneration $\mathcal{R}$ — increases it). This shows: FEP is a **consequence** of UHM dynamics, not an independent principle. Status: **[I]** — interpretational equivalence, not a strict derivation (formal proof requires reconciling Markov blankets with Lindblad decoherence).
 
@@ -826,7 +832,9 @@ Formalisation of RPT is minimal. The main criterion is the presence of recurrent
 
 ### Mapping functor [I]
 
-$$F_{\text{RPT}}: \mathbf{RecProc} \to \mathbf{Hol}$$
+$$
+F_{\text{RPT}}: \mathbf{RecProc} \to \mathbf{Hol}
+$$
 
 Feedforward sweep $\mapsto$ $R < R_{\text{th}}$; local recurrence $\mapsto$ $R \geq R_{\text{th}}, \Phi < 1$ (L1); global recurrence $\mapsto$ $R \geq R_{\text{th}}, \Phi \geq 1$ (L2). The functor is **not complete** — RPT does not cover $P$, $\sigma$, $\mathrm{Coh}_E$.
 
@@ -875,7 +883,9 @@ Edelman and Tononi proposed a measure of "neural complexity" $C_N$, which is max
 
 ### Mapping functor [I]
 
-$$F_{\text{TNGS}}: \mathbf{DynCore} \to \mathbf{Hol}$$
+$$
+F_{\text{TNGS}}: \mathbf{DynCore} \to \mathbf{Hol}
+$$
 
 Dynamic core $\mapsto$ Holon $\mathbb{H}$ with $\Phi \geq 1$; reentrant maps $\mapsto$ off-diagonal $\gamma_{ij}$; somatic selection $\mapsto$ $\mathcal{R}$. The functor is **not complete** — TNGS does not cover $R$, $\varphi$, $\mathrm{Coh}_E$.
 
@@ -925,7 +935,9 @@ Vigilance parameter $\rho \in [0, 1]$: match function $M(x, y) = \|x \wedge y\| 
 
 ### Mapping functor [I]
 
-$$F_{\text{ART}}: \mathbf{Resonance} \to \mathbf{Hol}$$
+$$
+F_{\text{ART}}: \mathbf{Resonance} \to \mathbf{Hol}
+$$
 
 Resonant state $\mapsto$ $\Gamma$ with $R \geq R_{\text{th}}$; vigilance $\rho$ $\mapsto$ $P_{\text{crit}}$; mismatch reset $\mapsto$ gap phase ($\sigma_k > 0$). The functor is **not complete**: ART does not cover $\Phi$, $\mathrm{Coh}_E$, L0–L4.
 
@@ -979,7 +991,9 @@ Enactivism is principally anti-formalising. Thompson (2007, «Mind in Life») us
 
 ### Mapping functor [I]
 
-$$F_{\text{Enact}}: \mathbf{Enactive} \to \mathbf{Hol}$$
+$$
+F_{\text{Enact}}: \mathbf{Enactive} \to \mathbf{Hol}
+$$
 
 Sense-making $\mapsto$ viability $\mathcal{V}$; autonomy $\mapsto$ (AP); coupling $\mapsto$ coherences $\gamma_{AO}$, $\gamma_{SO}$. The functor is **principally incomplete**: enactivism rejects internal representation, whereas $\Gamma$ is a matrix of internal state.
 
@@ -1017,7 +1031,7 @@ SMC are formalised as a mapping: $\text{SMC}: \mathcal{A} \times \mathcal{S} \to
 - Sensorimotor layer: [CC-2 (sensorimotor)](/docs/applied/coherence-cybernetics/theorems) formalises SMC
 
 ### What CC does better
-- Explains qualia through $\mathrm{Coh}_E$ (No-Zombie [T]), not only through SMC
+- Proposes an E-variable bridge [I/H]; the universal No-Zombie floor/phenomenal entailment is withdrawn.
 - Formal measure ($C = \Phi \cdot R$), not description of "know-how"
 - Applicability beyond sensorimotor (abstract thinking, metacognition)
 
@@ -1028,7 +1042,9 @@ SMC are formalised as a mapping: $\text{SMC}: \mathcal{A} \times \mathcal{S} \to
 
 ### Mapping functor [I]
 
-$$F_{\text{SMCT}}: \mathbf{SMC} \to \mathbf{Hol}$$
+$$
+F_{\text{SMCT}}: \mathbf{SMC} \to \mathbf{Hol}
+$$
 
 SMC pattern $\mapsto$ coherences $\gamma_{AS}$, $\gamma_{AO}$; SMC mastery $\mapsto$ $R \geq R_{\text{th}}$; modality $\mapsto$ sector $S$. The functor is **not complete** — SMCT does not cover $\Phi$, $\mathrm{Coh}_E$, the SAD tower.
 
@@ -1075,7 +1091,9 @@ Northoff uses nonlinear dynamics, measures of scale-free activity (power-law exp
 
 ### Mapping functor [I]
 
-$$F_{\text{TTC}}: \mathbf{TSS} \to \mathbf{Hol}$$
+$$
+F_{\text{TTC}}: \mathbf{TSS} \to \mathbf{Hol}
+$$
 
 TSS $\mapsto$ spectral properties of $\mathcal{L}_\Omega$; spontaneous activity $\mapsto$ $\Gamma^*$; self-referential processing $\mapsto$ $\varphi(\Gamma)$. The functor is **not complete** — TTC does not cover $\Phi$, $\mathrm{Coh}_E$, algebraic structure.
 
@@ -1121,7 +1139,9 @@ Single-neuron model: $V_{\text{soma}} = f(I_{\text{basal}}, I_{\text{apical}})$,
 
 ### Mapping functor [I]
 
-$$F_{\text{DIT}}: \mathbf{Dendrite} \to \mathbf{Hol}$$
+$$
+F_{\text{DIT}}: \mathbf{Dendrite} \to \mathbf{Hol}
+$$
 
 BAC-firing population rate $\mapsto$ $R(\Gamma)$; apical blockade $\mapsto$ $R \to 0$; coincidence detection $\mapsto$ match $\varphi(\Gamma) \approx \Gamma$. The functor is **strongly incomplete** — DIT describes one mechanism, not a theory of consciousness.
 
@@ -1167,7 +1187,9 @@ EM field $\mathbf{E}(\mathbf{r}, t)$ is a superposition of fields from $N$ neuro
 
 ### Mapping functor [I]
 
-$$F_{\text{CEMI}}: \mathbf{EMField} \to \mathbf{Hol}$$
+$$
+F_{\text{CEMI}}: \mathbf{EMField} \to \mathbf{Hol}
+$$
 
 $\mathbf{E}(\mathbf{r}, t) \mapsto \Gamma$ (coarse-graining by 7 dimensions); cemi $\mapsto$ $\Phi$; EM integration $\mapsto$ off-diagonal $\gamma_{ij}$. The functor is **not complete** — CEMI does not cover $R$, $\varphi$, the SAD tower.
 
@@ -1218,7 +1240,9 @@ Control loop: $e = r - p$, $o = G(e)$, $p = H(o, d)$, where $r$ — reference, $
 
 ### Mapping functor [I]
 
-$$F_{\text{PCT}}: \mathbf{Control} \to \mathbf{Hol}$$
+$$
+F_{\text{PCT}}: \mathbf{Control} \to \mathbf{Hol}
+$$
 
 Reference $r \mapsto \varphi(\Gamma)$; error $e \mapsto \sigma_k$; control action $\mapsto \mathcal{R}$; hierarchy level $\mapsto$ SAD level. The functor is **not complete** — PCT does not cover $\Phi$, $\mathrm{Coh}_E$, quantum structure.
 
@@ -1265,7 +1289,9 @@ Operational synchrony: $\text{OS}_{ij}(t) = \text{corr}(\text{ISS}_i(t), \text{I
 
 ### Mapping functor [I]
 
-$$F_{\text{OA}}: \mathbf{OpArch} \to \mathbf{Hol}$$
+$$
+F_{\text{OA}}: \mathbf{OpArch} \to \mathbf{Hol}
+$$
 
 OM $\mapsto$ submatrix of $\Gamma$; OS $\mapsto$ $|\gamma_{ij}|$; BOST $\mapsto$ spectral structure of $\mathcal{L}_\Omega$. The functor is **not complete** — OA does not cover $R$, $\varphi$, $\mathrm{Coh}_E$.
 
@@ -1316,7 +1342,9 @@ The NCC programme does not offer a formal theory. It is a methodological framewo
 
 ### Mapping functor [I]
 
-$$F_{\text{NCC}}: \mathbf{NCC} \to \mathbf{Hol}$$
+$$
+F_{\text{NCC}}: \mathbf{NCC} \to \mathbf{Hol}
+$$
 
 Content-specific NCC $\mapsto$ sectors $\gamma_{kk}$; full NCC $\mapsto$ thresholds $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$; enabling conditions $\mapsto$ viability $\mathcal{V}$. The functor is **not formally defined** — NCC is not a category but a research programme.
 
@@ -1364,7 +1392,9 @@ Assembly index: $\text{AI}(x) = \min_{T} |T|$, where $T$ is the assembly tree fo
 
 ### Mapping functor [I]
 
-$$F_{\text{AT}}: \mathbf{Assembly} \to \mathbf{Hol}$$
+$$
+F_{\text{AT}}: \mathbf{Assembly} \to \mathbf{Hol}
+$$
 
 Assembly index $\mapsto$ SAD; assembly space $\mapsto$ space $\mathcal{D}(\mathbb{C}^7)$; selection threshold $\mapsto$ $P_{\text{crit}}$. The functor is **highly speculative** — AT is not yet a theory of consciousness.
 
@@ -1411,7 +1441,9 @@ Von Neumann: measurement chain ends at the "abstract ego". Stapp: $P_{\text{Zeno
 
 ### Mapping functor [I]
 
-$$F_{\text{QM}}: \mathbf{QMind} \to \mathbf{Hol}$$
+$$
+F_{\text{QM}}: \mathbf{QMind} \to \mathbf{Hol}
+$$
 
 Quantum state of consciousness $\mapsto \Gamma$; observer (von Neumann) $\mapsto$ $\varphi$; Zeno effect $\mapsto$ Dec-functor. The functor is **conceptual** — Quantum Mind does not have a unified formal theory.
 
@@ -1459,7 +1491,9 @@ Generalised Crooks formula: $\frac{P[\sigma]}{P[\bar{\sigma}]} = e^{\sigma}$, wh
 
 ### Mapping functor [I]
 
-$$F_{\text{DA}}: \mathbf{Dissip} \to \mathbf{Hol}$$
+$$
+F_{\text{DA}}: \mathbf{Dissip} \to \mathbf{Hol}
+$$
 
 Dissipative structure $\mapsto$ Holon $\mathbb{H}$; entropy production $\mapsto$ $\mathcal{D}_\Omega$ (decoherence); drive absorption $\mapsto$ $\mathcal{R}$ (regeneration). The functor is **very incomplete** — DA is not a theory of consciousness.
 
@@ -1509,7 +1543,9 @@ Formalisation is limited. Chalmers uses language of properties: physical propert
 
 ### Mapping functor [I]
 
-$$F_{\text{Russell}}: \mathbf{Russell} \to \mathbf{Hol}$$
+$$
+F_{\text{Russell}}: \mathbf{Russell} \to \mathbf{Hol}
+$$
 
 Intrinsic properties $\mapsto$ diagonal $\gamma_{kk}$ (eigenvalues = intrinsic); structural relations $\mapsto$ off-diagonal $\gamma_{ij}$ (coherences = relational). Combination: $\sum \gamma_{kk} \to \Gamma$ at $P > 2/7$. The functor is **not complete** — Russellian monism has no dynamics.
 
@@ -1557,7 +1593,9 @@ Dennett avoids formal models, but MDM can be approximately described: multiple p
 
 ### Mapping functor [I]
 
-$$F_{\text{MDM}}: \mathbf{Drafts} \to \mathbf{Hol}$$
+$$
+F_{\text{MDM}}: \mathbf{Drafts} \to \mathbf{Hol}
+$$
 
 Draft $d_i$ $\mapsto$ sector $\gamma_{kk}$; fame $\mapsto$ $P(\Gamma)$ (purity); absence of centre $\mapsto$ absence of privileged dimension. The functor is **strongly incomplete** — Dennett denies the reality of the E-dimension and $\mathrm{Coh}_E$.
 
@@ -1607,7 +1645,9 @@ Not formalised mathematically. Each BES is described neuroanatomically (nuclei, 
 
 ### Mapping functor [I]
 
-$$F_{\text{BES}}: \mathbf{Affect} \to \mathbf{Hol}$$
+$$
+F_{\text{BES}}: \mathbf{Affect} \to \mathbf{Hol}
+$$
 
 BES$_i$ $\mapsto$ sector $\gamma_{kk}$ (not a direct correspondence: 7 BES $\nleftrightarrow$ 7 dimensions directly); affective valence $\mapsto$ $V_{\text{hed}}$ (hedonic value); subcortical consciousness $\mapsto$ L0-L1. The functor is **not complete** — BES do not cover cognitive dimensions ($D$, $L$) and integration ($\Phi$).
 
@@ -1657,7 +1697,9 @@ Semi-formal: somatic markers as Bayesian "hints" $\text{SM}(a_i) \in [-1, 1]$ in
 
 ### Mapping functor [I]
 
-$$F_{\text{Dam}}: \mathbf{Somatic} \to \mathbf{Hol}$$
+$$
+F_{\text{Dam}}: \mathbf{Somatic} \to \mathbf{Hol}
+$$
 
 Proto-self $\mapsto$ $\Gamma$ at $P < P_{\text{crit}}$; core self $\mapsto$ $\Gamma$ at $P > 2/7$, $R \geq 1/3$; autobiographical self $\mapsto$ SAD$\geq 2$; somatic marker $\mapsto$ $\sigma_k$. The functor is **not complete** — Damasio does not formalise integration ($\Phi$) and self-modelling ($\varphi$).
 
@@ -1707,7 +1749,9 @@ Bayesian brain: $P(\text{cause}|\text{sensation}) \propto P(\text{sensation}|\te
 
 ### Mapping functor [I]
 
-$$F_{\text{Seth}}: \mathbf{PP_{intero}} \to \mathbf{Hol}$$
+$$
+F_{\text{Seth}}: \mathbf{PP_{intero}} \to \mathbf{Hol}
+$$
 
 Prediction error $\mapsto$ $\sigma_k$; precision $\pi$ $\mapsto$ $1/\sigma_k$; interoceptive self-model $\mapsto$ $\varphi(\Gamma)$; free energy $F$ $\mapsto$ ~~classical limit $\mathcal{L}_\Omega$~~ no counterpart (the FEP limit is retracted, 2026-09-25). The functor is **not complete** — Seth does not cover integration ($\Phi$), the SAD tower, $G_2$-rigidity.
 
@@ -1755,7 +1799,9 @@ Not formalised. The argumentation is based on comparative neuroanatomy and clini
 
 ### Mapping functor [I]
 
-$$F_{\text{Merk}}: \mathbf{Subcort} \to \mathbf{Hol}$$
+$$
+F_{\text{Merk}}: \mathbf{Subcort} \to \mathbf{Hol}
+$$
 
 Mesencephalic core $\mapsto$ $\Gamma$ at $P > 2/7$; spatial map $\mapsto$ S-dimension; PAG (affect) $\mapsto$ E-dimension; cortex $\mapsto$ increase of SAD. The functor is **not complete** — the theory is descriptive, has no dynamics or thresholds.
 
@@ -1805,7 +1851,9 @@ Borrows the formalism of Friston's FEP: $F = D_{KL}[q(\theta) \| p(\theta|o)] - 
 
 ### Mapping functor [I]
 
-$$F_{\text{Solms}}: \mathbf{NeuroPsy} \to \mathbf{Hol}$$
+$$
+F_{\text{Solms}}: \mathbf{NeuroPsy} \to \mathbf{Hol}
+$$
 
 Affect $\mapsto$ E-dimension; $F$ (free energy) $\mapsto$ $\sigma$ (stress); pleasure principle $\mapsto$ $V_{\text{hed}}$; id $\mapsto$ instinctive sectors; ego $\mapsto$ $\varphi(\Gamma)$. The functor is **not complete** — Solms does not formalise integration ($\Phi$), the SAD tower, $G_2$-rigidity.
 
@@ -1843,7 +1891,7 @@ Fourier analysis of dendritic potentials: $f(x) = \int \hat{f}(\omega) e^{i\omeg
 ### What CC does better
 - Rigorous mathematical apparatus (not a holography metaphor)
 - Consciousness thresholds: Pribram does not define when a system is conscious
-- Predictions: $G_2$-rigidity, $N = 7$, SAD$_{\max} = 3$
+- Proposed tests require a fixed readout and predictive protocol; no universal $\mathrm{SAD}_{\max}=3$ follows from the chosen Fano score.
 
 ### Honest assessment: what the theory does better than CC
 - **Neurophysiological concreteness**: dendritic potentials, receptive fields, Fourier decomposition
@@ -1853,7 +1901,9 @@ Fourier analysis of dendritic potentials: $f(x) = \int \hat{f}(\omega) e^{i\omeg
 
 ### Mapping functor [I]
 
-$$F_{\text{Holo}}: \mathbf{Holonomic} \to \mathbf{Hol}$$
+$$
+F_{\text{Holo}}: \mathbf{Holonomic} \to \mathbf{Hol}
+$$
 
 Holographic pattern $\mapsto$ $\Gamma$ (coherence matrix); frequency domain $\mapsto$ spectrum of $\mathcal{L}_\Omega$; distributedness $\mapsto$ off-diagonal $\gamma_{ij}$. The functor is **strongly incomplete** — the holonomic theory has no dynamics of consciousness, no thresholds, no self-modelling.
 
@@ -1905,7 +1955,9 @@ Descriptive-systemic. Cycle: afferent synthesis → decision-making → efferent
 
 ### Mapping functor [I]
 
-$$F_{\text{TFS}}: \mathbf{FuncSys} \to \mathbf{Hol}$$
+$$
+F_{\text{TFS}}: \mathbf{FuncSys} \to \mathbf{Hol}
+$$
 
 Functional system $\mapsto$ Holon $\mathbb{H}$; ARA $\mapsto$ $\varphi(\Gamma)$; afferent synthesis $\mapsto$ coherences $\gamma_{ij}$; error $e$ $\mapsto$ $\sigma_k$; systemogenesis $\mapsto$ evolution $\mathcal{L}_\Omega(\Gamma)$. The functor is **not complete** — TFS has no consciousness measures ($\Phi$, $R$), does not address qualia and the E-dimension.
 
@@ -1954,7 +2006,9 @@ Experimental-descriptive. Recording of single neurons: neuron $n_i$ is active in
 
 ### Mapping functor [I]
 
-$$F_{\text{SET}}: \mathbf{SysEvol} \to \mathbf{Hol}$$
+$$
+F_{\text{SET}}: \mathbf{SysEvol} \to \mathbf{Hol}
+$$
 
 Functional system $\mapsto$ Holon $\mathbb{H}$; set of specialised neurons $\mapsto$ $\Gamma$ (coherences); formation of new FS $\mapsto$ change of $\Gamma$ under $\mathcal{L}_\Omega$; individual experience $\mapsto$ attractor $\Gamma^*$. The functor is **strongly incomplete** — SET works at the neural level and has no consciousness measures.
 
@@ -2005,7 +2059,9 @@ Electrophysiological model: cycle $\text{S}_1 \to \text{Assoc.} \to \text{Limb.}
 
 ### Mapping functor [I]
 
-$$F_{\text{IS}}: \mathbf{InfoSynth} \to \mathbf{Hol}$$
+$$
+F_{\text{IS}}: \mathbf{InfoSynth} \to \mathbf{Hol}
+$$
 
 Circular cycle $\mapsto$ recurrence $R \geq R_{\text{th}}$; EEG coherence $\mapsto$ $\gamma_{ij}$; information synthesis $\mapsto$ $\Phi \geq 1$; limbic assessment $\mapsto$ E-dimension. The functor is **not complete** — IS theory does not cover self-modelling ($\varphi$), the SAD tower, $G_2$-rigidity.
 
@@ -2056,7 +2112,9 @@ Logical-cognitive model: the unconscious generates hypotheses $\{h_1, h_2, \ldot
 
 ### Mapping functor [I]
 
-$$F_{\text{Psy}}: \mathbf{Psychologic} \to \mathbf{Hol}$$
+$$
+F_{\text{Psy}}: \mathbf{Psychologic} \to \mathbf{Hol}
+$$
 
 Unconscious hypothesis $h_i$ $\mapsto$ state $\Gamma$ at $P < P_{\text{crit}}$; verification $\mapsto$ $\varphi(\Gamma)$; positive selection $\mapsto$ stability of $\Gamma^*$; negative selection $\mapsto$ degradation of coherences $\gamma_{ij} \to 0$. The functor is **not complete** — psycho-logic has no quantum formalism, integration measures ($\Phi$), or neurophysiological level.
 
@@ -2092,11 +2150,11 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 | Hard problem | Not directly addressed | Reframed via two-aspect monism (T-186 [H]) |
 | Target | **Spatial** consciousness (sub-problem) | Full hierarchy L0–L4, all content |
 | Physical substrate | Thalamus / insect central body | Substrate-independent (categorical) |
-| Consciousness threshold | None | $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ (T-160, T-40b, T-129 [T]; the threshold $D_{\mathrm{diff}} \geq 2$ is [D], T-151) |
+| Consciousness threshold | None | Adopted $\mathsf{Cap}_2$ gate [D/I]; its scalar window follows algebraically [T]. Universal T-160 threshold-to-phase-transition claim withdrawn [✗]; biological interpretation [H] |
 | Numerical predictions | None | 23 predictions with falsification criteria |
 | Derivation of physics | None | GR on an emergent $M^4$ (T-117–T-121, [T] as mathematics since 2026-09-25); quantum mechanics postulated, not derived ([QM reduction](/docs/physics/quantum-mechanics/qm-reduction)); Standard-Model colour from $G_2$ [T], electroweak [C at (FE)], finite space imported from Connes (T-186 [H]) |
 | Group structure | $PGL(4,\mathbb{R})$ (projective) | $G_2 = \mathrm{Aut}(\mathbb{O})$ (exceptional, finite-dim) |
-| Falsification | Wave not found in brain | $\beta \neq 1/4$; zombie at $N < 7$; $\mathrm{SAD} \geq 4$; etc. |
+| Falsification | Wave not found in brain | Test the stated readout and dynamics; $\mathrm{SAD}\ge4$ is not a universal falsifier, and $\beta=1/4$ requires the tuned sextic model |
 | Scope relative to UHM | Candidate neural *implementation* of the coarse-grained geometric sector $\{A,S,D\}$ of $\Gamma$ | Foundational theory of which PWT may be a brain-level projection |
 
 ### What CC borrows
@@ -2118,7 +2176,9 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 
 ### Mapping functor [I]
 
-$$F_{\mathrm{PWT}}: \mathbf{PWT} \to \mathbf{Hol}$$
+$$
+F_{\mathrm{PWT}}: \mathbf{PWT} \to \mathbf{Hol}
+$$
 
 Wave excitation $\psi \mapsto$ off-diagonal coherences in the $\{A,S,D\}$-sector of $\Gamma$;
 projective group action $PGL(4,\mathbb{R}) \mapsto$ $G_2$-restricted transformations on $\Sigma^3$ (T-119 [T]);
@@ -2189,7 +2249,9 @@ An active programme. Its relational method has produced two published alignment 
 
 ### Mapping functor [I] {#category-qualia-functor}
 
-$$F_{\text{CatQ}}: \mathbf{Q} \to \mathbf{Exp}$$
+$$
+F_{\text{CatQ}}: \mathbf{Q} \to \mathbf{Exp}
+$$
 
 Object of $\mathbf Q$ (an experience) $\mapsto$ ray $[\lvert q\rangle]$; similarity arrow $\mapsto$ small $d_{FS}$; enriched hom (a dissimilarity) $\mapsto$ $d_{FS}$ itself. The functor is **conjectural**: nothing guarantees that measured similarity structures are Fubini–Study geometries, and that is exactly what an alignment test would check.
 
@@ -2251,7 +2313,9 @@ An active research line whose results are definitions and a proved limitation of
 
 ### Mapping functor [I] {#formal-iit-functor}
 
-$$F_{\text{KT}}: \mathbf{Sys}_{\mathrm{IIT}} \to \mathbf{Hol}$$
+$$
+F_{\text{KT}}: \mathbf{Sys}_{\mathrm{IIT}} \to \mathbf{Hol}
+$$
 
 A generalised IIT is a map $\mathrm{Sys} \to \mathrm{Exp}$; UHM has the same shape, with $\mathrm{Sys}$ the states $\mathcal D(\mathbb C^7)$ with the dynamics $\mathcal L_\Omega$ and $\mathrm{Exp}$ the rays with Fubini–Study geometry — *if* UHM is read as a theory of IIT type, which the corpus does not claim. The mapping is **not an embedding**: UHM has no cause–effect repertoires and no exclusion step.
 
@@ -2314,7 +2378,9 @@ Active. The programme builds on the free-energy principle, whose central derivat
 
 ### Mapping functor [I] {#minimal-physicalism-functor}
 
-$$F_{\text{MP}}: \mathbf{QRF} \to \mathbf{Hol}$$
+$$
+F_{\text{MP}}: \mathbf{QRF} \to \mathbf{Hol}
+$$
 
 Holographic screen $\mapsto$ holon boundary (dimension $A$); quantum reference frame $\mapsto$ the pinned frame in which $\Gamma$ is read; variational free energy $\mapsto$ ~~$S_{vN} + D_{KL}$~~ no counterpart (that functional is a cross-entropy, and the FEP limit is retracted, 2026-09-25). The functor is **not complete**: minimal physicalism has no fixed dimension, no $G_2$ structure and no thresholds, while UHM has no account of what a system can register.
 
@@ -2354,7 +2420,7 @@ The integrated information of a state $\rho$ is the mutual information across th
 
 ### What CC borrows {#perceptronium-borrows}
 
-- Nothing explicitly: the corpus cites Tegmark only for the decoherence argument (T-267). In parallel: the starting point "only $\rho$ and its dynamics", and consciousness as a phase of matter — UHM's [T-160](/docs/consciousness/hierarchy/swallowtail-transitions#фазовый-переход) (registered as a theorem) places a phase transition at $P = 2/7$.
+- The proposed comparison with consciousness as a phase of matter is interpretive [I/H]. The former [T-160](/docs/consciousness/hierarchy/swallowtail-transitions#фазовый-переход) claim that every transition at $P=2/7$ is a phase transition is withdrawn [✗]. A numerical gate crossing requires no bifurcation; an actual phase model needs dynamics, reduction, nondegeneracy and a calibrated order parameter.
 
 ### What CC does better {#perceptronium-better}
 
@@ -2373,7 +2439,9 @@ A programmatic paper. By its author's own conclusion, the integration principle 
 
 ### Mapping functor [I] {#perceptronium-functor}
 
-$$F_{\text{Teg}}: \mathbf{Perceptronium} \to \mathbf{Hol}$$
+$$
+F_{\text{Teg}}: \mathbf{Perceptronium} \to \mathbf{Hol}
+$$
 
 Information principle $\mapsto$ $D_{\mathrm{diff}} \geq 2$; integration principle $\mapsto$ $\Phi \geq 1$ (a different quantity, as above); independence and dynamics $\mapsto$ autonomous $\mathcal L_\Omega$ with regeneration; factorisation problem $\mapsto$ the choice of frame. **Not a projection in the usual sense**: the central quantity changes its meaning in translation.
 
@@ -2421,7 +2489,7 @@ The identification of a quale with a pure quantum state — a ray of a Hilbert s
 
 ### What CC borrows {#quantum-info-panpsychism-borrows}
 
-- Nothing explicitly: the corpus does not cite this work. In parallel: experience identified with a state in the Hilbert-space formalism; qualities as rays; the privacy of experience as structural (in UHM through T-214: the bridge to experience cannot be internal to the theory).
+- The parallel is interpretive: both use Hilbert-state language for experience. UHM’s phenomenal privacy/identity bridge is [I/H]; the withdrawn T-214 does not prove it must always be external. The two models require separately declared state and observation maps before their purity assumptions can be compared.
 
 ### What CC does better {#quantum-info-panpsychism-better}
 
@@ -2439,7 +2507,9 @@ A theoretical proposal in a book chapter and a book for general readers; the tes
 
 ### Mapping functor [I] {#quantum-info-panpsychism-functor}
 
-$$F_{\text{DF}}: \mathbf{QInfo}_{\text{ontic}} \to \mathbf{Hol}$$
+$$
+F_{\text{DF}}: \mathbf{QInfo}_{\text{ontic}} \to \mathbf{Hol}
+$$
 
 Pure ontic state $\mapsto$ ray $[\lvert q\rangle]$; mixed epistemic state $\mapsto$ $\Gamma$; atomic operation $\mapsto$ Dec-functor. The functor is **not structure-preserving** on the central point: it sends what one theory calls the experienced state to what the other calls knowledge about it.
 
@@ -2495,7 +2565,9 @@ Self-published essays within a broader project; not peer-reviewed, and without a
 
 ### Mapping functor [I] {#observer-theory-functor}
 
-$$F_{\text{Obs}}: \mathbf{Observer} \to \mathbf{Hol}$$
+$$
+F_{\text{Obs}}: \mathbf{Observer} \to \mathbf{Hol}
+$$
 
 Equivalencing $\mapsto$ coarse-graining into $\Gamma$; computational boundedness $\mapsto$ the finite dimension 7; persistence $\mapsto$ the fixed point $\Gamma^*$ of $\varphi$. **Conceptual only**: neither side supplies the arrows.
 

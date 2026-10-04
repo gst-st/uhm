@@ -169,32 +169,11 @@ Condition C7 ($\lambda_3 \gg 4\pi$) is **not** a problem but a **feature** of th
 
 ---
 
-## 4. Explicit Derivation of (AP+PH+QG+V) from A1-A4 {#вывод-apphqgv}
+## 4. Requirements are not automatic consequences {#вывод-apphqgv}
 
-:::warning Theorem T-181 (Characterizing properties from axioms) [T]
-The properties (AP), (PH), (QG), (V) are **theorems** of axioms A1-A4:
-:::
+The former T-181 proof is withdrawn [✗]. A sheaf topos is not the category of density matrices: its objects are sheaves, and its terminal object has a terminal space of global sections. The support reflector is defined in a slice, not as a numerical CPTP attractor. Stinespring does not identify sheaf morphisms with channels. Seven chosen matrix axes do not prove experiential content or tensor-factor reduction. Bures separation does not select the structural-majority cut.
 
-**Proof (chain).**
-
-**A1 (∞-topos) ⟹ (QG).** By A1, reality is an ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ over the category of density matrices $\mathcal{D}(\mathbb{C}^N)$. Objects are density matrices $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$. Morphisms are CPTP channels (the unique morphisms in $\mathrm{Sh}_\infty(\mathcal{C})$ preserving $J_{\text{Bures}}$-covers, by Stinespring's theorem). Dynamics are Lindbladian ($\mathcal{L}_\Omega$ from L-unification [T]). This is precisely (QG): quantum density matrix + Lindbladian dynamics. $\square$
-
-**A1 + terminal object ⟹ (AP).** In the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ there exists a terminal object $T$ ([Property 3](/docs/core/foundations/axiom-omega#свойство-3) [T]). For each $\Gamma$ there exists a unique morphism $\Gamma \to T$. The left adjoint to the inclusion of subobjects $\mathrm{Sub}(\Gamma) \hookrightarrow \mathrm{Sh}_\infty(\mathcal{C})$ defines the self-modeling operator $\varphi$ ([formalization of φ](/docs/proofs/categorical/formalization-phi)). Banach's theorem (for a contractive $\varphi$ with $k < 1$) guarantees the existence of a fixed point $\Gamma^* = \varphi(\Gamma^*)$ [T]. This is precisely (AP): a self-modeling operator with a fixed point. $\square$
-
-**A1 + A3 (N=7) ⟹ (PH).** By A3, $\dim(\mathcal{H}) = 7$. From [Theorem S](/docs/proofs/minimality/theorem-minimality-7) (seven functionally necessary dimensions, each with a unique role [T]): the E-dimension is singled out as the carrier of **interiority** — the reduced matrix $\rho_E = \mathrm{Tr}_{\bar{E}}(\Gamma)$ is non-trivial for any full-rank $\Gamma$ (guaranteed by primitivity of $\mathcal{L}_0$ [T-39a]: $e^{\tau\mathcal{L}_0}[\Gamma] \in \mathrm{Int}(\mathcal{D})$ for $\tau > 0$). This is precisely (PH): $\rho_E \neq 0$. $\square$
-
-**A2 + A3 ⟹ (V).** By A2, the topology is defined by the Bures metric. By A3, $N = 7$. Distinguishability from noise $I/7$ in the Bures metric requires $d_B(\Gamma, I/7) > d_B^{\text{noise}}$, which is equivalent to $P > 2/N = 2/7$ [T] (Path 1, algebraic identity). This is precisely (V): $P > P_{\text{crit}} = 2/7$. $\square$
-
-:::info Corollary
-The number of **independent** primitives of UHM: **4 axioms** (A1-A4). Everything else is theorems:
-- A5 (PW) — T-87 [T]
-- (AP) — from A1 (terminal object + adjunction) [T]
-- (PH) — from A1+A3 (functional necessity of E) [T]
-- (QG) — from A1 (∞-topos over D(ℂ^N)) [T]
-- (V) — from A2+A3 (Bures distinguishability) [T]
-:::
-
----
+AP, PH, QG and V are explicit requirements/bridges in the [corrected specification](/docs/core/foundations/axiom-septicity). The numerical state model, frame, self-model, rates, clock extension and phenomenal identification must each be provided. These data may define a consistent model; their existence does not follow from terminality. The Page–Wootters constraint also remains independent. No count of four independent primitives is asserted.
 
 ## 5. G-map: Constructive Protocol {#g-отображение}
 
@@ -208,13 +187,9 @@ $$
 
 where $L: \mathcal{S} \to \mathbb{C}^{7 \times 7}_{\text{lower-triangular}}$ is a trainable map (MLP or linear projection), and the normalization guarantees $G(s) \in \mathcal{D}(\mathbb{C}^7)$.
 
-### 5.2 Uniqueness up to G₂
+### 5.2. Identifiability of the observation model
 
-:::warning Theorem T-123 (G₂-uniqueness) [T]
-The anchor map $\pi: \mathcal{S} \to \mathcal{D}(\mathbb{C}^7)$, covariant with respect to $\mathcal{L}_\Omega$, is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$. The semantics of $\gamma_{kk}$ is **defined by the axioms** — not arbitrary.
-
-[Proof →](/docs/proofs/consciousness/conscious-window#t-123)
-:::
+The universal T-123 uniqueness claim is withdrawn [✗]. A Cholesky parameterization guarantees a state only when its denominator is nonzero; it does not guarantee that different states are distinguishable in the observations or that two learned encoders differ by a symmetry. Specify the observation law, test its fibres, and use the [reconstruction theorem](/docs/applied/research/reconstruction-identifiability). CPTP applies to linear maps of operator algebras, not to an arbitrary estimator from feature vectors.
 
 ### 5.3 Protocol for concrete systems
 
@@ -222,10 +197,10 @@ The anchor map $\pi: \mathcal{S} \to \mathcal{D}(\mathbb{C}^7)$, covariant with 
 |---|---|---|
 | **Neural network** | Linear probe $h \to L \to \Gamma$ via Cholesky (C25 [C]) | Feasible |
 | **Brain (EEG)** | 7 frequency bands → $\gamma_{kk}$, coherence → $\gamma_{ij}$ | [Pr] Research program |
-| **Organism** | Physiological markers → 7 sectors (T-92 [T]) | [P] Measurement protocol |
+| **Organism** | Physiological markers → 7 sectors (T-92 [D]) | [P] Measurement protocol |
 
-:::info Key observation
-The G-map is **not** a problem unique to UHM. An analogous task exists in IIT ($\Phi$-structure), GNW (global workspace), FEP (Markov blanket identification). Every theory of consciousness needs a bridge from the formalism to a concrete system. UHM has an **advantage**: T-123 guarantees uniqueness up to $G_2$, whereas in IIT the $\Phi$-structure depends on an arbitrary choice of partition.
+:::note Measurement bridge
+Every empirical formalism requires an observation model. UHM now treats this bridge as an identifiable statistical problem, with no universal encoder uniqueness.
 :::
 
 ---
@@ -233,34 +208,49 @@ The G-map is **not** a problem unique to UHM. An analogous task exists in IIT ($
 ## 6. Deep Structure: Fractal Recurrence {#глубинная-структура}
 
 :::note Meta-level
-The four solved problems point to a single **deep structure**: self-reference. The theory describes reality ($\Gamma$) through mathematics (∞-topos), which is itself a configuration of $\Gamma$ (T-54: $\mathrm{Th}_{\text{UHM}} = \mathrm{Fix}(\varphi^*) \subseteq \Omega$). The map **is** the territory.
+Self-reference is a proposed interpretation **[I]** of several different constructions. For T-54, choose $m:G\to G$ in the ordinary part of a specified topos. Its precomposition map acts on predicates: $m^*:\Omega^G\to\Omega^G$, and $\mathrm{Th}_m:=\operatorname{Eq}(m^*,\mathrm{id}_{\Omega^G})\hookrightarrow\Omega^G$ **[D/T]**. This equalizer does not identify a formal theory, the whole topos or mathematics with a density-matrix state. Those realizations and interpretations are separate inputs.
 :::
 
 ### 6.1 Three levels of self-reference
 
-| Level | Object | Self-modeling | Recursion limit |
+| Level | Object | Specified map | Conditional property |
 |---|---|---|---|
-| **Holon** | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | $\varphi: \Gamma \to \Gamma$ | SAD_MAX = 3 (Fano contraction) |
-| **Theory** | $\mathrm{Th}_{\text{UHM}} \subseteq \Omega$ | $\varphi^*: \Omega \to \Omega$ | $\mathrm{Th}_{\text{UHM}} \subsetneq \Omega$ (T-55, Lawvere incompleteness) |
-| **Bimodule** | $H_F$ as $(A, A^\circ)$-bimodule | $J: H_F \to H_F$ (real structure) | $J^2 = +1$ (KO-dim 6) |
+| **Holon** | $\Gamma \in D_7$ | Chosen $M:D_7\to D_7$ | Iteration depth requires a declared detector or operational certificate; finite dimension alone supplies no ceiling |
+| **Fixed predicates** | $\mathrm{Th}_m\hookrightarrow\Omega^G$ | $m^*:p\mapsto p\circ m$ | Proper only with separating predicates and $m\ne\mathrm{id}$ (T-55); identity fixes every predicate |
+| **Bimodule** | $H_F$ as $(A, A^\circ)$-bimodule | Antiunitary real structure $J:H_F\to H_F$ | $J^2=+1$ in the supplied KO-dimension-6 structure; this is not a self-model accuracy or recursion bound |
 
-At each level:
-- The system models **itself** ($\varphi$, $\varphi^*$, $J$)
-- The modeling is **incomplete** (SAD < ∞, $\mathrm{Th} \subsetneq \Omega$, KO is finite)
-- Incompleteness is the **source of dynamics** (Gap, evolutionary openness, fermion masses)
+These maps have different domains and mathematical roles. T-55's properness is not Gödel incompleteness and does not prove unavoidable dynamics or a mismatch at every state. A nonidentity map may have fixed states; $J$ is a real structure, not an estimator. Reading the constructions as a common self-referential mechanism is **[I]**; a concrete physical coupling is needed before that reading predicts evolution or masses.
 
 ### 6.2 Correspondence with knowledge traditions
 
 | Tradition | Concept | Formalization in UHM |
 |---|---|---|
 | **Vedanta** | Brahman = Atman | $\Gamma_{\text{global}}$ (single substance) ≡ $\varphi(\Gamma)$ (self-model) at $R = 1$ |
-| **Buddhism** | Śūnyatā (emptiness) | $\mathrm{Th}_{\text{UHM}} \subsetneq \Omega$ — no predicate is "self-existent" |
+| **Buddhism** | Śūnyatā (emptiness) | Analogy [I] with conditional predicate noninvariance; T-55 does not prove that no predicate is "self-existent" |
 | **Kabbalah** | Tzimtzum (contraction) | $\Gamma_\odot \to \rho^*$ — spontaneous breaking of $S_7$-symmetry |
 | **Taoism** | The Tao that can be expressed | $L \subsetneq \Gamma$ — logic (L-dimension) does not encompass the whole |
 | **Alchemy** | Solve et Coagula | $\mathcal{D}[\Gamma]$ (decoherence = solve) + $\mathcal{R}[\Gamma]$ (regeneration = coagula) |
-| **Fractals** | Self-similarity | SAD tower: $\varphi \to \varphi^{(2)} \to \varphi^{(3)}$ — recursion of depth 3 |
+| **Fractals** | Self-similarity | Iteration analogy [I]; measured depth requires a detector and independently passing operational certificates |
 
-### 6.3 Why exactly 3 levels of recursion
+<a id="63-why-exactly-3-levels-of-recursion"></a>
+
+### 6.3 Conditional limits of iteration
+
+The universal SAD_MAX = 3 claim is removed. A finite dimension and compact state space do not bound iteration depth: the identity on $D_7$ can be iterated to any depth. This example certifies repeated iteration, not progressively stronger metamodel competence.
+
+The Fano incidence fraction $\alpha=2/3$ can enter a specified generator's decay **rate**; it does not determine an iteration multiplier. For a declared continuous dephasing rate $\Gamma_2$, a sampling interval $\Delta t$ gives $q=e^{-\Gamma_2\Delta t}$. The multiplier $1/3$ belongs to the separately chosen discrete channel $\mathcal D_{2/3}$, not to every act of observation.
+
+If a specified map satisfies $A_n:=\|\operatorname{offdiag}M^n(\rho)\|\le q^nA_0$ with $0<q<1$, and a detector requires $A_n\ge\varepsilon>0$ with $A_0\ge\varepsilon$, then
+
+$$
+n\le\left\lfloor\frac{\log(A_0/\varepsilon)}{\log(1/q)}\right\rfloor.
+$$
+
+This is a conditional detector cutoff. Resource budgets and independent operational certificates can impose other bounds. It is not a universal cognitive ceiling, a claim about canonical $R$, or a proof that L4 is impossible; see the [revised depth tower](/docs/consciousness/hierarchy/depth-tower).
+
+---
+
+## 6.3 Why exactly 3 levels of recursion
 
 SAD_MAX = 3 is not an arbitrary number. It follows from the **geometry** of the state space:
 
@@ -280,6 +270,6 @@ Compactness of D(ℂ⁷) × Fano contraction = finite recursion. Infinite self-r
 - [Cosmological Constant](/docs/physics/gravity/cosmological-constant) — Λ-budget
 - [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics) — $V_{\text{Gap}}$ and minimum $\theta^*$
 - [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — 4 axioms A1-A4
-- [Consciousness Window](/docs/proofs/consciousness/conscious-window) — T-123 (G₂-uniqueness)
+- [Consciousness Window](/docs/proofs/consciousness/conscious-window) — reconstruction identifiability
 - [Formalization of φ](/docs/proofs/categorical/formalization-phi) — self-modeling operator
-- [Depth Tower](/docs/consciousness/hierarchy/depth-tower) — SAD_MAX = 3
+- [Depth Tower](/docs/consciousness/hierarchy/depth-tower) — conditional detector bounds and certified operational depth

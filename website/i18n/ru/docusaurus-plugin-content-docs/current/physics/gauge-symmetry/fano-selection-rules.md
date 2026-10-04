@@ -9,7 +9,6 @@ title: "Правила отбора Фано"
 Правила отбора Фано для Юкавских связей. Читатель узнает, почему древесная Юкавская связь существует только для третьего поколения и как генерируются массы лёгких поколений.
 :::
 
-
 ## Обзор
 
 Фановское правило отбора для Юкавских связей — ключевой результат, объясняющий массовую иерархию поколений ($m_t \gg m_c \gg m_u$). Единственная Фано-линия, содержащая оба Хиггсовых измерения $E$ и $U$, — это $\{A, E, U\} = \{1, 5, 6\}$, что означает: древесная Юкавская связь существует **только** для поколения $k=1$ (измерение A, третье поколение). Массы двух лёгких поколений генерируются петлевыми поправками и принципиально подавлены.
@@ -26,9 +25,17 @@ title: "Правила отбора Фано"
 
 **(a)** Действие $\sigma$ на $\mathbb{Z}_7$:
 
-$$1 \to 2 \to 4 \to 1 \quad (\text{цикл } (1\;2\;4))$$
-$$3 \to 6 \to 5 \to 3 \quad (\text{цикл } (3\;6\;5))$$
-$$7 \to 7 \quad (\text{фиксирована: } 14 \equiv 0 \equiv 7)$$
+$$
+1 \to 2 \to 4 \to 1 \quad (\text{цикл } (1\;2\;4))
+$$
+
+$$
+3 \to 6 \to 5 \to 3 \quad (\text{цикл } (3\;6\;5))
+$$
+
+$$
+7 \to 7 \quad (\text{фиксирована: } 14 \equiv 0 \equiv 7)
+$$
 
 **(b)** Проверка: $\sigma$ сохраняет Фано-линии.
 
@@ -48,11 +55,15 @@ $$7 \to 7 \quad (\text{фиксирована: } 14 \equiv 0 \equiv 7)$$
 
 Автоморфизм $\sigma$ порождает подгруппу $\mathbb{Z}_3 \subset \mathrm{PSL}(2,7)$, действующую на Фано-линии $\{1,2,4\}$ как циклическая перестановка:
 
-$$\sigma: 1 \to 2 \to 4 \to 1$$
+$$
+\sigma: 1 \to 2 \to 4 \to 1
+$$
 
 **(a)** Любой Фано-инвариантный функционал $F(k_1, k_2, k_3)$ удовлетворяет:
 
-$$F(1,2,4) = F(\sigma(1), \sigma(2), \sigma(4)) = F(2,4,1) = F(1,2,4)$$
+$$
+F(1,2,4) = F(\sigma(1), \sigma(2), \sigma(4)) = F(2,4,1) = F(1,2,4)
+$$
 
 т.е. $F$ **одинаков** для всех трёх поколений.
 
@@ -108,7 +119,9 @@ $$F(1,2,4) = F(\sigma(1), \sigma(2), \sigma(4)) = F(2,4,1) = F(1,2,4)$$
 
 **Доказательство.** В $\mathrm{PG}(2,2)$ через любые две точки проходит ровно одна линия. Точки $E=5$ и $U=6$. Из таблицы Фано-линий:
 
-$$\{5, 6, 1\} = \{A, E, U\}$$
+$$
+\{5, 6, 1\} = \{A, E, U\}
+$$
 
 Это единственная линия, содержающая и 5, и 6. $\blacksquare$
 
@@ -120,7 +133,9 @@ $$\{5, 6, 1\} = \{A, E, U\}$$
 
 **Теорема (Фано-правило отбора для Юкавских связей).** Древесная Юкавская связь $y_k^{(\mathrm{tree})}$ для поколения $k$ ненулева **тогда и только тогда**, когда $(k, E, U)$ — Фано-линия. Формально:
 
-$$y_k^{(\mathrm{tree})} = g_W \cdot f_{k, E, U} \cdot |\gamma_{\mathrm{vac}}^{(EU)}|$$
+$$
+y_k^{(\mathrm{tree})} = g_W \cdot f_{k, E, U} \cdot |\gamma_{\mathrm{vac}}^{(EU)}|
+$$
 
 где $f_{ijk}$ — структурные константы октонионов.
 
@@ -128,7 +143,9 @@ $$y_k^{(\mathrm{tree})} = g_W \cdot f_{k, E, U} \cdot |\gamma_{\mathrm{vac}}^{(E
 
 Структурные константы $f_{ijk}$ определяются правилом умножения:
 
-$$e_i \cdot e_j = -\delta_{ij} + f_{ijk} \, e_k$$
+$$
+e_i \cdot e_j = -\delta_{ij} + f_{ijk} \, e_k
+$$
 
 где $f_{ijk} = +1$ если $(i,j,k)$ — Фано-линия с правильной ориентацией, $f_{ijk} = -1$ для обратной ориентации, $f_{ijk} = 0$ иначе.
 
@@ -136,7 +153,9 @@ $$e_i \cdot e_j = -\delta_{ij} + f_{ijk} \, e_k$$
 
 В октонионном формализме трёхчастичный вертекс $\psi_k \cdot H \to \psi'_k$ (фермион + Хиггс $\to$ фермион) пропорционален структурной константе:
 
-$$\mathcal{M}(k \to E, U) \propto f_{k, E, U}$$
+$$
+\mathcal{M}(k \to E, U) \propto f_{k, E, U}
+$$
 
 Это следует из $G_2$-ковариантности взаимодействия [Т]: единственный $G_2$-инвариантный трилинейный оператор на $\mathrm{Im}(\mathbb{O})$ — это структурная константа $f_{ijk}$ (октонионное «крест-произведение»). Это стандартный результат теории представлений $G_2$ (см. также [G₂-ригидность](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).
 
@@ -154,11 +173,17 @@ $$\mathcal{M}(k \to E, U) \propto f_{k, E, U}$$
 
 #### Шаг 3. Результат [Т]
 
-$$y_1^{(\mathrm{tree})} = g_W \cdot f_{1,5,6} \cdot |\gamma_{\mathrm{vac}}^{(EU)}| = g_W \cdot |\gamma_{\mathrm{vac}}^{(EU)}| \neq 0$$
+$$
+y_1^{(\mathrm{tree})} = g_W \cdot f_{1,5,6} \cdot |\gamma_{\mathrm{vac}}^{(EU)}| = g_W \cdot |\gamma_{\mathrm{vac}}^{(EU)}| \neq 0
+$$
 
-$$y_2^{(\mathrm{tree})} = g_W \cdot f_{2,5,6} \cdot |\gamma_{\mathrm{vac}}^{(EU)}| = 0$$
+$$
+y_2^{(\mathrm{tree})} = g_W \cdot f_{2,5,6} \cdot |\gamma_{\mathrm{vac}}^{(EU)}| = 0
+$$
 
-$$y_4^{(\mathrm{tree})} = g_W \cdot f_{4,5,6} \cdot |\gamma_{\mathrm{vac}}^{(EU)}| = 0$$
+$$
+y_4^{(\mathrm{tree})} = g_W \cdot f_{4,5,6} \cdot |\gamma_{\mathrm{vac}}^{(EU)}| = 0
+$$
 
 Только 3-е поколение ($k = 1$, измерение A) имеет древесную Юкавскую связь. Остальные — петлевые. $\blacksquare$
 
@@ -196,15 +221,21 @@ $$y_4^{(\mathrm{tree})} = g_W \cdot f_{4,5,6} \cdot |\gamma_{\mathrm{vac}}^{(EU)
 
 **(a)** $k=1$ (A) $\to$ **третье поколение** ($t, b, \tau$): древесная Юкавская связь $y_1^{(\mathrm{tree})} \sim O(1)$. При RG-эволюции $y_1$ притягивается к quasi-IR fixed point (Пендлтон–Росс, 1981):
 
-$$m_t = y_t^{(\mathrm{FP})} \cdot \frac{v}{\sqrt{2}} \approx 1.0 \times 174 \approx 173 \text{ ГэВ} \quad \checkmark$$
+$$
+m_t = y_t^{(\mathrm{FP})} \cdot \frac{v}{\sqrt{2}} \approx 1.0 \times 174 \approx 173 \text{ ГэВ} \quad \checkmark
+$$
 
 **(b)** $k=2$ (S) и $k=4$ (L) $\to$ первое и второе поколения: $y_{2,4}^{(\mathrm{tree})} = 0$. Массы генерируются **петлевыми** (loop) поправками через $V_3$-потенциал:
 
-$$y_{2,4}^{(\mathrm{eff})} \sim \epsilon_{\mathrm{loop}} \ll 1$$
+$$
+y_{2,4}^{(\mathrm{eff})} \sim \epsilon_{\mathrm{loop}} \ll 1
+$$
 
 **(c)** Петлевые Юкавские **не** притягиваются к IR fixed point (поскольку $y \ll 1$, квадратичный член $c_1 y^2$ пренебрежим по сравнению с калибровочным $c_3 g_s^2$). Их RG-бег определяется аномальной размерностью массы:
 
-$$y_n(\mu) = y_n(\mu_0) \cdot \left(\frac{\alpha_s(\mu)}{\alpha_s(\mu_0)}\right)^{12/(33-2N_f)} \quad (n = 2, 4)$$
+$$
+y_n(\mu) = y_n(\mu_0) \cdot \left(\frac{\alpha_s(\mu)}{\alpha_s(\mu_0)}\right)^{12/(33-2N_f)} \quad (n = 2, 4)
+$$
 
 Это даёт мягкое (степенное) изменение, сохраняющее иерархию $y_1 \gg y_{2,4}$.
 
@@ -218,27 +249,37 @@ $$y_n(\mu) = y_n(\mu_0) \cdot \left(\frac{\alpha_s(\mu)}{\alpha_s(\mu_0)}\right)
 
 **(b)** **Решение:** Начальные Юкавские **не** все $O(1)$. Правило отбора даёт:
 
-$$y_1^{(0)} \sim O(1), \quad y_2^{(0)} = 0, \quad y_4^{(0)} = 0$$
+$$
+y_1^{(0)} \sim O(1), \quad y_2^{(0)} = 0, \quad y_4^{(0)} = 0
+$$
 
 Петлевые поправки генерируют $y_{2,4} \sim \epsilon \ll 1$, но **не** $O(1)$.
 
 **(c)** RG-система с одной $O(1)$ Юкавской + двумя малыми:
 
-$$\frac{dy_1}{d\ln\mu} \approx \frac{y_1}{16\pi^2}(c_1 y_1^2 - c_3 g_s^2 - c_4 g_W^2)$$
+$$
+\frac{dy_1}{d\ln\mu} \approx \frac{y_1}{16\pi^2}(c_1 y_1^2 - c_3 g_s^2 - c_4 g_W^2)
+$$
 
-$$\frac{dy_n}{d\ln\mu} \approx \frac{y_n}{16\pi^2}(c_2 y_1^2 - c_3 g_s^2 - c_4 g_W^2) \quad (n = 2, 4;\; y_n \ll 1)$$
+$$
+\frac{dy_n}{d\ln\mu} \approx \frac{y_n}{16\pi^2}(c_2 y_1^2 - c_3 g_s^2 - c_4 g_W^2) \quad (n = 2, 4;\; y_n \ll 1)
+$$
 
 $y_1$ притягивается к $y^{(\mathrm{FP})} = \sqrt{(c_3 g_s^2 + c_4 g_W^2)/c_1} \approx 1$.
 
 $y_{2,4}$ бегут с аномальной размерностью, определяемой $y_1$:
 
-$$y_n(\mu_{\mathrm{EW}}) = y_n(\mu_{\mathrm{GUT}}) \times \left(\frac{\mu_{\mathrm{EW}}}{\mu_{\mathrm{GUT}}}\right)^{\gamma_n}$$
+$$
+y_n(\mu_{\mathrm{EW}}) = y_n(\mu_{\mathrm{GUT}}) \times \left(\frac{\mu_{\mathrm{EW}}}{\mu_{\mathrm{GUT}}}\right)^{\gamma_n}
+$$
 
 где $\gamma_n = (c_2 y_1^{(\mathrm{FP})2} - c_3 g_s^2 - c_4 g_W^2)/(16\pi^2)$.
 
 **(d)** Если $c_2 y_1^2 < c_3 g_s^2 + c_4 g_W^2$ (что выполняется при $c_2 = 3/2$, $y_1 \sim 1$, $c_3 g_s^2 \sim 1.2$, $c_4 g_W^2 \sim 0.2$):
 
-$$c_2 y_1^2 = 1.5 < c_3 g_s^2 + c_4 g_W^2 \approx 1.4$$
+$$
+c_2 y_1^2 = 1.5 < c_3 g_s^2 + c_4 g_W^2 \approx 1.4
+$$
 
 Знак $\gamma_n$ определяет, растут или падают $y_{2,4}$ при понижении масштаба. При $c_2 y_1^2 \approx c_3 g_s^2 + c_4 g_W^2$: $\gamma_n \approx 0$, малые Юкавские **сохраняют** свои значения от GUT до EW.
 
@@ -260,15 +301,21 @@ $$c_2 y_1^2 = 1.5 < c_3 g_s^2 + c_4 g_W^2 \approx 1.4$$
 
 **(a)** $V_3$ содержит вершины на **не-Фано** тройках, связывающих пары из генерационной линии через промежуточное измерение $D=3$:
 
-$$V_3 \supset \lambda_3 |\gamma_{12}| |\gamma_{23}| |\gamma_{13}| \sin(\theta_{12} + \theta_{23} - \theta_{13})$$
+$$
+V_3 \supset \lambda_3 |\gamma_{12}| |\gamma_{23}| |\gamma_{13}| \sin(\theta_{12} + \theta_{23} - \theta_{13})
+$$
 
 Тройка $\{1,2,3\} = \{A,S,D\}$ — не-Фано.
 
-$$V_3 \supset \lambda_3 |\gamma_{24}| |\gamma_{43}| |\gamma_{23}| \sin(\theta_{24} + \theta_{43} - \theta_{23})$$
+$$
+V_3 \supset \lambda_3 |\gamma_{24}| |\gamma_{43}| |\gamma_{23}| \sin(\theta_{24} + \theta_{43} - \theta_{23})
+$$
 
 Тройка $\{2,4,3\} = \{S,L,D\}$ — не-Фано.
 
-$$V_3 \supset \lambda_3 |\gamma_{14}| |\gamma_{43}| |\gamma_{13}| \sin(\theta_{14} + \theta_{43} - \theta_{13})$$
+$$
+V_3 \supset \lambda_3 |\gamma_{14}| |\gamma_{43}| |\gamma_{13}| \sin(\theta_{14} + \theta_{43} - \theta_{13})
+$$
 
 Тройка $\{1,4,3\} = \{A,L,D\}$ — не-Фано.
 
@@ -280,11 +327,15 @@ $$V_3 \supset \lambda_3 |\gamma_{14}| |\gamma_{43}| |\gamma_{13}| \sin(\theta_{1
 
 **(b)** После электрослабого нарушения ($\gamma_{EU} \to v$), вершина $\{1,5,6\}$ даёт массу поколению $k=1$:
 
-$$m_1 \propto \lambda_3 |\gamma_{15}| |\gamma_{56}| |\gamma_{16}| \to \lambda_3 v \cdot |\gamma_{A,E}| \cdot |\gamma_{A,U}|$$
+$$
+m_1 \propto \lambda_3 |\gamma_{15}| |\gamma_{56}| |\gamma_{16}| \to \lambda_3 v \cdot |\gamma_{A,E}| \cdot |\gamma_{A,U}|
+$$
 
 **(c)** Комбинация не-Фано вершин через $D$ и Фано-вершины $\{1,5,6\}$ через **промежуточное** состояние измерения $A=1$ генерирует эффективную связь поколений $k=2$ и $k=4$ с [Хиггсом](/docs/physics/particle-physics/higgs-sector):
 
-$$y_n^{(\mathrm{eff})} \sim \frac{\langle n | V_3^{(\mathrm{not\text{-}Fano})} | 1 \rangle}{m_1^{(\mathrm{Gap})}} \times y_1^{(\mathrm{tree})} \quad (n = 2, 4)$$
+$$
+y_n^{(\mathrm{eff})} \sim \frac{\langle n | V_3^{(\mathrm{not\text{-}Fano})} | 1 \rangle}{m_1^{(\mathrm{Gap})}} \times y_1^{(\mathrm{tree})} \quad (n = 2, 4)
+$$
 
 где $m_1^{(\mathrm{Gap})}$ — Gap-масса промежуточного состояния.
 
@@ -292,7 +343,9 @@ $$y_n^{(\mathrm{eff})} \sim \frac{\langle n | V_3^{(\mathrm{not\text{-}Fano})} |
 
 **Параметр смешивания** поколения $n$ с поколением 1 через не-Фано тройку с посредником $D$:
 
-$$\delta_{n1} := \frac{\lambda_3 |\gamma_{n1}^{(\mathrm{vac})}| \cdot |\gamma_{n'1}^{(\mathrm{vac})}|}{m_{n1}^2}$$
+$$
+\delta_{n1} := \frac{\lambda_3 |\gamma_{n1}^{(\mathrm{vac})}| \cdot |\gamma_{n'1}^{(\mathrm{vac})}|}{m_{n1}^2}
+$$
 
 где $(n, n', 1)$ — тройка на генерационной линии (т.е. $n' = \{2,4\} \setminus \{n\}$), и $m_{n1} \sim \mathrm{Gap}(n,1) \times M_P$ — масса посредника.
 
@@ -318,7 +371,9 @@ $\mathrm{Gap}(A,L) = \mathrm{Gap}(1,4)$ — $3$-to-$\bar{3}$ сектор $\to$ 
 
 **(d)** Однако: конфайнмент одновременно генерирует **масштаб конфайнмента** $\Lambda_{\mathrm{QCD}} \sim 200$ МэВ, который подавляет эффективную Юкавскую связь. Результирующая Юкавская:
 
-$$y_4^{(\mathrm{eff})} \sim y_1 \times f_{\mathrm{conf}}(\Lambda_{\mathrm{QCD}} / M_{\mathrm{GUT}})$$
+$$
+y_4^{(\mathrm{eff})} \sim y_1 \times f_{\mathrm{conf}}(\Lambda_{\mathrm{QCD}} / M_{\mathrm{GUT}})
+$$
 
 где $f_{\mathrm{conf}}$ — непертурбативная функция, определяемая конфайнмент-динамикой.
 
@@ -346,7 +401,6 @@ $$y_4^{(\mathrm{eff})} \sim y_1 \times f_{\mathrm{conf}}(\Lambda_{\mathrm{QCD}} 
 
 **(b)** **Подавленные линии** (с O): линии 5–7. Промежуточные состояния включают O-сектор с $\mathrm{Gap}(O, \cdot) \sim 1$ $\to$ экспоненциально подавлены фактором $\sim e^{-M_P/\mu}$.
 
-
 ### Структурное следствие: $\kappa_0$ течёт по подавленным линиям [Т] (T-298) {#каппа-по-подавленным}
 
 Оба морфизменных фактора $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ живут на O-линиях: $(O,E)$ лежит на $\{L,E,O\}$ (Temporal-EL), а $(O,U)$ — на $\{U,O,S\}$ (Temporal-US) — двух из трёх **подавленных** линий таблицы выше, и по $\lambda=1$ другого пути нет. Значит малость константы рефлексии *геометрична*: каналу самонаблюдения не оставлено выбора, кроме экспоненциально подавленных линий. Два следствия: (i) иерархия $\kappa_0 \ll \omega_0$ не требует подстройки — это инцидентность; (ii) третьи точки этих двух линий, $L$ и $S$, — *теневые метки* рефлексивного канала: фальсифицируемое структурное предсказание, что меры рефлексивности сцеплены именно с осями Смысла и Формы (проверяемо на эмпирических R-метриках прикладного слоя).
@@ -357,7 +411,6 @@ $$y_4^{(\mathrm{eff})} \sim y_1 \times f_{\mathrm{conf}}(\Lambda_{\mathrm{QCD}} 
 - $L$ $\to$ через $D$: линия $\{D,L,U\}$ (Цветовая-U)
 
 Два из трёх поколений получают массу **через цветовое измерение D** (diversity). $\blacksquare$
-
 
 **Краус-уточнение (прибор теневых меток, 07.08.2026).** Метка — *экран*, не усилитель: в каноническом Краус-разрешении чувствительность ковариации населённостей $\kappa_{OE}$ (соотв. $\kappa_{OU}$) к третьей точке своей прямой *подавлена* относительно всех прочих осей — при $I/7$ ровно на $\gamma/189$ (аналитически; машинно до шести знаков в обоих каналах и для обоих наборов прямых — канонического и абстрактного BIBD), а на случайных состояниях третья точка — наименее чувствительная ось в $\approx 92\%$ случаев [С]. Инцидентность забирает флуктуации третьей точки *внутрь* блочной перенормировки, пряча их от ковариации рефлексивного канала, — потому эмпирическая половина предсказания (R-метрики × оси $L,S$) — тест на подавление, а не на усиление.
 
@@ -417,7 +470,9 @@ $$y_4^{(\mathrm{eff})} \sim y_1 \times f_{\mathrm{conf}}(\Lambda_{\mathrm{QCD}} 
 
 **Определение.** Фано-граф — полный граф $K_7$ на 7 вершинах $\{1,...,7\}$ с весами рёбер:
 
-$$w(i,j) = -\ln(1 - \mathrm{Gap}(i,j))$$
+$$
+w(i,j) = -\ln(1 - \mathrm{Gap}(i,j))
+$$
 
 **(a)** Для $\mathrm{Gap} \approx 0$ (конфайнмент): $w \approx 0$ (нулевой вес — «близость»).
 
@@ -433,7 +488,9 @@ $$w(i,j) = -\ln(1 - \mathrm{Gap}(i,j))$$
 
 **Теорема.** Для каждого поколения $k_n$ определим Фано-расстояние до Хиггсовой вершины $(E,U)$ как:
 
-$$D_H(k_n) := w(k_n, E) + w(k_n, U)$$
+$$
+D_H(k_n) := w(k_n, E) + w(k_n, U)
+$$
 
 С вакуумными Gap-значениями:
 
@@ -461,13 +518,19 @@ $$D_H(k_n) := w(k_n, E) + w(k_n, U)$$
 
 **(a)** Древесная Юкавская:
 
-$$y_1^{(\mathrm{tree})} = g_W \cdot \sin(2\pi/7) \cdot |\gamma_{\mathrm{vac}}^{(EU)}| \approx 0.65 \cdot 0.78 \cdot |\gamma| \sim O(1)$$
+$$
+y_1^{(\mathrm{tree})} = g_W \cdot \sin(2\pi/7) \cdot |\gamma_{\mathrm{vac}}^{(EU)}| \approx 0.65 \cdot 0.78 \cdot |\gamma| \sim O(1)
+$$
 
 **(b)** При RG-эволюции: $y_1$ — единственная $O(1)$ Юкавская. Quasi-IR fixed point (Пендлтон–Росс):
 
-$$y_t^{(\mathrm{FP})} = \sqrt{\frac{c_3 g_s^2(\mu_{\mathrm{EW}}) + c_4 g_W^2}{c_1}} \approx 1.0$$
+$$
+y_t^{(\mathrm{FP})} = \sqrt{\frac{c_3 g_s^2(\mu_{\mathrm{EW}}) + c_4 g_W^2}{c_1}} \approx 1.0
+$$
 
-$$m_t = y_t^{(\mathrm{FP})} \times 174 \text{ ГэВ} \approx 173 \text{ ГэВ} \quad \checkmark$$
+$$
+m_t = y_t^{(\mathrm{FP})} \times 174 \text{ ГэВ} \approx 173 \text{ ГэВ} \quad \checkmark
+$$
 
 **(c)** Механизм Пендлтона–Росса теперь работает **корректно**: только ОДНА Юкавская связь $\sim O(1)$, остальные $\ll 1$. Проблема К-1 (все три стягиваются к одной точке) **устранена**.
 
@@ -479,23 +542,31 @@ $$m_t = y_t^{(\mathrm{FP})} \times 174 \text{ ГэВ} \approx 173 \text{ ГэВ}
 
 **(a)** Смешивание через не-Фано тройки с $D$. Для $k=2$:
 
-$$y_2^{(\mathrm{mix})} \sim \delta_{21} \times y_1 \sim \frac{\lambda_3 |\gamma|^2}{\epsilon_{\mathrm{space}}^2 M_P^2} \times M_P^2 \times y_1 = \frac{\lambda_3 |\gamma|^2}{\epsilon_{\mathrm{space}}^2} \times y_1$$
+$$
+y_2^{(\mathrm{mix})} \sim \delta_{21} \times y_1 \sim \frac{\lambda_3 |\gamma|^2}{\epsilon_{\mathrm{space}}^2 M_P^2} \times M_P^2 \times y_1 = \frac{\lambda_3 |\gamma|^2}{\epsilon_{\mathrm{space}}^2} \times y_1
+$$
 
 Для $k=4$: непертурбативный (см. теорему 4.2).
 
 **(b)** Альтернативные пути через $D=3$. Для $k=2$ (путь $\{2,3,5\} \to \{5,6,1\}$):
 
-$$y_2^{(\mathrm{alt})} \sim \lambda_3^2 \frac{|\gamma|^4}{m_D^2 \cdot m_E^2} \times g_W \times |\gamma_{\mathrm{vac}}|$$
+$$
+y_2^{(\mathrm{alt})} \sim \lambda_3^2 \frac{|\gamma|^4}{m_D^2 \cdot m_E^2} \times g_W \times |\gamma_{\mathrm{vac}}|
+$$
 
 где $m_D \sim \epsilon_{\mathrm{space}} M_P$ (масштаб цветового измерения), $m_E \sim \epsilon_{\mathrm{EW}} M_P$ (масштаб электрослабого измерения).
 
 **(c)** Полная оценка (доминирует альтернативный путь для $k=2$):
 
-$$y_2^{(\mathrm{eff})} \sim \frac{\lambda_3^2 |\gamma|^4}{\epsilon_{\mathrm{space}}^2 \cdot \epsilon_{\mathrm{EW}}^2 \cdot (16\pi^2)} \times g_W$$
+$$
+y_2^{(\mathrm{eff})} \sim \frac{\lambda_3^2 |\gamma|^4}{\epsilon_{\mathrm{space}}^2 \cdot \epsilon_{\mathrm{EW}}^2 \cdot (16\pi^2)} \times g_W
+$$
 
 Это формально **большое** значение ($\epsilon_{\mathrm{EW}} \sim 10^{-17}$ $\to$ знаменатель $\sim 10^{-34}$). Однако в фактическом вычислении: Хиггсовский пропагатор $1/m_E^2$ обрезан на масштабе электрослабого нарушения ($m_H \sim 125$ ГэВ, не $\epsilon_{\mathrm{EW}} M_P$). С правильным обрезанием:
 
-$$y_2^{(\mathrm{eff})} \sim \frac{\lambda_3^2 |\gamma|^4}{(16\pi^2)} \times \frac{M_P^2}{m_H^2} \times \frac{1}{\epsilon_{\mathrm{space}}^2 M_P^2} \times g_W$$
+$$
+y_2^{(\mathrm{eff})} \sim \frac{\lambda_3^2 |\gamma|^4}{(16\pi^2)} \times \frac{M_P^2}{m_H^2} \times \frac{1}{\epsilon_{\mathrm{space}}^2 M_P^2} \times g_W
+$$
 
 **(d)** Ключевое наблюдение: точное значение $y_2$ и $y_4$ зависит от **нескольких** масштабов ($\epsilon_{\mathrm{space}}$, $m_H$, $\Lambda_{\mathrm{QCD}}$, $\lambda_3$), и их взаимодействие требует **полного непертурбативного** решёточного вычисления.
 
@@ -515,13 +586,17 @@ $$y_2^{(\mathrm{eff})} \sim \frac{\lambda_3^2 |\gamma|^4}{(16\pi^2)} \times \fra
 
 **(b)** Подавление $\sim 10^{-2}$ для второго поколения согласуется с **одним** петлевым фактором:
 
-$$\epsilon_{\mathrm{1\text{-}loop}} \sim \frac{\lambda_3}{16\pi^2} \times (\text{Gap-фактор}) \sim 10^{-2}$$
+$$
+\epsilon_{\mathrm{1\text{-}loop}} \sim \frac{\lambda_3}{16\pi^2} \times (\text{Gap-фактор}) \sim 10^{-2}
+$$
 
 при $\lambda_3 \sim 74$, $\mathrm{Gap}$-фактор $\sim 0.02$.
 
 **(c)** Подавление $\sim 10^{-5}$ для первого поколения согласуется с **двумя** петлевыми факторами:
 
-$$\epsilon_{\mathrm{2\text{-}loop}} \sim \left(\frac{\lambda_3}{16\pi^2}\right)^2 \times (\text{Gap-факторы}) \sim 10^{-4} \text{--} 10^{-5}$$
+$$
+\epsilon_{\mathrm{2\text{-}loop}} \sim \left(\frac{\lambda_3}{16\pi^2}\right)^2 \times (\text{Gap-факторы}) \sim 10^{-4} \text{--} 10^{-5}
+$$
 
 **(d)** Гипотеза: **второе поколение получает массу через однопетлевой $V_3$-процесс, первое — через двухпетлевой.** Число петель определяется минимальной длиной Фано-пути от $k_n$ к Хиггсу, не проходящего через O-сектор ($\mathrm{Gap} \sim 1$).
 
@@ -571,7 +646,9 @@ $\{3,4,6\}$: $L \to D \to U$. Достигнут $U$, нужен $E$: $\{5,6,1\}
 
 **(e)** Парадоксальный вывод: $k=4$ имеет **большую** связность с Хиггсом, чем $k=2$. Следовательно:
 
-$$y_4^{(\mathrm{eff})} > y_2^{(\mathrm{eff})}$$
+$$
+y_4^{(\mathrm{eff})} > y_2^{(\mathrm{eff})}
+$$
 
 **(f)** **Предсказание назначения [поколений](/docs/physics/particle-physics/fermion-generations):**
 
@@ -597,7 +674,9 @@ $$y_4^{(\mathrm{eff})} > y_2^{(\mathrm{eff})}$$
 
 Из правила отбора единственный ненулевой элемент — $(3,3)$:
 
-$$Y^{u(0)} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & y_t \end{pmatrix}$$
+$$
+Y^{u(0)} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & y_t \end{pmatrix}
+$$
 
 где $y_t = g_W \sin(2\pi/7) |\gamma_{\mathrm{vac}}| \sim O(1)$.
 
@@ -605,7 +684,9 @@ $$Y^{u(0)} = \begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & y_t \end{pmatrix}
 
 $V_3$-вершины генерируют дополнительные элементы через Фано-пути:
 
-$$Y^{u(1)} = \begin{pmatrix} 0 & 0 & \delta_{S \to A} y_t \\ 0 & 0 & \delta_{L \to A} y_t \\ \delta_{A \to S} y_t & \delta_{A \to L} y_t & 0 \end{pmatrix}$$
+$$
+Y^{u(1)} = \begin{pmatrix} 0 & 0 & \delta_{S \to A} y_t \\ 0 & 0 & \delta_{L \to A} y_t \\ \delta_{A \to S} y_t & \delta_{A \to L} y_t & 0 \end{pmatrix}
+$$
 
 Ненулевые элементы — **только** в строке и столбце 3-го поколения.
 
@@ -613,17 +694,23 @@ $$Y^{u(1)} = \begin{pmatrix} 0 & 0 & \delta_{S \to A} y_t \\ 0 & 0 & \delta_{L \
 
 Элементы $2 \times 2$-блока лёгких поколений:
 
-$$Y^{u(2)} = \begin{pmatrix} y_u & \delta_{S \to L} & 0 \\ \delta_{L \to S} & y_c & 0 \\ 0 & 0 & 0 \end{pmatrix}$$
+$$
+Y^{u(2)} = \begin{pmatrix} y_u & \delta_{S \to L} & 0 \\ \delta_{L \to S} & y_c & 0 \\ 0 & 0 & 0 \end{pmatrix}
+$$
 
 ### 8.4 Полная текстура
 
-$$Y^u \approx \begin{pmatrix} y_u & \epsilon_{12} & \epsilon_{13} \\ \epsilon_{21} & y_c & \epsilon_{23} \\ \epsilon_{31} & \epsilon_{32} & y_t \end{pmatrix}$$
+$$
+Y^u \approx \begin{pmatrix} y_u & \epsilon_{12} & \epsilon_{13} \\ \epsilon_{21} & y_c & \epsilon_{23} \\ \epsilon_{31} & \epsilon_{32} & y_t \end{pmatrix}
+$$
 
 где $y_t \sim 1$, $y_c \sim \epsilon^2$, $y_u \sim \epsilon^4$, $\epsilon_{i3}, \epsilon_{3j} \sim \epsilon$, $\epsilon_{12}, \epsilon_{21} \sim \epsilon^3$.
 
 Параметр петлевого подавления:
 
-$$\epsilon := \frac{\lambda_3(\mu_{\mathrm{EW}})}{\lambda_3(\mu_{\mathrm{Planck}})} = e^{-4.63} \approx 0.0097 \approx 0.01$$
+$$
+\epsilon := \frac{\lambda_3(\mu_{\mathrm{EW}})}{\lambda_3(\mu_{\mathrm{Planck}})} = e^{-4.63} \approx 0.0097 \approx 0.01
+$$
 
 ### 8.5 Текстура Фрича из Фано-топологии
 
@@ -633,7 +720,9 @@ $$\epsilon := \frac{\lambda_3(\mu_{\mathrm{EW}})}{\lambda_3(\mu_{\mathrm{Planck}
 
 **(a)** Стандартная текстура Фрича имеет вид:
 
-$$M^{u}_{\mathrm{Fritzsch}} = \begin{pmatrix} 0 & A_u & 0 \\ A_u^* & 0 & B_u \\ 0 & B_u^* & C_u \end{pmatrix}$$
+$$
+M^{u}_{\mathrm{Fritzsch}} = \begin{pmatrix} 0 & A_u & 0 \\ A_u^* & 0 & B_u \\ 0 & B_u^* & C_u \end{pmatrix}
+$$
 
 с иерархией $|C_u| \gg |B_u| \gg |A_u|$.
 
@@ -645,13 +734,17 @@ $$M^{u}_{\mathrm{Fritzsch}} = \begin{pmatrix} 0 & A_u & 0 \\ A_u^* & 0 & B_u \\ 
 
 **(c)** Компактная формула Фрича из Фано-топологии. Элементы Юкавской матрицы параметризуются О-свободным Фано-расстоянием до Хиггса:
 
-$$Y_{ij} \propto \varepsilon^{|D_H(k_i, k_j)|}$$
+$$
+Y_{ij} \propto \varepsilon^{|D_H(k_i, k_j)|}
+$$
 
 где $D_H$ — Фано-расстояние (раздел 7.1), а $\varepsilon \approx 0.01$ — параметр петлевого подавления. Каждый шаг по Фано-графу вносит фактор $\varepsilon$, что порождает иерархическую текстуру из чисто **топологической** структуры $\mathrm{PG}(2,2)$.
 
 **(d)** Текстура Фрича предсказывает угол Кабиббо:
 
-$$|V_{us}| \approx \left|\sqrt{\frac{m_d}{m_s}} - \sqrt{\frac{m_u}{m_c}} \cdot e^{i\phi}\right|$$
+$$
+|V_{us}| \approx \left|\sqrt{\frac{m_d}{m_s}} - \sqrt{\frac{m_u}{m_c}} \cdot e^{i\phi}\right|
+$$
 
 Из наблюдаемых масс: $\sqrt{m_d/m_s} \approx 0.22$, $\sqrt{m_u/m_c} \approx 0.04$. Предсказание: $|V_{us}| \approx 0.22$ — **согласие** с наблюдаемым $\theta_C = 0.225$.
 
@@ -667,21 +760,31 @@ $$|V_{us}| \approx \left|\sqrt{\frac{m_d}{m_s}} - \sqrt{\frac{m_u}{m_c}} \cdot e
 
 **(a)** Определение. $V_3$-вершина содержит множитель $\lambda_3 \sim 74$, а не 1. Эффективный параметр смешивания:
 
-$$\epsilon_{\mathrm{eff}} = \frac{\lambda_3 \cdot \epsilon}{4\pi} \approx \frac{74 \times 0.01}{12.6} \approx 0.059$$
+$$
+\epsilon_{\mathrm{eff}} = \frac{\lambda_3 \cdot \epsilon}{4\pi} \approx \frac{74 \times 0.01}{12.6} \approx 0.059
+$$
 
-:::note Статус параметра $\lambda_3$ [Т]
-Параметр $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ — **геометрический коэффициент** спектрального действия (T-74 [Т]), а не пертурбативная константа связи. Физические наблюдаемые определены непертурбативно через самосогласованный вакуум $\theta^*$ (T-79 [С при (СВ)]). UV-конечность (T-66: по полевому пространству [Т], попорядково [С]) обеспечивает структурную корректность. Петлевые оценки — приближения к $\theta^*$, дающие правильный порядок величины (ошибка $\lesssim \times 5$). Подробнее — см. [Иерархия Юкавы](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
+:::note Входные связи и область пертурбативности [D/H/Pr]
+Соотношение $\lambda_3=2\mu^2/(3|\bar\gamma|)$ и значение $\lambda_3\approx74$ — выбранные входы эффективной модели, не однозначно выведенные коэффициенты спектрального действия: универсальная T-74 снята [✗]. Уравнение самосогласования определяет значение лишь при заданных функционале, остальных связях и пространстве состояний/полей. Компактность конечной области интегрирования не устанавливает UV-конечности непрерывного предела, сходимости пертурбативного ряда или универсальной границы ошибки в пять раз.
+
+Количественные предсказания масс, смешивания или гравитации требуют независимо заданных спектральных данных, масштабов перенормировки/согласования и физических наблюдаемых. Если $\bar\gamma$ или $\lambda_3$ извлекают из тех же наблюдаемых, результат является калибровкой; для предсказания нужны отложенные данные. Малый предлагаемый $\lambda_3\varepsilon/(4\pi)$ даёт лишь оценку степенного счёта при заданных действии и пропагаторах; факториальное число диаграмм всё ещё может дать расходящийся асимптотический ряд. [Аудит связи](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative) фиксирует эти условия.
 :::
 
 Каждая дополнительная $V_3$-вершина в диаграмме вносит фактор $\sim \epsilon_{\mathrm{eff}}$.
 
 **(b)** Диагонализация $Y^u Y^{u\dagger}$ с текстурой раздела 8.4 даёт массовые собственные значения:
 
-$$m_t \approx y_t \cdot v/\sqrt{2} \approx 174 \text{ ГэВ}$$
+$$
+m_t \approx y_t \cdot v/\sqrt{2} \approx 174 \text{ ГэВ}
+$$
 
-$$m_c \approx \epsilon_{\mathrm{eff}}^2 \cdot v/\sqrt{2} \approx 3.5 \times 10^{-3} \times 174 \approx 0.6 \text{ ГэВ}$$
+$$
+m_c \approx \epsilon_{\mathrm{eff}}^2 \cdot v/\sqrt{2} \approx 3.5 \times 10^{-3} \times 174 \approx 0.6 \text{ ГэВ}
+$$
 
-$$m_u \approx \epsilon_{\mathrm{eff}}^4 \cdot v/\sqrt{2} \approx 1.2 \times 10^{-5} \times 174 \approx 2 \text{ МэВ}$$
+$$
+m_u \approx \epsilon_{\mathrm{eff}}^4 \cdot v/\sqrt{2} \approx 1.2 \times 10^{-5} \times 174 \approx 2 \text{ МэВ}
+$$
 
 **(c)** Сравнение с наблюдениями:
 
@@ -715,7 +818,9 @@ $$m_u \approx \epsilon_{\mathrm{eff}}^4 \cdot v/\sqrt{2} \approx 1.2 \times 10^{
 
 **(c)** Текстура $Y^d$ аналогична $Y^u$, но с другими **фазами** (из-за сопряжённого Хиггса):
 
-$$Y^d = Y^u \cdot e^{i\delta_{\mathrm{Fano}}} + \Delta Y^d$$
+$$
+Y^d = Y^u \cdot e^{i\delta_{\mathrm{Fano}}} + \Delta Y^d
+$$
 
 где $\delta_{\mathrm{Fano}} = 2\pi/7$ — Фано-фаза, и $\Delta Y^d$ — поправки от различия RG-коэффициентов для $u$-type vs $d$-type.
 
@@ -743,25 +848,35 @@ $$Y^d = Y^u \cdot e^{i\delta_{\mathrm{Fano}}} + \Delta Y^d$$
 
 **(a)** $\theta_{12}$ (угол Кабиббо) — смешивание 1-го и 2-го поколений ($k=2$ и $k=4$):
 
-$$\theta_{12}^{(\mathrm{Fano})} \propto |k_{1\mathrm{st}} - k_{2\mathrm{nd}}| = |2 - 4| = 2$$
+$$
+\theta_{12}^{(\mathrm{Fano})} \propto |k_{1\mathrm{st}} - k_{2\mathrm{nd}}| = |2 - 4| = 2
+$$
 
 **(b)** $\theta_{23}$ — смешивание 2-го и 3-го ($k=4$ и $k=1$):
 
-$$\theta_{23}^{(\mathrm{Fano})} \propto |k_{2\mathrm{nd}} - k_{3\mathrm{rd}}| = |4 - 1| = 3$$
+$$
+\theta_{23}^{(\mathrm{Fano})} \propto |k_{2\mathrm{nd}} - k_{3\mathrm{rd}}| = |4 - 1| = 3
+$$
 
 **(c)** $\theta_{13}$ — смешивание 1-го и 3-го ($k=2$ и $k=1$):
 
-$$\theta_{13}^{(\mathrm{Fano})} \propto |k_{1\mathrm{st}} - k_{3\mathrm{rd}}| = |2 - 1| = 1$$
+$$
+\theta_{13}^{(\mathrm{Fano})} \propto |k_{1\mathrm{st}} - k_{3\mathrm{rd}}| = |2 - 1| = 1
+$$
 
 **(d)** Отношения Фано-фаз:
 
-$$\Delta k_{12} : \Delta k_{23} : \Delta k_{13} = 2 : 3 : 1$$
+$$
+\Delta k_{12} : \Delta k_{23} : \Delta k_{13} = 2 : 3 : 1
+$$
 
 Наблюдаемые отношения углов: $\theta_{12} : \theta_{23} : \theta_{13} \approx 13° : 2.4° : 0.2° \approx 65 : 12 : 1$.
 
 **(e)** Фано-отношения ($2:3:1$) не совпадают с наблюдаемыми ($65:12:1$). Различие обусловлено RG-подавлением, зависящим от отношения масс поколений (текстура Фрича):
 
-$$\theta_{12} \sim \sqrt{m_u/m_c}, \quad \theta_{23} \sim \sqrt{m_c/m_t}, \quad \theta_{13} \sim \sqrt{m_u/m_t}$$
+$$
+\theta_{12} \sim \sqrt{m_u/m_c}, \quad \theta_{23} \sim \sqrt{m_c/m_t}, \quad \theta_{13} \sim \sqrt{m_u/m_t}
+$$
 
 Из наблюдаемых масс: $\sqrt{m_u/m_c} \approx 0.04$, $\sqrt{m_c/m_t} \approx 0.087$, $\sqrt{m_u/m_t} \approx 0.0034$. Эти значения **не** определяются Фано-разностями напрямую — они следуют из эффективных Юкавских связей.
 
@@ -773,7 +888,9 @@ $$\theta_{12} \sim \sqrt{m_u/m_c}, \quad \theta_{23} \sim \sqrt{m_c/m_t}, \quad 
 
 **(a)** $\delta_{\mathrm{CP}} = \arg(e^{2\pi i(k_{1\mathrm{st}} + k_{2\mathrm{nd}} - k_{3\mathrm{rd}})/7}) = \arg(e^{2\pi i(2+4-1)/7}) = \arg(e^{10\pi i/7})$
 
-$$= \frac{10\pi}{7} - 2\pi = -\frac{4\pi}{7} \approx -102.9°$$
+$$
+= \frac{10\pi}{7} - 2\pi = -\frac{4\pi}{7} \approx -102.9°
+$$
 
 **(b)** Модуль: $|\delta_{\mathrm{CP}}| = 180° - 102.9° = 77.1°$ (приведение к первой полуплоскости; физически мотивировано тем, что наблюдаемая величина — $\sin\delta$, а $\sin 77.1° = \sin 102.9°$).
 
@@ -781,7 +898,9 @@ $$= \frac{10\pi}{7} - 2\pi = -\frac{4\pi}{7} \approx -102.9°$$
 
 **(c)** С двухпетлевой поправкой: $|\delta^{(2)}| \sim 12.6°$. При отрицательном знаке:
 
-$$|\delta_{\mathrm{CP}}^{(\mathrm{phys})}| \approx 77.1° - 12.6° = 64.5°$$
+$$
+|\delta_{\mathrm{CP}}^{(\mathrm{phys})}| \approx 77.1° - 12.6° = 64.5°
+$$
 
 Расхождение с прямым $64.6° \pm 2.8°$: $\sim 0.1°$ ($\approx 0.04\sigma$); с глобальным фитом $65.7°$: $\sim 1.2°$ ($< 1\sigma$). **Почти точное** согласие.
 
@@ -797,11 +916,17 @@ $$|\delta_{\mathrm{CP}}^{(\mathrm{phys})}| \approx 77.1° - 12.6° = 64.5°$$
 
 **(a)** Количественные CKM-элементы из текстуры Фрича:
 
-$$|V_{us}| \approx \sqrt{m_d/m_s} \approx \sqrt{0.0047/0.095} \approx 0.222$$
+$$
+|V_{us}| \approx \sqrt{m_d/m_s} \approx \sqrt{0.0047/0.095} \approx 0.222
+$$
 
-$$|V_{cb}| \approx \sqrt{m_c/m_t} \times |\sin\phi_u - \sin\phi_d| \approx 0.087 \times 0.5 \approx 0.044$$
+$$
+|V_{cb}| \approx \sqrt{m_c/m_t} \times |\sin\phi_u - \sin\phi_d| \approx 0.087 \times 0.5 \approx 0.044
+$$
 
-$$|V_{ub}| \approx \sqrt{m_u/m_t} \cdot e^{i\delta} \approx 0.0036$$
+$$
+|V_{ub}| \approx \sqrt{m_u/m_t} \cdot e^{i\delta} \approx 0.0036
+$$
 
 **(b)** Предсказания в параметризации Вольфенштейна:
 
@@ -814,11 +939,15 @@ $$|V_{ub}| \approx \sqrt{m_u/m_t} \cdot e^{i\delta} \approx 0.0036$$
 
 **(c)** Инвариант Ярлского. С предсказанной фазой $\delta_{\mathrm{CP}} = 64.5°$ (раздел 9.3) и наблюдаемыми CKM-углами:
 
-$$J = c_{12}c_{23}c_{13}^2 s_{12}s_{23}s_{13}\sin\delta_{\mathrm{CP}}$$
+$$
+J = c_{12}c_{23}c_{13}^2 s_{12}s_{23}s_{13}\sin\delta_{\mathrm{CP}}
+$$
 
 С $s_{12} = 0.225$, $s_{23} = 0.042$, $s_{13} = 0.0037$, $\sin(64.5°) = 0.903$:
 
-$$J \approx 0.974 \times 0.999 \times 0.9999 \times 0.225 \times 0.042 \times 0.0037 \times 0.903 \approx 3.1 \times 10^{-5}$$
+$$
+J \approx 0.974 \times 0.999 \times 0.9999 \times 0.225 \times 0.042 \times 0.0037 \times 0.903 \approx 3.1 \times 10^{-5}
+$$
 
 Наблюдаемое: $J = (3.08 \pm 0.15) \times 10^{-5}$. Расхождение $\sim 3\%$, определяемое расхождением в $\delta$.
 
@@ -842,11 +971,15 @@ $$J \approx 0.974 \times 0.999 \times 0.9999 \times 0.225 \times 0.042 \times 0.
 
 **(b)** Нейтрино: массы нейтрино определяются механизмом seesaw. Лёгкие массы:
 
-$$m_\nu \sim \frac{y_\nu^2 v^2}{M_R}$$
+$$
+m_\nu \sim \frac{y_\nu^2 v^2}{M_R}
+$$
 
 Правило отбора даёт $y_{\nu_\tau}^{(\mathrm{tree})} \neq 0$, $y_{\nu_\mu}^{(\mathrm{tree})} = y_{\nu_e}^{(\mathrm{tree})} = 0$. Соответственно:
 
-$$m_{\nu_\tau} \gg m_{\nu_\mu} \gg m_{\nu_e}$$
+$$
+m_{\nu_\tau} \gg m_{\nu_\mu} \gg m_{\nu_e}
+$$
 
 что согласуется с нормальной иерархией масс нейтрино.
 
@@ -892,7 +1025,9 @@ $$m_{\nu_\tau} \gg m_{\nu_\mu} \gg m_{\nu_e}$$
 
 **Исправление.** Правило отбора спасено через **октонионные структурные константы** $f_{ijk}$ (ненулевые на Фано-линиях). Юкавская связь в октонионном формализме:
 
-$$y_n^{(\mathrm{tree})} \propto f_{k_n, E, U} \cdot g_W \cdot |\gamma_{\mathrm{vac}}^{(EU)}|$$
+$$
+y_n^{(\mathrm{tree})} \propto f_{k_n, E, U} \cdot g_W \cdot |\gamma_{\mathrm{vac}}^{(EU)}|
+$$
 
 где $f_{ijk} \neq 0$ тогда и только тогда, когда $(i,j,k)$ — Фано-линия. $f_{1,5,6} \neq 0$ (Фано), $f_{2,5,6} = f_{4,5,6} = 0$ (не-Фано).
 
@@ -930,7 +1065,9 @@ $\{1,2,4\}$ — Фано-линия ($\mathcal{A}=0$). $V_3$ **не содерж
 
 Масса $b$-кварка генерируется петлевой поправкой через промежуточный $3$-сектор. В самосогласованном вакууме $\theta^*$ (T-79 [С при (СВ)]):
 
-$$y_b = \frac{\lambda_3 \cdot \varepsilon_{33}^*}{16\pi^2} \cdot \eta_{\text{QCD}} \cdot y_t$$
+$$
+y_b = \frac{\lambda_3 \cdot \varepsilon_{33}^*}{16\pi^2} \cdot \eta_{\text{QCD}} \cdot y_t
+$$
 
 При секторной коррекции $r_{33} \approx 0.25$: $y_b \approx 0.024$ — точное согласие с наблюдением. Остаточное расхождение было артефактом использования среднего $\varepsilon \approx 0.06$ вместо секторного $\varepsilon_{33}^*(\theta^*)$.
 
@@ -952,7 +1089,9 @@ $$y_b = \frac{\lambda_3 \cdot \varepsilon_{33}^*}{16\pi^2} \cdot \eta_{\text{QCD
 
 Формула:
 
-$$\delta_{\mathrm{CP}} = \arg(e^{2\pi i(k_{1\mathrm{st}} + k_{2\mathrm{nd}} - k_{3\mathrm{rd}})/7})$$
+$$
+\delta_{\mathrm{CP}} = \arg(e^{2\pi i(k_{1\mathrm{st}} + k_{2\mathrm{nd}} - k_{3\mathrm{rd}})/7})
+$$
 
 — это **эвристическая** формула, связывающая CP-фазу с Фано-индексами. Она не выведена из диагонализации Юкавских матриц $Y^u$, $Y^d$. В стандартной физике: $\delta_{\mathrm{CP}}$ определяется как фаза, остающаяся после удаления 5 нефизических фаз из $3 \times 3$ Юкавских матриц. Связь с «суммой индексов поколений» — нетривиальная и недоказанная. ~~Формула работает эмпирически ($64.5°$ vs прямое $64.6° \pm 2.8°$, $\approx 0.04\sigma$; $< 1\sigma$ vs фит $65.7°$), но её статус — [Г], а не [Т].~~ *Отозвано [✗] 26.09.2026 (T-345(e)):* сама формула даёт $77{,}1°$ ($51{,}4°$ при первом назначении), в $7{,}6\sigma$ ($9{,}5\sigma$) от $65{,}7°\pm1{,}5°$; для $64{,}5°$ нужна была поправка $12{,}6°$, которой в Стандартной модели нет (раздел 9.3).
 
@@ -997,7 +1136,6 @@ $$\delta_{\mathrm{CP}} = \arg(e^{2\pi i(k_{1\mathrm{st}} + k_{2\mathrm{nd}} - k_
 6. **Тестирование назначения через $B$-физику.** Различные назначения ($k=2 \leftrightarrow k=4$) дают различные предсказания для CP-нарушения в $B$-мезонных распадах. Это — экспериментально доступный тест.
 7. **Решёточное вычисление.** Полный непертурбативный Gap-интеграл — центральная вычислительная задача.
 :::
-
 
 ---
 

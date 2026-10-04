@@ -27,7 +27,7 @@ UHM is one of the most formally developed theories of consciousness: ~210 theore
 
 ### 1.2. Key observation: PCI* is an independent verdict, not a number to match
 
-The Perturbational Complexity Index (PCI, introduced by Casali et al. 2013) carries the only clinically validated consciousness cut-off: **PCI* = 0.31**, fixed by an ROC analysis on a benchmark of 150 subjects (540 sets of TMS-evoked potentials) with the presence or absence of a subjective report as ground truth, 100% sensitivity and specificity there (Casarotto et al. 2016). UHM's threshold is **P_crit = 2/7** on the purity scale. The two numbers live on unrelated scales — PCI is a normalised Lempel–Ziv complexity of a binarised response to TMS, $P$ is a function of Γ — so their nearness (0.31 against 0.286) carries no evidential weight, and no normalisation of π_bio may be tuned to close it: a line through $(0, 1/7)$ and $(c, 2/7)$ "coincides" with any anchor $c$ ([measurement §6.3](/docs/applied/coherence-cybernetics/measurement#калибровка)). *Corrected 2026-09-26:* the subsection was titled "PCI* ≈ P_crit" and read the ~8% discrepancy as "within the normalisation calibration of π_bio".
+The Perturbational Complexity Index (PCI, introduced by Casali et al. 2013) provides an independent algorithm-specific benchmark with the reported cut-off: **PCI* = 0.31**, fixed by an ROC analysis on a benchmark of 150 subjects (540 sets of TMS-evoked potentials) with the presence or absence of a subjective report as ground truth, 100% sensitivity and specificity there (Casarotto et al. 2016). UHM's threshold is **P_crit = 2/7** on the purity scale. The two numbers live on unrelated scales — PCI is a normalised Lempel–Ziv complexity of a binarised response to TMS, $P$ is a function of Γ — so their nearness (0.31 against 0.286) carries no evidential weight, and no normalisation of π_bio may be tuned to close it: a line through $(0, 1/7)$ and $(c, 2/7)$ "coincides" with any anchor $c$ ([measurement §6.3](/docs/applied/coherence-cybernetics/measurement#калибровка)). *Corrected 2026-09-26:* the subsection was titled "PCI* ≈ P_crit" and read the ~8% discrepancy as "within the normalisation calibration of π_bio".
 
 This is still the **first point of contact** between the theory and empirical data, in the form in which it can fail: with π_bio frozen on wakefulness, the UHM verdict Cons(Γ̂) and the PCI verdict PCI_max > 0.31 are computed independently on the same sessions and compared by Cohen's κ ([P8.4, SUB-5](/docs/applied/research/measurement-protocol#substitution-position)); κ ≥ 0.8 corroborates, κ < 0.4 falsifies.
 
@@ -56,167 +56,88 @@ The protocol is organised in decreasing order of risk: first — what is cheaper
 
 ### 2.1. Rationale
 
-12 of 23 predictions are testable in silico on any implementation of a **Γ-native agent** — a system whose evolution is governed by Lindbladian dynamics ℒ_Ω = ℒ₀ + ℛ on the coherence matrix Γ ∈ D(ℂ⁷). No neurodata, subjects, or ethical approval required. If even one is falsified — stop, revise the theory before proceeding to expensive neuroexperiments.
+Phase I validates an explicitly specified numerical model and tests architecture hypotheses. An algebraic identity built into the code is not independent evidence for a physical theory. Record the state space, frame, Hamiltonian, jumps/rates, self-model, gate, integration method, numerical error and initial conditions. A failed exact identity first triggers an implementation audit; a failed empirical hypothesis triggers revision of that hypothesis.
 
 ### 2.2. Requirements for a Γ-native agent
 
-Any implementation used for Phase I must satisfy:
-
-1. **CPTP dynamics:** Evolution of Γ via a CPTP channel (T-62). The transition matrix is derived from Γ, not trained as a free parameter
-2. **7D structure:** State space is D(ℂ⁷) with 7 dimensions [A,S,D,L,E,O,U]
-3. **Consciousness verifier:** At each step, P = Tr(Γ²), R, Φ, Coh_E, σ_k are computed
-4. **Multi-phase training with hard gates:**
-   - Initialisation phase: gate P > P_min (viability)
-   - Foundation phase: gate P ∈ (2/7, 3/7] ∧ R ≥ 1/3 (consciousness)
-   - Autonomous learning phase: σ-directed data selection, ΔP ≥ 0 ∧ Δσ ≤ 0
-5. **Checkpoint system:** Saving the full Γ state for perturbation tests
-6. **GPU acceleration:** For Monte Carlo (Exp. I.8) — ≥1 GPU with ≥40GB
+1. **State-valid dynamics:** use a specified linear GKSL propagator or a nonlinear state-preserving ODE/update. State-dependent regeneration is not automatically a linear CPTP channel; [T-62](/docs/core/dynamics/evolution#теорема-сохранение-состояний) proves state preservation under its stated assumptions.
+2. **Fixed frame:** $\Gamma\in\mathcal D(\mathbb C^7)$, with independently declared labels and readouts.
+3. **Full verifier:** compute every conjunct of [Cap₂](/docs/reference/mathematical-kernel#thresholds), its margins and the chosen stress scores. $C=\Phi R$ alone is insufficient.
+4. **Frozen training rule:** declare losses, admissible updates and the fallback for failed feasibility certification. Positive purity change alone is not a full gate.
+5. **Reproducibility:** save code/version, seeds, complete states, solver residuals and all intervention maps.
+6. **Matched controls:** compare architectures with registered tasks, observables and resource budgets. GPU requirements depend on the experiment and implementation.
 
 ### 2.3. Experiments
 
-#### Exp. I.1: Impossibility of zombies (Pred 1) {#exp-1-1}
+#### Exp. I.1: Sector ablation (Pred 1, architecture hypothesis) {#exp-1-1}
 
-**Hypothesis H₀:** Suppression of the E-channel does not affect agent lifetime.
+Register a PSD/trace-preserving intervention map for E and a matched A control; the former ad hoc edit of one diagonal and row did not guarantee trace one. Start from states passing all registered gates, freeze the model and compare first-exit times from the declared region in paired runs. Estimate the paired effect and uncertainty using independent seeds.
 
-**Protocol:**
-1. Bring the Γ-native agent to a stable state: P ∈ (2/7, 3/7], R ≥ 1/3
-2. Save state Γ_stable
-3. At time τ₀: suppress the E-component: γ_EE → 1/7, γ_Ej → 0 ∀j≠E
-4. Continue evolution, measure τ_death — number of steps until P < P_crit
-5. Control: suppress the A-channel (analogous operation, different sector)
-6. Repeat N=100 times with different initial Γ_stable
+**Hypothesis:** E ablation reduces survival more than A ablation in this architecture. A null or reversed effect rejects this registered mechanism; neither outcome proves the universal possibility or impossibility of phenomenal zombies.
 
-**Prediction:** τ_death(E-suppression) << τ_death(A-suppression). E-suppression is catastrophic; A-suppression is not.
+#### Exp. I.2: Certified stability neighborhood (Pred 7) {#exp-1-2}
 
-**Falsification:** τ_death(E) ≥ τ_death(A) at N=100 (p < 0.01, Wilcoxon).
+Fix a stationary point, its vector field and a verified local stability certificate. Perturb through a state-valid map or along explicitly PSD-feasible directions. Compare trajectories to the certified Lyapunov neighborhood and all gate margins. Purity alone does not determine a basin radius; $\sqrt{P-2/7}$ is not the exact radius, and an arbitrary white-noise matrix need not remain PSD.
 
-**Statistical analysis:** Paired Wilcoxon test, effect size r, 95% CI.
+**Check:** every trajectory covered by the certificate obeys its stated bound. Behavior outside the neighborhood tests the chosen global model, not the local theorem's converse.
 
-#### Exp. I.2: Stability radius (Pred 7) {#exp-1-2}
+#### Exp. I.3: Typed information capacity (Pred 8) {#exp-1-3}
 
-**Protocol:**
-1. Bring the agent to a stable state with purity P₀
-2. Apply a perturbation of amplitude h (white noise to Γ)
-3. Continue evolution, increase h in steps of 0.01 until P < P_crit
-4. Record h_crit — the critical amplitude
-5. Repeat for 50 different P₀ ∈ [0.3, 0.9]
+Specify an ensemble encoded into one seven-level quantum state, the allowed POVM and number of independent channel uses. For each use compare accessible mutual information to the Holevo bound $\chi\le\log_2 7$; report estimator bias and confidence intervals.
 
-**Prediction:** h_crit tracks the stability radius r_stab(P₀) ≈ K(√(P₀ − 1/7) − √(1/7)), K ≈ 0.9259, on the one-dominant family (T-104 [C]). *Corrected 2026-09-26:* the prediction read h_crit² = P₀ − 2/7, the refuted closed form of T-104 [✗].
+This bound does not apply merely because a software memory is a $7\times7$ matrix: an exact real-valued feature or parameter can encode arbitrarily many classical bits. A claimed violation requires the same physical encoding and measurement assumptions.
 
-**Falsification:** R² < 0.9 for linear regression of h_crit vs r_stab(P₀) at N=50.
+#### Exp. I.4: Dimension ablation for learning (Pred 10, hypothesis) {#exp-1-4}
 
-#### Exp. I.3: Information capacity (Pred 8) {#exp-1-3}
+Compare registered $N=5$ and $N=7$ learners on held-out binary tasks with matched observations, optimization opportunities and resource budgets. Include valid replacement-channel learners at smaller dimensions as controls. Report accuracy, sample cost and feasibility failures.
 
-**Protocol:**
-1. Γ-native agent in a stable state (P > 2/7), on a binary discrimination task
-2. Measure mutual information I(obs; δΓ) per observation
-3. Repeat N=1000 observations
+T-113 is a hypothesis about this chosen functional architecture. Replacement channels and learning exist already for $N=2$; no universal impossibility for $N<7$ or guaranteed superiority of $N=7$ follows. A preregistered advantage, null effect or reversal concerns the selected task and architecture.
 
-**Prediction:** I ≤ log₂7 ≈ 2.81 bits (T-107).
+#### Exp. I.5: Attenuation and certified depth (Pred 12) {#exp-1-5}
 
-**Falsification:** I > 2.81 bits systematically (>5% of observations).
+For bare Fano iteration verify $S_n=3^{-n}$, where $S_n=\|\operatorname{offdiag}\mathcal P^n\Gamma\|_F/\|\operatorname{offdiag}\Gamma\|_F$ and the initial norm is nonzero. For the specified canonical nonlinear map verify its additional $\prod(1-R)$ factor. Choose a detector floor $\varepsilon$ before computing a detectable depth.
 
-#### Exp. I.4: N=7 minimality for learning (Pred 10) {#exp-1-4}
+The historical stipulated score gives the arithmetic cap three under its own definition; it is not $R$, a survival probability or a universal cognitive ceiling. Test metacognitive probes and tower compatibility separately, as in [T-142](/docs/proofs/consciousness/operational-closure#t-142).
 
-**Protocol:**
-1. Create an agent with N=5 (remove 2 dimensions, e.g. [A,S])
-2. Task: learn binary discrimination via internal regeneration (without external parameter updates)
-3. Metric: achieving >90% accuracy over 50 trials
-4. Control: the same agent with N=7
+#### Exp. I.6: Conditional genesis time (Pred 13) {#exp-1-6}
 
-**Prediction:** N=5 does not learn (accuracy ≤ chance level); N=7 learns (T-113).
+Implement the registered recurrence $\Gamma_{n+1}=\beta\mathcal E_\eta(\Gamma_n)+(1-\beta)\sigma$, $\Gamma_0=I/7$, with constant state $\sigma$, $0<\beta<1$ and depolarizing $\mathcal E_\eta$. Record $r=\beta\eta$, $w=(1-\beta)/(1-r)$ and $h=1/\sqrt{7P(\sigma)-1}$ when $P(\sigma)>2/7$.
 
-**Falsification:** N=5 achieves >75% accuracy (p < 0.01, binomial test).
+**Exact check:** $P_n=1/7+w^2(1-r^n)^2(P(\sigma)-1/7)$. Crossing occurs iff $w>h$; for $0<r<1$ its first tick is $\lfloor\log(1-h/w)/\log r\rfloor+1$. Include the no-crossing control $\beta=0.9$, $\eta=0$, pure $\sigma$. Check the $r=0$ case directly. These are [T-148's](/docs/proofs/consciousness/substrate-closure#t-148) conditional identities. An isolated initial $I/7$ with a unital generator and closed gate stays there; other isolated initial states or self-models need not.
 
-#### Exp. I.5: Self-awareness ceiling SAD=3 (Pred 12) {#exp-1-5}
+#### Exp. I.7: Fixed and co-rotating targets (Pred 14) {#exp-1-7}
 
-**Protocol:**
-1. Agent in the purest possible state (P → 1)
-2. Compute the chain R^(k) for k=0,1,2,3,4
-3. Check: R^(k) ≥ R_th^(k)?
-4. Repeat for 500 random Γ
+Freeze a model, rates and nonzero energy differences; compare fixed and co-rotating targets across independent seeds. In the constant-coefficient scalar equation $\dot\gamma=-(d+a+i\omega)\gamma+a\rho^*$, verify the stationary modulus $a|\rho^*|/\sqrt{(d+a)^2+\omega^2}$ for a fixed target. Then test the specified rotating forcing.
 
-**Prediction:** SAD_max = 3. R^(3) ≥ R_th^(3) is achievable; R^(4) < R_th^(4) always (T-142).
+There is no universal prediction $\Phi(\text{fixed})<1$: the $H=0$ $\varphi_J$ construction has living window states. Observing $\Phi\ge1$ with a fixed target does not refute the conditional scalar formula.
 
-**Falsification:** ∃ Γ: R^(4) ≥ R_th^(4).
+#### Exp. I.8: Critical exponents in a selected potential (Pred 17, preliminary) {#exp-1-8}
 
-#### Exp. I.6: Genesis time (Pred 13) {#exp-1-6}
+Specify the potential, control parameter, equilibrium branch and independently verified symmetry. Sweep the parameter toward the critical point, solve for the branch and fit the independently specified order parameter with finite-window uncertainty. Compare $1/4$, $1/2$ and alternative exponents, including corrections to scaling.
 
-**Protocol:**
-1. Initialise the agent from Γ = I/7 (complete chaos, maximum entropy)
-2. Enable backbone injection with parameters β (coupling strength), P_env (environment purity)
-3. Measure n — number of steps until P > 2/7 (achieving viability)
-4. Compute theoretical n_genesis = ⌈ln Δ / ln(1/β)⌉, where Δ = (P_env − 2/7)/(P_env − 1/7)
-5. Vary β ∈ {0.1, 0.3, 0.5, 0.7, 0.9}, P_env ∈ {0.3, 0.35, 0.4}
+Randomly sampling states with a prescribed purity does not generate an equilibrium critical exponent. The $1/4$ law is conditional on the corresponding symmetric degeneracy; it is not a universal biological prediction and does not establish the PCI exponent. Simulation verifies the chosen model before neurodata are considered.
 
-**Prediction:** n ≤ n_genesis always (T-148). Double falsification: genesis does not occur OR an isolated agent (without backbone) reaches P > 2/7.
+#### Exp. I.9: Calibrated encoder or linear-channel validation (Pred 19) {#exp-1-9}
 
-**Falsification:** n > n_genesis at N=100 runs (>5% of cases).
+Freeze a reference model using calibration data alone. For feature estimators compare held-out observation likelihoods, identifiable targets and reconstruction uncertainty. There is no unique $\pi_{\mathrm{can}}$ and no diamond norm for an arbitrary feature map.
 
-#### Exp. I.7: Phase coherence for integration (Pred 14) {#exp-1-7}
+If the objects are independently defined **linear** channels $M_d\to M_7$, verify PSD and the trace-preserving partial trace of their Choi matrices, then compute or bound their diamond distance using [T-152](/docs/proofs/consciousness/substrate-closure#t-152). Register a tolerance and measurement model before testing; fifty batches do not guarantee convergence or distance below $0.1$.
 
-**Protocol:**
-1. Agent with fixed targets ρ*_ij = const → measure Φ
-2. Switch to co-rotating targets ρ*_ij(t) ∝ e^{−i(E_i−E_j)t} → measure Φ
-3. Repeat N=50 times
+#### Exp. I.10: Learning speed in a specified discrimination model (Pred 9) {#exp-1-10}
 
-**Prediction:** Φ(fixed) < 1; Φ(co-rotating) ≥ 1.
+Register the observation laws, class prior, independence assumptions, allowable tests and held-out success criterion. For quantum i.i.d. binary discrimination compare error to the exact Helstrom value at each feasible $n$. Chernoff gives an asymptotic exponent and a sufficient finite-sample upper-error bound, not the former universal lower sample bound.
 
-**Falsification:** Φ(fixed) ≥ 1.
+For the chosen linear signal accumulator verify its exact crossing time; for the learning dynamics separately certify safety. The maximum of valid necessary bounds remains a lower bound and need not be attained. See [learning bounds](/docs/applied/coherence-cybernetics/learning-bounds).
 
-#### Exp. I.8: Critical exponents in silico (Pred 17, preliminary) {#exp-1-8}
+#### Exp. I.11: Dimension and social learning (Pred 11, hypothesis) {#exp-1-11}
 
-**Protocol:**
-1. Monte Carlo simulation: 10⁴ random Γ with P ∈ [0.2, 0.5]
-2. For each: compute the order parameter (PCI analogue) and distance to P_crit
-3. Fit: OP ~ (P − P_crit)^β
+Compare $N=5$ and $N=7$ agents on separately operationalized ToM, inter-agent learning and strategic coordination tasks. Freeze evaluation data and success criteria; match communication, memory and training budgets, and report effect sizes with multiplicity control.
 
-**Prediction:** β = 1/4 ± 0.05 (T-161, [C] at the ℤ₂ symmetry m → −m; without it the swallowtail value β = 1/2).
-
-**Falsification:** β ∉ [0.20, 0.30] at N=10⁴.
-
-**Significance:** If in silico confirms β=1/4, we proceed to the neuroexperiment (Phase II) with high confidence.
-
-#### Exp. I.9: CPTP anchor (Pred 19) {#exp-1-9}
-
-**Protocol:**
-1. Γ-native agent on a standard language corpus, 50 training batches
-2. Measure ||π − π_can||_◊ after each batch (π — current anchor, π_can — canonical projection)
-
-**Prediction:** ||π − π_can||_◊ < 0.1 at convergence.
-
-**Falsification:** ||π − π_can||_◊ > 0.1 at n > 50 batches.
-
-#### Exp. I.10: Learning speed (Pred 9) {#exp-1-10}
-
-**Protocol:**
-1. Agent on a binary discrimination task, vary SNR and α
-2. Measure n until >90% accuracy over 50 trials
-3. Compute n_opt = max(n_info, n_dyn, n_stab)
-
-**Prediction:** n ≥ n_opt always; at optimal parameters n ≈ n_opt (T-112).
-
-**Falsification:** n < n_info systematically (>5% of cases).
-
-#### Exp. I.11: N=7 for social learning (Pred 11) {#exp-1-11}
-
-**Protocol:**
-1. Environment with K=2 Γ-native agents, N=5 dimensions each
-2. Coordination task requiring: Theory of Mind (ToM) + inter-agent learning (ISL) + strategic equilibrium (Nash)
-3. Metric: achieving coordinated behaviour (>70% optimality) within 1000 steps
-4. Control: the same agents with N=7
-
-**Prediction:** N=5 learns individually, but social learning (ToM + ISL + Nash simultaneously) does not emerge. N=7 — it does (T-57, T-113, T-114).
-
-**Falsification:** N=5 demonstrates simultaneous ToM + ISL + Nash coordination (p < 0.01).
+A possible seven-dimensional advantage is a testable architecture hypothesis. The withdrawn universal T-57 and the functional count in T-113 do not prohibit smaller learners, an additional mechanism or a fourth operator term. Success by $N=5$ rejects a registered impossibility hypothesis, not a valid mathematical theorem. An $N=7$ success does not prove universal sufficiency.
 
 ### 2.4. Criterion for transition to Phase II
 
-**All 11 Phase I experiments confirmed** → proceed to neurodata.
-
-**≥1 falsified at level L1 or L2** → stop, revise theory, rerun after correction.
-
-**≥1 falsified at level L3** → local correction, proceed to Phase II with caveat.
+Proceed when the implementation's exact checks pass, the observation model is identifiable for the proposed targets, and the registered architecture tests and resource controls have been reported. Numerical identities, empirical hypotheses and phenomenal interpretations require separate verdicts. Revise any failed hypothesis before transferring it to neurodata; do not demand that every speculative prediction be confirmed to make a mathematical identity valid.
 
 ---
 
@@ -226,70 +147,60 @@ Any implementation used for Phase I must satisfy:
 
 Central task: build the bridge **π_bio: (EEG, fMRI, HRV) → Γ ∈ D(ℂ⁷)** and test the theoretical threshold P_crit = 2/7 out of sample: with π_bio frozen on wakefulness, P̂ at the report-defined loss of consciousness against 2/7, and the verdict Cons(Γ̂) against the independently validated PCI verdict PCI_max > 0.31 by Cohen's κ (P8.4). *(Until 2026-09-26: "verify that P_crit = 2/7 coincides with the empirical PCI* = 0.31" — a comparison of unrelated scales.)*
 
-### 3.1b. Formal Definition of π_bio [H → T upon calibration] {#pi-bio-definition}
+### 3.1b. Formal definition and identification of π_bio [D/H] {#pi-bio-definition}
 
-:::warning Definition (Neural anchor map π_bio)
-The **neural anchor map** is a CPTP channel:
-
-$$
-\pi_{\text{bio}}: \mathcal{O}_{\text{neural}} \to \mathcal{D}(\mathbb{C}^7)
-$$
-
-where $\mathcal{O}_{\text{neural}} = \mathbb{R}^d$ is the space of neural observables (power spectral densities, TMS-evoked potentials, functional connectivity, autonomic indices). The map is defined by the following construction.
+:::info Definition (calibrated neural state estimator)
+A neural encoder $\hat\pi_\theta:\mathcal O_{\mathrm{neural}}\to\mathsf D_7$ is a declared **state estimator**, or a set-valued reconstruction when data are incomplete. Its observation model $\mathsf O_\theta:\mathsf D_7\to\mathcal P(\mathcal O_{\mathrm{neural}})$, calibration $\theta$, functional frame and admissible states are part of the instrument. Softmax and normalized Cholesky guarantee valid output states under their domain conditions; they do not make this nonlinear feature map a CPTP channel. [Definitions and inverse-problem theorems](/docs/applied/research/reconstruction-identifiability).
 :::
 
-**Construction (4 steps).**
+**Construction and obligations (4 steps).**
 
-**Step 1 (Seven canonical observables).** Extract from neural data the 7 diagonal projections $\hat{\gamma}_{kk}$ corresponding to the 7 UHM dimensions via the following operationalization:
+**Step 1 (Declared candidate features [H]).** Pre-register a feature dictionary. The functional-feature version below and the spectral-band version in the [measurement protocol](/docs/applied/research/measurement-protocol#шаг-1-диагональ) are **different candidate encoders**; select one before inspecting outcomes and use the other only as a registered comparator.
 
-| Dimension | Neural observable | Extraction |
-|-----------|------------------|------------|
-| A (Articulation) | Spectral edge frequency (95th percentile) | EEG power spectrum |
-| S (Structure) | Long-range temporal correlations (DFA exponent) | EEG time series |
-| D (Dynamics) | Permutation entropy | EEG complexity |
-| L (Logic) | Cross-frequency coupling (theta-gamma PAC) | Phase-amplitude coupling |
-| E (Interiority) | PCI (perturbational complexity index) | TMS-EEG |
-| O (Ground) | Heart rate variability (RMSSD) | ECG/HRV |
-| U (Unity) | Global functional connectivity (mean PLI) | EEG connectivity |
+| Dimension | Candidate neural feature | Extraction |
+|-----------|-------------------------|------------|
+| A | Spectral edge frequency | EEG spectrum, declared band |
+| S | Long-range temporal correlation | DFA with declared scales |
+| D | Permutation entropy | Fixed order, lag and epoch length |
+| L | Theta-gamma PAC | Declared phase/amplitude estimator |
+| E | Non-PCI interiority proxy | Pre-registered independent feature |
+| O | HRV RMSSD | Simultaneous ECG and fixed window |
+| U | Global connectivity | Declared estimator, channel selection and reference |
 
-*In the confirmatory concordance run (SUB-5) PCI is removed from the feature set and E is read from a pre-registered non-PCI observable: with PCI as an input, the agreement of Cons(Γ̂) with the PCI verdict would be partly by construction.*
+PCI, reaction times and reports are excluded from confirmatory prediction inputs (SUB-3/SUB-5). Assigning a label to a feature does not prove that it observes that axis of $\Gamma$; the feature-to-state bridge remains [H].
 
-**Step 2 (Normalization to density matrix diagonal).** Apply softmax normalization to ensure $\sum_k \hat{\gamma}_{kk} = 1$ and $\hat{\gamma}_{kk} > 0$:
-
-$$
-\gamma_{kk} = \frac{\exp(\beta \cdot z_k)}{\sum_{j=1}^{7} \exp(\beta \cdot z_j)}, \quad z_k = \frac{x_k - \mu_k}{\sigma_k}
-$$
-
-where $x_k$ is the raw observable, $\mu_k, \sigma_k$ are population mean and standard deviation (from calibration cohort), and $\beta > 0$ is a temperature parameter fixed, together with $\mu_k, \sigma_k$, on wakefulness sessions only ([SUB-1](/docs/applied/research/measurement-protocol#substitution-position)); no sleep, anaesthesia or disorder-of-consciousness label enters the fit. *(Until 2026-09-26 $\beta$ was "calibrated to match the empirical PCI* = 0.31 ↔ P_crit = 2/7": a $\beta$ tuned so that $P$ crosses 2/7 where PCI crosses 0.31 puts the tested coincidence into the estimator.)*
-
-**Step 3 (Off-diagonal coherences via Cholesky).** Reconstruct off-diagonal elements from pairwise neural correlations:
+**Step 2 (Frozen normalization [D/H]).** One candidate diagonal convention is
 
 $$
-|\gamma_{ij}| = \sqrt{\mathrm{Coh}_{ij}^{\text{neural}}} \cdot \sqrt{\gamma_{ii} \gamma_{jj}}, \quad \arg(\gamma_{ij}) = \phi_{ij}^{\text{PLV}}
+\gamma_{kk}=\frac{\exp(\beta z_k)}{\sum_j\exp(\beta z_j)},\qquad z_k=(x_k-\mu_k)/\sigma_k.
 $$
 
-where $\mathrm{Coh}_{ij}^{\text{neural}}$ is the magnitude-squared coherence between observables $i$ and $j$ (from cross-spectral density), and $\phi_{ij}^{\text{PLV}}$ is the phase-locking value between the corresponding neural signals. Regularize via Cholesky decomposition: $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ to ensure positivity and unit trace.
+Require $\sigma_k>0$, predeclare treatment of constant or missing features, and use a stable softmax implementation. Fix $\beta,\mu_k,\sigma_k$ and all alternatives on the wakefulness reference ensemble (SUB-1), without tuning purity to $2/7$ or agreement to PCI. This defines an encoder convention; it is not an identification theorem about the system's state.
 
-**Step 4 (G₂-covariant Procrustes alignment).** By T-123 [T], the representation is unique up to $G_2$. Fix the $G_2$ gauge freedom by aligning the reconstructed $\Gamma$ to a canonical reference via:
+**Step 3 (Complex observations and PSD reconstruction).** A proposed magnitude relation
 
 $$
-\Gamma_{\text{aligned}} = \arg\min_{g \in G_2} \| g\Gamma g^\dagger - \Gamma_{\text{ref}} \|_F
+|\gamma_{ij}|=\sqrt{\mathrm{Coh}_{ij}^{\mathrm{neural}}}\sqrt{\gamma_{ii}\gamma_{jj}}
 $$
 
-where $\Gamma_{\text{ref}}$ is the population-average $\Gamma$ from the wakefulness baseline of the calibration cohort. This is a Procrustes problem on the $G_2$ manifold, solvable by gradient descent on the 14-dimensional Lie group (standard Riemannian optimization).
+is a calibrated hypothesis, with $0\leq\mathrm{Coh}_{ij}^{\mathrm{neural}}\leq1$. It enforces only the pairwise $2\times2$ PSD bounds; the assembled matrix need not be globally PSD. The phase-locking **value** is a real magnitude. A signed phase requires the complex mean $z_{ij}=\langle e^{i(\phi_i-\phi_j)}\rangle$ and a declared, calibrated link to $\arg\gamma_{ij}$. Cross-frequency pairs require their actual harmonic convention. Real PLV, magnitude data and $|\sin\theta_{ij}|$ cannot substitute for complex observations [counterexamples](/docs/applied/research/reconstruction-identifiability#phase-counterexamples).
+
+Fit the frozen observation law with $\Gamma\succeq0$, $\operatorname{Tr}\Gamma=1$. Linear Hermitian means with known positive covariance yield a convex problem and are unique if their projected operators span all 48 traceless Hermitian directions. Nonlinear models require separate local/global identification analysis. Publish residuals, calibration uncertainty and confidence sets. Missing signed phases remain unresolved; do not silently set them to zero. In confirmation, $\lambda_1=\lambda_2=0$ (SUB-2).
+
+**Step 4 (Fixed frame, identification and readout).** Freeze the seven labels, $E$-axis, timing and phase references. Derive residual equivalence from the observation design; an arbitrary $G_2$ Procrustes alignment to the wakefulness mean can change $\Phi$ and does not prove covariance or uniqueness. It is removed from the reference protocol. Report target ranges over compatible states and a determinate verdict only when the full predicate is constant over the confidence set. Any extension/lift used for $D$ must also be predeclared and included in its uncertainty.
 
 **Properties of π_bio.**
 
-| Property | Status | Justification |
-|----------|--------|---------------|
-| CPTP | [T] | Softmax + Cholesky → positive, trace-preserving; composition of CPTP channels is CPTP |
-| $G_2$-covariant | [T] | Step 4 Procrustes alignment |
-| Unique up to $G_2$ | [T] | T-123 |
-| Calibratable | [H] | $\beta, \mu_k, \sigma_k$ fixed on wakefulness only (SUB-1); never fitted to a PCI* ↔ P_crit match |
+| Property | Status | Condition |
+|----------|--------|-----------|
+| Output PSD and trace one | [T] | Explicit state constraints, valid solver output |
+| Full-state identification | [T] conditional | Injective observation law; linear frame criterion ID-2 or separate proof |
+| Stability | [T] conditional | Positive smallest singular value/local conditioning; quantified uncertainty |
+| Covariance/residual symmetry | [H] until checked | Actual feature action and observation law, not Procrustes alone |
+| Empirical neural interpretation | [H] | Independent calibration and held-out validation |
+| CPTP | Not asserted | Nonlinear estimator on feature vectors is not a linear operator channel |
 
-**Status:** The construction is **formally well-defined** [T] (Steps 1-4 are explicit CPTP operations). The **calibration** (choice of $\beta$ and population norms $\mu_k, \sigma_k$) is empirical [H] — it is fixed on the wakefulness baseline before any test session is seen, and the Phase II experiment (§3.3) tests it out of sample. After calibration, π_bio becomes a validated measurement instrument [T].
-
-**Falsification criterion:** With $\beta, \mu_k, \sigma_k$ frozen on wakefulness, if $P_{\text{boundary}}$ at the report-defined boundary differs from $2/7$ by more than 0.1 (p < 0.01), or the concordance with the PCI verdict gives κ < 0.4, π_bio is falsified in its current form. *(Until 2026-09-26 the criterion asked whether "a value of $\beta$ exists such that $P_{\text{boundary}} = 2/7 \pm 0.05$" — a search over $\beta$ that places the threshold cannot fail.)* This does not falsify UHM — only this specific operationalization. Alternative operationalizations (different neural observables, different normalization) would be explored.
+Calibration alone does not validate an instrument. A successful held-out test supports the **joint registered observation/threshold hypothesis**. It does not prove the ontological identity of the reconstructed state or uniqueness among alternative encoders. A failed test rejects that joint specification; subsequent alternatives must be registered prospectively and reported alongside the failure rather than retroactively replacing the tested instrument. Apply [ID-A … ID-D](/docs/applied/research/reconstruction-identifiability#confirmatory) in addition to SUB-1 … SUB-6.
 
 ### 3.2. Equipment
 
@@ -307,7 +218,7 @@ where $\Gamma_{\text{ref}}$ is the population-average $\Gamma$ from the wakefuln
 ### 3.3. Experiment II.1: the threshold P_crit out of sample, concordance with PCI* (key experiment) {#exp-2-1}
 
 :::warning This is the most important experiment of the entire protocol
-If, with π_bio frozen on wakefulness, P̂ at the report-defined consciousness/unconsciousness boundary = 2/7 ± 0.05 and the UHM verdict agrees with the PCI verdict at κ ≥ 0.8, UHM receives its first empirical confirmation of a numerical prediction. If not — the theory requires fundamental revision.
+If, with π_bio frozen on wakefulness, P̂ at the report-defined consciousness/unconsciousness boundary = 2/7 ± 0.05 and the UHM verdict agrees with the PCI verdict at κ ≥ 0.8, the registered observation/threshold package receives empirical support subject to identification and the statistical criterion below. Failure requires revision of that package; an inconclusive outcome is not confirmation.
 :::
 
 **Subjects:** N=50, healthy, 18–45 years, no neurological/psychiatric pathology.
@@ -336,9 +247,9 @@ If, with π_bio frozen on wakefulness, P̂ at the report-defined consciousness/u
 
 4. **Γ reconstruction:**
    - Apply π_bio to EEG data at each level
-   - π_bio algorithm: 7 metrics → Γ diagonal → Cholesky regularisation (see [Γ measurement protocol](/docs/applied/research/measurement-protocol))
-   - Parameters $\beta, \mu_k, \sigma_k$ frozen on the wakefulness baseline ([SUB-1](/docs/applied/research/measurement-protocol#substitution-position)); $\lambda_2 = 0$ (SUB-2); E from a non-PCI observable
-   - Compute P = Tr(Γ²) and Cons(Γ̂) at each level
+   - π_bio algorithm: frozen observation model → PSD/trace constraints → compatible set and target ranges (see [Γ measurement protocol](/docs/applied/research/measurement-protocol))
+   - Parameters $\beta, \mu_k, \sigma_k$ frozen on the wakefulness baseline ([SUB-1](/docs/applied/research/measurement-protocol#substitution-position)); $\lambda_1 = \lambda_2 = 0$ (SUB-2); E from a non-PCI observable
+   - Compute ranges of P = Tr(Γ²) and Cons(Γ) over the confidence set at each level; report an ambiguous verdict as undetermined
 
 5. **Readout (no fitting):**
    - Plot P(Ce) dependence for all 50 subjects
@@ -348,19 +259,15 @@ If, with π_bio frozen on wakefulness, P̂ at the report-defined consciousness/u
    - At each level, Cons(Γ̂) and PCI_max > 0.31 computed independently
    - Cohen's κ over all 300 sessions (50 subjects × baseline + 5 levels); κ ≥ 0.8 corroborates, κ < 0.4 falsifies; raw agreement is not the measure
 
-**Statistical plan:**
-- Primary outcome: P_boundary (mean ± SD across 50 subjects)
-- Secondary outcome: Cohen's κ between Cons(Γ̂) and the PCI verdict (step 6)
-- H₀: P_boundary = 2/7 ≈ 0.286
-- H₁: |P_boundary − 2/7| > 0.05
-- Test: one-sample t-test, α = 0.01
-- Power analysis: at SD = 0.06, N=50 provides power >0.95 for detecting a deviation of 0.05
+**Statistical and identification plan:**
+- Publish subject-level train/test separation; six sessions from one subject are dependent, not six independent subjects. Freeze all estimator and endpoint choices before outcome disclosure.
+- Primary target: the population mean reconstructed purity at the **response-defined** boundary, with uncertainty from the observation model and subject-level sampling. Loss of verbal/IFT response is an inference proxy, not proof of absent experience; delayed reports and endpoint adjudication are recorded separately.
+- Equivalence margin: $\delta=0.05$ around $2/7$, predeclared [H]. Corroboration requires the appropriately calibrated 98% confidence interval to lie **entirely inside** $[2/7-\delta,2/7+\delta]$ (two one-sided tests at $\alpha=0.01$ under their assumptions). Merely failing to reject equality, or having an interval that includes $2/7$, does not establish equivalence. See [Schuirmann (1987), the original TOST and $1-2\alpha$ confidence-interval result](https://doi.org/10.1007/BF01068419).
+- Rejection at the larger predeclared margin $0.1$ requires the 98% interval to lie entirely above $2/7+0.1$ or below $2/7-0.1$. Intermediate outcomes are inconclusive. Point estimates alone cannot decide these rules.
+- Secondary target: Cohen's $\kappa$ between the independently computed verdicts. Obtain uncertainty by a subject-level procedure that respects repeated sessions. Predeclare treatment of undetermined UHM verdicts, report their rate and sensitivity bounds; do not drop them to improve agreement. $\kappa\geq0.8$ and $\kappa<0.4$ are registered empirical thresholds [H], with an inconclusive middle region.
+- Recompute power and sample size for the selected equivalence/rejection procedures using pilot noise, calibration uncertainty and repeated-measures structure. The former one-sample equality test and asserted power calculation did not match the equivalence claim and are withdrawn.
 
-**Falsification:** |P_boundary − 2/7| > 0.1 at N=50 (p < 0.01, two-sided t-test).
-
-**Confirmation:** |P_boundary − 2/7| ≤ 0.05 (95% CI includes 2/7).
-
-**Ethics:** IRB/ethics committee approval. Propofol is a standard anaesthetic. Subjects: informed consent, anaesthesiologist monitoring, contraindication exclusion.
+These outcomes test the registered encoder/observation/threshold package. Structural identification diagnostics and classifier agreement are reported separately. Successful classification alone does not establish consciousness ontology.
 
 ### 3.4. Experiment II.2: Critical exponents (the riskiest) {#exp-2-2}
 
@@ -457,9 +364,9 @@ This is the **first ever** test of critical exponents of a phase transition for 
 2. At 3 months: assess recovery (Barthel Index, mRS)
 3. Correlate Coh_E(t₀) vs recovery rate
 
-**Prediction:** r > 0.3 (Pearson) between Coh_E and recovery rate (T-38a).
+**Proposed association [H/Pr]:** a prespecified Pearson correlation target $r>0.3$ between a calibrated baseline $\widehat{\mathrm{Coh}}_E$ and independently defined recovery rate. This is an investigator-selected effect target, not a consequence of T-38a. Freeze the estimator, outcome, confounder adjustment and missing-data rule before testing.
 
-**Falsification:** r ≤ 0 (zero or negative correlation) at N=60 (p < 0.05).
+**Decision rule [Pr]:** preregister a confidence interval and power calculation for the specified population correlation. Corroborate the $r>0.3$ target only if the lower interval bound exceeds $0.3$; reject that target if the upper bound is at most $0.3$; otherwise report inconclusive. A sample size of 60 alone guarantees neither result. This tests the association/measurement bridge, not a mathematical no-zombie theorem.
 
 ### 4.3. Experiment III.3: Attractor inside the window (Pred 15) {#exp-3-3}
 
@@ -578,10 +485,10 @@ The Cogitate Consortium's adversarial collaboration, funded by the Templeton Wor
 | Numerical threshold | Φ > 0 (no number) | None | None | P_crit = 2/7 |
 | Critical exponents | None | None | None | α=1/2, β=1/4, γ=1, ν=1/2, δ=5 |
 | Computability of Φ | NP-hard for >30 elements | N/A | N/A | P = Tr(Γ²), O(49) |
-| Number of free parameters | ~10³⁸ (all partitions) | Undefined | Undefined | 48 — all parameters of Γ are physical; 34 = 48 − 14 counts only the kinematic G₂-invariants (frame decision D-0910) |
+| Number of free parameters | ~10³⁸ (all partitions) | Undefined | Undefined | 48 state coordinates plus separately declared observation, calibration and dynamic parameters; these are different counts |
 | Riskiest test | No single number | "Ignition" (qualitative) | "Meta-cognition" (qualitative) | **β = 1/4** (one number, falsifiable) |
 
-UHM addresses the ConTraSt critique (Yaron et al. 2022): methodological choice does not predetermine the result, because predictions are **numerical**, not qualitative. β=1/4 will either be confirmed or not — regardless of paradigm.
+A numerical prediction is not immune to methodological choices. The encoder, normalization, state-identification assumptions, exponent-fit range and endpoint definition must all be frozen and compared with controls before testing. Only that specified experiment can distinguish a prediction from a result introduced by analysis choices.
 
 ---
 

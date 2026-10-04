@@ -1,46 +1,25 @@
 ---
 sidebar_position: 4
 title: "Pathology of Consciousness"
-description: "Pathological states as specific Gap-profiles: alexithymia, neurosis, impulsivity, existential crisis, depression, psychosis"
+description: "Conditional matrix models and identifiability of clinical research features; hypotheses and validation requirements"
 slug: /consciousness/states/pathological
 ---
 
 # Pathology of Consciousness
 
-:::info Bridge from the previous chapter
-In [Attention and Memory](/docs/consciousness/states/attention-memory) we examined the *normal* mechanisms of coherence control: attention as a 'spotlight', memory as the kernel $K(\tau)$, forgetting as decoherence. Now we ask: **what happens when these mechanisms malfunction?** When certain channels get 'stuck' in an opaque state ($\mathrm{Gap} \to 1$), or conversely, all channels suddenly become transparent? Each pathology is not a 'breakdown', but a **specific Gap-profile**: a configuration of $\Gamma$ amenable to formal description and — potentially — targeted correction.
+This chapter proposes a research vocabulary for relating independently assessed clinical phenomena to a declared matrix model. A clinical category is not a Gap-profile by definition. Candidate correspondences have status **[H/I]** and require validation; mathematical constraints on matrices have status **[T]**.
+
+:::note Typed statistics and observations
+In a fixed native frame, $P=\mathrm{Tr}\Gamma^2$, $Q=\sum_i\gamma_{ii}^2$, $\Phi=P/Q-1$ and $R=1/(7P)$. For nonzero entries, $G_{ij}=|\sin\arg\gamma_{ij}|$ records an unoriented phase statistic. A zero entry has undefined phase. For a specified numerical self-model $M$, $R_M=1-\|\Gamma-M\Gamma\|_F^2/P$ can be negative and differs from $R$. The chosen capability gate $\mathrm{Cap}_2$ includes $P,R,\Phi$ and a separately typed differentiation certificate. Its relation to consciousness is a bridge hypothesis; the value $2/7$ is not a clinical survival cutoff. See the [mathematical kernel](/docs/reference/mathematical-kernel).
 :::
 
-:::note On notation
-In this document:
-- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — its elements
-- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — [gap measure](/docs/core/dynamics/gap-operator#определение)
-- $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты)
-- $P_{\text{crit}} = 2/7$ — [viability threshold](/docs/core/dynamics/viability) **[T]**
-- $R_\varphi$ — reflection as **self-model quality** $\in [0,1]$, working threshold $R_{\varphi,\text{th}} = 1/3$ **[I]**; distinct from the canonical $R = 1/(7P)$ — see [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)
-- $\overline{\mathrm{Gap}} = \frac{1}{21}\sum_{i<j} \mathrm{Gap}(i,j)$ — mean Gap
-- L0–L4 — [levels of interiority](/docs/consciousness/hierarchy/interiority-hierarchy)
-- Full notation table — see [Notation](/docs/reference/notation)
-:::
-
-:::warning Document status
-All material in this document has status **[I]** — interpretation/application. Pathology of consciousness is an operationalisation of the [Gap-diagnostics](/docs/applied/research/gap-diagnostics) formalism; empirical validation requires a separate [research programme](/docs/applied/research/measurement-protocol). Mathematical definitions of Gap-profiles — **[D]**; identification with clinical categories — **[I]**.
+:::warning Research scope
+Neither Gap, purity, self-model score nor capability labels diagnose a disorder, determine its severity, or prescribe an intervention. The programme below requires independent clinical labels, a validated observation model, uncertainty estimates and held-out outcomes. It withdraws the previous diagnostic equivalences, universal three-opaque-channel rule and score-derived therapeutic times or targets.
 :::
 
 ### Chapter roadmap
 
-1. **Historical perspective** — from Kraepelin through DSM to RDoC and UHM
-2. **Pathological Gap-patterns** — six clinical categories
-3. **Summary table** — all pathologies in a single table
-4. **Correspondence of Gap-patterns to DSM-5** — translation of the formalism
-5. **Diagnostic protocol** — how to distinguish pathologies by Gap-profile
-6. **Comorbidity** — superposition of Gap-patterns
-7. **Corrective strategies** — therapy as targeted Gap-reduction
-8. **Dynamics of transitions** — bifurcations of entry/exit from pathology
-9. **Pathology space** — mermaid visualisation
-10. **Phase diagram** — where pathologies are located
-
----
+Historical frameworks; candidate feature mappings; statistical identifiability; joint phenomena; intervention study design; conditional dynamics and coding theory.
 
 ## 1. Historical perspective {#история}
 
@@ -50,7 +29,7 @@ Kraepelin — the father of nosological psychiatry. His key idea: mental disease
 - **Dementia praecox** (schizophrenia) — progressive deterioration
 - **Manic-depressive psychosis** (bipolar disorder) — cyclical course
 
-In the UHM formalism: schizophrenia — *monotone* decrease in the number of functional channels ($|\{(i,j): \mathrm{Gap} > \varepsilon_{\text{noise}}\}| \downarrow$); bipolar disorder — *oscillations* of $P(\tau)$ (Hopf bifurcation).
+The proposed relation between longitudinal clinical course and matrix dynamics is a hypothesis [H]; neither monotone channel loss nor a Hopf model follows from the classification.
 
 ### 1.2 DSM: categorical approach (1952–2013)
 
@@ -69,600 +48,169 @@ Research Domain Criteria (RDoC) — an initiative of the NIMH (National Institut
 
 ### 1.4 From RDoC to UHM
 
-| Classical approach | UHM formalism |
-|---------------------|---------------|
-| DSM category (yes/no) | Gap-profile (continuous vector) |
-| RDoC domain | Specific channel $\mathrm{Gap}(i,j)$ |
-| Comorbidity | Superposition of Gap-patterns |
-| Severity | Amplitude of Gap-deviation from norm |
-| Course (Kraepelin) | Trajectory $\Gamma(\tau)$ |
-| Therapy | Targeted Gap-reduction |
-
-UHM combines the strengths of all three approaches: Kraepelinian nosological specificity (specific Gap-patterns), DSM operationality (numerical thresholds), RDoC dimensionality (continuous parameters).
-
----
-
-Pathological states of consciousness are not 'breakdowns' of the mechanism, but **specific Gap-profiles**: configurations of the coherence matrix $\Gamma$ in which certain channels are anomalously opaque ($\mathrm{Gap} \to 1$) or anomalously transparent ($\mathrm{Gap} \to 0$). This document extends [Gap-diagnostics](/docs/applied/research/gap-diagnostics) with a systematic analysis of pathological patterns.
-
-**Everyday analogy.** Healthy consciousness — like a house with windows of varying transparency: some are wide open, some are closed, but all are functional. Pathology — when certain windows get 'stuck': the emotion window permanently plastered shut (alexithymia), all windows flung open at once (psychosis), or when the whole house slowly sinks toward the foundation (depression at $P \to P_{\text{crit}}$).
-
----
+A dimensional observation model can compare clinical descriptions with estimated features of $\Gamma$ **[H]**. RDoC domains do not canonically equal matrix axes or pairwise phases; DSM labels do not supply a matrix reconstruction. Course is modeled by longitudinal data, not by an assumed universal bifurcation. The useful research question is whether a fixed encoder and its uncertainty-aware features add predictive value beyond independently measured baselines on held-out data.
 
 ## 2. Pathological Gap-patterns {#паттерны}
 
+The following are proposed feature associations **[H]**, not definitions of the named conditions. They can overlap, fail to replicate or depend on the encoder. Each needs an independent target and a comparison model. The entries of a density matrix must jointly satisfy positivity; an arbitrary list of Gap values is not a certified state.
+
 ### 2.1 Alexithymia {#алекситимия}
 
-:::info Definition (Alexithymia) [I]
-**Alexithymia** (from Greek *a-lexis-thymos* — 'without words for feelings') — the inability to identify and verbalise emotions. Gap-profile:
-
-$$
-\mathrm{Gap}(L,E) \to 1, \quad \mathrm{Gap}(A,E) \to 1
-$$
-
-Both channels — logic–experience and attention–experience — are opaque. The subject can neither **notice** ($A$) nor **understand** ($L$) their own experiences ($E$).
-:::
-
-**Motivation for the definition.** Why exactly two channels, and not one? Alexithymia is a *double* deficit: (1) the person does not notice the emotion (Gap(A,E) is high — Jung's 'shadow') and (2) cannot verbalise it (Gap(L,E) is high — Freud's 'repression'). If only Gap(L,E) were high, the subject would notice the emotion but could not name it — that would be 'mild alexithymia'. Full alexithymia = double opacity.
-
-Additional feature: $|\gamma_{SE}|$ can be high ($\mathrm{Gap}(S,E) < 1$) — the body 'feels', but the experience is neither registered by attention nor processed by logic. This explains *somatisation* in alexithymia: the experience 'bypasses' consciousness and manifests in the body (pain, fatigue, tension without a consciously felt emotion).
-
-**Numerical example.** Full Gap-profile of a patient with alexithymia (E-sector channels):
-
-| Channel | $\|\gamma_{ij}\|$ | $\mathrm{Gap}(i,j)$ | Interpretation |
-|-------|:---:|:---:|:---|
-| $(L,E)$ | $0.15$ | $0.95$ | Cannot name the feeling |
-| $(A,E)$ | $0.10$ | $0.88$ | Does not notice the feeling |
-| $(S,E)$ | $0.12$ | $0.20$ | Body responds (increased heart rate, sweating) |
-| $(D,E)$ | $0.18$ | $0.30$ | Emotion is active, partially manifests |
-| $(O,E)$ | $0.05$ | $0.45$ | Connection to ground is weakened |
-| $(U,E)$ | $0.07$ | $0.40$ | Integration is moderate |
-
-To the question 'what do you feel?' the patient answers: 'my pulse quickens' (body channel $S \to E$ is transparent), not 'I am afraid' (logic channel $L \to E$ is opaque).
-
-**DSM-5 correspondence.** Alexithymia is not a separate DSM-5 diagnosis, but is present as a trait in: somatic symptom disorders (F45), autism spectrum disorders (F84), post-traumatic stress disorder (F43.1).
-
-Comparison with [the alexithymia model in Gap-dynamics](/docs/core/dynamics/gap-dynamics#модельные-системы): that model considered a simplified one-channel (S,E) case; here — an extended model with two opaque channels.
+**Candidate [H].** Test whether independently assessed difficulty identifying or verbalising emotions covaries with selected features such as $G_{AE}$ or $G_{LE}$. High phase Gap does not mathematically imply inability to notice, name or experience an emotion, and does not establish a two-channel clinical definition. Include amplitudes, task responses and uncertainty rather than assigning an illustrative patient a fabricated full profile. See [Gap-diagnostics](/docs/applied/research/gap-diagnostics).
 
 ### 2.2 Split neurosis (dissociation) {#невроз}
 
-:::info Definition (Dissociation) [I]
-**Split neurosis** — dissociation **within** the E-dimension. Gap-profile:
-
-$$
-\mathrm{Gap}(E_1, E_2) \to 1 \quad \text{within the E-sector}
-$$
-
-Formally: if the E-dimension is decomposed into subspaces $E = E_1 \oplus E_2$, then the coherences between them are opaque. The subject possesses two 'islands' of experience, unconnected to each other.
-:::
-
-In the 7-dimensional model without subspace decomposition, dissociation manifests as:
-
-$$
-\mathrm{Gap}(S,E) \to 1, \quad \mathrm{Gap}(D,E) \approx 0 \quad \text{(or vice versa)}
-$$
-
-— different aspects of experience (somatic vs. dynamic) are isolated from each other through differing transparency relative to E.
-
-**Numerical example.** Patient with dissociative disorder (depersonalisation):
-
-| Channel | Normal $\mathrm{Gap}$ | Dissociation $\mathrm{Gap}$ | Difference |
-|-------|:---:|:---:|:---|
-| $(S,E)$ | $0.20$ | $0.90$ | Body 'is not felt' |
-| $(D,E)$ | $0.25$ | $0.15$ | Emotions 'work' |
-| $(A,E)$ | $0.20$ | $0.30$ | Attention moderately reduced |
-| $(L,E)$ | $0.25$ | $0.25$ | Logic preserved |
-
-Subjectively: 'I see my hands, but they are not mine', 'I understand that I am happy, but I don't feel it in my body'. The body channel $(S,E)$ is blocked, the emotional channel $(D,E)$ is preserved — the 'islands' of experience are not connected.
-
-**DSM-5 correspondence.** Dissociative disorders (F44): depersonalisation/derealisation (F48.1), dissociative identity disorder (F44.81), dissociative amnesia (F44.0).
-
-**Analogy.** Dissociation — like a house divided by a wall: the left half knows about itself, the right — about itself, but they do not know about each other. One 'island' of experience may be emotionally rich ($\mathrm{Gap}(D,E) \approx 0$), and another — somatically aware ($\mathrm{Gap}(S,E) \approx 0$), but between them — a wall (Gap between these aspects $\to 1$).
+**Candidate [H].** A proposed dissociation model compares independently assessed discontinuities of access or report with features of a declared experiential extension. In minimal $\mathbb C^7$, the basis axis $E$ is one-dimensional: writing $E=E_1\oplus E_2$ does not create two nonzero subspaces. A richer $\mathcal H_E$, its normalized state and its readout must be supplied first. Contrasting $G_{SE}$ and $G_{DE}$ can be a proxy hypothesis; it is not equivalent to internal decomposition or a diagnosis.
 
 ### 2.3 Impulsivity {#импульсивность}
 
-:::info Definition (Impulsivity) [I]
-**Impulsivity** — action without logical processing. Gap-profile:
-
-$$
-\mathrm{Gap}(L,D) \to 1
-$$
-
-The logic–dynamics channel is opaque: dynamic processes ($D$) proceed without logical governance ($L$). At the same time $\mathrm{Gap}(D,E)$ may be low — the subject **feels** the impulse but cannot **evaluate** it.
-:::
-
-Additional characteristic:
-
-$$
-|\gamma_{DL}| > 0, \quad \arg(\gamma_{DL}) \approx \pi/2
-$$
-
-The connection between dynamics and logic **exists** (strong coherence $|\gamma_{DL}| > 0$), but is purely imaginary — the phase $\approx \pi/2$ means maximum gap between the 'external' (observed behaviour) and the 'internal' (logical evaluation). This is the key insight: **coherence does not imply transparency**. Coherence is a *connection*; Gap is the *opacity* of that connection.
-
-**Numerical example.** An impulsive person:
-
-| Parameter | Value | Interpretation |
-|----------|:---:|:---|
-| $\|\gamma_{DL}\|$ | $0.22$ | Connection is strong — 'knowledge' exists |
-| $\arg(\gamma_{DL})$ | $1.45$ rad ($\approx \pi/2$) | Phase — maximum Gap |
-| $\mathrm{Gap}(L,D) = \|\sin(1.45)\|$ | $0.99$ | Channel almost fully opaque |
-| $\mathrm{Gap}(D,E)$ | $0.15$ | Feels the impulse |
-| $R_\varphi$ | $0.35$ | Self-aware (above the working threshold) |
-
-This formalises the clinical observation: impulsive people often *know* that their behaviour is illogical (connection $|\gamma_{DL}|$ is high), but cannot *apply* this knowledge at the moment of action (the channel is opaque due to phase $\approx \pi/2$). 'I knew I shouldn't, but I couldn't stop' — a precise description of Gap(L,D) $\to 1$ with $|\gamma_{LD}| > 0$.
-
-**DSM-5 correspondence.** Impulsivity is a transdiagnostic trait, present in: ADHD (F90), borderline personality disorder (F60.3), impulse control disorders (F63), addictions (F10–F19).
+**Candidate [H].** Compare independently measured response inhibition with amplitude and oriented-phase features of a proposed $(L,D)$ mapping. The identity $G_{LD}=|\sin\theta_{LD}|$ makes $G_{LD}=1$ at $\theta_{LD}=\pi/2$ **[T]**. It does not make the phase a loss of logical control. A large matrix modulus is not evidence of stored knowledge, and a self-model score above $1/3$ does not certify awareness.
 
 ### 2.4 Existential crisis {#кризис}
 
-:::info Definition (Existential crisis) [I]
-**Existential crisis** — the experience of losing connection with the ground of being. Gap-profile:
-
-$$
-\mathrm{Gap}(O,E) \to 1
-$$
-
-The ground–experience channel is opaque: experience ($E$) is disconnected from the ontological ground ($O$). The subject experiences 'meaninglessness' — experience exists, but is deprived of deep connection to its source.
-:::
-
-Extended profile in deep existential crisis:
-
-$$
-\mathrm{Gap}(O,E) \to 1, \quad \mathrm{Gap}(O,U) \to 1
-$$
-
-Loss of connection of the ground with both experience and unity — 'a world without meaning and without wholeness'.
-
-**Numerical example.** Comparison of a healthy person and a person in existential crisis (O-sector channels):
-
-| Channel | Normal | Crisis | Subjectively |
-|-------|:---:|:---:|:---|
-| $(O,E)$ | $0.25$ | $0.90$ | 'Life is meaningless' |
-| $(O,U)$ | $0.30$ | $0.85$ | 'The world is fragmented' |
-| $(O,S)$ | $0.35$ | $0.50$ | 'The body is alien' |
-| $(O,L)$ | $0.25$ | $0.55$ | 'Logic doesn't help' |
-| $(O,D)$ | $0.30$ | $0.40$ | 'Actions are purposeless' |
-| $(O,A)$ | $0.20$ | $0.35$ | 'Attention is scattered' |
-
-The coherences $|\gamma_{OE}|$ and $|\gamma_{OU}|$ remain non-zero (objectively the connection to the ground *exists*), but subjectively it is 'not felt'. This is precisely why existential therapy is aimed at reducing $\mathrm{Gap}(O,E)$ — restoring the *experience* of connection, not creating it.
-
-**DSM-5 correspondence.** Existential crisis is not a DSM-5 diagnosis, but overlaps with: major depressive disorder (F32/F33), generalised anxiety disorder (F41.1), adjustment disorder (F43.2).
+**Interpretation [I/H].** The names “ground” and “unity” motivate testing whether features assigned to $(O,E)$ and $(O,U)$ relate to independently collected reports of meaning or coherence. These names do not prove that a high phase Gap disconnects a person from an ontological source. No numerical target for restoring meaning or clinical categorisation follows from them.
 
 ### 2.5 Depression {#депрессия}
 
-:::tip Interpretation (Depression as stagnation) [I]
-**Depression** — stagnation of viability near the critical threshold:
-
-$$
-P \to P_{\text{crit}} + \varepsilon, \quad \frac{dP}{d\tau} \approx 0, \quad \varepsilon \ll 1
-$$
-
-The system 'hangs' just above the viability threshold $P_{\text{crit}} = 2/7 \approx 0.286$: sufficient coherence for existence, but insufficient for development. The rate of change of $P$ is close to zero — neither improvement nor deterioration.
-:::
-
-**Motivation.** Why is depression defined through $P$, and not only through Gap? Because depression is a *systemic* state: not one specific channel is blocked, but the entire system has 'sunk' toward the threshold. Gap-profile in depression:
-
-- $\overline{\mathrm{Gap}}$ is elevated (overall opacity)
-- $\mathrm{Gap}(D,E) \uparrow$ — dynamics disconnected from experience (*anhedonia*: inability to experience pleasure)
-- $\mathrm{Gap}(D,U) \uparrow$ — dynamics disconnected from unity (loss of purposiveness)
-- $R_\varphi$ may be normal or even elevated — *depressive rumination* is a form of reflection, but directed at an unchanging Gap-profile
-
-**Numerical example (detailed).**
-
-| Parameter | Healthy | Mild depression | Severe depression |
-|----------|:---:|:---:|:---:|
-| $P$ | $0.36$ | $0.31$ | $0.295$ |
-| $P - P_{\text{crit}}$ | $0.074$ | $0.024$ | $0.009$ |
-| $dP/d\tau$ | $+0.005$ | $\approx 0$ | $\approx 0$ |
-| $\mathrm{Gap}(D,E)$ | $0.20$ | $0.50$ | $0.75$ |
-| $\overline{\mathrm{Gap}}$ | $0.28$ | $0.40$ | $0.52$ |
-| $R_\varphi$ | $0.45$ | $0.45$ | $0.50$ (rumination) |
-| Subjectively | 'Life is normal' | 'Everything is grey' | 'Grey emptiness' |
-
-The system literally 'balances on the edge' — too close to $P_{\text{crit}}$ to develop, but far enough not to die. The absence of positive $dP/d\tau$ is experienced as [anhedonia](/docs/consciousness/phenomenology/emotional-taxonomy#базовые-координаты): valence $\approx$ 0, activation $\approx$ 0 — 'grey emptiness'.
-
-**Important:** $R_\varphi$ in depression can be *elevated*. Rumination (endless 'chewing over' of thoughts) raises the self-model quality, but is directed at an unchanging Gap-profile. This explains the *depressive realism* paradox: depressed patients often have more accurate probability estimates and assessments of their own capabilities — their $\varphi(\Gamma)$ more accurately reflects $\Gamma$, but the $\Gamma$ itself is pathological.
-
-**DSM-5 correspondence.** Major depressive disorder (F32/F33): depressed mood, anhedonia, sleep/appetite disturbances, suicidal ideation. In UHM: $P \to P_{\text{crit}}$, $\mathrm{Gap}(D,E) \uparrow$, $dP/d\tau \approx 0$.
+**Candidate [H].** Longitudinal task measures could be compared with $P$, $\dot P$ and proposed affect-related features. Depression is not defined by $P\approx2/7$ or $\dot P\approx0$. For example, a stationary pure state has $P=1$ and $\dot P=0$, while stationary $I_7/7$ has $P=1/7$; stationarity occurs across the purity range **[T]**. No clinical label follows from either state. Repeated self-referential reports also do not mathematically imply high predictive accuracy of $M$; that accuracy needs a separate held-out prediction task.
 
 ### 2.6 Psychosis {#психоз}
 
-:::info Definition (Psychosis) [I]
-**Psychosis** — sudden global decrease of Gap while maintaining $R_\varphi$:
+A low or rapidly changing mean Gap is not a definition or diagnostic criterion of psychosis **[H]**. Phase coherence, reality assessment, report and noise immunity are distinct quantities. The earlier comparison “samādhi obeys a three-channel Hamming constraint, psychosis violates it” is withdrawn: no map from matrix phases to that code was provided, and the bound itself does not forbid all pairwise Gap values being zero. The explicit gate counterexample is in [§8.3](#психоз-хэмминг).
 
-$$
-\overline{\mathrm{Gap}} \to 0 \quad \text{(suddenly)}, \quad R_\varphi \geq R_{\varphi,\text{th}}
-$$
-
-All boundaries between dimensions **dissolve simultaneously** — the system becomes 'fully transparent', but without preparation and without noise immunity.
-:::
-
-**Key distinction: psychosis vs. samādhi.** Both states are characterised by low $\overline{\mathrm{Gap}}$ — 'all windows are open'. But:
-
-| | Samādhi | Psychosis |
-|--|:-------:|:------:|
-| Mechanism of Gap-reduction | Controlled ($\varphi$-optimisation) | Uncontrolled ([catastrophe](/docs/core/dynamics/gap-dynamics#бифуркации)) |
-| Speed | Gradual (hours–days) | Sudden (minutes–hours) |
-| Hamming bound | Functionally satisfied ($\geq 3$ channels with $\mathrm{Gap} > \varepsilon_{\text{noise}}$) | Functionally violated ($< 3$ channels with $\mathrm{Gap} > \varepsilon_{\text{noise}}$) |
-| Error correction | Works | Does not work |
-| Reversibility | Natural return | Requires pharmacotherapy |
-
-Unlike [samādhi](/docs/consciousness/states/altered-states#самадхи), in psychosis:
-- Gap-reduction is **uncontrolled** (not through $\varphi$-optimisation, but through [catastrophe](/docs/core/dynamics/gap-dynamics#бифуркации))
-- The [Hamming bound](/docs/consciousness/hierarchy/gap-characterization#граница-хэмминга) is **structurally satisfied** ($\geq 3$ channels with $\mathrm{Gap} > 0$), but **functionally violated** — fewer than 3 channels maintain $\mathrm{Gap} > \varepsilon_{\text{noise}}$ (see [section 8.3](#психоз-хэмминг) [T])
-- Error correction $\varphi$ is impossible — the remaining channels have signal-to-noise ratio $< 1$
-
-**Numerical example.** Normal vs. psychosis:
-
-| Parameter | Normal | Psychosis | Samādhi |
-|----------|:---:|:---:|:---:|
-| $\overline{\mathrm{Gap}}$ | $0.28$ | $0.05$ | $0.08$ |
-| Gaps $> \varepsilon_{\text{noise}}$ | $\sim 18$ | $\sim 1$ | $\sim 5$ |
-| $R_\varphi$ | $0.45$ | $0.40$ | $0.92$ |
-| Noise immunity | Normal | Lost | Preserved |
-| Subjectively | Ordinary experience | 'Everything is connected, everything is significant' | 'Everything is clear, everything is one' |
-
-In psychosis: 'everything is connected, everything is significant' — because Gap $\to 0$ for all channels. But unlike samādhi, there are no 'check' channels to separate real connections from noise. Hence — delusions (false connections taken as real) and hallucinations (internal coherences perceived as external).
-
-**Analogy.** Psychosis vs. samādhi: both — 'all windows are open'. But samādhi is a controlled opening, in which the remaining closed windows (at minimum 3) reliably lock out interference. Psychosis is a hurricane that has torn off all the shutters: the windows are open, but the house is unprotected, and any gust of wind (noise, external stimulus) freely enters.
-
-**DSM-5 correspondence.** Schizophrenia (F20), schizoaffective disorder (F25), brief psychotic disorder (F23). Positive symptoms (delusions, hallucinations) = $\overline{\mathrm{Gap}} \to 0$; negative symptoms (avolition, alogia) = $\mathrm{Gap}(D,E) \uparrow$, $\mathrm{Gap}(L,E) \uparrow$.
-
----
+A prospective comparison would measure independently assigned clinical status, reports, task errors and a fixed matrix reconstruction, allowing the same Gap profile in different groups **[Pr]**. Distinguishing these groups requires validated observation distributions; a static feature vector does not establish delusions, hallucinations, reversibility or a required intervention.
 
 ## 3. Summary table of pathologies {#сводная-таблица}
 
-| Pathology | Key channels | $\overline{\mathrm{Gap}}$ | $P$ | $R_\varphi$ | Level |
-|-----------|----------------|:-------------------------:|:---:|:---:|:-------:|
-| **Alexithymia** | Gap(L,E)↑, Gap(A,E)↑ | Moderate | Normal | Normal | L2 |
-| **Dissociation** | Gap within E-sector | High | Normal | Normal | L2 |
-| **Impulsivity** | Gap(L,D)↑ | Moderate | Normal | Reduced | L2 |
-| **Exist. crisis** | Gap(O,E)↑, Gap(O,U)↑ | Elevated | Reduced | Normal/↑ | L2 |
-| **Depression** | Gap(D,E)↑, Gap(D,U)↑ | Elevated | $\to P_{\text{crit}}$ | Normal/↑ | L2 (stag.) |
-| **Psychosis** | All Gap↓ (suddenly) | $\to 0$ | Varies | Normal | L2 (unstab.) |
+| Proposed association [H] | Independent target | Candidate features |
+|---|---|---|
+| Alexithymia | Emotion identification/report task | $(A,E),(L,E)$ features |
+| Dissociation | Access/report discontinuity | Specified experiential extension |
+| Impulsivity | Response-inhibition task | $(L,D)$ features |
+| Existential crisis | Independently collected meaning reports | $(O,E),(O,U)$ features |
+| Depression | Independently assessed clinical state and task outcomes | Longitudinal features, without a purity cutoff |
+| Psychosis | Independently assessed clinical state and task errors | Full observation model, without a Gap-zero rule |
 
----
+The table supplies research questions, not a classifier. Capability levels are recorded separately using all prerequisites and higher-order certificates; no row assigns a physical L-level.
 
 ## 4. Correspondence of Gap-patterns to DSM-5 diagnoses {#dsm-таблица}
 
-| Gap-pattern | DSM-5 category | Code | Key parameter |
-|-------------|----------------|:---:|:---|
-| Gap(L,E)↑ + Gap(A,E)↑ | Somatic symptom disorders | F45 | Alexithymia |
-| Gap(L,E)↑ + Gap(A,E)↑ | ASD | F84 | Emotional opacity |
-| Gap within E-sector | Dissociative disorders | F44 | Depersonalisation |
-| Gap(L,D)↑ | ADHD | F90 | Impulsivity |
-| Gap(L,D)↑ | Borderline personality disorder | F60.3 | Impulsivity + affect |
-| Gap(O,E)↑ | Adjustment disorder | F43.2 | Loss of meaning |
-| Gap(D,E)↑, $P \to P_{\text{crit}}$ | Major depressive disorder | F32/F33 | Anhedonia + stagnation |
-| $\overline{\mathrm{Gap}} \to 0$ (suddenly) | Schizophrenia | F20 | Loss of noise immunity |
-| Oscillations $P(\tau)$ | Bipolar disorder | F31 | Hopf bifurcation |
-| Gap(D,E)↑ + Gap(A,E)↑ | PTSD | F43.1 | Avoidance + anhedonia |
-| Gap(A,E)↑ (sustained) | Generalised anxiety disorder | F41.1 | Hypervigilance + opacity |
-
-**Important:** the correspondence is not one-to-one. One Gap-pattern can occur in multiple DSM diagnoses, and one diagnosis can include multiple Gap-patterns. This reflects the real clinical picture: comorbidity is the rule, not the exception.
-
----
+Clinical categories must be assigned independently of the candidate Gap features. A correspondence to DSM terminology is a proposed crosswalk **[H]**, not an equivalence, causal account or diagnostic conversion table. One label may include diverse feature profiles, and one profile may occur under several labels. The former numerical mappings and “bipolar disorder = Hopf oscillations of $P$” are not validated consequences of UHM. Evaluation should compare a preregistered feature model with clinical and task baselines on an independent cohort.
 
 ## 5. Diagnostic protocol {#протокол}
 
-The full 'Dual Interview' protocol is described in [Gap-diagnostics](/docs/applied/research/gap-diagnostics#протокол). For pathological states it is supplemented by:
+This is a research protocol **[Pr]**, not a diagnostic procedure validated for patients. The linked [measurement programme](/docs/applied/research/measurement-protocol) must supply an identifiable observation model.
 
 ### 5.1 Steps of pathological diagnosis
 
-1. **Construction of Gap-profile** — standard protocol from [Gap-diagnostics](/docs/applied/research/gap-diagnostics#карта-прозрачности)
-2. **Identification of key channels** — channels with $\mathrm{Gap}(i,j) > 0.8$
-3. **Comparison with patterns** — table from [section 3](#сводная-таблица)
-4. **Assessment of viability** — $P$ and $dP/d\tau$
-5. **Determination of the dynamic regime** — stagnation, oscillations or bifurcation (see [bifurcation theory](/docs/core/dynamics/gap-dynamics#бифуркации))
+1. Specify independently assessed labels and task outcomes before fitting the encoder.
+2. Declare the frame, observation law, identifiable features and reconstruction uncertainty; test full matrix positivity.
+3. Fit candidate associations using training data; keep amplitudes, oriented phases and missing phases distinct.
+4. Evaluate calibration and error rates on held-out participants or tasks, including controls and competing models.
+5. Assess longitudinal dynamics from repeated observations. Report unmeasured capability or clinical variables as unknown.
 
 ### 5.2 Differential diagnosis
 
-:::tip Interpretation (Distinguishing pathologies by Gap-profile) [I]
-Two pathologies are distinguishable if and only if there exists a channel $(i,j)$ for which their Gap-values differ substantially:
+**Corrected identifiability statement [T].** For an observation map $s:Z\to S$, a target label $\ell:Z\to C$ can be recovered exactly from $s$ if and only if $\ell$ is constant on each fibre of $s$. Proof: if $\ell=h\circ s$, equal observations give equal labels; conversely define $h(s(z))=\ell(z)$, which is well-defined precisely under fibre constancy.
 
-$$
-\text{Distinguishability:} \quad \exists\, (i,j): |\mathrm{Gap}_1(i,j) - \mathrm{Gap}_2(i,j)| > \delta_{\text{diagn}}
-$$
+The former criterion “diagnoses differ iff some Gap differs by $\delta$” assumed this identifiability without proving it. **Counterexample.** The family $\Gamma(t)=(1-t)I_7/7+tuu^\dagger$, $u=(1,\ldots,1)/\sqrt7$, has all 21 phase Gaps zero for every $t>0$, while $P=(1+6t^2)/7$ and $\Phi=6t^2$ vary. A target depending on these features is not identifiable from Gap alone. This is a statement about statistics, not a clinical classification of these matrices.
 
-where $\delta_{\text{diagn}}$ — the diagnostic distinguishability threshold.
-:::
-
-**Example of differential diagnosis: alexithymia vs. dissociation.**
-
-| Channel | Alexithymia | Dissociation | Difference |
-|-------|:---:|:---:|:---:|
-| Gap(L,E) | $\to 1$ | $< 1$ | $> 0.5$ |
-| Gap(A,E) | $\to 1$ | $< 1$ | $> 0.5$ |
-| Gap(S,E) | $< 1$ | $\to 1$ | $> 0.5$ |
-| Gap(D,E) | $< 1$ | Varies | Varies |
-
-Key distinction: in alexithymia the 'higher-order' channels (attention, logic) are opaque; in dissociation — the 'lower-order' ones (structure, body). A diagnostic threshold $\delta_{\text{diagn}} \geq 0.3$ ensures reliable differentiation.
-
-**Example: depression vs. existential crisis.**
-
-| Channel | Depression | Exist. crisis | Difference |
-|-------|:---:|:---:|:---:|
-| Gap(D,E) | $\to 1$ (anhedonia) | Moderate | $> 0.3$ |
-| Gap(O,E) | Moderate | $\to 1$ (meaninglessness) | $> 0.3$ |
-| $P$ | $\to P_{\text{crit}}$ | Reduced, not critical | $> 0.02$ |
-| $R_\varphi$ | Normal/↑ (rumination) | Normal/↑ | $\approx 0$ |
-
-In depression, the key channel is dynamics ($D$); in crisis — the ground channel ($O$). Both can coexist (comorbidity, section 6).
-
----
+With noisy observations, distinguishability concerns distributions $\mathbb P_A$ and $\mathbb P_B$, not a coordinate cutoff. For equal prior probabilities, the optimal single-observation binary error is $(1-\mathrm{TV}(\mathbb P_A,\mathbb P_B))/2$ **[T]**, where total variation uses the actual observation laws. Identical laws yield error $1/2$ regardless of assumed latent Gap differences. No universal $\delta=0.3$ ensures reliable differential diagnosis. See [Watrous, *The Theory of Quantum Information*, state discrimination](https://cs.uwaterloo.ca/~watrous/TQI/TQI.pdf) and [reconstruction identifiability](/docs/applied/research/reconstruction-identifiability).
 
 ## 6. Comorbidity as superposition of Gap-patterns {#коморбидность}
 
+Co-occurrence of independently assessed phenomena requires a joint observation model **[H]**. Clinical coexistence is not a quantum superposition or a canonically defined operation on Gap vectors.
+
 ### 6.1 Superposition principle
 
-Comorbidity — the simultaneous presence of multiple pathologies — is described in UHM as **superposition of Gap-patterns**: if pathology A is characterised by $\mathrm{Gap}_A(i,j) \to 1$ for a set of channels $C_A$, and pathology B — for set $C_B$, then comorbidity A+B = $C_A \cup C_B$.
+A convex mixture $\Gamma_p=p\Gamma_A+(1-p)\Gamma_B$, $0\le p\le1$, is a valid density matrix **[T]**. It represents a declared mixture, not automatically comorbidity. The nonlinear phase statistic satisfies neither an additive nor a coordinatewise-max law in general.
 
-$$
-\mathbf{G}_{\text{comor}} = \max(\mathbf{G}_A, \mathbf{G}_B)
-$$
-
-(channel-by-channel: for each $(i,j)$ we take the maximum Gap from the two patterns).
+**Counterexample.** On a $2\times2$ block let $\Gamma_\pm=\begin{pmatrix}1/2&\pm ia\\\mp ia&1/2\end{pmatrix}$, $0<a<1/2$. Both are positive and have Gap $1$ on the pair, but their half-mixture has zero coherence and hence undefined phase. Therefore $G(\Gamma_{1/2})=\max(G(\Gamma_+),G(\Gamma_-))$ is not a defined identity. Embed the block in $\mathbb C^7$ if desired. Coordinatewise maximum can be a separate descriptive rule **[D]**, but need not correspond to a realizable matrix or clinical mechanism.
 
 ### 6.2 Examples of comorbidity
 
-**Depression + alexithymia** (clinically common):
-
-| Channel | Depression | Alexithymia | Comorbidity |
-|-------|:---:|:---:|:---:|
-| Gap(D,E) | $0.75$ | $0.30$ | $0.75$ |
-| Gap(L,E) | $0.30$ | $0.95$ | $0.95$ |
-| Gap(A,E) | $0.25$ | $0.88$ | $0.88$ |
-| Gap(D,U) | $0.70$ | $0.35$ | $0.70$ |
-| $\overline{\mathrm{Gap}}$ | $0.40$ | $0.38$ | $0.52$ |
-| $P$ | $0.295$ | $0.34$ | $0.29$ |
-
-Result: in comorbidity, $\overline{\mathrm{Gap}}$ and $P$ deteriorate multiplicatively — not simply 'the sum of two problems', but mutual amplification. The patient can neither recognise emotions (alexithymia) nor act on the unrecognised ones (depression) — a deadlock.
-
-**Impulsivity + existential crisis** (borderline disorder):
-
-| Channel | Impulsivity | Exist. crisis | Comorbidity |
-|-------|:---:|:---:|:---:|
-| Gap(L,D) | $0.99$ | $0.40$ | $0.99$ |
-| Gap(O,E) | $0.30$ | $0.90$ | $0.90$ |
-| Gap(O,U) | $0.35$ | $0.85$ | $0.85$ |
-
-Subjectively: 'life is meaningless and I cannot control my actions' — the typical phenomenology of borderline personality disorder (F60.3).
+Test a joint-outcome model against separate-outcome models, including interaction terms only when supported by data **[Pr]**. No multiplicative deterioration of purity or unique combined diagnosis follows from taking a union or maximum of candidate feature sets.
 
 ### 6.3 Visualisation of pathology space
 
-```mermaid
-graph TD
-    subgraph SPACE["Space of pathologies (Gap-coordinates)"]
-        AL["Alexithymia<br/>Gap(L,E)↑ Gap(A,E)↑"]
-        DIS["Dissociation<br/>Gap(S,E)↑ / E-splitting"]
-        IMP["Impulsivity<br/>Gap(L,D)↑"]
-        EX["Exist. crisis<br/>Gap(O,E)↑ Gap(O,U)↑"]
-        DEP["Depression<br/>P→P_crit, Gap(D,E)↑"]
-        PSY["Psychosis<br/>Gap̄→0 (suddenly)"]
-    end
-
-    AL ---|"comorbidity"| DEP
-    IMP ---|"comorbidity"| EX
-    AL ---|"shared channel Gap(A,E)"| DIS
-    DEP ---|"P↓ → catastrophe"| PSY
-    EX ---|"deepening"| DEP
-```
-
----
+A feature-space plot should show estimated joint distributions and uncertainty, with clinical labels supplied independently. Connecting two labels by an edge is a descriptive convention, not a proof of a trajectory or causal transition.
 
 ## 7. Corrective strategies {#коррекция}
 
+The matrix model may motivate intervention hypotheses **[H]**. Its surrogate statistics do not establish clinical benefit, safety, dose, duration or modality selection.
+
 ### 7.1 Principles of correction
 
-Each pathology is a specific Gap-profile. Correction = targeted modification of Gap in specific channels:
-
-:::info Definition (Therapeutic target) [I]
-**Therapeutic target** for a pathology with Gap-profile $\mathbf{G}_{\text{pat}}$ — bringing it to the target profile $\mathbf{G}_{\text{target}}$:
-
-$$
-\text{Goal:} \quad \mathbf{G}(\Gamma(\tau)) \to \mathbf{G}_{\text{target}} \quad \text{as} \quad \tau \to \infty
-$$
-
-while maintaining $P > P_{\text{crit}}$ and $R_\varphi \geq R_{\varphi,\text{th}}$ throughout the trajectory.
-
-**Key constraint:** $\mathbf{G}_{\text{target}} \neq \mathbf{0}$ — full transparency is impossible and dangerous (see [psychosis](#психоз)). The goal is not to 'cure everything' but to bring the Gap-profile to a functional state where all pathological channels are below the threshold and the 'check' channels (Hamming bound) are preserved.
-:::
+Choose the independently assessed outcome before selecting a feature objective **[Pr]**. A controller may target a realizable matrix profile **[D]**, but the meaningful empirical question is whether the intervention changes the outcome relative to a comparison condition. Neither $\mathbf G_{\mathrm{target}}\ne0$ nor retention of three nonzero Gaps is a universal therapeutic constraint. Preservation of the formal capability gate also does not replace clinical safety assessment.
 
 ### 7.2 Three correction modalities
 
-| Modality | Mechanism | Target parameters | Speed | Examples |
-|-------------|----------|-------------------|:--------:|---------|
-| **Therapy** | Targeted Gap-reduction | Specific $\mathrm{Gap}(i,j) \downarrow$ | Months | CBT: Gap(L,E)↓; somatic: Gap(S,E)↓ |
-| **Medications** | Global shift of parameters | $\Gamma_2, \kappa, \omega_c$ | Weeks | Antidepressants: $\kappa \uparrow$; antipsychotics: $\overline{\mathrm{Gap}} \uparrow$ |
-| **Practices** | Voluntary $\varphi$-optimisation | $R \uparrow$, E-sector Gap$\downarrow$ | Months–years | [Meditation](/docs/consciousness/states/altered-states#медитация) |
-
-**Numerical example: three modalities for depression.**
-
-| Modality | Before | After | Time | Mechanism |
-|-------------|:---:|:---:|:---:|:---|
-| CBT | Gap(D,E)=0.75 | Gap(D,E)=0.35 | 3–6 months | Verbalisation of emotions |
-| SSRI | $P=0.295$ | $P=0.33$ | 2–4 weeks | Increase of $\kappa$ (serotonin) |
-| Mindfulness | $\overline{\mathrm{Gap}}=0.52$ | $\overline{\mathrm{Gap}}=0.35$ | 6–12 months | $R \uparrow$, global Gap-reduction |
-
-Optimal strategy: a *combination* of modalities. SSRI raises $P$ from the critical zone (fast effect); CBT reduces the specific Gap(D,E) (medium effect); mindfulness restructures the overall Gap-profile (long-term effect).
+Different intervention classes can be compared through independently specified protocols and outcomes **[Pr]**. Assigning one class to a decrease in Gap, another to an increase in regeneration and a third to a self-model score is a modeling hypothesis requiring separate evidence. The previous numerical treatment response tables and time estimates were illustrative assignments without that evidence and are withdrawn.
 
 ### 7.3 Correspondence of therapeutic approaches and channels
 
-| Channel | Therapeutic approach | Goal | Numerical target |
-|-------|----------------------|------|:-----------------:|
-| Gap(L,E)↓ | CBT, psychoanalysis | Verbalisation — understanding of experiences | From 0.90 to 0.25 |
-| Gap(A,E)↓ | Mindfulness, gestalt | Awareness — noticing of experiences | From 0.85 to 0.20 |
-| Gap(S,E)↓ | Body-oriented therapy | Somatic awareness | From 0.80 to 0.25 |
-| Gap(D,E)↓ | Expressive therapy | Restoration of affective contact | From 0.75 to 0.20 |
-| Gap(O,E)↓ | Existential therapy | Restoration of connection to the ground | From 0.90 to 0.30 |
-| Gap(L,D)↓ | Behavioural therapy | Logical control of impulses | From 0.95 to 0.30 |
+An approach-to-channel correspondence is a candidate mediation model **[H]**. It must test both the proposed feature change and the independently measured outcome; a target such as Gap $0.90	o0.25$ has no universal clinical meaning. Report intervention and outcome measurements separately from the reconstructed matrix.
 
 ### 7.4 Limitations of correction
 
-By the [Theorem on incomplete transparency](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность), even ideal therapy cannot bring $\overline{\mathrm{Gap}} = 0$: at minimum 3 out of 21 channels retain a non-zero Gap. The goal of correction is not the elimination of all Gaps, but the **redistribution** of opacity from pathological channels into 'check' channels (structurally necessary).
-
-**Analogy.** The goal of therapy is not to knock down all the walls in the house (full transparency is impossible and dangerous — see psychosis), but to move the walls to where they perform a load-bearing function, removing them from where they impede life. The three 'load-bearing walls' (Hamming bound) will always remain.
-
----
+Full phase transparency is mathematically possible; it is not proved dangerous by Hamming coding. Limits of a proposed intervention must come from its actual dynamics, observation uncertainty, resource constraints and outcome evidence. A metaphor of three load-bearing walls cannot supply those prerequisites.
 
 ## 8. Dynamics of pathological transitions {#динамика}
 
+A temporal change of a feature or a clinical label need not be a bifurcation. Bifurcation claims require a specified flow, control parameter, equilibria and verified nondegeneracy conditions.
+
 ### 8.1 Entry into pathology
 
-The transition from normal to pathological state — a [bifurcation](/docs/core/dynamics/gap-dynamics#бифуркации) of the Gap-landscape:
+**Conditional models [C/H].** A saddle-node requires a zero eigenvalue and appropriate quadratic and parameter transversality conditions. A Hopf model requires a conjugate eigenvalue pair crossing the imaginary axis, with the remaining spectrum and nonlinear coefficient satisfying the relevant hypotheses. A pitchfork additionally requires the stated symmetry and degeneracy structure. Their clinical identification is an extra hypothesis; normal-form names do not determine a diagnosis or timescale. See [Ghrist, bifurcation theory](https://www2.math.upenn.edu/~ghrist/preprints/ADS-DRAFT.pdf).
 
-| Bifurcation type | Transition | Clinical analogue | Speed |
-|----------------|---------|---------------------|:--------:|
-| Saddle-node | Sudden loss of stable Gap-profile | Acute crisis, psychotic episode | Hours–days |
-| Pitchfork | Splitting into two Gap-profiles | Dissociation, existential choice | Weeks |
-| Hopf | Stationary → oscillating Gap | Bipolar disorder | Months |
-
-(For more detail — [Gap-dynamics, section 3](/docs/core/dynamics/gap-dynamics#бифуркации))
-
-**Numerical example: bipolar disorder as Hopf bifurcation.**
-
-In the normal state: $P = 0.36$, $dP/d\tau \approx 0$ (stationary point). At Hopf bifurcation, the stationary point loses stability and $P(\tau)$ begins to oscillate:
-
-$$
-P(\tau) = P_0 + A \cdot \sin(\omega \tau) = 0.36 + 0.05 \cdot \sin(\omega \tau)
-$$
-
-| Phase | $P$ | $dP/d\tau$ | $\mathrm{Gap}(D,E)$ | Subjectively |
-|------|:---:|:---:|:---:|:---|
-| Mania (maximum) | $0.41$ | $> 0$ | $0.10$ | Euphoria, grandiosity |
-| Transition | $0.36$ | $0$ | $0.20$ | Instability |
-| Depression (minimum) | $0.31$ | $< 0$ | $0.50$ | Anhedonia, helplessness |
-| Transition | $0.36$ | $0$ | $0.20$ | Instability |
-
-The oscillation period ~weeks–months, consistent with the clinical picture of bipolar disorder type I.
+**Counterexample to “oscillatory purity proves Hopf”.** A fixed qubit Hamiltonian and a pure initial state can give oscillating populations while purity stays $1$. Alternatively prescribing $P(\tau)=P_0+A\sin\omega\tau$ supplies a readout curve without any parameterized flow, stability loss or Hopf crossing. For this curve $\dot P=A\omega\cos\omega\tau$ is zero at its maxima and minima; the former table had these derivatives reversed. A fitted periodic signal therefore needs a separately validated dynamical explanation.
 
 ### 8.2 Exit from pathology
 
-Therapeutic exit — reverse bifurcation or gradual shift of parameters. By [non-Markovian dynamics](/docs/applied/coherence-cybernetics/non-markovian), the exit speed is determined by the memory depth:
+Recovery of an independently measured outcome can be studied longitudinally **[Pr]**. Non-Markovianity alone does not imply $	au_{\mathrm{exit}}\propto	au_{\mathrm{mem}}\max G$. Such a constitutive fit would require an explicitly defined exit event, units, parameters and validation. No treatment duration follows from kernel depth or Gap amplitude.
 
-$$
-\tau_{\text{exit}} \propto \tau_{\text{mem}} \cdot \max_{(i,j) \in \text{pat}} \mathrm{Gap}(i,j)
-$$
+#### Operational noise threshold [D/H] {#определение-epsilon-noise}
 
-The longer the memory ($\tau_{\text{mem}}$) and the deeper the opacity, the longer the therapy. For more on non-Markovian effects — see [Attention and Memory](/docs/consciousness/states/attention-memory#память).
+The former “first principles” derivation is withdrawn. In a declared estimator model $\widehat\gamma_{ij}=\gamma_{ij}+\eta_{ij}$ with $\mathbb E\eta_{ij}=0$ and $\mathbb E|\eta_{ij}|^2=\sigma_{ij}^2$, one may define $\mathrm{SNR}_{ij}=|\gamma_{ij}|^2/\sigma_{ij}^2$ **[D]**. A detection threshold must then be calibrated to the noise law, sample size, chosen error criterion and readout.
 
-**Numerical example: exit time from different pathologies.**
-
-| Pathology | $\tau_{\text{mem}}$ | $\max \mathrm{Gap}$ | $\tau_{\text{exit}}$ | In practice |
-|-----------|:---:|:---:|:---:|:---|
-| Mild impulsivity | 1 year | $0.80$ | $\propto 0.8$ | 3–6 months of therapy |
-| Moderate depression | 3 years | $0.75$ | $\propto 2.25$ | 6–12 months |
-| Alexithymia (from childhood) | 20 years | $0.95$ | $\propto 19$ | 2–5 years |
-| Dissociation (traumatic) | 15 years | $0.90$ | $\propto 13.5$ | 2–4 years |
-
-#### Definition of ε_noise from first principles [T] {#определение-epsilon-noise}
-
-:::info Definition (Functional detectability threshold)
-**Functional noise threshold** of channel (i,j):
-
-$$\varepsilon_{\text{noise}} := \frac{\mathrm{Gap}_{\min}}{\mathrm{SNR}_{\text{th}}}$$
-
-where:
-- $\mathrm{Gap}_{\min} = \bar{\varepsilon}$, with $\bar{\varepsilon} \approx 0.027$ — the root mean square over the 15 non-O pairs at $\varepsilon_{33} = 0.06$, [C at (SV)] ([sector hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε); the value $0.023$ used here until 2026-09-25 came from substituting $\varepsilon_O \approx 0.04$ against the table's $\varepsilon_O \sim 1$, audit A-83) — the minimum non-zero Gap from the sectoral bound [T-80](/docs/physics/gauge-symmetry/fano-selection-rules) (structural bound [T], its numbers [C at (SV)]): for non-O coherences $\mathrm{Gap}(i,j) \leq \bar{\varepsilon}$ under O-sector dominance
-- $\mathrm{SNR}_{\text{th}} = 1$ — standard signal detection threshold (signal-to-noise ratio = 1, detection at 50% error probability)
-
-$$\varepsilon_{\text{noise}} \approx 0.027$$
-
-The form of this threshold follows from the octonionic structure (O-sector dominance [T]) and standard signal detection theory; its value is [C at (SV)] — the order $10^{-2}$ holds under the sector-vacuum hypothesis, and the vacuum of $V_{\mathrm{Gap}}$ computed so far gives a mean of $\approx 0.097$ instead. (Until 2026-09-25: "$\approx 0.023$ … derived, not postulated".)
-:::
-
-**Interpretation:** A channel $(i,j)$ with $\mathrm{Gap}(i,j) < \varepsilon_{\text{noise}}$ has SNR $< 1$ for error correction of the self-model $\varphi$. Structurally Gap $> 0$ (Hamming bound [T-41g]), but functionally the channel is 'deaf' — $\varphi$-errors in this channel are not corrected.
+**Counterexample.** Entries $r e^{i\theta}$ and $r'e^{i\theta}$ have the same phase Gap but different SNR at fixed noise variance. Thus $G<\varepsilon_{\mathrm{noise}}$ does not imply SNR $<1$, and SNR $=1$ does not universally mean $50\%$ error. Neither a sector-vacuum scale nor a binary-code bound supplies a universal clinical detectability threshold.
 
 ### 8.3 Psychosis and the Hamming bound {#психоз-хэмминг}
 
-:::warning Theorem (Structural vs. functional loss) [T] (T-90)
-The Hamming bound is a **structural** property of the code H(7,4), holding for any L2-system: $|\{(i,j): \text{Gap}(i,j) > 0\}| \geq 3$ **[T]** (41g). Psychosis is a **functional** loss, not a structural violation: $|\{(i,j): \text{Gap}(i,j) > \varepsilon_{\text{noise}}\}| < 3$, while formally Gap $> 0$ for $\geq 3$ pairs. The Hamming bound guarantees Gap $> 0$, but does not guarantee Gap $> \varepsilon_{\text{noise}}$ **[T]**.
-:::
+**Correct coding statement [T].** For a binary code of length $n$ correcting $t$ errors, disjoint Hamming balls give $M\sum_{j=0}^{t}\binom nj\le2^n$. The binary Hamming $(7,4,3)$ code has $M=16$, $t=1$ and saturates $16(1+7)=128$. Its three parity coordinates are not three nonzero pairwise phase Gaps. Applying it requires an encoder into binary words, a noise channel and a decoder; none is supplied by the density matrix definition. See [Hamming (1950)](https://doi.org/10.1002/j.1538-7305.1950.tb00463.x).
 
-Thus, in psychosis:
-- The Hamming bound is **not violated** — at minimum 3 channels with $\mathrm{Gap}(i,j) > 0$ always exist (structural theorem)
-- However, the remaining channels have signal-to-noise ratio $< 1$: $\mathrm{Gap}(i,j) < \varepsilon_{\text{noise}} \approx 0.027$
-- The system is **formally** viable (L2), but **functionally** loses noise immunity of self-modelling
-- Antipsychotics restore Gap in the 'check' channels **above** $\varepsilon_{\text{noise}}$, restoring functional error correction
+**Explicit counterexample to the previous T-90/41g application.** For the family in §5.2 at $t=0.45$,
 
-Empirical verification: correlation between psychotic symptom scales and the number of channels with $\mathrm{Gap} > \varepsilon_{\text{noise}}$ in the [measurement protocol](/docs/applied/research/measurement-protocol). Connection to [CC theorems](/docs/applied/coherence-cybernetics/theorems) — through T-90 and the Hamming bound.
+$$
+P=0.3164285714,\quad R=0.4514672686,\quad\Phi=1.215,
+\quad G_{ij}=0\ (i<j).
+$$
 
----
+Using the *declared 7D proxy* from the hierarchy,
+
+$$
+\mathrm{Coh}_E=\frac{1+12t^2}{7(1+6t^2)},\qquad
+D^{7D}=1+6\mathrm{Coh}_E\approx2.327314.
+$$
+
+The complete proxy gate $\mathrm{Cap}_2$ is satisfied although no pair is opaque. Hence neither the canonical gate nor Hamming's coding theorem forces three nonzero phase Gaps. This certifies a mathematical counterexample, not a physical or clinical conscious state. The universal pathology/coding identification is **withdrawn [✗]**; a specified code implementation could be studied conditionally **[H/Pr]**.
 
 ## 9. Pathology space: visualisation {#пространство-патологий}
 
-```mermaid
-graph LR
-    subgraph NORM["Normal"]
-        N["Wakefulness<br/>P=0.36, Gap̄=0.28<br/>R_φ=0.45"]
-    end
-    subgraph PAT["Pathologies"]
-        AL["Alexithymia<br/>Gap(L,E)=0.95<br/>Gap(A,E)=0.88"]
-        DIS["Dissociation<br/>Gap(S,E)=0.90<br/>E-splitting"]
-        IMP["Impulsivity<br/>Gap(L,D)=0.99<br/>arg≈π/2"]
-        EX["Exist. crisis<br/>Gap(O,E)=0.90<br/>Gap(O,U)=0.85"]
-        DEP["Depression<br/>P=0.295<br/>Gap(D,E)=0.75"]
-        PSY["Psychosis<br/>Gap̄→0<br/>SNR<1"]
-    end
-
-    N -->|"Gap(L,E)↑ Gap(A,E)↑"| AL
-    N -->|"Gap within E↑"| DIS
-    N -->|"arg(γ_DL)→π/2"| IMP
-    N -->|"Gap(O,E)↑"| EX
-    N -->|"P↓, Gap(D,E)↑"| DEP
-    N -->|"Gap̄→0 (suddenly)"| PSY
-    DEP -->|"P↓↓"| PSY
-    EX -->|"deepening"| DEP
-    AL -->|"comorbidity"| DEP
-    IMP -->|"comorbidity"| EX
-```
-
----
+A plot of estimated features is a projection of the chosen observation model. Distinct clinical groups may overlap in it, and projection may erase distinguishing variables. A point or cluster is not automatically an attractor; an attractor requires a specified dynamical system.
 
 ## 10. Map of pathologies on the phase diagram {#фазовая-диаграмма}
 
-Pathological states are projected onto the [phase diagram](/docs/core/dynamics/gap-phase-diagram):
-
-```
-    t (T_eff/T_c)
-    │
-  2 ┤    Phase II (L0): Gap uniform
-    │    Psychosis: jump here from Phase I
-    │
-  1 ┤─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
-    │  Alexithymia,   Depression: P → P_crit
-    │  Neurosis,      (stagnation)
-    │  Impulsivity
-    │  (Phase I: anisotropic Gap)
-    │
-  0 ┤═══════════════════════════════════════
-    │    Phase III: dead zone (r < r_c)
-    └──────────────────────────────────── r
-         r_c                           →
-```
-
-**Interpretation:**
-- **Phase I** (anisotropic Gap) — normal consciousness and most pathologies. The Gap-profile is inhomogeneous: some channels are transparent, others opaque. Alexithymia, dissociation, impulsivity, existential crisis — all reside here, differing in their Gap-profile configuration.
-- **Depression** — a special position in Phase I: near the lower boundary ($P \to P_{\text{crit}}$, $r \to r_c$). The system 'slides' toward the phase transition I→III (dead zone).
-- **Psychosis** — a jump from Phase I to Phase II (uniform low Gap). Phase transition I→II, triggered by a [catastrophe](/docs/core/dynamics/gap-dynamics#бифуркации).
-- **Phase III** — below $r_c$: the system loses viability. Clinical analogue: coma, vegetative state.
-
----
+The [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) is a conditional model of an explicitly chosen potential and control parameters. Clinical labels cannot be located uniquely on it from a mean Gap or purity. Relating a fitted transition to a clinical trajectory requires independently measured controls and the bifurcation conditions in §8.1; no universal category-to-phase assignment is asserted.
 
 ### What we learned {#итоги}
 
-1. **Historical line**: Kraepelin (nosology) → DSM (categories) → RDoC (dimensions) → UHM (Gap-profiles as continuous dimensional patterns)
-2. **Six pathologies** formalised as specific Gap-profiles: alexithymia, dissociation, impulsivity, existential crisis, depression, psychosis
-3. **DSM-5 correspondence**: each Gap-pattern maps to one or several DSM categories; comorbidity = superposition of patterns
-4. **Depression** = stagnation at $P \to P_{\text{crit}} + \varepsilon$; **psychosis** = uncontrolled Gap-reduction with functional loss of noise immunity
-5. **Differential diagnosis** reduces to comparing Gap-profiles in key channels
-6. **Comorbidity** = channel-by-channel superposition of Gap-patterns ($\max$), leading to multiplicative deterioration
-7. **Therapy** = targeted Gap-reduction in pathological channels; three modalities (talk, pharmacological, practice)
-8. **$\varepsilon_{\text{noise}} \approx 0.027$** — the functional 'detectability' threshold of a channel; its form from first principles [T], its value [C at (SV)] (it read "$\approx 0.023$ … [T]" until 2026-09-25)
-9. **Bifurcations** determine entry/exit dynamics: saddle-node (crisis), pitchfork (dissociation), Hopf (bipolar disorder)
-
-:::tip Bridge to the next chapter
-We have completed the section 'States of consciousness': ASC, unconscious, attention/memory, pathology. Next we move to the section 'Subjects of consciousness' — what *types* of systems possess consciousness? The first chapter — [Pre-linguistic subjects](/docs/consciousness/subjects/pre-linguistic) — examines consciousness prior to the emergence of language: infants, higher animals, and the formal conditions of the L1-L2 transition without a verbal channel.
-:::
+1. Clinical labels and task outcomes must be measured independently; proposed Gap associations remain hypotheses.
+2. A target is identifiable from a statistic only when constant on its fibres; noisy classification depends on observation distributions and calibrated errors.
+3. Matrix mixtures do not obey a universal maximum or additive Gap law, and do not by definition model comorbidity.
+4. Bifurcations require an actual flow and nondegeneracy hypotheses; an oscillating or threshold-crossing score is insufficient.
+5. Hamming's code bound concerns binary codewords. The explicit zero-Gap $\mathrm{Cap}_2$ example rules out the claimed three-opaque-channel necessity.
+6. Intervention effects, safety and duration cannot be deduced from static matrix scores; the remaining programme uses independent outcomes and held-out validation.
 
 ## Connections
 
@@ -673,4 +221,4 @@ We have completed the section 'States of consciousness': ASC, unconscious, atten
 - **Altered states:** [ASC](/docs/consciousness/states/altered-states) — psychedelics and meditation as therapeutic trajectories
 - **Viability:** [Viability measure](/docs/core/dynamics/viability) — threshold $P_{\text{crit}} = 2/7$
 - **Measurement protocol:** [Measurement of Γ](/docs/applied/research/measurement-protocol) — empirical validation
-- **CC Theorems:** [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — T-90, Hamming bound, corrective strategies
+- **CC Theorems:** [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — withdrawn T-90 clinical bridge; conditional coding and research designs

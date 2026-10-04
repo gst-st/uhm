@@ -236,9 +236,11 @@ The failure above is instructive: it points at what the right derivation must co
 
 1. $\mathfrak{su}(3) = \mathrm{Stab}_{\mathrm{Der}(\mathbb O)}(e_1)$ is $8$-dimensional (§C, verified: $\dim\mathrm{Der}(\mathbb O)=14$, $\dim\mathrm{Stab}=8$).
 2. Its commutant on the $6$-dimensional complement $\mathrm{span}(e_2,\dots,e_7)$ is $2$-dimensional; subtracting the identity leaves a **complex structure** $J$ with $J^2 = -I$ (residual $1.3\times10^{-15}$) and $[J,\mathfrak{su}(3)] = 0$ (residual $1.1\times10^{-15}$). So $J$ is *derived*, not posited, and the spatial observable algebra is
+
 $$
 \mathfrak{su}(3)\oplus\mathfrak u(1)_J \;=\; \mathfrak u(3), \qquad \dim = 9 \ \text{(verified)} .
 $$
+
 3. The rank is the dimension of the centralizer of a generic element. Measured over $20$ random elements: **exactly $3$**, every time. For contrast, none of the candidate "dimensions" equals $3$: $\dim\mathfrak u(3) = 9$, $\dim\mathfrak{su}(3) = 8$, $\dim G_2 = 14$.
 
 $$
@@ -389,7 +391,7 @@ Former text: the Lorentzian signature $(+1,-1,-1,-1)$ is derived in four sub-ste
 
 That is: $J^2 = +\mathbb{1}$, $JD = DJ$, $J\chi = -\chi J$ where $\chi$ is the grading operator.
 
-**Step 8b (Page–Wootters energy constraint).** The Wheeler–DeWitt constraint $[\hat{C}, \Gamma_{\text{total}}] = 0$ (T-87 [T]) implies total energy conservation:
+**Step 8b (Page–Wootters energy constraint).** The Wheeler–DeWitt constraint $[\hat{C}, \Gamma_{\text{total}}] = 0$ (T-87 [C under the independently supplied clock and support constraint]) implies total energy conservation:
 
 $$
 E_O + E_{\text{rest}} = 0 \quad \Longrightarrow \quad E_O = -E_{\text{rest}}
@@ -461,37 +463,31 @@ The Aharonov–Bohm counterexample concerns PT-properties of holonomy and does n
 
 ---
 
-## 8. Corollary T-120b: Vacuum Topology {#следствие-вакуумная-топология}
+## 8. Corollary T-120b: Vacuum geometry under supplied hypotheses {#следствие-вакуумная-топология}
 
-:::tip Corollary T-120b (Vacuum Topology) — topology $\Sigma^3\cong S^3$ [T]; constant curvature $k=+1$ [C at the vacuum symmetry]
-For the vacuum Gap-configuration (minimizing $V_{\text{Gap}}$), the spatial manifold $\Sigma^3$ has constant curvature (is maximally symmetric):
+:::info Corollary T-120b [C at a specified positive vacuum field and closed slicing]
+The spectrum $\Sigma^3\cong S^3$ computed in the selected spatial-algebra construction of T-119 is independent of an energy readout. It does not by itself select a round metric. Conversely $\Lambda>0$ does not by itself determine spatial topology or the sign of the curvature of a chosen slice.
 
-- The sign of curvature is determined by $\text{sign}(\Lambda_{\text{Gap}})$
-- $\Lambda_{\text{Gap}} > 0$ (from O-sector Gap $\approx 1$, T-71) $\Rightarrow \Sigma^3 \cong S^3$ (closed)
-- Metric: de Sitter solution of the Einstein equations
+Fix the four-dimensional vacuum Einstein equation $R_{\mu\nu}=\Lambda g_{\mu\nu}$, a supplied constant $\Lambda>0$, and maximal spacetime symmetry. In the corresponding curvature convention the constant-curvature ansatz yields
 
 $$
-ds^2 = dt^2 - a^2(t)\left[\frac{dr^2}{1-kr^2} + r^2 d\Omega^2\right], \quad k = +1
+R_{\mu\nu\rho\sigma}=\frac{\Lambda}{3}(g_{\mu\rho}g_{\nu\sigma}-g_{\mu\sigma}g_{\nu\rho}),\qquad H^2=\frac{\Lambda}{3}.
 $$
+
+This is locally de Sitter geometry **[T under these inputs]**. Choosing its complete simply connected global realization and the closed homogeneous slicing gives, in units $c=1$,
+
+$$
+ds^2=dt^2-a^2(t)d\Omega_3^2,\qquad a(t)=H^{-1}\cosh(Ht).
+$$
+
+Its slices are round $S^3$, with sectional curvature $1/a(t)^2>0$; this is the selected $k=+1$ realization.
 :::
 
-Until early 2026-09-25 the heading read [T], then [C at T-119]: asserting that $\Sigma^3$ is closed presupposed that it exists as a smooth manifold, the then conditional half of T-119. **Split 2026-09-25.** (i) $\Sigma^3\cong S^3$ is now part of T-119 itself, [T], by a route independent of the vacuum: the spatial algebra is the minimal unitization of $C_0(\mathbb R^3)$. Steps 1–3 and 5 below are no longer needed for it; in particular simple connectivity no longer rests on T-64. (ii) Constant curvature, $k=+1$ and the de Sitter metric still use Steps 1–4: the vacuum symmetry of Step 1 rests on T-64, now [H] (hypothesis (SV)), and on $\Lambda_{\text{Gap}}>0$ (T-71). So (ii) is [C at the vacuum symmetry]. A remark, not a proof: the flat covariance metric of T-119 extends to $S^3$ exactly in the round conformal class, the class of $k=+1$.
+**Conditional derivation.** Contraction of the constant-curvature tensor in dimension four gives $R_{\mu\nu}=3K g_{\mu\nu}$, hence $K=\Lambda/3$. The closed-slicing Friedmann equation is $\dot a^2+1=H^2a^2$; the displayed $a(t)$ solves it. With spatial completeness, simple connectivity and positive constant spatial curvature specified, the spatial space-form classification gives $S^3$. These assumptions supply the topology; neither the sign of $\Lambda$ nor contractibility of a matrix configuration space supplies them.
 
-**Proof.**
+Positive $\Lambda$ also admits flat and open de Sitter coordinate patches: $a(t)=a_0e^{Ht}$ with $k=0$, and $a(t)=H^{-1}\sinh(Ht)$ with $k=-1$, respectively. Thus positive **spacetime** curvature and the sign of **spatial** curvature are different statements ([Carroll, GR notes, §8](https://ned.ipac.caltech.edu/level5/March01/Carroll3/Carroll8.html)). Without maximal spacetime symmetry, the vacuum Einstein equation also permits nonzero Weyl curvature and does not force constant sectional curvature.
 
-1. **Vacuum symmetry.** The Gap vacuum configuration is invariant under $\mathrm{SU}(3) \subset G_2$ — the stabilizer of the O-direction in $G_2$ (sector decomposition [T], vacuum uniqueness T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))).
-
-2. **Transitivity.** $\mathrm{SU}(3)$ acts transitively on the unit sphere $S^5 \subset \mathbb{C}^3$ (fundamental representation of the $\mathbf{3}$-sector) with isotropy $\mathrm{SU}(2)$, so $\mathrm{SU}(3)/\mathrm{SU}(2)\cong S^5$. The vacuum $3$-manifold $\Sigma^3$ is the fixed-radius orbit of the residual $\mathrm{SO}(4)\subset\mathrm{SU}(3)\ltimes(\text{phases})$ acting on the spatial section; its induced metric inherits an isometry group of dimension $\dim(\mathrm{Isom}(\Sigma^3)) \geq 6$. (The $\mathrm{SU}(3)$ orbit is $S^5$, not $S^2$; the $3$-manifold arises from the constant-curvature homogeneous structure, not directly as the $\mathrm{SU}(3)$-orbit.)
-
-3. **Maximal dimension.** For a 3-manifold, the maximum isometry-group dimension is $\frac{1}{2} \cdot 3 \cdot 4 = 6$ (attained only on spaces of constant curvature). Hence $\mathrm{Isom}(\Sigma^3)$ has exactly the maximal dimension 6, and $\Sigma^3$ is a space of constant curvature.
-
-4. **Curvature sign.** $\Lambda_{\text{Gap}} > 0$ (T-71 [T]) $\Rightarrow$ positive curvature $\Rightarrow$ $k = +1$. (An earlier version also cited "T-186(c) [T]: $\Delta F > 0$ unconditionally"; T-186(c) is retracted [✗] — registry row T-186.)
-
-5. **Uniqueness (up to spherical space form).** Constant positive curvature + $\dim\mathrm{Isom}=6$ singles out the round metric; the **simply-connected** such 3-manifold is $S^3$ ($\mathrm{Isom}(S^3) = \mathrm{SO}(4)$, $\dim = 6$). If $\pi_1(\Sigma^3)\neq 1$, $\Sigma^3$ could be a spherical space form $S^3/\Gamma$ (e.g. $\mathbb{RP}^3=S^3/\mathbb{Z}_2$, which also has $\dim\mathrm{Isom}=6$). The vacuum's simple-connectivity — from the contractibility of the Gap configuration space (T-64 unique vacuum + $H^1=0$) — selects $\Sigma^3\cong S^3$. $\blacksquare$
-
-:::note Cosmological consistency
-$k=+1$ (closed) is compatible with data: $\Omega_k = 0.0007\pm0.0019$ (Planck 2018) permits a large but finite $S^3$.
-:::
+The physical identification of a Gap readout with the positive $\Lambda$ supplied here is [T-71 [H]](/docs/core/foundations/consequences#теорема-лямбда-положительна). Internal $\mathrm{SU}(3)$ symmetry alone does not provide a transitive spatial action, six independent Killing fields, a four-dimensional maximally symmetric vacuum or an energy sign. The former Steps 1–5 claiming those automatic bridges are replaced by the explicit conditional argument above. In particular, $H^1=0$ or a unique minimum of a state-space potential is not a proof of simple connectivity of a spatial manifold.
 
 ---
 
@@ -518,7 +514,7 @@ The temporal row read [C] (aperiodic clock assumed) in an intermediate version o
 | Potential objection | Resolution |
 |---------------------|-----------|
 | Thermodynamic limit $M \to \infty$ | Standard mathematical limit, analogous to classical mechanics from QM. Corrections $O(7^{-M})$ are exponentially small. Not a new open question |
-| Specific topology of $\Sigma^3$ | $S^3$, the minimal unitization of the fluctuation spectrum $\mathbb R^3$ (T-119, [T]); the curvature via $\Lambda_{\text{Gap}}$ and vacuum symmetry (T-120b(ii), [C at the vacuum symmetry]) |
+| Specific topology of $\Sigma^3$ | $S^3$, the minimal unitization of the fluctuation spectrum $\mathbb R^3$ (T-119, [T]); the round metric and closed de Sitter slicing require a supplied positive field and the stated symmetry/completeness conditions (T-120b, [C]) |
 | First-order condition and Poincaré duality | **Closed** (2026-09-25): the restated T-119 computes the spatial spectrum ($\mathbb R^3$, minimal unitization $S^3$), and both hold for the Dirac triple of $S^3$. For the averages instead of the fluctuations the spectrum is the octahedron $\cong B^3$, where Poincaré duality fails, so the choice of the fluctuation algebra is named in the theorem. Earlier this row read **Open**, and before that the table listed no open question. The aperiodic clock, listed here in an intermediate version, is supplied by the depth register (T-118) |
 | Non-perturbative partition function $Z_N \to Z$ | Was [P] **before** this work. Not related to background independence. Not a new question |
 | Smoothness of $M^4$ for finite $M$ | $M^4$ is defined in the limit. For finite $M$, geometry is "blurred" at the Planck scale — a **prediction**, not an open question. For the time factor the finite-$M$ picture is exact: $7^M$ readings of chronon spacing (emergent time §11.4) |

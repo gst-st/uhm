@@ -9,7 +9,6 @@ description: "Ontology, epistemology, and metaphysics of Coherence Cybernetics: 
 > *"Philosophy is written in this grand book — the universe — which stands continuously open to our gaze, but it cannot be understood unless one first learns to comprehend the language in which it is written."*
 > — Galileo Galilei
 
-
 :::info Who This Chapter Is For
 The philosophical foundations of CC: unitary monism, epistemology of statuses, ethics of the consciousness threshold. The reader will learn why $\Gamma$ contains 7 dimensions and why experience is not a bonus but a necessity.
 :::
@@ -317,7 +316,7 @@ The main difference: Spinoza had no formalism. His "attributes" are philosophica
 **Necessitas and uniqueness of the attractor.** E1P33 asserts: things could not have been produced in any other way. In CC this is formally ensured by the primitivity of $\mathcal{L}_0$ (T-39a): there is a unique stationary state $\rho^*$ toward which the system necessarily tends. Spinoza's necessity is not external compulsion but the inner logic of the substance; the primitivity of $\mathcal{L}_0$ is not an external constraint but a consequence of the axiom structure.
 
 :::note Spinoza and the No-Zombie Theorem
-Spinoza's thesis E2P13 (*Objectum ideae humanam Mentem constituentis est Corpus* — the object of the idea constituting the human mind is the body) means: mind = idea of the body. There can be no body without mind and no mind without body. CC formalizes this as the No-Zombie theorem [T]: regeneration ($\mathcal{R}$) without interiority ($\mathrm{Coh}_E > 0$) is **ineffective** — a system with conatus but without thought inevitably loses coherence. Spinoza's E2P13 is philosophical intuition; No-Zombie is its provable formal analogue.
+The Spinoza comparison remains interpretive [I]. The universal zombie exclusion T-38a is withdrawn [✗]; a positive E-coherence floor needs explicit flux and regeneration-target hypotheses.
 :::
 
 ### 4.2 Whitehead: Process and Reality
@@ -332,17 +331,13 @@ Whitehead also introduced the concept of *prehension* — the grasping of one ev
 
 Edmund Husserl (1859–1938) discovered **intentionality** — the property of consciousness to always be *about something*. Consciousness does not exist in a vacuum: it is always directed at an object.
 
-In CC, intentionality is implemented through the [Enc functor](./sensorimotor#функтор-enc) (T-100 [T]): every observation modifies $\Gamma$, and this modification is the mathematical form of "directedness toward an object." Reflection ($\varphi$) is directedness toward oneself.
+In CC, intentionality is implemented through the [Enc functor](./sensorimotor#функтор-enc) (T-100 [D]): every observation modifies $\Gamma$, and this modification is the mathematical form of "directedness toward an object." Reflection ($\varphi$) is directedness toward oneself.
 
 Merleau-Ponty, Husserl's student, emphasized the *embodiment* of consciousness: we are not disembodied spirits observing the world from the outside — we are embedded in the world through the body. In CC, embodiment is encoded in dimensions A (articulation — perception), D (dynamics — action), and O (grounding — resources). Consciousness in CC is *fundamentally* embodied — because $\Gamma$ includes both "higher" ($E$, $U$) and "basic" ($A$, $O$) dimensions.
 
-### 4.4 Kant: Conditions of the Possibility of Experience
+### 4.4 Kant: conditions of experience
 
-Immanuel Kant (1724–1804) asked: what are the *conditions of the possibility* of experience? What must be true *prior to* any concrete experience, for experience to be possible at all?
-
-CC gives a precise answer: the conditions of the possibility of experience are the thresholds $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$. These are *transcendental conditions* in the Kantian sense — not empirical observations, but structural presuppositions without which experience is impossible.
-
-But unlike Kant, CC *derives* these conditions from axioms rather than postulating them. Kant said: "Space and time are a priori forms of sensibility." CC says: "The thresholds of consciousness are theorems of the formalism."
+The comparison with Kant is interpretive [I]. The selected operational window contains $P>2/7$, $R\ge1/3$, $\Phi\ge1$ and a separately defined $D_{\mathrm{diff}}\ge2$. Algebraic relations between these quantities are provable under their definitions; neither the choice of predicate nor its identification with phenomenal experience follows from those relations.
 
 ### 4.5 Eastern Traditions
 
@@ -382,11 +377,11 @@ CC does not "solve" the hard problem in the usual sense — it **dissolves** it 
 
 2. In CC, $\Gamma$ inherently contains both sides. The question "why does $\Gamma$ have an E-dimension?" is analogous to the question "why does spacetime have a temporal coordinate?" — this is part of the structure, not something that needs explaining.
 
-3. **What CC explains:** not *why* experience exists (this is built into the ontology), but *when* it arises (at $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$), *how* it changes (through $\mathcal{L}_\Omega$), and *why* it is necessary (No-Zombie theorem).
+3. **Model scope:** selected statistics and dynamics supply checkable operational criteria. Their phenomenal interpretation needs a separate bridge; universal zombie exclusion is withdrawn.
 
 **Analogy.** Imagine someone asks: "Why does space have three dimensions?" A physicist can answer: "In three dimensions, stable orbits and knots are possible — it is the only dimensionality compatible with complex structure." But they cannot answer: "Why does space exist at all?" — that is not a physics question. Analogously: CC can answer when and why consciousness arises, but not "why does experience exist at all?" — that is a question of ontology, not dynamics.
 
-**And the honest residue is itself a theorem.** The identification "E-sector = interiority" remains an external postulate [P], and the reading of Gap eigenvectors as qualia remains an interpretation [I] — and this is not a temporary gap awaiting a cleverer argument. The meta-theorem T-214 [T] proves (via Lawvere's fixed-point theorem) that *any* bridge functor from states to experiential content **cannot** be expressed as an internal morphism of the theory: the residual [I] is structurally inevitable, for CC and for every successor. Dissolution therefore comes with a precise boundary marker: everything *up to* the bridge is mathematics (structure of phenomenal space, thresholds, dynamics); the bridge itself is provably where mathematics ends. See [Model Theory — Limits of Explanation](./model-theory#природа-категориального-разрыва) for the full statement.
+Phenomenal identification remains an open semantic and empirical bridge. Universal T-214 is withdrawn [✗]: Lawvere’s theorem under its specific premises does not prohibit arbitrary internal experiential maps. This boundary is not proved for all future theories. A selected E-predicate is a model definition whose identification with experience needs separate validation.
 
 :::note The Dissolution Strategy: Historical Precedents
 The strategy of "dissolving" a problem (rather than solving it) has illustrious precedents:
@@ -491,7 +486,6 @@ In the next chapter we leave the philosophical Olympus and descend to earth: [Co
 - [Unique predictions](./predictions) — falsifiable consequences
 - [Panpsychism: critical analysis](/docs/consciousness/comparative/panpsychism-analysis) — why CC is not panpsychism
 - [Ethics and meaning](/docs/consciousness/ethics-meaning/value-consciousness) — practical ethics of coherence
-
 
 ---
 

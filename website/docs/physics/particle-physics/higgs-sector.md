@@ -32,16 +32,18 @@ description: "Uniqueness of the Higgs line {A,E,U}, Higgs mass with octonionic c
 
 In UHM the Higgs field is identified with the $E$-$U$ coherence in the $\bar{3}$-to-$\bar{3}$ sector:
 
-$$H \sim \gamma_{EU} = |\gamma_{EU}| e^{i\theta_{EU}}$$
+$$
+H \sim \gamma_{EU} = |\gamma_{EU}| e^{i\theta_{EU}}
+$$
 
-Dimensions $E$ (evaluation) and $U$ (unity) belong to the $\bar{3}$-sector $\{L, E, U\} = \{4, 5, 6\}$. The pair $(E, U)$ defines the electroweak channel: $\text{Gap}(E,U) = 0$ corresponds to a weak doublet, $\text{Gap}(E,U) \neq 0$ — to a singlet.
+The E/U coherence is a chosen native observable. Its phase Gap does not determine an electroweak representation. A weak doublet requires the supplied group action and carrier described below; the axis-labelled antitriplet is withdrawn [✗].
 
 #### Theorem 1.0 (Identification $H \sim \gamma_{EU}$) — corrected from [T] to [H] {#теорема-отождествление-хиггса}
 
 :::danger Corrected 2026-09-25 (audit A-90): a vacuum value of $\gamma_{EU}$ breaks colour
 Checked numerically with $SU(3)_C = \mathrm{Stab}_{G_2}(e_O)$, the colour group of the corpus. The state $\Gamma = I/7 + \varepsilon\,(e^{i\phi}|E\rangle\langle U| + \text{h.c.})$ keeps a subalgebra of $\mathfrak{su}(3)_C$ of dimension 1 at $\phi = \pi/2$ (and $3\pi/2$) and of dimension 0 at the other 23 of 25 sampled phases, against 8 at $\varepsilon = 0$; the coherence $\gamma_{EU}$ has no colour-singlet component, since the $SU(3)_C$-invariant states have coherences only on $(A,D)$, $(S,U)$, $(L,E)$ (`test_gamma_eu_vev_breaks_colour`). So $\langle\gamma_{EU}\rangle \neq 0$ breaks $SU(3)_C$, while the Standard-Model Higgs is a colour singlet. Steps 3 and 4 below fail as well: no $SU(2)$ commutes with $SU(3)_C$ on $\mathbb C^7$ (the commutant is $\mathbb C^3$), so there is no doublet $(2,+1/2)$ to carry, and the vacuum value came from T-64, which is restated as a hypothesis whose vacuum has no sector values; $E$ and $U$ are not in a sector $\bar{\mathbf 3} = \{L,E,U\}$ (T-48a retracted).
 
-Repairs tried. (i) Correct complex triplets: $\gamma_{EU}$ has zero singlet weight, as above. (ii) Another colour group: $\gamma_{EU}$ is invariant under $\mathrm{Stab}_{G_2}(e_A)$, but only inside the combination with equal coherences on $(S,L)$ and $(D,O)$ — the pairs of the lines through $A$ — and this moves colour from $O$ to $A$, against the rest of the corpus. (iii) A doublet on $\mathbb C^7$: impossible for any $SU(3)$, for the commutant reason above. (iv) The Clifford frame of [T-326](/docs/physics/gauge-symmetry/standard-model#sm-из-клиффорда) restricted to $\mathrm{Spin}(9)$, where an $SU(2)$ does exist — the centraliser of colour in the $\mathrm{Spin}(9)$ of $\mathcal S = \mathbb C\otimes\mathbb O$, which T-329 shows to be the diagonal of $SU(2)_L\times SU(2)_R$: it gives $H \sim \gamma_{EU}$ no support. $\mathcal S = (\mathbf 3,\mathbf 2)_{1/6} \oplus (\mathbf 1,\mathbf 2)_{-1/2}$ contains doublets only, so every operator on $\mathcal S$ — every coherence of $\Gamma$, $\gamma_{EU}$ included — carries integer $SU(2)_L$ spin ($\mathbf 2\otimes\mathbf 2 = \mathbf 1\oplus\mathbf 3$); and the vector $\mathbb R^9$ of the Clifford system is $(\mathbf 3\oplus\bar{\mathbf 3},\mathbf 1)_{\pm1/3} \oplus (\mathbf 1,\mathbf 3)_0$ — no doublet either (`test_no_higgs_doublet_in_the_clifford_frame`). *(Narrowed 2026-09-25: this absence holds for $\mathrm{Spin}(9)$ only.)* In the $\mathrm{Spin}(10)$ completion, where the tenth Clifford generator is forced, the colour-free Clifford plane $\{iL_{e_O}, J, iJ, \gamma_{10}\}$ is one Higgs doublet with $Y = \pm\tfrac12$ — [T] as a representation, the identification [H] — and a vacuum in the plane $\{iL_{e_O}, \gamma_{10}\}$ leaves exactly $SU(3)\times U(1)_Q$ ([standard model, Theorem 2.6(f)](/docs/physics/gauge-symmetry/standard-model#поколение-t329)). That doublet is a direction of the Clifford vector, not a coherence of $\Gamma$, so it gives $H \sim \gamma_{EU}$ no support either. What stands [T]: Step 1 (T-42a) and Step 2 (Theorem 1.1). The identification $H \sim \gamma_{EU}$ is a hypothesis [H] with three named obstructions: colour breaking under $SU(3)_C = \mathrm{Stab}(e_O)$, the absence of a doublet on $\mathbb C^7$, and the absence of a doublet among the operators on $\mathcal S$ and in the vector of $\mathrm{Spin}(9)$. The Higgs doublet of the corpus is the one of Theorem 2.6(f).
+Repairs tried. (i) Correct complex triplets: $\gamma_{EU}$ has zero singlet weight, as above. (ii) Another colour group: $\gamma_{EU}$ is invariant under $\mathrm{Stab}_{G_2}(e_A)$, but only inside the combination with equal coherences on $(S,L)$ and $(D,O)$ — the pairs of the lines through $A$ — and this moves colour from $O$ to $A$, against the rest of the corpus. (iii) A doublet on $\mathbb C^7$: impossible for any $SU(3)$, for the commutant reason above. (iv) The Clifford frame of [T-326](/docs/physics/gauge-symmetry/standard-model#sm-из-клиффорда) restricted to $\mathrm{Spin}(9)$, where an $SU(2)$ does exist — the centraliser of colour in the $\mathrm{Spin}(9)$ of $\mathcal S = \mathbb C\otimes\mathbb O$, which T-329 shows to be the diagonal of $SU(2)_L\times SU(2)_R$: it gives $H \sim \gamma_{EU}$ no support. $\mathcal S = (\mathbf 3,\mathbf 2)_{1/6} \oplus (\mathbf 1,\mathbf 2)_{-1/2}$ contains doublets only, so every operator on $\mathcal S$ — every coherence of $\Gamma$, $\gamma_{EU}$ included — carries integer $SU(2)_L$ spin ($\mathbf 2\otimes\mathbf 2 = \mathbf 1\oplus\mathbf 3$); and the vector $\mathbb R^9$ of the Clifford system is $(\mathbf 3\oplus\bar{\mathbf 3},\mathbf 1)_{\pm1/3} \oplus (\mathbf 1,\mathbf 3)_0$ — no doublet either (`test_no_higgs_doublet_in_the_clifford_frame`). *(Narrowed 2026-09-25: this absence holds for $\mathrm{Spin}(9)$ only.)* In the $\mathrm{Spin}(10)$ completion, where the tenth Clifford generator is forced, the colour-free Clifford plane $\{iL_{e_O}, J, iJ, \gamma_{10}\}$ is one Higgs doublet with $Y = \pm\tfrac12$ — [T] as a representation, the identification [H] — and a vacuum in the plane $\{iL_{e_O}, \gamma_{10}\}$ leaves exactly $SU(3)\times U(1)_Q$ ([standard model, Theorem 2.6(f)](/docs/physics/gauge-symmetry/standard-model#поколение-t329)). That doublet is a direction of the Clifford vector, not a coherence of $\Gamma$, so it gives $H \sim \gamma_{EU}$ no support either. Universal Step 1 (T-42a) is withdrawn [✗]; the E/U pair is chosen [D]. Step 2 is a Fano-incidence identity [T at the selected frame] (Theorem 1.1). The identification $H \sim \gamma_{EU}$ is a hypothesis [H] with three named obstructions: colour breaking under $SU(3)_C = \mathrm{Stab}(e_O)$, the absence of a doublet on $\mathbb C^7$, and the absence of a doublet among the operators on $\mathcal S$ and in the vector of $\mathrm{Spin}(9)$. The Higgs doublet of the corpus is the one of Theorem 2.6(f).
 :::
 
 :::info Remark (the Gap vacuum and the Higgs plane) [I]
@@ -52,25 +54,11 @@ Under [T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобал�
 The identification $H \sim \gamma_{EU}$ is strictly proved from four independent [T]-results: categorical uniqueness of the pair $(E,U)$, uniqueness of the Higgs line, $SU(2)_L \times U(1)_Y$ quantum numbers, and nonzero vacuum expectation value from the unique vacuum. *(Corrected: see the box above.)*
 :::
 
-**Theorem.** The coherence $\gamma_{EU}$ is the unique candidate for the Higgs field in UHM, and the identification $H \sim \gamma_{EU}$ is proved from the following chain.
+**Corrected scope of Theorem 1.0 [H/✗].** The identification $H\sim\gamma_{EU}$ is not derived by categorical rigidity. The rate ansatz selects the pair $(E,U)$ **by its definition**; replacing that ansatz by one using other coherences does not violate unit trace. Morphism sets $\operatorname{Hom}(O,E)$ are not numerical matrix entries, and T-42a's former universal encoder uniqueness is withdrawn [✗].
 
-**Step 1. Categorical uniqueness of the pair $(E,U)$ [T] (T-42a).**
+Given the labelled points $E,U$ in a chosen Fano plane, the line through them is uniquely $\{A,E,U\}$ [T: incidence]. Calling it an electroweak or Higgs line is extra identification data [I/H]. A bilinear coherence does not automatically transform as a weak doublet: the representation-theoretic obstruction in the box above remains. A nonzero value of the chosen coherence also requires a specified potential and vacuum; it is not forced by its appearance in a feedback rate.
 
-The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ categorically singles out exactly the pair $(E,U)$ via morphisms $\mathrm{Hom}(O,E)$ and $\mathrm{Hom}(O,U)$. No other pair of dimensions has this property: replacing with $\{L,U\}$ removes $\mathrm{Hom}(O,L)$ from $\kappa_0$; replacing with $\{L,E\}$ excludes $U$, breaking the normalization $\mathrm{Tr}(\Gamma) = 1$. Uniqueness is proved — see [Theorem of FE-uniqueness](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ) [T].
-
-**Step 2. Uniqueness of the Higgs line $\{A,E,U\}$ [T] (Theorem 1.1).**
-
-Through any two points of $\mathrm{PG}(2,2)$ there passes exactly one line. The unique Fano line containing both points $E = 5$ and $U = 6$: $\{5,6,1\} = \{A,E,U\}$. This line defines the electroweak sector — see [Theorem 1.1](#thm-1-1) [T].
-
-**Step 3. Quantum numbers of $\gamma_{EU}$ coincide with those of the SM Higgs doublet [T].**
-
-From the electroweak uniqueness theorem ([§2.3a](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ) [T]): the pair $(E,U)$ forms the doublet $2_{EU}$ under $SU(2)_L$. The coherence $\gamma_{EU}$ — a bilinear form connecting $E$ and $U$ — transforms as $(2, +1/2)$ under $SU(2)_L \times U(1)_Y$. This is exactly the quantum numbers of the SM Higgs doublet.
-
-**Step 4. Nonzero VEV $\langle\gamma_{EU}\rangle \neq 0$ breaks $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$ [T].**
-
-From [Theorem on the unique vacuum T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): the unique global minimum of $V_\text{Gap}$ has $|\gamma_{EU}|_\text{vac} = \varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ (in units of $\omega_0$), giving $\langle\gamma_{EU}\rangle \neq 0$. A nonzero vacuum expectation value of a field with quantum numbers $(2, +1/2)$ uniquely realizes spontaneous breaking $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$.
-
-**Conclusion (earlier, corrected 2026-09-25).** The earlier text read: "All four steps rely exclusively on [T]-results. The identification $H \sim \gamma_{EU}$ follows from them uniquely." Steps 3 and 4 are withdrawn (box above), so the identification is a hypothesis [H].
+Thus the valid incidence theorem below survives, while the physical identification and scalar content require independent representation and dynamical bridges. The old chain's universal pair selection, doublet quantum numbers and automatic VEV conclusions are withdrawn [✗].
 
 ### 1.2 Fano–Higgs line
 
@@ -187,7 +175,11 @@ At the last stage every coupling is $M(h)=p(B-L,\tau_R)\,\gamma(h)$, with $p$ a 
 **(d) The clock phase does not split the moduli [T].** Dressing the coupling by $e^{\varphi X}$, $X\in\{i, L_{e_O},\omega,B-L\}$ — among them the Page–Wootters phase generated by $i$ — keeps $\lvert m_u\rvert=\lvert m_d\rvert$ and $\lvert m_\nu\rvert=\lvert m_e\rvert$. It changes only the arguments of the masses.
 
 **(e) The Gap vacuum does not split in the observed way [T for the identities; the scan is numerical].** The colour-invariant vacuum of T-64 is
-$$\Gamma_v=a\,|O\rangle\langle O|+\tfrac{b+c}{2}\,\Pi_6-\tfrac{b-c}{2}\,\tau|_{\mathbb C^7},\qquad \mathcal G_{\text{total}}=\lVert\mathrm{Im}\,\Gamma_v\rVert^2=\tfrac32(b-c)^2 .$$
+
+$$
+\Gamma_v=a\,|O\rangle\langle O|+\tfrac{b+c}{2}\,\Pi_6-\tfrac{b-c}{2}\,\tau|_{\mathbb C^7},\qquad \mathcal G_{\text{total}}=\lVert\mathrm{Im}\,\Gamma_v\rVert^2=\tfrac32(b-c)^2 .
+$$
+
 Its imaginary part points along $iL_{e_O}$, one real neutral direction, so by (c) it gives equal moduli (the remark of §1.1). Its Gap parameter $b-c$ is the $T_{3L}$-component of $\Gamma_v$ on the quark doublet. Extended to $\mathcal S$ with weight $t$ on $\eta_0$, $\Gamma_v$ commutes with $\mathfrak{su}(2)_L$ only for $b=c$ and $t=a$; even $I/7$ with $t=0$ does not. Read as population weights of a Yukawa coupling ($u$: weight $c$; $d$: $b$; $\nu$ and $e$: $a/2$ each, since $e_O$ is half $\nu_L$ and half $e_L$), the vacuum gives a lepton-to-heavy-quark ratio between $0.46$ and $0.95$ on 99 points of the Gap phase. On the rank-4 branch at $\lambda_4=0$ the ratio is at least $1/2$ analytically. The data give $m_\tau/m_t=0.022$, and $m_\nu=m_e$ is excluded as well.
 
 **(f) What the data ask for [numbers; hypothesis (UP) [H]].** One-loop Standard-Model running from $M_Z$ (inputs $m_t(m_t)=162.5$ GeV, $m_b(m_b)=4.18$ GeV, $m_\tau=1.777$ GeV, $\alpha_s(M_Z)=0.118$) gives $m_t/m_b\approx55$ at $M_Z$. At $2\times10^{16}$ GeV it gives $y_t=0.443$, $y_t/y_b\approx68$ and $y_b/y_\tau\approx0.66$. The Clifford relations $m_t=m_b$ and $m_b=m_\tau$ therefore fail by a factor of 68 and by 34%. Written as $(\alpha+\beta\tau_R)\gamma(h)$, the data require $\beta/\alpha=(y_t-y_b)/(y_t+y_b)=0.971$. At the unification scale the coupling is the projection onto $i=L_{e_O}$ to within 1.5%: at leading order only up-type fields couple. **Hypothesis (UP):** *the tree-level Yukawa coupling is $\gamma(h)$ followed by the projection onto $V_R\cap\{i=L_{e_O}\}$.* Its consequences: $y_b=y_\tau=0$ at tree level; one $O(1)$ coupling $y_t$; and a Dirac neutrino coupling $y_\nu^D=y_t$. With $m_{\nu_3}\approx0.05$ eV the seesaw then puts $M_R=m_D^2/m_{\nu_3}\approx1.2$–$1.4\times10^{14}$ GeV, the order of the [neutrino page](/docs/physics/particle-physics/neutrino-masses#seesaw). (UP) is not derived. No principle of UHM found so far fixes $\beta/\alpha$, and $m_t/m_b$ is not predicted. *Update (T-332(h)–(k), [§1.7](#голоморфность-вп)):* (UP) is holomorphy of the coupling in one complex doublet. In its exact form it leaves $e$, $\mu$ and $\tau$ massless to all orders and is refuted [✗]. Only the leading-order statement, with a breaking $\varepsilon=1-\beta/\alpha\approx0.03$, remains [H].
@@ -211,7 +203,11 @@ The hypothesis (UP) of §1.6(f) says that the tree-level Yukawa coupling is the 
 **Theorem 1.7 (T-332(h)–(k)).**
 
 **(h) (UP) is holomorphy in one complex doublet [T].** Hypercharge acts on the colour-free plane $P$ as $\tfrac12 j$ with $j^2=-1$, and on maps $V_L\to V_R$
-$$\tau_R\,\gamma(h)=\omega\,\gamma(jh)\qquad(h\in P).$$
+
+$$
+\tau_R\,\gamma(h)=\omega\,\gamma(jh)\qquad(h\in P).
+$$
+
 Hence $\tfrac12(1\pm\tau_R)\gamma(h)=\gamma(\pi_\pm h)$, where $\pi_\pm=\tfrac12(1\pm\omega j)$ act on $P_{\mathbb C}=P\otimes\mathbb C_\omega$. Each $\pi_\pm$ has real rank 4, one doublet. So (UP) says that the coupling depends on the Higgs field only through $\pi_+h$, the doublet of hypercharge $-\tfrac12$ (the $\tilde H$ of the Standard Model), and does so $\omega$-linearly. The coupling is holomorphic in one complex doublet. This agrees with T-296, since $P_+$ is one doublet, not two. It is the holomorphic alternative to the real reading of §1.6(c). In Standard-Model language (UP) is $y_u\,Q\tilde Hu^c$ with no $QHd^c$ and no $LHe^c$.
 
 **(i) The exact form keeps the charged leptons massless [T].** Take one generation, the six fields $Q,L,u^c,d^c,\nu^c,e^c$, and the doublet. Which phase rotations that commute with $\mathfrak g_{\mathrm{SM}}$ keep the coupling $(\alpha+\beta\tau_R)\gamma(h)$? For $\lvert\beta\rvert\neq\lvert\alpha\rvert$, with or without a $(B-L)$ dressing, there are three: hypercharge, $B$ and $L$. Each has zero colour anomaly. For $\beta=\alpha$ — exact (UP) — there are five. The two new ones are the phase of $d^c$, with colour anomaly $\tfrac12$ per generation, and the phase of $e^c$, with neither a colour nor an $\mathrm{SU}(2)_L$ anomaly. The phase of $e^c$ is then an exact symmetry of every $\mathfrak g_{\mathrm{SM}}$ gauge theory whose only chirality-flipping coupling is the (UP) Yukawa. Its only anomaly is with hypercharge, and an abelian anomaly has no instantons. It forbids masses for $e$, $\mu$ and $\tau$ at every order and non-perturbatively. The phase of $d^c$ forbids $m_d$, $m_s$ and $m_b$ at every order of perturbation theory; only QCD instantons break it. **So exact (UP) is refuted by $m_\tau=1.777$ GeV [✗].** The pattern "tree-level $y_b=y_\tau=0$, radiative $b$ and $\tau$ masses" is impossible in the Clifford content: loops of the gauge bosons, of the Higgs and of the up-type coupling keep both phases.
@@ -232,7 +228,6 @@ Witnesses: `test_up_projection_is_holomorphy_in_one_complex_doublet`, `test_an_e
 
 **What this changes.** In T-332(f) the exact (UP) is refuted [✗], and the leading-order statement stays [H] as a description of the data. The loop mechanisms for $m_b$ on the [Fano selection-rule page](/docs/physics/gauge-symmetry/fano-selection-rules) (§12.4) and in [Yukawa hierarchy §7.3](/docs/physics/particle-physics/yukawa-hierarchy#теорема-mb-mt) start from $y_b^{(\text{tree})}=0$ and generate $y_b$ through the retracted cubic $V_3$. The corrected $G_2$-invariant potential has no such vertex, and by (i) the Clifford content cannot generate $y_b$ from $y_b^{(\text{tree})}=0$. The neutrino relation $y_\nu^D=y_t$ uses only the leading order and is unchanged. With all down-type quarks exactly massless, $\bar\theta$ would be unphysical — the massless-quark solution of strong CP. The data exclude that as well; see [confinement §3.1b](/docs/physics/gauge-symmetry/confinement#пк-и-нб).
 
-
 ---
 
 ## 2. Higgs mechanism from Gap-condensation {#2-механизм-хиггса-из-gap-конденсации}
@@ -247,11 +242,15 @@ The mechanism of electroweak breaking via $\text{Gap}(E,U) \to 0$ is a consequen
 
 **(a)** The Higgs field is identified with the $E$-$U$ coherence:
 
-$$H \sim \gamma_{EU} = |\gamma_{EU}| e^{i\theta_{EU}}$$
+$$
+H \sim \gamma_{EU} = |\gamma_{EU}| e^{i\theta_{EU}}
+$$
 
 **(b)** VEV (vacuum expectation value):
 
-$$\langle H \rangle = \langle |\gamma_{EU}| \rangle e^{i\langle\theta_{EU}\rangle} \neq 0$$
+$$
+\langle H \rangle = \langle |\gamma_{EU}| \rangle e^{i\langle\theta_{EU}\rangle} \neq 0
+$$
 
 Nonzero VEV breaks $SU(2)_L \times U(1)_Y \to U(1)_\text{EM}$:
 - $SU(2)_L$: 3 generators → 2 broken ($W^+$, $W^-$) + 1 linear combination broken ($Z$)
@@ -260,7 +259,9 @@ Nonzero VEV breaks $SU(2)_L \times U(1)_Y \to U(1)_\text{EM}$:
 
 **(c)** Mass of the $W$-boson:
 
-$$M_W = \frac{g}{2} v, \quad v = \langle |\gamma_{EU}| \rangle \cdot \mu_\text{phys}$$
+$$
+M_W = \frac{g}{2} v, \quad v = \langle |\gamma_{EU}| \rangle \cdot \mu_\text{phys}
+$$
 
 where $g$ is the electroweak coupling constant, $\mu_\text{phys} = \mu \cdot \omega_0$.
 
@@ -268,14 +269,16 @@ where $g$ is the electroweak coupling constant, $\mu_\text{phys} = \mu \cdot \om
 
 The potential $V_\text{Gap}$ projects onto the $E$-$U$ channel:
 
-$$V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lambda_3 \bar{A} |\gamma_{EU}|^3 \cos(\text{phase})$$
+$$
+V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lambda_3 \bar{A} |\gamma_{EU}|^3 \cos(\text{phase})
+$$
 
 At $\mu^2 < 0$ (low-temperature regime): minimum at $|\gamma_{EU}| = v \neq 0$. This is the standard Higgs mechanism applied to the Gap potential. Higgs mass = second derivative of $V_{EU}$ at the minimum.
 
-:::note Status of parameter $\lambda_3$ [T]
-The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [C at (SV)]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the right order of magnitude (error $\lesssim \times 5$). For details — see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
+:::note Coupling input and perturbative scope [D/H/Pr]
+The relation $\lambda_3=2\mu^2/(3|\bar\gamma|)$ and the value $\lambda_3\approx74$ are chosen effective-model inputs, not coefficients uniquely derived from the spectral action: universal T-74 is withdrawn [✗]. A self-consistency equation determines a value only after its functional, other couplings and state/field space are supplied. Compactness of a finite integration domain does not establish continuum UV finiteness, perturbative convergence or a universal factor-five error bound.
 
-**⚠ C7**: $\lambda_3 \approx 74 \gg 4\pi$ — non-perturbative regime. All loop computations with $\lambda_3$ are formally unreliable and downgraded to **[H]**. See [warning](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative).
+Quantitative mass, mixing or gravitational predictions require independently fixed spectral data, renormalization/matching scales and physical readouts. If $\bar\gamma$ or $\lambda_3$ is inferred from those same observables, the result is calibration; held out data are needed for prediction. A small proposed $\lambda_3\varepsilon/(4\pi)$ is a power-counting estimate only after a definite action and propagators are supplied; factorially many diagrams can still yield a divergent asymptotic expansion. [The audited coupling discussion](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative) records these conditions.
 :::
 
 ### 2.2 Origin of $M_H \approx 125$ GeV from Gap-condensation [C] {#mh-125}
@@ -292,7 +295,9 @@ In the Standard Model the Higgs mass $M_H \approx 125$ GeV is a **free parameter
 
 **(a)** The Higgs mass is determined by the curvature of $V_{EU}$ at the minimum:
 
-$$M_H^2 = \frac{\partial^2 V_{EU}}{\partial |\gamma_{EU}|^2}\bigg|_{v} = 2\lambda_4 v^2 + \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2}$$
+$$
+M_H^2 = \frac{\partial^2 V_{EU}}{\partial |\gamma_{EU}|^2}\bigg|_{v} = 2\lambda_4 v^2 + \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2}
+$$
 
 **(b)** The first term, $2\lambda_4 v^2$, is the standard contribution from the quartic potential $V_4$. At $v = 246$ GeV and $\lambda_4 \approx 0.13$ we get $\sqrt{2\lambda_4} \cdot v \approx 125$ GeV — coincidence with SM.
 
@@ -300,7 +305,9 @@ $$M_H^2 = \frac{\partial^2 V_{EU}}{\partial |\gamma_{EU}|^2}\bigg|_{v} = 2\lambd
 
 **(d)** Numerical estimate of the correction (at typical values of Gap parameters):
 
-$$\delta M_H^2 \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 0.54 \; (\text{in Gap units})$$
+$$
+\delta M_H^2 \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 0.54 \; (\text{in Gap units})
+$$
 
 This correction is small compared to the main term, but is **nonzero** and gives rise to a falsifiable deviation from SM (see [section 6](#6-фальсифицируемые-предсказания)). (The stated inputs give $0.54$; $\approx 5.5$ would require $\bar A\approx0.15$, the confinement-sector coherence, rather than the average $0.047$.)
 
@@ -329,25 +336,33 @@ The identification of fermions with Gap-configurations is conditional on the cor
 
 **(a)** Left quark doublet $Q_L = (u_L, d_L)$:
 
-$$\Gamma_{Q_L}: \quad \text{Gap}(A,L) = \text{Gap}(S,E) = 0 \; (\text{color bonds}), \quad \text{Gap}(E,U) = 0 \; (\text{weak isospin})$$
+$$
+\Gamma_{Q_L}: \quad \text{Gap}(A,L) = \text{Gap}(S,E) = 0 \; (\text{color bonds}), \quad \text{Gap}(E,U) = 0 \; (\text{weak isospin})
+$$
 
 Quantum numbers: $(3, 2)_{1/6}$
 
 **(b)** Right $u$-quark $u_R$:
 
-$$\Gamma_{u_R}: \quad \text{Gap}(A,L) = \text{Gap}(S,E) = 0, \quad \text{Gap}(E,U) \neq 0$$
+$$
+\Gamma_{u_R}: \quad \text{Gap}(A,L) = \text{Gap}(S,E) = 0, \quad \text{Gap}(E,U) \neq 0
+$$
 
 Quantum numbers: $(3, 1)_{2/3}$
 
 **(c)** Left lepton doublet $L_L = (\nu_L, e_L)$:
 
-$$\Gamma_{L_L}: \quad \text{Gap}(\{A,S,D\}, \{L,E,U\}) = \text{Gap}_\text{max} \; (\text{colorless}), \quad \text{Gap}(E,U) = 0$$
+$$
+\Gamma_{L_L}: \quad \text{Gap}(\{A,S,D\}, \{L,E,U\}) = \text{Gap}_\text{max} \; (\text{colorless}), \quad \text{Gap}(E,U) = 0
+$$
 
 Quantum numbers: $(1, 2)_{-1/2}$
 
 **(d)** Right electron $e_R$:
 
-$$\Gamma_{e_R}: \quad \text{Gap}(\{A,S,D\}, \{L,E,U\}) = \text{Gap}_\text{max}, \quad \text{Gap}(E,U) \neq 0$$
+$$
+\Gamma_{e_R}: \quad \text{Gap}(\{A,S,D\}, \{L,E,U\}) = \text{Gap}_\text{max}, \quad \text{Gap}(E,U) \neq 0
+$$
 
 Quantum numbers: $(1, 1)_{-1}$
 
@@ -361,7 +376,9 @@ Quantum numbers: $(1, 1)_{-1}$
 
 **Hypercharge** is determined by the total Gap in the $O$-sector:
 
-$$Y = \frac{1}{3}\left(\sum_{i \in 3} \text{Gap}(O,i) - \sum_{j \in \bar{3}} \text{Gap}(O,j)\right)$$
+$$
+Y = \frac{1}{3}\left(\sum_{i \in 3} \text{Gap}(O,i) - \sum_{j \in \bar{3}} \text{Gap}(O,j)\right)
+$$
 
 ### 3.4 Anomaly cancellation
 
@@ -373,11 +390,15 @@ Anomaly cancellation for one generation is the standard SM result, automatically
 
 **Theorem.** The set of fermionic representations satisfies the gauge anomaly cancellation condition:
 
-$$\sum_\text{fermions} Y^3 = 0, \quad \sum_\text{fermions} Y = 0$$
+$$
+\sum_\text{fermions} Y^3 = 0, \quad \sum_\text{fermions} Y = 0
+$$
 
 **Proof.** For one generation:
 
-$$Q_L(1/6)^3 \times 6 + u_R(2/3)^3 \times 3 + d_R(-1/3)^3 \times 3 + L_L(-1/2)^3 \times 2 + e_R(-1)^3 \times 1 = 0$$
+$$
+Q_L(1/6)^3 \times 6 + u_R(2/3)^3 \times 3 + d_R(-1/3)^3 \times 3 + L_L(-1/2)^3 \times 2 + e_R(-1)^3 \times 1 = 0
+$$
 
 Fermionic representations from Gap-configurations form the same structure as one SM generation — anomalies cancel by construction. $\blacksquare$
 
@@ -392,7 +413,9 @@ Fermionic representations from Gap-configurations form the same structure as one
 :::tip [C at (SV)] Theorem
 In UHM the moment $f_0$ of the spectral action is **uniquely determined** through the vacuum effective action of the Gap theory on $(S^1)^{21}$:
 
-$$f_0 \Lambda^4 = \frac{1}{7}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]$$
+$$
+f_0 \Lambda^4 = \frac{1}{7}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]
+$$
 
 where $V_{\mathrm{Gap}}^{\min}$ is the potential value at the vacuum minimum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))), and $\zeta'_{H_{\mathrm{Gap}}}(0)$ is the log-determinant of the Hessian at the vacuum.
 :::
@@ -403,13 +426,17 @@ where $V_{\mathrm{Gap}}^{\min}$ is the potential value at the vacuum minimum ([T
 
 **Step 2 (Unique vacuum → loop expansion).** From [T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): the potential $V_{\mathrm{Gap}}$ has a unique global minimum with positive definite Hessian $H_{\mathrm{Gap}}$. Expansion:
 
-$$\Gamma_{\mathrm{eff}} = V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\ln\det(H_{\mathrm{Gap}}) + O(\text{two-loop})$$
+$$
+\Gamma_{\mathrm{eff}} = V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\ln\det(H_{\mathrm{Gap}}) + O(\text{two-loop})
+$$
 
 **Step 3 (Determinant regularization).** Zeta-regularized determinant: $\ln\det(H_{\mathrm{Gap}}) = -\zeta'_{H_{\mathrm{Gap}}}(0)$. From T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)): all eigenvalues $\lambda_i > 0$ (5 positive on the orbit space), so $\zeta'_{H_{\mathrm{Gap}}}(0) = -\sum_{i=1}^{5}\ln\lambda_i$.
 
 **Step 4 (Identification with $f_0$).** Coefficient $a_0$ of the spectral action: $f_0 \Lambda^4 \cdot 7$ = vacuum energy density of the internal space = $\Gamma_{\mathrm{eff}}$. Therefore:
 
-$$f_0 = \frac{\Gamma_{\mathrm{eff}}}{7\Lambda^4} = \frac{1}{7\Lambda^4}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]$$
+$$
+f_0 = \frac{\Gamma_{\mathrm{eff}}}{7\Lambda^4} = \frac{1}{7\Lambda^4}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]
+$$
 
 **Step 5 (Uniqueness).** All quantities on the right-hand side are uniquely determined: $V_{\mathrm{Gap}}^{\min}$ from T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)), $\zeta'_{H_{\mathrm{Gap}}}(0)$ from a finite sum over 5 eigenvalues, $\Lambda = \omega_0$. $f_0$ is **not a free parameter**, but a definite function of the vacuum quantities. $\blacksquare$
 
@@ -425,7 +452,9 @@ $\lambda_4$ is determined through the spectrum of the finite Dirac operator $D_{
 
 **Theorem.** The Higgs quartic self-coupling is determined through the coefficient $a_4$ of the spectral action:
 
-$$\lambda_4 = \frac{\pi^2}{2f_0\Lambda^4} \cdot \frac{\mathrm{Tr}(D_{\text{int}}^4)}{[\mathrm{Tr}(D_{\text{int}}^2)]^2}$$
+$$
+\lambda_4 = \frac{\pi^2}{2f_0\Lambda^4} \cdot \frac{\mathrm{Tr}(D_{\text{int}}^4)}{[\mathrm{Tr}(D_{\text{int}}^2)]^2}
+$$
 
 This is the standard result of Chamseddine–Connes–Marcolli (2007, Thm 11.2) for the NCG Standard Model. Applicability to the UHM triple is verified:
 
@@ -439,17 +468,23 @@ This is the standard result of Chamseddine–Connes–Marcolli (2007, Thm 11.2) 
 
 **Step 2 (Spectral action).** The spectral action $S = \mathrm{Tr}(f(D/\Lambda))$ (see [quantum gravity](/docs/physics/gravity/quantum-gravity)) expands as:
 
-$$S = f_0 \Lambda^4 a_0 + f_2 \Lambda^2 a_2 + f_4 a_4 + O(\Lambda^{-2})$$
+$$
+S = f_0 \Lambda^4 a_0 + f_2 \Lambda^2 a_2 + f_4 a_4 + O(\Lambda^{-2})
+$$
 
 The coefficient $a_4$ contains the term $\mathrm{Tr}(D_{\text{int}}^4)$, generating the quartic Higgs potential.
 
 **Step 3 (Computation).** From sectoral values (hypothesis (SV) [H]; T-61 restated):
 
-$$\mathrm{Tr}(D_{\text{int}}^2) \approx 6\omega_0^2\varepsilon_0^2, \qquad \mathrm{Tr}(D_{\text{int}}^4) \approx 6\omega_0^4\varepsilon_0^4 + \text{sectoral corrections}$$
+$$
+\mathrm{Tr}(D_{\text{int}}^2) \approx 6\omega_0^2\varepsilon_0^2, \qquad \mathrm{Tr}(D_{\text{int}}^4) \approx 6\omega_0^4\varepsilon_0^4 + \text{sectoral corrections}
+$$
 
 **Step 4 (RG evolution).** The bare $\lambda_4(\Lambda)$ is too large. RG running from $\Lambda$ to $v_{\text{EW}}$:
 
-$$\lambda_4(v) = \lambda_4(\Lambda) + \frac{1}{16\pi^2}\left(24\lambda_4^2 - 6y_t^4 + \ldots\right) \ln\frac{v}{\Lambda}$$
+$$
+\lambda_4(v) = \lambda_4(\Lambda) + \frac{1}{16\pi^2}\left(24\lambda_4^2 - 6y_t^4 + \ldots\right) \ln\frac{v}{\Lambda}
+$$
 
 At $y_t \approx 1$ (quasi-IR fixed point [T]): RG brings $\lambda_4$ to the observed $\approx 0.13$ from $\lambda_4(\Lambda) \approx 0.20$ [C] — standard Shaposhnikov–Wetterich result (2010). $\blacksquare$
 
@@ -473,19 +508,25 @@ The formula for the Higgs mass contains $\lambda_4$, determined from the spectra
 
 **(a)** Formula:
 
-$$M_H^2 = 2\lambda_4 v^2 + \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2}$$
+$$
+M_H^2 = 2\lambda_4 v^2 + \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2}
+$$
 
 First term — standard (from $V_4$). Second — **octonionic correction** from $V_3$.
 
 **Proof.** The potential $V_\text{Gap}$ projects onto the $E$-$U$ channel:
 
-$$V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lambda_3 \bar{A} |\gamma_{EU}|^3 \cos(\text{phase})$$
+$$
+V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lambda_3 \bar{A} |\gamma_{EU}|^3 \cos(\text{phase})
+$$
 
 At $\mu^2 < 0$: minimum at $|\gamma_{EU}| = v \neq 0$.
 
 Higgs mass = second derivative of $V_{EU}$ at the minimum:
 
-$$M_H^2 = \frac{\partial^2 V_{EU}}{\partial |\gamma_{EU}|^2}\bigg|_{v} = 2\lambda_4 v^2 + \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2}$$
+$$
+M_H^2 = \frac{\partial^2 V_{EU}}{\partial |\gamma_{EU}|^2}\bigg|_{v} = 2\lambda_4 v^2 + \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2}
+$$
 
 $\blacksquare$
 
@@ -507,15 +548,21 @@ The quantitative estimate $\delta\lambda/\lambda_\text{SM} \sim O(10^{-2}\text{-
 
 **(b)** In UHM: $M_H^2 = 2\lambda_4 v^2 + \delta M_H^2$, where:
 
-$$\delta M_H^2 = \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2} \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 0.54$$
+$$
+\delta M_H^2 = \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2} \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 0.54
+$$
 
 **(c)** Octonionic correction to $\lambda_\text{eff} = \lambda_4 + \delta\lambda$:
 
-$$\frac{\delta\lambda}{\lambda_4} = \frac{3\lambda_3^2 \bar{A}^2}{8\lambda_4 \mu^2 v^2}$$
+$$
+\frac{\delta\lambda}{\lambda_4} = \frac{3\lambda_3^2 \bar{A}^2}{8\lambda_4 \mu^2 v^2}
+$$
 
 **(d)** Falsifiable prediction: with improved precision in measuring the Higgs triple vertex (HL-LHC, FCC), the effective self-coupling $\lambda_\text{eff}$ differs from the SM value by:
 
-$$\frac{\delta\lambda}{\lambda_\text{SM}} \sim \frac{\lambda_3^2 \bar{A}^2}{\lambda_4 \mu^2} \sim O(10^{-2} \text{--} 10^{-3})$$
+$$
+\frac{\delta\lambda}{\lambda_\text{SM}} \sim \frac{\lambda_3^2 \bar{A}^2}{\lambda_4 \mu^2} \sim O(10^{-2} \text{--} 10^{-3})
+$$
 
 — at the percent level, potentially accessible at FCC-hh.
 
@@ -539,7 +586,9 @@ The Yukawa coupling of generation $k_n$ to the Higgs field $\gamma_{EU}$ is prop
 
 The octonionic correction to the Higgs mass is directly connected to the Fano selection rule. The tree-level Yukawa coupling of generation $k_n$ to the Higgs field is determined by:
 
-$$y_n^{(\text{tree})} = g_W \cdot \varepsilon_{k_n, E, U}^{\text{Fano}} \cdot \sin\!\left(\frac{2\pi k_n}{7}\right) \cdot |\gamma_{\text{vac}}^{(EU)}|$$
+$$
+y_n^{(\text{tree})} = g_W \cdot \varepsilon_{k_n, E, U}^{\text{Fano}} \cdot \sin\!\left(\frac{2\pi k_n}{7}\right) \cdot |\gamma_{\text{vac}}^{(EU)}|
+$$
 
 where $\varepsilon_{ijk}^{\text{Fano}} = 1$ if $(i,j,k)$ is a Fano line, and $0$ otherwise. Equivalently: $y_{abc}^{(\text{tree})} \propto f_{abc}$, where $f_{abc}$ is the structure constant of the algebra $\mathbb{O}$, associated with the multiplication table: $e_a e_b = f_{abc} \, e_c + \delta_{ab}$.
 
@@ -553,7 +602,9 @@ For the three generations $k \in \{1, 2, 4\}$:
 
 **Consequence for Higgs mass.** The Higgs mass is generated by a loop with a virtual $t$-quark (the only fermion with $y^{(\text{tree})} \neq 0$). Radiative corrections to $M_H^2$ from the top quark:
 
-$$\delta M_H^2 \Big|_{\text{top}} = -\frac{3 y_t^2}{8\pi^2} \Lambda^2 + \ldots$$
+$$
+\delta M_H^2 \Big|_{\text{top}} = -\frac{3 y_t^2}{8\pi^2} \Lambda^2 + \ldots
+$$
 
 In UHM the role of the UV cutoff $\Lambda$ is played by the scale $\mu_\text{phys}$ — the physical unit of Gap coherence. The octonionic correction from $V_3$ **partially compensates** the quadratic divergence, since the cubic potential modifies the vacuum structure. This is the germ of a solution to the hierarchy problem from within the Gap formalism.
 
@@ -571,13 +622,17 @@ The cubic potential $V_3$ (and the associated orientational $V_\varphi$-contribu
 
 **(a)** In the $\bar{3}$-sector $V_\varphi$ takes the form:
 
-$$V_\varphi^{(\bar{3})} = \lambda_\varphi \cdot \varphi_{LEU} \cdot |\gamma_{LE}||\gamma_{EU}||\gamma_{LU}| \cdot \sin(\theta_{LE} + \theta_{EU} - \theta_{LU})$$
+$$
+V_\varphi^{(\bar{3})} = \lambda_\varphi \cdot \varphi_{LEU} \cdot |\gamma_{LE}||\gamma_{EU}||\gamma_{LU}| \cdot \sin(\theta_{LE} + \theta_{EU} - \theta_{LU})
+$$
 
 **(b)** $PT$-property: $V_\varphi \to -V_\varphi$ under $PT$-transformation ($\theta \to -\theta$). This creates an **asymmetry** of the minimum of $V_\text{Gap}$ in the $E$-$U$ channel.
 
 **(c)** Energy difference between the left ($\text{Gap}(E,U) = 0$) and right ($\text{Gap}(E,U) \neq 0$) fermionic vacua:
 
-$$\Delta V = V_\varphi^{(\pi)} - V_\varphi^{(0)} = 2\lambda_\varphi |\gamma_{LE}||\gamma_{LU}| \cdot |\gamma_{EU}|$$
+$$
+\Delta V = V_\varphi^{(\pi)} - V_\varphi^{(0)} = 2\lambda_\varphi |\gamma_{LE}||\gamma_{LU}| \cdot |\gamma_{EU}|
+$$
 
 **(d)** Without $V_3$, chirality would be unstable to radiative corrections. The $PT$-odd potential prevents relaxation of a left-handed fermion into a right-handed one, ensuring the observed parity violation in weak interactions.
 
@@ -648,7 +703,9 @@ In the (FE)-construction the electroweak sector $SU(2)_L \times U(1)_Y$ arises f
 
 **(b)** $U(1)_Y$ is determined by the total Gap in the $O$-sector (see [section 3.3](#3-gapeu--0-электрослабое-нарушение-симметрии)):
 
-$$Y = \frac{1}{3}\left(\sum_{i \in 3} \text{Gap}(O,i) - \sum_{j \in \bar{3}} \text{Gap}(O,j)\right)$$
+$$
+Y = \frac{1}{3}\left(\sum_{i \in 3} \text{Gap}(O,i) - \sum_{j \in \bar{3}} \text{Gap}(O,j)\right)
+$$
 
 **(c)** $SU(3)_C$ — still from the $G_2$-stabilizer ($G_2 \supset SU(3)$, decomposition $14 \to 8+3+\bar{3}$) [T].
 
@@ -662,22 +719,13 @@ $$Y = \frac{1}{3}\left(\sum_{i \in 3} \text{Gap}(O,i) - \sum_{j \in \bar{3}} \te
 
 ## 6. Falsifiable predictions {#6-фальсифицируемые-предсказания}
 
-### 6.0 Prohibition of a second Higgs doublet [H] {#запрет-второго-дублета}
+### 6.0 Scope of a one-doublet hypothesis [H] {#запрет-второго-дублета}
 
-*Corrected 2026-09-25 from [T] to [H]: step (i) takes "$\langle\gamma_{ij}\rangle \neq 0$ only for the $\kappa_0$ pair" from T-64, which never stated it and is now a hypothesis, and the whole argument presupposes the identification $H \sim \gamma_{EU}$ of Theorem 1.0, now a hypothesis with a colour-breaking obstruction. The exclusion of 2HDM spectra is a prediction of that hypothesis, not a theorem.*
+**T-296 [H].** A chosen real colour-free Higgs plane in the supplied Clifford/$\mathrm{Spin}(10)$ model contains one real doublet. Interpreting that plane as the **complete** low-energy scalar field content is an additional hypothesis. It does not exclude adding other scalar representations, and selecting $(E,U)$ in a rate formula supplies no such exclusion.
 
-*New basis (T-332, [§1.6](#юкавы-t340)).* In the Clifford frame the colour-free plane of $\mathrm{Spin}(10)$ is exactly one real doublet, so a real Higgs field gives one doublet without reference to $\gamma_{EU}$. The price is the up–down split. With one real doublet it must come from the operator $\tau_R$ (the imaginary unit of $\mathcal H$ on $V_R$), that is from a coupling that breaks $\mathrm{SU}(2)_R$. The alternative is the complex bidoublet — two doublets with $m_t/m_b=\tan\beta$ — which this prohibition excludes. The data require the $\tau_R$-coefficient $\beta/\alpha=0.971$ (T-332(f)). T-296 stays [H]. A charged Higgs would now refute the real-plane reading together with it.
+The old no-2HDM proof is withdrawn [✗]: T-64 does not imply condensation only in the pair used by $\kappa_0$; the scalar entries of the rate are not hom-spaces; and fixed real coordinate axes are not complex $\mathbf3$/$\bar{\mathbf3}$ sectors. Being on a Fano Yukawa line also does not prove absence of an independent scalar field.
 
-:::tip [H] Structural prohibition (T-296)
-UHM forbids a second Higgs doublet. The categorical uniqueness that *selects* the pair $(E,U)$ simultaneously *excludes* every other scalar candidate.
-:::
-
-**Theorem (no-2HDM).** In UHM there is exactly one condensing scalar channel — $\gamma_{EU}$. No second Higgs doublet (and hence no 2HDM spectrum $H^\pm, A^0, H^0$ of the MSSM type) exists.
-
-**Proof.** (i) Condensation requires the $\kappa_0$-channel: the vacuum theorem T-64 gives $\langle\gamma_{ij}\rangle \neq 0$ only for the pair singled out by $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$, whose morphism content is exactly $\mathrm{Hom}(O,E)\cdot\mathrm{Hom}(O,U)$ (T-42a). (ii) The only other $\bar 3$-pairs are $(L,E)$ and $(L,U)$; neither enters $\kappa_0$ ($\mathrm{Hom}(O,L)$ is absent from it), so neither acquires a VEV. (iii) By incidence ($\lambda=1$) the pair $(L,U)$ lies on the single line $\{D,L,U\}$, already exhausted as the Color-U Yukawa channel of the 2nd generation ([selection rules](/docs/physics/gauge-symmetry/fano-selection-rules)) — it is a mass channel, not a scalar sector. $\blacksquare$
-
-**Falsification.** Discovery of a charged Higgs $H^\pm$ or of a second CP-even/odd neutral scalar of doublet type at the LHC/HL-LHC would refute the categorical uniqueness of $(E,U)$ — i.e. strike at $\kappa_0$ itself, not at a peripheral fit. UHM stakes the entire class of 2HDM/MSSM Higgs sectors on this.
-
+The [Clifford-frame discussion](#юкавы-t340) states the representation/coupling choices, including the real versus complex bidoublet alternative. An additional experimentally identified Higgs doublet would reject the hypothesis of complete one-doublet field content, rather than a categorical theorem about all UHM models or the rate definition itself.
 
 ### 6.1 Deviation of the Higgs triple vertex [C]
 
@@ -687,7 +735,9 @@ The quantitative prediction depends on the octonionic parameters of the Gap theo
 
 **Prediction.** The effective Higgs self-coupling differs from the SM value:
 
-$$\frac{\delta\lambda}{\lambda_\text{SM}} \sim O(10^{-2} \text{--} 10^{-3})$$
+$$
+\frac{\delta\lambda}{\lambda_\text{SM}} \sim O(10^{-2} \text{--} 10^{-3})
+$$
 
 Test: HL-LHC (precision $\sim 50\%$ on triple vertex), FCC-hh (precision $\sim 5\%$).
 
@@ -695,7 +745,9 @@ Test: HL-LHC (precision $\sim 50\%$ on triple vertex), FCC-hh (precision $\sim 5
 
 In the SM the Higgs mass $m_H \approx 125$ GeV is a free parameter. In UHM:
 
-$$m_H^2 = 2\lambda_4 v^2 + \delta m_H^2(\lambda_3, \bar{A}, \mu)$$
+$$
+m_H^2 = 2\lambda_4 v^2 + \delta m_H^2(\lambda_3, \bar{A}, \mu)
+$$
 
 The first term is determined by the spectral action ([theorem on Higgs quartic](#теорема-хиггсовская-квартика) [C]). The octonionic correction $\delta m_H^2$ connects the Higgs mass to the octonionic potential parameters. When $f_0$ is fixed from other observables (quark masses, CKM elements), the Higgs mass becomes **computable** — this is a potentially powerful prediction.
 
@@ -717,7 +769,9 @@ The difference in anomalous dimensions is determined by Fano combinatorics: the 
 
 The drift of the dark-energy equation of state is now **derived** at the state level: $1 + w_{\text{eff}} = -\tfrac{2}{3}\,d\ln\mathcal{G}_O/d\ln a$ with a positive floor and a three-branch shape classification — [the Λ-drift law, T-254/T-255](/docs/physics/gravity/cosmological-constant#теорема-лямбда-дрейф). The Higgs-sector channels considered here ($\bar{3}$-to-$\bar{3}$ — non-O) contribute to that drift only through the sector-suppressed correction $O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O) \sim 10^{-3}$ ([sector Gap bound](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) [T]) — a subdominant channel. The earlier ansatz is kept for the record:
 
-$$w(z = 0) = -1 + \delta w, \quad \delta w = \frac{\kappa \cdot \langle|\gamma|^2\rangle}{V_\text{Gap}} \sim \frac{\kappa \cdot \epsilon^2}{\mu^2 \text{Gap}^2}$$
+$$
+w(z = 0) = -1 + \delta w, \quad \delta w = \frac{\kappa \cdot \langle|\gamma|^2\rangle}{V_\text{Gap}} \sim \frac{\kappa \cdot \epsilon^2}{\mu^2 \text{Gap}^2}
+$$
 
 What remains open **[P]** is the RG-scale ↔ $H(t)$ bridge for the *non-O* channels; the O-channel drift needs no such bridge — it passes through the M3 identification $a = 1/\mathrm{Gap}_s$ directly. The old numerical ansatz $w_a \sim -10^{-2}$ is superseded by the T-255 shape constraints (the DESI quadrant requires the oscillatory branch with a genuine $-1$-crossing).
 
@@ -728,14 +782,18 @@ What remains open **[P]** is the RG-scale ↔ $H(t)$ bridge for the *non-O* chan
 :::tip Theorem T-185b [C at (SV)]: Chirality stability prediction
 The chiral vacuum is stable against tunneling with a lifetime vastly exceeding the age of the universe:
 
-$$\tau_{\text{chiral}} \sim \frac{1}{\mu} \exp\!\left(\frac{B}{\hbar}\right) \gg \tau_{\text{universe}} \approx 4.4 \times 10^{17}\;\text{s}$$
+$$
+\tau_{\text{chiral}} \sim \frac{1}{\mu} \exp\!\left(\frac{B}{\hbar}\right) \gg \tau_{\text{universe}} \approx 4.4 \times 10^{17}\;\text{s}
+$$
 
 where $B \geq \pi\sqrt{12}\,\mu \approx 10.88\,\mu$ is the WKB bounce action through the barrier $\Delta V \geq 6\mu^2$ (T-69 [C at (SV)]).
 :::
 
 **Derivation.** The WKB tunneling rate between the chiral vacua $\theta = 0$ and $\theta = \pi$:
 
-$$\Gamma_{\text{tunnel}} = \mu \cdot \exp\!\left(-\frac{B}{\hbar}\right), \quad B = \int_0^{\pi} \sqrt{2\Delta V(\theta)}\,d\theta \geq \pi\sqrt{2 \cdot 6\mu^2} = \pi\sqrt{12}\,\mu$$
+$$
+\Gamma_{\text{tunnel}} = \mu \cdot \exp\!\left(-\frac{B}{\hbar}\right), \quad B = \int_0^{\pi} \sqrt{2\Delta V(\theta)}\,d\theta \geq \pi\sqrt{2 \cdot 6\mu^2} = \pi\sqrt{12}\,\mu
+$$
 
 In physical units with $\mu \sim M_{\text{Planck}}$: the exponent $e^{10.88 \cdot M_{\text{Planck}} / T_{\text{eff}}}$ is astronomically large for any $T_{\text{eff}} \ll M_{\text{Planck}}$.
 
@@ -789,7 +847,9 @@ In the Chamseddine–Connes–Marcolli (CCM) approach the history of predicting 
 
 **(a) Tree level (CCM 2007)**: $M_H = \sqrt{8\lambda_H} \cdot v$ with $\lambda_H$ from $\mathrm{Tr}(D_{\text{int}}^4)/[\mathrm{Tr}(D_{\text{int}}^2)]^2$. With top quark dominance:
 
-$$M_H^{(\text{tree})} \approx \frac{M_t}{\sqrt{2}} \approx \frac{173}{\sqrt{2}} \approx 122 \text{ GeV}$$
+$$
+M_H^{(\text{tree})} \approx \frac{M_t}{\sqrt{2}} \approx \frac{173}{\sqrt{2}} \approx 122 \text{ GeV}
+$$
 
 However, without RG correction the exact Chamseddine–Connes formula (2012) gave $\sim 170$ GeV — an **incorrect** result.
 
@@ -839,7 +899,6 @@ UHM determines the Higgs mass through chain (1)–(5), in which links (1)–(3) 
 - **Spectral triple:** Finite $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ → [Spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T]; the former "with KO-dimension 6" is retracted — no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка))
 - **Spectral action:** $S = \mathrm{Tr}(f(D/\Lambda))$, determines $\lambda_4$ → [Quantum Gravity](/docs/physics/gravity/quantum-gravity)
 - **Unique vacuum:** Sectoral values $\varepsilon$ — hypothesis (SV) [H] (T-61 restated) → [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум)
-
 
 ---
 

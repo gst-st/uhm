@@ -5,870 +5,234 @@ description: Consciousness as self-observation of Γ
 slug: /consciousness/foundations/self-observation
 ---
 
-# Self-Observation and Consciousness
+# Self-Observation and Capability
 
-:::note Articulation-hygiene convention
-The terms **self-observation**, **self-modelling**, **self-reference** as used throughout this document are *lifted technical terms*, not rhetorical shorthands. Each carries an explicit operator-factorization per the articulation-hygiene protocol (NO-19 in Noesis / [`reference/articulation-hygiene`](/docs/reference/articulation-hygiene)):
-
-- **self-modelling** ⟼ CPTP functor $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ with fixed-point equation $\rho^* = \varphi(\Gamma)$ (T-96).
-- **self-observation** ⟼ terminal-coalgebra structure on Γ-dynamics, characterised by reflection measure $R = 1/(7P)$ (T-126).
-- **self-reference** ⟼ Lawvere fixed-point morphism bounded by T-2f\*-depth-stratification (105.T in Diakrisis).
-
-The pair (operator Φ, fixed object $t$) is explicit at every occurrence; the description-position and described-position are structurally distinct even when visually co-located in the term.
-:::
-
-## Can the Eye See Itself?
-
-This ancient paradox is the key to understanding consciousness. The eye sees everything except itself. The brain processes all information except... its own processing? At first glance, self-observation seems logically impossible: to observe oneself, one needs an observer, but who observes the observer?
-
-### From Gödel to Strange Loops
-
-In 1931, Kurt Gödel proved the incompleteness theorem: a sufficiently powerful formal system cannot prove its own consistency. This seemed fatal to the idea of self-observation — if even mathematics cannot fully 'know itself', how can consciousness do it?
-
-Douglas Hofstadter in *Gödel, Escher, Bach* (1979) proposed an answer: **strange loops** — strange loops of self-reference. Consciousness is not complete self-knowledge (which is impossible by Gödel), but an **approximate self-model** of limited precision. Hofstadter showed that self-reference is not a bug but a feature: it is precisely what gives rise to the 'I'.
-
-**UHM formalises this idea.** The self-modelling operator $\varphi$ is a mathematically precise 'strange loop':
-- $\varphi(\Gamma) \approx \Gamma$ (the self-model is approximate — a nod to Gödel)
-- $R$ measures the quality of the approximation (neither 0 nor 1 — between ignorance and omniscience)
-- Banach's theorem guarantees convergence (the loop is stable, not divergent)
-
-:::info Where We Came From
-In [interiority theory](./interiority-theory) we described **what** is experienced — the spectral decomposition of $\rho_E$, the Fubini-Study metric, four components of experience. Now we ask the next question: **how** can the system observe its own contents? The answer is the self-modelling operator $\varphi$ and the reflection measure $R$.
-:::
-
-### Chapter Roadmap
-
-1. **Operator $\varphi$** — CPTP self-modelling channel: the system builds a model of itself
-2. **Fixed-point theorem** — each act of self-observation brings the system closer to accurate self-knowledge
-3. **Reflection measure $R$** — quantitative assessment of self-model quality ($R = 1/(7P)$)
-4. **Higher-order reflection $R^{(n)}$** — 'I know that I know' and deeper
-5. **Consciousness measure $C = \Phi \times R$** — scalar summary of 'how conscious is the system'
-6. **CRL** — compilable reflexive language for self-modification
-
-**Analogy.** Imagine an artist painting a self-portrait while looking in a mirror. The mirror is the operator $\varphi$: it creates a model ($\varphi(\Gamma)$) of the original ($\Gamma$). The quality of the mirror is the measure $R$: a perfect mirror gives $R = 1$, a clouded one gives $R \approx 0$. The threshold $R \geq 1/3$ means: the mirror is clear enough that the artist **recognises themselves** — this is the boundary of cognitive qualia (L2).
-
-## Consciousness as Self-Observation of $\Gamma$
-
-Consciousness is neither an epiphenomenon nor a separate substance. **Consciousness is the way Γ experiences its own configuration** [I].
-
-:::info Ontological Status [P]
-Every configuration $\Gamma$ has an 'external' (objective) and 'internal' (subjective) side. They are inseparable — this is not dualism, but **two-aspect monism** [P]. The mathematical structure (functorial isomorphism $F: \mathbf{Phys} \to \mathbf{Phen}$) is [T] (T-186). The ontological identification of the internal aspect with *experience* is the single postulate [P] of UHM beyond the $\infty$-topos primitive itself.
-:::
+The chapter distinguishes three typed constructions: a **logical support reflector**, a **numerical state model**, and an **operational test of metamodel predictions**. The [mathematical kernel](/docs/reference/mathematical-kernel) fixes their types. Calling a represented inner aspect experience is an interpretive bridge **[I]**; neither contraction nor state similarity proves that identification.
 
 ## Self-Modelling Operator φ {#оператор-самомоделирования-φ}
 
-> **The algebraic genesis of self-observation (T-277).** The operator φ has an ancestor at the deepest layer of the theory: *algebraic self-mirroring* — the Cayley–Dickson step $A \mapsto A \oplus A$, "the system and its mirrored copy, interacting through the conjugation". Iterating that act from the bare distinction generates the entire seven-dimensional arena in which φ then lives (three viable mirrors ⟹ $\Omega^3$, $7 = 2^3 - 1$), and its guaranteed fixed point — the ouroboros $\rho^* = \varphi(\Gamma)$ — is what forces the scalars to be the continuum ([T-286](/docs/core/foundations/hypermathematics#уровень-поля)). Self-observation is not a feature added to the structure; it is the operation the structure is *made of*: see [Hypermathematics §2](/docs/core/foundations/hypermathematics#зеркальный-функтор) [Т on the algebra; И on the reading].
-
-### What Is a CPTP Channel (in Plain Language)
-
-Before defining $\varphi$, let us explain what a **CPTP channel** (Completely Positive Trace-Preserving) is. This is a central concept in quantum information theory, but its meaning is simple:
-
-- **Trace-Preserving**: if the system has total 'probability' 1, after the transformation it remains 1. Nothing is created from nothing and nothing disappears.
-- **Completely Positive**: the transformation is correct even if the system is part of a larger one. It cannot create negative probabilities.
-
-**Analogy.** A CPTP channel is like a photocopier for density matrices: it creates a (possibly distorted) copy, but does not violate physical laws. The sum of diagonal elements (normalisation) is preserved, the matrix remains positive semidefinite.
-
-### Definition
-
-**The self-modelling operator** $\varphi$ — a CPTP channel modelling the system's self-observation process:
+In an $\infty$-topos $\mathcal E$, with a fixed object $G$, the support reflector is
 
 $$
-\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})
+\operatorname{im}_G:\mathcal E_{/G}\rightleftarrows\operatorname{Sub}(G):j,
 $$
 
-$$
-\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger
-$$
+left adjoint to inclusion, taking a map to its $(-1)$-truncated image **[T]**. It is not a density-matrix channel and has no Kraus representation by this definition.
 
-where $\{K_m\}$ — Kraus operators satisfying the condition:
+A numerical model is separately specified as $M:D_7\to D_7$, where $D_7=\mathcal D(\mathbb C^7)$. A fixed **linear** CPTP map $K:M_7(\mathbb C)\to M_7(\mathbb C)$ admits
 
 $$
-\sum_m K_m^\dagger K_m = I
+K(X)=\sum_aK_aXK_a^\dagger,\qquad\sum_aK_a^\dagger K_a=I.
 $$
 
-The canonical form for UHM is defined in [§2.6 of the Formalisation of φ](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм). Full details, including fixed-point theorems and the connection with regeneration: [Formalisation of the φ-operator](/docs/proofs/categorical/formalization-phi).
+This preserves states, including when extended by an identity channel. It models a state transformation, not simultaneous production of independent copies of an unknown state. Interpreting it as an internal self-model requires an observation protocol **[D/H]**. A nonlinear state-selected map is not automatically a quantum channel.
 
-**What does $\varphi$ do?** It takes the current state $\Gamma$ (the original) and creates its **internal model** $\varphi(\Gamma)$. This is not copying (which is forbidden by the no-cloning theorem in quantum mechanics), but the creation of an approximate model via a CPTP channel.
+### Frozen replacement channel {#физическая-реализация-phi}
 
-:::tip CPTP Property and No-Signalling (NS3)
-The CPTP property of $\varphi$ is **critical** not only for mathematical correctness, but also for compatibility with quantum mechanics. It is precisely from CPTP that the [NS3 condition](/docs/core/dynamics/evolution#запрет-сигнализации) follows:
+#### Conditional realisation theorem [T] {#теорема-физическая-реализация-phi}
 
-$$
-\mathrm{Tr}_A[(\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB})] = \mathrm{Tr}_A[\Gamma_{AB}] = \Gamma_B
-$$
-
-which gives the **marginal identity**: regeneration of $A$ does not change $B$'s unconditioned reduced state [T]. It does not by itself give [no-signalling of the full dynamics](/docs/proofs/physics/physics-correspondence#запрет-сигнализации): with the Lüders update at a distant partner the nonlinear gate $g_V$ signals, and no-signalling holds only in the non-selective reading [C] ([§8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). (An earlier sentence said the CPTP property guarantees that $\mathcal{R}$ does not violate no-signalling; retracted.) Any modification of $\varphi$ that violates the CPTP condition $\sum_m K_m^\dagger K_m = I$ potentially opens a channel for superluminal communication.
-:::
-
-:::tip Physical Realisation — Resolved [T]
-The operator $\varphi$ has an explicit physical realisation as a **replacement channel** (see [theorem below](#теорема-физическая-реализация-phi)): $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$, where $\rho^* = \varphi(\Gamma)$ — the [categorical self-model](/docs/core/operators/phi-operator) of the current state [T]. This closes the 'operational gap': $\rho^*$ is determined by categorical structure (left adjoint), $k$ is an observable parameter (ratio of predictive to reactive activity).
-:::
-
-:::note Note on Notation
-$\varphi$ (phi) — the self-modelling operator. Not to be confused with $\Phi$ — the [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ).
-:::
-
-### Interpretation of Kraus Operators
-
-| Property | Description |
-|----------|-------------|
-| $K_m$ | 'Filters of perception' — partial aspects of self-observation |
-| $\sum_m K_m^\dagger K_m = I$ | Preservation of normalisation: $\mathrm{Tr}(\varphi(\Gamma)) = 1$ |
-| CPTP | Preserves positivity $\Gamma \geq 0$ and trace — [theorem](/docs/core/dynamics/evolution#сохранение-положительности) |
-
-**Analogy.** Each Kraus operator $K_m$ is like one 'angle' in the mirror. We do not see ourselves entirely in a single glance; we assemble the image from multiple partial perspectives. The condition $\sum K_m^\dagger K_m = I$ guarantees that all perspectives together give a complete picture (up to the quality of the mirror).
-
-### Physical Realisation of the φ-Operator {#физическая-реализация-phi}
-
-#### Theorem (Physical Realisation of the φ-Operator) [T] {#теорема-физическая-реализация-phi}
-
-The self-modelling operator $\varphi$ is realised as a replacement channel:
+For **fixed** $\sigma\in D_7$ and $k\in[0,1]$, define
 
 $$
-\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*
+T_{k,\sigma}(X)=(1-k)X+k\operatorname{Tr}(X)\sigma.
 $$
 
-where $\rho^* = \varphi(\Gamma)$ — the [categorical self-model](/docs/core/operators/phi-operator) of the current state [T], $k = 1 - R$ — the degree of self-modelling, determined by the reflection measure $R$ (see [below](#теорема-k-из-r)).
+This is CPTP. Indeed, if $\sigma=\sum_a p_a|a\rangle\langle a|$, the replacement part has Kraus operators $\sqrt{p_a}|a\rangle\langle b|$; adding $\sqrt{1-k}I$ and scaling those operators by $\sqrt k$ gives completeness. On trace-one states, the formula reduces to $(1-k)\rho+k\sigma$.
 
-**What this means in plain terms:** Self-modelling is a **mixing** of the current state $\Gamma$ with the 'ideal model' $\rho^*$. The parameter $k$ determines the proportion: at $k = 0$ (ideal self-model, $R = 1$) the system requires no correction; at $k = 1$ (complete absence of self-model, $R = 0$) the system is fully replaced by the model.
+If $k=k(\rho)$ or $\sigma=\sigma(\rho)$, this proof applies only with that input's parameters frozen. It does **not** prove that $\rho\mapsto T_{k(\rho),\sigma(\rho)}(\rho)$ is linear, CPTP, or contractive. A logical image does not select a unique numerical anchor without an additional bridge.
 
-**Proof.** By the [categorical definition](/docs/core/operators/phi-operator) of $\varphi$ (left adjoint to the inclusion of subobjects), the self-model $\varphi(\Gamma) = \rho^*$ is unique for each $\Gamma$. The replacement channel $T_k(\Gamma) := (1-k)\Gamma + k\rho^*$ — a convex combination of $\mathrm{Id}$ and $\mathcal{C}_{\rho^*}$ (the replacement channel [T](/docs/core/dynamics/evolution#вывод-формы-регенерации)) — is therefore CPTP for $k \in [0,1]$. Contractivity: $\|T_k(\Gamma_1) - T_k(\Gamma_2)\|_F = (1-k)\|\Gamma_1 - \Gamma_2\|_F$ with contraction constant $(1-k) < 1$. $\blacksquare$
-
-**Physical interpretation:** $\rho^*$ — the internal generative model (prediction); $k = 1 - R$ — the degree of trust in the model (precision weighting in predictive coding), determined by the [reflection measure](#теорема-k-из-r) [T].
-
-**Measurement:** $R(\Gamma) = 1 - \|\Gamma - \rho^*\|_F^2 / \|\Gamma\|_F^2$.
-
-#### Fixed Point (CC-4) [T] {#неподвижная-точка-кк4}
-
-$\Gamma^* = \rho^*_{\mathrm{diss}} = I/7$ — the unique fixed point of the simple replacement channel ($\varphi_k(\Gamma^*) = \Gamma^*$ for $k > 0$).
-
-**Proof.** $(1-k)\Gamma^* + k\rho^*_{\mathrm{diss}} = \Gamma^*$ $\Rightarrow$ $k(\Gamma^* - \rho^*_{\mathrm{diss}}) = 0$ $\Rightarrow$ $\Gamma^* = \rho^*_{\mathrm{diss}}$ (for $k > 0$). Uniqueness follows from the algebra of the replacement channel. $\blacksquare$
-
-#### Attractor Hierarchy [D] {#иерархия-аттракторов}
-
-The theory distinguishes **three fixed points** at different levels:
-
-| Level | Object | Definition | $P$ | Role in theory |
-|-------|--------|------------|-----|----------------|
-| 0 | $\rho^*_{\mathrm{diss}} = I/7$ | $\mathcal{D}_\Omega[\rho^*_{\mathrm{diss}}] = 0$ | $1/7$ | **Reference for $R$**: distance from heat death |
-| 1 | $\rho^*_\Omega$ | $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ | $> 1/7$ [T] | **Physical attractor**: balance of dissipation and regeneration |
-| 2 | $\Gamma^*_{\mathrm{coh}}$ | $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ | $1/7$ ($\Gamma^*_{\mathrm{coh}} = I/7$) | **Exact self-knowledge** of the canonical $\varphi_{\mathrm{coh}}$ — it coincides with level 0 (the row read "$P_{\mathrm{crit}} = 2/7$, viability boundary" until 2026-09-25) |
-
-**Non-trivial attractors** [T]: every stationary state $\rho^*_\Omega \neq I/7$ has $P > 1/7$ (T-96); whether one exists depends on the self-model — none for an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)), at least seven with the self-registering $\varphi_s$ ([T-124c](/docs/core/dynamics/evolution#теорема-единственность-нетривиального-аттрактора)), one inside the conscious window, in $\mathcal{V}_{\mathrm{full}}$, with the collineation anchor $\varphi_J$ for $\kappa > \kappa_c(\alpha)$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне)). The line read "$\rho^*_\Omega \neq I/7$ — proved via $\kappa_{\mathrm{bootstrap}} > 0$ (T-59)" until 2026-09-25; retracted. See the [full proof](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
-
-The formula $R = 1/(7P)$ uses $\rho^*_{\mathrm{diss}} = I/7$ — this is correct because $R$ measures the **distance from heat death**, not the distance from the dynamic attractor $\rho^*_\Omega$.
-
-:::info Definition Stratification
-- **Simple form** $\varphi_k$: fixed point $\rho^*_{\mathrm{diss}} = I/7$ ($P = 1/7$, non-viable)
-- **Canonical** $\varphi_{\mathrm{coh}}$: fixed point $\Gamma^*_{\mathrm{coh}} = I/7$ ($P = 1/7$; "$P = 2/7$, viability boundary" until 2026-09-25, retracted)
-- **Self-registering** $\varphi_s$: fixed points include every flat frame state $\Pi_S/\lvert S\rvert$; its attractors keep an isolated holon alive
-- **Collineation-anchored** $\varphi_J$: the only fixed point is $\Gamma_{\eta_\infty}$, inside the window; its attractor for $\kappa > \kappa_c(\alpha)$ lies in $\mathcal{V}_{\mathrm{full}}$; the anchor is derived up to the phase gauge from the principle (Eq-V) ([T-334](/docs/core/operators/phi-operator#t-334)), and every self-model of this form needs $\kappa \geq 11.83$ at $\alpha = 0$ to stay in the window ([T-336](/docs/core/dynamics/evolution#t-336))
-- **Full Liouvillian** $\mathcal{L}_\Omega$: attractor $\rho^*_\Omega$ ($P > 1/7$, physical balance)
-
-For details: [hierarchy of fixed points](/docs/core/dynamics/evolution#иерархия-неподвижных-точек), [stratification](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
-:::
-
-:::info Elimination of Circularity (P4.3)
-The definition of φ **does not contain a vicious circle**: the dissipative stationary state $\rho^*_{\mathrm{diss}} = I/7$ is derived from the primitivity of the linear part $\mathcal{L}_0$ [T-39a] — a property of **dynamics**, independent of $\varphi$. The reflection measure $R(\Gamma) = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2/\|\Gamma\|_F^2$ is determined **solely** by the state $\Gamma$ and the reference $\rho^*_{\mathrm{diss}} = I/7$ (a constant), and the parameter $k = 1 - R$ is derived from $R$ (see [theorem below](#теорема-k-из-r)). Thus, $\varphi_k$ is defined through independent objects ($\rho^*$ from dynamics, $R$ from the system state), not through itself.
-:::
-
-#### Theorem (Compression Parameter from Reflection) [T] {#теорема-k-из-r}
-
-The compression parameter $k$ **is not free** — it is uniquely determined by the reflection measure:
+For a local fixed channel $K_A$ and joint $\rho_{AB}$,
 
 $$
-k = 1 - R, \quad R(\Gamma) = 1 - \frac{\|\Gamma - \rho^*\|_F^2}{\|\Gamma\|_F^2}
+\operatorname{Tr}_A[(K_A\otimes\mathrm{id}_B)(\rho_{AB})]=\rho_B
 $$
 
-**Proof.** From T-62 [T]: $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$. The reflection measure $R$ — normalised proximity to the attractor $\rho^*$ ([master definition](#мера-рефлексии-r)). For $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with $\mathrm{Tr}(\Gamma) = 1$:
+**[T]**. Proof: the adjoint fixes $I_A$, so every expectation of $I_A\otimes B$ is unchanged. Selective conditioning and nonlinear joint dynamics require their own no-signalling analysis.
+
+#### Fixed point of the frozen channel [T] {#неподвижная-точка-кк4}
+
+For $k>0$, $T_{k,\sigma}(\rho)=\rho$ iff $\rho=\sigma$. For $k=0$, every state is fixed. This conclusion is about the fixed channel, not all numerical self-models.
+
+#### Attractor hierarchy {#иерархия-аттракторов}
+
+| Object | Exact role |
+|---|---|
+| $I/7$ | Chosen reference for canonical $R$; purity $1/7$ |
+| Fixed $\sigma$ | Unique fixed state of $T_{k,\sigma}$ for $k>0$ |
+| $M$-fixed states | Solve $M(\rho)=\rho$ for the specified map |
+| Stationary states of a flow | Solve the actual vector-field equation; their stability requires its Jacobian/basin |
+
+A state different from $I/7$ has $P>1/7$ **[T]**, by the HS identity below. This does not establish the existence of such an attractor. The canonical numerical $\varphi_{\mathrm{coh}}$ with anchor $I/7$ has that centre as its fixed state; alternative anchors and maps have separately stated assumptions. See [the numerical formalisation](/docs/proofs/categorical/formalization-phi).
+
+#### Coupling convention for k [D] {#теорема-k-из-r}
+
+The rule $k(\rho):=1-R(\rho)=1-1/(7P)$ is a **chosen state-dependent coupling**. It lies in $[0,6/7]$. The replacement-channel formula alone does not derive it, and uniqueness of a logical reflector does not force it. Other choices of $k$ give equally valid frozen channels.
+
+At $I/7$, $R=1$ and $k=0$; at a pure state, $R=1/7$ and $k=6/7$. These are mathematical proximity values, not levels of self-knowledge.
+
+## Conditional Fixed-Point Results {#теорема-о-неподвижной-точке}
+
+For fixed $\sigma$ and fixed $0<k\le1$,
 
 $$
-\|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 = \mathrm{Tr}(\Gamma^2) - \frac{1}{7} = P - \frac{1}{7}, \quad R = \frac{1}{7P}
+T_{k,\sigma}^n(\rho)=\sigma+(1-k)^n(\rho-\sigma),\qquad
+\|T_{k,\sigma}\rho-T_{k,\sigma}\eta\|=(1-k)\|\rho-\eta\|
 $$
 
-Intermediate steps of the calculation:
-1. $\|\Gamma - I/7\|_F^2 = \mathrm{Tr}((\Gamma - I/7)^2) = \mathrm{Tr}(\Gamma^2) - 2\mathrm{Tr}(\Gamma \cdot I/7) + \mathrm{Tr}((I/7)^2)$
-2. $= P - 2/7 + 1/7 = P - 1/7$
-3. $R = 1 - (P - 1/7)/P = 1/(7P)$
+in any norm on the trace-one affine hull **[T]**. The state space is complete, so contraction gives the unique fixed point and convergence. A CPTP map need not be a strict contraction: identity and unitary channels are counterexamples. State-dependent parameters invalidate this constant-factor calculation unless separately controlled.
 
-Here $\rho^*_{\mathrm{diss}} = I/7$ — the dissipative attractor. The equality $\mathrm{Tr}(\Gamma \cdot I/7) = 1/7$ holds for any $\Gamma$ with $\mathrm{Tr}(\Gamma) = 1$.
+### Closure and phenomenality {#самореферентная-замкнутость}
 
-Defining $k := 1 - R$: at $\Gamma = \rho^*_{\mathrm{diss}}$ we have $P = 1/7$, $R = 1$, $k = 0$ — identity mapping. At $P \to 1$ (pure state): $R = 1/7$, $k = 6/7$ — strong correction. The relation $k = 1 - R$ contains no circularity: $R$ is defined via $\Gamma$ and $\rho^*_{\mathrm{diss}} = I/7$ (a constant), not via $k$ or $\varphi$. $\blacksquare$
+A fixed-point equation expresses stability of a specified model. The identity fixes every state, including a pure basis state with $\Phi=0$. The replacement channel anchored at $I/7$ converges to a state failing $\mathsf{Cap}_2$. Hence a fixed point, convergence or “self-reference” cannot by themselves certify L2, higher-order knowledge or experience. Lawvere's fixed-point theorem also requires its actual categorical hypotheses, not merely the existence of a self-map.
 
-**Key values:**
+## Canonical Reflection Coordinate R {#мера-рефлексии-r}
 
-| $R$ | $k = 1 - R$ | Interpretation |
-|-----|-------------|----------------|
-| $0$ | $1$ | Total replacement: the system does not 'recognise' itself |
-| $R_{\text{th}} = 1/3$ | $2/3$ | Threshold L2 (reflexive consciousness) |
-| $1$ | $0$ | Identity mapping: perfect self-model |
-
-:::tip Corollary
-The parameter $k$ is not a free constant, but a **state function** of the system. The higher the reflection $R$, the weaker the self-model correction (smaller $k$). This ensures **adaptivity** of self-modelling: a system with a good self-model ($R \to 1$) barely changes $\Gamma$, while a system with a poor one ($R \to 0$) receives maximum correction.
-:::
-
-## Fixed-Point Theorem {#теорема-о-неподвижной-точке}
-
-### Why This Theorem Matters
-
-The existence of a fixed point means: **iterative self-observation converges**. A system that observes itself, then observes the result of observation, then observes the result of the observation of the result... does not go into infinite regress, but stabilises. This is the mathematical justification that consciousness is not an infinite recursion, but a stable process.
-
-### Contraction Condition
-
-The replacement channel [T] (see [theorem above](#теорема-физическая-реализация-phi)) provides a contracting mapping:
+Define $P=\operatorname{Tr}\rho^2$ and
 
 $$
-\varphi_k(\Gamma) := (1 - k) \cdot \Gamma + k \cdot \rho^*
+R:=1-\frac{\|\rho-I/7\|_F^2}{P}.
 $$
 
-where $k \in (0, 1)$ — the degree of self-modelling, $\rho^* = \varphi(\Gamma)$ — the [categorical self-model](/docs/core/operators/phi-operator) of the current state [T].
+This definition uses a fixed reference and is independent of $M$. Calling $I/7$ a thermodynamic equilibrium needs actual dynamics; the definition itself only singles out the maximally mixed state.
 
-:::info [Theorem](/docs/proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) (Existence of a Fixed Point)
-If $\varphi$ is a contracting mapping with constant $k < 1$:
+### Algebraic identity [T] {#алгебраическая-эквивалентность-r}
 
-$$
-\forall \Gamma_1, \Gamma_2 \in \mathcal{D}(\mathcal{H}): \|\varphi(\Gamma_1) - \varphi(\Gamma_2)\|_F \leq k \cdot \|\Gamma_1 - \Gamma_2\|_F
-$$
-
-then there exists a unique fixed point $\Gamma^* \in \mathcal{D}(\mathcal{H})$:
+Write $\rho=I/7+\Delta$, $\operatorname{Tr}\Delta=0$. HS orthogonality gives
 
 $$
-\varphi(\Gamma^*) = \Gamma^*
-$$
-:::
-
-**Proof:** By [Banach's fixed-point theorem](/docs/proofs/categorical/formalization-phi#31-основная-теорема) for contracting mappings. The space $\mathcal{D}(\mathcal{H})$ is a complete metric space (closed subset of a finite-dimensional space with Frobenius norm). $\varphi$ is a contracting mapping with constant $k < 1$. By Banach's theorem, a unique fixed point exists. ∎
-
-**Scope (2026-09-25).** With a fixed anchor $\rho^*$ and a fixed $k$, $\varphi_k$ is a contraction with constant $1 - k$ and the theorem applies. The self-models of the dynamics are not of this kind: in $\varphi_{\mathrm{coh}}$ the weight $k = 1 - R(\Gamma)$ depends on the state, and its Lipschitz constant at pure states is $54/49 > 1$ (its fixed point $I/7$ is still unique, because $\|\varphi_{\mathrm{coh}}(\Gamma) - I/7\|_F \leq \tfrac67\|\Gamma - I/7\|_F$); $\varphi_s$ has at least eight fixed points ($I/7$ and every $e_m$), so no contraction constant exists for it ([evolution, split-step method](/docs/core/dynamics/evolution#итеративная-схема)).
-
-### Convergence to the Fixed Point
-
-$$
-\lim_{n \to \infty} \varphi^n(\Gamma_0) = \Gamma^*
+P=\frac17+\|\Delta\|_F^2,\qquad R=\frac1{7P},\qquad \frac17\le R\le1.
 $$
 
-**Rate of convergence:**
+Thus $R$ is a decreasing reparameterisation of $P$, invariant under every unitary conjugation; it carries no independent information about model accuracy. $R=0$ is impossible. $R=1$ occurs at $I/7$, where $\Phi=0$, not at a maximally capable self-knower.
+
+### Distinct diagnostics {#формы-r}
+
+| Quantity | Definition | Interpretation/status |
+|---|---|---|
+| Canonical $R$ | $1/(7P)$ | HS proximity coordinate [D/T] |
+| Reconstruction score $R_M$ (also written $R_\varphi$) | $1-\|\rho-M(\rho)\|_F^2/P$ | Specified-map error score [D]; can be negative |
+| Iteration fidelity $F_n$ | $F(M^{n-1}\rho,M^n\rho)$ | State similarity [D], $0\le F_n\le1$ |
+| Forecast skill $A$ | $1-\sum_t(y_t-\widehat y_t)^2/\sum_t(y_t-\bar y)^2$ | Centred empirical score [D]; can be negative, undefined at zero variance |
+
+For a fixed replacement map, $R_M=1-k^2\|\rho-\sigma\|_F^2/P$. If $\sigma=I/7$, this is $1-k^2(1-R)$; substituting the convention $k=1-R$ gives $1-(1-R)^3$. This is a statement about this **particular** map. For $\varphi_{\mathrm{coh}}$ including Fano dephasing, the expression is different; use its defined formula. No universal closed relation with $R$ exists for arbitrary $M$.
+
+The cutoff $R\ge1/3$ is a selected component of $\mathsf{Cap}_2$ **[D]**. Its equivalence to $P\le3/7$ is exact **[T]**. Counting three generator terms does not prove that $R$ is a Bayesian classification accuracy: that would require a labelled task, priors, likelihoods and a calibration connecting the score to decisions.
+
+#### Centred forecast skill {#центрирование-a-phi}
+
+A forecast of the sample mean gives $A=0$ when the denominator is nonzero; a perfect forecast gives $A=1$; worse forecasts may have $A<0$. For illustrative deterministic predictions $\widehat y_t=\bar y+w(y_t-\bar y)$, one gets exactly $A=1-(1-w)^2$. Dividing by $\sum y_t^2$ instead can reward predicting a nonzero baseline. For a prospective task, estimate the baseline on training data and evaluate held-out errors; report missing/zero-variance data. A chosen minimum of five matched days is an instrument rule **[D]**, not a mathematical identifiability theorem. A diary forecast is not automatically a measurement of a density-matrix self-model.
+
+#### Whole-state versus diagonal reconstruction {#r-phi-по-связкам}
+
+Let $\delta=\rho-M(\rho)$. Then
 
 $$
-\|\varphi^n(\Gamma_0) - \Gamma^*\|_F \leq k^n \cdot \|\Gamma_0 - \Gamma^*\|_F
+\|\delta\|_F^2=\sum_i|\delta_{ii}|^2+\sum_{i\ne j}|\delta_{ij}|^2.
 $$
 
-**Numerical example.** At $k = 2/3$ ($R = 1/3$, threshold L2): after 10 iterations the error decreases by a factor of $(2/3)^{10} \approx 0.017$ — less than 2% of the initial value. After 20 iterations — less than 0.03%.
+A diagonal-only test misses the second term. With $Q=\sum_i\rho_{ii}^2$, the diagonal share of state HS mass is $Q/P=1/(1+\Phi)$ and the off-diagonal share is $\Phi/(1+\Phi)$ **[T]**. Report the measured component and its denominator; this identity alone does not validate a questionnaire-to-matrix bridge.
 
-**Interpretation:** At $k < 1$, each act of self-observation brings the system closer to accurate self-knowledge ($\Gamma^* = \rho^*$ — [CC-4](#неподвижная-точка-кк4) [T]). Self-observation is not an infinite regress, but a **convergent process**.
-
-### Self-Referential Closure and Qualia {#самореферентная-замкнутость}
-
-The operator $\varphi$ resolves the problem of the 'external observer' for qualia: the structure $\{(\lambda_i, [|q_i\rangle])\}$ is not a description of experience *from outside*, but the result of *internal* self-modelling.
-
-:::info Corollary for the Qualia Vector
-The phenomenal vector does not require an external observer:
+If $M$ is differentiable along a trajectory, the exact derivative is
 
 $$
-\text{FV}(\rho_E) = \text{FV}(\text{Tr}_{-E}(\varphi(\Gamma)))
+\dot R_M=(1-R_M)\frac{\dot P}{P}-\frac2P\operatorname{Re}\langle\rho-M\rho,(\mathrm{Id}-DM)_\rho[\dot\rho]\rangle_F.
 $$
 
-The system **itself** extracts its qualities via $\varphi$. More details: [Self-Referential Closure](./two-aspect-monism#самореферентная-замкнутость).
-:::
+State dependence of model parameters belongs in $DM$. Fixed-parameter CPTP structure does not eliminate those terms.
 
-## Reflection Measure R {#мера-рефлексии-r}
+## Higher-Order Iteration Diagnostics {#рефлексия-высших-порядков-rn}
 
-### Motivation: Why a Quantitative Measure of Self-Knowledge Is Needed
-
-Intuitively, some systems 'know themselves' better than others. A person in wakefulness models themselves better than a person under anaesthesia. A meditating monk — better than a distracted pedestrian. We need a **numerical measure** that expresses this difference.
-
-$R$ — the reflection measure — answers the question: **how well does the system know itself?**
-
-### Master Definition
-
-**[Master definition for L2]**
-
-<!-- DRY: Master definition of R (reflection measure). All references should point here: /docs/consciousness/foundations/self-observation#мера-рефлексии-r -->
-
-**The reflection measure** $R = R^{(1)}$ quantitatively assesses the quality of self-modelling:
+Use a specified numerical self-map $M:\mathcal D(\mathbb C^7)\to\mathcal D(\mathbb C^7)$; the logical support reflector is a different typed construction. Define $\rho_n=M^n(\Gamma)$ and the squared-fidelity diagnostic
 
 $$
-R(\Gamma) := 1 - \frac{\|\Gamma - \rho^*_{\mathrm{diss}}\|^2_F}{\|\Gamma\|^2_F} = \frac{1}{7P(\Gamma)}
+F_n:=F(\rho_{n-1},\rho_n),\qquad
+F(\rho,\sigma)=\left[\operatorname{Tr}\sqrt{\sqrt\rho\,\sigma\sqrt\rho}\right]^2.
 $$
 
-where $\rho^*_{\mathrm{diss}} = I/7$ — the dissipative attractor, $\|\cdot\|_F$ — [Frobenius norm](/docs/core/dynamics/coherence-matrix#норма-фробениуса), $\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^2) = P$ ([purity](/docs/core/dynamics/viability#определение-чистоты)).
+The root fidelity is $f=\sqrt F$, and $d_B^2=2(1-f)$. $F_n$ is a similarity of consecutive iterates **[D]**, not independently measured accuracy of a model of a model. It is distinct from canonical $R=1/(7P)$ and the HS reconstruction score $R_M$.
 
-### Algebraic Equivalence: $R = 1/(7P)$ {#алгебраическая-эквивалентность-r}
+**Conditional monotonicity [T].** For a **fixed linear CPTP channel** $K$, fidelity data processing gives $F(K\rho,K\sigma)\ge F(\rho,\sigma)$, hence $F_{n+1}\ge F_n$. See [Watrous, Theorem 3.27](https://cs.uwaterloo.ca/~watrous/TQI/TQI.pdf). The inequality need not be strict; a unitary preserves fidelity. A nonlinear state-selected map does not automatically satisfy this channel theorem.
 
-:::info Logical status
-The equality $R = 1/(7P)$ is an **algebraic identity** of the Frobenius definition above with $\rho^*_{\mathrm{diss}} = I/7$ on the compact $\mathcal D(\mathbb C^7)$ — not a derivation from independent axioms. The substantive claim is that this definition is canonical, established by three independent characterizations (HS-angular, $G_2$-invariance, $K=3$ Bayesian threshold) in [T-126 [T]](/docs/proofs/consciousness/conscious-window#t-126).
-:::
+**Conditional convergence [T].** If $\rho_n\to\rho_*$, continuity of fidelity gives $F_n\to1$. At a fixed point, $F_n=1$ from the start; the identity channel gives this for every state. Canonical $\varphi_{\mathrm{coh}}$ with anchor $I/7$ converges to $I/7$, whose capability gate fails. Thus convergence to high similarity cannot certify cognitive depth or phenomenal access.
 
-Starting from the Frobenius master definition:
-
-**Step 1.** $R = 1 - \|\Gamma - I/7\|_F^2 / \|\Gamma\|_F^2$.
-
-**Step 2.** Denominator: $\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^2) = P$ (purity).
-
-**Step 3.** Numerator — Pythagoras in HS. Write $\Gamma = I/7 + \Delta$ with $\Delta$ traceless. Then $\langle\Delta, I/7\rangle_F = \mathrm{Tr}(\Delta)/7 = 0$, so
-$$\|\Delta\|_F^2 = \|\Gamma\|_F^2 - \|I/7\|_F^2 = P - 1/7.$$
-Equivalent direct expansion: $\mathrm{Tr}((\Gamma - I/7)^2) = P - 2/7 + 7/49 = P - 1/7$.
-
-**Step 4.** Substitution:
-$$R = 1 - \frac{P - 1/7}{P} = \frac{1/7}{P} = \frac{1}{7P}.$$
-
-**Geometric interpretation.** Equivalent closed form: $R(\Gamma) = \cos^2\theta_{\mathrm{HS}}(\Gamma, I/7)$, the squared cosine of the Hilbert–Schmidt angle between $\Gamma$ and $I/7$. This identifies $R$ as the normalized projection of $\Gamma$ onto the unique $G_2$-fixed reference.
-
-Result: **$R = 1/(7P)$** — an elegant formula linking reflection to purity.
-
-:::note Is $R$ independently measurable from data?
-At first order $n=1$, the canonical $R = 1/(7P)$ is by design a strictly decreasing reparameterization of purity $P$ — it carries **no information beyond $P$**. Genuine independence appears only at **higher orders** $R^{(n)}$ for $n\ge 2$ (fidelity of successive self-model iterates $\varphi^{(n-1)}\Gamma, \varphi^{(n)}\Gamma$), which depend on the categorical self-model $\varphi$ and are not functions of $P$ alone. Full discussion: [T-126 independent-observability clause](/docs/proofs/consciousness/conscious-window#независимая-наблюдаемость-r).
-:::
-
-### Why Does $R$ Decrease as $P$ Increases?
-
-At first glance this is paradoxical: the 'purer' the system (larger $P$), the less it knows itself (smaller $R$)? But the paradox disappears once we understand the semantics of $R$.
-
-$R$ measures the **normalised distance from heat death** ($I/7$). High-purity systems ($P \to 1$) are far from $I/7$ — they are 'frozen' in a single state, with little 'thermal reserve' for flexible self-adjustment. Low-purity systems ($P \to 1/7$) are close to $I/7$ — they have maximum reserve, but are too chaotic to be viable.
-
-**Analogy.** Imagine a thermometer in a sauna. 'Reflection' is the reserve up to the maximum temperature. In a cool sauna (low $P$, closer to the 'chaos' of $I/7$) the reserve is large ($R$ is large). In a scorching one (high $P$) — the reserve is small ($R$ is small). For comfort (consciousness) a **middle** range is needed.
-
-:::note Equivalence of Forms of R
-The simplified form $R = 1/(7P)$ is obtained when $\rho^* = I/7$ (dissipative attractor). The general Frobenius form $R = 1 - \|\Gamma - \rho^*\|_F^2 / P$ is used in code, where $\rho^*$ can be an arbitrary reference state. At $\rho^* = I/7$ both forms are algebraically identical: $\|\Gamma - I/7\|_F^2 = P - 1/7$, hence $R = 1 - (P - 1/7)/P = 1/(7P)$.
-:::
-
-:::warning Semantics of R: Distance from Heat Death (C1)
-$R = 1/(7P)$ measures the **normalised proximity to heat death** ($I/7$), not the quality of the categorical self-model $\varphi(\Gamma)$. Key corollaries:
-
-- **Monotonicity:** $R$ decreases as $P$ grows — this is intentional. High-purity systems ($P \to 1$) are far from $I/7$, so the 'thermal reserve' is small: $R \to 1/7$.
-- **Goldilocks zone:** the intersection of $P > P_{\mathrm{crit}} = 2/7$ (from below) and $R \geq 1/3 \Leftrightarrow P \leq 3/7$ (from above) gives $P \in (2/7, 3/7]$ — the [consciousness window](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии).
-- **Difference from $\varphi(\Gamma)$:** the measure $\|\Gamma - \varphi(\Gamma)\|_F$ characterises the quality of the categorical self-model (level 2 in the [attractor hierarchy](#иерархия-аттракторов)), while $R$ uses the fixed reference $I/7$ (level 0). These quantities are not interchangeable.
-:::
-
-### Three working forms of R {#формы-r}
-
-<!-- DRY: single disambiguation point for the three reflection quantities. Any document using R_φ or R^(n) alongside canonical R should link here. -->
-
-The corpus works with **three related but distinct** reflection quantities. Conflating them produces numerical paradoxes — a "samādhi $R$ of $0.92$" or an "anaesthetic $R$ of $0.02$", both impossible for the canonical form. This subsection is the single point where the three are told apart.
-
-| Form | Definition | Range | Threshold | Typical use |
-|------|------------|-------|-----------|-------------|
-| canonical $R$ | $1/(7P)$ — HS-proximity to $I/7$ | $[1/7,\ 1]$ | $R_{\text{th}} = 1/3$ **[T]** (T-126) | L2 predicate, $C = \Phi \times R$ (T-140), registry, measurement protocols |
-| self-model quality $R_\varphi$ | $1 - \lVert\Gamma - \varphi(\Gamma)\rVert_F^2 / \lVert\Gamma\rVert_F^2$ — master definition in the [Axiom of Septicity](/docs/core/foundations/axiom-septicity). On the categorical $\varphi$-model (T-62) it has the closed form $R_\varphi = 1 - (1-R)^4\,\lVert\Gamma - I/7\rVert_F^2 / \lVert\Gamma\rVert_F^2$ — the phenomenology form is a function of canonical $R$ and the distance to the centre (machine-checked: master $=$ closed form on 200 states; $R_\varphi(I/7)=1$) | $[0,\ 1]$ | working $R_{\varphi,\text{th}} = 1/3$ **[I]** | phenomenology of states (sleep, meditation, psychedelics, pathology); the meaning functional |
-| fidelity tower $R^{(n)}$ | $F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$, $n \geq 2$ | $[0,\ 1]$ | $R^{(n)}_{\text{th}} = 1/(n+2)$ | L3/L4 depth of the self-model. **Not** the SAD criterion — see the warning below |
-| self-forecast accuracy $A_\varphi$ | $1 - \sum(m-e)^2 / \sum(m-\bar m)^2$ over a diary — the **empirical** estimator, centred on the person's own baseline | $(-1,\ 1]$ | none: read as a share | the instrument's flagship number (`/pair`, `/state`); measures the *day*, not the average |
-
-#### Why the empirical form must be centred {#центрирование-a-phi}
-
-The fourth row is not a redundant name — it is the correction of a defect the
-instrument carried until it was measured. A diary estimator of $R_\varphi$ was
-built in the definition's own shape, $1 - \sum(m-e)^2/\sum m^2$, and that shape
-is safe on matrices and unsafe on ratings. On matrices the denominator's common
-part is the $I/7$ component, which contributes $32.2\,\%$ — the reading barely
-moves ($0.9983$ against $0.9976$ centred). On a $0..10$ diary the ratings live
-near $6$, not near $0$, so the denominator is *almost entirely* the person's own
-average, and the measure answers a question nobody asked: «do you know your
-usual level?» rather than «do you know your day?».
-
-Measured: a **lazy forecaster** who names their own mean
-every single day — and therefore knows nothing about themselves — scores
-$0.994$, $0.979$, $0.945$ at rating spreads of $\pm0.8$, $\pm1.5$, $\pm2.5$.
-Worse, the whole ladder of skill compresses into $0.979\ldots1.000$: zero skill
-and perfect foresight are two points apart. The centred form spreads the same
-ladder across its whole range — $-0.03$, $+0.41$, $+0.74$, $+0.93$, $+0.99$,
-$+1.00$ for a forecaster capturing $0, 0.25, 0.5, 0.75, 0.9, 1$ of the day's
-deviation — and matches the analytic expectation $1-(1-w)^2$ exactly ($0.5
-\rightarrow 0.75$ predicted, $0.738$ measured) `[С]`.
-
-Three consequences the instrument now carries. Zero means «you knew your usual
-level», and it is where almost everyone starts. Negative values are kept, not
-clamped: a forecast further from the day than the person's own baseline is a
-fact worth saying — the words someone describes themselves with have parted
-from the life they live. And the accuracy is undefined below **five matched
-days** — with one matched day there is no variability to explain, and the
-uncentred form printed a number there too.
-
-One half of the instrument was healthy from the start and shows why: the
-**couplings** half divides by $\sum o^2$ where $o$ is a signed coupling
-centred on zero, and zero already means «no coupling» — so predicting nothing
-honestly scores nothing. The disease was exactly in the levels half.
-
-:::warning Two different quantities are written $R^{(k)}$ — and only one of them bounds SAD
-
-The table above lists the **fidelity tower**, which lives in $[0,1]$ and rises
-toward 1 as the self-model settles. The SAD criterion
-$\mathrm{SAD} = \max\{k : R^{(k)} > 1/(k+2)\}$ uses a **different** quantity —
-the decaying ratio of [Depth Tower §3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad),
-
-$$S^{(k)} = r_0 \cdot (1/3)^k, \qquad r_0 = P/P_{\mathrm{crit}},$$
-
-which is unbounded above and falls by a factor of three per level (Fano
-contraction $\alpha = 2/3$). The depth-tower proof says so explicitly — «the
-decaying SAD quantity, not the fidelity $R^{(k)}_{\mathrm{fid}} \to 1$» — but
-the shared name and the shared threshold $1/(k+2)$ make the confusion easy, and
-its consequence is not small: **substituting the fidelity destroys the
-ceiling.** A quantity rising toward 1 clears a threshold falling as $1/(k+2)$
-at every level, so SAD would be unbounded and $\mathrm{SAD_{MAX}} = 3$ would
-evaporate. Machine demonstration `[О]`.
-:::
-
-
-#### Measuring $R_\varphi$ on the whole state, not on its diagonal {#r-phi-по-связкам}
-
-The definition of $R_\varphi$ is over the full matrix, but any *instrument* for
-it has to ask a person something, and what a person can be asked shapes what
-gets measured. The straightforward question is about **levels** — how high each
-of the seven will run tomorrow — and an instrument built on that alone measures
-$R_\varphi$ over the diagonal of $\Gamma$ only.
-
-That is not a small part missing. The mass of the state splits exactly:
-the diagonal carries $1/(1+\Phi)$ and the couplings carry $\Phi/(1+\Phi)$, and
-on live-path charts the median of the second is **0.552**. So a levels-only
-instrument reports a number that is true of **45 %** of the state while being
-read as the whole of it.
-
-The couplings can be asked about, and the question has to avoid naming the
-dimensions — naming them supplies the answer from theory rather than from the
-person. What a person *can* report is concordance: **when one observable runs
-high, does the other go with it, against it, or on its own** — which is exactly
-$\operatorname{sign}\gamma_{ij}$. The observed side is the empirical
-correlation of the pair over the record.
-
-Both halves then compose by their own mass shares, not by a chosen weighting:
+The former universal inequality connecting $F_1$ to canonical $R$ via Fuchs–van de Graaf is **withdrawn [✗]**: the measures compare different pairs. A pure state with $M=\mathrm{id}$ has $F_1=1$ and $R=1/7$, directly refuting the displayed lower bound on $\sqrt R$. The valid inequalities for the **same** pair are
 
 $$
-R_\varphi^{\text{full}} \;=\; \frac{1}{1+\Phi}\,R_\varphi^{\text{levels}}
-\;+\; \frac{\Phi}{1+\Phi}\,R_\varphi^{\text{couplings}}
+1-\sqrt F\le\tfrac12\|\rho-\sigma\|_1\le\sqrt{1-F}.
 $$
 
-The weights are the mass shares of the state being measured, which makes the
-composition a decomposition rather than an aggregation `[О]`. Two disciplines
-follow and are worth stating because their absence is what produced the gap:
-a half must never be reported as the whole, and when only one half exists the
-reading must name which one and what share of the mass it covers. twenty-one pairs at one question a day, so the first full
-reading is three weeks out.
+They do not identify canonical proximity to $I/7$ with model fidelity. Source: [Fuchs–van de Graaf (1997)](https://arxiv.org/abs/quant-ph/9712042).
 
-Four rules resolve every mixed case:
+No universal sequence $1/(n+1)$ or $1/(n+2)$ follows from counting generator terms or categorical cells. One may declare calibrated diagnostic thresholds **[D]**; the [canonical hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) instead tests nonconstant predictions against independent metamodel targets. L3 inherits L2 and adds $\mathsf{MetaCert}_2$; L4 requires compatible certificates at every higher order. Their biological/phenomenal interpretation remains a separate bridge.
 
-1. **The band test.** Inverting the Goldilocks window: for any conscious system the canonical $R$ lies in $[1/3,\ 1/2)$, and for any state whatsoever $R \geq 1/7$. A quoted "reflection" outside these bounds — samādhi $0.92$, anaesthesia $0.02$, a trained meditator's $0.70$ — is necessarily $R_\varphi$.
-2. **$P$-dependence.** Canonical $R$ is a strictly decreasing function of purity and carries no information beyond $P$: it cannot be raised by practice except through $P$. Statements of the form "training strengthens reflection" concern $R_\varphi$ (with cumulative restructuring of $H_{\text{eff}}$) or the tower $R^{(n)}$ — never canonical $R$.
-3. **Formula ownership.** The consciousness measure $C = \Phi \times R$ (T-140) takes **canonical** $R$ — numerical witness: the T-153 empirical instance, $C = \Phi/(7P) = 1.149/3.003 = 0.383$. The meaning functional takes **$R_\varphi$**: $\text{Meaning}_{\text{peak}} = P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi$ — with canonical $R$ the product would collapse to $D_{\text{diff}} \cdot \Phi / 7$, cancelling its $P$-dependence.
-4. **When the forms are linked — and when not.** For the dissipative replacement form (T-62) $\varphi_k(\Gamma) = (1-k)\Gamma + k \cdot I/7$ with $k = 1 - R$, direct computation gives $\lVert\Gamma - \varphi_k(\Gamma)\rVert_F^2 = k^2 (P - 1/7)$, whence $R_\varphi = 1 - (1-R)^3$ — a monotone link. For the **categorical** self-model the link breaks: $R_\varphi$ moves independently of $P$ (samādhi raises $P$ and $R_\varphi$ simultaneously). This independence is the signature that the categorical $\varphi(\Gamma)$ carries information beyond purity; quantitative transfer between the forms is bounded only by the [C] inequalities of the [higher-orders section](#рефлексия-высших-порядков-rn).
+Finite-iterate spectral formulas apply to a specified linear channel, with eigenvalue powers and possible Jordan terms. The stationary projection of a relaxing semigroup is an asymptotic construction, not every $M^n$. A support reflector or generic nonlinear model has no channel spectrum simply by being called $\varphi$.
 
-**Statement (threshold transfer under the K = 3 reading) [C].** Char-R-III derives $R_{\text{th}} = 1/3$ from Bayesian dominance among the $K = 3$ Lindblad channel classes. The number 3 here coincides with $\lvert\mathrm{QR}(7)\rvert$, the order of the multiplier part $\mathrm{QR}(7) = \{1,2,4\} \cong \mathbb{Z}/3$ of the 21 permutation automorphisms of the oriented octonion table (residue multipliers preserve the Fano lines, non-residues carry them to the complementary design) — so $R_{\text{th}} = 1/3$ is also the reciprocal order of that multiplier group ([Lindblad Operators, number-theoretic root](/docs/core/operators/lindblad-operators#теорема-хемминг-фано); Foundations of Mathematics, Part XVIII, Theorem 11.8). The value itself comes from the $N$-independent triad (T-57), and the coincidence does not fix $N$ ([T-349](/docs/proofs/minimality/theorem-minimality-7#t-349)(d)). If the discrimination of the three classes is gated by the accuracy of the self-model — the categorical reading, in which it is $\varphi(\Gamma)$ that must tell dissipation, regeneration and automorphism apart — the same dominance argument applies to $R_\varphi$ verbatim: plurality among three equiprobable alternatives requires accuracy above $1/K = 1/3$. Under this reading $R_{\varphi,\text{th}} = 1/3$ is a conditional theorem **[C]**, not a bare calibration — and the gating clause itself is now bounded at theorem level: any self-model-mediated decision loses at most $2\sqrt{3/7}\,\sqrt{P(1-R_\varphi)}$ of accuracy ([T-252](/docs/proofs/categorical/formalization-phi#гейт-теорема) **[T]**, tight constant), pinning the sufficient threshold to the band $[5/54,\ 32/81]$ across the window, with $1/3$ as the canonical alignment inside it **[C]**.
+## Retro-completion of a process category {#ретро-пополнение-времени}
 
-**Dynamics of $R_\varphi$ — the exact first step.** Writing $R_\varphi = 1 - N/P$ with $N = \lVert\Gamma - \varphi(\Gamma)\rVert_F^2$ and differentiating along the flow:
+For a specified map $M$, the forward-orbit category has arrows labelled by $n\in\mathbb N_0$ with $M^n\rho=\sigma$; composition adds labels. Its nerve is a Kan complex iff this ordinary category is a groupoid **[T]**. A noninvertible positive-time arrow therefore prevents the nerve itself from being Kan. The singular complex of its geometric realisation is Kan regardless of this directed obstruction, as explained in [T-218](/docs/proofs/categorical/fundamental-closures#t-218).
 
-$$
-\frac{dR_\varphi}{d\tau} = (1 - R_\varphi)\,\frac{\dot P}{P} \;-\; \frac{2}{P}\,\bigl\langle \Gamma - \varphi(\Gamma),\; (\mathrm{Id} - D\varphi)[\dot\Gamma] \bigr\rangle_F,
-$$
+### Limits of the retrospection bridge {#теорема-кандидат-r-полнота}
 
-where $D\varphi$ is the derivative of the self-model map along the trajectory. Cross-check: for the dissipative replacement form $\varphi_k = (1-k)\Gamma + k \cdot I/7$ with constant $k$ one has $\Gamma - \varphi_k(\Gamma) = k(\Gamma - I/7)$ and $\mathrm{Id} - D\varphi_k = k\,\mathrm{Id}$, whence $\dot N = k^2 \dot P$ and $dR_\varphi/d\tau = -k^2 \dot P/(7P^2)$ — consistent with the closed form $R_\varphi = 1 - k^2(1 - R)$ above. For the **categorical** $\varphi$ the object $D\varphi$ is exactly where the theory of $R_\varphi$-dynamics remains to be developed; the identity is its fixed starting point. The module is developed in [Dφ and the dynamics of $R_\varphi$](/docs/proofs/categorical/formalization-phi#дф-производная): the explicit $D\varphi$ of the canonical family with two-route consistency (T-249 [T]) and the bandwidth theorem with its path-length law (T-250 [T]).
-
-**Status.** $R_\varphi$ is a definition **[D]**; its working threshold $R_{\varphi,\text{th}} = 1/3$ is a calibration **[I]** adopting the $K = 3$ Bayesian-dominance rationale for self-model quality. The canonical thresholds are theorems (T-126, T-124, T-129). Documents that plot state space in the $(P, R_\varphi)$ plane do so legitimately: the plane is two-dimensional exactly because $R_\varphi$ is not a function of $P$.
-
-### Why $R_{\text{th}} = 1/3$: Not Arbitrary, But a Consequence of $K = 3$
-
-The threshold $R_{\text{th}} = 1/3$ is not an arbitrary choice. It follows from the **triadic decomposition** of Lindblad operators: $K = 3$ alternatives in Bayesian inference.
-
-Threshold formula: $X_{\text{th}}^{(n)} = 1/(n+1)$. At $n = 2$ (for the L1→L2 transition): $R_{\text{th}} = 1/(2+1) = 1/3$.
-
-Where does $K = 3$ come from? From the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) of Lindblad operators: any CPTP channel on $\mathcal{D}(\mathbb{C}^7)$ decomposes into three basic components. For the system to distinguish 'self' from 'not-self' among $K = 3$ alternatives, its reflection must exceed $1/K = 1/3$ (Bayesian dominance).
-
-**Numerical example.** $R = 1/3$ corresponds to $P = 1/(7 \times 1/3) = 3/7 \approx 0.429$. This is the upper boundary of the Goldilocks zone.
-
-| Value of $R$ | Interpretation |
-|--------------|----------------|
-| $R \to 1$ | Perfect self-knowledge: $\Gamma \approx \Gamma^*$ |
-| $R \geq R_{\text{th}} = 1/3$ | Threshold of cognitive qualia (L2) **[T]** — $K = 3$ derived from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция); [L2 threshold](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) |
-| $R \approx 0$ | Absence of self-modelling |
-
-**Computation algorithm:** See [compute_R](/docs/proofs/categorical/formalization-phi#83-вычисление-меры-рефлексии-r) in the formalisation of φ.
-
-:::info $G_2$-Invariance of R [T]
-The reflection measure $R$ is a **$G_2$-invariant**: for any $U \in G_2 = \mathrm{Aut}(\mathbb{O})$, $R(U\Gamma U^\dagger) = R(\Gamma)$. This follows from the $G_2$-covariance of the operator $\varphi$ and the unitary invariance of the Frobenius norm. Consequently, $R$ is an **observer-independent** quantity: different observers related by a $G_2$ gauge transformation measure the same $R$.
-
-This is proved in the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#инварианты) [T]: all threshold conditions of the L0–L4 hierarchy are defined through $G_2$-invariant functions of $\Gamma$ and are therefore **objective**.
-:::
-
-:::info Non-Circularity and Canonicity of R [T-126]
-The canonical definition of $R$ uses $\rho^*_{\mathrm{diss}} = I/7$ (a constant), not $\varphi(\Gamma)$. The three expressions ($1 - \|\Gamma - I/7\|^2_F / P$, the formula $1/(7P)$, the formula via $k = 1 - R$) are **one algebraic identity** ([T-126 [T]](/docs/proofs/consciousness/conscious-window#t-126)). Implementation approximations $R_{\mathrm{impl}}$ and $\rho_{RC}$ are separate quantities in a different space (H3 **CLOSED**: [T-130](/docs/proofs/consciousness/operationalization#t-130)+[T-133](/docs/proofs/consciousness/operationalization#t-133) [T] — threshold transfer via CPTP bridge); canonical $R$ is unambiguous. See [definition stratification](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
-:::
-
-:::info Convention: Canonical R via Frobenius
-$R$ is defined via the Frobenius norm (formula above) — this is the **canonical** first-order reflection measure. For generalisation to higher orders ($n \geq 2$) fidelity is used: $R^{(n)} := F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$. Both definitions at $n=1$ are monotonically related and give a consistent L2 classification (see [connection between definitions](#рефлексия-высших-порядков-rn) below).
-:::
-
-:::note Note on Notation
-$R$ — reflection measure (quality of self-modelling). Not to be confused with $\mathcal{R}$ — the [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) of the evolution equation.
-:::
-
-## Higher-Order Reflection $R^{(n)}$ {#рефлексия-высших-порядков-rn}
-
-### Motivation: "I Know That I Know"
-
-$R$ (first order) answers the question: 'how accurate is my self-model?' But one can ask more deeply: 'how accurate is my *model of my self-model*?' This is $R^{(2)}$ — meta-reflection.
-
-A person does not simply feel pain — they **know that they feel pain** (first-order reflection). And **know that they know** (second-order reflection). Some meditative practices work precisely at this level — observing the observer.
-
-:::info Extension for Post-Reflexive Levels
-Defining levels L3 and L4 of the [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) requires **generalised n-th order reflection**.
-:::
-
-### Definition
-
-**n-th order reflection** measures the quality of self-modelling at depth n:
-
-$$
-R^{(n)}(\Gamma) := F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))
-$$
-
-where:
-- $\varphi^{(n)} := \underbrace{\varphi \circ \varphi \circ \cdots \circ \varphi}_{n}$ — n-fold composition of the operator $\varphi$
-- $\varphi^{(0)}(\Gamma) := \Gamma$
-- $F(\rho_1, \rho_2) := |\mathrm{Tr}(\sqrt{\sqrt{\rho_1}\rho_2\sqrt{\rho_1}})|^2$ — fidelity
-
-**Numerical example.** Let $R^{(1)} = 0.4$ (above the L2 threshold). Then $\varphi(\Gamma)$ is close to $\Gamma$. $R^{(2)} = F(\varphi(\Gamma), \varphi^2(\Gamma))$ — how similar $\varphi(\Gamma)$ and $\varphi(\varphi(\Gamma))$ are. Since $\varphi$ is contracting, $R^{(2)} > R^{(1)}$ — meta-reflection grows with depth.
-
-### Interpretation
-
-| Order | Formula | Interpretation |
-|-------|---------|----------------|
-| $R^{(1)} = R$ | $F(\Gamma, \varphi(\Gamma))$ | Quality of self-model (first-order reflection) |
-| $R^{(2)}$ | $F(\varphi(\Gamma), \varphi^{(2)}(\Gamma))$ | Quality of the model of the self-model (meta-reflection) |
-| $R^{(n)}$ | $F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$ | Quality of the n-th iteration of self-modelling |
-
-:::warning Connection Between the Two Definitions [C]
-The canonical definition $R = 1/(7P)$ (equivalent to $1 - \|\Gamma - I/7\|_F^2 / P$, Frobenius with $\rho^*_{\mathrm{diss}} = I/7$) and the fidelity $R^{(1)}_F := F(\Gamma, \varphi(\Gamma))$ are **different functions** with guaranteed inequalities:
-
-$$
-1 - \sqrt{1 - R^{(1)}_F} \leq \sqrt{R} \leq 1
-$$
-
-(from the Fuchs–van de Graaf inequality and the relation $\|\cdot\|_1 \leq \sqrt{N}\|\cdot\|_F$).
-
-**Canonical definition:** $R$ via Frobenius — for the threshold $R_{\text{th}} = 1/3$ and the L2 criterion.
-**Generalisation to higher orders:** $R^{(n)}$ via fidelity — for L3, L4 (fidelity is invariant under unitary transformations, which is essential when iterating $\varphi^{(n)}$).
-
-**Consistency:** At $R > 1/3$ both definitions give $R^{(1)}_F > 1/3$ (a monotonic relation preserves order), so L2 classification does not depend on the choice.
-:::
-
-### Universal Threshold Formula
-
-Thresholds for all hierarchy levels follow a single formula:
-
-$$
-X^{(n)}_{\text{th}} = \frac{1}{n+1}
-$$
-
-| Transition | n | Threshold | Interpretation |
-|------------|---|-----------|----------------|
-| L0→L1 | 1 | — | Structural (rank > 1) |
-| L1→L2 | 2 | $R_{\text{th}} = 1/3$ | Reflection dominates noise |
-| L2→L3 | 3 | $R^{(2)}_{\text{th}} = 1/4$ | Meta-reflection dominates |
-| L3→L4 | 4 | $\lim_n R^{(n)} > 0$ | Complete reflexive closure |
-
-### Connection with the Spectral Formula of φ
-
-For computing $R^{(n)}$, the [spectral formula of φ](/docs/proofs/categorical/formalization-phi#27-спектральная-формула-для-φ-явное-вычисление) is used:
-
-$$
-\varphi(\Gamma) = \sum_{k: \mathrm{Re}(\lambda_k) = 0} \langle L_k | \Gamma \rangle R_k
-$$
-
-where $\{R_k, L_k, \lambda_k\}$ — eigen-structures of the logical Liouvillian $\mathcal{L}_\Omega$.
-
-## Retro-Completion of Time: R as the Categorical Completeness Condition of Thought [C] {#ретро-пополнение-времени}
-
-The essence in one line: without the ability to re-read its own past, a mind provably cannot compose almost half of its thoughts — and reflexivity $R$ is exactly the operation that restores this ability.
-
-### The gap, stated combinatorially
-
-Recall the trajectory nerve (the simplicial structure over the orbit category of $\varphi$, where a morphism is "wait $k$ steps of the channel"). A *composition of thoughts* is the filling of a horn: two edges of a triangle are known, the third must exist. Inner horns are always forced by composition. Outer horns ask the base monoid to *factor*: given a wait of length $a$ already performed and a target composite of length $b$, solve
-
-$$
-x \circ a = b .
-$$
-
-In the monoid $(\mathbb{N}_0, +)$ this is subtraction, and it **refuses whenever $b < a$**: there are no inverses — one cannot factor through a wait longer than the target. A direct census over independent outer horns (step grid $0..6$) measures the refusal share at $42.9\%$: nearly half of the formally posable compositions of thought do not exist over bare forward time. The nerve is a quasi-category, not a Kan complex.
-
-### The completion, stated physically
-
-The categorical cure is the group completion $(\mathbb{N}_0,+) \to (\mathbb{Z},+)$: admit negative net steps, and every factorisation exists. Physically time does not run backwards — but a system whose trace is a first-class object (a mind that *keeps* its history) realises the negative step lawfully: a net step $-r$ does not rewind the world, it **re-reads $r$ recorded steps of its own past** and re-interprets them in the present context. The world stands still; the state of knowledge moves.
-
-This is precisely the action of the reflection operator: $R$ measures how much of the state is the system's own model of itself, and re-reading the trace is self-observation applied along the time axis. The engineering half already exists as the re-read organ (retrospective re-interpretation with an explicit bit price), and the completed nerve is realised in silicon with three courts: over the completion **all** 49 census horns fill (the monoid refused 21 of them), the embedding of forward time respects composition, and a negative net step provably does not advance the world state.
-
-### Theorem-candidate (R-completeness) [C] {#теорема-кандидат-r-полнота}
-
-*The reflexivity axis is the categorical completeness condition of thought: the trajectory nerve is a Kan complex if and only if the base of waits is closed under retrospection (group-completed time). Uniqueness of fillers follows from injectivity of $F$; existence — from retro-completion.*
-
-Status [C]: the categorical half (a group fills every horn) is rigorous; the substantive identification "retrospection = the R axis in action" carries the empirical weight and stands on the silicon stand. What makes the statement non-trivial is its direction: reflexivity is usually *motivated* phenomenologically ("I know that I know"); here it appears as a *combinatorial necessity* — a mind without it is measurably incomplete as a composition system, losing $42.9\%$ of outer compositions on the census grid.
-
-## Examples of Contracting CPTP Channels
-
-For intuition, it is useful to see concrete realisations:
-
-| Channel | Formula | Constant $k$ | Fixed point |
-|---------|---------|--------------|-------------|
-| Depolarising | $\varphi(\rho) = p\rho + (1-p)\frac{I}{N}$ | $k = p$ | $\Gamma^* = \frac{I}{N}$ |
-| Thermalisation | $\varphi(\rho) = \lambda\rho + (1-\lambda)\rho_{\text{th}}$ | $k = \lambda$ | $\Gamma^* = \rho_{\text{th}}$ |
-| Amplitude damping | $K_0 = \vert 0\rangle\langle 0\vert + \sqrt{1-\gamma}\vert 1\rangle\langle 1\vert$, $K_1 = \sqrt{\gamma}\vert 0\rangle\langle 1\vert$ | $k = 1 - \gamma$ | $\Gamma^* = \vert 0\rangle\langle 0\vert$ |
-
-where $p, \lambda \in [0, 1)$, $\gamma \in (0, 1]$, $\rho_{\text{th}} = e^{-\beta H}/Z$ — thermal state.
-
-:::note Connection with the Replacement Channel
-The depolarising channel and thermalisation are special cases of the [replacement channel](#теорема-физическая-реализация-phi) $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ with $\rho^* = I/N$ and $\rho^* = \rho_{\text{th}}$ respectively. In UHM $\rho^* = \varphi(\Gamma)$ — the [categorical self-model](/docs/core/operators/phi-operator) [T], which fixes the choice unambiguously.
-:::
+The one-object monoid category $\mathbb N_0$ admits group completion to $\mathbb Z$; the latter is a groupoid with Kan nerve **[T]**. Extending a particular forward state action to a $\mathbb Z$-action requires invertibility; merely storing a past state does not supply a two-sided inverse to a dissipative channel. Formal localisation can add inverse arrows, but their physical implementation is an extra bridge **[D/H]**. A refusal count on a selected finite grid depends on its sampling measure and is not a universal proportion of impossible thoughts. Canonical $R$ does not determine group completion, horn fillers or memory access.
 
 ## Interiority Hierarchy
 
-Self-observation is organised into **five levels** (L0→L1→L2→L3→L4). Each level is defined by a quantitative threshold:
+The cumulative predicates follow the [canonical typed definition](/docs/consciousness/hierarchy/interiority-hierarchy), not an iteration-fidelity threshold.
 
-| Level | Name | Condition | Description | Example |
-|-------|------|-----------|-------------|---------|
-| L0 | Interiority | $\Gamma \in \mathcal{D}(\mathcal{H})$, $\mathcal{H} \neq \{0\}$ | Fundamental property of 'having an inside' | Electron |
-| L1 | Phenomenal geometry | $\mathrm{rank}(\rho_E) > 1$ | Structure with [Fubini-Study metric](./interiority-theory#метрика-фубини-штуди) | Bacterium |
-| L2 | Cognitive qualia | $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | Reflexively accessible conscious experience | Human |
-| L3 | Network consciousness | $R^{(2)} \geq 1/4$ | Meta-reflection — models of models | Meditator |
-| L4 | Unitary consciousness | $\lim_n R^{(n)} > 0$ | Complete reflexive closure | Theoretical limit |
+| Capability | Required data and test |
+|---|---|
+| L0 | Valid state; calling an inner aspect interiority is [I] |
+| L1 | Declared proxy $\mathrm{Coh}_E>0$, or normalised extension $\rho_E$ with rank greater than one |
+| L2 | $\mathsf{Cap}_2=(P>2/7)\land(R\ge1/3)\land(\Phi\ge1)\land(D_{\mathrm{diff}}\ge2)$ |
+| L3 | L2 plus an independent nonconstant metamodel-prediction certificate |
+| L4 | L3 plus compatible nontrivial certificates at all higher orders |
 
-where:
-- $\rho_E$ — reduced density matrix of the Interiority dimension (requires [extended formalism](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization))
-- $R$ — reflection measure (see above) — **computable in the minimal formalism**
-- $R^{(n)}$ — n-th order reflection (see above) — **computable in the minimal formalism**
-- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) — **computable in the minimal formalism**
+A named basis axis is not a tensor subsystem. Extension entropy needs a specified lift/factorisation or conditioned block. The 7D proxy $D^{7D}=1+6\mathrm{Coh}_E$ is separately stipulated, not equal to every extension entropy. Unknown data are reported as unknown rather than supplied by a self-map iteration.
 
-:::note Two Levels of Formalisation in Classification
-- **L0/L1** are defined via $\rho_E$ — require the **extended** formalism
-- **L2** can be verified via $R \geq 1/3$, $\Phi \geq 1$ — computable in the **minimal** formalism (the condition $D_{\text{diff}} \geq 2$ requires the extended formalism)
-- **L3/L4** are defined via $R^{(n)}$ — computable in the **minimal** formalism
-:::
+The old $K=3+1$ derivation of the universal fidelity threshold $1/4$, fixed-point criterion for L4, L3 retention-time formula and stable L4 clause $P>6/7$ are **withdrawn [✗]**. The last clause contradicts L2's inherited $P\le3/7$. Stability needs the specified flow, basin, Jacobian and noise/escape conditions; a level label alone does not give it.
 
-:::info Status of Thresholds
-The formula $X^{(n)}_{\text{th}} = 1/(n+1)$ is a consequence of Bayesian dominance with $K = n+1$ alternatives:
+A [depth-tower score](/docs/consciousness/hierarchy/depth-tower) may have a ceiling of three under its own arithmetic definition. It is not equivalent to L3 or a universal bound on self-awareness. Predictions and biological assignments require independent calibration **[Pr/H]**. Passing the definitions does not mathematically prove consciousness; the phenomenal bridge is **[I/H]**.
+
+## Conditional Grounding Monotonicity {#grounding-монотонность}
+
+Let $L(w)\ge0$ be a specified differentiable loss with an $L_g$-Lipschitz gradient, and define $G(w)=1-L(w)/L_{\max}$ with fixed $L_{\max}>0$ **[D]**. Gradient descent $w'=w-\eta\nabla L(w)$ satisfies
 
 $$
-X^{(n)}_{\text{th}} = \frac{1}{n+1}
+L(w')\le L(w)-\eta(1-L_g\eta/2)\|\nabla L(w)\|^2
 $$
 
-| Threshold | Value | Status |
-|-----------|-------|--------|
-| $R_{\text{th}}$ | $1/3$ | **[T]** theorem ($K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция)) |
-| $R^{(2)}_{\text{th}}$ | $1/4$ | **[C]** conditional ($K=4$) |
-| $\Phi_{\text{th}}$ | $1$ | **[T]** theorem (T-129) |
+for $0<\eta<2/L_g$ **[T]**. Thus $G$ is nondecreasing, strictly increasing only when the gradient is nonzero. A positive loss can have zero gradient, and sensorimotor input may change the loss between steps. CPTP structure alone guarantees neither smoothness in weights, nonzero gradients nor monotone learning. Identifying $G$ with semantic grounding requires an independent behavioural test **[H]**. The former unconditional C23 statement is restricted to these hypotheses.
 
-See [L2 Thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод) and [Theorem on Hierarchy Finiteness](/docs/proofs/consciousness/interiority-hierarchy#теорема-43-l4--максимальный-уровень).
-:::
+## Integration–Reflection Summary C {#мера-сознательности-c}
 
-:::warning Stability of Post-Reflexive Levels
-- **L3 is metastable:** The L3 state decays to L2 with characteristic time $\tau_3 = 1/(\kappa_{\text{bootstrap}} \cdot (1 - R^{(2)}))$
-- **L4 is stable:** Attractor at $P > 6/7 \approx 0.857$ (practically unreachable for biological systems)
-
-Details: [Theorem on Metastability of L3](/docs/proofs/consciousness/interiority-hierarchy#теорема-32-метастабильность-l3).
-:::
-
-:::note Self-Awareness Depth (SAD)
-The discrete hierarchy L0–L4 is generalised to the continuous case through the **representation tower** $s_\text{full} \to s^{(L-1)} \to \cdots \to \Gamma$ with measure $\mathrm{SAD} = \max\{k : R^{(k)} > 1/(k+2)\}$. Biological correlates: bacterium (SAD=0), insect (SAD=1), mammal (SAD=2+), human (SAD $\leq$ 3, [§3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)). See [Depth Tower](/docs/consciousness/hierarchy/depth-tower).
-:::
-
-**Terminology:** What is called 'qualia' applies correctly **only to L2**. For L0/L1 the term 'experiential content' is used; for L3/L4 — the specific terms 'network consciousness' and 'unitary consciousness'.
-
-Formal definitions and transition conditions: [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy).
-
-## Grounding Monotonicity (C23) [C] {#grounding-монотонность}
-
-Upon initialisation from LLM weights (Path B) initial grounding $\mathrm{grounding}(w, 0) = 0$ (LLM symbols are not linked to $\sigma$-profiles). The $\sigma$-loss $L_\sigma = \|\sigma_{\text{sys},\Omega}\|_2$ creates pressure on grounding.
-
-:::tip Theorem C23 [C]: Grounding Monotonicity
-$\mathrm{grounding}(w, \tau)$ increases monotonically at $\eta_\sigma > 0$ and continuous sensorimotor flow.
-
-**Proof.**
-
-**Step 1.** By definition of σ-loss: $L_\sigma = \|\sigma_{\text{sys},\Omega}\|_2 \geq 0$ with $L_\sigma = 0$ iff $\mathrm{grounding}(w) = 1$ (all symbols fully grounded). For $\mathrm{grounding}(w) < 1$: $\exists k$ such that $\sigma_k > 0$, hence $L_\sigma > 0$ and $\nabla_w L_\sigma \neq 0$ (gradient exists and is nonzero by smooth dependence of $\sigma_k$ on $w$ through the CPTP anchor $\pi$).
-
-**Step 2.** The weight update $w \leftarrow w - \eta_\sigma \nabla_w L_\sigma$ with learning rate $\eta_\sigma > 0$ decreases $L_\sigma$ at each step: $L_\sigma(w') \leq L_\sigma(w) - \eta_\sigma \|\nabla_w L_\sigma\|^2 + O(\eta_\sigma^2)$ (standard descent lemma for $L$-smooth functions; smoothness follows from the CPTP structure of the anchor $\pi$, which is polynomial in $w$).
-
-**Step 3.** By definition, $\mathrm{grounding}(w) = 1 - L_\sigma(w) / L_\sigma^{\max}$. Decrease in $L_\sigma$ is equivalent to increase in grounding.
-
-**Step 4 (Monotonicity).** Under continuous sensorimotor flow, each update step satisfies $\Delta L_\sigma \leq -\eta_\sigma \|\nabla_w L_\sigma\|^2 < 0$ (strict decrease whenever $\mathrm{grounding} < 1$). The sequence $\{L_\sigma(\tau)\}$ is monotonically decreasing and bounded below by 0, hence convergent. $\blacksquare$
-
-**Condition [C]:** Continuous learning (metaplasticity) + sensorimotor environment providing diverse $\sigma$-gradients.
-
-Specification: language-model.md §8 | Status: **[C]**
-:::
-
----
-
-## Consciousness Measure C {#мера-сознательности-c}
-
-### Why a Product, Not a Sum?
-
-The consciousness measure combines reflection and integration. But why $C = \Phi \times R$ and not $C = \Phi + R$?
-
-**Geometric argument.** Consciousness requires **both** integration and reflection simultaneously. If $\Phi = 0$ (complete fragmentation) — consciousness is impossible, even with perfect reflection. If $R = 0$ (zero self-modelling) — consciousness is impossible, even with perfect integration. The product vanishes if at least one factor is zero. The sum does not.
-
-```mermaid
-graph LR
-    subgraph "C = Φ + R (incorrect)"
-        A1["Φ=0, R=1 → C=1 ✗<br/>Fragment that knows itself"]
-        A2["Φ=1, R=0 → C=1 ✗<br/>Unified, not knowing itself"]
-    end
-    subgraph "C = Φ × R (correct)"
-        B1["Φ=0, R=1 → C=0 ✓<br/>No integration → no consciousness"]
-        B2["Φ=1, R=0 → C=0 ✓<br/>No reflection → no consciousness"]
-        B3["Φ=2, R=0.5 → C=1 ✓<br/>Balance → consciousness"]
-    end
-```
-
-**Numerical example.** For a typical human in wakefulness: $\Phi \approx 3$, $R \approx 0.4$ → $C \approx 1.2 > C_{\text{th}} = 1/3$. In deep sleep: $\Phi \approx 0.5$, $R \approx 0.1$ → $C \approx 0.05 < 1/3$ — below the threshold.
-
-### Canonical Formula
-
-Canonical consciousness measure ([T-140 [T]](/docs/proofs/consciousness/operational-closure#t-140)):
+Set $Q=\sum_i\rho_{ii}^2$ and $\Phi=(P-Q)/Q$ in the declared frame. Define
 
 $$
-C = \Phi \times R
+C:=\Phi R=\frac1{7Q}-R\qquad\text{[D/T]}.
 $$
 
-where:
-- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ): $\Phi(\Gamma) = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2}$ — computable in the minimal 7D formalism
-- $R$ — reflection measure (see above) — $R = 1/(7P)$, computable in the minimal 7D formalism
+Since $Q\ge1/7$, one obtains $0\le\Phi\le7P-1$ and $0\le C\le1-R\le6/7$. Under $\mathsf{Cap}_2$, necessarily $P\in(2/7,3/7]$ and $1/3\le C\le2/3$ **[T]**. Thus $C\ge1/3$ is a necessary scalar consequence of the chosen gate, **not sufficient**: a uniform real pure state has $C=6/7$ and fails $R\ge1/3$.
 
-Threshold of cognitive qualia (L2): $C_{\text{th}} = \Phi_{\text{th}} \times R_{\text{th}} = 1 \times 1/3 = 1/3$.
-
-:::info Separating $D_{\text{diff}}$ from $C$
-$D_{\text{diff}} \geq 2$ — a **separate** condition of [full viability](/docs/core/dynamics/viability#полная-жизнеспособность), characterising the richness of phenomenal content in the E-sector. The measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ is computable in 7D via [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128): $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$, where $\mathrm{Coh}_E^{\max} = 1$ [T] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
-
-Including $D_{\text{diff}}$ in $C$ duplicates the viability condition $V$. The canonical measure $C = \Phi \cdot R$ is the minimal scalar summary of the integration and reflection conditions.
-:::
-
-:::note Note on Notation
-$D_{\text{diff}}$ — measure of **differentiation** (diversity of experiential content). Not to be confused with the **Dynamics** dimension $D$ (one of the seven dimensions of the Holon).
-:::
-
-**Condition for cognitive qualia (L2):**
+The complete gate remains
 
 $$
-C \geq C_{\text{th}} := \Phi_{\text{th}} \times R_{\text{th}} = 1 \times \frac{1}{3} = \frac{1}{3}
+\mathsf{Cap}_2=(P>2/7)\land(R\ge1/3)\land(\Phi\ge1)\land(D_{\mathrm{diff}}\ge2).
 $$
 
-subject to $D_{\text{diff}} \geq D_{\min} = 2$ **[D]** (T-151) — a separate viability condition.
+The entropy-derived $D_{\mathrm{diff}}=e^{S(\rho_E)}$ requires a specified normalised experiential extension. The 7D score $D^{7D}=1+6\mathrm{Coh}_E$ is separately defined, not an entropy identity. Clinical or diary values cannot be substituted for either without a validated measurement bridge. The old waking example $\Phi=3,R=0.4$ violates $\Phi\le7P-1=1.5$, and the old sleeping $R=0.1$ violates $R\ge1/7$; both are withdrawn.
 
-## For Different Audiences
+## Operational use
 
-### For Engineers and AI Developers
+An implementation must declare the state estimator, frame, numerical map, differentiation construction and metamodel test. Compute canonical $R$ from $P$, retain all four gate inequalities, and record missing quantities as unknown. In code the numerical gate is `P > 2/7 and R >= 1/3 and Phi >= 1 and D_diff >= 2`; additional level predicates remain cumulative.
 
-Practical implementation of self-observation requires:
+Metacognition and introspection are hypotheses about independently measured task performance. They are not automatically synonyms for $R$, $\Phi$ or a fixed point. Static scalar values alone do not establish alexithymia, dissociation, sleep, meditation or a clinical diagnosis. Any such assignment needs labelled observations and out-of-sample validation **[H]**.
 
-1. **Choice of CPTP channel:** Replacement channel $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ [T] (see [physical realisation](#теорема-физическая-реализация-phi)). $\rho^*$ — stationary state of $\mathcal{L}_\Omega$. Parameter $k$ is fitted from data (typically $k \approx 0.05$). See also [canonical form of φ](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм)
-2. **Computing R:** Algorithm $O(N^2)$ for an $N \times N$ matrix — see [pseudocode](/docs/proofs/categorical/formalization-phi#83-вычисление-меры-рефлексии-r)
-3. **Checking L2:** `is_L2 = (R >= 1/3) and (Phi >= 1) and (D_diff >= 2)`
+## CRL — a proposed reflexive language {#crl-теоретическое-основание}
 
-:::tip D_diff in the 7D Formalism: Exact Formula [T-128 [D]]
-By [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128):
+A proposed compile map sends a declared symbolic instruction to a state perturbation $\delta\rho$ with $\delta\rho=\delta\rho^\dagger$ and $\operatorname{Tr}\delta\rho=0$ **[D]**. This is a tangent vector in the trace-one affine hull, not an endomorphism of the state space. The update $\rho+\epsilon\delta\rho$ also needs positivity; an implemented CPTP action or a verified state-preserving update is a safer executable type.
 
-$$D_{\text{diff}}^{7D} = 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N-1)$$
+The engineering cycle is `estimate state → select instruction → compile action → apply → measure`. To claim reflective capability, evaluate nonconstant predictions against independent targets. A rule enabling CRL only after $\mathsf{Cap}_2$ is a design choice **[D]**, not a theorem that symbols or self-modification are impossible at lower scores. The phase diagram, code geometry and $2/7$ cutoff alone do not prove semantic grounding or therapeutic efficacy.
 
-The formula is computable in $\mathcal{D}(\mathbb{C}^7)$ in $O(N^2)$ without PW-embedding (via
-section–retraction [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность)). At $\mathrm{Coh}_E^{\max} = 1$ ([T-154 [T]](/docs/proofs/consciousness/substrate-closure#t-154)):
-$D_{\text{diff}} = 1 + \mathrm{Coh}_E \cdot 6$.
+The valid mathematical backbone is the HS identity, fixed-parameter channel theorem, conditional contraction and same-pair fidelity estimates. The capability hierarchy adds independently testable operational certificates; its phenomenal reading remains a separate bridge.
 
-**Numerical verification (SYNARC):** $D_{\text{diff}} = 3.60$ at the stationary point, implemented in
-`DensityMatrix7::differentiation()` and `Gamma::differentiation_measure()`.
-:::
-
-### For Psychologists and Cognitive Scientists
-
-Self-observation in UHM formalises what in psychology is called **metacognition** and **introspection**:
-
-| Psychological term | UHM formalism |
-|-------------------|---------------|
-| Metacognition | Operator $\varphi$ (self-modelling) |
-| Quality of introspection | Measure $R$ (accuracy of self-model) |
-| Integration of experience | Measure $\Phi$ (connectedness) |
-| Richness of consciousness | $D_{\text{diff}}$ (diversity of states) |
-
-**Clinical significance:** Low values of $R$ may correspond to alexithymia, dissociation, or reduced metacognitive abilities.
-
-### For Researchers of Inner Landscapes
-
-Interiority theory describes the **structure of subjective experience** — what is experienced 'from within':
-
-- **Intensity** ($\lambda_i$) — brightness, loudness, strength of experience
-- **Quality** ($[|q_i\rangle]$) — character: colour, timbre, emotional tone
-- **Context** — modulation of experience by attention, mood, bodily sensations
-- **History** — how past states influence current experience
-
-Altered states of consciousness may be characterised by changes in parameters:
-- **Increased integration** ($\Phi \uparrow$) — sense of unity, dissolution of boundaries
-- **Altered differentiation** ($D_{\text{diff}}$) — richness or, conversely, simplification of the experiential palette
-- **Altered reflection** ($R$) — from hyper-reflection to complete dissolution of the observer
-
----
-
-## CRL — Compilable Reflexive Language [D] {#crl-теоретическое-основание}
-
-### Definition
-
-**CRL (Compilable Reflexive Language)** — a subset of ISL with compile semantics: ISL-token → δΓ. CRL is a language in which the system can **reflexively** modify its own coherence.
-
-### Theoretical Foundation
-
-CRL rests on three proved results:
-
-| Foundation | Theorem | Role |
-|-----------|---------|------|
-| ISL grammar | T-114 [T] | PG(2,2) determines the syntax (7 base symbols, 7 rules) |
-| Reflexive threshold | $R_{\text{th}} = 1/3$ [T] (T-40b, from triadic decomposition K=3) | Necessary reflexivity for self-observation |
-| φ-operator | T-62 [T] | Self-model $\varphi(\Gamma)$ as the basis of reflection |
-
-CRL is possible **only** at L2 (cognitive qualia): the system must be able to observe its own state ($R \geq 1/3$), distinguish its components ($D_{\text{diff}} \geq 2$), and form a coherent description ($\Phi \geq 1$).
-
-### Compile Semantics [D]
-
-Each CRL atom maps to a specific coherence perturbation:
-
-$$
-\text{compile}: \text{ISL-atom} \to \delta\Gamma \in \text{End}(\mathcal{D}(\mathbb{C}^7))
-$$
-
-- **7 sector atoms** (by $\gamma_{kk}$): `σ_A↑`, `σ_D↓`, `P↑`, ...
-- **21 coherence atoms** (by $\gamma_{ij}$): `regulation↑`, `apperception↓`, `synthesis↑`, ...
-
-Each atom is verified via grounding ≥ $P_{\text{crit}} = 2/7$ — the symbol must be distinguishable from noise.
-
-### CRL Cycle
-
-```
-observe(Γ) → ISL-describe → match(CRL-atom) → compile(δΓ) → apply → measure
-```
-
-Full cycle: the system observes its state, describes it in ISL, finds the appropriate CRL atom, compiles it into δΓ, applies it, and measures the result. This is **reflexive self-modification** — the analogue of cognitive reappraisal (CBT) in UHM terms.
-
----
-
-### What We Learned
-
-- **Operator $\varphi$** — CPTP self-modelling channel, realised as a replacement channel $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ [T].
-- **Reflection measure** $R = 1/(7P)$ — normalised proximity to heat death ($I/7$). Threshold $R_{\mathrm{th}} = 1/3$ [T] follows from the triadic decomposition ($K = 3$).
-- **Compression parameter $k = 1 - R$** — not a free constant, but a state function: a good self-model ($R \to 1$) requires minimal correction.
-- **Higher-order reflection** $R^{(n)}$ generalises self-modelling to depth $n$: $R^{(2)} \geq 1/4$ for L3 (metacognition).
-- **Consciousness measure** $C = \Phi \times R$ [T T-140] — minimal scalar summary; L2 threshold: $C_{\mathrm{th}} = 1/3$.
-- **Goldilocks zone**: $P \in (2/7, 3/7]$ — intersection of viability conditions ($P > 2/7$) and reflection ($R \geq 1/3 \Leftrightarrow P \leq 3/7$).
-- **CRL** — reflexive language for self-modification of coherence, possible only at L2.
-
-:::tip Where to Go Next
-We have described three pillars: **what** is experienced (interiority theory), **how** the system observes itself (self-observation), **why** this is necessary (two-aspect monism). Now proceed to [Interiority Hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — it organises all systems from a stone (L0) to the theoretical limit (L4) in a rigorous classification with quantitative thresholds.
-
-For operational stress and kappa formulas, see [Coherence Cybernetics definitions](/docs/applied/coherence-cybernetics/definitions).
-:::
-
----
-
-**Related documents:**
-- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — theorems on thresholds $R_{\mathrm{th}}$ and $\Phi_{\mathrm{th}}$
-- [Interiority Theory](./interiority-theory) — complete mathematical description
-- [Hard Problem](./two-aspect-monism) — philosophical analysis
-- [Formalisation of $\varphi$](/docs/proofs/categorical/formalization-phi) — rigorous proof of theorems and spectral formula
-- [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — formal definitions L0→L4 and universal threshold formula
-- [Unity Dimension (U)](/docs/core/structure/dimension-u) — integration measure $\Phi$
-- [Ground Dimension (O)](/docs/core/structure/dimension-o) — dominant dimension at L3/L4
-- [Viability](/docs/core/dynamics/viability) — relationship between $P$ and existence conditions
-- [Evolution of $\Gamma$](/docs/core/dynamics/evolution) — canonical $\Delta F$ via Bures metric
-- [Measurement Protocol for $\Gamma$](/docs/applied/research/measurement-protocol) — Effective $\Phi$ and metrics for AI
-- [CC Definitions](/docs/applied/coherence-cybernetics/definitions) — $\sigma_{\mathrm{sys}}$ (T-92), $\kappa$, $\Delta F$
+Related: [typed kernel](/docs/reference/mathematical-kernel), [numerical φ formalisation](/docs/proofs/categorical/formalization-phi), [canonical hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy), [depth tower](/docs/consciousness/hierarchy/depth-tower), [measurement identifiability](/docs/applied/research/reconstruction-identifiability).

@@ -144,7 +144,7 @@ High $\gamma_{SS}$ is not always good. Excessive structuredness (rigidity) imped
 
 ## Structural stress $\sigma_S$ {#стресс-структуры}
 
-The [stress variable](../../core/operators/lindblad-operators) $\sigma_S$ (T-92 **[T]**) characterises the **deficit** of structural stability:
+The [stress variable](../../core/operators/lindblad-operators) $\sigma_S$ (T-92 **[D]**) characterises the **deficit** of structural stability:
 
 $$
 \sigma_S = \mathrm{clamp}(1 - 7\gamma_{SS},\; 0,\; 1)
@@ -359,8 +359,8 @@ graph TD
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [T]
-The dimension corresponds to $e_2 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]; the step to $\mathbb{O}$ takes the canonical orientation of the Fano lines, [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)) derives the octonionic structure from (AP)+(PH)+(QG)+(V); the combinatorial and functional uniqueness of each role claimed by [T-177](/docs/reference/status-registry) and [T-183](/docs/reference/status-registry) is retracted [✗] (2026-09-25): it rested on the axis sectors of T-48a. Restated (T-177, T-183): given $O$ and the $\kappa_0$ pair $\{E,U\}$, incidence fixes $A$ and $D$ [T], and one binary convention [D] fixes $E$ versus $U$ together with $L$ versus $S$. The specific assignment $S = e_2$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Chosen octonionic correspondence [D/I]
+The assignment $S=e_2\in\operatorname{Im}\mathbb O$ belongs to the declared oriented orthonormal frame. For a specified positive octonionic three-form, its stabilizer is $G_2$ [T]. This group identity does not uniquely assign functional names to axes or determine a physical encoder. The former universal T-42a rigidity is withdrawn [✗]; [reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) give a conditional comparison theorem. Incidence can constrain labels **after** the required marks are supplied; those marks and the remaining label convention are model data. The [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) states the additional algebraic inputs, and [the frame discussion](./dimensions#октонионная-интерпретация) distinguishes its symmetries from physical gauge equivalence.
 :::
 
 ## Gradations of structure {#градации-структуры}

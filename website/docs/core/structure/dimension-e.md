@@ -54,14 +54,8 @@ A neuron is already at level L1: its $\rho_E$ has rank greater than one — the 
 Dimension $E$ is an **aspect** of the configuration $\Gamma$, not a separate entity. "The Holon experiences" means: in the coherence matrix $\Gamma$ the projection onto the basis vector $|E\rangle$ is active, and the reduced density matrix $\rho_E$ with a non-trivial spectrum is defined.
 :::
 
-:::tip Functional uniqueness of E [T]
-Dimension $E$ is **necessary and functionally unique** by three independent arguments:
-
-1. **Axiomatic:** (PH) is an axiomatic requirement for a Holon. Removing E violates (PH). [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
-2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ ([T at first-order kinetics], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1) explicitly uses E as a separate object of the category via $\mathrm{Hom}(O, E)$. When E is removed: κ₀ is undefined, the regeneration rate $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ loses both E-dependent factors.
-3. **Mathematical:** Only E is associated with the density matrix $\rho \in \mathcal{D}(\mathcal{H})$ — the unique mathematical object with $\mathrm{rank} > 1$ (requirement L1). The Fubini–Study metric on the projective quality space is the unique consistent Riemannian metric.
-
-Status: **[T]** | [Full proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
+:::note Status of the E-role [D/I/H]
+The E label designates an interiority interpretation in a chosen frame. Its occurrence in a selected kinetic feedback formula does not prove universal functional uniqueness or PH. Matrix elements are not Hom sets. Density matrices are not unique objects of rank greater than one; quantum monotone metrics form a family. For a supplied experiential Hilbert space, a unitary-invariant ray metric can be chosen as Fubini–Study up to scale. The [replacement minimality statement](/docs/proofs/minimality/theorem-minimality-7#единственность-e) states its additional assumptions.
 :::
 
 **Interiority provides the phenomenological aspect of the (M,R)-system:** In Rosen's terminology, dimension $E$ is responsible for the "inner perspective" of the closed causal cycle — without it the system is functional, but "empty inside" (philosophical zombie).
@@ -73,7 +67,7 @@ Status: **[T]** | [Full proof →](../../proofs/minimality/theorem-minimality-7#
 The diagonal element of the coherence matrix:
 
 $$
-\gamma_{EE} = \langle E|\Gamma|E\rangle \in (0, 1)
+\gamma_{EE} = \langle E|\Gamma|E\rangle \in [0, 1]
 $$
 
 The population $\gamma_{EE}$ shows what fraction of the Holon's "resources" is concentrated in the Interiority dimension. The higher $\gamma_{EE}$, the **more intense** the inner life of the system.
@@ -91,237 +85,61 @@ The population $\gamma_{EE}$ shows what fraction of the Holon's "resources" is c
 With a uniform distribution $\gamma_{EE} = 1/7 \approx 0.143$. Deviations from this value define the "sector profile" — the character of the given Holon.
 :::
 
-### Experience submatrix
+### Native E-axis and experiential realization {#rho-e-7d-42d}
+
+The native space is a direct sum of seven axes. With $P_E=|E\rangle\langle E|$, the compression is $B_E=P_E\Gamma P_E=\gamma_{EE}P_E$. If $\gamma_{EE}>0$, its normalized state is $\widehat B_E=P_E$, of rank one and entropy zero. The unnormalized scalar $\gamma_{EE}$ has weight, not the entropy of a trace-one subsystem. At zero weight the conditional state is undefined.
+
+A nontrivial experiential density matrix requires additional realization data: a specified tensor subsystem, or a specified compression and its normalization. It cannot be recovered from the E-axis by calling it a partial trace.
+
+#### Tensor lifts and the withdrawn equivalence {#теорема-морита-эквивалентность}
+
+For a chosen register state $\sigma\in\mathcal D(\mathbb C^6)$,
 
 $$
-\rho_E = \mathrm{Tr}_{\bar{E}}(\Gamma)
+s_\sigma(\Gamma)=\Gamma\otimes\sigma,\qquad p=\operatorname{Tr}_{\mathbb C^6},\qquad p s_\sigma=\mathrm{id}.
 $$
 
-where $\mathrm{Tr}_{\bar{E}}$ is the partial trace over all dimensions except $E$.
+This is a section–retraction [T], not an equivalence of state spaces, process categories or sheaf topoi. The register contains additional data; $p$ is not injective. The former Morita-equivalence T-58 and universal observable reconstruction are withdrawn [✗]. Abstract Morita equivalence of full matrix algebras does not identify their density-state spaces.
 
-#### Tensor structure and Morita equivalence [C] {#теорема-морита-эквивалентность}
+For the ordinary open-cover sites, the full 7D and 42D state spaces have dimensions $48$ and $1763$. Their sheaf topoi cannot be equivalent as sober-space topoi. A constrained clock model needs its own space. For a seven-level clock with distinct energies and a six-dimensional system, $\dim\ker(H_O\otimes I+I\otimes H_6)\le6$, hence its supported density states have dimension at most $35$; it cannot carry all native 7D states by a continuous section.
 
-::::warning Morita equivalence
-The partial trace $\mathrm{Tr}_{-E}$ formally requires a tensor structure $\mathcal{H} = \mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$ (extended formalism: $\mathcal{H} = \mathbb{C}^{42}$). In the minimal 7D formalism ($\mathcal{H} = \mathbb{C}^7$, 7 is prime) direct factorisation is impossible.
+#### A chosen construction, not universal reconstruction {#канонический-алгоритм-pw}
 
-**T-58 asserted** that the sites $(\mathcal{C}_7, J_{\text{Bures}})$ and $(\mathcal{C}_{42}^{\text{PW}}, J_{\text{Bures}})$ are **Morita-equivalent**, i.e. $\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42}^{\text{PW}})$.
-
-:::danger [✗] The equivalence is retracted (2026-09-10) — it fails on dimension
-**Counting argument.** The corpus reads its sites as state spaces (that is what makes $X = |N(\mathcal{C})|$ a space with cohomology). For sober spaces $\mathbf{Sh}(X) \simeq \mathbf{Sh}(Y)$ forces $X \cong Y$, so the equivalence would require the two state spaces to be homeomorphic — in particular of equal dimension.
-
-The PW-constrained space is $\{\Gamma \in \mathcal{D}(\mathbb{C}^{42}) : \hat C\Gamma = 0\} = \mathcal{D}(\ker \hat C)$. With the theory's own constraint $\hat C = H_O \otimes \mathbb{1} + \mathbb{1} \otimes H_{6D}$, where $H_O = \omega_0\,\mathrm{diag}(0,\dots,6)$ has **seven distinct** levels and $H_{6D}$ acts on $\mathbb{C}^6$: for each of the six non-clock basis states there is **at most one** clock level $k$ with $\omega_0 k + E_j = 0$, hence
-
-$$
-\dim \ker \hat C \;\leq\; 6 \quad\Longrightarrow\quad \dim_{\mathbb{R}} \mathcal{D}(\ker\hat C) \;\leq\; 6^2 - 1 = 35 \;<\; 48 = \dim_{\mathbb{R}}\mathcal{D}(\mathbb{C}^7).
-$$
-
-(Machine: over $2\times10^4$ tunings of $H_{6D}$ the kernel never exceeds 6; the best analytic tuning $E_j = -\omega_0 j$ gives exactly 6.) The two spaces are therefore never homeomorphic, and the sheaf topoi are not equivalent. Independently, the concrete functors offered never satisfied the comparison lemma: $\pi \circ \iota = \mathrm{id}$ makes $\iota$ a **section**, not an equivalence; the lift is not an isometry of state space (the normalised history state has purity $P/7$); and **three mutually different lifts** are in use across the corpus — $\Gamma \mapsto \sum_k |k\rangle\langle k|_O \otimes \Gamma(\tau_k)$ here, $\Gamma \mapsto \Gamma \otimes |\tau_0\rangle\langle\tau_0|_O$ in [Coherence matrix](/docs/core/dynamics/coherence-matrix#теорема-морита-эквивалентность), and $\Gamma \mapsto \Gamma \otimes I_6/6$ in the threshold bridge below.
-:::
-
-:::tip What replaces it: T-58′ (section–retraction) [T]
-$\iota: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^{42})$ and $\pi = \mathrm{Tr}_{\text{clock}}$ satisfy $\pi \circ \iota = \mathrm{id}$. **This is all that is needed and all that is true:** a 7D state can be carried into the 42D picture and brought back unchanged, so 7D data transport upward faithfully.
-
-What it does **not** give: quantities *defined only in 42D* (the spectrum of $\rho_E$, hence $\mathrm{rank}(\rho_E)$ and $e^{S_{vN}(\rho_E)}$) are **not** functions of the 7D state — they depend on which lift is chosen, and the three lifts disagree. Hence **7D is primary and the PW extension is a construction on top of it**, not a second presentation of the same content.
-:::
-
-What is established in 7D **without** any lift:
-
-- $\gamma_{EE}$ — diagonal element (population of E) — **[T]**
-- $\gamma_{Ei}$ — coherences with other dimensions — **[T]**
-- $\mathrm{Coh}_E(\Gamma) := \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [E-coherence (HS-projection)](/docs/core/foundations/axiom-septicity#e-coherence-definition) **[T]**, exact measure
-- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — full reduced matrix — **[C]**: requires a tensor factor $\mathcal{H}_E$. In $\mathbb{C}^7 \otimes \mathbb{C}^6$ the axis $|E\rangle$ is a *summand* of $\mathbb{C}^6$, not a tensor factor, so $\mathrm{Tr}_{-E}$ is not defined by the PW extension as written (the same direct-sum/tensor-product distinction that T-87 step 3 enforces for the clock); a further factorisation of $\mathcal{H}_{6D}$ or a composite-system realisation ([composite systems](/docs/core/dynamics/composite-systems)) is needed
-- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — differentiation — **[C]** (same reason; the 7D proxy $D_{\text{diff}}^{7D} = 1 + 6\,\mathrm{Coh}_E/\mathrm{Coh}_E^{\max}$ below is a definition [D], cf. [Seven dimensions](/docs/core/structure/dimensions): "statements using $D_{\text{diff}}$ have status [C]")
-- $C = \Phi \times R$ — [canonical measure of consciousness](/docs/proofs/consciousness/operational-closure#t-140) **[T]** (T-140; $D_{\text{diff}} \geq 2$ is a separate viability condition)
-::::
-
-**Intuitive explanation of the section–retraction** (T-58′ [T]; the equivalence reading is retracted). Imagine a city. You have a map at scale 1:100 000 (7D) and a map at scale 1:10 000 (42D). On the detailed map individual houses are visible; on the overview map only city blocks. But **any route** planned on one map transfers correctly to the other. Morita equivalence is the theorem that two "maps" (the 7D and 42D formalisms) describe **the same city** (the physics of the Holon), and no observable depends on the choice of map.
-
-#### Canonical PW-reconstruction algorithm [C] {#канонический-алгоритм-pw}
-
-**Claim [C].** For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ there exists a unique canonical procedure for computing $\rho_E$, $D_{\text{diff}}$, $\sigma_L$, and $C$ from a chosen lift — conditional on the choice of lift (the round trip $\pi\circ\iota = \mathrm{id}$ of T-58′ [T] holds for every lift in use) and on a tensor factor $\mathcal{H}_E$ being specified in step 2. The former clause "with **zero reconstruction error**" rested on the Morita equivalence T-58, which is retracted [✗] (2026-09-10, box above); see step 4.
-
-**Algorithm (4 steps):**
-
-1. **7D → 42D lift.** By the section–retraction T-58′ [T] (one of the three lifts in use — the choice matters, see the box above):
-
-$$\iota_{\text{PW}}: \mathcal{C}_7 \to \mathcal{C}_{42}, \quad \Gamma \mapsto \Gamma_{\text{total}} = \sum_{k=0}^{6} |k\rangle\langle k|_O \otimes \Gamma(\tau_k)$$
-
-where $\Gamma(\tau_k) = (\triangleright^*)^k(\Gamma)$ — successive applications of the modality ▷.
-
-2. **Partial trace.** $\rho_E = \mathrm{Tr}_{-E}(\Gamma_{\text{total}})$ — standard partial trace in $\mathcal{H}_{42} = \mathcal{H}_O \otimes \mathcal{H}_6$.
-
-3. **7D formulas via HS-projections.** Equivalently, without an explicit lift:
-
-$$D_{\text{diff}}^{7D} = 1 + 6 \cdot \mathrm{Coh}_E(\Gamma) / \mathrm{Coh}_E^{\max}, \qquad \sigma_L(\Gamma) = \frac{7(1-\gamma_{LL})}{6} + O(\varepsilon^2)$$
-
-4. **Zero error — [✗] retracted.** The claim $\|\rho_E^{7D} - \rho_E^{42D}\|_{\mathrm{tr}} = 0$ rested on the equivalence, which is retracted above. What holds instead: $\pi(\iota(\Gamma)) = \Gamma$ exactly, so *7D quantities* survive the round trip; $\rho_E^{42D}$ is not among them, being lift-dependent.
+Specify (1) total Hilbert space, (2) lift or directly measured total state, (3) the experiential tensor factor or effect/compression, and (4) normalization/conditioning. Only then compute $\rho_E$ and its entropy. The expression $\sum_{k=0}^6|k\rangle\langle k|\otimes\Gamma(\tau_k)$ with native $7\times7$ states is $49$ dimensional and has trace seven; dividing by seven makes a history mixture, but does not make it a 42D state or ensure that tracing the clock recovers $\Gamma(0)$. Any clock constraint and dynamics are extra input.
 
 <a id="операциональное-разделение-7d-42d"></a>
 
-:::info Operational separation 7D / 42D
-The number 7 is prime, so $\mathbb{C}^7$ **does not admit** the tensor decomposition $\mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$, and the partial trace $\mathrm{Tr}_{\bar{E}}$ is not defined in 7D. This is resolved by the Page–Wootters extension: $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, where the partial trace is standard.
-
-The equivalence that would have guaranteed "all observables coincide with zero error" is **retracted** (box above). The 7D quantities ($\gamma_{EE}$, $\gamma_{Ei}$, $\mathrm{Coh}_E$, $C$) stand on their own [T] and need no lift; the 42D-only quantities are lift-dependent and therefore not determined by the 7D state.
-
-**Practical rule:**
-- **7D is sufficient** for $P$, $R$, $\Phi$, $\kappa$, $\mathrm{Coh}_E$ — defined through the diagonal and off-diagonal elements of $\Gamma \in \mathcal{D}(\mathbb{C}^7)$;
-- **42D is required** (or the 7D definition T-128 [D], which tracks the 42D notion without computing it — the Morita-equivalence reading is retracted) for $D_{\text{diff}}$, $\sigma_L$, $\rho_E$ — these require a partial trace.
-:::
-
-#### What $\rho_E$ is in 7D and in 42D — the canonical statement {#rho-e-7d-42d}
-
-:::warning $\rho_E$: scalar in 7D, clock block in 42D [T]
-This box is the single source of truth for every appearance of $\rho_E$, $\mathrm{rank}(\rho_E)$ and $D_{\text{diff}}$ in the corpus.
-
-1. **Minimal 7D formalism.** Each dimension is *one* basis vector of $\mathbb{C}^7$, so the E-sector is one-dimensional and $\rho_E = \gamma_{EE}$ is a **scalar**. Consequently $\mathrm{rank}(\rho_E) > 1$ and $S_{vN}(\rho_E) > 0$ are **not expressible** in 7D: the rank is $1$ whenever $\gamma_{EE} > 0$, and the entropy is identically $0$. Any 7D test that stands in for them — $\mathrm{Coh}_E > 0$ for L1, $D_{\text{diff}}^{7D} = 1 + 6\,\mathrm{Coh}_E/\mathrm{Coh}_E^{\max}$ for differentiation — is a **definition [D]** chosen to track the 42D notion, not an equivalence [T]. (Earlier drafts wrote "$\mathrm{rank}(\rho_E) > 1 \iff \mathrm{Coh}_E > 0$" as if it were a theorem; that reading is retracted.)
-2. **42D Page–Wootters realisation.** The derived factorisation is $\mathcal{H}_{42} = \mathbb{C}[\mathbb{Z}_7] \otimes \mathcal{H}_{6D}$ — the **clock** register is the $\mathbb{C}^7$ factor and the six non-clock dimensions $\{A,S,D,L,E,U\}$ are the $\mathbb{C}^6$ factor ([T-87 step 3](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки) [T]). The E-axis is therefore a *summand* of $\mathcal{H}_{6D}$, and the only well-defined reduction is the **clock-block contraction**
+A $7\times6$ Page–Wootters model can be chosen with the first factor as clock and the second as system. The system's E-axis is still a summand. Its positive clock block
 
 $$
-\rho_E := (\mathbb{1}_{\text{clock}} \otimes \langle E|)\,\Gamma_{\text{tot}}\,(\mathbb{1}_{\text{clock}} \otimes |E\rangle) \in \mathcal{L}(\mathbb{C}[\mathbb{Z}_7]),
+B_E=(I_7\otimes\langle E|)\Gamma_{\mathrm{tot}}(I_7\otimes|E\rangle)
 $$
 
-a $7 \times 7$ matrix on the clock register (machine check: rank up to 7). Its eigenvectors are superpositions of clock moments $|\tau_k\rangle$, so in this realisation the "qualities" $|q_k\rangle$ are **temporal modes** of the E-population, and $\mathrm{rank}(\rho_E) > 1$ reads "E is populated at more than one moment".
-3. **A genuinely multi-dimensional $\mathcal{H}_E$** — the reading in which qualities are independent phenomenal directions — is available neither in 7D nor in the PW extension: it requires a composite realisation with several holons ([composite systems](/docs/core/dynamics/composite-systems)), where $\mathcal{H}_E$ is a tensor factor of an actual subsystem.
+becomes a density state $\rho_E=B_E/\operatorname{Tr}B_E$ only at nonzero weight. It describes a conditional clock state [D]; identifying its temporal modes with qualities is a separate interpretation [I/H]. Alternatively choose a genuine experiential tensor factor; these are different models.
 
-**Consequence for the hierarchy.** L0 ($\gamma_{EE} > 0$), the L2 measures $P$, $R$, $\Phi$, $\mathrm{Coh}_E$, $C$ and the L3/L4 iterates $R^{(n)}$ are exactly computable in 7D. L1 in its **literal** form ($\mathrm{rank}(\rho_E) > 1$) and $D_{\text{diff}}$ in its literal form ($e^{S_{vN}(\rho_E)}$) belong to the 42D realisation; in 7D they are carried by the definitions of item 1. Since the tower is cumulative, the honest statement is: **the level tower above L0 is defined in 7D by convention and realised literally only in 42D or in a composite substrate.**
-:::
+#### Native observables and independent extension data {#теорема-7d-достаточность}
 
-#### Theorem (7D sufficiency for the frame-referenced measures) [T]; literal $\rho_E$-quantities [D] {#теорема-7d-достаточность}
+The chosen native quantities $P,R,\Phi,\mathrm{Coh}_E,C$ and population stresses are exactly computable from $\Gamma$ [T at their definitions]. The spectrum of an arbitrary extension register is not. States $\Gamma\otimes\sigma_1$ and $\Gamma\otimes\sigma_2$ have the same native marginal and all its diagnostics but can have different register rank and entropy. Section–retraction preserves pulled-back native observables only; it cannot prove equality for every extension observable.
 
-**Formulation.** The minimal 7D formalism $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is **sufficient** for computing the frame-referenced observables $P$, $R$, $\Phi$, $\mathrm{Coh}_E$, $C$ and the stress components $\sigma_k$. The quantities defined through the spectrum of $\rho_E$ ($\mathrm{rank}$, $S_{vN}$, $D_{\text{diff}}$) are **not** among them: in 7D they are fixed by the definitions of the box above [D].
+### Computing differentiation with declared data {#вычисление-rho-e}
 
-**Proof.**
-
-**Step 1 — [✗] retracted.** This step claimed a categorical equivalence of the two ∞-topoi (T-58). The equivalence fails on dimension (box above). What remains is the section–retraction T-58′ [T]: every 7D object has a counterpart in 42D, but not conversely, and the counterpart depends on the lift.
-
-**Step 2 (Observable equivalence).** An observable in UHM is a morphism $O: \Gamma \to \mathbb{R}$ in $\mathbf{Sh}_\infty(\mathcal{C})$. By categorical equivalence (Step 1): $O^{7D}(\Gamma) = O^{42D}(\iota_{PW}(\Gamma))$ for every observable $O$ and every state $\Gamma$. The reconstruction error is **zero** — not small, not controlled, but **exactly zero** — because equivalence of categories preserves all morphisms exactly.
-
-**Step 3 (Explicit 7D formulas for partial-trace quantities).** The quantities that formally require the 42D partial trace have **exact 7D representations** via HS-projections:
-
-| Quantity | 42D definition | 7D formula | Error |
-|----------|---------------|------------|-------|
-| $\mathrm{Coh}_E$ | $\|\rho_E - P_{\bar{E}}(\rho_E)\|_F^2 / \|\Gamma\|_F^2$ | $\|\pi_E(\Gamma)\|_{HS}^2 / \|\Gamma\|_{HS}^2$ | **0** (T-154 [T]) |
-| $D_{\text{diff}}$ | $\exp(S_{vN}(\rho_E))$ | $1 + 6 \cdot \mathrm{Coh}_E / \mathrm{Coh}_E^{\max}$ | **0** at extrema (T-128 [D]) |
-| $C$ | $\Phi \cdot R$ | $\Phi \cdot R$ | **0** (both defined in 7D) |
-| $P$, $R$, $\Phi$ | Same as 7D | Diagonal/off-diagonal of $\Gamma$ | **0** (identity) |
-
-**Step 4 (What the two factors represent).** In the 42D extension the clock is the **$\mathbb{C}^7$ factor** $\mathbb{C}[\mathbb{Z}_7]$ (the regular representation of the shift $\triangleright$, [T-87 step 3](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки) [T]) and the **$\mathbb{C}^6$ factor** carries the six non-clock dimensions $\{A,S,D,L,E,U\}$. An earlier draft of this step read the factors the other way round ("$\mathbb{C}^6$ is the temporal register of 6 conditional states"), contradicting [Property 1](/docs/core/foundations/axiom-omega#свойство-1); that reading is retracted. The consequence for $\rho_E$ is the clock-block contraction of the [canonical box](#rho-e-7d-42d). Neither factor introduces new physical degrees of freedom beyond $\Gamma$: the clock register is the bookkeeping device that encodes temporal evolution inside a timeless formalism (Wheeler–DeWitt, T-87 [T]).
-
-**Conclusion:** The 7D formalism is **not an approximation** of the 42D formalism. Both are exact descriptions of the same physics, related by categorical equivalence. The 42D extension is a **computational convenience** for partial traces, not an ontological necessity. $\blacksquare$
-
-**Dependencies:** T-58′ [T] (section–retraction; the equivalence reading is retracted), T-87 [T] (PW), T-95 [C] (canonical reconstruction), T-128 [D], T-154 [T].
-
-:::note Technical remark
-Here $\mathcal{H}_E$ is the Hilbert space associated with the Interiority dimension. The dimension of $\mathcal{H}_E$ is determined by the complexity of the system and is not fixed a priori. For systems with rich phenomenal content $\dim(\mathcal{H}_E) \gg 1$.
-:::
-
-### Computing the reduced state in the 7-dimensional formalism {#вычисление-rho-e}
-
-**Problem.** The space $\mathbb{C}^7$ **does not factorise** as $\mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$, since $7$ is prime. The standard partial trace $\mathrm{Tr}_{\bar{E}}(\cdot)$ is not defined in 7D. This is a fundamental limitation: unlike composite dimensions (e.g. $6 = 2 \times 3$), a prime number admits no non-trivial tensor decomposition.
-
-**What is directly accessible from 7D.** From the matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ without any extension one extracts:
-
-| Quantity | Formula | Status |
-|----------|---------|--------|
-| Population of E | $\gamma_{EE} = \langle E \vert \Gamma \vert E \rangle$ | scalar, **[T]** |
-| Coherences | $\gamma_{Ej}$, $j \neq E$ | 6 complex numbers, **[T]** |
-| E-coherence | $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ | **[T]** |
-
-However, $\gamma_{EE}$ is **one number**, not a density matrix. For the full spectral content of $\rho_E$ (eigenvalues $\lambda_i$, eigenvectors $|q_i\rangle$) a transition to the extended formalism is required.
-
-**Solution: 42D Page–Wootters extension.**
+For a normalized $n$-dimensional experiential state,
 
 $$
-\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6
+D^{\mathrm{ext}}=\exp S_{vN}(\rho_E)\in[1,n].
 $$
 
-where $\mathbb{C}^7$ is the "outer" space of seven dimensions, $\mathbb{C}^6$ is the "inner" Hilbert space (the phenomenal content of each dimension). The embedding $\iota_{\mathrm{PW}}: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^{42})$ is defined via the canonical lift (see [PW-reconstruction algorithm](#канонический-алгоритм-pw)):
-
-1. Each element $\gamma_{ij}$ of the 7D matrix is mapped to a $6 \times 6$ block in the 42D matrix;
-2. The partial trace over the inner space **recovers** the original $\Gamma$: $\mathrm{Tr}_{\mathrm{int}}(\Gamma_{\mathrm{total}}) = \Gamma$;
-3. The reduced matrix $\rho_E$ is computed as the **standard** partial trace in 42D.
-
-**Equivalent 7D computational route [T-128].**
-
-For key scalar quantities the 42D extension is **not required** — they are computable directly from $\Gamma \in \mathcal{D}(\mathbb{C}^7)$:
+For the native proxy choose instead
 
 $$
-D_{\text{diff}}^{7D} = 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)
+D^{7D}=1+6\,\mathrm{Coh}_E(\Gamma),\qquad \mathrm{Coh}_E^{\max}=1.
 $$
 
-This is a **linear** interpolation between $D_{\text{diff}} = 1$ (when $\mathrm{Coh}_E = 0$ — E is isolated, one distinguishable component) and $D_{\text{diff}} = N$ (when $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max}$ — maximal differentiation).
+These quantities have different definitions. In particular a six-dimensional experiential factor has maximum six, whereas the proxy has maximum seven. The proxy includes E population: it need not vanish when all off-diagonal E coherences vanish.
 
-**Consistency of the two formulas:**
+#### No automatic threshold equivalence {#теорема-7d-42d-equiv}
 
-| Property | $D_{\text{diff}}^{42D} = \exp(S_{vN}(\rho_E))$ | $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ |
-|----------|------|------|
-| Definition | Nonlinear, via eigenvalues of $\rho_E$ | Linear, via HS-norm of coherences |
-| At $\mathrm{Coh}_E = 0$ | $= 1$ | $= 1$ |
-| At $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max}$ | $= N$ | $= N$ |
-| Intermediate values | Nonlinear dependence on spectrum | Linear interpolation |
-| Discrepancy | — | $O((\mathrm{Coh}_E)^2)$ in the intermediate region |
-| Threshold test $D \geq 2$ | Coincides | Coincides **[T]** |
-
-The two formulas **coincide at the boundaries** and give **the same result** for all threshold comparisons ($D_{\text{diff}} \geq D_{\min} = 2$). The $O((\mathrm{Coh}_E)^2)$ discrepancy in the intermediate region does not affect physical predictions, since the theory uses only threshold conditions, not exact numerical values of $D_{\text{diff}}$.
-
-#### 7D and 42D for the threshold conditions: what is equivalence and what is convention [D] {#теорема-7d-42d-equiv}
-
-:::tip Claim [D] — a definitional bridge, not an equivalence
-**Status note (2026-09-10).** The statement below was carried as a theorem [T]. It is a **definitional bridge**: the 7D side is *defined* by $D_{\text{diff}}^{7D} := 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max}\cdot(N-1)$, so the biconditional records that the definition was chosen to agree with the 42D notion at the two endpoints, not that two independently defined quantities coincide. In addition, the embedding used here ($\iota(\Gamma) = \Gamma \otimes I_6/6$) is a **third** lift, differing from the history-state lift of the [PW-reconstruction algorithm](#канонический-алгоритм-pw) and from the pure-clock lift of the [coherence matrix](/docs/core/dynamics/coherence-matrix#теорема-морита-эквивалентность); with the canonical factorisation ($\mathbb{C}^7$ = clock) $\mathrm{Tr}_{\bar E}$ is not defined at all, and the well-posed object is the clock-block contraction of the [canonical box](#rho-e-7d-42d).
-For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and the threshold $D_{\min} = 2$ ([D], T-151):
-
-$$
-D_{\text{diff}}^{7D}(\Gamma) \geq D_{\min} \iff D_{\text{diff}}^{42D}(\iota(\Gamma)) \geq D_{\min}
-$$
-
-where $\iota: \mathcal{D}(\mathbb{C}^7) \hookrightarrow \mathcal{D}(\mathbb{C}^{42})$ is a section of the retraction (T-58′ [T]) — the third of the three lifts in use. Consequently, **all consciousness threshold conditions** (L0→L4) are verifiable in 7D without passing to 42D.
-:::
-
-**Proof.**
-
-**Step 1 (embedding).** By T-58′ [T], the section $A_{\text{int}} \sim_{\text{Morita}} A_{\text{int}} \otimes M_6(\mathbb{C})$ induces the embedding
-
-$$
-\iota: \mathcal{D}(\mathbb{C}^7) \hookrightarrow \mathcal{D}(\mathbb{C}^{42}), \quad \iota(\Gamma) = \Gamma \otimes \frac{I_6}{6}.
-$$
-
-The reverse projection is $\pi = \mathrm{Tr}_{\mathbb{C}^6}$, and $\pi \circ \iota = \mathrm{id}$.
-
-**Step 2 (Relation of $D_{\text{diff}}^{42D}$ and $\mathrm{Coh}_E$).** In 42D: $\rho_E^{42D} = \mathrm{Tr}_{\bar{E}}(\iota(\Gamma))$. For $\iota(\Gamma) = \Gamma \otimes I_6/6$:
-
-$$
-\rho_E^{42D} = \mathrm{Tr}_{\bar{E}}(\Gamma) \otimes \frac{I_6}{6} = \gamma_{EE} \cdot \frac{I_6}{6} + \sum_{j \neq E} |\gamma_{Ej}| \cdot (\text{off-diagonal contributions}).
-$$
-
-The eigenvalues of $\rho_E^{42D}$ depend on $\gamma_{EE}$ and the coherences $\gamma_{Ej}$:
-- at $\mathrm{Coh}_E = 0$ (all $\gamma_{Ej} = 0$): $\rho_E^{42D} = \gamma_{EE} \cdot I_6/6$ — one nonzero eigenvector → $D_{\text{diff}}^{42D} = 1$.
-- at $\mathrm{Coh}_E > 0$: additional eigenvalues appear → $D_{\text{diff}}^{42D} \geq 2$.
-
-**Step 3 (Threshold equivalence).** By definition:
-- $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ [T-128]
-- $D_{\text{diff}}^{42D} = \exp(S_{vN}(\rho_E^{42D}))$
-
-Both quantities are:
-- $= 1$ at $\mathrm{Coh}_E = 0$ (exact coincidence at the boundary)
-- $\geq 2$ at $\mathrm{Coh}_E > 0$ (both $> 1$ in the presence of E-coherences)
-- $= N$ at $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max}$ (exact coincidence at the upper boundary)
-
-Hence $D_{\text{diff}}^{7D} \geq 2 \iff \mathrm{Coh}_E > 0 \iff D_{\text{diff}}^{42D} \geq 2$. $\square$
-
-**Step 4 (Completeness of 7D for L0–L4).** The conditions of each level:
-- **L0**: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — automatically in 7D ✓
-- **L1**: literally $\mathrm{rank}(\rho_E) > 1$ — **not expressible in 7D** ($\rho_E$ is the scalar $\gamma_{EE}$); the 7D test is $\mathrm{Coh}_E > 0$ **by definition [D]** ([canonical box](#rho-e-7d-42d))
-- **L2**: $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D_{\text{diff}} \geq 2 \wedge \|\sigma\|_\infty < 1$ — all components computable in 7D (T-137 [T]) ✓
-- **L3**: $R^{(2)} \geq 1/4$ — computable via $\varphi(\Gamma) \in \mathcal{D}(\mathbb{C}^7)$ ✓
-- **L4**: $P > 6/7 \wedge \forall n: R^{(n)} > 0$ — computable via the iterations $\varphi^{(n)}$ in 7D ✓
-
-**Conclusion.** All threshold tests L0–L4 are **evaluable** in $\mathcal{D}(\mathbb{C}^7)$ — but for L1 and $D_{\text{diff}}$ this is evaluability *of the 7D definitions*, which stand in for the literal $\rho_E$-spectral conditions. 42D (or a composite substrate) is required whenever the literal conditions are meant: the rank and the spectrum of $\rho_E$, hence the eigenvector-level content of experience. $\blacksquare$
-
-**Status:** [T] for the frame-referenced measures; **[D]** for the L1 and $D_{\text{diff}}$ substitutions. Audit problem I.2 is resolved only in the first sense — see the [canonical box](#rho-e-7d-42d).
-
-:::info Practical summary
-For **classifying** systems by levels L0-L4 the 7D formula $D_{\text{diff}}^{7D}$ is sufficient — as the accepted definition [D], see the [canonical box](#rho-e-7d-42d). The full matrix $\rho_E$ (via the 42D PW extension) is needed only for detailed **spectral analysis** of phenomenal content — a task relevant for future experimental tests.
-:::
+The former biconditional $D^{7D}\ge2\iff D^{\mathrm{ext}}\ge2$ and the asserted $O(\mathrm{Coh}_E^2)$ discrepancy are withdrawn [✗]. For the product lift $\Gamma\otimes I_6/6$, the register entropy gives six regardless of $\Gamma$. For a pure register it gives one regardless of $\Gamma$. No convention can turn these independent spectra into the same diagnostic. Choose one typed realization and retain it throughout classification; see the [canonical hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy#типизированный-вход).
 
 ### Spectral decomposition {#спектральное-разложение}
 
@@ -347,7 +165,7 @@ $$
 
 where $[\vert q_i\rangle] \in \mathbb{P}(\mathcal{H}_E)$ is the equivalence class in projective space.
 
-*Scope note (T-301):* FV is the **E-slice** of content — intensity and the relational position of a quality. The full content of a state is its 28 parameters (7 populations + 21 coherences), and the gauge-invariant *colour* lives in the Fano holonomies; see [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure) for the complete five-layer passport.
+*Scope note (T-301):* FV is the **E-slice** of content — intensity and the relational position of a quality. The full content of a state is 48 independent real parameters (seven populations with one trace constraint and 21 complex coherences), and the gauge-invariant *colour* lives in the Fano holonomies; see [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure) for the complete five-layer passport.
 
 ## Quantitative characteristics {#количественные-характеристики}
 
@@ -356,7 +174,7 @@ where $[\vert q_i\rangle] \in \mathbb{P}(\mathcal{H}_E)$ is the equivalence clas
 The population $\gamma_{EE}$ is the fraction of the Holon's "resources" in the Interiority dimension. The related quantity is the **stress** in the E channel:
 
 $$
-\sigma_E = \mathrm{clamp}(1 - 7\gamma_{EE},\; 0,\; 1) \quad \text{[T] (T-92)}
+\sigma_E = \mathrm{clamp}(1 - 7\gamma_{EE},\; 0,\; 1) \quad \text{[D] (T-92)}
 $$
 
 - $\sigma_E = 0$: interiority is fully provided ($\gamma_{EE} \geq 1/7$)
@@ -397,8 +215,8 @@ The function $\text{Exp}$ is applicable to all levels. The term **"qualia"** (Qu
 | **Context** | $\rho_{\bar{E}} = \mathrm{Tr}_E(\Gamma)$ | Modulation of experience by other dimensions |
 | **History** | $\{\rho_E(\tau') : \tau' < \tau\}$ | Adaptation and memory |
 
-:::note Structural necessity
-The formula establishes a **structural correspondence** between mathematical objects and experiential content. This correspondence is **not an arbitrary postulate**, but the [unique functor](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв) compatible with the axiomatics: the partial trace is unique, the spectral decomposition is unique, the Fubini–Study metric is unique (Čencov–Petz theorem).
+:::note Scope of the experiential formula
+The partial trace is determined after a tensor decomposition is chosen. Spectral projections are determined by the state, but individual eigenrays at degeneracy are not. Ray geometry can be chosen as Fubini–Study; the quantum monotone-metric classification does not give a unique readout or phenomenal functor. This correspondence is a model interpretation [I/H], and its process functoriality requires the [descent condition](/docs/proofs/categorical/categorical-formalism#4-функтор-f-на-морфизмах).
 :::
 
 ## Projective quality space
@@ -425,51 +243,33 @@ Interpretation:
 
 **Example.** "Red" and "green" are two qualities in the space $\mathbb{P}(\mathcal{H}_E)$. The distance $d_{FS}$ between them determines how **distinguishable** these experiences are for the system. If $d_{FS} = \pi/2$ — the experiences are maximally dissimilar; if $d_{FS} \to 0$ — they merge (as in colour vision deficiency).
 
-## Five levels of interiority {#пять-уровней}
+## Five cumulative capabilities {#пять-уровней}
 
-The five levels are not an arbitrary classification, but **mathematical thresholds** whose crossing qualitatively changes the structure of $\rho_E$ and the quantities associated with it.
+Classification uses $(\Gamma,\mathsf E,\mathsf M,\mathsf Q)$, including the experiential realization, implemented models and independently calibrated probes. It cannot be inferred from a matrix or organism name alone. The [canonical hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) gives the complete definitions [D/I/H].
 
-### L0: Interiority — "thermometer" {#уровень-l0}
+### L0: valid modeled state {#уровень-l0}
 
-**Condition:** $\exists \rho_E$ (i.e. $\gamma_{EE} > 0$)
+L0 applies to every valid density state; interpreting this inner aspect as experience is [I]. It does not require positive E population.
 
-At level L0 the system simply **"has an inner state"**. Analogy: a thermometer has a temperature — an inner state determined by the environment. But the thermometer does not "feel" the temperature; it is simply in a certain state. A quartz crystal at level L0: its $\rho_E$ is a pure state of rank 1 (one eigenvector with $\lambda_1 = 1$). Inside — one "point", no structure, no distinctions.
+### L1: specified experiential test {#уровень-l1}
 
-### L1: Phenomenal geometry — "palette" {#уровень-l1}
+Choose either the proxy $\mathrm{Coh}_E>0$ [D] or the rank test $\operatorname{rank}\rho_E>1$ for a normalized declared experiential state. These are not equivalent. In the proxy, positivity implies $\mathrm{Coh}_E>0\iff\gamma_{EE}>0$.
 
-**Condition:** $\mathrm{rank}(\rho_E) > 1$ (literal form: 42D or a composite substrate; the 7D test is $\mathrm{Coh}_E > 0$ **by definition [D]** — [canonical box](#rho-e-7d-42d))
+### L2: calibrated gate {#уровень-l2}
 
-At level L1 the inner space is **structured**: it contains several distinguishable states. Analogy: an artist now has a palette with several colours — they can distinguish colours, shapes, textures. The retina at level L1: three types of cone cells create a three-dimensional space of colour qualities $\mathbb{P}(\mathcal{H}_E)$ with the Fubini–Study metric. But the retina **does not know** that it is distinguishing colours — the next level is required for that.
+Require L1 and the selected gate $P>2/7$, $R=1/(7P)\ge1/3$, $\Phi\ge1$, $D\ge2$ [D]. Its algebraic window is $2/7<P\le3/7$ [T]; identifying it with cognitive qualia is [I/H].
 
-### L2: Cognitive qualia — "mirror" {#уровень-l2}
+### L3: tested metamodel {#уровень-l3}
 
-**Condition:** $R \geq R_{\text{th}} = 1/3$ [T], $\Phi \geq \Phi_{\text{th}} = 1$ [T]
+Require L2 and a second-order prediction certificate with error at most $\varepsilon_2$ and independently measured target variation $a_2>2\varepsilon_2$ [D]. The former fidelity cut $R^{(2)}\ge1/4$ does not exclude a trivial fixed point and does not certify L3 [✗].
 
-At level L2 the system is capable of **looking at its inner world** — reflection. Analogy: a mirror has appeared — now one can not only have a palette but also **see** which colours are on it. This is the threshold of **consciousness** in the usual sense: the subject can report on their experience, distinguish one experience from another, be surprised by a new quality. A waking human is a typical L2 system with $R \approx 0.7$, $\Phi \approx 4$.
+### L4: compatible tower {#уровень-l4}
 
-### L3: Network consciousness — "hall of mirrors" {#уровень-l3}
+Require the lower capabilities and nontrivial compatible prediction certificates at every order [D]. The former $P>6/7$ is withdrawn [✗] because L2 already implies $P\le3/7$. A fixed-point limit or a Postnikov tower alone does not certify this capability.
 
-**Condition:** $R^{(2)} \geq 1/4$ [T]
+### Scope of assignments
 
-At level L3 — **meta-reflection**: the system observes not only its inner world but also *how it observes it*. Analogy: a mirror reflecting another mirror — an infinite corridor of reflections (though at L3 the depth is limited). Examples: fungal mycelium as a distributed L3 system, a bee swarm with metastable collective reflection, deep meditation.
-
-### L4: Unitary consciousness — "crystal transparency" {#уровень-l4}
-
-**Condition:** $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$
-
-Level L4 is **full transparency**: infinite depth of self-reflection converging to a stable limit. Analogy: a crystal in which every atom "sees" the entire crystal as a whole. This is a theoretical limit: $P > 6/7$ is unattainable for biological systems (requires an almost pure state $\Gamma$).
-
-### Summary table of levels
-
-| Level | Name | Condition | What exists | Examples |
-|-------|------|-----------|-------------|---------|
-| **L0** | Interiority | $\exists \rho_E$ | Inner state | Atom, crystal |
-| **L1** | Phenomenal geometry | $\mathrm{rank}(\rho_E) > 1$ (7D: $\mathrm{Coh}_E > 0$ [D]) | Structure of qualities with $d_{FS}$ | Neuron, retina |
-| **L2** | Cognitive qualia | $R \geq R_{th}$, $\Phi \geq \Phi_{th}$ | Reflexive access | Human, higher mammals |
-| **L3** | Network consciousness | $R^{(2)} \geq 1/4$ | Meta-reflection (metastable) | Mycelium, swarm, deep meditation |
-| **L4** | Unitary consciousness | $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$ | Full ∞-structure | Theoretical limit |
-
-where $R_{\text{th}} = 1/3$ [T], $\Phi_{\text{th}} = 1$ [T] (T-129), $R^{(2)}_{\text{th}} = 1/4$ [T] — [mathematical results](../foundations/axiom-septicity#пороги-l2-строгий-вывод). L4 requires $P > 6/7$ — unattainable for biological systems.
+Assigning these levels to atoms, neurons, organisms or AI requires a calibrated observation bridge [H]. Numerical gates alone do not establish phenomenal presence or solve the hard problem of consciousness.
 
 ## E and the "hard problem of consciousness" {#трудная-проблема}
 
@@ -479,8 +279,8 @@ In UHM the answer is: **experience is not an "add-on" to physics, but an aspect 
 
 Analogy: a sheet of paper has a front side and a back side. These are not two sheets — it is one sheet with two aspects. Asking "why does the sheet have two sides?" is ill-posed: it is a property of the object itself, not something requiring explanation. In exactly the same way $\Gamma$ has an "outer" (physical) and an "inner" (phenomenal) aspect — this requires no separate mechanism for "generating" consciousness from matter.
 
-:::tip A philosophical zombie is impossible
-The No-Zombie theorem (T-81 [T]): a system with $P > P_{\text{crit}}$, $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$ **necessarily** has a non-trivial $\rho_E$. A "philosophical zombie" — a functionally identical being without interiority — is mathematically impossible in UHM. See: [theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie).
+:::note Conditional scope of No-Zombie [C/I]
+The universal E-floor T-38a is withdrawn [✗]. For a stated feedback model, noise/input class and bootstrap bound, a conditional CC implication can require E-dependent support. It does not follow from purity, the canonical reflection proxy and integration alone, nor does it establish a multidimensional experiential state. Reading the E-label as phenomenal interiority remains [I/H]. [Conditional theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie).
 :::
 
 ## Examples by level {#примеры-по-уровням}
@@ -562,7 +362,7 @@ graph LR
 
 ## Consciousness formula
 
-The canonical measure of consciousness ([T-140 [T]](/docs/proofs/consciousness/operational-closure#t-140)):
+The canonical measure of consciousness ([T-140 [D]](/docs/proofs/consciousness/operational-closure#t-140)):
 
 $$
 C = \Phi \times R
@@ -580,49 +380,13 @@ $D_{\text{diff}} \geq 2$ is a **separate** condition of [full viability](/docs/c
 $D_{\text{diff}}$ is a measure of **differentiation** of experience. Not to be confused with dimension **D (Dynamics)**.
 :::
 
-### Tensor factorisation for D_diff {#tensor-factorization-ddiff}
+### Tensor realization and independent proxy {#tensor-factorization-ddiff}
 
-:::warning Two formulas for D_diff and their consistency
-**42D definition** (canonical):
+For a declared tensor factor $\mathcal H_E$ of dimension $n$, $\rho_E=\operatorname{Tr}_{\bar E}\rho$ and $D_E=\exp S(\rho_E)\in[1,n]$ [T]. Choosing $\mathbb C^7\otimes\mathbb C^6$ gives factors of dimensions seven and six; it does not make a labelled native $E$ axis a third tensor factor. If the six-dimensional register is selected as the experiential factor, its maximum is six, not seven.
 
-$$
-D_{\text{diff}}^{42D} = \exp(S_{vN}(\rho_E)), \quad S_{vN} = -\mathrm{Tr}(\rho_E \log \rho_E)
-$$
+The native proxy $D_{\mathrm{proxy}}=1+6\mathrm{Coh}_E$ is a separate definition [D]. It neither equals reduced-state entropy nor has universal boundary/threshold agreement with it. For a pure native $E$ state, $\mathrm{Coh}_E=1$ and the proxy is seven, while a pure product experiential register has $D_E=1$. Product embeddings with the same native state and different register states give different $D_E$ without changing the proxy. The old exact-consistency and $O(\mathrm{Coh}_E^2)$ claims are withdrawn [✗].
 
-Requires computing $\rho_E = \mathrm{Tr}_{\bar{E}}(\Gamma)$ — the partial trace defined **only** in the extended formalism $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, since $\mathbb{C}^7$ does not factorise (7 is prime). This is a **nonlinear** function depending on the eigenvalues of $\rho_E$. Detailed discussion of the factorisation problem: [Computing the reduced state](#вычисление-rho-e).
-
-**7D formula [T-128]** (computational route):
-
-$$
-D_{\text{diff}}^{7D} := 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)
-$$
-
-where $\mathrm{Coh}_E(\Gamma)$ — [E-coherence](/docs/core/foundations/axiom-septicity#e-coherence-definition) (HS-projection, **[T]**). This is a **linear** interpolation: $D_{\text{diff}}^{7D} \in [1, N]$.
-
-**Consistency [T]:**
-
-The two formulas **exactly coincide** at the boundaries:
-- $\mathrm{Coh}_E = 0 \Rightarrow D_{\text{diff}}^{42D} = D_{\text{diff}}^{7D} = 1$ (pure state, one component)
-- $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max} \Rightarrow D_{\text{diff}}^{42D} = D_{\text{diff}}^{7D} = N$ (maximal differentiation)
-
-In the intermediate region the discrepancy is $O((\mathrm{Coh}_E)^2)$: the exponential function $\exp(S_{vN})$ is nonlinear in the spectrum of $\rho_E$, whereas the 7D formula is linear in $\mathrm{Coh}_E$. However, for **all threshold conditions** ($D_{\text{diff}} \geq D_{\min} = 2$) both formulas give **identical results**.
-
-**Reduced consciousness measure** (for cases where $D_{\text{diff}}$ is not computed explicitly):
-
-$$
-C_{\min} := \Phi \times R
-$$
-
-At $D_{\text{diff}} = D_{\min} = 2$ (threshold value) this measure correctly classifies systems:
-- $C_{\min} \geq 1/3 \Leftrightarrow \Phi \geq 1$ and $R \geq 1/3$ ⟹ L2
-- $C_{\min} < 1/3$ ⟹ L0 or L1
-:::
-
-**Range of $D_{\text{diff}}$:**
-- $S_{vN} \in [0, \log N]$ for an $N$-dimensional system
-- $D_{\text{diff}} = \exp(S_{vN}) \in [1, N]$
-- Minimum ($D_{\text{diff}} = 1$): pure state, one component of experience
-- Maximum ($D_{\text{diff}} = N$): maximally mixed state, equiprobable components
+Likewise $C=\Phi R\ge1/3$ is necessary for the conjunction $\Phi\ge1$, $R\ge1/3$, but is not sufficient: a uniform pure state has $C=6/7$, $R=1/7$. Use the full conjunction with independently specified differentiation, and distinguish model capacity from a validated consciousness interpretation.
 
 ### Differentiation threshold $D_{\min} = 2$ {#differentiation-threshold-dmin-2}
 
@@ -641,7 +405,7 @@ $$
 $D_{\min} = 2$ means that cognitive access requires at minimum 1 bit of information in the phenomenal content. A system experiencing only one indistinguishable quality ($D_{\text{diff}} = 1$) has no material for reflection.
 :::
 
-**Consciousness threshold** **[Т T-140]:**
+**Consciousness threshold** **[D T-140]:**
 
 $$
 C \geq C_{\text{th}} := \Phi_{\text{th}} \times R_{\text{th}} = 1 \times \frac{1}{3} = \frac{1}{3}
@@ -651,8 +415,8 @@ with the separate viability condition $D_{\text{diff}} \geq D_{\min} = 2$.
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [T]
-The dimension corresponds to $e_5 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [T]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]; the step to $\mathbb{O}$ takes the canonical orientation of the Fano lines, [T15-canon](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)) derives the octonionic structure from (AP)+(PH)+(QG)+(V); the combinatorial and functional uniqueness of each role claimed by [T-177](/docs/reference/status-registry) and [T-183](/docs/reference/status-registry) is retracted [✗] (2026-09-25): it rested on the axis sectors of T-48a. Restated (T-177, T-183): given $O$ and the $\kappa_0$ pair $\{E,U\}$, incidence fixes $A$ and $D$ [T], and one binary convention [D] fixes $E$ versus $U$ together with $L$ versus $S$. The specific assignment $E = e_5$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Chosen octonionic correspondence [D/I]
+The assignment $E=e_5\in\operatorname{Im}\mathbb O$ belongs to the declared oriented orthonormal frame. For a specified positive octonionic three-form, its stabilizer is $G_2$ [T]. This group identity does not uniquely assign functional names to axes or determine a physical encoder. The former universal T-42a rigidity is withdrawn [✗]; [reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) give a conditional comparison theorem. Incidence can constrain labels **after** the required marks are supplied; those marks and the remaining label convention are model data. The [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) states the additional algebraic inputs, and [the frame discussion](./dimensions#октонионная-интерпретация) distinguishes its symmetries from physical gauge equivalence.
 :::
 
 ---

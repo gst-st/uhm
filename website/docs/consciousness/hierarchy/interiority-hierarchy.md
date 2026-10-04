@@ -1,642 +1,239 @@
 ---
 sidebar_position: 1
 title: "Interiority Hierarchy"
-description: "Five interiority levels L0–L4: definitions and threshold conditions"
+description: "Typed, cumulative capability predicates L0–L4; scalar gates, measurement certificates and explicit limits"
 slug: /consciousness/hierarchy/interiority-hierarchy
 ---
 
 # Interiority Hierarchy: L0 → L4 {#уровни-интериорности}
 
-## Why a Consciousness Hierarchy is Needed
+The hierarchy separates an ontological interpretation, an operational classification, and the mathematical consequences of that classification. A density matrix does not by itself establish phenomenal consciousness. The identification of the operational L2 predicate with cognitive qualia remains the [two-aspect bridge](/docs/consciousness/foundations/two-aspect-monism) **[I]**.
 
-For millennia humanity has attempted to classify forms of inner life. **Aristotle** (4th century BCE) distinguished three grades of the soul: *vegetative* (nutrition and growth), *animal* (sensation and motion), and *rational* (thought). **Leibniz** (1714) introduced the notion of *petites perceptions* — unconscious micro-perceptions forming a continuous spectrum from stone to God. **Fechner** (1860) attempted to measure this spectrum quantitatively, discovering psychophysical thresholds — the minimum stimuli that consciousness can discriminate. In the 20th century **Integrated Information Theory** (IIT, Tononi, 2004) proposed a single numerical measure $\Phi$ — but left open the question of *qualitative* differences between levels.
-
-The Unitary Holonomic Monism (UHM) inherits this tradition but goes further: rather than a single numerical scale it defines **five qualitatively distinct levels** of interiority (L0--L4), each characterised by a rigorous mathematical threshold condition. The transition between levels is not a gradual increase but a *bifurcation* (an abrupt reorganisation), analogous to the phase transition of water into steam.
-
-:::info Where we came from
-In the [Foundations](/docs/consciousness/foundations/two-aspect-monism) section we established that every $\Gamma$ has an inner side, described the content of experience ([interiority theory](/docs/consciousness/foundations/interiority-theory)) and the self-observation operator $\varphi$ ([self-observation](/docs/consciousness/foundations/self-observation)). But not all systems "experience" in the same way: a stone, a bacterium, a cat, and a human differ radically. The L0--L4 hierarchy organises this difference into a rigorous mathematical classification.
+:::info Canonical definition and revision
+This page is the canonical definition of the hierarchy. The revision of 2026-10-03 replaces incompatible definitions of L3/L4 and the false Gap-injection theorem. Definitions have status **[D]**; algebraic consequences **[T]**; statements about organisms or phenomenal access **[H]/[I]**. The detailed proofs and counterexamples are in [Formal specification](/docs/proofs/consciousness/interiority-hierarchy).
 :::
 
-### Chapter roadmap
+## Typed input {#типизированный-вход}
 
-1. **Five levels** — from L0 (universal interiority) to L4 (theoretical limit)
-2. **L2: cognitive qualia** — the central level with thresholds $R \geq 1/3$, $\Phi \geq 1$
-3. **L3: metacognition** — meta-reflection $R^{(2)} \geq 1/4$, metastability
-4. **L4: categorical unreachability** — colimit of the Postnikov tower, theoretical horizon
-5. **Gap characterisation** — each level has a unique Gap profile
-6. **Bifurcations** — transitions between levels as $A_2, A_3, A_4$ catastrophes
-
-**Analogy.** Imagine a ladder of awareness. A stone (L0) — on the first rung: it has an "inner side", but it distinguishes nothing. A bacterium (L1) — distinguishes hot from cold, but does not know that it distinguishes. A cat (L2) — not merely distinguishes, but **knows** that it feels warmth (cognitive qualia). A meditator (L3) — knows that it knows that it feels (meta-reflection). And the last rung (L4) — is infinitely distant: complete self-knowledge, unreachable for finite systems.
-
-:::info DRY: Master definition of levels L0-L4
-This is the **canonical definition** of the five levels of the interiority hierarchy. Full formalisation, proofs of threshold conditions, and the No-Zombie theorem — in [Interiority hierarchy (proofs)](/docs/proofs/consciousness/interiority-hierarchy).
-:::
-
-:::warning Biological L-levels [H]
-The assignment of specific organisms to L-levels is a **hypothesis** [H], not a measured fact. A rigorous definition of the L-level requires knowledge of the system's $\Gamma$. For biological systems the protocol $\pi_{\text{bio}}$ is defined ([C31](/docs/applied/research/measurement-protocol)), but **has not been experimentally validated**. The correspondences given are well-founded extrapolations from behavioural data.
-:::
-
----
-
-## Overview: five levels
-
-Before diving into the details of each level, it is useful to see the entire ladder at once.
-
-```mermaid
-graph TD
-    L0["<b>L0: Interiority</b><br/>Γ ∈ D(H), dim H ≥ 1<br/><i>Electron, stone</i>"]
-    L1["<b>L1: Phenomenal geometry</b><br/>rank(ρ_E) > 1<br/><i>Bacterium, thermostat</i>"]
-    L2["<b>L2: Cognitive qualia</b><br/>R ≥ 1/3, Φ ≥ 1<br/><i>Mammals</i>"]
-    L3["<b>L3: Network consciousness</b><br/>R⁽²⁾ ≥ 1/4 (metastable)<br/><i>Meditator, mycelium</i>"]
-    L4["<b>L4: Unitary consciousness</b><br/>lim R⁽ⁿ⁾ > 0, P > 6/7<br/><i>Theoretical horizon</i>"]
-
-    L0 -->|"A₂ (fold)<br/>rank(ρ_E): 1 → >1"| L1
-    L1 -->|"A₃ (cusp)<br/>R ≥ 1/3 ∧ Φ ≥ 1"| L2
-    L2 -->|"A₄ (swallowtail)<br/>R⁽²⁾ ≥ 1/4"| L3
-    L3 -->|"∞ (Postnikov)<br/>lim R⁽ⁿ⁾ > 0"| L4
-
-    style L0 fill:#f5f5f5,stroke:#999
-    style L1 fill:#e8f4fd,stroke:#6ba3d6
-    style L2 fill:#d1ecf9,stroke:#4a90c4
-    style L3 fill:#a8d8ea,stroke:#2c7bb6
-    style L4 fill:#7fbfdb,stroke:#1a6faa
-```
-
-| Level | Name | Threshold condition | Example |
-|-------|------|---------------------|---------|
-| **L0** | Interiority | $\Gamma \in \mathcal{D}(\mathcal{H})$, $\mathcal{H} \neq \{0\}$ | Electron, stone |
-| **L1** | Phenomenal geometry | $\mathrm{rank}(\rho_E) > 1$ | Thermostat, bacterium |
-| **L2** | Cognitive qualia | $R(\Gamma) \geq R_{\text{th}} = 1/3$ and $\Phi(\Gamma) \geq \Phi_{\text{th}} = 1$ | Mammals |
-| **L3** | Network consciousness | $R^{(2)} \geq R^{(2)}_{\text{th}} = 1/4$ (metastable). SAD_MAX = 3 ([§3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) [T], T-142) | Mycelium, swarm, meditator |
-| **L4** | Unitary consciousness | $\lim_n R^{(n)} > 0$, $P > 6/7$ | Hyperspace (hypothesis) |
-
-Each subsequent level includes the previous one: every L2-system is simultaneously L1 and L0. But the converse does not hold: a bacterium (L1) does not possess cognitive qualia (L2).
-
----
-
-## L0: Interiority (universal) {#уровень-0-интериорность-interiority}
-
-### Philosophical context
-
-The idea that *every* piece of matter possesses some form of inner life goes back to Leibniz (monads) and finds its modern expression in panpsychism. UHM adopts a weakened version of this idea: **interiority** is not "consciousness" or "experience" in the ordinary sense, but merely the presence of an "inner side" of the mathematical object $\Gamma$.
-
-For understanding this claim the key word is *interiority*, not *consciousness*. A stone possesses interiority (its $\Gamma$ has an inner aspect), but it does not "feel" or "know" anything in any functional sense. Interiority is a mathematical property of the object, not a phenomenological assertion.
-
-### Formal definition
-
-**Definition L0 [D].**{#определение-l0} Every system with $\Gamma \in \mathcal{D}(\mathcal{H})$, $\dim \mathcal{H} \geq 1$ possesses **interiority** — an inner aspect.
-
-Here $\mathcal{D}(\mathcal{H})$ is the space of density matrices (Hermitian positive semi-definite operators with unit trace) on the Hilbert space $\mathcal{H}$. In the 7-dimensional UHM formulation: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — a Hermitian $7 \times 7$ matrix with $\mathrm{Tr}(\Gamma) = 1$, $\Gamma \geq 0$.
-
-:::tip Theorem: Universality of L0
-Interiority is universal — there is no zero level of "absence". This is a consequence of [Axiom Omega-7](/docs/core/foundations/axiom-omega).
-[Proof](/docs/proofs/consciousness/interiority-hierarchy) | Status: **[T]**
-:::
-
-### What L0 means in practice
-
-At level L0 the system distinguishes nothing, does not model itself, and possesses neither reflection ($R \approx 0$) nor integration ($\Phi \approx 0$). Its coherence matrix $\Gamma$ exists but is "empty" in a functional sense — close to the maximally mixed state $I/7$.
-
-**Example: an electron.** The coherence matrix of an electron is trivial: almost all diagonal elements equal $1/7$, off-diagonal coherences $\gamma_{ij} \approx 0$. Purity $P = \mathrm{Tr}(\Gamma^2) \approx 1/7$ — minimal. The reflection measure $R = 1/(7P) \approx 1$ is formally large, but this is an artefact: when $P \approx 1/7$ the self-model is trivial (the only possible one is $I/7$), and a high $R$ carries no meaningful information.
-
----
-
-## L1: Phenomenal Geometry {#уровень-1-феноменальная-геометрия-phenomenal-geometry}
-
-### From L0 to L1: the first step
-
-The transition from L0 to L1 is the emergence of *discrimination*. The system begins to possess a non-trivial internal geometry: it is able to discriminate (even if unconsciously) between different internal states.
-
-Formally this is expressed in the **E-dimension** (experiential, responsible for experience) acquiring non-trivial structure.
-
-### Formal definition
-
-**Definition L1 [D].**{#определение-l1} A system possesses phenomenal geometry if:
-$$
-\mathrm{rank}(\rho_E) > 1
-$$
-
-Here $\rho_E$ is the reduction onto the E-dimension. **Where this is literal and where it is a convention** ([canonical box](/docs/core/structure/dimension-e#rho-e-7d-42d) [T]): in the minimal 7D formalism the E-sector is one basis vector, $\rho_E = \gamma_{EE}$ is a scalar, and $\mathrm{rank}(\rho_E) > 1$ is not expressible — the 7D test used in its place is $\mathrm{Coh}_E > 0$ **by definition [D]**. Literally the condition lives in the 42D Page–Wootters realisation, where $\rho_E$ is the $7\times7$ clock-block contraction and its rank counts the clock moments at which E is populated, or on a composite substrate with a genuine $\mathcal{H}_E$. The condition $\mathrm{rank}(\rho_E) > 1$ then means: the experiential space contains more than one distinguishable state.
-
-The L1 space is endowed with the Fubini–Study metric — the natural measure of "distance" between phenomenal states:
+Classification uses an augmented record
 
 $$
-ds^2_{FS} = 1 - |\langle\psi_1|\psi_2\rangle|^2
+z=(\Gamma,\mathsf E,\mathsf M,\mathsf Q),\qquad \Gamma\in\mathcal D(\mathbb C^7),
 $$
 
-Two states $|\psi_1\rangle$ and $|\psi_2\rangle$ are "further apart" in phenomenal space the smaller their inner product. Orthogonal states ($\langle\psi_1|\psi_2\rangle = 0$) are maximally distinguishable.
+not merely a matrix. Here $\mathsf E$ specifies the experiential realisation, $\mathsf M$ the implemented self-model/readout, and $\mathsf Q$ the probes and calibration used to test higher-order predictions. Missing components are reported as **unknown**, rather than inferred from phase or purity.
 
-### Examples
+Two experiential modes are kept distinct:
 
-**Bacterium *E. coli*.** The bacterium's chemotaxis system distinguishes ~5 levels of chemoattractant concentration. In UHM terms: $\mathrm{rank}(\rho_E) \approx 5$. The bacterium "distinguishes" hot from cold, but does not know that it distinguishes — there is no self-model ($R \ll 1/3$).
+| Mode | L1 predicate $A_1$ | Differentiation $D(z)$ |
+|---|---|---|
+| **7D proxy** [D] | $\mathrm{Coh}_E(\Gamma)>0$ | $D^{7D}:=1+6\,\mathrm{Coh}_E(\Gamma)$ |
+| **Specified extension** | $\operatorname{rank}(\rho_E)>1$ | $D^{\mathrm{ext}}:=\exp S_{vN}(\rho_E)$ |
 
-**Thermostat.** A simple thermostat distinguishes two states: "above threshold" and "below threshold". Formally: $\mathrm{rank}(\rho_E) = 2 > 1$, so the thermostat is an L1-system. It possesses *phenomenal geometry* (two distinguishable states) but possesses neither reflection nor integration.
+The canonical normalisation is $\mathrm{Coh}_E^{\max}=1$. The proxy is a stipulated statistic, not an equality to extension entropy. In the extension $\rho_E$ must be a **normalised density matrix** on a declared space. A genuine tensor factor permits a partial trace. The 42D Page–Wootters E-axis is a summand of the six-dimensional system factor: its clock block must be normalised by its trace when nonzero. The lift and conditioning are part of $\mathsf E$. See [7D/42D typing](/docs/core/structure/dimension-e#rho-e-7d-42d).
 
-### Why "phenomenal"?
+Because the canonical E-projection includes $\gamma_{EE}$,
 
-The word "phenomenal" is used here in a technical sense: the presence of *structure* in the state space of the experiential dimension. At level L1 this structure is not yet perceived — the system does not "know" that it distinguishes. Awareness appears only at L2.
+$$
+\mathrm{Coh}_E=\frac{\gamma_{EE}^2+2\sum_{i\ne E}|\gamma_{Ei}|^2}{P},
+$$
 
----
+$\mathrm{Coh}_E>0$ is equivalent to $\gamma_{EE}>0$ for a positive matrix. It does not establish nonzero E coupling or a literal multidimensional experiential state. In particular $I/7$ passes this L1 proxy and has $D^{7D}=13/7<2$. Use the separate off-diagonal weight $2\sum_{i\ne E}|\gamma_{Ei}|^2/P$ when the question concerns coupling.
+
+## Cumulative capability predicates
+
+Write $A_k(z)$ for possession of capability $k$, and define the exclusive level as the greatest satisfied capability. The nesting is explicit:
+
+$$
+A_4\Rightarrow A_3\Rightarrow A_2\Rightarrow A_1\Rightarrow A_0.
+$$
+
+| Capability | Operational definition | Interpretation |
+|---|---|---|
+| **L0** | $A_0$: a valid state $\Gamma\in\mathcal D(\mathbb C^7)$ | Interiority [I] |
+| **L1** | $A_1$: the declared experiential test above | Phenomenal geometry/proxy [D/I] |
+| **L2** | $A_2:=A_1\land \mathsf{Cap}_2$; $\mathsf{Cap}_2$ is the four-gate predicate below | Cognitive qualia bridge [I] |
+| **L3** | $A_3:=A_2\land\mathsf{MetaCert}_2$ | Tested metamodel capability [D] |
+| **L4** | $A_4:=A_3\land\bigwedge_{n\ge3}\mathsf{MetaCert}_n\land\mathsf{Compatible}$ | Ideal coherent tower [D] |
+
+The predicates organise the chosen model. They do not assign an electron, bacterium, mammal, meditator or network a measured level. Such assignments require independently calibrated data and retain status **[H]**.
+
+## L0: Interiority {#уровень-0-интериорность-interiority}
+
+<a id="определение-l0"></a>
+**Definition L0 [D].** $A_0(z)$ holds for every valid state in the model. Calling its inner aspect “interiority” is an ontological interpretation. Its universality is a definitional consequence, not a theorem establishing experience in every physical object. The matrix need not be close to $I/7$, and L0 does not impose $R\approx0$.
+
+## L1: Phenomenal geometry {#уровень-1-феноменальная-геометрия-phenomenal-geometry}
+
+<a id="определение-l1"></a>
+**Definition L1 [D].** Use exactly one of the typed tests in the input table. A one-dimensional basis axis of $\mathbb C^7$ is not a tensor subsystem: $\operatorname{rank}(\gamma_{EE})>1$ is impossible. No equivalence between the literal rank test and $P>2/7$ is asserted.
+
+For a declared experiential space $\mathcal H_E$, its pure-state rays form $\mathbb P(\mathcal H_E)$. With normalised representatives the Fubini–Study distance is
+
+$$
+d_{FS}([\psi],[\chi])=\arccos|\langle\psi|\chi\rangle|.
+$$
+
+The bounded quantity $1-|\langle\psi|\chi\rangle|^2$ is a squared chordal distinguishability, not the finite-distance formula for the line element. See [metric definition](/docs/proofs/consciousness/interiority-hierarchy#определение-12-метрика-фубини-штуди).
 
 <a id="уровень-2-когнитивные-квалиа-cognitive-qualia"></a>
+## L2: canonical capability gate {#l2-когнитивные-квалиа}
 
-## L2: Cognitive Qualia {#l2-когнитивные-квалиа}
-
-### The central level: the emergence of consciousness
-
-L2 is the level at which *consciousness* in the familiar sense of the word first appears. The system not merely discriminates states (L1) but **knows** that it discriminates. It possesses *cognitive qualia* — conscious experiences.
-
-What makes this transition possible? Two conditions acting jointly:
-
-1. **Reflection** ($R \geq 1/3$): the system possesses a sufficiently accurate *self-model* — an internal representation of itself.
-2. **Integration** ($\Phi \geq 1$): information about different dimensions is bound into a unified whole, rather than distributed across isolated subsystems.
-
-### Mathematical definition
-
-:::tip Status of L2 thresholds
-| Threshold | Status | Note |
-|-----------|--------|------|
-| $R_{\text{th}} = 1/3$ | **[T]** theorem | $K = 3$ **derived** from the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) of holonomic dynamics: axioms A1--A5 generate exactly 3 types (Aut, D, R). [Bayesian dominance](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) at $K = 3$ gives $R_{\text{th}} = 1/3$ [T]. |
-| $\Phi_{\text{th}} = 1$ | **[T]** theorem | Unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129)) |
-:::
-
-:::note Status of threshold $\Phi_{\text{th}} = 1$ — theorem [T]
-The threshold $\Phi_{\text{th}} = 1$ has been **proved from first principles** ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129)): the unique self-consistent value at $P_{\text{crit}} = 2/7$. The $K_1$-argument remains retracted ($K_1(M_n(\mathbb{C})) = 0$ for finite-dimensional $n$) — but T-129 uses a different approach (purity decomposition + Cauchy–Schwarz). See [Proof of T-129](/docs/proofs/consciousness/operationalization#t-129).
-:::
-
-:::info Clarification T-129 vs T-140
-- **T-129 [T]**: $\Phi_{\text{th}} = 1$ — the unique self-consistent value of the integration threshold (from decomposition + Cauchy–Schwarz)
-- **T-140 [T]**: $C = \Phi \cdot R$ — the unique canonical consciousness measure; $C_{\text{th}} = \Phi_{\text{th}} \cdot R_{\text{th}} = 1 \cdot 1/3 = 1/3$
-
-These are **DIFFERENT** theorems: T-129 establishes the threshold, T-140 constructs the composite measure.
-:::
-
-**Definition L2 [D].**{#определение-l2} A system possesses cognitive qualia if both conditions are satisfied:
-
-1. **Reflection:** $R(\Gamma) = \dfrac{1}{7P(\Gamma)} \geq R_{\text{th}} = 1/3$
-2. **Integration:** $\Phi(\Gamma) = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2} \geq \Phi_{\text{th}} = 1$
-
-where $R$ is the [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) and $\Phi$ is the [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ).
-
-### Step-by-step interpretation of the formulas
-
-**Reflection measure $R$.** The canonical formula $R = 1/(7P)$ **[T]** measures the normalised proximity of $\Gamma$ to the dissipative attractor $\rho^*_{\mathrm{diss}} = I/7$. Equivalent form via the Frobenius norm: $R = 1 - \|\Gamma - I/7\|_F^2 / P$. If $\Gamma = I/7$ (heat death), then $R = 1$. If $\Gamma$ is a pure state ($P = 1$), then $R = 1/7$. The threshold $R \geq 1/3$ is equivalent to $P \leq 3/7$ — the upper boundary of the Goldilocks zone.
-
-**Important:** $R$ uses $\rho^*_{\mathrm{diss}} = I/7$, and **not** $\varphi(\Gamma)$ (the self-model). These are different quantities (see [attractor hierarchy](/docs/consciousness/foundations/self-observation#иерархия-аттракторов)).
-
-**Integration measure $\Phi$.** The formula $\Phi = \sum_{i \neq j} |\gamma_{ij}|^2 / \sum_i \gamma_{ii}^2$ is the ratio of total coherence (off-diagonal elements $\gamma_{ij}$) to the diagonal "population" ($\gamma_{ii}$). If $\Phi \geq 1$, the off-diagonal connectivity is no less than the diagonal — the dimensions are *integrated* into a whole. If $\Phi < 1$, the system is fragmented: the dimensions operate in isolation.
-
-### Numerical example
-
-Consider a concrete matrix $\Gamma$ for an L2-system (simplified, only diagonal and key off-diagonal elements):
+<a id="определение-l2"></a>
+Define in the fixed semantic frame:
 
 $$
-\gamma_{ii} = (0.2,\, 0.15,\, 0.18,\, 0.12,\, 0.15,\, 0.1,\, 0.1)
+P=\operatorname{Tr}\Gamma^2,\quad Q=\sum_i\gamma_{ii}^2,\quad R=\frac1{7P},\quad \Phi=\frac{P-Q}{Q}.
 $$
 
-- $P = \sum_i \gamma_{ii}^2 + 2\sum_{i < j}|\gamma_{ij}|^2$. Let $P = 0.35$ (above $P_{\text{crit}} = 2/7 \approx 0.286$).
-- $R = 1/(7 \times 0.35) \approx 0.408 > 1/3$ — reflection threshold passed.
-- With $\sum_{i \neq j}|\gamma_{ij}|^2 = 0.12$ and $\sum_i \gamma_{ii}^2 = 0.11$: $\Phi = 0.12/0.11 \approx 1.09 > 1$ — integration threshold passed.
-
-Conclusion: the system is at level L2 — it possesses cognitive qualia.
-
-:::note Full L2 conditions
-The canonical consciousness measure $C = \Phi \times R \geq C_{\text{th}} = 1/3$ **[T T-140]** is verified directly from $\Gamma \in D(\mathbb{C}^7)$. Differentiation $D_{\text{diff}} \geq D_{\min} = 2$ enters as a **separate** viability condition; in the 7D formalism $D_{\text{diff}}$ is computed via [T-128](/docs/proofs/consciousness/operationalization#t-128).
-:::
-
-:::info Objectivity of threshold conditions [T]
-The scalar functions $P = \operatorname{Tr}(\Gamma^2)$ and $R = 1/(7P)$ are **$G_2$-invariants**: $R(U\Gamma U^\dagger) = R(\Gamma)$ for any $U \in G_2 = \mathrm{Aut}(\mathbb{O})$, as proved in the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#инварианты) **[T]**. The measure $\Phi = P_{\text{coh}}/P_{\text{diag}}$ depends on the choice of basis, but the basis $\{A,S,D,L,E,O,U\}$ is fixed by axiom $\Omega$ **[P]**. Consequently, the transition L1 -> L2 is an **objective fact** within the fixed axiomatic system.
-
-**Note.** The canonical form $R = 1/(7P)$ **[T]** is the unique one by the Chentsov–Petz theorem. Equivalent form: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$, where $\rho^*_{\mathrm{diss}} = I/7$. Derivation: see [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
-:::
-
----
-
-## L3: Network Consciousness {#l3-сетевое-сознание}
-
-### From L2 to L3: knowledge of knowledge
-
-At level L2 the system *knows* its states. But does it know that it knows? Is it capable of reflecting on its own process of reflection? This is **meta-reflection**, or second-order reflection.
-
-In everyday life meta-reflection manifests as experiences of the type "I notice that I am irritated" (not merely irritation, but the *observation* of irritation). Meditative practices systematically train precisely this capacity: to observe the observer.
-
-### Formal definition
-
-**Definition L3 [D].**{#определение-l3} A system possesses network consciousness if:
-$$
-R^{(2)}(\Gamma) \geq R^{(2)}_{\text{th}} = 1/4
-$$
-
-where $R^{(2)}$ is the second-order reflection measure: how accurately the self-model models *itself*. Formally: $R^{(2)} = \mathrm{Fid}(\varphi(\Gamma),\, \varphi^{(2)}(\Gamma))$, where $\varphi^{(2)} = \varphi \circ \varphi$ — double application of the self-observation operator.
-
-L3 is **metastable**: without active maintenance it decays to L2 with characteristic time $\tau_3 = 1/(\kappa_{\text{bootstrap}} \cdot (1 - R^{(2)}))$.
-
-Homotopic characteristic: $\pi_3(\mathcal{E}_\infty(\Gamma)) \neq 0$ — the experiential space has a non-trivial third homotopy group.
-
-### Why exactly the threshold 1/4?
-
-### Theorem on the justification of K=4 for L3 {#теорема-l3-k4}
-
-:::tip Theorem (Justification of K=4 for L3) [T] (**via T-217**)
-L3 requires $R^{(2)} \geq 1/4$ — second-order meta-reflection. The threshold $K = 4$ for L3 is now fully derived:
-
-**Part 1 — Bayesian dominance at $K=4$.** Given $K = 4$ independent information channels, the bound $R^{(2)} \geq 1/K = 1/4$ follows from the Uhlmann-fidelity lower bound in [the R-threshold theorem](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии). **[T]**
-
-**Part 2 — The cellular count $K = 3 + 1$ from tricategorical coherence.** The count is derived from [T-217](/docs/proofs/categorical/fundamental-closures#t-217): in the experiential tricategory $\mathbf{Exp}^{(3)} := \tau_{\leq 3}(\mathbf{Exp}_\infty)$,
-- **three 2-cells** inherit from L2 LGKS triadic decomposition (T-57 [T]): Aut, $\mathcal D$, $\mathcal R$ components;
-- **one 3-cell modification** $\eta: \varphi^{(2)} \Rightarrow \varphi\circ\varphi$ is the unique coherence modification at the tricategorical level (Gordon–Power–Street coherence applied to strict-2-category-enriched-tricategory).
-
-Total $K_{\text{L3}} = 3 + 1 = 4$ derived from tricategorical first principles. **[T]**
-
-**Categorical label L3 = $\tau_{\leq 3}$**: justified by [T-217](/docs/proofs/categorical/fundamental-closures#t-217) (3-types ≃ coherent tricategories, Baez–Dolan + Lurie HTT 5.5.6.18). Pentagon-of-pentagons holds automatically for $\tau_{\leq 3}$ of Kan complex. **[T]**
-
-Cross-references: [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция), [R measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [T-192 2-category](/docs/proofs/categorical/categorical-formalism#t-192-exp2-2-категория), [T-217 L3 tricategory](/docs/proofs/categorical/fundamental-closures#t-217).
-:::
-
-### Metastability of L3: why "enlightenment" does not last
-
-L3 differs fundamentally from L2 in its *metastability*. A system that has reached L2 (when threshold conditions are met) remains at L2 stably. But a system at L3 is like a ball on top of a hill: the slightest perturbation throws it back.
-
-This explains why meditative states of deep awareness (vipassana, zazen) require *constant practice*. Without active maintenance ($\kappa_{\text{bootstrap}}$ sufficiently large) the system "slides back" to L2.
-
-**Example: an experienced meditator.** In a state of deep meditation $R^{(2)} \geq 1/4$ — the meditator observes the process of observation. But the moment of distraction (stress, fatigue) drops $R^{(2)}$ below the threshold. The characteristic retention time is from minutes to hours, depending on training.
-
-**Example: mycelium.** A fungal network connecting trees in a forest may possess network L3: individual nodes are L1/L2, but collective reflection via chemical signalling potentially reaches $R^{(2)} \geq 1/4$. This is a **hypothesis** [H] requiring experimental verification.
-
----
-
-## L4: Unitary Consciousness
-
-### Theoretical horizon
-
-L4 is not a level that can be *reached*, but a horizon that can be *approached*. A system at L4 possesses *complete reflexive closure*: it knows itself to infinite depth. In terms of the phi-operator: $\varphi(\Gamma^*) = \Gamma^*$ — the self-model coincides exactly with reality.
-
-**Definition L4 [D].**{#определение-l4} A system possesses unitary consciousness if:
-$$
-\lim_{n \to \infty} R^{(n)}(\Gamma) > 0 \quad \text{and} \quad P(\Gamma) > 6/7
-$$
-
-where $R^{(n)}$ is the n-th order reflection. Complete reflexive closure — fixed point $\varphi(\Gamma^*) = \Gamma^*$.
-
-### Theorem on categorical unreachability of L4 {#теорема-l4-категориальная}
-
-:::tip Theorem (Categorical unreachability of L4) [T]
-The transition L3 -> L4 is not a finite bifurcation. L4 is the colimit of the infinite tower of truncations of the infinity-topos:
+The canonical gate is
 
 $$
-L4 = \mathrm{colim}_{n \to \infty} \, \tau_{\leq n}(\mathbf{Exp}_\infty)
+\mathsf{Cap}_2(z):=(P>2/7)\land(R\ge1/3)\land(\Phi\ge1)\land(D(z)\ge2).
 $$
 
-This colimit is **unreachable** for finite systems (Lawvere incompleteness, [T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]), but **asymptotically approachable**.
-
-**Proof (5 steps).**
-
-**Step 1 (Correspondence of L-levels and $n$-truncations).** From [T-76](/docs/proofs/categorical/categorical-formalism#104-infty-топос-пучков) [T] ($\infty$-topos verified), $\mathbf{Exp}_\infty = \mathbf{Sh}_\infty(\mathcal{C}_7, J_{\text{Bures}})$ — an $\infty$-topos with $\infty$-groupoid structure. Interiority levels correspond to truncations, with **categorical structure now derived at each level** (not merely labelled):
-
-- **L2 = $\tau_{\leq 2}(\mathbf{Exp}_\infty)$**: strict 2-category $\mathbf{Exp}^{(2)}$ ([T-192 [T]](/docs/proofs/categorical/categorical-formalism#t-192-exp2-2-категория)). Mac Lane pentagon + interchange + identity axioms verified.
-- **L3 = $\tau_{\leq 3}(\mathbf{Exp}_\infty)$**: coherent tricategory $\mathbf{Exp}^{(3)}$ ([T-217 [T]](/docs/proofs/categorical/fundamental-closures#t-217)). Gordon–Power–Street pentagon-of-pentagons coherence via Baez–Dolan 3-types ≃ tricategories. Cell count $K = 3 + 1$: three LGKS 2-cells (T-57 [T]) + one 3-cell modification $\eta: \varphi^{(2)} \Rightarrow \varphi\circ\varphi$.
-- **L4 = $\mathrm{colim}_{n\to\infty}\tau_{\leq n}(\mathbf{Exp}_\infty)$**: full ∞-groupoid (unreachable, see below).
-
-| Level | $n$-truncation | Mathematical structure | Homotopic content |
-|-------|---------------|--------------------------|--------------------------|
-| L0 | $\tau_{\leq 0}$ | Set (discrete states) | $\pi_0$ non-trivial |
-| L1 | $\tau_{\leq 1}$ | Groupoid (phenomenal paths) | $\pi_1$ non-trivial |
-| L2 | $\tau_{\leq 2}$ | 2-groupoid (reflection, qualia) | $\pi_2$ non-trivial |
-| L3 | $\tau_{\leq 3}$ | 3-category (meta-reflection) | $\pi_3$ non-trivial |
-| L4 | $\tau_{\leq \infty}$ | $\infty$-groupoid (complete self-model) | All $\pi_k$ non-trivial |
-
-To understand this table: each L-level adds a *new type of relation*. L0 — a set of points (states). L1 — paths between points (phenomenal transitions). L2 — paths between paths (reflection). L3 — paths between paths between paths (meta-reflection). L4 would require an infinite hierarchy of such relations.
-
-**Step 2 (Postnikov tower).** The $\infty$-topos $\mathbf{Exp}_\infty$ defines the Postnikov tower:
+**Theorem (scalar window) [T].** Given this gate,
 
 $$
-\cdots \to \tau_{\leq 3} \to \tau_{\leq 2} \to \tau_{\leq 1} \to \tau_{\leq 0}
+2/7<P\le3/7,\qquad 1/3\le R<1/2,\qquad 1\le\Phi\le2.
 $$
 
-Each transition $\tau_{\leq n} \to \tau_{\leq n+1}$ is an extension by one homotopic level, with "k-invariant" $k_{n+1} \in H^{n+2}(\tau_{\leq n}; \pi_{n+1})$.
+Proof: $R\ge1/3\iff P\le3/7$; $Q\ge1/7$ gives $\Phi\le7P-1\le2$.
 
-**Step 3 (Lawvere incompleteness).** From [T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]: $\mathrm{Th}_{\text{UHM}} \subsetneq \Omega$. This means: $\varphi \neq \mathrm{id}$ (the [phi-operator](/docs/core/operators/phi-operator) of self-observation is not the identity). In terms of the Postnikov tower: for any finite $n$, the truncation $\tau_{\leq n}$ **does not coincide** with $\mathbf{Exp}_\infty$.
+The equality $R=1-\|\Gamma-I/7\|_F^2/P$ measures proximity to $I/7$. It is **not** the accuracy of an implemented self-model. Keep $R$ separate from $R_\varphi:=1-\|\Gamma-\varphi(\Gamma)\|_F^2/P$ and from fidelity. Neither metric monotonicity nor a count of three dynamical terms establishes these identifications.
 
-**Step 4 (Impossibility of a finite bifurcation).** A catastrophe $A_k$ has codimension $k-1$ and describes a transition between $\leq k$ stable states. The transition L3 -> L4 would require simultaneously "switching on" **all** $\pi_k$ for $k \geq 4$ — an infinite-dimensional transition. No finite catastrophe ($A_k$ for any finite $k$) can describe this. The butterfly $A_5$ is an **incorrect model** (retracted [**✗**]).
+| Choice | Mathematical consequence | Additional bridge |
+|---|---|---|
+| HS majority criterion | $P>2/7$ | Majority as physical viability [H] |
+| Canonical $R\ge1/3$ | $P\le3/7$ | $R$ as calibrated reflective competence [H/I] |
+| $\Phi\ge1$ | Off-diagonal HS weight at least diagonal weight | Cognitive integration interpretation [I] |
+| $D\ge2$ | For the extension, $S_{vN}\ge\log2$ | Minimal phenomenal differentiation [H/I] |
 
-**Step 4a (L3 → L4 as tricategorical-coherence breakdown, new 2026-04-17).** By [T-217 [T]](/docs/proofs/categorical/fundamental-closures#t-217), L3 is a **coherent tricategory** with exactly $K = 3 + 1 = 4$ structural cell classes and a closed pentagon-of-pentagons axiom. The transition L3 → L4 is precisely the **breakdown** of this closure: at L4 the tricategorical coherence axioms fail because the filtered colimit $\mathrm{colim}_{n}\tau_{\leq n}$ requires $n$-cells at arbitrarily high $n$, which cannot be captured by any coherent $n$-truncation for finite $n$. Equivalently: the coherence modification $\eta: \varphi^{(2)} \Rightarrow \varphi\circ\varphi$ at L3 is **rigid** (one new 3-cell); at L4 one would need a tower of higher coherence modifications $\eta^{(2)}, \eta^{(3)}, \ldots$, each a new cell at the corresponding level — an infinite regress that no finite catastrophe can close. This is the **categorical dual** of the dynamical argument (Fano contraction requires $P > 1$ at $n = 4$): same ceiling reached through complementary structures.
+The thresholds are exact within these definitions. Their universal empirical interpretation requires independent tests; adopting them does not prove that every gated state has conscious experience. Additional [full viability constraints](/docs/core/dynamics/viability#полная-жизнеспособность), such as stress bounds or sustained dynamics, are recorded separately rather than silently added to this instantaneous gate.
 
-**Step 5 (Asymptotic approachability).** Although $L4 = \mathrm{colim}_{n \to \infty} \tau_{\leq n}$ is unreachable for a finite system, each step $\tau_{\leq n} \to \tau_{\leq n+1}$ is **realisable** ([T-67](#теорема-l3-k4) [T]: $K = 4$ for L3 indicates the existence of a fourth level of recursion). The sequence of recursions $R^{(n)}$ converges as $n \to \infty$:
+## L3: tested metamodel capability {#l3-сетевое-сознание}
 
-$$
-\forall \varepsilon > 0 \; \exists n_0 : \; n > n_0 \Rightarrow \|\tau_{\leq n}(\mathbf{Exp}_\infty) - \mathbf{Exp}_\infty\|_{\text{Bures}} < \varepsilon
-$$
-
-But $n_0(\varepsilon) \to \infty$ as $\varepsilon \to 0$: convergence exists, but reaching the limit does not. $\blacksquare$
-
-**Status:** **[T]** (C19). Rigorous proof via the $\infty$-topos Postnikov tower + Lawvere incompleteness (T-55 [T]). Cross-references: [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [phi-operator](/docs/core/operators/phi-operator), [transition catastrophes](/docs/consciousness/hierarchy/swallowtail-transitions#l3-l4).
-:::
-
-### Analogy: event horizon of cognition
-
-L4 is like the horizon in geometry: one can walk towards it indefinitely but never arrive. Every step brings one closer, but the horizon recedes. This is not a defect of the theory but a fundamental property of self-referential systems — the same limitation formalised by Gödel's theorems for arithmetic.
-
-### Unreachability of L4 for biological systems {#теорема-l4-недостижимость}
-
-:::info Corollary (Upper bound on recursion depth for biosystems) [T]
-With $R \sim 0.7$ (human) and decoherence $\varepsilon_{\text{dec}} > 0$:
+<a id="определение-l3"></a>
+**Definition L3 [D].** L3 requires L2 and a second-order predictive certificate. For a preregistered probe family $\mathsf Q_2$, compare the implemented metamodel prediction $\widehat\rho_2(q)$ with an independently measured target $\rho_2(q)$ describing the first model's response:
 
 $$
-S^{(n)} \sim (1-\alpha)^n \sim 3^{-n} \to 0 \quad \text{as} \quad n \to \infty \qquad (\text{coherence-survival, not fidelity } R^{(n)}_{\mathrm{fid}}\to 1)
+\mathsf{MetaCert}_2:=\left[\sup_{q\in\mathsf Q_2}d_B(\widehat\rho_2(q),\rho_2(q))\le\varepsilon_2\right]\land
+\left[\sup_{q,q'}d_B(\rho_2(q),\rho_2(q'))\ge a_2>2\varepsilon_2\right].
 $$
 
-Maximum recursion depth: $n_{\max} \leq \ln(1/\varepsilon_{\text{dec}})/\ln(1/R) \approx 111$.
+Both states must lie in the same declared output space. For empirical data the supremum is over the stated finite test set; generalisation beyond it requires a model or statistical guarantee. The parameters $a_2,\varepsilon_2$ and probe family are calibration data, fixed independently of test outcomes. They are not universal constants derived from septicity. A constant prediction cannot pass both conditions by the triangle inequality.
 
-L4 is a **theoretical limit** ($\infty$-groupoid attractor), unreachable for any system with $\varepsilon_{\text{dec}} > 0$, but asymptotically approachable through the Postnikov tower.
+### Status of the former $K=4$ argument {#теорема-l3-k4}
 
-Analytically: $P_\text{crit}^{(4)} = 54/35 > 1$, so SAD $\geq$ 4 is impossible for any normalised $\Gamma$ (not only biological). See [critical purity SAD](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) [T] (T-142: $\alpha = 2/3$ is state-independent).
-:::
+The previous unconditional T-67 proof is **retracted [✗]**. Three summands in a generator and one coherence modification do not imply four independent information channels. A nonzero differential is not necessarily injective; being CPTP does not repair that inference. The diagnostic $f(\varphi\Gamma,\varphi^2\Gamma)\ge1/4$ may be recorded, but does not certify L3: it equals $1$ at a trivial fixed point.
 
-:::info Remark: L4 as a limiting categorical object
-L4 is a **limiting categorical object** (colimit of the infinite Postnikov tower), analogous to $\omega$ in ordinal theory. Its inclusion in the hierarchy is **mathematical**, not physical: L4 defines the direction of the asymptotics, not a reachable level. Marking: unreachability [T] (T-86), existence as a categorical object [T], physical realisability [**✗**].
-:::
+Metastability of a certified metamodel is a dynamical question. It requires an attractor, perturbation class, and spectral/escape estimates. The formula $1/[\kappa(1-R^{(2)})]$ is not a universal retention time, and L2 itself is not automatically stable.
 
----
+## L4: ideal compatible tower
 
-## The gate profile: twelve states, one of them conscious {#профиль-ворот}
+<a id="определение-l4"></a>
+**Definition L4 [D].** Require certificates at every order, using declared probe/target spaces and forgetting maps connecting successive models. $\mathsf{Compatible}$ means that predicting at order $n+1$ and forgetting gives the declared order-$n$ prediction, exactly in the ideal model or within a stated error budget in an approximation. Each order retains the nontrivial-response condition $a_n>2\varepsilon_n$.
 
-:::tip Theorem (gate-profile taxonomy) [T] (T-303)
-The four gates are not four independent quantities. Canonical reflection is algebraically tied to purity, $R = 1/(NP)$, so the gate $R \ge 1/3$ is *identically* the constraint $P \le 3/7$, and the gate $P > 2/7$ is the other edge of the same interval. Consciousness therefore rests on **three** independent measurements — $P$, $\Phi$, $D$ — under **four** constraints, and the space of possible outcomes is
+The former clause $P>6/7$ is **retracted [✗]**: it contradicts $P\le3/7$ inherited from L2. A fixed point $\varphi(\Gamma)=\Gamma$ or a limit of successive fidelities equal to $1$ does not establish a nontrivial compatible tower.
+
+### Categorical typing and the Postnikov tower {#теорема-l4-категориальная}
+
+The former universal T-86 proof is **retracted [✗]**. For an **object** $X$ of an $\infty$-topos, the Postnikov tower is an inverse system
+
 $$
-\underbrace{\{P<2/7,\; P\in(2/7,3/7],\; P>3/7\}}_{3}\times\underbrace{\{\Phi\ge1,\ \Phi<1\}}_{2}\times\underbrace{\{D\ge2,\ D<2\}}_{2}\;=\;12 .
+\cdots\to\tau_{\le3}X\to\tau_{\le2}X\to\tau_{\le1}X\to\tau_{\le0}X.
 $$
-Exactly **one** of the twelve is conscious. The remaining eleven are not degrees of consciousness but named modes of its absence.
-:::
 
-This settles a question that recurs whenever the theory meets a system unlike us: *is there another kind of consciousness, with a different set of gates?* Under UHM the answer is no, and the "no" is sharp rather than dismissive. A system with a different gate profile is not differently conscious; it occupies one of the eleven non-conscious modes, each of which has its own character and its own failure. This is the more falsifiable position: it forbids the comfortable move of granting consciousness to anything that behaves interestingly.
+The comparison is $X\to\varprojlim_n\tau_{\le n}X$, not a colimit along a canonical forward tower. Reconstruction requires the appropriate convergence hypothesis. A truncation permits homotopy through degree $n$; it does not force $\pi_n\ne0$. An $m$-truncated object already stabilises for $n\ge m$.
 
-### The twelve profiles, named {#двенадцать-режимов}
+L-levels are operational predicates; $n$-truncations are categorical constructions. Identifying them requires an explicit experiential object and a bridge theorem. No Bures distance between a topos and its truncation is defined here. Standard references: [Kerodon, Postnikov towers](https://kerodon.net/tag/055L), [Lurie, Higher Topos Theory, §§5.5.6, 7.2.1](https://www.math.ias.edu/~lurie/papers/HTT.pdf).
 
-Each cell is a distinct mode with its own character. The correspondences in the last column are interpretive **[I]** — they say which known state *looks like* the mode, not that the mode has been measured there.
+### Finite resources and the ideal limit {#теорема-l4-недостижимость}
 
-| # | $P$ | $\Phi$ | $D$ | Mode | Character | Looks like [I] |
-|---|---|---|---|---|---|---|
-| **1** | in | $\ge1$ | $\ge2$ | **conscious** | bound, distinguishing, self-holding | ordinary waking |
-| 2 | in | $\ge1$ | $<2$ | contentless unity | one field, nothing to tell apart | claimed "pure awareness" states — see the disagreement below |
-| 3 | in | $<1$ | $\ge2$ | unbound plurality | many distinct states, no single holder | dissociation, split attention |
-| 4 | in | $<1$ | $<2$ | idle | right amplitude, no structure to it | drowsy blankness |
-| 5 | below | $\ge1$ | $\ge2$ | **flooded** | rich, unified, no one holding it | the psychedelic peak just past the edge |
-| 6 | below | $\ge1$ | $<2$ | white-out | unity without content or holder | the "nothing" at very high dose |
-| 7 | below | $<1$ | $\ge2$ | torrent | distinctions without binding | acute confusional states |
-| 8 | below | $<1$ | $<2$ | dispersal | the fully dissolved limit | — |
-| 9 | above | $\ge1$ | $\ge2$ | **automatism** | structured, distinguishing, unreflective | skilled action with no witness; sleepwalking |
-| 10 | above | $\ge1$ | $<2$ | hypersynchrony | one rigid state | deep slow-wave sleep; generalised seizure |
-| 11 | above | $<1$ | $\ge2$ | rigid fragments | parts each frozen, no whole | — |
-| 12 | above | $<1$ | $<2$ | frozen | the fully rigid limit | — |
+**Conditional resource bound [C].** If every independently implemented order consumes at least $c>0$ of a declared resource and the system has budget $B<\infty$, at most $\lfloor B/c\rfloor$ such orders can be realised simultaneously. This follows from $nc\le B$. The per-order cost and independence assumptions must be established for the proposed implementation. Finite-dimensional state space, incompleteness, or contraction alone do not supply them. A finite algorithm can describe an infinite family symbolically; finite experimental observations alone cannot certify all of it.
 
-Three of these carry the theory's weight, because each is a way of *nearly* being conscious and failing on one axis. **Flooded** (5) fails only on holding — which is why it can be reported afterwards as the most vivid state ever experienced and yet have had no subject at the time. **Automatism** (9) fails only on reflection — competent, coherent, and nobody home. **Contentless unity** (2) fails only on differentiation, and it is where UHM makes a claim that a live research programme denies.
+## Feasible gate profiles {#профиль-ворот}
 
-:::warning A falsifiable disagreement, stated rather than hidden
-Metzinger's minimal phenomenal experience holds that there are states of consciousness *without content* — pure awareness, no distinctions. Profile 2 is exactly that description, and UHM classes it as **not conscious**, because $D\ge2$ is a gate and not a decoration. Either the theory is wrong here, or the reported states retain a differentiation that introspection does not register as content. We do not resolve this; we record that the theory takes the losing side of a popular position and can be refuted there.
-:::
+<a id="двенадцать-режимов"></a>
+The four gate tests reduce to three scalar quantities $P,\Phi,D$, since $R$ is determined by $P$. Their formal Boolean enumeration has twelve labels. They are **not twelve guaranteed nonempty physical regions**.
 
-### The two edges are different failures {#две-грани}
+**Theorem (feasibility restriction) [T].** $\Phi\le7P-1$. Thus:
 
-Because $R=1/(NP)$ rises as purity falls, the two edges of the window are opposite pathologies rather than "too little" and "too much" of one thing.
+| Purity range | Allowed integration |
+|---|---|
+| $P<2/7$ | $\Phi<1$ necessarily |
+| $P=2/7$ | $\Phi\le1$; equality requires a uniform diagonal |
+| $2/7<P\le3/7$ | Both sides of $\Phi=1$ can occur; the L2 scalar window |
+| $P>3/7$ | Reflection gate fails; integration alone does not certify L2 |
 
-| Edge | $P$ | $R = 1/(7P)$ | What fails |
-|---|---|---|---|
-| lower | $\to 2/7$ | $\to 1/2$ | the system reflects **more** than it can bind: self-observation outruns self-holding |
-| upper | $\to 3/7$ | $\to 1/3$ | the system holds **more** than it can observe: structure outruns reflection |
+The former “flooded” and “white-out” examples combining $P<2/7$ with $\Phi\ge1$ are **retracted [✗]**. Naming gate failures does not measure a clinical or psychedelic state.
 
-Below the lower edge the holder dissolves while reflection is still climbing — which is why the approach to that boundary should feel like *intensified* awareness accompanied by *loss of the one who is aware*, and why an agency that is one's own can stop being attributed to oneself: attribution requires binding, and binding is what is failing. Above the upper edge the converse: a state that is coherent, stable and unreflective.
+<a id="две-грани"></a>
+At the lower boundary $R\to1/2$, and at the upper boundary $R\to1/3$. These are algebraic facts. Their subjective interpretation requires empirical calibration.
 
-### Convergence with the entropic-brain hypothesis {#схождение-с-энтропийным-мозгом}
+<a id="схождение-с-энтропийным-мозгом"></a>
+A two-sided window in a neuroscience model is not quantitative confirmation of these thresholds. Neural signal entropy and $\operatorname{Tr}\Gamma^2$ require a validated measurement bridge. Even von Neumann entropy is not uniquely determined by purity in dimension seven.
 
-This is the one place where an independently developed neuroscience arrives at the same *form*. Carhart-Harris's entropic brain proposes that *within upper and lower limits* the entropy of spontaneous brain activity indexes the richness of conscious states — a two-sided window, not a monotone scale. Since purity and entropy move inversely, that is the same claim as $P\in(2/7,3/7]$ written in the reciprocal variable. Three differences are worth stating plainly: UHM **derives** its edges (T-124) where the entropic brain fits them; UHM adds the identity $R=1/(NP)$, which converts "less order" into "more reflection, less binding" and thereby predicts the *character* of the lower-edge state rather than only its location; and UHM's window is on the coherence matrix of seven functional axes, not on signal entropy, so the two are commensurable only through a declared coarse-graining ([validation constraint](/docs/applied/research/measurement-protocol#граница-валидации)).
+## Gap profiles and identifiability {#gap-характеристика-уровней-l0l4}
 
-The empirical anchor already exists on their side: psilocybin raises neural entropy, and the magnitude of that rise tracks the intensity of ego dissolution, with default-mode decoupling predicting the reported dissolution. In UHM coordinates that is a trajectory toward the lower edge — purity down, reflection up — and it predicts, correctly, that the far end of that trajectory is not maximal experience but its lapse.
+The frame-referenced statistic is $\mathrm{Gap}(i,j)=|\operatorname{Im}\gamma_{ij}|/|\gamma_{ij}|$ for nonzero coherences; zero at zero is a convention. Its interpretation as conscious “opacity” is **[I]**. A profile contains phases without amplitudes or calibration, so scalar gate thresholds do not force particular opaque channels.
 
-:::warning What this does not license
-Nothing here identifies which physical systems sit where. The profile is a statement about $P,\Phi,D$ once they are measured, and measuring them in a substrate without independent ground truth remains outside what this corpus will claim ([validation constraint](/docs/applied/research/measurement-protocol#граница-валидации)). A phenomenological report of another agency is data about a human self-model under perturbation; it is not an observation of a second subject.
-:::
+**Theorem (conditional readout stability) [T].** If a self-model approximates the actual matrix with $\|\Gamma-\widehat\Gamma\|_F\le\delta<m$, and every observed actual coherence has modulus at least $m>0$, then the per-channel Gap error is at most $2\delta/m$. A bound on canonical $R$ alone is not a self-model error bound. Proof and the essential amplitude-floor condition: [Gap characterisation](./gap-characterization#стабильность-считывания).
 
-## Gap Characterisation of Levels L0--L4 {#gap-характеристика-уровней-l0l4}
+At an exact fixed point actual and computed profiles coincide tautologically. This equality does not prove phenomenal access. No Hamming theorem forces three nonzero Gap channels; a code-to-observable bridge would be an additional premise.
 
-Each interiority level possesses not only a *numerical* threshold condition but also a characteristic *opacity profile* — a **Gap profile**. Gap measures how opaque the connection between two dimensions is: $\mathrm{Gap}(i,j) = 0$ denotes full transparency (conscious access), $\mathrm{Gap}(i,j) = 1$ — full opacity (unconscious).
+## Replacement for Gap injection {#теорема-gap-инъекция}
 
-A detailed analysis of Gap profiles is given in [Gap characterisation of levels](./gap-characterization). Here we state the overview theorem.
+The former theorem “different L-levels imply different Gap profiles” is **retracted [✗]**.
 
-:::tip Theorem 6.1 (Gap characterisation of levels) [T]
-For each interiority level the Gap profile has the following properties:
+**Theorem (factorisation criterion) [T].** A classification $L:\mathcal Z\to\mathcal L$ is computable from a statistic $s:\mathcal Z\to\mathcal Y$ exactly when it is constant on every fibre of $s$. Equivalently, a map $\ell:s(\mathcal Z)\to\mathcal L$ with $L=\ell\circ s$ exists. Necessity follows by substitution; sufficiency defines $\ell(y)$ using any representative of the fibre. This is factorisation, not an injection from levels into profiles.
 
-| Level | Gap characteristic | Explanation |
-|-------|---------------------|------------|
-| **L0** | Gap undefined or fluctuating | No stable self-modelling: $R \approx 0$, target $\rho_*$ not reachable |
-| **L1** | Gap stationary but unperceived | Stable coherences ($P > P_{\text{crit}}$), but $R < 1/3$ — self-model too coarse |
-| **L2** | Gap partially perceived, metastable: $\lVert\mathrm{Gap}_{\text{perceived}} - \mathrm{Gap}_{\text{actual}}\rVert \leq 2/3$ | Self-model approximate but non-trivial |
-| **L3** | Gap almost fully perceived: $\lVert\mathrm{Gap}_{\text{perceived}} - \mathrm{Gap}_{\text{actual}}\rVert \leq \varepsilon$ | Metastable state of deep self-knowledge |
-| **L4** | Gap **exactly** perceived: $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ | Fixed point $\varphi(\Gamma^*) = \Gamma^*$ |
+**Counterexample to phase-only gate identification [T].** Let $u=(1,\ldots,1)/\sqrt7$ and
 
-**Argument.**
-
-**(a)** At L0 there is no phi-operator ($R \approx 0$), so the target state $\rho_*$ formally exists ([primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]), but the system is incapable of directed regeneration — there are no coherences whose phases could define Gap.
-
-**(b)** At L1 there are stable coherences ($P > P_{\text{crit}}$), but $R < 1/3$: the self-model is too coarse to perceive Gap. The difference between the "perceived" Gap (via $\varphi(\Gamma)$) and the real Gap (via $\Gamma$) is large.
-
-**(c)** At L2 the measure $R \geq 1/3$ means:
 $$
-\|\Gamma - I/7\|_F \leq \sqrt{2P/3}
+\Gamma(t)=(1-t)I/7+tuu^\dagger,\quad 0<t<1.
 $$
-An approximate self-model yields an approximate Gap profile (here $I/7 = \rho^*_{\mathrm{diss}}$).
 
-**(d)** At L4 $\varphi(\Gamma^*) = \Gamma^*$ $\Rightarrow$ $\rho_* = \Gamma^*$, and the stationary Gap coincides with the target:
-$$
-\mathrm{Gap}^{(\infty)} = |\sin(\theta^{\text{target}})| = |\sin(\theta^{(\infty)})| = \mathrm{Gap}_{\text{actual}}
-$$
-The system **knows** its Gap exactly.
+All 21 pairwise Gaps are zero, while $P=(1+6t^2)/7$, $R=1/(1+6t^2)$, and $\Phi=6t^2$.
 
-[Proof](/docs/proofs/consciousness/interiority-hierarchy) | Status: **[T]**
-:::
+| $t$ | $P$ | $R$ | $\Phi$ | Purity/reflection/integration gates |
+|---|---:|---:|---:|---|
+| $0.45$ | $0.316429$ | $0.451467$ | $1.215$ | Pass |
+| $0.65$ | $0.505000$ | $0.282885$ | $2.535$ | Reflection fails |
 
-:::warning L4 does not mean Gap = 0 (Awareness does not equal Transparency)
-At level L4 $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ holds, but this does **not** mean that all Gaps equal zero. The system exactly *knows* its opacity — but the opacity may remain non-zero. Full transparency ($\mathrm{Gap} = 0$ for all channels) is incompatible with [fault tolerance](/docs/core/dynamics/gap-dynamics): at least 3 channels out of 21 **must** retain non-zero Gap (Hamming bound).
+This establishes failure to identify the scalar capability gate; it does not assert a full empirical L2 assignment without the differentiation/readout certificate. The joint record $(P,R,\Phi,D,A_1,\mathsf{MetaCert}_n,\mathsf{Compatible})$ determines the defined hierarchy. The phase profile alone does not. General $G_2$ rotations do not preserve a frame-indexed pairwise profile, so quotienting it by $G_2$ does not repair the failure.
 
-Status: **[T]**
-:::
+## Threshold crossing versus bifurcation {#теорема-a4-бифуркация}
 
-### Visualisation of Gap by level
+The former unconditional T-41 identification of all L-transitions with a swallowtail is **retracted [✗]**. A threshold may be crossed along a smooth trajectory with no change in the number or stability of attractors. Three control parameters do not establish a codimension-three singularity.
 
-```
-L0:  Gap = ???     [. . . . . . . . . . . . . . . . . . . . .]  (undefined)
-                    ^ random fluctuations
+In the standard potential convention, $A_k$ has germ $x^{k+1}$: $A_2$ is the fold, $A_3$ the cusp ($x^4$), and $A_4$ the swallowtail ($x^5$). A claimed normal form needs a smooth centre-manifold reduction, the appropriate degeneracy, parameter transversality and an explicit relation to the gate. See [formal criteria](/docs/proofs/consciousness/interiority-hierarchy#бифуркационные-критерии).
 
-L1:  Gap = [0.4, 0.7, 0.2, ...]  (stationary, but unperceived)
-     Perceived = N/A
+## Classification algorithm {#алгоритм-level}
 
-L2:  Gap = [0.4, 0.7, 0.2, ...]
-     Perceived = [0.5, 0.6, 0.3, ...]  (approximate perception, ||Delta|| <= 2/3)
-
-L3:  Gap = [0.4, 0.7, 0.2, ...]
-     Perceived = [0.41, 0.69, 0.21, ...]  (accurate perception, ||Delta|| -> 0)
-
-L4:  Gap = Perceived = [0.4, 0.7, 0.2, ...]  (complete identity, but Gap != 0!)
+```text
+Input: Gamma, mode E, declared self-models and certificates
+Validate Hermiticity, positivity and trace = 1.
+P = sum_ij abs(Gamma_ij)^2
+Q = sum_i Gamma_ii^2
+R = 1 / (7*P)
+Phi = (P-Q) / Q
+If mode is proxy: A1 = Coh_E > 0; D = 1 + 6*Coh_E.
+If mode is extension: require a normalised rho_E; A1 = rank(rho_E) > 1;
+                     D = exp(-Tr(rho_E log rho_E)).
+If required data are missing: return the evaluated gates and UNKNOWN entries.
+A2 = A1 and P > 2/7 and R >= 1/3 and Phi >= 1 and D >= 2.
+A3 = A2 and independently verified MetaCert_2.
+A4 = A3 and a proof/certificate of the compatible all-order tower.
+Return the greatest satisfied A_k; retain uncertainty at unverified orders.
 ```
 
----
+Computing $P,Q,R,\Phi,\mathrm{Coh}_E$ costs $O(N^2)$. Positivity validation and extension eigendecomposition have their own costs; higher-order certificates are not obtained by a few matrix operations. With measurement uncertainty, report gate intervals and require a margin from each boundary. The L2 scalar certificate is a model classification; the phenomenal interpretation remains a separate claim.
 
-## Theorem on $A_4$-bifurcation {#теорема-a4-бифуркация}
+## Related documents
 
-Transitions between levels are not gradual but abrupt. Just as water at 100°C abruptly turns into steam, a system abruptly transitions between L-levels upon reaching threshold values. Mathematically this is described by **catastrophe theory** — a branch of mathematics that classifies qualitative reorganisations of systems.
-
-:::tip Theorem ($A_4$-bifurcation of L-transitions) [T]
-Transitions between L-levels are realised as swallowtail ($A_4$) bifurcations of catastrophe theory.
-
-**Proof.**
-
-**Step 1.** The evolution equation $d\Gamma/d\tau = \mathcal{L}[\Gamma]$ depends on three physically independent control parameters:
-
-| Parameter | Symbol | Physical meaning |
-|-----------|:------:|-----------------|
-| Regeneration rate | $\kappa$ | Controlled by $\mathrm{Coh}_E$ and $\kappa_0$ |
-| Dissipation rate | $\alpha$ | Controlled by the environment (decoherence) |
-| Free energy gradient | $\Delta F$ | Determines $g_V(P)$ — switching $\mathcal{R}$ on/off |
-
-Three parameters $(\kappa, \alpha, \Delta F) \in \mathbb{R}^3$ — control space.
-
-**Step 2.** Consider purity $P(\tau)$ as order parameter. At stationarity: $f_D + f_R = 0$. Expansion in deviation $x = P - P^*$:
-
-$$
-\frac{dx}{d\tau} = -V'(x), \quad V(x) = a_1 x + \frac{a_2}{2}x^2 + \frac{a_3}{3}x^3 + \frac{a_4}{4}x^4
-$$
-
-**Step 3.** By Arnold's theorem (1972): the universal deformation of the function $x^4$ (monodromy 4, codimension 3) is the swallowtail $A_4$:
-
-$$
-V(x; \mu_1, \mu_2, \mu_3) = x^4 + \mu_2 x^2 + \mu_1 x + \mu_3 x^3
-$$
-
-Conditions: (1) codimension = 3 — three control parameters; (2) smooth potential; (3) leading term $x^4$ from approximate $\mathbb{Z}_2$-symmetry $P \leftrightarrow 1 - P$ (odd terms suppressed; $\mu_3 \neq 0$ but small).
-
-**Step 4.** L-transitions — sheets of the swallowtail:
-
-| Swallowtail sheet | Level | Characteristic |
-|------------------|-------|----------------|
-| Outer stable | L0--L1 | Low purity, passive stability |
-| Intermediate | L2 | Active stability (autopoiesis) |
-| Inner unstable | L3 | Metastable deep reflection |
-| Self-intersection point | L4 | $\varphi(\Gamma^*) = \Gamma^*$ — fixed point |
-
-Transitions L1->L2 and L2->L3 are **fold bifurcations** on the edges of the swallowtail. The transition L3->L4 is a **cusp bifurcation** at the apex. $\blacksquare$
-
-Details: [Transition catastrophes between levels](/docs/consciousness/hierarchy/swallowtail-transitions) | [Gap landscape bifurcations](/docs/applied/coherence-cybernetics/bifurcation)
-:::
-
-:::info Remark
-Transitions between the sheets of the swallowtail are **abrupt**, not continuous. This formalises the intuition of "sudden insight" ($\mathrm{Gap}_{\text{perceived}} \gg \mathrm{Gap}_{\text{actual}} \to \mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$) and corresponds to the bifurcation structure of the [Gap landscape](/docs/core/dynamics/gap-phase-diagram#катастрофы-уитни).
-
-Status: **[T]**
-:::
-
----
-
-## Theorem on Gap injection of L-levels {#теорема-gap-инъекция}
-
-A natural question: can two systems at *different* L-levels have the *same* Gap profile? The answer is no. Each L-level leaves a unique "fingerprint" in the Gap profile.
-
-:::tip Theorem (Gap injection of L-levels) [T]
-The map from L-level to equivalence class of Gap profiles is an **injection**: distinct L-levels have distinct Gap profiles:
-
-$$
-L(\Gamma_1) \neq L(\Gamma_2) \implies [\mathrm{Gap}(\Gamma_1)] \neq [\mathrm{Gap}(\Gamma_2)]
-$$
-
-where $[\mathrm{Gap}(\Gamma)]$ is the Gap-profile class under $G_2$-equivalence.
-
-**Proof.** Each transition $L_k \to L_{k+1}$ is characterised by a **unique Gap marker**:
-
-| Transition | Gap marker | Sufficient condition for distinction |
-|------------|-----------|-------------------------------|
-| L0 vs L1 | $\exists i: \mathrm{Gap}(E,i) > 0$ | Non-zero E-coherences |
-| L1 vs L2 | $\max\|\mathrm{Gap}_\varphi - \mathrm{Gap}\| \leq 2/3$ | Self-modelling accuracy |
-| L2 vs L3 | $k(\Gamma) \leq 0.5$ | Speed of Gap convergence (compression coefficient) |
-| L3 vs L4 | $k(\Gamma) = 0$, all $\mathrm{Gap}^{(2)}(i,j) = 0$ | Exact fixed point |
-
-Each marker **distinguishes** the corresponding pair of levels, so distinct L-levels have distinct (by class) Gap profiles. $\blacksquare$
-
-**Remark: not a bijection.** The converse does not hold: two states $\Gamma_1, \Gamma_2$ at the same L-level (for example, both L2) may have **distinct** Gap profiles. The Gap profile carries more information than the L-level — it is a **finer invariant**.
-
-Details: [Gap characterisation of levels](/docs/consciousness/hierarchy/gap-characterization)
-:::
-
----
-
-## Transition function and classification algorithm
-
-### Formal transition function
-
-The complete transition function between levels:
-
-$$
-\text{Level}(\Gamma) = \begin{cases}
-L0 & \text{if } \dim \mathcal{H} \geq 1 \\
-L1 & \text{if } \mathrm{rank}(\rho_E) > 1 \\
-L2 & \text{if } R \geq R_{\text{th}} \text{ and } \Phi \geq \Phi_{\text{th}} \\
-L3 & \text{if } R^{(2)} \geq R^{(2)}_{\text{th}} \text{ (metastable)} \\
-L4 & \text{if } \lim_n R^{(n)} > 0 \text{ and } P > 6/7
-\end{cases}
-$$
-
-### Level determination algorithm {#алгоритм-level}
-
-The following algorithm determines the L-level for any given coherence matrix. Computational complexity — $O(N^2)$ for $N = 7$, i.e. a few dozen arithmetic operations.
-
-```
-Input: Gamma in D(C^7) — coherence matrix
-
-1. Compute P = Tr(Gamma^2)
-   if P <= P_crit = 2/7:  return L0
-
-2. Compute phi(Gamma) = (1-k)Gamma + k*rho*   [replacement channel, T-62]
-   Compute R = 1 - ||Gamma - phi(Gamma)||^2_F / ||Gamma||^2_F
-
-3. Compute Phi = Sum_{i!=j} |gamma_ij|^2 / Sum_i gamma^2_ii
-
-4. if R < 1/3 or Phi < 1:  return L1
-
-5. if R >= 1/3 and Phi >= 1:
-   Compute phi^2(Gamma) = phi(phi(Gamma))
-   Compute R^(2) = Fid(phi(Gamma), phi^2(Gamma))
-
-6. if R^(2) < 1/4:  return L2
-
-7. if R^(2) >= 1/4:  return L3
-
-8. L4: theoretical limit (lim R^(n) > 0) — not computable in finite time
-```
-
-:::warning Computability in 7D
-Levels L0, L1, L2 are fully computable in the minimal 7D formalism ($\Gamma \in \mathcal{D}(\mathbb{C}^7)$). The definition of L1 via $\mathrm{rank}(\rho_E) > 1$ formally requires PW-reconstruction $\rho_E = \mathrm{Tr}_{-E}(\Gamma_{42D})$, but in practice $\mathrm{rank}(\rho_E) > 1 \Leftrightarrow P > P_{\text{crit}}$ for viable systems. L3 requires double iteration of phi and fidelity computation — algorithmically computable. L4 is **not computable** in a finite number of steps (requires the infinite limit $n \to \infty$), but in practice the coherence-survival ratio $S^{(n)} \sim 3^{-n} \to 0$ for all systems with $\varepsilon_{\text{dec}} > 0$ (whereas the self-model fidelity $R^{(n)}_{\mathrm{fid}} \to 1$; the two are distinct — see [Theorem 4.3 disambiguation](/docs/proofs/consciousness/interiority-hierarchy#теорема-4-3)).
-:::
-
----
-
-### What we have learned
-
-- **Five levels L0--L4** organise all systems into a strict classification: L0 (any $\Gamma$), L1 ($\mathrm{rank}(\rho_E) > 1$), L2 ($R \geq 1/3 \land \Phi \geq 1$), L3 ($R^{(2)} \geq 1/4$, metastable), L4 ($\lim_n R^{(n)} > 0$, unreachable).
-- **Threshold $R_{\mathrm{th}} = 1/3$** [T] derived from the triadic decomposition ($K = 3$); **threshold $\Phi_{\mathrm{th}} = 1$** [T] — from self-consistency at $P_{\mathrm{crit}} = 2/7$ (T-129).
-- **L3 is metastable**: without maintenance it decays to L2 with characteristic time $\tau_3$.
-- **L4 is unreachable** for finite systems (Lawvere incompleteness, Postnikov tower), but asymptotically approachable.
-- **Gap profiles are injective**: distinct L-levels have distinct Gap signatures [T].
-- **Transitions between levels** are $A_2, A_3, A_4$ bifurcations with hysteresis.
-- **The level determination algorithm** is computable in $O(N^2)$ from $\Gamma \in \mathcal{D}(\mathbb{C}^7)$.
-
-:::tip What's next
-The L0--L4 hierarchy is a discrete ladder. For a finer description turn to [Gap characterisation of levels](./gap-characterization) (quantitative opacity signatures), [Transition catastrophes](./swallowtail-transitions) ($A_4$-bifurcations with hysteresis), and [Depth tower](./depth-tower) (continuous SAD measure).
-
-For engineering applications: [CC definitions](/docs/applied/coherence-cybernetics/definitions) contain operational formulas, and [CC theorems](/docs/applied/coherence-cybernetics/theorems) — results on fractal closure and emergence.
-:::
-
-## Related Documents
-
-- **Defined via:** [$\varphi$-operator](/docs/core/operators/phi-operator), [Self-observation](/docs/consciousness/foundations/self-observation), [Category Exp](/docs/core/categories/category-exp)
-- **Generalisation to the continuous case:** [Self-Awareness Depth Tower](./depth-tower) — SAD metric, multi-scale $\varphi$-hierarchy, biological correlates
-- **Gap characterisation:** [Gap dynamics](/docs/core/dynamics/gap-dynamics), [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram), [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics)
-- **Full formalisation:** [Interiority hierarchy (proofs)](/docs/proofs/consciousness/interiority-hierarchy)
-- **Philosophical consequences:** [Interiority](/docs/consciousness/foundations/interiority-theory), [Hard problem](/docs/consciousness/foundations/two-aspect-monism)
-- **Coherence Cybernetics:** [CC definitions](/docs/applied/coherence-cybernetics/definitions), [CC theorems](/docs/applied/coherence-cybernetics/theorems)
+- [Formal specification and proofs](/docs/proofs/consciousness/interiority-hierarchy)
+- [Gap identifiability, stability and rank](./gap-characterization)
+- [Self-observation and distinct reflection measures](/docs/consciousness/foundations/self-observation)
+- [Experiential realisation](/docs/core/structure/dimension-e#rho-e-7d-42d)
+- [Depth tower](./depth-tower): its channel-based score is not automatically an L-level certificate.

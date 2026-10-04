@@ -1,57 +1,53 @@
 ---
 sidebar_position: 1
 title: "φ-operator of self-modelling"
-description: "Definition of the self-modelling operator φ — master definition"
+description: "Typed numerical self-models, frozen quantum channels, and their categorical scope"
 ---
 
 # The Self-Modelling Operator φ
 
-This chapter describes how a system builds a model of itself — one of the central questions in consciousness science, philosophy, and cybernetics alike. What does it mean to "know oneself"? How can a system composed of parts encompass itself as a whole — including the very mechanism by which it does so?
+In the evolution equation, $\varphi$ denotes a specified numerical self-model: a map taking a current state $\Gamma$ to a target state. A fixed point $\varphi(\Gamma_*)=\Gamma_*$ expresses consistency of this map. Reading that equality as accurate self-knowledge requires an independent representation/error model [I]. The fixed point is not automatically a stationary state of the full dynamics or a conscious state.
 
-The operator $\varphi$ is the mathematical answer to this question. It takes the current state of the Holon (the coherence matrix $\Gamma$) and returns a *model* of that state — an approximate reflection constructed by the system itself. When the reflection coincides with the original ($\varphi(\Gamma^*) = \Gamma^*$), the system achieves **self-consistency** — its self-model is exact.
-
-:::info DRY: Master definition of φ
-This is the **canonical definition** of the self-modelling operator $\varphi$ in the theory section. The full formalisation, proofs of the equivalence of the three definitions, and the fixed-point theorem are in [Formalisation of the operator φ](/docs/proofs/categorical/formalization-phi).
+:::info Canonical typing — revised 2026-10-03
+The rigorous definitions and proofs are in [Formalization of φ](/docs/proofs/categorical/formalization-phi). A **logical support reflector** $L_G$ in a topos slice, a **numerical map** $M=\varphi$ on density matrices, a **frozen CPTP realization** $\mathcal C_\lambda$, and an **asymptotic basin retraction** $r$ are different constructions. Their former unconditional equivalence is withdrawn [✗].
 :::
 
----
+## Intuition and historical motivation {#интуиция-зеркало}
 
-## Historical Precursors
+An internal model is a chosen representation of the system's state. Loss of coherence, a predictive filter, a learned target, and a stabilizing feedback target describe different tasks. Their identification requires a modeling hypothesis. Hofstadter's strange loops, Rosen's closure under efficient causation, and predictive-processing models motivate questions of self-reference; they do not prove a particular anchor or channel. The former claim that the UHM free-energy functional derives $\varphi$ is withdrawn: that functional is cross-entropy and generally has a different minimizer.
 
-The problem of self-reference is one of the deepest in intellectual history.
+## Definition and construction order {#определение}
 
-**Douglas Hofstadter** in the book *Gödel, Escher, Bach* (1979) described *strange loops* — structures that, ascending through levels of a hierarchy, unexpectedly return to the starting point. The Gödel number encodes statements about numbers *through* numbers. Escher's hands draw each other. Bach's canon climbs through keys and returns to the original. Hofstadter suggested that precisely such self-referential loops underlie consciousness.
+$$
+M:\mathcal D(\mathbb C^7)\longrightarrow\mathcal D(\mathbb C^7),\qquad\varphi=M.
+$$
 
-**Robert Rosen** (1991) in *Life Itself* formalised the idea of *closure under efficient causation*: a living system is a system that is its own model. His (M,R)-systems anticipated the autopoietic axiom of UHM.
+A model law must be specified on all states under study. For the families below first define $P=\mathrm{Tr}\,\Gamma^2$, $R=1/(7P)$, $k=1-R$, a fixed predictive channel $\mathcal P_\alpha$, and an anchor law $\sigma(\Gamma)$. Then
 
-**Karl Friston** (2006–) in the framework of the *Free Energy Principle* showed that living systems minimise free energy, which is equivalent to building a predictive model of the environment (and of themselves). The variational definition of φ in UHM is a formal analogue of Friston's principle, but derived from axioms rather than postulated.
+$$
+M(\Gamma)=k(\Gamma)\mathcal P_\alpha(\Gamma)+R(\Gamma)\sigma(\Gamma).
+$$
 
----
+This is a continuous state-preserving map when the anchor law is continuous. It is generally nonlinear and **is not one CPTP channel**. For each current state the parameters can be frozen to obtain a linear channel on operators,
 
-## Intuitive Explanation: A Mirror for the Holon {#интуиция-зеркало}
+$$
+\mathcal C_{k,\sigma}(X)=k\mathcal P_\alpha(X)+(1-k)\mathrm{Tr}(X)\sigma.
+$$
 
-Imagine that the Holon is a creature living in a room without external mirrors. The only way to "see" itself is to build an internal model: to picture how it looks, based on what it feels.
+The trace factor is essential for linearity on arbitrary operators. A state-dependent Kraus family certifies the frozen channels; it does not make the overall adaptive map linear or establish its physical implementation.
 
-The operator $\varphi$ is that "mirror". The Holon looks into it ($\varphi(\Gamma)$) and sees an approximate reflection of itself. But the mirror is imperfect:
-- It may be *cloudy* — losing detail (the base decohering form $\varphi_{\text{base}}$, which erases all connections between dimensions)
-- It may be *defocused* — seeing not individual pixels but groups of 3 (the Fano form $\varphi_{\text{coh}}$, which preserves connections but weakens them)
+| Construction | Type and scope |
+|---|---|
+| Logical support | $L_G\dashv i_G:\mathrm{Sub}_{\mathcal E}(G)\hookrightarrow\mathcal E_{/G}$; image/$(-1)$-truncation **in the slice** [T] |
+| Numerical self-model | $M:\mathcal D(\mathcal H)\to\mathcal D(\mathcal H)$; explicit map [D] |
+| Frozen physical channel | $\mathcal C_{k,\sigma}$; CPTP at fixed parameters [T] |
+| Long-time limit | $r(\Gamma)=\lim_{t\to\infty}F_t(\Gamma)$; idempotent if a continuous autonomous flow converges to fixed points within the stated domain [T at convergence] |
 
-The **fixed point** $\Gamma^*$ is the state in which the reflection coincides with the original. A Holon in state $\Gamma^*$ sees itself *exactly as it is*. This is the state of complete self-consistency.
+A support reflector neither chooses a density matrix nor minimizes a metric distance. No zero-mode projection of a nonlinear stability Jacobian defines $M$: at a hyperbolic attracting equilibrium its trace-zero tangent Jacobian has no zero eigenvalue. Idempotency by itself supplies no adjunction. [Full proof and withdrawal](/docs/proofs/categorical/formalization-phi#эквивалентность-определений-phi).
 
----
+## Bootstrap and fixed points {#бутстрап}
 
-## Bootstrap: How the Apparent Circularity Is Resolved {#бутстрап}
-
-At first glance, the definition of φ appears to be a vicious circle: φ defines the self-model $\Gamma^*$, while $\Gamma^*$ enters the definition of φ. But this is not a vicious circle — it is a **bootstrap**, a self-consistent construction.
-
-Analogy: a recursive picture. Imagine a painter painting a picture that depicts a painter painting a picture that depicts... The definition seems infinitely recursive. But if one finds *that* picture in which the depicted picture coincides with the picture itself — the recursion closes. That is the fixed point.
-
-Mathematically, the circularity is resolved rigorously:
-
-:::warning Bootstrap nature of the definition of φ
-The operator φ defines the "self-model" of the system, i.e. φ(Γ) ≈ Γ — the system models itself. This appears to be a **circular** definition. The circularity is resolved via the **fixed-point theorem**: the operator φ is defined **independently** (as the left adjoint to the inclusion of subobjects), and for the canonical $\varphi_{\mathrm{coh}}$ the fixed point Γ* with φ(Γ*) = Γ* **exists and is unique** — it is $I/7$ — because $\|\varphi_{\mathrm{coh}}(\Gamma) - I/7\|_F \leq k\|\Gamma - I/7\|_F$ with $k \leq 6/7$. *Corrected 2026-09-25:* the box said "by Banach's theorem (φ is a contractive mapping with parameter k < 1)"; $k$ multiplies the deviation from $I/7$ and is not a Lipschitz constant — $\varphi_{\mathrm{coh}}$ stretches Frobenius distances by up to $9/8$, on diagonal states with $P = 4/7$, and by $54/49$ at pure states ([evolution, split-step method](/docs/core/dynamics/evolution#итеративная-схема); "up to $54/49$" until 2026-09-28; which maps do contract: [three maps](#три-отображения-сжатие)), and a self-model that keeps an isolated holon alive has several fixed points. A detailed account of the resolution of circularity is in [Formalisation of the operator φ: resolution of circularity](/docs/proofs/categorical/formalization-phi#категориальное-определение-φ).
-:::
-
+The explicit anchor laws below are evaluated on the current $\Gamma$; they do not use the unknown attractor in their own definition. This removes the apparent circularity directly. A continuous $M$ has a fixed point by Brouwer; uniqueness and convergence require further evidence. For $M_{\mathrm{coh}}$ the unique fixed point is $I/7$, and its iterates converge by an estimate of deviation from that state. This estimate is not a global Banach contraction. A hyperbolic equilibrium of the full regenerative flow must instead be found and checked for that flow.
 <a id="три-отображения-сжатие"></a>
 
 :::note Which φ contracts: three maps, and the fed loop
@@ -67,119 +63,54 @@ The third map is the one on which the closed form $R_\varphi = 1 - (1-R)^4\,\lVe
 :::
 
 ---
-
-## Definition {#определение}
-
-The self-modelling operator $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ is defined in three equivalent ways:
-
-| # | Definition | Formula |
-|---|-------------|---------|
-| 1 | **Categorical** | $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ |
-| 2 | **Dynamical** | $\varphi(\Gamma) = \Pi_0[\Gamma]$ — projector onto the multiplicity-1 zero mode of the linearised full generator $\mathcal{L}_\Omega'\|_{\rho^*_\Omega}$ |
-| 3 | **Idempotent** | $\varphi \circ \varphi = \varphi$, $\exists \Gamma^*: \varphi(\Gamma^*) = \Gamma^*$ |
-
-:::note Convention for definition 2 (self-referential-ρ* fix, T-96)
-"$\lim_{\tau\to\infty}e^{\tau\mathcal{L}_\Omega}$" must **not** be read as the constant map onto the dissipative attractor $I/7$: the full generator $\mathcal{L}_\Omega=\mathcal{L}_0+\mathcal{R}$ is nonlinear and non-primitive, with a nontrivial fixed point $\rho^*_\Omega\neq I/7$. Definition 2 is the $\Gamma$-dependent projector onto the zero mode of the linearised generator; only the **linear part** $\mathcal{L}_0$ is primitive (with unique stationary state $I/7$) — a property of the dynamics, not of $\varphi$.
-:::
-
-### The Three Definitions in Plain Language
-
-Each of the three definitions answers the same question — "how does the system build a model of itself?" — but from a different point of view.
-
-**Definition 1 (Categorical): "Best approximation from below".**
-Imagine you have a complex object (the Holon) and a collection of simpler objects (subobjects of the classifier). The categorical φ is the way to find the *best approximation* of the complex object through the simpler ones. "Left adjoint to inclusion" is the mathematical way of saying "optimal projection onto a subset". Analogy: you describe your appearance to a friend over the phone. From an infinite number of details you select the most important (height, hair colour, build). That is the "best approximation" — $\varphi$ of your full appearance.
-
-**Definition 2 (Dynamical): "The self-model the dynamics singles out".**
-Linearise the full (regenerative) dynamics about its nontrivial fixed point $\rho^*_\Omega$ and project onto the surviving zero mode. Unlike a plain funnel — where every ball ends at the *same* lowest point (that would be the dissipative $I/7$, giving a trivial constant $\varphi$) — the regenerative term $\mathcal{R}$ keeps $\varphi(\Gamma)$ **dependent on $\Gamma$**: different inputs yield different self-models. The fixed point of $\varphi$ is $\rho^*_\Omega\neq I/7$.
-
-**Definition 3 (Idempotent): "A double reflection adds nothing new".**
-If you look in a mirror twice, you see the same thing as the first time. $\varphi \circ \varphi = \varphi$ means that the model of the model coincides with the model. Analogy: photograph a photograph — you get (approximately) the same photograph.
-
-:::tip Theorem: Equivalence of the definitions of φ
-The three definitions specify the same operator $\varphi$.
-[Proof →](/docs/proofs/categorical/formalization-phi#эквивалентность-определений-phi) | Status: **[T]**
-:::
-
-## Base Form φ_base (Decohering Self-Observation) {#phi-base}
-
-For a [Holon](/docs/core/structure/holon) with $\mathcal{H} = \mathbb{C}^7$, the **base** (decohering) form is:
+## Base dephasing and actual scope {#phi-base}
 
 $$
-\varphi_{\text{base}}(\Gamma) = \sum_{k=1}^{7} \Pi_k \, \Gamma \, \Pi_k = \mathrm{diag}(\Gamma)
+M_{\mathrm{base}}(\Gamma)=\Delta(\Gamma)=\sum_i|i\rangle\langle i|\Gamma|i\rangle\langle i|.
 $$
 
-where $\Pi_k = |e_k\rangle\langle e_k|$ are projectors onto the [basis dimensions](/docs/core/structure/dimensions).
+This is a linear unital CPTP channel and is idempotent. It removes all coherences. Its fixed points are all diagonal states, not only $I/7$. A nonuniform diagonal state can have $P>2/7$, so dephasing is incompatible with the full integrated predicate $\Phi\geq1$, rather than with purity-based viability in every state.
 
-:::warning Φ_base is insufficient as the canonical form
-This form **destroys** all coherences ($\gamma_{ij} \to 0$ for $i \neq j$), which is incompatible with viability at uniform weights. The canonical form for living systems is the generalised operator $\varphi_{\text{coh}}$ with [Fano structure](#каноническая-конструкция-φ_coh-из-фано-структуры) (see below). The canonical form in [Formalisation of the operator φ](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм) uses $\varphi_{\text{UHM}} = k \cdot \mathcal{P}_{\text{pred}} + (1-k) \cdot I/7$, which when $\mathcal{P}_{\text{pred}} = \mathcal{P}_{\text{base}}$ coincides with $\varphi_{\text{base}}$ (with anchor $I/7$). Generalisation to $\mathcal{P}_{\text{pred}} = \mathcal{P}_\alpha$ (convex combination of $\mathcal{P}_{\text{base}}$ and $\mathcal{P}_{\text{Fano}}$) gives $\varphi_{\text{coh}}$.
-:::
+For the separate mixed map $M_{\mathrm{coh}}=k\mathcal P_\alpha+R I/7$, all frozen realizations are unital and the nonlinear map preserves $I/7$; this usage of "unital target" does not assert linearity. Its purity cannot exceed the input purity: $\|M_{\mathrm{coh}}\Gamma-I/7\|_F\leq k\|\Gamma-I/7\|_F$.
 
-## Свойства
+<a id="свойства"></a>
 
-1. **CPTP channel:** $\varphi$ is a completely positive, trace-preserving map
-2. **Idempotence (of ideal φ):** $\varphi \circ \varphi = \varphi$ — for the idempotent definition (Definition 3). The canonical form $\varphi_{\text{coh}}$ with compression parameter $k = 1 - R < 1$ [T] is not idempotent; it **contracts toward $I/7$**, $\|\varphi_{\text{coh}}(\Gamma) - I/7\|_F \leq k\|\Gamma - I/7\|_F$, but is not a contraction of the state space (Lipschitz constant $9/8$, attained at $P = 4/7$ on the ray to a pure state, $54/49$ at the pure state; "contractive mapping" until 2026-09-25); the idempotent projection is the limit $\lim_{n\to\infty} \varphi_{\text{coh}}^n$, the constant map onto $I/7$
-3. **Purity monotonicity:** $P(\varphi_{\text{base}}(\Gamma)) \leq P(\Gamma)$ for the base form (decoherence decreases purity); $P(\varphi_{\text{coh}}(\Gamma))$ depends on the parameter $\alpha$ — at $\alpha < 1$ the Fano component partially preserves coherences. The fixed point of the canonical $\varphi_{\mathrm{coh}}$ is $I/7$, with $P = 1/7$ (the value $2/7$ printed here earlier is retracted, see below)
-4. **Fixed point:** $\exists! \, \Gamma^*_{\mathrm{coh}}: \varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$, namely $\Gamma^*_{\mathrm{coh}} = I/7$
+### Fixed point of the uniform-anchor model {#неподвижная-точка-phi-coh}
 
-<a id="неподвижная-точка-phi-coh"></a>
+**Theorem [T].** $M_{\mathrm{coh}}$ has the unique fixed point $I/7$ with $P=1/7$. Indeed, off-diagonal fixed-point equations are $\gamma_{ij}=kc\gamma_{ij}$ with $kc<1$, and the diagonal equations give $\gamma_{ii}=k\gamma_{ii}+R/7$, hence $\gamma_{ii}=1/7$. The iterated limit is the constant reset to $I/7$, but a finite step is not idempotent. This uniform-anchor model cannot sustain isolated life in the stated regenerative dynamics. Living constructions need a different anchor law or environmental drive.
 
-:::tip Theorem: Fixed point of φ_coh (corrected 2026-09-25)
-The canonical $\varphi_{\mathrm{coh}}$ (anchor $I/7$, $k = 1 - R < 1$) has exactly one fixed point, $\Gamma^*_{\mathrm{coh}} = I/7$, with $P = 1/7$.
+## Fano filtering and integration {#каноническая-конструкция-φ_coh-из-фано-структуры}
 
-*Proof.* A fixed point has $\gamma_{ij} = \tfrac{k(1-\alpha)}{3}\gamma_{ij}$ for $i \neq j$, and $k(1-\alpha)/3 < 1$, so $\gamma_{ij} = 0$; on the diagonal $\gamma_{ii} = k\gamma_{ii} + (1-k)/7$, and $1 - k = R > 0$ gives $\gamma_{ii} = 1/7$. $\blacksquare$ This agrees with Corollary 2.1 of [Formalisation of φ](/docs/proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) (uniform anchor, fixed point $I/7$). Status: **[T]**. The earlier statement "$P(\Gamma^*_{\mathrm{coh}}) = P_{\text{crit}} = 2/7$" is retracted [✗]: 200 iterations of $\varphi_{\mathrm{coh}}$ from a random pure state end at $P = 1/7$ to $10^{-12}$ (`test_unital_self_model_keeps_an_isolated_holon_dead`).
-:::
+### Coherence preservation is not preservation of life {#интуиция-фано}
 
-:::warning Distinction between fixed points
-For the canonical $\varphi_{\mathrm{coh}}$ the fixed point of the self-model and the attractor of the dissipator coincide: both are $I/7$. *Corrected 2026-09-25:* the box said that $\Gamma^*_{\mathrm{coh}}$, with $P = 2/7$, differs from $\rho^*_{\mathrm{diss}} = I/7$. They differ for a self-model with a non-unital anchor — for the self-registering $\varphi_s$ [below](#phi-s) every basis state is a fixed point. The canonical definition of the [reflexion measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) uses $\rho^*_{\mathrm{diss}} = I/7$: $R = 1/(7P)$. Details: [stratification of definitions](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
-:::
+Fano line filtering attenuates rather than erases nonzero pair coherences. This is an algebraic property of the filter. A nonzero coherence is insufficient for viability or consciousness; a target can retain coherences and still have $P\leq2/7$ or $\Phi<1$.
 
----
+#### Exact attenuation bounds {#математика-смешивания}
 
-## Necessity of generalised φ for living systems
+Put $d=\sum_i\gamma_{ii}^2$, $s=\sum_{i\ne j}|\gamma_{ij}|^2$ and $\Phi=s/d$. Since $d\geq1/7$ and $P=d+s\leq1$, $\Phi\leq6$. The equal-weight Fano channel preserves $d$ and sends $s$ to $s/9$, so
 
-:::warning Canonical φ_base is insufficient
-The canonical $\varphi_{\text{base}}$ (decohering self-observation, projection onto the diagonal) **destroys** all coherences: $[\varphi_{\text{base}}(\Gamma)]_{ij} = 0$ for $i \neq j$. This is incompatible with viability: when $\gamma_{ii} \approx 1/7$ we get $P \approx 1/7 < P_{\text{crit}} = 2/7$. To achieve $P > P_{\text{crit}}$ without coherences, a pathological localisation of one dimension is required.
-:::
+$$
+\Phi(\mathcal P_{\mathrm{Fano}}\Gamma)=\Phi(\Gamma)/9\leq2/3<1.
+$$
 
-:::tip Theorem: Necessity of a coherence-preserving φ
-A living self-model **must** preserve coherences: $\exists\, (i,j): [\varphi(\Gamma)]_{ij} \neq 0$. A generalised $\varphi_{\text{coh}}$ is required.
-[Proof →](/docs/proofs/gap/fano-channel#необходимость-phi-coh) | Status: **[T]**
-:::
+At a uniform diagonal its output purity is at most $5/21<2/7$. Thus the former assertion that the Fano channel itself preserves life or the integrated predicate is withdrawn [✗]. For $\mathcal P_\alpha$, the bound is even smaller when $\alpha>0$.
 
----
+**Theorem (Uniform-anchor self-model is never an integrated target) [T].** For every state and $0\leq\alpha\leq1$,
 
-## Canonical construction of φ_coh from the Fano structure {#каноническая-конструкция-φ_coh-из-фано-структуры}
+$$
+\Phi(M_{\mathrm{coh}}\Gamma)=
+\frac{k^2c^2s}{1/7+k^2(d-1/7)}\leq6k^2c^2\leq24/49<1,
+\qquad c=(1-\alpha)/3.
+$$
 
-### Why the Fano channel is needed: defocused vision {#интуиция-фано}
-
-Before turning to formulas, let us understand *why* the Fano structure is needed.
-
-Imagine that the Holon's mirror can operate in two modes:
-- **Pixel mode** ($\varphi_{\text{base}}$): the mirror sees each "pixel" (dimension) separately, but completely loses the connections between pixels. As if you cut a photograph into 7 squares and shuffled them — you know the content of each square, but not how they are connected.
-- **Defocused mode** ($\mathcal{P}_{\text{Fano}}$): the mirror sees not individual pixels, but *groups of 3* (Fano lines). This is like defocused vision — you lose fine details, but preserve *connections* between dimensions. Each group of three dimensions is observed as a whole.
-
-Why groups of 3? Because the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) PG(2,2) is the unique structure on 7 points where every pair of points lies on exactly one line of 3 points. This is the **maximally democratic** observation: no pair of dimensions is privileged.
-
-Key result: the pixel mirror *kills* the system (with uniform weights, purity drops below the threshold $P_{\text{crit}} = 2/7$). The defocused mirror *preserves life*, because it preserves the connections (coherences) between dimensions. Living self-observation **must** be partially defocused.
-
-#### Mathematics of channel mixing {#математика-смешивания}
-
-Why the convex combination $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$ works:
-
-1. **$\mathcal{P}_{\text{base}}$ alone**: destroys all coherences → with uniform weights $P \approx 1/7 < P_{\text{crit}}$ → the system dies
-2. **$\mathcal{P}_{\text{Fano}}$ alone**: coherences are scaled by $1/3$, phases are preserved → $P$ remains above the threshold
-3. **Convex combination**: $\mathcal{P}_\alpha$ is a CPTP channel (a convex combination of CPTP channels is CPTP)
-4. **At $\alpha = 0$**: pure Fano, maximum coherence preservation, but less accurate predictive model
-5. **At $\alpha = 1$**: pure atomic, ideal predictive accuracy, but the system dies
-6. **No proven principle fixes $\alpha$.** The variational principle was said to find an optimum $\alpha^* \in (0,1)$ balancing accuracy and survivability; that claim is retracted (2026-09-25; see the α* section below) — the functional it used is minimised at $\alpha = 0$
-
-### Two types of classifier atoms
+*Proof.* Use $s\leq1-d$. For fixed $k,c$ the resulting ratio decreases with $d\geq1/7$, so its maximum is $6k^2c^2$. Now $k\leq6/7$ and $c\leq1/3$. Equality in the final bound is attained by a uniform-amplitude pure state at $\alpha=0$. $\square$ A self-model target need not itself satisfy the current system's full predicate; such a requirement would be an additional hypothesis. The result identifies the limitations of this target law without changing $M_s$ or $M_J$.
+### Chosen atomic and Fano filters
 
 :::note DRY: Master definition
 Complete definitions of atomic and Fano Lindblad operators are in [Lindblad Operators](/docs/core/operators/lindblad-operators#атомы-классификатора). Below are the key formulas needed for the construction of φ_coh.
 :::
 
-The [classifier Ω](/docs/core/foundations/axiom-omega) contains not only **atomic** subobjects $S_k = |k\rangle\langle k|$, but also **composite** ones. The [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$ defines 7 linear subobjects — projections onto 3-dimensional subspaces:
+The numerical model specifies atomic projectors $|k\rangle\langle k|$ and composite filters. They are not identified with the subobject classifier without realization data. The [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$ defines 7 linear subobjects — projections onto 3-dimensional subspaces:
 
 $$
 \Pi_p = \sum_{i \in \mathrm{line}_p} |i\rangle\langle i|, \quad p = 1, \ldots, 7
@@ -217,7 +148,7 @@ For an arbitrary coherence matrix $\Gamma$:
 
 **(b)** Coherences are preserved with coefficient $1/3$: $[\mathcal{P}_{\text{Fano}}(\Gamma)]_{ij} = \frac{1}{3}\gamma_{ij}$ for $i \neq j$
 
-**(c)** Phases of coherences are preserved exactly: $\arg([\mathcal{P}_{\text{Fano}}(\Gamma)]_{ij}) = \arg(\gamma_{ij})$
+**(c)** For nonzero input coherences, phases are preserved exactly: $\arg([\mathcal{P}_{\text{Fano}}(\Gamma)]_{ij}) = \arg(\gamma_{ij})$
 
 Key difference from $\varphi_{\text{base}}$: the Fano channel **scales** coherence amplitudes without phase distortion, whereas $\varphi_{\text{base}}$ destroys them entirely.
 [Proof →](/docs/proofs/gap/fano-channel#теорема-фано-канал) | Status: **[T]**
@@ -225,7 +156,7 @@ Key difference from $\varphi_{\text{base}}$: the Fano channel **scales** coheren
 
 ### Canonical form of φ_coh
 
-:::tip Theorem: Canonical form of φ_coh
+:::info Definition: Uniform-anchor form of φ_coh [D]
 Canonical coherence-preserving self-modelling:
 
 $$
@@ -236,8 +167,8 @@ where:
 - $\mathcal{P}_{\text{base}}(\Gamma) = \sum_m P_m\,\Gamma\,P_m = \mathrm{diag}(\Gamma)$ — atomic channel (from [φ formalisation](/docs/proofs/categorical/formalization-phi))
 - $\mathcal{P}_{\text{Fano}}(\Gamma) = \frac{1}{3}\sum_p \Pi_p\,\Gamma\,\Pi_p$ — Fano channel
 - $\alpha \in [0, 1]$ — **decoherence depth parameter** (balance between atomic and Fano observation)
-- $k = 1 - R$ — compression parameter determined by the [reflexion measure](/docs/consciousness/foundations/self-observation#теорема-k-из-r) $R = 1 - \|\Gamma - \rho^*\|_F^2/\|\Gamma\|_F^2$ **[T]**. Not a free parameter
-- $\Gamma_{\text{anchor}} = \rho^*_{\mathrm{diss}} = I/7$ — **anchor state**, coinciding with the attractor of the dissipative part $\mathcal{L}_0$. This choice is dictated by the primitivity of $\mathcal{L}_0$ [T-39a]: the unique stationary state of the linear dynamics is the maximally mixed $I/7$. Under full compression ($k \to 1$, $R \to 0$) the self-model tends to $I/7$ — the state of complete absence of information about itself.
+- $k = 1 - R$ — compression parameter determined by the [reflexion measure](/docs/consciousness/foundations/self-observation#теорема-k-из-r) $R=1/(7P)=1-\|\Gamma-I/7\|_F^2/P$ **[T]**. Not a free parameter
+- $\Gamma_{\text{anchor}} = \rho^*_{\mathrm{diss}} = I/7$ — **anchor state**, coinciding with the attractor of the dissipative part $\mathcal{L}_0$. This is an explicit dissipative-reference anchor [D]. A specified primitive unital linear generator has stationary state $I/7$; that fact does not force the feedback anchor. As an independently varied constant weight $k$ tends to one, the formula tends to $\mathcal P_\alpha(\Gamma)$, not $I/7$; in the adaptive law $k\leq6/7$.
 
 $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$ — a convex combination of CPTP channels, hence CPTP.
 [Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[T]**
@@ -248,9 +179,9 @@ $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P
 :::tip Theorem: Target coherences of φ_coh
 **(a)** Magnitude of the target coherence (with diagonal anchor): $|\gamma_{ij}^{\text{target}}| = \frac{k(1-\alpha)}{3} \cdot |\gamma_{ij}|$
 
-**(b)** Target phase is **preserved**: $\theta_{ij}^{\text{target}} = \theta_{ij}$
+**(b)** If $kc\gamma_{ij}\ne0$, target phase is **preserved**: $\theta_{ij}^{\text{target}} = \theta_{ij}$
 
-**(c)** Target Gap is **preserved**: $\mathrm{Gap}^{\text{target}}(i,j) = \mathrm{Gap}(i,j)$
+**(c)** Under the same nonzero-coherence condition, target Gap is **preserved**: $\mathrm{Gap}^{\text{target}}(i,j) = \mathrm{Gap}(i,j)$
 
 The canonical $\varphi_{\text{coh}}$ **does not seek to change the Gap** — it reproduces the Gap with a reduced amplitude, scaling coherences without phase distortion.
 [Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[T]**
@@ -283,76 +214,30 @@ The coefficients are determined through:
 [Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[T]**
 :::
 
-:::info Kraus operators (7 + 7 + 49; corrected 2026-09-25)
+:::info Frozen-channel Kraus operators (7 + 7 + 49; corrected 2026-09-25)
+The weight $k$ and anchor are held fixed in this linear channel. Evaluating them anew on each input produces a nonlinear state map, not one channel.
 Atomic operators (7): $K_m^{(\text{atom})} = \sqrt{\alpha k} \cdot |m\rangle\langle m|$. Fano operators (7): $K_p^{(\text{Fano})} = \sqrt{(1-\alpha) k / 3} \cdot \Pi_p$. Anchor operators (49), with $\Gamma_{\text{anchor}} = \sum_i \lambda_i |\psi_i\rangle\langle\psi_i|$: $K_{ij}^{(\text{anch})} = \sqrt{(1-k)\lambda_i} \cdot |\psi_i\rangle\langle j|$. Verification: $\sum_m (K_m^{(\text{atom})})^\dagger K_m^{(\text{atom})} = \alpha k \cdot I$; $\sum_p (K_p^{(\text{Fano})})^\dagger K_p^{(\text{Fano})} = \tfrac{(1-\alpha)k}{3} \cdot 3I$ (every point lies on three lines); $\sum_{i,j} (K_{ij}^{(\text{anch})})^\dagger K_{ij}^{(\text{anch})} = (1-k) \cdot I$; total $I$. The 63 operators reproduce $\varphi_{\text{coh}}$ to $3 \times 10^{-16}$ on 50 random states. The former set — $K_m^{(\text{atom})} = \sqrt{\alpha^* k/7}\,|m\rangle\langle m|$, one anchor $K_0 = \sqrt{(1-k)/7}\,I$ — was not trace-preserving: $\sum_m |m\rangle\langle m| = I$, not $7I$, and $K_0^\dagger K_0 = \tfrac{1-k}{7}\,I$; for $\alpha = 0.4$, $k = 0.8$ it misses $I$ by $1.18$ in Frobenius norm, and a single multiple of $I$ cannot implement the replacement $\Gamma \mapsto (1-k)\,\Gamma_{\text{anchor}}$. Same correction as [$G_2$-structure, Theorem 10.5](/docs/physics/gauge-symmetry/g2-structure).
 :::
 
 ---
+## Free Fano weight and retracted variational formula {#эскиз-вывода-alpha}
 
-## Variational definition of α*
+The weight $\alpha\in[0,1]$ remains a model parameter. For full-rank $\Gamma$, the former functional equals $-\mathrm{Tr}(\mathcal P_\alpha(\Gamma)\log\Gamma)$ and is affine in $\alpha$ with nonnegative slope
+$\tfrac13[D(\Gamma\Vert\Delta\Gamma)+D(\Delta\Gamma\Vert\Gamma)]$.
+Its minimum is at $\alpha=0$ whenever there are coherences; it has no derived interior optimum $1-2/(7P)$. That formula and the associated prediction-accuracy ranking are withdrawn [✗]. A filter's predictive accuracy requires a specified prediction task, data and loss.
 
-:::tip Theorem: Variational definition of α* — retracted 2026-09-25 [✗]
-The optimal parameter $\alpha^*$ is determined by the [variational principle](/docs/proofs/dynamics/fep-derivation):
+### Example with a chosen parameter {#числовой-пример-phi}
 
-$$
-\alpha^* = \arg\min_{\alpha \in [0,1]} \mathcal{F}[\mathcal{P}_\alpha; \Gamma] = \arg\min_{\alpha} \left[S_{\text{spec}}(\mathcal{P}_\alpha(\Gamma)) + D_{KL}(\mathcal{P}_\alpha(\Gamma) \| \Gamma)\right]
-$$
-
-Approximate formula for a system with purity $P > P_{\text{crit}}$:
-
-$$
-\alpha^* \approx 1 - \frac{P_{\text{crit}}}{P} = 1 - \frac{2}{7P}
-$$
-
-| Purity $P$ | $\alpha^*$ | Interpretation |
-|------------|-----------|----------------|
-| $P = 1$ (pure state) | $\approx 0.71$ | Substantial Fano contribution |
-| $P = 0.5$ | $\approx 0.43$ | Balance of atomic and Fano |
-| $P \to P_{\text{crit}}$ | $\to 0$ | Almost purely Fano (minimal coherence destruction) |
-
-[Proof →](/docs/proofs/gap/fano-channel#alpha-star) | Status: retracted [✗]
-
-**Why retracted.** $\mathcal{F}[\psi;\Gamma] = -\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$ is linear in $\psi(\Gamma)$, and $\mathcal{P}_\alpha(\Gamma) = \Delta(\Gamma) + \tfrac{1-\alpha}{3}(\Gamma - \Delta(\Gamma))$, with $\Delta$ the diagonal part, is affine in $\alpha$. Hence $\mathcal{F}(\alpha) = \mathcal{F}(0) + \tfrac{\alpha}{3}\left[D_{KL}(\Gamma\|\Delta\Gamma) + D_{KL}(\Delta\Gamma\|\Gamma)\right]$ for full-rank $\Gamma$: the minimum over $[0,1]$ is at $\alpha = 0$ (pure Fano) whenever $\Gamma$ has coherences, and there is no interior optimum $1 - 2/(7P)$. Checked on 400 random states with $P$ from $0.19$ to $0.91$: minimum at $\alpha = 0$ in all 400. The weight $\alpha$ of the canonical $\varphi_{\text{coh}}$ is therefore a free parameter; no principle in the corpus fixes it.
-:::
-
-:::info Physical meaning of the balance
-At $\alpha = 1$ (purely atomic channel) — maximum predictive accuracy, but complete destruction of coherences. At $\alpha = 0$ (purely Fano) — coherences preserved with coefficient $1/3$, but a less accurate predictive model. The optimum $\alpha^* \in (0,1)$ is a balance between predictive accuracy and structure preservation. **[✗]** The functional of the box above has no such interior optimum; the trade-off is real, but it is not resolved by that functional.
-:::
-
-#### Sketch of the derivation of α* {#эскиз-вывода-alpha}
-
-The functional $\mathcal{F}[\alpha] = S_{\text{spec}}(\mathcal{P}_\alpha(\Gamma)) + D_{KL}(\mathcal{P}_\alpha(\Gamma) \| \Gamma)$.
-
-The channel $\mathcal{P}_\alpha$ acts as follows: the diagonal is preserved, coherences $\gamma_{ij} \mapsto \frac{(1-\alpha)}{3}\gamma_{ij}$. Therefore the purity of the self-model: $P_\alpha \approx P_{\text{diag}} + \left(\frac{1-\alpha}{3}\right)^2 P_{\text{coh}}$.
-
-The spectral entropy $S_{\text{spec}}$ increases as $\alpha$ decreases (weakening coherences → mixing). The Kullback–Leibler divergence $D_{KL}$ increases as $\alpha$ increases (greater deviation from $\Gamma$). The stationarity condition $\partial\mathcal{F}/\partial\alpha = 0$ for typical $\Gamma$ with purity $P$ gives:
-
-$$\alpha^* \approx 1 - \frac{P_{\text{crit}}}{P} = 1 - \frac{2}{7P}$$
-
-The formula is **approximate** — the exact solution requires numerical optimisation for arbitrary $\Gamma$.
-
-**[✗] Retracted sketch (2026-09-25):** $S_{\text{spec}} + D_{KL}$ is not the sum of a falling and a rising term here — it is affine in $\alpha$ with slope $\tfrac13[D_{KL}(\Gamma\|\Delta\Gamma) + D_{KL}(\Delta\Gamma\|\Gamma)] \geq 0$, so $\partial\mathcal{F}/\partial\alpha = 0$ has no solution unless $\Gamma$ is diagonal.
-
-### Numerical example {#числовой-пример-phi}
-
-Let $\Gamma$ have purity $P = 0.4$ (a viable system). We compute (step 1 uses the retracted formula for $\alpha^*$, so the numbers below illustrate one choice of the free weight $\alpha$, not a derived value):
-
-1. **Parameter $\alpha^*$:** $\alpha^* \approx 1 - 2/(7 \times 0.4) = 1 - 0.714 = 0.286$
-2. **Reflexion measure:** $R = 1/(7P) = 1/2.8 \approx 0.357$
-3. **Compression parameter:** $k = 1 - R = 0.643$
-4. **Target coherence:** $|\gamma_{ij}^{\text{target}}| = \frac{k(1-\alpha^*)}{3}|\gamma_{ij}| = \frac{0.643 \times 0.714}{3}|\gamma_{ij}| \approx 0.153\,|\gamma_{ij}|$
-
-The self-model retains ~15% of each coherence amplitude — a "defocused" but not destroyed reflection. Under iteration the purity of the self-model converges to $1/7$, not to $P_{\text{crit}} = 2/7$ (corrected 2026-09-25; the text said that the viability threshold acts as an attractor of self-modelling): the canonical $\varphi_{\mathrm{coh}}$ is unital, and its only fixed point is $I/7$.
-
----
-
+At $P=0.4$, $R=5/14$, $k=9/14$. Choosing $\alpha=2/7$ gives off-diagonal attenuation $kc=15/98\approx0.1531$ for the uniform-anchor model. This is a calculation conditional on the chosen $\alpha$, not an optimum derived from purity. Its iterated limit remains $I/7$.
 ## Why an isolated holon needs a non-unital self-model: the self-registering form φ_s {#phi-s}
 
-The canonical $\varphi_{\mathrm{coh}}$ preserves coherences, and that is necessary for life ([Fano channel, Theorem 9.1](/docs/proofs/gap/fano-channel#необходимость-phi-coh)); it is not sufficient. Its anchor $I/7$ makes it unital, and a unital self-model cannot raise purity: an isolated holon regenerating toward $\varphi_{\mathrm{coh}}(\Gamma)$ dies whatever $\kappa$ is ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция) [T]).
+The canonical $\varphi_{\mathrm{coh}}$ preserves coherences, which is insufficient for an integrated viable target. Coherences are necessary for the integrated predicate $\Phi\geq1$, not for purity alone. Its anchor $I/7$ makes it unital, and a unital self-model cannot raise purity: an isolated holon regenerating toward $\varphi_{\mathrm{coh}}(\Gamma)$ dies whatever $\kappa$ is ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция) [T]).
 
 :::tip Theorem (Symmetric linear self-models are unital) [T]
 A linear CPTP self-model covariant under $G_2$, or under the frame group $\Gamma_{\mathrm{oct}}$, is unital. So is $\varphi_{\mathrm{coh}}$ for every $\alpha$ and $k$.
 :::
+
+Here the first assertion concerns linear channels; the second concerns each frozen realization of the nonlinear $M_{\mathrm{coh}}$.
 
 *Proof.* $\Phi(I)$ commutes with an irreducible representation, so it is a multiple of $I$ (Schur), equal to $I$ by trace preservation; $G_2$ and $\Gamma_{\mathrm{oct}}$ act irreducibly on $\mathbb{C}^7$ ([evolution, dead isolation, item 3](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)). $\blacksquare$
 
@@ -364,7 +249,7 @@ Let $\sigma$ send states to states with $\sigma(U\Gamma U^\dagger) = U\sigma(\Ga
 
 *Proof.* The unitaries $U = \sum_i e^{i\theta_i}|i\rangle\langle i|$ fix $\Gamma$, so $U\sigma(\Gamma)U^\dagger = \sigma(\Gamma)$ for all phases $\theta_i$, which forces $\sigma(\Gamma)$ to be diagonal in $\{|i\rangle\}$. The overlap is then $\sum_i\lambda_i s_i$. For $s_i \propto \lambda_i^2$ the inequality $\sum_i\lambda_i^3 \geq (\sum_i\lambda_i^2)^2$ is Chebyshev's sum inequality with the weights $\lambda_i$. $\blacksquare$
 
-The weights $s \propto \lambda^q$ order the intrinsic anchors: $q = 0$ is the canonical $I/7$, $q = 1$ is the state itself, and both are dead by the theorem of dead isolation; $q = 2$ is the lowest degree that sharpens. At $q \to \infty$ the anchor becomes the projector onto the top eigenvector of $\Gamma$ — the minimiser, over CPTP channels, of the cross-entropy $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$ of the [retracted variational principle](/docs/proofs/dynamics/fep-derivation) — which is discontinuous where the top eigenvalue is degenerate.
+The weights $s \propto \lambda^q$ order the intrinsic anchors: $q=0$ is defined separately as $I/7$ (including at rank-deficient states), $q = 1$ is the state itself, and both are dead by the theorem of dead isolation; $q = 2$ is the lowest integer exponent greater than one; all real $q>1$ sharpen a nonflat spectrum. At $q \to \infty$ the anchor becomes the normalized projector onto the top eigenspace of $\Gamma$ (rank one only for a nondegenerate largest eigenvalue) — the minimiser, over CPTP channels, of the cross-entropy $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$ of the [retracted variational principle](/docs/proofs/dynamics/fep-derivation) — which is discontinuous where the top eigenvalue is degenerate.
 
 **Definition [D] (self-registering self-model).**
 
@@ -372,7 +257,7 @@ $$
 \varphi_s(\Gamma) = k\,\mathcal{P}_\alpha(\Gamma) + R\,\frac{\Gamma^2}{\mathrm{Tr}\,\Gamma^2}, \qquad R = \frac{1}{7P},\quad k = 1 - R .
 $$
 
-The anchor $\Gamma^2/\mathrm{Tr}\,\Gamma^2 = \sqrt{\Gamma}\,\Gamma\,\sqrt{\Gamma}/\mathrm{Tr}(\Gamma^2)$ is the Lüders update of $\Gamma$ on the effect $\Gamma$: the state the holon is left in after registering its own state, the one effect it has without an outside reference. It is smooth on all states ($\mathrm{Tr}\,\Gamma^2 \geq 1/7$) and differs from $\varphi_{\mathrm{coh}}$ only in the anchor. With it an isolated holon has at least seven self-sustaining attractors with $P > 2/7$ ([evolution](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор) [T]); at $H = 0$ they are the basis states, where $\varphi_s(e_m) = e_m$ — exact self-knowledge. That the self-model of a physical holon is $\varphi_s$ rather than $\varphi_{\mathrm{coh}}$ is not derived from the axioms [Pr]; that it must be non-unital for an isolated holon to live is [T].
+The anchor $\Gamma^2/\mathrm{Tr}\,\Gamma^2 = \sqrt{\Gamma}\,\Gamma\,\sqrt{\Gamma}/\mathrm{Tr}(\Gamma^2)$ is the Lüders update of $\Gamma$ on the effect $\Gamma$: a formal state-dependent conditional update. Interpreting it as physical self-registration requires a controller/readout premise [I]/[H]; a fixed instrument cannot access an arbitrary unknown $\Gamma$ as its own effect automatically. It is smooth on all states ($\mathrm{Tr}\,\Gamma^2 \geq 1/7$) and differs from $\varphi_{\mathrm{coh}}$ only in the anchor. With it an isolated holon has at least seven self-sustaining attractors with $P > 2/7$ ([evolution](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор) [T]); at $H = 0$ they are the basis projectors, where $\varphi_s(|e_m\rangle\langle e_m|)=|e_m\rangle\langle e_m|$. Interpreting this equality as self-knowledge is [I]. That the self-model of a physical holon is $\varphi_s$ rather than $\varphi_{\mathrm{coh}}$ is not derived from the axioms [Pr]; that it must be non-unital for an isolated holon to live is [T].
 
 ## What the axioms fix about the anchor, and the collineation anchor φ_J {#phi-j}
 
@@ -387,7 +272,7 @@ Let a self-model have the replacement form $\varphi(\Gamma) = k\,\mathcal{P}_\al
 
 *Proof.* $\mathcal{P}_\alpha$ is covariant under each of these groups (they map Fano lines to lines, and $\mathcal{P}_{\mathrm{base}}$ commutes with monomial unitaries), so covariance of $\varphi$ is $M\rho_aM^\dagger = \rho_a$ for every $M$ of the group, i.e. $\rho_a$ lies in the commutant. For $G_2$ and $\Gamma_{\mathrm{oct}}$ the commutant is $\mathbb{C}I$ ([dead isolation, item 3](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)); for the monomial group the diagonal phases force $\rho_a$ diagonal and the 2-transitive permutations force its diagonal constant. The 168 collineations act 2-transitively on the points, so the permutation representation has two orbits on pairs of indices — equal and distinct — and its commutant is spanned by $I$ and $J$ ($J/7 = uu^\dagger$). The eigenvalues of $(1 - t)I/7 + t\,uu^\dagger$ are $(1 + 6t)/7$ and $(1 - t)/7$, which gives $t \in [-1/6, 1]$. $\blacksquare$
 
-**What the adjunction leaves open.** The self-modelling adjunction $\varphi \dashv i$ and the terminal object make $\varphi$ a CPTP left adjoint; they do not fix its anchor — every anchor above yields a CPTP channel of the same form, and so does every intrinsic anchor, including the Lüders update $\Gamma^2/\mathrm{Tr}\,\Gamma^2$ of $\varphi_s$. Four further routes from the categorical side leave the anchor open or kill the holon [T]. The state the terminal object supplies — the dual of the unique discarding map — is $I/7$, dead. Lawvere's fixed-point theorem, like Brouwer's, gives a fixed point of $\varphi$ but says nothing about the anchor. A reflexive anchor, equal to the fixed point of the self-model it defines ($\rho_a = k\mathcal{P}_\alpha(\rho_a) + R\rho_a$), satisfies $\mathcal{P}_\alpha(\rho_a) = \rho_a$, so it is diagonal: phase-covariant, hence outside $\mathcal{V}_{\mathrm{full}}$ near $H = 0$ by the obstruction. And keeping as much of the frame group as possible — a maximal subgroup of $\Gamma_{\mathrm{oct}}$ — also fixes only diagonal anchors: $\Gamma_{\mathrm{oct}} = 2^3{\cdot}\mathrm{GL}(3,2)$ is a non-split extension (Gaschütz: its Sylow 2-subgroup of order 64 has no complement to the sign group $N$), $N$ is an irreducible $\mathrm{GL}(3,2)$-module, so every maximal subgroup contains $N$, and the commutant of $N$ is the diagonal.
+**What categorical structure leaves open.** The support adjunction lives in a topos slice and derives no numerical anchor, CPTP feedback law or rate. In the category of quantum channels the terminal system is one-dimensional; the unique discard map does not pick a unique preparation of a seven-dimensional state. The reference $I/7$ follows instead from maximum entropy or irreducible covariance, if imposed. Lawvere's fixed-point theorem requires its own point-surjectivity hypothesis; Brouwer supplies existence for continuous state maps, not a preferred anchor. The numerical law and its frozen channel compilation are specified separately. See [typed formalization](/docs/proofs/categorical/formalization-phi#категориальное-определение-φ).
 
 What does fix the anchor is the frame group read at the level where it is compatible with life.
 
@@ -401,7 +286,7 @@ Let the self-model have the replacement form $\varphi(\Gamma) = k\,\mathcal{P}_\
 3. **Most viable = most informative.** Hence among anchors that privilege no axis the one whose living range of $\kappa$ contains every other one's is a pure state with uniform diagonal, $\rho_a = D\,uu^\dagger D^\dagger$ with $D$ a diagonal unitary, $u = (1, \dots, 1)/\sqrt7$. Maximal viability and maximal information (purity) select the same anchor.
 4. **Gauge.** Diagonal unitaries commute with $\mathcal{D}_\Omega$ and $\mathcal{P}_\alpha$ and leave $P$, $R$, $g_V$ invariant, so conjugation by $D$ carries the dynamics with anchor $uu^\dagger$ and Hamiltonian $D^\dagger H D$ onto that with anchor $D\,uu^\dagger D^\dagger$ and $H$. At $H = 0$ the anchors $D\,uu^\dagger D^\dagger$ give conjugate flows; $\varphi_J$ is unique up to this gauge of the $H$-free dynamics (and the weight $\alpha$).
 5. **Symmetry.** $uu^\dagger$ is fixed by all $5040$ permutation matrices, and the $H$-free dynamics is covariant under all of them (every pair of axes lies on exactly one Fano line, so $\mathcal{D}_\Omega$ and $\mathcal{P}_\alpha$ treat all pairs alike — [Fano channel, Theorem 11.1](/docs/proofs/gap/fano-channel#s7-эквивариантность)). Of the 168 collineations acting as permutations only 21 (the group $7{:}3$) lie in $\Gamma_{\mathrm{oct}}$; the whole $\Gamma_{\mathrm{oct}}$ moves $uu^\dagger$ over its 64 sign rephasings $D\,uu^\dagger D$, $D = \mathrm{diag}(\pm1)$. The states whose $\Gamma_{\mathrm{oct}}$-orbit stays inside their gauge orbit are exactly $D\bigl((1-t)I/7 + t\,uu^\dagger\bigr)D^\dagger$, $t \in [-1/6, 1]$.
-6. **One clause.** The following are equivalent: (Eq-V) below; $\rho_a = D\,uu^\dagger D^\dagger$ for a diagonal unitary $D$; the anchor has the largest integration of any state, $\Phi(\rho_a) = P_{\mathrm{coh}}/P_{\mathrm{diag}} = 6$; it is maximally coherent in the frame, $C_{\mathrm{rel}}(\rho_a) = S(\mathrm{diag}\,\rho_a) - S(\rho_a) = \log 7$; its coherent purity is $s = 6/7$. Neither half of (Eq-V) suffices alone: (Eq) leaves every anchor with uniform diagonal, and viability alone, over all constant anchors, does not pick $\varphi_J$ — anchors with non-uniform diagonal come arbitrarily close to the $H = 0$ rate floor of [T-336](/docs/core/dynamics/evolution#t-336), $1.25$–$1.27$ times below $\kappa_c(\alpha)$, and reach it only in the limit where their attractor tends to $\Phi = 1$. (Eq) is the terminal object read on the axes: $\mathrm{diag}\,\rho_a = I/7$ says that the atomic reading $\mathcal{P}_{\mathrm{base}}(\rho_a)$ of the anchor is the state the terminal object supplies.
+6. **One clause.** The following are equivalent: (Eq-V) below; $\rho_a = D\,uu^\dagger D^\dagger$ for a diagonal unitary $D$; the anchor has the largest integration of any state, $\Phi(\rho_a) = P_{\mathrm{coh}}/P_{\mathrm{diag}} = 6$; it is maximally coherent in the frame, $C_{\mathrm{rel}}(\rho_a) = S(\mathrm{diag}\,\rho_a) - S(\rho_a) = \log 7$; its coherent purity is $s = 6/7$. Neither half of (Eq-V) suffices alone: (Eq) leaves every anchor with uniform diagonal, and viability alone, over all constant anchors, does not pick $\varphi_J$ — anchors with non-uniform diagonal come arbitrarily close to the $H = 0$ rate floor of [T-336](/docs/core/dynamics/evolution#t-336), $1.25$–$1.27$ times below $\kappa_c(\alpha)$, and reach it only in the limit where their attractor tends to $\Phi = 1$. (Eq) is the chosen uniform atomic-readout constraint $\mathrm{diag}\,\rho_a=I/7$, not a consequence of terminality.
 :::
 
 *Proof.* (1) Covariance of $\varphi$ puts $\rho_a$ in the commutant $\mathbb{C}I$ (theorem above). $\mathcal{P}_\alpha \circ \varphi = k\,\mathcal{P}_\alpha^2 + R\,\mathcal{P}_\alpha(\rho_a)$ is covariant iff $\mathcal{P}_\alpha(\rho_a)$ is $\Gamma_{\mathrm{oct}}$-invariant, i.e. $\mathcal{P}_\alpha(\rho_a) = I/7$; $\mathcal{P}_\alpha$ keeps the diagonal and multiplies coherences by $c \neq 0$, so $\rho_a = I/7$. $\mathcal{P}_{\mathrm{base}} \circ \varphi = k\,\mathcal{P}_{\mathrm{base}} + R\,\mathrm{diag}\,\rho_a$: signs act trivially on diagonals and the permutation part is transitive on the axes, so covariance is $\mathrm{diag}\,\rho_a = I/7$. The diagonal of the stationarity equation is $\kappa g_V R\,(\mathrm{diag}\,\rho_a - \mathrm{diag}\,\Gamma) = 0$ ([T-335](/docs/core/dynamics/evolution#t-335)). (2) By T-335 the stationary states with $P > 2/7$ are $(1 - \eta)I/7 + \eta\rho_a$ with $P = 1/7 + \eta^2 s$, and every coherence obeys the same scalar equation; with $\xi = \eta t$ it is the equation $\kappa Q_t(\xi) = 2/3$ of the family, $Q_t(\xi) = (6\xi^2 - 1)\bigl[(t - c\xi)/(\xi(1 + 6\xi^2)) - (1 - c)\bigr]$. $Q_t$ grows strictly with $t$ at each $\xi > 1/\sqrt6$, so $\max Q_t$ grows and $\kappa_c = 2/(3\max Q_t)$ falls; the threshold $t > (2 - c)/\sqrt6$ is the one of the [living attractor theorem](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне), i.e. $s > (2-c)^2/7$. The upper edge $P \le 3/7$ and $\Phi = 7P - 1 \ge 1$ hold as there. (3) $s \le 6/7$ with equality iff $\rho_a$ is pure; a pure state $\psi\psi^\dagger$ with $|\psi_k|^2 = 1/7$ is $D\,uu^\dagger D^\dagger$. (4) Direct. (5) $u$ is fixed by every permutation matrix. The rest is a finite check (`test_frame_covariance_modulo_gauge_fixes_the_collineation_anchor`) plus the following argument. A Hermitian matrix with all off-diagonal moduli nonzero is fixed up to diagonal gauge by its diagonal, the moduli $|\rho_{ij}|$ and the triangle fluxes $\arg(\rho_{ij}\rho_{jk}\rho_{ki})$, and signs in $\Gamma_{\mathrm{oct}}$ do not change these. $\mathrm{GL}(3,2)$ is 2-transitive on points, so the diagonal and the moduli are constant; it is transitive on lines and on ordered non-collinear triples, and contains elements reversing the orientation of a triangle of each kind, so each kind carries one flux $f_L$ or $f_N$ in $\{0, \pi\}$. Four points containing a line bound a tetrahedron with one collinear and three non-collinear faces, so $f_L = f_N$ (enumeration of all $2^{15}$ gauge classes of signings of $K_7$ gives exactly the two patterns). Flux $0$ is $t > 0$, flux $\pi$ is $t \lt 0$; if some modulus vanishes all do, $t = 0$. (6) (Eq-V) $\Leftrightarrow$ $\rho_a = D\,uu^\dagger D^\dagger$ is items 1–3: uniform diagonal is (Eq), and among such anchors $\kappa_c(s)$ decreases strictly in $s \leq 6/7$, with equality only for a pure anchor. $\Phi = s/P_{\mathrm{diag}}$ with $s = P - P_{\mathrm{diag}} \leq 1 - P_{\mathrm{diag}}$ and $P_{\mathrm{diag}} \geq 1/7$, so $\Phi \leq 6$, with equality iff $P = 1$ and $P_{\mathrm{diag}} = 1/7$; $S(\mathrm{diag}\,\rho) \leq \log 7$ with equality iff the diagonal is uniform, and $S(\rho) \geq 0$ with equality iff $\rho$ is pure (T. Baumgratz, M. Cramer, M. B. Plenio, "Quantifying coherence", *Phys. Rev. Lett.* **113**, 140401 (2014)). Anchors with uniform diagonal need $\kappa > \kappa_c(\alpha)$ by items 2–3, so those approaching the floor have non-uniform diagonal; the ratios are $16.63/13.11$, $29.25/23.21$, $59.34/47.35$ at $\alpha = 0, 1/2, 1$ (`test_one_clause_principle_for_the_anchor_is_maximal_integration`). $\blacksquare$
@@ -422,143 +307,24 @@ unique up to the Fano weight $\alpha$. With it an isolated holon at $H = 0$ has,
 
 - **(MaxΦ)** the anchor of the self-model is a state of maximal integration, $\Phi(\rho_a) = 6$ [Pr].
 
-It mentions neither viability nor the frame group and yields both: an anchor of maximal integration has uniform diagonal, so it privileges no axis (item 1), and it is pure, so it is the most viable among such anchors (items 2–3). Routes tried to derive it, none sufficient: covariance of the anchor's gauge class under the symmetry group of the dynamics it regulates — Curie's principle for an isolated holon, with $S_7$ or with $\Gamma_{\mathrm{oct}}$ — gives the family $D\bigl((1-t)I/7 + t\,uu^\dagger\bigr)D^\dagger$ (item 5) but not $t = 1$; the terminal object gives the atomic half, $\mathrm{diag}\,\rho_a = I/7$, and nothing about purity; Lawvere's and Brouwer's theorems give fixed points, not anchors; viability alone does not pick $\varphi_J$ (item 6); the largest integration of the living attractor, rather than of the anchor, fails in a band — the attractor of a constant anchor at $H = 0$ depends only on $d = \sum_i(\rho_a)_{ii}^2$ and $s = P(\rho_a) - d$, its integration $\eta^2 s/d$ grows with $s$ at fixed $d$, so the maximiser is pure, but for $\kappa_c(\alpha) < \kappa < \kappa_* \approx 1.012\,\kappa_c(\alpha)$ a pure anchor with slightly non-uniform diagonal beats $uu^\dagger$ ($\alpha = 0$, $\kappa = 16.8$: $d = 1/7 + 10^{-4}$ gives $\Phi_{\mathrm{att}} = 1.25155$ against $1.25148$), above the band $uu^\dagger$ wins on the tested grid [H as a global statement], and below $\kappa_c$ only non-uniform anchors live, so there the principle contradicts (MaxΦ) ([premises, §7](/docs/reference/premises#максфи-и-вариационные-принципы); `test_anchor_principle_is_independent_and_attractor_integration_does_not_replace_it`). The two halves of (MaxΦ) are independent [T]: a pure anchor with non-uniform diagonal (amplitudes $1 \pm 0.3$, a sink at $\kappa = 50$, T-335) satisfies (Pure) and not (Eq), and $(1-t)I/7 + t\,uu^\dagger$ with $t = 0.9$ satisfies (Eq) and not (Pure) while holding a living sink in the window at $\alpha = \tfrac12$, $\kappa = 100$; so neither half follows from the other, and a derivation of (MaxΦ) has to supply both. (MaxΦ) is the smallest form of the principle found.
+It mentions neither viability nor the frame group and yields both: an anchor of maximal integration has uniform diagonal, so it privileges no axis (item 1), and it is pure, so it is the most viable among such anchors (items 2–3). Routes tried to derive it, none sufficient: covariance of the anchor's gauge class under the symmetry group of the dynamics it regulates — Curie's principle for an isolated holon, with $S_7$ or with $\Gamma_{\mathrm{oct}}$ — gives the family $D\bigl((1-t)I/7 + t\,uu^\dagger\bigr)D^\dagger$ (item 5) but not $t = 1$; uniform atomic readout gives the atomic half, $\mathrm{diag}\,\rho_a=I/7$, as a premise and says nothing about purity; Brouwer's theorem gives fixed points, not anchors; Lawvere additionally requires its point-surjectivity hypothesis; viability alone does not pick $\varphi_J$ (item 6); the largest integration of the living attractor, rather than of the anchor, fails in a band — the attractor of a constant anchor at $H = 0$ depends only on $d = \sum_i(\rho_a)_{ii}^2$ and $s = P(\rho_a) - d$, its integration $\eta^2 s/d$ grows with $s$ at fixed $d$, so the maximiser is pure, but for $\kappa_c(\alpha) < \kappa < \kappa_* \approx 1.012\,\kappa_c(\alpha)$ a pure anchor with slightly non-uniform diagonal beats $uu^\dagger$ ($\alpha = 0$, $\kappa = 16.8$: $d = 1/7 + 10^{-4}$ gives $\Phi_{\mathrm{att}} = 1.25155$ against $1.25148$), above the band $uu^\dagger$ wins on the tested grid [H as a global statement], and below $\kappa_c$ only non-uniform anchors live, so there the principle contradicts (MaxΦ) ([premises, §7](/docs/reference/premises#максфи-и-вариационные-принципы); `test_anchor_principle_is_independent_and_attractor_integration_does_not_replace_it`). The two halves of (MaxΦ) are independent [T]: a pure anchor with non-uniform diagonal (amplitudes $1 \pm 0.3$, a sink at $\kappa = 50$, T-335) satisfies (Pure) and not (Eq), and $(1-t)I/7 + t\,uu^\dagger$ with $t = 0.9$ satisfies (Eq) and not (Pure) while holding a living sink in the window at $\alpha = \tfrac12$, $\kappa = 100$; so neither half follows from the other, and a derivation of (MaxΦ) has to supply both. (MaxΦ) is the smallest form of the principle found.
 
 ---
+## Unified numerical statement {#единая-теорема-самонаблюдения}
 
-## Unified theorem of self-observation {#единая-теорема-самонаблюдения}
+For a **chosen** $\alpha$ and anchor law, the Fano/atomic formula defines a continuous state-preserving $M$ [D]; the frozen realization is CPTP [T]. The uniform-anchor version attenuates off-diagonal entries by $kc$ and retains their phase only when the output is nonzero. Its only fixed point is $I/7$. The distinct $M_s$ and $M_J$ laws have the separate dynamical results stated above. The (MaxΦ) premise selecting $M_J$ remains [Pr]. No derivation of $\alpha$ or the physical anchor follows from categorical support.
 
-:::tip Theorem: Fano-coherent self-modelling (unified theorem)
-The canonical coherence-preserving self-modelling for UHM is determined up to the Fano weight $\alpha$ (the variational value of item (b) is retracted; the compression parameter $k = 1 - R$ is defined by the [reflexion measure](/docs/consciousness/foundations/self-observation#теорема-k-из-r) [T]) through:
+A stationary phase-offset formula for a coherence driven by a **fixed external target** cannot be reused after setting that target phase equal to the evolving input phase. That substitution changes the differential equation into phase-aligned damping. For uniform-anchor $M_{\mathrm{coh}}$, the regenerative contribution to an off-diagonal element is a real negative scalar times that element; it introduces no independent phase drive. The former universal stationary-Gap formula after this substitution is withdrawn [✗]. Stationary coherences for nonunital anchors must be solved from their actual feedback equation.
 
-**(a)** **Algebraic structure:** The [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$ defines the composite atoms of the classifier $\Omega$, generating the Fano [Lindblad operators](/docs/core/operators/lindblad-operators) $L_p^{\text{Fano}}$.
+## Distinct constructions and the withdrawn links {#три-определения}
 
-**(b)** ~~**Variational principle:** The balance between atomic and Fano observation $\alpha^*$ minimises the functional $\mathcal{F} = S_{\text{spec}} + D_{KL}$.~~ **Retracted 2026-09-25 [✗]:** that functional is minimised at $\alpha = 0$; the weight $\alpha$ is a free parameter.
-
-**(c)** **Phase properties:** The canonical $\varphi_{\text{coh}}$ **preserves** the phases of coherences. The target Gap coincides with the current Gap.
-
-**(d)** **Symmetry (corrected):** $G_2$ is broken at every $\alpha$, by the Fano and the atomic components alike: $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3}\,\Delta_{\max} \geq \tfrac23\Delta_{\max}$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)). The earlier reading — "the Fano dissipator is G₂-covariant; the atomic one is not", with $\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}$ — was retracted on 2026-09-10.
-
-**(e)** **Stationary Gap:** upon substitution $\theta_{ij}^{\text{target}} = \theta_{ij}$:
-
-$$
-\mathrm{Gap}^{(\infty)}(i,j) = \left|\sin\left(\theta_{ij} - \arctan\frac{\Delta\omega_{ij}}{\Gamma_2 + \kappa}\right)\right|
-$$
-
-The stationary Gap is **shifted** relative to the current one by the angle $\arctan(\Delta\omega/(\Gamma_2 + \kappa))$ due to unitary rotation.
-
-[Proofs →](/docs/proofs/gap/fano-channel) | Status: **[T]** for (a), (c), (e) and the corrected (d); (b) retracted [✗]
-:::
-
----
-
-## Three definitions of φ and their equivalence {#три-определения}
-
-In the documentation φ appears in three forms. They were presented as a chain, each a **consequence** of the previous; the variational form (2) and both links through it are **retracted** (2026-09-25): the functional of (2) is minimised by a projection onto the top eigenvector of $\Gamma$, which is neither the categorical φ nor the replacement channel. Forms (1) and (3) stand on their own pages.
-
-### Three forms
-
-| # | Name | Formula | Location |
-|---|------|---------|----------|
-| 1 | **Categorical φ** | $\varphi \dashv i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ | [Axiom Ω⁷](/docs/core/foundations/axiom-omega), [FEP derivation](/docs/proofs/dynamics/fep-derivation#2-категориальные-основы) |
-| 2 | **Variational φ** — retracted 2026-09-25 [✗] | $\varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_\Gamma[S_{\mathrm{spec}}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$ | [Theorem 3.1, FEP derivation](/docs/proofs/dynamics/fep-derivation#32-центральная-теорема) |
-| 3 | **Replacement φ_k** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*_{\mathrm{diss}},\ k = 1 - R$ | [Self-observation](/docs/consciousness/foundations/self-observation#физическая-реализация-phi) |
-
-### Connection (1) ↔ (2): Theorem 3.1
-
-:::tip Theorem 3.1 (Variational characterisation) — retracted 2026-09-25 [✗]
-The categorically defined $\varphi$ (as the left adjoint to the inclusion $i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathcal{E}$) **coincides** with the minimiser of the variational functional:
-
-$$
-\varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_{\Gamma \sim \mu}\left[S_{\mathrm{spec}}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)\right]
-$$
-
-The invariant measure $\mu$ is unique by the primitivity of the linear part $\mathcal{L}_0$ [T-39a].
-[Full proof →](/docs/proofs/dynamics/fep-derivation#32-центральная-теорема) | Status: retracted [✗] — the functional is the cross-entropy $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$, minimised by a projection onto the top eigenvector of $\Gamma$
-:::
-
-~~Thus: the variational principle is **not an axiom**, but a **theorem** about the categorically defined φ.~~ Retracted with Theorem 3.1: there is no variational principle for φ in the corpus.
-
-### Connection (2) ↔ (3): the replacement channel as a minimiser
-
-:::tip Theorem (Replacement channel as CPTP-minimiser) — retracted 2026-09-25 [✗]
-The minimiser of the functional $\mathcal{F}[\psi; \Gamma] = S_{\mathrm{spec}}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)$ over the class of CPTP channels on $\mathcal{D}(\mathbb{C}^7)$ is the replacement channel
-
-$$
-\varphi_k(\Gamma) = (1 - k)\,\Gamma + k\,\rho^*_{\mathrm{diss}}, \qquad k = 1 - R
-$$
-
-**Key proof steps.**
-1. **Convexity:** $\mathcal{F}[\psi; \Gamma]$ is a strictly convex functional on the convex compact $\mathcal{CPTP}$ — the minimiser exists and is unique.
-2. **Form of the minimiser:** From the stationarity conditions (variation over $\psi$ under the CPTP constraint) the minimiser takes the form of a convex combination of $\mathrm{Id}$ and the constant channel $\mathcal{C}_{\rho^*}$, i.e. $\psi^*(\Gamma) = (1-k)\Gamma + k\rho^*$.
-3. **Value of $k$:** From the Banach principle (contracting mapping with constant $(1-k) < 1$) and the consistency condition with the reflexion measure: $k = 1 - R = 1 - 1/(7P)$.
-
-[Proof of physical realisation →](/docs/consciousness/foundations/self-observation#физическая-реализация-phi) | [Parameter k from reflexion →](/docs/consciousness/foundations/self-observation#теорема-k-из-r) | Status: retracted [✗]
-
-**Why retracted.** Step 1 is false: $\mathcal{F}[\psi;\Gamma] = -\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$ is linear in $\psi$, not strictly convex, and its minimum $-\log\lambda_{\max}(\Gamma)$ is reached by the channel onto the top eigenvector of $\Gamma$. The replacement channel $\varphi_k$ stays a well-defined CPTP channel with its own properties ([self-observation](/docs/consciousness/foundations/self-observation#физическая-реализация-phi)); it is not a minimiser of $\mathcal{F}$ — on 300 random states it lay above the minimum in all 300.
-:::
-
-### Unified chain: φ_cat → φ_var → φ_k
-
-```
-φ_cat (categorical)
-   — left adjoint to i: Sub(Γ) ↪ Sh_∞(C)
-   — defined axiomatically through the structure of the ∞-topos
-         |
-         | Theorem 3.1 — retracted ✗
-         ↓
-φ_var (variational)
-   — argmin [S_spec + D_KL] over all CPTP channels
-   — variational principle as a CONSEQUENCE, not an axiom
-         |
-         | convexity + Banach principle — retracted ✗
-         ↓
-φ_k (replacement)
-   — φ_k(Γ) = (1−k)Γ + k·ρ*_diss,  k = 1−R
-   — explicit, computable form for D(ℂ⁷)
-```
-
-### Absence of circularity
-
-:::info Resolution of circularity
-The definition of φ **contains no vicious circle**. The derivation order is strictly linear:
-
-1. **$\rho^*_{\mathrm{diss}} = I/7$** is determined from the primitivity of the linear part $\mathcal{L}_0$ [T-39a] — this is a property of the **dynamics**, independent of φ.
-2. **$R(\Gamma) = 1/(7P(\Gamma))$** is determined only by the current state $\Gamma$ and the constant $\rho^*_{\mathrm{diss}} = I/7$ — not through $\varphi$.
-3. **$k = 1 - R$** is a function of the state $\Gamma$, not a free parameter.
-4. **$\varphi_k(\Gamma)$** is fully determined through $\Gamma$, $\rho^*_{\mathrm{diss}}$, and $k$ without self-reference.
-
-```mermaid
-graph TD
-    A["Level 0: Axiom Ω⁷"]
-    B["Level 1: ℒ₀ primitive → ρ*_diss = I/7"]
-    C["Level 2: Current Γ → R = 1/(7P)"]
-    D["Level 3: k = 1 − R"]
-    E["Level 4: φ_k(Γ) = (1−k)Γ + k·I/7"]
-    A --> B
-    B --> C
-    C --> D
-    D --> E
-    style A fill:#e8f5e9
-    style B fill:#e3f2fd
-    style C fill:#fff3e0
-    style D fill:#fff3e0
-    style E fill:#fce4ec
-```
-
-Each level depends **only on the previous ones** — a closed directed acyclic graph (DAG).
-
-The apparent "circularity" (φ defines $\rho^*$, and $\rho^*$ enters φ) is resolved by splitting: $\rho^*_{\mathrm{diss}} = I/7$ is the **dissipative** attractor of the linear part $\mathcal{L}_0$, whereas φ is the **nonlinear** regeneration operator. They reside at different levels of the hierarchy [D] (see [attractor hierarchy](/docs/consciousness/foundations/self-observation#иерархия-аттракторов)).
-:::
-
----
+The categorical support reflector $L_G$, finite-step numerical $M$, and fixed-parameter replacement channel remain well-defined on their respective domains. Their unconditional equivalence and the variational links through $S+D$ are withdrawn. For full-rank input the latter functional is cross-entropy; its minimizing output is supported on the top eigenspace, generally different from the feedback targets above. The three-map table also distinguishes opposite conventions for the symbol $k$; every formula must declare which weight multiplies the current state and which multiplies the anchor.
 
 ## Connections
 
-- **Derived from:** [Axiom Ω⁷](/docs/core/foundations/axiom-omega) → $\mathcal{L}_\Omega$ → $\varphi$
-- **Fano channel:** [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) → $\Pi_p$ → $\mathcal{P}_{\text{Fano}}$
-- **Used in:** [Self-observation](/docs/consciousness/foundations/self-observation), [Evolution](/docs/core/dynamics/evolution), [Gap dynamics](/docs/core/dynamics/gap-dynamics)
-- **Full formalisation:** [Formalisation of the φ operator](/docs/proofs/categorical/formalization-phi)
-- **Proofs of Fano theorems:** [Fano channel and Gap theorems](/docs/proofs/gap/fano-channel)
-- **Variational characterisation (retracted 2026-09-25):** [FEP derivation from UHM](/docs/proofs/dynamics/fep-derivation)
-- **G₂ structure:** [G₂ = Aut(O)](/docs/physics/gauge-symmetry/g2-structure) — the Fano dissipator is covariant only under the frame group $\Gamma_{\!\text{oct}}$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность))
+- [Typed mathematical kernel](/docs/reference/mathematical-kernel): state geometry, process category and topos realization.
+- [Formalization of φ](/docs/proofs/categorical/formalization-phi): exact slice adjunction, frozen channels, conditional limits and derivative bounds.
+- [Evolution](/docs/core/dynamics/evolution): full vector field and actual equilibrium stability.
+- [Self-observation](/docs/consciousness/foundations/self-observation): canonical $R$ versus self-model mismatch $R_\varphi$.
+- [Fano channel](/docs/proofs/gap/fano-channel): filter geometry and its symmetry restrictions.
+- [FEP derivation](/docs/proofs/dynamics/fep-derivation): withdrawn variational identification.

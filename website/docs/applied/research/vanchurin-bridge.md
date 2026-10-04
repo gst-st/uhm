@@ -78,6 +78,10 @@ together with the sample size it needs.
 
 ---
 
+:::note Scope of the comparison
+The identities below concern the explicitly selected dissipator, Kraus instrument, coordinates and metric. Their derivation does not prove a unique learning law for physical holons or biology. Replacing a Kraus resolution can change increment statistics while leaving the quantum channel unchanged; the instrument is part of the observation model. Frozen-target gradient statements and state-dependent feedback are distinguished in the revised T-261–T-263. The declared physical bridge is independently testable.
+:::
+
 ## 1. The two frameworks and their dictionary {#словарь}
 
 Vanchurin's covariant learning framework (henceforth **VL**) is built
@@ -90,9 +94,7 @@ $\dot q = g^{-1}\nabla\mathcal F$ (his 6.3). The learning algorithm is
 
 UHM is built on five axioms: reality as an $\infty$-topos over density
 matrices, the **Bures** Grothendieck topology, dimension $N=7$, a scale
-$\omega_0$, and a Page–Wootters decomposition (its clock register
-constructed, its constraint assumed — T-87, [C] for the link). Its dynamics is the **triad** forced by LGKS-completeness
-(T-57):
+$\omega_0$, and a specified Page–Wootters clock extension and constraint. Its dynamics is a **chosen three-group model** [D]; the former completeness claim T-57 is withdrawn:
 
 $$
 \mathcal L_\Omega[\Gamma] = \underbrace{-i[H,\Gamma]}_{\text{Aut}}
@@ -106,9 +108,9 @@ The dictionary is exact on every line that matters:
 |---|---|---|
 | trainable state $q$ | coherence matrix $\Gamma\in\mathcal D(\mathbb C^7)$ | structural |
 | loss $-\mathcal F$ | free-energy functional $\mathcal F[\varphi;\Gamma]$ | T-39e (variational $\varphi$) — retracted 2026-09-25: the functional is a cross-entropy and $\varphi$ is not its minimiser, so this row is a notational match only |
-| metric $g$ | **Bures/SLD metric** — *unique* monotone metric (Petz; T-187) | forced, not chosen |
+| metric $g$ | **Bures/SLD metric**, one member of the Petz family | selected metric [D], operational reading requires its bridge |
 | noise covariance $\kappa$ | covariance of one-step Kraus increments of $\mathcal D_\Omega$ | forced by T-41/T-59, **relative to the canonical Kraus resolution** (§7.2) |
-| covariant descent $\dot q=g^{-1}\nabla\mathcal F$ | regeneration $\mathcal R$ toward $\rho_*$ | T-39f–h |
+| covariant descent $\dot q=g^{-1}\nabla\mathcal F$ | regeneration $\mathcal R$ toward $\rho_*$ | replacement family [D]; universal uniqueness T-39f–h withdrawn |
 | emergent time = block index | $\tau\in\mathbb Z_7$ (Page–Wootters) | T-38b, T-87 |
 | maximum-entropy identity $g^{-1}=c$ (his 4.7) | **derived here as a dynamical theorem** (§4) | this page |
 | multi-level structure | fractal holon (a holon of holons); coherence contraction $c_F=1/3=1/\lvert\mathrm{QR}(7)\rvert$ per step of the Fano channel | CC-5 [T at weak coupling] for the holon of holons (Theorem 9.5: the canonical aggregate of weakly coupled viable holons is viable); $c_F$ is the [Fano channel's contraction](/docs/proofs/gap/fano-channel#state-independence-alpha) [T]. (Earlier credited to T-72 — scale invariance, which states neither; retracted) |
@@ -138,7 +140,6 @@ third-point screen quoted in §5) do require the canonical translate
 set of the corpus, $\{1,2,4\}+k \pmod 7$ with $U=6,\,O=7$ — see
 [selection rules](/docs/physics/gauge-symmetry/fano-selection-rules#каппа-по-подавленным).
 :::
-
 
 In the quantum-jump (unravelling) picture, during $dt$ a jump $e$ occurs
 with probability $p_e=\frac{\gamma\,dt}{N}\operatorname{Tr}
@@ -472,7 +473,6 @@ point is the least-sensitive outside axis in $\approx92\%$ of cases.
 Corpus statement and proof sketch:
 [the $\kappa_0$ suppression corollary](/docs/physics/gauge-symmetry/fano-selection-rules#каппа-по-подавленным);
 instrument `shadow_marks.py` alongside the reproduction script.
-
 
 ---
 
@@ -810,7 +810,7 @@ core.
 **UHM → VL.**
 
 1. *Determination of the free function.* $g(\kappa)$ is no longer a
-   modelling choice: $a=1$ with the exact constants above.
+   choice within the stated noise and metric model: $a=1$ with the constants computed above. Other admissible metric/noise models are not excluded.
 2. *Derivation of the maxent postulate's dynamical counterpart.* The
    relation $g^{-1}\propto\kappa^{\uparrow\uparrow}$ — his $a=1$
    condition (7.5), for him a modelling choice among three — is here a
@@ -819,26 +819,9 @@ core.
    granting that static identity as well, the two together give the
    sharp form $\kappa^{\uparrow\uparrow}=\frac{\gamma}{4N}c$, which
    relates a routinely measured object to an unmeasured one.
-3. *A preferred basis.* VL inherits einselection's open question ("why
-   this interaction?"); UHM fixes the basis as the atoms of the subobject
-   classifier, rigid up to $G_2=\operatorname{Aut}(\mathbb O)$ (T-42a),
-   with the seven directions functionally unique (7/7 minimality).
-4. *A forced network.* The "cellular network" that coordinates agents
-   is, at $N=7$ with complete pairwise coverage and optimal block size,
-   uniquely the Fano plane (T-41c, T-41i) — which is moreover the case
-   $r=k$ in which the block layer needs no renormalisation.
-5. *A ceiling on self-reference, and a second one on breadth.* The
-   $P_{\text{crit}}$ ladder across levels gives $\mathrm{SAD}_{\max}=3$:
-   a self-learning system cannot nest reflection indefinitely — a
-   structural limit absent from VL. A second bound runs the other way. A
-   holon types exactly $\binom{7}{2}=21$ non-overlapping channels, and a
-   node that coordinates others spends one on each, so no node addresses
-   more than $21$ subordinates. The two bounds multiply: one holarchy
-   reaches at most $21^{3}=9261$ addressed contexts
-   ([T-304](/docs/reference/status-registry)). This is not the dimension
-   count $\dim\mathrm{Cog}_n=7^{\,n+1}$ of §9 — that is how large a level's
-   state space is, this is how many situations it can tell apart — and
-   the distinction matters, because VL's networks scale without either.
+3. *A specified frame.* The seven axes and positive 3-form are declared inputs. They are not atoms of the subobject classifier. The old universal T-42a encoder rigidity is withdrawn; strong comparison requires (RI).
+4. *A conditional finite design.* Given attenuation $1/3$ and sharp minimal projector realisation, the Fano classification is exact. Primitivity alone does not force pair coverage or block size.
+5. *A selected attenuation score.* The SAD value three belongs to the specified score and damping rule. It is not a universal limit on recursive representations. Twenty-one matrix pairs are not twenty-one independent communication addresses: an address bound requires a defined instrument, channel use and distinguishability task. Multiplying these counts does not prove a context-capacity theorem.
 
 6. *A variable that must not be trainable.* VL's organising distinction
    is trainable against non-trainable, and it leaves open which is which
@@ -854,11 +837,7 @@ core.
    engineering reading is sharp and falsifiable in VL's own terms: the
    routing variable belongs on the *non-trainable* side, and a framework
    that trains it is paying for a freedom that costs more than it buys.
-7. *A reason why learning never completes.* Lawvere incompleteness
-   (T-55: $\mathrm{Th}_{\text{UHM}}\subsetneq\Omega$) implies a permanent
-   gap between the state and its self-model; in UHM this gap is the
-   source of a positive vacuum energy (T-71). A self-learning universe
-   is, provably, a universe that cannot finish learning itself.
+7. *Learning and predicate invariance.* T-55 proves properness only for a specified nonidentity map and separating predicates. It neither proves a permanent state/self-model Gap nor positive vacuum energy; T-71 is a physical bridge hypothesis. Endless self-learning requires a separate task, update law and resource model.
 
 **VL → UHM.**
 
@@ -874,8 +853,8 @@ core.
    *Self-Learning Universe* (memory-cost vs processing-cost) is a
    physically motivated variational principle whose UHM counterpart —
    Gap curvature $\lVert\mathrm{Curv}\rVert^2=\omega_0^2
-   \lVert\gamma_{ij}\rVert^2\mathrm{Gap}^2$ (T-73) and $V_{\text{Gap}}$
-   from the spectral action (T-74) — can be compared term by term.
+   \lVert\gamma_{ij}\rVert^2\mathrm{Gap}^2$ (the universal T-73 is withdrawn [✗]) and a chosen $V_{\text{Gap}}$
+   is a selected potential; universal T-74 is withdrawn [✗]. A comparison needs separately specified geometries and coefficients.
 
 **Three ways to live in one geometry.** A note that sharpens where the
 two frameworks stand relative to machine learning. Learning, in every
@@ -967,9 +946,8 @@ programme, is §2.9 of [Many-Worlds (Everett–Deutsch) and
 UHM](/docs/physics/quantum-mechanics/many-worlds).
 
 Corpus cross-references: T-41 (Fano channel family), T-42a
-($G_2$-rigidity), T-55 (Lawvere incompleteness), T-57 (triadic
-completeness), T-59 ($\lambda_{\text{deco}}=5\gamma/21$), T-71 (vacuum
-energy), T-72 (scale invariance), T-73/T-74 (Gap curvature, spectral
+($G_2$-rigidity), T-55 (conditional fixed-predicate properness), T-57 (triadic
+completeness), T-59 ($\lambda_{\text{deco}}=5\gamma/21$), T-71 (vacuum-energy hypothesis), T-72 (scale invariance), T-73/T-74 (Gap curvature, spectral
 action), T-87 (A5: clock register [T], constraint [C]), T-124 (conscious window), T-187 (why
 Bures). Registry rows: T-293, T-294, T-295; the per-axis screen lives under T-298; the composition ceiling and the addressing regime under T-304.
 

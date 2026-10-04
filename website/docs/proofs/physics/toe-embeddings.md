@@ -198,117 +198,22 @@ Every finite spin network with unbounded spins $j_e \in \tfrac12\mathbb{Z}_{\geq
 
 The former proof by a cluster construction ($k_e = \lceil j_e/3\rceil$ holons per edge, "additive" spin along the chain, $M_{\text{total}} = O(\lvert E\rvert\, j_{\max})$) is retracted [✗] (audit item 5): its sub-spins are not half-integers in general, it divides by zero for $k_e = 1$, and spins do not add along a chain. The statement survives with a smaller register, $M = \lvert V\rvert$ instead of $O(\lvert E\rvert\, j_{\max})$.
 
-### 2.3 Fano Spin Foam Amplitudes {#fano-spin-foam}
+### 2.3 Fano amplitudes: finite ansatz and invariant tensors {#fano-spin-foam}
 
-The vertex amplitude in the EPRL/FK model is defined by the 15$j$-symbol. In UHM the analogous construction uses the Fano plane:
+The finite incidence diagram can label an amplitude ansatz after spins, contractions and weights are specified. This is not an embedding theorem for spin-foam dynamics.
 
-**Definition (Fano amplitude).** For a vertex $v$ with 7 adjacent edges (Fano configuration):
+#### Corrected scope of Theorem 2.3 {#теорема-2-3-fano-axioms}
 
-$$
-A_{\text{Fano}}(v) = \prod_{p=1}^{7} \left( \sum_{m} \begin{pmatrix} j_{i_p} & j_{j_p} & j_{k_p} \\ m_{i_p} & m_{j_p} & m_{k_p} \end{pmatrix} \right) \cdot W_7[\{j_e\}]
-$$
+The former proof of axioms (A1)–(A4) is withdrawn [✗], except its elementary **finite-sum finiteness** statement: any finite product of finite magnetic-index sums with finite chosen weights is finite [T]. The errors are substantive:
 
-where $(i_p, j_p, k_p)$ is Fano line $p$, the 3$j$-symbols are standard, and $W_7$ is a weight factor from $G_2$ representation theory.
+1. A Wigner $3j$ symbol is an invariant **tensor**, but summing its entries against a fixed vector of ones is not automatically an invariant contraction. Each internal index must have a declared representation and an invariant pairing/intertwiner. A finite scalar expression alone supplies no action on boundary states.
+2. Gluing tensor networks is contraction over boundary indices. In general $\sum_m a_mb_m\ne (\sum_m a_m)(\sum_m b_m)/(2j+1)$. The cited orthogonality relation sums **two** magnetic indices with the required matched representations; it does not prove the former one-index product formula. Nor is the number $1/(2j+1)$ a projector: its square differs from itself for $j>0$.
+3. A fixed seven-point Fano frame is not invariant under continuous $G_2$. Its incidence automorphism group is finite. A $G_2$-invariant amplitude requires declared $G_2$ representation labels and invariant tensor contractions, or covariant transport of the entire frame. The withdrawn universal T-42a encoder rigidity cannot supply this data.
+4. A Casimir on the irreducible fundamental $\mathbf7$ is $cI$. Thus $\prod_p\langle\psi_p|\mathcal C_{G_2}|\psi_p\rangle=c^7$ for normalized $\psi_p$ in that representation. This invariant is a constant and does not define a nontrivial spin-dependent weight or a map from $SU(2)$ spin labels to these vectors.
 
-#### Theorem 2.3 ($A_{\text{Fano}}$ amplitude axioms) [T] {#теорема-2-3-fano-axioms}
+A valid replacement programme [Pr] chooses boundary representation spaces and intertwiners, contracts matching indices by invariant pairings, and defines gluing as that contraction. Under these choices invariance follows from invariance of the constituent tensors [T]; physical correspondence, convergence and any specific nontrivial weight remain additional claims. This retains ordinary representation mathematics without identifying arbitrary products of line labels with a quantum-gravity amplitude.
 
-:::tip Theorem 2.3
-The Fano amplitude $A_{\text{Fano}}(v)$ satisfies **four core axioms** of a spin foam amplitude:
-
-**(A1)** **Finiteness**: $A_{\text{Fano}}(v) \in \mathbb{C}$, $|A_{\text{Fano}}(v)| < \infty$ for any finite spin configuration $\{j_e\}_{e=1}^{7}$.
-
-**(A2)** **$SU(2)$-gauge invariance**: $A_{\text{Fano}}$ is invariant under $SU(2)$-transformations at each vertex.
-
-**(A3)** **Multiplicative gluing**: for vertices $v_1, v_2$ glued along shared edges, $A_{\text{Fano}}(v_1 \cup v_2) = A_{\text{Fano}}(v_1) \cdot A_{\text{Fano}}(v_2) \cdot P_{\text{match}}$, where $P_{\text{match}}$ is a projector onto matching magnetic quantum numbers on shared edges.
-
-**(A4)** **$G_2$-covariance**: $A_{\text{Fano}}$ transforms as a scalar under $G_2$-action (trivial representation).
-:::
-
-**Proof.**
-
-**Step 1 (A1: Finiteness).** Wigner 3$j$-symbols are standard rational expressions:
-
-$$
-\begin{pmatrix} j_1 & j_2 & j_3 \\ m_1 & m_2 & m_3 \end{pmatrix} \in \mathbb{Q}[\sqrt{(\text{factorials})}], \quad \left|\begin{pmatrix} j_1 & j_2 & j_3 \\ m_1 & m_2 & m_3 \end{pmatrix}\right| \leq 1
-$$
-
-(bounded in absolute value by unity; see Varshalovich et al., *Quantum Theory of Angular Momentum*, 1988). The sum over $m$ is finite (from $-j$ to $+j$), number of terms $\leq (2j_{\max}+1)^3$. The product over 7 Fano lines is finite. The weight factor $W_7[\{j_e\}]$ is defined as a polynomial in $\{j_e\}$ with finite coefficients. Hence $|A_{\text{Fano}}(v)| \leq (2j_{\max}+1)^{21} \cdot |W_7| < \infty$. $\square$
-
-**Step 2 (A2: $SU(2)$-gauge invariance).** By definition of the Wigner 3$j$-symbol (standard $SU(2)$ representation theory):
-
-$$
-\sum_{m_1, m_2, m_3} \begin{pmatrix} j_1 & j_2 & j_3 \\ m_1 & m_2 & m_3 \end{pmatrix} \cdot D^{j_1}_{m'_1 m_1}(g) \cdot D^{j_2}_{m'_2 m_2}(g) \cdot D^{j_3}_{m'_3 m_3}(g) = \begin{pmatrix} j_1 & j_2 & j_3 \\ m'_1 & m'_2 & m'_3 \end{pmatrix}
-$$
-
-for any $g \in SU(2)$, where $D^j$ are unitary irreducible representations of $SU(2)$.
-
-This expresses the **$SU(2)$-invariance** of the 3$j$-symbol as a Clebsch-Gordan tensor. The product of 7 such $SU(2)$-invariant symbols remains $SU(2)$-invariant. The weight factor $W_7$ is $G_2$-invariant, hence $SU(2)$-invariant (since $SU(2) \subset G_2$).
-
-Total: $A_{\text{Fano}}(v)$ is independent of the $SU(2)$-gauge choice at vertex $v$. $\square$
-
-**Step 3 (A3: Multiplicative gluing).** Let $v_1, v_2$ be two Fano vertices with a shared edge $e_{\text{shared}}$. Gluing along $e_{\text{shared}}$: summation over magnetic numbers $m_{\text{shared}}$ on the common edge.
-
-Glue amplitude:
-
-$$
-A_{\text{glue}}(v_1 \cup v_2) = \sum_{m_{\text{shared}}} A_{\text{Fano}}(v_1; m_{\text{shared}}) \cdot A_{\text{Fano}}(v_2; m_{\text{shared}}).
-$$
-
-By the orthogonality theorem for 3$j$-symbols:
-
-$$
-\sum_{m_1, m_2} \begin{pmatrix} j_1 & j_2 & j \\ m_1 & m_2 & m \end{pmatrix} \begin{pmatrix} j_1 & j_2 & j' \\ m_1 & m_2 & m' \end{pmatrix} = \frac{\delta_{jj'}\delta_{mm'}}{2j+1},
-$$
-
-summation over $m_{\text{shared}}$ gives a **projector** $P_{\text{match}}$ onto matching $j$-values on the shared edge:
-
-$$
-A_{\text{glue}} = A_{\text{Fano}}(v_1) \cdot A_{\text{Fano}}(v_2) \cdot \frac{1}{2j_{\text{shared}}+1}.
-$$
-
-The normalized projector $P_{\text{match}} = 1/(2j+1)$ is standard in LQG (see Perez, *The Spin Foam Approach to Quantum Gravity*, 2013). $\square$
-
-**Step 4 (A4: $G_2$-covariance).** The Fano plane $\mathrm{PG}(2,2)$ has automorphism group $\mathrm{PGL}(3,2) \cong \mathrm{PSL}(2,7)$, which does **not** include $G_2$. However, the UHM structure selects a **special** $G_2$-equivariant Fano configuration via the $G_2 = \mathrm{Aut}(\mathbb{O})$ action on octonions:
-
-$$
-\mathbb{O} = \mathbb{R} \oplus \mathrm{Im}(\mathbb{O}), \quad \dim(\mathrm{Im}(\mathbb{O})) = 7, \quad \mathrm{Fano} \subset \mathrm{Im}(\mathbb{O}).
-$$
-
-By T-42a [T] ($G_2$-rigidity), the 7-dimensional representation $\mathbf{7}_{G_2}$ is canonically connected to the octonionic Fano basis. The weight factor $W_7[\{j_e\}]$ is defined as a **$G_2$-invariant**:
-
-$$
-W_7[\{j_e\}] := \prod_{p=1}^{7} \langle \psi_p | \mathcal{C}_{G_2} | \psi_p \rangle,
-$$
-
-where $\mathcal{C}_{G_2}$ is the $G_2$ Casimir, $|\psi_p\rangle$ is the state on the $p$-th Fano line.
-
-By group-invariance of the Casimir, $W_7$ is a $G_2$-scalar. Hence $A_{\text{Fano}}(v)$ transforms trivially under $G_2$. $\square$
-
-### Corollary 2.3 ($A_{\text{Fano}}$ amplitude is a valid spin foam) [T]
-
-Satisfaction of axioms (A1)-(A4) means that $A_{\text{Fano}}$ **is** a spin foam amplitude in the sense of standard LQG theory (Baez 1998, Perez 2013), adapted to the $G_2$-structure of UHM.
-
-**Status:** [T] for axioms (A1)-(A4).
-
-**Remains [C]:** convergence to classical geometry in the semi-classical limit $j \to \infty$. This limit gives the Wigner asymptotic of 3$j$-symbols:
-
-$$
-\begin{pmatrix} j_1 & j_2 & j_3 \\ m_1 & m_2 & m_3 \end{pmatrix} \sim \frac{1}{\sqrt{24\pi V_{\text{tet}}}} \cos\left(S_{\text{Regge}} + \frac{\pi}{4}\right) \quad \text{(Ponzano-Regge 1968)},
-$$
-
-where $V_{\text{tet}}$ is the tetrahedron volume, $S_{\text{Regge}}$ is the Regge action. Convergence of $A_{\text{Fano}}$ to the Einstein-Hilbert action for $M^4$ (via T-120 [T] as mathematics (restated T-119, 2026-09-25)) requires proof of compatibility of the 7-line Fano structure with the 4-face simplex in Regge calculus — this is an **active research problem** in semi-classical LQG. Status: [С given Fano-Regge compatibility].
-
-**Results used:**
-- T-42a [T] ($G_2$-rigidity, connection to octonions);
-- T-120 [T] (emergent $M^4$; enters only the semi-classical limit, which is [C] anyway);
-- Standard theory of Wigner 3$j$-symbols (Varshalovich 1988);
-- Spin foam theory (Perez 2013);
-- $G_2$ Casimir operator (standard representation theory).
-
-**Consistency check:**
-- Dependencies T-42a [T], T-120 [T] (the latter only for the semi-classical limit); no circularities. (An earlier line read "all [T]"; corrected 2026-09-25.)
-- Consistent with T-171 [T] and T-171' [T] (LQG embedding functors);
-- Semi-classical limit remains [C] (Fano-Regge compatibility — an open problem in the LQG community).
+The old tetrahedral Ponzano–Regge asymptotic was also attached to a $3j$ symbol incorrectly: the tetrahedral formula concerns a $6j$ symbol under its nondegenerate asymptotic hypotheses. It gives no Einstein–Hilbert limit for the former seven-line ansatz. Neither finite kinematic encoding (T-171) nor a spacetime bridge proves that dynamical limit. [Roberts, *Classical 6j-symbols and the tetrahedron*](https://arxiv.org/abs/math-ph/9812013).
 
 ### 2.4 Embedding Assessment
 
@@ -320,7 +225,7 @@ where $V_{\text{tet}}$ is the tetrahedron volume, $S_{\text{Regge}}$ is the Regg
 | Unbounded spin | **[T]** | T-171' as a corollary; the cluster construction is retracted [✗] |
 | Former Lemma C29' ($W_e^{\text{spin}}$, $j_e \leq 3$) and its covariant functor | **[✗]** | Not a density matrix; spin not recovered; no state-preserving isometry (T-171 (d)) |
 | Area spectrum "from finite-dimensionality" | withdrawn | The LQG area formula is a function of the labels, not derived |
-| Fano amplitudes (axioms (A1)-(A4)) | **[T]** | Theorem 2.3 (§2.3), not re-audited here |
+| Fano amplitudes (A1)–(A4) | **[✗] / [Pr]** | Finite sums retained; invariant contractions and gluing must be supplied (§2.3) |
 | Fano amplitudes (semi-classical limit) | **[C]** | Fano-Regge compatibility — open problem |
 
 ---
@@ -361,9 +266,11 @@ $$
 Then $\Gamma_C \in \mathcal{D}\big((\mathbb{C}^7)^{\otimes M}\big)$, and for $c \neq c'$ with two-body marginal $\rho_{cc'}$: $c \prec c' \iff \langle 01\rvert\rho_{cc'}\lvert 12\rangle \neq 0$ (the value is then $\eta/2$). For $D \subset C$, the decoding of $\mathrm{Tr}_{C \setminus D}\,\Gamma_C$ is the induced order on $D$.
 
 **(b) Internal categories.** Let $X = \mathcal{D}(\mathbb{C}^7)$ with the topology of the Bures metric, $\mathcal{E} = \mathbf{Sh}_\infty(X)$ and $\pi^*: \mathcal{S} \to \mathcal{E}$ the constant-sheaf functor. The functor
+
 $$
 \mathbf{Poset}_{\text{fin}} \to \mathrm{Fun}(\Delta^{\mathrm{op}}, \mathcal{E}), \qquad C \mapsto \pi^* N_\bullet(C)
 $$
+
 (levelwise constant sheaf on the finite sets of $n$-chains $c_0 \preceq \dots \preceq c_n$) is fully faithful: each mapping space $\mathrm{Map}(\pi^*N_\bullet C, \pi^*N_\bullet C')$ is discrete and equals the set of order-preserving maps $C \to C'$. Its values are Segal objects (internal categories) of $\mathcal{E}$.
 
 **(c) The realisation forgets the order.** $C \mapsto \pi^*\lvert N_\bullet(C)\rvert \in \mathcal{E}$ is neither faithful nor injective on isomorphism classes.
@@ -432,37 +339,15 @@ A morphism $(E_1, \mathcal{A}_1, D_1) \to (E_2, \mathcal{A}_2, D_2)$ is a triple
 
 *Typing (2026-09-26).* The former definition read "$\alpha$ — algebra homomorphism" and "$\beta: D_1 \to f^*D_2 \circ \alpha$"; the second is ill-typed ($D_1$ acts on $\mathcal{A}_1$, $f^*D_2 \circ \alpha$ is a map out of $\mathcal{A}_1$ into $f^*\mathcal{A}_2$). In T-211, $\alpha$ is a map of *monoids*: nothing makes it linear or $*$-preserving. Statements about $C^*$-algebras therefore use the $C^*$-typed subcategory of §4.4, where $\alpha$ is a unital $*$-homomorphism, or state explicitly that $\alpha$ is a completely positive map, which is not a morphism of $\mathbf{PhysTheory}$.
 
-### 4.3 Uniqueness Theorem {#теорема-единственности-мета}
+### 4.3 Scope of primitive uniqueness {#теорема-единственности-мета}
 
-#### T-173: Rigidity of the UHM Primitive [T] {#t-173}
+#### T-173: former universal rigidity [✗] {#t-173}
 
-:::tip Theorem T-173
-The structured primitive $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{\text{Bures}}, \omega_0)$ is unique (up to equivalence of ∞-toposes) among those ∞-toposes of the form $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^N), J)$ that satisfy:
+The former proof did not determine a unique structured physical primitive. Monotone quantum metrics form a family; choosing the normalized minimal Bures metric is a definition, not uniqueness of all monotone metrics. Its open-cover site gives a sheaf topos on the **specified** state space. The classifier is a sheaf of opens and does not generate basis projectors, a primitive Liouvillian, a Hamiltonian or numerical rates. Pointer dephasing alone is not primitive: it preserves every diagonal population.
 
-**(i)** $J$ is induced by a monotone metric (Chentsov–Petz theorem: $J = J_{\text{Bures}}$ — the unique minimal one [T]);
+Dimension seven requires the explicit premises of the [minimality theorem](/docs/proofs/minimality/theorem-minimality-7). A positive octonionic form has stabilizer $G_2$, but this codomain symmetry does not identify physical encoders. The former T-42a/T-123 universal rigidity is withdrawn; RI gives a conditional comparison for supplied encoders, not an equivalence of arbitrary topoi or uniqueness of their dynamical structure.
 
-**(ii)** The classifier $\Omega$ generates L-operators $L_k = |k\rangle\langle k|$, yielding a primitive Liouvillian (T-39a [T]);
-
-**(iii)** Minimality: $N = 7$ (Theorem S [T], octonionic derivation [T]);
-
-**(iv)** $G_2$-rigidity: the holonomic representation is unique up to $G_2$ (T-42a [T]).
-
-Therefore: $\mathfrak{T}$ is unique (up to $G_2$, $\omega_0$).
-:::
-
-**Proof.**
-
-Each of the conditions (i)–(iv) fixes the corresponding structure:
-
-**(i)** Petz's theorem (1996): the class of monotone Riemannian metrics on $\mathcal{D}(\mathcal{H})$ is parametrized by operator-monotone functions $f$. The Bures metric is minimal ($g_{\text{Bures}} \leq g_f$ for all $f$). The choice of minimal metric is canonical and unique [T] ([Emergent Geometry](/docs/physics/gravity/emergent-geometry)).
-
-**(ii)** L-unification determines $L_k$ from $\Omega$ (T-16 [T]). Primitivity of $\mathcal{L}_0$ for given $L_k$ is a theorem (T-39a [T]). These conditions fix the Liouvillian.
-
-**(iii)** $N = 7$ is the minimal dimension satisfying (AP)+(PH)+(QG)+(V) (Theorem S [T]) and simultaneously realizing the octonionic structure P1+P2 → $\mathbb{O}$ (Track B [T]). The uniqueness of $N$ fixes the category $\mathcal{C}$.
-
-**(iv)** $G_2$-rigidity (T-42a [T]) shows that the representation is unique up to the 14-dimensional $G_2$. Consequently, two ∞-toposes satisfying (i)–(iii) are related by a $G_2$-transformation.
-
-In total: $\mathfrak{T}$ is determined uniquely up to $G_2 \times \mathbb{R}_{>0}$ (gauge + scale $\omega_0$). $\blacksquare$
+For fixed $N$ and the specified open-cover site, $\operatorname{Sh}_\infty(X_N)$ is determined up to equivalence by that construction [T]. Further frame, form, dynamics, clock scale and interpretation are separate input. Many different Hamiltonians and rates share the same site and state space. Thus the former uniqueness up to only $G_2\times\mathbb R_{>0}$ is false as a conclusion of (i)–(iii).
 
 ### 4.4 Universal Property: Receiving Map {#приёмное-отображение}
 
@@ -483,6 +368,7 @@ T-174 stated: for every $(E, \mathcal{A}, D)$ with (a) a $C^*$-subalgebra $\cong
 :::
 
 **Setting.** Consider the fibre of $\mathbf{PhysTheory}$ over the terminal ∞-topos $\mathcal{S}$ (theories over a point). Its subcategory $\mathbf{PhysTheory}^{C^*}_{\mathrm{pt}}$ has as objects $x = (\mathcal{S}, A, \sigma)$ with $A$ a unital $C^*$-algebra (entering T-211 through its multiplicative monoid) and $\sigma: \mathbb{R} \to \mathrm{Aut}(A)$ a group of $*$-automorphisms, and as morphisms $(\mathrm{id}, \alpha, \beta)$ with $\alpha$ a unital $*$-homomorphism; identities and composites of such are such, so this is a (non-full) subcategory. Because the objects are 0-truncated, the fibre of T-211 (b) is a set: $\beta$ exists iff $\alpha \circ \sigma_1(t) = \sigma_2(t) \circ \alpha$ for all $t$, and is then unique — compatibility with dynamics is a property, not data. Put
+
 $$
 u_0 := (\mathcal{S}, A_{\text{int}}, \mathrm{id}), \qquad x_n := (\mathcal{S}, M_n(\mathbb{C}), \mathrm{id}), \qquad A^\sigma := \{a \in A : \sigma_t(a) = a \ \forall t\}.
 $$
@@ -568,7 +454,7 @@ What is **not proven**:
 | **T-171** | Encoding of all finite spin networks in states of $\lvert V\rvert$ holons | [T] | — (restated 2026-09-26; former Lemma C29' [✗]) |
 | **T-171'** | Unbounded spin | [T] | Corollary of T-171; cluster construction [✗] |
 | **T-172** | Encoding of all finite posets; internal-category embedding into $\mathbf{Sh}_\infty(\mathcal{C})$ | [T] | — (restated 2026-09-26; nerve-as-object embedding [✗]) |
-| **T-173** | Rigidity of the UHM primitive | [T] | — (not re-audited here) |
+| **T-173** | Former universal primitive rigidity | [✗] | Specified-site construction [T]; dynamics and bridges are input (§4.3) |
 | **T-174** | $u_0$ corepresents $A_{\text{int}}$-structures; rigidity at $n = 7$; dynamics criterion; $\tau$-preserving expectation on states | [T] | — (restated 2026-09-26; the former receiving map [✗]) |
 | **C27-M** | Continuous Gap limit | [P] | Part of the hypothesis T-170 (iv) |
 | **C28-M** | Supersymmetric extension | [P] | Part of the hypothesis T-170 (iv) |
@@ -580,6 +466,6 @@ What is **not proven**:
 
 ## Links
 
-- **Relies on:** [Spectral triple (T-53)](/docs/proofs/physics/physics-correspondence), [Emergent $M^4$ (T-117–T-121)](/docs/proofs/physics/emergent-manifold), [$G_2$-rigidity (T-42a)](/docs/proofs/categorical/uniqueness-theorem), [SUSY from $G_2$](/docs/physics/particle-physics/susy), [Gap functional integral](/docs/physics/gravity/quantum-gravity), [Sector decomposition](/docs/physics/gauge-symmetry/standard-model)
+- **Relies on:** [Spectral triple (T-53)](/docs/proofs/physics/physics-correspondence), [Emergent $M^4$ (T-117–T-121)](/docs/proofs/physics/emergent-manifold), [specified octonionic symmetry and conditional RI](/docs/proofs/categorical/uniqueness-theorem), [SUSY from $G_2$](/docs/physics/particle-physics/susy), [Gap functional integral](/docs/physics/gravity/quantum-gravity), [Sector decomposition](/docs/physics/gauge-symmetry/standard-model)
 - **Justifies:** Meta-ToE status of UHM
 - **Status registry:** T-170 — T-174, C27-M — C30 ([Registry](/docs/reference/status-registry))

@@ -9,7 +9,6 @@ description: "How to measure coherence, purity, stresses, and consciousness: fro
 > *"Measurement is the assignment of numerals to objects or events according to rules."*
 > — Stanley Smith Stevens
 
-
 :::info Who this chapter is for
 A bridge between the CC formalism and experiment: protocols for measuring purity $P$, the stress tensor $\sigma$, and the consciousness measures $R$, $\Phi$, $C$.
 :::
@@ -181,15 +180,11 @@ The transition $P < 2/7 \to P > 2/7$ is a potential marker of consciousness reco
 
 ## 3. Measuring the Stress Tensor σ {#измерение-напряжений}
 
-### 3.1 Seven Channels
+### 3.1 Seven selected scores
 
-[Stress tensor](./definitions#тензор-напряжений) $\sigma_k = 1 - 7\gamma_{kk}$ (T-92 [T]) has 7 components. Each requires its own measurement instrument.
+T-92 [D] specifies a diagnostic panel, not a unique tensor derived from the axioms. The population score $s_k=1-7\gamma_{kk}$ lies in $[-6,1]$; its clamped version $\sigma_k=\max(0,s_k)$ lies in $[0,1]$. The unclamped scores sum to zero. A full panel may contain selected functions of $R$, $\Phi$, the regeneration rate and an independently specified extended readout $D_{\mathrm{diff}}$.
 
-The form $\sigma_k = 1 - 7\gamma_{kk}$ shown here is the **diagonal proxy** — the population-deficit of channel $k$, exact for the $\{A,S,D\}$ channels and the leading term at the viability boundary. The full canonical components for $E$, $O$, $U$ read richer $\Gamma$-invariants ($\sigma_E$ via differentiation $D_{\text{diff}}$, $\sigma_O$ via the regeneration rate $\kappa_0$, $\sigma_U$ via integration $\Phi$; see [Definitions](./definitions#тензор-напряжений) and Theorem 10.1/T-92). For measurement purposes the diagonal proxy is what a 7-population readout delivers directly; the richer components require the corresponding higher-order instruments (§ below).
-
-Intuitively: $\sigma_k = 0$ means dimension $k$ receives exactly its "fair share" ($\gamma_{kk} = 1/7$). $\sigma_k > 0$ — deficit (the dimension lacks resources). $\sigma_k < 0$ — surplus (the dimension is "inflated").
-
-**Analogy.** Imagine an organism with 7 organs, each needing 1/7 of the blood flow. If the heart receives 1/4 and the liver 1/14, then $\sigma_{\text{heart}} < 0$ (surplus), $\sigma_{\text{liver}} > 0$ (deficit). Even with normal $P$ (overall organisation), a skew in the $\sigma$-profile can be dangerous.
+Populations and their deficits do not reconstruct complex coherences: diagonal measurement supplies at most six independent parameters out of 48. Equivalence of the panel to the full window is unproved. Test the four separate margins over a reconstruction uncertainty set; see [identifiability](/docs/applied/research/reconstruction-identifiability).
 
 ### 3.2 Seven-Dimensional Audit Protocol
 
@@ -256,6 +251,7 @@ Inverse conversion to $\gamma_{kk}$: if $\sigma_k = 1 - 7\gamma_{kk}$, then $\ga
 $$
 \gamma = \left(\frac{0.47}{7},\; \frac{0.80}{7},\; \frac{0.30}{7},\; \frac{0.70}{7},\; \frac{0.35}{7},\; \frac{0.48}{7},\; \frac{0.44}{7}\right)
 $$
+
 $$
 = (0.067,\; 0.114,\; 0.043,\; 0.100,\; 0.050,\; 0.069,\; 0.063)
 $$
@@ -302,11 +298,11 @@ where $\lambda_{\text{norm}}$ is a normalising coefficient fixed on wakefulness 
 
 ### 4.3 Consciousness Measure C
 
-$C = \Phi \times R$ (T-140 [T]) — the product of integration and reflection.
+$C = \Phi \times R$ (T-140 [D]) — the product of integration and reflection.
 
 **Critical thresholds:**
-- $C = 0$: system is non-conscious (stone, thermostat)
-- $0 < C < 1/3$: "pre-consciousness" (bacterium, simple AI)
+- $C=0$ means the selected score is zero; a phenomenal interpretation requires a separate bridge [I].
+- $0<C<1/3$ fails the selected window’s necessary product condition; it does not classify bacteria or AI.
 - $C \geq C_{\text{th}} = 1/3$ (T-140) is necessary for a conscious system; the full predicate is $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$, which implies $C \geq 1/3$. On the uniform-diagonal stratum the window gives $C = \Phi/(1+\Phi) \in (1/2, 2/3]$.
 
 *Corrected 2026-09-25:* the thresholds read "$0 < C < 1$: pre-consciousness; $C \geq 1$: conscious system". $C \geq 1$ contradicts T-140 ($C_{\text{th}} = 1/3$), and on the uniform diagonal it is never reached inside the window.
@@ -472,13 +468,17 @@ The calibration function $f:\text{observables}\to\Gamma$ (§7.1) looks like an a
 
 **Setup (channel embedding).** Fix a linear embedding $\pi$ that maps each observed state of the system to a complex 7-vector of dimensional amplitudes $x = \pi(\text{state}) \in \mathbb{C}^7$, one coordinate per dimension $(A,S,D,L,E,O,U)$. (For neural data: $x$ = the analytic-signal amplitudes of the seven functional bands/networks; for an AI: seven linear probes on the residual stream; for an organisation: seven audit indices.) Over $N$ samples $x_1,\dots,x_N$ (i.i.d., or stationary–ergodic) with second moment $M := \mathbb{E}[x x^\dagger]$, the **true coherence matrix is the normalised second moment**
 
-$$\Gamma \;=\; \frac{M}{\operatorname{Tr} M}, \qquad M=\mathbb{E}[x x^\dagger]\succeq 0.$$
+$$
+\Gamma \;=\; \frac{M}{\operatorname{Tr} M}, \qquad M=\mathbb{E}[x x^\dagger]\succeq 0.
+$$
 
 This is not a fitted formula — it is the definition of $\Gamma$ as the state's normalised covariance in the dimensional basis.
 
 **Estimator.**
 
-$$\widehat{\Sigma}_N \;=\; \frac1N\sum_{n=1}^N x_n x_n^\dagger, \qquad \widehat{\Gamma}_N \;=\; \frac{\widehat{\Sigma}_N}{\operatorname{Tr}\widehat{\Sigma}_N}.$$
+$$
+\widehat{\Sigma}_N \;=\; \frac1N\sum_{n=1}^N x_n x_n^\dagger, \qquad \widehat{\Gamma}_N \;=\; \frac{\widehat{\Sigma}_N}{\operatorname{Tr}\widehat{\Sigma}_N}.
+$$
 
 $\widehat{\Gamma}_N$ is Hermitian, PSD, unit-trace by construction — a bona-fide density matrix, no projection needed.
 
@@ -489,11 +489,15 @@ Let $\|x_n\|^2\le B$ a.s. and $\operatorname{Tr} M = \tau > 0$.
 
 **(2) Concentration (matrix Bernstein).** With $Z_n=x_nx_n^\dagger-M$ ($\|Z_n\|\le 2B$, $v^2:=\|\mathbb{E}Z_n^2\|$),
 
-$$\Pr\!\Big(\big\|\widehat{\Sigma}_N-M\big\|_{\mathrm{op}}\ge t\Big)\;\le\;2\cdot 7\,\exp\!\Big(\frac{-N t^2}{2v^2+\tfrac{4B}{3}t}\Big).$$
+$$
+\Pr\!\Big(\big\|\widehat{\Sigma}_N-M\big\|_{\mathrm{op}}\ge t\Big)\;\le\;2\cdot 7\,\exp\!\Big(\frac{-N t^2}{2v^2+\tfrac{4B}{3}t}\Big).
+$$
 
 Propagating through the quotient ($\big\|\widehat\Gamma_N-\Gamma\big\|\le \tfrac{2}{\tau}\|\widehat\Sigma_N-M\|$ to first order) gives, for any $\varepsilon,\delta\in(0,1)$,
 
-$$N \;\ge\; \frac{C\,B^2}{\tau^2\,\varepsilon^2}\,\ln\frac{14}{\delta}\quad\Longrightarrow\quad \big\|\widehat{\Gamma}_N-\Gamma\big\|_{\mathrm{op}}\le\varepsilon \ \text{ w.p. } \ge 1-\delta,$$
+$$
+N \;\ge\; \frac{C\,B^2}{\tau^2\,\varepsilon^2}\,\ln\frac{14}{\delta}\quad\Longrightarrow\quad \big\|\widehat{\Gamma}_N-\Gamma\big\|_{\mathrm{op}}\le\varepsilon \ \text{ w.p. } \ge 1-\delta,
+$$
 
 with a universal constant $C$. The error decays as $O(N^{-1/2})$ (verified numerically: $\sqrt N\,\|\widehat\Gamma_N-\Gamma\|\approx\text{const}$).
 :::
@@ -504,13 +508,17 @@ The concentration bound (2) assumes **independent** samples $x_n$. Real neural/A
 
 **(3) Unbiased purity estimator.** The naïve $\operatorname{Tr}(\widehat{\Gamma}_N^2)$ is positively biased by $O(1/N)$. The two-sample U-statistic (the classical/statistical analogue of the quantum swap test)
 
-$$\widehat{P}_N \;=\; \frac{1}{N(N-1)}\sum_{m\ne n}\frac{|x_m^\dagger x_n|^2}{(\operatorname{Tr}\widehat{\Sigma}_N)^2}$$
+$$
+\widehat{P}_N \;=\; \frac{1}{N(N-1)}\sum_{m\ne n}\frac{|x_m^\dagger x_n|^2}{(\operatorname{Tr}\widehat{\Sigma}_N)^2}
+$$
 
 **debiases the dominant term**: its numerator is *exactly* unbiased for $\operatorname{Tr}(M^2)$ (since $\mathbb{E}|x_m^\dagger x_n|^2=\operatorname{Tr}(M^2)$ for $m\ne n$), so the normalised ratio carries only a small **residual** $O(1/N)$ bias from the random denominator $(\operatorname{Tr}\widehat\Sigma_N)^2$ — of opposite sign and $\sim 3\times$ smaller than the naïve plug-in it replaces (verified: $-1.3\times10^{-3}$ vs. $+3.7\times10^{-3}$ for the naïve estimator at $N=200$, target $P=5/14$). Reflection $R=1/(7P)$ and the integration $\Phi$ inherit consistent plug-in estimators with delta-method confidence intervals.
 
 **(4) Sample complexity for a threshold decision.** To decide $P>P_{\mathrm{crit}}=2/7$ vs. $P<2/7$ with a purity margin $\Delta=|P-2/7|$ at confidence $1-\delta$,
 
-$$N \;\ge\; \frac{2\,c^2}{\Delta^2}\,\ln\frac1\delta,$$
+$$
+N \;\ge\; \frac{2\,c^2}{\Delta^2}\,\ln\frac1\delta,
+$$
 
 matching the information bound [T-109](/docs/applied/coherence-cybernetics/learning-bounds#информационная-граница) (quantum-Chernoff sample cost $n\ge\ln(1/2\delta)/\xi_{\mathrm{QCB}}$) up to the constant $c$ fixed by the U-statistic variance. This is the number of independent observation windows needed for a *statistically defensible* consciousness call.
 
@@ -605,7 +613,6 @@ In the next chapter we will show how the language of CC unites *different discip
 - [Implementation](./implementation) — computational implementation
 - [Unique Predictions](./predictions) — what to test
 - [Research Programs](./research-programs) — experimental plan
-
 
 ---
 

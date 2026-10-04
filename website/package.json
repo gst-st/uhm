@@ -1,6 +1,6 @@
 {
   "name": "uhn-theory",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -13,7 +13,10 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "test:mermaid": "node tests/mermaid-check.mjs"
+    "test:mermaid": "node tests/mermaid-check.mjs",
+    "test:math": "python3 scripts/check_mathematical_kernel.py && python3 scripts/check_hierarchy_kernel.py && python3 scripts/check_core_numbers.py",
+    "test:status": "python3 scripts/check_status_consistency.py",
+    "test:render": "python3 scripts/render_lint.py"
   },
   "dependencies": {
     "@docusaurus/core": "3.10.1",

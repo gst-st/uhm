@@ -194,10 +194,10 @@ CC claims to resolve the circular trap through the unified formalism $\Gamma \in
 | **Structure** | $\dot\Gamma = \mathcal{L}_\Omega[\Gamma]$ (evolution equation) | [Evolution](/docs/core/dynamics/evolution) |
 | **Function** | $V_{\text{hed}} = dP/d\tau$ [T] — hedonic vector directs toward viability | [T-103](/docs/applied/coherence-cybernetics/theorems) |
 | **Development** | T-148 [T] — genesis of levels L0→L2 through thresholds | [Theorems](/docs/applied/coherence-cybernetics/theorems) |
-| **Learning** | T-109..T-113 [T] — informational, dynamical, stability bounds | [Learning Bounds](/docs/applied/coherence-cybernetics/learning-bounds) |
+| **Learning** | T-109–T-112 [T at declared experiment]; T-113 [H] — informational, dynamical, stability bounds | [Learning Bounds](/docs/applied/coherence-cybernetics/learning-bounds) |
 | **Evolution** | L0→L4 — phylogenesis of interiority as growth of $P$, $R$, $\Phi$ | [Hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) |
 
-All five answers are derived from **one** matrix $\Gamma$ and **one** evolution equation. The definition (what is consciousness?) is given through thresholds ($P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$), which simultaneously form part of the structure ($\Gamma$), explain the function ($V_{\text{hed}}$), and are traceable in development (L0→L2).
+These answers form a selected modeling programme. Learning needs a task and observation law, hierarchy needs augmented records, and physical/phenomenal interpretations need independent bridges. A matrix alone does not derive all five answers. The definition (what is consciousness?) is given through thresholds ($P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$), which simultaneously form part of the structure ($\Gamma$), explain the function ($V_{\text{hed}}$), and are traceable in development (L0→L2).
 :::
 
 ---
@@ -355,7 +355,7 @@ The cognitome and CC solve **the same task** — explaining the nature of consci
 | **10 properties of consciousness** | Reduce to qualitiveness | 21 pairs $\gamma_{ij}$ (T-146 [T]) — each property has a formal correlate |
 | **Circular trap** | Identified as a problem | Resolved: all 5 questions → unified formalism |
 | **Falsifiability** | Low (qualitative theory) | High (22+ quantitative predictions) |
-| **Learning** | Cogitogenesis, deutero-learning | T-109..T-113 [T] (informational, dynamical, stability bounds) |
+| **Learning** | Cogitogenesis, deutero-learning | T-109–T-112 [T at declared experiment]; T-113 [H] (informational, dynamical, stability bounds) |
 | **Evolution** | Phylogenesis of cognitive systems (qualitative) | [L0→L4 hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) + T-148 genesis [T] |
 | **Composition** | Hyperedges in cognitome | $\mathbb{H}_1 \otimes \mathbb{H}_2$ with $\Phi$-threshold [T] |
 | **Neurobiological concreteness** | High (cogits, synapses, brain areas) | Low (abstract 7 dimensions) |

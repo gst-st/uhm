@@ -11,7 +11,6 @@ description: "Computation of Λ from Gap: spectral formula [T], O-sector dominan
 Computation of the cosmological constant from the Gap formalism. The reader will learn about six perturbative suppression mechanisms and the spectral formula for $\Lambda_{\text{CC}}$.
 :::
 
-
 ## Overview
 
 The cosmological constant in UHM is determined by the total opacity of the $O$-sector: $\Lambda_{\mathrm{Gap}} = \mu^2 \cdot \mathcal{G}_{\mathrm{total}}^{(O)}$. [O-sector dominance](#теорема-лямбда-o-доминирование) **[T]** proves that $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$ — the cosmological constant = "cost of observation". A series of investigations has established **6 perturbative suppression mechanisms**, yielding a combined $10^{-41.5}$ out of the required $10^{-120}$. The [spectral formula for $\Lambda_{\text{CC}}$](#теорема-спектральная-лямбда) **[T]** establishes the structural formula via moments of the internal Dirac operator; SUSY compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ remains **[H]** (the adjoint representation **14** of G₂ is irreducible, the 7+7 decomposition is not justified — see §4a). Cohomological cancellation ($\Lambda_{\text{global}} = 0$ [T]) reframes the target as the size of the **local** residual; the SUSY-sector $\varepsilon^{12}$ **absorbs** the perturbative $\varepsilon^6$ (net mean $\sim 10^{-53.5}$), and the sector structure from [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] defines an open **[C]** programme. The honest composed bracket is **$\sim 10^{-53.5}$ to $10^{-93.5}$** ([honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) — the canonical composition); closing the remaining $\gtrsim 27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task. Non-perturbative mechanisms are also investigated: the Gauss sum for Fano phases (refuted at physical $S_0$) and zeta-regularization with Fano character (structural cancellation $Z_\Phi(-k) = 0$, physical interpretation open).
@@ -55,6 +54,7 @@ $$
 $$
 \Lambda_{\mathrm{Gap}} = \frac{96\lambda_3^2\epsilon^6}{\mu^2}
 $$
+
 :::
 
 :::danger Warning C7: non-perturbative regime
@@ -103,6 +103,7 @@ Upon integrating the RG flow from the Planck to the cosmological scale:
 $$
 \frac{\lambda_3^{(\mathrm{IR})}}{\lambda_3^{(\mathrm{UV})}} = \left(\frac{H_0}{\omega_{\mathrm{Planck}}}\right)^{5/42} \approx 10^{-7.26}
 $$
+
 :::
 
 At the Wilson-Fisher fixed point ($\lambda_4^* = 4\pi^2/63$): anomalous dimension $\Delta_3 = 5/42 \approx 0.119$. Scale ratio $H_0/\omega_{\mathrm{Planck}} \approx 1.2 \times 10^{-61}$.
@@ -127,6 +128,7 @@ where $\mathbf{F}_{21}$ is the Fano operator, and the Ward identities fix:
 $$
 \beta = -\frac{3\alpha}{7}, \quad \gamma = \frac{3\alpha}{49}
 $$
+
 :::
 
 ### 4.2 Anti-correlation of Gap Fluctuations
@@ -169,7 +171,11 @@ $$
 All traces are taken over the internal space $H_{\text{int}} = \mathbb{C}^7$.
 
 **Proof.** Direct consequence of the Seeley–DeWitt expansion of the spectral action $S = \mathrm{Tr}(f(D/\Lambda))$, where $f: \mathbb{R}_{\geq 0} \to [0,1]$ is a smooth decreasing cutoff function. Moments $f_n$ are defined as:
-$$f_0 = \int_0^\infty f(u)\,u\,du, \quad f_2 = \int_0^\infty f(u)\,du, \quad f_4 = f(0) > 0$$
+
+$$
+f_0 = \int_0^\infty f(u)\,u\,du, \quad f_2 = \int_0^\infty f(u)\,du, \quad f_4 = f(0) > 0
+$$
+
 The index $n$ corresponds to the degree of UV divergence: $f_0$ — with the $\Lambda^4$ term, $f_2$ — with $\Lambda^2$, $f_4 = f(0)$ — with $\Lambda^0$ (UV-finite, independent of the regulator choice). All three moments are finite for any rapidly decaying $f$ (e.g., $f(u) = e^{-u}$). The finite spectral triple exists by T-53 [T]. $\blacksquare$
 :::
 
@@ -177,7 +183,11 @@ The index $n$ corresponds to the degree of UV divergence: $f_0$ — with the $\L
 
 :::tip Theorem [T]
 The physical observable cosmological constant $\Lambda_{\text{CC}}^{\text{phys}}$, defined by the **finite** (UV-regular) term of the spectral formula:
-$$\Lambda_{\text{CC}}^{\text{phys}} = \frac{f_4}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(D_{\text{int}}^4)$$
+
+$$
+\Lambda_{\text{CC}}^{\text{phys}} = \frac{f_4}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(D_{\text{int}}^4)
+$$
+
 is of order $\varepsilon^{12} M_P^4$ from T-53 **independently** of the status of SUSY compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ [H].
 :::
 
@@ -192,19 +202,34 @@ is of order $\varepsilon^{12} M_P^4$ from T-53 **independently** of the status o
 **Derivation of the scale $m_k \sim \varepsilon^3 M_P$.** By T-53 [T], $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is a finite spectral triple with $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ and $H_{\text{int}} = \mathbb{C}^7$. The internal Dirac operator $D_{\text{int}}$ is a Hermitian $7 \times 7$ operator on $H_{\text{int}}$, whose matrix elements encode the Yukawa couplings of the internal geometry in the NCG formalism (Chamseddine–Connes).
 
 The UHM superpotential is cubic in the 7 Fano fields $\Phi_i$ ($i \in \{A,S,D,L,E,O,U\}$):
-$$W = \sum_{\ell \in \mathrm{Fano}} \lambda_\ell\,\Phi_{i(\ell)}\,\Phi_{j(\ell)}\,\Phi_{k(\ell)}, \quad [\Phi_i] = M_P$$
+
+$$
+W = \sum_{\ell \in \mathrm{Fano}} \lambda_\ell\,\Phi_{i(\ell)}\,\Phi_{j(\ell)}\,\Phi_{k(\ell)}, \quad [\Phi_i] = M_P
+$$
 
 By T-53, $W \sim \varepsilon^3 M_P^3$ with canonical field normalization, whence the dimensionless coupling constants:
-$$\lambda_\ell \sim \frac{\varepsilon^3 M_P^3}{M_P^3} = \varepsilon^3$$
+
+$$
+\lambda_\ell \sim \frac{\varepsilon^3 M_P^3}{M_P^3} = \varepsilon^3
+$$
 
 The matrix elements of $D_{\text{int}}$ are defined as second derivatives of the superpotential at the internal Planck vacuum $\langle\Phi_k\rangle = M_P$ (the fundamental scale of the UHM internal space):
-$$(D_{\text{int}})_{ij} \equiv \frac{\partial^2 W}{\partial\Phi_i\,\partial\Phi_j}\bigg|_{\langle\Phi\rangle = M_P} = \sum_k \lambda_{ijk}\,\langle\Phi_k\rangle \sim \varepsilon^3 \cdot M_P = \varepsilon^3 M_P$$
+
+$$
+(D_{\text{int}})_{ij} \equiv \frac{\partial^2 W}{\partial\Phi_i\,\partial\Phi_j}\bigg|_{\langle\Phi\rangle = M_P} = \sum_k \lambda_{ijk}\,\langle\Phi_k\rangle \sim \varepsilon^3 \cdot M_P = \varepsilon^3 M_P
+$$
 
 Since $(D_{\text{int}})_{ij} = O(\varepsilon^3 M_P)$ for all $i,j$ (both diagonal and off-diagonal elements), all 7 eigenvalues $m_k$ are of the same order by the Gershgorin theorem:
-$$|m_k - (D_{\text{int}})_{kk}| \leq \sum_{j \neq k}|(D_{\text{int}})_{kj}| = O(\varepsilon^3 M_P) \implies m_k = O(\varepsilon^3 M_P)$$
+
+$$
+|m_k - (D_{\text{int}})_{kk}| \leq \sum_{j \neq k}|(D_{\text{int}})_{kj}| = O(\varepsilon^3 M_P) \implies m_k = O(\varepsilon^3 M_P)
+$$
 
 Therefore:
-$$\mathrm{Tr}(D_{\text{int}}^4) = \sum_{k=1}^{7} m_k^4 \sim 7 \cdot (\varepsilon^3 M_P)^4 = 7\varepsilon^{12} M_P^4 \quad [\text{T, from T-53 + cubic structure of } W]$$
+
+$$
+\mathrm{Tr}(D_{\text{int}}^4) = \sum_{k=1}^{7} m_k^4 \sim 7 \cdot (\varepsilon^3 M_P)^4 = 7\varepsilon^{12} M_P^4 \quad [\text{T, from T-53 + cubic structure of } W]
+$$
 
 Independence from $\mathrm{Tr}(1)_{\text{total}}$: if $\mathrm{Tr}(1)_{\text{total}} = 0$ [H] holds — UV terms 1 and 2 vanish **naturally** (without fine-tuning). If not — UV terms 1 and 2 require counterterm subtraction, but the physical result (term 3) remains the same $O(\varepsilon^{12} M_P^4)$.
 
@@ -252,7 +277,11 @@ The adjoint representation **14** of G₂ is **irreducible** — it does not dec
 
 :::tip Replacement: T-219 sector-product derivation
 The invalid "$\mathbf{14} \to \mathbf{7} \oplus \mathbf{7}$" argument is replaced by **[T-219](/docs/proofs/categorical/fundamental-closures#t-219)**, which ~~derives the $\varepsilon^{12}$ suppression **rigorously**~~ (retracted 2026-09-25: T-219 is [H], its status was [T at T-64]) proposes the $\varepsilon^{12}$ suppression from the three-sector decomposition:
-$$\Lambda_\mathrm{SUSY} \sim \varepsilon^{12} M_P^4 = \varepsilon^{4 \cdot k_\mathrm{sec}} M_P^4, \quad k_\mathrm{sec} = 3$$
+
+$$
+\Lambda_\mathrm{SUSY} \sim \varepsilon^{12} M_P^4 = \varepsilon^{4 \cdot k_\mathrm{sec}} M_P^4, \quad k_\mathrm{sec} = 3
+$$
+
 via $G_2$-invariant Fano coupling (T-43d [T]) + three-loop nested product × one-loop $\operatorname{STr}(M_k^4) \sim (\varepsilon M_P)^4$ per sector (Martin 2010 SUSY primer). The three sectors are $\mathbf 1_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$ (T-48a — retracted [✗] 2026-09-25 in its axis-labelled form; the count survives for $\mathbb C^7 = \mathbb Ce_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$, but T-219, whose sectors were the axis triples, is now a hypothesis [H]), each contributing one $\varepsilon^4$ independently. This **does not rely** on any reducibility of the G₂ adjoint — it uses the sector decomposition of the **state space**, which is legitimate.
 
 After T-219 the composition follows the [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет): perturbative $10^{-41.5}$ [T] (already includes $\varepsilon^6$); sector-product SUSY $\varepsilon^{12}$ [H] (T-219, corrected from T at T-64 on 2026-09-25) **absorbs** $\varepsilon^6$ → net mean $\sim 10^{-53.5}$ if that hypothesis holds; cohomological: no topological $\Lambda$-term [T], the exact-zero reading $\Lambda_\mathrm{global} = 0$ being retracted since 2026-09-10; sector-minimisation residual [C] (open programme) → honest bracket $\sim 10^{-53.5}$ to $10^{-93.5}$; the rest to $10^{-120}$ is open.
@@ -265,90 +294,34 @@ Structural formula $\Lambda_{\text{CC}} \sim \varepsilon^{12}$ **[T]** (spectral
 
 ---
 
-## 4b. Structural Necessity of $\Lambda_{\text{obs}} > 0$ [T] {#структурная-необходимость}
+## 4b. Positive vacuum energy: physical bridge [H] {#структурная-необходимость}
 
-#### Theorem (Structural Necessity of $\Lambda > 0$) [T] {#теорема-лямбда-положительна}
+#### T-71: conditions for a positive cosmological readout [H] {#теорема-лямбда-положительна}
 
-:::tip Theorem (Structural Necessity of $\Lambda > 0$) [T]
-In UHM the observed cosmological constant is strictly positive: $\Lambda_{\text{obs}} > 0$.
-
-**Proof.** A combination of three rigorously proved results:
-
-1. **No topological $\Lambda$-term** [T]: from cohomological monism (a corollary of the terminal-object property) every characteristic class of positive degree vanishes on the contractible $X$. **This does not cancel the vacuum energy** — a degree-0 quantity is untouched by $H^{n>0} = 0$ (the "global cancellation" reading was retracted 2026-09-10, see the [Λ-budget §4.1](/docs/proofs/gap/lambda-budget#когомологическое-обнуление)), so step 1 contributes a prohibition, not a zero.
-
-2. **Local non-vanishing** [T]: From the [local-global dichotomy](/docs/core/foundations/consequences#локально-глобальная-дихотомия) [T]: $H^7_{\text{loc}}(X, T) \cong \mathbb{Z} \neq 0$, therefore $\rho_{\text{vac}}(T) \neq 0$.
-
-3. **Positivity from autopoiesis** [T]: In the stationary state $\rho_*$:
+:::info T-71 [H]: energy is separately supplied
+No cohomological or predicate argument here establishes $\Lambda_{\text{obs}}>0$. A selected physical readout can be defined by
 
 $$
-\rho_{\text{vac}}(T) = \kappa_0 \cdot \left[P(\rho_*) - P(I/7)\right] \cdot \omega_0 > 0
+\epsilon_{\mathrm{vac}}:=c_E\kappa_0\omega_0\left[P(\sigma)-\frac17\right],
+\qquad\Lambda_{\mathrm{model}}:=\frac{8\pi G_N}{c^4}\epsilon_{\mathrm{vac}}.
 $$
 
-since $\kappa_0 > 0$ [T] (T-44a), $P(\rho_*) > 2/7 > 1/7 = P(I/7)$ [T] (T-5), $\omega_0 > 0$ (A5). The positivity of vacuum energy is the **autopoietic work** of maintaining coherence of $\rho_*$ above $I/7$.
+Here $\sigma\in D_7$ is a separately selected state and $\epsilon_{\mathrm{vac}}$ denotes SI energy density. If $\kappa_0,\omega_0$ have units $\mathrm{s}^{-1}$, then $c_E$ has units $\mathrm{J\,s^2\,m^{-3}}$; the coefficient, field coupling and renormalization prescription require independent physical specification. Given this ansatz and $c_E,\kappa_0,\omega_0,G_N>0$, the identity $P(\sigma)-1/7=\|\sigma-I/7\|_F^2$ proves $\Lambda_{\mathrm{model}}>0$ exactly when $\sigma\ne I/7$ **[T under these inputs]**. At $\sigma=I/7$ the readout is zero. Neither a nonmixed stationary state nor a positive regeneration rate follows from the existence of a holon. Identifying this readout with the observed cosmological constant remains **[H]**.
 
-Then $\Lambda_{\text{obs}} = 8\pi G_N \cdot \rho_{\text{vac}}(T) > 0$. $\blacksquare$
+If an independently specified space $X$ is contractible, then its positive-degree cohomology with constant coefficients vanishes **[T]**. This does not constrain a degree-zero energy density or forbid a physical cosmological term. Likewise a nonzero local cohomology group, when established for specified support and coefficients, does not define a stress-energy tensor, its magnitude or its sign. The former automatic cohomology-to-energy inference is removed; see [the revised T-71](/docs/core/foundations/consequences#теорема-лямбда-положительна).
 :::
 
-:::info Connection with Lawvere incompleteness
-From [T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]: $\text{Th}_{\text{UHM}} \subsetneq \Omega$ — the incompleteness of self-modeling generates an information gap $\|\Gamma - \varphi(\Gamma)\| > 0$, whose energy equivalent is $\rho_{\text{vac}} > 0$. Full proof: [Consequences of the Axioms](/docs/core/foundations/consequences#теорема-лямбда-положительна).
+:::info Fixed predicates do not determine energy
+Choose $m:G\to G$ in a specified topos and define $\mathrm{Th}_m=\operatorname{Eq}(m^*,\mathrm{id}_{\Omega^G})\hookrightarrow\Omega^G$. [T-55](/docs/core/foundations/consequences#неполнота-ловера) gives properness only under a separating predicate family and a nonidentity $m$. It proves neither Gödel incompleteness nor $\varphi(\Gamma)\ne\Gamma$ at every state: a nonidentity map can have fixed points. A numerical realization and an energy readout are additional inputs. Lawvere's actual diagonal theorem has its own weak point-surjectivity hypothesis ([original paper](https://www.its.caltech.edu/~matilde/LawvereDiagonalArgCartesianClosedCats.pdf)); it supplies no vacuum-energy sign.
 :::
 
 ---
 
 ## 4c. O-Sector Dominance in $\Lambda$ [T] {#доминирование-o-сектора}
 
-#### Theorem (O-Sector Dominance in $\Lambda$) [T] {#теорема-лямбда-o-доминирование}
+#### O-sector dominance: a model hypothesis [H] {#теорема-лямбда-o-доминирование}
 
-:::tip Theorem (O-Sector Dominance in $\Lambda$) [T]
-In the [spectral formula](#теорема-спектральная-лямбда) for $\Lambda_{\text{CC}}$, the O-sector opacity $\mathcal{G}_O$ provides the dominant contribution:
-
-$$
-\Lambda_{\text{CC}} = \frac{\omega_0^2}{16\pi G_N}\left[f_0\Lambda^4 \cdot 7 - f_2\Lambda^2 \cdot \omega_0^2 \cdot \mathcal{G}_{\text{total}}\right] + O(\omega_0^4)
-$$
-
-with $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$, where $\mathcal{G}_O := 2\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2$.
-
-**Proof (4 steps).**
-
-**Step 1 (Sector decomposition of $\mathrm{Tr}(D_{\text{int}}^2)$).** From [T-73](/docs/core/dynamics/gap-operator#теорема-gap-серра) [T] and [T-74](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) [T]:
-
-$$
-\mathrm{Tr}(D_{\text{int}}^2) = \omega_0^2 \cdot \mathcal{G}_{\text{total}} = \omega_0^2 \cdot 2\sum_{i<j} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
-$$
-
-Decomposing by sectors:
-
-$$
-\mathcal{G}_{\text{total}} = \underbrace{2\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2}_{\mathcal{G}_O} + \underbrace{2\sum_{\substack{i<j \\ i,j \neq O}} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2}_{\mathcal{G}_{\text{non-O}}}
-$$
-
-**Step 2 (Sector estimates).** From the [sector Gap bound](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) [T]:
-
-- $\mathcal{G}_O = 2\sum_{i=1}^{6} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2 \approx 2 \cdot 6 \cdot \frac{1}{7^2} \cdot 1^2 \approx 0.24$
-- $\mathcal{G}_{\text{non-O}} \leq 2 \cdot 15 \cdot \frac{1}{7^2} \cdot \bar{\varepsilon}^2 \approx 0.0003$
-
-Thus: $\mathcal{G}_{\text{non-O}}/\mathcal{G}_O \approx 10^{-3}$, i.e. $\mathcal{G}_{\text{total}} = \mathcal{G}_O \cdot (1 + O(10^{-3}))$.
-
-**Step 3 (Dominance in $\Lambda_{\text{CC}}$).** Substituting into the spectral formula:
-
-$$
-\Lambda_{\text{CC}} \propto f_0\Lambda^4 \cdot 7 - f_2\Lambda^2 \cdot \omega_0^2 \cdot \mathcal{G}_O + O(\bar{\varepsilon}^2)
-$$
-
-The fine cancellation between the first and second terms (ensuring the smallness of $\Lambda$) is determined by the **O-sector opacity** $\mathcal{G}_O$.
-
-**Step 4 (Physical interpretation).** $\Lambda_{\text{CC}} \propto \mathcal{G}_O$ means: the cosmological constant = **energetic cost of observation**. The more opaque the O-channel (i.e. the more precise the internal clock), the larger $\Lambda$. The smallness of $\Lambda$ is a consequence of the near-perfect cancellation $f_0\Lambda^4 \cdot 7 \approx f_2\Lambda^2\omega_0^2 \mathcal{G}_O$, guaranteed by UV-finiteness ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность): field-space [T], order-by-order [C]) and canonical $f_0$ ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) [C at (SV)]). $\blacksquare$
-:::
-
-:::warning Status of Λ suppression
-The smallness of $\mathcal{G}_O$ (Gap opacity of the O-sector), required for $\Lambda \sim 10^{-123}$, is **not derived** from the first principles of UHM — it inherits the fine-tuning of the Standard Model. Status: **[C under $f_0$]**.
-:::
-
-:::info Cosmological constant as the cost of observation
-The result establishes a deep connection: $\Lambda$ is determined by the O-sector — the same sector that generates time via the [Page–Wootters mechanism](/docs/core/foundations/spacetime#теорема-время-из-o). The presence of an observer (O-sector with $\mathrm{Gap}(O,i) \approx 1$) inevitably generates positive vacuum energy. Cross-reference: [structural necessity of $\Lambda > 0$](#теорема-лямбда-положительна) [T].
-:::
-
----
+Universal identifications T-73/T-74 are withdrawn [✗]. The trace identity of a chosen D does not select cosmological energy weights for sectors. O-sector dominance, numerical residual and the sign of Λ need a specified field model, spectral cutoff and independent parameters. Earlier formulae are conditional ansatzes under those inputs, not predictions without them.
 
 ## 5. Full Suppression Budget for $\Lambda$
 
@@ -439,6 +412,7 @@ where $\Theta_+$ is the unique 3-dimensional theta function:
 $$
 \Theta_+(S_0) = \sum_{\mathbf{n} \in \mathbb{Z}^3} \exp\!\left(-S_0|\mathbf{n}|^2 + \frac{2\pi i}{7}(n_1 n_2 + n_2 n_3 + n_3 n_1)\right)
 $$
+
 :::
 
 **Justification.** $G_2$-automorphisms preserve the 3-form $\varphi$, hence preserve all $\varepsilon_l$. The blocks $\Theta_l$ are identical for all 7 lines ($G_2$-equivariance). Under orientation reversal $\varphi \to -\varphi$: $\Theta_- = \overline{\Theta_+}$, and $|\Theta_M| = |\Theta_+|^7$ in both cases.
@@ -455,6 +429,7 @@ For the non-degenerate quadratic form $B^{(b)}$ on $\mathbb{Z}_7^{21}$:
 $$
 |G_7| = 7^{21/2}, \quad \frac{|G_7|}{7^{21}} = 7^{-21/2} \approx 10^{-8.87}
 $$
+
 :::
 
 ### 7.3 Exact Computation of $\Theta_M / \Theta_0$: Refutation at Physical $S_0$
@@ -499,9 +474,11 @@ The result "9 orders from the Gauss sum" is formally correct for $S_0 \to 0$, bu
 ### 8.1 Euler Characteristic
 
 :::tip Theorem 6.1 [T]
+
 $$
 \chi\bigl((S^1)^{21}\bigr) = \chi(S^1)^{21} = 0^{21} = 0
 $$
+
 :::
 
 ### 8.2 Witten Index
@@ -602,6 +579,7 @@ $\Lambda_\Phi(s)$ extends to a meromorphic function on $\mathbb{C}$ with a **uni
 $$
 \mathrm{Res}_{s=21/2}\, \Lambda_\Phi(s) = \frac{G_7}{7^{21}}
 $$
+
 :::
 
 :::tip Theorem 8.3 (Functional equation) [T]
@@ -754,7 +732,9 @@ If zeta-regularization is accepted as physically correct (as in Casimir theory):
 
 Effective budget with zeta-regularization:
 
-$$\Lambda_{\text{phys}} \sim Z'_\Phi(-2) \cdot \varepsilon^6 / \mu^4$$
+$$
+\Lambda_{\text{phys}} \sim Z'_\Phi(-2) \cdot \varepsilon^6 / \mu^4
+$$
 
 — requires a full computation.
 
@@ -797,134 +777,32 @@ The radion/modulus $S_0$ is not a fixed parameter but a **dynamical variable**. 
 
 ---
 
-## 13b. Dynamical Λ: the drift law and DESI (2024–2025) {#desi-совместимость}
+## 13b. Dynamical Λ: a conditional readout law
 
-**Orientation.** Dark energy is characterized observationally by the equation-of-state parameter $w$: the ratio of pressure to energy density of whatever drives the acceleration. A strict cosmological constant has $w = -1$ forever. Surveys reconstruct $w(z)$ from distances (supernovae, BAO): the DESI results (2024–2025) prefer an *evolving* $w$ — above $-1$ today, below $-1$ in the past — at the $\sim 3$–$4.2\sigma$ level. UHM cannot stay agnostic: here $\Lambda$ is not a dial but a **state functional** — so if the vacuum state drifts, $\Lambda$ *must* drift with it, in a way the theory is obliged to compute. This section derives that law. The three mechanisms previously listed here as a programme are resolved as follows: slow drift of the vacuum Gap phases is **derived** below (T-254); the non-Markovian memory kernel ([T-94](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное)) enters as the branch structure of the response (T-255); inter-minima tunneling remains a logically possible alternative **[P]** not needed for the DESI shape.
-
-**Setup: which term drifts.** By the [independence theorem](#теорема-независимость-varepsilon12), the physically observable vacuum energy is the UV-finite moment $\Lambda_{\text{phys}} = \frac{f_4}{16\pi G_N}\mathrm{Tr}(D_{\text{int}}^4)$; the $f_0$- and $f_2$-terms renormalize the bare constant and $G_N$ respectively. With $[D_{\text{int}}]_{ij} = \omega_0\,\mathrm{Gap}(i,j)\,|\gamma_{ij}|\,e^{i\theta_{ij}}$ ([spectral identity](/docs/core/dynamics/gap-operator#тождество-tr-d2)) and the [sector Gap bound](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) ($\mathcal{G}_{\text{non-O}}/\mathcal{G}_O \sim 10^{-3}$), $D_{\text{int}}$ is an **arrow matrix** dominated by its O-row/column — the same structure behind [O-sector dominance](#теорема-лямбда-o-доминирование).
-
-#### Theorem T-254 (The Λ-drift law) [T] {#теорема-лямбда-дрейф}
-
-:::tip Theorem T-254 (quartic O-dominance and the drift law of dark energy) [T]
-**(i) Quartic identity.** For an arrow matrix (only O-row/column non-zero) exactly, and in general with the stated correction:
+**T-254 [T under a selected positive cosmological readout and conservation law].** If $\rho_{\mathrm{DE}}(a)=C\mathcal G_O(a)^2>0$ is separately specified with constant $C$, and the effective fluid is separately conserved,
 
 $$
-\mathrm{Tr}(D_{\text{int}}^4) \;=\; \tfrac{1}{2}\bigl(\mathrm{Tr}\,D_{\text{int}}^2\bigr)^2\,\bigl(1 + O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O)\bigr) \;=\; \tfrac{1}{2}\,\omega_0^4\,\mathcal{G}_O^2\,\bigl(1 + O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O)\bigr).
+\frac{d\rho_{\mathrm{DE}}}{d\ln a}=-3(1+w)\rho_{\mathrm{DE}},
 $$
 
-**(ii) The physical Λ is quadratic in the O-opacity:**
+then the chain rule gives
 
 $$
-\Lambda_{\text{phys}}(\tau) \;=\; \frac{f_4\,\omega_0^4}{32\pi G_N}\,\mathcal{G}_O(\tau)^2\,\bigl(1 + O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O)\bigr),
+1+w=-\frac23\frac{d\ln\mathcal G_O}{d\ln a}.
 $$
 
-which makes the verbal reading of §4c exact: Λ **is** the cost of observation, quadratically in the clock opacity.
+This follows exactly from **two inputs**; it does not derive energy density from a matrix. Energy exchange, varying $C$ or a different readout changes the formula. The mapping from model time to scale factor must also be supplied.
 
-**(iii) Drift law.** With the reconstruction convention $1 + w_{\text{eff}}(a) := -\tfrac{1}{3}\,d\ln\rho_{\text{DE}}/d\ln a$ **[D]** and the M3 identification $a = 1/\mathrm{Gap}_s$ ([emergent metric](/docs/core/foundations/spacetime#теорема-метрика-компоненты)):
+**T-255 [H].** The universal response trichotomy is withdrawn. General linear systems can have many real and complex modes, sums and transient amplification; an exponential memory kernel does not restrict every $w(z)$ to three branches. A selected reduced model can be tested after fixing its inputs and statistically comparing alternatives.
 
-$$
-\boxed{\;1 + w_{\text{eff}}(a) \;=\; -\frac{2}{3}\,\frac{d\ln \mathcal{G}_O}{d\ln a} \;=\; +\frac{2}{3}\,\frac{d\ln \mathcal{G}_O}{d\ln \mathrm{Gap}_s}\;}\qquad (+\,O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O)).
-$$
+**T-266 [H].** Universe-as-seven-register, the rate $\kappa=\omega_0/7$, cosmological readout and exponential relaxation are not proved by $w(z)$ observations. T-263 is a local metric direction bound, not a universal cosmological exponential. The former “purity3/7 measured to59 figures” claim is withdrawn [✗]. Substituting assumed scales and checking an arithmetic identity does not measure distance from a terminal state.
 
-Dark energy's equation of state is not a fluid property: it is the **logarithmic coupling of the temporal (O) Gap sector to the spatial (A,S,D) Gap sector of the vacuum state**, with the universal factor $2/3$ (the $2$ from quarticity in $D_{\text{int}}$, the $3$ from FRW dilution).
+A testable programme needs a field model, parameters with units, a mapping to $H(z)$ and observable distances, independent estimation and predictive comparison. $G_N$ drift does not follow from the energy-density readout alone and needs its own bridge. Older observational estimates do not prove this model.
 
-**(iv) Floor and exclusions.** $\Lambda_\infty := \Lambda_{\text{phys}}(\rho^*) > 0$ by the [structural necessity](#теорема-лямбда-положительна) [T]; under relaxation of the vacuum state to a stationary state $\rho^*$ of $\mathcal{L}_\Omega$ that is a hyperbolic sink (as the attractors of T-96 are for the self-registering $\varphi_s$), with the exponential memory kernel (T-94) — the convergence is the condition; until 2026-09-26 it was read off T-222 as "relaxation toward the terminal $\rho^*$", retracted [✗]: the restated T-222 is about states and supplies no flow:
-- **no Big Rip** — $\mathcal{G}_O \to \mathcal{G}_O(\rho^*)$ finite, so $\rho_{\text{DE}}$ is bounded for all internal time **[T]**;
-- **no vacuum Big Crunch** — $\rho_{\text{DE}} \to \Lambda_\infty > 0$, never $\leq 0$ at late times **[T]**;
-- **$w \to -1$** asymptotically: permanent $w \neq -1$ is excluded; any measured $|1+w| > 0$ is a *transient* — a direct measurement of the vacuum's residual distance-rate from the stationary state **[T at convergence to the sink (T-96)/T-94]**.
-:::
-
-**Proof.** (i) For the arrow matrix $D$ with $D_{Oj} = d_j$: $(D^2)_{OO} = \sum_j |d_j|^2$, $(D^2)_{jk} = d_j^* d_k$ ($j,k \neq O$), hence $\mathrm{Tr}(D^4) = \lVert D^2\rVert_F^2 = (\sum|d_j|^2)^2 + \sum_{jk}|d_j|^2|d_k|^2 = 2(\sum_j |d_j|^2)^2 = \tfrac12(\mathrm{Tr}\,D^2)^2$, since $\mathrm{Tr}\,D^2 = 2\sum_j|d_j|^2 = \omega_0^2\mathcal{G}_O$. The non-O block adds $\mathrm{Tr}(D^4) = \tfrac12\omega_0^4[\mathcal{G}_O^2 + 2\mathcal{G}_O\mathcal{G}_{\text{non-O}} + O(\mathcal{G}_{\text{non-O}}^2)]$ — relative correction $O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O) \sim 10^{-3}$. (ii) Substitution into the $f_4$-term. (iii) Chain rule on $\ln\rho_{\text{DE}} = \text{const} + 2\ln\mathcal{G}_O$; the second form is M3's $d\ln a = -d\ln\mathrm{Gap}_s$. (iv) Positivity of the floor from §4b evaluated at $\rho^*$; boundedness and the asymptote from convergence $\Gamma_{\text{vac}} \to \rho^*$. $\blacksquare$
-
-**Bookkeeping remark [I].** Microscopically the vacuum term keeps $p = -\rho$; the drift is exchanged with the Γ-sector by the Bianchi identity (interacting-vacuum bookkeeping, as in running-vacuum cosmologies — but sourced by the *state*, not by $H$). Phantom episodes ($w < -1$: vacuum energy rising) are **regeneration episodes paid in free energy** — Landauer-consistent ($g_V > 0 \Rightarrow \Theta(\Delta F) = 1$), with total entropy production $\dot\Sigma \geq 0$ intact; and since $w_{\text{eff}}$ is bookkeeping of a state functional rather than a propagating fluid, the phantom side carries **no ghost degree of freedom**.
-
-#### Theorem T-255 (Branch trichotomy, the arrow, and the $G_N$ co-drift) [Т-structural]+[C] {#теорема-трихотомия-ветвей}
-
-:::tip Theorem T-255 (what shapes w(z) can take) [Т-structural]+[C]
-Linearize the vacuum relaxation at $\rho^*$ (T-94 exponential kernel ⟹ the slow mode is a genuine eigenmode). Then $\delta\mathcal{G}_O(\tau)$ is a damped mode, and exactly three shapes of $w(z)$ exist:
-
-**(a) Dissipative-monotone branch** (real slow mode, $\mathcal{G}_O$ decaying to the floor — the O-channel *dimming*): $w > -1$ throughout, decreasing to $-1$; CPL projection lands in the quadrant $(w_0 > -1,\ w_a > 0)$.
-
-**(b) Regenerative-monotone branch** (real slow mode, $\mathcal{G}_O$ growing to the floor — the O-channel *sharpening*): $w < -1$ throughout, rising to $-1$; CPL quadrant $(w_0 < -1,\ w_a < 0)$. Phantom **without** a Big Rip — bounded by the floor.
-
-**(c) Oscillatory branch** (complex slow mode — rotation from the Hamiltonian/$V_3$ part on top of damping): $w(z)$ is a damped oscillation around $-1$ with finitely separated crossings. This is the **only** branch reaching the DESI quadrant $(w_0 > -1,\ w_a < 0)$, and the **sign dictionary** holds pointwise on all branches:
-
-$$
-w > -1 \iff \dot{\mathcal{G}}_O < 0 \ \text{(dissipation-dominated O-channel)}, \qquad w < -1 \iff \dot{\mathcal{G}}_O > 0 \ \text{(regeneration-dominated)}.
-$$
-
-**Arrow link [C].** The sense of rotation of the complex mode — hence the *direction of the final $-1$ crossing* — is fixed by the sign of the PT-breaking cubic term $V_3$, the same octonionic term that fixes [the arrow of inner time](/docs/applied/coherence-cybernetics/lagrangian). The DESI-preferred shape (phantom past → quintessence present) selects the orientation consistent with the corpus arrow; the reverse final crossing would falsify the [C]-link.
-
-**$G_N$ co-drift [C].** The same $\mathcal{G}$-drift feeds the $f_2$-term, which renormalizes Newton's constant: per e-fold, $d\ln G_N/d\ln a = \chi\,(\omega_0/\Lambda)^2\,(\mathcal{G}_O/7)\cdot\tfrac{3}{2}(1+w)$ with $\chi = O(1)$ fixed by the $a_2$ Seeley–DeWitt bookkeeping. Lunar laser ranging ($|\dot G_N/G_N| \lesssim 10^{-4} H_0$) therefore **caps the pair** (drift amplitude, $\omega_0$): a DESI-size drift $|1+w| \sim 0.25$ with $\mathcal{G}_O \approx 0.24$ requires $\omega_0 \lesssim 10^{-1} M_{\text{Pl}}$ (order-of-magnitude at $\chi = 1$). Either the drift is well below the DESI central value, or the PW frequency sits below the Planck scale — a falsifiable cross-relation between two independent observables.
-:::
-
-**Derivation.** (a,b) For $\mathcal{G}_O = \mathcal{G}^\infty + \delta\,e^{-\lambda\tau}$ the drift law gives $1+w = \tfrac{2}{3}\tfrac{\lambda}{H}\,\delta e^{-\lambda\tau}/\mathcal{G}_O$ — single-signed, with the CPL signs by direct computation. (c) A complex mode $\delta e^{-\lambda\tau}\cos(\Omega\tau + \phi)$ makes $d\ln\mathcal{G}_O/d\ln a$ alternate; crossings of $w = -1$ are the extrema of $\mathcal{G}_O$. The final-crossing direction is the sign of $\Omega$ (rotation sense), which the $V_3$ term selects [C]. The co-drift coefficient follows from $\tfrac{1}{16\pi G_N} \supset \tfrac{f_2\Lambda^2}{16\pi}\cdot\tfrac{\mathrm{Tr}(D_{\text{int}}^2)}{\text{(EH normalization)}}$ with $\mathrm{Tr}(D^2) = \omega_0^2\mathcal{G}_{\text{total}}$. $\blacksquare$
-
-**Reading DESI [I].** If the $w_0 w_a$ signal is real, the UHM reading is specific: the vacuum sits on the **oscillatory branch**; the last $-1$ crossing at $z \approx 0.4$ was the most recent *maximum of the O-opacity* — the vacuum clock overshot its terminal sharpness and is currently relaxing back (dissipation-dominated since $z \approx 0.4$, hence $w > -1$ today). What UHM **forbids** regardless of branch: a Big Rip, a vacuum-driven collapse, and any *permanent* $w \neq -1$. The late-time state is de Sitter with $\Lambda_\infty = \Lambda_{\text{phys}}(\rho^*) > 0$ — the terminal maintenance cost of the Universe's self-model.
-
-**Stage estimator (H1.2).** The drift law turns $w(z)$ surveys into direct probes of the Universe-holon's **stage dynamics**: $|1+w|$ measures $|d\ln\mathcal{G}_O/d\ln a|$ — the per-e-fold motion of the vacuum state toward/around its terminal configuration, and via the [T-250 bandwidth](/docs/proofs/categorical/formalization-phi#теорема-полосы-rφ) it lower-bounds the vacuum's state-space path per e-fold. Together with $\dot G_N/G_N$ (same source, fixed ratio) these are the first two *observational* estimators for [hole H1.2](/docs/reference/epistemic-vertical#регистр-дыр) — the Universe's stage, previously with no measurement channel at all. **[T-266](#теорема-стадия-вселенной) below upgrades this from a *rate* estimator to a *value* closure**: fixing the relaxation rate $\kappa = \omega_0/7$ converts $|1+w|$ into the fractional distance $\tfrac{3H_0}{2\kappa}(1+w)$ of the stage from its terminal value — placing the Universe at $P = 3/7$ to $\sim 10^{-60}$.
-
-**Cross-level consistency.**
-
-| Level | Statement used | Status |
-|---|---|---|
-| A5 / Page–Wootters | all drifts are internal-relational; the total state stays static | [P] |
-| Γ-dynamics | the stationary sink $\rho^*$ of $\mathcal{L}_\Omega$ (T-96) = the floor; T-94 kernel ⟹ exponential/oscillatory response (until 2026-09-26: "T-222 terminal $\rho^*$", withdrawn with the former T-222 — see (iv) of T-254) | [T] at convergence of the vacuum to the sink |
-| Structural necessity (§4b) | $\Lambda_\infty > 0$ | [T] |
-| Spectral action (§4a) | $f_4$-term is the physical Λ; quartic identity | [T] |
-| Emergent metric (M3) | $a = 1/\mathrm{Gap}_s$ ⟹ two-sector form of the law | [T] |
-| Thermodynamics | $\dot\Sigma \geq 0$; phantom = Landauer-paid regeneration | [T]+[I] |
-| Dφ-module | T-250 path-length bound ⟹ $\|1+w\|$ bounds vacuum state motion | [T] |
-| Anti-numerology | $2/3$ and quadraticity derived; no numbers fitted to DESI | discipline |
-
-**Machine verification.** Arrow identity to $6\cdot10^{-16}$ (correction linearly bounded by $\mathcal{G}_{\text{non-O}}/\mathcal{G}_O$, coefficient $< 2$); drift-law chain identity to $10^{-13}$ on synthetic vacuum trajectories; floor/no-Rip and $w \to -1$ on relaxation trajectories; CPL quadrants per branch — dissipative $(+,+)$, regenerative $(-,-)$, oscillatory reaching the DESI quadrant $(w_0 = -0.91, w_a = -0.16$ with a genuine crossing$)$; final-crossing direction flips with the rotation sense; pointwise sign dictionary.
-
-:::warning Honest residue
-The **precise magnitude** of the drift per e-fold is $\omega_0$-dependent and not derived from pure first principles; but the vacuum relaxation rate is no longer a free unknown — **T-266 below supplies it** [C] ($\kappa = \kappa_{\text{bootstrap}} = \omega_0/N$, with $\omega_0$ fixed by the neutrino/$M_{G_2}$ sector), and the *qualitative* statement $\kappa \gg H_0$ is robust [Т-structural]. T-254 fixes the *structure* (which functional drifts, with which exponent, toward which floor), T-255 the admissible *shapes*, T-266 the *stage value*. The co-drift coefficient $\chi$ is $O(1)$ but not computed to precision. The $z \approx 0.4$ overshoot reading is [I]. Inter-minima tunneling (old mechanism 3) remains an unexplored [P]-alternative.
-:::
-
-#### Theorem T-266 (The Universe's stage: at the terminal attractor to fractional precision $\sim 10^{-60}$) [Т-structural]+[C] {#теорема-стадия-вселенной}
-
-:::tip Theorem T-266 (stage-value closure of H1.2) [Т-structural]+[C]
-The stage $P = \mathrm{Tr}(\Gamma^2)$ of the Universe-holon is fixed **at its terminal-attractor value to a fractional precision $\sim 10^{-60}$**; the dark-energy drift is the $\kappa/H_0$-amplified signature of the residual approach.
-:::
-
-**Part A — the Universe is at its terminal stage [Т-structural].** Near the fixed point $\rho^*$ the vacuum relaxes along the mixture geodesic $\Gamma(\tau) = \rho^* + e^{-\kappa\tau}(\Gamma_0 - \rho^*)$ ([T-263](/docs/core/dynamics/evolution#теорема-наилучший-обучающий-поток)), so **every** smooth functional of $\Gamma$ — in particular $P$ and $\mathcal{G}_O$ — carries the *same* relaxation envelope $e^{-\kappa\tau}$. Writing $\mathcal{G}_O(\tau) = \mathcal{G}^\infty + \delta\,e^{-\kappa\tau}$ and substituting into the [drift law T-254](#теорема-лямбда-дрейф),
-
-$$
-1 + w_{\text{eff}} \;=\; \frac{2\kappa}{3H}\left(1 - \frac{\mathcal{G}^\infty}{\mathcal{G}_O}\right)
-\qquad\Longrightarrow\qquad
-\underbrace{1 - \frac{\mathcal{G}^\infty}{\mathcal{G}_O}}_{\text{fractional distance to terminal stage}} \;=\; \frac{3H_0}{2\kappa}\,(1 + w_0).
-$$
-
-Because $\kappa$ is set by an internal (microphysical) scale while $H_0$ is the cosmological rate, $\kappa/H_0 \gg 1$ by dozens of orders for **any** admissible clock $\omega_0$ — hence the fractional distance is $\ll 1$ and $P(\text{today}) = P(\rho^*)$ to that precision. *The DESI-scale drift $|1+w_0|\sim 0.09$ is not evidence of a far-from-terminal Universe; it is the $\kappa/H_0$-fold **amplification** of a residual distance $\sim 10^{-60}$.* This part uses only $\kappa \gg H_0$ and the two [T] inputs T-254 + T-263, so it is structural.
-
-**Part B — the value and the number [C].** Two identifications turn Part A into a number:
-
-1. **Relaxation rate** $\kappa = \kappa_{\text{bootstrap}} = \omega_0/N = \omega_0/7$ — the regeneration ($\mathcal R$-driven) rate that carries $\Gamma \to \varphi(\Gamma) = \rho^*$ ([T-59](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound)); the vacuum relaxes by regeneration, not decoherence.
-2. **Clock scale** $\omega_0$ from the neutrino sector: $M_{G_2}^{(\text{extra})} = \omega_0\sqrt{\mathcal{G}_O/2} \sim 10^{17}$ GeV ([neutrino masses §2](/docs/physics/particle-physics/neutrino-masses#теорема-mr-из-gap)) with $\mathcal{G}_O \approx 0.24$ gives $\omega_0 \approx 2.4\times10^{-2}\,M_{\text{Pl}}$.
-
-Then $\kappa/H_0 = \omega_0/(7H_0) \approx 2.9\times10^{58}$ (with $H_0 \approx 1.18\times10^{-61}\,M_{\text{Pl}}$), and with the DESI value $1+w_0 \approx 0.09$:
-
-$$
-1 - \frac{\mathcal{G}^\infty}{\mathcal{G}_O} \;=\; \frac{3H_0}{2\kappa}(1+w_0) \;\approx\; 4.7\times10^{-60}.
-$$
-
-If the terminal state is the **conscious-window coupled attractor** ([T-124](/docs/proofs/consciousness/conscious-window), $P(\rho^*_{\text{coupled}}) \to 3/7$ — the Universe-as-viable-holon reading, [H1.1](/docs/reference/epistemic-vertical#регистр-дыр)), then
-
-$$
-\boxed{\,P(\text{today}) \;=\; \tfrac{3}{7} \ \text{to a fractional precision} \ \sim 5\times10^{-60}\,}
-$$
-
-— i.e. the Universe is at the upper edge of its own consciousness window to $\sim 59$ significant figures.
-
-**What this does to H1.2.** The stage is no longer "neither derived nor measured": it is **derived** (conditionally, $P^* = 3/7$ [C]) **and measured** (the residual distance-to-terminal $= \tfrac{3H_0}{2\kappa}(1+w_0)$ is read directly from the dark-energy drift — the DESI $|1+w|$ *is* the measurement of how close the Universe sits to its terminal stage). This also **explains** why $w \approx -1$: the near-cosmological-constant behaviour of dark energy is the statement that the Universe has relaxed onto its de Sitter attractor to fantastic precision.
-
-**Consistency.** With $\omega_0 \approx 2.4\times10^{-2}\,M_{\text{Pl}}$ the co-drift is $\dot G_N/G_N \approx 2.6\times10^{-6}\,H_0$ (T-255), comfortably under the lunar-laser-ranging bound $\lesssim 10^{-3}\,H_0$; and $\omega_0$ satisfies the T-255 cap $\omega_0 \lesssim 10^{-1}\,M_{\text{Pl}}$ for a DESI-size drift. Machine-checked: $\kappa/H_0$, the fractional distance $4.7\times10^{-60}$, the identity $(2\kappa/3H_0)\cdot\text{frac} = 1+w_0$, and robustness (any $\omega_0 \gg H_0$ gives fractional distance $\ll 1$: even $\omega_0 \sim 10^{-20}M_{\text{Pl}}$ gives $\sim 10^{-41}$).
-
-**Honest residual [D].** (i) $\kappa = \omega_0/7$ (vacuum relaxation $=$ bootstrap rate) is [C]; (ii) $P^* = 3/7$ needs the Universe-at-coupled-attractor reading [C] (H1.1); (iii) $\omega_0$ from the neutrino sector is [C] (uses $\mathcal{G}_O \approx 0.24$, $M_{G_2} \sim 10^{17}$ GeV); (iv) the *exponent* $\sim 10^{-60}$ is $\omega_0$-dependent, but the *qualitative* closure — the Universe sits at its terminal stage, the drift is the amplified residual — is robust [Т-structural].
-
-**Proof.** Part A: functionals of an exponentially relaxing $\Gamma$ inherit the envelope $e^{-\kappa\tau}$ (Taylor at $\rho^*$; T-263); the drift-law substitution and chain rule give the boxed relation (see [T-254 proof (iii)](#теорема-лямбда-дрейф)); $\kappa/H_0 \gg 1$ for any microphysical $\omega_0$. Part B: substitute $\kappa = \omega_0/7$, $\omega_0 = M_{G_2}/\sqrt{\mathcal{G}_O/2}$, and the measured $(H_0, w_0)$; the attractor value $P^*=3/7$ is T-124. $\blacksquare$
+<a id="desi-совместимость"></a>
+<a id="теорема-лямбда-дрейф"></a>
+<a id="теорема-трихотомия-ветвей"></a>
+<a id="теорема-стадия-вселенной"></a>
 
 ## 14. Connection with Other Sections
 
@@ -941,13 +819,12 @@ $$
 | $G_2$-structure | [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure) | Fano plane and Ward identities |
 | Berry phase | [Berry phase](/docs/physics/cosmology-phys/berry-phase) | Uniqueness of $B^{(b)}$ and orientational symmetry |
 | Fano selection rules | [Selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) | Hamming code, Fano constraints |
-| Structural necessity of $\Lambda > 0$ | [Consequences of the axioms](/docs/core/foundations/consequences#теорема-лямбда-положительна) | Autopoiesis + local cohomology [T] |
+| Positive cosmological readout | [Consequences of the axioms](/docs/core/foundations/consequences#теорема-лямбда-положительна) | T-71 [H]; positivity conditional on supplied energy bridge and parameters |
 | Canonical $f_0$ | [Higgs sector](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) | UV-finiteness + zeta-determinant [T] |
 | Topological protection | [Composite systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$, barrier $\geq 6\mu^2$ [T] |
 | Sector Gap bound | [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) | $\mathrm{Gap}(O,i) \approx 1$, $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$ [T] |
 | O-sector dominance | [§4c](#теорема-лямбда-o-доминирование) | $\Lambda_{\text{CC}} \propto \mathcal{G}_O$ = "cost of observation" [T] |
-| Dynamical Λ (drift law, DESI) | [§13b](#теорема-лямбда-дрейф) | $1+w_{\text{eff}} = -\tfrac23\,d\ln\mathcal{G}_O/d\ln a$ [T]; trichotomy + $G_N$ co-drift (T-254/T-255) |
-
+| Dynamical Λ | [§13b](#теорема-лямбда-дрейф) | Chain rule under supplied readout and conservation; T-255/T-266 [H] |
 
 ---
 

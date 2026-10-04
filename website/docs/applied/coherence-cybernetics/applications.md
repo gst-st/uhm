@@ -46,7 +46,7 @@ In this document:
 - $\sigma_{\mathrm{sys}}$ — [stress tensor](./definitions#тензор-напряжений) with components $\sigma_A, \ldots, \sigma_U$
 - $\mathcal{R}[\Gamma, E]$ — [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член)
 - $\mathcal{D}[\Gamma]$ — [dissipative term](/docs/core/dynamics/evolution#логический-лиувиллиан)
-- $C = \Phi \times R$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) **[T T-140]**; $D_{\text{diff}} \geq D_{\min}$ — separate viability condition
+- $C = \Phi \times R$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) **[D T-140]**; $D_{\text{diff}} \geq D_{\min}$ — separate viability condition
 :::
 
 :::warning Document Status
@@ -59,7 +59,7 @@ This document describes *interpretive applications* of the theory. Specific appl
 
 ### Architectural Patterns
 
-CC provides justification for the architectural requirements of cognitive systems. A key addition is the [sensorimotor theory](./sensorimotor): formal perception (Enc) and action (Dec) functors ensuring environmental coupling via a 3-channel decomposition (T-102 [T]).
+The sensorimotor architecture specifies an observation law, state reconstruction and admissible controls. Hamiltonian, dissipative and injection controls form a selected grouping [D]. Universal completeness T-102 is withdrawn [✗]: additional GKSL terms are allowed. Calling Enc a functor requires separately verified composition laws.
 
 ```mermaid
 graph TD
@@ -304,9 +304,10 @@ CC unifies existing theories:
    - Low $\mathrm{Coh}_E$ ↔ "fragmented" experience
 
 2. **Link between E-coherence (interiority) and recovery**
-   $$
+
+$$
    \frac{dP}{d\tau} \propto \mathrm{Coh}_E(\Gamma)
-   $$
+$$
 
 3. **7-dimensional structure of neural correlates** *(hypothesis)*
    - Neural networks may be organized around [7 functional dimensions](/docs/core/structure/dimensions) ([justification of the number 7](/docs/core/foundations/axiom-omega#октонионная-структура))
@@ -349,9 +350,11 @@ where $\mathbb{H}_i$ are [Holons](/docs/core/structure/holon) of individual agen
 ### Organizational Health
 
 :::info Health Criterion
+
 $$
 \mathrm{Viable}(\mathbb{H}_{\text{org}}) \Leftrightarrow P(\Gamma_{\text{org}}) > P_{\text{crit}}
 $$
+
 :::
 
 See [Theorem 9.1 (Fractal Closure)](./theorems#теорема-91-фрактальное-замыкание).
@@ -412,9 +415,11 @@ where $\mathbb{H}_i$ are [Holons](/docs/core/structure/holon) of individual spec
 ### Ecological Sustainability
 
 :::info Sustainability Criterion
+
 $$
 \mathrm{Sustainable}(\mathbb{H}_{\text{eco}}) \Leftrightarrow \frac{dP}{d\tau} \geq 0 \text{ on average}
 $$
+
 :::
 
 :::warning Hypothesis
@@ -523,9 +528,11 @@ where $P$ is the [purity](/docs/core/dynamics/viability#определение-�
 ### Disease
 
 :::info Disease Definition
+
 $$
 \mathrm{Disease} \Leftrightarrow \frac{dP}{d\tau} < 0 \text{ consistently}
 $$
+
 :::
 
 This corresponds to a violation of the [viability condition](/docs/core/dynamics/viability).
@@ -600,6 +607,7 @@ Anxiety is excessive activity in the Articulation dimension $A$: the system "dis
 Post-traumatic stress disorder is, in CC terms, a state in which $\mathrm{Coh}_E$ drops sharply in certain contexts (triggers), and $\sigma_E$ oscillates between extreme values (flashbacks vs. avoidance).
 
 **Formal characterization:**
+
 $$
 \mathrm{Coh}_E(\tau) = \mathrm{Coh}_E^{\text{base}} - \Delta_{\text{trigger}} \cdot f(\text{stimulus}, \tau)
 $$
