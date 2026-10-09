@@ -155,6 +155,7 @@ const sidebars: SidebarsConfig = {
         'consciousness/ethics-meaning/meaning',
         'consciousness/ethics-meaning/freedom',
         'consciousness/ethics-meaning/death-continuity',
+        'consciousness/ethics-meaning/spiritual-synthesis',
       ],
     },
   ],

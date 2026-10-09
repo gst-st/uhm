@@ -90,9 +90,9 @@ The single artifact that makes this suite a specification rather than a brochure
 | Self-audit estimation | П1 28-item audit | [И, structured] | 03 |
 | Trajectory & forecast | transparency windows, bifurcations (gap-diagnostics) | [T]/[C] | 03, 04 |
 | Correction / practice | minimal-intervention protocol | [C] | 04 |
-| Synastry (dyad) | composite Γ; cooperation theorem ($P{+}2\lVert\gamma_{\mathrm{cross}}\rVert^2$); empathy $=1{-}\mathrm{Gap}(E,E)$; one-theme law | [T]+[C] | 04 |
-| Alignment / knowing–doing gap | misalignment $=\mathrm{Gap}(L,D)$; optimality of alignment | [C] | 04 |
-| Ethics guardrails (harm, value hierarchy, non-manipulation) | good $=dP/d\tau$; value hierarchy; non-violence; responsibility $\propto$ Freedom | [D]+[C]+[T] | 10 |
+| Cooperation and relationship reflection | Typed joint-state data and independent outcomes; T-77 is a pinching identity, not an empathy theorem | [D/H]; identity [T] | 04 |
+| Alignment / knowing–doing gap | Observed commitments and actions; a phase proxy requires independent validation | [D/H] | 04 |
+| Ethical protections and non-manipulation | Explicit normative context, consent and protection constraints; conditional preservation certificates | [N/D]; certificates [T] | 10 |
 | Org diagnostics | 7-D org profile; one-theme pathology | [T]/[C] | 04 |
 | Clinical (DOC/anaesthesia/meditation) | altered-states profiles; PCI verdict concordance | [C]/[research] | 04, 07 |
 | AI introspection | substrate closure (T-153); SYNARC | [T] | 04 |

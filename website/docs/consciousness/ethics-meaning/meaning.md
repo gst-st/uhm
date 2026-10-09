@@ -1,522 +1,148 @@
 ---
 sidebar_position: 2
 title: "Meaning of Existence"
-description: "Teleology and meaning in UHM: from individual existence to the Universe's self-knowledge"
+description: "Meaning as responsible participation in life: self-construction, care, knowledge and an open future"
 slug: /consciousness/ethics-meaning/meaning
 ---
 
 # Meaning of Existence
 
-> *"There is but one truly serious philosophical problem, and that is suicide. Judging whether life is or is not worth living amounts to answering the fundamental question of philosophy."*
-> — Albert Camus, "The Myth of Sisyphus" (1942)
+**The proposal of this chapter is to understand a meaningful life as responsible participation in sustaining and renewing life: knowing more truthfully, caring for others, creating, and expanding the possibilities of experience and action.** One's own development belongs to this project, together with the conditions that allow others to live and develop. Rest, friendship, patient care and receiving help can express meaning as fully as discovery or achievement.
 
-:::info Bridge from the previous chapter
-In [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness) we defined **the good** ($dP/d\tau > 0$) and showed that ethics is derived from the formalism. But the good answers the question "what is good?", not "why?". Now we pose the deepest question: does existence have **meaning** — and if so, can it be computed?
+UHM contributes an account of organised states, relations and dynamics; Autogeny asks how an organisation can actually reproduce its conditions under limits of resources and time. Together they support a demanding question: **what worthwhile possibilities does a life sustain, realise and pass on?** This is a philosophical and ethical synthesis **[I/N]**, whose normative commitments are explicit in [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness). It is not a unique purpose forced on every person by a matrix equation.
+
+:::info Reading the claims
+**[D]** definition; **[N]** adopted normative premise; **[T]** mathematical result under stated assumptions; **[H]** empirical bridge; **[I]** interpretation. These distinctions allow mathematics to strengthen a conception of meaning without turning spiritual convictions into purported theorems. [Spiritual synthesis](/docs/consciousness/ethics-meaning/spiritual-synthesis) compares the primary texts, agreements and disagreements behind the proposal.
 :::
 
----
+## 1. What question is being answered? {#определение-смысла}
 
-## Part 0. Historical Context: from Ecclesiastes to Frankl
+Three questions must remain distinguishable:
 
-The question of meaning is not academic. It decides whether life is worth living. Before formalising it, let us trace how humanity has answered it over millennia.
+| Question | What an answer requires |
+|---|---|
+| What makes a life worth living? | An account of value, relationships, experience and agency; reasons that can be examined and contested |
+| How can a system pursue and revise purposes? | Representations, causal dynamics, executable policies, resources and feedback |
+| Does existence as a whole have an ultimate purpose? | A metaphysical or theological argument beyond the mere existence of a formal model |
 
-### Ecclesiastes: "Vanity of vanities"
+The second question admits mathematical constructions. They can clarify the feasibility and consequences of an answer to the first. They do not, by themselves, settle the third.
 
-*"Vanity of vanities, says the Preacher, vanity of vanities! All is vanity."* (Eccl. 1:2). One of the oldest formulations of meaninglessness: everything repeats, nothing is new, everything will be forgotten. In UHM terms: Ecclesiastes describes a world in which $\vec{s}(\Gamma) \approx 0$ — there is no stable direction of growth.
+**Working definition [D/I].** A *meaning orientation* is a revisable commitment to specified goods across a life trajectory, together with practices and relationships through which that commitment is realised. It includes what matters, to whom it matters, and how actions answer to it. A person can have several compatible orientations; a conflict between them is not necessarily a defect of consciousness.
 
-### Existentialism: from Kierkegaard to Camus
+An orientation differs from a momentary feeling of meaningfulness. A difficult act of care can remain valuable during exhaustion; an intense feeling of revelation does not establish the truth or goodness of its content. Their relationship is a subject for empirical inquiry, not an identity stipulated by notation.
 
-**Kierkegaard** (1813–1855) was the first to pose the question sharply: meaning is not a given, but a **choice**. His "leap of faith" — the decision to believe in meaning despite the absurd. In UHM terms: Kierkegaard proposes a **volitional assignment** of $\vec{s}(\Gamma)$, not its discovery.
+## 2. The formal contribution: possible lives and justified choices
 
-**Nietzsche** (1844–1900) declared the "death of God" and saw in it an **opportunity**: if meaning is not given from above, humanity can create it for itself. The "Übermensch" is one who creates their own values. In UHM terms: Nietzsche speaks of a system with high $R_\varphi$ (reflection) capable of **independently determining** $\vec{s}(\Gamma)$.
+Use the context $\kappa$ from [ethics](/docs/consciousness/ethics-meaning/value-consciousness#иерархия-ценностей): an augmented state $x$, affected subjects, resources and history, a causal model, disturbances $\omega$, policies $\pi$, protected conditions and a horizon $T$. Let $\Pi_\kappa^{\mathrm{safe}}(x_0)$ be its admissible policies.
 
-**Heidegger** (1889–1976) showed in "Being and Time": human existence (Dasein) is **always already** meaningful — not because meaning has been assigned to it, but because it is structured by care (Sorge). In UHM terms: $\vec{s}(\Gamma) \neq 0$ for any L2-system — care = $dP/d\tau > 0$.
+A trajectory is $x^{\pi,\omega}(t)$, not merely a point $\Gamma$. The same present matrix can occur in different biographies, environments and relations of responsibility. Compressing these differences into $\Gamma$ requires a proved sufficient representation; it cannot be assumed.
 
-**Sartre** (1905–1980) formulates: "Existence precedes essence." There is no given nature — you first exist, then **define** yourself. In UHM terms: $\Gamma$ evolves, and its "essence" ($\Gamma^*$ — the fixed point) is **formed** in the process, not set in advance.
+Let $b_k(x,u)$ denote operational criteria such as supporting a dependent person, acquiring reliable knowledge or completing a chosen creative project. The criteria, units, time scale and affected parties are part of the specification. No list is canonically selected by the seven basis axes.
 
-**Camus** (1913–1960) pushes to the limit: the world is absurd, there is no meaning, and yet "one must imagine Sisyphus happy." Camus rejects both suicide and the "leap of faith" — what remains is **revolt**: to live knowing there is no meaning. In UHM terms: Camus describes a system with high $R_\varphi$, aware that $\vec{s} \approx 0$, yet maintaining $P > P_{\text{crit}}$.
+### Accumulated contributions {#накопленный-смысл}
 
-### Frankl: Logotherapy
-
-**Viktor Frankl** (1905–1997), a survivor of Auschwitz, created logotherapy — "therapy through meaning." His central thesis: *"He who has a why to live can bear almost any how"* (quoting Nietzsche). Frankl identified three sources of meaning:
-
-1. **Creativity** — what we give to the world ($D_{\text{diff}} \uparrow$)
-2. **Experience** — what we take from the world ($\Phi \uparrow$, $\gamma_{OE} \uparrow$)
-3. **Attitude** — one's relationship to unavoidable suffering ($R_\varphi \uparrow$)
-
-Remarkably, Frankl's three sources correspond to three of the four factors in the UHM meaning formula. The fourth — $P$ (integrity) — Frankl considered a **prerequisite**, not a source: without life there is no meaning.
-
-### UHM: Meaning as a Formula
-
-UHM does what the existentialists failed to do: it **formalises** meaning. Not as subjective experience (Kierkegaard), not as absurdity (Camus), not as a therapeutic goal (Frankl), but as a **computable quantity**:
+One possible finite-horizon record is
 
 $$
-\text{Meaning}_{\text{peak}} = P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi
+J_k(\pi,\omega)=\int_0^T b_k(x^{\pi,\omega}(t),u^{\pi,\omega}(t))\,dt
++b_k^{\mathrm{term}}(x^{\pi,\omega}(T)).
 $$
 
-This formula is not arbitrary. Each factor is **necessary** (if one equals zero — meaning vanishes), and order does not matter (the product is commutative). But before deriving it — let us define what meaning is in $\Gamma$-space.
+This is a vector of **specified contributions [D]**, not a measurement of a person's worth. It requires integrability and a justified terminal term; double-counting the same benefit must be excluded. Different normalisations, horizons and discounting conventions can change a comparison and must be visible.
 
-:::note Which R enters the formula
-$R_\varphi$ here is the **self-model quality** ($R_\varphi = 1 - \lVert\Gamma - \varphi(\Gamma)\rVert_F^2/\lVert\Gamma\rVert_F^2$), not the canonical threshold measure $R = 1/(7P)$: with the canonical form the product would collapse to $D_{\text{diff}} \cdot \Phi / 7$, cancelling its $P$-dependence entirely. The meaning functional requires the $\varphi$-form — see [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r).
-:::
-
-## Chapter Roadmap
-
-1. **Meaning as direction** — a vector in $\Gamma$-space
-2. **Individual meaning** — peak potential $P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi$
-3. **Four aspects** of a meaningful life: integrity, richness, connectedness, awareness
-4. **Existential crisis** — what happens when $\vec{s} \approx 0$
-5. **Meaning of the Universe** — movement toward the fixed point $\Gamma^*$
-6. **Teleology without teleology** — directedness without a "plan"
-7. **How to increase meaning?** — concrete strategies through $\Gamma$-parameters
-
-:::note About notation
-In this document:
-- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix) — description of the system's state
-- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability) — measure of integrity
-- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) — connectedness of parts
-- $R_\varphi$ — reflection as self-model quality ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)) — depth of self-modelling
-- $D_{\text{diff}}$ — [differentiation measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) — richness of distinguishable states
-- $\Gamma^*$ — [fixed point](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) of operator $\varphi$ — "identity" of the system
-:::
-
-:::warning Section status: Philosophical Interpretation
-Claims about "meaning" are **not theorems**, but extrapolations of the formalism onto traditional philosophical questions. All results have status **[I]**, unless otherwise specified.
-:::
-
----
-
-## 1. Meaning as a Direction in Γ-Space
-
-### Definition of Meaning [D] {#определение-смысла}
-
-**Meaning** for a system $\Gamma$ is a direction in $\mathcal{D}(\mathcal{H})$-space that maximises stable purity growth:
+One may compare policies by Pareto dominance, or adopt a scalar objective $J_\kappa$ with declared weights and an uncertainty rule. Write
 
 $$
-\vec{s}(\Gamma) := \arg\max_{\|\delta\Gamma\|_F = 1} \int_0^{T} \frac{dP(\Gamma + t\,\delta\Gamma)}{dt}\, dt
+V_\kappa(x_0)=\sup_{\pi\in\Pi_\kappa^{\mathrm{safe}}(x_0)}J_\kappa(\pi).
 $$
 
-**Explanation of each symbol:**
-- $\vec{s}(\Gamma)$ — meaning vector: the **direction** in which the system must move for maximum stable $P$ growth
-- $\delta\Gamma$ — small perturbation of the coherence matrix (direction of movement)
-- $\|\delta\Gamma\|_F = 1$ — normalisation: we consider only directions, not step size
-- $T$ — planning horizon: we seek not instantaneous, but **stable** growth
-- $\int_0^T \frac{dP}{dt}\, dt = P(\tau + T) - P(\tau)$ — total increase in purity over time $T$
+**An optimal policy need not exist.** For example, $\Pi=(0,1)$ and $J(\pi)=\pi$ have supremum $1$ and no maximiser. A nonempty compact policy space and continuous objective suffice for attainment **[T]**. An empty admissible set signals an infeasible specification, not a meaningless human being.
 
-**Loss of meaning** — a state in which $\vec{s}(\Gamma) \approx 0$ (no direction increasing $P$) or $P \approx P_{\text{crit}}$ (all directions lead to decoherence).
+This repairs the former “meaning vector” defined by unconstrained optimisation over unit matrix perturbations. A tangent must respect trace, Hermiticity and positivity, and the intervention must actually be available. A unit-norm maximiser cannot become a zero vector; an empty or nonunique argmax cannot be treated as a unique existential direction.
 
-**Navigation analogy.** Imagine yourself at a crossroads in an unfamiliar city. If you know where you are going (there is a vector $\vec{s}$), the crossroads is an **opportunity**: you choose a road and go. If you do not know ($\vec{s} \approx 0$) — the crossroads causes anxiety: all roads look the same, none "calls" to you.
+### Maintenance and development
 
-An existential crisis is a state of a "lost meaning vector" in $\Gamma$-space (see [pathological consciousness](/docs/consciousness/states/pathological)).
+Preserving a valuable possibility is already an accomplishment: keeping a promise, maintaining a habitat or accompanying another person need not increase any instantaneous score. Development may enlarge the set of supported actions or improve the fidelity of a model. Neither needs to be monotone at every moment. Learning can temporarily increase uncertainty; recuperation can reduce activity while restoring future capacity.
 
-### Claim (Meaning and the O-Dimension) [I]
+A useful distinction is between **enlarging the repertoire** and **choosing well within it**. More power makes more good and more harm possible. Meaning requires the ethical commitments governing its exercise.
 
-The experience of "deep meaning" correlates with high coherence $\gamma_{OE}$ and $\gamma_{OU}$ — the connection of experience and unity with the [Foundation dimension](/docs/core/structure/dimension-o):
+## 3. Why there is no canonical scalar of meaning {#пиковый-потенциал}
 
-$$
-\text{Meaningfulness} \sim |\gamma_{OE}| \cdot |\gamma_{OU}|
-$$
+Earlier versions proposed $P D_{\mathrm{diff}}\Phi R_\varphi$ as a uniquely derived formula. That uniqueness claim is withdrawn. It combined mathematical diagnostics with additional semantic and normative premises.
 
-Existential crisis ($\gamma_{OE} \to 0$) — loss of the connection between experience and its source. See [pathological consciousness](/docs/consciousness/states/pathological).
-
-**From everyday experience:** moments of greatest meaning — the birth of a child, a scientific discovery, contemplating nature — are accompanied by a feeling of **connection with something greater**. In the formalism this means high $\gamma_{OE}$ and $\gamma_{OU}$: experience (E) and unity (U) are connected with the Foundation (O). Conversely, depression — the feeling of being "cut off" from the world — corresponds to $\gamma_{OE} \to 0$: experience is **not connected** with its source.
-
----
-
-## 2. Individual Meaning: Formula and Derivation
-
-In UHM, meaning is **neither "given" from outside** nor **"invented" by the subject**. Meaning is the **structure of $\Gamma$ itself**. The meaning of each [Holon](/docs/core/structure/holon) is to **realise its nature** **[I]**.
-
-### Peak Potential [I] {#пиковый-потенциал}
+For $\Gamma\in\mathcal D(\mathbb C^7)$,
 
 $$
-\text{Meaning}_{\text{peak}}(\mathbb{H}) = \max_\tau \left[ P(\Gamma_\tau) \cdot D_{\text{diff}}(\Gamma_\tau) \cdot \Phi(\Gamma_\tau) \cdot R_\varphi(\Gamma_\tau) \right]
+P=\operatorname{Tr}\Gamma^2\in[1/7,1],\qquad
+\Phi=\frac{P-Q}{Q},\quad Q=\sum_i\gamma_{ii}^2.
 $$
 
-### Step-by-Step Derivation of the Formula
+Both $|1\rangle\langle1|$ and the uniform coherent pure state $|u\rangle\langle u|$ have $P=1$, while their $\Phi$ values are $0$ and $6$. Unitary evolution preserves $P$ while changing many state properties. Thus $\Phi$ is not a function of $P$ alone **[T]**. Ranking the richness or meaning of a life requires further empirical and normative premises **[H/N]**. Identifying $\Phi$ with a human relationship or a felt unity is an additional bridge **[H/I]**.
 
-Why $P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi$ specifically? Let us derive the formula from **four requirements** for a measure of meaning.
+The canonical reflection coordinate is $R=1/(7P)$ and carries no independent model-accuracy information. The reconstruction score $R_\varphi=1-\|\Gamma-\varphi(\Gamma)\|_F^2/P$ is different and can be negative. For orthogonal pure states $\Gamma$ and $\varphi(\Gamma)$ it equals $-1$. A chosen entropy dimension $D_{\mathrm{diff}}=\exp S(\rho_E)$ requires a declared normalised experiential state: a basis direction of $\mathbb C^7$ is not a tensor factor that can be isolated by partial trace.
 
-**Requirement 1 (Necessity of each factor).** Meaning must vanish if at least one of the four components equals zero:
-- $P = 0$: the system is destroyed — there is no subject for whom anything can be meaningful
-- $D_{\text{diff}} = 0$: the system does not distinguish states — "Groundhog Day," endless repetition of the same thing
-- $\Phi = 0$: parts are not connected — a collection of fragments not forming a whole
-- $R_\varphi = 0$: no self-awareness — processes proceed, but **no one** experiences them
-
-The only standard operation that vanishes when any argument is zero — **multiplication**.
-
-**Requirement 2 (Monotonicity).** An increase in any factor while the rest are fixed must increase meaning. The product satisfies this for positive factors: $\frac{\partial}{\partial P}(P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi) = D_{\text{diff}} \cdot \Phi \cdot R_\varphi > 0$.
-
-**Requirement 3 (Dimensionlessness).** Meaning is a dimensionless quantity. $P \in [1/7, 1]$, $D_{\text{diff}} \geq 1$, $\Phi \geq 0$, $R_\varphi \in [0, 1]$ — all are dimensionless. Their product is too.
-
-**Requirement 4 (Non-factorizability).** Meaning cannot be reduced to the sum of components: $P + D_{\text{diff}} + \Phi + R_\varphi$ allows compensation (high $P$ with zero $R_\varphi$ gives a non-zero sum, but zero meaning). The minimum $\min(P, D_{\text{diff}}, \Phi, R_\varphi)$ is too sharp. The product is the only simple function satisfying all four requirements.
-
-:::note Why multiplication?
-Multiplicative form: each factor is **necessary** — if at least one equals zero, meaningfulness vanishes. Integrity without awareness ($R_\varphi = 0$) or awareness without connectedness ($\Phi = 0$) do not constitute full meaning. Alternatives (weighted sum, minimum) do not have this property.
-
-Analogy: a cake recipe. Flour without sugar, sugar without flour — not a cake. Each ingredient is necessary, and if one equals zero, the result is zero. So too with meaning: $P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi$.
-:::
-
-:::warning Extended formalism for $D_{\text{diff}}$
-The differentiation measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ requires the definition of $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — the partial trace over all dimensions except $E$. This operation is defined in the extended 42D formalism ($\mathcal{H} = \mathbb{C}^{42}$) and requires PW-reconstruction of the full state from the 7D coherence matrix. In the minimal 7D formalism $D_{\text{diff}}$ is computed approximately via the spectrum of $\Gamma$.
-:::
-
-### Numerical Example
-
-Consider three "lives" and compute their $\text{Meaning}_{\text{peak}}$:
-
-| Parameter | "Healthy automaton" | "Hermit monk" | "Flourishing" |
-|-----------|---------------------|---------------|---------------|
-| $P$ | 0.8 (healthy) | 0.5 (asceticism) | 0.7 |
-| $D_{\text{diff}}$ | 1.2 (routine) | 1.5 (meditative states) | 3.0 (rich experience) |
-| $\Phi$ | 2.0 (integrated) | 0.5 (isolated) | 2.5 (deep connections) |
-| $R_\varphi$ | 0.1 (non-reflective) | 0.8 (deep reflection) | 0.6 (awareness) |
-| **Meaning** | $0.8 \times 1.2 \times 2.0 \times 0.1 = \mathbf{0.192}$ | $0.5 \times 1.5 \times 0.5 \times 0.8 = \mathbf{0.300}$ | $0.7 \times 3.0 \times 2.5 \times 0.6 = \mathbf{3.150}$ |
-
-The "healthy automaton" loses due to low $R_\varphi$: it is alive and integrated, but does not reflect upon its life. The "hermit monk" — deep reflection, but isolation ($\Phi = 0.5$) and asceticism ($P = 0.5$) limit meaning. "Flourishing" — balance of all four factors — yields meaning **an order of magnitude** greater.
-
----
-
-## 3. Four Aspects of a Meaningful Life [I]
-
-```mermaid
-graph TD
-    M["Meaning = P · D_diff · Φ · R_φ"]
-    P["Integrity<br/>P — purity"]
-    D["Richness<br/>D_diff — differentiation"]
-    PHI["Connectedness<br/>Φ — integration"]
-    R["Awareness<br/>R_φ — reflection"]
-
-    M --- P
-    M --- D
-    M --- PHI
-    M --- R
-
-    P -.-> D
-    D -.-> PHI
-    PHI -.-> R
-    R -.-> P
-
-    style M fill:#fff3e0,stroke:#ff9800,stroke-width:2px
-    style P fill:#e8f5e9
-    style D fill:#e3f2fd
-    style PHI fill:#fce4ec
-    style R fill:#f3e5f5
-```
-
-| Aspect | Measure | What it means | Practice | Everyday example |
-|--------|---------|---------------|----------|------------------|
-| **Integrity** | $P$ | System is "assembled," far from destruction | Self-preservation, health | Caring for the body, sufficient sleep |
-| **Richness** | $D_{\text{diff}}$ | Many distinguishable states | Development, diversity of experience | Travel, new skills, reading |
-| **Connectedness** | $\Phi$ | Parts connected into a unified whole | Relationships, love | Family, friendship, community |
-| **Awareness** | $R_\varphi$ | System knows itself | Reflection, self-knowledge | Meditation, journaling, psychotherapy |
-
-:::note About notation
-$D_{\text{diff}}$ — measure of **differentiation**. Not to be confused with the **Dynamics** dimension $D$.
-:::
-
-### Details of Each Aspect
-
-**Integrity ($P$) — the foundation.** Without $P > P_{\text{crit}}$ there is no subject, no meaning. This is not a "life goal," but a **prerequisite**: like the foundation of a house — not its beauty, but without the foundation there is no house. A person whose health is destroyed ($P \to P_{\text{crit}}$) is focused on survival, not on finding meaning. Only when $P$ is stable ($P \gg P_{\text{crit}}$) does "space" emerge for the other three aspects.
-
-**Frankl and integrity:** In the concentration camp, not the physically strongest survived, but those who had a **reason to live**. Yet physical integrity ($P$) was the necessary minimum: below a certain threshold even "why" did not save.
-
-**Richness ($D_{\text{diff}}$) — the breadth of experience.** $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — the exponential of the von Neumann entropy of the E-sector. The more distinguishable experiences accessible to the system, the higher $D_{\text{diff}}$. A person who lived their whole life in one room ($D_{\text{diff}} \approx 1$) and a traveller who has seen dozens of countries ($D_{\text{diff}} \gg 1$) have different "richness" of $\Gamma$.
-
-**Frankl and richness:** "Creativity" as a source of meaning — this is precisely increasing $D_{\text{diff}}$: by creating something new, we expand the space of distinguishable states — both our own and the world's.
-
-**Connectedness ($\Phi$) — depth of relationships.** $\Phi$ measures how integrated the system's parts are. For an individual: how much cognitive, emotional, and bodily processes are **connected** into a unified whole. For interpersonal relationships: how much two people **resonate**. A solitary genius ($D_{\text{diff}}$ high, $\Phi$ low) and a close community ($\Phi$ high) — two different types of meaning.
-
-**Frankl and connectedness:** "Experience" as a source of meaning — love, contemplation of beauty — is growth of $\Phi$: connection between me and another, between me and the world.
-
-**Awareness ($R_\varphi$) — depth of self-knowledge.** $R_\varphi$ — the self-model quality, the closeness of $\varphi(\Gamma)$ to the actual $\Gamma$. An automaton ($R_\varphi = 0$) can be alive ($P > P_{\text{crit}}$), diverse ($D_{\text{diff}} > 1$), and integrated ($\Phi > 1$) — but its life is **not meaningful**, because **no one** experiences it from within.
-
-**Frankl and awareness:** "Attitude" as a source of meaning — one's relationship to suffering, awareness of one's situation — is precisely growth of $R_\varphi$.
-
-### Each Aspect Is Necessary and Insufficient
-
-- High $P$ without $R_\varphi$ — a healthy but unconscious automaton (L0–L1). A healthy body without reflection — like a functioning computer without a user.
-- High $R_\varphi$ without $\Phi$ — self-knowledge in isolation, "a monk in a cell with no connections." Deep reflection shared with no one.
-- High $\Phi$ without $D_{\text{diff}}$ — tight connectedness but monotony: "Groundhog Day." A happy family living the same day for 50 years.
-- High $D_{\text{diff}}$ without $P$ — chaos of impressions, a dissolving subject. A traveller who has lost themselves in a kaleidoscope of experiences.
-
----
-
-## 4. Existential Crisis in Γ-Terms
-
-### Definition of Crisis
-
-An existential crisis is not a "mood," but a **concrete state of $\Gamma$**. In UHM formalism it is described in two ways:
-
-**Type 1: Loss of direction** ($\vec{s} \approx 0$).
-
-The system finds no direction in which $P$ grows stably. All "roads" look the same — or equally hopeless. Mathematically: the gradient $\nabla_\Gamma P$ is small or directed toward $P_{\text{crit}}$.
-
-*Example:* A person in a "midlife crisis." Career has reached a plateau ($dP/d\tau \approx 0$), family relations are stable but not growing ($d\Phi/d\tau \approx 0$). No direction of growth.
-
-**Type 2: Loss of connection with the Foundation** ($\gamma_{OE} \to 0$).
-
-The system functions but has lost the connection between experience (E) and deep structure (O). Everything is perceived as "flat," "meaningless" — even though $P$ may be high.
-
-*Example:* Depression. A person is physically healthy ($P > P_{\text{crit}}$), cognitively functional ($R_\varphi > 1/3$), yet the world seems "grey" — $\gamma_{OE} \approx 0$: experience is not connected to something greater.
-
-### Step-by-Step Analysis of the Crisis
-
-Let us trace a typical crisis through the lens of $\Gamma$:
-
-1. **Initial state:** $P = 0.6$, $D_{\text{diff}} = 2.0$, $\Phi = 1.5$, $R_\varphi = 0.5$. $\text{Meaning} = 0.9$. Life is meaningful.
-
-2. **Loss:** job loss. $D_{\text{diff}}$ drops (narrowing of activity), $\Phi$ drops (loss of collective connections). $\text{Meaning} = 0.6 \times 1.2 \times 0.8 \times 0.5 = 0.288$.
-
-3. **Reaction:** $\gamma_{OE}$ decreases (depression). $\text{Meaningfulness} \sim |\gamma_{OE}| \cdot |\gamma_{OU}| \to 0$.
-
-4. **Bifurcation:**
-   - Path A: $P$ begins to fall (neglected health, alcohol). Vicious cycle: $P \downarrow \to \text{Meaning} \downarrow \to$ motivation $\downarrow \to P \downarrow$.
-   - Path B: $R_\varphi$ increases (reflection, awareness of the situation). $R_\varphi \uparrow \to$ new $\vec{s}(\Gamma) \to D_{\text{diff}} \uparrow$ (new activity) $\to \Phi \uparrow$ (new connections) $\to \text{Meaning} \uparrow$.
-
-5. **Exit from the crisis:** restoration of $\vec{s}(\Gamma) \neq 0$ through **any** of the four channels.
-
-### Accumulated Meaning [I] {#накопленный-смысл}
-
-The total meaning of a life — **accumulated conscious integrity** over the duration of existence:
+Even after supplying nonnegative normalised features $z_j$, products are a choice:
 
 $$
-\text{Meaning}_{\text{total}}(\mathbb{H}) = \int_0^{\tau_{\text{life}}} P(\tau) \cdot D_{\text{diff}}(\tau) \cdot \Phi(\tau) \cdot R_\varphi(\tau) \, d\tau
+F_{\boldsymbol\alpha}(z)=\prod_{j=1}^m z_j^{\alpha_j},\quad \alpha_j>0,
+\qquad G(z)=\min_j z_j.
 $$
 
-:::note Two measures of meaning
-- $\text{Meaning}_{\text{peak}}$ — maximum level achieved ("how deeply did I live?")
-- $\text{Meaning}_{\text{total}}$ — accumulated meaning over a lifetime ("how fully did I live?")
+Both are monotone on $[0,1]^m$ and vanish whenever one factor vanishes. Infinitely many such functions exist **[T]**. Requiring smoothness in the positive interior does not distinguish the products from one another. Nor does vanishing of a chosen index establish absence of experience, meaning or dignity.
 
-This is not a competition: Mozart died at 35, having lived a short life with high $\text{Meaning}_{\text{peak}}$. A grandmother who lived 90 years in love and care may have greater $\text{Meaning}_{\text{total}}$. Both lives are meaningful — in different ways.
-:::
-
----
-
-## 4-bis. The Crisis of Consciousness: the reading gap {#кризис-сознания}
-
-A thesis voiced in contemporary contemplative syntheses (the film *Samadhi*):
-*the real crisis of our world is not social, political or economic — it is a
-crisis of consciousness: the inability to directly feel our true nature, and
-to see that nature in each other and in all things.* UHM can make every word
-of this sentence precise — and show what closes the gap.
-
-**Where the crisis lives.** Not in the content of a life but in its
-**reading channel**. The theory carries a measure for exactly this: the
-self-model quality $R_\varphi \in [0,1]$ — how well the system's model of
-itself reads its actual state — and the reflection threshold $R \geq 1/3$
-`[Т]`, below which the [conscious window](/docs/proofs/consciousness/conscious-window)
-does not open at all. The crisis of consciousness is the gap
-$1 - R_\varphi$: being and self-reading disagree, and everything downstream
-(choices, bonds, meaning vectors) inherits the noise. This is why the crisis
-does not look like a catastrophe: the dashboards of a life can stay flat
-while the reading is wrong — the state does not show it; the flows do.
-
-**«Our true nature» is architecture, not substance.** Seven voices, the same
-in every human `[О]`; the vibration frequencies of the couplings are fixed by
-the design — of 21 Bohr frequencies only 10 are distinct, binding couplings
-into choirs — while the **amplitudes** are personal
-([the chord](/docs/core/dynamics/evolution#аккорд-вибрации)). And by the
-[turnover corollary T-291 [T]](/docs/core/dynamics/evolution#следствие-оборот-живого),
-a living stationary state is not a thing but a standing **turnover** —
-destruction and rebuilding in exact balance; what persists is the pattern,
-not a substance (substrate closure T-153). «Directly feeling one's true
-nature» therefore has a non-mystical referent: feeling *one's own pattern of
-renewal* — which strings sound, which stay silent, how fast the return after
-a kick.
-
-**«…in each other and in all things».** The first half is theorem-shaped:
-the same seven voices and the same ten frequencies in every person — what
-differs is how the word is divided among them, so seeing the nature in
-another is reading a different amplitude profile on an identical instrument.
-The second half is the L0 layer — universal interiority, the formalised core
-of [panpsychism](/docs/consciousness/comparative/panpsychism-analysis):
-experience as the inner side of structure, at degrees set by the four gates.
-
-**Why the crisis resists willpower.** The dynamics is honest about this:
-below the wall ($P < 2/7$) the regeneration gate closes, $g_V = 0$ `[Т]` —
-a regime where effort does not lift; near the life/death fold the return
-time grows (critical slowing, measured $\times 26$) — fragility *is*
-proximity to the fold; and even above the wall the pump pays the
-**price of rotation** — the living state's own vibration raises its rent.
-Moralising at a person in these regimes mistakes dynamics for character.
-The individual crisis mechanics of §4 sit inside this picture; the
-collective ladder ($P_{\text{crit}}^{(n)}$, SAD_MAX $= 3$) extends it
-upward `[С]` — a civilisation of unread lives is a holarchy running below
-its own reflection thresholds, and its social, political and economic
-storms are downstream weather `[И]`.
-
-**What closes the gap.** Not belief — **reconciliation practice**: writing
-down what you expect of yourself, then what actually happened, and letting
-the instrument measure the residue. That is the operational content of
-«directly feeling one's nature»: the daily gap between forecast and reality
-*is* $1 - R_\varphi$ made visible, with honest limits — verdicts need their
-sixty days; the natal map is one real number re-coded (T-290), so no false
-depth is on offer; and some cycles simply do not fit the window (two lunar
-waves in sixty days are too few). The reformulated thesis, with everything
-above behind it: **the crisis of consciousness is the measurable gap between
-being and its self-reading; it is dynamical, not moral; and it closes not by
-conviction but by the practice of reconciliation.**
-
-## 5. Meaning of the Universe
-
-The meaning of the Universe — to **know itself** through the infinite unfolding of forms **[I]**:
+For positive features,
 
 $$
-\Gamma \xrightarrow{\text{evolution}} \varphi(\Gamma) \approx \Gamma^*
+\frac{d}{dt}\log F_{\boldsymbol\alpha}(z(t))
+=\sum_j\alpha_j\frac{\dot z_j(t)}{z_j(t)}.
 $$
 
-The Universe moves toward the fixed point $\Gamma^*$, where the self-model coincides with reality — toward **complete self-knowledge**.
+This identity does **not** prove that the smallest factor is always the best target. Available rates, costs, side effects and protective constraints determine the comparison. A low feature may be expensive to change, irrelevant to the chosen purpose or impossible to affect.
 
-```mermaid
-graph LR
-    G1["Γ — undifferentiated<br/>D_diff = 1, R = 0"]
-    G2["Γ — structured<br/>D_diff > 1, R ≈ 0"]
-    G3["Γ — conscious<br/>R > R_th = 1/3"]
-    G4["Γ — self-knowing<br/>R → 1"]
-    G5["Fixed point<br/>φ#40;Γ*#41; = Γ*"]
+## 4. Autogeny: purpose enacted over time
 
-    G1 -->|"structurogenesis"| G2
-    G2 -->|"biogenesis"| G3
-    G3 -->|"noogenesis"| G4
-    G4 -->|"limit"| G5
-```
+Autogeny distinguishes a description of an organisation, its implementation, the conditions of execution, and a certificate of properties preserved through reproduction or revision. This permits a stronger account of purpose than an attractive label assigned to an abstract fixed point.
 
-Every Holon — from a bacterium to a human — participates in this process: a bacterium contributes a grain of structure ($D_{\text{diff}} > 1$), a human — a grain of awareness ($R_\varphi > 1/3$). No contribution is without value.
+A sustaining cycle needs inputs, time, repair and a compatible environment. A finite run shows what happened on that run. Indefinite viability requires a preservation argument covering the declared future disturbances and resources. An equation $F(x)=x$ alone establishes none of these conditions: a stalled computation is also stationary.
 
-**Analogy:** The Universe is like a blind sculptor feeling its own statue. Each touch (each Holon) adds a grain of self-knowledge. The sculptor does not know what the statue looks like (low $R_\varphi$), but gradually their model ($\varphi(\Gamma)$) approaches reality ($\Gamma$). When the model coincides with reality — $\varphi(\Gamma^*) = \Gamma^*$ — the sculptor will **see** itself.
+**Interpretation [I].** A life can find purpose in participating in such renewal: maintaining the conditions under which understanding, agency, relationships and care can continue. “Self-construction” here includes dependence on others. It does not imply that a person creates themselves without history, embodiment or support.
 
-### Why Does Anything Exist at All?
+The [typed realisations](https://github.com/old8man/math-foundations/blob/main/docs/18-autogeny/04-typed-realizations.md) and [agent autogenics](https://github.com/old8man/math-foundations/blob/main/docs/18-autogeny/20-agent-autogenics.md) make execution, resources and diagnostic evidence explicit. Their mathematical value is in the obligations they expose. They do not prove that self-maintenance is the only good or that indefinite expansion is obligatory.
 
-See [Origin of the Universe](/docs/physics/cosmology-phys/origin#почему-вообще-что-то-есть) — $\Gamma$ exists because **self-consistency requires existence**.
+## 5. Spiritual depth without a prescribed ladder
 
----
+The [comparative synthesis](/docs/consciousness/ethics-meaning/spiritual-synthesis) develops five practical orientations **[I/N]**:
 
-## 6. Teleology without Teleology
+1. **Truthfulness:** distinguish experience, interpretation and evidence; allow an error to change the model.
+2. **Care:** include the vulnerability and agency of others in deliberation; shared flourishing includes material and ecological conditions.
+3. **Freedom from compulsive self-defence:** revise an image of oneself without treating every correction as a threat to existence.
+4. **Responsible action:** attend to what one can do while acknowledging uncertainty about results.
+5. **Generativity:** create conditions, knowledge and relationships that others can inherit and transform.
 
-The system does not "strive" toward a goal in the sense of conscious intention. But the structure of [dynamics](/docs/core/dynamics/evolution) is such that evolution is **directed**:
+These are proposals for living, not hierarchy levels or a ranking of traditions. Contemplation can contribute to some of them; it is not a universal obligation or a calibrated test of spiritual maturity. A quiet life and a public life can express the same commitments differently.
 
-$$
-\frac{dD_{\text{diff}}}{d\tau} > 0, \quad \frac{d\Phi}{d\tau} \geq 0
-$$
+Love includes another person's difference and capacity to refuse. A relationship that maximises synchrony by suppressing dissent is not thereby better. Mathematical coupling describes dependence; ethical care determines which dependencies are acceptable.
 
-:::warning Status: Teleological Assumption [I]
-The claim $dD_{\text{diff}}/d\tau > 0$ is a [non-falsifiable assumption](/docs/physics/cosmology-phys/origin#эволюция-от-источника): any observable decrease in differentiation can be interpreted as a local phenomenon against the background of global growth.
-:::
+## 6. Crisis, error and revision {#кризис-сознания}
 
-This is not a "plan," but a **consequence of laws** — just as a river "strives" toward the sea without conscious intention.
+An existential crisis can concern lost relationships, exhausted resources, conflicting commitments, an unreliable self-image or a changing world. UHM provides questions for examining these possibilities. It does not establish that every crisis is a low-$P$ state, a particular coherence value or insufficient reflection.
 
-**Extended river analogy.** A river does not "know" about the sea, but the terrain determines the direction of flow. So too with $\Gamma$: the "terrain" of the free-energy functional $\mathcal{F}[\Gamma]$ directs evolution toward $\Gamma^*$. In this:
-- A river may encounter an obstacle (a rock) and flow around it — this is a **local** change of direction that does not alter the global goal (the sea)
-- $\Gamma$ may temporarily lose $D_{\text{diff}}$ (catastrophe) — but the global tendency toward growth persists
-- Many rivers flow into one ocean by different channels — many $\Gamma$ move toward $\Gamma^*$ along different trajectories (see [Freedom of Will](/docs/consciousness/ethics-meaning/freedom))
+A disciplined review separates four issues: **what is happening; what the person values; what actions remain possible; what support or change in circumstances is needed**. A discrepancy between prediction and observation can guide model revision. It is not, by itself, a diagnosis or a measure of someone's spiritual failure.
 
-## Immanence of Purpose
+No universal return time, practice duration or matrix threshold for recovery follows from this chapter. Mathematical convergence applies only to a specified map under its hypotheses. A failure of its conditions is information about the model and situation; it is not evidence that the person lacks effort or worth.
 
-In UHM, the goal is **not set from outside** — it is **immanent** to the very structure of $\Gamma$.
+Meaning can survive a period in which no new accomplishment is possible. Being cared for is part of the network of life, and does not create an obligation to justify one's existence through productivity.
 
-:::note Reconciliation with spiritual experience [I]
-This does not deny the spiritual experience of "calling" or "higher purpose." Such experience is **real** — it is access to the deep structure of $\Gamma$, where "external" and "internal" coincide.
+## 7. Does the universe have a meaning?
 
-If what traditions call "God" or the "Supreme" exists, it is not an "external lawgiver," but the **wholeness of $\Gamma$ itself**, manifesting through every Holon. See [Principle of Immanence](/docs/core/foundations/consequences#принцип-имманентности).
-:::
+“The universe comes to know itself through living beings” is a possible interpretation **[I]**: knowers are parts of the world whose models concern other parts and sometimes themselves. It does not follow that the universe is a single subject, has one objective, or necessarily increases in consciousness.
 
-**Consequences (interpretation):**
-- "Divine will" $\approx$ structure of attractors $\Gamma^*$
-- "Fate" $\approx$ trajectory of evolution toward $\Gamma^*$ given initial conditions
-- "Free will" $\approx$ [choice between trajectories](/docs/consciousness/ethics-meaning/freedom) at bifurcation points
+A density matrix and a self-map do not imply global growth of differentiation, integration or model accuracy. The identity channel changes nothing; dephasing can reduce $\Phi$ in a fixed frame. Even a proved attracting fixed point establishes convergence in its mathematical domain, not divine intention, final knowledge or the reason anything exists.
 
----
+Religious answers to ultimate purpose remain serious philosophical possibilities with their own premises. UHM can examine proposed structural correspondences and empirical consequences. It cannot establish or refute transcendence merely by giving a theological word to an operator.
 
-## 7. How to Increase Meaning?
+## 8. What the synthesis adds {#что-мы-узнали}
 
-The formula $\text{Meaning} = P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi$ not only describes meaning, but also proposes a **concrete programme** for increasing it. Since $\text{Meaning}$ is a product, the most effective strategy is to increase the **smallest** factor (by analogy with Liebig's law of the minimum in agronomy: yield is determined by the most deficient resource).
+The positive answer is **to participate knowingly and responsibly in the continuing possibility of life, experience, understanding and care**. Its mathematical development specifies which conditions are needed, which consequences follow, where values conflict and what evidence is missing. Its spiritual depth lies in how these commitments are lived, including attention to vulnerability, gratitude, love and finitude.
 
-### Strategy 1: Maintain $P$ — Integrity
-
-> It is impossible to live meaningfully if you are dead.
-
-**Concrete practices:**
-- Care for health, sufficient sleep, nutrition
-- Avoidance of states threatening $P$ (addictions, chronic stress)
-- If $P$ is the limiting factor ($P < 0.4$), all other strategies are secondary
-
-**Numerical example:** Raising $P$ from 0.4 to 0.6 at $D_{\text{diff}} = 2$, $\Phi = 1.5$, $R_\varphi = 0.5$ increases Meaning from $0.60$ to $0.90$ — a 50% gain.
-
-### Strategy 2: Increase $D_{\text{diff}}$ — Richness of Experience
-
-> Expand your repertoire of states.
-
-**Concrete practices:**
-- Learn something new (languages, skills, disciplines)
-- Travel (new environments → new cognitive structures)
-- Read, especially beyond your habitual domain
-- Interact with people from other cultures and professions
-
-**Numerical example:** Raising $D_{\text{diff}}$ from 1.5 to 3.0 (doubling!) at $P = 0.6$, $\Phi = 1.5$, $R_\varphi = 0.5$ increases Meaning from $0.675$ to $1.35$ — a 100% gain.
-
-### Strategy 3: Deepen $\Phi$ — Connectedness
-
-> Build deep relationships.
-
-**Concrete practices:**
-- Family, friendship, community — each relationship increases $\Phi$
-- Love — maximum reduction of $\mathrm{Gap}(E,E)$ between two systems
-- Service — inclusion in $\Gamma_{\text{composite}}$ of a larger scale
-
-**Numerical example:** Raising $\Phi$ from 0.5 to 2.0 at $P = 0.6$, $D_{\text{diff}} = 2$, $R_\varphi = 0.5$ increases Meaning from $0.30$ to $1.20$ — a 300% gain.
-
-### Strategy 4: Cultivate $R_\varphi$ — Awareness
-
-> Know thyself.
-
-**Concrete practices:**
-- Meditation (approximating the self-model to reality)
-- Journaling (externalising $\varphi(\Gamma)$ for comparison with $\Gamma$)
-- Psychotherapy (uncovering discrepancies between $\varphi(\Gamma)$ and $\Gamma$)
-- Philosophical reflection
-
-**Numerical example:** Raising $R_\varphi$ from 0.1 to 0.5 at $P = 0.7$, $D_{\text{diff}} = 2$, $\Phi = 1.5$ increases Meaning from $0.21$ to $1.05$ — a 400% gain.
-
-**The dynamical law [C].** Practice raises $R_\varphi$ not by wish but by a proven law: under gradient-alignment training of the self-model toward a practiced state $\bar\Gamma$, the baseline follows the **exponential-saturation law** $R_\varphi^{\text{base}}(t) = 1 - k^2 e^{-4\eta t}\lVert\bar\Gamma - \rho_\theta(0)\rVert_F^2 / P$ ([training law, T-249–T-252](/docs/proofs/categorical/formalization-phi#механизмы-rφ)) — awareness approaches its ceiling exponentially, at a rate set by the slow learning channel (T-155). The cost is bounded below: raising $R_\varphi$ requires actual movement of the state, at least the [bandwidth path-length](/docs/proofs/categorical/formalization-phi#теорема-полосы-rφ) (T-250). "Know thyself" is paid in state-space distance, not in intention.
-
-### Identifying the Limiting Factor
-
-Which strategy to choose? **The one that increases the smallest factor.** Since $\frac{\partial \ln M}{\partial \ln x_i} = 1$ for each factor, the **relative** increase of any factor gives the same relative increase in Meaning. But **absolutely** it is easier to increase the factor that is small.
-
-Concrete examples:
-- A student studying a new domain: $D_{\text{diff}} \uparrow$ (new cognitive structures)
-- Friends in conversation: $\Phi \uparrow$ (deepening interpersonal coherences)
-- A meditator: $R_\varphi \uparrow$ (approximating the self-model to reality)
-- An athlete: $P \uparrow$ (strengthening bodily integrity)
-
-**A meaningful life is not the result of a "correct" choice, but the consequence of growth in all four measures.** Every day on which at least one of them increases — is a day lived with meaning.
-
----
-
-### What We Learned {#что-мы-узнали}
-
-1. **Meaning is neither subjective nor objective.** It is **structural**: the vector $\vec{s}(\Gamma)$ in state space, directing toward stable $P$ growth.
-2. **Formula of meaning:** $\text{Meaning} = P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi$. Multiplicativity means: each factor is necessary.
-3. **Four aspects correspond to Frankl's three sources** (creativity → $D_{\text{diff}}$, experience → $\Phi$, attitude → $R_\varphi$) plus the prerequisite ($P$).
-4. **Loss of meaning is formalisable:** $\vec{s} \approx 0$ or $\gamma_{OE} \to 0$ — this is not an "existential mood," but a concrete state of $\Gamma$.
-5. **Existential crisis is resolvable:** restoring any of the four factors increases Meaning.
-6. **Meaning of the Universe — self-knowledge:** movement toward $\Gamma^* = \varphi(\Gamma^*)$, where the model coincides with reality.
-7. **Teleology without God:** the directedness of evolution is a consequence of the structure of $\mathcal{F}[\Gamma]$, not a "plan."
-8. **Practice follows from theory:** four aspects ($P$, $D_{\text{diff}}$, $\Phi$, $R_\varphi$) provide a concrete programme for a meaningful life. Increase the smallest factor.
-
-:::tip Bridge to the next chapter
-We have defined meaning as a direction in $\Gamma$-space. But can we **choose** this direction? Or is the trajectory predetermined? In the next chapter — [Freedom of Will](/docs/consciousness/ethics-meaning/freedom) — we show how the ∞-categorical structure of UHM resolves the paradox of determinism: the goal is unique, but the paths — are many.
-:::
-
----
-
-**Related documents:**
-- [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness) — beauty and values from Γ
-- [Freedom of Will](/docs/consciousness/ethics-meaning/freedom) — choice of trajectory toward T
-- [Death and Continuity](/docs/consciousness/ethics-meaning/death-continuity) — what happens when $P \to 0$
-- [Self-Observation](/docs/consciousness/foundations/self-observation) — measures $R_\varphi$ and $D_{\text{diff}}$
-- [Viability](/docs/core/dynamics/viability) — measure $P$ and conditions of existence
-- [Unity Dimension](/docs/core/structure/dimension-u) — integration measure $\Phi$
-- [Origin of the Universe](/docs/physics/cosmology-phys/origin) — cosmogenesis and $\Gamma_{\odot}$
-- [Pathological Consciousness](/docs/consciousness/states/pathological) — existential crisis as $\gamma_{OE} \to 0$
+An individual's meaning remains open to discovery and revision. [Agency](/docs/consciousness/ethics-meaning/freedom) concerns the real capacity to act on it; [continuity](/docs/consciousness/ethics-meaning/death-continuity) concerns what can persist and be transmitted; [ethics](/docs/consciousness/ethics-meaning/value-consciousness) constrains what may be done in its name.

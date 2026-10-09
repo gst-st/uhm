@@ -12,7 +12,7 @@ not the destiny. Coupling points (all configurable, all marked):
   open centers       ->  filter gains    (susceptibility = high process noise)
   transits           ->  drive schedule  (temporary channels = temporary bridges)
   synastry           ->  pair bridges    (composite channels = cross-coherences,
-                                          the T-77 increment, machine-measured)
+                                          chosen-sign increments, construction checks)
 
 Honesty classes for the HB-strata below:
   VERIFIED   computed fact about the encoder/machinery or astronomy
@@ -276,7 +276,7 @@ def calibrate(n_charts=6000, seed=7):
           "mind-body imprint mismatch" if r > 0.3 else
           "measured r=%.2f — report honestly" % r)
 
-    # -- HB06 synastry = pair bridges (T-77 machinery) ------------------------
+    # -- HB06 chosen-sign pair perturbations (construction only) ------------------------
     rng2 = np.random.default_rng(11)
     rows = []
     for _ in range(240):
@@ -311,8 +311,9 @@ def calibrate(n_charts=6000, seed=7):
           "%d/%d; corr(#composites, gain) r=%.2f"
           % (int(np.median(ks)), ks.min(), ks.max(),
              int((dps >= -1e-15).sum()), len(dps), rr))
-    print("       VERDICT: VERIFIED — 'electromagnetic' channels are exactly "
-          "cross-bridges; the increment lives in the bond (T-77)")
+    print("       VERDICT: CONSTRUCTION — separately summed Hermitian perturbation "
+          "increments; signs chosen for nonnegative linear terms; PSD is not checked "
+          "here; this does not validate relationship compatibility")
 
     # -- HB07 open-center gains help the filter (DESIGN) ----------------------
     c0 = charts[0]
@@ -471,7 +472,7 @@ def calibrate(n_charts=6000, seed=7):
 
     print("\n" + "=" * 78)
     print("SUMMARY: encoder sound; Reflector=mirror; islands=disconnected "
-          "gamma-graph; synastry=T-77 bridges; the sky is a drive schedule; "
+          "gamma-graph; selected pair perturbations; the sky is a drive schedule; "
           "the human layer stays OPEN with an honest n-of-1 protocol.")
     print("=" * 78)
 

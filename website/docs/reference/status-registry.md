@@ -11,15 +11,17 @@ The listed historical statuses are not a certificate of the entire corpus. The r
 :::
 
 :::info Status marker system
-Each UHM result carries one of seven statuses:
+UHM results use the following status markers:
 - **[T]** Theorem — strictly proven
 - **[C]** Conditional theorem — proven under an explicitly stated assumption
-- **[H]** Hypothesis — mathematically formulated, requires proof
+- **[H]** Hypothesis — an unestablished claim; mathematical claims require proof, empirical claims require operationalisation and testing
 - **[P]** Postulate — accepted without proof as a fundamental assumption
 - **[Pr]** Research programme — a named open direction, neither assumed nor claimed proven (introduced 2026-09-10: pages had been writing "[P] Program" while the registry read [P] as "Postulate" — one letter, two meanings)
 - **[D]** Definition — definition by convention (assigned, not derived)
 - **[I]** Interpretation — philosophical/semantic statement
 - **[✗]** Retracted — proven erroneous or withdrawn
+
+**Normative premises.** In [ethics and meaning](/docs/consciousness/ethics-meaning/value-consciousness), the additional annotation **[N]** marks an adopted normative commitment. This is a separate evaluative axis, not a theorem grade or a new physical postulate. Preservation of a stated norm can be proved mathematically; selecting the norm requires ethical justification. See the [normative input ledger](/docs/reference/premises#нормативные-основания).
 
 **Two axes, one pair of letters.** A result carries a *mathematical* status ([T], [C], [D], [P] — or [H] while unproven) and, separately, a *physical-identification* status ([I] where the correspondence to observed entities is interpretive; absent where none is claimed). They are shown as a pair where both apply: $N_{\text{gen}} = 3$ is **[T]** as a count of $\mathrm{QR}(7)$ and **[I]** as an identification with fermion generations. Mixing the axes into a single letter is what produced the contradictory rows corrected in the errata below.
 
@@ -224,7 +226,7 @@ Results with fully verified proofs.
 | T-74 | [✗] Universal unique spectral potential and primitive-to-physics chain withdrawn. Spectral expansions require a supplied spectral geometry and cutoff; the effective potential is a chosen model. | [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) | [Gap Operator](/docs/core/dynamics/gap-operator#тождество-tr-d2) |
 | T-75 | [✗] Exact universal six-term Keldysh derivation withdrawn; a selected action is a model ansatz. For a specified vector field and nonzero coherence, theta_dot=Im(Fij/gammaij) is an exact identity. | [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#полный-лагранжиан) | [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics) |
 | T-76 | [T] The corrected site is Open(D_N,dB) with inclusions and union covers. CPTP continuity induces geometric morphisms. The former channel-ball-cover proof and claimed dagger category are withdrawn; the Hilbert-Schmidt adjoint of a TP channel need not be TP. | [T] | [Categorical Formalism](/docs/proofs/categorical/categorical-formalism) |
-| T-77 | **Cooperation via coherences** (Sol.57): $P(\rho_*^{(12)}) = P(\rho_{\mathrm{diag}}) + 2\|\gamma_{\mathrm{cross}}\|_F^2 > P(\rho_{\mathrm{diag}})$. Old inclusion-exclusion formula retracted [✗] (dimensionally incorrect) | [Value Consciousness](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация) | [Value Consciousness](/docs/consciousness/ethics-meaning/value-consciousness) |
+| T-77 | **Purity and pinching**: $P(\rho)=P(\mathcal E\rho)+\|\rho-\mathcal E\rho\|_F^2$ for a specified orthogonal block decomposition. For two blocks the residual is $2\|B\|_F^2$. Cooperation or welfare does not follow | [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация) | [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness) |
 | T-78 | **CPTP complete channel** (Sol.58): Fano operators $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ define a CPTP channel in Kraus representation. CP is automatic (Choi's theorem); TP from $\sum_p \Pi_p = 3\mathbb{I}_7$ [T-41b]. Independent of stratification — raised from [C] | [Dimension L](/docs/core/structure/dimension-l) | [Lindblad Operators](/docs/core/operators/lindblad-operators) |
 | T-79 | **Spectral self-closure** (Meta-theorem): A1–A5 → unique self-consistent dynamics. The mapping $\mathcal{F}: (S^1)^{21}/G_2 \to (S^1)^{21}/G_2$ ($\theta \to \rho_* \to D_{\mathrm{int}} \to V_{\mathrm{Gap}} \to \theta_{\mathrm{vac}}$) has a unique fixed point (Brouwer + T-39a + T-64). **Errata 2026-09-25: corrected from [T] to [C at (SV)]** — the map on $(S^1)^{21}/G_2$ is not defined as stated ($V_3$ is not $G_2$-invariant), and the unique minimum it uses is T-64, restated as a hypothesis; uniqueness of the fixed point is conditional on (SV) | [Consequences](/docs/core/foundations/consequences#теорема-самозамыкание) | [Consequences](/docs/core/foundations/consequences#спектральное-самозамыкание) |
 | T-80 | **Sectoral Gap bound** **[T]** for the structural bound **+ [C at (SV)]** for its numerical values (Sol.59): for non-O pairs $\mathrm{Gap}(i,j) \leq \varepsilon_{\max} \approx 0.06$ (maximum over $\mathbf{3}$-$\mathbf{3}$ sector); mean $\bar{\varepsilon}$ — root mean square over the 15 non-O pairs (erratum A-83, 2026-09-25) — $\approx 0.027$ at $\varepsilon_{33} = 0.06$; the earlier $0.023$ came from substituting $\varepsilon_O \approx 0.04$ against the table's $\varepsilon_O \sim 1$. For O-pairs: $\mathrm{Gap}(O,i) \approx 1$. Old Fano bound $\leq 1/2$ retracted [✗] (O-counterexample). Replacement theorem is stricter for non-O and correct for O. Caveat: numerical values $\varepsilon_{\max}, \bar{\varepsilon}$ — **[C at (SV)]** (unique vacuum) | [Berry Phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) | [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics) |
@@ -668,7 +670,7 @@ These results have been proven erroneous and must not be included in documentati
 | Entry-78 | Gaussian sum: 9 orders at physical $S_0$ | $\Theta_M/\Theta_0 \approx 1$ at $S_0 = 20$ | [Cosmology](/docs/physics/cosmology-phys/dark-matter) §4 |
 | Entry-79 | Modular hypothesis: 15 orders | Refuted at $S_0 = 20$ | [Berry Phase](/docs/physics/cosmology-phys/berry-phase) §12 |
 | Entry-80 | Energy cost of Gap | P does not depend on phases (contradiction) | [Composite Systems](/docs/core/dynamics/composite-systems) T.9.1 |
-| Entry-81 | Cooperation formula via inclusion-exclusion: $P_{\Gamma_1 \cup \Gamma_2} \geq P_{\Gamma_1} + P_{\Gamma_2} - P_{\Gamma_1 \cap \Gamma_2}$ | Dimensionally incorrect: $P = \mathrm{Tr}(\Gamma^2)$ — quadratic functional, not a measure. Correct formula: $\Delta P = 2\|\gamma_{\mathrm{cross}}\|_F^2$ (Sol.57, T-77 [T]) | [Value Consciousness](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация) |
+| Entry-81 | Cooperation formula via inclusion-exclusion: $P_{\Gamma_1 \cup \Gamma_2} \geq P_{\Gamma_1} + P_{\Gamma_2} - P_{\Gamma_1 \cap \Gamma_2}$ | Dimensionally incorrect: $P = \mathrm{Tr}(\Gamma^2)$ — quadratic functional, not a measure. Correct comparison with pinching: $P(\rho)-P(\mathcal E\rho)=\|\rho-\mathcal E\rho\|_F^2$; not a cooperation-benefit theorem (T-77 [T]) | [Value Consciousness](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация) |
 
 ---
 

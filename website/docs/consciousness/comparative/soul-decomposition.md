@@ -1,13 +1,13 @@
 ---
 sidebar_position: 6
 title: "The Soul: A Decomposition"
-description: "What survives of the soul under the Γ formalism: the five functions of the concept mapped to five formal objects with five different fates — the regime, the fixed point, the initial conditions, the composite field, the timeless record — plus a verdict register for the major traditions, from the Egyptian ka to Sheldrake's morphic fields"
+description: "Six functions of the soul: formal analogues, historical distinctions and conditions for testing continuity claims"
 slug: /consciousness/comparative/soul-decomposition
 ---
 
 # The Soul: A Decomposition
 
-:::info Объём сопоставления
+:::info Scope of the comparison
 This is a comparative interpretation [I], with hypotheses attached to the physical/phenomenal map. “Confirmed/refuted” below must be read at the declared model scope; the revised kernel does not establish universal soul, survival or clinical verdicts. Numerical gates, observer sections and state-transfer theorems have distinct types.
 :::
 
@@ -15,15 +15,15 @@ This is a comparative interpretation [I], with hypotheses attached to the physic
 > — Aristotle, *De Anima* II.1, 412b18
 
 :::info Bridge from the previous chapter
-[Panpsychism](/docs/consciousness/comparative/panpsychism-analysis) ended with UHM's own position — **pan-interiority**: every configuration has an inner side, but consciousness is a thresholded regime, not a universal property. This chapter turns to the oldest name humanity ever gave the inner side — the **soul** — and asks the question at full rigour. Which of the things the traditions called "soul" exist in the Γ formalism? Which are excluded by theorems? And which were never one thing to begin with?
+[Panpsychism](/docs/consciousness/comparative/panpsychism-analysis) ended with UHM's own position — **pan-interiority**: every configuration has an inner side, but consciousness is a thresholded regime, not a universal property. This chapter turns to a longstanding name used for several aspects of living and personhood — the **soul** — and asks the question at full rigour. Which proposed functions admit a precise model? What would connect that model to a historical claim? Which questions require different kinds of evidence? Pan-interiority and the phenomenal reading of the numerical gates remain interpretations [I/H].
 :::
 
 ## Chapter roadmap
 
 1. **A question that must be dismantled** — the five jobs of one word; the rules of the method
-2. **The instrument panel** — everything the formalism provides, restated self-containedly
+2. **The instrument panel** — the selected definitions and conditional results
 3. **The decomposition** — six components of "soul", each with its formal object and its fate
-4. **The register of verdicts** — claim by claim: refuted, relocated, confirmed, or outside jurisdiction
+4. **The register of assessments** — distinctions, supported results and open bridges
 5. **The traditions under the panel** — Egypt, Greece, Aristotle, the Stoa, Buddhism, Vedānta, Kabbalah, Christianity, Sufism, Daoism, Gnosis, Jung, Sheldrake, the Akashic records, spiritism
 6. **Structural convergences** — the layer architecture; body–soul–spirit, typed
 7. **The direct questions** — when a soul begins; pre-existence; māyā; whether new mathematics is needed
@@ -32,12 +32,12 @@ This is a comparative interpretation [I], with hypotheses attached to the physic
 :::note On notation
 In this document:
 - $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), the state of a holon; $\gamma_{ij}$ — its elements
-- $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты); $P_{\text{crit}} = 2/7$ — [critical threshold](/docs/core/dynamics/viability#критическая-чистота) **[T]**
-- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), canonically $R = 1/(7P)$; threshold $R_{\text{th}} = 1/3$ **[T]**
-- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ); threshold $\Phi_{\text{th}} = 1$ **[T]** (T-129)
+- $P=\operatorname{Tr}(\Gamma^2)$ — purity; $P_{\mathrm{crit}}=2/7$ is the declared cut used here, with physical interpretation requiring calibration [D/I/H].
+- $R=1/(7P)$ — the canonical purity diagnostic; the selected $R\ge1/3$ criterion is equivalent to $P\le3/7$ [T under D], not a universal metacognition threshold.
+- $\Phi=P/Q-1$, $Q=\sum_i\gamma_{ii}^2$ — integration in a specified frame; $\Phi\ge1$ is a declared gate [D].
 - $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — differentiation measure; threshold $D_{\min} = 2$ **[D]** (T-151, an independent L2 threshold)
 - $C = \Phi \times R$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) (T-140)
-- $\varphi$ — [self-modelling operator](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке); $\Gamma^* = \varphi(\Gamma^*)$ — its fixed point (identity)
+- $\varphi$ — [self-modelling operator](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке); $\Gamma^* = \varphi(\Gamma^*)$ — its fixed point
 - $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ — [evolution equation](/docs/core/dynamics/evolution); $\mathcal{R}$ — the regenerative term
 - $K(\tau)$ — [memory kernel](/docs/consciousness/states/attention-memory#память); $\mathrm{Gap}(i,j)$ — [opacity of a channel](/docs/core/dynamics/gap-operator)
 - $\Gamma_{\text{comp}}$ — [composite matrix](/docs/core/dynamics/composite-systems#составная-матрица); $\mathcal{U}_{\text{coll}}$ — [collective unconscious](/docs/consciousness/subjects/collective-consciousness#определение-коллективного-бессознательного)
@@ -46,7 +46,7 @@ In this document:
 :::
 
 :::warning Document status
-This is a comparative-interpretive document. It introduces **no new theorems**: every load-bearing claim is a reference to an existing result carrying its registry status. The mappings between traditional terms and formal objects are themselves interpretations **[I]** unless a stronger status is inherited from the corpus. Two assembly claims (§3.3, §3.5) are labelled *Statement* **[C]** and list their premises explicitly. All verdicts are governed by the method rules of §1.3.
+This chapter proposes comparisons [I], not proofs of religious doctrines. Definitions of model quantities, conditional mathematical results and empirical hypotheses [H] must remain distinct. A historical summary names selected texts or schools; it does not establish a uniform doctrine across every period. Unverified historical generalizations are not premises of the mathematics.
 :::
 
 ---
@@ -71,16 +71,16 @@ In everyday language and in most philosophy, one word does all six jobs. In soft
 
 That refactoring is what this chapter performs. The result, stated in advance:
 
-| Function | Formal object | Fate |
-|----------|---------------|------|
-| Ф1 experiencer | Declared capability regime and phenomenal bridge | Loss conditional on actual dynamics [I/H] |
-| Ф2 identity | declared state/model trajectory | [D/I/H] | transfer and phenomenal identity remain distinct |
-| Ф3 baggage | Initial conditions $\Gamma(0)$ via two physical channels | Transmitted — impersonally |
-| Ф4 field of forms | Attractors + $H_{\text{eff}}$ + patterns of $\Gamma_{\text{comp}}$ | Outlives individuals; needs carriers |
-| Ф5 eternal record | Trace conservation + static total state (Page–Wootters) | Timeless — but unreadable as an archive |
-| Ф6 spark | Internal section of the one $\Gamma$ (T-221) + the $G_2$ type | Never was individual; never was born |
+| Function | Formal analogue | Scope of continuation |
+|---|---|---|
+| Ф1 experiencer | Capability regime plus a phenomenal bridge | Depends on the actual dynamics and bridge |
+| Ф2 identity | Declared criterion on state/model histories | State transfer and personal continuity are distinct |
+| Ф3 baggage | Initial conditions and incoming influences | Selected conditions may be transmitted through specified channels |
+| Ф4 field of forms | Attractors, learned dynamics and composite patterns | May persist while carriers and reproduction mechanisms persist |
+| Ф5 eternal record | Retention and recovery on a specified channel | No complete archive follows from trace preservation |
+| Ф6 spark | Observer-section or type analogy | Philosophical interpretation, not an immortality theorem |
 
-### 1.2 Why "yes" and "no" are both wrong {#почему-да-и-нет-оба-неверны}
+### 1.2 Why the intended meaning matters {#почему-да-и-нет-оба-неверны}
 
 A six-part question makes the proposed meanings and evidence explicit. The revised formalism supplies conditional state/capability results; it does not by itself refute personal transmigration or prove that a complete personal record survives. Those questions require a physical channel and identity/phenomenal bridge (§3.3–§3.5).
 
@@ -88,15 +88,11 @@ This is not evasion. It is the same move mathematics made with the question "do 
 
 ### 1.3 Rules of the method {#правила-метода}
 
-Five rules govern everything below; they exist so that neither the traditions nor the theory get stretched to fit each other.
-
-- **M1. Mappings are interpretations.** Every correspondence "traditional term ↔ formal object" is marked **[I]** unless the corpus already established it. The theorems retain their own statuses independently of the mapping.
-- **M2. Refutation targets the formalized claim.** When a verdict says *refuted*, it means: refuted **as formalized** through the stated mapping, taking the tradition's strongest primary formulation. If a tradition means something weaker, the register says what survives.
-- **M3. Structure counts; numbers do not.** A correspondence of *architecture* (layer order, dependency direction, mortality boundaries) is evidence of convergence. A coincidence of *counts* — five sheaths, five kabbalistic levels, seven po-souls against seven dimensions — carries **zero evidential weight** and is flagged wherever it occurs.
-- **M4. No new theorems.** Where several existing results are assembled into one claim, the claim is labelled *Statement* with an explicit premise list and the status of its weakest premise.
-- **M5. Self-containment.** Each tradition is stated from its own primary sources, named inline, in enough detail that this chapter can be read without a library. Each formal result is restated with its defining formula and linked to its master location.
-
----
+- **M1. Type the claim.** Separate the historical account, the proposed mathematical analogue, the empirical bridge and the conclusion. A theorem about the analogue does not validate the bridge.
+- **M2. State the tested scope.** A refutation requires explicit assumptions and an actual contradiction. Absence of a mechanism from one effective equation does not prove physical impossibility; lack of supporting evidence does not prove impossibility either.
+- **M3. Compare structure without erasing differences.** A structural analogy suggests a research question. Similar counts of layers provide no mathematical identification; similar order does not establish common doctrine or mortality boundaries.
+- **M4. Keep conditional premises visible.** Fixed points, decay, cloning and recovery retain their own assumptions. A philosophical conclusion cannot acquire stronger status by citing them together.
+- **M5. Identify sources and uncertainty.** Attribute claims to texts or schools. Where a historical interpretation remains disputed or has not been checked against a specified passage, label it as a provisional summary rather than the tradition's definitive position.
 
 ## 2. The instrument panel {#приборная-панель}
 
@@ -104,7 +100,7 @@ Before weighing any tradition, we lay out every instrument the formalism provide
 
 ### 2.1 The holon and the seven dimensions {#голоном-и-семь-измерений}
 
-A **holon** is any system whose state is a density matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — a Hermitian, positive, trace-one seven-by-seven matrix (48 real parameters) — maintaining itself by autopoietic closure. The seven basis directions are not spatial axes but functional aspects, each indispensable ([minimality 7/7](/docs/proofs/minimality/theorem-minimality-7) **[T]**):
+A **holon** is represented here by a density matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — a Hermitian, positive semidefinite, trace-one seven-by-seven matrix (48 real parameters) — together with separately specified processes of self-maintenance. The seven basis directions are functional labels in the chosen model. Claims of minimality depend on the stipulated admissibility and representation assumptions; they do not prove that every possible organism or philosophy has exactly this ontology:
 
 | Dimension | Verb | One line |
 |-----------|------|----------|
@@ -113,10 +109,10 @@ A **holon** is any system whose state is a density matrix $\Gamma \in \mathcal{D
 | $D$ — Dynamics | to change | the unfolding of process |
 | $L$ — Logic | to cohere | the consistency of the whole |
 | $E$ — Interiority | to experience | the inner side itself |
-| $O$ — Ground | to feed and to clock | source of free energy and internal time |
+| $O$ — Ground | to sustain | grounding/resource role; a clock requires its own construction |
 | $U$ — Unity | to integrate | the binding into one |
 
-The diagonal elements $\gamma_{kk}$ are populations; the twenty-one off-diagonal pairs $\gamma_{ij}$ are **coherences** — the channels through which the aspects see each other. Everything below is a statement about this one matrix and its dynamics. That is the monism: no second substance is ever introduced, so wherever a tradition posits one, the burden is to say *which structure of $\Gamma$* was being described.
+The diagonal entries are populations and the twenty-one off-diagonal pairs are coherences in this frame. Calling those entries channels of experience is an interpretation requiring a readout. UHM proposes a monist account; this philosophical choice is not a theorem excluding every ontology that is absent from the chosen representation.
 
 ### 2.2 Four measures and the window of consciousness {#четыре-меры-и-окно}
 
@@ -136,15 +132,15 @@ For a specified model map $M$, $R_M=1-\|\Gamma-M\Gamma\|_F^2/P$ differs from can
 
 The same phase Gap profile can accompany different purity/integration gates; zero phase Gap is not complete self-knowledge. A chosen Fano SAD score has a maximum index of three **by its definition**, not a theorem limiting cognitive recursion. No diagnoses or infant developmental dates follow from these static scalars.
 
-### 2.3 The dynamics: two channels — and what ℛ is not {#динамика-и-эр}
+### 2.3 Effective dynamics and the regeneration term {#динамика-и-эр}
 
-The evolution equation has exactly two non-unitary channels:
+The displayed effective equation separates two non-unitary terms; this is a selected model, not an exhaustive theorem about all physical interactions:
 
 $$
 \frac{d\Gamma}{d\tau} = -i[H_{\text{eff}}, \Gamma] + \underbrace{\mathcal{D}_\Omega[\Gamma]}_{\text{decoherence}} + \underbrace{\kappa(\Gamma)\,(\varphi(\Gamma) - \Gamma)\,g_V(P)}_{\mathcal{R}\text{: regeneration}}
 $$
 
-Decoherence $\mathcal{D}_\Omega$ erases coherences; regeneration $\mathcal{R}$ pulls the state toward its own **self-model** $\varphi(\Gamma)$, with rate $\kappa$ fed through the Ground channel ($\kappa_0 = \omega_0 \lvert\gamma_{OE}\rvert \lvert\gamma_{OU}\rvert / \gamma_{OO}$) and gated by $g_V(P)$, which vanishes for $P \leq P_{\text{crit}}$ ([derivation of the regeneration form](/docs/core/dynamics/evolution#вывод-формы-регенерации)).
+The chosen dissipative term $\mathcal D_\Omega$ and self-model map $\varphi$ require explicit definitions. For $\kappa g_V\ge0$, the regeneration direction points toward $\varphi(\Gamma)$; well-posedness and preservation of the state domain must be established for the full equation. The rate convention $\kappa_0=\omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ requires $\gamma_{OO}>0$ or a separately justified extension. A selected gate $g_V=0$ below $P_{\mathrm{crit}}$ does not prove absence of other inputs or mechanisms.
 
 The displayed regeneration term is an intramodel update, not an inter-holon state-transfer channel by definition. Its gating does not prove universal irreversibility, absence of other physical couplings, or a metaphysical prohibition on transfer; these require the actual full dynamics.
 
@@ -164,7 +160,7 @@ It is the **excess purity**, not purity itself, that decays exponentially. Its e
 
 A clinical sequence of loss/recovery of metacognition, integration or memory is **[H/Pr]** and requires independent temporal evidence. Static purity cuts do not force that order or imply disappearance of a mathematical fixed point. Phenomenal extinction and personal identity are separate bridge/convention claims.
 
-### 2.5 Identity: the fixed point and its two prohibitions {#тождество-и-запреты}
+### 2.5 Identity, fixed points and transfer {#тождество-и-запреты}
 
 A fixed point of a declared self-model map exists/varies continuously only under its actual hypotheses. A strict contraction on a complete metric state space has a unique fixed point; parameter continuity bounds require a uniform contraction constant and parameter regularity. A purity cut alone neither destroys fixed points nor forces distinct identity after a gap. Defining identity by continuity of a maintained trajectory is a convention **[D/I]**, not a quantum no-go theorem.
 
@@ -172,24 +168,17 @@ A fixed point of a declared self-model map exists/varies continuously only under
 
 A known state can be independently prepared as many times as a physical preparation process permits. SWAP gives $\rho\otimes\sigma\mapsto\sigma\otimes\rho$ and transfers the arbitrary input intact to another register; it does not erase that input. Standard teleportation consumes source-register entanglement/measurement resources while transferring the state, rather than proving destruction of an experiencing subject. Whether transfer, reconstruction or two identical preparations preserve a person requires a separately specified identity bridge **[I/H]**. See [corrected death/continuity scope](/docs/consciousness/ethics-meaning/death-continuity#no-cloning).
 
-### 2.6 Memory: four kernels and two kinds of forgetting {#память-и-ядра}
+### 2.6 Memory, loss and retrieval {#память-и-ядра}
 
-Memory in UHM is not a warehouse but the **non-Markovian kernel** $K(\tau)$ through which past states weight present dynamics ([master exposition](/docs/consciousness/states/attention-memory#память)):
+A memory kernel $K(\tau)$ is one possible representation of history dependence, not the only form of memory. An exponential kernel can model fading influence; a power-law tail requires a stated domain and normalization/integrability conditions; a delta kernel is an instantaneous limit, not a finite sensory-retention interval. Numerical timescales require empirical calibration. Learned parameters and external records can also store information.
 
-| Type | Kernel | Scale |
-|------|--------|-------|
-| sensory | $K \sim \delta(\tau)$ | ~250 ms |
-| working | $K \sim e^{-\tau/\tau_{WM}}$ | seconds |
-| long-term | $K \sim \tau^{-\alpha}$, $\alpha \in (0,1)$ | unbounded, fading |
-| procedural | embedded in $H_{\text{eff}}$ | structural |
-
-[Forgetting](/docs/consciousness/states/attention-memory#забывание) comes in two fundamentally different kinds: **kernel decoherence** — $\lvert K \rvert \to 0$, the book is burned, recovery impossible; and **Gap increase** — the coherence survives but the channel goes opaque, the book is locked in a safe, recovery possible (therapy, meditation, chance). At death the kernel dies with its carrier: whatever memory is, it is a property of a *running* holon and its physical substrate. This single fact will decide the fate of every doctrine of memory-carrying souls.
+The important distinction for continuation is between **loss of accessible information** and **failure of a particular retrieval procedure**. Decay of one kernel does not prove erasure in every physical carrier. A phase Gap value does not certify that a record is recoverable. Recovery needs an actual encoding, accessible channel and decoder; see [death and continuity](/docs/consciousness/ethics-meaning/death-continuity#после-смерти) and [the temporal-memory readout](/docs/consciousness/phenomenology/temporal-consciousness#окно-памяти). Thus loss of a running process may end its current memory function while records elsewhere remain. Whether those records support reconstruction or personal continuity is a separate question.
 
 ### 2.7 The collective layer {#коллективный-слой}
 
-$N$ holons sharing an environment form a composite state $\Gamma_{\text{comp}} \in \mathcal{D}(\mathbb{C}^{7^N})$. When it does not factorise ($\Gamma_{\text{comp}} \neq \bigotimes_i \Gamma_i$), there exist **emergent coherences** — the [collective unconscious](/docs/consciousness/subjects/collective-consciousness#определение-коллективного-бессознательного) $\mathcal{U}_{\text{coll}}$ **[D]**: structure that no individual carries, that no individual's reflection can reach ($\varphi_i$ sees only the reduced $\Gamma_i$), yet that shapes every individual through the partial trace. [Archetypes](/docs/consciousness/subjects/collective-consciousness#архетипы) **[I]** are its stable patterns, selected because they raise the viability of groups that host them, transmitted through the cultural environment — heredity without genes and without magic. Cultural coherences reproduce across generations; a teacher's pattern outlives the teacher in the students' $\Gamma_{\text{comp}}$.
+Given an explicit subsystem representation, a joint state can be written as $\Gamma_{\mathrm{comp}}\in\mathcal D((\mathbb C^7)^{\otimes N})$, with local marginals obtained by partial trace. Failure to factorize means correlation, not necessarily quantum coherence or entanglement: even a diagonal mixture can be correlated. The marginal map is a description of a subsystem, not a causal force.
 
-This layer is real, superindividual, unconscious, and formative. Hold it in view: it is where most "fields" and "records" of the traditions actually live.
+A single marginal generally does not determine the joint state. This limited observability does not prove that no individual can learn a collective pattern through repeated observations or communication. Cultural transmission requires actual interactions, records, learning and resources. Some patterns may persist across generations; others are lost or transformed. The proposed identification of selected collective patterns with Jungian archetypes is [I/H], not a consequence of nonfactorization or a proof of their universality.
 
 ### 2.8 The whole {#целое}
 
@@ -208,11 +197,11 @@ The cosmological realisation is a model proposal **[P/H]**; none of the followin
 ```mermaid
 graph TD
     SOUL["the soul — one word, six jobs"]
-    F1["Ф1 experiencer<br/>viability regime"]
-    F2["Ф2 identity<br/>fixed point Γ*"]
+    F1["Ф1 experiencer<br/>capability + bridge"]
+    F2["Ф2 identity<br/>declared continuity"]
     F3["Ф3 baggage<br/>initial conditions"]
     F4["Ф4 field of forms<br/>attractors + Γ_comp"]
-    F5["Ф5 eternal record<br/>static total state"]
+    F5["Ф5 eternal record<br/>retention/recovery"]
     F6["Ф6 spark<br/>internal section"]
     SOUL --> F1
     SOUL --> F2
@@ -220,12 +209,12 @@ graph TD
     SOUL --> F4
     SOUL --> F5
     SOUL --> F6
-    F1 --> D1["ceases at death"]
-    F2 --> D2["ruptures below threshold"]
-    F3 --> D3["transmitted impersonally"]
-    F4 --> D4["outlives individuals"]
+    F1 --> D1["conditional regime loss"]
+    F2 --> D2["criterion-dependent continuation"]
+    F3 --> D3["selected conditions transmitted"]
+    F4 --> D4["may outlive individuals"]
     F5 --> D5["conditional retention/recovery"]
-    F6 --> D6["never was individual"]
+    F6 --> D6["interpretive analogy"]
 ```
 
 ### 3.1 Ф1 — the experiencer: a regime, not a resident {#ф1-субъектность}
@@ -240,33 +229,29 @@ The proposed formal analogue is continuity of a specified maintained state/model
 
 SWAP, teleportation, preparation of a known state and approximate classical reconstruction are different operations. No-cloning forbids an exact uniform copier for the relevant unknown family, not all reconstruction or transfer. Whether a successor, transferred register or duplicate is “the same person” is a declared identity criterion **[I/H]**, not a consequence of cloning impossibility. The former universal verdict that all these procedures destroy a subject is withdrawn.
 
-### 3.3 Ф3 — the subtle baggage: real, physical, impersonal {#ф3-багаж}
+### 3.3 Ф3 — inherited conditions {#ф3-багаж}
 
-**What the traditions meant.** Karma and saṃskāras (Vedānta, Buddhism), the inherited soul-stuff of traducianism, astrological endowment, ancestral debt: the explanandum is genuine and sharp — *newborns differ*, in temperament, capacity, and circumstance, beyond what infant experience can explain.
+**Question.** Why do new organisms differ in capacities, dispositions and circumstances? Traditions also ask about responsibility, suffering and rebirth; those further questions should not be reduced to an account of newborn variation.
 
-**Formal object.** The initial condition $\Gamma(0)$ of a new holon, fixed at formation through exactly two channels, both physical:
+**Formal analogue [I/H].** A chosen initial condition $\Gamma(0)$ and subsequent inputs can model selected effects of biological inheritance, prenatal and later environments, and cultural transmission. These are examples of pathways, not a theorem that there are exactly two complete channels. Language and instruction usually influence a developmental history rather than fixing every component at birth. Only retained and causally transmitted effects of earlier lives enter such a model; not everything anyone contributed must survive.
 
-1. **Genetic:** DNA encodes basal structural coherences ($\gamma_{AA}$, $\gamma_{SS}$ patterns) and the parameters of the developing $H_{\text{eff}}$ — a child inherits *part of the structure* of the parental $\Gamma$, never the parental $\Gamma^*$ ([legacy typology](/docs/consciousness/ethics-meaning/death-continuity#после-смерти)).
-2. **Composite-environmental:** the surrounding $\Gamma_{\text{comp}}$ — language, ritual, family pattern, archetype — initializes and continuously trains the growing configuration (§2.7). Into this channel *everything the dead ever contributed* is folded: this is where the past of others reaches the newborn.
+Noise requires its own stochastic law. A deterministic master equation can describe the same ensemble evolution from identical data; random realizations can coincide, and correlated noise need not differentiate them. Therefore decoherence does not guarantee distinct outcomes.
 
-Chance completes the picture: decoherence noise guarantees that even identical channels do not fix identical outcomes.
-
-:::note State transfer and the identity convention [D/I/H]
-No universal no-transmigration theorem follows from the listed premises. The gate does not prove irreversible purity loss, disappearance of a fixed point or channel completeness. Exact no-cloning constrains a single copier for an unknown family; known preparation, SWAP and recovery on a code remain possible. If identity is defined as one unbroken maintained trajectory, classifying a later reconstruction as a new token follows from that convention, not from a physical impossibility theorem. Genetic/environmental influences are empirical pathways; saying they exhaust all initial conditions needs evidence.
+:::note State transfer and identity [D/I/H]
+Transmission of selected conditions is distinct from continuation of a person. The actual state-transfer process, resources and identity criterion must be specified. Neither a chosen purity gate nor no-cloning establishes completeness of the channels, universal irreversibility or impossibility of reconstruction (§2.4–§2.5).
 :::
-**What survives of karma.** At population scale the doctrine is *rigorously true*: new configurations are conditioned by the accumulated composite past — the dead really do shape the born, through genes and through $\Gamma_{\text{comp}}$. What fails is only the *addressing*: the baggage has no name on it. Karma without a passenger — which, as §5.5 shows, is precisely what the most careful tradition claimed all along.
 
-### 3.4 Ф4 — the field of forms: Sheldrake's question, answered without new physics {#ф4-поле-форм}
+**Relation to karma [I].** Inherited consequences provide a useful comparison with conditioning across generations. They do not establish the religious law of karmic fruition, its relation to intention, or rebirth. In [AN 6.63](https://www.dhammatalks.org/suttas/AN/AN6_63.html), karma is tied to intentional action and its results; it is not simply a synonym for all genetic or cultural influence.
 
-**What the traditions meant.** The vegetative soul of Aristotle, the morphogenetic field of Sheldrake, the "habits of nature": *something* makes form stable, development directed, and pattern cumulative — and it is visibly not the mere molecule inventory.
+### 3.4 Ф4 — organization and formative mechanisms {#ф4-поле-форм}
 
-**Formal object.** Three structures already on the panel, jointly:
+**Question.** How do organized forms develop, maintain themselves and recur? Several mathematical mechanisms can address parts of this problem:
 
-1. **Attractors.** Development converges because the dynamics has attracting states; $\mathcal{R}$ pulls toward the self-model — form-stability is the *shape of the flow*, not an added field.
-2. **$H_{\text{eff}}$ as habit.** Procedural memory is written into the evolution operator itself (§2.6): "nature's habits" exist and accumulate — locally, in each lineage's carriers.
-3. **$\Gamma_{\text{comp}}$ as the honest morphic field.** Superindividual, invisible to its members, formative (§2.7) — everything a "field of the species" was invoked to do, with one difference: it is causal and channel-bound.
+1. **Attracting dynamics.** Convergence requires a specified flow, domain and stability result. The presence of a regeneration term alone does not establish an attractor or explain all morphogenesis.
+2. **Learned dynamics.** Changes in effective parameters can retain the effects of prior interactions. Identifying this with a particular habit requires a learning and retrieval mechanism.
+3. **Composite patterns.** Interactions and records can propagate organization beyond one carrier. The representation $\Gamma_{\mathrm{comp}}$ does not itself supply those interactions or a new field.
 
-**Fate.** Outlives every individual; requires living carriers; propagates only through interaction. The detailed engagement with Sheldrake's specific claims — including the differentiating experimental prediction — is §5.13.
+**Conditional continuation.** A pattern can outlast an individual when other carriers and reproduction mechanisms preserve it. Those carriers may include nonliving records or engineered systems. Neither perpetual persistence nor the reproduction of every detail follows. This gives a concrete programme for studying lineage and organization without declaring all historical formative-field theories solved (§5.13).
 
 ### 3.5 Ф5 — the eternal record: Akasha, weak and strong {#ф5-вечность}
 
@@ -275,60 +260,55 @@ No universal no-transmigration theorem follows from the listed premises. The gat
 :::note Information retention and recovery: distinct scopes [T/C/I]
 Trace preservation means normalisation, not conservation of every coherence or a readable environmental archive. A specified global unitary dilation retains joint distinguishability, but reduced system/environment states separately can lose it. Recovery from an actual channel requires an injective/reversible restriction, a correctable code or additional accessible data; a generic erasure channel has no full inverse. Neither this nor no-cloning forbids all records, known preparations or code recovery. A Page–Wootters static-state construction is conditional and does not prove an eternal archive of every life. “Weak/strong Akasha” is an interpretation [I/H], not the former blanket retention/impossibility theorem.
 :::
-**Spinoza said exactly this.** *Ethics* V.23: "the human mind cannot be absolutely destroyed with the body, but something of it remains which is eternal" — with his own scholium insisting this eternity is *not duration*: we do not persist after death; something of us is true timelessly. Substitute "trajectory inscribed in the static total state" and the proposition transfers verbatim. Among all Western doctrines of immortality, this is the one the formalism underwrites — and it promises no experiences to anyone.
+**Spinoza: a philosophical comparison.** *Ethics* V.23 distinguishes eternity from bodily duration. Comparing this with a static mathematical representation may clarify that a timeless proposition is different from an ongoing process. It does not translate Spinoza’s argument into Page–Wootters, establish an eternal record, or decide the contested meaning of the mind’s eternity. The proposed correspondence is [I], not a mathematical endorsement of his doctrine.
 
-### 3.6 Ф6 — the spark: not a part of you, but the fact of you {#ф6-искра}
+### 3.6 Ф6 — the spark as an interpretive question {#ф6-искра}
 
-**What the traditions meant.** Ātman that was never born; the scintilla animae; the image of God in the soul; "the eye with which I see God."
+**Question.** Traditions speak of ātman, the divine image or a spark beyond ordinary individuality. These concepts differ about personhood, God and liberation.
 
-**Formal object.** Two precise facts, neither of which is a *component* of the individual:
+**Two possible analogies [I].** An observer can be represented by a specified internal section/readout of a model. Several instances can also share a mathematical type. Neither construction identifies an experiencing subject with the absolute. An internal section need not exist without its categorical hypotheses, and its philosophical interpretation adds premises beyond them. Likewise, a seven-axis/Fano template is a chosen shared structure, not a theorem that every rational system instantiates one $G_2$ type.
 
-1. **You are an internal section of the one $\Gamma$** (T-221 **[T]+[I]**): the subject is the world reading itself at a point, not a foreign observer inserted into it. This is the rigorous content of "that thou art" — and note what it does *not* say: not that your configuration is the whole, but that your act of being-a-perspective is the whole's own.
-2. **A chosen type analogy [I].** A seven-axis/Fano template can be shared by models using that encoding. It is not forced for every viable or rational system, and continuous $G_2$ does not preserve each native coordinate pair/Fano line as a discrete label. T-223 does not identify all states with one orbit or make the whole capability gate orbit-invariant. “Uncreated type” is a philosophical comparison, not a derivation of an eternal soul.
-
-**Fate.** The spark cannot die because it never was an individual possession — the section-fact and the type are not *in* the holon; the holon is in them. Traditions that located the immortal element *beyond individuality* (§5.6, §5.8) were tracking exactly this; traditions that individuated it were minting tokens of a type.
-
----
+**What the comparison preserves.** A perspective can depend on a larger organization, and a description can distinguish common structure from an individual's particular history. These are useful questions about situatedness and participation. A timeless type does not make its instances immortal; the existence of a section does not prove an unborn experiencer. “Spark” remains an interpretive comparison rather than a survival verdict.
 
 ## 4. The register of verdicts {#реестр-вердиктов}
 
-Every row applies rules M1–M2: the mapping is [I]; "refuted" means refuted as formalized, against the strongest primary formulation.
+The table distinguishes results inside a specified model from the historical or phenomenal claims that motivated it. An unestablished bridge remains unestablished even when the model has a theorem.
 
-| # | Doctrine claim | Formalization | Verdict | Deciding result |
-|---|----------------|---------------|---------|-----------------|
-| 1 | A living body could lack experience | Operational viability vs phenomenal bridge | **open [I/H]** | Universal No-Zombie floor withdrawn; specified balance model only |
-| 2 | Everything is conscious (strong panpsychism) | $C > 0$ for all $\Gamma$ | **refuted** | $C(I/7) = 0$ **[T]** |
-| 3 | A soul departs and continues experiencing | Carrier, transfer channel and phenomenal bridge | **outside the numerical theorem** | The model requires a carrier; universal extinction/transfer impossibility is not proved |
-| 4 | The same person returns | State transfer plus identity criterion | **not settled by no-cloning** | A continuity/token convention is [D/I]; test the physical channel separately |
-| 5 | Resurrection re-creates the same subject | Known preparation/reconstruction and identity bridge | **open [I/H]** | Uniform unknown-state copying is forbidden; known-state preparation is not |
-| 6 | Mediums converse with surviving persons | access to living $\Gamma^* + K$ post-death | **refuted** | kernel dies with carrier (§2.6) |
-| 7 | Newborns carry conditioning from the past | $\Gamma(0)$ conditioned by accumulated composite state | **confirmed, impersonally** | two-channel initialization (§3.3) |
-| 8 | A superindividual layer shapes individuals unseen | $\mathcal{U}_{\text{coll}} \neq \varnothing$ | **confirmed** | collective unconscious **[D]**, archetypes **[I]** |
-| 9 | Nature has memory; forms are habits | $H_{\text{eff}}$ restructuring + $\Gamma_{\text{comp}}$ patterns | **confirmed, channel-bound** | procedural memory; cultural coherences |
-| 10 | Pattern resonates across space-time without any channel | non-physical transfer term in $\mathcal{L}_\Omega$ | **refuted** | channel completeness + background independence **[T]** (§5.13) |
-| 11 | Nothing is ever lost | Declared global unitary dilation/static model | **conditional [C/I]** | Trace preservation alone is insufficient |
-| 12 | The record of all lives can be read | Actual channel and recovery code | **unsupported [H]** | Generic erasure is not invertible; this does not prohibit every record |
-| 13 | The innermost self is identical with the absolute | Declared observer section/type analogy | **interpretation [I/H]** | Revised T-221/T-223 do not prove phenomenal identity or one universal orbit type |
-| 14 | The absolute is infinitely deep | Higher-order operational certificates | **not refuted by SAD** | Fano score ceiling is [D]; universal depth ceiling withdrawn |
-| 15 | Total self-transparency | Phase Gap and model recovery | **not refuted by Hamming** | Zero Gap does not identify the full state/gate; coding/diagonal bridges need actual hypotheses |
-| 16 | Individual souls existed before the world's differentiation | individuated states in $\Gamma_\odot$ | **refuted** | Source is one state, zero individuating bits, atemporal **[P/T]** (§7.2) |
-| 17 | What happens "after" — annihilation, legacy, or stream | choice among the three interpretations | **outside jurisdiction** | metatheoretical **[I]** (§8) |
+| # | Claim | Present assessment | Required distinction or evidence |
+|---|---|---|---|
+| 1 | Viability entails experience | Open [I/H] | Operational balance and phenomenal bridge |
+| 2 | $C>0$ for every admitted state | False for canonical $C$ [C] | $C(I/7)=0$; this does not refute every panpsychist meaning of consciousness |
+| 3 | Experience continues after departure from a body | Not settled here [I/H] | Carrier, process and phenomenal criterion |
+| 4 | The same person returns | Not settled by no-cloning | Physical transmission and identity criterion |
+| 5 | Resurrection restores the same subject | Not settled here [I/H] | Preparation/recovery and personal identity |
+| 6 | Mediums communicate with surviving persons | Not established here [H] | Controlled information access and evidence of its attributed source |
+| 7 | New lives inherit prior conditions | Selected pathways can be modelled [I/H] | Actual encoding and developmental influence; no exhaustive two-channel theorem |
+| 8 | Collective organization shapes individuals | A modelling possibility [I/H] | Dynamics of interactions; nonfactorization alone is insufficient |
+| 9 | Forms and habits preserve a past | Conditional [C/I/H] | Learning, retention and reproduction mechanisms |
+| 10 | Earlier patterns influence distant later systems | Requires a specified competing model [H] | A declared causal exclusion can yield a null effect; equation omission is not a universal no-go |
+| 11 | No information is ever lost | Conditional distinguishability result only [C] | Accessible joint unitary dilation versus reduced erasure |
+| 12 | A complete record of lives is readable | Not established here [H] | Retention, accessible channel and decoder |
+| 13 | The self is identical with the absolute | Philosophical interpretation [I] | Section/type analogies do not prove this identity |
+| 14 | The absolute has infinite depth | Not refuted by SAD | A definitional finite score is not a universal recursion bound |
+| 15 | Complete self-transparency | Requires a specified observation/representation problem | Phase Gap alone does not establish or forbid it |
+| 16 | Persons pre-existed their present embodiment | Not settled by the chosen Source model [I/H] | Individuating encoding and continuity criteria |
+| 17 | Process, legacy and personal continuation coincide | These are distinct claims [D/I/H] | A process can end while records remain; records do not settle subject identity |
 
-Seventeen rows; four fates. The pattern is stable: *everything indexed to the individual dies with the individual; everything superindividual survives — and was never anyone's soul in particular.*
+The conclusions are component-specific. Individual and collective patterns can both be lost; both can sometimes be retained in another carrier. Mathematical type persistence and persistence of an experiencing person are different questions.
 
 ---
 
 ## 5. The traditions under the panel {#традиции}
 
-Chronology is not a courtroom order; we proceed roughly east of Greece and forward in time. Each tradition gets three movements: what it actually taught (primary sources inline), the mapping (M1: **[I]**), the verdict (M2).
+The following accounts select texts, schools and motifs. They are not comprehensive histories or declarations that a tradition has one settled doctrine. The comparisons are [I]; model-to-world identifications require [H] evidence. Disputed readings are retained as disputed rather than used to prove a formal conclusion.
 
 ### 5.1 Egypt: the first decomposition {#египет}
 
-**Doctrine.** Egyptian anthropology never had *one* soul. A person comprised the **ka** (vital double, born with you, requiring sustenance — hence funerary offerings of bread and beer, real then depicted, the depiction sufficing); the **ba** (individual personality, bird-bodied, mobile after death); the **akh** (the transfigured effective spirit, *achieved* — not given — through correct rites); the **ren** (the name: "to speak the name of the dead is to make them live again," say the tomb inscriptions, and erasing a name from monuments was the true second death); the **shut** (shadow); and the **ib** (heart), weighed against the feather of Maat (Book of the Dead, ch. 125) — the organ of the life's moral summary.
+**Doctrine.** Selected Egyptian funerary accounts distinguish several aspects of a person; there is no single inventory uniform across all periods. A person comprised the **ka** (vital double, born with you, requiring sustenance — hence funerary offerings of bread and beer, real then depicted, the depiction sufficing); the **ba** (individual personality, bird-bodied, mobile after death); the **akh** (the transfigured effective spirit, *achieved* — not given — through correct rites); the **ren** (the name: "to speak the name of the dead is to make them live again," say the tomb inscriptions, and erasing a name from monuments was the true second death); the **shut** (shadow); and the **ib** (heart), weighed against the feather of Maat (Book of the Dead, ch. 125) — the organ of the life's moral summary.
 
-**Mapping [I].** The architecture is astonishingly modern: personhood as a *bundle of components with separate maintenance requirements and separate fates*. The ka's hunger is the frankest statement in any tradition that persistence costs free energy — an afterlife component with a ΔF budget, fed through the O-channel of the living who serve the cult. The ren is informational legacy exactly: a pattern in $\Gamma_{\text{comp}}$, re-instantiated at each remembering, alive precisely as long as the community re-runs it. The akh — transfiguration as *achievement* — encodes that post-mortem standing is constructed by the living community's work, not automatic. The heart-weighing reads naturally as the trajectory's ethical summary (cf. the [meaning vector](/docs/consciousness/ethics-meaning/meaning)) — loose, and flagged as such.
+**Comparison [I].** Names, ritual maintenance, vitality and post-mortem standing distinguish several questions about a person. Remembering a name can be compared with maintaining a cultural record; offerings can motivate a comparison with dependence on sustaining practices. Neither comparison translates ka into free energy or akh into a community's computational product.
 
-**Verdict.** Componental architecture: **confirmed** (row 8, 9, 11). Experienced survival of ba/akh: **refuted** (rows 3–4). Egypt's own practice, however, invested overwhelmingly in the two components the formalism ratifies — the name and the cult: they engineered for $\Gamma_{\text{comp}}$-persistence four millennia before it had a symbol.
+**Assessment.** The multi-component account helps resist treating every use of “soul” as the same object. UHM does not confirm Egyptian afterlife ontology or prove experienced survival of ba/akh impossible. The relative roles of particular components vary across texts and periods; the brief account above is a provisional historical synthesis, not one universal Egyptian layer model.
 
 ### 5.2 Greece before Aristotle: Orphics, Pythagoras, Plato {#греция-платон}
 
@@ -336,69 +316,67 @@ Chronology is not a courtroom order; we proceed roughly east of Greece and forwa
 
 **Mapping [I] and engagement.** The Phaedo’s cyclical, recollection, affinity and life-principle arguments can be compared to trajectory, learning, type/token and regime constructions. The comparison does not prove a universal irreversible death asymmetry, instantiate recollection through a forced seven-axis grammar, or settle rebirth. Testing a proposed continuity or memory-transfer claim requires its actual dynamics, observable channel and identity bridge; metaphysical analogies carry no matrix-theorem status.
 
-**Verdict.** Transmigration: **refuted** (row 4). Anamnesis: **relocated** to type level — and there, **confirmed**. Tripartition: structural echo. Lethe: the tradition refuting its own strong claim from inside.
+**Assessment [I].** Recollection, tripartition and the myth of Er supply distinct philosophical questions. A common mathematical type is not a proof of anamnesis, and the story of forgetting does not by itself refute Plato’s account of identity. Neither transmigration nor its impossibility follows from the present mapping.
 
-### 5.3 Aristotle: the closest ancient reading {#аристотель}
+### 5.3 Aristotle: organization and differentiated capacities {#аристотель}
 
-**Doctrine.** *De Anima* II.1, 412a27: "the soul is the first actuality (*entelecheia*) of a natural body having life potentially." Not a resident but the body's *being-at-work-staying-itself*; hence 412b18 — if the eye were an animal, sight would be its soul; and hence inseparability — with one comparison Aristotle raises only to leave hanging (II.1, 413a8): whether the soul is in the body as a sailor in a ship; his own entelechy doctrine closes against the sailor. Three nested capacities: **threptikon** (nutritive — all living things), **aisthētikon** (sensitive — animals), **noētikon** (rational — humans). One disputed exception: *De Anima* III.5's **nous poiētikos**, the active intellect, "separable, impassible, unmixed" — over which two millennia of commentators fought: Alexander of Aphrodisias and later Averroes read it as *one for all humans* (monopsychism), not a personal immortal part.
+**Doctrine.** *De Anima* II.1, 412a27: "the soul is the first actuality (*entelecheia*) of a natural body having life potentially." Not a resident but the body's *being-at-work-staying-itself*; hence 412b18 — if the eye were an animal, sight would be its soul; and hence inseparability — with one comparison Aristotle raises only to leave hanging (II.1, 413a8): whether the soul is in the body as a sailor in a ship; the scope of separability remains an interpretive issue, especially for intellect. Three nested capacities: **threptikon** (nutritive — all living things), **aisthētikon** (sensitive — animals), **noētikon** (rational — humans). One disputed exception: *De Anima* III.5's **nous poiētikos**, the active intellect, "separable, impassible, unmixed" — over which two millennia of commentators fought: Alexander of Aphrodisias and Averroes developed different accounts; their precise relation to personal immortality is disputed and is not decided here.
 
-**Mapping [I].** This is not a mapping so much as a translation table. Entelechy-of-the-living-body **is** the viability regime: a process-property of an organized carrier, inseparable because a regime does not detach (§3.1). The three capacities are the L-ladder with thresholds attached:
+**Comparison [I].** Aristotle's differentiated capacities suggest studying organization through what it enables: maintenance, perception and reasoning. These are separate empirical tasks. A purity threshold does not establish nutritive life, a matrix rank does not establish sensation, and the $\mathrm{Cap}_2$ certificate does not by itself establish rationality.
 
-| Aristotle | Criterion in Γ | Level |
-|-----------|----------------|-------|
-| nutritive soul | autopoietic maintenance, $P > 2/7$ | life as such |
-| sensitive soul | $\mathrm{rank}(\rho_E) > 1$ | L1 |
-| rational soul | the full window: $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | L2 |
+The active intellect remains a disputed historical problem. Alexander's and Averroes's accounts must not be collapsed into one doctrine merely because both distinguish intellect from ordinary embodied faculties. The universal claim T-223 is withdrawn [✗]. Invariance under a specified group survives as a mathematical result; it establishes neither an immortal common mind nor a universal $G_2$ soul type.
 
-The nous poiētikos comparison is interpretive [I]. Revised T-223 preserves specified frame/sector relabelling properties, not a theorem that every rational system instantiates one forced invariant grammar or that the historic dispute about a common immortal intellect is resolved. A state orbit $[\Gamma]_{G_2}$ is neither a universal soul type nor a quotient preserving the full canonical gate; $\Phi$ remains frame-dependent. Claims about personal immortality therefore need their own physical and phenomenal bridge.
-
-**Verdict.** The core doctrine: **confirmed** — UHM's account of Ф1/Ф2 is Aristotelian to the letter, with the thresholds Aristotle lacked. The active-intellect residue: **relocated** to type level. Aristotle also drew the mortality consequence himself; the theory adds only the proof.
+**Assessment.** Embodied organization is a productive comparison; identifying entelechy with a viability regime is an interpretation rather than a translation theorem. No universal mortality or survival conclusion follows.
 
 ### 5.4 The Stoa and Epicurus {#стоя-и-эпикур}
 
-**Doctrine.** For the Stoics the soul is **pneuma** — fiery breath, a *tensional state* (*tonos*) of one cosmic continuum, graded by tension: *hexis* (cohesion — stones), *physis* (growth — plants), *psychē* (impression and impulse — animals), *logos* (the ruling *hēgemonikon* — the wise). Death: the individual pneuma-knot relaxes back into the whole; Chrysippus allowed that the souls of the wise persist as coherent knots until the world-conflagration (*ekpyrōsis*), after which the cycle repeats identically (*palingenesia*). Marcus Aurelius IX.35: "loss is nothing but change" — already canonized in the corpus. Epicurus: the soul is fine atoms dispersed at death; "death is nothing to us" — canonized with its correction (fear of $dP/d\tau < 0$ is a structural response, not an error).
+**Doctrine.** For the Stoics the soul is **pneuma** — fiery breath, a *tensional state* (*tonos*) of one cosmic continuum, graded by tension: *hexis* (cohesion — stones), *physis* (growth — plants), *psychē* (impression and impulse — animals), *logos* (rational organization; distinct from the ethical achievement of wisdom). Death: the individual pneuma-knot relaxes back into the whole; Chrysippus allowed that the souls of the wise persist as coherent knots until the world-conflagration (*ekpyrōsis*), after which the cycle repeats identically (*palingenesia*). Marcus Aurelius IX.35: "loss is nothing but change" — already canonized in the corpus. Epicurus: the soul is fine atoms dispersed at death; "death is nothing to us" — a philosophical argument whose relation to deprivation, anticipation and grief needs separate examination.
 
-**Mapping [I].** The tonos ladder is the second ancient anticipation of the L-hierarchy (after Aristotle's, and independently graded by *tension* — degree of coherence, which is startlingly close to $\Phi$ and $P$ doing the grading). One pneuma, many knots: the exact universal-spirit/individual-soul split of §6.2 — pneuma is O-like, individuated only as *patterns of tension*, i.e., configurations. Dissolution-as-redistribution is trace conservation **[C]** read aloud. What fails: the wise souls' post-mortem coherence (no carrier, no maintenance — rows 3–4), and the eternal recurrence (the dynamics has attractors, not cycles; no recurrence theorem exists in the corpus — outside jurisdiction rather than refuted, but unsupported).
+**Mapping [I].** The tonos account offers a comparison between a common physical order and individuated organisations maintained within it. This can guide questions about dependence and change, but neither $\Phi$ nor $P$ is a historical or empirically validated measure of pneuma. Trace preservation is normalisation; it does not prove that a deceased person's structure redistributes intact. Continued organisation needs an actual carrier, dynamics and resources. Attractors in one specified model do not exclude cycles in every possible model.
 
-**Verdict.** Redistribution and the tension-ladder: **confirmed**. Persisting sage-knots: **refuted**. Recurrence: **unsupported**.
+**Assessment [I/H].** Maintenance and transformation are useful points of comparison. Post-mortem persistence and recurrence require separately stated physical hypotheses; the conditional decay theorem alone neither validates nor universally refutes them.
 
 ### 5.5 Buddhism: anattā, the flame, and the bardo {#буддизм}
 
-**Doctrine.** The Buddha's *anattā* (Anattalakkhaṇa Sutta): no permanent self is findable in or behind experience. The person is five **khandhas** (aggregates): *rūpa* (form), *vedanā* (feeling-tone), *saññā* (recognition), *saṅkhāra* (formations/dispositions), *viññāṇa* (consciousness). Continuity without substance: the *Milindapañha* gives the two canonical images — the **chariot** (Nāgasena to King Milinda: "chariot" is a designation upon parts in relation, and so is "Nāgasena") and the **flame**: rebirth is one lamp lit from another — "neither the same nor another" (*na ca so na ca añño*); what passes is conditioning, not a traveler. Karma is intentional action shaping future arising — a law of conditioning, not a courier of persons. The Tibetan *Bardo Thödol* choreographs dying as a fixed **dissolution sequence**: earth into water (the body grows heavy), water into fire (features dry), fire into wind (warmth withdraws), wind into consciousness (breath ceases), then the dawning of the clear light. And the goal, *nibbāna*: the unconditioned, cessation of the conditioned stream.
+**Texts and distinctions.** [SN 22.59](https://www.dhammatalks.org/suttas/SN/SN22_59.html) examines form, feeling, perception, formations and consciousness as impermanent and not appropriately identified as self or possession. This is the specific not-self analysis cited here; a further assertion about everything “behind experience” needs a separate argument. The *Milindapañha* uses the chariot and flame as images for designation and continuity; their use here is an analogy, not a derivation of rebirth.
 
-**Mapping [I].** This tradition needs the least translation because it performed the decomposition itself, more than two millennia early. The khandha analysis *is* the anti-God-object refactoring:
+Karma concerns intentional action and its results, not all causation indiscriminately (AN 6.63, §3.3). Accounts of rebirth therefore cannot simply be replaced by genetic or cultural inheritance. Tibetan bardo literature presents particular contemplative and ritual accounts of dying and transition; its dissolution sequence is neither a universal Buddhist doctrine nor an established physiological L-level sequence.
 
-| Khandha | Formal counterpart |
-|---------|--------------------|
-| rūpa — form | the carrier; S-sector structure |
-| vedanā — feeling-tone | hedonic valence $dP/d\tau$ (T-103) |
-| saññā — recognition | A-sector articulation, $\gamma_{AE}$ apperception |
-| saṅkhāra — dispositions | $H_{\text{eff}}$ structure + procedural kernel — the *karma-bearing* aggregate, and indeed the formalism's habit-carrier |
-| viññāṇa — consciousness | the regime itself |
+Nibbāna also requires a distinction. [Itivuttaka 44](https://www.dhammatalks.org/suttas/KN/Iti/iti44.html) describes liberation with remaining life faculties, where pleasure and pain can still be experienced, and distinguishes this from the remainderless case. Thus “cessation of the entire conditioned stream” is not an adequate definition of liberation during life. Broader claims about the unconditioned and post-mortem status require their own textual and interpretive scope.
 
-Anattā = "the subject is a pattern, not a substance" — the corpus states this in its own voice ([death and continuity](/docs/consciousness/ethics-meaning/death-continuity)). The chariot is the configuration Γ; the flame is Statement §3.3's positive half: *no state transfer, real conditioning* — flame two burns because flame one touched the wick, and nothing jumped. The corpus's own comparative table renders Buddhist rebirth as **composite continuity**: the stream of coherences continues; the subject does not. The bardo dissolution sequence tracks, stage for stage, the hierarchical decoherence table of §2.4 — the one tradition that wrote the dying protocol from the inside, in the right order **[I]**. Even the ceiling theorems land on prepared ground: the impossibility of total transparency (≥3 opaque channels **[C]**) is cited by the corpus itself as the formal shadow of the tradition's refusal to call full enlightenment a state a system could *hold*.
+**Comparison [I].** The aggregates suggest examining several aspects of embodied experience without identifying them with matrix axes:
 
-One honest friction: *nibbāna* as an unconditioned that is nonetheless — in some schools — *known*. The formalism offers no state both experienced and unconditioned: experience is regime-bound, regimes are conditioned. Cessation-readings pass; experiential-nibbāna readings do not.
+| Aggregate | Possible research question |
+|---|---|
+| rūpa — form | What bodily organization supports the investigated capacity? |
+| vedanā — feeling-tone | How are pleasant, unpleasant and neutral tone distinguished? |
+| saññā — perception/recognition | What distinguishes recognition from raw discrimination? |
+| saṅkhāra — formations | How do intentions and dispositions affect subsequent processes? |
+| viññāṇa — consciousness | Which state/report/experience bridge is being proposed? |
 
-**Verdict.** Anattā, the flame, impersonal karma, the dissolution sequence: **confirmed** — the highest agreement score in the register. Experienced unconditioned states: **refuted as formalized**. Where the folk doctrine re-personalizes rebirth (recognized tulkus, remembered lives), it falls under row 4 with everything else.
+The [organization/lineage distinction](/docs/consciousness/ethics-meaning/death-continuity#определение-идентичности) makes a related separation between structure and causal continuation. It neither confirms nor refutes Buddhist rebirth. A model of conditioned variables may address changes in attention, attachment and response without deciding whether it represents what a tradition calls unconditioned. Finite Gap or SAD scores establish no universal bound on liberation.
 
-### 5.6 Vedānta: tat tvam asi under G₂ {#веданта}
+**Assessment [I/H].** These distinctions support specific investigations of identification, conditioning and suffering. The matrix formalism does not confirm Buddhism as a whole, settle bardo or rebirth, or identify liberation with erasure of a subject. See the [spiritual synthesis](/docs/consciousness/ethics-meaning/spiritual-synthesis).
+
+### 5.6 Vedānta: identity and its interpretations {#веданта}
 
 **Doctrine.** The Upaniṣadic core: **ātman** — the self beyond all objects — is **Brahman**, the ground of all; *Chāndogya* VI teaches it through salt dissolved in water (everywhere, invisible, tasted in every drop: "*tat tvam asi*, Śvetaketu — that thou art," 6.8–6.16). The *Māṇḍūkya* maps four states: *jāgrat* (waking), *svapna* (dream), *suṣupti* (deep dreamless sleep), and **turīya**, "the fourth" — not a state among states but the witness of all three. The *Taittirīya* (II.1–5) gives the **pañcakośa**: five sheaths around the self — *annamaya* (food/body), *prāṇamaya* (vital breath), *manomaya* (mind), *vijñānamaya* (discernment), *ānandamaya* (bliss). Śaṅkara's Advaita: the individual soul (*jīva*) is ātman *plus* limiting adjuncts (*upādhi*) — body, mind, history; bondage is superimposition (*adhyāsa*), the rope mistaken for the snake; liberation is knowledge, not travel. The subtle body (*sūkṣma-śarīra*) is said to carry saṃskāras across deaths until liberation. Against all this, Madhva's Dvaita held souls eternally distinct from God and each other.
 
-**Mapping [I].** Advaita's central equation receives the sharpest formal reading in this chapter: **tat tvam asi = T-221**. You are an internal section of the one total state — not *like* it: that is the theorem's content. Jīva = ātman + upādhi translates as: the token = the type + the configuration's particulars; and Śaṅkara's insistence that the jīva's individuality is *adventitious* is the type/token diagnosis of §3.6 made two levels of formality early. Adhyāsa — taking the regime for a substance — is the very category error §1 dismantles. The kośas ladder §6.1 tabulates. The Māṇḍūkya's four states map cleanly: waking and dream are Γ-profiles ([altered states](/docs/consciousness/states/altered-states)); deep sleep is low-$\Phi$ maintenance above viability; and *turīya* is — precisely as the text insists — **not a fourth profile** but the section-fact itself (T-221), which is why it is called the witness of the other three rather than their sibling.
+**Comparison [I].** The distinction between a particular biography and a proposed deeper ground invites a comparison with instance/type and observer/whole relations. This does not make *tat tvam asi* identical with T-221: a section of a model is not the Advaitic identity of ātman and Brahman. Nor does a fixed point or low integration score establish turīya or dreamless sleep.
 
-The mapping remains interpretive [I]. Neither exact no-cloning nor the chosen Fano SAD index universally refutes reincarnation, infinite introspection or a spiritual doctrine: the former constrains a specified unknown-state family, the latter is a finite score convention. A physical transfer/identity claim needs an explicit channel and phenomenal criterion before it can be tested.
+The opening summary follows an Advaita-oriented reading of the cited Upaniṣads; Dvaita and other Vedānta schools dispute its interpretation. Kośas, upādhis and turīya therefore retain their own meanings rather than being asserted as matrix layers. A shared type cannot decide whether individuality is ultimately real.
 
-**Verdict [I/H].** The proposed Advaita/type analogy is interpretive. The corpus provides no universal depth-three refutation of divine introspection and no state-transfer theorem settling personal rebirth. Those doctrines require independently stated physical/identity claims to enter an empirical test.
+**Assessment [I/H].** Self-inquiry and the distinction between identification and awareness offer philosophical comparisons. Rebirth, the subtle body and ultimate identity remain separate claims. Neither no-cloning nor the Fano SAD convention refutes them, and neither a section nor a type confirms them.
 
 ### 5.7 Kabbalah: five names and gilgul {#каббала}
 
 **Doctrine.** Rabbinic-kabbalistic anthropology stratifies the soul: **nefesh** (the vital soul, common to all that lives, remaining near the body), **ruaḥ** (the moral-emotional spirit), **neshamah** (the intellectual soul, divine in origin) — the Zohar's triad — extended in Lurianic teaching (Ḥayyim Vital, *Shaʿar ha-Gilgulim*) by **ḥayyah** and **yeḥidah**, the living essence and the point of unity with the Infinite (*Ein Sof*). The same school systematized **gilgul** — transmigration of souls for the sake of **tikkun**, repair: a soul returns until its uncompleted work is done; **ibbur** ("impregnation") allows a righteous soul to lodge temporarily in a living person to assist.
 
-**Mapping [I].** The five-level ladder joins the architecture table of §6.1 — with the count-coincidence (five levels, five kośas) explicitly voided by M3: what matters is the *order* and the *mortality gradient*, and those match: nefesh is frankly biotic (viability-tier), ruaḥ affective (E-tier), neshamah cognitive (R-tier), and yeḥidah — like turīya — is *defined* as the point where individuality ends: the section-fact again, natively non-individual. Gilgul as personal return: row 4. But **tikkun survives relocation strikingly well**: repair *of the composite pattern* across generations — each generation mending inherited configurations of $\Gamma_{\text{comp}}$ — is not merely permitted but is a fair description of what cultural transmission does; the kabbalists' insistence that repair is *collective and cumulative* fits the impersonal channel exactly. Ibbur, requiring a second Γ* resident in one carrier without a physical channel, fails on the same clause as mediumship.
+**Comparison [I].** Distinctions among vitality, moral life, understanding and relation to the divine can be compared with different explanatory tasks. Their order does not establish a common mortality gradient with kośas or UHM gates. Yeḥidah is not defined here as the disappearance of personal identity.
 
-**Verdict.** Ladder architecture and collective tikkun: **confirmed** (relocated). Gilgul and ibbur: **refuted**. Yeḥidah: **confirmed at type level**.
+Tikkun can motivate reflection on responsibility for inherited conditions and collective repair. This is a secular analogue, not a replacement of its theological meaning. Gilgul and ibbur require separate accounts of what persists, how it interacts and how identity is recognized; one fixed-point model neither proves nor excludes them.
+
+**Assessment.** Productive analogy [I], with historical interpretation depending on the text and school. No theorem here confirms the ladder or settles personal return.
 
 ### 5.8 Christianity: form, resurrection, energies, spark {#христианство}
 
@@ -411,55 +389,58 @@ The mapping remains interpretive [I]. Neither exact no-cloning nor the chosen Fa
 
 **Mapping [I] and engagement.** The regime/type reading can be compared to forma corporis and the essence/energies distinction as an interpretation. Exact no-cloning of an unknown nonorthogonal family does not prove resurrection impossible; known-state preparation and SWAP have different scopes. Identity across reconstruction is a bridge/convention, and the former unconditional Lawvere claim that no internal section can describe the whole is withdrawn unless a real evaluator/diagonal system is exhibited. These qualifications preserve the comparison without presenting a historical or theological verdict as a matrix theorem.
 
-**Verdict.** Forma corporis: **confirmed**. Separated-soul subsistence and same-subject resurrection: **refuted as formalized**. Traducianism vs creationism: **resolved in traducianism's favor, minus the soul**. Palamas and Eckhart: **confirmed at type/participation level** — the strongest Western matches after Aristotle and Spinoza.
+**Assessment [I/H].** Embodied form, personal resurrection, creation and participation are distinct claims. None is confirmed or refuted by calling the state a regime or the observer a section. Biological inheritance does not resolve creationism versus traducianism, and Palamas’s theological energies are not identified with physical free energy. The comparisons with Aquinas, Palamas and Eckhart remain interpretive.
 
 ### 5.9 Sufism: fanā and baqā {#суфизм}
 
-**Doctrine.** The Sufi map of the person: **nafs** (the self, graded — *an-nafs al-ammārah*, the commanding self, Qurʾān 12:53; *al-lawwāmah*, the self-reproaching, 75:2; *al-muṭmaʾinnah*, the self at peace, 89:27–28), **qalb** (heart), **rūḥ** (spirit — breathed into man by God, 15:29), **sirr** (the secret). The path's summit: **fanā** — annihilation of the self in God (al-Junayd's sober school; al-Ḥallāj's ecstatic "*anā al-ḥaqq*," "I am the Truth," for which he was executed) — followed, in the mature doctrine, by **baqā**: subsistence, the return to creatures with the self transformed. The maxim: *mūtū qabla an tamūtū* — "die before you die."
+**Doctrine.** The Sufi map of the person: **nafs** (the self, graded — *an-nafs al-ammārah*, the commanding self, Qurʾān 12:53; *al-lawwāmah*, the self-reproaching, 75:2; *al-muṭmaʾinnah*, the self at peace, 89:27–28), **qalb** (heart), **rūḥ** (spirit — breathed into man by God, 15:29), **sirr** (the secret). The path's summit: **fanā** — annihilation of the self in God (al-Junayd's sober school; al-Ḥallāj's ecstatic "*anā al-ḥaqq*," "I am the Truth," associated with the later reception of his execution; its historical causation is not reduced here to one utterance) — followed, in the mature doctrine, by **baqā**: subsistence, the return to creatures with the self transformed. The maxim: *mūtū qabla an tamūtū* — "die before you die."
 
-**Mapping [I].** The nafs-gradation is a Gap-profile curriculum: stages of the self-model's transparency to its own drives, refined by practice — the formal apparatus is the [meditation section](/docs/consciousness/states/altered-states) plus [Gap-reduction](/docs/core/dynamics/gap-operator). Fanā maps onto the ego-dissolution regime the corpus models exactly: destabilized self-model with maintained viability — an $R_\varphi$-collapse without crossing $P_{\text{crit}}$; the "annihilation" is of the *model*, not the holon. Baqā is what distinguishes the mature doctrine from mere peak-chasing: return with restructured $H_{\text{eff}}$ — the cumulative channel of practice — which is why the tradition ranked it above fanā. "Die before you die": rehearse the L-descent reversibly, above threshold — the formalism even supplies the safety criterion the manuals encoded as the need for a shaykh. And al-Ḥallāj's fate marks the type/token slip performed *in the first person*: "I am the Truth" is true of the section-fact (T-221) and false of the configuration claiming it aloud — a distinction the sober school (al-Junayd) insisted on, in almost these terms.
+**Comparison [I/H].** Fanā and baqā can prompt investigation of altered self-identification and durable changes in action after a practice. A changing self-model and learned dispositions are possible models, but their relation to these religious concepts requires evidence and interpretation. Neither phase Gap nor $R_M$ establishes ego dissolution, spiritual attainment or safety of a practice.
 
-**Verdict.** Fanā/baqā phenomenology and the practice-ladder: **confirmed** as regime dynamics. Rūḥ as detachable person: **refuted** (it is the O-thread: universal, not personal — §6.2). Ḥallājian identity-claims: **type-level true, token-level false**.
+“Die before you die” is a spiritual formulation here, not a reversible simulation of physiological death. Maintaining $P>2/7$ supplies no clinical safety certificate. A model section also cannot decide the truth of al-Ḥallāj's utterance, whose interpretation and historical setting are contested.
+
+**Assessment.** The distinction between a transient experience and enduring transformation is fruitful. Identification with divine truth and accounts of rūḥ remain theological claims; they are not resolved by type/token terminology.
 
 ### 5.10 Daoism: hun and po {#даосизм}
 
-**Doctrine.** Chinese anthropology is natively *two-souled*: the **hun** (魂) — the ethereal, yang soul(s), associated with breath-qi — and the **po** (魄) — the corporeal, yin soul(s), associated with the body. The *Liji* states the fates: at death "the hun-breath returns to Heaven; the bodily po returns to Earth." Later Daoist systematics (Ge Hong, *Baopuzi*) counted three hun and seven po. Zhuangzi (ch. 18), drumming on a tub after his wife's death, gives the philosophical register: her death is one more transformation in the changes of qi — grief misreads redistribution as loss.
+**Doctrine.** Selected Chinese ritual and Daoist accounts distinguish the **hun** (魂) — the ethereal, yang soul(s), associated with breath-qi — and the **po** (魄) — the corporeal, yin soul(s), associated with the body. The *Liji* states the fates: at death "the hun-breath returns to Heaven; the bodily po returns to Earth." Later Daoist systematics (Ge Hong, *Baopuzi*) counted three hun and seven po. Zhuangzi (ch. 18), drumming on a tub after his wife's death, gives the philosophical register: her death is one more transformation in the changes of qi — the passage presents a response to grief through reflection on transformation, not a theorem denying bereavement.
 
-**Mapping [I].** The hun/po split is the cleanest ancient statement of the **two fates** the formalism proves: the pattern-part ascends into the shared world — informational and composite legacy, cultural coherences, the ren-like survival in $\Gamma_{\text{comp}}$ — while the carrier-part decays in place. One tradition, one sentence, both halves of §3.4–3.5. Qi as breath-energy is the O-complex again (§6.2). Zhuangzi's tub-drumming is trace-conservation ethics: Marcus Aurelius IX.35 in Chinese. As for *three* hun and *seven* po against seven dimensions: **M3 applies — a count-coincidence with zero evidential weight**, recorded here only to disarm it.
+**Comparison [I].** Hun and po distinguish aspects of embodiment and post-mortem transformation in selected Chinese accounts. They are not simply “cultural pattern” and “material carrier,” and no theorem maps their respective fates to two UHM channels. Zhuangzi's account can invite reflection on change and grief without making conservation of trace an ethical argument or proving that no personal loss occurs.
 
-**Verdict.** The dual fate: **confirmed** — the most economical folk encoding of the decomposition's main split. Immortality practices aimed at preserving the personal hun-knot: **refuted** (rows 3–4).
+**Assessment.** Transformation and dependence are interpretive meeting points. Claims of personal immortality require their own evidence and criteria. The counts of hun and po provide no support for seven-dimensional minimality; the historical associations vary across sources.
 
 ### 5.11 Gnosis: the inverted spark {#гнозис}
 
 **Doctrine.** The Gnostic systems (Valentinian and kin): the world is the botched work of a lesser demiurge; the human carries a **pneumatic spark** fallen from the true, alien God; salvation is *gnōsis* — the knowledge that awakens the spark and extracts it from matter. Humanity divides into *hylics* (matter-bound), *psychics* (soul-bound, salvageable by works), *pneumatics* (spirit-bearing, saved by knowledge).
 
-**Mapping [I].** Gnosis holds the spark-intuition (§3.6) — and inverts its geometry. In the formalism the section is not *alien to* the world; it is the world's own self-reading (T-221), and there is no outside for it to escape to: background independence is a theorem, not a prison wall. Knowledge does save something — Gap-reduction genuinely transforms the configuration — but by *deepening the section's transparency in place*, not by extraction. The tripartition is an L-stratification read as fixed caste rather than dynamic regime: the formalism's levels are crossable in both directions, which dissolves the doctrine's determinism.
+**Comparison [I].** Some Gnostic narratives locate liberation in knowledge of a person's relation to a larger order. This can be compared with changes in self-understanding. The proposed dualism conflicts with UHM's chosen monist interpretation, but conflict between starting ontologies is not a mathematical refutation of one by the other. Background independence supplies no theorem about every possible theological “outside.”
 
-**Verdict.** The spark: **confirmed, with its geometry corrected** — immanent section, not exiled fragment. Anti-cosmic dualism and caste-pneumatology: **refuted**.
+**Assessment.** The analogy of a spark remains interpretive. Ancient Gnostic texts differ in cosmology and anthropology; a static threefold classification should not be attributed uniformly to all of them or identified with the L-hierarchy. Neither salvation nor fixed human worth follows from a matrix gate.
 
-### 5.12 Jung: the archetypes, formalized {#юнг}
+### 5.12 Jung: archetypes and collective-pattern models {#юнг}
 
-**Doctrine.** Jung posited, beneath the personal unconscious, a **collective unconscious** common to the species, structured by **archetypes** — Hero, Shadow, Great Mother, Wise Old Man — recurring in myths and dreams of unconnected cultures. He could not name the mechanism of their universality and inheritance, and the gap drew a century of skepticism.
+**Doctrine.** Jung posited, beneath the personal unconscious, a **collective unconscious** common to the species, structured by **archetypes** — Hero, Shadow, Great Mother, Wise Old Man — recurring in myths and dreams of unconnected cultures. The nature of these forms, their proposed inheritance and the evidence for cross-cultural universality remain separate historical and empirical questions.
 
-**Mapping.** Unique among this chapter's subjects, Jung's doctrine is *already formalized in the corpus, under its own name*: the collective unconscious is $\mathcal{U}_{\text{coll}}$ **[D]** — emergent coherences of $\Gamma_{\text{comp}}$, inaccessible to any individual's reflection yet shaping every individual through the partial trace; archetypes are its viability-selected stable patterns **[I]**, universal because the selecting environment's structure (threat, resource, cooperation, unpredictability) is universal ([full treatment](/docs/consciousness/subjects/collective-consciousness#архетипы)). The missing mechanism was selection on collective configurations — evolutionary logic, no mysticism required.
+**Comparison [I/H].** The corpus's use of the name “collective unconscious” for selected composite structures is a modelling proposal. It does not prove Jung's theory by definition. Recurring symbolic patterns can motivate competing hypotheses involving learning, transmission, shared developmental constraints and recurrent environments. Their relative explanatory roles need evidence; cultural transmission alone cannot be declared the resolved mechanism of every archetype.
 
-**Verdict.** **Confirmed** — with the inheritance question answered: transmission through the cultural composite, not the germ line.
+**Assessment.** Collective patterns and individual access are testable questions once observations and interactions are specified (§2.7). Neither the universality of particular archetypes nor the exclusion of biological contributions follows from partial trace or group-level stability.
 
-### 5.13 Sheldrake: the right phenomena, the wrong carrier {#шелдрейк}
+### 5.13 Sheldrake: competing formative explanations {#шелдрейк}
 
-**Doctrine.** Rupert Sheldrake (*A New Science of Life*, 1981; *The Presence of the Past*, 1988) proposed: (1) **morphogenetic fields** guide development — form is underdetermined by genetics; (2) **nature's memory** — the regularities of nature are habits, reinforced by repetition, not timeless laws; (3) **morphic resonance** — similar patterns influence subsequent similar patterns *across space and time without any physical channel*, cumulatively: rats worldwide should learn a maze faster once many rats have learned it (his reading of McDougall's multi-generation Harvard experiment), new compounds should crystallize more readily everywhere once crystallized anywhere.
+**Doctrine.** Rupert Sheldrake (*A New Science of Life*, 1981; *The Presence of the Past*, 1988) proposed: (1) **morphogenetic fields** guide development — form is underdetermined by genetics; (2) **nature's memory** — the regularities of nature are habits, reinforced by repetition, not timeless laws; (3) **morphic resonance** — similar patterns influence subsequent similar patterns *across space and time by a proposed morphic influence*, cumulatively: rats worldwide should learn a maze faster once many rats have learned it (his reading of McDougall's multi-generation Harvard experiment), new compounds should crystallize more readily everywhere once crystallized anywhere.
 
-**Mapping and engagement.** Claims (1) and (2) name real phenomena the panel covers without new physics:
+**Comparison and test [I/H].** Development, recurrence and memory are genuine explanatory tasks. Their existence does not establish Sheldrake's proposed mechanism; representing collective states does not explain all of them either. An influence missing from one effective equation is not forbidden by category theory or background independence.
 
-| Sheldrake's claim | UHM counterpart | Status |
-|-------------------|-----------------|--------|
-| fields shape form beyond genes | attractor structure of the flow; $\mathcal{R}$ toward the self-model; two-channel initialization (genes are *one* channel) | **confirmed, relocated** |
-| nature's memory; laws as habits | procedural memory in $H_{\text{eff}}$ — real, cumulative, *local to carriers and lineages*; plus $\Gamma_{\text{comp}}$ patterns | **confirmed, channel-bound** |
-| channel-free cumulative resonance | a transfer term absent from $\mathcal{L}_\Omega$; forbidden by channel completeness + background independence **[T]** | **refuted** |
+A precise null model can still make a sharp prediction. Suppose an intervention changes an earlier pattern $X$, while the later outcome obeys $Y=F(Z,\xi)$ and the joint law of $(Z,\xi)$ is invariant under that intervention. Then
 
-The disagreement is thus perfectly localized, and it is **experimentally live**: morphic resonance predicts a *positive* no-channel effect (global acceleration of crystallization or learning without contact); UHM predicts **exactly zero** — any observed effect must trace through a physical channel (shared reagents, migrating seeds, published protocols, trained personnel), and controlling those channels kills it. A single robust channel-free positive would falsify the clause of UHM that row 10 rests on. None exists; the prediction stands as the cleanest falsifiable boundary this chapter draws.
+$$
+\mathcal L(Y\mid\operatorname{do}(X=x))
+=\mathcal L(Y\mid\operatorname{do}(X=x'))
+$$
 
-**Verdict.** Sheldrake asked the right question — Ф4 is a genuine explanandum — and answered it with a carrier the dynamics has no room for. The phenomena are kept; the field is not.
+for admitted interventions [C]. This is an explicit causal-independence assumption, not a universal zero-effect theorem of UHM. A competing resonance model must specify how and by how much it changes that law. Reproducible disagreement would challenge the stipulated causal model; it would not alone identify the cause or establish that every ordinary physical pathway had been excluded.
+
+**Assessment.** The resonance hypothesis is not established by the formal analogies in this chapter. No comprehensive experimental verdict is supplied here. A controlled comparison of quantitative models is the appropriate next step, with shared materials, information and environmental influences included in the causal account.
 
 ### 5.14 Ākāśa and the Theosophical records {#акаша}
 
@@ -467,61 +448,49 @@ The disagreement is thus perfectly localized, and it is **experimentally live**:
 
 **Mapping [I/H].** An archive analogy needs an actual retention and recovery channel. Trace conservation supplies no immutable register; a static constrained model does not prove that every accessible environmental state contains every life. Generic erasure prevents full inversion, while reversible restrictions and correctable codes can permit recovery. No-cloning of an unknown family does not forbid reading a classical record or preparing a known state. The weak/strong archive verdict remains model-dependent (§3.5).
 
-**Verdict.** Weak: **confirmed**. Strong: **refuted**. Claimed readings: to the extent they contain real information, they are $\Gamma_{\text{comp}}$-retrievals — culture remembering itself — which is retrieval through channels, and impressive without being occult.
+**Assessment [I/H].** Both a universal archive and privileged access to it need evidence beyond the stated formalism. Ordinary records and cultural transmission can explain some acquired information, but they cannot be declared the source of every claimed reading without examining the case. Retention, recovery accuracy and attribution to a particular life are separate tests.
 
 ### 5.15 Spiritism {#спиритизм}
 
 **Doctrine.** Allan Kardec (*Le Livre des Esprits*, 1857) codified the séance age: surviving personalities, retaining memory and character, communicate through mediums.
 
-**Mapping.** The claim requires, post-mortem, a running $\Gamma^*$ (character) and a live kernel $K(\tau)$ (memory) — the two objects whose death §2.5–2.6 established: the fixed point does not survive the rupture; the kernel dies with its carrier ("the book is burned"). What a séance can genuinely access is the composite pattern of the deceased held in the participants' shared $\Gamma_{\text{comp}}$ — which explains, without residue, why communications match the sitters' knowledge and idiom.
+**Comparison [I/H].** A claim of communication with a deceased person has at least three components: information was obtained; ordinary access does not account for it under the protocol; its source is that surviving person. These are distinct evidential steps. Memory held by participants, records and information leakage are possible explanations to test, not a universal explanation established without investigation.
 
-**Verdict.** **Refuted** as formalized; the phenomenon relocates to collective pattern-reading.
+**Assessment.** The formalism neither establishes the claimed communication nor proves every post-mortem carrier impossible. A fixed point's mathematical existence and a kernel's effective decay do not decide the source of a message. Controlled recovery of independently specified information would address one component; phenomenal survival and personal attribution require further criteria.
 
 ---
 
 ## 6. Structural convergences {#структурные-совпадения}
 
-Two convergences run *across* the traditions — invisible to each from inside, sharp from the panel.
+Several traditions distinguish bodily life, perception, understanding and a person's relation to a larger order. Comparing these distinctions is useful when their differences remain visible. The following groupings are heuristic [I], not a proof that the traditions discovered the same hierarchy.
 
 ### 6.1 The layer architecture of the soul {#архитектура-слоёв}
 
-Almost no tradition, examined closely, believed in *one* soul. They believed in **stacks** — and the stacks align, not in their counts (M3: counts are void) but in their *order* and in where they drew the line of death:
+The table groups selected motifs by a question they raise. Each cell is a suggested comparison, not a translation or a claim of the same place in a universal stack:
 
-| Formal tier | Vedānta (kośa) | Kabbalah | Egypt | Greece | Fate |
-|-------------|----------------|----------|-------|--------|------|
-| carrier / S-structure | annamaya (food) | — (the body) | khat (corpse) | sōma | decays |
-| viability, O-influx ($P$, $\Delta F$) | prāṇamaya (breath) | nefesh | ka (fed double) | threptikon / physis | ceases at threshold |
-| experience, affect (E-sector, L1–L2) | manomaya (mind) | ruaḥ | ba (personality) | aisthētikon / psychē | ceases with the regime |
-| reflection ($R$, L2–L3) | vijñānamaya (discernment) | neshamah | — | noētikon / logos | ceases with the regime |
-| near-attractor states (approach to $\rho^*$) | ānandamaya (bliss) | ḥayyah | akh (transfigured) | — | transitory in life; not a survival vehicle |
-| the non-individual: type and section | turīya (the fourth) | yeḥidah | — | nous poiētikos (one-for-all reading) | never born, never dies |
-| composite pattern | — | (tikkun's medium) | ren (the name) | kleos (fame) | outlives, needs carriers |
+| Question | Vedānta motifs | Kabbalistic motifs | Egyptian motifs | Greek motifs |
+|---|---|---|---|---|
+| Embodiment | annamaya | bodily life | bodily preservation | sōma |
+| Sustaining life | prāṇamaya | nefesh | ka and offerings | nutritive capacity |
+| Affective and perceptual life | manomaya | selected uses of ruaḥ | aspects attributed to ba | sensitive capacity |
+| Discernment | vijñānamaya | neshamah | no equivalent asserted | reasoning, nous |
+| Transformation and fulfilment | ānandamaya in the sheath account | ḥayyah in later accounts | akh | no equivalent asserted |
+| Relation to a proposed ultimate | turīya in Advaita readings | yeḥidah | no equivalent asserted | disputed readings of active intellect |
+| Remembered or inherited effects | dispositions and teaching | collective dimensions of tikkun | ren and commemoration | kleos |
 
-Read the last column top to bottom: **every tradition's own lower layers are mortal by that tradition's own admission** — the kośas are sheaths to be discarded, nefesh stays by the grave, the ka starves without offerings, and Homer's psychē in Hades is a witless shade until fame (kleos), the composite layer, does the real surviving. The disputes were always about the top rows. The formalism draws the line without wavering: everything indexed to the individual configuration dies with it; the two rows that survive — the type/section and the composite pattern — are precisely the rows that were **never individual in the first place**. The traditions converged on the architecture; they differed on how honestly they labelled the top of the stack.
+The entries differ in ontology and purpose: a sheath, a capacity, a funerary component and a relation to God are not objects of one type. In particular, kośas do not share a demonstrated mortality order with nefesh/ruaḥ/neshamah, and being associated with a grave or requiring offerings does not mean a tradition declares the component nonexistent after death.
+
+The useful common question is **what must be maintained for a claimed capacity or continuity to persist?** UHM can specify carriers, inputs, observations and reconstruction conditions. It does not derive a universal line below which every tradition's layers die and above which only impersonal types survive.
 
 ### 6.2 Body, soul, spirit — typed {#тело-душа-дух}
 
-The oldest trichotomy — *sōma, psychē, pneuma* (1 Thess 5:23); *basar, nefesh, ruaḥ*; body, soul, spirit — receives a three-line typing:
+Body, soul and spirit can be used as three different questions: what carries a process, how it is organized, and how a tradition understands its relation to a sustaining or ultimate order. The triad in 1 Thessalonians 5:23 is a textual point of comparison, not proof that every tradition uses the same anthropology.
 
-- **Body** = the carrier: any substrate admitting a faithful representation (T-153/T-153a) — necessary, replaceable in kind, irreplaceable in token.
-- **Soul** = the configuration and its regime: $\Gamma$, its fixed point $\Gamma^*$, its window — individual, mortal, continuable, uncopyable.
-- **Spirit** = the Ground-complex: the O-dimension's double work — influx of free energy and the internal clock ($\kappa_0 = \omega_0 \lvert\gamma_{OE}\rvert \lvert\gamma_{OU}\rvert / \gamma_{OO}$; [dual role](/docs/core/structure/dimension-o)) — *universal*, individuated only as a connection, never as a possession.
+A declared UHM interpretation [I] might assign **body** to a physical realization, **soul** to its organized capacities and identity questions, and **spirit** to questions of dependence and participation. None of these assignments proves that a carrier is irreplaceable, that every soul is uncopyable, or that a theological spirit equals an O coordinate. Exact state recovery and personal continuity keep their separate conditions (§2.5).
 
-The philology has been voting for this typing all along. Every "spirit"-word in the register is a **breath**-word:
+Breath-related meanings of terms such as pneuma, spiritus and ruaḥ make respiration a useful historical motif of animation and dependence. The precise histories and later theological meanings differ; this is not a universal etymology of every “soul” word or evidence of independent discovery of one formalism. A full comparative linguistic claim would require its own source study.
 
-| Word | Language | Root sense |
-|------|----------|-----------|
-| ātman | Sanskrit | breath (cognate with German *atmen*, to breathe) |
-| prāṇa | Sanskrit | the out-breathing, vital air |
-| psychē | Greek | from *psychein*, to breathe, to cool |
-| pneuma | Greek | from *pnein*, to blow |
-| anima / animus | Latin | cognate with Greek *anemos*, wind |
-| spiritus | Latin | from *spirare*, to breathe |
-| ruaḥ | Hebrew | wind, breath |
-| neshamah | Hebrew | from *n-š-m*, to breathe |
-| qi 氣 | Chinese | vapor, breath |
-
-Why breath, everywhere and independently? Because breath is the pre-theoretic *observable* of the O-complex: the visible influx of what keeps the configuration above threshold, arriving **rhythmically** — energy and clock in one phenomenon, which is exactly the double role the formalism proves the Ground must play (§2.8 dependencies; [functional uniqueness of O](/docs/core/structure/dimension-o) **[T]**). And the traditions' insistence that *spirit is one while souls are many* — one pneuma, one prāṇa, one ruaḥ from God — types correctly: $\omega_0$ is universal, $\Delta F$ is environmental; only the *connection* is yours **[I]**.
+Breathing can suggest a measurable rhythmic and sustaining process. It does not construct a tensor clock from the O axis or establish a universal frequency $\omega_0$. Clock realization and calibration require [their own data](/docs/core/operators/emergent-time); [temporal experience](/docs/consciousness/phenomenology/temporal-consciousness) adds a further empirical bridge.
 
 ---
 
@@ -529,15 +498,21 @@ Why breath, everywhere and independently? Because breath is the pre-theoretic *o
 
 ### 7.1 When does a soul begin? {#когда-формируется}
 
-By components. **Interiority (L0):** trivially early — any configuration has an inner aspect; nothing to date. **Identity ($\Gamma^*$):** from autopoietic closure — when the developing system first maintains $P > 2/7$ by its own regeneration, the operator $\varphi$ becomes contracting and the fixed point exists; identity begins with self-maintenance, not at a metaphysical instant, and sharpens continuously. **The subject (L2):** when the full window closes its four conditions — in human ontogeny, plausibly at four to eight months, before language ([infant consciousness](/docs/consciousness/subjects/pre-linguistic#младенческое-сознание) **[I]**); development thereafter is not the arrival of a soul but the enrichment of coherences. The picture is gradualist at every joint — thresholds crossed, not essences installed — and it vindicates the traducian instinct (§5.8): what initializes comes through the parents and the world, and what emerges is new.
+The answer depends on what is being dated. Pan-interiority assigns an inner aspect within a philosophical interpretation [I]; it is not an empirical developmental clock. A self-model's fixed point appears only under its actual existence conditions; crossing $P=2/7$ does not make a map contractive.
+
+The onset of a particular operational capacity requires a measured developmental trajectory and a validated readout. Its phenomenal interpretation remains a further hypothesis. No infant age or universal moment of ensoulment follows from the four static $\mathrm{Cap}_2$ gates. Biological development can instead be studied as the acquisition, maintenance and integration of distinct capacities, without treating the result as a resolution of creationism or traducianism.
 
 ### 7.2 Was it there before the holon? {#предсуществование}
 
-No — and the "no" is structural, not rhetorical. Pre-existence of *this* soul requires individuating information prior to individuation. The Source ($\Gamma_\odot$, §2.8) is one pure state with every amplitude equal: **zero bits** from which a "this one rather than that one" could be drawn; and it is atemporal — there is no "before" in which a soul-warehouse could sit. What genuinely precedes any particular holon is the **type**: the seven-axis $G_2$ grammar, which "pre-exists" the way the primality of seven pre-exists its being written down — as necessity, not as biography (T-224/T-247). Plato's anamnesis survives exactly this far (§5.2): the slave boy recalls *structure*, because structure is what he is made of; he recalls no one's past, because there was no one.
+The proposed cosmological anchor does not settle personal pre-existence. A pure state has zero von Neumann entropy, but this does not mean “zero possible individuating bits”: the two pure states $|A\rangle\langle A|$ and $|O\rangle\langle O|$ each have zero entropy and can encode distinguishable alternatives. Information claims require an ensemble, encoding and accessible observations.
+
+Likewise, a chosen atemporal representation does not prove that every physical or theological use of “before” is meaningless. A claim of this person's pre-existence requires an identity relation, a proposed history and evidence appropriate to that claim. A mathematical type being available before an instance is constructed neither proves that a person pre-existed nor excludes it. T-221 and the shared template do not resolve Plato's anamnesis.
 
 ### 7.3 Is life māyā? {#майя}
 
-Not in the sense that dissolves the question. Spacetime and the emergent levels are derived, and derivation is not demotion: $M^4$ is a theorem of mathematics (T-117–T-121, [emergent manifold](/docs/proofs/physics/emergent-manifold): since the restatement of T-119 on 2026-09-25 no reconstruction axiom is assumed; the reading as physical spacetime is [I]), and the corpus's standing contrast with interface-idealism is explicit — the world is *emergent, not interfacial* ([panpsychism analysis](/docs/consciousness/comparative/panpsychism-analysis#хоффман)). Māyā is right precisely where Śaṅkara used it carefully: nothing at the emergent level is *self-standing* (svataḥ-siddha). It is wrong wherever it means "unreal." An emergent subject really suffers, really chooses, really dies. That is rather the point of the whole register.
+Dependence, appearance and nonexistence are different notions. A dependent process can have real consequences within a model; deriving a representation does not establish its empirical adequacy or make its contents insignificant. Likewise, Advaita's use of māyā should not be reduced without argument to the claim that nothing matters or no one suffers.
+
+The comparison can ask how identification with a changing description differs from the conditions that sustain it. UHM's physical realizations and Advaita's account of levels of reality retain different premises. No spacetime reconstruction theorem proves or refutes māyā, and practical responsibility requires explicit ethical premises rather than a slogan about unreality. See [the comparative synthesis](/docs/consciousness/ethics-meaning/spiritual-synthesis).
 
 ### 7.4 Does the soul need a bigger mathematics? {#новая-математика}
 
@@ -549,45 +524,44 @@ The existing mathematics supplies several candidate models, not a complete inven
 
 Three boundaries, stated without decoration, so that this chapter closes no gap by rhetoric (the discipline of the [epistemic vertical](/docs/reference/epistemic-vertical)):
 
-1. **The three interpretations of "after."** Annihilation, informational legacy, composite continuity — all compatible with the formalism; the choice is metatheoretical **[I]** ([canonized here](/docs/consciousness/ethics-meaning/death-continuity#после-смерти)). Note, though, what the three *share*: in none does the subject continue. The freedom the formalism leaves concerns the dignity of the remainder, not the survival of the person.
+1. **Process, legacy and personal continuation.** The [revised continuity chapter](/docs/consciousness/ethics-meaning/death-continuity#после-смерти) separates these three claims. A process can end while some records and effects remain. Survival or non-survival of the same experiencing subject additionally requires an identity and phenomenal bridge; no universal conclusion follows from trace preservation or no-cloning.
 2. **The phenomenal bridge.** The state/report/experience relation requires its own declared map and evidence [I/H]. T-214’s universal internal-map prohibition is withdrawn: Lawvere’s evaluator hypotheses do not apply to every predicate. Unresolved identity does not make every operational criterion a theorem or every historical verdict immune to new evidence.
 3. **The Universe's own stage.** Whether the whole is itself inside a viability window (hole H1.2, [floor register](/docs/core/foundations/universe-as-holonom#регистр-дыр-этажа)) is neither derived nor measured. Cosmic-soul questions inherit this openness.
 
-The theory does not answer "is there a soul?" It **replaces** the question with six answerable ones — and answers them, with statuses attached and two falsifiable edges exposed (rows 10 and 12).
+The decomposition makes six different questions explicit. Some have conditional mathematical answers; others remain historical, empirical, normative or metaphysical questions. This separation supports concrete tests without presenting the remaining questions as already settled.
 
 ---
 
 ## Summary {#сводка}
 
-| Component | Formal object | Status of the mapping | Fate |
-|-----------|---------------|----------------------|------|
-| Ф1 experiencer | calibrated capability certificate + phenomenal bridge | [D] + [I/H] | conditional on actual dynamics |
-| Ф2 identity | declared state/model trajectory | [D/I/H] | transfer and phenomenal identity remain distinct |
-| Ф3 baggage | $\Gamma(0)$: genetic + composite channels | [I]; Statement §3.3 [C] | transmitted impersonally |
-| Ф4 field of forms | attractors, $H_{\text{eff}}$, $\Gamma_{\text{comp}}$ | [I] on [D]/[I] cores | outlives individuals, needs carriers |
-| Ф5 eternal record | declared dilation/recovery/static construction | [T/C] at scope; archive [I/H] | no universal archive or universal no-reading theorem |
-| Ф6 spark | internal section (T-221) + $G_2$ type | [I] on [T] cores | never individual, never born |
+| Component | Formal analogue | Status and limit |
+|---|---|---|
+| Ф1 experiencer | Operational capability and phenomenal bridge | [D/I/H]; no universal mortality theorem |
+| Ф2 identity | Criterion on state/model histories | [D/I/H]; transfer and personal continuation remain distinct |
+| Ф3 baggage | Initial conditions and developmental inputs | [I/H]; selected channels, no completeness claim |
+| Ф4 field of forms | Attractors, learned dynamics and collective patterns | [C/I/H]; stability and transmission require mechanisms |
+| Ф5 eternal record | Encoding, retention and recovery | [C/I/H]; neither universal archive nor universal no-reading theorem |
+| Ф6 spark | Section/type analogy | [I]; no identity with the absolute established |
 
 ### What we learned {#что-мы-узнали}
 
-1. **"Does the soul exist?" is ill-typed.** The word bundles six functions with six different fates; the binary question forces a false answer in either direction (§1).
-2. **Experience needs an explicit bridge [I/H].** The chosen operational certificate is not a universal No-Zombie or mortality theorem; conditional loss is tested under an actual dynamics (§3.1).
-3. **Identity is a declared criterion [D/I].** Continuity, transfer and reconstruction have different meanings; exact unknown-family copying is forbidden, but SWAP and known-state preparation are not (§3.2).
-4. **Karma is real and has no addressee.** New lives are conditioned by the accumulated past through exactly two physical channels; the baggage travels, the passenger does not (§3.3).
-5. **The morphic field exists and is called $\Gamma_{\text{comp}}$.** Superindividual, invisible, formative, channel-bound; Sheldrake's phenomena survive, his carrier does not — with a zero-prediction at the boundary (§3.4, §5.13).
-6. **Retention and recovery require a physical model.** Trace preservation supplies no complete archive; reversible restrictions/codes can permit recovery. Cosmic timelessness is conditional (§3.5).
-7. **The spark is the section-fact.** *Tat tvam asi* is T-221; the uncreated in you is the type, not the token — confirmed at exactly the level the apophatic traditions insisted on (§3.6, §5.6, §5.8).
-8. **The traditions converge on architecture.** Layered souls with mortal lower storeys everywhere; the dispute was always the top of the stack, and the top rows are the non-individual ones (§6.1).
-9. **Spirit types as the Ground.** Every spirit-word is a breath-word because breath is the visible O-influx: energy and clock in one — one spirit, many souls, correctly (§6.2).
-10. **Scope remains explicit.** Cosmic stage, subject individuation, phenomenal identity and retention/recovery channels remain open under their actual assumptions; the comparison does not settle every person-indexed question (§8).
+1. The word “soul” can combine distinct questions; specifying its intended meaning makes a substantive answer possible.
+2. Organization, state transfer, identity and experience require different contracts and evidence.
+3. Conditional decay does not prove universal extinction; no-cloning does not prohibit all transfer or reconstruction.
+4. Cultural and biological consequences may persist, while records and collective patterns can also be lost.
+5. Mathematical sections, shared types and preserved trace do not prove divine identity or a complete eternal archive.
+6. Historical traditions disagree on important points. Their differences guide inquiry rather than being erased by a shared matrix vocabulary.
+7. The resulting programme is constructive: specify a capacity, realization, channel, resource budget and observable outcome, then test the proposed bridge.
 
 :::tip Closing the comparative section
-This chapter completes the comparative arc: [forty-two theories of consciousness](/docs/consciousness/comparative/consciousness-theories), [panpsychism](/docs/consciousness/comparative/panpsychism-analysis), and now the oldest theory of all. The formal ground it stands on is the ethics-and-meaning sequence — especially [Death and Continuity](/docs/consciousness/ethics-meaning/death-continuity), whose theorems decide most of the register. Where the traditions were right, they were right about structure; where they were wrong, they were wrong about carriers. The soul was never one thing — and everything it named is accounted for.
+This chapter connects [theories of consciousness](/docs/consciousness/comparative/consciousness-theories), [panpsychism](/docs/consciousness/comparative/panpsychism-analysis) and historical accounts of the soul. The revised [death and continuity](/docs/consciousness/ethics-meaning/death-continuity) chapter supplies conditional mathematical results and explicit identity distinctions. The [spiritual synthesis](/docs/consciousness/ethics-meaning/spiritual-synthesis) develops the comparison without treating selected structural analogies as a complete explanation or refutation of the traditions.
+
 :::
 
 ---
 
 **Related documents:**
+
 - [Death and Continuity](/docs/consciousness/ethics-meaning/death-continuity) — irreversibility, identity, No-Cloning, the three interpretations
 - [Collective Consciousness](/docs/consciousness/subjects/collective-consciousness) — $\Gamma_{\text{comp}}$, collective unconscious, archetypes
 - [Panpsychism](/docs/consciousness/comparative/panpsychism-analysis) — pan-interiority vs the panpsychist family
@@ -596,7 +570,7 @@ This chapter completes the comparative arc: [forty-two theories of consciousness
 - [The Unconscious](/docs/consciousness/states/unconscious) — Gap-structure, incomplete transparency
 - [Pre-linguistic Consciousness](/docs/consciousness/subjects/pre-linguistic) — the subject before language
 - [Interiority Hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — L0–L4 definitions
-- [Depth Tower](/docs/consciousness/hierarchy/depth-tower) — SAD and the ceiling of self-reference
+- [Depth Tower](/docs/consciousness/hierarchy/depth-tower) — the chosen SAD score and higher-order operational certificates
 - [The Universe as Holonom](/docs/core/foundations/universe-as-holonom) — the static whole, sections, one grammar
 - [Origin of the Universe](/docs/physics/cosmology-phys/origin) — the Source and its instability
 - [Self-Observation](/docs/consciousness/foundations/self-observation) — $\varphi$, $R$, the fixed point

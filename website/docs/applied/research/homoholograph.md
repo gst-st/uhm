@@ -109,7 +109,7 @@ quantities have no analogue in any bodygraph tool:
 | HB03 | type geometry | mean $P$ orders Reflector < Projector < Generator < Manifestor < MG; types are connectivity classes, scalars separate them only partially ($d' \approx 0.3$) | VERIFIED |
 | HB04 | islands | split definition in 60.3% of charts ⇔ disconnected γ-graph (0 violations); **bridges (partner/transit) are what merge islands** | VERIFIED |
 | HB05 | razlad | median 0.396; $r = 0.35$ with P/D definition mismatch | VERIFIED |
-| HB06 | synastry = T-77 | composite ("electromagnetic") channels are exactly cross-bridges; pair $\Delta P \ge 0$ in 240/240 (phase-aligned), $r = 0.38$ with composite count | VERIFIED |
+| HB06 | Signed pair perturbation model | Historical report: nonnegative separately summed increments in 240/240, $r=0.38$ with composite count. The sign is selected by the constructor; HB06 does not check PSD | CONSTRUCTION; not empirical compatibility |
 | HB07 | gains | center-informed gains beat uniform beat anti-informed (0.242 / 0.245 / 0.326) under doctrine-shaped noise | DESIGN |
 | HB08 | transit dwell | median days per gate: Moon 1, Sun 6, Mars 9, Jupiter 27, Saturn 50, Pluto 68+; the sky completes ≥1 new channel on 98% of days | VERIFIED |
 | HB09 | n-of-1 power | blind day-rating vs drive prediction: 0.5σ ≈ 70 d, 0.35σ ≈ 100 d, 0.2σ ≈ 300 d; false positives ≈ 2% | VERIFIED |
@@ -122,6 +122,17 @@ The one refuted expectation along the way is recorded honestly: razlad does
 **not** correlate with union-only "cooperative" channels ($r = 0.00$) — they
 enter neither pure prior, so no mechanism exists; the correct driver is the
 P/D symmetric difference (HB05).
+
+### Mathematical scope of the pair check
+
+For a Hermitian perturbation $X$ and $\rho=\rho_A\otimes\rho_B$,
+
+$$
+P(\rho+\varepsilon X)-P(\rho)
+=2\varepsilon\operatorname{Tr}(\rho X)+\varepsilon^2\operatorname{Tr}(X^2).
+$$
+
+HB06 chooses the sign of each $X$ so that $\operatorname{Tr}(\rho X)\ge0$ and uses $\varepsilon>0$. Nonnegativity then follows from the constructor, not from empirical agreement or [T-77](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация) alone. HB06 sums increments from separate perturbations; it does not certify a single combined final state. Trace one and positivity must also be checked before interpreting a perturbed matrix as a density state. For full-rank $\rho$, $|\varepsilon|\|X\|_{\mathrm{op}}\le\lambda_{\min}(\rho)$ is sufficient for positivity; traceless $X$ preserves trace. Vanishing partial traces preserve marginals. For a matrix-unit bridge $X=\gamma|i,k\rangle\langle j,l|+\overline\gamma|j,l\rangle\langle i,k|$, the sufficient index conditions are $i\ne j$ and $k\ne l$. None of these facts measures a person's welfare or validates Human Design as an account of people.
 
 ## 4b. The sensor-architecture audit (HB13): nothing on faith
 
@@ -177,8 +188,7 @@ Screens (each stating its honesty layer):
   panel (repaired T-92) + tyaga + poristost + razlad + chord connectivity
   (blocks / lone voices vs HD split).
 - **Смычка** — the duogram: composite channels drawn as dashed bridges on
-  both bodygraphs; the pair increment $\Delta P \ge 0$ computed live; "the
-  increment lives in the bridge, not in the banks."
+  both bodygraphs; a constructor-dependent pair-purity change whose state validity must be checked separately. This is not a compatibility or welfare score.
 - **Небограф** — today's timebridges (channels the sky completes), the
   slowness ladder; influence explicitly marked as layer-3 hypothesis.
 - **Правдомер** — the three layers, cohort base rates, n-of-1 power table,
@@ -201,7 +211,7 @@ Screens (each stating its honesty layer):
 | not-self | razlad $D_{ns}$ + the stress panel | VERIFIED (as a quantity) |
 | conditioning | environment drive through open ports; estimator prior vs observations | DESIGN |
 | transits | drive schedule; timebridges | VERIFIED (astronomy) / OPEN (influence) |
-| synastry / composite | cross-bridges; $\Delta P \ge 0$ lives in the bond (T-77) | VERIFIED (model) |
+| synastry / composite | Selected pair perturbations; state validity and observed relationship effects require separate checks | CONSTRUCTION / OPEN |
 | "purpose" | not a verdict: the basin map — where the drift already carries you | DESIGN |
 
 ## 7. Roadmap
@@ -701,9 +711,7 @@ A few rows show the shape of it:
 - **Open center → porosity (high gain).** Not "weakness" or "emptiness" but
   susceptibility — and, crucially, a *testable* one: higher self-report
   variance on that voice, an open question logged for the per-user diary.
-- **Synastry → the *smychka* (T-77).** Not a compatibility score but a
-  computable, non-negative **increment of being** that lives in the bridge,
-  not in the two banks — connection literally adds being.
+- **Synastry → the *smychka*.** A proposed pair representation. [T-77](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация) quantifies a pinching difference in a specified state. It does not establish an “increment of being”, empathy or relationship compatibility.
 
 The Rosetta is where the two birds meet. The falsification suite keeps the
 reconstruction *honest against HD* — it must never contradict the instrument
@@ -1021,7 +1029,7 @@ read; the practice is borrowed from a validated clinical frame. [I]
 
 ### 41. A third bridge: attachment into the relational layer
 
-The relational machinery — synastry (T-77), the composite, the centered states
+The proposed relational machinery — pair perturbations, the composite, the centered states
 — has been waiting for its science, and attachment theory (Bowlby, Ainsworth;
 the adult anxiety/avoidance dimensions) is it. Attachment is about how a person
 regulates the two pulls of a bond: toward closeness and toward autonomy. UHM

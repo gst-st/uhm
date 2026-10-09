@@ -377,7 +377,7 @@ MATRIX: list[tuple[str, str, str, str, str]] = [
     ("AADL", "analyzable RT/embedded semantics", "E", "O/L channel contracts carry analysis annexes; emit AADL view", "каналы"),
     ("TLA+/Alloy", "temporal/relational formal verification", "E", "L-aspect contracts mandate a formal view (TLA+/Verum)", "каналы"),
     ("DDD (Evans)", "bounded contexts", "N", "holon boundary = context boundary (E-interiority)", "холон"),
-    ("DDD (Evans)", "context-mapping patterns (9)", "N", "T-77 contract algebra types the map; gain = 2‖γ_cross‖²", "композиция"),
+    ("DDD (Evans)", "context-mapping patterns (9)", "N", "typed interface proposal; T-77 checks only a specified pinching identity", "композиция"),
     ("Hexagonal/Clean", "dependency rule, ports/adapters", "N", "A-ports, O-adapters, L/S/E core; rule = channel direction", "аспекты"),
     ("Parnas 1972", "information hiding as decomposition criterion", "N", "E-interiority is an axis with a measure (Coh_E), not advice", "аспекты"),
     ("Simon 1962", "near-decomposability of viable hierarchy", "N", "γ_cross small-but-nonzero; quantified by Φ window", "инварианты"),
@@ -391,13 +391,13 @@ MATRIX: list[tuple[str, str, str, str, str]] = [
     ("Reactive Manifesto", "responsive/resilient/elastic/message-driven", "N", "thresholds + ℛ + O-budget elasticity + A/D channel style", "инварианты"),
     ("12-Factor", "operational hygiene rules", "E", "each factor lands in an aspect checklist (Ω2)", "процедура"),
     ("CALM", "coordination ⇔ non-monotonicity boundary", "E", "LU-consistency contracts must declare monotone/coordinated", "каналы"),
-    ("Conway/Team Topologies", "org↔system mirroring, 3 interaction modes", "N", "org-holon ⊗ system-holon; T-77 cross-coupling is the mirror", "композиция"),
+    ("Conway/Team Topologies", "org↔system mirroring, 3 interaction modes", "N", "org/system coupling model; operational comparison required beyond T-77", "композиция"),
     ("ADR (Nygard)", "decision log", "N", "status-graded claims ([Т]/[С]/[Г]/[И]) — epistemic vertical", "процедура"),
     ("ATAM (SEI)", "tradeoff analysis on scenarios", "N", "ablation calculus: scenario = ablation, sensitivity = ∂verdict", "процедура"),
     ("Spec Kit SDD", "constitution→specify→plan→tasks pipeline", "N", "Ω0 constitution = invariants; Ω1–Ω6 refine it computably", "процедура"),
     ("AGENTS.md", "machine-readable repo context", "N", "holarch.v1 instance IS the machine context for design", "схема"),
     ("MCP", "typed tool contracts", "N", "S-aspect contract channel (AS/SL) — schema-first interop", "каналы"),
-    ("A2A v1.0", "agent-to-agent peering, capability cards", "N", "T-77 synastry contract = peering with measurable gain", "композиция"),
+    ("A2A v1.0", "agent-to-agent peering, capability cards", "N", "typed peering contracts; measured task benefit requires a separate baseline", "композиция"),
     ("Anthropic agent patterns", "workflows-vs-agents, evaluator-optimizer", "N", "DL-regulation loop + LE-evidence critic; R_φ = eval fidelity", "самомодель"),
     ("LangGraph/AutoGen/CrewAI", "orchestration graphs, roles, handoffs", "E", "U-organ orchestration emitted as graph views", "виды"),
     ("Nym/Loopix", "stratified mixing + cover traffic", "N", "derived in W1: E-interiority + E–O immanence budget", "воркед-mixnet"),
@@ -662,29 +662,50 @@ def hl10_fano_coverage(insts: list[Instance]) -> None:
 
 
 # ----------------------------------------------------------------------------
-# HL11 — T-77 composition gain on org ⊗ system (Conway mirror)
+# HL11 — T-77 pinching identity on normalized positive 14D states
 # ----------------------------------------------------------------------------
 
 def hl11_t77_gain() -> None:
+    """Check a direct-sum block identity, not tensor composition or welfare."""
     rng = np.random.default_rng(7)
     oks = []
+    worst_residual = 0.0
+    min_eigenvalue = float("inf")
     for _ in range(240):
-        d1 = rng.dirichlet(np.ones(7)); d2 = rng.dirichlet(np.ones(7))
-        rho_diag = np.diag(np.concatenate([d1, d2]) / 2.0)
-        k = rng.integers(1, 4)
-        cross = np.zeros((7, 7))
-        for _ in range(k):
-            i, j = rng.integers(0, 7), rng.integers(0, 7)
-            cross[i, j] = rng.uniform(0.01, 0.05)
-        rho = rho_diag.copy()
-        rho[:7, 7:] = cross / 2.0
-        rho[7:, :7] = cross.T / 2.0
-        gain = purity(rho) - purity(rho_diag)
-        expect = 2 * np.sum((cross / 2.0) ** 2)
-        oks.append(abs(gain - expect) < 1e-12)
+        # A normalized Gram matrix guarantees positivity before measurement.
+        factor = rng.normal(size=(14, 14)) + 1j * rng.normal(size=(14, 14))
+        rho = factor @ factor.conj().T
+        rho /= np.trace(rho).real
+        rho_diag = np.zeros_like(rho)
+        rho_diag[:7, :7] = rho[:7, :7]
+        rho_diag[7:, 7:] = rho[7:, 7:]
+        cross = rho[:7, 7:]
+        eig_min = min(float(np.linalg.eigvalsh(state)[0])
+                      for state in (rho, rho_diag))
+        min_eigenvalue = min(min_eigenvalue, eig_min)
+        state_ok = all(
+            np.max(np.abs(state - state.conj().T)) < 1e-12
+            and abs(np.trace(state) - 1.0) < 1e-12
+            for state in (rho, rho_diag)
+        ) and eig_min >= -1e-12
+        difference = purity(rho) - purity(rho_diag)
+        expected = 2.0 * float(np.sum(np.abs(cross) ** 2))
+        residual = abs(difference - expected)
+        worst_residual = max(worst_residual, residual)
+        # Diagonal blocks are subnormalized alternative sectors, not marginals.
+        weight = float(np.trace(rho[:7, :7]).real)
+        normalized_blocks = (
+            weight ** 2 * purity(rho[:7, :7] / weight)
+            + (1.0 - weight) ** 2 * purity(rho[7:, 7:] / (1.0 - weight))
+        )
+        oks.append(state_ok and residual < 1e-12 and expected > 0.0
+                   and abs(purity(rho_diag) - normalized_blocks) < 1e-12)
     report("HL11", "VERIFIED", all(oks),
-           f"P(pair) − P(diag) = 2‖γ_cross‖²_F exactly on {sum(oks)}/240 random "
-           f"org⊗system pairs (T-77): the integration gain lives in the contract")
+           f"T-77 pinching: trace-1, Hermiticity, PSD and block normalization "
+           f"passed on {sum(oks)}/240 positive 14D states; "
+           f"max identity residual {worst_residual:.3e}, "
+           f"min eigenvalue {min_eigenvalue:.3e}; "
+           "no tensor-composition or cooperation-benefit claim")
 
 
 # ----------------------------------------------------------------------------

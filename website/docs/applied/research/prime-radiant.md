@@ -64,7 +64,7 @@ The machine exists twice, deliberately. The **reference** is a numpy-only implem
 | **[D]** dynamics | the $\mathcal{L}_\Omega$ tick (Strang split, CPTP-safe), $\kappa(\mathrm{Coh}_E)$ feedback | H16–H32 |
 | **[E]** navigator | goal regions, SO(7) dials, bold moves, the solitaire oracle, ensembles | H39–H45 |
 | **[F]** calibration | the 66-hypothesis table, re-run on every change | §5 |
-| **[G]** pair space | $\mathcal{D}(\mathbb{C}^{49})$: bridges, the T-77 gain, the κ-budget contest | H47–H50 |
+| **[G]** pair space | $\mathcal{D}(\mathbb{C}^{49})$: specified perturbations, quadratic purity identity, the κ-budget contest | H47–H50 |
 | **[H]** towers | the centered-Gram meta-holon; the purity ladder | H51, H45 |
 | **[I]** geodesics | the m-chord identity of regeneration; path straightness | H52–H53 |
 | **[J]** phase atlas | the (dissipation, supply) basin map | H54–H55 |
@@ -256,7 +256,7 @@ The v1 table: **66 hypotheses → 65 VERIFIED, 1 REFUTED (H46, the discovery), 0
 | Dynamics (attractor, entropy law, halting/reignition, metabolic rate, CPTP, $G_2$) | H16–H32 | verified, incl. T-124 (6/6 random starts), T-271 signs at the attractor, T-273/T-276 frequency-independence (rate constant to 0.4% across two decades of $dt$), starvation-halt with hysteresis-free reignition, $\dim\mathfrak{g}_2 = 14$ |
 | Observables/symbols | H33–H38 | the grey wall hits $\max\sigma = 1.000$ exactly; the $\Phi$ proxy deviation is real; $\mathrm{Coh}_E$–$\kappa_0$ correlation $+0.97$; the *naive boolean* $\sigma$-equivalence fails pre-calibration (22/30 mismatches, $\sigma_L$ dominates) — an honest open calibration (H37) rather than a decorated claim |
 | Navigation | H39–H44 | boldness shortens time-to-window 131→33; bolder decks win 0%→22–25%; dials raise $C$ beyond drift; an excursion above $3/7$ under a temporarily purer ideal returns cleanly (peak $0.585$ → settled $0.321$); determinism to the bit |
-| Pairs (v0.5) | H24, H47–H50 | the T-77 purity law exact to $10^{-17}$; aligned bridges never subtract; **the gain lives in the bond** (reduced states untouched); the κ-contest is a real trade-off |
+| Pairs (v0.5) | H24, H47–H50 | historical quadratic-identity check to $10^{-17}$; a nonnegative increment is enforced by selecting the perturbation sign, with PSD checked separately; vanishing partial traces preserve marginals; the κ-contest concerns the declared resource model |
 | Towers (v0.5) | H45, H51, H56 | the ladder $9/14 < 1 < 54/35$ [T] — the ceiling of three; a shared ideal makes a viable meta-holon (centered-Gram $P = 1.000$), personal ideals do not ($0.189 \le 2/7$); level-3 towers await v1 |
 | Geodesics (v0.5) | H52–H53 | regeneration rides the m-chord to $10^{-16}$; the drift road is $1.165\times$ its chord |
 | Atlas (v0.5) | H54–H55 | the window is a proper band of the (dissipation, supply) plane (11/20 cells); the $\kappa = 0$ column is all grey — *no supply, no being* |
@@ -264,6 +264,8 @@ The v1 table: **66 hypotheses → 65 VERIFIED, 1 REFUTED (H46, the discovery), 0
 | BKM floor (v1) | H60–H64 | the metric validated ($10^{-19}$ vs classical Fisher); $L_m < L_e < L_{\text{drift}}$; the m-chord viable once in-window; geodesic MPC rediscovers boldness (33 ticks) |
 | Towers-3 (v1) | H65 | level 3 works on **collective states** ($P_3$ aligned $1.000$ vs distinct $0.561$); the first attempt on member-index Grams was ideal-blind — *pass states up, not agreement matrices* |
 | Chord search (v1) | H66 | rollout-guided search matches greedy at equal budget ($C = 0.4164$ both) |
+
+For a Hermitian $X$, the perturbation identity is $P(\rho+\varepsilon X)-P(\rho)=2\varepsilon\operatorname{Tr}(\rho X)+\varepsilon^2\operatorname{Tr}(X^2)$. It reduces to a pure squared-norm increment only when the cross term vanishes. It is therefore distinct from the [pinching comparison T-77](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация). Choosing the sign of $X$ to make the cross term nonnegative is a construction rule, not evidence that real cooperation is beneficial. Each interpreted state must also retain positivity and trace one.
 
 Two lessons the table already taught, worth the whole exercise: the **H46 catch** (two corpus artifacts wired the same plane under different names — exactly the class of silent error calibration exists to catch) and the **H38 honesty, since closed as a corpus errata** (what began as «the boolean σ-equivalence fails pre-calibration» ended with H57–H59: the published T-92 rows for $\sigma_E, \sigma_U$ renormalized, the viability-embedding proof repaired with the $\sum_i \gamma_{ii}^2 \geq 1/7$ lemma, $\Gamma_S$ canonized — the panel's *ranking* use was never wrong, and its boolean use is now exact). Dozens of hypotheses is not a ceiling but a cadence: every future organ lands with its stratum of the table, and the table re-runs on every change.
 
@@ -365,7 +367,7 @@ The *best* cases (1–3) share one shape: the observables already exist, the fee
 | Contour-residue spectral engine correct to $10^{-15}$ | [T] standard math, machine-checked |
 | Viable attractor; entropy-law signs; starvation-halt + hysteresis-free reignition; metabolic rate frequency-independent | [T] corpus theorems, reproduced |
 | The drift does most of every golden path; boldness shortens time-to-window at printed heat cost; dials (not drift) choose the chord | measured in v0 |
-| T-77 in the pair space: exact purity law; the gain lives in the bond (reduced states untouched); rivalry = supply contest | measured in v0.5 |
+| Pair space: quadratic identity, chosen sign and PSD check; marginal preservation under zero partial traces; not a cooperation-benefit theorem | measured in v0.5 |
 | The ceiling of three: ladder arithmetic [T]; shared ideal ⇒ viable meta-holon, personal ideals ⇒ none | [T] + measured |
 | Regeneration = m-chord motion ($10^{-16}$); drift road $1.165\times$ chord | measured (T-263 shadow) |
 | The window is a proper Goldilocks band of (dissipation, supply); $\kappa = 0$ ⇒ all grey | measured atlas |

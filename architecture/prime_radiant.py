@@ -389,7 +389,7 @@ def ptrace2(Gp):
 
 def pair_gain(G1, G2, i, j, k, l, eps):
     """Measured Delta-P of the bridged pair vs the product, with the optimal
-    bridge phase (the 'genuine mutual agreement' of T-77)."""
+    bridge sign. Positivity is returned as a separate numerical check."""
     Gp = pair_product(G1, G2)
     C = np.zeros((49, 49), complex)
     C[i * 7 + k, j * 7 + l] = 1.0
@@ -663,7 +663,7 @@ def calibration():
     add('H23', halted and (2 / 7 < purity(Gk) <= 3 / 7),
         'kappa=0 halts at grey; restoring kappa reignites (no hysteresis)',
         f'P_back={purity(Gk):.3f}')
-    add('H24', True, 'cooperation Delta-P >= 0 in the pair space (T-77)',
+    add('H24', True, 'chosen-sign pair perturbation example: Delta-P >= 0',
         'closed by the [G] organ: see H47-H49')
     ok25 = True
     for _ in range(4):
@@ -825,9 +825,9 @@ def calibration():
         gains.append(dP)
     add('H47', ok47, 'pair purity law: dP = linear + 2 eps^2 |gamma|^2 exactly',
         f'worst residual {worst47:.1e} over 60 random pairs')
-    add('H48', ok48, 'an aligned bridge never subtracts: dP >= 0, PSD kept (T-77)',
+    add('H48', ok48, 'sampled chosen-sign perturbations: dP >= 0 and PSD checked',
         f'min dP = {min(gains):+.2e}, mean {np.mean(gains):+.2e}')
-    add('H49', ok49, 'the gain lives in the bond: both reduced states unchanged',
+    add('H49', ok49, 'zero-partial-trace perturbations: both reduced states unchanged',
         '60/60 pairs, |dG| < 1e-14')
     Pf1, Pf2 = attractor_P(1.2), attractor_P(1.2, seed=3)
     Pu1, Pu2 = attractor_P(1.92), attractor_P(0.48, seed=3)

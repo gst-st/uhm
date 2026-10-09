@@ -46,11 +46,11 @@ The single most important architectural decision: honesty is a **type-level** pr
 
 ## §5. Data custody and privacy engineering {#приватность}
 
-Self-model data is the most intimate data class, and the [no-cloning results](/docs/consciousness/ethics-meaning/death-continuity#почему-нет-сосуществования) are the fitting reminder that a coherent self-state is uniquely non-fungible. Engineering commitments:
+Self-model data is sensitive because disclosure and manipulation can affect a person. Privacy is an explicit governance commitment; quantum no-cloning does not prohibit copying classical records. Engineering commitments:
 
 - **Local-first.** Evidence and estimates live on the user's device by default; the kernel runs client-side (it is small and pure). Cloud sync is opt-in, end-to-end encrypted, and carries only what the user exports.
 - **Zero-knowledge server option.** For sync and B2B, the server stores ciphertext and computes on it only where the user grants; aggregate research data ([04 §7](/docs/applied/console/use-cases#наука)) is collected under explicit, revocable consent and differential-privacy noise.
-- **No dark patterns.** The [value-consciousness](/docs/consciousness/ethics-meaning/value-consciousness#определение-благо) harm definition is a product rule with a formula behind it: the Console must not engineer engagement by driving a user's $dP/d\tau < 0$ — degrading viability, or the higher-tier values $\Phi$/$R_\varphi$, through manufactured anxiety. Retention comes from usefulness, not manufactured need — the anti-astrology stance extends to the business model.
+- **No manipulation.** The [ethical contract](/docs/consciousness/ethics-meaning/value-consciousness#приоритет-нижних) prohibits manufacturing distress or dependence to drive engagement as an adopted product policy. Its implementation needs behavioural evidence, consent and independent outcome checks; a sign of $\dot P$ is not a complete harm detector.
 
 ## §6. Substrate-agnostic reuse {#переиспользование}
 
@@ -68,6 +68,6 @@ Justified by requirements, not fashion:
 
 ## §8. What the architecture guarantees {#гарантии}
 
-Three invariants the design makes structural rather than aspirational: **honesty** (dishonest output is untyped, §4), **privacy** (raw evidence is local-first and non-fungible, §5), and **reproducibility** (every claim re-derives from inputs + pinned kernel, §2). These three are the technical form of the project's promise; the rest of the stack serves them.
+Three invariants the design makes structural rather than aspirational: **honesty** (dishonest output is untyped, §4), **privacy** (raw evidence is protected by the stated custody design, §5), and **reproducibility** (every claim re-derives from inputs + pinned kernel, §2). These three are the technical form of the project's promise; the rest of the stack serves them.
 
 **Where this leads.** [07 · Roadmap and validation](/docs/applied/console/roadmap-validation) sequences the build and specifies, per stage, the empirical protocol that turns each layer from `[design]` into confirmed.

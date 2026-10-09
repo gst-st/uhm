@@ -1,36 +1,32 @@
 ---
 sidebar_position: 3
 title: "Subjective Time"
-description: "Phenomenology of temporality: subjective stretching/compression and O-E coherence"
+description: "Temporal experience, conditional clock models and testable hypotheses about O-E coherence"
 slug: /consciousness/phenomenology/temporal-consciousness
 ---
 
 # Subjective Time
 
 :::info Bridge from the previous chapter
-In the [Emotion taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy) we showed that emotions are the "interior projection" of the dynamics of viability $dP/d\tau$. But this very dynamics unfolds **in time**. How exactly does the subject experience time? Why do some minutes "fly by" while others "drag"? The answer lies in the coherence $\gamma_{OE}$ between the Ground dimension (O, the internal clock) and Interiority (E, experience). If $\gamma_{OE}$ is high — each "tick" of the clock is filled with experience and time "slows down". If it is low — ticks pass by consciousness and time "flies".
+The [emotion taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy) considers how changes in a system may acquire experiential significance. Temporality adds another question: how are what has just happened, what is happening and what is expected connected in experience? UHM offers coordinates for formulating this question. Connecting those coordinates to reports of duration requires an observation model and experimental validation.
 :::
 
-:::note On notation
-- $\gamma_{OE}$ — coherence between [Ground (O)](/docs/core/structure/dimension-o) and [Interiority (E)](/docs/core/structure/dimension-e)
-- $\gamma_{OO}$, $\gamma_{EE}$ — populations of dimensions O and E
-- $\tau$ — [emergent time](/docs/core/operators/emergent-time), derived from the structure of the category $\mathcal{C}$
-- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability#определение-чистоты)
-- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
-- Full notation table — in [Notation](/docs/reference/notation)
+:::note Notation and status
+- $\Gamma\in\mathcal D(\mathbb C^7)$ is a positive semidefinite, unit-trace [coherence matrix](/docs/core/dynamics/coherence-matrix) in a declared semantic frame; $\gamma_{OE}$ is its O-E entry and $\gamma_{OO},\gamma_{EE}$ are populations.
+- $t$ denotes time measured by a calibrated physical clock; $n$ denotes a reading of an independently specified model clock.
+- $\tau_{\mathrm{model}}$ denotes an accumulated model quantity. Its identification with a particular duration judgment is a hypothesis.
+- [D] marks a definition, [C] a consequence under stated assumptions, and [H/I] an empirical hypothesis or philosophical interpretation.
 :::
 
 ### Chapter roadmap
 
-1. **Philosophical history** — from Augustine to Husserl
-2. **Subjective tempo** $\mathcal{T}$ — definition and derivation from first principles
-3. **Temporal dilation** — formula for stretching/compression of time
-4. **Flow state** (flow) — why time "slows down and speeds up" simultaneously
-5. **Boredom** — the antipode of flow
-6. **Meditation** — systematic management of temporal coherences
-7. **Danger and time slowing** — why time "stops" during a fall
-8. **Temporal memory window** — the "depth of the present"
-9. **Connection to physical time** — four equivalent constructions
+1. Philosophical history and the structure of temporal experience
+2. Distinct observables: duration, passage of time and temporal discrimination
+3. The O-E statistic: its domain and exact bounds
+4. Conditional clock models and temporal dilation
+5. Danger, flow, boredom and meditation as separate empirical cases
+6. A temporal overlap window and its limits as a memory measure
+7. Connections between physical, geometric and categorical descriptions
 
 ---
 
@@ -72,323 +68,192 @@ graph LR
 
 Retention is not recollection. When you hear a melody, the previous note is not "remembered" — it still **sounds** in consciousness, gradually fading. It is precisely thanks to retention that you hear a *melody*, not separate sounds.
 
-### UHM position: time from O-E coherence
+### UHM position: distinct questions within one model
 
-UHM formalises the intuitions of all three thinkers:
+These accounts motivate three different tasks: representing remembered and anticipated content, explaining variation in duration judgments, and modelling the integration of successive events. A state trajectory, a history-dependent readout and a memory mechanism can make these tasks precise. Their philosophical interpretations remain distinct; a single coherence entry does not establish equivalence with Augustine, Bergson or Husserl.
 
-- **Augustine:** time exists "in the soul" — in UHM subjective time is defined by the coherence $\gamma_{OE}$, connecting the "clock" ($O$) and "experience" ($E$)
-- **Bergson:** duration is non-homogeneous — in UHM the subjective tempo $\mathcal{T}$ changes depending on the state $\Gamma$
-- **Husserl:** retention and protention — in UHM the "temporal window" $T_{\text{mem}}$ defines the depth of retention; the autocorrelation $\rho_E(\tau) \cdot \rho_E(\tau - \Delta\tau)$ formalises the "tail" of the present
+## Motivation: Clocks and Temporal Judgments {#мотивация}
 
----
+The [canonical construction of emergent time](/docs/core/operators/emergent-time) distinguishes a chosen clock, its correlations with a system, and calibration. The O basis axis in $\mathbb C^7$ does not supply a tensor clock or a physical time scale by itself.
 
-## Motivation: Two Times {#мотивация}
+For subjective temporality, the observable must also be specified:
 
-In UHM, physical time $\tau$ is not postulated but **derived** from the structure of [dimension O (Ground)](/docs/core/structure/dimension-o) via the [Page–Wootters mechanism](/docs/core/operators/emergent-time#page-wootters). However, the subjective experience of time — "how fast/slow time flows" — depends not on $\tau$ as such, but on the **coherence between O and E**: on how closely the "internal clock" is linked to "experiential content".
+| Observable | Example of a measurement | What is being assessed |
+|---|---|---|
+| Prospective duration judgment | Estimate an interval after being told to attend to its duration | Timing under an explicit instruction |
+| Retrospective duration judgment | Estimate an interval without a prior timing instruction | Reconstruction after the event |
+| Passage-of-time judgment | Report whether time seemed to pass quickly or slowly | A rating of temporal experience |
+| Temporal discrimination | Distinguish stimuli separated by different short intervals | Resolution or sensitivity in a specified task |
 
-**An everyday analogy.** Imagine a station clock with a second hand. Physical time is the uniform ticking of this clock. Subjective time is how you *perceive* these ticks. If you are absorbed in an interesting book ($\gamma_{OE}$ is high), each tick is filled with content — an hour passes in "five minutes". If you are waiting for a delayed train ($\gamma_{OE}$ is low, but $\gamma_{LE}$ is high — you are **aware** of the waiting), each tick is empty — five minutes drag like an hour.
+The richness of a moment and the impression that an afternoon passed quickly can therefore coexist without contradiction. They become predictions of a model only after their measurement procedures are fixed. Equating all four observables with one scalar would be an additional, restrictive hypothesis.
 
-```mermaid
-graph TB
-    subgraph Physical["Physical time τ"]
-        direction LR
-        T1["τ₁"] --> T2["τ₂"] --> T3["τ₃"] --> T4["τ₄"] --> T5["τ₅"]
-    end
+## Definition of the O-E Tempo Statistic (D.1) {#субъективный-темп}
 
-    subgraph Subjective["Subjective time (high T)"]
-        direction LR
-        S1["τ₁ — full"] --> S2["τ₂ — full"] --> S3["τ₃ — full"]
-    end
-
-    subgraph Boring["Subjective time (low T)"]
-        direction LR
-        B1["τ₁...τ₅ — empty"]
-    end
-
-    Physical --> |"γ_OE high"| Subjective
-    Physical --> |"γ_OE low"| Boring
-
-    style Subjective fill:#ffe8e8,stroke:#cc0000
-    style Boring fill:#e8e8e8,stroke:#888888
-```
-
-## Definition of Subjective Tempo (D.1) {#субъективный-темп}
-
-### Derivation of the formula from first principles
-
-Let us begin with the question: **what should subjective tempo measure?** It should answer: "how much experiential content corresponds to one tick of the internal clock?"
-
-**Step 1.** In UHM, the "internal clock" is dimension $O$ (Ground). The population $\gamma_{OO}$ characterises the "resource" invested in timekeeping. The higher $\gamma_{OO}$, the more "ticks" the system produces per unit of physical time.
-
-**Step 2.** "Experiential content per tick" is the coherence $\gamma_{OE}$ between the clock ($O$) and experience ($E$). If $\gamma_{OE} = 0$, the clock ticks but experience is in no way linked to it — the subject "does not notice" the passage of time. If $|\gamma_{OE}|$ is high, each tick is filled with content.
-
-**Step 3.** The natural measure is the **ratio** of content to number of ticks:
+:::tip Definition D.1 [D]
+In the declared semantic frame, on the domain $\gamma_{OO}>0$, retain the candidate tempo statistic
 
 $$
-\mathcal{T} = \frac{|\gamma_{OE}|}{\gamma_{OO}}
+\mathcal T(\Gamma):=\frac{|\gamma_{OE}|}{\gamma_{OO}}.
 $$
 
-This ratio is dimensionless and shows what fraction of the "clock resource" is linked to experience.
-
-:::tip Definition D.1 (Subjective tempo) [D]
-**Subjective tempo** is a dimensionless quantity characterising the relative speed of subjective time:
-
-$$
-\mathcal{T}(\tau) := \frac{|\gamma_{OE}(\tau)|}{\gamma_{OO}(\tau)}
-$$
-
-where:
-- $|\gamma_{OE}|$ — modulus of the coherence between Ground and Interiority
-- $\gamma_{OO}$ — population of the Ground dimension
-
-Range: $\mathcal{T} \in [0, 1]$ (from the Cauchy–Schwarz inequality: $|\gamma_{OE}|^2 \leq \gamma_{OO} \gamma_{EE}$, given $\gamma_{EE} \leq 1$).
+This dimensionless ratio measures an off-diagonal entry relative to one population. Calling it a rate of subjective time requires a separate empirical bridge. Neither the population nor the coherence is already a measured tick frequency or quantity of experience.
 :::
 
-### Breakdown of each symbol
+### Exact domain and bound [C]
 
-For complete clarity let us unpack the formula $\mathcal{T} = |\gamma_{OE}|/\gamma_{OO}$ symbol by symbol:
+Write $a=\gamma_{OO}$, $c=\gamma_{EE}$ and $b=\gamma_{OE}$. Positivity of the O-E principal minor and unit trace give
 
-- $\mathcal{T}$ — subjective tempo (calligraphic T from "tempo")
-- $\gamma_{OE}$ — element of the coherence matrix $\Gamma$ at the intersection of row $O$ (Ground) and column $E$ (Interiority). It is a complex number: $\gamma_{OE} = |\gamma_{OE}|e^{i\theta_{OE}}$
-- $|\gamma_{OE}|$ — the modulus of this complex number: the "strength" of the connection between clock and experience, without regard to the "angle" (perspective)
-- $\gamma_{OO}$ — diagonal element of $\Gamma$: the population of dimension $O$. A real number showing how much "resource" is invested in timekeeping
+$$
+|b|^2\le ac,\qquad a+c\le1,\qquad
+0\le\mathcal T\le\sqrt{\frac ca}\le\sqrt{\frac{1-a}{a}}.
+$$
 
-### Interpretation
+Thus $\mathcal T$ has **no universal upper bound of one**. For the valid pure state
 
-| $\mathcal{T}$ | Subjective effect | Description | Example |
-|---------------|------------------|-------------|---------|
-| $\mathcal{T} \to 1$ | Time "slows down" | Rich O-E coherence: each "clock tick" is filled with experience | The moment of an accident, the first parachute jump |
-| $\mathcal{T} \to 0$ | Time "flies" | Weak O-E coherence: "ticks" pass by consciousness | Deep sleep, anaesthesia |
-| $\mathcal{T} \approx \text{const}$ | Normal pace | Stationary O-E connection | Calm wakefulness |
+$$
+|\psi\rangle=\sqrt{0.01}|O\rangle+\sqrt{0.99}|E\rangle,
+\qquad \Gamma=|\psi\rangle\langle\psi|,
+\qquad \mathcal T=\sqrt{99},
+$$
 
-**Numerical example.** Three states of one person over the course of a day:
+the ratio is already approximately $9.95$. At $a=0$, positivity forces $b=0$, and the quotient is undefined. A population floor $a\ge\delta>0$ bounds it by $\sqrt{(1-\delta)/\delta}$, for $\delta\le1$. Near a small population, uncertainty in the denominator must be propagated.
 
-| State | $\gamma_{OO}$ | $\lvert\gamma_{OE}\rvert$ | $\mathcal{T}$ | Experience |
-|-------|:-:|:-:|:-:|------------|
-| Morning coffee | $0.12$ | $0.06$ | $0.50$ | Normal tempo — a familiar morning |
-| Car accident | $0.14$ | $0.12$ | $0.86$ | "Time slowed down" — every moment is detailed |
-| Falling asleep | $0.10$ | $0.01$ | $0.10$ | "Time disappears" — an instantaneous void |
-
-Note: during the accident $\gamma_{OO}$ increases slightly (adrenaline intensifies timekeeping), while $|\gamma_{OE}|$ rises sharply (each tick is linked to intense experience). As a result $\mathcal{T}$ almost doubles — the subject experiences a "slowing" of time.
+If a normalized coherence is wanted, one can instead define $q_{OE}=|b|/\sqrt{ac}\in[0,1]$ when $ac>0$. This is a different statistic, also without a derived phenomenological interpretation. Declaring either statistic does not identify it from data: an observation procedure must distinguish states with different proposed rates, or report the remaining ambiguity.
 
 ## Temporal Dilation (C.1) {#дилатация}
 
-:::note Subjective tempo hypothesis [H/I]
-For $\gamma_{OO}>0$, define the frame-dependent statistic $\mathcal T=|\gamma_{OE}|/\gamma_{OO}$ [D]. A proposed proportionality of reported subjective tempo to $\mathcal T$ is an empirical hypothesis requiring independent time judgments, a calibrated state observation model and uncertainty. It follows neither from the logical support adjunction nor from declaring O and E roles.
+### A calibrated rate model
 
-A tensor clock, reading instrument and support constraint are independent inputs (T-87 [C under those supplied data]). The phenomenal correspondence T-186(a) is [H/I]; the rate formula T-88 is a selected model with a declared domain, not a universal generator of experience. At $\gamma_{OO}=0$ the quotient is undefined, and a population floor or separately specified extension is required. Vanishing $\gamma_{OE}$ does not prove absence of time experience. Numerical profiles in this chapter are illustrations or candidate associations, not measured biological constants.
-:::
-
-### Mechanism
-
-For an independently supplied clock factor and system, the [Page–Wootters protocol](/docs/core/operators/emergent-time#page-wootters) conditions their joint state. A labelled O basis axis in $D_7$ is not this tensor factor:
+Specify a nonnegative, integrable, dimensionless rate $q_\theta(t)$, computed from the observed state and any explicitly admitted context or history. Define
 
 $$
-\mathcal{H}_{\text{total}} = \mathcal{H}_O \otimes \mathcal{H}_{6D}
+\tau_{\mathrm{model}}(t)-\tau_{\mathrm{model}}(t_0)
+:=\int_{t_0}^{t}q_\theta(s)\,ds.
 $$
 
-Conditional state at a specified tick $|\tau_n\rangle_O$, provided $p(\tau_n)>0$:
+The accumulated quantity is nondecreasing [C]. It is strictly increasing exactly when the integral over every positive-length time interval is positive. Whether it predicts a specified duration judgment is [H/I]; a report model, calibration data and uncertainty remain necessary. A zero rate does not establish absence of experience.
+
+One possible choice is $q_\theta=\mathcal T/\mathcal T_{\mathrm{ref}}$, with a fixed positive reference and a population floor. For a constant rate over an interval this gives
 
 $$
-\Gamma(\tau_n) = \frac{\mathrm{Tr}_O\!\left[(|\tau_n\rangle\langle\tau_n|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{\text{total}}\right]}{p(\tau_n)}
+\Delta\tau_{\mathrm{model}}
+=\Delta t\,\frac{\mathcal T}{\mathcal T_{\mathrm{ref}}}.
 $$
 
-The conditional state depends on the supplied joint density operator and clock instrument. The seven-dimensional $\gamma_{OE}$ is a separate readout; no equation above identifies it with joint clock correlations or subjective tempo. That identification requires a specified lift/readout and an empirical bridge.
+For example, $\Delta t=3$ seconds, $\mathcal T=0.8$ and $\mathcal T_{\mathrm{ref}}=0.5$ give $4.8$ model seconds. This is an illustration of the chosen rate law, not a measurement of danger, meditation or additional time available for action. Additivity itself must be tested if this model is used for retrospective judgments.
 
-**Analogy.** Imagine a metronome (O) and a dancer (E). If the dancer is listening to the metronome ($\gamma_{OE}$ is high), each beat is filled with movement — "time is marked out". If the dancer is wearing headphones ($\gamma_{OE} = 0$), the metronome ticks, but the dance is not linked to it — for the dancer "there is no time", even though the metronome keeps running.
+### What Page–Wootters supplies
+
+For an independently supplied tensor product $\mathcal H_C\otimes\mathcal H_S$, a joint density operator $\Gamma_{CS}$ and an orthogonal clock reading $|n\rangle_C$, set
+
+$$
+\Pi_n=|n\rangle\langle n|_C\otimes I_S,\qquad
+p_n=\operatorname{Tr}(\Pi_n\Gamma_{CS}),\qquad
+\rho_S(n)=\frac{\operatorname{Tr}_C(\Pi_n\Gamma_{CS}\Pi_n)}{p_n},
+\quad p_n>0.
+$$
+
+This is a well-defined conditional density operator [C]. A Page–Wootters **dynamical** result requires further data: a clock Hamiltonian, a compatible system/history construction and a support constraint for the total Hamiltonian. Mere stationarity of a joint mixed state is insufficient. The exact assumptions are given in [emergent time](/docs/core/operators/emergent-time#page-wootters).
+
+The O axis of a seven-dimensional state is not the factor $\mathcal H_C$. A lift to a joint state and a readout back to $\gamma_{OE}$ must be supplied if the constructions are to be connected. Conditional quantum dynamics alone does not yield the rate $q_\theta$ or a law of temporal experience.
 
 ## Danger and Time Slowing {#опасность}
 
-One of the most vivid and widely known phenomena of subjective time is its "slowing" in moments of danger. People who have survived car accidents, falls, and attacks often report: "time stopped", "I saw everything in slow motion".
+A report that an event seemed unusually long raises at least two distinct questions: whether its duration was later overestimated, and whether finer temporal distinctions were possible during it. In a controlled free-fall study, participants retrospectively estimated their own fall as longer than other people’s falls, while the tested visual discrimination did not show improved temporal resolution. This result applies to that protocol; it does not determine every effect of danger. [Stetson, Fiesta and Eagleman (2007)](https://doi.org/10.1371/journal.pone.0001295).
 
-### Mechanism in UHM terms
-
-At the moment of sudden danger, a sharp reorganisation of the $\Gamma$-profile occurs:
-
-| Parameter | Before danger | During danger | What happens |
-|-----------|:-:|:-:|--------------|
-| $\gamma_{OO}$ | $0.12$ | $0.15$ | Adrenaline intensifies timekeeping |
-| $\lvert\gamma_{OE}\rvert$ | $0.06$ | $0.13$ | Each "tick" is linked to experience |
-| $\gamma_{DD}$ | $0.14$ | $0.24$ | Dynamics mobilised |
-| $\gamma_{AE}$ | $0.10$ | $0.28$ | Apperception is maximal — "I see every detail" |
-| $\gamma_{LL}$ | $0.15$ | $0.06$ | Logic suppressed — "no time for thinking" |
-| $\mathcal{T}$ | $0.50$ | $0.87$ | Subjective time **almost doubled** |
-
-This explains why:
-- A second of falling is experienced as "a whole minute" ($\mathcal{T}$ sharply increased)
-- Details are remembered with photographic accuracy ($\gamma_{AE}$ is maximal)
-- Considered decisions are impossible ($\gamma_{LL}$ is suppressed — reflex acts, not reason)
-
-**Numerical example.** A climber falls. The physical fall lasts 3 seconds. Subjectively he experiences:
-
-$$
-\delta\tau_{\text{subj}} = \delta\tau_{\text{phys}} \times \frac{\mathcal{T}_{\text{danger}}}{\mathcal{T}_{\text{normal}}} = 3 \times \frac{0.87}{0.50} \approx 5.2 \text{ subj. seconds}
-$$
-
-He "manages" to see the ledge, grab it, become aware of what is happening — in "3 physical seconds" he lived through 5 subjective ones. This is not mysticism — it is the mathematics of $\gamma_{OE}$.
+A UHM hypothesis can connect independently estimated state features to these separate outcomes. It must specify the direction and size of the proposed effect before testing. No measured O-E profile has been established here. Greater $\mathcal T$ by definition does not imply photographic memory, impaired reasoning, or additional physical time to react.
 
 ## Flow States (Flow) {#flow}
 
-The flow state (flow by Csikszentmihalyi, 1990) is one of the most studied altered states of consciousness. Mihaly Csikszentmihalyi described it as a state of complete immersion in an activity, when time "flows differently".
+Flow is discussed here as absorption in an activity, with attention directed toward its unfolding. Its temporal description should distinguish involvement, awareness of passing time and later estimation of duration. An absorbing musical performance can illustrate those distinctions without requiring every performer to report the same combination.
 
-### $\Gamma$-profile of flow
+A candidate UHM model [H/I] could test whether action–experience coupling, attention and memory jointly predict those reports. Assignments to $\gamma_{DE}$, $\gamma_{AE}$ or $\gamma_{LL}$ require a fixed observation procedure and valid full density matrices. Independent entries with invented “typical values” are not an empirical profile. Even $\mathrm{Gap}(D,E)\approx0$, where that quantity is defined, does not by itself diagnose flow or its temporal character.
 
-$$
-\text{Flow:} \quad \gamma_{DE} \gg \overline{\gamma}, \quad \mathcal{T} \text{ elevated}, \quad \mathrm{Gap}(D,E) \approx 0
-$$
-
-| Parameter | Value in Flow | Typical estimate | Interpretation |
-|-----------|---------------|-----------------|----------------|
-| $\gamma_{DE}$ | High | $\sim 0.30$ | Strong connection of dynamics and experience — "immersion" |
-| $\mathcal{T} = \lvert\gamma_{OE}\rvert/\gamma_{OO}$ | Elevated | $\sim 0.7$ | Subjective time expanded — "much experience" |
-| $\mathrm{Gap}(D,E)$ | $\approx 0$ | $< 0.05$ | Minimal gap — "transparency" between action and experience |
-| $\gamma_{AE}$ | High | $\sim 0.25$ | Concentration of attention |
-| $\gamma_{DU}$ | High | $\sim 0.20$ | Teleology — the sense of a goal |
-| $\gamma_{LL}$ | Low | $\sim 0.06$ | Logical tracking weakened |
-
-### Resolving the flow paradox
-
-The flow state contains a famous paradox: time simultaneously "slows down" and "speeds up". During flow each moment seems infinitely rich (time slowed), but after the activity ends it seems that "an instant flew by" (time accelerated).
-
-**Resolution in UHM:** separation into two mechanisms:
-
-1. **During flow:** $\mathcal{T}$ is elevated (each tick is filled with experience) — subjectively each moment "lasts a long time"
-2. **Retrospectively:** low $\gamma_{LL}$ (logical control weakened) means that "time markers" were not being placed. When recalling, the brain estimates duration by the number of markers — there are few, so "it passed quickly"
-
-**Analogy.** In the flow state you are a jazz musician improvising. Each note (each moment) is filled with meaning ($\mathcal{T}$ is high). But you are not counting bars ($\gamma_{LL}$ is low). Therefore, after a two-hour concert it seems that 20 minutes have passed, even though *during* the playing each second was infinitely rich. This is not a contradiction — it is two different aspects of the same $\Gamma$-profile.
-
-**Numerical example.** A programmer in the flow state (3 hours of physical time):
-
-| Moment | $\mathcal{T}$ | $\gamma_{LL}$ | Experience |
-|--------|:-:|:-:|------------|
-| During flow (each minute) | $0.70$ | $0.06$ | Each minute is saturated, $\delta\tau_{\text{subj}} \approx 1.4 \times \delta\tau_{\text{phys}}$ |
-| Retrospectively (after exiting) | — | — | "What? Already 3 hours? It felt like half an hour!" |
+The constructive question is which measured feature predicts which judgment after task difficulty, instruction and recall conditions are controlled. A distinction between online processing and later reconstruction makes that question testable; it does not predetermine their signs.
 
 ## Boredom {#скука}
 
-Boredom is the state that is the antipode of flow:
+Boredom provides a useful contrast between insufficient engagement and explicit attention to waiting. These are candidate explanatory variables, not synonymous states of a single matrix entry. A model can test the hypothesis that monitoring elapsed time changes passage-of-time ratings even when engagement is low [H/I].
 
-$$
-\text{Boredom:} \quad \gamma_{DE} \approx 0, \quad \gamma_{DL} \text{ low}, \quad \mathcal{T} \text{ reduced}
-$$
+This hypothesis must use the same definitions and calibration in engaging and boring conditions. Adding a new explanation after every reversed effect would prevent falsification. In particular, a low value of $\mathcal T$ cannot be assigned both “fast” and “slow” passage without an independently specified contextual model.
 
-| Parameter | Value during boredom | Typical estimate | Interpretation |
-|-----------|---------------------|-----------------|----------------|
-| $\gamma_{DE}$ | $\approx 0$ | $< 0.03$ | Dynamics disconnected from experience — "nothing is happening" |
-| $\gamma_{AE}$ | Low | $< 0.05$ | Attention defocused |
-| $\mathcal{T}$ | Reduced | $\sim 0.2$ | Little experience per "tick" — time "drags" |
-
-:::warning Paradox of boredom [I]
-Subjectively during boredom time "drags", even though $\mathcal{T}$ is low (the prediction: time should "fly"). Resolution: during boredom $\gamma_{LE}$ is elevated — reflexive monitoring of the passage of time. The awareness "I am bored" amplifies the subjective assessment of duration through a metacognitive loop. This is consistent with the L2 condition $R \geq 1/3$ — boredom is impossible below L2.
-
-**Numerical example.** During boredom: $\mathcal{T} \approx 0.2$ (little content), but $\gamma_{LE} \approx 0.25$ (reflection "I am bored"). The system is in a paradoxical regime: low $\mathcal{T}$ means little experience per tick, but high $\gamma_{LE}$ means that the *absence of experience* is itself experienced as content. This is precisely why boredom is the privilege of conscious beings (L2+): an amoeba does not get bored, because it has no metacognitive loop.
-:::
-
-**Comparison of flow and boredom:**
-
-| Parameter | Flow | Boredom |
-|-----------|:----:|:-------:|
-| $\gamma_{DE}$ | $0.30$ | $0.02$ |
-| $\gamma_{AE}$ | $0.25$ | $0.04$ |
-| $\gamma_{LL}$ | $0.06$ | $0.05$ |
-| $\gamma_{LE}$ | $0.08$ | $0.25$ |
-| $\mathcal{T}$ | $0.70$ | $0.20$ |
-| Time (during) | "The moment lasts forever" | "Minutes drag" |
-| Time (after) | "An instant flew by" | "It dragged on endlessly" |
+No theorem here establishes boredom only above $L2$, or excludes it in a particular species. The canonical $R=1/(7P)$ and reconstruction score $R_M$ are [distinct diagnostics](/docs/consciousness/foundations/self-observation#формы-r); neither becomes a validated boredom criterion by choosing a threshold.
 
 ## Meditation and Temporal Perception {#медитация}
 
-Meditative practices systematically alter temporal coherences. For more on altered states see [ASC](/docs/consciousness/states/altered-states#медитация).
+Meditative practices offer ways of varying attention, response to distraction and observation of ongoing experience. Their temporal effects require the same distinctions between observables as other tasks. They do not acquire a unique $\Gamma$ profile merely from a practice name.
 
 ### Concentration (shamatha)
 
-**Shamatha** (Skt. "calm abiding") — the practice of one-pointed attention: focus on an object (the breath, a mantra, a point) while letting thoughts go.
-
-$$
-\text{Shamatha:} \quad \gamma_{AE} \uparrow, \quad \gamma_{DE} \downarrow, \quad \gamma_{EO} \uparrow
-$$
-
-Focusing attention ($\gamma_{AE} \uparrow$) with a decrease in dynamic content ($\gamma_{DE} \downarrow$) and a deepening of the connection with the ground ($\gamma_{EO} \uparrow$). Subjectively: time "disappears" — a transition to a stationary $\Gamma$.
-
-**Numerical example.** Before meditation: $\gamma_{AE} = 0.10$, $\gamma_{DE} = 0.15$, $\gamma_{EO} = 0.05$, $\mathcal{T} = 0.50$. After 30 minutes of shamatha: $\gamma_{AE} = 0.25$, $\gamma_{DE} = 0.05$, $\gamma_{EO} = 0.15$, $\mathcal{T} = 0.35$. Attention strengthened 2.5-fold, dynamic content decreased 3-fold — "thoughts quieted, but awareness sharpened". $\mathcal{T}$ decreased (less content per tick), but subjectively time does not "drag" (unlike boredom), because $\gamma_{LE}$ is not elevated — there is no reflexive monitoring of "I am bored".
+Practices described as concentration or calm abiding can motivate an experimental comparison of sustained attention with a matched control condition. A proposed relation between an attention readout, O-E coherence and time judgments is [H/I]. The report “time disappeared” is a report about experience; it does not imply a stationary full state $\Gamma$, a stopped physical clock, or loss of experience.
 
 ### Insight (vipassanā)
 
-**Vipassanā** (Skt. "clear seeing") — the practice of observing the stream of consciousness without attachment to an object.
+Practices described as insight or observation of changing experience motivate a different question: can the system improve discrimination of its own changing processes? A specified self-model $M$, its reconstruction error and the temporal task provide possible operational variables. An increase in $R_M$ would concern that model and tested domain. It does not follow from increasing canonical $R$, and a threshold $R_M\ge1/3$ has not been established as a necessary condition for meditation. See [self-observation](/docs/consciousness/foundations/self-observation).
 
-$$
-\text{Vipassanā:} \quad \gamma_{LE} \uparrow, \quad R \uparrow, \quad \gamma_{EO} \uparrow
-$$
+:::info An empirical distinction
+In two studies of a mindfulness exercise, duration judgments shifted in opposite directions at seconds and minutes scales, while participants reported faster passage of time relative to the control exercise. This supports measuring those outcomes separately; it supplies no numerical calibration of UHM coherences and does not cover all contemplative traditions. [Droit-Volet et al. (2019)](https://doi.org/10.1371/journal.pone.0223567).
+:::
 
-An increase in understanding ($\gamma_{LE}$) and self-model quality ($R_\varphi$) with a deepening of the connection with the ground. Subjectively: time is simultaneously "saturated" and "transparent".
-
-**Numerical example.** An experienced vipassanā practitioner: $\gamma_{LE} = 0.28$, $R_\varphi = 0.65$, $\gamma_{EO} = 0.20$, $\mathcal{T} = 0.60$. Subjective tempo is moderately elevated, but the key difference from flow is a high $\gamma_{LE}$ (awareness is present) and a high self-model quality $R_\varphi$ ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)). The meditator is simultaneously "in flow" and "observing themselves" — a state impossible without $R_\varphi \geq R_{\varphi,\text{th}} = 1/3$.
+The philosophical significance can still be substantial: attention to change, reduced preoccupation with anticipation and a different relation to one's own experience are questions worth investigating. Their relation to liberation, impermanence or spiritual practice is discussed in [the comparative synthesis](/docs/consciousness/ethics-meaning/spiritual-synthesis), with traditions and empirical claims kept explicit.
 
 ## Temporal Memory Window {#окно-памяти}
 
-:::tip Definition D.2 (Temporal window) [D]
-**Temporal window** $T_{\text{mem}}$ is the duration of the interval over which the autocorrelation of experiential content is significant:
+First specify an experience-related state readout $\rho_E(t)=\Lambda_E(\Gamma(t))$. Here $\Lambda_E:\mathcal D(\mathbb C^7)\to\mathcal D(\mathcal H_E)$ is supplied model data; if it is a quantum channel, it must be CPTP. A partial trace is available only after a genuine tensor factorization or extension has been given. An E basis axis alone does not define $\operatorname{Tr}_{-E}\Gamma$.
+
+:::tip Definition D.2 (Temporal overlap window) [D]
+For a supplied finite history $[t-H,t]$, $H>0$, and a threshold $0<\theta<1$, define
 
 $$
-T_{\text{mem}} := \inf\left\{\Delta\tau > 0 : \mathrm{Tr}\!\left(\rho_E(\tau) \cdot \rho_E(\tau - \Delta\tau)\right) < \epsilon\right\}
+k_E(t,s):=\frac{\operatorname{Tr}(\rho_E(t)\rho_E(s))}
+{\sqrt{\operatorname{Tr}(\rho_E(t)^2)\operatorname{Tr}(\rho_E(s)^2)}},
+\qquad
+T_{\mathrm{mem}}^{(\theta,H)}(t)
+:=\inf\{u\in(0,H]:k_E(t,t-u)<\theta\}.
 $$
 
-where $\epsilon$ is the correlation threshold, $\rho_E(\tau) = \mathrm{Tr}_{-E}(\Gamma(\tau))$ is the [reduced experience matrix](/docs/consciousness/foundations/interiority-theory).
+In finite dimension the denominator is positive, $0\le k_E\le1$ by Hilbert–Schmidt Cauchy–Schwarz, and $k_E(t,t)=1$. Use $\inf\varnothing=+\infty$ as a **no-crossing flag within the observed horizon**, not as evidence of infinite memory. This retains the historical symbol $T_{\mathrm{mem}}$ for a specified overlap proxy.
 :::
 
-The temporal window defines the **"depth of the present"** — how many "ticks" of the past are simultaneously present in experience. This is the mathematical formalisation of Husserlian **retention**: what "tail" of the past still "sounds" in the present.
+Normalization avoids confusing low purity with immediate decorrelation. Nevertheless, the overlap is a state-similarity statistic, not automatically a centered stochastic autocorrelation or a measure of retained information. A constant maximally mixed readout has $k_E=1$ at every delay even if it carries no information about past inputs. Recurrences can also restore overlap after a first crossing.
 
-This corresponds to the **History** component in the quadruple of experiential content $\mathrm{Exp}(\Gamma, \tau) = (\mathrm{Intensity}, \mathrm{Quality}, \mathrm{Context}, \mathrm{History})$ from [interiority theory](/docs/consciousness/foundations/interiority-theory). The connection to types of memory is discussed in [Attention and memory](/docs/consciousness/states/attention-memory#память).
+To measure memory, independently vary an encoded past input and test what can be recovered at each later delay, with a declared decoder, intervening inputs and error criterion. That experiment can ground a history-dependent model of retention. It gives substantive content to the connection with [attention and memory](/docs/consciousness/states/attention-memory#память) and the History component of [interiority theory](/docs/consciousness/foundations/interiority-theory), without identifying Husserlian retention with one overlap threshold.
 
-### Factors influencing $T_{\text{mem}}$
-
-| Factor | Influence on $T_{\text{mem}}$ | Mechanism | Example |
-|--------|-------------------------------|-----------|---------|
-| High $\gamma_{SL}$ | Increase | Stable logical structure preserves correlations | A logical chain of reasoning is remembered longer |
-| Strong decoherence $\mathcal{D}_\Omega$ | Decrease | Rapid destruction of correlations | Under stress, the previous moment is quickly "erased" |
-| High $\gamma_{EO}$ | Increase | Deep connection stabilises memory | Meditative states — "expanded present" |
-| $P \to P_{\text{crit}}$ | Decrease | Low coherence — short memory | In dementia, the "present" shrinks to seconds |
-
-:::info Specious present and O-dynamics [H]
-The phenomenological "present" (~300 ms according to Varela, Pöppel) may be derived from the O-sector. The subjective time formula $dt_{\text{subj}}/dt_{\text{phys}} = |\gamma_{OE}|/\gamma_{OO}$ [C] defines the integration time window. At typical values $\gamma_{OO} \sim 1$ and $|\gamma_{OE}| \sim 0.3$ (awareness threshold), the characteristic time: $T_{\text{present}} \sim 1/(\omega_0 \cdot \gamma_{OO}) \sim 300$ ms at $\omega_0 \sim 3$ Hz (theta rhythm). Status: [H]. Calibration of $\omega_0$ is required.
-:::
+A numerical “present window” in milliseconds also needs a calibrated time scale and an integration task. Dimensionless populations cannot derive a universal 300 ms interval. In particular, $\gamma_{OO}=1$ forces all other populations and O-E coherence to vanish; combining it with $|\gamma_{OE}|=0.3$ violates positivity and unit trace.
 
 ## Connection to Physical Time {#связь-с-физическим}
 
-Emergent time $\tau$ in UHM is defined via four equivalent constructions (see [Emergent time](/docs/core/operators/emergent-time)):
+The canonical [emergent-time chapter](/docs/core/operators/emergent-time) no longer identifies four temporal constructions without further assumptions:
 
-1. **Page–Wootters:** correlation with the O-dimension
-2. **Information-geometric:** Bures metric on $\mathcal{D}(\mathcal{H})$
-3. **Categorical:** chains of morphisms in $\mathrm{Exp}_\infty$
-4. **Stratificational:** collapse of strata to the terminal object $T$
+| Construction | Supplied structure and scope |
+|---|---|
+| Page–Wootters | A tensor clock, joint state, reading instrument and compatible dynamical constraint |
+| Information geometry | Bures length along a chosen path; it is zero on a stationary path and is not itself a physical clock |
+| Categorical history | Composable transitions; durations and a clock interpretation require additional data |
+| Terminal object or stratification | A structural relation that alone specifies no rate or sequence of clock readings |
 
-Subjective time is **not an alternative** to physical time, but its **interior projection**: the same dynamics $\Gamma(\tau)$, perceived "from within" through the E-sector. This is the direct realisation of Augustine's idea: time exists both "in the world" ($\tau$) and "in the soul" ($\mathcal{T} \cdot \tau$) — but it is the same time seen from different sides.
-
-The emotional experience of time (anxious waiting, joyful anticipation) is determined by the combination of $\mathcal{T}$ and $dP/d\tau$ — for details see [Emotion taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy#страх). Applied consequences for cognitive architecture are in the [CC theorems](/docs/applied/coherence-cybernetics/theorems).
+Mappings between specified descriptions may be proved under explicit assumptions. Their existence does not identify clock calibration, report statistics and phenomenal duration. A physical trajectory together with observable history, calibrated readouts and a tested report model provides a coherent route for investigating their connection.
 
 ---
 
-### What we learned {#итоги}
+### What we established {#итоги}
 
-1. The **problem of time** — from Augustine through Bergson to Husserl — receives in UHM a formal solution through the coherence $\gamma_{OE}$
-2. **Subjective tempo** $\mathcal{T} = |\gamma_{OE}|/\gamma_{OO}$ — a dimensionless measure of the "speed" of subjective time, derived from first principles
-3. High $\mathcal{T}$ — time "slows down" (each tick is filled with experience); low $\mathcal{T}$ — time "flies"
-4. **Danger** sharply raises $\mathcal{T}$ through an increase in $|\gamma_{OE}|$ — the formal explanation for "time slowing during a fall"
-5. **Flow state**: $\gamma_{DE} \gg \overline{\gamma}$, $\mathrm{Gap}(D,E) \approx 0$, $\mathcal{T}$ elevated — the "stretching-compression" paradox is resolved through the separation of $\gamma_{LL}$ and $\mathcal{T}$
-6. **Boredom**: $\gamma_{DE} \approx 0$, $\mathcal{T}$ low, but $\gamma_{LE}$ high — metacognitive monitoring of "emptiness" creates the sensation of stretched time
-7. **Temporal window** $T_{\text{mem}}$ defines the "depth of the present" — depends on $\gamma_{SL}$, $\gamma_{EO}$, and the rate of decoherence
+1. The O-E tempo statistic has a precise domain and a population-dependent bound; its temporal interpretation remains a hypothesis.
+2. A supplied nonnegative rate defines an accumulated model duration. Connecting that duration to a report requires calibration and validation.
+3. Page–Wootters conditions a supplied clock–system state; the O axis alone does not construct such a clock.
+4. Danger, flow, boredom and meditation require distinct measurements of duration, passage of time and discrimination.
+5. An overlap window is well defined under an explicit readout, but memory requires evidence about recoverable past information.
 
 :::tip Bridge to the next chapter
-We have considered *what* is experienced (qualia), *how* it is experienced (emotions), *when* it is experienced (subjective time). It remains to answer the question: **about what** is the experience? The directedness of consciousness toward an object — intentionality — is examined in the next chapter: [Intentionality](/docs/consciousness/phenomenology/intentionality). There we will show that intentionality is a morphism in the category $\mathbf{Hol}$ satisfying a condition on the E-sector.
+Temporal experience concerns how events are retained, encountered and anticipated. [Intentionality](/docs/consciousness/phenomenology/intentionality) takes up the related question of how experience is directed toward an object, with its own formal definitions and interpretive bridges.
 :::
 
 ## Related Documents
 
-- [Ground (O)](/docs/core/structure/dimension-o) — the clock dimension, source of $\gamma_{OO}$
-- [Emergent time](/docs/core/operators/emergent-time) — four constructions and the Page–Wootters mechanism
-- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\gamma_{OE}$ and coherences
-- [Interiority theory](/docs/consciousness/foundations/interiority-theory) — the History component in $\mathrm{Exp}(\Gamma, \tau)$
-- [Emotion taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy) — dynamics $dP/d\tau$ and sectoral signature
-- [Gap semantics](/docs/physics/dual-aspect/gap-semantics) — $\mathrm{Gap}(D,E)$ in the flow state
-- [Attention and memory](/docs/consciousness/states/attention-memory) — temporal window and types of memory
-- [Theorems of Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — applied consequences of temporal dynamics
+- [Ground (O)](/docs/core/structure/dimension-o) — the semantic role underlying the O coordinate
+- [Emergent time](/docs/core/operators/emergent-time) — canonical clock constructions and their assumptions
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — populations, positivity and coherences
+- [Self-observation](/docs/consciousness/foundations/self-observation) — distinct state and reconstruction diagnostics
+- [Interiority theory](/docs/consciousness/foundations/interiority-theory) — experience-related readouts and history
+- [Attention and memory](/docs/consciousness/states/attention-memory) — retention and recoverable information
+- [Spiritual traditions and UHM](/docs/consciousness/ethics-meaning/spiritual-synthesis) — comparative interpretation and its limits

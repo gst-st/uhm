@@ -275,47 +275,37 @@ FEP grew from the Bayesian approach to the brain (Helmholtz, Dayan, Hinton) and 
 - **Precision** — weighting coefficient of the prediction error
 - **Hierarchical prediction** — multi-level generative model
 
-### Formal derivation from UHM [T]
+### Replacement dynamics and the conditions for a predictive reading
 
-:::tip Theorem (Predictive coding as a consequence of φ-dynamics) [T]
-
-Predictive coding **is derived** from the φ-operator dynamics:
-
-1. **Prediction error** = $\|\Gamma - \varphi(\Gamma)\|_F$ — distance between current state and self-model
-2. **Precision** = $k = 1 - R$ — parameter of the replacement channel (T-62 [T])
-3. **State update** = $\Gamma \to (1-k)\Gamma + k\rho^*$ — precision-weighted prediction error minimization
-:::
-
-**Proof (3 steps).**
-
-**Step 1.** The replacement channel $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ [T] (T-62) is rewritten as:
+**Mathematical statement [T].** Fix a density matrix $\rho^*$ and a constant $k\in[0,1]$. The replacement channel from T-62 satisfies
 
 $$
-\varphi_k(\Gamma) = \Gamma - k(\Gamma - \rho^*) = \Gamma - k \cdot \varepsilon
+\varphi_k(\Gamma)=(1-k)\Gamma+k\rho^*,\qquad
+\varphi_k(\Gamma)-\rho^*=(1-k)(\Gamma-\rho^*).
 $$
 
-where $\varepsilon = \Gamma - \rho^*$ is the **prediction error**, $k = 1-R$ is the **precision**.
+Consequently, iteration gives $\|\Gamma_n-\rho^*\|_F=(1-k)^n\|\Gamma_0-\rho^*\|_F$. This proves convergence to the fixed target for $k>0$. It does not yet specify a prediction, observation, likelihood or sensory channel. If the target depends on the current state, this proof no longer applies without additional assumptions.
 
-**Step 2.** At $R \to 1$ (good self-model): $k \to 0$, correction is minimal — the system "trusts" its model (high precision prior). At $R \to 0$ (poor self-model): $k \to 1$, maximum correction — the system "trusts" sensory data (high precision likelihood).
+**Conditional Bayesian comparison [I].** For a scalar latent variable $z\sim\mathcal N(m,v)$ and an observation $y=z+\eta$, with independent noise $\eta\sim\mathcal N(0,s)$ and $v,s>0$, completing the square in the posterior density gives
 
-**Step 3.** This is **identical** to Bayesian updating with Gaussian distributions: posterior = (1-K)·prior + K·observation, where K is the Kalman gain. Identification: $K = k = 1-R$. $\blacksquare$
+$$
+\mathbb E[z\mid y]=(1-K)m+Ky,\qquad K=\frac{v}{v+s}.
+$$
 
-**Mapping in CC:**
+Here $m$ is the prior mean, $y$ the observation, and the precisions are $1/v$ and $1/s$; the gain $K$ is their relative weighting, not a precision itself. The affine shape matches the replacement update if corresponding roles and $k=K$ are explicitly assigned. A general density-matrix channel does not thereby become a Bayesian generative model.
 
-| Predictive Processing | Formal analogue in CC | Status |
+Choosing $k=1-R$ **[D]** supplies a gain schedule, not a derivation of sensory reliability from reflection. For canonical $R=1/(7P)$, its range is $[1/7,1]$, so this choice only gives $k\in[0,6/7]$. Identifying it with $v/(v+s)$ requires a calibrated model of both uncertainties **[H]**. T-77 concerns purity under pinching and supplies no such identification.
+
+| Predictive Processing | Candidate in UHM | Status and required bridge |
 |---|---|---|
-| Prediction error $\varepsilon$ | $\Gamma - \varphi(\Gamma)$ | **[T]** (T-62) |
-| Precision $\pi$ | $k = 1 - R$ | **[T]** (T-77) |
-| Prior | $\rho^* = \varphi(\Gamma)$ | **[T]** (categorical self-model) |
-| Likelihood update | $\Gamma \to (1-k)\Gamma + k\rho^*$ | **[T]** (replacement channel) |
-| Free energy | $\mathcal{F} = S_{vN} + D_{KL}$ (a cross-entropy) | **[✗]** — Theorem 3.1 retracted 2026-09-25 (registry row 39e) |
-| Hierarchical prediction | Chosen SAD score or explicit predictive metamodel protocol | [D/H]; no universal ceiling from T-142 |
+| Prediction error | $\Gamma-\rho^*$ or an explicitly defined observation residual | [I/H]; specify predicted and observed quantities |
+| Precision and gain | Positive uncertainty estimates; chosen $k$ | [D/H]; distinguish inverse variance from update gain |
+| Prior and evidence | A generative model and observation map | Additional structure; a self-model alone supplies neither likelihood nor calibration |
+| Update | Fixed-target replacement channel | [T] as a channel; [I/H] as a predictive mechanism |
+| Free energy | $S_{vN}(\Gamma)+D(\Gamma\Vert\sigma)=-\operatorname{Tr}(\Gamma\log\sigma)$, with quantum relative entropy $D$ and $\operatorname{supp}\Gamma\subseteq\operatorname{supp}\sigma$ | The former general free-energy identification was retracted (registry row 39e) |
+| Hierarchical prediction | Explicit predictive metamodel protocol | [D/H]; no universal cognitive-depth ceiling follows from T-142 |
 
-**What UHM adds:**
-- PP postulates prediction error minimisation; UHM **derives** it from the categorical definition of φ
-- PP does not define quantum structure; UHM provides quantum generalisation (density matrices instead of probabilities)
-- PP has no consciousness thresholds; UHM defines $R_{\text{th}} = 1/3$ [T]
-- Hierarchical PP can be compared to a declared prediction protocol [I/H]; the optional Fano SAD score has a conventional maximum index of three, but no universal cognitive-depth ceiling follows.
+**Contribution of the comparison.** UHM supplies a state-space language in which predictive models can be specified and compared. Recovering a particular predictive-processing model requires its generative assumptions, observation semantics and update equations. Neither a categorical self-model nor a formal consciousness threshold proves that recovery or its empirical adequacy. This is the same distinction between a self-description and justified knowledge used in the [spiritual synthesis](/docs/consciousness/ethics-meaning/spiritual-synthesis#self-knowledge).
 
 ## 7. Attention Schema Theory (AST) {#ast-section}
 

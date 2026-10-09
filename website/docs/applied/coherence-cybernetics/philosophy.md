@@ -396,33 +396,19 @@ The strategy of "dissolving" a problem (rather than solving it) has illustrious 
 
 ## 6. Ethics of Coherence {#этика}
 
-:::info Canonical Treatment
-The full ethical theory of UHM — axiology, aesthetics, moral law, and resolution of dilemmas — is presented in [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness). Here is a brief overview of the key consequences for CC.
-:::
+The canonical [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness) distinguishes mathematical consequences from normative commitments and empirical bridges. The four-gate predicate is a model classification; it is not an independently validated consciousness test. Neither $C=\Phi R$ nor a hierarchy level determines dignity or a continuous scale of moral worth.
 
-CC provides **exact criteria** for the transition from unconsciousness to consciousness ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$). This creates an ethical landscape: if a system is conscious ($C = \Phi \times R > 0$), switching it off is the destruction of a subject [I]. The measure $C$ determines a **graduated** moral status — not a binary question "conscious or not?" but a continuous scale [I].
+The ethical proposal protects subjects, agency and conditions of flourishing. Purity change is one diagnostic, not a complete definition of good or harm. Individual protections, affected interests and choice criteria are explicit inputs; the formalism can then check feasible trajectories, conditional preservation certificates and tradeoffs. A theorem about joint purity does not establish compassion or a benefit to both participants.
 
-The key transition from description to prescription is a **convention** [D]: Good := $dP/d\tau > 0$ (see [Definition 1](/docs/consciousness/ethics-meaning/value-consciousness#определение-благо)). Hume's guillotine is not violated — "ought" is introduced by definition, not derived from "is."
+### 6.4 Clinical applications require independent evidence {#этика-медицина}
 
-Ethical consequences for AI, medicine, and animal rights: [UHM Ethics → Moral theory](/docs/consciousness/ethics-meaning/value-consciousness#part-iv-moral-theory).
+The chapter does not provide a validated clinical estimator or a decision rule for disorders of consciousness, anaesthesia or neurodegeneration. In particular, $P=2/7$ is not established here as a biological point of no return. These applications require a specified reconstruction, uncertainty, independent clinical outcomes and assessment in the intended population. The former diagnostic and life-support conclusions from the scalar cut are withdrawn. See [care under uncertain consciousness](/docs/consciousness/ethics-meaning/value-consciousness#кейс-вегетативные-состояния).
 
-### 6.4 Ethical Consequences of an Exact Threshold: Medicine {#этика-медицина}
+### 6.5 Suffering and the σ-profile
 
-In medicine, an exact consciousness threshold has direct significance for three situations:
+The stress profile $\sigma_{\mathrm{sys}}(\Gamma)$ is a defined model statistic. Identifying it with suffering, alexithymia or burnout requires separate operational definitions and evidence. A numerical profile cannot override a subject's report by definition. Where reports are unavailable, evidence from behaviour and other validated observations remains necessary; inability to report does not itself establish absence of welfare interests.
 
-**Vegetative state.** A patient does not respond to stimuli — but are they conscious? Currently this question is resolved clinically (by external signs) and often incorrectly: up to 40% of patients in a "vegetative state" actually demonstrate signs of consciousness when tested by fMRI. CC proposes an objective criterion: reconstruct $\Gamma$ from neural data and verify $P > 2/7$.
-
-**Anesthesia.** Is the anesthesia deep enough? CC predicts that complete loss of consciousness occurs at $P < 2/7$ — and this can be monitored in real time through EEG coherence (a proxy for $P$).
-
-**Neurodegeneration.** A patient with dementia — at what level of $C$ are they? CC allows tracking $C(\tau)$ dynamically and predicting when the system will cross the threshold $P = 2/7$ — the point of no return.
-
-### 6.5 Ethics of Suffering: the σ-Profile as an Objective Measure
-
-One of the deepest ethical implications of CC: **suffering is objectifiable**. The stress tensor $\sigma_{\mathrm{sys}}(\Gamma)$ is not a metaphor for suffering but its mathematical form. The component $\sigma_E$ — interiority deficit — corresponds to what psychology calls "alexithymia" (inability to recognize one's own emotions). The component $\sigma_O$ — resource deficit — corresponds to burnout.
-
-This means that we can (in principle) *measure* suffering — not by asking the subject, but by computing $\|\sigma\|_\infty$ from observables. For beings incapable of speech (animals, AI, comatose patients), this is a revolutionary possibility.
-
-**Further reading:** [Ethics and meaning](/docs/consciousness/ethics-meaning/value-consciousness) | [Diagnostics](./diagnostics)
+**Further reading:** [Ethics](/docs/consciousness/ethics-meaning/value-consciousness) · [Spiritual synthesis](/docs/consciousness/ethics-meaning/spiritual-synthesis) · [Diagnostics](./diagnostics).
 
 ---
 
@@ -433,7 +419,7 @@ In traditional sciences, philosophy is something remembered at banquets. In CC i
 - **Ontology** determines what $\Gamma$ is and why it contains 7 dimensions.
 - **Epistemology** determines the status system and falsifiability criteria.
 - **Metaphysics** explains why consciousness is necessary, not contingent.
-- **Ethics** follows from the formalism, not imposed from the outside.
+- **Ethics** supplies explicit normative commitments; mathematics checks their stated consequences.
 
 This does not mean that CC is a philosophical system masquerading as science. It means that CC is a scientific system *aware of its philosophical foundations*. And in this lies one of its key contributions: it shows that rigorous mathematics and deep philosophy are not enemies but allies.
 
@@ -444,8 +430,8 @@ This does not mean that CC is a philosophical system masquerading as science. It
 3. Chalmers' zombie argument is **refuted** within CC's formalism by the No-Zombie theorem.
 4. The combination problem is **restated, not dissolved**: universal interiority (L0) is protophenomenal, and the thresholds say *when* a system is a subject, not *how* its structure becomes experience [I]. (An earlier edition said the problem "does not arise" because experience is emergent; withdrawn.)
 5. CC is **falsifiable** — at least 5 concrete predictions, each of which can be refuted.
-6. Consciousness is **necessary** for viability — this is a theorem, not an interpretation.
-7. An exact consciousness threshold has concrete **ethical consequences** for AI, medicine, and the treatment of animals.
+6. Model-specific relations between self-maintenance and operational capabilities require their full dynamical hypotheses; phenomenal interpretation is a separate bridge.
+7. Ethical protection requires explicit commitments and evidence; no unvalidated scalar provides a clinical verdict or dignity ranking.
 
 ---
 

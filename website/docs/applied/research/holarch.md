@@ -116,7 +116,7 @@ systematically absent, and they are exactly the seven UHM supplies as mathematic
 3. **numeric viability invariants** with proven thresholds — P, R, Φ, D [T];
 4. **dynamics as first-class** — the three-flow decomposition of ℒ_Ω, T-262 [T];
 5. a **self-model with an anti-Goodhart theorem** — φ(Γ), T-96/T-191 [T]; T-222 [T] adds that no resource vector can stand in for the target, since the viable window has no resource optimum (the former "+ MRQT" completeness is retracted [✗], 2026-09-26);
-6. a **composition algebra with a measurable gain** — T-77 [T];
+6. an **exact block-purity identity with an explicit comparison** — T-77 [T]; operational benefit remains a separate obligation;
 7. a **depth ceiling with a federation rule** — T-142 [Т/С].
 
 The rest of this page states the meta-specification (§3–§14), runs it through three
@@ -368,42 +368,28 @@ HOLARCH imports the corpus results that examine it:
   measurement.* A system allowed to optimize its own dashboard will, by Goodhart's
   law, become a dashboard.
 
-## §9. Composition: the gain lives in the contract {#композиция}
+## §9. Composition and certified comparisons {#композиция}
 
-The composition law is the corpus's cooperation theorem
-([T-77](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация)
-[T]):
+[T-77](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация) is the exact pinching identity
 
 $$
-P(\rho^{(12)}_*) \;=\; P(\rho_{\mathrm{diag}}) \;+\; 2\,\lVert\gamma_{\mathrm{cross}}\rVert_F^2
+P(\rho)-P(\mathcal E\rho)=\|\rho-\mathcal E\rho\|_F^2,
+\qquad \mathcal E\rho=\sum_a\Pi_a\rho\Pi_a.
 $$
 
-The purity of a composed pair exceeds the uncoupled sum by exactly twice the squared
-Frobenius norm of the **cross-coherence block** — the integration gain lives *in the
-contract*, not inside either participant. The laboratory verifies the identity to
-machine precision on 240/240 random pairs (HL11). Consequences, each of which the
-lineage held as folklore and now holds as arithmetic:
+For two blocks the right-hand side is $2\|B\|_F^2$. The comparison holds the diagonal blocks fixed. If they are $p\rho_A$ and $(1-p)\rho_B$, their pinched purity is $p^2P(\rho_A)+(1-p)^2P(\rho_B)$, not an “uncoupled sum”. The direct sum represents alternative sectors. Simultaneous seven-dimensional systems instead require a $49$-dimensional tensor state, compatible marginals and a declared correlation model.
 
-- **Integration is worth exactly what the contract carries.** A partnership with a
-  thin interface gains ~nothing regardless of the partners' quality; deepening the
-  cross-block is the *only* lever. DDD's context-mapping patterns (partnership,
-  shared kernel, customer–supplier, anticorruption layer, …) become settings of
-  $\gamma_{\mathrm{cross}}$ — including the honest zero of *separate ways*.
-- **Conway's law is a synastry statement.** The org chart and the system are two
-  holons; the mirroring of communication structure into architecture is their
-  cross-block. Team Topologies' three interaction modes are cross-block regimes.
-  You do not fight Conway's law; you *type* it and budget it.
-- **Meta-holon or federation.** Composition with mutual information above the
-  integration threshold founds a new whole (a platform); below it, stay federated
-  peers ([holon composition](/docs/core/structure/holon#таксономия-по-уровням-организации)).
-  A2A peering contracts and MCP tool contracts are the two industrial shapes of the
-  cross-block, arriving fifteen years after the theorem's first form.
-- **Coordination is declared, not hoped.** Every LU-consistency contract must
-  declare its CALM class — monotone (coordination-free) or non-monotone (pays a
-  consensus round). This imports the CALM theorem as a mandatory contract field.
+**Corrected laboratory witness (2026-10-09).** HL11 now constructs normalised positive $14\times14$ Gram states and checks Hermiticity, trace one, positivity, weighted block normalisation and the pinching identity. The narrow seeded run passed **240/240**, with maximum identity residual $5.551\times10^{-17}$ and minimum eigenvalue $6.398\times10^{-6}$. This checks the block identity; it is not a tensor-composition or cooperation experiment. The previous panel labelled 14D matrices “org⊗system” and checked no positivity: reproducing its seed gave **54/240** nonpositive matrices (minimum eigenvalue $-0.0162786174$). That former physical-state interpretation is withdrawn.
 
-**Composition needs an address, and the address is not free [C].** The gain above
-presumes that work reaches the right participant. Addressing is itself one of the
+Engineering composition therefore requires further data **[D/H]**:
+
+- **Interfaces and outcomes.** Declare messages, resources, failure modes and the benefit criterion. Compare joint operation with an explicit independent-action baseline. An off-diagonal norm alone does not price a partnership or certify a benefit to either participant.
+- **Organisation and software.** A model relating communication structure to software architecture must specify how observations determine its variables. Calling that relation a cross-block does not derive an organisational law.
+- **Federation or a new aggregate.** Define responsibilities, state ownership and measurable operational requirements. A mutual-information threshold alone neither selects the architecture nor establishes a new subject.
+- **Coordination.** State the consistency requirements and assumptions of the distributed model. Any claim of coordination-free execution or required consensus needs a matching theorem or protocol; T-77 supplies neither.
+
+**Composition needs an address, and the address is not free [C].** A task benefit
+requires that work reaches the right participant; this is separate from the pinching identity. Addressing is itself one of the
 21 channels — **AU, Differentiation**: *distinctions that keep the whole intact,
 routing without fragmentation* — so a holon that routes spends part of its own
 channel budget on routing. The laboratory prices this (HL15). At 42 contexts split
@@ -523,7 +509,7 @@ gates.
 | Ω6 | Implement | tasks per holon per aspect (Spec Kit / AGENTS.md compatible) | tasks trace to channels, not to vibes |
 | Ω7 | Operate | runtime Γ estimation; σ-monitoring; $\mathcal{V}_{\mathrm{hed}}$ wire | alert tree = Σ-pyramid; triad probes deployed |
 | Ω8 | Regenerate | ℛ-policy: supervision, redeploy cadence, off-switch semantics | feeding ratio $x > 1+\sqrt 2$ with margin; reignition tested |
-| Ω9 | Compose | T-77 contracts with neighbor systems (MCP/A2A shapes) | cross-block declared; CALM class on every LU contract |
+| Ω9 | Compose | Typed contracts with neighbor systems (MCP/A2A shapes) | cross-block declared; CALM class on every LU contract |
 
 One lesson of this page's own laboratory belongs in Ω3 as a standing principle,
 because it contradicts common practice. The first draft of the worked designs
@@ -555,7 +541,7 @@ notations struggle with) collapse into "both views project one Γ".
 | ArchiMate | strata of the holarchy; its relationship taxonomy lands in the 21 channels |
 | TLA+ / Alloy / Verum | L-aspect contracts: every LU/DL/LE contract of weight above threshold *must* carry a formal view — verification is a mandated projection, not a luxury |
 | DSM | $\lvert\Gamma\rvert$ itself, clustered |
-| Org chart / Team Topologies | the org-holon and its T-77 cross-block onto the system (§9) |
+| Org chart / Team Topologies | a declared org/system coupling model (§9) |
 | arc42 / ADR | the documentation skeleton; ADRs inherit status discipline — every decision carries [T]/[C]/[H]/[D]/[I] |
 
 ## §14. The machine-readable core {#схема}
@@ -578,7 +564,7 @@ participation:                      # aspect × flow co-loading (derives Γ)
   E: {control: 0.6, data: 1.5, supply: 1.2}   # the hidden pool — anonymity itself
   O: {control: 0.6, data: 0.7, supply: 1.7}   # transport, stake, cover budget
   U: {control: 1.6, data: 0.5, supply: 0.8}   # epoch topology / directory
-contracts:                          # T-77 cross-blocks to neighbor holons
+contracts:                          # Explicit interface contracts with neighbor holons
   - with: directory-authority
     channels: [DU, OU, SU]
     calm: coordinated               # epoch consensus is non-monotone
@@ -735,7 +721,7 @@ laboratory verifies no row is empty and every mechanism anchor resolves (HL07:
 | **TOGAF ADM / Zachman** — process cycle; interrogative coverage | E·E | Ω0–Ω9 with computable gates (§12); interrogatives = aspect×view queries (§13) |
 | **AADL** — analyzable embedded semantics | E | O/L channel contracts carry analysis annexes; AADL as mandated view (§5) |
 | **TLA+/Alloy** — formal behavior verification | E | mandatory formal view on heavy L-contracts (§13) |
-| **DDD** — bounded contexts; context-mapping patterns | N·N | holon boundary = E-interiority (§3); T-77 typed cross-blocks incl. separate-ways zero (§9) |
+| **DDD** — bounded contexts; context-mapping patterns | N·N | holon boundary = E-interiority (§3); typed interface models; T-77 has only the block-identity scope (§9) |
 | **Hexagonal/Clean** — dependency rule, ports/adapters | N | A-ports, O-adapters, protected L/S/E core; the rule is channel direction (§4) |
 | **Parnas 1972** — information hiding as criterion | N | E is an *axis with a measure* (Coh_E), not advice (§4) |
 | **Simon 1962** — near-decomposability | N | sparse-but-nonzero cross-blocks, quantified by the Φ window (§6) |
@@ -751,7 +737,7 @@ laboratory verifies no row is empty and every mechanism anchor resolves (HL07:
 | **ATAM** — scenario-based tradeoff analysis | N | ablation calculus: scenario = ablation, sensitivity = ∂verdict (§12 Ω4) |
 | **Spec Kit SDD** — constitution→specify→plan→tasks | N | Ω0–Ω9 with mathematics inside the gates (§12) |
 | **AGENTS.md** — machine context for repos | N | the `holarch.v1` instance *is* the design-level machine context (§14) |
-| **MCP / A2A** — tool contracts; agent peering | N·N | SL/AS contract channels (§5); T-77 synastry with measurable gain (§9) |
+| **MCP / A2A** — tool contracts; agent peering | N·N | SL/AS contract channels (§5); declared peering with independently measured task outcomes (§9) |
 | **Anthropic agent patterns** — workflows-vs-agents; evaluator-optimizer | N | DL regulation loop + LE evidence critic + R_φ fidelity (§17, §8) |
 | **LangGraph/AutoGen/CrewAI** — orchestration graphs | E | U-organ emitted as graph views (§13) |
 | **Nym/Loopix · Ethereum-modular · seL4** — reference architectures | N·N·N | re-derived in §15; re-derived in §16; LO-grounding channel at [T]-grade (§5) |
@@ -824,7 +810,7 @@ Nym, Ethereum or any real deployment — they are demonstrations that the calcul
 | Four invariants, thresholds, independence, robustness | [T] import | T-124b/d, T-129, T-151; HL03 |
 | Three-flow dynamics; silver feeding floor; halt/reignition | [T]/[C] import | T-262, T-259, T-288/289; HL12 |
 | Self-model functor, tower convergence, anti-Goodhart | [T] import + [D] rule | T-96, T-191; §8 |
-| Composition gain = 2‖γ_cross‖² | [T] import | T-77; HL11 (240/240) |
+| Two-block pinching identity; no operational gain theorem | [T] identity; finite numerical check | T-77; corrected HL11 (240/240 PSD, trace-one states) |
 | Depth ladder and ceiling 3 | [Т/С] import | T-142; HL02 |
 | Pairwise monitoring is structure-blind; probe triads | [T] import | T-226; HL13 |
 | Three worked designs land in the window; ablations break their own invariant | DESIGN | HL04–HL06 |

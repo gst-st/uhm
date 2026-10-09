@@ -244,3 +244,11 @@ is a $G_2$-invariant primitive idempotent. The left ideal $\mathrm{Cl}(\mathbb R
 ## 8. Input accounting {#итог}
 
 The full accounting includes the state object, site and metric, selected dimension and frame, dynamical and control families, preparation, clocks and time calibration, experiential extension and readout, physical module bridges, and observation law. Free parameters and selected thresholds are listed separately. The assertion that everything else has been derived is withdrawn: each result must provide its own dependency list. Strong mathematical results survive with these explicit hypotheses.
+
+## 9. Normative premises of ethics and spiritual synthesis {#нормативные-основания}
+
+[UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness) adopts protection against severe preventable harm, respect for agency and consent, equal consideration of persons, truthfulness and openness to correction **[N]**. These are explicit commitments; positivity, growing purity or a reflection level does not derive them. Unknown numerical diagnostics do not exclude a person from ethical consideration.
+
+The technical model must additionally specify affected subjects, protected conditions, admissible policies, resources, horizon and uncertainty. Connecting indicators with well-being, experience and actual capabilities requires empirical bridges **[H]**. A preservation theorem applies within that specification; it does not establish the completeness of the chosen norm.
+
+[Meaning of existence](/docs/consciousness/ethics-meaning/meaning) and [spiritual synthesis](/docs/consciousness/ethics-meaning/spiritual-synthesis) develop these commitments as an interpretation **[I/N]**. Comparison of primary sources adds no physical axiom and does not prove identity between different religious ontologies. Retained differences, incomplete translations and empirical test criteria belong to the synthesis itself.

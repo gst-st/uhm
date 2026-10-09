@@ -1,56 +1,59 @@
 ---
 sidebar_position: 10
 title: "10 · Ethics and governance"
-description: "The guardrails that keep the instrument honest and safe — most of them derived from the theory itself rather than imposed from outside. The gate-not-message boundary, the no-manipulation rule, privacy as a first principle, the anchor-honesty invariant, the medical and regulatory posture, data governance and consent, and the governance process that keeps the commercial engine inside the lines the whole project exists to hold."
+description: "Explicit protections, consent, evidence provenance and validation obligations for a UHM research instrument"
 ---
 
 # 10 · Ethics and governance
 
-> *The unusual thing about this project's ethics is how much of it is theorem rather than policy. The theory that makes the instrument work also draws most of its safety boundaries — what a modulation rig can do, what counts as harm, why the self is non-fungible. Governance here is largely the discipline of not overriding the mathematics.*
+The Console's protections combine explicit ethical commitments with mathematical and engineering checks. The commitments determine what must be protected; a proof certifies a specified property only under its stated assumptions. Governance keeps both visible.
 
-## §1. Theory-derived guardrails {#из-теории}
+## §1. Commitments and their formal support {#из-теории}
 
-Four boundaries are consequences of corpus results, not choices — which is why they are binding rather than aspirational:
-
-- **Gate, not message ([T-257](/docs/applied/research/one-grammar#t-257)).** Any coupling into a system is rate-modulation and viability-gating, never a written state. The Console may measure and recommend; no feature — software or hardware — may claim to *install* a state. This bounds the entire modulation horizon ([08 §3](/docs/applied/console/hardware-horizon#граница)) at the level of physics.
-- **Harm has a formal shape ([value-consciousness](/docs/consciousness/ethics-meaning/value-consciousness#определение-благо)).** The corpus fixes the good as $dP/d\tau > 0$ and harm as $dP/d\tau < 0$ (Definition 1 [D]); an action that lowers another system's **viability** (purity $P$) is *bad*, and under non-zero empathy $\mathrm{Empathy}(A,B) = 1 - \mathrm{Gap}_{AB}(E,E) > 0$ it is negative-value for the actor too ([Non-violence](/docs/consciousness/ethics-meaning/value-consciousness#part-iv-moral-theory) [C]). Values sit in a *derived hierarchy* — vital (viability) $\succ$ homeostatic $\succ$ social ($\Phi$) $\succ$ cognitive ($R_\varphi$) $\succ$ aesthetic $\succ$ transcendent — so degrading a user's higher-tier values ($\Phi$, $R_\varphi$) by manufactured anxiety is a *measurable* violation, and destroying viability is the gravest harm of all. Conversely, cooperation is a theorem, not a slogan: shared cross-coherence strictly raises joint purity, $P(\rho^{(12)}_*) = P(\rho_{\mathrm{diag}}) + 2\lVert\gamma_{\mathrm{cross}}\rVert_F^2$ ([T](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация)) — so the honest, non-manipulative product is also the $P$-optimal one, and doing right by the user is not a cost centre.
-- **The self is non-fungible ([no-cloning](/docs/consciousness/ethics-meaning/death-continuity#почему-нет-сосуществования)).** A coherent self-state cannot be copied or backed up; self-model data is therefore uniquely irreplaceable, which grounds the privacy posture in a theorem rather than a preference.
-- **Anchor honesty ([T-256/T-257](/docs/applied/research/one-grammar)).** Presenting a class-III oracle draw as a class-I measurement is the astrology category error the project exists to avoid; the honesty layer makes it unrepresentable ([06 §4](/docs/applied/console/architecture#честность)).
+- **Bounded intervention claims.** A result about rate modulation or viability gates applies to its specified generator and coupling model. It does not establish that every physical interaction has that form. The Console must report what an intervention is known to change, with the evidence and limits given in the [hardware horizon](/docs/applied/console/hardware-horizon#граница).
+- **Protection of persons.** The [ethical context](/docs/consciousness/ethics-meaning/value-consciousness#приоритет-нижних) explicitly records affected subjects, consent, protected conditions and uncertain outcomes. Purity is one state statistic; its increase neither proves benefit nor justifies harm to another. [T-77](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация) is a pinching identity, not a guarantee that a product improves relationships.
+- **Privacy as a commitment.** Personal evidence is protected because disclosure, misuse and coercion matter to people. Quantum no-cloning concerns a specified unknown-state copying task; it does not prohibit backing up classical self-model data or derive data governance.
+- **Evidence provenance.** An oracular draw, self-report, fitted estimate and direct measurement retain distinct statuses. The [honesty layer](/docs/applied/console/architecture#честность) is designed to enforce provenance distinctions. Type checking cannot prove that an external source told the truth or that its calibration is valid.
 
 ## §2. The manipulation boundary {#манипуляция}
 
-The Console leaves decisions to the user as a governance policy [D/I]. A Hessian score can be reported only for a specified fitted potential, state domain and uncertainty model; its zero quadratic modes need not be genuine flat paths, and the score does not measure personal agency without independent validation. Responsibility proportional to that score is an ethical interpretation [I], not a mathematical theorem. See the [corrected freedom definition](/docs/consciousness/ethics-meaning/freedom#количественная-мера).
+Leaving decisions to the user and avoiding manufactured distress or dependence are adopted policies. Their success must be assessed using behaviour and independently specified outcomes. An estimator cannot certify its own ethical correctness by optimising its output.
 
-**The value-hierarchy rule.** Recommendations are ranked by their projected effect on the Meaning vector and Freedom, but they are *constrained* by the [value hierarchy](/docs/consciousness/ethics-meaning/value-consciousness#иерархия-ценностей): the Console never offers a higher-tier gain (aesthetic, cognitive) that is projected to cost a lower-tier loss (viability, homeostasis). Trading $P$ for $\Phi$ is not a valid recommendation, because below $P_{\mathrm{crit}}$ there is no subject left to enjoy the $\Phi$. Every recommendation is an option with its projected multi-tier effect, never an instruction.
+**Protected trajectories.** Recommendations use the [contextual protections](/docs/consciousness/ethics-meaning/value-consciousness#иерархия-ценностей), not a universal six-tier ranking. Each option displays affected subjects, horizon, resources, uncertainty, benefits and risks. A proof of preservation applies only to its causal model and disturbance class. Empty feasibility is reported explicitly; the tool does not silently relax a person's protection.
 
-**Conflicts of interest.** Where a recommendation touches more than one system (dyad, team), the corpus's resolution principle applies — maximise the weighted total viability change, $A^\star = \arg\max_A \sum_i w_i\,\tfrac{dP(\Gamma_i)}{d\tau}\big|_A$ ([dilemmas, value-consciousness Part V](/docs/consciousness/ethics-meaning/value-consciousness#разрешение-дилемм) [C]) — and the Console surfaces the weights $w_i$ explicitly rather than hiding a utilitarian aggregation inside a single number.
+**Conflicts of interest.** The [Pareto formulation](/docs/consciousness/ethics-meaning/value-consciousness#разрешение-дилемм) can expose nondominated alternatives. Any aggregation must show its criteria, normalisation and weights. A larger $P$, $R$, estimated capacity or product engagement score does not confer greater dignity.
+
+**Agency measures.** A Hessian score requires a specified potential, state domain and uncertainty model. Zero quadratic modes need not be genuine flat paths, and the score is not personal agency without a validated bridge. See [freedom](/docs/consciousness/ethics-meaning/freedom#количественная-мера).
 
 ## §3. Privacy and data governance {#приватность}
 
-Grounded in §1's non-fungibility result and engineered in [06 §5](/docs/applied/console/architecture#приватность):
+The intended engineering design is described in [architecture](/docs/applied/console/architecture#приватность):
 
-- **Ownership:** the user owns their evidence and estimates; local-first by default; export only by explicit act.
-- **Consent:** research use is opt-in, granular, and revocable; revocation removes the user's data from future aggregates.
-- **Minimisation:** the server never needs raw evidence; the kernel runs client-side; observability logs provenance, never private content.
-- **Aggregation:** population studies use differential privacy; no individual is re-identifiable from a published result.
+- **Custody:** local storage by default; export and sync require an explicit choice.
+- **Consent:** research use has a stated scope and withdrawal process. The system must explain what withdrawal can change, including limits concerning already published aggregates.
+- **Minimisation:** collect only evidence needed for a declared purpose; diagnostics have their own privacy review.
+- **Aggregation:** any differential-privacy claim must specify the neighbouring-dataset relation, mechanism, parameters and cumulative privacy budget. It is not an unconditional guarantee that re-identification is impossible.
 
-## §4. Medical and regulatory posture {#регуляторика}
+These are implementation and audit obligations, not properties proved merely by writing them in the architecture.
 
-The Console is a mirror and a research instrument before it is a diagnostic device, and the roadmap reflects this: consumer and B2B stages carry **no** medical claims. The clinical modules ([04 §4](/docs/applied/console/use-cases#клиника)) enter only after V1 validation ([07 §3](/docs/applied/console/roadmap-validation#v1)), through the appropriate regulatory pathway for their device class, with clinical partners. Until then, every health-adjacent readout (mental-health trajectory, meditation depth) is labelled explicitly non-diagnostic. Over-claiming a medical benefit is both a regulatory violation and an anchor-honesty violation — the two guardrails reinforce.
+## §4. Clinical scope {#регуляторика}
+
+The proposed consumer Console is a reflection and research instrument. Its current theory does not supply a clinically validated diagnosis, prognosis, consciousness verdict or life-support recommendation. Clinical proposals in the [catalogue](/docs/applied/console/use-cases#клиника) require independent validation, qualified clinical evaluation and the applicable authorisation process before any corresponding deployment. A non-diagnostic label alone does not validate a health-related claim.
 
 ## §5. Fairness and the frame {#справедливость}
 
-Because the frame is *derived* and $G_2$-invariant ([T-223](/docs/applied/research/one-grammar)), it does not encode a culture's personality taxonomy — a structural advantage over typologies built on a particular population. But the *estimators* can carry bias (item wording, sensor calibration across bodies), so the validation protocol ([07](/docs/applied/console/roadmap-validation)) includes subgroup analysis, and the instrument is revised where an estimator, not the frame, shows differential validity. The distinction matters: the frame is universal by theorem; the measurement of it must be earned per population.
+Algebraic symmetry does not establish cultural neutrality or fairness. The chosen semantic frame, data collection, estimators, normative criteria and deployment context all need examination. In particular, the fixed-frame $\Phi$ is not an arbitrary-basis invariant. [Validation](/docs/applied/console/roadmap-validation) must assess relevant populations, uncertainty and differential effects; a group-theoretic label is not a substitute.
 
 ## §6. Governance process {#управление}
 
-- **Traceability review.** Every new feature must extend the [master traceability table](/docs/applied/console/theory-to-instrument#трассируемость): its source result, corpus status, and the guardrails it inherits. A feature with no traceable source does not ship.
-- **Status honesty.** The corpus's [T]/[C]/[I] tags travel to the UI; a feature resting on [C] or [I] is never presented with [T] confidence.
-- **Retraction discipline.** If a source result is ever retracted in the corpus, the features resting on it are flagged and re-reviewed — the same discipline the corpus applies to its own theorems, extended to the product.
-- **Independent validation.** Studies are pre-registered; product-derived data follows the same discipline as lab data ([07 §7](/docs/applied/console/roadmap-validation#данные)), so commercial incentive cannot quietly bend the science.
+- **Traceability.** Every feature records its definition, source result, assumptions, evidence and protections in the [traceability table](/docs/applied/console/theory-to-instrument#трассируемость).
+- **Status preservation.** Definitions, normative commitments, hypotheses, interpretations and proved results remain distinguishable in the interface.
+- **Retraction propagation.** When a source claim changes, dependent features and public claims are reviewed and corrected.
+- **Independent evaluation.** Predicted outcomes are fixed before the relevant observations, and failures and missing checks are reported alongside successes.
+- **Contestability.** Users can inspect the stated grounds, decline a recommendation and correct factual inputs; a score must not become an unchallengeable authority.
 
-## §7. The one-sentence ethic {#этика}
+## §7. The governing principle {#этика}
 
-The Console is allowed to *show a system itself* and to *offer options*, and it is forbidden to *hide how it knows*, to *lower what it measures*, or to *claim to write what only the system can move* — three prohibitions that are, respectively, anchor honesty, the harm definition, and gate-not-message, and all three are theorems before they are policies.
+The Console should help a person understand and compare options while preserving consent and the ability to disagree. Its claims must remain accountable to evidence, and its goals accountable to the persons they affect. These are ethical commitments supported by precise checks, rather than obligations deduced from a matrix alone.
 
-**Where this leads.** Back to [00 · Overview](/docs/applied/console/overview) — the suite closes here; the reading guide there maps the whole chain from the founding object to this final boundary. For the theory under any guardrail, [The One Grammar](/docs/applied/research/one-grammar), [value-consciousness](/docs/consciousness/ethics-meaning/value-consciousness), and [death-continuity](/docs/consciousness/ethics-meaning/death-continuity) are the homes.
+**Continue:** [Overview](/docs/applied/console/overview) · [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness) · [Spiritual synthesis](/docs/consciousness/ethics-meaning/spiritual-synthesis).

@@ -79,6 +79,6 @@ The comparison is not a marketing table; every "stronger" claim is a consequence
 
 ## §8. Guardrails specific to the human module {#гардрейлы}
 
-Because this module is the most personal, its guardrails are the strictest ([10](/docs/applied/console/ethics-governance) is the full treatment): every reading carries its anchor class and confidence; no birth-data feature exists; nothing is framed as fate; the data is local-first and, by the [no-cloning results](/docs/consciousness/ethics-meaning/death-continuity#почему-нет-сосуществования), treated as uniquely non-fungible; and the module never crosses from *reading* a person to *prescribing* one — it renders capacities and freedom, and leaves the choosing to the person whose freedom it just measured.
+The personal nature of the data requires explicit protections ([governance](/docs/applied/console/ethics-governance)): each result shows provenance and uncertainty; birth data is not presented as measurement; no result is framed as fate; storage is local by default and disclosure requires consent. Privacy is an adopted commitment, not a consequence of quantum no-cloning for classical records. The module presents supported estimates and options and leaves the decision to the person. Formal indicators are not called measurements of personal freedom without independent validation.
 
 **Where this leads.** [06 · Technical architecture](/docs/applied/console/architecture) specifies how the kernel, the estimators, and the human module compose into a deployable system.
