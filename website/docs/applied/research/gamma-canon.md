@@ -7,7 +7,7 @@ description: "The canonical UHM-native symbolic system: seven derived layers, an
 
 # The Γ-Canon: A Generative Symbolic System
 
-The [reduction of symbolic systems](/docs/core/structure/symbolic-systems) establishes that every symbolic tradition of humanity — chakras, I Ching, Tarot, Kabbalah, astrology, Human Design — is a lossy projection of the coherence matrix $\Gamma$. That analysis is deliberately *analytic*: it explains other systems and constructs none.
+The [comparison of symbolic systems](/docs/core/structure/symbolic-systems) proposes mappings into selected observables of the coherence matrix $\Gamma$. A correspondence is supported where its [structural roles and transformations](/docs/applied/research/structural-correspondence) are specified and preserved. This does not by itself establish that every historical tradition or every human experience is a projection of one matrix. The Γ-Canon develops the complementary construction: a symbolic vocabulary generated from explicitly selected UHM structures.
 
 This document constructs the missing object: the **Γ-Canon**¹ — the symbolic system read directly off the derived structures of UHM. It is not another projection of $\Gamma$; it is the projection-*generating* architecture itself, organised for practice at every scale of existence. Where every tradition chose its alphabet, the Canon's alphabet is a theorem; where every tradition guessed its grammar, the Canon's grammar is an ergodic Markov chain [T]; where traditions accumulated archetypes by folklore, the Canon's sixteen archetypes are the codewords of a perfect error-correcting code [T]; and where traditions could not say what their own limits were, the Canon's limits are the seven proven boundaries of any holon's condition.
 
@@ -32,7 +32,7 @@ Nothing in this document is medical advice; §3.7 states the guardrails.
 | Layer | Content | Count | Derivation | Status |
 |---|---|---|---|---|
 | 0 | Alphabet: dimensions | 7 | Theorem S + octonions | **[T]** |
-| 1 | Syllabary: cells of $\Gamma$ | 28 = 7 + 21 | $\dim$ of the state space | **[T]** structure, **[D]** names |
+| 1 | Syllabary: cells of $\Gamma$ | 28 = 7 + 21 | 7 real + 21 complex slots; 48 independent real coordinates | **[T]** structure, **[D]** names |
 | 2 | Words: Fano triads | 7 | PG(2,2), Steiner $S(2,3,7)$ | **[T]** |
 | 3 | Grammar: triad transitions | ergodic chain | T-114 | **[T]** |
 | 4 | Archetypes: stable signatures | 16 | Hamming $H(7,4)$ | **[T]** |
@@ -41,7 +41,7 @@ Nothing in this document is medical advice; §3.7 states the guardrails.
 
 ### 1.1 Layer 0 — the alphabet [T] {#слой-0}
 
-Seven dimensions: **A** (Articulation), **S** (Structure), **D** (Dynamics), **L** (Logic), **E** (Interiority), **O** (Ground), **U** (Unity). The number is not a design choice: seven is the [minimum for autopoiesis + phenomenology + quantum foundation](/docs/proofs/minimality/theorem-minimality-7) [T], and the structure of the seven is the imaginary part of the octonions [T]. Every tradition that counted to seven — chakras, days, notes, classical planets, gifts of the Spirit — was sampling this alphabet through its own projection [I].
+Seven dimensions in the selected UHM realization: **A** (Articulation), **S** (Structure), **D** (Dynamics), **L** (Logic), **E** (Interiority), **O** (Ground), **U** (Unity). The [minimality theorem](/docs/proofs/minimality/theorem-minimality-7) states explicit coding and faithful-representation hypotheses under which seven is a lower bound [T]. The imaginary octonions also have dimension seven [T]. Identifying these coordinates with a historical vocabulary requires a separate structural-role and measurement contract [I].
 
 ### 1.2 Layer 1 — the syllabary: 28 cells [T/D] {#слой-1}
 
@@ -65,11 +65,15 @@ The seven Fano lines are the seven **closed functional circuits** of the state �
 
 Two structural facts make these seven triads the natural "words" of state description [T]: (i) *coverage without redundancy* — every one of the 21 coherences belongs to exactly one triad (Steiner property), so the seven words partition the entire connective tissue of the state; (ii) *universal adjacency* — any two triads share exactly one dimension, so any two "plots" of a life connect through exactly one common "theme."
 
-#### The one-theme law: bridges, thirds, and the dynamical face [T] {#закон-одной-темы}
+#### The one-theme law: incidence and its dynamical application {#закон-одной-темы}
 
-Universal adjacency deserves its own name — the **one-theme law** — because it is the projective-plane axiom of PG(2,2), it is *self-dual*, and it turns out to be load-bearing for the dynamics. Three equivalent faces:
+:::info Scope of the incidence reading
+The exact theorem concerns intersections of Fano lines. A physical or cognitive transfer through their shared vertex additionally requires dynamics that factor through that vertex. Incidence alone does not prove this bottleneck or a pathology of multiple shared functions. Repeating a Lindblad operator twice with coefficient $1/\sqrt{2}$ leaves its generator unchanged, so multiplicity alone cannot force a nonrelaxing mode. The readings below are model hypotheses where no such dynamical factorization has been supplied.
+:::
 
-**Face I — the law of the bridge [T].** Any two plots intersect in **exactly** one theme. "Exactly" carries two separate gifts: *existence* — no plot is an island, the plot-graph has diameter 1, there are no "distant" plots, only unopened doors; *uniqueness* — no two plots share two themes (they would be the same plot), so **all transfer between two circuits flows through one named channel**. The complete bridge table (each dimension serves as the bridge for exactly its three theaters):
+The **one-theme law** is the self-dual incidence axiom of PG(2,2). Its first two faces below are equivalent combinatorial statements. A dynamical application additionally needs specified operators and a proof about their generator.
+
+**Face I — the law of the bridge [T].** Any two distinct Fano lines intersect in exactly one point. Thus their intersection graph is complete, and no two distinct lines share two points. The table identifies this unique shared role. A transfer between processes factors through that role only if the process maps satisfy an additional factorization condition:
 
 | Bridge | Connects the plot pairs |
 |---|---|
@@ -81,9 +85,9 @@ Universal adjacency deserves its own name — the **one-theme law** — because 
 | **O** Ground | Meaning↔Foundation · Meaning↔Action · Foundation↔Action |
 | **U** Unity | Will↔Expression · Will↔Foundation · Expression↔Foundation |
 
-Read the rows as claims — they are not platitudes: *knowledge passes into action only through articulation* (the Cognition↔Action bridge is A, not "motivation"); *meaning becomes action only through the ground* (O: meaningful but unrooted intentions do not execute); *will joins meaning only through logic* (L: without consistency, will and meaning live apart).
+The semantic readings are hypotheses [I]: A mediates Cognition–Action, O mediates Meaning–Action, and L mediates Will–Meaning in the proposed interpretation. Their exclusivity as cognitive or physical pathways must be established by an operational model; it does not follow from the incidence table.
 
-**Face II — the law of the third [T] (the dual reading).** By self-duality of PG(2,2), the same law reads backwards: any two *themes* meet in exactly one *plot* — and the plot supplies a **unique third participant**. In the deep structure no pure dyads exist: every pair of qualities, when joined, convenes a determinate third, computable in advance:
+**Face II — the law of the third [T] (the dual reading).** Every pair of distinct Fano points lies on exactly one line, which supplies a unique third point. This is incidence completion. A nonzero matrix coherence between the first two coordinates does not force a nonzero coherence with the third:
 
 | Plot | Its dyads → the third |
 |---|---|
@@ -95,9 +99,9 @@ Read the rows as claims — they are not platitudes: *knowledge passes into acti
 | Foundation $\{U,O,S\}$ | U+O→S · U+S→O · O+S→U |
 | Action $\{O,A,D\}$ | O+A→D · O+D→A · A+D→O |
 
-**Face III — the dynamical face [T].** The exactness is not combinatorial decoration: $\lambda = 1$ (every pair covered *exactly once*) is [forced by the primitivity](/docs/proofs/minimality/theorem-octonionic-derivation#шаг-t10) of the dissipative dynamics — a $\lambda \geq 2$ design would introduce degenerate, non-relaxing modes: **locked resonances** between plots that never decay to the attractor. Existence ($\geq 1$) is ergodicity: no invariant sub-plot. Translated: the one-theme law is precisely the condition that a life **both holds together and remains able to change**. Two circuits sharing *two* themes is the geometry of a jammed conflict — a pathology that now has a theorem.
+**Face III — the dynamical application.** The Steiner design has $\lambda=1$: every pair belongs to one block [T]. Primitivity of an arbitrary dissipative generator does not imply this multiplicity. Indeed, replacing a jump operator $L$ by two copies $L/\sqrt{2}$ leaves the Lindblad generator exactly unchanged. Convergence or persistent modes require analysis of the specified generator, its invariant subspaces and spectrum. They cannot be diagnosed solely from the number of shared themes.
 
-**Fractality — the honest statement.** *Within* one holon the law does not nest: PG(2,2) is the minimal projective plane and has no proper subplanes [T]. *Across* the [holarchic ladder](#холархия) it repeats exactly — the same law with the same bridge table at every rung [T-structure, I-rungs]: any two process circuits of an organisation must share exactly one function, and where they share two, the locked-resonance pathology follows (dual subordination, the eternal two-department conflict). The self-similarity is of the *law*, not of a picture.
+**Fractality — the conditional statement.** PG(2,2) has no proper projective subplane [T]. If each level of a [holarchic model](#холархия) is equipped with this same incidence structure, the same bridge table applies at each level [C]. Assigning organizational functions or experiences to that structure remains an interpretation [I]; multiple shared functions alone do not prove a conflict or a failure to relax.
 
 ### 1.4 Layer 3 — the grammar [T] {#слой-3}
 
@@ -116,9 +120,9 @@ Consider the $2^7 = 128$ binary *activation signatures* of the alphabet (each di
 | Weight 4 | 7 | complements of the triads | the **seven Fields** — e.g. the Field of Cognition $\{D,E,O,U\}$: the lived world upon which Cognition operates |
 | Weight 7 | 1 | all seven | **Pleroma** — the full signature |
 
-**Theorem (archetype lattice) [T].** The sixteen codewords are the only single-error-correcting family of activation signatures on seven dimensions, and the code is *perfect*: every one of the 128 signatures is either an archetype or lies at Hamming distance exactly 1 from a **unique** archetype ($16 \times 8 = 128$ — the radius-1 spheres tile the space with no gaps and no overlaps).
+**Theorem (perfect radius-one decoding) [T].** The span of the seven Fano incidence words is the binary linear $[7,4,3]$ Hamming code. Its 16 radius-one balls partition the 128 seven-bit words: each word has one nearest codeword at distance at most 1. The codeword weight distribution is $1+7x^3+7x^4+x^7$. This proves unique decoding for the specified code. It does not assert that every single-error-correcting family on seven coordinates is this family; translated codes and smaller codes are counterexamples to that unrestricted claim.
 
-The practice meaning is direct: **any state of the system is either archetypal or a one-dimension deviation — a *skew* (§10) — from exactly one archetype.** There is never ambiguity about "which archetype you are near," and the deviating dimension is itself identified: the diagnosis comes with its own correction, which is what "error-correcting" means. Distance-3 separation means archetypes never blur into one another: to move between archetypes is always a three-dimensional reorganisation, never a drift — and the Canon names this movement **archetype drift** (§10) when it is tracked along a trajectory.
+For an intended codeword corrupted in at most one bit, decoding recovers it. For an arbitrary thresholded observation, decoding only identifies a nearby codeword; it does not establish a psychological error or justify an intervention. Two-bit errors can decode to the wrong word. Distances between distinct codewords can be 3, 4 or 7; minimum distance 3 is not a claim that every transition changes exactly three coordinates. The use of these words as experiential archetypes remains an interpretation, requiring a stated activation threshold and measurement protocol.
 
 Triads and Fields form a strict duality: a Triad is a *doing* (three dimensions in circuit), its Field is the *world of that doing* (the four dimensions the circuit acts upon). Stillness and Pleroma are the lattice's poles — and §5 proves that *neither pole is habitable*.
 

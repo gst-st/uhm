@@ -1,0 +1,384 @@
+{
+  "status": "passed",
+  "mechanism": "Known finite strong lumpability and coarsest stable partition refinement",
+  "novelty_claim": false,
+  "production_integration_claim": false,
+  "arithmetic": "fractions.Fraction; exact row normalization and block sums; no tolerance",
+  "scope": "The exact supplied finite stochastic kernel and complete seed partition only. An estimated kernel remains uncertain; these checks do not prove its statistical accuracy, stationarity or out-of-sample adequacy.",
+  "proof": {
+    "split_signature": "(old block index, probabilities into every old block)",
+    "coarseness": "Any stable refinement R of the seed refines every iterate, because an old block is a union of R-blocks and probabilities into those R-blocks agree. The stable limit is therefore the unique coarsest stable refinement of the seed.",
+    "termination": "Every strict iteration increases the number of blocks. Strict iterations <= total block-count increase <= n-k for n states and k initial blocks.",
+    "transport": "Writing C for the state-to-block indicator matrix and Q for the quotient kernel, PC=CQ. This transports every initial distribution and every finite transition horizon."
+  },
+  "script": {
+    "path": "/Users/taaliman/projects/oldman/uhm-theory/holon/architecture/symbolica_predictive_quotient.py",
+    "bytes": 16056,
+    "sha256": "f20e92ddd99e98f71a9c1161482487c5cf87f6040cf2eae0dca32f02741edd43"
+  },
+  "runtime_seconds": 0.5461090420139953,
+  "exhaustive": {
+    "states": 3,
+    "entry_grid": [
+      "0",
+      "1/2",
+      "1"
+    ],
+    "stochastic_rows": 6,
+    "kernels": 216,
+    "partitions_per_kernel": 5,
+    "seed_cases": 1080,
+    "stable_seeds": 684,
+    "counterexamples_rechecked": 396,
+    "all_stable_refinements_compared": 1800,
+    "strict_iteration_histogram": {
+      "0": 684,
+      "1": 396
+    },
+    "point_distribution_steps_checked": 12960,
+    "checks": [
+      "all finite partitions enumerated",
+      "counterexample arithmetic",
+      "output stability",
+      "refinement of seed",
+      "coarsest among every stable refinement",
+      "idempotence",
+      "n-k bound",
+      "distribution pushforward commutes with transitions"
+    ]
+  },
+  "empty_case": {
+    "result": {
+      "partition": [],
+      "quotient": [],
+      "history": [
+        []
+      ],
+      "counterexamples": []
+    },
+    "meaning": "The empty 0x0 kernel has no rows to normalize and the empty partition is stable. This does not provide a probability distribution on an empty state space."
+  },
+  "rejected_malformed_cases": 13,
+  "counterexample_and_repair": {
+    "kernel": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "seed": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "diagnosis": {
+      "partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "quotient": null,
+      "counterexample": {
+        "source_block": [
+          0,
+          1
+        ],
+        "left_state": 0,
+        "right_state": 1,
+        "target_block": [
+          0,
+          1
+        ],
+        "left_probability": "0",
+        "right_probability": "1"
+      }
+    },
+    "refinement": {
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "quotient": [
+        [
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "history": [
+        [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      ],
+      "counterexamples": [
+        {
+          "source_block": [
+            0,
+            1
+          ],
+          "left_state": 0,
+          "right_state": 1,
+          "target_block": [
+            0,
+            1
+          ],
+          "left_probability": "0",
+          "right_probability": "1"
+        }
+      ]
+    }
+  },
+  "stable_with_different_rows": {
+    "kernel": [
+      [
+        "1/2",
+        "0",
+        "1/2"
+      ],
+      [
+        "0",
+        "1/2",
+        "1/2"
+      ],
+      [
+        "1/4",
+        "1/4",
+        "1/2"
+      ]
+    ],
+    "seed": [
+      [
+        0,
+        1
+      ],
+      [
+        2
+      ]
+    ],
+    "diagnosis": {
+      "partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "quotient": [
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/2"
+        ]
+      ],
+      "counterexample": null
+    }
+  },
+  "multi_iteration_example": {
+    "kernel": [
+      [
+        "0",
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "1"
+      ]
+    ],
+    "seed": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        3
+      ]
+    ],
+    "refinement": {
+      "partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "quotient": [
+        [
+          "0",
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      "history": [
+        [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        [
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      ],
+      "counterexamples": [
+        {
+          "source_block": [
+            0,
+            1,
+            2
+          ],
+          "left_state": 0,
+          "right_state": 2,
+          "target_block": [
+            0,
+            1,
+            2
+          ],
+          "left_probability": "1",
+          "right_probability": "0"
+        },
+        {
+          "source_block": [
+            0,
+            1
+          ],
+          "left_state": 0,
+          "right_state": 1,
+          "target_block": [
+            0,
+            1
+          ],
+          "left_probability": "1",
+          "right_probability": "0"
+        }
+      ]
+    }
+  }
+}

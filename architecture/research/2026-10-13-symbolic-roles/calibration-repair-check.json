@@ -1,0 +1,54 @@
+{
+  "scope": "Exact rational orbit controls and fixed-seed numerical probes; no complete classification or empirical calibration claim",
+  "exact_orbit_dimensions": [
+    0,
+    6,
+    11,
+    14
+  ],
+  "positive_same_spectrum_counterexample": {
+    "spectrum": {
+      "4/7": 1,
+      "1/14": 6
+    },
+    "orbit_dimensions": [
+      6,
+      11
+    ]
+  },
+  "numerical_spectral_samples": {
+    "multiplicity_partitions": 15,
+    "frames_per_partition": 6,
+    "witnessed_ranks": [
+      0,
+      11,
+      14
+    ]
+  },
+  "markdown_katex": {
+    "en_82_84": 47,
+    "ru_82_84": 47,
+    "passed": true
+  },
+  "logs": {
+    "symbolica-frame-repair.log": {
+      "path": "/tmp/symbolica-frame-repair.log",
+      "sha256": "b46cd761ca88316e144c784c6828df5d894eb092bf244764dc9b7a670ad0771d"
+    },
+    "symbolica-stratification-repair.log": {
+      "path": "/tmp/symbolica-stratification-repair.log",
+      "sha256": "13d8abf64d717bd432f0928f58f8b68a3fe18e23c6c8706689d051c44f926c08"
+    },
+    "symbolica-calibration-repair.log": {
+      "path": "/tmp/symbolica-calibration-repair.log",
+      "sha256": "aedb2935d2ed2b3ea34138f654d580af6e3e2041f326afd2b64e244d073ad03d"
+    }
+  },
+  "source_sha256": {
+    "architecture/symbolica_calibration.py": "e4ebdebb7f225418b1857b313fe657558eb988afe32a538b073c9227984c8065",
+    "architecture/symbolica_frame_bundle.py": "3d5789a1850dbe5c05792d86246bcdb7ae3409fb5c445c9566c408ba18c5e0fa",
+    "architecture/symbolica_stratification.py": "3cf411f61b7757d0125f43ef3a2a004132b6d96482583b574d934859316e5b69",
+    "website/docs/applied/research/homoholograph.md": "1a9476d43737a46c143ac2b238ec2ebd489fc883b8b1e1b91cf3fa2dd6e6e330",
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/applied/research/homoholograph.md": "ec3c7bb6db3e786051cb27de6045840f1fb7da175d748364f819f0cb522d5543"
+  }
+}

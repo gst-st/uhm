@@ -5,7 +5,7 @@ The bagua (8 trigrams) is three stacked lines, yin/yang each: literally a
 3-bit string, and the set of trigrams is F2^3. The mathematical fact this
 lab pins: the octonion algebra IS a twisted group algebra R_sigma[F2^3] —
 its 8 basis units are indexed by F2^3 and multiply by e_a e_b = sigma(a,b)
-e_{a XOR b} with a sign cocycle sigma. So «compose two trigrams line-wise»
+e_{a XOR b} with a normalized sign 2-cochain sigma. So «compose two trigrams line-wise»
 (XOR) is not a metaphor for the crystal — it is the crystal's underlying
 group [Т]. Convention (journaled, [И]): yin=0, yang=1 => Earth = 000 =
 identity; the 7 non-Earth trigrams = the 7 nonzero points of F2^3 = the
@@ -20,11 +20,14 @@ Checks:
   [D] hexagram = (upper,lower) trigram pair = F2^6 — consistent with the
       established 64 = F2^6 layer (Part XXI, iching lab) [Т]
   [E] octonion twisted-product sanity on a standard Fano labeling: unit
-      products land on XOR of indices, signs form a valid cocycle
+      products land on XOR of indices, the sign cochain fails the 2-cocycle identity
       (associator nonzero somewhere = nonassociativity witnessed) [Т]
 """
 
 import itertools
+
+if not __debug__:
+    raise RuntimeError('Controls require enabled assertions; do not run with -O')
 
 TRI = {  # name: (bits as tuple, glyph), yin=0 yang=1, bottom-to-top
     "Earth ☷":    (0, 0, 0), "Thunder ☳": (1, 0, 0),
@@ -133,6 +136,7 @@ for a in range(1, 8):
                 wit = (a, b, c); break
         if wit: break
     if wit: break
+assert wit is not None, "the octonion sign cochain must fail associativity"
 print("  associator witness (e%d e%d) e%d != e%d (e%d e%d): signs differ ->"
       % (wit[0], wit[1], wit[2], wit[0], wit[1], wit[2]),
       "nonassociative [T]")
@@ -140,7 +144,10 @@ print()
 print("verdict: trigram composition (line-wise XOR) = the octonion basis'")
 print("underlying group F2^3; Earth is the unit, the seven moving trigrams")
 print("are the Fano points/voices; the King-Wen family, the Fuxi circle and")
-print("the 64 hexagrams are all THEOREMS of this arithmetic, not lore [T].")
+print("the 64 hexagrams agree with the declared encodings [T].")
 print("The twist (signs) is exactly what upgrades the group algebra to the")
-print("octonions: sigma is a cocycle whose non-symmetry = nonassociativity.")
-print("The yin=0 convention is the single [I]-choice, journaled above.")
+print("octonions: sigma is a 2-cochain; its cocycle defect is nonassociativity.")
+print("Non-symmetry instead detects noncommutativity; these are different laws.")
+print("Line order, yin=0 and the added XOR operation are explicit choices.")
+print("The integer encoding uses the bottom line as the least significant bit;")
+print("top-line-first integer encodings require bit reversal, not identity.")

@@ -1,0 +1,18 @@
+G2 CONJUGATION: WITNESSES, NOT AN ORBIT CLASSIFICATION
+Exact integer constraints: dim g2 = 14; exact orbit controls = 0, 6, 11, 14
+SVD tolerances: 1e-09 1e-08 ; random seed: 7
+centre I/7                           orbit rank= 0 stabilizer Lie dimension=14
+real axis pure projector             orbit rank= 6 stabilizer Lie dimension= 8
+fixed complex pure projector         orbit rank=11 stabilizer Lie dimension= 3
+sampled complex pure projector       orbit rank=11 stabilizer Lie dimension= 3
+sampled rank-3 state                 orbit rank=14 stabilizer Lie dimension= 0
+sampled full-rank state              orbit rank=14 stabilizer Lie dimension= 0
+Numerically witnessed orbit dimensions: [0, 6, 11, 14]
+Different dimensions imply different orbit types; equal dimensions
+do not identify stabilizer conjugacy classes or exhaust the types.
+Same positive spectrum [6,1]: exact orbit ranks 6 and 11.
+Ordinary section counterexample: SO(2) on R^2, s(r)=(r,0).
+Equivariant G-valued frame: F(g.x)=gF(x) is impossible at I/7,
+since g fixes I/7 and left multiplication fixes no group element.
+No conclusion about ordinary global sections for this G2 quotient,
+or about human qualia / environmental calibration, follows from ranks.

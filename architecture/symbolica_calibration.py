@@ -1,89 +1,65 @@
 # -*- coding: utf-8 -*-
-"""symbolica_calibration.py — dual-aspect monism, made precise: the phenomenal
-functor is BLIND to the G2-frame, and that frame is exactly what an external
-'calibration' fixes. Ties the user's planetary-calibration insight to the
-corpus's own open question ('which quale is red?') and to G2=Aut(O)=the zodiac.
+"""Calibration research: counts, variable orbit freedom and observation contracts.
 
-The corpus already proves (two-aspect-monism.md, G2-rigidity):
-    F(Γ1) ≅ F(Γ2)  ⟺  Γ2 = U Γ1 U†  for some U ∈ G2                    [Т]
-So the INNER (phenomenal) content is the G2-INVARIANT data — the same for every
-system that instantiates the crystal (monism). What F cannot see is the choice of
-representative inside the orbit: the G2-FRAME. The corpus also lists, as the one
-open residue, 'calibration — which specific |q> is red' — and that residue is
-EXACTLY the frame F is blind to.
+G2 has dimension 14 and 12 roots, but its orbit at a state has dimension
+14 - dim(stabilizer). Neither count makes 7+12 symbolic labels a coordinate
+chart, nor identifies human qualia with an unobservable G2-frame. A fixed
+measurement or action may break the kinematic symmetry. Environmental inputs
+can be tested in a calibration model; no planetary/phenomenal bridge is proved.
 
-User's insight (2026-07-24, dual-aspect monism): the frame is not free-floating;
-it is fixed by the system's EXTERNAL boundary conditions — the type & composition
-of its 'planetary system'. Since G2's real form casts the zodiac (Part XXI §76),
-the frame is coordinatised by the 7+12 astrological skeleton — not because stars
-push, but because the calibration lives in the G2-orbit whose coordinates ARE
-that skeleton. Different planetary systems = different frames = different
-calibrations of ONE universal inner crystal.
-
-Status: the counts and F-blindness are [Т]/[С] (group theory + corpus theorem);
-'boundary conditions fix the frame' is a research conjecture [Г]; the metaphysical
-reading (dual-aspect monism) is [И].
+This script shares exact finite orbit controls with symbolica_frame_bundle.py.
+A separate numerical directional-derivative witness shows how a fixed population
+observable can vary under a G2 generator. It makes no claim about qualia.
 """
-import itertools, math
+import math
+import numpy as np
+from symbolica_frame_bundle import N, build_g2, orbit_dim, exact_controls
 
-# ---- [A] the G2 root system, computed exactly (per the §76 lab; EXACT lengths) ----
-# Long roots: the 6 permutations of (±1,∓1,0) in the A2 plane sum-zero lattice,
-# realised here in the standard 2D G2 presentation by angle. We build the 12
-# roots directly at their 30°-spaced angles with the alternating short/long radii.
-short_r = 1.0
-long_r  = math.sqrt(3.0)
-roots = []
-for k in range(12):
-    ang = math.radians(30 * k)
-    r = short_r if k % 2 == 0 else long_r          # alternate short/long
-    roots.append((r * math.cos(ang), r * math.sin(ang)))
-n_roots = len(roots)
-lengths = sorted({round(math.hypot(x, y), 6) for x, y in roots})
-n_short = sum(1 for x, y in roots if abs(math.hypot(x, y) - short_r) < 1e-6)
-n_long  = sum(1 for x, y in roots if abs(math.hypot(x, y) - long_r) < 1e-6)
 
-print("=" * 78)
-print("[A] the G2 frame — group-theoretic skeleton of the calibration")
-print("  # roots            =", n_roots, "  (= 12 zodiacal signs, §76)")
-print("  distinct lengths   =", lengths, " (short:%d long:%d — the polarity split)" % (n_short, n_long))
-print("  rank (Cartan dim)  = 2      (the two luminaries' plane; |Weyl(G2)|=12)")
-print("  dim G2             = 14     (= 12 roots + 2 Cartan)")
-assert n_roots == 12 and n_short == 6 and n_long == 6
+def main():
+    if not __debug__:
+        raise RuntimeError('Controls require enabled assertions; do not run with -O')
+    roots = [(r * math.cos(k * math.pi / 6), r * math.sin(k * math.pi / 6))
+             for k in range(12) for r in [1 if k % 2 == 0 else math.sqrt(3)]]
+    short = sum(abs(math.hypot(*v) - 1) < 1e-12 for v in roots)
+    assert len(roots) == 12 and short == 6
+    basis, constraints, so7 = build_g2()
+    p_real, p_complex = exact_controls(basis, constraints, so7)
+    assert N * N - 1 == 48 and len(basis) == 14
+    dimensions = [('centre I/7', np.eye(N) / N, 0),
+                  ('real pure projector', p_real, 6),
+                  ('fixed complex pure projector', p_complex, 11),
+                  ('positive distinct diagonal', np.diag(np.arange(1, N + 1)) / 28, 14)]
+    print('CALIBRATION: STRUCTURAL CONTROLS, NOT A PHENOMENAL THEOREM')
+    print('G2 roots: 12 (six short, six long); Cartan rank: 2; Lie dimension: 14.')
+    print('Framed density-state interior: 48 real coordinates.')
+    for name, gamma, expected in dimensions:
+        actual = orbit_dim(gamma, basis)
+        assert actual == expected
+        print('%-32s orbit=%2d stabilizer Lie dimension=%2d'
+              % (name, actual, 14 - actual))
 
-# ---- [B] the parameter accounting: what F sees vs what it is blind to ----
-dim_config = 7**2 - 1        # traceless Hermitian 7x7 : the configuration DOF
-dim_G2 = 14                  # the frame / calibration gauge
-print()
-print("[B] dual-aspect accounting (why calibration is the frame)")
-print("  configuration DOF        dim_R Herm0(7) = 7^2 - 1 =", dim_config)
-print("  frame (G2) DOF           dim G2                   =", dim_G2)
-print("  F is FAITHFUL on G2-orbits  [corpus Т]  ⟹  F sees ONLY the")
-print("     G2-INVARIANT data (relational, universal — Yoneda), and is BLIND")
-print("     to the ≤%d-dim G2-frame. The frame is phenomenally invisible." % dim_G2)
-print("  corpus's OWN open residue: 'which specific |q> is red' (calibration).")
-print("  ⟹  that residue IS the frame F cannot see. Same object, two names.")
-assert dim_config == 48 and dim_G2 == 14
+    # A fixed population observable q(Gamma)=Gamma[0,0] need not descend
+    # to the kinematic quotient. Choose a nonzero generator coefficient,
+    # not a semantic word or data label. Gamma remains strictly positive.
+    x, j = max(((x, j) for x in basis for j in range(1, N)),
+               key=lambda pair: abs(pair[0][0, pair[1]]))
+    epsilon = 1 / 28
+    gamma = np.eye(N) / N
+    gamma[0, j] = gamma[j, 0] = epsilon
+    assert np.min(np.linalg.eigvalsh(gamma)) > 0 and np.isclose(np.trace(gamma), 1)
+    derivative = (x @ gamma - gamma @ x)[0, 0]
+    assert np.isclose(derivative, 2 * epsilon * x[0, j]) and abs(derivative) > 1e-8
+    print('Numerical fixed-observable witness: d/dt q(exp(tX) Gamma exp(-tX))')
+    print('at t=0 is', float(derivative), ', not zero (chosen generator, fixed q).')
+    print('A physical gauge requires retained observations, action domains and')
+    print('dynamics to descend; conjugation symmetry of the carrier is insufficient.')
+    print('The 7+12 symbol counts supply no coordinate chart or qualia identity.')
+    print('Research hypothesis [I]: qualitative reports may constrain a relational')
+    print('alignment. Test observations and interventions with unresolved symmetries')
+    print('retained; environmental variables are optional empirical inputs [H].')
+    print('No result here establishes that a planetary system fixes experience.')
 
-# ---- [C] the reading, laid out as three aspects of one Γ ----
-print()
-print("[C] one Γ, read three ways")
-rows = [
- ("aspect",        "what it is",                    "who fixes it",        "status"),
- ("inner/universal","G2-INVARIANT content of Γ",     "the crystal (monism)","[Т] F sees this"),
- ("               ","relational qualia-geometry",    "Yoneda — necessary",  "[Т]"),
- ("frame/local",    "the G2 representative (14 DOF)", "EXTERNAL boundary",   "[Г] conjecture"),
- ("calibration",    "'which |q> is red' — absolute", "= the frame, above",  "[С]=[open residue]"),
- ("coordinates",    "7 planets + 12 signs skeleton", "= G2 real-form (§76)","[Т] = astrology"),
-]
-for r in rows:
-    print("  %-16s %-31s %-21s %s" % r)
 
-print()
-print("=" * 78)
-print("MONIST PREDICTION [Г/И]: another planetary system (different star &")
-print("composition) instantiates the SAME inner crystal (the seven voices) under")
-print("a DIFFERENT G2-frame — a different symbolic 'zodiac' on its outer face, the")
-print("same architecture underneath. 'Everything has an inner side, and the inner")
-print("side is one architecture' = F-invariance is universal; only the frame is local.")
-print("This TIGHTENS the corpus's open 'calibration' question from 'unknown' to")
-print("'the G2-frame, plausibly set by external boundary data' — a real strengthening.")
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,78 @@
+{
+  "Fano_Hamming": {
+    "points": 7,
+    "lines": 7,
+    "codewords": 16,
+    "weights": {
+      "0": 1,
+      "3": 7,
+      "4": 7,
+      "7": 1
+    },
+    "perfect_radius_one": true,
+    "distance_zero_to_all_ones": 7,
+    "consecutive_chakra_lines": [
+      [
+        1,
+        2,
+        4
+      ]
+    ],
+    "translated_code_also_perfect": true
+  },
+  "octonion_twist": {
+    "associativity_cocycle_failure": [
+      1,
+      2,
+      4
+    ],
+    "left_sign": 1,
+    "right_sign": -1
+  },
+  "three_form_stabilizer_exact": {
+    "Cayley_Dickson_so7_stabilizer_dimension": 14,
+    "current_sorted_all_positive_Fano_so7_stabilizer_dimension": 14
+  },
+  "entropy_counterexample": {
+    "deterministic_state_conditional_entropy": 0,
+    "claimed_lower_bound_M6_Res2": 17.548809681795202
+  },
+  "codons_vs_hexagrams": {
+    "vertices_each": 64,
+    "codon_single_base_change_degree": 9,
+    "hexagram_single_line_change_degree": 6,
+    "adjacency_isomorphism": false
+  },
+  "G2_vs_cycle": {
+    "Weyl_order": 12,
+    "uncoloured_C12_dihedral_order": 24,
+    "Weyl_rotation_orders": [
+      1,
+      2,
+      3,
+      6
+    ],
+    "order_four_rotation_in_Weyl": false
+  },
+  "gauge_counterexample": {
+    "support_triangle_cycle_rank": 1,
+    "phase_radians": 1.5707963267948966,
+    "eps": "1/28",
+    "Gershgorin_lower_bound": "1/14"
+  },
+  "sources": {
+    "architecture/symbolica_atlas.py": "3a5e8b74e28d53d553af4a5b9c993d78442f52da01a1cc9506dfce90b7969e87",
+    "architecture/symbolica_calibration.py": "349255403549d44f36008dafa15809687a1735125c8de37fdd92b667bd91bb32",
+    "architecture/symbolica_frame_bundle.py": "f1feb68e6e3ef7db4d53dc4ca4122d05ffe38e963bc0fcde516ebd67b8dc1338",
+    "architecture/symbolica_g2.py": "d8cc7da45d5b2611ebc33b645faeb14f40f602cb995268d59505af82621b83c3",
+    "architecture/symbolica_iching.py": "2356cbf26405f885d8b163cddb6d930c434af920a586d9b9bab4928d22631880",
+    "architecture/symbolica_kabbalah.py": "9996173cafa38dd16e9f61558b710e9beb03a8d014aef45bcba26b3f6fa69544",
+    "architecture/symbolica_kybalion.py": "df7ce987ae39fbe21eac0f8cd31d3e060bedc9938176a87f2d76909fa632d821",
+    "architecture/symbolica_stratification.py": "9d56e687ffb94255f4247dde139d6335ce4377ff24679317c0164b602ca686a6",
+    "architecture/symbolica_timewave.py": "a5a9c8d096834c8b18a0641e9f6d0dc525cd96e3eb432384ab9fe6b707c5323e",
+    "architecture/symbolica_trigrams.py": "0586ef1252962e3a06fca6a022c82a787fdced409f7efed80d2e073f49f36ddf",
+    "website/docs/applied/research/gamma-canon.md": "3d69af514b7462ecd0e7036e4561c9d642f8760de9cecb593602576bb31a4080",
+    "website/docs/applied/research/symbolic-correspondence.md": "91dabe5141731f51bc182ef1d92c2a9f40e6ec39b661e1cc92805d31edebbfd1",
+    "website/docs/core/structure/symbolic-systems.md": "0a8f96c500cb2bedd036ad59e4bb3fbe29d2f1e89aab674f8fec3e3340a83e4b"
+  }
+}

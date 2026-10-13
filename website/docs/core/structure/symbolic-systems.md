@@ -2,17 +2,17 @@
 sidebar_position: 10
 title: "Formal reduction of symbolic systems"
 slug: /core/structure/symbolic-systems
-description: "Categorical formulation: symbolic systems as projection functors from Γ. Fundamental analysis of all major symbolic traditions, projection table, completeness theorem, structural conclusions"
+description: "Typed symbolic readouts, preservation of relations and actions, conditional dimension bounds and information loss"
 ---
 
 # Formal Reduction of Symbolic Systems
 
-This chapter shows how all symbolic systems of humanity — from the Indian chakras to Western astrology, from the Chinese I Ching to the Kabbalistic Tree of Life, from alchemy to the Big Five — are **projections of the same mathematical object**: the coherence matrix $\Gamma \in \mathbb{C}^{7 \times 7}$. Each of these systems "sees" a part of $\Gamma$, but none sees the whole. UHM is the first formalism in which all these fragmentary descriptions are united into a single picture.
+This chapter develops a common language for comparing symbolic systems with the coherence matrix $\Gamma\in\mathcal D(\mathbb C^7)$. Its substantive proposal is that selected symbolic distinctions may be represented by populations, coherences, incidence relations and transformations of this model. The correspondence must specify **which roles, relations and operations it preserves**; a shared number of symbols alone does not establish it.
 
-The reader will learn: why structurally similar descriptive systems arose in different cultures and eras; what exactly each of them "sees" and what it "loses"; and why the number 7 appears in symbolic systems so frequently — from the seven chakras to the seven musical notes and the seven days of the week.
+The semantic tables below are candidate interpretations. Exact structural correspondences — including binary trigrams, Fano incidence and Hamming codes — are treated separately in [Structural correspondences](/docs/applied/research/structural-correspondence). This distinction lets a proposed interpretation be strengthened by a verifiable map and, where relevant, a measurement protocol.
 
-:::warning Status [I]
-All material in this section has the status of **interpretation**. The projection formulae $\pi_S$ are constructive, but empirical validation has not been carried out. The identifications "symbol ↔ element of Γ" are substantive hypotheses, not identities.
+:::warning Status of the correspondence
+The finite combinatorics and the conditional statements below can be proved. Identifications such as “chakra ↔ population” remain hypotheses [I]. A defined readout is a mathematical model of an interpretation; whether a tradition actually measures that readout is an additional empirical question.
 :::
 
 :::tip The generative counterpart
@@ -25,40 +25,46 @@ This chapter is the *analytic* half of the pair: it reduces existing traditions 
 
 ### 1.1 What is a symbolic system
 
-**Definition.** A symbolic system $S$ is a structured set of elements $\{s_k\}$ with relations $R_S$, claiming to describe the integral state of an entity (organism, person, event).
-
-From the UHM perspective, any such system is formalised as a **projection functor**:
+**Definition.** A symbolic system $S$ has a typed vocabulary, specified relations $R_S$ and, when applicable, named partial transformations. Types distinguish, for example, an axis, a relation between axes, an outcome label and an action. To represent its observations in UHM, fix a readout
 
 $$
-\pi_S: \text{Hol} \to \mathcal{C}_S
+\pi_S:X\longrightarrow Y_S,\qquad X=\mathcal D(\mathbb C^7),
 $$
 
-where $\text{Hol}$ is the category of [holons](/docs/core/structure/dimensions) and $\mathcal{C}_S$ is the target category of system $S$ (a finite set of symbols with relations).
+where $Y_S$ is the space of complete records produced by the chosen protocol. One card from 22 possibilities, a 21-coordinate rating and a sequence of draws have different record spaces even if they use the same vocabulary.
 
-:::tip What "projection functor" means in plain language
-Imagine a three-dimensional object — say, a sculpture. The shadow of that sculpture on the wall is a **projection**: a two-dimensional image that conveys part of the information about the sculpture (outline, general shapes) but loses depth. Different shadows of the same sculpture (from a lamp on the left, from above, from the front) look different, but they are all projections of the same object.
+**Structural contract.** A correspondence $h:S\to T$ assigns a map to each declared sort. It preserves a named relation when $R_S(a_1,\ldots,a_k)$ implies $R_T(h(a_1),\ldots,h(a_k))$; equivalence requires the converse as well. For a source action $c:D_c\to S$ and its target action $d:D_d\to T$, an exact executable correspondence requires, on the relevant sort,
 
-The projection functor $\pi_S$ works analogously. $\Gamma$ is the "sculpture" (48 parameters). Symbolic system $S$ is the "shadow" (a few parameters). The chakra system sees a "shadow" of 7 elements. Tarot — of 22. Astrology — of ~50. But all of them are "shadows" of the same $\Gamma$. The word "functor" means that the projection preserves structure: if two states are connected in $\Gamma$, they will be connected in the projection as well (though the converse does not hold — a projection may "glue together" different states).
-:::
+$$
+a\in D_c\iff h(a)\in D_d,\qquad h(c(a))=d(h(a))\quad(a\in D_c).
+$$
 
-### 1.2 Why projections are inevitable
+The second equation preserves execution; the first prevents undefined actions from silently becoming defined. Observations must commute with the map through explicitly specified decoders. These obligations are stronger than a bijection between names.
 
-The full state of a holon is described by the [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathbb{C}^{7 \times 7}$ with **48 independent real parameters** (7 populations subject to $\text{Tr} = 1$ give 6; 21 complex coherences give 42; total 48).
+A **functor** is available after specifying actual categories: objects, arrows, identity arrows and composition. For example, a map of action paths induces a functor only when it preserves the declared path equations. A set with arbitrary relations is not automatically such a category. The notation $\pi_S:\mathrm{Hol}\to\mathcal C_S$ is appropriate only after these additional data and checks have been supplied.
 
-Any system with $|S| < 48$ elements **cannot** contain complete information about $\Gamma$. Loss of information is not a defect of the symbolic system but a **consequence of the dimensionality theorem**: a map from $\mathbb{R}^{48}$ to $\mathbb{R}^n$ with $n < 48$ is non-injective.
+For a state quotient, an executable readout must also respect its fibers. If $\pi_S(x)=\pi_S(x')$, every retained observable must agree on $x,x'$; each retained action must be defined on both or neither, and their successors must have equal readouts. Otherwise no deterministic action on $Y_S$ can reproduce the source action. See the [general structural contract](/docs/applied/research/structural-correspondence).
 
-Analogy: you cannot convey colour (3 numbers: R, G, B) in a single number without loss. If you have only brightness (1 number) — you cannot distinguish red from green of equal brightness. In exactly the same way, a 7-element system (chakras) cannot convey all 48 parameters of $\Gamma$ — it inevitably "glues together" different states, losing coherences.
+### 1.2 When information loss is inevitable
+
+The [coherence matrix](/docs/core/dynamics/coherence-matrix) has 48 independent real parameters on its positive-definite interior: 6 independent populations and 42 real coordinates of 21 complex coherences. Positivity couples their allowed values; boundary strata may have smaller dimension.
+
+**Continuous dimension bound [T].** A continuous readout into $\mathbb R^n$ with $n<48$ cannot be injective on this interior. Indeed, identify a neighbourhood with an open subset of $\mathbb R^{48}$ and append $48-n$ zero coordinates to the alleged injection. Invariance of domain would make its image open in $\mathbb R^{48}$, whereas it lies in a lower-dimensional coordinate subspace. This is a contradiction.
+
+Continuity is essential: arbitrary set-theoretic encodings can inject finitely many real coordinates into one real number. Separately, a readout with only finitely many possible records is noninjective on the continuum of states, regardless of how its alphabet size compares with 48. **Alphabet size, number of continuous output coordinates and information in bits are different quantities.** A finite vocabulary used in unbounded expressions need not have a finite record space.
+
+For example, brightness alone does not distinguish all RGB colours. This concerns the chosen one-dimensional continuous readout, not the number of colour words available.
 
 ### 1.3 The fundamental question
 
-Why did structurally similar descriptive systems arise in different cultures and eras? The UHM answer: they all map the same mathematical object — $\Gamma$ — and differ only in their **choice of projection**. Stable systems are those whose projections capture structurally significant subspaces of $\Gamma$.
+The research hypothesis is that some recurring symbolic distinctions capture the same structural features through different readouts. It becomes substantive when independently specified relations or interventions agree under the maps in §1.1. Historical recurrence and empirical reliability require their own evidence.
 
-This answer explains two puzzling facts at once: (1) the **similarity** between distant traditions (Indian chakras and European alchemy both distinguish 7 elements — because both project the 7-dimensional diagonal of $\Gamma$); and (2) the **differences** between them (chakras see populations, Tarot sees coherences — because they project different aspects of $\Gamma$).
+Under the population interpretation, seven labelled entries of the diagonal have 6 independent degrees of freedom because their sum is 1. Interpreting a second sevenfold vocabulary by these entries is a possible model, not a consequence of the equality of cardinalities. Likewise, a proposed coherence-based interpretation must say how its symbols encode or measure those coherences.
 
 ### 1.4 The projection uncertainty principle {#принцип-неопределённости-проекции}
 
 :::warning Central methodological limitation [I]
-UHM defines the object ($\Gamma \in \mathbb{C}^{7 \times 7}$); symbolic systems are **empirical approximations** to it. The choice of projection $\pi_S$ is **not a mathematical derivation** but an empirical hypothesis.
+UHM specifies the model state; representing a symbolic system by a readout of that state is a proposed empirical interpretation. The choice of projection $\pi_S$ is **not a mathematical derivation** but an empirical hypothesis.
 :::
 
 **The problem.** The matrix $\Gamma$ contains **several** 7-element substructures onto which a 7-element symbolic system can be projected:
@@ -67,11 +73,11 @@ UHM defines the object ($\Gamma \in \mathbb{C}^{7 \times 7}$); symbolic systems 
 |---|---|---|
 | Populations (diagonal) | $\gamma_{11}, \ldots, \gamma_{77}$ | Linear order (by index) |
 | Fano lines | 7 triplets $\{i, j, k\}$ | Incidence geometry PG(2,2) |
-| Projectors $\Pi_p$ | 7 projectors onto Fano subspaces | $G_2$-orbit |
+| Projectors $\Pi_p$ | 7 projectors onto Fano subspaces | Finite coordinate family in a fixed octonion frame |
 | Spectrum of $\Gamma$ | 7 eigenvalues $\lambda_1, \ldots, \lambda_7$ | Ordered set (by magnitude) |
 | Atomic Kraus operators | 7 operators $K_m^{(\mathrm{atom})}$ | Set of classifier atoms |
 
-A bijection $\phi: \mathrm{Obj}(S) \to$ (substructure of Γ) for a symbolic system $S$ with 7 elements can be constructed for **any** of the candidates. However, each choice generates a **different** projection $\pi_S$ with different properties.
+Seven distinct symbolic labels admit a bijection with the seven labelled slots of any candidate. Equal eigenvalues do not become distinct values through that labelling. A slot assignment still needs a readout rule, and different rules may retain different distinctions.
 
 **Corollary.** All identifications $\pi_S$ in this document are **constructive hypotheses [I]**, not mathematical derivations [T]. For each symbolic system:
 
@@ -93,19 +99,24 @@ The matrix $\Gamma$ contains three types of information targeted by different sy
 
 Symbolic systems differ in **which of these three types** they are capable of expressing, and with what completeness.
 
+The modulus–phase coordinates are valid where the respective coherences are nonzero; at zero the phase is undefined. Positivity constrains their joint values. All coordinates refer to the fixed semantic frame, not to basis-independent observables.
+
 ### 2.1 Classification of projections
 
-**Definition.** Projection $\pi_S$ is characterised by a quadruple:
+**Definition.** A coordinate-selection profile for a readout is the quadruple:
 
 $$
-\pi_S = (D_S, \, M_S, \, \Phi_S, \, \text{Res}_S)
+\operatorname{profile}(\pi_S) = (D_S, \, M_S, \, \Phi_S, \, \text{Res}_S)
 $$
 
 where:
 - $D_S \subseteq \{1,\ldots,7\}$ — which dimensions the system "sees" (populations)
-- $M_S \subseteq \{(i,j): i<j\}$ — which coherence moduli it captures
+- $M_S \subseteq \{(i,j): i<j\}$ — which coherence pairs support the profile
 - $\Phi_S \subseteq M_S$ — for which pairs it distinguishes phase
 - $\text{Res}_S \in \{\text{binary}, \text{discrete}, \text{continuous}\}$ — resolving power
+
+
+This profile does not yet define $\pi_S$: the output space, quantisation thresholds, phase convention and boundary rules must also be specified. A phase-only readout need not report a modulus; in that case $M_S$ records the supporting pair indices, not a claim that all their moduli are observed.
 
 ---
 
@@ -137,9 +148,9 @@ The chakra system defines a **thin category** (a category-order):
 
 $$\mathrm{Chak} = (\mathrm{Mu} \leq \mathrm{Sv} \leq \mathrm{Ma} \leq \mathrm{An} \leq \mathrm{Vi} \leq \mathrm{Aj} \leq \mathrm{Sa})$$
 
-This is a linearly ordered set (total order). The dimension space with [Fano structure](/docs/physics/gauge-symmetry/g2-structure) is **not an order**: it is incidence geometry $\mathrm{PG}(2,2)$ with non-linear relations (each point on 3 lines, each line through 3 points).
+The order is a thin category. The [Fano plane](/docs/physics/gauge-symmetry/g2-structure) instead specifies points, lines and incidence; its incidence poset has 14 objects, not just the 7 points. These structures must not be equated by their object counts.
 
-**Categorical incompatibility.** Any bijection $\phi: \mathrm{Obj}(\mathrm{Chak}) \to \mathrm{Obj}(\mathrm{Dim})$ **destroys** the non-linear Fano structure. A linear order cannot represent projective geometry: of the 7 Fano lines, none, in general, "respects" the order (i.e., none consists of three consecutive elements). This is an **information loss** that is inevitable when projecting from $\mathrm{PG}(2,2)$ to a linear chain.
+A bijection of the seven chakra labels with the seven points can **transport** the full ternary Fano relation. If only the linear order is retained, that extra relation has been forgotten. Consecutiveness in an order is a different relation from collinearity, so neither its presence nor absence proves categorical compatibility. A rigorous comparison declares the target relation and checks preservation using §1.1.
 
 ##### C. Tattva hierarchy
 
@@ -180,7 +191,7 @@ This candidate (denote it $\phi_0$) induces an order on dimensions: $O < E < D <
 
 | Fano line | Dimensions ($\phi_0$) | Positions in chakra order |
 |---|---|---|
-| $\{1,2,4\}$ | $\{A, S, L\}$ | $\{5, 6, 4\}$ — **not** adjacent |
+| $\{1,2,4\}$ | $\{A, S, L\}$ | $\{5, 6, 4\}$ — consecutive after sorting: $4,5,6$ |
 | $\{2,3,5\}$ | $\{S, D, E\}$ | $\{6, 3, 2\}$ — **not** adjacent |
 | $\{3,4,6\}$ | $\{D, L, U\}$ | $\{3, 4, 7\}$ — **not** adjacent |
 | $\{4,5,7\}$ | $\{L, E, O\}$ | $\{4, 2, 1\}$ — **not** adjacent |
@@ -188,7 +199,7 @@ This candidate (denote it $\phi_0$) induces an order on dimensions: $O < E < D <
 | $\{6,7,2\}$ | $\{U, O, S\}$ | $\{7, 1, 6\}$ — **not** adjacent |
 | $\{7,1,3\}$ | $\{O, A, D\}$ | $\{1, 5, 3\}$ — **not** adjacent |
 
-**Not a single** Fano line consists of three consecutive chakras. This confirms the categorical incompatibility (§B): the linear order of chakras is **orthogonal** to the Fano geometry.
+The first line occupies three consecutive positions; the other six do not. This calculation describes the chosen ordering. It neither prohibits adding Fano incidence to the chakra vocabulary nor establishes that its traditional relations are Fano relations.
 
 ##### F. Verification criteria
 
@@ -196,14 +207,13 @@ What could confirm or refute a specific mapping $\phi$?
 
 1. **Correlation test:** If $\phi$ is correct, activation of chakra $k$ should correlate with an increase in population $\gamma_{\phi(k)\phi(k)}$ (measurable via the [Gap-diagnostics protocol](/docs/applied/research/gap-diagnostics))
 2. **Tattva monotonicity:** The subtlety order of the tattvas should monotonically correspond to some computable characteristic of the dimensions (e.g., mean coherence or entropy)
-3. **Fano neutrality:** Since $\mathrm{Chak}$ is an order and $\mathrm{PG}(2,2)$ is not, a correct $\phi$ **must not** assert correspondences with Fano lines
+3. **Incidence test:** If a Fano relation is claimed, specify the independently observed ternary relation and verify that $\phi$ preserves it. A match of names or positions is insufficient.
 
 **Current status:** The mapping $\phi_0$ above is the **most widely discussed candidate**, but empirical verification has not been carried out. Alternative $\phi$ mappings (the remaining 119 bijections) have not been studied systematically.
 
-**What it sees (for any $\phi$):** The complete diagonal — all 7 populations.
-**What it loses:** All 42 coherences (21 moduli + 21 phases), the Fano structure, dynamics. It does not describe the *connections* between centres, only their individual "charge."
+**Under this population-readout hypothesis:** a protocol returning all seven populations determines the diagonal, with 6 independent values. It loses the 21 complex offdiagonal entries, hence 42 real coordinates. The Fano incidence of the fixed frame is background structure, not an additional state variable that a diagonal readout measures.
 
-**Structural observation.** Of all traditional systems, the chakra system is unique in containing **exactly 7 elements** — a number coinciding with the dimensionality of $\Gamma$. This is no coincidence: 7 is the dimensionality of the imaginary octonions $\text{Im}(\mathbb{O})$, which determines the minimal basis for (AP)+(PH)+(QG) ([Theorem S](/docs/proofs/minimality/theorem-minimality-7)).
+**Structural observation.** Sevenfold vocabularies, including chakras and alchemical metals, can be compared with the seven chosen dimensions. The equality $\dim\operatorname{Im}\mathbb O=7$ provides an algebraic candidate; it does not select a cultural bijection or establish its accuracy. The precise conditional bounds for the UHM dimension are stated in §5.2.
 
 #### Sufi Lataif (subtle centres)
 
@@ -213,7 +223,7 @@ What could confirm or refute a specific mapping $\phi$?
 
 **Projection:** A subset of the diagonal, typically 5 main ones: $\pi_{\text{lataif}}: \Gamma \mapsto (\gamma_{OO}, \gamma_{EE}, \gamma_{DD}, \gamma_{LL}, \gamma_{UU})$.
 
-**Note.** Variants with 7 Lataif are structurally isomorphic to the chakra system.
+**Note.** Seven-centre variants admit bijections with the chakra labels. Structural isomorphism would additionally require matching their specified relations and operations.
 
 #### The five skandhas (Buddhism)
 
@@ -251,7 +261,7 @@ These systems describe **connections** between dimensions.
 **Projection:**
 
 $$
-\pi_{\text{Tarot}}: \Gamma \mapsto \{21 \text{ coherences} + 1 \text{ zero element}\}
+q_{\text{Tarot}}(\Gamma)=(\lvert\gamma_{ij}\rvert)_{i<j}\in\mathbb R_{\geq0}^{21}
 $$
 
 | Card group | Elements of $\Gamma$ | Number |
@@ -259,7 +269,7 @@ $$
 | Cards I–XXI | 21 coherences $\lvert\gamma_{ij}\rvert$ ($i < j$) | 21 |
 | Card 0 (The Fool) | State $\Gamma \propto I/7$ (uniform, without coherences) | 1 |
 
-**What it sees:** Moduli of all 21 coherences (upper triangle).
+**Model readout:** the proposed vector records 21 moduli. The table assigns symbolic labels to its coordinates and a distinguished state. A single card draw does not return this vector; obtaining it requires an independently specified rating or measurement protocol. An actual card-output map $\pi_{\text{Tarot}}$ additionally needs a rule taking states to outcomes.
 **What it loses:** Populations (diagonal), phases (directedness of connections), dynamics.
 
 **Structural observation.** The number 22 = 21 + 1 coincides exactly with the number of off-diagonal elements in the upper triangle plus the trivial state. The "Fool" card (0) semantically describes pure potentiality — the state before discriminations — which corresponds to $\Gamma = I/7$.
@@ -271,10 +281,10 @@ $$
 **Projection:**
 
 $$
-\pi_{\text{Kabbalah}}: \Gamma \mapsto \{10 \text{ superpositions}; \, 22 \text{ connections}\}
+q_{\text{Kabbalah}}: \Gamma \mapsto (f_1(\Gamma),\ldots,f_{10}(\Gamma))\in\mathbb R^{10}
 $$
 
-The 10 sefirot are **not separate dimensions** but non-linear combinations (superpositions) of elements of $\Gamma$:
+The following ten candidate readouts mix populations and coherences. They are scalar functions, not vector superpositions; one formula must be selected wherever alternatives are listed:
 
 | Sefira | Approximate combination | Type |
 |---|---|---|
@@ -289,12 +299,9 @@ The 10 sefirot are **not separate dimensions** but non-linear combinations (supe
 | Yesod | $\gamma_{OO} + \lvert\gamma_{OE}\rvert$ | Mixed |
 | Malkuth | $\gamma_{SS}$ | Population |
 
-The 22 paths correspond to the 22 letters of the Hebrew alphabet and map onto a subset of coherences.
+The 22 paths are separate graph data: their endpoints, direction and correspondence to letters must be fixed for a chosen convention. They cannot inject into the 21 unordered offdiagonal pairs. Repeated readouts or additional typed relations are possible, but must be declared and checked by the contract in §1.1.
 
-**What it sees:** 10 of the 49 elements — mixed combinations of populations and coherences.
-**What it loses:** The majority of coherences (39 of 49 elements), phase structure, dynamics.
-
-**Structural observation.** Kabbalah is the only traditional system that *mixes* populations and coherences within single elements (sefirot). This makes the inverse projection $\pi_{\text{Kabbalah}}^{-1}$ the most complex of all.
+**What this candidate records:** ten scalar functions with at most ten locally independent outputs where differentiable; their actual rank can be lower. **What remains undetermined:** the fiber $q_{\text{Kabbalah}}^{-1}(y)\cap\mathcal D(\mathbb C^7)$, rather than “39 of 49 entries”. Recovery is a constrained completion problem, not an inverse function. Mixing populations and coherences is a legitimate modelling choice; its symbolic interpretation and graph compatibility remain to be tested.
 
 #### Enneagram
 
@@ -333,35 +340,30 @@ These systems discretise the continuous phase $\theta_{ij} \in [0, 2\pi)$ into a
 
 **Structure.** 64 hexagrams, each of 6 lines (yin/yang).
 
-**Projection:**
+**Candidate binary readout.** Fix six distinct pairs $M_6\subset\{(i,j):i<j\}$, a calibrated semantic basis, and the explicit convention $b(x)=+1$ for $x\geq0$, $b(x)=-1$ for $x<0$. Then
 
 $$
-\pi_{\text{IC}}: \Gamma \mapsto (\text{sgn}(\text{Re}(\gamma_{ij})))_{(i,j) \in M_6} \in \{-1, +1\}^6
+\pi_{\mathrm{IC}}(\Gamma)=\bigl(b(\operatorname{Re}\gamma_{ij})\bigr)_{(i,j)\in M_6}\in\{-1,+1\}^6.
 $$
 
-where $M_6$ is 6 pairs of dimensions (presumably without the U-dimension or with a fixed combination).
+A protocol may instead refuse at zero, but must not treat an undefined phase as measured. The present convention makes the function total and discontinuous at the sign boundary. The six pair indices must be supplied before the model is operational.
 
-| Property | Value |
+| Property | Exact content of this candidate |
 |---|---|
-| Number of elements | $2^6 = 64$ hexagrams |
-| Binary projection | $\text{sgn}(\text{Re}(\gamma_{ij}))$: yin (−) / yang (+) |
-| Number of dimensions | 6 of 7 (without U or with U encoded globally) |
+| Output alphabet | $2^6=64$ binary configurations |
+| Retained feature | Six real-part signs in the fixed basis |
+| Geometric support | Six pairs, which need not involve only six dimensions |
+| Omitted values | Populations, moduli and all distinctions within each sign cell |
 
-**What it sees:** The sign of the real part for 6 coherences — the coarsest binary phase information.
-**What it loses:** Phase continuity ($\theta \in [0, 2\pi)$ → 1 bit), the 7th dimension, moduli of all coherences, populations.
-
-**Structural observation.** The binary projection $\text{sgn}(\text{Re}(\gamma_{ij}))$ is equivalent to asking: "is the phase in the first or second semicircle?" — i.e., $\theta_{ij} \in (-\pi/2, \pi/2)$ (yang) or $\theta_{ij} \in (\pi/2, 3\pi/2)$ (yin). This is the maximally coarse discretisation of Gap: Gap < 1/√2 → "yang" (relative transparency), Gap > 1/√2 → "yin" (relative opacity).
+For a nonzero coherence, the sign is the sign of $\cos\theta_{ij}$. It is **not** a threshold of $\mathrm{Gap}_{ij}=\lvert\sin\theta_{ij}\rvert$: phases 0 and$\pi$ both have Gap 0 and opposite signs. A basis rephasing can alter the signs, so calibration is part of the contract. The exact Boolean structure of hexagrams does not select these six UHM readouts by itself.
 
 #### Numerology
 
-**Structure.** 9 base numbers (1–9), obtained by summing digits.
+**Structure.** Nine outcome labels, often obtained by a digit-sum convention.
 
-**Projection:** $\pi_{\text{numer}}: \Gamma \mapsto f(\sum_i \gamma_{ii}) \bmod 9 + 1$, where $f$ is a function depending on input data (date of birth, etc.).
+**Typing requirement.** A date-based rule has external input $d$ and the form $n(d)\in\{1,\ldots,9\}$. A state readout would instead require a declared function $g:\mathcal D(\mathbb C^7)\to\{1,\ldots,9\}$ and a tested bridge between the two. The former formula $f(\sum_i\gamma_{ii})$ is constant because $\operatorname{Tr}\Gamma=1$; it cannot distinguish states.
 
-**What it sees:** One number — the maximally coarse scalar projection.
-**What it loses:** Almost everything (48 → 1 parameter).
-
-**Structural observation.** Numerology is an example of a **critically degenerate** projection. Information capacity: $\log_2 9 \approx 3.2$ bits out of $48 \times \log_2(\text{Res})$, where Res is the resolving power. This does not mean uselessness: even 3 bits can capture a meaningful invariant if the projection is well chosen.
+A single nine-valued outcome has capacity at most $\log_2 9$ bits. Whether it captures a useful invariant depends on the function and data, not on the number 9 alone.
 
 ---
 
@@ -373,28 +375,25 @@ These systems describe **how connections between dimensions appear from outside*
 
 #### Western astrology
 
-**Structure.** ~50 elements: 10 planets × 12 signs × 12 houses + aspects between planets.
+**Structure.** A vocabulary of planets, signs, houses and aspects. Their counts describe several sorts of objects, not a single output dimension or an information capacity.
 
 **Projection:**
 
 $$
-\pi_{\text{astro}}: \Gamma \mapsto \{\lvert\gamma_{ij}\rvert, \, \text{discrete\_aspects}(\lvert\gamma_{ij}\rvert)\}_{i < j}
+q_{\mathrm{astro}}(\Gamma)=\bigl(\lvert\gamma_{ij}\rvert,Q_{ij}(\arg\gamma_{ij})\bigr)_{i<j}
 $$
 
-Planets map onto dimensions or their combinations; signs and houses — onto discretisation of moduli; aspects — onto discretisation of coherences:
+In this candidate interpretation, planets label dimensions or combinations, while $Q_{ij}$ is a specified phase quantiser, with refusal or a separate zero symbol when $\gamma_{ij}=0$. Identifying an astronomical angle with a coherence phase is an additional calibration hypothesis. Conditional on that identification, the following Gap values are trigonometric calculations:
 
 | Astrological aspect | Approximate Gap range |
 |---|---|
-| Conjunction (0°) | $\lvert\gamma_{ij}\rvert$ maximal, Gap ≈ 0 |
+| Conjunction (0°) | $\theta_{ij}\approx0$, Gap ≈ 0; modulus is not fixed |
 | Opposition (180°) | $\theta_{ij} \approx \pi$, Gap ≈ 0 (but Re < 0) |
 | Square (90°) | $\theta_{ij} \approx \pi/2$, Gap ≈ 1 |
 | Trine (120°) | $\theta_{ij} \approx 2\pi/3$, Gap ≈ √3/2 |
 | Sextile (60°) | $\theta_{ij} \approx \pi/3$, Gap ≈ √3/2 |
 
-**What it sees:** The upper triangle — external coherences through the symbolism of planets and aspects. Coarse phase discretisation (5–7 aspects from a continuous $[0, 2\pi)$).
-**What it loses:** The inner aspect ($\text{Map}_{\text{int}}$, lower triangle), phase dynamics, self-correction.
-
-**Structural observation.** Astrology is the **richest** of the traditional systems in number of elements (~50), but it captures only $\text{Map}_{\text{ext}}$. This explains its stability: external observations are more accessible than introspection.
+**What this model records:** selected moduli and quantised phases. **What it loses:** populations if omitted, distinctions within phase bins, and trajectories if only one state is observed. The complex upper triangle determines the lower triangle by Hermiticity; these are not independent sets of state coordinates. Whether the astronomical record supplies the proposed readout is not established by that algebraic identity.
 
 #### Human Design
 
@@ -409,14 +408,14 @@ $$
 | HD component | Elements of $\Gamma$ | Projection type |
 |---|---|---|
 | 9 centres | Subsets of populations $\gamma_{ii}$ | Diagonal (coarse) |
-| 36 channels | Subset of coherences $\lvert\gamma_{ij}\rvert$ | Moduli (partial) |
+| 36 channels | Candidate functions of coherences; not an injection into 21 pairs | Requires a typed graph/readout map |
 | 64 gates | Binary I Ching projection via astrological positions | Binary |
 | Type (4 types) | Coarse classification of overall profile | Scalar |
 
 **What it sees:** Part of the diagonal + part of the coherences through a synthesis of I Ching and astrology.
-**What it loses:** Full phase structure, $\text{Map}_{\text{int}}$, dynamics.
+**What it loses:** Unreported phase distinctions and dynamics; an independent internal state is not inferred from the missing entries.
 
-**Structural observation.** Human Design is an eclectic system — an attempt to increase the information capacity of the projection by combining several traditional systems. However, the combination of projections $\pi_A \oplus \pi_B$ is not equivalent to an extension — it can introduce contradictions if $\pi_A$ and $\pi_B$ project the same element of $\Gamma$ differently.
+**Composition.** Two maps from the same state space always form the product map $\Gamma\mapsto(\pi_A(\Gamma),\pi_B(\Gamma))$. Different outputs are not a contradiction. Inconsistency arises when independently supplied data have no common preimage under the stipulated maps; joint feasibility must be tested against those maps and the original observations.
 
 ---
 
@@ -434,14 +433,14 @@ Systems that describe not individual elements of $\Gamma$ but **equivalence clas
 
 | Alchemical concept | Projection in $\Gamma$ |
 |---|---|
-| 4 elements | 4 combinations of 2 axes: Hot/Cold × Dry/Moist ≈ $\text{sgn}(\gamma_{DD}), \text{sgn}(\gamma_{EE})$ |
+| 4 elements | 4 combinations of 2 axes: Hot/Cold × Dry/Moist ≈ $b(\gamma_{DD}-t_D),\ b(\gamma_{EE}-t_E)$ |
 | 3 principles | Triplet: Sulfur (D, active), Mercury (A, mediating), Salt (S, stable) |
 | 7 metals | 7 populations $\gamma_{ii}$, traditionally associated with planets |
 
 **What it sees:** 7 populations (via metals), a 4-cluster binary classification (via elements).
 **What it loses:** Coherences, phases, continuity.
 
-**Structural observation.** The alchemical seven metals (Au, Ag, Cu, Fe, Sn, Pb, Hg) → 7 planets → 7 dimensions is one of the oldest sevenfold classifications. The number 7 here is no coincidence: it reflects the fundamentality of $\dim(\text{Im}(\mathbb{O})) = 7$.
+**Structural observation.** Seven metals, seven traditional planets and seven UHM axes admit candidate bijections. Their meanings and relations require independent checks. The four-quadrant readout additionally needs fixed thresholds $t_D,t_E$ and a boundary convention $b$; the unshifted populations have no negative signs.
 
 #### Wu Xing (五行, Five Elements)
 
@@ -484,35 +483,41 @@ Systems that describe not individual elements of $\Gamma$ but **equivalence clas
 
 ## 4. Quantitative comparison {#количественное-сравнение}
 
-### 4.1 Information capacity
+### 4.1 Information capacity requires a protocol
 
-| System | Elements | Information (bits) | Of 48 parameters | Loss (%) |
-|---|---|---|---|---|
-| **Chakras** | 7 | ~21 (3 bits × 7) | 7 populations | 85% |
-| **Five skandhas** | 5 | ~15 | 5 populations | 90% |
-| **Wu Xing** | 5 + cycles | ~17 | 5 populations + 5 directed connections | 87% |
-| **Numerology** | 9 numbers | ~3.2 | 1 scalar invariant | 97% |
-| **Enneagram** | 9 + 18 | ~25 | ~9 clusters in 3D subspace | 82% |
-| **I Ching** | 64 | 6 | 6 binary signs from 21 phases | 88% |
-| **Tarot (Major)** | 22 | ~45 | 21 moduli + 1 trivial state | 53% |
-| **Kabbalah** | 32 (10+22) | ~50 | 10 mixed + 22 paths | 48% |
-| **Astrology** | ~50 | ~60 | Upper triangle + coarse phase | 42% |
-| **Human Design** | ~170 | ~70 | Hybrid of several projections | 38% |
-| **Runes** | 24 | ~33 | 21 coherences + 3 populations | 65% |
-| **Alchemy** | 7+4+3 | ~27 | 7 populations + 4 binary classes | 77% |
-| **UHM ($\Gamma$)** | **49** | **~144** | **All 48 parameters** | **0%** |
+For one record $Y$ taking at most $M$ values, $H(Y)\leq\log_2 M$. For $J$ jointly reported coordinates with at most $r$ levels each, $H(Y)\leq J\log_2 r$; constraints or correlations may reduce this bound. No percentage of “48 parameters lost” follows from either formula without a distribution and a common encoding precision.
 
-### 4.2 Structural comparison
+| System | Candidate record | Bound or missing specification |
+|---|---|---|
+| Chakras | Seven rated populations | At most $7\log_2 r$ bits for $r$ levels each; 6 independent continuous coordinates |
+| Five skandhas | Five rated populations | At most $5\log_2 r$ bits under that protocol |
+| Wu Xing | Five ratings and measured cyclic relations | Rate and relation protocols needed separately |
+| Numerology | One of 9 outcomes | At most $\log_2 9$ bits |
+| Enneagram | One of 9 types | At most $\log_2 9$ bits; additional ratings change the protocol |
+| I Ching | One of 64 hexagrams | At most 6 bits |
+| Tarot (Major) | One of 22 cards, or a separate 21-coordinate protocol | One card: at most $\log_2 22$ bits; not 21 measured moduli |
+| Kabbalah | Ten scalar readouts and a specified path graph | Precision and independence of readouts must be supplied |
+| Astrology | Positions and aspects with stated precision | A count of names does not bound the information in positions |
+| Human Design | A compound chart | Joint alphabet and dependencies must be supplied |
+| Runes | One of 24 labels, or a sequence | One label: at most $\log_2 24$ bits |
+| Alchemy | Seven ratings and a four-class label | Joint protocol and dependencies must be supplied |
+| UHM ($\Gamma$) | A density matrix in a fixed frame | 48 continuous interior coordinates; no finite Shannon value without quantisation and a distribution |
 
-| Parameter | I Ching | Astrology | Kabbalah | HD | Tarot | Chakras | **UHM** |
-|---|---|---|---|---|---|---|---|
-| Populations | 0/7 | Partial | 4/7 | Partial | 0/7 | **7/7** | **7/7** |
-| Coherence moduli | 0/21 | ~15/21 | ~8/21 | ~10/21 | **21/21** | 0/21 | **21/21** |
-| Phases | 6 bits | 5–7 discrete | 0 | 0 | 0 | 0 | **21 continuous** |
-| Ext/int duality | No | No | Partial | No | No | No | **Yes** |
-| Dynamics | Static | Cycles | Static | Static | Static | Static | **$d\Gamma/d\tau$** |
-| Self-correction | No | No | No | No | No | No | **Yes** ($\varphi$) |
-| Falsifiability | No | No | No | No | No | No | **Yes** |
+### 4.2 Structural comparison of the proposed readouts
+
+The following describes model variables, not an established measurement capability of each tradition.
+
+| Candidate | Populations | Coherences | Further obligation |
+|---|---|---|---|
+| Chakra readout | All 7 entries, 6 independent | None | Calibrate population ratings |
+| I Ching readout | None | Six real-part signs | Fix six pairs, basis and zero convention |
+| Tarot coordinate readout | None | 21 moduli | Supply a protocol returning the vector |
+| Kabbalah readout | Mixed with coherences | Ten scalar functions | Select formulas and verify the path map |
+| Astrological readout | Not in the displayed formula | Moduli and phase bins | Calibrate angles to phases |
+| HD composite readout | Depends on component maps | Depends on component maps | Verify joint feasibility and typed relations |
+| Full $\Gamma$ model | All 7 entries | All 21 complex entries | Positivity, calibration and specified dynamics |
+
+A static record does not determine dynamics or self-correction. Falsifiability concerns a specified hypothesis and protocol, not a privilege conferred by its vocabulary.
 
 ---
 
@@ -520,45 +525,36 @@ Systems that describe not individual elements of $\Gamma$ but **equivalence clas
 
 After analysing more than ten symbolic systems from different eras and cultures, two questions arise: (1) is the formalism $\Gamma$ sufficient to describe everything that these systems describe? and (2) is $\Gamma$ the minimal such formalism?
 
-### 5.1 Descriptive completeness [D] {#описательная-полнота}
+### 5.1 Predicate pullback [D] {#описательная-полнота}
 
-:::info Observation (Descriptive completeness) [D]
-For every predicate $P$ expressible in any of the listed symbolic systems, there exists a formula in terms of $\Gamma$:
-
-$$
-P = \pi_S(F_P(\Gamma))
-$$
-:::
-
-:::warning Epistemic status
-This observation is a **trivial consequence of definitions** (status [D]), not a substantive theorem. Each $\pi_S$ is defined as a map *from* $\Gamma$, so the expressibility of $P$ through $\Gamma$ is a tautology. The other two statements are non-trivial.
-:::
-
-### 5.2 Minimality of Γ [T] {#минимальность-гаммы}
-
-:::warning Claim (Minimality) [T]
-The matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is the **minimal** object unifying all the listed projections. More precisely: for any alternative formalism $\Gamma' \in \mathcal{D}(\mathbb{C}^{N'})$ admitting the same projections:
+If $\pi_S:X\to Y_S$ is a specified readout and $P:Y_S\to\{0,1\}$ a predicate on its records, then
 
 $$
-N' \geq 7
-$$
-:::
-
-**Proof.** By [Theorem S](/docs/proofs/minimality/theorem-minimality-7) [T]: $N = 7$ is the minimum dimensionality for (AP)+(PH)+(QG). Symbolic systems that describe autopoietic entities (chakras as "energy centres of a living being", Kabbalah as "the structure of the soul") implicitly assume all three conditions. Therefore $N' \geq 7$. $\blacksquare$
-
-### 5.3 Information-theoretic characterisation of loss [T] {#информационная-утрата}
-
-:::warning Theorem (Information loss bound) [T]
-For a projection $\pi_S: \mathcal{D}(\mathbb{C}^7) \to \mathcal{C}_S$ with $|\mathrm{Obj}(\mathcal{C}_S)| = M$ elements, the information loss is bounded below by:
-
-$$
-H(\Gamma | \pi_S(\Gamma)) \geq \log_2 \binom{48}{M} - M \cdot \log_2(\text{Res}_S)
+\widetilde P=P\circ\pi_S:X\to\{0,1\}.
 $$
 
-where $H(\cdot|\cdot)$ is the conditional entropy and $\text{Res}_S$ is the resolving power of the elements of system $S$.
-:::
+This is a well-typed pullback, not a theorem that every historical meaning has already been captured. Conversely, a state predicate $Q:X\to\{0,1\}$ factors through $\pi_S$ exactly when it is constant on every fiber of $\pi_S$. Necessity follows by applying the same output predicate to equal records; sufficiency follows by defining that predicate on each attained record using any representative of its fiber. Thus completeness is always relative to an explicitly chosen family of distinctions.
 
-**Corollary.** For binary systems ($\text{Res}_S = 2$, like I Ching): $H \geq \log_2 \binom{48}{6} - 6 \approx 16.7$ bits are lost out of $\sim 144$ bits at 3 decimal digits of resolution. This formalises the intuition of the table in §4.1.
+### 5.2 Conditional minimality {#минимальность-гаммы}
+
+The existence of symbolic readouts alone does not imply $N\geq7$. The [current minimality theorem](/docs/proofs/minimality/theorem-minimality-7) supplies two precise routes:
+
+1. A binary status code of minimum distance at least 3, whose radius-one balls partition the full cube, with more than 2 codewords, has length $N\geq7$. At $N=7$ the Hamming code attains this coding bound.
+2. A unital faithful $*$-representation of the **specified** algebra $\mathbb C\oplus M_3(\mathbb C)\oplus M_3(\mathbb C)$ in $M_N(\mathbb C)$ exists exactly when $N\geq7$: its three summands require dimensions at least 1,3,3.
+
+Transferring either bound to another architecture requires establishing its premises for that architecture. Calling an object “a living being” or “a soul”, or giving seven roles different names, does not establish those premises. The seven-dimensional UHM realization is a structured candidate; these conditional bounds do not prove that it is the unique encoding of all symbolic vocabularies.
+
+### 5.3 Information loss with an explicit distribution [T] {#информационная-утрата}
+
+Let $X$ be a finite-valued random state description and $Y=\pi_S(X)$ a deterministic readout taking at most $M$ values. Then
+
+$$
+H(X\mid Y)=H(X)-H(Y)\geq\max\{0,H(X)-\log_2M\}.
+$$
+
+**Proof.** Determinism gives $H(Y\mid X)=0$; the chain rule gives the equality, while $H(Y)\leq\log_2M$ and nonnegativity give the bound. For $J$ coordinates of at most $r$ levels each, use $M\leq r^J$. A hexagram carries at most 6 bits per record, but the actual loss still depends on $H(X)$ and on the map.
+
+There is no distribution-free positive lower bound: for a constant state both entropies are zero. A continuous density matrix requires a probability law and either a stated quantisation or a separately justified differential-entropy/information formulation. Its 48 real coordinates are not a fixed number of bits.
 
 ---
 
@@ -566,7 +562,9 @@ where $H(\cdot|\cdot)$ is the conditional entropy and $\text{Res}_S$ is the reso
 
 ### 6.1 Fano structure and natural projections
 
-The [Fano plane](/docs/proofs/gap/fano-channel) PG(2,2) defines 7 associative triplets. Coherences **within** Fano triplets are more stable than those between them. This explains why certain groupings of dimensions recur across cultures. This taxonomy is completed by a classification theorem — [T-256](/docs/applied/research/one-grammar#t-256): every symbolic system is a sub-configuration of PG(2,2), and there are only finitely many orbit types under the collineation group, so the recurrence of the same structures across unrelated cultures is a theorem, not a coincidence:
+The [Fano plane](/docs/proofs/gap/fano-channel) provides seven associative coordinate triplets in the chosen octonion frame. Every unordered pair belongs to exactly one line. Consequently, “within-triplet” and “between-triplet” coherences do not partition the 21 pairs. A stability statement needs an evolution generator and a comparison of specified perturbations or decay rates; it does not follow from incidence alone.
+
+The cultural labels in the following table are interpretations [I]. A finite classification of configurations under an incidence group can organise these candidates once their domain is specified, but does not prove that every historical symbolic system belongs to that domain or explain its prevalence.
 
 | # | Fano line | Dimensions | Cultural analogue |
 |---|---|---|---|
@@ -580,25 +578,17 @@ The [Fano plane](/docs/proofs/gap/fano-channel) PG(2,2) defines 7 associative tr
 
 *Index convention: $\{A, S, D, L, E, U, O\} = \{1, 2, 3, 4, 5, 6, 7\}$ — consistent with the [G₂-structure](/docs/physics/gauge-symmetry/g2-structure#12-таблица-фано-линий). Each line is a triplet $\{i, i{+}1, i{+}3 \bmod 7\}$.*
 
-**Observation.** The three Fano lines containing A (=1): $\{A, S, L\}$, $\{E, U, A\}$, $\{O, A, D\}$. The tripartite division "body–mind–spirit" is one of the most stable cross-cultural classifications. In UHM it follows from the fact that each dimension (in particular A) participates in exactly 3 Fano triplets — a fundamental property of PG(2,2).
+**Exact incidence fact.** The three lines through A are $\{A,S,L\}$, $\{E,U,A\}$ and $\{O,A,D\}$. The degree 3 of every point is a theorem of PG(2,2). The cultural interpretation “body–mind–spirit” is a proposed assignment to this structure, not a consequence of that degree.
 
-### 6.2 Why the sevenfold is stable
+### 6.2 The seven-dimensional algebraic candidate
 
-The number 7 appears in symbolic systems with inexplicable frequency: 7 chakras, 7 alchemical metals, 7 days of the week, 7 notes, 7 planets of antiquity, 7 deadly sins, 7 sacraments, 7 Lataif. Within UHM this has a precise explanation:
+For the octonions, $\dim\operatorname{Im}\mathbb O=7$. Hurwitz's theorem classifies finite-dimensional real **normed division algebras** up to isomorphism as $\mathbb R,\mathbb C,\mathbb H,\mathbb O$, with imaginary dimensions 0,1,3,7. It does not give a unique octonion basis or a theorem about the origins of sevenfold traditions. [Baez's exposition](https://math.ucr.edu/home/baez/octonions/node2.html) states the precise algebraic hypotheses. The conditional UHM dimension bounds in §5.2 require their own premises.
 
-$$
-\dim(\text{Im}(\mathbb{O})) = 7
-$$
+### 6.3 Which phase information a readout loses
 
-The seven imaginary units of the octonions $\{e_1, \ldots, e_7\}$ are the **unique** admissible basis for a division algebra over $\mathbb{R}$ (besides $\mathbb{R}, \mathbb{C}, \mathbb{H}$, which give 0, 1, 3 imaginary units). Hurwitz's theorem (1898) fixes the possible dimensions: 1, 2, 4, 8. The imaginary part dimensions: 0, 1, 3, 7. For a system with (AP)+(PH)+(QG), the minimum sufficient dimension is 7.
+Hermiticity gives $\gamma_{ji}=\overline{\gamma_{ij}}$. Thus the complete complex upper triangle and diagonal determine the entire state. A readout retaining only moduli loses phase distinctions, while a phase quantiser loses distinctions within its bins. These losses can be demonstrated by distinct positive states with the same readout; they do not establish an intrinsic impossibility of phase measurement.
 
-### 6.3 Why the duality is hidden
-
-No traditional symbolic system formalises the distinction between the **external** ($\gamma_{ij}$, upper triangle) and **internal** ($\gamma_{ji} = \gamma_{ij}^*$, lower triangle) aspect of coherence. The reason:
-
-The distinction between $\gamma_{ij}$ and $\gamma_{ji}$ is encoded in the **phase** $\theta_{ij} = \arg(\gamma_{ij})$. Phase is the most "fragile" parameter: it is the first to be destroyed when the observation is coarsened (dephasing). Traditional systems arose from introspective and phenomenological experience, which does not have sufficient resolution to register phase information.
-
-In the UHM formalism, the duality is realised through **Hermitian conjugation** $*: \gamma_{ij} \mapsto \gamma_{ji}$, which is a contravariant involutive functor in the $\dagger$-category of Hilbert spaces. [Gap](/docs/core/dynamics/gap-operator) $= |\sin(\theta_{ij})|$ is the precise measure of the divergence between external and internal.
+For nonzero coherences in the fixed semantic frame, [Gap](/docs/core/dynamics/gap-operator) is $\lvert\sin\theta_{ij}\rvert$. The conjugate entries express the two orientations of the same coherence; their interpretation as external and internal aspects is a semantic commitment of UHM. The dagger operation on Hilbert-space morphisms is a contravariant involution; that categorical statement does not turn a single matrix-entry assignment into a functor or an empirical theory of every tradition.
 
 ---
 
@@ -612,7 +602,7 @@ A number of cross-cultural phenomenological concepts admit formalisation through
 | **"Dark night of the soul"** | Saddle-node [Gap bifurcation](/docs/core/dynamics/gap-phase-diagram#бифуркации): loss of stable Gap profile | The stationary attractor disappears as parameters change |
 | **"Kundalini"** | Cascading activation of coherences bottom-up: $\gamma_{OE} \to \gamma_{OD} \to \gamma_{OS} \to \gamma_{OA}$ | The O-dimension sequentially connects with the others |
 | **"Synchronicity"** (Jung) | Inter-system $\text{Gap}_{AB}(i,j) \to 0$ for a specific channel | Two [holons](/docs/core/dynamics/composite-systems) temporarily resonate along one dimension |
-| **"Non-duality"** (Advaita) | Limit $\text{Gap} \to 0$ for all pairs | Theoretical limit; unreachable for non-trivial systems due to [topological Gap protection](/docs/core/dynamics/gap-phase-diagram#защита-gap) |
+| **"Non-duality"** (Advaita) | Limit $\text{Gap} \to 0$ for all pairs | Real-valued states attain this algebraically; a dynamical obstruction requires the additional conditions in §9 |
 | **"Mandala"** | Visualisation of the Gap profile (heat map $7 \times 7$) | Structured representation of 49 elements |
 | **"Karma"** | Non-Markovian memory kernel $K(\tau-s)$ in the [integro-differential equation](/docs/core/dynamics/gap-phase-diagram#немарковские-осцилляции) of Gap dynamics | Past configurations influence current evolution through the memory kernel |
 | **"Dharma"** (Buddha) | Attractor $\Gamma^*$ of the evolution equation: the stationary state toward which the system tends as $\tau \to \infty$ | The structure of the equation itself, not a specific configuration |
@@ -623,57 +613,49 @@ A number of cross-cultural phenomenological concepts admit formalisation through
 
 Having analysed more than ten symbolic systems — from the most ancient (chakras, I Ching, alchemy) to modern ones (Human Design, Enneagram) — we can formulate general patterns: why symbolic systems are structured as they are, and what they inevitably cannot describe.
 
-### 8.1 Three laws of symbolic systems
+### 8.1 Three precise principles
 
-Based on the analysis carried out, three structural laws are formulated:
+**1. Readout loss.** A finite-valued record cannot distinguish the continuum of all states. A continuous readout of fewer than 48 real coordinates cannot distinguish the full interior. Neither statement says that a specified finite family of decisions cannot be preserved exactly.
 
-**Law 1 (Inevitability of projection).** Any finite descriptive system with fewer than 48 elements is a non-injective projection of $\Gamma$. Information loss is not a defect of the system but a consequence of the dimensionality theorem.
+**2. Structural preservation.** A proposed Fano correspondence must preserve the declared incidence relation; an executable correspondence must also preserve definedness and action composition. These are checkable obligations, not consequences of the number 7.
 
-**Law 2 (Fano structure of projections).** Stable symbolic systems project onto subspaces that respect the Fano structure PG(2,2). Tripartite divisions (body/psyche/spirit; Sulfur/Mercury/Salt; etc.) reflect the 3-element Fano triplets in which coherences are most stable.
+**3. Relative completeness.** A family of observations factors through a readout exactly when each observation is constant on its fibers. A new distinction may require a richer record. This identifies the specific information an interface must retain rather than assigning an unsupported universal loss percentage.
 
-**Law 3 (Inaccessibility of duality).** The distinction between $\text{Map}_{\text{ext}}$ and $\text{Map}_{\text{int}}$ (encoded by phase $\theta_{ij}$) systematically eludes traditional symbolic systems, since phase information requires the greatest resolving power of the observer.
+### 8.2 What can remain hidden
 
-### 8.2 What lies behind "occultism"
+The fiber $\pi_S^{-1}(y)$ is the set of model states compatible with a record. When it contains states with different values of a requested observable, that observable is not identifiable by this protocol. For example, modulus data alone may leave phase ambiguous. Supplying a complete formal state space describes this ambiguity but does not by itself recover the actual state.
 
-The word "occult" derives from the Latin *occultus* — "hidden." Symbolic systems are perceived as "occult" (hidden) for two reasons, which UHM allows to formalise precisely:
+The external/internal interpretation of UHM coherences is distinct from this statistical identifiability question. An imaginary part is not mathematically unobservable merely because it changes sign under conjugation. Its operational accessibility depends on the measurement model.
 
-1. **Epistemological:** The projection $\pi_S$ loses information, but the practitioner of system $S$ does not know what exactly has been lost. The recovery $\pi_S^{-1}$ is ambiguous, creating the illusion of "mystery."
+### 8.3 Descriptive coherence and testing [I]
 
-2. **Ontological:** The [Gap](/docs/core/dynamics/gap-operator) between external and internal ($|\sin(\theta_{ij})| > 0$) means that full reality *in principle* cannot be reduced to external observation. There is a part of reality (Im($\gamma_{ij}$)) inaccessible through $\text{Map}_{\text{ext}}$. This is the formalisation of the intuition underlying all esoteric traditions.
+A proposed correspondence is useful when it preserves substantive, independently specified distinctions and operations. The tables supply candidates for that task. Predicate pullback (§5.1) does not prove that every phenomenological claim of every tradition is captured.
 
-UHM **removes** the first reason (by providing a complete formalism) and **explains** the second (Gap is a precisely defined measure of the "hidden").
-
-### 8.3 Descriptive coherence and its limitations [I]
-
-:::info Observation (Descriptive coherence) [I]
-UHM is capable of deriving every phenomenological predicate of every analysed symbolic system through the unified formalism $\Gamma \in \mathbb{C}^{7 \times 7}$. This is a **necessary** condition for the adequacy of the theory (if $\Gamma$ could not express the known systems, the theory would be incomplete), but **not a sufficient** condition for its truth (descriptive coherence is not the same as predictive power).
-:::
-
-**Limitations of this analysis:**
-
-1. **Arbitrariness of projections.** The specific identifications (chakra ↔ dimension) are hypotheses [I], not theorems. For each symbolic system there exist $k!$ possible bijections, of which one "most justified" is chosen. Without empirical verification the choice remains speculative.
-
-2. **Retrospectiveness.** The analysis was carried out *after* the theory was formulated. Predictive power requires the theory to predict the structure of *unknown* symbolic systems or new properties of *known* ones.
-
-3. **Risk of overfitting.** 48 free parameters of $\Gamma$ against 12 systems analysed is a high parameter-to-data ratio. Strict verification criteria are needed (see the [research programme](/docs/applied/research/symbolic-correspondence#программа)).
-
-**Popper criterion.** The analysis would be *falsified* if a stable symbolic system were found that requires $> 7$ independent parameters to describe, or that is incompatible with any projection $\pi_S$ from $\Gamma$.
+Tests must fix the maps, output protocols, noise assumptions and target predictions before evaluating held-out data. An observed violation of a claimed relation or commuting action diagram refutes that particular structural map. Failure of its registered empirical predictions challenges the calibrated model. Counting more than 7 real parameters is not a refutation of a state space with 48 real coordinates; arbitrary post-hoc remappings cannot substitute for such tests.
 
 ---
 
-## 9. Five types of Gap irreducibility [Т/Г] {#защита-gap}
+## 9. What would establish a Gap obstruction? {#защита-gap}
 
-Analysis of symbolic systems reveals a fundamental fact: no tradition has described the state of "complete transparency" (Gap = 0 for all pairs) as realisable. In UHM this follows from **five independent** mechanisms of Gap ineliminability:
+**Counterexample to unconditional ineliminability [T].** Let $J$ be the all-ones $7\times7$ matrix and
 
-| Type | Mechanism | Source | Status |
-|---|---|---|---|
-| 1. Code-theoretic | Hamming bound H(7,4): ≥ 3 of 21 Gaps are non-zero | [Coding theory](/docs/proofs/gap/fano-channel) | [I] |
-| 2. Algebraic | Octonionic associator $[e_i, e_j, e_k] \neq 0$ generates a phase shift | [Octonionic structure](/docs/proofs/minimality/theorem-octonionic-derivation) | [H] |
-| 3. Energetic | Spontaneous minimum $V_{\text{Gap}} \neq 0$ from cubic potential $V_3$ | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) | [H] |
-| 4. Categorical | Lawvere's theorem: the fixed point of self-modelling is non-trivial | [φ-operator](/docs/core/operators/phi-operator) | [H] |
-| 5. Topological | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$: some Gap configurations cannot be continuously contracted | [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) | [H] |
+$$
+\Gamma_\varepsilon=I/7+\varepsilon(J-I),\qquad0<\varepsilon<1/7.
+$$
 
-**Conclusion.** Complete transparency (absence of the "hidden") is mathematically impossible for a non-trivial 7D octonionic system. This explains why all symbolic traditions point to the "incomprehensible" — not as a metaphor but as a structural property of reality.
+Its eigenvalues are $1/7+6\varepsilon$ once and $1/7-\varepsilon$ six times, so it is positive definite with trace 1. All 21 offdiagonal entries equal the nonzero real number $\varepsilon$. Every phase and every pairwise Gap is zero. Thus seven-dimensional octonionic background structure alone does not forbid zero-Gap density matrices.
+
+A theorem excluding such states from a specified **viable dynamical regime** needs additional assumptions. The following are distinct research obligations:
+
+| Proposed source | Required bridge to a Gap obstruction |
+|---|---|
+| Hamming code | Define the map from a seven-bit code to 21 pair phases and prove the claimed phase constraint; minimum Hamming distance alone supplies none |
+| Octonion associator | Specify how the nonassociative product enters the evolution of $\Gamma$ and forces a nonzero phase |
+| Energetic potential | Establish its admissible domain, minima and stability; a stipulated potential is not a universal constraint on density matrices |
+| Self-modelling/fixed points | Prove a phase constraint for the chosen self-model; a fixed-point theorem alone does not require a nonzero Gap |
+| Topological sector | Define the configuration map, boundary conditions, nontrivial sector and allowed homotopies; an ambient nonzero homotopy group does not place every configuration in a nontrivial sector |
+
+The corresponding [dynamical and topological models](/docs/core/dynamics/gap-phase-diagram) must be read with those premises. None of these mathematical questions establishes a universal historical claim about what all symbolic traditions regarded as attainable.
 
 ---
 
@@ -685,17 +667,17 @@ If UHM is everything and everything derives from it — where exactly does a sym
 
 ### 10.1 The claim [О/И]
 
-A symbolic system is not part of the $\Gamma$-formalism and not an approximation of it. It is an **interface that an emergent level builds to the core**: a finite vocabulary in which one holon at one rung of the cosmic nesting — Earth → planetary system → galactic arm → Galaxy → … — reads its own state against the *shared clock of its neighbourhood*. Three structural facts force this placement:
+A symbolic system can be modelled as an **interface that an emergent level builds to the core**: a finite vocabulary in which one holon at one rung of the cosmic nesting — Earth → planetary system → galactic arm → Galaxy → … — reads its own state against the *shared clock of its neighbourhood*. For the clock-based subclass, three modelling considerations motivate this placement:
 
-1. **The vocabulary is tied to the rung, not to the core.** Every traditional system samples the *local sky*: the bodies visible from Earth, their periods, their returns. The core ($\Gamma$, the 21 coherences, the thresholds) contains no ephemerides — the [lattice theorems](/docs/applied/research/homoholograph#x-lattices) prove the traditional grids (nakshatras, padas, navamshas) do **not** embed in the native lines, and the [era analysis of Human Design](/docs/applied/research/human-design#эпохи) shows its "constants" are functions of the outer planets' epoch — properties of the neighbourhood, not of the person.
+1. **The vocabulary is tied to the rung, not to the core.** The astronomical traditions considered here sample the *local sky*: the bodies visible from Earth, their periods, their returns. The core ($\Gamma$, the 21 coherences, the thresholds) contains no ephemerides — the [lattice theorems](/docs/applied/research/homoholograph#x-lattices) prove the traditional grids (nakshatras, padas, navamshas) do **not** embed in the native lines, and the [era analysis of Human Design](/docs/applied/research/human-design#эпохи) shows its "constants" are functions of the outer planets' epoch — properties of the neighbourhood, not of the person.
 2. **Geocentrism is a reference frame, not an error.** "Earth as the ship, I at the centre" is the *correct covariant choice* for a holon whose body rides this planet: an ephemeris is the shared atlas-clock of the local nesting (the [blueprint](/docs/applied/research/prime-radiant#чертёж) row "astrology = deterministic shared clock"), and the [geo-layer](/docs/applied/research/homoholograph#часть-xxii-углы-места) reads *place* as a re-calibration of the same frame. A holon riding a different body — or none — would build a different atlas with the same functor.
-3. **The projection functor is generic.** Nothing in the construction $\pi_S: \Gamma \to \mathcal{C}_S$ (§1) mentions humans or Earth. For **any** holon at **any** rung, the same machinery — take the neighbourhood's periodic structure, build the shared clock, project the state — yields "an astrology of that nestedness". The bridges and the full holonomy of computation are derivable for people *and for anything else*; what changes between rungs is only the atlas.
+3. **The interface can be parameterised by its environment.** A proposed clock-based interface can take environmental periods and observations as inputs in addition to $\Gamma$. Applying it to another holon requires an operational encoding and the structural contract of §1.1. The formal possibility of these inputs does not prove that every environment supplies a suitable clock or that the same calibrated readout transfers.
 
-### 10.2 What this predicts and what it forbids [I]
+### 10.2 Research commitments [I]
 
-- **Predicts:** any stable symbolic tradition, anywhere, decomposes as *Encoder + shared Atlas-clock + compact alphabet* (the blueprint organs) — and its "empirical constants" are epoch- and place-functions of its rung. Both decompositions have now been verified on the two richest Earth traditions (HD dissected; the jyotish reconstruction programme).
-- **Forbids:** a symbolic system that reads the core *directly* — i.e., a finite vocabulary that beats the [dimensionality theorem](#таксономия) or extracts the phase layer without instrumentation. Also forbids "one true zodiac": rung-interfaces are plural by construction; the question "which system of longitudes is real?" dissolved empirically into a null ([the optics duel](/docs/applied/research/homoholograph#x-oracle)).
-- **Locates the native system:** the [Γ-Canon](/docs/applied/research/gamma-canon) and the native seasons layer are *not another tradition* — they are the interface built **from the core outward** (voices and coherences as the alphabet, the same local atlas as the clock). That is why the native system is "more elegant and more expressive in every sense": it is the unique interface whose alphabet is theorem-forced (§8.1, Law 2; [Σ-rigidity](/docs/applied/research/syndrome-calculus#теорема-сигма)) rather than inherited from one rung's sky.
+- **Clock-based interfaces:** test the decomposition *Encoder + environmental atlas-clock + alphabet* on systems for which time/place observations are part of the declared input. Extending it to non-astronomical traditions requires a separate argument.
+- **Expressive limits:** a finite record cannot recover every continuous state distinction. It can still preserve specified observables exactly, including selected phase distinctions, when its protocol measures them.
+- **Native construction:** the [Γ-Canon](/docs/applied/research/gamma-canon) builds an interface from declared UHM structures. Its advantage is that incidence, coding and action obligations can be checked directly. Uniqueness, superiority of every readout, and empirical calibration do not follow from that construction alone.
 
 ### 10.3 Status honesty
 
@@ -715,3 +697,5 @@ The *placement* (emergent interface, not core) is [D]-convention resting on [T]-
 - [Symbolic correspondences](/docs/applied/research/symbolic-correspondence) — operationalisation
 - [Fano channel](/docs/proofs/gap/fano-channel) — associative triplets and codes
 - [Theorem on minimality N = 7](/docs/proofs/minimality/theorem-minimality-7) — why 7
+
+- [Structural correspondences](/docs/applied/research/structural-correspondence) — typed relation/action maps and exact finite examples

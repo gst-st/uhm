@@ -1,0 +1,46 @@
+{
+  "zero_gap_counterexample": {
+    "epsilon": "1/28",
+    "eigenvalues": {
+      "one": "5/14",
+      "six": "3/28"
+    },
+    "trace": "1",
+    "all21coherences_real_nonzero": true
+  },
+  "formula_checks": {
+    "en": 270,
+    "ru": 269,
+    "all_katex_parsed": true
+  },
+  "sections": {
+    "en": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "ru": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "source_sha256": {
+    "website/docs/core/structure/symbolic-systems.md": "f4ac3ff94ea3be056d828508291936759f7c23da799b4dd80176e449d8327942",
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/structure/symbolic-systems.md": "955179c502c76f0ae78dc86068acd88c9dbe4766386c7e13cf3cf03e294e4c71"
+  }
+}

@@ -15,7 +15,7 @@ Operationalization of bridges between symbolic systems and the Gap formalism: th
 Operationalization of bridges between [symbolic systems](/docs/core/structure/symbolic-systems) and the Gap formalism: the back-projection protocol, specific correspondence tables, and an empirical verification program.
 
 :::warning Status [P] — with an execution ledger
-The correspondence tables are constructive; the verification programme of §6 was written before any instrument ran. Since then a substantial part of it **has been executed** in the holon laboratory — see §0 for what is now measured, what died, and what replaced the original designs. Sections 6–7 are kept as the original pre-registration record.
+The correspondence tables are constructive; the verification programme of §6 was written before any instrument ran. Since then a substantial part of it **has been executed** in the holon laboratory — see §0 for what is now measured, what died, and what replaced the original designs. Section 6 retains the historical proposed protocol with an explicit correction; §7 supplies the revised joint-consistency contract.
 :::
 
 ## 0. Execution state (2026-08) {#состояние}
@@ -34,90 +34,57 @@ The programme below was drafted for interview-based instruments. The laboratory 
 
 ---
 
-## 1. Back-Projection Protocol {#обратная-проекция}
+## 1. Back-projection as a constrained inverse problem {#обратная-проекция}
 
 ### 1.1 Task
 
-For a description in terms of symbolic system $S$, recover the Gap profile:
+First specify the projection, its domain and its [structural-role contract](/docs/applied/research/structural-correspondence). For an observation $c$ in system $S$, the inverse object is a fibre, which may be empty:
 
 $$
-\pi_S^{-1}: \mathcal{C}_S \to \text{Hol}
+\mathcal F_S(c)=\{\Gamma\in\mathcal D(\mathbb C^7):\pi_S(\Gamma)=c\}.
 $$
 
-:::warning Warning
-The back-projection $\pi_S^{-1}$ is **not unique** — projection loses information. Recovery is defined up to the kernel $\ker(\pi_S)$.
-:::
+It is a set of compatible states, not an inverse function. A nonlinear projection has equivalence classes of indistinguishable states, not generally a linear kernel. Empty means incompatible constraints; several states mean incomplete identification. A chosen representative must retain this distinction.
 
 ### 1.2 Algorithm
 
-1. **Input:** Description in terms of system $S$ (birth chart, hexagram, spread, etc.)
-2. **Mapping:** Translation of elements of $S$ into components of $\Gamma$ via the correspondence table (§2–4)
-3. **Completion:** Recovery of missing components of $\Gamma$ via:
-   - [Fano constraints](/docs/physics/gauge-symmetry/fano-selection-rules) (coherences on the same Fano line are linked)
-   - Positive semidefiniteness condition $\Gamma \geq 0$
-   - Minimization of [information entropy](/docs/core/dynamics/gap-thermodynamics) under the given constraints
-4. **Output:** Full [transparency map](/docs/applied/research/gap-diagnostics) $7 \times 7$
-
-### 1.3 Worked Example: Three-Card Spread [I] {#пример-расклад}
-
-We demonstrate the algorithm on a concrete three-card Tarot spread.
-
-#### Step 1. Input
-
-A three-card spread (past / present / future):
-
-| Position | Card | Number |
-|----------|------|--------|
-| Past | The Fool | 0 |
-| Present | The Lovers | VI |
-| Future | The Tower | XVI |
-
-#### Step 2. Mapping via Table (§4)
-
-Each arcanum maps to an element of $\Gamma$ according to the canonical correspondence (§4.1):
-
-- **The Fool (0):** $\Gamma \propto I/7$ — fully decohered state, all coherences equal zero. In the context of the spread this is not a separate coherence, but a **reference state** — the point of maximum entropy.
-- **The Lovers (VI):** $\gamma_{AE}$ — coherence between [Articulation](/docs/core/structure/dimension-a) and [Interiority](/docs/core/structure/dimension-e). Semantics: *discernment through experience*, choice based on inner feeling.
-- **The Tower (XVI):** $\gamma_{DS}$ — coherence between [Dynamics](/docs/core/structure/dimension-d) and [Structure](/docs/core/structure/dimension-s). Semantics: *destruction of form through action*, catastrophic collapse of a stable structure.
-
-#### Step 3. Forming the Partial Profile
-
-Two coherences and one reference state are directly specified by the spread. We write:
+1. **Input:** retain the description, its source and time, and the particular symbolic convention.
+2. **Translation:** derive constraints only through the declared correspondence. A card name or narrative supplies no measured numerical coherence by itself.
+3. **Feasibility:** impose Hermiticity, trace one and positive semidefiniteness, then the translated constraints. Add Fano-dependent restrictions only when an explicit model supplies them; incidence alone does not fill entries.
+4. **Completion:** for a nonempty compact convex feasible set with affine observation constraints, a possible completion is
 
 $$
-\text{Known: } |\gamma_{AE}| > 0, \quad |\gamma_{DS}| > 0, \quad \text{background} = I/7
+\Gamma^*=\operatorname*{arg\,max}_{\Gamma\in\mathcal F_S(c)}S(\Gamma),\qquad
+S(\Gamma)=-\operatorname{Tr}(\Gamma\ln\Gamma).
 $$
 
-The temporal ordering of the spread defines a **dynamic trajectory**:
+Continuity gives existence and strict concavity gives a unique maximizer. This selects a maximum-entropy representative; it does not establish that the person's state equals it. Open sign constraints or nonlinear constraints need separate existence/uniqueness analysis. Minimizing entropy would instead favour concentrated states and is not this prescription.
+
+5. **Output:** report the feasible constraints, uncertainty, selection rule, and the resulting [transparency map](/docs/applied/research/gap-diagnostics). Predictions require a calibrated observation/dynamics model.
+
+### 1.3 Worked example: three-card spread [I] {#пример-расклад}
+
+Consider the ordered narrative “The Fool; The Lovers; The Tower”. Under the illustrative convention of this chapter, these point to the reference state $I/7$, the pair $AE$ and the pair $DS$. Their native roles remain the [canonical UHM coherence roles](/docs/core/dynamics/coherence-matrix): the narrative interpretations “choice” or “destruction” are extra hypotheses about their context and evolution.
+
+The ordering supplies three narrative positions. It does not measure a trajectory $\Gamma(t)$, and a reference background $I/7$ must not be imposed as the exact same state as nonzero off-diagonal entries. Suppose a separate, declared observation procedure supplies $\gamma_{AE}=c_1$ and $\gamma_{DS}=c_2$. Then
 
 $$
-\Gamma(t_0) \approx I/7 \;\xrightarrow{\text{activation } \gamma_{AE}}\; \Gamma(t_1) \;\xrightarrow{\text{activation } \gamma_{DS}}\; \Gamma(t_2)
+\mathcal F=\{\Gamma\succeq0:\operatorname{Tr}\Gamma=1,
+\ \gamma_{AE}=c_1,\ \gamma_{DS}=c_2\}
 $$
 
-Interpretation: the system started from an undifferentiated state (The Fool), passed through a phase of articulatory-interiority coupling (The Lovers), and is moving toward the destruction of structural-dynamic coherence (The Tower).
+is the affine feasibility problem to solve. If nonempty, maximum entropy chooses one completion. The cards do not determine $c_1,c_2$ or a percentage of the 48 real parameters.
 
-#### Step 4. Completion via Fano Constraints
-
-The coherences $\gamma_{AE}$ and $\gamma_{DS}$ lie on **different** [Fano lines](/docs/physics/gauge-symmetry/fano-selection-rules). However, the Fano geometry $\mathrm{PG}(2,2)$ links coherence triplets: if two of the three on one line are known, the third is constrained. In this case:
-
-- The line containing $\gamma_{AE}$ also contains coherences with $O$ and $U$ (depending on the specific line). Fano condition: $\gamma_{AE} \cdot \gamma_{EO} \cdot \gamma_{AO}$ satisfies closure.
-- The line containing $\gamma_{DS}$ links $D$, $S$, and a third dimension. An analogous constraint.
-
-The remaining 19 coherences are recovered via:
+In the named Fano convention used by the corpus, $AE$ belongs to $\{A,E,U\}$ and $DS$ to $\{S,D,E\}$. Their triples are different and share $E$. A precise joint restriction comes from the $3\times3$ principal determinant, for any triple $(i,j,k)$:
 
 $$
-\Gamma^* = \arg\min_{\Gamma \geq 0} S(\Gamma) \quad \text{subject to } \gamma_{AE} = c_1, \; \gamma_{DS} = c_2, \; \text{Tr}(\Gamma) = 1
+\gamma_{ii}\gamma_{jj}\gamma_{kk}
++2\operatorname{Re}(\gamma_{ij}\gamma_{jk}\gamma_{ki})
+-\gamma_{ii}|\gamma_{jk}|^2-\gamma_{jj}|\gamma_{ik}|^2
+-\gamma_{kk}|\gamma_{ij}|^2\ge0.
 $$
 
-where $S(\Gamma) = -\text{Tr}(\Gamma \ln \Gamma)$ — von Neumann entropy. The maximum entropy principle under fixed constraints gives the **least biased** completion.
-
-#### Step 5. Output
-
-The result is a partial [transparency map](/docs/applied/research/gap-diagnostics) of size $7 \times 7$ with two "highlighted" coherences ($\gamma_{AE}$, $\gamma_{DS}$) and an entropy background for the rest.
-
-:::warning Example Limitations
-Three cards out of 22 specify only $\sim 10\%$ of the information about the coherence profile. A full spread (e.g., Celtic Cross, 10 cards) provides substantially more constraints, but it too does not recover $\Gamma$ uniquely due to the loss of phases and the diagonal (see §4.2).
-:::
+This constrains the third coherence when enough of the other quantities are specified, but does not guarantee unique recovery in general. Typically two pair values leave a family of matrices; on the PSD boundary special data can force a unique completion. For example, if all three populations and the first two coherences equal $1/3$, this determinant becomes $-|\gamma_{ki}-1/3|^2/3$, forcing $\gamma_{ki}=1/3$. Identifying a state still does not identify its dynamics. The explicit cycle and support conditions are developed in [structural correspondence §5](/docs/applied/research/structural-correspondence#фазовые-циклы).
 
 ---
 
@@ -142,6 +109,8 @@ Three cards out of 22 specify only $\sim 10\%$ of the information about the cohe
 | Aquarius | $(A, U)$ | Air | Articulation-Unity: holistic vision |
 | Pisces | $(S, U)$ | Water | Structure-Unity: dissolution into wholeness |
 
+The table is a semantic proposal. Its $3\times4$ cardinality does not establish preservation of the zodiac circle, triplicities or modalities. In particular, the split $\{A,S,D\}$ is not a line of the named Fano convention. The [structural comparison](/docs/applied/research/structural-correspondence#зодиак) gives an exact cyclic/product model and states precisely when an additional Fano requirement is compatible.
+
 ### 2.2 Elements
 
 | Element | Triplet dimension | Characteristic |
@@ -155,30 +124,34 @@ Three cards out of 22 specify only $\sim 10\%$ of the information about the cohe
 
 ## 3. I Ching Hexagrams [I] {#гексаграммы}
 
-### 3.1 Principle
+### 3.1 Explicit candidate map
 
-64 hexagrams = $2^6$ binary signatures of 6 of the 7 [dimensions](/docs/core/structure/dimensions) (excluding $U$):
+Six ordered binary line positions give 64 patterns. To map them to Gamma, six observations must actually be chosen. One possible UHM-side convention is
 
 $$
-\pi_{\text{yijing}}(\Gamma) = \left(\text{sgn}(\text{Re}(\gamma_{ij}))\right)_{(i,j) \in \mathcal{S}_6}
+M_6=((O,U),(E,U),(L,U),(D,U),(S,U),(A,U)),\qquad
+b_k(\Gamma)=\begin{cases}1,&\operatorname{Re}\gamma_{M_6(k)}>0,\\0,&\operatorname{Re}\gamma_{M_6(k)}<0.\end{cases}
 $$
 
-Each line (yin/yang) = the sign of the real part of the coherence.
+This is a partial map: zero real parts are unresolved unless an explicit boundary convention or measurement interval is supplied. It reads six pair-to-unity relations; it does not discard U or equate six coherences to six dimensions. The assignment of line positions to these pairs is an interpretation [I], not derived from the count 64. Its compatibility with line changes, reversal and the two-trigram decomposition is a separate structural check.
 
-### 3.2 Example
+All 64 sign patterns are realizable in a fixed complex frame. For $s_j\in\{-1,1\}$ and $0<\epsilon<1/(7\sqrt6)$, let
 
-| Line | Pair | Yang ($\text{Re} > 0$) | Yin ($\text{Re} < 0$) |
-|------|------|----------------------|----------------------|
-| 1 (bottom) | $O$ | Active ground | Hidden ground |
-| 2 | $E$ | Open experience | Suppressed experience |
-| 3 | $L$ | Clear logic | Confused logic |
-| 4 | $D$ | Active dynamics | Stagnation |
-| 5 | $S$ | Stable structure | Instability |
-| 6 (top) | $A$ | Clear articulation | Inexpressiveness |
+$$
+\Gamma_s=I/7+\epsilon\sum_{j\ne U}s_j(E_{jU}+E_{Uj}).
+$$
 
-### 3.3 Information Loss
+Its eigenvalues are $1/7+\sqrt6\epsilon$, $1/7-\sqrt6\epsilon$ and $1/7$ with multiplicity five; it is positive definite and its six signs are the chosen pattern. This proves representability of the bit patterns by the selected readout. Every nonzero coherence here is real and has zero Gap, despite the different signs. Moreover diagonal sign changes relate all these matrices, so the distinction requires the retained frame; it disappears if those rephasings are quotiented out.
 
-I Ching loses: (a) phase continuity $\theta \in [0, 2\pi)$ → binary projection; (b) the 7th dimension $U$ (Unity); (c) all imaginary parts $\text{Im}(\gamma_{ij})$ — the entire Gap profile.
+### 3.2 Interpretation and transitions
+
+The component of a line is the named role of its pair in the [coherence vocabulary](/docs/core/dynamics/coherence-matrix). “Positive” and “negative” here are signs of a real component, not automatic judgments of healthy/unhealthy or clear/confused. Neither sign determines $|\sin\theta|$: phases $0$ and $\pi$ have opposite real signs and the same zero Gap.
+
+The stronger exact bridge uses the bit-pattern structure $\mathbb F_2^3\times\mathbb F_2^3$, and then checks which operations survive its alignment with Fano incidence. See [trigrams and structural roles](/docs/applied/research/structural-correspondence#триграммы).
+
+### 3.3 Information retained
+
+One completed six-bit output has at most 6 bits of Shannon entropy. It does not encode the populations, coherence magnitudes or full phases. A percentage of information loss needs a distribution, quantization and observation protocol; counting cards, lines or matrix entries does not provide it.
 
 ---
 
@@ -216,7 +189,7 @@ The table below is **one of 120 possible** bijections of the middle chakras onto
 | Ajna | $S$ ([Structure](/docs/core/structure/dimension-s)) | $\gamma_{SS}$ |
 | Sahasrara | $U$ ([Unity](/docs/core/structure/dimension-u)) | $\gamma_{UU}$ |
 
-The chakra system loses: all 42 coherences (21 external + 21 internal), the Gap structure, and dynamics.
+The chakra system loses: all 42 real off-diagonal coordinates (21 complex coherences), the Gap structure, and dynamics.
 
 ---
 
@@ -224,6 +197,10 @@ The chakra system loses: all 42 coherences (21 external + 21 internal), the Gap 
 
 :::warning Status [P]
 This entire section is a **research program**. None of the hypotheses has yet been empirically verified. The proposed design is the minimum required for rigorous testing.
+:::
+
+:::info Historical protocol correction (2026-10-13)
+Sections 6.1–6.4 preserve the original proposed protocol, including its unvalidated cutoffs. Their interpretation is superseded by §7: zero correlation alone does not refute a shared latent state; nonsignificance is not proof of equivalence; a symbol name is not a numerical reading; Fano incidence alone supplies no closure equation. Use a specified joint model, calibrated error bounds and prospective scoring. The execution ledger in §0 is not changed by this correction.
 :::
 
 ### 6.1 Hypotheses {#гипотезы}
@@ -321,104 +298,51 @@ No single negative result for an **individual** symbolic system refutes the appr
 
 ---
 
-## 7. Inter-System Coherence {#межсистемная-когерентность}
+## 7. Joint consistency of observations {#межсистемная-когерентность}
 
-:::warning Status [I]
-The formal consistency condition is an **interpretation**. Empirical verification is part of the [research program](#программа) (H-SC3).
-:::
+### 7.1 Problem statement
 
-### 7.1 Problem Statement
+For each system retain an actual observation $y_k$, its protocol, time and a declared readout $f_k:\mathcal D(\mathbb C^7)\to Y_k$. Each target $Y_k$ has its own distance $d_k$ and calibrated tolerance $\varepsilon_k>0$. A completed matrix is a model-selected representative, not additional observed data.
 
-Let back-projections from $K$ symbolic systems be performed for one and the same subject (holon) with true coherence matrix $\Gamma^*$:
+### 7.2 Formal consistency condition {#условие-согласованности}
 
 $$
-\hat{\Gamma}_1 = \pi_{S_1}^{-1}(s_1), \quad \hat{\Gamma}_2 = \pi_{S_2}^{-1}(s_2), \quad \ldots, \quad \hat{\Gamma}_K = \pi_{S_K}^{-1}(s_K)
+\mathcal B_k=\{\Gamma\succeq0:\operatorname{Tr}\Gamma=1,
+\ d_k(f_k(\Gamma),y_k)\le\varepsilon_k\},\qquad
+\bigcap_k\mathcal B_k\ne\varnothing.
 $$
 
-Each $\hat{\Gamma}_k$ is the best recovery of $\Gamma^*$ from the data of system $S_k$ (algorithm §1.2). Question: **do these recoveries agree?**
+This is compatibility with the specified readouts and data. It neither identifies a unique Gamma nor establishes that the readouts empirically measure the intended human phenomenon. Pairwise intersections do not in general imply a joint intersection; retain a common witness or a verified obstruction.
 
-### 7.2 Formal Consistency Condition {#условие-согласованности}
+### 7.3 Example: populations and coherence readouts {#пример-три-системы}
 
-**Definition.** The set of recoveries $\{\hat{\Gamma}_k\}_{k=1}^K$ is **consistent** if there exists a single $\Gamma^* \geq 0$, $\text{Tr}(\Gamma^*) = 1$, such that:
-
-$$
-\boxed{\forall k: \quad \left\| P_k \, \hat{\Gamma}_k \, P_k - P_k \, \Gamma^* \, P_k \right\|_F < \varepsilon_k}
-$$
-
-where $P_k$ is the orthogonal projector onto the subspace "visible" to system $S_k$, and $\varepsilon_k$ is the admissible error determined by the information loss of $\pi_{S_k}$.
-
-Equivalent formulation via intersections:
+Examples of mathematically defined readouts are
 
 $$
-\bigcap_{k=1}^K \mathcal{B}_k(\hat{\Gamma}_k, \varepsilon_k) \neq \varnothing
+f_{\rm diag}(\Gamma)=(\gamma_{ii})_i,\qquad
+f_M(\Gamma)=(|\gamma_{ij}|)_{(i,j)\in M}.
 $$
 
-where $\mathcal{B}_k(\hat{\Gamma}_k, \varepsilon_k) = \{\Gamma \geq 0 : \|P_k \Gamma P_k - P_k \hat{\Gamma}_k P_k\|_F < \varepsilon_k, \; \text{Tr}(\Gamma)=1\}$ — the set of admissible $\Gamma$ given the data of system $S_k$.
+These require actual readings in their respective output spaces. Calling one observation a zodiac sign or one Tarot card does not provide the complete vector $f_M(\Gamma)$. Nor does completion of a modulus-only reading supply measured populations. The map $P\Gamma P$ with $P=I$ returns the entire matrix, not its diagonal; selecting matrix coordinates and taking moduli are different operations.
 
-### 7.3 Example: Chakras + Zodiac + Tarot {#пример-три-системы}
+For overlapping measured pairs, agreement is checked in the shared output type. For nonoverlapping observations, the common PSD constraint supplies joint restrictions. All data must refer to a common time, or be related by an explicitly fitted evolution model.
 
-Consider a specific situation with three systems for one subject:
+### 7.4 Diagnosing incompatibility {#диагностика-несогласованности}
 
-| System | What it sees | $P_k$ |
-|--------|-------------|-------|
-| Chakras (§5) | 7 populations $\gamma_{ii}$ | $P_{\text{chakras}} = \text{diag}(1,1,1,1,1,1,1)$ |
-| Zodiac (§2) | 12 coherences $\|\gamma_{ij}\|$ for pairs $(i,j) \in \{A,S,D\} \times \{L,E,O,U\}$ | $P_{\text{zod}}$ — projector onto 12 off-diagonal elements |
-| Tarot (§4) | 21 coherences $\|\gamma_{ij}\|$ ($i < j$) | $P_{\text{tarot}}$ — projector onto the full upper triangle |
+An empty intersection rejects the joint package of data, error tolerances, correspondences and time model. To locate a cause, retain a smallest known incompatible subset, source records and failed constraints. It does not by itself identify which assumption failed. Repeatedly changing the correspondence on the test set forfeits that set's independent validation role.
 
-**Consistency means:**
+Absence of correlation is not an obstruction to a common latent state: independent coordinates of the same state can be uncorrelated. Conversely, correlation can arise from shared calendar inputs or a common scoring procedure. A forecast needs the explicit target and distribution described in the [predictive-sufficiency contract](/docs/applied/research/structural-correspondence#предсказание).
 
-1. The populations $\gamma_{ii}$ from chakra diagnostics and the populations recovered from the zodiac profile via completion (§1.2, step 3) must agree within $\varepsilon$.
-2. The twelve coherences specified by the zodiac must be a subset of the 21 coherences specified by the Tarot, to within $\varepsilon$.
-3. All constraints simultaneously must admit a single $\Gamma^* \geq 0$.
+### 7.5 A calibrated feasibility residual {#мера-когерентности}
 
-Formally:
+For continuous readouts and distances define
 
 $$
-\left\| \text{diag}(\hat{\Gamma}_{\text{chakras}}) - \text{diag}(\hat{\Gamma}_{\text{zod}}) \right\|_2 < \varepsilon_1
+R^*=\min_{\Gamma\in\mathcal D(\mathbb C^7)}
+\max_k\frac{d_k(f_k(\Gamma),y_k)}{\varepsilon_k}.
 $$
 
-$$
-\left\| \hat{\gamma}_{ij}^{(\text{zod})} - \hat{\gamma}_{ij}^{(\text{tarot})} \right\| < \varepsilon_2 \quad \forall (i,j) \in \{A,S,D\} \times \{L,E,O,U\}
-$$
-
-### 7.4 Diagnosing Inconsistency {#диагностика-несогласованности}
-
-If $\bigcap_k \mathcal{B}_k = \varnothing$ (the intersection is empty), three interpretations are possible:
-
-#### 7.4.1 Error in the Correspondence Table
-
-One or more tables (§2–5) contain an incorrect identification "symbol $\leftrightarrow$ element of $\Gamma$". This is the most likely cause and the least fatal: correcting the table may restore consistency.
-
-**Diagnostic sign:** The inconsistency *systematically* affects the same system $S_k$ for different subjects.
-
-#### 7.4.2 Different Temporal Cross-Sections
-
-Symbolic systems describe $\Gamma$ at different moments in time: a birth chart captures $\Gamma(t_{\text{birth}})$, chakra diagnostics — $\Gamma(t_{\text{now}})$, a Tarot spread — $\Gamma(t_{\text{question}})$. The divergence reflects the real [dynamics $d\Gamma/d\tau$](/docs/core/dynamics/evolution), not a correspondence error.
-
-**Diagnostic sign:** The inconsistency grows with the temporal gap between the "snapshot" moments.
-
-#### 7.4.3 Fundamental Incompatibility
-
-The symbolic systems **are not** projections of a single object. This is the fatal outcome for the unity thesis, equivalent to falsification criterion §6.4, item 1.
-
-**Diagnostic sign:** The inconsistency *does not decrease* with (a) table corrections, (b) temporal cross-section synchronization, (c) sample size increase.
-
-### 7.5 Inter-System Coherence Measure {#мера-когерентности}
-
-For quantitative assessment, we introduce the **inter-system coherence index**:
-
-$$
-\mathcal{I}_K = 1 - \frac{\min_{\Gamma^* \geq 0} \sum_{k=1}^K w_k \|P_k \Gamma^* P_k - P_k \hat{\Gamma}_k P_k\|_F^2}{\sum_{k=1}^K w_k \|P_k \hat{\Gamma}_k P_k\|_F^2}
-$$
-
-where $w_k = \dim(\text{Im}(P_k)) / \sum_j \dim(\text{Im}(P_j))$ — the weight of the system, proportional to the number of "visible" parameters.
-
-| $\mathcal{I}_K$ | Interpretation |
-|------------------|---------------|
-| $\geq 0.8$ | High consistency — the systems project one object |
-| $0.4$–$0.8$ | Moderate — table errors or temporal mismatches are possible |
-| $< 0.4$ | Low — the unity thesis is questionable |
-| $\leq 0$ | Complete incompatibility — falsification (§6.4, item 1) |
+Compactness gives a minimizer. The stated tolerance constraints are compatible exactly when $R^*\le1$. This threshold follows from their definition; it is not a probability of correctness or a universal psychological score. The tolerances must be independently justified. With affine readouts and convex residuals the problem is convex; modulus or other nonlinear readouts may require global methods. A local optimizer's failure to find a feasible matrix is not a proof of incompatibility. Report certified bounds or an unresolved search explicitly.
 
 ---
 

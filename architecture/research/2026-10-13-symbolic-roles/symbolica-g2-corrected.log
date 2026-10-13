@@ -1,0 +1,57 @@
+==========================================================================
+[A] G2 ROOT SYSTEM vs the ZODIAC (12 signs at 30 degrees)
+  12 roots · lengths {short=1.000, long=1.732, ratio^2=3.00}
+  angle  length  kind    root
+      0   1.000  SHORT   a (short)
+     30   1.732  long    3a+b (long)
+     60   1.000  SHORT   2a+b (short)
+     90   1.732  long    3a+2b (long)
+    120   1.000  SHORT   a+b (short)
+    150   1.732  long    b (long)
+    180   1.000  SHORT   -a (short)
+    210   1.732  long    -3a+b (long)
+    240   1.000  SHORT   -2a+b (short)
+    270   1.732  long    -3a+2b (long)
+    300   1.000  SHORT   -a+b (short)
+    330   1.732  long    -b (long)
+  -> angles = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330]
+  -> EXACTLY the 12 zodiacal 30-degree positions? True
+  -> long/short alternate: True; identifying sign polarity is [I].
+
+[B] the seven weights of the fundamental G2 representation
+  the 7-rep has 7 weights (6 short roots + 0).
+  the 6 nonzero weights sit at 60-degree spacing (a hexagon) + centre —
+  ordinary addition of weights does not implement Fano XOR.
+  counterexample: 2w is not a weight for nonzero short weight w.
+  short-weight angles: [0, 60, 120, 180, 240, 300]  (hexagon = 6-fold, the planets' ring)
+
+[C] WEYL(G2): order twelve, preserving alternating root lengths
+  |Weyl(G2)| = 12; rotational subgroup C6, no order-four rotation.
+  Aut of the uncoloured twelve-cycle has order 24; these groups differ.
+
+==========================================================================
+VERDICT: the selected G2 representation and root system have counts 7
+and 12. The angular relation has a checked correspondence; semantics
+and empirical prediction do not follow from these counts.
+
+[D] ASPECTS (harmonic divisions) as ANGLES BETWEEN G2 ROOTS
+  short-short angles: [60, 120, 180]   (sextile 60, trine 120, opposition 180)
+  short-long  angles: [30, 90, 150]   (semisextile 30, square 90, quincunx 150)
+  These are angular classes. Calling them tension/ease is an additional
+  interpretation, not a consequence of root length or the Weyl action.
+
+[E] ELEMENTS (x3 modalities) — the 4+3 split on the 12-wheel
+  every 90 deg (a square = a MODALITY, cardinal/fixed/mutable): ['Aries', 'Cancer', 'Libra', 'Capricorn']
+  every 120 deg (a trine = an ELEMENT, fire/earth/air/water):  ['Aries', 'Leo', 'Sagittarius']
+  -> modalities = order-4 rotations (square), elements = order-3 (trine):
+     Z/12 = Z/4 x Z/3: four element classes of size three and
+     three modality classes of size four. A cyclic step is (+1,+1).
+     The order-four rotation belongs to C12, not to Weyl(G2).
+
+[F] the separate finite Fano incidence structure
+  Aut of the compact real octonions is G2. The seven nonzero grades
+  in F2^3 form Fano points, with incidence automorphism group GL(3,2),
+  of order 168. This preserves a specified discrete incidence relation.
+  Reducing signs modulo two does not identify this group with the full
+  automorphism group of an octonion algebra in characteristic two.
+  See symbolica_role_transport.py for exact role/action preservation.

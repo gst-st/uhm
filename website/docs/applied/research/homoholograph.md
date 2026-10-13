@@ -2586,99 +2586,67 @@ and [Standard Model from G₂](../../physics/gauge-symmetry/standard-model.md).
 Part XXI adds no physics — it observes only that the crystal it read in the occult
 systems is the crystal already there, holding up the world.)*
 
-### 82. The inner side, and what calibrates it
+### 82. The inner side: frames, observations and calibration
 
-:::danger Retracted (2026-09-25): "the calibration is the $G_2$-frame", and what this Part built on it
-This section claimed that the phenomenal functor $F$ is faithful on $G_2$-orbits, so that a system's inner life is its $\Gamma$ modulo $G_2$ and the one thing experience leaves open — "which position is red" — is the $G_2$-frame, fixed from outside by the planetary system; that is false, because $\Phi$ and $\mathrm{Coh}_E$ are frame-pinned: an explicit $g \in G_2$ takes a window state with $\Phi = 3/2$, $C = 3/5$ to one with $\Phi = 0$, $C = 0$ at the same $P = 5/14$ and $R = 2/5$, so a $G_2$ rotation changes what the corpus calls experience. What replaces it: $F$ is faithful only up to a finite relabelling of the axes ([Corollary 3 of the uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem#верность-функтора)); the frame is pinned by the dynamics, not left free for boundary data to fix; and "which quale is red" stays an empirical calibration ([Two-Aspect Monism, retraction box](/docs/consciousness/foundations/two-aspect-monism#калибровка-как-g2-репер)).
-
-Retracted with it, and marked where they occur: the birth configuration read as the calibration of the $G_2$-frame (this section and §83); the "monist prediction" that minds under another star share the inner crystal "under a different frame" because the inner architecture is $G_2$-invariant; and, in §84, the ceiling of "thirty-four parameters distinguishable in principle" and the reading of the ≈ 28 % of chart-to-chart variation along gauge directions as invisible to experience — all 48 parameters are physical (frame decision D-0910). The orbit-type computation below (orbit dimension $0$ at $I/7$, $11$ at a pure state, $14$ generically) stands as kinematics; it no longer bears on calibration. The text is kept for the record.
+:::warning Corrected calibration contract (2026-10-13)
+The earlier identification “phenomenal calibration = the $G_2$-frame fixed by the planetary environment” was retracted on 2026-09-25. The corpus's frame-pinned observables need not be invariant under all of $G_2$; see [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism#калибровка-как-g2-репер). The further argument “varying stabilizers imply no global section, therefore the environment must fix qualia” is also invalid. The corrected kinematics and constructive calibration question follow.
 :::
 
-One question has stood open since the corpus's chapter on the hard problem, and it
-states it plainly: of everything about experience, one thing is *not* fixed by
-structure — the **calibration**. The theory proves (by Yoneda) that a quale's
-identity is its relational position, and that the phenomenal functor `F` is
-**faithful on `G₂`-orbits**: two systems feel identical exactly when their matrices
-differ by a `G₂ = Aut(𝕆)` transformation. So the inner life a system has is its `Γ`
-*modulo* `G₂` — the `G₂`-invariant part. What the corpus then honestly declares open
-is the one thing `F` is blind to: the choice of representative *inside* the orbit,
-the `G₂`-**frame**. "Which position is red" is not relational; it is the frame.
+#### Kinematic orbit data and what they establish
 
-Now recall Sec. 76: the real form of that same `G₂` casts the zodiac — its twelve
-roots are the signs, its seven-dimensional representation the planets. So the frame
-`F` cannot see is coordinatised by precisely the seven-and-twelve skeleton the
-astrologers drew. And this dissolves the last discomfort about what a
-birth-configuration could possibly be *for*. It is not a cause. It is a
-**calibration**: the external, physical boundary conditions into which a life is
-thrown — the type and composition of its planetary system — fix the `G₂`-frame, and
-the frame is exactly the freedom the inner structure leaves open. The stars do not
-push the psyche; they *coordinatise the gauge* that the psyche's own relational
-geometry cannot fix from within.
+For the declared real $G_2\subset SO(7)$ action on $\mathcal D(\mathbb C^7)$ by conjugation, the tangent dimension at $\Gamma$ is
 
-This is the dual-aspect monism the corpus already holds, carried one step further.
-`Γ` has an outer side (physics) and an inner side (experience); they are one object.
-What Secs. 76–81 add is the shape of each side and the map between them: the inner
-side is the `G₂`-invariant crystal — universal, the same seven voices in every
-system that instantiates it (this is what *monism* means — one architecture
-underneath); the outer side is that crystal in a particular frame, and the frame is
-set locally, by the cosmos the system is embedded in. The invariant is shared; the
-calibration is local. That is why the same seven-fold and twelve-fold structure
-recurs across every tradition (Sec. 80) — it is the invariant — while each
-individual chart is unrepeatable — it is the frame.
+$$
+\dim(G_2\cdot\Gamma)=\operatorname{rank}_{\mathbb R}
+\bigl(X\mapsto[X,\Gamma]\bigr),\qquad X\in\mathfrak g_2.
+$$
 
-There is even a reason the calibration *must* be local, not merely that it happens
-to be. A global intrinsic calibration — one consistent rule assigning "which
-position is red" across every configuration at once — would be a continuous global
-section of the orbit map, and such a section exists only if the group acts with a
-single orbit type. It does not. Building `G₂` explicitly as the stabiliser of the
-octonion Fano form and computing the orbit dimension directly
-(which also re-derives `dim G₂ = 14` from
-the form), the isotropy *varies*: the maximally mixed centre is fixed by all of
-`G₂` (orbit dimension `0`), a pure state by a three-dimensional subgroup (orbit
-`11`), a generic state by nothing (orbit `14`). And this is the *whole* picture:
-sweeping all fifteen spectral types of `Γ` — the partitions of `7`
- — the orbit is the full `14` (a locally
-free action, discrete stabiliser) for **every** non-degenerate `Γ`, collapsing only
-at those two loci: the centre `[7]` (orbit `0`) and the single-distinguished-direction
-type `[6,1]` (orbit `11`). So calibration is generically the *whole* of `G₂` —
-fourteen independent parameters, no redundancy — and `𝒟(ℂ⁷)/G₂` is a **stratified**
-space of exactly three orbit-dimension strata, not a manifold; the orbit map is no
-global bundle, and there is **no global slice**: no global calibration `[С]`. The frame can be fixed only
-*locally*, near each configuration. So "the environment sets the calibration" is not
-an optional metaphysical extra — it is the natural filler of a hole the geometry
-forces to be there: *something* local must choose the frame, because nothing global
-can.
+`architecture/symbolica_frame_bundle.py` builds $\mathfrak g_2$ as the stabilizer of the fixed Fano three-form inside $\mathfrak{so}(7)$. Its exact rational rank controls establish $\dim\mathfrak g_2=14$ and the following cases. Numerical SVD probes are labelled separately.
 
-Two honest consequences follow, and they strengthen the theory rather than decorate
-it. First, it **sharpens the corpus's own open question**. "Which quale is red" was
-listed as an unexplained empirical residue, on a par with the electron mass; it can
-now be named exactly — it is the `G₂`-frame, the `≤ 14` real parameters `F` is blind
-to `[С]` — and a *source* can be proposed for it: the external boundary data `[Г]`.
-An open question with a named structure and a candidate mechanism is a stronger
-question than a shrug. Second, it yields a genuine **monist prediction** `[Г]`: a
-mind arising in another planetary system — a different star, a different composition
-— would instantiate the *same* inner crystal under a *different* frame. Its beings
-would draw a different zodiac and read a different sky, and underneath they would
-have the same seven voices, because the inner architecture is `G₂`-invariant and
-only the calibration is local. Everything with an outer side has an inner side; the
-inner side is one architecture; and the endless variety of the visible cosmos is the
-endless variety of frames upon it.
+| State | Orbit dimension | Evidence |
+|---|---:|---|
+| $I/7$ |0| Exact: all commutators vanish |
+| Real axis projector $P_{\mathrm r}=\lvert e_1\rangle\langle e_1\rvert$ |6| Exact rational rank |
+| $P_{\mathrm c}=\lvert v\rangle\langle v\rvert$, $v=(e_1+2i e_2)/\sqrt5$ |11| Exact rational rank |
+| Positive diagonal state with seven distinct eigenvalues |14| Exact rational rank; $[X,\Gamma]=0$ forces $X=0$ |
+| Sampled complex pure projector |11| Fixed-seed numerical witness |
+| Sampled rank-three and full-rank states |14| Fixed-seed numerical witnesses |
 
-*(A machine check verifies the accounting: `dim G₂ = 14`
-frame parameters against the `48` of `Herm₀(7)`; the twelve roots and rank-two
-Cartan; and the identification of the calibration residue with the frame `F` is
-faithful modulo. The `G₂`-faithfulness of `F` is the corpus's own theorem — see
-[Two-Aspect Monism](../../consciousness/foundations/two-aspect-monism.md).)*
+The real and complex pure states already have the same eigenvalues but different orbit dimensions. This also occurs in the interior: $I/14+P_{\mathrm r}/2$ and $I/14+P_{\mathrm c}/2$ both have eigenvalues $4/7$ once and $1/14$ six times, while their orbit dimensions remain 6 and 11 because the commutator map is merely rescaled. Thus spectral multiplicity type does not determine a $G_2$ orbit dimension.
+
+`architecture/symbolica_stratification.py` samples six unitary eigenframes for one positive spectrum of each of the 15 multiplicity partitions. It records the sampled ranks, not a full stratification. Its random frames can miss the real-axis orbit of dimension 6. The witnessed dimensions 0,6,11,14 are not an exhaustive classification of orbit types; equal dimensions do not identify stabilizer conjugacy classes. In particular, the former claim of exactly three strata is withdrawn.
+
+#### An ordinary section and an equivariant frame are different
+
+An ordinary section of the quotient map $q:X\to X/G$ is a map $s:X/G\to X$ satisfying $q\circ s=\mathrm{id}$. Varying stabilizers do **not** exclude such a continuous section: for $SO(2)$ acting on $\mathbb R^2$, the quotient coordinate is radius and $s(r)=(r,0)$ is continuous, including at the fixed origin. The orbit-rank calculations above do not decide whether this particular $G_2$ quotient has a continuous global section.
+
+A $G$-valued **equivariant frame** is a different requirement:
+
+$$
+F:X\to G,\qquad F(g\cdot x)=gF(x).
+$$
+
+If a nonidentity $g$ fixes $x$, this equation would give $F(x)=gF(x)$, impossible by cancellation in the group. Such a frame therefore cannot be defined at any point with nontrivial stabilizer. In particular it cannot exist on all of $\mathcal D(\mathbb C^7)$, since $I/7$ is fixed by all of $G_2$. This proof needs neither random sampling nor a claim about ordinary sections. It does not imply that every free region admits a continuous global frame either.
+
+#### The positive task: observational and executable calibration
+
+A frame is physically or cognitively redundant only relative to specified observables and dynamics. For selected observations $q_j$ and partial actions $a$, an admissible symmetry must preserve their values, action domains and evolution:
+
+$$
+q_j(g\Gamma g^*)=q_j(\Gamma),\qquad
+\Gamma\in\operatorname{dom}a\iff g\Gamma g^*\in\operatorname{dom}a,
+$$
+$$
+a(g\Gamma g^*)=g\,a(\Gamma)\,g^*.
+$$
+
+These equations must hold on the declared domain; their solution subgroup may be smaller than the kinematic $G_2$. Alternatively one may transform the instruments and operators together with the state, but that is a different, explicitly specified covariance contract. The [structural-role comparison](/docs/applied/research/structural-correspondence) supplies the common framework.
+
+The proposal that relational state geometry can organise human qualitative experience remains a hypothesis [I]. To investigate “which position corresponds to red”, retain an operational encoding, reports or measurements, and interventions that distinguish candidate alignments; require the observational and action diagrams to commute within calibrated errors. Environmental variables may be tested as additional inputs to such a model. Neither $\dim G_2=14$, its 12 roots, orbit ranks nor the obstruction to an equivariant frame proves that planetary boundary data determine qualia. This leaves a constructive research problem: identify which observations fix which parts of an alignment, retain unresolved symmetries, and test transfer to new states and interventions.
 
 ### 83. Life as a symbolic-energo-informational system
 
-You put the widest version of the thesis this way: if a planetary system can give
-rise to life, and life is at bottom a *symbolic-energo-informational* system —
-calibrated on its outer face by the type and composition of that planetary system,
-while its inner face is the universal architecture — then the reconstruction is not
-describing a metaphor but the actual seam of the world. Read against the corpus, the
-intuition is exact, because each of its three words is a reading the corpus already
-carries of the one primitive `Γ`.
+The proposal to treat life as a *symbolic-energo-informational* system brings together physical dynamics, information and interpretation. It is a research framing [I]. Whether environmental conditions also determine a qualitative calibration must be tested through the observation/action contract of §82; that dependence does not follow from sharing a state formalism.
 
 **The three faces are already in the primitive.** "Energo-informational-symbolic"
 is not three systems glued together; it is `Γ` seen three ways. *Energetic*: the
@@ -2704,39 +2672,9 @@ rise to life" becomes precise — it supplied the conditions for a patch of `Γ`
 cross `2/7` into self-regeneration. `[Т]` for the threshold and the regeneration;
 `[Г]`/`[И]` for identifying this crossing with biological abiogenesis.
 
-**Calibrated by the planetary system — twice.** The planetary environment enters on
-two channels, both already in the theory. It supplies the **energy gradient** that
-keeps `ℛ` above dissipation — the *driven* in driven-dissipative, the star a living
-system feeds on. And it supplies the **boundary data** that fixes the `G₂`-frame —
-the calibration of Sec. 82, the sky a chart records. Substrate to stay alive; frame
-to be *this* life and no other. `[С]` for the frame (Sec. 82); `[И]` for the
-energy-gradient reading (ordinary non-equilibrium thermodynamics, in UHM's own
-language). *(The second channel — boundary data fixing the $G_2$-frame — is
-retracted with Sec. 82: the frame is pinned by the dynamics.)*
+**Environment and calibration have distinct contracts.** An open-system model can include energy flow and other measured boundary conditions in its dynamics. Their influence must be expressed by the chosen generator and tested parameter regime. A further claim that the planetary environment fixes a qualitative frame needs its own observation map and intervention evidence (§82); it is not a second channel already proved by $G_2$ geometry.
 
-**The monist reading, made precise.** Two-aspect monism already holds that *every*
-`Γ` has an inner side — interiority at `L0`, for all systems. Life is where that
-inner side becomes **self-maintaining** (`P > 2/7`) and, higher still, **cognitive**
-(`R ≥ 1/3`, `Φ ≥ 1`, `D ≥ 2`, all `[Т]`). So your closing intuition — *everything
-has an inner side, and the inner side is architecture and symbolic systems* — is
-exactly two-aspect monism sharpened by the crystal: the inner side is not formless
-experience but the **structured seven-voice architecture**, universal by
-`G₂`-invariance, and life is the universe folding a patch of itself into a
-self-maintaining knot that carries that architecture — dimly at first, then, past
-the thresholds, consciously. Another planetary system, with another star and another
-chemistry, would fold a different knot: the same seven voices, a different
-calibration, a different substrate — a different **dialect** of the one inner
-architecture. *("Universal by $G_2$-invariance" and "a different calibration" are
-retracted with Sec. 82: the architecture is the same pinned seven-axis frame up to a
-finite relabelling of the axes, not a $G_2$-invariant.)*
-
-None of this adds machinery. It names, in a single breath, three results the corpus
-proves separately — that `Γ` has an energetic, an informational, and a symbolic
-reading (two-aspect monism with `Φ`); that it lives by regenerating above `2/7`
-([viability](../../core/dynamics/viability.md)); that its frame is externally set
-(Sec. 82 — retracted, see the box there) — and observes that your one sentence, *life is a symbolic-energo-
-informational system whose inner side is a universal architecture calibrated by its
-cosmos*, is those three results read as one.
+**The monist reading [I].** Energetic, informational and symbolic descriptions can be studied as aspects of one model. The proposed connection to lived experience remains tied to the corpus's stated phenomenological assumptions. Another substrate or environment need not differ only by a $G_2$ frame: establish which observables and dynamics transfer before identifying the resulting qualitative structures. A shared state formalism organises this question, while the role-preserving maps and calibration evidence supply the actual bridge.
 
 ### 83-bis. The Flower of Life, taken apart honestly: three geometric universes {#цветок-жизни-три-вселенной}
 
@@ -2793,17 +2731,7 @@ a holon gives of itself can be measured against that ceiling. (The arithmetic is
 the one the heptacode's syndrome census already whispered — eight families over a
 seven-letter alphabet.)
 
-The ceiling is lower than forty-eight, though, and the corpus already says why.
-The phenomenal functor is faithful only on `G₂`-orbits ([T-123](../../proofs/consciousness/conscious-window.md#t-123),
-[two-aspect monism](../../consciousness/foundations/two-aspect-monism.md)), and
-`dim G₂ = 14`, so fourteen of the forty-eight directions are frame, not content:
-**thirty-four parameters are distinguishable in principle.**
-
-*(Retracted 2026-09-25 with Sec. 82: $F$ is faithful only up to the finite frame
-group, so a $G_2$ direction is a difference experience registers — along one of them
-$\Phi$ falls from $3/2$ to $0$ — and all 48 parameters are distinguishable (frame
-decision D-0910); $34$ counts kinematic $G_2$-invariants. The measurements below
-stand; their reading against a "gauge-free ceiling" of 34 does not.)*
+On the open positive-definite locus where the infinitesimal stabilizer is zero, the kinematic $G_2$ quotient has local dimension $48-14=34$ (with possible finite isotropy). It is not a global statement about all states, and it is not a phenomenal-information bound: the UHM observations and dynamics must actually descend to that quotient (§82). The former “34 distinguishable parameters” ceiling was retracted on 2026-09-25. The framed state space retains 48 real interior coordinates; its operational identifiability depends on the instruments and encoding.
 
 **What the natal encoder actually reaches.** Measured across the §75 population
 (2340 charts, 1940–2004 × 12 months × 3 times), as the participation ratio
@@ -2838,18 +2766,9 @@ more than doubles. §75's number was right about the object it measured and
 undercounts the *state* by about a factor of two. The personal detail we said
 lives in the coherences lives, half of it, in their **phases**.
 
-**The reached dimension does NOT sit on the gauge-free ceiling — the
-conjecture is refuted [✗], now doubly.** The measured `35.4` no longer stands
-*close to* `34 = 48 − dim G₂` — it **exceeds** it, which alone makes the
-frame-fixed reading impossible: an encoder confined to the gauge-free quotient
-could not explore more directions than that quotient has. On the earlier figure
-of `32.3` the reading was merely tempting, and we first read it forward: perhaps the natal encoder is
-frame-fixed and explores about `95 %` of everything a holon could differ in. The
-test was stated and then run. Build `𝔤₂` as
-the stabiliser of the associative 3-form inside `𝔰𝔬(7)` — taking `φ` from the
-corpus's own canonically oriented Fano wiring, which self-checks by yielding
-exactly `dim = 14` — form the orbit tangents `[X, Γ]` at each chart, and ask what
-fraction of the population's variance lies along them:
+**A participation ratio is not a manifold dimension.** The measured correlation-spectrum statistic 35.4 and the earlier 32.3 describe feature scatter. Either can exceed the intrinsic dimension of a nonlinear image: a circle is one-dimensional but its planar covariance can have participation ratio 2. Thus comparison with 34 alone neither proves nor refutes a frame-fixed interpretation.
+
+A separate historical probe built the tangent directions $[X,\Gamma]$ from the Fano-form stabilizer at 117 base points and projected population scatter onto them. It reported:
 
 | | share of variance along `G₂`-gauge directions |
 |---|---|
@@ -2857,48 +2776,9 @@ fraction of the population's variance lies along them:
 | **measured** (2340 charts, 117 base points) | **28.8 %** (range 26.1–31.5) |
 | isotropic null (scatter indifferent to gauge) | 29.2 % |
 
-The measurement lands on the null. **The natal encoder does not fix a frame**:
-its image is not transversal to the gauge orbits, and the population's scatter
-fills the gauge directions as readily as any others. The closeness of `32.3` to
-`34` was a coincidence, and the `95 %` reading is withdrawn.
+The measured share is close to the isotropic comparison. This is a statistic of that encoder and projection procedure, not a fraction of phenomenologically invisible content. Projecting global scatter onto a local tangent space does not by itself decide transversality of a nonlinear encoder image or identify a section of an orbit quotient. Such claims require the encoder's derivative and the specified frame/action contract.
 
-What replaces it is sharper and less comfortable. The phenomenal functor is blind
-to the frame ([T-123](../../proofs/consciousness/conscious-window.md#t-123)), so a
-difference between two charts that lies along a gauge direction is a difference
-**no experience can register**. Roughly `28 %` of natal chart-to-chart variation
-is of that kind: real in the parametrisation, invisible in the phenomenology.
-Individuality as computed from a birth chart is therefore smaller than the raw
-`32.3` dimensions suggest — a bound we now have a number for, and one that no
-amount of better writing can recover. *(Retracted 2026-09-25 with Sec. 82: the
-functor is not blind to $G_2$ directions, so the ≈ 28 % of variation along them is
-not invisible to experience; the measured share stands as a property of the
-encoder.)*
-
-**Where the description is actually lost.** Setting the links side by side gives
-the honest chain — and it does not fall where one would guess:
-
-| link | dimensions | of the previous |
-|---|---|---|
-| the state's parameters | 48 | — |
-| distinguishable in principle (`48 − dim G₂`) | 34 | 71 % |
-| reached by the natal encoding | 32.3 | — |
-| …of whose variance is phenomenally visible | ≈ 72 % | (28 % is frame) |
-| named as signals by the engine | 22 | — |
-| reaching the plain-language reading | 9 | 41 % |
-
-Two losses, then, of different kinds: the capture spends about a quarter of its
-variation on the frame — a bound no writing can undo — while **the telling loses
-most of what survives.** *(The first loss and the table rows "distinguishable in
-principle 34" and "≈ 72 % phenomenally visible" are retracted with Sec. 82: frame
-directions are not phenomenally invisible, and the ceiling is 48.)* The engine
-computes a thirty-two-dimensional object and speaks nine of its named signals to
-an ordinary reader, keeping the rest in a machine register behind a flag. That is
-why the interpretation work is not copy-editing: raising what the readings carry
-is precisely raising the system's own self-model fidelity, the quantity the
-corpus calls `R_φ` ([the three forms of R](../../consciousness/foundations/self-observation.md#формы-r)),
-applied to the system rather than to the person it describes. A symbolic system
-striving toward its ideal self-description, made operational, is exactly this
-number moving toward one.
+**Where descriptive loss can be checked.** The historical engine inventory counted 22 named signals and 9 reaching the plain-language reading. Those are interface counts, not intrinsic state dimensions. For each omitted signal, ask whether two attainable states produce the same text but require different answers or actions. A witnessed collision establishes a loss for that selected function; adding a sufficient observation can repair it. This is the [structural and predictive sufficiency](/docs/applied/research/structural-correspondence#предсказание) question shared with SYNARC. The old table's “34 distinguishable parameters” and “72% phenomenally visible” rows do not survive the calibration correction.
 
 **And the remaining directions have only one road.** Whatever the natal
 encoding cannot reach — and whatever changes after birth — is reachable only by
