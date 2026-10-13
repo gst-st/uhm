@@ -1,0 +1,25 @@
+{
+  "status": "counterexample_verified",
+  "method": "Exact integer Gaussian entries; independent arithmetic plus source inspection, no native Rust run",
+  "synarc_commit": "41a57f5ace48d7307b16f9c134e9277ce535cbc8",
+  "state": "Gamma=M/28; M_ii=4; M_01=M_12=M_23=1; M_30=i; Hermitian conjugates; all other offdiagonal entries zero",
+  "trace": "1",
+  "minimum_eigenvalue_lower_bound": "1/14",
+  "triangles": 35,
+  "nonzero_triangle_products": 0,
+  "square_product": "i/28^4",
+  "square_holonomy": "pi/2",
+  "support": {
+    "vertices": 7,
+    "edges": 4,
+    "components": 4,
+    "independent_cycles": 1
+  },
+  "remaining_task": "Replace complete-graph-only phase passport assumptions with support-aware definedness and cycle basis, migrate consumers through normal SYNARC gates",
+  "source_sha256": {
+    "rust/crates/synarc-math/src/fano.rs": "e700d4d0adb3b085b86164ee25267369451d044cca915ac63b50c1b50f5c36b1",
+    "rust/crates/synarc-math/src/holonomy.rs": "846f4bc94a342cf9ae2c8a0eadd2a0ef8534407c4cd1215c606ce44a2bee0d6a",
+    "rust/crates/synarc-math/src/state.rs": "9b891145fdb71872ce091585df3358ee40c8d3eaee94e799a38a4cb6cf6a0a9e",
+    "rust/crates/synarc-core/src/holon.rs": "5961e94b6d57ac2421e50e437fb6422d0c7ad52af8ed1fa1faf0addfb0150260"
+  }
+}
