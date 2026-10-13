@@ -21,5 +21,62 @@
     "rust/crates/synarc-math/src/holonomy.rs": "846f4bc94a342cf9ae2c8a0eadd2a0ef8534407c4cd1215c606ce44a2bee0d6a",
     "rust/crates/synarc-math/src/state.rs": "9b891145fdb71872ce091585df3358ee40c8d3eaee94e799a38a4cb6cf6a0a9e",
     "rust/crates/synarc-core/src/holon.rs": "5961e94b6d57ac2421e50e437fb6422d0c7ad52af8ed1fa1faf0addfb0150260"
+  },
+  "dense_control": {
+    "fano_storage_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      5
+    ],
+    "off_plane_storage_triples": [
+      [
+        2,
+        3,
+        4
+      ],
+      [
+        2,
+        3,
+        5
+      ],
+      [
+        2,
+        4,
+        6
+      ],
+      [
+        2,
+        5,
+        6
+      ],
+      [
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        5
+      ]
+    ],
+    "oriented_fano_rule": "[BY_FANO[p],BY_FANO[(p+1)%7],BY_FANO[(p+3)%7]]",
+    "star_basis_chords": "all ordered i<j from1..6",
+    "exact_rational_determinant": 1,
+    "conclusion": "The existing fifteen triangles form an integral cycle basis on full K7; no hidden torus lattice index is introduced on dense support."
   }
 }
