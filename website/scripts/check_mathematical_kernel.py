@@ -364,5 +364,75 @@ check('basin limit composition valid after adjoining its fixed point',
       all(extended_limit(extended_limit(x))==extended_limit(x)
           for x in [0.,.01,.05,.1]))
 
+# Observable closure: independent state evolution must commute with its reduced
+# coordinate evolution. These well-separated finite examples use float checks;
+# they do not turn arbitrary numerical rank decisions into exact certificates.
+def observable_basis(initial, kraus_families):
+    basis = []
+    def add(matrix):
+        residual = np.array(matrix, dtype=complex)
+        for old in basis:
+            residual -= np.trace(old.conj().T @ residual).real * old
+        length = np.linalg.norm(residual)
+        if length < 1e-10:
+            return False
+        basis.append(residual / length)
+        return True
+    for matrix in initial:
+        add(matrix)
+    while True:
+        previous = len(basis)
+        for matrix in list(basis):
+            for family in kraus_families:
+                add(sum(k.conj().T @ matrix @ k for k in family))
+        if previous == len(basis):
+            return basis
+        assert len(basis) <= N*N
+
+H7 = I.astype(complex)
+H7[:2, :2] = np.array([[1, 1], [1, -1]]) / np.sqrt(2)
+S7 = I.astype(complex)
+S7[1, 1] = 1j
+Z7 = np.diag([1., -1., 0., 0., 0., 0., 0.])
+plus = np.zeros(N); plus[:2] = [1/np.sqrt(2), 1/np.sqrt(2)]
+minus = plus.copy(); minus[1] *= -1
+rho_plus, rho_minus = np.outer(plus, plus), np.outer(minus, minus)
+check('current populations miss a future observable distinction',
+      np.allclose(np.diag(rho_plus), np.diag(rho_minus))
+      and np.isclose((H7 @ rho_plus @ H7.conj().T)[0, 0], 1)
+      and np.isclose((H7 @ rho_minus @ H7.conj().T)[0, 0], 0))
+
+gamma = .36
+k0 = I.astype(complex); k0[1, 1] = np.sqrt(1-gamma)
+k1 = np.zeros((N, N), dtype=complex); k1[0, 1] = np.sqrt(gamma)
+families = [[H7], [S7], [k0, k1]]
+for family in families:
+    check('declared observable-closure channels preserve trace',
+          np.allclose(sum(k.conj().T @ k for k in family), I))
+closed = observable_basis([I, Z7], families)
+check('channel closure retains qubit coordinates and block population', len(closed) == 5)
+updates = []
+for family in families:
+    adjoints = [sum(k.conj().T @ b @ k for k in family) for b in closed]
+    update = np.array([[np.trace(b @ a).real for b in closed] for a in adjoints])
+    check('every declared adjoint lies in computed observable closure',
+          all(np.allclose(a, sum(c*b for c, b in zip(row, closed)))
+              for a, row in zip(adjoints, update)))
+    updates.append(update)
+for word in itertools.product(range(len(families)), repeat=4):
+    rho = samples[sum(word)]
+    coordinates = np.array([np.trace(b @ rho).real for b in closed])
+    for index in word:
+        rho = sum(k @ rho @ k.conj().T for k in families[index])
+        coordinates = updates[index] @ coordinates
+    check('four-step reduced execution matches independent full state evolution',
+          np.allclose(coordinates, [np.trace(b @ rho).real for b in closed]))
+shift = np.roll(I, 1, axis=0)
+P0 = np.diag([1., 0., 0., 0., 0., 0., 0.])
+diagonal_closure = observable_basis([I, P0], [[shift]])
+check('cyclic observation closure distinguishes seven populations without coherences',
+      len(diagonal_closure) == N
+      and all(np.allclose(b, np.diag(np.diag(b))) for b in diagonal_closure))
+
 print(f'PASS: {len(checks)} mathematical kernel checks ({len(set(checks))} named properties).')
 print('Scope: explicit witnesses and finite constructions; no certification of the full theory or empirical bridges.')

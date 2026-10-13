@@ -24,6 +24,58 @@ The process category has objects $M_N(\mathbb C)$, $N\ge1$, and linear CPTP maps
 
 The sector $N=7$ is a selected state model [P], not a tensor-closed category: two seven-dimensional systems have joint state in $D_{49}$. A literal partial trace requires a specified tensor factorization. A named basis vector does not define a nontrivial tensor factor.
 
+## Executable representations closed under observations {#observable-closure}
+
+The state model admits a constructive representation theorem once the required
+observations and actions are specified. Fix Hermitian observables
+$A_1,\ldots,A_m$ and linear CPTP channels $K_1,\ldots,K_s$ on $M_N(\mathbb C)$.
+Let $K_j^*$ be the Heisenberg adjoint for the trace pairing. Define
+
+$$
+V_0=\operatorname{span}_{\mathbb R}\{I,A_1,\ldots,A_m\},\qquad
+V_{n+1}=\operatorname{span}_{\mathbb R}\left(V_n\cup\bigcup_jK_j^*(V_n)\right).
+$$
+
+**Observable closure theorem [T].** This sequence reaches the least common
+$K_j^*$-invariant real subspace $V$ containing the declared observations and $I$,
+after at most $N^2-\dim V_0$ strict extensions. For a basis $B_1,\ldots,B_d$ of $V$,
+the representation
+
+$$
+\pi_V(\rho)=(\operatorname{Tr}(B_1\rho),\ldots,\operatorname{Tr}(B_d\rho))
+$$
+
+has linear updates $\pi_V(K_j(\rho))=M_j\pi_V(\rho)$. Two states have the same
+representation exactly when every declared observation has the same expectation
+after every finite word of the declared channels, including the empty word.
+
+**Proof.** Each adjoint preserves Hermitian operators. The nested subspaces lie
+in $\operatorname{Herm}_N$, of real dimension $N^2$; equality at one step implies
+invariance and termination. Any invariant space containing $V_0$ contains every
+step, proving leastness. Write $K_j^*(B_l)=\sum_r(M_j)_{lr}B_r$ and use trace
+duality to obtain the update formula. The union of the stages is the span of all
+finite adjoint words applied to the observations and $I$. Equality of their
+expectations is therefore exactly equality of the coordinates. The identity
+coordinate is fixed to one on $D_N$. ∎
+
+This supplies an explicit instance of the action-preserving representation
+required for executable transfer in Autogeny and SYNARC. Preserving a present
+observation alone is insufficient: the qubit states $|+\rangle\langle+|$ and
+$|-\rangle\langle-|$ have equal diagonal populations, but applying the same
+Hadamard channel makes their first populations one and zero. Embedding this
+block in $D_7$ gives the same counterexample in the selected UHM carrier.
+
+The exact algorithm uses finite linear algebra for exactly represented channel
+coefficients; floating-point rank decisions require separate error bounds.
+The admissible coordinate space is $\pi_V(D_N)$, not all of $\mathbb R^d$.
+Minimality concerns this invariant space of observables, not a smallest quantum
+subsystem or a claim that its matrices $M_j$ are CPTP maps on a smaller algebra.
+Nonlinear self-models $M(\rho)$ require closure under pullback of functions and
+are not covered by the finite linear theorem. For $n$ seven-dimensional factors,
+the ambient bound is $49^n$; actual closure size, construction and execution cost
+must be measured. General observation theory is established mathematics; this
+theorem makes its precise constructive bridge to the UHM state model explicit.
+
 ## A genuine Bures site {#bures-site}
 
 Equip $D_N$ with the chordal Bures distance
@@ -127,6 +179,8 @@ A physical frequency must be invariant under $H\mapsto H+cI$. Thus $\min\operato
 
 ## Sources and verification {#sources}
 
+- Domenico D’Alessandro, [On Quantum State Observability and Measurement](https://arxiv.org/abs/quant-ph/0307127): indistinguishability under controlled quantum dynamics.
+- Tommaso Grigoletto, Yukuan Tao, Francesco Ticozzi and Lorenza Viola, [Exact Model Reduction for Continuous-Time Open Quantum Dynamics](https://arxiv.org/abs/2412.05102): linear observable reductions and the separate conditions for reduced quantum dynamics.
 - Jacob Lurie, [Higher Topos Theory](https://arxiv.org/abs/math/0608040), §§5.5.6, 6.2: truncations, sheaf topoi and geometric morphisms.
 - Dénes Petz and Csaba Sudár, [Geometries of Quantum States](https://www.esi.ac.at/preprints/esi204.pdf): monotone metrics and the distinguished minimal metric.
 - John Watrous, [The Theory of Quantum Information](https://jhwatrous.github.io/books-and-courses.html): channels, discrimination, measurements and reconstruction.
