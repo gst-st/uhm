@@ -26,6 +26,23 @@ def revision(repo):
     return subprocess.check_output(["git", "-C", str(repo), "rev-parse", "HEAD"], text=True).strip()
 
 
+def default_synarc():
+    repo = (ROOT / "internal/synarc-omega").resolve()
+    if (repo / "scripts/build-markdown.py").is_file() or not repo.is_dir():
+        return repo
+    # A new exporter may be committed in the active worktree while main awaits
+    # its independent integration checks. Never guess between multiple editions.
+    result = subprocess.run(["git", "-C", str(repo), "worktree", "list", "--porcelain"],
+                            text=True, capture_output=True, check=True)
+    candidates = [Path(line.removeprefix("worktree ")) for line in result.stdout.splitlines()
+                  if line.startswith("worktree ")]
+    candidates = [path for path in candidates if (path / "scripts/build-markdown.py").is_file()]
+    if len(candidates) == 1:
+        print(f"SYNARC exporter is in worktree: {candidates[0]}", flush=True)
+        return candidates[0]
+    return repo  # The normal preflight reports the missing exporter and override.
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, default=ROOT / "output/markdown/corpora")
@@ -34,11 +51,12 @@ def main():
     parser.add_argument("--foundations-root", type=Path,
                         default=ROOT / "internal/diakrisis/internal/math-foundations")
     parser.add_argument("--msfs-root", type=Path, default=ROOT / "internal/math-msfs")
-    parser.add_argument("--synarc-root", type=Path, default=ROOT / "internal/synarc-omega")
+    parser.add_argument("--synarc-root", type=Path)
     args = parser.parse_args()
     repos = {"math-foundations": args.foundations_root.resolve(),
              "uhm": args.uhm_root.resolve(), "diakrisis": args.diakrisis_root.resolve(),
-             "msfs": args.msfs_root.resolve(), "synarc": args.synarc_root.resolve()}
+             "msfs": args.msfs_root.resolve(),
+             "synarc": (args.synarc_root or default_synarc()).resolve()}
     for name, repo in repos.items():
         if not (repo / "scripts/build-markdown.py").is_file():
             parser.error(f"Missing {name} exporter: {repo / 'scripts/build-markdown.py'}; "
