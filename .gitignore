@@ -4,6 +4,7 @@ environment_files/
 
 # Generated files
 docs-consolidated.md
+/output/markdown/
 UGM_YouTube_Strategy.docx
 __pycache__/
 .DS_Store
