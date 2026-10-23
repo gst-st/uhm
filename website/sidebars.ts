@@ -36,7 +36,6 @@ const sidebars: SidebarsConfig = {
             'core/structure/dimension-u',
           ],
         },
-        'core/structure/symbolic-systems',
       ],
     },
     {
@@ -389,18 +388,13 @@ const sidebars: SidebarsConfig = {
     'applied/research/poincare-perelman',
     'applied/research/vanchurin-bridge',
     'applied/research/gap-diagnostics',
-    'applied/research/symbolic-correspondence',
-    'applied/research/gamma-canon',
     'applied/research/syndrome-calculus',
     'applied/research/fano-fingerprint',
     'applied/research/mathesis',
     'applied/research/experimental-protocol',
-    'applied/research/one-grammar',
     'applied/research/prime-radiant',
-    'applied/research/homoholograph',
     'applied/research/holarch',
     'applied/research/domain-transfer',
-    'applied/research/human-design',
   ],
 
   reference: [

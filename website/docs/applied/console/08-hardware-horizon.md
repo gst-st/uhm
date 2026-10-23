@@ -22,11 +22,11 @@ Every sensor is an [estimator](/docs/applied/console/anchors#измерение)
 | Prosumer | multi-channel dry EEG, respiration, EDA | resolved Gap map (phases), better $\Phi$ | `[research]` |
 | Research/clinical | high-density EEG, TMS-EEG (PCI) | the keystone $P$ from $\widehat\Gamma$, checked against the PCI verdict (κ, not a PCI → $P$ conversion); validated coherences | `[research]`→`[medical]` |
 
-The design rule: a gadget is admissible iff it maps to a **licensed** channel ([T-257](/docs/applied/research/one-grammar#t-257)) — physiological signals and the solar/lunar chronobiology drivers. No gadget reads "the sky" beyond those two channels, because the theory prices every other external coupling below the noise floor. Measurement hardware is therefore a bounded, well-specified engineering roadmap, not a frontier.
+The design rule: a gadget is admissible iff it maps to a **licensed** channel ([T-257](https://homohologra.ph/research/one-grammar#t-257)) — physiological signals and the solar/lunar chronobiology drivers. No gadget reads "the sky" beyond those two channels, because the theory prices every other external coupling below the noise floor. Measurement hardware is therefore a bounded, well-specified engineering roadmap, not a frontier.
 
 ## §3. The theoretical boundary on modulation {#граница}
 
-Before specifying modulation, state its ceiling, because the ceiling is a theorem. [T-257(a)](/docs/applied/research/one-grammar#t-257) proves that coupling into a system's dynamics happens **only through its Lindbladian parameters** — the dissipative rates, the regeneration strength $\kappa$, and the viability gate $g_V$ — i.e. through *rate modulation and viability gating*, never through a symbolic message written into the state. Consequences that bound every conceivable rig:
+Before specifying modulation, state its ceiling, because the ceiling is a theorem. [T-257(a)](https://homohologra.ph/research/one-grammar#t-257) proves that coupling into a system's dynamics happens **only through its Lindbladian parameters** — the dissipative rates, the regeneration strength $\kappa$, and the viability gate $g_V$ — i.e. through *rate modulation and viability gating*, never through a symbolic message written into the state. Consequences that bound every conceivable rig:
 
 - A modulation device can **bias** dynamics (shift rates, open or close a Gap window, strengthen or weaken regeneration) — it can **not** "upload" a state, install a memory, or write a chosen $\Gamma$.
 - Because the influence is a gate, its effect is *permissive and probabilistic*, not *deterministic and injective* — the subject's own dynamics do the moving; the device only changes the landscape.

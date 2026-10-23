@@ -26,9 +26,9 @@ Four results turn "we have an object" into "we may build an instrument on it."
 
 **(T-153 / T-153a / T-253) The instrument is substrate-free.** [Substrate closure](/docs/proofs/consciousness/substrate-closure) proves the same predicate reads a biological brain, a digital agent, or any admissible carrier, and [T-253](/docs/proofs/consciousness/substrate-closure#t-253) gives the explicit construction (the retraction $G_V$) plus the accessibility clause (Acc). *Consequence:* one kernel serves human, team, and AI targets — the platform thesis of [00 §2](/docs/applied/console/overview#почему-коммерция).
 
-**(T-256) The charts are finite and classified.** [The classification theorem](/docs/applied/research/one-grammar#t-256) shows every symbolic system is a sub-configuration of the Fano grammar, falling into a finite orbit list. *Consequence:* the Console can *host* every legacy system (astrology, I Ching, tarot) as a named orbit and translate between them with honest loss accounting — the interop feature of [04](/docs/applied/console/use-cases).
+**(T-256) The charts are finite and classified.** [The classification theorem](https://homohologra.ph/research/one-grammar#t-256) shows every symbolic system is a sub-configuration of the Fano grammar, falling into a finite orbit list. *Consequence:* the Console can *host* every legacy system (astrology, I Ching, tarot) as a named orbit and translate between them with honest loss accounting — the interop feature of [04](/docs/applied/console/use-cases).
 
-**(T-257) The channels are priced.** [The licensed-channel theorem](/docs/applied/research/one-grammar#t-257) proves inter-level coupling is gate/rate-modulation, never a symbolic message, and prices the only real external anchor (the two-channel solar/lunar ledger). *Consequence:* the sensor layer knows exactly which external inputs are physical (light, tides → circadian/circalunar) and which are category errors (planetary natal claims), and the modulation horizon [08](/docs/applied/console/hardware-horizon) knows its hard boundary (it can bias, never write).
+**(T-257) The channels are priced.** [The licensed-channel theorem](https://homohologra.ph/research/one-grammar#t-257) proves inter-level coupling is gate/rate-modulation, never a symbolic message, and prices the only real external anchor (the two-channel solar/lunar ledger). *Consequence:* the sensor layer knows exactly which external inputs are physical (light, tides → circadian/circalunar) and which are category errors (planetary natal claims), and the modulation horizon [08](/docs/applied/console/hardware-horizon) knows its hard boundary (it can bias, never write).
 
 ## §3. Link 3 — from object to observables {#наблюдаемые}
 
@@ -65,7 +65,7 @@ The estimation link is where over-claim would enter, and it is exactly where the
 Given $\widehat\Gamma$ (and its confidence region), the pipeline is deterministic:
 
 1. **Invariants** — evaluate the eleven observables (§3), propagating confidence.
-2. **Optical construction** — run the three guardrail questions ([one-grammar §5](/docs/applied/research/one-grammar#оптическая-конструкция)): which subchart is this reading (T-256 orbit), what anchor and is it licensed (T-257), is the subject a viable holon (viability gate). These decide *what kind of statement the reading is allowed to make.*
+2. **Optical construction** — run the three guardrail questions ([one-grammar §5](https://homohologra.ph/research/one-grammar#оптическая-конструкция)): which subchart is this reading (T-256 orbit), what anchor and is it licensed (T-257), is the subject a viable holon (viability gate). These decide *what kind of statement the reading is allowed to make.*
 3. **Domain module** — self / trajectory / dyad / group / clinical / AI (see [04](/docs/applied/console/use-cases)) applies domain logic over the invariants.
 4. **Rendering + honesty layer** — produce the mandalagram, forecast, or recommendation, each stamped with anchor class and loss/confidence.
 

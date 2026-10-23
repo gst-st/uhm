@@ -22,7 +22,7 @@ This table is the honest core: the self-audit gives a good diagonal and good coh
 
 ## §2. Anchor II — the self-audit instrument, in full {#инструмент}
 
-The instrument is the [П1 28-cell audit](/docs/applied/research/gamma-canon#п1-картирование). Each item is rated $0$–$3$ (almost never / sometimes / often / almost always); first responses are better data than considered ones.
+The instrument is the [П1 28-cell audit](https://homohologra.ph/research/gamma-canon#п1-картирование). Each item is rated $0$–$3$ (almost never / sometimes / often / almost always); first responses are better data than considered ones.
 
 **The seven population items (diagonal).**
 
@@ -84,13 +84,13 @@ The hard-science path uses the corpus's [seven-channel embedding](/docs/applied/
 
 **Coherences from cross-channel structure.** The seven axes map to seven signal channels (the σ-audit assignment); the coherence magnitudes and — here, unlike Anchor II — the **phases** are estimated from the cross-spectral density between channels at the integration timescale. Time-resolved signals *can* carry phase, which is why the measured anchor resolves the Gap map that the questionnaire cannot.
 
-**Chronobiology.** The [T-257 licensed ledger](/docs/applied/research/one-grammar#t-257) admits exactly two external drivers — solar (circadian/circannual) and lunar (circatidal/circalunar). Light-exposure and sleep-timing logs feed the entrainment model; no planetary input is accepted (it is rejected at ingestion by the anchor-licence guardrail). This is the *only* place the Console reads the sky, and it reads the two channels physics licenses, nothing more.
+**Chronobiology.** The [T-257 licensed ledger](https://homohologra.ph/research/one-grammar#t-257) admits exactly two external drivers — solar (circadian/circannual) and lunar (circatidal/circalunar). Light-exposure and sleep-timing logs feed the entrainment model; no planetary input is accepted (it is rejected at ingestion by the anchor-licence guardrail). This is the *only* place the Console reads the sky, and it reads the two channels physics licenses, nothing more.
 
 **Uncertainty.** `cov` comes from the estimator's own error model (signal SNR, session length, sensor grade) — a genuine measurement covariance, so Anchor-I readouts carry real confidence intervals and the honesty layer renders them as measured.
 
 ## §5. Anchor III — the oracle protocol {#оракул}
 
-The [П4 casting protocol](/docs/applied/research/gamma-canon#п4-оракул) is retained in full, with its epistemics stated: a draw is a **structured projective prompt**, not information about the world. Procedure: state the question in one sentence; draw one of the sixteen archetypes (or walk a three-step triadic chain from a random line, e.g. *Meaning → Foundation → Action*); contemplate strictly inside the drawn frame for a fixed interval. The Console renders the frame and the contemplation scaffold, and stamps the output `anchor = ORACLE, std = null` — never a measurement, never a forecast. The value is the lens, and the lens is honest because its grammar matches the derived state space.
+The [П4 casting protocol](https://homohologra.ph/research/gamma-canon#п4-оракул) is retained in full, with its epistemics stated: a draw is a **structured projective prompt**, not information about the world. Procedure: state the question in one sentence; draw one of the sixteen archetypes (or walk a three-step triadic chain from a random line, e.g. *Meaning → Foundation → Action*); contemplate strictly inside the drawn frame for a fixed interval. The Console renders the frame and the contemplation scaffold, and stamps the output `anchor = ORACLE, std = null` — never a measurement, never a forecast. The value is the lens, and the lens is honest because its grammar matches the derived state space.
 
 ## §6. Fusion and the autoephemeris {#слияние}
 

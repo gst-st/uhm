@@ -40,7 +40,7 @@ No birth chart. No planetary assignment. No cosmic decree. A measured, updatable
 
 ## §4. The honesty spine {#ось-честности}
 
-One design commitment separates the Console from a horoscope and makes it defensible in front of a scientist, a clinician, and a regulator: **every reading declares its anchor class.** The corpus proves there are exactly three ways to assign a state to a system ([gamma-canon §2](/docs/applied/research/gamma-canon#якорение)), in decreasing rigour:
+One design commitment separates the Console from a horoscope and makes it defensible in front of a scientist, a clinician, and a regulator: **every reading declares its anchor class.** The corpus proves there are exactly three ways to assign a state to a system ([gamma-canon §2](https://homohologra.ph/research/gamma-canon#якорение)), in decreasing rigour:
 
 | Anchor | Input | Rigour | Corpus status |
 |---|---|---|---|
@@ -52,7 +52,7 @@ The Console **never** presents a class-III reading as class-I, and never lets an
 
 ## §5. What the Console refuses {#отказ}
 
-The corpus derives **no** mapping from birth date onto Γ ([gamma-canon §1.7](/docs/applied/research/gamma-canon#слой-6)). Therefore the Console has **no natal-from-birth module** — the exact feature every astrology and Human Design app is built around. This is a deliberate, load-bearing refusal: the birth-anchor is the silent step the theory forbids, and refusing it is what earns the Console the right to call itself an instrument. What replaces it is stronger and is the heart of the human module ([05](/docs/applied/console/human-module)): a *measured, longitudinal, falsifiable* self-model that updates as the person does.
+The corpus derives **no** mapping from birth date onto Γ ([gamma-canon §1.7](https://homohologra.ph/research/gamma-canon#слой-6)). Therefore the Console has **no natal-from-birth module** — the exact feature every astrology and Human Design app is built around. This is a deliberate, load-bearing refusal: the birth-anchor is the silent step the theory forbids, and refusing it is what earns the Console the right to call itself an instrument. What replaces it is stronger and is the heart of the human module ([05](/docs/applied/console/human-module)): a *measured, longitudinal, falsifiable* self-model that updates as the person does.
 
 ## §6. Reading guide to the specification {#гид}
 
@@ -71,4 +71,4 @@ The suite is ordered so that each document rests only on the ones before it — 
 | [09](/docs/applied/console/commercial) | Commercial model | market, tiers, business model, competition, go-to-market, moat, risks |
 | [10](/docs/applied/console/ethics-governance) | Ethics and governance | theory-derived guardrails, regulatory posture, data governance |
 
-**Where this leads.** The specification threads directly off five corpus documents; a reader who wants the theory under any claim should keep these open: [The One Grammar](/docs/applied/research/one-grammar), [Measurement](/docs/applied/coherence-cybernetics/measurement), [The Γ-Canon](/docs/applied/research/gamma-canon), [Gap diagnostics](/docs/applied/research/gap-diagnostics), [Falsifiability](/docs/reference/falsifiability).
+**Where this leads.** The specification threads directly off five corpus documents; a reader who wants the theory under any claim should keep these open: [The One Grammar](https://homohologra.ph/research/one-grammar), [Measurement](/docs/applied/coherence-cybernetics/measurement), [The Γ-Canon](https://homohologra.ph/research/gamma-canon), [Gap diagnostics](/docs/applied/research/gap-diagnostics), [Falsifiability](/docs/reference/falsifiability).

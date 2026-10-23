@@ -148,7 +148,7 @@ cell has a canonical name and semantics), and equipped with invariants and an
 evolution law. Everything downstream — verdicts, ablations, views — is computed from
 this one object. A system is then a **holarchy**: a bounded-depth tree of holons (§10)
 with contracts on the edges — the corpus's
-[holarchic ladder](/docs/applied/research/gamma-canon#холархия) restricted to
+[holarchic ladder](https://homohologra.ph/research/gamma-canon#холархия) restricted to
 engineered systems.
 
 ## §4. The seven aspects {#аспекты}

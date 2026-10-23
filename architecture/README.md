@@ -90,3 +90,17 @@ architecture/<файл>.py`. Ниже — карта «какая лаба чт�
 - `data/gwf_starts_matched.tsv`, `data/wb_pcap_growth_matched.tsv` —
   слепки внешних датасетов (GWF 1.2, World Bank) для воспроизводимости
   `historical_capture_probe.py` v3.
+
+
+## Исследования символических систем
+
+Тексты о символических системах и Ozar, профильные протоколы и аудит
+перенесены в [ozar/research](https://github.com/old8man/ozar/tree/main/research).
+Математические исследования УГМ остаются в этом корпусе. Референсные
+вычислительные лаборатории (`homoholograph.py`, `symbolica_*.py`, `hd_*.py`)
+и исходные данные пока сохраняют свои имена и расположение здесь: это
+исполняемые свидетельства, на которые ссылается перенесённый материал.
+Генератор иллюстрации «Три геометрические вселенные» теперь находится в
+`ozar/research/tools/universes_svg.py`; изображения — в `ozar/research/assets/`.
+
+Опись переноса с исходными SHA-256: [Ozar `414129b`](https://github.com/old8man/ozar/blob/414129b3bb4a7b93eb5f8996d47f0c72f75d4848/research/migration.json).

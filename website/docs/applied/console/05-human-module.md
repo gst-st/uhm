@@ -14,7 +14,7 @@ The kernel is substrate-agnostic; a person is a particular substrate with rich s
 
 ## §2. Substrate maps: the axes on a human {#карты-субстрата}
 
-The seven abstract axes acquire human-specific readings, and the Fano triads acquire the block structure the corpus already names ([symbolic-systems §6](/docs/core/structure/symbolic-systems#структурный-анализ)):
+The seven abstract axes acquire human-specific readings, and the Fano triads acquire the block structure the corpus already names ([symbolic-systems §6](https://homohologra.ph/research/symbolic-systems#структурный-анализ)):
 
 | Axis | Human reading |
 |---|---|
@@ -26,11 +26,11 @@ The seven abstract axes acquire human-specific readings, and the Fano triads acq
 | O — Ground | source of steadiness independent of circumstance |
 | U — Unity | integration: the sense of being one whole |
 
-The seven Fano triads read as functional blocks — **Cognition** {A,S,L}, **Becoming** {S,D,E}, **Will** {D,L,U}, **Meaning** {L,E,O}, **Expression** {E,U,A}, **Foundation** {U,O,S}, **Action** {O,A,D} ([gamma-canon §layer-2](/docs/applied/research/gamma-canon#слой-2)) — each with a canonical strength and a canonical failure pattern. This is the vocabulary the human readout speaks.
+The seven Fano triads read as functional blocks — **Cognition** {A,S,L}, **Becoming** {S,D,E}, **Will** {D,L,U}, **Meaning** {L,E,O}, **Expression** {E,U,A}, **Foundation** {U,O,S}, **Action** {O,A,D} ([gamma-canon §layer-2](https://homohologra.ph/research/gamma-canon#слой-2)) — each with a canonical strength and a canonical failure pattern. This is the vocabulary the human readout speaks.
 
 ## §3. The measured bodygraph {#бодиграф}
 
-The 28-cell mandalagram **is** the bodygraph — seven population centres and twenty-one channels — but derived from the self-audit (Anchor II) and, where available, sensors (Anchor I), never from an ephemeris. Rendered as a human-legible chart: centres sized by population, channels drawn with magnitude (thickness) and, where a measured anchor supplies it, phase-transparency (the Gap). The reading algorithm is the [П2 protocol](/docs/applied/research/gamma-canon#п2-чтение): weakest channels by name, dominant/deficient block, nearest archetype and the one flip that distinguishes it, window pattern, and mode of the current chapter.
+The 28-cell mandalagram **is** the bodygraph — seven population centres and twenty-one channels — but derived from the self-audit (Anchor II) and, where available, sensors (Anchor I), never from an ephemeris. Rendered as a human-legible chart: centres sized by population, channels drawn with magnitude (thickness) and, where a measured anchor supplies it, phase-transparency (the Gap). The reading algorithm is the [П2 protocol](https://homohologra.ph/research/gamma-canon#п2-чтение): weakest channels by name, dominant/deficient block, nearest archetype and the one flip that distinguishes it, window pattern, and mode of the current chapter.
 
 This is the direct HD analog: where HD shows defined/undefined centres and channels from birth, the Console shows *measured* population centres and *measured* channels — the same visual grammar, a real object underneath.
 
@@ -50,7 +50,7 @@ Identity within a life is exactly what the traditions correctly observed and the
 
 The question the user pressed on. The Console splits it into an answerable part and a refused part, and the split is the whole integrity of the module.
 
-**Refused [T].** UHM assigns **no** cosmic task at birth, and derives **no** map from birth data to Γ ([gamma-canon §1.7](/docs/applied/research/gamma-canon#слой-6); [T-257 §4 category-error](/docs/applied/research/one-grammar#планетарная-система)). Any product feature that claimed to read your life-purpose from your birth moment would be committing the exact silent step the theory forbids — the astrology error. The Console does not offer it, and says why.
+**Refused [T].** UHM assigns **no** cosmic task at birth, and derives **no** map from birth data to Γ ([gamma-canon §1.7](https://homohologra.ph/research/gamma-canon#слой-6); [T-257 §4 category-error](https://homohologra.ph/research/one-grammar#планетарная-система)). Any product feature that claimed to read your life-purpose from your birth moment would be committing the exact silent step the theory forbids — the astrology error. The Console does not offer it, and says why.
 
 **Answered — and it is more than a consolation prize.** What the theory *does* let the Console give is a structural account that is true and updatable:
 

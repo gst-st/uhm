@@ -19,7 +19,7 @@ The sequence is ordered by *(validatable now × market pull × build cost)*, not
 **Validation protocol (V0-VAL).**
 - *Convergent validity:* correlate the seven populations and the block scores against Big Five, well-being (e.g. WEMWBS), and integration/differentiation instruments on a recruited sample; pre-register expected correspondences.
 - *Reliability:* two-week test-retest on the 28 items; target ICC in the accepted range for trait instruments, lower for state-sensitive cells (expected and interpreted).
-- *Structural prediction — the theory's own:* the corpus predicts coherences *within* a [Fano triad](/docs/core/structure/symbolic-systems#структурный-анализ) cluster more tightly than across triads (a self-report analog of F-Gap-2). Test by confirmatory factor analysis: does the 7-triad block structure fit better than random tripartitions? A pass is direct evidence *for the frame itself*, not just the instrument.
+- *Structural prediction — the theory's own:* the corpus predicts coherences *within* a [Fano triad](https://homohologra.ph/research/symbolic-systems#структурный-анализ) cluster more tightly than across triads (a self-report analog of F-Gap-2). Test by confirmatory factor analysis: does the 7-triad block structure fit better than random tripartitions? A pass is direct evidence *for the frame itself*, not just the instrument.
 
 **Success metrics.** Instrument validity thresholds met; the triad-clustering prediction confirmed at pre-registered significance; retention of the self-read loop above a set weekly-active bar. **Gate to V1:** V0-VAL passed and a user base large enough to power the neural study.
 
@@ -30,7 +30,7 @@ The sequence is ordered by *(validatable now × market pull × build cost)*, not
 **Validation protocol (V1-VAL) — the corpus's sharpest test.**
 - *The keystone:* confirm the [F-Neural prediction](/docs/reference/falsifiability) — that, with $\pi_{\mathrm{bio}}$ frozen on wakefulness, the verdict $\mathrm{Cons}(\widehat\Gamma)$ agrees with the independently validated PCI verdict $\mathrm{PCI}_{\max} > 0.31$ on held-out data across arousal states (wake / drowsy / sleep), Cohen's $\kappa \geq 0.8$ ([P8.4, SUB-5](/docs/applied/research/measurement-protocol#substitution-position)). (Until 2026-09-26: "that the $P_{\mathrm{crit}} = 2/7 \leftrightarrow \mathrm{PCI} = 0.31$ calibration holds" — PCI and $P$ are unrelated scales, and a calibration between them tests nothing.) This is the single result that moves the clinical case ([04 §4](/docs/applied/console/use-cases#клиника)) from `[research]` toward `[medical]`.
 - *Cross-anchor agreement:* where a user has both a self-audit and a wearable, the shared sectors (populations, coherence magnitudes) should agree within their stated confidence — a direct check that the two anchors estimate the same object.
-- *Chronobiology:* circadian/circalunar modulation of $P$ should be detectable and phase-locked to the licensed drivers, and *absent* for any planetary index (a negative control that, if it ever came back positive, would falsify [T-257](/docs/applied/research/one-grammar#t-257)).
+- *Chronobiology:* circadian/circalunar modulation of $P$ should be detectable and phase-locked to the licensed drivers, and *absent* for any planetary index (a negative control that, if it ever came back positive, would falsify [T-257](https://homohologra.ph/research/one-grammar#t-257)).
 
 **Success metrics.** Verdict concordance with PCI at $\kappa \geq 0.8$ on held-out sessions (not a PCI → $P$ calibration); cross-anchor agreement within bounds; the planetary negative control stays null. **Gate to V2:** V1-VAL passed with clinical-grade signal on at least one partnered device.
 
@@ -51,7 +51,7 @@ Not a roadmap stage but a parallel track from early on, because it reuses the ke
 
 ## §6. Horizon — hardware {#горизонт}
 
-Sequenced in [08](/docs/applied/console/hardware-horizon): measurement gadgets (tighter sensors → tighter $\widehat\Gamma$) are a continuation of V1; directed modulation is a research frontier gated by the ethics of [10](/docs/applied/console/ethics-governance) and bounded by the theory itself (gate, not message — [T-257(a)](/docs/applied/research/one-grammar#t-257)). No modulation claim ships without its own validation protocol, defined when the science supports writing one.
+Sequenced in [08](/docs/applied/console/hardware-horizon): measurement gadgets (tighter sensors → tighter $\widehat\Gamma$) are a continuation of V1; directed modulation is a research frontier gated by the ethics of [10](/docs/applied/console/ethics-governance) and bounded by the theory itself (gate, not message — [T-257(a)](https://homohologra.ph/research/one-grammar#t-257)). No modulation claim ships without its own validation protocol, defined when the science supports writing one.
 
 ## §7. Data strategy — product and science as one activity {#данные}
 

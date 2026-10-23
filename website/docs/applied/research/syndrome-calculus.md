@@ -16,7 +16,7 @@ The core is **Theorem Σ (T-224) [T]**: classical mathematics — perfect codes,
 
 ## §1. What was known: the forward direction {#известное}
 
-The corpus has long recorded the **forward** fact [T]: the incidence structure of the Fano plane $\mathrm{PG}(2,2)$ on the seven axes $[A,S,D,L,E,O,U]$ *is* the parity-check matrix of the Hamming code $H(7,4)$. Concretely: the Lindblad operators of the Γ-dynamics are indexed by Fano lines, and the incidence "point $i$ lies on line $k$" reproduces, entry for entry, the $3 \times 7$ check matrix ([Gap dynamics §2](/docs/core/dynamics/gap-dynamics#код-хэмминга)). On this fact rests Shield I of coherence protection — damage to a single axis is detectable and repairable from the remaining six ([Topological protection §1](/docs/applied/coherence-cybernetics/topological-protection#код-хэмминга)) — and the combinatorial grammar of the Γ-canon: the sixteen archetype signatures are exactly the codewords, with weight distribution $1 + 7x^3 + 7x^4 + x^7$ ([Γ-canon](/docs/applied/research/gamma-canon)).
+The corpus has long recorded the **forward** fact [T]: the incidence structure of the Fano plane $\mathrm{PG}(2,2)$ on the seven axes $[A,S,D,L,E,O,U]$ *is* the parity-check matrix of the Hamming code $H(7,4)$. Concretely: the Lindblad operators of the Γ-dynamics are indexed by Fano lines, and the incidence "point $i$ lies on line $k$" reproduces, entry for entry, the $3 \times 7$ check matrix ([Gap dynamics §2](/docs/core/dynamics/gap-dynamics#код-хэмминга)). On this fact rests Shield I of coherence protection — damage to a single axis is detectable and repairable from the remaining six ([Topological protection §1](/docs/applied/coherence-cybernetics/topological-protection#код-хэмминга)) — and the combinatorial grammar of the Γ-canon: the sixteen archetype signatures are exactly the codewords, with weight distribution $1 + 7x^3 + 7x^4 + x^7$ ([Γ-canon](https://homohologra.ph/research/gamma-canon)).
 
 In all those places the logic runs one way. **The seven axes are given first** — by the octonionic track ($\dim \mathrm{Im}\,\mathbb{O} = 7$), by $G_2$-rigidity, by the minimality theorem — and the code arrives afterwards, as a welcome structural gift. The gift is genuinely remarkable: among all linear codes, $H(7,4)$ is *perfect* — its correction balls tile the ambient cube with no gaps and no overlaps — and perfection is an arithmetic accident, not something one can order at will.
 
@@ -58,7 +58,7 @@ Tiling is the strongest possible form of diagnosability: *every* raw profile has
 Two presentations of the Fano plane circulate in the corpus, and we will need both:
 
 - the **binary (XOR) presentation**: points are the nonzero vectors of $\mathbb{F}_2^3$, labelled $1,\dots,7$ by their binary value; lines are the triples $\{a, b, a \oplus b\}$ — equivalently, the 2-dimensional subspaces with $0$ removed;
-- the **cyclic (QR) presentation** used by the [Γ-canon](/docs/applied/research/gamma-canon): points are residues $\bmod\ 7$; lines are the translates $\{1,2,4\} + t$ of the quadratic-residue set $\mathrm{QR}(7) = \{1,2,4\}$, which is a $(7,3,1)$ *difference set* — every nonzero residue is a difference of two of its elements in exactly one way.
+- the **cyclic (QR) presentation** used by the [Γ-canon](https://homohologra.ph/research/gamma-canon): points are residues $\bmod\ 7$; lines are the translates $\{1,2,4\} + t$ of the quadratic-residue set $\mathrm{QR}(7) = \{1,2,4\}$, which is a $(7,3,1)$ *difference set* — every nonzero residue is a difference of two of its elements in exactly one way.
 
 Lemma Σ.6 below exhibits an explicit relabeling carrying one presentation to the other, so no corpus statement depends on the choice.
 
@@ -234,7 +234,7 @@ Status discipline. The implication is **[T]** — parts (i)–(iv), proved above
 
 Under these readings, the heptad is not a numerological choice but the unique solution of a well-posed design problem. The track is logically independent of the octonionic one — a hypothetical universe with no division algebras would still be subject to Theorem Σ.
 
-**The classification built on Σ [T].** If Σ fixes the *whole* grammar, then every partial view of it — every symbolic system in history — is a sub-configuration of the Fano plane, and those fall into a finite, computable list of orbit types under the collineation group ($|\mathrm{Aut}| = 168$). This is [T-256](/docs/applied/research/one-grammar#t-256): nine axis-orbit types plus the channel sectors, with the zodiac's 12-block, the I Ching's $2^6 = 64$, and the diagonal chakra chart all appearing as named orbits. The reason unrelated cultures keep rediscovering the same structures is now a theorem: there are only finitely many charts to draw.
+**The classification built on Σ [T].** If Σ fixes the *whole* grammar, then every partial view of it — every symbolic system in history — is a sub-configuration of the Fano plane, and those fall into a finite, computable list of orbit types under the collineation group ($|\mathrm{Aut}| = 168$). This is [T-256](https://homohologra.ph/research/one-grammar#t-256): nine axis-orbit types plus the channel sectors, with the zodiac's 12-block, the I Ching's $2^6 = 64$, and the diagonal chakra chart all appearing as named orbits. The reason unrelated cultures keep rediscovering the same structures is now a theorem: there are only finitely many charts to draw.
 
 ### §5.2. Why above seven one builds a tower, not width {#башня-не-ширина}
 
@@ -854,7 +854,7 @@ This closes the last question the two-ceilings arc left open: the agreement at $
 - [Gap dynamics §2](/docs/core/dynamics/gap-dynamics#код-хэмминга) — the forward direction: the isomorphism $\mathrm{PG}(2,2) \cong H(7,4)$ at the level of Lindblad operators.
 - [Topological protection, Shield I](/docs/applied/coherence-cybernetics/topological-protection#код-хэмминга) — the five shields; Σ turns Shield I from a property into a selector.
 - [Minimality of N=7](/docs/proofs/minimality/theorem-minimality-7) and the [octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation) — the three prior tracks; §9.3 there tabulates Track Σ against Tracks A and B.
-- [Γ-canon](/docs/applied/research/gamma-canon) — the sixteen archetypes as codewords; the Σ protocol adds the diagnostic tier to the П-protocols; Lemma Σ.6 is the dictionary between its cyclic triads and the binary presentation.
+- [Γ-canon](https://homohologra.ph/research/gamma-canon) — the sixteen archetypes as codewords; the Σ protocol adds the diagnostic tier to the П-protocols; Lemma Σ.6 is the dictionary between its cyclic triads and the binary presentation.
 - [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules), [evolution / T-114](/docs/core/dynamics/evolution) — the dynamical premises of T-225(d).
 - [G₂-structure](/docs/physics/gauge-symmetry/g2-structure) — the forms $\varphi, \ast\varphi$ and the $14 \oplus 7$ split behind §6.
 - [Status registry](/docs/reference/status-registry) — rows T-224–T-241.

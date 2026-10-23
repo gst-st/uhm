@@ -33,7 +33,7 @@ The consumer market funds attention and data; the two B2B markets fund the busin
 
 | Category | Examples | Their frame | Their anchor | Why the Console wins |
 |---|---|---|---|---|
-| Astrology apps | large installed bases | postulated zodiac | birth data (silent) | derived frame; honest anchor; the [T-256](/docs/applied/research/one-grammar#t-256) translator ingests them |
+| Astrology apps | large installed bases | postulated zodiac | birth data (silent) | derived frame; honest anchor; the [T-256](https://homohologra.ph/research/one-grammar#t-256) translator ingests them |
 | Human Design | subscription apps | postulated bodygraph | birth data (silent) | [measured bodygraph](/docs/applied/console/human-module), falsifiable, updatable |
 | Personality (MBTI/Enneagram) | assessment vendors | postulated types | one-time test | continuous state + trajectory, not a fixed type |
 | Meditation/wellness | large apps | none (content) | none | a measured self-model, not just content |
@@ -43,7 +43,7 @@ The pattern: every incumbent serves the same need with a postulated frame and a 
 
 ## §4. Go-to-market {#вывод}
 
-The motion is built on the honest onboarding funnel ([04 §9.1](/docs/applied/console/use-cases#интероп)): **meet users inside the system they already trust.** A person arrives with an astrology or Human Design reading; the back-projection translator shows its Γ-image, its [orbit type](/docs/applied/research/one-grammar#t-256), and — gently — what it captured and what it dropped. That single interaction converts a skeptic-of-the-old into a user-of-the-new without insulting where they came from. From there: the free self-read hooks, the autoephemeris retains, the human module and synastry monetise. B2B-AI runs in parallel as a direct enterprise sale on the same kernel, funding the consumer build.
+The motion is built on the honest onboarding funnel ([04 §9.1](/docs/applied/console/use-cases#интероп)): **meet users inside the system they already trust.** A person arrives with an astrology or Human Design reading; the back-projection translator shows its Γ-image, its [orbit type](https://homohologra.ph/research/one-grammar#t-256), and — gently — what it captured and what it dropped. That single interaction converts a skeptic-of-the-old into a user-of-the-new without insulting where they came from. From there: the free self-read hooks, the autoephemeris retains, the human module and synastry monetise. B2B-AI runs in parallel as a direct enterprise sale on the same kernel, funding the consumer build.
 
 ## §5. The moat {#ров}
 

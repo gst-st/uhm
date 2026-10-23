@@ -1046,7 +1046,7 @@ cycles); a year closes the Sun ($1.000$); a century still does not close
 Neptune ($0.607$) or Pluto ($0.403$) — which is why the **epoch shift** of any
 census is structural, not a defect (measured: $\approx 1.1$ points in the
 $87.6/91.6$ decomposition of the
-[encoder census](/docs/applied/research/homoholograph)). Returns and
+[encoder census](https://homohologra.ph/research/ozar)). Returns and
 oppositions of the macro-cycles are already a product instrument
 , and the encoder's two line-locks are antipodal reads of two
 celestial **axes** — each one cycle read twice in counter-phase. Below the

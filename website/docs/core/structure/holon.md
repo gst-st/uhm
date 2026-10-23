@@ -213,4 +213,4 @@ It crosses $2/7$ from below. Consequently neither positivity nor a GKSL realizat
 
 ## Open questions
 
-Open questions concern an identifiable physical-to-state readout, independent autonomy/maintenance tests, task sufficiency of D7, collective readouts from D49, operational higher-order certificates and record continuity. The scalar window (2/7,3/7] is an algebraic consequence of the chosen gate; its phenomenal or biological interpretation needs evidence. The [research programme](/docs/applied/research/symbolic-correspondence#программа) must retain those bridges explicitly.
+Open questions concern an identifiable physical-to-state readout, independent autonomy/maintenance tests, task sufficiency of D7, collective readouts from D49, operational higher-order certificates and record continuity. The scalar window (2/7,3/7] is an algebraic consequence of the chosen gate; its phenomenal or biological interpretation needs evidence. The [research programme](https://homohologra.ph/research/symbolic-correspondence#программа) must retain those bridges explicitly.

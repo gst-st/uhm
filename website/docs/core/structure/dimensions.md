@@ -552,7 +552,7 @@ Remarkably, the division into 7 fundamental aspects of reality appears in a wide
 | Planetary (antiquity) | 7 planets | 7 "influences" |
 | Colour | 7 colours of the rainbow | 7 "qualities" |
 
-From the UHM perspective these coincidences are not accidental: the number 7 is a fundamental constant determined by Hurwitz's theorem (1898) and Theorem S. Different cultures intuitively "felt out" the same mathematical structure, expressing it in the symbolic systems available to them. A detailed analysis is given in the chapter [Formal reduction of symbolic systems](./symbolic-systems).
+From the UHM perspective these coincidences are not accidental: the number 7 is a fundamental constant determined by Hurwitz's theorem (1898) and Theorem S. Different cultures intuitively "felt out" the same mathematical structure, expressing it in the symbolic systems available to them. A detailed analysis is given in the chapter [Formal reduction of symbolic systems](https://homohologra.ph/research/symbolic-systems).
 
 ## Summary
 

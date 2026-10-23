@@ -110,7 +110,7 @@ Prediction 2 [T] ($\kappa \propto \mathrm{Coh}_E$) is tested by correlating $\wi
 | Label-shuffle and circular-shift nulls | alignment produced by autocorrelation | standard |
 | Test–retest of every behavioural matrix | an unstable ground truth | [Console V0-VAL](/docs/applied/console/roadmap-validation#v0) |
 | Cross-anchor agreement (self-report against wearable on shared sectors) | two instruments estimating different objects | [Console V1-VAL](/docs/applied/console/roadmap-validation#v1) |
-| Negative control: a planetary index must not modulate $\hat P$ | a pipeline that finds structure anywhere | Console V1-VAL; [T-257](/docs/applied/research/one-grammar#t-257) |
+| Negative control: a planetary index must not modulate $\hat P$ | a pipeline that finds structure anywhere | Console V1-VAL; [T-257](https://homohologra.ph/research/one-grammar#t-257) |
 | Blind raters for any behavioural scoring | expectation effects | [test E10](/docs/consciousness/subjects/ai-consciousness#тест-e10-ethical-threshold) |
 
 ## Statistics {#statistics}

@@ -75,7 +75,7 @@ $$
 
 #### Definition (polar partition) {#полярное-разбиение}
 
-For a pair $\{i,j\}$ write $\pi(i,j) :=$ the third point of $\lambda(i,j)$ — its **polar point**. The **polar class** of an axis $k$ is $P_k := \{\ell \setminus \{k\} : \ell \ni k\}$ — the three pairs completing the three lines through $k$. The seven classes have three pairs each and partition all $\binom{7}{2} = 21$ pairs. This is the point–pair polarity of $\mathrm{PG}(2,2)$: the same triple structure that underlies the octonion product ($e_i e_j = \pm e_{\pi(i,j)}$) and the sixteen-archetype grammar of the [Γ-canon](/docs/applied/research/gamma-canon).
+For a pair $\{i,j\}$ write $\pi(i,j) :=$ the third point of $\lambda(i,j)$ — its **polar point**. The **polar class** of an axis $k$ is $P_k := \{\ell \setminus \{k\} : \ell \ni k\}$ — the three pairs completing the three lines through $k$. The seven classes have three pairs each and partition all $\binom{7}{2} = 21$ pairs. This is the point–pair polarity of $\mathrm{PG}(2,2)$: the same triple structure that underlies the octonion product ($e_i e_j = \pm e_{\pi(i,j)}$) and the sixteen-archetype grammar of the [Γ-canon](https://homohologra.ph/research/gamma-canon).
 
 #### Lemma Φ.4 (image and injectivity) {#лемма-ф4}
 
@@ -239,6 +239,6 @@ The verification scripts follow the M1 discipline of the SYNARC programme: indep
 - [Σ-calculus](/docs/applied/research/syndrome-calculus) — the static selector (T-224) and the measurement pyramid (T-225); this document is their dynamical, rate-level companion, in polar duality to the pyramid.
 - [Gap dynamics §2](/docs/core/dynamics/gap-dynamics#код-хэмминга) — the Fano–Hamming wiring of the Lindblad operators whose exact channel forms feed §1.
 - [Topological protection, Shield I](/docs/applied/coherence-cybernetics/topological-protection#код-хэмминга) — intra-line immunity is Shield I at the rate level.
-- [Γ-canon](/docs/applied/research/gamma-canon) — the polar (octonionic) triple structure $e_i e_j = \pm e_{\pi(i,j)}$ that indexes the rate classes.
+- [Γ-canon](https://homohologra.ph/research/gamma-canon) — the polar (octonionic) triple structure $e_i e_j = \pm e_{\pi(i,j)}$ that indexes the rate classes.
 - [Measurement protocol](/docs/applied/research/measurement-protocol) — where the polar-rate observables and the $\gamma$-tomography slot into the experimental tiers.
 - [Status registry](/docs/reference/status-registry) — row T-226.

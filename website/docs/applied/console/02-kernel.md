@@ -35,9 +35,9 @@ Each routine is a pure function of `gamma` (plus, where noted, a second state fo
 
 **Gap map.** For each pair $(i,j)$: `Gap[i,j] = abs(sin(angle(gamma[i,j])))`, with the [vanishing-coherence convention](/docs/core/dynamics/gap-operator#конвенция-нулевой-когерентности): if `abs(gamma[i,j]) < eps_min`, set `Gap[i,j] = 1` (a channel with no coherence is not "transparent", it is absent — phase is undefined). Returns the 21 upper-triangle values as the transparency chart.
 
-**Mandalagram.** A pure reshape: the 7 populations `diag(gamma).real` and the 21 coherences `(magnitude, phase)` laid on the 7-node / 21-edge chart, with the [canonical cell names](/docs/applied/research/gamma-canon#слой-1). No computation, only layout — this is the render model the UI consumes.
+**Mandalagram.** A pure reshape: the 7 populations `diag(gamma).real` and the 21 coherences `(magnitude, phase)` laid on the 7-node / 21-edge chart, with the [canonical cell names](https://homohologra.ph/research/gamma-canon#слой-1). No computation, only layout — this is the render model the UI consumes.
 
-**Archetype.** Threshold the diagonal at $\tau$ (default the mean population) to a 7-bit pattern; decode to one of the [sixteen signatures](/docs/applied/research/gamma-canon#слой-4) via the fixed lookup (the 16 signatures are the $G_2$-orbit classes of thresholded diagonals). Returns the signature id plus the margin to the nearest neighbouring signature (how robust the classification is).
+**Archetype.** Threshold the diagonal at $\tau$ (default the mean population) to a 7-bit pattern; decode to one of the [sixteen signatures](https://homohologra.ph/research/gamma-canon#слой-4) via the fixed lookup (the 16 signatures are the $G_2$-orbit classes of thresholded diagonals). Returns the signature id plus the margin to the nearest neighbouring signature (how robust the classification is).
 
 **Mode.** Requires two states $\Gamma(t)$, $\Gamma(t')$. Form the increment $\dot\Gamma \approx (\Gamma(t')-\Gamma(t))/(t'-t)$ and decompose it into the [triadic components](/docs/core/operators/lindblad-operators#триадная-декомпозиция) — Hamiltonian (preserving), dissipative (dissolving toward $I/7$), regenerative (restoring toward $\varphi(\Gamma)$). Returns the three fractions summing to one; the "mode" is the dominant fraction.
 
@@ -51,7 +51,7 @@ Every scalar invariant carries an uncertainty derived from `cov` by the delta me
 
 ## §4. The optical-construction guardrails {#гардрейлы}
 
-Before any readout is released, the kernel runs the three [optical-construction](/docs/applied/research/one-grammar#оптическая-конструкция) checks and attaches the verdicts:
+Before any readout is released, the kernel runs the three [optical-construction](https://homohologra.ph/research/one-grammar#оптическая-конструкция) checks and attaches the verdicts:
 
 1. **Chart type (T-256).** Which sub-configuration does this reading actually resolve? A questionnaire estimate resolves populations well and phases poorly; the kernel tags which sectors are trustworthy for *this* estimate, so downstream code never reads a phase-dependent Gap value off a phase-blind anchor.
 2. **Anchor licence (T-257).** If any external signal fed the estimate, is it on the licensed ledger (solar/lunar/physiological) or a category error (planetary/natal)? Unlicensed external inputs are rejected at ingestion, not silently used.

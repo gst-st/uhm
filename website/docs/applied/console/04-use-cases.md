@@ -32,7 +32,7 @@ Every use case is specified on eight fields: **User** (who), **Job** (the outcom
 
 ## §3. Collective — teams and organisations {#коллектив}
 
-**3.1 Team profile.** *User:* team lead. *Job:* "what is our collective state and where is it weak." *Hook:* [conciliar mandalagram](/docs/applied/research/gamma-canon#п6-группа) + [7-D org profile](/docs/applied/coherence-cybernetics/applications#for-organizational-consultants). *In:* team members' σ-audits. *Out:* org-scale $P,\Phi$, Gap map, the weakest circuit. *Validation:* against team-performance and engagement metrics. *Status:* `[design]`. *Pay:* B2B seats — the highest-margin surface.
+**3.1 Team profile.** *User:* team lead. *Job:* "what is our collective state and where is it weak." *Hook:* [conciliar mandalagram](https://homohologra.ph/research/gamma-canon#п6-группа) + [7-D org profile](/docs/applied/coherence-cybernetics/applications#for-organizational-consultants). *In:* team members' σ-audits. *Out:* org-scale $P,\Phi$, Gap map, the weakest circuit. *Validation:* against team-performance and engagement metrics. *Status:* `[design]`. *Pay:* B2B seats — the highest-margin surface.
 
 **3.2 Org-pathology detection.** *User:* org consultant. *Job:* "find the structural conflict before it blows up." *Hook:* the one-theme law as a pathology theorem — two departments sharing two functions is a jammed jurisdiction. *Out:* the jam list, ranked. *Status:* `[design]`. *Pay:* consulting toolkit licence.
 
@@ -50,7 +50,7 @@ Every use case is specified on eight fields: **User** (who), **Job** (the outcom
 
 **5.1 The practice log.** *User:* practitioner. *Job:* “what is changing, and how can I check it?” *Hook:* explicit practice goals and [certified repeated updates](/docs/consciousness/ethics-meaning/value-consciousness#рассогласование). *Out:* longitudinal records and comparisons; a fitted progress curve is a hypothesis, not a spiritual ranking. *Status:* `[design]` for the log, `[research]` for causal or predictive claims. *Pay:* premium.
 
-**5.2 The oracle, honest.** *User:* someone who uses casting. *Job:* "a structured lens on a question." *Hook:* the [П4 protocol](/docs/applied/research/gamma-canon#п4-оракул), labelled Anchor III. *Status:* `[design]`. *Pay:* free/engagement feature — the honest replacement for the tarot draw.
+**5.2 The oracle, honest.** *User:* someone who uses casting. *Job:* "a structured lens on a question." *Hook:* the [П4 protocol](https://homohologra.ph/research/gamma-canon#п4-оракул), labelled Anchor III. *Status:* `[design]`. *Pay:* free/engagement feature — the honest replacement for the tarot draw.
 
 ## §6. AI and alignment — the same predicate on silicon {#ии}
 
@@ -68,7 +68,7 @@ Every use case is specified on eight fields: **User** (who), **Job** (the outcom
 
 ## §9. Symbolic interop — the universal translator {#интероп}
 
-**9.1 Back-projection.** *User:* anyone arriving from astrology / I Ching / tarot / Human Design. *Job:* "show me what my existing reading captured, and what it dropped." *Hook:* the [back-projection protocol](/docs/applied/research/symbolic-correspondence#обратная-проекция) + the [classification T-256](/docs/applied/research/one-grammar#t-256) + the [information-loss theorem](/docs/core/structure/symbolic-systems#информационная-утрата). *In:* a legacy reading. *Out:* its Γ-image, its orbit type, and its quantified loss. *Status:* `[design]`. *Pay:* the onboarding funnel — meet users inside the system they already trust, then reveal the derived object beneath. Strategically the most important acquisition surface.
+**9.1 Back-projection.** *User:* anyone arriving from astrology / I Ching / tarot / Human Design. *Job:* "show me what my existing reading captured, and what it dropped." *Hook:* the [back-projection protocol](https://homohologra.ph/research/symbolic-correspondence#обратная-проекция) + the [classification T-256](https://homohologra.ph/research/one-grammar#t-256) + the [information-loss theorem](https://homohologra.ph/research/symbolic-systems#информационная-утрата). *In:* a legacy reading. *Out:* its Γ-image, its orbit type, and its quantified loss. *Status:* `[design]`. *Pay:* the onboarding funnel — meet users inside the system they already trust, then reveal the derived object beneath. Strategically the most important acquisition surface.
 
 ## §10. Prioritisation preview {#приоритизация}
 

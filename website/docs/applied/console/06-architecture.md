@@ -35,7 +35,7 @@ The **autoephemeris** is simply the ordered sequence of a Subject's `GammaEstima
 
 Two API tiers over the internal kernel API of [02 §5](/docs/applied/console/kernel#api):
 
-- **Ingestion API** — `submitEvidence(subject, evidence)` → runs the matching estimator → stores `GammaEstimate`. Rejects unlicensed external inputs (planetary/natal) at the boundary per the [T-257 guardrail](/docs/applied/research/one-grammar#t-257).
+- **Ingestion API** — `submitEvidence(subject, evidence)` → runs the matching estimator → stores `GammaEstimate`. Rejects unlicensed external inputs (planetary/natal) at the boundary per the [T-257 guardrail](https://homohologra.ph/research/one-grammar#t-257).
 - **Readout API** — `read(subject, module, options)` → assembles the estimate(s), calls `kernel.evaluate`, runs the domain module, passes through the honesty layer, returns `Readout` + metadata. Every response is self-describing: anchor class, confidence, loss, kernel version.
 
 The **B2B/AI variant** is the same Readout API with a telemetry-adapter estimator — the platform property realised as an API, not a fork. One service, three markets.

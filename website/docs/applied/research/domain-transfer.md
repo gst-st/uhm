@@ -7,7 +7,7 @@ description: "The generative layer — the third-order engine (mediators, closur
 # Domain Transfer: the generative layer
 
 :::info What this document is
-The seven-dimensional relation structure $\Gamma$ is not a bag of 49 numbers; it is a layered object whose specific information lives at **third order** (on triples, not pairs). Once that is seen — [§0](#движок) — it becomes a *transfer engine*: any domain onto which the seven axes map inherits the same rigid combinatorics. This document unfolds that engine across ten domains at full depth. Each entry has the same skeleton: **dictionary** (what maps to the seven axes) → **derivation** (the transferred computation) → **number** (machine-verified) → **status** (honest [T]/[C]/[H]) → **test** (a falsifiable prediction via the [self-checking dictionary](/docs/applied/research/one-grammar#самопроверяемость-словаря)). Every quantitative claim below is reproduced by the verifier itself.
+The seven-dimensional relation structure $\Gamma$ is not a bag of 49 numbers; it is a layered object whose specific information lives at **third order** (on triples, not pairs). Once that is seen — [§0](#движок) — it becomes a *transfer engine*: any domain onto which the seven axes map inherits the same rigid combinatorics. This document unfolds that engine across ten domains at full depth. Each entry has the same skeleton: **dictionary** (what maps to the seven axes) → **derivation** (the transferred computation) → **number** (machine-verified) → **status** (honest [T]/[C]/[H]) → **test** (a falsifiable prediction via the [self-checking dictionary](https://homohologra.ph/research/one-grammar#самопроверяемость-словаря)). Every quantitative claim below is reproduced by the verifier itself.
 :::
 
 ## §0. The engine {#движок}
@@ -34,7 +34,7 @@ Read it as a table of levers: to create or repair the link $(i,j)$ you need the 
 
 **(4) The channel contraction $\Phi \to \Phi/9$ [T].** The Fano channel (Kraus projectors onto the three-dimensional line-subspaces, complete because each point lies on three lines) preserves a population across all three of its lines ($3\times\tfrac13 = 1$) but preserves a coherence only in its single line out of three ($\times\tfrac13$); squared, that is $\tfrac19$. Verified: $\Phi_{\text{in}}/\Phi_{\text{out}} = 9.000000$ on random states. The nine is a Steiner incidence count, not a fit.
 
-**The self-checking dictionary [Т-method].** These four make every domain mapping *falsifiable*, not interpretive: a correct mapping must reproduce the mediator table, and a chance mapping does so with probability $\sim(1/5)^7 \approx 3\times10^{-5}$ — see [one grammar §6](/docs/applied/research/one-grammar#самопроверяемость-словаря). This is the licence under which the domain readings below carry weight.
+**The self-checking dictionary [Т-method].** These four make every domain mapping *falsifiable*, not interpretive: a correct mapping must reproduce the mediator table, and a chance mapping does so with probability $\sim(1/5)^7 \approx 3\times10^{-5}$ — see [one grammar §6](https://homohologra.ph/research/one-grammar#самопроверяемость-словаря). This is the licence under which the domain readings below carry weight.
 
 ---
 
@@ -162,7 +162,7 @@ $$
 
 **Dictionary.** Stable symbolic/cultural forms as configurations of the seven axes.
 
-**Derivation.** [T-256 [Т+И]](/docs/applied/research/one-grammar#t-256) already establishes that symbolic systems are orbits of Fano subconfigurations under $\mathrm{Aut} = \mathrm{PSL}(2,7)$ of order 168 — cross-cultural recurrence as a theorem. The third-order principle adds a sharp corollary: **stable cultural forms are triadic, not dyadic** — triads of deities, three branches of power, triples of archetypes — because the triple is the *minimal carrier of distinguishable structure* while a pair is structureless under $\mathrm{Aut}$ (one orbit, §0).
+**Derivation.** [T-256 [Т+И]](https://homohologra.ph/research/one-grammar#t-256) already establishes that symbolic systems are orbits of Fano subconfigurations under $\mathrm{Aut} = \mathrm{PSL}(2,7)$ of order 168 — cross-cultural recurrence as a theorem. The third-order principle adds a sharp corollary: **stable cultural forms are triadic, not dyadic** — triads of deities, three branches of power, triples of archetypes — because the triple is the *minimal carrier of distinguishable structure* while a pair is structureless under $\mathrm{Aut}$ (one orbit, §0).
 
 **Status.** **[T]** (third-order $\Rightarrow$ triads are the minimal structured unit) / **[H]** (the specific cultural mapping).
 
@@ -196,13 +196,13 @@ Physics needs no separate catalogue entry: it is the corpus layer where the engi
 
 ## §7. Honest boundaries {#границы}
 
-The second-order blind spot cuts both ways: it explains why the seven were never seen in ordinary statistics, but it also means **the decisive experiments are third-order**, and triple statistics need orders of magnitude more data than pairwise ones (third moments have large variance). Discovery 1's time-*ratio* is one parametrization — the *order* is structural, the ratio is not. Discoveries 9–10 are **[H]** on the dictionary while **[T]** on the arithmetic. The cheapest decisive test of the entire programme is Discovery 1's line-resolved bicoherence, precisely because the data already exist. And every mapping is licensed only insofar as it passes the [self-checking dictionary](/docs/applied/research/one-grammar#самопроверяемость-словаря): the interpretation is optional, the third-order combinatorics is not.
+The second-order blind spot cuts both ways: it explains why the seven were never seen in ordinary statistics, but it also means **the decisive experiments are third-order**, and triple statistics need orders of magnitude more data than pairwise ones (third moments have large variance). Discovery 1's time-*ratio* is one parametrization — the *order* is structural, the ratio is not. Discoveries 9–10 are **[H]** on the dictionary while **[T]** on the arithmetic. The cheapest decisive test of the entire programme is Discovery 1's line-resolved bicoherence, precisely because the data already exist. And every mapping is licensed only insofar as it passes the [self-checking dictionary](https://homohologra.ph/research/one-grammar#самопроверяемость-словаря): the interpretation is optional, the third-order combinatorics is not.
 
 ---
 
 **Related documents:**
 - [Fano fingerprint (T-226)](/docs/applied/research/fano-fingerprint) — the first-order blind spot, the polar/mediator partition, the fourteen rate-identities.
-- [The One Grammar (T-256/T-257)](/docs/applied/research/one-grammar) — the classification of charts and the self-checking dictionary that licenses every mapping here.
+- [The One Grammar (T-256/T-257)](https://homohologra.ph/research/one-grammar) — the classification of charts and the self-checking dictionary that licenses every mapping here.
 - [Σ-calculus (T-224/T-225)](/docs/applied/research/syndrome-calculus) — the diagnosability pyramid and the Hamming/Steane code layer of Discovery 6.
 - [FANOS](/docs/applied/fanos/fanos-specification) — Discovery 7 developed as a reference distributed protocol.
 - [SYNARC-Ω implementation](/docs/applied/coherence-cybernetics/implementation) — Discovery 8, the agent's constitution from constants.
