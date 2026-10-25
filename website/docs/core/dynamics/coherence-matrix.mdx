@@ -70,7 +70,16 @@ $$
 \Gamma^\dagger = \Gamma \quad \Leftrightarrow \quad \gamma_{ij} = \gamma_{ji}^*
 $$
 
-**Justification [T]:** The Hermiticity of $\Gamma$ follows from the domain of Axiom A1: $\mathcal{D}(\mathcal{H})$ is the set of Hermitian positive semi-definite matrices with $\mathrm{Tr}(\Gamma)=1$. Additionally: the real structure $J_{\mathrm{int}}$ of the finite spectral triple ($J^2=+1$, KO-dimension 6) ensures $J\Gamma J^{-1} = \Gamma$, which for standard $J$ = c.c. is equivalent to $\Gamma^\dagger = \Gamma$ [T].
+**Justification [T, conditional on A1]:** Hermiticity is part of the domain specified in Axiom A1: $\mathcal{D}(\mathcal{H})$ consists of Hermitian positive semi-definite matrices with $\mathrm{Tr}(\Gamma)=1$. This is a property of the chosen state space, not an independent derivation from a real structure.
+
+For standard complex conjugation $J$, the condition $J\Gamma J^{-1}=\Gamma$ means $\overline\Gamma=\Gamma$: all entries are real. It is **not equivalent** to Hermiticity, which also transposes the matrix. For example,
+
+$$
+\Gamma_* =
+\begin{pmatrix}1/2&i/4\\-i/4&1/2\end{pmatrix}\oplus 0_5
+$$
+
+is Hermitian, positive semi-definite and normalized (its eigenvalues are $3/4,1/4,0,0,0,0,0$), but $J\Gamma_*J^{-1}\ne\Gamma_*$. The existence of an antiunitary real structure alone does not impose invariance of a state. If such invariance is required, it is an additional restriction that must be justified separately and retained when changing the basis.
 
 **Corollary:** All eigenvalues $\lambda_k$ are real.
 
