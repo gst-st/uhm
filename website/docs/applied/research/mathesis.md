@@ -112,7 +112,7 @@ Theorem T-182 [T] establishes that three levels of the subobject classifier are 
 
 | Level of $\Omega$ | Level of Mathesis | What it formalizes |
 |-------------------|-------|-----------------|
-| $\mathrm{Dec}(\Omega) \cong 2^7$ (Boolean) | **Fibration Engine**: typed hypergraph, statement and dependency types | Static structure: "what statements exist and how they are connected" |
+| $\mathrm{Dec}(\Omega)$ (Boolean clopens; $\mathrm{Clopen}(D_7) \cong \mathbf{2}$, while a chosen orthogonal frame gives $2^7$ [D]) | **Fibration Engine**: typed hypergraph, statement and dependency types | Static structure: "what statements exist and how they are connected" |
 | $\tau_{\leq 0}(\Omega)$ (Heyting) | **Epistemic Engine**: threshold predicates, status propagation, coherence audit | Thresholds and logic: "which statements are reliable and where are the boundaries" |
 | Full $\Omega$ (∞-groupoid) | **Reflexive cycles**: $T_{\text{meta}}$, double loop, meta-audit | Dynamics: "how the system observes and restructures itself" |
 

@@ -58,6 +58,20 @@ finite adjoint words applied to the observations and $I$. Equality of their
 expectations is therefore exactly equality of the coordinates. The identity
 coordinate is fixed to one on $D_N$. ∎
 
+**Machine-checking boundary (28 October 2026).** The constructive kernel's
+`ActionObservation` module proves, for arbitrary deterministic state/action/readout
+carriers, that the least family closed under action pullback consists exactly of
+readouts after finite action words. Equality on this family is an equivalence
+preserved by every declared action. Its ten theorems have an empty Lean axiom
+roster. This is the dynamic part of the representation contract above.
+The numerical lemma `observable_closure_stabilizes` in `TypedKernel` proves only
+an adjacent equality in a bounded monotone dimension sequence. Such equality
+alone need not persist: the sequence $0,0,1,1,\ldots$ is a counterexample.
+The concrete recurrence of subspaces supplies the additional persistence in the
+proof above. A machine-checked bridge from those subspaces and complex CPTP
+adjoints to the generic action closure remains required; rational TP witnesses
+alone do not certify the complex CPTP category or floating-point rank decisions.
+
 This supplies an explicit instance of the action-preserving representation
 required for executable transfer in Autogeny and SYNARC. Preserving a present
 observation alone is insufficient: the qubit states $|+\rangle\langle+|$ and
