@@ -15,15 +15,15 @@ A bat perceives the world through echolocation. It has **subjective experience**
 
 Nagel posed the question. Daniel Dennett (1991) tried to sidestep it, arguing that there is no "what it is like" at all. Michael Levin (2019) suggested that subjectivity is more widespread than we think — down to cellular aggregates. But none of these approaches provided a **mathematical language** for describing the content of experience.
 
-**UHM provides this language.** The question "what is it like to be a system $\Gamma$?" receives a precise answer: the content of experience is determined by the spectral decomposition of the **reduced matrix** $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$.
+**UHM proposes a language for this question [I/H].** Its spectral descriptor uses a specified normalized experiential state $\rho_E$ in an augmented realization; it is not a literal partial trace of the one-dimensional native E-axis. Identifying a physical or phenomenal target requires the declared readout and independent evidence.
 
 :::info Where we come from
-In the [previous chapter](./two-aspect-monism) we established that $\Gamma$ has an inner side (interiority) as an inseparable aspect, not a superstructure. Now we formalise: **what exactly** does this inner side contain? The answer — the spectral decomposition of the reduced matrix $\rho_E$.
+The [previous chapter](./two-aspect-monism) proposes a two-aspect interpretation. Here we define a spectral descriptor and separate its mathematical construction from a physical or phenomenal attribution.
 :::
 
 ### Chapter Roadmap
 
-1. **Reduced matrix $\rho_E$** — how the "projection onto experience" is extracted from the full $\Gamma$
+1. **Reduced matrix $\rho_E$** — the extension and readout needed to define it
 2. **Four components of experience** — intensity, quality, context, history
 3. **Projective space of qualities** — the geometry in which sensations live
 4. **Fubini-Study metric** — distance between qualities (how much red differs from blue)
@@ -34,34 +34,24 @@ In the [previous chapter](./two-aspect-monism) we established that $\Gamma$ has 
 
 ### Motivation: how to extract the "experiential" part from the full description
 
-$\Gamma$ — the full $7 \times 7$ coherence matrix describing **all** aspects of the system: activity, structure, dynamics, logic, interiority, foundation, unity. But we are specifically interested in **interiority** — dimension $E$. How do we isolate precisely this part?
-
-**Analogy.** Imagine a symphony orchestra of seven sections (7 dimensions of $\Gamma$). One section — the woodwinds (dimension $E$, interiority). To understand what this section "hears," we can "mute" the other six sections and listen only to its part — this is $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$. But the full picture of the sound requires knowing how the woodwinds interact with the other sections — this is context $\{\gamma_{Ek}\}$.
+The native $7\times7$ state has seven labelled axes. E is one summand, not a tensor subsystem. A musical-section analogy can motivate a readout, but it does not define a partial trace or recover an experiential register from a population and six coherences.
 
 ### Definition
 
-**The density matrix of the Interiority dimension** $\rho_E$ is obtained by the partial trace of the [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma$ over all dimensions except $E$:
-
+Choose a total state $\rho_{\rm tot}$ on a specified tensor product $\mathcal H_E\otimes\mathcal H_{\rm rest}$ and define
 $$
-\rho_E := \mathrm{Tr}_{-E}(\Gamma)
+\rho_E=\operatorname{Tr}_{\mathcal H_{\rm rest}}\rho_{\rm tot}.
 $$
+A declared lift may supply $\rho_{\rm tot}=\mathcal E(\Gamma)$; alternatively it is measured independently. The lift, factor and calibration are part of the augmented record. A compression is a different construction and requires conditioning on a nonzero weight.
 
-where $\mathrm{Tr}_{-E}$ is the partial trace over dimensions $\{A, S, D, L, O, U\}$.
+For the native one-dimensional axis, $P_E\Gamma P_E=\gamma_{EE}P_E$ normalizes to $P_E$ whenever $\gamma_{EE}>0$. Its spectrum is then $\{1\}$ and its entropy zero; at zero weight the conditional state is undefined. In particular $\gamma_{EE}=0.20$ is a weight, not a nontrivial normalized spectrum.
 
-**What is the partial trace?** If the full system is described by matrix $\Gamma$ in the space $\mathcal{H}_E \otimes \mathcal{H}_{\text{rest}}$, then the partial trace is the operation of "summing" over all degrees of freedom except the dimension $E$ of interest. The result is a matrix $\rho_E$ containing all information about the $E$-component accessible without knowledge of the remaining dimensions.
-
-**Numerical example.** Let $\Gamma$ be a state with $\gamma_{EE} = 0.20$ (20% of the resource in interiority). Then $\rho_E$ will have trace 1 (normalisation), but the main contribution to its spectrum will be determined by $\gamma_{EE}$ and coherences $\gamma_{Ek}$.
-
-:::tip Morita equivalence of 7D and 42D formalisms [T]
-The partial trace $\mathrm{Tr}_{-E}$ is formally defined in the extended formalism ($\mathcal{H} = \mathbb{C}^{42}$). **However**, the 7D and 42D formalisms are **Morita equivalent** [T]: the sites $(\mathcal{C}_7, J_{\text{Bures}})$ and $(\mathcal{C}_{42}^{\text{PW}}, J_{\text{Bures}})$ induce equivalent sheaf categories $\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42}^{\text{PW}})$.
-
-Consequently, $\rho_E$ is uniquely determined via $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ as the E-block of PW-reconstruction. All definitions in this document are **exact** in the 7D formalism.
-
-See [Two levels of formalisation](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization).
+:::note Section–retraction is not unique experiential reconstruction
+The product construction $\Gamma\mapsto\Gamma\otimes\sigma$ has the native marginal $\Gamma$ for every register state $\sigma$. The experiential marginal can therefore be pure or mixed while all native data stay fixed. The former 7D/42D Morita-equivalence and unique PW-reconstruction assertions are withdrawn; see [the corrected realization](/docs/core/structure/dimension-e#rho-e-7d-42d). Choosing a total dimension does not itself choose an experiential factor, lift or conditional state.
 :::
 
-:::warning Information completeness [D]
-$\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ loses the cross-sectoral coherences $\gamma_{ij}$ for $i,j \notin \{E\}$. The full experiential content is recovered through **context**: $\mathrm{Exp}_k = (\lambda_k, [|q_k\rangle], \mathrm{Context}_k, \mathrm{Hist}_k)$, where $\mathrm{Context}_k = \{\gamma_{Ek} : k \neq E\}$ is taken from the **full** matrix $\Gamma$, not from $\rho_E$. Thus: $\rho_E$ determines intensities and qualities; $\Gamma$ determines context and connections.
+:::warning Information completeness
+A partial trace generally loses correlations. Adding the native E-star context $\{\gamma_{Ej}:j\ne E\}$ and a history is a declared descriptor; it is not a proof of full reconstruction of the joint state or of phenomenal content. Any sufficiency claim needs the [observation-fibre criterion](/docs/applied/research/reconstruction-identifiability#fiber-theorem), a specified readout and its empirical interpretation.
 :::
 
 ## Basic Equation
@@ -78,87 +68,29 @@ This is the standard eigenvalue problem. $\rho_E$ is a Hermitian matrix, so by t
 - $|q_i\rangle \in \mathcal{H}_E$ — **quality** of the $i$-th component
 - $\mathcal{H}_E$ — Hilbert space of the [Interiority dimension](/docs/core/structure/dimension-e)
 
-**Interpretation:** Each eigenvalue $\lambda_i$ shows **how strongly** the given component of experience is present. Each eigenvector $|q_i\rangle$ determines **what kind** of component it is — its qualitative character.
+**Interpretation [I/H]:** eigenvalues and resolved spectral subspaces are candidate intensity and quality descriptors. Their psychological meaning requires a calibrated readout. At repeated eigenvalues the invariant objects are spectral projectors, as defined below; a chosen eigenbasis does not add observed structure.
 
 :::warning Terminology
-The term **"qualia"** is used ONLY for L2 (cognitive qualia at $R \geq R_{\text{th}} = 1/3$, $\Phi \geq \Phi_{\text{th}} = 1$, $D_{\text{diff}} \geq D_{\min} = 2$). For the general case (L0–L2) the term **"experiential content"** is used.
+This chapter uses “qualia” for the selected L2 interpretation. Its formal classification requires the declared $A_1$, strict $P>2/7$, $R\ge1/3$, $\Phi\ge1$ and the chosen $D_{\rm diff}\ge2$ realization. Missing realization data remain unresolved; a metric or gate is not a phenomenal certificate.
 
 See [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) for formal definitions of levels.
 :::
 
 ## Numerical Examples of Computing $\rho_E$ {#числовые-примеры-rho-e}
 
-To make the formalism tangible, let us consider three concrete examples: how the reduced matrix $\rho_E$ is computed from the full matrix $\Gamma$, and what its spectrum means.
+These are **chosen register spectra**, not reconstructions from native populations or empirical assignments of sleep, red perception or meditation. For any fixed valid native $\Gamma$, let $\rho_{\rm tot}=\Gamma\otimes\operatorname{diag}(\lambda)$ and designate the second factor as the experiential register. The following old illustrative numbers all give normalized positive six-dimensional register states:
 
-:::note Example 1: Deep sleep (L0)
-**Initial $\Gamma$** — nearly maximally mixed state:
+| Illustration | Chosen spectrum $\lambda$ | Mathematical reading |
+|---|---|---|
+| 1 (historical “sleep” label) | $(.17,.17,.17,.17,.16,.16)$ | Nearly uniform register |
+| 2 (historical “red perception” label) | $(.52,.23,.11,.07,.04,.03)$ | One dominant eigenvalue |
+| 3 (historical “meditation” label) | $(.38,.30,.15,.09,.05,.03)$ | Two leading eigenvalues |
 
-$$
-\Gamma_{\text{sleep}} = \frac{1}{7}I + \varepsilon \cdot \Delta, \quad \varepsilon \approx 0.02
-$$
-
-Diagonal elements: $\gamma_{kk} \approx 1/7 \approx 0.143$ for all $k$. Off-diagonal elements: $|\gamma_{ij}| \lesssim 0.02$ — nearly zero coherences.
-
-**Computing $\rho_E$.** Upon taking the partial trace over $\{A,S,D,L,O,U\}$ we obtain a scalar (one-dimensional E-block in the 7D formalism):
-
-$$
-\rho_E^{\text{sleep}} \approx \gamma_{EE} \approx 0.143
-$$
-
-In the extended PW formalism $\rho_E$ is a $6 \times 6$ matrix (E participates in 6 pairs). Its spectrum:
-
-$$
-\text{Spectrum}(\rho_E^{\text{sleep}}) \approx \{0.17,\; 0.17,\; 0.17,\; 0.17,\; 0.16,\; 0.16\}
-$$
-
-**Interpretation.** The spectrum is nearly uniform — there is no dominant component. This is the "white noise" of interiority: the system distinguishes no aspect of experience. Purity $P = \text{Tr}(\Gamma^2) \approx 1/7 + O(\varepsilon^2) \approx 0.144$ — below the threshold $P_{\text{crit}} = 2/7 \approx 0.286$.
-:::
-
-:::note Example 2: Wakefulness — perception of red (L2)
-**Initial $\Gamma$** — state with dominant E-activity and coherences:
-
-$$
-\gamma_{EE} = 0.20, \quad \gamma_{AA} = 0.18, \quad \gamma_{LL} = 0.15
-$$
-$$
-\gamma_{EA} = 0.12 \cdot e^{i \cdot 0.1}, \quad \gamma_{EL} = 0.08 \cdot e^{i \cdot 0.05}, \quad \gamma_{EU} = 0.10 \cdot e^{i \cdot 0.15}
-$$
-
-Remaining diagonal: $\gamma_{SS} = 0.14$, $\gamma_{DD} = 0.12$, $\gamma_{OO} = 0.11$, $\gamma_{UU} = 0.10$.
-
-**Spectrum of $\rho_E$** (via PW-reconstruction):
-
-$$
-\text{Spectrum}(\rho_E^{\text{awake}}) \approx \{0.52,\; 0.23,\; 0.11,\; 0.07,\; 0.04,\; 0.03\}
-$$
-
-**Interpretation.** The dominant eigenvalue $\lambda_1 = 0.52$ — more than half of the experience's "bandwidth" is occupied by a single component (the colour red). The corresponding eigenvector $|q_1\rangle$ determines the specific shade. The second component ($\lambda_2 = 0.23$) — background sensation (spatial context). Purity $P \approx 0.31 > P_{\text{crit}}$.
-
-Measures: $R \approx 0.38 \geq 1/3$ (reflection present), $\Phi \approx 1.2 \geq 1$ (integration present). The system is at level L2 — conscious perception.
-:::
-
-:::note Example 3: Deep meditation (upper range of L2)
-**Initial $\Gamma$** — state with high coherence between E and U:
-
-$$
-\gamma_{EE} = 0.18, \quad \gamma_{UU} = 0.17, \quad \gamma_{OO} = 0.16
-$$
-$$
-\gamma_{EU} = 0.14 \cdot e^{i \cdot 0.03}, \quad \gamma_{EO} = 0.11 \cdot e^{i \cdot 0.04}, \quad \gamma_{EA} = 0.06 \cdot e^{i \cdot 0.08}
-$$
-
-**Spectrum of $\rho_E$:**
-
-$$
-\text{Spectrum}(\rho_E^{\text{medit}}) \approx \{0.38,\; 0.30,\; 0.15,\; 0.09,\; 0.05,\; 0.03\}
-$$
-
-**Interpretation.** The two leading eigenvalues ($\lambda_1 = 0.38$, $\lambda_2 = 0.30$) are close in magnitude — there is no sharp dominance of a single component. This is a "broad" experience: not fixation on an object, but even-handed awareness. Coherence $\gamma_{EU} = 0.14$ — strong connection of experience with unity (a feeling of wholeness). Phases are small ($\theta \lesssim 0.08$) — high transparency of channels. Purity $P \approx 0.29$ — just above $P_{\text{crit}}$, in the Goldilocks window $(2/7, 3/7]$ [T T-124].
-:::
+Tracing the native factor yields the specified register state; tracing the register yields the **same** native $\Gamma$ in all three cases. The six-dimensional register was selected, not derived from the six native E-pairs. This example proves the need for extension data. It supplies neither L0/L2 assignments nor actual purity/reflection/integration values of a missing full native matrix; the old numerical assignments did not establish those claims. Experience-related names remain hypotheses requiring calibrated observations.
 
 ### Geometric Intuition: spectrum of $\rho_E$ in different states {#геометрия-спектра}
 
-The spectrum of $\rho_E$ can be visualised as a **bar chart** on an $(n-1)$-simplex. Characteristic patterns:
+The spectrum of a specified $\rho_E$ lies on an $(n-1)$-simplex. The psychological labels and level assignments in the following historical illustration are proposed interpretations, not measured examples or consequences of a native partial trace:
 
 | State | Spectrum pattern | $\lambda_1 / \lambda_2$ | Geometric analogy |
 |-------|-----------------|------------------------|-------------------|
@@ -172,16 +104,16 @@ The spectrum of $\rho_E$ can be visualised as a **bar chart** on an $(n-1)$-simp
 - $\lambda_1/\lambda_2 \gg 1$: narrow focus (perception of a single object, acute pain)
 - $\lambda_1/\lambda_2 \approx 1$: broad scope (panoramic awareness, "pure consciousness")
 
-This ratio is $G_2$-invariant (does not depend on the choice of basis) and therefore is an objective characteristic of the state of consciousness.
+For $\lambda_2>0$, this is a spectral ratio invariant under unitary conjugation of the specified register. A native $G_2$ action preserves it only through a proved compatible lift/readout. The psychological labels in the illustration above are hypotheses, not consequences of that invariance.
 
 ---
 
 ## Experiential Content: Four Components
 
-What exactly does a system experience? UHM gives the answer through four components, each computable from $\Gamma$:
+The following four components define a selected descriptor [D/I]. They require the augmented realization and stored trajectory; a single native $\Gamma$ does not determine arbitrary extension data or its past:
 
 $$
-\mathrm{Exp}(\Gamma, \tau) := (\mathrm{Intensity}, \mathrm{Quality}, \mathrm{Context}, \mathrm{History})
+\mathrm{Exp}(z_{\le\tau}) := (\mathrm{Intensity}, \mathrm{Quality}, \mathrm{Context}, \mathrm{History})
 $$
 
 **Analogy with the painter's palette.** Imagine a palette with paints. **Intensity** — how much paint of each colour is on the palette (a lot of red, little blue). **Quality** — the colours themselves (red, blue, green). **Context** — the lighting in the studio, which changes the perception of colours. **History** — how the palette looked a minute ago (the painter just added yellow).
@@ -200,15 +132,14 @@ Intensity determines the amplitude of the interiority state (at L2+: **loudness*
 
 ### Component 2: Quality
 
-Eigenvectors in projective space:
-
+The canonical spectral record is
 $$
-\mathrm{Quality}(\rho_E) := \{[|q_i\rangle] \in \mathbb{P}(\mathcal{H}_E)\}_{i=1}^{n}
+\rho_E=\sum_{\lambda\in\operatorname{Spec}(\rho_E)}\lambda P_\lambda,
+\qquad \mathrm{Quality}_{\rm sp}(\rho_E):=\{(\lambda,P_\lambda)\}.
 $$
+Each $P_\lambda$ projects onto the complete eigenspace for the distinct eigenvalue $\lambda$. For simple eigenvalues it is a rank-one ray $P_\lambda=|q_\lambda\rangle\langle q_\lambda|$. At a degeneracy, rotating a basis within that eigenspace changes individual eigenvectors without changing $\rho_E$; those rays are not identified by the state. Near a degeneracy, resolving separate modes requires a spectral-gap/error bound. The full-state metric below avoids this choice altogether.
 
-Quality determines the character of the interiority state (at L2+: **timbre**, **colour**, **character** of experience).
-
-The square brackets $[\cdot]$ denote an **equivalence class**: a vector and its multiplication by a complex number yield the same quality. This is physically meaningful: the global phase is unobservable.
+A separately calibrated quality-ray map may take values in $\mathbb P(\mathcal H_E)$; it need not select eigenvectors. Rays identify nonzero vectors differing by a nonzero complex scalar, and normalized representatives differ by phase. Interpreting these data as timbre, colour or character is an empirical bridge [I/H], not a consequence of diagonalization. See [spectral readouts and degeneracies](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах).
 
 ### Component 3: Context
 
@@ -268,7 +199,7 @@ $$
 | Isomorphism | $\mathbb{P}(\mathbb{C}^n) \cong S^{2n-1} / U(1)$ |
 | Dimension | $\dim_{\mathbb{R}}(\mathbb{P}(\mathbb{C}^n)) = 2n - 2$ |
 
-**Connectedness** means that from any quality one can continuously pass to any other — there are no "isolated islands" in the space of experiences. **Compactness** guarantees that the space of qualities is finite — there are no "infinite expanses."
+For finite $n$, this projective space is path-connected and compact. Compactness gives a finite $\varepsilon$-net for every $\varepsilon>0$, not a finite number of states: for $n>1$ there are uncountably many rays. For $n>1$ the FS diameter is $\pi/2$; for $n=1$ the space is one point. A continuous path in the mathematical space does not prove that a physical system can traverse it under its actual controls.
 
 ## Fubini-Study Metric {#метрика-фубини-штуди}
 
@@ -276,7 +207,7 @@ $$
 
 Intuitively, red is "closer" to orange than to blue. Pain in a finger is "closer" to pain in the hand than to the smell of a rose. But can this be formalised?
 
-The Fubini-Study metric is the unique (up to a constant) monotone Riemannian metric on projective space (Chentsov-Petz theorem). This is not an arbitrary choice, but a **forced structure**.
+Choose a complex inner product and the Fubini–Study geometry on its ray space. The formula below uses **unit-normalized representatives**; for arbitrary nonzero representatives divide the overlap by $\|\psi\|\,\|\phi\|$. The [enriched-Yoneda results](/docs/proofs/categorical/categorical-formalism#enriched-yoneda) then apply to this specified metric space. This is not a consequence that Čencov–Petz forces a unique quantum metric: [Petz classifies a family](/docs/core/foundations/mathematical-foundations#ченцов-петц), and a psychological metric still needs calibration.
 
 **Distance between qualities:**
 
@@ -296,7 +227,7 @@ And for $|q_{\text{blue}}\rangle = \begin{pmatrix}0\\1\end{pmatrix}$:
 
 $$d_{FS}(\text{red}, \text{blue}) = \arccos(0) = \pi/2 \approx 1.57 \text{ rad}$$
 
-Red is indeed closer to orange than to blue.
+The assigned vectors have that distance ordering. Their colour names are illustrative; the ordering becomes a prediction about perception only after independently calibrating the colour-to-ray map.
 
 **Properties:**
 
@@ -305,7 +236,7 @@ Red is indeed closer to orange than to blue.
 | $d_{FS} = 0$ | $\vert\psi\rangle = e^{i\theta}\vert\phi\rangle$ | Identical qualities |
 | $d_{FS} = \pi/2$ | $\langle\psi\vert\phi\rangle = 0$ | Maximally distinct qualities |
 
-**Infinitesimal form** (Riemannian metric):
+**Infinitesimal form** for a differentiable unit-normalized local representative:
 
 $$
 ds^2 = \langle d\psi|d\psi\rangle - |\langle\psi|d\psi\rangle|^2
@@ -313,70 +244,67 @@ $$
 
 ## Full Metric on the Experiential Space
 
-Distance between two experiential states $E_1$, $E_2$:
-
+Fix an experiential register of dimension $n$, a native E-projector $P_E$, a common clock/window $[-T,0]$ with $T>0$, and a record
 $$
-d_{\mathcal{E}}(E_1, E_2) := \sqrt{d_{\lambda}^2 + \alpha \cdot d_{FS}^2 + \beta \cdot d_C^2 + \gamma \cdot d_H^2}
+X=(\rho_E,C_E,h),\qquad C_E=P_E\Gamma(I-P_E),\qquad
+h\in C([-T,0],\mathcal D(\mathbb C^n)),\quad h(0)=\rho_E.
 $$
+Here $C_E$ is the native E-star written as a matrix, distinct from the scalar $C=\Phi R$. Define the Bures distance on normalized register states by
+$$
+F(\rho,\sigma)=\left(\operatorname{Tr}\sqrt{\sqrt\rho\,\sigma\sqrt\rho}\right)^2,
+\qquad d_B(\rho,\sigma)=\sqrt{2(1-\sqrt{F(\rho,\sigma)})}.
+$$
+It is a metric also at repeated eigenvalues and rank-deficient states; the smooth tensor formula needs stricter hypotheses. See the [Bures state-space construction](/docs/proofs/categorical/categorical-formalism#631-bures-топология-на-densitymat).
 
-where the metric components are:
+One valid product metric on these records is
+$$
+d_{\mathcal E}(X_1,X_2)=\sqrt{d_\lambda^2+\alpha d_B(\rho_1,\rho_2)^2+\beta d_C^2+\gamma d_H^2},
+$$
+where
+$$
+d_\lambda=\|\operatorname{sort}\lambda(\rho_1)-\operatorname{sort}\lambda(\rho_2)\|_2,
+\quad d_C=\|C_1-C_2\|_{\rm HS},\quad
+d_H=\frac1T\int_{-T}^0\|h_1(s)-h_2(s)\|_{\rm HS}\,ds.
+$$
+Take fixed $\alpha,\beta,\gamma>0$. Component triangle inequalities followed by the Euclidean triangle inequality prove the product triangle inequality. The Bures term separates current states; the context norm separates contexts; zero history integral implies equality everywhere for continuous histories. With merely measurable histories, quotient by equality almost everywhere. The spectral term is optional and redundant for separation, but may express a calibrated weighting of spectral changes. On physical systems or augmented records with further hidden fields this is only a pseudometric unless the descriptor is injective.
 
-| Component | Definition | Description |
-|-----------|------------|-------------|
-| $d_{\lambda}$ | $\|\boldsymbol{\lambda}_1 - \boldsymbol{\lambda}_2\|_2$ | Euclidean distance between spectra |
-| $d_{FS}$ | $\sum_i d_{FS}([\lvert q_i^{(1)}\rangle], [\lvert q_i^{(2)}\rangle])$ | Sum of Fubini-Study distances |
-| $d_C$ | $\|\mathrm{Context}_1 - \mathrm{Context}_2\|_F$ | Frobenius norm for contexts |
-| $d_H$ | $\int_{\tau-T_{\mathrm{mem}}}^{\tau} \|\rho_E^{(1)}(\tau') - \rho_E^{(2)}(\tau')\|_F \, d\tau'$ | Integral of history difference |
+The old sum of distances between arbitrarily indexed eigenrays is not a state metric: for $\rho=I_2/2$, the bases $(|0\rangle,|1\rangle)$ and $(|+\rangle,|-\rangle)$ give a sum $\pi/2$ although the state is unchanged. Spectral projectors and $d_B(\rho,\rho)=0$ remove that ambiguity. FS remains valid for separately declared individual rays.
 
-Weights $\alpha, \beta, \gamma > 0$ — model parameters.
-
-:::warning Empirical status
-Weights $\alpha$, $\beta$, $\gamma$ have **empirical status** — they are not derived from UHM axioms and require calibration for specific systems.
+:::warning Calibration and data coverage
+Weights, register choice, clock units and context mapping are model inputs fixed before confirmation. Align actual timestamps and preserve missing intervals; interpolation is an additional model, and a missing history cannot be silently replaced by zero distance. The mathematical metric does not determine a psychological dissimilarity scale.
 :::
 
-:::info $G_2$-invariance of the experiential metric [T]
-All components of the metric $d_{\mathcal{E}}$ are **$G_2$-invariant**: for $U \in G_2$, $d_{\mathcal{E}}(E_1, E_2) = d_{\mathcal{E}}(UE_1 U^\dagger, UE_2 U^\dagger)$. This follows from:
-- $d_\lambda$: the spectrum of $\rho_E$ does not change under unitary conjugation (in particular, under $G_2 \subset U(7)$)
-- $d_{FS}$: the Fubini-Study metric is invariant under $U(n)$-transformations (Chentsov-Petz theorem)
-- $d_C$, $d_H$: context and history are determined by matrix elements of $\Gamma$, transforming covariantly
-
-Consequently, **the geometry of experiential space is objective** — it does not depend on the choice of gauge ($G_2$-frame). The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#инварианты) [T] guarantees: different observers measure the same phenomenal geometry.
+:::info Conditional joint transport [T]
+Let $U$ be a native unitary and $V$ a unitary identification of the two experiential registers, applied to both compared records. Require
+$$
+\Gamma_a'=U\Gamma_aU^\dagger,\quad P_E'=UP_EU^\dagger,\quad
+\rho_a'=V\rho_aV^\dagger,\quad h_a'(s)=Vh_a(s)V^\dagger\quad(a=1,2),
+$$
+with the same time coordinate, weights and declared semantic mapping. Then $C_a'=UC_aU^\dagger$, so all distances above are unchanged by unitary invariance of spectra, fidelity and the HS norm. If the native E-axis is held fixed, require $UP_EU^\dagger=P_E$; a general $G_2$ rotation need not satisfy this. A compatible lift/readout must establish the register relation; it does not follow from native covariance alone. Different clocks or morphologies require their own validated transport, not an automatic equality of phenomenal geometry.
 :::
 
 ## Levels of Completeness of Description
 
-:::info Note
-This is a hierarchy of **completeness of description** of a single state. Not to be confused with the [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) (L0→L1→L2→L3→L4), which describes **types of systems**.
-:::
+These are levels of detail of the **selected descriptor**, distinct from the capability levels of the [canonical hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy#типизированный-вход).
 
-| Completeness | Components | Applicability |
-|--------------|------------|---------------|
-| Spectral | $\{\lambda_i\}$ | Intensities only (insufficient for distinguishing qualities) |
-| Geometric | $(\{\lambda_i\}, \{[\lvert q_i\rangle]\})$ | Intensity + quality |
-| Contextual | $(\{\lambda_i\}, \{[\lvert q_i\rangle]\}, C)$ | + coherences with other dimensions |
-| Full | $(\{\lambda_i\}, \{[\lvert q_i\rangle]\}, C, H)$ | + history of evolution |
+| Description | Data | Mathematical scope |
+|---|---|---|
+| Spectral | Sorted eigenvalues with multiplicity | Does not determine the register state |
+| Register | $\{(\lambda,P_\lambda)\}$, equivalently $\rho_E$ | Determines the specified normalized register, including degeneracies |
+| Contextual | $(\rho_E,C_E)$ | Adds the declared native E-star |
+| With history | $(\rho_E,C_E,h)$ | Adds the recorded trajectory on the common window |
+
+Completeness here is relative to those recorded fields. A claim about the entire augmented state or phenomenal target requires separate identification on its observation fibres.
 
 ## The Isospectrality Problem
 
-**Problem:** There exist matrices $\rho_1 \neq \rho_2$ with $\text{Spectrum}(\rho_1) = \text{Spectrum}(\rho_2)$ but different eigenvectors. Can two completely different experiences have the same "loudness"?
+Distinct register states can have the same spectrum. For example, $\rho_1=\operatorname{diag}(3/4,1/4)$ and $\rho_2=H\rho_1H^\dagger$ with the Hadamard unitary $H$ are different matrices with the same eigenvalues. Their corresponding spectral projectors differ and $d_B(\rho_1,\rho_2)>0$.
 
-**Answer: yes, and the formalism distinguishes them.** Qualities differ through eigenvectors:
-
-$$
-\text{Spectrum}(\rho_1) = \text{Spectrum}(\rho_2), \text{ but } \text{Quality}(\rho_1) \neq \text{Quality}(\rho_2)
-$$
-
-$$
-\Rightarrow \text{Exp}(\rho_1) \neq \text{Exp}(\rho_2)
-$$
-
-Isospectral states can have **equal intensity** but **different quality** of experience.
-
-**Analogy.** Two chords can have the same volume (intensity), but sound completely different (quality): major and minor — isospectral in amplitude, but distinct in timbre.
+Thus the spectrum alone does not identify the state, while the weighted projectors do. At a degeneracy a change of eigenbasis within one eigenspace does **not** produce a different state. Reading isospectral distinctions as “equal intensity, different quality” is a testable interpretation [I/H] after the readout is fixed, not a deduction about two experiences from the eigenvalue equation alone.
 
 ## Examples of Cognitive Qualia (L2)
 
-When L2 conditions are met: $R \geq 1/3$ [T], $\Phi \geq 1$ [T] (T-129), $D_{\text{diff}} \geq 2$ [D] (T-151) ([L2 thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)) the components of experience become reflexively accessible — the system does not merely "experience," but **knows that it experiences**.
+The examples below propose interpretations within a **declared L2 model**: $A_1\land(P>2/7)\land(R\ge1/3)\land(\Phi\ge1)\land(D_{\rm diff}\ge2)$ with the chosen proxy/extension mode. Neither this predicate nor a spectral name proves that a system knows it experiences; higher predictive self-model claims require their own certificates. Fix observations and calibration before testing the proposed readings.
 
 ### The colour red
 
@@ -402,13 +330,13 @@ The difference between sharp and dull pain is a difference in $|q_{\text{pain}}\
 
 ## The E-Slice and the Full Content (T-301) {#e-срез-и-полнота}
 
-Everything above is the **E-slice** of experiential content: the reduced matrix $\rho_E$ carries intensity and the relational position of a quality, and this is the slice the uniqueness and Yoneda theorems are about. The machine-verified quality canon adds the rest of the picture:
+The E-slice is a descriptor of the specified $\rho_E$, together with a chosen native context and history. Neither the native label E nor a general Yoneda statement supplies the extension, a unique spectral basis at degeneracy or a proof of phenomenal completeness.
 
-- the full content of a state is its **28 parameters** — 7 populations and 21 coherences; the taxonomy of the 21 channels and their 7 Fano sectors is the subject of [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure#двадцать-один-и-семь);
-- the **irreducible colour** of experience is not in any single pair but in the triples: the Fano holonomies $H_p = \arg(\gamma_{ij}\gamma_{jk}\gamma_{ki})$, the only phase objects that survive an axis re-phasing (the T-301 erratum: pairwise $\mathrm{Im}$-detectors are the state's *handwriting*);
-- the practical interface is the five-layer [qualia passport](/docs/consciousness/phenomenology/qualia-structure#паспорт-квалиа) — populations → intensities → opacities → colours → access — with the access condition being exactly the L2 thresholds used in this chapter.
+- A full-rank native state has **48 real coordinates**: seven real populations with one trace relation and 21 complex coherences. “28” counts mixed real/complex slots, not independent real parameters. The [21-pair taxonomy](/docs/consciousness/phenomenology/qualia-structure#двадцать-один-и-семь) remains a selected interpretation.
+- Every supported oriented cycle gives a diagonal-rephasing invariant. The seven Fano holonomies $H_p=\arg(\gamma_{ij}\gamma_{jk}\gamma_{ki})$ are seven selected readings, not the only invariants: full $K_7$ has cycle rank 15; sparse support requires its own cycle basis. Missing support is not a zero angle.
+- The [qualia passport](/docs/consciousness/phenomenology/qualia-structure#паспорт-квалиа) retains state/frame provenance, support, readout, extension and uncertainty. L2 refers to the chosen $A_1$ plus all four Cap$_2$ conditions of the [canonical hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy#типизированный-вход), not an R/Phi pair gate or phase reading alone.
 
-The two languages do not compete: the E-slice answers "how loud, and which quality among qualities"; the passport answers "what, in full, and which part of it is invariant".
+These are complementary typed records. Whether they identify a target quality requires an observation model and a justified empirical bridge; no counting argument supplies the bridge.
 
 ## Connection to Neuroscience
 
@@ -424,7 +352,7 @@ In neuroscience, NCC is the minimal neural mechanism sufficient for a specific e
 | Connectivity (functional connectivity) | $\Phi$ (integration measure) |
 | Neural differentiation | $D_{\text{diff}}$ |
 
-UHM does not compete with neuroscience, but provides a **mathematical language** in which neural data can be interpreted. Prediction: neural patterns corresponding to conscious perception must satisfy $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$ (if correctly mapped into the $\Gamma$-formalism).
+These correspondences are proposed readouts [I/H], not derived identities with neural mechanisms. A study must specify its encoder, experiential register, observation law and independent behavioral target. If it tests the chosen L2 classification, it must evaluate $A_1$ and all four Cap$_2$ conditions, including strict $P>2/7$ and declared $D_{\rm diff}$, with uncertainty retained.
 
 ## Unity of Experience
 
@@ -434,24 +362,26 @@ Neuroscience knows that colour is processed in area V4, shape in area IT, motion
 
 ### UHM's Solution
 
-Subjective unity of experience ("self") is provided by the [Unity dimension (U)](/docs/core/structure/dimension-u) through coherences $\gamma_{EU}$:
+UHM proposes that declared native E–U coherence and register integration can be predictors of a specified binding response [H]. These are mathematical diagnostics before they are psychological explanations.
 
+For a **fixed measured basis of the normalized experiential register**, write $r_{ab}=(\rho_E)_{ab}$ and define
 $$
-\Phi_E := \frac{\sum_{i \neq j} |\gamma_{E_i E_j}|^2}{\sum_i \gamma_{E_i E_i}^2}
+\Phi_E:=\frac{\sum_{a\ne b}|r_{ab}|^2}{\sum_a r_{aa}^2}.
 $$
+This preserves the integration formula while identifying its actual state and basis. The denominator is positive for a normalized state. This is distinct from the native global $\Phi$; a one-dimensional compressed E-axis gives $\Phi_E=0$. Choosing an eigenbasis makes the numerator zero, so the basis cannot be selected afterwards to support a binding claim.
 
-where $\Phi_E$ is the **integration measure of the experiential subspace** (not to be confused with the global [integration measure $\Phi$](/docs/core/structure/dimension-u#мера-интеграции-φ), which is computed over the entire matrix $\Gamma$).
-
-**Condition for unified experience:**
-
+The complex number $\gamma_{EU}$ has no ordered comparison with zero. Possible declared real predictors are
 $$
-\gamma_{EU} > 0 \quad \land \quad \Phi_E > \Phi_{th}
+b_{EU}=|\gamma_{EU}|,\qquad
+\chi_{EU}=\frac{|\gamma_{EU}|^2}{\gamma_{EE}\gamma_{UU}}\in[0,1]
+\quad\text{if }\gamma_{EE}\gamma_{UU}>0.
 $$
+The bound follows from the positive $2\times2$ principal minor. At zero denominator PSD forces the coherence to vanish, but the normalized ratio remains undefined. A signed real part requires a separately fixed phase reference. Neither a positive magnitude nor a threshold on $\Phi_E$ proves a unified self or clinically identifies dissociation.
 
-When $\gamma_{EU} \to 0$ or $\Phi_E < \Phi_{th}$, **dissociation** arises — a sense of fragmentation of consciousness. This is observed clinically: in dissociative disorders patients describe experience as "not mine," "watching from the outside" — which corresponds to a decrease in $\gamma_{EU}$.
+A testable binding proposal declares the response (for example a cross-modal matching judgement), the fixed encoder/register basis, calibration uncertainty and candidate predictor before outcomes. Compare held-out responses and controlled changes against models using the separate populations, global $\Phi$ and task difficulty. Preserve null results, missing data and source changes; do not fit a “dissociation threshold” to the confirmation labels. Replicated predictive or intervention evidence would support that particular bridge, not an unrestricted clinical or phenomenal identification.
 
-:::note Connection to the consciousness measure
-The unity of experience enters the [consciousness measure](./self-observation#мера-сознательности-c) $C = \Phi \times R$ **[T T-140]** through the component $\Phi$. Differentiation $D_{\text{diff}} \geq 2$ is a separate viability condition ([T-128](/docs/proofs/consciousness/operationalization#t-128)).
+:::note Relation to the chosen hierarchy
+$C=\Phi R$ uses native global integration; it contains neither $b_{EU}$ nor $\Phi_E$ as a separate term. L2 requires $A_1$ and all four Cap$_2$ conditions, including strict purity and the declared differentiation mode. The binding proposal adds an empirical target and protocol; it is not a replacement gate.
 :::
 
 ## Structure of the Experiential Space
@@ -460,12 +390,12 @@ The unity of experience enters the [consciousness measure](./self-observation#м
 graph LR
     subgraph Input["Components"]
         I["Intensity {λᵢ}"]
-        Q["Quality {[|qᵢ⟩]}"]
+        Q["Spectral data {(λ, Pλ)}"]
         C["Context {γₑᵢ}"]
         H["History ρₑ#40;τ#41;"]
     end
     subgraph Output["Result"]
-        Exp["Exp#40;Γ, τ#41;"]
+        Exp["Exp#40;z≤τ#41;"]
     end
     I --> Exp
     Q --> Exp
@@ -475,7 +405,7 @@ graph LR
 
 **Intensity space:** $(n-1)$-simplex $\Delta^{n-1} = \{\boldsymbol{\lambda} : \lambda_i \geq 0, \sum_i \lambda_i = 1\}$
 
-**Quality space:** projective space $\mathbb{P}(\mathcal{H}_E)$
+**Quality-ray space, when this readout is chosen:** $\mathbb P(\mathcal H_E)$. The full register state is represented by its weighted spectral projectors or density matrix.
 
 ## For Different Audiences
 
@@ -487,7 +417,7 @@ graph LR
 |-----------|------------|------|
 | Eigenvalues of $\rho_E$ | $O(n^3)$ | Standard diagonalisation |
 | Fubini-Study metric | $O(n)$ | Inner product |
-| Full metric $d_{\mathcal{E}}$ | $O(n^3 + T_{\mathrm{mem}}/\Delta\tau)$ | Depends on history length |
+| Full metric $d_{\mathcal{E}}$ | $O(n^3+Mn^2)$ | $M$ sampled history matrices with the HS integrand; specified quadrature |
 
 **Practical discretisation of history:** Store $T_{\mathrm{mem}} / \Delta\tau$ states with step $\Delta\tau$. Typical value: 100–1000 time points.
 
@@ -513,15 +443,15 @@ Altered states of consciousness are characterised by a change in the **geometry*
 
 ### What We Learned
 
-- **Experiential content** is fully determined by four components: intensity ($\lambda_i$), quality ($[|q_i\rangle]$), context ($\gamma_{Ek}$), history ($\rho_E(\tau')$).
-- **Qualities live in projective space** $\mathbb{P}(\mathcal{H}_E)$, endowed with the Fubini-Study metric — the unique monotone metric (Chentsov-Petz theorem).
-- **The geometry of experience is objective** — $G_2$-invariance of the metric $d_{\mathcal{E}}$ guarantees that different observers measure the same phenomenal geometry.
-- **Isospectral states** can have equal intensity but different quality — the formalism distinguishes both aspects.
-- **Unity of experience** is provided by coherence $\gamma_{EU} > 0$ and integration measure $\Phi_E > \Phi_{\mathrm{th}}$.
-- The term "qualia" is correct **only for L2** ($R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$); for L0–L1 "experiential content" is used.
+- The selected descriptor records a normalized register, its canonical spectral projectors, native context and history; completeness for a further target is a separate identification claim.
+- FS is a metric on declared normalized rays. Bures gives a full-state metric that remains defined at degeneracies; the old indexed-eigenvector sum does not.
+- Cross-frame equality requires the joint unitary readout/context/history transport above, including the E-projector and common clock. Native $G_2$ membership alone is insufficient.
+- Isospectral states may be different, while different eigenbases of the same degenerate state are not different states.
+- Binding via $b_{EU},\chi_{EU}$ or a fixed-basis $\Phi_E$ is an empirical hypothesis with a declared response and controls, not a clinical implication.
+- L2 means the chosen $A_1$ plus all four Cap$_2$ conditions, including strict purity and typed differentiation; it is not a phenomenal certificate.
 
 :::tip What's Next
-The theory of interiority has described **what** is experienced. The next question: **how** can a system observe its own content? The answer is given by [Self-Observation](./self-observation) — the operator $\varphi$, the reflection measure $R$, and the consciousness measure $C = \Phi \times R$.
+The theory of interiority has specified candidate descriptors and tests for declared experiential readouts. The next question: **how** can a system observe its own content? The answer is given by [Self-Observation](./self-observation) — the operator $\varphi$, the reflection measure $R$, and the consciousness measure $C = \Phi \times R$.
 
 For quantitative definitions of stress, cap, and free energy, see [Coherence Cybernetics definitions](/docs/applied/coherence-cybernetics/definitions).
 :::

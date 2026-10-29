@@ -390,7 +390,6 @@ const sidebars: SidebarsConfig = {
     'applied/research/gap-diagnostics',
     'applied/research/syndrome-calculus',
     'applied/research/fano-fingerprint',
-    'applied/research/mathesis',
     'applied/research/experimental-protocol',
     'applied/research/prime-radiant',
     'applied/research/holarch',

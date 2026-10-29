@@ -522,42 +522,19 @@ of the repair, and any argument resting on it is resting on a choice of machiner
 
 ### Three sums {#три-суммы}
 
-Reading the definitions to the bottom rather than most of the way down turns the
-previous section's twenty-one into an understatement. Write
-
+For the native definitions in a fixed semantic frame, put $d_i=\gamma_{ii}$ and
 $$
 s_1=\sum_i d_i^2,\qquad s_2=\sum_{i\neq j}|\gamma_{ij}|^2,\qquad
-s_3=d_E^2+2\sum_i|\gamma_{Ei}|^2
+s_3=d_E^2+2\sum_{j\neq E}|\gamma_{Ej}|^2.
 $$
-
-— the purity of the diagonal, the total weight of the binding, and Interiority's
-share of the whole. Every gate is then a formula in these three and nothing else:
-
+The exclusion $j\neq E$ prevents counting the E population twice. Then exactly
 $$
 P=s_1+s_2,\qquad R=\frac{1}{7(s_1+s_2)},\qquad \Phi=\frac{s_2}{s_1},\qquad
-D=1+\frac{6\,s_3}{s_1+s_2}.
+\mathrm{Coh}_E=\frac{s_3}{s_1+s_2},\qquad D^{7D}=1+\frac{6s_3}{s_1+s_2}.
 $$
+Thus these native proxies, and $C=\Phi R$, factor through three real statistics. They are constant on each admissible fibre of $(s_1,s_2,s_3)$. This does not license changing forty-five independent coordinates arbitrarily: positivity, support and singular fibres constrain the allowed states. Permuting axes while fixing E preserves these sums; changing phases at fixed populations and magnitudes preserves them whenever the resulting matrix remains positive semidefinite.
 
-The state has forty-eight numbers. **Three of them reach the verdict.** The other
-forty-five may be changed at will — permute six of the seven axes, shuffle the
-fifteen moduli among the pairs that do not touch Interiority, turn every phase to
-anything positivity allows — and all four gates hold to fifteen decimal places.
-
-Say plainly what this rules out. The gate does not see which axis binds to which.
-It does not see whether a line closes. It does not see the Fano plane at all — not
-the seven lines, not the parity checks, not the balance that the previous sections
-were about. And of the seven axes it distinguishes exactly one, Interiority; the
-remaining six are interchangeable to it, in the strict sense that permuting them
-changes nothing it reads.
-
-This is not automatically a fault. A criterion of viability is entitled to be
-coarse: a doctor checking whether someone is alive takes a pulse rather than an
-inventory. But the coarseness has to be known, because it settles a whole class of
-arguments in advance. Whenever it is said that the gate *responds* to some
-structure — a broken line, a role, a pattern of binding — the claim is false until
-somebody shows which of $s_1$, $s_2$ or $s_3$ that structure moves. Most patterns
-move none of them, and a pattern that moves one of them moves it as a sum, which
-any number of unrelated patterns move equally.
+These proxies do not read the Fano-line cycle phases. To show that a structural change affects one of their cuts, show which sum it changes. This limited factorization is useful, but is not the full augmented hierarchy: an independently specified $D^{\mathrm{ext}}=\exp S(\rho_E)$, experiential realization, self-model and probe certificates need not factor through these sums. The [canonical hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy#типизированный-вход) retains those inputs explicitly.
 
 ### A floor the diagonal cannot cross {#пол-которого-диагональ-не-перейдёт}
 
@@ -673,54 +650,24 @@ the ceiling, it does not reach the verdict at all.
 
 ### What each instrument can see {#что-видит-каждый-прибор}
 
-The last three sections read like an indictment, and they are not one. The gate is
-coarse; the theory is not the gate. It is worth laying the whole suite out, because
-once each observable is read off its own definition the map is exact and it can be
-used.
+An observability claim names an observation model, frame, target and admitted state family. The following are algebraic inputs to the named diagnostics, not additive percentages of information.
 
-| instrument | what it reads | numbers |
+| Diagnostic | Required state data | Scope |
 |---|---|---|
-| $P$, $R$ | $s_1+s_2$ | 1 |
-| $\Phi$ | adds $s_2/s_1$ | +1 |
-| $\mathrm{Coh}_E$, $D$ | adds $s_3$ | +1 |
-| **the verdict** $P \wedge R \wedge \Phi \wedge D$ | **these three and nothing else** | **3** |
-| $C = \Phi R$ | the same three | +0 |
-| stress $\sigma$ | the seven diagonal entries, one by one | +6 |
-| gap, pairwise moduli | the twenty-one binding magnitudes | +21 |
-| line holonomies | seven independent phase invariants | +7 |
-| **the whole suite** | | **34** |
+| $P,R,\Phi,\mathrm{Coh}_E,D^{7D},C$ | The three sums above | Native proxies; no arbitrary extension spectrum |
+| Population stress | Named populations and declared target | An unclipped fixed-target ratio can recover populations; clipping can lose them |
+| Pair magnitudes | Individual complex-entry moduli | No oriented phase recovery |
+| Pairwise Gap | Frame-referenced $\vert \sin\theta_{ij}\vert $ | Phase-dependent, with branch ambiguity; not a modulus |
+| Seven Fano holonomies | Supported line-cycle phases | Seven independent cycle readings on full support |
+| Complete phase passport | Actual support and an oriented fundamental cycle basis | $m-n+c$ cycle phases; missing support is not zero |
 
-A state carries forty-eight numbers, six of which are pure gauge and mean nothing,
-so forty-two are real. The verdict reaches three of them — **seven per cent**. The
-suite reaches thirty-four — **eighty-one per cent**. Both figures matter and they
-say opposite things: a system can pass every viability test while differing wildly
-from another that also passes, and yet the theory is perfectly able to tell the two
-apart if it is asked with the right instrument.
+A full-rank framed native state has 48 real coordinates. On connected full support an explicitly declared quotient by diagonal rephasing removes six phase coordinates, giving 42 local quotient coordinates. This is not an assertion that the six are physically meaningless: a fixed phase-sensitive instrument may read them. The frame-dependent Gap statistic cannot simply be counted as a gauge-invariant modulus. Counts of coordinates, ranges of scalar diagnostics, mutual information and finite-sample precision are different quantities. The former $7.1\%/81\%$ information claims are withdrawn.
 
-What no instrument reaches is small enough to name exactly. The cycle space of the
-complete graph on seven axes has dimension fifteen; the seven canonical lines span
-seven of it; **eight triangle holonomies are covered by no line and read by
-nothing**. That is the honest size of the dark region, and it is a specification
-rather than a complaint: an instrument that read those eight would be reading
-something genuinely new, and one that claims to read structure while computing only
-sums is reading nothing at all.
+The exact cycle fact remains: $K_7$ has cycle rank $21-7+1=15$. The seven edge-disjoint Fano triangles span seven independent directions, leaving eight outside their span. A spanning-forest cycle passport covers all 15, so those eight are not intrinsically unreadable. On sparse support the count and basis change; triangle readings alone need not suffice.
 
-The instrument was built, and the reading is worth having even though it is a null.
-Two things came out of it. The first is exact and was not looked for: **every** one
-of the twenty-eight non-collinear triples lies at $\sqrt{2/3}$ of its norm outside
-the span of the seven lines — the same figure for all of them, the minimum equal to
-the maximum — so the plane sees precisely one third of any triangle it does not
-contain, and two thirds of it is dark, uniformly and without exception. The second
-is the reading itself. Over three hundred computed states the eight dark
-holonomies are **indistinguishable** from the seven canonical ones: median $0.9727$
-against $0.9999$ radians, means $1.1807$ against $1.1832$, shares above $\pi/2$ of
-$0.325$ against $0.318$, and the dark eight the more variable in $50.3\%$ of states,
-which is a coin.
+There is also an exact **Euclidean edge-space** projection identity. Give each oriented edge unit norm; each triangle vector has squared norm 3. Fano triangle vectors are orthogonal because their edges are disjoint. A non-line triangle meets three different Fano triangles in one edge each, so its projection has squared norm $3(1/3)=1$ and its residual has squared norm 2. Hence the residual-to-total norm ratio is $\sqrt{2/3}$. This is one third of a squared norm, not one third of a wrapped holonomy or of information.
 
-So the dark region is not a reservoir of anything. The plane's privilege is a
-choice about which triples to read, not a discovery about which triples carry more,
-and the eight numbers nobody was reading turn out to look exactly like the seven
-everybody was.
+The historical comparison of 300 constructed states reported median absolute holonomies $0.9727$ versus $0.9999$ rad, means $1.1807$ versus $1.1832$, shares above $\pi/2$ of $0.325$ versus $0.318$, and higher variability of the eight in $50.3\%$ of states. These are reported descriptive sample figures, not a proof of equal distributions or physical/phenomenal indistinguishability. Reproducing or generalizing them requires the original generator, support policy, readings and statistical protocol. The mathematical coverage result does not depend on that comparison.
 
 ## Connection with consciousness
 

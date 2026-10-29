@@ -1,0 +1,532 @@
+{
+  "scope": "Conditional readout mathematics and bilingual corpus corrections. Scoped checks pass; complete corpus gate remains failed on inherited unresolved references; not universal formal verification.",
+  "parent": "c5f3b5b5248e4c5b61f1020714193c8068d07bc1",
+  "sources": {
+    "paper/sections/04-theorems.tex": {
+      "bytes": 132105,
+      "sha256": "f9f75666e8a365a10082c9fbf669f6b690c7988f62a40b6f9a4a1da79fdfdb1a"
+    },
+    "paper/sections/11-discussion.tex": {
+      "bytes": 32781,
+      "sha256": "3de329f43ef0362984abaf1e15e67a02be2224d69296b5983b9ceba4bcf305d8"
+    },
+    "scripts/test_verify_gate.py": {
+      "bytes": 2368,
+      "sha256": "7d22dddd3337e2407501e7436741462c74e0da883912022443411b483296e498"
+    },
+    "scripts/verify_gate.py": {
+      "bytes": 6642,
+      "sha256": "688f25f5d0481834b74789951d76ff96626d788cc313867d6b8aeac16b6b55c4"
+    },
+    "scripts/verify_readout_descent.py": {
+      "bytes": 5440,
+      "sha256": "f55a0c45ddad98a38e7a725685831010447f1ca3c82cd5a76e85e8f51556f3bc"
+    },
+    "verification/README.md": {
+      "bytes": 1780,
+      "sha256": "ec8224fe031d86d42208de8383c7858ef6380eb0630dc40a9ed32702dc9b08a5"
+    },
+    "verification/lean/ReadoutDescent.lean": {
+      "bytes": 5600,
+      "sha256": "11e405196304ccdcbca21d0c9bed56297ec3de70d044ad5f9dd2412f459e18e3"
+    },
+    "verification/lean/lean-toolchain": {
+      "bytes": 25,
+      "sha256": "ca5f1f601d34c49079e38d7e7041eb0f2a9c227fbc1df0f404820069a052330c"
+    },
+    "website/docs/consciousness/empirical/structure.md": {
+      "bytes": 16694,
+      "sha256": "2e2942fa14ce9485c2674bc2181c542aac7a34554ac175c02dbb97095ed2e932"
+    },
+    "website/docs/consciousness/foundations/interiority-theory.md": {
+      "bytes": 33918,
+      "sha256": "ae1dc3d597c3827fdea1f771ba192dba4a4f493ac6159d6e8cfca7a70be8ea3a"
+    },
+    "website/docs/consciousness/phenomenology/qualia-structure.md": {
+      "bytes": 48608,
+      "sha256": "51352603daa29cb6ae980c98b08dc5b7f9cc531688091b5bbfefa550057b202e"
+    },
+    "website/docs/core/structure/dimension-e.md": {
+      "bytes": 31098,
+      "sha256": "af752f75c7ecd3c00e4d63fe70ce961c2e9b7d043c080babc5adf919c4ea7a01"
+    },
+    "website/docs/core/structure/dimension-u.md": {
+      "bytes": 53607,
+      "sha256": "32935b53244126358c0500037dd35f6bd92349ec1b73f16ef34e67717f6ce953"
+    },
+    "website/docs/reference/status-registry.md": {
+      "bytes": 424485,
+      "sha256": "cda63ebb3a1b1a65186321f2c6d6f2f9dc3d286ec128db3c77f5b868248d6f77"
+    },
+    "website/docusaurus.config.ts": {
+      "bytes": 12170,
+      "sha256": "981bfb98bd575f1a20f4dc8fd79a09c35b686621ef5d8eba456e9bbc92b5b9bf"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/applied/coherence-cybernetics/definitions.md": {
+      "bytes": 11853,
+      "sha256": "436bf87467de04a4c5f3fe322d8c77f905edf2b6129944755cea243e456abdfb"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/applied/coherence-cybernetics/implementation.md": {
+      "bytes": 16103,
+      "sha256": "f0af7ed3b84f35dd683e3cf1ec110caf43447efbcf855a7df65dec6089826e35"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/applied/coherence-cybernetics/predictions.md": {
+      "bytes": 112137,
+      "sha256": "1fde296d74f7780a6d47ba31f073ac56d414020f6c57284ec97077d43525f264"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/applied/coherence-cybernetics/theorems.md": {
+      "bytes": 136574,
+      "sha256": "fc29549e785d91f6cf62fc71f8b8de0ae9b2d66b23a4577b867d098373252345"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/applied/research/experimental-protocol.md": {
+      "bytes": 69550,
+      "sha256": "c8193e936b8fd1d67bf009d921cd57ad849a465e781f0e6f53cc16f028939f68"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/comparative/consciousness-theories.md": {
+      "bytes": 360175,
+      "sha256": "e198f25918723ec6bf16c52cf16dd64be5d8d65bde7c73f333a19176cebd58f7"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/comparative/panpsychism-analysis.md": {
+      "bytes": 93127,
+      "sha256": "04afb4c22395f4cfc8fcb198b68585a79a31fa65fb45de5188024ccc35e4eb49"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/comparative/soul-decomposition.md": {
+      "bytes": 125463,
+      "sha256": "1d2de3b4a7bf3cf0732f7a14a0feeef5e0f9737d100db13f173e12353639e86a"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/empirical/engineering.md": {
+      "bytes": 15933,
+      "sha256": "c95515831243914cbae1fab6172c775cd68ae24b60e15e90e91a2904d08274ea"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/empirical/overview.md": {
+      "bytes": 12705,
+      "sha256": "839df2863483b79d1607e1f8a62f9e0059589f9b7fbce636aaa81d4d66e7b66e"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/empirical/structure.md": {
+      "bytes": 28088,
+      "sha256": "bbb2114f241acef011b16a0141d231517292da2a5e908d5318ae39845eabbaa9"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/foundations/interiority-theory.md": {
+      "bytes": 55334,
+      "sha256": "4bc54c75705e0aecde35ac85e851774e159a676b5835269c62b4f299dbf4acfe"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/foundations/self-observation.md": {
+      "bytes": 31741,
+      "sha256": "6e57ecc6573a14f784bb74c6df4c033de358521fc8bedd20fcd55f9ea18ce475"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/foundations/two-aspect-monism.md": {
+      "bytes": 30981,
+      "sha256": "1eb62beb79fea6bfff21de88ff73e75a666de189ad628c50e58c0095bd33bfda"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/hierarchy/depth-tower.md": {
+      "bytes": 18413,
+      "sha256": "3b7153e0eabfe3011be33ea8cec88df9e88ada45b68850bbb756f13cf0ad6490"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/hierarchy/gap-characterization.md": {
+      "bytes": 20417,
+      "sha256": "5ce04e5ffaedd021361316bdfa6eb16e28e703febfa92379ec64a89918c6aa4c"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/hierarchy/interiority-hierarchy.md": {
+      "bytes": 28672,
+      "sha256": "d63616b6bfe3bbbbb8ee2806a3e9b59b3b25e26a7c03824235fffa61c9f9c6bc"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/hierarchy/swallowtail-transitions.md": {
+      "bytes": 19852,
+      "sha256": "b239da2a8d7f78fae24367135e63d72e13d2fac2a62e4f5831c51e0dabe7114f"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/overview.md": {
+      "bytes": 15950,
+      "sha256": "5411f8d278a8607405f3bd1df1b1b86b5ead99c2705595215d9475c3e9dd88d8"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/phenomenology/qualia-structure.md": {
+      "bytes": 80470,
+      "sha256": "72174b65de29c22adca49b98708706396c4dde82d740d58c00f83931859bfa3d"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/phenomenology/temporal-consciousness.md": {
+      "bytes": 36090,
+      "sha256": "44d1181fab8cadf910b525363f51de061b940ffa7796f0067c1f8f9acf885ec4"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/states/altered-states.md": {
+      "bytes": 40265,
+      "sha256": "197a150fb96062fe424a5b790cd4da8b4ef68e2dbdfbf01fc3ce6bed6a43f1cb"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/states/attention-memory.md": {
+      "bytes": 42606,
+      "sha256": "288e3d4332c97e2042d12f8a955ed0ecb9f8055360a37b6ac73f5eda9b912af8"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/states/pathological.md": {
+      "bytes": 38235,
+      "sha256": "fcb298cfb44fca928e90e5c08fb9b1eaa60bae07eb39fd39108aad9953604dce"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/states/unconscious.md": {
+      "bytes": 15814,
+      "sha256": "ba8a121af94e7f08209101ffc9bc292357e8081574af4c2d2f54b5eb60dbb928"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/consciousness/subjects/ai-consciousness.md": {
+      "bytes": 63723,
+      "sha256": "09badd3c3353c55132e373e645b2d4a29e0be531684108653aab7d161a79b57b"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/categories/category-exp.md": {
+      "bytes": 10245,
+      "sha256": "afee139d536e3ba3eb1e64e1a74771c9498589dc6f74e08675fc4714553dc60b"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/categories/category-hol.md": {
+      "bytes": 8014,
+      "sha256": "649051f06a7aae807e030d4afba1325fbd6c8a9b0b9f8414779aef85257599a5"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/categories/functor-f.md": {
+      "bytes": 10070,
+      "sha256": "0807ed30a953fe86582a646aeb4e687b462deaff25c03be1760a0dd9d05db72a"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/dynamics/composite-systems.md": {
+      "bytes": 29525,
+      "sha256": "6109f35a5588d8483980a309cf1f2942d1bd6400453532eb3d4e1ce78237c4fb"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/dynamics/gap-operator.md": {
+      "bytes": 37496,
+      "sha256": "7feb108e6e716fb33e2ca944ec652a146b4417d116539b3cbd387c2398d619d5"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/dynamics/gap-phase-diagram.md": {
+      "bytes": 17667,
+      "sha256": "caeee83a4f49b5a8a01f3b9264783faebddb40da456ed6fcc2886c53ff51acba"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/dynamics/gap-thermodynamics.md": {
+      "bytes": 169079,
+      "sha256": "250a6a8104b73b50e6a356c16873a5b94016dd1c2988a9654ad31bd2a6d34c4d"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/foundations/axiom-septicity.md": {
+      "bytes": 23114,
+      "sha256": "3940b8f10bbb69f36457bc33f72585731915f75d71595ad40bd1e4189978e67a"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/foundations/mathematical-foundations.md": {
+      "bytes": 136079,
+      "sha256": "0a5ca88ce4573f9bf4b8d265c5ab42b04134699e7db8f16f2145b200b08bb5bd"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/operators/lindblad-operators.md": {
+      "bytes": 24144,
+      "sha256": "9cf951a96c80f27c2a45bab911f972e7c36e86b72fbad3b0b9b63aa3827012bf"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/operators/phi-operator.md": {
+      "bytes": 63357,
+      "sha256": "21bc412906e9b6133509b5efa2a86d114edd6e3415b50233b4ca33a412f95473"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/structure/dimension-a.md": {
+      "bytes": 45585,
+      "sha256": "8e2a8217e268851303e8bb573746b02a961ac1c3f0df34404b0b715b325b3e06"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/structure/dimension-d.md": {
+      "bytes": 66209,
+      "sha256": "ec7799a79a77b78da7d8920e2360d5692ec37e1722891e7577c5c6f62a3b320f"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/structure/dimension-e.md": {
+      "bytes": 48334,
+      "sha256": "d8da23654ac617daccfa6cb1bcd275ee9b213f85c3f1e621dd27204757f57c6b"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/structure/dimension-l.md": {
+      "bytes": 55482,
+      "sha256": "5f91982777f064e31b0c93fac4a370f89a46ecb748975a5e66a829fe4e18e56f"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/structure/dimension-o.md": {
+      "bytes": 46220,
+      "sha256": "34bff049558f8186a76353de31c4189cd50deb9fe4f3f8b8fd095f42f5ac96ff"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/structure/dimension-s.md": {
+      "bytes": 45244,
+      "sha256": "9cf256a30564c0c05db1ec0d4a37ee2fa8b14eb9af7f93a0ba8913682dd4a9cb"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/structure/dimension-u.md": {
+      "bytes": 84486,
+      "sha256": "f713295ba216b77088a58b181b4d4076f7cc90dbfff4ffc1c57166b98d774d6b"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/structure/dimensions.md": {
+      "bytes": 90628,
+      "sha256": "6bfba4631587981a1528eedfe6e7dd3e2596e1129b696e3c2280a86b297e2e70"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/core/structure/holon.md": {
+      "bytes": 29534,
+      "sha256": "dc6aa628e649bef7bea28fb3cee7463fafd529140516d9b3c90699d5633b2297"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/intro.md": {
+      "bytes": 16126,
+      "sha256": "71c51e207a750d43dee7b106734cfa1230774563f1eb61bf1f6cbdca7fc7f6cc"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/cosmology-phys/berry-phase.md": {
+      "bytes": 44768,
+      "sha256": "76dc4ac268f0ccfb22a2854d047476f5cbce7817b5d54f4e270d7da44c5f4059"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/gauge-symmetry/confinement.md": {
+      "bytes": 92466,
+      "sha256": "01bc520608972bebb0ad2786debfc8338bf78e8aa74c9831ebbd454b085221fd"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/gauge-symmetry/fano-selection-rules.md": {
+      "bytes": 92888,
+      "sha256": "999a7d8e719d306cfcffb58f4d07931d56518ee7d7da06cde7a4fe24479071d4"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/gauge-symmetry/noether-charges.md": {
+      "bytes": 16288,
+      "sha256": "e15dee4a55331ec554a2436efb9eca6173afc0af4228c70a9e219e32a7717c86"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/gravity/einstein-equations.md": {
+      "bytes": 65451,
+      "sha256": "14f622891c07689d1efb987782a55241a0675780204cf41cc5b7429186cbed3f"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/gravity/quantum-gravity.md": {
+      "bytes": 73084,
+      "sha256": "fa804df6bbe0d5ebf86ced35e46ce5146abb24005e77c5c4b85083463da42506"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/overview.md": {
+      "bytes": 92968,
+      "sha256": "a0b6061fd875d36da7e4e88191195d9e47f92e658b7582c6804bb2d495cac708"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/particle-physics/ckm-matrix.md": {
+      "bytes": 100176,
+      "sha256": "a67527526012b42707348c563232d1d3f19748f037dd115aacbe0ff4bb7c183f"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/particle-physics/fermion-generations.md": {
+      "bytes": 141964,
+      "sha256": "cd75b78cb3cb8be5ce1da46a36abd72fc8edfe6202edc0ace68e06f3c7a4b470"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/particle-physics/higgs-sector.md": {
+      "bytes": 115281,
+      "sha256": "ce86b53c5c26fa61823a5a40cddb2e365db691f12f86127a628b3492dea01d74"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/particle-physics/yukawa-hierarchy.md": {
+      "bytes": 73553,
+      "sha256": "13077fb6818470a3b53e5d0dc5b1122f474286919d60f2de8edeec948b0dbe3d"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/proofs/categorical/categorical-formalism.md": {
+      "bytes": 73526,
+      "sha256": "b80bcc0b72c515b59691a8706b34aec4da60fcfb01b3dee723f39e0a50c49832"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/proofs/categorical/formalization-phi.md": {
+      "bytes": 66214,
+      "sha256": "3304721e41adb085f4dcfc02ba2e5338642ab36de9bd09fdaf6d445361b5a35b"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/proofs/categorical/fundamental-closures.md": {
+      "bytes": 136632,
+      "sha256": "cbdd38896731d1a73111bf31d6feede3e1835361c03c69214445cda9fce77e05"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/proofs/categorical/uniqueness-theorem.md": {
+      "bytes": 32749,
+      "sha256": "49708deaf3faf7b945c964dd4351219868182bb4341ea53660d5085dd771776f"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/proofs/consciousness/interiority-hierarchy.md": {
+      "bytes": 37637,
+      "sha256": "82d0116f91560c8b124c76ce108195d37e01683914c7ead455445cb2fe00eb8f"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/proofs/gap/lambda-budget.md": {
+      "bytes": 72576,
+      "sha256": "7ea2cba4e9316ffed5d97e708609cde83e4d868d907e7f54930b0ad20e29ee0d"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/proofs/minimality/theorem-octonionic-derivation.md": {
+      "bytes": 28730,
+      "sha256": "ba7bf4959e32ea1e7e21969e3b2ef7dafc5f64b0330894596045391ec952624c"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/proofs/physics/toe-embeddings.md": {
+      "bytes": 102101,
+      "sha256": "ebedc4eecd72cb0dae262b747d457d1835537bde91f70e0b00dd04734bbfa8db"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/reference/epistemic-vertical.md": {
+      "bytes": 8559,
+      "sha256": "f1e0e69789a486f6a56dbd39725a9fc2c4d614c76e912a944f39e91ea5213208"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/reference/mathematical-kernel.md": {
+      "bytes": 29461,
+      "sha256": "e1d9b3f44838d60c2bcb4d848b3de040d554f7b563fddd0f5d9e23d1f567a539"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/reference/premises.md": {
+      "bytes": 80500,
+      "sha256": "af6ec0bc57e056e378ca3daed98f5840d9678d0d7f83d8642eeac108218c393e"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/reference/status-registry.md": {
+      "bytes": 626152,
+      "sha256": "1daaded702d7f6a54fbdd62b82f0951b1be3b52767db7a8b2e0b507617c8f203"
+    },
+    "website/sidebars.ts": {
+      "bytes": 11780,
+      "sha256": "315fadd5eb870e5d94a0c1e88f948d62c850f42854322785efa276522e26364f"
+    }
+  },
+  "deleted_sources": [
+    "website/docs/applied/research/mathesis.md",
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/applied/research/mathesis.md"
+  ],
+  "scoped_stages": [
+    {
+      "name": "gate-orchestration",
+      "status": "passed",
+      "returncode": 0,
+      "seconds": 2.0771360397338867
+    },
+    {
+      "name": "readout",
+      "status": "passed",
+      "returncode": 0,
+      "seconds": 10.208451747894287
+    },
+    {
+      "name": "website",
+      "status": "passed",
+      "returncode": 0,
+      "seconds": 155.00173115730286
+    },
+    {
+      "name": "paper",
+      "status": "passed",
+      "returncode": 0,
+      "seconds": 2.0639069080352783
+    },
+    {
+      "name": "corpus-gate",
+      "status": "failed",
+      "returncode": 1,
+      "seconds": 24.44892692565918
+    }
+  ],
+  "parent_reference_check": {
+    "exit": 1,
+    "log": {
+      "bytes": 2389,
+      "sha256": "a667a7aa0a78ed173bd0cf7db3aeb91add91c154530e9adb39aded1061b11d92"
+    }
+  },
+  "retired_material_check": {
+    "generated_routes_absent": true,
+    "regenerated_pdf_text_absent": true,
+    "pdf": {
+      "bytes": 1536944,
+      "sha256": "2369f4791896ce1d718e8b6efd246578d2c9134d8f0f5f48520c235e3669cf18"
+    }
+  },
+  "evidence_archive": {
+    "bytes": 75713,
+    "sha256": "53743d4242d91fbc5667351ea17e3bcaf9367296a953ba9c8a2c5e646e0aeb1a"
+  },
+  "archive_entries": [
+    {
+      "name": "v62/readout.json",
+      "bytes": 57372,
+      "sha256": "0ea44d82d91e5de361b6c096bf2e273c150de258e72e3664824d31e949ceb35b"
+    },
+    {
+      "name": "v62/gate-orchestration.log",
+      "bytes": 814,
+      "sha256": "a0961a7dd05afaa517b5343865c15ec5e1fdc198430e0cbfbd8d796b9beaac80"
+    },
+    {
+      "name": "v62/readout.log",
+      "bytes": 78,
+      "sha256": "e1c1bb510b667a1aafcb792e89614bb5404a740398be80c443a4efd61d482d15"
+    },
+    {
+      "name": "v62/resources.jsonl",
+      "bytes": 27495,
+      "sha256": "67d82e4906cdd40efd8eff75a9f55bef68402604e1746b627de9578d9b4f59a8"
+    },
+    {
+      "name": "v62/paper.log",
+      "bytes": 128793,
+      "sha256": "3be10d90327b84bc708435a4f1c9def0c7c53ab611ccaa657cb580132fa22127"
+    },
+    {
+      "name": "v62/corpus-gate.log",
+      "bytes": 6761,
+      "sha256": "02aec7ae3a76b216b49373443435418811e2e642f51b48466d9580e17fb870ae"
+    },
+    {
+      "name": "v62/website.log",
+      "bytes": 373,
+      "sha256": "a3c9e5a4732ab675003a29c28b121c68b28d11a1e0f7874900d02966c879046a"
+    },
+    {
+      "name": "v62/receipt.json",
+      "bytes": 9805,
+      "sha256": "1d0dc119d1ac406910c30ead6f2862f45c9fc73a23457e4940ea440f9f34140c"
+    },
+    {
+      "name": "v63/readout.json",
+      "bytes": 57372,
+      "sha256": "e9202bb2c1b39c2fd65910a3d95260e10ba597bd27fb259139b70db32d320ed5"
+    },
+    {
+      "name": "v63/gate-orchestration.log",
+      "bytes": 814,
+      "sha256": "a0961a7dd05afaa517b5343865c15ec5e1fdc198430e0cbfbd8d796b9beaac80"
+    },
+    {
+      "name": "v63/readout.log",
+      "bytes": 78,
+      "sha256": "e1c1bb510b667a1aafcb792e89614bb5404a740398be80c443a4efd61d482d15"
+    },
+    {
+      "name": "v63/resources.jsonl",
+      "bytes": 16899,
+      "sha256": "5aca1cb3b8b27b8106407c6093f37e6fdf1750b801931d3d30fdb84e055868b4"
+    },
+    {
+      "name": "v63/website.log",
+      "bytes": 472,
+      "sha256": "24bca934696faae456e6e349d093bced999a2fb36da65b366ff2c09e6fcdfbf5"
+    },
+    {
+      "name": "v63/receipt.json",
+      "bytes": 21309,
+      "sha256": "e10000aad4656c1aad3c5a1efba1fa3a56961d151f9bb96b4ebdcf7d1c420055"
+    },
+    {
+      "name": "v64/readout.json",
+      "bytes": 57372,
+      "sha256": "4a75aeb9519f33a1ab1b7e98a8e714957638dd8af02e961ec7c723b269e4c36e"
+    },
+    {
+      "name": "v64/gate-orchestration.log",
+      "bytes": 814,
+      "sha256": "a0961a7dd05afaa517b5343865c15ec5e1fdc198430e0cbfbd8d796b9beaac80"
+    },
+    {
+      "name": "v64/readout.log",
+      "bytes": 78,
+      "sha256": "e1c1bb510b667a1aafcb792e89614bb5404a740398be80c443a4efd61d482d15"
+    },
+    {
+      "name": "v64/resources.jsonl",
+      "bytes": 37245,
+      "sha256": "bb1db273285dd55bc569076fccb813e40746835aaa9cb636670e9915a7c6b8f9"
+    },
+    {
+      "name": "v64/paper.log",
+      "bytes": 182,
+      "sha256": "49c225abbb4800bfb0727e8f66b5a1c9b7c99f99baf8371282fb03b10c055f03"
+    },
+    {
+      "name": "v64/corpus-gate.log",
+      "bytes": 3162,
+      "sha256": "c44dd7855f6343dfe2c608bd9104ecbc7933684e92c27dff2bcae2b2602b7770"
+    },
+    {
+      "name": "v64/website.log",
+      "bytes": 723,
+      "sha256": "a389a05f48c43e69e3029e1ae351cfe4047d48cfd42b486cc339c66221ae2d01"
+    },
+    {
+      "name": "v64/receipt.json",
+      "bytes": 23672,
+      "sha256": "6b2dfda6fb9f8a81eddce43548f85ea498f0889c2b86dfb4e2047a9f6d66f79a"
+    },
+    {
+      "name": "localization/holon-status-simple-v63.log",
+      "bytes": 74339,
+      "sha256": "a225b317fe0bd0dc61beea7971495f77098b67ce3541bde9bd93ec2f7165b92d"
+    },
+    {
+      "name": "localization/holon-status-compound-v63.json",
+      "bytes": 61761,
+      "sha256": "d29b0d0b5a2b1ef38c69c4876b6e227520a852325cecc1dac9de3b98efd931cf"
+    },
+    {
+      "name": "localization/holon-status-final-v63.log",
+      "bytes": 2197,
+      "sha256": "009647c5a70949c9a462d52b61e178c3465dd59da08626cd076ca8c1078429b8"
+    }
+  ]
+}

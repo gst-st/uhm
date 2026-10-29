@@ -17,14 +17,12 @@ import time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-# Приборы делятся надвое по тому, ЧТО они читают. Четыре первых читают ИСХОДНИК;
-# пятый — СОБРАННУЮ СТРАНИЦУ, то есть то, что видит читатель, и живёт он рядом с
-# сайтом (website/scripts/), ибо без сборки бессмыслен. Между исходником и
-# читателем стои́т разметка, и она умеет молча съедать смысл: сборка при этом
-# рапортует об успехе.
+# Основные приборы проверяют исходники и вычислительные/формальные свидетельства.
+# Сайт дополнительно проверяется по СОБРАННЫМ страницам: между исходником и
+# читателем стоит разметка, которая может молча съедать смысл при успешной сборке.
 TOOLS = ["check_theorem_refs.py", "check_status_markers.py",
-         "check_mixed_names.py", "natal_startup_verify.py"]
-# Шестой — страж согласованности статусов (website/scripts/check_status_consistency.py):
+         "check_mixed_names.py", "natal_startup_verify.py", "verify_readout_descent.py"]
+# Страж согласованности статусов (website/scripts/check_status_consistency.py)
 # читает ИСХОДНИК обеих локалей против реестра и сборки не требует; живёт рядом с
 # сайтом по месту реестра. До 26.09.2026 вентиль его не звал, и его храповики
 # (R1…R7, включая опору на отозванное) держались только ручным запуском.
@@ -75,7 +73,9 @@ def main() -> int:
               + (f"  {n[1]} {n[0]}" if n is not None else "  охват не назван"))
         if n is None and name not in NO_SCOPE: unnamed.append(name)
         elif n is not None: scope[name] = f"{n[1]} {n[0]}"
-        if r.returncode: failed.append(name)
+        if r.returncode:
+            failed.append(name)
+            print((r.stdout + r.stderr)[-3000:])
     for rel in SITE_TOOLS:
         p = HERE.parent / rel
         if not p.exists():
@@ -92,13 +92,14 @@ def main() -> int:
         elif n is not None: scope[p.name] = f"{n[1]} {n[0]}"
         if r.returncode:
             failed.append(p.name)
-            print(r.stdout[-3000:])
+            print((r.stdout + r.stderr)[-3000:])
 
     if scope:
         print("\nохват приборов: " + "; ".join(f"{k} — {v}" for k, v in scope.items()))
     if unnamed:
         print("ОХВАТ НЕ НАЗВАН: " + ", ".join(unnamed))
         print("  правило: прибор, молчащий об охвате, объявляет чистым непрочитанное")
+        failed.extend(name for name in unnamed if name not in failed)
 
     print()
     if failed:

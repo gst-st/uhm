@@ -24,6 +24,11 @@ const theoryVersion = require('./package.json').version as string;
 const ghPagesUrl = process.env.GH_PAGES_URL || 'https://holon.sh';
 const ghPagesBaseUrl = process.env.GH_PAGES_BASE_URL || '/';
 
+// Large bilingual MDX caches can exhaust the shared validation disk.
+// Persistent storage is opt-in; compiler acceleration remains enabled.
+const persistentCache = process.env.DOCUSAURUS_PERSISTENT_CACHE === '1'
+  && !process.env.CI && !process.env.DOCUSAURUS_DISABLE_WEBPACK_CACHE;
+
 const config: Config = {
   title: 'UHM',
   tagline: 'Unitary Holonomic Monism — Унитарный Голономный Монизм',
@@ -37,7 +42,7 @@ const config: Config = {
   future: {
     faster: {
       rspackBundler: true,
-      rspackPersistentCache: true,
+      rspackPersistentCache: persistentCache,
       swcJsLoader: true,
       swcJsMinimizer: true,
       swcHtmlMinimizer: true,
@@ -153,26 +158,13 @@ const config: Config = {
         },
       };
     },
-    // CI-only: disable webpack persistent filesystem cache.
-    // Large MDX docs (fundamental-closures.md ~900 lines, ~29K AST nodes)
-    // overflow V8's Invalid-array-length serializer limit, and on GitHub
-    // runners the partially-written cache also triggers ENOSPC. Fresh CI
-    // runs do not benefit from persistent cache, so turning cache off
-    // entirely is safe. mergeStrategy:'cache':'replace' so the default
-    // filesystem-cache config is fully overridden, not merged.
+    // Match the Webpack fallback to the Rspack storage policy. Rspack's
+    // persistent store is controlled by the faster flag above, not this plugin.
     function boundWebpackCachePlugin() {
-      // ВНИМАНИЕ о кэше. Этот сайт собирается rspack'ом (future.experimental_faster
-      // rspackBundler + rspackPersistentCache), и его постоянный кэш живёт в
-      // node_modules/.cache/rspack — на этой машине 13 ГБ. Настройки ниже относятся к
-      // webpack-ветке и на rspack НЕ действуют: под rspack параметров сжатия и старения
-      // Docusaurus не пробрасывает. Совокупные кэши корпусов однажды заполнили диск, и
-      // сборка соседнего корпуса упала с ENOSPC — поэтому цифра названа здесь: пока
-      // rspackPersistentCache включён ради скорости, папку нужно чистить руками
-      // (`rm -rf node_modules/.cache/rspack`), а под CI кэш отключается ветвью ниже.
       return {
         name: 'bound-webpack-cache',
         configureWebpack() {
-          if (process.env.CI || process.env.DOCUSAURUS_DISABLE_WEBPACK_CACHE) {
+          if (!persistentCache) {
             return {
               mergeStrategy: {cache: 'replace' as const},
               cache: false,

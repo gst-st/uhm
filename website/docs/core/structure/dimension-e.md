@@ -157,7 +157,7 @@ If all $\lambda_i$ are equal — the experience is "white", uniform, undifferent
 
 ### Phenomenal vector
 
-Full description of experience at moment $\tau$:
+A selected spectral descriptor at time $\tau$ [D]; its experiential interpretation is [I/H]:
 
 $$
 \text{FV}(\rho_E) := \{(\lambda_i, [\vert q_i\rangle]) : \rho_E \vert q_i\rangle = \lambda_i \vert q_i\rangle\}
@@ -165,7 +165,7 @@ $$
 
 where $[\vert q_i\rangle] \in \mathbb{P}(\mathcal{H}_E)$ is the equivalence class in projective space.
 
-*Scope note (T-301):* FV is the **E-slice** of content — intensity and the relational position of a quality. The full content of a state is 48 independent real parameters (seven populations with one trace constraint and 21 complex coherences), and the gauge-invariant *colour* lives in the Fano holonomies; see [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure) for the complete five-layer passport.
+*Scope note (T-301):* FV is the spectral record of a **specified normalized experiential state**, not a uniquely reconstructed native E-sector. Repeated eigenvalues determine eigenspaces, not unique individual rays. A full-rank native state has 48 independent real coordinates; an extension and its readout carry additional declared data. Supported cycle holonomies are invariant under diagonal rephasing, but seven Fano triangles alone omit eight of the 15 cycle directions on full $K_7$ support. The [qualia passport](/docs/consciousness/phenomenology/qualia-structure#паспорт-квалиа) retains support, frame, extension, uncertainty and the full chosen classification record. Spectral names and phenomenal interpretation remain separate [I/H] claims.
 
 ## Quantitative characteristics {#количественные-характеристики}
 
