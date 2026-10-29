@@ -21,7 +21,8 @@ HERE = Path(__file__).resolve().parent
 # Сайт дополнительно проверяется по СОБРАННЫМ страницам: между исходником и
 # читателем стоит разметка, которая может молча съедать смысл при успешной сборке.
 TOOLS = ["check_theorem_refs.py", "check_status_markers.py",
-         "check_mixed_names.py", "natal_startup_verify.py", "verify_readout_descent.py"]
+         "check_mixed_names.py", "natal_startup_verify.py", "verify_readout_descent.py",
+         "verify_adaptive_observation.py", "verify_fano_scope.py"]
 # Страж согласованности статусов (website/scripts/check_status_consistency.py)
 # читает ИСХОДНИК обеих локалей против реестра и сборки не требует; живёт рядом с
 # сайтом по месту реестра. До 26.09.2026 вентиль его не звал, и его храповики

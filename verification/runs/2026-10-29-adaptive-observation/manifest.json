@@ -1,0 +1,54 @@
+{
+  "scope": "RU/EN corpus corrections and exact finite witnesses; no universal physics, native Verum or Rust proof",
+  "user_idea_sha256": "bdfbb1ab5e15bf9c0903d01adbdc3c961571266abea727472a3ec5f6435c04c1",
+  "sources": {
+    "scripts/verify_adaptive_observation.py": {
+      "bytes": 4165,
+      "sha256": "9e039bdd1f744f0b9cd3de3270076b480cac1d5e37ef6cc4e336d3b9edfd25f3"
+    },
+    "scripts/verify_fano_scope.py": {
+      "bytes": 2884,
+      "sha256": "3010f83122fd28e20aee6cbb845faed398bde0ec4907ff7527871c7fae1c551e"
+    },
+    "scripts/verify_gate.py": {
+      "bytes": 6709,
+      "sha256": "a375d4a4c66ae6c17bd3417a6d7e83610823f332f572fe4f06ac3a0381d2a7c8"
+    },
+    "website/docs/applied/research/vanchurin-bridge.md": {
+      "bytes": 52714,
+      "sha256": "3663a6311a3e1341947231bad46ee1a192b8fdad46382a8461d9edeabc32c7e3"
+    },
+    "website/docs/physics/gravity/einstein-equations.md": {
+      "bytes": 47866,
+      "sha256": "4347e2b74ab8222d2e6653edd002c1dc6d1e5891fc2543921fb1a9492ef64be9"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/applied/research/vanchurin-bridge.md": {
+      "bytes": 82231,
+      "sha256": "4ab3263357d66b184b29136adfa225583a2e4ea8c5f084c28ccf46fb3c88cf3d"
+    },
+    "website/i18n/ru/docusaurus-plugin-content-docs/current/physics/gravity/einstein-equations.md": {
+      "bytes": 66698,
+      "sha256": "1092a5753de731fb400bda7e1926637e55700aad79f325749fd808d7d67824f7"
+    }
+  },
+  "archive": {
+    "bytes": 43374,
+    "sha256": "528c59b4c7283fe553db3708d3bc17f8406e17c3c7cbfce63a2072ec0e879ee0"
+  },
+  "report": {
+    "bytes": 15549,
+    "sha256": "f399def85530be0407faf7b085ac7bd90f9d4037e4239a9105d4253eebd67e99"
+  },
+  "gate_archive": {
+    "bytes": 14686,
+    "sha256": "f498befa300e6d9c2be114adab1c5158c6867dde3addb396906b96de2f5ab96e"
+  },
+  "full_gate": {
+    "status": "failed",
+    "passed_tools": 8,
+    "failed_tool": "check_theorem_refs.py",
+    "unchanged_checker_and_registry": true,
+    "early_names": 10,
+    "early_references": 37
+  }
+}

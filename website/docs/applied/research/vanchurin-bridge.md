@@ -1,11 +1,11 @@
 ---
 sidebar_position: 18
-title: The Learning Algorithm of a Holon
+title: Geometry of Observed Holon Noise
 sidebar_label: Vanchurin bridge — natural gradient
 description: An exact bridge to Vanchurin's learning-dynamics programme — UHM fixes the free function g(κ) and lands on a = 1
 ---
 
-# The Learning Algorithm of a Holon is Natural Gradient
+# Geometry of Observed Noise and Natural Gradient
 
 Vanchurin's programme derives physical and biological law from learning
 dynamics. It leaves one central quantity undetermined: the functional
@@ -18,10 +18,10 @@ regime"). He states that direct empirical estimates of $\kappa$ remain
 unavailable and calls obtaining them a formidable challenge.
 
 In UHM this quantity is **not free**. Both factors are forced by the
-axioms — $g$ by Axiom 2 (Bures is the unique monotone Riemannian
-metric), $\kappa$ by the canonical dissipator whose Lindblad operators
-are the atoms of the subobject classifier plus the seven Fano
-projectors. Their relation is therefore a theorem, not a parameter:
+axioms — $g$ by Axiom 2 (Bures is selected by the additional criterion of the minimal normalized
+monotone metric), $\kappa$ by the specified monitored jump instrument with atomic operators
+and seven Fano projectors. The averaged dissipator alone does not determine
+monitored trajectory statistics (§7.2). Their relation is therefore a theorem, not a parameter:
 
 $$
 \kappa^{\uparrow\uparrow}_{\text{at}} \;=\; \frac{\gamma}{4N}\,g^{-1}
@@ -37,6 +37,32 @@ $g^{-1}=g^{-1}\kappa g^{-1}=\kappa^{\uparrow\uparrow}$. Hence
 $$
 a = 1 \quad\text{(natural gradient), exactly.}
 $$
+
+:::note Scope of the mathematical result
+The identities below concern population covariance and the specified instrument.
+They do not supply a loss or a natural-gradient drift: drift-free noise alone
+does not establish decreasing learning error. For $m$ jump outcomes the
+instantaneous covariance $K=\sum_e r_e v_e v_e^\top$ has rank at most $m$.
+These 14 outcomes therefore cannot yield a positive multiple of the inverse
+Bures metric on the full 48-dimensional tangent of $\mathcal D(\mathbb C^7)$.
+At $I/7$ the covariance has rank 6: off-diagonal directions have positive
+Bures norm and zero jump covariance. Controlled observability accumulated
+over time is a separate question and is not ruled out by this instantaneous bound. Noise reachability and observability are different:
+for a known linear observation model the latter is
+$W=\sum_i\Phi_i^*H_i^*B_iH_i\Phi_i$ with $B_i>0$;
+$\ker W=\bigcap_i\ker(H_i\Phi_i)$. Rotated projective measurements
+on independently prepared seven-dimensional states give exact tangent ranks
+6 (diagonal), 27 (adding real pair coherences), and 48 (also imaginary pairs).
+This constructive example assumes the controls and preparations; it does not
+provide them for a single evolving system.
+
+Cancelling $gK$ for $\lambda_i>0$ does not permit substituting zero eigenvalues
+into $1/\lambda_i$. At the boundary, specify the support and its tangent.
+Decoherence does not select a purity band either: $I/7$ and
+$\operatorname{diag}(3/4,1/24,\ldots,1/24)$ are full-rank dephasing fixed points
+with purities $1/7$ and $55/96$. Exact witnesses are supplied by
+`scripts/verify_adaptive_observation.py`.
+:::
 
 :::info Primary sources
 Equation numbers throughout refer to:
@@ -67,14 +93,11 @@ his (7.4). And there is a strict **sector split**:
 $\kappa^{\text{coh}}=0$ on the decohered manifold, where coherences
 instead contract deterministically at $\lambda_{\text{deco}}=5\gamma/21$.
 
-The central consequence for the learning-theoretic programme: UHM
-predicts that a *viable* learning system implements **natural gradient
-descent**, not the $a=\tfrac12$ regime conjectured for biological
-complexity. Its efficiency comes not from a different exponent but from
-the Fano-induced anisotropy of the noise and from confinement of purity
-to the window $P\in(2/7,3/7]$. This is a sharp, falsifiable
-disagreement, and §9 gives a **metric-free** test statistic for it,
-together with the sample size it needs.
+The proved result concerns the geometry of noise in the selected population
+instrument. A learning model can use this geometry, but a claim about its
+accuracy requires a specified objective, drift, observations and validation.
+The proposed comparison with biological learning remains a bridge hypothesis;
+§9 tests covariance structure under declared sampling assumptions.
 
 ---
 
@@ -270,12 +293,12 @@ it as though it were a surprise.
 
 ---
 
-## 4. The exact natural-gradient identity {#теорема-натуральный-градиент}
+## 4. The exact inverse-metric covariance identity {#теорема-натуральный-градиент}
 
 On commuting perturbations the Bures/SLD metric reduces to $c_g$ times
 the classical Fisher–Rao metric (§2.1).
 
-:::tip Theorem (natural gradient) [T]
+:::tip Theorem (inverse-metric covariance) [T]
 On the tangent space $T$,
 
 $$
@@ -287,7 +310,7 @@ $$
 exactly, in Bures normalisation. Substituting $a=1$ into Vanchurin's
 (7.5) gives precisely $g^{-1}=g^{-1}\kappa g^{-1}=
 \kappa^{\uparrow\uparrow}$. The holon therefore realises $a=1$:
-**natural gradient descent.**
+the covariance scaling associated with that diagnostic. This does not derive a descent drift or decreasing loss.
 :::
 
 **Proof.** By §3 and $g=c_g\operatorname{diag}(1/\lambda)$,
@@ -304,14 +327,14 @@ $\Pi(\mathbf 1\lambda^{\!\top})\Pi=(\Pi\mathbf 1)(\lambda^{\!\top}\Pi)=0$,
 leaving $\Pi g\kappa_{\text{at}}\Pi=\frac{c_g\gamma}{N}\Pi$, which is
 $\frac{\gamma}{4N}\Pi$ at $c_g=\tfrac14$. $\blacksquare$
 
-**Why this settles the exponent.** VL's diagnostic (7.5) reads
+**Scope of the exponent comparison.** VL's diagnostic (7.5) reads
 $g^{-1}=\bigl(g^{-1}\kappa g^{-1}\bigr)^{a/(2a-1)}$, and he spells out
 the two readable ends: $a=0\Rightarrow g^{-1}=I$ and $a=1\Rightarrow
 g^{-1}=g^{-1}\kappa g^{-1}$. The theorem is the second of these, with a
 constant. The constant carries units of rate — $\kappa$ has dimensions
 of (state)$^2$/time while $g$ does not — so it fixes the time unit
 exactly as his (6.8) implicitly does; the *functional* relation is
-linear, which is what $a=1$ asserts.
+linear, which matches this diagnostic at $a=1$. It does not select a universal exponent for biological learning or a drift law. The lowered covariance in VL and the increment covariance here must be related using the declared metric; their index positions are not interchangeable.
 
 *Machine check*: for 200 random states the spectrum of
 $\Pi g\kappa_{\text{at}}\Pi$ is constant $=0.035714285714$
@@ -344,20 +367,15 @@ content of the identity.
 As mathematics the two theorems above are elementary: for the
 multinomial family the Fisher metric is the inverse of the single-trial
 covariance, a standard fact of information geometry. No depth is claimed
-for the computation. The content is the **forcing**: UHM leaves no
-freedom in either factor — $g$ by Axiom 2, and the noise by the Lindblad
-set being the classifier atoms (T-41g–i) rather than a modelling choice.
-VL's §4 imposes $g^{-1}=c$ by a maximum-entropy argument on the
-population covariance (his 4.3–4.7: isotropic constraint $\Rightarrow$
-spherical distribution $\Rightarrow$ covariance $\propto$ identity in
-local coordinates); here the same identity emerges for the *dynamical*
-noise without being postulated. The results in §5–§7 are not elementary
-and carry the new content.
+for the computation. The content is a conditional dynamical identity for the
+specified instrument and metric. A fixed Lindblad generator does not uniquely
+fix that instrument. The comparison with VL's static maximum-entropy covariance
+requires its own model and normalization; it is not an identification of arbitrary
+static and trajectory covariances. §§5–7 analyze the selected Fano resolution.
 :::
 
-> **UHM proves, as a dynamical theorem, the identity that VL adopts as a
-> maximum-entropy postulate — and simultaneously fixes the learning
-> exponent that VL leaves open.**
+> **The covariance identity supplies a testable comparison, not a universal
+> theorem selecting nature's learning algorithm.**
 
 ---
 
@@ -365,7 +383,7 @@ and carry the new content.
 
 :::tip Theorem [T]
 With the full canonical dissipator (atomic + Fano) at matched
-per-channel rate $\gamma/N$, for **every** state,
+per-channel rate $\gamma/N$, for **every strictly positive diagonal** state,
 
 $$
 \frac{\operatorname{Tr}\!\left(g\,\kappa_{\text{full}}\right)}
@@ -374,11 +392,19 @@ $$
 $$
 
 independently of $\lambda$ and of $c_g$. Equivalently: the block layer
-carries exactly $2/11$ of the total metric-weighted noise, at every
-state. In Bures normalisation $\operatorname{Tr}(g\kappa_{\text{at}})=
+carries exactly $2/11$ of the total metric-weighted noise in this sector. In Bures normalisation $\operatorname{Tr}(g\kappa_{\text{at}})=
 \frac{3\gamma}{14}$ and $\operatorname{Tr}(g\kappa_{\text{full}})=
 \frac{11\gamma}{42}$.
 :::
+
+The scope is essential. For $\rho=I_7/7+(E_{01}+E_{10})/14>0$,
+the **full** Bures contraction is $\operatorname{Tr}(g\kappa_{\rm at})=19\gamma/84$
+and $\operatorname{Tr}(g\kappa_{\rm full})=209\gamma/756$. These differ from
+the displayed diagonal-sector constants. The ratio remains $11/9$ in this
+example; neither its universal extension nor its failure follows from this
+witness. The proof below concerns the diagonal sector.
+`scripts/verify_fano_scope.py` checks the Sylvester equations and contractions
+with exact rational arithmetic.
 
 **Proof.** For a Fano line $p$ with $s_p=\sum_{i\in p}\lambda_i$:
 $L_p\rho L_p^\dagger=\tfrac13\operatorname{diag}(\lambda_i[i\in p])$,
@@ -669,14 +695,13 @@ $\gamma$.
 
 ## 9. Predictions and how to falsify them {#предсказания}
 
-All statements below are consequences of the results above; none is
-fitted. The column "needs $g$?" matters in practice: predictions that do
+The table combines conditional model identities with bridge predictions. Their applicability to a physical or biological system requires the stated instrument, model and sampling assumptions; the table does not establish them empirically. The column "needs $g$?" matters in practice: predictions that do
 not require estimating a metric are immune to the normalisation question
 of §2.1 and are much easier to measure.
 
 | # | Prediction | Value | Needs $g$? | Test |
 |---|---|---|---|---|
-| **P1** | Learning exponent of a viable holon | $a=1$ exactly (natural gradient), **not** $a=\tfrac12$ | no | Sphericity of $\kappa^{\uparrow\uparrow}$ — §9.1 |
+| **P1** | Selected population-noise geometry | Inverse-metric covariance; comparison with VL at $a=1$ is conditional | no | Sphericity of $\kappa^{\uparrow\uparrow}$ — §9.1 |
 | **P2** | Shape identity with the static covariance | $\kappa^{\uparrow\uparrow}=\frac{\gamma}{4N}c$ (with his 4.7) | no | Compare the covariance of temporal changes with the static population covariance; predicted equal up to one scalar |
 | **P3** | Universal Fano factor | $11/9$ at matched per-channel rate; $11/15$ at matched generator; block fraction $2/11$ | yes | Resolve the same process at site and block level, holding the declared normalisation fixed |
 | **P4** | Noise–purity law | $\operatorname{Tr}\kappa=\frac{\gamma}{N}(1-P)$; viable band $[4\gamma/49,5\gamma/49)$ | no | Zero-intercept regression of $\operatorname{Tr}\hat\kappa$ on $1-\hat P$; slope $=\gamma/N$ |
@@ -798,9 +823,7 @@ that a population is a holon in the full sense stays the assumption (HOL). (An e
 $c_F=1/3$) asserts"; retracted — T-72 asserts no closure, and $c_F = 1/3$
 is the Fano channel's coherence contraction, not a property of
 aggregation.) The identification remains a bridge assumption **[I]**
-rather than a theorem about biology. If it is rejected, P1 still stands
-for physical holons and for engineered learning systems built on the UHM
-core.
+rather than a theorem about biology. If it is rejected, the mathematical covariance identity remains valid for its specified model; the learning and biological interpretation does not follow.
 :::
 
 ---
@@ -856,47 +879,19 @@ core.
    \lVert\gamma_{ij}\rVert^2\mathrm{Gap}^2$ (the universal T-73 is withdrawn [✗]) and a chosen $V_{\text{Gap}}$
    is a selected potential; universal T-74 is withdrawn [✗]. A comparison needs separately specified geometries and coefficients.
 
-**Three ways to live in one geometry.** A note that sharpens where the
-two frameworks stand relative to machine learning. Learning, in every
-case on this page, is motion along an information geometry; the cases
-differ only in how the step is obtained. In machine learning the step
-is *approximated*: the posterior over a continuum of weights is
-intractable, so it is chased by iterated local moves (Adam's
-second-moment preconditioner is a diagonal $g^{-1/2}$ — VL's $a=1/2$
-regime). In evolution the step is *generated by physics*: multinomial
-reproduction noise at finite population size has covariance equal to
-the inverse Fisher metric exactly (the Wright–Fisher toy above), so
-$a=1$ is not chosen by any optimiser — it falls out of discrete
-copying. And in UHM's cognitive layer the step is *computed in closed
-form*: counter-based conjugate Bayes (KT estimators, Willems
-mixtures) is mirror descent whose step is exact, i.e. the gradient is
-integrated rather than iterated — which is why the silicon contains
-no descent procedure at all while living in the same geometry, and why
-the physical layer's dissipative flow (a BKM/Bures step) still sits
-squarely in the $a=1$ family. Approximated, generated, computed: one
-geometry, three ways of taking the step.
+**Computing, exploring and reusing [H].** These are useful architectural
+roles, but assigning them the numerical exponents $a=1/2,1,0$ is not a proved
+identification. Adam's gradient second-moment accumulator is not generally a
+Fisher metric. A conjugate Bayesian or KT update needs an explicit loss, mirror
+map and step convention before an equality with a mirror/natural-gradient step
+can be asserted. Executing a learned program supplies no such exponent by itself.
 
-**The exponent as a phase of knowledge.** A further sharpening,
-born from the goal-currency experiments in the silicon. Inside one
-living system the exponent $a$ is not a fixed property but a phase
-of its knowledge. The unseen is *computed*: every tact of conjugate
-counting is an exact natural-gradient step — $a=1$. The proven is
-*executed*: once a road has been established by the repetition law,
-the agent replays it without recomputing any geometry — the step is
-blind to informational distinguishability, which is precisely the
-$a=0$ regime. In the silicon this is the golden-path executor, and
-it is not a defect but a load-bearing economy: in the transfer
-bench a third session takes three levels in 79 ticks instead of
-1107 by executing proven traces. The boundary between the phases is
-settledness itself. Read this way, VL's classification acquires an
-architectural translation: "classical biology at $a=0$" says that
-observed large-scale biology is dominated by the execution of
-fossilised decisions — DNA is evolution's golden path — while the
-per-generation sampling tact stays at $a=1$ by the multinomial
-identity above; the crossover scale between the two phases is where
-the algorithmic layer of heredity lives, and it is measurable.
+The engineering question remains concrete: can a verified reusable program reduce
+search cost while preserving the ability to learn from new evidence? Historical
+transfer measurements on this page describe their particular experiment; they do
+not estimate a universal exponent or prove a law of biological inheritance.
 
-**The autodidaxy curve: knowing more never kills learning more.** The
+**The autodidaxy curve: a finite test of continued learning.** The
 phase picture makes one falsifiable prediction about any single
 learner: if the proven only *narrows* where computation happens (rather
 than extinguishing the computing organ), then no amount of accumulated
@@ -907,21 +902,19 @@ window of text; the level falls monotonically with $T_0$ (2.416 down
 to 2.000 bits per byte) — the base helps the life it precedes — and
 the *content-controlled* learning progress $LP^{*}$, priced against a
 frozen twin of the same base on the same two half-windows, stays
-positive at every $T_0$ (+0.278 down to +0.109). There is no
-ossification from erudition: the $a=1$ organ survives arbitrary
-amounts of $a=0$ inheritance. The frozen twin itself pays 2.220
+positive at every $T_0$ (+0.278 down to +0.109). Within these measured prefixes the learner continues to improve; this finite experiment does not establish the result for arbitrary amounts of inherited knowledge. The frozen twin itself pays 2.220
 against the living 2.000 — freezing costs real bits — and a small
 live first-order ledger mixed over the frozen base claws back only
 five percent of that gap: a light residual organ softens the freeze
 but does not replace continued learning of the deep base. In the
 phase language: execution is an economy, freezing is a tax, and the
-computing phase is indestructible by knowledge alone.
+observed learning gain remains positive within this experiment.
 
 ---
 
 ## 11. Reproducibility {#воспроизводимость}
 
-Every number on this page is printed by
+The historical numerical table below is printed by
 [`full_predictions.py`](/instruments/full_predictions.py) (deterministic, seeds
 20260806 / 20260807 / 20260808; NumPy + SciPy); the metric
 normalisation runs as its own §0 block inside the same script, and the
@@ -960,8 +953,7 @@ implement?* UHM answers, without adjustable parameters:
 
 $$
 \kappa^{\uparrow\uparrow}_{\text{at}}=\frac{\gamma}{4N}\,g^{-1}
-\;\Longrightarrow\;
-a=1,
+\quad\text{(population sector)},
 \qquad
 \frac{\operatorname{Tr}(g\kappa_{\text{full}})}
 {\operatorname{Tr}(g\kappa_{\text{at}})}=\frac{11}{9},
@@ -975,11 +967,11 @@ r_{\text{eff}}=\frac{(1-P)^2}{P+P^2-2S_3},
 \kappa^{\text{coh}}\big|_{\text{diag}}=0 .
 $$
 
-Nature — at the level of a viable holon — performs **natural gradient
-descent on the Bures geometry, preconditioned by the Fano design, in a
-purity band that keeps its effective rank well below maximum, on a
-sector strictly complementary to the one where quantum coherence
-lives.**
+These identities describe the selected population instrument and its Fano
+resolution. Natural-gradient learning additionally requires an objective and drift.
+A purity window is an additional state restriction; decoherence alone does not
+supply it. Extending the comparison to a changing world, biological system or
+SYNARC agent remains a programme with separate empirical obligations.
 
 The first of these is measurable without ever estimating a metric, and
 needs about a hundred windows of data. If the covariance of temporal

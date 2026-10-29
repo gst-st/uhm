@@ -358,6 +358,13 @@ This formula contains two scales:
 
 The relation $G \propto \mu^2/|\gamma_{\mathrm{space}}|^2$ means that gravity is **stronger** the larger the Gap-mode scale $\mu$ and the **lower** the coherence of the spatial sector. In the limit of full decoherence ($|\gamma_{\mathrm{space}}| \to 0$) the gravitational constant formally diverges — effective "enhancement of gravity" near singularities.
 
+:::note Boundary of the physical interpretation
+Divergence of an effective $G_N$ under formal extrapolation to zero coherence
+does not construct a horizon or a spacetime solution. A black-hole transition
+or a change of learning algorithm needs additional dynamical and observational
+premises; the QFI identity and effective FP lemma do not establish it.
+:::
+
 ### 3.2a Information–Gravity Reciprocity: $G_N$ as Inverse Learnability (T-264) {#взаимность-обучаемость-гравитация}
 
 The Gap phases $\theta_{\mu\nu}$ carry both loads of the theory at once: their kinetics is the emergent graviton (§2.1, Fierz–Pauli bridge lemma), and their *estimability* is quantum Fisher information — the very quantity that gates learning (Braunstein–Caves; [T-263](/docs/core/dynamics/evolution#теорема-наилучший-обучающий-поток)). The two readings are one functional of $\Gamma$.
@@ -371,9 +378,28 @@ $$
 \mathrm{QFI}(\theta_{ij}) = \frac{4\,|\gamma_{ij}|^2}{\Gamma_{ii} + \Gamma_{jj}}, \qquad g_{\mathrm{Bures}}(\partial_{\theta_{ij}}, \partial_{\theta_{ij}}) = \tfrac14\,\mathrm{QFI},
 $$
 
-independently of the population imbalance ($R$-cancellation). In the full $7\times 7$ vacuum the cross-coherence correction is $O(\bar\varepsilon)$ (machine: $\leq 0.8\%$ at $\bar\varepsilon = 0.01$, $\leq 4.4\%$ at $0.02$).
+independently of the population imbalance ($R$-cancellation). For a full $7\times 7$ state, pair-only phase variation and the full passport charge must be distinguished; (a′) gives universal bounds.
 
-**(a′) Unconditional sandwich [T].** For *any* full-rank $\Gamma$ (no decoupling assumption): $2|\gamma_{ij}|^2/\lambda_{\max}(\Gamma) \leq \mathrm{QFI}(\partial_{\theta_{ij}}) \leq 2|\gamma_{ij}|^2/\lambda_{\min}(\Gamma)$ — immediate from the SLD tangent formula with $2\lambda_{\min} \leq \lambda_m + \lambda_n \leq 2\lambda_{\max}$ and $\|X_{ij}\|_{\mathrm{HS}}^2 = 2|\gamma_{ij}|^2$. With Gershgorin control of the vacuum spectrum, $|\lambda_k - 1/7| \leq \rho_{\max} := \max_k \sum_{l \neq k}|\gamma_{kl}|$, the relative deviation from $14|\gamma_{ij}|^2$ is bounded by the **explicit constant** $7\rho_{\max}/(1 - 7\rho_{\max})$; the measured $0.23\%$–$4.4\%$ sit far inside this bound. Witness: $0/400$ violations across mixed regimes including strong coherence.
+**(a′) Unconditional sandwich [T, corrected 2026-10-29].** For every full-rank $\Gamma$ and Hermitian tangent $X$:
+$$
+\frac{\|X\|_{\mathrm{HS}}^2}{\lambda_{\max}(\Gamma)}
+\le \mathrm{QFI}_\Gamma(X)\le
+\frac{\|X\|_{\mathrm{HS}}^2}{\lambda_{\min}(\Gamma)}.
+$$
+This follows from $\mathrm{QFI}_\Gamma(X)=2\sum_{m,n}|X_{mn}|^2/(\lambda_m+\lambda_n)$.
+For the **pair-only** tangent with entries $X_{ij}=i\gamma_{ij}$ and
+$X_{ji}=-i\gamma_{ji}$, the squared norm is $2|\gamma_{ij}|^2$.
+For the **full charge** $X_i=i[\Pi_i,\Gamma]$, it is
+$2\sum_{k\ne i}|\gamma_{ik}|^2$. These tangents coincide only when row $i$
+has no other coherences. The former use of the pair norm for an arbitrary
+full charge is retracted: $\Gamma=I_3/3+(E_{02}+E_{20})/12$, $i=0,j=1$ has
+$\gamma_{01}=0$ but $\mathrm{QFI}(X_0)=1/24>0$.
+
+If $\delta=\max_i(|\Gamma_{ii}-1/7|+\sum_{j\ne i}|\gamma_{ij}|)<1/7$,
+Gershgorin gives $|\lambda_k-1/7|\le\delta$. For $X\ne0$ the relative
+QFI deviation from $7\|X\|_{\mathrm{HS}}^2$ is at most
+$7\delta/(1-7\delta)$. This analytical bound is not replaced by sampled
+checks, and those checks do not identify the two distinct tangents.
 
 **(b) Reciprocity [T at FP-lemma, leading order].** At vacuum populations $\Gamma_{ii} = 1/7 + O(\varepsilon^2)$ the ST-sector mean satisfies $\langle|\gamma_{\mathrm{ST}}|^2\rangle = \varepsilon_0^2 = \tfrac{1}{14}\langle\mathrm{QFI}\rangle_{\mathrm{ST}}$, and the Fierz–Pauli constant $G_N^{(ST)} = 4\pi\mu^2/\varepsilon_0^2$ becomes
 

@@ -27,3 +27,19 @@ native Verum certificate, or prove phenomenal experience or physical safety.
 Verum integration and implementation correspondence require their own checked
 artifacts. The full state, calibration, uncertainty and action provenance remain
 part of the corpus contract.
+
+## Adaptive observations and instrument scope
+
+`python3 scripts/verify_adaptive_observation.py` checks eight finite groups:
+four matrix-basis generator identities, separating jump variances, dephasing
+purities, the full-charge QFI counterexample and exact tomography ranks6/27/48.
+`python3 scripts/verify_fano_scope.py` solves the Sylvester equations in a
+full-rank coherent witness: the absolute diagonal-sector noise constants fail
+there, while the ratio11/9 happens to survive. It proves neither a universal
+extension nor a universal failure of that ratio. Both run through verify_gate.
+
+The RU/EN bridge and T-264(a′) corrections, exact receipts and build/render
+checks are preserved in `runs/2026-10-29-adaptive-observation`. Autogeny chapter22
+and the14 core-Lean laws live in math-foundations; they are not duplicated here.
+Native Verum transfer and Omega implementation correspondence remain separately
+tracked obligations.
