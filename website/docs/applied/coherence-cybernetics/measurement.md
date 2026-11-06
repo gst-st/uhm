@@ -462,113 +462,112 @@ The nearness of $\mathrm{PCI}^* = 0.31$ to $2/7 \approx 0.286$ is a coincidence 
 The CC threshold $P = 2/7$ is not a number on the PCI scale and is not tested by matching one. It is tested by whether the verdict computed from $\widehat\Gamma$ agrees with the independently validated PCI verdict on sessions that did not fix the reconstruction.
 :::
 
-## 6.4 Rigorous $\Gamma$-estimator: consistency and confidence bounds {#оценка-gamma}
+## 6.4 Conditional $\Gamma$ estimation: target, consistency and uncertainty {#оценка-gamma}
 
-The calibration function $f:\text{observables}\to\Gamma$ (§7.1) looks like an ad-hoc "empirical fit". It is not. Once the system's state is embedded into the **seven dimensional channels** — the one genuinely system-specific modelling choice — the recovery of $\Gamma$ is a *provably consistent* estimation problem with explicit finite-sample confidence bounds. This is the operational analogue of quantum-state tomography, and it turns the "Achilles' heel" into standard estimator theory.
-
-**Setup (channel embedding).** Fix a linear embedding $\pi$ that maps each observed state of the system to a complex 7-vector of dimensional amplitudes $x = \pi(\text{state}) \in \mathbb{C}^7$, one coordinate per dimension $(A,S,D,L,E,O,U)$. (For neural data: $x$ = the analytic-signal amplitudes of the seven functional bands/networks; for an AI: seven linear probes on the residual stream; for an organisation: seven audit indices.) Over $N$ samples $x_1,\dots,x_N$ (i.i.d., or stationary–ergodic) with second moment $M := \mathbb{E}[x x^\dagger]$, the **true coherence matrix is the normalised second moment**
-
+A matrix estimator and an interpretation of that matrix are separate contracts. Fix the channel map $\pi$ before evaluating its predictions. For $x=\pi(\mathrm{state})\in\mathbb C^7$, define the **second-moment target**
 $$
-\Gamma \;=\; \frac{M}{\operatorname{Tr} M}, \qquad M=\mathbb{E}[x x^\dagger]\succeq 0.
+M=\mathbb E[xx^\dagger],\qquad \tau=\operatorname{Tr}M>0,\qquad \Gamma=M/\tau.
 $$
+This constructs a density matrix from a declared observation model; it does not prove that the model measures consciousness, wellbeing or a clinical state. Unless $\mathbb E x=0$, the second moment is **not** the covariance.
 
-This is not a fitted formula — it is the definition of $\Gamma$ as the state's normalised covariance in the dimensional basis.
+**Centering changes the target.** With $\mu=\mathbb E x$, the covariance target is $C=\mathbb E[(x-\mu)(x-\mu)^\dagger]$. Subtracting the same sample's mean estimates $C$, not $M$. Its residuals share the estimated mean and are dependent even when the raw observations are i.i.d. An independently fixed baseline instead defines another fixed second-moment target. Record which of these experiments is intended.
 
-**Estimator.**
-
+**(1) Algebra and consistency.** For fixed embedded observations,
 $$
-\widehat{\Sigma}_N \;=\; \frac1N\sum_{n=1}^N x_n x_n^\dagger, \qquad \widehat{\Gamma}_N \;=\; \frac{\widehat{\Sigma}_N}{\operatorname{Tr}\widehat{\Sigma}_N}.
+\widehat\Sigma_N=\frac1N\sum_n x_nx_n^\dagger,\qquad
+\widehat\Gamma_N=\widehat\Sigma_N/\operatorname{Tr}\widehat\Sigma_N.
 $$
+When the observed trace is positive, $\widehat\Gamma_N$ is Hermitian, positive semidefinite and unit trace. At zero trace the normalized estimate is **undefined**, regardless of the sample count. For a stationary ergodic source with $\mathbb E\|x\|^2<\infty$, the ergodic law and continuity give almost-sure convergence to $\Gamma$. The analogous covariance estimator is consistent when $\operatorname{Tr}C>0$. These facts alone provide neither a convergence rate nor a confidence interval.
 
-$\widehat{\Gamma}_N$ is Hermitian, PSD, unit-trace by construction — a bona-fide density matrix, no projection needed.
-
-:::tip Theorem (Consistent $\Gamma$-tomography with concentration) [T]
-Let $\|x_n\|^2\le B$ a.s. and $\operatorname{Tr} M = \tau > 0$.
-
-**(1) Consistency.** $\widehat{\Gamma}_N \to \Gamma$ almost surely as $N\to\infty$ (SLLN on $\widehat\Sigma_N\to M$ + continuous mapping).
-
-**(2) Concentration (matrix Bernstein).** With $Z_n=x_nx_n^\dagger-M$ ($\|Z_n\|\le 2B$, $v^2:=\|\mathbb{E}Z_n^2\|$),
-
+**(2) A finite-sample bound for a fixed i.i.d. embedding [T under these premises].** Additionally assume independent identically distributed observations and a **population** bound $\|x\|^2\le B$ almost surely. A bound verified only on the observed sample does not establish this premise. For $Z_n=x_nx_n^\dagger-M$,
 $$
-\Pr\!\Big(\big\|\widehat{\Sigma}_N-M\big\|_{\mathrm{op}}\ge t\Big)\;\le\;2\cdot 7\,\exp\!\Big(\frac{-N t^2}{2v^2+\tfrac{4B}{3}t}\Big).
+\|Z_n\|_{\rm op}\le2B,\qquad
+v^2=\|\mathbb EZ_n^2\|_{\rm op}\le B^2,
 $$
-
-Propagating through the quotient ($\big\|\widehat\Gamma_N-\Gamma\big\|\le \tfrac{2}{\tau}\|\widehat\Sigma_N-M\|$ to first order) gives, for any $\varepsilon,\delta\in(0,1)$,
-
+because $\mathbb EZ_n^2=\mathbb E[(xx^\dagger)^2]-M^2\preceq BM$. Matrix Bernstein therefore gives
 $$
-N \;\ge\; \frac{C\,B^2}{\tau^2\,\varepsilon^2}\,\ln\frac{14}{\delta}\quad\Longrightarrow\quad \big\|\widehat{\Gamma}_N-\Gamma\big\|_{\mathrm{op}}\le\varepsilon \ \text{ w.p. } \ge 1-\delta,
+\Pr(\|\widehat\Sigma_N-M\|_{\rm op}\ge t)
+\le 14\exp\!\left(-\frac{Nt^2}{2B^2+(4B/3)t}\right).
 $$
+See [Tropp, Theorem 1.4](https://tropp.caltech.edu/papers/Tro11-User-Friendly-preprint.pdf); independence, bounded summands and the variance parameter are part of its contract.
 
-with a universal constant $C$. The error decays as $O(N^{-1/2})$ (verified numerically: $\sqrt N\,\|\widehat\Gamma_N-\Gamma\|\approx\text{const}$).
+For any positive semidefinite $A,M$ with positive traces, putting $E=A-M$ gives the **exact** normalization bound
+$$
+\left\|\frac A{\operatorname{Tr}A}-\frac M\tau\right\|_{\rm op}
+\le\frac{\|E\|_{\rm op}+|\operatorname{Tr}E|}{\tau}
+\le\frac{8}{\tau}\|E\|_{\rm op}.
+$$
+Indeed, subtract the matrices as $E/\tau-(A/\operatorname{Tr}A)\operatorname{Tr}E/\tau$ and use $\|A/\operatorname{Tr}A\|_{\rm op}\le1$ and $|\operatorname{Tr}E|\le7\|E\|_{\rm op}$. The former factor $2/\tau$ was not valid for the **operator norm**.
+
+Given a declared population trace lower bound $0<\tau_0\le\tau$ and $0<\varepsilon\le1$, set $t=\tau_0\varepsilon/8$. The sufficient budget
+$$
+N\ge\left\lceil
+\log(14/\delta)\frac{2B^2+(4B/3)t}{t^2}
+\right\rceil
+$$
+then ensures normalized operator error at most $\varepsilon$ with probability at least $1-\delta$. On this event the observed trace is positive, since $7t<\tau$. This is a conservative sufficient bound, not an optimum; no unspecified constant is silently set to one.
+
+A data-dependent region can also use the positive root $t_N$ of
+$$
+Nt_N^2=\log(14/\delta)\,[2B^2+(4B/3)t_N].
+$$
+On the same event $\tau\ge\ell=\max(0,\operatorname{Tr}\widehat\Sigma_N-7t_N)$. For a defined estimate, use $r=\min(1,8t_N/\ell)$ when $\ell>0$ and $r=1$ otherwise. Density matrices differ by at most one in operator norm. With $P_{\rm plug}=\operatorname{Tr}\widehat\Gamma_N^2$,
+$$
+P=\operatorname{Tr}\Gamma^2
+\in [\,P_{\rm plug}-2r,\ P_{\rm plug}+2r\,]\cap[1/7,1],
+$$
+because $|\operatorname{Tr}(\widehat\Gamma_N^2-\Gamma^2)|\le2r$. At zero observed trace, return the full target set without a matrix center; do not silently condition the coverage claim on having returned a point estimate. A full physical interval is uninformative, not evidence for a threshold verdict. The reference uses floating-point evaluation, not certified interval arithmetic.
+
+:::caution Dependent observations and estimated baselines need another uncertainty argument
+Stationary ergodicity is enough for the consistency statement above, but not for a central limit theorem or Bernstein concentration. Replacing $N$ by an estimated $N_{\rm eff}$ does **not** transfer these guarantees verbatim. Autocorrelation of window energy does not determine uncertainty of directional covariance or purity; energy may stay constant while directions remain dependent. Returning zero estimated autocorrelation for a short or constant series is not evidence of independence.
+
+For asymptotic intervals, specify a dependence model, a suitable central limit theorem and a consistent long-run variance estimator for the **actual statistic**, including its estimated denominator and baseline. Batch-means consistency requires appropriate growing batch sizes/counts and process assumptions; a fixed twenty-batch diagnostic is not that contract. See [Flegal–Jones](https://arxiv.org/pdf/0811.1729). Repeated looks, overlapping windows, missingness and adaptive stopping also belong to the observation protocol. The module supplies no automatic 95% interval for these cases.
 :::
 
-:::caution Dependence caveat: use the effective sample size
-The concentration bound (2) assumes **independent** samples $x_n$. Real neural/AI/organisational time series are **autocorrelated**, so the naïve $N$ overstates the information. **Consistency is unaffected** — for a stationary–ergodic source the SLLN still gives $\widehat\Gamma_N\to\Gamma$ a.s. — but the confidence bound must replace $N$ by the **effective sample size** $N_{\mathrm{eff}}=N/(2\tau_{\mathrm{corr}}+1)$, where $\tau_{\mathrm{corr}}$ is the integrated autocorrelation time of the embedded process (estimable by block-bootstrap or the batch-means method). Report intervals from $N_{\mathrm{eff}}$, not $N$; sub-sampling at the decorrelation lag recovers (approximate) independence. Everything else — the $O(N_{\mathrm{eff}}^{-1/2})$ rate, the U-statistic debiasing, the threshold complexity — carries over verbatim with $N\mapsto N_{\mathrm{eff}}$.
-:::
-
-**(3) Unbiased purity estimator.** The naïve $\operatorname{Tr}(\widehat{\Gamma}_N^2)$ is positively biased by $O(1/N)$. The two-sample U-statistic (the classical/statistical analogue of the quantum swap test)
-
+**(3) Pair statistic versus matrix purity.** For $N\ge2$ and positive observed trace, retain the diagnostic
 $$
-\widehat{P}_N \;=\; \frac{1}{N(N-1)}\sum_{m\ne n}\frac{|x_m^\dagger x_n|^2}{(\operatorname{Tr}\widehat{\Sigma}_N)^2}
+\widehat P_{\rm pair}
+=\frac{\sum_{m\ne n}|x_m^\dagger x_n|^2}
+ {N(N-1)(\operatorname{Tr}\widehat\Sigma_N)^2}.
 $$
+For **i.i.d. fixed embedded observations**, the pair average in its numerator is exactly unbiased for $\operatorname{Tr}M^2$: independence factors the two second moments. Its ratio with an estimated denominator is not generally unbiased. Neither a universal bias sign nor a threefold improvement follows from one Gaussian simulation. Same-sample centering invalidates even that numerator argument. For two independent Rademacher observations, sample-centering gives expected pair numerator $1/2$, whereas the population variance squared is $1$.
 
-**debiases the dominant term**: its numerator is *exactly* unbiased for $\operatorname{Tr}(M^2)$ (since $\mathbb{E}|x_m^\dagger x_n|^2=\operatorname{Tr}(M^2)$ for $m\ne n$), so the normalised ratio carries only a small **residual** $O(1/N)$ bias from the random denominator $(\operatorname{Tr}\widehat\Sigma_N)^2$ — of opposite sign and $\sim 3\times$ smaller than the naïve plug-in it replaces (verified: $-1.3\times10^{-3}$ vs. $+3.7\times10^{-3}$ for the naïve estimator at $N=200$, target $P=5/14$). Reflection $R=1/(7P)$ and the integration $\Phi$ inherit consistent plug-in estimators with delta-method confidence intervals.
-
-**(4) Sample complexity for a threshold decision.** To decide $P>P_{\mathrm{crit}}=2/7$ vs. $P<2/7$ with a purity margin $\Delta=|P-2/7|$ at confidence $1-\delta$,
-
+For the real covariance target with unknown mean, distinct **independent** raw observations admit the unbiased numerator kernel
 $$
-N \;\ge\; \frac{2\,c^2}{\Delta^2}\,\ln\frac1\delta,
+h(X_i,X_j,X_k,X_l)
+=\tfrac14[(X_i-X_j)^\top(X_k-X_l)]^2,\qquad
+\mathbb Eh=\operatorname{Tr}C^2.
 $$
+The two differences are independent with second moment $2C$. This is a possible construction, not a guarantee for dependent diaries or a claim that a normalized ratio becomes unbiased.
 
-matching the information bound [T-109](/docs/applied/coherence-cybernetics/learning-bounds#информационная-граница) (quantum-Chernoff sample cost $n\ge\ln(1/2\delta)/\xi_{\mathrm{QCB}}$) up to the constant $c$ fixed by the U-statistic variance. This is the number of independent observation windows needed for a *statistically defensible* consciousness call.
+The exact finite-data identity
+$$
+\widehat P_{\rm pair}
+=\frac N{N-1}P_{\rm plug}
+-\frac{\sum_n\|x_n\|^4}{N(N-1)(\operatorname{Tr}\widehat\Sigma_N)^2}
+$$
+shows why the pair statistic need not equal the purity of the constructed matrix or lie in $[1/7,1]$. Do not hide this by clamping it. Two copies of the seven one-hot rating vectors, with baseline two and same-sample centering, give $P_{\rm plug}=1/6$ and $\widehat P_{\rm pair}=4/39$. Adding five to every rating leaves both unchanged. These centered statistics cannot identify the absolute rating level. Constant centered ratings have zero trace and no estimate.
 
-**Algorithm (implementable in ~10 lines).**
-1. Choose the 7-channel embedding $\pi$ (the modelling step).
-2. Collect $N$ windows; form $x_n=\pi(\text{window}_n)\in\mathbb{C}^7$.
-3. $\widehat\Sigma=\frac1N\sum x_nx_n^\dagger$; $\ \widehat\Gamma=\widehat\Sigma/\operatorname{Tr}\widehat\Sigma$.
-4. $\widehat P$ from the U-statistic (3); $\widehat R=1/(7\widehat P)$; $\widehat\Phi$ from the sector partition.
-5. Report $\widehat\Gamma\pm\varepsilon(N,\delta)$ from (2); flag $\widehat P\gtrless2/7$ only if $N$ meets (4).
+**(4) Threshold decisions and interpretation.** Under the fixed-i.i.d. contract, a population-purity interval wholly above or below a predeclared threshold supports that **statistical** comparison. A comparison of point estimates alone does not. It is not a clinical or consciousness classification without a validated semantic bridge.
 
-:::note What this closes and what remains
-**Closed:** given the embedding, $\Gamma$-recovery is now a consistent estimator with $O(N^{-1/2})$ error and explicit confidence intervals — not an unaccountable "fit". The dominant purity bias is removed, and the number of samples for a defensible threshold call is bounded.
-**Remains (honestly):** the choice of the 7-channel embedding $\pi$ is the irreducible semantic bridge between a specific substrate and the dimensions $(A,\dots,U)$; it is a modelling decision, now cleanly *isolated* from the (rigorous) estimation that follows it. Cross-substrate universality of $\pi$ is an empirical research programme, not a theorem.
-:::
+[T-109](./learning-bounds#информационная-граница) describes another experiment: optimal discrimination of known physical quantum states with collective measurements. Its Chernoff count is sufficient for that optimal test. It does not establish the former $2c^2\Delta^{-2}\log(1/\delta)$ diary budget, the assertion that $c=1$ is conservative, or a necessary lower count for this estimator.
 
 #### Reference implementation {#эталонная-реализация}
 
-A self-contained ~200-line NumPy module implements this section end-to-end — estimator $\widehat\Gamma_N$, unbiased-numerator U-statistic $\widehat P_N$, matrix-Bernstein sample size, effective sample size $N_{\mathrm{eff}}$ via batch means, plug-in $\widehat R,\widehat\Phi$, delta-method intervals, and the L2 verdict:
+[**gamma_tomography.py**](pathname:///code/gamma_tomography.py) separates the normalized second moment, explicitly requested sample covariance, matrix purity and pair ratio. Default analysis is descriptive. A finite-sample region is available only under an explicitly declared fixed-i.i.d. population-bound contract; same-sample centering rejects that option. Model functionals are evaluated from the same constructed matrix. The old energy-based confidence shortcut and automatic L2 verdict have been removed.
 
-[**⬇ gamma_tomography.py**](pathname:///code/gamma_tomography.py) — `python3 gamma_tomography.py` runs a self-test that reproduces the numerical claims above.
+Running the module checks the translation/centering example above. The repository regression check, scripts/verify_measurement_tomography.py, also covers exact finite counterexamples, complex phase orientation, degeneracy and confidence-contract rejection. These tests are not a population coverage study, a clinical validation, or a Lean/Verum proof of the probability theorem.
 
-Self-test output (seed 0), reproducing the guarantees of the theorem:
+**Revision note (6 November 2026).** This replaces the previous unconditional confidence/debiasing claims and simulated “theorem guarantees.” Their historical numerical examples remain in Git history; they are not evidence of general validity.
 
-```
-target: P=0.3571  R=0.4000  Φ=1.5000  Coh_E=0.2286   (L2: all four thresholds pass)
-
-(a) convergence rate  sqrt(N)·||Γ̂_N − Γ||_op:
-    N=  200  →  0.622        N= 3200  →  0.630
-    N=  800  →  0.612        N=12800  →  0.630      ⟹  O(N^{-1/2}) confirmed
-
-(b) purity bias at N=200 (3000 trials):
-    U-statistic  = −0.0013 ± 0.0003   (numerator unbiased; tiny denominator residual)
-    naive        = +0.0037 ± 0.0003   (~3× larger, positive)
-
-(c) N_eff on AR(1) stream (φ=0.8):  τ_corr≈3.81 ⟹ N_eff≈464/4000   (theory τ=4.0)
-
-(d) analyse() on N=1000:  P̂=0.353  R̂=0.405  Φ̂=1.48  ⟹  verdict: L2 = PASS
-```
-
-The embedding $\pi$ is a single injectable function; everything below it is substrate-independent and exercised by the self-test.
 
 ---
 
 ## 7. Limitations and Honest Warnings {#ограничения}
 
-### 7.1 The Calibration Problem — now isolated to the embedding
+### 7.1 Calibration and statistical assumptions
 
-Calibration factors into two steps of very different status. **(a) The 7-channel embedding** $\pi:\text{state}\to x\in\mathbb{C}^7$ — mapping a specific substrate onto the dimensions $(A,\dots,U)$ — is a genuine, irreducible modelling choice (the semantic bridge). **(b) Everything downstream** — recovering $\Gamma$, $P$, $R$, $\Phi$ from the embedded data — is **not** an ad-hoc fit: by the [$\Gamma$-tomography theorem (§6.4)](#оценка-gamma) it is a *provably consistent* estimator with $O(N^{-1/2})$ error, explicit confidence intervals, and an *unbiased* purity estimate.
-
-So the "Achilles' heel" shrinks to step (a) alone, cleanly separated from the rigorous step (b). This is a strictly better position than IIT, which has the same embedding problem *plus* an NP-hard computation of $\Phi_{\text{IIT}}$ on top; here the post-embedding computation is a trivial $7\times7$ estimation with published sample-complexity bounds.
+The channel map and the target (second moment or covariance) are modeling choices. Statistical guarantees additionally require the observation, dependence, baseline, denominator and stopping assumptions stated in [section 6.4](#оценка-gamma). An algebraically valid density matrix does not validate those assumptions or its semantic interpretation. Cross-substrate transfer, clinical meaning and confidence coverage on the intended population require separate independent evidence.
 
 ### 7.2 The Validation Problem
 
