@@ -1,0 +1,24 @@
+// For fixed visible endpoints, budgets form an ordered type. fine(t) and
+// coarse(t) are feasible transfers within t, so a faster lift may be used.
+// Only a matching projected/lifted witness at the two minima is needed.
+public theorem scale_minimum(
+    time:Type, fine:fn(time)->Type, coarse:fn(time)->Type,
+    le:fn(time,time)->Type, f:time, c:time,
+    fine_run:fine(f), coarse_run:coarse(c),
+    project:fn<t:meta time>(fine(t))->coarse(t),
+    realize:fn<t:meta time>(coarse(t))->fine(t),
+    least_f:fn<t:meta time>(fine(t))->le(f,t),
+    least_c:fn<t:meta time>(coarse(t))->le(c,t),
+    antisym:fn<x:meta time,y:meta time>(le(x,y),le(y,x))->Path<time>(x,y)):
+    f == c
+proof = antisym(f,c,least_f(c,realize(c,coarse_run)),least_c(f,project(f,fine_run)));
+
+// Two closed walks based at the same station. One change of frame must
+// intertwine both return maps. The composite may itself be used as a loop.
+public theorem based_loop_composition(
+    a:Type,b:Type, g:fn(a)->b, u:fn(a)->a, v:fn(a)->a,
+    U:fn(b)->b,V:fn(b)->b,x:a,
+    hu:Path<b>(g(u(x)),U(g(x))),
+    hv:Path<b>(g(v(u(x))),V(g(u(x))))):
+    g(v(u(x))) == V(U(g(x)))
+proof by rewrite(hv); rewrite(hu); reflexivity;

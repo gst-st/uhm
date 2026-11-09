@@ -4,7 +4,9 @@ const sidebars: SidebarsConfig = {
   theory: [
     'intro',
     'networks/three-node-transport',
+    'networks/cycle-observations',
     'geometry/response-metric',
+    'geometry/network-scales',
     {
       type: 'category',
       label: 'Foundations',

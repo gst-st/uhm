@@ -4,4 +4,4 @@ defaultTargets = ["Network"]
 
 [[lean_lib]]
 name = "Network"
-roots = ["Network", "Transport", "Response", "Matter", "Reports", "ProtocolMetric"]
+roots = ["Network", "Transport", "Response", "Matter", "Reports", "ProtocolMetric", "PortQuotient", "NetworkScale", "CyclicTransport", "RouteReadout", "SignalNetwork", "TerminalNetwork", "ScaleObstruction", "BoundaryMemory", "ClockRefinement"]

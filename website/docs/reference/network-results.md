@@ -1,6 +1,6 @@
 ---
 title: Verified network results
-description: Observation contracts, witnesses and proof scope for the three-site network.
+description: Observation contracts, witnesses and proof scope for networks observed at one or more scales.
 ---
 
 | Result | Premises and witness | Checked conclusion |
@@ -10,6 +10,10 @@ description: Observation contracts, witnesses and proof scope for the three-site
 | First response [T] | Synchronous nearest-neighbour update, a quiet fixed baseline, distinguishable leading transmission. Two probes with different polarization updates instantiate the premises. | No earlier signal and exact front value in either direction. First arrival is invariant under invertible frame changes preserving the baseline. Lean: `measuredArrival`, `measuredReturn`, `impulseCovariant`, `firstFrameInvariant`. Verum replays all nine ordered pairs of the three-site Boolean support model. |
 | Common shape [T] | Positive reciprocal segment times, additive endpoint time, one constant clock factor per probe. The measured examples are (2,3) versus (2,3), and (2,3) versus (2,4). | Vanishing reference minors are necessary and sufficient for one common ratio. Positive path distances satisfy separation, symmetry and the triangle inequality. Lean: `commonShape`, `reconstructedMetric`. |
 | Controlled interference [T] | Two repeatable, linearly combined leading arms. The receiver distinguishes any nonzero mode. At least one arm is present. | The two opposite phase settings recover a visible first front. Four intensity settings recover two relative quadratures. Lean proves the coordinate identities over integer amplitudes and their real/imaginary components. Verum exhausts the finite sign model. |
+| Cycles and observation [T] | Reversible links, rooted access walks, one common calibration. Coherent detection additionally specifies additive transports and physical phase controls. | A shared root frame classifies the edge loops. The first visible tick is determined by the sums within co-arriving signature classes. `edgeLoopsClassify`, `cellQuotientExistsIff`, `networkArrivalCriterion`. |
+| Change of scale [T] | Retained terminals with physical passage costs, or grouped cells with explicitly tested arrival ports. Positive clock units across the same labels. | Terminal excursions preserve all attainable costs. Port-by-port lifting is equivalent to equality of reachable balls. The join bound is sharp for every route length. Agreement in the limit requires vanishing normalized discrepancy. `terminalRunsExactly`, `reachableBallsIffPortLift`, `sharpJoinLoss`, `largeScaleProtocols`. |
 | Physical universality [H] | Compare independently prepared probes with calibrated clocks and registered detection thresholds. | Extending the same geometry to physical matter and a continuum spacetime requires measured agreement and scaling laws. |
 
 [Three-site experiment](../networks/three-node-transport) · [Response metric](../geometry/response-metric) · [Reproducible proof package](https://github.com/gst-st/uhm/tree/main/website/research/operational-reconstruction/network)
+
+[Closed walks](../networks/cycle-observations) · [Changes of scale](../geometry/network-scales)

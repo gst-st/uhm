@@ -1,0 +1,116 @@
+// Every permutation of three colours is rotation^k * reflection^j.
+type Colour is Red | Green | Blue;
+type Gauge is Id | R | R2 | S | RS | R2S;
+
+fn rotate(c:Colour)->Colour {
+    match c { Colour.Red=>Colour.Green, Colour.Green=>Colour.Blue, Colour.Blue=>Colour.Red }
+}
+fn reflect(c:Colour)->Colour {
+    match c { Colour.Red=>Colour.Red, Colour.Green=>Colour.Blue, Colour.Blue=>Colour.Green }
+}
+fn frame(g:Gauge,c:Colour)->Colour {
+    match g {
+        Gauge.Id=>c, Gauge.R=>rotate(c), Gauge.R2=>rotate(rotate(c)),
+        Gauge.S=>reflect(c), Gauge.RS=>rotate(reflect(c)), Gauge.R2S=>rotate(rotate(reflect(c)))
+    }
+}
+fn same_colour(a:Colour,b:Colour)->Bool {
+    match a { Colour.Red=>match b { Colour.Red=>true,_=>false },
+              Colour.Green=>match b { Colour.Green=>true,_=>false },
+              Colour.Blue=>match b { Colour.Blue=>true,_=>false } }
+}
+fn target(c:Colour, second:Bool)->Colour {
+    if second { rotate(reflect(rotate(rotate(c)))) } else { reflect(c) }
+}
+fn intertwines_at(g:Gauge,c:Colour,second:Bool)->Bool {
+    same_colour(frame(g,reflect(c)),target(frame(g,c),second))
+}
+// The supplied conjugators work on every colour.
+fn separate_conjugacies(c:Colour)->Bool
+    ensures result
+{
+    intertwines_at(Gauge.Id,c,false) && intertwines_at(Gauge.R,c,true)
+}
+// The common fixed colour of the source pair must be carried to a fixed
+// colour of both target permutations. The single red probe suffices to
+// reject *every* simultaneous conjugator, even if the other probes are ignored.
+fn no_common_gauge(g:Gauge)->Bool
+    ensures result
+{
+    !(intertwines_at(g,Colour.Red,false) && intertwines_at(g,Colour.Red,true))
+}
+
+// Six equal edges A--P--Q--C--R--S--A. The observer retains opposite
+// stations A and C. A zero-time switch inside the block {P,Q} models a
+// naive quotient, while the actual P--Q traversal costs one tick.
+type Tick is Two | Three | Missing;
+fn same_tick(a:Tick,b:Tick)->Bool {
+    match a { Tick.Two=>match b { Tick.Two=>true,_=>false },
+              Tick.Three=>match b { Tick.Three=>true,_=>false },
+              Tick.Missing=>match b { Tick.Missing=>true,_=>false } }
+}
+fn observe(merged:Bool, reverse:Bool)->Tick
+    ensures same_tick(result,if merged { Tick.Two } else { Tick.Three })
+{
+    let a = !reverse;
+    let c = reverse;
+    let p1 = a || (merged && c);
+    let q1 = c || (merged && a);
+    let s1 = a;
+    let r1 = c;
+    let at2 = if reverse { p1 || s1 } else { q1 || r1 };
+    let p2 = q1 || (merged && p1);
+    let q2 = p1 || (merged && q1);
+    let s2 = r1;
+    let r2 = s1;
+    let at3 = if reverse { p2 || s2 } else { q2 || r2 };
+    if at2 { Tick.Two } else { if at3 { Tick.Three } else { Tick.Missing } }
+}
+
+// Four equally early unit routes have bare signs +,-,-,+ and binary
+// edge-control signatures 00,01,10,11. A dark result means exactly two
+// negative signs, since the amplitudes add as ordinary signed integers.
+fn nonzero_four(a:Bool,b:Bool,c:Bool,d:Bool)->Bool {
+    if a==b { a==c || a==d } else { c==d }
+}
+fn four_route_readout(u:Bool,v:Bool,lose_bit:Bool)->Bool
+    ensures result == (u && v && !lose_bit)
+{
+    let bit = u && !lose_bit;
+    nonzero_four(false,!bit,!v,bit!=v)
+}
+
+// The observed boundary is B in the autonomous cycle B->Near->Far->B.
+// The three update functions express the synchronous wiring. Only one initial
+// impulse is used, so the two indistinguishable boundary readings occur in the
+// same trajectory. Any proposed next value at B=0 fails at one of the visits.
+fn next_boundary(b:Bool,near:Bool,far:Bool)->Bool { far }
+fn next_near(b:Bool,near:Bool,far:Bool)->Bool { b }
+fn next_far(b:Bool,near:Bool,far:Bool)->Bool { near }
+fn boundary_needs_history(proposed:Bool)->Bool
+    ensures result
+{
+    let b1 = next_boundary(true,false,false);
+    let n1 = next_near(true,false,false);
+    let f1 = next_far(true,false,false);
+    let b2 = next_boundary(b1,n1,f1);
+    let n2 = next_near(b1,n1,f1);
+    let f2 = next_far(b1,n1,f1);
+    let b3 = next_boundary(b2,n2,f2);
+    !b1 && !b2 && (proposed!=b2 || proposed!=b3)
+}
+
+// A->B->C->A with the additional chord C->B. Insert a physical delay cell
+// after every source. Every initial station mask is allowed; delay cells
+// start quiet. Read either tick on any of the three original stations.
+type Port is A | B | C;
+fn refinement_read(p:Port, a:Bool, b:Bool, c:Bool, second_tick:Bool)->Bool
+    ensures result == (second_tick && match p {
+        Port.A=>c, Port.B=>a||c, Port.C=>b
+    })
+{
+    let delay_a = second_tick && a;
+    let delay_b = second_tick && b;
+    let delay_c = second_tick && c;
+    match p { Port.A=>delay_c, Port.B=>delay_a || delay_c, Port.C=>delay_b }
+}

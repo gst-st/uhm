@@ -1,0 +1,50 @@
+// A priced walk is represented by its left fold over arbitrary dependent
+// families of accumulators M(block, price). These are the empty and snoc
+// constructors at that exact type; no minimum or lifting predicate occurs in it.
+public theorem walk_empty(
+    b:Type,time:Type,edge:fn(b,b,time)->Type,plus:fn(time,time)->time,
+    s:b,zero:time, M:fn(b,time)->Type,
+    step:fn<i:meta b,j:meta b,t:meta time,d:meta time>(edge(i,j,d),M(i,t))->M(j,plus(t,d)),
+    initial:M(s,zero)): M(s,zero)
+proof = initial;
+
+public theorem walk_append(
+    b:Type,time:Type,edge:fn(b,b,time)->Type,plus:fn(time,time)->time,
+    s:b,zero:time,i:b,j:b,t:time,d:time,
+    walk:fn<M:meta fn(b,time)->Type>(
+      fn<h:meta b,k:meta b,a:meta time,w:meta time>(edge(h,k,w),M(h,a))->M(k,plus(a,w)),
+      M(s,zero))->M(i,t),
+    passage:edge(i,j,d), M:fn(b,time)->Type,
+    step:fn<h:meta b,k:meta b,a:meta time,w:meta time>(edge(h,k,w),M(h,a))->M(k,plus(a,w)),
+    initial:M(s,zero)): M(j,plus(t,d))
+proof = step(i,j,t,d,passage,walk(M,step,initial));
+
+// fine(i,j,t,x,y) witnesses a real transfer costing at most t from x to y.
+// supply must work at every incoming fine port and hand the chosen outgoing
+// port *and its fine receipt* to its consumer. The accumulator at (i,t) is
+// the continuation encoding of a chosen actual port with a prefix receipt.
+// The answer type is arbitrary, so clients may eliminate the final witness.
+public theorem lift_priced_walk(
+    b:Type,time:Type,ports:fn(b)->Type,edge:fn(b,b,time)->Type,plus:fn(time,time)->time,
+    fine:fn<i:meta b,j:meta b,t:meta time>(ports(i),ports(j))->Type,
+    s:b,z:b,zero:time,total:time,x:ports(s),answer:Type,
+    walk:fn<M:meta fn(b,time)->Type>(
+      fn<i:meta b,j:meta b,t:meta time,d:meta time>(edge(i,j,d),M(i,t))->M(j,plus(t,d)),
+      M(s,zero))->M(z,total),
+    initial:fine(s,s,zero,x,x),
+    supply:fn<i:meta b,j:meta b,d:meta time,y:meta ports(i),r:meta Type>(
+      edge(i,j,d),fn<p:meta ports(j)>(fine(i,j,d,y,p))->r)->r,
+    join:fn<i:meta b,j:meta b,k:meta b,t:meta time,d:meta time,
+            a:meta ports(i),y:meta ports(j),p:meta ports(k)>(
+            fine(i,j,t,a,y),fine(j,k,d,y,p))->fine(i,k,plus(t,d),a,p),
+    finish:fn<p:meta ports(z)>(fine(s,z,total,x,p))->answer):answer
+proof = walk(
+    |i:b| |t:time| forall accept:fn<y:meta ports(i)>(fine(s,i,t,x,y))->answer. answer,
+    |i:b| |j:b| |t:time| |d:time| |link:edge(i,j,d)|
+      |acc:fn(fn<y:meta ports(i)>(fine(s,i,t,x,y))->answer)->answer|
+      |accept:fn<p:meta ports(j)>(fine(s,j,plus(t,d),x,p))->answer|
+        acc(|y:ports(i)| |history:fine(s,i,t,x,y)|
+          supply(i,j,d,y,answer,link,|p:ports(j)| |leg:fine(i,j,d,y,p)|
+            accept(p,join(s,i,j,t,d,x,y,p,history,leg)))),
+    |accept:fn<y:meta ports(s)>(fine(s,s,zero,x,y))->answer| accept(x,initial)
+)(finish);

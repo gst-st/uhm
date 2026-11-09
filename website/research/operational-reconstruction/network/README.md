@@ -1,4 +1,4 @@
-# Experiments on three stations
+# Network reconstruction from transport and response
 
 The primitive data are distinguishable inputs and readouts, local changes of frame, and possible compositions with their measured costs. An exact signed-interference model adds coherent linear combination as a separate experimental premise. Reference: operational-canon blueprint, SHA-256 `6d9a758e1b344d08aba44b40c13c44126200990bd21650a3befa72ab96526934`. The general cost result can be used on a register with no amplitudes or preassigned spatial dimension.
 
@@ -13,24 +13,38 @@ The primitive data are distinguishable inputs and readouts, local changes of fra
 
 The physical continuum, a unique microscopic gauge group, a Standard Model matter spectrum and empirical equivalence of contemplative experiences each require new evidence. The additive reporting model is a protocol for future data. The three-station simulation uses unnormalized linear response amplitudes; unitarity of an individual link does not imply unitarity of the full discrete update. Cost-composition geometry, lattice gauge covariance, two-arm interference and additive effects have established precedents. The package contribution is their scoped operational synthesis, the exact probes and the counterexamples used to decide between the models.
 
+## Cycles and changes of scale
+
+| Measured property | Exact reduction or obstruction |
+|---|---|
+| State after a closed walk | For supplied root access walks, one simultaneous conjugator for the rooted edge loops reconstructs the frames at every node. With internal access and separate crossing ports, contracting a cell preserves the probe's transport iff the internal edge loops are trivial. [CyclicTransport](CyclicTransport.lean) |
+| First delivery | The Boolean update on finite incoming lists gives a physical walk of exactly the detected length, and its first tick realizes the protocol minimum. The time of a coherent response is controlled by the net amplitude in each parity class of simultaneously arriving routes. A shared switch can leave a receiver dark forever. [SignalNetwork](SignalNetwork.lean) · [RouteReadout](RouteReadout.lean) |
+| Terminal reduction | Cutting a fine walk at successive terminals gives macro passages with the same total cost. Keeping full impulse kernels instead carries the delayed response and initial hidden excitation of an additive network onto its boundary. [TerminalNetwork](TerminalNetwork.lean) · [BoundaryMemory](BoundaryMemory.lean) |
+| Block contraction | Every proposed coarse step must lift from every actual starting port to its destination block within budget to preserve reachable balls. The criterion composes through nested scales. With switch diameter D and free endpoints, the excess fine cost is at most (m−1)D for m≥1 steps. The cyclic two-port strip attains the bound for arbitrarily large m. [PortQuotient](PortQuotient.lean) · [ScaleObstruction](ScaleObstruction.lean) |
+| Macroscopic comparison | Mutual calibrated simulations characterize a common distance table. At increasing scales, uniform vanishing of normalized discrepancies transfers convergence to the same reference table. A fixed positive tick can collapse in that limit. Uniform physical delay lines multiply all first arrival times by the same factor, including on cyclic networks. [NetworkScale](NetworkScale.lean) · [ClockRefinement](ClockRefinement.lean) |
+
 ## Replay
 
 From this directory use Lean 4.35.0 (Std only), a Python 3 interpreter and the native `verum-source-replay` checker from the `verum_source_proof` crate.
 
 ~~~sh
 lake build
-python3 -B audit_lean.py
+python3 -B audit_lean.py --replay-kernels
 python3 -B experiment.py
+python3 -B network_scale_experiment.py
+python3 -B boundary_experiment.py
 python3 -B replay_verum.py /absolute/path/to/verum-source-replay
 ~~~
 
-The Lean audit examines all theorem dependencies in the six local Lean modules. It refuses unreviewed axioms, including `Classical.choice` and `sorryAx`. It does not infer experimental validity from theorem names.
+The Lean audit inventories theorem declarations in the compiled environment of every local module, including private and generated proofs. It rejects local axioms and dependencies outside `propext` and `Quot.sound`. The optional kernel replay exports public theorem closures from these same modules to a temporary NDJSON file and sends it to leanchecker-paranoid, lean4lean and nanoda. Nanoda receives an explicit axiom whitelist. The temporary export is released after verification.
 
-Verum checks two parametrically typed propositions using the native logical profile and six finite source contracts covering 73 input cases. The two logical statements are compared with independently specified de Bruijn types; for the finite profile the native checker binds the function body, contract and number of input cases. Every declaration has a separately rejected semantic mutation. The [native receipt](verum-receipt.json) identifies the binary, the source bytes and the returned kernel. A successful Lean compilation or the Python simulator cannot substitute for native Verum replay. The general induction for the propagation front and the cost/reciprocity biconditionals are Lean results; the finite Verum contracts have the scopes recorded in the receipt.
+Native Verum verifies source contracts for the declared logical and finite profiles. The Church-fold path constructors and dependent port lifting, transfer of attained minima, and compositional calibration checks are parametric. Finite controls include the six-edge ring, incompatible loop gauges, signal loss with four paths and hidden boundary memory. The replay checks independently specified logical types, native verdicts, source digests, finite coverage and a rejected mutation per declaration. The [receipt](verum-receipt.json) gives the exact coverage and binary digest. General graph induction, the quantitative sharp bound, cyclic coherent response and calibrated asymptotics are proved in Lean.
 
 ## Canon pages
 
 - [Gauge transport](../../../docs/networks/three-node-transport.md)
 - [Distance from response](../../../docs/geometry/response-metric.md)
 - [Practice and report](../../../docs/consciousness/empirical/practice-and-report.md)
+- [Cycle observations](../../../docs/networks/cycle-observations.md)
+- [Networks across scales](../../../docs/geometry/network-scales.md)
 - [Result registry](../../../docs/reference/network-results.md)
