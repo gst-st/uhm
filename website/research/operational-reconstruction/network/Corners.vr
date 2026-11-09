@@ -1,0 +1,8 @@
+// Equality of transported outcomes after a change of the middle frame.
+// The inverse law is required only at the signal actually passed.
+public theorem middle_frame_cancels(
+    a: Type, b: Type, c: Type, u: fn(a)->b, v: fn(b)->c,
+    turn: fn(b)->b, back: fn(b)->b, x:a,
+    cancel: Path<b>(back(turn(u(x))), u(x))):
+    v(back(turn(u(x)))) == v(u(x))
+proof by rewrite(cancel); reflexivity;

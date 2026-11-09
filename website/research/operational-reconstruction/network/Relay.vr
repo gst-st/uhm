@@ -1,0 +1,12 @@
+// Construct the triangular inequality from two attainable minima,
+// a relay on their witnesses and minimality at the end stations.
+// Exact-time concatenation specializes the more general Lean protocol.
+public theorem relay_triangle(
+    time: Type, ab: fn(time)->Type, bc: fn(time)->Type, ac: fn(time)->Type,
+    left:time, right:time, shortest:time,
+    total:fn(time,time)->time, le:fn(time,time)->Type,
+    left_run:ab(left), right_run:bc(right),
+    relay:fn<t:meta time,u:meta time>(ab(t),bc(u))->ac(total(t,u)),
+    least:fn<t:meta time>(ac(t))->le(shortest,t)):
+    le(shortest,total(left,right))
+proof = least(total(left,right),relay(left,right,left_run,right_run));

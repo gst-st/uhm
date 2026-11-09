@@ -1,0 +1,7 @@
+name = "uhm_network"
+version = "0.1.0"
+defaultTargets = ["Network"]
+
+[[lean_lib]]
+name = "Network"
+roots = ["Network", "Transport", "Response", "Matter", "Reports", "ProtocolMetric"]

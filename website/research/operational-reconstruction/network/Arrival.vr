@@ -1,0 +1,93 @@
+// Bool encodes the sign of a nonzero amplitude on each of two tied routes.
+// flip labels a real, controllable pi phase on the direct arm.
+fn parity(x:Bool, y:Bool)->Bool { if x { !y } else { y } }
+
+fn bright(d:Bool, u:Bool, v:Bool, flip:Bool)->Bool {
+    parity(d,flip) == parity(u,v)
+}
+
+fn paired_first_response(d:Bool, u:Bool, v:Bool)->Bool
+    ensures result
+{
+    bright(d,u,v,false) || bright(d,u,v,true)
+}
+
+fn middle_frame(d:Bool, u:Bool, v:Bool, turn:Bool, flip:Bool)->Bool
+    ensures result == bright(d,u,v,flip)
+{
+    bright(d,parity(u,turn),parity(v,turn),flip)
+}
+
+type Site is West | Center | East;
+type Reading is Now | Next | Later | Absent;
+
+fn same_site(a:Site,b:Site)->Bool {
+    match a {
+        Site.West => match b { Site.West => true, _ => false },
+        Site.Center => match b { Site.Center => true, _ => false },
+        Site.East => match b { Site.East => true, _ => false },
+    }
+}
+// One local update of Boolean support. Input is a pulse at source.
+fn sample(site:Site, west:Bool, center:Bool, east:Bool)->Bool {
+    match site { Site.West => west, Site.Center => center, Site.East => east }
+}
+fn same_reading(a:Reading,b:Reading)->Bool {
+    match a {
+        Reading.Now => match b { Reading.Now => true, _ => false },
+        Reading.Next => match b { Reading.Next => true, _ => false },
+        Reading.Later => match b { Reading.Later => true, _ => false },
+        Reading.Absent => match b { Reading.Absent => true, _ => false },
+    }
+}
+fn expected(a:Site,b:Site)->Reading {
+    if same_site(a,b) { Reading.Now } else {
+        if same_site(a,Site.Center) || same_site(b,Site.Center) { Reading.Next }
+        else { Reading.Later }
+    }
+}
+fn first_on_chain(a:Site,b:Site)->Reading
+    ensures same_reading(result,expected(a,b))
+{
+    let w = same_site(a,Site.West);
+    let c = same_site(a,Site.Center);
+    let e = same_site(a,Site.East);
+    let w1 = c;
+    let c1 = w || e;
+    let e1 = c;
+    if sample(b,w,c,e) { Reading.Now } else {
+        if sample(b,w1,c1,e1) { Reading.Next } else {
+            if sample(b,c1,w1 || e1,c1) { Reading.Later } else { Reading.Absent }
+        }
+    }
+}
+
+// Opposite signs on the two arms for a central -1 holonomy. In the
+// conjugation representation the center acts trivially on every input.
+fn center_readout(doublet:Bool, external_flip:Bool)->Bool
+    ensures result == (doublet == external_flip)
+{
+    bright(doublet,false,false,external_flip)
+}
+
+// Delays encoded as false=1, true=2. Independent oracle enumerates the
+// realizable shapes (1,1), (1,2), (2,1) with a single positive scale per probe.
+type Product is One | Two | Four;
+fn delay_product(x:Bool,y:Bool)->Product {
+    if x && y { Product.Four } else { if x || y { Product.Two } else { Product.One } }
+}
+fn equal_product(x:Product,y:Product)->Bool {
+    match x {
+        Product.One => match y { Product.One => true, _ => false },
+        Product.Two => match y { Product.Two => true, _ => false },
+        Product.Four => match y { Product.Four => true, _ => false },
+    }
+}
+fn compatible_model(a:Bool,b:Bool,c:Bool,d:Bool)->Bool {
+    ((a==b) && (c==d)) || ((!a && b) && (!c && d)) || ((a && !b) && (c && !d))
+}
+fn clock_minor(a:Bool,b:Bool,c:Bool,d:Bool)->Bool
+    ensures result == compatible_model(a,b,c,d)
+{
+    equal_product(delay_product(a,d),delay_product(b,c))
+}

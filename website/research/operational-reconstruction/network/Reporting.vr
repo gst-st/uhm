@@ -1,0 +1,30 @@
+// A saturated six-step register suffices for the tested subdomain. Constructors
+// S0..S6 are successive ticks. All tested (event, report) sums stay within it.
+type Tick is S0 | S1 | S2 | S3 | S4 | S5 | S6;
+fn next(s:Tick)->Tick {
+    match s { Tick.S0=>Tick.S1, Tick.S1=>Tick.S2, Tick.S2=>Tick.S3,
+              Tick.S3=>Tick.S4, Tick.S4=>Tick.S5, Tick.S5=>Tick.S6, Tick.S6=>Tick.S6 }
+}
+fn same(a:Tick,b:Tick)->Bool {
+    match a {
+        Tick.S0=>match b { Tick.S0=>true, _=>false },
+        Tick.S1=>match b { Tick.S1=>true, _=>false },
+        Tick.S2=>match b { Tick.S2=>true, _=>false },
+        Tick.S3=>match b { Tick.S3=>true, _=>false },
+        Tick.S4=>match b { Tick.S4=>true, _=>false },
+        Tick.S5=>match b { Tick.S5=>true, _=>false },
+        Tick.S6=>match b { Tick.S6=>true, _=>false },
+    }
+}
+fn extra(t:Tick, mode:Bool)->Tick { if mode { next(next(next(next(t)))) } else { t } }
+fn record(s:Bool,mode:Bool,late_event:Bool)->Tick {
+    let base = if s { Tick.S1 } else { Tick.S0 };
+    let event = if late_event { next(base) } else { base };
+    let report = extra(event,mode);
+    if late_event { report } else { next(report) }
+}
+fn indistinguishable(s:Bool,mode:Bool)->Bool
+    ensures result
+{
+    same(record(s,mode,true),record(s,mode,false))
+}

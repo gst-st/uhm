@@ -3,6 +3,8 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   theory: [
     'intro',
+    'networks/three-node-transport',
+    'geometry/response-metric',
     {
       type: 'category',
       label: 'Foundations',
@@ -141,6 +143,7 @@ const sidebars: SidebarsConfig = {
       label: 'Empirical Programme',
       items: [
         'consciousness/empirical/overview',
+        'consciousness/empirical/practice-and-report',
         'consciousness/empirical/calibration',
         'consciousness/empirical/structure',
         'consciousness/empirical/engineering',
@@ -403,6 +406,7 @@ const sidebars: SidebarsConfig = {
     'reference/specification',
     'reference/computational',
     'reference/status-registry',
+    'reference/network-results',
     'reference/premises',
     'reference/articulation-hygiene',
     'reference/epistemic-vertical',
