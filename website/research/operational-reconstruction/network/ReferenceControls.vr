@@ -1,0 +1,23 @@
+// A classical rival uses one hidden orientation per source emission and a fair
+// shared output mask. It reproduces the parity record trial by trial.
+fn masked_read(left_orientation:Bool,right_orientation:Bool,mask:Bool)->Bool {
+    if left_orientation!=right_orientation { !mask } else { mask }
+}
+fn compare_sources(a:Bool,b:Bool,mask:Bool)->Bool
+    ensures result == (a!=b)
+{
+    let second = masked_read(a,b,mask);
+    mask!=second
+}
+// An observed triangle is compatible iff some assignment to its two non-root
+// vertices reproduces all three edges. The root is fixed only as a convention.
+fn fits_triangle(a:Bool,b:Bool,c:Bool,j:Bool,k:Bool)->Bool {
+    (a==j) && (b==(j!=k)) && (c==k)
+}
+fn triangle_closes(a:Bool,b:Bool,c:Bool)->Bool
+    ensures result == ((a!=b)==c)
+{
+    let row0 = fits_triangle(a,b,c,false,false) || fits_triangle(a,b,c,false,true);
+    let row1 = fits_triangle(a,b,c,true,false) || fits_triangle(a,b,c,true,true);
+    row0 || row1
+}

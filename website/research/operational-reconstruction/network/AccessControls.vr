@@ -1,0 +1,24 @@
+// Late remapping alone cannot distinguish two implementations with an inaccessible
+// bit. Making the bit causally readable *does* separate them. Arbitrary visible
+// action and key permutations are shared by the two systems.
+fn read_key(visible:Bool,latent:Bool,probe:Bool,key:Bool)->Bool {
+    let channel = if probe { latent } else { visible };
+    channel!=key
+}
+fn resolves(visible:Bool,action:Bool,key:Bool,probe:Bool)->Bool
+    ensures result == probe
+{
+    let updated = visible!=action;
+    read_key(updated,false,probe,key)!=read_key(updated,true,probe,key)
+}
+// Each edge is an independently nominated permutation of a binary vocabulary.
+// Enumerate every intermediate and final ground label; the direct/indirect
+// disagreement must have a witness among the three measured edge errors.
+fn triangle_witness(a:Bool,b:Bool,c:Bool,ab:Bool,bc:Bool,ac:Bool)->Bool
+    ensures result == true
+{
+    let transferred = a!=ab;
+    let indirect = transferred!=bc;
+    let direct = a!=ac;
+    (indirect==direct) || (transferred!=b) || ((b!=bc)!=c) || (direct!=c)
+}

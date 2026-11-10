@@ -469,6 +469,10 @@ LOGICAL_TYPES = {
 }
 
 SPECS = [
+    ('AccessControls.vr','finite','resolves',16,'if probe { latent }','if probe { visible }'),
+    ('AccessControls.vr','finite','triangle_witness',64,'|| (direct!=c)','|| (direct!=direct)'),
+    ('ReferenceControls.vr','finite','compare_sources',8,'mask!=second','mask==second'),
+    ('ReferenceControls.vr','finite','triangle_closes',8,'fits_triangle(a,b,c,true,true);','fits_triangle(a,b,c,true,false);'),
     ('ProcessControls.vr','finite','marginal_support',8,'else { true };','else { false };'),
     ('ProcessControls.vr','finite','joint_equal',4,'seed==right','!seed==right'),
     ('CapacityBudget.vr','pi-id','aggregate_capacity',None,
