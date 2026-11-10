@@ -306,7 +306,7 @@ $$
 
 **(b) Uniqueness depends on the self-model.** $\varphi_{\mathrm{coh}}$ has exactly one fixed point, $I/7$. $\varphi_J$ has exactly one, $\Gamma_{\eta_\infty} = (1 - \eta_\infty)\,I/7 + \eta_\infty\,uu^\dagger$, where $\eta_\infty$ is the unique positive root of $6(1 - c)\eta^3 + \eta - 1 = 0$, $c = (1 - \alpha)/3$; its purity $(1 + 6\eta_\infty^2)/7$ is $5/14$, $0.334$, $0.317$ at $\alpha = 0, 1/2, 1$ — the upper end $P_\infty$ of the [living attractor](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне). $\varphi_s$ has at least eight: $I/7$ and the seven basis states.
 
-**(c) No contraction.** Banach's theorem applies to none of them: $\varphi_{\mathrm{coh}}$ stretches Frobenius distances by up to $9/8$ (at $P = 4/7$; $54/49$ at pure states; "up to $54/49$" until 2026-09-28) and $\varphi_J$ by $1.129$ at a basis state ([which maps contract](/docs/core/operators/phi-operator#три-отображения-сжатие)).
+**(c) No contraction.** Banach's theorem applies to none of them: $\varphi_{\mathrm{coh}}$ stretches Frobenius distances by up to $9/8$ (at $P = 4/7$; $54/49$ at pure states) and $\varphi_J$ by $1.129$ at a basis state ([which maps contract](/docs/core/operators/phi-operator#три-отображения-сжатие)).
 
 Applying Gap to both sides, we obtain the self-referential Gap:
 
@@ -918,37 +918,14 @@ $$
 The proof uses the definitions of constants $\lambda_3, \lambda_4$ from Theorem 13.5 and the spontaneous Gap formula from Theorem 13.6 (both [T]). The uniqueness of the self-consistent vacuum, which the next theorem claimed from the positive definiteness of a Hessian, holds for the retracted cubic $V_3$ only up to its symmetries and only numerically; for the $G_2$-invariant potential it holds up to $G_2$ (T-64 corrected, see below); the exclusion of the homogeneous vacuum does not depend on it. The "sector structure" in the conclusion means only that the vacuum is not homogeneous: no split into sectors follows from this proof.
 :::
 
-#### Theorem (Unique self-consistent vacuum) — corrected: for the $G_2$-invariant potential unique up to $G_2$ [T], without sector structure [✗] {#теорема-единственный-вакуум}
+#### Dependence of the vacuum on the potential {#теорема-единственный-вакуум}
 
-:::danger Corrected 2026-09-25 (audit A-90)
-The statement below claimed a unique vacuum with the sector values of hypothesis (SV). Three repairs were tried; what survives is weaker.
-
-1. **Axis sectors.** The sectors $\{A,S,D\}$ and $\{L,E,U\}$ are the axis triples of T-48a, retracted: no triple of axes is $SU(3)$-invariant (0 of 20), and the triplet is $\mathbf 3 = \mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$.
-2. **Correct complex triplets.** The $SU(3)_C$-invariant states are $\Gamma = a\,|O\rangle\langle O| + b\,P_{\mathbf 3} + c\,P_{\bar{\mathbf 3}}$. Their only coherences sit on the pairs $(A,D)$, $(S,U)$, $(L,E)$, all of modulus $\delta = \lvert b-c\rvert/2$; on them $V_3 \equiv 0$ and $V_{\text{Gap}} = 6\mu^2\delta^2 + 36\lambda_4\delta^4$, minimal at $\delta = 0$, that is at $\mathcal{G}_{\text{total}} = 0$ (`test_su3_invariant_vacuum_has_no_spontaneous_gap`). A vacuum that keeps colour has no spontaneous Gap and none of the sector values below.
-3. **No sector ansatz; Fano lines instead.** Minimised over all of $\mathcal D(\mathbb C^7)$ with the self-consistent constants of Theorem 13.5, the vacuum is unique up to the 896 symmetries of $V_{\text{Gap}}$ (numerically) and sits on two Fano lines through one point, not on $SU(3)$ sectors — see T-64 below.
-
-What stands: Theorem 14.1 [T] (the homogeneous vacuum is not a stationary point); uniqueness of the self-consistent vacuum up to the symmetries of $V_{\text{Gap}}$ — the numerically supported hypothesis T-64 [H]. Retracted [✗]: the sector structure of the vacuum and the uniqueness modulo $G_2$. The sector values are the named hypothesis [(SV)](#гипотеза-секторного-вакуума) [H].
-:::
-
-*(Update 2026-09-25, T-64 corrected: the three repairs above used the retracted cubic $V_3$. With the $G_2$-invariant potential of §11 the vacuum is unique up to $G_2$ for every $\kappa > 0$ off the transition curves [T]: the point $I/7$ in the symmetric phase (always for $\kappa \le \mu^2/48$), one orbit $S^6$ of colour-invariant states in the Gap phase; on a transition curve two orbits coexist (T-64 (g); [(RT)](#теорема-ву) proven 2026-09-25). Repair 2 then works: the colour-invariant family does carry a spontaneous Gap, because the associator cubic, unlike $V_3$, does not vanish on it. The sector values remain the hypothesis (SV), which this vacuum does not produce. The self-consistency relations of Theorem 13.5 were derived for $V_3$ and are not claimed for $\kappa$.)*
-
-*Earlier statement (retracted):* $V_{\text{Gap}}$ has a unique minimum (up to $G_2$-conjugation) on the 21-dimensional space of coherences $\{\gamma_{ij}\}$ with the sector structure $7 = 1_O \oplus 3 \oplus \bar{3}$.
-
-**Sector values:** $\varepsilon_{3\to\bar{3}} \approx 0$ (confinement), $\varepsilon_{\bar{3}\to\bar{3}} \approx 10^{-17}$ (electroweak), $\varepsilon_{33} \approx 0.06$ (Yukawa hierarchy), $\bar{\varepsilon} \approx 0.023$ (mean coherence).
-
-:::warning Sector coherence notation (earlier, axis-labelled sectors — see the retraction above)
-- $\varepsilon_{3\to\bar{3}}$ — coherence between the **confinement sector** ($\{A,S,D\}$) and the **electroweak sector** ($\{L,E,U\}$), suppressed by confinement → $\approx 0$
-- $\varepsilon_{\bar{3}\to\bar{3}}$ — coherence **within** the electroweak sector, suppressed by electroweak symmetry breaking → $\approx 10^{-17}$
-- $\bar{\varepsilon} \approx 0.023$ — **weighted mean** of sector coherences (not to be confused with $\varepsilon_O$ — coherence of the O-sector, which is $\sim 1$)
-:::
-
-*(Earlier argument, retracted: "uniqueness follows from the positive definiteness of the Hessian $\partial^2 V_{\text{Gap}} / \partial \varepsilon_X \partial \varepsilon_Y$ at the minimum point". The Hessian was taken in five axis-sector variables, which do not parametrise the states; a positive-definite Hessian at one point would in any case give a local, not a global, statement.)*
-
-#### Theorem T-64 (Global minimisation of $V_{\text{Gap}}$) — corrected to the $G_2$-invariant potential [T]; the axis-frame statement [H]; the $G_2$-reduction retracted [✗] {#теорема-глобальная-минимизация}
+The minimizers below belong to an explicitly specified invariant potential. Fano incidence alone fixes neither the minimizers nor a physical mass hierarchy.
+#### T-64. Global minimization of the invariant potential {#теорема-глобальная-минимизация}
 
 The potential is the $G_2$-invariant one of [§11](#g2-инвариантный-кубик): $V = \mu^2\mathcal{G}_{\text{total}} + \lambda_4\mathcal{G}_{\text{total}}^2 - \kappa\mathcal A$ on $\mathcal D(\mathbb C^7)$, with $\mu^2 > 0$, $\lambda_4 \ge 0$ and $\kappa$ real. For a unit $v \in \mathbb R^7$ let $P_{\mathbf 3}(v)$, $P_{\bar{\mathbf 3}}(v)$ be the projectors onto the $\mp i$-eigenspaces of $L_v$ on $v^\perp$ (the colour triplet and antitriplet of $\mathrm{SU}(3)_v = \mathrm{Stab}_{G_2}(v)$), and call the states $a|v\rangle\langle v| + b P_{\mathbf 3}(v) + c P_{\bar{\mathbf 3}}(v)$, $a + 3b + 3c = 1$, the **colour-invariant sector** of $v$.
 
-:::tip T-64 (corrected 2026-09-25; (RT) proven the same day): the vacuum of the $G_2$-invariant $V_{\text{Gap}}$ [T]
+:::tip Minima and parameter regimes
 **(a) [T]** If $\kappa \le 0$, then $\min V = 0$, attained exactly on the real states with $\kappa\mathcal A = 0$; the real pure states — a whole $G_2$-orbit $\mathbb{RP}^6$ — are among them. No Gap is spontaneous and the vacuum is not unique up to $G_2$.
 
 **(b) [T]** If $0 < \kappa \le \mu^2/48$, the state $I/7$ is the unique global minimum. The vacuum has $\mathcal{G}_{\text{total}} = 0$ and keeps all of $G_2$, colour included.
@@ -1000,77 +977,9 @@ Checks in `website/scripts/check_core_numbers.py`: `test_real_states_obey_the_as
 
 **Consequences.** (i) The vacuum of the $G_2$-invariant potential has none of the (SV) values. At $I/7$ all coherences vanish; in the Gap phase $\Gamma_v$ written in the axis basis with $v = e_O$ is $a|O\rangle\langle O| + \tfrac{b+c}{2}(I - |O\rangle\langle O|) + i\tfrac{b-c}{2}L_{e_O}$: its only coherences sit on $(A,D)$, $(S,U)$, $(L,E)$, of modulus $|b-c|/2$, and the $O$-coherences are zero, not $\sim 1$. (ii) Its non-$O$ root-mean-square coherence is $\bar\varepsilon = |b-c|/(2\sqrt5)$: zero in the symmetric phase and, for every $\kappa > 0$ and $\lambda_4 \ge 0$, $\bar\varepsilon \le \tfrac{1}{2\sqrt5}\big(\tfrac14 - \tfrac{\mu^2}{384\kappa}\big) < \tfrac{\sqrt5}{40} \approx 0.0559$, the supremum being approached as $\kappa/\mu^2 \to \infty$. Proof: the feasible set $0 \le d^2 \le s^2 \le 1/9$ of (e) does not depend on $\lambda_4$ and the sector potential grows with $\lambda_4$ by $\tfrac94\lambda_4d^4$, so comparing $V$ at minimisers for $\lambda_4' > \lambda_4$ gives $\tfrac94(\lambda_4' - \lambda_4)(d'^4 - d^4) \le 0$: $d^2$ at a minimiser does not increase with $\lambda_4$. At $\lambda_4 = 0$ the minimiser is $I/7$ or the rank-4 branch with $b = s = \tfrac14 - \tfrac{\mu^2}{384\kappa}$. (iii) $V$ is $\mathrm{PT}$-even and its vacuum set is $\mathrm{PT}$-invariant; $I/7$ is $\mathrm{PT}$-invariant, and $\Gamma_v$ is invariant under the antiunitary $\Theta_v = g_v\circ\mathrm{PT}$ for any $g_v \in G_2$ with $g_vv = -v$. (iv) The vacuum manifold is $S^6$, with $\pi_1 = \pi_2 = 0$ — not the $G_2/T^2$ of T-69.
 
-##### Axis-frame record: the retracted cubic $V_3$ {#t64-осевая-запись}
+##### Dependence on the chosen frame {#t64-осевая-запись}
 
-:::danger Corrected 2026-09-25 (audit A-90): with the cubic $V_3$ of §11 the minimum is not unique modulo $G_2$ and has no sector structure
-Checked with the page's own potential, $V_{\text{Gap}} = \mu^2\mathcal{G}_{\text{total}} + 2\lambda_3\sum_{(i,j,k)\notin\text{Fano}} \mathrm{Im}(\gamma_{ij}\gamma_{jk}\gamma_{ki}) + \lambda_4\mathcal{G}_{\text{total}}^2$ with $\mathcal{G}_{\text{total}} = \lVert\mathrm{Im}\,\Gamma\rVert_F^2$ (§11: the sine of the phase sum times the three moduli is $\mathrm{Im}(\gamma_{ij}\gamma_{jk}\gamma_{ki})$; the associator norm is 2), minimised over all states of $\mathcal D(\mathbb C^7)$ with no sector split assumed:
-
-1. **Step 1 fails.** $V_3$ is not $G_2$-invariant (erratum to the symmetry table, §11), so "$V_{\text{Gap}}$ on $(S^1)^{21}/G_2$" is not defined; besides, $G_2$ acts on $\Gamma$ by $\Gamma \mapsto g\Gamma g^{\mathsf T}$, not on a torus of phases.
-2. **Step 2 fails for either choice of sectors.** With axis triples it rests on T-48a (retracted). With the correct triplets the $SU(3)$-invariant states carry one coherence parameter, not five, and among them the minimum is at $\mathcal{G}_{\text{total}} = 0$ (T-61 above). $SU(3)$-covariance does not equalise the coherences of a state that is not $SU(3)$-invariant.
-3. **Not unique modulo $G_2$.** The minimiser is carried by the symmetries of $V_{\text{Gap}}$ to minimisers on which the $G_2$-invariant $\lVert w\rVert^2$, $w_k = \varphi_{ijk}\,\mathrm{Im}\,\Gamma_{ij}$, takes two values: two $G_2$-orbits at one value of $V$ (`test_v_gap_vacuum_is_unique_up_to_its_symmetries_not_up_to_g2`).
-4. **No sector structure.** The stabiliser in $\mathfrak g_2$ of the minimiser is zero: the vacuum keeps no $SU(3)$ — neither $SU(3)_C = \mathrm{Stab}(e_O)$ nor the stabiliser of any other unit vector. The five "sector values" and the Hessian eigenvalues $18\mu^2$, $6\mu^2$, $12\mu^2$ of Step 4 describe no critical point of $V_{\text{Gap}}$.
-:::
-
-:::note Axis-frame restatement of T-64 [H] (the retracted cubic $V_3$): the self-consistent vacuum is unique up to the symmetries of $V_{\text{Gap}}$
-**Exact part.** (a) $V_{\text{Gap}}$ is continuous on the compact $\mathcal D(\mathbb C^7)$, so its minimum value exists. (b) The signed permutations of the axes that preserve $V_{\text{Gap}}$ are the seven cyclic shifts $e_k \mapsto e_{k+1}$ (indices mod 7) combined with the $2^7$ sign changes — 896 in all, of which 56 lie in $G_2$ (`test_v_gap_cubic_term_is_not_g2_invariant`). (c) On the $SU(3)_C$-invariant states the minimum is at $\mathcal{G}_{\text{total}} = 0$.
-
-**Numerical part — the hypothesis.** With the constants of Theorem 13.5 taken self-consistently (iterate: minimise, then recompute $\lambda_3/\mu^2 = 2/(3|\bar\gamma|)$ and $\lambda_4/\mu^2 = 1/(2\mathcal{G}^{(0)}_{\text{total}})$ at the minimiser; the iteration settles at $\lambda_3/\mu^2 = 9.25$, $\lambda_4/\mu^2 = 32.2$), 28 of 30 random starts reach $V_{\min} = -0.1973\,\mu^2$, and all 28 minimisers lie in one orbit of the 896 symmetries. The vacuum has rank 2, $P = 0.709$, $\mathcal{G}_{\text{total}} = 0.0155$, mean $|\gamma_{ij}| = 0.072$; it is supported on five axes forming the union of two Fano lines through one point (for one representative $\{D,L,U\} \cup \{O,A,D\}$; the cyclic shifts move the common point through all seven axes). The same picture holds at fixed constants $(\lambda_3/\mu^2, \lambda_4/\mu^2) = (1,1), (7,25), (30,10)$: 19, 26 and 30 of 30 starts reach the minimum, each set in one orbit, each support the union of two lines through a point. No proof of global optimality is given, hence [H].
-
-**Consequence.** The vacuum of $V_{\text{Gap}}$ has no $SU(3)$ sector structure and none of the (SV) values: its $O$-coherences are $0.08$–$0.20$, not $\sim 1$, and its mean coherence is of order $10^{-1}$, not $10^{-2}$. Results that were "[C at T-64]" used the (SV) values, so they are [C at (SV)].
-:::
-
-:::note Earlier statement (Theorem 14.3, retracted [✗])
-The $G_2$-invariant potential $V_{\text{Gap}}$ on the space $\mathcal{M} = (S^1)^{21}/G_2$ has a **unique global minimum** (up to $G_2$-conjugation). The minimum coincides with the sector solution from the [unique vacuum theorem](#теорема-единственный-вакуум).
-:::
-
-**Earlier proof (5 steps; retracted — see the box above).**
-
-**Step 1 ($G_2$-orbit reduction).** The group $G_2 = \text{Aut}(\mathbb{O})$ acts on 21 coherences $\{\gamma_{ij}\}_{i < j}$ as $\text{Ad}(G_2)$. Since $\dim(G_2) = 14$, the orbit space:
-
-$$
-\mathcal{M}_{\text{phys}} = (S^1)^{21}/G_2, \quad \dim(\mathcal{M}_{\text{phys}}) = 21 - 14 = 7
-$$
-
-The old count 34−14=20 is withdrawn [✗]. Native states have 48 real parameters; a chosen generic G₂ orbit quotient has 34, without automatically being a physical gauge. G₂ does not act on a phase-only torus at fixed populations/moduli. But the potential $V_{\text{Gap}}$ depends only on the **moduli** of coherences $|\gamma_{ij}|$ and the **phases** $\theta_{ij} = \arg(\gamma_{ij})$, with $G_2$ fixing phases through the Fano structure.
-
-**Step 2 (Sector parametrization).** From the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ [T] (see [spacetime](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция)), the $G_2$-invariant potential depends only on 5 sector parameters:
-
-$$
-\boldsymbol{\varepsilon} = (\varepsilon_{O3},\; \varepsilon_{O\bar{3}},\; \varepsilon_{33},\; \varepsilon_{\bar{3}\bar{3}},\; \varepsilon_{3\bar{3}})
-$$
-
-This follows from the fact that $SU(3) \subset G_2$ acts within sectors, equalizing coherences of the same type: for $i, j$ in the same sector type $|\gamma_{ij}| = |\gamma_{i'j'}|$ by $SU(3)$-covariance.
-
-**Step 3 (Potential decomposition).** $V_{\text{Gap}} = V_2 + V_3 + V_4$ in sector variables:
-
-$$
-V_2 = \mu^2 \left(3\varepsilon_{33}^2 + 3\varepsilon_{\bar{3}\bar{3}}^2 + 6\varepsilon_{O3}^2 + 6\varepsilon_{O\bar{3}}^2 + 9\varepsilon_{3\bar{3}}^2 \sin^2 \theta_{3\bar{3}}\right)
-$$
-
-Phases $\theta_{ij}$ minimize $V_3$ (octonionic cubic). For Fano triples: $\theta_{ijk} = 0$. For non-Fano triples: $\sin^2\theta_{3\bar{3}} \approx 1$ (confinement from the [unique vacuum theorem](#теорема-единственный-вакуум)).
-
-**Step 4 (Positive definite Hessian).** The $5 \times 5$ matrix of second derivatives at the minimum point:
-
-$$
-H_{XY} = \frac{\partial^2 V_{\text{Gap}}}{\partial \varepsilon_X \partial \varepsilon_Y}\bigg|_{\boldsymbol{\varepsilon}^*}
-$$
-
-has eigenvalues:
-
-| Mode | Eigenvalue | Interpretation |
-|------|:-------------------:|---------------|
-| Confinement | $\lambda_1 = 18\mu^2 > 0$ | Decoupled $\varepsilon_{3\bar{3}}$ mode ($\sin^2\theta = 1$) |
-| Spatial | $\lambda_{2,3} = 6\mu^2(1 + O(\varepsilon^2)) > 0$ | Modes $\varepsilon_{33}$, $\varepsilon_{\bar{3}\bar{3}}$ |
-| O-modes | $\lambda_{4,5} = 12\mu^2(1 + O(\varepsilon)) > 0$ | Modes $\varepsilon_{O3}$, $\varepsilon_{O\bar{3}}$ |
-
-All eigenvalues are strictly positive for $\mu^2 > 0$ (from positivity of $V_2$ [T], [Theorem 13.5](#константы-из-параметров-угм)).
-
-**Step 5 (Globality).** Compactness of $(S^1)^{21}$ guarantees the existence of a global minimum. Uniqueness of the critical point (Step 4) + absence of saddle points → the global minimum is unique. $\blacksquare$
-
-:::info Corollary (Complete resolution of $V_{\text{Gap}}$ minimization) — retracted [✗]
-*Earlier text:* "The $V_{\text{Gap}}$ minimization problem is completely solved on the 5-dimensional orbit space. The residual 21-dimensional problem (before $G_2$-reduction) carries no new physics: $G_2$-gauge degrees of freedom do not enter the potential." Retracted with Theorem 14.3: $V_3$ is not $G_2$-invariant, so the $G_2$ directions do enter the potential, and the minimisation is open.
-:::
-
+An axis-labelled candidate potential must be tested for invariance under each proposed symmetry before minimizing on the quotient. A positive Hessian at one point only establishes local stability when evaluated in every independent transverse direction. It cannot exclude another orbit of minima.
 #### Hypothesis (SV): the sector vacuum [H] {#гипотеза-секторного-вакуума}
 
 :::note Hypothesis (SV) [H]

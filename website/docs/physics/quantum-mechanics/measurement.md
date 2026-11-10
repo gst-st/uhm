@@ -6,7 +6,7 @@ description: "Quantum instruments, the Born pairing, dephasing and the operation
 
 # Quantum Measurement in UHM
 
-Predicting a recorded outcome requires a preparation, an instrument with labelled outcomes and a probability rule. Here these come from standard quantum mechanics. The earlier claim that the subobject classifier $\Omega$ supplies them is withdrawn. [Operational reconstruction, G1 and G3](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/README.md) · [Process and instrument records](/docs/core/foundations/operational-processes#process)
+Predicting a recorded outcome requires a preparation, an instrument with labelled outcomes and a probability rule. Here those inputs come from finite-dimensional quantum mechanics. A device that resolves two preparations defines a distinction the observer can actually use. For example, the controlled gate in the two-rebit experiment exposes a distinction invisible to all local record histories. [Two-rebit experiment](/docs/physics/quantum-mechanics/qm-reduction#72-что-реконструкции-значат-для-угм) · [Operational records](/docs/core/foundations/operational-processes#process)
 
 ## 1. Statement of the Measurement Problem {#1-постановка-проблемы}
 
@@ -53,7 +53,7 @@ The populations stay fixed. A coherence decays exactly when at least one positiv
 
 ## 6. Preferred Basis Problem {#6-предпочтительный-базис}
 
-For the specified generator, its fixed algebra consists of blocks indexed by the joint eigenvalue lists of the positive-rate $L_m$. Rank-one blocks select pointer rays up to phases and permutations. Changing the instrument by conjugating every $L_m$ rotates the fixed algebra. A noncommuting Hamiltonian can also move a diagonal state out of that algebra. Assigning the seven labels A, S, D, L, E, O and U to pointer rays requires a calibrated coupling to the system. The earlier claim of a preferred physical basis from $\Omega$ alone is withdrawn.
+For the specified dephasing generator the fixed algebra consists of blocks indexed by the joint eigenvalue lists of the positive-rate $L_m$. Rank-one blocks select pointer rays up to phases and permutations. Conjugating every $L_m$ rotates the fixed algebra. A noncommuting Hamiltonian can also move a diagonal state out of it. An experiment must calibrate which rays the actual coupling preserves.
 
 ## 7. Measurement and regeneration {#7-живые-системы}
 
@@ -77,12 +77,8 @@ T_{k,\sigma}^n(\Gamma)=\sigma+(1-k)^n(\Gamma-\sigma),\qquad
 \|T_{k,\sigma}(\Gamma)-T_{k,\sigma}(\eta)\|_F=(1-k)\|\Gamma-\eta\|_F.
 $$
 
-Thus the chosen discrete iteration converges to $\sigma$. CPTP follows from the fixed replacement channel construction in [self-observation](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi). At $k=0$ the map is identity and every state is fixed. $\sigma\ne I/7$ is an additional choice; $k>0$ does not force it. $R\ge1/3$ neither selects the target nor proves this theorem's hypotheses.
+The fixed target $\sigma$ and weight $k$ are independent of the input. If a controller instead estimates them from measurements on each preparation, its data, update and resource costs become part of the experiment.
 :::
-
-A fixed state of this iteration is not automatically a stationary state of the full Hamiltonian–dissipation–regeneration flow; that requires the full vector field to vanish. A terminal object of a specified category and a density-matrix fixed point have different types. The conditional attractor result [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) does not select a universal anchor for all self-models. When $k$ or $\sigma$ depends on $\Gamma$, the frozen-channel proof does not establish linearity, CPTP or contraction of the resulting nonlinear map.
-
-[T-55](/docs/core/foundations/consequences#неполнота-ловера) concerns $\mathrm{Th}_m=\operatorname{Eq}(m^*,\mathrm{id}_{\Omega^G})$ for a chosen $m:G\to G$. Properness needs predicate separation and $m\ne\mathrm{id}$; it is not Gödel incompleteness or a theorem that $\varphi(\Gamma)$ always differs from $\Gamma$. In the channel above the nonidentity map explicitly fixes $\sigma$. Interpreting agreement at a fixed state as faithful self-measurement also requires an independently identifiable observation model.
 
 ## 8. No-Signaling {#8-запрет-сигнализации}
 
@@ -93,13 +89,13 @@ $$
 =\operatorname{Tr}_A\Gamma_{AB}.
 $$
 
-Multiplying the difference by a scalar depending on the current marginal leaves its partial trace zero. This tests the unconditioned marginal in the stipulated joint update. For a nonlinear map $F$ the preparations $\sum_k p_kF(\rho_k)$ and $F(\sum_k p_k\rho_k)$ can disagree. A physical extension must specify which records are retained, how mixed preparations compose, and what inputs the apparatus receives. The marginal identity alone does not prove no-signalling for arbitrary adaptive protocols. [Historical argument](/docs/proofs/physics/physics-correspondence#88-прочтение-вынуждено) · [Ensemble test](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)
+Multiplying the difference by a scalar depending on the current marginal leaves its partial trace zero. This tests the unconditioned marginal in the stipulated joint update. For a nonlinear map $F$ the preparations $\sum_k p_kF(\rho_k)$ and $F(\sum_k p_k\rho_k)$ can disagree. A physical extension must specify which records are retained, how mixed preparations compose, and what inputs the apparatus receives. The marginal identity alone does not prove no-signalling for arbitrary adaptive protocols. [Joint update](/docs/proofs/physics/physics-correspondence#88-прочтение-вынуждено) · [Ensemble test](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)
 
-G4 gives a sharper resource statement for the canonical feedback ray with known target direction. For $d\ge3$ and fixed $0\le\mu<1$, the exact output conditioned on success needs three or four independent preparations per attempt, depending on $\mu$. No deterministic exact implementation with a finite input bound exists on the whole ray. A computational-speedup claim would also have to count repreparations, success probability, precision and readout. [Proof and assumptions](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/feedback.md) · [Historical computational claim](/docs/proofs/physics/physics-correspondence#86-вычислительное-ограничение)
+G4 gives a sharper resource statement for the canonical feedback ray with known target direction. For $d\ge3$ and fixed $0\le\mu<1$, the exact output conditioned on success needs three or four independent preparations per attempt, depending on $\mu$. No deterministic exact implementation with a finite input bound exists on the whole ray. A computational-speedup claim would also have to count repreparations, success probability, precision and readout. [Proof and assumptions](https://github.com/uhm-theory/holon/blob/main/website/research/operational-reconstruction/feedback.md)
 
 **Related models and definitions**
 
-- [Reduction to Quantum Mechanics](/docs/physics/quantum-mechanics/qm-reduction)
+- [Seven-level quantum model](/docs/physics/quantum-mechanics/qm-reduction)
 - [Physics Correspondence](/docs/proofs/physics/physics-correspondence)
 - [Axiom Ω⁷](/docs/core/foundations/axiom-omega)
 - [Evolution of Γ](/docs/core/dynamics/evolution)

@@ -7,7 +7,7 @@ description: Observation models, informational completeness, uncertainty and the
 # Reconstruction and Identifiability of Γ
 
 :::info Scope and correction (2026-10-03)
-This page supplies the inverse-problem foundation of the [measurement protocol](/docs/applied/research/measurement-protocol) and [experimental protocol](/docs/applied/research/experimental-protocol). It replaces the withdrawn inference “rigidity of the state space implies uniqueness of a neural encoder”. Theorems below are statements about a **specified observation model**. The correspondence of biological or AI measurements with that model remains an empirical hypothesis [H].
+This page supplies the inverse-problem foundation of the [measurement protocol](/docs/applied/research/measurement-protocol) and [experimental protocol](/docs/applied/research/experimental-protocol).
 :::
 
 ## 1. Four different maps {#observation-model}
@@ -43,7 +43,7 @@ This is statistical identification, distinct from precision or finite-sample suc
 
 ### Why encoder rigidity does not follow
 
-The former proof formed $\pi_2\circ\pi_1^{-1}$ from continuous maps on a feature space. Continuity supplies neither an inverse nor surjectivity. Even if $\pi_1$ were invertible onto its image, the composition would initially be defined only on that image; it need not extend to a structure-preserving automorphism of all $\mathsf D_7$.
+Using $\pi_2\circ\pi_1^{-1}$ requires $\pi_1$ to be invertible on its image. Without that premise, a map between readouts exists exactly when the second readout is constant on each fibre of the first.
 
 For an elementary counterexample let $\mathsf X=[-1,1]^2$, $A=\operatorname{diag}(1,-1,0,\ldots,0)$ and
 

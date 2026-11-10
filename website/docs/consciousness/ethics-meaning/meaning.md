@@ -68,7 +68,7 @@ A useful distinction is between **enlarging the repertoire** and **choosing well
 
 ## 3. Why there is no canonical scalar of meaning {#пиковый-потенциал}
 
-Earlier versions proposed $P D_{\mathrm{diff}}\Phi R_\varphi$ as a uniquely derived formula. That uniqueness claim is withdrawn. It combined mathematical diagnostics with additional semantic and normative premises.
+The product $P D_{\mathrm{diff}}\Phi R_\varphi$ is a chosen index. Its factors do not select a unique semantic or normative interpretation.
 
 For $\Gamma\in\mathcal D(\mathbb C^7)$,
 

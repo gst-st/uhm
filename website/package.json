@@ -5,6 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
+    "prebuild": "npm run test:canon",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
@@ -16,6 +17,7 @@
     "test:mermaid": "node tests/mermaid-check.mjs",
     "test:math": "python3 scripts/check_mathematical_kernel.py && python3 scripts/check_hierarchy_kernel.py && python3 scripts/check_core_numbers.py",
     "test:status": "python3 scripts/check_status_consistency.py",
+    "test:canon": "python3 scripts/check_canon_content.py",
     "test:render": "python3 scripts/render_lint.py",
     "test:homepage:model": "node --test src/components/OntologyExplorer/model.test.mjs",
     "test:homepage": "node tests/homepage-check.mjs"

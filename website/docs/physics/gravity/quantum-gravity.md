@@ -10,7 +10,7 @@ description: "Functional integral over Gap configurations, well-definedness on (
 This chapter compares a finite lattice integral with the heat-kernel expansion on a specified four-dimensional geometry. The relation between their dynamics remains open.
 
 :::info Status
-For supplied spectral geometry, standard spectral-action calculations are conditional [C], and finite-domain bounded-integrand partition functions are finite [T]. A general G₂ phase-only quotient is not supplied. Neither compactness nor the group identity alone proves continuum UV finiteness, physical SUSY cancellation or a black-hole information solution. Those physical bridges remain [H/Pr]. Wald entropy follows from a supplied gravitational action; the previous universal Gap-curvature correction is withdrawn [✗].
+A finite-domain lattice integral is finite for a bounded integrand [T]. A physical continuum theory requires a limit, specified fields and dynamics. On a supplied geometry the spectral action gives a curvature term, and Wald entropy uses a supplied gravitational action.
 :::
 
 ---
@@ -40,7 +40,7 @@ $$
 \mathcal{D}[\theta] = \prod_{x \in M_4} \prod_{i<j} \frac{d\theta_{ij}(x)}{2\pi} \cdot |\det J[\theta]|
 $$
 
-A Jacobian requires an actual change of variables with specified rank and measure. The phase coordinates at fixed populations and moduli do not carry the usual continuous $G_2$ conjugation action, which changes the moduli and populations. The former subtraction $21-14=7$ for a physical phase quotient is withdrawn. A phase-torus integral may instead be defined as a separate lattice model, with any density-matrix positivity constraints specified.
+A Jacobian requires an actual change of variables and a measure. The $G_2$ conjugation action on density matrices generally changes populations and moduli. The fixed-modulus phase torus therefore has no such general quotient. Its use as a lattice domain also requires specifying any positivity constraints.
 :::
 
 ---
@@ -66,7 +66,7 @@ The Gap functional integral $Z_N$ is finite for any $N$ (compactness of $(S^1)^{
 :::
 
 :::note Separation of two tasks
-Derivation of the manifold $M^4$ from the categorical structure — **[T]** as mathematics ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)): $M^4=\mathbb R\times S^3$, time from the depth register, space the computed spectrum of three commuting rotation charges (restated T-119); the reading of $S^3$ as physical space is [I]. (It read [T] until early 2026-09-25, then [C] at the open reconstruction axioms of T-119; the restatement computes the spectrum, and those axioms hold for the Dirac triple of $S^3$.) Non-perturbative continuum limit of the partition function $\lim_{N\to\infty} Z_N$ — a separate task, remaining **[P]** (§7 below).
+The depth clock and joint charge spectrum yield a mathematical $\mathbb R\times S^3$. Its physical interpretation is [I]. Convergence of the partition functions $Z_N$ needs an independent dynamical argument. [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)
 :::
 
 ### Equivalence with Quantum Gravity
@@ -76,10 +76,8 @@ Derivation of the manifold $M^4$ from the categorical structure — **[T]** as m
 ::::tip Theorem 2.2 (Low-energy limit → Einstein–Hilbert action) [T]
 **T-65 [T under the product and heat-kernel hypotheses].** On a closed Riemannian spin four-manifold with specified metric, the external Dirac operator and a finite internal operator form a product whose $a_2$ coefficient contains the Einstein–Hilbert term. On noncompact $\mathbb R\times S^3$ one needs separate trace or localization hypotheses. The dimension-seven multiplicity is sufficient for this calculation. A Standard Model fermion representation is additional input.
 
-:::warning Honest status of the Standard-Model part (2026-09-25)
-The Einstein–Hilbert term is not affected: it comes from the heat-kernel coefficient $a_2$ and sees the internal space only through $\mathrm{Tr}(I_{H_{\text{int}}}) = 7$ (Step 3). The words "+ Standard Model" are weaker than the [T] above, for three reasons.
-
-1. Step 1 takes $d_F = 6$ from T-53, but no real structure of KO-dimension 6 exists on $H_{\text{int}} = \mathbb{C}^7$ ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)); the Standard-Model content of a spectral action comes from Connes' $H_F$, which UHM imports ([bimodule construction, T-178](/docs/proofs/physics/bimodule-construction#бимодульная-конструкция), retracted as a derivation).
+:::note Matter content of the spectral action
+The Einstein–Hilbert coefficient uses the multiplicity $\mathrm{Tr}(I)=7$. A Standard Model module also specifies representations for the fermions and their internal couplings. An antilinear real structure in KO-dimension six would exchange the two chiral subspaces, which cannot have equal dimension on $\mathbb C^7$. [Finite triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка)
 2. The Higgs sector inherits a failed prediction. Under the "big desert" assumption Chamseddine, Connes and Marcolli obtained "a Higgs mass around 170 GeV" (*Adv. Theor. Math. Phys.* **11**, 991–1089 (2007), [arXiv:hep-th/0610241](https://arxiv.org/abs/hep-th/0610241)); CDF and D0 excluded a Standard-Model Higgs of 170 GeV at 95% C.L. in 2008 ([arXiv:0808.0534](https://arxiv.org/abs/0808.0534)), and the Higgs was found at 125 GeV (ATLAS and CMS, *Phys. Lett. B* **716**, 1 and 30 (2012)). At 125 GeV the quartic coupling turns negative at high energy, which, in Chamseddine and Connes's words, rules out the big desert and invalidates "the positivity of the coupling at unification which is an essential prediction of the spectral action".
 3. The rescue keeps a real singlet $\sigma$ strongly coupled to the Higgs and fits a free parameter $n(u)$ for every unification scale $u$, which gives "a one parameter family" of consistent models (*JHEP* **09**, 104 (2012), [arXiv:1208.1030](https://arxiv.org/abs/1208.1030)): consistency bought with a fitted parameter, not a prediction.
 
@@ -89,8 +87,6 @@ So the gravitational sector stands as stated, while the Standard-Model sector is
 **Proof (5 steps).**
 
 **Step 1 (The product is a spectral triple).** $D = D_M \otimes 1 + \gamma_5 \otimes D_{\text{int}}$ is self-adjoint with compact resolvent ($M$ closed, $H_{\text{int}}$ finite-dimensional), and for $a = f \otimes b$ the commutator $[D, a] = [D_M, f] \otimes b + \gamma_5 f \otimes [D_{\text{int}}, b]$ is bounded. Since $\gamma_5$ anticommutes with $D_M$, $D^2 = D_M^2 \otimes 1 + 1 \otimes D_{\text{int}}^2$ — the operator Steps 2–3 expand.
-
-*Retracted 2026-09-25:* this step invoked Connes' product theorem for real triples (Connes, 1996; Chamseddine–Connes, 1997) — "for T-53: $d_F = 6$, total $4 + 6 = 10 \equiv 2 \pmod 8$; first-order condition, real structure, orientation, Poincaré duality — satisfied automatically from the product theorem + verification of the finite triple". The product theorem needs a real finite triple, and $H_{\text{int}} = \mathbb{C}^7$ has none of KO-dimension 6: such a structure exchanges the $\chi = \pm1$ eigenspaces, which would then have equal dimension, and $7$ is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)).
 
 **Step 2 (Expansion of the spectral action).** By the Chamseddine–Connes formula (1996):
 
@@ -189,7 +185,7 @@ which changes by $\mathcal O(1)$ factor across reasonable choices of $f$. More i
 
 :::note Scope of cutoff independence [T at D / C / H]
 
-Changing the spectral cutoff does not change a separately supplied finite representation, chosen Fano incidence or native diagnostic definition. This is an independence statement about those **inputs**, not proof that UHM fixes them or their physical interpretation. $\operatorname{Aut}(\mathbb O)=G_2$ is [T for the chosen algebra]; declaring it a physical gauge group needs a bridge. The coordinate Fano off-diagonal factor $1/3$ and dephasing factor $2/3$ follow from its chosen incidence. The majority cut $2/7$, reflection cut $1/3$, integration cut one and differentiation cut two are specified model predicates [D]; their algebraic consequences are [T]. T-40a/T-57's count of three dynamical types is withdrawn [✗] and cannot determine a Bayesian hypothesis count. The native E-row is not a tensor factor and cannot supply an experiential entropy. A universal SAD ceiling or generation spectrum does not follow from a cutoff-independent scalar definition; these require separate model hypotheses/representation data.
+Changing a cutoff leaves the specified input representation and incidence table intact. Deriving a physical gauge group, a particle spectrum or an observational interpretation requires additional input.
 
 The quantum-gravity and Standard-Model identifications discussed here remain conditional physical constructions [C/H/Pr]. Cutoff independence alone does not validate them.
 :::
@@ -217,11 +213,11 @@ The Connes–Chamseddine spectral action for the Standard Model plus gravity (19
 **Step 5.** The expansion is Riemannian. A Lorentzian interpretation requires causal or reflection-positivity data and a choice of state. Cosmological solutions require matter, a metric ansatz and initial conditions. None of these is selected by the internal trace.
 ::::
 
-For a specified finite $D_{\rm int}$, $\mathrm{Tr}(D_{\rm int}^2)$ is an internal spectral statistic. The withdrawn T-74 does not determine a universal internal potential or measure. Replacing a phase integral by an Einstein–Hilbert metric integral would require a demonstrated map of domains, action and measure. The Lovelock theorem on a four-manifold supplies none of these. [Metric projection](/docs/physics/gravity/einstein-equations)
+The trace $\mathrm{Tr}(D_{\rm int}^2)$ is an internal spectral statistic. Replacing a phase integral by an integral over metrics would require a map of domains, actions and measures. [Metric projection](/docs/physics/gravity/einstein-equations)
 
 ### Projection of the Gap Action onto 4D
 
-The former projection used three real components of a colour triplet as spatial axes and the remaining components as matter. The real six-dimensional representation of the stabilizer $SU(3)$ is irreducible. Counting the 21 pairs after a choice of axes does not identify a metric or a field spectrum. A constructive network alternative defines distances from transfer costs under relay, separation and calibration assumptions. Its ring and product examples admit common metric limits under the specified refinements. They supply no Einstein dynamics. [Limiting network geometry](/docs/geometry/common-limit)
+The real six-dimensional representation of the stabilizer $SU(3)$ is irreducible. Counting the 21 pairs after a choice of axes does not identify a metric or a field spectrum. A constructive network alternative defines distances from transfer costs under relay, separation and calibration assumptions. Its ring and product examples admit common metric limits under the specified refinements. They supply no Einstein dynamics. [Limiting network geometry](/docs/geometry/common-limit)
 
 ---
 
@@ -255,7 +251,7 @@ $$
 
 Such configurations — Gap instantons — represent tunneling transitions between different vacuum configurations on $(S^1)^{21}$. Their contribution is exponentially suppressed ($e^{-150} \sim 10^{-65}$) and does not violate finiteness, but may play a role in cosmology (e.g., in suppressing the cosmological constant).
 
-The trace cancellation previously used in this argument was withdrawn. The trace of a grading on an odd-dimensional space cannot vanish, and the adjoint $\mathbf{14}$ of $G_2$ is irreducible. An index of a chosen operator does not by itself cancel physical anomalies. [Vacuum-energy budget](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация)
+The trace of a grading on an odd-dimensional space cannot vanish, and the adjoint $\mathbf{14}$ of $G_2$ is irreducible. An index of a chosen operator does not by itself cancel physical anomalies. [Vacuum-energy budget](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация)
 
 ---
 
@@ -296,7 +292,7 @@ A proposed model assigns large $O$-sector opacity to the horizon [H]. A horizon 
 :::note Theorem 6.1 (information-recovery proposal) [H/Pr]
 A recovery claim requires a microscopic evolution, an encoding of incoming states, an outgoing radiation channel and a proof that the relevant states can be recovered. Nonzero correlations between two readouts do not by themselves give such recovery. A finite partition function does not establish unitarity. The Page curve for a Gap horizon has not been derived.
 
-**(e)** Historical Gap-entropy hypothesis [H], whose former derivation is withdrawn [✗]:
+**Opacity–entropy ansatz [H].**
 
 $$
 S_{\text{BH}} = \frac{A}{4\ell_P^2} = \sum_{i<j} \int_{\text{horizon}} \text{Gap}(i,j)^2 \, d^2\sigma
@@ -307,7 +303,7 @@ The displayed opacity identification is a physical ansatz; it does not follow fr
 
 ### 6.3 Entropy with specified gravitational data
 
-The former derivation of a universal Gap entropy correction from T-73/T-74 is withdrawn [✗]. Gap entries have not been identified with spacetime curvature, and a finite spectral trace does not determine the complete gravitational action or its coefficients.
+A curvature-dependent entropy correction requires an explicit gravitational action, its coupling to the internal matrix, and a horizon solution.
 
 For a supplied diffeomorphism-invariant Lagrangian depending on curvature without its derivatives, a stationary black hole with a regular bifurcate Killing horizon has the [Wald entropy](https://arxiv.org/abs/gr-qc/9307038)
 
@@ -317,7 +313,7 @@ $$
 
 with the prescribed binormal normalization. More general higher-derivative Lagrangians require the corresponding variational derivative. The Einstein–Hilbert term $R/(16\pi G_N)$ yields $A/(4G_N)$ [T at these hypotheses]. A purely internal potential or constant spectral moment with **no explicit spacetime-curvature dependence** contributes zero directly to $\partial L/\partial R_{abcd}$; it may change a solution and its area indirectly. It does not produce $\int_\Sigma\mathrm{Gap}_{ij}^2dA$ by Wald differentiation.
 
-#### The withdrawn Gap coefficient {#коэффициент-gap-поправки}
+#### Finite spectral moments and curvature couplings {#коэффициент-gap-поправки}
 
 For the selected antisymmetric $G=\operatorname{Im}\Gamma$ and $D=i\omega_0G$, with eigenvalues of $G$ equal to $0,\pm i\lambda_1,\pm i\lambda_2,\pm i\lambda_3$,
 
@@ -325,7 +321,7 @@ $$
 \operatorname{Tr}D^4=2\omega_0^4\sum_{k=1}^3\lambda_k^4.
 $$
 
-This is an exact finite-matrix identity [T]. It is not the former coordinate sum $\omega_0^4\sum_{i<j}|\gamma_{ij}|^4\mathrm{Gap}_{ij}^4$: even a single nonzero edge gives twice that value, and general matrices contain mixed cycles. Nor does the identity define a curvature-squared coupling or fix its physical units.
+This finite-matrix identity includes closed four-step walks between entries of $G$. A sum of fourth powers of individual entries misses these terms, even double-counting an isolated antisymmetric pair incorrectly if only $i<j$ is summed.
 
 One may posit $L=L_{\rm EH}+a(\Gamma)C_{abcd}C^{abcd}+\cdots$ [H]. If $a$ is treated as an independent field coefficient in differentiating curvature, its direct correction is
 
@@ -333,7 +329,7 @@ $$
 \Delta S=-4\pi\int_\Sigma a(\Gamma)C^{abcd}\epsilon_{ab}\epsilon_{cd}\,dA,
 $$
 
-with any other terms treated separately [C at that supplied action]. A sign or size requires the actual solution, conventions and independently fixed coupling. The previous explicit negative $c_{\rm Gap}$ and its Schwarzschild estimate are withdrawn [✗]; no such coupling follows from the withdrawn T-73/T-74. Matching a UHM field model to this action remains [Pr/H].
+The sign and size of this term depend on the action, its coupling and the solution.
 
 ### 6.4 Distinction from Other Approaches
 
@@ -385,7 +381,7 @@ With an observer, the algebra of the static patch of de Sitter space is a type I
 4. **Cosmogenesis**: initial conditions for the Gap configuration of the Universe
 5. **Holographic limit**: exact correspondence between the bulk Gap theory and the boundary. Derivation of the holographic principle from the freezing of degrees of freedom
 6. **Connection with M-theory**: interpretation of the Gap functional integral as an approximation to the M-theory functional integral
-7. **Entropy-coupling programme**: fix an independent spacetime action and curvature couplings before applying Wald; the former Gap correction and its coefficient are withdrawn [✗]. A supplied Einstein–Hilbert term gives the leading area law [C]; additional corrections remain [H/Pr].
+7. **Entropy and curvature.** Specify the gravitational action and coupling of the phase variables, then evaluate Wald entropy on its stationary solutions.
 8. **Gravitational dynamics.** Derive a physical metric and its spin-two kinetic term from microscopic dynamics. The linear Fierz–Pauli action and the nonlinear Einstein–Hilbert action used here are supplied.
 
 :::

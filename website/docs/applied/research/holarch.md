@@ -115,7 +115,7 @@ systematically absent, and they are exactly the seven UHM supplies as mathematic
 2. a **complete typed taxonomy of couplings** — supplied by the 21 coherences of Γ;
 3. **numeric viability invariants** with proven thresholds — P, R, Φ, D [T];
 4. **dynamics as first-class** — the three-flow decomposition of ℒ_Ω, T-262 [T];
-5. a **self-model with an anti-Goodhart theorem** — φ(Γ), T-96/T-191 [T]; T-222 [T] adds that no resource vector can stand in for the target, since the viable window has no resource optimum (the former "+ MRQT" completeness is retracted [✗], 2026-09-26);
+5. a **self-model with an anti-Goodhart theorem** — φ(Γ), T-96/T-191 [T]; T-222 [T] adds that no resource vector can stand in for the target, since the viable window has no resource optimum;
 6. an **exact block-purity identity with an explicit comparison** — T-77 [T]; operational benefit remains a separate obligation;
 7. a **depth ceiling with a federation rule** — T-142 [Т/С].
 
@@ -182,7 +182,7 @@ treat OSI as a cousin: OSI is a linear encapsulation ladder (a depth structure, 
 not an aspect decomposition, and pretending otherwise would be numerology.
 
 **Every aspect carries a stress gauge.** The σ-panel
-([T-92](/docs/reference/status-registry) [T], with the v1 errata rows) gives each
+([T-92](/docs/reference/status-registry) [D]) defines for each
 aspect a computable depletion signal: $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},
 0, 1)$ for A, S, D, L, O; $\sigma_E = (7 - D_{\mathrm{diff}})/5$ and $\sigma_U =
 2/(1+\Phi)$ measure the *remaining headroom* of differentiation and integration —
@@ -353,7 +353,7 @@ HOLARCH imports the corpus results that examine it:
 
 - $\varphi(\Gamma)$ — the self-model — is a **functor** (T-96 [T]): it must be
   computed *from the state* by a lawful map, not asserted alongside it.
-- The self-model tower $\varphi, \varphi^{(2)}, \ldots$ **converges** for an embodied holon under backbone dominance (T-191 [T], restated 2026-09-25)
+- The self-model tower $\varphi, \varphi^{(2)}, \ldots$ **converges** for an embodied holon under backbone dominance (T-191 [T])
   and terminates at depth 3 (T-142) — reflection on reflection has a floor and a
   ceiling; §10 prices it.
 - **Fidelity is a number**: $R_\varphi = 1 - \lVert\Gamma - \varphi(\Gamma)\rVert^2
@@ -379,7 +379,7 @@ $$
 
 For two blocks the right-hand side is $2\|B\|_F^2$. The comparison holds the diagonal blocks fixed. If they are $p\rho_A$ and $(1-p)\rho_B$, their pinched purity is $p^2P(\rho_A)+(1-p)^2P(\rho_B)$, not an “uncoupled sum”. The direct sum represents alternative sectors. Simultaneous seven-dimensional systems instead require a $49$-dimensional tensor state, compatible marginals and a declared correlation model.
 
-**Corrected laboratory witness (2026-10-09).** HL11 now constructs normalised positive $14\times14$ Gram states and checks Hermiticity, trace one, positivity, weighted block normalisation and the pinching identity. The narrow seeded run passed **240/240**, with maximum identity residual $5.551\times10^{-17}$ and minimum eigenvalue $6.398\times10^{-6}$. This checks the block identity; it is not a tensor-composition or cooperation experiment. The previous panel labelled 14D matrices “org⊗system” and checked no positivity: reproducing its seed gave **54/240** nonpositive matrices (minimum eigenvalue $-0.0162786174$). That former physical-state interpretation is withdrawn.
+**Laboratory witness.** HL11 constructs normalised positive $14\times14$ Gram states and checks Hermiticity, trace one, positivity, weighted block normalisation and the pinching identity. The narrow seeded run passed **240/240**, with maximum identity residual $5.551\times10^{-17}$ and minimum eigenvalue $6.398\times10^{-6}$. This checks the block identity; it is not a tensor-composition or cooperation experiment. The previous panel labelled 14D matrices “org⊗system” and checked no positivity: reproducing its seed gave **54/240** nonpositive matrices (minimum eigenvalue $-0.0162786174$).
 
 Engineering composition therefore requires further data **[D/H]**:
 
@@ -810,7 +810,7 @@ Nym, Ethereum or any real deployment — they are demonstrations that the calcul
 | Four invariants, thresholds, independence, robustness | [T] import | T-124b/d, T-129, T-151; HL03 |
 | Three-flow dynamics; silver feeding floor; halt/reignition | [T]/[C] import | T-262, T-259, T-288/289; HL12 |
 | Self-model functor, tower convergence, anti-Goodhart | [T] import + [D] rule | T-96, T-191; §8 |
-| Two-block pinching identity; no operational gain theorem | [T] identity; finite numerical check | T-77; corrected HL11 (240/240 PSD, trace-one states) |
+| Two-block pinching identity; no operational gain theorem | [T] identity; finite numerical check | T-77; HL11 (240/240 PSD, trace-one states) |
 | Depth ladder and ceiling 3 | [Т/С] import | T-142; HL02 |
 | Pairwise monitoring is structure-blind; probe triads | [T] import | T-226; HL13 |
 | Three worked designs land in the window; ablations break their own invariant | DESIGN | HL04–HL06 |

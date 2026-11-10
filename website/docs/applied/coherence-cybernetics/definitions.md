@@ -34,7 +34,7 @@ $$
 \mathrm{Coh}_E(\rho)=\frac{\rho_{EE}^2+2\sum_{j\ne E}|\rho_{Ej}|^2}{P}\in[0,1].
 $$
 
-This is the squared-norm share of the HS E-row/column mask. The mask is orthogonal in operator space but is not a positive quantum channel or partial trace. $I/7$ has value $1/7$ with no E-couplings. The universal viable-state E-floor T-38a is withdrawn; a conditional flux balance requires explicit source and rate bounds.
+The squared Hilbert–Schmidt norm of the E-row/column mask measures its share of the full matrix norm. The mask is an orthogonal projection in operator space and need not send states to states. Positive lower bounds require a specified flux balance.
 
 ### Extension and proxy {#coh-e-42d}
 
@@ -74,7 +74,7 @@ $$
 
 $\mathrm{Cap}_2$ holds exactly when $m_1>0$ and $m_2,m_3,m_4\ge0$ [T at the definitions]. Robust verdicts require margins larger than reconstruction error bounds. This panel tests a declared mathematical predicate; clinical, organizational and phenomenal readings remain calibration hypotheses.
 
-The former universal T-92 equivalence and claims of parameter-free biological diagnostics are withdrawn. Use [identifiability](/docs/applied/research/reconstruction-identifiability) before assigning a verdict from data. Empirical demand/capacity panels and these state margins answer different questions and require a measured observation bridge.
+Use [identifiability](/docs/applied/research/reconstruction-identifiability) before assigning a verdict from data. Empirical demand/capacity panels and these state margins answer different questions and require a measured observation bridge.
 
 <a id="панель-нагрузки"></a>
 

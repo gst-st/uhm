@@ -59,7 +59,7 @@ This document describes *interpretive applications* of the theory. Specific appl
 
 ### Architectural Patterns
 
-The sensorimotor architecture specifies an observation law, state reconstruction and admissible controls. Hamiltonian, dissipative and injection controls form a selected grouping [D]. Universal completeness T-102 is withdrawn [✗]: additional GKSL terms are allowed. Calling Enc a functor requires separately verified composition laws.
+A chosen sensorimotor model may include additional GKSL terms with nonnegative rates. Channel decomposition is part of the model specification.
 
 ```mermaid
 graph TD
@@ -292,7 +292,7 @@ CC unifies existing theories:
 
 | CC Prediction | Empirical Data | Status |
 |-----------------|---------------------|--------|
-| $\Phi > 0$ for consciousness | PCI correlates with consciousness, but PCI is not a measure of $\Phi$; no $\Phi$ from a reconstructed $\widehat\Gamma$ has yet been compared with the PCI verdict (P8.4) | Open (read "✓ Confirmed" until 2026-09-26) |
+| $\Phi>0$ in the proposed consciousness readout | Measuring PCI does not determine $\Phi$ for a reconstructed state. P8.4 requires a held-out comparison. | Open |
 | 7-dimensional structure | Not tested | Open |
 | $\mathrm{Coh}_E$ ↔ interiority coherence | Partial data | In progress |
 | $R$ ↔ metacognition | Prefrontal activity | ✓ Consistent |

@@ -75,9 +75,9 @@ Under the hypotheses above, Hermiticity and trace are preserved. For $v\in\ker\r
 
 ## Self-observation: limits of inference
 
-### Theorem 7.1: Universal self-model necessity withdrawn [✗] {#theorem-71-necessity-of-self-reference}
+### Theorem 7.1. Limits of the purity criterion {#theorem-71-necessity-of-self-reference}
 
-$P>2/7$ does not imply an internal informational observation. A state sustained by a fixed input can remain stationary in the selected domain without state-dependent feedback. The formal condition $\|\rho-\varphi(\rho)\|<\varepsilon$ is always satisfied by identity; it does not prove that the system measures or knows itself. A substantive claim requires an observation law, a certificate available to a register, and a specified control class. The former four steps supplied none of these.
+$P>2/7$ does not imply an internal informational observation. A state sustained by a fixed input can remain stationary in the selected domain without state-dependent feedback. The formal condition $\|\rho-\varphi(\rho)\|<\varepsilon$ is always satisfied by identity; it does not prove that the system measures or knows itself. A substantive claim requires an observation law, a certificate available to a register, and a specified control class.
 
 ### Theorem 7.2: Fixed point of a chosen self-model [T] {#теорема-72-условная-неподвижная-точка-рефлексии}
 
@@ -97,9 +97,7 @@ The question is whether a declared dissipative system needs E-dependent regenera
 
 ### Theorem 8.1: Purity balance and a conditional E-floor [T under stated bounds] {#теорема-81-условная-необходимость-интериорности-no-zombie}
 
-:::warning Withdrawal of the former universal statement
-The claim $\mathrm{Viable}\land\mathcal D_\Omega\ne0\Rightarrow\varphi=\varphi_{\mathrm{coh}}\land\mathrm{Coh}_E>1/7$ is **retracted [✗]**. Canonical $\mathrm{Coh}_E$ ranges from zero to one; $1/7$ is its value at $I/7$, not a universal minimum. The canonical $\varphi_{\mathrm{coh}}$ with anchor $I/7$ does not supply positive purity regeneration. Bootstrap rates and independent environmental injection can maintain purity without a universal E-floor. The precise replacement is the balance theorem below.
-:::
+Canonical $\mathrm{Coh}_E$ ranges from zero to one. At $I/7$ it equals $1/7$. A positive lower bound for a stationary state requires restrictions on the rates and source terms in the balance equation below.
 
 Consider a specified state-valued target $\tau(\Gamma)$ and dynamics
 
@@ -215,7 +213,7 @@ The explicit $c_{\min}$ above is a model-dependent stationary resource requireme
 
 Let us return to the orchestra analogy. Until now we have been studying *one* musician (a single holon). Now imagine two orchestras deciding to play together. The first question: will the joint performance be meaningful? The second: will it produce something that was absent from either orchestra individually?
 
-Theorems 9.1–9.6 are the answer. 9.1 and 9.2 were first proved under assumptions — (HOL), that the joint system is itself a holon, and (AGG), a consistent aggregation and weak coupling; Theorem 9.5 fixes the aggregation (it is unique) and proves for weak coupling what both assumed, and Theorem 9.6 shows that the coupling must be weak. 9.3 says when joint play **generates a new quality** — a joint state with information that neither orchestra holds — and shows that it does not do so for every coupling. (Earlier: "yes, joint play … generates a new quality. … The whole is more than the sum of its parts. And this is not a metaphor — it is a theorem"; corrected 2026-09-25 with the retraction in Theorem 9.3.)
+Theorems 9.1–9.6 distinguish closure of a chosen aggregate, retention of its margins at weak coupling, and correlation of the joint steady state. Each has different hypotheses.
 
 ### Theorem 9.1: conditional persistence under weak coupling {#теорема-91-фрактальное-замыкание}
 
@@ -227,20 +225,12 @@ $$
 
 Thus $\|\rho_i^g-\rho_i^0\|_F\le |g|\|\mathcal L_i^{-1}\|\|\operatorname{Tr}_j\mathcal L_{\mathrm{int}}\|_{F\to F}$, using $\|\rho_{12}^g\|_F\le1$. If twice this bound is smaller than $P(\rho_i^0)-2/7$, both marginals retain structural majority [T at these assumptions]. The actual joint dimension is49. A seven-dimensional aggregation must be declared separately.
 
-The old proof via universal T-57 trichotomy, necessary c>0 and T-41b pair coverage is withdrawn [✗]. Linear primitivity does not imply a coherent or living nonlinear attractor. Applying this perturbation result to nonlinear feedback or claiming every organism/society is a holon requires additional premises. The precise canonical marginal-aggregation result below is retained.
+The mean marginal aggregate below gives a concrete aggregation map. Positive trace preservation alone supplies no bound on its distance from a chosen reference state.
 
 ### Theorem 9.2 / T-72 (Scale Invariance, CC-6) [T at weak coupling] {#теорема-92-масштабная-инвариантность}
 
-:::tip Status raised 2026-09-25: from "conditional on (AGG)" to [T at weak coupling]
-The theorem is an implication, (AGG) ⇒ bounds, and the implication is proved; what was conditional was its application to holons. [Theorem 9.5](#теорема-95-каноническая-агрегация) proves (AGG) for weakly coupled embodied holons. Part (a) of (AGG) holds for the canonical aggregation $\mathcal{M}_k$, the only permutation-invariant consistent one; part (b) is needed only for the marginals — form (b′) below, since the aggregate depends on nothing else — and holds with $\delta = O(g)$ at the stationary state (Corollary 9.2a), along every trajectory from a compact part of the basin (Theorem 9.5 (f)), and from every initial state with explicit constants under backbone dominance (Theorem 9.5 (e)). At strong coupling the transfer fails: the canonical aggregate of two viable holons can be $I/7$ ([Theorem 9.6](#теорема-96-сильная-связь)).
-:::
-
-:::warning Errata 2026-09-25: status corrected from [T] to [C under (AGG)]
-The earlier statement claimed that **any** CPTP aggregation preserves $P$, $R$, $\Phi$, the Gap profile and the L-level up to $O(\varepsilon_0)$ with $\varepsilon_0 \approx 0.023$. That claim is retracted: its proof did not carry it.
-- **Contractivity is not preservation.** The completely depolarising channel $\Lambda(\rho) = \mathrm{Tr}(\rho)\, I/7$ is CPTP and Bures-contractive, yet it sends every state to $I/7$: $P = 1/7 < 2/7$ and $\Phi = 0$. Even the partial trace sends a maximally entangled pair of holons to $I/7$. Contractivity bounds the distance between two *images*; it says nothing about the distance between an image and a constituent unless something ties the two together — assumption (AGG) below.
-- **Step 3** ("all structural invariants are $G_2$-invariants", T-42a) is retracted: $P$ and $R$ are unitary invariants, but $\Phi$ and the Gap profile are frame-pinned — an explicit $g \in G_2$ sends $\Phi$ from $0$ to $1$ ([frame rigidity](/docs/proofs/categorical/uniqueness-theorem#жёсткость-репера); regression test `test_phi_not_g2_invariant`). The step needed only continuity, which holds.
-- **Step 5** ($|P(\Gamma^{(k)}) - P(\Gamma^{(1)})| \leq \|\Phi_k\|_{\mathrm{cb}}\,\varepsilon_{\mathrm{coupling}} \leq \varepsilon_0$) is retracted: it was asserted, not derived. For a CPTP map $\|\Phi_k\|_{\mathrm{cb}} = 1$, so the inequality only renamed the unknown deviation; and $0.023$ is the weighted mean of the sector coherences of the Gap vacuum inside one holon ([sector hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε)), not a coupling between holons.
-- **Steps 1 and 4**: step 1 cited the Morita equivalence T-58, retracted on 2026-09-10 (and it concerned 7D↔42D, not $7^k \to 7$); step 4 derived $R \geq 1/3$ "from primitivity", but $R \geq 1/3$ means $P \leq 3/7$, an upper bound that primitivity does not give; "the L-level is preserved or elevated" had no argument.
+:::note Conditions for aggregation
+The completely depolarizing channel sends every input to $I/7$. It contracts distances while changing the purity of a pure input from one to $1/7$. The theorem below therefore uses an explicit comparison bound (AGG). Theorem 9.5 proves such a bound for the specified mean of marginal states at weak coupling. The frame enters $\Phi$ and the Gap profile. A rotation can preserve purity and change both readouts. [Strong-coupling counterexample](#теорема-96-сильная-связь)
 :::
 
 :::note In Plain Terms
@@ -276,7 +266,7 @@ $$
 d_{\mathrm{Bures}}(\Phi_k(\rho), \Phi_k(\rho')) \leq d_{\mathrm{Bures}}(\rho, \rho')
 $$
 
-With $\rho = \rho_k$, $\rho' = \sigma^{\otimes k}$ and (AGG a): $d_B(\Gamma^{(k)}, \sigma) \leq d_B(\rho_k, \sigma^{\otimes k}) \leq \delta$. Without (a) the second image is not $\sigma$, and nothing about $\sigma$ follows — this is where the earlier proof broke.
+With $\rho = \rho_k$, $\rho' = \sigma^{\otimes k}$ and (AGG a): $d_B(\Gamma^{(k)}, \sigma) \leq d_B(\rho_k, \sigma^{\otimes k}) \leq \delta$. Without (a) the second image is not $\sigma$, and nothing about $\sigma$ follows.
 
 **Step 2 (From Bures to trace and Frobenius norms).** With $d_B^2 = 2(1 - \sqrt{F})$ one has $1 - F = d_B^2 - d_B^4/4 \leq d_B^2$, and the Fuchs–van de Graaf inequality $\tfrac12\|\rho - \rho'\|_1 \leq \sqrt{1 - F}$ (arXiv:quant-ph/9712042) gives $\tfrac12\|\Gamma^{(k)} - \sigma\|_1 \leq \delta$. Under (b′) with $\Phi_k = \mathcal{M}_k$ the same bound follows from the convexity of the trace norm: $\tfrac12\lVert \mathcal{M}_k(\rho_k) - \sigma \rVert_1 \leq \max_i \tfrac12\lVert (\rho_k)_i - \sigma \rVert_1$; and (b) implies (b′), because the partial trace does not increase the trace distance. Since $\|X\|_F \leq \|X\|_1$, the deviation $X := \Gamma^{(k)} - \sigma$ has $\|X\|_F \leq 2\delta$. Steps 3–5 use nothing else.
 
@@ -295,26 +285,19 @@ Let $k$ identical embodied holons with an anchor outside the null set of [Theore
 **What does not need (AGG).** If the aggregate is itself a holon — assumption (HOL) of [Theorem 9.1](#теорема-91-фрактальное-замыкание) — that theorem gives it its own non-trivial attractor, $P(\rho_*^{(k)}) > 1/7$ ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]). That statement concerns the aggregate's own dynamics, not how its invariants compare with those of its parts.
 
 :::info Corollary (Fractal structure) [T at weak coupling]
-Scale invariance and fractal closure, both proved for weak coupling through the canonical aggregation ([Theorem 9.5](#теорема-95-каноническая-агрегация)), give UHM a fractal structure at every scale at which the constituents are embodied, viable and weakly coupled, $|g|\,s(H_{\mathrm{int}}) < \varepsilon_V$: the canonical aggregate is viable and its invariants lie within $O(g)$ of a part's. What is inherited is the parts' state, not something new: the canonical aggregate depends only on the marginals. Where the coupling is strong, nothing of the kind need hold — the aggregate of two viable holons can be $I/7$ ([Theorem 9.6](#теорема-96-сильная-связь)); a composite that is assumed to be a holon in the sense of (HOL) still has its own attractor. (Earlier: "non-triviality [T], viability [T for embodied]" without (HOL), corrected 2026-09-25 to "[C under (AGG) and (HOL)]"; raised the same day with Theorem 9.5.)
+Scale invariance and fractal closure, both proved for weak coupling through the canonical aggregation ([Theorem 9.5](#теорема-95-каноническая-агрегация)), give UHM a fractal structure at every scale at which the constituents are embodied, viable and weakly coupled, $|g|\,s(H_{\mathrm{int}}) < \varepsilon_V$: the canonical aggregate is viable and its invariants lie within $O(g)$ of a part's. What is inherited is the parts' state, not something new: the canonical aggregate depends only on the marginals. Where the coupling is strong, nothing of the kind need hold — the aggregate of two viable holons can be $I/7$ ([Theorem 9.6](#теорема-96-сильная-связь)); a composite that is assumed to be a holon in the sense of (HOL) still has its own attractor.
 :::
 
 ---
 
-Fractal closure and scale invariance concern what the composite inherits. The next question is what it acquires: when does coupling make the joint state of two holons carry information that the two individual states do not — mutual information $I > 0$? The earlier answer, "always, once they interact", is false; the correct answer is a criterion on the coupling.
+A joint state can inherit the marginal properties without being correlated. For two subsystems, $I(1{:}2)=0$ exactly for a product of its own margins. Which couplings take the steady state outside this product set?
 
 #### Theorem 9.3 (CC-7: Emergence) [T for almost every anchor] {#теорема-93-эмерджентность}
 
 <!-- preserve old anchor for backward compatibility -->
 <a id="гипотеза-93-эмерджентность"></a>
 
-:::warning Retracted (2026-09-25): "interacting holons always have a correlated stationary state" [✗]
-The earlier statement read: for two interacting viable holons with non-zero inter-system coherence $|\gamma_{12}| > 0$, the stationary state of the composite has $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$; status [T]. It is false, and two steps of its proof fail.
-- **Step 2** claimed $\mathcal{L}_{\mathrm{int}}(\rho_*^{(1)} \otimes \rho_*^{(2)}) \neq 0$ whenever $\mathcal{L}_{\mathrm{int}} \neq 0$. A Hamiltonian coupling $-i[H_{\mathrm{int}}, \cdot]$ vanishes on the product whenever $H_{\mathrm{int}}$ commutes with it. Counterexample: $H_{\mathrm{int}} \propto (\rho_*^{(1)} - I/7) \otimes (\rho_*^{(2)} - I/7)$ is non-local (its partial trace over either factor is zero), non-zero, and commutes with $\rho_*^{(1)} \otimes \rho_*^{(2)}$, so the product stays stationary and $I = 0$ (numbers in part (i) below).
-- **Step 3** inferred $I > 0$ from $\rho_*^{(12)} \neq \rho_*^{(1)} \otimes \rho_*^{(2)}$. Mutual information is positive exactly when the state is not a product of *any* two states; differing from one particular product is not enough. A local coupling $H_A \otimes I$ moves the stationary state off $\rho_*^{(1)} \otimes \rho_*^{(2)}$ to another product $\sigma_1 \otimes \rho_*^{(2)}$, again with $I = 0$ (part (ii)).
-- The hypothesis $|\gamma_{12}| > 0$ was never defined: a state on $\mathbb{C}^7 \otimes \mathbb{C}^7$ has no single "inter-system coherence" $\gamma_{12}$, and read as "the stationary state has coherences between the systems" it assumes the conclusion.
-
-The Corollary "CC-7 (Emergence)" under Theorem 9.1 cited this proof and is withdrawn with it. What replaces the statement is below: two exact facts that hold for every coupling, and a weak-coupling criterion under a named assumption. Regression test: `test_coupled_holons_can_have_a_product_stationary_state` in `website/scripts/check_core_numbers.py` (audit A-82).
-:::
+An interaction commuting with the product anchor can leave it stationary. A local drive may change one marginal without introducing correlations. Hence the comparison is to the product of the *current* margins. Both cases are realized below. Numerical witness: `test_coupled_holons_can_have_a_product_stationary_state` in `website/scripts/check_core_numbers.py`.
 
 :::note In Plain Terms
 Two pendulums hung from one beam swing in step because the beam passes motion from one to the other; two pendulums whose coupling acts only on what each is already doing stay independent, however strong the coupling. Theorem 9.3 says which kind a coupling between two holons is. The whole acquires information that is not in the parts — mutual information $I > 0$ — exactly when the coupling has a *correlating part* at the parts' own steady states; a coupling that commutes with those states, or acts on one holon alone, leaves the pair uncorrelated.
@@ -334,7 +317,7 @@ Let $\mathcal{L}_i[\rho_*^{(i)}] = 0$, $\sigma := \rho_*^{(1)} \otimes \rho_*^{(
 
 **(ND)** *Non-degeneracy:* each $\rho_*^{(i)}$ is a non-degenerate fixed point — the Jacobian of $\mathcal{L}_i$ at $\rho_*^{(i)}$ is invertible on traceless Hermitian operators, and $P(\rho_*^{(i)}) \notin \{2/7, 3/7\}$, so that the gate $g_V$ is differentiable there.
 
-:::tip Theorem 9.3 (CC-7: Emergence) [T for almost every anchor; earlier C under (ND)]
+:::tip Theorem 9.3 (CC-7) [T for almost every anchor]
 **(i) Exact, any $g$.** $\sigma$ is a stationary state of the coupled composite if and only if $[H_{\mathrm{int}}, \sigma] = 0$. In that case the pair has a stationary state with $I(\mathbb{H}_1 : \mathbb{H}_2) = 0$ at every coupling strength.
 
 **(ii) Exact, any $g$.** A product $s_1 \otimes s_2$ is a stationary state if and only if $\Pi_c^{(s_1 \otimes s_2)}\bigl([H_{\mathrm{int}}, s_1 \otimes s_2]\bigr) = 0$ and each $s_i$ is stationary for $\mathcal{L}_i - i g [H_i^{\mathrm{mf}}, \cdot\,]$ with the mean fields $H_1^{\mathrm{mf}} = \mathrm{Tr}_2[(I \otimes s_2) H_{\mathrm{int}}]$, $H_2^{\mathrm{mf}} = \mathrm{Tr}_1[(s_1 \otimes I) H_{\mathrm{int}}]$. A stationary state of the pair is uncorrelated exactly when it is such a product; in particular a local coupling $H_A \otimes I + I \otimes H_B$ never correlates the pair.
@@ -364,7 +347,7 @@ For $s_i = \rho_*^{(i)}$ the first two terms vanish, which proves (i). For (ii):
 
 **Step 4 (First order).** Under (ND) the local blocks are invertible too, so $\mathcal{J}$ is, and the implicit function theorem gives the branch $X(g)$. Differentiating $\mathcal{L}^{(12)}[X(g)] = 0$ at $g = 0$: $\mathcal{J} X'(0) = i[H_{\mathrm{int}}, \sigma]$; applying $\Pi_c^{(\sigma)}$, which commutes with $\mathcal{J}$, gives $\Pi_c^{(\sigma)} X'(0) = C_1$. Since $X - X_1 \otimes X_2 = \Pi_c^{(\sigma)}(X) - (X_1 - \rho_*^{(1)}) \otimes (X_2 - \rho_*^{(2)})$, the correlation is $g C_1 + O(g^2)$, and $C_1 \neq 0$ exactly when $\Pi_c^{(\sigma)}([H_{\mathrm{int}}, \sigma]) \neq 0$. The bound on $I$ is the quantum Pinsker inequality $D(\rho \,\|\, \tau) \geq \tfrac12 \lVert \rho - \tau \rVert_1^2$. $\blacksquare$
 
-**Status: [T] for almost every anchor (updated 2026-09-25; it was [C under (ND)]).** Parts (i) and (ii) use nothing beyond the form of the composite generator and hold unconditionally. Part (iii) needs (ND), and [Theorem 9.4](#теорема-94-генеричность-nd) below proves it for every pair of anchors outside a closed Lebesgue-null set. It also needs the attractor to exist. An embodied holon always has a stationary state: its flow maps the compact convex set of states into itself, so each time-$t$ map has a fixed point (Brouwer), and a limit of such points as $t \to 0$ is stationary. An isolated holon with the self-registering $\varphi_s$ has seven non-degenerate ones for small $H$ ([evolution](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор)), and there the correlation block is invertible too, with $\mathrm{Re} \leq -2\kappa g_V R$ in place of $-2\mu$ (the anchor term acts as $-\kappa g_V R$ on traceless operators). Without an anchor of either kind there is nothing to apply (iii) to: an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ (anchor $I/7$) has none besides $I/7$, since $\mathrm{Tr}(\Gamma \varphi_{\mathrm{coh}}(\Gamma)) \leq P - (P - 1/7)/(7P)$, so regeneration and dissipation both lower $P$ (over 100 random states the left side minus the right is at most $-0.020$; twenty pure starts all end at $P = 0.14286$ by $t = 60$); the anchor $\sigma_i$ of an embodied holon is what gives it one ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)).
+**Status: [T] for almost every anchor.** Parts (i) and (ii) use nothing beyond the form of the composite generator and hold unconditionally. Part (iii) needs (ND), and [Theorem 9.4](#теорема-94-генеричность-nd) below proves it for every pair of anchors outside a closed Lebesgue-null set. It also needs the attractor to exist. An embodied holon always has a stationary state: its flow maps the compact convex set of states into itself, so each time-$t$ map has a fixed point (Brouwer), and a limit of such points as $t \to 0$ is stationary. An isolated holon with the self-registering $\varphi_s$ has seven non-degenerate ones for small $H$ ([evolution](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор)), and there the correlation block is invertible too, with $\mathrm{Re} \leq -2\kappa g_V R$ in place of $-2\mu$ (the anchor term acts as $-\kappa g_V R$ on traceless operators). Without an anchor of either kind there is nothing to apply (iii) to: an isolated holon with the canonical $\varphi_{\mathrm{coh}}$ (anchor $I/7$) has none besides $I/7$, since $\mathrm{Tr}(\Gamma \varphi_{\mathrm{coh}}(\Gamma)) \leq P - (P - 1/7)/(7P)$, so regeneration and dissipation both lower $P$ (over 100 random states the left side minus the right is at most $-0.020$; twenty pure starts all end at $P = 0.14286$ by $t = 60$); the anchor $\sigma_i$ of an embodied holon is what gives it one ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)).
 
 **Numerical check** (`test_coupled_holons_can_have_a_product_stationary_state`). Two embodied holons with the canonical ingredients above ($\alpha = 1/2$, $\mu = 1$, $\kappa = 1/7 + \mathrm{Coh}_E$, $g_V = \mathrm{clamp}(7P - 2, 0, 1)$, random $H_i$ of norm scale $0.3$, anchors of purity weight $0.85$ and $0.8$) have attractors with $P = 0.362$ and $0.303$ (residual below $10^{-15}$). All couplings are normalised to operator norm $0.3$.
 - (i) $H_{\mathrm{int}} \propto (\rho_*^{(1)} - I/7) \otimes (\rho_*^{(2)} - I/7)$: $\lVert [H_{\mathrm{int}}, \sigma] \rVert_F = 1.7 \times 10^{-17}$. From a random state on $\mathbb{C}^{49}$ the flow reaches $\sigma$ to $4.9 \times 10^{-16}$ by $t = 24$; $\lvert I \rvert < 10^{-15}$.
@@ -385,7 +368,7 @@ Witness (`test_non_degeneracy_is_generic_and_aggregation_follows_from_weak_coupl
 **What remains of "emergence".** For a correlated joint state the marginals do not determine it, and $I = S(\rho_1) + S(\rho_2) - S(\rho_{12}) > 0$ is the information the partial traces discard — a standard identity, true of every correlated pair, coupled thermostats included. Theorem 9.3 says when the dynamics of coupled holons produces such a state; it does not say that interaction alone does.
 
 :::info Connection to Löwer incompleteness
-When $I > 0$ — under the criterion of (iii), not for every coupling — subsystem $\mathbb{H}_1$ cannot reconstruct the joint state from $\rho_1$ alone ([observation-fibre theorem](/docs/applied/research/reconstruction-identifiability#fiber-theorem)). (Earlier: "since $I > 0$", stated for every interacting pair; corrected 2026-09-25 with the retraction above.)
+When $I > 0$ — under the criterion of (iii), not for every coupling — subsystem $\mathbb{H}_1$ cannot reconstruct the joint state from $\rho_1$ alone ([observation-fibre theorem](/docs/applied/research/reconstruction-identifiability#fiber-theorem)).
 :::
 
 #### Theorem 9.5 (Canonical aggregation: viability and invariants pass to the aggregate at weak coupling) [T at weak coupling] {#теорема-95-каноническая-агрегация}
@@ -474,7 +457,7 @@ The seven raw stress scores define the panel region $V_\sigma=\{\Gamma:\|\sigma_
 
 ### Diagnostic panel scope {#теорема-101-эквивалентность-условий}
 
-The universal T-92 equivalence is withdrawn. The seven raw scores define a separate region V_sigma; their U-condition implies structural majority, but they neither equal the four-part Cap2 gate nor imply biological viability. Uniform-diagonal Cap2 states already fail the raw L-condition. Use the exact four margins in the corrected definitions.
+The seven raw scores define a separate region V_sigma; their U-condition implies structural majority, but they neither equal the four-part Cap2 gate nor imply biological viability. Uniform-diagonal Cap2 states already fail the raw L-condition. Use the exact four margins in the definitions.
 
 [Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
 
@@ -488,7 +471,7 @@ Theorems 11.1–11.4 describe **four facets** of the sensorimotor cycle: encodin
 
 ### Observation-to-control interfaces {#теорема-111-кодирование-среды}
 
-T-100 is a design specification. Choose an observation category and a channel/control-valued interface; verify positivity and any composition laws. Universal encoder uniqueness T-42a and forced trichotomy T-57 are withdrawn. Different encoders satisfying covariance exist; distinguish them using the observation-law fibres and calibration, not the symmetry of the codomain.
+T-100 specifies an observation category and a channel or control interface. Verify positivity and any composition laws on that interface. Distinct encoders can satisfy the same covariance equation. Compare them through the observation-law fibres and external calibration.
 
 [Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
 
@@ -514,19 +497,19 @@ $$
 where $\Gamma(\tau + \delta\tau \mid a)$ is the predicted state under action $a$.
 :::
 
-**Design criterion.** Choose a calibrated loss and action set. Finite nonempty action sets have a minimizer; compact sets do for continuous losses. Neither existence nor uniqueness follows from the withdrawn universal panel equivalence.
+**Design criterion.** Choose calibrated losses on a specified action set. A finite nonempty set has at least one minimizer. Uniqueness requires a single minimizing action or a supplied tie rule.
 
 **See:** [Sensorimotor theory](./sensorimotor#теорема-оптимальное-действие)
 
 ### Target-dependent motor scores {#теорема-моторный-стресс}
 
-Define sigma_k=1-rho_kk/target_kk only for positive target populations. With a frozen target its derivative is -1/target_kk. If the target depends on rho, differentiate the target too. Zero total stationary drift does not imply zero regeneration or equality to the anchor. General G2 rotations do not preserve diagonal ratios; the universal T-42a justification is withdrawn.
+Define sigma_k=1-rho_kk/target_kk only for positive target populations. With a frozen target its derivative is -1/target_kk. If the target depends on rho, differentiate the target too. Zero total stationary drift does not imply zero regeneration or equality to the anchor. General G2 rotations do not preserve diagonal ratios.
 
 [Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
 
 ### Admissible additional generators {#теорема-113-полнота-трёх-членов}
 
-T-102 and its T-57 completeness premise are withdrawn. Nonnegative sums of GKSL generators are admissible; a signed difference need not be. A replacement term can itself be GKSL, so Hamiltonian/dissipation/regeneration is a grouping convention. The thermodynamic work/heat/matter dictionary is conditional on reservoir and charge choices, not a universal theorem of quantum channels.
+Nonnegative sums of GKSL generators are admissible; a signed difference need not be. A replacement term can itself be GKSL, so Hamiltonian/dissipation/regeneration is a grouping convention. The thermodynamic work/heat/matter dictionary is conditional on reservoir and charge choices, not a universal theorem of quantum channels.
 
 [Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
 
@@ -578,7 +561,7 @@ The following theorems are proved in the core documentation and play a central r
 | **T-93** [T] | $\mathrm{PG}(2,2) \cong H(7,4)$ — isomorphism | Structure of Gap space | [Gap dynamics](/docs/core/dynamics/gap-dynamics#теорема-h74-формальная) |
 | **T-94** [T] | Exponential memory kernel from compactness | Justification of [non-Markovian extension](./non-markovian) | [Gap dynamics](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) |
 | **T-80** [T] | Gap bounded by sum of sector parameters | Estimate of inter-sector gaps | [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) |
-| **T-85** [✗] | Former exact Keldysh/Berry relation withdrawn: the displayed Hermitian-product trace has zero imaginary part | A genuine relation requires independently supplied microscopic dynamics and a parameter-dependent eigenbundle [H/Pr] | [Berry audit](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш) |
+| **T-85** | Reality of the Hermitian-product trace | Its imaginary part vanishes. A Berry term needs an independently specified connection. |
 | **T-82** [T] | Uniqueness of the Fano operator | CC has no alternatives among $\Gamma_{\!\text{oct}}$-covariant (Fano-structured) theories | [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-единственность-фано) |
 :::
 
@@ -594,7 +577,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **No-Zombie (Theorem 8.1 and corollaries):** the exact purity balance gives a stationary E-floor only under explicit rate, source and required-coherence bounds. The philosophical interpretation requires an E-to-phenomenality bridge; no universal floor is proved.
 
-**Composition and emergence (Theorems 9.x):** CC scales wherever the parts are weakly coupled: the canonical aggregate — the mean marginal, the only permutation-invariant aggregation that returns a part on uncoupled copies — of viable embodied holons is viable, and its invariants lie within $O(g)$ of a part's (fractal closure and scale invariance, [T at weak coupling], Theorem 9.5; earlier conditional on the assumptions (HOL) and (AGG), raised 2026-09-25). At strong coupling this fails: the aggregate of two viable holons can be $I/7$ (Theorem 9.6). The whole carries information that its parts do not ($I > 0$) when the coupling has a correlating part at the parts' steady states — not for every coupling (Theorem 9.3, [T] for almost every anchor, Theorem 9.4; the earlier unconditional "irreducible emergence" [T] is retracted, 2026-09-25).
+**Composition and correlation (Theorems 9.1–9.6).** Weak coupling and an interior margin allow the canonical mean marginal to stay within the chosen viability region. Strong coupling can destroy this property. Correlation of the joint stationary state depends on the interaction and anchor.
 
 **Diagnostics (Theorem 10.1):** All viability conditions are equivalent to one: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$. The stress tensor is a universal monitoring tool.
 
@@ -602,7 +585,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **Attractors and structure (T-96, T-98, T-77, T-82, etc.):** Every system evolves toward a non-trivial equilibrium. The balance between dissipation and regeneration determines "health". The Fano structure is unique — CC has no alternatives. Full formulations and proofs — in the [summary table](#теоремы-аттракторов).
 
-The mathematical results use the five axioms together with each named assumption and regime; the corrected No-Zombie result specifically requires rate and source bounds, and its phenomenal interpretation requires an explicit bridge (fractal closure and scale invariance, Theorems 9.1–9.2, hold at weak coupling by Theorem 9.5 — their earlier assumptions (HOL) and (AGG) are needed only beyond it, where Theorem 9.6 shows the transfer can fail; emergence, Theorem 9.3, needs (ND) for its weak-coupling criterion, and Theorem 9.4 proves (ND) for almost every anchor).
+The mathematical results use the five axioms together with each named assumption and regime; the conditional No-Zombie result specifically requires rate and source bounds, and its phenomenal interpretation requires an explicit bridge (fractal closure and scale invariance, Theorems 9.1–9.2, hold at weak coupling by Theorem 9.5 — their earlier assumptions (HOL) and (AGG) are needed only beyond it, where Theorem 9.6 shows the transfer can fail; emergence, Theorem 9.3, needs (ND) for its weak-coupling criterion, and Theorem 9.4 proves (ND) for almost every anchor).
 
 ---
 
@@ -671,13 +654,13 @@ Let us summarise. In this chapter we have traversed the full path from basic exi
 
 1. **Dynamics exists and is correct** (Theorems 6.1–6.2 [T]): the evolution equation has a unique solution preserving the physical meaning of the matrix $\Gamma$ (Hermiticity, positivity, normalisation).
 
-2. **Viability requires self-reference** (Theorem 7.1 [T]): a system maintaining $P > 2/7$ *must* have an internal self-model $\varphi$. Iterations of the canonical $\varphi_{\mathrm{coh}}$ converge to its unique fixed point, $I/7$ (Theorem 7.2 [T], restated 2026-09-25) — so the self-model that keeps a holon alive cannot be $\varphi_{\mathrm{coh}}$ alone.
+2. **Self-models.** A purity threshold does not imply a self-model. To test a proposed self-model, specify its action, observables and control class (§7.1).
 
 3. **Conditional E-requirement** (Theorem 8.1): purity balance and explicit rate/source bounds determine whether a positive E-floor is required. Identification with phenomenal necessity remains a separate bridge.
 
-4. **Composition works at weak coupling** (Theorems 9.1–9.6): the canonical aggregate of weakly coupled viable embodied holons — the mean marginal, which is unique — is viable, and its purity, reflection, integration and Gap profile lie within $O(g)$ of a part's (fractal closure and scale invariance, [T at weak coupling], Theorem 9.5); the threshold on the coupling is explicit, and it cannot be dropped — at strong coupling the aggregate of two viable holons can be $I/7$ (Theorem 9.6). (Earlier, 2026-09-25: "[C at (HOL)]" and "[C under (AGG)]"; before that, "the union of viable holons yields a holon (fractal closure [T] for embodied systems)", retracted.) The whole is irreducible to the parts when the coupling correlates them — which not every coupling does (emergence, Theorem 9.3 [T] for almost every anchor; the earlier unconditional [T] is retracted, 2026-09-25).
+4. **Composition works at weak coupling** (Theorems 9.1–9.6): the canonical aggregate of weakly coupled viable embodied holons — the mean marginal, which is unique — is viable, and its purity, reflection, integration and Gap profile lie within $O(g)$ of a part's (fractal closure and scale invariance, [T at weak coupling], Theorem 9.5); the threshold on the coupling is explicit, and it cannot be dropped — at strong coupling the aggregate of two viable holons can be $I/7$ (Theorem 9.6).
 
-5. **Seven-score panel (Theorem 10.1 / T-92).** The sup-norm tests membership in $V_\sigma$. Cap2 uses its own four margins. The claimed equivalence to health is withdrawn. [Diagnostic panel scope](#теорема-101-эквивалентность-условий)
+5. **Seven-score panel (Theorem 10.1 / T-92).** The sup-norm tests membership in $V_\sigma$. Cap2 uses its own four margins. [Diagnostic panel scope](#теорема-101-эквивалентность-условий)
 
 6. **The sensorimotor cycle is closed** (Theorems 11.1–11.4 [T]): environmental encoding is unique (up to $G_2$-calibration), action is optimal (minimax stress), three channels exhaust all possibilities, hedonics = $dP/d\tau|_{\mathcal{R}}$.
 

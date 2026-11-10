@@ -6,8 +6,8 @@ description: "Complete 6-term Lagrangian of Gap theory, the potential V_Gap, spo
 
 # Gap Lagrangian models: a selected action and its scope
 
-:::warning Corrected T-75 scope — 2026-10-03
-The exact universal six-term Keldysh derivation is withdrawn [✗]. Neither a subobject classifier nor a GKSL representation selects a unique Lagrangian, phase inertia or potential coefficients. The conditional model below [D/H] has checkable mathematical consequences.
+:::note T-75. Dynamics and action
+A phase action and a GKSL generator each require a domain, coefficients and an observation model. Relating their solutions requires a derivation from shared dynamics.
 :::
 
 ## 1. Coordinates and constraints
@@ -32,7 +32,7 @@ $$
 
 This follows exactly **from the stated action and forces**, not from arbitrary density evolution.
 
-“Kinetic, potential, topological, dissipative, regenerative, external” is a selected grouping. Other admissible GKSL operators are not forbidden; universal completeness T-102 is withdrawn [✗]. Positivity of $M$ and $B$ are hypotheses, not consequences of the internal category.
+Choose a kinetic term, potential and dissipative dynamics. A positive mass matrix $M$ and well-defined generator are independent requirements. Additional Lindblad channels are admissible.
 
 ## 3. What a matrix ODE supplies
 
@@ -48,7 +48,7 @@ Differentiate $r e^{i\theta}$ to obtain these identities. They give first-order 
 
 Closed-time-path methods are tools for a specified microscopic model. Deriving an effective action needs degrees of freedom, initial state, reservoir interaction, eliminated variables and controlled approximations. The method itself does not select $M$, a potential or UHM’s six terms. See the primary review [Sieberer–Buchhold–Diehl](https://arxiv.org/abs/1512.00637).
 
-The former $\rho_+\log\rho_-$ formula did not prove equivalence of GKSL and the complete phase action; its stated classical limit was not derived. Universal T-75 is withdrawn. Such a comparison remains a separate task for each chosen physical realization.
+The trace of the product of two Hermitian matrices is real. A nonzero Berry term therefore needs data such as an eigenline and its connection. Exact equivalence of the phase action and the generator would require matching trajectories and observables.
 
 ## 5. Symmetries and interpretation
 

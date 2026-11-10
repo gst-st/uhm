@@ -7,7 +7,7 @@ description: "Exact discrimination, selected signal dynamics, safety certificate
 # Conditional Learning Bounds
 
 :::info Scope and correction, 2026-10-03
-The bounds depend on an observation experiment, task, learner and admissible dynamics. T-113's universal seven-dimensional minimum is withdrawn; a seven-role architecture remains a hypothesis [H]. T-263 gives a local metric statement under fixed premises, not a uniquely best learning algorithm. The previous finite-sample Chernoff inequality had its direction reversed, and the maximum of lower bounds was incorrectly identified with an attained optimum.
+Bounds require a specified observation experiment, task, learner and admissible dynamics. A seven-role implementation can be tested against smaller implementations under matched observations and budgets.
 :::
 
 Specify what is being learned, what one observation contains and what success means. A software coherence matrix does not by itself turn classical examples into independent quantum copies. The [reconstruction protocol](/docs/applied/research/reconstruction-identifiability) distinguishes identifiable data targets from arbitrary encoders; T-42a supplies no universal canonical encoder.
@@ -122,7 +122,7 @@ $$
 r_P=\sqrt{P-1/7}-\sqrt{P_c-1/7}=\sqrt{P-1/7}-1/\sqrt7\quad(P_c=2/7).
 $$
 
-The reverse triangle inequality around $I/7$ is a lower bound; radial mixing toward $I/7$ attains it within $\mathcal D_7$. This is not a Bures distance, a basin radius or the radius to all capability cuts. The former $\sqrt{P-2/7}$ formula was incorrect.
+The reverse triangle inequality around $I/7$ is a lower bound; radial mixing toward $I/7$ attains it within $\mathcal D_7$. This is not a Bures distance, a basin radius or the radius to all capability cuts.
 
 If $\|\Delta\Gamma_{\rm signal}\|\le b$ and bounded state-update noise has norm at most $\eta$, then $b+\eta<r$ is sufficient. Unbounded Gaussian noise does not give such a pathwise guarantee and requires a state-preserving noise model plus a finite-horizon exit estimate; see [T-145](/docs/proofs/consciousness/operational-closure#t-145).
 
@@ -167,7 +167,7 @@ Adding initialization and learning times requires sequential stages with declare
 
 #### Scope of T-113 {#теорема-минимальность-n7}
 
-The former theorem “learning is impossible for $N<7$, uniquely Pareto-optimal at $N=7$” is withdrawn. A functional count of seven named roles does not prove that all learning requires seven orthogonal Hilbert-space axes. Neither self-observation, replacement nor statistical learning generally requires a Fano plane. Hurwitz classifies certain normed division algebras; it does not classify learning algorithms or all state-space dimensions.
+An information-theoretic lower bound needs observable distinctions that each smaller model fails to reproduce. Counting seven named functional roles does not prove their independence.
 
 A concrete counterexample is a two-level learner. Encode $q_j\in[0,1]$ as $\Gamma_j=\operatorname{diag}(q_j,1-q_j)$ and observe independent $Y_j\in\{0,1\}$ with mean $p$. Set
 
@@ -282,7 +282,7 @@ Use matched architecture tests, identifiable observation laws, separate sample/t
 | T-110 | Exact selected accumulator or its norm envelope |
 | T-111 | Sufficient feasible-state neighborhood; separately specified noise law |
 | T-112 | Conjunction of valid necessary bounds, without attainment |
-| T-113 [H] | Selected seven-role architecture hypothesis; universal minimum withdrawn |
+| T-113 [H] | Seven-role architecture under a specified task |
 | T-42a [✗] | Supplies no universal encoder or equivalent empirical frame |
 | T-148 | Conditional constant-input genesis, including no-crossing regimes |
 | T-263 | Local steepest direction for specified metric/potential/speed |

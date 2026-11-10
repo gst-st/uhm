@@ -7,7 +7,7 @@ description: "Homeostatic regime, basin of attraction, death spiral, perturbatio
 # Stability: geometric margins and controlled dynamics
 
 :::warning Mathematical revision — 2026-10-03
-Distance to a static boundary, equilibrium stability and controlled recovery are different problems. T-104 provides no universal allowable decoherence-rate change or guaranteed therapy. The selected T-92 panel [D] is not equivalent to the full window; universal three-channel completeness T-102 is withdrawn [✗].
+Distance to a static boundary, stability of an equilibrium and recovery under control require distinct hypotheses. A budget for admissible perturbations depends on the selected flow and metric.
 :::
 
 ## 1. Objects and units
@@ -42,7 +42,7 @@ $$
 r_B(\rho)=\min_{P(\sigma)=p_c}d_B(\rho,\sigma),\qquad d_B^2=2(1-\mathrm{Tr}\sqrt{\sqrt\rho\sigma\sqrt\rho}).
 $$
 
-The minimum exists by compactness and continuity. The former $r_B=\sqrt{P-p_c}$ is withdrawn [✗]. A general certified lower bound is
+Compactness and continuity give existence of the minimum. A certified lower bound is
 
 $$
 r_B\ge r_{\mathrm{HS}}/\sqrt2.

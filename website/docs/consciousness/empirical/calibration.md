@@ -1,19 +1,17 @@
 ---
 sidebar_position: 2
 title: "Calibration: Coherences to Qualities"
-description: "The observables, the protocols, the controls and the statistics by which the free constants of the coherence–quality correspondence are fixed and tested"
+description: "Calibrating proposed relations between physical measurements and independently recorded qualities."
 slug: /consciousness/empirical/calibration
 ---
 
 # Calibration: Coherences to Qualities
 
-:::info What this page does
-The theory fixes the *form* of the correspondence between $\Gamma$ and experience; it leaves its constants free, exactly as the Standard Model leaves the electron mass free ([what UHM does not explain](/docs/consciousness/foundations/two-aspect-monism#что-угм-не-объясняет)). This page collects how those constants are measured: which observables enter, how each is mapped onto components of $\Gamma$, which protocols the corpus already specifies, which ones are proposed here for the first time [Pr], and what result would count against the theory. It reports no data.
-:::
+A candidate encoder maps recorded signals to an estimated state. A separate observation model relates that estimate to a participant’s report. Both the form and the parameters of those maps require evidence. The protocols below give examples of tests. Participant data are pending. [What a phenomenal difference requires](/docs/consciousness/foundations/phenomenal-distinction)
 
 ## Two calibrations, not one {#two-calibrations}
 
-**1. The measurement calibration** takes a substrate to $\hat\Gamma$. For a brain it is the reconstruction $\pi_{\mathrm{bio}}$ ([protocol](/docs/applied/research/measurement-protocol#протокол-pi-bio)); for an artificial system, the map $G: \mathrm{AIState} \to \mathcal{D}(\mathbb{C}^7)$ ([measurement protocol](/docs/applied/research/measurement-protocol)). Its free parameters $\theta$ — weights, observation-model coefficients, regulariser weights — are not given by the theory. Registry row C31 states the division: $G_2$-uniqueness of the construction is [T]; the specific correspondences "EEG band ↔ dimension" are [H].
+**1. Measurement calibration.** Fix the sensor configuration, encoding $\pi$ and noise model. Different encoders can agree on all calibration observations. For example, a diagonal measurement leaves every off-diagonal phase unconstrained. A separately calibrated interference probe can test a phase assignment. [Identifiability of the observation model](/docs/applied/research/reconstruction-identifiability)
 
 **2. The phenomenal calibration** takes $\hat\Gamma$ to named qualities. It has two parts:
 
@@ -97,7 +95,7 @@ Intensity follows $\mathcal{Q}(t) \sim \log(\lambda_{\max}(t)/\langle\lambda_{\m
 
 ### K8. Regeneration and $E$-coherence — existing protocol, underpowered as written {#k8-regeneration}
 
-Prediction 2 [T] ($\kappa \propto \mathrm{Coh}_E$) is tested by correlating $\widehat{\mathrm{Coh}}_E$ with recovery rate after a standard stressor, with $n \geq 85$ and a predicted $r > 0.3$ ([prediction 2](/docs/applied/coherence-cybernetics/predictions#предсказание-2)): at $n = 85$ a true $r = 0.3$ is detected with power 0.80 (two-sided $\alpha = 0.05$, Fisher $z$). The protocol read $n \geq 30$ until 2026-09-26; at $n = 30$ the power is 0.36, and a null result would have said almost nothing.
+Treat a correlation between an estimated $E$-coherence and a recovery rate as an empirical hypothesis. Freeze the estimator and the response window, estimate sample size for the smallest effect of interest and compare against a model using baseline physiology. Choosing $\kappa$ proportional to a coherence in a simulation imposes the model relation and cannot validate it in observations.
 
 ## Controls {#controls}
 
@@ -133,6 +131,6 @@ Prediction 2 [T] ($\kappa \propto \mathrm{Coh}_E$) is tested by correlating $\wi
 | No monotone relation between perceived dissimilarity and $d_{\mathrm{FS}}$ (K3) | the metric prediction; the identification of quality space with $\mathbb{CP}^{n-1}$ [I] loses its only direct support | structural |
 | $\hat\Gamma$ non-positive or irreproducible across sessions ([Prediction 21](/docs/applied/coherence-cybernetics/predictions#предсказание-21)) | the calibration $\pi_{\mathrm{bio}}$, not the formalism | local |
 
-**What does not count against the theory.** Failing to find the anchor of one named quality — the theory never claimed to derive it. A mismatch in a system outside $D_{\mathrm{nat}}$ — there the theory makes no consciousness claim. A single-point numerical agreement — agreement of one number with one fitted constant tests nothing (the withdrawn "PCI 0.31 ↔ 2/7" is the corpus's own example).
+Agreement at one fitted point does not test transfer. A confirmatory failure counts against the preregistered prediction for its stated population, outcome and readout.
 
 **Next:** [Structure →](./structure) · **Back:** [Overview](./overview)

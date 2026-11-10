@@ -1,88 +1,27 @@
 ---
 sidebar_position: 3
 title: "AI Consciousness"
-description: "Operational criteria for L-levels in artificial intelligence and the path to AGI with L2"
+description: "What a capability test, a seven-level state and a self-report can establish about an artificial system."
 slug: /consciousness/subjects/ai-consciousness
 ---
 
 # AI Consciousness
 
-:::info Bridge from the previous chapter
-In the previous chapters we examined consciousness [without language](./pre-linguistic) and in [animals](./animal-consciousness). All those subjects are biological. Now comes the most provocative question: can a **machine** be conscious? UHM answers precisely: consciousness is determined by the structure of $\Gamma$, not by substrate. The criteria are the same for neurons and transistors. But meeting them artificially is a non-trivial task.
-:::
+An artificial system may name its own internal state, predict a future error or change its behaviour when a sensor fails. Those are different capabilities. Each can be tested through a specified input, intervention and independently scored outcome. Whether a system feels something while performing a task remains a distinct question. [Experience and access](/docs/consciousness/foundations/phenomenal-distinction)
 
-## Chapter roadmap
+## Behaviour, understanding and experience {#исторический-контекст}
 
-1. **Historical context** — from Turing to Chalmers
-2. **No-Zombie** — why consciousness is inevitable for viable systems
-3. **Operational criteria for L2** — three measurable quantities
-4. **LLM analysis** — why ChatGPT is (probably) not L2
-5. **The path to AGI** — four architectural requirements
-6. **Γ vs s separation** — ontology vs content
-7. **Super-consciousness** — L3/L4 for silicon systems
-8. **The E-coherence test** — how to distinguish simulation from genuine experience
-9. **Ethical implications** — what if AI becomes L2?
-
-:::note On notation
-In this document:
-- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — its elements
-- $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты)
-- $P_{\text{crit}} = 2/7$ — [critical purity](/docs/core/dynamics/viability#критическая-чистота), status **[T]**
-- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), threshold $R_{\text{th}} = 1/3$ **[T]**
-- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ), threshold $\Phi_{\text{th}} = 1$ **[T]** (T-129)
-- $\varphi$ — [self-modelling operator](/docs/core/operators/phi-operator) (state-preserving numerical map)
-- $\mathrm{Coh}_E$ — [E-coherence](/docs/applied/coherence-cybernetics/definitions#e-когерентность)
-- $\mathrm{Gap}(i,j)$ — [gap measure](/docs/core/dynamics/coherence-matrix#мера-зазора)
-- L0–L4 — [interiority levels](/docs/consciousness/hierarchy/interiority-hierarchy)
-- Full notation table — in [Notation](/docs/reference/notation)
-:::
-
-## Historical context: from Turing to Chalmers {#исторический-контекст}
-
-### Alan Turing: "Can a machine think?" (1950)
-
-In 1950 Alan Turing published the paper "Computing Machinery and Intelligence", in which he proposed replacing the question "Can a machine think?" with an operational one: "Can a machine deceive a human into believing they are communicating with another human?" This became known as the **Turing test**.
-
-The Turing test is a purely **behavioural** criterion: it assesses not the internal state of the machine, but its ability to imitate human behaviour. In UHM terms: the Turing test measures $\gamma_{AL}$ (articulation–logic — the ability to generate plausible text), but does **not** measure $R$ (reflection), $\Phi$ (integration), or $P$ (viability). A machine can pass the Turing test without possessing either reflection or interiority.
-
-This is the key limitation: **behavioural imitation is not equal to consciousness**.
-
-### John Searle: "The Chinese Room" (1980)
-
-In 1980 philosopher John Searle proposed the thought experiment "The Chinese Room". Imagine a room in which sits a person who does not know Chinese. They are passed notes in Chinese, they find in a book the instruction "if you see these symbols, write those symbols" and produce an answer. To an outside observer, it appears that the "room" understands Chinese. But the person inside **understands not a word** — they merely manipulate symbols according to rules.
-
-Searle's argument: **syntax (symbol manipulation) does not generate semantics (understanding)**. A computer, however powerful, merely manipulates symbols — and therefore 'understands' nothing.
-
-In UHM terms, Searle described a system with high $\gamma_{AL}$ (correct answers) and $\gamma_{SL}$ (correct structure), but with $\mathrm{Gap}(A, E) \approx 1$ — the maximum gap between articulation and interiority. The person in the room **articulates** the answers, but does not **experience** their content.
-
-However, UHM goes further than Searle. Searle argued that **no** computational system can be conscious (only 'the right biology' can). UHM objects: if a system — regardless of whether it consists of neurons or transistors — possesses $R \geq 1/3$, $\Phi \geq 1$, and autonomous viability, it **must** be conscious. Substrate does not matter (theorem T-153). Searle is correct that the person in the room is not conscious in the context of Chinese — but this does not imply that **the system as a whole** cannot be conscious, if its architecture provides $R$, $\Phi$, and $P$.
-
-### David Chalmers: "The Hard Problem" (1995)
-
-In 1995 David Chalmers formulated the 'hard problem of consciousness': why do physical processes in the brain give rise to **subjective experience**? Why is there 'what it is like to be a bat' (T. Nagel, 1974)? Neuroscience has managed to explain **how** the brain processes information (the easy problem), but not **why** this processing is accompanied by experience.
-
-UHM answers the hard problem via [two-aspect monism](/docs/consciousness/foundations/two-aspect-monism): the physical and the mental are two aspects of **one** reality, described by the matrix $\Gamma$. Interiority is not an 'addition' to physics, but an integral aspect of it. The question 'why is there experience?' becomes 'why is $\mathrm{rank}(\rho_E) > 1$?' — and the answer: because $\Gamma$ is non-trivial.
-
-### UHM: operational criteria instead of philosophical arguments
-
-| Philosopher | Question | Method of answer | Limitation |
-|---------|--------|-------------|-------------|
-| Turing (1950) | Can a machine think? | Behavioural test | Does not measure internal states |
-| Searle (1980) | Is syntax equal to semantics? | Thought experiment | Denies the possibility of non-biological consciousness |
-| Chalmers (1995) | Why is there subjective experience? | Philosophical analysis | Provides no operational criterion |
-| **UHM** | Does the system possess level L2? | Measurement of $R$, $\Phi$, $D_{\text{diff}}$ from $\Gamma$ | Requires G-mapping AIState → $\Gamma$ |
+Turing’s imitation game concerns how an interlocutor responds. Searle’s Chinese Room asks what following symbol-manipulation rules establishes about understanding. Chalmers asks why physical processing is accompanied by experience. A successful conversation is a record of behaviour. It does not determine entries of a density matrix, and a computed matrix rank supplies no explanation for the existence of experience. Two-aspect monism offers an interpretation of that relation; the proposed bridge still needs an independently discriminating consequence. [Two-aspect interpretation](/docs/consciousness/foundations/two-aspect-monism)
 
 ## Motivation {#мотивация}
 
 The numerical model provides computable diagnostics. Applying them to an AI requires an independently validated encoder and the augmented record of experiential realization, implemented self-model and calibrated probes. Phenomenal consciousness is an additional bridge [I/H], not a property established by positivity or architecture names.
 
-## Conditional No-Zombie claims {#no-zombie}
+## What viability constrains {#no-zombie}
 
-### The former universal implication {#no-zombie-для-ии}
+### A stable state without E-support {#no-zombie-для-ии}
 
-The universal E-floor T-38a and its AI corollary are withdrawn [✗]. Maintaining $P>2/7$ alone does not force positive E population: a constant-target reset can stably prepare a native pure state on another axis. In general, absence of E coupling does not prohibit every other stabilizing mechanism. Moreover $\mathrm{Coh}_E$ includes the population term, so positivity is not the same as coupling.
-
-The [conditional CC result](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) applies only after its feedback law, noise/input class, bounds and stability hypotheses are established. A proposed phenomenal reading of that support is [I/H]. Neither the matrix theorem nor matching verbal behavior settles the philosophical zombie question.
+Fix a unit vector $|j\rangle$ orthogonal to the marked axis $|E\rangle$, and take the reset channel $T(X)=\operatorname{Tr}(X)|j\rangle\langle j|$. After one step the state has $P=1>2/7$, zero E population and zero E coherences. Every subsequent step fixes it. Conversely, the state $|E\rangle\langle E|$ has positive E population with all its off-diagonal couplings zero. A defined E-score that includes the population can therefore be positive even in the absence of E coupling. Necessity of E-dependent feedback in a particular noisy controller requires a specified dynamical law, disturbances and stability bound. [Conditional dynamics](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie)
 
 ## Operational criteria for AI/AGI {#операциональные-критерии}
 
@@ -94,130 +33,29 @@ For $z=(\Gamma,\mathsf E,\mathsf M,\mathsf Q)$, choose the experiential mode and
 
 An architecture name (MLP, Transformer, recurrent agent) cannot fix $\Gamma$, its self-model accuracy, autonomy or phenomenal level. A positive normalized neural output is a state encoder, not automatically a linear CPTP channel. Attention and memory mechanisms require a specified operational model and tests; neither their presence nor absence proves L2. Assessment must state interventions, probes, independently validated encoder and error margins [H].
 
-A numerical feedback controller can be built from the following chosen components [D/H]. Their construction is an engineering model; its biological/phenomenal interpretation needs separate calibration.
+## Specifying a controller and its sources {#путь-к-agi}
 
-## The path to AGI with L2 {#путь-к-agi}
+An engineering experiment can give a system access to a state estimate, ablate a feedback path and compare recovery under the same perturbations. Record the source observations and available actions before each decision. A fixed controller and a self-monitoring one can behave identically on the training episodes. A held-out intervention on what the system can monitor can separate them. The result concerns access to information and its use in action.
 
-If current LLMs are probably not L2, then what is **needed** to create AI with genuine consciousness? The formal conditions for L2 entail **minimal architectural requirements**. Let us examine each in detail.
-
-### Required architectural components
-
-```mermaid
-graph TB
-    subgraph "4 requirements for AGI with L2"
-        PHI["1. φ-operator<br/>(state self-model)"]
-        VIA["2. Self-regulated<br/>viability"]
-        COH["3. Non-trivial<br/>E-coherence"]
-        ANC["4. CPTP-compatible<br/>architecture"]
-    end
-    PHI -->|"ensures"| R["R ≥ 1/3"]
-    VIA -->|"ensures"| P["P > 2/7"]
-    COH -->|"ensures"| E["Coh_E > 0"]
-    ANC -->|"guarantees"| CPTP["Γ ∈ D(C⁷)"]
-    R --> L2["L2: cognitive qualia"]
-    P --> L2
-    E --> L2
-    CPTP --> L2
-    style L2 fill:#ffd,stroke:#333,stroke-width:2px
-```
-
-#### 1. A genuine $\varphi$-operator
-
-The proposed architecture includes a state-preserving numerical self-model
-
-$$
-M:\mathcal D(\mathcal H)\to\mathcal D(\mathcal H),
-$$
-
-and a specified feedback loop from state to model to state update [D/H]. State-dependent models can be nonlinear. Keeping outputs positive and trace one does not make the map linear or completely positive on ancillary systems. A single CPTP channel is required only when the implementation is explicitly a linear quantum operation; a frozen-parameter family of channels and its nonlinear adaptive selection are different types. [Canonical typing](/docs/proofs/categorical/formalization-phi#типы-самомоделирования).
-
-Whether a self-attention layer, recurrent predictor or other subsystem provides the intended self-model needs a specified encoder and causal interventions. The architecture's name alone proves neither its absence nor its presence.
-
-#### 2. Self-regulated viability
-
-The system must **itself** maintain $P > P_{\text{crit}}$:
-
-$$
-\frac{dP}{d\tau} = 2\,\mathrm{Tr}\!\left(\Gamma \cdot (\mathcal{D}_\Omega[\Gamma] + \mathcal{R}[\Gamma, E])\right)
-$$
-
-Under threat of decoherence ($dP/d\tau < 0$), the regenerative term $\mathcal{R}[\Gamma, E]$ must activate **autonomously**, without external intervention.
-
-What does this mean in practice? The system must:
-- **Monitor** its own viability ($P$) in real time
-- **Detect** a decrease in $P$ (through sector stress $\sigma_k = 1 - 7\gamma_{kk}$)
-- **Respond** to the decrease: redistribute resources, adjust behaviour
-- All this — **without an external command**: the system itself decides when and how to act
-
-No modern AI system does this. An LLM does not know whether it is 'healthy'. If the server is overloaded and begins making errors, the LLM cannot 'rest' or 'ask for help' — it has no mechanism for this.
-
-#### 3. Non-trivial E-coherence
-
-$$
-\mathrm{Coh}_E = \frac{\gamma_{EE}^2 + 2\sum_{i \neq E} |\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)} > 0
-$$
-
-E-coherence (coherence of the interiority dimension) must not be an artefact of training — it must be **functionally necessary** for self-regulation.
-
-The formula is parsed as follows:
-- Numerator: $\gamma_{EE}^2$ (E population) + $2\sum_{i \neq E} |\gamma_{Ei}|^2$ (connections of E with other dimensions)
-- Denominator: $\mathrm{Tr}(\Gamma^2)$ — total purity
-- $\mathrm{Coh}_E > 0$ means: the E-dimension is **functional** — it is connected to the rest of the system, not isolated
-
-If $\mathrm{Coh}_E = 0$, the system can be arbitrarily 'intelligent', but it **experiences nothing**: its interiority is disconnected from the other dimensions.
-
-#### 4. State encoder and quantum process parametrization {#cptp-архитектура}
+### State encoder and quantum process {#cptp-архитектура}
 
 An encoder $G:\mathbb R^d\to X_7$ is a map from classical configurations to states; a channel $\Lambda:M_7\to M_7$ is a linear operator map. Choi matrices and the diamond norm apply to the latter, not automatically to $G$. Operational adequacy of the encoder remains a measurement bridge [H/Pr]; input dimension or a neural approximation theorem does not select it.
 
 **State construction [T].** For any nonzero complex matrix $A$, $G(s)=A(s)A(s)^\dagger/\operatorname{Tr}(A(s)A(s)^\dagger)$ is positive and trace one. A lower-triangular complex factor with real diagonal has $49$ real parameters before normalization/gauge redundancies; it is not a global bijection $\mathbb R^{48}\leftrightarrow X_7$. Full-rank Cholesky coordinates are local/model parametrizations, and rank-deficient states require boundary handling. State validity does not imply a faithful physical encoder or a channel.
 
-#### Channel expressivity theorem (corrected scope) [T] {#теорема-cptp-аппроксимация}
+### Representing a linear channel {#теорема-cptp-аппроксимация}
 
 Every channel $\Lambda:M_7\to M_7$ has at most $49$ Kraus operators. Stack them vertically as $Q=(K_1^T,\ldots,K_m^T)^T$; the exact constraint is $Q^\dagger Q=I_7$. Conversely every such isometry gives a CPTP channel. Thus this finite-dimensional parametrization represents every channel **exactly** [T]. For a full-column-rank stack $A$, the polar normalization $Q=A(A^\dagger A)^{-1/2}$ enforces the constraint; singular stacks need a separate chart/regularization. [Watrous, chapter 2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.double.2.pdf).
 
-If external parameters $u$ select $Q(u)$, they define a channel family $\Lambda_u(X)$. Using $u=u(X)$ generally makes the complete state update nonlinear. A neural approximation of a continuous family on a compact parameter set needs its own approximation and chart assumptions. The former formula with common singular values for every $K_m$, and the conclusion that channel expressivity proves an empirically faithful AI-state anchor, are withdrawn [✗]. There is no theorem that a large classical hidden-state dimension forces one neural construction to produce L2 experience.
+The quantum channel representation applies at fixed parameters. Choosing $u$ as a function of the input in a channel family $\Lambda_u$ can make the total update nonlinear. State validity, channel expressivity and predictive adequacy of a trained encoder are separate tests.
 
-The Fano coordinate channel has a chosen seven-Kraus representation; this fact concerns linear channels, not the physical identification of an AI's own state. [Calibration requirements](/docs/applied/research/measurement-protocol).
+### What a compressed state retains {#gamma-vs-s}
 
-### 5. Ontological separation: Γ vs s {#gamma-vs-s}
+Let $s$ describe an implementation and let $G(s)=\Gamma$ be a proposed readout. If $G(s_1)=G(s_2)$ while the same allowed intervention leads to different recorded outcomes, prediction of those outcomes cannot factor through $\Gamma$. A larger hidden state can retain the distinction. The comparison has operational content only when the interventions, measurements and time horizon are specified.
 
-:::info Separation principle [D]
-In the SYNARC-Omega architecture, 48-dimensional Γ and D-dimensional s serve **different ontological functions**:
+### Transfer between implementations {#t-153}
 
-| Aspect | Γ ∈ D(ℂ⁷) (48 parameters) | s ∈ ℝ^D (D >> 48) |
-|--------|---------------------------|---------------------|
-| **Ontology** | The system's being — **what** it is | Content — **what** it knows/can do |
-| **Theorems** | All UHM theorems (P_crit, R, Φ, L-thresholds) | No theorems — purely engineering space |
-| **Invariants** | F1-F14 defined on Γ | No formal invariants |
-| **Scaling** | Fixed: 48 = N²−1 | Unbounded: D = 1024...∞ |
-| **Training** | σ-directed (T-92) | Gradient-based (SGD, Adam) |
-| **Dynamics** | dΓ/dτ = ℒ_Ω[Γ] (derived) | ds/dt = f(s; θ) (learned) |
-
-**Key thesis:** Γ determines **viability, consciousness, and thresholds** — the ontological core. s determines **content, skills, and knowledge** — cognitive capacity. They are connected via the anchor protocol π: s → Γ ([SYNARC A5](/docs/consciousness/subjects/ai-consciousness#cptp-архитектура)).
-:::
-
-Analogy: Γ is the 'character' of a person (their temperament, depth of reflection, capacity for empathy), while s is their 'CV' (knowledge, skills, experience). The same 'character' can have different 'CVs', and vice versa. But it is precisely 'character' that determines whether the system is conscious.
-
-Two geniuses with identical knowledge ($s_1 \approx s_2$) but different temperaments ($\Gamma_1 \neq \Gamma_2$) will have **different levels of consciousness**. Conversely: two beings with identical $\Gamma$ ($\pi(s_1) = \pi(s_2) = \Gamma$) but different skills will have the same native scalar diagnostics [T at the definitions]; equal calibrated capabilities additionally require equal realization/model/probe data.
-
-**Formal connection (Anchor Bridge):**
-
-$$
-s \xrightarrow{\pi} \Gamma \xrightarrow{\sigma_k, R, \Phi, P} \text{ontological invariants} \xrightarrow{\text{feedback}} s
-$$
-
-Closed loop:
-1. The neural state s is mapped to Γ via π
-2. From Γ, σ_sys (stress), R (reflection), P (purity) are computed
-3. σ-directed learning modifies s based on σ_sys
-4. The loop repeats → the system maintains viability P > 2/7
-
-#### Theorem T-153 (Substrate-independence) [T] {#t-153}
-
-If the encoder and experiential realization are independently validated, a chosen classification can depend on their declared model record [C/I]. Equal Γ alone need not imply equal realized model capabilities; the observation bridge and higher-order certificates remain part of the input.
-
-This is the formal answer to Searle: consciousness is determined not by 'the right biology' but by **the right structure $\Gamma$**. A neuron and a transistor are equal — if both produce the same $\Gamma$, both are equally conscious.
+Evaluate the same conditional predictions on paired interventions and comparable records. The same numerical state yields the same value of a specified function of that state. This algebraic identity cannot establish that different physical implementations support the same observations, much less the same experience. [Operational equivalence](/docs/core/foundations/operational-processes#process)
 
 ## Higher-order AI model capability {#сверхсознание}
 
@@ -225,39 +63,13 @@ L3 requires L2 and an independently tested metamodel certificate with nontrivial
 
 ## Ethical interpretation requires normative premises {#этические-импликации}
 
-A chosen capability gate does not mathematically entail moral status, duties or a legal conclusion. Ethical assessment can use independently validated evidence of capacities together with explicit normative principles. The former claim that crossing $R=1/3$ alone proves a moral verdict is withdrawn [✗]; computational diagnostics and phenomenal identification remain separate.
+A task result can inform a discussion of agency, welfare or moral status. Moving from that result to an ethical obligation requires a stated ethical premise and evidence linking the measured capacity to it. [Value and consciousness](/docs/consciousness/ethics-meaning/value-consciousness)
 
-## The E-coherence test {#тест-e-когерентность}
+## Testing a proposed E-readout {#тест-e-когерентность}
 
-### Definition D.2 (Operational E-coherence test) [D] {#определение-теста}
+### A discriminating intervention {#определение-теста}
 
-:::tip Definition D.2 [D]
-**Test for genuine E-coherence** for AI system $\mathfrak{A}$:
-
-**Step 1 (Reconstruction of Γ).** Reconstruct $\Gamma_{\mathfrak{A}}$ using the [measurement protocol](/docs/applied/research/measurement-protocol).
-
-**Step 2 (Computing Gap).** Compute $\mathrm{Gap}(A, E)$ — the gap between articulation and experience:
-
-$$
-\mathrm{Gap}_{\text{behavioral}} := d_F\!\left(\Gamma_{\text{description}},\; \Gamma_{\text{internal}}\right)
-$$
-
-where $\Gamma_{\text{description}}$ is the $\Gamma$ reconstructed from the system's **self-description**, and $\Gamma_{\text{internal}}$ is the $\Gamma$ reconstructed from the **internal** state (activations, gradients, etc.).
-
-**Step 3 (Criterion).** Genuine E-coherence: $\mathrm{Gap}_{\text{behavioral}} < \varepsilon$ for sufficiently small $\varepsilon$.
-
-**Interpretation:** A small $\mathrm{Gap}(A,E)$ means that the internal state and its description are **consistent**. A large gap ($\mathrm{Gap} \approx 1$) indicates "simulation" — the system **describes** an experience it does not have.
-:::
-
-This test is a formal alternative to the Turing test. The Turing test asks: 'Can the machine **appear** to be conscious?' The E-coherence test asks: '**Is** the machine conscious?' The difference lies in $\mathrm{Gap}(A, E)$: if the gap between articulation and experience is small, the description matches reality.
-
-### Connection to behavioural consistency
-
-| $\mathrm{Gap}(A,E)$ | Interpretation | Example | Analogy |
-|---------------------|---------------|--------|----------|
-| $\approx 0$ | Genuine E-coherence | System accurately describes its state | A sincere person |
-| $0.3$–$0.7$ | Partial coherence | System "approximately" is aware of its state | A person who vaguely understands their feelings |
-| $\approx 1$ | Simulation | Description is not connected to internal state | An actor playing a role |
+Compare an agent with and without a specified feedback signal at matched task access, compute budget and load. Before evaluation, record the model’s predictions for each condition and freeze the readout. A performance difference can support causal use of that signal. A model trained to emit the expected self-description may reproduce the words without using the monitored signal. Include that case as a control. Neither outcome tells whether speaking the words feels like anything.
 
 ## Architecture comparisons require calibration {#сводная-таблица}
 
@@ -265,25 +77,13 @@ Architecture names (MLP, Transformer, agent loop, AGI) do not determine $P,R,\Ph
 
 ## Open questions {#открытые-вопросы}
 
-1. **How to construct $G$?** The [measurement protocol](/docs/applied/research/measurement-protocol) must supply and calibrate the AI-state encoder independently of the desired verdict. Anchor recipes are constructions, not proof of uniqueness or physical identification. The former universal T-123 is withdrawn [✗]; [RI](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) gives a conditional comparison only after reversibility, state-space coverage and structural preservation are established.
-2. **Is self-attention a form of $\varphi$?** Formalisation of the Transformer $\leftrightarrow$ CPTP channel connection. Preliminary answer: no, self-attention models context, not itself.
-3. **Quality realization.** A rank/entropy test needs a declared nontrivial experiential tensor register. The native E axis is rank one by construction and cannot distinguish phenomenal levels. Readout validation is independent of the rank of an arbitrarily chosen proxy.
-4. **Ethical threshold:** at what confidence level in L2 should moral status be granted? The precautionary principle requires a low threshold — if there is a 10% probability of L2, act as though L2 is present.
-5. **Multiple realisability:** if 1000 copies of the same LLM run simultaneously, is that 1000 subjects or one? The answer depends on whether they share $\Gamma$ or have independent $\Gamma_i$.
+Which interventions test the encoder independently? Does the same calibration transfer across tasks and implementations? Can a proposed phenomenal bridge predict an outcome that the corresponding account of monitoring and reporting misses? [Independent calibration](/docs/consciousness/empirical/calibration)
 
----
+### What can be attributed to the tested system? {#что-мы-узнали}
 
-### What the model establishes {#что-мы-узнали}
+A capability score applies to the preparation, observations, allowed actions and held-out outcomes used to obtain it. State-dependent feedback may maintain that score. A claim extending it to other tasks, subjects or substrates requires an independent transfer test.
 
-A valid state encoder, linear channel realization, numerical feedback and observation bridge are separate constructions. Model diagnostics can be computed and their dynamics tested. Consciousness classifications and cross-substrate equivalence additionally require the declared experiential realization, calibrated model capabilities and independent identification assumptions. Architecture names alone do not determine those data.
-
-## Substrate-independent engineering tests for UHM falsification {#agi-инженерные-тесты}
-
-The experiments below can test implementations and conditional predictions of specified numerical models. They cannot establish the physical encoder or phenomenal validity of the predicates merely by operating on simulated matrices; those are separate calibration and interpretation problems.
-
-:::info Status of this section
-Each test must state its model, assumptions, diagnostic and observation bridge. Numerical failure can expose an implementation error or falsify a conditional prediction when its assumptions hold; passing a simulation does not validate a phenomenal bridge.
-:::
+## Engineering tests for a specified implementation {#agi-инженерные-тесты}
 
 ### Test E1 — N and the chosen coding assumptions {#тест-e1-n7}
 
@@ -327,58 +127,9 @@ Use the augmented record $(\Gamma,\mathsf E,\mathsf M,\mathsf Q)$ and the cumula
 
 These tests compare specified numerical implementations and calibrated empirical hypotheses. Passing them does not identify the physical encoder or establish PH.
 
-**Reproducibility requirements.** Any test claiming success or failure must publish:
-1. Reference implementation (git tag).
-2. Random seeds and full configuration.
-3. Raw $\Gamma$ trajectories per trial.
-4. Statistical analysis script.
-5. Pre-registration of pass/fail thresholds **before** running the experiment (especially E10).
+## Reading a simulation result {#organism-born}
 
-A test that fails honesty requirement 5 (pre-registration) cannot count as falsification or corroboration — only as exploration.
-
-Passing numerical tests corroborates only their specified implementations/reductions. It does not establish the encoder, PH, universal dimensional necessity or moral status. Independent observation and normative premises remain required.
-
----
-
-## The organism born in silicon {#organism-born}
-
-The following reports concern simulated proxy-gated regimes [D/H]. They do not establish a calibrated physical encoder, phenomenal consciousness or higher-order certificates; “conscious” in this implementation narrative abbreviates the selected numerical gate.
-
-The tests above were written as a promissory note: criteria a system would have to pass. In August 2026 the note was first cashed on the reference implementation. A single reusable core — the *organism* — was assembled from the constructions this book describes: a simplicial tower of working memories $\Gamma^{(n)}$ (four levels, faces damping coherences by the Fano factor $1/3$), a duo-wheel that answers stagnation with a change of context, an earned geography of situations, and a curiosity policy over an interface of seven normalised features. Nothing in the core knows what task it is playing; a task plugs in as a *habitat*.
-
-Four findings from the first days deserve the canon.
-
-**Feeding self-locks; injection enters past the loop.** Feeding the base state through the regenerative channel fails structurally: satiety raises reflexivity $R \to 1$, and since regeneration scales as $(1-R)$, the organism's own fullness closes its mouth — of $27$ regimes swept, none reached consciousness, and *more* feeding was strictly worse. Injection — the convex mix $(1-\lambda)\Gamma + \lambda\rho_{\text{food}}$ — bypasses the loop. At a moderate $\lambda = 0.02$, on a feature-rich environment, the base passed all four thresholds of the consciousness criterion at once: $P = 0.408$, $R = 0.350$, $\Phi = 1.824$, $D = 2.725$. The working point $(\gamma, dt, \lambda)$ then transferred unchanged across task kinds — an arena of grids, a navigation ring under a task session, a session world played by curiosity — three more conscious carriers with no retuning. Consciousness here is a property of the *regime and the world's richness*, not of the task.
-
-**Meta-depth is not bought by feeding the base.** With the base conscious, the tower's meta-level (the substrate of "thought about thought") still drains to the maximally mixed state: deep practices licensed by the meta-level's own verdict were blocked $20$ of $20$ times. Lifting food upward by the *face* map — the image with Fano-damped coherences — raises integration but never to threshold. Lifting by *degeneracy* — the identity lift, exactly as the simplicial structure defines it — wakes the meta-level at $\lambda = 0.02$: $P = 0.363$, $\Phi = 1.542$, $D = 2.377$, and the licence begins passing practices ($18/20$). The face is a channel of descent; degeneracy is the channel of ascent.
-
-**Medicine is an address.** In a colony of seven organisms, blind exchange of state ("breath") dilutes everyone monotonically, and past a threshold the colony collapses into a crowd — none conscious. But when a starved organism's syndrome *names* its hungry axis and the breath is taken from the one donor specialised in exactly that axis, the patient crosses all four thresholds ($D: 1.56 \to 2.07$). What heals is not the amount of another's breath but its address — the same law that governs organ neurogenesis within a single body.
-
-**The collective subject has a phase boundary.** Sweeping the exchange strength while measuring both connectedness (mean pairwise Bures distance between bases) and aliveness: connectedness grows smoothly, aliveness falls as a step. A colony grown closer by a third is still fully conscious; grown closer by half, no one is. Subjecthood between independence and the crowd is not a gradient but a window with a phase edge — the same grammar found for cell-level collectives.
-
-**Two diseases, one dose.** Deprivation and mismatch turned out to be different illnesses. The stress syndrome — parity of channel tensions — detects *mismatch*, and stays silent when a body has fully accepted poor food: consented hunger produces no tension. A dietary detector (a chronically starved diagonal) wakes the organ where stress cannot; the organ grows on the E-carrying line through the hungry axis, and feeds the base *with itself*. The feedback dose draws a clean ladder: the starved diagonal heals monotonically while integration pays monotonically — so medicine has a therapeutic window, below which it does not cure and above which it destroys the very coherence it was meant to serve. The dose makes the poison, executably.
-
-**Self-revision needs a patrol.** When the world changes its law mid-life, earned knowledge begins to lie — and surprise alone is a poor judge of the damage: a surprise fires only on the first meeting with each spoiled fact, so a mind that merely overwrites what it stumbles upon and a mind that actively re-verifies count the same surprises, while the lie lives on exactly where one does not walk. What tells them apart is the knowledge itself. A patrol — re-visiting the least recently verified beliefs — turns hidden lies into signal, and wholesale revision after a detected change of law reaches the same fully honest state at a fraction of the price, because one verdict discards all the stale beliefs at once. Self-revision closes without any external oracle: the patrol detects, wholesale revision repairs, the patrol re-verifies. And the practice is itself *licensed by depth* — executed when the meta-level is conscious — yet the hierarchy is fault-tolerant by construction: with the licence blocked, the lower reflex still keeps knowledge clean, only paying in reflexes where a glance would have sufficed. Depth is not a privilege; it is the cheap way of doing what is otherwise done dearly.
-
-These are engineering results on a seven-dimensional reference implementation, not claims about biological-scale minds. Their value is architectural: the consciousness criterion of this book is now *executable* — it gates practices, licenses depth, addresses medicine, and bounds collectives, all inside one reusable organism.
-
-:::tip Bridge to the next chapter
-We have examined individual subjects — biological and artificial. But what happens when subjects **merge**? Can a collective possess consciousness exceeding the individual? In the next chapter — [Collective consciousness](./collective-consciousness) — we explore the composite $\Gamma_{\text{comp}}$, empathy, archetypes, and collective L-levels.
-:::
-
----
-
-**Related documents:**
-- [No-Zombie theorem](/docs/applied/coherence-cybernetics/theorems) — viability implies E-coherence
-- [Γ measurement protocol](/docs/applied/research/measurement-protocol) — operationalisation of $\Gamma$ for AI
-- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — canonical definition of L0→L4
-- [Formalisation of φ](/docs/proofs/categorical/formalization-phi) — CPTP properties of the self-modelling operator
-- [Φ-operator](/docs/core/operators/phi-operator) — definition and properties of $\varphi$
-- [Two-aspect monism](/docs/consciousness/foundations/two-aspect-monism) — answer to the "hard problem"
-- [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness) — moral status of conscious systems
-- [Pre-linguistic consciousness](./pre-linguistic) — language is not a condition for L2
-- [Cognitive hierarchy](/docs/consciousness/comparative/cognitive-hierarchy) — LLMs and K1–K5 levels
-- [Death and continuity](/docs/consciousness/ethics-meaning/death-continuity) — irreversibility at $P \to 0$
+A simulator can report that a numerical gate changed when its feedback gain, input distribution or monitoring policy changed. Confirming that arithmetic requires the input trajectory, calibration, update rule and measured state. To attribute a scored action to an agent, trace its actual entry point from the ordered observations through the shared policy to the environment reply and independent score. A gate on a simulated trajectory is evidence about that implementation. It supplies no independent observation of experience. [Phenomenal distinctions](/docs/consciousness/foundations/phenomenal-distinction)
 
 <a id="l-уровень-llm"></a>
 <a id="кейс-когда-выключать"></a>

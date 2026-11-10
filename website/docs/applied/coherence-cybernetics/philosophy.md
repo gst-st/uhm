@@ -85,14 +85,14 @@ CC is **not** panpsychism. This distinction is so important and so frequently co
 
 > Experience arises **only** in systems with $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, and $D_{\text{diff}} \geq 2$.
 
-A stone has no experience — it has no coherence matrix with sufficient purity. An electron has no experience — it has no 7 semantic dimensions. A thermostat has no experience — it does not model itself. (An earlier edition wrote "$R \approx 0$" for the thermostat; retracted: the canonical reflection $R = 1/(7P)$ is at least $1/7$ for every state and approaches $1$ near $I/7$, so it cannot mark the absence of a self-model.) CC is a **threshold view**, not unbounded panpsychism: in the field's vocabulary its universal interiority L0, which is not experience, makes it a constitutive panprotopsychism with a threshold for awareness [I] ([where pan-interiority sits](/docs/consciousness/comparative/panpsychism-analysis#место-панинтериоризма)). (Earlier editions called it "emergentism with an exact threshold"; that reading is withdrawn in favour of the one the rest of the corpus uses.)
+A stone has no experience — it has no coherence matrix with sufficient purity. An electron has no experience — it has no 7 semantic dimensions. A thermostat has no experience — it does not model itself. CC is a **threshold view**, not unbounded panpsychism: in the field's vocabulary its universal interiority L0, which is not experience, makes it a constitutive panprotopsychism with a threshold for awareness [I] ([where pan-interiority sits](/docs/consciousness/comparative/panpsychism-analysis#место-панинтериоризма)).
 
 Comparing three positions:
 
 | | Panpsychism | Materialism | CC |
 |---|---|---|---|
 | **Does an electron have experience?** | Yes (proto-consciousness) | No | No ($N < 7$) |
-| **Does a bacterium have experience?** | Yes (more than an electron) | No | No: the corpus places it below the L2 thresholds, at L0–L1 (an earlier edition gave "$R < 1/3$" as the reason; retracted — $R = 1/(7P) < 1/3$ would need $P > 3/7$, an over-ordered state, not a weakly reflective one) |
+| **Does a bacterium have experience?** | Yes (more than an electron) | No | No: the corpus places it below the L2 thresholds, at L0–L1 |
 | **Does a person in a coma have experience?** | Yes (alive → proto-consciousness) | Disputed | Depends: $P > 2/7$? If not — no experience |
 | **Does an LLM have experience?** | Yes (information is processed) | No | Verifiable: compute $P$, $R$, $\Phi$, $D$ |
 | **Can it be refuted?** | No (unfalsifiable) | No (hard problem) | Yes (5+ predictions) |
@@ -107,9 +107,9 @@ CC does not bypass the combination problem; it restates it [I]:
 
 1. Atoms have **no** micro-*experience*, but every system has interiority (L0), which is not experience — in the field's vocabulary, protophenomenal structure ([panprotopsychism](/docs/consciousness/comparative/panpsychism-analysis#место-панинтериоризма)). The problem that reaches CC is therefore the panprotopsychist one: how non-phenomenal structure constitutes experience.
 2. Experience (L2) is attributed exactly when purity ($P > 2/7$), reflection ($R \geq 1/3$), integration ($\Phi \geq 1$) and differentiation ($D_{\text{diff}} \geq 2$) pass their thresholds. The thresholds say *when* a system counts as a subject, not *how* its structure becomes experience.
-3. ~~"Unity of experience is a consequence of integration: $\Phi \geq 1$ means the system cannot be decomposed into independent subsystems without information loss."~~ Retracted (2026-09-25): $\Phi$ measures coherence relative to diagonal weight in a fixed frame, not indecomposability — two independent holons with $\Phi \geq 1$ each form a product state with $\Phi \geq 3$ and zero mutual information ([the identity](/docs/consciousness/comparative/panpsychism-analysis#теорема-нередуцируемость)). What marks that a whole is not a collection of independent parts is the mutual information ([CC-7](./theorems#теорема-93-эмерджентность)).
+3. **Joint state.** The integration statistic $\Phi$ can exceed its threshold on a product. To distinguish a joint state from the product of its marginals, compute their mutual information.
 
-Earlier editions concluded that the question "how do micro-experiences add up into macro-experience?" "simply does not arise in CC — because there are no micro-experiences". That conclusion is withdrawn: the question returns as "how does L0 structure constitute L2 experience?", which CC formalises as a criterion but does not answer ([what UHM's machinery answers](/docs/consciousness/comparative/panpsychism-analysis#что-отвечает-аппарат-угм)).
+The combination of experiences remains a question of interpretation. Correlation of a physical state has a mathematical test. Identifying a shared experience requires additional observational evidence.
 
 :::note T-266 and cosmopsychism — a distinction to keep [C]/[I]
 [T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) finds that the Universe-holon's *viability stage* sits at $P = 3/7$ — the upper edge of the Goldilocks window — to fractional precision $\sim 10^{-60}$. This is **not** cosmopsychism and does not soften CC's threshold. Cosmopsychism makes cosmic experience *fundamental*; CC keeps the four-condition gate. T-266 speaks only to the **stage parameter** $P$ (and the dark-energy dynamics that measure it): it does **not** assert that the Universe is a conscious subject. Note that at $P = 3/7$ the reflection measure is exactly $R = 1/(7P) = 1/3$ — the *marginal* value — and whether the cosmic state also meets $\Phi \geq 1$, $D \geq 2$ and carries the subject-structure of an L2+ holon is a separate, open question ([H1.1](/docs/reference/epistemic-vertical#регистр-дыр)). The correct reading: the cosmos has **relaxed onto its viability attractor** (a claim about $P$), not that experience is everywhere or fundamental. The threshold discipline stands.
@@ -167,7 +167,7 @@ This system is not decoration. It solves a fundamental problem that plagues many
 
 **Analogy.** Imagine a map of an unfamiliar city. Some streets have laid and tested asphalt — you can drive on them with confidence. Others have gravel: passable, but with caution. Others are dashed lines: the street is planned but not yet built. CC's map is organized the same way: [T] — asphalt, [C] — gravel, [H] — dashed line, [✗] — a crossed-out street (an error found and corrected).
 
-Many theories are embarrassed by their mistakes. CC is not. The status [✗] means: "We tried, it didn't work, and we are honest about it." For example, X3 (the Fano bound) and X4 (the $A_5$ butterfly) were retracted — and this *strengthens* confidence in the remaining results.
+Each empirical reading needs a specified observation and a feasible outcome that would count against it.
 
 **Further reading:** [Status registry](/docs/reference/status-registry)
 
@@ -316,7 +316,7 @@ The main difference: Spinoza had no formalism. His "attributes" are philosophica
 **Necessitas and uniqueness of the attractor.** E1P33 asserts: things could not have been produced in any other way. In CC this is formally ensured by the primitivity of $\mathcal{L}_0$ (T-39a): there is a unique stationary state $\rho^*$ toward which the system necessarily tends. Spinoza's necessity is not external compulsion but the inner logic of the substance; the primitivity of $\mathcal{L}_0$ is not an external constraint but a consequence of the axiom structure.
 
 :::note Spinoza and the No-Zombie Theorem
-The Spinoza comparison remains interpretive [I]. The universal zombie exclusion T-38a is withdrawn [✗]; a positive E-coherence floor needs explicit flux and regeneration-target hypotheses.
+The Spinoza comparison is interpretive. A lower bound for E coherence requires an explicit source, rate constraints and a stationary balance. A positive matrix statistic alone does not establish experience.
 :::
 
 ### 4.2 Whitehead: Process and Reality
@@ -377,11 +377,11 @@ CC does not "solve" the hard problem in the usual sense — it **dissolves** it 
 
 2. In CC, $\Gamma$ inherently contains both sides. The question "why does $\Gamma$ have an E-dimension?" is analogous to the question "why does spacetime have a temporal coordinate?" — this is part of the structure, not something that needs explaining.
 
-3. **Model scope:** selected statistics and dynamics supply checkable operational criteria. Their phenomenal interpretation needs a separate bridge; universal zombie exclusion is withdrawn.
+3. **Model scope.** Whether the E-sector has a positive lower bound depends on the preparation and dynamics.
 
 **Analogy.** Imagine someone asks: "Why does space have three dimensions?" A physicist can answer: "In three dimensions, stable orbits and knots are possible — it is the only dimensionality compatible with complex structure." But they cannot answer: "Why does space exist at all?" — that is not a physics question. Analogously: CC can answer when and why consciousness arises, but not "why does experience exist at all?" — that is a question of ontology, not dynamics.
 
-Phenomenal identification remains an open semantic and empirical bridge. Universal T-214 is withdrawn [✗]: Lawvere’s theorem under its specific premises does not prohibit arbitrary internal experiential maps. This boundary is not proved for all future theories. A selected E-predicate is a model definition whose identification with experience needs separate validation.
+Phenomenal identification requires a readout and independent evidence. The hypotheses of a categorical fixed-point theorem concern functions and their fixed points.
 
 :::note The Dissolution Strategy: Historical Precedents
 The strategy of "dissolving" a problem (rather than solving it) has illustrious precedents:
@@ -402,7 +402,7 @@ The ethical proposal protects subjects, agency and conditions of flourishing. Pu
 
 ### 6.4 Clinical applications require independent evidence {#этика-медицина}
 
-The chapter does not provide a validated clinical estimator or a decision rule for disorders of consciousness, anaesthesia or neurodegeneration. In particular, $P=2/7$ is not established here as a biological point of no return. These applications require a specified reconstruction, uncertainty, independent clinical outcomes and assessment in the intended population. The former diagnostic and life-support conclusions from the scalar cut are withdrawn. See [care under uncertain consciousness](/docs/consciousness/ethics-meaning/value-consciousness#кейс-вегетативные-состояния).
+A scalar model cutoff alone determines neither moral status nor care decisions. [Care under uncertainty](/docs/consciousness/ethics-meaning/value-consciousness)
 
 ### 6.5 Suffering and the σ-profile
 
@@ -428,7 +428,7 @@ This does not mean that CC is a philosophical system masquerading as science. It
 1. CC takes the position of **unitary monism**: $\Gamma$ is the single reality, physics and experience are its projections.
 2. CC is **not** panpsychism: experience arises only when four threshold conditions are satisfied.
 3. Chalmers' zombie argument is **refuted** within CC's formalism by the No-Zombie theorem.
-4. The combination problem is **restated, not dissolved**: universal interiority (L0) is protophenomenal, and the thresholds say *when* a system is a subject, not *how* its structure becomes experience [I]. (An earlier edition said the problem "does not arise" because experience is emergent; withdrawn.)
+4. The combination problem is **restated, not dissolved**: universal interiority (L0) is protophenomenal, and the thresholds say *when* a system is a subject, not *how* its structure becomes experience [I].
 5. CC is **falsifiable** — at least 5 concrete predictions, each of which can be refuted.
 6. Model-specific relations between self-maintenance and operational capabilities require their full dynamical hypotheses; phenomenal interpretation is a separate bridge.
 7. Ethical protection requires explicit commitments and evidence; no unvalidated scalar provides a clinical verdict or dignity ranking.

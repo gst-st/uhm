@@ -1,16 +1,26 @@
 ---
 sidebar_position: 1
 title: Introduction
-description: Unitary Holonomic Monism — a formal theory of reality and consciousness
+description: A mathematical research programme on state dynamics, physical measurements and interpretations of experience.
 ---
 
 # Unitary Holonomic Monism
+
+<a id="a-formal-theory-of-reality-and-consciousness"></a>
+<a id="etymology-of-the-name"></a>
+<a id="research-program"></a>
 
 UHM is a mathematical research programme on organization, state dynamics and consciousness. It proposes a seven-role numerical model together with a psychophysical interpretation. Its verified constructions, chosen definitions and unverified physical bridges have different statuses; the [mathematical kernel](/docs/reference/mathematical-kernel) and [premise ledger](/docs/reference/premises) make these distinctions explicit.
 
 Start with the [operational construction of states and composition](/docs/core/foundations/operational-processes) for the reconstruction before QG.
 
 ## What is mathematically specified
+
+<a id="coherence-matrix-γ-object-of-category-mathcalc"></a>
+<a id="five-structural-properties-of-the-sole-primitive-ω⁷"></a>
+<a id="from-the--topos-mathrmsh_inftymathcalc"></a>
+<a id="takes-as-primitive-categorical-gap"></a>
+<a id="terminal-object-t"></a>
 
 For a chosen finite dimension $N$, the state space is
 
@@ -23,6 +33,8 @@ Linear CPTP channels form a category of quantum systems. Pairs $(\mathcal H,\Gam
 Choosing this topos as a common language or ontological framework is [D/I]. Its existence does not select $N=7$, a numerical self-model, a clock, a Hamiltonian or phenomenal experience. The subobject classifier is a sheaf of opens, not seven basis projectors.
 
 ## Seven roles and their scope
+
+<a id="7-dimensions-of-the-holonom"></a>
 
 The native model chooses $\mathcal H=\mathbb C^7$ and a labelled orthonormal frame [D]:
 
@@ -42,6 +54,9 @@ For a specified positive octonionic three-form, its symmetry group is $G_2$ [T].
 
 ## Central quantities
 
+<a id="central-concepts"></a>
+<a id="purity"></a>
+
 The native numerical state has $7^2-1=48$ real parameters. Its purity and the model's canonical reflection scalar are
 
 $$
@@ -60,6 +75,8 @@ One has $d\geq1/7$, $0\leq\Phi\leq6$, and $\Phi\leq7P-1$ [T]. A pure coordinate 
 The orbit quotient by a specified $G_2$ action has **generic** dimension $48-14=34$ [T on the principal stratum]. It is not a universal count of physical parameters: stabilizers change on exceptional strata, and the dynamics may distinguish frames. A unique encoder of physical systems is not inferred from this dimension count or from uniqueness of a forward flow; [reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) and an empirical measurement bridge are required.
 
 ## Self-models, dynamics and viability
+
+<a id="evolution-equation"></a>
 
 Four constructions are distinguished in [formalization of φ](/docs/proofs/categorical/formalization-phi): a slice-category support reflector, a numerical finite-step self-model $M$, an asymptotic limit map when convergence is proved, and a linear CPTP reset. Their types and hypotheses differ. Idempotence alone proves neither an adjunction nor complete positivity.
 
@@ -82,6 +99,8 @@ gives $P>2/7$ after choosing the **structural-majority convention** $\|\Gamma-I_
 
 ## Consciousness and interiority
 
+<a id="interiority-hierarchy"></a>
+
 AP, PH, QG and viability are [declared requirements and bridges](/docs/core/foundations/axiom-septicity). Nonzero occupancy of the $E$ axis is a scalar condition; it does not automatically yield phenomenality. That rank-one axis is not a tensor register with a nontrivial reduced density matrix. An extended register and its readout must be specified if experiential entropy or ray geometry is used.
 
 The proposed functional-access predicate combines majority, reflection, integration and a declared differentiation measure. The scalar cuts and their interpretation as consciousness criteria are model choices [D/I/H], not empirical consequences of a topos. The first two inequalities, $P>2/7$ and $R\geq1/3$, give $P\in(2/7,3/7]$ [T]; this interval alone does not guarantee integration, differentiation or experience.
@@ -94,44 +113,28 @@ A chosen seven-by-six tensor extension has dimension $42$. A specified section a
 
 Page–Wootters and Feynman–Kitaev clock constraints are additional model input. A finite periodic register does not by itself give an unbounded time line. A specified singular complex is an $\infty$-groupoid [T]; its invertible paths do not derive the physical direction of irreversible dynamics.
 
-Gauge-group and algebraic identities are assessed separately from their identification with observed fields, particles or spacetime. The programme requires physical bridge premises, fitted couplings and operational tests. It currently supplies no derivation of all observed physics or experience from zero assumptions.
+A specified network and transfer protocol can yield a common distance for calibrated probes. Identifying that distance with physical spacetime, deriving gravitational dynamics and selecting the Standard Model fields all require further physical input. The link to felt experience likewise needs independent evidence. [Verified network results](/docs/reference/network-results) · [Physics](/docs/physics/overview)
 
 ## Reading the results
 
-**[T]** means a theorem under its stated assumptions, **[D]** a definition or chosen model, **[C]** a conditional conclusion, **[H]** a hypothesis, **[I]** an interpretation, **[Pr]** a research programme, and **[✗]** a withdrawn statement. A theorem inside a chosen numerical model is not automatically a theorem about every physical or conscious system. Historical claims corrected during the audit are recorded at their original links.
+<a id="formal-results"></a>
+<a id="key-results"></a>
+<a id="what-the-theory-derives"></a>
+
+**[T]** means a theorem under its stated assumptions, **[D]** a definition or chosen model, **[C]** a conditional conclusion, **[H]** a hypothesis, **[I]** an interpretation, **[Pr]** a research programme, and **[✗]** a withdrawn statement. A theorem inside a chosen numerical model is not automatically a theorem about every physical or conscious system.
 
 ## Navigation
+
+<a id="theory-structure"></a>
 
 | Start here | Contents |
 |---|---|
 | [Mathematical kernel](/docs/reference/mathematical-kernel) | Types, proven constructions and bridge requirements |
 | [Premise ledger](/docs/reference/premises) | Inputs and dependencies |
-| [Categorical formalism](/docs/proofs/categorical/categorical-formalism) | Processes, sites, interpretation and corrected claims |
+| [Categorical formalism](/docs/proofs/categorical/categorical-formalism) | Processes, sites, interpretation and scope |
 | [Coherence matrix](/docs/core/dynamics/coherence-matrix) | State coordinates and quantities |
 | [Self-model φ](/docs/core/operators/phi-operator) | Numerical models, bounds and fixed points |
 | [Representation theorem](/docs/proofs/categorical/uniqueness-theorem) | Conditional rigidity and informational completeness |
 | [Measurement protocol](/docs/applied/research/measurement-protocol) | Calibration, interventions and observation limits |
 | [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) | Functional criteria and interpretations |
 | [Status registry](/docs/reference/status-registry) | Theorem and hypothesis audit |
-
-## Historical introductory links
-
-The statements at these addresses now have the scope and statuses specified above.
-
-<a id="7-dimensions-of-the-holonom"></a>
-<a id="a-formal-theory-of-reality-and-consciousness"></a>
-<a id="central-concepts"></a>
-<a id="coherence-matrix-γ-object-of-category-mathcalc"></a>
-<a id="etymology-of-the-name"></a>
-<a id="evolution-equation"></a>
-<a id="five-structural-properties-of-the-sole-primitive-ω⁷"></a>
-<a id="formal-results"></a>
-<a id="from-the--topos-mathrmsh_inftymathcalc"></a>
-<a id="interiority-hierarchy"></a>
-<a id="key-results"></a>
-<a id="purity"></a>
-<a id="research-program"></a>
-<a id="takes-as-primitive-categorical-gap"></a>
-<a id="terminal-object-t"></a>
-<a id="theory-structure"></a>
-<a id="what-the-theory-derives"></a>

@@ -6,7 +6,7 @@ description: "A periodic lattice weight, its theta sum at S₀ = 20, and the sco
 
 # Zeta Regularisation with Fano Character
 
-This is a calculation for a specified lattice model. Its inputs are 21 independent integer labels, a Euclidean quadratic cost $S_0|n|^2$, a phase of period seven and a common coefficient on seven oriented Fano lines. The operational reconstruction supplies no spectrum of vacuum fluctuations or physical normalization for this sum. The former claims of a rigorous cosmological-constant budget and of particle predictions from this calculation are withdrawn. [Operational results](/docs/reference/network-results) · [Historical vacuum-energy proposal](/docs/physics/gravity/cosmological-constant)
+The model takes 21 independent integer labels, a Euclidean cost $S_0|n|^2$, a phase of period seven and a common coefficient for seven oriented Fano lines. It gives two calculable quantities: the relative change of a weighted Gaussian sum and the zeros of its analytically continued zeta function. A physical vacuum-energy calculation requires a spectrum and a normalization for a specified field. [Spectral assumptions](/docs/physics/gravity/cosmological-constant)
 
 ## The seven three-dimensional blocks
 
@@ -21,7 +21,7 @@ Absolute convergence for $S_0>0$ justifies factorisation. Reversing the sign of 
 
 ### Which symmetry fixes the polynomial?
 
-The Fano plane over $\mathbb F_2$ has collineation group $GL(3,2)$. A line corresponds to a two-dimensional subspace. Its invertible linear maps permute the three nonzero vectors as $S_3$ and extend to the whole space by fixing a complementary vector. Thus the three edge labels of a line can be permuted. In the span of $xy,yz,zx$ the invariant subspace is exactly the multiples of $B$. If squares are allowed, $x^2+y^2+z^2$ is another invariant. Cross-line terms were excluded at the outset. The continuous group $G_2$ preserves octonion multiplication and in general mixes the seven chosen axes. The previous assertion of uniqueness under full $G_2$ used a finite incidence symmetry and a restricted polynomial space. [Octonion structure](/docs/physics/gauge-symmetry/g2-structure)
+The Fano plane over $\mathbb F_2$ has collineation group $GL(3,2)$. A line corresponds to a two-dimensional subspace. Its invertible linear maps permute the three nonzero vectors as $S_3$ and extend to the whole space by fixing a complementary vector. Thus the three edge labels of a line can be permuted. In the span of $xy,yz,zx$ the invariant subspace is exactly the multiples of $B$. If squares are allowed, $x^2+y^2+z^2$ is another invariant. Cross-line terms were excluded at the outset. The continuous group $G_2$ preserves octonion multiplication and in general mixes the seven chosen axes. The uniqueness result concerns the specified polynomial space and its finite incidence symmetry. [Octonion structure](/docs/physics/gauge-symmetry/g2-structure)
 
 ## Direct summation at the chosen value $S_0=20$
 
@@ -35,7 +35,7 @@ $$
 \end{aligned}
 $$
 
-At $S_0=20$ the relative reduction including the zero vector is about $1.34\times10^{-16}$. The earlier rounded ratio above one violates the triangle inequality. Excluding the zero vector in both sums gives $1-|\Theta_M-1|/(\Theta_0-1)\simeq1.55\times10^{-9}$. Both ratios are near unity. This refutes the proposed nine- and fifteen-order multiplicative suppressions **at this input value**. A uniform Gauss sum over the residue classes describes a different limit.
+At $S_0=20$ the relative reduction including the zero vector is about $1.34\times10^{-16}$. The triangle inequality bounds the modulus ratio above by one. Excluding the zero vector in both sums gives $1-|\Theta_M-1|/(\Theta_0-1)\simeq1.55\times10^{-9}$. Both ratios are near unity. This refutes the proposed nine- and fifteen-order multiplicative suppressions **at this input value**. A uniform Gauss sum over the residue classes describes a different limit.
 
 ## Poisson summation and analytic continuation {#тета-плюс-функциональное-уравнение}
 
@@ -66,18 +66,8 @@ Z'_\Phi(-2)=\frac{2}{\pi^2}\Lambda_\Phi(-2)
 =\frac{2i}{\pi^2}\,7^{29/2}\Lambda_{\Phi^*}(25/2).
 $$
 
-The dual series at $25/2$ is absolutely convergent. The old estimate $2.6\times10^{10}$ used the wrong power of seven and an uncontrolled first-shell truncation. It is withdrawn.
+The dual series at $25/2$ converges absolutely. A numerical estimate using its first few shells needs a bound on the remaining tail.
 
 ## What would connect this sum to vacuum energy?
 
-One would need a physical operator with this spectrum and weights, its multiplicities and statistics, dimensional normalization, and a renormalization condition that connects the resulting finite term to a measured quantity. Evaluating $\mu^{2s}Z_\Phi(s)$ at $s=-2$ gives zero for any fixed positive $\mu$. A derivative can enter with an independently justified pole or determinant prescription. No such prescription is supplied here. The former “41.5 orders” and the “79-order deficit” therefore have no established physical status. Axion masses, flavour mixing and dark-matter scales do not follow from the lattice sum. [Historical budget](/docs/proofs/gap/lambda-budget) · [Proposed topological term](/docs/physics/cosmology-phys/berry-phase) · [Strong-CP retraction](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)
-
-## Cross-References
-
-- [Coherence matrix](/docs/core/dynamics/coherence-matrix)
-- [Gap semantics: 49 elements](/docs/physics/dual-aspect/gap-semantics)
-- [7 dimensions](/docs/core/structure/dimensions)
-- [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure)
-- [Cosmological constant](/docs/physics/gravity/cosmological-constant)
-- [Berry phase](/docs/physics/cosmology-phys/berry-phase)
-- [$\Lambda$ budget](/docs/proofs/gap/lambda-budget)
+A field model has to specify the operator with this spectrum, multiplicities and weights, the dimensional scale and a renormalization condition connecting its finite term to an observable. Evaluating $\mu^{2s}Z_\Phi(s)$ at $s=-2$ gives zero for every fixed positive $\mu$. A derivative can enter through a separately justified determinant or a compensating pole. Which physical field, if any, has the prescribed periodic weight is open. [Vacuum-energy models](/docs/physics/gravity/cosmological-constant) · [Coherence measurements](/docs/physics/dual-aspect/gap-semantics)

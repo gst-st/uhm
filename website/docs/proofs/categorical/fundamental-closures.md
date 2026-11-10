@@ -1,35 +1,12 @@
 ---
 sidebar_position: 5
 title: "Fundamental Closures (T-210..T-223)"
-description: "Foundational theorems closing the last mathematical gaps of UHM: strict Φ-monotonicity, PhysTheory coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε_eff, L3 tricategory coherence, Kan complex, sector-product SUSY, no-reduction F₄→G₂, UHM's relationalist route through the List/DeBrota no-go results, the resource geometry of the viable window (no single MRQT optimum), Putnam-triviality foreclosure, plus computational programmes for Λ and π_bio."
+description: "Mathematical constructions, assumptions and tests of their physical and phenomenal interpretations."
 ---
 
-# Fundamental Closures — T-210..T-223
+# Categorical constructions and their interpretation
 
-This document contains **fourteen foundational theorems** T-210 through T-223 that close the last mathematical and categorical gaps of the UHM axiomatic framework, together with two computational-programme specifications (Λ-deficit numerical minimisation and π<sub>bio</sub> measurement protocol). Each theorem is given with a complete rigorous proof; cross-references from natural-home documents (Yukawa hierarchy, depth tower, two-aspect monism, etc.) point back to the canonical proofs collected here.
-
-:::info Summary table
-| Theorem | Content | Method | Status |
-|---|---|---|---|
-| T-210 | Topology-refinement implication withdrawn; selected pair-score identity survives | [✗] former universal claim | See corrected section above |
-| **T-211** | **PhysTheory** is an $(\infty,1)$-category with all higher coherences | Grothendieck construction of $E \mapsto \mathrm{Fun}(B\mathbb R, \mathrm{Alg}(E))$ over $\mathbf{Topoi}_\infty$ (HTT 3.2) | [T] (corrected 2026-09-25: the full embedding into $\mathbf{Topoi}_\infty$ is retracted [✗]; [C at T-119] before) |
-| **T-212** | The U-projection $X \mapsto \frac17\operatorname{Tr}(X)\mathbf{1}$ is the $G_2$-twirl (T-212′); its former identification with the rheonomy modality **Rh** is retracted | Schur's lemma + Haar measure; Rh preserves global points | [T] for T-212′; [✗] for "Rh explicit" (it was [C at the differential cohesion of the UHM site (T-185) and a solid-cohesive extension], and [T] before) |
-| T-213 | Representability and 138-bit bound withdrawn; minimal Kraus count equals Choi rank | [✗] former universal claim | See corrected section above |
-| T-214 | Internal-bridge no-go withdrawn; phenomenal identification remains an input | [✗] former universal claim | See corrected section above |
-| **T-215** | Cross-layer identity convention for fractal towers | Choice of $\iota_\mathrm{min}$ / $\iota_\mathrm{max}$ criterion | [T]+[D] |
-| **T-216** | Closed-form analytical ε<sub>eff</sub> | Symbolic $V_\mathrm{Gap}$ minimisation | [C at (SV)] (the structure was listed as [T] until 2026-09-25) |
-| **T-217** | 3-truncation construction [T]; operational L3 bridge [Pr] | Truncation reflector / fundamental 3-groupoid | Old forced K=4 and universal threshold proof [✗]; corrected §11 |
-| **T-218** | Singular-classifying-space Kan construction [T] | Topological horn retraction | Cognitive ceiling / 3-coskeleton claim [✗]; realization bridge [Pr] |
-| **T-219** | Λ SUSY-suppression via sector product | ε<sup>12</sup> = ε<sup>4·3</sup> from 3-sector decomposition | [H] (was [T at T-64] until 2026-09-25) |
-| **T-220** | Exact comparison obstructions | No nontrivial complex-linear $F_4$ action on $\mathbb C^7$; $\mathbb CP^6$ and $\mathbb OP^2$ are not homotopy equivalent | [T at these requirements]; universal functor prohibition withdrawn [✗] |
-| **T-221** | Local sheaf equality and interpretive scope | Joint local equality iff both global sections restrict to the same local section; distinct globals can agree locally | [T at specified sheaf/site]; universal first-person prohibition withdrawn [✗], interpretation [I] |
-| **T-222** | Resource geometry of the viable window (restated 2026-09-26; the former "MRQT-completeness: Lawvere fixed point = Pareto resource optimum" is [✗]) | Majorization on the purity window: no optimum inside, Pareto set on $P = 2/7$, $F_1$ and $F_\infty$ minimised by different spectra, no terminal object | [T] |
-| T-223 | Universal Putnam foreclosure withdrawn; RI-conditional invariant comparison survives | [✗] former universal claim | See corrected section above |
-
-Plus **computational programmes**: Λ-deficit numerical specification (§8), π<sub>bio</sub> measurement protocol (§9).
-:::
-
----
+Mathematical constructions, assumptions and tests of their physical and phenomenal interpretations.
 
 ## 1. T-210: Topology refinement versus a pair score {#t-210}
 
@@ -47,14 +24,6 @@ It is strict exactly when a newly included pair has nonzero coherence. This foll
 
 ## 2. T-211: PhysTheory is an $(\infty,1)$-category — the Grothendieck construction over $\mathbf{Topoi}_\infty$ {#t-211}
 
-:::warning Corrected 2026-09-25 — what the earlier version of this section got wrong
-The section stated that $\mathbf{PhysTheory}$ is a **full $(\infty,1)$-subcategory** of $\mathbf{Topoi}_\infty$, via $\iota(E, \mathcal A, D) := \mathbf{Sh}_\infty(\mathrm{Spec}(\mathcal A), J_\mathrm{Bures})$, fully faithful "by T-173" (the universal T-173 is now withdrawn [✗]), with coherences "inherited via HTT 5.2.7"; it was [C at T-119] because Step 1 invoked the Connes reconstruction of T-119. The recheck of Step 1 found that T-119 was never the issue:
-1. **Step 1 did not need T-119.** Every object of $\mathbf{PhysTheory}$ ([ToE embeddings §4.2](/docs/proofs/physics/toe-embeddings#категория-phys)) already carries its $\infty$-topos $E$; nothing has to be reconstructed from $\mathcal A$. The assignment $\mathcal A \mapsto \mathbf{Sh}_\infty(\mathrm{Spec}\,\mathcal A, J_\mathrm{Bures})$ is not even well typed — the Bures coverage lives on a state space $\mathcal D(\mathbb C^N)$, not on the spectrum of an algebra — and it forgets $E$.
-2. **"Fully faithful" is false [✗].** Faithfulness was argued from T-173, which is a statement about *objects* (rigidity of one primitive), not about morphisms. Any functor $\mathbf{PhysTheory} \to \mathbf{Topoi}_\infty$ that remembers only the topos forgets the algebra map $\alpha$, and two different $\alpha$ over one geometric morphism exist (part (c) below). So $\mathbf{PhysTheory}$ is not a full subcategory of $\mathbf{Topoi}_\infty$.
-3. **The coherence argument cited the wrong result.** HTT §5.2.7 concerns localisations; and a full subcategory needs no presentability to inherit coherences — every full simplicial subset of a quasicategory is a quasicategory. The size remark "finite NCG algebras range over a proper class of Wedderburn forms" is also false: finite-dimensional $C^*$-algebras form a set up to isomorphism.
-
-What survives, and is proved below without T-119, T-173 or T-174: $\mathbf{PhysTheory}$, with the objects and morphisms of T-174, **is** an $(\infty,1)$-category with all higher coherences, and its mapping spaces are computed fibrewise over geometric morphisms. The status moves [C at T-119] → **[T]** for this statement; the full-embedding claim is retracted [✗].
-:::
 
 :::tip Theorem T-211 ($\mathbf{PhysTheory}$ is an $(\infty,1)$-category) [T]
 
@@ -82,7 +51,7 @@ Numerical check: `check_core_numbers.py`, `test_phystheory_forgets_to_topoi_unfa
 
 **Dependencies**: the definition of $\mathbf{PhysTheory}$ in ToE embeddings §4.2 (objects and morphisms only); Lurie HTT Def. 2.4.2.1, Prop. 2.4.4.2, Thm. 3.2.0.1, §6.1.3, Def. 6.3.1.5; Lurie HA §2.4.1–2.4.2, §4.1. *Removed 2026-09-25:* T-119 (not used — each object carries its topos), T-173 (a statement about objects, which cannot give faithfulness), T-174 (its universal property is not used), T-178 (retracted as a derivation), HTT 5.2.7 and 5.5.2.9.
 
-*Status history:* [T] with "full embedding verified" until the first audit; [C at T-119] from 2026-09-11 (in the registry row until 2026-09-25); [T] since 2026-09-25 for the corrected statement (a)–(c), the full-embedding claim [✗].
+
 
 ---
 
@@ -102,14 +71,6 @@ $\mathcal{T}$ is a unital, trace-preserving, completely positive idempotent, it 
 
 The formula is not specific to $G_2$: every subgroup of $U(7)$ acting irreducibly on $\mathbb{C}^7$ (for instance $SO(7)$ or $U(7)$ itself) has the same twirl. The reading of $\mathcal{T}$ as the U-dimension ("Unity = aggregation over the seven dimensions") is an interpretation [I].
 
-:::warning Retracted [✗] (2026-09-25): "T-212 — the rheonomy modality Rh, explicitly $\mathrm{Rh}(F)(\Gamma) = \operatorname{Tr}(F(\Gamma))\cdot\mathbf{1}$"
-An earlier version stated, first as [T] and then as [C at the differential cohesion of the UHM site (T-185) and a solid-cohesive extension], that in UHM's differentially cohesive ∞-topos $\mathbf{Sh}_\infty(\mathcal C_7, J_B)$ the rheonomy modality is the right adjoint of a "bosonic-grade forgetful" functor $\flat_{\mathrm{bos}}$, with the explicit formula $\mathrm{Rh}(F)(\Gamma) := \operatorname{Tr}(F(\Gamma))\cdot\mathbf{1}_{\mathcal C_7}$, and that the seven modalities $\mathrm{Id}, \Pi, \flat, \Im, \sharp, \&, \mathrm{Rh}$ map bijectively to O, A, S, D, L, E, U. The identification with Rh is false, and the condition it was placed under does not rescue it:
-1. **Rh preserves points.** In solid cohesion (the 2017 version of Schreiber's DCCT, site of its Definition 6.6.13; D. J. Myers, M. Riley, *Commuting Cohesions*, arXiv:2301.13780, §6.3) the rheonomy modality acts by $\mathrm{Rh}\,X(C^\infty(\mathbb{R}^n)\otimes W\otimes\Lambda\mathbb{R}^q) = X(C^\infty(\mathbb{R}^n)\otimes W)$. At the point ($n = 0$, $W = \mathbb{R}$, $q = 0$) this gives $\mathrm{Rh}\,X(\mathbb{R}^0) = X(\mathbb{R}^0)$: the unit $X \to \mathrm{Rh}\,X$ is a bijection on global points. The state space $\mathcal{D}(\mathbb{C}^7)$ is an object of the differentially cohesive $\mathfrak{T}_{\mathrm{UHM}}$ ([T-185 (ii′)](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime)); in any solid-cohesive extension of it, Rh keeps every state $\Gamma$ where it is, while the formula sends it to $I/7$.
-2. **The formula is not a modality.** A modality acts on objects of the topos; "$\operatorname{Tr}(F(\Gamma))$" treats the values of a sheaf as matrices, which is typed only for an operator-valued function. The old Step 1 identified the bosonic part with $G_2$-invariants, $\flat_{\mathrm{bos}}(F) = F^{G_2}$; in solid cohesion the bosonic part is the even part of a supergeometric object, and $G_2$ plays no role. The old Step 2 equated $\int_{G_2} F(g\cdot\Gamma)\,dg$ (an average of the argument) with $\operatorname{Tr}(F(\Gamma))\cdot\mathbf{1}$ (a trace of the value) "by the Weyl integration formula"; the two are different operations, and neither is Rh.
-3. **Rh is not in the list of differential cohesion.** A differentially cohesive ∞-topos carries $\mathrm{Id}$, $\Pi \dashv \flat \dashv \sharp$ and $\mathrm{Red} \dashv \Im \dashv \&$ — seven, pairwise distinct on $\mathfrak{T}_{\mathrm{UHM}}$ ([T-185 (ii′), item 4](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime)). Solid cohesion adds a third triple $\rightrightarrows \dashv \rightsquigarrow \dashv \mathrm{Rh}$, giving ten. The seven of the old table drop Red and borrow Rh.
-
-What the old theorem wanted — an explicit, canonical projection for the U-dimension — is Theorem T-212′ above, proved without any cohesion. The old table of modalities and dimensions is kept below as a reading [I], with Red in the place Rh occupied.
-:::
 
 **Modalities and dimensions — a reading [I].** With the corrected list of differential cohesion ([T-185 (ii′)](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime)):
 
@@ -161,54 +122,9 @@ The universal analytical $\varepsilon_{\mathrm{eff}}$ formula is withdrawn. With
 
 A conditional computational task remains: specify Hermitian D, a potential with independent coefficients, density constraints and a readout $\varepsilon(\rho)$; then locate stationary points or global minima with error bounds. A continuous potential on the compact density domain attains its minimum [T], but uniqueness or agreement with the measured parameter does not follow. A numerical substitution or fit does not derive a parameter from the axioms.
 
-## 8. Λ-deficit numerical programme specification {#lambda-programme}
+## 8. Identifying a volume coupling {#lambda-programme}
 
-The cosmological-constant deficit (~78 orders before minimisation) reduces to a **finite numerical computation** on the $G_2$-reduced phase space $(S^1)^{21}/G_2$. This section provides an explicit computational-programme specification.
-
-### 8.1. Problem statement
-
-Compute the minimum of the full Gap potential
-
-$$
-V_\mathrm{Gap}(\theta) = V_2 + V_3 + V_4, \qquad \theta \in (S^1)^{21}/G_2
-$$
-
-with $G_2$-gauge-fixed coordinates and evaluate $\Lambda_\mathrm{CC}$ from the spectral action formula (T-65 [T]):
-
-$$
-\Lambda_\mathrm{CC} = f_0 \Lambda^4\bigg|_{\theta^*} - \frac{1}{2}\zeta'_{H_\mathrm{Gap}}(0)\bigg|_{\theta^*},
-$$
-
-where $\theta^*$ is the global minimum.
-
-### 8.2. Discretization
-
-- Discretize each $S^1$ factor with $N = 128$ lattice points. After $G_2$-reduction ($21 - 14 = 7$ independent dimensions), the effective lattice has $N^7 = 128^7 \approx 5.6 \times 10^{14}$ sites.
-- Use $G_2$-invariant measure (Weyl integration formula) for gauge-fixing.
-- Action: Wilson-type lattice discretization of $V_\mathrm{Gap}$ with finite-difference Laplacian.
-
-### 8.3. Monte Carlo / HMC
-
-- Algorithm: Hybrid Monte Carlo (HMC) with $G_2$-invariant kernel.
-- Thermalization: $10^4$ sweeps.
-- Measurement: $10^4$ independent configurations, blocked to control autocorrelation.
-- Observables: $\langle V_\mathrm{Gap}\rangle$, $\langle \theta^*\rangle$, $\langle\zeta'_{H_\mathrm{Gap}}(0)\rangle$.
-
-### 8.4. Cost estimate
-
-- Total: $10^{14}$ sites × $2 \times 10^4$ sweeps × $10^3$ flops/site-sweep = $2 \times 10^{21}$ flops.
-- On a cluster at $10^{15}$ flops/s (modern HPC, ~1000 GPU-nodes): 2×10⁶ s ≈ **23 CPU-days**.
-- Single-node estimate (consumer GPU, $10^{13}$ flops/s): ~**6 CPU-years**.
-
-### 8.5. Output validation
-
-- Must reproduce known perturbative suppression (10^{−41.5}) at tree level.
-- Must give unique minimum (verified by Hessian positivity — T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))).
-- Numerical $\Lambda$ must agree with observed $\sim 10^{-120}$ within ±5 orders (stricter than current ±10).
-
-**Status**: [C at (SV)] → **numerical programme fully specified**. Total resource cost < $10^5$ USD on cloud HPC. No theoretical obstacle remains.
-
----
+Before sampling a network ensemble, specify a response that distinguishes an additive energy shift. The required contrast and its conditions are given in the [vacuum-energy criterion](/docs/proofs/gap/lambda-budget). More samples from a shift-invariant distribution cannot identify its zero.
 
 ## 9. π<sub>bio</sub>: observation model and identification {#pi-bio-protocol}
 
@@ -269,30 +185,9 @@ with the independently computed PCI verdict on the same sessions. $\Phi\geq1$ al
 
 ---
 
-## 10. Summary table
+## 10. Reading the results
 
-| # | Theorem / Protocol | Previous status | New status | Closure method |
-|---|---|---|---|---|
-| T-210 | Topology-refinement implication withdrawn; selected pair-score identity survives | [✗] former universal claim | See corrected section above |
-| T-211 | PhysTheory higher coherences | [T] deferred to HTT | **[T]** as the Grothendieck construction (2026-09-25; read "[T] verified" by a full embedding, then [C at T-119]; the full embedding [✗]) | Cartesian unstraightening, HTT 3.2 |
-| T-212 | U-projection / "Rh modality explicit" | [T] unnamed (T-185) | **[T] $G_2$-twirl (T-212′)**; the identification with Rh [✗] (read "[T] defined", then "[C] defined", until 2026-09-25) | Schur + Haar |
-| T-213 | Representability and 138-bit bound withdrawn; minimal Kraus count equals Choi rank | [✗] former universal claim | See corrected section above |
-| T-214 | Internal-bridge no-go withdrawn; phenomenal identification remains an input | [✗] former universal claim | See corrected section above |
-| T-215 | Cross-layer identity | [C] (T-205 downgraded) | **[T]+[D]** | Conventional choice theorem |
-| T-216 | Analytical ε<sub>eff</sub> | [H] no formula | **[C at (SV)]** (listed [T at T-64] until 2026-09-25) | Closed-form symbolic |
-| §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
-| §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete, awaiting data**; the test is the concordance of verdicts (P8.4), bounded by the substitution argument (corrected 2026-09-25) | EEG/fMRI/HRV 7-feature map |
-
-**Current scope:** valid constructions and conditional results are listed individually; there is no global certificate of mathematical closure.
-
-**Remaining genuinely open**:
-- Numerical computation of Λ (§8) — resource-bounded, no theoretical obstacle.
-- Empirical validation of π<sub>bio</sub> (§9) — experimental programme; the substitution argument of Kleiner & Hoel bounds what it can show, and UHM claims nothing outside natural sleep–wake and anaesthetic states (the line read "no theoretical obstacle" until 2026-09-25).
-- Phenomenal identification [P/I] remains an input; the former T-214 no-go is withdrawn.
-
-~~**No mathematical gaps remain** in UHM's foundational framework after these closures.~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions, and the framework's own inputs stayed open until 2026-09-25 — the first-order condition and Poincaré duality of T-119, settled that day by the restatement of T-119, which computes the spatial spectrum (the orientation (Alt) of T15, listed here until 2026-09-25, is discharged by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация)), on which T-120, T-121, T-211 and clause (iii) of T-221 rested (T-120 and T-121 are [T] since; the recheck of T-211 showed that it never needed T-119 — each object of PhysTheory carries its topos — and T-211 is [T] in its corrected form; clause (iii) of T-221 went with the corrected T-221). (The corrected T-221 of 2026-09-25 does not rest on T-119/T-120.)
-
----
+The mathematical assertions concern the stated objects. An operational interpretation must separately identify a preparation, a readout and a comparison that could fail.
 
 ## 11. T-217: the 3-type construction and the missing operational bridge {#t-217}
 
@@ -357,76 +252,9 @@ The unit $X\to\tau_{\le3}X$ is an equivalence only if $X$ is already 3-truncated
 
 ---
 
-## 13. T-219: Λ SUSY-suppression via sector decomposition {#t-219}
+## 13. Sector decompositions and absolute energy {#t-219}
 
-:::tip Theorem T-219 (SUSY Λ-suppression, sector derivation) [H]
-In UHM's N=1 supersymmetric spectral action on $M^4 \times A_{\mathrm{int}}$ (T-65 [T]), the residual cosmological constant from SUSY-broken loops is suppressed by the factor
-
-$$
-\Lambda_\mathrm{SUSY} \;\sim\; \varepsilon^{12} \, M_P^4
-$$
-
-where $\varepsilon \sim 10^{-3}$ is the sector hierarchy parameter (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) and the exponent $12 = 4 \cdot k_{\mathrm{sec}}$ arises from:
-- $k_{\mathrm{sec}} = 3$ sectors — ~~in the UHM decomposition $7 = \mathbf 1_O \oplus \mathbf 3_{A,S,D} \oplus \bar{\mathbf 3}_{L,E,U}$ (T-48a [T])~~ the axis-labelled decomposition is retracted (T-48a, 2026-09-25); the count 3 survives only for the complexified $\mathbb C^7 = \mathbb C e_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$, $\mathbf 3 = \mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$;
-- Factor $4$ from the dimensional count of SUSY-breaking mass-squared splittings per sector in the one-loop correction $\delta\Lambda \sim (\delta m)^4 / M_P^4$ per sector.
-
-**Status**: [H] since 2026-09-25 (was [T at T-64]; the earlier claim "the exponent structure $\varepsilon^{12}$ is derived" is retracted). Three reasons: (i) the sectors of Step 1 are the axis triples $\{A,S,D\}$, $\{L,E,U\}$ of the retracted T-48a, which are not $\mathrm{SU}(3)$-sectors; (ii) their breaking scales rest on T-52, retired as a theorem on 2026-09-25 and now the hypothesis (SA), and on (FE), conditional since the same date; (iii) Step 3's own one-loop sum $\sim 3\varepsilon^4 M_P^4$ exceeds $\varepsilon^{12} M_P^4$, so the $\varepsilon^{12}$ law needs the one- and two-loop terms to cancel, which is not shown (the registry already records the exact compensation as [H]). The numerical value $\varepsilon \approx 10^{-3}$ is conditional on T-64 unique vacuum (computational task).
-:::
-
-**Proof (four steps).**
-
-**Step 1 (SUSY breaking scale per sector).** By the $G_2$-invariant superpotential T-50 [T] and sector decomposition T-48a (retracted [✗] 2026-09-25 in the axis-labelled form used here), each of the three sectors carries its own SUSY-breaking mass splitting. In UHM:
-- **O-sector** (Page–Wootters clock): SUSY-breaking at $\delta m_O \sim \varepsilon \cdot M_P$ from the PW constraint coupling to external time.
-- **3-sector** $\{A, S, D\}$: SUSY-breaking at $\delta m_3 \sim \varepsilon \cdot M_P$ from the sectoral asymmetry T-52 (retired as a theorem on 2026-09-25; its content is the hypothesis (SA) — and $\{A,S,D\}$ is not the $\mathbf 3$).
-- **$\bar 3$-sector** $\{L, E, U\}$: SUSY-breaking at $\delta m_{\bar 3} \sim \varepsilon \cdot M_P$ from electroweak coupling T-FE (the construction is [C at (FE)] since 2026-09-25, and $\{L,E,U\}$ is not the $\bar{\mathbf 3}$).
-
-All three sectors carry the **same** order-of-magnitude scale $\sim \varepsilon \cdot M_P$ because the sector hierarchy parameter $\varepsilon$ is **one** number (T-64 uniqueness of vacuum).
-
-**Step 2 (One-loop SUSY-broken Λ contribution per sector).** For each sector, the standard N=1 SUSY-loop calculation (Martin 2010 *A Supersymmetry Primer* §7.2) gives the residual vacuum-energy contribution:
-
-$$
-\delta \Lambda_k \;\sim\; \frac{\operatorname{STr}(M_k^4)}{16\pi^2} \cdot \log(\Lambda_{\mathrm{UV}}/M_k)
-$$
-
-where $M_k$ is the SUSY-breaking mass-matrix of sector $k$ and $\operatorname{STr}$ is the supertrace. In exact SUSY, $\operatorname{STr}(M^{2n}) = 0$ for all $n$. In broken SUSY with splitting $\delta m_k$:
-
-$$
-\operatorname{STr}(M_k^4) \;\sim\; (\delta m_k)^4 \;\sim\; (\varepsilon M_P)^4 \;=\; \varepsilon^4 M_P^4.
-$$
-
-**Step 3 (Multi-sector product structure).** The three sectors are **independent** in the SUSY-broken spectral action: the super-trace decomposes as
-
-$$
-\operatorname{STr}(M^4)_{\mathrm{total}} = \operatorname{STr}(M_O^4) + \operatorname{STr}(M_3^4) + \operatorname{STr}(M_{\bar 3}^4) \;\sim\; 3 \varepsilon^4 M_P^4.
-$$
-
-This gives a **linear combination** $\sim \varepsilon^4$, not yet $\varepsilon^{12}$. The $\varepsilon^{12}$ arises at **higher loop order** through nested sector-sector interactions:
-- At one-loop: $\sim \varepsilon^4$ per sector (additive)
-- At two-loop with sector mixing: $\sim \varepsilon^4 \cdot \varepsilon^4 = \varepsilon^8$ per pair of sectors
-- At three-loop with all three sectors mixing: $\sim \varepsilon^{12}$
-
-The specific **three-loop product** structure $\varepsilon^{4\cdot 3} = \varepsilon^{12}$ is guaranteed by the $G_2$-invariance of the trilinear Fano coupling T-43d [T], which mandates that **each sector contributes one factor of $\varepsilon^4$** in the leading correction to $\Lambda$.
-
-**Step 4 (Composition with the perturbative budget — absorption, not multiplication).** The SUSY-sector factor $\varepsilon^{12}$ does **not** multiply the full perturbative $10^{-41.5}$: the perturbative total already contains $\varepsilon^6$ (smallness of coherences), and $\varepsilon^{12}$ **absorbs** it, adding only $\Delta \approx \varepsilon^6$ on top of what is already counted. With the self-consistent central value $\varepsilon \sim 10^{-2}$ ([T-80](/docs/proofs/gap/lambda-budget#механизм-1): $\bar\varepsilon \approx 0.023$, allowed range $\varepsilon \in [10^{-3}, 10^{-1}]$), the rigorously composable **mean suppression is $\sim 10^{-53.5}$**; the cohomological $\Lambda_{\mathrm{global}} = 0$ [T] is an exact-zero statement of a *different class* (it reframes the question as the size of the **local** residual), and the sector-minimisation residual is an open **[C]** programme. The canonical composition rules and the resulting honest bracket $10^{-53.5}$ to $10^{-93.5}$ live in the [Λ-budget honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) — the single source of truth for the Λ composition.
-
-**This replaces the earlier invalid "G₂ adjoint 14 → 7+7 decomposition" argument.** The G₂ adjoint representation **14** is irreducible (no such decomposition exists; $\mathrm{adj}(G_2)$ contains no $\mathbf{7}$). The correct derivation uses the sector decomposition of the UHM **state space** (T-48a), not of the gauge algebra — and that decomposition is itself retracted in its axis-labelled form (2026-09-25), see the status above.
-
-**Status of sub-components**:
-- ~~The exponent $12 = 4 \cdot 3$ is **[T]** (structural, from sector count).~~ Retracted 2026-09-25: the exponent is a hypothesis [H] (status above).
-- The numerical value of $\varepsilon$: allowed range $[10^{-3}, 10^{-1}]$ [T-bounds], self-consistent central $\varepsilon \sim 10^{-2}$ [C at (SV)] — hence $\varepsilon^{12} \approx 10^{-24}$ central, with $10^{-36}$ only at the extreme lower edge. Quoting the edge value as the central one would manufacture $\sim\!10^{-120}$ by parameter choice; we do not.
-- The cohomological statement gives only the absence of a *topological* $\Lambda$-term **[T]**; the reading "$\Lambda_{\mathrm{global}} = 0$" was **retracted 2026-09-10** (degree-0 data are untouched by $H^{n>0} = 0$), so class B carries no exact zero.
-
-**Resulting composition** (per the [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)):
-- Perturbative: $\sim 10^{-41.5}$ [T] (includes $\varepsilon^6$);
-- SUSY-sector $\varepsilon^{12}$ absorbs $\varepsilon^6$: net mean $\to \sim 10^{-53.5}$ [H for the structure since 2026-09-25, earlier listed as T at T-64; C for the $\varepsilon$ value];
-- Cohomological argument: no topological $\Lambda$-term [T], **no** exact zero (retracted 2026-09-10);
-- Sector-minimisation residual: **[C]** open numerical programme.
-
-**Honest bracket: $\Lambda \sim 10^{-53.5}$ to $10^{-93.5}$** depending on how much of the sector programme is realised; closing the remaining $\gtrsim 27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task. $\blacksquare$
-
-**Dependencies.** The sector-product algebra is conditional on a supplied field content, potential and supersymmetric vacuum. Finite combinatorics does not derive vacuum energy; T-71 is a physical bridge hypothesis [H]. Universal sector and spectral closure claims are withdrawn.
-
----
+A decomposition indexes contributions but does not determine their signs, sizes or covariances. In particular a constant added to the action density preserves all contrasts at fixed volume. A suppression derived in a particular graded model requires its own dynamical symmetry, regulator and a map to an absolute observable; it is not a consequence of the number of sectors. [Distinguishing volume contrasts](/docs/proofs/gap/lambda-budget#структурное-замыкание-лямбда).
 
 ## 14. T-220: obstructions to exact equivalence, not to every functor {#t-220}
 
@@ -674,35 +502,6 @@ $$
 
 ---
 
-## 19. Updated summary table {#summary-final}
+## 19. Scope {#summary-final}
 
-| # | Theorem / Protocol | Previous status | New status | Method |
-|---|---|---|---|---|
-| T-210 | Topology-refinement implication withdrawn; selected pair-score identity survives | [✗] former universal claim | See corrected section above |
-| T-211 | PhysTheory coherences | [T] deferred | **[T]** as the Grothendieck construction (2026-09-25; before that [C at T-119], and "[T] verified" by a full embedding, now [✗]) | HTT 3.2 |
-| T-212 | U-projection | [T] unnamed | **[T] $G_2$-twirl**; Rh identification [✗] (read "[T] defined", then "[C] defined", until 2026-09-25) | Schur + Haar |
-| T-213 | Representability and 138-bit bound withdrawn; minimal Kraus count equals Choi rank | [✗] former universal claim | See corrected section above |
-| T-214 | Internal-bridge no-go withdrawn; phenomenal identification remains an input | [✗] former universal claim | See corrected section above |
-| T-215 | Cross-layer identity | [C] | **[T]+[D]** | Conventional choice |
-| T-216 | Analytical ε<sub>eff</sub> | [H] no formula | **[C at (SV)]** (listed [T at T-64] until 2026-09-25) | Closed form |
-| **T-217** | 3-truncation construction [T]; operational L3 bridge [Pr] | Truncation reflector / fundamental 3-groupoid | Old forced K=4 and universal threshold proof [✗]; corrected §11 |
-| **T-218** | Singular-classifying-space Kan construction [T] | Topological horn retraction | Cognitive ceiling / 3-coskeleton claim [✗]; realization bridge [Pr] |
-| **T-219** | **SUSY Λ-suppression** | **[H] invalid 7+7** | **[H]** (listed [T at T-64] until 2026-09-25) | **Sector product $\varepsilon^{12}$** |
-| **T-220** | Exact representation/space comparisons | Universal no-reduction claim withdrawn [✗] | [T at specified comparisons] | Two typed obstructions; constant, forgetful and restricted-group readout functors remain possible |
-| **T-221** | Local equality in a supplied sheaf model | Universal noncompossibility/route-selection claim withdrawn [✗] | [T at sheaf equality]; phenomenal bridge [I] | Exclusion requires the equality subobject to be empty; local semantics does not select a philosophical route |
-| **T-222** | **Resource geometry of the viable window** | open (external QRT critique) | **[T]** (restated 2026-09-26) | **Majorization: no resource optimum in the window, the Rényi family splits at $\alpha = 2$, no terminal object; the former "Lawvere fixed point = Pareto optimum, MRQT-complete" is [✗]** |
-| T-223 | Universal Putnam foreclosure withdrawn; RI-conditional invariant comparison survives | [✗] former universal claim | See corrected section above |
-| §18.1 | A4 simple spectrum | implicit | **Explicit** | Spectral transversality |
-| §18.2 | $f_0$ ζ'(0) | delicate | **Elementary** | Finite-dim spectral zeta |
-| §18.3 | Bures boundary | not addressed | **Stratified site** | Ayala–Francis–Rozenblyum |
-| §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
-| §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete** | EEG/fMRI/HRV |
-
-**Current scope:** valid constructions and conditional results are listed individually; there is no global certificate of mathematical closure.
-
-~~**No open mathematical or categorical gaps remain in UHM's foundational framework.**~~ Retracted [✗] (2026-09-25): the rows marked [C] and [H] above are open mathematical conditions. The framework's own inputs listed here until 2026-09-25 are settled: the first-order condition and Poincaré duality of T-119, on which T-120 and T-121 rest, by the restatement of T-119, which computes the spatial spectrum (T-119, T-120 and T-121 are [T] since); the orientation (Alt) of T15 by the [canonical-orientation theorem](/docs/proofs/minimality/theorem-octonionic-derivation#каноническая-ориентация). T-211 was listed here too; its recheck of 2026-09-25 showed that it never used them; clause (iii) of the earlier T-221 rested on them, the corrected T-221 of 2026-09-25 does not. T-221 now states local equality in a specified sheaf model; the former universal first-person noncompossibility and selection of a relationalist route are withdrawn [✗], with a philosophical bridge remaining [I]; T-222 answers the QRT-completeness external critique — negatively since 2026-09-26: the viable window selects no resource optimum; T-223 answers the Lerchner Melody-Paradox / Putnam-triviality external critique — the three principal recent external critiques (quantum-metaphysics no-go, resource-theoretic completeness, computational-functionalist triviality) each receive a structured answer; the earlier phrasing "closes … UHM is now closed against all three" is withdrawn with the sentence above.
-
-**Strictly remaining** (all explicitly non-mathematical):
-- Numerical computation of Λ (§8) — bounded HPC task
-- Empirical calibration of π<sub>bio</sub> (§9) — experimental programme
-- Phenomenal identification [P/I] remains an input; the former T-214 no-go is withdrawn.
+The construction of a category, a channel or a truncation can be exact on its specified inputs. To connect it to a physical system or a first-person distinction requires data that determine the interpretation. See [physical correspondence](/docs/proofs/physics/physics-correspondence) and [experience and access](/docs/consciousness/foundations/phenomenal-distinction).

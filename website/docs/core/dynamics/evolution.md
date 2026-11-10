@@ -31,7 +31,7 @@ When the chosen flow has a globally attracting stationary state $\Gamma_*$, one 
 ## Full equation of motion {#полное-уравнение-движения}
 
 :::info Emergent time
-The **cyclic clock** τ ∈ ℤ₇ is derived from the structure of the category $\mathcal{C}$ via the Page–Wootters mechanism. The equation below, with its dissipative and regenerative terms, runs in the parameter $t$ of the Lindblad semigroup, which this clock does not supply (relative to a clock of period seven every dynamics is periodic). Its finite carrier is the [depth register](../../proofs/dynamics/emergent-time#114-регистр-глубины): $N+1$ readings ordered as a chain in the O-registers of $\lceil\log_7(N+1)\rceil$ holons, under a Feynman–Kitaev constraint with two holons as environment. One state-independent constraint gives the conditional states **exactly** $e^{n\Delta t\,\mathcal{L}}\rho_0$ at every reading, and each solution of the full equation with $\mathcal{R}$ is reproduced exactly by a constraint fitted to it (Theorems 11.1–11.4): **T-53b [T]** relative to the depth register (it was [C at an aperiodic time parameter] until 2026-09-25). What is not derived is the register from the axioms: the timeless form of the constraint is an assumption of A5, as for the O-clock. An earlier version of this box said that time as such is derived and not an external parameter without naming the carrier; that is retracted. See [Theorem on emergent time](../../proofs/dynamics/emergent-time).
+A seven-reading cyclic clock and its reading instrument are inputs. Its conditional history repeats after a cycle; it cannot itself supply the unbounded parameter of dissipative evolution. A separate [depth register](../../proofs/dynamics/emergent-time#114-регистр-глубины) records a prescribed finite chain of evolution steps. Reconstructing a history in that register does not select the clock, its law, or a universal physical time.
 :::
 
 The evolution of $\Gamma$ is described by the **logical Liouvillian**:
@@ -97,7 +97,7 @@ The full equation $\mathcal{L}_\Omega[\Gamma] = -i[H_{eff}, \Gamma] + \mathcal{D
 1. **Linear part** $\mathcal{L}_0 = -i[H_{eff}, \cdot] + \mathcal{D}_\Omega$ has a unique attractor $\rho^*_{\mathrm{diss}} = I/7$ [T-39a] — **without dependence on φ**
 2. **Zeroth iteration**: $\varphi^{(0)}(\Gamma) := \rho^*_{\mathrm{diss}} = I/7$
 3. **n-th iteration**: $\varphi^{(n+1)}(\Gamma) := \lim_{\tau \to \infty} \exp(\tau \cdot \mathcal{L}_\Omega^{(n)})[\Gamma]$, where $\mathcal{R}^{(n)}$ uses $\varphi^{(n)}$
-4. **Convergence**: for an embodied holon under backbone dominance, $\mu > L_{\mathcal{R}} + \kappa_{\max}$, every iterate is defined and the sequence converges geometrically to one self-model from any anchor ([T-191](/docs/proofs/categorical/formalization-phi#t-191-сходимость-φ-башни), restated 2026-09-25). For an isolated holon the $n$-th iteration is not defined in general — the gate makes the flow bistable, and the limit depends on $\Gamma$ — and with the canonical $\varphi_{\mathrm{coh}}$ the scheme stays at $I/7$. (Until 2026-09-25 this item read "for $\kappa < \kappa_{max}$ (T-96), the sequence converges"; T-96 bounds no $\kappa$.)
+4. **Convergence**: for an embodied holon under backbone dominance, $\mu > L_{\mathcal{R}} + \kappa_{\max}$, every iterate is defined and the sequence converges geometrically to one self-model from any anchor ([T-191](/docs/proofs/categorical/formalization-phi#t-191-сходимость-φ-башни)). For an isolated holon the $n$-th iteration is not defined in general — the gate makes the flow bistable, and the limit depends on $\Gamma$ — and with the canonical $\varphi_{\mathrm{coh}}$ the scheme stays at $I/7$.
 
 The reflection measure $R = 1/(7P)$ is defined through $\rho^*_{\mathrm{diss}} = I/7$ (iteration level 0) and **does not depend** on the full $\varphi$.
 :::
@@ -124,7 +124,7 @@ $$
 where $H_{eff}$ is a specified effective Hamiltonian, compatible with the independently supplied [Page–Wootters constraint](../../proofs/dynamics/emergent-time#33-формальная-конструкция).
 
 :::note Page–Wootters constraint (T-87: supplied clock and support constraint [C])
-$\hat{C}\,\Gamma_{\text{total}} = 0$ — Wheeler–DeWitt constraint, equivalently $\mathrm{supp}\,\Gamma_{\text{total}} \subseteq \ker\hat{C}$. It implies the stationarity condition $[\hat{C}, \Gamma_{\text{total}}] = 0$ but does not follow from it: a mixed state spread over two eigenvalues of $\hat{C}$ is stationary without being annihilated. The tensor clock/register and its reading instrument are independently supplied; a direct-sum clock axis does not define a tensor factor. The support constraint is a further assumption (T-87). An earlier version of this note wrote the constraint as the commutator and called it derived from A1–A4; retracted. Time $\tau$ is emergent from correlations between the "clock" and "system" subsystems. Full derivation: [Emergent time](/docs/proofs/dynamics/emergent-time).
+The support constraint $\hat C\Gamma=0$ implies stationarity $[\hat C,\Gamma]=0$ for self-adjoint operators, but not conversely: a stationary mixture can have weight on two distinct eigenvalues of $\hat C$. The clock factor, its reading instrument and the support constraint are independent premises. [Relational time](/docs/proofs/dynamics/emergent-time).
 :::
 
 **Definition [D] (Wheeler–DeWitt constraint).** {#ограничение-wdw}
@@ -145,7 +145,7 @@ The Page–Wootters constraint (analogue of the Wheeler–DeWitt equation) is **
 
 **Step 3.** With a specified covariant clock and matching spectra, conditioning gives the unitary relation proved in §1.1 when the interaction vanishes. Interaction generally couples conditional times; it does not follow that its diagonal clock block is an exact local Hamiltonian.
 
-The unitary part of the dynamics is a **consequence** of the static structure of $\Gamma_{\text{total}}$ [T]. An earlier version of Step 3 also derived the dissipator, $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma]$, with status [T]; that is retracted — the Page–Wootters construction yields no dissipator, and relative to a clock of period seven ticks a dissipative evolution would be constant ([emergent time, §9.1](/docs/proofs/dynamics/emergent-time#9-следствия)).
+The specified clock constraint gives the conditional unitary part in the noninteracting model. A dissipator requires additional dynamics or an environment; it does not follow from the seven cyclic readings. [Clock conditions](/docs/proofs/dynamics/emergent-time#9-следствия).
 
 **Properties:**
 - Preserves $\mathrm{Tr}(\Gamma) = 1$
@@ -218,9 +218,7 @@ $$
 
 This is a **model definition**, not a unique consequence of the axioms or of Landauer's principle. The choice of $\varphi$, its physical realization, the rate and the gate must be specified separately. The [rate model](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) fixes the dimensions and kinetic assumptions; an adjunction alone supplies no numerical rate or norm of a natural transformation.
 
-:::warning Correction, 2026-10-03
-The previous claims T-39f, T-39g and T-39h — unique CPTP/Bures-optimal regeneration, a Landauer-derived unique clamp and a fully axiomatic evolution law — are withdrawn. The valid statements are state preservation, frozen-target CPTP realizability and conditional BKM descent, proved below. Turning regeneration off below a purity threshold does not establish invariance of the region above it; see [viability](/docs/core/dynamics/viability#viability-kernel).
-:::
+The state-preserving vector field, a CPTP realization with a frozen target, and the BKM descent inequality below have different premises. Positive drift or invariance of a viability region requires checking the vector field at its boundary.
 
 #### Theorem T-261: frozen-target BKM descent [T under the stated premises] {#теорема-регенерация-градиентный-спуск}
 
@@ -385,7 +383,7 @@ $$
 If $P_{\mathrm{coh}}=0$, the off-diagonal equation is $H_{ij}(\gamma_{jj}-\gamma_{ii})=0$; connectedness forces $\Gamma=I/7$. Thus a different stationary state has positive coherence and positive excess overlap. These conclusions do not hold for every model: at $H=0$, a diagonal pure fixed point of $\varphi_s$ has $P_{\mathrm{coh}}=0$ and $\varphi_s(\Gamma)=\Gamma$. It violates the primitive/connected hypothesis, not the purity identity. Existence and attraction of nontrivial fixed points require the separate model theorems below.
 
 :::warning Resolution of the ρ* self-reference paradox
-In earlier versions ρ* was defined as "the unique stationary state of the full $\mathcal{L}_\Omega$" (via primitivity T-39a). This created a paradox: at $\rho_* = \rho^*_\Omega$ the regeneration vanishes ($\mathcal{R}[\rho^*_\Omega] = \kappa \cdot (\rho^*_\Omega - \rho^*_\Omega) = 0$), and the only solution to $\mathcal{L}_0[\rho^*_\Omega] = 0$ is $I/7$. The paradox is resolved by replacement: $\rho_*$ in $\mathcal{R}$ is defined as the **categorical self-model** $\varphi(\Gamma)$ of the current state (Definition 1 of the [φ operator](/docs/core/operators/phi-operator)), not as the dynamical limit. In this case $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$ (the system does not achieve perfect self-knowledge), and regeneration **does not vanish** in the stationary regime — it is precisely compensated by dissipation.
+The regeneration target is the supplied [self-model](/docs/core/operators/phi-operator) $\varphi(\Gamma)$. At stationarity the total vector field vanishes. The regenerative and dissipative currents may balance without either vanishing separately. If the target fixes the state, the regenerative current does vanish; whether that state is stationary depends on the remaining generator.
 :::
 
 T-96 says what a nontrivial fixed point must look like; it does not say that one exists. The next four theorems settle existence for an isolated holon — a holon that imports free energy (the rate $\kappa$) but no state from outside. With the canonical $\varphi_{\mathrm{coh}}$ there is none, and the reason is general: a self-model that is unital cannot raise purity. Replacing the anchor $I/7$ by the holon's own self-registration gives self-sustaining attractors, but above the conscious window. A self-model blind to the phases of the basis cannot hold a hyperbolic attractor in $\mathcal{V}_{\mathrm{full}}$ near $H = 0$; the anchor fixed by the collineations of the Fano plane can, and does.
@@ -597,7 +595,7 @@ Three contexts in which the symbol $\rho_*$ (or $\rho^*$) appears in UHM dynamic
 2. (a) is **not** equal to (b) at the stationary point: $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$ (the system does not achieve perfect self-knowledge — [resolution of the ρ* paradox](#теорема-нетривиальность-аттрактора)).
 3. (a) and (b) are **compatible at stationarity**: at $\rho^*_\Omega$, the regeneration term $\mathcal R[\rho^*_\Omega,E] = \kappa(\varphi(\rho^*_\Omega) - \rho^*_\Omega) g_V$ does not vanish; it balances dissipation exactly. The nontrivial fidelity $f^* = \operatorname{Tr}(\rho^*_\Omega \varphi(\rho^*_\Omega)) < 1$ measures the **imperfection of self-knowledge** and directly determines $P(\rho^*_\Omega)$ via the purity balance (§Attractor purity balance above).
 
-**Convergence of the iteration.** For an embodied holon under backbone dominance the sequence $\varphi^{(n)}$ of §Iterative scheme converges geometrically to one self-model $\varphi^*$ from any anchor ([T-191 [T]](/docs/proofs/categorical/formalization-phi#t-191-сходимость-φ-башни), restated 2026-09-25: Banach contraction with $q = \kappa_{\max}/(\mu - L_{\mathcal{R}}) < 1$ when $\mu > L_{\mathcal{R}} + \kappa_{\max}$); at convergence $\varphi^{(\infty)} = \varphi^*$ matches the categorical self-model $\varphi$ of T-62, and the triple (a)–(c) is globally consistent. For an isolated holon consistency does not go through the tower: (c) is (b) by definition, and (a) exists or not according to the self-model (T-124c). (The former sentence — convergence for every holon with $q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min})$ — is retracted with the former T-191.)
+**Convergence of the iteration.** For an embodied holon under backbone dominance the sequence $\varphi^{(n)}$ of §Iterative scheme converges geometrically to one self-model $\varphi^*$ from any anchor ([T-191 [T]](/docs/proofs/categorical/formalization-phi#t-191-сходимость-φ-башни): Banach contraction with $q = \kappa_{\max}/(\mu - L_{\mathcal{R}}) < 1$ when $\mu > L_{\mathcal{R}} + \kappa_{\max}$); at convergence $\varphi^{(\infty)} = \varphi^*$ matches the categorical self-model $\varphi$ of T-62, and the triple (a)–(c) is globally consistent. For an isolated holon consistency does not go through the tower: (c) is (b) by definition, and (a) exists or not according to the self-model (T-124c). (The former sentence — convergence for every holon with $q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min})$ — is retracted with the former T-191.)
 
 **Consequence.** Any document referencing "$\rho_*$" or "$\rho^*$" implicitly commits to one of these three contexts. This lemma serves as the cross-reference for all such occurrences.
 :::
@@ -643,11 +641,8 @@ Thus the lower bound obtained by dropping $q_B$ holds **under the additional pre
 Purity $P>2/7$ alone does not prove stability: the constructions below include a saddle in that region. At a hyperbolic sink whose Jacobian has strictly negative real-part eigenvalues on the tangent space, locally $\|\Gamma(t)-\Gamma_*\|\le C_\eta e^{-\eta t}\|\Gamma(0)-\Gamma_*\|$ for $0<\eta<-\max\operatorname{Re}\operatorname{spec}(DF)$ and sufficiently close initial states. A prefactor of one requires an additional contraction estimate in the chosen norm.
 :::
 
-#### Theorem (Count of nontrivial attractors; T-124c, restated 2026-09-25) [T] {#теорема-единственность-нетривиального-аттрактора}
+#### Theorem (Count of nontrivial attractors; T-124c) [T] {#теорема-единственность-нетривиального-аттрактора}
 
-:::warning Retracted (2026-09-25): "at most one nontrivial fixed point; exactly two fixed points in all" [✗]
-The statement below, with its proof, is retracted. For the canonical $\varphi_{\mathrm{coh}}$ an isolated holon has no nontrivial fixed point at all ([dead isolation](#теорема-мёртвая-изоляция)), so "exactly two fixed points, one viable and one dead" is false; with the self-registering $\varphi_s$ it has at least seven ([self-sustaining attractors](#теорема-самоподдерживающийся-аттрактор)), so "at most one" is false. The proof fails at three places. Step 1 treats $\mathcal{L}_0 + \kappa(\Gamma)g_V(P)(\rho - \Gamma)$ as a linear generator, but $\kappa$ and $g_V$ depend on $\Gamma$. Step 2 uses $\varphi_i(\Gamma) = (1-k)\Gamma + k\rho_i$ with the candidate attractors $\rho_i$ as anchors, which is neither $\varphi_{\mathrm{coh}}$ (anchor $I/7$, weight $1 - k$) nor the regeneration target. Step 3 needs $\kappa_{\max} < \lambda_{\mathrm{gap}}$, which is not shown.
-:::
 
 :::tip Theorem (Count of nontrivial attractors) [T]
 1. An isolated holon with the canonical $\varphi_{\mathrm{coh}}$ has no stationary state other than $I/7$ ([dead isolation](#теорема-мёртвая-изоляция)).
@@ -658,45 +653,6 @@ The statement below, with its proof, is retracted. For the canonical $\varphi_{\
 :::
 
 **Proof of 3.** The regenerative map is Lipschitz on the compact set of states: $\kappa$ is smooth, $g_V$ is Lipschitz and $1/P \leq 7$. For two trajectories, $-i[H,\cdot] + \mathcal{D}_\Omega$ generates trace-preserving CP maps, which do not increase the trace norm of the Hermitian difference; the backbone contributes $-\mu(\Gamma_1 - \Gamma_2)$, and regeneration at most $L_{\mathcal{R}}\|\Gamma_1 - \Gamma_2\|_1$. Hence $\|\Gamma_1(\tau) - \Gamma_2(\tau)\|_1 \leq e^{-(\mu - L_{\mathcal{R}})\tau}\|\Gamma_1(0) - \Gamma_2(0)\|_1$; the time-$\tau$ maps are contractions of the complete space $\mathcal{D}(\mathbb{C}^7)$, and their common fixed point is the unique stationary state. $\blacksquare$
-
-**Retracted statement and proof (kept for the record).** The full nonlinear dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ has **at most one** nontrivial fixed point $\rho^*_\Omega \neq I/7$ in the viable set $\mathcal{V}_P = \{\Gamma : P(\Gamma) > P_{\mathrm{crit}}\}$.
-
-**Proof.**
-
-**Step 1 (Definition of the iteration map $\Psi$).** For a fixed candidate target $\rho \in \mathcal{D}(\mathbb{C}^7)$, consider the **linear** Lindbladian $\mathcal{L}_\Omega^{(\rho)}[\Gamma] := \mathcal{L}_0[\Gamma] + \kappa(\Gamma) \cdot (\rho - \Gamma) \cdot g_V(P)$ where $\rho$ is held fixed (not evolved). This is a contractive CPTP semigroup generator with a **unique** attractor $\Psi(\rho) := \lim_{\tau \to \infty} \exp(\tau \cdot \mathcal{L}_\Omega^{(\rho)})[\Gamma_0]$. The limit is independent of $\Gamma_0$ because (a) the linear part $\mathcal{L}_0$ is primitive (T-39a [T], unique attractor $I/7$) and (b) the regeneration toward fixed $\rho$ is a contractive replacement channel (T-62 [T]). Their sum is a contractive semigroup whose unique attractor is $\Psi(\rho)$. This defines a map $\Psi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$. A fixed point $\rho^*_\Omega$ of the full dynamics $\mathcal{L}_\Omega$ satisfies $\Psi(\rho^*_\Omega) = \rho^*_\Omega$ — it is a fixed point of $\Psi$ (by the [iterative scheme](#итеративная-схема)).
-
-**Step 2 (Contraction estimate).** Let $\rho_1, \rho_2$ be two candidate nontrivial fixed points. The regeneration $\mathcal{R}[\Gamma; \rho_i] = \kappa(\Gamma) \cdot (\varphi_i(\Gamma) - \Gamma) \cdot g_V(P)$ differs only in the target $\varphi_i$. By the replacement channel structure:
-
-$$
-\|\mathcal{L}_\Omega[\Gamma; \rho_1] - \mathcal{L}_\Omega[\Gamma; \rho_2]\|_F = \kappa(\Gamma) \cdot g_V(P) \cdot \|\varphi_1(\Gamma) - \varphi_2(\Gamma)\|_F
-$$
-
-Since $\varphi_i(\Gamma) = (1-k)\Gamma + k\rho_i$ (replacement form [T]):
-
-$$
-\|\varphi_1(\Gamma) - \varphi_2(\Gamma)\|_F = k \cdot \|\rho_1 - \rho_2\|_F
-$$
-
-The contraction coefficient is $k = 1 - R < 1$ for any viable state ($R = 1/(7P) > 0$).
-
-**Step 3 (Banach fixed-point theorem).** The map $\Psi$ on $\mathcal{D}(\mathbb{C}^7)$ (a complete metric space with the Frobenius norm) satisfies:
-
-$$
-\|\Psi(\rho_1) - \Psi(\rho_2)\|_F \leq q \cdot \|\rho_1 - \rho_2\|_F
-$$
-
-where $q = \kappa_{\max} \cdot k_{\max} / (\lambda_{\text{gap}} + \kappa_{\min}) < 1$ under the condition $\kappa < \kappa_{\max}$ (T-96 [T]). The contractivity $q < 1$ is verified:
-
-- Numerator: $\kappa_{\max} \cdot k_{\max} \leq \kappa_{\max} \cdot 1 = \kappa_{\max}$ (since $k \leq 1$)
-- Denominator: $\lambda_{\text{gap}} + \kappa_{\min} \geq \lambda_{\text{gap}} + \kappa_{\text{bootstrap}} > \kappa_{\max}$ whenever $\kappa_{\max} < \lambda_{\text{gap}}$ (the clustering condition from T-117)
-
-By Banach's theorem, $\Psi$ has a **unique** fixed point.
-
-**Step 4 (Exclusion of multiple basins).** A second nontrivial fixed point $\tilde{\rho}^*_\Omega$ would have to satisfy $\Psi(\tilde{\rho}^*_\Omega) = \tilde{\rho}^*_\Omega$, contradicting uniqueness from Step 3.
-
-**Conclusion:** The nontrivial attractor $\rho^*_\Omega$ of $\mathcal{L}_\Omega$ is **unique** in $\mathcal{V}_P$. Combined with the trivial fixed point $I/7$, the dynamics has **exactly two** fixed points: one viable ($\rho^*_\Omega$) and one dead ($I/7$). $\blacksquare$
-
-**Dependencies of the retracted proof:** T-39a [T] (primitivity, spectral gap), T-96 [T] ($\kappa < \kappa_{\max}$), [iterative scheme](#итеративная-схема) [T]. Standard mathematics: Banach fixed-point theorem.
 
 #### Conditional viability of a stationary state {#теорема-жизнеспособность-аттрактора}
 
@@ -710,11 +666,8 @@ This is an exact conditional identity [T], not proof of existence or stability. 
 
 Separate selected self-models give constructive results: at $H=0$, $\varphi_s$ has pure-axis attractors that persist under the stated small perturbations; $\varphi_J$ has a window sink for $\kappa>\kappa_c$ with the declared readout. Their Jacobians and all gate conjuncts are checked in those theorems. These examples do not make every isolated or embodied model viable.
 
-#### Theorem (Attractor consistency; T-157, restated 2026-09-25) [T] {#теорема-согласованность-аттракторов}
+#### Theorem (Attractor consistency; T-157) [T] {#теорема-согласованность-аттракторов}
 
-:::warning Retracted (2026-09-25): "$\rho^*_\Omega \approx \Gamma^*_{\mathrm{coh}} + O(\bar\varepsilon)$", "$\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}}/(\alpha + \kappa)$" [✗]
-$\Gamma^*_{\mathrm{coh}} = I/7$ ([φ operator](/docs/core/operators/phi-operator#неподвижная-точка-phi-coh)), so the bound says that a living attractor lies within $\|H\|/(\alpha + \kappa)$ of thermal death. At $H = 0$ it would force $\rho^*_\Omega = I/7$, while the living attractors at $H = 0$ are $e_m$ (distance $\sqrt{6/7}$ from $I/7$) and $\Gamma_{\eta_+}$ (distance $\eta_+\sqrt{6/7}$). The proof in [T-157](/docs/proofs/consciousness/substrate-closure#t-157) replaced the target by $\Gamma^*_{\mathrm{coh}}$ and then wrote "$\approx$" for a first-order expansion, and its last inequality $2/(\alpha + \kappa g_V) \leq 1/(\alpha + \kappa)$ is false for every $g_V \in [0, 1]$: it would need $\alpha + \kappa(2 - g_V) \leq 0$.
-:::
 
 :::tip Theorem (Attractor consistency) [T]
 Level 1 is the attractor $\rho^*$ of the full dynamics, level 2 the fixed point of the self-model (exact self-knowledge).
@@ -744,7 +697,7 @@ where $\lambda_Y = \kappa\eta_+Q'(\eta_+)$ is the stability exponent along $uu^\
 
 **Numerical check** (`test_attractor_consistency_is_first_order_in_the_hamiltonian`). $\varphi_s$, $\kappa = 1$, $\alpha = 1/2$, $H = \varepsilon H_1$ with a random $H_1$: the ratio of $\|\Gamma_0(H) - e_0\|_F$ to the first-order term of item 2 is $1$ within $2\cdot10^{-3}$ at $\varepsilon = 10^{-3}$ and within $2\cdot10^{-2}$ at $\varepsilon = 10^{-2}$; the identity of item 1 holds to $10^{-12}$. $\varphi_J$, $\alpha = 1/2$, $\kappa = 40$: $\eta_\infty = 0.4725$, $\eta_+ = 0.4563$, distance $0.0150$ against the bound $0.0217$.
 
-What remains of the former reading. The correction to the self-model is controlled by the Hamiltonian where the self-model's own fixed point is diagonal ($\varphi_s$: item 2), and by $1/\kappa$ where it is coherent ($\varphi_J$: item 3). The estimate $\|H_{\mathrm{eff}}\| = O(\bar\varepsilon)$ with $\bar\varepsilon \approx 0.027$ ([sector hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε), [C at (SV)]; $0.023$ until 2026-09-25, retracted with the audit A-83) enters item 2 as the size of $H$, conditionally on (SV).
+The correction to the self-model is controlled by the Hamiltonian where the self-model's own fixed point is diagonal ($\varphi_s$: item 2), and by $1/\kappa$ where it is coherent ($\varphi_J$: item 3). The estimate $\|H_{\mathrm{eff}}\| = O(\bar\varepsilon)$ with $\bar\varepsilon \approx 0.027$ ([sector hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε), [C at (SV)]) enters item 2 as the size of $H$, conditionally on (SV).
 
 ### Genesis with an external state input {#генезис-средовое-сопряжение}
 

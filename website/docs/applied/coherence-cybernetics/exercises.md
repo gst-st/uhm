@@ -200,9 +200,9 @@ The matrix $\Gamma = I/7$ — the maximally mixed state.
 <details>
 <summary>Solution</summary>
 
-**(a)** $P = 7 \times (1/7)^2 = 1/7 \approx 0.143$. Under the **pre-errata** panel rows ($\sigma_k = 1 - N\gamma_{kk}$ style for every dimension) one gets $\sigma_k = 1 - 7 \times (1/7) = 0$ for all $k$ and $\|\sigma\|_\infty = 0$ — hold that thought for (b).
+**(a)** At $I/7$, $P=7(1/7)^2=1/7$. The diagonal proxy $1-7\gamma_{kk}$ is zero in every coordinate.
 
-**(b)** This «paradox» — $\sigma = 0$ everywhere yet $P = 1/7 < 2/7$, a non-viable state that no gauge flags — is precisely the machine counterexample that **forced the 2026-07-22 errata of T-92**: the old $\sigma_E$, $\sigma_U$ rows encoded no thresholds, so the viability embedding failed. Under the **repaired canonical panel** the paradox is gone: at $\Gamma = I/7$ one computes $\sigma_L = 7(1 - 1/7)/6 = 1$, $\sigma_O = 1 - \kappa_0/\kappa_{\text{bootstrap}} = 1$ (no O-coupling), and $\sigma_U = 2/(1+\Phi) = 2$ (zero integration) — so $\|\sigma\|_\infty = 2 \geq 1$ and the panel **does** declare the state non-viable (machine-verified: `stress_panel_v2(I/7) = [0, 0, 0, 1, 0, 1, 2]`). The lesson survives in sharper form: a state can be free of *local* deficits (A, S, D, E rows at zero) while dead in logic, ground and unity — indistinguishability is a deficit of the whole, and the repaired panel sees it.
+**(b)** The diagonal proxy tests deviation from a uniform population. It misses low purity at $I/7$ and cannot stand in for the full panel or the four Cap2 margins. Compute each defined score separately.
 
 **(c)** For $I/7$: four bars at zero (A, S, D, E) and three raised — $\sigma_L = 1$, $\sigma_O = 1$, $\sigma_U = 2$. For Problem 1.1: an uneven profile pointing at a specific dimension. The contrast teaches the two failure shapes: total structural death (the flat-diagonal state) versus a local deficit.
 
@@ -533,7 +533,7 @@ Human: $R = 1/(7 \times 0.35) \approx 0.41$. $P$ (yes), $R$ (yes), $\Phi = 1.3$ 
 
 **(c)** Only the **human** satisfies all four thresholds. The cat is "almost" — it narrowly misses differentiation ($D_{\text{diff}} = 1.8$ instead of the required $2$): its experiential repertoire is a shade too poor for stable qualia comparison. This is consistent with cats demonstrating *limited* metacognition. Note also that $C$ alone does not decide the question: the cat's $C \approx 0.49$ is close to the human's $0.53$, yet the four-condition predicate separates them — the thresholds form a conjunction, not a score.
 
-**(d)** $\Phi = P/\sum_i \gamma_{ii}^2 - 1$, and $\sum_i \gamma_{ii}^2 \geq (\sum_i \gamma_{ii})^2/7 = 1/7$ by Cauchy–Schwarz, so $\Phi \leq 7P - 1$; inside the conscious window $P \leq 3/7$ this gives $\Phi \leq 2$. The data pass: bacterium $0.3 \leq 0.40$, cat $1.1 \leq 1.24$, human $1.3 \leq 1.45$. The bound is attained: $\Gamma = \lambda \lvert u\rangle\langle u\rvert + (1 - \lambda)\, I/7$ with $u = (1, \ldots, 1)/\sqrt7$ has a flat diagonal, $P = (1 + 6\lambda^2)/7$ and $\Phi = 6\lambda^2 = 7P - 1$; at $\lambda = 1/2$, $P = 5/14 \approx 0.357$, $\Phi = 3/2$, $R = 2/5$, $C = 3/5$. (An earlier edition gave the cat $\Phi = 1.8$ and the human $\Phi = 2.1$, with $C = 0.81$ and $0.86$. These values are retracted: at $P = 0.32$ and $P = 0.35$ the definitions allow at most $\Phi = 1.24$ and $1.45$.)
+**(d)** $\Phi = P/\sum_i \gamma_{ii}^2 - 1$, and $\sum_i \gamma_{ii}^2 \geq (\sum_i \gamma_{ii})^2/7 = 1/7$ by Cauchy–Schwarz, so $\Phi \leq 7P - 1$; inside the conscious window $P \leq 3/7$ this gives $\Phi \leq 2$. The data pass: bacterium $0.3 \leq 0.40$, cat $1.1 \leq 1.24$, human $1.3 \leq 1.45$. The bound is attained: $\Gamma = \lambda \lvert u\rangle\langle u\rvert + (1 - \lambda)\, I/7$ with $u = (1, \ldots, 1)/\sqrt7$ has a flat diagonal, $P = (1 + 6\lambda^2)/7$ and $\Phi = 6\lambda^2 = 7P - 1$; at $\lambda = 1/2$, $P = 5/14 \approx 0.357$, $\Phi = 3/2$, $R = 2/5$, $C = 3/5$.
 
 </details>
 
@@ -615,7 +615,7 @@ A philosophical zombie is a creature identical to a human in all respects, excep
 
 **(a)** CC is a threshold view, not unlimited panpsychism: every system has interiority (L0), which is not experience, and experience (L2) is attributed only past the four thresholds ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$) — a stone does *not* have experience. In the field's vocabulary this is a constitutive panprotopsychism with a threshold for awareness [I] ([panpsychism analysis](/docs/consciousness/comparative/panpsychism-analysis#место-панинтериоризма)).
 
-**(b)** The combination problem: if every atom has micro-experience, how do micro-experiences add up to macro-experience? CC does not avoid it but restates it: there are no micro-experiences, yet there is universal protophenomenal interiority (L0), so the question becomes how L0 structure constitutes L2 experience. The thresholds answer *when* a system is a subject, not *how* [I]. (Earlier editions answered that CC "bypasses" the problem because experience is emergent and called CC "emergentism with a precise threshold"; both are withdrawn — see [Philosophical Foundations §1.4](./philosophy#онтология).)
+**(b)** The combination problem: if every atom has micro-experience, how do micro-experiences add up to macro-experience? CC does not avoid it but restates it: there are no micro-experiences, yet there is universal protophenomenal interiority (L0), so the question becomes how L0 structure constitutes L2 experience. The thresholds answer *when* a system is a subject, not *how* [I].
 
 **(c)** If the threshold were $P > 0$ (not $P > 2/7$) and $R > 0$, $\Phi > 0$ — any system with non-zero parameters would be "slightly conscious." That is panpsychism. CC avoids this by setting *finite* thresholds.
 
@@ -738,11 +738,11 @@ Two holons $\mathbb{H}_1$ and $\mathbb{H}_2$ with $\Gamma_1, \Gamma_2 \in \mathc
 
 ### Problem 7.1 ★ PCI and P: Why a Calibration Line Proves Nothing
 
-Until 2026-09-25 the [Measurement Methodology](./measurement#калибровка) converted PCI into purity by the line $P = 0.461 \cdot \text{PCI} + 0.143$ and concluded that the CC threshold coincides with the clinical cut-off $\mathrm{PCI}^* = 0.31$. The conversion is withdrawn; this problem shows why, and what replaces it.
+Consider a proposed conversion $P=0.461\,\mathrm{PCI}+0.143$ between measurements on different scales. Identify its anchors and test whether threshold agreement is independent evidence. [Measurement method](./measurement#калибровка)
 
 **(a)** Show that the line through $(\mathrm{PCI}, P) = (0, 1/7)$ and $(c, 2/7)$ returns $P = 2/7$ at $\mathrm{PCI} = c$ for every anchor $c > 0$, and recover $0.461$ and $0.143$ for $c = 0.31$.
 
-**(b)** Casarotto et al. (2016) report $\mathrm{PCI}_{\max}$ in wakefulness 0.53 [0.39–0.70] (102 subjects, all reporting). Where does the withdrawn line put the upper end of this range relative to the window $P \in (2/7, 3/7]$? What does that say about the line?
+**(b)** Casarotto et al. (2016) report $\mathrm{PCI}_{\max}$ in wakefulness 0.53 [0.39–0.70] (102 subjects, all reporting). Where does the line from (a) put the upper end of this range relative to the window $P \in (2/7, 3/7]$? What does that say about the line?
 
 **(c)** The bridge that can fail is a concordance of verdicts (P8.4). On 50 held-out sessions: both "conscious" (by $\mathrm{Cons}(\widehat\Gamma)$ and by $\mathrm{PCI}_{\max} > 0.31$) in 24, both "not conscious" in 20, $\mathrm{Cons}$ only in 2, PCI only in 4. Compute Cohen's $\kappa$ and state the verdict of the test ($\kappa \geq 0.8$ corroborates, $\kappa < 0.4$ falsifies).
 
@@ -823,7 +823,7 @@ Using the protocol from [Measurement Methodology](./measurement#измерени
 
 
 
-**Honesty note (added 2026-07-25).** Band powers give the *diagonal* of $\Gamma$ only, so this profile uses the diagonal proxy $\sigma_k = 1 - 7\gamma_{kk}$ for all seven rows. The canonical panel (T-92, errata 2026-07-22) computes $\sigma_E$ from $D_{\text{diff}}$ and $\sigma_U$ from $\Phi$ — both invisible to band powers, since they live in the coherences. Treat the EEG profile as a first approximation that genuinely measures the A, D, L rows, and read its $\sigma_E$, $\sigma_U$ entries as proxies, not as the T-92 quantities.
+**Readout.** Band powers supply diagonal populations. Any E- or U-score requiring coherences needs additional data. Mark a statistic computed from the diagonal alone as a proxy and compare it separately with the full panel.
 </details>
 
 ---
@@ -943,7 +943,7 @@ fn main() using [IO, Random] {
 
 **Assignment:** Find published PCI data (e.g., Casali et al., 2013, or Casarotto et al., 2016).
 
-**(a)** Do not convert PCI into $P$ — that conversion is withdrawn (Problem 7.1). Take a dataset with raw TMS-EEG (e.g. R1.b of the [replication-ready specification](/docs/applied/research/measurement-protocol#replication-ready-tms-eeg)) and reconstruct $\widehat\Gamma$ with $\pi_{\mathrm{bio}}$ frozen on wakefulness sessions and no viability penalty ([SUB-1, SUB-2](/docs/applied/research/measurement-protocol#substitution-position)).
+**(a)** Do not convert PCI into $P$ without an independent observation law (Problem 7.1). Take a dataset with raw TMS-EEG (e.g. R1.b of the [replication-ready specification](/docs/applied/research/measurement-protocol#replication-ready-tms-eeg)) and reconstruct $\widehat\Gamma$ with $\pi_{\mathrm{bio}}$ frozen on wakefulness sessions and no viability penalty ([SUB-1, SUB-2](/docs/applied/research/measurement-protocol#substitution-position)).
 
 **(b)** For each state (wakefulness, REM, deep sleep, anesthesia, vegetative state) compute the verdict $\mathrm{Cons}(\widehat\Gamma)$ and, independently, the PCI verdict $\mathrm{PCI}_{\max} > 0.31$.
 

@@ -220,7 +220,7 @@ In T-148's undamped constant-input model, smaller $\beta$ gives a larger mixture
 
 ## §10. T-157: Attractor consistency {#t-157}
 
-:::tip Theorem T-157 [T]: Attractor consistency (restated 2026-09-25)
+:::tip Theorem T-157 [T]: Attractor consistency
 Level 1 is the attractor $\rho^*$ of the full dynamics, level 2 the fixed point of the self-model (exact self-knowledge).
 
 1. **Self-knowledge defect (any self-model).** $\kappa g_V\,(\varphi(\rho^*) - \rho^*) = -\mathcal{L}_0[\rho^*]$, so $\|\varphi(\rho^*) - \rho^*\|_F \leq \bigl(2\|H\|_{\mathrm{op}}\|\rho^* - I/7\|_F + \tfrac23\sqrt{P_{\mathrm{coh}}}\bigr)/(\kappa g_V)$.
@@ -229,36 +229,6 @@ Level 1 is the attractor $\rho^*$ of the full dynamics, level 2 the fixed point 
 
 Proof and numerical check: [evolution, attractor consistency](/docs/core/dynamics/evolution#теорема-согласованность-аттракторов). **Status:** C21 as stated ("$\rho^*_\Omega \approx \Gamma^*_{\mathrm{coh}}$") is false [✗]; its correct content is this theorem [T].
 :::
-
-:::warning Retracted (2026-09-25): the former T-157 [✗]
-The former statement read $\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}}/(\alpha + \kappa)$, "an exact parametric bound". It is false. $\Gamma^*_{\mathrm{coh}} = I/7$ ([φ operator](/docs/core/operators/phi-operator#неподвижная-точка-phi-coh)); at $H = 0$ the bound would force every attractor to be $I/7$, while the living attractors at $H = 0$ are $e_m$ (distance $\sqrt{6/7}$ from $I/7$) and $\Gamma_{\eta_+}$ (distance $\eta_+\sqrt{6/7}$). The proof below fails three times: Step 1 puts $\Gamma^*_{\mathrm{coh}}$ in place of the regeneration target $\varphi(\rho^*)$; Step 2 writes "$\approx$" for a first-order expansion without a remainder; and the last inequality of Step 3, $2/(\alpha + \kappa g_V) \leq 1/(\alpha + \kappa)$, fails for every $g_V \in [0, 1]$, since it needs $\alpha + \kappa(2 - g_V) \leq 0$. The estimate $O(0.03)$ for the vacuum and the SYNARC reading $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|_{\mathrm{op}} \approx 0.25$, both obtained by inverting the bound, are withdrawn with it.
-:::
-
-**Retracted proof (kept for the record).**
-
-**Step 1.** By [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора): attractor purity balance:
-
-$$
-0 = \mathcal{L}_0[\rho^*_\Omega] + \mathcal{R}[\rho^*_\Omega] = -i[H_{\mathrm{eff}}, \rho^*_\Omega] + \mathcal{D}_\Omega[\rho^*_\Omega] + \kappa(\Gamma^*_{\mathrm{coh}} - \rho^*_\Omega) \cdot g_V
-$$
-
-(using $\rho^* \to \Gamma^*_{\mathrm{coh}}$ in the regenerative term).
-
-**Step 2 (Linear perturbation theory).** Denote $\delta\Gamma = \rho^*_\Omega - \Gamma^*_{\mathrm{coh}}$. For $H_{\mathrm{eff}} = 0$: $\delta\Gamma = 0$ (attractors coincide). For non-zero $H_{\mathrm{eff}}$:
-
-$$
-(\alpha + \kappa \cdot g_V) \cdot \delta\Gamma \approx -i[H_{\mathrm{eff}}, \rho^*_\Omega]
-$$
-
-**Step 3 (Bound).** $\|-i[H_{\mathrm{eff}}, \rho^*_\Omega]\|_F \leq 2\|H_{\mathrm{eff}}\|_{\mathrm{op}} \cdot \|\rho^*_\Omega\|_F \leq 2\|H_{\mathrm{eff}}\|_{\mathrm{op}}$ (since $\|\rho^*_\Omega\|_F \leq 1$). Therefore:
-
-$$
-\|\delta\Gamma\|_F \leq \frac{2\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \kappa \cdot g_V} \leq \frac{\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \kappa}
-$$
-
-(for $g_V \geq 1/2$, which holds in the conscious window). $\blacksquare$
-
-**Dependencies:** [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) (balance), [self-sustaining attractors](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор) [T], [living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне) [T]; implicit function theorem.
 
 ---
 

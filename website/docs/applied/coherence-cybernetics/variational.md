@@ -7,7 +7,7 @@ description: "Principle of stationary action, Euler–Lagrange equations for Gap
 # Variational derivation under an explicit action
 
 :::warning Scope — 2026-10-03
-The results below follow from a selected action and supplied force. Universal equivalence with Keldysh derivation T-75 is withdrawn [✗]; phase action and GKSL dynamics need a separate comparison bridge.
+The following results use the specified action, spaces of variations and boundary conditions. To identify a phase action with open-system dynamics, derive both from a common microscopic model.
 :::
 
 ## 1. Equation of motion

@@ -30,7 +30,7 @@ r_0=\frac{\Gamma_2}{\kappa_0},\qquad
 T_{\mathrm{ratio}}=\Theta_{\mathrm{ratio}}/k_B=r_0T_{\mathrm{phys}}.
 $$
 
-The former $T_{\mathrm{eff}}=(\Gamma_2/\kappa_0)k_BT_{\mathrm{phys}}$ had energy units while being compared to a temperature. The corrected convention distinguishes the two units. Identifying $T_{\mathrm{ratio}}$ with a measured fluctuation temperature is a further model hypothesis [H/C], not a theorem about regeneration.
+The rate ratio $\Gamma_2/\kappa_0$ is dimensionless. Multiplying it by $T_{\rm phys}$ gives temperature units, while multiplying by $k_BT_{\rm phys}$ gives energy units. A thermodynamic temperature requires a heat-exchange or detailed-balance model.
 
 A neural oscillation frequency is not automatically an exponential decorrelation rate, and a recovery rate is not automatically the same model's regenerative coefficient. The current [kinetic construction of $\kappa_0$](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) requires its specified rates and calibration; a categorical counit norm does not supply them.
 
@@ -76,9 +76,9 @@ For example, choose units $E_0,t_0>0$, normalized time $\tau=t/t_0$, and field $
 
 This OU process is an exact chosen model on $\mathbb R^m$. Its use for bounded Gap observables or local coordinates of a PSD coherence matrix is a **local approximation/bridge** [C/H]. Unbounded Gaussian coordinates do not themselves ensure global PSD, trace one, or $0\le\mathrm{Gap}\le1$; an actual state-valued realization or boundary dynamics must be specified separately.
 
-### Categorical formula: withdrawn universal implication
+### Realization of the counit and choice of norm
 
-An abstract natural transformation has no canonical operator norm without a specified enriched realization and norms. An adjunction alone supplies neither $Q$, $M$, an energy unit nor a thermal bath. The former counit formula $(1+\|\varepsilon\|)/(1-\|\varepsilon\|)$ is therefore not a categorical derivation of temperature.
+A natural transformation has no canonical operator norm until a normed realization is specified. To relate a proposed counit statistic to temperature, specify this realization and a physical calibration.
 
 One can instead **define** $\eta=(r_0-1)/(r_0+1)\in(-1,1)$, giving $r_0=(1+\eta)/(1-\eta)$ by algebra. Replacing $\eta$ by a nonnegative norm further restricts $r_0\ge1$ by choice. The asymptotic expression $\eta=1-2/r_0+O(r_0^{-2})$ holds only for large $r_0$; none of these parametrizations proves a physical identification.
 
@@ -174,7 +174,7 @@ Landauer concerns physical entropy reduction with a thermal reservoir. Under its
 | Ratio convention | [D]; temperature $r_0T_{\mathrm{phys}}$ and energy $k_Br_0T_{\mathrm{phys}}$ distinguished |
 | Scalar FDT temperature | [C] under calibrated stationary linear-response/noise–mobility assumptions |
 | Comparison with body temperature | [H/C] measured per system; no universal strict inequality |
-| Counit formula | Universal implication withdrawn; optional algebraic parametrization [D] |
+| Counit formula | A parametrization requires a specified realization and norm [D]. |
 | $\Delta/(k_B\ln21)$ | Crossover of a selected finite degeneracy model; no automatic critical point |
 | Fisher/connection geometry | Requires a likelihood or bundle and its stated regularity |
 | Fano rate relations | Conditional algebra for the selected jump family; temperature identification separate |

@@ -420,7 +420,7 @@ An intriguing question: is there a connection between the Fibonacci sequence and
 | $\kappa$ | $\kappa_{\text{bootstrap}} + \kappa_0 \cdot 13/49$ |
 | Mean Gap | $\frac{1}{21}\sum_{k<l}\mathrm{Gap}(k,l) = \frac{7\sin\frac{4\pi}{7} + 6\sin\frac{\pi}{7} + 5\sin\frac{2\pi}{7}}{21} \approx 0.6351$ |
 
-> **Erratum (2026-07-25, machine check):** this previously read ≈ 0.620 — a rounding slip in the hand computation. The exact value over the multiset of differences $\Delta$ (the zero cluster A,S,U — 3 pairs; $|\sin\tfrac{2\pi}{7}|$ — 5 pairs; $|\sin\tfrac{4\pi}{7}|$ — 7 pairs; $|\sin\tfrac{6\pi}{7}|$ — 6 pairs) is $13.337/21 = 0.63509\ldots$ Verified independently by the engine (`hhg-core`, test `model_systems_pin_the_engine_to_corpus_numbers`) and by direct computation.
+> **Numerical check.** Enumerating the multiset of phase differences gives the mean $0.6351$ in the table. The purity and E share are independent checks on the same preparation.
 
 
 #### What we learn from this model

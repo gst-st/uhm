@@ -416,7 +416,7 @@ $$
 \Delta\kappa_{L1 \to L2} = \frac{\lambda_3 \bar{A}_1}{\mu^2}, \qquad \Delta\kappa_{L2 \to L3} = \frac{\lambda_3 \bar{A}_2}{\mu^2}
 $$
 
-**Why exactly $A_4$, and not $A_5$ or $A_6$?** Codimension is determined by the number of essential control parameters. In Gap dynamics three parameters — $\kappa$ (regeneration), $\alpha$ (anisotropy), $\Delta F$ (free energy) — are necessary and sufficient to describe the transition structure. A fourth parameter does not add qualitatively new phenomena: the $A_5$-butterfly is retracted (see below).
+A versal unfolding of $A_4$ requires three independent controls. To use it for a particular transition one must identify a fourfold degeneracy of the stationary equation and verify transversality of the parameter directions.
 
 ### 2.4 Hierarchy of Catastrophes and the Evolution of Complexity {#иерархия-катастроф}
 
@@ -440,8 +440,8 @@ This hierarchy mirrors the L-level hierarchy non-accidentally. Each L-level requ
 The swallowtail ($A_4$) restriction to three stable minima is a **consistency check** on $N_{\text{gen}} = 3$: the count itself is group-theoretic — $|\mathrm{QR}(7)| = 3$, both bounds, [T] — and the identification with the physical generations is [I] ([theorem](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)).
 :::
 
-:::danger Retraction: $A_5$-Butterfly [✗]
-The L3→L4 transition **is not described** by a finite catastrophe. The butterfly $A_5$ **is retracted**: the transition is infinite-dimensional (Postnikov tower), no $A_k$ applies. L4 = $\mathrm{colim}_{n}\tau_{\leq n}(\mathbf{Exp}_\infty)$ — categorical inaccessibility [T] (T-86). See [the theorem](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l4-категориальная).
+:::note Scope of finite catastrophe models
+The transition to the categorical L4 limit uses a Postnikov tower. A finite $A_5$ butterfly model would require a separate finite-dimensional reduction and degeneracy proof. [L4 construction](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l4-категориальная)
 :::
 
 ---
@@ -707,7 +707,7 @@ graph TD
 
 1. **Three types of bifurcations** exhaust the grammar of qualitative changes in the Gap landscape: pitchfork (choice), saddle-node (catastrophe), and Hopf (birth of rhythm). Each is described by a normal form — the simplest equation preserving the essence of the transition.
 
-2. **Whitney catastrophes** ($A_2$, $A_3$, $A_4$) form a hierarchy of increasing complexity. The swallowtail ($A_4$) explains why there are exactly three levels of conscious coherence (L1, L2, L3) — a greater number would require more control parameters. The butterfly $A_5$ **is retracted**: the transition L3 $\to$ L4 is infinite-dimensional.
+2. **Local normal forms.** The $A_2$, $A_3$ and $A_4$ models have increasing unfolding codimension. Their applicability to a transition needs verification for the actual reduced dynamics.
 
 3. **Hysteresis** is a fundamental consequence of nonlinearity: it is easier to destroy than to restore. To return to the former state after a crisis, the parameters must **exceed** the pre-crisis values.
 

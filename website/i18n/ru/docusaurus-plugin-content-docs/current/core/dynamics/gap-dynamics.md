@@ -383,7 +383,7 @@ $$
 
 **(b)** $\alpha = 1$ (чистый атомарный): $G_2$ **полностью нарушена**.
 
-**(c)** Промежуточные значения: $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3} \cdot \Delta_{\max}$, из $\mathcal{D}_\alpha = \tfrac{2+\alpha}{3}\mathcal{D}_{\mathrm{atom}}$. (До 2026-09-25 заголовок гласил «пропорциональна $\alpha^*$», а (c) записывалось при $\alpha^*$; нарушение аффинно, а не пропорционально, и $\alpha^*$ отозвано — $\alpha$ есть свободный параметр.)
+**(c)** Промежуточные значения: $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3} \cdot \Delta_{\max}$, из $\mathcal{D}_\alpha = \tfrac{2+\alpha}{3}\mathcal{D}_{\mathrm{atom}}$.
 
 Мера нарушения **аффинна** по $\alpha$ и строго положительна на $[0,1]$ — из пропорциональности $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$.
 :::

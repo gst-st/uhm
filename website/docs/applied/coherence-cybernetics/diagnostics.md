@@ -6,7 +6,7 @@ description: Model checks, gate margins, and the distinction between numerical e
 
 # Diagnosis with Uncertainty
 
-A diagnostic verdict concerns a specified model and observation law. Physical measurements follow [the identifiability protocol](/docs/applied/research/reconstruction-identifiability); computations use [the state-preserving scheme](./implementation). The seven-component stress panel is selected [D] and is not equivalent to viability or the full window. The universal T-92 and T-102 statements in their former scope are withdrawn.
+A diagnostic verdict depends on the observation family, thresholds and reconstruction. Report which latent distinctions the measurements can resolve.
 
 ## Input checks
 
@@ -44,7 +44,7 @@ A causal test fixes the target, gate, dissipation, inputs, resources, and prepar
 
 A synthetic matrix is a mathematical example, not a patient, organization, or conscious agent. Arbitrarily assigning symptoms to matrix entries cannot establish clinical classifications or scales. Physical use requires independent calibration and comparison with alternatives.
 
-Report raw observations, model, parameters, frame, confidence set, four margins, numerical errors, and the precise scope of the conclusion. Withdrawn universal proofs cannot serve as confirmation.
+Report raw observations, model, parameters, frame, confidence set, four margins, numerical errors, and the precise scope of the conclusion.
 
 <a id="аномалии"></a>
 <a id="витальные-показатели"></a>

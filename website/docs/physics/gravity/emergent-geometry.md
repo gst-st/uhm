@@ -137,21 +137,15 @@ Computing the Connes distance on a manifold uses the **external** Dirac operator
 
 ### 4.1 Derivation of 3+1 Dimensions [C]
 
-:::tip [T] Dimensionality from the computed spectrum (T-119, restated 2026-09-25)
-Since 2026-09-25 the spatial spectrum is computed: the macroscopic fluctuations of three commuting rotation charges fill $\mathbb R^3$, the minimal unitization gives $S^3$, the dimension $3$ is that of the spectrum, and Poincaré duality and the first-order condition hold for the Dirac triple of $S^3$ ([T-119](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство)); two of the charges are colour Cartan generators, so the reading as space stays [I]. Former text: the dimension of macroscopic space is derived under named conditions: commutativity of the macro-algebra (T-117 [T]) + the rank count of T-119, Step 2c′ ($\operatorname{rank}\mathfrak u(3) = 3$, with the colour triplet read as space — [I]) + Connes reconstruction (2008), whose Poincaré duality and first-order condition are open $\Rightarrow$ $\Sigma^3$ is a smooth 3-manifold under these conditions. (An earlier version derived the 3 from "the spectral dimension of the $\{A,S,D\}$-sector" and headed this section [T]; retracted — the Weyl-law step and the axis labels are retracted in T-119.) Details: [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство).
-:::
-
-:::tip Status of the 3+1 dimension derivation: [T] as mathematics (T-119, T-120, since 2026-09-25), reading [I]; the real split is retracted [✗]
-Former text: "The decomposition $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1 \oplus \mathbb{R}^3 \oplus \mathbb{R}^3$ follows from $\mathrm{SU}(3) \subset G_2$ — the stabilizer of the O-direction … Compactification of the $\bar{\mathbf{3}}$-sector is ensured by the massiveness of $W,Z$ [T]." Retracted (2026-09-25): $\mathrm{SU}(3)$ acts irreducibly on $\mathbb{R}^6$, so the only invariant real splitting is $\mathbb{R} \oplus \mathbb{R}^6$; the triplet appears only after complexification, $\mathbb{C}^7 = \mathbb{C}e_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ ([spacetime, sectoral decomposition](/docs/core/foundations/spacetime#секторная-декомпозиция)), and the compactification falls with the split. What stands: the choice of the $O$-direction is fixed by the PW mechanism (A5) — O determines the temporal direction [T] (T-87, steps 1–3); the product $M^4 = \mathbb{R} \times \Sigma^3$ is assembled from the categorical structure ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек), [T] since the restatement of T-119; [C] at its open reconstruction axioms before).
-:::
+The macroscopic fluctuations of the three selected commuting charges fill $\mathbb R^3$. Minimal unitization gives $C(S^3)$. Two charges are colour Cartan generators, so interpreting the spectrum as ordinary space is an additional premise. T-118 supplies a time coordinate in the depth-clock scaling limit. [T-119 and T-120](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство)
 
 ### 4.2 Resolved Questions
 
 | Question | Answer | Theorem |
 |--------|-------|---------|
-| Why $\dim_{\mathrm{eff}} = 3$ for space? | The rank count $\operatorname{rank}\mathfrak u(3) = 3$ of T-119 (the colour triplet read as space, [I]); the former "$\dim(\mathbf{3}) = 3$ of the $\{A,S,D\}$-sector" is retracted | T-119 [T] |
-| How does Lorentzian signature $(+,-,-,-)$ arise? | One time direction [T] (PW clock), three spatial ones at T-119 ($S^3$); the sign at reflection positivity (bounded-below PW generator) | T-53 [C] (registry: signature $(1,3)$ [C]) |
-| How is 3+1 connected to the 7 dimensions of the holon? | Rank count $1 + 3$ + Gelfand–Connes reconstruction; the axis-labelled sector decomposition is retracted | T-120 [T] |
+| Why is the charge spectrum three-dimensional? | Three independent commuting charges have fluctuation spectra filling $\mathbb R^3$. | T-119 [T] |
+| What fixes a Lorentzian signature? | The product has a one-dimensional clock factor. A Lorentzian realization requires metric and causality data. | T-53 [C] |
+| How is the four-manifold constructed? | Combine the depth clock and the minimally unitized charge algebra. | T-120 [T] |
 
 ### 4.3 Sector Decomposition
 
@@ -181,10 +175,10 @@ This is the volume and Einstein–Hilbert part of the heat-kernel expansion. Oth
 
 | Result | Status | Theorem |
 |-----------|--------|---------|
-| Manifold $M^4 = \mathbb{R} \times \Sigma^3$ assembled | **[T]** as mathematics (depth register; restated T-119, 2026-09-25) | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
+| Product $\mathbb R\times S^3$ | [T] for the selected algebras | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
 | Einstein equations from spectral action | **[T]** | [T-65](/docs/physics/gravity/einstein-equations) |
 | Cosmological constant $\Lambda_{\text{CC}} > 0$ | **[H]** physical bridge; positivity follows conditionally for the selected positive readout | [T-71](/docs/core/foundations/consequences#теорема-лямбда-положительна) |
-| Lovelock gaps closed | **[T]** (with T-120, 2026-09-25) | [T-121](/docs/proofs/physics/emergent-manifold#теорема-лавлок-замыкание) |
+| Lovelock classification | [T] under the four-dimensional metric and differential hypotheses | [T-121](/docs/proofs/physics/emergent-manifold#теорема-лавлок-замыкание) |
 | Vacuum topology $\Sigma^3 \cong S^3$ | **[T]** for the selected spatial algebra (T-119); round metric and $k=+1$ slicing **[C at supplied field, symmetry and global conditions]** | [T-120b](/docs/proofs/physics/emergent-manifold#следствие-вакуумная-топология) |
 
 ### 5.3 Lovelock Gaps and Their Closure
@@ -193,8 +187,8 @@ The Lovelock theorem (1971) states: the unique second-order tensor constructed f
 
 | Gap | Question | UHM answer | Theorem |
 |--------|--------|-----------|---------|
-| 1 | Why $d = 4$? | Rank count $1 + 3$ of T-119 (the colour triplet read as space, [I]); the former "sector decomposition $7 = 1 + 3 + 3$" is retracted with the axis-labelled split | T-120 [T] |
-| 2 | Why Lorentzian signature? | $(1,3)$ [C]: one time direction [T], three spatial ones at T-119; the sign at reflection positivity (bounded-below PW generator; KO-dimension does not fix it, and KO-dimension 6 on $\mathbb{C}^7$ is retracted) | T-53 [C] |
+| 1 | Why $d=4$? | The clock and the three selected charge fluctuations give a mathematical product of dimension four. | T-120 [T] |
+| 2 | Why Lorentzian signature? | The heat-kernel expansion uses Riemannian geometry. A Lorentzian model requires additional analytic data. | T-53 [C] |
 | 3 | Why $\Lambda > 0$? | A supplied energy readout may have positive sign under explicit state and parameter conditions; autopoiesis and cohomology do not fix it | T-71 [H] |
 
 ---

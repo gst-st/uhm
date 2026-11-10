@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
-title: "Gap Semantics: 49 Elements"
-description: "Seven-level density matrices, phase references, Fano readouts and the proposed dual-aspect vocabulary."
+title: "Measuring Populations and Coherence Phases"
+description: "Which entries of a seven-level density matrix can a calibrated instrument distinguish?"
 ---
 
-# Gap Semantics: 49 Elements
+# Measuring Populations and Coherence Phases
 
-In a chosen basis a seven-level quantum state has 49 matrix entries. Hermiticity gives seven real diagonal entries and 21 complex coherences. With unit trace, an interior state has 48 independent real parameters. The lower triangle is exactly determined by the upper. “Exterior” and “interior” name a proposed interpretation of these coordinates. Hermitian conjugation gives no additional observation of a subject’s experience. [Coherence matrix](/docs/core/dynamics/coherence-matrix)
+Choose a seven-level quantum system, a reproducible preparation and a basis set by the apparatus. The state is a trace-one Hermitian matrix $\Gamma$. Its seven populations sum to one, and each of the 21 off-diagonal pairs contains one complex number and its conjugate. A full-rank state has 48 independent real coordinates. Which of them can be recovered depends on the physical tests available on repeated preparations. [Coherence matrix](/docs/core/dynamics/coherence-matrix)
 
 ## What an entry and a phase measure
 
@@ -17,7 +17,7 @@ $$
                  =|\sin\theta_{ij}|\quad(\gamma_{ij}\ne0).
 $$
 
-At zero coherence the phase is undefined. Under $|i\rangle\mapsto e^{i\alpha_i}|i\rangle$ the angle changes by $\alpha_j-\alpha_i$. One nonzero pair can therefore acquire any Gap value through a change of phase reference. With a calibrated interference probe one can measure a quadrature relative to that reference. Around a closed cycle the phase changes cancel, so the argument of the product of its nonzero coherences is independent of those local choices. For the complete graph of seven axes there are $21-7+1=15$ independent cycle angles. Seven Fano triangles measure seven of them. At a vanished edge its phase drops out. [Cycle observations](/docs/networks/cycle-observations) · [Reconstruction G5b](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/README.md)
+At zero coherence the phase is undefined. Under $|i\rangle\mapsto e^{i\alpha_i}|i\rangle$ the angle changes by $\alpha_j-\alpha_i$. One nonzero pair can therefore acquire any Gap value through a change of phase reference. With a calibrated interference probe one can measure a quadrature relative to that reference. Around a closed cycle the phase changes cancel, so the argument of the product of its nonzero coherences is independent of those local choices. For the complete graph of seven axes there are $21-7+1=15$ independent cycle angles. Seven Fano triangles measure seven of them. At a vanished edge its phase drops out. [Cycle observations](/docs/networks/cycle-observations) · [Reconstruction G5b](https://github.com/uhm-theory/holon/blob/main/website/research/operational-reconstruction/README.md)
 
 ### Probability current
 
@@ -29,101 +29,30 @@ J_{i\leftarrow j}=\frac{2}{\hbar}\operatorname{Im}(H_{ij}\gamma_{ji}),
 \qquad J_{i\leftarrow j}=-J_{j\leftarrow i}.
 $$
 
-The current is invariant under rephasing of the basis. For diagonal $H$ it vanishes even when individual coherence phases rotate as $\theta_{ij}(t)=\theta_{ij}(0)-(E_i-E_j)t/\hbar$. A diagonal dephasing channel can attenuate a nonzero coherence with its phase fixed. Neither equation predicts a person's symptoms or a treatment window.
+The current is invariant under rephasing of the basis. For diagonal $H$ it vanishes even when individual coherence phases rotate as $\theta_{ij}(t)=\theta_{ij}(0)-(E_i-E_j)t/\hbar$. A diagonal dephasing channel can attenuate a coherence while keeping its phase fixed.
 
 ## What the Fano instrument can distinguish {#разделение-когерентностей}
 
-Choose seven coordinate axes and the seven labelled lines below. Each pair of points occurs on exactly one line. The unit and the three imaginary octonion basis units on a line span a quaternion subalgebra. The $7+28$ partition of the 35 triples classifies basis triples. It imposes no phase inequality on a complex density matrix. The last column records interpretive labels.
-
-| # | Triplet | Dimensions | Fano pairs (coherences) | Interpretation |
-|---|---|---|---|---|
-| 1 | $(e_1, e_2, e_3)$ | A, S, D | $\gamma_{AS}$, $\gamma_{AD}$, $\gamma_{SD}$ | Material block |
-| 2 | $(e_1, e_4, e_5)$ | A, L, E | $\gamma_{AL}$, $\gamma_{AE}$, $\gamma_{LE}$ | Cognitive block |
-| 3 | $(e_1, e_6, e_7)$ | A, O, U | $\gamma_{AO}$, $\gamma_{AU}$, $\gamma_{OU}$ | Transcendent block |
-| 4 | $(e_2, e_4, e_6)$ | S, L, O | $\gamma_{SL}$, $\gamma_{SO}$, $\gamma_{LO}$ | Structural-logical block |
-| 5 | $(e_2, e_5, e_7)$ | S, E, U | $\gamma_{SE}$, $\gamma_{SU}$, $\gamma_{EU}$ | Somatic-integrative block |
-| 6 | $(e_3, e_4, e_7)$ | D, L, U | $\gamma_{DL}$, $\gamma_{DU}$, $\gamma_{LU}$ | Active-holistic block |
-| 7 | $(e_3, e_5, e_6)$ | D, E, O | $\gamma_{DE}$, $\gamma_{DO}$, $\gamma_{EO}$ | Vital-dynamic block |
-
-Each dimension lies on exactly 3 Fano lines, hence $\sum_{p=1}^{7} \Pi_p = 3I$.
+Label the axes by the nonzero binary triples $i\in\mathbb F_2^3$. A Fano line consists of $\{i,j,i+j\}$ for distinct $i,j$. The operator $\Pi_\ell=\sum_{i\in\ell}|i\rangle\langle i|$ projects onto those three axes. Every axis belongs to three lines, so $\sum_\ell\Pi_\ell=3I$. These incidence data specify a seven-outcome instrument at the level of its effects.
 
 Let $B_{\ell i}$ be the incidence matrix and take the quantum effects $E_\ell=\Pi_\ell/3$. The seven Born probabilities are $q=Bp/3$ where $p_i=\gamma_{ii}$. From $B^\top B=2I+\mathbf1\mathbf1^\top$ one recovers $p=(3B^\top q-\mathbf1)/2$. All diagonal populations are identifiable with this instrument. Fixing an interior population vector leaves 42 real off-diagonal degrees of freedom near a full-rank state.
 
-G5b tests a sharper distinction. Two positive definite conjugate states have equal populations and coherence magnitudes. All real instruments have identical record distributions on them, including along adaptive sequences of real operations. Adding a specified complex rank-one projector yields probabilities $13/84$ and $11/84$. This is an operational privacy statement relative to the allowed instruments. Relating the hidden difference to a felt experience would require a separately testable report or intervention. [Exact states and probe](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/verify_context.py) · [Practice and report](/docs/consciousness/empirical/practice-and-report)
+G5b tests a sharper distinction. Two positive definite conjugate states have equal populations and coherence magnitudes. All real instruments have identical record distributions on them, including along adaptive sequences of real operations. Adding a specified complex rank-one projector yields probabilities $13/84$ and $11/84$. This is an operational privacy statement relative to the allowed instruments. Relating the hidden difference to a felt experience would require a separately testable report or intervention. [Exact states and probe](https://github.com/uhm-theory/holon/blob/main/website/research/operational-reconstruction/verify_context.py) · [Practice and report](/docs/consciousness/empirical/practice-and-report)
 
-### Two failed phase bounds
+## Which phase values are possible?
 
-The proposed bound $\mathrm{Gap}(i,j)\le1/2$ on every Fano pair is false. The pure state $(|i\rangle+i|j\rangle)/\sqrt2$ has $\mathrm{Gap}(i,j)=1$. Likewise $7^{-1/2}\sum_i|i\rangle$ has 21 positive real coherences, so all 21 Gaps vanish in this frame. This refutes the proposed minimum of three opaque pairs. The Hamming code $H(7,4)$ corrects a single binary error under a specified encoding and syndrome measurement. It places no lower bound on these phases. The numerical estimates for a distinguished $O$ sector require the separate sectoral ansatz and its calibration. [Sectoral model](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) · [Conditional address theorem](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/AddressFusion.lean)
+For a selected pair, $(|i\rangle+i|j\rangle)/\sqrt2$ gives $\mathrm{Gap}(i,j)=1$. The uniform real superposition $7^{-1/2}\sum_i|i\rangle$ gives zero on every pair in the selected basis. Fano incidence alone therefore permits both extreme values. A tighter bound requires a restriction on preparations or a calibrated dynamics that enforces it.
 
-In an octonion frame $\operatorname{Im}\Gamma$ is a real skew matrix. The invariant decomposition $\mathfrak{so}(7)=\mathfrak g_2\oplus V_7$ splits this space into dimensions $14+7$. It gives neither a gauge equivalence of the measured states nor a health criterion. General $G_2$ rotations move the individually labelled axes. [Octonion automorphisms](/docs/physics/gauge-symmetry/g2-structure)
+## Reconstructing the entries experimentally {#полная-49-клеточная-карта}
 
-## The 49-cell vocabulary {#полная-49-клеточная-карта}
+First measure in the coordinate basis to obtain $p_i=\Gamma_{ii}$. For each pair $(i,j)$, use two further settings on independently prepared copies. Each setting has two outcomes in the pair subspace and an additional outcome on its orthogonal complement.
 
-The following tables preserve the historical labels. A phrase in a phenomenology column is an illustration of that vocabulary, with no corresponding observation established by the matrix algebra. A report and an external observation are independently collected data. Treating them as conjugate entries would impose the proposed correspondence during encoding. The earlier diagnostic and therapeutic prescriptions have been withdrawn. An empirical test needs an independently specified observation map, outcome and held-out comparison. [Identifiability of the reconstruction](/docs/applied/research/reconstruction-identifiability) · [Levels of interiority](/docs/consciousness/hierarchy/interiority-hierarchy)
+| Setting | States defining the two projectors | Difference of outcome probabilities |
+|---|---|---|
+| Real quadrature | $(\lvert i\rangle\pm\lvert j\rangle)/\sqrt2$ | $p_+-p_-=2\operatorname{Re}\gamma_{ij}$ |
+| Imaginary quadrature | $(\lvert i\rangle\mp i\lvert j\rangle)/\sqrt2$ | $p_+-p_-=2\operatorname{Im}\gamma_{ij}$ |
 
-### Diagonal: 7 Populations
-
-| Element | Dimension | Exterior manifestation | Interior aspect | L2+ phenomenology |
-|---|---|---|---|---|
-| $\gamma_{AA}$ | [Articulation](/docs/core/structure/dimension-a) | Communicative activity | Degree of differentiation of inner space | Clarity of distinction |
-| $\gamma_{SS}$ | [Structure](/docs/core/structure/dimension-s) | Physical stability | Structural connectedness of components | Sense of stability |
-| $\gamma_{DD}$ | [Dynamics](/docs/core/structure/dimension-d) | Observable activity | Intensity of internal processes | Sense of energy |
-| $\gamma_{LL}$ | [Logic](/docs/core/structure/dimension-l) | Cognitive productivity | Degree of consistency of internal rules | Sense of mental clarity |
-| $\gamma_{EE}$ | [Interiority](/docs/core/structure/dimension-e) | Emotional reactivity | Integration of interior states | Depth of experience |
-| $\gamma_{OO}$ | [Foundation](/docs/core/structure/dimension-o) | Vital force | Connection to the resource source | Sense of groundedness |
-| $\gamma_{UU}$ | [Unity](/docs/core/structure/dimension-u) | Behavioural integration | Degree of global connectedness | Sense of wholeness |
-
-### Upper Triangle: 21 Exterior Projections ($\mathrm{Map}_{\mathrm{ext}}$)
-
-| $\gamma_{ij}$ | Pair | Name | Exterior manifestation |
-|---|---|---|---|
-| $\gamma_{AS}$ | A$\leftrightarrow$S | Morphogenesis | Form-giving: distinctions crystallise into observable structures |
-| $\gamma_{AD}$ | A$\leftrightarrow$D | Actualisation | Initiation: a distinction actualises into an observable process |
-| $\gamma_{AL}$ | A$\leftrightarrow$L | Predication | Classification: a distinction becomes a logical predicate |
-| $\gamma_{AE}$ | A$\leftrightarrow$E | Apperception | Awareness: a distinction enters interiority |
-| $\gamma_{AO}$ | A$\leftrightarrow$O | Spontaneity | Emergence of new distinctions from the foundation without external cause |
-| $\gamma_{AU}$ | A$\leftrightarrow$U | Differentiation | Analysis: decomposition of the whole into observable parts |
-| $\gamma_{SD}$ | S$\leftrightarrow$D | Persistence | Homeostasis: observable preservation of form through process |
-| $\gamma_{SL}$ | S$\leftrightarrow$L | Nomos | Lawfulness: observable logical necessity of structure |
-| $\gamma_{SE}$ | S$\leftrightarrow$E | Representation | Psychophysics: measurable representation of structure in interiority |
-| $\gamma_{SO}$ | S$\leftrightarrow$O | Archetype | Invariant: stable patterns preserved over time |
-| $\gamma_{SU}$ | S$\leftrightarrow$U | Symmetry | Harmony: observable proportionality of parts within the whole |
-| $\gamma_{DL}$ | D$\leftrightarrow$L | Regulation | Control: observable adherence of process to logical rules |
-| $\gamma_{DE}$ | D$\leftrightarrow$E | Affection | Expression: observable action of process on interiority |
-| $\gamma_{DO}$ | D$\leftrightarrow$O | Genesis | Creativity: observable generation of novelty from depth |
-| $\gamma_{DU}$ | D$\leftrightarrow$U | Teleology | Observable directedness of action toward a goal |
-| $\gamma_{LE}$ | L$\leftrightarrow$E | Evidence | Insight: observable logical coherence within interiority |
-| $\gamma_{LO}$ | L$\leftrightarrow$O | Grounding | Axiom: observable rootedness of logic in the foundation |
-| $\gamma_{LU}$ | L$\leftrightarrow$U | Consistency | Non-contradiction: observable logical coherence of the whole |
-| $\gamma_{EO}$ | E$\leftrightarrow$O | Immanence | Observable presence of the foundation within interiority |
-| $\gamma_{EU}$ | E$\leftrightarrow$U | Synthesis | Observable integration of interior content into the whole |
-| $\gamma_{OU}$ | O$\leftrightarrow$U | Wholeness | Completeness: observable self-sufficiency of the system |
-
-### Lower Triangle: 21 Interior Projections ($\mathrm{Map}_{\mathrm{int}}$)
-
-| $\gamma_{ji}$ | Pair | Name | Interior aspect | L2+ phenomenology |
-|---|---|---|---|---|
-| $\gamma_{SA}$ | S$\to$A | Filter | Structural constraints on the space of distinctions | "My habits constrain my distinctions" |
-| $\gamma_{DA}$ | D$\to$A | Flow | Dynamic processes reveal new distinctions | "The process itself discloses the new" |
-| $\gamma_{LA}$ | L$\to$A | Frame | Logical rules determine available distinctions | "Logic determines what I am able to distinguish" |
-| $\gamma_{EA}$ | E$\to$A | Expression | Interior states seek expression | "Experience demands expression" |
-| $\gamma_{OA}$ | O$\to$A | Calling | Basic patterns modulate articulation | "Something deep drives toward distinction" |
-| $\gamma_{UA}$ | U$\to$A | Intuition of the whole | Global connectedness directs articulation | "The whole hints where to direct attention" |
-| $\gamma_{DS}$ | D$\to$S | Formation | Dynamic process generates new structure | "The process creates new structure" |
-| $\gamma_{LS}$ | L$\to$S | Construction | Logical rules determine the form of organisation | "Rules determine the form of being" |
-| $\gamma_{ES}$ | E$\to$S | Psychosomatics | Interior states influence structure | "Experiences affect the body" |
-| $\gamma_{OS}$ | O$\to$S | Manifestation | Basic patterns determine morphology | "Something deep determines form" |
-| $\gamma_{US}$ | U$\to$S | Embodiment | Global connectedness expresses through concrete form | "Wholeness is embodied in form" |
-| $\gamma_{LD}$ | L$\to$D | Governance | Logical rules direct dynamics | "Logic governs actions" |
-| $\gamma_{ED}$ | E$\to$D | Motivation | Interior states activate dynamics | "Experience drives to action" |
-| $\gamma_{OD}$ | O$\to$D | Impulse | Basic patterns initiate dynamic processes | "Something deep generates movement" |
-| $\gamma_{UD}$ | U$\to$D | Mission | Global connectedness directs action | "The whole directs actions" |
-| $\gamma_{EL}$ | E$\to$L | Insight | Interior states crystallise into rules | "Experience crystallises into understanding" |
-| $\gamma_{OL}$ | O$\to$L | Self-evidence | Basic patterns precede logical inference | "Some truths are given before reasoning" |
-| $\gamma_{UL}$ | U$\to$L | Harmony | Global connectedness sets internal logic | "The whole sets the logic" |
-| $\gamma_{OE}$ | O$\to$E | Revelation | Basic patterns generate interior states | "From depth comes an unplanned experience" |
-| $\gamma_{UE}$ | U$\to$E | Integration of experience | Global connectedness modulates interior states | "Wholeness is experienced as a special quality" |
-| $\gamma_{UO}$ | U$\to$O | Return | Global connectedness and source close the loop | "Whole and source are one" |
+Together the six independent populations and 42 quadratures specify $\Gamma$ within the chosen representation. Each column of a data table needs its actual preparation, instrument setting and outcome counts. Predicting responses to a new setting tests the reconstruction. A subject's report, when available, is a further record with its own elicitation procedure. Its relation to any matrix coordinate requires a separately testable prediction. [Observation models and identifiability](/docs/applied/research/reconstruction-identifiability) · [Practice and report](/docs/consciousness/empirical/practice-and-report)
 
 ## Cross-References
 

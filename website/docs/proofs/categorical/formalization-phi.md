@@ -165,13 +165,10 @@ The positive series has trace one; it equals $\sigma$ only if $\mathcal P(\sigma
 **Withdrawn 2026-10-03 [✗]: Theorem 2.2, compulsory E-accentuation.** The scalar conditions $R\geq1/3$, $\Phi\geq1$, and differentiation of a specified subsystem do not force $w_E>1/7$ in a feedback anchor. State conditions do not constrain an independent anchor law without a linking premise. The former $\alpha^*=37/49$ had no valid derivation. An E-accentuated anchor can be an explicit hypothesis; it is not a consequence of L2.
 
 For the family $\sigma(a)=a|E\rangle\langle E|+(1-a)\sum_{i\ne E}|i\rangle\langle i|/6$, the exact purity is $a^2+(1-a)^2/6$. For $a\geq1/7$, $P(\sigma)>2/7$ holds iff $a>(1+\sqrt6)/7\approx0.4928$ [T within this family]. A diagonal anchor has $\Phi=0$, so its viable purity does not establish an integrated conscious fixed point. The maximal-integration anchor of $M_J$ follows from (MaxΦ)/(Eq-V) [Pr], not from the support adjunction.
-#### Theorem T-191 (Convergence of the φ-tower; restated 2026-09-25) [T] {#t-191-сходимость-φ-башни}
+#### Theorem T-191 (Convergence of the φ-tower) [T] {#t-191-сходимость-φ-башни}
 
-:::warning Retracted (2026-09-25): convergence "from any anchor" for every holon, $q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min})$ [✗]
-The former statement — the tower converges for every holon, from any anchor, with rate $q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min}) < 1$ — is retracted with its proof, which is the retracted proof of T-124c in another dress. Step 1 called $\mathcal{L}_0 + \kappa(\Gamma)g_V(P)(\varphi^{(n)}(\Gamma) - \Gamma)$ a generator of a contractive CPTP semigroup with a unique stationary state; the scalars depend on $\Gamma$, and the gate makes the flow bistable. For an isolated holon with a fixed target $|0\rangle\langle 0|$ and $\kappa = 3$ the flow from $I/7$ stays at $I/7$ (the gate is closed) while the flow from $|0\rangle$ ends at a living state with $P \approx 0.98$, so $\varphi^{(n+1)} = \lim_\tau \exp(\tau\mathcal{L}^{(n)})$ is not defined. Step 3 used $\kappa_{\max} < \lambda_{\mathrm{gap}}$, "verified in T-96" — T-96 verifies no such bound. For the canonical unital $\varphi_{\mathrm{coh}}$ the tower started at $I/7$ stays at the dead replacement channel $\Gamma \mapsto I/7$ ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)).
-:::
 
-:::tip Theorem T-191 (restated) [T]
+:::tip Theorem T-191 [T]
 Let an embodied holon carry the backbone term $\mu(\sigma - \Gamma)$ ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)); let $L_{\mathcal{R}}$ be a trace-norm Lipschitz constant on $\mathcal{D}(\mathbb{C}^7)$ of $\Gamma \mapsto \kappa(\Gamma)g_V(P)(a - \Gamma)$, uniform in the target state $a$, and $\kappa_{\max} = \sup \kappa\,g_V$. If
 
 $$
@@ -195,7 +192,7 @@ with one limit $a^*$ for every initial anchor: $a^*$ is the stationary state of 
 
 *Constants.* $\kappa$ constant: $\lvert P(X) - P(Y)\rvert = \lvert\mathrm{Tr}\,(X + Y)(X - Y)\rvert \leq 2\|X - Y\|_1$ and $g_V = \mathrm{clamp}(7P - 2, 0, 1)$ give $L_{\mathcal{R}} \leq \kappa(1 + 2 \cdot 14) = 29\kappa$. Witness (`test_phi_tower_converges_only_under_backbone_dominance`): $\kappa = 0.1$, $\mu = 3.5$, $P(\sigma) > 3/7$, so $q \leq 1/6$; from $I/7$, $|0\rangle$ and a random pure anchor the towers meet to $10^{-10}$, each step contracts by at most $0.028$, and the limit has residual $< 10^{-10}$ with the gate open; the isolated counterexample of the box above is in the same check.
 
-**Dependencies:** T-124c (3) [T] (backbone dominance: existence, uniqueness and rate of the stationary state), T-148 [T] (backbone term). Standard mathematics: Banach fixed-point theorem, the variation-of-constants estimate for a flow contracting in trace norm. (The dependencies read "T-39a (spectral gap), T-59, T-96 ($\kappa < \kappa_{\max}$), T-124c (attractor uniqueness)" until 2026-09-25; the uniqueness statement of T-124c is retracted, and T-96 bounds no $\kappa$.)
+**Dependencies:** T-124c (3) [T] (backbone dominance: existence, uniqueness and rate of the stationary state), T-148 [T] (backbone term). Standard mathematics: Banach fixed-point theorem, the variation-of-constants estimate for a flow contracting in trace norm.
 ## Dynamical limits and spectral projectors {#теорема-φ-как-стационарное-распределение}
 
 ### Nonlinear basin retraction [T at convergence]

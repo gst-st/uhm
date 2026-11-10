@@ -239,7 +239,7 @@ Your expertise in spectral analysis, perturbation theory, and phase transitions 
 | 8 | [Octonionic Derivation](/docs/proofs/minimality/theorem-octonionic-derivation) | Connection between $\mathrm{Im}(\mathbb{O})$ and $\mathbb{C}^7$: why octonions, not quaternions | 60 min |
 | 9 | [Purity Threshold $P_{\text{crit}}$](/docs/proofs/dynamics/theorem-purity-critical) | Proof of $P_{\text{crit}} = 2/7$ via Frobenius norm | 45 min |
 | 10 | [Emergent Time](/docs/proofs/dynamics/emergent-time) | Derivation of the time parameter from the spectral gap of $\mathcal{L}_0$ | 45 min |
-| 11 | [FEP and UHM](/docs/proofs/dynamics/fep-derivation) **(opt.)** | Why the claimed derivation of Friston's free energy principle from the dynamics of $\Gamma$ fails (retracted 2026-09-25), and what stands | 45 min |
+| 11 | [FEP and UHM](./comparison) | Comparing objectives requires a specified generative model and recognition family. |
 | 12 | [Holon Structure](/docs/core/structure/holon) **(opt.)** | Hierarchical composition: $\Gamma_{\text{comp}}$ from subsystems, theorem T-64 | 60 min |
 
 :::tip What you can contribute
@@ -318,7 +318,7 @@ Implement $\Gamma$ as a state representation, $P$ and $\sigma$ as runtime constr
 | 1 | [Introduction (general)](/docs/intro) | Motivation for UHM: why a unified theory is needed, structural overview | 30 min |
 | 2 | [Consequences of the Axioms](/docs/core/foundations/consequences) | What *follows* from the axioms: necessity of interiority, thresholds, $G_2$-symmetry | 60 min |
 | 3 | [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism) | The central philosophical thesis: $\Gamma$ is neither matter nor consciousness but their common root | 60 min |
-| 4 | [Panpsychism Analysis](/docs/consciousness/comparative/panpsychism-analysis) | Where UHM sits in the field's vocabulary — a constitutive panprotopsychism [I] — and why it does **not** avoid the combination problem: its thresholds say *when* a system is a subject, not *how* its parts constitute one ([what the machinery answers](/docs/consciousness/comparative/panpsychism-analysis#что-отвечает-аппарат-угм)). The earlier description "why UHM avoids the combination problem" is retracted (2026-09-25) | 45 min |
+| 4 | [Panpsychism](./philosophy) | Discuss the distinction between correlated states and a collective subject. | 45 min |
 | 5 | [Comparison of Consciousness Theories](/docs/consciousness/comparative/consciousness-theories) | Systematic comparison with IIT, GWT, Higher-Order, FEP, GNWT | 60 min |
 | 6 | [Philosophical Foundations of CC](./philosophy) | The hard problem, zombie argument (T-81), explanatory gap | 60 min |
 | 7 | [Free Will](/docs/consciousness/ethics-meaning/freedom) | Compatibilism from $\mathcal{R}$: the agent *chooses* within the dynamics of $\Gamma$ | 45 min |

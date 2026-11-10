@@ -417,7 +417,7 @@ public pure fn compute_purity(gamma: &StaticMatrix<Complex, 7, 7>) -> Float
 | $\mathrm{rank}(\rho_E) > 1$ (L1 threshold) | $> 1$ | Non-trivial interiority | [T] |
 | $R_{\text{th}}$ (L2 threshold) | $\geq 1/3$ | [Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) | Proven [T] |
 | $\Phi_{\text{th}}$ (L2 threshold) | $\geq 1$ | [T-129](/docs/proofs/consciousness/operationalization#t-129) | Proven [T] |
-| $D_{\text{diff}}^{\text{min}}$ | $\geq 2$ | [T-151](/docs/proofs/consciousness/substrate-closure#t-151) | Independent L2 threshold [D] (it read "Proven [T]" until 2026-09-25) |
+| $D_{\text{diff}}^{\text{min}}$ | $\geq 2$ | [T-151](/docs/proofs/consciousness/substrate-closure#t-151) | Independent L2 threshold [D] |
 | Composition defect | Implementation-specific | Specify object/morphism maps and verify fiber descent | Conditional |
 | $\varepsilon_{\text{functor}}$ | $< 0.1$ at $\alpha>0$ (neural) | Requires calibration | Hypothesis |
 | $\varepsilon_{\text{causal}}$ | $> 0.05$ | Requires calibration | Hypothesis |
@@ -489,7 +489,7 @@ The dual interview simultaneously measures **external** (behavioral, physiologic
 
 ### Reconstruction of the Hamiltonian component [T conditional on an identified generator]
 
-A matrix ratio $\Gamma(t+\delta t)\Gamma(t)^{-1}$ is not a propagator on state vectors; its logarithm does not reconstruct $H$. That former formula is withdrawn (2026-10-03).
+A matrix ratio $\Gamma(t+\delta t)\Gamma(t)^{-1}$ is not a propagator on state vectors; its logarithm does not reconstruct $H$.
 
 If the non-Hamiltonian contribution $B(\Gamma)$ is independently known, set $X=\dot\Gamma-B(\Gamma)$ and solve $X=-i[H,\Gamma]$ as a real linear inverse problem in Hermitian $H$. In an eigenbasis of $\Gamma$ with eigenvalues $p_m$, every pair with $p_m\ne p_n$ obeys
 
@@ -577,10 +577,10 @@ The protocol $\pi_{\mathrm{bio}}$ is a declared estimator from neural features t
 
 ### Principle: declared observation model and its fibers {#eeg-полосы}
 
-:::info Theorem (replacement for the withdrawn encoder-uniqueness claim) [T]
+:::info Theorem. Factorization through an observation map [T]
 For a fixed calibrated observation law $\mathsf O_\theta$, exact data identify its fibers. The state is unique exactly when this law is injective on the admissible state set; a quantity is unique exactly when it is constant on each fiber. For calibrated linear means $\operatorname{Tr}(H_a\Gamma)$, full-state identification is equivalent to the projected Hermitian operators spanning the 48-dimensional traceless Hermitian space. [ID-1, ID-2 and proofs](/docs/applied/research/reconstruction-identifiability#fiber-theorem).
 
-**Correction 2026-10-03.** The former proof $\pi_2\circ\pi_1^{-1}$ assumed an inverse absent from the hypotheses and is withdrawn. Fixing a Fano frame or classifying automorphisms of the codomain does not identify a neural encoder. Residual symmetry must be derived from the actual observation model, not assigned automatically as $G_2$ or $\Gamma_{\!\mathrm{oct}}$.
+Fix two observation maps on a common state domain. A function assigning the second reading to the first exists exactly when the second reading is constant on the fibres of the first. If both factor through each other, the two attainable reading sets are in bijection.
 :::
 
 The proposed band table is a functional **hypothesis**. CFC magnitudes may calibrate coherence magnitudes; they do not determine signed phases. Full reconstruction requires a specified, validated complex observation model. Otherwise retain the unresolved observation fiber and report ranges of the identifiable targets.
@@ -658,7 +658,7 @@ A declared exploratory model may use $S_k\sim\mathcal N(a_k\gamma_{kk}+b_k,\sigm
 :::info Hypothesis ($\mathrm{PCI} \to \Phi$ proxy) [H]
 The Perturbational Complexity Index (PCI) is monotonically related to the integration measure $\Phi(\Gamma)$ (prediction P8.3). A linear form $\Phi(\Gamma) \approx \alpha_{\mathrm{PCI}} \cdot \mathrm{PCI} + \beta_{\mathrm{PCI}}$ with constants fitted on a training set is a *calibration*, not a bridge: whatever it fits, it cannot test.
 
-**Justification:** PCI measures the algorithmic complexity of the cortical response to TMS perturbation; a high PCI requires a response that is both integrated and differentiated, and $\Phi$ is UHM's integration measure. The earlier sentence "PCI $\geq 0.31$ during wakefulness, corresponding to $\Phi \geq \Phi_{\mathrm{th}} = 1$" stated a correspondence that nothing derives; it is withdrawn.
+**Justification.** PCI measures complexity of the cortical response to TMS. Comparing it with $\Phi$ requires a separate reconstruction of the state and held-out evaluation.
 :::
 
 **What can be derived — the bridge on UHM's side [T].** Three facts fix how UHM's thresholds sit relative to each other, with no neural data:
@@ -680,7 +680,7 @@ The Perturbational Complexity Index (PCI) is monotonically related to the integr
 | Xenon | none | 6 | 0.23 [0.11–0.31] | ¬Cons |
 | Propofol | none | 6 | 0.26 [0.23–0.31] | ¬Cons |
 
-Applied to patients: 36 of 38 in a minimally conscious state had $\mathrm{PCI}_{\max} > \mathrm{PCI}^*$ (sensitivity 94.7 %), and 9 of 43 in a vegetative state did too. (Casali et al. 2013, *Sci. Transl. Med.* 5(198): 198ra105, doi:10.1126/scitranslmed.3006294, introduced the index.) The table this section carried until 2026-09-25 — "wakefulness $0.44 \pm 0.10$, REM $0.41 \pm 0.09$, NREM $0.18 \pm 0.06$, propofol $0.12 \pm 0.05$, coma $0.15 \pm 0.10$, MCS $0.32 \pm 0.08$", labelled "observed" — has no source in either paper and is withdrawn. The REM and ketamine rows matter most for UHM: consciousness without behaviour, where the verdict cannot be read off reports given at the time.
+Applied to patients: 36 of 38 in a minimally conscious state had $\mathrm{PCI}_{\max} > \mathrm{PCI}^*$ (sensitivity 94.7 %), and 9 of 43 in a vegetative state did too. (Casali et al. 2013, *Sci. Transl. Med.* 5(198): 198ra105, doi:10.1126/scitranslmed.3006294, introduced the index.)
 
 ### Step 6: Connection to Quantum Cognition (Pothos-Busemeyer) {#quantum-cognition}
 
@@ -781,7 +781,7 @@ This is a specification for **testing a declared operationalization**, not a rea
 
 **R1. Data provenance and eligibility.** A candidate dataset must publish or supply raw TMS-triggered EEG, timing/reference metadata, independent outcome annotations, and the modalities required by the frozen encoder (including ECG/HRV if used). Record the access conditions, version, DOI and a modality inventory before pre-registration. [Casali et al. (2013)](https://doi.org/10.1126/scitranslmed.3006294) and [Casarotto et al. (2016)](https://doi.org/10.1002/ana.24779) are primary benchmark publications; their publication does not by itself establish current access to their raw data.
 
-**Correction 2026-10-03.** The former R1.b description of OpenNeuro `ds004504` as a Rogasch TMS-EEG benchmark is false: its [primary dataset metadata](https://github.com/OpenNeuroDatasets/ds004504/blob/main/dataset_description.json) identify routine EEG from Alzheimer’s disease, frontotemporal dementia and healthy subjects. It is not eligible for the claimed TMS-PCI replication. The former unspecified Comsa OSF registration and Bodart access/count entries are not a verified dataset inventory and are removed. No public dataset is currently certified here to provide the whole required measurement bundle; missing modalities require a separately registered partial protocol, not imputation.
+**Dataset eligibility.** OpenNeuro ds004504 contains routine EEG from Alzheimer’s disease, frontotemporal dementia and healthy participants. The TMS-PCI replication requires raw TMS-triggered data and its timing metadata. If a dataset lacks required modalities, register a separate partial protocol. [Dataset metadata](https://github.com/OpenNeuroDatasets/ds004504/blob/main/dataset_description.json)
 
 **R2. Pre-processing pipeline (MNE-Python canonical).** The reference preprocessing chain, to be applied to raw EEG (60-channel montage, 1 kHz sampling, TMS-triggered epochs $[-1, +1]\,\mathrm{s}$):
 
@@ -845,7 +845,7 @@ Without items (i)-(v), a replication attempt cannot be audited.
 | P8.1 | $P(\Gamma_{\mathrm{wake}}) > 2/7$ for waking subjects | EEG+HRV → $\pi_{\mathrm{bio}}$ → $P$ | $P < 2/7$ in healthy waking subjects |
 | P8.2 | $P(\Gamma_{\mathrm{NREM3}}) < 2/7$ during deep sleep | EEG → $\pi_{\mathrm{bio}}$ → $P$ | $P > 2/7$ during N3 |
 | P8.3 | $\mathrm{PCI} \propto \Phi(\Gamma)$ (monotonic dependence) | TMS-EEG + $\pi_{\mathrm{bio}}$ | Non-monotonic correlation |
-| P8.4 | Concordance of verdicts: $\mathrm{Cons}(\hat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ on the same sessions, Cohen's $\kappa \geq 0.8$ (SUB-5; until 2026-09-25: "the $P = 2/7$ transition coincides with PCI $\approx 0.31$", a comparison of unrelated scales) | TMS-EEG + $\pi_{\mathrm{bio}}$ with $\theta$ frozen on wakefulness | $\kappa < 0.4$ |
+| P8.4 | Concordance of verdicts: $\mathrm{Cons}(\hat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ on the same sessions, Cohen's $\kappa \geq 0.8$ (SUB-5) | TMS-EEG + $\pi_{\mathrm{bio}}$ with $\theta$ frozen on wakefulness | $\kappa < 0.4$ |
 | P8.5 | $\mathrm{Gap}(L,E) \approx 1$ in alexithymia | Dual interview + EEG | $\mathrm{Gap}(L,E) \ll 1$ with diagnosed alexithymia |
 | P8.6 | Critical exponents $\beta = 1/4$ at the sleep-wakefulness transition | EEG monitoring + $\pi_{\mathrm{bio}}$ → $P(\tau)$ near $P_{\mathrm{crit}}$ | Other exponents |
 

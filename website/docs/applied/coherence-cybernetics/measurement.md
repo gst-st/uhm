@@ -89,7 +89,7 @@ In neuroscience the direct analogue of purity is **coherence of neural activity*
 |-------|-------------|-----------------|
 | **EEG coherence** | Synchronisation of electrical activity between brain regions | High coherence → high P |
 | **fMRI functional connectivity** | Correlation of BOLD signals between regions | Strong connectivity → high $\|\gamma_{ij}\|$ → high P |
-| **PCI (Perturbational Complexity Index)** | Complexity of the response to TMS stimulation | No numerical relation to $P$: PCI is compared with UHM by a concordance of verdicts (P8.4), not converted into $P$ (the cell read "PCI ∝ P (experimentally shown for wakefulness vs. coma)" until 2026-09-25; no experiment showed it) |
+| **PCI** | Complexity of the recorded TMS response | Clinical comparison requires a separate model reconstruction and held-out outcomes. |
 | **Lempel-Ziv entropy** | Compressibility of the neural signal | Low entropy → high P |
 
 ### 2.3 L1 Protocol for Neural Data
@@ -294,7 +294,7 @@ $$
 \Phi \approx \frac{\lambda_2 - \lambda_1}{\lambda_{\text{norm}}}
 $$
 
-where $\lambda_{\text{norm}}$ is a normalising coefficient fixed on wakefulness sessions only ([SUB-1](/docs/applied/research/measurement-protocol#substitution-position)). *Corrected 2026-09-25:* it read "chosen so that $\Phi = 1$ corresponds to the consciousness threshold (PCI = 0.31)" — that choice puts the tested threshold into the proxy, so agreement with PCI would follow by construction.
+where $\lambda_{\text{norm}}$ is a normalising coefficient fixed on wakefulness sessions only ([SUB-1](/docs/applied/research/measurement-protocol#substitution-position)).
 
 ### 4.3 Consciousness Measure C
 
@@ -305,7 +305,7 @@ $C = \Phi \times R$ (T-140 [D]) — the product of integration and reflection.
 - $0<C<1/3$ fails the selected window’s necessary product condition; it does not classify bacteria or AI.
 - $C \geq C_{\text{th}} = 1/3$ (T-140) is necessary for a conscious system; the full predicate is $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$, which implies $C \geq 1/3$. On the uniform-diagonal stratum the window gives $C = \Phi/(1+\Phi) \in (1/2, 2/3]$.
 
-*Corrected 2026-09-25:* the thresholds read "$0 < C < 1$: pre-consciousness; $C \geq 1$: conscious system". $C \geq 1$ contradicts T-140 ($C_{\text{th}} = 1/3$), and on the uniform diagonal it is never reached inside the window.
+Choose and report thresholds before looking at evaluation labels.
 
 **Numerical example.** Healthy adult: meta-d' = 1.2, reconstructed $\widehat\Phi = 1.45$ (illustrative values).
 
@@ -321,7 +321,7 @@ $$
 C = 1.45 \times 0.40 = 0.58
 $$
 
-$C = 0.58 \geq C_{\text{th}} = 1/3$ ✓, and it lies in $(1/2, 2/3]$, where the window puts $C$ on the uniform diagonal — a value below 1 is what the window predicts, not a calibration failure. (Until 2026-09-25 the example took $\Phi \approx \mathrm{PCI}/0.31$ — a conversion no derivation supports — and read $C < 1$ as a problem, because the threshold list above said $C \geq 1$.) An alternative $R \approx \text{meta-d'}/2$ would give $R = 0.6$, a value outside the canonical band $[1/3, 1/2)$ that the conscious window imposes on $R = 1/(7P)$: a "reflection" of $0.6$ can only be the self-model quality $R_\varphi$, not the canonical $R$ that enters $C = \Phi \times R$ ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)). The calibration must map meta-d' into the canonical band.
+$C = 0.58 \geq C_{\text{th}} = 1/3$ ✓, and it lies in $(1/2, 2/3]$, where the window puts $C$ on the uniform diagonal — a value below 1 is what the window predicts, not a calibration failure. An alternative $R \approx \text{meta-d'}/2$ would give $R = 0.6$, a value outside the canonical band $[1/3, 1/2)$ that the conscious window imposes on $R = 1/(7P)$: a "reflection" of $0.6$ can only be the self-model quality $R_\varphi$, not the canonical $R$ that enters $C = \Phi \times R$ ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)). The calibration must map meta-d' into the canonical band.
 
 :::note Lesson
 Calibration is an empirical task. The theoretical CC thresholds ($P = 2/7$, $R = 1/3$, $\Phi = 1$) are precise *within the formalism*. But translating neural data into the formalism requires experimental fitting. The formulas given are starting points, not final answers.
@@ -442,10 +442,7 @@ Parameters $\alpha_k$, $\beta_k$, $x_k^0$ are fitted empirically from a training
 
 ### 6.3 Numerical Example: Testing Against PCI Without Calibrating to It
 
-**Withdrawn (2026-09-25).** This subsection "calibrated PCI → $P$" by a line through $(\mathrm{PCI}, P) = (0, 1/7)$ and $(0.31, 2/7)$, $P \approx 0.461 \cdot \mathrm{PCI} + 0.143$, and concluded that the CC threshold *coincides* with the clinical threshold PCI = 0.31. Three faults:
-- **The coincidence was put in by hand.** A line through $(0, 1/7)$ and $(c, 2/7)$ returns $P = 2/7$ at $\mathrm{PCI} = c$ for every anchor $c$ — it would "coincide" with 0.25 or 0.40 just as well (`check_core_numbers.py`, `test_two_point_pci_calibration_coincides_with_any_anchor`).
-- **The data had no source.** "Wakefulness 0.44 ± 0.06, REM 0.32 ± 0.05, deep sleep 0.21 ± 0.04, vegetative 0.19 ± 0.06, propofol 0.18 ± 0.05" matches no table of Casali et al. (2013) or Casarotto et al. (2016); the benchmark values are below.
-- **A threshold fitted to report-labelled states tests nothing.** It reproduces the labels by construction — the strict-dependence horn of Kleiner & Hoel (2021), see the [measurement protocol](/docs/applied/research/measurement-protocol#substitution-position).
+A line through $(0,1/7)$ and $(c,2/7)$ returns $P=2/7$ at $\mathrm{PCI}=c$ for any positive $c$. Choosing $c=0.31$ builds in the threshold agreement. Test the model on independent sessions with the estimator fixed before collecting the comparison labels.
 
 The nearness of $\mathrm{PCI}^* = 0.31$ to $2/7 \approx 0.286$ is a coincidence of two unrelated scales: PCI is a normalised Lempel–Ziv complexity of a binarised response to TMS, $P$ is a function of $\Gamma$.
 
@@ -598,7 +595,7 @@ Critically, CC **allows** itself to be measured. This distinguishes it from pure
 1. CC observables form a **4-level hierarchy**: L1 (global) → L2 (sectoral) → L3 (coherent) → L4 (derived).
 2. Purity $P$ can be estimated through **EEG coherence** and fMRI connectivity — by a reconstruction whose parameters are frozen before the test; PCI is the independent verdict it is compared with, not an estimator of $P$.
 3. The stress tensor $\sigma$ is measured through **psychometric scales** (for the individual) or **organisational audits** (for companies).
-4. The CC threshold is tested against PCI by a **concordance of verdicts** (Cohen's $\kappa$, P8.4), not by a PCI → $P$ calibration: the earlier line "calibration of PCI → $P$ gives a threshold coinciding with the clinical threshold" is withdrawn (2026-09-25) — the coincidence was put in by the two-point line of §6.3.
+4. $P$ and PCI use different scales. An independent calibration and held-out comparison are needed to assess concordance.
 5. All measurements are **approximate**: calibration coefficients require empirical fitting.
 
 ---

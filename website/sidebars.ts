@@ -5,6 +5,7 @@ const sidebars: SidebarsConfig = {
     'intro',
     'networks/three-node-transport',
     'networks/cycle-observations',
+    'networks/reference-comparison',
     'geometry/response-metric',
     'geometry/network-scales',
     'geometry/common-limit',
@@ -86,6 +87,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'consciousness/foundations/two-aspect-monism',
+        'consciousness/foundations/phenomenal-distinction',
         'consciousness/foundations/interiority-theory',
         'consciousness/foundations/self-observation',
       ],

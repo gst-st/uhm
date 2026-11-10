@@ -578,15 +578,7 @@ graph TD
 
 ### Closure of Composition (Corollary from AP) {#замкнутость-композиции-следствие-из-ap}
 
-$$
-\mathrm{Viable}(\mathbb{H}_1) \land \mathrm{Viable}(\mathbb{H}_2) \land \Phi_{12} > \Phi_{\min} \Rightarrow \mathrm{Viable}(\mathbb{H}_{12})
-$$
-
-**Retracted as stated [✗] (2026-09-25).** The formula above made the composition of viable Holons "with sufficient integration" viable. Its condition cannot fail: for a product state, $1 + \Phi(\Gamma_1\otimes\Gamma_2) = (1 + \Phi_1)(1 + \Phi_2)$, so two uncoupled holons with $\Phi_1 = \Phi_2 = 1$ already give $\Phi_{12} = 3$ at zero mutual information ([panpsychism analysis, §2](/docs/consciousness/comparative/panpsychism-analysis); Prediction 5 of the [predictions](/docs/applied/coherence-cybernetics/predictions)). What stands is CC-5 of [Theorem 9.1](./theorems#теорема-91-фрактальное-замыкание), **[T at weak coupling]** (raised 2026-09-25 by [Theorem 9.5](./theorems#теорема-95-каноническая-агрегация)): the composite is represented in $\mathcal{D}(\mathbb{C}^7)$ by its canonical aggregate — the mean of the parts' marginals, the only permutation-invariant aggregation consistent on uncoupled copies — and for viable embodied parts coupled weakly, $|g|\,s(H_{\mathrm{int}}) < \varepsilon_V$, every stationary state of the composite has viable parts ($P > 2/7$); at strong coupling this can fail ([Theorem 9.6](./theorems#теорема-96-сильная-связь)). Read for the composite's own dynamics on $\mathcal{D}(\mathbb{C}^7)$ the statement keeps the assumption (HOL). The coupling of the parts is measured by the mutual information: $I(1{:}2) > 0$ is a necessary condition [T] (CC-7), not a sufficient one.
-
-This is not an abstraction. It describes how cells form tissues, tissues form organs, organs form organisms, organisms form social groups. Every level is a composition of Holons from the previous level, and every level is viable **if** its parts are viable and weakly coupled — then the canonical aggregate of the level is viable (Theorem 9.5); with strong coupling the step can fail (Theorem 9.6). (The paragraph read "if the integration between components ($\Phi_{12}$) is sufficient", and then, earlier on 2026-09-25, "if the composite is itself a holon (HOL)".)
-
-The intuition that "the whole is greater than the sum of its parts" only when the parts are **connected** is expressed by $I(1{:}2) > 0$, not by $\Phi_{12} > \Phi_{\min}$ (retracted above). A pile of sand is not a Holon (the grains are not integrated). A brain is a Holon (neurons are integrated through synaptic connections).
+For a product state, $1+\Phi(\Gamma_1\otimes\Gamma_2)=(1+\Phi_1)(1+\Phi_2)$. A high $\Phi$ for the pair can therefore coexist with zero mutual information. To test correlation, use $I(1{:}2)$ relative to the current margins. To test viability of a collective, specify an aggregation channel and its gate. The mean marginal aggregate preserves an interior margin at sufficiently weak coupling. [Composition results](./theorems#теорема-95-каноническая-агрегация)
 
 ---
 
@@ -605,7 +597,7 @@ Let us summarize: what exactly is *derived* in CC and from what.
 | $N = 7$ | (AP)+(PH)+(QG) | [T] | [Theorem S](/docs/proofs/minimality/theorem-minimality-7) |
 | Composition closure (CC-5) | (AP) + weak coupling (Theorem 9.5) | [T at weak coupling] | [Theorem 9.1](#замкнутость-композиции-следствие-из-ap) |
 
-None of these results is postulated. Each is a consequence of the five axioms — composition closure together with weak coupling of the parts; the row read "[T]" and "(AP)" alone until 2026-09-25, then, the same day, "the assumption (HOL)", replaced by weak coupling through Theorem 9.5. This is both the strength and the vulnerability of the axiomatic approach: strength, because all consequences are **necessary**; vulnerability, because the refutation of *any* consequence refutes *at least one* axiom.
+The composition statement uses weak coupling and the specified mean marginal map.
 
 ---
 

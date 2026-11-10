@@ -63,11 +63,11 @@ The listed choices fail the criteria in §1.
 ## 3. Axion estimates under the Peccei–Quinn hypothesis {#3-qcd-аксион-из-компактификации-s121}
 
 :::info Role of the Axion in the Gap Formalism
-T-99's structural derivation of $\bar\theta=0$ was withdrawn. A QCD axion with a colour anomaly and a QCD-dominated potential could relax $\bar\theta$ in an extended model. [Strong CP](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)
+A QCD axion with a colour anomaly and a QCD-dominated potential could relax $\bar\theta$ in an extended model. [Strong CP](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)
 :::
 
-:::warning[Correction 2026-09-26 (T-333(e)–(h)): in the Clifford content this axion is not a QCD axion]
-[Confinement §3.1b](/docs/physics/gauge-symmetry/confinement#пк-и-нб) (T-333(e)–(h)) shows that with the fields the Clifford frame forces — three generations of the $\mathbf{16}$ and one doublet — no $\mathrm{U}(1)$ with a colour anomaly survives the quark masses. So a Gap phase has no $G\tilde G$ coupling, and the "axial anomaly with QCD" of §3.1 needs a Peccei–Quinn sector that the frame lacks: a second doublet with a singlet, or new coloured fermions. Call this addition the hypothesis (PQ). Three more points. (1) The mass formula of §3.3 needs the potential of $a$ to come from QCD alone, while §3.5 gives every phase a mass from $V_{\mathrm{Gap}}$; the two cannot both hold. (2) "$\theta_{\mathrm{QCD}}=0$ structurally" rests only on the retracted cubic $V_3$ (T-99 was [C at (SV)]; since 2026-09-26 its conclusion is retracted [✗], [Confinement §3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)). An axion with a $G\tilde G$ coupling and a QCD-dominated potential relaxes $\theta$ whatever else holds, so it cannot be "purely a DM candidate". (3) The relic estimate of §3.4 takes $\theta_i=H_I/(2\pi f_a)$, a pure fluctuation around $\theta=0$. The axion density is then isocurvature with relative amplitude of order one, and the Planck bound allows $\Omega_a/\Omega_c\lesssim3\times10^{-5}$, not $10^{-2}$. Theorem 9.1 is corrected from [T] to [H] ($\epsilon\sim10^{-3}$ and $N_{\mathrm{DW}}=1$ are assumed), and Theorems 9.2 and 9.3 from [T] to [C at (PQ)]. The arithmetic stands: $f_a=2\times10^{15}$ GeV gives $m_a=2.9$ neV.
+:::note Axion conditions in the specified field content (T-333(e)–(h))
+Three generations of $\mathbf{16}$ with one doublet leave no colour-anomalous $U(1)$ compatible with the quark masses. A QCD axion therefore requires a Peccei–Quinn extension (PQ) and a QCD-dominated potential. The mass formula gives $m_a\simeq2.9$ neV when $f_a=2\times10^{15}$ GeV. If the initial angle comes entirely from inflationary fluctuations around zero, the isocurvature bound on the fraction is about $3\times10^{-5}$. [Confinement](/docs/physics/gauge-symmetry/confinement#пк-и-нб)
 :::
 
 ### 3.1 Definition {#31-определение}
@@ -82,7 +82,7 @@ An extension must supply the coefficients $c_{ij}$ and a colour-anomalous axial 
 
 ### 3.2 Decay Constant
 
-:::tip Theorem 9.1 [H] (corrected 2026-09-26 from [T])
+:::tip Theorem 9.1 [H]
 The decay constant of the Gap axion:
 
 $$
@@ -96,7 +96,7 @@ Canonical normalisation: from the kinetic term $\mathcal{L}_{\mathrm{kin}} = \fr
 
 ### 3.3 Axion Mass
 
-:::tip Theorem 9.2 [C at (PQ)] (corrected 2026-09-26 from [T])
+:::tip Theorem 9.2 [C at (PQ)]
 The mass is determined by QCD instantons:
 
 $$
@@ -108,7 +108,7 @@ An ultralight axion within the sensitivity range of the CASPEr and ABRACADABRA e
 
 ### 3.4 Relic Density
 
-:::tip Theorem 9.3 [C at (PQ)] (corrected 2026-09-26 from [T])
+:::tip Theorem 9.3 [C at (PQ)]
 From the vacuum misalignment mechanism:
 
 $$
@@ -229,11 +229,11 @@ $$
 \Omega_X h^2 = \frac{h^2m_X n_X(a_*)}{\rho_{c,0}}\left(\frac{a_*}{a_0}\right)^3.
 $$
 
-The mass, production rate and dilution enter separately. In natural units $H_I^3$ has units of energy cubed. The former value in $\mathrm{cm}^{-3}$ omitted this conversion. Substitution of $m_X=10^{13}$ GeV and $H_I=4\times10^{13}$ GeV in the illustrative §5.2 formula gives $0.4$. Comparing that output to $0.120\pm0.001$ cannot establish a relic species or select its mass.
+The mass, production rate and dilution enter separately. In natural units $H_I^3$ has units of energy cubed. Substitution of $m_X=10^{13}$ GeV and $H_I=4\times10^{13}$ GeV in the illustrative §5.2 formula gives $0.4$. Comparing that output to $0.120\pm0.001$ cannot establish a relic species or select its mass.
 
 ### 5.5 Interaction Cross Section of the $O$-Relic
 
-**Theorem 11.3 (previous cross-section estimate withdrawn) [✗].** In natural units $G_N^2m_X^2m_N^2$ is dimensionless. It cannot supply the stated area in $\mathrm{cm}^2$. A scattering calculation needs a field interaction, incident kinematics, momentum-transfer range and a detector response for the proposed mass. The cross section is open.
+**11.3. Dimensional check.** In natural units $G_N^2m_X^2m_N^2$ is dimensionless. It cannot supply the stated area in $\mathrm{cm}^2$. A scattering calculation needs a field interaction, incident kinematics, momentum-transfer range and a detector response for the proposed mass. The cross section is open.
 
 :::warning Annihilation Cross Section for $O$-Relic Pairs [H]
 For pairs of $O$-quanta ($\Delta N_O = 2$, $P_O = +1$) annihilation is possible:

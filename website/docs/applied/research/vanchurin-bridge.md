@@ -117,7 +117,7 @@ $\dot q = g^{-1}\nabla\mathcal F$ (his 6.3). The learning algorithm is
 
 UHM is built on five axioms: reality as an $\infty$-topos over density
 matrices, the **Bures** Grothendieck topology, dimension $N=7$, a scale
-$\omega_0$, and a specified Page–Wootters clock extension and constraint. Its dynamics is a **chosen three-group model** [D]; the former completeness claim T-57 is withdrawn:
+$\omega_0$, and a specified Page–Wootters clock extension and constraint. The following dynamics groups its terms into three chosen classes [D].
 
 $$
 \mathcal L_\Omega[\Gamma] = \underbrace{-i[H,\Gamma]}_{\text{Aut}}
@@ -130,13 +130,13 @@ The dictionary is exact on every line that matters:
 | VL object | UHM object | Status of the link |
 |---|---|---|
 | trainable state $q$ | coherence matrix $\Gamma\in\mathcal D(\mathbb C^7)$ | structural |
-| loss $-\mathcal F$ | free-energy functional $\mathcal F[\varphi;\Gamma]$ | T-39e (variational $\varphi$) — retracted 2026-09-25: the functional is a cross-entropy and $\varphi$ is not its minimiser, so this row is a notational match only |
+| loss $-\mathcal F$ | functional $\mathcal F[\varphi;\Gamma]$ | The proposed expression is a cross-entropy. Its minimum need not be the specified channel. |
 | metric $g$ | **Bures/SLD metric**, one member of the Petz family | selected metric [D], operational reading requires its bridge |
 | noise covariance $\kappa$ | covariance of one-step Kraus increments of $\mathcal D_\Omega$ | forced by T-41/T-59, **relative to the canonical Kraus resolution** (§7.2) |
-| covariant descent $\dot q=g^{-1}\nabla\mathcal F$ | regeneration $\mathcal R$ toward $\rho_*$ | replacement family [D]; universal uniqueness T-39f–h withdrawn |
+| covariant descent | regeneration toward a target $\rho_*$ | A specified family of maps [D]. |
 | emergent time = block index | $\tau\in\mathbb Z_7$ (Page–Wootters) | T-38b, T-87 |
 | maximum-entropy identity $g^{-1}=c$ (his 4.7) | **derived here as a dynamical theorem** (§4) | this page |
-| multi-level structure | fractal holon (a holon of holons); coherence contraction $c_F=1/3=1/\lvert\mathrm{QR}(7)\rvert$ per step of the Fano channel | CC-5 [T at weak coupling] for the holon of holons (Theorem 9.5: the canonical aggregate of weakly coupled viable holons is viable); $c_F$ is the [Fano channel's contraction](/docs/proofs/gap/fano-channel#state-independence-alpha) [T]. (Earlier credited to T-72 — scale invariance, which states neither; retracted) |
+| multi-level structure | tensor product and specified aggregation | CC-5 holds at weak coupling for the stated aggregate. The $1/3$ Fano-channel contraction is a separate result. |
 | cellular network | Fano plane $\mathrm{PG}(2,2)$, *unique* optimal BIBD$(7,3,1)$ | T-41i |
 
 ---
@@ -818,11 +818,7 @@ holons is viable, and its invariants lie within $O(g)$ of a member's
 but that aggregate follows the members' own generator only up to a forcing,
 depends on nothing but their marginals, and can die at strong coupling
 ([Theorem 9.6](/docs/applied/coherence-cybernetics/theorems#теорема-96-сильная-связь));
-that a population is a holon in the full sense stays the assumption (HOL). (An earlier edition said the identification
-"is exactly what UHM's scale-invariance theorem (T-72, with contraction
-$c_F=1/3$) asserts"; retracted — T-72 asserts no closure, and $c_F = 1/3$
-is the Fano channel's coherence contraction, not a property of
-aggregation.) The identification remains a bridge assumption **[I]**
+identifying a population with a holon is an additional assumption (HOL).
 rather than a theorem about biology. If it is rejected, the mathematical covariance identity remains valid for its specified model; the learning and biological interpretation does not follow.
 :::
 
@@ -842,7 +838,7 @@ rather than a theorem about biology. If it is rejected, the mathematical covaria
    granting that static identity as well, the two together give the
    sharp form $\kappa^{\uparrow\uparrow}=\frac{\gamma}{4N}c$, which
    relates a routinely measured object to an unmeasured one.
-3. *A specified frame.* The seven axes and positive 3-form are declared inputs. They are not atoms of the subobject classifier. The old universal T-42a encoder rigidity is withdrawn; strong comparison requires (RI).
+3. *A specified frame.* The seven axes and positive three-form are inputs. Comparing encoders requires a common observation law and tests that distinguish their records.
 4. *A conditional finite design.* Given attenuation $1/3$ and sharp minimal projector realisation, the Fano classification is exact. Primitivity alone does not force pair coverage or block size.
 5. *A selected attenuation score.* The SAD value three belongs to the specified score and damping rule. It is not a universal limit on recursive representations. Twenty-one matrix pairs are not twenty-one independent communication addresses: an address bound requires a defined instrument, channel use and distinguishability task. Multiplying these counts does not prove a context-capacity theorem.
 
@@ -875,9 +871,7 @@ rather than a theorem about biology. If it is rejected, the mathematical covaria
 3. *A macroscopic derivation route*: the cell/agent split of the
    *Self-Learning Universe* (memory-cost vs processing-cost) is a
    physically motivated variational principle whose UHM counterpart —
-   Gap curvature $\lVert\mathrm{Curv}\rVert^2=\omega_0^2
-   \lVert\gamma_{ij}\rVert^2\mathrm{Gap}^2$ (the universal T-73 is withdrawn [✗]) and a chosen $V_{\text{Gap}}$
-   is a selected potential; universal T-74 is withdrawn [✗]. A comparison needs separately specified geometries and coefficients.
+   a specified tensor statistic and effective potential $V_{\rm Gap}$. A term-by-term comparison needs the observation maps and action coefficients in both models.
 
 **Computing, exploring and reusing [H].** These are useful architectural
 roles, but assigning them the numerical exponents $a=1/2,1,0$ is not a proved

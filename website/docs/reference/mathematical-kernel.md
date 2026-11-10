@@ -155,6 +155,8 @@ If every trajectory in a forward-invariant domain converges to a fixed point **i
 
 ## Thresholds and operational meaning {#thresholds}
 
+Before interpreting a threshold, apply the [criterion of experiential access](/docs/consciousness/foundations/phenomenal-distinction): an attribution is recoverable from the specified tests exactly when it is invariant under all their observational equivalences. An independent phenomenal interpretation is still required.
+
 Write $P=\operatorname{Tr}\rho^2$, $d=\sum_i\rho_{ii}^2$, $q=P-d$, and $\Phi=q/d$. Then
 
 $$

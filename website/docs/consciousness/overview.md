@@ -7,6 +7,8 @@ slug: /consciousness/overview
 
 # Consciousness in UHM: Model, Interpretation and Tests
 
+Start with [experience and access](./foundations/phenomenal-distinction): what someone can distinguish, how we learn it, and which questions the evidence leaves open.
+
 UHM develops a matrix/category model and proposes that physical and experiential descriptions are aspects of one structure **[I]**. The mathematical results concern explicitly defined states, maps, metrics and operational predicates. A mathematical content record does not itself establish that the represented system feels. Biological, clinical and philosophical identifications require additional premises and independent observations.
 
 The [typed kernel](/docs/reference/mathematical-kernel) is the common reference: it distinguishes a numerical density matrix, a genuine Bures site, a sheaf object, a logical support reflector, a fixed linear channel and a nonlinear numerical self-model. These types cannot be interchanged merely because they all describe the same proposed holon.
@@ -82,7 +84,7 @@ A logical support reflector is unique for its fixed slice and inclusion. It does
 
 Yoneda identifies objects up to isomorphism within a declared category. A distance profile identifies a point in a declared metric space. These mathematical facts can support relational models; they do not prove that phenomenality has no properties outside them.
 
-The former universal E-coherence floor/No-Zombie implication T-38a, forced experiential splitting, FV uniqueness, and Lawvere no-go T-214 are withdrawn. No universal $\mathrm{Coh}_E>1/7$ floor follows in models with bootstrap or independent purity input. Lawvere requires its actual evaluator $A\to B^A$; it does not prohibit an arbitrary internal map. T-213 does not identify channel outputs with representable sheaves or establish a universal 138-bit description. The old T-210 implication “refining $J$ strictly raises canonical $\Phi$” is withdrawn: at a fixed state/frame, $\Phi=P/Q-1$ is independent of $J$. Only a separately chosen sum over nested pair sets with the same nonnegative terms and fixed denominator is monotone; strictness additionally requires a positive new term. It proves no automatic increase in cognitive capability when state, dimension or readout changes. See [Two-Aspect Monism](./foundations/two-aspect-monism) and [corrected closure statements](/docs/proofs/categorical/fundamental-closures).
+At a fixed state and basis, $\Phi=P/Q-1$ does not depend on the chosen topology. A sum over nested sets of nonnegative pair weights with a fixed denominator increases strictly only if at least one new weight is positive. An independent purity source permits states without a universal positive lower bound on E-coherence. Lawvere’s theorem requires a specified evaluator with the required surjectivity property; it does not prohibit arbitrary internal comparisons. None of these constructions identifies a subject of experience. See [two-aspect monism](./foundations/two-aspect-monism) and [categorical constructions](/docs/proofs/categorical/fundamental-closures).
 
 ## Dynamics versus level labels
 

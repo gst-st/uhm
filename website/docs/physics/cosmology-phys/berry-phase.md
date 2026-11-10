@@ -11,7 +11,7 @@ A Berry phase can be measured for a specified adiabatic eigenstate family. This 
 
 ## Overview
 
-Neither the one-dimensional Chern–Simons expression nor the proposed Keldysh argument determines a physical topological term for Gap (T-85 withdrawn in §9.2). The topology of a specified orbit and the arithmetic of a chosen winding form remain computable.
+Neither the one-dimensional Chern–Simons expression nor the proposed Keldysh argument determines a physical topological term for Gap (§9.2). The topology of a specified orbit and the arithmetic of a chosen winding form remain computable.
 
 ---
 
@@ -29,7 +29,7 @@ where $\mathcal{A}(\lambda) = i\langle n(\lambda)|\nabla_\lambda|n(\lambda)\rang
 
 ## 2. Topologically Protected Gap
 
-**Former Theorem 5.1 [✗ as a universal claim].** On a noncontractible loop one can choose a constant, nondegenerate eigenstate, whose Berry phase is zero. With nonzero Berry curvature even contractible loops can acquire different geometric phases. A nonzero fundamental group alone gives no lower bound on a pairwise Gap.
+**5.1. Berry phase on a loop.** On a noncontractible loop one can choose a constant, nondegenerate eigenstate, whose Berry phase is zero. With nonzero Berry curvature even contractible loops can acquire different geometric phases. A nonzero fundamental group alone gives no lower bound on a pairwise Gap.
 
 ### 2.1 Holonomy in the Space of Gap Configurations
 
@@ -49,7 +49,7 @@ For a closed subgroup $H$ of the compact simply connected group $G_2$, the fibra
 
 ### 3.2 Topological Protection from $\pi_1$
 
-**Theorem 3.2 / T-69 [T for the specified target].** For the connected torus $T^2$ the exact sequence gives $\pi_1(G_2/T^2)=0$ and $\pi_2(G_2/T^2)\cong\pi_1(T^2)=\mathbb Z^2$. The two integers classify based maps **from $S^2$**. A solitary density matrix supplies no such map. A continuous potential with a minimum set disjoint from a compact forbidden set has a positive excess there when all minimizers are excluded. Its size depends on the potential. The earlier numerical barriers and protection of individual states are withdrawn. [T-69](/docs/core/dynamics/composite-systems#теорема-тополог-защита)
+**Theorem 3.2 / T-69 [T for the specified target].** For the connected torus $T^2$ the exact sequence gives $\pi_1(G_2/T^2)=0$ and $\pi_2(G_2/T^2)\cong\pi_1(T^2)=\mathbb Z^2$. The two integers classify based maps **from $S^2$**. A solitary density matrix supplies no such map. A continuous potential with a minimum set disjoint from a compact forbidden set has a positive excess there when all minimizers are excluded. Its size depends on the potential. [T-69](/docs/core/dynamics/composite-systems#теорема-тополог-защита)
 
 ---
 
@@ -61,15 +61,13 @@ Code distance is defined for codewords, the octonionic associator for algebra el
 
 ## 5. Sectoral Gap Bound {#секторная-gap-граница}
 
-### 5.1 Retraction of the Original Fano Bound [✗]
+### 5.1 Counterexample to a uniform Fano bound
 
-:::danger Retraction: Theorem 6.1 (Fano Bound $\leq 1/2$) [✗]
-The original formulation claimed: $\mathrm{Gap}_{\mathrm{intra}}(i,j) \leq 1/2$ for all pairs $(i,j)$ on the same line of the Fano plane.
+**6.1.** Incidence alone imposes no bound of one half on each Gap.
 
 **Counterexample:** In $\mathrm{PG}(2,2)$ **every** pair lies on exactly one Fano line (any two points of the projective plane determine a line). The lines containing O: $\{A, O, U\}$, $\{S, L, O\}$, $\{D, E, O\}$. For the pairs $(A,O)$, $(S,O)$, $(D,O)$, $(E,O)$, $(L,O)$, $(U,O)$ on these lines, $\mathrm{Gap}(O,i) \approx 1$ (from the Page–Wootters mechanism: the O-sector serves as an internal clock with maximal phase). This is a **direct counterexample** to the original formulation $\leq 1/2$.
 
-Replacing theorem: [Sectoral Gap Bound](#теорема-секторная-gap-граница) [T].
-:::
+See the [sector profile](#теорема-секторная-gap-граница) for the conditional numerical bounds.
 
 ### 5.2 Theorem (Sectoral Gap Bound) [T] {#теорема-секторная-gap-граница}
 
@@ -98,7 +96,7 @@ $$
 
 **Proof.**
 
-**Step 1.** The table supplies the sector values. The corrected invariant potential of T-64 does not derive this profile.
+**Step 1.** The table supplies the sector values. The invariant potential of T-64 does not derive this profile.
 
 | Sector | Pairs | $\varepsilon$ | Gap |
 |--------|------|--------------|-----|
@@ -113,7 +111,7 @@ $$
 \mathrm{Gap}(i,j) \leq \varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll \frac{1}{2}
 $$
 
-The mean coherence $\bar{\varepsilon} = \bigl(\frac{1}{15}\sum_{i<j, \, i,j \neq O} \varepsilon_{ij}^2\bigr)^{1/2} = \varepsilon_{33}/\sqrt5 \approx 0.027$ ([C at (SV)]; the value $0.023$ written here until 2026-09-25 is retracted with the audit A-83), and the maximum $\varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll 1/2$.
+For the table's profile the root mean square over the 15 non-clock pairs is $\bar\varepsilon=\varepsilon_{33}/\sqrt5\approx0.027$ [C at (SV)]. The maximum is $\varepsilon_{\max}\approx0.06$.
 
 **Step 3.** A nonzero clock rate in a readout proportional to $\sqrt{\sum_i|\gamma_{Oi}|^2\mathrm{Gap}(O,i)^2}$ requires at least one nonzero term. It does not force all six phases to be near maximal opacity. This last feature is part of (SV).
 
@@ -326,9 +324,9 @@ This is a **total derivative** with respect to $\tau$. Upon integration over a c
 $CS_1$ on a 1D base **does not generate** a topological phase for winding sectors. The identification "$CS_1 = \sum_{\mathrm{Fano}} \theta_{ij}\dot{\theta}_{jk}$" does not follow from $\mathrm{Tr}(\mathcal{A}\dot{\mathcal{A}})$, since the latter is a total derivative.
 :::
 
-### 9.2 Audit of the Keldysh/Berry proposal [✗; replacement Pr] {#теорема-l-top-кельдыш}
+### 9.2 Reality of the trace and the Berry connection {#теорема-l-top-кельдыш}
 
-The claimed unique topological term and coefficient $\beta=\lambda_3/(2\pi)$ do not follow from the written expression or T-75 (withdrawn [✗]). There is a direct obstruction. For positive definite density matrices $\rho_-,\rho_+$ and a Hermiticity-preserving generator $\mathcal L$, both $\log\rho_-$ and $\mathcal L(\rho_+)$ are Hermitian. For any two Hermitian matrices $A,B$,
+For positive definite density matrices $\rho_-,\rho_+$ and a Hermiticity-preserving generator $\mathcal L$, both $\log\rho_-$ and $\mathcal L(\rho_+)$ are Hermitian. For any two Hermitian matrices $A,B$,
 
 $$
 \overline{\operatorname{Tr}(AB)}=\operatorname{Tr}(BA)=\operatorname{Tr}(AB).
@@ -340,7 +338,7 @@ $$
 \operatorname{Im}\operatorname{Tr}\big[\rho_+\log\rho_--\mathcal L(\rho_+)\log\rho_-\big]=0.
 $$
 
-The former linear phase formula for this imaginary trace is false. At singular $\rho_-$ the logarithm also requires a support restriction or regularization. Taking a real part and then claiming a nonzero imaginary part is not a microscopic Keldysh construction.
+When the density matrix is singular, the logarithm needs a support restriction or a regularization.
 
 A Berry term can be defined separately for a specified smooth nondegenerate eigenline over a parameter region. In a local normalized gauge $u(x)$, choose
 
@@ -350,9 +348,9 @@ $$
 
 Gauge changes alter $\mathcal A$ by an exact form; global consistency uses transition functions and a supplied line bundle. Degeneracies need a higher-rank bundle/non-Abelian connection. Its existence, adiabatic regime and relation to UHM's physical fields are additional model hypotheses [H/Pr]. A local polynomial $\beta B_{ab}\theta_a\dot\theta_b$ on lifted angular coordinates is not automatically a global one-form on a torus or a quantized topological term.
 
-The fixed coordinate phase torus has no general continuous $G_2$ conjugation action: conjugation changes coherence moduli and populations. A selected positive three-form therefore does not make these phase polynomials $G_2$ invariant or determine their coefficient. Even for three variables permuted by $S_3$, symmetric quadratic forms have two independent terms $a\sum x_i^2+b\sum_{i<j}x_ix_j$; symmetry alone does not fix an off-diagonal ansatz. Finite cyclic-sum arithmetic in the next sections remains a chosen-form calculation; the former continuous covariance/unique physical derivation is withdrawn [✗].
+The fixed coordinate phase torus has no general continuous $G_2$ conjugation action: conjugation changes coherence moduli and populations. A selected positive three-form therefore does not make these phase polynomials $G_2$ invariant or determine their coefficient. Even for three variables permuted by $S_3$, symmetric quadratic forms have two independent terms $a\sum x_i^2+b\sum_{i<j}x_ix_j$; symmetry alone does not fix an off-diagonal ansatz. Finite cyclic-sum arithmetic in the next sections remains a chosen-form calculation.
 
-A controlled open-system action must be derived from its microscopic dynamics and noise, as in [Sieberer–Buchhold–Diehl](https://arxiv.org/abs/1512.00637). That method does not establish the previously displayed UHM action.
+A controlled open-system action must be derived from its microscopic dynamics and noise, as in [Sieberer–Buchhold–Diehl](https://arxiv.org/abs/1512.00637).
 
 ## 10. $G_2$-Orientational Symmetry
 
@@ -360,7 +358,7 @@ A controlled open-system action must be derived from its microscopic dynamics an
 
 When computing the winding phase $\Phi(\mathbf{n})$ from the topological term, the question arises as to the range of summation:
 
-| Variant | Terms | Rank | Chosen-form symmetry (continuous $G_2$ claim withdrawn) |
+| Variant | Terms | Rank | Symmetry under cyclic edge permutations |
 |---------|-----------|------|---------------------|
 | (a) Full antisymmetrisation | 42 | **0** (identically zero) | Yes |
 | (b) Cyclic sum | 21 | **21** (non-degenerate) | **Yes** |
@@ -441,9 +439,9 @@ The monomial formula is **not invariant** under $\mathbb{Z}_3$ — this is a coo
 
 ## 11. Chosen bilinear form and the failed uniqueness argument
 
-#### Scope of former Theorem 4.1 {#единственность-билинейной-формы-bb}
+#### Theorem 4.1. Invariants on a line {#единственность-билинейной-формы-bb}
 
-The universal unique $G_2$-covariant winding-form claim is withdrawn [✗]. There is no such continuous action on the fixed-modulus phase torus. Even a single line with its three **unsigned unordered edge variables** has the two-dimensional space of $S_3$-invariant quadratic forms
+Even a single line with its three **unsigned unordered edge variables** has the two-dimensional space of $S_3$-invariant quadratic forms
 
 $$
 Q=a(x_1^2+x_2^2+x_3^2)+b(x_1x_2+x_2x_3+x_3x_1).
@@ -465,7 +463,7 @@ $$
 |--------|-----------------|-----------------|
 | Rank | 14 | **21** |
 | Suppression | $10^{-5.9}$ | **$10^{-8.9}$** |
-| Chosen-form symmetry (continuous $G_2$ claim withdrawn) | No | **Yes** |
+| Cyclic permutations of edge labels | No | Yes |
 
 :::info Caveat
 Although the mathematical result of the Gaussian sum is rigorous, at physical $S_0 = 20$ destructive interference **does not work** (dominant sectors have zero phase). See the [Cosmological Constant](/docs/physics/gravity/cosmological-constant#7-сумма-гаусса-для-фано-фаз) page for details.

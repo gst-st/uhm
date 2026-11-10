@@ -54,7 +54,7 @@ The point of the table is that *nothing in the readout requires anything but Γ 
 
 Γ is not handed to us; it must be **estimated** from what a system exposes. This is the honest core of the whole enterprise and the reason the anchor classes exist. The estimation problem is: given observable evidence $e$ about a system, produce $\widehat\Gamma(e)$ and a confidence region. Three evidence types, three estimators ([03](/docs/applied/console/anchors) gives the mathematics):
 
-- **Measured (Anchor I):** $e$ = physiological/neural/behavioural signals; $\widehat\Gamma$ via the [seven-channel embedding](/docs/applied/coherence-cybernetics/measurement#измерение-напряжений), with a proven consistency and confidence bound; the purity axis is read from $\widehat\Gamma$ itself (parameters frozen on wakefulness), and the PCI verdict is the independent check it is compared with ([concordance of verdicts, P8.4](/docs/applied/research/measurement-protocol#substitution-position)); the earlier "PCI $\leftrightarrow P_{\mathrm{crit}}$ calibration" is withdrawn (2026-09-25).
+- **Measured (Anchor I).** Freeze the reconstruction before comparing latent-model verdicts to observed outcomes. PCI and purity need independent calibration.
 - **Self-tracked (Anchor II):** $e$ = responses to the 28-item audit; $\widehat\Gamma$ via a scoring model that maps item responses to populations and coherences, with test-retest reliability standing in for measurement error.
 - **Oracular (Anchor III):** $e$ = a structured random draw; $\widehat\Gamma$ is *not* estimated — the draw is a projective prompt, and the Console labels it so.
 

@@ -54,15 +54,37 @@ This strengthens the mathematical dimension statement without identifying operat
 
 ## Seven-dimensional realizations {#часть-iv-доказательство-достаточности-конструктивное}
 
+<a id="трек-сигма"></a>
+
+<a id="итог-части-iii"></a>
+
+<a id="случай-n--0-удаление-артикуляции-a"></a>
+
+<a id="случай-n--1-удаление-структуры-s"></a>
+
+<a id="случай-n--2-удаление-динамики-d"></a>
+
+<a id="случай-n--3-удаление-логики-l"></a>
+
+<a id="случай-n--6-удаление-единства-u"></a>
+
+<a id="теорема-31-необходимость-7-измерений"></a>
+
+<a id="конструктивные-контрпримеры"></a>
+
 The matrix space $D_7$, its semantic frame, the Fano channel and explicit self-models are mathematically realizable. For a fixed anchor, channel, rates and Hamiltonian, a viable stationary solution requires proof of its existence, its gate margins and the relevant stability. The [φ dynamics](/docs/core/operators/phi-operator) supplies examples for stated parameter regimes.
 
 The former proof initiated the system at $I/7$ and asserted autonomous regeneration through a gate that is zero there. That genesis argument is withdrawn [✗]. The canonical unital self-model does not sustain isolated life; a non-unital anchor or environment is additional data. A pure E-state can have nonzero variance for other observables, so rank one does not mean “all observables have zero variance.” Neither a fixed point nor a nonzero E-entry establishes experience.
 
 ## Rosen correspondence {#часть-v-связь-с-mr-системами-розена}
 
+<a id="определение-12-mr-система-розена"></a>
+
 An (M,R)-system contains typed maps $f:A\to B$, repair into a mapping object and specified closure. A table pairing its roles with UHM labels is an interpretation [I]. An isomorphism requires actual objects, arrows, a functor, full faithfulness and essential surjectivity (or explicit inverse maps), not a role count. No categorical isomorphism with a unique minimal phenomenal (M,R)-system is asserted here.
 
 ## Basis and clock {#часть-vii-теорема-о-единственности-базиса}
+
+<a id="проблема-5-мост"></a>
 
 A,S,D,L,E,O,U label a chosen orthonormal frame [D]. Its uniqueness is not proved by general properties of projectors, Hamiltonians, traces or commutators. Preserving a specified octonion multiplication restricts *frame transformations*; it does not determine a neural encoder or identify a physical experiential axis.
 
@@ -86,19 +108,3 @@ Derive a validated physical requirement that forces $(\Sigma_6)$ or $A_{\mathrm{
 - [Typed mathematical kernel](/docs/reference/mathematical-kernel): distinction between states, processes, logic and physical bridges.
 
 The counterexamples and coding construction are checked in `website/scripts/check_mathematical_kernel.py`. Retired functional necessity/uniqueness claims T-40c–T-40f are not premises of the replacement bounds.
-
-## Historical links
-
-<a id="определение-12-mr-система-розена"></a>
-<a id="конструктивные-контрпримеры"></a>
-<a id="теорема-31-необходимость-7-измерений"></a>
-<a id="случай-n--6-удаление-единства-u"></a>
-<a id="случай-n--3-удаление-логики-l"></a>
-<a id="случай-n--2-удаление-динамики-d"></a>
-<a id="случай-n--1-удаление-структуры-s"></a>
-<a id="случай-n--0-удаление-артикуляции-a"></a>
-<a id="итог-части-iii"></a>
-<a id="проблема-5-мост"></a>
-<a id="трек-сигма"></a>
-
-The old role-removal and functional-uniqueness arguments are withdrawn. Their links resolve to the corrected bounds and explicit assumptions above.

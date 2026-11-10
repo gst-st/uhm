@@ -76,7 +76,7 @@ $$
 
 ## 2. Supplied clock labels and logical types
 
-The [typed kernel](/docs/reference/mathematical-kernel#bures-site) uses $\mathcal E_N=\operatorname{Sh}_\infty(\operatorname{Open}_B(D_N))$. Its subobject classifier has $\Omega(U)=\operatorname{Open}(U)$: truth values are open subobjects, not rank-one quantum projectors. No seven-atom clock, Hamiltonian, or cyclic action follows from this classifier. The former derivation from atoms of $\Omega$ is withdrawn [✗].
+The [typed kernel](/docs/reference/mathematical-kernel#bures-site) uses $\mathcal E_N=\operatorname{Sh}_\infty(\operatorname{Open}_B(D_N))$. Its subobject classifier has $\Omega(U)=\operatorname{Open}(U)$: truth values are open subobjects, not rank-one quantum projectors. No seven-atom clock, Hamiltonian, or cyclic action follows from this classifier.
 
 <a id="алгебраическое-определение"></a>
 
@@ -134,7 +134,7 @@ The label set yields a permutation and, after Hilbert-space realization, a unita
 
 ### 2.7 Scope of the temporal language
 
-The surviving content of the former Theorem 2.7.1 is the cyclic-action calculation in §2.1. A general $\infty$-topos does not come equipped with a selected order-$N$ temporal endofunctor. A permutation on labels is also not, by itself, a reflective modality or the guarded “later” operator of a type theory. No quotient of $\Omega$ or factorization of a classifier is used to derive the clock tensor product. These former implications are withdrawn [✗].
+**Theorem 2.7.1.** A chosen generator on a free transitive cyclic set gives the action in §2.1. A general $\infty$-topos specifies neither such a generator nor a clock–system tensor factorization.
 
 ---
 
@@ -187,7 +187,7 @@ $$
 \rho_S(n)=\operatorname{Tr}_C(\Pi_n\Gamma_{CS}\Pi_n)/p_n.
 $$
 
-Positivity and trace normalization follow directly. A compatible noninteracting constraint can yield unitary conditional dynamics, as in the [original PW construction](https://doi.org/10.1103/PhysRevD.27.2885); no universal conditional law follows merely from stationarity. Interaction corrections require explicit estimates, not a bare $O(H_{\mathrm{int}})$. The former classifier-to-register derivation of A5 is withdrawn [✗]. The finite history construction in §11 is separate and is retained.
+Positivity and trace normalization follow directly. A compatible noninteracting constraint can yield unitary conditional dynamics, as in the [original PW construction](https://doi.org/10.1103/PhysRevD.27.2885); no universal conditional law follows merely from stationarity. Interaction corrections require explicit estimates, not a bare $O(H_{\mathrm{int}})$. The finite history construction in §11 is separate and is retained.
 
 <a id="31a-pagewootters-constructed-clock-assumed-constraint"></a>
 
@@ -254,9 +254,7 @@ where $H_{eff}$ is the effective Hamiltonian arising from $H_{int}$.
 
 The "corrections" are not small in general. For $H_{int} = 0$ the conditional states are related by a unitary step, $\Gamma(\tau_{n+1}) = e^{-iH_{6D}\delta\tau}\,\Gamma(\tau_n)\,e^{iH_{6D}\delta\tau}$. When the constraint couples clock and system, A. R. H. Smith and M. Ahmadi proved for clocks with continuous spectrum that the conditional state obeys a **time-nonlocal** Schrödinger equation, in which the system Hamiltonian is replaced by an integral operator ("Quantizing time: interacting clocks and systems", *Quantum* **3**, 160 (2019), arXiv:1712.00081); the local generator $H_{eff}(\tau) = H_{6D} + \langle\tau|H_{int}|\tau\rangle_O$ of §3.6 is at best the leading term in $H_{int}$, and the corpus has not shown that the seven-level clock escapes the nonlocal form.
 
-:::warning Retracted: "exact time" (T-186(b))
-An earlier version of this box said that the [Cohesive Closure Theorem](/docs/proofs/categorical/cohesive-closure) eliminates the $O(H_{\text{int}})$ correction, the conditional states being "exact sections of the flat projection $\flat(\Gamma_{\text{total}})$" evolved by the counit of $\Pi \dashv \flat$. That claim is retracted: with interaction the exact conditional dynamics is time-nonlocal (paragraph above), relative to a clock of period seven ticks it is periodic in $\tau$ (§11.2), and a counit of an adjunction carries no information about $H_{int}$ that could remove either. T-186(b) is withdrawn [✗].
-:::
+The conditional evolution of an interacting clock depends on its joint Hamiltonian and reading instrument. A cohesive or flat modality alone supplies no estimate on the interaction correction. [Clock model](#33-формальная-конструкция)
 
 ### 3.5 Clock basis for 7D
 
@@ -307,7 +305,7 @@ $\dim(\mathcal{H}_O) = 7$ is the dimensionality of the clock Hilbert space, **no
 - **Moments of time:** $\tau \in \mathbb{Z}_7$ — a **cyclic** group. The system passes through cycles $\tau_0 \to \tau_1 \to \cdots \to \tau_6 \to \tau_0 \to \cdots$ indefinitely, like clock hands with 7 divisions
 - **Chronon:** $\delta\tau = 2\pi/(7\omega_0)$ — the minimal quantum of subjective time, determined by the characteristic frequency $\omega_0$ of the system, not by the number 7
 
-For composite systems the clock *Hilbert space* grows as $7^M$, but the summed clock of $M$ holons has only $6M+1$ distinguishable readings and keeps the period $2\pi/\omega_0$ ([composite clocks](#композитные-часы) below). An earlier sentence here, "$N_{\text{eff}} = \dim(\mathcal{H}_O^{\text{composite}}) \gg 7$ gives quasi-continuity of macroscopic time", is retracted: the number of readings is not the dimension of the space.
+For $M$ identical seven-level clocks the joint Hilbert space has dimension $7^M$. The summed generator has $6M+1$ distinct readings and period $2\pi/\omega_0$. [Composite clocks](#композитные-часы)
 :::
 
 **Theorem (Discreteness of time):**
@@ -457,15 +455,12 @@ In the limit $N \to \infty$ at fixed $\omega_0$:
 2. $\mathbb{Z}_N \cdot \delta\tau$ fills the circle of circumference $2\pi/\omega_0$; the period does not grow
 3. **Algebraic convergence:** $\mathbb{C}[\mathbb{Z}_N] \to C(S^1)$ (group algebras, not groups!)
 
-(An earlier version held the product $N\omega_0$ fixed while also claiming $\delta\tau \to 0$; with $N\omega_0$ fixed the chronon $\delta\tau = 2\pi/(N\omega_0)$ stays fixed and only the period $2\pi/\omega_0$ grows. That combination is retracted.)
 
 **Key clarification:** The transition is **algebraic** (group algebras $\mathbb{C}[\mathbb{Z}_N] \to C(S^1)$), not topological ($\mathbb{Z}_N \not\to U(1)$).
 
 #### Theorem on composite clocks and continuous limit {#композитные-часы}
 
-:::warning Retracted: $N_{\text{eff}} = 7^M$ readings for $M$ holons
-An earlier version stated as a theorem [T] that a system of $M$ holons has an effective clock with $N_{\text{eff}} = 7^M$ readings and chronon $\delta\tau_{\text{eff}} = 2\pi/(N_{\text{eff}}\,\omega_{\text{eff}})$. This is false for the generator its own proof uses. With $T_{comp} = \sum_{m=1}^{M} \mathbb{1}^{\otimes(m-1)} \otimes T^{(m)} \otimes \mathbb{1}^{\otimes(M-m)}$ and each $T^{(m)}$ of spectrum $\{0, 1, \ldots, 6\}$, the spectrum of $T_{comp}$ is the set of integers $\{0, 1, \ldots, 6M\}$: $6M+1$ values with large multiplicities. Hence $e^{-2\pi i\,T_{comp}} = \mathbb{1}$, and the composite clock has the **same period** $2\pi/\omega_0$ as one holon. The orbit $e^{-i\omega_0 t\,T_{comp}}|\psi\rangle$ of any state lies in a subspace of dimension at most $6M+1$ (one direction per distinct eigenvalue), so it contains at most $6M+1$ mutually orthogonal, that is perfectly distinguishable, readings. The dimension $7^M$ of $\bigotimes_m \mathcal{H}_O^{(m)}$ is not the number of readings; $7^M$ readings would require clock frequencies in the ratio $1 : 7 : 7^2 : \cdots$ (a positional clock), which a composite of identical holons does not have. For $M = 1, 2, 3, 4$ the summed clock has $7, 13, 19, 25$ distinct eigenvalues, against $7, 49, 343, 2401$ claimed (regression check in `website/scripts/check_core_numbers.py`).
-:::
+**Summed clocks.** The number of distinct readings is set by the generator. Its degeneracies separate the dimension of the joint register from the number of clock readouts.
 
 **What holds instead** (elementary; checked numerically for $M \leq 4$). For $M$ holons with identical clocks $H_O^{(m)} = \omega_0 T^{(m)}$ the summed clock has $6M+1$ distinguishable readings, period $2\pi/\omega_0$ and finest orthogonal resolution
 
@@ -475,7 +470,7 @@ $$
 
 which shrinks like $1/M$, not like $7^{-M}$. As $M \to \infty$ the readings become dense in a circle of fixed circumference — the algebraic limit $\mathbb{C}[\mathbb{Z}_N] \to C(S^1)$ above — but the circle does not unroll into a line: composite O-clocks do not supply an aperiodic time (§11.2).
 
-**Where $7^M$ readings do exist.** The same $M$ O-registers carry $7^M$ perfectly distinguishable, linearly ordered readings when they are used as the digits of one number, $n = \sum_{m=1}^{M} \tau_m 7^{m-1}$, and the step $n-1 \to n$ is the odometer carry rather than the flow of a summed generator; the constraint is then of Feynman–Kitaev type, not $H_O \otimes 1 + 1 \otimes H_{6D}$. This positional **depth register** (§11.4) has no period: its readings form the chain $0 < 1 < \cdots < 7^M - 1$. The retraction above stands for the summed clock; the $7^M$ readings belong to the positional register only.
+**Positional clock.** If the registers are digits $n=\sum_{m=1}^M\tau_m7^{m-1}$, a successor with carry traverses $7^M$ ordered readings. This requires the positional update and the corresponding history constraint. [Depth register](#114-регистр-глубины)
 
 :::info Theorem (Convergence of discrete dynamics to continuous) [T]
 Let $\mathcal{L}_\Omega$ be the logical Liouvillian with $\|\mathcal{L}_\Omega\| \leq \Lambda$. Then the discrete evolution $T_{\delta\tau} = e^{\delta\tau \cdot \mathcal{L}_\Omega}$ converges to the continuous Lindblad equation:
@@ -484,7 +479,7 @@ $$
 \left\| \frac{\Gamma(\tau + \delta\tau) - \Gamma(\tau)}{\delta\tau} - \mathcal{L}_\Omega[\Gamma(\tau)] \right\| \leq \frac{\Lambda^2 \cdot \delta\tau}{2}
 $$
 
-For $M$ holons with the resolution $\delta\tau_M = 2\pi/((6M+1)\omega_0)$ of the summed clock the per-step error is of order $(6M+1)^{-2}$: small polynomially, not exponentially. (An earlier version used $\delta\tau_{\text{eff}} \sim 7^{-M}/\omega_0$ and an error $\sim 7^{-2M}$; both are retracted with the composite-clock statement above.)
+For $M$ holons with the resolution $\delta\tau_M = 2\pi/((6M+1)\omega_0)$ of the summed clock the per-step error is of order $(6M+1)^{-2}$: small polynomially, not exponentially.
 :::
 
 **Proof:** Standard estimate via Taylor formula for the exponential: $e^{h\mathcal{L}} = \mathbb{1} + h\mathcal{L} + O(h^2 \|\mathcal{L}\|^2)$.
@@ -505,8 +500,6 @@ As $M \to \infty$ this tends to zero like $M^{-2}$. $\quad\blacksquare$
 | Neuron ($\sim 10^4$ molecules) | $\sim 10^4$ | $\approx 6 \cdot 10^4$ | $\approx 1.0 \cdot 10^{-4}/\omega_0$ | Quasi-continuous, on a circle |
 | Macroscopic system | $\gg 1$ | $6M+1$ | $\to 0$ | Continuous circle $S^1$ of circumference $2\pi/\omega_0$, not $\mathbb{R}$ |
 
-(The earlier table gave $N_{\text{eff}} = 7^{10^4}$ and $\delta\tau \sim 10^{-8450}/\omega_0$ for a neuron and "Continuous ($\mathbb{R}$)" for a macroscopic system; these entries are retracted.)
-
 **Connection to the chronon:**
 
 | Scale | Chronon | Time |
@@ -517,7 +510,7 @@ As $M \to \infty$ this tends to zero like $M^{-2}$. $\quad\blacksquare$
 
 **Corollary for interpretation:**
 
-Physical (Newtonian) time $t \in \mathbb{R}$ is **not** the limit of the O-clock readings as $N \to \infty$: at fixed $\omega_0$ that limit is a circle of circumference $2\pi/\omega_0$. The line $\mathbb{R}$ is the scaling limit of the readings of the depth register (§11.4, Theorem 11.5), which is where the dissipative dynamics runs (§9.1). (An earlier sentence here called $t \in \mathbb{R}$ the limit of the O-clock's internal time; it is retracted.) For the Holon with N = 7 time is **fundamentally discrete**, which is consistent with:
+At fixed $\omega_0$ the limit of the summed-clock readings is a circle of circumference $2\pi/\omega_0$. The line arises under the separately defined depth-register scaling about an interior reading. [T-118](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-время)
 - Discreteness of states of consciousness
 - Finite information capacity
 - Topology of ∞-groupoid $\mathbf{Exp}_\infty$
@@ -725,15 +718,15 @@ v_B(t)^2=\tfrac14\operatorname{Tr}(\rho(t)A_t^2),
 \qquad \ell(t)=\int_{t_0}^t v_B(u)\,du.
 $$
 
-On an interval where $v_B>0$, length is a strictly increasing local reparameterization. It is proportional to the chosen time parameter only for constant positive speed. A stationary full-rank state has $A_t=0$, so full rank alone does not ensure positive speed. Finite chordal distance between ticks is not exactly infinitesimal arc length. Thus the former universal Lemma 6.1 is withdrawn [✗]; this curve calculation is the surviving scope.
+**Lemma 6.1.** On an interval with $v_B>0$, arc length is a strictly increasing local parameter, proportional to time exactly when speed is constant on the interval. A stationary curve has zero arc length.
 
 ### Step 2: Additional categorical realization
 
-A supplied assignment of a state curve to experiential paths does not prove that its image is geodesic, minimal, faithful, or metrically isometric. These properties require explicit assumptions or proofs. The former Lemma 6.2 identifying all Bures geodesics with minimal experiential morphisms is withdrawn [✗]. In a path groupoid every arrow is invertible; directed channel histories require a specified category of processes instead.
+**Lemma 6.2 (scope).** A state-curve assignment to paths requires an observation map. Geodesicity, faithfulness and preservation of distance need separate verification. A path groupoid has invertible arrows, while a directed history also admits irreversible processes.
 
 ### Step 3: Directed depth is not a cyclic torsor
 
-The map $n\mapsto n\bmod N$ loses the cycle count. If an endomorphism $\pi$ satisfies $\pi^N=\mathrm{id}$, then $\pi^{N-1}$ is its inverse. An irreversible coarsening cannot obey that identity in the same process category. The former stratal Lemma 6.3 is withdrawn [✗]; strict loss and recovery are treated in [T-53c](#7-теорема-о-стреле-времени).
+**Lemma 6.3.** The map $n\mapsto n\bmod N$ loses the cycle count. If $\pi^N=\mathrm{id}$ then $\pi$ has inverse $\pi^{N-1}$. An irreversible channel cannot implement this cyclic action as an endomorphism. [Loss and recovery](#7-теорема-о-стреле-времени)
 
 ### Step 4: Exact conclusion
 
@@ -752,7 +745,7 @@ The equivariant label bijection is a theorem about supplied cyclic label sets. N
 
 ## 7. Arrow of time theorem {#7-теорема-о-стреле-времени}
 
-T-53c now denotes monotonicity along a **specified** history of unital CPTP channels. Record ordering, channel type and the physical interpretation of time are separate inputs. A terminal object entails neither coarse-graining, strict information loss, CPTP nor a universal cosmic parameter. The former stratificational formulation is withdrawn [✗]; the exact data-processing inequality below remains.
+T-53c concerns the monotonicity of a specified history under unital CPTP steps. An identity channel gives equality throughout.
 
 ### 7.1 Categorical formulation
 
@@ -781,19 +774,13 @@ $$
 
 The dissipator of UHM has Hermitian Lindblad operators (the pointer projectors) and is therefore unital, so the linear part $\mathcal{L}_0$ of the evolution raises $S_{vN}$ (§10.4, part 1).
 
-:::warning Retracted: "CPTP channels do not decrease von Neumann entropy"
-An earlier version of this theorem stated $\Phi$ CPTP $\Rightarrow S_{vN}(\Phi(\Gamma)) \geq S_{vN}(\Gamma)$ for every channel, "from strong subadditivity and contractivity". This is false for non-unital channels: the reset channel $X \mapsto \mathrm{Tr}(X)\,|0\rangle\langle 0|$ is CPTP and maps $\mathbb{1}/7$, with $S_{vN} = \log 7 \approx 1.95$, to a pure state, with $S_{vN} = 0$. The same page already relies on the correct version — regeneration lowers entropy locally (§7.3), and §10.4 uses the monotonicity only for the unital part. The statement is retracted and replaced by the theorem above.
-:::
-
-:::warning Scope of hypotheses
-CPTP and unitality are explicitly specified in this theorem. Terminality and entropy monotonicity do not prove CPTP; the former orientation-to-$T$ → CPTP inference is withdrawn [✗]. Applying the result to a nonlinear full flow $\Phi_t$ requires a separate proof.
-:::
+A non-unital channel can lower entropy. For example, $\Phi(\rho)=|0\rangle\langle0|\mathrm{Tr}\rho$ sends $I/N$ to a pure state. Unitality supplies the fixed comparison state $I/N$ in the data-processing proof. A nonlinear flow needs its own monotonicity proof.
 
 ∎
 
 ### 7.2 Physical interpretation
 
-**Corollary:** Paths induced by unital channels do not decrease entropy; decreasing it along such a path would require inverting a unital channel. Non-unital channels are physical and can lower entropy — the reset channel above, and regeneration toward a purer $\rho_*$ (§7.3). (An earlier corollary said that every physically realizable path increases entropy; it is retracted with Theorem 7.1's old form.)
+Unital steps in fixed dimension cannot decrease entropy. External preparation, cooling and other non-unital operations require their own energy and entropy accounting.
 
 ### 7.3 Connection to regeneration
 
@@ -820,9 +807,9 @@ $$
 
 Record numbering alone proves no physical irreversibility: identity and unitary channels also admit directed records. A common inverse is excluded when the selected action has no CPTP inverse; strict loss on specified states must be established separately. A verified example is depolarization $K_p$, $0<p<1$, at $\rho\ne I/N$ in [T-53c](/docs/core/operators/emergent-time#t-53c). Nonequivalence of a functor has no universal linear-kernel criterion.
 
-When $D(\rho\Vert I/N)$ strictly decreases, no CPTP channel can recover **both** $\rho$ and $I/N$ from their outputs: data processing for that recovery would give the opposite inequality. Preparing one previously known state by a replacement channel is not excluded.
+If $D(\rho\Vert I/N)$ decreases strictly, no CPTP map recovers both $\rho$ and $I/N$ from their outputs: data processing would give the reverse inequality. Preparing one known $\rho$ is a different operation.
 
-The condition $\operatorname{Map}(G,1_{\mathcal E})\simeq *$ defines the terminal topos object [T], but selects no numerical attractor, trajectory or physical clock. The former Theorem 7.3 that “all morphisms are oriented toward $T$” is withdrawn [✗].
+The condition $\mathrm{Map}(G,1_{\mathcal E})\simeq *$ gives the terminal mapping space. An equilibrium or universal time parameter would require further dynamical input.
 
 #### A selected Hessian score and the limits of agency claims
 
@@ -836,7 +823,7 @@ Rank-nullity gives $1\le\mathrm{Freedom}_V\le d+1$ [T]. At a critical point, the
 
 Under the **Morse–Bott hypothesis**, the Hessian kernel is the tangent space of the critical manifold, so the score is one plus its local dimension. Without this hypothesis, zero quadratic modes need not produce alternatives: $V(x)=x^4$ has zero Hessian at its sole local minimum. No potential, stationary point, or universal score at $I/7$ is supplied by terminality.
 
-The terminal property $\operatorname{Map}(X,1)\simeq *$ gives no invariant cardinality of representatives, inevitable physical goal, or number of admissible trajectories. A locally Lipschitz field has a unique trajectory for a fixed initial state; alternatives in a controlled model depend on specified admissible policies. Hessian nullity supplies neither a general CPTP monotonicity law nor a universal impossibility of point prediction, responsibility, or phenomenal agency. The former Theorem 7.4 and terminal-path interpretation are withdrawn [✗]. See the [canonical score and scope](/docs/consciousness/ethics-meaning/freedom#количественная-мера) and [typed consequences](/docs/core/foundations/consequences#freedom-конечномерное).
+The terminal mapping property fixes no numerical bound on a set of action representatives. Such a count requires a specified set and equivalence relation.
 
 ---
 
@@ -900,7 +887,7 @@ This proves T-53d **[C under (Fold)+(ClockReadout)]**. The two hypotheses must b
 
 To express this as $C_P\sqrt{P-P_0}+O(P-P_0)$ further assume a positive linear calibration $\mu=c_P(P(\rho_*(\mu))-P_0)+O((P-P_0)^2)$, $c_P>0$. If instead $P-P_0$ is linear in $x_*$, the clock rate is linear in $P-P_0$. No universal $P_0=2/7$ or infinite subjective duration follows.
 
-The former Theorem 8.1 ($P>2/7\Leftrightarrow v_\tau>v_\tau^{\min}$), universal square-root freezing, and universal temporal interpretation of the viability threshold are withdrawn [✗]. The surviving results are the kinematic upper bound and the conditional fold/readout theorem above.
+The purity bound applies kinematically. The square-root readout law requires both the fold hypothesis and a calibrated clock readout.
 
 ---
 
@@ -912,15 +899,7 @@ The former Theorem 8.1 ($P>2/7\Leftrightarrow v_\tau>v_\tau^{\min}$), universal 
 
 ### 9.1 Modification of the evolution equation
 
-**Old form (with external t):**
-
-$$
-\frac{d\Gamma}{dt} = -i[H, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
-$$
-
-:::warning Retracted: the full equation in the O-clock's own time
-An earlier version presented the equation below, written in the Page–Wootters tick $\tau$, as a **consequence** of the structure of $\Gamma_{total}$ and not a postulate. It is not a consequence. The tick ranges over $\mathbb{Z}_7$, so any evolution in it satisfies $\Gamma(\tau + 7) = \Gamma(\tau)$. Along the full equation the free energy is a Lyapunov functional, never increasing and stationary only at the attractor (Theorem 10.1, T-261), and a non-increasing function on a cycle is constant; relative to the O-clock the conditional states would therefore all coincide with a stationary state. Dynamics relative to a periodic clock is necessarily periodic (L. Chataignier, P. A. Höhn, M. P. E. Lock, F. M. Mele, *New J. Phys.* **28**, 034504 (2026); §11.2). The Page–Wootters construction itself gives, for $H_{int} = 0$, a unitary step between ticks and no dissipator (§3.4). The equation holds in an aperiodic parameter $t$ — the parameter of the Lindblad semigroup — and the physical carrier of $t$ is not the O-clock. The candidate carriers are compared in §11.3; the carrier is the depth register of §11.4, relative to which the conditional states obey the equation exactly at every reading (T-53b, Theorems 11.1 and 11.3). (An intermediate version of this box, of the same day, left T-53b conditional on an assumed aperiodic parameter; the assumption is discharged there.)
-:::
+A finite cyclic clock repeats its outcome after one period. If conditional states depended on this outcome alone, a trajectory with strictly decreasing distinguishability could not continue around the cycle. A depth register records the additional step index.
 
 **Form in an aperiodic parameter** [T] (relative to the depth register, §11.4):
 
@@ -1023,7 +1002,7 @@ For a fixed unital GKSL generator $\mathcal L_0$, apply this to $K=e^{(t'-t)\mat
 
 **Proof.** Data processing gives $D(K\rho\Vert K(I/N))\le D(\rho\Vert I/N)$ and unitality gives $K(I/N)=I/N$. The identity $D(\rho\Vert I/N)=\log N-S_{vN}(\rho)$ converts it into non-decreasing entropy. This says nothing about stratum dimension or convergence of every unital history.
 
-The former part (2), claiming a general Lyapunov functional for the full nonlinear flow from T-261, and the “collapse to terminal object” consequence are withdrawn [✗]. A specified $\Phi_t$ needs separate monotonicity and attractor analysis. Realization of a chosen history in the §11.4 register does not select a universal cosmic clock.
+For a nonlinear flow $\Phi_t$, monotonicity and attraction require separate proofs. Realizing a specified history in the depth register does not by itself select a cosmic clock.
 
 ### 10.5 Connection to thermodynamics
 
@@ -1055,7 +1034,7 @@ $$
 ---
 
 :::note Current assumptions for the following constructions
-Clock factors, reading instruments and global support constraints are supplied inputs. Older precedent commentary below that describes the tensor split as derived records a superseded T-87 claim; that derivation is withdrawn. The finite history/depth-register results are constructive theorems with their stated inputs and do not prove A5 from A1–A4.
+The following constructions take a clock factor, a reading instrument and a global support constraint as inputs.
 :::
 
 ## 11. Precedents and related programmes {#11-прецеденты-и-родственные-программы}
@@ -1069,10 +1048,10 @@ Terms used below. A **constraint** $\hat{C}|\Psi\rangle = 0$ (an equation of Whe
 - **Page and Wootters (1983); Wootters (1984).** D. N. Page, W. K. Wootters, "Evolution without evolution: dynamics described by stationary observables", *Phys. Rev. D* **27**, 2885–2892 (1983); W. K. Wootters, "'Time' replaced by quantum correlations", *Int. J. Theor. Phys.* **23**, 701–711 (1984). The universe is in a stationary state; one subsystem serves as a clock, and the state of the rest conditioned on a clock reading evolves by the Schrödinger equation. Wootters argued that coordinate time is unobservable while clock time is observable, so every statement about evolution can be replaced by a statement about correlations between a clock and another system, all stored in one timeless state. *Standing:* the starting point of the relational-time literature below; C. Marletto and V. Vedral (2017) call the model elegant but write that it "has never been developed further, because it was criticised for generating severe ambiguities". *For UHM:* §3.3 adopts the mechanism as it stands; UHM's additions are the choice of clock — the seven-dimensional O-register — and the claim that the split $\mathcal{H}_O \otimes \mathcal{H}_{6D}$ is derived ([T-87](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки)). One step of that claim needs an extra assumption. Page and Wootters take the global state to be a stationary state, that is, an eigenstate of the total Hamiltonian, and the constraint form $\hat{C}\Psi = 0$ follows after the energy is shifted to zero. For a mixed global state, stationarity gives only $[\hat{C}, \Gamma_{\text{total}}] = 0$, whereas the constraint $\hat{C}\,\Gamma_{\text{total}} = 0$ of §3.3 requires the state to lie in the zero eigenspace of $\hat{C}$; §3.1a used to state that the constraint "follows from stationarity" without this assumption; it now names the assumption, and step 4 of T-87 is [C].
 - **Kuchař (1992).** K. V. Kuchař, "Time and interpretations of quantum gravity", in *Proceedings of the 4th Canadian Conference on General Relativity and Relativistic Astrophysics*, eds. G. Kunstatter, D. Vincent, J. Williams, World Scientific 1992; reprinted in *Int. J. Mod. Phys. D* **20**, Suppl. 1, 3–86 (2011). The classic review of the problem of time. Its objections to the conditional-probability reading of Page–Wootters, as paraphrased by Höhn, Smith and Lock (2021, §VIII C): (1) for a relativistic particle it gives a wrong localisation probability; (2) conditioning on a clock reading uses operators that do not commute with the constraint, so it appears to violate the constraint; (3) it gives wrong two-time propagators — after one conditioning the clock is "stuck" and time does not flow.
 - **Unruh and Wald (1989).** W. G. Unruh, R. M. Wald, "Time and the interpretation of canonical quantum gravity", *Phys. Rev. D* **40**, 2598–2614 (1989). They proved that in ordinary Schrödinger quantum mechanics, for a system whose Hamiltonian is bounded below, no dynamical variable can correlate monotonically with the Schrödinger time parameter: a clock made of such a system is never ideal. *Standing:* an accepted theorem; Höhn, Smith and Lock (2021, §III) present it as the refinement of Pauli's observation that no self-adjoint time operator is canonically conjugate to a bounded Hamiltonian. Its consequence for UHM is taken up in §11.2.
-- **Answers to the objections.** R. Gambini, R. A. Porto, J. Pullin, "A relational solution to the problem of time in quantum mechanics and quantum gravity: a fundamental mechanism for quantum decoherence", *New J. Phys.* **6**, 45 (2004), arXiv:gr-qc/0402118, computed conditional probabilities relative to a realistic quantum clock and found that the evolution is then not exactly unitary: pure states decohere through a Lindblad-type equation $\dot\rho = -i[H, \rho] - \sigma[H, [H, \rho]]$ whose only Lindblad operator is the Hamiltonian. With S. Torterolo they combined conditional probabilities with Dirac observables ("evolving constants"), which, in their words, "overcomes the objections levied by Kuchař" ("Conditional probabilities with Dirac observables and the problem of time in quantum gravity", *Phys. Rev. D* **79**, 041501 (2009), arXiv:0809.4235). V. Giovannetti, S. Lloyd, L. Maccone, "Quantum time", *Phys. Rev. D* **92**, 045033 (2015), arXiv:1504.04215, included the measuring apparatus and its memory in the timeless state and reproduced the correct statistics of sequential measurements at different times. P. A. Höhn, A. R. H. Smith, M. P. E. Lock, "Trinity of relational quantum dynamics", *Phys. Rev. D* **104**, 066001 (2021), arXiv:1912.00033, proved that three formulations of relational dynamics are equivalent — the relational observables of Dirac quantization, the Page–Wootters conditional states, and a relational Heisenberg picture obtained by symmetry reduction — using covariant clock POVMs, which also cover non-ideal clocks; with this equivalence they showed objection (2) to be mistaken and resolved (3) in a way that "does not invoke approximations, ideal clocks or ancilla systems", treating (1) in a companion paper. Their equivalence was established for clocks whose Hamiltonian has a continuous non-degenerate spectrum. *Standing:* within the relational literature objections (2) and (3) are regarded as answered, on the judgment of these authors. *For UHM:* Definition 3.1 uses single-time conditioning only, so two-time statements such as the "temporal entanglement" of §9.4 need one of these answers, which the page does not use. The equivalence of §6 (T-53a) matches the constructions through their common label set — its stratificational leg, Lemma 6.3, rested on the fact that any two free transitive $\mathbb{Z}_7$-sets are isomorphic and is now retracted, because the stratal depth is not such a set — whereas the trinity is an equivalence of the full relational dynamics; §6 is the weaker kind of statement. Gambini, Porto and Pullin are also a precedent for dissipation out of relational time: their dissipator comes from the imperfection of the clock and has the Hamiltonian as Lindblad operator (dephasing in the energy basis), while UHM's dissipator has the pointer projectors as Lindblad operators and is not derived from the clock (§2.4).
+- **Relational evolution.** Gambini, Porto and Pullin computed clock-conditioned probabilities for a specified clock model. A clock-dependent decoherence estimate requires its measurement resolution and dynamics. [Gambini, Porto and Pullin (2004)](https://arxiv.org/abs/gr-qc/0402118)
 - **Experiments.** E. Moreva, G. Brida, M. Gramegna, V. Giovannetti, L. Maccone, M. Genovese, "Time from quantum entanglement: an experimental illustration", *Phys. Rev. A* **89**, 052122 (2014), arXiv:1310.4691: two polarization-entangled photons; the polarization of one serves as a clock with two readings, the other photon evolves in birefringent plates; an "observer" who reads the clock photon sees the other evolve, a "super-observer" who measures only global properties finds the joint state static. E. Moreva, M. Gramegna, G. Brida, L. Maccone, M. Genovese, "Quantum time: experimental multitime correlations", *Phys. Rev. D* **96**, 102005 (2017), arXiv:1710.00707: two-time correlations in the Page–Wootters picture and a violation of a Leggett–Garg inequality for the internal observer, with the clock encoded in the position of a photon. *Standing:* the authors call these illustrations — they show the conditional-probability structure in a prepared state, not the absence of an external time. *For UHM:* the clocks used had two readings (2014) or a position register (2017); the seven-level O-register has not been realised in any experiment.
 - **Clock ambiguity.** A. Albrecht, A. Iglesias, "The clock ambiguity and the emergence of physical laws", *Phys. Rev. D* **77**, 063506 (2008), argued that different choices of the clock subsystem make one timeless state describe different laws. C. Marletto, V. Vedral, "Evolution without evolution and without ambiguities", *Phys. Rev. D* **95**, 043510 (2017), arXiv:1610.04773, answered that a good clock is a subsystem with many distinguishable states that ideally does not interact with the rest, $H = H_C \otimes I + I \otimes H_R$, and that if such a split yields unitary evolution with a time-independent Hamiltonian it is unique. *Standing:* a published answer, valid under its stated assumption of a non-interacting clock. *For UHM:* the constraint couples the O-register to the rest through $H_{\text{int}}$ ([Property 2](/docs/core/foundations/axiom-omega#свойство-2)) and the clock has seven states, so this uniqueness argument does not cover it; the corpus rests the uniqueness of the clock register on its own $G_2$ argument (T-87, step 3).
-- **Interacting clocks.** A. R. H. Smith, M. Ahmadi, "Quantizing time: interacting clocks and systems", *Quantum* **3**, 160 (2019), arXiv:1712.00081: when the constraint contains a clock–system interaction, the conditional state obeys a time-nonlocal Schrödinger equation in which the system Hamiltonian is replaced by a self-adjoint integral operator. *For UHM:* §3.6 writes a local effective Hamiltonian $H_{\text{eff}}(\tau) = H_{6D} + \langle\tau|H_{\text{int}}|\tau\rangle_O$ and §3.4 a local equation "plus corrections", while the cohesive-closure statement T-186(b) asserts that the Page–Wootters evolution is exact, with no $O(H_{\text{int}})$ correction. The corpus had not reconciled either with the time-nonlocal form; §3.4 and §3.6 now mark the local generator as an approximation, and T-186(b) is withdrawn.
+- **Interacting clocks.** With a clock–system interaction, the exact conditional equation can be nonlocal in time. A local effective generator requires additional approximation hypotheses. [Smith and Ahmadi (2019)](https://arxiv.org/abs/1712.00081)
 - **Quantum reference frames.** F. Giacomini, E. Castro-Ruiz, Č. Brukner, "Quantum mechanics and the covariance of physical laws in quantum reference frames", *Nat. Commun.* **10**, 494 (2019), arXiv:1712.07207: reference frames attached to quantum systems transform into one another by a "superposition of coordinate transformations", and entanglement and superposition are frame-dependent. *Standing:* an active programme; Höhn, Smith and Lock extend it to changes of temporal frame (2021, §VII). *For UHM:* the O-register is a temporal reference frame, and the corpus fixes one such frame without defining a change of clock; statements about entanglement between the clock and the rest, including the "temporal entanglement" of §9.4, hold relative to that frame.
 
 ### 11.2 The finite periodic clock, Unruh–Wald, and the arrow {#112-конечные-периодические-часы}
@@ -1080,10 +1059,7 @@ Terms used below. A **constraint** $\hat{C}|\Psi\rangle = 0$ (an equation of Whe
 - **The Salecker–Wigner–Peres clock: prior art for the O-clock.** H. Salecker, E. P. Wigner, "Quantum limitations of the measurement of space-time distances", *Phys. Rev.* **109**, 571–577 (1958); A. Peres, "Measurement of time by quantum clocks", *Am. J. Phys.* **48**, 552–557 (1980). The standard finite quantum clock: $d$ equally spaced levels $H = \sum_{n=0}^{d-1} n\omega\,|E_n\rangle\langle E_n|$, period $T_0 = 2\pi/\omega$, time states obtained from the energy states by the discrete Fourier transform, which rotate into one another every $T_0/d$ and return after $d$ steps; between ticks a time state spreads over its neighbours, and no finite clock satisfies the canonical commutation relation with its Hamiltonian. M. P. Woods, R. Silva and J. Oppenheim call it "the model of choice for finite-dimensional clocks" ("Autonomous quantum machines and finite-sized clocks", *Ann. Henri Poincaré* **20**, 125–218 (2019), arXiv:1607.04591, Appendix B). The O-clock of §3.5–3.6 — $H_O = \omega_0 \sum_{k=0}^{6} k\,|k\rangle\langle k|$, Fourier clock states $|\tau_n\rangle$, cyclic shift $V_O$, chronon $\delta\tau = 2\pi/(7\omega_0)$ — is exactly this clock with $d = 7$. The discreteness of its readings, the cyclic group $\mathbb{Z}_d$ and the resolution $T_0/d$ are properties of every such clock, so the "discreteness of internal time" listed in §9.4 is a property of the chosen clock rather than an independent test of UHM; what is specific to UHM is the claim that the clock has exactly seven levels and is the O-dimension.
 - **Unruh–Wald against the O-clock: no collision at the level of the clock.** $H_O$ has the finite spectrum $\{0, \omega_0, \ldots, 6\omega_0\}$, bounded below and above, so the Unruh–Wald theorem applies: no observable of the O-register correlates monotonically with time. The corpus does not claim otherwise — §10.3 states that no function of the tick $\tau$ alone can be monotone. Giovannetti, Lloyd and Maccone (2015, §C) spell out the consequence for Page–Wootters: a non-periodic time needs an unbounded Hamiltonian, "a system with finite global energy will have periodic evolution", and in that case "except as an approximation internal observers will not be able to use a Schrödinger equation".
 - **Periodic clocks: where the collision lies.** L. Chataignier, P. A. Höhn, M. P. E. Lock, F. M. Mele, "Relational dynamics with periodic clocks", *New J. Phys.* **28**, 034504 (2026), arXiv:2409.06479, extended the trinity to periodic clocks and proved that relational observables relative to a periodic clock are invariant only if the quantity itself is periodic — "counting winding numbers does not lead to invariant observables relative to the periodic clock" — and that the dynamics relative to a periodic clock is "necessarily periodic" in all three formulations, Page–Wootters included; a system that evolves periodically relative to a periodic clock can still evolve monotonically relative to an aperiodic one. Höhn, Smith and Lock (2021, §III A) had already noted that with a periodic clock one must keep track of its winding number to follow a non-periodic evolution. This bears on UHM in two places:
-  1. *The arrow of §10 is not supplied by the O-clock.* The corpus places the arrow correctly off the cyclic tick: the tick $\tau \in \mathbb{Z}_7$ carries no arrow, and the arrow is the growth of the stratal depth $n \in \mathbb{N}$, the cumulative count of ticks with $\tau = n \bmod 7$ (§10.3). That count is exactly a winding number of the O-clock, which by the result above is not an invariant relational observable relative to it; and the functionals of Theorem 10.1 are monotone in the parameter $t$ of the Lindblad semigroup, which in relational terms is an aperiodic clock outside the 42-dimensional Page–Wootters state. The arrow therefore presupposes an aperiodic time that the O-clock cannot provide, and the corpus does not construct its physical carrier.
-  2. *Dissipative evolution in the O-clock's own time is impossible.* §9.1 and T-53b stated that the conditional states $\Gamma(\tau)$ obey the full equation with $\mathcal{D}$ and $\mathcal{R}$; that statement is retracted, and T-53b now holds relative to the depth register of §11.4 instead of the O-clock (it was conditional on an assumed aperiodic time parameter in an intermediate version). Relative to a clock of period seven ticks, $\Gamma(\tau + 7) = \Gamma(\tau)$. A Lyapunov functional that never increases along the flow and is stationary only at the attractor (Theorem 10.1) cannot be periodic unless it is constant, so relative to the O-clock the conditional states would all coincide with a stationary state. Nontrivial dissipative dynamics needs the aperiodic parameter of item 1.
-
-The corpus's own description — the cyclic tick carries no arrow, the arrow lives in the depth — is thus consistent. The collision was with the claims that the dissipative dynamics and the arrow are derived from the Page–Wootters clock itself (§9.1, T-53b), which the periodic-clock result and the Unruh–Wald theorem rule out for a seven-level clock; these claims are retracted (§9.1), and the dynamics and the arrow are stated relative to an aperiodic carrier, which §11.4 constructs.
+A cyclic clock registers a phase within a period. Strict irreversible relaxation requires an additional reading that distinguishes successive periods, for example the depth register. The argument is purely operational: identical clock outcomes must receive the same conditional state if those outcomes are the only conditioning data.
 
 ### 11.3 Carriers of the aperiodic parameter: options {#113-носители-апериодического-параметра}
 
@@ -1093,7 +1069,7 @@ The corpus's own description — the cyclic tick carries no arrow, the arrow liv
 
 T-53b asks three things of its time parameter: **(R1)** the dynamics in it is not periodic; **(R2)** a Lyapunov functional decreases strictly along it (Theorem 10.1); **(R3)** the nonlinear regenerative term $\mathcal{R}$ acts in it.
 
-**[T] Lemma (almost periodicity).** Let the clock readings be the orbit of a unitary group — $|t\rangle = e^{-iH_C t}|0\rangle$, $t \in \mathbb{R}$, or $|n\rangle = V^n|0\rangle$, $n \in \mathbb{Z}$ — and let the joint generator of the clock and everything it is correlated with have pure point spectrum; in particular let the world be finite-dimensional, the clock periodic or not. Then every conditional expectation value is an almost periodic function of the reading, and a non-increasing almost periodic function is constant. Hence (R2) fails for every such clock on its whole orbit. (An earlier wording said "relative to any clock"; it is narrowed to clocks whose readings form a group orbit. The readings of a finite chain, §11.4, are not an orbit — the step from the last reading leads nowhere — and there (R2) holds on the whole chain.)
+**[T] Lemma (almost periodicity).** Let the clock readings be the orbit of a unitary group — $|t\rangle = e^{-iH_C t}|0\rangle$, $t \in \mathbb{R}$, or $|n\rangle = V^n|0\rangle$, $n \in \mathbb{Z}$ — and let the joint generator of the clock and everything it is correlated with have pure point spectrum; in particular let the world be finite-dimensional, the clock periodic or not. Then every conditional expectation value is an almost periodic function of the reading, and a non-increasing almost periodic function is constant. Hence (R2) fails for every such clock on its whole orbit.
 
 *Proof.* An expectation value is $\sum_{j,k} c_{jk}\,e^{i(E_j - E_k)t}$ (or $\sum_{j,k} c_{jk}\,e^{i(\theta_j - \theta_k)n}$ for the eigenphases $\theta_j$ of $V$), a trigonometric polynomial, or a uniform limit of such sums in the pure-point case; both are almost periodic in the sense of Bohr, on $\mathbb{R}$ or on $\mathbb{Z}$. For an almost periodic $f$ and every $\varepsilon > 0$ the $\varepsilon$-almost periods are relatively dense. If $f(t_1) < f(t_0)$ for some $t_1 > t_0$, take $\varepsilon < f(t_0) - f(t_1)$ and an $\varepsilon$-almost period $T > t_1 - t_0$: then $t_0 + T > t_1$ and $f(t_0 + T) > f(t_1)$, so $f$ is not non-increasing. $\blacksquare$ This is the mechanism of the quantum recurrence theorem (P. Bocchieri, A. Loinger, *Phys. Rev.* **107**, 337 (1957)). Witness: a closed seven-level system with an eight-level environment and a random Hamiltonian, started in a pure product state: the relative entropy $D(\rho_S\,\|\,I/7)$ falls from $\log 7 = 1.946$ to $0.232$ for $t \le 200$ and afterwards rises again by up to $0.474$.
 
@@ -1112,9 +1088,9 @@ T-53b asks three things of its time parameter: **(R1)** the dynamics in it is no
 | Semigroup parameter $t$ taken as primitive | yes | as postulated | as postulated | the same as the ideal clock: by the trinity of Höhn, Smith and Lock (2021) the conditional dynamics relative to an ideal clock is the Schrödinger picture in $t$ |
 | **Depth register**: readings $0 < 1 < \cdots < N$ as a chain, realised positionally in $M = \lceil\log_7(N+1)\rceil$ O-registers, with a two-holon environment $\mathbb{C}^{49}$ and a Feynman–Kitaev constraint (§11.4) | yes: no reading follows $N$, the chain is not a group orbit | yes, exactly at every reading, for the linear part as a state-independent law (Theorem 11.1) | along each solution (Theorem 11.3) | **[T]**: T-53b holds, in a world of dimension $343(N+1)$ |
 
-**Cost of the ideal clock** (the carrier that the intermediate version of this subsection called the only one that works). (i) An ideal clock has a Hamiltonian unbounded below, so no ground state; by Unruh and Wald (1989) no clock with a Hamiltonian bounded below reads time monotonically. (ii) Its finite approximations — the quasi-ideal clocks of M. P. Woods, R. Silva and J. Oppenheim, whose back-reaction is exponentially small in the clock dimension $d$ at a linear cost in energy (*Ann. Henri Poincaré* **20**, 125 (2019)) — are finite, hence periodic, and by the almost-periodicity Lemma support dissipation only over a finite window; exact T-53b needs $d \to \infty$. (iii) The environment must be infinite, and $\mathcal{L}_0$ is then a weak-coupling approximation, not an exact law. (iv) The time of the dynamics is not emergent from the O-dimension: the O-clock becomes a kinematic label read off $t$ ($n = \lfloor t/\delta\tau \rfloor$, $\tau = n \bmod 7$), and the arrow of Theorem 10.1 is monotone in $t$, as it is already stated. (v) $\mathcal{R}$ is postulated in $t$, and the measurement reading of [physics correspondence, §8.7](/docs/proofs/physics/physics-correspondence#87-прочтение-измерения) has to be fixed separately. At this carrier T-118 holds by Gelfand duality of the clock spectrum, $A_{\text{time}} \cong C_0(\mathbb{R})$ — true, but assumed rather than obtained as a limit of O-clocks.
+**Cost of the ideal clock**. (i) An ideal clock has a Hamiltonian unbounded below, so no ground state; by Unruh and Wald (1989) no clock with a Hamiltonian bounded below reads time monotonically. (ii) Its finite approximations — the quasi-ideal clocks of M. P. Woods, R. Silva and J. Oppenheim, whose back-reaction is exponentially small in the clock dimension $d$ at a linear cost in energy (*Ann. Henri Poincaré* **20**, 125 (2019)) — are finite, hence periodic, and by the almost-periodicity Lemma support dissipation only over a finite window; exact T-53b needs $d \to \infty$. (iii) The environment must be infinite, and $\mathcal{L}_0$ is then a weak-coupling approximation, not an exact law. (iv) The time of the dynamics is not emergent from the O-dimension: the O-clock becomes a kinematic label read off $t$ ($n = \lfloor t/\delta\tau \rfloor$, $\tau = n \bmod 7$), and the arrow of Theorem 10.1 is monotone in $t$, as it is already stated. (v) $\mathcal{R}$ is postulated in $t$, and the measurement reading of [physics correspondence, §8.7](/docs/proofs/physics/physics-correspondence#87-прочтение-измерения) has to be fixed separately. At this carrier T-118 holds by Gelfand duality of the clock spectrum, $A_{\text{time}} \cong C_0(\mathbb{R})$ — true, but assumed rather than obtained as a limit of O-clocks.
 
-**The three options of the intermediate version, and what became of them.** That version left the author a choice [Pr]: (a) accept the ideal clock, equivalently the semigroup parameter, as a primitive of the dynamics, with T-53b and T-118 [C at an ideal clock with an infinite environment]; (b) keep the dynamical time emergent from finite registers and prove T-53b as a finite-window theorem with explicit error; (c) add a counter register $\ell^2(\mathbb{Z})$ recording the depth $n$ as a new infinite-dimensional axiom. Option (b) is now proved, in a stronger form than asked: the error at the readings is zero, not merely small (§11.4). Option (c) is not needed — every finite window is carried by a finite chain inside the O-registers of finitely many holons — and its limit is not a better carrier: on $\ell^2(\mathbb{N})$ the Feynman–Kitaev constraint is the Laplacian of the half-line, whose kernel contains no normalisable vector, so the history state of an infinite register is not a state. Option (a) remains available as a reading of the continuum limit (Theorem 11.5), but it is no longer an assumption that T-53b needs.
+The finite depth register realizes an aperiodic history for any specified finite number of steps. Its scaling limit depends on how the mesh and the distances to both endpoints are chosen. [Depth register](#114-регистр-глубины)
 
 ### 11.4 The depth register: an exact finite carrier {#114-регистр-глубины}
 
@@ -1260,7 +1236,7 @@ Let $A_M = M_7(\mathbb C)^{\otimes M}$ be the algebra of the O-registers of $M$ 
 
 **Physical reading [I].** Empty de Sitter space, the state of maximal entropy, corresponds to the tower in which every holon is at $I/7$: the dead background, below the window. Excitations are normal states, and by (d) they carry finitely many living holons, each costing more than $0.344$ nat of entropy below the maximum; in CLPW a particle of energy $E$ at the centre of the patch costs $\beta_{\text{dS}}E$. The comparison is an interpretation: (c) gives no map from holons to particles. The CLPW condition $q \geq 0$ has one UHM counterpart, $H_O \geq 0$; by (e) it is not enough, because the step from type III to type II needs a clock with continuous energy spectrum, and every finite clock of UHM has pure point spectrum; the limit of the depth register does have continuous spectrum bounded below (T-352, §11.6).
 
-**Open [Pr].** (1) A UHM clock with continuous spectrum bounded below. The scaling limit of Theorem 11.5 is a continuum of *readings* (times), not of energies. *Answered by T-352 (§11.6) at a stated premise:* the Feynman–Kitaev constraint of the depth register itself, in the limit $N \to \infty$, has purely absolutely continuous spectrum $[0, 4\hbar/\delta\tau]$, and as the observer's clock it gives a type II₁ factor; an earlier sentence here, that such a spectrum is a choice of level spacing and not a consequence of the construction, is superseded. (2) Whether the relational algebras of such registers converge to $\hat{\mathcal A}$. (3) Whether anything in UHM fixes the level $M$; without it $\Lambda$ stays an input, as in Witten's proposal.
+**Open questions [Pr].** T-352 describes a bounded-below continuous energy spectrum for its specified operator. Whether the corresponding relational algebras converge to $\hat{\mathcal A}$, and whether a physical scale selects the register level $M$, remain open. [T-352](#116-направление-и-непрерывные-часы)
 
 ### 11.6 Direction and the continuous clock {#116-направление-и-непрерывные-часы}
 

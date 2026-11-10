@@ -72,7 +72,7 @@ The machine exists twice, deliberately. The **reference** is a numpy-only implem
 | **[S]** domain sensor | an external system → observation stream; git repository (v0.7 metadata-only; v0.8 coherence-bearing: per-commit feature correlations unlock $\sigma_O/\sigma_U$ — the κ₀ supply loop ignites exactly with the repo's inner-workshop era) | §3.10 item 7, held-out p = 0.014 |
 | **[L]** BKM floor | the Kubo–Mori metric, m/e-geodesic lengths, geodesic MPC | H60–H64 |
 
-Two engineering facts deserve their own sentence. *The wiring catch:* the calibration discovered (H46) that the TALOS v0 emulator's translate wiring, read in display order $A..U$, realizes the corpus lines only up to the $U/O$ naming swap of §2.1 — functionally isomorphic (all spectral observables unaffected), but any **line-named** diagnostic must use the corrected wiring; the machine does. *The proxy catch:* the emulator's $\Phi = 7P - 1$ is a uniform-diagonal proxy; on a generic state it deviates from the canonical $\Phi$ by tens of percent (measured: $3.84$ vs $2.45$; H34) — the solver computes the exact one.
+The emulator uses the calibrated input wiring. The scalar $\Phi=7P-1$ coincides with the integration statistic only at a uniform diagonal. For an arbitrary diagonal the solver uses the exact readout (H34).
 
 ### 3.1 The state and the observables {#уравнения-наблюдаемых}
 
@@ -260,14 +260,14 @@ The v1 table: **66 hypotheses → 65 VERIFIED, 1 REFUTED (H46, the discovery), 0
 | Towers (v0.5) | H45, H51, H56 | the ladder $9/14 < 1 < 54/35$ [T] — the ceiling of three; a shared ideal makes a viable meta-holon (centered-Gram $P = 1.000$), personal ideals do not ($0.189 \le 2/7$); level-3 towers await v1 |
 | Geodesics (v0.5) | H52–H53 | regeneration rides the m-chord to $10^{-16}$; the drift road is $1.165\times$ its chord |
 | Atlas (v0.5) | H54–H55 | the window is a proper band of the (dissipation, supply) plane (11/20 cells); the $\kappa = 0$ column is all grey — *no supply, no being* |
-| Panel errata (v1) | H57–H59 | the published T-92 table failed both implications (explicit counterexample: all $\sigma < 1$ at $P = 0.153$); the renormalized $\sigma_E, \sigma_U$ encode their thresholds exactly and the embedding is restored via $\sum_i \gamma_{ii}^2 \geq 1/7$ — 0/19,000 violations; **the errata is applied corpus-wide** (T-92 table, the viability proof, the registry: 7 files × 2 locales) |
+| Panel calibration | H57–H59 | Raw panel membership and the Cap2 gate use different predicates. Test both directions on explicit states. |
 | BKM floor (v1) | H60–H64 | the metric validated ($10^{-19}$ vs classical Fisher); $L_m < L_e < L_{\text{drift}}$; the m-chord viable once in-window; geodesic MPC rediscovers boldness (33 ticks) |
 | Towers-3 (v1) | H65 | level 3 works on **collective states** ($P_3$ aligned $1.000$ vs distinct $0.561$); the first attempt on member-index Grams was ideal-blind — *pass states up, not agreement matrices* |
 | Chord search (v1) | H66 | rollout-guided search matches greedy at equal budget ($C = 0.4164$ both) |
 
 For a Hermitian $X$, the perturbation identity is $P(\rho+\varepsilon X)-P(\rho)=2\varepsilon\operatorname{Tr}(\rho X)+\varepsilon^2\operatorname{Tr}(X^2)$. It reduces to a pure squared-norm increment only when the cross term vanishes. It is therefore distinct from the [pinching comparison T-77](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация). Choosing the sign of $X$ to make the cross term nonnegative is a construction rule, not evidence that real cooperation is beneficial. Each interpreted state must also retain positivity and trace one.
 
-Two lessons the table already taught, worth the whole exercise: the **H46 catch** (two corpus artifacts wired the same plane under different names — exactly the class of silent error calibration exists to catch) and the **H38 honesty, since closed as a corpus errata** (what began as «the boolean σ-equivalence fails pre-calibration» ended with H57–H59: the published T-92 rows for $\sigma_E, \sigma_U$ renormalized, the viability-embedding proof repaired with the $\sum_i \gamma_{ii}^2 \geq 1/7$ lemma, $\Gamma_S$ canonized — the panel's *ranking* use was never wrong, and its boolean use is now exact). Dozens of hypotheses is not a ceiling but a cadence: every future organ lands with its stratum of the table, and the table re-runs on every change.
+H46 checks whether the state preparation and readout use the same wiring. H57–H59 check explicit witnesses for the raw panel rules. Passing either class of controls establishes only the corresponding property of the instrument.
 
 ## §6. The Dee parable and the Prime Radiant {#прайм-радиант}
 
@@ -335,7 +335,7 @@ Extraction criteria: a live data loop (can $\Gamma$ be estimated repeatedly?), f
 |---|------|---------|-------------|--------|
 | 1 | **SYNARC introspection & safety** — the σ-panel as the organism's own interoception; off-switch/halting per T-288/T-289; navigator as the deliberation organ over $\rho^*_\Omega$ | now (spec'd) | full suite, exact | [D] engineering |
 | 2 | **LLM-agent context health** — $\sigma_O$ (resource starvation) predicts context collapse before it happens; prescriptions = summarize/replenish ([CC worked case](/docs/applied/coherence-cybernetics/applications)) | now | $\sigma$-proxies from logs | [C] |
-| 3 | **Clinical consciousness monitoring** — tested by the concordance of the verdict $\mathrm{Cons}(\widehat\Gamma)$ with $\mathrm{PCI}_{\max} > 0.31$ (Cohen's $\kappa$, [P8.4](/docs/applied/research/measurement-protocol#тестируемые-предсказания-p8)) — the earlier "PCI* already grazes $2/7$ (0.31 vs 0.286)" compared unrelated scales and is withdrawn (2026-09-25); anesthesia emergence kink $\beta = 1/4$; the panel as an OR instrument | 2–3 yr | $P$-proxy, $\Phi$-proxy | [C] falsifiable |
+| 3 | **Clinical comparison.** Compare an independently calibrated model readout with an external clinical record on held-out data. PCI and matrix purity use distinct scales. | 2–3 yr | Specified model readouts | [H] |
 | 4 | **Organizational & therapeutic audit** — the [П1 mapping](https://homohologra.ph/research/gamma-canon#п1-картирование) + the panel + flow-restoration prescriptions; burnout reads as $O/U$ loss (the machine's demo) | now | 28-cell audit | [О/И] protocolized |
 | 5 | **Education** — the ontology book's map + a tutor-navigator that shows a learner their open doors (dials) instead of their rank | 2–3 yr | desk/library model | [I] |
 | 6 | **Personal navigation (the Dee protocol)** — daily Γ-mapping, solitaire runs over one's own basins; honest statuses on every readout | now, personal | П1–П4 | [I] explicitly |
@@ -348,16 +348,12 @@ Extraction criteria: a live data loop (can $\Gamma$ be estimated repeatedly?), f
 
 The *best* cases (1–3) share one shape: the observables already exist, the feedback loop is measured in the same units as the prescription, and an error surfaces quickly. The 10-year ecosystem the author expects is, concretely, rows 4–9 growing the same shape.
 
-## §9. Roadmap to v1 {#дорожная-карта}
+## §9. Implemented controls and open measurements {#дорожная-карта}
 
-1. ~~The pair space~~ — **done in v0.5** (organ [G]; H24, H47–H50 closed).
-2. ~~Towers~~ — **done**: level 2 in v0.5 (organ [H]; H45, H51); level 3 in v1 on collective states (H65, closing H56) — with the structural lesson that member-index Grams are ideal-blind one level up.
-3. ~~The Estimator organ [K]~~ — **shipped in v0.6** (demo 6, R26–R27): predict–measure–update over $\mathcal{D}(\mathbb{C}^7)$ with process noise, full and magnitude-only partial readouts; beats both baselines; end-to-end diagnosis through noise 62% vs 22% raw. The first *domain sensor* shipped in v0.7 (: a real repository, metadata-only dictionary, pre-registered held-out validation $p = 0.014$). Remaining: coherence-bearing sensing and multi-encoder Delphi consensus.
-4. ~~Panel calibration~~ — **done, and it became a corpus errata** (H57–H59): the published T-92 rows for $\sigma_E, \sigma_U$ did not encode their thresholds and the embedding failed on an explicit counterexample; renormalized rows and the repaired viability proof applied across 7 corpus files × 2 locales; $\Gamma_S$ canonized as the $\{A,S,D\}$ sector block (closes H37).
-5. ~~Geodesic MPC~~ — **done in v1** (organ [L]; H60–H64): §4.3's [H] operationally confirmed; the MPC rediscovers the bold strategy from the metric alone.
-6. ~~MCTS over dials~~ — **done in v1** (H66): rollout-guided search matches greedy at equal budget; a learned value function stays optional until a scale demands it.
-7. ~~The Verum port~~ — **done at spec level**: typed contracts carrying the calibrated invariants, with `@test`/`@property` blocks mirroring the H-numbers.
-8. **Calibration cadence**: every organ lands with its hypothesis stratum; the table is the release gate.
+- Pair readouts (H24, H47–H50) and two-level aggregates (H45, H51) have finite tests. For the third level, H65 uses collective states. Member-index Gram matrices can fail to distinguish different internal patterns.
+- The estimator uses noisy full and magnitude-only readouts (R26–R27, demo 6). In the specified diagnosis simulation it gives 62% against 22% for the raw noisy input. The metadata-only repository sensor reported a preregistered held-out comparison with $p=0.014$.
+- H57–H59 test the stress readout against the specified gate. H60–H64 compare geodesic MPC strategies, and H66 compares rollout-guided and greedy search at equal budgets.
+- The Verum specification records the typed contracts and their finite checks. Each reported result depends on its stated test conditions.
 
 ## §10. Status summary {#статусы}
 
@@ -376,7 +372,7 @@ The *best* cases (1–3) share one shape: the observables already exist, the fee
 | «Obstacles removed before the bold» = basin crossing + attractor drift | [I] over [T] anchors |
 | Golden path = viable BKM geodesic | [H] (v1 test) |
 | Ensemble versus individual predictability | [H] reported selected simulation; requires independent forecast calibration |
-| σ-panel boolean use | **closed by the 2026-07-22 corpus errata**: renormalized $\sigma_E, \sigma_U$, embedding restored with proof, $\Gamma_S$ canonized (H37, H57–H59) |
+| Stress-panel readout | H37 and H57–H59 test the declared panel, the $\{A,S,D\}$ block and the explicit witnesses. Biological viability needs separate calibration. |
 | Golden path = viable BKM geodesic | [Г → С-measured]: $L_m < L_e < L_{\text{drift}}$, chord viable in-window, MPC rediscovers boldness (H60–H64); the global variational statement open |
 | The solitaire oracle, the Dee parable | [I] with exact Monte-Carlo content |
 | Psychohistory for levels, never persons | the §4.4 boundary |

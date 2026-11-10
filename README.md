@@ -1,7 +1,7 @@
 <h1 align="center">Unitary Holonomic Monism</h1>
 
 <p align="center">
-  <strong>A formal theory of reality and consciousness</strong>
+  <strong>A mathematical research programme on states, observations and experience</strong>
 </p>
 
 <p align="center">
@@ -12,21 +12,21 @@
 
 ---
 
-**Unitary Holonomic Monism (UHM)** is an axiomatic theory that derives physics, consciousness, and ethics from a single mathematical primitive — an ∞-topos over 7-dimensional quantum coherence structures called **Holons**.
+**Unitary Holonomic Monism (UHM)** studies how to describe systems through preparations, interventions and observed outcomes. Its finite network models give exact conditions under which different probes measure a common distance. One model represents a system, called a **holon**, by a density matrix on seven chosen roles.
 
-From five axioms, the theory derives emergent spacetime (3+1 dimensions), quantum mechanics, the Standard Model gauge group, a hierarchy of consciousness levels, and a formal ethics — without arbitrary parameters.
+Identifying those roles with physical fields or with felt experience requires additional assumptions and independent observations. The Standard Model particle spectrum, physical spacetime dynamics and a criterion for consciousness remain open research questions.
 
 ## Documentation
 
-The full theory is available at **[holon.sh](https://holon.sh)**:
+Read the introduction in [English](https://holon.sh/docs/intro) or [Russian](https://holon.sh/ru/docs/intro).
 
 | Section | Description |
 |---------|-------------|
 | [Introduction](https://holon.sh/docs/intro) | Overview of the theory, axioms, and key concepts |
 | [Core Theory](https://holon.sh/docs/core/foundations/axiom-omega) | Axiomatic foundations, seven dimensions, dynamics, and categorical formalism |
 | [Consciousness](https://holon.sh/docs/consciousness/overview) | Two-aspect monism, interiority hierarchy, phenomenology, and ethics |
-| [Physics](https://holon.sh/docs/physics/overview) | Derivation of quantum mechanics, gauge symmetries, gravity, and cosmology |
-| [Formal Proofs](https://holon.sh/docs/proofs/minimality/theorem-minimality-7) | Rigorous proofs of minimality, dynamics, and categorical structure |
+| [Physics](https://holon.sh/docs/physics/overview) | Operational network results and conditional models of particles, gravity and cosmology |
+| [Formal Proofs](https://holon.sh/docs/proofs/minimality/theorem-minimality-7) | Dimension bounds under explicit assumptions, dynamics and categorical constructions |
 | [Coherence Cybernetics](https://holon.sh/docs/applied/coherence-cybernetics/introduction) | Applied formalism for engineering, diagnostics, and AI |
 | [Reference](https://holon.sh/docs/reference/glossary) | Glossary, notation, status registry, and falsifiability criteria |
 

@@ -61,13 +61,13 @@ def step(rho, h, gamma, dt, rate, target):
 
 At every reported step check Hermiticity, trace, the smallest eigenvalue, and $1/7\le P\le1$. A small tolerance is a statement about floating point error. A substantial violation indicates a defective input or algorithm; clipping a reported scalar does not repair the state. A projection onto the density cone changes the numerical trajectory and must be included in the error budget. Generic explicit Euler and Runge–Kutta methods do not guarantee positivity.
 
-For a valid density matrix $P\ge1/7$ and $d=\sum_i\rho_{ii}^2\ge1/7$, so the purity and integration denominators cannot approach zero. $\mathrm{Coh}_E\in[0,1]$ is a Hilbert–Schmidt share, not a universal viable-state lower bound. In particular $I/7$ has $\mathrm{Coh}_E=1/7$ and zero off-diagonal E-coherence; viable states with an empty E-sector exist. The former universal T-38a claim is withdrawn; see [the conditional balance theorem](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie).
+For a valid density matrix, the E mask can have zero weight. An implementation claiming a positive E floor must specify the source and rate conditions in its balance equation.
 
 Meaningful verification includes an analytic diagonal example, a noncommuting Hamiltonian, a boundary state, finite-step positivity, convergence under step refinement, and an independently computed counterexample to any universal claim used by the model. [The executable kernel checks](/docs/reference/mathematical-kernel#verification) cover these mathematical properties without certifying the entire theory.
 
 ## Environmental coupling {#canonical-decomposition-f-ext}
 
-A positive sum of GKSL generators is again a GKSL generator. Additional dissipative terms are permitted; the old T-57 and T-102 three-type completeness claims are withdrawn. Writing controls as changes to $H$, dissipators, and a replacement target is an engineering convention [D]. It needs a representation of the actual admissible controls and does not prove their exhaustive uniqueness. A signed correction need not be a GKSL generator by itself; validate the **full** generator or channel.
+A nonnegative sum of GKSL generators gives an admissible generator. A signed difference requires a separate generator check. A proposed action additionally needs an observation law and a loss.
 
 For joint systems use the tensor state and explicitly defined local channels or a joint Hamiltonian. A nonlinear single-state feedback has no automatic tensor extension: specify how its coefficients are evaluated from local marginals and use a linear local channel with those frozen coefficients. Feature-to-state reconstruction is an estimator, not an environmental quantum channel.
 
@@ -83,7 +83,7 @@ Report the four margins $P-2/7$, $R-1/3$, $\Phi-1$, and $D_{\rm diff}-2$. Only t
 
 The cut $2/7$ is an exact consequence of a **chosen majority convention** for Hilbert–Schmidt differentiation, not a universal survival or detection threshold. The self-observation and differentiation cuts are selected conventions; the operational interpretation requires calibration. Dynamic viability requires a specified domain, disturbances, admissible controls, and an invariant or viability-kernel argument.
 
-For a finite action set, evaluate the specified loss for each action. For compact controls and a continuous loss a minimiser exists. Uniqueness, convexity, and efficient global optimisation each require additional assumptions. Do not infer any of them from compactness or from the former universal stress-window equivalence.
+For a finite action set, evaluate the specified loss for each action. For compact controls and a continuous loss a minimiser exists. Uniqueness, convexity, and efficient global optimisation each require additional assumptions. Do not infer any of them from compactness.
 
 ## Cost and reproducibility {#debugging-coherent-systems}
 

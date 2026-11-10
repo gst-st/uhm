@@ -10,7 +10,7 @@ A sensorimotor model specifies observations, state reconstruction, controls, and
 
 ## Admissible environmental influence {#теорема-полнота-трёх-членов}
 
-The former T-102/T-57 prohibition of a fourth generator is withdrawn. A sum of GKSL generators with nonnegative rates is another admissible GKSL generator. A Hamiltonian term, a dissipative term, and a replacement-feedback term form a **selected grouping**, not three exhaustive categorical types. A replacement generator with fixed target $\tau$ has Kraus jumps $K_{mn}=\sqrt{a\lambda_m}|m\rangle\langle n|$, where $\tau=\sum_m\lambda_m|m\rangle\langle m|$; substitution gives $a(\tau\operatorname{Tr}\rho-\rho)$. It already belongs to the GKSL class.
+A nonnegative sum of GKSL generators is again a GKSL generator. This closure allows additional channels beyond any chosen three-channel decomposition.
 
 A signed difference of two generators need not itself be admissible. Validate the full controlled generator, including rate signs, target positivity and boundary regularity. State-dependent feedback is a density-preserving nonlinear law under the stated hypotheses; it is not one linear quantum channel.
 
@@ -18,7 +18,7 @@ A signed difference of two generators need not itself be admissible. Validate th
 
 Specify a sample space $\mathcal Y$ and probability law $p_\rho(y\mid u)$ for each preparation or intervention $u$. An estimator $G:\mathcal Y^m\to\mathcal D_7$ outputs a candidate state and an uncertainty set. The map $G$ is a classical estimator, not a CPTP map between quantum matrix algebras. Positive parametrisation is useful but does not establish identifiability.
 
-For a quantum instrument, specify CP maps $\mathcal I_y$ with trace-preserving sum; then $p_\rho(y)=\operatorname{Tr}\mathcal I_y(\rho)$. Its quantum output and classical readout are distinct. A feature model needs its own likelihood. Codomain $G_2$ symmetry does not make either construction unique. The old T-42a claim is withdrawn; strong encoder comparison requires (RI).
+For a quantum instrument, specify its positive measurement maps and the probability of each outcome. Comparisons of encoders require common calibration and an observation law.
 
 Calling Enc a functor requires explicit source and target categories, identity preservation, and compatibility with composition. A collection of state-indexed perturbations does not supply these laws automatically. An ordinary statistical model is sufficient when no categorical composition is used.
 

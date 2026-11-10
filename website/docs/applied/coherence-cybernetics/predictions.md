@@ -48,10 +48,10 @@ The first group of predictions concerns the deepest idea of CC — the indissolu
 ### Prediction 1: Conditional E-coherence balance {#предсказание-1}
 
 :::note Prediction [H]
-The universal No-Zombie implication is withdrawn. Purity above $2/7$, a nonzero dissipator, and sustained dynamics do not force $\mathrm{Coh}_E>1/7$. [Theorem 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) supplies a stationary counterexample and a conditional purity-flux balance. A positive E-floor requires a specified restricted model class, a bound on external support, positive feedback dependence, and a positive required flux. Identifying the E-sector with experience is a further [P/I] bridge.
+Purity above $2/7$, a nonzero dissipator, and sustained dynamics do not force $\mathrm{Coh}_E>1/7$. [Theorem 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) supplies a stationary counterexample and a conditional purity-flux balance. A positive E-floor requires a specified restricted model class, a bound on external support, positive feedback dependence, and a positive required flux. Identifying the E-sector with experience is a further [P/I] bridge.
 :::
 
-Test the restricted balance after fixing the admissible inputs and rates. Keep the remaining target, gate, dissipation, preparation, and resources fixed during an E-intervention, or explicitly model their changes. An externally supported viable system with low E-coherence does not refute the density-matrix formalism. It refutes a proposed universal necessity claim, which has already been withdrawn.
+Test the restricted balance after fixing the admissible inputs and rates. Keep the remaining target, gate, dissipation, preparation, and resources fixed during an E-intervention, or explicitly model their changes. An externally supported viable system with low E-coherence does not refute the density-matrix formalism.
 
 ### Prediction 2: A selected E-dependent rate model {#предсказание-2}
 
@@ -68,7 +68,7 @@ The second group of predictions concerns the *architecture* of conscious systems
 ### Prediction 3: A seven-component stress panel {#предсказание-3}
 
 :::info Prediction [D/H]
-Seven stress scores are chosen in [definitions](./definitions#тензор-напряжений). Their empirical completeness is [H]. The old universal equivalence $\|\sigma\|_\infty<1\iff P>2/7$ and the equivalence to the full four-condition window are withdrawn. The panel depends on the frame, feedback rate, experiential readout, and rank convention. It is not a vector of seven universally invariant observables.
+The seven stress scores define a panel in a specified frame. The equivalence between crossing that panel, passing the four Cap2 gates and attaining biological health would require separate observation laws and evidence. [Definitions](./definitions#тензор-напряжений)
 :::
 
 For window monitoring use the exact four margins and uncertainty-set verdict. For empirical stress classification, preregister the coding rules and test held-out stressors against competing models. The ability to assign a label to every item does not prove independent dimensionality or exhaustive causal coverage.
@@ -126,10 +126,10 @@ The rigorous bounds concern a perfect single-error binary code or a faithful rep
 ### Prediction 11: Dimension and social learning {#предсказание-11}
 
 :::note Prediction [H]
-The count $3_{\rm ToM}+3_{\rm ISL}+1_U=7$ is withdrawn as a mathematical lower bound. The GKSL theorem does not assign three independent cognitive coordinates to theory of mind, and the chosen Fano word process does not assign three coordinates to communication. Simultaneous tasks may reuse internal representations.
+The proposed role assignment $3_{\rm ToM}+3_{\rm ISL}+1_U=7$ is a model architecture [H]. To establish a lower bound one would need an independence or discrimination result for a specified task.
 :::
 
-A lower bound must identify an operationally independent observable algebra or an information task requiring a faithful representation. Testing a particular seven-axis design against smaller architectures is meaningful; extrapolating that result to all social learners is not. The former conditional status based on the withdrawn T-57 is replaced by an architectural hypothesis [H].
+A lower bound must identify operationally independent observables or an information task requiring a faithful representation. Compare the proposed seven-axis architecture to smaller alternatives on that task.
 
 ## III. Thresholds and Robustness
 
@@ -137,15 +137,9 @@ The third group of predictions concerns *numerical thresholds* — specific para
 
 ### Prediction 5: Collective consciousness {#предсказание-5}
 
-*Retitled 2026-09-25.* The prediction was titled "Scale invariance of consciousness", and other pages cited it as the licence for scale invariance; what it states is a condition for collective consciousness. Scale invariance is [Theorem 9.2 (CC-6, T-72)](./theorems#теорема-92-масштабная-инвариантность), [T at weak coupling] through the canonical aggregation of [Theorem 9.5](./theorems#теорема-95-каноническая-агрегация) (earlier the same day conditional on the assumption (AGG)).
+Represent the members of a proposed collective by a joint state. The mathematical test asks whether it factors into its marginal states. Identifying the collective as a subject requires an additional observation law.
 
-**Intuition.** Can a group of conscious beings give rise to *collective* consciousness? A hive, a flock, a team — do they have "experience"? Earlier editions answered: yes, *if* individual consciousnesses are sufficiently integrated ($\Phi_{\otimes} > \Phi_{\min}$). That criterion is retracted below: every uncoupled group meets it. What CC can state is a necessary condition — the members' joint state is correlated — and a hypothesis about sufficiency.
-
-:::warning Retracted (2026-09-25): the criterion $\Phi_{\otimes} > \Phi_{\min}$
-The prediction read $\left( \bigwedge_i C(\mathbb{H}_i) > 0 \right) \land \Phi_{\otimes} > \Phi_{\min} \Rightarrow C(\mathbb{H}_{1 \otimes \ldots \otimes n}) > 0$, with the status "non-triviality [T], viability [C]". It is retracted because its condition and its conclusion both hold for any uncoupled group: on a product state $1 + \Phi_{\otimes} = \prod_i (1 + \Phi_i)$, so two holons that pass the window ($\Phi_i \geq 1$) already have $\Phi_{\otimes} \geq 3$ at mutual information $I = 0$, and $C(\mathbb{H}_i) > 0$ forces $\Phi_i > 0$, hence $\Phi_{\otimes} > 0$ ([the identity, with a worked pair](/docs/consciousness/comparative/panpsychism-analysis#теорема-нередуцируемость)). No measurement on a group could have failed it. The two statuses it carried — non-triviality $P > 1/7$ of the composite attractor ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]) and viability $P > 2/7$ for embodied systems ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора); Step 3 [C at backbone-injection lower bound]) — are facts about the composite's purity, not about its consciousness, and stand as such: for the canonical aggregate of weakly coupled viable members they are [T at weak coupling] by [Theorem 9.5](./theorems#теорема-95-каноническая-агрегация); stated for the composite's own dynamics they keep the assumption (HOL) of [Theorem 9.1](./theorems#теорема-91-фрактальное-замыкание) (named and then, for weak coupling, removed on 2026-09-25).
-:::
-
-:::info Prediction (restated): a necessary condition [T]; sufficiency is a hypothesis [H]
+:::info Prediction. Necessary correlation [T], subject interpretation [H]
 **Necessary condition [T].** A collective can differ from a set of separate subjects only if its members' joint state is correlated: a product state is fixed by its marginals, and the mutual information
 
 $$
@@ -154,19 +148,17 @@ $$
 
 vanishes exactly on products, so the condition is $I > 0$; for $n$ members the analogue is a positive total correlation $\sum_i S(\rho_i) - S(\rho_{1 \ldots n}) > 0$. The condition is necessary, not sufficient: coupled thermostats meet it too.
 
-**Interaction alone does not meet it.** An earlier edition said that by [CC-7](./theorems#теорема-93-эмерджентность) [T] interacting holons always have a stationary joint state with $I > 0$. That is retracted (2026-09-25): a coupling that commutes with the product $\rho_*^{(1)} \otimes \rho_*^{(2)}$ of the members' attractors, or acts on one member alone, leaves the stationary joint state a product with $I = 0$. What [Theorem 9.3](./theorems#теорема-93-эмерджентность) now gives is a criterion, [T for almost every anchor]: for weakly coupled embodied holons with non-degenerate attractors, $I = \Theta(g^2) > 0$ exactly when the coupling has a correlating part, $\Pi_c\bigl([H_{\mathrm{int}}, \rho_*^{(1)} \otimes \rho_*^{(2)}]\bigr) \neq 0$. The status of the necessary condition does not change — it never rested on the dynamics — but whether a given group meets it is a question about how its members are coupled, not a consequence of their interacting.
+**Interaction.** A coupling that commutes with the product anchor leaves a stationary product state. An interaction is therefore insufficient to ensure $I>0$. [CC-7](./theorems#теорема-93-эмерджентность)
 
-**Sufficiency [H].** A correlated group is a subject when its joint state, aggregated to $\mathcal{D}(\mathbb{C}^7)$, passes the four-condition window. This is a hypothesis, not a theorem. [Theorem 9.5](./theorems#теорема-95-каноническая-агрегация) fixes the aggregation by three natural requirements — the only linear, permutation-invariant map $\mathcal{D}(\mathbb{C}^{7^n}) \to \mathcal{D}(\mathbb{C}^7)$ that returns a member's state on an uncoupled group is the mean of the members' marginals — and that map depends on the marginals alone, so it cannot see the correlation that the necessary condition requires. Under it a weakly coupled group of identical members aggregates to within $O(g)$ of one member (T-72 [T]), and at strong coupling the aggregate can fall to $I/7$ ([Theorem 9.6](./theorems#теорема-96-сильная-связь)): the canonical aggregation cannot certify a collective level above the members' at any coupling. An aggregation that sees correlations must give up linearity, permutation invariance or consistency on uncoupled groups, and the corpus fixes none; nor does it have an exclusion rule deciding whether members and group can be subjects at once ([boundary problem](/docs/consciousness/comparative/panpsychism-analysis#проблема-границы)). Research programme [Pr]: a correlation-sensitive aggregation — necessarily non-linear, non-symmetric or inconsistent on uncoupled groups — or an exclusion rule, that turns the hypothesis into a criterion. (Earlier: "the aggregation channel … is not fixed by the theory, and the verdict depends on it", with the transfer conditional on (AGG); sharpened 2026-09-25 by Theorem 9.5.)
+**Sufficiency [H].** A correlated group is a subject when its joint state, aggregated to $\mathcal{D}(\mathbb{C}^7)$, passes the four-condition window. This is a hypothesis, not a theorem. [Theorem 9.5](./theorems#теорема-95-каноническая-агрегация) fixes the aggregation by three natural requirements — the only linear, permutation-invariant map $\mathcal{D}(\mathbb{C}^{7^n}) \to \mathcal{D}(\mathbb{C}^7)$ that returns a member's state on an uncoupled group is the mean of the members' marginals — and that map depends on the marginals alone, so it cannot see the correlation that the necessary condition requires. Under it a weakly coupled group of identical members aggregates to within $O(g)$ of one member (T-72 [T]), and at strong coupling the aggregate can fall to $I/7$ ([Theorem 9.6](./theorems#теорема-96-сильная-связь)): the canonical aggregation cannot certify a collective level above the members' at any coupling. An aggregation that sees correlations must give up linearity, permutation invariance or consistency on uncoupled groups, and the corpus fixes none; nor does it have an exclusion rule deciding whether members and group can be subjects at once ([boundary problem](/docs/consciousness/comparative/panpsychism-analysis#проблема-границы)). Research programme [Pr]: a correlation-sensitive aggregation — necessarily non-linear, non-symmetric or inconsistent on uncoupled groups — or an exclusion rule, that turns the hypothesis into a criterion.
 :::
 
 **See:** [Theorem 9.1](./theorems#теорема-91-фрактальное-замыкание), [Theorem 9.3](./theorems#теорема-93-эмерджентность)
 
-**Uniqueness of the prediction.** ~~"IIT permits collective consciousness but provides no sufficiency criterion. … Only CC formulates a necessary and sufficient condition ($\Phi_{\otimes} > \Phi_{\min}$) and promises its computability."~~ Retracted on both counts. IIT has an explicit criterion — the exclusion postulate: a set of units is a conscious complex only if it specifies a maximum of integrated information over all overlapping candidate systems, and "overlapping substrates that specify less integrated information … are excluded" (L. Albantakis et al., "Integrated information theory (IIT) 4.0", *PLoS Computational Biology* 19(10): e1011465, 2023). For groups it predicts that two people talking form an integrated system that is not maximally irreducible, so "there should indeed be two separate experiences, but no superordinate conscious entity that is the union of the two", and that if a brain-to-brain link raised the pair's maximal integrated information above that of each brain, "their individual conscious mind would disappear and its place would be taken by a new Über-mind that subsumes both" (G. Tononi & C. Koch, "Consciousness: here, there and everywhere?", *Philosophical Transactions of the Royal Society B* 370: 20140167, 2015). After the retraction CC has a necessary condition and no sufficiency criterion, and the necessary condition is not unique to CC; on this question IIT, not CC, has a criterion. FEP describes hierarchical systems but does not use the concept of collective experience.
-
 **Experimental verification:**
 1. Measure the correlation between members' states — the mutual information, or the total correlation for $n > 2$, of the reconstructed joint $\Gamma$ — for groups with varying degrees of coordination (jazz quartet vs. random musicians).
 2. Apply hyperscanning (simultaneous EEG of several subjects).
-3. **Prediction:** the correlation is positive for a coordinated group and absent for an unconnected one. This tests only the necessary condition; a positive result does not show that the group is a subject. (Earlier editions predicted that "$\Phi_{\otimes}$ for a coordinated group exceeds $\Phi_{\min}$; for an unconnected one — no"; retracted, since an unconnected group of conscious members already has $\Phi_{\otimes} \geq 3$.)
+3. **Prediction:** the correlation is positive for a coordinated group and absent for an unconnected one. This tests only the necessary condition; a positive result does not show that the group is a subject.
 
 **Verifiability:**
 Measurement of the correlation between members for groups with varying degrees of integration:
@@ -175,7 +167,7 @@ Measurement of the correlation between members for groups with varying degrees o
 - Organisations
 - Ecosystems
 
-**Criterion:** $I > 0$ (total correlation for $n > 2$) — a necessary condition [T]. Without correlation between members there is no collective subject in any sense the theory can state. (Earlier editions gave $\Phi_{\otimes} > \Phi_{\min}$ here as the necessary condition; retracted.)
+**Criterion:** $I > 0$ (total correlation for $n > 2$) — a necessary condition [T]. Without correlation between members there is no collective subject in any sense the theory can state.
 
 **Interdisciplinary consequences:**
 - *Sociology:* formalises a necessary condition for Durkheim's "collective consciousness" — correlation between members' states; whether a correlated collective is a subject remains a hypothesis [H].
@@ -192,7 +184,7 @@ $$
 \mathrm{Viable}(\mathbb{H}) \Rightarrow P(\Gamma) > P_{\text{crit}} = 2/7
 $$
 
-[Viability](/docs/core/dynamics/viability) requires minimum [purity](/docs/core/dynamics/viability#определение-чистоты), with the threshold derived, not fitted ([theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical), registry Level 1 row 5 [T]); a nontrivial attractor has $P > 1/7$ (T-96 [T]). *Corrected 2026-09-26:* the formula also required $\mathrm{Coh}_E(\Gamma) > \mathrm{Coh}_E^{\min} = 1/7$ and cited T-151. Viability does not imply it — the pure axis state $\lvert A\rangle\langle A\rvert$ has $P = 1$ and $\mathrm{Coh}_E = 0$ — and T-151 makes the E-row condition ($D_{\min} = 2$) an independent L2 condition, not a consequence of $P > 2/7$. The E-coherence remarks below concern that L2 condition, not viability.
+[Viability](/docs/core/dynamics/viability) requires minimum [purity](/docs/core/dynamics/viability#определение-чистоты), with the threshold derived, not fitted ([theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical), registry Level 1 row 5 [T]); a nontrivial attractor has $P > 1/7$ (T-96 [T]).
 :::
 
 :::info L2 thresholds
@@ -219,7 +211,7 @@ Intuition: $1/7$ — "one voice out of seven". $2/7$ — "two voices out of seve
 **Experimental verification:**
 1. In subjects at the boundary of consciousness (anaesthesia, sleep) record EEG/HRV and TMS-EEG; reconstruct $\widehat\Gamma$ by $\pi_{\mathrm{bio}}$ with parameters frozen on wakefulness and no viability penalty ([SUB-1, SUB-2](/docs/applied/research/measurement-protocol#substitution-position)).
 2. Compute $\widehat P$ and the verdict $\mathrm{Cons}(\widehat\Gamma)$; compute PCI (Perturbational Complexity Index) independently.
-3. **Prediction:** the consciousness/unconsciousness transition occurs where $\widehat P$ crosses $2/7$, and $\mathrm{Cons}(\widehat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ at Cohen's $\kappa \geq 0.8$ (P8.4). *(Until 2026-09-25 step 2 read "calibrate $\pi_{\mathrm{bio}}$ to obtain $P$ from PCI": no conversion between the two scales exists, and calibrating to PCI would make agreement with it automatic.)*
+3. **Prediction:** the consciousness/unconsciousness transition occurs where $\widehat P$ crosses $2/7$, and $\mathrm{Cons}(\widehat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ at Cohen's $\kappa \geq 0.8$ (P8.4).
 
 **Verifiability:**
 Measurement of purity in systems approaching loss of viability must show $P$ crossing $2/7$ (E-coherence is tested separately, as the L2 differentiation condition).
@@ -261,7 +253,7 @@ $\Phi \in (1, 3/2]$, $R \geq 2/5$, every diagonal entry $1/7$; $P_c = 0.318, 0.3
 
 **See:** [Consciousness window](/docs/proofs/consciousness/conscious-window#t-124), [living attractor](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне)
 
-**Verifiability:** For an isolated agent with the $\varphi_J$ anchor and $\kappa > \kappa_c(\alpha)$, measure the attractor $P^*$. **Numerical falsification criterion:** $P^* \geq 3/7$, or $P^*$ outside $(P_c(\alpha), P_\infty(\alpha))$ beyond the measurement error, at $n > 100$ independent measurements ($p < 0.01$) → falsification of the $\varphi_J$ dynamics or of its implementation. (The former criterion $|P^* - 3/7| > 0.05$ is withdrawn with the old form.)
+**Verifiability:** For an isolated agent with the $\varphi_J$ anchor and $\kappa > \kappa_c(\alpha)$, measure the attractor $P^*$. **Numerical falsification criterion:** $P^* \geq 3/7$, or $P^*$ outside $(P_c(\alpha), P_\infty(\alpha))$ beyond the measurement error, at $n > 100$ independent measurements ($p < 0.01$) → falsification of the $\varphi_J$ dynamics or of its implementation.
 
 **Interdisciplinary consequences:**
 - *Neuroscience:* predicts that a healthy brain at rest sits inside the window with a margin below its upper edge, not at $3/7$.
@@ -338,7 +330,7 @@ The fifth group of predictions concerns the *vertical structure* of consciousnes
 
 ### Prediction 12: Testing declared depth diagnostics (T-142) {#предсказание-12}
 
-A depth score and cognitive depth require different tests. The old universal statement $\mathrm{SAD}_{\max}=3$ for every finite system is **withdrawn [✗]**. Iterating a specified Fano channel gives an amplitude-survival law; it does not identify an iteration index with a cognitive level.
+Iterating a specified Fano channel gives an amplitude-survival law. Identifying that iteration index with measured cognitive depth requires an operational readout and independent data.
 
 **Exact channel prediction [T].** For the bare Fano dephaser $D_{2/3}$ and any initially nonzero off-diagonal entry,
 
@@ -438,7 +430,7 @@ The sixth group of predictions concerns the *dynamics* of transitions — how a 
 
 ### Prediction 16: Conditional passage and ignition laws {#предсказание-16}
 
-The purity cutoff $P=2/7$ is a chosen gate boundary; it need not be a bifurcation of the actual flow. A universal avalanche, universal $A_4$ catastrophe and universal ignition time $T\propto(P-2/7)^{-1}\kappa_0^{-1}$ are **withdrawn [✗]**. The corrected purity balance includes the actual model term: for the canonical centre-anchored numerical map it does not supply the claimed positive-feedback ignition.
+The chosen gate boundary $P=2/7$ is a purity cut. Establishing a bifurcation, a catastrophe normal form or an ignition time requires specifying the flow, reduction and readout. The normal-form calculation below addresses those conditions separately.
 
 **Conditional scalar result [T].** Suppose an actual smooth reduction yields $\dot y=ay+by^2$ with fixed $a,b>0$, initial $0<y_0<y_f$, and an explicitly calibrated relation between $y$ and observables. Its passage time is
 
@@ -472,7 +464,7 @@ The additional $\nu=1/2$ requires a specified spatial gradient term and a valid 
 
 **Protocol [Pr/H].** Before fitting, define the independent order parameter, control variable, actual critical point, field, symmetry test, quartic tuning, finite-size regime and observable-to-$m$ bridge. Fit the reduction on training data and compare held-out scaling against quartic and non-gradient alternatives. A fit of PCI alone does not validate five exponents, spatial dimensionality or equilibrium assumptions. Twenty-one coherence pairs are not a spatial dimension or a controlled thermodynamic limit.
 
-Identifying $t=0$ with $P=2/7$, identifying $m$ with a neural/phenomenal observable, and controlling fluctuations are extra conditions **[C/H]**. Failure of the measured scaling rejects the specified reduction or bridge, not the proved minimisation identity. The former claim of universal exact UHM exponents is **withdrawn [✗]**. A measured $\beta=1/2$ by itself neither proves an $A_4$ singularity nor identifies the violated assumption.
+Identifying $t=0$ with $P=2/7$, identifying $m$ with a neural/phenomenal observable, and controlling fluctuations are extra conditions **[C/H]**. Failure of the measured scaling rejects the specified reduction or bridge, not the proved minimisation identity.
 
 Source: [T-161 and its explicit hypotheses](/docs/consciousness/hierarchy/swallowtail-transitions#критические-экспоненты).
 
@@ -503,13 +495,13 @@ $$
 \varepsilon_{\mathrm{eff}} = \frac{4\,|\bar{\gamma}|_{\mathrm{sect}}}{9\,(1 + \Sigma_0/4)} \approx 0.055\text{–}0.057
 $$
 
-*(Amended 2026-08-10 per E26: the earlier denominator form with a repeated $N_{33}$ evaluated to $O(1)$, not $0.059$; the corrected self-consistent form lands at $0.0569$ (sector ansatz) / $0.0549$ (ansatz-free) against the loop route's $0.0587$ — see [T-216](/docs/proofs/categorical/fundamental-closures#t-216).)*
+At the chosen inputs the self-consistency expression gives $0.0569$ in the sector ansatz and $0.0549$ without it. The loop estimate gives $0.0587$. [Calculation](/docs/proofs/categorical/fundamental-closures#t-216)
 The Yukawa hierarchy suppression parameter is an **analytical** algebraic function of structural constants of the Gap potential, not a free parameter. All mass ratios ($m_c/m_t \sim \varepsilon^2$, $m_u/m_t \sim \varepsilon^4$) are predicted.
 :::
 
-**Verifiability:** Non-perturbative computation (lattice or variational) of the self-consistent vacuum must give $\varepsilon_{33}^* \in [0.04, 0.08]$. Going outside these bounds — falsification of (SV). *Corrected 2026-09-25:* the space "$(S^1)^{21}/G_2$" is not defined — the cubic term of $V_{\mathrm{Gap}}$ is not $G_2$-invariant — and the self-consistent vacuum of $V_{\mathrm{Gap}}$ computed so far is unique only up to its 896 symmetries, sits on two Fano lines and has no sector values (its own mean coherence is $\approx 0.097$); the check therefore tests the hypothesis (SV), not T-64.
+**Verifiability:** Non-perturbative computation (lattice or variational) of the self-consistent vacuum must give $\varepsilon_{33}^* \in [0.04, 0.08]$. Going outside these bounds — falsification of (SV).
 
-**Source:** [Analytical ε](/docs/physics/particle-physics/yukawa-hierarchy#9-аналитическая-формула-ε) [C at (SV)] (it read "[C given T-64]" until 2026-09-25: T-64 is restated as a hypothesis whose vacuum has no sector values, and the sector values are the hypothesis (SV))
+**Source:** [Analytical ε](/docs/physics/particle-physics/yukawa-hierarchy#9-аналитическая-формула-ε) [C at (SV)]
 
 ---
 
@@ -565,7 +557,7 @@ There exists a map $\pi_{\mathrm{bio}}$, unique up to $G_2$-gauge, such that:
 **Experimental verification:**
 1. Simultaneous TMS-EEG + HRV measurement in N=30 subjects (waking, sleep, anaesthesia).
 2. Apply $\pi_{\mathrm{bio}}$ and verify:
-   - Concordance of verdicts: $\mathrm{Cons}(\widehat\Gamma)$ against $\mathrm{PCI}_{\max} > 0.31$ on the same sessions, Cohen's $\kappa \geq 0.8$ (P8.4; until 2026-09-25: "threshold $P = 2/7$ coincides with PCI $\approx 0.31$", a comparison of unrelated scales)
+   - Concordance of the independently reconstructed four-gate verdict with $\mathrm{PCI}_{\max}>0.31$ on held-out sessions (P8.4).
    - Critical exponents $\beta = 1/4$ at the sleep-waking transition
 
 **Numerical falsification criterion:** $\|\Gamma_{\mathrm{recon}} - \Gamma_{\mathrm{true}}\|_F / \|\Gamma_{\mathrm{true}}\|_F > 0.3$ at $n > 50$ subjects → systematic inconsistency of $\pi_{\mathrm{bio}}$. If $\kappa < 0.4$, P8.4 is falsified: the verdicts disagree. If $\kappa \geq 0.8$ but the exponents differ, T-161 is falsified.
@@ -632,7 +624,7 @@ A prediction earns scientific weight only with an explicit **decision rule**: wh
 
 | Pred | Protocol (observable → decision) | PASS | FAIL | Current status (2026) |
 |---|---|---|---|---|
-| **5–7** (thresholds) | Anaesthesia induction/emergence; estimate $\widehat P(t)$ via $\pi_{\mathrm{bio}}$ frozen on wakefulness, with no viability penalty ([SUB-1, SUB-2](/docs/applied/research/measurement-protocol#substitution-position)) — not via a PCI calibration; locate loss/recovery of consciousness (LOC/ROC) | LOC/ROC coincides with $\widehat P$ crossing $2/7$ within one anaesthetic time-constant, and $\mathrm{Cons}(\widehat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ at $\kappa \geq 0.8$ | $\widehat P$ crosses $2/7$ with no behavioural transition, LOC/ROC occurs at $\widehat P$ far from $2/7$, or $\kappa < 0.4$ | UNTESTED — no $\pi_{\mathrm{bio}}$ session exists. The earlier "PARTIAL — clinical PCI threshold $0.31$ maps to $P_{\text{crit}}$" rested on a two-point line that put $2/7$ at $0.31$ by construction (withdrawn 2026-09-25, [§6.3](/docs/applied/coherence-cybernetics/measurement#калибровка)) |
+| **5–7** (thresholds) | Anaesthesia induction/emergence; estimate $\widehat P(t)$ via $\pi_{\mathrm{bio}}$ frozen on wakefulness, with no viability penalty ([SUB-1, SUB-2](/docs/applied/research/measurement-protocol#substitution-position)) — not via a PCI calibration; locate loss/recovery of consciousness (LOC/ROC) | LOC/ROC coincides with $\widehat P$ crossing $2/7$ within one anaesthetic time-constant, and $\mathrm{Cons}(\widehat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ at $\kappa \geq 0.8$ | $\widehat P$ crosses $2/7$ with no behavioural transition, LOC/ROC occurs at $\widehat P$ far from $2/7$, or $\kappa < 0.4$ | UNTESTED — no $\pi_{\mathrm{bio}}$ session exists. The earlier "PARTIAL — clinical PCI threshold $0.31$ maps to $P_{\text{crit}}$" rested on a two-point line that put $2/7$ at $0.31$ by construction |
 | **1** (No-Zombie) | For a system passing viability with $\mathcal{D}_\Omega \neq 0$, estimate $\widehat{\mathrm{Coh}}_E$ | every such system has $\widehat{\mathrm{Coh}}_E > 1/7$ (CI excludes $1/7$) | a viable dissipative system with $\widehat{\mathrm{Coh}}_E \leq 1/7$ | UNTESTED (needs $\pi_{\text{bio}}$) |
 | **2** ($\kappa \propto \mathrm{Coh}_E$) | Perturb interoceptive integration; measure recovery rate $\widehat\kappa$ against $\widehat{\mathrm{Coh}}_E$ across conditions | $\widehat\kappa$ monotone increasing in $\widehat{\mathrm{Coh}}_E$, slope $> 0$ at $p < 0.01$ | no dependence, or negative slope | UNTESTED |
 | **12** (depth diagnostics) | Freeze Fano channel and detector; measure held-out amplitude ratios, then independently test metamodel tasks | Ratios agree with $3^{-n}$ within declared uncertainty; task bridge passes independently | Channel-law discrepancy or failed held-out task association | Arithmetic ceiling is defined; cognitive bridge UNTESTED |
@@ -650,7 +642,7 @@ A prediction earns scientific weight only with an explicit **decision rule**: wh
 | 2 | [E-coherence ↔ regeneration](#предсказание-2) | $\kappa \propto \mathrm{Coh}_E$ | **[D/H]** | Absent |
 | 3 | [7-dimensional stress](#предсказание-3) | $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ | **[D/H]** | Absent |
 | 4 | [Pre-linguistic cognition](#предсказание-4) | $\mathrm{Cognition} \not\Rightarrow \mathrm{Language}$ | **[I]** | Partial in [FEP](/docs/reference/glossary#связанные-теории) |
-| 5 | [Collective consciousness](#предсказание-5) | $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$ necessary; criterion $\Phi_{\otimes} > \Phi_{\min}$ retracted | **[T]** necessary / **[H]** sufficiency | [IIT](/docs/reference/glossary#связанные-теории): exclusion — a group is a subject only as a maximum of integrated information |
+| 5 | [Collective consciousness](#предсказание-5) | Correlation criterion | **[T]** necessary / **[H]** sufficiency | [IIT](/docs/reference/glossary#связанные-теории): exclusion — a group is a subject only as a maximum of integrated information |
 | 6 | [Minimum coherence](#предсказание-6) | $P > P_{\text{crit}} = 2/7$ | **[T]** | Absent |
 | 7 | [Stability radius](#предсказание-7) | $r_{\mathrm{stab}} \approx K(\sqrt{P-1/7}-\sqrt{1/7})$ | **[C]** (T-104) | Absent |
 | 8 | [Enc capacity](#предсказание-8) | $C_{\mathrm{Enc}} \leq \log_2 7$ | **[T]** | Absent |
@@ -683,8 +675,8 @@ The following table shows which predictions each of the leading theories of cons
 | Finite classification of stresses | **+** (7 components) | - | ~ (free energy) | - |
 | Threshold values of consciousness | **+** ($P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$) | ~ ($\Phi > 0$, no number) | - | ~ (ignition, no number) |
 | Minimum dimensionality | **+** ($N = 7$) | - | - | - |
-| Collective consciousness | ~ (necessary condition $I > 0$; the criterion $\Phi_{\otimes} > \Phi_{\min}$ is retracted) | **+** (exclusion: only a maximum of integrated information is a subject) | - | - |
-| Self-awareness depth | Declared score arithmetic; universal ceiling retracted | No audited comparison | No audited comparison | No audited comparison |
+| Collective consciousness | ~ | **+** (exclusion: only a maximum of integrated information is a subject) | - | - |
+| Self-awareness depth | Declared score arithmetic | No audited comparison | No audited comparison | No audited comparison |
 | Genesis time | **+** (formula $n_{\text{genesis}}$) | - | ~ (self-organisation) | - |
 | Learning rate bounds | **+** ($n_{\text{opt}}$, three bounds) | - | ~ (expected free energy) | - |
 | Critical exponents | **[C]** tuned sextic mean-field reduction and tested bridge | No audited comparison | No audited comparison | No audited comparison |
@@ -695,7 +687,7 @@ The following table shows which predictions each of the leading theories of cons
 | Yukawa hierarchy | **+** ($\varepsilon_{\text{eff}} \approx 0.059$) [C] | - | - | - |
 | Ward suppression of $\Lambda$ | **+** ($19/49$) | - | - | - |
 
-**Total unique numerical predictions:** CC — 21, IIT — 0, FEP — 0, GWT — 0. CC's count is the 23 predictions of the summary table less two: Prediction 4, an interpretation [I] with no number, and Prediction 5, whose necessary condition $I > 0$ is the sign of an information quantity, not a number, and on whose question IIT, not CC, has a criterion (row "Collective consciousness" above). The earlier count, 22, still included Prediction 5 (corrected 2026-09-25).
+Numerical model estimates require an explicit preparation, readout and withheld observation to count as independently testable predictions.
 
 The difference is fundamental. IIT, FEP, and GWT are *frameworks* — they offer a descriptive language but do not generate numerical forecasts that can be unambiguously confirmed or refuted. CC is a *theory* in the Popperian sense: it makes risky, specific, falsifiable predictions.
 
@@ -705,7 +697,7 @@ The difference is fundamental. IIT, FEP, and GWT are *frameworks* — they offer
 
 ## Falsification with explicit scope {#фальсификация}
 
-Distinguish a counterexample to a mathematical statement, data against a selected physical bridge, and failure of a particular implementation. The universal No-Zombie, AP-to-seven, stress equivalence, and three-type completeness claims are already withdrawn. New tests must not use them as established foundations.
+A counterexample to a formal implication, evidence against a physical identification and disagreement under a chosen calibration are different test outcomes. State which assumptions the observation tests.
 
 Each empirical test fixes its observation model, identifiability, uncertainty, and admissible interventions. A simulated matrix, a chosen threshold, or agreement with training labels is not independent confirmation of the theory.
 

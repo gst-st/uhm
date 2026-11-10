@@ -1,14 +1,14 @@
 ---
 sidebar_position: 1
-title: "Qualia Structure: A 21-Pair Taxonomy"
-description: "A selected 21-pair interpretation with typed experiential readouts and transport obligations"
+title: "Measuring Similarities Between Reported Qualities"
+description: "State coordinates, independent quality reports and tests of cross-observer transfer."
 slug: /consciousness/phenomenology/qualia-structure
 ---
 
-# Qualia Structure: A 21-Pair Taxonomy
+# Measuring Similarities Between Reported Qualities
 
-:::info Scope and revision, 2026-10-29
-This chapter retains the 21-pair taxonomy as a **selected interpretation [I]** and develops its operational tests. It does not infer phenomenal experience or phenomenal completeness from counting matrix entries. The [canonical hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy#типизированный-вход) classifies an augmented record
+:::info State, apparatus and reports
+A proposed correspondence between a physical state and a reported quality needs more than a matrix. Specify
 $$
 z=(\Gamma,\mathsf E,\mathsf M,\mathsf Q),\qquad \Gamma\in\mathcal D(\mathbb C^7),
 $$
@@ -19,14 +19,6 @@ where $\mathsf E$ declares an experiential realization, $\mathsf M$ an implement
 $\gamma_{ij}$ denotes a native matrix entry in a declared semantic frame. $\rho_E$ denotes a normalized state on a **separately specified** experiential factor or compression. The native E-axis is one-dimensional: $P_E\Gamma P_E=\gamma_{EE}P_E$ normalizes to $P_E$ when its weight is nonzero, and is undefined as a conditional state at zero weight. Writing $\operatorname{Tr}_{-E}\Gamma$ does not create a tensor factor in $\mathbb C^7$. See [native E-axis and experiential realization](/docs/core/structure/dimension-e#rho-e-7d-42d).
 :::
 
-### Chapter roadmap
-
-1. The philosophical proposal and its empirical status.
-2. The 21 native pair coordinates and their selected semantic names.
-3. Exact population, phase, support and cycle calculations.
-4. The distinction between native proxies and a specified experiential extension.
-5. A reproducible passport with readout, uncertainty and independent capability tests.
-6. Transport across names and morphologies, and counterexamples that a machine must retain.
 
 ## Philosophical History: What Are Qualia? {#история}
 
@@ -53,99 +45,19 @@ Jackson argued: **yes**. Mary learns what it is *like* to see red. Hence physica
 
 ### UHM position: qualia as coherence structure
 
-UHM proposes a two-aspect interpretation: some structures used to describe a system externally also have an interior reading [I]. The 21-pair vocabulary below is one proposed way to organize that reading. Adopting it does not prove that a simulated matrix, a robot, or a measured biological system has a particular experience.
+A two-aspect interpretation proposes that aspects of a physical process can also describe reported experience. Its empirical content depends on which intervention and outcome distinguish this reading from alternatives. [Phenomenal distinctions](/docs/consciousness/foundations/phenomenal-distinction)
 
 The operational task is to specify the state/extension/readout and identify which observations and interventions discriminate competing interpretations. Mary's room, a philosophical zombie, or an inverted spectrum cannot be settled by the identity $\binom72=21$. The [afterword](#populyarnoe-posleslovie) keeps the philosophical questions separate from the measurements.
 
-## Motivation: Why 21 Types? {#мотивация}
+## Coordinates of a seven-level state {#мотивация}
 
-A chosen native state is a Hermitian $7\times7$ matrix in the semantic frame $\{A,S,D,L,E,O,U\}$. The labels have the following intended readings [I]:
+A fixed basis gives seven populations of unit sum and 21 complex coherences. A full-rank matrix has 48 independent real parameters. Relabelling the axes changes their names without changing the underlying measurement predictions if states, effects and reference data are transported together.
 
-| Symbol | Name | Intended role |
-|---|---|---|
-| $A$ | Articulation | Discrimination |
-| $S$ | Structure | Stable forms |
-| $D$ | Dynamics | Processes |
-| $L$ | Logos | Logical organization |
-| $E$ | Experience | The declared interiority readout |
-| $O$ | Ground | Support/source |
-| $U$ | Unity | Integration |
+## Which qualities can a report distinguish? {#таксономия}
 
-There are seven real diagonal entries and $\binom72=21$ unordered off-diagonal pairs. Hermiticity determines the reverse entry by conjugation. This counts native coordinates; it does not determine how many sensors, actuators, sensory modalities or kinds of experience a physical system has.
+<a id="полная-таблица-21-типа-квалиа"></a>
 
-```mermaid
-graph TB
-    subgraph dims["Seven dimensions"]
-        A["A — Articulation"]
-        S["S — Structure"]
-        D["D — Dynamics"]
-        L["L — Logos"]
-        E["E — Experience"]
-        O["O — Ground"]
-        U["U — Unity"]
-    end
-
-    A ---|"γ_AS: Morphogenesis"| S
-    A ---|"γ_AD: Actualisation"| D
-    A ---|"γ_AE: Apperception"| E
-    S ---|"γ_SE: Representation"| E
-    D ---|"γ_DE: Affection"| E
-    D ---|"γ_DU: Teleology"| U
-    E ---|"γ_EO: Immanence"| O
-    E ---|"γ_EU: Synthesis"| U
-    O ---|"γ_OU: Fullness"| U
-    L ---|"γ_LE: Evidence"| E
-
-    style A fill:#ffcccc,stroke:#cc0000
-    style S fill:#ffddcc,stroke:#cc6600
-    style D fill:#ffffcc,stroke:#cccc00
-    style L fill:#ccffcc,stroke:#00cc00
-    style E fill:#ccccff,stroke:#0000cc
-    style O fill:#ffccff,stroke:#cc00cc
-    style U fill:#ccffff,stroke:#00cccc
-```
-
-The diagram shows ten selected pair labels; the complete native pair list is below. A physical or statistical encoder requires its own observation law and calibration. The semantic labels do not by themselves identify the matrix from data.
-
-## Interpretation: 21-Pair Qualia Taxonomy (I.1) {#таксономия}
-
-:::info Interpretation I.1 (selected pair taxonomy) [I]
-Associate each unordered pair of semantic axes with a proposed experiential role. The table exhausts **pair labels in this frame**, not possible phenomenal content. An observation model, experiential realization and independently tested readout are needed to apply any name to a system. The interpretation can fail even when the matrix arithmetic is correct.
-:::
-
-### Complete table of 21 qualia types {#полная-таблица-21-типа-квалиа}
-
-:::warning Status of the names
-The combinatorial count is exact [T]. The following names and descriptions are proposed semantic assignments [I/H], not measurements, diagnoses or consequences of positivity. The earlier claim that incidence uniquely fixes every semantic label is not used. Comparisons must retain the declared frame and calibration.
-:::
-
-| # | Pair | Coherence | Name | Phenomenological content |
-|---|------|-----------|------|--------------------------|
-| 1 | $(A,S)$ | $\gamma_{AS}$ | **Morphogenesis** | Crystallisation of distinctions into stable forms — the experience of "taking shape" |
-| 2 | $(A,D)$ | $\gamma_{AD}$ | **Actualisation** | Actualisation of discrimination in process — the experience of "perception" |
-| 3 | $(A,L)$ | $\gamma_{AL}$ | **Predication** | Discrimination that has become a predicate — the experience of "judgement" |
-| 4 | $(A,E)$ | $\gamma_{AE}$ | **Apperception** | Discrimination that has entered interiority — the experience of "awareness" |
-| 5 | $(A,O)$ | $\gamma_{AO}$ | **Spontaneity** | Emergence of distinctions without external cause — the experience of "insight" |
-| 6 | $(A,U)$ | $\gamma_{AU}$ | **Differentiation** | Discrimination within the whole — the experience of "analysis" |
-| 7 | $(S,D)$ | $\gamma_{SD}$ | **Persistence** | Form that persists through process — the experience of "stability" |
-| 8 | $(S,L)$ | $\gamma_{SL}$ | **Nomos** | Structure with logical necessity — the experience of "order" |
-| 9 | $(S,E)$ | $\gamma_{SE}$ | **Representation** | Structure presented in interiority — the experience of "whole form" |
-| 10 | $(S,O)$ | $\gamma_{SO}$ | **Archetype** | Forms from the ground — the experience of "deep pattern" |
-| 11 | $(S,U)$ | $\gamma_{SU}$ | **Symmetry** | Structural unity — the experience of "harmony" |
-| 12 | $(D,L)$ | $\gamma_{DL}$ | **Regulation** | Logically governed process — the experience of "control" |
-| 13 | $(D,E)$ | $\gamma_{DE}$ | **Affection** | Process acting on interiority — the experience of "emotion" |
-| 14 | $(D,O)$ | $\gamma_{DO}$ | **Genesis** | Generation from the ground — the experience of "creativity" |
-| 15 | $(D,U)$ | $\gamma_{DU}$ | **Teleology** | Integrated directed change — the experience of "volitional effort" |
-| 16 | $(L,E)$ | $\gamma_{LE}$ | **Evidence** | Logical coherence in interiority — the experience of "self-evidence" |
-| 17 | $(L,O)$ | $\gamma_{LO}$ | **Grounding** | Logic rooted in the ground — the experience of "axiomatic self-evidence" |
-| 18 | $(L,U)$ | $\gamma_{LU}$ | **Consistency** | Logical non-contradiction of the whole — the experience of "coherence" |
-| 19 | $(E,O)$ | $\gamma_{EO}$ | **Immanence** | The ground present within interiority — the experience of "presence" |
-| 20 | $(E,U)$ | $\gamma_{EU}$ | **Synthesis** | Integration of interior content into a whole — the experience of "unity" |
-| 21 | $(O,U)$ | $\gamma_{OU}$ | **Fullness** | Identity of source and whole — the experience of "completeness" |
-
-### How to read the table: an extended example
-
-To test “Affection” for $(D,E)$, first specify the target discrimination (for example, a declared response under a controlled intervention), alternatives, observation law and readout. Estimate the state with uncertainty, then test whether the DE statistic improves prediction of that target on independently held-out interventions. Report failures as well as successes. A semantic name or a self-report is not its own validation.
+There is no measured list of 21 phenomenal types here. Use trials in which a participant discriminates or matches two stimuli and independently measured instruments record the relevant physical variables. To test whether one coherence predicts a match, specify its phase reference, fit the observation map on separate trials and predict the response to an intervention on that pair. A fixed labelling convention cannot supply the prediction. [Quadrature measurements](/docs/physics/dual-aspect/gap-semantics#полная-49-клеточная-карта)
 
 For a numerical carrier example, start with diagonal $1/7$ and set only $\gamma_{DE}=a e^{i\theta}$ and its conjugate nonzero, with $0<a<1/7$. The nontrivial block has eigenvalues $1/7\pm a$, so the state is positive. Varying $a$ and $\theta$ gives reproducible tests of the selected statistics. It does not assign an emotion to the matrix. Previously displayed “human profiles” without a reconstruction/calibration model are not empirical evidence and are not retained as typical ranges.
 
@@ -179,7 +91,7 @@ For a specified seven-dimensional orthonormal frame, there are exactly 21 unorde
 **Proof.** The count is $7\cdot6/2=21$; Hermiticity gives $\gamma_{ji}=\overline{\gamma_{ij}}$. $\square$
 :::
 
-The former inference “no additional type of quale is possible” is withdrawn. A count of pair coordinates neither proves that each coordinate is a phenomenal type nor excludes nonlinear, temporal, contextual or extension-dependent readouts. At dimension six the pair count is 15; that arithmetic does not imply a poorer subjective life or identify which experiences a system lacks.
+The count classifies matrix coordinates. Nonlinear functions, temporal histories and relational judgments can depend on more than one coordinate.
 
 A claimed complete readout must be constant on every fibre of its proposed sufficient statistic. If two allowed augmented records have the same native statistic but different target readouts, the completeness claim fails. The product-extension counterexample in the [passport](#паспорт-квалиа) is one such test.
 
@@ -298,7 +210,7 @@ Store support, cycle vertex identities, wrapped phases and amplitude/log-amplitu
 
 ### Observation limits (T-302, corrected) {#теорема-разрыв}
 
-The former universal identification of the explanatory gap with zero covariance is withdrawn. A covariance calculation requires a specific stochastic model and readout. Zero covariance does not in general imply statistical independence or zero information; diagonal Lindblad jumps alone specify neither an observer nor its accessible instrument family.
+A covariance calculation requires a specified stochastic model and readout. Zero covariance can occur between dependent variables. For example, choose X uniformly from −1, 0 and 1 and set Y=X². Their covariance is zero, yet observing X determines Y.
 
 A precise replacement is observational nonidentifiability: if two allowed augmented states induce the same laws for every permitted intervention but have different target readouts, that target cannot be identified by this design. This is the [observation-fibre criterion](/docs/applied/research/reconstruction-identifiability#fiber-theorem), not a theorem that experience is unobservable from outside. Phase-sensitive instruments may distinguish what a diagonal-only instrument cannot.
 
@@ -452,7 +364,7 @@ Purity derivatives can label a selected process family, but a scalar trajectory 
 
 ### What we learned {#итоги}
 
-1. The 21 pairs exhaust a native coordinate list; their proposed phenomenal names remain an interpretation.
+1. The 21 pairs exhaust the off-diagonal coordinates in a specified seven-dimensional frame. The number of reportable qualities is an empirical question.
 2. A normalized one-dimensional E-axis has entropy zero. Nontrivial extension readout requires a specified total space, map and normalization.
 3. Pairwise Gap, diagonal stress, full cycle phases and the four capability margins answer different questions.
 4. Seven Fano triangles cover all edges once but not all 15 independent cycle directions of full support.

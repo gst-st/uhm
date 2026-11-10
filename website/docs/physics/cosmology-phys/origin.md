@@ -6,7 +6,7 @@ description: The primordial state and spontaneous symmetry breaking
 
 # Origin and entropy: explicit models and open bridges
 
-:::warning Scope — 2026-10-03
+:::note Physical premises
 A density matrix and categorical definitions do not prove cosmogenesis, the necessity of the Universe or phenomenal experience. Identifying state, physical time and energy with cosmology requires separate hypotheses [H/I]. The exact dynamics below are distinct from that programme.
 :::
 
@@ -20,7 +20,7 @@ $$
 \mathrm{Re}\langle X,\mathcal LX\rangle=-\frac{2\gamma}{3}\|X_{\mathrm{off}}\|_2^2\le0.
 $$
 
-Under that connectivity there are no stationary or purely imaginary traceless modes, and the finite-dimensional flow approaches $I/7$. The former universal proof of source **instability** and inevitable cosmogenesis is therefore withdrawn [✗].
+Under that connectivity there are no stationary or purely imaginary traceless modes, and the finite-dimensional flow approaches $I/7$.
 
 Nonlinear injection can change this only through specified targets and rates. A gate closed at $I/7$ makes the addition vanish there. Nonzero external injection with a different target can make the source nonstationary: that is a property of the chosen open model, not of the category.
 
@@ -41,7 +41,7 @@ For the specified field $\dot\rho=-i[H,\rho]+\mathcal D\rho+a(\sigma-\rho)$:
 - $\dot S_{\mathrm{inj}}=-a\mathrm{Tr}((\sigma-\rho)\log\rho)$ has no universal sign. A target $I/7$ can increase entropy; a purer target can decrease it in an appropriate region.
 - At stationarity the sum of **all** fluxes vanishes. Exactly two nonzero nonunitary contributions must balance, but their signs need separate hypotheses.
 
-Universal claims “more Coh_E implies less entropy,” “regeneration is always negentropic,” and “consciousness keeps entropy below heat death” are withdrawn. Purity alone determines neither entropy nor its flux. The consciousness reading is an interpretation that a matrix derivative does not prove.
+Purity alone determines neither entropy nor its flux. The consciousness reading is an interpretation that a matrix derivative does not prove.
 
 ## 3. T-273/T-276: physical erasure cost
 

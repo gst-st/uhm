@@ -11,7 +11,7 @@ This document describes a **maximally complete experimental protocol** for the e
 :::
 
 :::info Related documents
-- [23 CC predictions, 22 of them unique](/docs/applied/coherence-cybernetics/predictions) — full list of predictions with formulas (it read "23 unique" until 2026-09-25: on collective consciousness IIT has a criterion too)
+- [23 CC predictions, 22 of them unique](/docs/applied/coherence-cybernetics/predictions) — full list of predictions with formulas
 - [Γ measurement protocol](/docs/applied/research/measurement-protocol) — operationalisation of π_bio for AI systems
 - [Falsifiability criteria](/docs/reference/falsifiability) — formal refutation conditions
 - [Status registry](/docs/reference/status-registry) — current epistemic status of all claims
@@ -27,7 +27,7 @@ UHM is one of the most formally developed theories of consciousness: ~210 theore
 
 ### 1.2. Key observation: PCI* is an independent verdict, not a number to match
 
-The Perturbational Complexity Index (PCI, introduced by Casali et al. 2013) provides an independent algorithm-specific benchmark with the reported cut-off: **PCI* = 0.31**, fixed by an ROC analysis on a benchmark of 150 subjects (540 sets of TMS-evoked potentials) with the presence or absence of a subjective report as ground truth, 100% sensitivity and specificity there (Casarotto et al. 2016). UHM's threshold is **P_crit = 2/7** on the purity scale. The two numbers live on unrelated scales — PCI is a normalised Lempel–Ziv complexity of a binarised response to TMS, $P$ is a function of Γ — so their nearness (0.31 against 0.286) carries no evidential weight, and no normalisation of π_bio may be tuned to close it: a line through $(0, 1/7)$ and $(c, 2/7)$ "coincides" with any anchor $c$ ([measurement §6.3](/docs/applied/coherence-cybernetics/measurement#калибровка)). *Corrected 2026-09-26:* the subsection was titled "PCI* ≈ P_crit" and read the ~8% discrepancy as "within the normalisation calibration of π_bio".
+The Perturbational Complexity Index (PCI, introduced by Casali et al. 2013) provides an independent algorithm-specific benchmark with the reported cut-off: **PCI* = 0.31**, fixed by an ROC analysis on a benchmark of 150 subjects (540 sets of TMS-evoked potentials) with the presence or absence of a subjective report as ground truth, 100% sensitivity and specificity there (Casarotto et al. 2016). UHM's threshold is **P_crit = 2/7** on the purity scale. The two numbers live on unrelated scales — PCI is a normalised Lempel–Ziv complexity of a binarised response to TMS, $P$ is a function of Γ — so their nearness (0.31 against 0.286) carries no evidential weight, and no normalisation of π_bio may be tuned to close it: a line through $(0, 1/7)$ and $(c, 2/7)$ "coincides" with any anchor $c$ ([measurement §6.3](/docs/applied/coherence-cybernetics/measurement#калибровка)).
 
 This is still the **first point of contact** between the theory and empirical data, in the form in which it can fail: with π_bio frozen on wakefulness, the UHM verdict Cons(Γ̂) and the PCI verdict PCI_max > 0.31 are computed independently on the same sessions and compared by Cohen's κ ([P8.4, SUB-5](/docs/applied/research/measurement-protocol#substitution-position)); κ ≥ 0.8 corroborates, κ < 0.4 falsifies.
 
@@ -125,7 +125,7 @@ If the objects are independently defined **linear** channels $M_d\to M_7$, verif
 
 #### Exp. I.10: Learning speed in a specified discrimination model (Pred 9) {#exp-1-10}
 
-Register the observation laws, class prior, independence assumptions, allowable tests and held-out success criterion. For quantum i.i.d. binary discrimination compare error to the exact Helstrom value at each feasible $n$. Chernoff gives an asymptotic exponent and a sufficient finite-sample upper-error bound, not the former universal lower sample bound.
+Register the observation laws, class prior, independence assumptions, allowable tests and held-out success criterion. For quantum i.i.d. binary discrimination compare error to the exact Helstrom value at each feasible $n$. Chernoff gives an asymptotic exponent and a sufficient finite-sample upper-error bound.
 
 For the chosen linear signal accumulator verify its exact crossing time; for the learning dynamics separately certify safety. The maximum of valid necessary bounds remains a lower bound and need not be attained. See [learning bounds](/docs/applied/coherence-cybernetics/learning-bounds).
 
@@ -133,7 +133,7 @@ For the chosen linear signal accumulator verify its exact crossing time; for the
 
 Compare $N=5$ and $N=7$ agents on separately operationalized ToM, inter-agent learning and strategic coordination tasks. Freeze evaluation data and success criteria; match communication, memory and training budgets, and report effect sizes with multiplicity control.
 
-A possible seven-dimensional advantage is a testable architecture hypothesis. The withdrawn universal T-57 and the functional count in T-113 do not prohibit smaller learners, an additional mechanism or a fourth operator term. Success by $N=5$ rejects a registered impossibility hypothesis, not a valid mathematical theorem. An $N=7$ success does not prove universal sufficiency.
+Test a possible seven-dimensional advantage against smaller architectures on the same task with matched resources. A count of roles alone provides no lower bound.
 
 ### 2.4. Criterion for transition to Phase II
 
@@ -145,7 +145,7 @@ Proceed when the implementation's exact checks pass, the observation model is id
 
 ### 3.1. Rationale
 
-Central task: build the bridge **π_bio: (EEG, fMRI, HRV) → Γ ∈ D(ℂ⁷)** and test the theoretical threshold P_crit = 2/7 out of sample: with π_bio frozen on wakefulness, P̂ at the report-defined loss of consciousness against 2/7, and the verdict Cons(Γ̂) against the independently validated PCI verdict PCI_max > 0.31 by Cohen's κ (P8.4). *(Until 2026-09-26: "verify that P_crit = 2/7 coincides with the empirical PCI* = 0.31" — a comparison of unrelated scales.)*
+Central task: build the bridge **π_bio: (EEG, fMRI, HRV) → Γ ∈ D(ℂ⁷)** and test the theoretical threshold P_crit = 2/7 out of sample: with π_bio frozen on wakefulness, P̂ at the report-defined loss of consciousness against 2/7, and the verdict Cons(Γ̂) against the independently validated PCI verdict PCI_max > 0.31 by Cohen's κ (P8.4).
 
 ### 3.1b. Formal definition and identification of π_bio [D/H] {#pi-bio-definition}
 
@@ -265,7 +265,7 @@ If, with π_bio frozen on wakefulness, P̂ at the report-defined consciousness/u
 - Equivalence margin: $\delta=0.05$ around $2/7$, predeclared [H]. Corroboration requires the appropriately calibrated 98% confidence interval to lie **entirely inside** $[2/7-\delta,2/7+\delta]$ (two one-sided tests at $\alpha=0.01$ under their assumptions). Merely failing to reject equality, or having an interval that includes $2/7$, does not establish equivalence. See [Schuirmann (1987), the original TOST and $1-2\alpha$ confidence-interval result](https://doi.org/10.1007/BF01068419).
 - Rejection at the larger predeclared margin $0.1$ requires the 98% interval to lie entirely above $2/7+0.1$ or below $2/7-0.1$. Intermediate outcomes are inconclusive. Point estimates alone cannot decide these rules.
 - Secondary target: Cohen's $\kappa$ between the independently computed verdicts. Obtain uncertainty by a subject-level procedure that respects repeated sessions. Predeclare treatment of undetermined UHM verdicts, report their rate and sensitivity bounds; do not drop them to improve agreement. $\kappa\geq0.8$ and $\kappa<0.4$ are registered empirical thresholds [H], with an inconclusive middle region.
-- Recompute power and sample size for the selected equivalence/rejection procedures using pilot noise, calibration uncertainty and repeated-measures structure. The former one-sample equality test and asserted power calculation did not match the equivalence claim and are withdrawn.
+- Recompute power and sample size from the selected test, pilot noise, calibration uncertainty and repeat structure.
 
 These outcomes test the registered encoder/observation/threshold package. Structural identification diagnostics and classifier agreement are reported separately. Successful classification alone does not establish consciousness ontology.
 
@@ -377,7 +377,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 2. Compute P
 3. Repeat 5 sessions (different days) for each subject
 
-**Prediction:** P(resting state) ∈ (2/7, 5/14], below the upper edge 3/7 of the window (T-124c(4); [C at (MaxΦ)]). *Corrected 2026-09-26:* the prediction read P → 3/7 ± 0.05 (T-124); no theorem gives 3/7, and the living attractor has P ≤ 5/14.
+**Prediction:** P(resting state) ∈ (2/7, 5/14], below the upper edge 3/7 of the window (T-124c(4); [C at (MaxΦ)]).
 
 **Falsification:** P_mean ≥ 3/7 or P_mean ≤ 2/7 at N=30.
 
@@ -407,7 +407,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 2. Compute the total correlation I of the group (the necessary condition; the integration Φ_⊗ of the whole is not a criterion, see below)
 3. Compare coordinated vs uncoordinated groups
 
-**Prediction:** I > 0 is necessary for a collective subject [T]; sufficiency is a hypothesis [H]. *Corrected 2026-09-26:* the prediction read "Φ_⊗ > Φ_min for coordinated; Φ_⊗ < Φ_min for random (T-86)"; that criterion is retracted [✗] — every uncoupled group meets it (two window holons give Φ_⊗ ≥ 3 at I = 0).
+**Prediction:** I > 0 is necessary for a collective subject [T]; sufficiency is a hypothesis [H].
 
 **Falsification:** I(coordinated) ≤ I(uncoordinated) (p < 0.05, Mann-Whitney).
 
@@ -536,7 +536,7 @@ This protocol covers **23 out of 23 predictions** of UHM/CC:
 
 The riskiest test is **critical exponents β=1/4** (Pred 17). No other theory of consciousness makes such a concrete numerical prediction about a phase transition. Confirmation means: consciousness belongs to the tricritical mean-field universality class ($\varphi^6$ Landau). Refutation means: UHM is fundamentally wrong about the structure of the transition.
 
-The most valuable test is the **threshold P_crit = 2/7 out of sample** (Pred 6/21): with π_bio frozen on wakefulness, P̂ at the report-defined loss of consciousness against 2/7, and the UHM verdict against the independently validated PCI verdict (Cohen's κ, P8.4). If both hold, a derived — not fitted — threshold will have been confirmed on sessions that did not fix the reconstruction. *(Until 2026-09-26 the test was named "P_crit = 2/7 ↔ PCI* = 0.31" and awaited a coincidence of two numbers on scales that no derivation connects.)*
+The most valuable test is the **threshold P_crit = 2/7 out of sample** (Pred 6/21): with π_bio frozen on wakefulness, P̂ at the report-defined loss of consciousness against 2/7, and the UHM verdict against the independently validated PCI verdict (Cohen's κ, P8.4). If both hold, a derived — not fitted — threshold will have been confirmed on sessions that did not fix the reconstruction.
 
 UHM does not hide from falsification — it presents 23 targets and points where to shoot.
 

@@ -121,11 +121,8 @@ $$
 
 attained exactly at the maximally mixed state $I/7$. Machine-verified two ways: by direct finite-difference computation of the Riemann tensor in a Gell-Mann chart, and by Dittmann's closed form. The two agree, and the closed form reproduces the constant $24$ at $N=2$ and $164$ at $N=3$.
 
-:::danger Correction (2026-08-06): two errors repaired here
-Earlier versions of this page (a) attributed the theorem to **Hübner** and (b) quoted the bound as $N(N-1)/8$, hence $21/4 \approx 5.25$ at $N=7$.
-
-- **Attribution.** The curvature paper is by **J. Dittmann**. M. Hübner's 1992 paper (*Phys. Lett. A* 163, 239) computes the Bures *distance*, a different result — it is cited correctly elsewhere in the corpus, and the two were conflated here.
-- **The bound.** The true bound is $\frac{(5N^2-4)(N^2-1)}{2} = 5784$ at $N=7$, larger than the figure previously quoted by a factor of $1102$. The old expression also failed the sharpest available check: at $N=2$ it gives $1/4$, whereas Dittmann proves — and both of our independent computations confirm — that the curvature is exactly $24$ there.
+:::note Bures curvature and distance
+Dittmann's scalar-curvature bound in this normalization is $(5N^2-4)(N^2-1)/2$. It equals $5784$ at $N=7$ and $24$ at $N=2$. Hübner's 1992 formula computes the Bures distance between states.
 
 Normalisation remains load-bearing: $R_{\mathrm{scal}}$ is **not** scale-invariant ($g\mapsto c\,g$ sends $R\mapsto R/c$), so the figure $5784$ holds in the $d_B^2=2(1-F)$ normalisation above and becomes $1446$ in the SLD-QFI normalisation.
 :::
@@ -441,7 +438,7 @@ For an AGI architecture: under KMS-symmetric dynamics, adaptation from any initi
 | $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ | 1 | $R_{\mathrm{scal}} \sim 315/\varepsilon \to +\infty$ (strongest) | Absolute fixation (pure state) |
 
 :::warning Do not confuse two different curvatures
-The middle column is the limit of the **ambient** scalar curvature of $\mathcal{D}_+(\mathbb{C}^7)$ as $\rho$ approaches the stratum; it diverges at $\mathcal{D}_1^\circ$. The **intrinsic** geometry *of* $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ is a different object: there the Bures metric restricts to exactly the Fubini–Study metric in the normalisation $ds^2_{\mathrm{FS}} = \langle\delta\psi|\delta\psi\rangle - |\langle\psi|\delta\psi\rangle|^2$ (factor $1$, machine-verified to $5\times10^{-8}$ for $N=2,3,7$; equivalently $\mathcal F_{\mathrm{SLD}} = 4\,ds^2_{\mathrm{FS}}$) — a smooth Kähler metric of perfectly finite curvature. An earlier version of this table reported the intrinsic value in the ambient column and thereby inverted the two extreme rows, listing $\mathcal{D}_6^\circ$ as singular and $\mathcal{D}_1^\circ$ as finite, which is exactly backwards. Both facts are true of their own object; only one of them is what triggers surgery.
+The middle column gives the limit of ambient scalar curvature from full-rank states. The intrinsic curvature of a rank stratum is a different geometric quantity. A surgery criterion using ambient curvature must use the middle column.
 :::
 
 **Principle [H]:** An AGI system must maintain $\mathrm{rank}(\Gamma) = 7$ to remain in the interior $\mathcal{D}_+(\mathbb{C}^7)$ with Carlen–Maas guarantees. Any rank-collapse requires surgery.
@@ -526,7 +523,7 @@ The analogy provides an **intuitive basis** for understanding:
 
 **Mathematical sources:**
 - J. Dittmann (1999). *The Scalar Curvature of the Bures Metric on the Space of Density Matrices.* *J. Geom. Phys.* **31**, 16–24; arXiv:quant-ph/9810012
-- M. Hübner (1992). *Explicit computation of the Bures distance for density matrices.* *Phys. Lett. A* **163**, 239 — the Bures *distance* (a different result; the two were previously conflated)
+- M. Hübner (1992). *Explicit computation of the Bures distance for density matrices.* *Phys. Lett. A* **163**, 239 — the Bures *distance*
 - E. Carlen, J. Maas (2017). *Gradient Flow and Entropy Inequalities for QMS with Detailed Balance.* arXiv:1609.01254
 - R. Floricel, A. Ghorbanpour, M. Khalkhali (2014). *Noncommutative Ricci Flow in a Matrix Geometry.* arXiv:1310.2900
 - L. Gao, C. Rouzé (2021). *Ricci Curvature of Quantum Channels.* arXiv:2108.10609
