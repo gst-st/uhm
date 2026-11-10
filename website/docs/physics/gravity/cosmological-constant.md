@@ -2,18 +2,18 @@
 sidebar_position: 3
 title: "Cosmological Constant"
 slug: /physics/gravity/cosmological-constant
-description: "Computation of Λ from Gap: spectral formula [T], O-sector dominance [T], triple suppression, Ward identities, zeta-regularization, cohomological cancellation, and SUSY compensation [H] — honest bracket 10⁻⁵³·⁵…10⁻⁹³·⁵, the remaining ≳27 orders open"
+description: "Vacuum-energy readouts, conditional suppression estimates, spectral traces and the open normalization of the cosmological constant."
 ---
 
 # Cosmological Constant
 
 :::info Who this chapter is for
-Computation of the cosmological constant from the Gap formalism. The reader will learn about six perturbative suppression mechanisms and the spectral formula for $\Lambda_{\text{CC}}$.
+This chapter evaluates proposed vacuum-energy formulas and records the inputs each needs.
 :::
 
 ## Overview
 
-The cosmological constant in UHM is determined by the total opacity of the $O$-sector: $\Lambda_{\mathrm{Gap}} = \mu^2 \cdot \mathcal{G}_{\mathrm{total}}^{(O)}$. [O-sector dominance](#теорема-лямбда-o-доминирование) **[T]** proves that $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$ — the cosmological constant = "cost of observation". A series of investigations has established **6 perturbative suppression mechanisms**, yielding a combined $10^{-41.5}$ out of the required $10^{-120}$. The [spectral formula for $\Lambda_{\text{CC}}$](#теорема-спектральная-лямбда) **[T]** establishes the structural formula via moments of the internal Dirac operator; SUSY compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ remains **[H]** (the adjoint representation **14** of G₂ is irreducible, the 7+7 decomposition is not justified — see §4a). Cohomological cancellation ($\Lambda_{\text{global}} = 0$ [T]) reframes the target as the size of the **local** residual; the SUSY-sector $\varepsilon^{12}$ **absorbs** the perturbative $\varepsilon^6$ (net mean $\sim 10^{-53.5}$), and the sector structure from [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] defines an open **[C]** programme. The honest composed bracket is **$\sim 10^{-53.5}$ to $10^{-93.5}$** ([honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) — the canonical composition); closing the remaining $\gtrsim 27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task. Non-perturbative mechanisms are also investigated: the Gauss sum for Fano phases (refuted at physical $S_0$) and zeta-regularization with Fano character (structural cancellation $Z_\Phi(-k) = 0$, physical interpretation open).
+For a given state one can compute its $O$-sector opacity and the traces of a specified finite Dirac operator. A scale with units, a map to energy density and a subtraction condition are needed to compare these numbers with gravity. The sign and magnitude of the observed $\Lambda$ remain open. The suppressions below are estimates within selected models. [Physical energy readout](#теорема-лямбда-положительна) · [Budget and provenance](/docs/proofs/gap/lambda-budget#структурное-замыкание-лямбда)
 
 ---
 
@@ -21,15 +21,12 @@ The cosmological constant in UHM is determined by the total opacity of the $O$-s
 
 ### 1.1 Vacuum Configuration
 
-The vacuum configuration is a holon $\mathfrak{H}_{\mathrm{vac}}$ with minimal interiority (L0):
-- Diagonal: $\gamma_{ii} = 1/7$ (maximally mixed)
-- Coherences: $|\gamma_{ij}| = \epsilon \ll 1$ (uniform)
-- Phases: stationary, determined by the minimum of $V_{\mathrm{Gap}}$
+Assume a positive, trace-one register with $\gamma_{ii}=1/7$ and chosen off-diagonal moduli $|\gamma_{ij}|=\epsilon$. Nonzero coherences make this state distinct from the maximally mixed $I/7$. A potential and its stationary phases enter as further inputs.
 
 ### 1.2 $\Lambda$ in the Vacuum
 
-:::tip Theorem 7.1 [T]
-For the vacuum configuration:
+:::note Theorem 7.1 [C under the stated ansatz]
+For the specified profile and the approximation in (b),
 
 **(a)** $O$-sector Gap (6 pairs):
 
@@ -60,7 +57,7 @@ $$
 :::danger Warning C7: non-perturbative regime
 The parameter λ₃ ≈ 74 ≫ 4π means that the octonionic cubic vertex is in the **strong coupling** regime. All loop computations using λ₃ as a perturbative parameter are formally unreliable. Quantitative results in this section (masses, branching ratios, numerical coefficients) have status **[H]** pending non-perturbative analysis.
 
-**Non-perturbative approach:** Mass ratios are determined by the spectrum of $D_{\text{int}}$ and are **independent** of λ₃ — Theorem T-180 [C at (SV)]. C7 is reinterpreted as a structural property of the octonionic algebra [I], not a defect of the theory. See [Bimodule Construction §3](/docs/proofs/physics/bimodule-construction#непертурбативный).
+Specifying the eigenvalues of $D_{\rm int}$ allows calculation of their ratios. Identifying them with independently measured masses requires a physical field model.
 :::
 
 ---
@@ -70,7 +67,7 @@ The parameter λ₃ ≈ 74 ≫ 4π means that the octonionic cubic vertex is in 
 :::warning Theorem 7.2 [C at (SV)]
 **Status [C at (SV)]:** The order of magnitude $\epsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12, T-61 restated + T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))): $\bar{\varepsilon} \approx 0.027$ (the root mean square over the 15 non-O pairs, [C at (SV)]; $0.023$ until 2026-09-25, audit A-83). The correct budget is in Section 5.
 
-The smallness of the observed $\Lambda$ is explained by triple suppression:
+The following factors enter the illustrative calculation.
 :::
 
 | Mechanism | Factor | Description |
@@ -116,14 +113,14 @@ The cubic term is suppressed by $\sim 2 \times 10^7$ in the transition from Plan
 
 ### 4.1 Vacuum Correlator
 
-:::tip Theorem 10.1 [T]
-The 14 Ward identities uniquely fix the vacuum two-point correlator:
+:::note Theorem 10.1 (Ward uniqueness withdrawn [✗])
+Choose the following correlator as a model for phase fluctuations.
 
 $$
 C = \alpha \cdot \mathbf{1}_{21} + \beta \cdot \mathbf{F}_{21} + \gamma \cdot \mathbf{F}_{21}^2
 $$
 
-where $\mathbf{F}_{21}$ is the Fano operator, and the Ward identities fix:
+Here $\mathbf F_{21}$ is the Fano operator. Symmetry leaves two independent invariant covariance amplitudes. For the numerical example choose
 
 $$
 \beta = -\frac{3\alpha}{7}, \quad \gamma = \frac{3\alpha}{49}
@@ -134,7 +131,7 @@ $$
 ### 4.2 Anti-correlation of Gap Fluctuations
 
 :::tip Theorem 10.2 [T]
-The eigenvalues of the correlator $C = \lambda_+ P_7 + \lambda_- P_{14}$ with $\lambda_+ = 19\alpha/49$ and $\lambda_- = 73\alpha/49$ (from Ward identities, see [operator $F_{21}$](/docs/physics/gauge-symmetry/noether-charges#собственные-значения-f21)) satisfy $\lambda_+ < \lambda_-$. Since the vector $\mathbf{1}_{21}$ lies entirely in the Fano-symmetric sector $V_7$ (because $P_7 \mathbf{1} = \mathbf{1}$), the total contribution of Gap fluctuations to $\Lambda$ is determined only by the "small" eigenvalue $\lambda_+$:
+For the chosen coefficients the eigenvalues on the two eigenspaces of $\mathbf F_{21}$ are $\lambda_+=19\alpha/49$ and $\lambda_-=73\alpha/49$. Since $P_7\mathbf 1=\mathbf 1$, the sum of the entries is
 
 $$
 \sum_{(ij),(kl)} C_{(ij),(kl)} = \mathbf{1}^T C \mathbf{1} = 21 \lambda_+ = \frac{399\alpha}{49} = \frac{57\alpha}{7}
@@ -146,151 +143,48 @@ Comparison with the unconstrained correlator ($C = \alpha\, I_{21}$, sum $= 21\a
 ### 4.3 Degree of Compensation
 
 :::tip Theorem 10.3 [T]
-The Ward identities suppress the total contribution of Gap fluctuations to $\Lambda$ by a factor:
+This model covariance gives the following ratio to the reference covariance $\alpha I$.
 
 $$
 \frac{\mathbf{1}^T C \mathbf{1}}{\mathbf{1}^T (\alpha\,I_{21}) \mathbf{1}} = \frac{21\lambda_+}{21\alpha} = \frac{\lambda_+}{\alpha} = \frac{19}{49} \approx 0.39 \quad \Rightarrow \quad 10^{-0.41}
 $$
 
-Suppression by a factor of $\sim 2.6$ (or $10^{-0.41}$). The number $19/49$ follows directly from the spectrum of $F_{21}$ and the Ward identities — there are no free parameters.
+This ratio is exact for the selected coefficients. Its identification with suppression of physical vacuum energy is a separate hypothesis. [Covariance calculation](/docs/physics/gauge-symmetry/noether-charges#собственные-значения-f21)
 :::
 
 ---
 
 ## 4a. Spectral Formula for $\Lambda_{\text{CC}}$ {#спектральная-формула}
 
-#### Theorem (Spectral Formula for $\Lambda_{\text{CC}}$) [T] {#теорема-спектральная-лямбда}
+#### Spectral formula under a specified geometry {#теорема-спектральная-лямбда}
 
-:::tip Theorem (Spectral Formula for $\Lambda_{\text{CC}}$) [T]
-The cosmological constant is expressed via moments of the internal Dirac operator $D_{\text{int}}$ of the finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ [T] ([spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка)):
+For a four-dimensional Riemannian product with constant internal matrix, the volume term in the heat-kernel expansion involves $\Lambda_{\rm cut}^4\mathrm{Tr}(1)$, $\Lambda_{\rm cut}^2\mathrm{Tr}(D_{\rm int}^2)$ and $\mathrm{Tr}(D_{\rm int}^4)$, weighted by moments of the supplied cutoff. In natural units all three have energy dimension four. Their normalized volume coefficient is an energy density. In the Einstein–Hilbert convention a constant density $\rho_{\rm vac}$ contributes $\Lambda=8\pi G_N\rho_{\rm vac}$ (dimension two). The renormalized value needs a subtraction condition. A finite trace alone determines neither a background metric nor a physical vacuum energy. [Spectral expansion](/docs/physics/gravity/quantum-gravity#canonical-f)
 
-$$
-\Lambda_{\text{CC}} = \frac{f_0 \Lambda^4}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(1) - \frac{f_2 \Lambda^2}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(D_{\text{int}}^2) + \frac{f_4}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(D_{\text{int}}^4)
-$$
+#### Scope of the $\varepsilon^{12}$ scale {#теорема-независимость-varepsilon12}
 
-All traces are taken over the internal space $H_{\text{int}} = \mathbb{C}^7$.
-
-**Proof.** Direct consequence of the Seeley–DeWitt expansion of the spectral action $S = \mathrm{Tr}(f(D/\Lambda))$, where $f: \mathbb{R}_{\geq 0} \to [0,1]$ is a smooth decreasing cutoff function. Moments $f_n$ are defined as:
+For a supplied seven-dimensional Hermitian operator with $\|D_{\rm int}\|\le c\varepsilon^3 M_P$ one has the exact bound
 
 $$
-f_0 = \int_0^\infty f(u)\,u\,du, \quad f_2 = \int_0^\infty f(u)\,du, \quad f_4 = f(0) > 0
+0\le\mathrm{Tr}(D_{\rm int}^4)=\sum_{i=1}^7 m_i^4\le 7c^4\varepsilon^{12}M_P^4.
 $$
 
-The index $n$ corresponds to the degree of UV divergence: $f_0$ — with the $\Lambda^4$ term, $f_2$ — with $\Lambda^2$, $f_4 = f(0)$ — with $\Lambda^0$ (UV-finite, independent of the regulator choice). All three moments are finite for any rapidly decaying $f$ (e.g., $f(u) = e^{-u}$). The finite spectral triple exists by T-53 [T]. $\blacksquare$
-:::
-
-#### Theorem (Independence of the Scale $\varepsilon^{12}$ from SUSY Compensation) [T] {#теорема-независимость-varepsilon12}
-
-:::tip Theorem [T]
-The physical observable cosmological constant $\Lambda_{\text{CC}}^{\text{phys}}$, defined by the **finite** (UV-regular) term of the spectral formula:
-
-$$
-\Lambda_{\text{CC}}^{\text{phys}} = \frac{f_4}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(D_{\text{int}}^4)
-$$
-
-is of order $\varepsilon^{12} M_P^4$ from T-53 **independently** of the status of SUSY compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ [H].
-:::
-
-**Proof.** The Seeley–DeWitt expansion contains three types of terms:
-
-1. **UV-quartic:** $\dfrac{f_0 \Lambda^4}{16\pi G_N} \mathrm{Tr}(1)$ — divergence $O(\Lambda^4)$, absorbed into the renormalization of the bare cosmological constant. The value of $\mathrm{Tr}(1)$ (0 or 7) only changes the constant subtracted in renormalization, not the physical result.
-
-2. **UV-quadratic:** $\dfrac{f_2\Lambda^2}{16\pi G_N} \mathrm{Tr}(D_{\text{int}}^2)$ — divergence $O(\Lambda^2)$, absorbed into the renormalization of Newton's constant $G_N$. Independent of SUSY compensation, provided the UV regulator $\Lambda$ is fixed.
-
-3. **UV-finite:** $\dfrac{f_4}{16\pi G_N} \mathrm{Tr}(D_{\text{int}}^4)$ — a finite contribution independent of $\Lambda$ as $\Lambda \to \infty$. This is the **only physically observable term**.
-
-**Derivation of the scale $m_k \sim \varepsilon^3 M_P$.** By T-53 [T], $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is a finite spectral triple with $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ and $H_{\text{int}} = \mathbb{C}^7$. The internal Dirac operator $D_{\text{int}}$ is a Hermitian $7 \times 7$ operator on $H_{\text{int}}$, whose matrix elements encode the Yukawa couplings of the internal geometry in the NCG formalism (Chamseddine–Connes).
-
-The UHM superpotential is cubic in the 7 Fano fields $\Phi_i$ ($i \in \{A,S,D,L,E,O,U\}$):
-
-$$
-W = \sum_{\ell \in \mathrm{Fano}} \lambda_\ell\,\Phi_{i(\ell)}\,\Phi_{j(\ell)}\,\Phi_{k(\ell)}, \quad [\Phi_i] = M_P
-$$
-
-By T-53, $W \sim \varepsilon^3 M_P^3$ with canonical field normalization, whence the dimensionless coupling constants:
-
-$$
-\lambda_\ell \sim \frac{\varepsilon^3 M_P^3}{M_P^3} = \varepsilon^3
-$$
-
-The matrix elements of $D_{\text{int}}$ are defined as second derivatives of the superpotential at the internal Planck vacuum $\langle\Phi_k\rangle = M_P$ (the fundamental scale of the UHM internal space):
-
-$$
-(D_{\text{int}})_{ij} \equiv \frac{\partial^2 W}{\partial\Phi_i\,\partial\Phi_j}\bigg|_{\langle\Phi\rangle = M_P} = \sum_k \lambda_{ijk}\,\langle\Phi_k\rangle \sim \varepsilon^3 \cdot M_P = \varepsilon^3 M_P
-$$
-
-Since $(D_{\text{int}})_{ij} = O(\varepsilon^3 M_P)$ for all $i,j$ (both diagonal and off-diagonal elements), all 7 eigenvalues $m_k$ are of the same order by the Gershgorin theorem:
-
-$$
-|m_k - (D_{\text{int}})_{kk}| \leq \sum_{j \neq k}|(D_{\text{int}})_{kj}| = O(\varepsilon^3 M_P) \implies m_k = O(\varepsilon^3 M_P)
-$$
-
-Therefore:
-
-$$
-\mathrm{Tr}(D_{\text{int}}^4) = \sum_{k=1}^{7} m_k^4 \sim 7 \cdot (\varepsilon^3 M_P)^4 = 7\varepsilon^{12} M_P^4 \quad [\text{T, from T-53 + cubic structure of } W]
-$$
-
-Independence from $\mathrm{Tr}(1)_{\text{total}}$: if $\mathrm{Tr}(1)_{\text{total}} = 0$ [H] holds — UV terms 1 and 2 vanish **naturally** (without fine-tuning). If not — UV terms 1 and 2 require counterterm subtraction, but the physical result (term 3) remains the same $O(\varepsilon^{12} M_P^4)$.
-
-In both cases $\Lambda_{\text{CC}}^{\text{phys}} \sim \varepsilon^{12} M_P^4$ **[T]**. SUSY compensation [H] determines **naturalness** (absence of fine-tuning), not the scale itself. $\blacksquare$
-
-:::note Remark on fine-tuning
-If SUSY compensation [H] does not hold, then UV terms $O(\Lambda^4)$ and $O(\Lambda^2)$ must be subtracted by counterterms. Standard physics allows this procedure, but the theory then requires **fine-tuning** $\sim (\varepsilon^{12} M_P^4)/(\Lambda^4) \sim 10^{-120}$ on the bare constant. Thus: *the result is [T] regardless, naturalness depends on [H]*.
-:::
+A bound does not require all eigenvalues to be comparable. The assumed spectral scale, the cancellation of larger volume contributions and the finite subtraction are independent physical inputs. The former inference to $\rho_{\rm vac}\sim\varepsilon^{12}M_P^4$ is [H]. T-219 also requires lower-order contributions to cancel. [T-219](/docs/proofs/categorical/fundamental-closures#t-219)
 
 #### Numerical Computation [C] {#числовое-вычисление-лямбда}
 
 | Step | Content | Result |
 |-----|-----------|----------|
 | Bosonic | $\mathrm{Tr}(1) = 7$ | $H_{\text{int}} = \mathbb{C}^7$ |
-| Fermionic | $H_{\text{ferm}}^{\text{int}} = \mathbb{C}^7$ (internal fermionic modes, $G_2$-singlets) | Exact "$\mathrm{Tr}(1)_{\text{total}} = 7 - 7 = 0$" is **retracted [✗]** (odd-dim grading trace $\neq 0$; $\mathbf{14}$ irreducible) — physical result via $\varepsilon^{12}$ (T-219), see independence theorem above |
-| SUSY breaking | $m_{3/2} \sim \varepsilon^3 M_P$ | $\Lambda_{\text{CC}} \sim \varepsilon^{12} M_P^4 \sim 10^{-24} M_P^4$ |
+| Fermionic | A separate fermion module and dynamics must be supplied | Exact cancellation on the seven-register withdrawn [✗] |
+| SUSY breaking | Assume $m_{3/2}\sim\varepsilon^3M_P$ and cancellation of lower orders | Proposed $\varepsilon^{12}M_P^4$ residual [H] |
 | Sector structure | $Z_\Phi(-2) = 0$ [T] | Winding cancellation; residual from $Z'_\Phi(-2)$ |
 | RG suppression | $\lambda_3 \sim 10^{-7.26}$ | $\lambda_3^2 \sim 10^{-14.5}$ |
-| Cohomological | no topological $\Lambda$-term [T]; the vacuum energy is **not** cancelled (retracted 2026-09-10) | Physical $\Lambda$ is a local effect |
+| Cohomology | Contractibility removes positive-degree classes | A constant energy is degree-zero data |
 | Sector minimization | [Global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] | $\sim 10^{-40}$ [C] |
 
 #### Structure of the Fermionic Sector {#структура-фермионного-сектора}
 
-::::note Compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ [H]
-
-**Problem.** The internal space is specified by spectral triple T-53 [T]: $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$, $H_{\text{int}} = \mathbb{C}^7$. The bosonic trace equals $\mathrm{Tr}(1)|_{\text{bos}} = 7$. For compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ one needs $\dim H_{\text{int}}^{\text{ferm}} = 7$.
-
-**Full fermionic spectrum.** Within $\mathcal{N}=1$ SUSY with $G_2$-holonomy the fermionic spectrum includes two classes:
-
-1. **Gravitino** (spin $3/2$, 4D): 4 degrees of freedom. These modes live on $M^4$, not in the internal space, and **do not enter** $\mathrm{Tr}_{\text{int}}(1)$.
-
-2. **Gaugino** (spin $1/2$, internal): the algebra $\mathfrak{g}_2$ has dimension $\dim \mathfrak{g}_2 = 14$. Decomposition by $G_2$-singlets: $\mathbf{14} \to \mathbf{7} \oplus \mathbf{7}'$. Of the 14 gaugino modes, **7 are $G_2$-singlets** (zero modes, not paired with the Higgs potential) and contribute to the internal trace, while the remaining 7 acquire masses of order $M_P$ and are suppressed.
-
-**Internal compensation.** In the spectral action the trace $\mathrm{Tr}_{\text{int}}(1)$ is taken only over the internal $H_{\text{int}}$:
-
-$$
-\mathrm{Tr}_{\text{int}}(1) = \underbrace{7}_{\text{bosons}, H_{\text{int}}^{\text{bos}}} - \underbrace{7}_{\text{fermions}, H_{\text{int}}^{\text{ferm}} \text{ (7 singlets from } \mathbf{14})} = 0
-$$
-
-**Status [H].** The exactness of the compensation $7 - 7 = 0$ rests on the assumption of exact internal pairing $\mathbf{14} \to \mathbf{7}_{\text{light}} + \mathbf{7}_{\text{heavy}}$ under $G_2$-holonomy. Confirming the full spectrum in the finite spectral triple T-53 requires an explicit construction of the Dirac operator on $H_{\text{int}}^{\text{ferm}} = \mathbb{C}^7$. Until then, the compensation remains **[H]** (a hypothesis requiring non-perturbative analysis).
-
-:::danger Mathematical error in the decomposition [H]
-The adjoint representation **14** of G₂ is **irreducible** — it does not decompose as 7+7 under any standard embedding. The decomposition 14→8+3+3̄ occurs when restricting to SU(3)⊂G₂ (adjoint SU(3) + fundamental + antifundamental), but NOT as 7+7. The claim Tr_int(1)_total = 7−7 = 0 is **not justified**. Status of SUSY compensation: **[H]** (hypothesis requiring non-perturbative analysis on a concrete G₂-manifold).
-:::
-
-:::tip Replacement: T-219 sector-product derivation
-The invalid "$\mathbf{14} \to \mathbf{7} \oplus \mathbf{7}$" argument is replaced by **[T-219](/docs/proofs/categorical/fundamental-closures#t-219)**, which ~~derives the $\varepsilon^{12}$ suppression **rigorously**~~ (retracted 2026-09-25: T-219 is [H], its status was [T at T-64]) proposes the $\varepsilon^{12}$ suppression from the three-sector decomposition:
-
-$$
-\Lambda_\mathrm{SUSY} \sim \varepsilon^{12} M_P^4 = \varepsilon^{4 \cdot k_\mathrm{sec}} M_P^4, \quad k_\mathrm{sec} = 3
-$$
-
-via $G_2$-invariant Fano coupling (T-43d [T]) + three-loop nested product × one-loop $\operatorname{STr}(M_k^4) \sim (\varepsilon M_P)^4$ per sector (Martin 2010 SUSY primer). The three sectors are $\mathbf 1_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$ (T-48a — retracted [✗] 2026-09-25 in its axis-labelled form; the count survives for $\mathbb C^7 = \mathbb Ce_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$, but T-219, whose sectors were the axis triples, is now a hypothesis [H]), each contributing one $\varepsilon^4$ independently. This **does not rely** on any reducibility of the G₂ adjoint — it uses the sector decomposition of the **state space**, which is legitimate.
-
-After T-219 the composition follows the [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет): perturbative $10^{-41.5}$ [T] (already includes $\varepsilon^6$); sector-product SUSY $\varepsilon^{12}$ [H] (T-219, corrected from T at T-64 on 2026-09-25) **absorbs** $\varepsilon^6$ → net mean $\sim 10^{-53.5}$ if that hypothesis holds; cohomological: no topological $\Lambda$-term [T], the exact-zero reading $\Lambda_\mathrm{global} = 0$ being retracted since 2026-09-10; sector-minimisation residual [C] (open programme) → honest bracket $\sim 10^{-53.5}$ to $10^{-93.5}$; the rest to $10^{-120}$ is open.
-:::
-::::
-
-:::info Status (post T-219)
-Structural formula $\Lambda_{\text{CC}} \sim \varepsilon^{12}$ **[T]** (spectral action). Sector-product derivation **[H]** via [T-219](/docs/proofs/categorical/fundamental-closures#t-219) (corrected from T at T-64 on 2026-09-25). The sector component is refined via [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]. Details: [full budget with proofs](/docs/proofs/gap/lambda-budget#спектральная-формула).
-:::
+The adjoint $\mathbf{14}$ of $G_2$ is irreducible. On restriction to $SU(3)$ its complexification is $\mathbf8\oplus\mathbf3\oplus\bar{\mathbf3}$. No $G_2$ splitting into two sevens follows. An odd-dimensional grading has nonzero trace. Additional bosons and fermions, a supersymmetric dynamics and a regulator would have to be specified before computing a physical supertrace. [SUSY compensation](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация)
 
 ---
 
@@ -317,7 +211,7 @@ Choose $m:G\to G$ in a specified topos and define $\mathrm{Th}_m=\operatorname{E
 
 ---
 
-## 4c. O-Sector Dominance in $\Lambda$ [T] {#доминирование-o-сектора}
+## 4c. Hypothesis of $O$-sector dominance {#доминирование-o-сектора}
 
 #### O-sector dominance: a model hypothesis [H] {#теорема-лямбда-o-доминирование}
 
@@ -327,17 +221,17 @@ Universal identifications T-73/T-74 are withdrawn [✗]. The trace identity of a
 
 ### 5.1 Perturbative Mechanisms
 
-:::tip Strict budget [T]
+:::note Scenario factors at the supplied inputs
 
 | Mechanism | Suppression | Source | Status |
 |----------|-----------|----------|--------|
-| $\epsilon^6$ (smallness of coherences) | $10^{-12}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §7.3 | [T] |
-| RG suppression of $\lambda_3$ | $10^{-14.5}$ | [RG flow](/docs/physics/gauge-symmetry/rg-flow) §12.3 | [T] |
-| Ward identities (anti-correlation, $19/49$) | $10^{-0.41}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §10.4 | [T] |
-| Fano code (6 constraints) | $10^{-0.9}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §12.5d | [T] |
-| $\sqrt{N_F}$ (uncorrelated modes) | $10^{-11.9}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §9.3 | [T] |
-| $O$-sector $(6/21)^3$ | $10^{-1.7}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §10.2 | [T] |
-| **Perturbative total** | **$10^{-41.5}$** | | **[T]** |
+| $\epsilon^6$ (smallness of coherences) | $10^{-12}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §7.3 | [at the stated inputs] |
+| RG suppression of $\lambda_3$ | $10^{-14.5}$ | [RG flow](/docs/physics/gauge-symmetry/rg-flow) §12.3 | [at the stated inputs] |
+| Ward identities (anti-correlation, $19/49$) | $10^{-0.41}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §10.4 | [at the stated inputs] |
+| Fano code (6 constraints) | $10^{-0.9}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §12.5d | [at the stated inputs] |
+| $\sqrt{N_F}$ (uncorrelated modes) | $10^{-11.9}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §9.3 | [at the stated inputs] |
+| $O$-sector $(6/21)^3$ | $10^{-1.7}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §10.2 | [at the stated inputs] |
+| **Perturbative total** | **$10^{-41.5}$** | | **[at the stated inputs]** |
 :::
 
 :::info Full budget breakdown
@@ -368,7 +262,7 @@ $$
 \Lambda_{\mathrm{pert}} \sim 10^{-41.5} \cdot M_P^4, \quad \Lambda_{\mathrm{bracket}} \sim 10^{-53.5}\ \text{to}\ 10^{-93.5} \cdot M_P^4, \quad \Lambda_{\mathrm{obs}} \sim 10^{-120} \cdot M_P^4
 $$
 
-**Honest composition [T-structural, C-numerical].** The rows above do **not** all multiply — they fall into three classes ([honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет), the canonical composition): **(A)** rigorous mean suppression — perturbative $10^{-41.5}$ [T] with the SUSY-sector $\varepsilon^{12}$ *absorbing* the $\varepsilon^6$ already inside it, net $\sim 10^{-53.5}$; **(B)** the cohomological exact zero $\Lambda_{\text{global}} = 0$ [T], which reframes the question as the size of the *local* residual; **(C)** the sector-minimization programme [C], potentially adding up to $\sim 10^{-40}$. The honest bracket is $10^{-53.5}$–$10^{-93.5}$; the remaining $\gtrsim 27$ orders to $\Lambda_{\mathrm{obs}}$ are **open — computational (Hybrid Monte-Carlo on $(S^1)^{21}/G_2$) plus conceptual (proving the local residual saturates the cohomological bound)**. Every coefficient is determined by $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) **[C at (SV)]**), so the programme has no free parameters — but it is a programme, not a completed multiplication. Details: [updated budget](/docs/proofs/gap/lambda-budget#обновлённый-бюджет), [structural closure](/docs/proofs/gap/lambda-budget#структурное-замыкание-лямбда).
+The quoted exponents compare scenarios at chosen inputs. The $10^{-41.5}$ product requires a model for how the six factors combine. Adding $\varepsilon^{12}$ in place of its earlier $\varepsilon^6$ factor is conditional on T-219 [H], and the $10^{-40}$ further suppression is unverified. No cohomological zero cancels vacuum energy. These numbers give neither an observational interval nor a controlled error on a prediction. [Budget and provenance](/docs/proofs/gap/lambda-budget#структурное-замыкание-лямбда)
 
 ---
 
@@ -484,7 +378,7 @@ $$
 ### 8.2 Witten Index
 
 :::tip Theorem 6.2 [T]
-For the $N=1$ supersymmetric $\sigma$-model with target space $(S^1)^{21}$:
+For de Rham supersymmetric quantum mechanics on the compact target torus,
 
 $$
 W = \mathrm{Tr}(-1)^F = \chi\bigl((S^1)^{21}\bigr) = 0
@@ -492,24 +386,12 @@ $$
 
 Number of bosonic and fermionic vacuum states: $n_B = n_F = 2^{20} = 1\,048\,576$ (from $\sum_{k\;\mathrm{even}} \binom{21}{k} = 2^{20}$).
 
-**Corollary:** In the supersymmetric limit $\Lambda_{\mathrm{SUSY}} = 0$ **exactly** — from the topology of the target space.
+The zero index counts a difference of multiplicities. It gives no four-dimensional vacuum-energy normalization.
 :::
 
 ### 8.3 Residual Λ under SUSY Breaking {#83-резидуальная-λ-при-нарушении-susy}
 
-:::tip Theorem 6.3 [T]
-Under SUSY breaking ($V_3$ breaks via $F$-term, $m_{3/2} \sim 10^{13}$ GeV):
-
-$$
-\Lambda_{\mathrm{residual}} \sim m_{3/2}^2 \cdot M_P^2 \sim 10^{-12}\, M_P^4
-$$
-
-SUSY compensation (12 orders) and $\epsilon^6$-suppression (12 orders) are **the same** mechanism: the suppression is determined by the smallness of the coherences $\epsilon \sim 10^{-2}$, and $m_{3/2} \propto \epsilon^3$.
-
-Therefore, the SUSY argument **adds no** new orders to the budget of §5, but provides the **structural justification** of the $\epsilon^6$ suppression.
-
-**Status [T]**: the [spectral formula for $\Lambda_{\text{CC}}$](#теорема-спектральная-лямбда) rigorously justifies SUSY compensation through the expansion of coefficient $a_0$ of the spectral action from the finite spectral triple [T].
-:::
+**Theorem 6.3 (scope).** Assigning $m_{3/2}$ and positing $\rho_{\rm residual}\sim m_{3/2}^2M_P^2$ gives a dimensional estimate. The index in §8.2 does not set that mass or enforce a small residual. This estimate supplies no independently verified multiplicative suppression.
 
 ---
 
@@ -655,27 +537,7 @@ The stabilizer contains:
 
 ### 11.2 Uniqueness Theorem
 
-:::tip Theorem 6.1 (Uniqueness of $B^{(b)}$) [T]
-$B^{(b)}$ is the unique (up to a scalar factor) non-zero $G_2$-covariant quadratic form with Fano contraction.
-:::
-
-**Proof** via $S_3$-symmetry of the stabilizer (does not use representation theory of $G_2$):
-
-**(a)** $S_3$-invariance: the 6 permutations of the line $(a,b,c)$ split into 3 **even** (cyclic, $\varepsilon = +1$) and 3 **odd** (anti-cyclic, $\varepsilon = -1$).
-
-**(b)** Identity $n_{ij} = n_{ji}$: anti-cyclic terms with $\varepsilon = -1$ give $-(n_{ab}n_{bc} + n_{bc}n_{ca} + n_{ca}n_{ab})$, i.e. **minus** the cyclic sum.
-
-**(c)** $S_3$-invariance requires uniform coefficients $\alpha$ (cyclic) and $\beta$ (anti-cyclic). The full form on the line:
-
-$$
-Q_l = (\alpha - \beta)\,\varepsilon_l\,(n_{ab}n_{bc} + n_{bc}n_{ca} + n_{ca}n_{ab})
-$$
-
-**(d)** Setting $c = \alpha - \beta$: $Q = c \cdot B^{(b)}$. The non-zero form is unique up to scale. $\blacksquare$
-
-:::info Remark
-The proof uses three facts: (1) $G_2$-transitivity on Fano lines, (2) $S_3$-invariance of the stabilizer, (3) the identity $n_{ij} = n_{ji}$. Gap M-1 is **closed**.
-:::
+**Theorem 6.1 (universal uniqueness withdrawn [✗]).** On the three unsigned edges of one line, both $\sum_i x_i^2$ and $\sum_{i<j}x_ix_j$ are invariant under $S_3$ and linearly independent. The cyclic off-diagonal form is fixed up to scale after imposing a zero diagonal and the line-block conventions. These restrictions are additional inputs. A continuous $G_2$ action on the phase torus was not established. [Winding-form calculation](/docs/physics/cosmology-phys/berry-phase#единственность-билинейной-формы-bb)
 
 ---
 
@@ -712,33 +574,13 @@ The discrete set of vacua $\sim 168$ ($|PSL(2,7)|$) is too small for the anthrop
 
 ## 13. Closure Strategy: Three Levels {#стратегия-замыкания}
 
-:::info Status: [C], honest bracket $10^{-53.5}$–$10^{-93.5}$
-Taking into account the [spectral formula](#теорема-спектральная-лямбда) **[T]**, the [cohomological argument](/docs/proofs/gap/lambda-budget#когомологическое-обнуление) (which after the 2026-09-10 retraction contributes no zero at all — only the absence of a *topological* $\Lambda$-term [T]) and [sector minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) (a [C] programme) — the honest composed bracket is **$10^{-53.5}$–$10^{-93.5}$** ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)). The remaining $\gtrsim 27$ orders are an **open computational + conceptual** task (numerical minimization on $(S^1)^{21}/G_2$ + saturation of the cohomological bound by the local residual).
-:::
+The following proposals require an independently normalized energy, specified dynamics and a physical measure.
 
 The strategy is divided into three levels.
 
 ### Level A: Structural Cancellation + Cohomological Argument (most promising) {#уровень-a}
 
-**A1. Zeta cancellation.** $Z_\Phi(-2) = 0$ [T] — the zeta-regularized vacuum energy of winding sectors vanishes **exactly** (Theorem 9.1). Physical interpretation: with the **correct** regularization (analytic continuation, not cutoff) winding sectors **contribute nothing** to Λ.
-
-**A2. Cohomological argument.** Global contractibility of $X = |N(\mathcal{C})|$ to the terminal object $T$ gives $H^n(X, A) = 0$ for $n > 0$ and locally constant $A$ [T] — hence **no topological $\Lambda$-term**. It gives **no cancellation of the vacuum energy**: that is degree-0 data, and $H^0(X, A) = A \neq 0$ (retracted 2026-09-10). The observed $\Lambda_{\text{obs}} \neq 0$ is a **local** effect from $H^*_{\text{loc}}(X, T) \neq 0$. See [full argument](/docs/proofs/gap/lambda-budget#когомологическое-обнуление).
-
-**A3. SUSY compensation.** $G_2$-holonomy → $\mathcal{N}=1$ SUSY [T]. Boson-fermion compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ — **[H]** (G₂-adj **14** is irreducible, the 7+7 decomposition is not justified; see §4a). Scale of the residual: $\Lambda_{\text{residual}} \sim \varepsilon^{12}$ **[T]** as a structural result of the [spectral formula](#теорема-спектральная-лямбда) — independent of the [H]-compensation. See [SUSY argument](/docs/proofs/gap/lambda-budget#susy-компенсация).
-
-If zeta-regularization is accepted as physically correct (as in Casimir theory):
-- Winding contribution: $10^0 \to 0$ (exact cancellation, formally $\infty$ orders of suppression)
-- Residual: via $Z'_\Phi(-2)$, scale $|Z'_\Phi(-2)| \sim 10^{10}$
-
-Effective budget with zeta-regularization:
-
-$$
-\Lambda_{\text{phys}} \sim Z'_\Phi(-2) \cdot \varepsilon^6 / \mu^4
-$$
-
-— requires a full computation.
-
-**Open**: Physical interpretation of $Z'_\Phi(-2)$ — the key task.
+For the chosen arithmetic function the regularized value $Z_\Phi(-2)$ vanishes. Its derivative can still be nonzero. Using either value as a physical energy requires an independent regularization and matching prescription. Contractibility gives $H^{n>0}=0$ for the specified coefficients while $H^0$ retains constants, including a possible constant energy. The proposed $\varepsilon^{12}$ SUSY residual remains conditional on lower-order cancellations [H, T-219].
 
 ### Level B: Modular Program (open) {#уровень-b}
 
@@ -755,9 +597,9 @@ The radion/modulus $S_0$ is not a fixed parameter but a **dynamical variable**. 
 
 ### Existing Resources {#существующие-ресурсы-λ}
 
-1. **Spectral formula for $\Lambda_{\text{CC}}$ [T]**: Structural formula via moments of $D_{\text{int}}$; scale $\varepsilon^{12}$ [T]; SUSY compensation $\mathrm{Tr}(1)=0$ — **[H]**
-2. **Witten index $W = 0$ [T]**: $\Lambda_{\text{SUSY}} = 0$ exactly → 12 orders (= ε⁶, already counted)
-3. **Zeta cancellation $Z_\Phi(-2) = 0$ [T]**: Regularized winding energy = 0 exactly
+1. Finite-matrix traces and moment bounds for a prescribed $D_{\rm int}$ (§4a).
+2. The vanishing index of de Rham supersymmetric mechanics on the torus (§8.2).
+3. The exact regularized arithmetic value $Z_\Phi(-2)=0$ (§10).
 4. **Factorization $\Theta_M = \Theta_+^7$ [T]**: The full function splits into 7 identical blocks
 5. **Global minimization of $V_{\text{Gap}}$ [T]**: Sector contribution $\sim 10^{-40}$ [C]
 6. **Naive summation**: Does NOT give suppression at $S_0 = 20$ [T]
@@ -771,9 +613,7 @@ The radion/modulus $S_0$ is not a fixed parameter but a **dynamical variable**. 
 ### Additional Directions {#дополнительные-направления}
 
 5. **Coherent instanton sum** — destructive interference over topological sectors
-6. **Lattice Monte Carlo** — direct computation of the partition function on $(S^1)^{21}$ with $G_2$-symmetry
-
-**Status: [C], honest bracket $10^{-53.5}$–$10^{-93.5}$** ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)). All coefficients are determined by $\theta^*$ (T-79 [C at (SV)]) — no free parameters. The remaining $\gtrsim 27$ orders are an open computational + conceptual task (numerical minimization on $(S^1)^{21}/G_2$ + saturation of the cohomological bound by the local residual).
+6. **Lattice calculation.** Specify a positivity-compatible field domain, symmetry action, regulator and response observable. An independent energy calibration and a continuum limit remain open. [Budget and provenance](/docs/proofs/gap/lambda-budget#структурное-замыкание-лямбда)
 
 ---
 
@@ -811,13 +651,13 @@ A testable programme needs a field model, parameters with units, a mapping to $H
 | Full $\Lambda$ budget | [$\Lambda$ budget: proofs](/docs/proofs/gap/lambda-budget) | Detailed proofs of all 6 mechanisms + spectral formula |
 | Spectral triple | [Spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) | Finite $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ [T] |
 | Quantum gravity | [Quantum gravity](/docs/physics/gravity/quantum-gravity) | Chamseddine–Connes spectral action |
-| Global minimization | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) | Sector structure [T] |
+| Global minimization | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) | Vacuum profiles under specified dynamics |
 | Einstein equations | [Einstein equations from Gap](/docs/physics/gravity/einstein-equations) | Definition of $\Lambda_{\mathrm{Gap}}$ and $G_{\mathrm{Gap}}$ |
-| Emergent geometry | [Emergent geometry](/docs/physics/gravity/emergent-geometry) | Metric from coherences |
+| Emergent geometry | [Emergent geometry](/docs/physics/gravity/emergent-geometry) | State metrics and physical readouts |
 | Dark matter | [Dark matter from Gap](/docs/physics/cosmology-phys/dark-matter) | $O$-sector and vacuum structure |
 | Zeta-regularization | [Zeta-regularization](/docs/physics/dual-aspect/zeta-regularization) | $\Theta_M$-factorization, $Z_\Phi(-k) = 0$ |
 | $G_2$-structure | [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure) | Fano plane and Ward identities |
-| Berry phase | [Berry phase](/docs/physics/cosmology-phys/berry-phase) | Uniqueness of $B^{(b)}$ and orientational symmetry |
+| Berry phase | [Berry phase](/docs/physics/cosmology-phys/berry-phase) | Chosen winding form and orientation |
 | Fano selection rules | [Selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) | Hamming code, Fano constraints |
 | Positive cosmological readout | [Consequences of the axioms](/docs/core/foundations/consequences#теорема-лямбда-положительна) | T-71 [H]; positivity conditional on supplied energy bridge and parameters |
 | Canonical $f_0$ | [Higgs sector](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) | UV-finiteness + zeta-determinant [T] |

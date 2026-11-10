@@ -1,20 +1,18 @@
 ---
 sidebar_position: 1
-title: "Dark Matter from Gap"
+title: "Dark Matter Candidates in the Gap Model"
 slug: /physics/cosmology-phys/dark-matter
-description: "Systematic overview of dark matter candidates in the Gap formalism: exclusion of SUSY, QCD axion, O-sector Wimpzilla, O-parity, and Fano correlation length ξ_F"
+description: "Relic densities in specified axion, heavy-particle and supersymmetric scenarios."
 ---
 
-# Dark Matter from Gap
+# Dark Matter Candidates in the Gap Model
 
-:::info Who This Chapter Is For
-Dark matter candidates within Gap theory. The reader will learn why the $O$-sector relic is the most viable candidate and why the QCD axion claimed here needs a Peccei–Quinn sector that the Clifford content lacks (T-333(e)–(h)).
-:::
+This chapter examines which particle, symmetry and cosmological inputs each relic estimate uses.
 
 
 ## Overview
 
-Gap theory provides a systematic framework for analysing dark matter candidates. Standard SUSY candidates are **excluded** (too heavy or unstable). The most viable candidate is the **$O$-sector relic** (Wimpzilla, $m \sim 10^{13}$ GeV), gravitationally produced during inflation and stabilised by $O$-parity. A subdominant QCD axion ($m_a \sim 3$ neV, $\sim 1\%$ DM) was additionally claimed. In the Clifford content it is not a QCD axion, and its relic estimate conflicts with the isocurvature bound (T-333(e)–(h), §3).
+The heavy $O$ relic is a proposed field [H]. Its putative protecting symmetry fails on the density-matrix state space (T-163, withdrawn [✗], below). Production during inflation presupposes the field, its mass and a cosmological history. The QCD axion requires an additional Peccei–Quinn sector (§3). None of the estimates identifies the dark matter constituent.
 
 ---
 
@@ -29,10 +27,10 @@ From observations (Planck 2018): $\Omega_{\mathrm{DM}} h^2 = 0.120 \pm 0.001$. A
 
 ---
 
-## 2. Exclusion of SUSY Candidates
+## 2. Constraints on the assumed SUSY spectra {#2-exclusion-of-susy-candidates}
 
-:::tip Theorem 8.1 [T]
-Standard SUSY dark matter candidates are **excluded** in the Gap formalism:
+:::note Theorem 8.1 [C under the listed masses, decays and production history]
+The table tests the supplied SUSY scenarios. Other mass scales, symmetries and production histories give different relics.
 :::
 
 | Candidate | Mass | Problem | Status |
@@ -41,7 +39,7 @@ Standard SUSY dark matter candidates are **excluded** in the Gap formalism:
 | Gravitino | $m_{3/2} \sim 10^{13}$ GeV | $\tau \sim 7 \times 10^{-26}$ s (unstable) | Excluded |
 | Wino/Bino | $m \sim 10^{11}$ GeV | Analogous to neutralino | Excluded |
 
-**Conclusion:** The SUSY sector of Gap theory contains no viable DM candidate.
+The listed choices fail the criteria in §1.
 
 ### 2.1 Complete Candidate Overview
 
@@ -54,7 +52,7 @@ Standard SUSY dark matter candidates are **excluded** in the Gap formalism:
 | $G_2$-extra bosons | $\sim M_P$ | Stable ($G_2$ charge) | $\sim 10^{-6}$ | Excluded (too little) |
 | QCD axion | $\sim 3$ neV | Stable ($U(1)_{\mathrm{PQ}}$) | $\sim 10^{-3}$ | **Not realised** in the Clifford content; needs (PQ) (§3, T-333(e)–(h)) |
 | Dark ALPs | $\sim 10^{15}$ GeV | Stable | Heavy | Excluded (§4) |
-| **$O$-sector relic** | **$\sim 10^{13}$ GeV** | **$\tau \gg t_U$ ($O$-parity)** | **$\sim 0.1$–$0.4$ [C at T-50, CKR]** | **Primary candidate (§5)** |
+| **$O$-sector relic** | Assumed $\sim10^{13}$ GeV | Protection open (§5.3) | Scenario only (§5.4) | [H] |
 
 **Gap instantons** are topological configurations $\theta_{ij}(x)$ with non-zero winding number — hadronic objects ($m \sim \Lambda_{\mathrm{QCD}}$). Excluded by observations (BBN, CMB, structure formation).
 
@@ -62,11 +60,10 @@ Standard SUSY dark matter candidates are **excluded** in the Gap formalism:
 
 ---
 
-## 3. QCD Axion from $(S^1)^{21}$ Compactification {#3-qcd-аксион-из-компактификации-s121}
+## 3. Axion estimates under the Peccei–Quinn hypothesis {#3-qcd-аксион-из-компактификации-s121}
 
 :::info Role of the Axion in the Gap Formalism
-In standard physics the Peccei–Quinn axion solves the strong CP problem via dynamical relaxation $\theta_{\mathrm{QCD}} \to 0$. In the Gap formalism $\theta_{\mathrm{QCD}} = 0$ follows **structurally** from the reality of the octonionic $f_{ijk}$ and vacuum uniqueness ([T-99 \[T\]](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd)). The Gap axion is therefore a **purely DM candidate**, not a solution to the CP problem.
-*Retracted 2026-09-26 (T-99 corrected):* $\theta_{\mathrm{QCD}} = 0$ does not follow; T-99's conclusion is [✗], $\bar\theta$ is a free parameter and strong CP is open [Pr] ([Confinement §3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)).
+T-99's structural derivation of $\bar\theta=0$ was withdrawn. A QCD axion with a colour anomaly and a QCD-dominated potential could relax $\bar\theta$ in an extended model. [Strong CP](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала)
 :::
 
 :::warning[Correction 2026-09-26 (T-333(e)–(h)): in the Clifford content this axion is not a QCD axion]
@@ -75,13 +72,13 @@ In standard physics the Peccei–Quinn axion solves the strong CP problem via dy
 
 ### 3.1 Definition {#31-определение}
 
-The Gap axion is a pseudoscalar field $a(x)$, the zero mode of the phases $\theta_{ij}$ in the $3$-to-$\bar{3}$ sector, possessing an axial anomaly with QCD:
+A candidate phase combination can be written in a chosen coordinate frame as
 
 $$
 a(x) := f_a \cdot \frac{1}{3} \sum_{i \in \{A,S,D\}} \sum_{j \in \{L,E,U\}} c_{ij}\, \theta_{ij}(x)
 $$
 
-where $c_{ij}$ are coefficients determined from the anomaly condition $\partial_\mu j^\mu_A = \frac{g^2}{32\pi^2} G\tilde{G}$. In the Gap vacuum $\theta_{\mathrm{QCD}} = 0$ **exactly** ([T-99 \[T\]](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd)); the axion $a$ describes fluctuations $a \propto \delta\theta$. *(Retracted 2026-09-26: T-99's conclusion is [✗]; $\bar\theta$ is free, [§3.1c](/docs/physics/gauge-symmetry/confinement#тета-не-из-потенциала).)*
+An extension must supply the coefficients $c_{ij}$ and a colour-anomalous axial current. The two triples of real coordinate axes in this ansatz are not invariant colour representations (registry 48a).
 
 ### 3.2 Decay Constant
 
@@ -125,7 +122,7 @@ $$
 \Omega_a h^2 \approx 0.12 \times 7100 \times 1.39 \times 10^{-6} \approx 1.2 \times 10^{-3}
 $$
 
-**Conclusion [C]:** The QCD axion constitutes $\sim 1\%$ of the observed dark matter — a **subdominant** component (subject to $\epsilon \sim 10^{-3}$ and $N_{\mathrm{DW}} = 1$). *Corrected (T-333(e)–(h)):* only under (PQ), and with $\theta_i$ set by the inflationary fluctuation the isocurvature bound caps the fraction near $3\times10^{-5}$.
+The quoted $1\%$ abundance cannot be assigned to the stated fluctuation-only initial condition. With a QCD axion added, the isocurvature analysis in T-333(e)–(h) instead caps its fraction near $3\times10^{-5}$ in that scenario.
 
 ### 3.5 Full Axion Spectrum from $(S^1)^{21}$
 
@@ -147,9 +144,9 @@ All 21 phases acquire mass from the potentials $V_3$ or $V_2$ — **there are no
 
 ---
 
-## 4. Dark ALPs from the $3$-to-$3$ Sector
+## 4. Hypothetical axion-like fields {#4-dark-alps-from-the-3-to-3-sector}
 
-Compactification on $(S^1)^{21}$ generates additional axion-like particles (ALPs). Of the 21 phases $\theta_{ij}$:
+The table groups coordinates in a chosen frame. Assigning particles, charges and masses to these coordinates is an additional hypothesis.
 
 | Sector | Phases | Gap | Modes |
 |--------|-----|-----|------|
@@ -182,7 +179,7 @@ Multi-axion cosmology from $(S^1)^{21}$ is an open question of medium priority. 
 
 ### 5.1 $O$-Sector Dark Matter
 
-$O$-sector configurations (Gap $\sim 1$ for pairs involving $O$) are heavy particles with masses $\sim 10^{13}$ GeV ($\sim m_{3/2}$). They interact weakly with the SM — through gravity and suppressed $G_2$-extra exchanges.
+The proposed scenario adds a weakly coupled particle of mass $m_X\sim10^{13}$ GeV. A large matrix opacity carries no units of mass. The verified transport model starts from a specified moving register and link variables. Frame covariance of its motion holds for its chosen group and representation. Identifying a physical dark particle requires an independent spectrum. [Network results](/docs/reference/network-results)
 
 ### 5.2 Gravitational Production during Inflation
 
@@ -192,12 +189,10 @@ $$
 n \sim H_I^3 \cdot e^{-2\pi m / H_I} \quad \text{for } m > H_I
 $$
 
-:::info Note: Exponential Mass Selection [I]
-For Planck-mass particles ($m \sim M_P \sim 10^{19}$ GeV, $H_I \sim 10^{13}$ GeV) production is **exponentially suppressed**: $e^{-2\pi \times 10^{19}/10^{13}} = e^{-6.3 \times 10^6} \approx 0$. Therefore $G_2$-extra bosons ($m \sim M_P$) are **not produced** during standard inflation. By contrast, for lighter $O$-sector configurations ($m \sim m_{3/2} \sim 10^{13}$ GeV $\approx H_I$) the exponent $\sim e^{-2\pi} \sim 10^{-3}$, giving $n \sim 10^{37}$ cm$^{-3}$ — a physically significant number density.
-:::
+For $m_X/H_I\gg1$ the exponential suppresses production in this approximation. Near $m_X=H_I$ a quantitative abundance needs the field equation and the inflation-to-reheating transition.
 
-:::tip Theorem 11.1 [T]
-Standard formula for non-thermal relics (Chung, Kolb, Riotto, Phys.Rev.D 59, 023501):
+:::note Theorem 11.1 [H, illustrative abundance model]
+The parameterization used below is
 
 $$
 \Omega_X h^2 \approx 0.1 \times \left(\frac{m_X}{10^{13}\;\text{GeV}}\right)^{3/2} \times \left(\frac{H_I}{10^{13}\;\text{GeV}}\right) \sim 0.1\text{--}0.4
@@ -206,131 +201,39 @@ $$
 for $m_X = m_{3/2} \sim 10^{13}$ GeV, $H_I \sim 4 \times 10^{13}$ GeV.
 :::
 
-:::info Promotion of Order-of-Magnitude Estimate [C at T-50, CKR]
-The order of magnitude $\Omega_X h^2 \sim 0.1$–$0.4$ is **[C at T-50, CKR standard cosmology]**:
-- $m_X \sim m_{3/2} \sim \varepsilon^3 M_P \sim 10^{13}$ GeV — from T-50 [T] (uniqueness of the superpotential, Schur's lemma)
-- CKR formula (Chung–Kolb–Riotto, 1998) — standard result of non-thermal production
-- Structural coincidence $m_{3/2} \sim H_I$ (both $\sim \varepsilon^3 M_P$) — not fine-tuning, but a consequence of a unified SUSY-breaking scale
-
-The exact numerical coefficient has an uncertainty of $\times 2$–$3$ (from CKR). Stability requires $O$-parity (see [§5.3](#53-o-parity)).
-:::
-
-The order of magnitude **coincides** with the observed $\Omega_{\mathrm{DM}} h^2 = 0.12$.
+The range uses chosen masses and Hubble rates. Gravitational production also depends on the inflationary transition, subsequent dilution and survival to the present. The group stabilizer and a choice of superpotential do not fix those inputs.
 
 ### 5.3 $O$-Parity {#53-o-parity}
 
-In standard SUSY, $R$-parity $R = (-1)^{3(B-L)+2S}$ stabilises the LSP. In the Gap formalism the analogue of $R$-parity is **$O$-parity**.
+Write $P_O=(-1)^{\Delta N_O}$ for a model with an integer excitation count. The definition assigns a sign. Conservation would require a symmetry of all allowed transitions.
 
-#### Theorem 11.2 [T] {#теорема-11-2}
+#### Theorem 11.2 (T-163) — partial conjugation fails [✗] {#теорема-11-2}
 
-:::tip Theorem 11.2 [T]
-$O$-parity is a discrete $\mathbb{Z}_2$ symmetry that stabilises the heavy relic:
-
-$$
-P_O := (-1)^{\Delta N_O}
-$$
-
-where $\Delta N_O := N_O^{\mathrm{state}} - N_O^{\mathrm{vac}}$ is the number of excited $O$-pairs relative to the vacuum.
-:::
-
-*Proof:*
-
-**Step 1 (Stabiliser).** $\mathrm{Stab}_{G_2}(e_O) = SU(3)$ [T] ([T-42e](/docs/proofs/categorical/uniqueness-theorem)). Consequently the $O$-sector possesses a distinguished $SU(3)$-invariant structure.
-
-**Step 2 ($\mathbb{Z}_2$ symmetry from reality).** Complex conjugation $\sigma: \gamma_{Oi} \mapsto \bar{\gamma}_{Oi}$ is a $\mathbb{Z}_2$ symmetry of the potential $V_{\mathrm{Gap}}$, since the structure constants $f_{ijk} \in \mathbb{R}$ ([T-99 \[T\]](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd), step 1).
-
-**Step 3 (Commutation with dynamics).** The full Lindblad operator $\mathcal{L}_\Omega$ has real structure constants, hence $\sigma(\mathcal{L}_\Omega[\Gamma]) = \mathcal{L}_\Omega[\sigma(\Gamma)]$, i.e. $[\sigma, \mathcal{L}_\Omega] = 0$.
-
-**Step 4 (Conservation).** $P_O = \pm 1$ is the eigenvalue of $\sigma$ on $O$-sector excitations. From $[\sigma, \mathcal{L}_\Omega] = 0$ it follows that $P_O$ is conserved under evolution. The lightest $O$-odd particle ($P_O = -1$) cannot decay into SM particles ($P_O = +1$) → stable.
-
-**Step 5 (Topological barrier).** [T-69 \[T\]](/docs/core/dynamics/composite-systems#теорема-тополог-защита): $\Delta V \geq 6\mu^2 > 0$ prevents $O$-parity-violating tunnelling. $\blacksquare$
-
-:::info Note: Redefinition via Excitations [I]
-The naive definition $P_O = (-1)^{N_O}$, where $N_O$ is the absolute number of $O$-components with Gap $\sim 1$, is **trivial in the vacuum**: all 6 pairs $\{O,A\}, \{O,S\}, \{O,D\}, \{O,L\}, \{O,E\}, \{O,U\}$ have Gap $\sim 1$, so $N_O = 6$ and $P_O = +1$ **for all** states in the vicinity of the vacuum — the symmetry does not distinguish the vacuum from excitations. The correct definition via $\Delta N_O = N_O^{\mathrm{state}} - N_O^{\mathrm{vac}}$ resolves this problem and is the precise analogue of $R$-parity in SUSY.
-:::
-
-| Configuration | $\Delta N_O$ | $P_O$ | Consequence |
-|-------------|-------------|-------|-----------|
-| Vacuum | 0 | $+1$ | |
-| Single $O$-quantum | 1 | $-1$ | Stable (cannot decay to SM with $P_O = +1$) |
-| Pair of $O$-quanta | 2 | $+1$ | Can annihilate |
-| SM particles | 0 | $+1$ | |
-
-**Lifetime:** From the structure of $V_3$: vertices with $O \in \{i,j,k\}$ are suppressed, so transitions changing $\Delta N_O$ are exponentially suppressed:
+The stabilizer of the chosen octonionic axis is $\mathrm{SU}(3)$ [T]. The proposed extra involution conjugates only the entries touching $O$, leaving the other entries unchanged. Take the pure state $\psi=(1,1,i)/\sqrt3$ on axes $(O,a,b)$, padded by zeros on the remaining axes. On its support, $\rho=\psi\psi^\dagger$ and its proposed image are
 
 $$
-\tau_X \sim \frac{M_P}{m_X^2} \cdot e^{+M_P/m_X}
+\rho=\frac13\begin{pmatrix}1&1&-i\\1&1&-i\\i&i&1\end{pmatrix},
+\qquad
+\sigma(\rho)=\frac13\begin{pmatrix}1&1&i\\1&1&-i\\-i&i&1\end{pmatrix}.
 $$
 
-For $m_X \sim 10^{13}$ GeV: $e^{M_P/m_X} = e^{10^6} \gg 10^{10^5}$ — **fantastically stable**.
-
-**Status:** $O$-parity is an **exact** $\mathbb{Z}_2$ symmetry of the dynamics $\mathcal{L}_\Omega$ [T], exponentially protected by the topological barrier T-69 [T].
+The displayed principal minor of the image is $-4/27$. Hence the image fails positivity and the map cannot act as a symmetry on density matrices. Global conjugation is a different map. A finite barrier also permits tunnelling in principle. A stable relic would need a state-preserving symmetry and dynamics conserving its charge, or an independently computed lifetime [H].
 
 ### 5.4 Details of CKR Production of the $O$-Relic {#54-details-of-ckr-production-of-the-o-relic}
 
 The Chung–Kolb–Riotto (CKR) mechanism describes non-thermal production of heavy particles through rapid expansion of de Sitter space during inflation. For $O$-sector configurations the process proceeds in three stages:
 
-:::tip Theorem 11.1a [T]
-**(a)** Number density of particles of mass $m$ immediately after inflation:
+**Theorem 11.1a [C for the specified production history].** If the species survives, its number density scales as $a^{-3}$ after production with conserved comoving number. For production at $a_*$ this gives
 
 $$
-n_X \sim H_I^3 \cdot e^{-2\pi m_X / H_I}
+\Omega_X h^2 = \frac{h^2m_X n_X(a_*)}{\rho_{c,0}}\left(\frac{a_*}{a_0}\right)^3.
 $$
 
-For $m_X \sim m_{3/2} \sim 10^{13}$ GeV with $m_X \approx H_I$:
-
-$$
-n_X \sim (10^{13}\;\text{GeV})^3 \cdot e^{-2\pi} \sim 10^{39} \times 2 \times 10^{-3} \sim 10^{37}\;\text{cm}^{-3}
-$$
-:::
-
-**(b)** Relic density after dilution by reheating to temperature $T_{\mathrm{RH}}$: [T]
-
-$$
-\Omega_X h^2 \sim \frac{m_X \cdot n_X}{T_{\mathrm{RH}}^3} \cdot \frac{T_0^3}{\rho_c} \cdot T_{\mathrm{RH}}^3
-$$
-
-Standard CKR formula (Phys.Rev.D 59, 023501):
-
-$$
-\Omega_X h^2 \approx 0.1 \times \left(\frac{m_X}{10^{13}\;\text{GeV}}\right)^{3/2} \times \left(\frac{H_I}{10^{13}\;\text{GeV}}\right)
-$$
-
-**(c)** Substituting Gap theory parameters ($m_X = m_{3/2} \sim 10^{13}$ GeV, $H_I \sim 4 \times 10^{13}$ GeV): [C at T-50, CKR]
-
-$$
-\Omega_X h^2 \sim 0.1 \times 1 \times 4 = 0.4
-$$
-
-Accounting for the CKR coefficient uncertainty ($\times 2$--$3$): $\Omega_X h^2 \sim 0.1$--$0.4$, consistent with the observed $\Omega_{\mathrm{DM}} h^2 = 0.120 \pm 0.001$.
-
-:::info Note: Key Role of the Scale $m_X \approx H_I$ [I]
-The coincidence $m_{3/2} \sim H_I$ is not parameter fine-tuning. In Gap theory the gravitino mass $m_{3/2}$ is determined by SUSY breaking (Gap $\sim 1$ in the $O$-sector), while the inflation scale $H_I$ is determined by the dynamics of the Gap vacuum. Both are fixed at $\sim 10^{13}$ GeV by independent structural arguments.
-:::
-
-:::warning Fitting vs. Prediction
-The scale $m_{3/2} \sim \varepsilon^3 M_P \sim 10^{13}$ GeV follows from T-50 [T] (uniqueness of the superpotential) at $\varepsilon \sim 10^{-3}$. The parameter $\varepsilon$ (vacuum coherence) is **not derived** from first principles but is chosen to match the SUSY-breaking scale. The CKR formula gives $\Omega h^2 \sim 0.1$-$0.4$ against the observed $0.120 \pm 0.001$; the agreement is at order of magnitude [C at T-50, CKR], but the uncertainty range ($\times 2$-$3$) covers the observed value. An exact prediction $\Omega h^2 = 0.12$ remains an open problem.
-:::
+The mass, production rate and dilution enter separately. In natural units $H_I^3$ has units of energy cubed. The former value in $\mathrm{cm}^{-3}$ omitted this conversion. Substitution of $m_X=10^{13}$ GeV and $H_I=4\times10^{13}$ GeV in the illustrative §5.2 formula gives $0.4$. Comparing that output to $0.120\pm0.001$ cannot establish a relic species or select its mass.
 
 ### 5.5 Interaction Cross Section of the $O$-Relic
 
-The $O$-sector relic interacts with Standard Model particles exclusively through gravitational and suppressed $G_2$-extra exchanges.
-
-:::tip Theorem 11.3 [T]
-Elastic scattering cross section of the $O$-relic on a nucleon:
-
-$$
-\sigma_{X\text{-}N} \sim G_N^2 \, m_X^2 \, m_N^2 \sim \left(\frac{1}{M_P^2}\right)^2 m_X^2 \, m_N^2
-$$
-
-Numerically for $m_X \sim 10^{13}$ GeV, $m_N \sim 1$ GeV, $M_P = 2.4 \times 10^{18}$ GeV:
-
-$$
-\sigma_{X\text{-}N} \sim \frac{m_X^2 \, m_N^2}{M_P^4} \sim \frac{10^{26} \times 1}{(2.4)^4 \times 10^{72}} \sim 10^{-46}\;\text{GeV}^{-2} \sim 10^{-60}\;\text{cm}^2
-$$
-:::
-
-This is **13 orders of magnitude** below current experimental limits (XENON1T, LZ: $\sigma < 10^{-47}$ cm$^2$ for $m \sim 100$ GeV) and is practically **unobservable** by direct detectors. [T]
+**Theorem 11.3 (previous cross-section estimate withdrawn) [✗].** In natural units $G_N^2m_X^2m_N^2$ is dimensionless. It cannot supply the stated area in $\mathrm{cm}^2$. A scattering calculation needs a field interaction, incident kinematics, momentum-transfer range and a detector response for the proposed mass. The cross section is open.
 
 :::warning Annihilation Cross Section for $O$-Relic Pairs [H]
 For pairs of $O$-quanta ($\Delta N_O = 2$, $P_O = +1$) annihilation is possible:
@@ -344,31 +247,30 @@ Annihilation $O\bar{O} \to$ SM particles with energy $E \sim m_X \sim 10^{13}$ G
 
 ### 5.6 Relic Density Budget
 
-:::tip Full Decomposition of $\Omega_{\mathrm{DM}}$ [C at T-50, CKR]
-Gap theory predicts two-component dark matter:
+:::note Conditional scenarios
+The entries assume particle content and production histories.
 
 | Component | Mass | $\Omega h^2$ | Fraction of DM | Mechanism |
 |-----------|-------|-------------|-----------|----------|
-| $O$-relic (Wimpzilla) | $\sim 10^{13}$ GeV | $\sim 0.1$–$0.4$ | $\sim 83$–$100\%$ | CKR (gravitational) |
+| $O$ relic | Assumed $\sim10^{13}$ GeV | §5.2 estimate | Undetermined | Gravitational production |
 | QCD axion (only under (PQ), T-333(e)–(h)) | $\sim 3$ neV | $\lesssim 4 \times 10^{-6}$ (isocurvature) | $\lesssim 3\times10^{-5}$ | Vacuum misalignment |
 | Dark ALPs | $\sim 10^{9}$–$10^{15}$ GeV | negligible | $\ll 1\%$ | Gravitational (suppressed) |
 | $G_2$-extra bosons | $\sim M_P$ | $\sim 10^{-6}$ | $\ll 1\%$ | Gravitational (exponentially suppressed) |
-| **Total** | | **$\sim 0.1$–$0.4$** | **$\sim 100\%$** | |
 
-The observed value $\Omega_{\mathrm{DM}} h^2 = 0.120 \pm 0.001$ is reproduced to order of magnitude.
+The relative abundances are undetermined.
 :::
 
 ---
 
-## 6. Summary Candidate
+## 6. Conditions for a heavy relic {#6-summary-candidate}
 
 | Parameter | Value | Source |
 |----------|----------|----------|
-| Mass | $m_X \sim 10^{13}$ GeV | [Standard Model from $G_2$](/docs/physics/gauge-symmetry/standard-model) §5.2 |
+| Mass | Assumed $\sim10^{13}$ GeV | §5.1 |
 | Production mechanism | Gravitational (inflation, CKR) | [§5.4 above](#54-details-of-ckr-production-of-the-o-relic) |
-| $\Omega_X h^2$ | $\sim 0.1$--$0.4$ [C at T-50, CKR] | [§5.4 above](#54-details-of-ckr-production-of-the-o-relic) |
-| Stability | $\tau \gg t_U$ ($O$-parity) | [§5.3 above](#53-o-parity) |
-| Direct detection | $\sigma \sim G_N^2 m_X^2 \sim 10^{-60}$ cm$^2$ | Unobservable |
+| $\Omega_X h^2$ | Scenario estimate at chosen $m_X,H_I$ | §5.4 |
+| Stability | Open after the T-163 counterexample | §5.3 |
+| Direct detection | Cross section undetermined | §5.5 |
 | Indirect signatures | UHECR ($E > 10^{20}$ eV) from annihilation | Testable |
 
 ---
@@ -423,7 +325,9 @@ $\ell_{\mathrm{Planck}}$ is the UV cutoff (lattice spacing), $\xi_F$ is the IR c
 
 ---
 
-## 8. Falsifiable Predictions
+## 8. Conditional estimates and observables {#8-falsifiable-predictions}
+
+The entries use the candidate fields, masses, cosmological history and coupling scales specified in §§2–7. For example, the value of the axion mass requires (PQ), and a heavy relic requires an independent stability mechanism.
 
 | # | Prediction | Value | Experiment |
 |---|-------------|----------|-------------|
@@ -431,7 +335,7 @@ $\ell_{\mathrm{Planck}}$ is the UV cutoff (lattice spacing), $\xi_F$ is the IR c
 | P2 | $f_a \sim 2 \times 10^{15}$ GeV | From $\epsilon \cdot M_P$ | Axion-photon conversion |
 | P3 | $\Omega_a / \Omega_{\mathrm{DM}} \sim 10^{-2}$ — excluded by isocurvature (T-333(e)–(h)) | $\lesssim 3\times10^{-5}$ under (PQ) | Cosmological constraints |
 | P4 | $m_{\mathrm{DM}} \sim 10^{13}$ GeV | Wimpzilla | UHECR anomalies |
-| P5 | No WIMP-DM in direct detectors | $\sigma < 10^{-60}$ cm$^2$ | XENON, LZ (confirmed) |
+| P5 | Direct search for a heavy relic | No derived cross section at $m_X\sim10^{13}$ GeV | XENON, LZ |
 | P6 | $\xi_F \sim 160$ pc | Fano correlation length | Large-scale structure |
 
 ---
@@ -441,9 +345,9 @@ $\ell_{\mathrm{Planck}}$ is the UV cutoff (lattice spacing), $\xi_F$ is the IR c
 | Topic | Page | Connection |
 |------|----------|-------|
 | Cosmological Constant | [Cosmological Constant](/docs/physics/gravity/cosmological-constant) | Vacuum structure, $O$-sector and $\xi_F$ in the $\Lambda$ budget |
-| Einstein Equations | [Einstein Equations from Gap](/docs/physics/gravity/einstein-equations) | Dark energy as Gap dynamics in the Im-sector |
+| Einstein equations | [Einstein equations](/docs/physics/gravity/einstein-equations) | Conditional matter coupling in a metric theory |
 | $G_2$-Structure | [$G_2$-Structure](/docs/physics/gauge-symmetry/g2-structure) | Fano plane and sectoral decomposition |
-| Berry Phase | [Berry Phase](/docs/physics/cosmology-phys/berry-phase) | Topological protection of Gap in the $O$-sector |
+| Berry phase | [Berry phase](/docs/physics/cosmology-phys/berry-phase) | Homotopy of specified field maps |
 | Fano Selection Rule | [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules) | Fano correlations and $\xi_F$ |
 | Confinement | [Confinement from Gap](/docs/physics/gauge-symmetry/confinement) | Gap $\to 0$ in the $3$-to-$\bar{3}$ sector; QCD axion |
 

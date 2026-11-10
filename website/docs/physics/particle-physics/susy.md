@@ -1,29 +1,18 @@
 ---
 sidebar_position: 6
-title: "Supersymmetry from G₂"
+title: "Supersymmetry in G₂ Compactification Models"
 slug: /physics/particle-physics/susy
-description: "N=1 SUSY from G₂-holonomy, covariantly constant spinor η₀, superpartner spectrum, SUSY breaking via V₃, gravitino mass"
+description: "Parallel spinors and physical assumptions in supersymmetric models"
 ---
 
-# Supersymmetry from $G_2$
+# Supersymmetry in G₂ Compactification Models
 
-:::info Who this chapter is for
-$N=1$ supersymmetry from $G_2$-holonomy and high-scale SUSY breaking. The reader will learn how the superpartner mass scale is determined by the cubic potential $V_3$.
-:::
+A seven-manifold with full $G_2$ holonomy has one parallel spinor for the associated spin structure. The standard eleven-dimensional compactification then preserves four-dimensional $N=1$ supersymmetry under its background assumptions. The one-dimensional space of invariant alternating three-forms on $\mathbf7$ does not fix a superpotential on edge chiral fields, its coefficient, a vacuum, or a nonzero F-term. The gravitino and superpartner mass scales in this chapter belong to an assumed supergravity model.
 
+## 1. Parallel spinor count at full G₂ holonomy {#n1-susy}
 
-$N=1$ supersymmetry in 4D arises from [$G_2$-holonomy](/docs/physics/gauge-symmetry/g2-structure) via the covariantly constant spinor $\eta_0 = 1_\mathbb{O}$. SUSY breaking via the cubic potential $V_3$ determines the superpartner mass scale and the [gravitino mass](#масса-гравитино).
-
-:::warning Experimental status of supersymmetry
-The LHC at $\sqrt{s} = 13\text{--}14$ TeV **has not detected** superpartners. Lower mass bounds (ATLAS/CMS, 2024): gluino $m_{\tilde{g}} > 2.3$ TeV, squarks $m_{\tilde{q}} > 1.8$ TeV, stops $m_{\tilde{t}} > 1.4$ TeV. The UHM model predicts $m_\text{SUSY} \sim 10^{13}$ GeV (high-scale SUSY), which is **compatible** with null results at the LHC: superpartners lie 10 orders of magnitude above accessible energies. However, high-scale SUSY does not solve the hierarchy problem (the primary motivation for SUSY at the electroweak scale) and does not provide a WIMP dark matter candidate.
-:::
-
----
-
-## 1. $N=1$ SUSY from a Parallel Spinor [T] {#n1-susy}
-
-:::tip Theorem 1.1 (N=1 SUSY from a parallel spinor) [T]
-**(a)** From M-theory: compactification $11D \to 4D$ on a 7-dimensional $G_2$-manifold $M_7$ ($\text{Hol}(M_7) = G_2$) gives a number of supersymmetries equal to the number of covariantly constant spinors on $M_7$.
+:::note Spinor count and compactification assumptions
+**(a)** Assume an unwarped flux-free product solution of eleven-dimensional supergravity with four-dimensional Minkowski spacetime and a compact spin seven-manifold of full $G_2$ holonomy. Each parallel internal spinor then contributes one four-dimensional supersymmetry.
 
 **(b)** Decomposition of the spinor representation $G_2 \subset \text{Spin}(7)$:
 
@@ -61,6 +50,9 @@ Q_\alpha = \eta_0 \otimes \psi_\alpha^{(4D)}, \quad \alpha = 1, 2
 $$
 
 The uniqueness of $\eta_0$ (one $G_2$-singlet) guarantees exactly $N=1$ in four dimensions — neither $N=2$ nor $N=0$.
+
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ### 1.2 SUSY Transformations of Gap Fields [T] {#susy-transformations}
 
@@ -487,20 +479,17 @@ In the supersymmetric Gap theory with 21 scalars and 21 gapsinos, the total numb
 
 ---
 
+</details>
+
 ## Summary Table {#summary}
 
-| Result | Status | Dependence |
-|--------|--------|------------|
-| $N=1$ SUSY from covariantly constant spinor $\eta_0$ | [T] | $G_2$-holonomy |
-| Superpotential $W = \mu_W \sum f_{ijk} \Theta\Theta\Theta$ | **[T]** | $G_2$-invariance + Schur (T-50) |
-| Superpartner spectrum from Gap fields | **[T]** | Follows from $W$ |
-| SUSY breaking: $F = \partial W / \partial \Theta \neq 0$ | **[T]** | $W \neq 0$ in vacuum |
-| $\sqrt{F} \sim \varepsilon \cdot M_\text{Pl}$ | **[T]** | From superpotential |
-| $m_{3/2} \sim \varepsilon^3 M_P \approx 10^{13}$ GeV | **[T]** | Cubic structure of $W$ |
-| $m_{\tilde{q}} \sim 10^{13}$ GeV (gravity mediation) | **[T]** | Follows from $m_{3/2}$ |
-| Sectoral exact SUSY | [✗] | **Retracted** |
-| Approximate sequestering ($\varepsilon^2$-suppression) | [H] | Replacement for sectoral SUSY |
-| SUSY protection in UV (above $10^{13}$ GeV) | [H] | Compactness $(S^1)^{21}$ + $G_2$ |
+| Result | Necessary data |
+|---|---|
+| One parallel spinor | Full $G_2$ holonomy and its associated spin structure. |
+| Four-dimensional $N=1$ SUSY | The stated supersymmetric compactification and background. |
+| Invariant three-form (T-50) | A one-dimensional invariant subspace in $\Lambda^3(\mathbf7)^*$. |
+| Superpotential, F-term and masses | Field representations, holomorphic couplings, Kähler data, normalized scales and a vacuum. A cubic $W$ has $dW(0)=0$ even if it is a nonzero polynomial. |
+| $10^{13}$ GeV and proposed sequestering | Scenario estimates. Neither supersymmetry breaking nor a superpartner mass has been operationally derived. |
 
 ### Open Questions {#open-questions}
 
@@ -513,10 +502,10 @@ In the supersymmetric Gap theory with 21 scalars and 21 gapsinos, the total numb
 
 ## Related Documents
 
-- [G₂ Structure](/docs/physics/gauge-symmetry/g2-structure) — octonion automorphisms
-- [Standard Model](/docs/physics/gauge-symmetry/standard-model) — SM from $G_2$
-- [$\Lambda$ Budget](/docs/proofs/gap/lambda-budget) — cosmological constant
-- [Proton Decay](/docs/physics/particle-physics/proton-decay) — $X,Y$-leptoquarks
-- [Dark Matter](/docs/physics/cosmology-phys/dark-matter) — alternative candidates
-- [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics) — octonion associator and $V_3$
-- [Status Registry](/docs/reference/status-registry) — classification of results
+- [G₂ Structure](/docs/physics/gauge-symmetry/g2-structure)
+- [Standard Model](/docs/physics/gauge-symmetry/standard-model)
+- [$\Lambda$ Budget](/docs/proofs/gap/lambda-budget)
+- [Proton Decay](/docs/physics/particle-physics/proton-decay)
+- [Dark Matter](/docs/physics/cosmology-phys/dark-matter)
+- [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics)
+- [Status Registry](/docs/reference/status-registry)

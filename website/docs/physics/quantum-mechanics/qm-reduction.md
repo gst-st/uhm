@@ -1,156 +1,39 @@
 ---
 sidebar_position: 1
-title: "Reduction to Quantum Mechanics"
-description: Rigorous proof that standard quantum mechanics is a special case of UHM at R → 0
+title: "The Unitary Regime of the Seven-Level Quantum Model"
+description: "The unitary regime of a specified quantum model, its seven-level state space, finite clocks and contextuality."
 ---
 
-# Reduction of UHM to Quantum Mechanics
+# The Unitary Regime of the Seven-Level Quantum Model
 
-:::info Section Status
-In §1–§6, Theorem 3.1 (the evolution equation reduces to the von Neumann equation when the dissipator and the regenerator are switched off, $\kappa_0 \to 0$, $\gamma_k \to 0$), Theorem 3.4 and Theorem 1.1 carry **[T]**. Theorem 3.2, the category equivalence $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$, is retracted [✗] (§4.2); what holds instead is Theorem 3.2′ [T], an equivalence of $\mathbf{Hol}^u$ with seven-dimensional quantum mechanics above purity $2/7$, sharp in scope (§4.2). The classification of Theorem 3.3 is a reading [I]. §8 proves Kochen–Specker contextuality in $\mathbb{C}^7$ with a set of rays built from the Fano plane (T-201′, [T]). An earlier version of this box gave every result of §1–§6 the status [T]; that is retracted. §7 compares them with the reconstructions of quantum theory; its comparisons are interpretations [I].
-:::
+The earlier derivation of quantum physics from UHM has been withdrawn. This chapter starts with a complex Hilbert space, density operators, a specified Hamiltonian and a time parameter. The quantum premise (QG) imports CPTP channels and GKSL dynamics under the usual Markovian assumptions. In finite dimension the Bures topology alone does not recover the physical operator algebra or its composition rule. Within that model one can check its unitary regime, the scope of a category comparison and a finite contextuality witness. Constructing quantum preparations, measurements and composition from operational premises remains open. [Operational reconstruction, G1–G4](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/README.md) · [Operational states and composition](/docs/core/foundations/operational-processes#process)
 
 ## Contents
 
 1. [Connection to L-Unification](#1-связь-с-l-унификацией)
-2. [Limit Functor and the Schrödinger Equation](#2-предельный-функтор)
+2. [Switching off dissipation and regeneration](#2-предельный-функтор)
 3. [Category of Quantum-Mechanical Systems](#3-категория-qm)
-4. [Reduction Functor and Category Equivalence](#4-функтор-редукции)
-5. [Taxonomy of Physical Systems](#5-таксономия)
-6. [Time Discreteness and Page–Wootters](#6-дискретность-времени)
+4. [The restricted category equivalence](#4-функтор-редукции)
+5. [Proposed classification of physical systems](#5-таксономия)
+6. [Finite clock readings and conditional states](#6-дискретность-времени)
 7. [Precedents: Reconstructions of Quantum Theory](#7-прецеденты-реконструкции)
 8. [Kochen–Specker Contextuality in the Holon Space](#8-контекстуальность-кш)
 
----
-
 ## 1. Connection to L-Unification {#1-связь-с-l-унификацией}
 
-:::info Key Principle
-Reduction to standard QM occurs when **the logical structure Ω trivializes**: at $R_\varphi \to 0$ the system loses the capacity for self-modeling, and the dissipative dynamics $\mathcal{L}_\Omega$ reduces to purely unitary.
-:::
+The model supplies three terms for the generator of $\Gamma$. The name “logical Liouvillian” refers to an interpretation of the dissipator. A subobject classifier supplies characteristic arrows. Representing those arrows by Hilbert-space effects, choosing coupling strengths and providing a physical clock each need additional structure. [Evolution equation](/docs/core/dynamics/evolution) · [Classifier proposal](/docs/core/foundations/axiom-omega)
 
-In the full UHM theory, the evolution of the coherence matrix $\Gamma$ is described by the **logical Liouvillian** $\mathcal{L}_\Omega$, which is **derived** from the subobject classifier $\Omega$ of the ∞-topos $\text{Sh}_\infty(\mathcal{C})$:
+## 2. Switching off dissipation and regeneration {#2-предельный-функтор}
 
-$$
-\frac{d\Gamma(\tau)}{d\tau} = \mathcal{L}_\Omega[\Gamma(\tau)]
-$$
-
-where:
+**Theorem 3.1 (unitary regime).** Set all dissipative rates and the regenerative coupling to zero in the specified equation. With $H=H^\dagger$ in energy units, the remaining equation is
 
 $$
-\mathcal{L}_\Omega[\Gamma] = -i[H_{eff}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \mathcal{R}[\Gamma, E]
+\dot\Gamma=-\frac{i}{\hbar}[H,\Gamma]+\mathcal D[\Gamma]+\mathcal R[\Gamma]
+\quad\longrightarrow\quad
+\dot\Gamma=-\frac{i}{\hbar}[H,\Gamma].
 $$
 
-The three components have a clear origin:
-- $-i[H_{eff}, \Gamma]$ — **unitary** evolution, preserving purity $P = \text{Tr}(\Gamma^2)$
-- $\mathcal{D}_\Omega[\Gamma]$ — **logical dissipation** from Lindblad operators $L_k = \sqrt{\chi_{S_k}}$, derived from atoms of the classifier $\Omega$
-- $\mathcal{R}[\Gamma, E]$ — **regeneration**, the adjoint functor to dissipation
-
-Quantum mechanics arises when the last two terms vanish. This occurs upon trivialization of the logical structure $\Omega$: when all characteristic morphisms $\chi_{S_k}$ are fully determined, there is no logical uncertainty, and the system is incapable of self-modeling ($R_\varphi = 0$).
-
-**Derivation chain:**
-
-$$
-\Omega \xrightarrow{\text{trivialization}} \chi_{S_k} \text{ defined} \xrightarrow{} \mathcal{D}_\Omega \to 0, \; \mathcal{R} \to 0 \xrightarrow{} \frac{d\Gamma}{d\tau} = -i[H_{eff}, \Gamma]
-$$
-
----
-
-## 2. Limit Functor and the Schrödinger Equation {#2-предельный-функтор}
-
-### 2.1 The Central Theorem
-
-:::tip [T] Theorem 3.1 (Reduction to the Schrödinger equation)
-Let $\mathbb{H}$ be a Holon with $R_\varphi \to 0$. Then the [evolution equation](/docs/core/dynamics/evolution) with [emergent internal time](/docs/proofs/dynamics/emergent-time) $\tau$:
-
-$$
-\frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma(\tau)] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
-$$
-
-reduces to the von Neumann equation:
-
-$$
-\frac{d\rho}{dt} = -i[H, \rho]
-$$
-
-for mixed states, or to the Schrödinger equation:
-
-$$
-i\hbar\frac{d|\psi\rangle}{dt} = H|\psi\rangle
-$$
-
-for pure states $\Gamma = |\psi\rangle\langle\psi|$.
-:::
-
-### 2.2 Full Proof
-
-*Proof:*
-
-**Step 1.** At $R_\varphi \to 0$ the system has no significant self-modeling. The reflection measure $R$ is defined through the quality of self-modeling:
-
-$$
-R = R(\varphi, \Gamma) \to 0
-$$
-
-which means: the self-modeling operator $\varphi$ degenerates.
-
-**Step 2.** The regenerative term vanishes:
-
-$$
-\mathcal{R}[\Gamma, E] \propto \kappa(\Gamma) \to 0 \quad \text{at} \quad \kappa_0 \to 0
-$$
-
-where $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ is the norm of the natural transformation from the [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0). Intuitively: regeneration requires self-modeling; without it ($R \to 0$) the regenerative term disappears.
-
-**Step 3.** The dissipative term vanishes for isolated systems:
-
-$$
-\mathcal{D}[\Gamma] = \mathcal{L}_\Omega[\Gamma] + i[H_{eff}, \Gamma] \to 0
-$$
-
-The logical structure $\Omega$ "freezes": all characteristic morphisms $\chi_{S_k}$ are trivial (projectors onto eigenspaces), and $\gamma_k \to 0$ for all $k$.
-
-**Step 4.** Only the purely unitary term remains:
-
-$$
-\frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma]
-$$
-
-where $H_{eff}$ is the [effective Hamiltonian](/docs/core/dynamics/evolution#вывод-h_eff) arising from the Page–Wootters constraint.
-
-**Step 5.** For a pure state $\Gamma = |\psi\rangle\langle\psi|$, differentiating:
-
-$$
-\frac{d|\psi\rangle\langle\psi|}{dt} = \frac{d|\psi\rangle}{dt}\langle\psi| + |\psi\rangle\frac{d\langle\psi|}{dt}
-$$
-
-**Step 6.** Substituting into $\frac{d\Gamma}{dt} = -i[H, \Gamma]$:
-
-$$
-\frac{d|\psi\rangle}{dt}\langle\psi| + |\psi\rangle\frac{d\langle\psi|}{dt} = -i\left(H|\psi\rangle\langle\psi| - |\psi\rangle\langle\psi|H\right)
-$$
-
-Projecting onto $|\psi\rangle$ from the left and right, we obtain:
-
-$$
-i\hbar\frac{d|\psi\rangle}{dt} = H|\psi\rangle
-$$
-
-$\blacksquare$
-
-### 2.3 Interpretation via L-Unification
-
-Unitary quantum mechanics is the limit where the logical structure $\Omega$ is fully determined and admits no uncertainty. All characteristic morphisms $\chi_{S_k}$ are trivial, which means:
-
-| Aspect | Full UHM ($R > 0$) | QM limit ($R = 0$) |
-|--------|--------------------|--------------------|
-| Logical structure $\Omega$ | Nontrivial, reflexive | Trivial, "frozen" |
-| Characteristic morphisms $\chi_{S_k}$ | Nontrivial projections | Trivial (eigenprojectors) |
-| Dissipation $\mathcal{D}_\Omega$ | Nonzero (logical uncertainty) | Zero |
-| Regeneration $\mathcal{R}$ | Possible (self-modeling) | Absent |
-| Dynamics | Dissipative + regenerative | Purely unitary |
-
----
+For constant $H$, $\Gamma(t)=e^{-itH/\hbar}\Gamma(0)e^{itH/\hbar}$. A pure initial state stays pure, and the representative $\psi(t)=e^{-itH/\hbar}\psi(0)$ obeys the Schrödinger equation. The projector leaves the phase of this representative free. Setting the rates to zero is an independent assumption. With the corpus definition $R=1/(7\,\mathrm{Tr}\,\Gamma^2)$ one has $R\ge1/7$ even at purity one. [Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) · [Regenerative coupling](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)
 
 ## 3. Category of Quantum-Mechanical Systems {#3-категория-qm}
 
@@ -164,11 +47,7 @@ $$
 \mathrm{Ob}(\mathbf{QM}) = \{(\mathcal{H}, H, \rho_0) : \mathcal{H} \text{ — Hilbert space, } H = H^\dagger, \rho_0 \text{ — initial state}\}
 $$
 
-Morphisms are unitary transformations mapping one state to another:
-
-$$
-\mathrm{Mor}_{\mathbf{QM}}((H_1, \rho_1), (H_2, \rho_2)) = \{U : U^\dagger U = I, \; U\rho_1 U^\dagger = \rho_2\}
-$$
+Here arrows are unitary isomorphisms $U:\mathcal H_1\to\mathcal H_2$ satisfying $U\rho_1U^\dagger=\rho_2$. This definition compares states and imposes no intertwining condition on the Hamiltonians. Adding one changes the category and its stabilisers.
 
 ### 3.2 Connection to the Category of Holons
 
@@ -192,21 +71,7 @@ $\mathcal{U}$ is a functor preserving identities and composition.
 
 ---
 
-## 4. Reduction Functor and Category Equivalence {#4-функтор-редукции}
-
-### 4.1 Definition of the Reduction Functor
-
-**Definition 3.2 (Reduction functor).**
-
-$$
-\pi_{\text{QM}}: \mathbf{Hol}_{R \to 0} \to \mathbf{QM}
-$$
-
-$$
-\pi_{\text{QM}}(\mathbb{H}) := (\mathcal{H}_{\mathbb{H}}, H_{\mathbb{H}}, \Gamma_{\mathbb{H}})
-$$
-
-The functor $\pi_{\text{QM}}$ assigns to each Holon with $R \to 0$ a quantum-mechanical system: its Hilbert space, effective Hamiltonian, and density matrix.
+## 4. The restricted category equivalence {#4-функтор-редукции}
 
 ### 4.2 The Equivalence Theorem
 
@@ -225,162 +90,17 @@ Let $\mathbf{Hol}^{u}$ be the category whose objects are pairs $(\Gamma, H)$ wit
 :::tip Theorem 3.2′ (Holons are seven-dimensional quantum mechanics above purity 2/7) [T]
 1. The inclusion $\iota : \mathbf{Hol}^{u} \to \mathbf{QM}_7^{>2/7}$, $(\Gamma, H) \mapsto (\mathbb{C}^7, H, \Gamma)$, is an equivalence of categories. It is not an isomorphism: $(\mathbb{C}^7, H, |O\rangle\langle O|)$ has $P = 1$ and $\gamma_{EE} = 0$, so it is not a holon, yet it is isomorphic in $\mathbf{QM}$ to one.
 2. Its isomorphism classes are the spectra $\lambda_1 \geq \dots \geq \lambda_7 \geq 0$ with $\sum\lambda_i = 1$ and $\sum\lambda_i^2 > 2/7$; the automorphism group of an object is the centraliser of $\Gamma$ in $U(7)$, $\prod_i U(m_i)$ over the eigenvalue multiplicities $m_i$.
-3. No equivalence $\mathbf{Hol}^{u} \simeq \mathbf{QM}$ exists, and none after restricting $\mathbf{QM}$ to any class containing a qubit or the state $I/7$: dimension and purity are invariants of isomorphism in $\mathbf{QM}$.
-4. Every quantum system of dimension $d \leq 3$ is holonic: an isometry $V : \mathbb{C}^d \to \mathbb{C}^7$ gives a faithful functor $\mathbf{QM}_d \to \mathbf{QM}_7^{>2/7} \simeq \mathbf{Hol}^u$, $(\mathbb{C}^d, H, \rho) \mapsto (\mathbb{C}^7, VHV^\dagger, V\rho V^\dagger)$, $U \mapsto VUV^\dagger + (1 - VV^\dagger)$, because every state on $\mathbb{C}^d$ has $\mathrm{Tr}\,\rho^2 \geq 1/d \geq 1/3 > 2/7$. The bound $d \leq 3$ is sharp: for $d \geq 4$ the state $I/d$ has purity $1/d \leq 1/4 < 2/7$, and an isometric embedding preserves purity, so $I/d$ is the image of no holon. The functor is not full (unitaries acting on the complement of $V\mathbb{C}^d$ are extra morphisms).
 :::
 
-**Proof.** (1) Both categories are full subcategories of $\mathbf{QM}$, so $\iota$ is fully faithful. Essential surjectivity: for $(\mathbb{C}^7, H, \rho)$ with $\mathrm{Tr}\,\rho^2 > 2/7$ pick an index $j$ with $\rho_{jj} > 0$ (one exists, since $\mathrm{Tr}\,\rho = 1$) and the permutation unitary $\Pi$ exchanging $|j\rangle$ and $|E\rangle$. Then $\Pi$ is an isomorphism $(\mathbb{C}^7, H, \rho) \to (\mathbb{C}^7, \Pi H\Pi^\dagger, \Pi\rho\Pi^\dagger)$ in $\mathbf{QM}$, the target has $\gamma_{EE} = \rho_{jj} > 0$ and the same purity, so it lies in the image of $\iota$. (2) Unitary orbits of density matrices are classified by spectra, and the purity is $\sum\lambda_i^2$; the stabiliser of a Hermitian matrix under conjugation is the product of the unitary groups of its eigenspaces. (3) A unitary preserves dimension and spectrum. (4) $\mathrm{Tr}\,\rho^2 \geq 1/d$ is Cauchy–Schwarz on the eigenvalues; $V\rho V^\dagger$ has the eigenvalues of $\rho$ padded with zeros, hence the same purity; $U \mapsto VUV^\dagger + (1 - VV^\dagger)$ preserves products and identities and is injective. Numerical witness: `test_hol_u_is_equivalent_to_seven_dimensional_qm_above_two_sevenths`. $\blacksquare$
+For the specific inclusion in Theorem 3.2′, dimensions and spectra give sharp scope. All arrows between its objects are included by definition. Every seven-level state of purity $P>2/7$ can be permuted so that a positive diagonal entry occupies the designated $E$ slot. This proves essential surjectivity in the stated state category. Its isomorphism classes are the spectra and the stabiliser is $\prod_j U(m_j)$ for eigenvalue multiplicities $m_j$. An isometry $V:\mathbb C^d\to\mathbb C^7$ pads the spectrum with zeros. Unitaries extend by the identity on the complement, giving a faithful embedding for $d\le3$, since $P\ge1/d>2/7$. Already $I_4/4$ fails the threshold. These arguments concern the inclusion and the indicated embeddings. [Categorical definitions](/docs/proofs/categorical/categorical-formalism#категория-голономов-hol)
 
-The theorem is the correct form of the retracted Theorem 3.2 and is as strong as the definitions allow: seven-dimensional quantum mechanics above the viability threshold *is* the category of holons with unitary morphisms, up to equivalence, and all of qubit and qutrit quantum mechanics sits inside it; beyond three levels the maximally mixed states do not. The dynamical content of the reduction remains Theorem 3.1.
+## 5. Proposed classification of physical systems {#5-таксономия}
 
-### 4.3 Physical Meaning of the Equivalence
+The proposed association of unitary evolution with elementary particles, dissipation with open systems and regeneration with life is an interpretation. A qubit coupled to a bath can decohere. Neither a measured purity nor a choice of $\Omega$ specifies which bath or feedback apparatus is present. A classification by $R$ needs an independent procedure for identifying the system and measuring its dynamics.
 
-:::info What the reduction does and does not mean
-Theorem 3.1 shows that when the dissipator and the regenerator are switched off, the UHM equation is the von Neumann equation on $\mathcal{D}(\mathbb{C}^7)$. It does not show that standard quantum mechanics is contained in UHM: quantum systems of other dimensions, and seven-dimensional states with $P \leq 2/7$, are not holons. An earlier version of this box read the retracted Theorem 3.2 as "standard quantum mechanics is **exactly** contained in UHM as a special case at zero reflection; all results of QM automatically hold in UHM at $R = 0$"; that reading is retracted with it.
+## 6. Finite clock readings and Page–Wootters conditioning {#6-дискретность-времени}
 
-New UHM effects (regeneration, self-modeling, consciousness) are the terms that Theorem 3.1 switches off.
-:::
-
-### 4.4 Commutative Diagram
-
-The full category hierarchy connecting UHM to physics:
-
-```mermaid
-graph TD
-    Sh["Sh∞(C)"] -->|"Ω (classifier)"| Hol["Hol"]
-    Hol -->|"π_QM"| QM["QM"]
-    Hol -->|"π_Class"| DM["DensityMat"]
-    QM -->|"ℏ → 0"| CM["ClassMech"]
-    DM -->|"ℏ → 0"| CM
-    DM -.->|"π_Space (?)"| Riem["Riem (?)"]
-```
-
-Key role of $\Omega$:
-- The $\infty$-topos $\text{Sh}_\infty(\mathcal{C})$ contains the classifier $\Omega$
-- The Lindblad operators are derived from $\Omega$: $L_k = \sqrt{\chi_{S_k}}$
-- All physical dynamics is determined by the logical structure of $\Omega$
-
----
-
-## 5. Taxonomy of Physical Systems {#5-таксономия}
-
-### 5.1 Classification by $R$ and the Structure of $\Omega$
-
-:::tip [I] Theorem 3.3 (Classification by $R$ and the structure of $\Omega$)
-
-| Parameter $R$ | $\Omega$ Structure | Dynamics | Physical system |
-|---------------|--------------------|----------|-----------------|
-| $R = 0$ | Trivial (all $\chi_S$ defined) | $\frac{d\Gamma}{dt} = -i[H, \Gamma]$ | Unitary QM (quarks, leptons, bosons) |
-| $R \ll 1/3$ | Partially defined | $\frac{d\Gamma}{dt} = -i[H, \Gamma] + \mathcal{L}_\Omega[\Gamma]$ | Open QM (atoms in a medium) |
-| $R \geq 1/3$ | Reflexive ($\Omega$ models itself) | Full equation with $\mathcal{R}[\Gamma, E]$ | Living systems (cells, organisms) |
-
-Status [I]: under the master definition $R = 1/(7P) \in [1/7, 1]$ the row $R = 0$ describes no state of $\mathcal{D}(\mathbb{C}^7)$; the table reads $R$ as the quality of self-modelling and is a classification scheme, not a theorem. (An earlier header gave it [T]; retracted.)
-:::
-
-### 5.2 Detailed Interpretation
-
-**At $R = 0$ (Unitary QM):**
-The logical structure $\Omega$ is completely trivial. All characteristic morphisms are determined unambiguously; there is no logical uncertainty. The system is incapable of self-modeling. The dynamics is purely unitary — this is standard quantum mechanics of elementary particles.
-
-**At $R \ll 1/3$ (Open QM):**
-The logical structure is partially defined. Nontrivial characteristic morphisms exist, but the system is insufficiently complex for full self-modeling. The dynamics includes dissipation (Lindblad equation) but no regeneration. This is the standard theory of open quantum systems.
-
-**At $R \geq 1/3$ (Living systems):**
-The logical structure $\Omega$ is reflexive — the system is capable of modeling its own logical structure. All three terms of the equation are active: unitary, dissipative, and regenerative. This is the domain unique to UHM.
-
-:::warning Physical consequence
-The distinction between systems with $R = 0$ and $R > 0$ (colloquially — "dead" and "living" matter) lies in the structure of the logical classifier $\Omega$: systems with nonzero regeneration are capable of modeling their own logical structure. The threshold $R_{crit} = 1/3$ is not an arbitrary parameter but a consequence of the structure of $\Omega$.
-:::
-
-### 5.3 Transitions Between Regimes
-
-The classification is continuous: as $R$ increases from 0, the system smoothly transitions from unitary QM through open QM to the full UHM dynamics:
-
-$$
-\underbrace{R = 0}_{\text{QM}} \xrightarrow{\text{growing complexity}} \underbrace{0 < R < 1/3}_{\text{Open QM}} \xrightarrow{R = 1/3} \underbrace{R \geq 1/3}_{\text{UHM (living systems)}}
-$$
-
----
-
-## 6. Time Discreteness and Page–Wootters {#6-дискретность-времени}
-
-### 6.1 Connection to L-Unification
-
-:::info Key Mechanism
-In [Axiom Ω⁷](/docs/core/foundations/axiom-omega), time is **derived** from the [Page–Wootters mechanism](/docs/proofs/dynamics/emergent-time) via the **temporal modality ▷** on the classifier $\Omega$.
-
-$$
-\tau_n = \triangleright^n(\text{now}), \quad n \in \mathbb{Z}_7
-$$
-
-Time discreteness is a consequence of the finite structure of $\Omega$.
-:::
-
-### 6.2 The Discreteness Theorem
-
-:::tip [T] Theorem 3.4 (Discreteness of internal time)
-For a finite-dimensional system with $\dim(\mathcal{H}_O) = N$, internal time takes values from the cyclic group:
-
-$$
-\tau \in \mathbb{Z}_N = \{0, 1, 2, \ldots, N-1\}
-$$
-
-For UHM with $N = 7$: $\tau \in \mathbb{Z}_7$.
-:::
-
-*Proof:* Follows from the finite-dimensionality of the [clock algebra](/docs/core/structure/dimension-o#алгебра-часов) $\mathcal{A}_O \cong M_7(\mathbb{C})$.
-
-The clock algebra $\mathcal{A}_O = C^*(H_O, V_O)$, where:
-- $H_O = \omega_0 \sum_{k=0}^{6} k |k\rangle\langle k|_O$ — clock Hamiltonian
-- $V_O = \sum_{k=0}^{5} |k+1\rangle\langle k| + |0\rangle\langle 6|$ — cyclic shift operator
-
-The eigenvalues of $H_O$ form the finite spectrum $\{0, \omega_0, 2\omega_0, \ldots, 6\omega_0\}$, defining $N = 7$ discrete time steps. $\blacksquare$
-
-### 6.3 Physical Consequences
-
-| Consequence | Formula | Status |
-|-------------|---------|--------|
-| Time quantum (chronon) | $\delta\tau = 2\pi/(7\omega_0)$ | [T] Consequence |
-| Continuum limit | $N \to \infty \Rightarrow \tau \in \mathbb{R}$ | [T] Proved |
-| Discrete $\infty$-groupoid | $\mathbf{Exp}^{disc}_\infty$ for $N < \infty$ | [T] [Formalized](/docs/proofs/categorical/categorical-formalism#exp-disc-infty) |
-
-### 6.4 Connection to the 42D Formalism
-
-Full Page–Wootters state space:
-
-$$
-\mathcal{H}_{total} = \mathcal{H}_O \otimes \mathcal{H}_{6D}, \quad \dim = 7 \times 6 = 42
-$$
-
-where $\mathcal{H}_{6D} = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |U\rangle\}$ — the 6 remaining Holon dimensions.
-
-The minimal 7D formalism is obtained via diagonal embedding — see [Coherence Matrix](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization).
-
-### 6.5 The $N \to \infty$ Limit
-
-:::info Algebraic, not topological limit
-As $N \to \infty$, discrete time $\tau \in \mathbb{Z}_N$ passes to continuous time **algebraically**:
-
-$$
-\lim_{N \to \infty} \mathbb{C}[\mathbb{Z}_N] \cong C(S^1)
-$$
-
-as $C^*$-algebras. Topologically $\hat{\mathbb{Z}} = \varprojlim_N \mathbb{Z}_N$ is a totally disconnected space, whereas $U(1) \cong S^1$ is connected. The transition is **algebraic** (group algebras), not topological (groups).
-:::
-
-Scaled limit:
-
-$$
-t := \lim_{N \to \infty} \tau_n \cdot \delta\tau(N) = \lim_{N \to \infty} \tau_n \cdot \frac{2\pi}{N \cdot \omega_0}
-$$
-
-| $N$ | $\delta\tau$ | Interpretation |
-|-----|--------------|----------------|
-| 7 | $\approx 0.9/\omega_0$ | UHM chronon (minimal quantum of subjective time) |
-| 100 | $\approx 0.063/\omega_0$ | Mesoscopic limit |
-| $\infty$ | 0 | Classical limit (continuous time) |
-
----
+Choose a clock with $N$ pointer labels and cyclic shift $V|k\rangle=|k+1\bmod N\rangle$. Its readout set is $\mathbb Z_N$ by construction (the content of Theorem 3.4). With energy levels $\hbar\omega_0 k$, consecutive Fourier-clock readings are spaced by $2\pi/(N\omega_0)$. Conditioning a joint clock–system state on such a reading requires a specified tensor product, state and clock measurement. The Page–Wootters constraint is a further input. With $N=7$ and a six-level system this model has dimension 42. At fixed $\omega_0$ the readings become dense on a circle as $N$ grows. Finite dimension alone gives neither a universal chronon nor a continuum time law. [Clock algebra](/docs/core/structure/dimension-o#алгебра-часов) · [Page–Wootters construction](/docs/proofs/dynamics/emergent-time)
 
 ## 7. Precedents: Reconstructions of Quantum Theory {#7-прецеденты-реконструкции}
 
@@ -401,14 +121,9 @@ They work inside **generalized probabilistic theories** (GPTs): a state is simpl
 
 ### 7.2 What the reconstructions mean for UHM {#72-что-реконструкции-значат-для-угм}
 
-The four points below are interpretive comparisons [I]; each names the corpus statement it rests on.
+Chiribella, D’Ariano and Perinotti combine purification with five operational principles, including local distinguishability. Real quantum theory also admits purification. Two rebits can have identical local-product statistics and be perfectly distinguishable jointly. Transposition provides a separate test of admissibility on a composite: partial transposition of a Bell state has eigenvalue $-1/2$. Recovering complex quantum theory from the proposed UHM state–effect pairing would require a composition rule and experiments that resolve these alternatives. [Reconstruction](https://arxiv.org/abs/1011.6451) · [Real quantum theory](https://arxiv.org/abs/1005.4870) · [Exact preparation controls](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/verify_preparations.py)
 
-1. **UHM posits what the reconstructions derive.** The corpus says so itself. Its epistemic audit names the quantum posit (QG) — "that the states of reality form a quantum state space (density operators on a Hilbert space)" — as one of the two inputs UHM does not derive, and adds that reconstruction programmes could relocate (QG) to weaker operational axioms but cannot remove a first posit ([epistemic vertical, §8](/docs/reference/epistemic-vertical#края)); T-190 derives the axioms A1–A5 *from* (AP)+(PH)+(QG)+(V) together with MaxEnt, with (QG) among the premises. Nothing on this page derives complex numbers, the trace rule or the tensor product: Theorem 3.1 removes $\mathcal{D}$ and $\mathcal{R}$ from an equation that already contains $-i[H_{\mathrm{eff}}, \Gamma]$, and the retracted Theorem 3.2 compared two categories that are both built from Hilbert spaces. "Reduction" in the title therefore means that standard quantum mechanics is a regime of UHM, not that UHM produces it. The reconstructions are not rivals of this page; they are the step that would have to come before it, and that step is not in the corpus.
-2. **The regime $R > 0$ lies outside every reconstructed theory.** Each reconstruction starts from the operational meaning of a mixture: if a preparation is a coin-flip mixture of two preparations, it cannot matter whether the outcome of the coin is forgotten before or after a transformation, so every transformation acts affinely on states, $T(q\rho_1 + (1-q)\rho_2) = qT(\rho_1) + (1-q)T(\rho_2)$ (Hardy 2001, Eqs. (41)–(46); Masanes and Müller 2011, §II C). The regenerative term of UHM is not affine in $\Gamma$ — it is weighted by $\kappa(\Gamma)$ and $g_V(P(\Gamma))$ ([evolution, §3](/docs/core/dynamics/evolution#3-регенеративный-член)) — so the full UHM dynamics violates the requirement from which the reconstructions start. A no-go theorem makes the stake explicit: C. Simon, V. Bužek and N. Gisin showed that if states are described in Hilbert space, outcome probabilities follow the trace rule and superluminal signalling is impossible, then the dynamics must be linear and completely positive on density matrices ("The no-signaling condition and quantum dynamics", *Phys. Rev. Lett.* **87**, 170405 (2001), arXiv:quant-ph/0102125). The corpus meets the nonlinearity question with the statement that its evolution depends on $\Gamma$ alone ([ensemble independence](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)); that statement does not answer this theorem, because a map can depend on $\Gamma$ alone and still fail to be affine. This collision is not yet answered in the corpus.
-3. **Where UHM goes further.** Nowhere in the domain of the reconstructions: no corpus theorem improves on a reconstruction theorem. UHM's specific content — the dimension seven, the Fano form of the dissipator — lies downstream of (QG) and concerns which quantum system is meant, not why the theory is quantum.
-4. **UHM's seven and $G_2$ are not the rejected $d = 7$ ball.** The case set aside in §7.1 is a seven-dimensional *state space* of an elementary system, a Bloch ball with boundary $S^6$. The state space of a holon is $\mathcal{D}(\mathbb{C}^7)$ — a quantum seven-level system with pure states $\mathbb{CP}^6$ and 48 real parameters — on which $G_2 \subset SO(7) \subset U(7)$ acts as a symmetry inside ordinary quantum theory. Those results therefore do not refute UHM. What they show is that when the combination "seven, $G_2$, Fano triples" was tried as the foundation of a probabilistic theory, it failed — one more reason why UHM's use of it has to stay downstream of the quantum posit (QG), as point 1 says.
-
----
+The nonlinear feedback law also depends on operational resources. A fixed environment, channel and partial trace produce an affine map. On the specified canonical ray, the exact nonlinear target requires repeated preparations and heralded success. [Resource bound](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/feedback.md)
 
 ## 8. Kochen–Specker Contextuality in the Holon Space {#8-контекстуальность-кш}
 
@@ -422,32 +137,17 @@ The 63 rays form 135 orthonormal bases of $\mathbb{C}^7$, each ray lying in 15 o
 
 **Proof.** The counts are a finite enumeration of the maximal orthogonal subsets (all have seven elements). Non-colourability is a finite 0/1 feasibility problem — 63 variables, 135 equality constraints $\sum_{r \in b} v_r = 1$ — and it is infeasible; this is checked by an exact integer-programming solver (`test_e7_rays_from_the_hamming_quadrangles_are_kochen_specker`) and was confirmed independently by a propagating backtracking search. A basis-critical subfamily of 36 of the 135 bases is already uncolourable. The configuration $63_{15}$–$135_7$ of the $E_7$ rays and its Kochen–Specker property are due to A. Ruuge, "Exceptional and non-crystallographic root systems and the Kochen–Specker theorem", *J. Phys. A: Math. Theor.* **40**, 2849–2859 (2007), arXiv:0906.2696; what is added here is its construction from the Fano plane and the Hamming code of the UHM chain. $\blacksquare$
 
-**What this does and does not claim.** Kochen–Specker sets exist in every dimension $d \geq 3$, so contextuality of $\mathbb{C}^7$ is expected; the content of T-201′ is that the canonical structure the UHM chain produces (the Fano plane of Step T12 and its Hamming code of Step T8) yields a Kochen–Specker set without further choices. It does not claim that the Fano channel or the line projectors are contextual, and it does not revive the retracted corollary about SYNARC distinguishing classical from quantum outcomes.
+The $E_7$ result assumes that all the indicated bases are available as quantum measurements. It supplies no method of implementing them on a physical node. In reconstruction G3 the scalar subcontext covers every context in the proposed dense topology. Sheafification there identifies all spectral characters. A physical contextuality claim requires a site that retains the distinctions and an operational implementation of the contexts. [Ruuge’s construction](https://arxiv.org/abs/0906.2696) · [Context checks](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/verify_context.py)
 
----
+**Related models and definitions**
 
-## Summary Table of Results
-
-| Theorem | Statement | Status |
-|---------|-----------|--------|
-| **T.3.1** | Reduction to the Schrödinger equation at $R \to 0$ | [T] Proved |
-| **T.3.2** | ~~Category equivalence $\mathbf{Hol}_{R=0} \simeq \mathbf{QM}$~~ | [✗] Retracted (§4.2) |
-| **T.3.2′** | $\mathbf{Hol}^u \simeq \mathbf{QM}_7^{>2/7}$; all of $\mathbf{QM}_d$, $d \leq 3$, embeds faithfully; sharp at $d = 4$ | [T] Proved (§4.2) |
-| **T-201′** | Kochen–Specker contextuality of the 63 Fano–Hamming ($E_7$) rays in $\mathbb{C}^7$ | [T] Proved (§8) |
-| **T.3.3** | Classification of systems by $R$ and $\Omega$ | [I] Classification scheme (the row $R = 0$ is empty under $R = 1/(7P)$) |
-| **T.3.4** | Discreteness of internal time $\tau \in \mathbb{Z}_N$ | [T] Proved |
-| **T.1.1** | Functoriality of the forgetful functor $\mathcal{U}: \mathbf{Hol} \to \mathbf{DensityMat}$ | [T] Proved |
-
----
-
-**Related Documents:**
-- [Physics Correspondence](/docs/proofs/physics/physics-correspondence) — full context of theorems 3.1-3.4
-- [Quantum Measurement](/docs/physics/quantum-mechanics/measurement) — theory of measurement from $\Omega$
-- [Evolution of Γ](/docs/core/dynamics/evolution) — equation of motion, derivation of $H_{eff}$
-- [Emergent Time](/docs/proofs/dynamics/emergent-time) — Page–Wootters mechanism, modality ▷
-- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — L-unification: $\Omega \to \chi_S \to L_k \to \mathcal{L}_\Omega \to \varphi$
-- [Coherence Matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$, connection between formalisms
-- [Dimension O](/docs/core/structure/dimension-o) — clock algebra $H_O$, $V_O$, $\mathcal{A}_O$
-- [Critical Purity](/docs/proofs/dynamics/theorem-purity-critical) — connection of $P_{crit} = 2/7$ to time
-- [Categorical Formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, $\mathbf{Exp}^{disc}_\infty$
-- [Physics — Overview](/docs/physics/overview) — complete results map
+- [Physics Correspondence](/docs/proofs/physics/physics-correspondence)
+- [Quantum Measurement](/docs/physics/quantum-mechanics/measurement)
+- [Evolution of Γ](/docs/core/dynamics/evolution)
+- [Emergent Time](/docs/proofs/dynamics/emergent-time)
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega)
+- [Coherence Matrix](/docs/core/dynamics/coherence-matrix)
+- [Dimension O](/docs/core/structure/dimension-o)
+- [Critical Purity](/docs/proofs/dynamics/theorem-purity-critical)
+- [Categorical Formalism](/docs/proofs/categorical/categorical-formalism)
+- [Physics — Overview](/docs/physics/overview)

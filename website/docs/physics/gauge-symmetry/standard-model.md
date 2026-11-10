@@ -1,46 +1,18 @@
 ---
 sidebar_position: 2
-title: "Standard Model from G₂"
+title: "Octonion Symmetries and the Standard Model"
+description: "Octonion stabilizers, conditional matter representations and the Standard Model gauge group"
 ---
 
-# Standard Model from G₂
+# Octonion Symmetries and the Standard Model
 
-:::info For whom this chapter is intended
-Derivation of the Standard Model gauge group from $G_2 = \mathrm{Aut}(\mathbb{O})$. The reader will learn about the dual extraction strategy for $\mathrm{SU}(3)_C$ and the electroweak sector.
-:::
-
+The stabilizer of a chosen unit imaginary octonion is $SU(3)$, and $\mathbf{14}$ restricts to $\mathbf8\oplus\mathbf3\oplus\bar{\mathbf3}$. Identifying this subgroup with colour is a physical hypothesis. Rank excludes the full Standard Model group as a subgroup of $G_2$. The Clifford construction T-326 uses additional spinor data. T-347 and T-350 leave the matter premise (Cl₀) independent. A separate two-node construction gives the quotient by $\mathbb Z_6$ on a chosen sector $\mathbf2\otimes(\mathbf1\oplus\mathbf3)$ after supplying an axis, a triplet and the weak action. Extending its matter content, interactions and Gauss constraints to a physical network remains open. The three-site transport experiment checks local covariance for a supplied group. [Bridge premises](/docs/reference/premises#t-350) · [Network results](/docs/reference/network-results).
 
 ## Overview
 
-:::info[What the heading means]
-$\mathrm{rank}(G_2) = 2 < \mathrm{rank}(\mathrm{SM}) = 4$, so the SM gauge group **is not a subgroup** of $G_2$. The page obtains it from $G_2$ **plus** constructions outside $G_2$; after the retraction of 2026-09-25 (the axis sets $\{A,S,D\}$, $\{L,E,U\}$ are not the $\mathbf 3$, $\bar{\mathbf 3}$ of $\mathrm{SU}(3)$, Theorem 1.1(a) below) the statuses are:
-- $\mathrm{SU}(3)_C$ from $G_2$ as the stabilizer of the O-direction — **[T]** as mathematics ($\mathrm{Stab}_{G_2}(e_O)\cong\mathrm{SU}(3)$; prior art, Günaydın–Gürsey 1973); its reading as colour is **[I]**
-- Electroweak sector $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from the Fano-electroweak construction (FE): the pair $(E,U)$ from $\kappa_0$ and the line $\{A,E,U\}$ through it are **[T]** combinatorics; the group and its uniqueness are **[C at (FE)]**, where (FE) is the assumption that the electroweak group acts on $\mathrm{span}\{L,E,U\}$ of the Page–Wootters system factor — an input that the retracted split "$\bar{\mathbf 3}=\{L,E,U\}$" used to supply
-- Full correspondence "SM from $G_2$ + (FE)" — **[C]** (electroweak dynamics is conditional)
-- **Corrected route (2026-09-25, [§2.5](#sm-из-клиффорда)):** on $\mathbb{C}\otimes\mathbb{O}$ — UHM's Hilbert space plus the parallel spinor — the octonionic Clifford system is forced and generates $\mathfrak{spin}(9)$. The centraliser of colour in it is $\mathfrak{u}(2)$, and the whole group is $(\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1))/\mathbb{Z}_6$ with hypercharges $\tfrac16$ and $-\tfrac12$ on the left-handed doublets. This is **[T]** as mathematics (T-326; prior art Todorov–Dubois-Violette 2018, Krasnov 2021) and **[C at (Cl)]** as a result of UHM. Chirality of the doublets: T-327. Families must be horizontal: T-328. The complexified spinor carries a forced tenth generator and one complete, anomaly-free generation with $\nu_R$; in it the $\mathrm{SU}(2)$ of T-326 is the diagonal of $\mathrm{SU}(2)_L\times\mathrm{SU}(2)_R$, and $B-L$ returns: T-329 ([§2.6](#поколение-t329))
-:::
-
-The central task is the derivation of the Standard Model gauge group $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from $G_2 = \mathrm{Aut}(\mathbb{O})$. The strategy is dual: $\mathrm{SU}(3)_C$ is extracted from the stabilizer of the O-direction in $G_2$, while the electroweak sector $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ comes from the Fano-electroweak construction (FE) on the pair $(E,U)$ and the Higgs line $\{A,E,U\}$. (The former phrase "the Higgs line canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$" is retracted [✗]: $\{L,E,U\}$ is not the $\bar{\mathbf 3}$.)
-
-:::tip[Status: \[T\] for SU(3)\_C]
-$\mathrm{SU}(3)_C$ from $G_2$ is a standard mathematical fact.
-:::
-
-:::tip[Status: \[T\] for the combinatorics of the electroweak sector; the group is \[C at (FE)\]]
-The formula $\kappa_0$ [T] categorically singles out the **unique** pair $(E,U)$ via $\mathrm{Hom}(O,E)$ and $\mathrm{Hom}(O,U)$, and the only Fano line through $E$ and $U$ is $\{A,E,U\}$ — both [T]. That these data determine $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ is [C at (FE)]; the step "the Higgs line canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$" that used to carry it is retracted [✗]. Proof and its status: [sect. 2.3a](#теорема-единственности-фэ).
-:::
-
 <a id="электрослабое-разграничение"></a>
 
-:::warning Distinction between [T] and [C] in the electroweak sector
-Two levels of results must be clearly separated:
-
-- **[T] (proven):** combinatorial uniqueness of the pair $(E,U)$ from $\kappa_0$, uniqueness of the Higgs line $\{A,E,U\}$. The "canonical decomposition $\bar{3} \to 2_{EU} \oplus 1_L$" listed here before is retracted [✗]
-- **[C] (conditional):** full dynamical gauge structure $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ with correct running of coupling constants — depends on dynamical content (Gap potential, RG equations) going beyond pure combinatorics
-- **Free parameter:** the hypercharge generator $Y$ contains the parameter $\alpha$ (relative weight of baryon number and weak isospin within $\bar{3}$), whose value is not fixed by the Fano structure and requires an additional condition (e.g., from anomaly freedom or phenomenology)
-:::
-
----
+The (FE) construction supplies a weak action on selected coordinates. In the Clifford construction, identifying the spinor representation with matter requires (Cl₀). The commutant of the colour decomposition $\mathbb C\oplus\mathbf3\oplus\bar{\mathbf3}$ on one holon is abelian. There is no independent weak $SU(2)$ commuting with colour on that carrier. [T-326](#sm-из-клиффорда) · [T-347](/docs/reference/premises#t-347).
 
 ## 1. Anatomy of $G_2$ and the Rank Problem
 
@@ -48,9 +20,10 @@ Two levels of results must be clearly separated:
 
 **Fundamental obstacle.** $\mathrm{rank}(G_2) = 2$, while $\mathrm{rank}(\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)) = 2 + 1 + 1 = 4$. Consequently, the SM group **is not a subgroup** of $G_2$.
 
-**Strategy.** Overcome the obstacle through two mechanisms:
-- (A) $\mathrm{SU}(3)_C$ from the stabilizer of the O-direction in $G_2$ — **[T]** (structural symmetry, rank $2 \to$ rank 2)
-- (B) $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from the Fano-electroweak construction (FE) on the Page–Wootters system factor — **[C at (FE)]** (the pair $(E,U)$ from $\kappa_0$ is [T]; adds rank 2 in the 42D PW extension). The former "the Higgs line canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$ — [T]" is retracted [✗]. In the Clifford frame of [§2.5–§2.6](#sm-из-клиффорда) (FE) is replaced by (Cl₀) — fermions are vectors of the spinor module — and the electroweak group follows as [C at (Cl)] (T-326, T-329); (FE) is carried only by the axis-frame construction kept on this page ([Premises of UHM](/docs/reference/premises#гипотезы-отождествления)).
+**Two constructions to compare.**
+
+- Fixing a unit imaginary octonion selects an $SU(3)$ stabilizer [T]. Interpreting its triplet as physical colour is a separate hypothesis.
+- The Fano-electroweak construction supplies a weak action (FE). The Clifford model instead supplies a spinor matter module (Cl₀). Each construction has its own representation space. [Clifford construction](#sm-из-клиффорда) · [Identification premises](/docs/reference/premises#гипотезы-отождествления)
 
 ### 1.2 Theorem 1.1 (Decomposition of $G_2$-generators under $\mathrm{SU}(3)$)
 
@@ -88,17 +61,9 @@ $$\mathfrak{g}_2 = \mathfrak{su}(3) \oplus \mathfrak{m}, \quad \mathfrak{m} \con
 
 where $\mathfrak{m}$ is the orthogonal complement, isomorphic to $3 \oplus \bar{3}$ as an $\mathrm{SU}(3)$-module (Besse, 1987). For sector (c): 21 pairs $= C(7,2)$ decompose by the rules of tensor products of $\mathrm{SU}(3)$ representations. The sector $3 \otimes \bar{3} = 8 \oplus 1$ is the standard decomposition (Clebsch-Gordan). $\blacksquare$
 
-### 1.3 Corollary 1.1 ($\mathrm{SU}(3)_C$ as the Stabilizer of Time)
+### 1.3 The axis stabilizer and the colour hypothesis {#13-corollary-11-mathrmsu3_c-as-the-stabilizer-of-time}
 
-:::tip[Status: Theorem \[T\]]
-The choice of the O-dimension as "clock" (Page–Wootters, Axiom 4) spontaneously breaks $G_2 \to \mathrm{SU}(3)$.
-:::
-
-:::info Fundamentality of $G_2$-gauge symmetry [T]
-$G_2$ is not an arbitrarily chosen symmetry, but the **only maximal gauge group** of UHM, proven in the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#лемма-g4) [T]: no larger subgroup of $U(7)$ preserves all axiomatic structures. Consequently, the entire SM structure ($G_2 \to \mathrm{SU}(3)_C$ breaking, electroweak sector) is a **necessary** consequence of the uniqueness of the holonomy representation, not a parametric choice.
-:::
-
-The remaining $\mathrm{SU}(3)$ is identified with the **gauge group of the strong interaction** $\mathrm{SU}(3)_C$:
+Fix a unit $e_O\in\operatorname{Im}\mathbb O$. The subgroup of $\operatorname{Aut}(\mathbb O)$ preserving $e_O$ is isomorphic to $SU(3)$ and acts on the orthogonal complement as the underlying real space of $\mathbb C^3$. This is a stabilizer calculation. A physical symmetry-breaking mechanism would require a dynamical field and a vacuum selecting that direction. Identifying the stabilizer with QCD colour also requires quark and gluon fields, their local gauge action and measured interactions. The choice of a clock axis establishes none of those inputs. [Algebraic rigidity](/docs/proofs/categorical/uniqueness-theorem#лемма-g4)
 
 :::danger Items (a)–(c) retracted [✗] (2026-09-25)
 They identified the eight generators of $\mathrm{SU}(3)_C$ with coherences of the nine pairs $\{A,S,D\}\times\{L,E,U\}$ and read unbroken colour off an equal Gap on those pairs. Both rest on the retracted labels of Theorem 1.1(a). The generators of $\mathfrak{su}(3)\subset\mathfrak{g}_2\subset\mathfrak{so}(7)$ are real antisymmetric $7\times7$ matrices acting on all six non-$O$ axes (its Cartan subalgebra rotates the planes $(A,D)$, $(S,U)$, $(L,E)$ with angles summing to zero). An $\mathrm{SU}(3)_C$-invariant $\Gamma$ has off-diagonal entries only on $(A,D)$, $(S,U)$, $(L,E)$ (`test_su3_invariant_states_are_coherent_only_on_o_line_pairs`); a vacuum with non-zero coherence on the nine pairs, equal Gap or not, therefore breaks $\mathrm{SU}(3)_C$ instead of exhibiting it. Unbroken colour is thus not derived on this page; what vacuum is compatible with it is an open problem [Pr].
@@ -110,16 +75,13 @@ They identified the eight generators of $\mathrm{SU}(3)_C$ with coherences of th
 
 **(c)** ~~$\mathrm{SU}(3)_C$ is an exact symmetry, because the Gap vacuum is isotropic in the 3-to-$\bar{3}$ sector, $\mathrm{Gap}(A,L) = \cdots = \mathrm{Gap}(D,U)$~~ — retracted [✗]: equal Gap on axis pairs is not $\mathrm{SU}(3)$-invariance (box above).
 
-**Justification of the identification.** Of all possible candidates for $\mathrm{SU}(3)$ (stabilizers of $A, S, \ldots, U$), O is the only one for which:
-- (i) The stabilizer has a physical meaning (choice of the "clock" subsystem)
-- (ii) The remaining $\mathrm{SU}(3)$ acts on the six axes other than $O$, as on one copy of $\mathbb{C}^3$ (not separately on "spatial" and "Gap" sectors — Theorem 1.1(a))
-- (iii) $G_2$-invariance of the Lagrangian guarantees conservation of $\mathrm{SU}(3)_C$ charges (8 of the 14 $G_2$-charges)
+Conjugate choices of the axis have isomorphic stabilizers. Testing whether a chosen axis is a physical clock and whether its stabilizer acts as colour requires separate experiments.
 
 ---
 
 ## 2. Electroweak Sector from the Fano-Electroweak Construction (FE) {#электрослабый-сектор-фэ}
 
-### 2.1 The Rank Problem and Its Solution {#проблема-ранга}
+### 2.1 Rank and the additional weak action {#проблема-ранга}
 
 **Problem.** $\mathrm{rank}(\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y) = 2$, but after extracting $\mathrm{SU}(3) \subset G_2$ (rank 2) no rank remains for the electroweak sector — $G_2$ is already "exhausted."
 
@@ -127,7 +89,7 @@ They identified the eight generators of $\mathrm{SU}(3)_C$ with coherences of th
 
 | Mechanism | Source | Result | Status |
 |---|---|---|---|
-| $G_2 \to \mathrm{SU}(3)_C$ | Stabilizer of the O-direction | rank 2 — strong interaction | **[T]** |
+| $G_2\supset SU(3)$ | Stabilizer of a chosen unit axis | Abstract rank-two subgroup | [T] Group theory, [H] colour identification |
 | Fano-electroweak construction (FE) | Higgs line $\{A,E,U\}$ | rank 2 — electroweak interaction | **[C at (FE)]** (the combinatorics of $(E,U)$ is [T]; dynamics [C]) |
 
 **Analysis in 7D — retracted [✗] and replaced.** The former analysis read $\bar{3} = \{L,E,U\}$ as the anti-triplet, took $\lvert E\rangle\langle E\rvert - \lvert U\rangle\langle U\rvert$ for one of its Cartan generators and concluded that in 7D $\mathrm{SU}(2)_L$ is a subgroup of "$\mathrm{SU}(3)_{\bar{3}}$". Both premises are false: the anti-triplet is spanned by $A+iD$, $S+iU$, $L+iE$, and the generators of $\mathrm{SU}(3)\subset G_2\subset\mathrm{SO}(7)$ are real antisymmetric matrices, which a real diagonal matrix is not. What is true in 7D: the $\mathrm{SU}(2)$ generated by $T_{1,2,3}$ on $\mathrm{span}\{E,U\}$ does **not** commute with $\mathrm{SU}(3)_C$ (numerically $\max_a\|[T_a,X]\|=3.6$ over a basis $X$ of $\mathfrak{su}(3)$), and Schur's lemma gives the centraliser of $\mathrm{SU}(3)_C$ in $\mathrm{U}(7)$ as $\mathrm{U}(1)^3$ (dimension 3, checked) — it contains no $\mathrm{SU}(2)$ at all. In 7D the electroweak group of (FE) and the colour group therefore cannot coexist as commuting factors.
@@ -430,6 +392,9 @@ In $\mathfrak{g}_2$ the two maps have the same stabiliser; beyond $\mathfrak{g}_
 
 ---
 
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
+
 ## 3. Fermionic Representations as Gap Configurations
 
 ### 3.1 Theorem 3.1 (Quarks and Leptons as Gap Configurations)
@@ -724,37 +689,17 @@ $$\frac{\delta\lambda}{\lambda_{\mathrm{SM}}} \sim \frac{\lambda_3^2 \bar{A}^2}{
 
 ---
 
+</details>
+
 ## 7. Ward Identities and the $\Lambda$ Suppression Factor
 
 ### 7.1 Vacuum Correlator from Ward Identities
 
-The 14 Ward identities generated by $G_2$-symmetry uniquely fix the vacuum two-point Gap correlator:
-
-$$C_{(ij),(kl)}^{(\mathrm{vac})} = \langle\mathrm{Gap}(i,j) \cdot \mathrm{Gap}(k,l)\rangle_{\mathrm{vac}} = \alpha \delta_{(ij),(kl)} + \beta \sum_p \Pi_p^{(ij)} \Pi_p^{(kl)} + \gamma \epsilon^{\mathrm{Fano}} \epsilon^{\mathrm{Fano}}$$
-
-With $G_2$-invariance taken into account: $C$ decomposes over $G_2$-invariant tensors:
-
-$$C = \alpha \cdot \mathbf{1}_{21} + \beta \cdot \mathbf{F}_{21} + \gamma \cdot \mathbf{F}_{21}^2$$
-
-The Ward identities fix the relations:
-
-$$\beta = -\frac{3\alpha}{7}, \quad \gamma = \frac{3\alpha}{49}$$
-
-The only free parameter is $\alpha$ (overall amplitude of fluctuations).
+For the real $G_2$ module $\Lambda^2\mathbb R^7=\mathbf7\oplus\mathbf{14}$ an invariant symmetric covariance has an independent scalar on each irreducible summand. Ward invariance leaves their ratio free.
 
 ### 7.2 Anticorrelation and the $19/49$ Suppression Factor
 
-:::tip[Status: Theorem \[T\]]
-The Ward identities lead to suppression of the total contribution of Gap fluctuations to $\Lambda$.
-:::
-
-The correlator $C = \lambda_+ P_7 + \lambda_- P_{14}$ with eigenvalues $\lambda_+ = 19\alpha/49$ and $\lambda_- = 73\alpha/49$ (from the [$F_{21}$ spectrum](/docs/physics/gauge-symmetry/noether-charges#собственные-значения-f21)). The vector $\mathbf{1}_{21}$ lies entirely in the Fano-symmetric sector $V_7$ ($P_7\mathbf{1} = \mathbf{1}$), so the total contribution of Gap fluctuations to $\Lambda$ is determined only by the "small" eigenvalue $\lambda_+$:
-
-$$\frac{\mathbf{1}^T C \mathbf{1}}{\mathbf{1}^T (\alpha I_{21}) \mathbf{1}} = \frac{\lambda_+}{\alpha} = \frac{19}{49} \approx 0.39$$
-
-Suppression by a factor of $\sim 2.6$ (or $10^{-0.41}$), applied to the cosmological constant $\Lambda$. More detail: [Cosmological constant](/docs/physics/gravity/cosmological-constant).
-
----
+For the particular polynomial in the unsigned incidence matrix used here the uniform vector has eigenvalue $19\alpha/49$. Identifying that value with a measured vacuum suppression needs a covariance and an energy readout. [Ward calculation](/docs/physics/gauge-symmetry/noether-charges#тождества-уорда-разложение).
 
 ## 8. Generation Selection Principle
 
@@ -770,67 +715,16 @@ $$\frac{6!}{(2!)^3 \cdot 3!} = 15$$
 
 ### 8.2 Theorem 8.1 (PSL(2,7)-Orbits)
 
-:::tip[Theorem 8.1 (PSL(2,7)-orbits) \[T\]]
-The automorphism group of the Fano plane $\mathrm{PSL}(2,7)$ (order 168) acts on the set of partitions and divides the 15 partitions into two equivalence classes.
-:::
+With a Fano point $O$ fixed, its stabilizer $S_4$ permutes the other six points as the six edges of a tetrahedron. The three Fano lines through $O$ pair opposite edges. A matching of six edges contains three, one, or zero of these opposite pairs. The first case gives one matching. In the second there are three choices of opposite pair and two ways to pair the remaining four edges. The other eight matchings contain no opposite pair.
 
-**(a)** $\mathrm{PSL}(2,7)$ contains the stabilizer of the point O: $\mathrm{Stab}(O) \cong S_4$ (order 24). Action of $S_4$ on the 6 points $\{1,\ldots,6\}$ via $S_4 \subset S_6$.
-
-**(b)** Number of orbits on 15 partitions under the action of $S_4$: by Burnside's lemma:
-
-$$|X/S_4| = \frac{1}{|S_4|} \sum_{g \in S_4} |X^g| = 2$$
-
-Two equivalence classes:
-- **Class I** (type "associative"): 6 partitions. $(k_1, k_2, k_3)$ such that $k_1 + k_2 + k_3 \equiv 0 \pmod{7}$.
-- **Class II** (type "non-associative"): 9 partitions. $k_1 + k_2 + k_3 \not\equiv 0 \pmod{7}$.
-
-**(c)** Example. Multiplicative group $\mathbb{Z}_7^* = \{1,2,3,4,5,6\}$. Triple $(1,2,4)$: $1+2+4 = 7 \equiv 0 \pmod{7}$ — **Class I**.
-
-**Proof.** From the structural theorem for $\mathrm{PSL}(2,7)$: the stabilizer of a point $S_4$ acts on $\mathbb{F}_7 \setminus \{0\}$ via linear/affine transformations. A partition $\{a_1,b_1\},\{a_2,b_2\},\{a_3,b_3\}$ is invariant under $g \in S_4$ if and only if $g$ permutes the pairs. The orbit structure is determined by the "sum invariant" $\sigma = k_1 + k_2 + k_3 \bmod 7$. Under the $S_4$-action, $\sigma \equiv 0$ is an invariant condition (subset of the kernel). $\blacksquare$
+To verify transitivity in each case, count fixed matchings under vertex permutations. The identity fixes 15, each of the six 4-cycles fixes one, and each of the other 17 permutations fixes three. Burnside's lemma gives $(15+6+51)/24=3$ orbits. Their sizes are therefore **1, 6 and 8**. The former $6+9$ split is withdrawn [✗]. Selecting one member of each pair requires extra choices. Their sum modulo seven is not an invariant of a matching.
 
 ### 8.3 Theorem 8.2 (Selection Principle: Minimal Associator)
 
-:::tip[Theorem 8.2 (Selection principle) \[T\]]
-The physically realized Z₇-triplet minimizes the total associator of the three generations. The unique triplet with $\mathcal{A} = 0$ is $(1,2,4)$.
-:::
+For three distinct basis units of the chosen octonion table the squared norm of the associator is zero on each of the seven Fano lines and four off those lines. Four lines avoid $O$. In the stated cyclic numbering $\{1,2,4\}$ is both a Fano line and the subgroup of quadratic residues in $\mathbb Z_7^*$. The opposite coset $\{3,5,6\}$ is not a line. The associator alone leaves all four lines avoiding $O$ available. Selecting one as the set of observed matter families requires an independent physical assignment.
 
-**(a)** Associator measure of a triplet:
-
-$$\mathcal{A}(k_1, k_2, k_3) := \|[e_{k_1}, e_{k_2}, e_{k_3}]\|^2 = \|(e_{k_1} \cdot e_{k_2}) \cdot e_{k_3} - e_{k_1} \cdot (e_{k_2} \cdot e_{k_3})\|^2$$
-
-where $e_k$ are the imaginary units of the octonions.
-
-**(b)** From the octonion multiplication table (see [octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation)):
-
-For a Fano triplet $(i,j,k)$: $[e_i, e_j, e_k] = 0$ (associator is zero). For a non-Fano triple:
-
-$$\|[e_i, e_j, e_k]\|^2 = 4 \quad \text{for all non-Fano triples}$$
-
-**(c)** Classification:
-
-| Triple $(k_1,k_2,k_3)$ | Fano line? | $\mathcal{A}$ | Class |
-|---|---|---|---|
-| **(1,2,4)** — quadratic residues | **Yes** | **0** | **I (unique)** |
-| (3,5,6) — non-residues | No | 4 | II |
-| (1,3,5), (2,4,6), ... | No | 4 | II |
-
-**(d)** Class I triplets with $\mathcal{A} = 0$ are **associative**: the three imaginary units $e_{k_1}, e_{k_2}, e_{k_3}$ form an associative subalgebra $\mathbb{H} \subset \mathbb{O}$ (quaternionic).
-
-**(e)** Selection principle. From $V_3$-dynamics: the vacuum configuration minimizes energy. Contribution of three generations:
-
-$$V_3^{(\text{gen})} \propto \mathcal{A}(k_1, k_2, k_3) \cdot \lambda_3 \prod_n |\gamma_n|$$
-
-**Minimum is reached at $\mathcal{A} = 0$** — Class I.
-
-**(f)** $(1,2,4)$ is the **unique** triplet from $\mathbb{Z}_7^* \setminus \{7\}$ with $\mathcal{A} = 0$ (up to permutations). This is the subgroup of index 2 in $\mathbb{Z}_7^*$, isomorphic to $\mathbb{Z}_3$ (quadratic residues $\bmod 7$).
-
-:::info[Note on uniqueness]
-The map $k \to 7-k \pmod{7}$ is **not** an automorphism of the Fano plane ($k \to -k \notin \mathrm{Aut}(\mathrm{PG}(2,2)) = \mathrm{PSL}(2,7)$), so $\{3,5,6\}$ is not equivalent to $\{1,2,4\}$. Check: $\{3,5,6\}$ is not a Fano line, $\mathcal{A}(3,5,6) = 4 \neq 0$. The selection principle singles out $(1,2,4)$ in a **unique** way, without degeneracy.
-:::
-
-**Proof.** Step 1: from the PSL(2,7)-classification (sect. 7.2) — two classes. Step 2: from $V_3$-minimization — Class I ($\mathcal{A} = 0$). Step 3: from the definition of the associator in $\mathbb{O}$ — a triple $(k_1,k_2,k_3)$ forms a quaternionic subalgebra if and only if the triple is a subgroup of $\mathbb{Z}_7^*$. The unique subgroup of order 3 in $\mathbb{Z}_7^*$: the quadratic residues $\{1,2,4\}$. $\blacksquare$
-
----
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ## 9. Fano Selection Rule for Yukawa Couplings
 
@@ -1254,44 +1148,19 @@ The large PMNS mixing angles ($\theta_{12} \sim 34°$, $\theta_{23} \sim 45°$) 
 
 ---
 
+</details>
+
 ## 15. Status Summary
 
-| Result | Status |
+| Result | What follows |
 |---|---|
-| $\mathrm{SU}(3)_C$ from the stabilizer of O in $G_2$ | [T] |
-| Decomposition $14 \to 8 + 3 + \bar{3}$ (gluons + extra) | [T] |
-| $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from Fano-electroweak construction (FE) | [T] for the combinatorics (uniqueness of $(E,U)$, Higgs line); [C at (FE)] for the group; uniqueness among rank-4 groups [H]; the "$\bar 3\to\{E,U\}\oplus\{L\}$" decomposition retracted [✗] |
-| Consistency of the two $\mathrm{SU}(3)$'s ($G_2$ and 42D PW) | retracted [✗] (Theorem 2.2) |
-| Decomposition $7\to1_O\oplus3_{ASD}\oplus\bar3_{LEU}$ (axis labels) | retracted [✗]; replaced by $\mathbb{C}^7=\mathbb{C}e_O\oplus\mathbf 3\oplus\bar{\mathbf 3}$, $\mathbf 3=\mathrm{span}_{\mathbb C}\{A-iD,S-iU,L-iE\}$ [T] (Theorem 1.1(a)) |
-| $G_2\supset SU(3)\times SU(2)\times U(1)$ | retracted [✗] (rank $2<4$; sect. 3.1) |
-| Full SM from $G_2$ + (FE) | [C] (electroweak dynamics is conditional) |
-| $G_{\mathrm{SM}}=(\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1))/\mathbb{Z}_6$ as the normaliser of colour in the $\mathrm{Spin}(9)$ of $\mathbb{C}\otimes\mathbb{O}$ (T-326, §2.5) | [T] as mathematics; [C at (Cl)] in UHM; electroweak uniqueness through it [C at (Cl)] |
-| Chirality of the left-handed doublets, $(\mathbf 3,\mathbf 2)_{1/6}\oplus(\mathbf 1,\mathbf 2)_{-1/2}$ not self-conjugate (T-327, §4.4) | [C at (Cl)]; with the completion of §2.6 the whole generation is chiral |
-| No family symmetry inside one copy; triality not horizontal; clock ℤ₃ horizontal (T-328) | [T]; generations as clock harmonics [C at (GC)], (GC) [H]; (GC) with an exact ℤ₃ is refuted by mixing data [✗] |
-| Complexified spinor: forced tenth generator, $V_L\oplus V_R$ with $\omega=\pm L_{e_O}$, the $\mathrm{SU}(2)$ of T-326 diagonal, one generation with $\nu_R$ and SM hypercharges, anomalies cancel, the Higgs doublet in the colour-free Clifford plane; no $Z'$ in the doublet sector, $B-L$ with the right-handed fields (T-329, §2.6) | [T] as mathematics, [C at (Cl)] in UHM; Higgs identification [H]; "no $Z'$ at any energy" (T-297) stays [H] |
-| Quarks and leptons as Gap configurations | [H] |
-| Three generations from Fano structure ($N_{\text{gen}} = 3$) | **count [T], identification [I]** — exact count $\|\mathrm{QR}(7)\|=3$ [T], physical identification [I] ([proof](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)) |
-| Chirality from $\eta_0$ and $\mathrm{Gap}(E,U) = 0$ | retracted [✗] (sect. 4.3: spectrum $\pm i$, not $\pm1$; $G_2$ has only real representations) |
-| 18 gauge bosons (SM + 6 $G_2$-extra) | [T] for SM; [H] beyond SM |
-| Mass hierarchy from Gap hierarchy of the vacuum | [H] |
-| Resolution of hierarchy via RG with anomalous dimensions | [H] |
-| Higgs as Gap condensate of E-U coherence | [H] (as in sect. 6.1; the table said [T] until 2026-09-25; a condensate $\gamma_{EU}\neq0$ is not $\mathrm{SU}(3)_C$-invariant, sect. 9.4) |
-| $M_H^2 = 2\lambda_4 v^2 + 3\lambda_3^2 \bar{A}^2/(4\mu^2)$ (octonionic correction) | [H] |
-| $\delta\lambda/\lambda_{\text{SM}} \sim O(10^{-2}\text{--}10^{-3})$ (FCC prediction) | [I] |
-| Gap anticorrelation (Ward), factor $19/49$ | [T] |
-| Generation selection principle $(1,2,4)$ from associator | [T] (uniqueness) |
-| Fano Yukawa selection rule | **[T]** (via $f_{ijk}$ — unique $G_2$-invariant trilinear operator) |
-| Mass hierarchy $m_t \gg m_c, m_u$ from Fano selection | **[T]** (consequence of selection rule [T]); the further $m_c \gg m_u$ needs (SA) — [C at (SA)] |
-| $m_t \approx 173$ GeV from IR fixed point (unique O(1) Yukawa) | [T] |
-| Light generation masses via loop suppression | [H] (order of magnitude) |
-| Generation assignment: $k=1 \to 3$rd, $k=4 \to 2$nd, $k=2 \to 1$st | $k=1\to3$rd **[T]** (45a); $k=4\to2$nd, $k=2\to1$st **[C at (SA)]**, (SA) [H] (45b retracted) |
-| N=1 SUSY from parallel spinor $\eta_0$ | [T] |
-| SUSY breaking via $V_3$ | **[T]** (T-50: superpotential $W$ is unique, Schur's lemma) |
-| $m_{3/2} \sim 10^{13}$ GeV | **[T]** (T-50: $m_{3/2} \sim \varepsilon^3 M_P$ from uniqueness of $W$, Schur's lemma) |
-| $m_{\tilde{q}} \sim 10^{13}$ GeV (absence at LHC) | [H] |
-| $\tau_p \sim 4\times10^{47}$ years ($G_2$-extra channel) | [H] (proton effectively stable) |
-| $\delta_{\text{CP}} \approx 64.5°$ | **[✗]** (2026-09-26, T-345(e): the $12.6°$ correction is absent in the SM, uncorrected $77.1°$ is $7.6\sigma$ from $65.7°\pm1.5°$; was [H], $\approx 0.04\sigma$ from direct $64.6° \pm 2.8°$) |
-| Normal neutrino mass hierarchy | **[C]** (O-sector Yukawa; C14: $m_2/m_3$ with RG-correction) |
+| Octonionic stabilizer and branching | $G_2$ and $SU(3)$ fix the stated algebraic data. Identifying colour and supplying local gauge fields are physical inputs. |
+| Electroweak and matter constructions (FE), T-326, T-327, T-329 | Each specifies a carrier or an action. Its group and representation can be calculated. The physical spinor premise (Cl₀) remains open in T-347 and T-350. |
+| Three families (T-328) | There are three nonzero real harmonic pairs. The family identification (GC) is an extra hypothesis. |
+| Fano support, Higgs and Yukawa couplings | For marked $E,U$, exactly one basis component $f_{kEU}$ is nonzero. Masses, mixing, a colour-preserving Higgs vacuum and a Yukawa interaction need field data. |
+| Ward factor | $19/49$ is the eigenvalue ratio for a supplied coordinate covariance. See §7. |
+| Flavour estimates (T-332, T-345) | The loop mechanism for the bottom mass and the six-zero texture fail. The $64.5°$ CKM phase was retracted. The top mass, light masses and neutrino ordering remain undetermined. |
+| Supersymmetry (T-50) and proton decay | The parallel-spinor count requires full $G_2$ holonomy of a physical compactification. SUSY breaking, mediator content, the gravitino mass and the proton lifetime require additional inputs. |
 
 
 ---

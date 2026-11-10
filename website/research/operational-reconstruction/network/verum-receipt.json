@@ -2,6 +2,24 @@
   "binary_sha256": "eab11c03a975a6e44850ffb3a3320eb700f13a40c29dd9dbc3f67c42d9755f94",
   "declarations": [
     {
+      "name": "marginal_support",
+      "profile": "finite",
+      "cases": 8,
+      "source_sha256": "bd608f93767bd3e6fc4df46edde0929abbd258f3cb8c2f0c8c4560aadc376ead",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "471896dcd753eb613201a3a272d3c91904c99d5c0df2436d97e7e6ae8dfe67ae",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "joint_equal",
+      "profile": "finite",
+      "cases": 4,
+      "source_sha256": "bd608f93767bd3e6fc4df46edde0929abbd258f3cb8c2f0c8c4560aadc376ead",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "306d35ec65659063ee2ef2a71a3d96ed15289abcf5ba3cb536c110d478dfd76d",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
       "name": "aggregate_capacity",
       "profile": "pi-id",
       "cases": null,

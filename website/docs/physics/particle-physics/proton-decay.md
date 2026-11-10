@@ -2,27 +2,15 @@
 sidebar_position: 7
 title: "Proton Decay"
 slug: /physics/particle-physics/proton-decay
-description: "X,Y-leptoquarks from Gap hierarchy, lifetime τ_p ~ 10³⁷⁻³⁸ years, decay channels, comparison with Super-K and Hyper-K"
+description: "Proton lifetime scaling in a specified baryon-number-violating field model"
 ---
 
 # Proton Decay
 
-:::info Who this chapter is for
-Proton lifetime and decay channels from the Gap hierarchy of leptoquark masses. The reader will learn about UHM predictions and their comparison with experimental limits.
-:::
+A specified heavy mediator of mass $M_X$ with baryon-number-violating couplings can generate a dimension-six decay operator. For fixed coupling, running and hadronic matrix element the partial lifetime scales as $M_X^4$. A tenfold change in the assumed mediator mass changes that lifetime by four orders of magnitude. Neither the existence of this mediator nor the $10^{37}$–$10^{38}$ year range is an output of the operational reconstruction. A measurement would constrain the operator and its coefficient.
 
-
-Masses of $X,Y$-leptoquarks from the [Gap hierarchy](/docs/physics/gauge-symmetry/standard-model), calculation of the proton lifetime, decay channels and comparison with experimental limits from Super-Kamiokande and Hyper-Kamiokande.
-
-:::warning Standard SU(5)-GUT computation
-The formulas for the proton lifetime, decay channels and their ratios are **standard results** of minimal $SU(5)$-GUT. The contribution of UHM reduces to fixing the scale $M_X$ through the Gap hierarchy. The prediction $\tau_p \sim 10^{37\text{--}38}$ years is **conditional** on the correctness of identifying the Gap hierarchy with the $SU(5)$-structure. The current Super-Kamiokande experimental limit ($\tau_p > 2.4 \times 10^{34}$ years for $p \to e^+\pi^0$) **does not exclude** the prediction, but does not confirm it either — the prediction lies 3 orders of magnitude above the current sensitivity. Experimental verification will require megaton-class detectors, the construction of which is not yet planned.
-:::
-
-:::info Status within the Fano–electroweak construction (FE)
-The [Fano–electroweak construction (FE)](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ) derives $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from the Higgs line $\{A,E,U\}$ **without recourse to $\mathrm{SU}(5)$-GUT** — uniqueness is proved from $\kappa_0$ [T]. Therefore, $X,Y$-leptoquarks **are not a necessary prediction** of the main (FE) construction. All material on this page remains correct within the **alternative hypothesis of $\mathrm{SU}(5)$-unification [H]** — if the $\mathrm{SU}(5)$-structure is realized, the proton decay predictions are preserved. The main electroweak UHM construction is **[T]**.
-:::
-
----
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ## 1. Masses of $X,Y$-leptoquarks [C under SU(5)-GUT] {#массы-лептокварков}
 
@@ -417,77 +405,30 @@ As can be seen, the Gap prediction remains beyond the sensitivity horizon of the
 
 ---
 
+</details>
+
 ## 10. Falsifiability: UHM vs standard GUTs {#фальсифицируемость-ugm-gut}
 
 ### 10.1 What distinguishes UHM predictions from standard GUTs {#отличия-ugm-gut}
 
-In standard GUTs (minimal $SU(5)$, $SO(10)$, $E_6$, etc.) the unification scale $M_X$ is a **free parameter**, fixed by RG extrapolation from experimental values of the coupling constants. In the UHM Gap formalism:
-
-| Aspect | Standard GUT | UHM (Gap formalism) |
-|--------|-------------|--------------------|
-| $M_X$ | Free parameter of RG fit | Fixed by Gap hierarchy |
-| $\tau_p$ | Range $10^{34\text{–}41}$ years | Narrowed to $10^{37\text{–}38}$ years |
-| Dominant channel | Model-dependent (SUSY vs non-SUSY) | $e^+\pi^0$ ($D=6$ dominance, $D=5$ suppressed) |
-| Branching ratios | Parametric freedom (SUSY phases) | Rigidly fixed by Gap parameters |
-| $m_{\text{SUSY}}$ | $1 \;\text{TeV}$ — $10^{16} \;\text{GeV}$ | $\sim 10^{13}$ GeV (Gap-fixed) |
+The dimension-six estimate specifies a mediator mass, a coupling, operator running and a hadronic matrix element. The sample value $M_X=2\times10^{16}$ GeV comes from an assumed unification scenario. No calibrated observable of the network selects it.
 
 ### 10.2 Falsification scenarios [H] {#сценарии-фальсификации}
 
-:::tip Hypothesis 10.1 (Falsification criteria for the Gap prediction of proton decay) [H]
-
-**Scenario A: Detection of decay at $\tau_p \ll 10^{36}$ years.**
-
-- **Result**: $M_X$ significantly below the Gap prediction.
-- **For UHM**: Gap hierarchy in the $3\bar{3}$ sector is refuted (critical discrepancy).
-- **For standard GUT**: compatible (parameter $M_X$ can be adjusted).
-- **Verdict**: **falsifies UHM**, but not GUT as a whole.
-
-**Scenario B: Detection of dominance of the channel $p \to \bar{\nu}K^+$.**
-
-- **Result**: $D=5$ operators dominate (light SUSY).
-- **For UHM**: heavy SUSY ($m_{\text{SUSY}} \sim 10^{13}$ GeV) and Gap hierarchy of superpartners are refuted.
-- **For standard GUT**: compatible with SUSY-GUT at $m_{\text{SUSY}} \sim 1\text{–}10$ TeV.
-- **Verdict**: **falsifies the UHM prediction** of superpartner masses.
-
-**Scenario C: Absence of decay at $\tau_p > 10^{40}$ years (megaton detector).**
-
-- **Result**: $M_X$ is anomalously high or $SU(5)$-unification is not realized.
-- **For UHM**: does not falsify the main (FE) construction, since $SU(5)$-GUT is an alternative hypothesis [H]. The main electroweak construction [T] is unaffected.
-- **For standard GUT**: falsifies minimal $SU(5)$.
-- **Verdict**: **falsifies the $SU(5)$-hypothesis** within UHM, but not UHM as a whole.
-
-**Scenario D: Detection of decay at $\tau_p \sim 10^{37\text{–}38}$ years with channel hierarchy $e^+\pi^0 \gg \bar{\nu}K^+$.**
-
-- **Result**: full confirmation of the Gap prediction.
-- **For UHM**: confirmation of the Gap hierarchy and heavy SUSY.
-- **For standard GUT**: compatible with non-SUSY $SU(5)$ at $M_X \sim 10^{16}$ GeV (but $M_X$ is adjusted, not predicted).
-- **Verdict**: **confirms UHM** (prediction without free parameters).
-:::
+A specified field model can be tested by fixing its parameters before measuring partial lifetimes or channel ratios. A discrepancy would apply to that model and those choices. The operational axioms supply no proton-decay rate.
 
 ### 10.3 Discriminating observables {#разделяющие-наблюдаемые}
 
-To distinguish UHM predictions from standard GUTs upon future detection of proton decay, measurement of **three independent observables** is required:
-
-1. **Absolute lifetime** $\tau_p$ — distinguishes UHM ($10^{37\text{–}38}$) from minimal non-SUSY $SU(5)$ ($10^{34\text{–}36}$).
-2. **Channel ratio** $\text{BR}(e^+\pi^0)/\text{BR}(\bar{\nu}K^+)$ — distinguishes $D=6$-dominance (UHM, non-SUSY) from $D=5$-dominance (light SUSY).
-3. **Suppression of muon channels** $\text{BR}(\mu^+\pi^0)/\text{BR}(e^+\pi^0) \sim 0.05$ — fixed by Gap parameter $\text{Gap}^{(\mu e)}$, tests the inter-generational hierarchy.
-
-:::info Summary on falsifiability
-The Gap prediction for proton decay is **falsifiable in principle**, but **not testable at the current generation of experiments**. The nearest experimental test (Hyper-K) can confirm or exclude the **lower edge** of the $M_X$ range, but not the central value. Full testing requires megaton-class detectors with sensitivity $\tau_p \gtrsim 10^{37}$ years.
-
-It is important to emphasize: **even with full refutation of the $SU(5)$-hypothesis [H]**, the main electroweak UHM construction (Fano–electroweak construction [T]) **remains unaffected**, since proton decay is tied to the alternative $SU(5)$-unification hypothesis, not to the core of the theory.
-:::
-
----
+Partial lifetimes, final-state flavour and branching ratios constrain the coefficients of baryon-number-violating operators. A quantitative comparison needs the same renormalization prescription and matrix elements for each candidate model.
 
 ## Related documents
 
-- [Standard Model](/docs/physics/gauge-symmetry/standard-model) — $SU(5)$ from $G_2 + 42D$
-- [Supersymmetry](/docs/physics/particle-physics/susy) — $N=1$ SUSY, superpartner masses
-- [Fermion generations](/docs/physics/particle-physics/fermion-generations) — three generations
-- [Gap renormalization group](/docs/physics/gauge-symmetry/rg-flow) — RG evolution
-- [G$_2$-structure](/docs/physics/gauge-symmetry/g2-structure) — $G_2$-extra bosons
-- [Confinement](/docs/physics/gauge-symmetry/confinement) — strong interactions
-- [CKM matrix](/docs/physics/particle-physics/ckm-matrix) — quark mixing
-- [Falsifiability criteria](/docs/reference/falsifiability) — experimental tests
-- [Status registry](/docs/reference/status-registry) — classification of results
+- [Standard Model](/docs/physics/gauge-symmetry/standard-model)
+- [Supersymmetry](/docs/physics/particle-physics/susy)
+- [Fermion generations](/docs/physics/particle-physics/fermion-generations)
+- [Gap renormalization group](/docs/physics/gauge-symmetry/rg-flow)
+- [G$_2$-structure](/docs/physics/gauge-symmetry/g2-structure)
+- [Confinement](/docs/physics/gauge-symmetry/confinement)
+- [CKM matrix](/docs/physics/particle-physics/ckm-matrix)
+- [Falsifiability criteria](/docs/reference/falsifiability)
+- [Status registry](/docs/reference/status-registry)

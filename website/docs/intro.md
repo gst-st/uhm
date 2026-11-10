@@ -8,6 +8,8 @@ description: Unitary Holonomic Monism — a formal theory of reality and conscio
 
 UHM is a mathematical research programme on organization, state dynamics and consciousness. It proposes a seven-role numerical model together with a psychophysical interpretation. Its verified constructions, chosen definitions and unverified physical bridges have different statuses; the [mathematical kernel](/docs/reference/mathematical-kernel) and [premise ledger](/docs/reference/premises) make these distinctions explicit.
 
+Start with the [operational construction of states and composition](/docs/core/foundations/operational-processes) for the reconstruction before QG.
+
 ## What is mathematically specified
 
 For a chosen finite dimension $N$, the state space is

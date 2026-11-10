@@ -1,44 +1,30 @@
 ---
 sidebar_position: 2
-title: "Einstein Equations from Gap"
+title: "Einstein Equations in a Supplied Four-Dimensional Geometry"
 slug: /physics/gravity/einstein-equations
-description: "Derivation of the Einstein equations from the Gap action via the Lovelock theorem, two-loop renormalization group with Fano combinatorics, Swallowtail catastrophe, and connection with L-levels"
+description: "Einstein–Hilbert variation on a supplied geometry, the failed Gap projection, and the scope of the phase-information estimates."
 ---
 
-# Einstein Equations from Gap
+# Einstein Equations in a Supplied Four-Dimensional Geometry
 
-:::info Who this chapter is for
-Derivation of the Einstein equations from the Gap action via the Chamseddine–Connes spectral action. The reader will learn why gravity is emergent in UHM.
-:::
+This chapter traces the curvature term to the external Dirac operator and tests the proposed identification with the finite coherence variables.
 
 ## Overview
 
-The central result of the gravitational sector of UHM: **the Einstein equations are derived** from the Gap action via the Chamseddine–Connes spectral action [T]. The full spectral triple from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) reproduces the Einstein–Hilbert action + the Standard Model. An additional argument is the Lovelock theorem. Gravity **is not** a fundamental interaction — it emerges from Gap curvature.
+A four-dimensional spectral action contains an Einstein–Hilbert term [T under the spectral and analytic inputs]. Its variation gives the Einstein tensor. Deriving a physical metric, its dynamics or Standard Model matter from a single finite register remains open. [Product geometry](/docs/proofs/physics/emergent-manifold)
 
 ---
 
-## 1. Emergent Metric from Coherences
+## 1. A proposed metric from coherences {#1-emergent-metric-from-coherences}
 
 ### 1.1 Projection onto the 4D Sector
 
-From the decomposition $\mathrm{SU}(3) \subset G_2$:
-
-$$
-\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1_{\mathrm{time}} \oplus \mathbb{R}^3_{\mathrm{space}} \oplus \mathbb{R}^3_{\mathrm{gap}}
-$$
-
-Projector onto the spacetime sector:
-
-$$
-\Pi_{\mathrm{ST}}: \mathbb{R}^7 \to \mathbb{R}^4, \quad \Pi_{\mathrm{ST}} = \Pi_O \oplus \Pi_{\mathrm{Re}}
-$$
-
-where $\Pi_O$ is the projection onto the $O$-dimension (emergent time), $\Pi_{\mathrm{Re}}$ is the projection onto $\mathrm{Re}(\mathbb{C}^3)$ (space).
+Fixing $e_O$ gives the real representation $\mathbb R e_O\oplus\mathbb R^6$. The $\mathrm{SU}(3)$ stabilizer acts irreducibly on the six-dimensional complement. Selecting three real coordinates inside it therefore adds a frame. The putative projector $\Pi_{\mathrm{ST}}=\Pi_O\oplus\Pi_{\mathrm{Re}}$ depends on that frame (withdrawn 48a). [Sector decomposition](/docs/core/foundations/spacetime#секторная-декомпозиция)
 
 ### 1.2 Metric Tensor
 
-:::tip Theorem 1.1 (Emergent metric) [T]
-The emergent metric on 4D spacetime:
+:::note Former Theorem 1.1 [H, metric ansatz]
+On a prescribed background, define
 
 $$
 g_{\mu\nu}(x) = \eta_{\mu\nu} + h_{\mu\nu}(x)
@@ -61,16 +47,7 @@ $$
 h_{\mu\nu} \approx \sum_{i \in \mu,\, j \in \nu} |\gamma_{ij}|^2 \sin^2(\theta_{ij})
 $$
 
-**(b)** Lorentzian signature is ensured by the background metric $\eta_{\mu\nu} = \mathrm{diag}(+1,-1,-1,-1)$. The perturbation $h_{\mu\nu} \geq 0$ (as a sum of squares) does not change the signature when $|h_{\mu\nu}| \ll 1$.
-
-:::warning Status map of the derivation
-- Spectral action → $R_{\mu\nu}$: **[T]** (T-53, standard Chamseddine–Connes result)
-- Linearization $h_{\mu\nu} \sim |\gamma_{ij}|^2 \sin^2(\theta_{ij})$: **[C under weak-field]** (valid in the weak-field approximation; the full nonlinear connection is an open problem)
-:::
-
-:::warning Origin of $\eta_{\mu\nu}$: (1,3)-split [T], Lorentzian sign [T at reflection positivity]
-The formula $h_{\mu\nu} = \sum |\gamma_{ij}|^2 \cdot \mathrm{Gap}^2$ yields only non-negative components. One timelike direction comes from the Page–Wootters clock [T]; the three spacelike ones live on $S^3$, which T-119 [T] computes (as mathematics; its reading as physical space is [I]); the **full Lorentzian signature** $(+1,-1,-1,-1)$ is **[C]** (registry row T-53): the spatial signs $g_{aa}<0$ follow from requiring the PW generator bounded below (Osterwalder–Schrader reflection positivity across the PW slice), not from an arbitrary ansatz. KO-dimension does not fix the metric signature, and for the finite UHM triple the KO-dimension-6 claim is retracted: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)) (a Krein spectral triple realises the signature consistently). An earlier version called the $(1,3)$-split "derived [T]" and the signature "[T at reflection positivity]". The convention $(+1,-1,-1,-1)$ (east-coast) is used consistently throughout.
-:::
+For real symmetric $h$ of sufficiently small operator norm, $\eta+h$ inherits the signature of the supplied $\eta$. Thus the signature in this expression is an input. Making $h$ a field already requires arguments $x$, a rule for comparing measurements at distinct sites and a transformation law. T-119 computes a charge spectrum. The alternative clock-complex spin factor of 48c has a Lorentzian determinant with its own inputs. Neither construction establishes the displayed formula for a physical metric. [Emergent geometry](/docs/physics/gravity/emergent-geometry)
 
 **(c)** Connes distance:
 
@@ -78,204 +55,48 @@ $$
 d(p, q) = \sup\{|f(p) - f(q)| : \|[D_\alpha, f]\| \leq 1\}
 $$
 
-defines the metric via the spectral data of the Dirac operator $D_\alpha$, whose eigenvalues are determined by the coherences $\Gamma$.
+uses the commutators of the supplied Dirac operator with the algebra. On the external manifold these depend on its metric.
 
 ---
 
-## 2. Projection of the Gap Action onto 4D
+## 2. Inputs of the four-dimensional action {#2-projection-of-the-gap-action-onto-4d}
 
-:::tip Theorem 1.2 [T]
-The Gap action upon projection onto the 4D sector takes the form:
-
-$$
-S_{\mathrm{Gap}}^{(4D)} = \int d^4x \sqrt{-g} \left[\frac{1}{16\pi G_{\mathrm{Gap}}} \mathcal{R}^{(4D)} + \Lambda_{\mathrm{Gap}} + \mathcal{L}_{\mathrm{matter}}^{(4D)}\right]
-$$
-
-:::
-
-where:
-
-**(a)** Scalar curvature: $\mathcal{R}^{(4D)} = g^{\mu\nu} R_{\mu\nu}^{(4D)}$
-
-**(b)** Gravitational constant (consistent with the Fierz–Pauli derivation of §(b) below, $G\propto\mu^2$):
+**Theorem 1.2 (proposed projection, derivation withdrawn [✗]).** A candidate effective action can be specified on a Lorentzian manifold as
 
 $$
-G_{\mathrm{Gap}} = \frac{4\pi\mu^2}{\langle|\gamma_{\mathrm{ST}}|^2\rangle}
+S_{\rm eff}=\frac1{16\pi G}\int (R-2\Lambda)\sqrt{-g}\,d^4x+S_{\rm matter}[g,\phi].
 $$
 
-where $\langle|\gamma_{\mathrm{ST}}|^2\rangle = \frac{1}{6}\sum_{\substack{i,j \in \mathrm{ST} \\ i < j}} |\gamma_{ij}|^2 \sim \varepsilon_0^2$ is the mean squared coherence modulus in the spacetime sector (6 pairs from 4 directions).
+This expression already assumes a four-dimensional integration domain, a differentiable metric and fields $\phi$ with a matter action. Partitioning the 21 internal pairs into 6 and 15 is possible after choosing four axes. That count establishes neither local spin-two gauge symmetry nor a matter representation.
 
-:::warning Single Newton constant: $G\propto\mu^2$, and $\mu$ is Planck-scale
-The linearized (Fierz–Pauli) derivation below gives $G_N^{(ST)}=4\pi\mu^2/\varepsilon_0^2$ ($G\propto\mu^2$), matching the form above. The **primary** Newton constant is the spectral-action result $G_N = 3\pi/(7 f_2\Lambda^2)$ with cutoff $\Lambda\sim M_P$ (§below, T-65 [T]); the $\mu$-based emergent-gravity formula is an effective relation in which $\mu$ is the **Planck-scale** Gap parameter ($\mu_{\text{phys}}=\mu\,\omega_0\sim M_P$), **not** the $\sim$meV scale used in the $\Lambda$ sector. Both then agree that $G_N^{-1/2}\sim M_P$.
-:::
+### 2.1 Status of the proposed projection {#21-derivation-chain-for-the-projection-t}
 
-**(c)** Cosmological constant:
-
-$$
-\Lambda_{\mathrm{Gap}} = \mu^2 \cdot \mathcal{G}_{\mathrm{total}}^{(O)}
-$$
-
-where $\mathcal{G}_{\mathrm{total}}^{(O)} = \sum_i \mathrm{Gap}(O,i)^2 \cdot |\gamma_{Oi}|^2$ is the total opacity of the $O$-sector.
-
-**(d)** Matter Lagrangian:
-
-$$
-\mathcal{L}_{\mathrm{matter}}^{(4D)} = \Pi_{\mathrm{ST}}\!\left[\frac{m_{ij}}{2}\dot{\theta}_{ij}^2 + V_3(\theta) + V_4(\theta) - V_2^{(4D)}(\theta)\right]
-$$
-
-### 2.1 Derivation Chain for the Projection [T]
-
-The proof of Theorem 1.2 proceeds through four steps building a bridge from the full Gap action to the Einstein–Hilbert form.
-
-**Step 1 (Original Gap action).** Full action on the 21-dimensional coherence space:
-
-$$
-S_{\mathrm{Gap}} = \int d\tau \left[\sum_{i<j} \frac{m_{ij}}{2}\dot{\theta}_{ij}^2 - V_{\mathrm{Gap}}(\theta) + \mathcal{L}_{\mathrm{top}} + \mathcal{L}_{\mathrm{diss}} + \mathcal{L}_{\mathrm{reg}} + \mathcal{L}_{\mathrm{ext}}\right]
-$$
-
-**Step 2 (Sector decomposition).** The 21 coherence pairs are divided into three groups:
-
-| Group | Definition | Number of pairs | Role |
-|--------|-------------|----------------|------|
-| ST pairs | $(i,j)$, both in $\{O, \mathrm{Re}_1, \mathrm{Re}_2, \mathrm{Re}_3\}$ | 6 | Determine $g_{\mu\nu}$ |
-| Gap pairs | $(i,j)$, one or both in $\{\mathrm{Im}_1, \mathrm{Im}_2, \mathrm{Im}_3\}$ | 15 | Determine "matter" |
-| Cross | Between ST and Gap sectors | (subset of Gap pairs) | Contribution to $T_{\mu\nu}$ |
-
-**Step 3 (Projection of the quadratic potential).** The potential $V_2 = \mu^2 \mathcal{G}_{\mathrm{total}}$ upon projection onto the ST sector:
-
-$$
-V_2^{(4D)} = \mu^2 \sum_{\substack{i,j \in \mathrm{ST} \\ i < j}} |\gamma_{ij}|^2 \sin^2(\theta_{ij}) = \mu^2 \sum_{\mu < \nu} h_{\mu\nu}
-$$
-
-Scalar curvature in the linearized approximation: $R^{(4D)} \sim \partial^2 h \sim \mu^2 \cdot \sum \sin^2(\theta)$. Comparison gives:
-
-$$
-R^{(4D)} \propto \frac{V_2^{(4D)}}{\langle|\gamma|^2\rangle}
-$$
-
-from which $G_{\mathrm{Gap}}$ is identified.
+The internal phase action has one evolution parameter. Promoting each $\theta_{ij}$ to a field $\theta_{ij}(x)$ and replacing time derivatives by $\partial_\mu$ introduces spacetime. An algebraic potential $V_2(\theta)$ can be nonzero for a constant field, whereas the linearized scalar curvature, containing second derivatives of $h$, vanishes for constant $h$. There is no kinematic identification of the two.
 
 <a id="лемма-линеаризованный-мост"></a>
 
-:::tip Lemma (Linearized bridge derivation) [T under $|\delta\Gamma| \ll 1$]
+**Linearized bridge lemma (scope).** One can define $h_{\mu\nu}=2\,\mathrm{Re}\,\delta\gamma_{\mu\nu}/\varepsilon_0$ in a selected frame. The six off-diagonal pairs do not supply the ten components of a general symmetric four-tensor. A sum of their scalar kinetic terms does not establish the constraints, trace terms or gauge symmetry of a Fierz–Pauli field. A de Donder gauge presupposes that symmetry. Inserting the desired spin-two field equation to relate $\partial^2 h$ to its source would assume the conclusion.
 
-**Setup.** Let $\Gamma_0$ be a vacuum configuration with coherences of the ST sector $\gamma_{\mu\nu}^{(0)} = \varepsilon_0 e^{i\phi_{\mu\nu}^{(0)}}$, $\mu,\nu \in \{A,S,D,L\}$. Consider a spatially dependent perturbation $\gamma_{\mu\nu}(x) = \gamma_{\mu\nu}^{(0)} + \delta\gamma_{\mu\nu}(x)$ with $|\delta\gamma_{\mu\nu}| \ll \varepsilon_0$.
-
-**(a) Metric identification** [definition]:
-
-$$
-h_{\mu\nu}(x) \equiv \frac{2\,\mathrm{Re}(\delta\gamma_{\mu\nu}(x))}{\varepsilon_0}, \quad g_{\mu\nu}(x) = \eta_{\mu\nu} + h_{\mu\nu}(x)
-$$
-
-The imaginary part $\mathrm{Im}(\delta\gamma_{\mu\nu})$ parametrizes the $B$-field (2-form), which is inessential in this sector.
-
-**(b) Kinetic term → Fierz–Pauli action** [T]:
-
-The kinetic term of the Gap action for the $x$-dependent configuration in the ST sector (arising from the product spectral triple $D = D_\mathrm{ext} \otimes \mathbf{1} + \gamma_5 \otimes D_\mathrm{int}$, T-53):
-
-$$
-S_\mathrm{kin}^{(ST)} = \frac{\varepsilon_0^2}{4\mu^2} \int \sum_{\mu < \nu \in \mathrm{ST}} \partial_\rho h_{\mu\nu}(x)\,\partial^\rho h^{\mu\nu}(x)\;d^4x
-$$
-
-After integration by parts (boundary terms vanish under the asymptotic condition $h_{\mu\nu}(x) \to 0$ as $|\mathbf{x}| \to \infty$, standard asymptotic flatness) and imposing the de Donder gauge $\partial^\mu \bar{h}_{\mu\nu} = 0$ (where $\bar{h}_{\mu\nu} = h_{\mu\nu} - \frac{1}{2}\eta_{\mu\nu} h$):
-
-$$
-S_\mathrm{kin}^{(ST)} \supset \frac{1}{32\pi G_N^{(ST)}} \int \!\!\left[-\tfrac{1}{2}\partial_\rho h_{\mu\nu}\partial^\rho h^{\mu\nu} + \tfrac{1}{4}\partial_\rho h\,\partial^\rho h\right]d^4x
-$$
-
-This is the standard massless spin-2 Fierz–Pauli action with:
-
-$$
-G_N^{(ST)} = \frac{4\pi\mu^2}{\varepsilon_0^2}
-$$
-
-The tensor structure of $R_{\mu\nu}$ (not just the scalar $R$) is reproduced in full, since $S_\mathrm{kin}^{(ST)}$ is quadratic in all components of $h_{\mu\nu}$ and contains the correct cross-terms from $\partial_\rho h_{\mu\nu}\partial^\rho h^{\mu\nu}$.
-
-**(c) On-shell closure of Step 3** [T under small $\delta\theta$]:
-
-The potential $V_2^{(ST)} \approx \mu^2 \varepsilon_0^2 \sum_{\mu<\nu} \theta_{\mu\nu}^2(x)$ plays the role of a source $T_{\mu\nu}$. Equations of motion:
-
-$$
-\Box\, h_{\mu\nu}(x) = 8\pi G_N^{(ST)}\,T_{\mu\nu}^{(\mathrm{Gap})}(x) = 8\pi G_N^{(ST)}\cdot \mu^2\varepsilon_0^2\sin^2(\theta_{\mu\nu}(x))\cdot \eta_{\mu\nu}
-$$
-
-Hence on-shell:
-
-$$
-R^{(4D)} \sim \partial^2 h \sim \mu^2\sin^2(\theta) \qquad \blacksquare
-$$
-
-The relation of Step 3 is a **field equation** (on-shell), not a kinematic identity. It holds rigorously in the classical limit at small $\theta$. The nonlinear generalization is via T-53 [T] (arbitrary $\theta$, full Einstein tensor, no weak-field assumption).
-:::
-
-:::note Hierarchy of proofs
-Step 3 (bridge lemma) — **[T under $|\delta\Gamma| \ll 1$]**: closed for the linearized regime. Main Theorem 1.3 — **[T]** via T-53: closed for arbitrary fields. The geometric explanation of Step 3 and the main result are now consistent and mutually independent.
-:::
-
-**Step 4 (Cosmological term).** The non-dynamical part of $V_2$ in the $O$-sector (constant background Gap) gives $\Lambda_{\mathrm{Gap}}$.
+If a Fierz–Pauli action and normalization $G_{\rm eff}=4\pi\mu^2/\varepsilon_0^2$ are supplied, the substitutions in T-264(b) can be evaluated. Identifying this coupling with measured Newtonian gravity is open.
 
 ---
 
-## 3. Einstein Equations from Gap Variation
+## 3. Variation of the Einstein–Hilbert action {#3-einstein-equations-from-gap-variation}
 
-:::tip Theorem 1.3 (Main result) [T]
-**Status [T]:** The full spectral triple $(A, H, D)$ from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) is the product of $M^4$ with the finite triple (its KO-dimension-6 real structure and the claim "all axioms are satisfied" are retracted, [spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка); the Einstein–Hilbert term below uses only the heat-kernel expansion of the product). The Chamseddine–Connes spectral action $S = \mathrm{Tr}(f(D_A/\Lambda))$ reproduces the Einstein–Hilbert action with $G_N = 3\pi/(7 f_2\Lambda^2)$ [T]. Additional argument: the Lovelock theorem (applicability to the emergent metric — [T] with T-120, see [analysis of limitations](#34-ограничения-аргумента-лавлока) below). T-120 [T] assembles $M^4=\mathbb R\times S^3$ as a smooth 4-manifold (with the restated T-119, 2026-09-25; before it, at the open reconstruction axioms of T-119); so the requirements of the Lovelock theorem — a smooth 4D manifold, diffeoinvariance, a metric tensor — are met by the emergent $M^4$.
+**Theorem 1.3 / T-65 [T for the supplied product Dirac operator].** The $a_2$ heat-kernel coefficient contributes a term proportional to $\int R\sqrt g\,d^4x$ on a Riemannian four-dimensional spin geometry. With the conventions of §2 of the spectral-action chapter, $G_N=3\pi/(7f_2\Lambda_{\rm cut}^2)$. The factor seven counts internal components. The cutoff scale and its moment set the dimensional normalization. [Spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)
 
-Variation of the full Gap action with respect to the emergent metric $g_{\mu\nu}$ gives the Einstein equations:
-
-$$
-\frac{\delta S_{\mathrm{Gap}}^{(4D)}}{\delta g^{\mu\nu}} = 0 \quad \Longrightarrow \quad G_{\mu\nu} + \Lambda_{\mathrm{Gap}}\, g_{\mu\nu} = 8\pi G_{\mathrm{Gap}} \cdot T_{\mu\nu}^{(\mathrm{Gap})}
-$$
-
-where $G_{\mu\nu} = R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R$ is the Einstein tensor.
-:::
-
-**Proof (outline).**
-
-**Main argument (spectral action).** The full spectral triple $(A, H, D)$ with finite part from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) generates the spectral action $\mathrm{Tr}(f(D_A/\Lambda))$, whose expansion in Seeley–DeWitt coefficients gives the Einstein–Hilbert action with $G_N = 3\pi/(7 f_2 \Lambda^2)$ (details — [full spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)).
-
-**Additional argument (Lovelock theorem).**
-
-**Step 1 (Conditions of the Lovelock theorem).** The action $S_{\mathrm{Gap}}^{(4D)}$ satisfies:
-- **4D covariance:** The projection $\Pi_{\mathrm{ST}}$ commutes with $G_2$-transformations that stabilize the $\mathrm{SU}(3)$-subgroup. Therefore $S_{\mathrm{Gap}}^{(4D)}$ is invariant under transformations induced on the 4D sector.
-- **Metricity:** The action depends on $g_{\mu\nu}$ and its first and second derivatives (via the curvature of the Serre bundle).
-- **Quasi-linearity in second derivatives:** The Gap curvature $\mathcal{R}_{ij,kl}$ is linear in the second derivatives of the phases $\partial^2\theta$, which upon projection gives $R_{\mu\nu}$ (linear in $\partial^2 g$).
-
-**Step 2 (Application of the Lovelock theorem).** In 4D the unique covariant, metric, and quasi-linear-in-second-derivatives functional is:
+For the Lorentzian action of §2, varying $g^{\mu\nu}$ with appropriate boundary terms gives
 
 $$
-S = \int d^4x \sqrt{-g}\,(\alpha R + \beta) + S_{\mathrm{matter}}
+G_{\mu\nu}+\Lambda g_{\mu\nu}=8\pi G T_{\mu\nu},\qquad
+T_{\mu\nu}=-\frac{2}{\sqrt{-g}}\frac{\delta S_{\rm matter}}{\delta g^{\mu\nu}} .
 $$
 
-(Lovelock theorem, 1971). This is precisely the Einstein–Hilbert action with a cosmological term.
-
-**Step 3 (Identification of coefficients).** Comparing $S_{\mathrm{Gap}}^{(4D)}$ (Theorem 1.2) with the Lovelock form:
-
-$$
-\alpha = \frac{1}{16\pi G_{\mathrm{Gap}}}, \quad \beta = \Lambda_{\mathrm{Gap}}
-$$
-
-**Step 4 (Variation).** Standard variation of the Einstein–Hilbert action:
-
-$$
-\frac{\delta S_{\mathrm{EH}}}{\delta g^{\mu\nu}} = \sqrt{-g}\left(R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R + \Lambda\, g_{\mu\nu}\right)
-$$
-
-The variation of $S_{\mathrm{matter}}$ defines the energy-momentum tensor:
-
-$$
-T_{\mu\nu}^{(\mathrm{Gap})} := -\frac{2}{\sqrt{-g}} \frac{\delta S_{\mathrm{matter}}^{(4D)}}{\delta g^{\mu\nu}}
-$$
-
-The condition $\delta S_{\mathrm{Gap}}^{(4D)} / \delta g^{\mu\nu} = 0$ gives the standard Einstein equations. $\blacksquare$
-
-:::warning Numerical calibration of $G_N$
-The formula $G_N = 3\pi/(7 f_2 \Lambda^2)$ gives the **correct parametric dependence** of Newton's constant on the cutoff scale $\Lambda$ and the dimension of the internal space (factor 7). However, full numerical calibration requires knowledge of $f_2$ — the second moment of the test (cutoff) function $f$ in the spectral action: $f_2 = \int_0^\infty f(u)\, du$. The value of $f_2$ depends on the choice of profile $f$, which in NCG is not fixed uniquely (Chamseddine–Connes use the limiting case of the characteristic function $f = \chi_{[0,1]}$, but physical predictions depend on $f_k$ weakly — through moment ratios). Until $f_2$ is precisely determined (e.g. from a self-consistency condition of Gap theory), the numerical agreement of $G_N$ with experiment remains **parametric**, not absolute.
-:::
+Higher-curvature terms in the full spectral expansion generally modify this equation. Lovelock's classification of second-order metric equations on a supplied four-manifold neither fixes the constants nor identifies $S_{\rm matter}$.
 
 ### 3.0 Comparison with the Connes–Chamseddine spectral action program {#сравнение-connes-chamseddine}
 
-The auditor's question — *"do you recover known phenomenology, or only the Einstein–Hilbert sector?"* — admits a direct point-by-point answer. UHM is a **strict extension** of the Connes–Chamseddine (CC) NCG framework: it uses the same machinery (finite spectral triple + spectral action expansion) and recovers the same Einstein–Hilbert + Standard Model output, but supplies **derivations** for inputs that CC takes as given.
+The product constructions share the gravitational heat-kernel term. Their internal representations differ.
 
 **Comparison table (UHM ↔ CC).**
 
@@ -285,89 +106,26 @@ The auditor's question — *"do you recover known phenomenology, or only the Ein
 | 2 | Internal algebra | $A_F = \mathbb C \oplus \mathbb H \oplus M_3(\mathbb C)$ (postulated) | ~~$A_\mathrm{int}$ Morita-equivalent to $A_F$ (after $J + \mathrm{EW}$ reduction)~~ not Morita-equivalent to $A_F$ (T-175a retracted 2026-09-25) | **Not equivalent**; what UHM derives is $A_\mathrm{int}$ itself — the algebra that $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ generates on $\mathbb C^7 = \mathbb Ce_O\oplus\mathbf 3\oplus\bar{\mathbf 3}$ (complex dimension $1 + 9 + 9 = 19$, on the complex sectors, not on axis triples) — from octonions + $G_2$ (T-15, [Q7](/docs/proofs/minimality/theorem-octonionic-derivation#альтернативные-структуры)) |
 | 3 | Gauge group after unimodularity | $SU(3)_C \times SU(2)_L \times U(1)_Y$ | $U(1)\times U(3)\times U(3)$ ~~$\xrightarrow{\text{unimod}} SU(3)\times SU(2)\times U(1)$~~ | ~~**Identical** [T]~~ **Different** — retracted 2026-09-25: the unitary group of $A_\mathrm{int}$ has dimension 19, unimodularity removes one $U(1)$ and cannot produce an $SU(2)$; the Standard-Model group (dimension 12) comes from $A_F$ ([confinement.md:552](/docs/physics/gauge-symmetry/confinement)) |
 | 4 | $a_2$ → Einstein–Hilbert | $S_{EH} = (1/16\pi G_N)\int R\sqrt g\,d^4x$, $G_N \sim 1/(a_2\Lambda^2)$ | Same; explicit $G_N = 3\pi/(7 f_2 \Lambda^2)$, factor $7 = \dim H_\mathrm{int}$ | **Identical** [T] ([T-65](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)) |
-| 5 | $a_0$ → cosmological constant | $\Lambda_{CC}$ (CC problem: "too large") | $\Lambda_\mathrm{Gap} = \mu^2 \mathcal G_\mathrm{total}^{(O)}$ with $\mu \sim 10^{-3}$ eV (neutrino-mass scale) | **CC problem softened** by Gap-driven hierarchy [C] ([cosmological-constant.md](/docs/physics/gravity/cosmological-constant)) |
-| 6 | $a_4$ → gauge kinetic + Yukawa | Yang–Mills + Yukawa terms with CC-determined couplings | Same structure; $G_2$-equivariant Yukawa from Fano lines | **Identical structure**; UHM adds $G_2$-organisation [T] |
-| 7 | Higgs sector | $H \in M_2(\mathbb C)$ off-diagonal in $D_F$; ~~$m_H \approx 125$ GeV (after RG)~~ the big-desert prediction was $m_H \approx 170$ GeV (2007), excluded in 2008; $125$ GeV is reached only after adding the singlet $\sigma$ with a fitted $n(u)$ (2012) — [honest box](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) | Higgs line $\{A,E,U\}$ in Fano structure; mass via spectral analysis | **Compatible**; UHM identifies which Fano line ([higgs-sector.md](/docs/physics/particle-physics/higgs-sector)) |
-| 8 | Fermion generations | 3 generations postulated by 16-dim Hilbert space per generation | Tensor extension via Page–Wootters: $\mathbb C^7 \otimes \mathbb C^6 = \mathbb C^{42}$, generation structure from O-sector ([T-87](/docs/proofs/dynamics/emergent-time)) | **Partial**: 3 generations not yet explicitly derived in 7D core; framework compatible with extensions ([fermion-generations.md](/docs/physics/particle-physics/fermion-generations)) |
-| 9 | Neutrino masses | See-saw from off-diagonal $D_F$ | $m_D^{(k)} = \omega_0\,\mathrm{Gap}(O,k)\,\|\gamma_{O,\mathrm{partner}(k)}\|\sin(2\pi k/7)$ | **Specific UHM prediction** [T] (T-63 formula structure); numerical $m_2/m_3$: tree-level $\approx 0.308$ vs observed $\approx 0.17$ → discrepancy $\times 1.8$; with **2-loop RG running** $\approx 0.17$–$0.20$ vs $0.17$ → discrepancy $\times 1.0$–$1.2$ (essentially correct, C14 [C]). Naive see-saw gives $\times 50$ discrepancy; UHM reduces to $\times 1.0$–$1.2$ without new parameters. |
-| 10 | UV-finiteness | Spectral action UV-completed in NCG sense | $G_2$ Ward identities + $\mathcal N=1$ SUSY + APS-index → all counterterms forbidden | **Stronger claim**: field-space finiteness [T] (compact target) + order-by-order UV-finiteness [C] (structural, [T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)) |
-| 11 | Emergent spacetime | $M^4$ postulated in product triple | $M^4$ derived from categorical algebra: T-117 (commutativity), T-118 ($A_\mathrm{time} \cong C_0(\mathbb R)$), T-119 ($A_\mathrm{space} \cong C(\Sigma^3)$), T-120 ($M^4 = \mathbb R \times \Sigma^3$) | **UHM stronger** [T] as mathematics (T-118 and the restated T-119 compute $M^4=\mathbb R\times S^3$; the reading of $S^3$ as physical space is [I]). History of 2026-09-25: "strictly stronger [T]", then "[C] at T-119" while the reconstruction axioms were open, then [T] when T-119 computed the spectrum ([emergent-manifold.md](/docs/proofs/physics/emergent-manifold)) |
-| 12 | Origin of internal algebra | Postulated from feature-counting + Lorentz axiomatics | Octonionic derivation: PG(2,2) → $\mathbb O$ → $A_\mathrm{int}$ via T1–T15 chain ([Q7](/docs/proofs/minimality/theorem-octonionic-derivation)) | **UHM stronger for $A_\mathrm{int}$** [T] (listed as "strictly stronger [T]" until 2026-09-25, then [C at (Alt)] the same day): the step from PG(2,2) to $\mathbb O$ takes the canonical orientation (T15-canon), but $A_\mathrm{int}$ is not $A_F$ (rows 1–3) |
-| 13 | Consciousness | Not addressed by spectral action | E-sector phenomenology: $\mathrm{Coh}_E > 1/7$ (No-Zombie, T-8.1 [T]), interiority hierarchy L0–L4, hedonic valence $V_{\mathrm{hed}} = dP/d\tau$ (T-103 [T]+[I]), 23 falsifiable predictions | **UHM-only extension** |
+| 5 | $a_0$ | Volume term | Mapping an opacity statistic to vacuum energy requires a physical readout | [H] |
+| 6 | $a_4$ | Terms for supplied gauge and internal fields | Their representations and couplings enter the operator | Input-dependent |
+| 7 | Higgs sector | The big-desert model gave about 170 GeV. The extended model can fit 125 GeV | No Higgs mass selected by the seven-register | [Spectral-action comparison](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) |
+| 8 | Fermions | The Standard Model module and Yukawa data are specified | Importing that module imports its field content | [T-178](/docs/proofs/physics/bimodule-construction#бимодульная-конструкция) |
 
-**Phenomenology recovered (full Standard Model + gravity + consciousness).**
-
-UHM recovers **the same physics** as CC at the spectral action level:
-- Einstein–Hilbert sector: identical $G_N \propto 1/(a_2\Lambda^2)$ scaling [T].
-- ~~$SU(3)\times SU(2)\times U(1)$ gauge sector: identical via Morita-equivalence [T].~~ Retracted 2026-09-25 (T-175a): the gauge sector is not recovered from $A_\mathrm{int}$; it is imported with $A_F$.
-- Higgs mechanism: identical structure [T], specific Fano-line identification [T].
-- Yukawa couplings: identical $a_4$ structure [T], $G_2$-organisation specific to UHM.
-- Cosmological constant: identical $a_0$ structure, UHM proposes Gap-driven hierarchy.
-
-**Phenomenology beyond CC (UHM-only).**
-- Derivation of $A_\mathrm{int}$ structure from octonions + $G_2$-rigidity (CC postulates it).
-- Derivation of $M^4$ from categorical algebra (CC postulates it).
-- Connection to consciousness via E-sector (CC has no such structure).
-- Page–Wootters emergent time (CC works in fixed Lorentzian background).
-
-**Numerical disagreements (acknowledged limitations).**
-
-| Quantity | CC prediction | UHM prediction | Experiment | Status |
-|---|---|---|---|---|
-| Higgs mass | $\sim 125$ GeV (after RG) | Compatible | $125.25 \pm 0.17$ GeV | Both **agree** within RG uncertainty |
-| Top Yukawa | $y_t \sim 1$ | $y_t \sim 1$ | $0.94$ | Both **agree** to $\sim 5\%$ |
-| Neutrino mass ratio $m_2/m_3$ | Free parameter | tree-level $0.308$; with 2-loop RG $0.17$–$0.20$ | $0.17$ | UHM **agrees within $\times 1.0$–$1.2$ at 2-loop RG** (C14); naive see-saw gives $\times 50$ discrepancy by comparison |
-| $G_N$ absolute value | Requires $f_2$ calibration | Requires $f_2$ calibration | Measured $6.674\times 10^{-11}$ | Both **parametrically correct, absolute value cutoff-dependent** |
-| 3 generations | Postulated | Not yet derived in 7D core; compatible extension | 3 (observed) | Both **postulate**; UHM has open program for derivation |
-
-**Conclusion.** UHM does not recover only the Einstein–Hilbert sector — it recovers **the entire CC phenomenology** (gravity + SM), via the same spectral-triple machinery, plus three independent additions: derivation of the internal algebra (CC postulates it), derivation of $M^4$ (CC assumes it), and connection to consciousness (CC has no such layer). Numerical agreement with experiment is generally good: Higgs mass and top Yukawa within standard RG uncertainty; the neutrino mass ratio reduces from a $\times 50$ discrepancy in the naive see-saw to $\times 1.0$–$1.2$ in UHM with 2-loop RG running (essentially correct, C14 [C]). The remaining acknowledged open numerical task is the $G_N$ absolute value, which depends on the cutoff function moment $f_2$ in both UHM and CC (parametric agreement, absolute value cutoff-dependent).
+The measured particle spectrum and gauge group do not follow from the common Einstein–Hilbert coefficient. The network construction gives a separate result for matter transport. Given site frames, an oriented link representation and a moving register, each transported move respects simultaneous frame changes. The group and representation are inputs, and a physical matter spectrum remains open. [Verified network results](/docs/reference/network-results)
 
 ---
 
 ### 3.1 Corollary: Gravity is a Gap Effect [I]
 
-Gravity **emerges** from Gap curvature:
-
-$$
-\text{Spacetime curvature} = \text{Projection of Serre bundle curvature onto the 4D sector}
-$$
-
-Specifically:
-- $G$ is determined by $\mu^2$ and the mean coherence in the ST sector
-- $\Lambda$ is determined by the total Gap of the $O$-dimension
-- $T_{\mu\nu}$ is determined by the dynamics of Gap excitations in the non-ST sector
-
-**Prediction (falsifiable) [H].** $G \propto 1/\langle|\gamma_{\mathrm{ST}}|^2\rangle$ — in regions of high decoherence ($\mathrm{Gap} \to 1$), $G$ effectively grows. An enhancement of gravity near singularities is predicted.
+The proposed correspondence assigns spacetime curvature to a projection of internal curvature [I]. An invariant projection, field dynamics and comparisons with gravitational observations are needed to test it.
 
 ### 3.2 Connection of Newton's Constant with Gap Parameters
 
-From Theorem 1.2 (b), Newton's gravitational constant is expressed through microscopic Gap parameters:
-
-$$
-G = G_{\mathrm{Gap}} = \frac{4\pi\mu^2}{\langle|\gamma_{\mathrm{space}}|^2\rangle}
-$$
-
-(consistent with the Fierz–Pauli derivation $G\propto\mu^2$; the primary Newton constant remains the spectral-action $G_N=3\pi/(7f_2\Lambda^2)$ with $\Lambda\sim M_P$, and $\mu$ here is the **Planck-scale** Gap parameter — see the correction box in §3.1).
-
-This formula contains two scales:
-
-| Parameter | Role | Typical scale |
-|----------|------|------------------|
-| $\mu^2$ | Mass of the Gap mode (quadratic potential $V_2$) | $\sim (10^{-3}$ eV$)^2$ (phenomenologically tuned; coincides with the neutrino mass scale) |
-| $\langle\lVert\gamma_{\mathrm{space}}\rVert^2\rangle$ | Mean coherence of the spatial sector | $\sim 1 - O(\varepsilon^2)$ (high coherence) |
-
-The relation $G \propto \mu^2/|\gamma_{\mathrm{space}}|^2$ means that gravity is **stronger** the larger the Gap-mode scale $\mu$ and the **lower** the coherence of the spatial sector. In the limit of full decoherence ($|\gamma_{\mathrm{space}}| \to 0$) the gravitational constant formally diverges — effective "enhancement of gravity" near singularities.
-
-:::note Boundary of the physical interpretation
-Divergence of an effective $G_N$ under formal extrapolation to zero coherence
-does not construct a horizon or a spacetime solution. A black-hole transition
-or a change of learning algorithm needs additional dynamical and observational
-premises; the QFI identity and effective FP lemma do not establish it.
-:::
+The model normalization $G_{\rm eff}=4\pi\mu^2/\langle|\gamma|^2\rangle$ increases as the specified coherence decreases. Interpreting it as a physical $G_N$ requires consistent units for $\mu$ and an independent matching measurement. Putting the measured Planck scale into the cutoff supplies a gravitational scale. A formal divergence at zero coherence gives no horizon solution.
 
 ### 3.2a Information–Gravity Reciprocity: $G_N$ as Inverse Learnability (T-264) {#взаимность-обучаемость-гравитация}
 
-The Gap phases $\theta_{\mu\nu}$ carry both loads of the theory at once: their kinetics is the emergent graviton (§2.1, Fierz–Pauli bridge lemma), and their *estimability* is quantum Fisher information — the very quantity that gates learning (Braunstein–Caves; [T-263](/docs/core/dynamics/evolution#теорема-наилучший-обучающий-поток)). The two readings are one functional of $\Gamma$.
+Phase estimability can be calculated directly on the register. The following gravitational reading additionally assumes the normalization in §2.1.
 
 #### Theorem T-264 (information–gravity reciprocity) [T at FP-lemma, leading order] {#теорема-информационно-гравитационная-взаимность}
 
@@ -407,52 +165,31 @@ $$
 \boxed{\; G_N^{(ST)} \cdot \big\langle \mathrm{QFI}(\theta_{\mu\nu}) \big\rangle_{\mathrm{ST}} \;=\; 56\pi\mu^2 \;=\; 8\pi N \mu^2 \big|_{N=7} \;}
 $$
 
-— the product of the gravitational coupling and the mean Fisher learnability of the spacetime phases is an **architectural constant**.
+This is a leading-order substitution for the selected normalization and phase tangents.
 
-**(c) $\Lambda$-side [Т, T-254].** The physically observable vacuum term is quadratic in the clock-channel opacity: $\Lambda_{\mathrm{phys}} = \frac{f_4\omega_0^4}{32\pi G_N}\,\mathcal{G}_O^2$ ([Λ-drift law](/docs/physics/gravity/cosmological-constant#теорема-лямбда-дрейф)). Reading $\mathcal{G}_O$ as the measure of *lost phase information* of the O-channel (Gap = decohered phase) — **[I]** — makes $\Lambda$ the squared **unlearnability of the universe's own clock**.
+**(c) T-254.** A separately conserved effective fluid with a specified positive energy readout $\rho_{\rm DE}=C\mathcal G_O^2$ obeys the drift identity of T-254. Its identification with a cosmological observable is an additional hypothesis. [Energy readout](/docs/physics/gravity/cosmological-constant#теорема-лямбда-дрейф)
 :::
 
 **Proof.** *(a)* For the decoupled block the SLD tangent formula $\mathrm{QFI} = 2\sum_{m,n}|X_{mn}|^2/(\lambda_m + \lambda_n)$ reduces to the block. Diagonalise the block with populations $p = \Gamma_{ii}$, $q = \Gamma_{jj}$, coherence $g$: eigenvalues $\lambda_\pm = \tfrac{p+q}{2} \pm R$ with $R = \sqrt{(p-q)^2/4 + |g|^2}$; the tangent $X = i[\Pi_i, \Gamma]$ is purely off-diagonal in the eigenbasis with $|\langle +|\Pi_i|-\rangle|^2 = |g|^2/(4R^2)$, and $(\lambda_+ - \lambda_-)^2 = 4R^2$. Hence $\mathrm{QFI} = 2 \cdot 2 \cdot \frac{4R^2}{p+q} \cdot \frac{|g|^2}{4R^2} = \frac{4|g|^2}{p+q}$ — $R$ cancels, so the result holds at any imbalance and any admissible $|g|$. *(b)* Substitute the pair lemma at $\Gamma_{ii} = 1/7$ into the bridge-lemma constant $G_N^{(ST)} = 4\pi\mu^2/\varepsilon_0^2$ (§2.1): $\langle\mathrm{QFI}\rangle_{\mathrm{ST}} = 14\varepsilon_0^2(1 + O(\bar\varepsilon))$. *(c)* is T-254 [T] plus the [I]-reading. $\blacksquare$
 
 **Machine verification**: balanced-block identity to $6.7 \cdot 10^{-16}$; decoupled-pair identity in $\mathbb{C}^7$ — ratio $1.000000$ across random populations/coherences; cross-coherence correction scaling measured ($0.23\%/0.8\%/4.4\%$ at $\bar\varepsilon = 0.005/0.01/0.02$); substitution chain (b) exact.
 
-**Corollaries.**
+The numerical checks concern QFI and the substitution in (b). There is no independent gravitational measurement in this calculation.
 
-1. **Gravity diverges exactly where phases become unlearnable [T at (b)].** $|\gamma_{\mathrm{ST}}| \to 0 \Rightarrow \langle\mathrm{QFI}\rangle \to 0 \Rightarrow G \to \infty$: the §3.1–3.2 prediction of gravity enhancement in high-decoherence regions acquires an information-theoretic mechanism — **gravitational strength is the inverse of the Fisher information available in the spacetime phases**.
-2. **The SLU slogan, signed and sector-resolved [I].** Vanchurin's *"gravity is the efficiency of learning"* maps onto two identities with definite signs and sectors: $G^{-1} \propto$ learnability of the **space** phases (b); $\Lambda \propto$ (unlearnability)$^2$ of the **clock** phase (c). Efficient learning $\Leftrightarrow$ weak gravity: the gravitational field is the shadow of what is *not* (or cannot be) learned. Where SLU postulates the metric to *be* learning statistics, UHM derives both faces from the same $\Gamma$ and fixes the constant ($8\pi N\mu^2$).
-3. **Complement of T-263.** The same phases along which the optimal learning flow moves (T-261/T-263, BKM descent; Bures estimation) are the phases whose second moments gravitate. Learning and gravitation are the two Petz-geometric faces of one coherence field — dynamics along the phases vs. curvature from the phases.
+### 3.3 Matching the two definitions of $G$ {#33-consistency-of-the-two-definitions-of-g-t}
 
-### 3.3 Consistency of the Two Definitions of $G$ [T]
-
-:::tip Theorem 3.2 (Consistency of two scales) [T]
-The two definitions of the gravitational constant — from the Gap action ($G_{\mathrm{Gap}}$) and from the Connes stratified metric ($G_{\mathrm{Connes}}$) — are consistent:
-
-$$
-G_{\mathrm{Gap}} = G_{\mathrm{Connes}} \cdot (1 + O(\mathrm{Gap}^4))
-$$
-
-:::
-
-**Proof (outline).** $G_{\mathrm{Connes}}$ is defined via the spectral triple $(A_\alpha, H_\alpha, D_\alpha)$ and the Connes–Chamseddine formula for the spectral action. $G_{\mathrm{Gap}}$ is defined via the Gap action. Both constructions are based on the same object ($\Gamma$) but use different projections. Consistency follows from the fact that both expressions for $G$ are proportional to $1/\langle|\gamma|^2\rangle$ with a difference of $O(\mathrm{Gap}^4)$ corrections from the nonlinear terms $V_3$, $V_4$. $\blacksquare$
+**Theorem 3.2 (matching claim open).** Equating $4\pi\mu^2/\varepsilon_0^2$ and $3\pi/(7f_2\Lambda_{\rm cut}^2)$ imposes a relation on independent inputs. The claimed $O(\mathrm{Gap}^4)$ residual would require a derived matching expansion with controlled error.
 
 ### 3.4 Limitations of the Lovelock Argument {#34-ограничения-аргумента-лавлока}
 
-:::tip Lovelock argument: [T] (T-121)
-The argument via the Lovelock theorem is justified because the smooth $M^4=\mathbb R\times S^3$ is obtained from the categorical structure ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) [T], with the restated T-119). The Lovelock argument is [T] ([T-121](/docs/proofs/physics/emergent-manifold#теорема-лавлок-замыкание)), supplementary to the main spectral argument. This box read [T] until early 2026-09-25, then [C at T-120] while the reconstruction axioms of T-119 were open.
-:::
-
-**Discreteness vs. continuity.** $M^4$ is a smooth manifold derived from the categorical structure via Gelfand–Connes reconstruction ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)). The Lovelock theorem applies directly (T-121, [T]); the manifold is now computed as a Gelfand spectrum rather than reconstructed (restated T-119).
-
-**Covariance of the projection.** 4D diffeomorphic covariance is inherited from the Chamseddine–Connes spectral formalism (T-121). An earlier version also derived it from $G_2$-covariance through the sector decomposition (T-53); retracted — there is no non-trivial homomorphism $SU(3) \to SO(3)$, and the axis triples are not $SU(3)$ sectors (row 48a).
-
-**Aharonov–Bohm counterexample.** A remark on the PT properties of holonomy, not affecting the applicability of the Lovelock theorem to the derived $M^4$.
+T-120 constructs a smooth product for each selected Riemannian metric. Diffeomorphism invariance of a supplied spectral metric action gives covariance. Lovelock's classification applies to local natural symmetric divergence-free second-order metric tensors in four dimensions. It singles out the Einstein and cosmological terms at that order. No nontrivial $SU(3)\to SO(3)$ projection exists to transfer this result to the internal phases. [T-121](/docs/proofs/physics/emergent-manifold#теорема-лавлок-замыкание)
 
 ---
 
-## 4. Energy-Momentum Tensor from Gap
+## 4. Stress–energy for a specified matter action {#4-energy-momentum-tensor-from-gap}
 
-:::tip Theorem 2.1 [T]
-Components of $T_{\mu\nu}^{(\mathrm{Gap})}$:
+:::note Theorem 2.1 [C for a supplied homogeneous scalar matter action]
+The following energy and pressure require a kinetic term, potential and metric coupling. Their interpretation as dark energy is [H].
 :::
 
 **(a)** Energy of Gap excitations:
@@ -480,9 +217,7 @@ $$
 | $V \gg$ kinetic | $w \to -1$ | Cosmological constant |
 | Balance | $w \in (-1, 1)$ | Quintessence |
 
-:::note Why the observed $w \approx -1$ [C] (T-266)
-That the Universe sits in the $V \gg$ kinetic (cosmological-constant) regime is not accidental: [T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) shows the vacuum has **relaxed onto its terminal attractor** ($P = 3/7$) to fractional precision $\sim 10^{-60}$, so the residual kinetic term — set by the stage-approach rate — is $\kappa/H_0 \sim 10^{58}$-suppressed relative to $V$; hence $w \approx -1$. The small DESI departure $|1+w_0| \sim 0.09$ is the $\kappa/H_0$-amplified residual. (This concerns the *stage* and the *shape* of $w$, not the Λ *magnitude* — the $\gtrsim 27$-order deficit below remains open.)
-:::
+At $K\ll V$, $w=(K-V)/(K+V)$ is near $-1$ in this field model. The former inference from $w$ to a universal purity of $3/7$ was withdrawn. The relaxation rates and the cosmological readout would have to be fixed independently. [T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной)
 
 **(d) [C]** At $\mu \sim 10^{-3}$ eV (neutrino mass scale) and $\langle\mathrm{Gap}^2\rangle \sim 0.1$:
 
@@ -509,7 +244,7 @@ $$
 
 :::
 
-**Proof.** From $G_2$-invariance of the Gap action: the projection $G_2 \to \mathrm{SO}(3,1)$ (via $\mathrm{SU}(3) \subset G_2 \to \mathrm{SO}(3) \subset \mathrm{SO}(3,1)$) guarantees invariance of the 4D action under local Lorentz transformations. By Noether's second theorem: $\nabla_\mu T^{\mu\nu} = 0$. $\blacksquare$
+For a diffeomorphism-invariant matter action, its metric stress tensor is covariantly conserved on the matter equations of motion. Equivalently the Einstein equations with constant $G,\Lambda$ imply conservation by the contracted Bianchi identity. The proposed $SU(3)\to SO(3)$ projection was withdrawn (§3.4).
 
 ---
 
@@ -593,8 +328,8 @@ The mean-field approximation remains accurate to ~0.01%.
 
 ### 7.1 Gap Tristability
 
-:::tip Theorem 5.1 [T]
-Tristability is realized in a configuration with normal form:
+:::note Theorem 5.1 (tristability inference withdrawn [✗])
+The proposed one-dimensional normal form is
 
 $$
 V_{\mathrm{eff}}(G) = G^5 + aG^3 + bG^2 + cG
@@ -605,13 +340,13 @@ where $G = \mathrm{Gap}(i,j)$ for a selected channel:
 - $b = b(\lambda_3, \bar{A})$ — function of the octonionic associator
 - $c = c(\Gamma_2, \kappa, h_{\mathrm{ext}})$ — function of decoherence and external force
 
-At $b \neq 0$ ($V_3 \neq 0$): three local minima (tristability).
+Its derivative has degree four. Three distinct strict interior minima would require two additional intervening maxima and at least five critical points, which is impossible for this polynomial. Boundary minima require a defined admissible interval and boundary conditions.
 :::
 
 ### 7.2 Connection with L-Levels
 
-:::tip Theorem 5.2 [T]
-The three stable Gap profiles are identified with three ranges of the interiority hierarchy:
+:::note Theorem 5.2 (proposed interpretation [H])
+The table assigns labels to three putative profiles. Neither the quintic above nor a clinical measurement establishes these assignments.
 :::
 
 | Minimum | Gap | Interpretation | L-level |
@@ -620,7 +355,7 @@ The three stable Gap profiles are identified with three ranges of the interiorit
 | $G_{\mathrm{mid}} \approx 0.4$ | Medium | Intermediate opacity | L2 (conscious experience) |
 | $G_{\mathrm{high}} \approx 0.8$ | High | High opacity | L1/L0 (basic interiority) |
 
-Transitions between L-levels are **first-order phase transitions** (fold bifurcations):
+The following transition rules would be additional model hypotheses.
 
 | Transition | Mechanism | Hysteresis width |
 |---------|----------|-------------------|
@@ -635,7 +370,7 @@ Transitions between L-levels are **first-order phase transitions** (fold bifurca
 
 For the S$\leftrightarrow$E channel (Structure $\leftrightarrow$ Interiority) with parameters of a typical L2 system ($P \approx 0.5$): $\mu^2 \approx 16.6$, $\lambda_3 \approx 73.8$, $\lambda_4 \approx 27.7$.
 
-Three physical minima:
+The former illustration assigned the following numerical labels. The three quoted points cannot all be interior minima of the displayed quintic.
 
 | Minimum | $G$ | $V_{\mathrm{eff}}$ | L-level | Clinical |
 |---------|-----|---------------------|-----------|---------|
@@ -643,7 +378,7 @@ Three physical minima:
 | 2 | 0.48 | $-0.28$ | L2 | Normal functioning |
 | 3 | 0.82 | $-0.35$ | L1 | Alexithymia |
 
-Global minimum — $G_1$ (L3), but L2 and L1 are metastable. Barrier L1 $\to$ L2: $\Delta V \approx 0.07$. Barrier L2 $\to$ L3: $\Delta V \approx 0.13$.
+The energies alone do not determine transition barriers. Clinical or cognitive classifications require separate observations.
 
 ---
 

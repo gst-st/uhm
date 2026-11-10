@@ -1,39 +1,31 @@
 ---
 sidebar_position: 2
-title: "CKM Matrix from Fritzsch Texture"
-description: "Derivation of the CKM matrix, Cabibbo angle, CP phase, and Jarlskog invariant from Fano geometry"
+title: "CKM Mixing and the Fritzsch Texture Test"
+description: "CKM mixing from supplied Yukawa data and tests of the withdrawn texture"
 ---
 
-# CKM Matrix from Fritzsch Texture
+# CKM Mixing and the Fritzsch Texture Test
 
-:::info Rigor levels
-- **[T]** Theorem — rigorously proved from the UHM axioms
-- **[C]** Conditional — conditional on an explicit assumption
-- **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
-- **[✗]** Retracted — contains an error, corrected or replaced
-
-**Important note on levels:**
-- **Level 1, retracted [✗] (2026-09-26, T-345(e)):** Fano topology → Fritzsch texture. The six-zero Fritzsch texture is refuted by the data whatever its origin: with the running masses at $M_Z$ it gives $|V_{cb}|\ge0.073$ for every choice of phases, against $0.04183^{+0.00079}_{-0.00069}$ (PDG 2024). The line read "Level 1 [T]: Fano topology → Fritzsch texture (structural prediction)". See [§11](#11-вкус-с-часов).
-- **Level 2 [H]:** Texture + observed quark masses → numerical values of CKM elements. Formulas like $|V_{us}| \sim \sqrt{m_d/m_s}$ are standard consequences of Fritzsch texture (Fritzsch, 1977), not original predictions of UHM.
-- **Harmonic reading (T-328, 2026-09-25):** this page uses the axis reading of the generations. In the harmonic reading (hypothesis (GC)) an exact family $\mathbb{Z}_3$ would make $|V_{\mathrm{CKM}}|$ a permutation matrix, which $|V_{us}|\approx0.224$ refutes. Mixing then measures the breaking of the family $\mathbb{Z}_3$, and no value of it is derived ([Fermion generations, §5.3(d)](/docs/physics/particle-physics/fermion-generations#поколения-t328)).
-- **What the clock can supply (T-345, 2026-09-26):** [§11](#11-вкус-с-часов) lists every parameter-free structure of the clock register and shows which of them can break the family $\mathbb{Z}_3$ and which data exclude them. The numerical claims of §§2–7 below ($\theta_{12}=2\pi/7$ with a tuned $C_{\mathrm{norm}}$, $\delta_{\mathrm{CP}}=64.5°$ from a "two-loop correction", the Fritzsch-texture values) are corrected there and in place.
-:::
+With specified Yukawa matrices, their left singular bases determine the CKM matrix. Substitution of measured quark masses into a texture or fitting an angle fixes inputs. The six-zero Fritzsch texture fails the $|V_{cb}|$ test. Neither the adjusted $64.5°$ phase nor the Jarlskog invariant evaluated with that phase is an independent prediction. [Input identification](#ckm-non-circularity) · [Clock tests](#11-вкус-с-часов).
 
 ## Contents
 
 1. [Generations and Mixing](#1-поколения-и-смешивание)
-2. [Mixing Angles from Fano Geometry](#2-углы-смешивания-из-фано-геометрии)
-3. [Cabibbo Angle: θ_C ≈ 13° from RG correction 2π/7](#3-угол-кабиббо)
-4. [CP-Violation Phase](#4-фаза-cp-нарушения) — including [generation mechanism from $V_3$](#delta-cp-mechanism)
+2. [Historical mixing-angle ansatz](#2-углы-смешивания-из-фано-геометрии)
+3. [Historical Cabibbo-angle estimate](#3-угол-кабиббо)
+4. [Historical CP-phase ansatz](#4-фаза-cp-нарушения)
 5. [Jarlskog Invariant](#5-инвариант-ярлского)
-6. [CKM from Mismatch of Yukawa Textures](#6-ckm-из-несовпадения-юкавских-текстур) — including [derivation of $|V_{us}| \sim \sqrt{m_d/m_s}$](#derivation-vus)
+6. [Mixing in supplied Yukawa textures](#6-ckm-из-несовпадения-юкавских-текстур)
 7. [Wolfenstein Parameters](#7-вольфенштейновские-параметры)
-8. [Honest Assessment of Status](#8-честная-оценка-статуса)
-9. [Non-circularity of the CKM derivation](#ckm-non-circularity)
+8. [Status of the historical estimates](#8-честная-оценка-статуса)
+9. [Independent inputs for a CKM test](#ckm-non-circularity)
 10. [UHM and the Cabibbo Angle Anomaly](#10-cabibbo-angle-anomaly)
-11. [Flavour from the clock: what can break the family ℤ₃ (T-345)](#11-вкус-с-часов)
+11. [Tests of the cyclic family model (T-345)](#11-вкус-с-часов)
 
 ---
+
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ## 1. Generations and Mixing {#1-поколения-и-смешивание}
 
@@ -694,6 +686,8 @@ The discrepancy of $J_\text{pred}$ and $J_\text{obs}$ is determined **only** by 
 
 ---
 
+</details>
+
 ## 9. Non-circularity is an input-identification requirement {#ckm-non-circularity}
 
 ### 9.1 What a supplied Dirac operator computes
@@ -731,6 +725,9 @@ still has supplied coefficients. Hermiticity alone neither forces its zeros nor 
 ### 9.5 Remaining work
 
 A quantitative flavor model needs an independently identified $D_F$, its dynamics/RG matching, numerical validation and uncertainties [Pr/H]. The missing structure is not automatically supplied by a finite-group arithmetic bound, a chosen frame, a spectral cutoff or an assertion that only computational work remains. The subsequent conditional clock-family results are separate from a complete derivation of all fermion data.
+
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ## 10. UHM and the Cabibbo Angle Anomaly (T-265) {#10-cabibbo-angle-anomaly}
 
@@ -774,6 +771,8 @@ If the CAA is established to **require** a fourth generation, a vector-like quar
 
 ---
 
+</details>
+
 ## 11. Flavour from the clock: what can break the family ℤ₃ (T-345) {#11-вкус-с-часов}
 
 :::tip[Status: (a)–(d) \[T\] as mathematics; with the data they refute \[✗\] every parameter-free structure of the clock register in any number of channels and every two-channel frame with a rank-one channel; (e) the former numerical claims of this page \[✗\]; (f) the three-channel frame \[H\]]
@@ -814,9 +813,9 @@ Witnesses in `check_core_numbers.py`: `test_tick_commuting_clock_structures_are_
 
 ## Connection with Other Sections
 
-- **Three generations:** Uniqueness of the triplet $(1,2,4)$ → [Three fermion generations](./fermion-generations.md)
-- **Mass hierarchy:** Yukawa couplings generating the texture → [Yukawa mass hierarchy](./yukawa-hierarchy.md)
-- **Higgs sector:** Electroweak breaking mechanism → [Higgs sector](./higgs-sector.md)
+- [Three fermion generations](./fermion-generations.md)
+- [Yukawa mass hierarchy](./yukawa-hierarchy.md)
+- [Higgs sector](./higgs-sector.md)
 
 ---
 

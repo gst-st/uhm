@@ -1,0 +1,18 @@
+// Classical preparations with equal single-port support. An available joint
+// comparison observes the two correlated output wires on the same history.
+fn second_port(anticorrelated:Bool,seed:Bool)->Bool {
+    if anticorrelated { !seed } else { seed }
+}
+fn marginal_support(anticorrelated:Bool,second:Bool,wanted:Bool)->Bool
+    ensures result
+{
+    let a = if second { second_port(anticorrelated,false) } else { false };
+    let b = if second { second_port(anticorrelated,true) } else { true };
+    a==wanted || b==wanted
+}
+fn joint_equal(anticorrelated:Bool,seed:Bool)->Bool
+    ensures result == !anticorrelated
+{
+    let right = second_port(anticorrelated,seed);
+    seed==right
+}

@@ -1,299 +1,45 @@
 ---
 sidebar_position: 3
 title: "Many-Worlds (Everett–Deutsch) and UHM"
-description: "A rigorous comparison: what UHM says about parallel universes — point of maximal kinship (Page–Wootters relative states), the no-branching theorem-level argument, the preferred-basis contribution, and a falsifiable fork"
+description: "Relative states, quantum measurements and what a seven-level open-system model can test."
 ---
 
 # Many-Worlds (Everett–Deutsch) and UHM
 
-:::info Who this chapter is for
-David Deutsch (Oxford) is the strongest living advocate of Everett's
-many-worlds interpretation (MWI): *The Fabric of Reality* (1997),
-*The Beginning of Infinity* (2011), the decision-theoretic derivation
-of the Born rule (1999), and — with Chiara Marletto — constructor
-theory. This chapter states **precisely** where UHM agrees with,
-where it strictly diverges from, and what it *contributes to* the
-many-worlds programme. Every claim carries a status marker and a
-link to the corpus theorem it rests on. Nothing here is rhetorical.
-:::
+Everett describes an observer and a measured system in a joint quantum state. A record can define a conditional state of the system. This chapter asks which data further distinguish the UHM model from ordinary quantum descriptions. The earlier claims that mixedness prohibits branching, and that UHM supplies a universal physical basis or a decoherence floor for life, are withdrawn.
 
-## 1. The formal core of MWI (Deutsch's form)
+## States and branches
 
-To compare rigorously, fix MWI as Deutsch defends it:
+The reduced state $\Gamma=I_2/2$ can be prepared with equal weights in the $Z$ basis or in the $X$ basis. It is also the marginal of a pure Bell state. Thus $\Gamma$ alone leaves its preparation ensemble undetermined. A particular apparatus or environment can carry records of a particular preparation. The spectrum of a density matrix, including its eigenspaces, is still determined by the matrix. Nonuniqueness of preparation ensembles settles no question about the ontology of those records. The historical seven-level viability inequality $P>2/7$ even admits $P=1$. [Quantum model](/docs/physics/quantum-mechanics/qm-reduction#4-функтор-редукции) · [Viability assumption](/docs/core/foundations/axiom-septicity#v-жизнеспособность) · [Separate conscious-window assumptions](/docs/proofs/consciousness/conscious-window#t-124)
 
-| # | MWI commitment | Formal content |
-|---|---|---|
-| M1 | Universal state | One pure state $\lvert\Psi\rangle$ of everything; no external observer |
-| M2 | Dynamics | **Only** unitary evolution $U(t) = e^{-iHt}$; no collapse, ever |
-| M3 | Branching | Decoherence splits $\lvert\Psi\rangle$ into quasi-classical branches ("worlds") |
-| M4 | Preferred basis | Supplied by environment-induced einselection (Zurek) |
-| M5 | Probability | Born weights recovered from rational-agent decision theory (Deutsch 1999) |
-| M6 | Evidence claim | Quantum computation: "where was Shor's factorisation computed, if not across worlds?" |
+## Which basis and which probabilities?
 
-## 2. Point-by-point rigorous comparison
+A quantum apparatus selects a measurement basis through its coupling. In the UHM dephasing example the seven rank-one projectors and Fano-line projectors are supplied in one frame. Computing their common fixed algebra recovers the input pointer rays. Conjugating the entire apparatus gives an equally valid rotated example. The automorphism group of the chosen octonion algebra and the names of its axes provide no physical reference frame. In particular a general $G_2$ rotation mixes these axes. [Measurement basis](/docs/physics/quantum-mechanics/measurement#6-предпочтительный-базис) · [Algebraic rigidity](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) · [Axis labels](/docs/proofs/minimality/theorem-minimality-7)
 
-### 2.1 The ontic carrier: $\lvert\Psi\rangle$ vs $\Gamma$ — strict divergence [T]
+Deutsch’s decision-theoretic argument considers preferences in quantum games. The UHM calculation uses a different input, the Born state–effect pairing. Choosing the Bures metric gives a distance on the supplied state space. Its finite-dimensional topology cannot select an instrument or turn a trace into an outcome frequency. [Born pairing](/docs/physics/quantum-mechanics/measurement#3-правило-борна) · [Metric selection criterion](/docs/proofs/categorical/cohesive-closure#53-closing-the-last-open-question-why-bures-t-187)
 
-UHM's fundamental object is not a universal pure vector but a
-**density operator** $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ on the
-∞-topos site ([Axiom 1](/docs/core/foundations/axiom-omega#аксиоматика)).
-This is not a notational choice; it carries a theorem-level
-consequence for the very *definability* of worlds:
+## Relative clock readings and quantum circuits
 
-:::tip No-branching argument [Т, linear algebra]
-A mixed state admits **no canonical convex decomposition**: for any
-non-extremal $\Gamma$ there are uncountably many ensembles
-$\{(p_k, \lvert\psi_k\rangle)\}$ with
-$\Gamma = \sum_k p_k \lvert\psi_k\rangle\langle\psi_k\rvert$, and no
-internal fact of $\Gamma$ selects one (classical theorem; the
-Schrödinger–HJW purification freedom). Therefore, **if the
-fundamental object is $\Gamma$, "worlds" as components of the state
-are not invariantly definable.** Branch-talk in UHM can only ever be
-*basis-relative bookkeeping*, never ontology.
-:::
+In a Page–Wootters model, conditioning a joint state on a clock reading gives a relative state of the other subsystem. A seven-position clock yields at most seven labelled conditionals with positive-probability readings. The clock factor, measurement and Hamiltonian constraint are assumptions. A count of clock readings cannot count alternative outcomes of an unrelated measurement. [Clock constraint](/docs/core/foundations/axiom-omega#pw-constraint) · [Emergent time](/docs/proofs/dynamics/emergent-time)
 
-Everett's move (M1) is only available if the fundamental state is
-pure. UHM's [No-Zombie / viability structure](/docs/core/foundations/axiom-septicity#v-жизнеспособность)
-*requires* mixedness ($P < 1$ for every viable holon, with the
-conscious window $P \in (2/7, 3/7]$ — [T-124](/docs/proofs/consciousness/conscious-window#t-124)):
-a pure-state holon is non-viable. So the divergence at M1 is not
-aesthetic — **UHM's living systems are constitutively mixed, and
-mixedness kills canonical branching.**
+Shor’s algorithm specifies gates, interfering amplitudes and a final measurement on a register whose dimension grows with the input. A seven-level readout has no demonstrated lossless encoding of arbitrary such circuits. The number of null directions in a specified Hessian concerns that potential. It does not count computational branches. [Freedom](/docs/consciousness/ethics-meaning/freedom)
 
-### 2.2 Dynamics: unitarity-only vs the triad — strict divergence [T]
+## What an interference experiment could test
 
-MWI's M2 says the generator is $-i[H,\cdot]$ and nothing else. UHM
-proves ([T-57, LGKS completeness](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции))
-that the axioms force exactly **three** dynamical contributions:
+At equal per-channel rate $\gamma/7$, the specified seven atomic projectors and seven line operators $\Pi_\ell/\sqrt3$ give $5\gamma/21$ decay for an off-diagonal entry. For a pair of axes the atomic operators distinguish it twice and four lines separate the pair. The total squared difference is $2+4/3$, multiplied by $\gamma/14$. The calculation uses a selected generator. It does not establish that a cell has such a coupling, that $\gamma>0$ in isolation, or that centre-of-mass fringe contrast measures this matrix element. [Dissipator](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) · [Spectrum](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound)
+
+A discriminating experiment would need preparations with a specified coherent pair, independent calibration of $\gamma$, a visibility readout and a bound on environmental decoherence. Loss of contrast in a subsystem is compatible with unitary evolution of a larger system. The proposed regeneration term further requires a feedback resource. [Regeneration model](/docs/core/dynamics/evolution#объединённая-теорема-r) · [Operational cost](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/feedback.md)
+
+## A comparison with learning dynamics
+
+A monitored atomic jump instrument yields a covariance of population increments. For a positive diagonal state with populations $\lambda$ in the specified basis,
 
 $$
-\mathcal{L}_\Omega = \underbrace{-i[H,\cdot]}_{\text{Aut}}
-+ \underbrace{\mathcal{D}_\Omega}_{\text{Fano dissipator}}
-+ \underbrace{\mathcal{R}}_{\text{regeneration}}
+\kappa_{\rm at}=\frac{\gamma}{N}
+   \bigl(\operatorname{diag}(\lambda)-\lambda\lambda^\top\bigr).
 $$
 
-with $\mathcal{D}_\Omega$'s decoherence rate an exact number,
-$\lambda_{\text{deco}} = 5\gamma/21$
-([T-59](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound),
-machine-verified 2026-08-05 by the 49×49 superoperator: spectrum
-exactly $\{0, -5\gamma/21\}$), and $\mathcal{R}$ the *non-unitary,
-non-linear* replacement flow toward $\rho_*$
-([39f–h](/docs/core/dynamics/evolution#объединённая-теорема-r)).
-In MWI decoherence is **descriptive** (a consequence of $U$ acting
-on system⊗environment); in UHM dissipation and regeneration are
-**generative** — part of the law itself. A holon does not branch;
-it *metabolises* coherence.
-
-### 2.3 Preferred basis: UHM's contribution to the MWI programme [T]
-
-MWI's weakest joint (M4) is well known: einselection answers "which
-basis survives decoherence" by pointing at the interaction
-Hamiltonian — and leaves "why *that* interaction" open. UHM closes
-this joint structurally:
-
-- the measurement basis is the **atomic structure of the classifier
-  $\Omega$** ([Theorem 6.1](/docs/physics/quantum-mechanics/measurement#6-предпочтительный-базис)) —
-  logic, not environment;
-- the frame itself is rigid up to $G_2 = \mathrm{Aut}(\mathbb{O})$
-  ([T-42a, Stone–von-Neumann analogue](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность));
-- and the seven atoms are not anonymous: they are the derived
-  dimension set $\{A,S,D,L,E,O,U\}$ with
-  [7/7 functional uniqueness [T]](/docs/proofs/minimality/theorem-minimality-7).
-
-**Read against Deutsch**: this is the exact structure MWI would need
-to *earn* its quasi-classical domains rather than borrow them from
-the environment. It is exportable: even a committed Everettian can
-take the $\Omega$-atomic answer to M4 as a standalone result.
-
-### 2.4 The Born rule: two derivations, different premisses [T]/[C]
-
-Deutsch (1999) recovers Born weights from decision-theoretic axioms
-(rational preference over quantum games); critics (Barnum et al.)
-press circularity. UHM derives measurement probability from the
-**Bures geometry forced by the axioms**: the unique monotone metric
-characterisation ([T-187](/docs/proofs/categorical/cohesive-closure#53-closing-the-last-open-question-why-bures-t-187))
-plus the classifier-projection reading of measurement
-([§3, Born rule from UHM](/docs/physics/quantum-mechanics/measurement#3-правило-борна)).
-Statuses differ: Deutsch's route imports rationality axioms **[P]**
-in our vocabulary; UHM's route stays inside A1–A2 **[T]** with the
-interpretive bridge confined to what "measurement" names **[I]**.
-
-### 2.5 Page–Wootters: the point of maximal kinship [T]
-
-Here the two programmes genuinely touch. Everett's original name was
-the *relative-state* formulation; Deutsch has always emphasised
-this. UHM's Axiom 5 — its clock register constructed from A1–A4, its constraint assumed
-([T-87](/docs/core/foundations/axiom-omega#pw-constraint): steps 1–3 [T], the Page–Wootters link $\hat{C}\Gamma = 0$ [C]; an earlier line read "now a theorem — A5 derivable from A1–A4") —
-is precisely a relative-state construction: a global constrained
-state $\hat{C}\Gamma_{\text{total}} = 0$ whose **conditional states
-relative to the clock sector** are the experienced instants
-([T-38b, emergent time](/docs/proofs/dynamics/emergent-time)).
-
-So UHM *does* host a rigorous plurality: the $\mathbb{Z}_7$ family
-of clock-conditioned states co-present in one timeless $\Gamma$.
-The strict difference from MWI: this plurality is **temporal**
-(seven phases of one holon), not **modal** (alternative outcomes),
-and its cardinality is fixed by the algebra (7), not exponentiating
-with every interaction. Call it what it is [I]: *co-present moments,
-not parallel worlds.*
-
-### 2.6 "Where was Shor computed?" — UHM's answer [T]/[I]
-
-Quantum algorithms use amplitudes and interference in a specified Hilbert-space circuit model. A seven-dimensional effective readout is not a lossless representation of an arbitrary n-qubit computation. The selected integration statistic measures basis-dependent coherence, not a general complexity or speedup theorem. The Hessian score $1+\dim\ker\operatorname{Hess}V$ is a definition [D] for a specified potential and domain, not the number of computational branches or available choices. Its bound is $d+1$ (49 on the full-rank $D_7$ stratum), and its interpretation as agency is [I/H]. None of these constructions proves or refutes a many-worlds ontology. See [Freedom](/docs/consciousness/ethics-meaning/freedom).
-
-### 2.7 The falsifiable fork [P]
-
-The comparison yields one experiment-class divergence, stated
-honestly:
-
-:::warning Fork (macro-interference of living matter)
-**MWI (pure unitarity)**: no principled ceiling on interference
-visibility for arbitrarily complex systems — with sufficient
-isolation, a virus, a cell, a holon interferes.
-
-**UHM**: any *viable* system carries the internal Fano dissipator
-with rate $\lambda_{\text{deco}} = 5\gamma/21 > 0$ [T-59] **by law,
-not by environment**. Perfect isolation does not switch it off
-(it is part of $\mathcal{L}_\Omega$, [T-57]). Hence a hard ceiling:
-interference visibility of a *living* (viable, $P > 2/7$,
-$\mathcal{D}_\Omega \neq 0$) system decays at least at
-$\lambda_{\text{deco}}$ regardless of shielding.
-
-**Discriminator**: matter-wave interferometry approaching the living
-threshold (large biomolecules → viruses → viable cells). Persistent
-full-visibility interference of a demonstrably *viable* system would
-falsify the UHM triad; a shielding-independent visibility floor
-matching $5\gamma/21$ scaling would falsify unitarity-only MWI.
-Status: research programme [P] — the numbers ($\gamma$ per system)
-need the $\omega_0$-calibration layer.
-:::
-
-### 2.8 The Fabric's four strands — structural concordance [I]
-
-Deutsch's *Fabric of Reality* weaves four strands and claims they
-form one explanatory fabric. UHM, built independently, arrives at a
-four-strand structure with exact counterparts — evidence that the
-fabric intuition tracks something real:
-
-| Deutsch's strand | UHM counterpart | Where |
-|---|---|---|
-| Quantum theory (Everett) | $\Gamma$, Bures topos, triad dynamics | A1–A2, T-57 |
-| Epistemology (Popper) | Reflection $R$, self-model $\varphi$, falsifiability registry | [Self-observation](/docs/consciousness/foundations/self-observation), [Falsifiability](/docs/reference/falsifiability) |
-| Computation (Turing) | Classification of computations; $\Phi$-classes | [Consequences §Computation](/docs/core/foundations/consequences#классификация-вычислений) |
-| Evolution (Darwin) | Autopoiesis (AP), viability V, regeneration $\mathcal{R}$ | [Septicity](/docs/core/foundations/axiom-septicity) |
-
-And constructor theory's counterfactual primitives ("possible /
-impossible transformations") have a working UHM analogue: the
-threshold catalogue ($P_{\text{crit}}$, $R_{\text{th}}$,
-$\Phi_{\text{th}}$, the conscious window) *is* a catalogue of
-possible-versus-impossible configurations, maintained with
-registry discipline.
-
-## 2.9 The learning-theoretic bridge: UHM fixes Vanchurin's free function [T]
-
-Deutsch's multiverse and Vanchurin's *self-learning universe* are the
-two live programmes that derive physics from something more primitive
-(branching worlds; learning dynamics). UHM engages the second one
-quantitatively, and the result is a set of exact theorems (T-293–295; the full
-derivation, with proofs, the falsification protocol and the
-reproducibility table, is [The Learning Algorithm of a
-Holon](/docs/applied/research/vanchurin-bridge)):
-
-Vanchurin parametrises the learning algorithm by the functional
-relation $g=\kappa^{a}$ between metric and noise covariance
-(*Geometric framework for biological evolution*, arXiv:2603.15198,
-Eq. 6.8), with $a=0$ (stochastic gradient), $a=\tfrac12$ (efficient
-learning — Adam-like, conjectured to underlie biological complexity)
-and $a=1$ (natural gradient, the "quantum regime"), and states that
-direct estimates of $\kappa$ remain unavailable. In UHM **neither
-factor is free**: $g$ is Bures (unique monotone metric, T-187) and
-$\kappa$ is the Kraus-increment covariance of the canonical
-dissipator (T-41/T-59). Computing both gives
-
-$$
-\kappa^{\uparrow\uparrow}_{\text{at}}=\frac{\gamma}{4N}\,g^{-1}
-\qquad\Longleftrightarrow\qquad
-\Pi\,g\,\kappa_{\text{at}}\,\Pi=\frac{\gamma}{4N}\,\Pi ,
-$$
-
-which is *verbatim* his own criterion for $a=1$: substituting $a=1$
-into his Eq. 7.5 yields exactly $g^{-1}=g^{-1}\kappa g^{-1}$. Hence
-$a=1$ exactly. (The constant is $\gamma/4N$ because the Bures metric
-is one **quarter** of Fisher–Rao on commuting perturbations, not one
-half; in the SLD-QFI normalisation used in the natural-gradient
-literature the identity reads $\gamma\Pi/N$. The exponent and all
-ratios below are independent of that choice.)
-
-Three companions, all state-independent. The universal Fano factor
-$\operatorname{Tr}(g\kappa_{\text{full}})/\operatorname{Tr}(g\kappa_{\text{at}})=11/9$
-at matched per-channel rate — equivalently, the block layer carries
-exactly $2/11$ of the noise. The noise–purity law
-$\operatorname{Tr}\kappa=\frac{\gamma}{N}(1-P)$, so the conscious
-window becomes a learning-noise band $[4\gamma/49,5\gamma/49)$. And a
-sector split: $\kappa^{\text{coh}}=0$ on the decohered manifold,
-where coherences instead contract deterministically at $5\gamma/21$ —
-stochastic learning noise does not reach them. Three consequences
-deserve emphasis:
-
-1. **What is a modelling choice for him is a theorem here.** The
-   relation $g^{-1}\propto\kappa^{\uparrow\uparrow}$ is his $a=1$
-   condition, one option among three; UHM derives it. It is the
-   *dynamical* counterpart of the *static* identity $g^{-1}=c$ that
-   his §4 obtains from a maximum-entropy argument, where $c$ is the
-   population covariance. Granting that static identity too, the two
-   together predict $\kappa^{\uparrow\uparrow}=\frac{\gamma}{4N}c$ —
-   the covariance of *temporal changes* has the same shape as the
-   *static* covariance, differing by a single scalar that is a pure
-   rate. One side is routinely measured; the other, he notes, never
-   has been.
-2. **A falsifiable disagreement**: UHM predicts that a viable learner
-   sits at $a=1$ with Fano-induced anisotropy, *not* at the
-   $a=\tfrac12$ regime conjectured for biological complexity.
-3. **The test needs no metric.** His Eq. 7.5 degenerates at
-   $a=\tfrac12$, where $\kappa^{\uparrow\uparrow}=I$ carries no
-   information about $g$ at all. So the two hypotheses make opposite
-   *shape* claims about one measured object: $a=\tfrac12$ makes
-   $\kappa^{\uparrow\uparrow}$ spherical, while $a=1$ makes it
-   proportional to $\operatorname{diag}\lambda-\lambda\lambda^{\top}$,
-   computable from the state alone. A sphericity test on about a
-   hundred aggregated time windows separates them. Its resolving power
-   vanishes at the maximally mixed state and grows away from it — so
-   the theory predicts that the systems it calls holons, sitting in
-   the window $P\in(2/7,3/7]$, are exactly the systems in which its
-   own central claim is measurable.
-
-Read together with §2.6: Deutsch asks *where* the computation
-happens and answers "in other worlds"; Vanchurin asks *what algorithm*
-the world runs; UHM answers the second question with numbers and, in
-doing so, removes the need for the first — the computation happens in
-the coherence sector of one state, and the learning happens in its
-complement.
-
-## 3. Summary verdict
-
-**What UHM strictly says about parallel universes:**
-
-1. **A single-world reading** [P/I]: UHM can choose one ontic density
-   matrix and one ambient topos. Nonunique ensemble decompositions
-   and a supplied nonunitary dynamics do not by themselves prove
-   that all branching interpretations are impossible. “No outside”
-   is an ontological thesis, not T-55's predicate theorem. That theorem
-   concerns $\mathrm{Th}_m\hookrightarrow\Omega^G$ for a chosen map;
-   T-56 does not establish logical or ontological completeness
-   ([revised statements](/docs/core/foundations/consequences#структурная-toe)).
-2. **Maximal kinship at Page–Wootters** [T]: UHM is a
-   relative-state theory *of time* — seven co-present
-   clock-conditioned states of one $\Gamma$; Everett's machinery,
-   capped cardinality, temporal not modal.
-3. **A genuine contribution to MWI's own programme** [T]: the
-   $\Omega$-atomic, $G_2$-rigid preferred basis — the missing answer
-   to M4 — stands independently of whether one accepts branching.
-4. **The quantum-computation argument is answered without worlds**
-   [T]/[I]: coherences of one state are the resource; Freedom counts
-   the flat directions and is bounded by 7.
-5. **One honest experimental fork** [P]: a law-level decoherence
-   floor for living matter versus unitarity's unbounded
-   interference — a real, eventually decidable disagreement.
+On the simplex tangent space this is $\gamma/(4N)$ times the inverse metric in Bures normalization. Adding the monitored Fano jumps at matched rate gives the metric-weighted trace ratio $11/9$ for $N=7$ in this diagonal sector. These equalities permit a comparison to Vanchurin’s $a=1$ diagnostic after choosing rate units. The averaged channel allows other monitoring schemes with different increment statistics. Extending the comparison to biological learning requires observed increments and a measurement protocol. Neither this identity nor the philosophical parallels to *The Fabric of Reality* discriminate between interpretations of quantum mechanics. [Noise calculation and scope](/docs/applied/research/vanchurin-bridge) · [Falsifiability](/docs/reference/falsifiability)
 
 *Related pages:* [Measurement](/docs/physics/quantum-mechanics/measurement) ·
 [QM reduction](/docs/physics/quantum-mechanics/qm-reduction) ·

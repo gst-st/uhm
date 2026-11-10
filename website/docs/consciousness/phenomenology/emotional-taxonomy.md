@@ -200,37 +200,21 @@ Basic emotions are characteristic regions in the space $\left(\frac{dP}{d\tau}, 
 
 ### Detailed numerical examples for each basic emotion {#числовые-примеры}
 
-For each emotion we give a concrete $\Gamma$-profile: a life situation, the values of key parameters, and interpretation.
+These are hypothetical illustrations of the proposed labels. The situations supply context. The numbers are model inputs or calculations, and the emotion assignments remain interpretations [I].
 
 #### Joy
 
-**Situation:** a student learns that they passed a difficult exam.
+Take $|v\rangle=(|S\rangle+|E\rangle+|U\rangle)/\sqrt3$ and $\Gamma(q)=(1-q)I/7+q|v\rangle\langle v|$, $0\le q\le1$. At $q=1/2$ the eigenvalues are $4/7$ once and $1/14$ six times. Thus $\Gamma$ is positive with trace one. Its purity is $P(q)=(1+6q^2)/7$, so $P=5/14$, $\gamma_{EU}=\gamma_{SE}=1/6$ and $\gamma_{DD}=1/14$.
 
-| Parameter | Value | Explanation |
-|----------|----------|-----------|
-| $P$ | $0.38$ | Above $P_{\text{crit}} = 0.286$, in the safe zone |
-| $dP/d\tau$ | $+0.025$ | Viability rising rapidly |
-| $d^2P/d\tau^2$ | $+0.008$ | Growth accelerating |
-| $\gamma_{EU}$ | $0.28$ (high) | Synthesis — sense of unity, "everything is coming together" |
-| $\gamma_{SE}$ | $0.22$ (high) | Representation — wholistic picture "I did it" |
-| $\gamma_{DD}$ | $0.12$ (normal) | Dynamics do not dominate — no need to act |
+For the illustrative path $q(\tau)=1/2+\tau/10$ near $\tau=0$, both coherences rise and $\dot P=3/35$, $\ddot P=3/175$ at zero. This realizes the signs assigned to “joy” in the table. No participant or emotion was measured.
 
-Valence: $+1$. Arousal: $0.025$ (high). Sector signature indicates an integrative pattern (synthesis + representation).
+The previous example combined $P=0.38$ with coherence magnitudes $0.28$ and $0.22$. For every Hermitian trace-one matrix, $P=\sum_i\gamma_{ii}^2+2\sum_{i<j}|\gamma_{ij}|^2$ and $\sum_i\gamma_{ii}^2\ge1/7$. Those two entries alone require $P\ge 1/7+2(0.28^2+0.22^2)>0.3964$.
 
 #### Fear
 
 **Situation:** a person walking through a dark alley hears footsteps behind them.
 
-| Parameter | Value | Explanation |
-|----------|----------|-----------|
-| $P$ | $0.31$ | Dangerously close to $P_{\text{crit}} = 0.286$ |
-| $dP/d\tau$ | $-0.020$ | Rapid fall in viability |
-| $d^2P/d\tau^2$ | $-0.008$ | Fall accelerating |
-| $\gamma_{DD}$ | $0.22$ (high) | Dynamics dominate — body ready for action |
-| $\gamma_{DE}$ | $0.25$ (high) | Affection — the process strongly affects experience |
-| $\gamma_{LE}$ | $0.05$ (low) | Logic switched off — "no time to think" |
-
-Valence: $-1$. Arousal: $0.020$ (high). Sector signature indicates a dynamic/affective pattern.
+In this hypothetical scenario the label “fear” is associated with decreasing purity and an increase in the $D$ population and the magnitude of the $DE$ coherence. The proposed changes would need a physical trajectory and a separate observation of the participant to be tested. The former numerical profile violated joint positivity and purity constraints when its entries were taken as exact.
 
 #### Anger
 

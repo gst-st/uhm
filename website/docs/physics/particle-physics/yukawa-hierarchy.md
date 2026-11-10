@@ -1,18 +1,12 @@
 ---
 sidebar_position: 3
 title: "Yukawa Mass Hierarchy"
-description: "Fano selection rule for Yukawa couplings, quasi-IR fixed point, and the mechanism for light generation mass generation"
+description: "Yukawa model inputs, withdrawn mass mechanisms and fitted parameters"
 ---
 
 # Yukawa Mass Hierarchy
 
-:::info Rigor Levels
-- **[T]** Theorem — strictly proved from UHM axioms
-- **[C]** Conditional — conditional on an explicit assumption
-- **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
-- **[I]** Interpretation — philosophical / qualitative analogy
-- **[✗]** Retracted — contains an error, corrected or replaced
-:::
+Octonion incidence fixes certain components of a chosen alternating tensor. Yukawa matrices require matter and scalar representations and interaction coefficients. Their singular values, an electroweak scale and a running/matching prescription give the masses in the adopted model. Pendleton–Ross focusing depends on its input couplings and boundary conditions. The adopted top mass and the fitted suppression parameters do not independently predict a mass spectrum. The six-zero Fritzsch texture and the proposed loop origin of the bottom mass were refuted. [T-332](./higgs-sector.md#голоморфность-вп) · [T-345](./ckm-matrix.md#11-вкус-с-часов).
 
 ## Contents
 
@@ -58,6 +52,9 @@ This is the unique line containing both 5 and 6. $\blacksquare$
 **Corollary.** In UHM semantics: dimension **A (awareness)** is directly tied to the Higgs mechanism of mass generation. The heaviest fermion ($t$-quark) acquires its mass through a **direct** coupling of awareness to the electroweak sector $(E$-$U)$.
 
 ---
+
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ## 2. Fano Selection Rule for Yukawa Couplings {#2-фановское-правило-отбора-юкавских-связей}
 
@@ -766,24 +763,18 @@ Mass predictions: the order of magnitude is correct for all 9 particles; the bes
 **Status:** The analytic formula is **[T]** (consequence of sectoral minimization [T] and canonical constants [T]). Numerical mass predictions are **[C at (SV)]** (depend on the sectoral vacuum structure).
 :::
 
+</details>
+
 ### 9.3 Testable Predictions {#тестируемые-предсказания-p6}
 
-1. **Ratio $m_c/m_u$**: from Fano texture $m_c/m_u \sim \varepsilon_{\mathrm{eff}}^{-2} \approx 290$. Observation: $1270/2.2 \approx 577$. Discrepancy $\times 2$ — expected for a one-loop estimate.
-
-2. **Ratio $m_b/m_\tau$**: $m_b/m_\tau \approx 2.35$ from sectoral RG [T]. Observation: $4.18/1.78 = 2.35$. **Exact agreement**.
-
-3. **Gatto-Sartori-Tonin relation (GST)**: $|V_{us}| \approx \sqrt{m_d/m_s} \approx 0.22$. From the Fritzsch texture (Theorem 5.2): $|V_{us}| \approx 0.22$. Observation: $|V_{us}| = 0.2243 \pm 0.0005$. **Agreement at 2%**. *Corrected 2026-09-26:* the Fritzsch texture is refuted by $\lvert V_{cb}\rvert$ (Theorem 5.2, [✗]); GST is an empirical relation of any texture with a zero $(1,1)$ entry, not a test of UHM. PDG 2024: $\lvert V_{us}\rvert=0.22501\pm0.00068$.
-
-4. **Falsification**: if the exact non-perturbative computation of $\varepsilon_{33}^*$ gives a value incompatible with $\varepsilon_{\mathrm{eff}} \in [0.04, 0.08]$, formula 9.1 is falsified.
-
----
+The quoted $m_b/m_\tau$ uses input masses and running, and the GST estimate of $|V_{us}|$ uses the observed ratio $m_d/m_s$. Testing a mass or mixing prediction requires fixing the Yukawa matrices independently of the observable being tested. The six-zero texture failed this test for $|V_{cb}|$. [Texture check](./ckm-matrix.md#derivation-vus).
 
 ## Connection to Other Sections
 
-- **Three generations:** Uniqueness of $(1,2,4)$, assignment $k=1 \to$ 3rd [T], $k=4 \to$ 2nd, $k=2 \to$ 1st [T] → [Three Fermion Generations](./fermion-generations.md)
-- **CKM matrix:** Fritzsch texture → mixing angles (the texture is retracted [✗], T-345(e)) → [CKM Matrix](./ckm-matrix.md)
-- **Sectoral $\varepsilon$ hierarchy:** $\varepsilon_\text{eff} \sim 0.06$ as sectoral average, self-consistent vacuum equation → [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε)
-- **Higgs sector:** Unique Higgs line $\{A,E,U\}$ → [Higgs Sector](./higgs-sector.md)
+- [Three Fermion Generations](./fermion-generations.md)
+- [CKM Matrix](./ckm-matrix.md)
+- [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε)
+- [Higgs Sector](./higgs-sector.md)
 - **NCG**: Chamseddine-Connes spectral action → [arXiv: 1208.1030](https://arxiv.org/abs/1208.1030); Devastato-Lizzi-Martinetti → [arXiv: 1403.7567](https://arxiv.org/abs/1403.7567)
 
 ---

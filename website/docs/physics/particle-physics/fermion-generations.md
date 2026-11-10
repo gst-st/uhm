@@ -1,87 +1,38 @@
 ---
 sidebar_position: 1
-title: "Three Generations of Fermions"
-description: "Derivation of three fermion generations from the geometry of the Fano plane and PSL(2,7)-classification"
+title: "Fano Geometry and the Fermion Family Hypothesis"
+description: "Fano orbits, real clock harmonics and the family identification hypothesis"
 ---
 
-# Three Fermion Generations from Fano Geometry
+# Fano Geometry and the Fermion Family Hypothesis
 
-:::info Rigor Levels
-Each result is marked with one of the canonical statuses:
-- **[T]** Theorem — strictly proved
-- **[C]** Conditional — conditional on an explicit assumption
-- **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
-- **[D]** Definition — definition by convention
-- **[I]** Interpretation — physical interpretation of a formal result
-- **[✗]** Retracted — contains an error, corrected or replaced
-- **[Pr]** Program — research direction
-:::
+A seven-tick real clock has three pairs of nonzero conjugate frequencies. Identifying one matter family per pair is the physical premise (GC). Even a fixed gauge representation can be repeated with arbitrary multiplicity. The point stabilizer of the Fano plane has three orbits, of sizes 1, 6 and 8, on the 15 pairings. These combinatorial counts, the number of physical families and their mass ordering are distinct questions. [Corrected orbit calculation](#thm-2-1) · [Bridge premises](/docs/reference/premises).
 
 ## Contents
 
-1. [Number of generations from Gap-vacuum topology](#1-число-поколений-из-топологии-gap-вакуума)
-   - [1.2 Theorem: exactly 3 generations](#теорема-ровно-три-генерации)
+1. [Fano lines and clock harmonics](#1-число-поколений-из-топологии-gap-вакуума)
+   - [1.2 Three harmonic pairs and the family hypothesis](#теорема-ровно-три-генерации)
    - [1.3 Precedents and related programmes](#прецеденты-три-поколения)
 2. [PSL(2,7)-classification of Z₇-orbits](#2-psl27-классификация-z₇-орбит)
-3. [Selection principle: minimal associator](#3-принцип-отбора-минимальный-ассоциатор)
+3. [Triples minimizing the associator](#3-принцип-отбора-минимальный-ассоциатор)
    - [3.2 Refutation of equivalence (1,2,4) ↔ (3,5,6) [✗]](#refutation-equivalence)
-4. [Generation assignment: k=1 → 3rd, k=4 → 2nd, k=2 → 1st](#4-назначение-поколений)
+4. [Historical family assignment](#4-назначение-поколений)
 5. [Z₃-symmetry and the Fano selection rule](#5-z₃-симметрия-и-фановское-правило-отбора)
-6. [Uniqueness of the triplet (1,2,4)](#6-единственность-триплета-124)
-7. [Mass hierarchy of generations](#7-массовая-иерархия-поколений)
-8. [Refined predictions: Cabibbo angle and CP violation](#8-уточнённые-предсказания-угол-кабиббо-и-cp-нарушение)
+6. [Historical triplet selection](#6-единственность-триплета-124)
+7. [Historical family-mass model](#7-массовая-иерархия-поколений)
+8. [Historical Cabibbo and CP estimates](#8-уточнённые-предсказания-угол-кабиббо-и-cp-нарушение)
 
 ---
 
-## 1. Number of generations from Gap-vacuum topology {#1-число-поколений-из-топологии-gap-вакуума}
+## 1. Counting Fano lines and clock harmonics {#1-число-поколений-из-топологии-gap-вакуума}
 
-### Theorem 1.1 (Number of generations) {#thm-1-1}
+### 1.1 Three Fano lines through a point {#thm-1-1}
 
-:::warning [H] Hypothesis (original argument 1.1)
-The original argument via $S_4$-orbits on 6 points is not strictly defined, and the catastrophe-theory route ($V_\text{eff}\leq 2$ interior minima from the $A_4$ swallowtail + a boundary minimum) was only conditional. **These are superseded: $N_{\text{gen}} = 3$ is now an exact group-theoretic count** $|\mathrm{QR}(7)| = |\mathbb{Z}_7^*/\{\pm1\}| = (7-1)/2 = 3$ — **[T]** — with only the physical identification remaining **[I]**; see [Theorem 1.2](#теорема-ровно-три-генерации).
-:::
+Each Fano point lies on three lines. Relating such lines, or minima of a chosen potential, to fermion families would require a map from those objects to independently observed particle multiplets. No such map follows from incidence or from a count of extrema.
 
-**Theorem.** The number of fermionic generations is determined by the topology of the Gap-vacuum:
+### 1.2 Three harmonic pairs and the family hypothesis {#теорема-ровно-три-генерации}
 
-**(a)** Each generation corresponds to a **topologically distinct** minimum of $V_\text{Gap}$ in the vacuum configuration.
-
-**(b)** From swallowtail analysis: the number of minima of $V_\text{eff}$ depends on the catastrophe. For the $A_4$ swallowtail ($V\sim x^5$), $V' $ is a quartic with $\leq 4$ real roots, which alternate, giving **$\leq 2$ interior minima**. A **third** minimum requires either (i) a **boundary** minimum on the compact Gap domain $\mathrm{Gap}\in[0,1]$, or (ii) the **butterfly** $A_5$ ($V\sim x^6$, which was retracted as X4). Hence the "$\leq 3$" upper bound is **[C under Gap-potential topology]**, conditional on realizing route (i) on the compact domain — it is not an unconditional $A_4$ fact.
-
-**(c)** The number of generations $N_\text{gen}$ = the number of distinct **types** of degenerate $\Gamma$-configurations with $R \to 0$, not connected by a $G_2$-transformation.
-
-**(d)** From the Fano structure: 7 Fano lines define 7 "privileged" triplets. From Fano duality (point ↔ line): each point lies on 3 lines → 3 inequivalent "types" of vacuum alignment:
-
-$$
-N_\text{gen} = 3
-$$
-
-**Justification (d).** The vacuum configuration selects an O-direction. The remaining 6 directions form a Fano graph with 3 lines passing through each point. Three classes of inequivalent orientations of the triplet $(A,S,D)$ relative to the Fano structure give 3 generations.
-
-More precisely: the automorphism group of the Fano plane $\mathrm{PSL}(2,7)$ (order 168) acts on 7 points. The stabilizer of one point ($O$) has order $168/7 = 24 \cong S_4$. Orbits of $S_4$ on pairs from the remaining 6 points: $C(6,2) = 15$ pairs, divided into classes by size. Three classes → three generations.
-
-### Theorem 1.2 (Exactly 3 generations) {#теорема-ровно-три-генерации}
-
-:::tip Theorem 1.2 (Exactly 3 generations) — count [T], identification [I]
-Lower bound $N_{\text{gen}}\geq 3$ — from the unique order-3 subgroup $(1,2,4)\subset\mathbb{Z}_7^*$ and irreducibility of $\mathbb{Z}_3$ **[T]**. Upper bound $N_{\text{gen}}\leq 3$ — **[T]** by the same group-theoretic count (Step 4: $\mathbb{Z}_7^* \cong \mathbb{Z}_6$ has no subgroups of order 4 or 5); the earlier catastrophe-theory bound **[C under Gap-potential topology]** is now only a consistency check (see the status box in §"Composite status"). Physical identification of the three classes with the observed generations is **[I]**. Composite status: count **[T]**, identification **[I]** (harmonised 2026-09-10 with the body of the proof; the flat "[T] strictly proved" of earlier drafts remains retracted for the *identification*).
-:::
-
-**Theorem.** The number of fermionic generations in UHM equals **exactly 3**:
-
-$$
-N_{\text{gen}} = 3
-$$
-
-**Proof.**
-
-**Step 1. Upper bound $N_{\text{gen}} \leq 3$ [T] (existing result).**
-
-From the $A_4$-catastrophe (swallowtail): the number of minima of $V_{\text{Gap}}$ with three control parameters is $\leq 3$ (see [Theorem 1.1](#thm-1-1)).
-
-**Step 2. Lower bound $N_{\text{gen}} \geq 3$ [T] (new result).**
-
-Argument via orbits of automorphisms on non-collinear triples of Fano points.
-
-**Definition.** A non-collinear triple is a set $(p_1, p_2, p_3)$ of points in PG(2,2) not lying on a single Fano line.
+The nonzero frequencies of a real seven-tick cyclic register form three conjugate pairs, $\{1,6\},\{2,5\},\{3,4\}$ [T]. The multiplicative subgroup $\mathrm{QR}(7)=\{1,2,4\}$ supplies one representative per pair. A bijection from these real harmonic modes to fermion families is the separate hypothesis (GC) [H]. Given a matter representation $V$, the same internal symmetry acts on any number of identical copies of $V$. Counting the modes alone therefore supplies no physical lower or upper bound on family multiplicity. The following Fano lemmas concern the finite plane.
 
 #### Lemma 1.2a (28 non-collinear triples) {#лемма-28-троек}
 
@@ -119,7 +70,7 @@ $$
 |G \cdot \tilde{t}| = \frac{|G|}{|\text{Stab}_G(\tilde{t})|} = \frac{168}{|\text{Stab}_G(\tilde{t})|}.
 $$
 
-PSL(2,7) acts **faithfully** on points, so the only element fixing an ordered triple $(p_1, p_2, p_3)$ of pairwise distinct points is the identity (an automorphism of the projective plane fixing 3 points in general position is trivial). Hence $|\text{Stab}_G(\tilde{t})| = 1$, giving:
+Over $\mathbb F_2$ an ordered non-collinear triple is a basis. A linear transformation fixing each basis vector is the identity. Hence its stabilizer is trivial, giving:
 
 $$
 |G \cdot \tilde{t}| = 168 = |\widetilde{X}|.
@@ -131,53 +82,9 @@ Since the orbit $G \cdot \tilde{t}$ exhausts the entire set $\widetilde{X}$, the
 
 For any two unordered non-collinear triples $\{p_1, p_2, p_3\}$ and $\{q_1, q_2, q_3\}$, fix arbitrary orderings $\tilde{t} = (p_1, p_2, p_3)$ and $\tilde{s} = (q_1, q_2, q_3)$. By Step 3 there exists $g \in \text{PSL}(2,7)$ with $g \cdot \tilde{t} = \tilde{s}$, in particular $g\{p_1, p_2, p_3\} = \{q_1, q_2, q_3\}$. Hence PSL(2,7) acts transitively on the set of **28 unordered** non-collinear triples as well. $\blacksquare$
 
-**Step 3. Construction of three distinct generations [T].**
 
-The generation triplet $(k_1, k_2, k_3) = (1, 2, 4)$ is the unique associative triplet [T] (quadratic residues mod 7, minimal associator $\mathcal{A} = 0$, see [Theorem 6.1](#thm-6-1)). The three generations are defined by the three **distinct** elements of the triplet:
 
-| Generation | Index $k$ | Dimension | Fano distance to Higgs line |
-|-----------|:----------:|-----------|:-------------------------------:|
-| 3rd (t,b,τ) | $k_1 = 1$ | A | $d = 0$ (on Higgs line) |
-| 2nd (c,s,μ) | $k_2 = 4$ | L | $d = 1$ (line $\{D,L,U\}$) |
-| 1st (u,d,e) | $k_3 = 2$ | S | $d = 1$ (line $\{S,D,E\}$) |
-
-All three elements are **distinct** ($k_1 \neq k_2 \neq k_3 \neq k_1$), which follows from the definition of the multiplicative subgroup $\{1, 2, 4\} \subset \mathbb{Z}_7^*$.
-
-**Step 4. Proof that $N_{\text{gen}} = 3$ exactly [T]** (both bounds simultaneously, from a group-theoretic count).
-
-The generations are the elements of the **unique order-3 multiplicative subgroup** of $\mathbb{Z}_7^*$, i.e. the quadratic residues $\mathrm{QR}(7) = \{1,2,4\}$. Its cardinality is fixed with **no analytic input**:
-
-$$
-N_{\text{gen}} = |\mathrm{QR}(7)| = \frac{7-1}{2} = 3 \qquad\textbf{[T, exact].}
-$$
-
-This is simultaneously the lower **and** upper bound — there is no "$\leq$" to prove separately:
-
-1. **$\mathbb{Z}_7^* \cong \mathbb{Z}_6$** (cyclic) has exactly one subgroup of each order dividing $6$: orders $1,2,3,6$. Order $1$ ($\{1\}$) is trivial; order $2$ ($\{1,6\}=\{\pm1\}$) is **charge conjugation**, not a family structure; order $6$ is the whole group. The **unique proper nontrivial subgroup closed under the octonionic (associative Fano) product** is the order-3 subgroup $\{1,2,4\}=\mathrm{QR}(7)$ ([Theorem 6.1](#thm-6-1): $(1,2,4)$ is the unique associator-free Fano line). Hence exactly $3$ elements — not $2$, not $4$, not $6$.
-
-2. **Charge-conjugation cross-check.** Because $7\equiv 3 \pmod 4$, $-1$ is a quadratic **non**-residue mod $7$ ($-1\equiv 6\notin\mathrm{QR}$). Therefore $C:k\mapsto -k$ maps $\mathrm{QR}\leftrightarrow\mathrm{QNR}$ bijectively, and the generations are exactly the **$C$-orbits** $\mathbb{Z}_7^*/\{\pm1\} = \{\{1,6\},\{2,5\},\{3,4\}\}$ — again $|\mathbb{Z}_7^*|/2 = 3$. The set $\{1,2,4\}$ is a complete transversal (one representative per orbit).
-
-3. **Irreducibility / non-extendability.** The order-3 subgroup is $\mathbb{Z}_3$ (simple) — it cannot be reduced to $2$; and it cannot be extended to $4$ or more, since $4,5$ do **not** divide $6=|\mathbb{Z}_7^*|$ (Lagrange), so no subgroup of order $4$ or $5$ exists.
-
-Therefore $N_{\text{gen}} = 3$ is an **exact count** [T], independent of the effective-potential topology. $\blacksquare$
-
-:::note Swallowtail $A_4$ is now a consistency check, not the bound
-The catastrophe-theory route (the Gap potential $V_{\text{Gap}}$ realises an $A_4$ swallowtail, giving $\leq 2$ interior minima plus a boundary minimum on the compact Gap domain) serves as a **consistency check** on the group-theoretic count above: the Morse structure of $V_{\text{Gap}}$ is compatible with exactly $3$ stationary generation-vacua, matching $|\mathrm{QR}(7)|=3$. The count itself is group-theoretic and independent of the potential's topology.
-:::
-
-:::warning Composite status
-$N_{\text{gen}} = 3$ as a **mathematical count** is now **[T]** — the exact cardinality $|\mathrm{QR}(7)| = |\mathbb{Z}_7^*/\{\pm1\}| = (7-1)/2 = 3$, group-theoretic and topology-independent (the earlier **[C under Gap-potential topology]** is retired). The **identification** of the three $\mathrm{QR}(7)$-classes (equivalently $C$-orbits) with the observed physical fermion generations remains **[I]** (an interpretive correspondence via minimal embeddability, not derivable from the axioms alone).
-
-**Final status**: count $N_{\text{gen}} = 3$ — **[T]**; connection to observed generations — **[I]**.
-:::
-
-:::info Clarification: lower bound and triplet (1,2,4)
-The lower bound $N_{\text{gen}} \geq 3$ (Step 2) uses the specific triplet $(1, 2, 4) \subset \mathbb{Z}_7^*$ — the unique subgroup of order 3 of the multiplicative group $\mathbb{Z}_7^*$ (order 6). This is not an arbitrary choice: $(1,2,4)$ is the **unique** maximal cyclic subgroup of index 2 in $\mathbb{Z}_7^*$, and it coincides with the set of quadratic residues $\bmod 7$. Uniqueness follows from the fact that $\mathbb{Z}_7^* \cong \mathbb{Z}_6$ has exactly one subgroup of each order dividing 6. Nevertheless, the argument can be strengthened: a complete classification of all subgroups of $\mathbb{Z}_7^*$ (orders 1, 2, 3, 6) shows that no other subgroup structure gives a different number of generations within the swallowtail constraint.
-:::
-
-:::info Remark
-This theorem **does not depend** on the generation assignment ($k=1 \to$ 3rd, etc.). The assignment of the 3rd generation ($k=1$) — **[T]** (unique nonzero tree-level Yukawa, [Theorem 4.1](#thm-gen-4-1)). The ordering $k=4 \to$ 2nd, $k=2 \to$ 1st — **[C at (SA)]**, with (SA) a hypothesis [H] ([Theorem 4.3](#thm-gen-4-3); it was stated as [T] until 2026-09-25).
-:::
+The orbit of non-collinear triples concerns choices of basis in the finite plane. Its transitivity supplies no further restriction on the number of copies of a matter representation. [Bridge premises](/docs/reference/premises#t-350).
 
 ### 1.3 Precedents and related programmes {#прецеденты-три-поколения}
 
@@ -209,7 +116,7 @@ The last point deserves a plain statement. The map $\sigma:e_k\mapsto e_{2k}$ of
 
 ### 2.1 Setup
 
-The three fermion generations are defined by three Fano phases $\phi_n = 2\pi k_n / 7$, where $(k_1, k_2, k_3) \subset \mathbb{Z}_7^*$. Of 35 possible ordered triples — which one is realized?
+The three fermion generations are defined by three Fano phases $\phi_n = 2\pi k_n / 7$, where $(k_1, k_2, k_3) \subset \mathbb{Z}_7^*$. Of 20 possible unordered triples — which one is realized?
 
 ### Definition 2.1 (Z₇-triplets)
 
@@ -223,47 +130,18 @@ $$
 \frac{6!}{(2!)^3 \cdot 3!} = 15
 $$
 
-**(c)** Each partition defines a triple $(k_1, k_2, k_3)$, where $k_n = X_n$ (one of the two elements of the pair; the choice determines the orientation of the generation).
+**(c)** A matching has $2^3$ unordered transversals, obtained by selecting one member from each pair. Choosing one of them is extra data.
 
 ### Theorem 2.1 (PSL(2,7)-orbits) {#thm-2-1}
 
-:::tip Theorem 2.1 (PSL(2,7)-orbits) [T]
-Strictly proved. Based on standard representation theory of $\mathrm{PSL}(2,7)$.
-:::
+With a Fano point $O$ fixed, its stabilizer $S_4$ permutes the other six points as the six edges of a tetrahedron. The three Fano lines through $O$ pair opposite edges. A matching of six edges contains three, one, or zero of these opposite pairs. The first case gives one matching. In the second there are three choices of opposite pair and two ways to pair the remaining four edges. The other eight matchings contain no opposite pair.
 
-**Theorem.** The automorphism group of the Fano plane $\mathrm{PSL}(2,7)$ (order 168) acts on the set of partitions and divides the 15 partitions into equivalence classes:
+To verify transitivity in each case, count fixed matchings under vertex permutations. The identity fixes 15, each of the six 4-cycles fixes one, and each of the other 17 permutations fixes three. Burnside's lemma gives $(15+6+51)/24=3$ orbits. Their sizes are therefore **1, 6 and 8**. The former $6+9$ split is withdrawn [✗]. Selecting one member of each pair requires extra choices. Their sum modulo seven is not an invariant of a matching.
 
-**(a)** $\mathrm{PSL}(2,7)$ contains the stabilizer of a point $O$: $\mathrm{Stab}(O) \cong S_4$ (order 24). Action of $S_4$ on 6 points $\{1,\ldots,6\}$ via $S_4 \subset S_6$.
-
-**(b)** Number of orbits on 15 partitions under $S_4$:
-
-By Burnside's lemma:
-
-$$
-|X/S_4| = \frac{1}{|S_4|} \sum_{g \in S_4} |X^g|
-$$
-
-where $X$ is the set of 15 partitions.
-
-**(c)** $S_4$ acts on $\{1,\ldots,6\}$ via the isomorphism $S_4 \cong \mathrm{PGL}(2,3)$ (a subgroup of $\mathrm{PSL}(2,7)$ fixing the point). From the representation theory of $S_4$:
-
-$$
-|X / S_4| = 2
-$$
-
-Two equivalence classes:
-
-- **Class I** (type "associative"): 6 partitions. $(k_1, k_2, k_3)$ such that $k_1 + k_2 + k_3 \equiv 0 \pmod{7}$.
-- **Class II** (type "non-associative"): 9 partitions. $k_1 + k_2 + k_3 \not\equiv 0 \pmod{7}$.
-
-**(d)** Example. Multiplicative group $\mathbb{Z}_7^* = \{1,2,3,4,5,6\}$. Elements of order 3: $\{1,2,4\}$ and $\{3,5,6\}$ (subgroups of index 2). Triple $(1,2,4)$: $1+2+4 = 7 \equiv 0 \pmod{7}$ → **Class I**. (Triple $\{3,5,6\}$ also satisfies the sum condition: $3+5+6=14 \equiv 0$, but is **not** a Fano line — see [Theorem 3.1](#thm-3-1) and [Section 6](#6-единственность-триплета-124).)
-
-**Proof.** From the structural theorem for $\mathrm{PSL}(2,7)$: the stabilizer $S_4$ acts on $\mathbb{F}_7 \setminus \{0\}$ via linear/affine transformations. A partition $\{a_1,b_1\},\{a_2,b_2\},\{a_3,b_3\}$ is invariant under $g \in S_4 \iff g$ permutes the pairs. The orbit structure is determined by the "total invariant" $\sigma = k_1 + k_2 + k_3 \bmod 7$. Under $S_4$-action $\sigma$ transforms, but $\sigma \equiv 0$ is an invariant condition (subset of the kernel). $\blacksquare$
-
-### Theorem 2.2 (Selection principle: anomalous coherence) {#thm-2-2}
+### 2.2 Withdrawn coherence selection rule {#thm-2-2}
 
 :::danger [✗] Retracted
-The condition $\sum_n \sin(2\pi k_n/7) = 0$ is not satisfied for any triplet from $\mathbb{Z}_7^* \setminus \{0\}$. Anomalous coherence as a selection principle **does not work**. The correct selection principle is the minimal associator ([Theorem 3.1](#thm-3-1)).
+The condition $\sum_n \sin(2\pi k_n/7) = 0$ is not satisfied for any triplet from $\mathbb{Z}_7^* \setminus \{0\}$. Anomalous coherence as a selection principle **does not work**. The associator distinguishes lines from off-line triples ([Theorem 3.1](#thm-3-1)).
 :::
 
 **Theorem.** The physically realizable $\mathbb{Z}_7$-triplet is determined by the condition of **anomalous coherence** (cancellation of mixed anomalies):
@@ -296,66 +174,11 @@ Imaginary part: $\mathrm{Im}(\eta_1) = \sqrt{7}/2 \neq 0$. (The same sum is the 
 
 ---
 
-## 3. Selection principle: minimal associator {#3-принцип-отбора-минимальный-ассоциатор}
+## 3. Which triples minimize the associator? {#3-принцип-отбора-минимальный-ассоциатор}
 
-### Theorem 3.1 (Selection principle: minimal associator) {#thm-3-1}
+### 3.1 Associator on basis triples {#thm-3-1}
 
-:::danger [✗] Partially retracted
-The main result $(1,2,4)$ = quadratic residues is correct, but the claim of equivalence $(1,2,4) \leftrightarrow (3,5,6)$ via $k \to 7-k$ is **erroneous** — $k \to -k \notin \mathrm{Aut}(\text{Fano}) = \mathrm{PSL}(2,7)$. The triplet $\{3,5,6\}$ is not a Fano line, $\mathcal{A}(3,5,6) = 4 \neq 0$. Therefore, $(1,2,4)$ is the **unique** triplet with $\mathcal{A} = 0$.
-:::
-
-**Theorem.** The physically realizable $\mathbb{Z}_7$-triplet minimizes the **total associator** of the three generations:
-
-**(a)** Definition. Associator measure of a triplet:
-
-$$
-\mathcal{A}(k_1, k_2, k_3) := \|[e_{k_1}, e_{k_2}, e_{k_3}]\|^2 = \|(e_{k_1} \cdot e_{k_2}) \cdot e_{k_3} - e_{k_1} \cdot (e_{k_2} \cdot e_{k_3})\|^2
-$$
-
-where $e_k$ are the imaginary units of the octonions.
-
-**(b)** From the octonion multiplication table:
-
-- For a Fano triplet $(i,j,k)$: $[e_i, e_j, e_k] = 0$ (associator zero).
-- For a non-Fano triplet: $[e_i, e_j, e_k] \neq 0$. Norm:
-
-$$
-\|[e_i, e_j, e_k]\|^2 = 4 \quad \text{for all non-Fano triplets}
-$$
-
-(from the identity $\|ab \cdot c - a \cdot bc\| = 2|a||b||c|\sin\alpha$ with $|e_i|=1$, and $\sin\alpha$ determined by the angle in the Fano plane).
-
-**(c)** Classification:
-
-| Triplet $(k_1,k_2,k_3)$ | Fano? | $\mathcal{A}$ | Class |
-|---|---|---|---|
-| $(1,2,4)$ — quadr. residues | contains Fano line | 0 | I |
-| $(3,5,6)$ — non-residues | **NOT** a Fano line | **4** | II |
-| $(1,3,5)$ | 0 Fano lines | 4 | II |
-| $(2,4,6)$ | 0 Fano lines | 4 | II |
-| ... | | 4 | II |
-
-**(d)** Class I triplets ($\mathcal{A} = 0$) are **associative**: three imaginary units $e_{k_1}, e_{k_2}, e_{k_3}$ lie on a single Fano line and form an associative subalgebra $\mathbb{H} \subset \mathbb{O}$ (quaternionic).
-
-**(e)** Selection principle. From $V_3$-dynamics: the vacuum configuration minimizes the energy. Contribution of three generations to $V_3$:
-
-$$
-V_3^{(\text{gen})} \propto \mathcal{A}(k_1, k_2, k_3) \cdot \lambda_3 \prod_n |\gamma_n|
-$$
-
-**The minimum is achieved at $\mathcal{A} = 0$** → Class I.
-
-**(f)** From Class I: the **unique** candidate is $(1,2,4)$, since $(3,5,6)$ has $\mathcal{A}(3,5,6) = 4 \neq 0$ (not a Fano line).
-
-**(g)** **Prediction:** Three generations are determined by quadratic residues $\bmod 7$:
-
-$$
-(k_1, k_2, k_3) = (1, 2, 4)
-$$
-
-This is the subgroup of index 2 in $\mathbb{Z}_7^*$, isomorphic to $\mathbb{Z}_3$.
-
-**Proof.** Step 1: from PSL(2,7)-classification ([Theorem 2.1](#thm-2-1)) — two classes. Step 2: from $V_3$-minimization — Class I ($\mathcal{A} = 0$). Step 3: from $\mathcal{A} = 0$ and the definition of the associator in $\mathbb{O}$ — the triple $(k_1,k_2,k_3)$ forms a quaternionic subalgebra $\iff$ the triple is a subgroup of $\mathbb{Z}_7^*$. The unique subgroup of order 3 in $\mathbb{Z}_7^*$: quadratic residues $\{1,2,4\}$. $\blacksquare$
+For three distinct basis units of the chosen octonion table the squared norm of the associator is zero on each of the seven Fano lines and four off those lines. Four lines avoid $O$. In the stated cyclic numbering $\{1,2,4\}$ is both a Fano line and the subgroup of quadratic residues in $\mathbb Z_7^*$. The opposite coset $\{3,5,6\}$ is not a line. The associator alone leaves all four lines avoiding $O$ available. Selecting one as the set of observed matter families requires an independent physical assignment.
 
 ### 3.2 Refutation of equivalence $(1,2,4) \leftrightarrow (3,5,6)$ {#refutation-equivalence}
 
@@ -373,6 +196,9 @@ The claim that the triplets $(1,2,4)$ and $(3,5,6)$ are physically equivalent vi
 **Consequence.** The selection principle is **strengthened**: $(1,2,4)$ is the **unique** triplet with $\mathcal{A} = 0$, without degeneracy. Details — [Theorem 6.1 (Uniqueness)](#thm-6-1).
 
 ---
+
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ## 4. Generation assignment {#4-назначение-поколений}
 
@@ -645,6 +471,8 @@ Theorem 5.2 argued that the vacuum breaks the $\mathbb{Z}_3$ generated by $\sigm
 
 This **breaks** $\mathbb{Z}_3$: two generations in one sector, one — in the other. $\blacksquare$ (Retracted; see the box at the top of this theorem, which replaces the former warning "Collision with the colour reading of the same axes".)
 
+</details>
+
 ### 5.3 A family symmetry must be horizontal: what the corrected framework allows (T-328) {#поколения-t328}
 
 :::tip[Status: (a) and (b) \[T\]; (c) \[T\] for the count and the commutation, \[C at (GC)\] for the identification, with (GC) a hypothesis \[H\]; (d) (GC) with an exact family ℤ₃ \[✗\] by mixing data]
@@ -670,6 +498,9 @@ Witnesses: `test_family_symmetry_cannot_live_inside_one_copy`, `test_clock_has_t
 **(e) What the clock itself can break the family $\mathbb{Z}_3$ with (T-345, 2026-09-26).** [CKM §11](/docs/physics/particle-physics/ckm-matrix#11-вкус-с-часов) goes through every parameter-free structure of the clock register. Everything that commutes with the tick — the Fano incidence, the quadratic residues and their Gauss sum $b_7=(-1+i\sqrt7)/2$, the cyclic Hamming code, $H_O$, the anchor on the trivial harmonic — is diagonal on the harmonics, so in any number of channels it gives no mixing, and the Fano and Gauss circulants do not even split the masses (eigenvalue modulus $\sqrt2$ on all six harmonics). The breaking named above, by $H_O$, is of this kind: it splits the generations as $1:2:4$ and mixes nothing. The only time state fixed by the family is $\tau_0$, and on the generations it is the democratic matrix of rank one — one heavy generation per sector, the right leading pattern. Two channels one of which is rank one are refuted by the quark and lepton masses together ($\lvert\kappa\rvert\ge2.15$ against $\le0.122$), and three channels with the clock structures gave no fit in a numerical search. (GC) still has no flavour prediction; the minimal viable Yukawa frame is the three-channel $\mathrm{SO}(10)$ one, with free flavour matrices [H].
 
 ---
+
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ## 6. Uniqueness of the triplet (1,2,4) {#6-единственность-триплета-124}
 
@@ -954,6 +785,8 @@ Observed: $J = (3.08 \pm 0.15) \times 10^{-5}$. Discrepancy ~30% — within the 
 
 ---
 
+</details>
+
 ## Koide relation and its UHM-structural status {#koide-uhm-status}
 
 ### Empirical statement
@@ -1089,15 +922,15 @@ Both involve a 3-element structure; this motivates the T-220-H hypothesis that a
 
 ## Connection to other sections
 
-- **Mass hierarchy:** Mechanism $y_t \sim 1$ (tree-level) from the Fano selection rule → [Yukawa Mass Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy)
+- [Yukawa Mass Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy)
 
 ## Connection to other sections
 
-- **Mass hierarchy:** Mechanism $y_t \sim 1$ (tree-level) from the Fano selection rule → [Yukawa Mass Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy)
-- **CKM matrix:** Mixing angles from Fano differences $\Delta k$ → [CKM Matrix from Fritzsch Texture](/docs/physics/particle-physics/ckm-matrix)
-- **Higgs sector:** Unique Fano–Higgs line $\{A,E,U\}$ → [Higgs Sector](/docs/physics/particle-physics/higgs-sector)
-- **Octonionic structure:** Derivation of the Fano plane from $\mathbb{O}$ → [Octonionic Derivation](/docs/proofs/minimality/theorem-octonionic-derivation)
-- **G₂-structure and gauge symmetry:** $G_2$-holonomy and SM → [G₂-Structure](/docs/physics/gauge-symmetry/g2-structure)
+- [Yukawa Mass Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy)
+- [CKM Matrix from Fritzsch Texture](/docs/physics/particle-physics/ckm-matrix)
+- [Higgs Sector](/docs/physics/particle-physics/higgs-sector)
+- [Octonionic Derivation](/docs/proofs/minimality/theorem-octonionic-derivation)
+- [G₂-Structure](/docs/physics/gauge-symmetry/g2-structure)
 
 ---
 

@@ -470,9 +470,7 @@ We have travelled from the existence of dynamics through self-reference and No-Z
 
 ## Unified Viability Condition
 
-So far we have spoken of viability as $P > 2/7$. But in practice this is not enough: a system may have high purity but be "skewed" — for example, with zero integration or with destroyed logic. Theorem 10.1 introduces a **unified diagnostic tool** — the stress tensor $\sigma_{\mathrm{sys}}$, which with a single number (the sup-norm) says whether the system is healthy.
-
-For a physician the analogy is direct: instead of checking dozens of tests separately, you get a single integral indicator. If $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ — the patient is alive. If at least one component $\sigma_i \geq 1$ — urgent intervention is needed in the specific direction.
+The seven raw stress scores define the panel region $V_\sigma=\{\Gamma:\|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty<1\}$. A component reaching one identifies the threshold crossed in this panel. Biological health would require a separately calibrated observation and outcome.
 
 ### Diagnostic panel scope {#теорема-101-эквивалентность-условий}
 
@@ -679,7 +677,7 @@ Let us summarise. In this chapter we have traversed the full path from basic exi
 
 4. **Composition works at weak coupling** (Theorems 9.1–9.6): the canonical aggregate of weakly coupled viable embodied holons — the mean marginal, which is unique — is viable, and its purity, reflection, integration and Gap profile lie within $O(g)$ of a part's (fractal closure and scale invariance, [T at weak coupling], Theorem 9.5); the threshold on the coupling is explicit, and it cannot be dropped — at strong coupling the aggregate of two viable holons can be $I/7$ (Theorem 9.6). (Earlier, 2026-09-25: "[C at (HOL)]" and "[C under (AGG)]"; before that, "the union of viable holons yields a holon (fractal closure [T] for embodied systems)", retracted.) The whole is irreducible to the parts when the coupling correlates them — which not every coupling does (emergence, Theorem 9.3 [T] for almost every anchor; the earlier unconditional [T] is retracted, 2026-09-25).
 
-5. **A unified health criterion** (Theorem 10.1 [T]): $\Gamma \in \mathcal{V}_{\mathrm{full}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1$ — the system is alive if and only if none of the seven stresses has reached unity.
+5. **Seven-score panel (Theorem 10.1 / T-92).** The sup-norm tests membership in $V_\sigma$. Cap2 uses its own four margins. The claimed equivalence to health is withdrawn. [Diagnostic panel scope](#теорема-101-эквивалентность-условий)
 
 6. **The sensorimotor cycle is closed** (Theorems 11.1–11.4 [T]): environmental encoding is unique (up to $G_2$-calibration), action is optimal (minimax stress), three channels exhaust all possibilities, hedonics = $dP/d\tau|_{\mathcal{R}}$.
 

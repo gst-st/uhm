@@ -6,6 +6,7 @@ They do not certify the whole corpus or identify matrix statistics with experien
 Run: python3 website/scripts/check_mathematical_kernel.py
 """
 import itertools
+from fractions import Fraction
 from pathlib import Path
 import sys
 import numpy as np
@@ -82,6 +83,40 @@ b=a.copy(); b[0,2]=b[2,0]=-.03
 check('both phase witnesses PSD', min(np.linalg.eigvalsh(a).min(),np.linalg.eigvalsh(b).min())>0)
 check('same reduced phase/magnitude statistics', np.allclose(np.abs(a),np.abs(b)) and np.allclose(gap(a),gap(b)))
 check('triangle holonomy has observable effect', np.isclose(np.trace(a@a@a)-np.trace(b@b@b),12*.03**3))
+
+# A homeomorphism of the density space need not preserve classical mixtures.
+# These are the eigenvalues on one two-level face (zero on the other axes).
+def normalized_square(eigenvalues):
+    squares = [v*v for v in eigenvalues]
+    return tuple(v/sum(squares) for v in squares)
+
+
+a = (Fraction(1), Fraction(0))
+b = (Fraction(1, 2), Fraction(1, 2))
+midpoint = tuple((x+y)/2 for x,y in zip(a,b))
+check('density topology admits a non-affine automorphism',
+      normalized_square(a) == a and normalized_square(b) == b
+      and normalized_square(midpoint) == (Fraction(9,10), Fraction(1,10))
+      and normalized_square(midpoint) != midpoint)
+
+# T-163. Represent rho exactly by its Gaussian-integer numerator and trace.
+# On (O, a, b) the pure vector before normalization is (1, 1, i).
+o_axis = 5
+support = [o_axis, 0, 1]
+amplitudes = np.zeros(N, dtype=complex)
+amplitudes[support] = [1, 1, 1j]
+rho_numerator = np.outer(amplitudes, amplitudes.conj())
+denominator = int(np.trace(rho_numerator).real)
+image_numerator = rho_numerator.copy()
+image_numerator[o_axis, :] = rho_numerator[o_axis, :].conj()
+image_numerator[:, o_axis] = rho_numerator[:, o_axis].conj()
+block = image_numerator[np.ix_(support, support)]
+minor = (block[0, 0] * (block[1, 1]*block[2, 2] - block[1, 2]*block[2, 1])
+         - block[0, 1] * (block[1, 0]*block[2, 2] - block[1, 2]*block[2, 0])
+         + block[0, 2] * (block[1, 0]*block[2, 1] - block[1, 1]*block[2, 0]))
+check('T-163 partial O conjugation gives principal minor -4/27',
+      denominator == 3 and minor.imag == 0
+      and Fraction(minor.real) / denominator**3 == Fraction(-4, 27))
 
 # The HS row/column mask is not positive; pinching is CP and preserves trace.
 e=np.zeros(N); e[4]=1

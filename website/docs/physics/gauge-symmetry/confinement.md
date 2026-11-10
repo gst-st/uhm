@@ -71,7 +71,7 @@ $$
 \sqrt{\sigma} = \frac{2\mu \bar{|\gamma|}^2}{3} \cdot \mu_{\mathrm{phys}}
 $$
 
-With parameters: $\mu^2 \approx 16.6$ $\to$ $\mu \approx 4.1$, $\bar{|\gamma|} \approx 0.047$, $\mu_{\mathrm{phys}} \approx 10$ GeV (QCD scale):
+With parameters: $\mu^2 \approx 16.6$ $\to$ $\mu \approx 4.1$, $\bar{|\gamma|} \approx 0.047$, $\mu_{\mathrm{phys}} \approx 10$ GeV (chosen conversion scale):
 
 $$
 \sqrt{\sigma} \approx \frac{2 \times 4.1 \times (0.047)^2}{3} \times 10 \approx \frac{2 \times 4.1 \times 0.0022}{3} \times 10 \approx 0.06 \text{ GeV}
@@ -84,13 +84,7 @@ $$
 
 ### 2.2 Hadron Spectrum
 
-From the confinement mechanism it follows that observable hadrons are colourless Gap configurations:
-
-**(a)** **Mesons:** $q$-$\bar{q}$ pair bound by a Gap tube in the 3-to-$\bar{3}$ sector. Meson mass $\sim \sqrt{\sigma} \cdot n$ (string excitations, $n = 0, 1, 2, \ldots$).
-
-**(b)** **Baryons:** three quarks bound by a Y-shaped Gap tube. Three colour Gap tubes converge at a single point (baryon vertex).
-
-**(c)** **Glueballs:** closed Gap tubes (loops in the 3-to-$\bar{3}$ sector) without quarks. Mass $\sim 2\sqrt{\sigma} \sim 1$ GeV.
+In QCD, hadrons are colour singlets. A numerical mass for a meson, baryon or glueball requires the dynamics of the specified gauge theory. Neither the shape of a proposed flux tube nor the estimate $\sqrt\sigma$ in §2.1 computes that spectrum.
 
 ### 2.3 What the numerical discrepancy establishes {#диагностика-расхождения-σ}
 
@@ -431,27 +425,9 @@ $$
 \Lambda_{\mathrm{QCD}} = \mu_{\mathrm{phys}} \cdot \exp\left(-\frac{2\pi}{(11 - 2N_f/3)\, \alpha_s(\mu_{\mathrm{phys}})}\right)
 $$
 
-### 5.1a Relation to the Gap RG Flow [T]
+### 5.1a Sign test for the proposed scalar matching {#51a-relation-to-the-gap-rg-flow-t}
 
-The running coupling constant $\alpha_s$ is a special case of the [RG flow of $V_{\mathrm{Gap}}$ parameters](/docs/physics/gauge-symmetry/rg-flow). The correspondence is established as follows:
-
-**(a)** General one-loop $\beta$-function for $\lambda_4$ (see [Gap renormalisation group, §2](/docs/physics/gauge-symmetry/rg-flow#однопетлевые)):
-
-$$
-\beta_{\lambda_4} = -\epsilon\lambda_4 + \frac{(N+8)}{6}\frac{\lambda_4^2}{8\pi^2}
-$$
-
-Upon restriction to the 3-to-$\bar{3}$ sector: $N = N_{\mathrm{eff}} = 9$. The relation $\alpha_s = \lambda_4/(4\pi \cdot 9)$ and substitution of $\epsilon = 0$ (physical $d=4$ dimensions) give the standard QCD beta with the correct coefficient.
-
-**(b)** The Wilson–Fisher fixed point $\lambda_4^* = 4\pi^2/63$ (from [RG analysis](/docs/physics/gauge-symmetry/rg-flow)) determines the value of $\alpha_s$ at the confinement scale:
-
-$$
-\alpha_s^* = \frac{\lambda_4^*}{4\pi \cdot 9} = \frac{4\pi^2}{63 \cdot 36\pi} = \frac{\pi}{567} \approx 0.0055
-$$
-
-This value corresponds to the deep perturbative regime. Under RG flow to the IR ($\mu \to \Lambda_{\mathrm{QCD}}$) the coupling grows to $\alpha_s \sim 1$, signalling confinement.
-
-**(c)** Two-loop corrections (see [RG flow, §3](/docs/physics/gauge-symmetry/rg-flow)) modify the running of $\alpha_s$ at intermediate energies. RG suppression of $\lambda_3$ in the flow from $\mu_{\mathrm{Planck}}$ to $\mu_{\mathrm{EW}}$ (factor $\sim 10^{-14.5}$) is critical for quantitative predictions of CKM mixing angles and the $\Lambda$ budget.
+At $d=4$ the scalar beta function quoted here is positive to quadratic order. For QCD with the stated quark content the beta function of $\alpha_s$ is negative. A positive constant rescaling $\alpha_s=\lambda_4/(4\pi\cdot9)$ preserves that sign. The asserted matching to QCD is withdrawn [✗]. The running coupling needs independent gauge and matter dynamics and a boundary value or $\Lambda_{\rm QCD}$.
 
 ### 5.2 Corollary (Running of Quark Masses)
 
@@ -629,32 +605,22 @@ The proposed confinement interpretation needs independent gauge dynamics and phy
 4. The topological area-law proof is withdrawn [✗]; a transfer-matrix/linear-energy result requires the field-model hypotheses of §1.3.
 5. The tension values in §2 are calibrated scenarios [H], not an output fixed by T-64/T-73/T-74.
 6. $\theta_{\mathrm{QCD}} = 0$ — retracted [✗] 2026-09-26, strong CP open [Pr]: the Gap sector is CP-neutral but fixes no $\bar\theta$ ([§3.1c](#тета-не-из-потенциала)). Earlier: [C at (SV)] (T-99: step 2 holds for the retracted cubic only; the corrected potential is PT-even, and no lift of its vacuum's antiunitary symmetry gives $\bar\theta = 0$ with $m_t \neq m_b$ and $J \neq 0$ — T-333)
-7. Deconfinement at $T_c \sim \Lambda_{\mathrm{QCD}} \sim 170$ MeV [C at (SV)]; order parameter — Polyakov loop [T] (from $\mathbb{Z}_3$ centre of $\mathrm{SU}(3)_C$ = Stab$_{G_2}(e_O)$ [T-42e]); crossover with quarks [H]
-8. Asymptotic freedom reproduced in the standard way [T]; relation to [RG flow](/docs/physics/gauge-symmetry/rg-flow) via $\lambda_4$ [T]
-9. ABJ anomaly from $\mathrm{Cliff}(7)$: $\partial_\mu j_5^\mu = (N_f g_s^2/16\pi^2)\,G\tilde{G}$ [T]
-10. Decay $\pi^0 \to \gamma\gamma$: $\tau = 8.4 \times 10^{-17}$ s (agreement with PDG) [T]
-11. Cancellation of **gauge** anomalies: $\mathrm{tr}(T^a\{T^b,T^c\}) = 0$ for the Standard-Model content (T-175b: the arithmetic [T]; as a UHM result [C at (FE)] with the imported $H_F$ — the derivation "from the spectral triple + unimodularity" is retracted)
+7. The thermal transition depends on gauge dynamics, quark content and the QCD scale. Centre symmetry supplies an order parameter in pure gauge theory.
+8. The QCD beta function and axial anomaly are results for supplied gauge fields and fermions. The proposed scalar matching in §5.1a has the wrong sign.
+9. The neutral pion lifetime uses charge assignments and a dimensionful pion decay constant.
+10. Cancellation of **gauge** anomalies: $\mathrm{tr}(T^a\{T^b,T^c\}) = 0$ for the Standard-Model content (T-175b: the arithmetic [T]; as a UHM result [C at (FE)] with the imported $H_F$ — the derivation "from the spectral triple + unimodularity" is retracted)
 
 ---
 
 ## 8. Status Summary
 
-| Result | Status |
-|-----------|--------|
-| Wilson-loop area law from numerical Gap | [✗] former proof; [H/Pr] field-model programme |
-| Tension values from the chosen formulas in §2 | [H] physical identification and independent inputs required |
-| Tension values from the chosen formulas in §2 | [H] physical identification and independent inputs required |
-| Structural $\theta_{\mathrm{QCD}} = 0$ (T-99): 7-step derivation from A1–A5 | [✗] (retracted 2026-09-26: step 4 false for $V_3$; earlier [C at (SV)], step 2 [T] for $V_3$ only; the vacuum-symmetry route closed, T-333) |
-| Gap sector CP-neutral; no $G_2$-invariant Gap term fixes $\bar\theta$ (T-99 corrected, §3.1c) | [T] as mathematics, [C at (Cl)] in UHM; strong CP open [Pr] |
-| Polyakov loop as deconfinement order parameter (from $\mathbb{Z}_3$ centre of $\mathrm{SU}(3)_C$ [T-42e]) | [T] |
-| Critical temperature $T_c \sim 170$ MeV | [C at (SV)] |
-| Crossover with dynamical quarks ($N_f = 2+1$) | [H] |
-| Asymptotic freedom (relation to [RG flow](/docs/physics/gauge-symmetry/rg-flow)) | [T] |
-| Running of quark masses | [T] |
-| ABJ anomaly (chiral) from $\mathrm{Cliff}(7)$; index theorem | [T] |
-| Cancellation of gauge anomalies $\mathrm{tr}(T^a\{T^b,T^c\}) = 0$ (T-175b) | [T] for the Standard-Model content; [C at (FE)] as a UHM result |
-| Decay $\pi^0 \to \gamma\gamma$: $\tau = 8.4 \times 10^{-17}$ s | [T] |
-| Anomalous Ward identities for axial vertices | [T] |
+| Result | Scope |
+|---|---|
+| Wilson-loop area law from Gap phases | The topological argument is withdrawn. A Wilson loop, a gauge ensemble and a proof of linear energy are required. |
+| $\sqrt\sigma$, including 60 and 457 MeV | The formula uses a chosen dimensionful normalization and sector amplitudes. Neither value is derived. |
+| Strong CP (T-99) | The structural $\bar\theta=0$ result was retracted. |
+| Centre symmetry, running, the ABJ anomaly, pion decay | Standard results under the stated gauge, matter and scale inputs. The pure-gauge order parameter changes status with dynamical fundamental quarks. |
+| Gauge anomaly cancellation (T-175b) | A representation trace for supplied Standard Model matter. |
 
 :::warning[Open problems]
 1. **Glueball spectrum.** Prediction of glueball masses from Gap parameters is a non-perturbative problem.

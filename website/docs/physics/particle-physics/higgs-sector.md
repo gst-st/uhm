@@ -1,18 +1,12 @@
 ---
 sidebar_position: 4
 title: "Higgs Sector"
-description: "Uniqueness of the Higgs line {A,E,U}, Higgs mass with octonionic correction, Higgs quartic from spectral action [C], Gap(E,U) → 0 and electroweak breaking"
+description: "Fano incidence, assumed Higgs fields and electroweak mass inputs"
 ---
 
 # Higgs Sector
 
-:::info Rigor Levels
-- **[T]** Theorem — strictly proved from UHM axioms
-- **[C]** Conditional — conditional on an explicit assumption
-- **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
-- **[I]** Interpretation — philosophical / qualitative analogy
-- **[D]** Definition — definition by convention
-:::
+The unique line through two marked Fano points is a theorem of incidence. Identifying an entry of a density matrix with a colour-singlet weak doublet needs a representation and an action. With colour stabilizing $e_O$, an isolated $\gamma_{EU}$ condensate breaks colour. In a specified one-doublet potential the tree-level relation $m_H^2=2\lambda_H v^2$ uses the quartic and vacuum scale. The reconstruction has not fixed either by an independent physical matching.
 
 ## Contents
 
@@ -229,6 +223,9 @@ Witnesses: `test_up_projection_is_holomorphy_in_one_complex_doublet`, `test_an_e
 **What this changes.** In T-332(f) the exact (UP) is refuted [✗], and the leading-order statement stays [H] as a description of the data. The loop mechanisms for $m_b$ on the [Fano selection-rule page](/docs/physics/gauge-symmetry/fano-selection-rules) (§12.4) and in [Yukawa hierarchy §7.3](/docs/physics/particle-physics/yukawa-hierarchy#теорема-mb-mt) start from $y_b^{(\text{tree})}=0$ and generate $y_b$ through the retracted cubic $V_3$. The corrected $G_2$-invariant potential has no such vertex, and by (i) the Clifford content cannot generate $y_b$ from $y_b^{(\text{tree})}=0$. The neutrino relation $y_\nu^D=y_t$ uses only the leading order and is unchanged. With all down-type quarks exactly massless, $\bar\theta$ would be unphysical — the massless-quark solution of strong CP. The data exclude that as well; see [confinement §3.1b](/docs/physics/gauge-symmetry/confinement#пк-и-нб).
 
 ---
+
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ## 2. Higgs mechanism from Gap-condensation {#2-механизм-хиггса-из-gap-конденсации}
 
@@ -875,30 +872,20 @@ For converting $M_H$ from [C] to [T] one needs:
 
 All formulas are **defined** [T]; the task is **computational** [C]. This is analogous to the situation in lattice QCD, where the formulas are exact, but numerical predictions require computation.
 
+</details>
+
 ### 7.6 Final assessment [C] {#итоговая-оценка-mh}
 
-:::warning [C] Conditional
-UHM determines the Higgs mass through chain (1)–(5), in which links (1)–(3) have status [T], and links (4)–(5) — status [C] due to incomplete computation of sectoral parameters $\varepsilon_i$. No additional postulates or hypotheses are required: the task is purely computational.
-:::
-
-**Summary:**
-
-- **Can UHM in principle predict $M_H$?** Yes — the formulas are fully determined.
-- **Does it predict now?** No — requires solving task C16 (numerical computation on $(S^1)^{21}/G_2$).
-- **Naive $g_4^* \to M_H$**: incorrect ($g_4^* \neq \lambda_H$), gives $\sim 275$ GeV.
-- **Status**: **[C]** — conditional on computation of $\varepsilon_i$.
-- **Comparison with NCG**: UHM reproduces the CCM structure, but adds the octonionic $V_3$-correction, analogous to the $\sigma$-field of Chamseddine–Connes–van Suijlekom.
-
----
+The proposed spectral matching requires a physical Higgs doublet, its kinetic normalization, cutoff moments, internal Dirac/Yukawa data, vacuum and electroweak scale. Fano incidence fixes none of these numerical inputs. A stationarity calculation for the supplied Gap potential alone cannot yield 125 GeV. No independent Higgs mass or self-coupling shift has been reconstructed.
 
 ## Connection to other sections
 
-- **Uniqueness of the Higgs line:** Foundation of the Fano selection rule → [Yukawa Mass Hierarchy](./yukawa-hierarchy.md)
-- **Three generations:** Generation line $\{A,S,L\}$ orthogonal to Higgs line → [Three Fermion Generations](./fermion-generations.md)
-- **CKM matrix:** Mismatch of $Y^u$ and $Y^d$ via conjugate Higgs → [CKM Matrix](./ckm-matrix.md)
-- **Spectral triple:** Finite $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ → [Spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T]; the former "with KO-dimension 6" is retracted — no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка))
-- **Spectral action:** $S = \mathrm{Tr}(f(D/\Lambda))$, determines $\lambda_4$ → [Quantum Gravity](/docs/physics/gravity/quantum-gravity)
-- **Unique vacuum:** Sectoral values $\varepsilon$ — hypothesis (SV) [H] (T-61 restated) → [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум)
+- [Yukawa Mass Hierarchy](./yukawa-hierarchy.md)
+- [Three Fermion Generations](./fermion-generations.md)
+- [CKM Matrix](./ckm-matrix.md)
+- [Spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка) · [spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)
+- [Quantum Gravity](/docs/physics/gravity/quantum-gravity)
+- [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум)
 
 ---
 

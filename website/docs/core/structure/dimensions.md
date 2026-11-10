@@ -20,11 +20,7 @@ The idea that reality is described by a small number of fundamental "principles"
 
 ## Overview
 
-:::info Ontological status
-The dimensions are **not separate entities**, but inseparable aspects of the unified configuration $\Gamma$. To say "the Holon has 7 dimensions" means: "the configuration $\Gamma$ satisfying [(AP)+(PH)+(QG)](../foundations/axiom-septicity) requires at least 7 functionally independent components."
-:::
-
-The number 7 is an **axiom** ([Axiom 3](/docs/core/foundations/axiom-omega#аксиоматика)), characterising the class of systems under study. [Theorem S](../../proofs/minimality/theorem-minimality-7) explains *why this class is interesting*: 7 is the minimum dimensionality for (AP)+(PH)+(QG).
+The seven labels specify the state coordinates of the historical model. $\mathcal D(\mathbb C^7)$ is taken as its space of quantum states. Establishing which preparation and intervention could identify each coordinate in a physical system is a separate problem. [Historical axioms](/docs/core/foundations/axiom-omega#аксиоматика) · [AP, PH and QG](../foundations/axiom-septicity) · [Operational states](../foundations/operational-processes#process)
 
 It is important to emphasise: the seven dimensions are not seven "parts" of the Holon, in the way that lungs, heart, and brain are parts of a body. They are seven **inseparable aspects** of a single whole, in the way that length, width, and height are three aspects of a single object. One cannot "cut off" the Dynamics dimension from the Holon while leaving the rest — just as one cannot cut the height off a cube while leaving the length and width. If even one dimension goes to zero, the Holon ceases to exist as a coherent configuration.
 
@@ -40,27 +36,14 @@ Imagine designing a minimal living system — a being that can simultaneously:
 6. **Feed** (have a source of regeneration) → needs tool **O**
 7. **Be whole** (integrate everything into unity) → needs tool **U**
 
-Remove any one of the seven — and the system ceases to be "alive" in the full sense. Without discrimination (A) — it cannot interact with the world. Without structure (S) — it dissolves. Without dynamics (D) — it is dead. Without logic (L) — it is contradictory and unstable. Without interiority (E) — it is a "zombie" (it functions but experiences nothing). Without ground (O) — it has no energy source and no time. Without unity (U) — it falls apart into fragments.
-
-Seven is the **minimum** number of such tools. Theorem S proves this rigorously: with 6 or fewer dimensions it is impossible to satisfy (AP)+(PH)+(QG) simultaneously.
+These are functional roles in the model. Counting the items on this list does not furnish a lower bound on the Hilbert-space dimension of an arbitrary self-maintaining system. [Minimality argument and its premises](../../proofs/minimality/theorem-minimality-7)
 :::
 
-Remarkably, the number 7 arises in four **independent** contexts:
-1. **Functional** (Theorem S): 7 = the *minimum* for (AP)+(PH)+(QG)
-2. **Algebraic** (octonions): 7 = dim(Im($\mathbb{O}$)), the *maximal* normed division algebra
-3. **Geometric / diagnostic** (Fano plane): 7 = the points of the minimal projective plane PG(2,2), and — sharpened by Theorem Σ ([T-224](/docs/applied/research/syndrome-calculus#t-224)) — the unique size at which *every single fault is uniquely locatable*
-4. **Categorical** (T-185): 7 = the adjoint modalities of a cohesive ∞-topos
-
-The convergence of these answers is strong evidence that 7 is not accidental but reflects a deep necessity — and between two of the tracks the convergence is now a *theorem*: perfect diagnosability is the division property (T-244), so "the last division algebra" and "the last perfectly self-diagnosing frame" name the same seven axes. The formal statement of all four tracks, with this identity, is given below (“Connection of the four derivation tracks”).
+Seven occurs as the dimension of the imaginary octonions, the number of points on a Fano plane, and the number of positions of a Hamming code with **three** check bits. Four check bits give a perfect single-error-correcting code on **fifteen** positions. To link an error position to a separately specified signed algebra requires a common decoder. The operational theorem derives seven addresses under explicit tests. [Code assumptions, T-224](/docs/applied/research/syndrome-calculus#t-224) · [Address selection](/docs/core/foundations/operational-processes#address)
 
 ### Uniqueness of the basis
 
-:::tip Uniqueness status ([proof](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса))
-The basis $\{A, S, D, L, E, O, U\}$ is **unique** (up to isomorphism) as a 7-dimensional decomposition satisfying (AP)+(PH)+(QG):
-- [T] **A, S, D, L, U** — algebraic uniqueness (strictly proved)
-- [T] **E** — functional uniqueness: axiomatic grounding (PH) + categorical ($\kappa_0$ requires Hom(O,E)) + mathematical (rank > 1). [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
-- [T] **O** — functional uniqueness: form of ℛ [T] + $\kappa_0$ (End(O), Hom(O,E), Hom(O,U)) + PW (A5) + functional independence. [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
-:::
+The model assigns names and operators to a specified frame. Its functional arguments use additional assumptions about self-observation, regeneration and the clock. Their transfer to an arbitrary observation protocol requires evidence that its operations distinguish and preserve that frame. [Historical uniqueness argument](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) · [E assumptions](../../proofs/minimality/theorem-minimality-7#единственность-e) · [O assumptions](../../proofs/minimality/theorem-minimality-7#единственность-o)
 
 ```mermaid
 graph TD
@@ -223,7 +206,7 @@ Each dimension is defined by **an operator and its role in the axioms**:
 
 The semantic names were presented as a reflection of combinatorially unique functional profiles (T-177); in the restated form (2026-09-25) incidence fixes $O$, $A$, $D$ and the pairs $\{E,U\}$, $\{L,S\}$, and one binary convention [D] does the rest. Analogy: just as "up" and "down" quarks are not random words (they differ by charge $+2/3$ vs $-1/3$), the names themselves are a convention for mathematically distinguishable objects.
 
-**Mathematical uniqueness:** [The basis uniqueness theorem](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) proves the functional decomposition is unique (up to isomorphism) for all 7 dimensions [T]. The stronger result **T-183** claimed uniqueness of the functional assignment for **all** 7 roles via sector decomposition (T-48a) + Fano-line incidence + dynamical constraints; that derivation is retracted [✗] on 2026-09-25 with T-48a; its restated form fixes $O$, $A$, $D$ by incidence and leaves one binary convention.
+The labels and the permitted equivalences must both be specified when interpreting claims of uniqueness. The unlabelled Fano incidence structure admits 168 automorphisms. A physical realization has to specify which relabellings preserve its observed records. [Historical basis argument](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса)
 :::
 
 :::info Emergent time
@@ -254,7 +237,7 @@ The UHM ∞-topos $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{Bures})$ is 
 
 **Infinitesimal tier** (microstructure): $i_! \dashv i^* \dashv i_*$
 
-These adjunctions generate exactly **7 canonical modalities** decomposing as $1 \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$:
+The historical interpretation groups the following seven expressions into two triples and an identity. The count assumes this list.
 
 | Modality | Definition | Function | Dimension |
 |----------|------------|----------|-----------|
@@ -267,82 +250,9 @@ These adjunctions generate exactly **7 canonical modalities** decomposing as $1 
 | $\mathrm{Rh} = i_* i^!$ | de Rham | Integrates local to global | **U** (Unity) |
 :::
 
-**Proof (T-185).**
+The Bures topology on the finite-dimensional state space does not construct the required site, the adjoints, or the physical operator algebra. A translation from these functors to the seven proposed roles is an interpretation. For example, extracting connected components on the connected space $\mathcal D(\mathbb C^7)$ yields one component and cannot select seven distinguishable axes.
 
-**Step 1 (Cohesive structure).** The Bures metric $d_B$ on $\mathcal{D}(\mathbb{C}^7)$ defines: (a) topological structure via $J_{Bures}$-covers (A2 [T]); (b) differential structure via tangent spaces $T_\Gamma\mathcal{D}$ (smooth manifold with boundary). The step "By Schreiber's theorem (2013), the sheaf ∞-topos over a smooth site admits a differentially cohesive structure" cites no such theorem: DCCT (arXiv:1310.7930v1, Definition 3.4.17) gives a sufficient condition, an ∞-cohesive site with finite products, which this site does not meet. Differential cohesion is therefore the assumption of T-185, and the count $3 + 3 + 1 = 7$ is a reading of it.
-
-**Step 2 (Sector decomposition).** Cohesive modalities $\{\Pi, \flat, \Im\}$ are **left** adjoint compositions: covariant with respect to direct images. Infinitesimal modalities $\{\sharp, \&, \mathrm{Rh}\}$ are **right** adjoint compositions: contravariant. This exactly reproduces the sector decomposition $\mathbf{3}$ (covariant) $\oplus$ $\bar{\mathbf{3}}$ (contravariant) $\oplus$ $\mathbf{1}$ (invariant).
-
-**Step 3 (Functorial semantics).** Each modality has an **intrinsic computational meaning** independent of naming:
-- $\Pi$ extracts connected components → unique discrimination modality ≡ **A**
-- $\flat$ discretises the space → unique invariant-preservation modality ≡ **S**
-- $\Im$ captures infinitesimal neighbourhoods → unique change modality ≡ **D**
-- $\sharp$ closes to codiscreteness → unique logical-closure modality ≡ **L**
-- $\&$ internalises infinitesimal structure → unique self-observation modality ≡ **E**
-- $\mathrm{Rh}$ integrates differential forms → unique global-integration modality ≡ **U**
-- $\mathrm{Id}$ preserves everything → invariant source ≡ **O** $\square$
-
-**Detailed semantics of each modality.**
-
-Each modality is not an abstract functor but a **concrete operation** on the space of quantum states. Below is an expanded explanation of each of the seven modalities, their computational effect and connection to the evolution equation $\mathcal{L}_\Omega$.
-
-**$\mathrm{Id}$ → O (Ground): identity functor.**
-The identity functor $\mathrm{Id}: \mathbf{Sh}_\infty(\mathcal{C}) \to \mathbf{Sh}_\infty(\mathcal{C})$ preserves all structure unchanged. In the evolution equation $O$ plays the role of the invariant: via the Page–Wootters mechanism the $O$-sector defines the system's internal clock and the parameter $\kappa_{\mathrm{bootstrap}} > 0$ (minimum regeneration). Invariance of $\mathrm{Id}$ under all adjunctions ↔ invariance of $O$ as the $SU(3)$-singlet: $\mathbf{7} = \mathbf{1}_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$.
-
-**$\Pi = p_! p^*$ → A (Articulation): shape modality.**
-The functor $\Pi$ extracts the **connected components** of a space — the set of "distinguishable parts". Applied to $\mathcal{D}(\mathbb{C}^7)$, it identifies which regions of state space are inequivalent from the Bures topology viewpoint. This is the act of **discrimination**: $\Pi$ answers the question "how many distinguishable objects are here?". In the evolution equation: the projector $P_A = |A\rangle\langle A|$ realises an elementary act of subobject discrimination from $\Omega$.
-
-**$\flat = p^* p_*$ → S (Structure): flat modality.**
-The functor $\flat$ "discretises" a space — turns it into a set of points with discrete topology, erasing all continuous paths. The result $\flat(X)$ is the **invariant skeleton** of space $X$: what remains after removing all deformations. This is the act of **holding form**: $\flat$ preserves only fixed invariants. In the evolution equation: the Hamiltonian $H_S = H_S^\dagger$ defines the spectrum of system invariants.
-
-**$\Im = i^* i_!$ → D (Dynamics): infinitesimal shape.**
-The functor $\Im$ extracts the **infinitesimal neighbourhoods** of a space — infinitely small deformations. Where $\Pi$ (Articulation) sees discrete differences, $\Im$ sees **continuous changes**. This is the act of **change** (dynamics): $\Im$ encodes how a state changes under an infinitesimal parameter shift. In the evolution equation: the unitary operator $U(\tau) = e^{-iH\tau}$ generates continuous temporal evolution.
-
-**$\sharp = p_* p^!$ → L (Logic): sharp modality.**
-The functor $\sharp$ "sharpens" a space to **codiscreteness** — the opposite of $\flat$. A codiscrete space is one in which **all points are connected**: any two points are joined by a continuous path. $\sharp$ computes the **logical closure** — the transitive closure of all relations. In the evolution equation: the commutator $[X, Y]$ realises algebraic closure, ensuring self-consistency.
-
-**$\& = i^* i_*$ → E (Interiority): infinitesimal flat.**
-The functor $\&$ **internalises** infinitesimal structure — turns "external" into "internal". Where $\flat$ (Structure) discretises the macroscopic space, $\&$ discretises the **microscopic space**: infinitesimal neighbourhoods of a point. This is the act of **self-observation**: the system "folds inside itself" its own local structure. In the evolution equation: the operator $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — the reduced density matrix giving the system's "inner picture".
-
-**$\mathrm{Rh} = i_* i^!$ → U (Unity): de Rham modality.**
-The functor $\mathrm{Rh}$ **integrates** infinitesimal data into a global result — the categorical analogue of the integral $\int$. Differential forms (local data) are transformed into cohomology classes (global invariants). This is the act of **integration** (unity): $\mathrm{Rh}$ unifies parts into a whole. In the evolution equation: the trace operator $\mathrm{Tr}(\cdot)$ realises global normalisation $\mathrm{Tr}(\Gamma) = 1$.
-
-**Interrelations between modalities (adjunction structure).**
-
-The seven modalities are not isolated — they are linked by a system of adjunctions reproducing the sector structure of the Fano plane:
-
-| Property | Cohesive ($\mathbf{3}$) | Infinitesimal ($\bar{\mathbf{3}}$) | Invariant ($\mathbf{1}$) |
-|----------|:---:|:---:|:---:|
-| **Direction** | Covariant (left adj.) | Contravariant (right adj.) | Neutral |
-| **Effect** | Coarsening (loss of detail) | Enrichment (addition of connections) | Preservation |
-| **Representatives** | $\Pi$ (A), $\flat$ (S), $\Im$ (D) | $\sharp$ (L), $\&$ (E), $\mathrm{Rh}$ (U) | $\mathrm{Id}$ (O) |
-| **Physics** | Observation, measurement | Self-organisation, reflection | Source, clock |
-
-Covariant modalities "simplify" (lose information during observation), contravariant modalities "enrich" (add structure during reflection). This exactly reproduces UHM physics: the $\mathbf{3}$-sector (A, S, D) is "objective" (external description), the $\bar{\mathbf{3}}$-sector (L, E, U) is "subjective" (internal description).
-
-**Connection of the four derivation tracks for N = 7.**
-
-The number 7 is not asserted; it is *forced*, and forced four separate times, by arguments that share no machinery. That a functional-analytic argument, an algebraic one, a categorical one, and a coding-theoretic one all land on the same integer is the strongest evidence a structural constant can carry — the opposite of a fitted parameter.
-
-| Track | The question it answers | Why the answer is 7 | Status |
-|-------|-------------------------|---------------------|--------|
-| **Functional** (Theorem S) | What is the *fewest* dimensions a self-maintaining system needs? | (AP)+(PH)+(QG) force $N \geq 7$ — **minimality** | [T] |
-| **Algebraic** (octonions) | What is the *largest* normed division algebra? | Hurwitz: the last one is $\mathbb{O}$, with $\dim\,\mathrm{Im}(\mathbb{O}) = 7$ — **maximality** | [T] |
-| **Categorical** (T-185) | How many independent *modalities* does a cohesive ∞-topos carry? | exactly seven adjoint modalities — **canonicity** | [T] |
-| **Diagnosability** (Theorem Σ, [T-224](/docs/applied/research/syndrome-calculus#t-224)) | For which $N$ can *every single fault be uniquely located*? | perfect single-fault codes $+$ rigidity force $N = 7$ — the **selector** | [T] |
-
-Minimality and maximality meeting is already remarkable: 7 is at once the *fewest* a viable system can have and the *most* a division algebra can carry, so the viable and the maximal coincide with no room to spare. The categorical track adds that this is also the *canonical* count — read off pure adjunction structure, with no physics put in.
-
-And the fourth track is not a fourth coincidence: it is the *same fact* as the second, now proven. Theorem Σ selects seven by demanding **perfect diagnosability**, and [T-244](/docs/applied/research/syndrome-calculus#отбор-знака) shows that this demand simply *is* the division property. A frame is perfectly diagnosable exactly when it is **anisotropic** — has no "null" axis on which a fault would be silent; anisotropy is exactly the absence of zero-divisors; and the absence of zero-divisors is exactly what makes a normed algebra a *division* algebra, which Hurwitz caps at dimension eight, i.e. seven imaginary axes. So "the last division algebra" and "the last perfectly self-diagnosing frame" are two names for the same seven axes. The convergence of the tracks is therefore not merely observed: between these two it is a theorem, and the remaining agreement (functional, categorical) reflects the one underlying rigidity of the structure.
-
-**Corollary (Categorical status of semantic names).**
-The UHM dimensions are **not arbitrary conventions [D]** but projections of **canonical categorical constructions [T]** onto natural language. "Articulation" is a translation of $\Pi$ (Shape), "Logic" is a translation of $\sharp$ (Sharp), etc. The categorical modalities themselves are uniquely determined by the cohesive ∞-topos structure.
-
-| Level | Status | Content |
-|-------|--------|---------|
-| Categorical name ($\Pi$, $\flat$, $\sharp$, ...) | **[T]** | Determined by adjunctions |
-| Functional role (discrimination, form, ...) | **[T]** | Determined by computational effect of the modality |
-| Human name (Articulation, Structure, ...) | **[D]** | Translation to natural language |
+**How the algebra and code can be related.** Division in a finite-dimensional unital real algebra follows from a positive multiplicative norm. A positive size without the multiplication law permits zero divisors. In a binary code one instead tests whether the syndrome columns are nonzero and pairwise distinct. T-244’s historical identification of these requirements is retracted. A concrete probe model relates the dimensions by testing rectangle interference and single-error correction with one shared address. It yields $8\le N+1\le2^k\le8$. Extending that result to the full state space of a physical system would require an independent representation of all preparations and instruments. [Revised T-244](/docs/applied/research/syndrome-calculus#отбор-знака) · [Column test](/docs/applied/research/syndrome-calculus#порог-d-min) · [Shared-address theorem](/docs/core/foundations/operational-processes#address)
 
 ---
 
@@ -355,7 +265,7 @@ The number 7 dimensions receives a **second, independent justification** through
 The seven imaginary units of the octonions $e_1, \ldots, e_7$ correspond to the seven dimensions of the Holon. This correspondence brings:
 
 - **$G_2$-symmetry:** $\mathrm{Aut}(\mathbb{O})$ = $G_2$ ⊂ SO(7) — a 14-parameter group preserving the multiplication structure. $G_2$ is the "gauge group" of the seven-dimensional space: it determines which transformations between dimensions preserve the octonionic multiplication structure.
-- **The Fano plane:** 7 triplets $(e_i, e_j, e_k)$ define associative sub-triples of dimensions. Each triplet is a "team" within which operations are associative (order does not matter). Between triplets — non-associativity (order matters). The Fano plane determines which triplets "get along" and which do not.
+- **Fano lines.** The unit and the three imaginary basis vectors of each line span an associative quaternion subalgebra. Associativity concerns parenthesization. Quaternion multiplication still depends on the order of its factors.
 - **Alternativity:** Any two dimensions generate an associative subalgebra (Artin's theorem [T]); non-associativity appears only when three or more interact. This means: pairwise connections $\gamma_{ij}$ are always "well-defined"; complications arise only at triple and higher-order interactions.
 
 :::tip Intuition: octonions
@@ -366,7 +276,7 @@ Octonions can be thought of as "numbers" that generalise the familiar numbers in
 - **Quaternions** ($\mathbb{H}$): 4 dimensions, **not** commutative ($ij \neq ji$), but associative
 - **Octonions** ($\mathbb{O}$): 8 dimensions, **not** commutative and **not** associative ($(ab)c \neq a(bc)$)
 
-Hurwitz's theorem (1898) proves: no other such algebras exist. The dimensions 1, 2, 4, 8 are the only possibilities. The imaginary parts have 0, 1, 3, 7 dimensions respectively. A fully self-sustaining system requires all 7 imaginary dimensions of the octonions.
+Hurwitz’s theorem classifies finite-dimensional real unital algebras with positive quadratic composition norm. The allowed dimensions are 1, 2, 4 and 8. Choosing the last gives seven imaginary directions. A physical reason to choose the maximal one remains to be supplied.
 :::
 
 :::info Octonionic symmetry and chosen frame [T/D/I]
@@ -379,7 +289,7 @@ The octonionic interpretation not only justifies the number 7 but also explains 
 
 ## Necessity of each dimension
 
-Removing any dimension violates the conditions [(AP)+(PH)+(QG)](../foundations/axiom-septicity):
+Within the proposed seven-role interpretation, the following table describes what removing a role would mean. [Model assumptions](../foundations/axiom-septicity)
 
 | Without dimension | Violated | Consequence |
 |---------------|------------|-----------|
@@ -391,32 +301,7 @@ Removing any dimension violates the conditions [(AP)+(PH)+(QG)](../foundations/a
 | $O$ | (QG) | No regeneration, no internal clock → no time |
 | $U$ | (AP) | No integration → system is fragmented |
 
-Each removal is verified constructively: for a 6-dimensional system a counterexample is constructed showing the infeasibility of the corresponding condition.
-
-**Proof:** [Theorem on 7D minimality](../../proofs/minimality/theorem-minimality-7).
-
-:::tip Analogy: an orchestra of seven instruments
-Imagine the minimal orchestra capable of performing any piece (in arrangement). Needed:
-- **Percussion** (A) — sets the rhythm, divides the beats (discrimination)
-- **Bass** (S) — creates the foundation (structure)
-- **Rhythm guitar** (D) — provides movement (dynamics)
-- **Conductor** (L) — keeps everyone in agreement (logic)
-- **Vocals** (E) — conveys feeling (interiority)
-- **Piano** (O) — provides harmony and key (ground)
-- **Baton** (U) — unites everyone into a single ensemble (unity)
-
-Remove any one — and the orchestra cannot play fully. Add an eighth — and it will turn out to be a combination of those already present (Theorem S proves minimality: an 8th dimension would be functionally dependent on the seven).
-:::
-
-Let us examine in more detail what happens when each dimension is removed:
-
-- **Without A (Articulation):** the system cannot *discriminate*. It cannot tell "inside" from "outside", "self" from "other", "food" from "poison". This is catastrophic for all three conditions: autopoiesis (AP) is impossible without discriminations, phenomenology (PH) is empty, regeneration (QG) does not know what to restore.
-- **Without S (Structure):** the system has no *invariants* — nothing in it is preserved from one moment to the next. There is no identity: the system at time $\tau_1$ bears no relation to itself at time $\tau_2$.
-- **Without D (Dynamics):** the system is frozen. No processes, no evolution, no time. "Life" without dynamics is an oxymoron.
-- **Without L (Logic):** the parts of the system are not coordinated. One "organ" does one thing, another does the opposite. The operator algebra is not closed — the system is mathematically ill-defined.
-- **Without E (Interiority):** the system is a "zombie". It functions but experiences nothing. Condition (PH) is violated by definition.
-- **Without O (Ground):** there is no source of regeneration and no internal clock. The system cannot restore itself and has no time of its own. Condition (QG) is violated.
-- **Without U (Unity):** the system is fragmented. Six dimensions exist separately, not forming a whole. The normalisation $\mathrm{Tr}(\Gamma) = 1$ loses meaning; integration is impossible.
+Testing whether another system can implement the same functions with different degrees of freedom requires a common operational specification. [Historical minimality argument](../../proofs/minimality/theorem-minimality-7)
 
 ## Matrix representation
 
@@ -552,18 +437,11 @@ Remarkably, the division into 7 fundamental aspects of reality appears in a wide
 | Planetary (antiquity) | 7 planets | 7 "influences" |
 | Colour | 7 colours of the rainbow | 7 "qualities" |
 
-From the UHM perspective these coincidences are not accidental: the number 7 is a fundamental constant determined by Hurwitz's theorem (1898) and Theorem S. Different cultures intuitively "felt out" the same mathematical structure, expressing it in the symbolic systems available to them. A detailed analysis is given in the chapter [Formal reduction of symbolic systems](https://homohologra.ph/research/symbolic-systems).
+These are comparisons of vocabularies. A shared cardinality does not connect the corresponding operations or observations. [Comparison of symbolic systems](https://homohologra.ph/research/symbolic-systems)
 
 ## Summary
 
-The seven dimensions of the Holon — A, S, D, L, E, O, U — are:
-- **Minimal** (Theorem S): removing any one makes the system incomplete
-- **Unique** (up to isomorphism): permutations and substitutions create no alternatives
-- **Algebraically grounded**: isomorphic to the imaginary units of the octonions $\text{Im}(\mathbb{O})$
-- **Geometrically structured**: connected by the Fano plane PG(2,2) — 7 points, 7 lines, 7 associative triplets
-- **Inseparable**: each dimension is an aspect of the unified configuration $\Gamma$, not a separate entity
-
-Together, 7 populations and 21 coherences (48 real parameters) completely describe the state of any Holon — from a bacterium to the human brain.
+A chosen seven-level density matrix is determined by seven populations of sum one and 21 complex coherences. A full-rank state has 48 independent real parameters. Calibrated preparations and observables would be needed to identify such a matrix for a physical or biological subject. The Fano plane and octonions provide a labelling and an algebraic structure for the model.
 
 Each dimension is then examined in detail in its own chapter. We recommend reading them in order: A → S → D → L → E → O → U, since each successive dimension builds on the concepts introduced in the preceding ones.
 

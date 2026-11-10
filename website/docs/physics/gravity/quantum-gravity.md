@@ -1,17 +1,13 @@
 ---
 sidebar_position: 4
-title: "Quantum Gravity from Gap"
+title: "The Gap Lattice Model and Quantum Gravity"
 slug: /physics/gravity/quantum-gravity
 description: "Functional integral over Gap configurations, well-definedness on (S¹)²¹, UV-finiteness, black hole information paradox, holographic principle"
 ---
 
-# Quantum Gravity from Gap
+# The Gap Lattice Model and Quantum Gravity
 
-:::info Who this chapter is for
-The Gap functional integral as an alternative formulation of quantum gravity. The reader will learn about UV-finiteness, the spectral action, the resolution of the black hole information paradox, and the holographic principle.
-:::
-
-The Gap functional integral as an alternative formulation of quantum gravity: well-definedness on the compact target space $(S^1)^{21}$, **field-space finiteness [T]** (compact target), full order-by-order UV-finiteness **[C]** (structural), full spectral action [T], Gap resolution of the black hole information paradox.
+This chapter compares a finite lattice integral with the heat-kernel expansion on a specified four-dimensional geometry. The relation between their dynamics remains open.
 
 :::info Status
 For supplied spectral geometry, standard spectral-action calculations are conditional [C], and finite-domain bounded-integrand partition functions are finite [T]. A general G₂ phase-only quotient is not supplied. Neither compactness nor the group identity alone proves continuum UV finiteness, physical SUSY cancellation or a black-hole information solution. Those physical bridges remain [H/Pr]. Wald entropy follows from a supplied gravitational action; the previous universal Gap-curvature correction is withdrawn [✗].
@@ -19,7 +15,7 @@ For supplied spectral geometry, standard spectral-action calculations are condit
 
 ---
 
-## 1. Gap Functional Integral [T] {#функциональный-интеграл}
+## 1. Proposed continuum phase action {#функциональный-интеграл}
 
 :::tip Definition (Gap functional integral)
 **(a)** Partition function:
@@ -28,7 +24,7 @@ $$
 Z = \int \mathcal{D}[\theta_{ij}] \, \mathcal{D}[\tilde{\theta}_{ij}] \, e^{-S_{\text{Gap}}[\theta, \tilde{\theta}]}
 $$
 
-Integration is over all configurations of the 21 Gap phases $\theta_{ij}(x)$ and their superpartners $\tilde{\theta}_{ij}(x)$ on the [emergent 4D space](/docs/physics/gravity/emergent-geometry).
+This formal continuum expression assumes a spacetime, phase fields and fermionic partners. A finite-site definition appears in §2.
 
 **(b)** Action:
 
@@ -36,7 +32,7 @@ $$
 S_{\text{Gap}} = \int d^4x \sqrt{-g[\theta]} \left[\frac{1}{2}m_{ij}(\partial_\mu\theta_{ij})^2 + V_{\text{Gap}}(\theta) + \bar{\tilde{\theta}}(i\not{D}[\theta])\tilde{\theta}\right]
 $$
 
-where $g[\theta]$ is the [emergent metric](/docs/physics/gravity/einstein-equations) depending on $\theta_{ij}$.
+Here $g[\theta]$ denotes a proposed field-to-metric map. Its covariance and dynamics are open. [Metric ansatz](/docs/physics/gravity/einstein-equations)
 
 **(c)** Integration measure on $(S^1)^{21}$:
 
@@ -44,34 +40,16 @@ $$
 \mathcal{D}[\theta] = \prod_{x \in M_4} \prod_{i<j} \frac{d\theta_{ij}(x)}{2\pi} \cdot |\det J[\theta]|
 $$
 
-where $J[\theta]$ is the Jacobian of the change of variables from Gap phases to metric variables.
-
-**(d)** Target space: the 21 phases $\theta_{ij}$ live on the 21-dimensional torus $(S^1)^{21}$. The group $G_2$ acts on this torus through its 14 generators. The physical configuration space is the orbit space:
-
-$$
-\mathcal{M}_{\text{phys}} = (S^1)^{21} / G_2, \quad \dim = 21 - 14 = 7
-$$
-
-This is a 7-dimensional orbifold (not a manifold, due to fixed points of the $G_2$-action). Connection with $G_2/T^2$: the flag manifold $G_2/T^2$ ($\dim = 12$) arises not as the target space of Gap phases, but as the space of orientations of the $G_2$-frame at each point.
+A Jacobian requires an actual change of variables with specified rank and measure. The phase coordinates at fixed populations and moduli do not carry the usual continuous $G_2$ conjugation action, which changes the moduli and populations. The former subtraction $21-14=7$ for a physical phase quotient is withdrawn. A phase-torus integral may instead be defined as a separate lattice model, with any density-matrix positivity constraints specified.
 :::
 
 ---
 
-## 2. Well-Definedness of the Integral on $(S^1)^{21}$ [T] {#определённость}
+## 2. Finiteness at a fixed lattice cutoff {#определённость}
 
 :::tip Theorem 2.1 (Well-definedness of the Gap integral) [T]
-The Gap functional integral is **well-defined** (unlike the formal $\int \mathcal{D}g_{\mu\nu}$):
-
-**(a)** Finite number of degrees of freedom per site: 21 phases × 2 (with superpartners) = 42 variables.
-
-**(b)** Compactness of the target space: $\theta_{ij} \in S^1$ → $|e^{i\theta}| = 1$. No "escape" of fields to infinity. Amplitudes are automatically bounded.
-
-**(c)** Positivity: $S_{\text{Gap}} \geq 0$ under Euclidean continuation (from $V_{\text{Gap}} \geq V_{\min} > -\infty$).
-
-**(d)** Positivity of the Jacobian: $\det J > 0$ follows from the orientability of $(S^1)^{21}$ as a compact manifold.
+For finitely many sites and bounded measurable integrand on a finite-measure domain the integral is finite. A continuous real action on a compact torus is bounded below, so its exponential meets this criterion. Extra Jacobians and fermion determinants require their own bounds. Orientability alone has no implication for the sign of a proposed Jacobian.
 :::
-
-The key distinction from the standard approach: the Gap integral is **finite-dimensional on the lattice** (42 variables per site), whereas the formal $\int \mathcal{D}g_{\mu\nu}$ is ill-defined due to the non-renormalizability of GR. Well-definedness of the Gap integral is a standard result for $\sigma$-models on compact manifolds (Zinn-Justin, 1996).
 
 ### Finiteness of the Number of Degrees of Freedom from Compactness
 
@@ -81,7 +59,7 @@ $$
 Z_N = \int_{(S^1)^{21N}} \prod_{x=1}^{N} \prod_{i<j} \frac{d\theta_{ij}(x)}{2\pi} \, e^{-S_N[\theta]}
 $$
 
-Since the integration domain is compact ($\text{vol}((S^1)^{21N}) = (2\pi)^{21N}$), and the integrand is bounded ($|e^{-S}| \leq 1$ for $S \geq 0$), the integral $Z_N$ exists and is finite for any $N$. The continuum limit $N \to \infty$ requires a proof, but compactness removes the main obstacle — UV divergences from unbounded fields.
+This gives finiteness for each fixed $N$. Existence of a continuum limit requires uniform estimates and a specified scaling with the lattice spacing.
 
 :::warning Status of the continuum limit
 The Gap functional integral $Z_N$ is finite for any $N$ (compactness of $(S^1)^{21}$) **[T]**. Existence of the continuum limit $\lim_{N \to \infty} Z_N$ — **[P]** (open problem, common to all lattice formulations of quantum gravity).
@@ -96,7 +74,7 @@ Derivation of the manifold $M^4$ from the categorical structure — **[T]** as m
 #### Theorem (Full spectral action of UHM) [T] {#теорема-полное-спектральное-действие}
 
 ::::tip Theorem 2.2 (Low-energy limit → Einstein–Hilbert action) [T]
-**Status [T]:** The full spectral triple $(A, H, D) = (C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4, S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})$, where $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is the finite triple from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка), is a spectral triple: $D$ is self-adjoint with compact resolvent and has bounded commutators with $A$. It is **not** a real spectral triple in Connes' sense — $H_{\text{int}} = \mathbb{C}^7$ carries no real structure of KO-dimension 6 ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)) — and the Einstein–Hilbert term below does not use one. (It read "satisfies Connes' axioms for spectral geometry" until 2026-09-25.) The manifold $M^4$ is assembled from the categorical structure by T-120 [T] ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек): $M^4=\mathbb R\times S^3$, with the restated T-119; [C] at its open reconstruction axioms until 2026-09-25); the Einstein–Hilbert term below holds on the product with any four-dimensional base. The spectral action $S = \mathrm{Tr}(f(D_A/\Lambda)) + \frac{1}{2}\langle J\psi, D_A\psi\rangle$ reproduces the Einstein–Hilbert action + Standard Model.
+**T-65 [T under the product and heat-kernel hypotheses].** On a closed Riemannian spin four-manifold with specified metric, the external Dirac operator and a finite internal operator form a product whose $a_2$ coefficient contains the Einstein–Hilbert term. On noncompact $\mathbb R\times S^3$ one needs separate trace or localization hypotheses. The dimension-seven multiplicity is sufficient for this calculation. A Standard Model fermion representation is additional input.
 
 :::warning Honest status of the Standard-Model part (2026-09-25)
 The Einstein–Hilbert term is not affected: it comes from the heat-kernel coefficient $a_2$ and sees the internal space only through $\mathrm{Tr}(I_{H_{\text{int}}}) = 7$ (Step 3). The words "+ Standard Model" are weaker than the [T] above, for three reasons.
@@ -178,7 +156,7 @@ The choice $f(u) = e^{-u}$ is **adopted** (fixed by the theory as a definition) 
 :::
 
 With this choice:
-- $f_0 = \int_0^\infty u \, e^{-u} \, du = \Gamma(2) = 1$ — the raw regulator moment of the $\Lambda^4$-term; the **renormalised** $a_0$-coefficient entering the $\Lambda$-budget is fixed self-consistently by the vacuum ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический)).
+- $f_0=\int_0^\infty u e^{-u}\,du=1$. The renormalized vacuum coefficient also requires a subtraction prescription.
 - $f_2 = \int_0^\infty e^{-u} \, du = 1$.
 - $f_4 = f(0) = 1$ — the UV-finite ($\Lambda^0$) coefficient is the value of $f$ at zero; no regularisation is involved.
 
@@ -186,7 +164,7 @@ The spectral-action moment convention $(f_0, f_2, f_4) = (1, 1, 1)$ is used cons
 
 Substituting into the spectral-action asymptotic expansion:
 - $G_N = \dfrac{3\pi}{7 f_2 \Lambda^2} = \dfrac{3\pi}{7 M_P^2} \approx \dfrac{1.347}{M_P^2}$ in natural units.
-- In Planck units where $G_N = 1$ by definition, this gives an $\mathcal O(1)$ calibration factor $\Lambda_\mathrm{eff} = \sqrt{3\pi/7}\, M_P \approx 1.16\, M_P$ — physically indistinguishable from $M_P$.
+- In natural units $M_P=G_N^{-1/2}$ for the unreduced Planck mass. Matching the measured $G_N$ fixes $\Lambda_{\rm eff}=\sqrt{3\pi/7}\,M_P$ when $f_2=1$. This is a calibration.
 
 #### Alternative choices and invariance of UHM-structural predictions
 
@@ -224,187 +202,48 @@ The choice $f(u) = e^{-u}$ is natural on several grounds:
 
 2. **Moment values**: for the exponential all three moments are unity, $(f_0, f_2, f_4) = (1, 1, 1)$; for the Gaussian — $(1/2, \sqrt{\pi}/2, 1)$. The exponential's clean integer values are preferable for rigorous derivations.
 
-3. **Physical universality**: in the Wilson renormalisation group flow, the IR limit is insensitive to the precise UV regularisation — the canonical choice represents the most natural regulator compatible with UHM's $G_2$-symmetry and compactness of $(S^1)^{21}/G_2$.
-
-4. **Consistency with Planck-scale cutoff**: $\Lambda = M_P$ is the natural UV cutoff for a quantum-gravitational theory; no additional parameter needed beyond $M_P$.
+A regulator-independent low-energy limit would require a renormalization argument for the specified dynamics.
 
 #### Closure of the "fine-tuning" concern
 
-:::tip Fine-tuning concern resolved [T]
-**Concern** (e.g., raised in external audits): three moments $f_0, f_2, f_4$ of an arbitrary cut-off function leave three free parameters in the effective action, enabling fine-tuning.
-
-**Resolution**: UHM canonically fixes $f(u) = e^{-u}$, $\Lambda = M_P$. All three moments are thereby determined:
-- $f_0 = 1$.
-- $f_2 = 1$.
-- $f_4 = f(0) = 1$.
-
-This is **not tunable**; it is a definitional choice of the theory. Any derived observable depending on these moments is then a **specific prediction** of UHM, not a free parameter.
-
-Moreover, the **structural predictions** (sector count, Fano constants, consciousness thresholds) are $f$-independent by construction — they would hold for any reasonable $f$.
-
-Thus the fine-tuning concern applies only to dimensional calibration (Newton's $G_N$, cosmological constant scale), which UHM fixes canonically. No residual fine-tuning freedom remains.
-:::
+Choosing $f(u)=e^{-u}$ fixes three moments. A prediction for the dimensional $G_N$ would require an independently determined cutoff scale. The renormalized vacuum energy also requires a physical normalization.
 
 #### Relation to Connes–Chamseddine standard spectral action
 
 The Connes–Chamseddine spectral action for the Standard Model plus gravity (1996) also requires a cut-off $f$; in their formulation $f$ is usually chosen as a bump function or Gaussian, with the explicit moments absorbed into the definitions of physical coupling constants.
 
-UHM follows the same methodology but specifies $f$ canonically as $e^{-u}$ for the following reasons specific to UHM:
-1. Compactness of $(S^1)^{21}/G_2$ — the natural measure on this compact space is consistent with exponential weighting.
-2. Heat-kernel regularisation — aligned with UHM's spectral-action derivation of the Einstein equations.
-3. Integer-valued moments — facilitate rigorous derivations of sector counts and Fano constants.
+**Step 4.** The remaining coefficients depend on the cutoff moments, the curvature and the specified internal fields. Inserting the Standard Model module reproduces terms for the fields in that module.
 
-**Step 4 (Remaining coefficients).** $a_0 \to \Lambda_{CC}$ (cosmological constant), $a_4 \to$ gauge kinetic + Yukawa terms. Full action:
-
-$$
-S = \int d^4x \sqrt{g}\left[\frac{1}{16\pi G_N} R + \Lambda_{CC} + \mathcal{L}_{\text{SM}}\right] + O(\Lambda^{-2})
-$$
-
-**Step 5 (Projection onto $M^{3+1}$).** Lorentzian signature $(+1,-1,-1,-1)$ from [T-53 — $(1,3)$-split [T] + sign [T at reflection positivity]](/docs/core/foundations/spacetime#лоренцева-сигнатура): the $(1,3)$-split is derived (PW time + $S^3$), and the Lorentzian relative sign is fixed by requiring the PW generator bounded below (Osterwalder–Schrader reflection positivity), not by an ad-hoc ansatz (KO-dim 6 alone does not determine it; rigorous route via Krein spectral triples). The Wick rotation is defined relative to this construction.
-
-T-53 [T] provides an **explicit** finite spectral triple. The existence condition for the full spectral triple is satisfied rigorously. $\blacksquare$
-
-**Corollaries:**
-- $G_N \sim 1/(a_2\Lambda^2)$ **[T]**
-- Friedmann from Gap **[T]**
-- Information paradox: **[C]** (unitarity of the microscopic theory [T], but Gap description of the horizon — ansatz)
+**Step 5.** The expansion is Riemannian. A Lorentzian interpretation requires causal or reflection-positivity data and a choice of state. Cosmological solutions require matter, a metric ansatz and initial conditions. None of these is selected by the internal trace.
 ::::
 
-:::info Connection with spectral self-closure
-The spectral action T-65 determines not only the Einstein equations on $M_4$, but also the potential $V_{\mathrm{Gap}}$ on the internal space $F_7$ — see [derivation](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) [T]. Key identity: $\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \mathcal{G}_{\mathrm{total}}$ connects coefficient $a_2$ with the total Gap, and coefficient $a_4$ with the cubic ($V_3$) and quartic ($V_4$) terms of the potential.
-:::
-
-In the linear approximation ($\theta_{ij} = \theta_{ij}^{(\text{vac})} + \delta\theta_{ij}$):
-
-$$
-Z \approx \int \mathcal{D}[h_{\mu\nu}] \, e^{-S_{\text{EH}}[h]}
-$$
-
-where $h_{\mu\nu} = \sum_{ij} |\gamma_{ij}|^2 \delta\theta_{ij}^2$ and $S_{\text{EH}}$ is the [Einstein–Hilbert action](/docs/physics/gravity/einstein-equations).
-
-**Two independent arguments:**
-
-**(a) Spectral action (Chamseddine–Connes) [T].** The finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка), upon expansion of the spectral action $\mathrm{Tr}(f(D/\Lambda))$, generates the Einstein–Hilbert action:
-
-$$
-S_{\text{EH}} = \frac{a_2}{2} \int d^4x \sqrt{g} \, R + O(\Lambda^0)
-$$
-
-Newton's constant: $G_N = \frac{3\pi}{7 f_2 \Lambda^2}$, where the moment $a_2 = \mathrm{Tr}(D_{\text{int}}^{-2})$ is computed from the spectrum of the internal Dirac operator [T].
-
-**(b) Lovelock theorem (additional argument).** In 4D the unique covariant, metric, quasi-linear-in-second-derivatives action is the Einstein–Hilbert action with $\Lambda$-term [T as standard theorem]. Applicability to the emergent metric from coherences — **[T]** (T-121): T-120 [T] assembles $M^4=\mathbb R\times S^3$ as a smooth 4-manifold, on which the metric is the dynamical variable — precisely the setting of the Lovelock theorem. (Until the restatement of T-119 on 2026-09-25 this read "[C under T-120]", at the open reconstruction axioms of T-119.)
-
-**Summary:** The spectral argument is **unconditional** (finite spectral triple T-53 [T]).
-
-**Proof (additional argument via Lovelock).** Expansion of the Gap action in a series in $\delta\theta$ gives the Einstein–Hilbert action up to quadratic terms. This follows from the Lovelock theorem: in 4D the unique covariant, metric, and quasi-linear-in-second-derivatives functional is
-
-$$
-S = \int d^4x \sqrt{-g}\left(\alpha R + \beta\right) + S_{\text{matter}}
-$$
-
-Upon projecting the Gap action onto the 4D sector, identification of coefficients gives:
-
-$$
-\alpha = \frac{1}{16\pi G_{\text{Gap}}}, \quad \beta = \Lambda_{\text{Gap}}
-$$
-
-where $G_{\text{Gap}} = c^4 / (2\mu^2 \cdot \langle|\gamma_{\text{ST}}|^2\rangle)$ is the [emergent gravitational constant](/docs/physics/gravity/einstein-equations), $\Lambda_{\text{Gap}}$ is the [cosmological constant](/docs/physics/gravity/cosmological-constant).
-
-Thus, the Gap functional integral reproduces standard quantum gravity in the low-energy limit, but, unlike it, has a **rigorously finite field-space measure** **[T]** due to the compactness of $(S^1)^{21}/G_2$ (finite target volume) — the one part of UV-finiteness that is unconditional; the full order-by-order finiteness is the structural **[C]** argument above. The spectral-action reconstruction is fully rigorous **[T]** (T-53 → spectral triple → Chamseddine–Connes); the Lovelock argument is supplementary.
+For a specified finite $D_{\rm int}$, $\mathrm{Tr}(D_{\rm int}^2)$ is an internal spectral statistic. The withdrawn T-74 does not determine a universal internal potential or measure. Replacing a phase integral by an Einstein–Hilbert metric integral would require a demonstrated map of domains, action and measure. The Lovelock theorem on a four-manifold supplies none of these. [Metric projection](/docs/physics/gravity/einstein-equations)
 
 ### Projection of the Gap Action onto 4D
 
-Upon projection the 21 coherence pairs are divided into three groups:
-
-- **ST pairs:** $(i,j)$, where both directions are in $\{O, \text{Re}_1, \text{Re}_2, \text{Re}_3\}$ — 6 pairs determining the metric $g_{\mu\nu}$;
-- **Gap pairs:** $(i,j)$, where one or both directions are in $\{\text{Im}_1, \text{Im}_2, \text{Im}_3\}$ — 15 pairs determining "matter";
-- **Cross pairs:** between the ST and Gap sectors — contribution to the energy-momentum tensor $T_{\mu\nu}$.
-
-The projected action takes the form:
-
-$$
-S_{\text{Gap}}^{(4D)} = \int d^4x \sqrt{-g} \left[\frac{1}{16\pi G_{\text{Gap}}} \mathcal{R}^{(4D)} + \Lambda_{\text{Gap}} + \mathcal{L}_{\text{matter}}^{(4D)}\right]
-$$
-
-where the scalar curvature $\mathcal{R}^{(4D)}$ is determined by the projection of the Gap curvature, and the matter Lagrangian contains the kinetic energy of Gap excitations and the nonlinear potentials $V_3(\theta)$, $V_4(\theta)$.
+The former projection used three real components of a colour triplet as spatial axes and the remaining components as matter. The real six-dimensional representation of the stabilizer $SU(3)$ is irreducible. Counting the 21 pairs after a choice of axes does not identify a metric or a field spectrum. A constructive network alternative defines distances from transfer costs under relay, separation and calibration assumptions. Its ring and product examples admit common metric limits under the specified refinements. They supply no Einstein dynamics. [Limiting network geometry](/docs/geometry/common-limit)
 
 ---
 
-## 3. Power Counting and Renormalizability [T] {#степенной-счёт}
+## 3. Power counting for the polynomial truncation {#степенной-счёт}
 
-:::tip Theorem 3.1 (Renormalizability of the scalar sector in 4D) [T]
-The Gap functional integral is renormalizable in the scalar sector — divergences are absorbed order-by-order into the finitely many couplings $(\mu^2, \lambda_3, \lambda_4)$:
-
-**(a)** $\sigma$-model on a compact target space: from standard results (Friedan, 1980): the $\sigma$-model with compact target space is renormalizable in two dimensions and super-renormalizable in $d < 2$.
-
-**(b)** Gap theory is not a 2D $\sigma$-model but a 4D theory with 21 scalars. Standard power counting: scalar theory in 4D is **renormalizable** for a potential no higher than $\theta^4$. The Gap potential $V_{\text{Gap}} = V_2 + V_3 + V_4$ contains only $\theta^2$, $\theta^3$ (via $\sin$), $\theta^4$ (via $\sin^2$) → renormalizable at leading order.
-
-**(c)** Gravitational sector: in the Gap formalism gravity is **emergent** — graviton vertices are composite operators ($h_{\mu\nu} \sim \sum \theta^2$). Divergences of composite operators are suppressed by form factors:
-
-$$
-\Gamma^{(n)}_{\text{grav}}(p) \sim \Gamma^{(n)}_{\text{Gap}}(p) \cdot F(p/\Lambda_{\text{Gap}})
-$$
-
-where $F(x) \to 0$ as $x \to \infty$ (suppression at scales above $\Lambda_{\text{Gap}}$).
-
-**(d)** [$N=1$ SUSY](/docs/physics/particle-physics/susy): additional cancellation of divergences above the SUSY-breaking scale $m_{3/2} \sim 10^{13}$ GeV. Below this scale SUSY is broken and SUSY protection does not apply.
-:::
+**Theorem 3.1 [T for the polynomial truncation].** On a supplied four-dimensional flat background, canonically normalized scalar fields have mass dimension one. Local potential operators through degree four have nonnegative coupling dimension. Power-counting renormalizability concerns a scalar theory with all allowed counterterms. It does not prove that a complete periodic nonlinear theory, a composite metric or a gravity sector has a finite continuum limit.
 
 ### Comparison with GR
 
-| Property | GR (standard) | Gap formalism |
-|----------|-------------------|---------------|
-| Fundamental field | $g_{\mu\nu}$ (metric) | $\theta_{ij}$ (21 phases) |
-| Coupling dimension | $[G_N] = M^{-2}$ (non-renormalizable) | $[\lambda_4] = M^0$ (renormalizable) |
-| Vertices | Graviton (fundamental) | Composite ($h_{\mu\nu} \sim \sum \theta^2$) |
-| Divergences | All orders | Suppressed by form factors |
-| Power counting | Violated from 2-loop | Renormalizable in scalar sector |
-
-**Summary:** Gap theory is **renormalizable** (not finite) in its scalar sector. Gravitational divergences are **screened** by the emergent nature of the metric. Full UV-finiteness is argued in §4 (field-space part [T]; order-by-order — structural [C]).
+In four-dimensional Einstein gravity $[G_N]=M^{-2}$. Calling a putative graviton composite does not bound its high-momentum amplitudes. Any proposed form factor must be obtained from the actual propagators and vertices.
 
 ---
 
-## 4. UV-Finiteness of Gap Theory [T field-space, C order-by-order] {#уф-конечность}
+## 4. The open continuum limit {#уф-конечность}
 
-#### Theorem (UV-finiteness of Gap theory) [T field-space, C order-by-order] {#теорема-уф-конечность}
+#### Theorem 4.1 (scope of finiteness) {#теорема-уф-конечность}
 
-:::tip Theorem 4.1 (UV-finiteness of Gap theory on $(S^1)^{21}$) [T field-space, C order-by-order]
-Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is renormalizable; its **field-space (large-field) finiteness** is rigorous **[T]** (compact target), and **full order-by-order UV-finiteness** is a structural argument **[C]**.
-
-**Argument (5 steps).**
-
-**Step 1 (Compactness of the target space).** $(S^1)^{21}$ is a compact manifold → vertex functions are bounded: $|e^{i\theta}| = 1$. No "escape" of fields to infinity; scattering amplitudes are automatically finite at fixed UV cutoff.
-
-**Step 2 ($G_2$ Ward identities).** The 14 generators of $G_2$ give 14 linear identities among the Green's functions. Of the 21 independent 4-point functions on $(S^1)^{21}$, the Ward identities leave only $21 - 14 = 7$ independent.
-
-**Step 3 ($\mathcal{N}=1$ SUSY suppression).** By Seiberg's non-renormalization theorems (1993): $\mathcal{N}=1$ SUSY forbids renormalization of the superpotential (holomorphy theorem), and D-terms receive only finite corrections. The residual vacuum contribution is suppressed by the **sector-product** scaling $\Lambda_{\text{residual}}\sim\varepsilon^{12}M_P^4$ (T-219, a hypothesis [H] since 2026-09-25; it was cited here as [T at T-64]). *(The earlier exact "$7-7=0$ bose–fermi trace" is **retracted [✗]** — a $\mathbb{Z}_2$-grading on the odd internal $\mathbb{C}^7$ cannot have trace $0$, and $\mathbf{14}\to\mathbf7\oplus\mathbf7$ does not exist since the $G_2$ adjoint is irreducible; see [Λ-budget Thm 4.4](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация). Holomorphy + compactness, not an exact trace, carry the finiteness argument.)*
-
-**Step 4 (APS index).** The index of the Dirac operator on the compact space:
-
-$$
-\mathrm{Index}(D) = \int_{(S^1)^{21}} \hat{A}(R) = 0
-$$
-
-The torus $(S^1)^{21}$ is flat → the $\hat{A}$-genus vanishes (Witten [T]). No anomalies; no gravitational anomalies.
-
-**Step 5 (Domain of rigor).** For the scalar-fermion sector ($\theta_{ij}$, $\tilde{\theta}_{ij}$) the field-space finiteness (steps 1, 4) is rigorous [T]; the composition of steps 1–4 into full order-by-order finiteness is structural [C]. Gravitational UV-finiteness follows automatically from the emergent nature of the metric: $h_{\mu\nu} \sim \sum \theta^2$ — a composite operator, not a fundamental field. Divergences of composite operators are suppressed by form factors at $p > \Lambda_{\text{Gap}}$. $\blacksquare$
-:::
+The bound on the finite-lattice integral in Theorem 2.1 controls the field amplitude at fixed resolution. Removing the lattice cutoff introduces arbitrarily short wavelengths. A renormalized continuum limit and order-by-order gravitational finiteness remain open.
 
 ### Triple Protection from Divergences
 
-The UV-finiteness argument (Theorem 4.1) rests on three mutually complementary mechanisms:
-
-| Mechanism | Role | Scale |
-|----------|------|---------|
-| Compactness of $(S^1)^{21}$ | Bounding of amplitudes (step 1) | All scales |
-| $G_2$-symmetry | Ward identities: $21 \to 7$ (step 2) | All scales |
-| $\mathcal{N}=1$ SUSY | Sector-product suppression $\varepsilon^{12}$ (T-219); holomorphy (step 3) | $E > m_{3/2} \sim 10^{13}$ GeV |
-
-These three factors — **compactness + $G_2$ + SUSY** — jointly carry the structural finiteness argument **[C]** (the field-space part is rigorous **[T]**). None of them individually is sufficient:
-
-- Compactness without $G_2$: renormalizable, but not necessarily finite.
-- $G_2$ without compactness: Ward identities constrain correlators, but do not prevent fields from running away.
-- SUSY without compactness: standard SUSY theories still require a cutoff.
+A Ward identity requires a specified symmetry of the action and measure. The finite phase torus alone supplies no continuous $G_2$ action. An $\mathcal N=1$ non-renormalization theorem presupposes supersymmetric field content and constrains a superpotential. The absence of all ultraviolet divergences is a stronger claim.
 
 ### Non-Perturbative Effects: Instantons
 
@@ -416,19 +255,13 @@ $$
 
 Such configurations — Gap instantons — represent tunneling transitions between different vacuum configurations on $(S^1)^{21}$. Their contribution is exponentially suppressed ($e^{-150} \sim 10^{-65}$) and does not violate finiteness, but may play a role in cosmology (e.g., in suppressing the cosmological constant).
 
-:::tip Status: field-space [T], order-by-order [C]
-UV-finiteness for the scalar-fermion sector is a **structural** argument [C]: compactness of $(S^1)^{21}$ + $G_2$ Ward identities ($21 \to 7$ divergences) + $\mathcal{N}=1$ holomorphy (Seiberg) + the sector-product $\varepsilon^{12}$ suppression (T-219). (The exact "$7-7=0$ trace" step is retracted — see the clarification box below.) Gravitational UV-finiteness is automatic from the emergent nature of the metric.
-:::
-
-:::warning Theoretical clarification: the "7 - 7 = 0" trace is retracted; finiteness rests on other legs
-The literal "7 bosonic − 7 fermionic = 0 divergences" trace is **retracted [✗]** (a $\mathbb{Z}_2$-grading on the odd internal $\mathbb{C}^7$ has trace $\in\{\pm1,\dots,\pm7\}$, never $0$; and $\mathbf{14}\to\mathbf7\oplus\mathbf7$ does not exist — the $G_2$ adjoint is irreducible; [Λ-budget Thm 4.4](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация)). What **does** hold is a **structural** finiteness argument [C], not an order-by-order perturbative proof: the $\hat{A}$-genus of the torus $(S^1)^{21}$ vanishes (APS index → no anomalies), superpotential non-renormalization is holomorphic (Seiberg), and the residual vacuum energy carries the sector-product scaling $\varepsilon^{12}M_P^4$ (T-219). Full UV-finiteness beyond leading order rests on the compactness of the target space, not on a bose–fermi trace.
-:::
+The trace cancellation previously used in this argument was withdrawn. The trace of a grading on an odd-dimensional space cannot vanish, and the adjoint $\mathbf{14}$ of $G_2$ is irreducible. An index of a chosen operator does not by itself cancel physical anomalies. [Vacuum-energy budget](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация)
 
 ---
 
-## 5. Counting Degrees of Freedom [T] {#степени-свободы}
+## 5. Counting degrees of freedom in a specified lattice model {#степени-свободы}
 
-:::tip Theorem 5.1 (Microscopic degrees of freedom) [T]
+:::note Theorem 5.1 [C under a three-dimensional Planck lattice and supplied partners]
 **(a)** In a volume $V$:
 
 $$
@@ -441,7 +274,7 @@ where $\ell_P$ is the Planck length (UV cutoff, lattice spacing). The factor 42 
 
 **(c)** Bekenstein–Hawking entropy for the cosmological horizon: $S_{\text{BH}} \sim 10^{122}$.
 
-**(d)** **Holographic deficit** ($10^{185}$ vs $10^{122}$): the bulk density of degrees of freedom ($\sim R^3$) exceeds the surface density ($\sim R^2$). Resolution: most of the $42 \times N_{\text{bulk}}$ degrees of freedom are "frozen" (Gap → 0 or Gap → 1). The effective number of "active" degrees of freedom is determined by the horizon area, in agreement with the holographic principle.
+**(d)** The two counts scale with volume and area respectively. A mechanism relating the number of active sites to the horizon area has not been derived.
 :::
 
 **Note on scales.** The theory has two distinct scales:
@@ -452,36 +285,16 @@ These scales have different physical natures and must not be conflated. The numb
 
 ---
 
-## 6. Black Hole Information Paradox [C] {#информационный-парадокс}
+## 6. Black hole information [Pr] {#информационный-парадокс}
 
 ### 6.1 Gap Description of the Horizon
 
-In the Gap formalism a black hole is a **configuration with $\text{Gap} \to 1$ in the O-sector** (maximal opacity of "time"). Key property: there is **no singularity**, since $\text{Gap} \in [0,1]$ is bounded by the compactness of $(S^1)^{21}$. The event horizon is the surface at which the Gap profile reaches its critical value.
-
-The metric near the horizon is determined by the coherences:
-
-$$
-g_{00}(r) \approx 1 - \sum_{i \in O, j \in \text{ST}} |\gamma_{ij}|^2 \cdot \text{Gap}(i,j)^2
-$$
-
-As $\text{Gap} \to 1$: $g_{00} \to 0$ (horizon). But $\text{Gap} = 1$ is a finite value, and the metric coefficients remain finite. The gravitational constant $G \propto 1/\langle|\gamma_{\text{ST}}|^2\rangle$ effectively **grows** in the region of high decoherence (Gap → 1), predicting an enhancement of gravity near the horizon — qualitative agreement with GR.
+A proposed model assigns large $O$-sector opacity to the horizon [H]. A horizon is defined by the causal structure of a spacetime solution. A bounded internal variable neither constructs this solution nor bounds curvature or establishes geodesic completeness.
 
 ### 6.2 Encoding Information in the Gap Profile
 
-:::tip Theorem 6.1 (Gap resolution of the information paradox) [C]
-**(a)** Information falling into the black hole is encoded in the Gap profile: $\theta_{ij}(x)$ on the horizon. Each configuration of incoming matter leaves a unique "imprint" in the distribution of Gap phases.
-
-**(b)** Hawking radiation carries information through non-local correlations:
-
-$$
-\langle\text{Gap}(x)\text{Gap}(x')\rangle_{\text{horizon}} \neq 0
-$$
-
-for $x$ inside and $x'$ outside the horizon. Information is preserved but becomes "Gap-opaque" — encoded in higher Gap correlators on the horizon.
-
-**(c)** Unitarity: Gap evolution is **unitary** (the functional integral is well-defined and finite on $(S^1)^{21}$). The well-definedness of the microscopic theory guarantees information preservation.
-
-**(d)** Correspondence with Page curve: during evaporation the Gap profile on the horizon becomes "transparent" ($\text{Gap} \to 0$) → information is released → Bekenstein entropy decreases. The transition occurs when the horizon area decreases by half (Page time).
+:::note Theorem 6.1 (information-recovery proposal) [H/Pr]
+A recovery claim requires a microscopic evolution, an encoding of incoming states, an outgoing radiation channel and a proof that the relevant states can be recovered. Nonzero correlations between two readouts do not by themselves give such recovery. A finite partition function does not establish unitarity. The Page curve for a Gap horizon has not been derived.
 
 **(e)** Historical Gap-entropy hypothesis [H], whose former derivation is withdrawn [✗]:
 
@@ -524,7 +337,7 @@ with any other terms treated separately [C at that supplied action]. A sign or s
 
 ### 6.4 Distinction from Other Approaches
 
-The Gap approach to the information paradox differs from existing models:
+The following analogies are hypotheses about a possible horizon model.
 
 | Approach | Mechanism | Gap analogue |
 |--------|----------|------------|
@@ -533,47 +346,29 @@ The Gap approach to the information paradox differs from existing models:
 | Firewall (AMPS) | Breakdown of smoothness at the horizon | $\text{Gap} \to 1$ — smooth limit, no wall |
 | Island formula | Entropy computations with "islands" | Gap islands: regions $\text{Gap} \approx 0$ inside the horizon |
 
-Key advantage of the Gap approach: **absence of singularity**. Since $\text{Gap} \in [0,1]$ is bounded, metric coefficients are finite everywhere, and the question of singularity does not arise.
+The proposed correspondences require an explicit spacetime solution and its quantum dynamics.
 
 ### 6.5 Evaporation Dynamics in the Gap Formalism
 
 #### Theorem (Hawking temperature from the spectral action) [T] {#теорема-температура-хокинга}
 
 :::tip Theorem (Hawking temperature from the spectral action) [T]
-From T-65 [T] (spectral action → Einstein–Hilbert) the Schwarzschild solution follows. From QFT on curved background (standard Hawking 1975 result):
+On a supplied asymptotically flat Schwarzschild background, semiclassical quantum field theory gives the Hawking temperature
 
 $$
 T_H = \frac{\hbar c^3}{8\pi G_N M k_B}, \quad G_N = \frac{3\pi}{7 f_2 \Lambda^2}
 $$
 
-where $G_N$ is derived from spectral triple T-53 [T]. Evaporation rate (Stefan–Boltzmann):
+Here the normalization of $G_N$ uses the prescribed spectral cutoff. The schematic evaporation rate involves the emitted species and their greybody factors.
 
 $$
 \frac{dM}{dt} = -\sigma_{\text{SB}} T_H^4 A_{\text{horizon}} \times \sum_s \Gamma_s
 $$
 
-where the sum is over spins of SM particles (derived from $G_2$-structure). $\blacksquare$
+The field species and their spins are supplied. Precise fluxes require integration over the frequency-dependent greybody factors.
 :::
 
-The process of black hole evaporation in the Gap formalism is described by the evolution of the Gap profile on the horizon. The leading order of evaporation (Hawking temperature and mass loss rate) — **[T]** (standard QFT on curved background result with $G_N$ from T-65 [T]).
-
-:::warning Evolution of the Gap profile on the horizon below — [P] (research program), not rigorous derivations from the Gap action.
-Program: quantization of the Gap field on the Schwarzschild background. Leading term ($T_H$, $dM/dt$) derived [T]. Gap corrections — beyond the current theory. Status: [P].
-:::
-
-**(a)** At the initial moment (massive BH): $\text{Gap} \approx 1$ on the horizon in the O-sector. Information is "frozen" in the configuration of the 21 phases $\theta_{ij}$.
-
-**(b)** Hawking radiation carries away energy → BH mass decreases → horizon area shrinks → Gap profile gradually "defrosts":
-
-$$
-\frac{d\text{Gap}}{dt} \sim -\frac{T_H}{M_{\text{BH}}} \cdot \text{Gap}
-$$
-
-where $T_H = \hbar c^3 / (8\pi G M_{\text{BH}} k_B)$ is the Hawking temperature.
-
-**(c)** At Page time ($t_{\text{Page}} \sim t_{\text{evap}}/2$): half of the information is released, entropy begins to decrease. In Gap terms: the mean $\text{Gap}$ on the horizon passes through the value $\sim 1/\sqrt{2}$.
-
-**(d)** In the final stage ($M_{\text{BH}} \to M_P$): $\text{Gap} \to 0$, the horizon disappears, all information is released. The Planck remnant contains $\sim 42$ degrees of freedom (one lattice site).
+The usual Hawking temperature requires the chosen Schwarzschild solution and semiclassical fields. A Gap-specific evaporation calculation [Pr] would need a dynamical horizon, an emission channel and a relation between outgoing entropy and the proposed phase profile. Neither a Page time at a fixed opacity nor an endpoint with 42 remnant modes has been established.
 
 ### 6.6 The de Sitter observer algebra and the holon tower (T-348) {#алгебра-наблюдателя-де-ситтера}
 
@@ -591,7 +386,7 @@ With an observer, the algebra of the static patch of de Sitter space is a type I
 5. **Holographic limit**: exact correspondence between the bulk Gap theory and the boundary. Derivation of the holographic principle from the freezing of degrees of freedom
 6. **Connection with M-theory**: interpretation of the Gap functional integral as an approximation to the M-theory functional integral
 7. **Entropy-coupling programme**: fix an independent spacetime action and curvature couplings before applying Wald; the former Gap correction and its coefficient are withdrawn [✗]. A supplied Einstein–Hilbert term gives the leading area law [C]; additional corrections remain [H/Pr].
-8. **Nonlinear Einstein equations**: the fully nonlinear case (beyond the linearized approximation of §2.2) requires accounting for the back-reaction of curvature on the Gap dynamics. The linear case is solved [T]
+8. **Gravitational dynamics.** Derive a physical metric and its spin-two kinetic term from microscopic dynamics. The linear Fierz–Pauli action and the nonlinear Einstein–Hilbert action used here are supplied.
 
 :::
 
@@ -599,10 +394,10 @@ With an observer, the algebra of the static patch of de Sitter space is a type I
 
 ## Related Documents
 
-- [Einstein equations](/docs/physics/gravity/einstein-equations) — $G_{\mu\nu}$ from Gap
-- [Emergent geometry](/docs/physics/gravity/emergent-geometry) — 3+1 from $G_2/SU(3)$
-- [Cosmological constant](/docs/physics/gravity/cosmological-constant) — $\Lambda$ from Gap
-- [Supersymmetry](/docs/physics/particle-physics/susy) — $N=1$ SUSY from $G_2$
+- [Einstein equations](/docs/physics/gravity/einstein-equations) — variation of the supplied metric action
+- [Emergent geometry](/docs/physics/gravity/emergent-geometry) — state distance, charge spectra and operational distance
+- [Cosmological constant](/docs/physics/gravity/cosmological-constant) — conditions on a vacuum-energy readout
+- [Supersymmetry](/docs/physics/particle-physics/susy) — additional field content
 - [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure) — gauge symmetry
 - [Noether charges](/docs/physics/gauge-symmetry/noether-charges) — Ward identities
 - [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold) — derivation of $M^4$ from categorical structure (T-117 — T-121)

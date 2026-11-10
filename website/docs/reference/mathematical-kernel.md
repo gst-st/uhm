@@ -113,6 +113,8 @@ A CPTP map $K:D_N\to D_M$ is Bures-continuous (in fact contractive), so inverse 
 
 The Bures and Euclidean topologies coincide on finite-dimensional $D_N$; a metric tensor is extra structure beyond its topology. Bures is distinguished within the family of monotone quantum metrics, not the only possible distinguishability metric. Its Riemannian tensor is used on full-rank strata; metric continuity extends to the boundary.
 
+The topology alone cannot recover the mixing operation. The map $h(\rho)=\rho^2/\operatorname{Tr}(\rho^2)$ is a homeomorphism with continuous inverse $h^{-1}(\sigma)=\sqrt\sigma/\operatorname{Tr}\sqrt\sigma$ on the finite-dimensional density space. It fixes the diagonal states $(1,0)$ and $(1/2,1/2)$ on a two-level face. Their midpoint $(3/4,1/4)$ goes to $(9/10,1/10)$. Thus an automorphism of this open-set site need not preserve randomized preparation, even on a face of the seven-level space. To recover that structure one must retain the preparation operations or equivalent data. [Before QG](../core/foundations/operational-processes)
+
 ## Logic and a support mirror {#support-reflector}
 
 In any $\infty$-topos $\mathcal E$, fix an object $G$. The correct universal construction is

@@ -13,6 +13,7 @@ const sidebars: SidebarsConfig = {
       label: 'Foundations',
       collapsed: false,
       items: [
+        'core/foundations/operational-processes',
         'core/foundations/mathematical-foundations',
         'core/foundations/hypermathematics',
         'core/foundations/axiom-omega',

@@ -1559,6 +1559,46 @@ def test_mean_coherence_with_the_tables_own_eps_o():
     assert abs(mean_non_o(0.06) - 0.0268) < 1e-4 and abs(mean_non_o(0.02) - 0.0089) < 1e-4
 
 
+def test_fano_point_stabiliser_on_pairings_of_six_points():
+    """T2.1: compute the actual S4 orbits on the pairings at O."""
+    origin = O_AXIS + 1                  # LINES uses one-based labels
+    vertices = [line for line in LINES if origin not in line]
+    edge_at = {
+        point: frozenset(v for v, line in enumerate(vertices) if point in line)
+        for point in range(1, 8) if point != origin
+    }
+    assert set(edge_at.values()) == set(map(frozenset, itertools.combinations(range(4), 2)))
+    edges = list(edge_at.values())
+    matchings = {
+        frozenset(frozenset(order[i:i + 2]) for i in (0, 2, 4))
+        for order in itertools.permutations(edges)
+    }
+    opposite = frozenset(
+        frozenset(edge_at[x] for x in line if x != origin)
+        for line in LINES if origin in line
+    )
+    assert len(matchings) == 15 and opposite in matchings
+
+    orbits = set()
+    for matching in matchings:
+        orbit = set()
+        for perm in itertools.permutations(range(4)):
+            move = {e: frozenset(perm[v] for v in e) for e in edges}
+            image = frozenset(frozenset(move[e] for e in pair) for pair in matching)
+            orbit.add(image)
+        orbits.add(frozenset(orbit))
+
+    assert set.union(*(set(orbit) for orbit in orbits)) == matchings
+    sizes_by_opposite_count = {}
+    for orbit in orbits:
+        counts = {len(matching & opposite) for matching in orbit}
+        assert len(counts) == 1
+        count, = counts
+        assert count not in sizes_by_opposite_count
+        sizes_by_opposite_count[count] = len(orbit)
+    assert sizes_by_opposite_count == {3: 1, 1: 6, 0: 8}
+
+
 def test_fano_roles_are_fixed_by_three_non_collinear_marks():
     """Коллинеации PG(2,2) (168) действуют регулярно на 168 упорядоченных неколлинеарных тройках.
 

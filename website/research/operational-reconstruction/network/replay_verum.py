@@ -469,6 +469,8 @@ LOGICAL_TYPES = {
 }
 
 SPECS = [
+    ('ProcessControls.vr','finite','marginal_support',8,'else { true };','else { false };'),
+    ('ProcessControls.vr','finite','joint_equal',4,'seed==right','!seed==right'),
     ('CapacityBudget.vr','pi-id','aggregate_capacity',None,
      'add_le(x,y,hit(i),trace(i),ih,local(i,entry))','add_le(x,y,hit(i),trace(i),local(i,entry),ih)'),
     ('CapacityControls.vr','finite','seven_slot_triplet',8,

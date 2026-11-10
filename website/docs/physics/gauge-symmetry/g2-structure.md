@@ -1,20 +1,16 @@
 ---
 sidebar_position: 1
 title: "G₂-Structure and the Fano Plane"
+description: "Octonion automorphisms and symmetries of a chosen instrument"
 ---
 
 # G₂-Structure and the Fano Plane
 
-:::info For whom this chapter is intended
-The group $G_2 = \mathrm{Aut}(\mathbb{O})$ and the Fano plane $\mathrm{PG}(2,2)$ as the central algebraic structures of UHM theory. The reader will learn how the multiplication table of the octonions determines the physical architecture of the theory.
-:::
-
+A labelled, oriented Fano table specifies an octonion multiplication. Its automorphism group is the compact $G_2$. Fixing the seven coordinate axes as part of an instrument restricts the allowed changes of frame. These algebraic results apply to the selected octonion model. A physical gauge field would also require transport between sites, local transformations of the links and dynamics. [Verified transport results](/docs/reference/network-results).
 
 ## Overview
 
-The group $G_2 = \mathrm{Aut}(\mathbb{O})$ — the automorphism group of the octonions — is the central algebraic structure of UHM theory. The Fano plane $\mathrm{PG}(2,2)$ encodes the multiplication table of the imaginary units of $\mathbb{O}$ and determines the entire physical architecture of the theory: from Lindblad operators to gauge symmetries and selection rules.
-
----
+Octonion automorphisms and symmetries of a chosen instrument.
 
 ## 1. Fano Plane PG(2,2)
 
@@ -649,11 +645,7 @@ The former rows "$\alpha = 0$: 34 (full $G_2$), minimal tomography with $G_2$ re
 
 ### Theorem 12.1 (Fano-Coherent Self-Modelling)
 
-:::tip[Status: Theorem \[T\]]
-Canonical coherence-preserving self-modelling for UHM theory is determined up to two free parameters, the contraction $k$ and the Fano weight $\alpha$. (Until 2026-09-25 the box said "uniquely, up to the contraction parameter $k$"; that relied on the variational $\alpha^*$ of Theorem 10.4, which is retracted.)
-:::
-
-**(a)** **Algebraic structure:** The Fano plane $\mathrm{PG}(2,2)$ determines the composite atoms of the classifier $\Omega$, generating the Fano–Lindblad operators $L_p^{\mathrm{Fano}}$.
+For a specified Fano instrument and the selected family of regeneration maps, one may choose the contraction $k$ and Fano weight $\alpha$. The following channel and stationary-state calculations are relative to that family. A classifier or the Fano incidence data alone do not determine a microscopic generator.
 
 **(b)** ~~**Variational principle:** The balance of atomic and Fano observation $\alpha^*$ minimises the functional $\mathcal{F} = S_{\mathrm{spec}} + D_{KL}$.~~ Retracted [✗] (Theorem 10.4): $\mathcal{F}$ is affine in $\alpha$ and minimal at $\alpha = 0$; the balance $\alpha$ is a free parameter.
 

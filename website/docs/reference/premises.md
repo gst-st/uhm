@@ -12,6 +12,8 @@ One list of everything the corpus **assumes** rather than proves, as of 2026-09-
 Status letters are those of the registry: **[P]** postulate (an axiom), **[H]** hypothesis (formulated, not proven — here a named assumption), **[Pr]** research programme, here a principle kept open (neither assumed as an axiom nor claimed proven), **[D]** definition by convention; **[I]** interpretation and **[C]** conditional theorem appear only where a row names them, as in the registry. A free parameter is not a statement and has no letter.
 :::
 
+The [operational reconstruction](../core/foundations/operational-processes) constructs test-equivalence classes and their composition before QG. The address theorem selects seven positions under the combined interference, coding and shared-decoder conditions. Neither result identifies a physical holon with all complex density matrices.
+
 ## 1. Proof obligations {#как-читать}
 
 The [mathematical kernel](/docs/reference/mathematical-kernel) fixes the revised domains. Each result must list its model inputs, mathematical hypotheses, and physical or phenomenal bridge. A chosen convention is not derived merely because consequences of that convention are theorems. Numerical checks verify specified instances; they are not universal proofs.

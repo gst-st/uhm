@@ -2,25 +2,12 @@
 sidebar_position: 5
 title: "Neutrino Masses"
 slug: /physics/particle-physics/neutrino-masses
-description: "Type-I seesaw mechanism in the 42D Page–Wootters extension, PMNS matrix from Fano geometry, neutrino mass predictions"
+description: "Mass and mixing in a supplied seesaw model"
 ---
 
 # Neutrino Masses
 
-:::info Who this chapter is for
-The mechanism of neutrino mass generation via type-I seesaw and the PMNS matrix from Fano geometry. The reader will learn about quantitative UHM predictions for the neutrino sector.
-:::
-
-
-The mechanism of neutrino mass generation within UHM via type-I seesaw in the [42D Page–Wootters extension](/docs/core/dynamics/coherence-matrix), the PMNS matrix from [Fano geometry](/docs/physics/gauge-symmetry/fano-selection-rules), and quantitative predictions.
-
-:::info Rigor Levels
-- **[T]** Theorem — strictly proved from UHM axioms
-- **[C]** Conditional — conditional on an explicit assumption
-- **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
-- **[P]** Postulate — accepted without proof
-- **[Pr]** Research programme — direction requiring further development
-:::
+For a specified type-I seesaw model, integrating out heavy Majorana fields gives the leading light mass matrix $-m_D M_R^{-1}m_D^T$. Its singular values and the relative diagonalizations of the lepton matrices give masses and mixing. The fermion fields, lepton-number violation, Yukawa couplings and scale of $M_R$ are model inputs. Oscillation splittings do not by themselves give absolute or flavour-labelled masses. The proposed Gap loop, normal ordering and numerical PMNS angles remain unestablished.
 
 ## Contents
 
@@ -34,6 +21,9 @@ The mechanism of neutrino mass generation within UHM via type-I seesaw in the [4
 8. [Summary of predictions and status](#сводка)
 
 ---
+
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ## 1. Right-handed neutrino from Gap-configuration [C under SM↔Gap] {#правый-нейтрино}
 
@@ -61,39 +51,35 @@ Condition: identification of SM quantum numbers with Gap sectors (gauge correspo
 
 ### 2.1 Majorana mass from $G_2$-extra bosons
 
-#### Theorem ($O$-sector scale) [T] {#гипотеза-o-секторного-масштаба}
+#### Hypothesis T-51 ($O$-sector scale) {#гипотеза-o-секторного-масштаба}
 
-**Theorem [T]** (formerly hypothesis (ΓO)): the mass of $G_2$-extra bosons is determined by the opacity of the $O$-sector and the physical scale $\omega_0$. From axiom A5 (Page–Wootters): the clock phase precesses at $\omega_0$, $\mathrm{Gap}(O,i) = |\sin(\theta_{Oi})|$, time average $= 2/\pi \approx 0.637 = O(1)$. From viability ($P > 2/7$): $\sum|\gamma_{Oi}|^2 > 0$. Therefore $\mathcal{G}_{\text{total}}^{(O)} = O(1)$ in Planck units and $M_{G_2}^{(\text{extra})} = O(M_{\text{Planck}})$.
+A Page–Wootters clock defines relative phase evolution in a supplied joint state. Assigning a sterile field to that clock sector, making its opacity order one and converting it to a heavy mass are additional assumptions [H].
 
-#### Theorem 2.1 (Scale $M_R$ from $G_2$-extra bosons) [T] {#теорема-mr-из-gap}
+#### Theorem 2.1 (Majorana-scale estimate under specified matching) {#теорема-mr-из-gap}
 
-:::tip Theorem 2.1 (Scale $M_R$ from $G_2$-extra bosons) [T]
-The Majorana mass $M_R$ is **derived** from Gap parameters without recourse to $SU(5)$-GUT. From axiom A5 (Page–Wootters) and viability (V).
-:::
-
-**Theorem.** The Majorana mass $M_R$ is expressed through Gap parameters:
+Under the proposed matching prescription the Majorana scale is
 
 $$M_R = \frac{g_{G_2}^4}{16\pi^2} \cdot M_{G_2}^{(\text{extra})}, \qquad M_{G_2}^{(\text{extra})} = \omega_0 \cdot \sqrt{\mathcal{G}^{(O)}_{\text{total}}}$$
 
 where $\mathcal{G}^{(O)}_{\text{total}} = \sum_{i \neq O} \text{Gap}(O,i)^2 \cdot |\gamma_{Oi}|^2$ is the total opacity of the $O$-sector.
 
-**Proof.**
+**Model assumptions.**
 
 **Step 1.** 6 $G_2$-extra bosons ($\mathbf{3} \oplus \bar{\mathbf{3}}$ in the [decomposition](/docs/physics/gauge-symmetry/standard-model) $\mathbf{14} \to \mathbf{8} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$) couple sectors $\{A,S,D\}$ and $\{L,E,U\}$ via the $O$-dimension [T].
 
-**Step 2.** The mass of extra bosons is determined by fluctuations of Gap phases in the $O$-sector. The $O$-sector has $\text{Gap}(O,\cdot) \sim 1$ (Planck scale) [T]. Physical mass:
+**Step 2.** Choose an energy unit $M_{\rm Planck}$, approximately unit $O$ opacity and equal moduli $\varepsilon$ for the six clock coherences. Identifying the resulting spectral scale with a boson mass gives
 
 $$M_{G_2}^{(\text{extra})} = \omega_0 \cdot \sqrt{\sum_{i=1}^{6} |\gamma_{Oi}|^2 \cdot \text{Gap}(O,i)^2} \approx \sqrt{6} \cdot \varepsilon \cdot M_{\text{Planck}} \sim 10^{17} \text{ GeV}$$
 
-**Step 3.** Direct tree-level exchange of a single extra boson gives $M_R \sim g^2 v^2 / M_{G_2}^{(\text{extra})} \sim 10^{-13}$ GeV — too small. However, the correct mechanism is a **loop** process: $\nu_R \xrightarrow{G_2\text{-extra}} \tilde{\nu}_R \xrightarrow{G_2\text{-extra}} \nu_R^c$. The loop suppression $g^4/(16\pi^2)$ reduces the scale from $10^{17}$ to $10^{14}$ GeV:
+**Step 3.** The following one-loop matching relation is assumed. Deriving its coefficient would require a Lagrangian, representations and a calculation of the heavy-field diagrams.
 
 $$M_R = \frac{g_{G_2}^4}{16\pi^2} \cdot M_{G_2}^{(\text{extra})}$$
 
 **Step 4.** Numerical estimate. With $g_{G_2} \approx 0.7$, $\varepsilon \approx 0.01$:
 
-$$M_R \approx \frac{(0.7)^4}{16\pi^2} \cdot \sqrt{6} \cdot 0.01 \times 1.22 \times 10^{19} \approx \frac{0.24}{158} \times 2.45 \times 1.22 \times 10^{17} \approx 2.9 \times 10^{14} \text{ GeV}$$
+$$M_R \approx (0.7)^4 \sqrt6(0.01)(1.22\times10^{19}\,\mathrm{GeV})/(16\pi^2).$$
 
-The scale $M_R \sim 10^{14}$ GeV is **derived** from Gap parameters. $\blacksquare$
+With the displayed inputs $(0.7)^4\sqrt6(0.01)(1.22\times10^{19})/(16\pi^2)\approx4.54\times10^{14}$ GeV. This is an illustration of the matching ansatz.
 
 **(c)** Full type-I seesaw formula. Mass of the light neutrino:
 
@@ -113,36 +99,9 @@ $$m_{\nu_3} = \frac{m_D^2}{M_R} = \frac{(122\;\text{GeV})^2}{2.9\times10^{14}\;\
 A naïve $y_\nu\sim 0.01$ would give $m_\nu\sim 6\times10^{-14}$ GeV $=6\times10^{-5}$ eV (**with the GeV→eV factor $10^9$**), i.e. $\sim1000\times$ too small — a small $y_\nu$ cannot reproduce the data. The physical resolution is the Fano **tree-level $O(1)$** Yukawa above (ν_τ shares the $k=1$ line with the top), which yields $0.05$ eV directly. The $m_2/m_3$ *ratio* (from $\sin^2$ of Fano angles) is separately correct and unaffected. The per-flavour table in §4 uses this same $10^9$ factor and the $O(1)$ tree Yukawa.
 :::
 
-:::info Progress: $M_R$ as a prediction
-In the previous version $M_R \sim 10^{14}$ GeV was borrowed from standard GUT without derivation from Gap parameters. Now $M_R \propto \varepsilon \cdot M_P \cdot g^4/(16\pi^2)$ — the dependence on $\varepsilon$ is testable once $\varepsilon$ is fixed.
-:::
-
 #### Non-extrapolation status of the $M_R$ derivation {#mr-non-extrapolation}
 
-A legitimate external critique raised the concern that the $M_R \approx 2.9 \times 10^{14}$ GeV prediction might "balance on the edge of speculative extrapolation of the low-energy $V_{\mathrm{Gap}}$ functional" from the EW scale to the intermediate scale. This section clarifies that the derivation is **not** an extrapolation of the low-energy EFT but a direct structural computation.
-
-**Structure of the derivation**:
-
-1. **Inputs**: the sector hierarchy parameter $\varepsilon \approx 10^{-3}$ from T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)) (unique vacuum minimum of $V_{\mathrm{Gap}}$ on compact $(S^1)^{21}/G_2$), the Gap total $\mathcal G^{(O)}_{\mathrm{total}} \sim 6$ on the $O$-sector (Axiom A5 Page–Wootters), and the fundamental scale $\omega_0 \cdot M_P$ from T-39a [T].
-
-2. **Intermediate**: the $G_2$-extra-boson mass $M_{G_2}^{(\mathrm{extra})} = \omega_0 \cdot \sqrt{\mathcal G^{(O)}_{\mathrm{total}}} \sim 10^{17}$ GeV — derived at the Planckian scale from the internal spectral structure, not extrapolated from low energy.
-
-3. **Loop suppression**: the physical $M_R$ arises from a two-$G_2$-extra-boson loop:
-$$
-M_R = \frac{g_{G_2}^4}{16\pi^2} \cdot M_{G_2}^{(\mathrm{extra})} \sim \frac{(0.7)^4}{158} \cdot 10^{17}\,\mathrm{GeV} \approx 2.9 \times 10^{14}\,\mathrm{GeV}.
-$$
-
-The loop factor is a standard one-loop quantum-field-theoretic calculation with $G_2$-invariant couplings, not an RG-flow from EW to $M_R$.
-
-**Key point**: the derivation uses **only** Planck-scale quantities ($\omega_0 M_P$, $\varepsilon$, $g_{G_2}$, $\mathcal G^{(O)}_{\mathrm{total}}$) together with a finite loop factor. No low-energy EFT parameter is extrapolated across many orders of magnitude. The result $M_R \sim 10^{14}$ GeV is a **structural prediction** of UHM's internal spectral triple, not a fit to observed neutrino masses.
-
-:::tip Closure T6: $M_R$ is structurally derived \[C at (SV)\]
-$M_R \approx 2.9 \times 10^{14}$ GeV is derived from the UHM spectral triple via T-64 (unique vacuum) + A5 (Page–Wootters) + T-39a (fundamental $\omega_0$) + standard one-loop $G_2$-invariant quantum field theory. This is **not** an extrapolation of a low-energy effective action; it is a direct computation at the Planck scale.
-
-The external audit's concern about "speculative extrapolation of $V_{\mathrm{Gap}}$" conflates two uses of the Gap functional: (i) $V_{\mathrm{Gap}}$ minimisation yielding $\varepsilon$ at T-64 (a computational task on compact $(S^1)^{21}/G_2$, not an EFT extrapolation); (ii) the one-loop $G_2$-extra-boson exchange yielding the loop factor (standard QFT, not extrapolation). Both are rigorous. No extrapolation is involved.
-
-Empirical check: the see-saw formula $m_\nu = m_D^2 / M_R$ with derived $M_R$ yields $m_\nu \sim 0.06$ eV, consistent with $\sqrt{\Delta m^2_{32}} \approx 0.05$ eV from oscillation data. This is a **consistency check**, not the source of the $M_R$ prediction.
-:::
+The matching formula in §2.1 assumes a heavy mediator, its coupling, the conversion from opacity to mass and a one-loop coefficient. An independent action and a scale-matching calculation would be needed to derive these quantities. For comparison, taking $M_R=2.9\times10^{14}$ GeV and $m_D=122$ GeV as inputs gives $m_D^2/M_R\approx0.051$ eV. This checks the seesaw arithmetic at those inputs.
 
 ### 2.2 Structure of the seesaw matrix
 
@@ -239,7 +198,7 @@ $$
 \frac{m_2}{m_3} \sim \sqrt{\frac{\Delta m^2_{21}}{\Delta m^2_{32}}} \approx \frac{0.0086}{0.050} \approx 0.17
 $$
 
-Discrepancy: $0.17 / 0.0035 \approx 50$ — **factor ~50**. Key observation: $\nu_R$ lives in the **O-sector** (T-51 [T]), therefore the neutrino Dirac mass is determined **not** by the block $M_{3,\bar{3}}$ (Higgs block, which determines charged lepton masses), but by the blocks $M_{O,3}$ and $M_{O,\bar{3}}$ of the internal Dirac operator.
+The ratio $0.0035$ from a charged-lepton texture differs from $0.17$ by a factor of about 50. To explore another texture, assume $\nu_R$ is assigned to the $O$ sector (T-51 [H]) and specify the Dirac couplings to that field.
 
 ### 4.2 Block structure of the internal Dirac operator
 
@@ -266,7 +225,7 @@ where $\text{partner}(k)$ is the vertex of the Fano line $\{k, \text{partner}, O
 
 **Proof.**
 
-**Step 1 (Neutrino $\nu_R$ in O-sector).** $\nu_R$ is a Gap-configuration in the O-sector [T] (T-51). Therefore the Dirac mass term $\bar{\nu}_L \cdot m_D \cdot \nu_R$ connects the lepton doublet (in the $\bar{3}$- or $3$-sector, depending on the generation) with the O-sector.
+**Step 1.** Assign $\nu_R$ to the $O$ sector in the chosen field model. Its Dirac mass term couples it to the supplied lepton doublet.
 
 **Step 2 (Fano lines through O).** Each generation index $k \in \{1, 2, 4\}$ lies on **exactly one** Fano line containing $O = 7$:
 
@@ -311,7 +270,7 @@ $\blacksquare$
 ### 4.3 Mass ratio $m_2/m_3$ [C under O-sector $D_\mathrm{int}$] {#теорема-отношение-нейтринных-масс}
 
 :::tip Theorem (Neutrino mass ratio) [C under O-sector $D_\mathrm{int}$ + univ. $M_R$]
-With Dirac masses via O-sector and universal $M_R$ [T] (T-51):
+Assume the proposed $O$-sector Dirac masses and a common heavy mass $M_R$.
 
 $$
 \frac{m_{\nu_\mu}}{m_{\nu_\tau}} = \left(\frac{\sin(\pi/7)}{\sin(2\pi/7)}\right)^2 = \left(\frac{0.4339}{0.7818}\right)^2 \approx 0.308
@@ -402,7 +361,7 @@ The matrix of Majorana masses $M_R$ has an anarchic structure (all elements of t
 
 **Proof.**
 
-**Step 1 (Structure of $M_R$).** Right-handed neutrinos are Gap-configurations in the O-sector (T-51) [T]. Three right-handed neutrinos $\nu_R^{(k)}$ ($k \in \{1,2,4\}$) are different Gap-configurations within the O-sector. Majorana mass:
+**Step 1.** Assume three sterile fields, an $O$-sector assignment and a Majorana matrix. These are independent model inputs. The proposed mass scale is
 
 $$
 [M_R]_{kl} = M_0 \cdot \langle \nu_R^{(k)} | H_{\text{Gap}}^{(O)} | \nu_R^{(l)} \rangle
@@ -506,7 +465,7 @@ The extra boson mass $M_{G_2}^{(\text{extra})} \sim \sqrt{6}\varepsilon M_P \sim
 ### 6.3 Role of $G_2$-extra bosons in type-I seesaw
 
 :::tip Claim 6.1 (Seesaw from $G_2$-structure) [I]
-The mathematical mechanism of seesaw is [T] (T-51). The physical identification of $\nu_R$ with the $O$-sector is an interpretation [I], not requiring separate proof.
+The leading seesaw formula follows from a supplied hierarchical mass matrix. The identification of a sterile field with an internal clock sector remains a physical hypothesis.
 
 $G_2$-extra bosons provide type-I seesaw via the following chain:
 
@@ -551,7 +510,7 @@ $$
 $$
 
 :::info Key distinction from naive seesaw
-In the naive case $m_D \sim m_l$ (Higgs block) the ratio $m_2/m_3 \sim (m_\mu/m_\tau)^2 \approx 0.0035$ disagrees with observation by a factor of 50. Via the O-sector block $m_2/m_3 \approx 0.308$ (with two-loop RG correction $\approx 0.17\text{–}0.20$) — discrepancy reduced to $\times 1.0\text{–}1.2$. Formula T-63 **[T]**; precision is a computational task in $\theta^*$. Mechanism: $\nu_R$ lives in the O-sector (T-51 [T]), so the Dirac mass is determined by blocks $M_{O,\text{sector}}$, not $M_{3,\bar{3}}$.
+The illustrative ratio $0.0035$ uses a charged-lepton Dirac texture. Replacing it by the proposed $O$-sector texture gives $0.308$ before running and $0.17$–$0.20$ with the chosen RG prescription. The assignment in T-51 [H], the heavy mass matrix and the running are physical inputs.
 :::
 
 ### 7.3 Full seesaw formula with O-sector structure [C under O-sector $D_\mathrm{int}$]
@@ -570,42 +529,25 @@ The generation numbering $(k_1, k_2, k_3) = (1, 2, 4) \to (3\text{rd}, 1\text{st
 
 ---
 
+</details>
+
 ## 8. Summary of predictions and status {#сводка}
 
 ### 8.1 Results
 
-| Prediction | Formula | Value | Experiment | Status |
-|-------------|---------|----------|-------------|--------|
-| Mass of $\nu_\tau$ | $m_\tau^2/M_R$ | $\sim 0.03$ eV | $\sim 0.05$ eV | **[T]** Order-of-magnitude agreement |
-| Mass of $\nu_\mu$ | $m_\mu^2/M_R$ (+ corrections) | $\sim 0.009$ eV | $\sim 0.009$ eV | **[T]** Agreement |
-| Mass of $\nu_e$ | (+ Fano corrections) | $\sim 0.003$ eV | $< 0.45$ eV (KATRIN 2024, direct) | Compatible |
-| Hierarchy | Seesaw + assignment $(k_n)$ | NH (normal) | Preference for NH | **[T]** |
-| $m_2/m_3$ | O-sector Yukawa + 2-loop RG | $\approx 0.17\text{–}0.20$ | $0.17$ | **[C under 2-loop RG]** $\times 1.0\text{–}1.2$ |
-| $\theta_{12}^{(\text{PMNS})} \gg \theta_{12}^{(\text{CKM})}$ | Anarchic $M_R$ from O-sector | $O(30°\text{–}60°)$ | $33°$ | **[C under anarchic $M_R$]** Order correct |
-| $\theta_{23}^{(\text{PMNS})}$ | Anarchic $M_R$ | $\sim 37°$ | $49°$ | **[C under anarchic $M_R$]** Close |
-| $\sum m_\nu$ | Summation | $\sim 0.042$ eV | $< 0.072$ eV (DESI+CMB 2024) | Compatible |
+For given $m_D$ and invertible heavy $M_R$, the seesaw relation is a conditional calculation. Varying $M_R$ changes the spectrum even at fixed $m_D$. The $0.05$ eV example takes $m_D$ and $M_R$ as inputs. The chapter supplies neither independently calibrated absolute masses nor PMNS parameters.
 
 ### 8.2 Open problems
 
-1. **Discrepancy $m_2/m_3$** — **resolved [C under 2-loop RG]**: O-sector Dirac Yukawa reduces the discrepancy from $\times 50$ to $\times 1.8$ (one-loop RG), then to $\times 1.0\text{–}1.2$ with two-loop RG. Formula T-63 **[T]**; precise prediction is a computational task in $\theta^*$. See [§4.3](#теорема-отношение-нейтринных-масс).
-
-2. **Generation numbering** — resolved: $(k_1, k_2, k_3) = (1, 2, 4) \to (3\text{rd}, 1\text{st}, 2\text{nd})$ **[T]** (sectoral asymmetry proved from confinement). See [Theorem 4.1–4.3](/docs/physics/particle-physics/fermion-generations#thm-gen-4-1).
-
-3. **Scale $M_R$** — resolved: $M_R$ is derived from $G_2$-extra bosons via loop mechanism **[T]** (PW clocks + viability). See [Theorem 2.1](#теорема-mr-из-gap).
-
-4. **Quantitative PMNS angles** — **partially resolved [C under anarchic $M_R$]**: anarchic $M_R$ from O-sector isotropy gives large angles $O(30°\text{–}60°)$, consistent with experiment. Exact prediction requires detailed Gap structure of the O-sector. See [§5.2](#теорема-pmns-анархия).
-
-5. **CP phase $\delta_{\text{CP}}^{(\text{PMNS})}$.** Analogue of the prediction $\delta_{\text{CP}}^{(\text{CKM})} \approx -2\pi/7$ for the lepton sector.
-
----
+Deriving the proposed heavy mass requires a lepton-number-violating interaction with specified fields and couplings. Testing the ordering and mixing requires both lepton matrices and a physical family assignment. An anarchy assumption on $M_R$ would also require a stated probability measure to give quantitative predictions.
 
 ## Related documents
 
-- [Fermion generations](/docs/physics/particle-physics/fermion-generations) — three generations from Fano
-- [CKM matrix](/docs/physics/particle-physics/ckm-matrix) — quark mixing
-- [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) — mass hierarchy
-- [Higgs sector](/docs/physics/particle-physics/higgs-sector) — electroweak symmetry breaking mechanism
-- [Standard Model](/docs/physics/gauge-symmetry/standard-model) — SM from $G_2$
-- [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure) — $G_2$-holonomy and extra bosons
-- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — Fano architecture
-- [Supersymmetry](/docs/physics/particle-physics/susy) — SUSY from $G_2$-holonomy
+- [Fermion generations](/docs/physics/particle-physics/fermion-generations)
+- [CKM matrix](/docs/physics/particle-physics/ckm-matrix)
+- [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy)
+- [Higgs sector](/docs/physics/particle-physics/higgs-sector)
+- [Standard Model](/docs/physics/gauge-symmetry/standard-model)
+- [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure)
+- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules)
+- [Supersymmetry](/docs/physics/particle-physics/susy)

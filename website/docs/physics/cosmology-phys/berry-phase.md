@@ -2,18 +2,16 @@
 sidebar_position: 2
 title: "Berry Phase and Topological Protection"
 slug: /physics/cosmology-phys/berry-phase
-description: "Berry phase as the source of topological protection of the Gap, connection to G₂/H-orbits, Fano Gap bound, refutation of the CS derivation, and uniqueness of the bilinear form B^(b)"
+description: "Berry holonomy, orbit topology, selected winding forms and the limits of their physical interpretation."
 ---
 
 # Berry Phase and Topological Protection
 
-:::info Who This Chapter Is For
-The Berry phase as the source of topological protection of the Gap structure. The reader will learn about the connection between the geometric phase and $G_2$-orbits and the Fano Gap bound.
-:::
+A Berry phase can be measured for a specified adiabatic eigenstate family. This chapter checks which additional claims follow for Gap variables.
 
 ## Overview
 
-The topological term of the Gap Lagrangian is determined not by the Chern-Simons functional (that derivation has been **refuted**), but by the **Berry phase** (geometric phase) given by the associative 3-form of $G_2$. The Berry phase provides **topological protection** of the Gap: there exist pairs of dimensions for which $\mathrm{Gap}(i,j) > 0$ for structural reasons that cannot be eliminated by any local deformation of the parameters.
+Neither the one-dimensional Chern–Simons expression nor the proposed Keldysh argument determines a physical topological term for Gap (T-85 withdrawn in §9.2). The topology of a specified orbit and the arithmetic of a chosen winding form remain computable.
 
 ---
 
@@ -31,111 +29,33 @@ where $\mathcal{A}(\lambda) = i\langle n(\lambda)|\nabla_\lambda|n(\lambda)\rang
 
 ## 2. Topologically Protected Gap
 
-:::warning Theorem 5.1 [H] — **superseded by T-69 (stratified [T]+[C at (SV)] since 2026-09-25)**
-**Status:** The hypothesis about $\pi_1(M) \neq 0$ was superseded by T-69, which protects the Gap through a different mechanism — conditional on the sector-vacuum hypothesis (SV) since 2026-09-25, because the Hessian it uses is that of the sector parametrisation of T-64 (restated as a hypothesis): a positive-definite Hessian $+$ $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ provide an energy barrier $\Delta V \geq 6\mu^2 > 0$ (see [vacuum uniqueness](/docs/proofs/categorical/uniqueness-theorem)). The original formulation via the Berry phase and $\pi_1(M)$ is no longer required.
-
-If $M$ contains non-contractible loops ($\pi_1(M) \neq 0$), then there exist pairs of dimensions $(i, j)$ with a **topologically protected** Gap:
-
-$$
-\mathrm{Gap}_{\mathrm{topo}}(i,j) = |\sin(\Phi_B^{(i)} - \Phi_B^{(j)})| > 0
-$$
-
-which cannot be eliminated by any local deformation of the parameters.
-:::
-
-**Argument:**
-
-**(a)** The Berry phase is a topological invariant determined by the homotopy class of the loop in $M$. If the loop is non-contractible, $\Phi_B \neq 0\!\pmod{2\pi}$.
-
-**(b)** Different eigenstates (dimensions $i$ and $j$) may acquire **different** Berry phases: $\Phi_B^{(i)} \neq \Phi_B^{(j)}$.
-
-**(c)** This creates an irreducible phase shift: $\theta_{ij}$ acquires an addition $\Phi_B^{(i)} - \Phi_B^{(j)}$, which cannot be eliminated by any continuous deformation of $H_{\mathrm{eff}}$. $\blacksquare$
-
-**Interpretation [I].** A topologically protected Gap means that the external and the internal **cannot** fully coincide as long as the contextual space preserves its topology.
+**Former Theorem 5.1 [✗ as a universal claim].** On a noncontractible loop one can choose a constant, nondegenerate eigenstate, whose Berry phase is zero. With nonzero Berry curvature even contractible loops can acquire different geometric phases. A nonzero fundamental group alone gives no lower bound on a pairwise Gap.
 
 ### 2.1 Holonomy in the Space of Gap Configurations
 
 The Berry phase $\Phi_B$ is the **holonomy** of the Berry connection in the space of Gap configurations. Under adiabatic variation of the context parameters $\lambda(\tau)$ along a closed loop $\gamma$, the system returns to the same eigenstate but acquires a phase factor $e^{i\Phi_B}$.
 
-:::info Note
-The key difference from standard quantum systems: here the "parameters" are not external fields but **contextual configurations** (states of the environment that determine $H_{\mathrm{eff}}$). The holonomy in the space of contexts determines which Gap configurations are topologically protected and which are not.
-:::
-
-For a system with 7 dimensions, the space of Gap configurations is parametrised by 21 phases $\theta_{ij}$ ($i < j$). The associative 3-form $\varphi$ induces the **Berry curvature** $\mathcal{F} = d\mathcal{A}$ on this space, and the holonomy around a loop $\gamma$:
-
-$$
-\Phi_B[\gamma] = \oint_\gamma \mathcal{A} = \iint_\Sigma \mathcal{F}
-$$
-
-is a topological invariant (depends only on the homotopy class $[\gamma] \in \pi_1(M)$).
+A Hamiltonian family with an isolated eigenline specifies a connection. In a compatible gauge on a spanning surface $\Sigma$, Stokes' theorem gives $\oint_{\partial\Sigma}\mathcal A=\int_\Sigma\mathcal F$ modulo $2\pi$. A three-form on the internal seven-dimensional carrier does not specify this eigenline or its curvature on a torus of phase coordinates.
 
 ---
 
 ## 3. Connection to Octonionic Structure
 
-The group $G_2 = \mathrm{Aut}(\mathbb{O})$ acts on the space $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. If the context space $M \subset G_2/H$ (for some subgroup $H$), then:
-
-$$
-\pi_1(G_2/H) \neq 0 \quad \Rightarrow \quad \exists\;\text{topologically protected phases}
-$$
-
-Since $G_2$ is a connected compact group with $\pi_1(G_2) = 0$, but $G_2/H$ may have a non-trivial fundamental group for a suitable $H$.
+For a closed subgroup $H$ of the compact simply connected group $G_2$, the fibration $H\to G_2\to G_2/H$ relates the homotopy groups of a specified orbit. Relating this orbit to a field configuration requires an action and boundary data.
 
 ### 3.1 Classification of Stabilisers
 
-:::tip Theorem 3.1 (Stabilisers of Gap Configurations) [T]
-The stabiliser $H_{\hat{\mathcal{G}}}$ depends on the rank of the opacity operator $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma) \in \mathfrak{so}(7)$:
-
-| Rank | Spectrum of $\hat{\mathcal{G}}$ | Stabiliser $H$ | $\dim(H)$ | $G_2/H$ | $\pi_1(G_2/H)$ |
-|------|-----------|---------------|--------|-------|-----------|
-| 0 | $(0,0,0)$ | $G_2$ | 14 | $\{\mathrm{pt}\}$ | 0 |
-| 1 | $(\lambda,0,0)$ | $SU(3)$ | 8 | $G_2/SU(3) \cong S^6$ | 0 |
-| 2 | $(\lambda_1,\lambda_2,0)$ | $SU(2) \times U(1)$ | 4 | 10-dim. | 0 |
-| 3 (generic) | $(\lambda_1,\lambda_2,\lambda_3)$ | $T^2$ (torus) | 2 | 12-dim. | $\mathbb{Z}^2$ |
-| 3 (degenerate) | $(\lambda,\lambda,\lambda)$ | $SU(2)$ | 3 | 11-dim. | 0 |
-:::
+**Theorem 3.1 (orbit dimension).** Once the stabilizer $H$ of an actual group action is identified, $\dim(G_2/H)=14-\dim H$. Examples are $G_2/SU(3)\cong S^6$ for the action on a unit imaginary octonion and the flag orbit $G_2/T^2$. The rank of an arbitrary real skew matrix does not specify either action or stabilizer.
 
 ### 3.2 Topological Protection from $\pi_1$
 
-:::tip Theorem 3.2 [T]
-Gap configurations of rank 3 with generic spectrum are **topologically protected**:
-
-**(a)** $\pi_2(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$ — there exist non-degenerate Gap configurations that cannot be contracted to trivial ones.
-
-**(b)** The configuration class $[\hat{\mathcal{G}}] \in \pi_2(G_2/T^2)$ is determined by two integers $(n_1, n_2)$ corresponding to the simple roots of $\mathfrak{g}_2$:
-- $\alpha_1$ (short root): $n_1 \in \mathbb{Z}$
-- $\alpha_2$ (long root): $n_2 \in \mathbb{Z}$
-
-**(c)** The "untying" energy (transition $(n_1,n_2) \to (0,0)$):
-
-$$
-\Delta E_{\mathrm{top}} \geq (|n_1| + |n_2|) \cdot \pi\mu^2 / \lambda_4
-$$
-
-**(d)** For ranks 0, 1, 2: $\pi_1 = 0$, topological protection is **absent**.
-:::
-
-:::info Interpretation of Winding Numbers
-The pair $(n_1, n_2) \in \mathbb{Z}^2$ defines the **topological protection class** of a Gap configuration. The winding numbers $(n_1, n_2)$ correspond to two independent cycles in the maximal torus $T^2 \subset G_2$, which are images of the simple roots $\alpha_1, \alpha_2$ of the root system $\mathfrak{g}_2$.
-
-Transition between sectors $(n_1, n_2)$ and $(n_1', n_2')$ requires surmounting the energy barrier $\Delta E_{\mathrm{top}} \geq (|n_1 - n_1'| + |n_2 - n_2'|) \cdot \pi\mu^2/\lambda_4$, which ensures **stability** of a non-degenerate Gap against small perturbations. Only a **global** phase transition (change of the rank of the spectrum of $\hat{\mathcal{G}}$) can remove the topological protection.
-:::
+**Theorem 3.2 / T-69 [T for the specified target].** For the connected torus $T^2$ the exact sequence gives $\pi_1(G_2/T^2)=0$ and $\pi_2(G_2/T^2)\cong\pi_1(T^2)=\mathbb Z^2$. The two integers classify based maps **from $S^2$**. A solitary density matrix supplies no such map. A continuous potential with a minimum set disjoint from a compact forbidden set has a positive excess there when all minimizers are excluded. Its size depends on the potential. The earlier numerical barriers and protection of individual states are withdrawn. [T-69](/docs/core/dynamics/composite-systems#теорема-тополог-защита)
 
 ---
 
 ## 4. Five Types of Gap Protection
 
-**Five independent** mechanisms of Gap irreducibility have been established:
-
-| # | Protection type | Mechanism |
-|---|-----------|----------|
-| 1 | Code-theoretic | Hamming bound $H(7,4)$: $\geq 3$ non-zero Gaps |
-| 2 | Algebraic | Octonionic associator $[e_i,e_j,e_k] \neq 0$ |
-| 3 | Energetic | Spontaneous minimum $V_{\mathrm{Gap}} \neq 0$ from $V_3$ |
-| 4 | Categorical | Lawvere's theorem: the fixed point cannot be trivial |
-| 5 | **Topological** | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$: non-degenerate Gap is non-contractible |
-
-Five **independent** arguments (code-theoretic, algebraic, variational, categorical, topological) establish the irreducibility of the Gap as a **fundamental** fact of a 7-dimensional octonionic system.
+Code distance is defined for codewords, the octonionic associator for algebra elements, the potential for specified fields, a fixed-point theorem for a specified map, and the homotopy class for a sphere of field values. Relating any of these five quantities to a nonzero measured Gap requires a map between their domains. For example, the diagonal state $I/7$ has no imaginary off-diagonal entries.
 
 ---
 
@@ -153,13 +73,13 @@ Replacing theorem: [Sectoral Gap Bound](#теорема-секторная-gap-�
 
 ### 5.2 Theorem (Sectoral Gap Bound) [T] {#теорема-секторная-gap-граница}
 
-:::tip Theorem (Sectoral Gap Bound) [T]
-In the unique vacuum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) the Gap configuration $\theta^*$ satisfies:
+:::note T-80 [conditional on the sector-vacuum profile (SV)]
+Using the numerical profile of the table below gives the following bounds and estimates.
 
 **(a)** For all non-O pairs ($i,j \in \{A,S,D,L,E,U\}$):
 
 $$
-\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.027 \ll 1/2
+\mathrm{Gap}(i,j) \leq \varepsilon_{\max}\approx 0.06 < 1/2
 $$
 
 **(b)** For O-sectoral pairs ($i \in \{A,S,D,L,E,U\}$):
@@ -178,7 +98,7 @@ $$
 
 **Proof.**
 
-**Step 1 (Vacuum sectoral hierarchy).** The unique global minimum of $V_{\text{Gap}}$ ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) defines the sectoral parametrisation $\boldsymbol{\varepsilon} = (\varepsilon_{O3}, \varepsilon_{O\bar{3}}, \varepsilon_{33}, \varepsilon_{\bar{3}\bar{3}}, \varepsilon_{3\bar{3}})$. From the positive definiteness of the Hessian (T-64):
+**Step 1.** The table supplies the sector values. The corrected invariant potential of T-64 does not derive this profile.
 
 | Sector | Pairs | $\varepsilon$ | Gap |
 |--------|------|--------------|-----|
@@ -195,13 +115,7 @@ $$
 
 The mean coherence $\bar{\varepsilon} = \bigl(\frac{1}{15}\sum_{i<j, \, i,j \neq O} \varepsilon_{ij}^2\bigr)^{1/2} = \varepsilon_{33}/\sqrt5 \approx 0.027$ ([C at (SV)]; the value $0.023$ written here until 2026-09-25 is retracted with the audit A-83), and the maximum $\varepsilon_{\max} = \varepsilon_{33} \approx 0.06 \ll 1/2$.
 
-**Step 3 (O-sector — necessity of Gap $\approx$ 1).** The Page–Wootters mechanism (A5) requires the O-subsystem to serve as a clock. The rate of time flow (from the [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) T-53 [T]):
-
-$$
-\frac{d\tau}{d\sigma} = \omega_0 \cdot \sqrt{\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2}
-$$
-
-For $d\tau/d\sigma > 0$ it is necessary that $\mathrm{Gap}(O,i) > 0$ for at least one $i$. Minimising $V_{\text{Gap}}$ subject to PW-viability gives $\mathrm{Gap}(O,i) \approx 1$ — the maximum value, providing the most accurate "clock". $\blacksquare$
+**Step 3.** A nonzero clock rate in a readout proportional to $\sqrt{\sum_i|\gamma_{Oi}|^2\mathrm{Gap}(O,i)^2}$ requires at least one nonzero term. It does not force all six phases to be near maximal opacity. This last feature is part of (SV).
 
 ### 5.3 Map of Fano Triplets
 
@@ -217,7 +131,7 @@ For $d\tau/d\sigma > 0$ it is necessary that $\mathrm{Gap}(O,i) > 0$ for at leas
 
 ### 5.4 Updated Falsifiable Prediction
 
-The mean Gap for non-O coherences is strictly lower than for O-sectoral coherences:
+Under the sector profile, the mean Gap for the non-clock pairs is predicted to be smaller than for the clock pairs.
 
 $$
 \langle\mathrm{Gap}_{\text{non-O}}\rangle \ll \langle\mathrm{Gap}_O\rangle \approx 1
@@ -231,25 +145,12 @@ Specifically: $\langle\mathrm{Gap}_{\text{non-O}}\rangle \leq \bar{\varepsilon} 
 
 ### 6.1 Broken Symmetries under Spontaneous Gap
 
-:::tip Theorem 4.1 [T]
-The stationary state $\Gamma^*$ with a non-zero Gap profile breaks $G_2$-symmetry:
-
-$$
-G_2 \to H_{\hat{\mathcal{G}}_*}, \quad n_{\mathrm{broken}} = 14 - \dim(H)
-$$
-
-| Rank of $\hat{\mathcal{G}}_*$ | $H$ | $\dim(H)$ | $n_{\mathrm{broken}}$ | Goldstone modes |
-|----------|---|--------|----------|---------------------|
-| 1 | $SU(3)$ | 8 | 6 | 6 |
-| 2 | $SU(2) \times U(1)$ | 4 | 10 | 10 |
-| 3 (generic) | $T^2$ | 2 | 12 | 12 |
-| 3 (degenerate) | $SU(2)$ | 3 | 11 | 11 |
-:::
+**Theorem 4.1 [T under a specified group action].** An orbit with stabilizer $H$ has $14-\dim H$ tangent directions. For a smooth invariant potential these directions have zero Hessian at a critical point on the orbit. Interpreting them as Goldstone particles requires field dynamics, a dispersion relation and symmetry-breaking conditions.
 
 ### 6.2 Modification for Dissipative Systems
 
-:::tip Theorem 4.2 [T]
-In an open (dissipative) system the Goldstone modes are **quasi-massive**:
+:::note Theorem 4.2 [H, dissipative model]
+One proposed choice of mass and decay time is
 
 $$
 m_{\mathrm{Gold}}^2 = \Gamma_2 \cdot \kappa_0 / |\gamma|^2
@@ -265,8 +166,8 @@ $$
 
 ### 6.3 Excitation Spectrum
 
-:::tip Theorem 5.1 [T]
-The spectrum of small oscillations near the minimum of $V_{\mathrm{Gap}}$ splits into three sectors:
+:::note Theorem 5.1 [H, excitation model]
+The following grouping assumes a specific vacuum, kinetic law and mode content.
 
 **(a)** **Massive modes** ($n_{\mathrm{massive}}$ in total): directions perpendicular to the $G_2$-orbit, $\omega_{\mathrm{massive}}^2 = \mu_{\mathrm{eff}}^2 + \kappa/m$.
 
@@ -379,12 +280,10 @@ Near $t = 1$ (I↔II transition):
 
 Scaling relations are satisfied:
 - Rushbrooke's law: $\alpha + 2\beta + \gamma = 0 + 1 + 1 = 2$ ✓
-- Josephson's law: $d\nu = 2 - \alpha = 2 \Rightarrow d_{\mathrm{eff}} = 4$
+- Inserting $\nu=1/2$ and $\alpha=0$ into the hyperscaling relation $d\nu=2-\alpha$ would give $d=4$. In this model hyperscaling and an independently measured length exponent have not been established. The substitution cannot select physical spacetime dimension.
 :::
 
-:::tip Theorem 7.2 [T]
-Mean-field exponents are **exact** in UHM by three independent mechanisms (see [Exactness mechanism](/docs/consciousness/hierarchy/swallowtail-transitions#механизм-точности) for the full argument): (i) Thom-Arnold topological rigidity of the $A_2$ cusp catastrophe ensures critical exponents are topological invariants of the catastrophe class; (ii) UHM dynamics is deterministic (Lindblad + regeneration), not thermodynamically stochastic, so the Landau potential is the *effective potential of the deterministic flow* and its saddle-points are the actual attractors — no Ginzburg fluctuation correction is applicable; (iii) order-parameter dimension $d_{\mathrm{eff}} = \binom{7}{2} = 21$ gives a quantitative $1/N$ cross-check with fluctuation corrections of $\approx 5\%$, within the experimental PCI resolution.
-:::
+**Theorem 7.2 (scope).** The exponents in the table characterize a specified mean-field model. Counting 21 pairs supplies an internal component count. Spatial fluctuations and the applicability of mean-field exponents to an extended physical system need a separate analysis.
 
 ---
 
@@ -579,10 +478,10 @@ Although the mathematical result of the Gaussian sum is rigorous, at physical $S
 | Topic | Page | Connection |
 |------|----------|-------|
 | $G_2$-Structure | [$G_2$-Structure and the Fano Plane](/docs/physics/gauge-symmetry/g2-structure) | Associative 3-form $\varphi$ and Fano triplets |
-| Cosmological Constant | [Cosmological Constant](/docs/physics/gravity/cosmological-constant) | Uniqueness of $B^{(b)}$ and Gauss sum |
-| Dark Matter | [Dark Matter from Gap](/docs/physics/cosmology-phys/dark-matter) | Topological protection of Gap in the $O$-sector |
-| Einstein Equations | [Einstein Equations from Gap](/docs/physics/gravity/einstein-equations) | Gap curvature and emergent geometry |
-| Emergent Geometry | [Emergent Geometry](/docs/physics/gravity/emergent-geometry) | Metric from coherences |
+| Cosmological constant | [Cosmological constant](/docs/physics/gravity/cosmological-constant) | Gauss sum of the selected form |
+| Dark matter | [Dark matter](/docs/physics/cosmology-phys/dark-matter) | Open protection of a proposed relic |
+| Einstein equations | [Einstein equations](/docs/physics/gravity/einstein-equations) | Conditions for metric dynamics |
+| Emergent geometry | [Emergent geometry](/docs/physics/gravity/emergent-geometry) | State and spatial distances |
 | Gap Dynamics | [Gap Dynamics](/docs/core/dynamics/gap-dynamics) | Topological term $\mathcal{L}_{\mathrm{top}}$ in the Gap Lagrangian |
 | Fano Selection Rules | [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules) | Fano triplets and cyclic orientation |
 

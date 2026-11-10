@@ -2,18 +2,15 @@
 sidebar_position: 6
 title: "Gap Renormalization Group"
 slug: /physics/gauge-symmetry/rg-flow
-description: "β-functions of V_Gap (1-loop, 2-loop, 3-loop), fixed points (Gaussian, Wilson-Fisher, octonionic), conformal window, c-theorem, RG-suppression of λ₃"
+description: "Scalar truncations, beta functions and the limits of the proposed physical matching"
 ---
 
 # Gap Renormalization Group
 
-:::info For whom this chapter is intended
-$\beta$-functions of the potential $V_{\text{Gap}}$, fixed points, and the conformal window. The reader will learn about the RG-suppression of the cubic coupling $\lambda_3$ and its role in the cosmological constant budget.
-:::
+The counts 21 and 7 describe the chosen edge variables and Fano lines. Wilsonian coefficients require a specified field action, kinetic normalization, dimension, regulator and projection of the effective action. The scalar truncation below supplies these modelling choices only in part. Its listed beta functions, fixed points, flavour threshold and vacuum-energy estimates have no demonstrated derivation from the operational network. In particular the sign and scale interval used for the claimed infrared suppression disagree within §8.
 
-The renormalization group (RG) describes the transformation of the parameters of the [potential $V_{\text{Gap}}$](/docs/core/dynamics/gap-thermodynamics) as the observation scale changes. The one-loop, two-loop, and three-loop $\beta$-functions, fixed points, and RG-suppression of the cubic coupling $\lambda_3$ are the central results for the [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) and the [phase diagram](/docs/core/dynamics/gap-phase-diagram).
-
----
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ## 1. Setup {#постановка}
 
@@ -451,72 +448,22 @@ The strict inequality $c_{\text{UV}} > c_{\text{WF}} > c_{\text{oct}}$ confirms 
 
 ---
 
-## 8. RG-Suppression of $\lambda_3$ [T] {#rg-подавление}
+</details>
 
-:::tip Theorem 8.1 (RG-suppression of the cubic coupling) [T]
-Over the running from the Planck scale to the electroweak breaking scale:
+## 8. RG-Suppression of $\lambda_3$ [✗] {#rg-подавление}
 
-$$
-\lambda_3(\mu_{\text{EW}}) = \lambda_3(M_{\text{Pl}}) \cdot \left(\frac{\mu_{\text{EW}}}{M_{\text{Pl}}}\right)^{15\lambda_4^*/(8\pi^2)}
-$$
+For the differential equation printed here, $d\lambda_3/d\ln\omega=-\Delta\lambda_3$ at fixed $\Delta>0$, the solution is $\lambda_3(\omega)/\lambda_3(\omega_0)=(\omega/\omega_0)^{-\Delta}$. It grows as $\omega$ decreases. Substituting the stated $\lambda_4^*=4\pi^2/63$ gives $\Delta=5/42$. The positive power used in the former suppression estimate solves the equation with the opposite sign. The $10^{-14.5}$ vacuum suppression is withdrawn [✗].
 
-Anomalous dimension $\gamma_{\lambda_3} = 15\lambda_4^*/(8\pi^2) \approx 7.26$. Suppression:
+### Integration of the stated beta function {#detailed-derivation-of-suppression-t}
 
-$$
-\lambda_3^2 \sim \left(\frac{\mu_{\text{EW}}}{M_{\text{Pl}}}\right)^{14.52} \sim 10^{-14.5}
-$$
+For a Planck-to-Hubble frequency ratio near $10^{-61}$ the signed logarithmic change from that equation is $+61(5/42)\simeq+7.26$ decades. The exponent itself is $5/42$ in magnitude. Substituting an electroweak endpoint would give a different logarithmic interval.
 
-This gives **14.5 orders** of suppression in the [$\Lambda$ budget](/docs/proofs/gap/lambda-budget).
-:::
+### Status of the vacuum-energy estimate {#role-of-rg-suppression-in-the-lambda-budget-t}
 
-### Detailed Derivation of Suppression [T]
+A contribution to the vacuum energy would additionally require a field action, a physical scale and an energy matching condition. There is no derived entry to add to a cosmological-constant budget here.
 
-From $\beta_{\lambda_3}^{(1)} = -15\lambda_3\lambda_4 / (8\pi^2)$ it follows that with fixed $\lambda_4 = \lambda_4^*$ (near the Wilson-Fisher point) the equation for $\lambda_3$ is linear:
-
-$$
-\frac{d\lambda_3}{d\ln\omega} = -\frac{15\lambda_4^*}{8\pi^2} \lambda_3 \equiv -\Delta_3 \cdot \lambda_3
-$$
-
-Solution:
-
-$$
-\lambda_3(\omega) = \lambda_3(\omega_0) \cdot \left(\frac{\omega}{\omega_0}\right)^{\Delta_3}
-$$
-
-where $\Delta_3 = 15\lambda_4^* / (8\pi^2)$ is the **anomalous dimension** of the operator $V_3$.
-
-Substituting $\lambda_4^* = 4\pi^2/63$:
-
-$$
-\Delta_3 = \frac{15 \cdot 4\pi^2/63}{8\pi^2} = \frac{60}{504} = \frac{5}{42} \approx 0.119
-$$
-
-Integrating from the Planck scale $\omega_{\text{UV}} = \omega_{\text{Planck}} \approx 1.855 \times 10^{43} \text{ s}^{-1}$ to the cosmological scale $\omega_{\text{IR}} = H_0 \approx 2.2 \times 10^{-18} \text{ s}^{-1}$:
-
-$$
-\frac{\omega_{\text{IR}}}{\omega_{\text{UV}}} \approx 1.2 \times 10^{-61}
-$$
-
-$$
-\frac{\lambda_3^{(\text{IR})}}{\lambda_3^{(\text{UV})}} = (1.2 \times 10^{-61})^{5/42} \approx 10^{-61 \cdot 0.119} \approx 10^{-7.26}
-$$
-
-The square of $\lambda_3$ (which enters the $\Lambda$ budget) is suppressed by a factor of $10^{-14.5}$. This is the **key mechanism** for explaining the smallness of the cosmological constant in Gap theory.
-
-### Role of RG-Suppression in the $\Lambda$ Budget [T]
-
-The full hierarchy of suppression of the cosmological constant is composed of several mechanisms:
-
-| Mechanism | Suppression factor | Status |
-|---|---|---|
-| $\varepsilon^6$ (smallness of vacuum coherences) | $10^{-12}$ | [T] |
-| RG-suppression of $\lambda_3$ (IR-irrelevance) | $10^{-14.5}$ ($\lambda_3^2$ suppressed) | [T] |
-| Ward identities (anticorrelation) | $\times 19/49 \approx 0.39$ | [T] |
-| [Fano code](/docs/physics/gauge-symmetry/fano-selection-rules) (6 linear constraints) | $\times 1/8$ | [T] |
-
-RG-suppression of $\lambda_3$ provides the **largest contribution** among the rigorously justified mechanisms. Detailed analysis — in the [$\Lambda$ budget](/docs/proofs/gap/lambda-budget).
-
----
+<details>
+<summary>Historical model calculations and earlier status labels</summary>
 
 ## 9. Anomalous Dimension of the Fano Operator [T] {#аномальная-размерность}
 
@@ -696,13 +643,15 @@ Result: the mass hierarchy is a consequence of the $G_2$-invariance of the octon
 
 ---
 
+</details>
+
 ## Related Documents
 
-- [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — potential $V_{\text{Gap}}$
-- [Phase diagram](/docs/core/dynamics/gap-phase-diagram) — critical phenomena
-- [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) — RG-suppression in the budget
-- [Noether charges](/docs/physics/gauge-symmetry/noether-charges) — 14 conserved charges
-- [Zeta regularization](/docs/physics/dual-aspect/zeta-regularization) — $Z_\Phi(-k) = 0$
-- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — Fano plane combinatorics
-- [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) — mass hierarchy from RG-flow
-- [Composite systems](/docs/core/dynamics/composite-systems) — collective RG-effects
+- [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics)
+- [Phase diagram](/docs/core/dynamics/gap-phase-diagram)
+- [$\Lambda$ budget](/docs/proofs/gap/lambda-budget)
+- [Noether charges](/docs/physics/gauge-symmetry/noether-charges)
+- [Zeta regularization](/docs/physics/dual-aspect/zeta-regularization)
+- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules)
+- [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy)
+- [Composite systems](/docs/core/dynamics/composite-systems)
