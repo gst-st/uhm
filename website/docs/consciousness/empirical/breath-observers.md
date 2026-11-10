@@ -1,0 +1,36 @@
+---
+title: Following and counting the breath
+description: A prospective experiment comparing knowledge of the present respiratory phase and memory of completed breaths.
+---
+
+A signal sounds while you are sitting and breathing naturally. Can you say whether you were breathing in or out just before it sounded? Could you also say whether an odd or even number of exhalations had finished since the start tone? Those are two questions about the same stretch of experience.
+
+We compare two exercises described together in Zen teaching: silently counting exhalations from one to ten and starting again, and following the sensations of breathing without keeping a numerical tally. A single teaching lineage supplies both instructions, which reduces differences in wording and setting. In the study, each person receives just one instruction. The start marker, scoring at the completion of the exhale and post-cued questions are experimental additions. The question about parity measures a particular use of memory. [Eon Zen instructions](https://eonzen.org/how-to-meditate) · [Engakuji on variants of both practices](https://note.com/engakuji/n/nc42f68093596?hl=en) · [Earlier behavioural work on breath counting](https://pubmed.ncbi.nlm.nih.gov/25386148/)
+
+## What follows from the operational foundations {#derivation}
+
+UHM compares two histories by asking which future actions and observations can distinguish them. Here, a completion, a lost count and a restart are separate events. A belt records a respiratory cycle; it cannot tell whether the person silently advanced a number. The query and the button press are separate from both events. [Practice, recognition and report](./practice-and-report) · [Operational foundations](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/README.md)
+
+- **Present phase.** If both observers can distinguish the same current phase and use the same reporting channel, their phase responses agree on the same respiratory input. The counting observer can discard its count to produce that response. The empirical assumption is that the extra task leaves perception and reporting sufficiently alike.
+- **History.** Four and five completed exhalations can both be followed by an inspiration. The correct phase answers coincide and the correct parity answers differ. A faithful ten-position count distinguishes the histories, including across the transition from ten back to one. Over all common future advances and restarts, exactly two classes of counter states are distinguishable by the parity question. One remembered bit therefore suffices. A person following the breath who retains that bit can match a counter on both questions.
+- **Errors.** In the model the stored parity is correct exactly when the total of missed increments, extra increments and counts discarded at restarts is even. A single unnoticed completion reverses agreement; two can restore it. A correct button press alone cannot establish faithful counting or the point at which attention wandered. [Lean derivation and counterexamples](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/network/BreathPractice.lean)
+
+[T] Suppose a reader can distinguish only an observable class $z$. In a balanced set of equally weighted histories, let $e_z,o_z$ count even and odd targets within that class. Its best possible number of correct binary answers is $\sum_z\max(e_z,o_z)$. Randomizing an answer from the same available information cannot improve that ceiling. If the even and odd cases are equally frequent in every class, the ceiling is one half. Counting strictly exceeds even the best such reader precisely when its total errors are fewer than $\sum_z\min(e_z,o_z)$. These are conditional statements about access to information. If duration distinguishes the histories, duration belongs in the classes. Participants may also use sensations or strategies unavailable to the investigator. [Exact criterion and timing control](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/network/PracticeChannels.lean)
+
+## Test before seeing outcomes {#study}
+
+[H] For adults with little experience of either exercise, we predict practical equivalence for phase and an advantage of counting for parity. The preregistration package fixes two independent parallel groups of 1,400, 32 assigned trials per person and one concealed query per trial. Both groups receive the same unpredictable questions. Queries, terminal phase and target parity are crossed and balanced. The probe is triggered by the belt; there is no imposed breathing rhythm. Two blinded annotators independently reconstruct the true phase and exact number of completed cycles from the recording and actual delivered markers. The target in the schedule cannot supply missing ground truth.
+
+The confirmatory rule uses six simultaneous one-sided confidence bounds with total error probability at most 0.05 under independent participant sampling. All of the following must hold:
+
+1. The entire interval for the phase accuracy difference, count minus follow, lies strictly between −10 and +10 percentage points.
+2. The lower bound for each group's phase accuracy exceeds 65%.
+3. The lower bound for the history accuracy difference exceeds +10 percentage points.
+
+These margins are declared practical choices. At the planned 2,800 people and with complete observations, a conservative power bound is 82.1% **if** both phase accuracies are 85% and the history advantage is 25 points. Each person has one weight. A dropout, failed sensor or unanswered query widens the possible outcomes; the denominator stays fixed. A phase difference interval wholly outside the equivalence region, or a history upper bound at or below +10 points, contradicts the quantitative prediction. Overlap with a boundary is inconclusive. Equal poor phase performance cannot support the joint result. [Locked workflow, instrument and analysis](https://github.com/gst-st/uhm/tree/main/website/research/operational-reconstruction/practice-study) · [Hoeffding's probability bounds](https://doi.org/10.1080/01621459.1963.10500830)
+
+## What can distinguish the explanations? {#interpretation}
+
+A participant may infer breath count from elapsed time. We therefore predefine a duration-only answer using each person's neutral breathing baseline and compare its success on exactly the same history trials. We retain descriptions of silent counting, loss, restart and incidental memory from both groups. A positive interaction would support **selective preservation of information on these two tasks**. Timing, incidental memory and differences in the ability to report can still account for part of the effect. Identical scores on both tasks are also a meaningful result. Two observers with different internal states can answer the same questions indefinitely.
+
+The proof package and synthetic controls are complete. Participant recruitment, independent registration of the allocation digest, measurement and replication are pending. No findings about human participants, the relative spiritual value of the practices or an explanation unique to UHM follow from running the code. [Native Verum receipt](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/network/verum-receipt.json)

@@ -252,6 +252,105 @@
       "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
       "statement_sha256": "0bf3146a2bfadb46665c795c7e9cc456f0b0f64bf3db4771609a02c14dbdab37",
       "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "trace_projection",
+      "profile": "pi-id",
+      "cases": null,
+      "source_sha256": "4e4d0648444c2005a1b62050247861f4ea7b628d73cb910f9e5015b9e3ce7187",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "5f6d31d925f197784ab0335df24e92e07484fffe9f9e2cd23e2514b546ffba43",
+      "mutation_rejected": "ill_typed_source"
+    },
+    {
+      "name": "faithful_decoder_fibre",
+      "profile": "pi-id",
+      "cases": null,
+      "source_sha256": "4e4d0648444c2005a1b62050247861f4ea7b628d73cb910f9e5015b9e3ce7187",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "bb39d0f0be5a2f133854ee3e578d24aa31fca78f919f2a737c0f12fa1ead5d37",
+      "mutation_rejected": "ill_typed_source"
+    },
+    {
+      "name": "count_step",
+      "profile": "finite",
+      "cases": 40,
+      "source_sha256": "03d72fa11012936167494e28bf8bc50e67677f8455a7f59d10b97041091f4203",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "7a381b4e1bab100c5d4b7d3b922fb4201f99bc8fa4e0a1ec5b72879727e6ef53",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "paired_items",
+      "profile": "finite",
+      "cases": 80,
+      "source_sha256": "03d72fa11012936167494e28bf8bc50e67677f8455a7f59d10b97041091f4203",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "2cc61faed71ee2f2b90d0741126771cb7d780aedaecb672d18da44205dfbba3f",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "missed_updates",
+      "profile": "finite",
+      "cases": 40,
+      "source_sha256": "03d72fa11012936167494e28bf8bc50e67677f8455a7f59d10b97041091f4203",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "76007d738ab522f1cbf05d5c918e01331da4c1e4363b3ad8964cc3703e2b576a",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "reset_alignment",
+      "profile": "finite",
+      "cases": 20,
+      "source_sha256": "03d72fa11012936167494e28bf8bc50e67677f8455a7f59d10b97041091f4203",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "a86c7c73704928ea5975683aef7a74ac99929dc4f5c1364fd08aeac90e86ef64",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "nuisance_leak",
+      "profile": "finite",
+      "cases": 8,
+      "source_sha256": "03d72fa11012936167494e28bf8bc50e67677f8455a7f59d10b97041091f4203",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "40250635cd91cc0e275d63ff08a9d19bad9d1b50c6e2754aebcbebb3cf647c48",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "cue_increases_ceiling",
+      "profile": "finite",
+      "cases": 81,
+      "source_sha256": "03d72fa11012936167494e28bf8bc50e67677f8455a7f59d10b97041091f4203",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "b75ffbefaea85e5c47adef9c7092a7b3628fe65ef26b85ee1afe3c21a654545c",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "interaction_interval",
+      "profile": "pi-id",
+      "cases": null,
+      "source_sha256": "4e4d0648444c2005a1b62050247861f4ea7b628d73cb910f9e5015b9e3ce7187",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "35026626d1b23df5ad2e6b3c3ce690ff22ecb0d12fb09530f28cbd96e8c46123",
+      "mutation_rejected": "ill_typed_source"
+    },
+    {
+      "name": "completion_range",
+      "profile": "finite",
+      "cases": 12,
+      "source_sha256": "53cf8d761ed2a47955c9bc69e274a9f5f7660bdaed040aa611e88a193c3b2533",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "6a4d424669266803d1b2395a1d32399e00335b79532ee4cf873cd828bedf74aa",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "joint_gate",
+      "profile": "finite",
+      "cases": 243,
+      "source_sha256": "53cf8d761ed2a47955c9bc69e274a9f5f7660bdaed040aa611e88a193c3b2533",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "6977569267a6378de384ad1352a9caef7b958ec1af3370951107bc8e3e18f1d0",
+      "mutation_rejected": "type_mismatch"
     }
   ]
 }

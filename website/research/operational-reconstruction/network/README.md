@@ -30,6 +30,12 @@ The physical continuum, a unique microscopic gauge group, a Standard Model matte
 - [PeriodicLimit](PeriodicLimit.lean), [CircleLimit](CircleLimit.lean) and [ProductLimit](ProductLimit.lean) connect the ordinary local pulse detector to the circle of binary angular addresses modulo zero angular separation and to the sum metric on its square. The examples include positive separation of antipodes, explicit dense stations, nonuniform interior delays and a diagonal actuator which changes the geometry. [MeshControl](MeshControl.lean) bounds the distortion for unlabelled stations when port coverage is certified. [DriftControl](DriftControl.lean) constructs reciprocal first arrivals with adjacent normalized changes tending to zero and no limiting time.
 - Native Verum independently replays the refinement-surplus induction, local finite-speed lower bounds on real walks, convergence transfer, positivity, and the reciprocity step for round trips. It also checks finite clock, shortcut and diagonal-actuator controls and rejects their semantic mutations. The general construction of real-valued distances and the infinite-address circle and torus theorems are Lean proofs. The [receipt](verum-receipt.json) records what the native profiles check.
 
+## Breath practices and observable histories
+
+The [prospective study](../practice-study/README.md) compares exhale counting with nonnumerical following on the same cue. For a shared current-phase readout a ten-state counter projects to the phase observer. For parity, precisely two states suffice under all common future updates. The exact ceiling for any finite declared observation channel is the sum of the per-class majorities. An extra timing cue can raise it. The behavioural superiority margin is a prospective hypothesis; a one-bit follower and an inaccurate counter are explicit competitors. [Trace model](BreathPractice.lean) · [Channel theorem](PracticeChannels.lean) · [Missing observations and interaction](PracticeDecision.lean)
+
+The native Verum profiles independently check the projection, decoder obstruction, interaction bound and finite reset, cue, missingness and decision controls. Coverage is listed in the receipt. Population sampling and Hoeffding coverage are justified separately in the study protocol; machine proofs concern models, arithmetic and observation contracts.
+
 ## Replay
 
 From this directory use Lean 4.35.0 (Std only), a Python 3 interpreter and the native `verum-source-replay` checker from the `verum_source_proof` crate.

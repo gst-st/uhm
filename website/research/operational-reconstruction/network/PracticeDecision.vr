@@ -1,0 +1,32 @@
+// Missingness is an unknown binary score. Lower and upper scores specify
+// what can actually be attained by completions of that same record.
+type Record is Wrong | Right | Absent | Unusable | Mismatch | NoReply;
+fn finish_record(r:Record,completion:Bool)->Bool {
+    match r { Record.Wrong=>false, Record.Right=>true, _=>completion }
+}
+fn completion_range(r:Record,proposed:Bool)->Bool
+    ensures result == match r {
+        Record.Wrong=>!proposed, Record.Right=>proposed, _=>true
+    }
+{
+    proposed == finish_record(r,false) || proposed == finish_record(r,true)
+}
+
+// Three positions near each signed threshold. Phase lower uses
+// -0.11/-0.10/-0.09, phase upper and history lower use 0.09/0.10/0.11.
+// The two arm floors use 0.50/0.65/0.66 (first choice is chance). The
+// full 3^5 grid consists of valid ordered phase intervals. This checks
+// the pass gate with already supplied bounds; it does not infer any CI.
+type Position is Below | At | Above;
+fn higher(p:Position)->Bool { match p {Position.Above=>true,_=>false} }
+fn lower(p:Position)->Bool { match p {Position.Below=>true,_=>false} }
+fn joint_gate(phase_low:Position,phase_high:Position,history_low:Position,
+              floor_count:Position,floor_follow:Position)->Bool
+    ensures result == (higher(phase_low) && lower(phase_high) && higher(history_low)
+                    && higher(floor_count) && higher(floor_follow))
+{
+    match phase_low { Position.Above=>match phase_high { Position.Below=>
+        match history_low { Position.Above=>
+            match floor_count { Position.Above=>higher(floor_follow), _=>false },
+            _=>false }, _=>false }, _=>false }
+}

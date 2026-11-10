@@ -1,0 +1,57 @@
+// Two state machines receive the same ordered events. A concrete state x
+// projects to an observable value read(x); a reduced machine updates that
+// value directly. A trace folds the two transitions together for any length.
+// local is substitutivity of the single-step projection for every predicate
+// on the observable. It has no premise about a complete trial or practice.
+public theorem trace_projection(
+    event:Type,state:Type,value:Type,
+    step:fn(event,state)->state, update:fn(event,value)->value, read:fn(state)->value,
+    start:state, stop:state, recorded:value,
+    trace:fn<M:meta fn(state,value)->Type(1)>(
+        fn<e:meta event,x:meta state,v:meta value>(M(x,v))->M(step(e,x),update(e,v)),
+        M(start,read(start)))->M(stop,recorded),
+    local:fn<e:meta event,x:meta state,pred:meta fn(value)->Type>(
+        pred(read(step(e,x))))->pred(update(e,read(x)))):
+    read(stop) == recorded
+proof = trace(
+    |x:state| |v:value| forall pred:fn(value)->Type. forall h:pred(read(x)). pred(v),
+    |e:event| |x:state| |v:value|
+    |ih:fn<pred:meta fn(value)->Type>(pred(read(x)))->pred(v)|
+    |pred:fn(value)->Type| |h:pred(read(step(e,x)))|
+        ih(|w:value| pred(update(e,w)),local(e,x,pred,h)),
+    |pred:fn(value)->Type| |h:pred(read(start))| h
+)(|w:value| read(stop)==w,@builtin_refl(read(stop)));
+
+// If a decoder is always faithful, two histories assigned the same
+// observation must have the same target. The reading may include elapsed time,
+// phase, or the full sensory record, according to the declared readout.
+public theorem faithful_decoder_fibre(
+    history:Type,observation:Type,answer:Type,
+    reading:fn(history)->observation,target:fn(history)->answer,decode:fn(observation)->answer,
+    x:history,y:history,indistinguishable:Path<observation>(reading(x),reading(y)),
+    left:Path<answer>(target(x),decode(reading(x))),
+    right:Path<answer>(target(y),decode(reading(y)))): target(x) == target(y)
+proof by rewrite(left); rewrite(right); rewrite(indistinguishable); reflexivity;
+
+// Certified bounds for two contrasts P and H, expressed in common units.
+// For the interaction H-P, ordered subtraction is monotone in H and
+// antitone in P. The shared positive superiority/equivalence margin forces
+// the entire resulting interval strictly above zero. These assumptions are
+// algebraic laws on arbitrary values, not an interaction certificate.
+public theorem interaction_interval(
+    value:Type,result_type:Type, le:fn(value,value)->Type,lt:fn(value,value)->Type,
+    sub:fn(value,value)->value, zero:value, margin:value,
+    trans_lt:fn<a:meta value,b:meta value,c:meta value>(lt(a,b),lt(b,c))->lt(a,c),
+    positive_difference:fn<a:meta value,b:meta value>(lt(a,b))->lt(zero,sub(b,a)),
+    sub_order:fn<a:meta value,b:meta value,c:meta value,d:meta value>(
+        le(a,c),le(d,b))->le(sub(a,b),sub(c,d)),
+    plo:value,phase:value,phi:value,hlo:value,history:value,hhi:value,
+    phase_floor:le(plo,phase),phase_ceiling:le(phase,phi),
+    history_floor:le(hlo,history),history_ceiling:le(history,hhi),
+    phase_inner:lt(phi,margin),history_outer:lt(margin,hlo),
+    consume:fn(lt(zero,sub(hlo,phi)),le(sub(hlo,phi),sub(history,phase)),
+               le(sub(history,phase),sub(hhi,plo)))->result_type): result_type
+proof = consume(
+    positive_difference(phi,hlo,trans_lt(phi,margin,hlo,phase_inner,history_outer)),
+    sub_order(hlo,phi,history,phase,history_floor,phase_ceiling),
+    sub_order(history,phase,hhi,plo,history_ceiling,phase_floor));

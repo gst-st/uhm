@@ -285,6 +285,68 @@ def expected_round_trip():
                      eq('p','q'))
 
 
+def expected_trace_projection():
+    # The trace must work for every indexed invariant in universe 1:
+    # transporting an arbitrary observable predicate lives at that universe.
+    higher = {"Universe":{"Concrete":1}}
+    family = arrow('state', arrow('value', higher))
+    def transition(e, x):
+        return app('step', e, x)
+    def update(e, v):
+        return app('update', e, v)
+    def read(x):
+        return app('read', x)
+    advance = quantify([('e','event'), ('x','state'), ('v','value')],
+                       arrow(app('M','x','v'), app('M', transition('e','x'), update('e','v'))))
+    trace = pi('M', family, arrow(advance, arrow(app('M','start',read('start')),
+                                                app('M','stop','recorded'))))
+    local = quantify([('e','event'), ('x','state'), ('pred',arrow('value',UNIVERSE))],
+                     arrow(app('pred',read(transition('e','x'))), app('pred',update('e',read('x')))))
+    return telescope([('event',UNIVERSE), ('state',UNIVERSE), ('value',UNIVERSE),
+                      ('step',arrow('event',arrow('state','state'))),
+                      ('update',arrow('event',arrow('value','value'))),
+                      ('read',arrow('state','value')), ('start','state'), ('stop','state'),
+                      ('recorded','value'), ('trace',trace), ('local',local)],
+                     ('id','value',read('stop'),'recorded'))
+
+
+def expected_decoder_fibre():
+    view = lambda x: app('reading',x)
+    target = lambda x: app('target',x)
+    decode = lambda x: app('decode',view(x))
+    return telescope([('history',UNIVERSE), ('observation',UNIVERSE), ('answer',UNIVERSE),
+                      ('reading',arrow('history','observation')), ('target',arrow('history','answer')),
+                      ('decode',arrow('observation','answer')), ('x','history'), ('y','history'),
+                      ('indistinguishable',('id','observation',view('x'),view('y'))),
+                      ('left',('id','answer',target('x'),decode('x'))),
+                      ('right',('id','answer',target('y'),decode('y')))],
+                     ('id','answer',target('x'),target('y')))
+
+
+def expected_interaction():
+    le = lambda a, b: app('le', a, b)
+    lt = lambda a, b: app('lt', a, b)
+    sub = lambda a, b: app('sub', a, b)
+    def values(*names):
+        return [(name, 'value') for name in names]
+    relation = arrow('value', arrow('value', UNIVERSE))
+    trans = quantify(values('a', 'b', 'c'), arrow(lt('a','b'), arrow(lt('b','c'), lt('a','c'))))
+    positive = quantify(values('a','b'), arrow(lt('a','b'), lt('zero', sub('b','a'))))
+    monotone = quantify(values('a','b','c','d'), arrow(le('a','c'), arrow(le('d','b'),
+                        le(sub('a','b'),sub('c','d')))))
+    low, true, high = sub('hlo','phi'), sub('history','phase'), sub('hhi','plo')
+    finish = arrow(lt('zero',low), arrow(le(low,true), arrow(le(true,high),'result_type')))
+    binders = [('value',UNIVERSE),('result_type',UNIVERSE),('le',relation),('lt',relation),
+               ('sub',arrow('value', arrow('value','value')))] + values('zero','margin')
+    binders += [('trans_lt',trans),('positive_difference',positive),('sub_order',monotone)]
+    binders += values('plo','phase','phi','hlo','history','hhi')
+    binders += [('phase_floor',le('plo','phase')),('phase_ceiling',le('phase','phi')),
+                ('history_floor',le('hlo','history')),('history_ceiling',le('history','hhi')),
+                ('phase_inner',lt('phi','margin')),('history_outer',lt('margin','hlo')),
+                ('consume',finish)]
+    return telescope(binders, 'result_type')
+
+
 LOGICAL_TYPES = {
     'middle_frame_cancels': expected_corner,
     'relay_triangle': expected_relay,
@@ -298,6 +360,9 @@ LOGICAL_TYPES = {
     'exclude_zero_tail': expected_gap,
     'dyadic_surplus': expected_surplus,
     'reciprocal_round_trip': expected_round_trip,
+    'trace_projection': expected_trace_projection,
+    'faithful_decoder_fibre': expected_decoder_fibre,
+    'interaction_interval': expected_interaction,
 }
 
 SPECS = [
@@ -329,6 +394,17 @@ SPECS = [
     ('Continuum.vr','pi-id','reciprocal_round_trip',None,'induction symmetric_p; exact(half_cancel','exact(half_cancel'),
     ('PeriodicControls.vr','finite','reserve_arithmetic',64,'let paid = r || (!r_next && !e)','let paid = r || !e'),
     ('PeriodicControls.vr','finite','square_read',8,'let d1 = b0 || c0 || (diagonal && a0)','let d1 = b0 || c0'),
+    ('BreathTrace.vr','pi-id','trace_projection',None,'pred(update(e,w)),local(e,x,pred,h)','pred(w),local(e,x,pred,h)'),
+    ('BreathTrace.vr','pi-id','faithful_decoder_fibre',None,'rewrite(indistinguishable); reflexivity','reflexivity'),
+    ('BreathPractice.vr','finite','count_step',40,'Ordinal.Nine=>Ordinal.Z','Ordinal.Nine=>Ordinal.Nine'),
+    ('BreathPractice.vr','finite','paired_items',80,'track(n,true,false)','track(n,true,true)'),
+    ('BreathPractice.vr','finite','missed_updates',40,'if miss_second { first }','if miss_first { first }'),
+    ('BreathPractice.vr','finite','reset_alignment',20,'next_count(Ordinal.Z) } else { Ordinal.Z','Ordinal.Z } else { Ordinal.Z'),
+    ('BreathPractice.vr','finite','nuisance_leak',8,'if leak { !first_cue }','if leak { first_cue }'),
+    ('BreathPractice.vr','finite','cue_increases_ceiling',81,'let second = greater_mass(e1,o1)','let second = greater_mass(e0,o0)'),
+    ('BreathTrace.vr','pi-id','interaction_interval',None,'history_floor,phase_ceiling)','history_floor,phase_floor)'),
+    ('PracticeDecision.vr','finite','completion_range',12,'proposed == finish_record(r,true)','proposed == finish_record(r,false)'),
+    ('PracticeDecision.vr','finite','joint_gate',243,'Position.Above=>higher(floor_follow)','Position.Above=>!lower(floor_follow)'),
 ]
 
 def replay(checker, profile, source, theorem):

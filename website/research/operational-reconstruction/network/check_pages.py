@@ -5,7 +5,8 @@ import re
 
 SITE=Path(__file__).resolve().parents[3]
 PAGES=('networks/three-node-transport','geometry/response-metric','reference/network-results',
-       'consciousness/empirical/practice-and-report','networks/cycle-observations','geometry/network-scales','geometry/common-limit')
+       'consciousness/empirical/practice-and-report','networks/cycle-observations','geometry/network-scales','geometry/common-limit',
+       'consciousness/empirical/breath-observers')
 
 class Page(HTMLParser):
     def __init__(self):

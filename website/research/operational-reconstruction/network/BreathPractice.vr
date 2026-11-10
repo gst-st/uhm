@@ -1,0 +1,97 @@
+// Number of full exhalations since the external anchor, modulo ten. Z is
+// the initial state and is reached again after silently counting "ten".
+type Ordinal is Z | One | Two | Three | Four | Five | Six | Seven | Eight | Nine;
+fn next_count(n:Ordinal)->Ordinal {
+    match n {
+        Ordinal.Z=>Ordinal.One, Ordinal.One=>Ordinal.Two, Ordinal.Two=>Ordinal.Three,
+        Ordinal.Three=>Ordinal.Four, Ordinal.Four=>Ordinal.Five, Ordinal.Five=>Ordinal.Six,
+        Ordinal.Six=>Ordinal.Seven, Ordinal.Seven=>Ordinal.Eight,
+        Ordinal.Eight=>Ordinal.Nine, Ordinal.Nine=>Ordinal.Z
+    }
+}
+fn odd(n:Ordinal)->Bool {
+    match n { Ordinal.One=>true, Ordinal.Three=>true, Ordinal.Five=>true,
+              Ordinal.Seven=>true, Ordinal.Nine=>true, _=>false }
+}
+// The belt transitions out of expiration exactly once per completed exhale.
+// A repeated sample inside the same phase never advances the ideal counter.
+fn track(n:Ordinal, was_out:Bool, is_out:Bool)->Ordinal {
+    if was_out && !is_out { next_count(n) } else { n }
+}
+fn count_step(n:Ordinal, was_out:Bool, is_out:Bool)->Bool
+    ensures result == (odd(n) != (was_out && !is_out))
+{
+    odd(track(n,was_out,is_out))
+}
+
+// Both histories finish at the same phase. The second has one more full
+// exhale before that phase. Any binary rule depending only on current phase
+// must get exactly one of the two query answers correct. A randomized rule
+// can be treated the same way for each fixed, history-independent seed.
+fn paired_items(n:Ordinal,is_out:Bool,inhale_answer:Bool,exhale_answer:Bool)->Bool
+    ensures result
+{
+    let after_extra = track(n,true,false);
+    let report = if is_out { exhale_answer } else { inhale_answer };
+    let first_correct = report == odd(n);
+    let other_correct = report == odd(after_extra);
+    first_correct != other_correct
+}
+
+// Two full exhalations occur. The model may drop either counted update.
+// Parity can be correct after two missed events; accuracy alone does not
+// identify whether the participant faithfully followed an instruction.
+fn missed_updates(n:Ordinal,miss_first:Bool,miss_second:Bool)->Bool
+    ensures result == (miss_first == miss_second)
+{
+    let first = if miss_first { n } else { next_count(n) };
+    let second = if miss_second { first } else { next_count(first) };
+    odd(second) == odd(next_count(next_count(n)))
+}
+
+// A voluntary restart has the ordinal Z. It restores parity relative to
+// the original anchor iff the number already completed was even. A
+// correctly registered subsequent completion preserves this alignment.
+fn reset_alignment(n:Ordinal,completion:Bool)->Bool
+    ensures result == !odd(n)
+{
+    let reference = if completion { next_count(n) } else { n };
+    let restarted = if completion { next_count(Ordinal.Z) } else { Ordinal.Z };
+    odd(reference) == odd(restarted)
+}
+
+// Binary nuisance cue: it is identical across the matched pair unless it
+// leaks the parity. Both cue values can be relabelled by a scanning rule.
+// Two correct replies now become possible despite the absence of a counter.
+fn nuisance_leak(odd_first:Bool,leak:Bool,invert:Bool)->Bool
+    ensures result == (leak && !invert)
+{
+    let first_cue = odd_first;
+    let other_cue = if leak { !first_cue } else { first_cue };
+    let first_right = (first_cue != invert) == odd_first;
+    let other_right = (other_cue != invert) == !odd_first;
+    first_right && other_right
+}
+
+// An independently coded finite control for partial leakage. Inputs are the
+// even/odd multiplicities in each of two distinguishable cue classes. Read
+// only the majority in each available class. Since the split decoder weakly
+// dominates either constant decoder in each cell, the sum is strictly better
+// iff at least one cell beats each constant decoder. Includes ties and empty cells.
+type Mass is Zero | One | Two;
+fn unit(m:Mass)->Bool { match m {Mass.Zero=>false,_=>true} }
+fn two(m:Mass)->Bool { match m {Mass.Two=>true,_=>false} }
+fn greater(a:Mass,b:Mass)->Bool {
+    (unit(a) && !unit(b)) || (two(a) && !two(b))
+}
+fn greater_mass(a:Mass,b:Mass)->Mass { if greater(a,b) { a } else { b } }
+fn cue_increases_ceiling(e0:Mass,o0:Mass,e1:Mass,o1:Mass)->Bool
+    ensures result == ((greater(e0,o0) && greater(o1,e1)) ||
+                       (greater(o0,e0) && greater(e1,o1)))
+{
+    let first = greater_mass(e0,o0);
+    let second = greater_mass(e1,o1);
+    let beats_even = greater(first,e0) || greater(second,e1);
+    let beats_odd = greater(first,o0) || greater(second,o1);
+    beats_even && beats_odd
+}
