@@ -23,6 +23,13 @@ The physical continuum, a unique microscopic gauge group, a Standard Model matte
 | Block contraction | Every proposed coarse step must lift from every actual starting port to its destination block within budget to preserve reachable balls. The criterion composes through nested scales. With switch diameter D and free endpoints, the excess fine cost is at most (m−1)D for m≥1 steps. The cyclic two-port strip attains the bound for arbitrarily large m. [PortQuotient](PortQuotient.lean) · [ScaleObstruction](ScaleObstruction.lean) |
 | Macroscopic comparison | Mutual calibrated simulations characterize a common distance table. At increasing scales, uniform vanishing of normalized discrepancies transfers convergence to the same reference table. A fixed positive tick can collapse in that limit. Uniform physical delay lines multiply all first arrival times by the same factor, including on cyclic networks. [NetworkScale](NetworkScale.lean) · [ClockRefinement](ClockRefinement.lean) |
 
+## Common limiting geometry
+
+- [Clock normalization](ClockNormalization.lean) and [the limit construction](LimitMetric.lean) use natural cross-products throughout. Positive tick calibrations may differ between probes. A common positive limit for a pair exists iff the reference readings are Cauchy, the calibrated discrepancy vanishes and the reference has a positive tail. The limit is constructed in the quotient of nonnegative dyadic Cauchy names and is unique for the specified convergence.
+- [Dynamic refinement](DynamicRefinement.lean) and [common geometry](CommonGeometry.lean) derive tail estimates from simulations of actual passages. A reserve pays for the next refinement and tends to zero in common units. Conditional on these certificates a pair is positively separated iff **one finite** local causal register rises by more than that level's reserve. The first-arrival clock realizes the extremum. Local root-loop measurements in [CycleDelays](CycleDelays.lean) also test equality of constrained round trips. Asymptotic reciprocity of each probe then gives agreement of one-way readings.
+- [PeriodicLimit](PeriodicLimit.lean), [CircleLimit](CircleLimit.lean) and [ProductLimit](ProductLimit.lean) connect the ordinary local pulse detector to the circle of binary angular addresses modulo zero angular separation and to the sum metric on its square. The examples include positive separation of antipodes, explicit dense stations, nonuniform interior delays and a diagonal actuator which changes the geometry. [MeshControl](MeshControl.lean) bounds the distortion for unlabelled stations when port coverage is certified. [DriftControl](DriftControl.lean) constructs reciprocal first arrivals with adjacent normalized changes tending to zero and no limiting time.
+- Native Verum independently replays the refinement-surplus induction, local finite-speed lower bounds on real walks, convergence transfer, positivity, and the reciprocity step for round trips. It also checks finite clock, shortcut and diagonal-actuator controls and rejects their semantic mutations. The general construction of real-valued distances and the infinite-address circle and torus theorems are Lean proofs. The [receipt](verum-receipt.json) records what the native profiles check.
+
 ## Replay
 
 From this directory use Lean 4.35.0 (Std only), a Python 3 interpreter and the native `verum-source-replay` checker from the `verum_source_proof` crate.
@@ -33,6 +40,7 @@ python3 -B audit_lean.py --replay-kernels
 python3 -B experiment.py
 python3 -B network_scale_experiment.py
 python3 -B boundary_experiment.py
+python3 -B limit_experiment.py
 python3 -B replay_verum.py /absolute/path/to/verum-source-replay
 ~~~
 
@@ -47,4 +55,5 @@ Native Verum verifies source contracts for the declared logical and finite profi
 - [Practice and report](../../../docs/consciousness/empirical/practice-and-report.md)
 - [Cycle observations](../../../docs/networks/cycle-observations.md)
 - [Networks across scales](../../../docs/geometry/network-scales.md)
+- [Common limiting distance](../../../docs/geometry/common-limit.md)
 - [Result registry](../../../docs/reference/network-results.md)

@@ -1,0 +1,105 @@
+// A directional ruler reads in the same calibrated units as time. Algebra's
+// chain law is valid for a<=b+d and b<=c+t with additive costs. Only actual
+// single physical edges are given speed bounds. Specializing the free walk
+// eliminator proves a speed bound on every walk, including cyclic detours.
+public theorem ruler_on_walk(
+    b:Type,time:Type,edge:fn(b,b,time)->Type,plus:fn(time,time)->time,
+    le:fn(time,time)->Type,ruler:fn(b)->time,s:b,z:b,zero:time,total:time,
+    walk:fn<M:meta fn(b,time)->Type>(
+      fn<i:meta b,j:meta b,t:meta time,d:meta time>(edge(i,j,d),M(i,t))->M(j,plus(t,d)),
+      M(s,zero))->M(z,total),
+    base:le(ruler(s),plus(ruler(s),zero)),
+    link_bound:fn<i:meta b,j:meta b,d:meta time>(edge(i,j,d))->le(ruler(j),plus(ruler(i),d)),
+    chain:fn<a:meta time,b0:meta time,c:meta time,d:meta time,t:meta time>(
+      le(a,plus(b0,d)),le(b0,plus(c,t)))->le(a,plus(c,plus(t,d)))):
+    le(ruler(z),plus(ruler(s),total))
+proof = walk(
+    |v:b| |t:time| le(ruler(v),plus(ruler(s),t)),
+    |i:b| |j:b| |t:time| |d:time| |link:edge(i,j,d)|
+      |prefix:le(ruler(i),plus(ruler(s),t))|
+      chain(ruler(j),ruler(i),ruler(s),d,t,link_bound(i,j,d,link),prefix),
+    base);
+
+// All endpoint pairs and probe preparations are included in each tail test.
+// Choose one refinement index satisfying both budgeted error tests at half
+// tolerance. For rational clocks close(e,x,y) can mean |x-y|<=e.
+public theorem shared_limit_modulus(
+    scale:Type,precision:Type,port:Type,probe:Type,value:Type,
+    after:fn(scale,scale)->Type,both:fn(scale,scale)->scale,
+    left:fn<a:meta scale,b:meta scale,n:meta scale>(after(n,both(a,b)))->after(n,a),
+    right:fn<a:meta scale,b:meta scale,n:meta scale>(after(n,both(a,b)))->after(n,b),
+    half:fn(precision)->precision,close:fn(precision,value,value)->Type,
+    twice:fn<e:meta precision,a:meta value,b:meta value,c:meta value>(
+      close(half(e),a,b),close(half(e),b,c))->close(e,a,c),
+    sample:fn(probe,scale,port,port)->value,reference:fn(scale,port,port)->value,
+    target:fn(port,port)->value,
+    ready_probes:fn(precision)->scale,ready_ref:fn(precision)->scale,
+    agree:fn<e:meta precision,n:meta scale,p:meta probe,x:meta port,y:meta port>(
+      after(n,ready_probes(e)))->close(e,sample(p,n,x,y),reference(n,x,y)),
+    converge:fn<e:meta precision,n:meta scale,x:meta port,y:meta port>(
+      after(n,ready_ref(e)))->close(e,reference(n,x,y),target(x,y)),
+    e:precision,n:scale,p:probe,x:port,y:port,
+    late:after(n,both(ready_probes(half(e)),ready_ref(half(e))))):
+    close(e,sample(p,n,x,y),target(x,y))
+proof = twice(e,sample(p,n,x,y),reference(n,x,y),target(x,y),
+    agree(half(e),n,p,x,y,left(ready_probes(half(e)),ready_ref(half(e)),n,late)),
+    converge(half(e),n,x,y,right(ready_probes(half(e)),ready_ref(half(e)),n,late)));
+
+// For a separated pair, let guard mean that the normalized arrival cost
+// exceeds a fixed positive margin. Fitting a zero limit would require an
+// eventual reading in a disjoint neighbourhood of zero. A common later
+// scale observes the conflict. The guard applies uniformly on its entire tail.
+public theorem exclude_zero_tail(
+    scale:Type,value:Type,refute:Type,after:fn(scale,scale)->Type,
+    read:fn(scale)->value,guard:fn(value)->Type,small:fn(value)->Type,
+    gap_start:scale,zero_start:scale,common:scale,
+    later_left:after(common,gap_start),later_right:after(common,zero_start),
+    gap:fn<n:meta scale>(after(n,gap_start))->guard(read(n)),
+    zero_tail:fn<n:meta scale>(after(n,zero_start))->small(read(n)),
+    disjoint:fn<v:meta value>(guard(v),small(v))->refute):refute
+proof = disjoint(read(common),
+    gap(common,later_left),
+    zero_tail(common,later_right));
+
+// Follow arbitrary certified refinements, multiplying the initial surplus
+// by two at each step. Raw error E_i is paid only once per full transfer.
+// The reserve available at i pays E_i + R_next; no summability hypothesis
+// is needed for this finite-horizon bound. Setting both to K recovers the
+// constant reserve result. To obtain convergence additionally require
+// vanishing normalized reserves; that asymptotic step is checked in Lean.
+public theorem dyadic_surplus(
+    level:Type,time:Type,next:fn(level)->level,twice:fn(time)->time,
+    plus:fn(time,time)->time,le:fn(time,time)->Type,
+    cost:fn(level)->time,refines:fn(level)->Type,reserve:fn(level)->time,error:fn(level)->time,
+    start:level,stop:level,seed:time,amplified:time,
+    iterate:fn<M:meta fn(level,time)->Type>(
+      fn<i:meta level,a:meta time>(refines(i),M(i,a))->M(next(i),twice(a)),
+      M(start,seed))->M(stop,amplified),
+    initial:le(plus(seed,reserve(start)),cost(start)),
+    extend:fn<i:meta level>(refines(i))->le(twice(cost(i)),plus(cost(next(i)),error(i))),
+    pay:fn<i:meta level>(refines(i))->le(plus(error(i),reserve(next(i))),twice(reserve(i))),
+    doubled:fn<a:meta time,r:meta time,t:meta time>(le(plus(a,r),t))->le(plus(twice(a),twice(r)),twice(t)),
+    translate:fn<a:meta time,e:meta time,r:meta time,z:meta time>(
+        le(plus(e,r),z))->le(plus(plus(a,r),e),plus(a,z)),
+    trans:fn<a:meta time,b:meta time,c:meta time>(le(a,b),le(b,c))->le(a,c),
+    cancel:fn<a:meta time,b:meta time,e:meta time>(le(plus(a,e),plus(b,e)))->le(a,b)):
+    le(plus(amplified,reserve(stop)),cost(stop))
+proof = iterate(|i:level| |a:time| le(plus(a,reserve(i)),cost(i)),
+    |i:level| |a:time| |cert:refines(i)| |prev:le(plus(a,reserve(i)),cost(i))|
+    cancel(plus(twice(a),reserve(next(i))),cost(next(i)),error(i),
+      trans(plus(plus(twice(a),reserve(next(i))),error(i)),twice(cost(i)),plus(cost(next(i)),error(i)),
+        trans(plus(plus(twice(a),reserve(next(i))),error(i)),plus(twice(a),twice(reserve(i))),twice(cost(i)),
+          translate(twice(a),error(i),reserve(next(i)),twice(reserve(i)),pay(i,cert)),
+          doubled(a,reserve(i),cost(i),prev)),extend(i,cert))),
+    initial);
+
+// For limiting travel times, reversing a transmission may approach the same
+// value even when raw clocks disagree. Closed-trip agreement then fixes the
+// doubled one-way time and injectivity of doubling separates the readings.
+public theorem reciprocal_round_trip(
+    value:Type,plus:fn(value,value)->value,
+    half_cancel:fn<a:meta value,b:meta value>(Path<value>(plus(a,a),plus(b,b)))->Path<value>(a,b),
+    p:value,q:value,back_p:value,symmetric_p:Path<value>(p,back_p),
+    back_q:value,symmetric_q:Path<value>(q,back_q),
+    circuit:Path<value>(plus(p,back_p),plus(q,back_q))):p == q
+proof by induction symmetric_q; induction symmetric_p; exact(half_cancel(p,q,circuit));

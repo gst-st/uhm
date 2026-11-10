@@ -167,6 +167,124 @@ def expected_lift():
     return telescope(world+endpoints+[('walk',walk),('initial',fine('s','s','zero','x','x')),
                      ('supply',supply),('join',join),('finish',finish)],'answer')
 
+def expected_ruler():
+    cmp = lambda x, y: app('le', x, y)
+    loc = lambda x: app('ruler', x)
+    add = lambda x, y: app('plus', x, y)
+    world = walk_world() + [('le', arrow('time', arrow('time', UNIVERSE))),
+                            ('ruler', arrow('b', 'time')), ('s','b'), ('z','b'),
+                            ('zero','time'), ('total','time')]
+    walk = quantify(priced_walk_types(), app('M','z','total'))
+    edge_bound = quantify([('i','b'), ('j','b'), ('d','time')],
+                          arrow(app('edge','i','j','d'), cmp(loc('j'), add(loc('i'),'d'))))
+    chain = quantify([(name,'time') for name in ['a','b0','c','d','t']],
+                     arrow(cmp('a',add('b0','d')), arrow(cmp('b0',add('c','t')),
+                           cmp('a',add('c',add('t','d'))))))
+    return telescope(world + [('walk',walk), ('base',cmp(loc('s'),add(loc('s'),'zero'))),
+                              ('link_bound',edge_bound), ('chain',chain)],
+                     cmp(loc('z'),add(loc('s'),'total')))
+
+
+def expected_limit():
+    def function(domains, codomain):
+        for domain in reversed(domains):
+            codomain = arrow(domain,codomain)
+        return codomain
+    after = lambda n, t: app('after',n,t)
+    common = lambda x, y: app('both',x,y)
+    near = lambda e, a, b: app('close',e,a,b)
+    finer = lambda e: app('half',e)
+    sample = app('sample','p','n','x','y')
+    ref = app('reference','n','x','y')
+    target = app('target','x','y')
+    stage_vars = [('a','scale'),('b','scale'),('n','scale')]
+    left_right = [quantify(stage_vars, arrow(after('n',common('a','b')), after('n',side)))
+                  for side in ('a','b')]
+    types = [(name,UNIVERSE) for name in ('scale','precision','port','probe','value')]
+    common_experiment = [('e','precision'),('n','scale'),('x','port'),('y','port')]
+    with_probe = common_experiment[:2] + [('p','probe')] + common_experiment[2:]
+    agree = quantify(with_probe, arrow(after('n',app('ready_probes','e')), near('e',sample,ref)))
+    converge = quantify(common_experiment,
+                        arrow(after('n',app('ready_ref','e')), near('e',ref,target)))
+    twice = quantify([('e','precision'),('a','value'),('b','value'),('c','value')],
+                     arrow(near(finer('e'),'a','b'),
+                     arrow(near(finer('e'),'b','c'),near('e','a','c'))))
+    binders = types + [('after',function(['scale','scale'],UNIVERSE)),
+                       ('both',function(['scale','scale'],'scale')),
+                       ('left',left_right[0]),('right',left_right[1]),
+                       ('half',arrow('precision','precision')),
+                       ('close',function(['precision','value','value'],UNIVERSE)),('twice',twice),
+                       ('sample',function(['probe','scale','port','port'],'value')),
+                       ('reference',function(['scale','port','port'],'value')),
+                       ('target',function(['port','port'],'value')),
+                       ('ready_probes',arrow('precision','scale')),
+                       ('ready_ref',arrow('precision','scale')), ('agree',agree),('converge',converge)]
+    late = after('n',common(app('ready_probes',finer('e')),app('ready_ref',finer('e'))))
+    return telescope(binders + with_probe + [('late',late)], near('e',sample,target))
+
+
+def expected_gap():
+    pred = arrow('value', UNIVERSE)
+    after = lambda n, start: app('after', n, start)
+    def tail(start, test):
+        return pi('n', 'scale', arrow(after('n',start), app(test,app('read','n'))))
+    disjoint = pi('v','value',arrow(app('guard','v'),arrow(app('small','v'),'refute')))
+    return telescope([('scale',UNIVERSE),('value',UNIVERSE),('refute',UNIVERSE),
+                      ('after',arrow('scale',arrow('scale',UNIVERSE))),('read',arrow('scale','value')),
+                      ('guard',pred),('small',pred),('gap_start','scale'),('zero_start','scale'),
+                      ('common','scale'),('later_left',after('common','gap_start')),
+                      ('later_right',after('common','zero_start')),('gap',tail('gap_start','guard')),
+                      ('zero_tail',tail('zero_start','small')),('disjoint',disjoint)],'refute')
+
+
+def expected_surplus():
+    cp = lambda a,b: app('le',a,b)
+    plus = lambda a,b: app('plus',a,b)
+    double = lambda value: app('twice',value)
+    cost = lambda i: app('cost',i)
+    reserve = lambda i: app('reserve',i)
+    error = lambda i: app('error',i)
+    nxt = lambda i: app('next',i)
+    proof_family = arrow('level',arrow('time',UNIVERSE))
+    step = quantify([('i','level'),('a','time')],arrow(app('refines','i'),
+                    arrow(app('M','i','a'),app('M',nxt('i'),double('a')))))
+    iterator = pi('M',proof_family,arrow(step,arrow(app('M','start','seed'),
+                                                   app('M','stop','amplified'))))
+    extend = pi('i','level',arrow(app('refines','i'),
+                cp(double(cost('i')),plus(cost(nxt('i')),error('i')))))
+    pay = pi('i','level',arrow(app('refines','i'),
+                cp(plus(error('i'),reserve(nxt('i'))),double(reserve('i')))))
+    doubled = quantify([(i,'time') for i in ('a','r','t')],arrow(cp(plus('a','r'),'t'),
+                       cp(plus(double('a'),double('r')),double('t'))))
+    translate = quantify([(i,'time') for i in ('a','e','r','z')],arrow(cp(plus('e','r'),'z'),
+                         cp(plus(plus('a','r'),'e'),plus('a','z'))))
+    trans = quantify([(i,'time') for i in ('a','b','c')],arrow(cp('a','b'),
+                     arrow(cp('b','c'),cp('a','c'))))
+    cancel = quantify([(i,'time') for i in ('a','b','e')],arrow(cp(plus('a','e'),plus('b','e')),
+                      cp('a','b')))
+    return telescope([('level',UNIVERSE),('time',UNIVERSE),('next',arrow('level','level')),
+                      ('twice',arrow('time','time')),('plus',arrow('time',arrow('time','time'))),
+                      ('le',arrow('time',arrow('time',UNIVERSE))),('cost',arrow('level','time')),
+                      ('refines',arrow('level',UNIVERSE)),('reserve',arrow('level','time')),
+                      ('error',arrow('level','time')),('start','level'),('stop','level'),
+                      ('seed','time'),('amplified','time'),('iterate',iterator),
+                      ('initial',cp(plus('seed',reserve('start')),cost('start'))),
+                      ('extend',extend),('pay',pay),('doubled',doubled),('translate',translate),
+                      ('trans',trans),('cancel',cancel)],cp(plus('amplified',reserve('stop')),cost('stop')))
+
+
+def expected_round_trip():
+    add = lambda x,y: app('plus',x,y)
+    eq = lambda x,y: ('id','value',x,y)
+    half_cancel = quantify([('a','value'),('b','value')],arrow(eq(add('a','a'),add('b','b')),
+                          eq('a','b')))
+    return telescope([('value',UNIVERSE),('plus',arrow('value',arrow('value','value'))),
+                      ('half_cancel',half_cancel),('p','value'),('q','value'),('back_p','value'),
+                      ('symmetric_p',eq('p','back_p')),('back_q','value'),
+                      ('symmetric_q',eq('q','back_q')),('circuit',eq(add('p','back_p'),add('q','back_q')))],
+                     eq('p','q'))
+
+
 LOGICAL_TYPES = {
     'middle_frame_cancels': expected_corner,
     'relay_triangle': expected_relay,
@@ -175,6 +293,11 @@ LOGICAL_TYPES = {
     'walk_append': expected_append,
     'lift_priced_walk': expected_lift,
     'based_loop_composition': expected_loop,
+    'ruler_on_walk': expected_ruler,
+    'shared_limit_modulus': expected_limit,
+    'exclude_zero_tail': expected_gap,
+    'dyadic_surplus': expected_surplus,
+    'reciprocal_round_trip': expected_round_trip,
 }
 
 SPECS = [
@@ -197,6 +320,15 @@ SPECS = [
     ('PortFold.vr','pi-id','lift_priced_walk',None,'supply(i,j,d,y,answer,link','supply(i,j,d,x,answer,link'),
     ('CycleControls.vr','finite','boundary_needs_history',2,'let f2 = next_far(b1,n1,f1)','let f2 = f1'),
     ('CycleControls.vr','finite','refinement_read',48,'Port.B=>delay_a || delay_c','Port.B=>delay_a'),
+    ('Continuum.vr','pi-id','ruler_on_walk',None,'link_bound(i,j,d,link),prefix','prefix,link_bound(i,j,d,link)'),
+    ('Continuum.vr','pi-id','shared_limit_modulus',None,'y,right(ready_probes','y,left(ready_probes'),
+    ('Continuum.vr','pi-id','exclude_zero_tail',None,'zero_tail(common,later_right)','zero_tail(common,later_left)'),
+    ('Continuum.vr','pi-id','dyadic_surplus',None,'twice(reserve(i)),pay(i,cert)','twice(reserve(i)),extend(i,cert)'),
+    ('PeriodicControls.vr','finite','periodic_arrival',16,'let d1 = c0 || e0 || (bypass && a0)','let d1 = c0 || e0'),
+    ('PeriodicControls.vr','finite','dyadic_threshold',32,'let d3 = c2 != (!a2 && !b2)','let d3 = !c2'),
+    ('Continuum.vr','pi-id','reciprocal_round_trip',None,'induction symmetric_p; exact(half_cancel','exact(half_cancel'),
+    ('PeriodicControls.vr','finite','reserve_arithmetic',64,'let paid = r || (!r_next && !e)','let paid = r || !e'),
+    ('PeriodicControls.vr','finite','square_read',8,'let d1 = b0 || c0 || (diagonal && a0)','let d1 = b0 || c0'),
 ]
 
 def replay(checker, profile, source, theorem):

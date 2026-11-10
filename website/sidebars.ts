@@ -7,6 +7,7 @@ const sidebars: SidebarsConfig = {
     'networks/cycle-observations',
     'geometry/response-metric',
     'geometry/network-scales',
+    'geometry/common-limit',
     {
       type: 'category',
       label: 'Foundations',

@@ -1,0 +1,139 @@
+// Boundary source A at site 0 of a six-stage reversible ring. Probe P's
+// occupied ports are (0,1,3,4); Q's are (0,2,3,5). The interior port
+// splits a cell into two passages of 1+2 or 2+1 ticks. Both probes take
+// three ticks across the cell in the absence of the optional chord 0--3.
+type Label is A | B | C | D;
+type Tick is Now | One | Two | Three | Unseen;
+fn readout(p:Label,swap:Bool,a:Bool,b:Bool,c:Bool,d:Bool,e:Bool,f:Bool)->Bool {
+    match p { Label.A=>a, Label.B=>if swap { c } else { b },
+              Label.C=>d, Label.D=>if swap { f } else { e } }
+}
+fn same_tick(a:Tick,b:Tick)->Bool {
+    match a { Tick.Now=>match b {Tick.Now=>true,_=>false},
+              Tick.One=>match b {Tick.One=>true,_=>false},
+              Tick.Two=>match b {Tick.Two=>true,_=>false},
+              Tick.Three=>match b {Tick.Three=>true,_=>false},
+              Tick.Unseen=>match b {Tick.Unseen=>true,_=>false} }
+}
+fn periodic_arrival(at_port:Label,swap:Bool,bypass:Bool)->Tick
+    ensures same_tick(result,match at_port {
+        Label.A=>Tick.Now, Label.B=>if swap {Tick.Two} else {Tick.One},
+        Label.C=>if bypass {Tick.One} else {Tick.Three},
+        Label.D=>if swap {Tick.One} else {Tick.Two} })
+{
+    let a0 = true;
+    let b0 = false;
+    let c0 = false;
+    let d0 = false;
+    let e0 = false;
+    let f0 = false;
+    let a1 = b0 || f0 || (bypass && d0);
+    let b1 = a0 || c0;
+    let c1 = b0 || d0;
+    let d1 = c0 || e0 || (bypass && a0);
+    let e1 = d0 || f0;
+    let f1 = e0 || a0;
+    let a2 = b1 || f1 || (bypass && d1);
+    let b2 = a1 || c1;
+    let c2 = b1 || d1;
+    let d2 = c1 || e1 || (bypass && a1);
+    let e2 = d1 || f1;
+    let f2 = e1 || a1;
+    let a3 = b2 || f2 || (bypass && d2);
+    let b3 = a2 || c2;
+    let c3 = b2 || d2;
+    let d3 = c2 || e2 || (bypass && a2);
+    let e3 = d2 || f2;
+    let f3 = e2 || a2;
+    if readout(at_port,swap,a0,b0,c0,d0,e0,f0) { Tick.Now } else {
+      if readout(at_port,swap,a1,b1,c1,d1,e1,f1) { Tick.One } else {
+        if readout(at_port,swap,a2,b2,c2,d2,e2,f2) { Tick.Two } else {
+          if readout(at_port,swap,a3,b3,c3,d3,e3,f3) { Tick.Three } else { Tick.Unseen }
+        }
+      }
+    }
+}
+
+// Sharp K=1 recurrence at three consecutive refinements. The four bits of
+// 2*x-1 have low bit 1 and high bits x-1. Unroll actual binary borrows,
+// then compare to the independently specified bits of 1 + 2^n * surplus.
+// The two preparations have x0=1 and x0=2; no update overflows four bits.
+type Depth is Z | I | II | III;
+type Digit is Low | Next | Third | High;
+fn digit_at(bit:Digit,a:Bool,b:Bool,c:Bool,d:Bool)->Bool {
+    match bit {Digit.Low=>a,Digit.Next=>b,Digit.Third=>c,Digit.High=>d}
+}
+fn surplus_bit(n:Depth,bit:Digit,positive:Bool)->Bool {
+    match n {
+        Depth.Z=>digit_at(bit,!positive,positive,false,false),
+        Depth.I=>digit_at(bit,true,positive,false,false),
+        Depth.II=>digit_at(bit,true,false,positive,false),
+        Depth.III=>digit_at(bit,true,false,false,positive)
+    }
+}
+fn dyadic_threshold(n:Depth,bit:Digit,positive:Bool)->Bool
+    ensures result == surplus_bit(n,bit,positive)
+{
+    let a0 = !positive;
+    let b0 = positive;
+    let c0 = false;
+    let d0 = false;
+    let a1 = true;
+    let b1 = !a0;
+    let c1 = b0 != !a0;
+    let d1 = c0 != (!a0 && !b0);
+    let a2 = true;
+    let b2 = !a1;
+    let c2 = b1 != !a1;
+    let d2 = c1 != (!a1 && !b1);
+    let a3 = true;
+    let b3 = !a2;
+    let c3 = b2 != !a2;
+    let d3 = c2 != (!a2 && !b2);
+    match n {
+        Depth.Z=>digit_at(bit,a0,b0,c0,d0), Depth.I=>digit_at(bit,a1,b1,c1,d1),
+        Depth.II=>digit_at(bit,a2,b2,c2,d2), Depth.III=>digit_at(bit,a3,b3,c3,d3)
+    }
+}
+
+// Check the one-step reserve inequality independently in exact binary gates.
+// a,R,R',E each range over 0,1. The old time is its tight lower bound a+R;
+// the new time U ranges over 0..3. All sums fit in three bits. The result
+// is the implication (R'+E<=2R and 2*(a+R)<=U+E) => 2*a+R'<=U.
+fn at_most_bits(ah:Bool,am:Bool,al:Bool,bh:Bool,bm:Bool,bl:Bool)->Bool {
+    if ah!=bh { !ah } else { if am!=bm { !am } else { !al || bl } }
+}
+fn reserve_arithmetic(a:Bool,r:Bool,r_next:Bool,e:Bool,u1:Bool,u0:Bool)->Bool
+    ensures result
+{
+    let paid = r || (!r_next && !e);
+    let carry = u0 && e;
+    let physical = at_most_bits(a&&r,a!=r,false,u1&&carry,u1!=carry,u0!=e);
+    let margin = at_most_bits(false,a,r_next,false,u1,u0);
+    !paid || !physical || margin
+}
+
+// Two reversible two-state factors with unit axial moves. One extra
+// simultaneous two-axis move joins opposite corners. Axial calibrations
+// survive even though the joint first arrival changes.
+fn square_read(x:Bool,y:Bool,diagonal:Bool)->Tick
+    ensures same_tick(result,if x && y {
+        if diagonal { Tick.One } else { Tick.Two }
+    } else { if x || y { Tick.One } else { Tick.Now } })
+{
+    let a0 = true;
+    let b0 = false;
+    let c0 = false;
+    let d0 = false;
+    let a1 = b0 || c0 || (diagonal && d0);
+    let b1 = a0 || d0;
+    let c1 = a0 || d0;
+    let d1 = b0 || c0 || (diagonal && a0);
+    let d2 = b1 || c1 || (diagonal && a1);
+    let axial = if x { b1 } else { c1 };
+    if x && y {
+        if d1 { Tick.One } else { if d2 { Tick.Two } else { Tick.Unseen } }
+    } else {
+        if !x && !y { Tick.Now } else { if axial { Tick.One } else { Tick.Unseen } }
+    }
+}
