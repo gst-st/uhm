@@ -27,4 +27,4 @@ The geometric cosmological constant has units of inverse length squared. A vacuu
 
 See [cosmology](/docs/physics/gravity/cosmological-constant) and [physical correspondence](/docs/proofs/physics/physics-correspondence).
 
-[Exact proof in calibrated integer units](https://github.com/uhm-theory/holon/blob/main/website/research/operational-reconstruction/network/VolumeReadout.lean).
+[Exact proof in calibrated integer units](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/network/VolumeReadout.lean).

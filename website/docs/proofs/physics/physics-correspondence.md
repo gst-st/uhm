@@ -43,7 +43,7 @@ For an ensemble with probabilities $p_k$ and states $\rho_k$, evolving the selec
 
 ## Amplification, time and precision {#86-вычислительное-ограничение}
 
-For the ideal self-registering feedback model on the diagonal line $p=(1/2+x,1/2-x,0,\ldots)$ with constant positive rate, diagonal Hamiltonian and the specified dephasing, $\dot x=(2\kappa/7)x(1-4x^2)/(1+4x^2)^2$. The derivative at zero is $2\kappa/7$. Integrating to a fixed threshold strictly below $1/2$ takes time logarithmic in the inverse initial positive bias. This says nothing about the cost of preparing that bias, keeping the saddle fixed to that accuracy, bounded measurement error or implementing the nonlinear feedback on an unknown preparation. [Feedback resource bound](https://github.com/uhm-theory/holon/blob/main/website/research/operational-reconstruction/feedback.md)
+For the ideal self-registering feedback model on the diagonal line $p=(1/2+x,1/2-x,0,\ldots)$ with constant positive rate, diagonal Hamiltonian and the specified dephasing, $\dot x=(2\kappa/7)x(1-4x^2)/(1+4x^2)^2$. The derivative at zero is $2\kappa/7$. Integrating to a fixed threshold strictly below $1/2$ takes time logarithmic in the inverse initial positive bias. This says nothing about the cost of preparing that bias, keeping the saddle fixed to that accuracy, bounded measurement error or implementing the nonlinear feedback on an unknown preparation. [Feedback resource bound](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/feedback.md)
 
 ## What must be measured {#87-прочтение-измерения}
 

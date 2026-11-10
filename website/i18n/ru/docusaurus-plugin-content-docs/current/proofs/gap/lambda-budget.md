@@ -27,4 +27,4 @@ description: "Аддитивная неоднозначность, измере�
 
 См. [космологию](/docs/physics/gravity/cosmological-constant) и [условия физического соответствия](/docs/proofs/physics/physics-correspondence).
 
-[Точное доказательство для целых калиброванных единиц](https://github.com/uhm-theory/holon/blob/main/website/research/operational-reconstruction/network/VolumeReadout.lean).
+[Точное доказательство для целых калиброванных единиц](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/network/VolumeReadout.lean).

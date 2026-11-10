@@ -12,7 +12,7 @@ $$
 S(\rho)+D(\rho\Vert\Gamma)=-\mathrm{Tr}(\rho\log\Gamma).
 $$
 
-The right side is linear in the output. Diagonalizing $\Gamma$ shows that its minimum is $-\log\lambda_{\max}(\Gamma)$. Equality holds precisely when the output is supported on the maximal eigenspace. The bound is attainable over all CPTP maps: discard the input and prepare any state on that space. This optimization cannot single out a feedback channel; even fixing the output for one input generally leaves its action on others undetermined. To select a channel one needs a task with independently specified observations, allowed resources and a rule for scoring different channels. [Resource cost of feedback](https://github.com/uhm-theory/holon/blob/main/website/research/operational-reconstruction/feedback.md)
+The right side is linear in the output. Diagonalizing $\Gamma$ shows that its minimum is $-\log\lambda_{\max}(\Gamma)$. Equality holds precisely when the output is supported on the maximal eigenspace. The bound is attainable over all CPTP maps: discard the input and prepare any state on that space. This optimization cannot single out a feedback channel; even fixing the output for one input generally leaves its action on others undetermined. To select a channel one needs a task with independently specified observations, allowed resources and a rule for scoring different channels. [Resource cost of feedback](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/feedback.md)
 
 ## Two different optimization problems {#4-классический-предел-вывод-fep}
 

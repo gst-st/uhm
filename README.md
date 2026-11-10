@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/uhm-theory/holon/actions/workflows/deploy.yml"><img src="https://github.com/uhm-theory/holon/actions/workflows/deploy.yml/badge.svg" alt="Deploy"></a>
+  <a href="https://github.com/gst-st/uhm/actions/workflows/deploy.yml"><img src="https://github.com/gst-st/uhm/actions/workflows/deploy.yml/badge.svg" alt="Deploy"></a>
   <a href="https://holon.sh"><img src="https://img.shields.io/badge/website-holon.sh-blue" alt="Website"></a>
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey" alt="License"></a>
 </p>
