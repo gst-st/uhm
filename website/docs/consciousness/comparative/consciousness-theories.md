@@ -353,7 +353,7 @@ Choosing $k=1-R$ **[D]** supplies a gain schedule, not a derivation of sensory r
 | No dynamics | Lindblad + ℛ — complete evolution [T] |
 | No self-reference | $\varphi$-operator, R-measure, SAD tower |
 
-**Connection:** Quantum Cognition is the **closest** formalism to CC in mainstream cognitive science. CC can be viewed as a **foundation** for QC: it fixes $N = 7$, derives dynamics and consciousness thresholds, providing concrete predictions instead of an arbitrary model.
+**Predictive scope.** The parameter $N = 7$ fixes the state dimension in the formal model. A numerical prediction about a person additionally needs a preparation, retention interval and response rule that realize the register and an account of the information accessible at readout. For example, a complete single seven-dimensional register read by a common normalized measurement limits discrimination of eight equiprobable messages to $7/8$. Whether a practitioner’s memory meets those conditions remains an experimental hypothesis. [Comparison with an ordinary memory model](../empirical/practice-models#capacity)
 
 ## 9. Adversarial Collaboration IIT vs GWT (2023–2025) {#adversarial-collaboration}
 
@@ -710,9 +710,9 @@ Uses Hilbert spaces for cognitive modelling without claims about quantum process
 |--------|-------------------|-----|
 | State space | $\mathcal{H}$ of arbitrary dimension | $\mathbb{C}^7$ (fixed by Fano, $G_2$) |
 | Decisions | Projective measurements | Dec-functor ($\sigma$-optimisation) |
-| Cognitive "errors" | Explained through non-commutativity | Follow from Gap phases |
+| Cognitive "errors" | Explained through non-commutativity | Proposed link to Gap phases [H]; a report instrument must be specified |
 
-UHM fixes $\dim = 7$, which quantum cognition leaves arbitrary.
+UHM fixes $\dim = 7$, which quantum cognition leaves arbitrary. The behavioural implications depend on which register retains information until the answer and on how the question reads it. [Two prospective tests](../empirical/practice-models)
 
 ## Attention Schema Theory (Graziano) {#ast}
 

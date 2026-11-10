@@ -1,0 +1,51 @@
+// An equiprobable word is determined by its first, second and third bits.
+// These slots are the ENTIRE accessible record in the seven-slot example.
+type Slot is A | B | C | D | E | F | G;
+fn pack7(x:Bool,y:Bool,z:Bool)->Slot {
+    if x {
+        if y { Slot.G } else { if z { Slot.F } else { Slot.E } }
+    } else {
+        if y { if z { Slot.D } else { Slot.C } }
+        else { if z { Slot.B } else { Slot.A } }
+    }
+}
+fn high7(s:Slot)->Bool { match s { Slot.E=>true,Slot.F=>true,Slot.G=>true,_=>false } }
+fn middle7(s:Slot)->Bool { match s { Slot.C=>true,Slot.D=>true,Slot.G=>true,_=>false } }
+fn low7(s:Slot)->Bool { match s { Slot.B=>true,Slot.D=>true,Slot.F=>true,_=>false } }
+fn seven_slot_triplet(x:Bool,y:Bool,z:Bool)->Bool
+    ensures result == !(x && y && z)
+{
+    let s = pack7(x,y,z);
+    x==high7(s) && y==middle7(s) && z==low7(s)
+}
+
+// A larger ordinary register contains three separately accessible cells.
+// Store the invertible difference code (x, x XOR y, y XOR z) and invert
+// it in the common decoder. This has eight classical states.
+fn three_bit_triplet(x:Bool,y:Bool,z:Bool)->Bool
+    ensures result
+{
+    let first_cell = x;
+    let second_cell = x!=y;
+    let third_cell = y!=z;
+    let first_read = first_cell;
+    let second_read = first_read!=second_cell;
+    let third_read = second_read!=third_cell;
+    x==first_read && y==second_read && z==third_read
+}
+
+// Pointwise inputs are three correctness indicators calculated from ONE
+// stored response word. Number correct <= 2 + indicator(all correct).
+// Taking a common expectation gives P(all)>=p1+p2+p3-2 without independence.
+type Tally is Nil | One | Two | Three;
+fn tally_bit(t:Tally,b:Bool)->Tally {
+    if b { match t { Tally.Nil=>Tally.One,Tally.One=>Tally.Two,_=>Tally.Three } }
+    else { t }
+}
+fn three_correct_bound(a:Bool,b:Bool,c:Bool)->Bool
+    ensures result
+{
+    let count = tally_bit(tally_bit(tally_bit(Tally.Nil,a),b),c);
+    let joint = a && b && c;
+    match count { Tally.Three => joint, _=>true }
+}

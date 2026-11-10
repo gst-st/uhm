@@ -1,0 +1,142 @@
+// Four equally weighted classical preparations (preexisting bit, mark).
+// A probe emits the mark and sets the memory if the mark is positive.
+// Reading the bit after the probe can change even if its output is never
+// used for selecting trials; no coherent amplitude appears in this machine.
+type Slice is All | MarkZero | MarkOne;
+type Tally is Nil | One | Two | Three | Four;
+fn inc(n:Tally)->Tally {
+    match n { Tally.Nil=>Tally.One, Tally.One=>Tally.Two,
+              Tally.Two=>Tally.Three, Tally.Three=>Tally.Four, Tally.Four=>Tally.Four }
+}
+fn include_hit(selected:Slice,memory:Bool,mark:Bool,ask:Bool)->Bool {
+    let selected_atom = match selected { Slice.All=>true, Slice.MarkZero=>!mark, Slice.MarkOne=>mark };
+    let after = if ask && mark { true } else { memory };
+    selected_atom && after
+}
+fn tally_if(n:Tally,hit:Bool)->Tally { if hit { inc(n) } else { n } }
+fn tally_eq(x:Tally,y:Tally)->Bool {
+    match x {
+        Tally.Nil=>match y { Tally.Nil=>true, _=>false },
+        Tally.One=>match y { Tally.One=>true, _=>false },
+        Tally.Two=>match y { Tally.Two=>true, _=>false },
+        Tally.Three=>match y { Tally.Three=>true, _=>false },
+        Tally.Four=>match y { Tally.Four=>true, _=>false }
+    }
+}
+fn classically_masked(ask:Bool,selected:Slice)->Tally
+    ensures tally_eq(result,match selected {
+        Slice.All=>if ask { Tally.Three } else { Tally.Two },
+        Slice.MarkZero=>Tally.One, Slice.MarkOne=>if ask { Tally.Two } else { Tally.One } })
+{
+    let a = tally_if(Tally.Nil,include_hit(selected,false,false,ask));
+    let b = tally_if(a,include_hit(selected,false,true,ask));
+    let c = tally_if(b,include_hit(selected,true,false,ask));
+    tally_if(c,include_hit(selected,true,true,ask))
+}
+
+// A shared ten-ticket random source realizes exact tenths.
+type Ticket is T0 | T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 | T9;
+fn first(u:Ticket)->Bool { match u { Ticket.T0=>true,_=>false } }
+fn last(u:Ticket)->Bool { match u { Ticket.T9=>true,_=>false } }
+type Axis is A | B | C;
+fn same_axis(a:Axis,b:Axis)->Bool {
+    match a { Axis.A=>match b {Axis.A=>true,_=>false},
+              Axis.B=>match b {Axis.B=>true,_=>false},
+              Axis.C=>match b {Axis.C=>true,_=>false} }
+}
+// Store the last question and its observed sign. This is three possible
+// preparations after positive answers and six states when both signs recur.
+// The returned answer becomes the sign of the next stored state.
+fn register_answer(from:Axis,sign:Bool,to:Axis,u:Ticket)->Bool {
+    let stays = match from {
+        Axis.A=>match to {Axis.A=>true, Axis.B=>!last(u), Axis.C=>first(u)},
+        Axis.B=>match to {Axis.B=>true, _=>!last(u)},
+        Axis.C=>match to {Axis.A=>first(u), Axis.B=>!last(u), Axis.C=>true}
+    };
+    if stays { sign } else { !sign }
+}
+fn through_b(from:Axis,to:Axis)->Bool {
+    match from { Axis.B=>true, _=>match to {Axis.B=>true,_=>false} }
+}
+// Every individual ticket is checked. The sets have respectively 10, 9 and
+// 1 tickets for repeat, adjacent match and direct A/C match in either order.
+fn context_register(from:Axis,sign:Bool,to:Axis,u:Ticket)->Bool
+    ensures result
+{
+    let next = register_answer(from,sign,to,u);
+    // An immediate repeat is also required to return this new sign.
+    let repeat = register_answer(to,next,to,u);
+    let expected = if same_axis(from,to) { true } else { if through_b(from,to) { !last(u) } else { first(u) } };
+    ((next == sign) == expected) && (repeat == next)
+}
+
+// Direct equal-turn overlap has amplitude 2s-1 e.g. 8 tenths for s=9/10.
+// Each independent ticket passes when it belongs to BOTH a lower s-interval
+// and its upper reflection; that intersection has exactly 2s-1 mass.
+// Two passes realize its square. For the serial symmetric Markov comparator,
+// two independent transitions yield a match iff both flip or neither flips.
+type Calibration is Eight | Nine | Ten;
+fn reverse(u:Ticket)->Ticket {
+    match u {Ticket.T0=>Ticket.T9,Ticket.T1=>Ticket.T8,Ticket.T2=>Ticket.T7,Ticket.T3=>Ticket.T6,
+             Ticket.T4=>Ticket.T5,Ticket.T5=>Ticket.T4,Ticket.T6=>Ticket.T3,Ticket.T7=>Ticket.T2,
+             Ticket.T8=>Ticket.T1,Ticket.T9=>Ticket.T0}
+}
+fn high(s:Calibration,u:Ticket)->Bool {
+    match s { Calibration.Ten=>true, Calibration.Nine=>!last(u),
+              Calibration.Eight=>match u {Ticket.T8=>false,Ticket.T9=>false,_=>true} }
+}
+fn expected_inner(s:Calibration,u:Ticket)->Bool {
+    match s {Calibration.Ten=>true,
+             Calibration.Nine=>match u {Ticket.T0=>false,Ticket.T9=>false,_=>true},
+             Calibration.Eight=>match u {Ticket.T0=>false,Ticket.T1=>false,
+                                          Ticket.T8=>false,Ticket.T9=>false,_=>true}}
+}
+fn flipped(s:Calibration,u:Ticket)->Bool {
+    match u {Ticket.T9=>match s {Calibration.Ten=>false,_=>true},
+             Ticket.T8=>match s {Calibration.Eight=>true,_=>false},
+             _=>false}
+}
+fn direct_turn(s:Calibration,u:Ticket,v:Ticket)->Bool
+    ensures result == (expected_inner(s,u) && expected_inner(s,v))
+{
+    high(s,u) && high(s,reverse(u)) && high(s,v) && high(s,reverse(v))
+}
+fn serial_turn(s:Calibration,u:Ticket,v:Ticket)->Bool
+    ensures result == (flipped(s,u)==flipped(s,v))
+{
+    let a = high(s,u);
+    let b = high(s,v);
+    (a && b) || (!a && !b)
+}
+
+// An ordinary six-state comparator that reproduces the rank-one restricted
+// battery at s=.9, including repeatability after a negative answer. At each
+// trial the stored state is just the last axis and sign. The two independent
+// noise bins are exact aggregations of T0 | T1..T8 | T9 with masses 1,8,1.
+// Persist the sign for all repeats, 9/10 of adjacent jumps, and 64/100 of
+// two-position jumps. The latter gate uses two ordinary random draws.
+// The reference contract computes the rank-one ENDPOINT weights in the same
+// bins; equality of path laws then follows from the checked prefix induction.
+type Noise is Left | Interior | Right;
+fn near_gate(sign:Bool,u:Noise)->Bool {
+    match u {Noise.Left=>sign,Noise.Interior=>sign,Noise.Right=>!sign}
+}
+fn far_gate(sign:Bool,u:Noise,v:Noise)->Bool {
+    match u {Noise.Interior=>match v {Noise.Interior=>sign,_=>!sign},_=>!sign}
+}
+fn overlap_pass(z:Noise)->Bool {
+    let lower_major = match z {Noise.Right=>false,_=>true};
+    let upper_major = match z {Noise.Left=>false,_=>true};
+    lower_major && upper_major
+}
+fn classical_projective_row(from:Axis,sign:Bool,to:Axis,u:Noise,v:Noise)->Bool
+    ensures (result == sign) == (if same_axis(from,to) { true }
+        else { if through_b(from,to) { match u {Noise.Right=>false,_=>true} }
+               else { overlap_pass(u) && overlap_pass(v) } })
+{
+    match from {
+        Axis.A=>match to {Axis.A=>sign,Axis.B=>near_gate(sign,u),Axis.C=>far_gate(sign,u,v)},
+        Axis.B=>match to {Axis.B=>sign,_=>near_gate(sign,u)},
+        Axis.C=>match to {Axis.C=>sign,Axis.B=>near_gate(sign,u),Axis.A=>far_gate(sign,u,v)}
+    }
+}

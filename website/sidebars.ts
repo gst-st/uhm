@@ -148,6 +148,7 @@ const sidebars: SidebarsConfig = {
         'consciousness/empirical/overview',
         'consciousness/empirical/practice-and-report',
         'consciousness/empirical/breath-observers',
+        'consciousness/empirical/practice-models',
         'consciousness/empirical/calibration',
         'consciousness/empirical/structure',
         'consciousness/empirical/engineering',

@@ -347,7 +347,110 @@ def expected_interaction():
     return telescope(binders, 'result_type')
 
 
+def expected_pooled_probe():
+    eq = lambda a, b: ('id','mass',a,b)
+    read = lambda a: app('read',a)
+    def both(a,b):
+        return app('add',read(a),read(b))
+    binders = [('population',UNIVERSE),('mass',UNIVERSE),
+               ('merge',arrow('population',arrow('population','population'))),
+               ('add',arrow('mass',arrow('mass','mass'))),('read',arrow('population','mass'))]
+    binders += [(x,'population') for x in ['a','b','after_a','after_b']]
+    binders += [('additive',eq(read(app('merge','a','b')),both('a','b'))),
+                ('conserve_a',eq(read('a'),read('after_a'))),
+                ('conserve_b',eq(read('b'),read('after_b')))]
+    return telescope(binders,eq(read(app('merge','a','b')),both('after_a','after_b')))
+
+
+def expected_prefix_weights():
+    higher = {"Universe":{"Concrete":1}}
+    family = arrow('history',arrow('weight',arrow('weight',higher)))
+    action = app('choose','h')
+    next_h = app('extend','h',action,'o')
+    first = app('mul','x',app('p','h',action,'o'))
+    second = app('mul','y',app('q','h',action,'o'))
+    step = quantify([('h','history'),('o','outcome'),('x','weight'),('y','weight')],
+                    arrow(app('M','h','x','y'),app('M',next_h,first,second)))
+    fold = pi('M',family,arrow(step,arrow(app('M','start','one','one'),app('M','stop','f','g'))))
+    local = quantify([('h','history'),('a','action'),('o','outcome'),('property',arrow('weight',UNIVERSE))],
+                     arrow(app('property',app('p','h','a','o')),app('property',app('q','h','a','o'))))
+    transition = lambda codomain: arrow('history',arrow('action',arrow('outcome',codomain)))
+    binders = [(x,UNIVERSE) for x in ('history','action','outcome','weight')]
+    binders += [('extend',transition('history')),('choose',arrow('history','action')),
+                ('p',transition('weight')),('q',transition('weight')),('mul',arrow('weight',arrow('weight','weight'))),
+                ('start','history'),('stop','history'),('one','weight'),('f','weight'),('g','weight'),
+                ('trace',fold),('same_row',local)]
+    return telescope(binders,('id','weight','f','g'))
+
+
+def expected_hit_bound():
+    family = arrow('weight',arrow('weight',arrow('weight',UNIVERSE)))
+    plus = lambda a,b: app('plus',a,b)
+    bound = lambda a,b,c: app('le',a,plus(b,c))
+    terms = [app(t,'i') for t in ['direct','probed','flagged']]
+    finish = app('M',*(plus(x,t) for x,t in zip(('x','y','z'),terms)))
+    step = quantify([('i','atom'),('x','weight'),('y','weight'),('z','weight')],
+                    arrow(app('present','i'),arrow(app('M','x','y','z'),finish)))
+    fold = pi('M',family,arrow(step,arrow(app('M','zero','zero','zero'),app('M','a','b','c'))))
+    local = pi('i','atom',arrow(app('present','i'),bound(*terms)))
+    combine = quantify([(n,'weight') for n in ('x','y','z','d','p','f')],
+                       arrow(bound('x','y','z'),arrow(bound('d','p','f'),
+                             bound(plus('x','d'),plus('y','p'),plus('z','f')))))
+    binders = [('atom',UNIVERSE),('weight',UNIVERSE),('plus',arrow('weight',arrow('weight','weight'))),
+               ('le',arrow('weight',arrow('weight',UNIVERSE)))]
+    binders += [(t,arrow('atom','weight')) for t in ('direct','probed','flagged')]
+    binders += [('present',arrow('atom',UNIVERSE))]+[(n,'weight') for n in ('zero','a','b','c')]
+    binders += [('fold',fold),('base',bound('zero','zero','zero')),('local',local),('combine',combine)]
+    return telescope(binders,bound('a','b','c'))
+
+
+def expected_overlap_budget():
+    add = lambda a,b: app('add',a,b)
+    le = lambda a,b: app('le',a,b)
+    square_le = lambda a,b: app('prob_le',app('square',a),app('square',b))
+    def law(names, predicate):
+        return quantify([(n,'magnitude') for n in names], predicate)
+    binders = [('magnitude',UNIVERSE),('probability',UNIVERSE),('add',arrow('magnitude',arrow('magnitude','magnitude'))),
+               ('square',arrow('magnitude','probability')),('le',arrow('magnitude',arrow('magnitude',UNIVERSE))),
+               ('prob_le',arrow('probability',arrow('probability',UNIVERSE)))]
+    binders += [(n,'magnitude') for n in ('floor','cap','parallel','remainder','overlap')]
+    binders += [('lower',le(add('floor','cap'),'parallel')),('cauchy_cap',le('remainder','cap')),
+                ('triangle',le('parallel',add('overlap','remainder'))),
+                ('trans',law('xyz',arrow(le('x','y'),arrow(le('y','z'),le('x','z'))))),
+                ('mono',law('xyz',arrow(le('y','z'),le(add('x','y'),add('x','z'))))),
+                ('cancel',law('xyz',arrow(le(add('x','z'),add('y','z')),le('x','y')))),
+                ('squaring',law('xy',arrow(le('x','y'),square_le('x','y'))))]
+    return telescope(binders,square_le('floor','overlap'))
+
+
+def expected_capacity():
+    le = lambda a,b: app('le', a,b)
+    add = lambda a,b: app('add', a,b)
+    family = arrow('mass',arrow('mass',UNIVERSE))
+    step = quantify([('i','message'),('x','mass'),('y','mass')],
+        arrow(app('included','i'),arrow(app('M','x','y'), app('M', add('x',app('hit','i')), add('y',app('trace','i'))))))
+    fold = pi('M',family,arrow(step,arrow(app('M','zero','zero'),app('M','success','spent'))))
+    add_le = quantify([(n,'mass') for n in ('x','y','a','b')],
+        arrow(le('x','y'),arrow(le('a','b'),le(add('x','a'),add('y','b')))))
+    trans = quantify([(n,'mass') for n in ('x','y','z')],
+        arrow(le('x','y'),arrow(le('y','z'),le('x','z'))))
+    binders = [('message',UNIVERSE),('mass',UNIVERSE),('add',arrow('mass',arrow('mass','mass'))),
+               ('le',arrow('mass',arrow('mass',UNIVERSE)))]
+    binders += [(n,arrow('message','mass')) for n in ('hit','trace')]
+    binders += [('included',arrow('message',UNIVERSE))]
+    binders += [(n,'mass') for n in ('zero','success','spent','cap')]
+    binders += [('fold',fold),('base',le('zero','zero')),
+                ('local',pi('i','message',arrow(app('included','i'),le(app('hit','i'),app('trace','i'))))),('add_le',add_le),
+                ('budget',le('spent','cap')),('trans',trans)]
+    return telescope(binders, le('success','cap'))
+
+
 LOGICAL_TYPES = {
+    'aggregate_capacity': expected_capacity,
+    'pooled_nondisturbance': expected_pooled_probe,
+    'prefix_weights': expected_prefix_weights,
+    'coupled_hit_bound': expected_hit_bound,
+    'overlap_budget': expected_overlap_budget,
     'middle_frame_cancels': expected_corner,
     'relay_triangle': expected_relay,
     'scale_minimum': expected_scale,
@@ -366,6 +469,32 @@ LOGICAL_TYPES = {
 }
 
 SPECS = [
+    ('CapacityBudget.vr','pi-id','aggregate_capacity',None,
+     'add_le(x,y,hit(i),trace(i),ih,local(i,entry))','add_le(x,y,hit(i),trace(i),local(i,entry),ih)'),
+    ('CapacityControls.vr','finite','seven_slot_triplet',8,
+     'let s = pack7(x,y,z)','let s = pack7(z,y,x)'),
+    ('CapacityControls.vr','finite','three_bit_triplet',8,
+     'let third_read = second_read!=third_cell','let third_read = first_read!=third_cell'),
+    ('CapacityControls.vr','finite','three_correct_bound',8,
+     'let joint = a && b && c','let joint = a && !b && c'),
+    ('PracticeComparison.vr','pi-id','pooled_nondisturbance',None,
+     'rewrite(conserve_a); rewrite(conserve_b)','rewrite(conserve_b)'),
+    ('PracticeComparison.vr','pi-id','prefix_weights',None,
+     'same_row(h,choose(h),o,|z:weight| property(mul(x,z)),input)','input'),
+    ('PracticeComparison.vr','pi-id','coupled_hit_bound',None,
+     'flagged(i),ih,local(i,witness)','flagged(i),local(i,witness),ih'),
+    ('PracticeComparison.vr','pi-id','overlap_budget',None,
+     'mono(overlap,remainder,cap,cauchy_cap)','mono(parallel,remainder,cap,cauchy_cap)'),
+    ('PracticeRivals.vr','finite','classically_masked',6,
+     'if ask && mark { true }','if ask && mark { memory }'),
+    ('PracticeRivals.vr','finite','context_register',180,
+     'Axis.C=>first(u)},','Axis.C=>!last(u)},'),
+    ('PracticeRivals.vr','finite','direct_turn',300,
+     'high(s,reverse(v))','high(s,v)'),
+    ('PracticeRivals.vr','finite','serial_turn',300,
+     '(a && b) || (!a && !b)','(a && b) || (!a && b)'),
+    ('PracticeRivals.vr','finite','classical_projective_row',162,
+     'Axis.C=>far_gate(sign,u,v)},','Axis.C=>near_gate(sign,u)},'),
     ('Relay.vr','pi-id','relay_triangle',None,'right,left_run,right_run','right,right_run,left_run'),
     ('Reporting.vr','finite','indistinguishable',4,'else { next(report) }','else { report }'),
     ('Corners.vr','pi-id','middle_frame_cancels',None,'rewrite(cancel); reflexivity','reflexivity'),

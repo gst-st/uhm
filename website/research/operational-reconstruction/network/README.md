@@ -36,6 +36,10 @@ The [prospective study](../practice-study/README.md) compares exhale counting wi
 
 The native Verum profiles independently check the projection, decoder obstruction, interaction bound and finite reset, cue, missingness and decision controls. Coverage is listed in the receipt. Population sampling and Hoeffding coverage are justified separately in the study protocol; machine proofs concern models, arithmetic and observation contracts.
 
+## What the practice comparison can distinguish
+
+The [prospective comparison and public-data audit](../practice-comparison/README.md) prescribe two independent experiments. A conventional last-question register reproduces every adaptive transcript of the two-mode reset model. Passive recall, independent errors and a fixed equal turn nevertheless imply different restrictions on a held-out pair of reports. A separate eight-message recognition experiment tests the sufficiency of a single seven-dimensional trace. Its ceiling is also attained by classical seven-state memory. None of these results is a measurement on people. [Replay theorem](PracticeModelComparison.lean) · [Overlap bounds](PracticeOverlap.lean) · [Calibrated rival predictions](PracticeHoldout.lean) · [Seven-dimensional readout](SevenReadout.lean)
+
 ## Replay
 
 From this directory use Lean 4.35.0 (Std only), a Python 3 interpreter and the native `verum-source-replay` checker from the `verum_source_proof` crate.

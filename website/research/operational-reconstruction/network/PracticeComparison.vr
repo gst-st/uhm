@@ -1,0 +1,85 @@
+// A and B are unnormalized pieces of the originally prepared ensemble
+// partitioned by the intermediate binary outcome. The probe may update
+// each piece. Only the readout of the specified later event is conserved.
+// For a categorical later response one needs this for every response event.
+public theorem pooled_nondisturbance(
+    population:Type,mass:Type,merge:fn(population,population)->population,
+    add:fn(mass,mass)->mass,read:fn(population)->mass,
+    a:population,b:population,after_a:population,after_b:population,
+    additive:Path<mass>(read(merge(a,b)),add(read(a),read(b))),
+    conserve_a:Path<mass>(read(a),read(after_a)),
+    conserve_b:Path<mass>(read(b),read(after_b))):
+    read(merge(a,b)) == add(read(after_a),read(after_b))
+proof by rewrite(additive); rewrite(conserve_a); rewrite(conserve_b); reflexivity;
+
+// A policy picks the next intervention using the observed prefix. A finite
+// transcript accumulates each model's action-conditioned transition weights.
+// In the ordinary history-table implementation the hidden state is exactly
+// this prefix and the stored row is its conditional output distribution.
+// Equal accessible rows force equal transcript weights at every finite depth.
+public theorem prefix_weights(
+    history:Type,action:Type,outcome:Type,weight:Type,
+    extend:fn(history,action,outcome)->history,choose:fn(history)->action,
+    p:fn(history,action,outcome)->weight,q:fn(history,action,outcome)->weight,
+    mul:fn(weight,weight)->weight,start:history,stop:history,one:weight,f:weight,g:weight,
+    trace:fn<M:meta fn(history,weight,weight)->Type(1)>(
+      fn<h:meta history,o:meta outcome,x:meta weight,y:meta weight>(M(h,x,y))->
+      M(extend(h,choose(h),o),mul(x,p(h,choose(h),o)),mul(y,q(h,choose(h),o))),
+      M(start,one,one))->M(stop,f,g),
+    same_row:fn<h:meta history,a:meta action,o:meta outcome,property:meta fn(weight)->Type>(
+      property(p(h,a,o)))->property(q(h,a,o))): f == g
+proof = trace(
+    |h:history| |x:weight| |y:weight| forall property:fn(weight)->Type.
+      forall input:property(x). property(y),
+    |h:history| |o:outcome| |x:weight| |y:weight|
+      |ih:fn<property:meta fn(weight)->Type>(property(x))->property(y)|
+      |property:fn(weight)->Type| |input:property(mul(x,p(h,choose(h),o)))|
+      ih(|z:weight| property(mul(z,q(h,choose(h),o))),
+        same_row(h,choose(h),o,|z:weight| property(mul(x,z)),input)),
+    |property:fn(weight)->Type| |input:property(one)| input
+)(|z:weight| f == z,@builtin_refl(f));
+
+// Coupled control/probe runs in identical preparations. A changed downstream
+// hit requires a flagged disturbed unit (possibly a randomized paired draw).
+// Accumulate weighted counts over any finite collection. The arithmetic
+// combine law adds inequalities in an ordered additive commutative monoid.
+public theorem coupled_hit_bound(
+    atom:Type,weight:Type,plus:fn(weight,weight)->weight,le:fn(weight,weight)->Type,
+    direct:fn(atom)->weight,probed:fn(atom)->weight,flagged:fn(atom)->weight,
+    present:fn(atom)->Type,zero:weight,a:weight,b:weight,c:weight,
+    fold:fn<M:meta fn(weight,weight,weight)->Type>(
+      fn<i:meta atom,x:meta weight,y:meta weight,z:meta weight>(present(i),M(x,y,z))->
+        M(plus(x,direct(i)),plus(y,probed(i)),plus(z,flagged(i))),
+      M(zero,zero,zero))->M(a,b,c),
+    base:le(zero,plus(zero,zero)),
+    local:fn<i:meta atom>(present(i))->le(direct(i),plus(probed(i),flagged(i))),
+    combine:fn<x:meta weight,y:meta weight,z:meta weight,d:meta weight,p:meta weight,f:meta weight>(
+      le(x,plus(y,z)),le(d,plus(p,f)))->le(plus(x,d),plus(plus(y,p),plus(z,f)))):
+    le(a,plus(b,c))
+proof = fold(
+    |x:weight| |y:weight| |z:weight| le(x,plus(y,z)),
+    |i:atom| |x:weight| |y:weight| |z:weight| |witness:present(i)| |ih:le(x,plus(y,z))|
+      combine(x,y,z,direct(i),probed(i),flagged(i),ih,local(i,witness)),
+    base);
+
+// Algebraic end of the rank-one comparison. All variables denote nonnegative
+// magnitudes. A lower parallel component and an upper off-axis component
+// constrain the absolute end-to-end overlap via the reverse triangle
+// inequality. Squaring yields the corresponding probability bound.
+// In units of 1/10 the sharp example takes floor=8, cap=1 and parallel=9.
+public theorem overlap_budget(
+    magnitude:Type,probability:Type,add:fn(magnitude,magnitude)->magnitude,
+    square:fn(magnitude)->probability,le:fn(magnitude,magnitude)->Type,
+    prob_le:fn(probability,probability)->Type,
+    floor:magnitude,cap:magnitude,parallel:magnitude,remainder:magnitude,overlap:magnitude,
+    lower:le(add(floor,cap),parallel), cauchy_cap:le(remainder,cap),
+    triangle:le(parallel,add(overlap,remainder)),
+    trans:fn<x:meta magnitude,y:meta magnitude,z:meta magnitude>(le(x,y),le(y,z))->le(x,z),
+    mono:fn<x:meta magnitude,y:meta magnitude,z:meta magnitude>(le(y,z))->le(add(x,y),add(x,z)),
+    cancel:fn<x:meta magnitude,y:meta magnitude,z:meta magnitude>(le(add(x,z),add(y,z)))->le(x,y),
+    squaring:fn<x:meta magnitude,y:meta magnitude>(le(x,y))->prob_le(square(x),square(y))):
+    prob_le(square(floor),square(overlap))
+proof = squaring(floor,overlap,cancel(floor,overlap,cap,
+    trans(add(floor,cap),parallel,add(overlap,cap),lower,
+      trans(parallel,add(overlap,remainder),add(overlap,cap),triangle,
+        mono(overlap,remainder,cap,cauchy_cap)))));

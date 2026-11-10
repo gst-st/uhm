@@ -2,6 +2,123 @@
   "binary_sha256": "eab11c03a975a6e44850ffb3a3320eb700f13a40c29dd9dbc3f67c42d9755f94",
   "declarations": [
     {
+      "name": "aggregate_capacity",
+      "profile": "pi-id",
+      "cases": null,
+      "source_sha256": "5de4909cf8dff8c40702f1f05569229fe36af4f7293b71e35a57bf0afbff8745",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "8bcfc64e344aaec52ef347424eefd0bdbcb94993bb2937a3cf50010def996eee",
+      "mutation_rejected": "ill_typed_source"
+    },
+    {
+      "name": "seven_slot_triplet",
+      "profile": "finite",
+      "cases": 8,
+      "source_sha256": "567600ffc5b914fbd84500bd16e7c80b39df1636e9fe94bf0ae4f60685445542",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "84caabfc74566e44b2eef807f94cdaca6a71de27d7abca46cb5139390f13fe72",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "three_bit_triplet",
+      "profile": "finite",
+      "cases": 8,
+      "source_sha256": "567600ffc5b914fbd84500bd16e7c80b39df1636e9fe94bf0ae4f60685445542",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "3b91be3e7a290d38ab0ca3a08dfc64e7fa9e445dc5a92cc0e0275a79bad1e47a",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "three_correct_bound",
+      "profile": "finite",
+      "cases": 8,
+      "source_sha256": "567600ffc5b914fbd84500bd16e7c80b39df1636e9fe94bf0ae4f60685445542",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "81831c9375161ee70e9946891cd07302e9eb2cd0ea352cea1bdf8ac553700954",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "pooled_nondisturbance",
+      "profile": "pi-id",
+      "cases": null,
+      "source_sha256": "b482a9d6a88f1c0d136a1dda3772bb1134bf5a79405bfce8aea3eed7b80039bb",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "f37866c9ffbf6065da6eb005163f328afb4143e6a32774a774f604b530499f8b",
+      "mutation_rejected": "ill_typed_source"
+    },
+    {
+      "name": "prefix_weights",
+      "profile": "pi-id",
+      "cases": null,
+      "source_sha256": "b482a9d6a88f1c0d136a1dda3772bb1134bf5a79405bfce8aea3eed7b80039bb",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "0966da82ad5f697add6d6ac02101c631123a6b0062f47ddebac24bd6bccc546b",
+      "mutation_rejected": "ill_typed_source"
+    },
+    {
+      "name": "coupled_hit_bound",
+      "profile": "pi-id",
+      "cases": null,
+      "source_sha256": "b482a9d6a88f1c0d136a1dda3772bb1134bf5a79405bfce8aea3eed7b80039bb",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "1eca48e09fd066fec07bf872e648c01d8c2fdf357493f13e894df3f5602e09de",
+      "mutation_rejected": "ill_typed_source"
+    },
+    {
+      "name": "overlap_budget",
+      "profile": "pi-id",
+      "cases": null,
+      "source_sha256": "b482a9d6a88f1c0d136a1dda3772bb1134bf5a79405bfce8aea3eed7b80039bb",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "caf3e6bbd960e76d0bab510a4d11fef2d45e32f84743dc73a0fffd822472f164",
+      "mutation_rejected": "ill_typed_source"
+    },
+    {
+      "name": "classically_masked",
+      "profile": "finite",
+      "cases": 6,
+      "source_sha256": "d1699e4c8c2c0eb2707be0d4e795219134f8d3be5698d9eae349ebe746189a6d",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "a713f68dabffddcd88151a8f06b3c0ac508af708bab4169ec454a6de5852488a",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "context_register",
+      "profile": "finite",
+      "cases": 180,
+      "source_sha256": "d1699e4c8c2c0eb2707be0d4e795219134f8d3be5698d9eae349ebe746189a6d",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "f2c32d66334c213db32f2604b7701772a0a82ca10cada40302e2285913f8a380",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "direct_turn",
+      "profile": "finite",
+      "cases": 300,
+      "source_sha256": "d1699e4c8c2c0eb2707be0d4e795219134f8d3be5698d9eae349ebe746189a6d",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "70178afbea7cb8871ae29b8fff6b5809bc62552ac420c54e569608a54496e9a4",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "serial_turn",
+      "profile": "finite",
+      "cases": 300,
+      "source_sha256": "d1699e4c8c2c0eb2707be0d4e795219134f8d3be5698d9eae349ebe746189a6d",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "245bf69ec0758bdac069eac2e07a90b79cfc2fb7a234e395e68e95b139d7cae7",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
+      "name": "classical_projective_row",
+      "profile": "finite",
+      "cases": 162,
+      "source_sha256": "d1699e4c8c2c0eb2707be0d4e795219134f8d3be5698d9eae349ebe746189a6d",
+      "checker": "784ade37a06d09981c1d0ef55b309eed1fa45567ca89e9432053c553467f9a64",
+      "statement_sha256": "3cae38ba60a8596ba8df1a43c936e4dc30a6a6c82dfde17cae9b73747cca9d9f",
+      "mutation_rejected": "type_mismatch"
+    },
+    {
       "name": "relay_triangle",
       "profile": "pi-id",
       "cases": null,

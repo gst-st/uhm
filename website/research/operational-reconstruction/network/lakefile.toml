@@ -4,4 +4,4 @@ defaultTargets = ["Network"]
 
 [[lean_lib]]
 name = "Network"
-roots = ["Network", "Transport", "Response", "Matter", "Reports", "ProtocolMetric", "PortQuotient", "NetworkScale", "CyclicTransport", "RouteReadout", "SignalNetwork", "TerminalNetwork", "ScaleObstruction", "BoundaryMemory", "ClockRefinement", "DynamicRefinement", "CycleDelays", "LimitMetric", "PeriodicLimit", "CommonGeometry", "CircleLimit", "ClockNormalization", "DriftControl", "MeshControl", "ProductLimit", "BreathPractice", "PracticeChannels", "PracticeDecision"]
+roots = ["Network", "Transport", "Response", "Matter", "Reports", "ProtocolMetric", "PortQuotient", "NetworkScale", "CyclicTransport", "RouteReadout", "SignalNetwork", "TerminalNetwork", "ScaleObstruction", "BoundaryMemory", "ClockRefinement", "DynamicRefinement", "CycleDelays", "LimitMetric", "PeriodicLimit", "CommonGeometry", "CircleLimit", "ClockNormalization", "DriftControl", "MeshControl", "ProductLimit", "BreathPractice", "PracticeChannels", "PracticeDecision", "PracticeOverlap", "PracticeHoldout", "PracticeModelComparison", "SevenReadout"]

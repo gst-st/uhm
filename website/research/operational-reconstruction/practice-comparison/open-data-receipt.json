@@ -1,0 +1,124 @@
+{
+  "audited_on": "2026-11-10",
+  "purpose": "Design support only; no human effect estimated.",
+  "fixed_probes": {
+    "dataset": "doi:10.18112/openneuro.ds001787.v1.1.1",
+    "license": "CC0",
+    "commit": "ffbea891000d0d2b81f8780e57def420e4cb01a7",
+    "tree": "https://api.github.com/repos/OpenNeuroDatasets/ds001787/git/trees/ffbea891000d0d2b81f8780e57def420e4cb01a7?recursive=1",
+    "event_dictionary": "https://raw.githubusercontent.com/OpenNeuroDatasets/ds001787/ffbea891000d0d2b81f8780e57def420e4cb01a7/task-meditation_events.json",
+    "event_inventory_sha256": "12e4d76bbe3a9901b48af047a4bb0094688addcb20264e1cb56f766748b8d824",
+    "paper": "https://doi.org/10.1007/s00221-016-4811-5",
+    "design_source": "https://sccn.ucsd.edu/~arno/mypapers/brandmeyer2016_author.pdf",
+    "subjects": 24,
+    "event_tables": 40,
+    "columns": [
+      "onset",
+      "duration",
+      "trial_type",
+      "response_time",
+      "sample",
+      "value"
+    ],
+    "event_type_counts": {
+      "stimulus": 983,
+      "response": 2143,
+      "STATUS": 5,
+      "n/a": 2
+    },
+    "design": "Mantra meditation; randomized timing of probes; fixed depth, wandering, drowsiness order for the same preceding episode.",
+    "missing": "No randomized reversal, single-probe/skip arm or three binary features of the same exhalation. A missing key press cannot stand in for an omitted question."
+  },
+  "training_order": {
+    "supplement": "https://doi.org/10.1371/journal.pone.0322537.s003",
+    "sha256": "de1ffcc6ba5624476cce17c760fac68e534d6e999371925fe32d15b093c2fd71",
+    "paper": "https://doi.org/10.1371/journal.pone.0322537",
+    "license": "CC BY (PLOS article and supplement)",
+    "columns": [
+      "Participant",
+      "Group",
+      "Age",
+      "Gender",
+      "Past Experience",
+      "Time",
+      "Nonduality",
+      "Describing",
+      "Acceptance",
+      "Observing",
+      "Awareness",
+      "Moment"
+    ],
+    "groups": [
+      "Control",
+      "FA-OM",
+      "OM-FA"
+    ],
+    "time_values": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "participants_per_wave": {
+      "Control": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "FA-OM": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ],
+      "OM-FA": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    "participant_rows": 243,
+    "participants": 27,
+    "methods": "Nonrandom assignment by schedule, 33 started, 6 dropped out, 27 completed; 4 weeks per practice.",
+    "missing": "Weekly SFMS scores. Weeks 0, 4, 8 are Time 1, 5, 9. No within-exhalation question order, reports or randomized omission."
+  },
+  "other_practice_sources": [
+    {
+      "dataset": "doi:10.18112/openneuro.ds003969.v1.0.0",
+      "license": "CC0",
+      "commit": "52f118f60c6c1d87d5bd9a31e1d6694f6edbd660",
+      "design_source": "https://raw.githubusercontent.com/OpenNeuroDatasets/ds003969/52f118f60c6c1d87d5bd9a31e1d6694f6edbd660/README",
+      "missing": "First meditation block is always breath counting. Second is tradition-specific, or counting for controls. Thinking/meditation starting order does not reverse short questions."
+    },
+    {
+      "dataset": "https://osf.io/b6rn9/",
+      "paper": "https://pubmed.ncbi.nlm.nih.gov/33289167/",
+      "license": "CC0 1.0 Universal",
+      "design_source": "https://osf.io/download/u58re/",
+      "readme_sha256": "eb3ef35ccc6a52cea5f0dea82e946a34c935892e2cdfc05aaf31e57eea4eafc3",
+      "missing": "Bell, binary focus/wandering, then confidence (1–7) and arousal (1–5). Fixed series; no reversed binary attention questions or skipped-middle branch."
+    }
+  ]
+}

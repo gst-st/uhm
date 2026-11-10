@@ -1,0 +1,22 @@
+// Positive-effect discrimination: the matrix bound success(i)<=Tr E_i is
+// derived in Lean. Aggregate it here over the very same message list.
+// With eight equiprobable messages and total effect trace <=7 in probability
+// units this yields average exact-word success <=7/8. The additive induction
+// works for arbitrary finite weights and for lists containing zero scores.
+public theorem aggregate_capacity(
+    message:Type,mass:Type,add:fn(mass,mass)->mass,le:fn(mass,mass)->Type,
+    hit:fn(message)->mass,trace:fn(message)->mass,included:fn(message)->Type,zero:mass,success:mass,spent:mass,cap:mass,
+    fold:fn<M:meta fn(mass,mass)->Type>(
+      fn<i:meta message,x:meta mass,y:meta mass>(included(i),M(x,y))->M(add(x,hit(i)),add(y,trace(i))),
+      M(zero,zero))->M(success,spent),
+    base:le(zero,zero),local:fn<i:meta message>(included(i))->le(hit(i),trace(i)),
+    add_le:fn<x:meta mass,y:meta mass,a:meta mass,b:meta mass>(
+      le(x,y),le(a,b))->le(add(x,a),add(y,b)),
+    budget:le(spent,cap),
+    trans:fn<x:meta mass,y:meta mass,z:meta mass>(le(x,y),le(y,z))->le(x,z)):
+    le(success,cap)
+proof = trans(success,spent,cap,
+    fold(|x:mass| |y:mass| le(x,y),
+      |i:message| |x:mass| |y:mass| |entry:included(i)| |ih:le(x,y)|
+        add_le(x,y,hit(i),trace(i),ih,local(i,entry)),base),
+    budget);
