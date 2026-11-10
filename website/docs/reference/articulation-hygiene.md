@@ -36,7 +36,7 @@ For each recurring "self-X" construction in UHM:
 | self-modelling / самомоделирование | $\varphi$ — categorical map (functor) | iteration in Lindblad dynamics | $\rho^* \in \mathrm{eq}(\mathrm{id}, \varphi)$ | T-96 + T-39a |
 | autopoiesis / автопоэзис | $\mathsf{A}^\mathrm{act}$ (activation) on AC-side | $\mathsf{A}^{\omega^2}$-iteration | $\varepsilon \in \mathrm{Fix}(\mathsf{A}^{\omega^2})$ | 113.T (Diakrisis) |
 | self-observation / самонаблюдение | terminal coalgebra $\Gamma \to F(\Gamma)$ for $F = \varphi$ + reflection-measure $R$ | unfolding of the coalgebra | $\nu F$ — terminal coalgebra; $R \geq 1/3$ | T-126 + T-96 |
-| self-reference / самореференция | Lawvere fixed-point $f: X \to X^X$ | stratified Yanofsky diagonal | fixed point $p \in X$, bounded by T-2a\* | 87.T (Lawvere), 105.T |
+| self-reference / самореференция | endomorphism $h:Y\to Y$ and a weakly point-surjective map $X\to Y^X$ | diagonal construction | a fixed point of $h$ when the surjectivity premise holds; stratification restricts the construction | [Diakrisis, 87.T](https://diakrisis.gst.st/06-limits/06-absoluteness), [Diakrisis, 105.T](https://diakrisis.gst.st/06-limits/10-maximality-theorems) |
 | self-consistency / самосогласованность | equivalence operator $\varphi \simeq \mathrm{id}$ | — (point-level) | equaliser $\rho^* = \varphi(\Gamma)$ | T-96 |
 | self-awareness / самосознание | reflexive measure $R = 1/(7P)$ + Φ-integration | (P, R, Φ, D)-threshold | consciousness predicate $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$ | T-96 + T-126 + T-129 + T-151 |
 | self-closure / самозамыкание | $\mathsf{M}^\kappa$-iteration on the articulation side | trajectory $\alpha \mapsto \mathsf{M}(\alpha) \mapsto \mathsf{M}^2(\alpha) \mapsto \ldots$ | $\alpha \in \mathrm{Fix}(\mathsf{M})$ | 04.T1, Axi-7 |
@@ -91,7 +91,7 @@ The operator-based content is **identical** to the rhetorical version. But:
 
 - [diakrisis.gst.st/11-noesis/07-theorems](http://diakrisis.gst.st/11-noesis/07-theorems) §NO-19 — structural source of the protocol; theorem NO-19.
 - [diakrisis.gst.st/12-actic/07-beyond-metastemology](http://diakrisis.gst.st/12-actic/07-beyond-metastemology) — historical context (Churilov's metastemological programme).
-- [diakrisis.gst.st/06-limits/10-maximality-theorems](http://diakrisis.gst.st/06-limits/10-maximality-theorems) §105.T — universal paradox-immunity via T-2f\*, the formal basis of the hygiene invariant at Level 5+.
+- In the external Diakrisis corpus, theorem 105.T uses its depth-stratification axiom `Diakrisis T-2f*` for paradoxes reducible to the Yanofsky diagonal scheme. [Theorem 105.T](https://diakrisis.gst.st/06-limits/10-maximality-theorems)
 - UHM [`/proofs/categorical/formalization-phi`](/docs/proofs/categorical/formalization-phi) — source-level formalisation of the $\varphi$-operator.
 
 ## Refactoring plan

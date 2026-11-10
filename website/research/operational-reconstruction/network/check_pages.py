@@ -54,5 +54,6 @@ def main():
         if pair[0]!=pair[1]:
             raise ValueError('localization differs in mathematics, anchors, links or declaration names: '+name)
         print(name,'EN/RU verified')
+    print(len(PAGES),'verified source/rendered locale pairs')
 if __name__=='__main__':
     main()

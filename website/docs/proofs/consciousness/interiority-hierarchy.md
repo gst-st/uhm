@@ -319,7 +319,7 @@ Squared norms are used consistently. State validation, extension entropy and met
 | $P>6/7$ defines nested L4 | **[✗]**; incompatible with inherited L2 window |
 | CPTP alone forces strict contraction and positive consecutive fidelity | **[✗]**; stated contraction/convergence assumptions |
 | Twelve Boolean gate labels are twelve nonempty regions | **[✗]**; feasibility bound $\Phi\le7P-1$ **[T]** |
-| T-41: three controls force an $A_4$ transition | **[✗]**; normal-form criteria needed |
+| Three controls force an $A_4$ transition | **[✗]**; see the [normal-form conditions](#бифуркационные-критерии) |
 | Adaptive generalisation universally forces canonical $R\ge1/3$ | **[✗]**; explicit task/resource bridge needed |
 
 The valid inequalities remain available as mathematical tools. Their physical interpretation and measurement bridge are separate obligations; none is supplied by changing a status label.

@@ -36,7 +36,7 @@ sidebar_position: 8
 | самомоделирование / self-modelling | $\varphi$ — категорное отображение (функтор) | итерация в Lindblad-динамике | $\rho^* \in \mathrm{eq}(\mathrm{id}, \varphi)$ | T-96 + T-39a |
 | автопоэзис / autopoiesis | $\mathsf{A}^\mathrm{act}$ (активация) на AC-стороне | $\mathsf{A}^{\omega^2}$-итерация | $\varepsilon \in \mathrm{Fix}(\mathsf{A}^{\omega^2})$ | 113.T (Diakrisis) |
 | самонаблюдение / self-observation | terminal coalgebra $\Gamma \to F(\Gamma)$ для $F = \varphi$ + reflection-measure $R$ | unfolding коалгебры | $\nu F$ — terminal coalgebra; $R \geq 1/3$ | T-126 + T-96 |
-| самореференция / self-reference | Lawvere fixed-point $f: X \to X^X$ | стратифицированный Yanofsky-диагональ | fixed point $p \in X$, ограничено T-2a\* | 87.T (Лоувер), 105.T |
+| самореференция / self-reference | эндоморфизм $h:Y\to Y$ и слабо поточечно-сюръективное отображение $X\to Y^X$ | диагональная конструкция | неподвижная точка $h$ при выполнении предпосылки; стратификация ограничивает применимость конструкции | [Diakrisis, 87.T](https://diakrisis.gst.st/06-limits/06-absoluteness), [Diakrisis, 105.T](https://diakrisis.gst.st/06-limits/10-maximality-theorems) |
 | самосогласованность / self-consistency | оператор эквивалентности $\varphi \simeq \mathrm{id}$ | — (point-level) | equalizer $\rho^* = \varphi(\Gamma)$ | T-96 |
 | самосознание / self-awareness | рефлексивная мера $R = 1/(7P)$ + Φ-интеграция | (P, R, Φ, D)-порог | предикат сознания $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$ | T-96 + T-126 + T-129 + T-151 |
 | самозамыкание / self-closure | $\mathsf{M}^\kappa$-итерация на артикуляционной стороне | траектория $\alpha \mapsto \mathsf{M}(\alpha) \mapsto \mathsf{M}^2(\alpha) \mapsto \ldots$ | $\alpha \in \mathrm{Fix}(\mathsf{M})$ | 04.T1, Axi-7 |
@@ -91,7 +91,7 @@ sidebar_position: 8
 
 - [diakrisis.gst.st/11-noesis/07-theorems](http://diakrisis.gst.st/11-noesis/07-theorems) §NO-19 — структурный источник протокола; теорема NO-19.
 - [diakrisis.gst.st/12-actic/07-beyond-metastemology](http://diakrisis.gst.st/12-actic/07-beyond-metastemology) — исторический контекст (метастемологическая программа Чурилова).
-- [diakrisis.gst.st/06-limits/10-maximality-theorems](http://diakrisis.gst.st/06-limits/10-maximality-theorems) §105.T — универсальная парадокс-иммунность через T-2f\*, формальная основа hygiene-инварианта на уровне 5+.
+- Во внешнем корпусе Diakrisis теорема 105.T использует аксиому стратификации по глубине `Diakrisis T-2f*` для парадоксов, сводимых к диагональной схеме Яновского. [Теорема 105.T](https://diakrisis.gst.st/06-limits/10-maximality-theorems)
 - УГМ [`/proofs/categorical/formalization-phi`](/docs/proofs/categorical/formalization-phi) — исходный уровень формализации $\varphi$-оператора.
 
 ## План рефакторинга

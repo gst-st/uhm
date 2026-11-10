@@ -205,7 +205,7 @@ This establishes failure to identify the scalar capability gate; it does not ass
 
 ## Threshold crossing versus bifurcation {#теорема-a4-бифуркация}
 
-The former unconditional T-41 identification of all L-transitions with a swallowtail is **retracted [✗]**. A threshold may be crossed along a smooth trajectory with no change in the number or stability of attractors. Three control parameters do not establish a codimension-three singularity.
+A smooth trajectory may cross a threshold while the number and stability of attractors stay fixed. Three control parameters alone do not imply an $A_4$ singularity.
 
 In the standard potential convention, $A_k$ has germ $x^{k+1}$: $A_2$ is the fold, $A_3$ the cusp ($x^4$), and $A_4$ the swallowtail ($x^5$). A claimed normal form needs a smooth centre-manifold reduction, the appropriate degeneracy, parameter transversality and an explicit relation to the gate. See [formal criteria](/docs/proofs/consciousness/interiority-hierarchy#бифуркационные-критерии).
 

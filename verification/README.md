@@ -28,6 +28,10 @@ Verum integration and implementation correspondence require their own checked
 artifacts. The full state, calibration, uncertainty and action provenance remain
 part of the corpus contract.
 
+## Reconstruction and publication
+
+The corpus gate also builds and inventories the [network proof package](../website/research/operational-reconstruction/network/README.md) with its pinned Lean version. It verifies that the bilingual proof pages agree on mathematics, declaration names, links and anchors and that those anchors occur in both renders. For the external kernel replay, native Verum, and the checked import of the actual Autogeny dynamics, follow the reconstruction package instructions. Each run identifies which proof engine it used.
+
 ## Adaptive observations and instrument scope
 
 `python3 scripts/verify_adaptive_observation.py` checks eight finite groups:

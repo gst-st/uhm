@@ -28,7 +28,10 @@ TOOLS = ["check_theorem_refs.py", "check_status_markers.py",
 # сайтом по месту реестра. До 26.09.2026 вентиль его не звал, и его храповики
 # (R1…R7, включая опору на отозванное) держались только ручным запуском.
 SITE_TOOLS = [Path("website") / "scripts" / "render_lint.py",
-              Path("website") / "scripts" / "check_status_consistency.py"]
+              Path("website") / "scripts" / "check_status_consistency.py",
+              Path("website") / "scripts" / "check_canon_content.py",
+              Path("website/research/operational-reconstruction/network/audit_lean.py"),
+              Path("website/research/operational-reconstruction/network/check_pages.py")]
 
 
 # ОХВАТ. Прибор, не назвавший, сколько файлов он прочитал, объявляет чистым
@@ -49,6 +52,12 @@ def scope_of(out: str):
          or re.search(r"^проверок:? (\d+)", out or "", re.M))
     if m:
         return int(m.group(1)), "проверок"
+    for pattern, unit in [(r"^(\d+) theorem closures in \d+ modules", "замыканий теорем"),
+                          (r"^(\d+) canon pages:", "страниц"),
+                          (r"^(\d+) verified source/rendered locale pairs$", "пар страниц")]:
+        m = re.search(pattern, out or "", re.M)
+        if m:
+            return int(m.group(1)), unit
     return None
 
 

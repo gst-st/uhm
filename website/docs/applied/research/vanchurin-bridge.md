@@ -132,7 +132,7 @@ The dictionary is exact on every line that matters:
 | trainable state $q$ | coherence matrix $\Gamma\in\mathcal D(\mathbb C^7)$ | structural |
 | loss $-\mathcal F$ | functional $\mathcal F[\varphi;\Gamma]$ | The proposed expression is a cross-entropy. Its minimum need not be the specified channel. |
 | metric $g$ | **Bures/SLD metric**, one member of the Petz family | selected metric [D], operational reading requires its bridge |
-| noise covariance $\kappa$ | covariance of one-step Kraus increments of $\mathcal D_\Omega$ | forced by T-41/T-59, **relative to the canonical Kraus resolution** (§7.2) |
+| noise covariance $\kappa$ | covariance of one-step Kraus increments of $\mathcal D_\Omega$ | depends on the [specified measurement instrument](#постановка) |
 | covariant descent | regeneration toward a target $\rho_*$ | A specified family of maps [D]. |
 | emergent time = block index | $\tau\in\mathbb Z_7$ (Page–Wootters) | T-38b, T-87 |
 | maximum-entropy identity $g^{-1}=c$ (his 4.7) | **derived here as a dynamical theorem** (§4) | this page |
@@ -580,6 +580,14 @@ $\{0^{\times7},(-5\gamma/21)^{\times42}\}$, and it coincides identically
 with the atomic-only dissipator at rescaled rate $5\gamma/3$.
 :::
 
+**Rate normalization.** For $N=7$ each of the fourteen operators carries coefficient $\gamma/N$ in the generator. The atomic family $L_k=|k\rangle\langle k|$ and the line family $L_p=\Pi_p/\sqrt{3}$ each satisfy $\sum_e L_e^\dagger L_e=I$, since each point lies on three lines. Thus
+
+$$
+\mathcal L(X)=\frac{\gamma}{7}\bigl(\mathcal A(X)+\mathcal F(X)-2X\bigr),
+$$
+
+where $\mathcal A(X)=\sum_k L_kX L_k^\dagger$ and $\mathcal F(X)=\sum_p L_pX L_p^\dagger$. Both maps fix $E_{ii}=|i\rangle\langle i|$. For $i\ne j$ the atomic map annihilates $E_{ij}$ and the unique line through $i,j$ gives $\mathcal F(E_{ij})=E_{ij}/3$. Hence $\mathcal L(E_{ij})=(\gamma/7)(0+1/3-2)E_{ij}=-(5\gamma/21)E_{ij}$.
+
 *Machine check*: atomic spectrum
 $\{0^{\times7},(-\gamma/7)^{\times42}\}$, full spectrum
 $\{0^{\times7},(-5\gamma/21)^{\times42}\}$, and
@@ -614,8 +622,7 @@ All fourteen canonical Lindblad operators are diagonal in the classifier
 basis. Hence **on the decohered manifold** (diagonal $\rho$) every
 increment $\Delta_e$ is diagonal and $\kappa^{\text{coh}}=0$ exactly,
 while coherences contract deterministically at
-$\lambda_{\text{deco}}=\frac{5\gamma}{3N}=\frac{5\gamma}{21}$ (T-59,
-confirmed by the $49\times49$ superoperator above).
+$\lambda_{\text{deco}}=\frac{5\gamma}{3N}=\frac{5\gamma}{21}$ with the [rate convention of §7.2](#область-действия-фано).
 :::
 
 **Proof.** $L_k=|k\rangle\langle k|$ and $L_p=\Pi_p/\sqrt3$ are
@@ -932,11 +939,7 @@ A condensed statement of this bridge, set against Deutsch's many-worlds
 programme, is §2.9 of [Many-Worlds (Everett–Deutsch) and
 UHM](/docs/physics/quantum-mechanics/many-worlds).
 
-Corpus cross-references: T-41 (Fano channel family), T-42a
-($G_2$-rigidity), T-55 (conditional fixed-predicate properness), T-57 (triadic
-completeness), T-59 ($\lambda_{\text{deco}}=5\gamma/21$), T-71 (vacuum-energy hypothesis), T-72 (scale invariance), T-73/T-74 (Gap curvature, spectral
-action), T-87 (A5: clock register [T], constraint [C]), T-124 (conscious window), T-187 (why
-Bures). Registry rows: T-293, T-294, T-295; the per-axis screen lives under T-298; the composition ceiling and the addressing regime under T-304.
+For the constituent channels see the [BIBD contraction](/docs/core/operators/lindblad-operators#теорема-bibd-эквивалентность) and the [atomic action on coherences](/docs/proofs/gap/fano-channel#s7-эквивариантность). The dephasing rate is derived in [§7.2](#область-действия-фано). The conditions for the natural gradient, trace ratio and noise law are recorded under T-293, T-294 and T-295 in the [UHM registry](/docs/reference/status-registry).
 
 ---
 
