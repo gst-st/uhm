@@ -1,0 +1,25 @@
+\section{What a joint instrument can reveal}
+For a fully specified countermodel, take two real two-level systems (rebits), the real tensor product and the Born rule. Real quantum theory permits joint states that agree on every local product effect \citep{hardy2012real}. Here the preparations and the separating effect are constructed from local sources, a fair classical bit, local measurements, and one specified coherent controlled-NOT gate in each device.
+
+Let $X$ exchange the two basis vectors, $Z=\operatorname{diag}(1,-1)$, and $J=XZ$. For target label $b=0,1$, draw a private fair bit $t$. Prepare the $X$ eigenstate of sign $(-1)^t$ on the first port and the $Z$ eigenstate of sign $(-1)^{t+b}$ on the second. Forget $t$. The mixture is $(I_4+(-1)^b X\otimes Z)/4$. The controlled-NOT unitary $U\ket{i,j}=\ket{i,i\oplus j}$ is its own inverse. Conjugation sends $X\otimes Z$ to $J\otimes J$. Thus the prepared state and joint binary effects are
+\begin{equation}
+ \rho_b=\frac{I_4+(-1)^bJ\otimes J}{4},
+ \qquad E_b=2\rho_b .
+\label{eq:rebit}
+\end{equation}
+Since $J^\top=-J$ and $J^2=-I$, $J\otimes J$ is a real symmetric involution with trace zero. Hence $E_b$ are complementary rank-two projectors, $\rho_b$ are positive and normalized, and $\Tr(E_b\rho_c)=\mathbf1_{b=c}$. To implement the readout apply $U$ once more, measure $X$ and $Z$ locally, and take the parity. Omitting the analyser gate gives probability $1/2$ for either parity. Measuring the control in its computational basis before the preparation gate and discarding that intermediate result gives $I_4/4$ for both labels.
+
+\begin{proposition}[Local blindness and a separating test]\label{prop:rebit}
+On these two rebits, the symmetric matrix differences invisible to all products of real symmetric local effects form the one-dimensional space spanned by $J\otimes J$. A symmetric joint effect $F$ resolves the remaining parameter exactly when $F_{00,11}\ne F_{01,10}$.
+\end{proposition}
+\begin{proof}
+Each local symmetric matrix space is spanned by the three physical projectors onto $\ket0$, $\ket1$, and $(\ket0+\ket1)/\sqrt2$. Their nine tensor products are independent in the ten-dimensional space of symmetric $4\times4$ matrices. Since $\Tr(AJ)=0$ for every real symmetric $A$, $J\otimes J$ is perpendicular to all nine. Finally $\Tr(F(J\otimes J))=2(F_{00,11}-F_{01,10})$. For a finite adaptive protocol using local real instruments and shared classical records, each selective local Kraus branch pulls a symmetric terminal effect back to $K^\top F_{\rm loc}K$. Multiplying along a branch and summing over unobserved branches keeps each event effect in the span of product effects. The same blindness holds on a single shared preparation with these resources.
+\end{proof}
+
+In arbitrary finite real dimensions, double polarization of the local quadratic forms shows that a jointly symmetric difference is invisible to product measurements exactly when transposition on the first port negates it. The \source{network/RebitExperiment.lean}{Lean proof and circuit controls} establish the identity and the independent numerical controls in \eqref{eq:rebit}. This separates composition laws for specified devices. It leaves open which operations a candidate physical substrate supplies.
+
+\paragraph{Why an address of size eight is a different result.}
+For a binary perfect one-error-correcting code with more than two words, disjoint radius-one balls cover the cube, so $(N+1)|C|=2^N$ and $N\ge7$; the length-15 Hamming code also satisfies this requirement. On an independently supplied normalized signed interference circuit, positive detection for both polarities on every specified rectangle gives $k\le3$. A decoder that distinguishes the $N$ errors and no error using just that circuit's $2^k$ addresses gives $N+1\le2^k$. Thus $8\le N+1\le2^k\le8$. The \source{AddressFusion.lean}{address theorem} supplies an attaining encoder and decoder. An error syndrome does not specify the dimension of all physical preparations. Connecting these tests to a physical node requires a calibrated branch, independent error preparations and a measured noise allowance.
+
+\paragraph{Conditioning on a clock.}
+Likewise, in a Page--Wootters construction one supplies a clock--system tensor product, a joint state $\omega$ satisfying a Hamiltonian constraint, and a clock measurement \citep{page1983}. For a clock projector $F_j$, the unnormalized conditional operator is $\Tr_{\rm clock}[(F_j\otimes I)\omega(F_j\otimes I)]$; its trace is the probability of that reading. Normalization is defined only at positive probability. A cyclic clock with seven labels yields at most seven such conditionals, independently of the number of outcomes of a different measurement. The calibration and the constraint provide the dynamical content.

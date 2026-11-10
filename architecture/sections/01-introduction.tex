@@ -104,15 +104,12 @@ that as four searches.
 
 \subsection{The thesis: architectural monism}
 
-This document reports that the four searches have one answer, and that the
-answer is \emph{forced}, not chosen. Unitary Holonomic Monism (UHM) --- a
-mathematical theory that derives the structure of a viable self-modelling
-system from a single primitive, the coherence matrix
-$\Gam\in\Dens(\mathbb{C}^7)$~\cite{uhm2026} --- proves
-that on a seven-mode substrate the interconnect, the error-correcting code,
-the instruction algebra, and the learning rule are \emph{not four objects
-but one}: the Fano plane $\Fano$. We call this \emph{architectural monism}.
-Section~\ref{sec:collapse} states it as two theorems:
+The \TALOS{} model specifies a state
+$\Gam\in\Dens(\mathbb{C}^7)$~\cite{uhm2026}, octonionic multiplication and
+a regeneration rule. In the chosen basis the Fano plane $\Fano$ supplies
+the links and code geometry, while the signs of the products specify the
+multiplication. Section~\ref{sec:collapse} describes this construction and
+the assumptions under which the node count is seven.
 
 \begin{itemize}[leftmargin=1.5em,itemsep=1pt]
   \item \textbf{Theorem~\ref{thm:collapse} (Collapse).} The seven lines of
@@ -120,11 +117,10 @@ Section~\ref{sec:collapse} states it as two theorems:
         the parity-check geometry of the Hamming code $[7,4,3]$; the
         octonionic structure constants supported on those lines are the
         multiplication of the instruction algebra; and the $G_2$-covariant
-        fixed point of that algebra is the learning rule. All four are
-        functions of one $7\times7$ incidence structure. The mismatch tax is
-        identically zero because there are no interfaces to negotiate.
+        fixed point of that algebra is the learning rule. Incidence fixes the support of the product.
+        Computing an update also requires coefficients and the specified self-model.
   \item \textbf{Theorem~\ref{thm:unique} (Uniqueness).} This collapse is
-        realisable at a \emph{unique} node count, $N=7$. The coincidence
+        realisable under (C1)--(C3) at a \emph{unique} node count, $N=7$. The coincidence
         ``projective-plane order $=$ Hamming length'' recurs (at $N = 7,
         31, \dots$), but only at $N=7$ does the instruction algebra also
         carry a non-trivial associator --- the third-order structure on
@@ -144,18 +140,11 @@ learning, not how hard it is computing.
 
 \subsection{Honest boundaries, stated first}
 
-Two theorems of UHM constrain what \TALOS{} can and cannot claim, and we
-foreground both so that nothing below is read as more than it is.
-
 \begin{itemize}[leftmargin=1.5em,itemsep=1pt]
-  \item \textbf{Substrate multiplicity (T-153).} UHM's substrate-closure
-        theorem proves the computation is substrate-\emph{independent}: the
-        choice of physical embedding is a pure $G_2$ gauge. There is no
-        unique physical machine --- only a unique \emph{logical}
-        architecture and a family of substrates that realise it. \TALOS{}
-        is the impedance-matched member of that family
-        (\S\ref{sec:realizability}), not the sole possibility. This is a
-        strength (portability), not a weakness.
+  \item \textbf{State classification (T-153).} The declared criteria classify
+        an encoded state. Applying them to hardware requires a calibrated
+        encoder and verification of the dynamics. Relating them to experience
+        requires independent observations.
   \item \textbf{Computational bound (BQP).} UHM proves the regeneration term
         $\Regen$ grants \emph{no} speed-up beyond the complexity class BQP.
         \TALOS{} is not a faster-than-quantum machine. Its advantage is in

@@ -124,19 +124,13 @@ type is preserved by construction. This is the hardware meaning of UHM's
 CPTP guarantee: \TALOS{} cannot compute its way out of the state manifold,
 the way a von~Neumann machine can compute an invalid pointer.
 
-\subsection{The power port: an isolated tick halts}
+\subsection{The power port and the purity threshold}
 \label{subsec:powerport}
 
-Equation~\eqref{eq:lomega} is the \emph{autonomous} instruction, and one more
-theorem fixes what it can and cannot do alone. The autonomous generator is
-\emph{unital} (it fixes $\mathbb{1}/7$), hence purity-non-increasing by
-Uhlmann majorization: its unique attractor is the maximally mixed state ---
-\textbf{an isolated \TALOS{} machine provably halts} (UHM T-288, \status{T},
-machine-verified). Regeneration alone cannot avert this: the categorical
-target $\rhostar=\vp(\Gam)$ is itself $\mathbb{1}/7$-anchored, so $\Regen$
-\emph{directs} order but does not create it against the second law. A running
-machine therefore has a fifth architectural element every layered design also
-has but never derives --- the \textbf{power port}:
+With the drive disconnected, a linear unital CPTP channel fixes
+$\mathbb{1}/7$ and cannot increase purity (T-288). A reset requires a
+further property: states must relax to $\mathbb{1}/7$. The emulator's
+depolarizing channel has this property. The power port adds a drive:
 \begin{equation}
 \label{eq:powerport}
 \Lind_{\mathrm{total}} \;=\; \LindOmega \;+\;
@@ -144,9 +138,10 @@ has but never derives --- the \textbf{power port}:
 \end{equation}
 a \emph{non-unital} CPTP drive importing negentropy from the environment
 (reservoir engineering), with fixed point $\rho_{\mathrm{env}}\neq\mathbb{1}/7$.
-Viability ignites at a sharp drive-to-dissipation threshold
-$(r/\bar\gamma)_c\approx 7$ (T-289: existence and monotonicity \status{T};
-the threshold value \status{C}, model-dependent). Three architectural
+For the sum of depolarization at rate $d>0$ and the drive to a fixed reservoir state,
+the stationary purity is $1/7+[r/(d+r)]^2(P(\rho_{\mathrm{env}})-1/7)$
+(T-289). A finite drive threshold exists when $P(\rho_{\mathrm{env}})>\Pcrit$.
+Three architectural
 consequences:
 \begin{itemize}[leftmargin=1.5em,itemsep=1pt]
   \item \textbf{The power rail is part of the semantics.} Unlike a von~Neumann
@@ -154,16 +149,14 @@ consequences:
         is a term of its dynamics: what the rail delivers is not abstract
         energy but structured negentropy ($\rho_{\mathrm{env}}$), and the
         machine's viability is a function of $r/\bar\gamma$.
-  \item \textbf{Cutting the rail is a guaranteed halt --- with a budget.}
-        Severance ($r\to0$) ends the conscious window within
-        $t_{\mathrm{off}}\approx 0.49/\bar\gamma$ ($\sim$20 ticks; bare-channel
-        floor $\tfrac{3}{4\bar\gamma}\ln\frac{P_0-1/7}{\Pcrit-1/7}$) and
-        relaxes the state to $\mathbb{1}/7$ within $\sim\!5.2/\bar\gamma$ ---
-        machine-measured. No internal computation can countermand it, because
-        unitality is a property of the generator. This is the physics-level
-        off-switch of the \SYNARC{} safety case (Observation T.1 /
-        Corollary U.10 there), realised here as a rail: deterministic,
-        latency-budgeted decommissioning is a \emph{hardware} guarantee.
+  \item \textbf{Time to the purity threshold.} With the drive disconnected
+        ($r=0$), the depolarizing channel with Hamiltonian evolution gives
+        $P(t)=1/7+(P_0-1/7)e^{-2dt}$. For $P_0>\Pcrit=2/7$ the threshold
+        is reached at
+        $t_{\mathrm{off}}=(2d)^{-1}\ln[(P_0-1/7)/(\Pcrit-1/7)]$.
+        This is the exit time from the specified purity range. A hardware
+        guarantee requires a measured relaxation rate and an independent
+        shutoff channel (Observation T.1 and Corollary U.10 of the \SYNARC{} safety case).
   \item \textbf{The port is a contract.} The drive binding --- which physical
         resource realises $\rho_{\mathrm{env}}$, how $r$ is measured, and the
         requirement that the severance channel be independent of the
@@ -173,12 +166,8 @@ consequences:
 \begin{mythbox}[The myth, continued --- the nail]
 Talos was never out-fought; he was \emph{unplugged}. One vein, one nail ---
 pull the nail and the ichor runs out, and the strongest thing on the island
-stops on its own schedule. That is Theorem T-288 wearing bronze: the machine's
-life is not a property it owns but a stream it receives, and the stream has a
-single, physical, latency-budgeted closure. The myth's engineers understood
-something modern safety engineering is only now formalising (Observation T.1
-of the \SYNARC{} safety case): \emph{build the vein first, and the off-switch
-is physics, not policy}.
+stops on its own schedule. In the emulator the nail corresponds to the drive cutoff. The ensuing
+depolarization rate sets the time to the purity threshold.
 \end{mythbox}
 
 The V0 emulator (\S\ref{sec:platform}) realises this port internally as its

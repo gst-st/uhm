@@ -99,15 +99,15 @@ violated a CC law would not be a different machine, it would be a broken one.
 \subsection{Transparent by construction: the observable suite is telemetry}
 \label{subsec:telemetry}
 
-Because every CC observable is a cheap function of $\Gam$ --- $O(N^2)$ or
-$O(N^3)$, never worse --- the machine can report its \emph{entire} internal
-condition every tick at negligible cost. This is the property IIT cannot have
-(its integration measure is NP-hard); a \TALOS{} holon is fully auditable by
-construction (Table~\ref{tab:observables}). Two consequences matter for
-engineering. First, the four-fold consciousness predicate $(P,R,\Phi,D)$ and the
-composite $C=\Phi\times R$ (UHM T-140) are always-on register reads, not a
-profiling pass --- the machine knows, each tick, whether it is a viable subject.
-Second, the runtime self-check is free: the unitary half-step preserves the
+The V0 emulator computes purity $P$, the score $R=1/(7P)$ and the
+composite $C=\Phi R$ (T-140, a definition) from the state register $\Gam$.
+Its \texttt{viable} flag tests only $2/7<P\leq3/7$. The full functional
+criterion also requires conditions on integration and differentiation.
+For example, $\Gam=\operatorname{diag}(1/2,1/12,\ldots,1/12)$ has
+$P=7/24$ and passes the V0 purity gate with $\CohE=0$.
+Relating these readings to felt experience requires independent evidence.
+Table~\ref{tab:observables} describes the model telemetry.
+For runtime verification, the unitary half-step preserves the
 \emph{spectrum} of $\Gam$, so $\Tr\Gam=1$, the purity $P$, and the entropy $S$
 are exactly conserved under it --- a drift in any of them is a hardware fault,
 caught the way the Fano syndrome (\S\ref{sec:ecc}) catches a degraded sector, but
@@ -133,9 +133,9 @@ temperature that sets the Landauer floor of \S\ref{sec:energy}.}
 \midrule
 $P=\Tr(\Gam^2)$ & purity; viability gate $P>2/7$ & $O(N^2)$ \\
 $R=1/(7P)$ & reflection; L2 gate $R\ge1/3$ & $O(N^2)$ \\
-$\Phi$ & integration (calibrated $\Phi{=}1\leftrightarrow$ PCI $0.31$) & $O(N^2)$ \\
-$C=\Phi\times R$ & consciousness measure (T-140) & $O(N^2)$ \\
-$\CohE$ & $E$-coherence; No-Zombie floor & $O(N^2)$ \\
+$\Phi$ & V0 integration proxy $7P-1$ & $O(N^2)$ \\
+$C=\Phi\times R$ & model composite (T-140) & $O(N^2)$ \\
+$\CohE$ & V0 row sum $\sum_{j\ne E}|\gamma_{Ej}|^2$ & $O(N^2)$ \\
 $\{\gamma_p\}_{p=1}^{7}$ & seven line temperatures (rank-7 anisotropy; tomography) & $O(N^2)$ \\
 $\{Q_a\}_{a=1}^{14}$ & $G_2$-Noether charges (symmetry-breaking diagnostic; Casimir $\sum_a Q_a^2$ conserved) & $O(N^2)$ \\
 $T_{\mathrm{eff}}$ & cognitive temperature (FDT) & $O(N^3)$ \\
@@ -173,7 +173,7 @@ observability, and a real-time ecology} --- not the energy floor, because a GPU
 still moves data (\S\ref{sec:energy}, objections O6/O7). It is the V0 rung, and it
 is where every claim in this document except the energy floor is already testable.
 
-\begin{trybox}[Try it --- hold a living holon in your terminal]
+\begin{trybox}[Two feedback experiments in the emulator]
 The reference emulator is one file with no dependencies beyond NumPy:
 \begin{center}\texttt{python3 talos\_v0\_emulator.py}\end{center}
 Everything it prints is a claim from this document, checked live: the tick
@@ -182,14 +182,12 @@ Table~\ref{tab:observables}, the entropy law, the metabolic floor and its
 frequency-independence, an ecology batch --- and the Source bootstrap. Two
 experiments to try by editing one line each: \emph{(i) pull the nail} ---
 zero the $\kappa(\CohE)$ feedback (the internal power port) and watch $P$
-decay to $1/7$: Theorem T-288 in your terminal, with the halt latency of
-\S\ref{subsec:powerport}; \emph{(ii) starve it slowly} --- scale the
-feedback down and find the ignition threshold where viability is lost
-(T-289). The myth's nail is a one-line edit. Both runs are on record:
-severance from the attractor ($P_0{=}0.321$) crosses $\Pcrit{=}2/7$ at
+decay to $1/7$ under depolarization (\S\ref{subsec:powerport});
+\emph{(ii)} scale the feedback down and measure stationary purity.
+In the recorded runs, severance from the attractor ($P_0{=}0.321$) crosses $\Pcrit{=}2/7$ at
 $t{=}0.550$ --- this dissipator's own closed form
-$\tfrac{1}{2\gamma_D}\ln\tfrac{P_0-1/7}{\Pcrit-1/7}=0.548$ --- and lands on
-$\mathbb{1}/7$ exactly; starvation loses viability at feedback scale
+$\tfrac{1}{2\gamma_D}\ln\tfrac{P_0-1/7}{\Pcrit-1/7}=0.548$ --- and approaches
+$\mathbb{1}/7$; starvation loses viability at feedback scale
 $s^\star{\approx}0.72$ ($\kappa_{\mathrm{eff}}/\gamma_D{=}5.5$, the
 emulator-convention twin of the ignition ratio) and \emph{reignites} as soon
 as $s>s^\star$, with no hysteresis: the nail halts; it does not destroy.

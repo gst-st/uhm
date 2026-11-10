@@ -1,0 +1,21 @@
+\section{Access to a distinction}
+A participant who learns to signal a change in a moving image might perceive a different image, retain its direction for longer, or learn the response key. The explanations agree on a correct button press. They can diverge when the response assignment changes after the perceptual interval. The same difficulty arises when a machine predicts its next error. Its report can depend on a monitored variable, on the prompt, or on examples seen during training. The target of inference and the device used to infer it must be specified separately.
+
+Suppose a deterministic system has preparation states $s\in S$, actions $a$ with updates $T_a$, and a family of readings $r$. A finite action word $w$ acts in chronological order by $T_w$; the empty word acts by identity. Define
+\begin{equation}
+s\sim t\quad\Longleftrightarrow\quad
+ r(T_w s)=r(T_w t)\ \text{for every allowed continuation }(w,r).
+\label{eq:indist}
+\end{equation}
+Assume that prefixing an available action to a continuation is allowed on the stated domain. Then $s\sim t$ implies $T_a s\sim T_a t$. With interventions chosen after intermediate outcomes, include the full record of each allowed adaptive protocol. For a stochastic apparatus equality then concerns distributions of records. Finite experimental data generally estimate these distributions with uncertainty.
+
+\begin{proposition}[Exact recovery]\label{prop:access}
+For a specified attribution $q:S\to L$, there is a decoder $d:S/{\sim}\to L$ satisfying $d([s])=q(s)$ for every $s$ if and only if $q$ is constant on each equivalence class. The decoder, when it exists, is unique on the classes.
+\end{proposition}
+\begin{proof}
+A function on a quotient assigns one value to a class. Conversely the rule $[s]\mapsto q(s)$ is independent of the representative by the constancy assumption. Every class contains a representative, so its value is fixed.
+\end{proof}
+
+For a control, extend $S$ to $S\times\{0,1\}$. Each action changes $s$ as before and preserves the bit, and each reading ignores the bit. For any $s$, both bit values give identical records under every continuation. A decoder returning the bit therefore cannot exist. This is an impossibility for this interface. Whether an actual system has an inaccessible phenomenal difference would require a hypothesis about that system. The distinction between an account of access and an account of feeling is familiar in consciousness research \citep{chalmers1995}. The compiled \source{ActionAccess.lean}{action--observation proof} specializes Proposition~\ref{prop:access} to the Autogeny quotient and checks the silent-bit example.
+
+In a laboratory with typed input and output ports, one can use all closed experimental contexts in place of words. Replacing equivalent components in series or in parallel preserves the records: attach the neighbouring component to the surrounding test, obtaining an allowed test of the replaced component. This gives a composition law on equivalence classes when the laboratory supplies the wiring. A classical register with $n$ symbols and equality filters realizes these principles at every finite $n$. The principles alone leave the carrier and its dimension undetermined. A separate choice of quantum representation is made below.
