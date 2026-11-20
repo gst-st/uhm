@@ -123,7 +123,7 @@ $$
 (\mathcal{A}_{\text{int}}, \mathcal{H}_{\text{int}}, D_{\text{int}}) = \left(\mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C}), \; \mathbb{C}^7, \; D_{\text{Gap}}\right)
 $$
 
-Computing the Connes distance on a manifold uses the **external** Dirac operator $D_M$ of its metric. The finite $D_{\rm int}$ acts on a different factor. No equality of Bures distances and physical spacetime intervals follows from forming this product.
+This finite operator triple is an abstract internal datum on $\mathbb{C}^7$, not a KO-dimension-6 Standard Model fermion bimodule (KO-dimension six is impossible on $\mathbb{C}^7$ by T-65, and the 7D Standard Model bimodule embedding T-178 is withdrawn [✗]). Computing the Connes distance on a manifold uses the **external** Dirac operator $D_M$ of its metric. The finite $D_{\rm int}$ acts on a different factor. No equality of Bures distances and physical spacetime intervals follows from forming this product.
 
 | Level | Metric | Space | Determines |
 |---------|---------|--------------|------------|

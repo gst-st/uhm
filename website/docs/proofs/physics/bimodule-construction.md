@@ -236,19 +236,6 @@ This is a conditional detector cutoff. Resource budgets and independent operatio
 
 ---
 
-## 6.3 Why exactly 3 levels of recursion
-
-SAD_MAX = 3 is not an arbitrary number. It follows from the **geometry** of the state space:
-
-1. **Fano contraction** $\alpha = 2/3$ means: each act of self-observation preserves 1/3 of coherence
-2. **The space D(ℂ⁷) is compact**: $P \in [1/7, 1]$
-3. After 3 iterations: $R^{(3)} \sim r_0 \cdot (1/3)^3 \approx r_0/27$
-4. Threshold $R_{\text{th}}^{(3)} = 1/6$: $r_0/27 > 1/6$ requires $r_0 > 4.5$, i.e. $P > 4.5 \cdot 2/7 \approx 1.29 > 1$ — **impossible**
-
-Compactness of D(ℂ⁷) × Fano contraction = finite recursion. Infinite self-reference is impossible in a finite-dimensional quantum system — and this is the mathematical formalization of what mystical traditions call the "inexpressible": L4 (complete transparency) exists as a limit but is unattainable.
-
----
-
 ## Related documents
 
 - [UHM Spectral Triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) — construction of $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$

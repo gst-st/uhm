@@ -894,11 +894,11 @@ These follow entrywise from the stated equation; the second identity does not im
 
 The instrument (the engine's canonical tick,
 $dt = 0.01$, $g_D = 0.2$, reference self-model at $P = 0.45$) shows the
-portrait in numbers `[С]`: pump strengths $\omega_0 \in \{0, 1, 10\}$ all
+portrait in numbers `[C]`: pump strengths $\omega_0 \in \{0, 1, 10\}$ all
 die into $I/7$ (fluxes $0.0000$), $\omega_0 \in \{100, 500\}$ live at
 $P_\infty = 0.4443 / 0.4493$ with both flows nonzero; the **life/death fold**
 sits at $\omega_0^* \approx 19.5$; below the wall ($P < 2/7$) the pump does
-not help — the gate $g_V = 0$ `[Т]` and the finale is $I/7$. The orbit
+not help — the gate $g_V = 0$ `[T]` and the finale is $I/7$. The orbit
 identity holds at $0.9999$–$1.0000$ across all six sounding couplings, the
 per-voice two-stroke balance to machine zero ($2.6 \cdot 10^{-12}$), and the
 return time after a kick grows $\times 26$ toward the fold ($\tau_{1e}$:
@@ -906,7 +906,7 @@ $0.010$ at $\omega_0 = 500$ against $0.260$ near $\omega_0^*$) — **critical
 slowing**: fragility is proximity to the fold, and the return-time $\tau$ is
 the same quantity that the awakening thread measures as stability.
 
-The fold itself decomposes cleanly `[С]`. On the pump-aligned ray
+The fold itself decomposes cleanly `[C]`. On the pump-aligned ray
 $\Gamma(a) = a\rho^* + (1-a)\,I/7$ both flows are parallel to the ray, so
 the rotation-free dynamics never leaves it, and the purity balance yields the
 fold in closed form: $\omega_0^* = \Lambda^* g_D$ with dimensionless
@@ -959,7 +959,7 @@ Of the 21 frequencies only **10 are distinct**: the degeneracies bind
 couplings into **choirs** that beat as one ($\omega = 1.00$: AD SL DO EO;
 $\omega = 0.60$: AS DL EU; $\omega = 0.40$: LO OU SD; …). The frequencies
 are fixed by the design — the same for every human (the concrete spectrum
-$[0, 0.6, 1.0, 1.6, 3.0, 2.0, 2.4]$ is the engine's pinned constant `[О]`
+$[0, 0.6, 1.0, 1.6, 3.0, 2.0, 2.4]$ is the engine's pinned constant `[D]`
 with the A5-motivated spectral order, $\lambda_E$ highest — the *ordering*
 carries the theory, the numeric values are a calibration convention);
 **which strings sound and how loudly** is fixed by the self-model
@@ -983,7 +983,7 @@ $\Gamma$, not a substance (see
 [two-aspect monism](/docs/consciousness/foundations/two-aspect-monism) and
 substrate closure). The Nāda-Brahma tradition («the world is sound») reports
 the same stationarity from its vibrational side — the chord layer above.
-Status `[И]`: these are structural correspondences between contemplative
+Status `[I]`: these are structural correspondences between contemplative
 report traditions and the model's stationary structure; neither proves the
 other, and the theorem stands on its own. One wrapper is explicitly **not**
 taken over: no cosmological claim «the universe is stationary» is needed
@@ -994,7 +994,7 @@ itself.
 
 The machinery reads the sky as a shared quasi-periodic clock, and every
 instrument window closes only the cycles that fit into it (reference sidereal
-periods `[О]`): a 60-day diary window closes **only the Moon** ($2.196$
+periods `[D]`): a 60-day diary window closes **only the Moon** ($2.196$
 cycles); a year closes the Sun ($1.000$); a century still does not close
 Neptune ($0.607$) or Pluto ($0.403$) — which is why the **epoch shift** of any
 census is structural, not a defect (measured: $\approx 1.1$ points in the

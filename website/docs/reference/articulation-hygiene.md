@@ -32,13 +32,13 @@ For each recurring "self-X" construction in UHM:
 
 | Surface form | Operator $\Phi$ | Trajectory $\Phi^\kappa$ | Terminal $t$ | Source theorem |
 |---|---|---|---|---|
-| self-model / самомодель | $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ | $\varphi^\kappa$ on states | $\rho^* = \varphi(\Gamma)$ | T-96 |
-| self-modelling / самомоделирование | $\varphi$ — categorical map (functor) | iteration in Lindblad dynamics | $\rho^* \in \mathrm{eq}(\mathrm{id}, \varphi)$ | T-96 + T-39a |
+| self-model / самомодель | $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ | $\varphi^\kappa$ on states | $\rho^* = \varphi(\Gamma)$ (conditional on stationary model) | T-96 |
+| self-modelling / самомоделирование | specified state map $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ | iteration in specified GKSL + feedback dynamics | stationary fixed point $\rho^*$ under stated contraction hypotheses | T-96 + T-39a |
 | autopoiesis / автопоэзис | $\mathsf{A}^\mathrm{act}$ (activation) on AC-side | $\mathsf{A}^{\omega^2}$-iteration | $\varepsilon \in \mathrm{Fix}(\mathsf{A}^{\omega^2})$ | 113.T (Diakrisis) |
-| self-observation / самонаблюдение | terminal coalgebra $\Gamma \to F(\Gamma)$ for $F = \varphi$ + reflection-measure $R$ | unfolding of the coalgebra | $\nu F$ — terminal coalgebra; $R \geq 1/3$ | T-126 + T-96 |
-| self-reference / самореференция | endomorphism $h:Y\to Y$ and a weakly point-surjective map $X\to Y^X$ | diagonal construction | a fixed point of $h$ when the surjectivity premise holds; stratification restricts the construction | [Diakrisis, 87.T](https://diakrisis.gst.st/06-limits/06-absoluteness), [Diakrisis, 105.T](https://diakrisis.gst.st/06-limits/10-maximality-theorems) |
-| self-consistency / самосогласованность | equivalence operator $\varphi \simeq \mathrm{id}$ | — (point-level) | equaliser $\rho^* = \varphi(\Gamma)$ | T-96 |
-| self-awareness / самосознание | reflexive measure $R = 1/(7P)$ + Φ-integration | (P, R, Φ, D)-threshold | consciousness predicate $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$ | T-96 + T-126 + T-129 + T-151 |
+| self-observation / самонаблюдение | specified state map $\varphi$ + reflection measure $R = 1/(7P)$ | trajectory of $\varphi^\kappa$ on states | stationary balance $\rho^*$; threshold $R \geq 1/3$ | T-126 + T-96 |
+| self-reference / самореференция | endomorphism $h:Y\to Y$ without fixed points and weakly point-surjective map $X\to Y^X$ | Lawvere diagonal construction | obstruction via depth stratification on nontrivial truth/comprehension objects | [Diakrisis, 87.T](https://diakrisis.gst.st/06-limits/06-absoluteness), [Diakrisis, 105.T](https://diakrisis.gst.st/06-limits/10-maximality-theorems) |
+| self-consistency / самосогласованность | fixed-point condition $\varphi(\Gamma) = \Gamma$ | — (point-level) | stationary state $\rho^*$ under stated model | T-96 |
+| self-awareness / самосознание | reflexive measure $R = 1/(7P)$ + Φ-integration | (P, R, Φ, D)-threshold | declared gate $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$ | T-96 + T-126 + T-129 + T-151 |
 | self-closure / самозамыкание | $\mathsf{M}^\kappa$-iteration on the articulation side | trajectory $\alpha \mapsto \mathsf{M}(\alpha) \mapsto \mathsf{M}^2(\alpha) \mapsto \ldots$ | $\alpha \in \mathrm{Fix}(\mathsf{M})$ | 04.T1, Axi-7 |
 | self-amplification / самоусиление | positive feedback $\Psi$ | $\Psi^k$-iteration | threshold activation value | Diakrisis §kinetic (context) |
 
@@ -80,11 +80,11 @@ Demonstration of the protocol on the key concept.
 > UHM establishes self-modelling through the operator $\varphi$. Self-observation is the system's ability to describe its own state. Autopoiesis is the system's self-reproduction through self-modelling.
 
 **After (operator-based)**:
-> UHM establishes a **categorical map** $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ with a fixed point $\rho^* = \varphi(\Gamma)$ (T-96). **Reflection** of the system relative to its own state is formalised as a **terminal coalgebra** structure on the $\Gamma$-dynamics, characterised by the measure $R = 1/(7P)$ (T-126). **Closure under the $\varphi$-trajectory** (on the dual AC-side, an $\mathsf{A}$-fixed point at level $\omega^2$ per 113.T Diakrisis) — trajectory reproduction without external maintenance.
+> UHM specifies a **state map** $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ together with a stationary condition $\rho^* = \varphi(\Gamma)$ under the stated dynamical model (T-96). **Reflection** relative to the canonical reference is quantified by the Hilbert–Schmidt projection $R = 1/(7P)$ (T-126). **Closure under the $\varphi$-trajectory** (on the dual AC-side, an $\mathsf{A}$-fixed point at level $\omega^2$ per 113.T Diakrisis) expresses trajectory maintenance relative to the declared process.
 
-The operator-based content is **identical** to the rhetorical version. But:
-1. Every element is explicitly typed ($\varphi$ is an operator, $\rho^*$ a state, $R$ a measure, iteration a trajectory).
-2. The describing and described positions are separated ($\Gamma$ and $\varphi(\Gamma)$ are distinct points in $\mathrm{D}(\mathbb{C}^7)$, connected by the fixed-point equation but structurally distinct).
+The operator-based form makes the mathematical inputs explicit:
+1. Every element is explicitly typed ($\varphi$ is a specified map on states, $\rho^*$ a stationary state, $R$ a scalar measure, iteration a trajectory).
+2. The describing and described positions are separated ($\Gamma$ and $\varphi(\Gamma)$ are distinct points in $\mathrm{D}(\mathbb{C}^7)$, connected by the stationary equation under explicit hypotheses).
 3. The protocol is compatible with Noesis hygiene verification (NO-19): the factorisation is explicit.
 
 ## Relation to other documents
@@ -94,14 +94,6 @@ The operator-based content is **identical** to the rhetorical version. But:
 - In the external Diakrisis corpus, theorem 105.T uses its depth-stratification axiom `Diakrisis T-2f*` for paradoxes reducible to the Yanofsky diagonal scheme. [Theorem 105.T](https://diakrisis.gst.st/06-limits/10-maximality-theorems)
 - UHM [`/proofs/categorical/formalization-phi`](/docs/proofs/categorical/formalization-phi) — source-level formalisation of the $\varphi$-operator.
 
-## Refactoring plan
-
-1. **Phase A** (this document + `self-observation.md` refactor) — protocol established, canonical example given.
-2. **Phase B** — sweep over Tier-1 files (from the Tier-1 list above), applying the table.
-3. **Phase C** — Tier-2 (status registry and summary) and Tier-3 (proof files).
-
-Each phase is a separate commit with an audit (count of replaced "self-X", verification that theorem statements are not touched, build check).
-
 ## Note
 
-The protocol does not revoke existing UHM theorems — all T-1..T-223+ remain formally correct. The refactor is **interface-level**, affecting only the prose layer. The formal core ($\varphi$, $\mathcal{L}_\Omega$, T-96, T-190, T-223) already operates in operator language; hygiene synchronises the surface with the core.
+The protocol operates strictly at the interface and prose layer and does not override the status registry: authoritative statuses, premises and retractions (`[✗]`) are governed solely by [Status of results](./status-registry). Formal statements in the operational core ($\varphi$, $\mathcal{L}_\Omega$, T-96, T-126) are already typed in operator language; hygiene keeps descriptive prose aligned with the registry.

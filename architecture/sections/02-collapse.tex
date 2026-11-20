@@ -47,10 +47,13 @@ Lindbladian $\LindOmega$. Then:
         a line (the Fano selection rule). The multiplication table of the
         instruction is the line incidence of $\mathsf{N}$.
   \item[\textbf{(L4)}] \emph{Learning.} The regeneration term $\Regen$ drives
-        $\Gam$ to $\rhostar=\vp(\Gam)$, and the entire flow is covariant under
-        $G_2=\mathrm{Aut}(\Oct)$, whose action on the seven modes has
-        $\mathsf{N}$ as its orbit incidence ($G_2$-rigidity). The fixed-point
-        (learning) rule is a function of the same $\mathsf{N}$.
+        $\Gam$ toward the fixed target $\rhostar=\vp(\Gam)$, and the coordinate
+        Fano dissipator is covariant under the discrete collineation group
+        $\mathrm{Aut}(\mathsf{N})\cong \mathrm{PSL}(2,7)$ (order~$168$) and
+        diagonal phase rephasing $U(1)^7\rtimes \mathrm{Aut}(\mathsf{N})$
+        (whereas continuous $G_2$ rotates the coordinate basis and does not
+        preserve the fixed seven-line Fano partition). The stationary balance
+        and repair channels are functions of the same $\mathsf{N}$.
 \end{enumerate}
 Hence $\mathrm{L1}=\mathrm{L2}=\mathrm{L3}=\mathrm{L4}$ as functions of
 $\mathsf{N}$. \hfill$\square$
@@ -137,64 +140,73 @@ unique node count: $N=7$.
 \end{theorembox}
 
 \begin{theorem}\label{thm:unique}
-Require three integer conditions to hold at the same $N$:
+Require the binary incidence of an $N$-node projective plane to fuse with a
+perfect binary single-error-correcting Hamming code:
 \begin{itemize}[leftmargin=1.6em,itemsep=0pt]
-  \item[\textbf{(C1)}] $N$ is the order of a genuine projective plane:
-        $N=q^2+q+1$ for a prime power $q\ge 2$ \emph{(so the interconnect is a
-        symmetric $S(2,q{+}1,N)$ design of $N$ line-buses)};
-  \item[\textbf{(C2)}] $N$ is a perfect Hamming length: $N=2^r-1$
-        \emph{(so the incidence is a perfect single-error-correcting code)};
-  \item[\textbf{(C3)}] $N$ is the imaginary dimension of a normed division
-        algebra with a \emph{non-zero associator} \emph{(so the instruction
-        algebra carries genuine third-order, non-associative structure)}.
+  \item[\textbf{(C1)}] $N=q^2+q+1$ is the point count of a Desarguesian
+        projective plane $\mathrm{PG}(2,q)$ over $\mathbb{F}_q$ ($q$ a prime
+        power, $q\ge 2$), with binary incidence matrix $M\in\mathbb{F}_2^{N\times N}$;
+  \item[\textbf{(C2)}] $N=2^r-1$ ($r\ge 2$) and the binary row space of $M$
+        realises the Hamming $[2^r{-}1, 2^r{-}1{-}r, 3]$ parity-check geometry
+        (in particular $\dim_{\mathbb{F}_2}\ker(M) > 1$);
+  \item[\textbf{(C3)}] \emph{(Compatibility with third-order instruction algebra)}
+        $N$ equals the imaginary dimension of a normed division algebra with
+        non-zero associator ($\Oct$, Hurwitz's theorem).
 \end{itemize}
-Then $N=7$ uniquely.
+Then \textbf{(C1)}$\cap$\textbf{(C2)} already forces $N=7$ ($q=2, r=3$)
+uniquely over all prime powers $q\ge 2$, and this unique solution coincides
+with \textbf{(C3)}.
 \end{theorem}
 
 \begin{proof}
-\textbf{(C3) alone forces $7$.} By Hurwitz's theorem the normed division
+\textbf{Odd prime powers $q$ fail binary Hamming fusion.}
+For every odd prime power $q$, the point count $N=q^2+q+1$ is odd and the
+incidence matrix $M$ of $\mathrm{PG}(2,q)$ obeys $MM^T = q I_N + J_N \equiv
+I_N + J_N \pmod 2$. Over $\mathbb{F}_2$ in odd dimension $N$, the matrix
+$I_N+J_N$ has rank $N-1$ (its kernel is the one-dimensional all-ones line
+$\{0, \mathbf{1}\}$). Hence $\operatorname{rank}_{\mathbb{F}_2}(M)\ge N-1$
+and $\dim_{\mathbb{F}_2}\ker(M)\le 1$: the binary incidence code is trivial
+and never realises a Hamming $[N, N-r, 3]$ code. In particular, at the bare
+integer coincidence $q=5, N=31=2^5-1$, direct Gaussian elimination over
+$\mathbb{F}_2$ gives $\operatorname{rank}_{\mathbb{F}_2}(M_{\mathrm{PG}(2,5)})=30$
+and $\dim_{\mathbb{F}_2}\ker(M_{\mathrm{PG}(2,5)})=1$ (machine-checked in
+Lean~4, \texttt{FoundationalBounds.pg2\_5\_refutes\_N31\_hamming\_fusion}),
+rather than the rank-$5$ / dimension-$26$ Hamming $[31,26,3]$ code.
+
+\textbf{Even prime powers $q=2^m$ ($m\ge 1$) force $m=1, r=3, N=7$.}
+Substituting $q=2^m$ into $q^2+q+1=2^r-1$ yields
+\[
+2^{2m}+2^m+2 = 2^r.
+\]
+For $m\ge 2$, both $2^{2m}$ and $2^m$ are divisible by $4$, so the left-hand
+side is congruent to $2\pmod 4$ while $2^r\equiv 0\pmod 4$ for every $r\ge 2$
+(and $r=2$ gives $2^{2m}+2^m+2\ge 22 > 4$), a contradiction
+(\texttt{FoundationalBounds.pg2EvenHammingUniqueSeven}). Thus $m=1$, $q=2$,
+$r=3$, and $N=7$, where $\operatorname{rank}_{\mathbb{F}_2}(M_{\mathrm{PG}(2,2)})=4$
+and $\dim_{\mathbb{F}_2}\ker(M_{\mathrm{PG}(2,2)})=3$ gives the Hamming $[7,4,3]$
+dual parity geometry.
+
+\textbf{Coincidence with (C3).} By Hurwitz's theorem the normed division
 algebras are $\mathbb{R},\mathbb{C},\mathbb{H},\Oct$ of dimensions $1,2,4,8$,
-with imaginary parts of dimension $0,1,3,7$. Of these only $\Oct$ is
-non-associative (its associator $[x,y,z]\ne 0$); the others are associative,
-so their trilinear form is degenerate and no third-order structure exists.
-Hence (C3) $\Rightarrow N=7$.
+and only $\Oct$ (imaginary dimension $7$) has a non-zero associator. Thus the
+unique binary plane-code fusion $N=7$ agrees identically with \textbf{(C3)}.
+\end{proof}
 
-\textbf{(C1)$\cap$(C2) recurs, but only $7$ survives (C3).} The Diophantine
-equation $q^2+q+1=2^r-1$ has integer solutions $q\in\{2,5,90\}$, i.e.\
-$N\in\{7,31,8191\}$ (exhaustively for $q\le 200$). Of these, only $q=2,5$ are
-prime powers, so only $N=7,31$ are orders of \emph{genuine} projective planes
-($q=90$ is not a prime power, so $\mathrm{PG}(2,90)$ is not a Galois plane and
-$N=8191$ is a bare integer coincidence, not an interconnect). Thus the
-network-\emph{is}-code coincidence recurs at $N=7$ and $N=31$ --- seven is not
-the only place a fabric can be a Hamming code. But
-$\{7,31,8191\}\cap\{0,1,3,7\}=\{7\}$: of every coincidence, only seven is a
-division-algebra imaginary dimension, and (by the paragraph above) only seven
-is \emph{non-associative}. The intersection of all three conditions is
-$\{7\}$. \end{proof}
-
-\begin{remark}[The tie-break is the third-order principle]
-The content of Theorem~\ref{thm:unique} is that the associator is the
-discriminator. Among the node counts where the fabric can \emph{be} the code
-($7,31,8191$), only seven also lets the instruction genuinely live on
-\emph{triples} rather than pairs --- the UHM third-order principle, which
-proves that pairwise structure is Fano-blind and that structure begins at
-three. At $N=31$ or $8191$ one may still fuse interconnect and ECC, but the
-instruction algebra collapses to an associative (pairwise) one and the
-learning rule loses its cubic generator: the four-fold collapse fails. The
-degenerate candidate $N=3$ (the quaternions) is excluded twice over ---
-quaternions are associative, and $q=1$ is not a projective plane. Seven is
-the only integer at which a network, a code, a non-associative instruction,
-and a covariant fixed point are one thing.
+\begin{remark}[No tie-break needed at $N=31$]
+The bare arithmetic coincidence $5^2+5+1=31=2^5-1$ does \emph{not} fuse
+$\mathrm{PG}(2,5)$ with the binary Hamming $[31,26,3]$ code: over $\mathbb{F}_2$
+every odd-order projective plane collapses to rank $N-1$ (a one-dimensional
+repetition kernel). Consequently, binary interconnect--ECC fusion alone selects
+$N=7$ uniquely across all prime powers $q\ge 2$, and Hurwitz's non-associative
+condition \textbf{(C3)} independently lands on the exact same integer $7$.
 \end{remark}
 
-\begin{remark}[Relation to UHM's minimality proofs]
-UHM already proves $N=7$ from consciousness (the seven-dimensionality
-minimality theorem) and from algebra (the octonionic derivation and
-$G_2$-rigidity). Theorem~\ref{thm:unique} is a \emph{third, independent}
-route to the same integer, native to computer architecture: it asks only
-that a machine's network be its code and its instruction be third-order, and
-derives seven. That three unrelated demands --- a viable mind, a division
-algebra, and a self-correcting third-order computer --- land on the same
-number is itself the strongest evidence that seven is structural rather than
-chosen. \status{T}
+\begin{remark}[Relation to UHM's operational reconstruction]
+In the operational reconstruction of UHM (\texttt{AddressFusion.lean} and
+\texttt{DimensionPinch.lean}), $N=7$ and $k=3$ are derived from independent
+fault count $N$ and address width $k$ via exact syndrome decoding
+($N+1\le 2^k$), bipolar visibility ($2^k\le 8$), and nontrivial perfect
+single-fault packing ($N+1\ge 8$). Theorem~\ref{thm:unique} provides a second,
+purely projective-coding proof of the same integer $N=7$, verified in Lean~4
+with zero custom axioms. \status{T}
 \end{remark}

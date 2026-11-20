@@ -117,7 +117,7 @@ systematically absent, and they are exactly the seven UHM supplies as mathematic
 4. **dynamics as first-class** — the three-flow decomposition of ℒ_Ω, T-262 [T];
 5. a **self-model with an anti-Goodhart theorem** — φ(Γ), T-96/T-191 [T]; T-222 [T] adds that no resource vector can stand in for the target, since the viable window has no resource optimum;
 6. an **exact block-purity identity with an explicit comparison** — T-77 [T]; operational benefit remains a separate obligation;
-7. a **depth ceiling with a federation rule** — T-142 [Т/С].
+7. a **depth ceiling with a federation rule** — T-142 [T/C].
 
 The rest of this page states the meta-specification (§3–§14), runs it through three
 worked designs (§15–§17), proves the subsumption table (§18), and attacks it (§19).
@@ -811,7 +811,7 @@ Nym, Ethereum or any real deployment — they are demonstrations that the calcul
 | Three-flow dynamics; silver feeding floor; halt/reignition | [T]/[C] import | T-262, T-259, T-288/289; HL12 |
 | Self-model functor, tower convergence, anti-Goodhart | [T] import + [D] rule | T-96, T-191; §8 |
 | Two-block pinching identity; no operational gain theorem | [T] identity; finite numerical check | T-77; HL11 (240/240 PSD, trace-one states) |
-| Depth ladder and ceiling 3 | [Т/С] import | T-142; HL02 |
+| Depth ladder and ceiling 3 | [T/C] import | T-142; HL02 |
 | Pairwise monitoring is structure-blind; probe triads | [T] import | T-226; HL13 |
 | Three worked designs land in the window; ablations break their own invariant | DESIGN | HL04–HL06 |
 | Mixnet arithmetic: f^ℓ, trilemma, knee at 3 | VERIFIED + external [T] | HL08 |

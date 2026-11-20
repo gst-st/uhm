@@ -138,7 +138,7 @@ A positive rate alone does not make this operator contractive. A spectral gap of
 ### Dynamical reading of the threshold: the basin boundary {#динамическое-чтение-порога}
 
 The threshold $P_{\mathrm{crit}} = 2/7$ enters T-124 as a static inequality. The
-canonical flow gives it a second, dynamical face `[С]`: in the bistable regime
+canonical flow gives it a second, dynamical face `[C]`: in the bistable regime
 (a grey attractor beside a living one) the **boundary between the two basins**
 converges to exactly $2/7$ in the fast-clock limit. Measured on the canonical
 tick with a continuous family of starting mixtures (the self-model grid would
@@ -154,7 +154,7 @@ $$
 
 with the limit $C \approx 1.70$. The coefficient is in **closed form**: for the
 rotation-free part of the flow every stationary point lies on the segment
-$[\,\mathrm{grey}, \rho^*\,]$ (collinearity of $\dot\Gamma = 0$ — exact `[Т]`),
+$[\,\mathrm{grey}, \rho^*\,]$ (collinearity of $\dot\Gamma = 0$ — exact `[T]`),
 the saddle's pure-component weight is universally $w = 1/\sqrt6$, and
 
 $$
@@ -168,7 +168,7 @@ $B_\psi = 0.17970$ against the engine's $0.1797$) — the coefficient carries
 **no fitted parameter at all**. Checked against
 direct boundary measurements at three self-model purities (two never used in
 calibration): $C$ swings twofold ($2.33 \to 1.16$) and the formula tracks it
-to under $1\,\%$ `[С]`. The once-tempting constant $12/7$ is dead: $C$ is a
+to under $1\,\%$ `[C]`. The once-tempting constant $12/7$ is dead: $C$ is a
 function of the self-model, and $1.71$ was its accidental value at
 $P_\rho = 0.45$. <p align="center">
   <img class="themedImage themedImage--light" alt="The boundary law and the mid-regime geometry" src="/img/theory/boundary-en-light.svg" width="880"/>

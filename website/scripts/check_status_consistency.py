@@ -553,7 +553,7 @@ RELY_BEFORE = re.compile(
     r"conditional on|depends on|decomposition|construction|equivalence|theorem|lemma)"
     r"|(?<![\w-])(?:по|из|согласно|в силу|благодаря|следует из|через|на основе|опирается на|опираясь на|"
     r"с опорой на|используя|использует|при|при условии|условии|дают|даёт|дает|на|в|от|"
-    r"декомпозици\w*|конструкци\w*|эквивалентност\w*|теорем\w*|лемм\w*))"
+    r"декомпозици\w*|конструкци\w*|эквивалентност\w*|теорем\w*|лемм\w*)|\+)"
     r"\s+(?:the\s+|теорем[аеыуой]+\s+|леммы?\s+|lemma\s+|theorem\s+|Theorem\s+|Lemma\s+|\*\*|\[)*$", re.I)
 RELY_BRACKET = re.compile(r"\[[TCHТСГ](?:\s+at|\s+при)?,?\s*$|\(\s*(?:see\s+|см\.\s+|cf\.\s+)?$")
 RELY_AFTER = re.compile(
