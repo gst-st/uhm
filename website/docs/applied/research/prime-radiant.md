@@ -1,82 +1,82 @@
 ---
 sidebar_position: 11
 title: Prime Radiant
-description: "The golden-path navigator over Γ: two floors of residues (quadratic mod 7 and Cauchy), a working reference machine on the canonical dynamics, the categorical-calibration protocol (66 machine-tested hypotheses), the honest limits of prediction (navigator, not prophet), and the ranked application cases."
+description: "A trajectory-navigation prototype over Γ: two floors of residues (quadratic mod 7 and Cauchy), a working reference machine on the canonical dynamics, a 66-hypothesis calibration table, honest forecast boundaries, and ranked application cases."
 ---
 
-# The Prime Radiant: a golden-path navigator over Γ
+# The Prime Radiant: a trajectory navigator over Γ
 
 :::info What this document is
-UHM already fixes a state space ($\Gamma \in \mathcal{D}(\mathbb{C}^7)$), a law ($\mathcal{L}_\Omega$), cheap observables ($P$, $R$, $\Phi$, $C$, $\sigma_k$, Gap), thresholds ($2/7$, $1/3$, $1$, $2$) and a transfer engine that reads persons, organizations, machines and markets into the same $\Gamma$ ([Domain Transfer](/docs/applied/research/domain-transfer)). This document assembles those parts into a **solver**: a machine that (i) *encodes* a situation, (ii) *diagnoses* it with an address, (iii) *searches paths* to a goal region, and (iv) *reports what fraction of paths is golden* — with every claim printed as a measured number by a reference implementation ([§3, the machine](#машина)). The name honors Asimov's device — and §6 states precisely which half of the fantasy survives contact with the theorems. The method throughout is **categorical calibration** (§5): a symbolic system is exactly as good as its ability to describe the computational model of reality, so every symbol here earns — or loses — its number in a re-runnable table.
+UHM fixes a state space ($\Gamma \in \mathcal{D}(\mathbb{C}^7)$), a dynamical law ($\mathcal{L}_\Omega$), computable observables ($P$, $R$, $\Phi$, $C$, $\sigma_k$, Gap), formal thresholds ($2/7$, $1/3$, $1$, $2$), and a cross-domain transfer template ([Domain Transfer](/docs/applied/research/domain-transfer)). This document assembles those parts into a **prototype solver**: a numerical engine that (i) *encodes* a declared task state, (ii) *diagnoses* single-axis degradation with an exact syndrome address, (iii) *searches control trajectories* toward a target region, and (iv) *estimates reachability probabilities* via Monte Carlo rollouts — with every numerical claim printed by a re-runnable reference implementation ([§3, the machine](#машина)). The method throughout is **quantitative calibration** (§5): any symbolic or structural mapping earns — or fails — its status in an automated test table.
 :::
 
 ## §1. The door and the claim {#дверь}
 
-The proposal is a solver for explicitly encoded tasks under a specified dynamical and observation model [H/Pr]. No universal solver or point-prediction impossibility follows from a Hessian zero mode. A locally Lipschitz deterministic flow has a unique trajectory for a known initial state; uncertainty, observability, chaos and control policies determine the actual forecast limits. The following architecture must be read with those conditions.
+The proposal is a solver for explicitly encoded tasks under a specified dynamical and observation model `[H]`/`[Pr]`. No universal solver or point-prediction impossibility follows from a Hessian zero mode. A locally Lipschitz deterministic flow has a unique trajectory for a known initial state; uncertainty, observability, chaos, and control policies determine the actual forecast limits. The following architecture must be read with those conditions.
 
-1. **A declared encoding.** Seven-role state features can be proposed for a task, but their observation law, information loss and retained targets must be validated separately at each scale. An encoder is not automatically a functor or an identifiable physical state.
-2. **A specified objective and dynamics.** A chosen viable window may be used as a control target. Neither every admissible field nor every initial state reaches it; invariant domains, attainable controls, resources and attractor conditions must be established for the actual model.
-3. **Calibrated forecasts and policy options.** Predictions for individuals and ensembles both require a specified observation model and uncertainty. Navigation is a product policy, not a universal categorical prohibition on individual prediction.
+1. **A declared encoding.** Seven-role state features can be proposed for a task, but their observation law, information loss, and retained targets must be validated separately at each scale. An encoder is not automatically a functor or an identifiable physical state.
+2. **A specified objective and dynamics.** A chosen viable window may be used as a control target. Neither every admissible field nor every initial state reaches it; invariant domains, attainable controls, resources, and attractor conditions must be established for the actual model.
+3. **Calibrated forecasts and policy options.** Predictions for individuals and ensembles both require a specified observation model and uncertainty quantification. Policy navigation is a design choice, not a universal categorical prohibition on individual prediction.
 
-A common seven-role notation is a proposed effective architecture [D/I], not proof that different physical scales share a lossless state space or a predictive law. Each domain needs an identifiable observation model and independent held-out validation. The universe-as-holon reading is an ontological interpretation [I/H]; it does not certify the solver. The calibration table concerns only the specified prototype.
+A common seven-role notation is a proposed effective architecture `[D]`/`[I]`, not proof that different physical scales share a lossless state space or a predictive law. Each domain needs an identifiable observation model and independent held-out validation. The universe-as-holon reading is an ontological interpretation `[I]`/`[H]`; it does not certify the solver. The calibration table concerns only the specified prototype.
 
-Everything below is built from three existing research programs — the [Γ-canon](https://homohologra.ph/research/gamma-canon) (the symbolic layer and the П4 oracle protocol), the [Σ-calculus](/docs/applied/research/syndrome-calculus) (diagnosability rigidity T-224/T-225), and [Coherence Cybernetics](/docs/applied/coherence-cybernetics/definitions) (the $\sigma$-panel and interventions) — plus two floors of mathematics that the solver runs on (§2).
+Everything below integrates three components of the corpus — the [Σ-calculus](/docs/applied/research/syndrome-calculus) (diagnosability rigidity `T-224` `[T]`, diagnostic pyramid `T-225` `[C]`), [Coherence Cybernetics](/docs/applied/coherence-cybernetics/definitions) (the `T-92` `[D]` stress panel and control interventions), and [Domain Transfer](/docs/applied/research/domain-transfer) (structured cross-domain templates `[I]`/`[Pr]`) — atop two mathematical residue constructions (§2).
 
 ## §2. The two floors of residues {#вычеты}
 
-The word *residue* names the solver's core mathematics twice, and the coincidence is instructive: both floors extract a **local address from a closed circuit**.
+The word *residue* names two distinct mathematical tools used by the solver, both extracting a **local address from a closed structure**.
 
-### 2.1 The arithmetic floor: quadratic residues mod 7 [T] {#арифметический-этаж}
+### 2.1 The arithmetic floor: quadratic residues mod 7 `[T]` {#арифметический-этаж}
 
-The quadratic residues modulo 7 are $QR(7) = \{1, 2, 4\}$ — the squares $1^2, 3^2, 2^2 \bmod 7$. The corpus already rests on them once: $N_{\text{gen}} = |QR(7)| = 3$ [T]. The solver rests on them completely, because **the entire Fano wiring is their arithmetic**:
+The quadratic residues modulo 7 are $QR(7) = \{1, 2, 4\}$ — the nonzero squares $1^2, 3^2, 2^2 \bmod 7$. The entire canonical Singer cyclic Fano wiring is their modular arithmetic:
 
-- $QR(7)$ is a $(7,3,1)$ *perfect difference set*: every nonzero residue arises exactly once as a difference of two elements. Hence the seven translates $\{1,2,4\}+k \bmod 7$ are seven triples in which every pair of points lies on exactly one triple — the Fano plane, wired by addition [T].
-- In the corpus numbering ($A{=}1, S{=}2, D{=}3, L{=}4, E{=}5, U{=}6, O{=}7$ — note $U{=}6$, $O{=}7$: the arithmetic numbering **swaps U and O relative to the display order** $A,S,D,L,E,O,U$) the translates reproduce the seven named lines of [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) exactly: $\{A,S,L\}, \{S,D,E\}, \{D,L,U\}, \{L,E,O\}, \{A,E,U\}, \{S,U,O\}, \{A,D,O\}$ — machine-checked 7/7 (H03).
-- The *multiplier theorem* in miniature: $2 \in QR(7)$, so $x \mapsto 2x$ maps the difference set to itself and therefore permutes the seven lines — this **is** the $\mathbb{Z}_3$ Frobenius symmetry of the [selection rules](/docs/physics/gauge-symmetry/fano-selection-rules), and its orbit structure on lines is $1+3+3$ (H04).
-- The three lines through the clock voice $O$ pair the remaining six voices as $(A,D), (S,U), (L,E)$ [T] (H10) — the pairing that underlies the sectoral split of [Spacetime](/docs/core/foundations/spacetime#секторная-декомпозиция).
-- The same triples are the weight-3 codewords of Hamming $H(7,4)$: a single-axis fault *is its own address* (the syndrome equals the binary of the axis; H09, and in depth [Σ-calculus §4](/docs/applied/research/syndrome-calculus#теорема-сигма)). The corpus uses two coordinatizations of this one object — the XOR labeling of the Σ-calculus and the octonionic/QR labeling of the selection rules; the machine finds the dictionary between them, and it is the tidy involution $3 \leftrightarrow 4,\; 5 \leftrightarrow 6$ on labels (H07).
+- $QR(7)$ is a $(7,3,1)$ *perfect difference set*: every nonzero residue mod 7 arises exactly once as a difference of two elements. Hence the seven cyclic translates $\{1,2,4\}+k \bmod 7$ form seven triples in which every pair of points lies on exactly one triple — the projective plane $\mathrm{PG}(2,2)$ (`[T]`).
+- Under the Singer cyclic arithmetic numbering $(A,S,D,L,E,U,O) = (1,2,3,4,5,6,7)$ (note $U=6$, $O=7$ relative to the display order $A,S,D,L,E,O,U$), the seven translates reproduce the canonical Singer cyclic Fano lines of [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) verbatim: $\{A,S,L\}$, $\{S,D,E\}$, $\{D,L,U\}$, $\{L,E,O\}$, $\{E,U,A\}$, $\{U,O,S\}$, $\{O,A,D\}$ — machine-checked 7/7 (H03).
+- *Multiplier symmetry*: $2 \in QR(7)$, so $x \mapsto 2x \pmod 7$ maps the difference set to itself and permutes the seven lines — this is the $\mathbb{Z}_3$ Frobenius symmetry of the [selection rules](/docs/physics/gauge-symmetry/fano-selection-rules), with line-orbit decomposition $1+3+3$ (H04).
+- The three lines through $O$ ($\{L,E,O\}$, $\{U,O,S\}$, $\{O,A,D\}$) partition the remaining six axes into the three pairs $(A,D)$, $(S,U)$, $(L,E)$ `[T]` (H10).
+- The same seven triples are the weight-3 codewords of Hamming $H(7,4)$: a single-axis fault *is its own syndrome address* (H09; in depth, [Σ-calculus §4](/docs/applied/research/syndrome-calculus#теорема-сигма)). Explicitly, mapping the Singer cyclic indices $(1,2,3,4,5,6,7) = (A,S,D,L,E,U,O)$ to nonzero 3-bit vectors via the permutation $(3\,4)(5\,6\,7)$ — i.e. $A\mapsto 001$, $S\mapsto 010$, $D\mapsto 100$, $L\mapsto 011$, $E\mapsto 110$, $U\mapsto 111$, $O\mapsto 101$ (equivalently $\alpha^{k-1}$ in $\mathbb{F}_2[x]/(x^3+x+1)$) — makes the XOR sum vanish identically on every one of the seven canonical lines (H07).
 
-So the arithmetic floor gives the solver its **diagnosis organ**: where the pattern is broken, the broken lines *spell out the address* — no search required. That is the practical content of «a world woven on a self-checking alphabet complains with an address».
+Thus the arithmetic floor supplies the solver's **diagnostic organ**: when a single axis degrades, the broken line-checks directly encode its binary address without search.
 
-### 2.2 The analytic floor: Cauchy residues of the resolvent [T] {#аналитический-этаж}
+### 2.2 The analytic floor: Cauchy residues of the resolvent `[T]` {#аналитический-этаж}
 
-The second floor is the residue calculus of complex analysis, entering through the **resolvent** $(z - \Gamma)^{-1}$. For Hermitian $\Gamma$ with spectral decomposition $\Gamma = \sum_j \lambda_j P_j$:
+The second floor is complex contour integration via the **resolvent** $(z - \Gamma)^{-1}$. For Hermitian $\Gamma$ with spectral decomposition $\Gamma = \sum_j \lambda_j P_j$:
 
 $$
 \frac{1}{2\pi i}\oint_{\mathcal{C}} f(z)\,(z-\Gamma)^{-1}\,dz \;=\; \sum_{\lambda_j \in \mathrm{int}\,\mathcal{C}} f(\lambda_j)\,P_j ,
 $$
 
-the sum of the residues of the resolvent inside the contour. Every observable of the theory is a functional of such objects: spectral projectors ($f \equiv 1$), entropy and $D_{\text{diff}}$ ($f = -z\log z$, on a cut-avoiding contour), Gibbs weights ($f = e^{-\beta z}$), the Gap spectrum on the $E$-sector, filtered subspaces for the [reflection tower](/docs/consciousness/hierarchy/interiority-hierarchy). The reference machine implements the contour engine and verifies it against direct diagonalization to machine precision: projector idempotence $|P^2 - P| \sim 10^{-17}$, completeness $|\sum_j P_j - I| \sim 10^{-16}$, $\operatorname{tr} e^{-2\Gamma}$ agreeing to $10^{-15}$ (H11–H15). At $7\times 7$ this engine is a luxury; at the composite scales of v1 ($49$-dimensional pair spaces, ecologies) contour extraction of *one needed cluster* without full diagonalization is the standard scalable method (FEAST-class), and the solver is born with it.
+the sum of the residues of the resolvent inside $\mathcal{C}$. Matrix functionals of $\Gamma$ follow directly from this representation: spectral projectors ($f \equiv 1$), von Neumann entropy $S(\Gamma)$ and spectral effective rank $D_{\mathrm{eff}}(\Gamma) = e^{S(\Gamma)}$ ($f = -z\log z$, on a branch-cut-avoiding contour), Gibbs weights ($f = e^{-\beta z}$), and filtered subspaces for multi-scale analysis. The reference machine implements this contour engine and verifies it against direct diagonalization to machine precision: projector idempotence $|P^2 - P| \sim 10^{-17}$, completeness $|\sum_j P_j - I| \sim 10^{-16}$, and $\operatorname{tr} e^{-2\Gamma}$ matching to $10^{-15}$ (H11–H15). At $7\times 7$, contour integration is an exactness check; at composite dimensions ($49$-dimensional pair spaces and larger networks), FEAST-class contour extraction of a target spectral cluster avoids full diagonalization.
 
-### 2.3 The residue principle [I] {#принцип-вычета}
+### 2.3 The residue principle `[I]` {#принцип-вычета}
 
-Why do two unrelated mathematics share one name here? Both floors perform the same gesture: **walk a closed circuit, and what survives the cancellation is a local invariant** — the difference-set count that names a faulty axis; the contour integral that names an eigenspace. This is also the Gap-as-holonomy gesture of the corpus (go around a loop, return changed, read the change — [Universe as Holonom](/docs/core/foundations/universe-as-holonom)). As an interpretation [I], the solver's motto: *обойди контур — получи адрес*; the circuit is the computation.
+Both floors share a single structural pattern: **evaluate a closed invariant to isolate a local coordinate** — the difference-set syndrome naming a degraded axis, and the Cauchy contour integral isolating an eigenspace. As an interpretation `[I]`, this parallels the holonomy perspective of [Universe as Holonom](/docs/core/foundations/universe-as-holonom): *traverse the contour, extract the address*.
 
 ## §3. The machine {#машина}
 
-The machine exists twice, deliberately. The **reference** is a numpy-only implementation — deterministic, self-verifying; a sibling of the [TALOS v0 emulator](/docs/applied/research/engineering-insights) whose canonical tick it reuses. The **instrument** is a Rust implementation with a live TUI (ratatui): eight tabs (Holon dashboard with the $|\Gamma|$ heatmap and σ-panel, Atlas, Oracle, Pair, Ensemble, Reading, Calibration, Help), spectrum-preserving dial controls, bold-mode, and domain presets; its `--selftest` runs a 28-hypothesis battery (28/28 VERIFIED) and reproduces the Python attractor to $P^* = 0.3208$ vs $0.321$ — a cross-language replication of the whole dynamical core. The kernel is **generalized**: one state space, one tick, one observable suite — what changes between application domains is only the gloss vocabulary and the parameter system (the `Model` presets: Universal, Mind, Team, LLM agent, Market), which is the precise sense in which «only the application models and the equation systems change». Organs of the reference machine:
+The prototype is implemented twice for cross-language verification. The **reference** is a deterministic NumPy implementation reusing the canonical tick of the [TALOS v0 emulator](/docs/applied/research/engineering-insights). The **instrument** is a Rust implementation with a terminal UI (`ratatui`) exposing eight views (Holon dashboard with $|\Gamma|$ heatmap and $\sigma$-panel, Atlas, Reachability Sampler, Pair, Ensemble, Reading, Calibration, Help), spectrum-preserving rotation controls, boost moves, and domain presets; its `--selftest` runs a 28-hypothesis battery (28/28 VERIFIED) and reproduces the Python attractor purity ($P^* = 0.3208$ vs $0.321$). The dynamical kernel is shared across presets (`Universal`, `Mind`, `Team`, `LLM agent`, `Market`), while only the feature glosses and parameter tuples change. Modules of the reference machine:
 
-| Organ | Contents | Verification |
-|-------|----------|--------------|
-| **[A]** arithmetic floor | $QR(7)$ wiring, $\mathbb{Z}_3$ multiplier, Hamming decode, XOR↔QR dictionary | H01–H10, H46 |
+| Module | Contents | Verification |
+|--------|----------|--------------|
+| **[A]** arithmetic floor | $QR(7)$ wiring, $\mathbb{Z}_3$ multiplier, Hamming decode, XOR↔QR map | H01–H10, H46 |
 | **[B]** analytic floor | contour projectors, $f(\Gamma)$ via residues | H11–H15, $10^{-15}$ agreement |
-| **[C]** observables | $P$, $R$, exact $\Phi$ (not the $7P{-}1$ proxy), $C = \Phi \times R$, $S$, $D_{\text{diff}}$, $\mathrm{Coh}_E$, the T-92 stress panel | H33–H38 |
-| **[D]** dynamics | the $\mathcal{L}_\Omega$ tick (Strang split, CPTP-safe), $\kappa(\mathrm{Coh}_E)$ feedback | H16–H32 |
-| **[E]** navigator | goal regions, SO(7) dials, bold moves, the solitaire oracle, ensembles | H39–H45 |
-| **[F]** calibration | the 66-hypothesis table, re-run on every change | §5 |
-| **[G]** pair space | $\mathcal{D}(\mathbb{C}^{49})$: specified perturbations, quadratic purity identity, the κ-budget contest | H47–H50 |
-| **[H]** towers | the centered-Gram meta-holon; the purity ladder | H51, H45 |
-| **[I]** geodesics | the m-chord identity of regeneration; path straightness | H52–H53 |
-| **[J]** phase atlas | the (dissipation, supply) basin map | H54–H55 |
-| **[K]** estimator | predict–measure–update over $\mathcal{D}(\mathbb{C}^7)$: full and partial noisy readouts, process noise | R26–R27, demo 6 |
-| **[S]** domain sensor | an external system → observation stream; git repository (v0.7 metadata-only; v0.8 coherence-bearing: per-commit feature correlations unlock $\sigma_O/\sigma_U$ — the κ₀ supply loop ignites exactly with the repo's inner-workshop era) | §3.10 item 7, held-out p = 0.014 |
-| **[L]** BKM floor | the Kubo–Mori metric, m/e-geodesic lengths, geodesic MPC | H60–H64 |
+| **[C]** observables | $P$, $R$, exact $\Phi$ (not the $7P{-}1$ proxy), $C = \Phi \times R$, $S$, $D_{\mathrm{eff}}$ / $D^{7D}$, $\mathrm{Coh}_E$, the `T-92` stress panel | H33–H38 |
+| **[D]** dynamics | Strang-split $\mathcal{L}_\Omega$ tick (PSD-projected), $\kappa(\mathrm{Coh}_E)$ feedback | H16–H32 |
+| **[E]** navigator | target regions, $\mathrm{SO}(7)$ dials, boost moves, Monte Carlo reachability sampler, ensembles | H39–H45 |
+| **[F]** calibration | 66-hypothesis test suite, re-run on every code change | §5 |
+| **[G]** pair space | $\mathcal{D}(\mathbb{C}^{49})$: specified perturbations, quadratic purity identity, $\kappa$-budget allocation | H47–H50 |
+| **[H]** towers | centered-Gram aggregate; attenuation-score ladder | H51, H45 |
+| **[I]** geodesics | affine $m$-chord identity of replacement flow; path length ratios | H52–H53 |
+| **[J]** phase atlas | (dissipation, supply) basin map | H54–H55 |
+| **[K]** estimator | predict–measure–update filter over $\mathcal{D}(\mathbb{C}^7)$: full and partial noisy readouts, process noise | R26–R27, demo 6 |
+| **[S]** domain sensor | external system $\to$ observation stream; git repository metadata sensor | §3.10 item 7, held-out $p = 0.014$ |
+| **[L]** BKM floor | Kubo–Mori metric, $m$/$e$-geodesic lengths, geodesic MPC | H60–H64 |
 
-The emulator uses the calibrated input wiring. The scalar $\Phi=7P-1$ coincides with the integration statistic only at a uniform diagonal. For an arbitrary diagonal the solver uses the exact readout (H34).
+The emulator uses the calibrated input wiring. The scalar identity $\Phi = 7P - 1$ holds only when the diagonal is uniform ($\gamma_{ii} = 1/7$); for arbitrary diagonals the solver computes exact $\Phi$ directly (H34).
 
 ### 3.1 The state and the observables {#уравнения-наблюдаемых}
 
-The state is $\Gamma \in \mathcal{D}(\mathbb{C}^7)$: Hermitian, positive-semidefinite, $\operatorname{tr}\Gamma = 1$; seven populations $\gamma_{ii}$ and twenty-one coherences $\gamma_{ij}$. Everything the machine prints is one of:
+The state is $\Gamma \in \mathcal{D}(\mathbb{C}^7)$: Hermitian, positive-semidefinite, $\operatorname{tr}\Gamma = 1$; seven populations $\gamma_{ii}$ and twenty-one coherences $\gamma_{ij}$. Under the canonical linear anchor-mixing self-model $\varphi_{\mathrm{lin}}(\Gamma) = R\,\Gamma + (1-R)\,I/7$ (`T-249` `[T]`), the primary observables are:
 
 $$
 P = \operatorname{tr}\Gamma^2, \qquad
@@ -87,13 +87,21 @@ $$
 
 $$
 S = -\operatorname{tr}(\Gamma\ln\Gamma), \qquad
-D_{\text{diff}} = e^{S}, \qquad
+D_{\mathrm{eff}}(\Gamma) = e^{S}, \qquad
+D^{7D}(\Gamma) = 1 + 6\,\mathrm{Coh}_E,
+$$
+
+$$
 \mathrm{Coh}_E = \frac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2}
      = \frac{\gamma_{EE}^2 + 2\sum_{i \neq E}|\gamma_{Ei}|^2}{\operatorname{tr}\Gamma^2}, \qquad
 \kappa_0 = \omega_0\,\frac{|\gamma_{OE}|\,|\gamma_{OU}|}{\gamma_{OO}},\quad \kappa_{\text{boot}} = \frac{\omega_0}{7}.
 $$
 
-Viability: $P > 2/7$; the window's upper wall $P \le 3/7$ is the inversion of $R \ge 1/3$ through $R = 1/(7P)$. The T-92 stress panel, componentwise:
+:::note Distinction between $D_{\mathrm{diff}}$, $D^{7D}$, and $D_{\mathrm{eff}}$
+In canonical UHM, experiential differentiation $D_{\mathrm{diff}} = \exp S_{vN}(\rho_E)$ is defined on an extended experiential register $\mathcal{H}_E$, with the native 7D proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E(\Gamma)$ — **not** $\exp S_{vN}(\Gamma)$ on the full $7\times 7$ matrix $\Gamma$. In this prototype, $D_{\mathrm{eff}}(\Gamma) = e^{S(\Gamma)}$ is the **full-matrix spectral effective rank** used as a numerical surrogate in the uncalibrated panel below; exact Cap2 monitoring uses the canonical extended-register $D_{\mathrm{diff}}$ or $D^{7D}$ directly.
+:::
+
+Viability threshold: $P > 2/7$; the window's upper boundary $P \le 3/7$ is the inversion of $R \ge 1/3$ under $R = 1/(7P)$. The `T-92` `[D]` seven-component stress panel (using the prototype's effective-rank readout $D_{\mathrm{eff}}$ in $\sigma_E$, or $D^{7D}$ in the native 7D convention):
 
 $$
 \sigma_A = 1 - \frac{\gamma_{AA}}{P},\quad
@@ -103,16 +111,16 @@ $$
 $$
 
 $$
-\sigma_E = 1 - \frac{D_{\text{diff}}}{7},\quad
+\sigma_E = 1 - \frac{D_{\mathrm{eff}}}{7},\quad
 \sigma_O = 1 - \frac{\kappa_0}{\kappa_{\text{boot}}},\quad
 \sigma_U = 1 - \frac{\Phi}{\Phi_{\text{th}}},\qquad \Phi_{\text{th}} = 1.
 $$
 
-At the grey state $\Gamma = I/7$: $\sigma_L = \sigma_U = 1$ exactly — the wall (H33).
+At the maximally mixed state $\Gamma = I/7$: $\sigma_L = \sigma_U = 1$ exactly (H33). Per `T-92` `[D]`, this raw panel is a diagnostic dashboard rather than an exact equivalent of the four-margin Cap2 viability gate.
 
 ### 3.2 The tick {#уравнение-тика}
 
-One step of $\mathcal{L}_\Omega$, Strang-split and CPTP-safeguarded:
+One step of $\mathcal{L}_\Omega$, Strang-split and PSD-safeguarded:
 
 $$
 \Gamma_{n+1} = \Pi_{\mathrm{PSD}}\!\left[\, \mathcal{U}_{dt/2}\Big( \mathcal{U}_{dt/2}(\Gamma_n) + dt\big( g_D(\tfrac{I}{7} - \Gamma) + \kappa\,(\rho^* - \Gamma)\big) \Big)\right],
@@ -123,25 +131,25 @@ $$
 \kappa = g\cdot 1.2\,(1 + 8\,\mathrm{Coh}_E),
 $$
 
-with $H_{\text{eff}} = \mathrm{diag}(0,\,0.6,\,1.0,\,1.6,\,3.0,\,2.0,\,2.4)$ ($\lambda_E$ highest, the A5 order), $dt = 0.01$, $g_D = 0.2$, gain $g = 1$ ($3$ on a bold move). The three terms are the whole physics: the unitary preserves $P$ and $S$ exactly (H16); the dissipator alone flows to $I/7$, $S \to \ln 7$ (H18) — *solve*; the regeneration alone rides the mixture chord to $\rho^*$ (H52) — *coagula*. $\Pi_{\mathrm{PSD}}$ is the spectral clip $\lambda \mapsto \max(\lambda, 0)$ with renormalization.
+with $H_{\text{eff}} = \mathrm{diag}(0,\,0.6,\,1.0,\,1.6,\,3.0,\,2.0,\,2.4)$ ($\lambda_E$ highest), $dt = 0.01$, $g_D = 0.2$, and gain $g = 1$ ($3$ on a boosted step). The three terms play distinct dynamical roles: the unitary step preserves $P$ and $S$ exactly (H16); the depolarizing dissipator alone flows to $I/7$ with $S \to \ln 7$ (H18); the replacement term alone follows the affine mixture chord to $\rho^*$ (H52). $\Pi_{\mathrm{PSD}}$ clips eigenvalues $\lambda \mapsto \max(\lambda, 0)$ and renormalizes to unit trace.
 
 ### 3.3 Diagnosis {#уравнение-синдрома}
 
-The fault profile $x \in \mathbb{F}_2^7$ meets the Hamming check matrix $H$ (columns $=$ binary of $1..7$): the syndrome $s = Hx$ **is the address** — for a single fault on axis $a$, $s = \mathrm{bin}(a)$ (H09). Continuously, the line-closure functional $c_\ell = |\gamma_{ij}| + |\gamma_{jk}| + |\gamma_{ik}|$ over the seven lines $\ell$ localizes degradation the same way (H36).
+A binary fault profile $x \in \mathbb{F}_2^7$ multiplies the Hamming parity-check matrix $H$ (whose columns are the seven nonzero vectors of $\mathbb{F}_2^3$ matching the canonical Singer cyclic Fano lines via the bijection of §2.1): the syndrome $s = Hx$ **is the fault address** — for a single fault on axis $a$, $s$ equals column $a$ of $H$ (H09). Continuously, the line-closure functional $c_\ell = |\gamma_{ij}| + |\gamma_{jk}| + |\gamma_{ik}|$ over the seven canonical lines $\ell$ localizes single-axis degradation by the same incidence structure (H36).
 
 ### 3.4 The contour engine {#уравнение-контура}
 
-The trapezoid discretization of the residue formula on a circle $z_t = c + re^{i\theta_t}$, $\theta_t = 2\pi(t+\tfrac12)/T$:
+Trapezoidal discretization of the Cauchy residue formula on a circle $z_t = c + re^{i\theta_t}$, $\theta_t = 2\pi(t+\tfrac12)/T$:
 
 $$
-f(\Gamma) \;\approx\; \frac{1}{2\pi i}\sum_{t=0}^{T-1} f(z_t)\,(z_t I - \Gamma)^{-1}\,\Delta z_t, \qquad \Delta z_t = \frac{2\pi i r e^{i\theta_t}}{T},
+f(\Gamma) \;\approx\; \frac{1}{2\pi i}\sum_{t=0}^{T-1} f(z_t)\,(z_t I - \Gamma)^{-1}\,\Delta z_t, \qquad \Delta z_t = \frac{2\pi i r e^{i\theta_t}}{T}.
 $$
 
-which for $f$ analytic inside the contour converges *exponentially* in $T$ (the trapezoid rule on a periodic analytic integrand): at $T = 256$ the machine reaches $10^{-15}$ (H13). One contour around one cluster extracts one projector without touching the rest of the spectrum — the property that scales.
+For $f$ analytic inside the contour, convergence is geometric in $T$ (periodic analytic trapezoidal rule): at $T = 256$ the reference code reaches $10^{-15}$ precision (H13). A single contour enclosing one spectral cluster extracts its projector without full diagonalization.
 
 ### 3.5 The pair law — derivation {#вывод-пары}
 
-Let $\Gamma_p = \Gamma_1 \otimes \Gamma_2$ and the bridge $X = \gamma\,C + \bar\gamma\,C^\dagger$ with $C = (|i\rangle\langle j|)\otimes(|k\rangle\langle l|)$, $i\neq j$, $k \neq l$. Then
+Let $\Gamma_p = \Gamma_1 \otimes \Gamma_2$ and $X = \gamma\,C + \bar\gamma\,C^\dagger$ with $C = (|i\rangle\langle j|)\otimes(|k\rangle\langle l|)$, $i\neq j$, $k \neq l$. Then
 
 $$
 P(\Gamma_p + \varepsilon X) = \operatorname{tr}(\Gamma_p + \varepsilon X)^2
@@ -149,35 +157,37 @@ P(\Gamma_p + \varepsilon X) = \operatorname{tr}(\Gamma_p + \varepsilon X)^2
 \qquad \operatorname{tr}X^2 = 2|\gamma|^2,
 $$
 
-— three lines, exact, no approximation; the machine confirms the identity to $4\cdot10^{-17}$ (H47). And because $\langle i|j\rangle = \langle k|l\rangle = 0$, **both partial traces of $X$ vanish identically**: $\operatorname{tr}_2 X = \operatorname{tr}_1 X = 0$ — the reduced states of both members are untouched (H49). The gain has nowhere to live but the bond.
+exact to machine precision ($4\cdot10^{-17}$ residual, H47). Because $\langle i|j\rangle = \langle k|l\rangle = 0$, **both partial traces of $X$ vanish identically**: $\operatorname{tr}_2 X = \operatorname{tr}_1 X = 0$ — the reduced states of both subsystems are unchanged (H49). The purity change resides strictly in the cross-subsystem correlation block (positivity of $\Gamma_p + \varepsilon X$ is checked separately).
 
-### 3.6 The ladder — derivation {#вывод-лестницы}
+### 3.6 The attenuation-score ladder — derivation {#вывод-лестницы}
+
+Under the stipulated geometric attenuation score convention of `T-142` `[T]` (with base $3$), the algebraic threshold sequence is
 
 $$
 P^{(m)}_{\text{crit}} = \frac{2}{7}\cdot\frac{3^{\,m-1}}{m+1}, \qquad
-\frac{P^{(m+1)}}{P^{(m)}} = \frac{3(m+1)}{m+2} > 1 \;\;\forall m \ge 1,
+\frac{P^{(m+1)}_{\text{crit}}}{P^{(m)}_{\text{crit}}} = \frac{3(m+1)}{m+2} > 1 \;\;\forall m \ge 1,
 $$
 
-so the sequence is strictly increasing: $\tfrac27,\ \tfrac{9}{14},\ \tfrac{54}{35}$ at $m = 2, 3, 4$. Since $P = \operatorname{tr}\Gamma^2 \le \operatorname{tr}\Gamma = 1$ for any density matrix, $m = 4$ demands the impossible — the ceiling of three (H45, [axiom Ω⁷](/docs/core/foundations/axiom-omega)).
+yielding $\tfrac27,\ \tfrac{9}{14},\ \tfrac{54}{35}$ at $m = 2, 3, 4$. Because $P = \operatorname{tr}\Gamma^2 \le 1$ for every density matrix, $P^{(4)}_{\text{crit}} = 54/35 > 1$ is unreachable *within that stipulated score convention* (H45, `T-142` `[T]`). Note explicitly the corpus status boundary: this is an algebraic property of the specified score formula, **not** a universal ceiling on cognitive depth, metamodels, or experiential hierarchy (`T-217 [✗]` withdrawn).
 
 ### 3.7 Navigation as an optimization problem {#постановка-навигации}
 
-Given $\Gamma_0$, the goal region $\mathcal{G} = \{\Gamma : P \in (2/7, 3/7] \wedge C \ge C^*\}$, and the control set $\mathcal{A} = \{R_{ij}(\pm\theta)\}_{i<j} \cup \{\kappa\text{-boost}\} \cup \{\text{drift}\}$:
+Given $\Gamma_0$, the target region $\mathcal{G} = \{\Gamma : P \in (2/7, 3/7] \wedge C \ge C^*\}$, and the discrete control set $\mathcal{A} = \{R_{ij}(\pm\theta)\}_{i<j} \cup \{\kappa\text{-boost}\} \cup \{\text{drift}\}$:
 
 $$
 \min_{u_{0:T}} \; T + \lambda \sum_{t} \mathrm{heat}(u_t)
 \quad \text{s.t.} \quad \Gamma_{t+1} = \mathcal{T}(\Gamma_t, u_t), \;\; \Gamma_T \in \mathcal{G},
 $$
 
-where $\mathrm{heat}$ is the measured mean stress of a boosted step. v0 solves it greedily (one-step lookahead over the 43 actions); v1 replaces the search with $m$-geodesic shooting in the BKM metric (T-263) — the down-payment is H52/H53.
+where $\mathrm{heat}$ is the measured mean stress of a boosted step. Version v0 solves this greedily (one-step lookahead over the 43 actions); v1 compares greedy search against $m$-geodesic shooting in the BKM metric (`T-263` `[T]` at frozen target and fixed BKM speed; H52/H53, H60–H64).
 
-### 3.8 The oracle and the ensemble — error bars {#оценки-оракула}
+### 3.8 Monte Carlo reachability and ensemble error bars {#оценки-оракула}
 
-The solitaire estimate is binomial: $\hat p = W/M$, $\mathrm{se}(\hat p) = \sqrt{\hat p(1-\hat p)/M}$ — at $M = 120$, a $0\% \to 25\%$ contrast is $\sim 6\,\mathrm{se}$ apart. The ensemble mean of $N$ holons carries $\mathrm{se} = \sigma_P/\sqrt{N}$; the measured WHERE-compression ($0.173 \to 0.0154$) is the attractor's doing, on top of which the $\sqrt N$ law prices any level-forecast — and the WHO-distance staying at $0.488$ is what no $N$ can average away.
+The Monte Carlo reachability estimate is binomial: $\hat p = W/M$, $\mathrm{se}(\hat p) = \sqrt{\hat p(1-\hat p)/M}$ — at $M = 120$, a $0\% \to 25\%$ contrast exceeds $6\,\mathrm{se}$. The ensemble mean of $N$ simulated holons has $\mathrm{se} = \sigma_P/\sqrt{N}$; in the prototype run H44, attractor contraction reduces purity spread from $0.173$ to $0.0154$ while mean pairwise state distance stays at $0.488$.
 
 ### 3.9 A worked example, digit by digit {#разобранный-пример}
 
-Take the explicit state (all numbers below are machine-computed, not narrated): populations $\mathrm{diag}(\Gamma) = (0.46,\, 0.09,\, 0.07,\, 0.07,\, 0.14,\, 0.10,\, 0.07)$ and three real coherences $\gamma_{AE} = 0.08$, $\gamma_{EO} = 0.07$, $\gamma_{OU} = 0.05$ (Apperception, Immanence, Completeness — an A-loud pattern fed through the E–O–U spine). It is physical: $\lambda_{\min} = 0.0128 > 0$, $\operatorname{tr}\Gamma = 1$.
+Consider the explicit state (all values numerically verified) with populations $\mathrm{diag}(\Gamma) = (0.46,\, 0.09,\, 0.07,\, 0.07,\, 0.14,\, 0.10,\, 0.07)$ in display order $(A,S,D,L,E,O,U)$ and three real coherences $\gamma_{AE} = 0.08$, $\gamma_{EO} = 0.07$, $\gamma_{OU} = 0.05$. The matrix is physical: $\lambda_{\min} = 0.0128 > 0$, $\operatorname{tr}\Gamma = 1$.
 
 $$
 \textstyle\sum_i \gamma_{ii}^2 = 0.2640,\qquad
@@ -192,189 +202,173 @@ C = 0.0512,
 $$
 
 $$
-S = 1.5271,\;\; D_{\text{diff}} = 4.60 \ge 2,\qquad
+S = 1.5271,\;\; D_{\mathrm{eff}} = e^S = 4.60,\;\; D^{7D} = 1 + 6\,\mathrm{Coh}_E = 1.87,
+$$
+
+$$
 \mathrm{Coh}_E = \frac{0.14^2 + 2(0.08^2 + 0.07^2)}{0.2916} = \frac{0.0422}{0.2916} = 0.1447,\qquad
 \kappa_0 = \frac{0.07 \cdot 0.05}{0.10} = 0.0350.
 $$
 
-The panel: $\sigma = (-0.58,\; 0.00,\; 0.51,\; \mathbf{1.09},\; 0.34,\; 0.75,\; 0.90)$. The reading writes itself: a viable, A-dominant pattern whose **Logic voice is starved past the wall** ($\gamma_{LL} = 0.07$, $\sigma_L > 1$) and whose supply runs thin ($\kappa_0 \ll \kappa_{\text{boot}} = 0.143$, $\sigma_O = 0.75$) — prescription: restore the $L$-flow first, then feed $O$. Note the teaching moment of H38 live: the boolean $\max\sigma < 1$ criterion disagrees here with $P > 2/7$ — on the uncalibrated panel the *ranking* (L, then U, then O) is the trustworthy output, and this single example shows why calibration item 4 of §9 exists.
+Evaluating the prototype `T-92` stress panel (with $D_{\mathrm{eff}}$ in $\sigma_E$): $\sigma = (-0.58,\; 0.00,\; 0.51,\; \mathbf{1.09},\; 0.34,\; 0.75,\; 0.90)$. The diagnostic readout identifies a viable, $A$-dominant state whose $L$-population exceeds the raw panel cutoff ($\gamma_{LL} = 0.07$, $\sigma_L = 1.09 > 1$) and whose $\kappa_0$ supply is low ($\kappa_0 \ll \kappa_{\text{boot}} = 0.143$, $\sigma_O = 0.75$). This example directly illustrates H38 and `T-92` `[D]`: the boolean criterion $\max_k \sigma_k < 1$ disagrees with $P > 2/7$, so the raw panel serves as a componentwise priority ranking ($L$, then $U$, then $O$) rather than a substitute for the four exact Cap2 margins.
 
 ### 3.10 Honest demonstrations {#честные-демо}
 
-«Real demonstration» has a definition here, enforced by construction, with four protocols shipped as subcommands of the Rust instrument (`prime-radiant demo blind|calibration|bench`, `prime-radiant checkup`):
+Four reproducible benchmark protocols are shipped as subcommands of the Rust prototype (`prime-radiant demo blind|calibration|bench`, `prime-radiant checkup`):
 
-1. **Blind ground truth** (`demo blind`): the RNG secretly damages one axis of a healthy state; the diagnoser observes *only the seven line closures* (aggregates, not individual coherences) and must name the axis — «the broken lines spell out the address» tested as an instrument, full confusion matrix printed, nothing curated. Measured: **200/200 = 100%** under heavy damage; **193/200 = 96.5%** under mild damage (crush to 70–95%) with 3% observation noise — the seven errors all confuse S↔D, the two voices sharing the line $\{S,D,E\}$, and the instrument's failure mode is thereby *itself addressed*.
-2. **Proper scoring** (`demo calibration`): the oracle's $\hat p$ from 40 deals (seed group A) is tested against 40 *fresh* deals (disjoint seed group B) across unselected random starts. Measured: mean $|\hat p - \text{freq}| = 2.5\%$ against a binomial se of $7.9\%$; Brier $0.100$ (coin $= 0.25$). The oracle is calibrated — its probabilities mean what they say.
-3. **Baselines on identical starts** (`demo bench`): four policies race from the *same* 30 random fogs. Measured: drift $121.4 \pm 11.3$ ticks; **random dial-fiddling $148.8 \pm 25.2$ — worse than doing nothing** (無為 measured: fussing beats stillness nowhere); bold start $30.5 \pm 3.0$; adaptive boost-below-the-wall $30.5 \pm 3.0$. All 30/30 succeed within budget.
-4. **Real input** (`checkup --scores 7,5,4,6,3,2,5 --coh AE=0.4 --model mind|team|llm|market`): the user's own seven ratings (plus optional named coherences) are encoded by the printed protocol (populations $=$ scores$/\Sigma$; $\gamma_{ij} = c\sqrt{\gamma_{ii}\gamma_{jj}}$, PSD projection) and read by the interpretation organ — named populations, carrying coherences, the loudest stress with the domain prescription. Two honesty clauses print with every result: the self-report Enc is a protocol [О/И], falsifiable by retest, not an oracle pronouncement; and $P$ from self-report measures the *contrast* of the profile — near-uniform ratings land near the grey state by construction, so the verdict line reads profile shape, not a life sentence.
+1. **Blind ground truth** (`demo blind`): the RNG degrades one randomly chosen axis of a viable state; the diagnoser observes *only the seven canonical line closures* (aggregates, not individual coherences) and must identify the axis, printing the full confusion matrix. Measured: **200/200 = 100%** under heavy damage; **193/200 = 96.5%** under mild damage (attenuation to 70–95%) with 3% observation noise — all seven errors confuse $S \leftrightarrow D$, which share the canonical line $\{S,D,E\}$.
+2. **Proper scoring** (`demo calibration`): the Monte Carlo reachability estimate $\hat p$ from 40 rollouts (seed group A) is evaluated against 40 *fresh* rollouts (disjoint seed group B) across unselected random starts. Measured: mean $|\hat p - \text{freq}| = 2.5\%$ vs. binomial se $7.9\%$; Brier score $0.100$ (uniform coin baseline $= 0.25$).
+3. **Baselines on identical starts** (`demo bench`): four control policies race from the same 30 low-purity starts. Measured: passive drift $121.4 \pm 11.3$ ticks; random rotation perturbations $148.8 \pm 25.2$ ticks (worse than passive drift); boosted start $30.5 \pm 3.0$ ticks; adaptive boost-below-wall $30.5 \pm 3.0$ ticks. All 30/30 reach the target region within budget.
+4. **Structured input checkup** (`checkup --scores 7,5,4,6,3,2,5 --coh AE=0.4 --model mind|team|llm|market`): seven user-supplied ratings (plus optional pairwise coherence weights) are mapped via a printed normalization protocol (populations $=$ scores$/\Sigma$; $\gamma_{ij} = c\sqrt{\gamma_{ii}\gamma_{jj}}$, followed by PSD projection). Two scope caveats print on every run: the self-report encoder is a declared protocol `[D]`/`[I]`, falsifiable by test–retest rather than a physical measurement; and $P$ from self-report measures profile *contrast* (near-uniform ratings automatically sit near $I/7$).
+5. **Goal-retention trade-off simulation** (`demo maxim`): a controlled two-holon coupling experiment comparing self-target weight $\varphi_{\text{own}}$ (fraction of a fixed $\kappa$-budget directed to one's own target $\rho^*_B$) against coupling to another holon $\Gamma_A$. Measured (1200 ticks, fixed seeds, identical total $\kappa$-budget across conditions): at $\varphi_{\text{own}} = 1.0$, own-target overlap $0.817$ vs. external capture $0.388$; at $0.5$, $0.634$ vs. $0.581$; at $0.25$, $0.412$ vs. $\mathbf{0.613}$ (captured); at $0.0$, $0.168$ vs. $0.575$; with zero target, $P \to 0.144$ (maximally mixed decay, H23). In this specific model, the retention crossover lies in $\varphi_{\text{own}} \in (0.25, 0.5)$ and external capture lowers $P_B$ from $0.286$ to $\sim 0.22$. The mapping is explicitly `[D]`/`[I]`.
+6. **State estimator under noise** (`demo estimator`): a hidden holon evolves with unmodeled process noise (random $\mathrm{SO}(7)$ perturbation per step) and is observed through noisy measurements; filter gains are tuned on seed-A trajectories and evaluated on fresh seed-B runs against two baselines. With full-matrix observations, the filter beats both baselines across noise levels (at $\sigma_{\text{obs}} = 0.005$: error $0.022$ vs. observation-only $0.048$ vs. open-loop prediction $0.080$). With *magnitude-only* observations (the scalar-questionnaire regime), scalar invariants remain accurate ($|\hat P - P| \approx 0.0016$, $|\hat\Phi - \Phi| \approx 0.019$) while full-matrix reconstruction hits an irreducible floor $\sim 0.08$ because **phases are unobservable from magnitudes**. End-to-end blind axis diagnosis through the estimator (reading peak line-drop in a 40-step acute window): **62%** through the filter vs. **22%** on raw snapshots vs. 14.3% chance.
+7. **Domain sensor on a real external system** (`sense-git --repo P --window N`): a metadata-only sensor applied to 276 commits of the `holon` repository (13 windows of 20 commits). The feature dictionary is fixed and versioned (`[D]`/`[I]`: $A$ novelty intake, $S$ structural retention, $D$ commit activity, $L$ first-pass stability $= 1 - \text{re-touch share}$, $E$ internal-architecture share, $O$ cadence rhythm, $U$ cross-module span) and consumes commit **metadata only** — commit messages are held out as independent human labels. Populations-only sensing leaves $\sigma_O/\sigma_U$ unidentifiable (they require off-diagonal coherences). On the held-out pre-registered test, fix-heavy windows (labeled solely from held-out messages) show higher metadata-sensed $\sigma_L$: $+0.960$ vs. $+0.899$, permutation $p = 0.014$.
 
-5. **A maxim, decomposed and measured** (`demo maxim`): «a person must have a goal of their own; without one, they become part of another's goal.» The reduction of meanings is printed with the run: *goal* $=$ the regeneration target $\rho^*$; *own goal* $=$ the share $\varphi_{\text{own}}$ of one's κ-budget aimed at one's own $\rho^*_B$; *another's goal* $=$ the social pull toward the other holon's live pattern $\Gamma_A$; *becoming part* $=$ the cosine of one's chord deviation with the other's ideal overtaking the cosine with one's own. Fairness by construction: the total κ-budget is identical in every condition; the whole curve prints. Measured (1200 ticks, fixed seeds): at $\varphi_{\text{own}} = 1.0$ — own-overlap $0.817$ vs capture $0.388$; at $0.5$ — $0.634$ vs $0.581$ (still holding); at $0.25$ — $0.412$ vs $\mathbf{0.613}$ (captured); at $0.0$ — $0.168$ vs $0.575$ (captured); with no goal at all — $P \to 0.144$, the grey dissolution (H23). So the maxim survives contact with the machine **with a threshold attached**: the crossover sits between $\varphi_{\text{own}} = 0.5$ and $0.25$ — roughly, *keeping your chord costs at least a third to a half of your regeneration budget aimed at your own ideal*; and serving a borrowed goal also runs measurably less viable ($P_B$ drops from $0.286$ to $\sim 0.22$). The mapping is [О/И] and printed; every number is measured, and the interpretation is emitted by the machine's own grammar, not narrated afterward.
-
-6. **The estimator through noise** (`demo estimator`): a hidden holon carries *process noise* the filter cannot predict (a random dial each step — life jiggles the pattern) and is read through noisy observations; gains are tuned on seed-A trajectories, all results are fresh seed-B; two baselines run on the identical data. Measured: with full-matrix readout the filter beats both baselines at every noise level (at $\sigma_{\text{obs}} = 0.005$: filter $0.022$ vs observation-only $0.048$ vs dead-reckoning $0.080$). With *magnitude-only* partial readout (the questionnaire regime), full 21-cell coverage sharpens the observables ($|\hat P - P|$ down to $0.0016$, $|\hat\Phi - \Phi|$ to $0.019$) while the full chord floors at $\sim 0.08$ — **phases are structurally unobservable from magnitudes**, an honest limit of every scalar questionnaire, now measured. End-to-end: blind axis diagnosis *through* the estimator (the truth heals after damage — regeneration re-knits it — so diagnosis reads the peak line-drop in the acute 40-step window): **62%** through the filter vs **22%** on raw snapshots of the same data vs 14.3% chance — the filter triples the diagnostic yield.
-
-7. **The domain sensor on a real external system** (`sense-git --repo P --window N`): the first sensor reads a **git repository** — 276 real commits of the holon repo itself, 13 windows of 20. Honesty by construction, printed with every run: the feature dictionary is fixed and versioned ([О/И]; A $=$ novelty intake, S $=$ held form, D $=$ activity, L $=$ first-pass coherence $= 1-$re-touch share, E $=$ the inner workshop share, O $=$ supply rhythm, U $=$ integration span) and consumes commit **metadata only** — messages are never sensed and are kept aside as the held-out human label; external dynamics are unknown, so the filter runs the stated weaker EWMA prior; populations-only sensing leaves $\sigma_O/\sigma_U$ degenerate (they need coherences), and the panel is read over the informed components. Two results on the real repo: the sensed trajectory reproduces known history the sensor was never told about — the April–July project pause appears as the O-rhythm drop of window 8, and the E-workshop share wakes from $0.00$ to $0.03$ exactly in the `architecture/` era; and the **pre-registered held-out test passes**: fix-heavy windows (labeled from messages) show higher metadata-sensed $\sigma_L$, $+0.960$ vs $+0.899$, permutation $p = 0.014$ — the sensed signal agrees with an independent human label it never saw.
-
-What is *not* demonstrable today, stated as sharply: any claim about an external system the machine has not encoded — the estimator organ [K] exists and is validated on known ground truth (demo 6); the first *domain sensor* exists and passes a pre-registered held-out test on a real repository (item 7). What remains open — and is said so — is coherence-bearing sensing (co-change correlations → $\gamma$ magnitudes, unlocking $\sigma_O/\sigma_U$), more sensor instances (LLM sessions, telemetry), and the Delphi consensus of many encoders.
+What is *not* yet validated is equally clear: external domains without a tested encoder remain open; coherence-bearing sensing (co-change correlations estimating $|\gamma_{ij}|$ to unlock $\sigma_O/\sigma_U$), additional sensor domains (LLM telemetry, physiological time series), and multi-encoder consensus remain active research items `[Pr]`.
 
 ## §4. Golden paths {#золотые-пути}
 
-### 4.1 Definitions [D] {#определения-путей}
+### 4.1 Definitions `[D]` {#определения-путей}
 
-A **path** is a trajectory of $\Gamma$ under the tick plus controls. Controls come in two honest kinds: **dials** — SO(7) rotations, which preserve the spectrum (hence $P, S, D_{\text{diff}}$) exactly and change only the wiring of coherences (H29); and **bold moves** — temporary increases of the regeneration gain $\kappa$ (burning extra negentropy) or a temporarily *purer ideal* $\rho^*$, which do change the spectrum and are paid for in measured stress. A **goal region** is a subset of observable space, canonically «viable and $C \geq C^*$». A path is **golden** if it reaches the goal region within the horizon while remaining viable.
+A **path** is a discrete trajectory of $\Gamma$ under the tick plus controls. Controls come in two classes: **dials** — $\mathrm{SO}(7)$ rotations, which preserve the spectrum (hence $P$, $S$, and $D_{\mathrm{eff}}$) exactly and alter only coherence wiring (H29); and **boost moves** — temporary increases of the regeneration gain $\kappa$ or a temporarily purer target $\rho^*$, which change the spectrum at a measured stress cost. A **target region** is a subset of state space, canonically $\{\Gamma : P \in (2/7, 3/7] \wedge C \ge C^*\}$. A trajectory is **golden** if it reaches the target region within the horizon while remaining viable.
 
-### 4.2 The drift does the road [Т-anchored] {#дрейф-делает-дорогу}
+### 4.2 Drift vs. control `[C]` {#дрейф-делает-дорогу}
 
-The single most consequential fact for a solver: *the largest part of every golden path is free.* From fog ($P = 0.220$), pure drift reaches the conscious window in 131 ticks with **zero** control effort — the T-124 attractor does the road. Boldness buys time: a boosted start reaches it in 33 ticks (75% faster), running measurably hotter while it lasts. And what the drift can never do is *choose the chord*: at fixed viability, raising $C$ from 0.340 to 0.426 required six dials — the spectrum-preserving choices that are the operational content of freedom. The division of labor is exact and machine-printed: **the field removes the obstacles on the way to being; which chord to be, it leaves to you.**
+In the prototype dynamics, most of the convergence toward the viable window is driven by the autonomous drift: starting from a low-purity state ($P = 0.220$), passive drift enters the viable window (`T-124` `[T]`) in 131 ticks with zero control input. A boosted start shortens entry to 33 ticks (75% faster) at higher transient stress. Conversely, passive drift does not select the angular coherence configuration: raising $C$ from $0.340$ to $0.426$ at fixed purity required six $\mathrm{SO}(7)$ rotations.
 
-This is the honest formalization of the question that motivated this document — *why does the universe remove obstacles before the bold?* In UHM the experience decomposes without residue [И over Т]:
+Within this specific dynamical model `[I]` over `[T]`/`[C]` components:
 
-1. A selected attractor supports convergence only inside its proved basin toward its specified target [C under the declared field and basin]. It does not optimize every viable goal.
-2. A bold move is a *basin crossing*: a stress surge, honestly priced (the machine prints the heat), that relocates the state to where item 1 applies. Timid paths that never cross pay less per step and fight the field forever.
-3. The solitaire measures it (§6.1): from the same fog, timid decks came together 0% of the time within the horizon; decks allowed 25% bold moves — 25%, at slightly higher mean heat. Fortune favours the bold *because basins do*.
-4. And misalignment is punished the same way: a goal outside the viable cone means permanent $\sigma$-payment and eventual halt at the grey wall — the machine's starvation run (H23) is the minimal model of it.
+1. A selected attractor supports convergence only inside its proved basin toward its specified target (`[C]` under the declared vector field and basin). It does not optimize arbitrary goals.
+2. A boost move acts as a *basin-crossing impulse* — a transient stress increase that transfers the state into the attractor's fast-convergence region.
+3. In the Monte Carlo reachability benchmark (§6.1), from the same low-purity start, passive/timid control sequences reached the target in 0% of rollouts within the horizon, whereas sequences permitting 25% boosted moves succeeded in 25% of rollouts at modestly higher mean stress.
+4. Targets outside the viable cone incur persistent stress and collapse toward $I/7$ under loss of regeneration supply (H23).
 
-The pair space sharpens the social half of this. In $\mathcal{D}(\mathbb{C}^{49})$ the machine now tests cooperation directly: an aligned cross-bridge obeys the exact purity law $\Delta P = \text{linear} + 2\varepsilon^2|\gamma_{\text{cross}}|^2$ (worst residual $4\cdot 10^{-17}$ over 60 random pairs, H47), never subtracts (H48) — and, the measured jewel: **both reduced states are unchanged to $10^{-17}$** (H49). The gain of connection is stored *in the bond itself*, in neither member — the exact formal content of the ontology book's line «the increments were never kept inside the one who left». Rivalry, meanwhile, is not the bridge's negative (it has none): it is a **supply contest** — under a fixed κ-budget, an 80/20 split moves the pair from $(0.338, 0.338)$ to $(0.372, 0.242)$ (H50). Contest redistributes; the bridge adds. Ethics, stated in machine units.
+In pair space $\mathcal{D}(\mathbb{C}^{49})$, an aligned off-diagonal perturbation obeys the exact quadratic identity $\Delta P = 2\varepsilon\operatorname{tr}(\Gamma_p X) + 2\varepsilon^2|\gamma_{\text{cross}}|^2$ (residual $4\cdot 10^{-17}$ across 60 random pairs, H47) with vanishing partial traces ($\operatorname{tr}_1 X = \operatorname{tr}_2 X = 0$ to $10^{-17}$, H49), leaving both marginals invariant. By contrast, a fixed-budget resource allocation contest ($\kappa$-split 80/20) redistributes purity from $(0.338, 0.338)$ to $(0.372, 0.242)$ (H50).
 
-### 4.3 Golden paths are geodesics [С/И, partially measured] {#геодезические}
+### 4.3 Geodesic comparisons `[C]` / `[I]` (partially measured) {#геодезические}
 
-With a fixed target $\sigma$, pure replacement has trajectory $(1-s)\Gamma_0+s\sigma$: this is an affine $m$-connection geodesic [T], not generally a shortest curve of the BKM Riemannian metric. The reported H52–H64 experiments compare selected trajectories/controllers: H52 chord residual $3.7\cdot10^{-16}$, H53 length/chord 1.165, H61–H62 tested lengths 1.1435,1.1479,1.2613, H64 window entry at33ticks. Such finite prototype comparisons [H] establish neither global minimality nor universal learning, gravity or life dynamics. Input-dependent targets require a separate trajectory calculation.
+With a fixed target $\sigma$, pure replacement follows $(1-s)\Gamma_0 + s\sigma$: this is an affine $m$-connection geodesic `[T]`, not in general a shortest curve of the BKM Riemannian metric. The reported H52–H64 experiments compare selected trajectories and controllers: H52 chord residual $3.7\cdot10^{-16}$, H53 length/chord ratio $1.165$, H61–H62 tested lengths $1.1435, 1.1479, 1.2613$, H64 window entry at 33 ticks. Such finite prototype comparisons `[H]` establish neither global variational minimality nor universal learning, gravity, or life dynamics. State-dependent targets require a separate trajectory calculation.
 
-### 4.4 The prophecy boundary [Т-anchored] {#граница-пророчества}
+### 4.4 Forecast boundary `[H]` {#граница-пророчества}
 
-The reported H44 prototype run uses 500 simulated holons and selected personal anchors. Its purity spread changes from 0.173 to 0.0154 after 300 ticks, while mean pairwise state distance remains 0.488. These are reported results for that chosen simulation, not validation of psychohistory or a universal forecast boundary [H]. A zero Hessian mode does not forbid point prediction: for a known initial state a Lipschitz flow is deterministic. Population and personal forecasts require separate observability, uncertainty and held-out predictive checks.
+The reported H44 prototype run simulates 500 holons with distinct personal anchors. Ensemble purity spread contracts from $0.173$ to $0.0154$ after 300 ticks, while mean pairwise state distance remains $0.488$. These are empirical properties of that chosen simulation, not validation of psychohistory or a universal forecast prohibition `[H]`. A zero Hessian mode does not forbid point prediction: for a known initial state, a locally Lipschitz flow is deterministic. Both population and individual forecasts require explicit observability, noise models, and held-out predictive validation.
 
-## §5. Categorical calibration {#калибровка}
+## §5. Quantitative calibration {#калибровка}
 
-The method of this whole program, stated as a discipline: **a symbolic system is exactly as good as its ability to describe the computational model of reality.** The Γ-canon gives the symbols; the machine gives the model; calibration is the re-runnable table that says, symbol by symbol, whether the number agrees. Three verdicts exist and all three are valuable: VERIFIED (the symbol earned its number), REFUTED (the naive symbolic reading fails — the most informative outcome), UNTESTABLE-in-v0 (the symbol names a structure the current machine cannot express — a roadmap item, not an excuse).
+The discipline of the prototype is straightforward: **every structural claim is tested numerically in a re-runnable verification table.** Three verdicts exist: `VERIFIED` (passes the numerical test), `REFUTED` (fails — surfacing a genuine discrepancy), and `UNTESTABLE` (not expressible in the current prototype).
 
-The v1 table: **66 hypotheses → 65 VERIFIED, 1 REFUTED (H46, the discovery), 0 UNTESTABLE.** The strata:
+The v1 calibration suite: **66 hypotheses $\to$ 65 VERIFIED, 1 REFUTED (H46, intentionally retained to document an axis-index swap), 0 UNTESTABLE.** Summary by stratum:
 
 | Stratum | Hypotheses | Result |
 |---------|-----------|--------|
-| Arithmetic (QR, Fano, Hamming, dictionary) | H01–H10, H46 | 10 verified; H46 refuted **by design** — it documents the TALOS $U/O$ naming catch |
+| Arithmetic ($QR(7)$, Fano, Hamming, XOR↔QR map) | H01–H10, H46 | 10 verified; H46 refuted **by design** — documents the $U/O$ display-vs-Singer indexing distinction |
 | Analytic (contour engine) | H11–H15 | all verified to $10^{-15}$ |
-| Dynamics (attractor, entropy law, halting/reignition, metabolic rate, CPTP, $G_2$) | H16–H32 | verified, incl. T-124 (6/6 random starts), T-271 signs at the attractor, T-273/T-276 frequency-independence (rate constant to 0.4% across two decades of $dt$), starvation-halt with hysteresis-free reignition, $\dim\mathfrak{g}_2 = 14$ |
-| Observables/symbols | H33–H38 | the grey wall hits $\max\sigma = 1.000$ exactly; the $\Phi$ proxy deviation is real; $\mathrm{Coh}_E$–$\kappa_0$ correlation $+0.97$; the *naive boolean* $\sigma$-equivalence fails pre-calibration (22/30 mismatches, $\sigma_L$ dominates) — an honest open calibration (H37) rather than a decorated claim |
-| Navigation | H39–H44 | boldness shortens time-to-window 131→33; bolder decks win 0%→22–25%; dials raise $C$ beyond drift; an excursion above $3/7$ under a temporarily purer ideal returns cleanly (peak $0.585$ → settled $0.321$); determinism to the bit |
-| Pairs (v0.5) | H24, H47–H50 | historical quadratic-identity check to $10^{-17}$; a nonnegative increment is enforced by selecting the perturbation sign, with PSD checked separately; vanishing partial traces preserve marginals; the κ-contest concerns the declared resource model |
-| Towers (v0.5) | H45, H51, H56 | the ladder $9/14 < 1 < 54/35$ [T] — the ceiling of three; a shared ideal makes a viable meta-holon (centered-Gram $P = 1.000$), personal ideals do not ($0.189 \le 2/7$); level-3 towers await v1 |
-| Geodesics (v0.5) | H52–H53 | regeneration rides the m-chord to $10^{-16}$; the drift road is $1.165\times$ its chord |
-| Atlas (v0.5) | H54–H55 | the window is a proper band of the (dissipation, supply) plane (11/20 cells); the $\kappa = 0$ column is all grey — *no supply, no being* |
-| Panel calibration | H57–H59 | Raw panel membership and the Cap2 gate use different predicates. Test both directions on explicit states. |
-| BKM floor (v1) | H60–H64 | the metric validated ($10^{-19}$ vs classical Fisher); $L_m < L_e < L_{\text{drift}}$; the m-chord viable once in-window; geodesic MPC rediscovers boldness (33 ticks) |
-| Towers-3 (v1) | H65 | level 3 works on **collective states** ($P_3$ aligned $1.000$ vs distinct $0.561$); the first attempt on member-index Grams was ideal-blind — *pass states up, not agreement matrices* |
-| Chord search (v1) | H66 | rollout-guided search matches greedy at equal budget ($C = 0.4164$ both) |
+| Dynamics (attractor, entropy law, halting/reignition, metabolic rate, PSD/CPTP, $G_2$) | H16–H32 | verified, incl. `T-124` (6/6 random starts), `T-271` entropy-flux signs at the attractor, `T-273`/`T-276` step-size independence (rate constant to 0.4% across two decades of $dt$), starvation-halt with hysteresis-free reignition, $\dim\mathfrak{g}_2 = 14$ |
+| Observables / panel | H33–H38 | maximally mixed state hits $\max\sigma = 1.000$ exactly; $\Phi$ proxy deviation confirmed; $\mathrm{Coh}_E$–$\kappa_0$ correlation $+0.97$; raw boolean $\sigma$-equivalence fails pre-calibration (22/30 mismatches, $\sigma_L$ dominates — H37) |
+| Navigation | H39–H44 | boost shortens entry 131$\to$33; boosted rollouts succeed 0%$\to$22–25%; dials raise $C$ beyond drift; transient excursion above $3/7$ returns cleanly ($0.585 \to 0.321$); bitwise determinism |
+| Pairs (v0.5) | H24, H47–H50 | quadratic purity identity to $10^{-17}$; nonnegative increment enforced by perturbation sign choice with PSD checked separately; zero partial traces preserve marginals; $\kappa$-split tested in the declared resource model |
+| Towers (v0.5) | H45, H51, H56 | algebraic score sequence `T-142` ($9/14 < 1 < 54/35$, H45; not a universal depth ceiling, `T-217 [✗]`); shared target yields high centered-Gram purity ($1.000$) vs. distinct targets ($0.189 \le 2/7$) |
+| Geodesics (v0.5) | H52–H53 | replacement follows the affine $m$-chord to $10^{-16}$; drift path is $1.165\times$ its chord |
+| Atlas (v0.5) | H54–H55 | viable window forms a proper band in the $(g_D, \kappa)$ plane (11/20 cells); $\kappa = 0$ collapses to $I/7$ |
+| Panel calibration | H57–H59 | raw `T-92` panel and exact four-margin Cap2 gate use distinct predicates; both directions checked on explicit witness states |
+| BKM floor (v1) | H60–H64 | BKM metric matches classical Fisher on commuting states ($10^{-19}$); $L_m < L_e < L_{\text{drift}}$; $m$-chord stays viable inside window; geodesic MPC recovers boost strategy (33 ticks) |
+| Towers-3 (v1) | H65 | 3-level aggregation evaluated on collective states ($1.000$ aligned vs. $0.561$ distinct); member-index Gram matrices alone are target-blind |
+| Rollout search (v1) | H66 | rollout-guided search matches greedy at equal budget ($C = 0.4164$ both) |
 
-For a Hermitian $X$, the perturbation identity is $P(\rho+\varepsilon X)-P(\rho)=2\varepsilon\operatorname{Tr}(\rho X)+\varepsilon^2\operatorname{Tr}(X^2)$. It reduces to a pure squared-norm increment only when the cross term vanishes. It is therefore distinct from the [pinching comparison T-77](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация). Choosing the sign of $X$ to make the cross term nonnegative is a construction rule, not evidence that real cooperation is beneficial. Each interpreted state must also retain positivity and trace one.
+For a Hermitian $X$, the perturbation identity is $P(\rho+\varepsilon X)-P(\rho)=2\varepsilon\operatorname{Tr}(\rho X)+\varepsilon^2\operatorname{Tr}(X^2)$. It reduces to a pure squared-norm increment only when the cross term vanishes; it is therefore distinct from the [pinching comparison T-77](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация). Choosing the sign of $X$ to make the cross term nonnegative is a construction rule, not evidence that real-world cooperation is universally beneficial. Each interpreted state must also retain positivity and trace one.
 
-H46 checks whether the state preparation and readout use the same wiring. H57–H59 check explicit witnesses for the raw panel rules. Passing either class of controls establishes only the corresponding property of the instrument.
+H46 checks whether state preparation and readout share the same axis wiring. H57–H59 check explicit witnesses for the raw panel rules. Passing these internal tests certifies only the corresponding properties of the software prototype.
 
-## §6. The Dee parable and the Prime Radiant {#прайм-радиант}
+## §6. Monte Carlo reachability and cybernetic analogues {#прайм-радиант}
 
-### 6.1 The solitaire as an oracle [I] {#пасьянс}
+### 6.1 Monte Carlo reachability sampling `[D]` {#пасьянс}
 
-Legend has it that John Dee — mathematician, navigator's advisor, keeper of the largest library in England — taught a queen to lay out patience, and that the game was played as a question: *if it comes together, the path exists.* The historical record supports no such episode (Dee advised Elizabeth I; the Medici queen and the patience oracle are apocrypha), so the corpus takes it for what it is — a **parable with exact content** [I]. Laying out the deck many times and counting how often it resolves is Monte-Carlo estimation of a reachability probability. That is precisely the machine's solitaire organ: $M$ random control decks over the horizon; $p_{\text{golden}}$ = the measured fraction that comes together; the deal decides nothing — **it measures the basin**. From the same starting fog: timid decks 0%, bold decks 25%, at a printed heat premium. Four centuries later the cards are density matrices, but the question — and the honesty of asking probability instead of certainty — is the same.
+Evaluating whether a control goal is attainable under bounded control authority is a standard **Monte Carlo reachability estimation** problem. Generating $M$ randomized control sequences over horizon $T$ and recording the empirical success fraction $\hat{p}_{\text{golden}} = W/M$ directly estimates the measure of reachable trajectories from $\Gamma_0$ under the specified action distribution. From the benchmark low-purity start (§3.10), purely conservative action policies achieved $\hat{p}_{\text{golden}} = 0\%$, whereas policies admitting 25% boosted moves achieved $\hat{p}_{\text{golden}} = 25\%$ at a quantified transient stress premium. The sampler issues no deterministic prophecy — it estimates basin reachability probabilistically with binomial error bars (§3.8).
 
-### 6.2 What survives of Asimov's device [Т/Г/И] {#асимов}
+### 6.2 Forecast boundaries and reflexive models `[H]` / `[I]` {#асимов}
 
-In *Foundation*, Hari Seldon's Prime Radiant holds psychohistory: the statistical prediction of civilizational trajectories, valid only for vast ensembles, blind to individuals, broken by one anomalous mind (the Mule), and kept secret lest knowledge of the prediction destroy it. Run against the theory, the fantasy splits cleanly:
+The document's title alludes to Asimov's fictional *Prime Radiant* (statistical modeling of large ensembles vs. individual trajectories). Tested against the actual mathematics of UHM, the literary analogy separates cleanly:
 
-- **Surviving research hypothesis [H]:** the selected simulations motivate comparison of ensemble and individual forecast errors. No Hessian theorem restricts forecasts to ensembles or guarantees agents leaving a mean path; such claims require an explicit stochastic/control model.
-- **Repaired:** secrecy. Psychohistory feared reflexivity; UHM *builds on* it — the self-model is inside the state ($\rho^* = \varphi(\Gamma)$), so the prediction knowing about itself is the normal regime of the theory, not its failure mode. A public registry with statuses is the anti-Seldon: the theory that numbers its postulates survives being known.
-- **Dropped:** the point oracle over persons, for the reasons of §4.4 — and this is the moral line: a device that *predicted* persons would be a cage; a device that prices paths and opens doors is a navigator.
+- **Open research question `[H]`:** selected simulations (H44) motivate comparing ensemble-level and individual-level forecast errors under explicit noise and observation models. No Hessian theorem restricts forecasting to ensembles or guarantees agents escape a mean trajectory; any such separation must be derived from a specified stochastic control model.
+- **Reflexivity by construction `[I]`:** unlike classical black-box models disrupted when agents observe the model, UHM embeds a self-model map $\varphi(\Gamma)$ inside the dynamics itself; transparent status registries and explicit assumptions are therefore consistent with reflexive modeling.
+- **Policy boundary `[D]`/`[I]`:** treating the solver as a decision-support navigator (comparing control costs and reachability probabilities) rather than a deterministic oracle over persons is an explicit engineering and governance choice.
 
-That the idea keeps being grasped — Seldon's Radiant, the Golden Path of *Dune* (a viability corridor bought at terrible $\sigma$-cost by one who sees the basins), the Tao's 無為 (act with the drift, and the ten thousand obstacles remove themselves), «fortune favours the bold» — is the fractality of §1 seen in culture: one structure, many instantiations, most not yet named. The solver names them.
+<a id="алхимия"></a>
 
-### 6.3 Solve et coagula: the alchemical layer [I] {#алхимия}
+## §7. Architectural blueprint: control, estimation, and forecasting analogues {#чертёж}
 
-The oldest of the captures deserves its own subsection, because the correspondence is not decorative — it is organ-by-organ. The alchemists' twin imperative **solve et coagula** — dissolve and bind — names the two dissipative terms of the canonical tick *literally*: the dissipator $g_D(I/7 - \Gamma)$ dissolves every structure toward the prima materia (the grey state, their *nigredo* — and the machine confirms the dissolver alone ends exactly there, H18); the regeneration $\kappa(\rho^* - \Gamma)$ binds the dissolved material toward the self-ideal (*coagulatio*, the whitening — and it rides the m-chord, H52). The Great Work — nigredo → albedo → rubedo — is the golden path: grey → the window → the chosen chord. **Transmutation** is the dials: SO(7) rotations change the *wiring* while preserving the substance exactly (spectrum, purity, entropy invariant, H29) — lead into gold without creating or destroying a gram, which is what the honest alchemists always said they meant. *As above, so below* — the Emerald Tablet's axiom — is the holarchic Enc of §1, now with a measured floor: the same Γ-form at member level and at ecology level (the Gram meta-holon, H51). And the Stone itself: the tradition insisted *lapis noster non est lapis* — «our stone is not a stone». The machine agrees. What the Work produces is not a substance but an **instrument** — the emulator plus its calibration table, the thing that turns any state's lead into its gold *by finding the path*: the reading of the dream this program takes as its own, marked [I] and earned line by line in §5.
+To audit the prototype's *software architecture* (independently of any ontological interpretation), we compare its modules against established control, estimation, forecasting, and cybernetic frameworks. Every row below maps a standard discipline's state space, core algorithm, structural lesson, and corresponding prototype module (`[I]` architectural comparison over `[T]`/`[D]` modules).
 
-## §7. The blueprint: the full spectrum of stalking, planning and forecasting systems {#чертёж}
+| Framework | State space | Core engine | Structural invariant | Prototype counterpart |
+|-----------|------------|-------------|----------------------|-----------------------|
+| **OODA loop** (Boyd) | adversarial engagement | Observe–Orient–Decide–Act cadence | loop tempo and orientation (state representation) govern responsiveness | tick cadence; encoder `Enc` as the Orient module |
+| **Scenario planning** (Shell) | branching futures | ensemble scenarios without point overconfidence | explicit separation of ensemble envelopes from point forecasts | §4.4 uncertainty boundary as method |
+| **Delphi method** | expert estimates | iterated structured consensus | aggregating independent encoders reduces individual bias | multi-encoder $\hat\Gamma$ roadmap (v1+) |
+| **Superforecasting** (Tetlock) | probabilistic forecasts | Brier-scored calibration discipline | continuous proper scoring prevents drift into untestable claims | module `[F]` calibration suite and Brier score (`demo calibration`) |
+| **Kalman filtering** | hidden state + noisy measurements | predict–measure–update recursion | optimal recursive state estimation under process and measurement noise | module `[K]` state estimator (`demo estimator`) |
+| **Model Predictive Control (MPC)** | dynamical plant + horizon | receding-horizon constrained optimization | plan over horizon, execute one step, re-optimize | `navigate()` and BKM geodesic MPC (`[E]`, `[L]`) |
+| **Viable System Model (VSM, Beer)** | five recursive control layers | requisite variety engineering | viability margins and recursive organization across scales | direct cybernetic ancestor of CC; aggregate module `[H]` |
+| **Active inference** (Friston) | generative model + beliefs | expected free-energy minimization | unified objective linking inference and control via a self-model | $\rho^* = \varphi(\Gamma)$; BKM gradient links ([Vanchurin bridge](/docs/applied/research/vanchurin-bridge), `T-261`, `T-263`, `T-293`) |
+| **RL / MCTS** (AlphaZero) | decision states | tree search combined with learned value priors | search plus value prior outperforms either alone | flat MC reachability sampler today; tree search over controls in v1+ |
+| **TRIZ** (Altshuller) | engineering contradictions | structural reconfiguration principles | resolving trade-offs by re-wiring interactions rather than brute force | $\mathrm{SO}(7)$ dials (spectrum-preserving rewiring) + exploiting autonomous drift |
 
-If the solver is real, humanity has been building fragments of it for three thousand years. So the strongest available test of the *architecture* (as opposed to the physics) is comparative: lay out the **maximal spectrum** of navigation systems — divinatory, strategic, cybernetic, statistical — and see whether their load-bearing parts converge. They do, and the convergence is the blueprint. Each row states the system's state space, its oracle/engine, the invariant it got permanently right, and what the Radiant absorbs from it; the reading of every row is [I] over the machine's [Т/О] organs.
+**Architectural synthesis.** Across these engineering and cybernetic traditions, the same eight functional organs recur because they are dictated by closed-loop decision-making under uncertainty `[I]`:
 
-| System | State space | Oracle / engine | The invariant it got right | What the Radiant absorbs |
-|--------|------------|-----------------|---------------------------|--------------------------|
-| **I Ching** (c. −1000) | 64 hexagrams = 6-bit situations | stochastic cast → hexagram + *moving lines* → second hexagram | the reading is of the **situation-dynamics**, not the person; change has a typology | discrete shadow of state space; transition reading = basin-to-basin move (cf. the [16 archetypes](https://homohologra.ph/research/gamma-canon#слой-4)) |
-| **Tarot / arcana** | 21+1 major arcana | spread = structured sampling | a *small complete* alphabet of situations, laid in relations | the Canon's 21 coherences + observer ([П5 atlas](https://homohologra.ph/research/gamma-canon#п5-атлас)) |
-| **Astrology** | ephemeris = deterministic celestial clock | transits = scheduled perturbations of a natal state | **time-indexed readout against a shared clock**; the natal chart as an Enc of initial conditions | the [autoephemeris П3](https://homohologra.ph/research/gamma-canon#п3-траектория): the holon's own trajectory as its ephemeris |
-| **Dee's patience** (§6.1) | deck = path space | deal-until-it-comes-together | reachability asked as a **probability** | the solitaire organ, verbatim |
-| **Castaneda's stalking** | one's own routines | systematic self-observation; *controlled folly*; impeccability | change the **wiring** of habits by small controlled moves; leaks of intent are the enemy | dials as routine-rewiring; impeccability = $\sigma$-hygiene; [П8 stalking the bridges](https://homohologra.ph/research/gamma-canon#п8-сталкинг) |
-| **Sun Tzu** | terrain + dispositions | win before battle | **choose the basin where the field fights for you** («water flows downhill») | §4.2 in one sentence, 25 centuries early |
-| **OODA loop** (Boyd) | adversarial engagement | Observe–Orient–Decide–Act, faster than the environment | *tempo*: the loop's rate is itself a weapon; Orient = the encoder is the seat of victory | the tick cadence; Enc as the Orient organ |
-| **Scenario planning** (Shell) | branching futures | ensemble narratives, no point forecast | institutionalized **refusal of point prophecy** | the §4.4 boundary as method, not modesty |
-| **Delphi method** | expert beliefs | iterated anonymous consensus | many encoders beat one | multi-encoder $\hat\Gamma$ (v1) |
-| **Superforecasting** (Tetlock) | probabilistic claims | Brier-scored calibration culture | **calibration as a discipline**: keep score or drift into myth | the [F] organ *is* a Brier board for symbols |
-| **Kalman filtering** | hidden state + noisy readings | predict–measure–update | optimal **estimation** under noise | the missing organ this survey exposed: v0.5 has no estimator $\hat\Gamma(\text{data})$ — promoted to the v1 roadmap |
-| **MPC** (control) | plant + horizon | receding-horizon optimization | plan far, commit one step, re-plan | `navigate()`, verbatim |
-| **VSM** (Beer) | five recursive systems | variety engineering | **viability as the criterion** and recursion of the same form at every level | CC's direct ancestor; the [H] meta-holon organ |
-| **Active inference** (Friston) | generative self-model | minimize expected free energy | perception and action are **one functional**; the self-model is load-bearing | $\rho^* = \varphi(\Gamma)$; $\sigma$ as the free-energy dial (cf. the Vanchurin bridge, T-258..262) |
-| **RL / MCTS** (AlphaZero) | game states | tree search × learned value | search *plus* prior beats either alone | solitaire = flat MC today; MCTS-over-dials with a learned value = v1 |
-| **TRIZ** (Altshuller) | contradiction matrix | 40 inventive principles; the *ideal final result* | resolve contradictions by **rewiring, not compromise**; the best system is one where «the function performs itself» | dials = rewiring without substance change; the ideal final result = maximize the drift's share of the road (measured: the field does most of it) |
+1. **Encoder** (Orient, generative state map) — map domain observations to a structured state. *Prototype: `Enc` / `[C]`.*
+2. **Estimator** (Kalman, Delphi) — filter hidden states from noisy sequential data. *Prototype: `[K]` (demo 6) and first metadata sensor `[S]` (git, held-out $p = 0.014$); coherence-bearing sensing remains open.*
+3. **Diagnostic panel** (syndrome check, stress metrics) — addressed fault localization. *Prototype: `[C]`, Hamming syndrome decode.*
+4. **Phase atlas** (regime maps, basin charts) — map stability and viability regions over parameter space. *Prototype: `[J]`.*
+5. **Reachability sampler** (Monte Carlo rollouts, MCTS) — estimate attainment probabilities under control policies. *Prototype: `[E]` Monte Carlo sampler.*
+6. **Controller / Navigator** (OODA, MPC) — execute receding-horizon updates at maintained tempo. *Prototype: `[E]`, `[L]`.*
+7. **Calibrator** (proper scoring, backtesting) — automated test bench keeping claims empirically honest. *Prototype: `[F]`.*
+8. **Governance boundary `[D]`/`[I]`:** individual forecasts and interventions are governed by explicit uncertainty quantification and user decision policies; §4.4 does not claim mathematical impossibility of individual prediction.
 
-**The synthesis.** Strip each system to its load-bearing part and the same eight organs appear, in every mature tradition, under different robes:
-
-1. **The Encoder** (natal chart, Orient, generative model) — read the situation into a state. *Machine: Enc / [C].*
-2. **The Estimator** (Kalman, Delphi) — infer the state from noisy data, repeatedly. *Machine: [K] shipped in v0.6; the first domain sensor [S] shipped in v0.7 (git, held-out p = 0.014); coherence-bearing sensing remains open.*
-3. **The Panel** (symptoms, base rates, σ) — addressed diagnosis. *Machine: [C], Σ-decode.*
-4. **The Atlas** (scenarios, terrain maps, ephemerides) — the map of basins and schedules. *Machine: [J].*
-5. **The Oracle** (patience, wargame, MCTS) — sampled reachability, answered as probability. *Machine: solitaire.*
-6. **The Navigator** (OODA, MPC, stalking) — commit one step, re-plan, keep tempo. *Machine: [E].*
-7. **The Calibrator** (Tetlock, backtesting) — the scoreboard that keeps the symbols honest. *Machine: [F].*
-8. **The boundary [D/I]:** individual forecasts and interventions are governed by explicit uncertainty and user decision policies; §4.4 does not prove mathematical impossibility of individual prediction.
-
-That convergent evolution found the same chart eight-for-eight is the strongest architectural evidence available: **the blueprint is imposed by the structure of the task, not by any culture** [I]. What the divinatory family got permanently right: state discretization, scheduled perturbations, stochastic reachability, and the practitioner's calibration diary. What it got permanently wrong — and what the Radiant refuses by theorem rather than by taste — is the point oracle over persons. UHM's contribution to the lineage is not a ninth organ but the floor under all eight: a state space with theorems, thresholds with proofs, and a calibration table that re-runs.
-
-The same comparative move applied to the *structural* lineage — UML→C4, DDD, VSM, MAPE-K, the 2024–2026 agentic stack — yields the sister blueprint: [HOLARCH](./holarch.md), the meta-specification of architecture. The Radiant's eight organs are the navigation suite of a system whose standing structure HOLARCH types; its estimator gap (row «Kalman» above) and viability-engineering case №12 both land there as first-class machinery.
+The same structural comparison applied to software architecture frameworks (UML$\to$C4, DDD, VSM, MAPE-K, modern agentic stacks) yields the companion specification [HOLARCH](./holarch.md).
 
 ## §8. Application cases {#кейсы}
 
-Extraction criteria: a live data loop (can $\Gamma$ be estimated repeatedly?), falsifiable feedback (does the prescription's outcome measure back?), cost of error, and payoff. Ranked:
+Selection criteria: a repeated data loop (can $\Gamma$ be estimated sequentially?), measurable feedback in commensurate units, explicit error cost, and decision payoff. Ranked:
 
 | # | Case | Horizon | Observables | Status |
 |---|------|---------|-------------|--------|
-| 1 | **SYNARC introspection & safety** — the σ-panel as the organism's own interoception; off-switch/halting per T-288/T-289; navigator as the deliberation organ over $\rho^*_\Omega$ | now (spec'd) | full suite, exact | [D] engineering |
-| 2 | **LLM-agent context health** — $\sigma_O$ (resource starvation) predicts context collapse before it happens; prescriptions = summarize/replenish ([CC worked case](/docs/applied/coherence-cybernetics/applications)) | now | $\sigma$-proxies from logs | [C] |
-| 3 | **Clinical comparison.** Compare an independently calibrated model readout with an external clinical record on held-out data. PCI and matrix purity use distinct scales. | 2–3 yr | Specified model readouts | [H] |
-| 4 | **Organizational & therapeutic audit** — the [П1 mapping](https://homohologra.ph/research/gamma-canon#п1-картирование) + the panel + flow-restoration prescriptions; burnout reads as $O/U$ loss (the machine's demo) | now | 28-cell audit | [О/И] protocolized |
-| 5 | **Education** — the ontology book's map + a tutor-navigator that shows a learner their open doors (dials) instead of their rank | 2–3 yr | desk/library model | [I] |
-| 6 | **Personal navigation (the Dee protocol)** — daily Γ-mapping, solitaire runs over one's own basins; honest statuses on every readout | now, personal | П1–П4 | [I] explicitly |
-| 7 | **Market/systemic risk** — $\mathrm{SysRisk} = \max_k\|\sigma_k\|/P$ over ensemble Γ; psychohistory where it is legitimate (levels, not persons) | 2–10 yr | index proxies | [H] |
-| 8 | **Research prioritization** — the solver pointed at the theory itself: which open symbol, if calibrated, most enlarges the verified table (the calibration gradient) | now, meta | the H-table | [D] |
-| 9 | **Policy ensembles** — basin maps for populations under interventions, with the §4.4 boundary as a constitutional constraint: navigate levels, never point-predict persons | 10 yr | ensemble Γ | [H] |
-| 10 | **Merger & alliance design** — the pair organ as an instrument: size the bridge (gain $2\varepsilon^2\|\gamma\|^2$, stored in the bond), separate it from the κ-budget contest, predict which splits starve whom | 2–3 yr | pair Γ, H47–H50 | [О/С] |
-| 11 | **Team alignment audit** — the centered-Gram meta-P as a one-number answer to «is this group a subject?»: shared ideal 1.000 vs personal ideals 0.189 against the 2/7 wall | now | member Γ's | [О/И] |
-| 12 | **Viability engineering** — the phase atlas as a design chart: place any system (reactor, org, model training run) inside the Goldilocks band; the $\kappa = 0$ column as the hard law *no supply, no being* | now | (gD, κ) proxies | [D] |
+| 1 | **SYNARC introspection & safety** — the $\sigma$-panel as internal monitoring; halting/reignition checks per `T-288`/`T-289`; navigator as deliberation module over $\rho^*_\Omega$ | now (specified) | full suite, exact | `[D]` engineering |
+| 2 | **LLM-agent context health** — $\sigma_O$ (resource starvation) flags context degradation before failure; actions = summarize/replenish ([CC worked case](/docs/applied/coherence-cybernetics/applications)) | now | $\sigma$-proxies from logs | `[C]` |
+| 3 | **Clinical comparison** — compare an independently calibrated model readout with external clinical records on held-out data (PCI and matrix purity use distinct scales) | 2–3 yr | specified model readouts | `[H]` |
+| 4 | **Organizational & team workflow audit** — structured 7-axis / 28-entry state encoding + stress panel + bottleneck remediation; overload read as $O/U$ drop | now | 28-entry structured audit | `[D]` / `[I]` protocolized |
+| 5 | **Adaptive tutoring** — state-tracked learning support highlighting available structural transitions (dials) rather than single scalar rankings | 2–3 yr | structured learner state model | `[I]` |
+| 6 | **Personal state tracking & self-calibration** — longitudinal self-report encoding, Monte Carlo reachability checks over modeled basins; explicit `[I]` status on every readout | now, personal | self-report time series | `[I]` explicitly |
+| 7 | **Market / systemic risk** — $\mathrm{SysRisk} = \max_k\|\sigma_k\|/P$ over ensemble correlation matrices; regime monitoring at aggregate level | 2–10 yr | index proxies | `[H]` |
+| 8 | **Research prioritization** — pointing the calibration suite at open hypotheses to identify which test maximally expands verified coverage | now, meta | calibration H-table | `[D]` |
+| 9 | **Policy ensemble modeling** — basin maps for population aggregates under candidate interventions with explicit uncertainty envelopes | 10 yr | ensemble $\Gamma$ | `[H]` |
+| 10 | **Merger & alliance modeling** — pair-space module separating cross-entity coupling perturbations (H47–H49) from fixed-budget resource competition (H50) | 2–3 yr | pair $\Gamma$, H47–H50 | `[D]` / `[C]` |
+| 11 | **Team alignment audit** — centered-Gram aggregate purity comparing aligned targets ($1.000$) against divergent targets ($0.189$) relative to the $2/7$ cut | now | member $\Gamma$ estimates | `[D]` / `[I]` |
+| 12 | **Viability engineering** — phase atlas mapping parameter pairs $(g_D, \kappa)$ into the viable band; $\kappa = 0$ boundary demonstrating loss of structure without supply | now | $(g_D, \kappa)$ proxies | `[D]` |
 
-The *best* cases (1–3) share one shape: the observables already exist, the feedback loop is measured in the same units as the prescription, and an error surfaces quickly. The 10-year ecosystem the author expects is, concretely, rows 4–9 growing the same shape.
+The strongest near-term cases (1–3) share one property: observables already exist digitally, feedback is measured in the same units as interventions, and calibration errors surface rapidly.
 
 ## §9. Implemented controls and open measurements {#дорожная-карта}
 
-- Pair readouts (H24, H47–H50) and two-level aggregates (H45, H51) have finite tests. For the third level, H65 uses collective states. Member-index Gram matrices can fail to distinguish different internal patterns.
-- The estimator uses noisy full and magnitude-only readouts (R26–R27, demo 6). In the specified diagnosis simulation it gives 62% against 22% for the raw noisy input. The metadata-only repository sensor reported a preregistered held-out comparison with $p=0.014$.
-- H57–H59 test the stress readout against the specified gate. H60–H64 compare geodesic MPC strategies, and H66 compares rollout-guided and greedy search at equal budgets.
-- The Verum specification records the typed contracts and their finite checks. Each reported result depends on its stated test conditions.
+- Pair readouts (H24, H47–H50) and two-level aggregates (H45, H51) have finite numerical tests. For the third level, H65 operates on collective states; member-index Gram matrices alone can fail to distinguish distinct internal patterns.
+- The state estimator handles noisy full-matrix and magnitude-only readouts (R26–R27, demo 6), achieving 62% blind-diagnosis accuracy vs. 22% on raw noisy snapshots in the acute-window simulation. The metadata-only repository sensor passed a pre-registered held-out comparison ($p=0.014$).
+- H57–H59 compare the raw `T-92` stress panel against the exact Cap2 gate on explicit witnesses. H60–H64 benchmark geodesic MPC strategies, and H66 compares rollout-guided against greedy search at equal budgets.
+- The Verum specification records typed contracts and finite checks; every reported result is strictly scoped to its declared test conditions.
 
 ## §10. Status summary {#статусы}
 
 | Claim | Status |
 |-------|--------|
-| Fano wiring = translates of $QR(7)$; $\mathbb{Z}_3$ = multiplier 2; Hamming address; XOR↔QR dictionary | [T] machine-checked |
-| Contour-residue spectral engine correct to $10^{-15}$ | [T] standard math, machine-checked |
-| Viable attractor; entropy-law signs; starvation-halt + hysteresis-free reignition; metabolic rate frequency-independent | [T] corpus theorems, reproduced |
-| The drift does most of every golden path; boldness shortens time-to-window at printed heat cost; dials (not drift) choose the chord | measured in v0 |
-| Pair space: quadratic identity, chosen sign and PSD check; marginal preservation under zero partial traces; not a cooperation-benefit theorem | measured in v0.5 |
-| The ceiling of three: ladder arithmetic [T]; shared ideal ⇒ viable meta-holon, personal ideals ⇒ none | [T] + measured |
-| Regeneration = m-chord motion ($10^{-16}$); drift road $1.165\times$ chord | measured (T-263 shadow) |
-| The window is a proper Goldilocks band of (dissipation, supply); $\kappa = 0$ ⇒ all grey | measured atlas |
-| The eight-organ blueprint is convergent across the full spectrum of navigation systems | [I] comparative |
-| Solve et coagula = dissipator + regeneration; transmutation = spectrum-preserving rewiring; the Stone is an instrument | [I] over [T] organs |
-| «Obstacles removed before the bold» = basin crossing + attractor drift | [I] over [T] anchors |
-| Golden path = viable BKM geodesic | [H] (v1 test) |
-| Ensemble versus individual predictability | [H] reported selected simulation; requires independent forecast calibration |
-| Stress-panel readout | H37 and H57–H59 test the declared panel, the $\{A,S,D\}$ block and the explicit witnesses. Biological viability needs separate calibration. |
-| Golden path = viable BKM geodesic | [Г → С-measured]: $L_m < L_e < L_{\text{drift}}$, chord viable in-window, MPC rediscovers boldness (H60–H64); the global variational statement open |
-| The solitaire oracle, the Dee parable | [I] with exact Monte-Carlo content |
-| Psychohistory for levels, never persons | the §4.4 boundary |
+| Canonical Fano wiring = translates of $QR(7)$; $\mathbb{Z}_3$ = multiplier 2; Hamming address; XOR↔QR bijection $(3\,4)(5\,6\,7)$ | `[T]` machine-checked |
+| Contour-residue spectral engine accurate to $10^{-15}$ | `[T]` standard analysis, machine-checked |
+| Viable attractor (`T-124`); entropy-flux signs (`T-271`); starvation-halt + hysteresis-free reignition (`T-288`/`T-289`); step-size invariance (`T-273`/`T-276`) | `[T]` / `[C]` corpus results, numerically reproduced |
+| Passive drift performs most of window entry; boost shortens entry at printed stress cost; $\mathrm{SO}(7)$ dials select coherence configuration | measured in prototype v0 |
+| Pair space: quadratic identity, chosen sign and PSD check; marginal preservation under zero partial traces; distinct from `T-77` pinching and not a universal cooperation-benefit theorem | measured in prototype v0.5 |
+| Attenuation-score sequence (`T-142` `[T]` for stipulated convention, H45; universal depth ceiling withdrawn `T-217 [✗]`); shared vs. distinct targets in centered-Gram aggregate | `[T]` (stipulated score) + measured |
+| Replacement flow = affine $m$-chord ($10^{-16}$); drift path $1.165\times$ chord | `[T]` (fixed-target $m$-chord) + measured (`T-263`) |
+| Viable window forms a bounded band in $(g_D, \kappa)$; $\kappa = 0 \implies I/7$ | measured in phase atlas |
+| Eight-organ architectural convergence across control, filtering, and forecasting disciplines | `[I]` comparative engineering analysis |
+| Golden path = globally minimal BKM geodesic | `[H]` (H60–H64 compare finite controllers: $L_m < L_e < L_{\text{drift}}$, MPC enters window in 33 ticks; global variational minimality open) |
+| Ensemble vs. individual predictability | `[H]` reported for selected simulation H44; requires independent forecast calibration |
+| Stress-panel readout (`T-92` `[D]`) | H37 and H57–H59 test the declared panel and explicit witnesses; distinct from Cap2 gate and biological viability |
+| Monte Carlo reachability sampler | `[D]` standard binomial reachability estimation |
 
-*The table of §5 is the living contract of this program: 56 hypotheses today; every change re-earns it.*
+*The table of §5 is the executable contract of this prototype: 66 hypotheses in v1, re-run on every revision.*

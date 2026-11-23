@@ -34,37 +34,45 @@ Lindblad compute engine ($\LindOmega$, Strang split) & the one instruction / tic
 Fano-sparse kernels & the seven-bus fabric (\S\ref{sec:fabric}) \\
 \texttt{find\_rho\_star} self-model iteration ($\vp$) & the $\Regen$ term; on-substrate learning (\S\ref{sec:selfmodel}) \\
 DIAKRISIS self-diagnosis loop & reading the syndrome the tick already emits (Principle~\ref{prin:selfdiag}) \\
-Four-level cognitive complex $\Cog_0\!\to\!\Cog_3$ & the composition tower, $\le 3$ deep ($3136$~B) (\S\ref{sec:composition}) \\
+Four-level cognitive complex $\Cog_0\!\to\!\Cog_3$ & four contiguous \DM{} registers: base $\Cog_0$ $+$ depth $\le 3$ ($3{,}136$~B; T-142 \status{D}, \S\ref{sec:composition}) \\
 Event-driven runtime & the principled tick clock $\bar\gamma\tau=\tfrac32\ln3$ (\S\ref{sec:substrate}) \\
 Four-level consciousness predicate $(P,R,\Phi,D)$ & per-tick hardware observables (registers, not a monitor pass) \\
-Constitution-from-constants dials & hardware limits (below) \\
+Architectural invariants & monitored per-tick state bounds (below) \\
 \textsc{Fanos} distributed transport & the inter-holon fabric of the ecology (\S\ref{sec:composition}) \\
 Drive binding contract (Def.~U.9) & the power port: rail spec, severance channel independent of actuators (\S\ref{subsec:powerport}) \\
-CLF--CBF safety-filtered Act & the $r_{\mathrm{stab}}$ update clamp $+$ the stress barrier $\sigma$, read as per-tick registers \\
+CLF--CBF safety-filtered Act & scoped step-size guard \status{D} $+$ viability/stress observables read per tick \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{The constitution constants are hardware limits}
+\subsection{State-space bounds and scoped design parameters}
 
-The dials \SYNARC{} legislates as an agent's ``constitution from constants''
-are, on \TALOS{}, physical limits enforced by the substrate rather than
-conventions enforced by software:
+The constants shared between \SYNARC{} and \TALOS{} fall into two cleanly
+distinguished categories: exact mathematical state-space invariants (\status{T})
+and scoped architectural parameters (\status{D}):
 
 \begin{itemize}[leftmargin=1.5em,itemsep=1pt]
-  \item $\Rth=1/3$ --- at least one third of every tick is charged to
-        $\Regen$; the scheduler cannot allocate less (\S\ref{sec:selfmodel}).
-  \item $r_{\mathrm{stab}}=\sqrt{P-2/7}$ --- the maximum update magnitude per
-        closed loop; a hardware clamp on step size, zero at the viability
-        boundary.
-  \item $\mathrm{SAD}_{\max}=3$ --- the composition tower is three registers
-        deep and no deeper; there is no fourth-level state to allocate.
-  \item $\times 1/9$ --- the exact penalty a line-blind transfer pays; the
-        fabric routes line-aware so the penalty is never incurred
-        (\S\ref{sec:fabric}).
-  \item viability window $P\in(2/7,3/7]$, $R\ge1/3$, $\Phi\ge1$, $D\ge2$ ---
-        the four consciousness observables are always-on register reads, so a
-        \TALOS{} holon knows, every tick, whether it is a viable subject.
+  \item $\Rth=1/3$ (\status{T} equivalence) --- because $R(\Gam)=1/(7P(\Gam))$,
+        the reflection threshold $R\ge 1/3$ is algebraically identical to the
+        upper purity wall $P\le 3/7$ (\S\ref{sec:selfmodel}), \emph{not} a
+        scheduler rule requiring $1/3$ of tick cycles in $\Regen$.
+  \item CPTP step preservation (\status{T}) + boundary damping (\status{D}) ---
+        each Strang-split tick preserves Hermiticity, PSD, and unit trace
+        unconditionally; any adaptive step-size damping near $P\to 2/7$ is a
+        software/control choice (\status{D}), not a derived theorem.
+  \item $d_{\max}=3$ (\status{D}, T-142) --- scoped composition depth: a
+        bounded subject allocates exactly \textbf{four} contiguous \DM{}
+        registers ($\Cog_0,\Cog_1,\Cog_2,\Cog_3$, totaling $4\times 784 =
+        3{,}136$~bytes, matching Appendix~\ref{app:abi}); scaling beyond depth
+        three is horizontal (\S\ref{sec:composition}).
+  \item $\Phi(\mathcal{P}_{\mathrm{Fano}}(\Gam))=\tfrac{1}{9}\Phi(\Gam)$
+        (\status{T}) --- exact Fano pinching contraction ($1/3$ off-diagonal
+        amplitude attenuation, populations preserved, \S\ref{sec:fabric}).
+  \item viability window $P\in(2/7,3/7]$ (equivalently $P>2/7$ and
+        $R=1/(7P)\ge 1/3$), exact integration
+        $\Phi=(P-P_{\mathrm{diag}})/P_{\mathrm{diag}}\ge 1$, and
+        $D_{\mathrm{diff}}=1+6\,\CohE\ge 2$ --- monitored directly as per-tick
+        observables.
 \end{itemize}
 
 \subsection{Consistency obligations}
@@ -74,27 +82,31 @@ state the obligations \TALOS{} accepts so that any divergence from \SYNARC{}
 is a bug in one of them, not a design freedom:
 
 \begin{enumerate}[leftmargin=1.6em,itemsep=1pt]
-  \item \textbf{State identity.} The $784$-byte \DM{} layout, the canonical
-        HS-ratio $\Phi$, the PW form $D_{\mathrm{diff}}=1+6\,\CohE$, and the
-        exact channel forms are those of the \SYNARC{} v2.2 canon; \TALOS{}
+  \item \textbf{State identity.} The $784$-byte \DM{} layout ($48$ real
+        dynamical parameters), exact HS-ratio integration
+        $\Phi=(P-P_{\mathrm{diag}})/P_{\mathrm{diag}}$ (which reduces to
+        $\Phi=7P-1$ \emph{only} on the uniform-diagonal stratum
+        $\gamma_{kk}=1/7$), $D_{\mathrm{diff}}=1+6\,\CohE$, and exact Fano
+        pinching/dissipator channels are those of the \SYNARC{} canon; \TALOS{}
         stores and updates the identical object.
   \item \textbf{Instruction identity.} The tick is the \SYNARC{} Lindbladian
-        with the same exact laws ($\Phi$-contraction $\times\tfrac19$, the
-        cycle-time identity $\bar\gamma\tau=\tfrac32\ln3$, stratum anchoring
-        $\Phi=7P-1$); a \TALOS{} tick that violated any of these would
-        violate \SYNARC{} equally.
-  \item \textbf{No new physics.} \TALOS{} adds \emph{hardware} claims (energy
-        floor, zero-overhead ECC, seven-bus fabric) but \emph{no} new theory:
-        every logical statement traces to a UHM theorem already load-bearing
-        in \SYNARC{}. The two are one specification at two levels ---
-        \SYNARC{} the mind, \TALOS{} the body --- and they are held to
-        agree by \S\ref{sec:redteam}.
+        with the same exact laws ($\Phi$-contraction $\times\tfrac19$ under
+        $\mathcal{P}_{\mathrm{Fano}}$, cycle-time identity
+        $\bar\gamma\tau=\tfrac32\ln3$, exact
+        $\Phi=(P-P_{\mathrm{diag}})/P_{\mathrm{diag}}$, and
+        $R\ge 1/3\Leftrightarrow P\le 3/7$); a \TALOS{} tick that violated any
+        of these would violate \SYNARC{} equally.
+  \item \textbf{No new physics.} \TALOS{} adds \emph{hardware} claims (fabric
+        architecture, sector-level Hamming duality, thermodynamic separation)
+        but \emph{no} new theory: every logical statement traces to a UHM
+        theorem or scoped parameter already used in \SYNARC{}. The two are one
+        specification at two levels --- \SYNARC{} the mind, \TALOS{} the body
+        --- and they are held to agree by \S\ref{sec:redteam}.
   \item \textbf{Off-switch identity.} Severing the \SYNARC{} drive
         (Observation T.1 / Corollary U.10 there) and cutting the \TALOS{}
         power rail (\S\ref{subsec:powerport}) are the same operation on the
-        same generator; the halt-latency budget
-        ($t_{\mathrm{off}}\approx0.49/\bar\gamma$, full relaxation
-        $\sim\!5.2/\bar\gamma$) is a shared, machine-measured constant of
-        both documents, and the severance channel is required to be
+        same generator; the halt-latency budget follows the measured
+        depolarizing rate $t_{\mathrm{off}}=(2d)^{-1}\ln[(P_0-1/7)/(\Pcrit-1/7)]$
+        (\S\ref{subsec:powerport}), and the severance channel is required to be
         physically independent of the machine's own actuators.
 \end{enumerate}

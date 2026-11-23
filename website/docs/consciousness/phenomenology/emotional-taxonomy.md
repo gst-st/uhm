@@ -1,11 +1,11 @@
 ---
 sidebar_position: 2
-title: "Emotion Taxonomy from ∇P"
-description: "Affective reports, physiology and the identifiability of proposed dynamical scores."
+title: "Affective Reports and Purity Change"
+description: "Affective reports, physiological observables, and the identifiability of proposed dynamical scores based on purity change."
 slug: /consciousness/phenomenology/emotional-taxonomy
 ---
 
-# Emotion Taxonomy from $\nabla P$
+# Affective Reports and Purity Change
 
 An emotion label is an observation when a participant supplies it under a stated question. Heart rate, approach or avoidance, and choice under uncertainty are other observations. Before proposing that any combination identifies an emotion, specify the person, time interval, alternatives and prediction rule.
 

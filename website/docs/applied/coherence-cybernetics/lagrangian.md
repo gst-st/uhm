@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
-title: "Lagrangian of Gap Theory"
-description: "Complete 6-term Lagrangian of Gap theory, the potential V_Gap, spontaneous minimum, and connection with the octonionic structure"
+title: "Gap Lagrangian Models"
+description: "Selected phase-space action ansatz, Lagrange–d'Alembert equations, first-order matrix ODE identities, Keldysh bridge scope, and conditional symmetries"
 ---
 
 # Gap Lagrangian models: a selected action and its scope

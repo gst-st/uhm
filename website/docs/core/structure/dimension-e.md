@@ -153,7 +153,10 @@ where:
 
 **Intuitive explanation.** Recall how white light, passed through a prism, is split into a spectrum — red, orange, yellow and so on. Each colour has its own wavelength (quality $|q_i\rangle$) and brightness (intensity $\lambda_i$). The spectral decomposition of $\rho_E$ is a "prism for the inner world": it shows what "colours" make up the experience and how bright each one is.
 
-If all $\lambda_i$ are equal — the experience is "white", uniform, undifferentiated (deep anaesthesia). If one $\lambda_1 \approx 1$ and the rest $\lambda_i \approx 0$ — the experience is "monochromatic", concentrated on a single quality (acute pain). Rich conscious experience is a "full spectrum" with several significant $\lambda_i$.
+Note carefully how the spectrum of $\rho_E$ relates to $D_{\mathrm{diff}} = \exp(S_{vN}(\rho_E))$:
+- If one $\lambda_1 \approx 1$ and the rest $\lambda_i \approx 0$ (nearly pure $\rho_E$), then $S_{vN}(\rho_E) \approx 0$ and $D_{\mathrm{diff}} \approx 1$ — **minimal differentiation** (monochromatic, single-component state).
+- If all $\lambda_i = 1/n$ are equal (maximally mixed $\rho_E = I_n/n$), then $S_{vN}(\rho_E) = \log n$ and $D_{\mathrm{diff}} = n$ — **maximal spectral differentiation** (uniform spread across all $n$ orthogonal quality modes; note that this is high differentiation, NOT "undifferentiated", though without $P > 2/7$ and $\Phi \ge 1$ on the full holon state $\Gamma$ the system is not viable or integrated).
+- Intermediate multi-component spectra with several significant $\lambda_i$ yield $D_{\mathrm{diff}} \ge 2$ while allowing high coherence and viability on the full state $\Gamma$.
 
 ### Phenomenal vector
 
@@ -283,49 +286,43 @@ Analogy: a sheet of paper has a front side and a back side. These are not two sh
 The universal E-floor T-38a is withdrawn [✗]. For a stated feedback model, noise/input class and bootstrap bound, a conditional CC implication can require E-dependent support. It does not follow from purity, the canonical reflection proxy and integration alone, nor does it establish a multidimensional experiential state. Reading the E-label as phenomenal interiority remains [I/H]. [Conditional theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie).
 :::
 
-## Examples by level {#примеры-по-уровням}
+## Illustrative regimes by level {#примеры-по-уровням}
 
-### Physical level
+### Exact mathematical bounds on $(P, R, \Phi)$ [T]
 
-| System | Level | $\gamma_{EE}$ | $D_{\text{diff}}$ | Description |
-|--------|-------|---------------|-------------------|-------------|
-| Electron | L0 | $\sim 0.001$ | 1 | Spin state — one "quality" |
-| Crystal | L0 | $\sim 0.01$ | 1 | Phonon coherence |
-| Laser beam | L0 | $\sim 0.02$ | 1 | Coherent optical state |
+In native $7$-dimensional UHM, $P \in [1/7, 1]$ and $R = 1/(7P)$ obey exact algebraic bounds that **every** valid density matrix $\Gamma \in \mathcal D(\mathbb C^7)$ must satisfy:
 
-### Biological level
+$$
+R \in \left[\tfrac{1}{7},\, 1\right] \approx [0.143,\, 1], \qquad 0 \;\le\; \Phi \;\le\; 7P - 1 = \frac{1}{R} - 1 \;\le\; 6.
+$$
 
-| System | Level | $R$ | $\Phi$ | Description |
-|--------|-------|-----|--------|-------------|
-| Bacterium | L0–L1 | $\sim 0.05$ | $\sim 0.3$ | Chemotaxis — the simplest "reaction" |
-| Retina | L1 | $< R_{th}$ | $\sim 1$ | Spectral profile distinguishes colours |
-| Individual neuron | L1 | $\sim 0.1$ | $< \Phi_{th}$ | Local quality geometry |
-| Higher primates | L2 | $\geq R_{th}$ | $\sim 2$ | Mirror self-recognition |
+Inside the **L2 conscious window** ($P > 2/7$, $R \ge 1/3$, $\Phi \ge 1$):
 
-### Cognitive level
+$$
+P \in \left(\tfrac{2}{7},\, \tfrac{3}{7}\right], \qquad R \in \left[\tfrac{1}{3},\, \tfrac{1}{2}\right) \approx [0.333,\, 0.500), \qquad \Phi \in [1,\, 2].
+$$
 
-| System | Level | $R$ | $\Phi$ | Description |
-|--------|-------|-----|--------|-------------|
-| REM sleep | L2 | $\sim 0.4$ | $\sim 3$ | Dreams with partial reflection |
-| Waking human | L2 | $\sim 0.7$ | $\sim 4$ | Full set of qualia: colour, pain, emotions |
-| Deep meditation | L3 | $R^{(2)} \geq 1/4$ | $\gg 1$ | Observing the observer |
+*(Former tables listing $R \sim 0.05$, $R \sim 0.1$, waking human $R \sim 0.7, \Phi \sim 4$, or L3 with $R^{(2)} \ge 1/4, \Phi \gg 1$ violated these bounds — e.g. $R < 1/7$ is impossible, $R = 0.7 \implies P \approx 0.204 < 2/7$ is non-viable with $\Phi \le 0.43$, and $\Phi \le 2$ throughout L2 — and are replaced below.)*
+
+### Valid model regimes [D/H]
+
+| Regime (illustrative model states [H]) | Level | Valid $P$ | Valid $R = 1/(7P)$ | Valid $\Phi \le 1/R - 1$ | Characterization |
+|---|---|---|---|---|---|
+| Maximally mixed / sub-viable | L0 | $1/7 \le P \le 2/7$ | $1/2 \le R \le 1$ | $0 \le \Phi \le 1$ | Below structural-majority threshold $P_{\mathrm{crit}} = 2/7$ |
+| High-purity / sub-reflective | L0–L1 | $3/7 < P \le 1$ | $1/7 \le R < 1/3$ | $0 \le \Phi \le 6$ | Pure or nearly pure coherent state ($R < R_{\mathrm{th}}$) |
+| Viable but fragmented | L1 | $2/7 < P \le 3/7$ | $1/3 \le R < 1/2$ | $0 \le \Phi < 1$ | Diagonal populations dominate coherences ($\Phi < 1$) |
+| Conscious window (e.g., $\rho = \tfrac12 I/7 + \tfrac12 uu^\dagger$) | L2 | $P = 5/14 \approx 0.357$ | $R = 0.40$ | $\Phi = 1.50$ | Meets $P > 2/7$, $R \ge 1/3$, $\Phi \ge 1$, $D^{7D} \approx 2.37 \ge 2$ |
+| Metacognitive regime | L3 | $2/7 < P \le 3/7$ | $1/3 \le R < 1/2$ | $1 \le \Phi \le 2$ | L2 plus calibrated second-order prediction certificate ($a_2 > 2\varepsilon_2$; not $R^{(2)} \ge 1/4$) |
 
 ## Loss of interiority {#потеря-интериорности}
 
 When $\gamma_{EE} \to 0$ (or $\sigma_E \to 1$):
 
-1. Phenomenal content becomes impoverished: $D_{\text{diff}} \to 1$
-2. Coherences of E with other dimensions drop: $\gamma_{Ei} \to 0$
-3. The regeneration formula loses one of its key factors: $\kappa_0 \propto |\gamma_{OE}|$
+1. By positive semidefiniteness ($|\gamma_{Ei}|^2 \le \gamma_{EE}\gamma_{ii}$), all coherences of $E$ with the other six axes vanish: $\gamma_{Ei} \to 0$.
+2. Both $\mathrm{Coh}_E \to 0$ and the native proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E \to 1$.
+3. The kinetic regeneration ansatz $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/(\gamma_{OO} + \varepsilon) \to 0$.
 
-**Clinical analogies:**
-
-| Condition | Mechanism | Manifestations |
-|-----------|-----------|----------------|
-| Deep anaesthesia | $\gamma_{EE} \to 0$ | Complete loss of inner world; $\rho_E \to$ pure state |
-| Alexithymia | $\gamma_{ED} \to 0$ | Inability to recognise one's own emotions; processes exist but are not experienced |
-| Anosognosia | $\gamma_{EA} \to 0$ | Inability to recognise the deficit (the patient does not know they are ill) |
-| Depersonalisation | $\gamma_{EU} \to 0$ | "I feel like I'm not myself" — interiority is present but not integrated into the whole |
+*(Note: mapping specific clinical diagnoses — such as alexithymia, anosognosia, depersonalisation, depression, or hallucinations — onto individual matrix entries $\gamma_{ED}, \gamma_{EA}, \gamma_{EU}, \gamma_{OE}, \gamma_{EL}$ is empirically unvalidated and removed [✗], since native scalar gates are permutation-invariant across the six non-$E$ axes.)*
 
 ## Connection with other dimensions
 
@@ -339,15 +336,12 @@ graph LR
     E --> U["U — experience is integrated"]
 ```
 
-**Key connections:**
+**Key connections (model roles [I]):**
 
-- **E ↔ U (Synthesis):** Interiority and unity are interrelated: $E$ determines *what* constitutes the interior content, $U$ determines *how* these contents are integrated into a single whole. When $\gamma_{EU} \to 0$, experience fragments (dissociation).
-
-- **E ↔ O (Immanence):** Through the coherence $\gamma_{OE}$ interiority receives **energetic nourishment**. The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ shows: the stronger the connection of E with the Ground, the faster the regeneration of coherence. When $\gamma_{OE} \to 0$ — interiority "fades out" (depression, depersonalisation).
-
-- **E ↔ L (Evidence):** Logic in interiority is the ability to distinguish "this is true" from "this is false" *from within*. When $\gamma_{EL} \to 0$ — experiences are chaotic, not connected by logic (delusion, hallucinations).
-
-- **E ↔ A (Apperception):** Distinction that has become experience. Without the connection $\gamma_{EA}$, experience contains no distinctions — "everything is fused into one".
+- **E ↔ U:** $\gamma_{EU}$ couples interiority with unity.
+- **E ↔ O:** $\gamma_{OE}$ enters the numerator of the regularized kinetic rate ansatz $\kappa_0^{\varepsilon} = \omega_0 |\gamma_{OE}||\gamma_{OU}|/(\gamma_{OO} + \varepsilon)$.
+- **E ↔ L:** $\gamma_{EL}$ couples interiority with logic.
+- **E ↔ A:** $\gamma_{EA}$ couples interiority with articulation.
 
 ## Coherence with E
 

@@ -112,7 +112,7 @@ $$
 R_\varphi=1-\|\Gamma-\varphi(\Gamma)\|_F^2/P
 $$
 
-compares to a chosen model and may even be negative; they must not be interchanged. Metric-classification theorems do not uniquely select this scalar ratio or supply a Bayesian probability interpretation. Counting dynamical summands does not count independent information channels.
+compares to a chosen model and may even be negative; they must not be interchanged. In particular, the closed form $R_{\varphi_{\mathrm{lin}}} = 1 - (1-R)^3$ holds specifically for the linear anchor-mixing map $\varphi_{\mathrm{lin}}(\Gamma) := R(\Gamma)\,\Gamma + (1-R(\Gamma))\,I/7$ ([T-249](/docs/proofs/categorical/formalization-phi#дф-производная) **[T]**), not for the coherent dephasing-anchor map $\varphi_{\mathrm{coh}}$ or the collineation-anchored map $\varphi_J$ ([T-334](/docs/core/operators/phi-operator#phi-j) **[T]**), where $R$ and $1-R$ play reversed roles. Metric-classification theorems do not uniquely select this scalar ratio or supply a Bayesian probability interpretation. Counting dynamical summands does not count independent information channels.
 
 $\Phi\ge1$ is an explicit choice of HS weight balance. The inequality $\Phi\le7P-1$ does not force a universal conscious threshold: at $P=2/7$ it gives $\Phi\le1$, with equality only for uniform diagonal. For extension mode, $D\ge2\iff S_{vN}\ge\log2$ is exact; choosing one bit as a phenomenal threshold remains a bridge. Calibration and biological universality of all gates are **[H]**.
 
@@ -198,27 +198,27 @@ The square convention is recorded to prevent threshold ambiguity. These are stan
 
 If a state map $T$ has an orbit $\rho_n=T^n\rho_0$ converging to a state $\rho_*$, then $f(\rho_{n-1},\rho_n)\to1$ by continuity. A sufficient condition is a uniform contraction $d(T\rho,T\sigma)\le qd(\rho,\sigma)$ with $q<1$ on a complete invariant metric state space; Banach's theorem then yields convergence. CPTP gives nonexpansiveness in appropriate metrics, not strict contraction or a unique fixed point.
 
-For the canonical model
+For the **coherent dephasing-anchor** self-model
 
 $$
-\varphi_{\mathrm{coh}}(\rho)=(1-R(\rho))\mathcal D_\alpha(\rho)+R(\rho)I/7,
+\varphi_{\mathrm{coh}}(\rho):=(1-R(\rho))\,\mathcal P_\alpha(\rho)+R(\rho)\,I/7 \qquad (k = 1 - R(\rho)),
 $$
 
-where $\mathcal D_\alpha$ preserves the diagonal and multiplies off-diagonals by $1-\alpha$, $0\le\alpha\le1$, there is the exact estimate
+where $\mathcal P_\alpha := \alpha\,\mathcal P_{\mathrm{base}} + (1-\alpha)\,\mathcal P_{\mathrm{Fano}}$ ($0\le\alpha\le1$) preserves the diagonal and multiplies off-diagonals by $c = (1-\alpha)/3 \in [0,1/3]$, there is the exact estimate
 
 $$
 \|\varphi_{\mathrm{coh}}(\rho)-I/7\|_F\le\frac67\|\rho-I/7\|_F.
 $$
 
-**Proof.** $1-R\le6/7$, $\mathcal D_\alpha(I/7)=I/7$, and the diagonal/off-diagonal splitting makes $\mathcal D_\alpha$ an HS contraction. Iterate the estimate. Thus every orbit converges to $I/7$, and successive fidelities tend to one although this attractor fails the L2 gate. This estimate relative to the fixed point does not assert contraction between every pair of states.
+**Proof.** $1-R\le6/7$, $\mathcal P_\alpha(I/7)=I/7$, and the diagonal/off-diagonal splitting makes $\mathcal P_\alpha$ an HS contraction. Iterate the estimate. Thus every orbit converges to $I/7$, and successive fidelities tend to one although this attractor fails the L2 gate. This estimate relative to the fixed point does not assert contraction between every pair of states.
 
-For the Fano case $\alpha=2/3$ and nonzero initial off-diagonal part, the actual canonical-model coherence survival is
+For the bare-Fano case $\alpha=0$ ($\mathcal P_0 = \mathcal P_{\mathrm{Fano}}$, multiplying off-diagonals by $1/3$) and nonzero initial off-diagonal part, the actual $\varphi_{\mathrm{coh}}$ coherence survival is
 
 $$
-S^{(n)}_{\varphi_{\mathrm{coh}}}=3^{-n}\prod_{j=0}^{n-1}(1-R(\rho_j))\le(2/7)^n.
+S^{(n)}_{\varphi_{\mathrm{coh}}}=3^{-n}\prod_{j=0}^{n-1}(1-R(\rho_j))\le(2/7)^n
 $$
 
-The equality $S^{(n)}=3^{-n}$ holds for iteration of the **bare linear Fano channel**, not for the full state-dependent canonical model. Fidelity tending to one and coherence tending to zero are compatible and do not establish deeper cognition.
+(and for general $\alpha \in [0,1]$, $S^{(n)}_{\varphi_{\mathrm{coh}}} = \bigl(\tfrac{1-\alpha}{3}\bigr)^n\prod_{j=0}^{n-1}(1-R(\rho_j)) \le \bigl(\tfrac{2(1-\alpha)}{7}\bigr)^n$). The equality $S^{(n)}=3^{-n}$ holds for iteration of the **bare linear Fano channel** $\mathcal P_{\mathrm{Fano}}$, not for the full state-dependent $\varphi_{\mathrm{coh}}$. By contrast, the **linear anchor-mixing** map $\varphi_{\mathrm{lin}}(\rho) := R(\rho)\,\rho + (1-R(\rho))\,I/7$ ([T-249](/docs/proofs/categorical/formalization-phi#дф-производная) **[T]**) reverses the weights $R$ and $1-R$ (giving $\|\varphi_{\mathrm{lin}}(\rho)-I/7\|_F = R(\rho)\|\rho-I/7\|_F$, also converging to $I/7$ without Fano filtering), while the **collineation-anchored** map $\varphi_J(\rho) := (1-R(\rho))\,\mathcal P_\alpha(\rho) + R(\rho)\,|\psi\rangle\langle\psi|$ ([T-334](/docs/core/operators/phi-operator#phi-j) **[T]**) replaces $I/7$ with a pure uniform-diagonal anchor $|\psi\rangle\langle\psi|$ and therefore does not converge to $I/7$. Fidelity tending to one and coherence tending to zero are compatible and do not establish deeper cognition.
 
 At $\rho_*=I/7$, every successive fidelity is already one at finite order. For a unitary CPTP channel swapping two orthogonal pure states, consecutive fidelities are zero. Hence neither finite-order nonattainability of fidelity one nor universal positivity follows from the CPTP property.
 

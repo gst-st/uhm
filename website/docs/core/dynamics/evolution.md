@@ -218,6 +218,19 @@ $$
 
 This is a **model definition**, not a unique consequence of the axioms or of Landauer's principle. The choice of $\varphi$, its physical realization, the rate and the gate must be specified separately. The [rate model](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) fixes the dimensions and kinetic assumptions; an adjunction alone supplies no numerical rate or norm of a natural transformation.
 
+:::warning Operational scope: effective feedback vs. fundamental single-copy quantum evolution
+Because $\mathcal{R}[\Gamma, E]$ depends nonlinearly on $\Gamma$, it is an **effective mean-field / classical-record feedback model**, not a fundamental single-copy quantum channel (respecting the Gisin–Polchinski no-signaling obstruction for nonlinear quantum dynamics; see [remote marginal identity](#запрет-сигнализации)). Exact multi-copy CPTP realization of purity-dependent feedback carries strict copy costs (proved in `website/research/operational-reconstruction/`):
+- **One-parameter purity ray (`feedback.md`):** exact CPTP realization requires at least $m_* = 3$ copies for threshold parameter $\mu \ge \frac{2d-3}{(d-1)(d+3)}$ and $m_* = 4$ copies below that threshold;
+- **Full state space $\mathcal{D}(\mathbb{C}^d)$ (`verify_foundational_bounds.py`):** the Frobenius-content balanced-partition law requires $m_W(d) = (d-2)d^2$ copies, i.e. $m_W(7) = 245$ copies for $d = 7$;
+- **Unconditional 3-copy operational alternative:** a strictly linear, no-signaling CPTP channel with quadratic purity modulation is realized unconditionally on 3 copies by the **SWAP feedback channel**:
+
+$$
+\Phi_{\mathrm{SWAP}}(\rho^{\otimes 3}) = \mathrm{Tr}\!\left(\frac{I + S_{12}}{2}\,\rho^{\otimes 2}\right)\rho + \mathrm{Tr}\!\left(\frac{I - S_{12}}{2}\,\rho^{\otimes 2}\right)\Theta = \frac{1 + P(\rho)}{2}\,\rho + \frac{1 - P(\rho)}{2}\,\Theta
+$$
+
+where $S_{12}$ is the swap operator on copies 1 and 2 and $\Theta \in \mathcal{D}(\mathbb{C}^7)$ is a fixed reference state.
+:::
+
 The state-preserving vector field, a CPTP realization with a frozen target, and the BKM descent inequality below have different premises. Positive drift or invariance of a viability region requires checking the vector field at its boundary.
 
 #### Theorem T-261: frozen-target BKM descent [T under the stated premises] {#теорема-регенерация-градиентный-спуск}
@@ -364,8 +377,8 @@ Once a formula $\varphi$ is chosen, $\rho_*=\varphi(\Gamma)$ is single-valued. D
 By the restated [T-222](/docs/proofs/categorical/fundamental-closures#t-222) (2026-09-26), on the purity window $2/7 < P \leq 3/7$ at high temperature every state is strictly dominated on every Rényi free energy $F_\alpha$ by partial depolarisation $\rho_t = (1-t)\rho + t\,I/7$; the Pareto set of the closure lies on the sphere $P = 2/7$; $F_1$ and $F_\infty$ are minimised by different spectra ($\Gamma_{1/\sqrt6}$: $H_1 = 1.602$, $H_\infty = 0.708$; the three-level $s_3$: $1.391$, $1.178$); under unital channels no window state is terminal. For the regeneration this means: $\rho_* = \varphi(\Gamma)$ is a target fixed by the self-model, not a resource optimum, and $\mathcal{R}$ does not improve a resource vector as such — it holds the holon at the viability bound, away from the resource-cheap direction toward $I/7$; a choice of point on the Pareto sphere needs a weight on the Rényi orders that neither $\varphi$ nor $\mathcal{L}_\Omega$ supplies. The former box ("MRQT-resource universality": $\rho^* = \varphi(\Gamma)$ the Lawvere fixed point and Pareto-optimal for 25 monotones at once, $\mathcal{R}$ the universal resource-monotone CPTP morphism, UHM MRQT-complete) is retracted [✗] with the former T-222: $\varphi(\Gamma)$ is not a fixed point of $\mathcal{L}_\Omega$ (T-96), and no simultaneous optimum exists.
 :::
 
-:::caution Formal uncomputability of $\rho_*$
-The target state $\rho_* = \varphi(\Gamma)$ is defined through the operator $\varphi$ — a [categorical left adjoint](/docs/core/operators/phi-operator), concretely realized via $\varphi_{\mathrm{coh}}$ ([Fano channel](/docs/core/operators/phi-operator#каноническая-конструкция-φ_coh-из-фано-структуры)). Computing $\varphi_{\mathrm{coh}}(\Gamma)$ in the 7D formalism requires $O(N^2)$ operations ($N = 7$). In the 42D formalism ($N=42$) an analogous Fano structure on the extended space is required, which makes the evolution equation formally closed but **practically costly** for the extended formalism without approximations.
+:::note Computational cost of $\rho_*$
+Once a concrete formula for the self-model $\varphi$ is specified — such as $\varphi_{\mathrm{coh}}$, $\varphi_s$, or $\varphi_J$ ([φ-operator](/docs/core/operators/phi-operator#каноническая-конструкция-φ_coh-из-фано-структуры)) — evaluating $\rho_* = \varphi(\Gamma)$ in the 7D formalism is directly computable in $O(7^2)$ arithmetic operations. In an extended tensor formalism, there is no projective Fano plane of order 42; any extended self-model must be specified directly on the extended Hilbert space rather than extrapolated from a 42D Fano structure.
 :::
 
 #### Theorem T-96 (Conditional characterization of fixed points) [T] {#теорема-нетривиальность-аттрактора}
@@ -879,9 +892,9 @@ rebuilding it toward the self-model.
   <img class="themedImage themedImage--dark" alt="Turnover of living stationarity and a coupling as an orbit" src="/img/theory/turnover-en-dark.svg" width="860"/>
 </p>
 
-#### Corollary (turnover in a selected depolarizing model) [T] {#следствие-оборот-живого}
+#### Corollary (turnover in a depolarizing toy model) [T] {#следствие-оборот-живого}
 
-Specify $\mathcal L_0=-i[H,\cdot]+g_D(I/7-\cdot)$, $g_D>0$, and $\mathcal R=a(\Gamma)(\rho_*(\Gamma)-\Gamma)$. This is a **depolarizing** model, not the population-preserving Fano dephasor used above. A stationary state $\sigma\ne I/7$ has both $\mathcal R(\sigma)\ne0$ and $\mathcal D(\sigma)\ne0$: the linear part has unique fixed state $I/7$.
+Specify the **depolarizing toy model** $\mathcal L_0=-i[H,\cdot]+g_D(I/7-\cdot)$, $g_D>0$, and $\mathcal R=a(\Gamma)(\rho_*(\Gamma)-\Gamma)$. Note that this depolarizing linear part is distinct from the population-preserving Fano dephasor used elsewhere in this chapter. A stationary state $\sigma\ne I/7$ has both $\mathcal R(\sigma)\ne0$ and $\mathcal D(\sigma)\ne0$: the linear part has unique fixed state $I/7$.
 
 In a fixed eigenbasis of $H$, put $\omega_{jk}=h_j-h_k$ (Hamiltonian eigenvalues, not state eigenvalues). Stationarity gives $g_D(1/7-p_i)+a((\rho_*)_{ii}-p_i)=0$ and
 
@@ -891,40 +904,6 @@ $$
 $$
 
 These follow entrywise from the stated equation; the second identity does not imply that the dissipative and regenerative summands are individually radial. For Fano dephasing, populations have no dissipative restoration term, so its diagonal balance is different. A static state does not identify its separate fluxes without a calibrated dynamics model.
-
-The instrument (the engine's canonical tick,
-$dt = 0.01$, $g_D = 0.2$, reference self-model at $P = 0.45$) shows the
-portrait in numbers `[C]`: pump strengths $\omega_0 \in \{0, 1, 10\}$ all
-die into $I/7$ (fluxes $0.0000$), $\omega_0 \in \{100, 500\}$ live at
-$P_\infty = 0.4443 / 0.4493$ with both flows nonzero; the **life/death fold**
-sits at $\omega_0^* \approx 19.5$; below the wall ($P < 2/7$) the pump does
-not help — the gate $g_V = 0$ `[T]` and the finale is $I/7$. The orbit
-identity holds at $0.9999$–$1.0000$ across all six sounding couplings, the
-per-voice two-stroke balance to machine zero ($2.6 \cdot 10^{-12}$), and the
-return time after a kick grows $\times 26$ toward the fold ($\tau_{1e}$:
-$0.010$ at $\omega_0 = 500$ against $0.260$ near $\omega_0^*$) — **critical
-slowing**: fragility is proximity to the fold, and the return-time $\tau$ is
-the same quantity that the awakening thread measures as stability.
-
-The fold itself decomposes cleanly `[C]`. On the pump-aligned ray
-$\Gamma(a) = a\rho^* + (1-a)\,I/7$ both flows are parallel to the ray, so
-the rotation-free dynamics never leaves it, and the purity balance yields the
-fold in closed form: $\omega_0^* = \Lambda^* g_D$ with dimensionless
-$\Lambda^* = 50.5$ at the reference self-model — verified by intervention:
-with the unitary sandwich switched off the measured fold lands on the formula
-to bisection precision (ratio $1.000$ at $g_D = 0.1/0.2/0.4$). The full
-dynamics sits higher — $\times 3.07$, $\times 1.93$, $\times 1.38$ — and
-the surcharge is the **price of rotation**: $H_{\text{eff}}$ continuously
-turns the phases out from under the self-model, and the slower the
-dissipation, the further they slip before the pump catches them. So the
-threshold of life is not one pump-to-decay ratio — it is three-scaled
-($g_D$, $\omega_0$, the $\omega_{jk}$ spectrum), and the vibration that
-sings in the living state also raises its rent.
-
-<p align="center">
-  <img class="themedImage themedImage--light" alt="The threshold of life and critical slowing near the fold" src="/img/theory/fold-en-light.svg" width="860"/>
-  <img class="themedImage themedImage--dark" alt="The threshold of life and critical slowing near the fold" src="/img/theory/fold-en-dark.svg" width="860"/>
-</p>
 
 #### Theorem T-292 (Conditional self-model discrepancy balance) [T] {#теорема-эго-градиент}
 
@@ -946,73 +925,13 @@ The cross term is zero because $\operatorname{Tr}(\Gamma-I/7)[H,\Gamma]=0$. Thus
 
 The gate uses $P(\Gamma)$ by definition [D]. With unital relaxing $\mathcal L_0$ and $P\le2/7$, purity cannot increase while the gate is closed, and the trajectory approaches $I/7$. Nonunital input, another gate or external injection changes that conclusion. Numerical sweeps of a particular anchor/feedback time constant are model-specific simulations; they do not establish a universal effect of “ego dissolution”, biological death or contemplative practice [H/I].
 
-#### The chord: frequencies are the instrument, amplitudes are the person {#аккорд-вибрации}
+<a id="аккорд-вибрации"></a>
+<a id="калапы-и-нада"></a>
+<a id="небесная-лестница-циклов"></a>
 
-<p align="center">
-  <img class="themedImage themedImage--light" alt="The chord of the design: 21 couplings, 10 Bohr frequencies, choirs" src="/img/theory/chord-en-light.svg" width="860"/>
-  <img class="themedImage themedImage--dark" alt="The chord of the design: 21 couplings, 10 Bohr frequencies, choirs" src="/img/theory/chord-en-dark.svg" width="860"/>
-</p>
-
-$H_{\text{eff}}$ is diagonal, so every coupling $\gamma_{jk}$ is an
-oscillator at the Bohr frequency $\omega_{jk} = |\lambda_j - \lambda_k|$.
-Of the 21 frequencies only **10 are distinct**: the degeneracies bind
-couplings into **choirs** that beat as one ($\omega = 1.00$: AD SL DO EO;
-$\omega = 0.60$: AS DL EU; $\omega = 0.40$: LO OU SD; …). The frequencies
-are fixed by the design — the same for every human (the concrete spectrum
-$[0, 0.6, 1.0, 1.6, 3.0, 2.0, 2.4]$ is the engine's pinned constant `[D]`
-with the A5-motivated spectral order, $\lambda_E$ highest — the *ordering*
-carries the theory, the numeric values are a calibration convention);
-**which strings sound and how loudly** is fixed by the self-model
-$\rho^*$ — the person. At the
-reference self-model six strings sound (EO loudest at $|\gamma| = 0.2215$)
-and fifteen are silent. So «everything is vibration» has an exact reading in
-the model: **a living stationary state is a chord** — the set of pairs
-$(\omega_{jk}, |\gamma_{jk}|)$; and the whole section above says the chord
-does not merely decorate the stationarity — the tangential rotation *is* what
-the two radial flows jointly sustain.
-
-#### Kalāpas and Nāda: two old reports of the same structure [I] {#калапы-и-нада}
-
-The Abhidhamma tradition reports matter as *kalāpas* — clusters that arise
-and pass with enormous rapidity, so that nothing persists except the pattern
-of renewal (*khaṇa-vāda*, the doctrine of momentariness). That is a
-first-person report of exactly the structure proved above: at the living
-stationary point nothing is static — the state is a standing balance of
-continuous destruction and rebuilding, and what persists is the pattern
-$\Gamma$, not a substance (see
-[two-aspect monism](/docs/consciousness/foundations/two-aspect-monism) and
-substrate closure). The Nāda-Brahma tradition («the world is sound») reports
-the same stationarity from its vibrational side — the chord layer above.
-Status `[I]`: these are structural correspondences between contemplative
-report traditions and the model's stationary structure; neither proves the
-other, and the theorem stands on its own. One wrapper is explicitly **not**
-taken over: no cosmological claim «the universe is stationary» is needed
-anywhere — the corollary uses only the stationarity of the living regime
-itself.
-
-#### The celestial ladder: which window closes which cycle {#небесная-лестница-циклов}
-
-The machinery reads the sky as a shared quasi-periodic clock, and every
-instrument window closes only the cycles that fit into it (reference sidereal
-periods `[D]`): a 60-day diary window closes **only the Moon** ($2.196$
-cycles); a year closes the Sun ($1.000$); a century still does not close
-Neptune ($0.607$) or Pluto ($0.403$) — which is why the **epoch shift** of any
-census is structural, not a defect (measured: $\approx 1.1$ points in the
-$87.6/91.6$ decomposition of the
-[encoder census](https://homohologra.ph/research/ozar)). Returns and
-oppositions of the macro-cycles are already a product instrument
-, and the encoder's two line-locks are antipodal reads of two
-celestial **axes** — each one cycle read twice in counter-phase. Below the
-Moon the ladder continues inward on diary data: a planted weekly rhythm of
-amplitude $0.8\sigma$ is detectable at $n = 60$ with power $88\,\%$ under a
-calibrated AR(1)-surrogate null (false alarms $5\,\%$), while the lunar
-period itself ($29.5$ d) at the same amplitude reaches only $44\,\%$ — two
-waves per window are honestly too few, wait for $120+$ days. And two echoes
-already inside the theory close the loop: $\kappa_0$ is *derived from cycle
-flux* (King–Altman,
-[axiom-septicity](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)),
-and the circular-shift null of the diary instruments assumes stationarity of
-the series — the method mirrors the matter it measures.
+:::note Scope of Bohr frequencies and excised non-core analogies
+In any Hamiltonian eigenbasis, the unitary commutator $-i[H,\Gamma]$ rotates off-diagonal coherences at the Bohr frequencies $\omega_{jk} = |h_j - h_k|$ determined by the chosen model Hamiltonian $H$. UHM axioms do not fix universal numerical human eigenfrequencies, contemplative analogies, or astronomical/ephemeris cycle periods; earlier ad-hoc frequency tables and celestial-cycle sections have been removed from the core specification.
+:::
 
 ## Regime diagram
 
@@ -1053,14 +972,14 @@ $$
 
 The Hamiltonian and anticommutator contributions vanish on such vectors. This is the tangent-cone condition for the positive-semidefinite cone; together with zero trace it puts $F(\Gamma)$ in the tangent cone of the closed convex state set. The finite-dimensional invariance theorem for locally Lipschitz ODEs therefore preserves $\mathcal D$. Local uniqueness is the ordinary ODE theorem. Compactness of $\mathcal D$ and locally bounded coefficients prevent finite-time blow-up and extend the solution globally. $\blacksquare$
 
-The result covers the smooth self-models $\varphi_{\mathrm{coh}},\varphi_s$ and the specified $\varphi_J$ construction when their denominators stay nonzero and the chosen rates satisfy these assumptions. It guarantees state validity, not a unique equilibrium, purity increase, dynamic viability, empirical identifiability or a linear CPTP flow.
+The result covers the smooth self-models $\varphi_{\mathrm{coh}},\varphi_s$ and the specified $\varphi_J$ construction **only** when their denominators stay bounded away from zero and the chosen rates are locally Lipschitz on $\mathcal{D}(\mathbb{C}^7)$: specifically, an unregularized $\kappa_0 \propto |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ blows up on the boundary stratum $\gamma_{OO} = 0$ and requires $\varepsilon$-regularization ($\gamma_{OO} + \varepsilon$) or a bounded smooth rate, while switching projections such as $\Pi_{p^*}/3$ introduce Filippov discontinuities along tie loci that fall outside classical Lipschitz ODE uniqueness. The theorem guarantees state validity under these regularity hypotheses, not a unique equilibrium, purity increase, dynamic viability, empirical identifiability or a linear CPTP flow.
 
 ---
 
 ## Conditional structure of regeneration {#вывод-формы-регенерации}
 
-:::warning Withdrawn uniqueness claims
-T-39f/g/h are replaced by the conditional results below. A category, an information metric, a primitive linear dissipator and a thermodynamic inequality do not uniquely determine a nonlinear regeneration law.
+:::warning Conditional scope
+A category, an information metric, a primitive linear dissipator and a thermodynamic inequality do not uniquely determine a nonlinear regeneration law; the results below specify conditional properties of chosen model classes.
 :::
 
 ### Frozen-target replacement semigroup [T]
@@ -1193,81 +1112,26 @@ Relating $\Gamma(t)$ to strata of $X=|N\mathcal C|$ requires an explicit realiza
 For a declared octonionic product, $[x,y,z]=(xy)z-x(yz)$ can be nonzero. Artin's theorem says that the subalgebra generated by two elements is associative; it does not say that every triple of independent elements has nonzero associator. Matrix multiplication and composition of state maps remain associative. An empirical “associator anomaly” therefore needs an explicit octonionic realization and triple observable; merely grouping ordinary CPTP maps differently cannot create it. The [octonionic representation](/docs/proofs/minimality/theorem-octonionic-derivation) retains its named algebraic/physical premises.
 :::
 
-## Internal environment (E_int) {#внутренняя-среда}
+<a id="внутренняя-среда"></a>
+<a id="реконсолидация"></a>
 
-:::info Definition (Internal environment) [D]
-**Internal environment** $E_{\text{int}}$ — the totality of reactivated Γ-traces acting as an internal source of perturbation alongside the external environment $E_{\text{ext}}$:
-
-$$
-E_{\text{int}}(\text{memory}) = \sum_\alpha c_\alpha(\tau) \cdot \delta\Gamma_\alpha
-$$
-
-where $\delta\Gamma_\alpha$ — Γ-trace of the $\alpha$-th memory, $c_\alpha(\tau) \in [0,1]$ — reactivation coefficient.
-:::
-
-The full evolution equation taking the internal environment into account:
-
-$$
-\frac{d\Gamma}{d\tau} = \mathcal{L}_0[\Gamma] + \mathcal{R}[\Gamma, E_{\text{ext}} + E_{\text{int}}(\text{memory})]
-$$
-
-The unified Enc-functor processes both sources: $\text{Enc}: E_{\text{ext}} + E_{\text{int}} \to \delta\Gamma$. The difference between perception and memory is in the **source**, not the **mechanism**.
-
-**Spectrum of $E_{\text{int}} / E_{\text{ext}}$ ratios:**
-
-| Regime | $E_{\text{int}} / E_{\text{ext}}$ | Description |
-|--------|-----------------------------------|-------------|
-| Normal perception | $\ll 1$ | External input dominates |
-| Daydreaming | $\approx 1$ | Parity of internal and external |
-| Sleep / REM | $\gg 1$ | Internal input dominates |
-| Flashback | $\gg 1$ for $\lVert\sigma\rVert > \sigma_{\text{alert}}$ | Traumatic reactivation |
-
-:::note Connection with SYNARC
-In the SYNARC-Ω architecture, the internal environment is implemented through Enc_assoc (fast associative path) — the embodiment layer.
-:::
-
----
-
-## Reconsolidation of Γ-trace {#реконсолидация}
-
-:::info Definition (Reconsolidation) [D]
-Upon reactivation of a Γ-trace ($c_\alpha > c_{\text{recall}}$), the trace becomes **labile** and is subjected to updating by the current context:
-
-$$
-\frac{d\Gamma_{\text{trace}}}{d\tau} = (1 - \lambda_{\text{stab}}) \cdot (\Gamma_{\text{present}} - \Gamma_{\text{trace}}) \quad \text{at} \quad \text{active}(\Gamma_{\text{trace}})
-$$
-
-where $\lambda_{\text{stab}} = \mathrm{sigmoid}(w_{\text{stab}} \cdot \text{age}(\text{trace}) + b_{\text{stab}}) \in [0,1]$ — stability factor growing with trace age.
-:::
-
-**Model scope.** Convex interpolation permits this update but does not make reconsolidation necessary or unique. A living fixed-anchor model need not change its target. The age-dependent sigmoid increases with age only if its selected age coefficient is positive. Mapping this chosen memory rule to biological reconsolidation requires independent evidence.
-
-**Properties:**
-
-| Property | Formulation |
-|----------|-------------|
-| Lability | active($\Gamma_{\text{trace}}$) $\Rightarrow$ trace is open to modification |
-| Stabilization | $\lambda_{\text{stab}} \to 1$ with age $\Rightarrow$ older traces are more stable |
-| State validity | Fixed target and rate give CPTP replacement; state-dependent coefficients preserve states under the ODE premises |
-| Therapeutic potential | Controlled reactivation + new context $\Rightarrow$ overwriting of maladaptive traces |
-
-:::note Biological analogue
-Memory reconsolidation (Nader, Schafe, LeDoux, 2000): upon retrieval, consolidated memory again becomes labile and requires re-consolidation. This motivates a separate reconsolidation model [H]; a particular law does not follow from convex interpolation alone.
+:::note Out-of-scope memory and embodiment extensions
+Application-specific memory-trace, internal-environment, and reconsolidation laws are engineering/cognitive modelling extensions outside the core 7D evolution equation; any such rule must be specified with its own state space, well-posedness proof, and empirical calibration rather than inferred from convex interpolation alone.
 :::
 
 ---
 
 **Related documents:**
-- [Theorem on emergent time](../../proofs/dynamics/emergent-time) — derivation of τ, including stratification time
-- [Axiom Ω⁷](../foundations/axiom-omega) — final axiomatics with terminal object T
-- [Consequences](../foundations/consequences) — cohomological monism and the arrow of time
-- [Axiom of Septicity](../foundations/axiom-septicity) — derivation of κ₀ and P_crit
+- [Theorem on emergent time](../../proofs/dynamics/emergent-time) — relational Page–Wootters clock and depth register
+- [Axiom Ω⁷](../foundations/axiom-omega) — operational and categorical framing
+- [Consequences](../foundations/consequences) — algebraic and structural consequences
+- [Axiom of Septicity](../foundations/axiom-septicity) — thresholds, rate ansatz $\kappa_0$, and viability predicates
 - [Coherence matrix](./coherence-matrix) — definition of Γ
-- [Viability](./viability) — conditions of existence and $P_{\text{crit}}$
-- [Spacetime](../foundations/spacetime) — base space X and metric d_strat
-- [Foundation (dimension O)](../structure/dimension-o) — role of the internal clock
-- [Categorical formalism](../../proofs/categorical/categorical-formalism) — ∞-topos and derived categories
+- [Viability](./viability) — viability criteria and $P_{\text{crit}}$
+- [Spacetime](../foundations/spacetime) — no-go theorems and operational geometry pointers
+- [Ground (dimension O)](../structure/dimension-o) — clock register role
+- [Categorical formalism](../../proofs/categorical/categorical-formalism) — sheaf and channel categories
 - [Self-observation](/docs/consciousness/foundations/self-observation) — operator φ and measure R
-- [Formalization of φ](../../proofs/categorical/formalization-phi) — spectral formula for φ and $R^{(n)}$
-- [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy) — levels L0→L4 and L3 metastability
-- [Γ measurement protocol](/docs/applied/research/measurement-protocol) — operationalization for AI (research program)
+- [Formalization of φ](../../proofs/categorical/formalization-phi) — convergence of φ-iteration (T-191)
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0→L4
+- [Γ measurement protocol](/docs/applied/research/measurement-protocol) — empirical identifiability and measurement programme

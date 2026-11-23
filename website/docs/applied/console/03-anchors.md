@@ -22,7 +22,7 @@ This table is the honest core: the self-audit gives a good diagonal and good coh
 
 ## §2. Anchor II — the self-audit instrument, in full {#инструмент}
 
-The instrument is the [П1 28-cell audit](https://homohologra.ph/research/gamma-canon#п1-картирование). Each item is rated $0$–$3$ (almost never / sometimes / often / almost always); first responses are better data than considered ones.
+The instrument is the **28-cell self-audit** `[Pr]` structured directly on the 7 populations and 21 pairwise channels of $\Gamma$ ([coherence matrix](/docs/core/dynamics/coherence-matrix), [empirical programme](/docs/consciousness/empirical/overview)). Each item is rated $0$–$3$ (almost never / sometimes / often / almost always); first responses are better data than considered ones.
 
 **The seven population items (diagonal).**
 
@@ -66,31 +66,44 @@ Total time about seven minutes. For teams and organisations the same geometry is
 
 ## §3. Anchor II — the scoring model {#скоринг}
 
-From the 28 raw responses $r$ (each in $\{0,1,2,3\}$) to a valid `gamma`:
+The Likert-to-$\Gamma$ scoring map is a **prospective empirical protocol `[Pr]`** whose calibration parameter $\beta$ is to be validated against independent psychometric criteria in V0-VAL ([07 §2](/docs/applied/console/roadmap-validation#v0)), not a canon-derived physical law. From the 28 raw responses $r$ (each in $\{0,1,2,3\}$) to a valid `gamma`:
 
-1. **Populations.** Set raw diagonal $\tilde p_i = (r_i + \alpha)$ with a small Laplace smoothing $\alpha$, then normalise to unit trace: $p_i = \tilde p_i / \sum_j \tilde p_j$. The trace constraint (a state has $\sum p_i = 1$) is what turns seven independent ratings into a point on the simplex.
-2. **Coherence magnitudes.** Map each coherence item to a raw magnitude $\tilde m_{ij} = r_{ij}/3 \in [0,1]$, then scale so the off-diagonal block is consistent with the populations: the coherence between $i$ and $j$ cannot exceed $\sqrt{p_i p_j}$ (Cauchy–Schwarz on a PSD matrix), so $|\gamma_{ij}| = \tilde m_{ij}\cdot\sqrt{p_i p_j}$. This bound is not a fudge — it is the PSD constraint, and it makes strong-coherence claims on weak populations automatically impossible, matching intuition (you cannot have intense S–E coherence if neither Structure nor Interiority is present).
+1. **Populations.** Set raw diagonal $\tilde p_i = (r_i + \alpha)$ with Laplace smoothing $\alpha = 0.5$, then normalise to unit trace: $p_i = \tilde p_i / \sum_j \tilde p_j$. The trace constraint ($\sum_i p_i = 1$) maps seven independent ratings onto the simplex.
+2. **Calibrated coherence magnitudes (preventing the all-3s pathology).** A naive mapping $\tilde m_{ij} = r_{ij}/3 \in [0,1]$ with $|\gamma_{ij}| = \tilde m_{ij}\sqrt{p_i p_j}$ has a fatal boundary pathology: when a maximally flourishing user answers all-3s ($r_i = 3, r_{ij} = 3$), uniform populations $p_i = 1/7$ combine with $\tilde m_{ij} = 1$ to produce the rank-1 pure state $\Gamma = \frac{1}{7}\mathbf 1\mathbf 1^\top$, giving $P = 1$ and $R = 1/(7P) = 1/7 < 1/3$ — absurdly classifying a maximally flourishing respondent as over-coherent/unconscious. To align flourishing self-report profiles with the viable conscious window $P \in (2/7, 3/7]$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}}^{7D} \geq 2$, map item scores linearly in **coherence energy** with a calibrated ceiling $\beta$:
+
+   $$\tilde m_{ij} = \beta\,\sqrt{\frac{r_{ij}}{3}}, \qquad |\gamma_{ij}| = \tilde m_{ij}\,\sqrt{p_i p_j}, \qquad \beta \in \bigl(1/\sqrt{6},\ 1/\sqrt{3}\bigr) \approx (0.408,\ 0.577).$$
+
+   For uniform populations $p_i = 1/7$ and uniform $\tilde m_{ij} = c$, $P = (1 + 6c^2)/7$, so $P \in (2/7, 3/7] \iff c \in (1/\sqrt{6}, 1/\sqrt{3}]$. With the provisional default $\beta = 0.55$ (to be empirically calibrated in V0-VAL `[Pr]`):
+   - **all-3s** ("almost always"): $P \approx 0.402 \in (2/7, 3/7]$, $R \approx 0.355 \geq 1/3$, $\Phi \approx 1.82 \geq 1$, $D_{\mathrm{diff}}^{7D} \approx 2.41 \geq 2$ (viable, high integration);
+   - **all-2s** ("often"): $P \approx 0.316 \in (2/7, 3/7]$, $R \approx 0.452 \geq 1/3$, $\Phi \approx 1.21 \geq 1$, $D_{\mathrm{diff}}^{7D} \approx 2.33 \geq 2$ (viable, moderate integration);
+   - **all-1s** ("sometimes"): $P \approx 0.229 < 2/7$, $\Phi \approx 0.61 < 1$ (below viability);
+   - **all-0s** ("almost never"): $\Gamma = I/7$, $P = 1/7$, $\Phi = 0$, $R = 1$ (maximally mixed).
+   The factor $\sqrt{p_i p_j}$ enforces the pairwise Cauchy–Schwarz bound so strong coherences cannot be claimed on weak populations.
 3. **Phases.** Set $\theta_{ij} = 0$ (all coherences real and non-negative) — the honest default, because the questionnaire carries no phase information. The estimate is therefore a *real, non-negative* coherence matrix; its Gap map is flagged non-resolved.
-4. **PSD projection.** Assemble $\Gamma$, then project to the PSD cone (clip negative eigenvalues, renormalise) exactly as the kernel does on ingestion.
-5. **Uncertainty.** `cov` is estimated from the instrument's test-retest statistics (population-level, refined per user as their own repeat sessions accumulate): each item's response variance propagates through steps 1–2 by the delta method. This is a *self-report* uncertainty, not a measurement one, and is labelled as such.
+4. **PSD projection.** Assemble $\Gamma$, then project to the PSD cone (clip negative eigenvalues, renormalise) exactly as the kernel does on ingestion. (Uniform profiles are already PSD with zero projection distance; heterogeneous off-diagonal patterns may require minor projection, recorded in `quality`.)
+5. **Uncertainty.** `cov` is estimated from the instrument's test-retest statistics (population-level, refined per user as their own repeat sessions accumulate): each item's response variance propagates through steps 1–2 by the delta method. This is a *self-report* uncertainty, not a physical measurement covariance, and is labelled as such.
 
-The output is a fully valid `GammaEstimate` with `anchor = AUTOEPHEMERIS`, honest about its phase-blindness and its self-report covariance.
+The output is a fully valid `GammaEstimate` with `anchor = AUTOEPHEMERIS`, marked `[Pr]` pending V0-VAL calibration, and honest about its phase-blindness and self-report covariance.
 
 ## §4. Anchor I — the measurement bridge {#измерение}
 
-The hard-science path uses the corpus's [seven-channel embedding](/docs/applied/coherence-cybernetics/measurement#измерение-напряжений). Evidence $e$ is time-resolved signal: EEG (consumer or research grade), heart-rate variability, actigraphy, and light-exposure logging.
+The empirical measurement bridge `[Pr]` builds on the corpus's [seven-channel embedding](/docs/applied/coherence-cybernetics/measurement#измерение-напряжений) and [empirical programme](/docs/consciousness/empirical/overview). Evidence $e$ is time-resolved signal: EEG (consumer dry-EEG or research/clinical high-density EEG), wrist heart-rate variability (HRV), actigraphy, and light-exposure logging.
 
-**Purity axis — the keystone.** $P$ is estimated from the reconstruction $\widehat\Gamma$ (EEG/HRV through $\pi_{\mathrm{bio}}$, parameters frozen on wakefulness, no viability penalty in the estimator), not converted from PCI. Where TMS-EEG PCI is available (clinical), it supplies an independent verdict to compare with — the concordance of $\mathrm{Cons}(\widehat\Gamma)$ with $\mathrm{PCI}_{\max} > 0.31$, Cohen's $\kappa$ ([P8.4](/docs/applied/research/measurement-protocol#тестируемые-предсказания-p8)) — never a scale anchor for $P$; where only resting EEG is available (consumer), $\widehat P$ carries wider bounds and no PCI comparison.
+:::note Prospective proxy status [Pr]
+Consumer **wrist-HRV**, actigraphy, and **dry-EEG** mappings onto $\widehat\Gamma$ are a **prospective empirical proxy `[Pr]`**, *not* a validated physical readout of $\Gamma$. Sensor noise covariances are physically measured, but the biological observation bridge $\pi_{\mathrm{bio}}$ linking peripheral/consumer signals to $\Gamma$ requires independent calibration and held-out validation (V1-VAL, [07 §3](/docs/applied/console/roadmap-validation#v1)) before any readout may be interpreted as an established physical measurement of the state.
+:::
 
-**Coherences from cross-channel structure.** The seven axes map to seven signal channels (the σ-audit assignment); the coherence magnitudes and — here, unlike Anchor II — the **phases** are estimated from the cross-spectral density between channels at the integration timescale. Time-resolved signals *can* carry phase, which is why the measured anchor resolves the Gap map that the questionnaire cannot.
+**Purity axis — the keystone.** $P$ is estimated from the reconstruction $\widehat\Gamma$ (EEG/HRV through $\pi_{\mathrm{bio}}$, parameters frozen on wakefulness, no viability penalty in the estimator), not converted from PCI. Where TMS-EEG PCI is available (clinical), it supplies an independent verdict to compare with — the concordance of $\mathrm{Cons}(\widehat\Gamma)$ with $\mathrm{PCI}_{\max} > 0.31$, Cohen's $\kappa$ ([P8.4](/docs/applied/research/measurement-protocol#тестируемые-предсказания-p8)) — never a scale anchor for $P$; where only consumer dry-EEG or wrist-HRV is available, $\widehat P$ is a prospective proxy `[Pr]` with wider bounds and no PCI comparison.
 
-**Chronobiology.** The [T-257 licensed ledger](https://homohologra.ph/research/one-grammar#t-257) admits exactly two external drivers — solar (circadian/circannual) and lunar (circatidal/circalunar). Light-exposure and sleep-timing logs feed the entrainment model; no planetary input is accepted (it is rejected at ingestion by the anchor-licence guardrail). This is the *only* place the Console reads the sky, and it reads the two channels physics licenses, nothing more.
+**Coherences from cross-channel structure.** The seven axes map to seven signal channels (the σ-audit assignment); the coherence magnitudes and — here, unlike Anchor II — candidate **phases** are estimated from the cross-spectral density between channels at the integration timescale. Time-resolved signals *can* carry phase, which is why the measured anchor is the prospective path toward resolving the Gap map that the questionnaire cannot.
 
-**Uncertainty.** `cov` comes from the estimator's own error model (signal SNR, session length, sensor grade) — a genuine measurement covariance, so Anchor-I readouts carry real confidence intervals and the honesty layer renders them as measured.
+**Chronobiology (`T-257 [H]`).** Under the [coupling-channel hypothesis T-257](/docs/applied/research/gap-diagnostics) ([Status registry](/docs/reference/status-registry)), any claimed external entrainment requires an identifiable observation law and physical coupling model `[H]`. Light-exposure and sleep-timing logs feed the circadian/circalunar entrainment model as a testable physical bridge `[Pr]`; planetary/natal inputs lack any identified coupling model and are rejected at ingestion by the anchor-licence guardrail.
+
+**Uncertainty.** `cov` comes from the estimator's signal error model (SNR, session length, sensor grade) — genuine signal-level covariance, paired with an explicit `[Pr]` bridge-validation flag until $\pi_{\mathrm{bio}}$ passes V1-VAL.
 
 ## §5. Anchor III — the oracle protocol {#оракул}
 
-The [П4 casting protocol](https://homohologra.ph/research/gamma-canon#п4-оракул) is retained in full, with its epistemics stated: a draw is a **structured projective prompt**, not information about the world. Procedure: state the question in one sentence; draw one of the sixteen archetypes (or walk a three-step triadic chain from a random line, e.g. *Meaning → Foundation → Action*); contemplate strictly inside the drawn frame for a fixed interval. The Console renders the frame and the contemplation scaffold, and stamps the output `anchor = ORACLE, std = null` — never a measurement, never a forecast. The value is the lens, and the lens is honest because its grammar matches the derived state space.
+The **projective casting protocol `[I]`** is retained in full, with its epistemics stated: a draw is a **structured projective prompt**, not information about the world. Procedure: state the question in one sentence; draw one of the sixteen Hamming $H(7,4)$ signatures (or walk a three-step triadic chain from a random Fano line, e.g. *Meaning → Foundation → Action*); contemplate strictly inside the drawn frame for a fixed interval. The Console renders the frame and the contemplation scaffold, and stamps the output `anchor = ORACLE, std = null` — never a measurement, never a forecast. The value is the lens, and the lens is honest because its grammar matches the derived state space.
 
 ## §6. Fusion and the autoephemeris {#слияние}
 

@@ -8,7 +8,7 @@ format: md
 # Categorical formalism: processes, sheaves and interpretation
 
 :::info Revised mathematical foundation — 2026-10-03
-The process category, the site of open subsets, the numerical state and the phenomenal interpretation have different types. This page proves constructions after their data have been specified. A sheaf topos does not by itself select seven dimensions, a Hamiltonian, a state encoder or a phenomenal bridge. The canonical notation is fixed in the [mathematical kernel](/docs/reference/mathematical-kernel).
+The honest operational entry point prior to quantum kinematics is [operational processes](/docs/core/foundations/operational-processes) (with `website/research/operational-reconstruction/`). Adopting **(QG)** ($\mathbb C^7$, $\mathcal D(\mathbb C^7)$, Born rule, linear CPTP channels) is an explicit modelling postulate [P]/[D]. The process category, the site of open subsets, the numerical state and the phenomenal interpretation have different types. In particular, $\operatorname{Sh}_\infty(\operatorname{Open}_B(D_7), J_{\mathrm{open}}) \simeq \operatorname{Sh}_\infty(B^{48})$ is a locally contractible topological sheaf category (blind to $\mathbb C$, convexity, and metric) rather than a load-bearing dynamical primitive; it does not select seven dimensions, a Hamiltonian, a state encoder or a phenomenal bridge. The canonical notation is fixed in the [mathematical kernel](/docs/reference/mathematical-kernel).
 :::
 
 Statuses: **[D]** definition or chosen model; **[T]** theorem with stated hypotheses; **[C]** conditional identification; **[H]** hypothesis; **[I]** interpretation; **[Pr]** research programme; **[✗]** withdrawn claim.
@@ -79,7 +79,7 @@ $$
 
 The channels satisfying (DC) form a monoid under composition. Define a category on points of $Y$ with arrows the actual descended maps sending one endpoint to another. The assignment $(\rho,\Lambda)\mapsto(q(\rho),f_\Lambda)$ is then a functor on the corresponding restricted process category. Descent for all channels is an additional assertion, not a consequence of a norm bound.
 
-For example, reading only $\gamma_{EE}$ fails (DC) for arbitrary channels: two states with the same $E$ weight and different $A$ weights acquire different $E$ weights after swapping $E$ and $A$. Thus arbitrary channels have no well-defined restriction $\Lambda|_E$ as an endomorphism of the readout space.
+For example, reading only $\gamma_{EE}$ fails (DC) for arbitrary channels: two states with the same $E$ weight and different $A$ weights acquire different $E$ weights after swapping $E$ and $A$. Even for a genuine tensor partial-trace readout $q(\Gamma)=\rho_E=\operatorname{Tr}_{\bar E}(\Gamma)$ on $\mathcal H_E\otimes\mathcal H_{\bar E}$, fiber-descent (DC) is equivalent to **semi-causality** (no $\bar E \to E$ signalling or dynamical influence [T]), ruling out any $\bar E \to E$ coupling. Thus arbitrary interacting channels have no well-defined restriction $\Lambda|_E$ as an endomorphism of the readout space; the **Observable Closure Theorem** ([operational closure](/docs/proofs/consciousness/operational-closure)) serves as the operational replacement.
 
 ## 5. Functoriality and higher coherence {#5-доказательство-функториальности}
 
@@ -264,7 +264,7 @@ A cyclic register $\mathbb Z_N$ and an ordered depth register are different cons
 
 ## 12. Structured holon processes {#категория-голономов-hol}
 
-Let a **structured model** be $A=(\mathcal H_A,M_A,V_A)$, where $M_A:X_A\to X_A$ is a declared self-model and $V_A\subseteq X_A$ is a declared viable region [D]. An arrow $\Lambda:A\to B$ is CPTP and satisfies
+Let an **unpointed structured system** ($\mathbf{Hol}^{\mathrm{sys}}$) be $A=(\mathcal H_A,M_A,V_A)$, where $M_A:X_A\to X_A$ is a declared self-model and $V_A\subseteq X_A$ is a declared viable region [D]; adjoining a distinguished viable state $\rho_A\in V_A$ gives the **pointed holon category** $\mathbf{Hol}$ (matching [Category Hol](/docs/core/categories/category-hol)). An arrow $\Lambda:A\to B$ is linear CPTP and satisfies $\Lambda(V_A)\subseteq V_B$, $\Lambda M_A=M_B\Lambda$ (plus $\Lambda(\rho_A)=\rho_B$ in the pointed version):
 
 $$
 \Lambda(V_A)\subseteq V_B,\qquad\Lambda M_A=M_B\Lambda.
@@ -272,7 +272,9 @@ $$
 
 ### Closure theorem 12.1 [T] {#122-теорема-о-подкатегории}
 
-Identities satisfy both conditions. If $\Lambda:A\to B$ and $\Psi:B\to C$ satisfy them, then $\Psi\Lambda(V_A)\subseteq V_C$ and $\Psi\Lambda M_A=M_C\Psi\Lambda$. Thus the structured objects and arrows form a category. Its forgetful functor to systems is faithful. Including a distinguished viable state gives a faithful forgetful functor to $\mathbf{DensityMat}$. If several structures occur on the same state, this is not an object-injective inclusion until a structure assignment is fixed.
+Identities satisfy both conditions (and state preservation). If $\Lambda:A\to B$ and $\Psi:B\to C$ satisfy them, then $\Psi\Lambda(V_A)\subseteq V_C$ and $\Psi\Lambda M_A=M_C\Psi\Lambda$. Thus $\mathbf{Hol}^{\mathrm{sys}}$ and pointed $\mathbf{Hol}$ form categories with faithful forgetful functors to $\mathbf{CPTP}$ and $\mathbf{DensityMat}$, respectively. If several structures occur on the same state, this is not an object-injective inclusion until a structure assignment is fixed.
+
+**Rigidity of strict intertwining [T].** For purity-dependent self-models ($M_{\mathrm{coh}}$, $M_s$, $M_J$), strict equivariance $\Lambda M = M \Lambda$ excludes non-trivial purity-contracting/dissipative CPTP channels; open dissipative UHM dynamics therefore lives in CPTP channels and nonlinear semiflows on $D_7$ rather than strict $\mathbf{Hol}$ morphisms.
 
 ### Interiority assignment {#123-функтор-интериорности}
 

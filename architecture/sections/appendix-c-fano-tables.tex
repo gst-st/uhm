@@ -1,16 +1,22 @@
 \section{Fano tables: fabric, mediators, syndrome}
 \label{app:fano}
 
-All tables are machine-verified (\texttt{domain\_transfer\_verify.py},
-\texttt{talos\_collapse\_uniqueness.py}).
+All tables and binary ranks below are machine-verified in
+\texttt{architecture/talos\_v0\_emulator.py} and
+\texttt{website/research/operational-reconstruction/verify\_foundational\_bounds.py}.
 
-\paragraph{The seven line-buses.} The fabric of \S\ref{sec:fabric}:
-$\{A,S,L\}$, $\{A,D,E\}$, $\{A,O,U\}$, $\{S,D,O\}$, $\{S,E,U\}$, $\{D,L,U\}$,
-$\{L,E,O\}$. Each sector lies on exactly three; each pair on exactly one.
+\paragraph{The seven line-buses (canonical Singer cyclic ordering).}
+Index the seven sectors $(A,S,D,L,E,U,O)=(1,\dots,7)$ (0-indexed $0\dots 6$).
+The canonical Singer cyclic Fano lines $\{k,k{+}1,k{+}3\}\pmod 7$ are:
+\[
+\{A,S,L\},\ \{S,D,E\},\ \{D,L,U\},\ \{L,E,O\},\ \{E,U,A\},\ \{U,O,S\},\ \{O,A,D\}.
+\]
+Each sector lies on exactly three lines; every distinct pair lies on exactly one
+line (Steiner system $S(2,3,7)$).
 
 \paragraph{The mediator map.} The table-free reroute of \S\ref{sec:fabric}:
-for each pair $(i,j)$, the mediator $k^\ast(i,j)$ is the third sector of their
-line, and the only path by which their coherence regenerates.
+for each pair $(i,j)$, the mediator $k^\ast(i,j)$ is the unique third sector of
+their canonical Singer Fano line.
 
 \begin{table}[H]
 \centering\small
@@ -18,48 +24,71 @@ line, and the only path by which their coherence regenerates.
 \toprule
 pair & $k^\ast$ & pair & $k^\ast$ & pair & $k^\ast$ & pair & $k^\ast$ \\
 \midrule
-$AS$ & $L$ & $AD$ & $E$ & $AL$ & $S$ & $AE$ & $D$ \\
-$AO$ & $U$ & $AU$ & $O$ & $SD$ & $O$ & $SL$ & $A$ \\
-$SE$ & $U$ & $SO$ & $D$ & $SU$ & $E$ & $DL$ & $U$ \\
-$DE$ & $A$ & $DO$ & $S$ & $DU$ & $L$ & $LE$ & $O$ \\
-$LO$ & $E$ & $LU$ & $D$ & $EO$ & $L$ & $EU$ & $S$ \\
-$OU$ & $A$ &      &     &      &     &      &     \\
+$AS$ & $L$ & $AD$ & $O$ & $AL$ & $S$ & $AE$ & $U$ \\
+$AU$ & $E$ & $AO$ & $D$ & $SD$ & $E$ & $SL$ & $A$ \\
+$SE$ & $D$ & $SU$ & $O$ & $SO$ & $U$ & $DL$ & $U$ \\
+$DE$ & $S$ & $DU$ & $L$ & $DO$ & $A$ & $LE$ & $O$ \\
+$LU$ & $D$ & $LO$ & $E$ & $EU$ & $A$ & $EO$ & $L$ \\
+$UO$ & $S$ &      &     &      &     &      &     \\
 \bottomrule
 \end{tabular}
-\caption{The $21$ mediators. Read: to repair or route $(i,j)$, use the arms
-through $k^\ast(i,j)$. No routing table --- $k^\ast$ is computed from the pair.}
+\caption{The $21$ mediators for the canonical Singer cyclic Fano table. To
+repair or route $(i,j)$, use the arms through $k^\ast(i,j)$ completing their
+unique line.}
 \end{table}
 
-\paragraph{The syndrome decode.} The zero-overhead fault localisation of
-\S\ref{sec:ecc}. Label the seven sectors $1\dots7$ by the nonzero vectors of
-$\mathbb{F}_2^3$. A single fault at sector $p$ produces a three-bit syndrome
-equal to the binary of $p$; the three parity checks that fire are the three
-lines through $p$. Twenty-one pair-relations collapse to seven axes, read by
-three syndrome bits, to one verdict --- the pyramid $21\to7\to3\to1$.
+\paragraph{Generator $M$, dual parity-check matrix $H$, and syndrome decode.}
+Over $\mathbb{F}_2$, the $7\times 7$ Fano incidence matrix $M$ (rows $=$ the
+seven weight-$3$ lines above) has $\operatorname{rank}_{\mathbb{F}_2}(M)=4$ and
+\textbf{generates} the $16$-word Hamming $[7,4,3]$ code. Its orthogonal
+$3\times 7$ \textbf{parity-check matrix} $H$ ($\operatorname{rank}_{\mathbb{F}_2}(H)=3$,
+$HM^T\equiv 0\pmod 2$) takes as its rows the weight-$4$ complements of the
+first three non-concurrent lines ($\bar{L}_0=\{D,E,U,O\}$,
+$\bar{L}_1=\{A,L,U,O\}$, $\bar{L}_2=\{A,S,E,O\}$), spanning the dual simplex
+code $[7,3,4]$:
+\[
+H \;=\;
+\left(\begin{array}{ccccccc}
+A & S & D & L & E & U & O \\ \hline
+0 & 0 & 1 & 0 & 1 & 1 & 1 \\
+1 & 0 & 0 & 1 & 0 & 1 & 1 \\
+1 & 1 & 0 & 0 & 1 & 0 & 1
+\end{array}\right).
+\]
+The seven columns of $H$ are all seven distinct nonzero vectors of
+$\mathbb{F}_2^3$ and obey $h_i\oplus h_j\oplus h_k = 0$ on every Singer line
+$\{i,j,k\}$. A single-sector fault $e_j$ maps bijectively to its $3$-bit
+syndrome $s = He_j^T\pmod 2$:
 
 \begin{table}[H]
 \centering\small
-\begin{tabular}{@{}ccl@{}}
+\begin{tabular}{@{}ccll@{}}
 \toprule
-fault sector $p$ & syndrome (binary) & lines through $p$ (the 3 checks that fire) \\
+sector $j$ & syndrome $He_j^T$ & fired parity rows of $H$ & $3$ incident Fano lines \\
 \midrule
-1 & $001$ & the three lines containing sector 1 \\
-2 & $010$ & the three lines containing sector 2 \\
-3 & $011$ & the three lines containing sector 3 \\
-4 & $100$ & the three lines containing sector 4 \\
-5 & $101$ & the three lines containing sector 5 \\
-6 & $110$ & the three lines containing sector 6 \\
-7 & $111$ & the three lines containing sector 7 \\
+$A$ (1) & $011$ & $\bar{L}_1,\bar{L}_2$ & $\{A,S,L\},\ \{E,U,A\},\ \{O,A,D\}$ \\
+$S$ (2) & $001$ & $\bar{L}_2$ & $\{A,S,L\},\ \{S,D,E\},\ \{U,O,S\}$ \\
+$D$ (3) & $100$ & $\bar{L}_0$ & $\{S,D,E\},\ \{D,L,U\},\ \{O,A,D\}$ \\
+$L$ (4) & $010$ & $\bar{L}_1$ & $\{A,S,L\},\ \{D,L,U\},\ \{L,E,O\}$ \\
+$E$ (5) & $101$ & $\bar{L}_0,\bar{L}_2$ & $\{S,D,E\},\ \{L,E,O\},\ \{E,U,A\}$ \\
+$U$ (6) & $110$ & $\bar{L}_0,\bar{L}_1$ & $\{D,L,U\},\ \{E,U,A\},\ \{U,O,S\}$ \\
+$O$ (7) & $111$ & $\bar{L}_0,\bar{L}_1,\bar{L}_2$ & $\{L,E,O\},\ \{U,O,S\},\ \{O,A,D\}$ \\
 \bottomrule
 \end{tabular}
-\caption{Hamming $[7,4,3]$ single-error syndrome: the syndrome read as a
-binary index \emph{is} the fault position (verified for all seven). Decoding
-is a table lookup of depth three; no dedicated check storage.}
+\caption{Exact Hamming $[7,4,3]$ single-sector syndrome map for the canonical
+Singer cyclic ordering, verified for all $7$ sectors in
+\texttt{architecture/talos\_v0\_emulator.py}.}
 \end{table}
 
-\paragraph{The uniqueness arithmetic.} Theorem~\ref{thm:unique}:
-$q^2+q+1=2^r-1$ has integer solutions $q\in\{2,5,90\}\Rightarrow
-N\in\{7,31,8191\}$, of which only $q=2,5$ (i.e.\ $N=7,31$) are prime powers
-and hence genuine projective orders ($q=90$ is not a prime power). The
-division-algebra imaginary dimensions are $\{0,1,3,7\}$; the non-associative
-one is $7$ alone; the triple intersection is $\{7\}$.
+\paragraph{Uniqueness arithmetic (no $N=31$ tie-break).}
+For Theorem~\ref{thm:unique}, the binary incidence matrix $M_{\mathrm{PG}(2,q)}$
+has $(N, \operatorname{rank}_{\mathbb{F}_2}(M), \dim_{\mathbb{F}_2}\ker(M)) =
+(7,4,3)$ at $q=2$, $(13,12,1)$ at $q=3$, $(31,30,1)$ at $q=5$, and $(57,56,1)$
+at $q=7$ (verified in Lean~4,
+\texttt{FoundationalBounds.pg2\_5\_refutes\_N31\_hamming\_fusion}, and in
+\texttt{verify\_foundational\_bounds.py}). Every odd prime power $q$ collapses
+to $\dim\ker(M)=1$, refuting Hamming fusion at $N=31$ directly; every even
+prime power $q=2^m$ ($m\ge 2$) fails $2^{2m}+2^m+2=2^r\pmod 4$
+(\texttt{FoundationalBounds.pg2EvenHammingUniqueSeven}); and $q=90$ ($N=8191$)
+is not a prime power. Binary plane--code fusion therefore forces $N=7$ uniquely
+without a tie-break, coinciding independently with $\dim\mathrm{Im}(\Oct)=7$.

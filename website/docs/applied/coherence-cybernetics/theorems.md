@@ -10,34 +10,32 @@ description: Fundamental theorems of Coherence Cybernetics
 > — Galileo Galilei
 
 :::info Bridge from the Previous Chapter
-In the [previous chapter](./definitions) we defined all the key concepts of CC: the Holon, six measures ($P$, $S_{vN}$, $\Phi$, $D_{\text{diff}}$, $R$, $C$), E-coherence, the stress tensor, the interiority hierarchy, and the sensorimotor functors. Those were the "bricks". Now it is time to build the **edifice** from them — a system of theorems in which each result follows logically from the previous ones, and together they form a closed deductive chain from the [axioms](./axiomatics) to the deepest conclusions about the nature of life and consciousness.
+In the [previous chapter](./definitions) we defined the basic objects of CC: the Holon, state functionals ($P$, $S_{vN}$, $\Phi$, $D_{\text{diff}}$, $R$, $C$), E-coherence, the seven-component stress panel, capability levels, and sensorimotor interfaces. Now we organize the main mathematical results — distinguishing strictly proved theorems (`[T]`, `[C]`), defined criteria (`[D]`), empirical/interpretive bridges (`[H]`, `[I]`), and withdrawn universal claims (`[✗]`).
 :::
 
 :::tip Chapter Roadmap
 In this chapter we:
-1. **Prove the existence of dynamics** — Theorem 6.1: the evolution equation has a solution (section "Existence Theorems")
-2. **Show the necessity of self-reference** — Theorems 7.1–7.2: viability requires a self-model $\varphi$, iterations converge to $\Gamma^*$ (section "Self-Reference Theorems")
-3. **Derive a conditional E-requirement** — Theorem 8.1: an explicit stationary purity balance and rate/source bounds (section "The No-Zombie Theorem")
-4. **Investigate composition** — Theorems 9.1–9.3: fractal closure, scale invariance, and when coupling correlates the parts (section "Composition Theorems")
-5. **Derive a unified viability criterion** — Theorem 10.1: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ (section "Unified Viability Condition")
-6. **Describe the sensorimotor cycle** — Theorems 11.1–11.4: encoding, action, completeness, hedonics (section "Sensorimotor Encoding")
-7. **Examine attractors and structure** — T-96, T-98, Fano uniqueness (sections "Attractor Theorems", "Fano Uniqueness")
+1. **Establish well-posedness and state preservation** — Theorems 6.1–6.2 (`CC-1`, `CC-2` `[T]` under explicit regularity/target hypotheses)
+2. **Clarify limits of self-reference and chosen fixed points** — Theorem 7.1 (`CC-3 [✗]` universal necessity withdrawn) and Theorem 7.2 (`CC-4` `[T]` for the selected mirror family)
+3. **Derive the conditional E-coherence balance** — Theorem 8.1 (`T-38a [✗]` universal No-Zombie withdrawn; exact purity balance and conditional E-floor `[T under stated bounds]`)
+4. **Analyse composition and aggregation** — Theorems 9.1–9.6 (`CC-5`, `CC-6`/`T-72`, `CC-7`: weak-coupling persistence, canonical mean-marginal aggregation, correlation criteria, and strong-coupling counterexamples)
+5. **Define the diagnostic stress panel scope** — Theorem 10.1 (`CC-8 [D]`, `T-92 [D]`: seven-component panel distinct from the four exact capability margins)
+6. **Specify sensorimotor interfaces and valence** — Theorems 11.1–11.4 (`T-100 [D]`, `T-101 [D/T]`, `T-102 [✗]` withdrawn three-term exhaustion, `T-103 [T]+[I]`)
+7. **Summarize core attractor and structural results** — `T-96`, `T-98`, `T-62`, `T-77`, `T-78`, `T-80`, `T-82`, `T-85 [✗]`, `T-93`, `T-94`
 :::
 
-Why do we need a chapter on theorems? We already know the [axioms](./axiomatics) and [definitions](./definitions). But axioms are the foundation of a building, and definitions are the bricks. Theorems are **the building itself**: logical chains that connect the foundation to the roof and show that the structure will not collapse.
-
-This chapter tells a story. It begins with the question "does dynamics even exist?" (Theorem 6.1), passes through the discovery that every living system **must** observe itself (Theorem 7.1), derives the conditional dynamical scope of the No-Zombie proposal (Theorem 8.1) — and ends with the question of when the interaction of parts produces something **new** — a joint state that the parts do not fix (Theorem 9.3: not for every coupling, but when the coupling has a correlating part).
-
-Each theorem is not an isolated fact, but a link in a single deductive chain. Read in order — and you will see how an entire science of life, consciousness, and self-organisation grows from five axioms.
+Why do we need a chapter on theorems? Axioms and definitions introduce the state space and functionals; theorems determine what actually follows deductively — and equally importantly, **what does not follow** without additional premises (such as weak coupling, bounded external sources, or fixed-target regularity).
 
 :::info Formalisation Levels
 Each result is marked with one of the statuses (complete system — see [Status Registry](/docs/reference/status-registry)):
-- **[T]** Theorem — strictly proved from UHM axioms
-- **[C]** Conditional — conditional on an explicit assumption
-- **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
-- **[I]** Interpretation — a semantic bridge, formally open
-- **[D]** Definition by convention — a convention
-- **[Pr]** Programme — a research direction, open problem
+- **[T]** Theorem — strictly proved from the stated premises
+- **[C]** Conditional — proved under an explicit additional assumption
+- **[H]** Hypothesis — formulated, requires proof or empirical verification
+- **[P]** Postulate — accepted without proof as a foundational assumption
+- **[Pr]** Programme — a named open research direction
+- **[D]** Definition — assigned by convention
+- **[I]** Interpretation — a philosophical/semantic bridge
+- **[✗]** Retracted — proven erroneous or withdrawn (excluded as a live premise)
 :::
 
 :::note A Note on Notation
@@ -45,12 +43,12 @@ In this document:
 - $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
 - $\mathcal{V}$ — [viability region](/docs/core/dynamics/viability): $\mathcal{V} = \{\Gamma : P(\Gamma) > 2/7\}$
 - $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
-- $P_{\text{crit}} = 2/7$ — [critical purity theorem](/docs/proofs/dynamics/theorem-purity-critical)
-- $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi) (specified numerical map; a channel only with frozen coefficients)
+- $P_{\text{crit}} = 2/7$ — selected HS structural-majority threshold (`[D]`, [Viability](/docs/core/dynamics/viability))
+- $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi) (specified numerical map; a linear CPTP channel only with frozen coefficients, `T-62`)
 - $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), threshold $R_{\text{th}} = 1/3$
 - $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ), threshold $\Phi_{\text{th}} = 1$
 - $C$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
-- $\kappa_0$ — a selected regular kinetic rate with explicit assumptions.
+- $\kappa_0$ — a selected regular kinetic rate with explicit assumptions
 - $\mathrm{Coh}_E$ — [E-coherence](./definitions#e-когерентность)
 - $\mathcal{R}[\Gamma, E]$ — [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член)
 :::
@@ -223,7 +221,7 @@ $$
 \mathcal L_i(\rho_i^g-\rho_i^0)=-g\operatorname{Tr}_j\mathcal L_{\mathrm{int}}(\rho_{12}^g).
 $$
 
-Thus $\|\rho_i^g-\rho_i^0\|_F\le |g|\|\mathcal L_i^{-1}\|\|\operatorname{Tr}_j\mathcal L_{\mathrm{int}}\|_{F\to F}$, using $\|\rho_{12}^g\|_F\le1$. If twice this bound is smaller than $P(\rho_i^0)-2/7$, both marginals retain structural majority [T at these assumptions]. The actual joint dimension is49. A seven-dimensional aggregation must be declared separately.
+Thus $\|\rho_i^g-\rho_i^0\|_F\le |g|\|\mathcal L_i^{-1}\|\|\operatorname{Tr}_j\mathcal L_{\mathrm{int}}\|_{F\to F}$, using $\|\rho_{12}^g\|_F\le1$. If twice this bound is smaller than $P(\rho_i^0)-2/7$, both marginals retain structural majority [T at these assumptions]. The actual joint dimension is 49. A seven-dimensional aggregation must be declared separately.
 
 The mean marginal aggregate below gives a concrete aggregation map. Positive trace preservation alone supplies no bound on its distance from a chosen reference state.
 
@@ -449,7 +447,7 @@ so $\tfrac12\lVert \mathcal{M}_k(X(t)) - \rho_* \rVert_1$ obeys the same bound h
 
 ---
 
-We have travelled from the existence of dynamics through self-reference and No-Zombie to emergence. Now let us turn to another key block: **how to check whether a system is alive?** It turns out all viability conditions can be reduced to a single elegant criterion.
+We have travelled from the existence of dynamics through self-reference and conditional purity balance to composition. Now let us turn to another practical block: **how to diagnose whether a state stays inside the chosen viability region?** The seven-component stress panel provides a convenient diagnostic dashboard, while the exact four capability margins remain the canonical viability test.
 
 ## Unified Viability Condition
 
@@ -457,7 +455,7 @@ The seven raw stress scores define the panel region $V_\sigma=\{\Gamma:\|\sigma_
 
 ### Diagnostic panel scope {#теорема-101-эквивалентность-условий}
 
-The seven raw scores define a separate region V_sigma; their U-condition implies structural majority, but they neither equal the four-part Cap2 gate nor imply biological viability. Uniform-diagonal Cap2 states already fail the raw L-condition. Use the exact four margins in the definitions.
+The seven raw scores define a separate region $V_\sigma$; their U-condition implies structural majority, but they neither equal the four-part $\mathsf{Cap}_2$ gate nor imply biological viability (`CC-8 [D]`, `T-92 [D]`). Uniform-diagonal $\mathsf{Cap}_2$ states already fail the raw L-condition. Use the exact four margins in the definitions.
 
 [Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
 
@@ -465,30 +463,28 @@ The seven raw scores define a separate region V_sigma; their U-condition implies
 
 ## Sensorimotor Encoding
 
-Every living organism exists in the cycle "perception — decision — action — evaluation". A bacterium senses a sugar gradient, swims towards it, obtains nutrition — or not, and corrects its course. A human sees danger, chooses a path, evaluates the result. CC formalises this cycle precisely, with no free parameters.
+Every living organism exists in the cycle "perception — decision — action — evaluation". A bacterium senses a sugar gradient, swims towards it, obtains nutrition — or not, and corrects its course. A human sees danger, chooses a path, evaluates the result. CC formalises this cycle using explicitly declared interfaces and control objectives.
 
-Theorems 11.1–11.4 describe **four facets** of the sensorimotor cycle: encoding of the environment (how the world enters the system), optimal action (how the system responds), completeness of description (why three channels suffice), and hedonic valence (how the system evaluates whether it is "good" or "bad").
+Sections 11.1–11.4 describe **four facets** of the sensorimotor cycle: observation-to-control interfaces (`T-100 [D]`), minimax action selection (`T-101 [D]` + `[T under attained minima]`), admissible generator sums (where the earlier three-term exhaustion claim `T-102 [✗]` is withdrawn), and regenerative purity flux / hedonic valence (`T-103 [T at specified differentiable injection field]` + `[I]`).
 
 ### Observation-to-control interfaces {#теорема-111-кодирование-среды}
 
-T-100 specifies an observation category and a channel or control interface. Verify positivity and any composition laws on that interface. Distinct encoders can satisfy the same covariance equation. Compare them through the observation-law fibres and external calibration.
+`T-100` `[D]` specifies an observation category and a channel or control interface. Verify positivity and any composition laws on that interface. Distinct encoders can satisfy the same covariance equation. Compare them through the observation-law fibres and external calibration.
 
 [Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
 
-### Theorem 11.2 / T-101 (Optimal Action) [T] {#теорема-112-оптимальное-действие}
+### Theorem 11.2 / T-101 (Optimal Action) [D] + [T under attained minima] {#теорема-112-оптимальное-действие}
 
 :::note In Plain Terms
-How does the system decide what to do? The answer is elegant: **minimise the maximum stress**. Recall the instrument-panel analogy from Theorem 10.1. The optimal action is one that leads to a state where none of the gauges is "in the red" — or, if they are all in the yellow, then with the least critical one.
+How does a controller decide what to do? One natural minimax criterion is to **minimise the maximum stress** across the seven panel gauges. The chosen action leads to a predicted state where the worst of the seven indicators is as small as possible, rather than sacrificing one component for another.
 
-This is a minimax strategy: instead of optimising a single metric (as in RL — reward), the system optimises the **worst of seven indicators**. This ensures robustness: the system does not sacrifice logic for dynamics, and does not sacrifice integration for articulation.
-
-For an AI engineer: this is a ready-made utility function for an agent — without the need to engineer a reward.
+Choosing this minimax objective is a design convention **[D]**; once the calibrated stress scales and admissible action set $\mathcal{A}$ are specified, attainment of a minimizer on a finite nonempty set is a mathematical theorem **[T under attained minima]**. Whether a biological organism actually optimizes this particular objective is an empirical question requiring separate evidence.
 
 **Connection:** [Stress tensor](./definitions#тензор-напряжений), [Motor stress](./sensorimotor#теорема-моторный-стресс)
 :::
 
-:::tip Statement [T]
-The optimal action of a holon is determined by minimising the sup-norm of the stress tensor:
+:::tip Statement [D] + [T under attained minima]
+The minimax controller selects an action minimising the sup-norm of the chosen stress objective over an admissible action set $\mathcal{A}$:
 
 $$
 a^* = \arg\min_{a \in \mathcal{A}} \|\sigma_{\mathrm{sys}}(\Gamma(\tau + \delta\tau \mid a))\|_\infty
@@ -497,95 +493,93 @@ $$
 where $\Gamma(\tau + \delta\tau \mid a)$ is the predicted state under action $a$.
 :::
 
-**Design criterion.** Choose calibrated losses on a specified action set. A finite nonempty set has at least one minimizer. Uniqueness requires a single minimizing action or a supplied tie rule.
+**Design criterion.** Choose calibrated losses on a specified action set. A finite nonempty set has at least one minimizer. Uniqueness requires a single minimizing action or a supplied tie rule; biological or experiential optimality needs separate evidence.
 
 **See:** [Sensorimotor theory](./sensorimotor#теорема-оптимальное-действие)
 
 ### Target-dependent motor scores {#теорема-моторный-стресс}
 
-Define sigma_k=1-rho_kk/target_kk only for positive target populations. With a frozen target its derivative is -1/target_kk. If the target depends on rho, differentiate the target too. Zero total stationary drift does not imply zero regeneration or equality to the anchor. General G2 rotations do not preserve diagonal ratios.
+Define $\sigma_k = 1 - \rho_{kk}/\mathrm{target}_{kk}$ only for positive target populations. With a frozen target its derivative is $-1/\mathrm{target}_{kk}$. If the target depends on $\rho$, differentiate the target too. Zero total stationary drift does not imply zero regeneration or equality to the anchor. General $G_2$ rotations do not preserve diagonal ratios.
 
 [Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
 
 ### Admissible additional generators {#теорема-113-полнота-трёх-членов}
 
-Nonnegative sums of GKSL generators are admissible; a signed difference need not be. A replacement term can itself be GKSL, so Hamiltonian/dissipation/regeneration is a grouping convention. The thermodynamic work/heat/matter dictionary is conditional on reservoir and charge choices, not a universal theorem of quantum channels.
+Nonnegative sums of GKSL generators are admissible; a signed difference need not be. A replacement term can itself be GKSL, so Hamiltonian/dissipation/regeneration is a grouping convention, and the earlier claim of exhaustive three-term completeness (`T-102 [✗]`) is withdrawn. The thermodynamic work/heat/matter dictionary is conditional on reservoir and charge choices, not a universal theorem of quantum channels.
 
 [Definitions and exact margins](./definitions#sigma-sys-formal) | [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)
 
-### Theorem 11.4 / T-103 (Hedonic Valence) [T] + [I] {#теорема-114-гедоническая-валентность}
+### Theorem 11.4 / T-103 (Hedonic Valence) [T at specified differentiable injection field] + [I] {#теорема-114-гедоническая-валентность}
 
 :::note In Plain Terms
-How does the system know whether it feels "good" or "bad"? By the change in purity. If purity is growing — the system is "recovering", and this is experienced as positive valence (pleasure, satisfaction). If it is falling — as negative (pain, discomfort).
+In CC, the regenerative contribution to purity change is written $\mathcal{V}_{\text{hed}} := dP/d\tau|_{\mathcal{R}}$. Depending on the current state $\Gamma$ and the target $\rho_*$, this purity flux can be positive, zero, or negative — its sign is not fixed globally.
 
-The formula $\mathcal{V}_{\text{hed}}$ is not an abstract measure: it is the *derivative* of purity with respect to the regenerative channel. That is: "how fast am I recovering right now?" For a runner: the feeling "I chose the right pace" is positive $\mathcal{V}_{\text{hed}}$. The feeling "I am overloaded" is negative.
+Epistemically, the derivative formula is an exact algebraic identity for the specified differentiable injection field **[T]**, the viability gate $g_V(P)$ is a definition **[D]**, and interpreting positive or negative purity flux as subjective pleasure or discomfort is an interpretive bridge **[I]** requiring separate experiential evidence.
 
-Important: the formula is a theorem [T], but the **interpretation** of it as a subjective experience is [I]. Mathematics says *what* the derivative equals. Philosophy says *how it is experienced*.
-
-**Connection:** [Purity dynamics](/docs/core/dynamics/evolution#динамика-чистоты), [Replacement channel](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), [Interiority](/docs/consciousness/foundations/interiority-theory)
+**Connection:** [Purity dynamics](/docs/core/dynamics/evolution#динамика-чистоты), [Interiority](/docs/consciousness/foundations/interiority-theory)
 :::
 
-:::tip Statement
-Hedonic valence is defined by the derivative of purity with respect to the regenerative channel:
+:::tip Statement [T at specified differentiable injection field] + [I]
+For a specified differentiable regenerative injection field $\mathcal{R}[\Gamma, E] = \kappa(\Gamma)\, g_V(P)\, (\rho_* - \Gamma)$, the regenerative purity flux is:
 
 $$
 \mathcal{V}_{\text{hed}} := \left.\frac{dP}{d\tau}\right|_{\mathcal{R}} = 2\kappa(\Gamma) \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma \cdot (\rho_* - \Gamma))
 $$
 
 Epistemic stratification:
-- **Formula** — **[T]**: identity from the evolution equation
-- **Observability** at L2 ($R \geq 1/3$) — **[T]**: from [T-77](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (the replacement channel provides access to $dP/d\tau$)
-- **Phenomenal interpretation** (connection with experience) — **[I]**
+- **Purity-flux identity** — **[T at specified differentiable injection field]**: exact algebraic identity from the evolution equation; the sign of $\mathrm{Tr}(\Gamma(\rho_* - \Gamma))$ is not fixed in advance.
+- **Viability gate $g_V(P)$** — **[D]**: declared convention.
+- **Phenomenal interpretation** (connection with pleasure/pain) — **[I]**: requires an explicit experiential bridge.
 :::
 
-**Proof.** From the [evolution equation](/docs/core/dynamics/evolution): $dP/d\tau = -2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma]) + 2\mathrm{Tr}(\Gamma \cdot \mathcal{R}[\Gamma, E])$. The Hamiltonian term does not change $P$. Substituting $\mathcal{R} = \kappa(\Gamma)(\rho_* - \Gamma) \cdot g_V(P)$ gives the formula. $\blacksquare$
+**Proof.** From the [evolution equation](/docs/core/dynamics/evolution): $dP/d\tau = -2\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma]) + 2\mathrm{Tr}(\Gamma \cdot \mathcal{R}[\Gamma, E])$. The Hamiltonian commutator does not change $P$. Substituting $\mathcal{R} = \kappa(\Gamma) \cdot g_V(P) \cdot (\rho_* - \Gamma)$ yields the identity. $\blacksquare$
 
 **See:** [Sensorimotor theory](./sensorimotor#теорема-гедоническая-валентность)
 
 ---
 
-The sensorimotor cycle is described. Now let us turn to **attractors** — equilibrium states toward which the system strives. These theorems, proved in [core/dynamics](/docs/core/dynamics/evolution), play a key role in CC, because the attractor is the system's "target self": the state it "wants" to reach.
+The sensorimotor cycle is specified. Now let us turn to **attractor and structural theorems** proved in the core documentation that are frequently referenced in CC, with their exact scoped statuses from the [Status Registry](/docs/reference/status-registry).
 
 ## Attractor and Structure Theorems {#теоремы-аттракторов}
 
 :::info Canonical definitions
-The following theorems are proved in the core documentation and play a central role in CC. Here is a brief summary with cybernetic interpretation.
+The following core results are referenced throughout CC. Each row states the exact mathematical scope rather than informal shorthand.
 
-| Theorem | Essence | Role in CC | Canonical definition |
-|---------|---------|------------|----------------------|
-| **T-96** [T] | Attractor is non-trivial: $P(\rho^*_\Omega) > 1/7$ | Every coherent system has a target state | [Evolution](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) |
-| **T-98** [T] | Balance formula $P(\rho^*)$ via $\kappa/\lambda_{\mathrm{gap}}$ | Basis of [attractor hierarchy](./definitions#иерархия-аттракторов), [stability radius](./stability#радиус-устойчивости) | [Evolution](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) |
-| **T-77** [T] | Replacement channel $\Phi_{\mathrm{repl}}$ — mechanism of reflection | At L2, makes T-103 hedonics observable | [Lindblad operators](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) |
-| **T-78** [T] | $\varphi$ as a CPTP channel with Kraus representation | Bridge from categorical self-model to physics | [Self-observation](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
-| **T-62** [T] | Physical realisation of $\varphi$ through spectral decomposition of $\mathcal{L}_0$ | Constructive formula for φ | [Self-observation](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
-| **T-93** [T] | $\mathrm{PG}(2,2) \cong H(7,4)$ — isomorphism | Structure of Gap space | [Gap dynamics](/docs/core/dynamics/gap-dynamics#теорема-h74-формальная) |
-| **T-94** [T] | Exponential memory kernel from compactness | Justification of [non-Markovian extension](./non-markovian) | [Gap dynamics](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) |
-| **T-80** [T] | Gap bounded by sum of sector parameters | Estimate of inter-sector gaps | [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) |
-| **T-85** | Reality of the Hermitian-product trace | Its imaginary part vanishes. A Berry term needs an independently specified connection. |
-| **T-82** [T] | Uniqueness of the Fano operator | CC has no alternatives among $\Gamma_{\!\text{oct}}$-covariant (Fano-structured) theories | [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-единственность-фано) |
+| Theorem | Exact Scoped Statement | Role in CC | Canonical Reference |
+|---------|------------------------|------------|---------------------|
+| **T-96** [T under the stated stationary model] | Every nontrivial density state has $P > 1/7$; positive coherence and self-model mismatch additionally require a primitive baseline and diagonal-preservation hypotheses (at $H = 0$, self-registering basis states can be stationary and diagonal; numerical attractors are examples, not universal existence or uniqueness) | Stationary-state baseline in CC | [Evolution](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) |
+| **T-98** [T at the stated gated replacement model] | Attractor purity balance $P(\rho^*_\Omega) = (\alpha P_{\mathrm{diag}} + \kappa g_V(P) f^*)/(\alpha + \kappa g_V(P))$, $\alpha = 2/3$, $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$ (ungated form omitting $g_V$ holds only where $g_V = 1$) | Basis of [attractor hierarchy](./definitions#иерархия-аттракторов) | [Evolution](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) |
+| **T-77** [T] | **Purity and pinching**: $P(\rho) = P(\mathcal{E}\rho) + \|\rho - \mathcal{E}\rho\|_F^2$ for a specified orthogonal block decomposition ($2\|B\|_F^2$ for two blocks; cooperation or welfare does not follow) | Exact decomposition of purity into block-diagonal and coherence parts | [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация) |
+| **T-78** [T] | Kraus operators $\Pi_p/\sqrt{3}$ define a CPTP channel because the seven Fano coordinate projections sum to $3I$ | Fano-channel Kraus representation | [Dimension L](/docs/core/structure/dimension-l) · [Lindblad Operators](/docs/core/operators/lindblad-operators) |
+| **T-62** [T at fixed $k$ and $\sigma$] | $T(X) = (1-k)X + k\,\mathrm{Tr}(X)\sigma$ is CPTP for $0 \le k \le 1$, with unique fixed state $\sigma$ for $k > 0$ (input-dependent $k$ or $\sigma$ gives a generally nonlinear self-model, not a single CPTP channel) | Linear anchor-mixing channel building block | [Self-Observation](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
+| **T-93** [T] | The 3-bit check matrix with all 7 distinct nonzero columns ($\mathrm{PG}(2,2) \leftrightarrow H(7,4)$) separates single bit flips (application requires stated binary errors and syndrome instrument) | Combinatorial coding structure on the 7 axes | [Gap Dynamics](/docs/core/dynamics/gap-dynamics#теорема-h74-формальная) |
+| **T-94** [T under an exponential kernel] | An auxiliary first-order ODE realizes a *supplied* exponential memory convolution (kernel amplitude and decay time are inputs, not derived from compactness) | Markovian embedding for [non-Markovian extension](./non-markovian) | [Gap Dynamics](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) |
+| **T-80** [T] + [C under supplied sector amplitudes] | Positivity bounds each squared coherence by $\lvert\gamma_{ij}\rvert^2 \le \gamma_{ii}\gamma_{jj}$; numerical sector bounds require supplied sector amplitudes | Upper bounds on inter-sector coherences | [Berry Phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) |
+| **T-85** [✗] | Withdrawn universal Keldysh-to-Berry derivation and coefficient uniqueness (Hermitian traces have zero imaginary part; a Berry term requires a specified eigenbundle and microscopic connection) | Historical record only; not a live premise | [Berry Phase](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш) |
+| **T-82** [T] | With incidence parameters $(7,3,1)$, the symmetric design (Fano plane) is unique up to relabelling; this does *not* uniquely specify a dynamical channel | Combinatorial uniqueness of the $(7,3,1)$ incidence structure | [Lindblad Operators](/docs/core/operators/lindblad-operators#теорема-единственность-фано) |
 :::
 
 ---
 
 ## Conclusion: the Theorem Landscape {#заключение}
 
-Let us retrace the route we have taken — but now from a bird's-eye view.
+Let us retrace the route we have taken — distinguishing strictly proved results from conventions, interpretive bridges, and withdrawn universal claims.
 
-**Foundation (Theorems 6.x):** Dynamics exists and is physically correct. This is the "zero check" — without it, the subsequent results would be meaningless.
+**Foundation (Theorems 6.x; `CC-1`, `CC-2` [T]):** Under explicit local Lipschitz regularity and target/invariance hypotheses, the continuous evolution equation has a unique global solution preserving Hermiticity, positivity, and unit trace.
 
-**Self-reference (Theorems 7.x):** Viability *requires* self-modelling. A system that does not observe itself is doomed. Iterative reflection converges to the unique fixed point — a stable "self-image".
+**Self-reference (Theorems 7.x; `CC-3 [✗]`, `CC-4` [T]):** A purity threshold $P > 2/7$ does *not* imply an internal self-model (`CC-3 [✗]` withdrawn). For the specific chosen mirror family $M_{\mathrm{coh}}$, iteration converges geometrically to the unique fixed point $I/7$ (`CC-4` [T]).
 
-**No-Zombie (Theorem 8.1 and corollaries):** the exact purity balance gives a stationary E-floor only under explicit rate, source and required-coherence bounds. The philosophical interpretation requires an E-to-phenomenality bridge; no universal floor is proved.
+**No-Zombie (Theorem 8.1 and corollaries; `T-38a [✗]` withdrawn):** The exact purity balance yields a stationary E-floor only under explicit rate, source, and required-coherence bounds. Any philosophical interpretation requires an E-to-phenomenality bridge `[P/I]`; no universal floor is proved.
 
-**Composition and correlation (Theorems 9.1–9.6).** Weak coupling and an interior margin allow the canonical mean marginal to stay within the chosen viability region. Strong coupling can destroy this property. Correlation of the joint stationary state depends on the interaction and anchor.
+**Composition and correlation (Theorems 9.1–9.6; `CC-5`, `CC-6`/`T-72`, `CC-7`):** Weak coupling and an interior margin allow the canonical mean marginal to stay within the chosen viability region (`Theorem 9.5 [T at weak coupling]`). Strong coupling can destroy this property (`Theorem 9.6 [T]`). Correlation of the joint stationary state depends on the correlating part of the interaction and generic non-degeneracy (`Theorems 9.3–9.4`).
 
-**Diagnostics (Theorem 10.1):** All viability conditions are equivalent to one: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$. The stress tensor is a universal monitoring tool.
+**Diagnostics (Theorem 10.1 / `T-92` / `CC-8` [D]):** The seven raw stress scores define a diagnostic panel region $V_\sigma = \{\|\sigma_{\mathrm{sys}}\|_\infty < 1\}$; this panel is neither equivalent to $P > 2/7$ nor equal to the four-part $\mathsf{Cap}_2$ gate. Exact monitoring uses the four capability margins.
 
-**Sensorimotor cycle (Theorems 11.x):** The system perceives the world (Enc), acts optimally (minimax stress), experiences the result (hedonic valence). Three channels — all that is needed; a fourth does not exist.
+**Sensorimotor cycle (Sections 11.x):** Observation-to-control interfaces are declared (`T-100 [D]`); minimax action selection minimizes the chosen stress objective over an admissible action set (`T-101 [D] + [T under attained minima]`); nonnegative sums of GKSL generators are admissible, so the earlier three-channel exhaustion claim (`T-102 [✗]`) is withdrawn; regenerative purity flux obeys an exact derivative identity whose hedonic reading is interpretive (`T-103 [T] + [I]`).
 
-**Attractors and structure (T-96, T-98, T-77, T-82, etc.):** Every system evolves toward a non-trivial equilibrium. The balance between dissipation and regeneration determines "health". The Fano structure is unique — CC has no alternatives. Full formulations and proofs — in the [summary table](#теоремы-аттракторов).
+**Attractors and structure (`T-96`, `T-98`, `T-77`, `T-78`, `T-82`, etc.):** Stationary properties depend on the declared generator, anchor, and gate (`T-96`, `T-98`). The $(7,3,1)$ incidence design is unique up to relabelling (`T-82 [T]`), without forcing a unique dynamical channel. Full formulations and scoped statuses appear in the [summary table](#теоремы-аттракторов).
 
-The mathematical results use the five axioms together with each named assumption and regime; the conditional No-Zombie result specifically requires rate and source bounds, and its phenomenal interpretation requires an explicit bridge (fractal closure and scale invariance, Theorems 9.1–9.2, hold at weak coupling by Theorem 9.5 — their earlier assumptions (HOL) and (AGG) are needed only beyond it, where Theorem 9.6 shows the transfer can fail; emergence, Theorem 9.3, needs (ND) for its weak-coupling criterion, and Theorem 9.4 proves (ND) for almost every anchor).
+Every mathematical result uses the stated axioms together with each named assumption and regime; the conditional No-Zombie bound specifically requires explicit rate and source inequalities, while fractal closure and scale invariance (Theorems 9.1–9.2) hold at weak coupling by Theorem 9.5 (and can fail at strong coupling by Theorem 9.6), and emergence (Theorem 9.3) uses generic non-degeneracy (ND) proved for almost every anchor by Theorem 9.4.
 
 ---
 
@@ -593,56 +587,51 @@ The mathematical results use the five axioms together with each named assumption
 
 ```mermaid
 graph TD
-    A["Axioms Ω + AP+PH+QG+V"] --> LU["L-unification"]
-    LU --> T61["Theorem 6.1: Existence"]
-    A --> T62x["Theorem 6.2: Preservation"]
-    T61 --> T71["Theorem 7.1: Necessity of φ"]
-    T71 --> T72["Theorem 7.2: Fixed point"]
-    LU --> T81["Theorem 8.1: Exact purity balance"]
+    A["Axioms Ω + AP+PH+QG+V"] --> LU["L-unification / GKSL dynamics"]
+    A --> N7["7D state space D(C^7)"]
+    LU --> T61["Theorem 6.1 (CC-1): Well-posedness [T]"]
+    A --> T62x["Theorem 6.2 (CC-2): Positivity [T]"]
+    T61 --> T62x
+    N7 --> T72["Theorem 7.2 (CC-4): Fixed point I/7 of M_coh [T]"]
+    LU --> T81["Theorem 8.1: Exact purity balance [T]"]
     BS["Explicit rate/source bounds"] --> EF["Conditional E-floor [T]"]
     T81 --> EF
-    RL["Declared E-dependent rate law"] --> C811["Causal dependence [T]"]
-    EF --> C812["Restricted No-Zombie proposal [I]"]
-    PH["E-to-phenomenality bridge + functional task"] --> C812
-    EF --> C813["Model-dependent Coh requirement"]
-    T81 --> T91["Theorem 9.1: Composition [T at weak coupling]"]
-    T91 --> T92["Theorem 9.2: Invariance [T at weak coupling]"]
-    T95["Theorem 9.5: Canonical aggregation [T]"] --> T91
-    T95 --> T92
-    T95 --> T96x["Theorem 9.6: Strong coupling [T]"]
-    T91 --> T93x["Theorem 9.3: Emergence [C]"]
-    T72 --> T101["Theorem 10.1: Equivalence [T]"]
-    T101 --> T111["Theorem 11.1: Enc [T]"]
-    T101 --> T112["Theorem 11.2: Dec [T]"]
-    T57["T-57: LGKS"] --> T113["Theorem 11.3: Completeness [T]"]
-    T113 --> T111
-    T101 --> T114["Theorem 11.4: Valence [T]+[I]"]
+    RL["Declared E-dependent rate law"] --> C811["Corollary 8.1.1: Causal dependence [T]"]
+    EF --> C812["Corollary 8.1.2: Restricted No-Zombie [C/I]"]
+    PH["E-to-phenomenality bridge [P/I] + task"] --> C812
+    EF --> C813["Corollary 8.1.3: Model-dependent Coh bound [T]"]
 
-    LU --> T96["T-96: Attractor [T]"]
-    T96 --> T98["T-98: Balance [T]"]
-    T98 --> T104["T-104: Stability radius [T]"]
-    T98 --> T105["T-105: Energy balance [T]"]
+    T95["Theorem 9.5: Canonical aggregation [T at weak coupling]"] --> T91["Theorem 9.1 (CC-5): Weak-coupling persistence [T]"]
+    T95 --> T92["Theorem 9.2 (T-72 / CC-6): Scale invariance [T]"]
+    T95 --> T96x["Theorem 9.6: Strong-coupling failure [T]"]
+    T94x["Theorem 9.4: Generic (ND) [T]"] --> T93x["Theorem 9.3 (CC-7): Emergence [T a.e.]"]
 
-    T57 --> T82["T-82: Fano uniqueness [T]"]
-    T82 --> T113
-
-    T96 --> T91
-
-    T113 --> T107["T-107: Enc capacity [T]"]
-    T111 --> T108["T-108: Compositionality [T]"]
+    T101["Theorem 10.1 (T-92 / CC-8): Stress panel [D]"] --> T112["Theorem 11.2 (T-101): Minimax action [D/T]"]
+    T111["Section 11.1 (T-100): Enc/Dec interface [D]"] --> T108["T-108: CPTP compositionality [T]"]
     T95 --> T108
+    LU --> T114["Theorem 11.4 (T-103): Purity flux / valence [T]+[I]"]
+
+    LU --> T96["T-96: Stationary states [T in model]"]
+    T96 --> T98["T-98: Gated purity balance [T in model]"]
+    N7 --> T104["T-104: Purity-shell HS radius [T]"]
+    TH["Thermal bath + erasure model"] --> T105["T-105: Conditional Landauer bound [T]"]
+
+    INC["Incidence parameters (7,3,1)"] --> T82["T-82: Combinatorial Fano uniqueness [T]"]
+    N7 --> T107["T-107: Enc Holevo capacity <= log2(7) [T]"]
 
     style LU fill:#e1f5fe
-    style T113 fill:#d4edda
     style T96 fill:#e1f5fe
     style T98 fill:#e1f5fe
+    style T95 fill:#d4edda
+    style T82 fill:#d4edda
+    style T101 fill:#fff3cd
     style T104 fill:#fff3cd
     style T105 fill:#fff3cd
     style T107 fill:#fff3cd
     style T108 fill:#fff3cd
 ```
 
-**How to read the diagram:** an arrow $A \to B$ means "theorem $A$ is used in the proof of theorem $B$". Colours: blue — fundamental results (L-unification, attractor), green — key structural theorems (completeness), yellow — applied corollaries (diagnostics, capacity).
+**How to read the diagram:** an arrow $A \to B$ means "result or premise $A$ is used in $B$". Withdrawn universal claims (`CC-3 [✗]`, `T-38a [✗]`, `T-57 [✗]`, `T-85 [✗]`, `T-102 [✗]`) are excluded as live premises. Colours: blue — core dynamical/stationary results, green — aggregation and combinatorial structure theorems, yellow — declared diagnostic/interface tools and applied capacity/geometry bounds.
 
 **See:** [Dependency hierarchy](/docs/core/foundations/axiom-omega#иерархия-зависимостей) for the full structure Ω → χ_S → L_k → ℒ_Ω → φ
 
@@ -650,9 +639,9 @@ graph TD
 
 ## What We Have Learned
 
-Let us summarise. In this chapter we have traversed the full path from basic existence theorems to the deepest results about the nature of consciousness:
+Let us summarise the actual proved landscape of CC in this chapter:
 
-1. **Dynamics exists and is correct** (Theorems 6.1–6.2 [T]): the evolution equation has a unique solution preserving the physical meaning of the matrix $\Gamma$ (Hermiticity, positivity, normalisation).
+1. **Dynamics exists and is well-posed** (Theorems 6.1–6.2 [T]): under explicit regularity and target hypotheses, the evolution equation has a unique global solution preserving Hermiticity, positivity, and unit trace.
 
 2. **Self-models.** A purity threshold does not imply a self-model. To test a proposed self-model, specify its action, observables and control class (§7.1).
 
@@ -660,35 +649,35 @@ Let us summarise. In this chapter we have traversed the full path from basic exi
 
 4. **Composition works at weak coupling** (Theorems 9.1–9.6): the canonical aggregate of weakly coupled viable embodied holons — the mean marginal, which is unique — is viable, and its purity, reflection, integration and Gap profile lie within $O(g)$ of a part's (fractal closure and scale invariance, [T at weak coupling], Theorem 9.5); the threshold on the coupling is explicit, and it cannot be dropped — at strong coupling the aggregate of two viable holons can be $I/7$ (Theorem 9.6).
 
-5. **Seven-score panel (Theorem 10.1 / T-92).** The sup-norm tests membership in $V_\sigma$. Cap2 uses its own four margins. [Diagnostic panel scope](#теорема-101-эквивалентность-условий)
+5. **Seven-score panel (Theorem 10.1 / T-92).** The sup-norm tests membership in $V_\sigma$. $\mathsf{Cap}_2$ uses its own four margins. [Diagnostic panel scope](#теорема-101-эквивалентность-условий)
 
-6. **The sensorimotor cycle is closed** (Theorems 11.1–11.4 [T]): environmental encoding is unique (up to $G_2$-calibration), action is optimal (minimax stress), three channels exhaust all possibilities, hedonics = $dP/d\tau|_{\mathcal{R}}$.
+6. **Sensorimotor interfaces and controls** (Sections 11.1–11.4): observation-to-control interfaces are declared (`T-100 [D]`), minimax action selection minimizes the chosen stress objective (`T-101 [D] + [T under attained minima]`), nonnegative sums of GKSL generators are admissible (`T-102 [✗]` three-term exhaustion withdrawn), and regenerative purity flux obeys an exact derivative identity (`T-103 [T] + [I]`).
 
-7. **Structure is unique** (T-82 [T]): the Fano operator is unique — CC has no alternatives among $\Gamma_{\!\text{oct}}$-covariant (Fano-structured) theories in 7 dimensions.
+7. **Combinatorial Fano uniqueness and its boundary** (`T-82 [T]`): with incidence parameters $(7,3,1)$, the symmetric Fano design is unique up to relabelling; however, this combinatorial uniqueness does *not* by itself uniquely select a dynamical channel.
 
 :::info Bridge to the Next Chapter
-We have proved the theorems — but *about what* do they speak? What is the *subject domain* of CC? Do other interpretations of the axioms exist, beyond $7 \times 7$ density matrices? In the [next chapter](./model-theory) we will engage with the **model theory** of CC: define the formal signature (language of the theory), construct the standard model (canonical interpretation), investigate questions of soundness and completeness, and then build **functor bridges** to other theories of consciousness (IIT, FEP, GNW). This is the transition from "what has been proved?" to "what is all this about?" — and "how does it connect to the rest of science?"
+We have established what is proved — and under what explicit hypotheses. What is the *subject domain* of CC? Do other interpretations of the axioms exist, beyond $7 \times 7$ density matrices? In the [next chapter](./model-theory) we will engage with the **model theory** of CC: define the formal signature (language of the theory), construct the standard model (canonical interpretation), investigate questions of soundness and completeness, and then examine **functor bridges** to other theories of consciousness (IIT, FEP, GNW).
 :::
 
 ---
 
 **Related Documents:**
 - [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — L-unification (Ω → χ_S → L_k → ℒ_Ω → φ)
-- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — derived constants ($P_{\text{crit}}$, $\kappa_0$, $R_{\text{th}}$, $\Phi_{\text{th}}$)
+- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — structural constants ($P_{\text{crit}}$, $\kappa_0$, $R_{\text{th}}$, $\Phi_{\text{th}}$)
 - [Axiomatics](./axiomatics) — L-unification in CC, E-accentuation
 - [Definitions](./definitions) — basic CC definitions
-- [Sensorimotor Theory](./sensorimotor) — Enc/Dec functors, completeness of the 3-term equation
+- [Sensorimotor Theory](./sensorimotor) — Enc/Dec interfaces, admissible GKSL sums, and minimax control
 - [History of Cybernetics](./cybernetics-history) — connection to existing theories
 - [Consciousness Theories](/docs/consciousness/comparative/consciousness-theories) — IIT, FEP, autopoiesis
 - [Holon](/docs/core/structure/holon) — hierarchical definition of $\mathbb{H}$
 - [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}} = 2/7$
 - [Self-observation](/docs/consciousness/foundations/self-observation) — measures $R$, $\Phi$, $C$
 - [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4
-- [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels, E-accentuation theorem
-- [Evolution](/docs/core/dynamics/evolution) — equation $d\Gamma/d\tau$ with derived $\kappa_0$
+- [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels, self-model constructions
+- [Evolution](/docs/core/dynamics/evolution) — equation $d\Gamma/d\tau$ and stationary regimes
 - [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$
-- [Uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem) — $G_2$-rigidity [T]: all CC-1–CC-8 theorems hold for any choice of $G_2$-calibration (observer-independent)
-- [Constructive algorithms](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации) — computing L_k from Ω
+- [Uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem) — conditional representation comparison under (RI); universal $G_2$-uniqueness of encoders (`T-42a [✗]`) is withdrawn, and frame-pinned readouts ($\Phi$, $\mathrm{Coh}_E$, $\sigma_{\mathrm{sys}}$) depend on the declared frame
+- [Constructive algorithms](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации) — computing $L_k$ from $\Omega$
 - [Philosophical Foundations](./philosophy) — ontological status of the theorems
-- [Comparison with Alternatives](./comparison) — which CC theorems are unique
+- [Comparison with Alternatives](./comparison) — comparison of CC with other frameworks
 - [Exercises](./exercises) — problems on theorems (blocks 1–4)

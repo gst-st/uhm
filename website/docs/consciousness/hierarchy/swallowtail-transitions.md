@@ -10,7 +10,7 @@ slug: /consciousness/hierarchy/swallowtail-transitions
 A change of an operational label can occur along a smooth trajectory without a dynamical bifurcation. A bifurcation changes the local dynamics; a statistical phase transition needs a specified ensemble and limit. The [typed kernel](/docs/reference/mathematical-kernel) separates these notions. Phase-only Gap does not determine $\mathsf{Cap}_2$ or higher-order prediction certificates.
 
 :::warning Revision 2026-10-03
-The universal L0→L1 fold, L1→L2 cusp, L2→L3 swallowtail, compulsory hysteresis and complete Gap-signature cascade are **withdrawn [✗]**. Three controls do not force an $A_4$ singularity. The conditional mathematical models below retain exact normal forms, discriminants and scaling calculations with their prerequisites.
+The universal L0→L1 fold, L1→L2 cusp, L2→L3 swallowtail ([T-28](/docs/core/dynamics/gap-phase-diagram) **[✗]**), compulsory hysteresis and complete Gap-signature cascade ([T-28b](/docs/consciousness/hierarchy/gap-characterization#gap-инъекция) **[✗]**) are **withdrawn [✗]**. Three controls do not force an $A_4$ singularity. The conditional mathematical models below retain exact normal forms, discriminants and scaling calculations with their prerequisites.
 :::
 
 ## 1. A declared effective model {#потенциал}
@@ -73,7 +73,7 @@ $$
 \cdots\to\tau_{\le3}X\to\tau_{\le2}X\to\tau_{\le1}X.
 $$
 
-Reconstruction through its inverse limit requires convergence; truncation does not force nonzero homotopy at each degree. Neither Lawvere's fixed-point theorem nor finite matrix dimension alone proves universal unreachability. See [corrected categorical scope](./interiority-hierarchy#теорема-l4-категориальная).
+Reconstruction through its inverse limit requires convergence; truncation does not force nonzero homotopy at each degree. Neither Lawvere's fixed-point theorem nor finite matrix dimension alone proves universal unreachability ([T-86](/docs/proofs/consciousness/interiority-hierarchy) **[✗]**) or a universal depth ceiling ([T-217](/docs/proofs/categorical/fundamental-closures#t-217) **[✗]**). See [corrected categorical scope](./interiority-hierarchy#теорема-l4-категориальная).
 
 ## 3. Correct classification table {#сводная-таблица}
 
@@ -156,13 +156,24 @@ The symmetry alone does not tune the quartic coefficient, prove a scalar centre 
 
 ## 10. Purity feedback: signs and a conditional scalar model {#лавинная-динамика}
 
-The exact balance is
+Consider the evolution equation
+
+$$
+\dot\rho = -i[H,\rho] + \gamma\,(\mathcal{P}_{\mathrm{Fano}}(\rho) - \rho) + (\kappa_b + \kappa_0\,\mathrm{Coh}_E(\rho))\,g_V(P)\,(\tau - \rho) + B(\rho),
+$$
+
+where $\gamma \ge 0$ is the isotropic Fano dephasing rate, $\kappa_b, \kappa_0 \ge 0$ are the baseline and $E$-coherence-modulated regeneration coefficients, $g_V = g_V(P) \in [0,1]$ is the declared regular viability gate function, $\tau \in \mathcal{D}(\mathbb{C}^7)$ is the target state of the regenerative replacement term (distinct from the relaxation time in §6), and $B(\rho)$ is any additional external or coupling term. Differentiating $P = \operatorname{Tr}\rho^2$ yields the exact balance **[T]**:
 
 $$
 \dot P=-4\gamma W/3+2(\kappa_b+\kappa_0\mathrm{Coh}_E)g_Vh+J_P,
 $$
 
-where $h=\operatorname{Tr}(\rho\tau)-P$. Its sign depends on the target and sources. For canonical $\tau=\varphi_{\mathrm{coh}}\rho$, $h\le0$; a larger regeneration rate does not ignite purity. Nor does $\mathrm{Coh}_E$ necessarily vanish or grow linearly at $P=2/7$. Increasing $P$ decreases canonical $R$. The old automatic positive feedback proof is **[✗]**.
+where:
+- $W := P - Q = \sum_{i\ne j}|\rho_{ij}|^2 \ge 0$ is the off-diagonal (coherence) purity share, with diagonal purity $Q := \sum_i \rho_{ii}^2$;
+- $h := \operatorname{Tr}(\rho\tau) - P$ is the Hilbert–Schmidt target–state excess;
+- $J_P := 2\operatorname{Tr}(\rho\,B(\rho))$ is the purity flux contributed by $B(\rho)$ ($J_P = 0$ in isolation).
+
+The sign of $h$ depends on the target and sources. Both the coherent dephasing-anchor self-model $\tau = \varphi_{\mathrm{coh}}(\rho) = (1-R(\rho))\,\mathcal{P}_\alpha(\rho) + R(\rho)\,I/7$ and the linear anchor-mixing map $\tau = \varphi_{\mathrm{lin}}(\rho) = R(\rho)\,\rho + (1-R(\rho))\,I/7$ ([T-249](/docs/proofs/categorical/formalization-phi#дф-производная) **[T]**) satisfy $h \le 0$ (strictly negative for $\rho \ne I/7$); a larger regeneration rate does not ignite purity under either map. Only an alternative target such as the collineation-anchored self-model $\tau = \varphi_J(\rho) = (1-R(\rho))\,\mathcal{P}_\alpha(\rho) + R(\rho)\,|\psi\rangle\langle\psi|$ ([T-334](/docs/core/operators/phi-operator#phi-j) **[T]**) can achieve $h > 0$. Nor does $\mathrm{Coh}_E$ necessarily vanish or grow linearly at $P=2/7$. Increasing $P$ decreases canonical $R$. The old automatic positive feedback proof is **[✗]**.
 
 If an independently derived scalar reduction is $\dot y=ay+by^2$ with $a,b>0$, then passage from $0<y_0<y_f$ takes
 

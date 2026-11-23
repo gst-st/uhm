@@ -2,249 +2,202 @@
 sidebar_position: 2
 title: "Emergent Manifold M⁴"
 slug: /proofs/physics/emergent-manifold
-description: "Derivation of the 4-manifold M⁴ = ℝ × S³ from the algebra of holons: time from the depth register (T-118), space as the computed spectrum of three commuting rotation charges (T-119), both [T] as mathematics"
+description: "Exact mathematical scope of T-117–T-121: global site averages, depth-register mesh limit C₀(ℝ), hand-picked u(3) torus fluctuations C(S³) with Coleman–Mandula obstruction, supplied Riemannian spin structure, and constructive QCA alternative."
 ---
 
 # Emergent Manifold M⁴
 
-A depth register with a specified scaling limit supplies $\mathbb R$. Fluctuations of three selected commuting charges supply $C_0(\mathbb R^3)$, whose minimal unitization has spectrum $S^3$. The product $\mathbb R\times S^3$ is a mathematical construction [T]. Two charges carry colour. Its physical interpretation, metric and dynamics require separate input. [Operational metric limits](/docs/geometry/common-limit)
+This chapter states the exact mathematical content and limitations of `T-117`–`T-121` and `T-120b`. Together, a depth-register mesh limit (`T-118`) and fluctuations of a hand-picked maximal torus of $\mathfrak{u}(3)$ (`T-119`) build the commutative algebra $C_0(\mathbb{R}) \otimes C(S^3)$, which combines with an externally supplied Riemannian metric and spin Dirac operator on $\mathbb{R}\times S^3$ (`T-120`). Because **two of the three charge coordinates in `T-119(d)` are colour Cartan generators $\subset \mathrm{SU}(3)_C \subset G_2$**, interpreting this spectrum as physical space encounters a direct **Coleman–Mandula obstruction**.
+
+The genuine constructive path to operational spacetime geometry — free of colour-charged coordinates and imported continuum metrics — is the 3D palindromic Strang Weyl QCA IR Lorentzian light-cone construction verified in `website/research/operational-reconstruction/verify_foundational_bounds.py`, together with [Common Limiting Metric](/docs/geometry/common-limit) and [Verified Network Results](/docs/reference/network-results).
 
 ---
 
 ## 1. Problem Statement {#постановка}
 
-### 1.1 Background Independence Gap
+### 1.1 Background-Independence Scope
 
-With a chosen octonionic unit $e_O$, the stabilizer acts on $\mathbb C^7=\mathbb C e_O\oplus\mathbf3\oplus\bar{\mathbf3}$. A product spectral action also uses a spin manifold, metric and differential operator:
+With a marked octonionic unit $e_O$, the stabilizer $\mathrm{SU}(3) \subset G_2$ acts on $\mathbb{C}^7 = \mathbb{C}e_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$. A product spectral triple of the form
 
 $$
-(A, H, D) = (C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4, S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})
+(A, H, D) = \bigl(C^\infty(M^4) \otimes A_{\mathrm{int}},\; L^2(M^4, S) \otimes H_{\mathrm{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\mathrm{int}}\bigr)
 $$
 
-The following construction specifies the underlying topological space. Matter representations and couplings are separate inputs.
+requires both a topological/smooth manifold $M^4$ and an externally supplied Riemannian metric, spinor bundle $S$, and Dirac operator $D_{M^4}$. The theorems below construct only the commutative topological algebra $C_0(\mathbb{R}\times S^3)$ from selected tensor-product operators; the metric, spin structure, Lorentzian signature, and matter representations remain external inputs.
 
-### 1.2 Solution Strategy
+### 1.2 Summary of Mathematical Steps
 
-The constructions use the following algebras and limits.
-
-| Step | Content | Source |
-|------|---------|--------|
-| 1 | Composite algebra | Tensor product [T] |
-| 2 | Temporal C*-algebra | $\mathbb{C}[\mathbb{Z}_N] \to C(S^1)$ for the summed O-clock; $C_0(\mathbb{R})$ as the scaling limit of the depth register (T-118 [T]) |
-| 3 | Spatial C*-algebra | Joint spectrum of three commuting rotation charges, computed: octahedron (averages), $\mathbb R^3$ (fluctuations), $C(S^3)$ after the minimal unitization (T-119 [T]) |
-| 4 | Manifold | Gelfand–Naimark [standard mathematics]; Connes' conditions hold for the Dirac triple of $S^3$ (T-119(c) [T]) |
-| 5 | Product | Steps 1–4 (T-120 [T]) |
-
+| Step | Construction | Actual mathematical content | Reference |
+|---|---|---|---|
+| 1 | Global site averages | Operator-norm commutator bound $\le M^{-1}\|[A,B]\|$ (no local regions) | `T-117 [T]` |
+| 2 | Temporal algebra | Mesh sampling limit of depth-register eigenvalues into $C_0(\mathbb{R})$ | `T-118 [T]` |
+| 3 | Spatial algebra | Fluctuations of a hand-picked $\mathfrak{u}(3)$ torus (2 colour Cartans) $\to C_0(\mathbb{R}^3)^+ \cong C(S^3)$; metric/spinor/Dirac operator on $S^3$ manually supplied | `T-119 [T]` |
+| 4 | Product triple | Tensor product with external spin Dirac operator on noncompact $\mathbb{R}\times S^3$ (noncompact resolvent; no KO-6 on $\mathbb{C}^7$) | `T-120 [T]` |
+| 5 | Metric classification & de Sitter | Standard 4D Lovelock classification and textbook de Sitter GR on supplied metric equations | `T-121 [T]`, `T-120b [C]` |
 
 ---
 
 ## 2. Mathematical Prerequisites {#предпосылки}
 
-### 2.1 Composite Systems
+### 2.1 Composite Algebra
 
-A composite system of $M$ holons is described by the tensor product:
-
-$$
-\mathcal{H}_M = \bigotimes_{m=1}^{M} \mathcal{H}_{\text{int}}^{(m)}, \quad \dim(\mathcal{H}_M) = 7^M
-$$
-
-Observable algebra:
+For $M$ copies of the seven-dimensional register,
 
 $$
-A_M = \bigotimes_{m=1}^{M} A_{\text{int}}^{(m)}, \quad A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C}) \quad \text{(T-53 [T])}
+\mathcal{H}_M = \bigotimes_{m=1}^{M} \mathcal{H}_{\mathrm{int}}^{(m)}, \qquad \dim(\mathcal{H}_M) = 7^M, \qquad
+A_M = \bigotimes_{m=1}^{M} A_{\mathrm{int}}^{(m)}, \qquad A_{\mathrm{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C}) \quad (\text{`T-53 [T]`}).
 $$
 
-### 2.2 Macroscopic Observables
+### 2.2 Global Site Averages
 
-For a region $\Lambda_\ell(x)$ containing $|\Lambda_\ell(x)|$ holons near "position" $x$, we define the **macroscopic average**:
+For any bounded single-site operator $O$ on $\mathbb{C}^7$, define its **global** site average over all $M$ tensor factors:
 
 $$
-\bar{O}(x) := \frac{1}{|\Lambda_\ell(x)|} \sum_{m \in \Lambda_\ell(x)} O^{(m)}
+\bar{O} := \frac{1}{M}\sum_{m=1}^{M} O^{(m)}, \qquad O^{(m)} = I \otimes \cdots \otimes O \otimes \cdots \otimes I.
 $$
 
-where $O^{(m)} = \mathbb{1} \otimes \cdots \otimes O \otimes \cdots \otimes \mathbb{1}$ is the local observable of the $m$-th holon.
+No spatial lattice, locality structure, or local coarse-graining region $\Lambda_\ell(x)$ is constructed on the unstructured tensor product $(\mathbb{C}^7)^{\otimes M}$.
 
-### 2.3 Effective Clocks and the Temporal Algebra
+### 2.3 Depth Counter vs. Summed Clock
 
-Summing $M$ identical seven-level clocks gives $6M+1$ readings and keeps the period $2\pi/\omega_0$. Using the $M$ registers as digits of a depth counter instead gives $7^M$ ordered readings under a specified Feynman–Kitaev constraint. T-118 uses that counter. [Depth register](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)
+Summing $M$ identical seven-level clocks gives $6M+1$ periodic readings of period $2\pi/\omega_0$. Reading $M$ registers positionally as base-7 digits of a depth counter under a Feynman–Kitaev constraint gives $N + 1 = 7^M$ ordered readings. `T-118` uses that depth counter ([Depth register](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)).
 
 ---
 
-## 3. Theorem T-117: Commutativity of the Macroscopic Algebra {#теорема-коммутативность-макроалгебры}
+## 3. Theorem T-117: Commutator Bound for Global Site Averages {#теорема-коммутативность-макроалгебры}
 
-**T-117 [T for bounded site averages].** Let $A^{(m)},B^{(m)}$ denote copies of bounded observables acting on site $m$ of a tensor product, and set $\bar A=M^{-1}\sum_m A^{(m)}$, $\bar B=M^{-1}\sum_m B^{(m)}$. Operators on distinct sites commute, so
+**Theorem T-117 (`[T for bounded single-site averages]`).**
+Let $A, B$ be bounded operators on $\mathbb{C}^7$, with single-site embeddings $A^{(m)}, B^{(m)}$ on $(\mathbb{C}^7)^{\otimes M}$ and global averages $\bar{A} = M^{-1}\sum_{m=1}^M A^{(m)}$, $\bar{B} = M^{-1}\sum_{m=1}^M B^{(m)}$. Because operators on distinct tensor factors commute ($[A^{(m)}, B^{(n)}] = 0$ for $m \neq n$),
 
 $$
-\|[\bar A,\bar B]\|\le M^{-2}\sum_m\|[A^{(m)},B^{(m)}]\|\le M^{-1}\|[A,B]\|.
+\|[\bar{A}, \bar{B}]\| = \frac{1}{M^2}\left\|\sum_{m=1}^{M} [A^{(m)}, B^{(m)}]\right\| \le \frac{1}{M}\|[A, B]\| \;\xrightarrow{M\to\infty}\; 0.
 $$
 
-Commutativity of these averages does not establish decay of spatial correlations for a family of interacting states. Applying a fluctuation central limit theorem to that family requires its clustering hypotheses.
+**Scope.** This is an elementary norm estimate for **global** averages on an unstructured tensor product: it involves **no local regions**, no spatial metric, no dynamical Hamiltonian, and no decay of correlations. Applying a fluctuation central limit theorem to interacting states separately requires explicit spatial clustering hypotheses. $\blacksquare$
 
 ---
 
-## 4. Theorem T-118: Emergent Temporal Manifold {#теорема-эмерджентное-время}
+## 4. Theorem T-118: Mesh Sampling Limit of the Depth Register {#теорема-эмерджентное-время}
 
-:::tip Theorem T-118 (Emergent Temporal Manifold) [T]
-The temporal part of $A_{\text{macro}}$ — the diagonal algebra $A_N \cong \mathbb{C}^{N+1}$ of the depth register, with readings $t_k = (k - m)\,\Delta t$ in a macroscopic unit — converges to $C_0(\mathbb{R})$, the algebra of continuous functions vanishing at infinity, in the scaling limit $\Delta t \to 0$, $m\,\Delta t \to \infty$, $(N - m)\,\Delta t \to \infty$: the reading sets converge to $\mathbb{R}$ in the pointed Hausdorff sense, and sampling is an injective isometric $*$-homomorphism $C_0(\mathbb{R}) \to \prod_N A_N/\bigoplus_N A_N$.
-:::
+**Theorem T-118 (Depth-register mesh limit) `[T]`.**
+Let $A_N \cong \mathbb{C}^{N+1}$ be the diagonal commutative algebra of a depth register with $N+1$ ordered eigenvalues mapped to mesh points $t_k = (k - m)\,\Delta t$ ($k = 0, \dots, N$). In the scaling limit $\Delta t \to 0$, $m\,\Delta t \to \infty$, $(N - m)\,\Delta t \to \infty$, the mesh sets converge to $\mathbb{R}$ in the pointed Hausdorff sense, and evaluation $s_N(f) = \bigl(f(t_k)\bigr)_{k=0}^N$ induces an injective isometric $*$-homomorphism
 
-**Proof.**
+$$
+C_0(\mathbb{R}) \hookrightarrow \prod_N A_N \Big/ \bigoplus_N A_N.
+$$
 
-**Step 1.** Read the clock registers positionally under the specified Feynman–Kitaev constraint. The resulting $N+1$ readings form an ordered chain and index the conditional dynamical states. [Depth register](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)
+**Proof.** For any $f \in C_0(\mathbb{R})$ and $\varepsilon > 0$, choose $R > 0$ such that $|f(t)| < \varepsilon$ for $|t| > R$. Once $[-R, R] \subset [-m\Delta t, (N-m)\Delta t]$, every $t \in [-R, R]$ lies within $\Delta t/2$ of some mesh point $t_k$, so uniform continuity gives $\|s_N f\| \ge \|f\|_\infty - \omega_f(\Delta t/2)$, hence $\lim_{N\to\infty} \|s_N f\| = \|f\|_\infty$. $\blacksquare$
 
-**Step 2 (Scaling limit).** Theorem 11.5 of emergent time: the readings form a grid of mesh $\Delta t$ that eventually covers every $[-R, R]$; evaluation at the readings is a $*$-homomorphism $s_N: C_0(\mathbb{R}) \to A_N$, and $\|s_N f\| \geq \|f\|_\infty - \omega_f(\Delta t/2)$ by uniform continuity, so $\limsup_N \|s_N f\| = \|f\|_\infty$. $\blacksquare$
-
-Keeping the origin at the first reading gives the half-line. Taking the basepoint far from both ends in macroscopic units gives the line used by T-120.
-
-**Dependencies:** emergent time, Theorems 11.1 and 11.5 [T]; standard mathematics: Gelfand–Naimark.
+**Scope.** `T-118` is a purely kinematic **mesh sampling limit** onto $\mathbb{R}$ once the step size $\Delta t$ and receding basepoint $m$ are specified. Physical clock calibration and Lorentzian time evolution remain separate inputs ([Emergent Time](/docs/proofs/dynamics/emergent-time#114-регистр-глубины)).
 
 ---
 
-## 5. Theorem T-119: Emergent Spatial Manifold {#теорема-эмерджентное-пространство}
+## 5. Theorem T-119: Fluctuation Spectrum of a Hand-Picked $\mathfrak{u}(3)$ Torus {#теорема-эмерджентное-пространство}
 
-:::tip T-119. Spectrum of the selected charges [T]
-Let $J=L_{e_O}$ on $e_O^\perp$ (and $0$ on $e_O$), and let $H_1,H_2,H_3$ be Hermitian generators on $\mathbb C^7$ of a maximal torus of $\mathrm U(3)=\mathrm{Stab}_{\mathrm{SO}(7)}(e_O)\cap C(J)$: two Cartan generators of $\mathfrak{su}(3)_C$ and $iJ$. Equivalently, of a maximal torus of $\mathrm{SO}(7)$ that fixes the clock axis; $\operatorname{rank}\mathrm{SO}(7)=3$. For $M$ holons put $\bar H_i=\frac1M\sum_m H_i^{(m)}$ and $F_i=\sqrt M\,(\bar H_i-\mu_i)$ with $\mu_i=\omega(H_i)$ for a faithful state $\omega$ of one holon.
+**Theorem T-119 (Spectrum of three selected commuting charges) `[T]`.**
+Fix the marked axis $e_O$ and the complex structure $J = L_{e_O}$ on $e_O^\perp$ ($J e_O = 0$). **Hand-pick** three commuting Hermitian generators $H_1, H_2, H_3$ on $\mathbb{C}^7$ spanning a maximal torus of $\mathrm{U}(3) = \mathrm{Stab}_{\mathrm{SO}(7)}(e_O) \cap C(J)$: specifically, **two colour Cartan generators of $\mathfrak{su}(3)_C \subset \mathfrak{g}_2$** together with $iJ$. For $M$ holons and a faithful single-holon state $\omega$ with $\mu_i = \omega(H_i)$, set $\bar{H}_i = \frac{1}{M}\sum_{m=1}^M H_i^{(m)}$ and $F_i = \sqrt{M}(\bar{H}_i - \mu_i)$.
 
-**(a) Averages: an octahedron.** The joint eigenvalues of $(H_1,H_2,H_3)$ on $\mathbb C^7$ are $0$ (on $e_O$) and $\pm w_1,\pm w_2,\pm w_3$ with $w_a$ linearly independent. The joint spectra of $(\bar H_i)$ fill the weight octahedron $\mathcal O=\mathrm{conv}\{\pm w_a\}$ with mesh $O(1/M)$. Sampling $f\mapsto f(\bar H)$ embeds $C(\mathcal O)$ isometrically into $\prod_M A_M/\bigoplus_M A_M$. $\mathcal O\cong B^3$ is a manifold with boundary $S^2$, and its $K$-theoretic Poincaré duality fails.
+- **(a) Averages fill an octahedron.** On $\mathbb{C}^7$ the joint eigenvalues of $(H_1, H_2, H_3)$ are $0$ (on $e_O$) and $\pm w_1, \pm w_2, \pm w_3$ (linearly independent). On $(\mathbb{C}^7)^{\otimes M}$, the joint spectra of $(\bar{H}_i)$ fill the weight octahedron $\mathcal{O} = \mathrm{conv}\{\pm w_a\} \cong B^3$ with mesh $O(1/M)$, embedding $C(\mathcal{O})$ isometrically into $\prod_M A_M / \bigoplus_M A_M$. Because $\mathcal{O}$ is contractible with boundary $S^2$, $K$-theoretic Poincaré duality fails ($K^0 = \mathbb{Z}$, $K_1 = 0$).
+- **(b) Fluctuations fill $\mathbb{R}^3$; minimal unitization gives $C(S^3)$.** Since $\omega$ is faithful, $\mu$ lies in the interior of $\mathcal{O}$, and the joint spectra $\{(n - M\mu)/\sqrt{M} : |n|_1 \le M\}$ fill every ball of $\mathbb{R}^3$ with mesh $O(1/\sqrt{M})$, embedding $C_0(\mathbb{R}^3)$ isometrically into $\prod_M A_M / \bigoplus_M A_M$. Adjoining a unit by **definition** yields the minimal unitization $C_0(\mathbb{R}^3)^+ \cong C(S^3)$ (one-point compactification; other unital completions give $T^3$, $\mathbb{RP}^3$, or $\beta\mathbb{R}^3$).
+- **(c) Supplied Riemannian spin triple on $S^3$.** $S^3$ is closed, orientable, simply connected, and parallelizable, with a unique smooth structure (Moise 1952) and unique spin structure ($H^1(S^3;\mathbb{Z}_2) = 0$). **Once a Riemannian metric $g$, spinor bundle $S$, and spin Dirac operator $D_g$ are manually supplied on $S^3$**, the standard Dirac triple $(C^\infty(S^3), L^2(S^3, S), D_g)$ satisfies Connes' axioms (Connes 2013, [arXiv:0810.2088](https://arxiv.org/abs/0810.2088)). Neither $g$ nor $D_g$ is derived from $\mathcal{D}(\mathbb{C}^7)$.
+- **(d) Colour-singlet obstruction.** The Hermitian operators on $\mathbb{C}^7$ commuting with $\mathrm{SU}(3)_C$ are $\mathrm{span}\{P_O, P_{\mathbf{3}}, P_{\bar{\mathbf{3}}}\}$, whose traceless part has dimension **2**, not 3. Thus constructing three coordinates in (a)–(b) **forces two of the three coordinates to be colour Cartan generators $\subset \mathfrak{su}(3)_C \subset \mathfrak{g}_2$**.
 
-**(b) Fluctuations: $\mathbb R^3$, and $S^3$ after the unit.** The joint spectra of $(F_i)$ fill every ball of $\mathbb R^3$ with mesh $O(1/\sqrt M)$. Sampling embeds $C_0(\mathbb R^3)$ isometrically into $\prod_M A_M/\bigoplus_M A_M$. The *spatial algebra*, defined as the unital C*-algebra generated by this image, is the minimal unitization $C_0(\mathbb R^3)^+\cong C(S^3)$.
+**Proof.** (a) Since $[H_i, H_j] = 0$, the joint spectrum of $(\bar{H}_i)$ in weight coordinates is $\frac{1}{M}\{n \in \mathbb{Z}^3 : |n|_1 \le M\}$, every point of $\mathcal{O} = \{|x|_1 \le 1\}$ lies within $\sqrt{3}/(2M)$ of a spectrum point, and uniform continuity gives isometric sampling. (b) For any radius $R$, once the ball of radius $R\sqrt{M}+1$ about $M\mu$ lies in $M\mathcal{O}$, rounding to $(\mathbb{Z}^3 - M\mu)/\sqrt{M}$ approximates every $|x| \le R$ within $\sqrt{3}/(2\sqrt{M})$; adjoining $\mathbb{C}1$ to $C_0(\mathbb{R}^3)$ gives $C(S^3)$ by Gelfand–Naimark. (c) Standard "only if" direction of Connes' reconstruction theorem for a closed spin 3-manifold equipped with a chosen Riemannian metric $g$. (d) $\mathbb{C}^7 = \mathbb{C}e_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ consists of three inequivalent $\mathrm{SU}(3)_C$ irreducibles, so Schur's lemma gives commutant $\mathbb{C}^3$ (traceless dimension 2). $\blacksquare$
 
-**(c) The manifold and Connes' conditions.** $\Sigma^3:=S^3$ is a closed, orientable, simply connected spin 3-manifold, with a unique smooth structure. For every Riemannian metric $g$ on it the Dirac triple $(C^\infty(S^3),L^2(S^3,S),D_g)$ satisfies all seven of Connes' conditions, the first-order condition and Poincaré duality included.
+*(Numerical check in `website/scripts/check_core_numbers.py`, `test_emergent_space_is_the_octahedron_and_its_fluctuations_the_three_sphere`.)*
 
-**(d) Colour-singlet coordinates give two dimensions.** The Hermitian operators on $\mathbb C^7$ that commute with $\mathrm{SU}(3)_C$ are $\mathrm{span}\{P_O,P_{\mathbf 3},P_{\bar{\mathbf 3}}\}$; their traceless part is two-dimensional. So the "3" of (a)–(c) needs two colour Cartan generators, and this $\Sigma^3$ is not colour-singlet.
-:::
+**Physical obstruction `[I]` (Coleman–Mandula).** Because two of the three coordinates in (a)–(b) are colour Cartan generators in $\mathrm{SU}(3)_C \subset G_2$, the colour Weyl group permutes the coordinates and $\mathrm{SU}(3)_C$ rotations mix them with non-commuting internal generators. Reading this charge spectrum as physical 3-space violates the separation of internal gauge and spacetime symmetries (Coleman–Mandula obstruction; cf. §11.4 below).
 
-**Proof.** (a) The $H_i$ commute: they lie in one torus. Their joint eigenvalues are computed (numbers below). In weight coordinates they are $0,\pm e_1,\pm e_2,\pm e_3$. On $(\mathbb C^7)^{\otimes M}$ the $\bar H_i$ commute exactly, and their joint eigenvalues are the means of $M$ weights: $\frac1M\{n\in\mathbb Z^3:\lvert n\rvert_1\le M\}$ (the weight $0$ lets the sum stop short of $M$ steps). All these points lie in $\mathcal O=\{\lvert x\rvert_1\le1\}$, and every point of $\mathcal O$ is within $\sqrt3/(2M)$ of one of them. As in [T-118](#теорема-эмерджентное-время), $\lVert f(\bar H)\rVert=\max_{\mathrm{spec}}\lvert f\rvert\ge\lVert f\rVert_\infty-\omega_f(\sqrt3/(2M))$, so sampling is isometric in the quotient. $\mathcal O$ is a compact convex body with interior, hence homeomorphic to $B^3$. Poincaré duality for a closed 3-manifold $X$ would give $K^0(X)\cong K_1(X)$. For the contractible $\mathcal O$, $K^0=\mathbb Z$ and $K_1=0$.
-(b) The joint spectrum of $(F_i)$ is $\{(n-M\mu)/\sqrt M:\lvert n\rvert_1\le M\}$. A faithful $\omega$ gives every joint eigenvalue positive weight, so $\mu$ is an interior point of $\mathcal O$. Given $R$, once $M$ is so large that the ball of radius $R\sqrt M+1$ about $M\mu$ lies in $M\mathcal O$, rounding any $x$ with $\lvert x\rvert\le R$ to the lattice $(\mathbb Z^3-M\mu)/\sqrt M$ stays inside the constraint and moves $x$ by at most $\sqrt3/(2\sqrt M)$. So the spectra fill the ball, and $\lVert f(F)\rVert\to\lVert f\rVert_\infty$ for $f\in C_0(\mathbb R^3)$. The image contains no unit, because $C_0(\mathbb R^3)$ has none. So image $+\,\mathbb C1$ is the minimal unitization, whose spectrum is the one-point compactification $\mathbb R^3\cup\{\infty\}=S^3$.
-(c) $S^3$ is compact, orientable and parallelisable, hence spin (with one spin structure, since $H^1(S^3;\mathbb Z_2)=0$), and simply connected. Its smooth structure is unique (Moise 1952: every topological 3-manifold has one smooth structure up to diffeomorphism). For a closed spin manifold the Dirac triple satisfies Connes' conditions; this is the "only if" half of the reconstruction theorem (Connes, *J. Noncommut. Geom.* **7**, 1–82 (2013), [arXiv:0810.2088](https://arxiv.org/abs/0810.2088); J. M. Gracia-Bondía, J. C. Várilly, H. Figueroa, *Elements of Noncommutative Geometry*, Birkhäuser 2001, ch. 10–11). The first-order condition holds because $[D,a]=c(da)$ acts by Clifford multiplication, which commutes with multiplication by functions, and $b^\circ=b$ on a commutative algebra. Poincaré duality is the fundamental class $[D]\in K_3(S^3)$. There is no circularity: the manifold is established by (b) through Gelfand–Naimark, not assumed in order to check an axiom.
-(d) $\mathbb C^7=\mathbb Ce_O\oplus\mathbf 3\oplus\bar{\mathbf 3}$ with three inequivalent irreducibles, so by Schur the commutant is $\mathbb C^3$. $\blacksquare$
+### Rank of the Selected Charge Algebra {#шаг-2c-ранг}
 
-*Numbers* (`website/scripts/check_core_numbers.py`, `test_emergent_space_is_the_octahedron_and_its_fluctuations_the_three_sphere`): the three generators commute; their joint spectrum on $\mathbb C^7$ is the origin plus three antipodal pairs of rank $3$, and in weight coordinates every non-zero point has $\lvert w\rvert_1=\lvert w\rvert_\infty=1$; for $M=10$ and $M=40$ random points of $\mathcal O$ lie within $\sqrt3/(2M)$ of the mean spectrum; for $M=10^6$ and $\mu$ interior, random points of $[-3,3]^3$ lie within $\sqrt3/(2\sqrt M)$ of the fluctuation spectrum; the covariance of $(H_i)$ in $I/7$ is non-degenerate; the colour commutant on $\mathbb C^7$ has dimension $3$.
-
-**The one choice, named.** Other unital completions of $C_0(\mathbb R^3)$ give other compactifications: the coordinate resolvents $(F_i\pm i)^{-1}$ give $(\mathbb R\cup\infty)^3=T^3$, all bounded continuous functions give the Stone–Čech $\beta\mathbb R^3$, and projective completion gives $\mathbb{RP}^3$. The one-point compactification is the smallest compactification of $\mathbb R^3$, and the rotations of the fluctuation covariance extend to it (they do not extend to $T^3$). T-119 takes it by definition, just as T-118 takes $C_0(\mathbb R)$ and not $C_b(\mathbb R)$. This is a definition, not a hypothesis about UHM. Its physical content is that "space" means the observables that become constant at large fluctuations.
-
-**The metric is not fixed.** The covariance of $(F_i)$ in the state $I/7$ is $\tfrac27\cdot1$ in weight coordinates. It gives $\mathbb R^3$ a flat metric, which extends to $S^3$ only conformally (stereographic projection). T-119 fixes the manifold, not the metric. The metric is dynamical and enters through the spectral action (T-65).
-
-**Reading as physical space: [I].** The three charges rotate the three complex planes $\{A,D\},\{S,U\},\{L,E\}$ into which $L_{e_O}$ pairs the six non-$O$ axes; the fixed axis is the clock. So $7=1+2\cdot3$ gives one clock axis and $\operatorname{rank}\mathrm{SO}(7)=3$ commuting charges. But by (d) the coordinates are colour-charged: the Weyl group of $\mathrm{SU}(3)_C$ permutes them, and colour rotations mix them with non-commuting charges. Read as physical space, this $\Sigma^3$ meets the Coleman–Mandula obstacle that [Theorem 48c](/docs/core/foundations/spacetime#теорема-48c) avoids. The two results give the same count $1+3$ but are not yet one picture ([Theorem 48d](/docs/core/foundations/spacetime#теорема-48d)).
-
-### Rank of the charge algebra {#шаг-2c-ранг}
-
-A maximal torus of $\mathrm U(3)$ has three independent generators. In (b), the actual joint fluctuation spectrum fills $\mathbb R^3$. Rank alone gives an upper bound on the number of commuting coordinates.
-
-**The computation, entirely from the octonions**:
-
-1. $\mathfrak{su}(3) = \mathrm{Stab}_{\mathrm{Der}(\mathbb O)}(e_1)$ is $8$-dimensional (§C, verified: $\dim\mathrm{Der}(\mathbb O)=14$, $\dim\mathrm{Stab}=8$).
-2. Its commutant on the $6$-dimensional complement $\mathrm{span}(e_2,\dots,e_7)$ is $2$-dimensional; subtracting the identity leaves a **complex structure** $J$ with $J^2 = -I$ (residual $1.3\times10^{-15}$) and $[J,\mathfrak{su}(3)] = 0$ (residual $1.1\times10^{-15}$). So $J$ is *derived*, not posited, and the spatial observable algebra is
-
-$$
-\mathfrak{su}(3)\oplus\mathfrak u(1)_J \;=\; \mathfrak u(3), \qquad \dim = 9 \ \text{(verified)} .
-$$
-
-3. The rank is the dimension of the centralizer of a generic element. Measured over $20$ random elements: **exactly $3$**, every time. For contrast, none of the candidate "dimensions" equals $3$: $\dim\mathfrak u(3) = 9$, $\dim\mathfrak{su}(3) = 8$, $\dim G_2 = 14$.
-
-$$
-\boxed{\,d_s \;=\; \operatorname{rank}\mathfrak u(3) \;=\; 3\,}
-$$
----
-
-## 6. Theorem T-120: Product of Spectral Triples {#теорема-произведение-троек}
-
-:::tip T-120. Product of spectral triples
-In the limit $M\to\infty$ the macroscopic time, space and internal algebras commute and generate $C_0(\mathbb R)\otimes C(S^3)\otimes A_{\text{int}}=C_0(M^4)\otimes A_{\text{int}}$. For every Riemannian metric on $M^4$ the product triple
-
-$$
-(C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4, S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})
-$$
-
-is the product for a chosen Riemannian metric and spin structure on $M^4=\mathbb R\times S^3$. On this noncompact manifold, local compactness or a localized trace must be used as appropriate. The finite seven-dimensional factor supplies no real structure of KO-dimension six.
-:::
-
-**Proof.**
-
-**Step 1 (Temporal component).** $A_{\text{time}} \cong C_0(\mathbb{R})$ as the scaling limit of the depth register (T-118 [T]).
-
-**Step 2 (Spatial component).** $A_{\text{space}} \cong C(S^3)$ (T-119 [T]).
-
-**Step 3 (Internal component).** $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ (T-53 [T]).
-
-**Step 4.** The depth register can use a separate tensor factor. For a fixed single-site observable $a$, only its own site contributes to the commutator $[F_i,a]$, so $\|[F_i,a]\|\le \|[H_i,a]\|/\sqrt M$. The fluctuation and local readouts therefore commute in the limit.
-
-**Step 5 (Product of algebras).**
-
-$$
-C_0(\mathbb R)\otimes C(S^3)\otimes A_{\rm int}\cong C_0(\mathbb R\times S^3)\otimes A_{\rm int},
-$$
-
-where $M^4 := \mathbb{R} \times \Sigma^3$.
-
-**Metric and signature.** The product Dirac operator uses the chosen metric on the external factor. A KO-dimension-six real structure would exchange positive and negative chiral subspaces of equal dimension. This cannot hold on $\mathbb C^7$. A Lorentzian realization requires additional causal or analytic data. [Spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)
+On the octonions with marked clock unit $e_O$:
+1. $\mathfrak{su}(3) = \mathrm{Stab}_{\mathrm{Der}(\mathbb{O})}(e_O)$ has dimension $8$ inside $\dim\mathrm{Der}(\mathbb{O}) = 14$.
+2. Its commutant on the real 6-plane $e_O^\perp$ is 2-dimensional, spanned by $I$ and the complex structure $J = L_{e_O}$ ($J^2 = -I$, $[J, \mathfrak{su}(3)] = 0$), yielding $\mathfrak{u}(3) = \mathfrak{su}(3) \oplus \mathfrak{u}(1)_J$ of dimension $9$.
+3. The rank of $\mathfrak{u}(3)$ (dimension of a maximal torus) is $3$.
 
 ---
 
-## 7. Theorem T-121: Closure of Lovelock Gaps {#теорема-лавлок-замыкание}
+## 6. Theorem T-120: Product with an External Noncompact Spin Dirac Operator {#теорема-произведение-троек}
 
-**T-121 [T for a specified four-dimensional metric theory].** On a smooth four-manifold the Lovelock classification gives the Einstein tensor and metric terms for a local natural symmetric divergence-free metric tensor of the indicated differential order. The diffeomorphism covariance comes from the supplied geometric action. The classification fixes neither the coefficients nor the map from an internal matrix to a spacetime metric. [Einstein equations](/docs/physics/gravity/einstein-equations#34-ограничения-аргумента-лавлока)
----
-
-## 8. Corollary T-120b: Vacuum geometry under supplied hypotheses {#следствие-вакуумная-топология}
-
-:::info Corollary T-120b [C at a specified positive vacuum field and closed slicing]
-The spectrum $\Sigma^3\cong S^3$ computed in the selected spatial-algebra construction of T-119 is independent of an energy readout. It does not by itself select a round metric. Conversely $\Lambda>0$ does not by itself determine spatial topology or the sign of the curvature of a chosen slice.
-
-Fix the four-dimensional vacuum Einstein equation $R_{\mu\nu}=\Lambda g_{\mu\nu}$, a supplied constant $\Lambda>0$, and maximal spacetime symmetry. In the corresponding curvature convention the constant-curvature ansatz yields
+**Theorem T-120 (Product spectral datum on noncompact $M^4 = \mathbb{R}\times S^3$) `[T under supplied factors and metric]`**.
+Combining the commuting limit algebras $A_{\mathrm{time}} \cong C_0(\mathbb{R})$ (`T-118`), $A_{\mathrm{space}} \cong C(S^3)$ (`T-119`), and $A_{\mathrm{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ (`T-53`) — with $\|[F_i, a]\| \le M^{-1/2}\|[H_i, a]\| \to 0$ for fixed single-site $a \in A_{\mathrm{int}}$ — yields the algebra $C_0(\mathbb{R}\times S^3) \otimes A_{\mathrm{int}}$. Given an **externally supplied** Riemannian metric and spin structure on $M^4 = \mathbb{R} \times S^3$, one forms the product operator
 
 $$
-R_{\mu\nu\rho\sigma}=\frac{\Lambda}{3}(g_{\mu\rho}g_{\nu\sigma}-g_{\mu\sigma}g_{\nu\rho}),\qquad H^2=\frac{\Lambda}{3}.
+\bigl(C_0^\infty(M^4) \otimes A_{\mathrm{int}},\; L^2(M^4, S) \otimes H_{\mathrm{int}},\; D_{M^4} \otimes I + \gamma_5 \otimes D_{\mathrm{int}}\bigr).
 $$
 
-This is locally de Sitter geometry **[T under these inputs]**. Choosing its complete simply connected global realization and the closed homogeneous slicing gives, in units $c=1$,
-
-$$
-ds^2=dt^2-a^2(t)d\Omega_3^2,\qquad a(t)=H^{-1}\cosh(Ht).
-$$
-
-Its slices are round $S^3$, with sectional curvature $1/a(t)^2>0$; this is the selected $k=+1$ realization.
-:::
-
-**Conditional derivation.** Contraction of the constant-curvature tensor in dimension four gives $R_{\mu\nu}=3K g_{\mu\nu}$, hence $K=\Lambda/3$. The closed-slicing Friedmann equation is $\dot a^2+1=H^2a^2$; the displayed $a(t)$ solves it. With spatial completeness, simple connectivity and positive constant spatial curvature specified, the spatial space-form classification gives $S^3$. These assumptions supply the topology; neither the sign of $\Lambda$ nor contractibility of a matrix configuration space supplies them.
-
-Positive $\Lambda$ also admits flat and open de Sitter coordinate patches: $a(t)=a_0e^{Ht}$ with $k=0$, and $a(t)=H^{-1}\sinh(Ht)$ with $k=-1$, respectively. Thus positive **spacetime** curvature and the sign of **spatial** curvature are different statements ([Carroll, GR notes, §8](https://ned.ipac.caltech.edu/level5/March01/Carroll3/Carroll8.html)). Without maximal spacetime symmetry, the vacuum Einstein equation also permits nonzero Weyl curvature and does not force constant sectional curvature.
-
-Identifying a Gap readout with the cosmological constant requires a physical model. A closed round spatial slicing also assumes the topology, a global solution and a choice of foliation.
+**Critical analytic and algebraic limitations:**
+1. **Noncompact resolvent:** Because $M^4 = \mathbb{R} \times S^3$ is **noncompact**, the external spin Dirac operator $D_{M^4}$ does **not** have a compact resolvent; only the *locally compact* resolvent condition $a(D_{M^4} + i)^{-1} \in \mathcal{K}$ for $a \in C_0(M^4)$ holds, so heat-kernel traces require spatial/temporal localization or compactification.
+2. **External metric and signature:** Both the Riemannian metric $g$ and spin Dirac operator $D_{M^4}$ are externally supplied; Lorentzian signature requires separate causal/analytic data.
+3. **No KO-dimension 6 on $\mathbb{C}^7$:** Odd internal dimension 7 forbids a KO-dimension-6 real structure (`T-178 [✗]`, [Quantum Gravity](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)). $\blacksquare$
 
 ---
 
-## 9. Results and premises {#каскад-статусов}
+## 7. Theorem T-121: Standard 4D Lovelock Classification {#теорема-лавлок-замыкание}
 
-T-118 constructs a clock limit. T-119 determines the joint spectrum of selected charges. T-120 forms their product with a chosen external metric. T-121 applies a local four-dimensional classification once metric dynamics is specified.
+**Theorem T-121 (`[T under standard 4D Lovelock hypotheses]`).**
+On an externally supplied smooth 4-manifold, Lovelock's theorem (1971) states that every local, diffeomorphism-covariant, symmetric, divergence-free tensor depending on $g_{\mu\nu}$ and its derivatives up to second order is a linear combination of $G_{\mu\nu}$ and $g_{\mu\nu}$. This classification fixes neither $G_N$, nor $\Lambda$, nor $S_{\mathrm{matter}}$, nor any map from internal coherence matrices to $g_{\mu\nu}$ ([Einstein Equations](/docs/physics/gravity/einstein-equations#34-ограничения-аргумента-лавлока)).
 
 ---
 
-## 10. Open physical questions {#нет-новых-вопросов}
+## 8. Corollary T-120b: Standard Textbook de Sitter General Relativity {#следствие-вакуумная-топология}
 
-Identifying the charge spectrum with measured locations needs operational comparisons among probes. Test whether independently calibrated signals agree on the same distances and whether this agreement persists across scales. [Common limiting geometry](/docs/geometry/common-limit)
+**Corollary T-120b (`[T]` as standard GR under supplied vacuum field, $\Lambda > 0$, maximal symmetry, and $k=+1$ slicing).**
+This corollary is standard textbook de Sitter general relativity on an externally supplied 4D Lorentzian metric:
 
-## 11. Consistency Check {#согласованность}
+1. Given the vacuum Einstein equation $R_{\mu\nu} = \Lambda g_{\mu\nu}$ with a supplied constant $\Lambda > 0$ and maximal spacetime symmetry, constant sectional curvature yields $R_{\mu\nu\rho\sigma} = \frac{\Lambda}{3}(g_{\mu\rho}g_{\nu\sigma} - g_{\mu\sigma}g_{\nu\rho})$ and $H^2 = \Lambda/3$ (locally de Sitter space).
+2. Choosing the complete simply connected global de Sitter manifold and its closed homogeneous $k=+1$ foliation gives $ds^2 = dt^2 - a^2(t)\,d\Omega_3^2$ with $a(t) = H^{-1}\cosh(Ht)$, whose spatial slices are round 3-spheres $S^3$.
 
-### 11.1 Compatibility with the Spectral Action [T]
+Positive $\Lambda$ equally admits flat ($k=0$, $a(t) = a_0 e^{Ht}$) and open ($k=-1$, $a(t) = H^{-1}\sinh(Ht)$) coordinate patches ([Carroll, GR notes, §8](https://ned.ipac.caltech.edu/level5/March01/Carroll3/Carroll8.html)). Neither $\Lambda > 0$ (`T-71 [H]`), nor maximal symmetry, nor the closed $k=+1$ foliation is derived from UHM or from the spectrum of `T-119`.
 
-The external metric enters the Dirac operator and therefore the curvature coefficient of the spectral action.
+---
 
-### 11.2 Compatibility with Page–Wootters [T]
+## 9. Exact Status Summary {#каскад-статусов}
 
-The single cyclic clock has periodic readings. T-118 uses a depth register whose spacing shrinks and whose two endpoints recede from the observer.
+| Result | Exact mathematical statement | External inputs / obstructions |
+|---|---|---|
+| `T-117` | Global site-average commutator norm $\le M^{-1}\|[A,B]\|$ | No local spatial regions, no metric, no interacting clustering |
+| `T-118` | Mesh sampling limit $C_0(\mathbb{R})$ of depth-register eigenvalues | Step $\Delta t$ and receding basepoint; no physical clock calibration |
+| `T-119` | Fluctuation spectrum $C_0(\mathbb{R}^3)^+ \cong C(S^3)$ of hand-picked $\mathfrak{u}(3)$ torus | 2 of 3 coordinates are colour Cartan generators (Coleman–Mandula obstruction); $g, S, D_g$ on $S^3$ manually supplied |
+| `T-120` | Product triple on noncompact $\mathbb{R}\times S^3$ | External metric & Dirac operator; **noncompact resolvent**; no KO-6 on $\mathbb{C}^7$ (`T-178 [✗]`) |
+| `T-121` | Standard 4D Lovelock theorem | Requires supplied 4-manifold and diffeomorphism-invariant metric action |
+| `T-120b` | Standard textbook de Sitter GR ($k=+1$ slicing) | Requires supplied $R_{\mu\nu}=\Lambda g_{\mu\nu}$, $\Lambda>0$ (`T-71 [H]`), maximal symmetry, and $k=+1$ foliation |
 
-### 11.3 Compatibility with Sector Decomposition [T]
+---
 
-The stabilizer representation splits after complexification into $\mathbb C e_O\oplus\mathbf3\oplus\bar{\mathbf3}$. Its real six-dimensional complement is irreducible. The three charges are specified by a maximal torus.
+## 10. Genuine Constructive Path: Operational Geometry and 3D Weyl QCA {#нет-новых-вопросов}
 
-### 11.4 Compatibility with $G_2$-Rigidity [T]
+Because `T-119`–`T-120` rely on colour-charged coordinates and externally supplied continuum Dirac operators, they do **not** provide a physically viable derivation of spacetime. The constructive path pursued in the operational reconstruction builds geometry directly from local finite-dimensional dynamics and intervention protocols:
 
-The symmetry $G_2 = \text{Aut}(\mathbb{O})$ acts on the internal space $F_{\text{int}}$, not on $M^4$. The derivation of $M^4$ is compatible with (and independent of) the $G_2$ structure.
+1. **3D palindromic Strang Weyl QCA IR Lorentzian light cone:** Verified directly in `website/research/operational-reconstruction/verify_foundational_bounds.py`, a 3D palindromic Strang-split Weyl quantum cellular automaton produces an emergent infrared Lorentzian dispersion cone ($\omega^2 \approx c_{\mathrm{eff}}^2 |\mathbf{k}|^2$) from strictly local, discrete unitary lattice steps — without invoking colour Cartan coordinates or importing a continuum spin Dirac operator.
+2. **Operational network metrics:** Minimal intervention costs and first-arrival timing define directed/symmetric metrics and constructive scaling limits on finite and limiting networks ([Response Metric](/docs/geometry/response-metric), [Common Limiting Metric](/docs/geometry/common-limit), [Verified Network Results](/docs/reference/network-results)).
 
-### 11.6 Compatibility with the Self-Referential Fix $\rho_*$
+---
 
-$\rho_* = \varphi(\Gamma)$ is a property of the **internal** dynamics on $F_{\text{int}}$. The derivation of $M^4$ concerns **external** (macroscopic) geometry. They are independent.
+## 11. Consistency and Obstruction Checks {#согласованность}
+
+### 11.1 Spectral Action Coupling `[T under supplied geometry]`
+
+In `T-65`, the gravitational Einstein–Hilbert coefficient comes exclusively from the externally supplied metric inside $D_{M^4}$, multiplied by $\mathrm{Tr}(I_{\mathbb{C}^7}) = 7$.
+
+### 11.2 Page–Wootters Depth Register `[T]`
+
+A single cyclic clock is periodic; `T-118` relies on an $M$-register positional depth counter whose spacing shrinks and endpoints recede.
+
+### 11.3 Complexified Sector Decomposition `[T]`
+
+Under $\mathrm{SU}(3)_C = \mathrm{Stab}_{G_2}(e_O)$, the real complement $e_O^\perp \cong \mathbb{R}^6$ is irreducible and splits into $\mathbf{3} \oplus \bar{\mathbf{3}}$ only after complexification.
+
+### 11.4 Direct Coleman–Mandula Obstruction with $G_2$ and $\mathrm{SU}(3)_C$
+
+**Earlier claims that "$G_2$ does not act on $M^4$" were false and are deleted.** By `T-119(d)`, any colour-singlet Hermitian operator on $\mathbb{C}^7$ spans at most a 2-dimensional traceless space, so **two of the three spatial coordinates constructed in `T-119` are colour Cartan generators $\subset \mathrm{SU}(3)_C \subset G_2$**. Consequently:
+
+- The colour subgroup $\mathrm{SU}(3)_C \subset G_2$ acts **nontrivially** on the `T-119` spatial manifold $\Sigma^3 = S^3$: its Weyl group permutes the coordinate axes and general $\mathrm{SU}(3)_C \subset G_2$ transformations rotate the chosen Cartan generators into non-commuting colour generators.
+- Identifying $\Sigma^3$ with physical space therefore mixes internal gauge symmetry with spatial translations/rotations, creating a direct **Coleman–Mandula obstruction** (which the algebraic spin-factor form `T-48c` avoids at the level of a single tangent space, and which the constructive 3D Weyl QCA / operational network path avoids altogether).
+
+### 11.5 Independence from Internal Fixed Points
+
+Internal stationary-state conditions $\rho_* = \varphi(\Gamma)$ constrain single-site dynamics on $\mathcal{D}(\mathbb{C}^7)$ and do not determine macroscopic spacetime geometry.
 
 ---
 
@@ -252,108 +205,70 @@ $\rho_* = \varphi(\Gamma)$ is a property of the **internal** dynamics on $F_{\te
 
 ```mermaid
 graph TD
-    subgraph "Existing"
-        T53["T-53: Spectral triple"]
-        SEC["Complexified decomposition"]
+    subgraph "Supplied inputs & algebra"
+        T53["T-53: Internal algebra A_int"]
+        TOR["Hand-picked u#40;3#41; torus #40;2 colour Cartans#41;"]
         NEFF["Depth register: 7^M ordered readings"]
-        CLIM["Scaling limit → C₀#40;ℝ#41;"]
-        PRIM["Primitivity of ℒ₀"]
-        SPEC["Spectral action → EH"]
+        CLIM["Mesh scaling limit → C₀#40;ℝ#41;"]
+        EXTM["External Riemannian metric, S, D_M4"]
     end
 
     subgraph "Standard mathematics"
         GN["Gelfand–Naimark"]
-        CR["Connes: reconstruction #40;2008#41;"]
-        QCLT["Quantum CLT #40;1989#41;"]
-        CP["Connes: product #40;1996#41;"]
-        LOV["Lovelock #40;1971#41;"]
+        CR["Connes: spin-manifold triple #40;2013#41;"]
+        LOV["Lovelock #40;1971#41; & de Sitter GR"]
     end
 
-    subgraph "New"
-        T117["T-117: Commutativity"]
-        T118["T-118: Time ≅ ℝ"]
-        T119["T-119: Space ≅ Σ³"]
-        T120["T-120: M⁴ × F_int"]
-        T121["T-121: Lovelock closed"]
+    subgraph "Scoped results"
+        T117["T-117: Global average commutator ≤ M⁻¹"]
+        T118["T-118: Mesh limit C₀#40;ℝ#41;"]
+        T119["T-119: C#40;S³#41; #40;colour-charged#41;"]
+        T120["T-120: Noncompact ℝ × S³ triple"]
+        T121["T-121 / T-120b: Lovelock & de Sitter GR"]
     end
 
-    PRIM --> T117
-    QCLT --> T117
     T53 --> T117
-
     NEFF --> T118
     CLIM --> T118
-
     GN --> T119
-    SEC --> T119
-
+    TOR --> T119
+    CR --> T119
+    EXTM --> T119
     T118 --> T120
     T119 --> T120
     T53 --> T120
-    CP --> T120
-    SEC --> T120
-
+    EXTM --> T120
     T120 --> T121
     LOV --> T121
-
-    style T117 fill:#2d6,stroke:#000
-    style T118 fill:#2d6,stroke:#000
-    style T119 fill:#2d6,stroke:#000
-    style T120 fill:#2d6,stroke:#000
-    style T121 fill:#2d6,stroke:#000
 ```
-
-Green nodes are mathematical results under the premises specified in §§3–7.
 
 ---
 
-## Appendix: Standard Theorems {#приложение}
+## Appendix: Standard Theorems Referenced {#приложение}
 
 ### A.1 Gelfand–Naimark Theorem (1943)
 
-Every unital commutative C*-algebra $A$ is isomorphic to $C(X)$ for a unique (up to homeomorphism) compact Hausdorff space $X$ — the Gelfand spectrum of $A$.
+Every unital commutative $C^*$-algebra $A$ is isometrically $*$-isomorphic to $C(X)$ for a unique (up to homeomorphism) compact Hausdorff space $X$.
 
 ### A.2 Connes Reconstruction Theorem (2008, 2013)
 
-Let $(A, H, D)$ be a commutative spectral triple satisfying the axioms:
-- (i) Dimension $p$ (in the Weyl sense)
-- (ii) Regularity ($A$, $[D,A]$ in the smooth domain)
-- (iii) Finiteness ($H_\infty$ is a finitely generated projective $A$-module)
-- (iv) Orientability (Hochschild $p$-cycle)
-- (v) Poincaré duality
-
-and the absolute continuity condition. Then there exists a unique smooth compact spin manifold $\Sigma^p$ such that $(A, H, D) \cong (C^\infty(\Sigma^p), L^2(\Sigma^p, S), D_{\Sigma^p})$.
-
-*References:* Connes A. (2008) On the spectral characterization of manifolds. J. Noncommut. Geom. 2(3), 253–294; Connes A. (2013) Geometry and the quantum. arXiv:1703.02470.
+A closed smooth spin manifold $\Sigma^p$ equipped with a Riemannian metric $g$ yields a commutative spectral triple $(C^\infty(\Sigma^p), L^2(\Sigma^p, S), D_g)$ satisfying Connes' seven axioms (dimension, regularity, finiteness, orientability, Poincaré duality, first-order condition, and absolute continuity), and conversely such a commutative triple determines a unique closed smooth spin manifold (Connes, *J. Noncommut. Geom.* **7**, 1–82 (2013), [arXiv:0810.2088](https://arxiv.org/abs/0810.2088)).
 
 ### A.3 Quantum Central Limit Theorem (1989)
 
-For a quantum spin system on a lattice $\mathbb{Z}^d$ with finite interaction range and clustering property (exponential decay of correlations), in the thermodynamic limit, macroscopic averages $\bar{O}(x) = \frac{1}{|\Lambda|}\sum_{m \in \Lambda} O^{(m)}$ satisfy:
+For a quantum spin system on a spatial lattice $\mathbb{Z}^d$ with finite-range interactions and exponential clustering, macroscopic averages converge to classical/Gaussian fluctuation observables (Goderis–Verbeure–Vets, *Probab. Theory Relat. Fields* **82**, 527–544 (1989)). Note that `T-117` proves only the unstructured global norm bound $\|[\bar{A}, \bar{B}]\| \le M^{-1}\|[A,B]\|$ and does **not** establish lattice clustering.
 
-$$
-[\bar{O}_1(x), \bar{O}_2(y)] \to 0 \quad (|\Lambda| \to \infty, \; |x-y| > 0)
-$$
+### A.4 Product of Spectral Triples (1996–1997)
 
-*References:* Goderis D., Verbeure A., Vets P. (1989) Non-commutative central limits. Probab. Theory Relat. Fields 82, 527–544.
-
-### A.4 Connes–Chamseddine Product Theorem (1996–1997)
-
-The product of spectral triples $(A_1, H_1, D_1)$ and $(A_2, H_2, D_2)$:
-
-$$
-(A_1 \otimes A_2,\; H_1 \otimes H_2,\; D_1 \otimes 1 + \gamma_1 \otimes D_2)
-$$
-
-satisfies the NCG axioms with KO-dimension $d_1 + d_2 \pmod{8}$, provided both components satisfy the axioms.
-
-*References:* Connes A. (1996) Gravity coupled with matter and the foundation of non-commutative geometry. Comm. Math. Phys. 182, 155–176; Chamseddine A.H., Connes A. (1997) The spectral action principle. Comm. Math. Phys. 186, 731–750.
+On compact factors, $(A_1 \otimes A_2, H_1 \otimes H_2, D_1 \otimes I + \gamma_1 \otimes D_2)$ forms a product spectral triple with KO-dimension $d_1 + d_2 \pmod 8$ when both factors carry real structures (Chamseddine–Connes 1996). For `T-120`, the first factor $\mathbb{R}\times S^3$ is noncompact (noncompact resolvent) and the second factor $\mathbb{C}^7$ admits no KO-dimension-6 structure (`T-178 [✗]`).
 
 ---
 
 **Related documents:**
-- [Emergent Time Theorem](/docs/proofs/dynamics/emergent-time) — temporal component (T-118)
-- [Spacetime](/docs/core/foundations/spacetime) — sector decomposition, spectral triple T-53
-- [Einstein Equations](/docs/physics/gravity/einstein-equations) — closure of Lovelock gaps (T-121)
-- [Quantum Gravity](/docs/physics/gravity/quantum-gravity) — spectral action T-65
-- [Emergent Geometry](/docs/physics/gravity/emergent-geometry) — metric derivation program
-- [Status Registry](/docs/reference/status-registry) — T-117 through T-121
+- [Verified Network Results](/docs/reference/network-results) — machine-checked operational geometry and foundational bounds (`verify_foundational_bounds.py`)
+- [Common Limiting Metric](/docs/geometry/common-limit) — constructive scaling limits of operational distances
+- [Emergent Time Theorem](/docs/proofs/dynamics/emergent-time) — depth register (`T-118`)
+- [Spacetime](/docs/core/foundations/spacetime) — algebraic spin factor (`T-48c`) and `T-53`
+- [Einstein Equations](/docs/physics/gravity/einstein-equations) — conditional Einstein–Hilbert variation and Lovelock limitations (`T-121`)
+- [Quantum Gravity](/docs/physics/gravity/quantum-gravity) — product spectral action (`T-65`)
+- [Status Registry](/docs/reference/status-registry) — `T-117` through `T-121`

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 19
-title: "Stability Analysis"
-description: "Homeostatic regime, basin of attraction, death spiral, perturbation bounds, parametric sensitivity"
+title: "Stability: Margins and Controlled Dynamics"
+description: "Exact Hilbert–Schmidt distance to purity boundaries, Bures lower bound (T-104), Grönwall trajectory perturbation bounds, local exponential stability, and purity-flux balance"
 ---
 
 # Stability: geometric margins and controlled dynamics

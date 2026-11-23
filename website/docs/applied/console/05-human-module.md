@@ -14,7 +14,7 @@ The kernel is substrate-agnostic; a person is a particular substrate with rich s
 
 ## §2. Substrate maps: the axes on a human {#карты-субстрата}
 
-The seven abstract axes acquire human-specific readings, and the Fano triads acquire the block structure the corpus already names ([symbolic-systems §6](https://homohologra.ph/research/symbolic-systems#структурный-анализ)):
+The seven abstract axes acquire human-specific readings, and the Fano triads acquire the block structure the corpus already names ([Gap diagnostics §2.2](/docs/applied/research/gap-diagnostics#фано-паттерны)):
 
 | Axis | Human reading |
 |---|---|
@@ -26,11 +26,11 @@ The seven abstract axes acquire human-specific readings, and the Fano triads acq
 | O — Ground | source of steadiness independent of circumstance |
 | U — Unity | integration: the sense of being one whole |
 
-The seven Fano triads read as functional blocks — **Cognition** {A,S,L}, **Becoming** {S,D,E}, **Will** {D,L,U}, **Meaning** {L,E,O}, **Expression** {E,U,A}, **Foundation** {U,O,S}, **Action** {O,A,D} ([gamma-canon §layer-2](https://homohologra.ph/research/gamma-canon#слой-2)) — each with a canonical strength and a canonical failure pattern. This is the vocabulary the human readout speaks.
+The seven canonical Fano triads read as functional blocks — **Cognition** {A,S,L}, **Becoming** {S,D,E}, **Will** {D,L,U}, **Meaning** {L,E,O}, **Expression** {E,U,A}, **Foundation** {U,O,S}, **Action** {O,A,D} ([Fano triad patterns](/docs/applied/research/gap-diagnostics#фано-паттерны)) — each with a canonical strength and a canonical failure pattern. This is the vocabulary the human readout speaks.
 
 ## §3. The measured bodygraph {#бодиграф}
 
-The 28-cell mandalagram **is** the bodygraph — seven population centres and twenty-one channels — but derived from the self-audit (Anchor II) and, where available, sensors (Anchor I), never from an ephemeris. Rendered as a human-legible chart: centres sized by population, channels drawn with magnitude (thickness) and, where a measured anchor supplies it, phase-transparency (the Gap). The reading algorithm is the [П2 protocol](https://homohologra.ph/research/gamma-canon#п2-чтение): weakest channels by name, dominant/deficient block, nearest archetype and the one flip that distinguishes it, window pattern, and mode of the current chapter.
+The 28-cell mandalagram **is** the bodygraph — seven population centres and twenty-one channels — but derived from the self-audit (Anchor II) and, where available, sensors (Anchor I), never from an ephemeris. Rendered as a human-legible chart: centres sized by population, channels drawn with magnitude (thickness) and, where a measured anchor supplies it, phase-transparency (the Gap). The reading algorithm follows the structured bodygraph reading protocol ([Gap diagnostics](/docs/applied/research/gap-diagnostics#паттерны)): weakest channels by name, dominant/deficient block, nearest Hamming $H(7,4)$ archetype and the single bit flip that distinguishes it, window pattern, and mode of the current chapter.
 
 This is the direct HD analog: where HD shows defined/undefined centres and channels from birth, the Console shows *measured* population centres and *measured* channels — the same visual grammar, a real object underneath.
 
@@ -38,9 +38,9 @@ This is the direct HD analog: where HD shows defined/undefined centres and chann
 
 Three readouts answer "what am I built to do, and where am I free" structurally:
 
-- **Capacities** — the archetype (which of the sixteen signatures the diagonal expresses) and the dominant block: the durable strengths.
+- **Capacities** — the archetype (which of the sixteen Hamming $H(7,4)$ diagonal signatures the state expresses) and the dominant block: the durable strengths.
 - **Constraints** — the Gap map's jammed channels and the deficient block's failure pattern: where the structure resists, and how it fails when pushed.
-- **Freedom score [D/I]** — $1+\dim\ker\operatorname{Hess}V$ for an explicit fitted potential and domain. Interpret as quadratic degeneracy at a critical point; actual flat directions require Morse–Bott hypotheses. Personal options and agency need independent task data and uncertainty, not this score alone.
+- **Freedom score [D]/[I]** — $1+\dim\ker\operatorname{Hess}V$ for an explicit fitted potential and domain. Interpret as quadratic degeneracy at a critical point; actual flat directions require Morse–Bott hypotheses. Personal options and agency need independent task data and uncertainty, not this score alone.
 
 ## §5. The identity trajectory {#траектория}
 
@@ -50,16 +50,16 @@ Identity within a life is exactly what the traditions correctly observed and the
 
 The question the user pressed on. The Console splits it into an answerable part and a refused part, and the split is the whole integrity of the module.
 
-**Refused [T].** UHM assigns **no** cosmic task at birth, and derives **no** map from birth data to Γ ([gamma-canon §1.7](https://homohologra.ph/research/gamma-canon#слой-6); [T-257 §4 category-error](https://homohologra.ph/research/one-grammar#планетарная-система)). Any product feature that claimed to read your life-purpose from your birth moment would be committing the exact silent step the theory forbids — the astrology error. The Console does not offer it, and says why.
+**Refused (epistemic boundary).** UHM assigns **no** cosmic task at birth and derives **no** identifiable map from birth data to $\Gamma$ ([Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability); [T-257 [H]](/docs/applied/research/gap-diagnostics), [Status registry](/docs/reference/status-registry)). Any product feature that claimed to read your life-purpose from your birth moment would be committing an unidentified silent step — the astrology error. The Console does not offer it, and says why.
 
 **Answered — and it is more than a consolation prize.** What the theory *does* let the Console give is a structural account that is true and updatable:
 
 - *"What am I made of"* — the measured bodygraph (§3): your populations and channels, now.
 - *"What am I built to do"* — capacities (§4): your archetype and dominant block, your durable strengths.
 - *"Where am I constrained"* — the jammed channels and failure pattern.
-- *"Where am I free, and along what axes"* — Freedom and its flat directions (§4).
+- *"Where am I free, and along what axes"* — Freedom and its flat directions (§4, when a potential $V$ is supplied).
 - *"What is my life's shape"* — the identity trajectory (§5): where you have been going and what attracts you.
-- *"What would make my life mean more"* — the Meaning vector and its limiting factor: the single smallest of $P, D_{\mathrm{diff}}, \Phi, R_\varphi$ is the concrete bottleneck to work on.
+- *"What would make my life mean more"* — the composite Meaning indicator and its limiting factor: the single smallest of $P, D_{\mathrm{diff}}^{7D}, \Phi, R_\varphi$ is the concrete bottleneck to inspect.
 
 Together these are a rigorous answer to "why am I as I am, and what can I do with it" — the reasons you can act as you do, and the room you have to change — without a single unearned metaphysical claim. The task is not assigned to you by the sky; it is *read off what you are and where you are free*, and it updates as you do.
 
@@ -72,7 +72,7 @@ Together these are a rigorous answer to "why am I as I am, and what can I do wit
 | Channels & gates (fixed) | 21 coherence channels, measured, time-varying | tracks change; a channel can open |
 | Type/Strategy/Authority (birth) | Archetype + mode (measured, current) | updates; not a fixed caste |
 | Incarnation cross / life purpose | Capacities + Freedom + trajectory (structural) | true, non-mystical, and actionable |
-| Transits (planetary) | Autoephemeris (your own trajectory) | anchored to you, not the sky (T-257) |
+| Transits (planetary) | Autoephemeris (your own trajectory) | anchored to you, not unmodelled ephemerides (`T-257 [H]`) |
 | Unfalsifiable | Falsifiable per person and at population scale | it is a scientific instrument |
 
 The comparison is not a marketing table; every "stronger" claim is a consequence of a corpus result cited elsewhere in this suite. The Console offers the *depth* HD users want and the *honesty* HD structurally cannot.

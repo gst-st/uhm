@@ -150,7 +150,7 @@ $$
 
 Thus $\varepsilon<1/(N\sqrt{N-1})$ suffices to exclude the selected $\Phi\ge1$ gate. A bare asymptotic $\varepsilon\ll1/N$ does not do so uniformly in dimension: the PSD matrix with diagonal $1/N$ and equal offdiagonal $\varepsilon=N^{-5/4}$ has $\Phi=(N-1)/\sqrt N\to\infty$ while $N\varepsilon\to0$.
 
-This bound concerns a supplied encoding and frame. It is not a theorem that all classical computers lack consciousness, intelligence or a capability level. Multiple realizability needs specified abstraction/realization maps, observation laws and resource budgets. A clock example of dimension $7\cdot6=42$ is distinct from a joint pair of native registers of dimension49.
+This bound concerns a supplied encoding and frame. It is not a theorem that all classical computers lack consciousness, intelligence or a capability level. Multiple realizability needs specified abstraction/realization maps, observation laws and resource budgets. A clock example of dimension $7\cdot6=42$ is distinct from a joint pair of native registers of dimension 49.
 
 <a id="спектральное-самозамыкание"></a>
 
@@ -186,27 +186,27 @@ $$
 \|\widehat x-x\|_2\le\|e\|_2/\sigma_{\min}(A).
 $$
 
-For an orthonormal basis this is the state’s Hilbert–Schmidt error. Population scores are affine in $x$; clamping and the full stress panel are generally nonlinear. A full-dimensional local smooth chart needs at least48 output coordinates, but dimension alone guarantees neither injectivity, learnability nor $R^2>0.9$. Cholesky reconstruction is nonlinear and does not prove linear-probe accuracy. The former universal $O(D^2)$ sample guarantee is withdrawn [✗].
+For an orthonormal basis this is the state’s Hilbert–Schmidt error. Population scores are affine in $x$; clamping and the full stress panel are generally nonlinear. A full-dimensional local smooth chart needs at least 48 output coordinates, but dimension alone guarantees neither injectivity, learnability nor $R^2>0.9$. Cholesky reconstruction is nonlinear and does not prove linear-probe accuracy. The former universal $O(D^2)$ sample guarantee is withdrawn [✗].
 
 Check the observation law, smallest singular value and error on independent data; the [identifiability protocol](/docs/applied/research/reconstruction-identifiability) specifies that test.
 
 ---
 
 **Related documents:**
-- [Axiom Ω⁷](./axiom-omega)—five UHM axioms ($\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$ as sole primitive)
-- [Octonionic structural derivation](../../proofs/minimality/theorem-octonionic-derivation)—P1+P2 → $\mathbb{O}$ → N=7
-- [Emergent time theorem](../../proofs/dynamics/emergent-time)—time from structure of Γ
-- [Septicity axiom](./axiom-septicity)—(AP+PH+QG+V) and derived constants
-- [Theorem S](../../proofs/minimality/theorem-minimality-7)—7D minimality proof
-- [Holon](../structure/holon)—hierarchical definition
-- [Dimension O (Ground)](../structure/dimension-o)—internal clocks
-- [Spacetime](./spacetime)—emergent geometry
-- [Categorical formalism](../../proofs/categorical/categorical-formalism)—$\infty$-groupoid and $\infty$-topos
-- [Categorical formalism—self-referential closure](../../proofs/categorical/categorical-formalism#самореферентное-замыкание)—$\mathrm{Th}_{\mathrm{UHM}}$, Yoneda lemma, self-reference architecture
-- [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy)—levels L0→L1→L2→L3→L4
-- [Physics correspondence](../../proofs/physics/physics-correspondence)—QM, GR, Standard Model
-- [Cosmological constant](../../physics/gravity/cosmological-constant)—Λ budget, spectral formula, $\Lambda > 0$ [T]
-- [Λ budget](../../proofs/gap/lambda-budget)—full chain of six perturbative suppression mechanisms
+- [Operational processes](./operational-processes)—pre-quantum operational entry point (wiring, equivalence, address fusion)
+- [Axiom Ω⁷](./axiom-omega)—typed realization, explicit modelling postulate (QG), and topological sheaf envelope
+- [Octonionic structural derivation](../../proofs/minimality/theorem-octonionic-derivation)—algebraic premises and Fano/octonionic structure
+- [Emergent time theorem](../../proofs/dynamics/emergent-time)—conditional Page–Wootters clock construction and limits
+- [Septicity axiom](./axiom-septicity)—declared conditions (AP+PH+QG+V) and model threshold conventions
+- [Minimality bounds](../../proofs/minimality/theorem-minimality-7)—conditional coding ($\Sigma_6$) and representation ($A_{\mathrm{int}}$) lower bounds
+- [Holon](../structure/holon)—typed definition and multi-level scope
+- [Dimension O (Ground)](../structure/dimension-o)—ground axis and extended clock register
+- [Spacetime](./spacetime)—representation-theoretic no-go bounds and operational network geometry
+- [Categorical formalism](../../proofs/categorical/categorical-formalism)—process categories, open-cover sheaves, and descent criteria
+- [Interiority hierarchy](../../consciousness/hierarchy/interiority-hierarchy)—operational capability criteria L0–L4
+- [Physics correspondence](../../proofs/physics/physics-correspondence)—scope and open bridges to QM, GR, and the Standard Model
+- [Cosmological constant](../../physics/gravity/cosmological-constant)—vacuum-energy hypotheses and bridge obligations
+- [Λ budget](../../proofs/gap/lambda-budget)—additive-shift criterion for volume couplings
 
 ## Historical section addresses
 

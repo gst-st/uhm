@@ -149,7 +149,7 @@ Different intervention classes can be compared through independently specified p
 
 ### 7.3 Correspondence of therapeutic approaches and channels
 
-An approach-to-channel correspondence is a candidate mediation model **[H]**. It must test both the proposed feature change and the independently measured outcome; a target such as Gap $0.90	o0.25$ has no universal clinical meaning. Report intervention and outcome measurements separately from the reconstructed matrix.
+An approach-to-channel correspondence is a candidate mediation model **[H]**. It must test both the proposed feature change and the independently measured outcome; a target such as Gap $0.90 \to 0.25$ has no universal clinical meaning. Report intervention and outcome measurements separately from the reconstructed matrix.
 
 ### 7.4 Limitations of correction
 
@@ -167,7 +167,7 @@ A temporal change of a feature or a clinical label need not be a bifurcation. Bi
 
 ### 8.2 Exit from pathology
 
-Recovery of an independently measured outcome can be studied longitudinally **[Pr]**. Non-Markovianity alone does not imply $	au_{\mathrm{exit}}\propto	au_{\mathrm{mem}}\max G$. Such a constitutive fit would require an explicitly defined exit event, units, parameters and validation. No treatment duration follows from kernel depth or Gap amplitude.
+Recovery of an independently measured outcome can be studied longitudinally **[Pr]**. Non-Markovianity alone does not imply $\tau_{\mathrm{exit}} \propto \tau_{\mathrm{mem}} \max G$. Such a constitutive fit would require an explicitly defined exit event, units, parameters and validation. No treatment duration follows from kernel depth or Gap amplitude.
 
 #### Operational noise threshold [D/H] {#определение-epsilon-noise}
 
@@ -179,7 +179,7 @@ The former “first principles” derivation is withdrawn. In a declared estimat
 
 **Correct coding statement [T].** For a binary code of length $n$ correcting $t$ errors, disjoint Hamming balls give $M\sum_{j=0}^{t}\binom nj\le2^n$. The binary Hamming $(7,4,3)$ code has $M=16$, $t=1$ and saturates $16(1+7)=128$. Its three parity coordinates are not three nonzero pairwise phase Gaps. Applying it requires an encoder into binary words, a noise channel and a decoder; none is supplied by the density matrix definition. See [Hamming (1950)](https://doi.org/10.1002/j.1538-7305.1950.tb00463.x).
 
-**Explicit counterexample to the previous T-90/41g application.** For the family in §5.2 at $t=0.45$,
+**Explicit counterexample to the previous T-90 [✗] application.** For the family in §5.2 at $t=0.45$,
 
 $$
 P=0.3164285714,\quad R=0.4514672686,\quad\Phi=1.215,
@@ -214,11 +214,11 @@ The [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) is a conditional 
 
 ## Connections
 
-- **Gap-diagnostics:** [Applied Gap-diagnostics](/docs/applied/research/gap-diagnostics) — protocol and diagnostic patterns
-- **Gap-dynamics:** [Bifurcations of the Gap-landscape](/docs/core/dynamics/gap-dynamics#бифуркации) — transition theory
-- **Unconscious:** [Gap-structure of the unconscious](/docs/consciousness/states/unconscious) — definition of opaque sectors
-- **Gap-characterisation of levels:** [Gap-signatures](/docs/consciousness/hierarchy/gap-characterization) — normal profiles for L0–L4
-- **Altered states:** [ASC](/docs/consciousness/states/altered-states) — psychedelics and meditation as therapeutic trajectories
-- **Viability:** [Viability measure](/docs/core/dynamics/viability) — threshold $P_{\text{crit}} = 2/7$
-- **Measurement protocol:** [Measurement of Γ](/docs/applied/research/measurement-protocol) — empirical validation
-- **CC Theorems:** [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — withdrawn T-90 clinical bridge; conditional coding and research designs
+- **Gap-diagnostics:** [Applied Gap-diagnostics](/docs/applied/research/gap-diagnostics) — protocol and candidate diagnostic feature patterns
+- **Gap-dynamics:** [Bifurcations of the Gap-landscape](/docs/core/dynamics/gap-dynamics#бифуркации) — conditional transition models
+- **Unconscious:** [Gap-structure of the unconscious](/docs/consciousness/states/unconscious) — phase-opacity profiles and access models
+- **Gap-characterisation of levels:** [Gap-signatures](/docs/consciousness/hierarchy/gap-characterization) — scoped Gap features and fibre non-identifiability
+- **Altered states:** [ASC](/docs/consciousness/states/altered-states) — typed matrix statistics and independent outcome protocols for ASC
+- **Viability:** [Viability measure](/docs/core/dynamics/viability) — purity cut $P_{\text{crit}} = 2/7$
+- **Measurement protocol:** [Measurement of Γ](/docs/applied/research/measurement-protocol) — prospective measurement programme
+- **CC Theorems:** [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — withdrawn T-90 [✗] clinical bridge; conditional coding and research designs

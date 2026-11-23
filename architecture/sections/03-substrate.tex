@@ -8,11 +8,17 @@ The entire architectural state of one \TALOS{} holon is a single object.
 \begin{defbox}[The state register \DM{}]
 A holon's state is a coherence matrix $\Gam\in\Dens(\mathbb{C}^7)$: a
 $7\times7$ Hermitian, positive-semidefinite, unit-trace matrix. Stored dense,
-it is $49$ complex \texttt{f64} entries $=\mathbf{784}$~\textbf{bytes}; a
-four-level holon (\S\ref{sec:composition}) is $4\times784=3136$~bytes. Its
-seven diagonal entries are the sector \emph{populations} (intensities); its
-$21$ complex off-diagonals are the \emph{coherences} $\gamma_{ij}$. Modulo
-the $G_2$ gauge (14 generators) it has $\mathbf{34}$ physical parameters.
+it is $49$ complex \texttt{f64} entries $=\mathbf{784}$~\textbf{bytes}
+($6{,}272$~IEEE-754 bits); a four-register cognitive tower (levels
+$\Cog_0$--$\Cog_3$, depth $\le 3$, \S\ref{sec:composition}) is
+$4\times784=3{,}136$~bytes. Its seven diagonal entries are the sector
+\emph{populations} ($6$ independent reals); its $21$ complex off-diagonals are
+the \emph{coherences} $\gamma_{ij}$ ($42$ reals), giving $\mathbf{48}$ real
+dynamical parameters in total. Because the fixed-basis Fano dissipator and the
+integration observable $\Phi$ are covariant only under the discrete collineation
+group $\mathrm{PSL}(2,7)$ and diagonal phase rephasing $U(1)^7$ (not under
+continuous $G_2$ basis rotations), all $48$ real degrees of freedom are
+dynamically active.
 \end{defbox}
 
 Two consequences are immediate and they are the whole departure from von
@@ -36,10 +42,11 @@ That $\Gam$ is a \emph{density matrix} (complex, positive, unit trace) is not
 an aesthetic choice: UHM proves the complex off-diagonal structure is forced
 by the requirement that the substrate carry a non-trivial ``Gap'' (the
 dual-aspect opacity of self-reference, $\mathrm{Gap}(i,j)=|\sin\arg\gamma_{ij}|$;
-T-132), and that it is realisable on \emph{classical} hardware --- the
-complexity is algebraic, not a physical quantum superposition, so no cooling
-or coherence budget is required (T-153, T-267). \DM{} is an ordinary
-classical register that happens to be interpreted as a density operator.
+T-132), and substrate closure (T-153) allows it to be realised on
+\emph{classical} hardware --- on a digital substrate the complex entries are
+ordinary floating-point register values representing an algebraic state, not a
+physical cryogenic quantum superposition. \DM{} is an ordinary classical
+register interpreted as a density operator.
 
 \subsection{Instruction: one derived tick}
 
@@ -65,9 +72,9 @@ operation rather than three subsystems:
 \toprule
 \textbf{Term} & \textbf{Physics} & \textbf{Architectural role} \\
 \midrule
-$-i[H_{\mathrm{eff}},\Gam]$ & unitary, an \emph{isometry} of every monotone metric (T-262); entropy-preserving & \textbf{Work}: reversible computation; by Landauer it costs \emph{no} free energy (\S\ref{sec:energy}) \\
-$\Diss[\Gam]$ & Fano dissipator; Lindblad relaxation toward $\mathbb{1}/7$; GNS detailed balance & \textbf{Forget}: controlled decay/refresh; exports entropy, so it \emph{does} cost energy \\
-$\Regen[\Gam]$ & regeneration toward $\rhostar=\vp(\Gam)$; BKM-gradient descent of $D(\rhostar\Vert\Gam)$ & \textbf{Learn}: moves the state toward its own self-model; the optimiser, in hardware \\
+$-i[H_{\mathrm{eff}},\Gam]$ & unitary conjugation; preserves eigenvalues and von~Neumann entropy identically & \textbf{Work}: logically reversible evolution; exports \emph{zero} logical entropy (\S\ref{sec:energy}) \\
+$\Diss[\Gam]$ & Fano Lindblad dissipator $\gamma(\mathcal{P}_{\mathrm{Fano}}(\Gam)-\Gam)$: preserves populations, damps off-diagonals at rate $2\gamma/3$ (plus optional depolarization toward $\mathbb{1}/7$) & \textbf{Forget}: controlled coherence decay/refresh; raises entropy, requiring maintenance export \\
+$\Regen[\Gam]$ & regeneration toward anchored self-model $\varphi_J(\Gam)=(1-R)\mathcal{P}_{\mathrm{Fano}}(\Gam)+R\ket{\psi}\bra{\psi}$ & \textbf{Learn}: moves the state toward its own self-model; the optimiser, in hardware \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -170,10 +177,13 @@ stops on its own schedule. In the emulator the nail corresponds to the drive cut
 depolarization rate sets the time to the purity threshold.
 \end{mythbox}
 
-The V0 emulator (\S\ref{sec:platform}) realises this port internally as its
-$\kappa(\CohE)$ feedback --- a coherence-fed regeneration boost that is
-precisely a non-unital negentropy pump, which is why it exhibits a viable
-attractor where the bare autonomous tick would halt.
+The V0 emulator (\S\ref{sec:platform}) realises this non-unital drive through
+the canonical anchored self-model $\varphi_J(\Gam)=(1-R(\Gam))\mathcal{P}_{\mathrm{Fano}}(\Gam)+R(\Gam)\ket{\psi}\bra{\psi}$
+with regeneration $\kappa(\varphi_J(\Gam)-\Gam)$ --- a non-unital
+negentropy-importing drive that sustains a viable attractor passing all four
+gates, whereas cutting regeneration ($\kappa=0$) under depolarizing
+thermalization relaxes $\Gam\to\mathbb{1}/7$ on the exact analytical curve
+above.
 
 \subsection{A principled clock}
 

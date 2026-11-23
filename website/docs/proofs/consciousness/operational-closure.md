@@ -18,7 +18,7 @@ $$
 
 The result is positive with trace one by convexity. For fixed external $x$, target and state-independent $\alpha$, its operator-linear extension is a convex combination of $\mathcal E_h$ and a replacement channel, hence CPTP. With coefficients or input records selected from $\Gamma$, the update is generally nonlinear and only state preservation follows.
 
-The update is a choice [D]; neither it nor the encoder is unique up to $G_2$. The withdrawn T-123 argument is replaced by [observation-fiber identifiability](/docs/applied/research/reconstruction-identifiability). A nonlinear map $\mathbb R^D\to\mathcal D_7$ is not a CPTP channel without a separate operator-algebra encoding. Equal backbone snapshots need not give equal $\Gamma$ when histories or initial states differ. Identification of $\Gamma$ with experience remains the stated ontological bridge.
+The update is a choice [D]; neither it nor the encoder is unique up to $G_2$. The withdrawn T-123 [✗] argument is replaced by [observation-fiber identifiability](/docs/applied/research/reconstruction-identifiability). A nonlinear map $\mathbb R^D\to\mathcal D_7$ is not a CPTP channel without a separate operator-algebra encoding. Equal backbone snapshots need not give equal $\Gamma$ when histories or initial states differ. Identification of $\Gamma$ with experience remains the stated ontological bridge.
 
 ## §2. T-140: full capability gate and summary score {#t-140}
 
@@ -36,20 +36,20 @@ $C=0$ is equivalent to $\Phi=0$ because $R\ge1/7>0$; it is not equivalent to fai
 
 ## §3. T-141: comparison of specified self-models {#t-141}
 
-Let $D$ be diagonalization in a fixed physical frame, $\mathcal P=(1/3)\mathrm{id}+(2/3)D$, and fix a mixing value $k\in[0,1]$. The two maps
+Let $\mathcal P_{\mathrm{base}}$ be diagonalization in a fixed physical frame, $\mathcal P_{\mathrm{Fano}}=(1/3)\mathrm{id}+(2/3)\mathcal P_{\mathrm{base}}$, and $\mathcal P_\alpha = \alpha\mathcal P_{\mathrm{base}} + (1-\alpha)\mathcal P_{\mathrm{Fano}}$ ($\alpha\in[0,1]$). For a fixed mixing value $k\in[0,1]$, the two endpoints $\alpha=1$ and $\alpha=0$ of the **coherent dephasing-anchor** family $\varphi_{\mathrm{coh}}(\Gamma) := k\,\mathcal P_\alpha(\Gamma) + (1-k)\,I/7$ are
 
 $$
-\varphi_B(\Gamma)=kD(\Gamma)+(1-k)I/7,\qquad
-\varphi_C(\Gamma)=k\mathcal P(\Gamma)+(1-k)I/7
+\varphi_B(\Gamma)=k\,\mathcal P_{\mathrm{base}}(\Gamma)+(1-k)\,I/7,\qquad
+\varphi_C(\Gamma)=k\,\mathcal P_{\mathrm{Fano}}(\Gamma)+(1-k)\,I/7,
 $$
 
-are generally different. Their exact difference is
+which are generally different. Their exact difference is **[T]**
 
 $$
 \varphi_B(\Gamma)-\varphi_C(\Gamma)=-\tfrac k3\Gamma_{\mathrm{off}}.
 $$
 
-With state-dependent $k$ this identity still holds pointwise, while the overall maps are generally nonlinear. A third map $(1-k)\Gamma+k\rho_a$ with a different anchor is not equivalent to them merely because it is a convex interpolation.
+With state-dependent $k = 1 - R(\Gamma)$ (giving $\varphi_{\mathrm{coh}}(\Gamma) = (1-R(\Gamma))\,\mathcal P_\alpha(\Gamma) + R(\Gamma)\,I/7$), this identity still holds pointwise, while the overall maps are generally nonlinear. Neither map is equivalent to the **linear anchor-mixing** map $\varphi_{\mathrm{lin}}(\Gamma) := R(\Gamma)\,\Gamma + (1-R(\Gamma))\,I/7 = (1-k)\,\Gamma + k\,I/7$ ([T-249](/docs/proofs/categorical/formalization-phi#дф-производная) **[T]**) — which reverses the weights $R$ and $1-R$ and omits $\mathcal P_\alpha$ — nor to the **collineation-anchored** self-model $\varphi_J(\Gamma) := (1-R(\Gamma))\,\mathcal P_\alpha(\Gamma) + R(\Gamma)\,|\psi\rangle\langle\psi|$ ([T-334](/docs/core/operators/phi-operator#phi-j) **[T]**), which keeps the $(1-R,R)$ weighting of $\varphi_{\mathrm{coh}}$ while replacing the anchor $I/7$ with the pure uniform-diagonal state $|\psi\rangle\langle\psi|$.
 
 ### Off-diagonal HS bound {#лемма-фробениус-off-diag}
 
@@ -59,23 +59,23 @@ $$
 \|\Gamma_{\mathrm{off}}\|_F^2=P-\sum_i\gamma_{ii}^2\le P-1/7,
 $$
 
-hence $\|\varphi_B-\varphi_C\|_F\le(k/3)\sqrt{P-1/7}$. This controls a Lipschitz observable only after specifying that observable and its Lipschitz constant. Canonical $R(\Gamma)=1/(7P)$ does not depend on which map is named; an output score $R(\varphi_B(\Gamma))$ is a different quantity. The former assertion that all three maps equal a nontrivial dynamical attractor is withdrawn: the unital maps have fixed point $I/7$ in the stated contracting case.
+hence $\|\varphi_B-\varphi_C\|_F\le(k/3)\sqrt{P-1/7}$. This controls a Lipschitz observable only after specifying that observable and its Lipschitz constant. Canonical $R(\Gamma)=1/(7P)$ does not depend on which map is named; an output score $R(\varphi_B(\Gamma))$ is a different quantity. The former assertion that all three maps coincide on a nontrivial dynamical attractor is withdrawn: both $\varphi_{\mathrm{lin}}$ and $\varphi_{\mathrm{coh}}$ (including $\varphi_B,\varphi_C$) have unique fixed point $I/7$ in the stated contracting case, whereas $\varphi_J$ supports a nontrivial living attractor.
 
 ## §4. T-142: Fano attenuation and a declared depth score {#t-142}
 
-For the bare Fano channel, when the initial off-diagonal norm is nonzero,
+For the bare Fano channel $\mathcal P_{\mathrm{Fano}} = \mathcal P_0$, when the initial off-diagonal norm is nonzero,
 
 $$
-S_n:=\frac{\|\operatorname{offdiag}(\mathcal P^n\Gamma)\|_F}{\|\operatorname{offdiag}\Gamma\|_F}=3^{-n}.
+S_n:=\frac{\|\operatorname{offdiag}(\mathcal P_{\mathrm{Fano}}^n\Gamma)\|_F}{\|\operatorname{offdiag}\Gamma\|_F}=3^{-n}.
 $$
 
-For the specified canonical map $M(\rho)=(1-R(\rho))\mathcal P(\rho)+R(\rho)I/7$,
+For the $\alpha = 0$ **coherent dephasing-anchor** map $\varphi_{\mathrm{coh}}(\rho) := (1-R(\rho))\,\mathcal P_{\mathrm{Fano}}(\rho)+R(\rho)\,I/7$ ($\rho_j = \varphi_{\mathrm{coh}}^j(\rho)$),
 
 $$
 S_n=3^{-n}\prod_{j<n}(1-R(\rho_j))\le(2/7)^n.
 $$
 
-These are attenuation identities, not fidelity or a consciousness-depth theorem. A detector $S_n\ge\varepsilon$ has a finite depth depending on $\varepsilon$; for bare Fano it is $n\le\lfloor\log(1/\varepsilon)/\log3\rfloor$.
+(By contrast, the linear anchor-mixing map $\varphi_{\mathrm{lin}}(\rho) = R(\rho)\,\rho + (1-R(\rho))\,I/7$ of [T-249](/docs/proofs/categorical/formalization-phi#дф-производная) gives $S_n = \prod_{j<n} R(\rho_j)$ without Fano dephasing, while $\varphi_J$ of [T-334](/docs/core/operators/phi-operator#phi-j) injects coherence via $|\psi\rangle\langle\psi|$.) These are attenuation identities, not fidelity or a consciousness-depth theorem. A detector $S_n\ge\varepsilon$ has a finite depth depending on $\varepsilon$; for bare Fano it is $n\le\lfloor\log(1/\varepsilon)/\log3\rfloor$.
 
 ### Arithmetic of the historical score {#лемма-контракция-sad}
 
@@ -104,7 +104,7 @@ For a convex cost on a closed convex action set of diameter $D_A$, with subgradi
 
 ## §7. T-145: finite-horizon stochastic viability {#t-145}
 
-:::warning Original T-145 withdrawn
+:::warning Original T-145 withdrawn [✗]
 A one-time second-moment bound implies neither an exponential tail nor survival for every future time. Independent rare exits with probability $p>0$ at each tick have survival $(1-p)^n\to0$, even when their one-time variance is small. Distance to only the purity surface is not a radius to the full predicate boundary.
 :::
 
@@ -170,7 +170,7 @@ $$
 P_*=(\alpha_D P_{\mathrm{diag}}+af^*)/(\alpha_D+a),\qquad\alpha_D=2/3.
 $$
 
-This can test the lower purity cut. An additional input contributes its actual purity flux, as in [T-98a](/docs/core/dynamics/evolution#следствие-t98a). Numerical integration from one initial state does not prove a unique global attractor; report residuals, the Jacobian, the basin tested and all capability conjuncts. Embodiment alone does not close C20, and isolated alternative self-models can have living attractors.
+This can test the lower purity cut. An additional input contributes its actual purity flux, as analyzed in withdrawn [T-98a [✗]](/docs/core/dynamics/evolution#следствие-t98a). Numerical integration from one initial state does not prove a unique global attractor; report residuals, the Jacobian, the basin tested and all capability conjuncts. Embodiment alone does not close C20, and isolated alternative self-models can have living attractors.
 
 ## §11. Result scope
 

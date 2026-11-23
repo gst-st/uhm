@@ -161,7 +161,7 @@ $$
 (e_3 + e_{10})(e_6 - e_{15}) = 0
 $$
 
-where $e_3, e_{10}, e_6, e_{15}$ are basis elements of the sedenions, each nonzero. Thus in $\mathbb{S}$ one cannot “divide”—the equation $ax = b$ may have no solution or infinitely many. For a physical theory in which invertibility of operations is a prerequisite for predictability, this is unacceptable. Octonions are the **last** algebra where division is possible.
+where $e_3, e_{10}, e_6, e_{15}$ are basis elements of the sedenions, each nonzero. Thus in $\mathbb{S}$ one cannot “divide”—the equation $ax = b$ may have no solution or infinitely many. Note that zero divisors do **not** make a physical formalism impossible in general (quantum mechanics itself operates over matrix algebras $M_n(\mathbb{C})$, which abound in zero divisors such as $|i\rangle\langle i|\cdot|j\rangle\langle j|=0$); rather, octonions are simply the **last** algebra in the Cayley–Dickson sequence that satisfies the normed division-algebra axiom $|xy|=|x||y|$.
 
 The pattern of losses is no accident. Each doubling adds a new “imaginary direction” but pays with weakened structure. One may view this as a fundamental balance: **richness** (number of dimensions) grows while **order** (algebraic properties) declines. Octonions are the point of optimal balance: maximal dimension while division persists.
 
@@ -687,12 +687,12 @@ Mathematical foundations are the basement. Next come axiomatics and concrete der
 
 | Result | Document |
 |---|---|
-| Uniqueness of $N=7$ (Tracks A+B) | [Octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation) |
-| 7/7 minimality | [Minimality theorem](/docs/proofs/minimality/theorem-minimality-7) |
+| Algebraic/octonionic structure (conditional on explicit premises) | [Octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation) |
+| Conditional lower bounds ($\Sigma_6$ coding, $A_{\mathrm{int}}$ representation) | [Minimality bounds](/docs/proofs/minimality/theorem-minimality-7) |
 | Categorical formalism | [Categorical formalism](/docs/proofs/categorical/categorical-formalism) |
-| $G_2$ uniqueness | [Uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem) |
-| Emergence of $M^4$ | [Emergent manifold](/docs/proofs/physics/emergent-manifold) |
-| $\varphi$ operator | [Formalization of phi](/docs/proofs/categorical/formalization-phi) |
+| Conditional RI rigidity ($U(7)$ / $G_2$) | [Uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem) |
+| Emergent manifold programme | [Emergent manifold](/docs/proofs/physics/emergent-manifold) |
+| $\varphi$ operator typing and fixed points | [Formalization of phi](/docs/proofs/categorical/formalization-phi) |
 
 ### Physics
 
@@ -700,7 +700,7 @@ Mathematical foundations are the basement. Next come axiomatics and concrete der
 |---|---|
 | $G_2$ structure and charges | [$G_2$ structure](/docs/physics/gauge-symmetry/g2-structure), [Noether charges](/docs/physics/gauge-symmetry/noether-charges) |
 | Fano selection rules | [Fano channel](/docs/physics/gauge-symmetry/fano-selection-rules) |
-| Spacetime | [Spacetime](./spacetime) |
+| Spacetime (no-go bounds & network geometry) | [Spacetime](./spacetime) |
 
 ### Consciousness
 
@@ -718,10 +718,11 @@ Mathematical foundations are the basement. Next come axiomatics and concrete der
 | Phase diagram | [Phase diagram](/docs/applied/coherence-cybernetics/phase-diagram-cc) |
 | Learning bounds | [Learning bounds](/docs/applied/coherence-cybernetics/learning-bounds) |
 
-Next step: [Axiom Omega-7](./axiom-omega)—full axiomatic exposition.
+Next step: [Operational processes](./operational-processes) (pre-quantum entry point) and [Axiom Omega-7](./axiom-omega) (typed quantum realization).
 
 ---
 
 **Related documents:**
-- [Axiom Ω⁷](/docs/core/foundations/axiom-omega)—$\infty$-topos, subobject classifier, terminal object
-- [Septicity axiom](/docs/core/foundations/axiom-septicity)—derivation of $\kappa_0$, $P_{\text{crit}}$, categorical adjunction
+- [Operational processes](/docs/core/foundations/operational-processes)—pre-quantum operational entry point
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega)—typed realization, explicit postulate (QG), and topological sheaf envelope
+- [Septicity axiom](/docs/core/foundations/axiom-septicity)—declared conditions (AP+PH+QG+V), kinetic rate conventions, and threshold definitions

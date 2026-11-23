@@ -1,11 +1,15 @@
 ---
 sidebar_position: 2
 title: "Calibration: Coherences to Qualities"
-description: "Calibrating proposed relations between physical measurements and independently recorded qualities."
+description: "Prospective protocol sketch [Pr] for calibrating proposed relations between physical measurements and independently recorded qualities, pending definition and validation of π_bio."
 slug: /consciousness/empirical/calibration
 ---
 
 # Calibration: Coherences to Qualities
+
+:::info Prospective protocol sketch [Pr]
+This page is a **prospective protocol sketch [Pr]** pending an explicit definition and empirical validation of the biological encoder $\pi_{\mathrm{bio}}$ and its observation model. No participant data have been collected and no biological calibration has been validated.
+:::
 
 A candidate encoder maps recorded signals to an estimated state. A separate observation model relates that estimate to a participant’s report. Both the form and the parameters of those maps require evidence. The protocols below give examples of tests. Participant data are pending. [What a phenomenal difference requires](/docs/consciousness/foundations/phenomenal-distinction)
 
@@ -15,8 +19,8 @@ A candidate encoder maps recorded signals to an estimated state. A separate obse
 
 **2. The phenomenal calibration** takes $\hat\Gamma$ to named qualities. It has two parts:
 
-- **the metric map** $f$ from perceived dissimilarity to the Fubini–Study distance $d_{\mathrm{FS}}$. The [enriched Yoneda theorem](/docs/proofs/categorical/categorical-formalism#enriched-yoneda) [T] makes the quality space testable only after $f$ is fixed; "with $f$ only assumed monotone, the test is ordinal and weaker";
-- **the anchoring**: which ray $[\lvert q\rangle]$ is red. The functor distinguishes states up to at most a finite group of relabellings of the axes — its kernel lies inside the 192 elements of the frame group $\Gamma_{\!\text{oct}}$ (1344 elements) that keep the $E$-axis ([Corollary 3](/docs/proofs/categorical/uniqueness-theorem#верность-функтора) [T]); within that, which ray carries which name is measured, not derived. Whether two subjects' quality spaces are related by an inversion stays open ([relational identity](/docs/consciousness/foundations/two-aspect-monism#теорема-реляционная-определённость)).
+- **the metric map** $f$ from perceived dissimilarity to the Fubini–Study distance $d_{\mathrm{FS}}$. The [enriched Yoneda theorem](/docs/proofs/categorical/categorical-formalism#enriched-yoneda) [T] makes the quality space testable only after $f$ is fixed; with $f$ only assumed monotone, the test is ordinal and weaker;
+- **the anchoring**: which ray or state label corresponds to a named quality (for example, red). Universal faithfulness of state encoders up to a finite frame group is withdrawn ([T-42a [✗]](/docs/proofs/categorical/uniqueness-theorem); [identifiability scope](/docs/consciousness/foundations/two-aspect-monism#faithful-g2-box)); observed marginals, spectra, and moduli generally have non-trivial fibres, so the correspondence between state coordinates and quality names must be measured and anchored empirically rather than derived. Whether two subjects' quality spaces are related by an inversion stays open ([relational identity](/docs/consciousness/foundations/two-aspect-monism#теорема-реляционная-определённость)).
 
 Neither part can be settled by proof. Both are settled by fitting on data where the answer is independently known and testing on data that did not enter the fit.
 
@@ -25,11 +29,11 @@ Neither part can be settled by proof. Both are settled by fitting on data where 
 | Observable | Typical measure | Component of $\Gamma$ it bears on | Source | Status of the mapping |
 |---|---|---|---|---|
 | Presence / absence report | immediate or delayed report | ground truth for the verdict $\mathrm{Cons}(\hat\Gamma)$ — inference data only | [substitution theorem](/docs/applied/research/measurement-protocol#substitution-position) | [T] as a statement about test design |
-| Intensity rating | magnitude estimation | spectrum $\lambda_i$ | [falsifiability, predictions 1, 3](/docs/reference/falsifiability#isospectral-discrimination) | open prediction |
-| Discrimination | $d'$, just-noticeable difference | $d_{\mathrm{FS}}$ between rays at fixed spectrum | [isospectral discrimination](/docs/reference/falsifiability#isospectral-discrimination) | open prediction |
+| Intensity rating | magnitude estimation | spectrum $\lambda_i$ | [falsifiability, predictions 1, 3](/docs/reference/falsifiability#isospectral-discrimination) | open prediction [H] |
+| Discrimination | $d'$, just-noticeable difference | $d_{\mathrm{FS}}$ between rays at fixed spectrum | [isospectral discrimination](/docs/reference/falsifiability#isospectral-discrimination) | open prediction [H] |
 | Similarity judgement | pairwise dissimilarity matrix | $d_{\mathrm{FS}}$ through $f$ | [metric relations](/docs/reference/falsifiability#metric-relations); [enriched Yoneda](/docs/proofs/categorical/categorical-formalism#enriched-yoneda) | geometry [T]; identification of experiences with rays [I] |
 | Metacognition | meta-$d'$, confidence calibration | reflection $R$, self-model quality $R_\varphi$ | [phenomenology map](/docs/applied/research/phenomenology-map#карта); [gate theorem T-252 [T]](/docs/proofs/categorical/formalization-phi#гейт-теорема) | bound [T]; correspondence [H] |
-| Valence, arousal | rating scales, circumplex | $\mathrm{sign}(dP/d\tau)$, $\lvert dP/d\tau\rvert$ | [emotional taxonomy, C.1](/docs/consciousness/phenomenology/emotional-taxonomy#базовые-координаты) | [C] |
+| Valence, arousal | rating scales, circumplex | hypothesized correspondence to $\mathrm{sign}(dP/d\tau)$, $\lvert dP/d\tau\rvert$; for a differentiable declared 30-feature readout, two trace identities bound the Jacobian rank by $\le 28$ (T-147 [T]) | [affective reports and purity change](/docs/consciousness/phenomenology/emotional-taxonomy#базовые-координаты); [T-147](/docs/proofs/consciousness/operational-closure#t-147) | rank bound [T]; affect bridge [H]/[I] |
 | EEG spectral power | band power | populations $\gamma_{kk}$ | [Step 1](/docs/applied/research/measurement-protocol#шаг-1-диагональ) | [H] (C31) |
 | Cross-frequency coupling | phase–amplitude coupling | moduli $\lvert\gamma_{ij}\rvert$ | [Step 2](/docs/applied/research/measurement-protocol#шаг-2-когерентности) | [H] (C31) |
 | Phase locking | complex phase-locking values | phases, hence Fano holonomies $H_p$ | [Step 3](/docs/applied/research/measurement-protocol#шаг-3-фазы); SUB-3 | [H] |
@@ -65,23 +69,23 @@ Among sessions with $\mathrm{PCI}_{\max} \leq 0.31$, responses that stay local a
 
 ### K3. Metric calibration of quality space — proposed here [Pr] {#k3-metric}
 
-**Claim under test.** Perceived dissimilarities are a monotone function of $d_{\mathrm{FS}}$ between the rays that carry the qualities ([prediction 4](/docs/reference/falsifiability#metric-relations)).
+**Claim under test.** Perceived dissimilarities are a monotone function of $d_{\mathrm{FS}}$ between the rays assigned by a declared quality-ray readout ([prediction 4](/docs/reference/falsifiability#metric-relations)).
 
-**Protocol.** (1) A stimulus set of $m$ items in one modality; full pairwise dissimilarity ratings from each subject, twice (test–retest). (2) In the same sessions, per-stimulus $\hat\Gamma$ from $\pi_{\mathrm{bio}}$ with frozen $\theta$, and its eigenrays. (3) Fit a monotone $f$ on a random half of the stimuli; predict the ordering of dissimilarities among the held-out half from $d_{\mathrm{FS}}$ alone.
+**Protocol.** (1) A stimulus set of $m$ items in one modality; full pairwise dissimilarity ratings from each subject, twice (test–retest). (2) In the same sessions, reconstruct per-stimulus $\hat\Gamma$ (and, where an extended experiential register $\mathcal{H}_E$ is declared, the reduced state $\hat\rho_E$) from $\pi_{\mathrm{bio}}$ with frozen $\theta$, together with a predeclared normalized stimulus-to-ray map $s \mapsto [\lvert q(s)\rangle] \in \mathbb{CP}^{n-1}$ (distinct from the mutually orthogonal eigenrays of any single matrix, whose pairwise Fubini–Study distances are trivially $\pi/2$ and which are non-unique at spectral degeneracy; if the readout yields mixed states, predeclare a mixed-state metric such as the Bures distance instead of substituting eigenrays). (3) Fit a monotone $f$ on a random half of the stimuli; predict the ordering of dissimilarities among the held-out half from the declared state distance alone.
 
 **Pass criteria** (from the falsifiability page): Spearman $\rho_S(d_{\mathrm{perceived}}, d_{\mathrm{FS}}) > 0.6$; monotonicity violations below 10 % of pairs; MDS stress below 0.1.
 
 **What it calibrates.** The fitted $f$ is the constant the enriched Yoneda test needs; once $f$ is fixed, the realisability test of the [structure page](./structure#realisability) becomes metric rather than ordinal.
 
-**Limit.** Step (2) needs rays from neural data, which in turn needs a validated $\pi_{\mathrm{bio}}$; until then only the behavioural half — whether similarity data admit a complex-projective geometry at all — can be run, and it belongs to the [structure page](./structure).
+**Limit.** Step (2) requires a validated biological encoder $\pi_{\mathrm{bio}}$ and an explicit stimulus-to-ray (or mixed-state) readout; until both are defined and calibrated, only the behavioural half — whether similarity data admit a complex-projective geometry at all — can be run, and it belongs to the [structure page](./structure).
 
 ### K4. Intensity and quality dissociate — existing criteria {#k4-dissociation}
 
-Two predictions of the [falsifiability page](/docs/reference/falsifiability#isospectral-discrimination) separate the two parameters of experience: states with the same spectrum and different eigenvectors should differ in quality and not in intensity (spectra within $0.01$, $d_{\mathrm{FS}} > 0.05$ rad); a change of context $\Gamma_{-E}$ at fixed $\rho_E$ should change quality and not intensity ($\lvert\Delta P\rvert < 0.05$, report difference at $p < 0.01$). The mathematical basis is that the spectrum carries six numbers and the eigenvector data carry the other 42 ([T-300 [T]](/docs/consciousness/phenomenology/qualia-structure#теорема-пространство-качества)).
+Two distinct hypotheses on the [falsifiability page](/docs/reference/falsifiability#isospectral-discrimination) test whether spectral and frame/context degrees of freedom dissociate [H], and they operate at different architectural levels that must not be conflated: (i) on the native $7\times 7$ matrix $\Gamma$, a nondegenerate spectrum carries 6 real eigenvalues (fixing purity $P$ and canonical reflection $R$) while the unitary orbit carries 42 real parameters ([T-300 [T]](/docs/consciousness/phenomenology/qualia-structure#теорема-пространство-качества)), so isospectral states with distinct declared readouts are hypothesized to differ in quality rather than spectral intensity (spectra within $0.01$, declared ray/state separation $> 0.05$ rad); (ii) context modulation at fixed $\rho_E$ applies only after declaring an extended tensor-product experiential register $\mathcal{H}_E \otimes \mathcal{H}_{-E}$ ([realization contract](/docs/core/structure/dimension-e#rho-e-7d-42d)), since the native $E$-axis is one-dimensional and does not define a non-trivial reduced density matrix $\rho_E$. In that extended setting, canonical differentiation is $D_{\mathrm{diff}} = \exp S_{vN}(\rho_E)$ on $\mathcal{H}_E$ (whereas the native 7D proxy is $D^{7D} = 1 + 6\,\mathrm{Coh}_E(\Gamma)$, never $\exp S_{vN}(\Gamma)$ on the full $7\times 7$ matrix $\Gamma$); varying the complementary context $\Gamma_{-E}$ at fixed $\rho_E$ and bounded global purity shift ($\lvert\Delta P\rvert < 0.05$) is hypothesized to shift reported quality ($p < 0.01$) without changing the $\rho_E$-spectrum.
 
 ### K5. Affect calibration — proposed here [Pr] {#k5-affect}
 
-**Claim under test.** Valence is $\mathrm{sign}(dP/d\tau)$ and arousal is $\lvert dP/d\tau\rvert$ ([C.1 [C]](/docs/consciousness/phenomenology/emotional-taxonomy#базовые-координаты); its condition — that $dP/d\tau$ is a viability signal — is a semantic postulate).
+**Claim under test.** A proposed empirical bridge [H]/[I] maps rated valence to $\mathrm{sign}(dP/d\tau)$ and arousal to $\lvert dP/d\tau\rvert$ ([affective reports and purity change](/docs/consciousness/phenomenology/emotional-taxonomy#базовые-координаты); purity flux $\dot P = 2\operatorname{Tr}(\Gamma\dot\Gamma)$ is purely dynamical and requires an independent outcome to test any hedonic reading, cf. [T-147 [T]](/docs/proofs/consciousness/operational-closure#t-147), where two trace identities bound the Jacobian rank of a differentiable declared 30-feature readout by $\le 28$ without establishing an emotion taxonomy).
 
 **Protocol.** Within-subject time series: continuous valence and arousal ratings during an affect-inducing sequence, and $d\hat P/d\tau$ from $\pi_{\mathrm{bio}}$ with frozen $\theta$. **Pass:** sign agreement between rated valence and $d\hat P/d\tau$ above the rate obtained after circularly shifting the rating series (the null keeps both autocorrelations and breaks the alignment), pre-registered at $p < 0.01$. **Fail:** no agreement above the shifted null.
 
@@ -104,11 +108,11 @@ Treat a correlation between an estimated $E$-coherence and a recovery rate as an
 | $\theta$ frozen on wakefulness; no NREM, anaesthesia, REM or ketamine label in the fit | a verdict that reproduces its own training labels | SUB-1 |
 | $\lambda_2 = 0$ in confirmatory runs | an estimator that contains the predicate | SUB-2 |
 | Phases from EEG, not reaction times | inference data leaking into prediction data | SUB-3 |
-| Axis relabelling: repeat the analysis under the 192 elements of $\Gamma_{\!\text{oct}}$ that keep the $E$-axis | a result that depends on a labelling the functor may not see | [Corollary 3](/docs/proofs/categorical/uniqueness-theorem#верность-функтора) |
+| Basis and encoder sensitivity: repeat the analysis under admissible axis permutations and alternative phase/encoder conventions | a result that is an artefact of an unidentifiable basis or encoder choice (universal finite-group faithfulness is withdrawn, T-42a [✗]) | [identifiability](/docs/applied/research/reconstruction-identifiability); [uniqueness scope](/docs/proofs/categorical/uniqueness-theorem) |
 | Label-shuffle and circular-shift nulls | alignment produced by autocorrelation | standard |
 | Test–retest of every behavioural matrix | an unstable ground truth | [Console V0-VAL](/docs/applied/console/roadmap-validation#v0) |
 | Cross-anchor agreement (self-report against wearable on shared sectors) | two instruments estimating different objects | [Console V1-VAL](/docs/applied/console/roadmap-validation#v1) |
-| Negative control: a planetary index must not modulate $\hat P$ | a pipeline that finds structure anywhere | Console V1-VAL; [T-257](https://homohologra.ph/research/one-grammar#t-257) |
+| Negative control: an unrelated exogenous time series or sham stimulus must not modulate $\hat P$ | a pipeline that finds spurious structure anywhere | standard |
 | Blind raters for any behavioural scoring | expectation effects | [test E10](/docs/consciousness/subjects/ai-consciousness#тест-e10-ethical-threshold) |
 
 ## Statistics {#statistics}

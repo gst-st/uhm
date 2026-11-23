@@ -127,7 +127,7 @@ The uniform state is the limiting case of complete decoherence. All dimensions a
 
 #### Psychological analogy
 
-If one could imagine "consciousness" in this state (which is contradictory since $P < P_{\text{crit}}$), it would be totally diffuse: seven modalities — Action, Structure, Dynamics, Logic, Experience, Objectness, Unity — all present in equal measure, but *none connected to any other*. There is no thought, because thought is correlation. There is no feeling, because feeling is the elevation of one of the seven above the rest. This is not a coma (a coma is a *reduction* in activity); this is maximum activity without direction — like infinite brain noise.
+If one could imagine "consciousness" in this state (which is excluded since $P < P_{\text{crit}}$, `T-5 [D]`), it would be totally diffuse: seven modalities — Articulation, Structure, Dynamics, Logic, Interiority, Ground, Unity — all present in equal measure, but *none connected to any other*. There is no thought, because thought is correlation. There is no feeling, because feeling is the elevation of one of the seven above the rest. This is not a coma (a coma is a *reduction* in activity); this is maximum activity without direction — like infinite brain noise.
 
 #### What we learn from this model
 
@@ -137,49 +137,42 @@ If one could imagine "consciousness" in this state (which is contradictory since
 
 #### Limitations
 
-The model is completely static. It does not answer: *how* does a system reach this state? (Answer: through Fano dissipation without regeneration — that is how the Fano channel works.) Nor does it answer: *can* the system escape? (Answer: only if $\kappa > 0$, through regeneration.)
+The model is completely static. It does not answer: *how* does a system reach this state? (Note: Fano dephasing alone leaves diagonal populations $\gamma_{kk}$ invariant and destroys only off-diagonal coherences — `T-2 [T]`, `T-260 [T]`; reaching the maximally mixed state $I/7$ requires additional population-mixing / depolarizing dissipation or connected Hamiltonian coupling alongside dephasing.) Nor does it answer: *can* the system escape? (Answer: only if $\kappa > 0$, through regeneration toward a non-trivial target $\rho_* \neq I/7$.)
 
 ### 1.4 Python Implementation
 
-```verum
-mount core.math.linalg.{StaticMatrix, identity, eigvalsh};
-mount core.math.complex.Complex;
+```python
+import numpy as np
 
-pub type ModelReport is {
-    p:         Float,
-    s_vn:      Float,
-    gap_total: Float,
-    coh_e:     Float,
-    viable:    Bool,
-};
 
-/// Model 1: Maximally mixed state Γ = I/7.
-public pure fn uniform_system() -> ModelReport {
-    let gamma = identity<Complex, 7>() / Complex.from_real(7.0);
+def uniform_system() -> dict:
+    """Model 1: Maximally mixed state Gamma = I / 7."""
+    gamma = np.eye(7, dtype=complex) / 7.0
 
-    let p = (gamma.matmul(&gamma)).trace().real();                     // 1/7
-    let s_vn = eigvalsh(&gamma).iter()
-        .map(|λ| -λ * (λ + 1.0e-30).ln())
-        .sum();
+    p = float(np.real(np.trace(gamma @ gamma)))  # 1/7
+    eigs = np.linalg.eigvalsh(gamma)
+    s_vn = float(-np.sum(eigs * np.log(np.clip(eigs, 1e-30, None))))
 
-    // Gap operator = Im(Γ) — zero matrix for real diagonal.
-    let gap_total = gamma.imag_part().norm_frobenius();
+    # Gap operator = Im(Gamma) — zero matrix for a real diagonal state.
+    gap_norm_sq = float(np.sum(np.imag(gamma) ** 2))
 
-    const E: Int = 4;
-    let coh_e = (gamma[E, E].real().pow(2)
-                + 2.0 * (0..7).filter(|i| *i != E)
-                               .map(|i| gamma[E, *i].abs().pow(2))
-                               .sum()) / p;
+    E = 4
+    off_e = np.abs(gamma[E, np.arange(7) != E]) ** 2
+    coh_e = float((gamma[E, E].real ** 2 + 2.0 * np.sum(off_e)) / p)
 
-    ModelReport { p: p, s_vn: s_vn, gap_total: gap_total, coh_e: coh_e,
-                  viable: p > 2.0 / 7.0 }
-}
+    return {
+        "p": p,
+        "s_vn": s_vn,
+        "gap_norm_sq": gap_norm_sq,
+        "coh_e": coh_e,
+        "viable": bool(p > 2.0 / 7.0),
+    }
 
-fn main() using [IO] {
-    let r = uniform_system();
-    IO.println(f"P = {r.p:.4f}, Coh_E = {r.coh_e:.4f}, viable = {r.viable}");
-    // P = 0.1429, Coh_E = 0.1429, viable = false
-}
+
+if __name__ == "__main__":
+    r = uniform_system()
+    print(f"P = {r['p']:.4f}, S_vN = {r['s_vn']:.4f}, Coh_E = {r['coh_e']:.4f}, viable = {r['viable']}")
+    # Expected: P = 0.1429, S_vN = 1.9459, Coh_E = 0.1429, viable = False
 ```
 
 ---
@@ -234,7 +227,7 @@ $P = 1$: the system is maximally pure and viable ($P \gg P_{\text{crit}} = 2/7$)
 
 #### Psychological analogy
 
-The pure uniform state is an idealisation of *total self-knowledge*. Every cognitive modality is completely transparent to every other. Structure sees Experience, Logic sees Action, Unity sees Objectness — without distortions, without phase shifts, without Gap.
+The pure uniform state is an idealisation of *total self-knowledge*. Every cognitive modality is completely transparent to every other. Structure sees Interiority, Logic sees Articulation, Unity sees Ground — without distortions, without phase shifts, without Gap.
 
 Sounds wonderful? Not so fast. Note: **Gap is identically zero**. But Gap is a measure of *internal tension*, the source of dynamics, the reason the system seeks, moves, grows. If Gap = 0, the system has *nowhere to aspire*. It is perfect — and dead in another sense: not in the sense of chaos (like $I/7$), but in the sense of lacking *direction*.
 
@@ -262,31 +255,33 @@ This is not the maximum E-coherence: achieving $\mathrm{Coh}_E = 1$ requires con
 
 ### 2.5 Python Implementation
 
-```verum
-/// Model 2: Pure state with uniform superposition |ψ⟩ = (1/√7) Σ|k⟩.
-public fn pure_uniform() using [IO]
-    -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
-{
-    let psi = StaticVector<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
-    let gamma = psi.outer(psi.conjugate());
+```python
+import numpy as np
 
-    let p = (gamma.matmul(&gamma)).trace().real();                                       // 1.0
-    let theta = gamma.map(|c| c.arg());                                             // zero
-    let gap_matrix = theta.map(|φ| φ.sin().abs());                                  // zero
 
-    const E: Int = 4;
-    let coh_e = (gamma[E, E].real().pow(2)
-                + 2.0 * (0..7).filter(|i| *i != E)
-                               .map(|i| gamma[E, *i].abs().pow(2))
-                               .sum()) / p;
+def pure_uniform() -> tuple[np.ndarray, np.ndarray]:
+    """Model 2: Pure uniform superposition |psi> = (1/sqrt(7)) sum_k |k>."""
+    psi = np.ones(7, dtype=complex) / np.sqrt(7.0)
+    gamma = np.outer(psi, psi.conj())
 
-    IO.println(f"P = {p:.4f}");
-    IO.println(f"Coh_E = {coh_e:.4f}");
-    IO.println(f"Gap (max) = {gap_matrix.max_element():.6f}");
-    IO.println(f"All θ_ij = 0: {gap_matrix.frobenius_norm() < 1.0e-12}");
-    (gamma, gap_matrix)
-}
-// Expected: P = 1.0000, Coh_E = 0.2653, Gap (max) = 0.000000
+    p = float(np.real(np.trace(gamma @ gamma)))  # 1.0
+    theta = np.angle(gamma)                      # all zeros
+    gap_matrix = np.abs(np.sin(theta))           # all zeros
+
+    E = 4
+    off_e = np.abs(gamma[E, np.arange(7) != E]) ** 2
+    coh_e = float((gamma[E, E].real ** 2 + 2.0 * np.sum(off_e)) / p)
+
+    print(f"P = {p:.4f}")
+    print(f"Coh_E = {coh_e:.4f}")
+    print(f"Gap (max) = {gap_matrix.max():.6f}")
+    print(f"All theta_ij = 0: {np.linalg.norm(gap_matrix) < 1e-12}")
+    return gamma, gap_matrix
+
+
+if __name__ == "__main__":
+    pure_uniform()
+    # Expected: P = 1.0000, Coh_E = 0.2653, Gap (max) = 0.000000
 ```
 
 ---
@@ -316,8 +311,8 @@ where the phases are defined via Fibonacci numbers $F_n$ (mod 7):
 | 3 | D | 2 | 2 | $4\pi/7$ |
 | 4 | L | 3 | 3 | $6\pi/7$ |
 | 5 | E | 5 | 5 | $10\pi/7$ |
-| 6 | O | 8 | 1 | $2\pi/7$ |
-| 7 | U | 13 | 6 | $12\pi/7$ |
+| 6 | U | 8 | 1 | $2\pi/7$ |
+| 7 | O | 13 | 6 | $12\pi/7$ |
 
 #### Why Fibonacci?
 
@@ -341,15 +336,15 @@ $$
 
 Explicit table $\Delta_{kl}$:
 
-| | A(1) | S(1) | D(2) | L(3) | E(5) | O(1) | U(6) |
+| | A(1) | S(1) | D(2) | L(3) | E(5) | U(1) | O(6) |
 |---|---|---|---|---|---|---|---|
 | **A(1)** | 0 | 0 | 6 | 5 | 3 | 0 | 2 |
 | **S(1)** | 0 | 0 | 6 | 5 | 3 | 0 | 2 |
 | **D(2)** | 1 | 1 | 0 | 6 | 4 | 1 | 3 |
 | **L(3)** | 2 | 2 | 1 | 0 | 5 | 2 | 4 |
 | **E(5)** | 4 | 4 | 3 | 2 | 0 | 4 | 6 |
-| **O(1)** | 0 | 0 | 6 | 5 | 3 | 0 | 2 |
-| **U(6)** | 5 | 5 | 4 | 3 | 1 | 5 | 0 |
+| **U(1)** | 0 | 0 | 6 | 5 | 3 | 0 | 2 |
+| **O(6)** | 5 | 5 | 4 | 3 | 1 | 5 | 0 |
 
 ### 3.3 Gap Profile [T]
 
@@ -367,15 +362,15 @@ $\mathrm{Gap}(k,l) = |\sin(2\pi\Delta_{kl}/7)|$. Using values $\sin(2\pi n/7)$:
 
 Full Gap matrix $\mathrm{Gap}(k,l)$:
 
-| | A | S | D | L | E | O | U |
+| | A | S | D | L | E | U | O |
 |---|---|---|---|---|---|---|---|
 | **A** | 0 | 0 | 0.782 | 0.975 | 0.434 | 0 | 0.975 |
 | **S** | 0 | 0 | 0.782 | 0.975 | 0.434 | 0 | 0.975 |
 | **D** | 0.782 | 0.782 | 0 | 0.782 | 0.434 | 0.782 | 0.434 |
 | **L** | 0.975 | 0.975 | 0.782 | 0 | 0.975 | 0.975 | 0.434 |
 | **E** | 0.434 | 0.434 | 0.434 | 0.975 | 0 | 0.434 | 0.782 |
-| **O** | 0 | 0 | 0.782 | 0.975 | 0.434 | 0 | 0.975 |
-| **U** | 0.975 | 0.975 | 0.434 | 0.434 | 0.782 | 0.975 | 0 |
+| **U** | 0 | 0 | 0.782 | 0.975 | 0.434 | 0 | 0.975 |
+| **O** | 0.975 | 0.975 | 0.434 | 0.434 | 0.782 | 0.975 | 0 |
 
 #### What the Gap matrix reveals
 
@@ -383,7 +378,7 @@ Let us look at this matrix with our eyes, not just formulas:
 
 - **Cluster {A, S, U}** — three dimensions with zero mutual Gap. They are in phase and completely transparent to each other. This is the *coherence core* of the model.
 - **L and O** — two dimensions with maximum Gap values (~0.975) relative to the {A, S, U} cluster. They are *most hidden* from the core.
-- **E (Experience)** — has the softest Gap values (~0.434) relative to most dimensions. Experience is "semi-transparent" — partially visible, partially hidden.
+- **E (Interiority)** — has the softest Gap values (~0.434) relative to most dimensions. Interiority is "semi-transparent" — partially visible, partially hidden.
 - **D (Dynamics)** — uniformly distributed Gap (~0.434–0.782), a "mediator" between the cluster and the periphery.
 
 These are not just numbers — they are the *architecture of an inner world*.
@@ -415,12 +410,12 @@ An intriguing question: is there a connection between the Fibonacci sequence and
 | Quantity | Value |
 |----------|-------|
 | $P$ | $1$ (pure state) |
-| $\|\hat{\mathcal{G}}\|_F^2$ | $\frac{1}{49}\sum_{k<l} \sin^2(2\pi\Delta_{kl}/7) \approx 0.1049$ |
+| $\|\hat{\mathcal{G}}\|_F^2$ | $\frac{2}{49}\sum_{k<l} \sin^2(2\pi\Delta_{kl}/7) \approx 0.4424$ ($\|\hat{\mathcal{G}}\|_F \approx 0.6651$) |
 | $\mathrm{Coh}_E$ | $13/49 \approx 0.265$ (invariant of pure state with $\lvert\gamma_{kl}\rvert=1/7$) |
 | $\kappa$ | $\kappa_{\text{bootstrap}} + \kappa_0 \cdot 13/49$ |
 | Mean Gap | $\frac{1}{21}\sum_{k<l}\mathrm{Gap}(k,l) = \frac{7\sin\frac{4\pi}{7} + 6\sin\frac{\pi}{7} + 5\sin\frac{2\pi}{7}}{21} \approx 0.6351$ |
 
-> **Numerical check.** Enumerating the multiset of phase differences gives the mean $0.6351$ in the table. The purity and E share are independent checks on the same preparation.
+> **Numerical check.** Enumerating the multiset of phase differences gives the mean $0.6351$ and $\|\hat{\mathcal{G}}\|_F^2 = \sum_{k,l}(\mathrm{Im}\,\gamma_{kl})^2 \approx 0.4424$ in the table. The purity and E share are independent checks on the same preparation.
 
 
 #### What we learn from this model
@@ -435,65 +430,59 @@ The model does not account for dynamics: the cluster {A, S, U} and the high Gap 
 
 ### 3.6 Python Implementation
 
-```verum
-mount core.math.constants.PI;
+```python
+import numpy as np
 
-/// Model 3: Pure state with Fibonacci phases mod 7.
-public fn fibonacci_phases() using [IO]
-    -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
-{
-    // F₁…F₇ mod 7.
-    const FIB_MOD7: [Int; 7] = [1, 1, 2, 3, 5, 1, 6];
 
-    let psi = StaticVector<Complex, 7>.from_array(
-        FIB_MOD7.map(|f| (Complex.i() * Complex.from_real(2.0 * PI * (f as Float) / 7.0)).exp())
-    ) / Complex.from_real(7.0.sqrt());
+def fibonacci_phases() -> tuple[np.ndarray, np.ndarray]:
+    """Model 3: Pure state with Fibonacci phases modulo 7."""
+    # F_1 ... F_7 mod 7 (octonionic labelling: U = e_6 [idx 5], O = e_7 [idx 6])
+    fib_mod7 = np.array([1, 1, 2, 3, 5, 1, 6])
+    dims = ["A", "S", "D", "L", "E", "U", "O"]
 
-    let gamma = psi.outer(psi.conjugate());
-    let p = (gamma.matmul(&gamma)).trace().real();
-    let theta = gamma.map(|c| c.arg());
-    let gap_matrix = theta.map(|φ| φ.sin().abs());
+    psi = np.exp(1j * 2.0 * np.pi * fib_mod7 / 7.0) / np.sqrt(7.0)
+    gamma = np.outer(psi, psi.conj())
 
-    // Octonionic labelling: U = e₆ (idx 5), O = e₇ (idx 6).
-    const DIMS: [Text; 7] = ["A", "S", "D", "L", "E", "U", "O"];
+    p = float(np.real(np.trace(gamma @ gamma)))
+    gap_matrix = np.abs(np.sin(np.angle(gamma)))
 
-    IO.println("Gap matrix:");
-    IO.println(f"    {DIMS.map(|d| f"{d:>5}").join("  ")}");
-    for i in 0..7 {
-        let row = (0..7).map(|j| f"{gap_matrix[i, j]:5.3f}").join("  ");
-        IO.println(f"{DIMS[i]:>2}  {row}");
-    }
+    print("Gap matrix:")
+    print("    " + "  ".join(f"{d:>5}" for d in dims))
+    for i, d in enumerate(dims):
+        row = "  ".join(f"{gap_matrix[i, j]:5.3f}" for j in range(7))
+        print(f"{d:>2}  {row}")
 
-    // Gap operator: ‖Im Γ‖_F².
-    let g_total = gamma.imag_part().norm_frobenius();
-    IO.println(f"\nP = {p:.4f}");
-    IO.println(f"||G_hat||_F^2 = {g_total:.4f}");
+    # Squared Frobenius norm of Gap operator: ||Im(Gamma)||_F^2
+    g_norm_sq = float(np.sum(np.imag(gamma) ** 2))
+    print(f"\nP = {p:.4f}")
+    print(f"||G_hat||_F^2 = {g_norm_sq:.4f}")
 
-    const E: Int = 4;
-    let coh_e = (gamma[E, E].real().pow(2)
-                + 2.0 * (0..7).filter(|i| *i != E)
-                               .map(|i| gamma[E, *i].abs().pow(2))
-                               .sum()) / p;
-    IO.println(f"Coh_E = {coh_e:.4f}");
+    E = 4
+    off_e = np.abs(gamma[E, np.arange(7) != E]) ** 2
+    coh_e = float((gamma[E, E].real ** 2 + 2.0 * np.sum(off_e)) / p)
+    print(f"Coh_E = {coh_e:.4f}")
 
-    // Mean Gap over 21 independent off-diagonal pairs.
-    let mut sum_gap = 0.0;
-    let mut count  = 0;
-    for i in 0..7 { for j in (i + 1)..7 { sum_gap += gap_matrix[i, j]; count += 1; } }
-    IO.println(f"Mean Gap = {sum_gap / (count as Float):.4f}");
+    # Mean Gap over 21 independent off-diagonal pairs
+    iu = np.triu_indices(7, k=1)
+    mean_gap = float(np.mean(gap_matrix[iu]))
+    print(f"Mean Gap = {mean_gap:.4f}")
 
-    // Fano-line analysis.
-    const FANO_LINES: [(Int, Int, Int); 7] = [
-        (0, 1, 3), (1, 2, 4), (2, 3, 5), (3, 4, 6), (4, 5, 0), (5, 6, 1), (6, 0, 2),
-    ];
-    IO.println("\nGap by Fano lines:");
-    for (i, j, k) in FANO_LINES {
-        let mean = (gap_matrix[i, j] + gap_matrix[i, k] + gap_matrix[j, k]) / 3.0;
-        IO.println(f"  {{{DIMS[i]},{DIMS[j]},{DIMS[k]}}}: mean Gap = {mean:.3f}");
-    }
+    # Canonical Fano-line analysis
+    fano_lines = [
+        (0, 1, 3), (1, 2, 4), (2, 3, 5), (3, 4, 6),
+        (4, 5, 0), (5, 6, 1), (6, 0, 2),
+    ]
+    print("\nGap by Fano lines:")
+    for i, j, k in fano_lines:
+        mean_line = (gap_matrix[i, j] + gap_matrix[i, k] + gap_matrix[j, k]) / 3.0
+        print(f"  {{{dims[i]},{dims[j]},{dims[k]}}}: mean Gap = {mean_line:.3f}")
 
-    (gamma, gap_matrix)
-}
+    return gamma, gap_matrix
+
+
+if __name__ == "__main__":
+    fibonacci_phases()
+    # Expected: P = 1.0000, ||G_hat||_F^2 = 0.4424, Coh_E = 0.2653, Mean Gap = 0.6351
 ```
 
 ---
@@ -506,7 +495,7 @@ The previous models were "global" — we varied properties of $\Gamma$ as a whol
 
 ### 4.1 Definition [D]
 
-**Alexithymia** (from Greek a- "without", lexis "word", thymos "feeling") — the inability to recognise and verbalise one's own emotions. In Gap-dynamics terms: maximal opacity between the Structure (S) and Experience (E) dimensions.
+**Alexithymia** (from Greek a- "without", lexis "word", thymos "feeling") — the inability to recognise and verbalise one's own emotions. In Gap-dynamics terms: maximal opacity between the Structure (S) and Interiority (E) dimensions.
 
 :::tip Model definition [D]
 An alexithymic state — a coherence matrix $\Gamma_{\text{alex}}$ in which:
@@ -540,8 +529,8 @@ $$
 
 where $c > 0$ is the coherence parameter. For hermiticity: $\gamma_{SE} = ci$, $\gamma_{ES} = \overline{\gamma_{SE}} = -ci$.
 
-:::warning Positivity check
-The matrix $\Gamma_{\text{alex}}$ must be positive semidefinite. This imposes constraints on $c$. For $c = 0.08$ (with $\gamma_{ii} = 1/7 \approx 0.143$) the matrix is admissible.
+:::warning Positivity check [T]
+The matrix $\Gamma_{\text{alex}}$ must be positive semidefinite ($\Gamma_{\text{alex}} \succeq 0$). Because rotating $\gamma_{SE}$ from $+c$ to $+ic$ breaks the rank-1 uniform off-diagonal structure, the admissible range is strictly narrower than $c < 1/7$: numerically, positivity holds for $0 \le c \le c_{\max} \approx 0.0677$ (for example, $c = 0.08$ gives $\lambda_{\min} \approx -0.0260 < 0$ and is **inadmissible**!). Choosing $c = 0.06$ yields a strictly positive-definite viable state ($\lambda_{\min} \approx +0.0162 > 0$, $P = 1/7 + 42c^2 \approx 0.2941 > 2/7$, $\mathrm{Coh}_E \approx 0.2163$).
 :::
 
 ### 4.3 Effect on E-coherence [T]
@@ -568,23 +557,23 @@ E-coherence $\mathrm{Coh}_E$ depends on $|\gamma_{Ei}|^2$, not on phases. Theref
 
 This is a counterintuitive and important result: *the pathology is invisible in energy indicators*. $\mathrm{Coh}_E$ is the "metabolism", and it is normal. But *functional connectivity* — Gap — screams of a problem. Medical analogy: a patient with a severed corpus callosum may have normal EEG power in both hemispheres but zero interhemispheric coherence.
 
-### 4.4 Cascade Effect on Viability [C]
+### 4.4 Cascade Effect on Viability [H]
 
-Although $\mathrm{Coh}_E$ does not change under a single phase rotation, the **dynamical** consequence of alexithymia leads to cascading degradation. The mechanism:
+Although $\mathrm{Coh}_E$ does not change under a single phase rotation, a **hypothetical dynamical** consequence of persistent alexithymia is cascading degradation (`[H]` — qualitative hypothesis, not yet analytically solved for the full nonlinear CC evolution). The schematic mechanism:
 
-1. $\mathrm{Gap}(S,E) = 1$ $\Rightarrow$ the S-dimension "cannot see" the E-dimension
-2. The self-modelling operator $\varphi$ loses access to E-data via the S-channel
-3. Reflexivity $R = 1/(7P)$ drops (as $P$ grows)
+1. $\mathrm{Gap}(S,E) = 1$ $\Rightarrow$ the S-dimension cannot decode the phase of the E-dimension
+2. The self-modelling operator $\varphi$ loses operational fidelity on the E-sector via the S-channel
+3. Self-model accuracy drops (note: we refer to operational self-model fidelity $F(\Gamma, \varphi(\Gamma))$, *not* the algebraic purity ratio $R(\Gamma) = 1/(7P)$ of the linear anchor-mixing family, which would increase rather than decrease when $P$ falls)
 4. Suboptimality of $\varphi$ $\Rightarrow$ dissipation exceeds regeneration
-5. $P$ drifts toward $P_{\text{crit}} = 2/7$
+5. $P$ drifts toward $P_{\text{crit}} = 2/7$ (`T-5 [D]`)
 
-Quantitative estimate of the cascade effect:
+Schematic scalar estimate of the purity balance (`[H]`):
 
 $$
 \frac{dP}{d\tau}\bigg|_{\text{alex}} = \underbrace{-2\gamma_d \cdot P}_{\text{dissipation}} + \underbrace{2\kappa(\Gamma)(f - P)}_{\text{regeneration}}
 $$
 
-where $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$. Under prolonged alexithymia $\mathrm{Coh}_E$ begins to fall (through degradation of $|\gamma_{Ei}|$), $\kappa$ decreases, and $P \to P_{\text{crit}}$.
+where $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$. Under prolonged alexithymia, if $|\gamma_{Ei}|$ degrades, $\mathrm{Coh}_E$ falls, $\kappa$ decreases, and $P \to P_{\text{crit}}$.
 
 #### Clinical parallels
 
@@ -620,66 +609,67 @@ Minimality of rank ($r_G = 2$) — this is a *point* defect. One can imagine mor
 
 ### 4.7 Python Implementation
 
-```verum
-mount core.math.linalg.matrix_rank;
+```python
+import numpy as np
 
-/// Model 4: Alexithymia — pure phase defect on the (S, E) channel, Gap = 1.
-public fn alexithymia_model(c: Float { 0.0 < self && self < 1.0 / 7.0 }) using [IO]
-    -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
-{
-    // Base matrix: uniform diagonal + real coherences.
-    let mut gamma = StaticMatrix<Complex, 7, 7>.filled(Complex.from_real(c));
-    for i in 0..7 { gamma[i, i] = Complex.from_real(1.0 / 7.0); }
 
-    // Alexithymic defect: S = 1, E = 4 → purely imaginary coherence.
-    const S_IDX: Int = 1;
-    const E_IDX: Int = 4;
-    gamma[S_IDX, E_IDX] = Complex.i() * Complex.from_real(c);   // γ_SE = ic
-    gamma[E_IDX, S_IDX] = -Complex.i() * Complex.from_real(c);  // γ_ES = −ic (Hermiticity)
+def alexithymia_model(c: float = 0.06) -> tuple[np.ndarray, np.ndarray]:
+    """Model 4: Alexithymia — pure phase defect on (S, E) with Gap(S, E) = 1.
 
-    // Hermiticity and positivity — runtime checks (invariants enforced by CoherenceMatrix refinement at use-site).
-    assert!((&gamma - gamma.adjoint()).frobenius_norm() < 1.0e-10, "not Hermitian");
-    let eigs = eigvalsh(&gamma);
-    assert!(eigs.iter().all(|λ| *λ >= -1.0e-12), "not positive");
+    Positivity requires 0 < c <= c_max ≈ 0.0677.
+    """
+    if not (0.0 < c <= 0.0676):
+        raise ValueError(f"c={c} outside the safe positive-semidefinite range (0, 0.0676]")
 
-    let p = (gamma.matmul(&gamma)).trace().real();
-    let gap_se = gamma[S_IDX, E_IDX].arg().sin().abs();
-    let g_hat = gamma.imag_part();
-    let r_g = matrix_rank(&g_hat, 1.0e-10);
-    let g_total = g_hat.norm_frobenius();
+    # Base matrix: uniform diagonal + real off-diagonal coherences
+    gamma = np.full((7, 7), c, dtype=complex)
+    np.fill_diagonal(gamma, 1.0 / 7.0)
 
-    let coh_e = (gamma[E_IDX, E_IDX].real().pow(2)
-                + 2.0 * (0..7).filter(|i| *i != E_IDX)
-                               .map(|i| gamma[E_IDX, *i].abs().pow(2))
-                               .sum()) / p;
+    # Alexithymic defect: S = 1, E = 4 -> purely imaginary coherence
+    S_IDX, E_IDX = 1, 4
+    gamma[S_IDX, E_IDX] = 1j * c   # gamma_SE = +ic
+    gamma[E_IDX, S_IDX] = -1j * c  # gamma_ES = -ic (Hermiticity)
 
-    // κ = κ_bootstrap + κ₀·Coh_E, with ω₀ = 1, κ₀ = ω₀.
-    const OMEGA_0: Float = 1.0;
-    const KAPPA_0: Float = OMEGA_0;
-    const KAPPA_BOOTSTRAP: Float = OMEGA_0 / 7.0;
-    let kappa = KAPPA_BOOTSTRAP + KAPPA_0 * coh_e;
+    # Hermiticity and positive-semidefiniteness checks
+    assert np.allclose(gamma, gamma.conj().T, atol=1e-12), "not Hermitian"
+    eigs = np.linalg.eigvalsh(gamma)
+    assert np.all(eigs >= -1e-12), f"not positive semidefinite: min eig = {eigs.min():.6f}"
 
-    const P_CRIT: Float = 2.0 / 7.0;
-    IO.println(f"P = {p:.4f}, P_crit = {P_CRIT:.4f}, margin = {p - P_CRIT:.4f}");
-    IO.println(f"Gap(S,E) = {gap_se:.4f}");
-    IO.println(f"Gap operator rank r_G = {r_g}");
-    IO.println(f"||G_hat||_F^2 = {g_total:.6f}");
-    IO.println(f"Coh_E = {coh_e:.4f}");
-    IO.println(f"kappa = {kappa:.4f}");
+    p = float(np.real(np.trace(gamma @ gamma)))
+    gap_se = float(np.abs(np.sin(np.angle(gamma[S_IDX, E_IDX]))))
+    g_hat = np.imag(gamma)
+    r_g = int(np.linalg.matrix_rank(g_hat, tol=1e-10))
+    g_norm_sq = float(np.sum(g_hat ** 2))
 
-    // Compare against a normal reference (alexithymic defect removed).
-    let mut gamma_normal = StaticMatrix<Complex, 7, 7>.filled(Complex.from_real(c));
-    for i in 0..7 { gamma_normal[i, i] = Complex.from_real(1.0 / 7.0); }
-    let g_total_normal = gamma_normal.imag_part().norm_frobenius();
-    IO.println(f"\nComparison: ||G_hat||_F^2 normal = {g_total_normal:.6f}, \
-                 alexithymic = {g_total:.6f}");
+    off_e = np.abs(gamma[E_IDX, np.arange(7) != E_IDX]) ** 2
+    coh_e = float((gamma[E_IDX, E_IDX].real ** 2 + 2.0 * np.sum(off_e)) / p)
 
-    (gamma, g_hat)
-}
+    # kappa = kappa_bootstrap + kappa_0 * Coh_E, with omega_0 = 1, kappa_0 = omega_0
+    omega_0 = 1.0
+    kappa = omega_0 / 7.0 + omega_0 * coh_e
 
-fn main() using [IO] {
-    let _ = alexithymia_model(0.08);
-}
+    p_crit = 2.0 / 7.0
+    print(f"min_eig = {eigs.min():.6f} (> 0, strictly PSD)")
+    print(f"P = {p:.4f}, P_crit = {p_crit:.4f}, margin = {p - p_crit:.4f}")
+    print(f"Gap(S,E) = {gap_se:.4f}")
+    print(f"Gap operator rank r_G = {r_g}")
+    print(f"||G_hat||_F^2 = {g_norm_sq:.6f}")
+    print(f"Coh_E = {coh_e:.4f}")
+    print(f"kappa = {kappa:.4f}")
+
+    # Compare against normal reference (alexithymic defect removed)
+    gamma_normal = np.full((7, 7), c, dtype=complex)
+    np.fill_diagonal(gamma_normal, 1.0 / 7.0)
+    g_norm_sq_normal = float(np.sum(np.imag(gamma_normal) ** 2))
+    print(f"\nComparison: ||G_hat||_F^2 normal = {g_norm_sq_normal:.6f}, alexithymic = {g_norm_sq:.6f}")
+
+    return gamma, g_hat
+
+
+if __name__ == "__main__":
+    alexithymia_model(0.06)
+    # Expected: min_eig = 0.016233, P = 0.2941, margin = 0.0083,
+    #           Gap(S,E) = 1.0000, r_G = 2, ||G_hat||_F^2 = 0.007200, Coh_E = 0.2163
 ```
 
 ---
@@ -707,13 +697,13 @@ $$
 Phases of coherences:
 
 $$
-\theta_{kl}(\tau) = \theta_{kl}(0) + (\omega_k - \omega_l)\tau
+\theta_{kl}(\tau) = \theta_{kl}(0) - (\omega_k - \omega_l)\tau
 $$
 
 Gap evolves as:
 
 $$
-\mathrm{Gap}(k,l;\tau) = |\sin(\theta_{kl}(0) + \Omega_{kl}\tau)|, \quad \Omega_{kl} := \omega_k - \omega_l
+\mathrm{Gap}(k,l;\tau) = |\sin(\theta_{kl}(0) - \Omega_{kl}\tau)|, \quad \Omega_{kl} := \omega_k - \omega_l
 $$
 
 #### Physical analogy
@@ -734,7 +724,7 @@ $$
 where $\mathrm{lcm}$ is the least common multiple (defined for rational multiples of a base frequency).
 :::
 
-**Proof.** Let $\Omega_{kl} = n_{kl} \cdot \omega_0$ for $n_{kl} \in \mathbb{Z}$, $\omega_0$ — base frequency. Then $\mathrm{Gap}(k,l;\tau + 2\pi/\omega_0) = |\sin(\theta_{kl}(0) + n_{kl}\omega_0(\tau + 2\pi/\omega_0))| = |\sin(\theta_{kl}(0) + n_{kl}\omega_0\tau + 2\pi n_{kl})| = \mathrm{Gap}(k,l;\tau)$. Period: $T = 2\pi/\omega_0$. $\square$
+**Proof.** Let $\Omega_{kl} = n_{kl} \cdot \omega_0$ for $n_{kl} \in \mathbb{Z}$, $\omega_0$ — base frequency. Then $\mathrm{Gap}(k,l;\tau + 2\pi/\omega_0) = |\sin(\theta_{kl}(0) - n_{kl}\omega_0(\tau + 2\pi/\omega_0))| = |\sin(\theta_{kl}(0) - n_{kl}\omega_0\tau - 2\pi n_{kl})| = \mathrm{Gap}(k,l;\tau)$. Period: $T = 2\pi/\omega_0$. $\square$
 
 **Example.** $H = \mathrm{diag}(0, 1, 2, 3, 4, 5, 6) \cdot \omega_0$. All $\Omega_{kl} = (k-l)\omega_0 \in \mathbb{Z}\omega_0$. Period $T = 2\pi/\omega_0$.
 
@@ -748,12 +738,12 @@ Periodic orbits are a world with *finite memory*. The system "remembers" its pas
 If among the frequency differences $\{\Omega_{kl}\}$ there exist rationally **incommensurable** pairs, then the Gap orbit $\tau \mapsto \{\theta_{kl}(\tau) \bmod 2\pi\}$ is **quasiperiodic** and densely fills the $d$-dimensional torus $\mathbb{T}^d$, where $d$ is the number of linearly independent (over $\mathbb{Q}$) frequency differences.
 :::
 
-**Proof.** The phase vector $\boldsymbol{\theta}(\tau) = \boldsymbol{\theta}(0) + \boldsymbol{\Omega}\tau$ on the torus $\mathbb{T}^{21}$ (21 independent pairs). By Weyl's equidistribution theorem, if $\Omega_1, \ldots, \Omega_d$ are linearly independent over $\mathbb{Q}$, the orbit is dense in $\mathbb{T}^d$ and uniformly distributed. $\square$
+**Proof.** The phase vector $\boldsymbol{\theta}(\tau) = \boldsymbol{\theta}(0) - \boldsymbol{\Omega}\tau$ on the torus $\mathbb{T}^{21}$ (21 independent pairs). By Weyl's equidistribution theorem, if $\Omega_1, \ldots, \Omega_d$ are linearly independent over $\mathbb{Q}$, the orbit is dense in $\mathbb{T}^d$ and uniformly distributed. $\square$
 
 **Corollary.** Time-averaged Gap:
 
 $$
-\overline{\mathrm{Gap}(k,l)} = \lim_{T \to \infty} \frac{1}{T}\int_0^T |\sin(\theta_{kl}(0) + \Omega_{kl}\tau)|\,d\tau = \frac{2}{\pi} \approx 0.637
+\overline{\mathrm{Gap}(k,l)} = \lim_{T \to \infty} \frac{1}{T}\int_0^T |\sin(\theta_{kl}(0) - \Omega_{kl}\tau)|\,d\tau = \frac{2}{\pi} \approx 0.637
 $$
 
 for all pairs $(k,l)$ with $\Omega_{kl} \neq 0$ (irrational or rational — the result is the same for any $\Omega_{kl} \neq 0$).
@@ -780,7 +770,7 @@ In [Gap dynamics](/docs/core/dynamics/gap-dynamics) quasiperiodic orbits are con
 
 ### 5.5 Concrete Example: Golden Ratio [D]
 
-Choose $H = \mathrm{diag}(0, 1, \phi, \phi^2, 2\phi, \phi+1, 2)$ where $\phi = (1+\sqrt{5})/2$ is the golden ratio. Among the differences $\omega_k - \omega_l$ there are both rational ($\omega_6 - \omega_1 = 2$) and irrational ($\omega_2 - \omega_1 = \phi$) ones. The torus has $d = 2$ independent frequencies ($1$ and $\phi$), and the orbit densely fills $\mathbb{T}^2$.
+Choose $H = \mathrm{diag}(0, 1, \phi, \phi^2, 2\phi, \phi+2, 2)$ where $\phi = (1+\sqrt{5})/2$ is the golden ratio (since $\phi^2 = \phi + 1$, replacing $\phi+1$ by $\phi+2$ keeps all 7 eigenvalues strictly distinct with $\min_{k\neq l}|\omega_k - \omega_l| = 2 - \phi \approx 0.382$). Among the differences $\omega_k - \omega_l$ there are both rational ($\omega_7 - \omega_1 = 2$) and irrational ($\omega_3 - \omega_1 = \phi$) ones. The torus has $d = 2$ independent frequencies ($1$ and $\phi$), and the orbit densely fills $\mathbb{T}^2$.
 
 #### Why the golden ratio?
 
@@ -799,93 +789,66 @@ The unitary model is beautiful but *non-physical* for living systems. Without di
 
 ### 5.8 Python Implementation
 
-```verum
-pub type RegimeKind is Rational | Irrational;
+```python
+import numpy as np
 
-/// Model 5: Evolution with rational/irrational frequencies.
-public fn dynamic_system(regime: RegimeKind, tau_max: Float, dt: Float) using [IO]
-    -> (List<Float>, List<(Float, Float)>, List<Float>)
-    where requires tau_max > 0.0 && dt > 0.0 && dt < tau_max
-{
-    let phi_golden = (1.0 + 5.0.sqrt()) / 2.0;
 
-    let (omega, label): (StaticVector<Float, 7>, Text) = match regime {
-        RegimeKind.Rational =>
-            (StaticVector.from_array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0]), "rational".text()),
-        RegimeKind.Irrational =>
-            (StaticVector.from_array([
-                0.0, 1.0, phi_golden, phi_golden.pow(2),
-                2.0 * phi_golden, phi_golden + 1.0, 2.0,
-            ]), "irrational".text()),
-    };
+def dynamic_system(
+    rational: bool = True,
+    tau_max: float = 200.0,
+    dt: float = 0.05,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Model 5: Pure unitary evolution with rational or irrational frequencies."""
+    phi = (1.0 + np.sqrt(5.0)) / 2.0
+    if rational:
+        omega = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0])
+        label = "rational"
+    else:
+        # All 7 eigenvalues distinct (phi^2 = phi + 1 != phi + 2)
+        omega = np.array([0.0, 1.0, phi, phi**2, 2.0 * phi, phi + 2.0, 2.0])
+        label = "irrational"
 
-    // Initial state: pure with Fibonacci phases (Model 3).
-    const FIB_MOD7: [Int; 7] = [1, 1, 2, 3, 5, 1, 6];
-    let psi_0 = StaticVector<Complex, 7>.from_array(
-        FIB_MOD7.map(|f| (Complex.i() * Complex.from_real(2.0 * PI * (f as Float) / 7.0)).exp())
-    ) / Complex.from_real(7.0.sqrt());
-    let gamma_0 = psi_0.outer(psi_0.conjugate());
+    # Initial state: pure with Fibonacci phases (Model 3)
+    fib_mod7 = np.array([1, 1, 2, 3, 5, 1, 6])
+    psi_0 = np.exp(1j * 2.0 * np.pi * fib_mod7 / 7.0) / np.sqrt(7.0)
+    gamma_0 = np.outer(psi_0, psi_0.conj())
 
-    let n_steps = (tau_max / dt) as Int;
-    let mut gap_history = List.new();
-    let mut p_history   = List.new();
-    let mut tau_vals    = List.new();
+    tau_vals = np.arange(0.0, tau_max, dt)
+    gap_history = np.empty((len(tau_vals), 2), dtype=float)
+    p_history = np.empty(len(tau_vals), dtype=float)
 
-    for step in 0..n_steps {
-        let tau = (step as Float) * dt;
-        let u_diag = omega.map(|w| (Complex.i().neg() * Complex.from_real(w * tau)).exp());
-        let u = StaticMatrix<Complex, 7, 7>.diagonal(u_diag);
-        let gamma_t = u.matmul(&gamma_0).matmul(&u.adjoint());
+    for idx, tau in enumerate(tau_vals):
+        u = np.exp(-1j * omega * tau)
+        gamma_t = (u[:, None] * gamma_0) * u.conj()[None, :]
 
-        let p = (gamma_t.matmul(&gamma_t)).trace().real();
-        let gap_as = gamma_t[0, 1].arg().sin().abs();
-        let gap_se = gamma_t[1, 4].arg().sin().abs();
+        p_history[idx] = float(np.real(np.trace(gamma_t @ gamma_t)))
+        gap_history[idx, 0] = float(np.abs(np.sin(np.angle(gamma_t[0, 1]))))  # Gap(A, S)
+        gap_history[idx, 1] = float(np.abs(np.sin(np.angle(gamma_t[1, 4]))))  # Gap(S, E)
 
-        gap_history.push((gap_as, gap_se));
-        p_history.push(p);
-        tau_vals.push(tau);
-    }
+    print(f"Regime: {label}")
+    print(f"Mean Gap(A,S) = {gap_history[:, 0].mean():.4f}")
+    print(f"Mean Gap(S,E) = {gap_history[:, 1].mean():.4f}")
+    print(f"Theoretical limit (2/pi) = {2.0 / np.pi:.4f}")
+    print(f"P = const = {p_history[0]:.4f} (std = {p_history.std():.2e})")
 
-    let mean_gap_as: Float = gap_history.iter().map(|(a, _)| *a).sum<Float>()
-                            / (gap_history.len() as Float);
-    let mean_gap_se: Float = gap_history.iter().map(|(_, b)| *b).sum<Float>()
-                            / (gap_history.len() as Float);
+    if rational:
+        idx_period = int(round(2.0 * np.pi / dt))
+        if idx_period < len(gap_history):
+            diff = float(np.max(np.abs(gap_history[idx_period] - gap_history[0])))
+            print(f"Deviation after period T=2*pi: {diff:.2e}")
+    else:
+        rounded = np.round(gap_history * 1e4).astype(int)
+        unique_gaps = len({(int(a), int(b)) for a, b in rounded})
+        print(f"Unique Gap configurations: {unique_gaps}/{len(gap_history)}")
 
-    IO.println(f"Regime: {label}");
-    IO.println(f"Mean Gap(A,S) = {mean_gap_as:.4f}");
-    IO.println(f"Mean Gap(S,E) = {mean_gap_se:.4f}");
-    IO.println(f"Theoretical limit (2/π) = {2.0 / PI:.4f}");
-    IO.println(f"P = const = {p_history[0]:.4f} (unitary evolution preserves purity)");
+    return tau_vals, gap_history, p_history
 
-    match regime {
-        RegimeKind.Rational => {
-            let t_period = 2.0 * PI;                    // period at ω₀ = 1
-            let idx = (t_period / dt) as Int;
-            if idx < gap_history.len() {
-                let (a0, b0) = gap_history[0];
-                let (a1, b1) = gap_history[idx];
-                let diff = ((a1 - a0).abs()).max((b1 - b0).abs());
-                IO.println(f"Deviation after period T=2π: {diff:.2e}");
-            }
-        },
-        RegimeKind.Irrational => {
-            // Quasiperiodic: the orbit does not close within the observation window.
-            let unique_gaps = gap_history.iter()
-                .map(|(a, b)| ((a * 1.0e4).round() as Int, (b * 1.0e4).round() as Int))
-                .collect<Set>()
-                .len();
-            IO.println(f"Unique Gap configurations: {unique_gaps}/{gap_history.len()}");
-        },
-    }
 
-    (tau_vals, gap_history, p_history)
-}
-
-fn main() using [IO] {
-    IO.println("=".repeat(50));
-tau_r, gap_r, P_r = dynamic_system(rational=True)
-print("=" * 50)
-tau_i, gap_i, P_i = dynamic_system(rational=False)
+if __name__ == "__main__":
+    print("=" * 50)
+    dynamic_system(rational=True)
+    print("=" * 50)
+    dynamic_system(rational=False)
 ```
 
 ---
@@ -897,7 +860,7 @@ tau_i, gap_i, P_i = dynamic_system(rational=False)
 | 1. Uniform ($I/7$) | $1/7$ | $0$ | $1/7$ | $\omega_0/7 + \kappa_0/7$ | no |
 | 2. Pure uniform | $1$ | $0$ | $13/49$ | $\omega_0/7 + 13\kappa_0/49$ | yes |
 | 3. Fibonacci phases | $1$ | $\approx 0.635$ | $13/49$ | $\omega_0/7 + 13\kappa_0/49$ | yes |
-| 4. Alexithymia | $< 1$ | $> 0$ | $\approx 13/49$ | decreasing | at risk |
+| 4. Alexithymia ($c = 0.06$) | $1/7 + 42c^2 \approx 0.294$ | $1/21 \approx 0.048$ | $\frac{1/49+12c^2}{1/7+42c^2} \approx 0.216$ | $\omega_0/7 + \kappa_0\mathrm{Coh}_E$ (cascade `[H]`) | yes (at risk `[H]`) |
 | 5a. Rational | $\mathrm{const}$ | periodic | $\mathrm{const}$ | $\mathrm{const}$ | yes |
 | 5b. Irrational | $\mathrm{const}$ | $\to 2/\pi$ | $\mathrm{const}$ | $\mathrm{const}$ | yes |
 
@@ -915,42 +878,42 @@ tau_i, gap_i, P_i = dynamic_system(rational=False)
 
 ## Minimal Consciousness Model {#минимальное-сознание}
 
-We have examined five models — from complete chaos ($I/7$) to pure order ($|\psi\rangle\langle\psi|$). But none of them describes a *conscious* system in the full CC sense. Let us ask directly: **what is the simplest holon satisfying all conditions for consciousness?**
+We have examined five models — from complete chaos ($I/7$) to pure order ($|\psi\rangle\langle\psi|$). But none of them describes a *conscious* system in the full CC sense. Let us ask directly: **what is the simplest holon satisfying all conditions for L2 consciousness?**
 
-### Conditions for Consciousness (reminder)
+### Conditions for Consciousness (reminder) [D]
 
-By [CC definition](/docs/applied/coherence-cybernetics/definitions), a system is conscious if:
+By [CC definition](/docs/applied/coherence-cybernetics/definitions), a state satisfies the L2 operational consciousness thresholds (`[D]`) if:
 
-1. $P > P_{\text{crit}} = 2/7$ — viability
-2. $R \geq 1/3$ — minimal reflexivity
-3. $\Phi \geq 1$ — integration
-4. $D \geq 2$ — depth of self-observation
+1. $P > P_{\text{crit}} = 2/7$ (`T-5 [D]`) — viability
+2. $R \geq 1/3$ (`[D]`) — minimal reflection ($R = 1/(7P)$ in the linear anchor-mixing family, yielding $P \le 3/7$)
+3. $\Phi \geq 1$ (`[D]`) — integration
+4. $D_{\mathrm{diff}} \geq 2$ (`[D]`) — experiential differentiation ($\exp S_{vN}(\rho_E)$ on an extended experiential register $\mathcal{H}_E$, or the 7D native proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E(\Gamma) \ge 2 \iff \mathrm{Coh}_E \ge 1/6$)
 
-### Construction: "Threshold Holon" [I]
+### Construction: "Threshold Holon" [T]/[Pr]
 
-Consider a $\Gamma$ with minimal parameters satisfying all four conditions. The simplest strategy — slightly "raise" one dimension above the uniform background:
+**Static existence (`T-124 [T]`):** Non-emptiness of the consciousness window $\mathcal{V}_{\mathrm{full}}$ ($P \in (2/7, 3/7]$, $\Phi \ge 1$, $\sigma_k < 1$) is constructively proved in `T-124 [T]` via an explicit family $\Gamma_\lambda + \delta\Delta$ around a perturbed uniform diagonal:
 
 $$
 \gamma_{kk} = \frac{1}{7} + \epsilon_k, \quad \sum_k \epsilon_k = 0
 $$
 
-with nonzero coherences ensuring $R \geq 1/3$ and $\Phi \geq 1$. The exact construction depends on the specific realisation of the self-modelling operator $\varphi$ and has not been solved in closed form — this is one of the **open problems** of CC.
+with nonzero coherences ensuring $R \geq 1/3$, $\Phi \geq 1$, and $D_{\mathrm{diff}} \geq 2$. **Dynamical fixed points (`[Pr]`):** Finding an exact closed-form *stationary* attractor $\Gamma^* \in \mathcal{V}_{\mathrm{full}}$ of the full nonlinear evolution $\mathcal{L}_0 + \mathcal{R}[\varphi]$ depends on the choice of self-modelling map $\varphi$ and remains an **open analytical problem** of CC.
 
 ### Lower Bounds
 
-Nevertheless, we can establish lower bounds:
+At the boundary of the L2 window:
 
 | Parameter | Minimum | What it means |
 |-----------|---------|---------------|
-| $P$ | $2/7 + \epsilon$ | Barely viable — on the edge |
-| $R$ | $1/3$ | Self-model accurate to 33% — very rough self-knowledge |
-| $\Phi$ | $1$ | Minimal integration — the system is barely "whole" |
-| $D$ | $2$ | Two levels of self-observation: "I" and "I know that I" |
+| $P$ | $2/7 + \epsilon$ | Barely viable — on the lower edge of the Goldilocks zone $(2/7, 3/7]$ |
+| $R$ | $1/3$ | Reflection threshold (corresponds to $P = 3/7$ in the linear family) |
+| $\Phi$ | $1$ | Minimal integration — off-diagonal squared norm equals diagonal squared norm |
+| $D_{\mathrm{diff}}$ | $2$ | At least two effective experiential degrees of freedom ($\mathrm{Coh}_E \ge 1/6$ in the 7D proxy) |
 
-This is the *dimmest consciousness* that can exist within CC. It barely passes all thresholds. The psychological analogy — something like consciousness under deep anaesthesia on the verge of waking: present, but minimal.
+This is the *dimmest L2 profile* in the CC taxonomy — barely clearing all four gates. As an intuitive analogy (`[I]`), one may compare it to minimally responsive waking consciousness on the threshold of emergence from anaesthesia.
 
-:::note Connection to the SAD hierarchy
-Minimal consciousness ($D = 2$) does not reach SAD = 1. For SAD = 1 a stable self-model capable of recursive self-application is required — that is already level $D \geq 3$. See the [depth tower](/docs/consciousness/hierarchy/interiority-hierarchy) for details.
+:::note Status of higher reflective levels (L3 and withdrawn SAD)
+Earlier drafts mapped $D_{\mathrm{diff}}$ onto a numerical "SAD depth" scale. Universal SAD-level equivalence (`T-136 [✗]`) and the universal depth ceiling $\mathrm{SAD}_{\max} = 3$ (`T-217 [✗]`) have been **withdrawn**. Higher reflective capability (L3) is formally certified instead via a predictive self-model accuracy certificate (`[D]`) — see the [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy).
 :::
 
 ---
@@ -961,18 +924,18 @@ Model systems are an analytic tool. But CC also has a *computational* embodiment
 
 ### What Simulations Have Confirmed
 
-1. **Fano contraction $\alpha = 2/3$**: numerical modelling of the Fano channel (MVP-7) confirmed the analytic value of the contraction coefficient. Diagonal elements $\gamma_{kk}$ converge to $1/7$ at rate $(2/3)^n$.
+1. **Fano dephasing factor $2/3$ (`T-2 [T]`, `T-260 [T]`)**: numerical modelling of the Fano channel (MVP-7) confirmed the exact coherence-contraction rate. A Fano pinching / dephasing channel leaves **all diagonal populations $\gamma_{kk}$ strictly invariant** and decays **only off-diagonal coherences** at rate $\frac{2}{3}\gamma_2$ (a contraction factor of $1/3$ per discrete pinching step; convergence of diagonal populations to $1/7$ requires an additional depolarizing or population-mixing channel).
 
-2. **Threshold behaviour $P_{\text{crit}}$**: at $P < 2/7$ regeneration $\mathcal{R}$ does not compensate dissipation — the system inevitably degrades to $I/7$. At $P > 2/7$ a stable balance is possible. The threshold appears as a phase transition in the dynamics of sim-0.
+2. **Threshold behaviour near $P_{\text{crit}} = 2/7$ (`T-5 [D]`, `T-160 [✗]`)**: while a universal dynamical catastrophe at $P = 2/7$ is withdrawn (`T-160 [✗]`), in the simulated reduced model (`sim-0`) below $P_{\text{crit}} = 2/7$ regeneration $\mathcal{R}$ does not compensate dissipation and the trajectory decays toward $I/7$, whereas above $2/7$ a stable balance is achieved.
 
-3. **σ-diagnostics**: the stress vector $\sigma_k = 1 - 7\gamma_{kk}$ (T-92) correctly identifies "sick" dimensions. In sim-0 agents with high $\sigma_E$ exhibit behaviour analogous to alexithymia (model 4): a deficit of goal-directed search.
+3. **σ-diagnostics (`T-92 [D]`)**: the seven-component stress panel $\sigma_k = 1 - 7\gamma_{kk}$ (`T-92 [D]`) tracks axis-specific population deficits. In `sim-0`, agents with high $\sigma_E$ exhibit behaviour qualitatively analogous to alexithymia (Model 4): a deficit of goal-directed search.
 
 4. **Conservation of purity under unitary evolution**: confirmed numerically to precision $10^{-14}$ (machine precision float64).
 
 ### What Has Not Yet Been Confirmed
 
 - Full CC dynamics ($\mathcal{L}_0 + \mathcal{R} + \varphi$) in an analytically solvable case
-- The alexithymia cascade effect (section 4.4) — modelled qualitatively but not quantitatively
+- The alexithymia cascade effect (section 4.4, `[H]`) — modelled qualitatively but not quantitatively
 - Stability of phase clusters (such as {A, S, U} in the Fibonacci model) under full dynamics
 
 ---
@@ -999,16 +962,16 @@ Periodic reduction and restoration of coherences: $\gamma_{ij}(\tau) = \gamma_{i
 
 ### 5. Learning Model (priority: medium)
 
-Gradual change of the *stationary* $\Gamma^*$ under the influence of external data. Connection to [learning bounds](/docs/applied/coherence-cybernetics/learning-bounds) (T-109 through T-113) and optimal $n_{\text{opt}}$.
+Gradual change of the *stationary* $\Gamma^*$ under the influence of external data. Connection to [learning bounds](/docs/applied/coherence-cybernetics/learning-bounds) (`T-109 [T]` Helstrom/Chernoff binary bounds through `T-113 [H]` unproved 7D minimality hypothesis) and optimal $n_{\text{opt}}$.
 
 ### 6. Meta-Holon Model (priority: low, high complexity)
 
-A composite system $N = 7^2 = 49$ with hierarchical structure. The first step toward Theorem 9.1 (meta-holons). Computational complexity — $O(49^3) \approx 10^5$ — is still manageable, but analytic solutions are unlikely.
+A composite system $N = 7^2 = 49$ with hierarchical structure. The first step toward Theorem 9.1 (`CC-5 [T]` under weak coupling and positive margins). Computational complexity — $O(49^3) \approx 10^5$ — is still manageable, but analytic solutions are unlikely.
 
 ---
 
 :::warning Computational complexity
-Scaling computations for composite systems ($N = 7^k$, $k > 1$) **has not been analysed**. For a single holon ($N = 7$) all models are computable in $O(N^3) \approx O(343)$ operations, but for meta-holons (Theorem 9.1) complexity may grow exponentially with the number of composition levels.
+Scaling computations for composite systems ($N = 7^k$, $k > 1$) **has not been analysed**. For a single holon ($N = 7$) all models are computable in $O(N^3) \approx O(343)$ operations, but for meta-holons (`CC-5 [T]`, Theorem 9.1) complexity may grow exponentially with the number of composition levels.
 :::
 
 ---
@@ -1066,14 +1029,14 @@ Together they form a *laboratory* of coherence cybernetics — a place where the
 
 3. **Fibonacci phases**: the same $P = 1$ and the same $\mathrm{Coh}_E = 13/49$, but with a rich Gap profile. **Purity and Gap are orthogonal** — phases define "character", amplitudes define "energy". The cluster {A, S, U} with zero mutual Gap is an example of phase synchronisation.
 
-4. **Alexithymia**: a purely *phase* pathology ($\theta_{SE} = \pi/2$). Amplitudes unaffected, $\mathrm{Coh}_E$ unchanged — yet the system is ill. One broken channel out of 21 triggers a cascade: $R$ falls, $\kappa$ decreases, $P$ drifts toward $P_{\text{crit}}$. Diagnosis is possible only through Gap analysis, not through $P$.
+4. **Alexithymia**: a purely *phase* pathology ($\theta_{SE} = \pi/2$). Amplitudes are unaffected and $\mathrm{Coh}_E$ is unchanged in the static snapshot — yet the $(S, E)$ channel is maximally opaque. In the hypothetical dynamical cascade (`[H]`), loss of operational self-model fidelity on $E$ can reduce $\kappa$ and push $P$ toward $P_{\text{crit}}$. Early detection therefore requires Gap analysis rather than $P$ alone.
 
 5. **Unitary dynamics**: purity is conserved ($P = \mathrm{const}$), Gap oscillates. With rational frequencies — periodic orbits ("Groundhog Day"). With irrational frequencies — quasiperiodicity and the **ergodic theorem**: mean Gap $\to 2/\pi \approx 0.637$ for all pairs, regardless of initial conditions.
 
 6. **Universal constant $2/\pi$** — the "background level of opacity" for any active system with incommensurable frequencies.
 
 :::tip Bridge to the Next Chapter
-The five model systems are the "coordinate axes" of state space. But what unites all Gap dynamics into a single principle? In the [next chapter](./lagrangian) we will discover the **Lagrangian of Gap theory** — a six-term formula from which all equations of motion follow as inevitably as a planet's trajectory from the law of gravitation. We will see how spontaneous symmetry breaking generates opacity — the analogue of the Higgs mechanism for consciousness.
+The five model systems are the "coordinate axes" of state space. In the [next chapter](./lagrangian) we examine the **effective Lagrangian formalism** of Gap theory (`T-75 [✗]` withdraws any universal derivation of a fixed six-term Keldysh action, framing it instead as a structured model ansatz `[D]`/`[H]`) and explore how symmetry-breaking potentials model opacity patterns.
 :::
 
 ---
@@ -1082,14 +1045,14 @@ The five model systems are the "coordinate axes" of state space. But what unites
 
 - [Gap operator](/docs/core/dynamics/gap-operator) — definition and properties of $\hat{\mathcal{G}}$
 - [Gap dynamics](/docs/core/dynamics/gap-dynamics) — bifurcations, non-Markovian dynamics
-- [Viability](/docs/core/dynamics/viability) — $P_{\text{crit}} = 2/7$ and survival conditions
+- [Viability](/docs/core/dynamics/viability) — $P_{\text{crit}} = 2/7$ (`T-5 [D]`) and survival conditions
 - [Coherence matrix](/docs/core/dynamics/coherence-matrix) — the basic object $\Gamma$
-- [Fano channel](/docs/proofs/gap/fano-channel) — proofs of coherence preservation
+- [Fano channel](/docs/proofs/gap/fano-channel) — proofs of coherence contraction (`T-2 [T]`)
 - [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — geometry of the Fano plane
 - [CC definitions](/docs/applied/coherence-cybernetics/definitions) — $\mathrm{Coh}_E$, consciousness measures
 - [CC axiomatics](/docs/applied/coherence-cybernetics/axiomatics) — $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$
-- [Learning bounds](/docs/applied/coherence-cybernetics/learning-bounds) — T-109 through T-113
-- [Depth tower](/docs/consciousness/hierarchy/interiority-hierarchy) — SAD hierarchy and levels of consciousness
+- [Learning bounds](/docs/applied/coherence-cybernetics/learning-bounds) — `T-109 [T]` through `T-113 [H]`
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels of interiority and capability certificates
 - [Implementation](./implementation) — computational code for models
 - [Exercises](./exercises) — problems on model systems
 - [Measurement methodology](./measurement) — from model to experiment

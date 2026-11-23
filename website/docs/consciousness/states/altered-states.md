@@ -41,7 +41,7 @@ Tart's system perspective motivates a state-space model **[I/H]**. A measured co
 
 Before Tart, altered states were studied in a fragmented way: William James (1902, *"The Varieties of Religious Experience"*) described mystical states; Ludwig (1966) introduced the very term "altered states of consciousness"; Masters and Houston (1966) systematised psychedelic experience. But only Tart proposed a *unified framework* for all types of ASC.
 
-In the 2000s, the neuroscience of ASC received a powerful impulse: fMRI studies of meditation (Lutz et al., 2004), neuroimaging of psychedelic states (Carhart-Harris et al., 2012), formalisation of the "entropic brain" (Carhart-Harris, 2014). The entropic brain hypothesis is the direct precursor of the parameter $D_{\text{diff}}$ in UHM.
+In the 2000s, the neuroscience of ASC received a powerful impulse: fMRI studies of meditation (Lutz et al., 2004), neuroimaging of psychedelic states (Carhart-Harris et al., 2012), and the "entropic brain" hypothesis (Carhart-Harris, 2014). The entropic brain hypothesis is one conceptual motivation for studying entropy-based differentiation measures such as $D_{\text{diff}}$ in UHM, though neural time-series entropy and von Neumann entropy of an extended experiential register are distinct quantities (see §5.3).
 
 ---
 
@@ -213,11 +213,11 @@ The [Unconscious](/docs/consciousness/states/unconscious) continues this distinc
 ## Related Documents
 
 - **Dynamics of Γ:** [Evolution of Γ](/docs/core/dynamics/evolution) — equations of motion
-- **Viability:** [Viability measure](/docs/core/dynamics/viability) — threshold $P_{\text{crit}} = 2/7$
-- **Level hierarchy:** [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — definitions of L0–L4
-- **Gap characterisation:** [Gap characterisation of levels](/docs/consciousness/hierarchy/gap-characterization) — signatures
-- **Bifurcations:** [Gap dynamics](/docs/core/dynamics/gap-dynamics#бифуркации) — theory of transitions
-- **Unconscious:** [Unconscious](/docs/consciousness/states/unconscious) — Gap structure of inaccessible sectors
-- **Pathology:** [Pathology of consciousness](/docs/consciousness/states/pathological) — deviations from the norm
-- **CC theorems:** [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — applied consequences for dynamic attractors
-- **Entropic brain:** [Phase diagram](/docs/core/dynamics/gap-phase-diagram) — connection to Carhart-Harris's hypothesis
+- **Viability:** [Viability measure](/docs/core/dynamics/viability) — purity cut $P_{\text{crit}} = 2/7$
+- **Level hierarchy:** [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — universal L0, operational L2 gate $\mathrm{Cap}_2$, and higher-order certificates
+- **Gap characterisation:** [Gap characterisation of levels](/docs/consciousness/hierarchy/gap-characterization) — scoped Gap features and fibre non-identifiability
+- **Bifurcations:** [Gap dynamics](/docs/core/dynamics/gap-dynamics#бифуркации) — conditional transition models
+- **Unconscious:** [Unconscious](/docs/consciousness/states/unconscious) — phase-opacity profiles and access models
+- **Pathology:** [Pathology of consciousness](/docs/consciousness/states/pathological) — conditional matrix models and clinical research features
+- **CC theorems:** [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — conditional dynamical theorems and research designs
+- **Phase diagram:** [Phase diagram](/docs/core/dynamics/gap-phase-diagram) — conditional chosen potential and control parameters

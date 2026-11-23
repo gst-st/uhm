@@ -154,13 +154,13 @@ $$
 
 Conclusion: $\Phi < 1$ — the system is **not integrated**. The connections between dimensions are weaker than the "weight" of the dimensions themselves. This is like an orchestra where each musician hears themselves more than their neighbour.
 
-If $\gamma_{12} = 0.35$, $\gamma_{13} = 0.25$, $\gamma_{23} = 0.3$ (strong connections), one would obtain:
+If instead $\gamma_{12} = 0.30$, $\gamma_{13} = 0.24$, $\gamma_{23} = 0.23$ (strong connections satisfying positive semidefiniteness: $\lambda_{\min} \approx 0.0645 > 0$, $P = 0.746$, $P_{\mathrm{diag}} = 0.345$), one obtains:
 
 $$
-\Phi = \frac{2(0.35^2 + 0.25^2 + 0.3^2)}{0.345} = \frac{2(0.1225 + 0.0625 + 0.09)}{0.345} = \frac{0.55}{0.345} \approx 1.59
+\Phi = \frac{2(0.30^2 + 0.24^2 + 0.23^2)}{0.345} = \frac{2(0.09 + 0.0576 + 0.0529)}{0.345} = \frac{0.401}{0.345} \approx 1.16
 $$
 
-Now $\Phi > 1$ — the system is **integrated**. Connections dominate.
+Now $\Phi > 1$ — the system is **integrated** (and genuinely positive semidefinite). For a concrete $7\times 7$ viable example inside the conscious window, take $\Gamma = \frac{1}{2}I_7/7 + \frac{1}{2}uu^\dagger$ with $u = \frac{1}{\sqrt{7}}(1,\dots,1)^\top$: it has $\lambda_{\min} = 1/14 > 0$, $P = 5/14 \approx 0.357$, $R = 0.40 \ge 1/3$, and $\Phi = 1.50 \ge 1$.
 
 **Corollary — integration forces voice-multiplicity.** The total purity $P = \mathrm{Tr}(\Gamma^2) = \sum_{i \neq j}|\gamma_{ij}|^2 + \sum_i \gamma_{ii}^2$ is *exactly* the numerator plus the denominator of $\Phi$, so the diagonal weight is pinned:
 
@@ -194,12 +194,12 @@ $$
 R \geq R_{\text{th}} = \frac{1}{3}, \quad \Phi \geq \Phi_{\text{th}} = 1
 $$
 
-where $R$ is the [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r). The thresholds are proved mathematically: $P_{\text{crit}}$ [T], $R_{\text{th}}$ [T], $\Phi_{\text{th}}$ **[T]** ([T-129](/docs/proofs/consciousness/operationalization#t-129)); PW constraint [D] (T16) gives their ontological interpretation. See [L2 thresholds](../foundations/axiom-septicity#пороги-l2-строгий-вывод).
+where $R$ is the [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r). The thresholds $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, and $\Phi_{\text{th}} = 1$ are **model definitions [D]** (structural majority, three-way reflection cut, and coherent majority; see [L2 thresholds](../foundations/axiom-septicity#пороги-l2-строгий-вывод)). What is a theorem **[T]** is their algebraic compatibility on uniform-diagonal states: $P > 2/7 \iff \Phi > 1$ whenever $\gamma_{ii} = 1/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129)).
 
-### Theorem: Integration threshold Φ_th = 1 [T] {#теорема-порог-интеграции}
+### Integration threshold Φ_th = 1 [D] {#теорема-порог-интеграции}
 
-:::info Status: [T] Theorem (T-129)
-The value $\Phi_{\text{th}} = 1$ is the **unique self-consistent** value of the integration threshold with $P_{\text{crit}} = 2/7$ on the extremal uniform-diagonal state. Previously — a definitional convention; now derived from first principles ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129)).
+:::info Status: [D] Model definition; [T] algebraic compatibility with $P_{\text{crit}} = 2/7$ on uniform diagonals (T-129)
+The threshold $\Phi_{\text{th}} = 1$ defines **coherent majority** ($\sum_{i\neq j}|\gamma_{ij}|^2 \ge \sum_i \gamma_{ii}^2$) [D]. On uniform-diagonal states ($\gamma_{ii} = 1/7$), $P = \frac{1}{7}(1+\Phi)$, so $\Phi \ge 1$ coincides algebraically with $P \ge 2/7$ [T] ([T-129](/docs/proofs/consciousness/operationalization#t-129)).
 :::
 
 **Statement:**
@@ -253,13 +253,13 @@ The boundary $\Phi = 1$ separates:
 - $\Phi < 1$: classical mixture (localisation dominates over connections)
 - $\Phi \geq 1$: quantum integration (connections are no weaker than localisation)
 
-The value $\Phi_{\text{th}} = 1$ **[T]** (T-129) — the unique self-consistent value at $P_{\text{crit}} = 2/7$. See [proof](/docs/proofs/consciousness/operationalization#t-129).
+The value $\Phi_{\text{th}} = 1$ is a model definition **[D]** that aligns algebraically with $P_{\text{crit}} = 2/7$ on uniform-diagonal states ([T-129](/docs/proofs/consciousness/operationalization#t-129)).
 
 ### Which contents can cross the threshold {#какое-содержание-берёт-порог}
 
-The threshold theorem says *when* a holon is integrated. It does not say **what it must be holding** to get there, and that turns out to be a far narrower thing than the definition of $\Phi$ suggests. The answer is exact, and it is worth deriving in full, because it changes what the twenty-one coherences of a holon are for.
+The threshold definition says *when* a holon is integrated. For the **restricted class of real $\{\pm 1\}$ equal-modulus** flat-diagonal states (T-315), it also yields an exact balance criterion.
 
-Fix the diagonal flat — every dimension carrying the same weight $\gamma_{ii} = 1/7$, so that nothing is decided by localisation — and let the content live entirely in the *signs* of the coherences. Write $S$ for that pattern of signs: $S_{ij} = +1$ where two dimensions agree, $S_{ij} = -1$ where they disagree, and $S_{ii} = 0$. A state with this content and coherence strength $c$ is
+Fix the diagonal flat — every dimension carrying the same weight $\gamma_{ii} = 1/7$, so that nothing is decided by localisation — and restrict to **real** equal-modulus coherences whose signs form a symmetric matrix $S$ with $S_{ij} \in \{+1, -1\}$ ($i\neq j$) and $S_{ii} = 0$. A state in this real $\{\pm 1\}$ stratum with coherence strength $c$ is
 
 $$
 \Gamma = \tfrac{1}{7} I + c\,S
@@ -301,7 +301,11 @@ $$
 
 The gate closes. **One disagreement out of twenty-one costs a factor of six and misses the threshold by three percent.** A second flip gives $0.7151$, a third $0.5185$; nothing recovers.
 
-**Step 5 — why, in one word.** A signed graph is called *balanced* when the product of signs around every cycle is positive; Harary's theorem states that a complete graph is balanced precisely when its signs factor as $S_{ij} = s_i s_j$. The product of signs around a triangle is the real limit of the [holonomy](/docs/applied/research/holarch) that carries quality around a Fano line. So the integration gate and the balance condition are not two facts but one: **a holon integrates exactly when its content is unfrustrated.** Checked pattern by pattern rather than in aggregate, the gate and balance disagreed in $0$ of $600$ cases.
+**Step 5 — why, and exact scope (T-315) [T].** A signed graph is called *balanced* when the product of signs around every cycle is positive; Harary's theorem states that a complete graph is balanced precisely when its signs factor as $S_{ij} = s_i s_j$. Within the **real $\{\pm 1\}$ equal-modulus** flat-diagonal stratum, the integration gate and Harary balance coincide exactly: every balanced sign matrix has $\lambda_{\min} = -1$ ($\Phi_{\max} = 6$), while every frustrated real $\{\pm 1\}$ sign matrix has $|\lambda_{\min}| \ge 2.5311 > \sqrt{6}$ ($\Phi_{\max} \le 0.9365 < 1$, checked across all non-isomorphic sign patterns / 600 samples).
+
+:::warning Strict scope of T-315: real $\{\pm 1\}$ matrices only
+This gap-separation theorem applies **strictly to real $\{\pm 1\}$** equal-modulus matrices $S$. Allowing **complex** phases on the same flat-diagonal equal-modulus stratum immediately breaks the dichotomy: replacing a single off-diagonal pair $(0,1) \mapsto i$, $(1,0) \mapsto -i$ (leaving all other $S_{ij} = +1$) creates non-trivial complex holonomies yet yields $\lambda_{\min} \approx -2.1104$ and $\Phi_{\max} = 6/\lambda_{\min}^2 \approx 1.347 > 1$!
+:::
 
 The consequence for capacity is sharp. The twenty-one coherences of a holon look like twenty-one independent bits, but only $2^7 = 128$ sign patterns are balanced, and $s$ and $-s$ give the same pattern. **Integrable content is seven polarities, not twenty-one bits, and there are exactly $2^7/2 = 64$ integrable states.** The twenty-one cells are not twenty-one facts; they are the pairwise agreement of seven orientations.
 
@@ -313,29 +317,24 @@ So generalisation, in this architecture, is not a rule added on top. **It is pos
 
 ### Connection with Integrated Information (IIT) {#связь-с-iit}
 
-:::info Status: [D] Definitions formalised; [T] threshold Φ_th = 1 (T-129)
-The connection between the UHM integration measure ($\Phi_{\text{UHM}}$) and IIT integrated information ($\Phi_{\text{IIT}}$) is defined in the categorical formalism. The exact numerical correspondence of the thresholds is a [H] hypothesis.
+:::info Status: [D] Definitions; [H] qualitative comparison
+$\Phi_{\text{UHM}}$ is defined directly on $\mathcal D(\mathbb C^7)$ in a chosen orthonormal frame [D]. Standard quantum $\Phi_{\text{IIT}}$ requires tensor bipartitions $\mathcal H = \mathcal H_A \otimes \mathcal H_B$, which **do not exist** for a single prime-dimensional register $\mathbb C^7$ ($7$ is prime!). Comparing $\Phi_{\text{UHM}}$ and $\Phi_{\text{IIT}}$ therefore requires either a composite tensor extension ($\mathbb C^{7^k}$) or a classical/diagonal partition proxy, and any threshold match remains a [H] hypothesis.
 :::
 
-#### Definition of Φ_IIT in categorical language
+#### Definition of $\Phi_{\text{IIT}}$ on composite systems
 
-**Definition (Φ_IIT via C*-algebra):**
+On a **composite** tensor-product Hilbert space $\mathcal H = \bigotimes_{a} \mathcal H_a$ admitting nontrivial bipartitions $\pi = (A|B)$, one may define a Bures-distance bipartition measure:
 
 $$
-\Phi_{\text{IIT}}(\Gamma) := \min_{\pi \in \text{Part}(\Gamma)} D_B(\Gamma, \pi^*(\Gamma))
+\Phi_{\text{IIT}}(\Gamma_{\text{comp}}) := \min_{\pi \in \text{Part}(\mathcal H)} D_B\bigl(\Gamma_{\text{comp}},\, \rho_A \otimes \rho_B\bigr)
 $$
 
-where:
-- $\text{Part}(\Gamma)$ — the set of all bipartitions of system Γ
-- $\pi^*(\Gamma)$ — the "disconnected" state (without correlations between parts)
-- $D_B$ — the Bures distance
-
-**Intuitive explanation.** $\Phi_{\text{IIT}}$ answers the question: "If the system is cut in half in the best possible way, how much information is lost?" One must check **all possible cuts** and choose the one at which the loss is minimal. For a system of $N$ elements the number of bipartitions is $2^{N-1}$, making computation practically impossible for large $N$.
+where $\rho_A = \mathrm{Tr}_B(\Gamma_{\text{comp}})$, $\rho_B = \mathrm{Tr}_A(\Gamma_{\text{comp}})$, and $D_B$ is the Bures distance. Note carefully: on a single native holon $\mathcal H = \mathbb C^7$, $7$ is prime, so $\text{Part}(\mathbb C^7)$ has no nontrivial tensor bipartitions and the formula above is **undefined** without first specifying a composite tensor system or a classical subset-partition surrogate.
 
 #### Definition of the integration threshold {#теорема-эквивалентность-порогов}
 
-:::info Definition (Threshold of coherent integration)
-A system is **coherently integrated** if coherences dominate over populations:
+:::info Definition (Threshold of coherent integration) [D]
+A system is **coherently integrated** if coherences are at least as large in Hilbert–Schmidt weight as the diagonal populations:
 
 $$
 \Phi(\Gamma) \geq \Phi_{\text{th}} = 1 \quad \Longleftrightarrow \quad \underbrace{\sum_{i \neq j} |\gamma_{ij}|^2}_{P_{\text{coh}}} \geq \underbrace{\sum_i \gamma_{ii}^2}_{P_{\text{diag}}}
@@ -343,36 +342,32 @@ $$
 
 :::
 
-**Structural meaning.** The value $\Phi_{\text{th}} = 1$ **[T]** (T-129) — the unique self-consistent value at $P_{\text{crit}} = 2/7$. Substantive motivation:
+**Structural meaning.** The threshold $\Phi_{\text{th}} = 1$ is a model definition **[D]** aligned with $P_{\text{crit}} = 2/7$ on uniform diagonals ([T-129](/docs/proofs/consciousness/operationalization#t-129)):
 
-1. **Purity normalisation:** $P = \mathrm{Tr}(\Gamma^2) = P_{\text{diag}} + P_{\text{coh}}$, so $\Phi \geq 1 \Leftrightarrow P_{\text{coh}} \geq P/2$ — at least half of [purity](/docs/core/dynamics/viability#определение-чистоты) is determined by coherences.
+1. **Purity normalisation:** $P = \mathrm{Tr}(\Gamma^2) = P_{\text{diag}} + P_{\text{coh}}$, so $\Phi \geq 1 \Leftrightarrow P_{\text{coh}} \geq P/2$ — at least half of [purity](/docs/core/dynamics/viability#определение-чистоты) is carried by off-diagonal coherences in the chosen frame.
 
-2. **Structural phase transition:** At $\Phi < 1$ the state is "quasi-diagonal" — subsystems are quasi-independent. At $\Phi \geq 1$ inter-dimension coherences dominate — subsystems are causally connected through the [coherence matrix](/docs/core/dynamics/coherence-matrix).
+2. **Structural regime boundary:** At $\Phi < 1$ diagonal populations dominate; at $\Phi \geq 1$ inter-axis coherences dominate in squared Hilbert–Schmidt norm.
 
-3. **Connection with (AP):** [Closure of the (M,R)-system](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность) requires causal paths between dimensions encoded in the coherences $\gamma_{ij}$. The condition $\Phi \geq 1$ guarantees that these paths are structurally significant (not small perturbations of the diagonal state).
-
-4. **Categorical justification:** In the category **Hol** [Hom-sets](/docs/proofs/categorical/categorical-formalism) between dimensions $i, j$ are identified with coherences: $\mathrm{Hom}(i,j) \leftrightarrow \gamma_{ij}$ ([L-unification](/docs/proofs/categorical/categorical-formalism#l-унификация) [T]). The condition $\Phi \geq 1$ means that the **morphism structure** dominates over the **object structure** — the category is "non-trivially connected".
+3. **Connection with (AP):** Frame-based coherence coupling between axes supports off-diagonal information transfer across the seven roles (whereas a purely diagonal state has $\Phi = 0$). (The former claim identifying matrix entries $\gamma_{ij}$ with categorical Hom-sets $\mathrm{Hom}(i,j)$ via L-unification is **withdrawn [✗]**; see [categorical formalism](/docs/proofs/categorical/categorical-formalism#l-унификация).)
 
 #### Comparison with Φ_IIT {#сравнение-с-iit}
 
-:::warning Hypothesis (Correspondence of UHM–IIT thresholds) [H]
+:::warning Hypothesis (Qualitative UHM–IIT comparison) [H]
 
 $$
-\Phi_{\text{UHM}} \geq 1 \quad \Longleftrightarrow \quad \Phi_{\text{IIT}} \geq \log(2)
+\Phi_{\text{UHM}} \geq 1 \quad \longleftrightarrow \quad \Phi_{\text{IIT}} \geq \log(2) \quad \text{(on a composite extension, [H])}
 $$
 
-The exact numerical correspondence of thresholds is an **open hypothesis**, since $\Phi_{\text{UHM}}$ (ratio of coherences to diagonal in $\mathbb{C}^7$) and $\Phi_{\text{IIT}}$ (minimisation of Bures distance over bipartitions) are defined on different spaces in different ways. Qualitative correspondence (both measures separate fragmented and integrated regimes) is supported by the structure of both theories.
+Any numerical threshold correspondence is an **open hypothesis**, since $\Phi_{\text{UHM}}$ is a frame-dependent coherence ratio on $\mathbb{C}^7$ whereas tensor-bipartition $\Phi_{\text{IIT}}$ is defined only on composite (non-prime-dimensional) systems.
 :::
 
 | Aspect | $\Phi_{\text{UHM}}$ | $\Phi_{\text{IIT}}$ |
 |--------|---------------------|---------------------|
-| Definition | Ratio of coherences to diagonal | Minimum distance to separated state |
-| Threshold | 1 **[T]** (T-129) | $\log(2) \approx 0.693$ (hypothesis) |
-| Computational complexity | $O(N^2)$ — **polynomial** | $O(2^N)$ — **exponential** (NP-hard) |
-| Structural interpretation | Coherent domination | Inseparability |
-| Quantum extension | Natural (already quantum) | Requires modification |
-
-**Advantage of UHM:** The measure $\Phi_{\text{UHM}}$ is computable in polynomial time. For a system of $N = 7$ dimensions: $\Phi_{\text{UHM}}$ requires $7^2 = 49$ operations. $\Phi_{\text{IIT}}$ for 7 elements would require $2^6 = 64$ bipartitions, each with a Bures distance computation — **orders of magnitude** slower. For $N = 100$: $\Phi_{\text{UHM}}$ — 10,000 operations, $\Phi_{\text{IIT}}$ — $2^{99} \approx 10^{30}$ bipartitions (practically impossible).
+| Definition | Ratio of coherences to diagonal in a chosen frame | Minimum distance to product state across tensor bipartitions |
+| Domain | Single $\mathbb C^7$ (or any $N$) | Composite tensor systems only (undefined on prime-dim $\mathbb C^7$) |
+| Threshold | $1$ **[D]** (compatible with $P_{\mathrm{crit}}=2/7$ on uniform diagonals, T-129) | $\log(2) \approx 0.693$ (hypothesis) |
+| Computational complexity | $O(N^2)$ — **polynomial** | Exponential in number of tensor factors |
+| Structural interpretation | Coherent domination | Bipartition inseparability |
 
 #### Why $O(N^2)$ vs $O(2^N)$ matters {#вычислительная-сложность}
 
@@ -444,17 +439,7 @@ harder everywhere, spread the population out, or spend the binding where the pop
 already is. Only the third is free — it costs no additional coherence and no flattening,
 and it is the one measured states use.
 
-The same factorisation settles what such a state may contradict. If every pair used the
-same fraction of its ceiling, $K$ would be $(1-c)I + c\Sigma$ for a pure sign pattern
-$\Sigma$, positivity would read $\lambda_{\min}(\Sigma) \ge -1/c$, and the gate would
-force $\lambda_{\min} \ge -\sqrt{(1-p)/p}$ — which at a flat diagonal is exactly
-$-\sqrt 6$, the balance criterion of the previous section. Under uniform saturation the
-frustration compatible with an open gate is zero **at every diagonal**, flat or not. So
-unevenness is not a wrinkle on the theorem; it is the whole of what lets a real state
-hold a contradiction and stay integrated. The contradiction has to live in the pairs
-whose ceiling is barely used, and those pairs have to sit on axes that carry little —
-which is the precise form of a familiar observation, that what a person can be
-inconsistent about is whatever they are not, at that moment, actually doing.
+The same factorisation settles what such a state may contradict **within the real $\{\pm 1\}$ equal-modulus class**. If every pair used the same fraction of its ceiling with a **real $\{\pm 1\}$** sign pattern $\Sigma$, $K$ would be $(1-c)I + c\Sigma$, positivity would read $\lambda_{\min}(\Sigma) \ge -1/c$, and the gate would force $\lambda_{\min} \ge -\sqrt{(1-p)/p}$ — which at a flat diagonal is exactly $-\sqrt 6$, the balance criterion of the previous section (whereas complex equal-modulus phases already allow $\Phi_{\max} \approx 1.347 > 1$). Under uniform saturation with real $\{\pm 1\}$ signs, the frustration compatible with an open gate is zero **at every diagonal**, flat or not. So unevenness (or complex phases) is what lets a general state hold frustration and stay integrated.
 
 ### What the gate does not read {#чего-ворота-не-читают}
 
@@ -614,13 +599,7 @@ $$
 \Phi \;=\; 6c^2 \;=\; \frac{6}{\lambda_{\min}^2}.
 $$
 
-A balanced pattern is $uu^{\mathsf T} - I$ for some assignment of signs to axes,
-and that matrix has exactly two eigenvalues, $6$ once and $-1$ six times. So
-*every* balanced pattern — all sixty-four of them — gives $\lambda_{\min} = -1$
-exactly, and $\Phi = 6$. Harary's criterion forces every frustrated pattern to
-$|\lambda_{\min}| > \sqrt 6$, hence $c < 1/\sqrt 6$, hence $\Phi < 1$. Two
-hundred thousand sign patterns were drawn to find the best frustrated one: it
-reaches $0.9365$, at five broken triangles and $\lambda_{\min} = -2.5311$.
+A balanced **real $\{\pm 1\}$** pattern is $uu^{\mathsf T} - I$ for some assignment of signs to axes, and that matrix has exactly two eigenvalues, $6$ once and $-1$ six times. So *every* balanced real $\{\pm 1\}$ pattern — all sixty-four of them — gives $\lambda_{\min} = -1$ exactly, and $\Phi = 6$. Harary's criterion forces every frustrated **real $\{\pm 1\}$** pattern to $|\lambda_{\min}| > \sqrt 6$, hence $c < 1/\sqrt 6$, hence $\Phi < 1$ (reaching at most $0.9365$ at five broken triangles and $\lambda_{\min} = -2.5311$). As noted above, this gap is strictly a property of the **real $\{\pm 1\}$** equal-modulus stratum: allowing complex phases (such as $(0,1)\mapsto i$) immediately populates the region $\Phi \in (1, 6)$ with frustrated states (e.g. $\Phi_{\max} \approx 1.347$).
 
 **Between $0.9365$ and $6$ there is nothing.** Not a sparse region — an empty one.
 Integration under these conditions is not a continuum with a line drawn across it;
@@ -671,59 +650,39 @@ The historical comparison of 300 constructed states reported median absolute hol
 
 ## Connection with consciousness
 
-The consciousness measure $C = \Phi \times R$ **[Т T-140]** (definition see [self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c)). Differentiation $D_{\text{diff}} \geq D_{\min}$ is a separate viability condition.
+The consciousness measure $C = \Phi \times R$ **[D T-140]** (definition see [self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c)). Differentiation $D_{\text{diff}} \geq D_{\min}$ is a separate viability condition.
 
-**Role of U in consciousness:** $\Phi$ is the direct contribution of dimension $U$ to the consciousness measure $C$. Without integration ($\Phi < 1$) there is no consciousness, even if reflection is high ($R \geq 1/3$): the system "sees" its inner world, but it is **fragmented** — like a dream in which the scenes are not connected to each other.
+**Exact bounds on $\Phi$ [T]:** For any $7\times 7$ state $\Gamma$, $P_{\mathrm{diag}} \ge 1/7$ and $P \le 1$, so $0 \le \Phi \le 7P - 1 \le 6$ universally. Inside the **L2 conscious window** ($R = 1/(7P) \ge 1/3 \implies P \le 3/7$), integration is strictly bounded by:
+
+$$
+1 \;\le\; \Phi \;\le\; 7P - 1 \;\le\; 2.
+$$
+
+In particular, values $\Phi \gg 1$ are **mathematically impossible** in the 7D L2 conscious window (maximum is $\Phi = 2$ at $P = 3/7$, uniform diagonal).
+
+**Role of U in consciousness:** $\Phi$ is the direct contribution of coherent integration to $C$. Without integration ($\Phi < 1$), the state falls outside the L2 predicate even when $R \ge 1/3$.
 
 ## Examples {#примеры}
 
-### Physical level
+### Illustrative model regimes [I/H]
 
-| System | $\Phi$ | Description |
-|--------|--------|-------------|
-| Ideal gas | $\approx 0$ | No correlations — $\mathrm{Tr}(\Gamma) = 1$, but all "purity" is in the diagonal |
-| Centre of mass of a body | — | Integration of distributed mass into a single point |
-| Bound state (atom) | $\gg 1$ | Electron and nucleus — a unified whole, not a collection of particles |
-| Superconductor | $\gg 1$ | Macroscopic coherence — all electrons in one state |
+*(Values below reflect exact mathematical bounds $0 \le \Phi \le 6$ globally and $1 \le \Phi \le 2$ inside the 7D L2 window; empirical identification of any physical or biological system with a $D_7$ state requires a calibrated observation bridge [H].)*
 
-### Biological level
-
-| System | $\Phi$ | Description |
-|--------|--------|-------------|
-| Bacterial colony | $< 1$ | Weak integration — each bacterium is nearly independent |
-| Organism | $\geq 1$ | Integration of organs into a unified system |
-| Nervous system | $\gg 1$ | Integration of sensory information into unified perception |
-| Homeostasis | $\geq 1$ | Maintenance of the integrity of the internal environment |
-
-### Cognitive level
-
-| System | $\Phi$ | Description |
-|--------|--------|-------------|
-| Scattered attention | $\sim 0.8$ | Thoughts "jump" — incomplete integration |
-| Self-awareness | $\geq 1$ | Knowledge of oneself as a whole |
-| Identity | $\gg 1$ | Continuity of the "I" in time |
-| Perceptual synthesis | $\geq 1$ | Unification of modalities (vision+hearing+touch) into a single experience |
-| Flow state | $\gg 1$ | Maximum integration — "all is one" |
+| Regime (illustrative [I/H]) | Valid $\Phi$ range | Mathematical characterization |
+|---|---|---|
+| Uncorrelated / diagonal mixture | $\Phi \approx 0$ | Off-diagonal coherences negligible; $P \approx P_{\mathrm{diag}}$ |
+| Weakly coupled / sub-threshold | $0 < \Phi < 1$ | Diagonal populations dominate ($P_{\mathrm{coh}} < P_{\mathrm{diag}}$) |
+| Conscious window (L2) | $1 \le \Phi \le 2$ | $P \in (2/7, 3/7]$, $R \in [1/3, 1/2)$, coherent majority with $P_{\mathrm{coh}} \in [1/7, 2/7]$ |
+| High-purity coherent state (outside L2) | $2 < \Phi \le 6$ | $P > 3/7$ ($R < 1/3$); maximal $\Phi = 6$ attained only by uniform-magnitude pure states ($P=1, R=1/7$) |
 
 ## Collapse of unity {#распад-единства}
 
-When $\gamma_{Ui} \to 0$ for all $i$:
+When off-diagonal coherences decay ($\gamma_{ij} \to 0$ for $i \neq j$, or specifically $\gamma_{Ui} \to 0$):
 
-1. Loss of integration: $\Phi \to 0$
-2. Dissociation of consciousness: rupture between dimensions
-3. Fragmentation of experience: the "I" breaks into parts
+1. Loss of integration: $\Phi \to 0$ as all coherences vanish (and $\gamma_{Ui} \to 0$ removes the $U$-row contribution to $P_{\mathrm{coh}}$ and cuts $\kappa_0 \propto |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$).
+2. Fragmentation of the native 7D state toward a diagonal mixture.
 
-**Intuitive explanation.** Imagine the conductor leaving the orchestra. At first the musicians continue to play by inertia (for a time $\Phi$ is still high). But gradually each begins to play at their own tempo and volume. The violins can no longer hear the cellos, the percussion loses the rhythm. Music turns into noise. This is what the collapse of unity looks like in a Holon: the dimensions "drift apart", and the whole ceases to exist.
-
-### Clinical analogies (expanded)
-
-| Condition | What decreases | Mechanism | Manifestations |
-|-----------|----------------|-----------|----------------|
-| **Dissociative identity disorder** | $\gamma_{UE} \approx 0$ | Rupture between unity and interiority | Multiple "I"s — each with its own $\rho_E$, but without a shared $U$ |
-| **Derealisation** | $\gamma_{UA} \approx 0$ | Unity loses connection with distinctions | "The world is unreal" — distinctions exist, but are not integrated into unified perception |
-| **Depersonalisation** | $\gamma_{UU} \to P_{\text{crit}}$ | Unity loses resources | "I am unreal" — the feeling that the "I" is dissolving; $U$ is on the verge of disappearing |
-| **Schizophrenia (positive symptoms)** | $\gamma_{UL} \approx 0$ | Unity loses connection with logic | Integration without logical consistency — "everything is connected, but meaningless" |
-| **Personality splitting under trauma** | $\gamma_{Ui} \to 0$ | Global decrease of U coherence | Defensive mechanism: the system "sacrifices" unity to preserve the other dimensions |
+*(Note: because native scalar gates $P, R, \Phi$ are invariant under arbitrary permutations of axes, mapping specific psychiatric or clinical diagnoses — such as schizophrenia, dissociative identity disorder, or depersonalisation — onto individual matrix entries like $\gamma_{UL}, \gamma_{UE}, \gamma_{UA}$, or writing $\gamma_{UU} \to P_{\mathrm{crit}}$, is mathematically ungrounded and removed [✗].)*
 
 ## Connection with other dimensions
 
@@ -737,15 +696,12 @@ graph LR
     U --> O[O — connects with the source]
 ```
 
-**Key connections:**
+**Key connections (model roles [I]):**
 
-- **U ↔ E (Synthesis):** Through $\gamma_{UE}$ Unity integrates the components of experience into a single experience. Without this connection — dissociation (multiple "I"s).
-
-- **U ↔ O (Connection with the source):** Through $\gamma_{UO}$ Unity receives energy from the Ground. The coherence $\gamma_{OU}$ enters the numerator of $\kappa_0$ — wholeness literally "feeds" from the source. Without this connection — existential fragmentation.
-
-- **U ↔ A (Cycle closure):** Through $\gamma_{UA}$ Unity returns the integrated result back to Articulation, closing the (M,R)-cycle. Without this connection — derealisation.
-
-- **U ↔ L (Logical coherence):** Through $\gamma_{UL}$ unity ensures that integration is **logically consistent**. Without this connection — delusional connections (as in schizophrenia: "everything is connected to everything", but illogically).
+- **U ↔ E:** $\gamma_{UE}$ links the unity axis with the interiority axis.
+- **U ↔ O:** $\gamma_{OU}$ enters the numerator of the kinetic rate ansatz $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/(\gamma_{OO} + \varepsilon)$.
+- **U ↔ A:** $\gamma_{UA}$ links unity with articulation.
+- **U ↔ L:** $\gamma_{UL}$ links unity with logic.
 
 ## Coherence with U
 

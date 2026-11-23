@@ -169,7 +169,7 @@ $$
 
 
 :::tip Теорема T-191 [Т]
-Пусть воплощённый голоном несёт член хребта $\mu(\sigma - \Gamma)$ ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)); пусть $L_{\mathcal{R}}$ — константа Липшица в следовой норме на $\mathcal{D}(\mathbb{C}^7)$ отображения $\Gamma \mapsto \kappa(\Gamma)g_V(P)(a - \Gamma)$, равномерная по целевому состоянию $a$, и $\kappa_{\max} = \sup \kappa\,g_V$. Если
+Пусть воплощённый голоном несёт член хребта $\mu(\sigma - \Gamma)$ ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)), и предположим, что скорость регенерации $\kappa(\Gamma)$ **глобально липшицева и ограничена** на $\mathcal{D}(\mathbb{C}^7)$ — в частности, когда $\kappa$ включает кинетическое отношение $|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$, это **требует явной $\varepsilon$-регуляризации** $\gamma_{OO} \mapsto \gamma_{OO} + \varepsilon$ ($\varepsilon > 0$) либо ограниченного гладкого закона скорости (поскольку нерегуляризованное $\gamma_{OO}^{-1}$ разрывно и нелипшицево на границе $\gamma_{OO}=0$; см. [аксиому септичности](/docs/core/foundations/axiom-septicity#обработка-сингулярности-gamma-oo)). Пусть $L_{\mathcal{R}} < \infty$ — константа Липшица в следовой норме на $\mathcal{D}(\mathbb{C}^7)$ отображения $\Gamma \mapsto \kappa(\Gamma)g_V(P)(a - \Gamma)$, равномерная по целевому состоянию $a$, и $\kappa_{\max} = \sup \kappa\,g_V$. Если
 
 $$
 \mu > L_{\mathcal{R}} + \kappa_{\max},

@@ -14,7 +14,7 @@ This chapter is devoted to the first dimension of the Holon — **Articulation**
 - How the idea of distinction developed from Frege and Spencer-Brown to quantum mechanics;
 - What a projection operator is and why it is the precise mathematics of distinction;
 - How the population $\gamma_{AA}$ determines the "acuity of vision" of the system;
-- What place Articulation occupies on the Fano plane and why it is the only bridge between sectors.
+- Which three lines of the Fano plane pass through Articulation.
 
 :::info Who this chapter is for
 If you are reading about UHM for the first time — start with the [overview of dimensions](./dimensions). If you are already familiar with the seven dimensions and want to understand the first one more deeply — you are in the right place.
@@ -159,10 +159,10 @@ $$
 
 | Value of $\gamma_{AA}$ | Interpretation | Example |
 |------------------------|----------------|---------|
-| High ($\gg 1/7$) | System "stuck" on distinction, hyperanalysis | Anxious consciousness constantly scanning for threats |
+| High ($\gg 1/7$) | Over-segmentation, excessive fine-graining | Rigid hyper-differentiation of every perturbation |
 | Around $1/7$ | Balanced distinguishing capacity | Healthy attention, adequate filtering |
-| Low ($\ll 1/7$) | Weakened capacity to make distinctions | Deep sleep, meditative dissolution of boundaries |
-| $\to 0$ | Loss of distinguishing capacity | Coma, loss of perception |
+| Low ($\ll 1/7$) | Weakened capacity to make distinctions | Deep sleep, coarse-grained or blurred boundary detection |
+| $\to 0$ | Loss of axis discrimination in the readout | Degenerate readout along the $A$-axis (note: $\gamma_{AA}$ is an axis population, not a clinical diagnosis) |
 
 :::warning The equilibrium value is not $1/7$
 The stationary state $\rho^*$ of the Holon, determined by the [evolution equation](../../core/dynamics/evolution), does not in general give $\gamma_{AA} = 1/7$. The equilibrium depends on the sector profile — the "characteristic passport" of the system. The value $1/7$ is only the average over the fully mixed state $I/7$.
@@ -178,7 +178,7 @@ Connection of articulation with von Neumann entropy $S(\Gamma) = -\mathrm{Tr}(\G
 - Minimum entropy $S = 0$ — a pure state, maximum distinction. But a pure state in one dimension ($\gamma_{AA} = 1$) means total loss of all the others — this is not "good" articulation, but pathological one-sidedness.
 - **Optimal articulation** is an intermediate state: enough distinctions to single out structure, but not so many as to lose connectedness with the other dimensions.
 
-This accords with the [purity threshold](../../core/foundations/axiom-septicity) $P_{\text{crit}} = 2/7$ **[T]**: consciousness arises at purity above $2/7$, i.e. when the system is sufficiently articulated to stand out from background noise.
+This accords with the [purity threshold](../../core/foundations/axiom-septicity) $P_{\text{crit}} = 2/7$ **[D]**: the operational viability criterion requires purity above $2/7$, i.e. when the configuration stands sufficiently far from the maximally mixed background $I/7$.
 
 ### Articulation and amount of information {#артикуляция-количество}
 
@@ -244,9 +244,9 @@ When $\gamma_{AA}$ decreases, the system loses the capacity to make distinctions
 | Process | What happens to $\gamma_{AA}$ | Consequence |
 |---------|-------------------------------|-------------|
 | Falling asleep | Gradual decrease | Blurring of figure/ground boundaries, reduced attention |
-| Dementia | Chronic decrease | Loss of ability to distinguish faces, objects, concepts |
-| Meditation | Controlled decrease | Intentional "dissolution" of boundaries while preserving $\gamma_{EE}$ |
-| Shock, trauma | Sharp upward jump | Hyperarticulation: the world breaks into fragments |
+| Coarse-graining / noise injection | Chronic decrease | Progressive loss of feature separability in the readout |
+| Selective boundary softening | Controlled decrease | Reduced boundary sharpness while preserving other coherences (e.g., $\gamma_{EE}$) |
+| Over-segmentation | Sharp upward jump | Hyperarticulation: fine fragmentation at the expense of integration |
 
 :::info Loss of articulation ≠ loss of consciousness
 A decrease in $\gamma_{AA}$ does not automatically mean loss of consciousness. The consciousness threshold is [determined](../../core/foundations/axiom-septicity) by four conditions ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$), where $P$ is the purity of the **entire** matrix $\Gamma$, not of a single element. One can have low $\gamma_{AA}$ but high purity due to other dimensions — as in deep meditation, when distinctions are blurred but interiority ($\gamma_{EE}$) is high.
@@ -323,29 +323,25 @@ The elements $\gamma_{Ai}$ of the coherence matrix describe the connection of ar
 
 ## Articulation and the Fano plane {#артикуляция-и-фано}
 
-In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM the dimension $A$ corresponds to the imaginary unit $e_1 \in \mathrm{Im}(\mathbb{O})$. ~~Articulation lies in sector **3** of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]).~~ Retracted 2026-09-25 with T-48a: no single axis lies in the $\mathbf 3$ — the triplet is $\mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$, so $A$ enters it only in the combination $A - iD$.
+In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM the dimension $A$ corresponds to the imaginary unit $e_1 \in \mathrm{Im}(\mathbb{O})$ in the chosen oriented orthonormal frame. (No single real basis axis lies in the complex triplet $\mathbf{3} = \mathrm{span}_{\mathbb{C}}\{A-iD,\, S-iU,\, L-iE\}$ of the $\mathrm{SU}(3) \subset G_2$ stabilizer of $O$.)
 
-On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$, articulation $A$ ($= e_1$) belongs to **three Fano lines**:
+On the canonical Singer-cyclic [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$, articulation $A$ ($= e_1$) belongs to **three Fano lines**:
 
 | Fano line | Dimensions | Interpretation |
 |-----------|-----------|----------------|
-| $\{A, S, L\}$ = $\{1, 2, 4\}$ | Articulation + Structure + Logic | **Formal line**: distinction, retention of form, and logical consistency — a closed cycle of rational cognition |
-| $\{E, U, A\}$ = $\{5, 6, 1\}$ | Interiority + Unity + Articulation | **Higgs line**: $A$ is the only element of sector **3** on this line, a bridge between the spatial and electroweak sectors |
-| $\{O, A, D\}$ = $\{7, 1, 3\}$ | Ground + Articulation + Dynamics | **Genetic line**: from the ground, through distinction, motion is born — "time through distinction" |
+| $\{A, S, L\}$ = $\{1, 2, 4\}$ | Articulation + Structure + Logic | **Formal line**: distinction, retention of form, and logical consistency |
+| $\{E, U, A\}$ = $\{5, 6, 1\}$ | Interiority + Unity + Articulation | **Integrative-experiential line**: incidence triple linking interiority, integration, and distinction |
+| $\{O, A, D\}$ = $\{7, 1, 3\}$ | Ground + Articulation + Dynamics | **Genetic line**: incidence triple linking ground, distinction, and dynamics |
 
-:::tip Uniqueness of A on the Fano plane (T-177, restated) [T]
-*Restated 2026-09-25: $A$ is the third point of the line through the $\kappa_0$ pair $E$, $U$, hence fixed by incidence once $\{E,U\}$ is given (T-177 restated). The sector reading below — "the only dimension from sector 3 on the Higgs line", "bridge between the spatial and electroweak sectors" — is withdrawn [✗] with T-48a: no axis lies in the **3**. Earlier text:*
-
-Articulation is the **only** dimension from sector **3** lying on the Higgs line $\{E, U, A\}$. This makes $A$ a bridge between the spatial sector $\{A, S, D\}$ and the electroweak sector $\{E, O, U\}$.
-
-This property is precisely what explains why the [tree-level Yukawa coupling](../../physics/gauge-symmetry/fano-selection-rules) exists only for the third generation of fermions ($k = 1$, dimension $A$): only $A$ is simultaneously connected to the Higgs dimensions $E$ and $U$.
+:::tip Incidence constraint on A
+By the incidence geometry of $\mathrm{PG}(2,2)$ ([What incidence fixes](./dimensions#комбинаторная-единственность)), once the point $O$ and the unordered pair $\{E, U\}$ (non-collinear with $O$) are supplied as model marks, $A$ is uniquely constrained as the third point on the line $\{E, U, A\}$. This is a purely combinatorial incidence property of the labelled Fano plane and does not by itself derive particle-physics sectors or Yukawa couplings.
 :::
 
 ```mermaid
 graph TD
     subgraph "Fano lines of A"
         ASL["{A, S, L} — formal"]
-        EUA["{E, U, A} — Higgs"]
+        EUA["{E, U, A} — integrative-experiential"]
         OAD["{O, A, D} — genetic"]
     end
     A((A)) --- ASL
@@ -358,7 +354,7 @@ graph TD
 ### Octonionic context {#октонионный-контекст}
 
 :::note Chosen octonionic correspondence [D/I]
-The assignment $A=e_1\in\operatorname{Im}\mathbb O$ belongs to the declared oriented orthonormal frame. For a specified positive octonionic three-form, its stabilizer is $G_2$ [T]. This group identity does not uniquely assign functional names to axes or determine a physical encoder. The former universal T-42a rigidity is withdrawn [✗]; [reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) give a conditional comparison theorem. Incidence can constrain labels **after** the required marks are supplied; those marks and the remaining label convention are model data. The [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) states the additional algebraic inputs, and [the frame discussion](./dimensions#октонионная-интерпретация) distinguishes its symmetries from physical gauge equivalence.
+The assignment $A=e_1\in\operatorname{Im}\mathbb O$ belongs to the declared oriented orthonormal frame. For a specified positive octonionic three-form, its stabilizer is $G_2$ [T]. This group identity does not uniquely assign functional names to axes or determine a physical encoder. [Reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) give a conditional comparison theorem. Incidence can constrain labels **after** the required marks are supplied; those marks and the remaining label convention are model data. The [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) states the additional algebraic inputs, and [the frame discussion](./dimensions#октонионная-интерпретация) distinguishes its symmetries from physical gauge equivalence.
 :::
 
 ## Gradations of articulation {#градации-артикуляции}
@@ -375,7 +371,7 @@ A single distinction: "something / nothing", "figure / ground", "I / not-I". Thi
 
 #### Level 2: Categorical distinction ($\gamma_{AA} \sim 1/7$)
 
-Multiple distinctions organised into a system of categories. A complete projector system $\sum P_i = I$ — every object is assigned to a category. This is the level of healthy human perception: the world is divided into objects, properties, relations.
+Multiple distinctions organised into a system of categories. A complete projector system $\sum P_i = I$ — every object is assigned to a category. This is the level of balanced perceptual discrimination: the environment is partitioned into distinct objects, properties, and relations.
 
 #### Level 3: Hierarchical distinction ($\gamma_{AA} > 1/7$)
 
@@ -383,11 +379,11 @@ Distinctions have **levels of nesting**: species within genera, genera within fa
 
 #### Level 4: Hyperarticulation ($\gamma_{AA} \gg 1/7$)
 
-A pathological excess of distinctions. Every detail seems significant, every nuance decisive. Anxiety disorder, paranoia, obsessive-compulsive analysis. The system spends all its resource on distinction, leaving nothing for integration ($\gamma_{UU}$) or experience ($\gamma_{EE}$).
+Excessive fine-graining of distinctions. Every perturbation is split into separate categories at the expense of coherence with integration ($\gamma_{UU}$) or interiority ($\gamma_{EE}$), so the system concentrates weight on the $A$-axis rather than maintaining balanced cross-axis coherences.
 
 ## Summary
 
-Articulation is the first and logically primary dimension of the Holon. It makes everything else possible: without distinction there is no form (S), no change (D), no connection (L), no experience (E), no rootedness (O), no whole (U). Mathematically, articulation is described by the projection operator — the simplest and at the same time the deepest object in quantum theory. On the Fano plane, A occupies the unique position of a bridge between sectors, which has direct physical consequences for the mass hierarchy of particles.
+Articulation is the first and logically primary dimension of the Holon. It makes everything else possible: without distinction there is no form (S), no change (D), no connection (L), no experience (E), no rootedness (O), no whole (U). Mathematically, articulation is represented by projection operators and spectral decompositions. On the canonical Fano plane, $A$ lies on the three lines $\{A, S, L\}$, $\{E, U, A\}$, and $\{O, A, D\}$.
 
 ---
 

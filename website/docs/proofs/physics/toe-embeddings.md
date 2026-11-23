@@ -5,10 +5,14 @@ slug: /proofs/physics/toe-embeddings
 description: "M-theory, loop quantum gravity and causal sets relative to UHM: the G2 coincidence, encodings of spin networks and posets in holonic states, and the universal property of the UHM kinematic object."
 ---
 
-# Embeddings of Alternative Candidate Theories into UHM
+# Algebraic Comparisons, Finite Data Encodings, and C*-Corepresentation
 
-:::info Status
-The results distinguish three mathematical questions. Which finite records can a matrix encode? Which symmetry groups agree? Which morphisms exist between specified systems? Identifying two physical theories additionally requires a correspondence between their observables and dynamics.
+:::info Scope
+This page separates four strictly mathematical statements from physical-theory equivalence:
+1. **`T-170(i)` `[T]`** establishes only the algebraic stabilizer identity $\mathrm{Stab}_{\mathrm{GL}(7,\mathbb{R})}(\varphi_0) = \mathrm{Aut}(\mathbb{O}) = G_2$ (not an M-theory compactification on a 7-manifold; perturbative equivalence **`T-170' [✗]`** is retracted).
+2. **`T-171` `[T]`** and **`T-172` `[T]`** construct faithful **finite data encodings** of finite spin networks and finite posets into convex mixtures of density matrices on $(\mathbb{C}^7)^{\otimes M}$ — **not** dynamical embeddings of Loop Quantum Gravity or Causal Set dynamics.
+3. **`T-173 [✗]`** (universal rigidity of the UHM primitive) is **retracted**.
+4. **`T-174` `[T]`** is an exact **finite-dimensional $C^*$-corepresentation theorem** for $u_0 = (\mathcal{S}, A_{\mathrm{int}}, \mathrm{id})$, whose own no-go clauses **(c)** and **(e)** rule out faithful morphisms into simple-spectrum/primitive dynamics and refute universal receiving morphisms $x \to \mathrm{UHM}$.
 :::
 
 ---
@@ -42,9 +46,9 @@ The automorphisms of the torus as a compact abelian group form the discrete grou
 
 **Proof of (i).** A linear map preserving $\varphi_0$ preserves the metric, because the metric is determined by $\varphi_0$ through $6\,\langle x, y\rangle\,\mathrm{vol} = (x \lrcorner \varphi_0) \wedge (y \lrcorner \varphi_0) \wedge \varphi_0$ (Bryant 1987, "Metrics with exceptional holonomy", §2), and therefore it preserves the cross product $\langle x \times y, z\rangle = \varphi_0(x, y, z)$ and the octonion product $xy = -\langle x, y\rangle + x \times y$ on $\mathrm{Im}\,\mathbb{O}$; conversely an automorphism of $\mathbb{O}$ preserves $\varphi_0$. So $\mathrm{Stab}_{GL(7)}(\varphi_0) = \mathrm{Aut}(\mathbb{O}) = G_2$. That $G_2$ is the holonomy group of a torsion-free $G_2$-structure and fixes exactly one spinor of $\mathrm{Spin}(7)$ is standard (Bryant 1987; Harvey, *Spinors and Calibrations*, 1990; Joyce 2000). $\square$
 
-### T-170′. Perturbative matching requirements {#т-170-prime}
+### T-170′. Perturbative matching — retracted `[✗]` {#т-170-prime}
 
-A comparison order by order requires two defined, regularized expansions with matched coefficients. No such pair of expansions is specified for the full M-theory correspondence here.
+The earlier claim of a perturbative equivalence between UHM and M-theory on a 7D $G_2$-orbifold (**`T-170' [✗]`**) is **retracted**: the finite torus integral and algebraic stabilizer $G_2$ in `T-170(i)–(ii)` do not construct a 7-manifold compactification, a torsion-free $G_2$-structure, or matched perturbative expansions on both sides. Comparing two theories order by order requires defined, regularized expansions with matched field domains, measures, and coefficients.
 
 ### T-170″. Finite partition functions and limit states {#т-170-double-prime}
 
@@ -182,7 +186,7 @@ The tetrahedral Ponzano–Regge asymptotic applies to a $6j$ symbol with its non
 | State validity | [T] for the displayed encoding | Positivity and trace normalization are checked in T-171. |
 | Physical area spectrum | Additional input | Recovering spin labels does not fix the LQG area observable. |
 | Fano amplitudes (A1)–(A4) | **[✗] / [Pr]** | Finite sums retained; invariant contractions and gluing must be supplied (§2.3) |
-| Fano amplitudes (semi-classical limit) | **[C]** | Fano-Regge compatibility — open problem |
+| Fano amplitudes (semi-classical limit) | **[Pr]** | Fano-Regge compatibility — open problem; `T-171` is a finite data encoding into matrix mixtures, not a dynamical LQG embedding |
 
 ---
 
@@ -255,7 +259,7 @@ Numerical check: `check_core_numbers.py`, `test_t172_every_finite_poset_is_encod
 | Order of any finite poset in one state | **[T]** | T-172 (a): read from $\langle 01\rvert\rho_{cc'}\lvert 12\rangle$; no $M^4$-embedding needed |
 | Posets as internal categories of $\mathbf{Sh}_\infty(\mathcal{C})$ | **[T]** | T-172 (b): fully faithful, because $\mathcal{D}(\mathbb{C}^7)$ is connected |
 | Nerve realised as an object of the ∞-topos | **[✗]** as an embedding | T-172 (c): contractible for any poset with a least element |
-| Discrete time structure | **[T]** | $6M+1$ readings of the summed clock (T-38b [T] per holon); linear-extension ranks fit (T-172 (d)) |
+| Discrete time structure | **[T]** | $6M+1$ readings of the summed clock (T-38b [C] per holon under supplied clock register); linear-extension ranks fit (T-172 (d)) |
 | Continuum limit → $M^4$ | not part of T-172 | T-118, T-119, T-120 are separate theorems |
 
 ---
@@ -285,15 +289,11 @@ A morphism $(E_1, \mathcal{A}_1, D_1) \to (E_2, \mathcal{A}_2, D_2)$ is a triple
 
 A morphism includes a geometric inverse-image functor and a map of algebras over the same base, together with compatibility with the specified dynamics.
 
-### 4.3 Scope of primitive uniqueness {#теорема-единственности-мета}
+### 4.3 Withdrawal of universal primitive rigidity (`T-173 [✗]`) {#теорема-единственности-мета}
 
-#### T-173. Data specifying a primitive {#t-173}
+#### T-173. Universal rigidity of the UHM primitive — retracted `[✗]` {#t-173}
 
-A structured physical theory requires a site, observation algebra and dynamics. Distinct monotone quantum metrics and generators can be specified on the same finite state space.
-
-Dimension seven requires the explicit premises of the [minimality theorem](/docs/proofs/minimality/theorem-minimality-7). A positive octonionic form has stabilizer $G_2$, but this codomain symmetry does not identify physical encoders.
-
-For the given dimension $N$ and open-cover site, the associated sheaf topos is determined up to equivalence. Physical dynamics and its observable interpretation remain separate inputs.
+**Retracted `[✗]`** ([Status Registry](/docs/reference/status-registry)): universal rigidity of the UHM primitive is withdrawn. While a fixed open-cover site on a chosen state space determines its associated sheaf topos up to equivalence, distinct monotone quantum metrics, frames, dynamics, clocks, and observation bridges can be specified on the same finite state space. Dimension seven requires the explicit premises of the [minimality theorem](/docs/proofs/minimality/theorem-minimality-7), and the codomain stabilizer $G_2$ of a positive octonionic 3-form does not identify physical encoders (`T-123 [✗]`).
 
 ### 4.4 Universal Property: Receiving Map {#приёмное-отображение}
 
@@ -352,49 +352,50 @@ Numerical check: `check_core_numbers.py`, `test_t174_a_int_corepresents_structur
 
 ## 5. Summary Table {#сводная-таблица}
 
-| Theory | Map | Key mechanism | Status | Conditions |
-|--------|-----|---------------|--------|------------|
-| **M-theory** | Group comparison | $\mathrm{Stab}_{GL(7)}(\varphi_0)=G_2$ | [T] for the specified form | Matching partition functions is [H]. |
-| **LQG** (all finite spin networks) | $\mathcal{S} \mapsto \Gamma_{\mathcal{S}}$, $M = \lvert V\rvert$ | spins and labels as ratios of coherences | **[T]** | — (T-171, T-171') |
-| **Causal sets** (all finite posets) | $C \mapsto \Gamma_C$; $C \mapsto \pi^*N_\bullet C$ | ordered pair state; connectedness of $\mathcal{D}(\mathbb{C}^7)$ | **[T]** | — (T-172) |
-| **Universal property** | $u_0 = (A_{\text{int}}, \mathrm{id})$ corepresents $A_{\text{int}}$-structures | universal $C^*$-algebra; multiplicity-free only at $n = 7$ | **[T]** | Conditions in T-174 |
+| Topic | Map / object | Exact mathematical content | Status | Scope / limitations |
+|---|---|---|---|---|
+| **Algebraic $G_2$ stabilizer** | $\mathrm{Stab}_{\mathrm{GL}(7,\mathbb{R})}(\varphi_0) = \mathrm{Aut}(\mathbb{O}) = G_2$ | Algebraic group coincidence (`T-170(i)`), finite torus integral (`T-170(ii)`) | **[T]** | Not an M-theory compactification; perturbative equivalence **`T-170' [✗]`** retracted; $Z_{\mathrm{UHM}} = Z_M$ is `[H]` |
+| **Spin-network data encoding** | $\mathcal{S} \mapsto \Gamma_{\mathcal{S}}$, $M = \lvert V\rvert$ | Faithful finite data encoding into matrix mixtures (`T-171`, `T-171'`) | **[T]** | Data encoding only — not a dynamical LQG embedding; no isometric functor (`T-171(d)`) |
+| **Poset data encoding** | $C \mapsto \Gamma_C$; $C \mapsto \pi^*N_\bullet C$ | Faithful finite poset encoding into matrix mixtures / Segal objects (`T-172`) | **[T]** | Data encoding only — not Causal Set dynamics or 4D embedding; realization forgets order (`T-172(c)`) |
+| **Primitive rigidity** | Universal rigidity of UHM primitive | Fixed open-site sheaf construction valid; metric, frame, dynamics, clock, and bridges are external inputs | **[✗]** | **`T-173 [✗]`** retracted |
+| **$C^*$-corepresentation** | $u_0 = (\mathcal{S}, A_{\mathrm{int}}, \mathrm{id})$ | Exact finite-dimensional $C^*$-corepresentation theorem (`T-174`) | **[T]** | Includes no-go clauses `(c)` (no faithful morphism for simple-spectrum $H$ or primitive semigroups) and `(e)` (no universal receiving morphism $x \to \mathrm{UHM}$) |
 
 ### 5.1 Honest Assessment
 
+What is **proven `[T]`**:
+1. Algebraic stabilizer identity $\mathrm{Stab}_{\mathrm{GL}(7,\mathbb{R})}(\varphi_0) = \mathrm{Aut}(\mathbb{O}) = G_2$ (`T-170(i)`) and compactness of the finite torus integral (`T-170(ii)–(iii)`);
+2. Representation branching $SU(2) \subset SU(3) \subset G_2$ with $\mathbf{7} \to \mathbf{1} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ over $\mathbb{C}$ (`T-171(e)`);
+3. Faithful, locally decodable **finite data encodings** of finite spin networks and finite posets into matrix mixtures on $(\mathbb{C}^7)^{\otimes M}$ (`T-171`, `T-172`);
+4. Exact finite-dimensional $C^*$-corepresentation by $u_0 = (\mathcal{S}, A_{\mathrm{int}}, \mathrm{id})$, multiplicity-free iff $n = 7$, together with its own no-go theorems `(c)` and `(e)` (`T-174`).
 
-What is **proven [T]**:
-1. $\mathrm{Stab}_{GL(7)}(\varphi_0) = \mathrm{Aut}(\mathbb{O}) = G_2$, the holonomy group of torsion-free $G_2$-structures (T-170 (i));
-2. The chain $SU(2) \subset SU(3) \subset G_2$ with $\mathbf{7} \to \mathbf{1} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ over $\mathbb{C}$ (T-171 (e));
-3. Injective, locally decodable encodings of finite spin networks and finite posets in holonic states (T-171, T-172);
-4. $u_0$ corepresents $A_{\text{int}}$-structures; the multiplicity-free faithful one exists only on $\mathbb{C}^7$ and is unique there up to $U(7)$ (T-174).
-
-What is **not proven**:
-1. $Z_{\text{UHM}} = Z_M$ at any level (T-170 (iv) [H]);
-2. The specific form of Fano spin foam amplitudes and their semi-classical limit;
-3. A universal property *into* UHM from every theory of a class — false as stated (T-174 (e)).
+What is **retracted `[✗]` or unproved `[H]`/`[Pr]`**:
+1. Any M-theory 7-manifold compactification or perturbative equivalence (`T-170' [✗]`; $Z_{\mathrm{UHM}} = Z_M$ is `[H]`);
+2. Any dynamical embedding of LQG spin foams or Causal Set dynamics;
+3. Universal rigidity of the UHM primitive (`T-173 [✗]`);
+4. Any universal receiving morphism *into* UHM from arbitrary physical theories (refuted by `T-174(e)`).
 
 ---
 
 ## 6. Results Registration {#регистрация}
 
 | Theorem | Statement | Status | Conditions |
-|---------|-----------|--------|------------|
-| **T-170** | Group identity, finite partition integral, limit states | [T] for specified models | Physical partition-function correspondence [H] |
-| **T-171** | Encoding finite spin networks | [T] | Supplied graph, labels and readout |
-| **T-171′** | Unbounded spin labels | [T] | Local decoding of the specified encoding |
-| **T-172** | Finite poset encoding and internal category | [T] | Supplied order and readout |
-| **T-173** | Topos for the specified site | [T] under the site data | Physical dynamics require further assumptions |
-| **T-174** | Corepresentation, multiplicity, dynamics criterion and expectation | [T] | As in the theorem |
-| **C27-M** | Continuous Gap limit | [P] | Part of the hypothesis T-170 (iv) |
-| **C28-M** | Supersymmetric extension | [P] | Part of the hypothesis T-170 (iv) |
-| **C29'** | Spatial encoding (all finite spin networks) | [T] | Lemma C29' = T-171 (a)–(c) |
-| **C29** | Spatial limit for unbounded spin networks | [T] | Closed by T-171 (no bound on $j_e$) |
-| **C30** | Causal encoding (all finite posets, no $M^4$-embedding) | [T] | Lemma C30 = T-172 (a) |
+|---|---|---|---|
+| **T-170** | Algebraic $G_2$ stabilizer, finite torus integral, weak-$*$ limit states | `[T]` for specified models | Not an M-theory compactification; partition-function match `[H]` |
+| **T-170′** | Perturbative M-theory / 7D orbifold equivalence | **`[✗]`** | Retracted |
+| **T-171** | Finite data encoding of finite spin networks into matrix mixtures | `[T]` | Data encoding only; no LQG dynamics or isometric functor `(d)` |
+| **T-171′** | Unbounded spin labels in the data encoding | `[T]` | Local decoding of specified matrix mixture |
+| **T-172** | Finite data encoding of finite posets and constant-sheaf Segal objects | `[T]` | Data encoding only; no Causal Set dynamics; realization forgets order `(c)` |
+| **T-173** | Universal rigidity of the UHM primitive | **`[✗]`** | Retracted; fixed open-site sheaf valid, metric/frame/dynamics/clock/bridges remain inputs |
+| **T-174** | Finite-dimensional $C^*$-corepresentation, conditional expectation, and no-go clauses `(c),(e)` | `[T]` | Relative to $\mathbf{PhysTheory}^{C^*}_{\mathrm{pt}}$; refutes universal receiving morphisms `(e)` |
+| **C27-M** | Continuous Gap limit | `[H]` | Part of unproved hypothesis `T-170(iv)` |
+| **C28-M** | Supersymmetric extension | `[H]` | Part of unproved hypothesis `T-170(iv)` |
+| **C29′** | Local decoding of finite spin-network encoding | `[T]` | Lemma C29′ = `T-171(a)–(c)` |
+| **C29** | Unbounded spin labels in encoding | `[T]` | Closed by `T-171` (no bound on $j_e$) |
+| **C30** | Local decoding of finite poset encoding | `[T]` | Lemma C30 = `T-172(a)` |
 
 ---
 
 ## Links
 
-- **Relies on:** [Spectral triple (T-53)](/docs/proofs/physics/physics-correspondence), [Emergent $M^4$ (T-117–T-121)](/docs/proofs/physics/emergent-manifold), [specified octonionic symmetry and conditional RI](/docs/proofs/categorical/uniqueness-theorem), [SUSY from $G_2$](/docs/physics/particle-physics/susy), [Gap functional integral](/docs/physics/gravity/quantum-gravity), [Sector decomposition](/docs/physics/gauge-symmetry/standard-model)
-- **Justifies:** Meta-ToE status of UHM
-- **Status registry:** T-170 — T-174, C27-M — C30 ([Registry](/docs/reference/status-registry))
+- **Relies on:** [Spectral triple (T-53)](/docs/proofs/physics/physics-correspondence), [Emergent $M^4$ (T-117–T-121)](/docs/proofs/physics/emergent-manifold), [Specified octonionic symmetry and conditional RI](/docs/proofs/categorical/uniqueness-theorem), [Supersymmetry](/docs/physics/particle-physics/susy), [Gap functional integral](/docs/physics/gravity/quantum-gravity), [Standard Model](/docs/physics/gauge-symmetry/standard-model)
+- **Status registry:** `T-170`–`T-174`, `C27-M`–`C30` ([Registry](/docs/reference/status-registry))

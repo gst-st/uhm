@@ -151,9 +151,9 @@ Within $\Pi_\kappa^{\mathrm{safe}}$, policy $\pi$ dominates $\pi'$ if all compon
 
 The weights and floors are public parts of the decision. They must not disguise greater basic worth for agents with larger matrices, stronger reflection or higher productivity.
 
-## 4. Relations, compassion and cooperation {#part-iv-moral-theory}
+## 4. Relations, compassion and cooperation {#часть-iv-моральная-теория}
 
-<a id="часть-iv-моральная-теория"></a>
+<a id="part-iv-moral-theory"></a>
 
 ### Responsibility beyond measured empathy {#мораль-из-композита}
 

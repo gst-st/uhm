@@ -142,15 +142,15 @@ $$
 \frac{|\rho_{OE}||\rho_{OU}|}{\rho_{OO}}\le\sqrt{\rho_{EE}\rho_{UU}}\le1/2.
 $$
 
-The quotient is bounded but has no unique continuous extension at $\rho_{OO}=0$. Along pure states with $O$ amplitude tending to zero and nonzero $E,U$ amplitudes it tends to their product; along diagonal states it is zero. Positivity forces numerator zero at the boundary, giving $0/0$, not a proof of death. Also $P>2/7$ does not bound $\rho_{OO}$ away from zero.
+The quotient is bounded but has no unique continuous extension at $\rho_{OO}=0$, and its gradient blows up as $\rho_{OO}\to 0$. Along pure states with $O$ amplitude tending to zero and nonzero $E,U$ amplitudes it tends to their product; along diagonal states it is zero. Positivity forces numerator zero at the boundary, giving $0/0$, not a proof of death. Also $P>2/7$ does not bound $\rho_{OO}$ away from zero.
 
-For global well-posedness choose and disclose a regularization, e.g.
+Consequently, **Lipschitz well-posedness** of the ODE vector field on $\mathcal D(\mathbb C^7)$ (and of theorems such as T-191) strictly requires explicit $\varepsilon$-regularization of $\rho_{OO}^{-1}$ (or a bounded smooth rate $\kappa$), e.g.
 
 $$
 \kappa_0^{\varepsilon}=\omega_0\frac{|\rho_{OE}||\rho_{OU}|}{\rho_{OO}+\varepsilon},\qquad\varepsilon>0,
 $$
 
-or use the exact kinetic flux with its boundary convention. Regularization changes the model; the number $0.01P_{\mathrm{crit}}$ is a numerical choice, not a theorem. A bootstrap coefficient is likewise a chosen parameter, and cannot cause genesis when multiplied by a gate that vanishes at the initial state.
+or use of the exact kinetic flux with a declared boundary convention. Regularization changes the model; the number $0.01P_{\mathrm{crit}}$ is a numerical choice, not a theorem. A bootstrap coefficient is likewise a chosen parameter, and cannot cause genesis when multiplied by a gate that vanishes at the initial state.
 
 ## State preservation {#сохранение-положительности-s7}
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 6
 title: "The Universe as Holonom"
-description: "The canonical reading of UHM's top floor, authorized by the epistemic-vertical audit: the total state of reality is static (Page–Wootters), its self-model closes on itself and holds viability, not a resource optimum (Theorem 10.1 of Gap thermodynamics, T-222), its organization is coinductively multi-level (the fractal holon), nothing is imported from outside. Every framing sentence carries its load-bearing test; the floor's three declared holes (H1.1–H1.3) are embedded, not hidden: the universal self-model is an interpretive extension of a Γ-level theorem, the Universe's own viability stage is neither derived nor measured, and the scale-freeness of the diagnostic grammar is conditional on its axioms holding per level."
+description: "Ontological reading of the Universe as a self-contained holonom, with explicit separation of proven finite-state constructions from open cosmological hypotheses (H1.1–H1.3)."
 ---
 
 # The Universe as holonom: ontology and realization
@@ -26,7 +26,7 @@ The image of self-consumption, a world reading itself, is an interpretation [I].
 
 One may select a coalgebraic architecture with node labels in $D_7$ and finite multisets of children [D]. If a final carrier for the stated functor and size convention is supplied, its universal property concerns that architecture. It does not select a physical subsystem boundary or identify a root's label with the complete joint state.
 
-A pair of native registers has state dimension49. Representing an aggregate by a new seven-dimensional label requires an explicitly defined channel/readout. The part-to-whole inclusion order has a top element only after the carrier and order are chosen; its thin-category terminality is a mathematical property of that order, not terminality in the physical channel category.
+A pair of native registers has state dimension 49. Representing an aggregate by a new seven-dimensional label requires an explicitly defined channel/readout. The part-to-whole inclusion order has a top element only after the carrier and order are chosen; its thin-category terminality is a mathematical property of that order, not terminality in the physical channel category.
 
 Spacetime reconstruction and diagnostic transfer require their own algebraic, geometric and weak-coupling hypotheses. Grammar recurrence and scale transfer remain conditional on the observation model; they do not establish all-scale phenomenal identity. See [composition](/docs/core/dynamics/composite-systems).
 

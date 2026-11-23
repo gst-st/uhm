@@ -14,41 +14,41 @@ The chain has six links. Each is stated, then justified from the corpus, then ha
 
 Everything the Console computes is a function of a single object: the **coherence matrix** $\Gamma \in \mathcal D(\mathbb C^7)$ — a $7\times 7$ Hermitian, positive-semidefinite, unit-trace matrix. Its diagonal entries $p_i = \gamma_{ii}$ are the **populations** of the seven axes; its off-diagonal entries $\gamma_{ij} = |\gamma_{ij}|e^{i\theta_{ij}}$ are the **coherences** — the relationships between axes, carrying both a magnitude and a phase.
 
-The seven axes are not a stylistic choice. They are $[A,S,D,L,E,O,U]$ — Articulation, Structure, Dynamics, Logic, Interiority, Ground, Unity — the seven functional roles that the [minimality theorem](/docs/proofs/minimality/theorem-minimality-7) proves are the fewest that close a self-maintaining, self-modelling system (autopoiesis + phenomenality + self-grounding). A state with fewer than seven axes cannot both hold together and know itself; a state with more is reducible. Seven is forced.
+The seven axes are not a stylistic choice. They are $[A,S,D,L,E,O,U]$ — Articulation, Structure, Dynamics, Logic, Interiority, Ground, Unity — the seven functional roles isolated by the [minimality analysis](/docs/proofs/minimality/theorem-minimality-7) and [Theorem Σ (T-224)](/docs/applied/research/syndrome-calculus#теорема-сигма) as the smallest self-diagnosing grammar supporting single-fault localisation and a nontrivial state repertoire.
 
-*Why this matters for a product:* the object is low-dimensional (a person's entire readable state is 49 real numbers, 48 after the trace constraint), yet it is the **complete** state — there is nothing about the system's self-reading that lives outside Γ. A product built on Γ is therefore simultaneously compact enough to compute and estimate, and complete enough that no essential quality is structurally excluded.
+*Why this matters for a product:* the object is low-dimensional (a person's entire readable state is 49 real numbers, 48 after the trace constraint), yet it is compact enough to compute and estimate while carrying both diagonal populations and pairwise coherences.
 
 ## §2. Link 2 — the theorems that license the instrument {#теоремы}
 
-Four results turn "we have an object" into "we may build an instrument on it."
+Four corpus results (three theorems/constructions and one explicit modelling hypothesis) turn "we have an object" into "we may build an instrument on it."
 
-**(T-224) The grammar is unique.** [Theorem Σ](/docs/applied/research/syndrome-calculus#теорема-сигма) proves that any complete self-reading grammar — one that can localise a single fault in itself and distinguish a nontrivial repertoire of global states — has *exactly* seven axes with the Fano incidence, uniquely. *Consequence for the product:* the frame is not one option among many; it is the only complete one. This is the property no competitor can claim.
+**(T-224 [T]) The grammar is unique.** [Theorem Σ](/docs/applied/research/syndrome-calculus#теорема-сигма) proves that any complete self-reading grammar — one that can localise a single fault in itself and distinguish a nontrivial repertoire of global states — has *exactly* seven axes with the Fano incidence and the 16-codeword Hamming $H(7,4)$ grammar, uniquely up to relabelling. *Consequence for the product:* the frame is not one option among many; it is the unique minimal single-fault-diagnosable grammar.
 
-**(T-153 / T-153a / T-253) The instrument is substrate-free.** [Substrate closure](/docs/proofs/consciousness/substrate-closure) proves the same predicate reads a biological brain, a digital agent, or any admissible carrier, and [T-253](/docs/proofs/consciousness/substrate-closure#t-253) gives the explicit construction (the retraction $G_V$) plus the accessibility clause (Acc). *Consequence:* one kernel serves human, team, and AI targets — the platform thesis of [00 §2](/docs/applied/console/overview#почему-коммерция).
+**(T-153 [D]/[C] / T-153a [T] / T-253 [T]+[C]) The instrument is substrate-free.** [Substrate closure](/docs/proofs/consciousness/substrate-closure) shows the same formal predicate reads a biological brain, a digital agent, or any admissible carrier once an observation bridge is calibrated, and [T-253](/docs/proofs/consciousness/substrate-closure#t-253) gives the explicit retraction $G_V$ modulo the accessibility clause (Acc). *Consequence:* one kernel serves human, team, and AI targets — the platform thesis of [00 §2](/docs/applied/console/overview#почему-коммерция).
 
-**(T-256) The charts are finite and classified.** [The classification theorem](https://homohologra.ph/research/one-grammar#t-256) shows every symbolic system is a sub-configuration of the Fano grammar, falling into a finite orbit list. *Consequence:* the Console can *host* every legacy system (astrology, I Ching, tarot) as a named orbit and translate between them with honest loss accounting — the interop feature of [04](/docs/applied/console/use-cases).
+**(T-256 [T]+[I]) Axis-subset orbits are finite and classified.** Under the finite Fano collineation group $\mathrm{GL}(3,2)$ ([Mathematical kernel](/docs/reference/mathematical-kernel), [Status registry](/docs/reference/status-registry)), nonempty subsets of the seven axes partition into **nine nonempty orbit types** `[T]`. Mapping legacy symbolic systems (astrology, I Ching, tarot) onto these subsets is an interpretation `[I]`. *Consequence:* the Console can *host* legacy charts as named sub-configurations with honest loss accounting — the interop feature of [04](/docs/applied/console/use-cases).
 
-**(T-257) The channels are priced.** [The licensed-channel theorem](https://homohologra.ph/research/one-grammar#t-257) proves inter-level coupling is gate/rate-modulation, never a symbolic message, and prices the only real external anchor (the two-channel solar/lunar ledger). *Consequence:* the sensor layer knows exactly which external inputs are physical (light, tides → circadian/circalunar) and which are category errors (planetary natal claims), and the modulation horizon [08](/docs/applied/console/hardware-horizon) knows its hard boundary (it can bias, never write).
+**(T-257 [H]) The coupling-channel hypothesis.** [Gap diagnostics](/docs/applied/research/gap-diagnostics) and the [Status registry](/docs/reference/status-registry) frame rate modulation and viability gating as one admissible inter-holon control model rather than symbolic state-writing, while noting that any claimed external forcing (circadian/circalunar entrainment or ephemeris signals) requires an identifiable observation law and physical coupling model `[H]`. *Consequence:* the sensor layer accepts only physically modelled inputs (light, sleep timing, physiological signals), rejects planetary natal claims for lack of any identified observation bridge, and keeps the modulation horizon ([08](/docs/applied/console/hardware-horizon)) within an explicit biasing model rather than state-writing.
 
 ## §3. Link 3 — from object to observables {#наблюдаемые}
 
-The kernel computes eleven derived quantities from Γ. Each is a defined function with a corpus home; [02](/docs/applied/console/kernel) gives the algorithms, here we establish *why each is well-defined and computable*.
+The kernel computes eleven derived quantities from $\Gamma$. Each is a defined function with a corpus home; [02](/docs/applied/console/kernel) gives the algorithms, here we establish *why each is well-defined and computable*.
 
-| Observable | Definition (from Γ) | Why computable |
+| Observable | Definition (from $\Gamma$) | Why computable / scope |
 |---|---|---|
-| Purity $P$ | $\operatorname{Tr}(\Gamma^2)$ | a trace of a matrix product — direct |
-| Reflection $R$ | $1/(7P)$ | a scalar function of $P$ |
-| Self-model quality $R_\varphi$ | $1 - \lVert\Gamma-\varphi(\Gamma)\rVert_F^2/\lVert\Gamma\rVert_F^2$ | needs the self-model map $\varphi$; canonical family closed-form |
-| Integration $\Phi$ | integrated-information functional on Γ | corpus gives an HS-projection form [T] |
-| Differentiation $D_{\mathrm{diff}}$ | $\exp S_{vN}(\Gamma)$ | von Neumann entropy of Γ — eigenvalues |
-| Gap map | $\mathrm{Gap}(i,j) = \lvert\sin\theta_{ij}\rvert$ | phases of off-diagonal entries |
-| Mandalagram | $(p_i;\ \gamma_{ij})$ laid on the 7+21 chart | direct reshaping of Γ |
-| Archetype | decode of the thresholded diagonal | a lookup on $\{p_i > \tau\}$ |
-| Mode | dominant term of the triadic decomposition of $\dot\Gamma$ | needs a trajectory increment |
-| Meaning | $P\cdot D_{\mathrm{diff}}\cdot\Phi\cdot R_\varphi$ | product of four scalars |
-| Freedom | $\dim\ker\mathcal H_\Gamma + 1$ | kernel dimension of the free-energy Hessian |
+| Purity $P$ | $\operatorname{Tr}(\Gamma^2)$ | unitary-invariant matrix trace `[T]` |
+| Reflection $R$ | $1/(7P)$ | unitary-invariant scalar function of $P$ `[D]` |
+| Self-model quality $R_\varphi$ | $1 - \lVert\Gamma-\varphi(\Gamma)\rVert_F^2/\lVert\Gamma\rVert_F^2$ | closed form for linear anchor-mixing $\varphi_{\mathrm{lin}}$ (`T-249 [T]`) |
+| Integration $\Phi$ | $(P - P_{\mathrm{diag}})/P_{\mathrm{diag}}$, $P_{\mathrm{diag}}=\sum_i\gamma_{ii}^2$ | fixed-frame ratio (`T-129 [D]/[T]`); no bipartitions in prime $d=7$ |
+| Differentiation $D_{\mathrm{diff}}^{7D}$ | $1 + 6\,\mathrm{Coh}_E(\Gamma)$ | 7D native proxy `[D]` (spectral $\exp S_{vN}(\rho_E)$ requires extended $\mathcal H_E$) |
+| Gap map | $\mathrm{Gap}(i,j) = \lvert\sin\theta_{ij}\rvert$ | fixed-frame phases of off-diagonal entries `[D]` |
+| Mandalagram | $(p_i;\ \gamma_{ij})$ laid on the 7+21 chart | direct reshaping of $\Gamma$ `[D]` |
+| Archetype | nearest $H(7,4)$ codeword of $\{p_i > \tau\}$ | syndrome decode to 16 Hamming codewords (`T-224 [T]`) |
+| Mode | dominant term in chosen 3-part grouping of $\dot\Gamma$ | requires a trajectory increment and specified generator grouping `[D]` |
+| Meaning | $P\cdot D_{\mathrm{diff}}^{7D}\cdot\Phi\cdot R_\varphi$ | chosen composite indicator `[D]` (not a unique canonical scalar) |
+| Freedom | $\mathrm{Freedom}_V(\Gamma_*)=1+\dim\ker\operatorname{Hess}_{\Gamma_*}V$ | chosen Hessian score `[D]` for a supplied $C^2$ potential $V$ (`T-89 [T]` under Morse–Bott) |
 
-The point of the table is that *nothing in the readout requires anything but Γ (and, for mode, a Γ-increment).* The product's entire analytic surface is a pure function of the estimated state.
+The point of the table is that *nothing in the readout requires hidden metaphysical inputs beyond $\Gamma$ (plus a trajectory increment for mode and a declared potential $V$ for the Hessian score).* Every quantity carries its exact scope — unitary-invariant vs fixed-frame, theorem vs definition.
 
 ## §4. Link 4 — the estimation problem {#оценка}
 
@@ -65,7 +65,7 @@ The estimation link is where over-claim would enter, and it is exactly where the
 Given $\widehat\Gamma$ (and its confidence region), the pipeline is deterministic:
 
 1. **Invariants** — evaluate the eleven observables (§3), propagating confidence.
-2. **Optical construction** — run the three guardrail questions ([one-grammar §5](https://homohologra.ph/research/one-grammar#оптическая-конструкция)): which subchart is this reading (T-256 orbit), what anchor and is it licensed (T-257), is the subject a viable holon (viability gate). These decide *what kind of statement the reading is allowed to make.*
+2. **Optical construction** — run the three guardrail checks ([Mathematical kernel](/docs/reference/mathematical-kernel), [Reconstruction identifiability](/docs/applied/research/reconstruction-identifiability)): which sector/orbit does this reading actually resolve (`T-256 [T]+[I]`), is any external anchor physically modelled (`T-257 [H]`), and is the subject inside the viability window (`P > 2/7`, viability gate). These decide *what kind of statement the reading is allowed to make.*
 3. **Domain module** — self / trajectory / dyad / group / clinical / AI (see [04](/docs/applied/console/use-cases)) applies domain logic over the invariants.
 4. **Rendering + honesty layer** — produce the mandalagram, forecast, or recommendation, each stamped with anchor class and loss/confidence.
 
@@ -81,25 +81,25 @@ The single artifact that makes this suite a specification rather than a brochure
 
 | Product feature | Rests on (source) | Corpus status | Spec doc |
 |---|---|---|---|
-| Seven-axis frame | Minimality (7 roles); Σ uniqueness (T-224) | [T] | 02 |
-| State readout (invariants) | definitions of $P,R,\Phi,D,R_\varphi$ + thresholds | [T]/[C] | 02 |
-| Mandalagram / bodygraph | 28-cell chart (gamma-canon) | [T]/[D] | 02, 05 |
-| Archetype & mode | 16 signatures [T]; triadic decomposition [T] | [T] | 02 |
-| Meaning & Freedom readout | Selected meaning model and Hessian score, with explicit potential/domain and empirical validation | [D/I/H] | 02 |
-| Measured estimation | seven-channel embedding; verdict concordance with PCI (κ) | [Т-path]/[C] | 03 |
-| Self-audit estimation | П1 28-item audit | [И, structured] | 03 |
-| Trajectory & forecast | transparency windows, bifurcations (gap-diagnostics) | [T]/[C] | 03, 04 |
-| Correction / practice | minimal-intervention protocol | [C] | 04 |
-| Cooperation and relationship reflection | Typed joint-state data and independent outcomes; T-77 is a pinching identity, not an empathy theorem | [D/H]; identity [T] | 04 |
-| Alignment / knowing–doing gap | Observed commitments and actions; a phase proxy requires independent validation | [D/H] | 04 |
-| Ethical protections and non-manipulation | Explicit normative context, consent and protection constraints; conditional preservation certificates | [N/D]; certificates [T] | 10 |
-| Org diagnostics | 7-D org profile; one-theme pathology | [T]/[C] | 04 |
-| Clinical (DOC/anaesthesia/meditation) | altered-states profiles; PCI verdict concordance | [C]/[research] | 04, 07 |
-| AI introspection | substrate closure (T-153); SYNARC | [T] | 04 |
-| Symbolic interop | back-projection; classification (T-256) | [T]+[I] | 04 |
-| Human "why/tasks" reading | archetype + Freedom + $\Gamma^*(\tau)$; birth-refusal | [T] + refusal | 05 |
-| Chronobiology anchor | licensed-channel ledger (T-257) | [T]/[C] | 03, 08 |
-| Modulation horizon | $\mathcal R$; correction; gate-not-message (T-257) | [speculative]/[T-bound] | 08 |
-| Every guardrail | optical construction (T-256/T-257) + viability gate | [T]+[I] | 02, 10 |
+| Seven-axis frame | Diagnosability rigidity: Theorem Σ (`T-224`) | [T] | 02 |
+| State readout (invariants) | definitions of $P,R,\Phi,D_{\mathrm{diff}}^{7D},R_\varphi$ (`T-129`, `T-249`) + thresholds | [T]/[D] | 02 |
+| Mandalagram / bodygraph | 28-cell coherence chart (7 populations + 21 channels) | [D] | 02, 05 |
+| Archetype & mode | 16 Hamming $H(7,4)$ codewords (`T-224 [T]`); chosen 3-part dynamical grouping `[D]` | [T]/[D] | 02 |
+| Meaning & Freedom readout | Selected composite meaning indicator and Hessian score (`T-89`), with explicit potential/domain and empirical validation | [D]/[I]/[H] | 02 |
+| Measured estimation | seven-channel embedding (`[Pr]`); verdict concordance with PCI ($\kappa$) | [Pr]/[C] | 03 |
+| Self-audit estimation | 28-item calibrated self-audit (`[Pr]`) | [Pr]/[I] | 03 |
+| Trajectory & forecast | transparency windows, bifurcations ([Gap diagnostics](/docs/applied/research/gap-diagnostics)) | [H]/[C] | 03, 04 |
+| Correction / practice | minimal-intervention protocol | [C]/[H] | 04 |
+| Cooperation and relationship reflection | Typed joint-state data and independent outcomes; `T-77` is a pinching identity, not an empathy theorem | [D]/[H]; identity [T] | 04 |
+| Alignment / knowing–doing gap | Observed commitments and actions; a phase proxy requires independent validation | [D]/[H] | 04 |
+| Ethical protections and non-manipulation | Explicit normative context, consent and protection constraints; conditional preservation certificates | [I]/[D]; certificates [T] | 10 |
+| Org diagnostics | 7-D org profile; structural overlap heuristics | [D]/[H] | 04 |
+| Clinical (DOC/anaesthesia/meditation) | altered-states profiles; PCI verdict concordance | [C]/[Pr] | 04, 07 |
+| AI introspection | substrate closure (`T-153`, `T-153a`, `T-253`); SYNARC | [D]/[C]/[T] | 04 |
+| Symbolic interop | back-projection; 9 nonempty Fano collineation orbits (`T-256`) | [T]+[I] | 04 |
+| Human "why/tasks" reading | archetype + Freedom (`T-89`) + $\Gamma^*(\tau)$; birth-refusal | [D]/[I] + refusal | 05 |
+| Chronobiology anchor | external-coupling model (`T-257`) | [H]/[Pr] | 03, 08 |
+| Modulation horizon | $\mathcal R$; correction; rate/gate model (`T-257`) | [speculative]/[H] | 08 |
+| Every guardrail | orbit classification (`T-256`), channel hypothesis (`T-257`), and viability gate | [T]/[H]/[I] | 02, 10 |
 
 **Where this leads.** The next document, [02 · The kernel](/docs/applied/console/kernel), turns §3's observables into exact algorithms and the internal API that every domain module calls.

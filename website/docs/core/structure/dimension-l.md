@@ -66,7 +66,7 @@ The logical role L, Lindblad operators and the Liouvillian have different mathem
 
 The following functional descriptions are model interpretations [I/H]. Positivity of Γ is a mathematical constraint; logical competence is not determined by a single population.
 
-Logic is the dimension of **self-consistency**. It determines which configurations $\Gamma$ are possible and which are contradictory. Logic is the filter of reality: states with $\gamma_{LL} \to 0$ cannot exist stably.
+Logic is the dimension of **self-consistency** [I]: it indexes the logical-coherence role in the 7-axis semantic frame. Note that a state with $\gamma_{LL} = 0$ is still a mathematically valid positive semidefinite density matrix (whose stability depends on the chosen dynamical vector field, not on $\gamma_{LL} > 0$ alone).
 
 :::info Ontological status
 Logic is an **aspect** of the configuration $\Gamma$, not a separate entity. "The Holon is logical" means: in the coherence matrix $\Gamma$ the projection onto the basis vector $|L\rangle$ is active, and the algebra of operators satisfies the commutation relations.
@@ -127,10 +127,10 @@ $$
 
 Physical interpretation: $\gamma_{LL}$ is a measure of how internally consistent the system is.
 
-:::info What high and low γ_LL mean
-- **High $\gamma_{LL}$ (close to 1/7 or above):** The system is logically integral. All its parts are consistent with one another, there are no internal contradictions. Example: a well-functioning mathematical theory, a healthy brain in a state of clear thinking.
-- **Low $\gamma_{LL}$ (close to 0):** The system is logically "disintegrating". Its parts contradict each other, there is no consistency. Example: a delusional state in which a person simultaneously believes incompatible things; a malfunctioning computer program; a contradictory scientific theory.
-- **$\gamma_{LL} = 0$:** Logic is completely absent. Such a system cannot exist stably — without a logical "framework" any configuration immediately falls apart.
+:::info What high and low $\gamma_{LL}$ mean (model reading [I])
+- **High $\gamma_{LL}$ ($\ge 1/7$):** The logical-role population carries at least its uniform share ($\sigma_L = 0$).
+- **Low $\gamma_{LL}$ ($< 1/7$):** Elevated logical-channel population stress $\sigma_L = 1 - 7\gamma_{LL} > 0$.
+- **$\gamma_{LL} = 0$:** Zero population on the $L$-axis (forces $\gamma_{Li} = 0$ by PSD; still a valid density matrix, whose dynamical stability depends on the specified evolution generator).
 :::
 
 ### Logical load and the population diagnostic {#логическая-согласованность}
@@ -226,28 +226,22 @@ Attributing intentions or agency to the L-role is an interpretation [I/H]. The c
 
 | Level | Example | Logical function | Details |
 |-------|---------|------------------|---------|
-| Physical | Uncertainty principle | $[x, p] = i\hbar$ | It is impossible to simultaneously know position and momentum exactly — this is not a technical limitation but a **logical** property of reality |
-| Physical | Conservation laws | $[A, H] = 0 \Rightarrow dA/d\tau = 0$ | If operator $A$ commutes with the Hamiltonian, the corresponding quantity does not change in time |
-| Physical | Pauli exclusion | Antisymmetry of fermions | Two identical fermions cannot occupy the same quantum state — a logical prohibition at the level of wave-function symmetry |
-| Biological | Genetic code | Uniqueness of translation | Each codon encodes **exactly one** amino acid — logical unambiguity ensures reproducibility |
-| Biological | Metabolic cycles | Closure of biochemical pathways | The Krebs cycle is closed: each intermediate product is regenerated, ensuring **self-consistency** of metabolism |
-| Cognitive | Inference rules | Modus ponens, modus tollens | "If rain then wet; it is raining; therefore it is wet" — a basic logical rule at the level of mind |
-| Cognitive | Rationality | Transitivity of preferences | If you prefer A over B and B over C, logic requires preferring A over C. Violation is a sign of a "malfunction" in the L-dimension |
-| Cognitive | Cognitive dissonance | Overload of the L-dimension | Simultaneously holding contradictory beliefs — $\sigma_L \to 1$, logical verification at its limit |
+| Physical | Robertson uncertainty | $[A, B] \neq 0$ | Non-commuting Hermitian observables on $\mathbb C^7$ satisfy $\Delta A\,\Delta B \ge \tfrac12\lvert\langle[A,B]\rangle\rvert$ (note: canonical $[x,p]=i\hbar$ requires an infinite-dimensional Hilbert space, since $\mathrm{Tr}([A,B])=0$ in finite dimensions, and does not live in $M_7(\mathbb C)$) |
+| Physical | Conservation laws | $[A, H] = 0 \Rightarrow dA/d\tau = 0$ | Under purely unitary evolution, an observable commuting with $H$ is conserved |
+| Biological | Genetic code | Uniqueness of translation | Each codon encodes a definite amino acid — a classical discrete mapping |
+| Biological | Metabolic cycles | Closure of biochemical pathways | Self-maintaining biochemical reaction cycles |
+| Cognitive | Inference rules | Modus ponens, modus tollens | Deductive consistency constraints |
+| Cognitive | Rationality | Transitivity of preferences | Ordering consistency |
 
 ### Expanded examples {#развёрнутые-примеры}
 
-#### The uncertainty principle as a logical property
+#### Non-commutativity and Robertson uncertainty
 
-The Heisenberg uncertainty principle ($\Delta x \cdot \Delta p \geq \hbar/2$) is often explained as "disturbance by measurement": to know the position of a particle, one must "illuminate" it with a photon, which changes the momentum. But this is the **wrong** interpretation. In UHM the uncertainty principle is a **logical** property: the operators of position and momentum are *non-commutative* ($[x, p] = i\hbar$), and this means that simultaneous exact values of both are **logically impossible**. This is not a limitation of our instruments — it is a limitation of *reality*.
+In finite-dimensional $\mathbb C^7$, Robertson's uncertainty relation $\Delta A \cdot \Delta B \ge \frac{1}{2}|\langle[A,B]\rangle|$ holds for any pair of non-commuting Hermitian operators $A, B \in \mathrm{Herm}(\mathbb C^7)$ [T]. Note carefully that the canonical position–momentum relation $[x, p] = i\hbar$ is **impossible** on a finite-dimensional Hilbert space (taking the trace of both sides gives $0 = i\hbar N$, a contradiction); canonical $[x,p]=i\hbar$ belongs to infinite-dimensional quantum mechanics $L^2(\mathbb R)$ rather than native $M_7(\mathbb C)$.
 
-#### Cognitive dissonance as σ_L overload
+#### Consistency of structured codes
 
-When a person simultaneously holds two incompatible beliefs (for example, "smoking is harmful" and "I smoke because I enjoy it"), their L-dimension is overloaded: $\sigma_L$ grows, approaching 1. The brain experiences discomfort — this is the subjective experience of logical overload. Resolving the dissonance (changing one of the beliefs) is a decrease of $\sigma_L$ back into the safe zone.
-
-#### The genetic code as a logical invariant
-
-The genetic code is one of the clearest examples of the L-function in biology. Each nucleotide triplet (codon) encodes **exactly one** amino acid. If one codon could encode *different* amino acids depending on context, proteins would be synthesised unpredictably — logical consistency would be violated. The unambiguity of the genetic code is Boolean logic ($L_k$ at stratum II): each predicate "codon X encodes amino acid Y" is strictly true or false.
+In classical discrete coding (such as genetic translation), unambiguous symbol mapping is a finite Boolean compatibility condition [I]. (The former claim deriving a three-tier Boolean/Heyting/HoTT logic hierarchy from $\Omega$ is withdrawn [✗].)
 
 ## Connection with other dimensions
 
@@ -318,80 +312,27 @@ Gödel's theorems apply to **formal systems** operating in dimension $L$. But $\
 Gödel's theorems are proved for formal systems satisfying certain conditions (formality, expressiveness, consistency). Applying them to $\Gamma$ as a whole is a categorical error, since $\Gamma$ is not a formal system.
 :::
 
-### Two types of truth
+### Distinct domains: formal provability versus state support
 
-| Type | Definition | Domain |
-|------|------------|--------|
-| **Logical provability** | $p \in \text{Prov}(L)$ — $p$ is derivable from axioms | Dimension $L$ |
-| **Coherence-truth** | $\langle p \vert \Gamma \vert p \rangle > 0$ — $p$ is consistent with $\Gamma$ | All 7 dimensions |
+Formal provability in an axiomatic calculus (a set of syntactic formulas $\mathrm{Prov}(T)$) and quantum state support ($\{|\psi\rangle \in \mathbb C^7 : \langle\psi|\Gamma|\psi\rangle > 0\}$) have **different mathematical types** — one is a set of sentences, the other a subset of Hilbert space. *(The former type-illegal inclusion $\mathrm{Prov}(L) \subsetneq \mathrm{Coh}(\Gamma)$ is withdrawn [✗].)*
 
-Formally:
+### Incompleteness and self-reference {#неполнота-повседневность}
 
-$$
-\text{Prov}(L) \subsetneq \text{Coh}(\Gamma)
-$$
+Gödel's theorems apply strictly to sufficiently expressive, recursively enumerable formal systems (such as Peano arithmetic), not directly to a finite-dimensional density matrix $\Gamma \in \mathcal D(\mathbb C^7)$. Similarly, in Homotopy Type Theory (HoTT), a liar-type equivalence $P \simeq \neg P$ is **inconsistent / uninhabited** (it derives $\bot$, just as in ordinary constructive logic — it does **not** produce a space of proofs with a non-trivial homotopy loop $\pi_1 \neq 0$; that former claim is withdrawn [✗]).
 
-where:
-- $\text{Prov}(L)$ — the set of statements provable in the formal system associated with $L$
-- $\text{Coh}(\Gamma)$ — the set of states coherent with the full matrix $\Gamma$
-
-:::info What this means in practice
-There exist statements that **cannot be proved** by purely logical means (through L), but that are **true** in the full sense of coherence with $\Gamma$. Example: "I exist" cannot be proved formally (it would lead to infinite regress), but it is coherent with $\Gamma$ of any living Holon ($P > P_{\text{crit}}$ → the system exists → the statement is coherent).
-:::
-
-:::note More examples of two types of truth
-- **"Red differs from blue"** — cannot be *proved* logically, but is coherent with $\Gamma$ of any sighted observer ($\gamma_{AE} > 0$, distinctions are articulated and experienced).
-- **Arithmetic axioms** — the consistency of Peano arithmetic is *not provable* within arithmetic itself (Gödel's second theorem), but is *coherent* with $\Gamma$ — arithmetic works, bridges do not fall, computers calculate.
-- **Ethical intuitions** — "torturing the innocent is evil" is not derivable from the axioms of L, but is coherent with $\Gamma$ of a healthy conscious Holon (through the E and U dimensions).
-:::
-
-### Consistency through autopoiesis
-
-Gödel's second theorem forbids *logical* proof of consistency. UHM demonstrates consistency **existentially**:
-
-The existence of a viable Holon $\mathbb{H}$ with $P(\Gamma) > P_{\text{crit}}$ demonstrates that the configuration $\Gamma$ is consistent — contradictory configurations cannot sustain coherence above the critical threshold.
-
-:::tip Principle
-**Consistency is enacted, not proven** — consistency is **enacted** by the existence of a functioning system, not proved logically.
-:::
-
-### Incompleteness as a resource
-
-Gödelian incompleteness in $L$ is not a limitation but a **mechanism of evolution**:
-
-1. Undecidable problems create "singularities" in logical space
-2. The system turns to [Ground (O)](./dimension-o) for new information
-3. Expansion of the axiomatics restores coherence at a new level
-
-:::info Analogy with scientific revolutions
-Gödelian incompleteness in UHM works like the mechanism of scientific revolutions according to Kuhn. Normal science (working within the framework of L) accumulates "anomalies" — facts that cannot be explained within the current paradigm. When anomalies become too numerous ($\sigma_L \to 1$), a "revolution" occurs: the system turns to O for new information, expands the axiomatics, and moves to a new level. Incompleteness is the **engine** of evolution, not a bug.
-:::
-
-### Incompleteness in everyday experience {#неполнота-повседневность}
-
-Gödelian incompleteness may seem remote from life, but in fact we encounter it constantly:
-
-**A child and rules.** A child learns rules: "No hitting", "You must share". But sooner or later they encounter a situation the *rules do not cover*: "What if another child is hitting my friend — can I hit back in defence?" This is a Gödelian sentence: within the current axiomatics (rules of behaviour) the question is *undecidable*. The child turns to the "ground" (parent, teacher) for new information, expands their "axiomatics", and moves to a deeper level of moral reasoning.
-
-**The liar paradox.** "This sentence is false." If it is true, then it is false. If false, then true. At the Boolean level — an unsolvable paradox. At the Heyting level — simply an *undefined* predicate. At the HoTT level — an element with non-trivial homotopic structure: the space of "proofs" of this statement has a loop.
-
-See [Gödel's theorems and the completeness of UHM](../foundations/consequences#10-теоремы-гёделя-и-полнота-угм) for a full analysis.
+See [Consequences: Gödel's theorems](../foundations/consequences#10-теоремы-гёделя-и-полнота-угм) for the audited analysis.
 
 ## Logic and the Fano plane {#логика-и-фано}
 
-Dimension L ($e_4$ in the octonionic correspondence) belongs to three [Fano lines](/docs/core/structure/dimensions#октонионная-интерпретация):
+In the canonical Singer-cyclic Fano table (`{A,S,L}, {S,D,E}, {D,L,U}, {L,E,O}, {E,U,A}, {U,O,S}, {O,A,D}`), dimension $L$ ($e_4$ in the octonionic correspondence) lies on three [Fano lines](/docs/core/structure/dimensions#октонионная-интерпретация):
 
-| Fano line | Sector type | Physical meaning |
+| Fano line | Axes | Model reading [I] |
 |-----------|-------------|-----------------|
-| $\{A, S, L\}$ | **3**–**3**–$\bar{\mathbf{3}}$ | Structural articulation regulated by logic |
-| $\{D, L, U\}$ | **3**–$\bar{\mathbf{3}}$–$\bar{\mathbf{3}}$ | Dynamic logic of unity: causal integration |
-| $\{L, E, O\}$ | $\bar{\mathbf{3}}$–$\bar{\mathbf{3}}$–$1_O$ | Logic of interiority, rooted in the ground |
+| $\{A, S, L\}$ | Articulation–Structure–Logic | Structural articulation coupled with logic |
+| $\{D, L, U\}$ | Dynamics–Logic–Unity | Dynamic coupling of logic and unity |
+| $\{L, E, O\}$ | Logic–Interiority–Ground | Coupling of logic with interiority and ground |
 
-:::info Combinatorial profile of L
-Of the seven dimensions, L is the **only** element of the $\bar{\mathbf{3}}$-sector that does **not** lie on the Higgs line $\{E, U, A\}$. This gives L a unique role: while E and U are connected to the "interiority" and "unifying" aspects through the Higgs channel, L stands "apart", providing an **independent** consistency check. It is like a referee who is not a participant in the game.
-
-[Theorem T-177](/docs/core/structure/dimensions#комбинаторная-единственность) claimed the semantic role of L combinatorially unique; the claim is retracted [✗] (2026-09-25) with T-48a — restated (T-177), incidence fixes $L$ only together with the binary convention that fixes $E$ versus $U$ ($L$ is the third point of the line through $O$ and $E$).
-:::
+*(Note: the former sector-label claims $\mathbf{3}/\bar{\mathbf{3}}$ and combinatorial-uniqueness theorem [T-177](/docs/core/structure/dimensions#комбинаторная-единственность) / T-48a are **retracted [✗]** — no real axis triple is $SU(3)$-invariant, and Fano incidence is transitive on all seven points until explicit labels are fixed as model conventions [D].)*
 
 ### What the Fano lines say about logic {#фано-линии-логика}
 

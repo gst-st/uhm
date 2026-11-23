@@ -1,16 +1,16 @@
 ---
 sidebar_position: 8
 title: "08 · The hardware horizon"
-description: "The honest staging of hardware, from measurement gadgets that tighten the estimate to the speculative frontier of directed coherence modulation. What each sensor grade buys, why measurement is a near extension of V1 while modulation is a genuine research frontier, and the hard boundary the theory itself draws — inter-level coupling is gate and rate-modulation, never a written message (T-257) — which no rig can cross. Every claim tagged; nothing promised the theory cannot license."
+description: "The honest staging of hardware, from measurement gadgets that tighten a prospective estimate to the speculative frontier of directed coherence modulation. What each sensor grade buys, why measurement is a near extension of V1 while modulation is a genuine research frontier, and the modelling boundary framed by T-257 [H] — inter-level coupling in the Lindbladian model acts via rate modulation and viability gating rather than symbolic state-writing. Every claim tagged; nothing promised beyond what evidence and the model support."
 ---
 
 # 08 · The hardware horizon
 
-> *The fantasies that seeded this project — body-worn measurement, directed modulation rigs — are legitimate directions, and the discipline here is to specify them at exactly the confidence the theory grants: measurement is near and buildable, modulation is far and bounded, and the boundary is a theorem, not a caution.*
+> *The fantasies that seeded this project — body-worn measurement, directed modulation rigs — are legitimate directions, and the discipline here is to specify them at exactly the confidence the theory and evidence grant: measurement is near and testable as a prospective proxy, modulation is far and constrained by explicit modelling and ethical boundaries.*
 
 ## §1. Two horizons, not one {#два-горизонта}
 
-Hardware splits cleanly into **measurement** (better sensing → a tighter $\widehat\Gamma$) and **modulation** (acting on the system to change $\Gamma$). They are at completely different maturities and must never be marketed as one continuum. Measurement is a straightforward extension of the V1 bridge; modulation is a research frontier that the theory both enables *and hard-bounds*.
+Hardware splits cleanly into **measurement** (better sensing → a tighter $\widehat\Gamma$) and **modulation** (acting on the system to change $\Gamma$). They are at completely different maturities and must never be marketed as one continuum. Measurement is a straightforward extension of the V1 bridge; modulation is a research frontier framed by explicit modelling and ethical boundaries.
 
 ## §2. Measurement gadgets — the near horizon {#измерение}
 
@@ -18,24 +18,24 @@ Every sensor is an [estimator](/docs/applied/console/anchors#измерение)
 
 | Grade | Devices | What it tightens | Status |
 |---|---|---|---|
-| Consumer | wrist HRV, actigraphy, light logger, dry-EEG headband | purity proxy, chronobiology channel, coarse coherences | `[research]` (V1) |
-| Prosumer | multi-channel dry EEG, respiration, EDA | resolved Gap map (phases), better $\Phi$ | `[research]` |
-| Research/clinical | high-density EEG, TMS-EEG (PCI) | the keystone $P$ from $\widehat\Gamma$, checked against the PCI verdict (κ, not a PCI → $P$ conversion); validated coherences | `[research]`→`[medical]` |
+| Consumer | wrist HRV, actigraphy, light logger, dry-EEG headband | prospective proxy `[Pr]` for purity, chronobiology channel, coarse coherences (not a validated physical readout of $\Gamma$) | `[Pr]` / `[research]` (V1) |
+| Prosumer | multi-channel dry EEG, respiration, EDA | candidate resolved Gap map (phases), refined $\Phi$ | `[Pr]` / `[research]` |
+| Research/clinical | high-density EEG, TMS-EEG (PCI) | the keystone $P$ from $\widehat\Gamma$, checked against the PCI verdict ($\kappa$, not a PCI → $P$ conversion); validated coherences | `[research]`→`[medical]` |
 
-The design rule: a gadget is admissible iff it maps to a **licensed** channel ([T-257](https://homohologra.ph/research/one-grammar#t-257)) — physiological signals and the solar/lunar chronobiology drivers. No gadget reads "the sky" beyond those two channels, because the theory prices every other external coupling below the noise floor. Measurement hardware is therefore a bounded, well-specified engineering roadmap, not a frontier.
+The design rule: a gadget is admissible iff it maps to a physically modelled channel under the coupling-channel hypothesis ([T-257 [H]](/docs/applied/research/gap-diagnostics), [Status registry](/docs/reference/status-registry)) — physiological signals and solar/lunar chronobiology drivers backed by an identifiable observation law and physical coupling model. No gadget reads unmodelled planetary ephemerides. Measurement hardware is therefore a bounded, empirically testable engineering roadmap `[Pr]`, not a mystical frontier.
 
 ## §3. The theoretical boundary on modulation {#граница}
 
-Before specifying modulation, state its ceiling, because the ceiling is a theorem. [T-257(a)](https://homohologra.ph/research/one-grammar#t-257) proves that coupling into a system's dynamics happens **only through its Lindbladian parameters** — the dissipative rates, the regeneration strength $\kappa$, and the viability gate $g_V$ — i.e. through *rate modulation and viability gating*, never through a symbolic message written into the state. Consequences that bound every conceivable rig:
+Before specifying modulation, state the modelling boundary explicitly. Under the coupling-channel hypothesis [T-257 [H]](/docs/applied/research/gap-diagnostics) ([Status registry](/docs/reference/status-registry)), rate modulation and viability gating form **one admissible inter-holon control model** — acting through Lindbladian parameters (dissipative rates, regeneration strength $\kappa$, and viability gate $g_V$) rather than writing a symbolic message into the state. As noted in [10 §1](/docs/applied/console/ethics-governance#из-теории), a result about rate modulation or viability gates applies to its specified generator and coupling model; it does not establish that every physical interaction has that form, nor does it justify overclaiming state-writing capabilities:
 
-- A modulation device can **bias** dynamics (shift rates, open or close a Gap window, strengthen or weaken regeneration) — it can **not** "upload" a state, install a memory, or write a chosen $\Gamma$.
-- Because the influence is a gate, its effect is *permissive and probabilistic*, not *deterministic and injective* — the subject's own dynamics do the moving; the device only changes the landscape.
+- Within this modelling regime, a modulation device can **bias** dynamics (shift rates, open or close a Gap window, strengthen or weaken regeneration) — it is **not** designed or supported to "upload" a state, install a memory, or write a chosen $\Gamma$.
+- Because rate/gate control is *permissive and probabilistic* rather than *deterministic and injective*, the subject's own dynamics do the moving; the device only biases the landscape.
 
-This is not a safety disclaimer bolted on; it is the physics. It is also, usefully, a design boundary: it tells the engineer what to build (a rate/gate modulator with feedback) and what is impossible (a state writer), so no effort is spent chasing the impossible and no user is sold it.
+This is a concrete engineering boundary: it tells the engineer what to investigate (a rate/gate modulator with closed-loop feedback and independent outcome checks) and what remains out of scope (a state writer), so no user is sold an unsupported claim.
 
 ## §4. Modulation — the far horizon, honestly {#модуляция}
 
-Within the boundary, the corpus supplies the *targets*: the [regeneration operator $\mathcal R$](/docs/core/dynamics/evolution) and the [minimal-intervention correction protocol](/docs/applied/research/gap-diagnostics#коррекция) already say *which* coherence to nudge and how often. The plausible physical channels for a gate/rate modulator are the established neuromodulation modalities:
+Within the boundary, the corpus supplies candidate *targets*: the [regeneration operator $\mathcal R$](/docs/core/dynamics/evolution) and the [minimal-intervention correction protocol](/docs/applied/research/gap-diagnostics#коррекция) specify *which* coherence to nudge and how often in the model. The plausible physical channels for a gate/rate modulator are the established neuromodulation modalities:
 
 | Modality | Plausible role (gate/rate) | Status |
 |---|---|---|
@@ -47,15 +47,15 @@ Within the boundary, the corpus supplies the *targets*: the [regeneration operat
 
 ## §5. The kini-gadget question, answered {#гаджеты}
 
-The user's "measurement gadgets clipped to the body" are precisely the consumer/prosumer measurement grade (§2) — a bounded, buildable extension of V1, admissible because they read licensed physiological channels. The "directed measurement and modulation installations" are the §4 frontier — real as a direction, speculative as a claim, and permanently bounded by §3. The honest one-liner: *the measurement side of the fantasy is an engineering roadmap; the modulation side is a research programme with a theorem-drawn ceiling, and the Console will never quietly cross from one to the other.*
+The user's "measurement gadgets clipped to the body" are precisely the consumer/prosumer measurement grade (§2) — a bounded, testable `[Pr]` extension of V1, admissible because they read physically modelled physiological channels. The "directed measurement and modulation installations" are the §4 frontier — real as a direction, speculative as a claim, and bounded by §3 and [10](/docs/applied/console/ethics-governance). The honest one-liner: *the measurement side of the fantasy is a prospective engineering roadmap; the modulation side is a research programme constrained by explicit modelling and ethical boundaries, and the Console will never quietly cross from one to the other.*
 
 ## §6. Staging summary {#стадирование}
 
 | Horizon | What ships | Bound | Status |
 |---|---|---|---|
-| Near — measurement | sensor grades tightening $\widehat\Gamma$ | licensed channels only (T-257) | `[research]`, V1+ |
+| Near — measurement | sensor grades tightening $\widehat\Gamma$ (prospective proxy `[Pr]`) | physically modelled channels only (`T-257 [H]`) | `[Pr]` / `[research]`, V1+ |
 | Far — modulation (feedback) | closed-loop neurofeedback on the minimal-intervention target | subject moves the state, not the device | `[speculative]` |
-| Far — modulation (stimulation) | tACS/tFUS rate/gate biasing | gate, not message (T-257); ethics-gated | `[speculative]` |
-| Never | state upload / memory write / $\Gamma$ injection | impossible by T-257(a) | out of scope by theorem |
+| Far — modulation (stimulation) | tACS/tFUS rate/gate biasing | rate/gate model (`T-257 [H]`); ethics-gated | `[speculative]` |
+| Out of scope | state upload / memory write / $\Gamma$ injection | unsupported under rate/gate coupling (`T-257 [H]`) and prohibited by governance ([10](/docs/applied/console/ethics-governance)) | out of scope |
 
 **Where this leads.** [09 · Commercial model](/docs/applied/console/commercial) turns the use-case demand and this capability staging into a market, a business model, and a defensible position.

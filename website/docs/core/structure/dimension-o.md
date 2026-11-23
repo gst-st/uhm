@@ -70,15 +70,13 @@ In this formula $\omega_0$ is the fundamental clock frequency and $\gamma_{OO}$ 
 The Ground is an **aspect** of configuration $\Gamma$, not a separate entity. "The Holon is grounded" means: in the coherence matrix $\Gamma$ the projection onto the basis vector $|O\rangle$ is active, and the vacuum energy is non-zero: $\langle 0|H|0\rangle \neq 0$.
 :::
 
-:::tip Functional uniqueness of O [T]
-Dimension $O$ is **necessary and functionally unique** by four independent arguments:
+:::info Model role of O [D/I]
+In the chosen 7-axis semantic frame, $O$ is assigned the Ground / clock-reference role [D/I]:
 
-1. **From the form of ℛ [T]:** $\mathcal{R} = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ requires a source with $\Delta F > 0$ for $g_V > 0$. [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
-2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ ([T at first-order kinetics], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1) requires $\mathrm{End}(O)$, $\mathrm{Hom}(O, E)$, $\mathrm{Hom}(O, U)$. On removal of O: κ₀ is undefined, the $(\mathcal{D}_\Omega, \mathcal{R})$ duality loses its structure.
-3. **From Page–Wootters (A5):** O is the distinguished dimension for the tensor factorisation $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$. Without O: internal time τ is undefined.
-4. **Functional independence [T]:** No other mathematical object (projector, observable, unitary operator, commutator, density matrix, trace) can perform the function of O (source/clock).
+1. **Regeneration rate ansatz [D]:** The regularized rate $\kappa_0^\varepsilon = \omega_0 |\gamma_{OE}||\gamma_{OU}|/(\gamma_{OO}+\varepsilon)$ couples $O$ with $E$ and $U$ (see [kinetic approximation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)).
+2. **Page–Wootters clock extension [P]/[D]:** In an extended bipartite realization $\mathcal H_O \otimes \mathcal H_{\text{rest}}$, a separate multi-level clock register $\mathcal H_O$ carries the clock Hamiltonian $H_O$ and conditional readout (note: the 1D basis axis $|O\rangle \in \mathbb C^7$ is not itself a 7-state tensor factor).
 
-Status: **[T]** | [Full proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
+*(The former claim of categorical/functional uniqueness of $O$ via $\mathrm{Hom}(O,E)$, $(\mathcal D_\Omega, \mathcal R)$ duality, and `T-40` is withdrawn [✗]; see [minimality bounds](../../proofs/minimality/theorem-minimality-7#единственность-o).)*
 :::
 
 ## Mathematical representation
@@ -123,52 +121,35 @@ where $H$ is the [system Hamiltonian](../../reference/specification#гамиль
 
 ## Role in regeneration {#роль-в-регенерации}
 
-The Ground provides the source of free energy for the **regenerative term** [T] of the [evolution equation](/docs/core/dynamics/evolution#3-регенеративный-член):
+In the effective open-system [evolution equation](/docs/core/dynamics/evolution#3-регенеративный-член), the Ground role participates in the **regenerative feedback term** [D]/[P]:
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
 where:
-- $\kappa(\Gamma) > 0$ — regeneration rate [T] ([categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
-- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [T] ([operator φ](/docs/core/operators/phi-operator))
-- $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ — V-preservation gate [T] ([derivation](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
-- $\Delta F = F_{\text{env}} - F_{\text{sys}}$ — free-energy gradient (necessary condition: $g_V > 0 \Rightarrow \Delta F > 0$)
+- $\kappa(\Gamma) > 0$ — regularized regeneration rate ansatz [D] ([kinetic model](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
+- $\rho_* = \varphi(\Gamma)$ — declared numerical self-model [D] ([operator φ](/docs/core/operators/phi-operator))
+- $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}, 0, 1\bigr)$ — V-preservation gate [D] ([evolution](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
+- $\Delta F = F_{\text{env}} - F_{\text{sys}}$ — external free-energy / environment supply required thermodynamically to sustain non-unital pumping
 
-The full form of $\mathcal{R}$ is [derived from axioms](/docs/core/dynamics/evolution#вывод-формы-регенерации) — no component is postulated.
-
-**Intuitive explanation.** Imagine a campfire. It burns (the system lives) as long as wood is added ($\Delta F > 0$). The rate of burning ($\kappa$) depends not only on the amount of wood, but also on the **connection** of the fire with the air (coherence $\gamma_{OE}$) and the structural integrity of the fire (coherence $\gamma_{OU}$). If wood is available but there is no draught (air is cut off) — the fire goes out. The formula $\kappa_0$ formalises precisely this.
+*(The regenerative term is an effective nonlinear mean-field / classical-record feedback model [D]/[P], not a linear single-copy CPTP channel derived from axioms alone; state preservation follows from tangent-cone positivity under Lipschitz-regularized rates.)*
 
 :::note On notation
 $\mathcal{R}$ (calligraphic) — the regenerative term. Not to be confused with $R$ — the reflection measure. See [notation](../../reference/specification#уравнение-эволюции).
 :::
 
-**Regeneration condition:** $\mathcal{R}[\Gamma, E] \neq 0$ only when $\Delta F > 0$ (the system imports free energy from the environment).
-
-:::note Preservation of positivity
-Despite the nonlinear dependence of $\kappa(\Gamma)$, the regenerative term preserves the positivity $\Gamma \geq 0$ through the [interpolation formulation](../dynamics/evolution#сохранение-положительности) as a CPTP channel.
-:::
-
 ## Thermodynamics of the Ground
 
-Regeneration of coherence obeys thermodynamic constraints:
+For an open quantum system coupled to a thermal reservoir at temperature $T$ with equilibrium Gibbs state $\rho_\beta = e^{-\beta H}/Z$ ($\beta = 1/(k_B T)$), thermodynamic consistency is governed by the **non-equilibrium free-energy / relative-entropy law** (Spohn 1978) [T]:
 
 $$
-\frac{dP}{d\tau} \leq \frac{1}{k_B T} \cdot \frac{dF}{d\tau}
+F(\Gamma) := \mathrm{Tr}(H\Gamma) - k_B T\, S_{vN}(\Gamma), \qquad \frac{dF_{\mathrm{sys}}}{d\tau} \le \dot W_{\mathrm{in}}
 $$
 
-where:
-- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](../dynamics/viability#определение-чистоты)
-- $k_B$ — Boltzmann constant
-- $T$ — temperature
-- $F$ — free energy
+(equivalently, under thermal-bath relaxation alone with $\dot W_{\mathrm{in}} = 0$, $\frac{d}{d\tau} D_{KL}(\Gamma\|\rho_\beta) \le 0$). *(Note: the former inequality $\frac{dP}{d\tau} \le \frac{1}{k_B T}\frac{dF}{d\tau}$ is false in general — e.g. when $\langle H\rangle$ decreases — and is removed [✗].)*
 
-**Living systems** are open systems that:
-1. Import free energy ($dF_{\text{in}} > 0$)
-2. Export entropy ($dS_{\text{out}} > 0$)
-3. Maintain $P > P_{\text{crit}}$, where $P_{\text{crit}} = 2/7 \approx 0.286$ — [critical purity](../dynamics/viability#критическая-чистота)
-
-**Example.** A person consumes food (import of free energy), dissipates heat and waste (export of entropy), and maintains the orderliness of the organism ($P > 2/7$). If eating stops — $\Delta F \to 0$, regeneration halts, $P$ falls below $P_{\text{crit}}$ — irreversible collapse.
+**Open viable systems** maintain $P > P_{\text{crit}} = 2/7$ [D] by importing free energy ($\dot W_{\mathrm{in}} > 0$) and exporting entropy to their environment.
 
 ## Role as internal clock (Page–Wootters) {#роль-часов}
 
@@ -211,20 +192,14 @@ This is a discrete Fourier transform: states $|E_k\rangle$ are clock "ticks" wit
 
 ### Connection between regeneration and time
 
-Regeneration "consumes" the coherence of O. The regeneration rate is determined by the [categorical derivation of κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0):
+In the regularized structural rate ansatz ([Axiom of Septicity](../foundations/axiom-septicity#структурный-анзац-kappa0)):
 
 $$
-\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|
+\kappa_0^{\varepsilon} = \omega_0\,\frac{|\gamma_{OE}||\gamma_{OU}|}{\gamma_{OO}+\varepsilon} \quad (\varepsilon > 0).
 $$
 
-where $\mathcal{D}_\Omega \dashv \mathcal{R}$ is the dissipation-regeneration adjunction.
-
-:::note Categorical origin of κ₀
-The rate $\kappa_0=\omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ for $\gamma_{OO}>0$ is a declared structural ansatz [D]. Neither an unspecified adjunction nor Petz's metric classification derives it. The [corrected kinetic realization](../foundations/axiom-septicity#вывод-kappa0-cycle-flux) gives this expression only as a rapid-return approximation with explicit rate/coherence assumptions and an error bound. It is bounded but has no unique continuous extension at zero $O$ occupancy; global dynamics must specify regularization/boundary treatment.
-:::
-
-:::note DRY: Single definition
-The master definition of κ₀ with categorical derivation and computational approximation is in [Axiom of Septicity → Categorical derivation of κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0).
+:::note Status of $\kappa_0$
+The rate $\kappa_0=\omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ ($\gamma_{OO}>0$) is a declared structural ansatz [D]. The former categorical formula $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ and adjunction $\mathcal D_\Omega \dashv \mathcal R$ are **withdrawn [✗]**. The [kinetic approximation](../foundations/axiom-septicity#вывод-kappa0-cycle-flux) reproduces this quotient only in the rapid-return limit under explicit rate/coherence assumptions, and Lipschitz well-posedness requires $\varepsilon$-regularization at $\gamma_{OO} \to 0$.
 :::
 
 **Corollary:** The direction of time = the direction of "expenditure" of O. When $\gamma_{Oi} \to 0$ time "stops" for the given Holon. This is not a metaphor: if all coherences of $O$ with other dimensions go to zero, the conditional states $\Gamma(\tau)$ cease to depend on $\tau$ — dynamics freezes.
@@ -275,9 +250,9 @@ $$
 
 | Property | Formula | Interpretation |
 |----------|---------|----------------|
-| Periodicity | $V_O^N = \mathbb{1}$ | Cyclicity of time with period N |
+| Periodicity | $V_O^N = \mathbb{1}$ | Cyclicity of the $N$-tick clock |
 | Unitarity | $V_O^\dagger V_O = V_O V_O^\dagger = \mathbb{1}$ | Preserves norm |
-| Canonical relation | $V_O H_O V_O^\dagger = H_O + \omega_0 \mathbb{1}$ (mod $N\omega_0$) | Energy shift by one quantum |
+| Exact shift relation | $V_O H_O V_O^\dagger = H_O - \omega_0 \mathbb{1} + N\omega_0 \lvert 0\rangle\langle 0\rvert$ | Energy shift by $-\omega_0$ with wrap-around $+N\omega_0$ at $\lvert 0\rangle$ (equivalently $V_O^\dagger H_O V_O = H_O + \omega_0\mathbb{1} - N\omega_0\lvert N-1\rangle\langle N-1\rvert$) |
 
 **Eigenstates of $V_O$:** Clock basis (eigenstates of the shift operator):
 
@@ -307,21 +282,17 @@ where $C^*(H_O, V_O)$ is the C*-algebra generated by operators $H_O$ and $V_O$.
 
 ∎
 
-### Discreteness of time {#дискретность-времени-часы}
+### Discreteness in the $N$-level cyclic clock model {#дискретность-времени-часы}
 
-For a finite-dimensional system ($N = 7$) time is **fundamentally discrete**:
+In the **chosen** $N$-level cyclic clock register ($\mathcal H_O = \mathbb C^N$, e.g. $N = 7$), the discrete clock index ranges over $\tau \in \mathbb{Z}_N = \{0, 1, \ldots, N-1\}$ [D]:
 
-$$
-\tau \in \mathbb{Z}_7 = \{0, 1, 2, 3, 4, 5, 6\}
-$$
-
-| Property | Discrete ($N = 7$) | Continuous ($N \to \infty$) |
+| Property | $N$-level cyclic clock ($N = 7$) | Continuous / unbounded clock model |
 |----------|--------------------|-----------------------------|
-| Time space | $\mathbb{Z}_7$ (cyclic) | $\mathbb{R}$ or $S^1$ |
-| Clock basis | 7 states $\lvert\tau_n\rangle$ | Continuum |
-| Chronon | $\delta\tau_{min} = 2\pi/(7\omega_0)$ | $\to 0$ |
+| Time parameter | $\mathbb{Z}_7$ (cyclic, periodic) | $\mathbb{R}$ (or $S^1$ for compact limit) |
+| Clock basis | $7$ states $\lvert\tau_n\rangle$ | Continuum (requires separate $\mathcal H_O$, e.g. $L^2(\mathbb R)$) |
+| Step size | $\delta\tau = 2\pi/(7\omega_0)$ | Continuous |
 
-**Corollary:** Continuous time is an **approximation**, valid only in the limit $N \to \infty$. For the 7D UHM system, time is quantised with 7 distinguishable "moments". This is like frames in a film: with a sufficient number of frames per second motion appears continuous, but in reality it is discrete.
+**Scope note:** Choosing a $7$-level cyclic clock register yields $7$ periodic readings $\mathbb Z_7$; it does **not** prove that physical time is fundamentally $\mathbb Z_7$-cyclic or force continuous physical time to be an approximation of a $7$-state ring. An unbounded continuous clock requires a separate infinite-dimensional clock register or scaling limit (see [emergent time](../../proofs/dynamics/emergent-time)).
 
 :::note Connection with Page–Wootters
 For the full construction of the constraint $\hat{C}$ and derivation of the effective dynamics, see [Property 2 of Ω⁷](../foundations/axiom-omega#свойство-2) and [Evolution](../dynamics/evolution#вывод-h_eff).
@@ -434,24 +405,13 @@ graph LR
 
 ## Loss of connection with O {#потеря-связи}
 
-When $\gamma_{Oi} \to 0$ for all $i$:
+When $\gamma_{Oi} \to 0$ for all $i \neq O$ (in particular $\gamma_{OE}, \gamma_{OU} \to 0$):
 
-1. The system loses its regeneration source: $\mathcal{R}[\Gamma, E] \to 0$
-2. Dissipation exceeds restoration: $\mathcal{D}[\Gamma] > \mathcal{R}[\Gamma, E]$
-3. Purity falls: $P \to P_{\text{crit}}$
-4. When $P < P_{\text{crit}}$ — irreversible collapse (death of the Holon)
+1. The kinetic regeneration ansatz drops to its baseline: $\kappa_0^\varepsilon \to 0$.
+2. In an isolated unital-dissipation model with zero external pumping, purity decays toward $P \le P_{\text{crit}} = 2/7$ (and $I/7$ if dissipation is primitive).
+3. **Reversibility caveat:** Falling below $P_{\mathrm{crit}} = 2/7$ is **not** intrinsically irreversible: a non-unital external environment or backbone pumping term $\mu(\sigma - \Gamma)$ can drive any state back above $2/7$ (see [Axiom $\Omega^7$ genesis](../foundations/axiom-omega#genesis-protocol)).
 
-**Intuitive explanation.** Loss of connection with the Ground is like a tree with severed roots. The crown is still green (the system still functions), but nourishment has ceased. After some time the leaves begin to yellow ($P$ decreases), the branches dry out (coherences fall), and the tree dies ($P < P_{\text{crit}}$). The rate of death depends on accumulated reserves ($\gamma_{OO}$ at the moment of severance) and the intensity of dissipation ($\mathcal{D}$).
-
-### Clinical analogies (expanded)
-
-| Condition | What decreases | Mechanism | Manifestations |
-|-----------|----------------|-----------|----------------|
-| **Physical exhaustion (burnout)** | $\gamma_{OD}$ | Process energy runs out | Chronic fatigue, inability to act; like an engine without fuel |
-| **Severe burn** | $\gamma_{OO}$ globally | Massive loss of resources | The organism cannot cope with tissue regeneration; $\mathcal{R} < \mathcal{D}$ |
-| **Clinical depression** | $\gamma_{OE}$ | Ground loses connection with interiority | "Everything is grey", loss of interest; the inner world is no longer nourished |
-| **Existential vacuum** | $\gamma_{OE}$, $\gamma_{OU}$ | Loss of both immanence and wholeness | "What's the point?"; by Frankl — loss of meaning |
-| **Loss of meaning** | $\gamma_{OU}$ | Wholeness loses its ground | Fragmentation of the life project; "I cannot see the whole picture" |
+*(Note: mapping specific clinical or psychological conditions — such as burnout, severe burns, clinical depression, or existential vacuum — onto individual matrix entries $\gamma_{OD}, \gamma_{OO}, \gamma_{OE}, \gamma_{OU}$ is empirically unvalidated and removed [✗].)*
 
 ### Octonionic context {#октонионный-контекст}
 

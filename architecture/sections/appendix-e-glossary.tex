@@ -3,38 +3,37 @@
 
 \paragraph{Terms.}
 \begin{description}[leftmargin=0pt,itemsep=1pt]
-  \item[\DM{}] the state register: $\Gam\in\Dens(\mathbb{C}^7)$, $784$~bytes.
+  \item[\DM{}] the state register: $\Gam\in\Dens(\mathbb{C}^7)$, $784$~bytes ($48$ real dynamical parameters).
   \item[Tick] one application of $\LindOmega$ (Eq.~\ref{eq:lomega}); the sole instruction.
-  \item[Line-bus] one of the seven Fano lines; the interconnect unit (\S\ref{sec:fabric}).
-  \item[Mediator $k^\ast(i,j)$] the third sector of a pair's line; the deterministic reroute.
-  \item[Collapse] the identity of interconnect, code, instruction, and learning as one incidence (\S\ref{sec:collapse}).
-  \item[Impedance] the emulation a substrate must add to run the logical architecture (\S\ref{sec:realizability}).
-  \item[Power port] the non-unital drive $\Lind_{\mathrm{feed}}=r(\rho_{\mathrm{env}}-\Gam)$; the rail that imports negentropy, ignites viability at $(r/\bar\gamma)_c$, and whose severance is a latency-budgeted halt (\S\ref{subsec:powerport}).
+  \item[Line-bus] one of the seven canonical Singer Fano lines; the interconnect unit (\S\ref{sec:fabric}).
+  \item[Mediator $k^\ast(i,j)$] the unique third sector of a pair's Fano line; deterministic reroute.
+  \item[Collapse] the derivation of interconnect, sector-level Hamming duality, instruction support, and Fano-pinched self-model from one incidence $\mathsf{N}$ (\S\ref{sec:collapse}).
+  \item[Impedance] the emulation overhead a substrate adds to run the logical architecture (\S\ref{sec:realizability}).
+  \item[Power port] the non-unital drive $\Lind_{\mathrm{feed}}=r(\rho_{\mathrm{env}}-\Gam)$; the rail importing negentropy whose severance causes predictable decay toward $\mathbb{1}/7$ (\S\ref{subsec:powerport}).
 \end{description}
 
-\paragraph{UHM theorems used.} Every logical claim traces to an established
-result of the UHM corpus (\href{https://holon.sh}{holon.sh}); \TALOS{} adds
-hardware claims, no new theory.
+\paragraph{Mathematical results and scoped parameters used.} Every logical claim
+traces to a verified theorem (\status{T}), scoped parameter (\status{D}), or
+numerical check in \texttt{architecture/talos\_v0\_emulator.py},
+\texttt{website/scripts/check\_core\_numbers.py}, or
+\texttt{website/research/operational-reconstruction/verify\_foundational\_bounds.py}.
 \begin{center}\small
 \begin{tabular}{@{}p{5.9cm}p{9.0cm}@{}}
 \toprule
-Result & Use in \TALOS{} \\
+Result / parameter & Use in \TALOS{} \\
 \midrule
-Minimality of $7$; octonionic derivation & $N=7$ (Thm~\ref{thm:unique}), the non-associative ISA \\
-$G_2$-rigidity (T-42a) & interconnect $=$ orbit incidence (Thm~\ref{thm:collapse} L4) \\
-Fano selection rule / structure constants $f_{ijk}$ & instruction algebra $=$ line incidence (L3) \\
-Hamming $[7,4,3]=$ Fano ($\Sigma$-calculus T-224/T-225) & code $=$ topology (\S\ref{sec:ecc}) \\
-Third-order principle (Fano fingerprint) & third-order routing; the uniqueness tie-break \\
-$\LindOmega$ derived from $\Omega$ & the one instruction (\S\ref{sec:substrate}) \\
-Metriplectic decomposition (T-262) & reversible core is a Landauer-free isometry (\S\ref{sec:energy}) \\
-Substrate closure (T-153/T-153a) & substrate multiplicity; the realisability ladder \\
-Open-system viability (T-288/T-289) & isolated tick halts; the power port and its ignition threshold (\S\ref{subsec:powerport}) \\
-Off-switch \& latency (Obs.~T.1 / Cor.~U.10, \SYNARC{}) & rail severance $=$ guaranteed halt, $t_{\mathrm{off}}\approx0.49/\bar\gamma$ (\S\ref{subsec:powerport}, \S\ref{sec:abi}) \\
-Tegmark closure (T-267), complex-$\Gam$ necessity (T-132) & classical, warm, $784$-byte state; no cooling \\
-Computational bound (BQP) & no complexity-class speed-up (honest boundary) \\
-$\Phi$-contraction $\times\tfrac19$; cycle-time $\bar\gamma\tau=\tfrac32\ln3$ & the $9\times$ integration law; the principled clock \\
-$\mathrm{SAD}_{\max}=3$ (T-142) & composition ceiling (\S\ref{sec:composition}) \\
-Constitution constants ($\Rth,r_{\mathrm{stab}},\times\tfrac19$) & hardware limits (\S\ref{sec:abi}) \\
+Binary plane--code fusion (\texttt{pg2\_5\_refutes\_N31\_hamming\_fusion}, \texttt{pg2EvenHammingUniqueSeven}) \status{T} & unique $N=7$ over all prime powers $q\ge 2$ without tie-break (Thm~\ref{thm:unique}), matching Hurwitz's $\Oct$ \\
+Discrete $\mathrm{PSL}(2,7)\ltimes U(1)^7$ fabric covariance \status{T} & exact symmetry of $\mathcal{P}_{\mathrm{Fano}}$ and $\mathcal{D}_{\mathrm{Fano}}$; continuous $G_2$ rotates the basis (\S\ref{sec:collapse}, \S\ref{sec:platform}) \\
+Fano selection rule / structure constants $f_{ijk}$ \status{T} & instruction multiplication support $=$ canonical Singer lines (L3) \\
+Hamming $[7,4,3]$ generator $M$ / dual simplex $[7,3,4]$ check $H$ \status{T} & sector-level distance-$3$ fault localisation ($HM^T\equiv 0\pmod 2$, \S\ref{sec:ecc}, App.~\ref{app:fano}) \\
+Fano pinching contraction $\Phi(\mathcal{P}_{\mathrm{Fano}}(\Gam))=\tfrac19\Phi(\Gam)$ \status{T} & populations preserved, off-diagonals $\times\tfrac13$; $\mathcal{D}_{\mathrm{Fano}}=\tfrac23\mathcal{D}_{\mathrm{atom}}$ (\S\ref{sec:fabric}) \\
+Unitary eigenvalue \& entropy invariance \status{T} & reversible unitary half-step exports zero logical bits; $S_{\mathrm{vN}}\le\log_2 7\approx 2.807$~bits (\S\ref{sec:energy}, App.~\ref{app:energy}) \\
+Substrate closure (T-153), complex-$\Gam$ Gap (T-132) & classical room-temperature $784$-B register; substrate impedance ladder (\S\ref{sec:substrate}, \S\ref{sec:realizability}) \\
+Open-system viability (T-288/T-289) & unital dynamics cannot raise $P$; non-unital drive/port and analytical severance latency (\S\ref{subsec:powerport}) \\
+Canonical anchored self-model $\varphi_J(\Gam)$ & single-loop adaptation and refresh--learn identity (\S\ref{sec:selfmodel}, \S\ref{sec:platform}) \\
+Computational bound (BQP) & no complexity-class speed-up (honest boundary, \S\ref{sec:intro}, \S\ref{sec:redteam}) \\
+Exact observables ($\Phi=(P-P_{\mathrm{diag}})/P_{\mathrm{diag}}$, $R=1/(7P)\ge 1/3\Leftrightarrow P\le 3/7$, $D_{\mathrm{diff}}=1+6\,\CohE$) \status{T} & per-tick viability telemetry (\S\ref{sec:selfmodel}, \S\ref{sec:abi}, \S\ref{sec:platform}) \\
+Scoped composition depth $d_{\max}=3$ (T-142) \status{D} & bounded $4$-register tower ($\Cog_0$--$\Cog_3$, $3{,}136$~B) $+$ horizontal ecology (\S\ref{sec:composition}, \S\ref{sec:scaling}) \\
 \bottomrule
 \end{tabular}
 \end{center}

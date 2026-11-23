@@ -1,42 +1,50 @@
 \section{Детали ABI: раскладка и псевдокод тика}
 \label{app:abi}
 
-\paragraph{Раскладка состояния.} Холон --- непрерывный блок; субъект ---
-четырёххолонная башня (уровни $0$--$3$, \S\ref{sec:composition}).
+\paragraph{Раскладка состояния.} Холон --- непрерывный блок $784$~байта ($48$
+вещественных динамических параметров); ограниченный субъект (проектная глубина
+вложения $d_{\max}=3$, T-142 \status{D}, \S\ref{sec:composition},
+\S\ref{sec:abi}) выделяет ровно \textbf{четыре} смежных регистра \DM{} ---
+базовый уровень $\Cog_0$ плюс три вложенных метауровня $\Cog_1$--$\Cog_3$:
 \begin{center}\small
 \begin{tabular}{@{}rll@{}}
 \toprule
 смещение & размер & поле \\
 \midrule
-$0$    & $784$ & \texttt{gamma} : \DM{} ($49$ компл.\ \texttt{f64}, LE) --- уровень 0 \\
-$784$  & $784$ & \DM{} уровня 1 \\
-$1568$ & $784$ & \DM{} уровня 2 \\
-$2352$ & $784$ & \DM{} уровня 3 \\
+$0$    & $784$ & \texttt{gamma} : \DM{} ($49$ компл.\ \texttt{f64}, LE) --- базовый уровень $\Cog_0$ \\
+$784$  & $784$ & метауровень $\Cog_1$ \DM{} \\
+$1568$ & $784$ & метауровень $\Cog_2$ \DM{} \\
+$2352$ & $784$ & метауровень $\Cog_3$ \DM{} \\
 \midrule
-       & $3136$ & полное состояние субъекта (влезает в L1) \\
+       & $3136$ & полное состояние ограниченного субъекта ($4$ регистра, в L1) \\
 \bottomrule
 \end{tabular}
 \end{center}
-Это байт-идентично раскладке \texttt{gamma}/\texttt{rho\_ep} \SYNARC{} (канон
-v2.2): чекпойнт \SYNARC{} есть образ состояния \TALOS{} и наоборот, без
-маршалинга.
+Это байт-идентично раскладке \texttt{gamma}/\texttt{rho\_ep} \SYNARC{}:
+чекпойнт \SYNARC{} есть образ состояния \TALOS{} и наоборот, без маршалинга.
 
-\paragraph{Тик (на уровень).}
+\paragraph{Тик (на регистр).}
 \begin{center}\small
 \begin{tabular}{@{}ll@{}}
 \toprule
 \multicolumn{2}{@{}l}{\texttt{tick($\Gam$, $\Delta\tau$):}} \\
-\quad\texttt{$\Gam \leftarrow$ U\_half($\Gam$, $\Delta\tau/2$)} & // обратимо, свободно от Ландауэра (T-262) \\
-\quad\texttt{$s \leftarrow$ syndrome($\Gam$)} & // свободный побочный продукт (замыкание линии, Прин.~\ref{prin:selfdiag}) \\
-\quad\texttt{$\Gam \leftarrow$ dissip($\Gam$, $\Delta\tau$)} & // Фано-разреженный; экспортирует энтропию (забыть) \\
-\quad\texttt{$\Gam \leftarrow$ regen($\Gam$, $\rhostar$)} & // BKM-шаг к самомодели (учить = refresh) \\
-\quad\texttt{$\Gam \leftarrow$ U\_half($\Gam$, $\Delta\tau/2$)} & \\
-\quad\texttt{assert exact\_laws($\Gam$)} & // $\Phi{=}7P{-}1$, $\Tr{=}1$, PSD; $s{=}0$ если здоров \\
+\quad\texttt{$\Gam \leftarrow$ U\_half($\Gam$, $\Delta\tau/2$)} & // унитарный, сохраняет спектр и энтропию \\
+\quad\texttt{$s \leftarrow$ syndrome($\Gam$)} & // $3$-битная дуальная проверка $H$ (Прил.~\ref{app:fano}, Прин.~\ref{prin:selfdiag}) \\
+\quad\texttt{$\Gam \leftarrow$ dissip\_fano($\Gam$, $\Delta\tau$)} & // $\gamma(\mathcal{P}_{\mathrm{Fano}}(\Gam)-\Gam)$ ($+$ опц.\ депол.) \\
+\quad\texttt{$\Gam \leftarrow$ regen\_phiJ($\Gam$, $\Delta\tau$)} & // к $\varphi_J(\Gam)=(1-R)\mathcal{P}_{\mathrm{Fano}}(\Gam)+R\ket{\psi}\bra{\psi}$ \\
+\quad\texttt{$\Gam \leftarrow$ U\_half($\Gam$, $\Delta\tau/2$)} & // симметрия Странга $+$ проекция PSD \\
+\quad\texttt{assert invariants($\Gam$)} & // эрмитова, $\Tr{=}1$, PSD; точная $\Phi=(P-P_{\mathrm{diag}})/P_{\mathrm{diag}}$ \\
 \quad\texttt{return ($\Gam$, $s$)} & \\
 \bottomrule
 \end{tabular}
 \end{center}
-Возвращённый синдром $s$ --- вход DIAKRISIS на стороне \SYNARC{}; ненулевой $s$
-локализует деградировавший сектор (Приложение~\ref{app:fano}) без лишнего прохода.
-Величина обновления в \texttt{regen} зажата к $r_{\mathrm{stab}}=\sqrt{P-2/7}$;
-доля бюджета тика, потраченная в \texttt{regen}, удерживается $\ge\Rth=1/3$.
+Возвращённый $3$-битный синдром $s = He_j^T\pmod 2$ поступает на вход DIAKRISIS
+на стороне \SYNARC{}; ненулевой $s$ однозначно локализует одиночный
+деградировавший сектор (Приложение~\ref{app:fano}). Потиковая телеметрия
+вычисляет точную $\Phi=(P-P_{\mathrm{diag}})/P_{\mathrm{diag}}$ (переходящую в
+$7P-1$ \emph{только} на равномерной диагонали $\gamma_{kk}=1/7$), $R=1/(7P)$
+(где $R\ge 1/3\Leftrightarrow P\le 3/7$ есть верхняя граница чистоты окна
+жизнеспособности), $\CohE=(\gamma_{EE}^2+2\sum_{j\neq E}|\gamma_{Ej}|^2)/P$,
+$D_{\mathrm{diff}}=1+6\,\CohE$ и $S_{\mathrm{vN}}=-\Tr(\Gam\log_2\Gam)\le\log_2 7$~бита.
+Любое адаптивное демпфирование шага вблизи границы жизнеспособности есть
+программный выбор управления (\status{D}), а не выведенная теорема.

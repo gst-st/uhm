@@ -81,15 +81,15 @@ The iteration identity does not prove a universal cognitive-depth ceiling or ide
 
 ## §4. T-151: differentiation requires its own realization {#t-151}
 
-The cut $D_{\mathrm{diff}}\ge2$ is a model selection [D]. If $D_{\mathrm{diff}}=e^{S(\rho_E)}$, the map or lift defining $\rho_E$ must be specified. The scalar integration condition satisfies only $\Phi\ge1\Rightarrow P\ge2/7$, and places no universal bound on an E-row coherence or the entropy of an arbitrary reduced experiential state.
+The cut $D_{\mathrm{diff}}\ge2$ is a model selection [D]. In extended-register mode $D^{\mathrm{ext}} = \exp S_{vN}(\rho_E)$, the map or lift defining $\rho_E \in \mathcal{D}(\mathcal{H}_E)$ must be specified. The scalar integration condition satisfies only $\Phi\ge1\Rightarrow P\ge2/7$, and places no universal bound on an E-row coherence or the entropy of an arbitrary reduced experiential state.
 
-If instead $\rho_E=\Gamma$, then $e^{S(\Gamma)}\ge1/P\ge7/3>2$ whenever $R\ge1/3$; in this particular realization the differentiation cut is redundant. For another readout it need not be. A seven-dimensional prime Hilbert space has no nontrivial tensor factor singled out merely by naming an E-coordinate; a normalized E-row HS proxy is another defined quantity, not reduced entropy. See [the corrected dependence analysis](/docs/proofs/consciousness/conscious-window#t-124b).
+In the 7D native proxy mode $D^{7D} = 1 + 6\,\mathrm{Coh}_E(\Gamma)$ ([T-128](/docs/proofs/consciousness/operationalization#t-128) [D]), the cut $D^{7D} \ge 2$ is independent of $(P > 2/7, R \ge 1/3, \Phi \ge 1)$. By contrast, evaluating the non-canonical global entropy $\exp S_{vN}(\Gamma)$ on the full $7\times 7$ state $\Gamma$ (setting $\rho_E=\Gamma$) is **not** canonical $D_{\mathrm{diff}}$ and yields $\exp S_{vN}(\Gamma)\ge1/P\ge7/3>2$ whenever $R\ge1/3$, making that non-canonical cut redundant. A seven-dimensional prime Hilbert space has no nontrivial tensor factor singled out merely by naming an E-coordinate; the normalized E-row HS proxy $D^{7D}$ is a separately defined native quantity, not reduced entropy. See [the corrected dependence analysis](/docs/proofs/consciousness/conscious-window#t-124b).
 
 ---
 
 ## §5. T-152: correctly typed anchor validation {#t-152}
 
-A feature estimator $\pi:\mathbb R^D\to\mathcal D_N$ is tested with an observation model and held-out data; it has no Choi matrix or diamond norm by that type alone. There is no unique canonical comparator from T-123. A reference encoder must be separately declared and its targets identifiable.
+A feature estimator $\pi:\mathbb R^D\to\mathcal D_N$ is tested with an observation model and held-out data; it has no Choi matrix or diamond norm by that type alone. Universal uniqueness under T-123 is withdrawn [✗]; there is no unique canonical comparator from it. A reference encoder must be separately declared and its targets identifiable.
 
 For **linear channels** $\mathcal A,\mathcal B:M_d\to M_N$, let $J(\Delta)$ be the unnormalized Choi matrix of $\Delta=\mathcal A-\mathcal B$. Then
 
@@ -116,7 +116,7 @@ For the **full** quantum state space $\mathcal D(\mathbb C^d)$, when $d\le7$ an 
 
 To obtain a closed reduced deterministic dynamics, states in the same $G$-fiber must have the same reduced future: $G(s_1)=G(s_2)\Rightarrow G(T_ts_1)=G(T_ts_2)$. This condition is necessary and sufficient to define a well-defined reduced state map. Linearity and a CPTP extension are further requirements. For an invariant embedded sector $\mathcal E_t\iota_V=\iota_V\mathcal F_t$, the specified CPTP retraction gives CPTP reduced propagators $\mathcal F_t=G_V\mathcal E_t\iota_V$; invariance establishes their semigroup composition. Neither static Stinespring dilation of $G$ nor seven feature coordinates guarantees these conditions.
 
-Classical feature spaces require their own probability/operator-algebra encoding and distinguishability analysis; their dimension is not a quantum Hilbert-space dimension by renaming it. The former necessity-and-sufficiency claim (C1)–(C3) is withdrawn. Accessibility and observational identifiability remain independent of algebraic existence.
+Classical feature spaces require their own probability/operator-algebra encoding and distinguishability analysis; their dimension is not a quantum Hilbert-space dimension by renaming it. Thus the necessary static quantum-sector conditions (C1 trace preservation, C2 complete positivity of Kraus representation, C3 $\dim\mathcal{H}_S \ge 7$) hold **[T]** for faithful 7D CPTP sector retractions and pair with constructive sufficiency via T-253, whereas the former unqualified claim that (C1)–(C3) alone guarantee closed CPTP reduced dynamics or seven biological probes is withdrawn. Accessibility and observational identifiability remain independent of algebraic existence.
 
 #### T-253 {#t-253}
 
@@ -131,13 +131,13 @@ $$
 
 is CPTP, and it is a **retraction**: $G_V \circ \iota_V = \mathrm{Id}_{\mathcal D(\mathbb C^7)}$ for the embedding $\iota_V(\gamma) = V\gamma V^\dagger$. On the embedded 7-sector, $G_V$ is exactly faithful — it inverts $\iota_V$ pointwise, losing nothing.
 
-**(b) Threshold realization [T] + (Acc).** The full-viability set $\mathcal V_{\mathrm{full}} = \{\Gamma : P > 2/7,\ R \geq 1/3,\ \Phi \geq 1,\ D_{\mathrm{diff}} \geq 2\}$ is non-empty ([T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124)); for any window state $\Gamma_w \in \mathcal V_{\mathrm{full}}$ the substrate state $\iota_V(\Gamma_w)$ passes all four thresholds under $G_V$, since $G_V(\iota_V(\Gamma_w)) = \Gamma_w$. The existential clause of T-153 is therefore realized constructively whenever the substrate's physically accessible states reach the window's preimage:
+**(b) Threshold realization in 7D proxy mode [T] + (Acc).** Because $G_V$ takes values in $\mathcal D(\mathbb C^7)$ alone, evaluate differentiation in the **7D native proxy mode** $D_{\mathrm{diff}} = D^{7D}(\Gamma) := 1 + 6\,\mathrm{Coh}_E(\Gamma)$ ([T-128 [D]](/docs/proofs/consciousness/operationalization#t-128), [T-154 [T]](#t-154)), which is continuous on $\mathcal D(\mathbb C^7)$. (In extended-register mode $D^{\mathrm{ext}} = \exp S_{vN}(\rho_E)$, a separate continuous experiential readout/lift into $\mathcal D(\mathcal H_E)$ must be supplied alongside $G_V$.) The full-viability set $\mathcal V_{\mathrm{full}} = \{\Gamma \in \mathcal D(\mathbb C^7) : P > 2/7,\ R \geq 1/3,\ \Phi \geq 1,\ D^{7D} \geq 2,\ \forall k\ \sigma_k < 1\}$ is non-empty ([T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124)); for any window state $\Gamma_w \in \mathcal V_{\mathrm{full}}$ the substrate state $\iota_V(\Gamma_w)$ passes all thresholds under $G_V$, since $G_V(\iota_V(\Gamma_w)) = \Gamma_w$. The existential clause of T-153 is therefore realized constructively whenever the substrate's physically accessible states reach the window's preimage:
 
 $$
 \textbf{(Acc)}\quad \mathrm{States}(S) \cap G_V^{-1}(\mathcal V_{\mathrm{full}}) \neq \varnothing \ \text{ for some isometry } V.
 $$
 
-(Acc) is a definitional clause **[D]** — it names exactly what "the substrate can host a conscious state" means. Crucially, it is an **open** condition: for any interior window witness $\Gamma_w$ (all four inequalities strict — the waking profile of [altered states](/docs/consciousness/states/altered-states) is one), continuity of $G_V$ makes $G_V^{-1}(\mathrm{int}\,\mathcal V_{\mathrm{full}})$ a non-empty open neighborhood of $\iota_V(\Gamma_w)$ in $\mathcal D(\mathcal H_S)$ — the realizing substrate state need not itself be an embedded rank-7 state (which would be a measure-zero demand for $d > 7$); anything in the open preimage suffices. Quantitatively: $G_V$, being CPTP, is a trace-norm contraction, so the preimage contains the entire trace-norm ball of radius $\delta_w = \mathrm{dist}_1(\Gamma_w, \partial\mathcal V_{\mathrm{full}}) > 0$ around $\iota_V(\Gamma_w)$. Hence for substrates with accessible (controllable) dynamics — reachable set dense in $\mathcal D(\mathcal H_S)$ — (Acc) holds **[C at controllability]**: a dense set meets every non-empty open set.
+(Acc) is a definitional clause **[D]** — it names exactly what "the substrate can host a window state under $G_V$" means. Crucially, in 7D proxy mode it is an **open** condition: for an explicit strict-interior window witness $\Gamma_w \in \mathrm{int}\,\mathcal V_{\mathrm{full}}$ — for example $\Gamma_w = \tfrac12\,I/7 + \tfrac12\,|\psi\rangle\langle\psi|$ from [T-124](/docs/proofs/consciousness/conscious-window#t-124) with $|\psi\rangle = \tfrac{1}{\sqrt 7}\sum_{k=0}^6 |k\rangle$, which strictly satisfies $P = 5/14 \in (2/7, 3/7)$, $R = 2/5 > 1/3$, $\Phi = 3/2 > 1$, $D^{7D} = 83/35 \approx 2.37 > 2$, and $\sigma_k = 0 < 1$ — continuity of $G_V$ and of $(P, R, \Phi, D^{7D}, \sigma_k)$ makes $G_V^{-1}(\mathrm{int}\,\mathcal V_{\mathrm{full}})$ a non-empty open neighborhood of $\iota_V(\Gamma_w)$ in $\mathcal D(\mathcal H_S)$: the realizing substrate state need not itself be an embedded rank-7 state (which would be a measure-zero demand for $d > 7$); anything in the open preimage suffices. Quantitatively: $G_V$, being CPTP, is a trace-norm contraction, so the preimage contains the entire trace-norm ball of radius $\delta_w = \mathrm{dist}_1(\Gamma_w, \partial\mathcal V_{\mathrm{full}}) > 0$ around $\iota_V(\Gamma_w)$. Hence for substrates with accessible (controllable) dynamics — reachable set dense in $\mathcal D(\mathcal H_S)$ — (Acc) holds **[C at controllability]**: a dense set meets every non-empty open set.
 
 **(c) Sharpness [T]: no global faithfulness for $d > 7$.** No CPTP map $\mathcal E: \mathcal D(\mathcal H_S) \to \mathcal D(\mathbb C^7)$ is injective on all of $\mathcal D(\mathcal H_S)$ when $d > 7$: as a real-linear map $\mathrm{Herm}(\mathcal H_S) \to \mathrm{Herm}(\mathbb C^7)$ it has kernel of dimension $\geq d^2 - 49 \geq 1$, and trace preservation puts the kernel inside the traceless hyperplane; hence for any interior state $\rho$ and kernel direction $K \neq 0$ the pair $\rho \pm \varepsilon K$ (small $\varepsilon > 0$) consists of two **distinct density matrices with identical images**. Consequently "faithful $G$" in T-153/T-153a must be read **sector-relative**, and the retraction of (a) attains the maximal possible real dimension of a faithful smooth sector — 48 — through the embedded state space; this does not make that sector unique.
 :::
@@ -204,7 +204,7 @@ A practical alternative proposes a gradient step, checks all margins (or the ful
 
 ---
 
-## §9. T-156: mixing is an optimization problem, not a derived constant {#t-156}
+## §9. T-156 [✗]: mixing is an optimization problem, not a derived constant {#t-156}
 
 The earlier expression
 
@@ -212,7 +212,7 @@ $$
 \beta^*=\frac{\lambda_{\mathrm{gap}}}{\lambda_{\mathrm{gap}}+\alpha_D(1-P_{\mathrm{env}}/P_{\mathrm{target}})}
 $$
 
-is retained only as an unvalidated historical proposal [H], not an optimum theorem. It can leave the admissible interval: $\lambda_{\mathrm{gap}}=1$, $\alpha_D=2/3$, $P_{\mathrm{env}}=1$, $P_{\mathrm{target}}=3/7$ gives $\beta^*=9$. No objective or derivative in the former proof establishes the formula.
+is **withdrawn [✗]** as an optimum theorem and retained only as an unvalidated historical proposal. It can leave the admissible interval: $\lambda_{\mathrm{gap}}=1$, $\alpha_D=2/3$, $P_{\mathrm{env}}=1$, $P_{\mathrm{target}}=3/7$ gives $\beta^*=9$. No objective or derivative in the former proof establishes the formula.
 
 In T-148's undamped constant-input model, smaller $\beta$ gives a larger mixture weight at every tick and weakly earlier purity crossing. An interior optimum needs another explicit cost or constraint, such as autonomy, resource use or a certified finite-horizon exit probability. Declare these functions and a compact admissible set. Continuity gives existence of a minimizer; uniqueness and a closed formula require additional convexity or a direct analysis. No universal optimum follows from embodiment.
 
@@ -221,13 +221,16 @@ In T-148's undamped constant-input model, smaller $\beta$ gives a larger mixture
 ## §10. T-157: Attractor consistency {#t-157}
 
 :::tip Theorem T-157 [T]: Attractor consistency
-Level 1 is the attractor $\rho^*$ of the full dynamics, level 2 the fixed point of the self-model (exact self-knowledge).
+Consider the isolated feedback dynamics $\dot\rho = \mathcal{L}_0[\rho] + \kappa g_V(P(\rho))\,(\varphi(\rho) - \rho)$ with $\mathcal{L}_0[\rho] = -i[H, \rho] + \gamma\,(\mathcal{P}_{\mathrm{Fano}}(\rho) - \rho)$. Level 1 is a stationary state $\rho^*$ of the full dynamics; level 2 is a fixed point of the specified self-model $\varphi$ (exact self-knowledge). **Required hypotheses for the distance estimates below:** strictly positive effective regeneration rate **$\kappa g_V(P(\rho^*)) > 0$** and unit Fano dissipation normalization **$\gamma = 1$** (for general dissipation rate $\gamma > 0$, every coefficient $\tfrac{2}{3}$ below scales as $\tfrac{2}{3}\gamma$, and item 3 scales as $O(\gamma/\kappa)$).
 
-1. **Self-knowledge defect (any self-model).** $\kappa g_V\,(\varphi(\rho^*) - \rho^*) = -\mathcal{L}_0[\rho^*]$, so $\|\varphi(\rho^*) - \rho^*\|_F \leq \bigl(2\|H\|_{\mathrm{op}}\|\rho^* - I/7\|_F + \tfrac23\sqrt{P_{\mathrm{coh}}}\bigr)/(\kappa g_V)$.
-2. **Hamiltonian shift ($\varphi_s$).** $\|\Gamma_m(H) - e_m\|_F = \sqrt2\,\bigl(\sum_{j \neq m}\lvert H_{jm}\rvert^2\bigr)^{1/2}/\bigl(\tfrac23 + \tfrac67\kappa(1 - c)\bigr) + O(\|H\|^2)$, where $e_m$ is the exact fixed point of $\varphi_s$ that the attractor $\Gamma_m(H)$ continues.
-3. **Dissipative shift ($\varphi_J$).** $\|\Gamma_{\eta_+} - \Gamma_{\eta_\infty}\|_F = \sqrt{6/7}\,(\eta_\infty - \eta_+) \leq \sqrt{6/7}\,(2\eta_+/3)/\lvert\lambda_Y\rvert = O(1/\kappa)$, where $\Gamma_{\eta_\infty}$ is the only fixed point of $\varphi_J$ and $\lambda_Y$ the stability exponent of the attractor $\Gamma_{\eta_+}$ along $uu^\dagger - I/7$.
+1. **Self-knowledge defect (any self-model $\varphi$, under $\kappa g_V > 0$ and $\gamma = 1$).** Stationarity gives $\kappa g_V\,(\varphi(\rho^*) - \rho^*) = -\mathcal{L}_0[\rho^*]$, so
+   $$
+   \|\varphi(\rho^*) - \rho^*\|_F \leq \frac{2\|H\|_{\mathrm{op}}\|\rho^* - I/7\|_F + \tfrac23\gamma\sqrt{P_{\mathrm{coh}}}}{\kappa g_V} \;\overset{\gamma=1}{=}\; \frac{2\|H\|_{\mathrm{op}}\|\rho^* - I/7\|_F + \tfrac23\sqrt{P_{\mathrm{coh}}}}{\kappa g_V}.
+   $$
+2. **Hamiltonian shift ($\varphi_s$, under $\gamma = 1$ and $\kappa g_V(1) = \kappa > 0$).** $\|\Gamma_m(H) - e_m\|_F = \sqrt2\,\bigl(\sum_{j \neq m}\lvert H_{jm}\rvert^2\bigr)^{1/2}/\bigl(\tfrac23 + \tfrac67\kappa(1 - c)\bigr) + O(\|H\|^2)$, where $e_m$ is the exact fixed point of $\varphi_s$ that the attractor $\Gamma_m(H)$ continues (replacing $\tfrac23$ by $\tfrac23\gamma$ for general $\gamma > 0$).
+3. **Dissipative shift ($\varphi_J$, under $H = 0$, $\gamma = 1$, and $\kappa g_V(P(\Gamma_{\eta_+})) > 0$).** For the collineation-anchored self-model $\varphi_J(\rho) := (1 - R(\rho))\,\mathcal{P}_\alpha(\rho) + R(\rho)\,|\psi\rangle\langle\psi|$ ([T-334](/docs/core/operators/phi-operator#phi-j) **[T]**), $\|\Gamma_{\eta_+} - \Gamma_{\eta_\infty}\|_F = \sqrt{6/7}\,(\eta_\infty - \eta_+) \leq \sqrt{6/7}\,(2\eta_+/3)/\lvert\lambda_Y\rvert = O(1/\kappa)$, where $\Gamma_{\eta_\infty}$ is the only fixed point of $\varphi_J$ and $\lambda_Y$ is the stability exponent of the attractor $\Gamma_{\eta_+}$ along $uu^\dagger - I/7$ (scaling as $2\gamma\eta_+/3$ and $O(\gamma/\kappa)$ for general $\gamma > 0$).
 
-Proof and numerical check: [evolution, attractor consistency](/docs/core/dynamics/evolution#теорема-согласованность-аттракторов). **Status:** C21 as stated ("$\rho^*_\Omega \approx \Gamma^*_{\mathrm{coh}}$") is false [✗]; its correct content is this theorem [T].
+Proof and numerical check: [evolution, attractor consistency](/docs/core/dynamics/evolution#теорема-согласованность-аттракторов). **Status:** C21 as stated ("$\rho^*_\Omega \approx \Gamma^*_{\mathrm{coh}}$") is false [✗]; its correct content is this theorem [T] under the explicit hypotheses above.
 :::
 
 ---
@@ -265,7 +268,7 @@ Computability from a matrix does not prove identifiability from incomplete data 
 
 A reference implementation may choose a seven-dimensional state, a specified GKSL linear part with regular nonlinear feedback, a state-valued self-model, a declared stress/action objective, an external input policy and the full $\mathrm{Cap}_2$ gate. These are a reproducible architecture specification [D]; physical realization and experience identification remain [H/I].
 
-Different anchors, encoders, feedback laws, gates and learning procedures can satisfy the same structural constraints. T-123 and the universal functional-minimality argument do not select one implementation. GKSL classifies **linear** Markovian generators; it does not derive a unique nonlinear regenerator or force “three and only three” causal mechanisms. A fixed-target replacement channel is one CPTP option, and state-dependent mixing is generally nonlinear. External injection can enable genesis in its parameter regime, but embodiment alone does not imply the full gate.
+Different anchors, encoders, feedback laws, gates and learning procedures can satisfy the same structural constraints. The withdrawn T-123 [✗] and the universal functional-minimality argument do not select one implementation. GKSL classifies **linear** Markovian generators; it does not derive a unique nonlinear regenerator or force “three and only three” causal mechanisms. A fixed-target replacement channel is one CPTP option, and state-dependent mixing is generally nonlinear. External injection can enable genesis in its parameter regime, but embodiment alone does not imply the full gate.
 
 The previous necessity/sufficiency claim for every conscious substrate and uniqueness up to $G_2$ are withdrawn. A fixed observational model can be tested on different substrates using the same declared readouts and criteria; this is conditional comparability, not a universal consciousness theorem.
 
@@ -281,8 +284,8 @@ The previous necessity/sufficiency claim for every conscious substrate and uniqu
 | T-152 | Choi/diamond bounds for linear channels; feature estimators require statistical identification |
 | T-153/T-153a/T-253 | Declared substrate predicate; faithful-sector construction and global dimension obstruction |
 | T-155 | Closed-margin feasibility under exact projection or certified acceptance |
-| T-156 | Universal optimal formula withdrawn; explicit constrained optimization required |
-| T-157 | Existing conditional anchor/attractor perturbation formulas retained |
+| T-156 | Universal optimal formula withdrawn [✗]; explicit constrained optimization required |
+| T-157 | Conditional anchor/attractor perturbation formulas [T] under $\kappa g_V > 0$ and $\gamma = 1$ (scaling as $\tfrac23\gamma$ for general $\gamma > 0$) |
 | ARCH-159 | Reference architecture [D/H]; universal uniqueness withdrawn |
 
 **Related documents:**

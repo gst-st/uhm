@@ -14,11 +14,11 @@ In the [previous chapter](./introduction) we learned *what* Coherence Cybernetic
 In this chapter we:
 1. **Understand why axiomatics is needed** — the lesson of Euclid, Kolmogorov, and Hilbert (section "Why Is Axiomatics Needed?")
 2. **Examine three levels of rigor** in derivation: deductive, categorical, constructive (section "[What Does 'Strictly Derived' Mean?](#что-значит-строго-выводится)")
-3. **Meet the single primitive** — the category $\mathcal{C}$ (section "[The Single Primitive](#единственный-примитив)")
-4. **Walk through the five axioms** of Ω⁷ and understand why each is needed (section "[Axiomatic Base](#аксиоматическая-база-краткая-справка)")
-5. **Trace the derivation chain** from $\Omega$ to the stationary state $\Gamma^*$ (section "[Derivation Chain](#цепочка-вывода)")
-6. **See how the bootstrap paradox** of regeneration is resolved (section "[Bootstrap Paradox](#bootstrap-парадокс)")
-7. **Understand why the E-dimension is special** — the E-accentuation theorem (section "[E-Accentuation](#e-акцентуация)")
+3. **Meet the typed foundational architecture** — the sheaf $\infty$-topos envelope and explicit model record (section "[The Typed Architecture](#единственный-примитив)")
+4. **Walk through the five axioms** of Ω⁷ (`A1`–`A5`) and the separate Holon requirements (`AP`, `PH`, `QG`, `V`) (section "[Axiomatic Base](#аксиоматическая-база-краткая-справка)")
+5. **Audit the construction chain** — clearly distinguishing proved theorems `[T]` from explicit operator/rate definitions `[D]` and withdrawn derivations `[✗]` (section "[Construction Chain](#цепочка-вывода)")
+6. **Examine the bootstrap rate convention** and how $\kappa_{\text{bootstrap}} > 0$ operates dynamically `[D]` (section "[Bootstrap Paradox](#bootstrap-парадокс)")
+7. **Audit E-accentuation** — explaining why the former diagonal-only proof fails for coherent states and what actually holds (section "[E-Accentuation](#e-акцентуация)")
 :::
 
 :::note On Notation
@@ -58,29 +58,25 @@ That understanding is as follows: a theory is considered rigorous if:
 
 Cybernetics, unlike physics and mathematics, has largely remained a **pre-axiomatic** discipline to this day. Wiener's cybernetics, Ashby's cybernetics, von Foerster's second-order cybernetics — all of these are valuable conceptual frameworks, but none has a formal axiomatics from which all statements would be derived.
 
-**Coherence Cybernetics (CC)** is the first attempt to build cybernetics to a level of rigor comparable to Kolmogorov's axiomatic probability theory. Every statement in CC is labeled with one of six statuses — **[T]** (theorem), **[C]** (conditional), **[H]** (hypothesis), **[I]** (interpretation), **[D]** (definition), **[P]** (postulate) — making explicit what is taken on faith and what is proven. The complete status system with descriptions: [Status Registry](/docs/reference/status-registry).
+**Coherence Cybernetics (CC)** aims to formalize cybernetics with explicit status stratification. Every statement in CC carries one of the canonical registry markers — **[T]** (theorem), **[C]** (conditional), **[H]** (hypothesis), **[P]** (postulate), **[Pr]** (research programme), **[D]** (definition), **[I]** (interpretation), or **[✗]** (retracted) — separating what is postulated or defined from what is strictly proven. The complete status system is maintained in the [Status Registry](/docs/reference/status-registry).
 
 ---
 
 ## What Does "Strictly Derived" Mean? {#что-значит-строго-выводится}
 
-Before diving into the axioms, let us clarify the key concept. When we say that CC is "strictly derived" from UHM, what does that mean?
+Before diving into the axioms, let us clarify what is strictly derived vs. what is explicitly supplied as typed input in the current revision of UHM ([Axiom Ω⁷](/docs/core/foundations/axiom-omega)).
 
 ### Three Levels of "Derivation"
 
-1. **Deductive derivation** (the most rigorous): Statement B follows from statement A if B cannot be denied without denying A. Example: from Peano's axioms it *follows* that $2 + 2 = 4$. This is precisely the sense in which most CC statements with status **[T]** work.
+1. **Deductive derivation** (the most rigorous): Statement B follows logically from explicitly stated premises A. Example: once structural majority $\|\Gamma - I/7\|_F^2 > 1/7$ `[D]` is chosen, $P(\Gamma) > 2/7$ follows deductively `[T]`.
 
-2. **Categorical derivation**: Construction B is uniquely determined by the structure of A up to a unique isomorphism. Example: from the fact that $\mathcal{C}$ is a small category with a Grothendieck topology, the subobject classifier $\Omega$ is uniquely determined. This is exactly how the Lindblad operators $L_k$ are derived from Axiom 1.
+2. **Categorical construction**: Construction B is determined up to equivalence by a specified categorical structure A. Example: by **Giraud's theorem** `[T]`, a Grothendieck topos of sheaves on a small site (such as the Bures open-cover site $\operatorname{Open}_B(D_7)$) possesses a subobject classifier $\Omega$. *(Crucially, as audited below, $\Omega$ does **not** force specific Lindblad operators $L_k$ without additional operator/instrument inputs: `T-41k [✗]`, `T-190 [✗]`.)*
 
-3. **Constructive derivation**: B is built from A by an explicit algorithm, verifiable step by step. This is how the entire chain $\Omega \to \{S_k\} \to \chi_{S_k} \to L_k \to \mathcal{L}_\Omega$ is structured.
-
-All three types of derivation are used in CC, and for each theorem the type is specified.
+3. **Constructive specification**: An explicit dynamical or operator model (such as a Lindblad generator $\mathcal{L}_0$, a self-model $\varphi$, or a constitutive rate function $\kappa(\Gamma)$) is specified `[D]` and analyzed constructively.
 
 ### What Derivation Does NOT Mean
 
-Derivation **does not mean** that the conclusion is "obvious" or "intuitively clear." Many CC theorems (for example, that $P_{\text{crit}} = 2/7$ is the only possible threshold of consciousness) are counterintuitive. They are true *despite* intuition, because they follow from the axioms.
-
-Derivation also **does not mean** empirical truth. The axioms of CC are mathematical constructions. The question "do they describe reality?" is a separate, empirical question.
+Derivation **does not mean** collapsing independent modelling choices into a single slogan. Choosing a threshold (such as $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, or $\Phi_{\text{th}} = 1$) is a **definitional convention `[D]`**, not a free-standing deduction from pure topology; and mathematical consistency does not by itself establish empirical truth.
 
 ---
 
@@ -98,177 +94,116 @@ This statement is not a declaration but a **theorem** (more precisely, a family 
 
 ---
 
-## The Single Primitive: The Beauty of Minimalism {#единственный-примитив}
+## The Typed Primitive and Explicit Model Record {#единственный-примитив}
 
-### Why Is One Primitive Enough?
+### From an Untyped "Single Primitive" to a Typed Model Record
 
-Twentieth-century physics moved toward an ever-larger number of fundamental objects: particles, fields, strings, branes... CC goes in the opposite direction. Just as all of arithmetic is built from one concept (set) plus one operation (membership), CC is built from a **single primitive** — the category $\mathcal{C}$.
-
-### Primitive Concepts
-
-CC is built on a **single primitive** — **the category $\mathcal{C}$** with a finite number of objects. The coherence matrix Γ is an **object** of this category.
-
-**Primitive (Category $\mathcal{C}$):**
-
-A small category $\mathcal{C}$ whose objects are density matrices:
+Earlier presentations summarized UHM as deriving all of space, time, dynamics, dissipation, regeneration, and consciousness automatically from a single untyped category $\mathcal{C}$. As established in [Axiom Ω⁷](/docs/core/foundations/axiom-omega) and the [Status Registry](/docs/reference/status-registry), that untyped collapse has been replaced by an **explicit typed model record**:
 
 $$
-\text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42}), \quad \text{Mor}(\mathcal{C}) = \text{CPTP channels}
+\mathfrak{T} = (\mathcal{E}_7,\, D_7,\, d_B,\, \text{frame},\, \mathcal{L}_0,\, \varphi,\, a,\, \text{clock extension},\, \text{observation law})
 $$
 
-### What Does "Single" Mean?
+where $\mathcal{E}_7 = \operatorname{Sh}_\infty(\operatorname{Open}_B(D_7), J_{\mathrm{open}}) \simeq \operatorname{Sh}_\infty(B^{48})$ is the sheaf $\infty$-topos envelope over the Bures open-cover site of $D_7 = \mathcal{D}(\mathbb{C}^7)$ (a locally contractible topological envelope, blind to $\mathbb{C}$, convexity, and metric), while the quantum realization **(QG)** ($\mathbb{C}^7$, density matrices $\mathcal{D}(\mathbb{C}^7)$, Born rule, CPTP channels), semantic frame, generator $\mathcal{L}_0$, self-model $\varphi$, clock extension, and observation law are **explicitly declared typed fields** `[P]/[D]`.
 
-The uniqueness of the primitive is not merely an aesthetic requirement. It has a precise mathematical meaning: **everything else is derived**. Space, time, dynamics, dissipation, regeneration, consciousness — none of these are added "on top," but are generated by the internal structure of $\mathcal{C}$.
+### Audited Status of Each Construction
 
-Analogy: in group theory it suffices to give a set and a binary operation satisfying three axioms. From this are derived: inverse elements, the order of an element, subgroups, cosets, quotient groups, representations... — an infinite hierarchy of structures from a single definition.
+| Construction | Actual mathematical source | Status |
+|-------------|----------------------------|--------|
+| Base space $D_7 = \mathcal{D}(\mathbb{C}^7)$ | Convex compact state space; contractible via $\rho \mapsto (1-t)\rho + t\,I/7$ | `[T]` |
+| Reduced / positive-degree cohomology | $\tilde{H}^*(D_7; \mathbb{Z}) = 0$, i.e. $H^k(D_7; \mathbb{Z}) = 0$ for all $k \geq 1$, while $H^0(D_7; \mathbb{Z}) \cong \mathbb{Z}$ (never $H^*(X) = 0$!) | `[T]` |
+| Classifier $\Omega$ of sheaf 1-topos | **Giraud's theorem** for Grothendieck topoi ($\Omega(U) = \operatorname{Open}(U)$ on the open-cover site) | `[T]` |
+| Projective instrument $L_k = P_k$ | Specified operator/instrument data `[D]` (classifier-forced derivation withdrawn: `T-41k [✗]`, `T-190 [✗]`) | `[D]` / `T-41k [✗]` |
+| Linear GKSL generator $\mathcal{L}_0$ | Constructed from specified $H$ and $\{L_k\}$; linear primitivity gives unique stationary $I/7$ (`T-39a`) | `[T]` (at supplied connected $H$ and rate) |
+| Self-model $\varphi$ & regeneration $\mathcal{R}$ | Explicitly specified constitutive model `[D]` (fully axiomatic derivations withdrawn: `T-39d–h [✗]`) | `[D]` / `T-39d–h [✗]` |
+| Clock time $\tau$ | Conditional Page–Wootters clock extension (`A5`) | `[P]/[D]` |
 
-In CC, from the category $\mathcal{C}$ are derived:
+### Ontological Status vs. Mathematical Facts
 
-| Construction | How obtained | Status |
-|-------------|----------------|--------|
-| Space $X = \|N(\mathcal{C})\|$ | Geometric realization of the nerve | [T] |
-| Classifier $\Omega$ | Girard's theorem | [T] |
-| Operators $L_k$ | From atoms of $\Omega$ | [T] |
-| Dynamics $\mathcal{L}_\Omega$ | From $L_k$ via Lindblad formula | [T] |
-| Time $\tau$ | Page–Wootters axiom | [T] |
-| Self-modeling $\varphi$ | From $\mathcal{L}_\Omega$ | [T] |
-
-### Ontological Status
-
-**Category $\mathcal{C}$** (not Γ) **is**:
-- The single substance
-- Its own structure
-- Its own process
-
-From $\mathcal{C}$ **are derived**:
-- Base space $X = |N(\mathcal{C})|$
-- Monism as theorem: $H^*(X) = 0$
-- Time τ, metric d_strat, arrow of time
-
-### Why Not Γ?
-
-Beginners often think that the primitive of CC is the coherence matrix $\Gamma$. This is like thinking that the primitive of arithmetic is the number 7. The number 7 is an important object, but it is *derived* from Peano's axioms. Likewise, $\Gamma$ is the most important object of CC, but it is *derived* as an object of the category $\mathcal{C}$.
-
-The distinction is fundamental: if $\Gamma$ were the primitive, then its properties (dimensionality 7, Hermiticity, positive definiteness, unit trace) would have to be **postulated**. Within CC all these properties are **derived** from the fact that $\Gamma \in \text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42})$.
+- **Contractibility and cohomology (`[T]`):** Because $D_7$ is convex and nonempty, it is contractible, so its **reduced** constant-coefficient cohomology vanishes ($\tilde{H}^*(D_7; \mathbb{Z}) = 0$, equivalently $H^k(D_7; \mathbb{Z}) = 0$ for every $k \geq 1$, while $H^0(D_7; \mathbb{Z}) \cong \mathbb{Z}$). Calling a nonempty space's unreduced cohomology "$H^*(X) = 0$" is a mathematical error since $H^0(X; \mathbb{Z}) \cong \mathbb{Z}$ for every nonempty path-connected space. Moreover, this topological fact is independent of the terminal object of $\mathcal{E}_7$ and does not imply vanishing for arbitrary coefficient sheaves or ontological monism without an explicit interpretive postulate `[I]`.
+- **Monist thesis `[I]`:** Reading the typed record $\mathfrak{T}$ as a single unified ontology of physical and experiential phenomena is an explicit **monist postulate/interpretation `[P]/[I]`**, not a theorem deduced from a terminal object (`T-181 [✗]`).
 
 ---
 
 ## Axiomatic Base (Brief Reference) {#аксиоматическая-база-краткая-справка}
 
 :::tip DRY: Full Axiomatics
-The complete presentation of the five axioms of Ω⁷ — in [Axiom Ω⁷](/docs/core/foundations/axiom-omega). The table of seven dimensions — in [Seven Dimensions](/docs/core/structure/dimensions). The complete evolution equation — in [Evolution](/docs/core/dynamics/evolution).
+The complete typed specification of `A1`–`A5` is in [Axiom Ω⁷](/docs/core/foundations/axiom-omega). Holon requirements (`AP`, `PH`, `QG`, `V`) are in [Holon Requirements](/docs/core/foundations/axiom-septicity). The canonical evolution equation is in [Evolution](/docs/core/dynamics/evolution).
 :::
 
-CC is built on **Axiom Ω⁷** (five axioms with the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ as the primitive):
+CC is built on five explicit foundational inputs **`A1`–`A5`** together with the explicit quantum realization **(QG)** and Holon requirements **`AP`, `PH`, `QG`, `V`**:
 
-| No. | Axiom | Key Corollary |
-|---|---------|-------------------|
-| 1 | Structure (∞-Topos) | Uniqueness of the primitive |
-| 2 | Metric (Bures) | Informational distinguishability |
-| 3 | Dimensionality ($N = 7$) | [Seven-dimensionality](/docs/proofs/minimality/theorem-minimality-7) |
-| 4 | Scale ($\omega_0 > 0$) | Link between internal and physical time |
-| 5 | Page–Wootters | [Emergent time τ](/docs/proofs/dynamics/emergent-time) |
+| No. | Input | Content | Status |
+|---|---------|---------|--------|
+| A1 | Semantics ($\infty$-topos) | $\mathcal{E}_7 = \operatorname{Sh}_\infty(\operatorname{Open}_B(D_7), J_{\mathrm{open}})$ (topological envelope) | Construction `[D]`, existence `[T]`, ontology `[P]/[I]` |
+| A2 | Metric (Bures) | Chordal Bures distance $d_B$ on states; SLD/Bures tensor on full-rank strata (`T-187`) | Choice `[P]`, CPTP monotonicity `[T]` |
+| A3 | Frame ($N = 7$) | $\mathcal{H} = \mathbb{C}^7$ with semantic frame `A, S, D, L, E, O, U` and Fano/octonion data | `[P]/[D]`; conditional diagnosability rigidity `T-224 [T]` |
+| A4 | Scale ($\omega_0 > 0$) | Calibrated inverse-time scale $\omega_0 > 0$ (Hamiltonian/dissipative rates supplied separately) | `[P]` |
+| A5 | Clock extension | Extended tensor realization, clock readout, and constraint $\operatorname{supp}\rho \subseteq \ker\hat{C}$ | `[P]/[D]` |
 
-Let us examine each axiom in detail.
+Let us examine each input accurately.
 
-### Axiom 1: Structure — Reality Is an ∞-Topos
+### Axiom 1 (`A1`): Semantics — Sheaf $\infty$-Topos Envelope
 
-**In plain language:** The world is structured as a space of all possible states, where transitions between states are just as real as the states themselves.
+**Formally:** $\mathcal{E}_7 = \operatorname{Sh}_\infty(\operatorname{Open}_B(D_7), J_{\mathrm{open}}) \simeq \operatorname{Sh}_\infty(B^{48})$ over the Bures open-cover site of $D_7$.
 
-**Why it is needed:** Without it there is no unified mathematical language. One cannot speak of "space," "logic," or "structure" — all of these are *defined* through the ∞-topos. Remove this axiom and CC falls apart into a set of unconnected formulas.
+**What follows from it `[T]`:** By **Giraud's theorem** for Grothendieck topoi, the underlying sheaf 1-topos possesses a subobject classifier $\Omega$ (with $\Omega(U) = \operatorname{Open}(U)$). What does **not** follow automatically: $\Omega$ is a classifier of open subobjects, NOT a Hilbert space, density matrix, or forced set of Lindblad operators (`T-41k [✗]`, `T-181 [✗]`, `T-190 [✗]`).
 
-**Analogy:** Just as the grammar of a language is not yet another sentence but the rule by which *all* sentences are constructed, so the ∞-topos is not yet another mathematical object but the framework in which *all* CC objects live.
+### Axiom 2 (`A2`): Metric — Bures Geometry (`T-187`)
 
-**Formally:** Reality is an ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ over the category of density matrices $\mathcal{D}(\mathbb{C}^N)$.
+**Formally:** Chordal Bures distance $d_B$ on $D_7$ and the Bures/SLD monotone Riemannian tensor on full-rank states.
 
-**What follows from it:** The existence of a subobject classifier $\Omega$ (by Girard's theorem), from which the Lindblad operators are then derived.
+**Exact status (`T-187`):** Classically (Chentsov 1982) the Fisher–Rao metric is the unique monotone metric. Quantum-mechanically (Petz 1996) there is a family of monotone metrics. By **`T-187`** (`[T]` under the normalized Petz family on full-rank states), Bures/SLD is the pointwise **minimal** monotone tensor; choosing monotonicity and a minimal-tensor selector are explicit inputs `[P]`. Importantly, uniform bi-Lipschitz comparison across Petz metrics requires a **compact positive-eigenvalue floor** — it does **not** hold globally at the rank-deficient boundary $\partial D_7$ and does not by itself establish universal robustness of predictions (`T-187`).
 
-### Axiom 2: Metric — Distinguishability Is Measured via Bures
+### Axiom 3 (`A3`): Frame — Seven Dimensions ($N = 7$)
 
-**In plain language:** There is a unique "honest" way to measure how much two states differ from each other.
+**Formally:** $\mathcal{H} = \mathbb{C}^7$ equipped with the canonical semantic orthonormal frame **A (Articulation), S (Structure), D (Dynamics), L (Logic), E (Interiority), O (Ground), U (Unity)** and specified Fano/octonion structure.
 
-**Why it is needed:** Without a metric one cannot speak of "close" and "distant" states, of "continuity" and "convergence." Without it dynamics is undefined: the evolution equations require a topology on the state space.
+**Exact status:** Fixing $\mathcal{H} = \mathbb{C}^7$ is a frame postulate `[P]/[D]`. Unconditional seven-role minimality (`T-40f [✗]`) and automatic operational derivation of seven roles (`T-190 [✗]`) are withdrawn; what stands rigorously is **diagnosability rigidity (`T-224 [T]`)**: requiring perfect single-fault localizability together with a nontrivial state grammar forces $n = 2^r - 1 \ge 7$ and selects the unique Hamming $H(7,4)$ / Fano plane $\mathrm{PG}(2,2)$ grammar at $n = 7$.
 
-**Analogy:** Just as in life it is impossible to compare two options without a criterion of comparison (price? quality? weight?), so in the space of density matrices it is impossible to define "distance" without a metric. The Bures metric is the unique one that respects the quantum nature of states.
+### Axiom 4 (`A4`): Scale — Calibrated Frequency $\omega_0 > 0$
 
-**Formally:** The Grothendieck topology $J$ is induced by the Bures metric $d_B$.
+**Formally:** A calibrated inverse-time scale $\omega_0 > 0$, bridging dimensionless internal evolution parameter $\tau$ and physical time $t$, with Hamiltonian and dissipative rates specified separately `[P]` (not inferred from terminality or positivity of the Hamiltonian).
 
-**What follows from it:** The metric is **canonically selected** — but note the quantum subtlety. Classically (Chentsov 1982) the Fisher–Rao metric is the *unique* monotone metric. Quantum-mechanically (Petz 1996) there is an entire **family** of monotone metrics; the Bures metric is the distinguished **minimal (Petz-extremal)** member of that family, singled out by Uhlmann's purification variational principle and the SLD Cramér–Rao bound (see [T-187](/docs/reference/status-registry) and [emergent-geometry §Bures uniqueness](/docs/physics/gravity/emergent-geometry#единственность-метрики-бюреса)). So the choice is a **canonical selection within the Petz family**, not a naive uniqueness — and all Petz choices are bi-Lipschitz equivalent, so predictions are Petz-robust.
+### Axiom 5 (`A5`): Page–Wootters — Clock Extension
 
-### Axiom 3: Dimensionality — N = 7
-
-**In plain language:** The fundamental description of a Holon (the minimal unit of reality) requires exactly seven dimensions.
-
-**Why it is needed:** Dimensionality determines the richness of structure. At $N = 1$ there is no dynamics at all (only one state). At $N = 2$ there is not enough structure for self-modeling. $N = 7$ is the minimum number at which *all* necessary structures are simultaneously possible.
-
-**Analogy:** To describe rotations in three-dimensional space one needs exactly 3 Euler angles — not 2 and not 4. Likewise, to fully describe a coherent system one needs exactly 7 dimensions.
-
-**Formally:** $N = 7$ — the dimensionality of the base space $\mathcal{H} = \mathbb{C}^7$.
-
-**What follows from it:** Seven dimensions [A, S, D, L, E, O, U], each of which is necessary (proof of minimality — [Theorem S](/docs/proofs/minimality/theorem-minimality-7)). Remove any one — and some property (autopoiesis, phenomenology, quantum foundation, or viability) becomes impossible.
-
-### Axiom 4: Scale — A Characteristic Frequency Exists
-
-**In plain language:** Every Holon has its own "pace of life" — the rate at which its internal clock ticks.
-
-**Why it is needed:** Without a scale the evolution equations are dimensionless and are not connected to observable time. $\omega_0$ is the bridge between mathematical time $\tau$ and physical time $t$.
-
-**Analogy:** $\omega_0$ is the analogue of mass in physics. Mass is not a universal constant but a parameter of a specific body. Likewise, $\omega_0$ is a parameter of a specific Holon: a cell has one $\omega_0$, an organism has another, a social group has a third.
-
-**Formally:** $\omega_0 > 0$ — the characteristic frequency of the system.
-
-### Axiom 5: Page–Wootters — Time Is Emergent
-
-**In plain language:** Time does not exist "outside" the system. It arises from correlations between subsystems.
-
-**Why it is needed:** If external time is postulated, dualism results (system + external time = two primitives). The PW axiom derives time from the single primitive.
-
-**Analogy:** Temperature does not exist for a single molecule — it arises as a statistical property of an ensemble. Likewise, time does not exist for an isolated state — it arises from the relationship between parts.
-
-**Formally:** $[\hat{C}, \Gamma_{\text{total}}] = 0$ (the total system is stationary; time is the conditional dynamics relative to the clock subsystem).
-
-**What follows from it:** [Emergent time τ](/docs/proofs/dynamics/emergent-time), the arrow of time, the evolution equation.
+**Formally:** A chosen extended tensor realization, clock readout, and support constraint $\operatorname{supp}\rho \subseteq \ker\hat{C}$ (`[P]/[D]`), yielding conditional Page–Wootters dynamics relative to the clock register.
 
 ### Visual Map
 
 ```mermaid
 graph TD
-    subgraph "Axiom Ω⁷ — Five Axioms"
-        AX1["Ax. 1: Structure<br/>∞-Topos Sh∞(C)"]
-        AX2["Ax. 2: Metric<br/>J_Bures"]
-        AX3["Ax. 3: Dimensionality<br/>N = 7"]
-        AX4["Ax. 4: Scale<br/>ω₀ > 0"]
-        AX5["Ax. 5: Page–Wootters<br/>[Ĉ, Γ_total] = 0"]
+    subgraph "Typed Foundational Inputs (A1–A5)"
+        AX1["A1: Semantics<br/>Sh∞(Open_B(D₇)) [D], [T]"]
+        AX2["A2: Metric<br/>Bures [P]; T-187 [T]"]
+        AX3["A3: Frame<br/>ℂ⁷, A–U [P], [D]; T-224 [T]"]
+        AX4["A4: Scale<br/>ω₀ > 0 [P]"]
+        AX5["A5: Clock Extension<br/>supp ρ ⊆ ker Ĉ [P], [D]"]
     end
-    subgraph "Corollaries"
-        S["Theorem S: dim=7"]
-        APQ["AP+PH+QG+V"]
-        LU["L-unification"]
-        EVOL["Evolution equation"]
+    subgraph "Separate Typed Model Data"
+        APQ["Holon Requirements<br/>AP, PH, QG, V [P], [D], [I]<br/>(T-181 [✗] for auto-derivation)"]
+        OPS["Specified Operators<br/>H, {L_k}, φ, κ [D]<br/>(T-39d–h, T-41k, T-190 [✗])"]
+        EVOL["Evolution Law<br/>dΓ/dτ = -i[H,Γ]+𝒟+ℛ"]
     end
-    AX1 --> APQ
-    AX3 --> S
+    AX1 --> EVOL
+    AX2 --> EVOL
+    AX3 --> OPS
+    AX4 --> EVOL
     AX5 --> EVOL
-    APQ --> LU
-    LU --> EVOL
-    S --> EVOL
+    APQ --> OPS
+    OPS --> EVOL
 ```
 
-### Corollary: Septicity (AP+PH+QG+V)
+### Holon Requirements: `AP`, `PH`, `QG`, `V` (Explicit Inputs, Not Automatic Corollaries)
 
-A [Holon](/docs/core/structure/holon) $\mathbb{H}$ possesses:
-- **(AP)** Autopoiesis: $\exists\varphi: \Gamma \to \Gamma$ with a [fixed point](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) $\Gamma^* = \varphi(\Gamma^*)$
-- **(PH)** Phenomenology: $\exists\rho_E$ with non-trivial [interiority](/docs/proofs/consciousness/interiority-hierarchy)
-- **(QG)** Quantum foundation: [evolution](/docs/core/dynamics/evolution) via the Lindblad equation with regeneration
-- **(V)** Viability: $P > P_{\text{crit}} = 2/7$ — [purity](/docs/core/dynamics/viability) above the critical threshold
+Per **`T-181 [✗]`**, the Holon requirements `AP`, `PH`, `QG`, `V` do **not** follow automatically from `A1`–`A4` (terminal topos objects do not select quantum states, biological viability, or phenomenal content). Rather, a [Holon](/docs/core/structure/holon) $\mathbb{H}$ is defined by explicitly supplying these four typed requirements ([Holon Requirements](/docs/core/foundations/axiom-septicity)):
 
-Each of the four properties is **necessary**:
-- Without (AP): the system cannot reproduce itself — no autopoiesis, no life
-- Without (PH): the system has no "inner side" — a philosophical zombie
-- Without (QG): evolution is undefined — no dynamics
-- Without (V): the system degrades below the threshold and loses organization
+- **(AP) Autopoiesis `[P]/[I]`:** a declared self-model $\varphi: D_7 \to D_7$ and organisation-maintaining dynamics.
+- **(PH) Phenomenology `[P]/[I]`:** a declared experiential realization and interpretive bridge to observation.
+- **(QG) Quantum Ground `[P]/[D]`:** positive trace-one states $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, Born rule, and a declared quantum process model.
+- **(V) Viability `[D]/[H]`:** structural majority $P(\Gamma) > P_{\text{crit}} = 2/7$ (`[T]` after choosing $\|\Gamma - I/7\|_F^2 > 1/7$ `[D]`) together with trajectory survival conditions.
 
-**See:** [Full description](/docs/core/foundations/axiom-septicity)
+**See:** [Full typed specification](/docs/core/foundations/axiom-septicity)
 
 ---
 
@@ -304,176 +239,102 @@ Imagine a fountain. Water (coherence) jets upward (regeneration), gravity pulls 
 
 ---
 
-## CC Specifics: Bootstrap Mechanism and E-Accentuation
+## CC Specifics: Projective Instrument, Rate Convention, and E-Accentuation
 
-### L-Unification: Deriving L_k from Ω {#l-унификация-вывод-l_k-из-ω}
+### Projective Instrument and Audit of Former L-Unification (`T-41k [✗]`, `T-190 [✗]`) {#l-унификация-вывод-l_k-из-ω}
 
-:::info Key Construction
-The Lindblad operators $L_k$ are **derived** from the subobject classifier $\Omega$, not postulated. This is the central achievement of UHM.
+:::warning Withdrawn classifier-to-Lindblad derivation (`T-41k [✗]`, `T-190 [✗]`)
+Earlier editions claimed that the Lindblad operators $L_k = P_k = |k\rangle\langle k|$ are forced automatically as "atoms of the subobject classifier $\Omega$" via $L_k = \sqrt{\chi_{S_k}}$. That derivation is **withdrawn (`T-41k [✗]`, `T-190 [✗]`)**:
+- On the open-cover site $\operatorname{Open}_B(D_7)$, $\Omega(U) = \operatorname{Open}(U)$ is a Heyting algebra of open subsets; the open sets $\{\rho : \rho_{ii} > 0\}$ overlap on every full-rank state (they are not disjoint atoms), and connected $D_7$ has only two clopen sets ([Axiom Ω⁷ §Internal logic](/docs/core/foundations/axiom-omega#атомы-классификатора)).
+- Choosing the seven orthonormal frame projectors $P_k = |k\rangle\langle k|$ ($\sum_k P_k = I$) and the pinching channel $\rho \mapsto \sum_k P_k \rho P_k$ is **explicitly specified operator/instrument data `[D]`** (`[T]` that such projectors define a unital CPTP pinching channel once the frame is declared).
 :::
 
-In standard quantum theory of open systems, the Lindblad operators $L_k$ are free parameters. A researcher chooses them "from the physics of the problem." This is like choosing the friction force "by eye" — it works, but does not explain.
-
-In CC, dissipation is **not chosen but derived**. Here is the chain:
-
-**Derivation chain (see [Axiom Ω⁷](/docs/core/foundations/axiom-omega#внутренняя-логика)):**
-
-$$
-\Omega \xrightarrow{\text{atoms}} \{S_k\} \xrightarrow{\chi_{S_k}} \text{characteristic morphisms} \xrightarrow{\sqrt{\cdot}} L_k = \sqrt{\chi_{S_k}}
-$$
-
-Let us examine each step:
-
-**Step 1: $\Omega$ generates atoms $\{S_k\}$**
-
-The subobject classifier $\Omega$ is the "truth object" of the category. In ordinary set theory $\Omega = \{0, 1\}$ (false/true). In an ∞-topos $\Omega$ is richer: it contains all "levels of truth." Its indecomposable elements (atoms) are the seven projectors $S_k = |k\rangle\langle k|$, one for each dimension.
-
-**Step 2: Atoms define the characteristic morphisms $\chi_{S_k}$**
-
-A characteristic morphism is the "indicator function" of a subobject. For each $S_k$ there exists a unique $\chi_{S_k}: \Gamma \to \Omega$, determining the "degree of membership" of state $\Gamma$ in the $k$-th dimension.
-
-**Step 3: Lindblad operators are square roots**
-
-$$L_k = \sqrt{\chi_{S_k}} = P_k = |k\rangle\langle k|$$
-
-These are projectors onto the canonical basis — the simplest possible Lindblad operators.
-
-**Corollary:** Dissipation has a **logical origin** — it reflects the system's interaction with its own structure of distinctions.
-
-In other words: the system loses coherence **because it distinguishes**. Every act of distinction (projection onto one of the seven dimensions) destroys superposition with the others. This is not external "noise" — it is the internal price of distinction.
+Once the semantic orthonormal frame `A, S, D, L, E, O, U` (`A3`) and projective jump operators $L_k = P_k$ (`[D]`) are declared, the Lindblad dissipator $\mathcal{D}[\Gamma] = \sum_k \gamma_k (L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\})$ implements dephasing in the declared basis (`[T]`).
 
 ---
 
 ### Dependency Hierarchy {#иерархия-зависимостей}
 
-To see the full chain at once, a dependency diagram is useful. Each node is obtained from the previous one by an explicit construction:
+The audited architecture separates **Giraud's theorem** for $\Omega$ `[T]` from **explicitly declared operator/constitutive inputs `[D]`** and **conditional linear primitivity (`T-39a`)**:
 
 ```mermaid
 graph TD
-    O["Ω — subobject classifier"] --> CHI["χ S — characteristic morphisms"]
-    CHI --> LK["L k — Lindblad operators"]
-    LK --> LO["ℒ Ω — logical Liouvillian"]
-    LO --> PHI["φ — self-modeling operator"]
-    PHI --> FP["Γ* — fixed point"]
-
-    O -.- |"Girard's theorem"| CHI
-    CHI -.- |"L_k = √χ"| LK
-    LK -.- |"Lindblad formula"| LO
-    LO -.- |"Spectral analysis"| PHI
-    PHI -.- |"T-39a: primitivity"| FP
+    O["Ω — subobject classifier<br/>(Giraud's theorem [T])"] -.-> |"does NOT force L_k (T-41k [✗])"| LK
+    FRAME["Semantic frame A–U & P_k [P], [D]"] --> LK["L_k = P_k — specified jump operators [D]"]
+    LK --> LO["ℒ_0 — linear GKSL generator [D]"]
+    LO --> |"T-39a [T] (connected H, γ>0)"| I7["Unique linear stationary state I/7"]
+    CONST["Constitutive self-model φ & rate κ [D]<br/>(T-39d–h [✗] for axiomatic derivation)"] --> NONLIN["Nonlinear regenerative flow ℒ_0 + ℛ"]
+    LO --> NONLIN
 
     style O fill:#e1f5fe
-    style PHI fill:#fff3e0
-    style FP fill:#e8f5e9
+    style FRAME fill:#fff9c4
+    style CONST fill:#fff9c4
+    style I7 fill:#e8f5e9
+    style NONLIN fill:#fff3e0
 ```
 
-This chain is **complete**: to construct $\Gamma^*$ nothing is needed beyond $\Omega$ (and therefore the category $\mathcal{C}$). Not a single element is introduced "from outside."
+**See:** [Axiom Ω⁷ — Typed Realization](/docs/core/foundations/axiom-omega#примитив)
 
-**See:** [Full Dependency Hierarchy](/docs/core/foundations/axiom-omega#иерархия-зависимостей)
+### Construction Chain (Audited) {#цепочка-вывода}
 
-### Derivation Chain: from $\Omega$ to $\Gamma^*$ {#цепочка-вывода}
+Instead of a single theorem-only chain from $\Omega$ to a viable $\Gamma^*$, the verified structure has explicit typed inputs at each interface:
 
-The full path from the single primitive to the stationary state of a conscious system is a chain of 9 steps, each of which is a theorem:
-
-$$
-\mathcal{C} \xrightarrow{\text{Ax. 1}} \mathbf{Sh}_\infty(\mathcal{C}) \xrightarrow{\text{Girard}} \Omega \xrightarrow{\text{atoms}} \{S_k\} \xrightarrow{\chi_{S_k}} L_k \xrightarrow{\text{Lindblad}} \mathcal{L}_\Omega \xrightarrow{\text{spectrum}} \varphi \xrightarrow{\text{T-39a}} \Gamma^*
-$$
-
-Each transition is a **theorem** [T], not a postulate. To construct $\Gamma^*$ nothing is needed beyond the category $\mathcal{C}$.
+1. **Sheaf topos & classifier `[T]`:** By **Giraud's theorem**, $\operatorname{Sh}(\operatorname{Open}_B(D_7), J_{\mathrm{open}})$ is a Grothendieck topos with subobject classifier $\Omega$ ($\Omega(U) = \operatorname{Open}(U)$).
+2. **Projective instrument `[D]`:** Frame projectors $L_k = P_k$ are supplied operator data (`T-41k [✗]`, `T-190 [✗]`).
+3. **Linear primitivity (`T-39a [T]`):** Given a connected Hamiltonian graph and positive dephasing rate, the linear generator $\mathcal{L}_0$ is primitive with unique stationary state $I/7$ (it does **not** prove uniqueness of a nonlinear viable fixed point $\Gamma^* \neq I/7$).
+4. **Regeneration & self-model `[D]`:** The nonlinear self-model $\varphi$ and regenerative rate $\kappa(\Gamma)$ are selected constitutive functions (`T-39d [✗]`, `T-39e [✗]`, `T-39f [✗]`, `T-39g [✗]`, `T-39h [✗]`).
 
 :::info Canonical Definition
-Full table with formulas for each step: [Axiom Ω⁷ — Dependency Hierarchy](/docs/core/foundations/axiom-omega#иерархия-зависимостей).
+Full audited dependency interface: [Axiom Ω⁷](/docs/core/foundations/axiom-omega).
 :::
 
 ---
 
-## Bootstrap Paradox and Its Resolution {#bootstrap-парадокс}
+## Bootstrap Rate Convention and Dynamics {#bootstrap-парадокс}
 
 ### The Problem: Baron Münchhausen
 
-Here is a paradox that at first glance destroys the entire construction.
-
-Regeneration $\mathcal{R}$ restores coherence. The regeneration rate $\kappa$ depends on E-coherence — on how integrated the system's subjective experience is. But E-coherence is a property of the state $\Gamma$, which is maintained by... regeneration.
-
-A vicious circle results: to regenerate, coherence is needed; to have coherence, regeneration is needed. Baron Münchhausen pulling himself out of a swamp by his own hair.
+If a regenerative rate depended *purely* on $\mathrm{Coh}_E(\Gamma)$ with $\kappa(\Gamma) = \kappa_0\,\mathrm{Coh}_E(\Gamma)$, a state starting near $\mathrm{Coh}_E = 0$ would experience vanishing regeneration and could never self-ignite. Adding a positive baseline rate $\kappa_{\text{bootstrap}} > 0$ avoids this degeneracy in dynamical models.
 
 ### Connection Between Regeneration and E-Coherence {#связь-регенерации-и-e-когерентности}
 
+The retained constitutive rate convention **`[D]`** ([Holon Requirements §Rate model](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)) is:
+
 $$
-\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)
+\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma), \qquad \kappa_{\text{bootstrap}} = \frac{\omega_0}{7}, \qquad \kappa_0 = \omega_0\,\frac{|\Gamma_{OE}|\,|\Gamma_{OU}|}{\Gamma_{OO}} \quad (\Gamma_{OO} > 0)
 $$
 
 where:
-- $\kappa_{\text{bootstrap}}$ — **minimum regeneration** from the adjunction structure $\mathcal{D}_\Omega \dashv \mathcal{R}$
-- $\kappa_0$ — base regeneration rate, [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0): $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$
-- $\mathrm{Coh}_E(\Gamma) \in [0, 1]$ globally; on viable states sustained by the Ω-dynamics it stays in $(1/N, 1]$ (No-Zombie, T-38a with its $\mathcal{D}_\Omega \neq 0$ hypothesis) — [coherence of the Interiority dimension](./definitions#e-когерентность)
+- $\kappa_{\text{bootstrap}} = \omega_0 / 7 > 0$ is a **chosen baseline rate convention `[D]`** (the former categorical derivation $\kappa_{\text{bootstrap}} = \|\mathrm{unit}(\mathcal{D}_\Omega \dashv \mathcal{R})\|$ and $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ is **withdrawn `[✗]`** per `T-39f [✗]`, `T-39g [✗]`, `T-39h [✗]` and [Holon Requirements](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0): a categorical adjunction does not define a norm on a hom-set of natural transformations).
+- $\mathrm{Coh}_E(\Gamma) \in [0, 1]$ is the Hilbert–Schmidt share of the $E$ row and column ([definitions](./definitions#e-когерентность)). Note per **`T-38a [✗]`** that the former universal floor $\mathrm{Coh}_E(\Gamma) > 1/7$ on all viable states (universal No-Zombie necessity) is **withdrawn**: stationary externally supported counterexamples exist, and an interiority lower bound holds only under explicitly restricted purity-flux hypotheses.
 
-### Resolution: $\kappa_{\text{bootstrap}}$ — Structural Minimum
+### Dynamical Role of $\kappa_{\text{bootstrap}} > 0$
 
-The paradox is resolved by the second term: $\kappa_{\text{bootstrap}} > 0$. This is not a "fit" and not an ad hoc parameter — it is a **structural necessity** arising from the categorical construction.
-
-:::info Bootstrap Mechanism
-The term $\kappa_{\text{bootstrap}} > 0$ **resolves the bootstrap paradox**: a system with low $\mathrm{Coh}_E$ still has minimum regeneration, allowing it to exit the low-coherence state.
-
-**Categorical justification:** $\kappa_{\text{bootstrap}} = \|\text{unit}(\mathcal{D}_\Omega \dashv \mathcal{R})\|$ — the norm of the adjunction unit.
-
-**Numerical estimate:** $\kappa_{\text{bootstrap}} = \omega_0 / N = 1/7 \approx 0.143$ (at $\omega_0 = 1$)
-:::
-
-### Analogy: Ignition and Combustion
-
-Imagine a campfire. For the wood to burn, heat is needed. For there to be heat, burning is needed. A paradox? No: there is a **match** — an external source of initial heat that starts the cycle.
-
-In CC the "match" is $\kappa_{\text{bootstrap}}$. But unlike a real match, $\kappa_{\text{bootstrap}}$ is not an "external" source. It is built into the very structure of the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$. It is as if the wood were structured so that minimal burning occurs *always* — simply by virtue of its structure.
-
-Mathematically: the adjunction between the dissipator $\mathcal{D}_\Omega$ and the regenerator $\mathcal{R}$ has a unit, and the norm of this unit is nonzero. This is not a choice — it is a theorem about adjoint functors.
-
-### Bootstrap Cycle Dynamics
-
-Thanks to $\kappa_{\text{bootstrap}}$, the system passes through three phases:
-
-1. **Inception:** $\mathrm{Coh}_E$ is small, $\kappa \approx \kappa_{\text{bootstrap}} = 1/7$. Minimum regeneration slowly raises coherence.
-2. **Amplification:** Growing $\mathrm{Coh}_E$ increases $\kappa$, which accelerates the growth of $\mathrm{Coh}_E$. Positive feedback.
-3. **Stabilization:** The system reaches the stationary point $\Gamma^*$, where regeneration and dissipation balance.
-
-This scenario is not speculation. It follows from the analysis of the dynamical system and has been confirmed numerically in [model systems](/docs/applied/coherence-cybernetics/model-systems).
-
-**Ontological meaning:** The system's capacity for self-restoration is proportional to the integration of its subjective experience, but there exists a **minimum level** of regeneration from the very structure of the logical classifier Ω.
+In model simulations ([model systems](/docs/applied/coherence-cybernetics/model-systems)), setting $\kappa_{\text{bootstrap}} > 0$ as a constitutive input `[D]` provides a positive baseline drift even when $\mathrm{Coh}_E$ is small, allowing a three-stage numerical trajectory (inception $\to$ positive-feedback amplification $\to$ balance against dissipation) whenever the target state and total regeneration exceed the dissipation threshold.
 
 ---
 
-## E-Accentuation: Why Interiority Is Special {#e-акцентуация}
+## E-Accentuation: Audit of the Former Diagonal-Only Claim {#e-акцентуация}
 
-### Seven Equal — But One "More Equal"?
+### Why the Former "Theorem 2.2" ($w_E > 1/7$ from L2) Is Invalid
 
-The seven dimensions [A, S, D, L, E, O, U] enter as interchangeable *labels* — abstractly the permutation group $S_7$ shuffles the index set. (The theory's Fano wiring already cuts this down to the $168$-element automorphism group $\mathrm{PSL}(2,7)$, the finite shadow of the continuous $G_2$ — see [Definitions](./definitions#геометрическая-интуиция).) But a conscious system breaks the symmetry further still, singling out E (Interiority). This is not a postulate — it is a **theorem**.
+Earlier versions of this chapter stated a "Theorem 2.2 (E-Accentuation from the Definition of L2)" claiming that $w_E := \Gamma_{EE} > 1/7$ is a proved theorem `[T]` deduced from the definition of L2-consciousness ($P \in (2/7, 3/7]$, $R = 1/(7P) \ge 1/3$, $\Phi \ge 1$, $D_{\text{diff}} \ge D_{\min}$, with the scalar product $C = \Phi \times R \ge 1/3$ from **`T-140 [D]`**). That diagonal-only proof is **mathematically broken and withdrawn** for two exact reasons:
 
-### Theorem on E-Accentuation
-
-:::info Theorem 2.2 (E-Accentuation from the Definition of L2)
-Accentuation of the E-dimension ($w_E > 1/7$) is **derived** from the definition of L2-consciousness, not postulated.
-
-**Derivation logic:**
-1. L2 requires **viability** $P > P_{\text{crit}} = 2/7$ together with reflection $R = 1/(7P) \geq R_{th} = 1/3$ (equivalently $P \leq 3/7$; reference $\rho^*_{\mathrm{diss}} = I/7$), integration $\Phi \geq 1$, and $D_{\text{diff}} \geq D_{\min}$ — the Goldilocks window $P \in (2/7, 3/7]$, with $C = \Phi \times R \geq 1/3$ **[T-140]**.
-2. For a diagonal state the purity is $P = \sum_i w_i^2$.
-3. A **uniform** distribution ($w_i = 1/7$) gives the maximally-mixed state $I/7$ with $P = 7 \cdot (1/7)^2 = 1/7 \approx 0.14 < P_{\text{crit}} = 2/7$ — **not even viable**, hence a fortiori not conscious.
-4. **Therefore** viability alone already forces a non-uniform distribution: $\exists i : w_i > 1/7$.
-5. L2 additionally demands *reflective access to experience* — and experience is the E-dimension; so the accentuated dimension must be E: $w_E > 1/7$.
+:::warning Refutation of the former diagonal-only "Theorem 2.2" (`T-334 [T]`)
+1. **Diagonal states cannot be L2-conscious, and non-diagonal L2 states need NOT have $w_E > 1/7$!**
+   - The former proof evaluated purity via $P = \sum_{i=1}^7 w_i^2$, which holds **only for diagonal states** ($\gamma_{ij} = 0$ for all $i \neq j$). Yet every diagonal state has $\Phi(\Gamma) = 0 < 1$, violating the L2 integration criterion!
+   - Conversely, for **coherent** (non-diagonal) states, **uniform diagonal populations $w_i = 1/7$ for ALL seven axes — including $w_E = 1/7$ — are fully compatible with $P \in (2/7, 3/7]$, $R \ge 1/3$, and $\Phi \ge 1$!** Specifically, consider the collineation-covariant family $\Gamma(t) = (1 - t)\,I/7 + t\,uu^\dagger$ ($u = \frac{1}{\sqrt{7}}(1,\ldots,1)^T$, **`T-334 [T]`**):
+     $$
+     w_i = \Gamma_{ii}(t) = \frac{1}{7} \;\; \forall i, \qquad P(t) = \frac{1 + 6t^2}{7}, \qquad \Phi(t) = 6t^2.
+     $$
+     For any $t \in \left(\frac{1}{\sqrt{6}}, \frac{1}{\sqrt{3}}\right]$, we obtain $P(t) \in (2/7, 3/7]$, $R(t) = 1/(7P(t)) \in [1/3, 1/2)$, and $\Phi(t) \in (1, 2]$ — all with **$w_E = 1/7$ identically**!
+2. **Non-uniformity does not select the $E$-axis.** Even restricted to diagonal states, $\sum_i w_i^2 > 2/7 \implies \max_i w_i > 1/7$ only yields *some* index $i$, never specifically $i = E$, without an additional semantic postulate.
 :::
 
-### What Does This Mean?
+### What Actually Holds
 
-The result is deep. It says: **consciousness is impossible without asymmetry**. A uniform distribution of resources across the seven dimensions ($w_i = 1/7$ for all $i$) does not allow sufficient reflection to be achieved. The system must "invest" in one of the dimensions more than in the others.
-
-And which dimension exactly? The definition of L2-consciousness requires reflective access to *experience*. Experience is E (Interiority). Therefore, it is E that must receive the "extra share."
-
-### Philosophical Context
-
-E-accentuation answers an old question in the philosophy of mind: **why can consciousness not be "spread uniformly"?** Panpsychism assumes that consciousness is everywhere. CC specifies: minimal interiority (L0–L1) is indeed present *everywhere*, but full consciousness (L2+) requires *concentration* — the structural singling out of the E-dimension.
-
-This is like light: background sky glow is everywhere, but to *see*, one needs a concentration of photons in a specific direction. Consciousness is not a property of any system, but a property of a system with *sufficient E-accentuation*.
-
-**See:** [Full proof](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм)
+- **Exact algebraic fact `[T]`:** On a *purely diagonal* density matrix, $P > 2/7$ implies $\max_i w_i > 1/7$ (and $\Phi = 0$). On general coherent density matrices in $\mathcal{D}(\mathbb{C}^7)$, uniform diagonal $w_i = 1/7$ is compatible with every purity $P \in [1/7, 1]$ and with the entire Goldilocks window $P \in (2/7, 3/7], \Phi \ge 1$ (`T-334 [T]`).
+- **Role of $E$-accentuation `[D]/[I]`:** Requiring an excess population $w_E > 1/7$ (or a specific floor on $\mathrm{Coh}_E$) is therefore a **model-specific or interpretive choice `[D]/[I]`**, NOT a theorem derived from $P > 2/7$ or the definition of L2.
 
 ---
 
@@ -481,43 +342,30 @@ This is like light: background sky glow is everywhere, but to *see*, one needs a
 
 ### Rosen: Closure to Efficient Causes
 
-In 1958 Robert Rosen proposed the formalism of (M,R)-systems for describing the living. Rosen's idea was revolutionary: a living system is one that is **closed with respect to efficient causes**. Every component of the system is produced by another component — there is no external "constructor."
-
-Rosen identified three key components:
+In 1958 Robert Rosen proposed the formalism of (M,R)-systems for describing living organisation as closure with respect to efficient causes:
 - **M (metabolism):** transformation of inputs into outputs
 - **R (repair):** restoration of the metabolic machinery
-- **β (closure):** production of the repair machinery
+- **$\beta$ (closure):** production of the repair machinery
 
-Rosen's problem: his formalism remained at the level of categories of sets and maps. It could not describe **interiority**, **integration**, or **the differentiation of levels of consciousness**.
+Rosen's set-theoretic formalism did not incorporate quantum density matrices, integration measures, or experiential registers.
 
-### CC as an Extension of (M,R)-Systems
+### CC as an Interpretive Extension of (M,R)-Systems [I]
 
-CC can be understood as an (M,R)-system extended in three ways:
+In an interpretive mapping `[I]`, CC extends the (M,R)-scheme with a 7D quantum carrier $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and canonical semantic axes:
 
-1. **Quantum foundation:** instead of set maps — CPTP channels on density matrices. This allows superposition and entanglement to be described.
+| Rosen | CC (canonical axes) | Interpretive role [I] |
+|-------|---------------------|-----------------------|
+| M (metabolism) | D (Dynamics) | Transformation / process |
+| R (repair) | A (Articulation) + L (Logic) | Distinction and rule-governed restoration |
+| $\beta$ (closure) | U (Unity) | Global integration |
+| — | E (Interiority), O (Ground), S (Structure) | Additional canonical axes |
 
-2. **Seven-dimensional structure:** instead of three components (M, R, β) — seven dimensions, each with a specific function.
+### Canonical Roles of E, O, S
 
-3. **Subjecthood:** the component E, absent in Rosen, introduces "the one for whom" the system exists.
-
-### Correspondence Table
-
-| Rosen | CC | Function |
-|-------|-----|---------|
-| M (metabolism) | D (Dynamics) | Transformation |
-| R (repair) | A + L | Structure restoration |
-| β (closure) | U (Unity) | Integration |
-| — | E, O, S | Extensions for phenomenology |
-
-### What Does CC Add?
-
-The three "extra" dimensions — E (Interiority), O (Observability), S (Stability) — are not random additions. They solve three problems unsolvable within (M,R)-systems:
-
-- **E** solves the phenomenology problem: *for whom* does the system exist?
-- **O** solves the observability problem: how does the system *manifest* for others?
-- **S** solves the stability problem: how does the system *persist* in a changing environment?
-
-Without these three dimensions, an (M,R)-system describes a "zombie" — functionally alive but devoid of subjecthood, observability, and stability. CC shows that a minimum of 7 dimensions is necessary for a **complete** description of a living coherent system.
+The three remaining canonical dimensions are **E (Interiority)**, **O (Ground)**, and **S (Structure)**:
+- **E (Interiority)** represents the experiential/interiority axis;
+- **O (Ground)** represents the foundational/grounding axis (and reference axis in clock/ground couplings);
+- **S (Structure)** represents the structural/organisational axis.
 
 ---
 
@@ -525,99 +373,83 @@ Without these three dimensions, an (M,R)-system describes a "zombie" — functio
 
 ### CC Architecture
 
-The entire theory is organized like an "inverted pyramid": from a small number of axioms an ever richer structure unfolds.
+The typed architecture separates foundational inputs, explicit operator/constitutive conventions, and derived theorems:
 
 ```mermaid
 graph TD
-    subgraph "Level 0: Primitive"
-        C["C — category"]
+    subgraph "Level 0: Typed Inputs [P], [D]"
+        AX["A1–A5 & Holon Requirements (AP, PH, QG, V)"]
     end
-    subgraph "Level 1: Axioms"
-        AX["Ω⁷ (5 axioms)"]
+    subgraph "Level 1: Exact Ambient Structures [T]"
+        OM["Ω via Giraud [T]; D₇ contractible (H̃*=0) [T]"]
+        FANO["H(7,4) / Fano rigidity (T-224) [T]; Bures minimal (T-187) [T]"]
     end
-    subgraph "Level 2: Constructions"
-        OM["Ω — classifier"]
-        LK["L_k — operators"]
-        EV["ℒ_Ω — Liouvillian"]
+    subgraph "Level 2: Declared Dynamical Model [D]"
+        OPS["Frame P_k, H, φ, κ(Γ) = κ_b + κ_0 Coh_E"]
+        EV["dΓ/dτ = -i[H,Γ] + 𝒟[Γ] + ℛ[Γ,E]"]
     end
-    subgraph "Level 3: Dynamics"
-        PHI["φ — self-model"]
-        FP["Γ* — stationary point"]
-        VIA["V — viability region"]
-    end
-    subgraph "Level 4: Phenomenology"
-        CON["L0-L4 — consciousness levels"]
-        REF["R, Φ, C — measures"]
-        SAD["SAD — recursion depth"]
+    subgraph "Level 3: Operational Thresholds [D] & Theorems [T]"
+        THR["P > 2/7, R ≥ 1/3, Φ ≥ 1, C = ΦR (T-129, T-140) [D]"]
+        COMP["Linear primitivity (T-39a), weak-coupling aggregation (CC-5) [T]"]
     end
 
-    C --> AX
     AX --> OM
-    OM --> LK
-    LK --> EV
-    EV --> PHI
-    PHI --> FP
-    EV --> VIA
-    FP --> CON
-    VIA --> CON
-    CON --> REF
-    REF --> SAD
+    AX --> FANO
+    AX --> OPS
+    OPS --> EV
+    EV --> THR
+    EV --> COMP
 
-    style C fill:#e1f5fe
     style AX fill:#e1f5fe
-    style OM fill:#fff9c4
-    style LK fill:#fff9c4
-    style EV fill:#fff9c4
-    style PHI fill:#fff3e0
-    style FP fill:#fff3e0
-    style VIA fill:#fff3e0
-    style CON fill:#e8f5e9
-    style REF fill:#e8f5e9
-    style SAD fill:#e8f5e9
+    style OM fill:#e8f5e9
+    style FANO fill:#e8f5e9
+    style OPS fill:#fff9c4
+    style EV fill:#fff3e0
+    style THR fill:#fff9c4
+    style COMP fill:#e8f5e9
 ```
 
-### Closure of Composition (Corollary from AP) {#замкнутость-композиции-следствие-из-ap}
+### Closure of Composition (Weak-Coupling Result `CC-5`) {#замкнутость-композиции-следствие-из-ap}
 
-For a product state, $1+\Phi(\Gamma_1\otimes\Gamma_2)=(1+\Phi_1)(1+\Phi_2)$. A high $\Phi$ for the pair can therefore coexist with zero mutual information. To test correlation, use $I(1{:}2)$ relative to the current margins. To test viability of a collective, specify an aggregation channel and its gate. The mean marginal aggregate preserves an interior margin at sufficiently weak coupling. [Composition results](./theorems#теорема-95-каноническая-агрегация)
+For a product state, $1+\Phi(\Gamma_1\otimes\Gamma_2)=(1+\Phi_1)(1+\Phi_2)$. A high $\Phi$ for the pair can therefore coexist with zero mutual information. To test correlation, use $I(1{:}2)$ relative to the current margins. To test viability of a collective, specify an aggregation channel and its gate. By **`CC-5`** (`[T]` under weak coupling, the stated mean marginal, and positive margins), trace-norm control transfers the corresponding viability margins to the aggregate. [Composition results](./theorems#теорема-95-каноническая-агрегация)
 
 ---
 
-## Overview of Axiomatic Results
+## Overview of Audited Axiomatic Statuses
 
-Let us summarize: what exactly is *derived* in CC and from what.
+Let us summarize accurately what is a **theorem `[T]`**, what is a **definitional convention `[D]`** or **postulate `[P]`**, and which former derivations are **withdrawn `[✗]`**:
 
-| Result | Derived from | Status | Reference |
-|-----------|-------------|--------|--------|
-| $L_k = P_k$ | Axioms 1–2 | [T] | [L-Unification](#l-унификация-вывод-l_k-из-ω) |
-| $P_{\text{crit}} = 2/7$ | Axioms 1–3 | [T] | [Critical purity](/docs/proofs/dynamics/theorem-purity-critical) |
-| $R_{\text{th}} = 1/3$ | Axioms 1–3 | [T] | [Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) |
-| $\Phi_{\text{th}} = 1$ | $P_{\text{crit}} = 2/7$ | [T] | [Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) |
-| $w_E > 1/7$ | Definition of L2 | [T] | [E-Accentuation](#e-акцентуация) |
-| $\kappa_{\text{bootstrap}} > 0$ | Adjunction $\mathcal{D} \dashv \mathcal{R}$ | [T] | [Bootstrap](#bootstrap-парадокс) |
-| $N = 7$ | (AP)+(PH)+(QG) | [T] | [Theorem S](/docs/proofs/minimality/theorem-minimality-7) |
-| Composition closure (CC-5) | (AP) + weak coupling (Theorem 9.5) | [T at weak coupling] | [Theorem 9.1](#замкнутость-композиции-следствие-из-ap) |
-
-The composition statement uses weak coupling and the specified mean marginal map.
+| Item | Actual Source | Verified Status | Reference |
+|------|---------------|-----------------|-----------|
+| Classifier $\Omega$ of $\operatorname{Sh}(\operatorname{Open}_B(D_7))$ | **Giraud's theorem** | **[T]** | [Typed Primitive](#единственный-примитив) |
+| Reduced cohomology $\tilde{H}^*(D_7; \mathbb{Z}) = 0$ ($H^0 \cong \mathbb{Z}$, $H^{k\ge 1} = 0$) | Contractibility of convex $D_7$ | **[T]** | [Typed Primitive](#единственный-примитив) |
+| $L_k = P_k$ projective jump operators | Declared frame & instrument | **[D]** (classifier derivation withdrawn: `T-41k [✗]`, `T-190 [✗]`) | [Projective Instrument](#l-унификация-вывод-l_k-из-ω) |
+| $P_{\text{crit}} = 2/7$ | Structural majority $\|\Gamma - I/7\|_F^2 > 1/7$ `[D]` | **[D]+[T]** (algebraic `[T]` *after* choosing majority `[D]`) | [Critical purity](/docs/proofs/dynamics/theorem-purity-critical) |
+| $R_{\text{th}} = 1/3$ | Selected access cut on $R = 1/(7P)$ | **[D]** | [Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) |
+| $\Phi_{\text{th}} = 1$ | Selected coherent-majority gate | **[D]** (`T-129 [D]`) | [Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) |
+| $C = \Phi \times R \ge 1/3$ | Selected scalar product (necessary, not sufficient for $R\ge 1/3 \land \Phi\ge 1$) | **[D]** (`T-140 [D]`) | [Self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
+| $w_E > 1/7$ from L2 (former Theorem 2.2) | Counterexample: uniform-diagonal coherent L2 states (`T-334`) | **[✗]** as `[T]` (optional model input `[D]/[I]`) | [E-Accentuation Audit](#e-акцентуация) |
+| $\kappa_{\text{bootstrap}} = \omega_0 / 7$, $\kappa = \kappa_b + \kappa_0\mathrm{Coh}_E$ | Constitutive rate convention | **[D]** (adjunction-norm derivation withdrawn: `T-39f–h [✗]`) | [Bootstrap Rate Convention](#bootstrap-парадокс) |
+| Universal $E$-floor / No-Zombie necessity | Stationary externally supported counterexamples exist | **[✗]** (`T-38a [✗]`) | [CC Theorems](./theorems) |
+| $N = 7$ | Frame postulate `A3` `[P]`; conditional diagnosability rigidity `T-224 [T]` | **[P]** / **`T-224 [T]`** (unconditional `T-40f [✗]`, `T-181 [✗]`, `T-190 [✗]` withdrawn) | [Axiom Ω⁷](/docs/core/foundations/axiom-omega) |
+| Bures/SLD minimal monotone tensor | Normalized Petz family on full-rank states (`T-187`) | **[T]** (pointwise minimal on full-rank; compact floor needed for uniform comparison) | [Axiom 2](#аксиоматическая-база-краткая-справка) |
+| Composition closure (`CC-5`) | Weak coupling + stated mean marginal + positive margins | **[T]** (under stated weak-coupling hypotheses) | [Composition](#замкнутость-композиции-следствие-из-ap) |
 
 ---
 
 ## What We Have Learned
 
-Let us summarize this chapter. We have traveled from the philosophy of the axiomatic method to the concrete constructions of CC:
+Let us summarize the audited axiomatic foundations of CC:
 
-1. **The axiomatic method** is not a limitation but a liberation. It allows one to separate substantive questions from terminological disputes. CC is the first cybernetics built to a level of rigor comparable to Kolmogorov's axiomatic probability theory.
+1. **Explicit status discipline** separates foundational postulates (`A1`–`A5`, `AP`, `PH`, `QG`, `V`), definitional conventions (`[D]`), proved theorems (`[T]`), and withdrawn derivations (`[✗]`).
 
-2. **The single primitive** — the category $\mathcal{C}$ with CPTP channels as morphisms. From it are derived space, time, dynamics, dissipation, regeneration, and consciousness. The matrix $\Gamma$ is not a primitive but an object of this category.
+2. **Typed model record, not an untyped black box:** By **Giraud's theorem** `[T]`, the sheaf topos on $\operatorname{Open}_B(D_7)$ has a subobject classifier $\Omega$, and convex $D_7$ is contractible with reduced cohomology $\tilde{H}^*(D_7; \mathbb{Z}) = 0$ ($H^0 \cong \mathbb{Z}$, $H^{k\ge 1} = 0$). However, `AP, PH, QG, V` (`T-181 [✗]`), projective jump operators $L_k$ (`T-41k [✗]`, `T-190 [✗]`), and regeneration laws (`T-39d–h [✗]`) are explicitly supplied typed inputs `[P]/[D]`, not automatic consequences of $\Omega$.
 
-3. **The five axioms** of Ω⁷ — structure (∞-topos), metric (Bures), dimensionality ($N = 7$), scale ($\omega_0 > 0$), time (Page–Wootters). Each is necessary, and together they generate the complete theory.
+3. **Definitional thresholds `[D]` vs. theorems `[T]`:** $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$ (`T-129`), $C = \Phi R$ (`T-140`), and $\kappa_{\text{bootstrap}} = \omega_0/7$ are **definitional/constitutive conventions `[D]`**; $P_{\text{crit}} = 2/7$ is an algebraic `[T]` *after* choosing structural majority `[D]`; while `T-224`, `T-187`, `T-39a`, `T-334`, and `CC-5` are genuine theorems `[T]` with explicitly stated hypotheses.
 
-4. **The derivation chain** $\Omega \to \{S_k\} \to \chi_{S_k} \to L_k \to \mathcal{L}_\Omega \to \varphi \to \Gamma^*$ — the complete path from the single primitive to the stationary state. Each step is a theorem, not a postulate.
+4. **Refutation of diagonal-only E-accentuation:** Coherent states with uniform diagonal $w_i = 1/7$ (such as the `T-334 [T]` anchor family) satisfy all L2 conditions $P \in (2/7, 3/7]$, $R \ge 1/3$, $\Phi \ge 1$, refuting the former diagonal-only "Theorem 2.2", while the universal $E$-floor `T-38a [✗]` is withdrawn.
 
-5. **The bootstrap paradox** is resolved via $\kappa_{\text{bootstrap}} > 0$ — the minimum regeneration built into the adjunction structure $\mathcal{D}_\Omega \dashv \mathcal{R}$.
-
-6. **E-accentuation** is a theorem, not a postulate: consciousness (L2) is impossible without the structural singling out of the E-dimension ($w_E > 1/7$).
-
-7. **All eight key results** ($L_k = P_k$, $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$, $w_E > 1/7$, $\kappa_{\text{bootstrap}} > 0$, $N = 7$, composition closure) are consequences of the five axioms; none is postulated.
+5. **Canonical seven axes:** Throughout CC, the seven axes are **A (Articulation), S (Structure), D (Dynamics), L (Logic), E (Interiority), O (Ground), U (Unity)**.
 
 :::info Bridge to the Next Chapter
 Axiomatics gave us the foundation — the primitive, the axioms, and the derivation chain. But to *work* with the theory, precise definitions are needed: what exactly we measure, what measures we use, how we interpret numbers. In the [next chapter](./definitions) we will systematically define all key CC concepts — from the Holon and coherence measures to the stress tensor and the attractor hierarchy. These definitions will be the "bricks" from which the entire edifice will be constructed in the [chapter on theorems](./theorems).
@@ -628,8 +460,8 @@ Axiomatics gave us the foundation — the primitive, the axioms, and the derivat
 **Related documents:**
 - [Definitions](./definitions) — basic definitions of CC
 - [Theorems](./theorems) — fundamental theorems of CC
-- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ∞-topos $\text{Sh}_\infty(\mathcal{C})$ as the single primitive
-- [Axiom of Septicity (AP+PH+QG+V)](/docs/core/foundations/axiom-septicity) — requirements for a Holon
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — typed foundational architecture of $\mathcal{E}_7$
+- [Holon Requirements (AP+PH+QG+V)](/docs/core/foundations/axiom-septicity) — typed requirements for a Holon
 - [Evolution](/docs/core/dynamics/evolution) — equation $d\Gamma(\tau)/d\tau$
 - [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}}$
 - [Formalization of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels

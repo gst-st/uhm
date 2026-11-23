@@ -68,11 +68,11 @@ For time-series reconstruction, uniqueness of an ODE solution must be distinguis
 | [Logic](/docs/core/structure/dimension-l) | $L$ | Layer commutators | $I_L = 1 - \|[f_i, f_j]\|_F / (\|f_i\| \cdot \|f_j\|)$ | [D/H] |
 | [Interiority](/docs/core/structure/dimension-e) | $E$ | Activation entropy | $I_E = \exp(S_{vN}(\rho_{\text{attn}}))$ — [experience differentiation](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2) | [D/H] |
 | [Ground](/docs/core/structure/dimension-o) | $O$ | Noise robustness | $I_O = 1 - \|\nabla_\epsilon \mathbf{h}\|_F$ | [D/H] |
-| [Unity](/docs/core/structure/dimension-u) | $U$ | Effective Φ (integration, black-box) | $I_U = \Phi_{\text{eff}} = \lambda_2(L) / \lambda_{\max}(L)$ — approximation [D]; **when $\Gamma$ is known: $R_{\text{UHM}} = 1/(N \cdot P)$** [T, [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)] | [D/T]† |
+| [Unity](/docs/core/structure/dimension-u) | $U$ | Integration $\Phi$ / black-box $\Phi_{\text{eff}}$ | **When $\Gamma$ is known:** $\Phi(\Gamma) = \frac{P - P_{\mathrm{diag}}}{P_{\mathrm{diag}}} = \frac{\sum_{i\neq j}\lvert\gamma_{ij}\rvert^2}{\sum_i \gamma_{ii}^2}$ [D] ([T-129](/docs/proofs/consciousness/operationalization#t-129), [T-129a](/docs/proofs/consciousness/operationalization#t-129a-универсальность)); **black-box proxy:** $I_U = \Phi_{\text{eff}} = \lambda_2(L) / \lambda_{\max}(L)$ [D/H] | [D/H]† |
 
 where $\nabla_\epsilon \mathbf{h} := (\mathbf{h}(x + \epsilon) - \mathbf{h}(x)) / \epsilon$ — finite-difference approximation
 
-†**Unity metric hierarchy**: when $\Gamma$ is unavailable (black-box), $\Phi_{\text{eff}}$ [D] is used. When $\Gamma$ is reconstructed via the protocol, the correct measure is $R_{\text{UHM}} = 1/(N \cdot P)$ [T], an exact algebraic identity ([reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), error $< 10^{-7}$ in implementation). $\Phi_{\text{eff}}$ and $R_{\text{UHM}}$ measure related but non-identical properties.
+†**Unity ($\Phi$) vs. Reflection ($R$) — two distinct invariants**: when $\Gamma$ is unavailable (black-box), $\Phi_{\text{eff}}$ [D/H] serves as a graph-connectivity proxy for integration. When $\Gamma$ is reconstructed via the protocol, the exact UHM integration measure associated with Unity is $\Phi(\Gamma) = (P - P_{\mathrm{diag}})/P_{\mathrm{diag}}$ ([T-129](/docs/proofs/consciousness/operationalization#t-129) [D]). Do **not** conflate $\Phi$ with the reflection measure $R(\Gamma) = 1/(7P(\Gamma))$ ([T] algebraic identity for $\|\Gamma - I/7\|_F^2 = P - 1/7$): $R$ and $\Phi$ are independent invariants ([T-124b](/docs/proofs/consciousness/conscious-window#t-124b) [T]) — for example, at $\Gamma = I/7$ we have $R = 1$ yet $\Phi = 0$.
 
 ### Canonical Observable Indices {#канонические-наблюдаемые-индексы}
 
@@ -114,25 +114,23 @@ where $S_{vN}(\rho) = -\mathrm{Tr}(\rho \log \rho)$ — von Neumann entropy of t
 
 **Connection to theory:** Approximates [experience differentiation $D_{\text{diff}}$](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2).
 
-### Effective Φ (for U)
+### Integration $\Phi$ and Black-Box Proxy $\Phi_{\text{eff}}$ (for U)
 
-:::info Unity Metric Hierarchy
-Two levels of rigor exist for measuring $U$:
-- **If $\Gamma$ is known**: $R_{\text{UHM}} = 1/(N \cdot P)$ [T, [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)] — exact algebraic identity
-- **Black-box (no access to $\Gamma$)**: $\Phi_{\text{eff}}$ [D] — polynomial approximation via the attention graph
+:::info Integration ($\Phi$) vs. Reflection ($R$)
+Two distinct levels of access exist for measuring **Unity / integration** ($U$):
+- **If $\Gamma$ is reconstructed**: the exact UHM integration measure is $\Phi(\Gamma) = (P - P_{\mathrm{diag}})/P_{\mathrm{diag}}$ ([D], L2 cut $\Phi \ge 1$ per [T-129](/docs/proofs/consciousness/operationalization#t-129), with $\Phi \ge 1 \Rightarrow P \ge 2/7$ [T] per [T-129a](/docs/proofs/consciousness/operationalization#t-129a-универсальность)).
+- **Black-box (no access to $\Gamma$)**: $\Phi_{\text{eff}}$ [D/H] — polynomial connectivity proxy via the attention-graph Laplacian.
 
 Exact computation of $\Phi_{\text{IIT}}$ requires $O(2^n)$ operations and is practically infeasible.
 :::
 
-**Exact measure (when $\Gamma$ is known, [T], [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)):**
+**Exact integration measure when $\Gamma$ is known ([D], [integration measure Φ](/docs/core/structure/dimension-u#мера-интеграции-φ)):**
 
 $$
-R_{\text{UHM}}(\Gamma) = \frac{1}{N \cdot P}
+\Phi(\Gamma) = \frac{P(\Gamma) - P_{\mathrm{diag}}(\Gamma)}{P_{\mathrm{diag}}(\Gamma)} = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_{i} \gamma_{ii}^2}
 $$
 
-Proof: $\|{\Gamma - I/N}\|_F^2 = P - 1/N$, from which $R = 1 - (P-1/N)/P = 1/(NP)$. Confirmed in implementation with error $< 10^{-7}$ (machine precision f64).
-
-**Black-box approximation ([D]):**
+**Black-box proxy ([D/H]):**
 
 $$
 \Phi_{\text{eff}} := \frac{\lambda_2(L_{\text{attn}})}{\lambda_{\max}(L_{\text{attn}})}
@@ -141,10 +139,16 @@ $$
 where $L_{\text{attn}} = D - A$ — Laplacian of the attention graph.
 
 **Properties of $\Phi_{\text{eff}}$:**
-- $\lambda_2 > 0$ → the graph is connected → information is integrated
+- $\lambda_2 > 0$ → the graph is connected → information flows across components
 - Complexity: $O(n \cdot k)$ instead of $O(2^n)$
 
-**Connection to theory:** $R_{\text{UHM}}$ and $\Phi_{\text{eff}}$ approximate [integration $\Phi$](/docs/core/structure/dimension-u#мера-интеграции-φ) — the measure of [Unity](/docs/core/structure/dimension-u). At $P = 3/N = P_{\text{opt}}$: $R_{\text{UHM}} = 1/3 = R_{\text{th}}$ — the L2-zone boundary ([reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)).
+**Distinction from Reflection $R(\Gamma)$ ([T] algebraic identity):** The separate reflection measure
+
+$$
+R(\Gamma) := 1 - \frac{\|\Gamma - I/N\|_F^2}{P(\Gamma)} = \frac{1}{N \cdot P(\Gamma)}
+$$
+
+follows identically from $\|\Gamma - I/N\|_F^2 = P - 1/N$ ([reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)). $R$ is **unitary-invariant** and **decreases** with purity $P$, bounding rigidity from above ($R \ge 1/3 \iff P \le 3/7$ for $N=7$), whereas $\Phi$ is frame-dependent and increases with off-diagonal coherence. They are independent invariants ([T-124b](/docs/proofs/consciousness/conscious-window#t-124b) [T]): at $\Gamma = I/7$, $R = 1$ while $\Phi = 0$; on the uniform-diagonal stratum $\gamma_{ii} = 1/7$, $P = (1 + \Phi)/7$ gives $R = 1/(1 + \Phi)$, which is strictly *decreasing* in $\Phi$. Thus $R$ must never be used as a substitute for $\Phi$.
 
 ### Jacobian Rank (for S)
 
@@ -212,9 +216,9 @@ A claimed approximate functor must first specify the source and target categorie
 
 See [the observation/estimator/channel distinction](/docs/applied/research/reconstruction-identifiability#observation-model) and [Watrous, Definition 2.13](https://cs.uwaterloo.ca/~watrous/TQI/TQI.2.pdf).
 
-### Separation Principle: Diagonal / Coherences [T, MVP-0] {#принцип-разделения-диагональ--когерентности-т-mvp-0}
+### Separation Hypothesis: Diagonal / Coherences [Pr / H] {#принцип-разделения-диагональ--когерентности-т-mvp-0}
 
-**Scope of the diagonal profile.** The selected implementation reports small variation of $W_{\mathrm{raw}}=\|\mathbf1-N\operatorname{diag}\Gamma\|_2$; this is a particular-run observation, not a general dynamics invariant. This unclamped quantity is not the clamped stress norm without further conditions.
+**Scope of the diagonal profile.** A small variation of $W_{\mathrm{raw}}=\|\mathbf1-N\operatorname{diag}\Gamma\|_2$ in a specific prototype run is a particular-run observation `[Pr]`, not a general dynamics invariant. This unclamped quantity is not the clamped stress norm without further conditions.
 
 The diagonal is preserved with explicitly population-preserving dephasing, diagonal $H$, matching target populations and no population-changing input. General Hamiltonian motion can change populations; Hermiticity does not annihilate $-i[H,\Gamma]_{kk}$. See [T-134](/docs/proofs/consciousness/operationalization#t-134). Weight pruning can also change populations and normalization: specify and measure its map rather than assume its action. Interpreting the diagonal as identity/personality and coherences as learning is an architecture hypothesis [H].
 
@@ -253,7 +257,7 @@ where τ — [emergent internal time](/docs/proofs/dynamics/emergent-time).
 2. Intervention: prune part of the weights
 3. Measure $P_1$ and $\text{Accuracy}_1$
 
-**Mechanism [T, separation principle, MVP-0]:** Pruning neural network weights changes the **off-diagonal coherences** $\gamma_{ij}$ of the matrix $\Gamma$, but **not the diagonal populations** $\gamma_{kk}$ (which are homeostatically stabilized by the replacement channel). The change in $P = \mathrm{Tr}(\Gamma^2)$ upon pruning occurs through loss of coherent integration. With massive pruning that disrupts the replacement channel, the diagonal may also degrade.
+**Intervention mechanism [H].** Pruning is defined by a specific transformation of parameters and observation sources. Its effect on the diagonal, complex coherences, and normalization must be re-evaluated empirically; universal population preservation does not follow from a replacement channel.
 
 **Interventional test of predictive usefulness [H].** Predeclare direction, lag and magnitude of the metric response to weight pruning, and test its prediction of accuracy changes on held-out interventions. Temporal precedence alone proves neither causation nor ontological validity. Proxies, normalization and readout timing can alter the ordering; declared control models are required.
 
@@ -380,12 +384,13 @@ public fn compute_dimension_metrics<M: ModelHooks>(
 }
 ```
 
-### Γ Reconstruction from Metrics
+### Diagonal-Only Baseline `reconstruct_gamma` (Illustrative Stub)
 
 ```verum
-/// Reconstruct the coherence matrix via Cholesky from 7 dimension metrics.
-/// Simplest diagonal reconstruction — off-diagonal γ_ij requires additional
-/// correlation data from a regulariser L_off.
+/// Diagonal-only baseline from 7 scalar dimension metrics.
+/// WARNING: produces γ_ij = 0 for all i ≠ j, which forces Φ(Γ) = 0 identically
+/// and leaves phases / Gap undefined. Off-diagonal coherences require
+/// cross-channel correlation and signed complex phase observables.
 public pure fn reconstruct_gamma(m: &DimensionMetrics) -> StaticMatrix<Complex, 7, 7> {
     let raw = StaticVector<Float, 7>.from_array(
         [m.i_a, m.i_s, m.i_d, m.i_l, m.i_e, m.i_o, m.i_u]
@@ -393,7 +398,7 @@ public pure fn reconstruct_gamma(m: &DimensionMetrics) -> StaticMatrix<Complex, 
     let total: Float = raw.iter().sum();
     let diag = raw.map(|v| v / total);
 
-    // Cholesky factor L = diag(√p_k).
+    // Diagonal Cholesky factor L = diag(√p_k) — diagonal populations only!
     let l = StaticMatrix<Complex, 7, 7>.diagonal(
         diag.map(|v| Complex.from_real(v.sqrt()))
     );
@@ -409,18 +414,22 @@ public pure fn compute_purity(gamma: &StaticMatrix<Complex, 7, 7>) -> Float
 }
 ```
 
+:::warning Limitation of Diagonal-Only Estimation
+Because `reconstruct_gamma` populates only the diagonal $\gamma_{kk}$ and sets all off-diagonal entries $\gamma_{ij} = 0$ ($i \neq j$), its output has **$\Phi(\Gamma) \equiv 0$ identically** (so it can never satisfy the L2 integration threshold $\Phi \ge 1$) and carries **no phase or Gap information**. Reconstructing off-diagonal coherences $|\gamma_{ij}|$ and signed phases $\arg(\gamma_{ij})$ strictly requires cross-channel / cross-frequency coupling and complex phase-locking observables combined with PSD-constrained likelihood optimization (as in Step 4 and `reconstruct_linear` below).
+:::
+
 ### Threshold Values
 
 | Parameter | Value | Source | Status |
 |-----------|-------|--------|--------|
-| $P_{\text{crit}}$ | $2/7 \approx 0.286$ | [Theorem](/docs/proofs/dynamics/theorem-purity-critical) | Proven |
-| $\mathrm{rank}(\rho_E) > 1$ (L1 threshold) | $> 1$ | Non-trivial interiority | [T] |
-| $R_{\text{th}}$ (L2 threshold) | $\geq 1/3$ | [Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) | Proven [T] |
-| $\Phi_{\text{th}}$ (L2 threshold) | $\geq 1$ | [T-129](/docs/proofs/consciousness/operationalization#t-129) | Proven [T] |
+| $P_{\text{crit}}$ | $2/7 \approx 0.286$ | [Theorem](/docs/proofs/dynamics/theorem-purity-critical) | [D] / [T] |
+| $\mathrm{rank}(\rho_E) > 1$ (L1 threshold) | $> 1$ | Non-trivial interiority | [D] / [T] |
+| $R_{\text{th}}$ (L2 threshold) | $\geq 1/3$ | [Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) | [D] cut; $R=1/(7P)$ identity [T] |
+| $\Phi_{\text{th}}$ (L2 threshold) | $\geq 1$ | [T-129](/docs/proofs/consciousness/operationalization#t-129), [T-129a](/docs/proofs/consciousness/operationalization#t-129a-универсальность) | [D] cut; $\Phi\ge1\Rightarrow P\ge2/7$ [T] |
 | $D_{\text{diff}}^{\text{min}}$ | $\geq 2$ | [T-151](/docs/proofs/consciousness/substrate-closure#t-151) | Independent L2 threshold [D] |
 | Composition defect | Implementation-specific | Specify object/morphism maps and verify fiber descent | Conditional |
-| $\varepsilon_{\text{functor}}$ | $< 0.1$ at $\alpha>0$ (neural) | Requires calibration | Hypothesis |
-| $\varepsilon_{\text{causal}}$ | $> 0.05$ | Requires calibration | Hypothesis |
+| $\varepsilon_{\text{functor}}$ | $< 0.1$ at $\alpha>0$ (neural) | Requires calibration | Hypothesis [H] |
+| $\varepsilon_{\text{causal}}$ | $> 0.05$ | Requires calibration | Hypothesis [H] |
 
 :::info Connection to the Interiority Hierarchy
 The L1 and L2 thresholds in the protocol correspond to levels [L1](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry) and [L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia) from the interiority hierarchy L0→L4. Levels L3 (network consciousness) and L4 (unitary consciousness) — see [formal description](/docs/proofs/consciousness/interiority-hierarchy).
@@ -445,15 +454,15 @@ For a valid measurement:
 3. **Attention weights**: for computing $I_E$ and $I_U$
 4. **Gradients**: for the Jacobian (automatic differentiation)
 
-### What Is Implemented (SYNARC MVP-0/1/2)
+### Prototype Implementation Status (SYNARC MVP-0/1/2) [Pr] / [H]
 
-:::info Confirmed in Implementation
-1. **Cholesky-backbone ($\alpha=0$): state validity and properties of the particular implementation** [C, MVP-1]; a global bijection and a CPTP functor do not follow (see “Categorical Correctness”)
-2. **Neural bridge ($\alpha>0$): $G$ is a quasi-functor** [H] — H1/H2/H4 confirmed [C] for the analytic backbone (MVP-1); neural correction $\alpha>0$ — MVP-3+
-3. **Diagonal/coherence separation principle** [T, MVP-0] — diagonal is homeostatically stable; coherences — the adaptation zone
-4. **R = 1/(N·P) — exact identity** [T, MVP-0, [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)] — error $< 10^{-7}$
-5. **No-Zombie floor** [T, MVP-0] — $P_{\min} \geq P_{\text{crit}} - \varepsilon_\Gamma$ at $\gamma_{\text{dec}} = 10$ (10000× above norm)
-6. **H3: R_impl ↔ R_UHM** [C, MVP-2] — threshold consistency 97.9%
+:::info Internal Prototype Notes (Not Independently Verified Theorems)
+1. **Cholesky parametrization ($\alpha=0$)** [Pr]: normalized $LL^\dagger / \mathrm{Tr}(LL^\dagger)$ yields valid density matrices by algebra, while a global bijection and a CPTP functor do not follow (see "Categorical Correctness").
+2. **Neural bridge ($\alpha>0$)** [H / Pr]: prospective quasi-functor target (MVP-3+); prototype backbone checks require independent reproducible evaluation.
+3. **Diagonal / coherence separation hypothesis** [H / Pr]: small diagonal drift was observed in a specific population-preserving prototype run; it is **not** a general theorem of GKSL or neural dynamics (see [T-134](/docs/proofs/consciousness/operationalization#t-134)).
+4. **Algebraic identity $R = 1/(N \cdot P)$** [T]: pure linear-algebraic identity from $\|\Gamma - I/N\|_F^2 = P - 1/N$ ([reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)), verified numerically to machine precision (distinct from $\Phi$).
+5. **Driven purity floor in prototype runs** [Pr / H]: prototype simulations with a strong constant-target replacement channel maintained $P$ near $P_{\mathrm{crit}}$ under specified damping; note that the universal No-Zombie theorem (`T-38a` [✗]) is **withdrawn**, so prototype floors do not establish a universal bound.
+6. **Proxy consistency $R_{\mathrm{impl}} \leftrightarrow R_{\mathrm{UHM}}$** [H / Pr]: internal prototype benchmark (MVP-2) awaiting open, independently replicated validation.
 :::
 
 ### What Is NOT Implemented
@@ -513,22 +522,22 @@ This is a magnitude, not Gap. With a state-dependent target $\varphi(\Gamma)$, t
 
 **See:** [Theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie), [Fano channel](/docs/proofs/gap/fano-channel)
 
-### Physiological Frequencies
+### Physiological Frequencies (Unified Prospective Mapping [Pr])
 
-Characteristic frequencies of projections of $\Gamma$ onto dimensions:
+To ensure consistency across the biological protocols in this document, both the Dual Interview and the $\pi_{\mathrm{bio}}$ spectral-band candidate encoder use a **single unified prospective `[Pr]` mapping** between UHM dimensions and physiological frequency bands (detailed further in [Step 1 of $\pi_{\mathrm{bio}}$](#шаг-1-диагональ)):
 
-| Dimension | Physiological frequency | Measurement method | Justification |
-|-----------|------------------------|-------------------|---------------|
-| $A$ (Articulation) | $1$–$5$ Hz | EEG θ-rhythm | Sensory processing |
-| $S$ (Structure) | $10^{-2}$–$10^{-4}$ Hz | fMRI BOLD | Slow structural oscillations |
-| $D$ (Dynamics) | $8$–$13$ Hz | EEG α-rhythm | Motor-cognitive dynamics |
-| $L$ (Logic) | $30$–$100$ Hz | EEG γ-rhythm | Cognitive binding |
-| $E$ (Interiority) | $0.005$–$0.02$ Hz | EEG infraslow | [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes) |
-| $O$ (Ground) | $0.04$–$0.15$ Hz | HRV (LF) | Homeostatic regulation |
-| $U$ (Unity) | $0.15$–$0.4$ Hz | HRV (HF) | Vagal modulation |
+| Dimension | Primary physiological band | Measurement method | Prospective rationale [H] |
+|-----------|----------------------------|-------------------|---------------------------|
+| $A$ (Articulation) | EEG $\alpha$ ($8$–$13$ Hz) | EEG spectral power $P_\alpha$; fMRI salience network | Attentional desynchronization / sensory gating |
+| $S$ (Structure) | Infraslow ($0.01$–$0.1$ Hz) | fMRI BOLD DMN; DTI structural connectivity | Slow structural-network stability |
+| $D$ (Dynamics) | EEG $\beta$ ($13$–$30$ Hz) | EEG spectral power $P_\beta$; EMG | Motor-cognitive dynamics |
+| $L$ (Logic) | EEG $\gamma$-low ($30$–$50$ Hz) | EEG spectral power $P_{\gamma L}$; ERP P300 | Cognitive binding and rule reconciliation |
+| $E$ (Interiority) | EEG $\gamma$-high ($50$–$100$ Hz) + $\theta$ ($4$–$8$ Hz) | $P_{\gamma H} \times \mathrm{PAC}(\theta, \gamma)$ | Experience–memory coupling* |
+| $O$ (Ground) | HRV LF ($0.04$–$0.15$ Hz) | ECG/HRV $\mathrm{LF}/\mathrm{HF}$ ratio; temperature, cortisol | Homeostatic regulation |
+| $U$ (Unity) | HRV HF ($0.15$–$0.4$ Hz) + global $\alpha$-coherence | Global EEG coherence + HRV HF | Vagal and large-scale neural integration |
 
-:::warning Status: [H]
-The correspondence between dimensions and physiological frequencies is a **hypothesis** requiring experimental verification. The frequencies of the E-dimension ($0.005$–$0.02$ Hz) are a falsifiable prediction linked to [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes).
+:::warning Status: [Pr] / [H]
+This unified spectral-band correspondence is a **prospective candidate encoder `[Pr]` / empirical hypothesis `[H]`** requiring experimental calibration and held-out validation (distinct from the alternative functional-feature candidate encoder in [Experimental Protocol §3.1b](/docs/applied/research/experimental-protocol#pi-bio-definition); per R4, one encoder must be pre-registered before testing). \*As a separate secondary hypothesis `[H]`, infraslow $0.005$–$0.02$ Hz fluctuations are independently investigated in connection with [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes).
 :::
 
 ### Gap Profile Reconstruction from Interview
@@ -585,7 +594,9 @@ Fix two observation maps on a common state domain. A function assigning the seco
 
 The proposed band table is a functional **hypothesis**. CFC magnitudes may calibrate coherence magnitudes; they do not determine signed phases. Full reconstruction requires a specified, validated complex observation model. Otherwise retain the unresolved observation fiber and report ranges of the identifiable targets.
 
-### Step 1: Extracting the Diagonal $\gamma_{kk}$ from Spectral Powers {#шаг-1-диагональ}
+### Step 1: Extracting the Diagonal $\gamma_{kk}$ from Spectral Powers (Unified Prospective Mapping [Pr]) {#шаг-1-диагональ}
+
+This table specifies the same **unified prospective `[Pr]` spectral-band mapping** introduced in the Dual Interview section above:
 
 | Dimension | EEG band | Frequency | Metric | Additional source |
 |-----------|----------|-----------|--------|------------------|
@@ -846,8 +857,8 @@ Without items (i)-(v), a replication attempt cannot be audited.
 | P8.2 | $P(\Gamma_{\mathrm{NREM3}}) < 2/7$ during deep sleep | EEG → $\pi_{\mathrm{bio}}$ → $P$ | $P > 2/7$ during N3 |
 | P8.3 | $\mathrm{PCI} \propto \Phi(\Gamma)$ (monotonic dependence) | TMS-EEG + $\pi_{\mathrm{bio}}$ | Non-monotonic correlation |
 | P8.4 | Concordance of verdicts: $\mathrm{Cons}(\hat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ on the same sessions, Cohen's $\kappa \geq 0.8$ (SUB-5) | TMS-EEG + $\pi_{\mathrm{bio}}$ with $\theta$ frozen on wakefulness | $\kappa < 0.4$ |
-| P8.5 | $\mathrm{Gap}(L,E) \approx 1$ in alexithymia | Dual interview + EEG | $\mathrm{Gap}(L,E) \ll 1$ with diagnosed alexithymia |
-| P8.6 | Critical exponents $\beta = 1/4$ at the sleep-wakefulness transition | EEG monitoring + $\pi_{\mathrm{bio}}$ → $P(\tau)$ near $P_{\mathrm{crit}}$ | Other exponents |
+| P8.5 | High $\mathrm{Gap}(S,E)$ / $\mathrm{Gap}(L,E)$ in alexithymia / intellectualization profiles [H/I] | Dual interview + EEG | No Gap elevation under calibrated phase reconstruction |
+| P8.6 | Exploratory scaling test for $\beta = 1/4$ at sleep-wake transition [H, model-specific `T-161`] | EEG monitoring + $\pi_{\mathrm{bio}}$ → $P(\tau)$ near $P_{\mathrm{crit}}$ | Inconsistent with tuned sextic mean-field ansatz (refutes that ansatz / P8.3, not core UHM) |
 
 ### Position against the substitution argument {#substitution-position}
 
@@ -868,7 +879,7 @@ The state predicate is the full [Cap₂ conjunction](/docs/reference/mathematica
 **The protocol that follows (pre-registration SUB-1 … SUB-6).**
 - **SUB-1.** Freeze $\theta$ on wakefulness sessions only (the reference-ensemble normalisation of R4); no NREM, anaesthesia, REM or ketamine label enters the fit.
 - **SUB-2.** $\lambda_2 = 0$ in every confirmatory run. $\lambda_1$ (consistency with $\mathcal L_\Omega$) also carries the theory: $\lambda_1 = 0$ in the confirmatory run, other values only as a reported sensitivity analysis.
-- **SUB-3.** Phases from the EEG (complex phase-locking values, as in [§9.3 of the fundamental closures](/docs/proofs/categorical/fundamental-closures#pi-bio-protocol)), never from reaction times: reaction times are behaviour, i.e. inference data. $P$, $R$ and $\Phi$ depend only on $|\gamma_{ij}|$ and $\gamma_{ii}$; $D = e^{S}$ depends on the spectrum and hence on the phases.
+- **SUB-3.** Phases from the EEG (complex phase-locking values, as in [§9.3 of the fundamental closures](/docs/proofs/categorical/fundamental-closures#pi-bio-protocol)), never from reaction times: reaction times are behaviour, i.e. inference data. $P$, $R$, $\Phi$, and the 7D native differentiation proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E(\Gamma)$ depend only on $|\gamma_{ij}|$ and $\gamma_{ii}$. Canonical experiential differentiation $D_{\mathrm{diff}} = \exp(S_{\mathrm{vN}}(\rho_E))$ is defined on a separately declared extended experiential register $\mathcal{H}_E$ (never as $\exp(S_{\mathrm{vN}}(\Gamma))$ on the full $7\times 7$ matrix); its reduced state $\rho_E$ (depending on the declared lift), as well as the full spectrum $S_{\mathrm{vN}}(\Gamma)$, $\mathrm{Gap}_{ij} = |\sin\theta_{ij}|$, and triangle holonomies, depend on the signed complex phases $\theta_{ij}$.
 - **SUB-4.** Register the verdicts of the table in Step 5 before unblinding. The decisive rows are REM and ketamine (consciousness without behaviour at the time): with $\theta$ frozen on wakefulness they are out-of-sample.
 - **SUB-5.** Concordance with $\mathrm{PCI}^*$ on the same sessions (P8.4 in concordance form): Cohen's $\kappa$ between $\mathrm{Cons}_\theta$ and $\mathrm{PCI}_{\max} > 0.31$; $\kappa \geq 0.8$ corroborates, $\kappa < 0.4$ falsifies [Pr].
 - **SUB-6.** The two exits (Step 5): among sessions with $\mathrm{PCI}_{\max} \leq 0.31$, responses that stay local are predicted to have $\hat\Phi < 1$; responses that spread as a stereotyped global wave, $\hat P > 3/7$ ($\hat R < 1/3$). This compares prediction data with prediction data, so the substitution argument does not touch it — it tests UHM's structure, not its consciousness claim [H].
@@ -901,7 +912,7 @@ The state predicate is the full [Cap₂ conjunction](/docs/reference/mathematica
 - [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, $\mathbf{Exp}^{disc}_\infty$
 - [Theorem on minimality 7D](/docs/proofs/minimality/theorem-minimality-7) — why 7 dimensions
 - [Notation](/docs/reference/notation#индексы-измерений-протокол-измерения) — indices $I_A, \ldots, I_U$
-- [Gap diagnostics](/docs/applied/research/gap-diagnostics) — clinical applications of the Gap profile
+- [Gap diagnostics](/docs/applied/research/gap-diagnostics) — prospective research diagnostics of the Gap profile
 - [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes) — prediction of infraslow frequencies
 - [Fano channel](/docs/proofs/gap/fano-channel) — equilibrium Gap theorem
 

@@ -25,13 +25,13 @@ It is strict exactly when a newly included pair has nonzero coherence. This foll
 ## 2. T-211: PhysTheory is an $(\infty,1)$-category — the Grothendieck construction over $\mathbf{Topoi}_\infty$ {#t-211}
 
 
-:::tip Theorem T-211 ($\mathbf{PhysTheory}$ is an $(\infty,1)$-category) [T]
+:::tip Theorem T-211 ($\mathbf{PhysTheory}$ is an $(\infty,1)$-category of monoid objects with reversible $\mathbb R$-actions) [T]
 
-Let $\mathbf{Topoi}_\infty$ be the (large) $\infty$-category of $\infty$-topoi and geometric morphisms (Lurie, HTT Def. 6.3.1.5). For an $\infty$-topos $E$ let $\mathrm{Alg}(E)$ be the $\infty$-category of associative algebra objects of $E$ for its cartesian monoidal structure (Lurie, HA §2.4.1, §4.1), and $\mathrm{Dyn}(E) := \mathrm{Fun}(B\mathbb R, \mathrm{Alg}(E))$ the algebras with an action of the group $\mathbb R$ — the dynamics $D$ of T-174. A geometric morphism $f: E_1 \to E_2$ has a left-exact inverse image $f^*: E_2 \to E_1$, which preserves finite products and therefore induces $f^*: \mathrm{Dyn}(E_2) \to \mathrm{Dyn}(E_1)$; this gives a functor $\mathrm{Dyn}: \mathbf{Topoi}_\infty^{\mathrm{op}} \to \widehat{\mathbf{Cat}}_\infty$. Define $p: \mathbf{PhysTheory} \to \mathbf{Topoi}_\infty$ as its cartesian unstraightening (the Grothendieck construction, HTT §3.2). Then:
+Let $\mathbf{Topoi}_\infty$ be the (large) $\infty$-category of $\infty$-topoi and geometric morphisms (Lurie, HTT Def. 6.3.1.5). For an $\infty$-topos $E$ equipped with its cartesian monoidal structure $E^\times$, let $\mathrm{Alg}(E^\times)$ be the $\infty$-category of associative **monoid objects** in $E$ (Lurie, HA §2.4.1, §4.1 — **not** $C^*$-algebras: the cartesian product alone carries no addition, scalar multiplication, involution, or norm completeness), and let $\mathrm{Dyn}(E) := \mathrm{Fun}(B\mathbb R^{\delta}, \mathrm{Alg}(E^\times))$ be monoid objects equipped with a **discrete, reversible action of the group $\mathbb R$** (excluding irreversible GKSL/CPTP semigroups, which are one-parameter *monoid* actions of $\mathbb R_{\ge 0}$ rather than invertible $\mathbb R$-group actions). A geometric morphism $f: E_1 \to E_2$ has a left-exact inverse image $f^*: E_2 \to E_1$, which preserves finite products and therefore induces $f^*: \mathrm{Dyn}(E_2) \to \mathrm{Dyn}(E_1)$; this gives a functor $\mathrm{Dyn}: \mathbf{Topoi}_\infty^{\mathrm{op}} \to \widehat{\mathbf{Cat}}_\infty$. Define $p: \mathbf{PhysTheory} \to \mathbf{Topoi}_\infty$ as its cartesian unstraightening (the Grothendieck construction, HTT §3.2). Then:
 
 **(a) Coherence.** $\mathbf{PhysTheory}$ is an $(\infty,1)$-category and $p$ is a cartesian fibration. Associativity of composition up to coherent homotopy, the pentagon, the interchange law and all higher simplicial identities hold, because $\mathbf{PhysTheory}$ is a quasicategory: every inner horn has a filler.
 
-**(b) Objects and morphisms are those of T-174.** An object is a triple $(E, \mathcal A, D)$. For objects $x_i = (E_i, \mathcal A_i, D_i)$, the map $\mathrm{Map}(x_1, x_2) \to \mathrm{Map}_{\mathbf{Topoi}_\infty}(E_1, E_2)$ has fibre over $f$ equal to $\mathrm{Map}_{\mathrm{Dyn}(E_1)}\big((\mathcal A_1, D_1),\, f^*(\mathcal A_2, D_2)\big)$. A point of it is a pair $(\alpha, \beta)$: an algebra map $\alpha: \mathcal A_1 \to f^*\mathcal A_2$ and the coherent family of homotopies $\beta_t: \alpha \circ D_1(t) \simeq f^*D_2(t) \circ \alpha$ ($t \in \mathbb R$) — the triple $(f^*, \alpha, \beta)$ of T-174, with $\beta$ now typed correctly and its higher coherences supplied. Composition is $(g, \alpha', \beta') \circ (f, \alpha, \beta) \simeq (g f,\ f^*\alpha' \circ \alpha,\ \beta_{\mathrm{comp}})$, well defined up to a contractible space of choices.
+**(b) Objects and morphisms.** An object is a triple $(E, \mathcal A, D)$ with $\mathcal A \in \mathrm{Alg}(E^\times)$ a monoid object and $D$ a reversible discrete $\mathbb R$-action. For objects $x_i = (E_i, \mathcal A_i, D_i)$, the map $\mathrm{Map}(x_1, x_2) \to \mathrm{Map}_{\mathbf{Topoi}_\infty}(E_1, E_2)$ has fibre over $f$ equal to $\mathrm{Map}_{\mathrm{Dyn}(E_1)}\big((\mathcal A_1, D_1),\, f^*(\mathcal A_2, D_2)\big)$. A point of it is a pair $(\alpha, \beta)$: a monoid map $\alpha: \mathcal A_1 \to f^*\mathcal A_2$ and the coherent family of homotopies $\beta_t: \alpha \circ D_1(t) \simeq f^*D_2(t) \circ \alpha$ ($t \in \mathbb R$). Composition is $(g, \alpha', \beta') \circ (f, \alpha, \beta) \simeq (g f,\ f^*\alpha' \circ \alpha,\ \beta_{\mathrm{comp}})$, well defined up to a contractible space of choices. Upgrading $\mathrm{Alg}(E^\times)$ to $C^*$-algebras or replacing $B\mathbb R^{\delta}$ by continuous/irreversible $\mathbb R_{\ge 0}$-semigroups requires additional structure not supplied by $E^\times$ alone.
 
 **(c) $p$ is not faithful, so $\mathbf{PhysTheory}$ is not a full subcategory of $\mathbf{Topoi}_\infty$.** Let $\mathcal S$ be the $\infty$-topos of spaces (terminal in $\mathbf{Topoi}_\infty$, so $\mathrm{Map}(\mathcal S, \mathcal S) \simeq *$) and $\mathcal A = \mathbb C$, the discrete multiplicative monoid, with trivial dynamics. Over the unique geometric morphism $\mathcal S \to \mathcal S$ lie at least two components of $\mathrm{Map}(x, x)$: the identity and complex conjugation.
 
@@ -39,17 +39,17 @@ Let $\mathbf{Topoi}_\infty$ be the (large) $\infty$-category of $\infty$-topoi a
 
 **Proof.**
 
-*(a).* $\mathrm{Alg}(E)$ is functorial in finite-product-preserving functors (HA §2.4.1–2.4.2: a product-preserving functor between cartesian monoidal $\infty$-categories is symmetric monoidal and so preserves algebra objects), and $\mathrm{Fun}(B\mathbb R, -)$ is functorial by postcomposition; hence $\mathrm{Dyn}$ is a functor on $\mathbf{Topoi}_\infty^{\mathrm{op}}$ (inverse images are left exact, HTT Def. 6.3.1.1). The straightening–unstraightening equivalence (HTT Thm. 3.2.0.1) turns it into a cartesian fibration $p$. A cartesian fibration is an inner fibration (HTT Def. 2.4.2.1), and an inner fibration over a quasicategory has a quasicategory as total space: an inner horn in $\mathbf{PhysTheory}$ maps to an inner horn in $\mathbf{Topoi}_\infty$, which has a filler, and the inner-fibration property lifts it. $\square$
+*(a).* $\mathrm{Alg}(E^\times)$ is functorial in finite-product-preserving functors (HA §2.4.1–2.4.2: a product-preserving functor between cartesian monoidal $\infty$-categories is symmetric monoidal and so preserves associative monoid objects), and $\mathrm{Fun}(B\mathbb R^{\delta}, -)$ is functorial by postcomposition; hence $\mathrm{Dyn}$ is a functor on $\mathbf{Topoi}_\infty^{\mathrm{op}}$ (inverse images are left exact, HTT Def. 6.3.1.1). The straightening–unstraightening equivalence (HTT Thm. 3.2.0.1) turns it into a cartesian fibration $p$. A cartesian fibration is an inner fibration (HTT Def. 2.4.2.1), and an inner fibration over a quasicategory has a quasicategory as total space: an inner horn in $\mathbf{PhysTheory}$ maps to an inner horn in $\mathbf{Topoi}_\infty$, which has a filler, and the inner-fibration property lifts it. $\square$
 
-*(b).* For a cartesian fibration, the mapping-space fibre over $f: p x_1 \to p x_2$ is $\mathrm{Map}_{p^{-1}(E_1)}(x_1, f^* x_2)$, where $f^*x_2$ is the source of a $p$-cartesian lift of $f$ (HTT Prop. 2.4.4.2 and the definition of the straightening); here $p^{-1}(E_1) = \mathrm{Dyn}(E_1)$ and the cartesian lift is $f^*$. A morphism in $\mathrm{Fun}(B\mathbb R, \mathrm{Alg}(E_1))$ is a natural transformation: its component is $\alpha$, its naturality data over the morphisms $t$ of $B\mathbb R$ are the homotopies $\beta_t$, with their higher coherences. Composition in a cartesian fibration is composition in the base together with $f^*$ of the later fibre map, as stated. If one prefers the constant group object $\mathbb R_E$ to the discrete group, nothing changes: $E_{/\pi^* B\mathbb R} \simeq \mathrm{Fun}(B\mathbb R, E)$ by descent (HTT §6.1.3). $\square$
+*(b).* For a cartesian fibration, the mapping-space fibre over $f: p x_1 \to p x_2$ is $\mathrm{Map}_{p^{-1}(E_1)}(x_1, f^* x_2)$, where $f^*x_2$ is the source of a $p$-cartesian lift of $f$ (HTT Prop. 2.4.4.2 and the definition of the straightening); here $p^{-1}(E_1) = \mathrm{Dyn}(E_1)$ and the cartesian lift is $f^*$. A morphism in $\mathrm{Fun}(B\mathbb R^{\delta}, \mathrm{Alg}(E_1^\times))$ is a natural transformation: its component is $\alpha$, its naturality data over the morphisms $t$ of $B\mathbb R^{\delta}$ are the homotopies $\beta_t$, with their higher coherences. Composition in a cartesian fibration is composition in the base together with $f^*$ of the later fibre map, as stated. Note that $E_{/\pi^* B\mathbb R^{\delta}} \simeq \mathrm{Fun}(B\mathbb R^{\delta}, E)$ applies strictly to the **discrete** group $\mathbb R^{\delta}$ (constant group object); it does **not** capture continuous topological $\mathbb R$-actions or irreversible CPTP/GKSL semigroups $\mathbb R_{\ge 0}$. $\square$
 
-*(c).* In $\mathcal S$ a discrete monoid is an ordinary monoid, and $\mathrm{Map}_{\mathrm{Alg}(\mathcal S)}(\mathbb C, \mathbb C)$ is the discrete set of monoid endomorphisms of $(\mathbb C, \cdot)$. Complex conjugation is unital and multiplicative, $\overline{zw} = \bar z\,\bar w$, and differs from the identity; with trivial $D$ both are equivariant. So $\pi_0$ of the fibre over the one point of $\mathrm{Map}(\mathcal S, \mathcal S)$ has at least two elements, and $p$ is not faithful. $\blacksquare$
+*(c).* In $\mathcal S$ a discrete monoid is an ordinary monoid, and $\mathrm{Map}_{\mathrm{Alg}(\mathcal S^\times)}(\mathbb C, \mathbb C)$ is the discrete set of monoid endomorphisms of $(\mathbb C, \cdot)$. Complex conjugation is unital and multiplicative, $\overline{zw} = \bar z\,\bar w$, and differs from the identity; with trivial $D$ both are equivariant. So $\pi_0$ of the fibre over the one point of $\mathrm{Map}(\mathcal S, \mathcal S)$ has at least two elements, and $p$ is not faithful. $\blacksquare$
 
 Numerical check: `check_core_numbers.py`, `test_phystheory_forgets_to_topoi_unfaithfully_and_composes_associatively` — a finite model (discrete topoi $\mathbf{Set}^X$ over finite sets, families of monoids in the fibres): composition is associative and unital on 300 random triples, the multiplicative monoid $\{0,1\}$ has two endomorphisms over the identity of a point, and conjugation is a unital multiplicative map of $\mathbb C$ other than the identity.
 
-**What T-211 does for T-174.** The $(\infty,1)$-structure of the [definition of $\mathbf{PhysTheory}$](/docs/proofs/physics/toe-embeddings#категория-phys) is supplied by (a)–(b), not by a full embedding into $\mathbf{Topoi}_\infty$; and (b) — over a point the fibre between 0-truncated objects is a set — is what makes compatibility with dynamics a property in the $C^*$-typed subcategory of the [restated T-174](/docs/proofs/physics/toe-embeddings#t-174) (2026-09-26). T-211 says nothing about which morphisms exist: the former "essentially unique receiving morphism into UHM" is retracted [✗] there, and the universal property that holds — $u_0 = (A_{\text{int}}, \mathrm{id})$ corepresents $A_{\text{int}}$-structures, rigid exactly on $\mathbb{C}^7$ — is T-174's own proof.
+**What T-211 does — and does not do — for T-174.** The $(\infty,1)$-fibration skeleton of $\mathbf{PhysTheory}$ is supplied by (a)–(b) for **monoid objects** and **discrete reversible $\mathbb R$-actions**, not by a full embedding into $\mathbf{Topoi}_\infty$. Moving to actual $C^*$-algebras or irreversible GKSL/CPTP open-system semigroups requires imposing that extra algebraic/analytic structure separately (as in the $C^*$-typed subcategory of the [restated T-174](/docs/proofs/physics/toe-embeddings#t-174)). T-211 says nothing about which morphisms exist: the former "essentially unique receiving morphism into UHM" is retracted [✗] there, and the universal property that holds — $u_0 = (A_{\text{int}}, \mathrm{id})$ corepresents $A_{\text{int}}$-structures, rigid exactly on $\mathbb{C}^7$ — is T-174's own proof.
 
-**Dependencies**: the definition of $\mathbf{PhysTheory}$ in ToE embeddings §4.2 (objects and morphisms only); Lurie HTT Def. 2.4.2.1, Prop. 2.4.4.2, Thm. 3.2.0.1, §6.1.3, Def. 6.3.1.5; Lurie HA §2.4.1–2.4.2, §4.1. *Removed 2026-09-25:* T-119 (not used — each object carries its topos), T-173 (a statement about objects, which cannot give faithfulness), T-174 (its universal property is not used), T-178 (retracted as a derivation), HTT 5.2.7 and 5.5.2.9.
+**Dependencies**: the definition of $\mathbf{PhysTheory}$ in ToE embeddings §4.2 (objects and morphisms only); Lurie HTT Def. 2.4.2.1, Prop. 2.4.4.2, Thm. 3.2.0.1, §6.1.3 (discrete case), Def. 6.3.1.5; Lurie HA §2.4.1–2.4.2, §4.1. *Removed 2026-09-25:* T-119 (not used — each object carries its topos), T-173 (a statement about objects, which cannot give faithfulness), T-174 (its universal property is not used), T-178 (retracted as a derivation), HTT 5.2.7 and 5.5.2.9.
 
 
 
@@ -69,20 +69,7 @@ $\mathcal{T}$ is a unital, trace-preserving, completely positive idempotent, it 
 
 **Proof.** By invariance of the Haar measure, $\mathcal{T}$ is idempotent, self-adjoint for the Hilbert–Schmidt product, and its image is the commutant $\{X : gXg^\dagger = X \ \forall g \in G_2\}$; so $\mathcal{T}$ is the orthogonal projection onto the commutant. The seven-dimensional representation of $G_2$ is irreducible of real type, so its complexification is irreducible and, by Schur's lemma (W. Fulton, J. Harris, *Representation Theory*, GTM 129, Springer 1991, Lemma 1.7), the commutant is $\mathbb{C}\mathbf{1}$ (numerically: the joint kernel of $X \mapsto [D_a, X]$ over the fourteen generators $D_a$ of $\mathfrak{g}_2$ has dimension 1, `test_g2_twirl_is_the_normalised_trace_projection`). The orthogonal projection onto $\mathbb{C}\mathbf{1}$ is $X \mapsto \frac{\langle \mathbf{1}, X\rangle}{\langle \mathbf{1}, \mathbf{1}\rangle}\mathbf{1} = \frac17 \operatorname{Tr}(X)\mathbf{1}$. A linear map onto $\mathbb{C}\mathbf{1}$ has the form $X \mapsto f(X)\mathbf{1}$, and preserving the trace forces $7f(X) = \operatorname{Tr}(X)$. Complete positivity: $\mathcal{T}$ is an average of unitary conjugations. $\blacksquare$
 
-The formula is not specific to $G_2$: every subgroup of $U(7)$ acting irreducibly on $\mathbb{C}^7$ (for instance $SO(7)$ or $U(7)$ itself) has the same twirl. The reading of $\mathcal{T}$ as the U-dimension ("Unity = aggregation over the seven dimensions") is an interpretation [I].
-
-
-**Modalities and dimensions — a reading [I].** With the corrected list of differential cohesion ([T-185 (ii′)](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime)):
-
-| Modality | Adjunction role | UHM dimension (reading) |
-|---|---|---|
-| $\mathrm{Id}$ | Identity | O (Foundation) |
-| $\Pi$ | Shape | A (Articulation) |
-| $\flat$ | Flat (discrete coreflection) | S (Structure) |
-| $\Im$ | Infinitesimal shape (de Rham) | D (Dynamics) |
-| $\sharp$ | Sharp (codiscrete reflection) | L (Logic) |
-| $\&$ | Infinitesimal flat | E (Interiority) |
-| $\mathrm{Red}$ | Reduction | U (Unity) — earlier Rh; the $G_2$-twirl of T-212′ is an operator on $M_7(\mathbb{C})$, not a modality |
+The formula is not specific to $G_2$: every subgroup of $U(7)$ acting irreducibly on $\mathbb{C}^7$ (for instance $SO(7)$ or $U(7)$ itself) has the same twirl. The reading of $\mathcal{T}$ as the U-dimension ("Unity = aggregation over the seven dimensions") is an interpretation [I]. In agreement with [cohesive closure](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime), $\mathcal{T}$ is a linear operator on $M_7(\mathbb{C})$, **not** a cohesive modality; the former 7-modality-to-7-dimension matching table (including `Rh` / `Id` padding) is removed as numerological [✗].
 
 **Dependencies**: T-212′ uses only the representation theory of $G_2$ (Schur's lemma, Haar measure). The retraction uses T-185 (ii′) [T] and the definition of Rh in solid cohesion.
 
@@ -114,7 +101,7 @@ Consequently the phenomenal interpretation remains [P/I] because it has not been
 
 Treating components separately ($\iota_{\min}$) and assigning agency to a selected aggregate ($\iota_{\max}$) are different conventions. Neither partial trace nor existence of a joint state proves subject identity. The selected lift $\rho\mapsto\rho\otimes\sigma$ with fixed normalized $\sigma$ followed by partial trace returns $\rho$ exactly [T]; this concerns chosen maps, not subjects.
 
-Two7-dimensional registers have joint dimension49. A seven-dimensional aggregator is an additional map. If it uses only averaged marginals, it discards correlations; existence of that aggregate does not certify collective consciousness. Nested records, local criteria and observation must be specified separately. Universal T-42a and T-123 are withdrawn [✗] and do not settle these conventions.
+Two 7-dimensional registers have joint dimension 49. A seven-dimensional aggregator is an additional map. If it uses only averaged marginals, it discards correlations; existence of that aggregate does not certify collective consciousness. Nested records, local criteria and observation must be specified separately. Universal T-42a and T-123 are withdrawn [✗] and do not settle these conventions.
 
 ## 7. T-216: the effective parameter needs inputs [H] {#t-216}
 
@@ -453,52 +440,61 @@ A pair of dynamically compatible but inequivalent encoders already refutes the o
 
 ## 18. Remaining clarifications {#clarifications}
 
-Three additional gap-closures complete the UHM foundational cleanup; they do not warrant new theorem numbers but require explicit documentation.
+Three additional clarifications complete the foundational cleanup; they do not warrant new theorem numbers but require explicit documentation.
 
-### 18.1. A4 eigenvalue distinctness clarification {#a4-distinctness}
+### 18.1. A4 spectral distinctness and energy-zero gauge invariance {#a4-distinctness}
 
-**Explicit addition to Axiom 4 (Scale).** A4 currently says $\omega_0 = \lambda_\mathrm{min}(H_\mathrm{eff}) > 0$. A hidden assumption is that $H_\mathrm{eff}$ has **simple** spectrum (all eigenvalues distinct). This is required by:
-- Well-definedness of the temporal modality $\triangleright: |k\rangle \to |k+1 \bmod 7\rangle$ (needs distinct eigenstates to define the $\mathbb Z_7$-shift action);
-- Berry-phase calculations on $\mathcal D \setminus \Sigma$ where $\Sigma$ is the degenerate-spectrum locus;
-- Uniqueness of ground state in the Page–Wootters clock factor.
+**Clarification to Axiom 4 (Scale).** Because $H_\mathrm{eff}$ and $H_\mathrm{eff} + c I$ generate the exact same commutator dynamics $-i[H_\mathrm{eff}, \Gamma]$, the lowest eigenvalue $\lambda_\mathrm{min}(H_\mathrm{eff})$ is **gauge-dependent** and cannot define an intrinsic physical frequency scale $\omega_0$. Instead, $\omega_0 > 0$ is an externally calibrated frequency unit (or a specified nonzero Bohr frequency difference $(E_i - E_j)/\hbar$).
 
-**A4 refined**: $H_\mathrm{eff}$ has **simple spectrum** (all 7 eigenvalues distinct), with $\omega_0 = \lambda_\mathrm{min}(H_\mathrm{eff}) > 0$. Simple spectrum is generic (codimension $\geq 1$ stratum is degenerate) and holds for physically relevant holons by spectral transversality.
+Separately, assuming that $H_\mathrm{eff}$ has a **simple spectrum** (all $7$ eigenvalues distinct, generic outside a real codimension-$\ge 1$ degenerate locus $\Sigma$) is an explicit regularity hypothesis whenever eigenbasis-dependent constructions are invoked (such as Berry phases on $\mathcal D \setminus \Sigma$ or a unique ground state in a chosen clock factor); the cyclic frame shift $|k\rangle \mapsto |k+1 \bmod 7\rangle$ is defined in the semantic frame directly and does not require $\lambda_{\min}(H_\mathrm{eff}) > 0$.
 
-### 18.2. $f_0$ zeta-regularisation well-definedness {#f0-zeta}
+### 18.2. $f_0$ finite-dimensional spectral zeta identity {#f0-zeta}
 
-**Claim**: The formula $f_0 \Lambda^4 = \frac{1}{7}\bigl[V_\mathrm{Gap}^{\min} + \tfrac12 \zeta'_{H_\mathrm{Gap}}(0)\bigr]$ (T-70) involves $\zeta'(0)$, which is generally a delicate analytic-continuation object. In UHM's finite-dimensional setting, it reduces to an elementary computation.
+**Scope:** In the historical T-70 formula $f_0 \Lambda^4 = \frac{1}{7}\bigl[V_\mathrm{Gap}^{\min} + \tfrac12 \zeta'_{H_\mathrm{Gap}}(0)\bigr]$ (whose cosmological/vacuum-energy bridge is subject to the additive-shift obstruction in [$\Lambda$-budget](/docs/proofs/gap/lambda-budget)), the operator $H_\mathrm{Gap}$ is finite-dimensional and Hermitian on the positive-eigenvalue subspace.
 
-**Proof of well-definedness**: $H_\mathrm{Gap}$ is a finite-dimensional Hermitian operator (on $(S^1)^{21}/G_2$, effectively $\dim = 7$ after $G_2$-reduction). Its spectral zeta function is
+**Elementary evaluation [T]:** For any finite-dimensional positive-definite operator $H_\mathrm{Gap}$ with positive eigenvalues $\{\lambda_k\}_{k=1}^r$ (counted with multiplicity), the spectral zeta function is the finite sum
 
 $$
-\zeta_{H_\mathrm{Gap}}(s) = \sum_{k=1}^{r} \lambda_k^{-s}
+\zeta_{H_\mathrm{Gap}}(s) = \sum_{k=1}^{r} \lambda_k^{-s},
 $$
 
-where $r$ is the rank and $\{\lambda_k\}$ are positive eigenvalues (with multiplicities for degeneracies if any; for simple spectrum $r = \dim$). This is a **finite sum** for all $s \in \mathbb C$, hence entire (no poles). Therefore
+which is entire on $\mathbb C$ (no poles or analytic-continuation ambiguity). Differentiating term by term at $s=0$ yields
 
 $$
-\zeta'_{H_\mathrm{Gap}}(0) = -\sum_{k=1}^{r} \log \lambda_k = -\log \prod_{k=1}^{r} \lambda_k = -\log \det(H_\mathrm{Gap})
+\zeta'_{H_\mathrm{Gap}}(0) = -\sum_{k=1}^{r} \log \lambda_k = -\log \prod_{k=1}^{r} \lambda_k = -\log \det(H_\mathrm{Gap}).
 $$
 
-is well-defined and finite. No regularisation ambiguity. The formula $f_0$ is thus a **rational algebraic expression** in the eigenvalues of $H_\mathrm{Gap}$, not a transcendentally-regularised object.
+This is finite and unambiguous, though **transcendental** (logarithmic), **not** a rational algebraic expression in the eigenvalues of $H_\mathrm{Gap}$ (nor scale-invariant under $\lambda_k \mapsto c\lambda_k$, which shifts $-\log\det$ by $-r\log c$).
 
-### 18.3. Bures stratified-site handling {#bures-stratification}
+### 18.3. Bures stratification and boundary intersection of the conscious window {#bures-stratification}
 
-**Claim**: Bures metric has degeneracies on the boundary of $\mathcal D(\mathbb C^7)$ where $\Gamma$ is rank-deficient. This is handled via the **stratified site** (Ayala–Francis–Rozenblyum 2017).
-
-**Explicit treatment**: decompose $\mathcal D(\mathbb C^7)$ into rank-strata:
+**Rank stratification [T]:** Decompose $\mathcal D(\mathbb C^7)$ into smooth rank strata:
 
 $$
-\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_r := \{\Gamma : \mathrm{rank}\,\Gamma = r\}.
+\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_r := \{\Gamma \in \mathcal D(\mathbb C^7) : \mathrm{rank}\,\Gamma = r\}, \qquad \dim_{\mathbb R}\mathcal D_r = 14r - r^2 - 1.
 $$
 
-- On each **open stratum** $\mathcal D_r$, the Bures metric is non-degenerate (rank-$r$ Fisher metric).
-- Between strata, Bures distance extends continuously (Uhlmann 1976) but the metric tensor degenerates.
-- The viability condition $P > P_\mathrm{crit} = 2/7$ restricts attention to strata $r \geq 2$ ($D_{\min} = 2$ [D], T-151); the conscious window is entirely interior to $\mathcal D_7$.
+- On the full-rank interior stratum $\mathcal D_7$ ($\dim_{\mathbb R} = 48$), the Bures metric tensor is smooth and Riemannian.
+- On rank-deficient boundary strata $\mathcal D_1, \dots, \mathcal D_6$, the chordal Bures distance $d_B(\rho,\sigma)=\sqrt{2(1-\sqrt{F(\rho,\sigma)})}$ extends continuously (Uhlmann 1976), while the ambient Bures Riemannian metric tensor degenerates/diverges in transverse directions.
 
-**Update 2026-09-25.** The strata are submanifolds of dimension $14k - k^2 - 1$ whose shapes are the Grassmannians $\mathrm{Gr}_k(\mathbb{C}^7)$, and the whole stratified space is an object of the differentially cohesive $\mathrm{SynthDiff}\infty\mathrm{Grpd}$ ([T-185 (ii′)](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime)); no separate stratified site is needed.
+**Correction [T] (replacing the false claim that the conscious window lies inside $\mathcal D_7$):** The viable/conscious window $\{P > 2/7,\ R = 1/(7P) \ge 1/3,\ \Phi \ge 1,\ D^{7D} = 1 + 6\,\mathrm{Coh}_E \ge 2\}$ **does NOT lie inside the smooth interior $\mathcal D_7$**: it strictly intersects the singular boundary strata $\mathcal D_3, \mathcal D_4, \mathcal D_5, \mathcal D_6$!
 
-**Consequence**: all viable-state theorems operate on the **interior stratum** $\mathcal D_7$, where Bures is smooth and all metric-geometric arguments are valid. Boundary handling is not needed for consciousness-related claims; it is needed only for pathological-state or thermal-death analysis (conducted via the Ayala–Francis–Rozenblyum stratified machinery).
+*Explicit rank-$3$ witness in $\mathcal D_3$:* Let $v_k = \frac{1}{\sqrt{7}}(1, \omega^k, \omega^{2k}, \dots, \omega^{6k})^\top$ ($\omega = e^{2\pi i/7}$) be the $7$-point DFT basis, and form the rank-$3$ projector state
+
+$$
+\rho = \frac{1}{3}\sum_{k=0}^{2} v_k v_k^\dagger \in \mathcal D_3.
+$$
+
+Because $\rho$ is circulant with $\rho^2 = \frac{1}{3}\rho$ and uniform diagonal $\rho_{jj} = \frac{1}{7}$, direct calculation gives:
+- $\mathrm{rank}(\rho) = 3$ (boundary stratum $\mathcal D_3$, four zero eigenvalues);
+- $P(\rho) = \mathrm{Tr}(\rho^2) = \frac{1}{3} \in \bigl(\frac{2}{7}, \frac{3}{7}\bigr]$;
+- $R(\rho) = \frac{1}{7P} = \frac{3}{7} \approx 0.429 \ge \frac{1}{3}$;
+- $\Phi(\rho) = \frac{P - P_{\mathrm{diag}}}{P_{\mathrm{diag}}} = \frac{1/3 - 1/7}{1/7} = \frac{4}{3} \approx 1.333 \ge 1$;
+- $\sum_{l\neq E} |\rho_{El}|^2 = (\rho^2)_{EE} - \rho_{EE}^2 = \frac{1}{21} - \frac{1}{49} = \frac{4}{147}$, so $\mathrm{Coh}_E(\rho) = \frac{1/49 + 8/147}{1/3} = \frac{11}{49}$ and $D^{7D}(\rho) = 1 + 6\,\mathrm{Coh}_E(\rho) = \frac{115}{49} \approx 2.347 \ge 2$.
+
+Adding arbitrarily small weights $\varepsilon > 0$ along $1, 2,$ or $3$ of the remaining DFT modes $v_3, v_4, v_5$ yields continuous families of conscious-window states in $\mathcal D_4$, $\mathcal D_5$, and $\mathcal D_6$ as well.
+
+**Consequence:** Riemannian smoothness of the Bures metric **cannot** be assumed automatically on the conscious window — arguments invoking the Bures metric tensor, Fisher–Rao curvature, or smooth geodesic equations must explicitly restrict to $\mathcal D_7$ (or stay within the metric-space / Uhlmann fidelity formulation on $\mathcal D(\mathbb C^7)$). (The strata are smooth submanifolds of dimension $14r - r^2 - 1$ whose Grassmannian support projections lie in $\mathrm{Gr}_r(\mathbb C^7)$; see [T-185 (ii′)](/docs/proofs/categorical/cohesive-closure#t-185-ii-prime).)
 
 ---
 

@@ -34,164 +34,144 @@ In this chapter we:
 
 ### 1.1 What We Measure
 
-In CC all observables are functions of the coherence matrix $\Gamma$. But $\Gamma$ is an abstract object. In practice we have no direct access to it. We have access to **observables** — projections of $\Gamma$ onto measurement bases.
+In CC, model functionals ($P$, $R$, $\Phi$, $D_{\mathrm{diff}}$, $\sigma_{\mathrm{sys}}$) are evaluated on a $7 \times 7$ density matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$. In empirical settings we do not observe $\Gamma$ directly; we observe physical, neural, behavioral, or software measurements and map them to an estimate $\widehat{\Gamma}$ through a **declared, pre-registered observation model** $\pi$ (see the formal estimation contract in [§6.4](#оценка-gamma)).
 
-The situation is analogous to quantum mechanics: we do not see the wave function of the electron, but we can measure its projections (spin up/down, coordinate, momentum). Each measurement is a projection of $\Gamma$ onto a specific operator.
-
-**Analogy.** Imagine $\Gamma$ as a 3D object (say, a statuette), and we can only see its shadows on the walls. The shadow on one wall is $P$ (total "area" of the shadow = organisation). The shadow on another — $\sigma_k$ (stress profile). From several shadows we reconstruct the object — but the reconstruction is always approximate.
+:::warning Two Separate Contracts (Aligned with §6.4)
+Constructing a valid density matrix $\widehat{\Gamma} \succeq 0$, $\mathrm{Tr}\,\widehat{\Gamma} = 1$ from data (an algebraic/statistical contract) is strictly separate from claiming that $\widehat{\Gamma}$ measures biological viability, consciousness, or a clinical state (an empirical/semantic hypothesis `[H/I]`). Because universal $G_2$-uniqueness of state encoders is withdrawn (`T-42a [✗]`), the choice of encoder $\pi$, target (second moment vs. covariance), and axis frame is an explicit part of every tested hypothesis.
+:::
 
 ### 1.2 Hierarchy of Observables
 
-Not all CC observables are equally easy to measure. We distinguish four levels:
+Not all CC quantities require the same observational data:
 
-| Level | Observables | Measurement complexity | Examples |
-|---------|-------------|---------------------|---------|
-| **L1: Global** | $P$ (purity), $\|\sigma\|_\infty$ | Low — only the overall picture is needed | Health index, total test score |
-| **L2: Sectoral** | $\gamma_{kk}$ (diagonal), $\sigma_k$ | Medium — 7 independent measurements | Subscale scores, neural network activity |
-| **L3: Coherent** | $\|\gamma_{ij}\|$ (off-diagonal), $\theta_{ij}$ | High — pairwise correlations | Functional brain connectivity, organisational links |
-| **L4: Derived** | $R$, $\Phi$, $C$, $\mathrm{Coh}_E$ | High — require $\varphi(\Gamma)$ | Reflection, integration, consciousness measures |
+| Level | Quantities | Data requirements | Limitations |
+|-------|------------|-------------------|-------------|
+| **L1: Global** | $P = \mathrm{Tr}(\Gamma^2)$, $\|\sigma\|_\infty$ | Full matrix $\widehat{\Gamma}$ for $P$; 7 panel scores for $\|\sigma\|_\infty$ | Scalar $P$ alone does not determine $\Phi$, $R$, or $D_{\mathrm{diff}}$ |
+| **L2: Diagonal** | $\gamma_{kk}$, diagonal scores $\sigma_k$ | 7 normalized axis populations ($\sum_k \gamma_{kk} = 1$) | Supplies at most **6 of 48** real parameters; carries zero coherence/phase information |
+| **L3: Off-diagonal** | $\lvert\gamma_{ij}\rvert$, phases $\theta_{ij}$ | Complex cross-channel second moments ([§6.4](#оценка-gamma)) | Requires phase-preserving estimation and PSD enforcement |
+| **L4: Derived** | $R$, $\Phi$, $C$, $\mathrm{Coh}_E$, $D_{\mathrm{diff}}$ | Same reconstructed $\widehat{\Gamma}$ plus declared $D_{\mathrm{diff}}$ readout | Must check all four margins over the reconstruction uncertainty set |
 
 :::tip Practical rule
-Start with L1 (is there a problem at all?), then L2 (which dimension is suffering?), then L3 (where are connections disrupted?), and only if necessary — L4 (what is the level of consciousness?). There is no point computing $C$ if even $P$ has not been measured.
+Fix the observation model $\pi$ and target ($M/\mathrm{Tr}\,M$ vs. $C/\mathrm{Tr}\,C$) **before** inspecting evaluation outcomes, verify PSD and positive trace, and evaluate all functionals ($P$, $R$, $\Phi$, $D_{\mathrm{diff}}$) from the **same** reconstructed matrix $\widehat{\Gamma}$ with uncertainty bounds ([§6.4](#оценка-gamma)).
 :::
 
 ### 1.3 Calibration Principle
 
 :::warning Key principle
-The mathematics of CC gives **relative** relations (e.g., $P_{\text{crit}} = 2/7$). But absolute calibration — which physical indicators correspond to $\gamma_{EE} = 0.2$ — depends on the specific system and requires empirical anchoring.
+Within the formalism, thresholds such as $P_{\mathrm{crit}} = 2/7$, $R_{\mathrm{th}} = 1/3$, $\Phi_{\mathrm{th}} = 1$, and $D_{\mathrm{diff}} \ge 2$ are dimensionless definitions on $\mathcal{D}(\mathbb{C}^7)$. Mapping physical recordings to $\mathcal{D}(\mathbb{C}^7)$ requires empirical calibration on an **independent training split** — never fitted to the evaluation threshold itself ([§6.3](#калибровка)).
 :::
 
-This is not a weakness of the theory, but normal practice: in physics too there is a difference between Maxwell's equations (universal) and the specific values of $\varepsilon$ and $\mu$ for each material.
-
-**What calibration gives and what it does not:**
-
-| What calibration gives | What it does not give |
+| What independent calibration provides | What calibration does **not** provide |
 |---|---|
-| Numerical values of $\gamma_{kk}$ for a specific system | Universal values for "any brain" |
-| Correspondence of test scales with the diagonal of $\Gamma$ | Automatic conversion of scores to $\Gamma$ |
-| Estimate of measurement accuracy (error) | Guarantee that the measurement is accurate |
+| Frozen parameters of $\pi_\theta$ for a specified measurement modality | A unique universal encoder for every brain or AI (`T-42a [✗]`) |
+| Reproducible mapping into $\mathcal{D}(\mathbb{C}^7)$ on held-out sessions | Automatic clinical diagnosis or phenomenal certification |
+| Uncertainty intervals under declared statistical assumptions ([§6.4](#оценка-gamma)) | Coverage guarantees when dependence or stopping assumptions fail |
 
 ---
 
 ## 2. Measuring Purity P {#измерение-чистоты}
 
-### 2.1 What P Is in Practice
+### 2.1 What P Is Mathematically
 
-[Purity](/docs/core/dynamics/viability#определение-чистоты) $P = \mathrm{Tr}(\Gamma^2)$ is a measure of the organisation of the system. Intuitively: how coherently all 7 dimensions are working together.
+[Purity](/docs/core/dynamics/viability#определение-чистоты) $P = \mathrm{Tr}(\Gamma^2) = \sum_{k=1}^7 \gamma_{kk}^2 + \sum_{i \neq j} |\gamma_{ij}|^2$ measures concentration of the spectrum of $\Gamma$:
+- **Minimum:** $P_{\min} = 1/7 \approx 0.143$, uniquely attained at the maximally mixed state $\Gamma = I/7$.
+- **Maximum:** $P_{\max} = 1$, attained at **any** pure state $\Gamma = |\psi\rangle\langle\psi|$ (including a pure diagonal basis state $\Gamma = |k\rangle\langle k|$!).
+- **Diagonal vs. off-diagonal roles:** A diagonal matrix ($\gamma_{ij} = 0$ for $i \neq j$) spans the full range $P \in [1/7, 1]$, **NOT** $[0, 1/7]$! However, a diagonal matrix always has **zero integration** ($\Phi = (P - P_{\mathrm{diag}})/P_{\mathrm{diag}} = 0 < 1$). Passing the full consciousness window requires both $P \in (2/7, 3/7]$ and off-diagonal coherences large enough to satisfy $\Phi \ge 1$.
 
-**Analogy.** Imagine an orchestra of 7 instruments. If all play one melody in synchrony — $P$ is close to 1 (pure state). If each plays on its own — $P$ is close to $1/7$ (maximum chaos). If most are coordinated but one is out of tune — $P$ is intermediate, and $\sigma_k$ for the out-of-tune instrument is high.
+### 2.2 Candidate Biological Modalities `[H]`
 
-### 2.2 Proxies for Biological Systems
+Relating neural signals to $\Gamma$ is an empirical hypothesis `[H]` requiring an explicit encoder $\pi_{\mathrm{bio}}$:
 
-In neuroscience the direct analogue of purity is **coherence of neural activity**:
+| Modality / Signal | What it measures physically | Role in CC measurement |
+|-------------------|-----------------------------|------------------------|
+| **Complex EEG/MEG analytic signals** | Multi-channel complex envelopes & cross-spectra | Natural input $x_n \in \mathbb{C}^7$ for the PSD second-moment estimator $\widehat{\Gamma}_N = \widehat{\Sigma}_N / \mathrm{Tr}\,\widehat{\Sigma}_N$ ([§6.4](#оценка-gamma)) |
+| **fMRI BOLD time series** | Slow hemodynamic co-fluctuations | Real-valued covariance proxy (loses fast complex phases $\theta_{ij}$) |
+| **PCI (TMS-EEG)** | Lempel–Ziv complexity of perturbational response | **Independent clinical benchmark**, NOT an estimator of $P$ ([§6.3](#калибровка)) |
+| **Lempel–Ziv entropy** | Compressibility of single-channel/multi-channel signal | Separate complexity descriptor; no automatic algebraic equality with $P$ |
 
-| Method | What it measures | How it relates to P |
-|-------|-------------|-----------------|
-| **EEG coherence** | Synchronisation of electrical activity between brain regions | High coherence → high P |
-| **fMRI functional connectivity** | Correlation of BOLD signals between regions | Strong connectivity → high $\|\gamma_{ij}\|$ → high P |
-| **PCI** | Complexity of the recorded TMS response | Clinical comparison requires a separate model reconstruction and held-out outcomes. |
-| **Lempel-Ziv entropy** | Compressibility of the neural signal | Low entropy → high P |
+### 2.3 PSD-Preserving Protocol for Neural Data `[Pr]`
 
-### 2.3 L1 Protocol for Neural Data
+A naive block average of unsigned pairwise spectral coherences $\bar{C}_{ij} \in [0, 1]$ loses complex phase signs and **does not guarantee positive semidefiniteness** ($\tilde{\gamma} \succeq 0$). To obtain a valid density matrix $\widehat{\Gamma}_N \in \mathcal{D}(\mathbb{C}^7)$ aligned with [§6.4](#оценка-gamma):
 
-Step-by-step protocol for estimating $P$ from EEG:
+**Step 1.** Record multi-channel EEG/MEG (e.g., $\ge 19$–$64$ channels) under a pre-registered preprocessing and artifact-rejection pipeline.
 
-**Step 1.** Record EEG from 19 channels (10-20 system) for 5 minutes at rest (eyes closed).
+**Step 2.** Apply a **pre-registered, frozen** channel-to-axis projection (calibrated on independent data, never tuned on test labels) mapping sensor signals into a 7-component complex analytic vector $x_n \in \mathbb{C}^7$ (e.g., via Hilbert transform or complex wavelet coefficients in a pre-registered band) across the canonical axes $\{A, S, D, L, E, O, U\}$:
 
-**Step 2.** Compute the spectral coherence matrix $C_{ij}(f)$ for each pair of channels $(i, j)$ in the range 1–40 Hz.
+| Canonical axis | Exploratory anatomical grouping `[H]` (must be pre-registered) |
+|----------------|----------------------------------------------------------------|
+| **A** (Articulation) | Sensory / occipital-perceptual channels (e.g., O1, O2, Oz) |
+| **S** (Structure) | Temporal / representational channels (e.g., T3, T4, T5, T6) |
+| **D** (Dynamics) | Sensorimotor / executive-action channels (e.g., C3, C4, Cz) |
+| **L** (Logic) | Dorsolateral prefrontal channels (e.g., F3, F4) |
+| **E** (Interiority) | Midline / interoceptive-self channels (e.g., Fz, Pz) |
+| **O** (Ground) | Frontopolar / autonomic-coupled channels (e.g., Fp1, Fp2 + HRV) |
+| **U** (Unity) | Parietal / cross-network hubs (e.g., P3, P4) |
 
-**Step 3.** Average coherence over frequencies, obtaining $\bar{C}_{ij} = \frac{1}{f_{\max} - f_{\min}} \int C_{ij}(f)\,df$.
-
-**Step 4.** Assign each of the 19 channels to one of 7 dimensions (grouping by functional zones):
-
-| Dimension | EEG channels | Rationale |
-|-----------|-----------|-------------|
-| A (Articulation) | O1, O2, Oz | Visual cortex — sensory input |
-| S (Structure) | T3, T4, T5, T6 | Temporal — long-term memory |
-| D (Dynamics) | C3, C4, Cz | Motor cortex — action |
-| L (Logic) | F3, F4 | Dorsolateral PFC — reasoning |
-| E (Interiority) | Fz, Pz | Midline structures — self-reference |
-| O (Ground) | Fp1, Fp2 | Orbitofrontal — resource evaluation |
-| U (Unity) | P3, P4 | Parietal — integration |
-
-**Step 5.** Aggregate $\bar{C}_{ij}$ across groups, obtaining a $7 \times 7$ matrix:
+**Step 3.** Declare whether the target is the uncentered second moment $M = \mathbb{E}[x x^\dagger]$ or centered covariance $C = \mathbb{E}[(x-\mu)(x-\mu)^\dagger]$ ([§6.4](#оценка-gamma)), and form the guaranteed Hermitian PSD matrix:
 
 $$
-\tilde{\gamma}_{kl} = \frac{1}{|G_k| \cdot |G_l|} \sum_{i \in G_k} \sum_{j \in G_l} \bar{C}_{ij}
+\widehat{\Sigma}_N = \frac{1}{N}\sum_{n=1}^{N} x_n x_n^\dagger, \qquad \widehat{\Gamma}_N = \frac{\widehat{\Sigma}_N}{\mathrm{Tr}(\widehat{\Sigma}_N)} \quad (\text{when } \mathrm{Tr}\,\widehat{\Sigma}_N > 0).
 $$
 
-**Step 6.** Normalise: $\Gamma_{\text{approx}} = \tilde{\gamma} / \mathrm{Tr}(\tilde{\gamma})$.
+**Step 4.** Compute $P_{\mathrm{plug}} = \mathrm{Tr}(\widehat{\Gamma}_N^2)$, $R = 1/(7P_{\mathrm{plug}})$, $\Phi = (P_{\mathrm{plug}} - P_{\mathrm{diag}})/P_{\mathrm{diag}}$, and the declared $D_{\mathrm{diff}}$ readout **from the same $\widehat{\Gamma}_N$**, together with reconstruction uncertainty bounds ([§6.4](#оценка-gamma)).
 
-**Step 7.** Compute $P = \mathrm{Tr}(\Gamma_{\text{approx}}^2)$.
-
-:::warning Calibration caveat
-This protocol gives a *proxy* for $P$, not an exact value. The grouping of channels by dimensions is hypothetical and requires validation. Nevertheless, even a crude proxy allows the key prediction to be tested: $P_{\text{wakefulness}} > P_{\text{coma}}$.
+:::warning Validation caveat
+The channel-to-axis grouping above is an exploratory hypothesis `[H]` requiring independent validation and source-space control for volume conduction. An algebraically valid density matrix $\widehat{\Gamma}_N$ does not by itself validate the neurobiological mapping.
 :::
 
-### 2.4 Numerical Example: ICU Patient
+### 2.4 Illustrative Synthetic Calculation: Diagonal vs. Coherent Contributions
 
-Let us consider a concrete example. A patient in intensive care. EEG recorded in three states:
+*(Note: The numbers below are an **illustrative mathematical calculation**, not measured clinical patient data.)*
 
-**State 1: Wakefulness (before trauma)**
+Suppose a reconstructed density matrix has a nearly uniform diagonal:
+$\mathrm{diag}(\Gamma) = (0.16, 0.15, 0.14, 0.14, 0.15, 0.13, 0.13)$ (summing to $1.00$).
 
-Aggregated matrix (diagonal): $\gamma = (0.16, 0.15, 0.14, 0.14, 0.15, 0.13, 0.13)$
+- **Diagonal purity contribution:**
+  $$P_{\mathrm{diag}} = 0.16^2 + 0.15^2 + 0.14^2 + 0.14^2 + 0.15^2 + 0.13^2 + 0.13^2 = 0.1462.$$
+  Recall that for **any** diagonal density matrix $\Gamma = \mathrm{diag}(\gamma_{11}, \ldots, \gamma_{77})$, **$P_{\min} = 1/7 \approx 0.1429$** is the *minimum* (achieved at uniform $\gamma_{kk} = 1/7$), while **$P_{\max} = 1$** is the *maximum* (achieved at a pure basis state $\Gamma = |k\rangle\langle k|$). Thus a diagonal matrix *can* exceed $2/7$ if one axis dominates, **but** any diagonal matrix has $\Phi = 0 < 1$ (failing the integration gate!). When populations are balanced near $1/7$, $P_{\mathrm{diag}} \approx 0.1462$ stays near $P_{\min} = 1/7$, so off-diagonal coherences are required both to lift $P$ above $2/7$ and to achieve $\Phi \ge 1$.
+- **Weak off-diagonal coherence ($|\gamma_{ij}| \approx 0.03$ across 42 off-diagonal entries, subject to $\Gamma \succeq 0$):**
+  $P_{\mathrm{off}} = \sum_{i \neq j}|\gamma_{ij}|^2 \approx 42 \times 0.0009 = 0.0378$, giving $P \approx 0.184 < 2/7$ and $\Phi = P_{\mathrm{off}}/P_{\mathrm{diag}} \approx 0.26 < 1$.
+- **Stronger off-diagonal coherence ($|\gamma_{ij}| \approx 0.06$, PSD-verified):**
+  $P_{\mathrm{off}} \approx 42 \times 0.0036 = 0.1512$, giving $P \approx 0.297 \in (2/7, 3/7]$ and $\Phi \approx 1.03 \ge 1$ (while $R = 1/(7P) \approx 0.48 \ge 1/3$).
+- **Near-maximally mixed state ($|\gamma_{ij}| \approx 0.01$, nearly uniform diagonal):**
+  $P \approx 0.143 + 0.004 = 0.147 \approx P_{\min}$, $\Phi \approx 0.03$.
 
-$P = 0.16^2 + 0.15^2 + 0.14^2 + 0.14^2 + 0.15^2 + 0.13^2 + 0.13^2 = 0.1462$
-
-This is below $2/7 \approx 0.286$, but remember: for a diagonal matrix $P_{\max} = 1/7 \approx 0.143$ is achieved at uniform distribution. Our $P = 0.1462 > 1/7$ — the system is slightly organised, but without off-diagonal elements $P$ cannot exceed $1/7$ significantly. Coherences are needed!
-
-**Including coherences:** Let the average off-diagonal coherence $|\gamma_{ij}| \approx 0.03$. Then $P$ increases by $\sum_{i \neq j} |\gamma_{ij}|^2 \approx 42 \times 0.0009 = 0.038$, giving $P \approx 0.184$.
-
-This is still below $2/7$. To reach $P > 2/7$, *strong* coherence is needed ($|\gamma_{ij}| \approx 0.05{-}0.08$).
-
-**State 2: Deep coma (GCS = 3)**
-
-Coherence drops significantly: $|\gamma_{ij}| \to 0.01$, diagonal tends to uniform.
-
-$P \approx 1/7 + 42 \times 0.0001 \approx 0.147$ — practically the maximally mixed state.
-
-**State 3: Recovery (GCS = 12)**
-
-Coherence partially restored: $|\gamma_{ij}| \approx 0.04$, diagonal non-uniform.
-
-$P \approx 0.150 + 42 \times 0.0016 \approx 0.217$ — below the threshold, but closer.
-
-:::info Clinical conclusion
-The transition $P < 2/7 \to P > 2/7$ is a potential marker of consciousness recovery. Tracking $P(\tau)$ dynamically may be clinically more informative than a one-time GCS score.
+:::info Clinical bridge scope `[H]`
+Whether longitudinal changes in reconstructed $\widehat{P}(t)$ and the four-gate verdict $\mathrm{Cons}(\widehat{\Gamma}(t))$ track clinical recovery better than standard neurological scales (such as GCS or PCI) is an untested empirical hypothesis `[H]` requiring prospective clinical studies with frozen encoders and uncertainty sets ([§6.3–6.4](#калибровка)).
 :::
 
-### 2.5 Proxies for Organisations
+### 2.5 Exploratory Proxies for Organisations `[I/H]`
 
-| Method | What it measures | How it relates to P |
-|-------|-------------|-----------------|
-| **Engagement index (eNPS)** | Alignment of employee goals | High eNPS → high P |
-| **Cross-functional coordination** | Frequency and quality of inter-departmental interactions | Strong coordination → high $\|\gamma_{ij}\|$ |
-| **Financial indicators** | Margin, growth | Sustained growth → P > P_crit |
+| Candidate organizational metric | What it measures | Exploratory CC mapping `[I/H]` |
+|---------------------------------|------------------|--------------------------------|
+| **Alignment / engagement indices** | Agreement across team objectives | Candidate input for a declared 7-axis encoder (not directly equal to $P$) |
+| **Cross-functional interaction matrices** | Structured inter-unit communication | Candidate source for off-diagonal covariance $\widehat{\Sigma}_N$ |
+| **Operational viability metrics** | Sustained margin, retention | External validation outcome, NOT an algebraic proxy for $P$ |
 
-### 2.6 Proxies for AI Systems
+### 2.6 Exploratory Proxies for AI Systems `[I/H]`
 
-| Method | What it measures | How it relates to P |
-|-------|-------------|-----------------|
-| **Rank of latent representation** | Effective dimensionality of the hidden space | High rank → high P |
-| **Attention entropy** | Entropy of attention weights | Focused attention → high P |
-| **Loss landscape curvature** | Curvature of the loss landscape | Sharp minima → high P (but brittle) |
+| Candidate AI metric | Mathematical behavior | Correction & CC mapping `[I/H]` |
+|---------------------|-----------------------|---------------------------------|
+| **Effective rank of normalized hidden covariance** | Higher uniform rank $r$ gives **lower** purity $P = \mathrm{Tr}(\rho^2) = 1/r$ (lower rank / more concentrated spectrum gives **higher** $P$) | Note: a 7D normalized covariance $\widehat{\Gamma}_N = \widehat{\Sigma}_N/\mathrm{Tr}\,\widehat{\Sigma}_N$ naturally stays in the window $P \in (2/7, 3/7]$ at intermediate effective rank ($\approx 2.3\text{–}3.5$), neither rank-1 collapse ($P = 1$) nor uniform noise ($P = 1/7$) |
+| **Attention concentration** | Lower entropy corresponds to sharper weights | Candidate feature for an explicit encoder $\pi$, not equal to $P$ by itself |
+| **Loss landscape curvature** | Local Hessian spectrum | Optimization geometry; distinct from state-space purity $P$ |
 
 ---
 
-## 3. Measuring the Stress Tensor σ {#измерение-напряжений}
+## 3. Measuring the Stress Panel σ {#измерение-напряжений}
 
-### 3.1 Seven selected scores
+### 3.1 Seven Selected Scores (`T-92 [D]`)
 
-T-92 [D] specifies a diagnostic panel, not a unique tensor derived from the axioms. The population score $s_k=1-7\gamma_{kk}$ lies in $[-6,1]$; its clamped version $\sigma_k=\max(0,s_k)$ lies in $[0,1]$. The unclamped scores sum to zero. A full panel may contain selected functions of $R$, $\Phi$, the regeneration rate and an independently specified extended readout $D_{\mathrm{diff}}$.
+T-92 `[D]` specifies a diagnostic panel, not a unique tensor derived from the axioms. The population score $s_k = 1 - 7\gamma_{kk}$ lies in $[-6, 1]$; its clamped version $\sigma_k = \max(0, s_k)$ lies in $[0, 1]$. The **unclamped** scores always sum to zero ($\sum_{k=1}^7 s_k = 7 - 7\sum_{k=1}^7 \gamma_{kk} = 0$). A full panel may contain selected functions of $R$, $\Phi$, the regeneration rate, and an independently specified extended readout $D_{\mathrm{diff}}$.
 
-Populations and their deficits do not reconstruct complex coherences: diagonal measurement supplies at most six independent parameters out of 48. Equivalence of the panel to the full window is unproved. Test the four separate margins over a reconstruction uncertainty set; see [identifiability](/docs/applied/research/reconstruction-identifiability).
+Populations and their deficits do not reconstruct complex coherences: diagonal measurement supplies at most six independent parameters out of 48. Equivalence of the panel to the full window is unproved (`CC-8 [D]`). Test the four separate margins over a reconstruction uncertainty set; see [identifiability](/docs/applied/research/reconstruction-identifiability).
 
-### 3.2 Seven-Dimensional Audit Protocol
+### 3.2 Seven-Dimensional Audit Protocol `[I/H]`
 
-For an organisation or team:
+For an organisation or team (exploratory mapping `[I/H]`):
 
-| Dimension | What to ask | Instrument |
-|-----------|----------------|------------|
+| Dimension | Exploratory audit question | Candidate instrument |
+|-----------|----------------------------|----------------------|
 | $\sigma_A$ (Articulation) | "Can you clearly formulate what your department does?" | Interviews, documentation analysis |
 | $\sigma_S$ (Structure) | "Are there stable processes and roles?" | Org structure analysis, tenure analysis |
 | $\sigma_D$ (Dynamics) | "Can you adapt to change?" | Agility assessment, cycle time |
@@ -200,38 +180,33 @@ For an organisation or team:
 | $\sigma_O$ (Ground) | "Are resources sufficient?" | Budget audit, burnout survey |
 | $\sigma_U$ (Unity) | "Do you feel part of a whole?" | Network analysis, NPS |
 
-### 3.3 Detailed Breakdown: from σ_D to Metabolic Load
+### 3.3 Illustrative Domain Readings of $\sigma_D$ (Dynamics) `[I]`
 
-Consider $\sigma_D$ — stress in the Dynamics dimension. In different contexts:
+Interpretive mappings of the Dynamics axis ($D$) across domains `[I]` (hypotheses requiring domain-specific validation):
+- **Biology:** Metabolic throughput / energetic capacity for action (e.g., cellular ATP/ADP balance).
+- **Psychology:** Behavioral initiation and executive switching (e.g., Trail Making Test latency).
+- **Organisations:** Decision-to-execution latency (e.g., approval lead time).
 
-**Biology.** $\sigma_D$ is metabolic load. Why? Dimension D is responsible for the system's capacity for *action* — changing its state. In biology, action requires energy: muscle contraction, nerve impulse, protein synthesis. If $\sigma_D$ is high — the cell/organism finds it *difficult to act*: metabolism is overloaded, ATP is deficient, mitochondria are working at their limit.
+### 3.4 Exploratory Psychometric Mapping `[H/I]`
 
-Concrete proxy: ADP/ATP ratio. Under normal metabolism ATP/ADP > 10 ($\sigma_D$ low). Under depletion ATP/ADP < 3 ($\sigma_D$ high).
+Mapping seven standardized psychometric instruments onto the canonical axes $\{A, S, D, L, E, O, U\}$ is an exploratory research hypothesis `[H/I]`, not a validated clinical diagnostic system:
 
-**Psychology.** $\sigma_D$ is procrastination and paralysis of will. The person *knows* what needs to be done, but *cannot* force themselves. This is not laziness — it is a deficit of D-resource. Proxy: Trail Making Test (task-switching time).
+| Axis | Exploratory psychometric construct `[I]` | Existing instrument |
+|------|------------------------------------------|---------------------|
+| $\sigma_A$ (Articulation) | Sensory / perceptual load | Sensory Profile (Dunn) |
+| $\sigma_S$ (Structure) | Cognitive rigidity / set shifting | WCST (Wisconsin Card Sorting Test) |
+| $\sigma_D$ (Dynamics) | Executive task switching | Trail Making Test (TMT-B) |
+| $\sigma_L$ (Logic) | Cognitive distortions | Cognitive Distortion Scale |
+| $\sigma_E$ (Interiority) | Difficulty identifying feelings | TAS-20 (Toronto Alexithymia Scale) |
+| $\sigma_O$ (Ground) | Exhaustion / resource depletion | MBI (Maslach Burnout Inventory) |
+| $\sigma_U$ (Unity) | Social disconnection | UCLA Loneliness Scale |
 
-**Organisation.** $\sigma_D$ is bureaucracy. A decision has been made, but cannot be executed: approvals, sign-offs, regulations. Proxy: lead time (time from decision to implementation).
+### 3.5 Worked Calculation: Why Clamped Stress Scores Cannot Be Inverted Directly to $\gamma_{kk}$
 
-### 3.4 For the Individual (Psychometrics)
+Suppose seven psychometric instruments are normalized to $[0, 1]$ (illustrative synthetic values):
 
-The same 7 dimensions can be assessed through psychometric scales:
-
-| Dimension | Psychometric proxy | Existing instrument |
-|-----------|-------------------------|------------------------|
-| $\sigma_A$ | Perceptual load | Sensory Profile (Dunn) |
-| $\sigma_S$ | Cognitive rigidity/flexibility | WCST (Wisconsin Card Sorting Test) |
-| $\sigma_D$ | Executive functions | Trail Making Test |
-| $\sigma_L$ | Cognitive distortions | Cognitive Distortion Scale |
-| $\sigma_E$ | Alexithymia (experience deficit) | TAS-20 (Toronto Alexithymia Scale) |
-| $\sigma_O$ | Vital exhaustion | MBI (Maslach Burnout Inventory) |
-| $\sigma_U$ | Social isolation | UCLA Loneliness Scale |
-
-### 3.5 Numerical Example: from Psychometrics to σ-Profile
-
-A patient has completed 7 tests. Results are normalised to the scale [0, 1], where 0 = normal, 1 = maximum impairment:
-
-| Test | Raw score | Normalised |
-|------|-----------|----------------|
+| Test | Raw score | Normalized $\sigma_k \in [0, 1]$ |
+|------|-----------|----------------------------------|
 | Sensory Profile ($\sigma_A$) | 42/80 | 0.53 |
 | WCST errors ($\sigma_S$) | 12/60 | 0.20 |
 | TMT-B time ($\sigma_D$) | 180 s (norm 75 s) | 0.70 |
@@ -240,205 +215,142 @@ A patient has completed 7 tests. Results are normalised to the scale [0, 1], whe
 | MBI emotional exhaustion ($\sigma_O$) | 28/54 | 0.52 |
 | UCLA loneliness ($\sigma_U$) | 45/80 | 0.56 |
 
-Profile: $\sigma = [0.53,\; 0.20,\; 0.70,\; 0.30,\; 0.65,\; 0.52,\; 0.56]$
+Profile: $\sigma = [0.53,\; 0.20,\; 0.70,\; 0.30,\; 0.65,\; 0.52,\; 0.56]$, with $\|\sigma\|_\infty = 0.70$ (highest exploratory load on $D$ and $E$; clinical interpretation and intervention require standard clinical evaluation, not matrix scores alone).
 
-$\|\sigma\|_\infty = 0.70$ (Dynamics — the most loaded dimension).
-
-**Interpretation:** Maximum stress in D (action) and E (interiority). This is a profile characteristic of depression: the person *cannot act* ($\sigma_D$ high) and *does not understand what they feel* ($\sigma_E$ high). CC recommendation: priority — reducing $\sigma_D$ (behavioural activation) and $\sigma_E$ (psychoeducation, mindfulness).
-
-Inverse conversion to $\gamma_{kk}$: if $\sigma_k = 1 - 7\gamma_{kk}$, then $\gamma_{kk} = (1 - \sigma_k)/7$.
+:::warning Mathematical Correction: Trace Never Lives in Off-Diagonals!
+Attempting naive "inverse conversion" via $\tilde{\gamma}_{kk} = (1 - \sigma_k)/7$ gives:
 
 $$
-\gamma = \left(\frac{0.47}{7},\; \frac{0.80}{7},\; \frac{0.30}{7},\; \frac{0.70}{7},\; \frac{0.35}{7},\; \frac{0.48}{7},\; \frac{0.44}{7}\right)
+\tilde{\gamma} = \left(\frac{0.47}{7},\; \frac{0.80}{7},\; \frac{0.30}{7},\; \frac{0.70}{7},\; \frac{0.35}{7},\; \frac{0.48}{7},\; \frac{0.44}{7}\right) = (0.067,\; 0.114,\; 0.043,\; 0.100,\; 0.050,\; 0.069,\; 0.063),
 $$
 
+whose sum is $\sum_{k=1}^7 \tilde{\gamma}_{kk} = 0.506 \neq 1$.
+
+**Why this fails (correcting an earlier error):** For **every** density matrix $\Gamma$, the trace equals the sum of its **diagonal entries alone** ($\mathrm{Tr}\,\Gamma = \sum_{k=1}^7 \gamma_{kk} = 1$). Off-diagonal elements contribute **zero** to the trace — the missing $0.494$ is **never** "distributed across off-diagonal elements"! Rather, $\sum_k \tilde{\gamma}_{kk} < 1$ is mathematically inevitable whenever all seven inputs are positive ($\sigma_k > 0$), because the clamping map $\sigma_k = \max(0, 1 - 7\gamma_{kk})$ discards all negative deficits ($s_k < 0$, where $\gamma_{kk} > 1/7$) and is therefore **non-invertible**: for a genuine density matrix, $\sum_{k=1}^7 (1 - 7\gamma_{kk}) = 0$, so at least one axis must satisfy $\gamma_{kk} \ge 1/7$ ($\sigma_k = 0$).
+
+To construct valid diagonal populations $\gamma_{kk} \ge 0$ with $\sum_k \gamma_{kk} = 1$ from nonnegative availability scores $a_k = 1 - \sigma_k > 0$, one must explicitly **normalize on the probability simplex**:
+
 $$
-= (0.067,\; 0.114,\; 0.043,\; 0.100,\; 0.050,\; 0.069,\; 0.063)
+\gamma_{kk} = \frac{1 - \sigma_k}{\sum_{j=1}^7 (1 - \sigma_j)} \approx (0.133,\; 0.226,\; 0.085,\; 0.198,\; 0.099,\; 0.136,\; 0.124), \qquad \sum_{k=1}^7 \gamma_{kk} = 1.000.
 $$
 
-Check: $\sum \gamma_{kk} = 0.506$. This is less than 1 — meaning the remaining 0.494 is "distributed" across off-diagonal elements or lost during normalisation. In practice $\sum \gamma_{kk}$ should be close to 1 (for the diagonal approximation), which points to a limitation of the method: psychometric proxies are *crude* estimates requiring calibration coefficients.
+Even after simplex normalization, this vector supplies only the **6 independent diagonal degrees of freedom** — it determines none of the 21 complex off-diagonal coherences $\gamma_{ij}$ and therefore cannot estimate $\Phi$ or full $P$ ([§3.1](#измерение-напряжений), [§6.4](#оценка-gamma)).
+:::
 
 ---
 
 ## 4. Measuring Consciousness Measures {#измерение-сознательности}
 
-### 4.1 Reflection Measure R
+### 4.1 Canonical Reflection Measure $R$ vs. Self-Model Fidelity $R_\varphi$
 
-[Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R = F(\Gamma, \varphi(\Gamma))$ shows how well the system models itself.
+Within the formalism, two distinct quantities appear ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)):
+- **Canonical state reflexivity:** $R(\Gamma) = 1/(7P(\Gamma)) \in [1/7, 1]$, which determines the upper purity ceiling ($R \ge 1/3 \iff P \le 3/7$) and enters $C = \Phi \times R$. In the consciousness window $P \in (2/7, 3/7]$, canonical $R$ lies strictly in $[1/3, 1/2)$.
+- **Self-model fidelity:** $R_\varphi(\Gamma) = F(\Gamma, \varphi(\Gamma)) \in [0, 1]$, which additionally requires specifying a concrete self-model map $\varphi$.
 
-**Proxies:**
-- **Metacognitive accuracy:** ability to evaluate the quality of one's own decisions (confidence calibration). Example: after answering a question, rate confidence from 0 to 100%. Ideal calibration: questions in which confidence = 70% are actually correct in 70% of cases.
-- **Self-report accuracy:** agreement of self-report with objective indicators. Example: "How anxious are you?" (subjective) vs. cortisol level (objective).
-- **Mirror test** (for animals): does it recognise itself in the mirror? Passed: primates, dolphins, elephants, magpies. Not passed: most others.
+**Exploratory behavioral proxies `[H]`:** Behavioral measures such as metacognitive sensitivity ($\text{meta-}d'$), self-report calibration, or mirror recognition are **external empirical correlates `[H]`**, not direct measurements of $R(\Gamma) = 1/(7P)$. Whenever $\widehat{\Gamma}_N$ is reconstructed per [§6.4](#оценка-gamma), canonical $\widehat{R} = 1/(7\widehat{P})$ must be computed directly from that same matrix $\widehat{\Gamma}_N$, rather than substituted by an ad hoc heuristic such as $\text{meta-}d'/3$.
 
-**How to translate into $R$?** Metacognitive sensitivity (meta-d') — a standard measure in experimental psychology — gives a value from 0 (no metacognition) to 1+ (ideal). Proposed calibration:
+### 4.2 Integration Measure $\Phi$
 
-$$
-R \approx \frac{\text{meta-d'}}{3}
-$$
+[Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) $\Phi(\Gamma) = (P(\Gamma) - P_{\mathrm{diag}}(\Gamma))/P_{\mathrm{diag}}(\Gamma)$ quantifies the ratio of off-diagonal coherent weight to diagonal purity in the fixed frame $\{A,S,D,L,E,O,U\}$.
 
-Rationale: at meta-d' = 1 (average healthy adult) we get $R \approx 0.33 \approx 1/3$ — right at the threshold. This is consistent with the intuition: a typical person *barely* clears the reflection threshold.
+**External benchmarks vs. matrix computation:**
+- **PCI (Perturbational Complexity Index):** On its clinical benchmark, $\mathrm{PCI}^* = 0.31$ separates states with and without subjective report (Casali et al., 2013; Casarotto et al., 2016: 36/38 minimally conscious patients and 9/43 vegetative-state patients above $0.31$). PCI is an **independent clinical benchmark**, NOT an algebraic proxy for $\Phi$ or $P$ ([§6.3](#калибровка)).
+- **Graph spectral gaps & mutual information:** External exploratory correlates `[H]`; they do not replace computing $\widehat{\Phi}$ directly from the reconstructed PSD density matrix $\widehat{\Gamma}_N$.
 
-### 4.2 Integration Measure Φ
+### 4.3 Consciousness Measure $C$ (`T-140 [D]`)
 
-[Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) $\Phi$ shows how unified the system is — whether it breaks down into independent subsystems.
+$C = \Phi \times R$ (`T-140 [D]`) is a selected scalar summary of integration and canonical reflexivity.
 
-**Proxies:**
-- **PCI (Perturbational Complexity Index):** the brain's response to TMS stimulation — integrated systems give a complex, widespread response. On its benchmark the cut-off $\mathrm{PCI}^* = 0.31$ separates states with a subjective report from states without one (Casarotto et al., 2016); in patients, 36 of 38 in a minimally conscious state and 9 of 43 in a vegetative state lie above it (index introduced by Casali et al., 2013).
-- **Mutual Information** between subsystems
-- **Spectral gap** of the functional connectivity graph
+**Exact threshold relations:**
+- $C = 0$ means the selected scalar score is zero; a phenomenal interpretation requires a separate bridge `[I]`.
+- $0 < C < 1/3$ fails the selected window's necessary product inequality; it does not by itself classify bacteria, animals, or AI.
+- $C \geq C_{\mathrm{th}} = 1/3$ (`T-140`) is **necessary but NOT sufficient** for the full four-gate capability predicate ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$). On the uniform-diagonal stratum ($\gamma_{kk} = 1/7$), $P = (1 + \Phi)/7$, so the window gives $C = \Phi/(1 + \Phi) \in (1/2, 2/3]$.
 
-**How to translate into $\Phi$?** The spectral gap $\lambda_2 - \lambda_1$ of the functional connectivity graph of the brain is a direct analogue of $\Phi$ in CC. Proposed calibration:
+Choose and pre-register all thresholds before viewing evaluation labels.
 
-$$
-\Phi \approx \frac{\lambda_2 - \lambda_1}{\lambda_{\text{norm}}}
-$$
-
-where $\lambda_{\text{norm}}$ is a normalising coefficient fixed on wakefulness sessions only ([SUB-1](/docs/applied/research/measurement-protocol#substitution-position)).
-
-### 4.3 Consciousness Measure C
-
-$C = \Phi \times R$ (T-140 [D]) — the product of integration and reflection.
-
-**Critical thresholds:**
-- $C=0$ means the selected score is zero; a phenomenal interpretation requires a separate bridge [I].
-- $0<C<1/3$ fails the selected window’s necessary product condition; it does not classify bacteria or AI.
-- $C \geq C_{\text{th}} = 1/3$ (T-140) is necessary for a conscious system; the full predicate is $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$, which implies $C \geq 1/3$. On the uniform-diagonal stratum the window gives $C = \Phi/(1+\Phi) \in (1/2, 2/3]$.
-
-Choose and report thresholds before looking at evaluation labels.
-
-**Numerical example.** Healthy adult: meta-d' = 1.2, reconstructed $\widehat\Phi = 1.45$ (illustrative values).
+**Illustrative consistent matrix calculation.** Suppose a reconstructed $\widehat{\Gamma}_N$ on the uniform-diagonal stratum yields $\widehat{P} = 0.35 \in (2/7, 3/7]$ and $\widehat{\Phi} = 7\widehat{P} - 1 = 1.45 \ge 1$. From the **same matrix**:
 
 $$
-R \approx \frac{1.2}{3} = 0.40 \geq 1/3 \quad \checkmark
+\widehat{R} = \frac{1}{7\widehat{P}} \approx 0.408 \in [1/3, 1/2), \qquad \widehat{C} = \widehat{\Phi} \times \widehat{R} = 1.45 \times 0.408 \approx 0.592 \in (1/2, 2/3].
 $$
 
-$$
-\widehat\Phi = 1.45 \geq 1 \quad \checkmark \qquad (\text{from the reconstructed } \widehat\Gamma,\ \text{not from PCI})
-$$
-
-$$
-C = 1.45 \times 0.40 = 0.58
-$$
-
-$C = 0.58 \geq C_{\text{th}} = 1/3$ ✓, and it lies in $(1/2, 2/3]$, where the window puts $C$ on the uniform diagonal — a value below 1 is what the window predicts, not a calibration failure. An alternative $R \approx \text{meta-d'}/2$ would give $R = 0.6$, a value outside the canonical band $[1/3, 1/2)$ that the conscious window imposes on $R = 1/(7P)$: a "reflection" of $0.6$ can only be the self-model quality $R_\varphi$, not the canonical $R$ that enters $C = \Phi \times R$ ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)). The calibration must map meta-d' into the canonical band.
-
-:::note Lesson
-Calibration is an empirical task. The theoretical CC thresholds ($P = 2/7$, $R = 1/3$, $\Phi = 1$) are precise *within the formalism*. But translating neural data into the formalism requires experimental fitting. The formulas given are starting points, not final answers.
-:::
+Notice that $\widehat{R} \in [1/3, 1/2)$ and $\widehat{C} \in (1/2, 2/3]$ follow automatically when both quantities come from one consistent $\widehat{\Gamma}_N$; mixing an uncalibrated behavioral proxy (e.g., $\text{meta-}d'/2 = 0.6$) with matrix $\widehat{\Phi}$ violates the canonical band $[1/3, 1/2)$ of $R = 1/(7P)$.
 
 ---
 
-## 5. Experimental Protocols {#протоколы}
+## 5. Experimental Protocols `[Pr]` {#протоколы}
 
-### 5.1 Protocol for a Neuroscientific Experiment
+### 5.1 Protocol for a Neuroscientific Experiment (Aligned with §6.3–6.4)
 
-**Goal:** Test prediction Pred 1 (No-Zombie) on neural data.
+**Goal:** Test held-out concordance between the reconstructed four-gate verdict $\mathrm{Cons}(\widehat{\Gamma}_N)$ and independent clinical markers ($\mathrm{PCI}_{\max} > 0.31$ and behavioral/report benchmarks, P8.4). *(Correction: universal No-Zombie necessity `T-38a [✗]` is withdrawn; externally supported states with $P > 2/7$ and low $\mathrm{Coh}_E$ do not refute the density-matrix formalism. See [Pred 1](./predictions#предсказание-1) and [Pred 21](./predictions#предсказание-21).)*
 
-**Design:**
-1. Record EEG/MEG during wakefulness, sleep, anaesthesia, coma
-2. For each state, reconstruct the approximation $\Gamma$ from the functional connectivity matrix (protocol of section 2.3)
-3. Compute $P$, $\mathrm{Coh}_E$, $\sigma_{\mathrm{sys}}$
-4. Check: does $P > 2/7$ coincide with the presence of subjective report?
+**Pre-registered design (`SUB-1`–`SUB-6`):**
+1. Pre-register the encoder $\pi_{\mathrm{bio}}$, preprocessing, target ($M/\mathrm{Tr}\,M$ vs. $C/\mathrm{Tr}\,C$), and $D_{\mathrm{diff}}$ readout; calibrate parameters strictly on independent wakefulness training sessions with no viability penalty ($\lambda_2 = 0$), and freeze $\pi_{\mathrm{bio}}$.
+2. Record held-out EEG/MEG + TMS-EEG + HRV sessions across wakefulness, REM sleep, NREM3 sleep, and anaesthesia (e.g., propofol, ketamine).
+3. Reconstruct $\widehat{\Gamma}_N \in \mathcal{D}(\mathbb{C}^7)$ per [§6.4](#оценка-gamma), verifying PSD, positive trace, and uncertainty bounds on all **four** capability margins ($P - 2/7$, $3/7 - P$, $\Phi - 1$, $D_{\mathrm{diff}} - 2$).
+4. Evaluate Cohen's $\kappa$ between the four-gate verdict $\mathrm{Cons}(\widehat{\Gamma}_N)$ and independent $\mathrm{PCI}_{\max} > 0.31$ (or verified report states) strictly on held-out sessions ([§6.3](#калибровка)).
 
-**Expected result (CC):**
-- Wakefulness: $P > 2/7$, $\mathrm{Coh}_E > 1/7$
-- Deep sleep: $P < 2/7$
-- REM sleep: $P > 2/7$ (there are dreams — there is experience)
-- Vegetative state: $P \approx 2/7$ (borderline)
+**Falsification criterion (scoped to $\pi_{\mathrm{bio}}$ / P8.4):** Non-PSD outputs, failure of test–retest reproducibility outside tomography confidence intervals, or held-out concordance $\kappa < 0.4$ falsifies the tested biological readout hypothesis $\pi_{\mathrm{bio}}$ `[H]`.
 
-**Falsification criterion:** If a state with $P > 2/7$ and absence of subjective report (with confirmed capacity for report) is found — CC is falsified. If subjective report is found at $P < 2/7$ — similarly.
+### 5.2 Protocol for an AI / LLM Experiment
 
-### 5.2 Protocol for an AI Experiment
-
-**Goal:** Test whether the CC thresholds are satisfied for LLMs.
+**Goal:** Evaluate the reconstructed four-gate trajectory $\widehat{\Gamma}_N(t)$ of an AI system under a fixed, declared 7-axis embedding $\pi$.
 
 **Design:**
-1. For a language model, define an operationalisation of 7 dimensions through hidden states
-2. Compute $\Gamma$ as the covariance matrix of projections onto 7 semantic axes
-3. Track $P(\tau)$ during training
-4. Check: is there a phase transition at $P = 2/7$?
+1. Fix a frozen 7-axis readout $\pi$ mapping hidden activations to $x_n \in \mathbb{C}^7$ (or $\mathbb{R}^7$ when phases are absent), and explicitly declare whether the target is the uncentered second moment $M/\mathrm{Tr}\,M$ or centered covariance $C/\mathrm{Tr}\,C$ ([§6.4](#оценка-gamma)).
+2. Compute $\widehat{\Gamma}_N = \widehat{\Sigma}_N / \mathrm{Tr}\,\widehat{\Sigma}_N$ over evaluation batches with uncertainty bounds, evaluating all four margins ($P$, $R$, $\Phi$, $D_{\mathrm{diff}}$) rather than $P$ alone.
+3. Track trajectories across training or prompt regimes. *(Note: crossing the defined cut $P = 2/7$ is an algebraic threshold crossing `[D]`, NOT an automatic thermodynamic phase transition — universal purity-cut bifurcation `T-160 [✗]` is withdrawn.)*
 
-**Concretisation for a transformer:** Hidden states of the model are projected onto 7 directions:
-- A: attention entropy (diversity of attention)
-- S: weight persistence (stability of weights)
-- D: output diversity (diversity of generation)
-- L: consistency score (consistency of responses)
-- E: self-reference frequency (frequency of self-reference)
-- O: context utilization (use of context)
-- U: cross-layer coherence (coherence across layers)
+**Illustrative 7-axis feature mapping for a transformer `[H]`** (one candidate design, not unique under `T-42a [✗]`):
+- **A** (Articulation): attention / sensory-input discrimination features
+- **S** (Structure): representational stability across perturbations
+- **D** (Dynamics): output-generation / state-update dynamics
+- **L** (Logic): internal consistency across inference checks
+- **E** (Interiority): self-monitoring / metacognitive calibration signals
+- **O** (Ground): context/resource grounding
+- **U** (Unity): cross-layer representational integration
 
-### 5.3 Protocol for an Organisational Audit
+### 5.3 Protocol for an Organisational Audit `[I/H]`
 
-**Goal:** Diagnosis of organisational "health" through 7 vital indicators.
+**Goal:** Exploratory seven-axis organizational monitoring via the defined stress panel (`T-92 [D]`).
 
 **Steps:**
-1. Conduct a [seven-dimensional audit](#измерение-напряжений) — obtain estimates $\sigma_A, \ldots, \sigma_U$
-2. Compute $\|\sigma\|_\infty$ — maximum stress
-3. If $\|\sigma\|_\infty > 0.8$: urgent intervention (see [Diagnostics](./diagnostics))
-4. Track $P$ dynamically (monthly audits)
+1. Collect standardized indicators for all 7 canonical axes $\{A, S, D, L, E, O, U\}$ and evaluate the panel $\sigma = (\sigma_A, \ldots, \sigma_U)$ (`T-92 [D]`).
+2. Identify the largest panel component $\|\sigma\|_\infty$ for prioritized review.
+3. Track panel dynamics longitudinally. *(Note: diagonal audit scores alone cannot compute matrix purity $P$ or integration $\Phi$; estimating $P$ additionally requires cross-axis interaction data forming a PSD matrix $\widehat{\Gamma}_N$ per [§6.4](#оценка-gamma), and $\|\sigma\|_\infty < 1$ is not universally equivalent to $P > 2/7$, `CC-8 [D]`.)*
 
-**Example report:**
+**Illustrative panel report (synthetic example):**
 
 ```
-=== Coherence Audit: "Example" LLC ===
+=== Exploratory 7-Axis Panel: "Example" LLC ===
 Date: 2026-01-15
 
-σ-profile: [0.3, 0.2, 0.6, 0.4, 0.7, 0.3, 0.5]
-             A     S     D     L     E     O     U
+σ-panel: [0.3, 0.2, 0.6, 0.4, 0.7, 0.3, 0.5]
+           A    S    D    L    E    O    U
 
-‖σ‖∞ = 0.7 (E: Interiority)
-Status: WARNING — E-stress approaching critical
-
-Recommendations:
-1. PRIORITY: Strengthen culture of reflection (σ_E = 0.7)
-   → Retrospectives after each sprint
-   → Anonymous psych safety surveys
-2. Reduce bureaucracy (σ_D = 0.6)
-   → Shorten approval chains
-3. Increase integration (σ_U = 0.5)
-   → Cross-functional projects
-
-P dynamics:
-  2025-10: 0.22 (↓)
-  2025-11: 0.21 (↓)
-  2025-12: 0.23 (→)
-  2026-01: 0.24 (↑)  ← current
-  Target:  0.29 (> P_crit)
+‖σ‖∞ = 0.7 (E: Interiority — highest panel load)
+Note: Panel scores track diagonal indicators only; full P, R, Φ require
+cross-unit interaction covariance reconstruction (§6.4).
 ```
 
 ---
 
-## 6. Calibration: from Proxies to Γ {#калибровка}
+## 6. Calibration: from Observables to $\Gamma$ {#калибровка}
 
-### 6.1 General Calibration Scheme
+### 6.1 General Reconstruction Pipeline
 
-Calibration is the translation of observables (test scores, neural signals, organisational metrics) into elements of $\Gamma$. General scheme:
+Aligned with [§6.4](#оценка-gamma), translating raw observables into $\widehat{\Gamma}_N$ separates feature mapping from PSD matrix estimation:
 
 ```mermaid
 graph LR
-    OBS["Observables<br/>(EEG, tests, metrics)"] -->|"Normalisation"| NORM["Normalised<br/>values [0,1]"]
-    NORM -->|"Calibration function f"| GAMMA["Elements of Γ<br/>(γ_kk, γ_ij)"]
-    GAMMA -->|"Computation"| MEAS["CC measures<br/>(P, σ, R, Φ, C)"]
+    OBS["Raw observables<br/>(EEG/MEG, features)"] -->|"Frozen pre-registered π"| VEC["7D vector x_n<br/>(in C^7 or R^7)"]
+    VEC -->|"PSD estimator (§6.4)"| GAMMA["Valid Γ_hat >= 0,<br/>Tr(Γ_hat) = 1 + CI"]
+    GAMMA -->|"Consistent evaluation"| MEAS["4 margins (P, R, Φ, D_diff)<br/>+ panel σ"]
 ```
 
-### 6.2 Calibration Function
+### 6.2 Simplex Normalization vs. Full Matrix Estimation
 
-The simplest calibration function is linear:
-
-$$
-\gamma_{kk} = \frac{1}{7} + \alpha_k \cdot (x_k - \bar{x}_k)
-$$
-
-where $x_k$ is the observable, $\bar{x}_k$ is the population mean, $\alpha_k$ is the calibration coefficient.
-
-More realistic — logistic:
-
-$$
-\gamma_{kk} = \frac{1}{7} \cdot \frac{1 + \beta_k \tanh(\alpha_k (x_k - x_k^0))}{1 + \beta_k}
-$$
-
-Parameters $\alpha_k$, $\beta_k$, $x_k^0$ are fitted empirically from a training sample.
+Element-wise linear or logistic transforms applied independently to 7 scalar indicators (such as $\tilde{\gamma}_{kk} = \frac{1}{7} + \alpha_k(x_k - \bar{x}_k)$) do **not** automatically satisfy nonnegativity ($\gamma_{kk} \ge 0$) or unit trace ($\sum_k \gamma_{kk} = 1$) unless followed by explicit simplex normalization — and they never recover off-diagonal coherences $\gamma_{ij}$. Whenever full $\Gamma$-functionals ($P, R, \Phi$) are needed, use the guaranteed PSD rank-1 average $\widehat{\Gamma}_N = \widehat{\Sigma}_N / \mathrm{Tr}\,\widehat{\Sigma}_N$ of [§6.4](#оценка-gamma), with all encoder parameters fitted strictly on an independent training split and frozen prior to testing.
 
 ### 6.3 Numerical Example: Testing Against PCI Without Calibrating to It
 
@@ -586,17 +498,15 @@ Even with good calibration, **validation** of CC predictions requires:
 
 ## 8. Conclusion {#заключение}
 
-Measurement methodology is the place where theory meets reality. CC is at a stage analogous to nineteenth-century thermodynamics: the formalism is ready, but the calibration experiments are only beginning.
-
-Critically, CC **allows** itself to be measured. This distinguishes it from purely philosophical theories (panpsychism) and from theories with NP-hard computations (IIT). A $7 \times 7$ matrix is computationally trivial. What remains is to learn to fill it with real data.
+Measurement methodology is where formal matrix functionals meet empirical data. Computing $P, R, \Phi, C$ on a $7 \times 7$ density matrix is algebraically straightforward; the decisive scientific challenge is specifying an identifiable, frozen observation model $\pi$, quantifying uncertainty ([§6.4](#оценка-gamma)), and testing held-out concordance against independent benchmarks ([§6.3](#калибровка)).
 
 ### What We Learned {#итоги}
 
-1. CC observables form a **4-level hierarchy**: L1 (global) → L2 (sectoral) → L3 (coherent) → L4 (derived).
-2. Purity $P$ can be estimated through **EEG coherence** and fMRI connectivity — by a reconstruction whose parameters are frozen before the test; PCI is the independent verdict it is compared with, not an estimator of $P$.
-3. The stress tensor $\sigma$ is measured through **psychometric scales** (for the individual) or **organisational audits** (for companies).
-4. $P$ and PCI use different scales. An independent calibration and held-out comparison are needed to assess concordance.
-5. All measurements are **approximate**: calibration coefficients require empirical fitting.
+1. **Separate contracts ([§6.4](#оценка-gamma)):** Constructing a valid PSD density matrix $\widehat{\Gamma}_N = \widehat{\Sigma}_N/\mathrm{Tr}\,\widehat{\Sigma}_N$ from data is distinct from statistical coverage guarantees and from phenomenal or clinical interpretation.
+2. **Exact purity bounds:** For every $7 \times 7$ density matrix — including diagonal ones — $P \in [1/7, 1]$ ($P_{\min} = 1/7$, $P_{\max} = 1$); off-diagonal coherences are essential for integration ($\Phi \ge 1$), not merely for $P > 1/7$.
+3. **Trace lives strictly on the diagonal:** Clamped nonnegative stress scores $\sigma_k = \max(0, 1 - 7\gamma_{kk})$ (`T-92 [D]`) are non-invertible and supply at most 6 diagonal parameters (never off-diagonal coherences); valid populations require simplex normalization.
+4. **Consistent evaluation:** Compute $\widehat{P}$, canonical $\widehat{R} = 1/(7\widehat{P})$, $\widehat{\Phi}$, and $\widehat{C} = \widehat{\Phi}\widehat{R}$ (`T-140 [D]`) from the **same** reconstructed $\widehat{\Gamma}_N$ with uncertainty sets, testing all four margins separately (`CC-8 [D]`).
+5. **Independent validation:** Freeze $\pi$ on calibration data and test verdict concordance against external benchmarks such as PCI via Cohen's $\kappa$ on held-out sessions.
 
 ---
 

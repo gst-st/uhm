@@ -2,44 +2,44 @@
 \label{sec:composition}
 
 The industry's answer to a bigger problem is a bigger machine: more cores,
-more layers, one monolithic model scaled without limit. UHM proves this
-answer has a ceiling, and \TALOS{} enforces it as a design rule rather than
-discovering it as a scaling wall.
+more layers, one monolithic model scaled without limit. \TALOS{} adopts the
+opposite architectural discipline: keep each unified holon tower bounded at a
+small, fixed nesting depth and scale out horizontally through peer-to-peer
+ecologies.
 
-\begin{claimbox}[Composition ceiling \status{T}]
-Unified subjecthood composes at most \emph{three} levels: $\mathrm{SAD}_{\max}=3$
-(T-142). A holon of holons of holons is still one coherent agent; a
-fourth level of nesting does not form a fourth subject --- it forms
-\emph{administration}, an ecology of agents rather than a larger mind. The
-purity ceiling $P^{(m)}_{\mathrm{crit}}$ makes the viability set exactly
-$\{1,2,3\}$; the fourth rung requires $P>1$, which is impossible.
+\begin{claimbox}[Scoped composition depth \status{D} (T-142)]
+In the reference \TALOS{}/\SYNARC{} specification, vertical self-model nesting
+is capped as a \textbf{scoped model parameter} at depth $d_{\max}=3$ (T-142
+\status{D}): a bounded cognitive tower holds four contiguous \DM{} registers
+--- base state $\Cog_0$ plus three nested meta-levels $\Cog_1,\Cog_2,\Cog_3$
+($4\times 784=3{,}136$~bytes). Earlier claims of a universal impossibility
+theorem for depth four (T-136, T-217) were withdrawn; here $d_{\max}=3$ is a
+finite design cap motivated by keeping per-agent purity margins, verification
+scope, and state footprint strictly bounded, shifting scale-out above depth
+three to peer ecologies rather than deeper monolithic nesting.
 \end{claimbox}
 
 \begin{zerobox}[From zero --- three dolls deep]
-A matryoshka doll inside a doll inside a doll is still \emph{one toy} in your
-hands. But there is a depth past which nesting stops making one thing:
-the theory proves that for self-watching machines that depth is exactly
-\emph{three}. Four-deep is not a bigger toy --- it is a shelf. And a shelf is
-not a failure: it is how you grow past the ceiling --- many complete toys,
-side by side, talking (an \emph{ecology}), rather than one impossible
-super-doll.
+A matryoshka doll inside a doll inside a doll is still \emph{one compact toy}
+in your hands. Rather than nesting deeper without end, the design sets a clean
+depth cap of three meta-layers (four nested registers in total, base plus
+three). Beyond that depth you do not build a taller tower --- you build a
+shelf: many complete, bounded toys side by side, talking as peers (an
+\emph{ecology}), rather than one unbounded super-doll.
 \end{zerobox}
 
 The architectural consequence is precise. A \TALOS{} system scales in two
-regimes. \emph{Within} a subject, up to three composition levels
-(sector~$\to$~holon~$\to$~federation), the state is a small tower
-($4\times784=3136$~bytes) and the whole is one integrated agent. \emph{Above}
-three, one does not build a deeper core --- there is no coherent state to
-build --- one builds an \textbf{ecology}: many three-deep subjects coupled as
-peers, coordinating through the \textsc{Fanos} distributed fabric, not fused into a
-super-mind. This is the same result that makes a UHM-compliant
-super-intelligence necessarily an ecology rather than a singleton, read as a
-hardware scaling law: past the third rung, add agents, not depth.
+regimes. \emph{Within} a subject, up to three meta-levels above the base
+register ($\Cog_0\to\Cog_1\to\Cog_2\to\Cog_3$), the state is a fixed four-register
+tower ($4\times784=3{,}136$~bytes) fitting inside a small slice of L1 cache.
+\emph{Above} that design depth, one does not grow a monolithic register file
+--- one builds an \textbf{ecology}: many bounded subjects coupled as peers,
+coordinating through the \textsc{Fanos} distributed fabric.
 
-Two engineering corollaries follow. First, verification is bounded: a
-subject's state space is fixed and tiny regardless of the ecology's size, so
-the hard verification target (a single three-deep holon) does not grow with
-deployment scale. Second, the failure domain is bounded: a fault contained in
-one three-deep subject cannot corrupt the ecology's shared state, because
-there is no shared subject-state above level three to corrupt --- only
-peer-to-peer \textsc{Fanos} traffic, itself distance-3 protected.
+Two engineering corollaries follow directly from this bounded design depth.
+First, verification is bounded: a single subject's state space is fixed at
+$3{,}136$~bytes regardless of the ecology's size, so the formal verification
+target does not grow with deployment scale. Second, the failure domain is
+bounded: a fault contained in one subject cannot corrupt a monolithic global
+state, because coordination above the tower is peer-to-peer \textsc{Fanos}
+traffic with sector-level Hamming protection.

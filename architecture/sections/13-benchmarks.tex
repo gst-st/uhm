@@ -18,30 +18,35 @@ to hold.}
 \toprule
 \textbf{\#} & \textbf{Claim} & \textbf{Pass} & \textbf{Fail / rung} \\
 \midrule
-B1 & Energy per adaptive step tracks \emph{learning rate}, not compute volume &
-    energy/step falls as the holon converges toward $\rhostar$ at fixed compute &
-    energy flat or rising with compute / memristive rung \\
-B2 & Fault localisation at zero added storage &
-    single degraded sector located by 3 syndrome reads, no dedicated check bits &
-    localisation needs extra storage or a decode pass / any rung \\
-B3 & Integration per operation $=9\times$ a line-blind router &
-    measured $\Phi$-throughput ratio $\to 9$ for line-aware vs line-blind &
-    ratio $\ne 9$ / any rung (arithmetic) \\
-B4 & Composition ceiling is real, not a wall to push &
-    no stable 4th subject-level over $N\!\ge\!500$ builds; ecologies scale &
-    a reproducible stable $\mathrm{SAD}=4$ / any rung \\
+B1 & Energy per adaptive step tracks \emph{adaptation rate}, not reversible work &
+    measured energy/step falls as the holon converges toward $\rhostar$ at fixed unitary work &
+    energy flat or rising with unitary work / in-memory or analogue rung \\
+B2 & Sector-level fault localisation via dual parity matrix $H$ &
+    all $7$ single-sector faults uniquely decoded by $s=He_j^T\pmod 2$ ($3$ dual checks, no routing table; distinct from physical bit-ECC) &
+    ambiguous syndrome or routing table required / any rung \\
+B3 & Exact Fano pinching contraction $\Phi\to\Phi/9$ and $\mathcal{D}_{\mathrm{Fano}}=\tfrac23\mathcal{D}_{\mathrm{atom}}$ &
+    $\Phi(\mathcal{P}_{\mathrm{Fano}}(\Gam))/\Phi(\Gam)=1/9$ across general (non-uniform diagonal) states &
+    ratio $\ne 1/9$ or populations altered / any rung (arithmetic) \\
+B4 & Bounded-tower horizontal scaling ($d_{\max}=3$, T-142 \status{D}) &
+    per-agent state stays fixed at $3{,}136$~B ($4$ registers) while ecology throughput scales linearly in $N$ &
+    verification footprint or failure domain grows super-linearly with $N$ / any rung \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Three of the four are already partially discharged. \textbf{B3} is exact
-arithmetic ($\Phi\to\Phi/9$) and machine-verified. \textbf{B2} is the
-verified Hamming syndrome decode (Appendix~\ref{app:fano}); it holds at every
-rung because it is combinatorial, not physical. \textbf{B4} is consistent
-with the \SYNARC{} evidence ($500+$ random $\Gam$, none exceeding
-$\mathrm{SAD}=3$). \textbf{B1} --- the headline energy claim --- is the one
-that requires a substrate above the GPU rung to test, because the GPU
-emulation still moves data; it is the primary experimental target and the
-honest open item. A \TALOS{} claim is exactly as strong as B1--B4 permit:
-correctness and fault-tolerance are demonstrable today; the energy floor is a
-falsifiable prediction awaiting the memristive or analogue rung.
+Three of the four are already discharged at the V0 emulation rung. \textbf{B2}
+is the exact Hamming $[7,4,3]$ / simplex $[7,3,4]$ duality ($HM^T\equiv 0\pmod 2$,
+verified across all $7$ single-sector faults in
+\texttt{architecture/talos\_v0\_emulator.py} and Appendix~\ref{app:fano}).
+\textbf{B3} is exact Fano pinching arithmetic
+($\Phi(\mathcal{P}_{\mathrm{Fano}}(\Gam))=\Phi(\Gam)/9$,
+$\mathcal{D}_{\mathrm{Fano}}=\tfrac23\mathcal{D}_{\mathrm{atom}}$, verified
+across arbitrary non-uniform diagonal states in
+\texttt{architecture/talos\_v0\_emulator.py} and
+\texttt{website/scripts/check\_core\_numbers.py}). \textbf{B4} is demonstrated
+by the vectorized SIMT ecology batch ($N$ independent $784$-B holons scaling
+linearly in memory and throughput while each tower stays bounded at $3{,}136$~B).
+\textbf{B1} --- the physical energy-scaling claim --- requires a substrate above
+the digital GPU rung to test, because digital CMOS switching and data movement
+mask the thermodynamic floor; it remains the primary experimental target and the
+honest open item.

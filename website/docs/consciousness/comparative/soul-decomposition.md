@@ -24,7 +24,7 @@ This is a comparative interpretation [I], with hypotheses attached to the physic
 2. **The instrument panel** — the selected definitions and conditional results
 3. **The decomposition** — six components of "soul", each with its formal object and its fate
 4. **The register of assessments** — distinctions, supported results and open bridges
-5. **The traditions under the panel** — Egypt, Greece, Aristotle, the Stoa, Buddhism, Vedānta, Kabbalah, Christianity, Sufism, Daoism, Gnosis, Jung, Sheldrake, the Akashic records, spiritism
+5. **The traditions under the panel** — Egypt, Greece, Aristotle, the Stoa, Buddhism, Vedānta, Kabbalah, Christianity, Sufism, Daoism, Gnosis, Jung
 6. **Structural convergences** — the layer architecture; body–soul–spirit, typed
 7. **The direct questions** — when a soul begins; pre-existence; māyā; whether new mathematics is needed
 8. **Where the theory is silent** — the honest boundary of jurisdiction
@@ -32,17 +32,17 @@ This is a comparative interpretation [I], with hypotheses attached to the physic
 :::note On notation
 In this document:
 - $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), the state of a holon; $\gamma_{ij}$ — its elements
-- $P=\operatorname{Tr}(\Gamma^2)$ — purity; $P_{\mathrm{crit}}=2/7$ is the declared cut used here, with physical interpretation requiring calibration [D/I/H].
-- $R=1/(7P)$ — the canonical purity diagnostic; the selected $R\ge1/3$ criterion is equivalent to $P\le3/7$ [T under D], not a universal metacognition threshold.
-- $\Phi=P/Q-1$, $Q=\sum_i\gamma_{ii}^2$ — integration in a specified frame; $\Phi\ge1$ is a declared gate [D].
-- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — differentiation measure; threshold $D_{\min} = 2$ **[D]** (T-151, an independent L2 threshold)
-- $C = \Phi \times R$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) (T-140)
+- $P=\operatorname{Tr}(\Gamma^2)$ — purity; $P_{\mathrm{crit}}=2/7$ is the declared cut used here, with physical interpretation requiring calibration **[D]**/**[I]**/**[H]**.
+- $R=1/(7P)$ — the canonical purity diagnostic; the selected $R\ge1/3$ criterion is equivalent to $P\le3/7$ **[T]** (under **[D]**), not a universal metacognition threshold.
+- $\Phi=P/Q-1$, $Q=\sum_i\gamma_{ii}^2$ — integration in a specified frame; $\Phi\ge1$ is a declared gate **[D]**.
+- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — differentiation measure on an extended experiential register $\mathcal{H}_E$ (native 7D proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E(\Gamma)$); threshold $D_{\min} = 2$ **[D]** (T-151, an independent L2 threshold)
+- $C = \Phi \times R$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) **[D]** (T-140)
 - $\varphi$ — [self-modelling operator](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке); $\Gamma^* = \varphi(\Gamma^*)$ — its fixed point
 - $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ — [evolution equation](/docs/core/dynamics/evolution); $\mathcal{R}$ — the regenerative term
 - $K(\tau)$ — [memory kernel](/docs/consciousness/states/attention-memory#память); $\mathrm{Gap}(i,j)$ — [opacity of a channel](/docs/core/dynamics/gap-operator)
 - $\Gamma_{\text{comp}}$ — [composite matrix](/docs/core/dynamics/composite-systems#составная-матрица); $\mathcal{U}_{\text{coll}}$ — [collective unconscious](/docs/consciousness/subjects/collective-consciousness#определение-коллективного-бессознательного)
 - L0–L4 — [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy); SAD — [self-awareness depth](/docs/consciousness/hierarchy/depth-tower)
-- Statuses: **[T]** theorem · **[C]** conditional · **[D]** definition · **[I]** interpretation · **[P]** postulate/open — see [Status Registry](/docs/reference/status-registry)
+- Statuses: **[T]** theorem · **[C]** conditional theorem · **[H]** hypothesis · **[P]** postulate · **[Pr]** research programme · **[D]** definition · **[I]** interpretation · **[✗]** retracted — see [Status Registry](/docs/reference/status-registry)
 :::
 
 :::warning Document status
@@ -55,17 +55,17 @@ This chapter proposes comparisons [I], not proofs of religious doctrines. Defini
 
 ### 1.1 The five jobs of one word {#пять-работ-одного-слова}
 
-Ask a Vedāntin, a Rabbi, an Egyptian priest, a Platonist, and a modern spiritualist what the soul *is*, and you will receive five different job descriptions:
+Ask a Vedāntin, a Rabbi, an Egyptian priest, a Platonist, and a Stoic what the soul *is*, and you will receive five different job descriptions:
 
-1. **Ф1 — the experiencer.** The soul is *that which feels*: remove it and the body becomes a machine in the dark.
-2. **Ф2 — the bearer of identity.** The soul is *that which makes me the same person* across sleep, decades, and change.
-3. **Ф3 — the subtle baggage.** The soul is *that which carries the past into new life*: karma, saṃskāras, inherited temperament — the answer to "why was I born this and not other?"
-4. **Ф4 — the field of forms.** The soul is *that which shapes the living body*: the entelechy, the vegetative soul, the morphogenetic field.
-5. **Ф5 — the eternal record.** The soul is *that which is not erased*: what survives when the body is dust.
+1. **F1 — the experiencer.** The soul is *that which feels*: remove it and the body becomes a machine in the dark.
+2. **F2 — the bearer of identity.** The soul is *that which makes me the same person* across sleep, decades, and change.
+3. **F3 — the subtle baggage.** The soul is *that which carries the past into new life*: karma, saṃskāras, inherited temperament — the answer to "why was I born this and not other?"
+4. **F4 — the field of forms.** The soul is *that which shapes the living body*: the entelechy, the vegetative soul, the formative principle.
+5. **F5 — the eternal record.** The soul is *that which is not erased*: what survives when the body is dust.
 
 And behind all five, a sixth intuition that is not a function but a relation:
 
-6. **Ф6 — the spark.** The soul is *the point where the individual touches the absolute*: ātman, the scintilla animae, the image of God.
+6. **F6 — the spark.** The soul is *the point where the individual touches the absolute*: ātman, the scintilla animae, the image of God.
 
 In everyday language and in most philosophy, one word does all six jobs. In software terms: "soul" is a **God object** — a single class that accumulated every responsibility the system could not otherwise place: rendering, persistence, networking, authentication. The question "does the God object exist?" has no useful answer. The useful act is **refactoring**: split the responsibilities into interfaces, find which component actually implements each, and discover — this is the crucial point — that the components have **different lifecycles**. Some die with the process. Some are serialized. Some were never instance members at all, but static properties of the class.
 
@@ -73,12 +73,12 @@ That refactoring is what this chapter performs. The result, stated in advance:
 
 | Function | Formal analogue | Scope of continuation |
 |---|---|---|
-| Ф1 experiencer | Capability regime plus a phenomenal bridge | Depends on the actual dynamics and bridge |
-| Ф2 identity | Declared criterion on state/model histories | State transfer and personal continuity are distinct |
-| Ф3 baggage | Initial conditions and incoming influences | Selected conditions may be transmitted through specified channels |
-| Ф4 field of forms | Attractors, learned dynamics and composite patterns | May persist while carriers and reproduction mechanisms persist |
-| Ф5 eternal record | Retention and recovery on a specified channel | No complete archive follows from trace preservation |
-| Ф6 spark | Observer-section or type analogy | Philosophical interpretation, not an immortality theorem |
+| F1 experiencer | Capability regime plus a phenomenal bridge | Depends on the actual dynamics and bridge |
+| F2 identity | Declared criterion on state/model histories | State transfer and personal continuity are distinct |
+| F3 baggage | Initial conditions and incoming influences | Selected conditions may be transmitted through specified channels |
+| F4 field of forms | Attractors, learned dynamics and composite patterns | May persist while carriers and reproduction mechanisms persist |
+| F5 eternal record | Retention and recovery on a specified channel | No complete archive follows from trace preservation |
+| F6 spark | Observer-section or type analogy | Philosophical interpretation, not an immortality theorem |
 
 ### 1.2 Why the intended meaning matters {#почему-да-и-нет-оба-неверны}
 
@@ -190,19 +190,19 @@ The cosmological realisation is a model proposal **[P/H]**; none of the followin
 4. **Observers.** Modelling an observer by an internal section is a declared categorical construction/readout **[D/I]**. It does not prove the physical or phenomenal identity of that section with a subject.
 5. **Sector and frame.** Exact recovery holds on a declared isometric code; arbitrary substrate compression is not faithful. Canonical $P,R$ are unitary invariants, but $\Phi$ depends on the native frame and the experiential variable on its chosen sector. A compatible relabelling preserves the corresponding data; arbitrary $G_2$ quotienting does not preserve the full gate.
 6. **Higher-order depth.** The optional Fano SAD index has a definitional maximum of three, whereas operational recursion requires independent predictive certificates. The universal ceiling and the purported $P_{\rm crit}^{(4)}=54/35$ cognitive deduction are withdrawn; [Depth Tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) imposes no universal cosmic depth.
-7. **Transparency and bridge.** Hamming bounds require an actual coding model; they force no three opaque phase channels. Phase Gap cannot identify the full capability certificate. Lawvere applies to an evaluator meeting its hypotheses and supplies no universal T-214 prohibition of an internal phenomenal bridge. That bridge remains **[I/H]**, to be specified and supported independently.
+7. **Transparency and bridge.** Hamming bounds require an actual coding model; they force no three opaque phase channels. Phase Gap cannot identify the full capability certificate. Lawvere applies to an evaluator meeting its hypotheses and supplies no universal T-214 [✗] prohibition of an internal phenomenal bridge. That bridge remains **[I]**/**[H]**, to be specified and supported independently.
 
 ## 3. The decomposition {#декомпозиция}
 
 ```mermaid
 graph TD
     SOUL["the soul — one word, six jobs"]
-    F1["Ф1 experiencer<br/>capability + bridge"]
-    F2["Ф2 identity<br/>declared continuity"]
-    F3["Ф3 baggage<br/>initial conditions"]
-    F4["Ф4 field of forms<br/>attractors + Γ_comp"]
-    F5["Ф5 eternal record<br/>retention/recovery"]
-    F6["Ф6 spark<br/>internal section"]
+    F1["F1 experiencer<br/>capability + bridge"]
+    F2["F2 identity<br/>declared continuity"]
+    F3["F3 baggage<br/>initial conditions"]
+    F4["F4 field of forms<br/>attractors + Γ_comp"]
+    F5["F5 eternal record<br/>retention/recovery"]
+    F6["F6 spark<br/>internal section"]
     SOUL --> F1
     SOUL --> F2
     SOUL --> F3
@@ -217,33 +217,33 @@ graph TD
     F6 --> D6["interpretive analogy"]
 ```
 
-### 3.1 Ф1 — the experiencer: a regime, not a resident {#ф1-субъектность}
+### 3.1 F1 — the experiencer: a regime, not a resident {#ф1-субъектность}
 
-A candidate operational regime is the calibrated $\mathrm{Cap}_2$ certificate (§2.2). Its identification with the experiencer is **[I/H]**, not a mathematical identity theorem. The former universal No-Zombie proof is withdrawn: a dynamics can receive independent purity input or bootstrap, and a numerical E-coherence variable does not automatically denote experience.
+A candidate operational regime is the calibrated $\mathrm{Cap}_2$ certificate (§2.2). Its identification with the experiencer is **[I]**/**[H]**, not a mathematical identity theorem. The former universal No-Zombie proof is withdrawn: a dynamics can receive independent purity input or bootstrap, and a numerical E-coherence variable does not automatically denote experience.
 
 A specified realisation needs a carrier, physical readout and differentiation model. Conditional loss of that regime under a declared mixing/no-repair dynamics is not universal phenomenal extinction. These requirements make the proposed comparison with “soul as a mode of living” explicit **[I]**; they neither prove nor refute every separable-soul doctrine.
 
-### 3.2 Ф2 — the bearer of identity: a thread, not a token {#ф2-тождество}
+### 3.2 F2 — the bearer of identity: a thread, not a token {#ф2-тождество}
 
-The proposed formal analogue is continuity of a specified maintained state/model trajectory **[D/I]**. Its existence and stability require the conditions in §2.5; no scalar threshold proves a break of personal identity.
+The proposed formal analogue is continuity of a specified maintained state/model trajectory **[D]**/**[I]**. Its existence and stability require the conditions in §2.5; no scalar threshold proves a break of personal identity.
 
-SWAP, teleportation, preparation of a known state and approximate classical reconstruction are different operations. No-cloning forbids an exact uniform copier for the relevant unknown family, not all reconstruction or transfer. Whether a successor, transferred register or duplicate is “the same person” is a declared identity criterion **[I/H]**, not a consequence of cloning impossibility. The former universal verdict that all these procedures destroy a subject is withdrawn.
+SWAP, teleportation, preparation of a known state and approximate classical reconstruction are different operations. No-cloning forbids an exact uniform copier for the relevant unknown family, not all reconstruction or transfer. Whether a successor, transferred register or duplicate is “the same person” is a declared identity criterion **[I]**/**[H]**, not a consequence of cloning impossibility. The former universal verdict that all these procedures destroy a subject is withdrawn.
 
-### 3.3 Ф3 — inherited conditions {#ф3-багаж}
+### 3.3 F3 — inherited conditions {#ф3-багаж}
 
 **Question.** Why do new organisms differ in capacities, dispositions and circumstances? Traditions also ask about responsibility, suffering and rebirth; those further questions should not be reduced to an account of newborn variation.
 
-**Formal analogue [I/H].** A chosen initial condition $\Gamma(0)$ and subsequent inputs can model selected effects of biological inheritance, prenatal and later environments, and cultural transmission. These are examples of pathways, not a theorem that there are exactly two complete channels. Language and instruction usually influence a developmental history rather than fixing every component at birth. Only retained and causally transmitted effects of earlier lives enter such a model; not everything anyone contributed must survive.
+**Formal analogue [I]/[H].** A chosen initial condition $\Gamma(0)$ and subsequent inputs can model selected effects of biological inheritance, prenatal and later environments, and cultural transmission. These are examples of pathways, not a theorem that there are exactly two complete channels. Language and instruction usually influence a developmental history rather than fixing every component at birth. Only retained and causally transmitted effects of earlier lives enter such a model; not everything anyone contributed must survive.
 
 Noise requires its own stochastic law. A deterministic master equation can describe the same ensemble evolution from identical data; random realizations can coincide, and correlated noise need not differentiate them. Therefore decoherence does not guarantee distinct outcomes.
 
-:::note State transfer and identity [D/I/H]
+:::note State transfer and identity [D]/[I]/[H]
 Transmission of selected conditions is distinct from continuation of a person. The actual state-transfer process, resources and identity criterion must be specified. Neither a chosen purity gate nor no-cloning establishes completeness of the channels, universal irreversibility or impossibility of reconstruction (§2.4–§2.5).
 :::
 
 **Relation to karma [I].** Inherited consequences provide a useful comparison with conditioning across generations. They do not establish the religious law of karmic fruition, its relation to intention, or rebirth. In [AN 6.63](https://www.dhammatalks.org/suttas/AN/AN6_63.html), karma is tied to intentional action and its results; it is not simply a synonym for all genetic or cultural influence.
 
-### 3.4 Ф4 — organization and formative mechanisms {#ф4-поле-форм}
+### 3.4 F4 — organization and formative mechanisms {#ф4-поле-форм}
 
 **Question.** How do organized forms develop, maintain themselves and recur? Several mathematical mechanisms can address parts of this problem:
 
@@ -251,18 +251,18 @@ Transmission of selected conditions is distinct from continuation of a person. T
 2. **Learned dynamics.** Changes in effective parameters can retain the effects of prior interactions. Identifying this with a particular habit requires a learning and retrieval mechanism.
 3. **Composite patterns.** Interactions and records can propagate organization beyond one carrier. The representation $\Gamma_{\mathrm{comp}}$ does not itself supply those interactions or a new field.
 
-**Conditional continuation.** A pattern can outlast an individual when other carriers and reproduction mechanisms preserve it. Those carriers may include nonliving records or engineered systems. Neither perpetual persistence nor the reproduction of every detail follows. This gives a concrete programme for studying lineage and organization without declaring all historical formative-field theories solved (§5.13).
+**Conditional continuation.** A pattern can outlast an individual when other carriers and reproduction mechanisms preserve it. Those carriers may include nonliving records or engineered systems. Neither perpetual persistence nor the reproduction of every detail follows. This gives a concrete programme for studying lineage and organization without declaring all historical theories of morphogenesis solved.
 
-### 3.5 Ф5 — the eternal record: Akasha, weak and strong {#ф5-вечность}
+### 3.5 F5 — the eternal record: retention and recovery {#ф5-вечность}
 
-**What the traditions meant.** "Nothing is lost": the Akashic chronicle, the Book of Life, Spinoza's eternity of the mind.
+**What the traditions meant.** "Nothing is lost": the Book of Life, durable cosmic memory, Spinoza's eternity of the mind.
 
-:::note Information retention and recovery: distinct scopes [T/C/I]
-Trace preservation means normalisation, not conservation of every coherence or a readable environmental archive. A specified global unitary dilation retains joint distinguishability, but reduced system/environment states separately can lose it. Recovery from an actual channel requires an injective/reversible restriction, a correctable code or additional accessible data; a generic erasure channel has no full inverse. Neither this nor no-cloning forbids all records, known preparations or code recovery. A Page–Wootters static-state construction is conditional and does not prove an eternal archive of every life. “Weak/strong Akasha” is an interpretation [I/H], not the former blanket retention/impossibility theorem.
+:::note Information retention and recovery: distinct scopes [T]/[C]/[I]
+Trace preservation means normalisation, not conservation of every coherence or a readable environmental archive. A specified global unitary dilation retains joint distinguishability, but reduced system/environment states separately can lose it. Recovery from an actual channel requires an injective/reversible restriction, a correctable code or additional accessible data; a generic erasure channel has no full inverse. Neither this nor no-cloning forbids all records, known preparations or code recovery. A Page–Wootters static-state construction is conditional and does not prove an eternal archive of every life. Any identification of physical information retention with an accessible universal archive remains an unproved hypothesis **[H]** / interpretation **[I]**, not a consequence of trace preservation.
 :::
 **Spinoza: a philosophical comparison.** *Ethics* V.23 distinguishes eternity from bodily duration. Comparing this with a static mathematical representation may clarify that a timeless proposition is different from an ongoing process. It does not translate Spinoza’s argument into Page–Wootters, establish an eternal record, or decide the contested meaning of the mind’s eternity. The proposed correspondence is [I], not a mathematical endorsement of his doctrine.
 
-### 3.6 Ф6 — the spark as an interpretive question {#ф6-искра}
+### 3.6 F6 — the spark as an interpretive question {#ф6-искра}
 
 **Question.** Traditions speak of ātman, the divine image or a spark beyond ordinary individuality. These concepts differ about personhood, God and liberation.
 
@@ -276,23 +276,21 @@ The table distinguishes results inside a specified model from the historical or 
 
 | # | Claim | Present assessment | Required distinction or evidence |
 |---|---|---|---|
-| 1 | Viability entails experience | Open [I/H] | Operational balance and phenomenal bridge |
+| 1 | Viability entails experience | Open [I]/[H] | Operational balance and phenomenal bridge |
 | 2 | $C>0$ for every admitted state | False for canonical $C$ [C] | $C(I/7)=0$; this does not refute every panpsychist meaning of consciousness |
-| 3 | Experience continues after departure from a body | Not settled here [I/H] | Carrier, process and phenomenal criterion |
+| 3 | Experience continues after departure from a body | Not settled here [I]/[H] | Carrier, process and phenomenal criterion |
 | 4 | The same person returns | Not settled by no-cloning | Physical transmission and identity criterion |
-| 5 | Resurrection restores the same subject | Not settled here [I/H] | Preparation/recovery and personal identity |
-| 6 | Mediums communicate with surviving persons | Not established here [H] | Controlled information access and evidence of its attributed source |
-| 7 | New lives inherit prior conditions | Selected pathways can be modelled [I/H] | Actual encoding and developmental influence; no exhaustive two-channel theorem |
-| 8 | Collective organization shapes individuals | A modelling possibility [I/H] | Dynamics of interactions; nonfactorization alone is insufficient |
-| 9 | Forms and habits preserve a past | Conditional [C/I/H] | Learning, retention and reproduction mechanisms |
-| 10 | Earlier patterns influence distant later systems | Requires a specified competing model [H] | A declared causal exclusion can yield a null effect; equation omission is not a universal no-go |
-| 11 | No information is ever lost | Conditional distinguishability result only [C] | Accessible joint unitary dilation versus reduced erasure |
-| 12 | A complete record of lives is readable | Not established here [H] | Retention, accessible channel and decoder |
-| 13 | The self is identical with the absolute | Philosophical interpretation [I] | Section/type analogies do not prove this identity |
-| 14 | The absolute has infinite depth | Not refuted by SAD | A definitional finite score is not a universal recursion bound |
-| 15 | Complete self-transparency | Requires a specified observation/representation problem | Phase Gap alone does not establish or forbid it |
-| 16 | Persons pre-existed their present embodiment | Not settled by the chosen Source model [I/H] | Individuating encoding and continuity criteria |
-| 17 | Process, legacy and personal continuation coincide | These are distinct claims [D/I/H] | A process can end while records remain; records do not settle subject identity |
+| 5 | Resurrection restores the same subject | Not settled here [I]/[H] | Preparation/recovery and personal identity |
+| 6 | New lives inherit prior conditions | Selected pathways can be modelled [I]/[H] | Actual encoding and developmental influence; no exhaustive two-channel theorem |
+| 7 | Collective organization shapes individuals | A modelling possibility [I]/[H] | Dynamics of interactions; nonfactorization alone is insufficient |
+| 8 | Forms and habits preserve a past | Conditional [C]/[I]/[H] | Learning, retention and reproduction mechanisms |
+| 9 | No information is ever lost | Conditional distinguishability result only [C] | Accessible joint unitary dilation versus reduced erasure |
+| 10 | A complete record of lives is readable | Not established here [H] | Retention, accessible channel and decoder |
+| 11 | The self is identical with the absolute | Philosophical interpretation [I] | Section/type analogies do not prove this identity |
+| 12 | The absolute has infinite depth | Not refuted by SAD | A definitional finite score is not a universal recursion bound |
+| 13 | Complete self-transparency | Requires a specified observation/representation problem | Phase Gap alone does not establish or forbid it |
+| 14 | Persons pre-existed their present embodiment | Not settled by the chosen Source model [I]/[H] | Individuating encoding and continuity criteria |
+| 15 | Process, legacy and personal continuation coincide | These are distinct claims [D]/[I]/[H] | A process can end while records remain; records do not settle subject identity |
 
 The conclusions are component-specific. Individual and collective patterns can both be lost; both can sometimes be retained in another carrier. Mathematical type persistence and persistence of an experiencing person are different questions.
 
@@ -425,38 +423,7 @@ Tikkun can motivate reflection on responsibility for inherited conditions and co
 
 **Assessment.** Collective patterns and individual access are testable questions once observations and interactions are specified (§2.7). Neither the universality of particular archetypes nor the exclusion of biological contributions follows from partial trace or group-level stability.
 
-### 5.13 Sheldrake: competing formative explanations {#шелдрейк}
-
-**Doctrine.** Rupert Sheldrake (*A New Science of Life*, 1981; *The Presence of the Past*, 1988) proposed: (1) **morphogenetic fields** guide development — form is underdetermined by genetics; (2) **nature's memory** — the regularities of nature are habits, reinforced by repetition, not timeless laws; (3) **morphic resonance** — similar patterns influence subsequent similar patterns *across space and time by a proposed morphic influence*, cumulatively: rats worldwide should learn a maze faster once many rats have learned it (his reading of McDougall's multi-generation Harvard experiment), new compounds should crystallize more readily everywhere once crystallized anywhere.
-
-**Comparison and test [I/H].** Development, recurrence and memory are genuine explanatory tasks. Their existence does not establish Sheldrake's proposed mechanism; representing collective states does not explain all of them either. An influence missing from one effective equation is not forbidden by category theory or background independence.
-
-A precise null model can still make a sharp prediction. Suppose an intervention changes an earlier pattern $X$, while the later outcome obeys $Y=F(Z,\xi)$ and the joint law of $(Z,\xi)$ is invariant under that intervention. Then
-
-$$
-\mathcal L(Y\mid\operatorname{do}(X=x))
-=\mathcal L(Y\mid\operatorname{do}(X=x'))
-$$
-
-for admitted interventions [C]. This is an explicit causal-independence assumption, not a universal zero-effect theorem of UHM. A competing resonance model must specify how and by how much it changes that law. Reproducible disagreement would challenge the stipulated causal model; it would not alone identify the cause or establish that every ordinary physical pathway had been excluded.
-
-**Assessment.** The resonance hypothesis is not established by the formal analogies in this chapter. No comprehensive experimental verdict is supplied here. A controlled comparison of quantitative models is the appropriate next step, with shared materials, information and environmental influences included in the causal account.
-
-### 5.14 Ākāśa and the Theosophical records {#акаша}
-
-**Doctrine.** In Indian cosmology **ākāśa** is the fifth element — space itself as the subtle medium, carrier of sound (*śabda*). Theosophy (Blavatsky, *The Secret Doctrine*, 1888) transformed it into the **Akashic records**: a permanent, universal, *readable* register of all events, thoughts, and lives, consulted by clairvoyance (Leadbeater; Steiner's *Aus der Akasha-Chronik*; Edgar Cayce's "readings").
-
-**Mapping [I/H].** An archive analogy needs an actual retention and recovery channel. Trace conservation supplies no immutable register; a static constrained model does not prove that every accessible environmental state contains every life. Generic erasure prevents full inversion, while reversible restrictions and correctable codes can permit recovery. No-cloning of an unknown family does not forbid reading a classical record or preparing a known state. The weak/strong archive verdict remains model-dependent (§3.5).
-
-**Assessment [I/H].** Both a universal archive and privileged access to it need evidence beyond the stated formalism. Ordinary records and cultural transmission can explain some acquired information, but they cannot be declared the source of every claimed reading without examining the case. Retention, recovery accuracy and attribution to a particular life are separate tests.
-
-### 5.15 Spiritism {#спиритизм}
-
-**Doctrine.** Allan Kardec (*Le Livre des Esprits*, 1857) codified the séance age: surviving personalities, retaining memory and character, communicate through mediums.
-
-**Comparison [I/H].** A claim of communication with a deceased person has at least three components: information was obtained; ordinary access does not account for it under the protocol; its source is that surviving person. These are distinct evidential steps. Memory held by participants, records and information leakage are possible explanations to test, not a universal explanation established without investigation.
-
-**Assessment.** The formalism neither establishes the claimed communication nor proves every post-mortem carrier impossible. A fixed point's mathematical existence and a kernel's effective decay do not decide the source of a message. Controlled recovery of independently specified information would address one component; phenomenal survival and personal attribution require further criteria.
+<a id="шелдрейк"></a><a id="акаша"></a><a id="спиритизм"></a>
 
 ---
 
@@ -525,7 +492,7 @@ The existing mathematics supplies several candidate models, not a complete inven
 Three boundaries, stated without decoration, so that this chapter closes no gap by rhetoric (the discipline of the [epistemic vertical](/docs/reference/epistemic-vertical)):
 
 1. **Process, legacy and personal continuation.** The [revised continuity chapter](/docs/consciousness/ethics-meaning/death-continuity#после-смерти) separates these three claims. A process can end while some records and effects remain. Survival or non-survival of the same experiencing subject additionally requires an identity and phenomenal bridge; no universal conclusion follows from trace preservation or no-cloning.
-2. **The phenomenal bridge.** The state/report/experience relation requires its own declared map and evidence [I/H]. T-214’s universal internal-map prohibition is withdrawn: Lawvere’s evaluator hypotheses do not apply to every predicate. Unresolved identity does not make every operational criterion a theorem or every historical verdict immune to new evidence.
+2. **The phenomenal bridge.** The state/report/experience relation requires its own declared map and evidence [I]/[H]. T-214's [✗] universal internal-map prohibition is withdrawn: Lawvere's evaluator hypotheses do not apply to every predicate. Unresolved identity does not make every operational criterion a theorem or every historical verdict immune to new evidence.
 3. **The Universe's own stage.** Whether the whole is itself inside a viability window (hole H1.2, [floor register](/docs/core/foundations/universe-as-holonom#регистр-дыр-этажа)) is neither derived nor measured. Cosmic-soul questions inherit this openness.
 
 The decomposition makes six different questions explicit. Some have conditional mathematical answers; others remain historical, empirical, normative or metaphysical questions. This separation supports concrete tests without presenting the remaining questions as already settled.
@@ -536,12 +503,12 @@ The decomposition makes six different questions explicit. Some have conditional 
 
 | Component | Formal analogue | Status and limit |
 |---|---|---|
-| Ф1 experiencer | Operational capability and phenomenal bridge | [D/I/H]; no universal mortality theorem |
-| Ф2 identity | Criterion on state/model histories | [D/I/H]; transfer and personal continuation remain distinct |
-| Ф3 baggage | Initial conditions and developmental inputs | [I/H]; selected channels, no completeness claim |
-| Ф4 field of forms | Attractors, learned dynamics and collective patterns | [C/I/H]; stability and transmission require mechanisms |
-| Ф5 eternal record | Encoding, retention and recovery | [C/I/H]; neither universal archive nor universal no-reading theorem |
-| Ф6 spark | Section/type analogy | [I]; no identity with the absolute established |
+| F1 experiencer | Operational capability and phenomenal bridge | [D]/[I]/[H]; no universal mortality theorem |
+| F2 identity | Criterion on state/model histories | [D]/[I]/[H]; transfer and personal continuation remain distinct |
+| F3 baggage | Initial conditions and developmental inputs | [I]/[H]; selected channels, no completeness claim |
+| F4 field of forms | Attractors, learned dynamics and collective patterns | [C]/[I]/[H]; stability and transmission require mechanisms |
+| F5 eternal record | Encoding, retention and recovery | [C]/[I]/[H]; neither universal archive nor universal no-reading theorem |
+| F6 spark | Section/type analogy | [I]; no identity with the absolute established |
 
 ### What we learned {#что-мы-узнали}
 
@@ -562,16 +529,16 @@ This chapter connects [theories of consciousness](/docs/consciousness/comparativ
 
 **Related documents:**
 
-- [Death and Continuity](/docs/consciousness/ethics-meaning/death-continuity) — irreversibility, identity, No-Cloning, the three interpretations
-- [Collective Consciousness](/docs/consciousness/subjects/collective-consciousness) — $\Gamma_{\text{comp}}$, collective unconscious, archetypes
+- [Death and Continuity](/docs/consciousness/ethics-meaning/death-continuity) — conditional irreversibility, identity criteria, no-cloning scope
+- [Collective Consciousness](/docs/consciousness/subjects/collective-consciousness) — $\Gamma_{\text{comp}}$, composite states, collective-pattern models
 - [Panpsychism](/docs/consciousness/comparative/panpsychism-analysis) — pan-interiority vs the panpsychist family
-- [Attention and Memory](/docs/consciousness/states/attention-memory) — kernels, forgetting, procedural memory
-- [Altered States](/docs/consciousness/states/altered-states) — meditation, samādhi, ego-dissolution profiles
-- [The Unconscious](/docs/consciousness/states/unconscious) — Gap-structure, incomplete transparency
-- [Pre-linguistic Consciousness](/docs/consciousness/subjects/pre-linguistic) — the subject before language
-- [Interiority Hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — L0–L4 definitions
+- [Attention and Memory](/docs/consciousness/states/attention-memory) — memory kernels, forgetting, procedural memory
+- [Altered States](/docs/consciousness/states/altered-states) — meditation, altered state dynamics, self-model shifts
+- [The Unconscious](/docs/consciousness/states/unconscious) — opacity profiles and incomplete self-observation
+- [Pre-linguistic Consciousness](/docs/consciousness/subjects/pre-linguistic) — pre-linguistic operational regimes
+- [Interiority Hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — universal L0, operational L2 gate $\mathrm{Cap}_2$, and higher-order certificates
 - [Depth Tower](/docs/consciousness/hierarchy/depth-tower) — the chosen SAD score and higher-order operational certificates
-- [The Universe as Holonom](/docs/core/foundations/universe-as-holonom) — the static whole, sections, one grammar
-- [Origin of the Universe](/docs/physics/cosmology-phys/origin) — the Source and its instability
-- [Self-Observation](/docs/consciousness/foundations/self-observation) — $\varphi$, $R$, the fixed point
+- [The Universe as Holonom](/docs/core/foundations/universe-as-holonom) — holistic cosmological model proposal and observer sections
+- [Origin of the Universe](/docs/physics/cosmology-phys/origin) — the proposed Source and stability conditions
+- [Self-Observation](/docs/consciousness/foundations/self-observation) — $\varphi$, $R$, and fixed-point models
 - [Status Registry](/docs/reference/status-registry) — statuses of all theorems cited

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 11
-title: "Variational Principles"
-description: "Principle of stationary action, Euler–Lagrange equations for Gap, Onsager relations, connection to FEP, minimum entropy production, FDT"
+title: "Variational Derivation"
+description: "Equations of motion under a specified phase action, energy balance and LaSalle stability, quadratic Dirichlet minimization, variational free energy identity, and comparison with matrix ODEs"
 ---
 
 # Variational derivation under an explicit action

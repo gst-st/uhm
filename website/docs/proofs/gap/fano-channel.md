@@ -8,10 +8,10 @@ description: "Rigorous proofs: Fano channel preserves coherences, Fano–atomic 
 # Proofs: Fano Channel and Key Gap Theorems
 
 :::info Who this chapter is for
-The reader will find here rigorous proofs of the central theorems of Gap dynamics: preservation of coherences by the Fano channel, the exact Fano–atomic proportionality $\mathcal{D}_{\text{Fano}}=\tfrac23\mathcal{D}_{\text{atom}}$ (with the finite frame-group covariance and the canonical $G_2$-covariant dissipator), equilibrium Gap, optimality of the Fano channel, and connection with the Hamming code H(7,4). All results have status [T].
+The reader will find here proofs of the central theorems of Fano-channel and Gap dynamics: preservation of coherences by the Fano channel, the exact Fano–atomic proportionality $\mathcal{D}_{\text{Fano}}=\tfrac23\mathcal{D}_{\text{atom}}$ (with finite frame-group $\Gamma_{\!\text{oct}}$ covariance and the canonical $G_2$-covariant dissipator $\mathcal{D}_{G_2}$), driven-anchor stationary Gap, distinction between L4 and $\mathrm{Gap}=0$, optimality of the Fano channel among BIBD$(7,k,1)$ channels, and the combinatorial link with the Hamming code $H(7,4)$. Core channel theorems carry status **[T]**; retracted claims (§4) and scope conditions (§7, §9, §12–13) are explicitly marked.
 :::
 
-This document contains **rigorous proofs** of the central theorems of Gap dynamics. All results have status **[T]** (impeccably rigorous theorems, see the [status registry](/docs/reference/status-registry)).
+This document collects the proofs and exact scope statements for the central Fano-channel and Gap-dynamics theorems (see the [status registry](/docs/reference/status-registry)).
 
 ---
 
@@ -108,8 +108,8 @@ The contraction factor $c_F = 1/3$ — equivalently, the Fano absorption $\alpha
 $$[\mathcal{P}_\mathrm{Fano}(\Gamma)]_{ij} = \tfrac{1}{3}\,\gamma_{ij}.$$
 **Proof.** The derivation of Theorem 2.1(b) uses **only** the combinatorial fact that exactly one Fano line $p^* \in \mathrm{PG}(2,2)$ contains the pair $\{i,j\}$ (the defining BIBD$(7,3,1)$ property), together with the normalisation prefactor $1/3$ from the three lines incident to each point. Neither step references the entries of $\Gamma$. Hence the contraction coefficient is a function of the geometry of $\mathrm{PG}(2,2)$ alone. $\blacksquare$
 
-**Consequence (foundation for T-142 SAD_MAX=3):**
-The SAD ceiling theorem [T-142](/docs/proofs/consciousness/operational-closure#t-142) relies on iterated application of the Fano channel producing the geometric sequence $R^{(n)} \leq r_0 \cdot (1/3)^{n-1}$. This corollary establishes that the factor $1/3$ carries over to **every** state, not merely to a restricted class — so the ceiling is unconditional on state properties. Substrate-independence of $\alpha = 2/3$ thus reduces to combinatorial uniqueness of $\mathrm{PG}(2,2)$ (T-82 Fano uniqueness [T]).
+**Consequence (state-independent contraction):**
+This corollary establishes that the contraction factor $c_F = 1/3$ (and absorption $\alpha = 2/3$) carries over uniformly to **every** state $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ solely from the combinatorial uniqueness of $\mathrm{PG}(2,2)$ (`T-82` Fano uniqueness [T]). *(Note: the former universal self-awareness depth ceiling derived by iterating a fixed Fano channel is withdrawn [✗], since operational level L4 is defined by a compatible prediction tower rather than fixed-channel iteration; see [Holon](/docs/consciousness/hierarchy/interiority-hierarchy).)*
 :::
 
 ### Numerical example {#числовой-пример-фано}
@@ -155,7 +155,7 @@ $$
 \arg(\gamma_{45}) = \arctan(0.01/(-0.02)) + \pi \approx 153.43° \quad \Rightarrow \quad \arg(\gamma_{45}/3) = 153.43° \;\checkmark
 $$
 
-**Summary:** coherence magnitudes decreased by exactly a factor of 3, phases were preserved without distortion, the diagonal was untouched. This is precisely what distinguishes the Fano channel from the atomic $\mathcal{P}_{\text{base}}$, which would zero out $\gamma_{12}$, $\gamma_{13}$, $\gamma_{45}$ completely. For a living system with $P \approx 1/7$, complete destruction of coherences would mean $P < P_{\text{crit}}$ — death. The Fano channel provides "soft" observation under which the system retains viability.
+**Summary:** coherence magnitudes decreased by exactly a factor of 3, phases were preserved without distortion, the diagonal was untouched. This is precisely what distinguishes the Fano channel from the atomic $\mathcal{P}_{\text{base}}$, which would zero out $\gamma_{12}$, $\gamma_{13}$, $\gamma_{45}$ completely. For a balanced state ($\gamma_{ii} = 1/7$), complete destruction of coherences drops purity to $P = 1/7 < P_{\text{crit}} = 2/7$ [D] and collapses integration $\Phi$ to $0$. The Fano channel provides a "soft" observation that preserves two-thirds less coherence per step than unity while keeping phases intact.
 :::
 
 ---
@@ -334,51 +334,53 @@ is **strictly positive for every** $\alpha\in[0,1]$. Since both pinching dissipa
 
 ---
 
-## 7. Equilibrium Gap [T] {#равновесный-gap}
+## 7. Driven-Anchor Equilibrium Gap [T (scoped)] {#равновесный-gap}
 
-:::tip Theorem 7.1 (Stationary Gap) [T]
-The stationary solution of the coherence evolution equation:
-
-$$
-(\Gamma_2 + \kappa + i\Delta\omega_{ij})\gamma_{ij}^{(\infty)} = \kappa \cdot \gamma_{ij}^{\text{target}}
-$$
-
-gives the stationary Gap:
+:::tip Theorem 7.1 (Stationary Gap under a fixed coherent anchor) [T (scoped)]
+Consider a linear off-diagonal relaxation equation driven by a **fixed, externally supplied constant coherent target** $\gamma_{ij}^{\text{target}} \neq 0$ at constant rate $\kappa > 0$, with diagonal Hamiltonian detuning $\Delta\omega_{ij} = \omega_i - \omega_j$ and dephasing rate $\Gamma_2 > 0$:
 
 $$
-\mathrm{Gap}^{(\infty)}(i,j) = \left|\sin\left(\theta_{ij}^{\text{target}} - \arctan\frac{\Delta\omega_{ij}}{\Gamma_2 + \kappa}\right)\right|
+\dot\gamma_{ij} = -(i\Delta\omega_{ij} + \Gamma_2 + \kappa)\gamma_{ij} + \kappa\,\gamma_{ij}^{\text{target}}.
 $$
 
-The stationary Gap is **shifted** relative to the target by the angle $\arctan(\Delta\omega/(\Gamma_2 + \kappa))$ due to unitary rotation.
+Its unique stationary solution satisfies $(\Gamma_2 + \kappa + i\Delta\omega_{ij})\gamma_{ij}^{(\infty)} = \kappa\,\gamma_{ij}^{\text{target}}$ and yields the stationary Gap:
+
+$$
+\mathrm{Gap}^{(\infty)}(i,j) = \left|\sin\left(\theta_{ij}^{\text{target}} - \arctan\frac{\Delta\omega_{ij}}{\Gamma_2 + \kappa}\right)\right|.
+$$
+
+The stationary phase lags behind the fixed target phase $\theta_{ij}^{\text{target}}$ by $\arctan(\Delta\omega_{ij}/(\Gamma_2 + \kappa))$ due to unitary rotation.
+:::
+
+:::warning Scope restriction — withdrawn for isolated unital $\varphi_{\mathrm{coh}}$ [✗]
+Theorem 7.1 does **not** apply to an isolated holon driven by the unital phase-preserving self-model $\varphi_{\mathrm{coh}}$ of Theorem 3.1 (with diagonal anchor $\Gamma_{\mathrm{anchor}} = I/7$). For $\varphi_{\mathrm{coh}}$, $\gamma_{ij}^{\mathrm{target}} = \frac{k(1-\alpha)}{3}\gamma_{ij}$ is proportional to $\gamma_{ij}$ itself, making the off-diagonal equation homogeneous with strictly positive damping $\Gamma_2 + \kappa\!\left(1 - \frac{k(1-\alpha)}{3}\right) > 0$; hence $\gamma_{ij}^{(\infty)} = 0$ identically ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция) [T]). The stationary formula above applies only when $\gamma_{ij}^{\mathrm{target}}$ is supplied by a fixed external coherent anchor, or self-consistently at a nontrivial fixed point of a non-unital channel such as $\varphi_J$ (where $\gamma_{ij}^{\mathrm{target}} = [\varphi_J(\Gamma^*)]_{ij}$ must itself satisfy the nonlinear fixed-point equation).
 :::
 
 ### Physical intuition {#интуиция-равновесный-gap}
 
-:::note What the stationary Gap formula means
-**The essence of the formula.** The stationary Gap is a measure of how much the phases of the system's internal model deviate from the target. The formula shows that even in the stationary regime (when coherence amplitudes have stopped changing), the phase mismatch does not vanish: it is given by the angle $\arctan(\Delta\omega / (\Gamma_2 + \kappa))$.
+:::note What the driven stationary Gap formula means
+**The essence of the formula.** Under a fixed external coherent target $\gamma_{ij}^{\text{target}}$, even in the stationary regime (when coherence amplitudes stop changing), the phase does not align with the target: unitary detuning shifts it by $-\arctan(\Delta\omega_{ij} / (\Gamma_2 + \kappa))$.
 
-**Why does unitary rotation shift the Gap?** The frequency detuning $\Delta\omega_{ij}$ generates unitary rotation of coherence phases (the $e^{i\Delta\omega\,t}$ term in the evolution equation). Dissipation ($\Gamma_2$) and self-modeling ($\kappa$) act *along* the amplitudes but do not correct phases. Therefore in the stationary regime the phase "lags behind" the target by an angle determined by the ratio of the rotation rate $\Delta\omega$ to the damping rate $\Gamma_2 + \kappa$.
+**Why does unitary rotation shift the Gap?** The frequency detuning $\Delta\omega_{ij} = \omega_i - \omega_j$ rotates coherence phases as $e^{-i\Delta\omega_{ij}\tau}$, while dephasing ($\Gamma_2$) and relaxation toward the fixed anchor ($\kappa$) damp the amplitude without cancelling the rotation. In the steady state, the phase lags behind $\theta_{ij}^{\text{target}}$ by an angle set by the ratio of rotation rate $\Delta\omega_{ij}$ to total damping $\Gamma_2 + \kappa$.
 
-**Analogy: pendulum on a rotating platform.** Imagine a pendulum (coherence) suspended on a rotating platform (unitary dynamics with frequency $\Delta\omega$). A spring (dissipation $\Gamma_2 + \kappa$) tries to return the pendulum to the target position. In the stationary regime the pendulum does not sit at the target — it is deflected by an angle proportional to $\Delta\omega / (\Gamma_2 + \kappa)$. The faster the rotation (larger $\Delta\omega$), the greater the deflection. The stiffer the spring (larger $\Gamma_2 + \kappa$), the smaller the deflection. The stationary Gap is precisely this deflection angle.
-
-**Limiting cases:**
-- At $\Delta\omega = 0$: $\mathrm{Gap}^{(\infty)} = |\sin(\theta_{ij}^{\text{target}})| = \mathrm{Gap}^{\text{target}}$ — the stationary Gap coincides with the target (the platform does not rotate, the pendulum is at the target).
-- At $\Delta\omega \gg \Gamma_2 + \kappa$: $\arctan \to \pi/2$, and the Gap can differ substantially from the target — the system "cannot keep up" with the fast unitary evolution.
-- At $\kappa \to \infty$: $\arctan \to 0$, Gap$^{(\infty)} \to$ Gap$^{\text{target}}$ — infinitely strong self-modeling suppresses the phase shift.
+**Limiting cases (for fixed nonzero $\gamma_{ij}^{\text{target}}$):**
+- At $\Delta\omega_{ij} = 0$: $\mathrm{Gap}^{(\infty)} = |\sin(\theta_{ij}^{\text{target}})| = \mathrm{Gap}^{\text{target}}$ — stationary Gap matches the anchor.
+- At $|\Delta\omega_{ij}| \gg \Gamma_2 + \kappa$: $\arctan \to \pm\pi/2$, and $|\gamma_{ij}^{(\infty)}| \to 0$ (fast detuning washes out the driven coherence).
+- At $\kappa \to \infty$: $\arctan \to 0$, $\mathrm{Gap}^{(\infty)} \to \mathrm{Gap}^{\text{target}}$ — strong anchoring suppresses the phase lag.
 :::
 
 ---
 
 ## 8. L4 ≠ Gap = 0 [T] {#l4-не-gap-0}
 
-:::tip Theorem 8.1 (L4 is not equivalent to Gap = 0) [T]
-Level L4 ([fixed point](/docs/consciousness/hierarchy/interiority-hierarchy) $\varphi(\Gamma^*) = \Gamma^*$) is **not** equivalent to full transparency $\mathrm{Gap} = 0$.
+:::tip Theorem 8.1 (Self-model fixed points are not equivalent to Gap = 0) [T]
+A self-model fixed point $\varphi(\Gamma^*) = \Gamma^*$ (and, operationally, level L4 defined as a compatible prediction tower in [Holon](/docs/consciousness/hierarchy/interiority-hierarchy)) is **not** equivalent to zero imaginary part ($\mathrm{Gap} = 0$):
 
-**(a)** L4 means: $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ (the system **exactly knows** its Gap).
+**(a)** At $\varphi(\Gamma^*) = \Gamma^*$, the model reproduces the state's actual Gap: $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$.
 
-**(b)** At the same time $\mathrm{Gap}_{\text{actual}}$ can be non-zero — the fixed point of $\varphi$ can have non-zero imaginary coherences.
+**(b)** $\Gamma^*$ can nevertheless have nonzero imaginary coherences (for example, a complex phase-gauge fixed point of the collineation anchor $\varphi_J$), so $\mathrm{Gap}_{\text{actual}} \neq 0$ is compatible with $\varphi(\Gamma^*) = \Gamma^*$.
 
-**(c)** Full transparency ($\mathrm{Gap} = 0$ for all pairs) is a stronger condition than L4, and is a theoretical limit unachievable for non-trivial systems.
+**(c)** Conversely, full transparency ($\mathrm{Im}\,\Gamma = 0$, hence $\mathrm{Gap}(i,j) = 0$ for all nonzero coherences) is an independent algebraic condition satisfied by all real density matrices (including pure real superpositions and the real-gauge fixed point of $\varphi_J$); it neither implies nor is implied by $\varphi(\Gamma^*) = \Gamma^*$.
 :::
 
 ---
@@ -425,40 +427,38 @@ $$
 :::
 
 :::tip Theorem 11.2 (Uniform contraction, T6) [T]
-Consequence of T5: $\mathcal{D}_\text{atom}[\Gamma]_{ij} = -\gamma_{ij}$ for **all** $i \neq j$. All coherences decohere at the same rate — **unconditionally** (without (КГ)).
+Consequence of T5: $\mathcal{D}_\text{atom}[\Gamma]_{ij} = -\gamma_{ij}$ for **all** $i \neq j$. All coherences decohere at the same rate — **unconditionally** (without any additional homogeneity assumption).
 :::
 
 Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#s7-эквивариантность).
 
 ---
 
-## 12. Autopoietic Necessity of Composite Observation [T] {#необходимость-c-положительное}
+## 12. Bare Atomic Dephasing vs. Non-Unital Coherent Feedback [✗ / Scoped] {#необходимость-c-положительное}
 
-:::tip Theorem 12.1 (Necessity of $c > 0$, T7) [T]
-The atomic dissipator ($c = 0$) is incompatible with autopoiesis (AP): under full decoherence ($\alpha = 1$) the coherences $\gamma_{OE}$, $\gamma_{OU}$ decay as $e^{-\tau}$, the formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ is suppressed exponentially, and the regenerative contribution does not compensate the dissipative one.
+:::tip Theorem 12.1 (Effect of $c = 0$ under bare/unital observation, T7 — scoped) [T (bare) / ✗ (unconditional)]
+Under **bare** atomic dephasing ($c = 0$, $\alpha = 1$, without a non-unital coherent anchor), all off-diagonal coherences decay as $e^{-\Gamma_2\tau}$ and are zeroed by $\mathcal{P}_{\text{base}}(\Gamma) = \mathrm{diag}(\Gamma)$. Consequently, integration $\Phi(\Gamma) = P_{\text{coh}} / P_{\text{diag}}$ decays monotonically to $0 < \Phi_{\text{th}} = 1$ [D], and purity $P > 2/7$ [D] could persist only via unintegrated diagonal localization ($\Phi = 0$).
 
-**Corollary:** For stable viability, the system **must** use composite observation ($c > 0$, $\alpha < 1$).
+**Withdrawal of unconditional necessity [✗]:** The earlier unconditional claim that $c > 0$ ($\alpha < 1$) is required for *every* viable feedback law is **withdrawn** (see [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-полнота-покрытия)): a non-unital coherent anchor such as the collineation self-model $\varphi_J$ ([T-334](/docs/core/operators/phi-operator#t-334)) can sustain a living integrated attractor in $\mathcal{V}_{\mathrm{full}}$ even at $\alpha = 1$ ($c = 0$) once $\kappa > \kappa_c(1)$.
 :::
 
-Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-необходимость-c).
+Details: [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-полнота-покрытия).
 
 ---
 
-## 13. Autopoietic Optimality of the Fano Channel [T] {#оптимальность-фано}
+## 13. Restricted Optimality of the Fano Channel among BIBD(7,k,1) [T (scoped)] {#оптимальность-фано}
 
-:::tip Theorem 13.1 (Fano optimality, T10) [T]
-Among $S_7$-invariant BIBD$(7,k,1)$-channels ($k \in \{2, 3\}$) satisfying:
-- (i) $c > 0$ (T7 [T])
-- (ii) Complete pair coverage (T2 [T])
-- (iii) Democracy (T6 [T])
+:::tip Theorem 13.1 (Fano optimality within $\mathrm{BIBD}(7,k,1)$, T10) [T (scoped)]
+Among nontrivial $S_7$-equivariant $\mathrm{BIBD}(7,k,1)$-channels (**with $\lambda = 1$ assumed**, leaving only $k \in \{2, 3\}$) satisfying complete pair coverage (T2 [T]) and uniform off-diagonal contraction (T6 [T]), the Fano channel ($k = 3$, $c = 1/3$) beats $k = 2$ ($c = 1/6$) on both coherence retention and Kraus count:
 
-the **unique optimal** one is the Fano channel ($k = 3$, $c = 1/3$).
-
-| Criterion | $k = 2$ | $k = 3$ | Optimal |
+| Criterion | $k = 2$ | $k = 3$ | Optimal ($\lambda=1$) |
 |----------|:---:|:---:|:---:|
 | Contraction $c$ | 1/6 | **1/3** | $k = 3$ |
 | Number of operators $b$ | 21 | **7** | $k = 3$ |
-| $G_2$-covariance | **No** [T] | **Yes** [T] | $k = 3$ |
+| Full $G_2$-covariance | **No** [T] | **No** — breaks to finite $\Gamma_{\!\text{oct}}$ (Thm 5.1b) [T] | — |
+| Sharp minimal resolution & $\mathrm{PG}(2,2)$ / $H(7,4)$ | No | **Yes** (Thm 10.1 / T13) [T] | $k = 3$ |
+
+*Scope note:* Dropping the restriction $\lambda = 1$ admits complementary symmetric designs $(7,4,2)$ ($c = 1/2$) and $(7,6,5)$ ($c = 5/6$), both with $b = 7$ sharp Kraus operators ([Lindblad operators, T13](/docs/core/operators/lindblad-operators#t13-sharp)).
 :::
 
 Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-оптимальность-фано).
@@ -492,10 +492,10 @@ flowchart TD
     T3 --> T4["T 4.1: Variational α* — retracted ✗<br/>the functional is minimal at α = 0"]
     T5["T 5.1a–c: D_Fano=⅔D_atom<br/>frame-group Γ_oct; canonical D_G2"] --> T6["T 6.1–6.2: pinching breaks G₂<br/>violation = (2+α)/3·Δmax"]
     T6 --> T13["T 13.1: Fano optimality<br/>unique among BIBD(7,k,1)"]
-    T2 --> T7["T 7.1: Stationary Gap<br/>phase shift ∝ Δω/(Γ₂+κ)"]
-    T7 --> T8["T 8.1: L4 ≠ Gap=0"]
-    T3 --> T9["T 9.1: Necessity of φ_coh<br/>P_base → P lt P_crit → death"]
-    T9 --> T12["T 12.1: Necessity c > 0<br/>autopoiesis requires coherences"]
+    T2 --> T7["T 7.1: Driven-anchor Gap (scoped)<br/>lag = arctan(Δω/(Γ₂+κ))"]
+    T7 --> T8["T 8.1: φ(Γ*)=Γ* ≠ (Gap=0)"]
+    T3 --> T9["T 9.1: Necessity of φ_coh + non-unital anchor<br/>P_base collapses Φ → 0"]
+    T9 --> T12["T 12.1: Necessity c > 0<br/>integrated viability requires coherences"]
     T12 --> T13
     T11["T 11.1–11.2: S₇-equivariance<br/>uniform decoherence"] --> T13
     T14["T 14.1–14.2: H(7,4) = PG(2,2)<br/>perfect code"] --> T13
@@ -505,29 +505,29 @@ flowchart TD
 
 **Foundation (T 1.1).** Everything begins with a combinatorial fact: the 7 lines of the Fano plane $PG(2,2)$ cover each of the 7 points exactly 3 times. This gives the resolution of identity $\sum \Pi_p = 3I$, from which the CPTP property of the channel immediately follows.
 
-**Coherence-preserving observation (T 2.1).** The Fano channel does not destroy coherences — it scales their magnitudes by $1/3$, preserving phases. This is the critical distinction from the atomic channel, which zeroes out the entire off-diagonal. This very fact makes consciousness ($P > P_{\text{crit}}$) possible under self-observation.
+**Coherence-preserving observation (T 2.1).** The Fano channel does not destroy coherences — it scales their magnitudes by $1/3$, preserving phases. This is the critical distinction from the atomic channel, which zeroes out the entire off-diagonal. Combined with a non-unital anchor (such as $\varphi_J$), this makes integrated viability ($\Phi \ge 1$) possible under self-observation.
 
 **Construction of the self-model (T 3.1–4.1).** From the Fano channel and the atomic channel, canonical self-modeling $\varphi_{\text{coh}}$ is constructed — a convex combination of two CPTP channels. The mixing parameter was said to be fixed by the variational principle; that is retracted (§4), so the Fano weight $\alpha$ remains a free parameter of the construction.
 
-**Symmetry selection (T 5.1, 6.1–6.2).** The Fano channel and the atomic channel share the same finite covariance group $\Gamma_{\!\text{oct}}$ (Theorem 5.1b); neither is $G_2$-covariant, and the degree of $G_2$-violation $\tfrac{2+\alpha}{3}\Delta_{\max}$ grows monotonically with $\alpha$ from $\tfrac23\Delta_{\max}$ at $\alpha = 0$. This imposes a "penalty" on the decohering component: the larger the fraction of the atomic channel, the stronger the violation of the fundamental symmetry.
+**Symmetry selection (T 5.1, 6.1–6.2).** The Fano channel and the atomic channel share the same finite covariance group $\Gamma_{\!\text{oct}}$ (Theorem 5.1b); neither is $G_2$-covariant, and the degree of $G_2$-violation $\tfrac{2+\alpha}{3}\Delta_{\max}$ grows monotonically with $\alpha$ from $\tfrac23\Delta_{\max}$ at $\alpha = 0$. Full continuous $G_2$-covariance is achieved only by the structure-constant dissipator $\mathcal{D}_{G_2}$ (Theorem 5.1c).
 
-**Gap dynamics (T 7.1, 8.1).** The stationary Gap shows that even at equilibrium, phase mismatch between model and reality does not vanish: unitary evolution continuously "sweeps" phases, while dissipation and self-modeling return them. L4 (fixed point of $\varphi$) means exact knowledge of one's Gap, but not its zeroing.
+**Gap dynamics (T 7.1, 8.1).** Under a fixed externally supplied coherent anchor, unitary detuning introduces a steady-state phase lag $\arctan(\Delta\omega_{ij}/(\Gamma_2+\kappa))$ (while an isolated unital $\varphi_{\mathrm{coh}}$ relaxes to $\gamma_{ij}^{(\infty)}=0$ by dead isolation). Fixed points $\varphi(\Gamma^*)=\Gamma^*$ (and operational L4) are algebraically independent of full realness ($\mathrm{Gap}=0$).
 
-**Necessity of coherences (T 9.1, 12.1).** Two independent arguments show that atomic observation ($c = 0$) is incompatible with life: it suppresses purity below $P_{\text{crit}}$ and exponentially destroys the $\kappa_0$-contribution to regeneration. A living system **must** use composite (Fano) observation.
+**Necessity of coherences (T 9.1, 12.1).** Atomic observation ($c = 0$) drives integration $\Phi \to 0$ and suppresses coherence-dependent regeneration, leaving only unintegrated diagonal states. Sustaining an integrated viable state ($\Phi \ge 1$) requires composite observation ($c > 0$) paired with a non-unital anchor (e.g., $\varphi_J$).
 
-**Democracy and optimality (T 11.1–11.2, 13.1).** $S_7$-equivariance guarantees that all coherences decohere equally — no sector is privileged. Among all BIBD$(7,k,1)$-channels satisfying this and $c > 0$, the Fano channel ($k = 3$) is the unique optimal one: it gives maximum contraction with minimum number of operators; its covariance group is the frame group $\Gamma_{\!\text{oct}}$, not the full $G_2$ (Theorem 5.1b — the full $G_2$-covariance was retracted on 2026-09-10).
+**Democracy and optimality (T 11.1–11.2, 13.1).** $S_7$-equivariance guarantees that all coherences decohere equally — no sector is privileged. Among all BIBD$(7,k,1)$-channels satisfying this and $c > 0$, the Fano channel ($k = 3$) is the unique optimal one by higher contraction ($c = 1/3$ vs. $1/6$) and minimal operator count ($b = 7$ vs. $21$); its covariance group is the finite frame group $\Gamma_{\!\text{oct}}$, not the full $G_2$ (Theorem 5.1b).
 
-**Closure to coding theory (T 14.1–14.2).** The structure of the Fano channel is isomorphic to the perfect Hamming code $H(7,4)$. This is no coincidence: autopoietic error self-correction with 7 dimensions requires distinguishing $2^3 = 8$ situations, which is realized by the unique perfect code of length 7.
+**Closure to coding theory (T 14.1–14.2).** The structure of the Fano channel is isomorphic to the perfect Hamming code $H(7,4)$: distinguishing $2^3 = 8$ binary single-error syndromes on 7 coordinates is realized by the unique perfect binary code of length 7.
 
 ### Summary
 
-The entire construction of the Fano channel is **uniquely determined** by four conditions:
+The Fano channel is selected among $S_7$-equivariant BIBD$(7,k,1)$ channels by:
 1. **Dimension $N = 7$** (axiom of septicity)
 2. **CPTP** (physicality of the quantum channel)
-3. ~~**$G_2$-covariance** (octonionic symmetry)~~ — retracted 2026-09-10: the channel is covariant only under the frame group $\Gamma_{\!\text{oct}}$ (Theorem 5.1b); how much of the uniqueness claim survives without this condition is not re-derived here
-4. **Autopoietic optimality** (maximum preservation of coherences with complete pair coverage)
+3. **Frame-group invariance $\Gamma_{\!\text{oct}}$** (pinning the octonionic Fano plane among the 30 planes on 7 axes, Theorem 10.1 / T13; continuous $G_2$-covariance was retracted in Theorem 5.1b)
+4. **Optimality among BIBD$(7,k,1)$** (maximum coherence preservation $c = 1/3$ with minimal sharp operator count $b = 7$)
 
-From these conditions follow the Fano plane, contraction $1/3$, Hamming code and the formula for stationary Gap. The variational $\alpha^*$ is retracted (§4), so the Fano weight $\alpha$ stays free.
+From these follow the Fano plane, uniform contraction $c_F = 1/3$, and the combinatorial bridge to $H(7,4)$. The variational $\alpha^*$ is retracted (§4), so the Fano weight $\alpha$ stays free.
 
 ---
 

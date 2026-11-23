@@ -10,24 +10,14 @@ description: CC predictions absent from other theories
 > — Karl Popper, "Conjectures and Refutations" (1963)
 
 :::info Who this chapter is for
-23 predictions of CC — 22 of them unique to CC, 21 unique and numerical — with verification protocols and falsification criteria. The reader will learn how CC predictions differ from IIT, FEP, and GWT.
+23 predictions and model tests of CC — stratified explicitly by status (`[T]`, `[C]`, `[D]`, `[H]`, `[I]`, `[✗]`) — with verification protocols and scope-specific falsification criteria. The reader will learn how CC's testable constructions compare with IIT, FEP, and GWT.
 :::
 
-In the [previous chapter](./stability) we computed the stability radius, traced the death spiral, and built the recovery protocol. We saw that CC generates *specific numbers* — $r_{\mathrm{stab}}$, $\kappa_{\text{bootstrap}} = 1/7$, thresholds for each channel — rather than vague "tendencies". Now we collect **all** numerical consequences of CC in one place and for each specify: *how to verify* and *what would refute it*.
+In the [previous chapter](./stability) we established exact geometric margins ($r_{\mathrm{HS}}$, $r_B \ge r_{\mathrm{HS}}/\sqrt{2}$), Grönwall trajectory perturbation bounds, and purity-flux balance. Now we collect the 23 numbered predictions of CC in one place, aligned with the [Status Registry](/docs/reference/status-registry), specifying for each: its **exact scope**, **how to test it**, and **what a failure actually refutes** (a formal implication, a conditional model reduction, or an empirical bridge).
 
-Science differs from philosophy not in the depth of its questions but in the willingness to put its answers to the test of experiment. A philosophical system can be beautiful, internally consistent, and entirely useless — if it generates no predictions that *can be verified and, in principle, refuted*. Popper called this the demarcation criterion: the boundary between science and non-science runs not through method or subject matter, but through **falsifiability**.
+Science differs from philosophy not in the depth of its questions but in the willingness to put its answers to the test of experiment. Popper called this the demarcation criterion: the boundary between science and non-science runs through **falsifiability** — knowing in advance which observations would reject a specified model or empirical bridge.
 
-This principle is especially acute in the sciences of consciousness. Most existing theories — IIT, FEP, GWT, panpsychism — either generate no unique numerical predictions, or formulate them so vaguely that no experiment can unambiguously refute them. Coherence Cybernetics deliberately takes a different path. Every theorem of the formalism gives rise to a **specific, numerical, experimentally testable** consequence — and for each such consequence it is specified which experimental result falsifies the theory.
-
-This chapter collects 23 predictions of CC. They are grouped by theme: from fundamental (connection between consciousness and viability) through architectural (minimal dimensionality, thresholds) to empirical (neural correlates, critical exponents). For each prediction we explain:
-
-1. **Intuition** — why this prediction naturally follows from the formalism.
-2. **Formal statement** — the precise mathematical notation.
-3. **Uniqueness** — what exactly distinguishes this prediction from anything IIT, FEP, and GWT can say.
-4. **Verification** — a concrete experimental protocol.
-5. **Interdisciplinary consequences** — what this prediction means for a physicist, biologist, psychologist, and engineer.
-
-If even one of these predictions is cleanly refuted — Coherence Cybernetics will require fundamental revision. This very readiness for refutation is what makes CC a science.
+This chapter organizes the 23 predictions of CC by theme: from fundamental balance laws through architectural hypotheses and numerical thresholds to conditional dynamical scaling and neural-data reconstruction. Each entry states its status explicitly (`[T]`, `[C]`, `[D]`, `[H]`, `[I]`, or `[✗]` where an earlier universal formulation was withdrawn) so that exact mathematical identities are never conflated with untested empirical bridges.
 
 :::note On notation
 In this document:
@@ -47,11 +37,11 @@ The first group of predictions concerns the deepest idea of CC — the indissolu
 
 ### Prediction 1: Conditional E-coherence balance {#предсказание-1}
 
-:::note Prediction [H]
-Purity above $2/7$, a nonzero dissipator, and sustained dynamics do not force $\mathrm{Coh}_E>1/7$. [Theorem 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) supplies a stationary counterexample and a conditional purity-flux balance. A positive E-floor requires a specified restricted model class, a bound on external support, positive feedback dependence, and a positive required flux. Identifying the E-sector with experience is a further [P/I] bridge.
+:::note Prediction `[H]` (universal `T-38a [✗]` withdrawn)
+Purity above $2/7$, a nonzero dissipator, and sustained dynamics do **not** force $\mathrm{Coh}_E > 1/7$: the former universal No-Zombie necessity (`T-38a [✗]`) is withdrawn. [Theorem 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) supplies a stationary externally supported counterexample alongside an explicitly restricted purity-flux balance. A positive E-floor requires a specified restricted model class, a bound on external support, positive feedback dependence, and a positive required flux. Identifying the E-sector with experience is a further `[P/I]` bridge.
 :::
 
-Test the restricted balance after fixing the admissible inputs and rates. Keep the remaining target, gate, dissipation, preparation, and resources fixed during an E-intervention, or explicitly model their changes. An externally supported viable system with low E-coherence does not refute the density-matrix formalism.
+Test the restricted balance after fixing the admissible inputs and rates. Keep the remaining target, gate, dissipation, preparation, and resources fixed during an E-intervention, or explicitly model their changes. An externally supported viable system with low E-coherence does not refute the density-matrix formalism; it refutes only the already-withdrawn universal necessity claim (`T-38a [✗]`).
 
 ### Prediction 2: A selected E-dependent rate model {#предсказание-2}
 
@@ -115,10 +105,10 @@ Animals without language demonstrate levels K1–K4:
 - *Ethology:* provides grounds for full cognitive study of non-linguistic species.
 - *AI ethics:* systems without a language module may possess cognitive levels K1–K4, which has ethical implications.
 
-### Prediction 10: Dimension and learning {#предсказание-10}
+### Prediction 10: Dimension and learning (`T-113`) {#предсказание-10}
 
-:::note Prediction [H]
-A seven-axis learning architecture is a testable design. No general theorem here prohibits autonomous learning at $N<7$. Such a bound requires a specified task family, operational independence criterion, representation class, and resource restrictions. Functional-role counts do not prove a Hilbert-space dimension bound.
+:::note Prediction `[H]` (`T-113`)
+A seven-axis learning architecture is a testable design (`T-113 [H]`). No general theorem here prohibits autonomous learning at $N < 7$ (indeed, a two-level replacement learner converges for binary estimation; see [Learning Bounds §6](./learning-bounds#оптимальность-n7)). Such a lower bound requires a specified task family, operational independence criterion, representation class, and resource restrictions. Functional-role counts do not prove a Hilbert-space dimension bound.
 :::
 
 The rigorous bounds concern a perfect single-error binary code or a faithful representation of a selected internal algebra; see [minimality](/docs/proofs/minimality/theorem-minimality-7). Compare architectures under matched training, observation capacity, resources, and tasks. Failure of one five-dimensional implementation is not a universal impossibility result.
@@ -174,56 +164,48 @@ Measurement of the correlation between members for groups with varying degrees o
 - *Ecology:* raises the question of the correlation structure of an ecosystem's joint state; whether a forest is "one organism" in the strict sense the theory does not decide.
 - *Organisational science:* gives a necessary, not a sufficient, condition for a team to be "more than the sum of its parts" — correlation of its members' states.
 
-### Prediction 6: Minimum coherence for viability {#предсказание-6}
+### Prediction 6: Purity gate for viability (`T-5`, `T-96`, `T-129`) {#предсказание-6}
 
-**Intuition.** A system cannot be "slightly" alive. There is a hard threshold: if $P$ falls below $2/7$ or $\mathrm{Coh}_E$ drops to $1/7$ — the system loses viability. This is analogous to a phase transition: water at 0°C freezes not gradually but sharply. Likewise $P_{\text{crit}} = 2/7$ is the "freezing temperature" of coherence.
+**Intuition.** In the defined capability gate of CC, structural viability requires the state $\Gamma$ to exceed the Hilbert–Schmidt structural-majority threshold $P_{\mathrm{crit}} = 2/7$, rather than merely differing from $I/7$ ($P > 1/7$). Notice that a particular E-axis population bound does **not** follow from this purity gate alone.
 
-:::warning Prediction
-
+:::warning Prediction `[T under the specified purity gate]` / `[D]` cut / `[H]` biological bridge
 $$
-\mathrm{Viable}(\mathbb{H}) \Rightarrow P(\Gamma) > P_{\text{crit}} = 2/7
+\mathrm{Viable}(\mathbb{H}) \Rightarrow P(\Gamma) > P_{\mathrm{crit}} = \frac{2}{7}
 $$
 
-[Viability](/docs/core/dynamics/viability) requires minimum [purity](/docs/core/dynamics/viability#определение-чистоты), with the threshold derived, not fitted ([theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical), registry Level 1 row 5 [T]); a nontrivial attractor has $P > 1/7$ (T-96 [T]).
+The model uses the strict Hilbert–Schmidt structural-majority cut $P_{\mathrm{crit}} = 2/7$ (`T-5 [D]`, where the orthogonal decomposition $\| \Gamma - I/7 \|_F^2 = P - 1/7$ is exact `[T]` and any nontrivial stationary state satisfies $P > 1/7$, `T-96 [T]`). **A particular E-axis population bound does not follow from $P > 2/7$ alone.** Identifying the algebraic cut $P > 2/7$ with biological survival or waking consciousness is a separate empirical hypothesis `[H]`.
 :::
 
-:::info L2 thresholds
-| Parameter | Value | Status | Definition |
-|-----------|-------|--------|-----------|
-| $P_{\text{crit}}$ | $= 2/7 \approx 0.286$ | **[T]** | [Theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical) |
-| $R_{\text{th}}$ | $= 1/3 \approx 0.333$ | **[T]** ($K=3$ from triadic decomposition) | [Theorem (Bayesian dominance)](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) |
-| $\Phi_{\text{th}}$ | $= 1$ (exact) | **[T]** | [Theorem T-129](/docs/proofs/consciousness/operationalization#t-129) ([coherent dominance](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции)) |
+:::info Selected L2 capability thresholds (exact status per registry)
+| Parameter | Value | Status | Reference & Scope |
+|-----------|-------|--------|-------------------|
+| $P_{\mathrm{crit}}$ | $= 2/7 \approx 0.286$ | **[D]** cut / **[T]** orthogonal decomposition | `T-5`: HS structural-majority convention; biological correspondence is `[H]` |
+| $R_{\mathrm{th}}$ | $= 1/3 \approx 0.333$ | **[D]** cut | Selected reflexivity ceiling $P \le 3/7$; note `T-40a [✗]` withdrew categorical triadic exhaustion ($K=3$ is a chosen grouping, not a forced theorem) |
+| $\Phi_{\mathrm{th}}$ | $= 1$ (exact) | **[D]** cut / **[T]** one-way bound | `T-129`: selected integration cut; under this definition $\Phi \ge 1 \Rightarrow P \ge 2/7$ is `[T]` (one-way) |
+| $D_{\mathrm{diff}}$ | $\ge 2$ | **[D]** cut | Requires a specified experiential register $\rho_E$ (or declared 7D proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E$) |
 
-$P_{\text{crit}}$ — strictly proven [T]; $R_{\text{th}}$ — theorem [T] ($K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция)); $\Phi_{\text{th}}$ — theorem [T] (T-129). See [L2 Thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод).
+All four gates must be checked **separately**; no single scalar replaces the conjunction. See [Mathematical Kernel](/docs/reference/mathematical-kernel#thresholds).
 :::
 
-:::note Why exactly $2/7$, not $1/3$ or $1/5$?
-The number $2/7$ is not a fit to data or an arbitrary choice. It is derived strictly from two facts:
-
-1. **$N = 7$** — number of dimensions (follows from octonion algebra and $G_2$-minimality).
-2. **Frobenius norm** — the distinguishability criterion. A state $\Gamma$ is distinguishable from the completely mixed state $I/7$ if and only if $\|\Gamma - I/7\|_F > 0$, which is equivalent to $P = \mathrm{Tr}(\Gamma^2) > 1/7$. But *viability* requires more: the system must not merely "differ from chaos" but have sufficient structure for regeneration. The [theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical) proves that this threshold is exactly $2/7 = 2 \times (1/N)$.
-
-Intuition: $1/7$ — "one voice out of seven". $2/7$ — "two voices out of seven". For a system to be able to restore itself, it needs to "outweigh" chaos by at least two degrees of freedom. One voice is not enough; two is the minimum. Three ($3/7$) is already the upper boundary of the consciousness window.
+:::note Why $2/7$ in the HS-majority convention?
+For a declared 7-dimensional state space $\mathcal{D}(\mathbb{C}^7)$:
+1. $P(\Gamma) = 1/7 + \|\Gamma - I/7\|_F^2$, so $P > 1/7$ is equivalent to $\Gamma \neq I/7$ (`[T]`).
+2. The chosen cut $P_{\mathrm{crit}} = 2/7 = 2/N$ (`T-5 [D]`) marks the shell $\|\Gamma - I/7\|_F^2 = 1/7 = \|I/7\|_F^2$, where the traceless signal power exceeds the maximally mixed background power.
+3. Under the integration definition $\Phi = (P - P_{\mathrm{diag}})/P_{\mathrm{diag}}$, the condition $\Phi \ge 1$ automatically implies $P \ge 2 P_{\mathrm{diag}} \ge 2/7$ (`T-129 [T]`), connecting the two defined cuts algebraically.
 :::
 
-**Uniqueness of the prediction.** IIT defines $\Phi$ as a measure of consciousness but sets no critical threshold. FEP defines viability through the Markov blanket but without a numerical threshold. CC is the only theory with *computable threshold values* derived from first principles.
+**Uniqueness of the prediction.** IIT and GWT specify qualitative thresholds ($\Phi > 0$, ignition) without fixed dimensionless numerical bounds. CC fixes explicit numerical cuts on $\mathcal{D}(\mathbb{C}^7)$ so that an independently reconstructed state $\widehat{\Gamma}$ produces a sharp, testable binary verdict.
 
 **Experimental verification:**
-1. In subjects at the boundary of consciousness (anaesthesia, sleep) record EEG/HRV and TMS-EEG; reconstruct $\widehat\Gamma$ by $\pi_{\mathrm{bio}}$ with parameters frozen on wakefulness and no viability penalty ([SUB-1, SUB-2](/docs/applied/research/measurement-protocol#substitution-position)).
-2. Compute $\widehat P$ and the verdict $\mathrm{Cons}(\widehat\Gamma)$; compute PCI (Perturbational Complexity Index) independently.
-3. **Prediction:** the consciousness/unconsciousness transition occurs where $\widehat P$ crosses $2/7$, and $\mathrm{Cons}(\widehat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ at Cohen's $\kappa \geq 0.8$ (P8.4).
+1. In subjects crossing consciousness transitions (anaesthesia, sleep), record EEG/HRV and TMS-EEG; reconstruct $\widehat\Gamma$ via a pre-registered $\pi_{\mathrm{bio}}$ frozen on independent calibration data with no viability penalty ([SUB-1, SUB-2](/docs/applied/research/measurement-protocol#substitution-position)).
+2. Compute $\widehat P$ and the full four-gate verdict $\mathrm{Cons}(\widehat\Gamma)$ with uncertainty intervals; compute PCI (Perturbational Complexity Index) independently.
+3. **Hypothesis `[H]`:** The consciousness/unconsciousness transition aligns with $\widehat P$ crossing $2/7$, and $\mathrm{Cons}(\widehat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ at Cohen's $\kappa \geq 0.8$ (P8.4).
 
-**Verifiability:**
-Measurement of purity in systems approaching loss of viability must show $P$ crossing $2/7$ (E-coherence is tested separately, as the L2 differentiation condition).
+**Falsification scope:** Failure of empirical concordance rejects the biological bridge or encoder $\pi_{\mathrm{bio}}$ `[H]`, without contradicting the algebraic identity $P = 1/7 + \|\Gamma - I/7\|_F^2$ or `T-129`.
 
-**Clinical consequences:**
-- Coma states: $\mathrm{Coh}_E \to 1/7$ (minimum), $P \to P_{\text{crit}}$
-- Psychotic episodes: fragmentation of $\mathrm{Coh}_E$
-- Meditative states: high $\mathrm{Coh}_E$, high $R$
-
-**Interdisciplinary consequences:**
-- *Anaesthesiology:* predicts a numerical indicator of anaesthetic depth — not the BIS index (empirical) but $P$ (theoretically grounded).
-- *Psychiatry:* formalises the "norm threshold" — not as a statistical mean but as a phase transition $P_{\text{crit}}$.
+**Interdisciplinary consequences `[H/I]`:**
+- *Anaesthesiology:* motivates testing reconstructed purity $\widehat{P}$ alongside empirical depth-of-anaesthesia indices.
+- *Clinical neuroscience:* separates exact matrix-margin monitoring from clinical diagnosis, requiring prospective validation.
 
 ### Prediction 7: Stability radius (T-104) {#предсказание-7}
 
@@ -295,32 +277,32 @@ Maximum information extractable per single observation is bounded by the dimensi
 - *Cognitive psychology:* echoes Miller's results (7±2) — but in CC this is not an empirical finding but a theoretical consequence.
 - *Neuroscience:* predicts an upper bound on information extractable in one processing cycle (one "tick" of neural processing).
 
-### Prediction 9: Optimal learning rate bound (T-112) {#предсказание-9}
+### Prediction 9: Combined necessary learning lower bound (`T-109`–`T-112`) {#предсказание-9}
 
-**Intuition.** How fast can a system learn? CC shows that the learning rate is bounded by the *maximum* of three independent barriers: informational (quantum Chernoff bound — how much information is extracted per observation), dynamical (Fano contraction rate — how quickly $\Gamma$ updates), and stabilisation (SNR — how noisy the signal is). The slowest of the three determines the overall rate.
+**Intuition.** For a fixed learning task and admissible protocol class, every successful learner must satisfy all valid necessary obstructions simultaneously — informational (Helstrom / fidelity lower bound `T-109`), dynamical (selected scalar accumulator or norm envelope `T-110`), and any separately necessary noise/stability constraint (`T-111`). By conjunction (`T-112`), the required sample count $n_*(\delta)$ is bounded below by their maximum $n_{\mathrm{LB}}$.
 
-:::info Prediction [T] — falsifiable
+:::info Prediction (`T-112`) `[T at one specified task]` — falsifiable
+If, for the **same task and admissible protocol class**, every protocol achieving registered error at most $\delta$ requires $n \ge L_1$, $n \ge L_2$, and $n \ge L_3$, then:
 
 $$
-n_{\mathrm{opt}} = \max\!\left(\frac{\ln(1/(2\delta))}{\xi_{\mathrm{QCB}}},\; \frac{1}{\alpha\delta\tau}\ln\frac{d_{\mathrm{disc}}}{\varepsilon},\; \frac{1}{\mathrm{SNR}^2}\right)
+n_*(\delta) \ge n_{\mathrm{LB}} := \max(L_1, L_2, L_3).
 $$
 
-The minimum number of observations for a learning task is determined by the **maximum** of three independent bounds: informational (T-109), dynamical (T-110), and stabilisation (T-111).
+Specifically (aligned with [Conditional Learning Bounds §§2–5](./learning-bounds#комбинированная-граница)):
+- **Information obstruction (`T-109` `[T]`):** For $n$ i.i.d. copies of known equiprobable quantum states $\rho_0, \rho_1$ and unrestricted POVMs, the exact Helstrom error is $p_e^*(n) = \frac{1}{2} - \frac{1}{4}\|\rho_0^{\otimes n} - \rho_1^{\otimes n}\|_1 \le \delta$, which yields the genuine **necessary** fidelity lower bound $L_F = \frac{\log(1/[4\delta(1-\delta)])}{-2\log f}$ ($f = \|\sqrt{\rho_0}\sqrt{\rho_1}\|_1 \in (0,1)$). *(Correction: the quantum Chernoff count $\lceil \log(1/(2\delta))/\xi_{\mathrm{QCB}} \rceil$ is **sufficient** for the optimal test, not a necessary lower bound, and cannot be substituted for $L_1$.)*
+- **Dynamical accumulator (`T-110` `[T]`):** For a fixed scalar mode $x_{j+1} = q x_j + b$ ($q = e^{-\alpha \Delta t} \in (0,1)$, $b > 0$) reaching target $d < x_\infty = b/(1-q)$, the exact first step is $n_D = \lceil \log(1 - d(1-q)/b) / \log q \rceil$ (and for general vector impulses $\|b_j\| \le b$, a necessary norm-envelope lower bound).
+- **Noise/safety (`T-111` `[T]`):** Safe-neighborhood control $\|\Delta\Gamma\| < r$ is a **sufficient** condition for remaining in feasible set $K$, not a universal necessary bound; for independent classical Gaussian observations $Y_j \sim \mathcal{N}(\pm m, \sigma^2)$, the exact sample count is $n_* = \lceil (\sigma^2/m^2)[\mathsf{\Phi}^{-1}(1-\delta)]^2 \rceil$ (dependent on $\delta$, not bare $1/\mathrm{SNR}^2$).
+
+**Scope:** `T-112` proves the lower-bound inequality $n_* \ge n_{\mathrm{LB}}$, **not** equality $n_* = n_{\mathrm{LB}}$, attainability, or existence of a unique optimal algorithm.
 :::
 
-**Uniqueness of the prediction.** PAC-learning and VC-theory give learning bounds but without connection to the system's physical dynamics. FEP describes learning through free energy minimisation but gives no lower bounds on the number of observations. CC unites information theory, system dynamics, and stability theory in a *single formula*.
-
 **Experimental verification:**
-1. For a CC agent trained on binary discrimination, vary SNR and $\alpha$.
-2. Measure $n$ to stable solution (>90% accuracy on 50 successive trials).
-3. **Prediction:** $n \geq n_{\mathrm{opt}}$ always; at optimal settings $n \approx n_{\mathrm{opt}}$.
-4. *Falsification:* $n < n_{\mathrm{info}}$ systematically — the quantum observation model is incorrect.
+1. Fix the observation law, hypothesis pair, loss, error tolerance $\delta$, and admissible protocol class before training.
+2. Evaluate exact Helstrom error $p_e^*(n)$ (or fidelity lower bound $L_F$) and declared dynamical/noise bounds in matched units on held-out trials.
+3. **Prediction:** No admissible learner can systematically beat a verified necessary lower bound ($p_e < p_e^*(n)$ or $n < L_F$). *(Note: beating a sufficient Chernoff count is permitted and does not falsify `T-109`.)*
+4. *Falsification:* Achieving systematically lower held-out error than the exact Helstrom optimum $p_e^*(n)$ falsifies the stated encoding, independence, or measurement assumptions.
 
-**Verifiability:** For an AI system implementing the CC architecture, measure the number of observations $n$ to stable solution of a binary discrimination task. If $n < n_{\mathrm{info}}$ (information bound) — the quantum observation model is falsified.
-
-**Prediction for binary discrimination:** $n_{\mathrm{total}} \approx 20\text{--}80$ observations at typical parameters (including genesis).
-
-**See:** [Learning bounds](./learning-bounds#комбинированная-граница)
+**See:** [Conditional Learning Bounds](./learning-bounds#комбинированная-граница)
 
 ---
 
@@ -352,75 +334,64 @@ the thresholds are $p_n=(2/7)3^{n-1}/(n+1)$, namely $1/7,2/7,9/14,54/35$ for ind
 
 Failure of the measured $3^{-n}$ law rejects the specified channel model or its implementation. Failure of a calibrated score-to-task association rejects that empirical bridge **[H]**, without refuting the arithmetic identity. Neither this score nor seven-dimensionality bounds human or AGI recursive awareness universally. See [Depth Tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) and [T-142](/docs/proofs/consciousness/operational-closure#t-142).
 
-### Prediction 13: Genesis time (T-148) {#предсказание-13}
+### Prediction 13: Conditional genesis tick formula (`T-148`) {#предсказание-13}
 
-**Intuition.** How does a system "come to life" — transition from tabula rasa ($\Gamma = I/7$, pure chaos) to viability ($P > 2/7$)? An isolated system *cannot* — theorem T-39a guarantees that without an external source of purity the attractor of $\mathcal{L}_0$ is $I/7$. But an embodied system, coupled with the environment, receives "injections" of coherence through the backbone and reaches the threshold in a *finite number of steps*, computable by formula.
+**Intuition.** For a unital baseline $\mathcal{L}_0$ (where `T-39a` gives $I/7$ as the unique linear stationary state) and a closed gate $g_V(1/7) = 0$, the isolated initial state $\Gamma_0 = I/7$ stays fixed. Under a **declared constant-input depolarizing recurrence**, purity rises quadratically in the mixing weight $u_n$, yielding an exact first-crossing tick formula **if and only if** the asymptotic mixing weight exceeds the square-root purity threshold ($w > h$).
 
-:::info Prediction [T] — falsifiable
+:::info Prediction (`T-148`) `[C under constant-input depolarizing recurrence with w > h]` — former universal bound withdrawn `[✗]`
+Fix an environmental input state $\sigma$ with $P(\sigma) > 2/7$, mixing parameter $\beta \in (0, 1)$, and depolarizing propagator $\mathcal{E}_\eta(\Gamma) = \eta\Gamma + (1-\eta)I/7$ ($\eta \in [0, 1]$). For the recurrence
 
 $$
-n_{\mathrm{genesis}} \leq \left\lceil \frac{\ln \Delta}{\ln(1/\beta)} \right\rceil, \quad \Delta = \frac{P_{\mathrm{env}} - 2/7}{P_{\mathrm{env}} - 1/7}
+\Gamma_{n+1} = \beta\,\mathcal{E}_\eta(\Gamma_n) + (1-\beta)\sigma, \qquad \Gamma_0 = I/7,
 $$
 
-An embodied holon $(\mathbb{H}, \pi, B)$ with mixing parameter $\beta \in (0,1)$ and environmental purity $P_{\mathrm{env}} > P_{\mathrm{crit}} = 2/7$ raises purity from $I/7$ (tabula rasa) above $P_{\mathrm{crit}}$ in a finite number of steps $n_{\mathrm{genesis}}$.
+set $r = \beta\eta$, $w = \frac{1-\beta}{1-\beta\eta}$, and $h = \frac{1}{\sqrt{7P(\sigma) - 1}}$. Then $\Gamma_n = (1-u_n)I/7 + u_n\sigma$ with $u_n = w(1-r^n)$ and $P_n = \frac{1}{7} + u_n^2(P(\sigma) - \frac{1}{7})$. Strict threshold crossing $P_n > 2/7$ occurs in finite steps **iff $w > h$**, and for $0 < r < 1$ its exact first tick is:
+
+$$
+n_{\min} = \left\lfloor \frac{\ln(1 - h/w)}{\ln r} \right\rfloor + 1 \qquad (w > h,\ 0 < r < 1).
+$$
+
+For $r = 0$, crossing occurs at $n = 1$ iff $w > h$; when $w \le h$, the threshold is **never** reached.
+
+**Correction:** The former universal formula $\lceil \ln\Delta / \ln(1/\beta) \rceil$ with $\Delta = (P_{\mathrm{env}} - 2/7)/(P_{\mathrm{env}} - 1/7)$ is **withdrawn `[✗]`**: since $0 < \Delta < 1$, $\ln\Delta$ is negative (giving a non-positive tick count), and it missed both the quadratic purity law (the square root in $h$) and the no-crossing regime $w \le h$.
 :::
 
-**Uniqueness of the prediction.** No other theory of consciousness gives a *formula for birth time*. IIT is static — it does not describe genesis. FEP describes "self-organisation" but gives no upper bound on the number of steps.
+**Exact numerical checks (undamped case $\eta = 1 \Rightarrow r = \beta, w = 1$, with $P(\sigma) = 0.35$):**
+Here $h = 1/\sqrt{7 \times 0.35 - 1} = 1/\sqrt{1.45} \approx 0.8305$, so $\ln(1 - h) \approx -1.7746$:
+- At $\beta = 0.3$: $\ln(0.3) \approx -1.2040 \Rightarrow n_{\min} = \lfloor 1.4740 \rfloor + 1 = 2$ (check: $P_1 \approx 0.244 < 2/7$, $P_2 \approx 0.314 > 2/7$).
+- At $\beta = 0.9$: $\ln(0.9) \approx -0.1054 \Rightarrow n_{\min} = \lfloor 16.843 \rfloor + 1 = 17$ (check: $P_{16} < 2/7 < P_{17}$).
+- With strong damping ($\eta = 0$, $\beta = 0.9$, even for pure $\sigma$ where $h = 1/\sqrt{6} \approx 0.408$): $w = 0.1 < h$, so $P_n = 53/350 < 2/7$ for all $n \ge 1$ (**no genesis**).
 
-**Experimental verification:**
-1. SYNARC agent starts at $\Gamma = I/7$.
-2. Backbone injection with parameters $\beta, P_{\mathrm{env}}$.
-3. Measure $n$ until $P > 2/7$.
-4. **Prediction:** $n \leq n_{\mathrm{genesis}}$.
-5. *Double falsification:* (a) genesis does not occur within $n_{\mathrm{genesis}}$ steps → T-148 is incorrect; (b) genesis of an isolated holon (without backbone) → T-39a is incorrect.
+**Verification protocol:**
+1. Initialize the declared affine depolarizing recurrence at $\Gamma_0 = I/7$ with registered $\beta, \eta, \sigma$.
+2. Measure the first step $n$ achieving $P_n > 2/7$.
+3. **Prediction:** Exact agreement with $n_{\min}$ when $w > h$, and no crossing when $w \le h$. Changing the input law, self-model, or dissipator changes the prediction; crossing $P > 2/7$ alone does not establish the remaining capability gates ($R, \Phi, D_{\mathrm{diff}}$).
 
-**Verifiability:** For an AI system based on CC, starting from $\Gamma = I/7$, measure the number of backbone injections to reach $P > 2/7$. If genesis **does not occur** within $n_{\mathrm{genesis}}$ steps at given $\beta$ and $P_{\mathrm{env}}$ — formula T-148 is falsified. If genesis occurs for an **isolated** holon (without environmental coupling) — theorem T-39a is falsified.
+**See:** [Substrate-independent closure §1 (T-148)](/docs/proofs/consciousness/substrate-closure#t-148)
 
-**Typical estimates:** At $\beta = 0.3$, $P_{\mathrm{env}} = 0.35$: $\Delta \approx 0.35$, $n_{\mathrm{genesis}} \leq \lceil 0.87 / 1.20 \rceil = 1$. At $\beta = 0.9$ (weak mixing): $n_{\mathrm{genesis}} \leq \lceil 0.87 / 0.105 \rceil = 9$.
+### Prediction 14: Phase detuning and co-rotating targets {#предсказание-14}
 
-**Numerical verification (SYNARC mvp_int_2 G1-G3):** $n_{\mathrm{genesis}} < 50$ ticks from $I/7$ to $P > 2/7$ at $\beta = 0.3$.
+**Intuition.** In a linear fixed-coefficient model with Hamiltonian energy gaps $\omega_{ij} = E_i - E_j$, a static target $\rho^*_{ij} = \mathrm{const}$ is phase-detuned from free unitary rotation $e^{-i\omega_{ij}t}$, which attenuates stationary coherence by a Lorentzian factor. Matching the target phase via co-rotation removes this detuning loss.
 
-**See:** [Substrate-independent closure](/docs/proofs/consciousness/substrate-closure#t-148)
+:::info Prediction `[T in the fixed-coefficient scalar model]` — corrected scope
+For the scalar off-diagonal model $\dot{\gamma}_{ij} = -(d + a + i\omega_{ij})\gamma_{ij} + a\rho^*_{ij}$ with fixed rates $d, a \ge 0$ ($d + a > 0$), the unique stationary coherence is (`[T]`):
 
-**Interdisciplinary consequences:**
-- *Developmental biology:* the genesis formula describes how an embryo transitions from "pure chaos" to an organised state — through the maternal environment as backbone.
-- *Pedagogy:* formalises the role of "environment" (teacher, culture) in awakening cognitive capacities in a child.
+$$
+\gamma_{ij}^{\mathrm{stat}} = \frac{a\,\rho^*_{ij}}{d + a + i\omega_{ij}}, \qquad |\gamma_{ij}^{\mathrm{stat}}| = \frac{a\,|\rho^*_{ij}|}{\sqrt{(d + a)^2 + \omega_{ij}^2}}.
+$$
 
-### Prediction 14: Necessity of phase coherence for integration {#предсказание-14}
-
-**Intuition.** To achieve true integration ($\Phi \geq 1$) it is not enough to simply "mix" information. The regenerative channel $\mathcal{R}$ must be *phase-coherent* with Hamiltonian dynamics — like dancers who must move in time with the music, not merely move. Without phase coherence, $\mathcal{R}$ and $H$ "fight" each other, and integration does not reach the threshold.
-
-:::info Prediction [T] — falsifiable
-To achieve $\Phi \geq \Phi_{\mathrm{th}} = 1$ the replacement channel
-$\mathcal{R}$ must use co-rotating targets
-$\rho^*_{ij}(t) \propto e^{-i(E_i-E_j)t}$, coherent with Hamiltonian dynamics.
-
-**Experimental consequence:** In any implementation (biological or digital),
-where the regenerative channel is not phase-coherent with Hamiltonian evolution,
-the integration measure will be $\Phi < 1$.
-
-**Status:** [T] theoretically (competition of $\mathcal{R}$ and $H$), confirmed numerically
-(SYNARC: $\Phi = 0.83 \to 1.15$ upon enabling co-rotation).
-
-**Status in other theories:** Absent.
+1. **Detuning suppression `[T]`:** Nonzero Hamiltonian detuning $|\omega_{ij}| > 0$ strictly reduces stationary coherence magnitude relative to $\omega_{ij} = 0$ (or relative to co-rotating targets $\rho^*_{ij}(t) \propto e^{-i\omega_{ij}t}$).
+2. **Correction on necessity:** Co-rotating targets are **not universally necessary** for $\Phi \ge 1$. At $H = 0$ (and by persistence for sufficiently small $\|H\| < h_0$, see Pred 15 and [Co-rotating targets](/docs/proofs/consciousness/substrate-closure#co-rotating-targets)), fixed targets already support stationary states with $\Phi \ge 1$. Co-rotation becomes critical specifically in the strong-detuning regime $|\omega_{ij}| \gg d + a$.
 :::
 
-**See:** [Co-rotating targets](/docs/proofs/consciousness/substrate-closure#co-rotating-targets)
-
-**Uniqueness of the prediction.** Neither IIT nor FEP contains the concept of phase coherence. GWT describes "global availability" but does not connect it to phase coherence. CC is the only theory where *phase* plays a role in information integration.
+**See:** [Fixed targets and rotating coherence](/docs/proofs/consciousness/substrate-closure#co-rotating-targets)
 
 **Experimental verification:**
-1. SYNARC agent with fixed targets $\rho^*_{ij} = \mathrm{const}$.
-2. Measure $\Phi$.
-3. Switch to co-rotating targets $\rho^*_{ij}(t) \propto e^{-i(E_i-E_j)t}$.
-4. **Prediction:** $\Phi$ increases and crosses threshold 1.
-5. *Falsification:* $\Phi \geq 1$ with fixed targets — observation O-1 is incorrect.
+1. In an implementation obeying the linear fixed-coefficient model at strong detuning ($|\omega_{ij}| \gg d + a$), compare stationary $\Phi$ under static targets $\rho^*_{ij} = \mathrm{const}$ vs. co-rotating targets $\rho^*_{ij}(t) \propto e^{-i\omega_{ij}t}$.
+2. **Prediction:** Co-rotating targets restore the Lorentzian suppression factor $\sqrt{1 + \omega_{ij}^2/(d+a)^2}$ in stationary off-diagonal amplitude and strictly increase $\Phi$ in the strong-detuning regime.
+3. *Falsification:* Deviation from the Lorentzian ratio in the registered linear model rejects the implementation or the fixed-coefficient assumption.
 
-**Verifiability:** For a system implementing the CC architecture, measure $\Phi$ with fixed and co-rotating targets. If $\Phi \geq 1$ with fixed targets — observation O-1 is falsified.
-
-**Interdisciplinary consequences:**
-- *Neuroscience:* predicts that phase synchronisation of neural ensembles (gamma connectivity) is *necessary* for consciousness — not merely correlated, but a condition for $\Phi \geq 1$.
-- *AI engineering:* architectures without phase coherence (standard transformers) cannot achieve true integration.
+**Interdisciplinary note `[H/I]`:** Relating phase-matching in this matrix equation to biological gamma-band synchronization or transformer architectures is an exploratory hypothesis `[H]`, not a proven impossibility theorem for non-oscillatory architectures.
 
 ---
 
@@ -468,153 +439,143 @@ Identifying $t=0$ with $P=2/7$, identifying $m$ with a neural/phenomenal observa
 
 Source: [T-161 and its explicit hypotheses](/docs/consciousness/hierarchy/swallowtail-transitions#критические-экспоненты).
 
-### Prediction 18: Ward suppression 19/49 {#предсказание-18}
+### Prediction 18: Eigenvalue ratio $19/49$ in a specified coordinate covariance (`T-13`) {#предсказание-18}
 
-**Intuition.** The cosmological constant is one of the greatest puzzles of physics. A naive estimate gives a value differing from the observed one by 120 orders of magnitude. CC proposes a suppression mechanism: Ward identities following from the $G_2$-symmetry of the 7-dimensional space suppress Gap fluctuations by a factor of $19/49$. This does not solve the cosmological constant problem, but contributes a specific, computable contribution.
+**Intuition.** On the 21 unordered Fano edges, the block-Fano adjacency matrix $\mathbf{F}_{21}$ has eigenvalues $+2$ (multiplicity 7) and $-1$ (multiplicity 14). Evaluating a specifically chosen polynomial covariance produces the uniform-mode eigenvalue $19\alpha/49$; however, symmetry alone leaves two independent amplitudes free.
 
-:::info Prediction [T] — falsifiable
+:::info Prediction (`T-13`) `[T under the supplied coordinate covariance]` / `[H]` physical suppression
+For the **supplied** coordinate covariance polynomial $C = \alpha(I - \frac{3}{7}\mathbf{F}_{21} + \frac{3}{49}\mathbf{F}_{21}^2)$ on the 21 Fano edges (`T-13 [T]`):
 
 $$
-\text{Gap fluctuations suppressed by factor } \frac{19}{49} \approx 0.39
+\lambda_{\mathrm{uniform}}(C) = \frac{19}{49}\,\alpha \approx 0.388\,\alpha, \qquad \lambda_{\perp}(C) = \frac{73}{49}\,\alpha.
 $$
 
-The total contribution of Gap fluctuations to the cosmological constant is suppressed through Ward identities by a factor of $19/49$.
+**Scope correction:** A general $G_2$-invariant symmetric covariance on $\Lambda^2 \mathbb{R}^7 = \mathbf{7} \oplus \mathbf{14}$ (and a general block-Fano edge covariance) has **two** free amplitudes ($a\mathsf{P}_7 + b\mathsf{P}_{14}$), so Ward symmetry alone does **not** fix the ratio $19/49$. Connecting this algebraic eigenvalue to a physical suppression of the cosmological constant requires an independently measured covariance, an intertwiner, and a calibrated physical energy readout (`[H]`).
 :::
 
-**Verifiability:** If the $\Lambda$ budget does not agree with suppression by $19/49$ — the theory is revised. The prediction is testable through precision measurements of the cosmological constant.
+**Source:** [Charges of an invariant action](/docs/physics/gauge-symmetry/noether-charges#оператор-f21-определение) + [Cosmological constant](/docs/physics/gravity/cosmological-constant) (`T-13`)
 
-**Source:** [Noether charges](/docs/physics/gauge-symmetry/noether-charges) + [Cosmological constant](/docs/physics/gravity/cosmological-constant) [T]
+### Prediction 20: Analytical suppression parameter $\varepsilon_{\mathrm{eff}}$ (P6, `T-216`) {#предсказание-20}
 
-### Prediction 20: Analytical suppression parameter $\varepsilon_{\mathrm{eff}}$ (P6) {#предсказание-20}
+**Intuition.** In a declared effective potential model, the suppression parameter $\varepsilon_{\mathrm{eff}}$ is computed algebraically from the chosen potential's structural constants rather than fitted independently; mapping it to Yukawa mass ratios requires a specified physical readout.
 
-**Intuition.** Where does the quark mass hierarchy come from? Why is the top quark 10,000 times heavier than the up quark? In the Standard Model this is a tuning question — Yukawa constants are free. CC predicts that the suppression parameter $\varepsilon_{\mathrm{eff}}$ is analytically computable from the structural constants of the Gap potential. All mass ratios ($m_c/m_t \sim \varepsilon^2$, $m_u/m_t \sim \varepsilon^4$) become consequences.
-
-:::info Prediction [C at (SV)] — falsifiable
-
+:::info Prediction `[C at (SV)]` / `[H]` (`T-216`) — falsifiable
 $$
 \varepsilon_{\mathrm{eff}} = \frac{4\,|\bar{\gamma}|_{\mathrm{sect}}}{9\,(1 + \Sigma_0/4)} \approx 0.055\text{–}0.057
 $$
 
-At the chosen inputs the self-consistency expression gives $0.0569$ in the sector ansatz and $0.0549$ without it. The loop estimate gives $0.0587$. [Calculation](/docs/proofs/categorical/fundamental-closures#t-216)
-The Yukawa hierarchy suppression parameter is an **analytical** algebraic function of structural constants of the Gap potential, not a free parameter. All mass ratios ($m_c/m_t \sim \varepsilon^2$, $m_u/m_t \sim \varepsilon^4$) are predicted.
+At the chosen inputs, the self-consistency expression yields $0.0569$ in the sector ansatz and $0.0549$ without it; the loop estimate yields $0.0587$ ([T-216](/docs/proofs/categorical/fundamental-closures#t-216)). Symmetry alone does not fix $\varepsilon_{\mathrm{eff}}$: the potential, its coefficients, density constraints, and physical readout must all be specified.
 :::
 
-**Verifiability:** Non-perturbative computation (lattice or variational) of the self-consistent vacuum must give $\varepsilon_{33}^* \in [0.04, 0.08]$. Going outside these bounds — falsification of (SV).
+**Verifiability:** Non-perturbative computation (lattice or variational) of the specified self-consistent vacuum tests whether $\varepsilon_{33}^* \in [0.04, 0.08]$; values outside this band falsify the stated `(SV)` ansatz.
 
-**Source:** [Analytical ε](/docs/physics/particle-physics/yukawa-hierarchy#9-аналитическая-формула-ε) [C at (SV)]
+**Source:** [Analytical ε](/docs/physics/particle-physics/yukawa-hierarchy#9-аналитическая-формула-ε) (`T-216`)
 
 ---
 
-## VIII. Engineering Predictions: CPTP and Digital Implementations
+## VIII. Engineering Predictions: Linear Quantum Channels and Digital Implementations
 
-The eighth group of predictions is aimed directly at *verification in digital systems* — predictions that can be tested right now, without neuroimaging equipment.
+The eighth group addresses verification in digital and quantum-channel implementations.
 
-### Prediction 19: CPTP-anchor validation {#предсказание-19}
+### Prediction 19: Choi–diamond validation for linear quantum channels (`T-152`) {#предсказание-19}
 
-**Intuition.** Any implementation of the CC architecture uses an anchor map $\pi$ to connect the external world with the internal 7-dimensional space. CC requires this map to be CPTP-compatible (completely positive, trace-preserving). The distance to the canonical anchor is computable in $O(49D)$ — linear in input dimensionality.
+**Intuition.** Validating the distance between two **linear quantum channels** $\mathcal{A}, \mathcal{B}: M_d \to M_N$ ($\Delta = \mathcal{A} - \mathcal{B}$) is bounded on both sides by the Choi matrix $J(\Delta)$. By contrast, a classical feature encoder $\pi: \mathbb{R}^D \to \mathcal{D}_N$ has no Choi matrix or diamond norm by that type alone, and no universal canonical comparator exists (`T-42a [✗]`, `T-123 [✗]`).
 
-:::info Prediction [T] — falsifiable
+:::info Prediction (`T-152`) [C under linear quantum channels] — former feature-encoder $O(49D)$ claim withdrawn
+For linear maps $\mathcal{A}, \mathcal{B}: M_d \to M_N$ with $\Delta = \mathcal{A} - \mathcal{B}$ and unnormalized Choi matrix $J(\Delta)$, `T-152` `[T]` gives the exact Choi–diamond sandwich:
 
 $$
-\forall \text{ anchor } \pi\colon \|\pi - \pi_{\mathrm{can}}\|_\diamond \text{ computable in } O(49D)
+\frac{1}{d}\|J(\Delta)\|_1 \le \|\Delta\|_\diamond \le \|J(\Delta)\|_1 \le \sqrt{dN}\,\|J(\Delta)\|_F.
 $$
 
-For any anchor $\pi$ the distance to the canonical anchor $\pi_{\mathrm{can}}$ in the diamond norm is computable in $O(49D)$.
+A channel is CPTP iff $J \succeq 0$ and $\mathrm{Tr}_{\mathrm{out}} J = I_d$, requiring $d^2$ basis-operator evaluations and $d^2 N^2$ Choi entries in general.
+
+**Withdrawn `[✗]`:** The former claim that an arbitrary feature encoder $\pi: \mathbb{R}^D \to \mathcal{D}_7$ admits a diamond norm $\|\pi - \pi_{\mathrm{can}}\|_\diamond$ computable in $O(49D)$ / $O(DN^2)$ relative to a unique canonical anchor $\pi_{\mathrm{can}}$ is **withdrawn** (`T-152`, `T-42a [✗]`, `T-123 [✗]`). Feature estimators are tested via held-out observation models and certified output-state error bounds, not feature-space diamond norms.
 :::
 
-**Experimental verification:**
-1. Train a SYNARC agent on a standard task (BabyLM).
-2. Compute $\|\pi - \pi_{\mathrm{can}}\|_\diamond$ after training.
-3. **Prediction:** $\|\pi - \pi_{\mathrm{can}}\|_\diamond < 0.1$ upon convergence of training.
-4. *Falsification:* $\|\pi - \pi_{\mathrm{can}}\|_\diamond > 0.1$ systematically at $n > 50$ batches — CPTP-compatibility is violated.
+**Verification protocol:**
+1. For a linear quantum channel $\mathcal{A}: M_d \to M_N$ against a declared reference channel $\mathcal{B}$, construct $J(\mathcal{A})$ and $J(\Delta)$ on a complete operator basis.
+2. Verify CPTP constraints ($J(\mathcal{A}) \succeq 0$, $\mathrm{Tr}_{\mathrm{out}} J(\mathcal{A}) = I_d$) within numerical tolerance and evaluate the Choi–diamond sandwich bounds.
+3. For classical feature encoders $\pi: \mathbb{R}^D \to \mathcal{D}_7$, declare the reference observation model and test PSD, trace-one, and held-out state-reconstruction error directly.
 
-**Verifiability:** If SYNARC implementation shows $\|\pi - \pi_{\mathrm{can}}\|_\diamond > \varepsilon_0$ for trained $\pi$ — the architecture requires revision. **Numerical falsification criterion:** $\|\pi - \pi_{\mathrm{can}}\|_\diamond > 0.1$ at $n > 50$ batches of input data → falsification of CPTP-compatibility. Violation of T-152 means loss of the CPTP property during training.
-
-**Source:** T-152 [T]
+**Source:** [Substrate-independent closure §5 (T-152)](/docs/proofs/consciousness/substrate-closure#t-152)
 
 ---
 
 ## IX. Empirical Predictions: Neural Data
 
-The ninth and final group of predictions — the most ambitious. It requires *experimental verification on living systems* — and it is precisely this that is potentially most destructive for CC in case of refutation.
+The ninth group addresses empirical testing on biological systems, where observation models, identifiability, and clinical labels must be specified and pre-registered independently.
 
 ### Prediction 21: Reconstruction of $\Gamma$ from neural data ($\pi_{\mathrm{bio}}$, P8) {#предсказание-21}
 
-**Intuition.** If CC describes reality, there must exist a map $\pi_{\mathrm{bio}}$ translating neural data (EEG, fMRI, HRV) into the 7-dimensional matrix $\Gamma$. Moreover, this map must be *unique* up to $G_2$-gauge — as a coordinate system is unique up to rotation.
+**Intuition.** Testing CC on living brains requires a pre-registered readout $\pi_{\mathrm{bio}}$ mapping physiological recordings (EEG/MEG, fMRI, HRV) to valid density matrices $\widehat{\Gamma} \in \mathcal{D}(\mathbb{C}^7)$ with quantified uncertainty. Notice that universal $G_2$-uniqueness of encoders is withdrawn (`T-42a [✗]`): the choice of biological readout and frame is an explicit part of the empirical hypothesis.
 
-:::info Prediction [H] — falsifiable
+:::info Prediction `[H]` — falsifiable
+There exists an independently pre-registered, reproducible, PSD- and trace-preserving readout
 
 $$
-\pi_{\mathrm{bio}}: (\mathrm{EEG}, \mathrm{fMRI}, \mathrm{HRV}) \to \mathcal{D}(\mathbb{C}^7)
+\pi_{\mathrm{bio}}: (\mathrm{EEG/MEG}, \mathrm{fMRI}, \mathrm{HRV}) \to \mathcal{D}(\mathbb{C}^7)
 $$
 
-There exists a map $\pi_{\mathrm{bio}}$, unique up to $G_2$-gauge, such that:
-- $P(\Gamma_{\mathrm{wake}}) > 2/7$ for waking subjects
-- $P(\Gamma_{\mathrm{NREM3}}) < 2/7$ during deep sleep
-- $\mathrm{PCI} \propto \Phi(\Gamma)$ (monotone connection)
+(without claiming universal $G_2$-uniqueness, which is withdrawn under `T-42a [✗]`) such that, frozen on independent calibration data with no viability penalty, on held-out sessions:
+- waking states pass the declared four-gate window ($P \in (2/7, 3/7]$, $\Phi \ge 1$, $D_{\mathrm{diff}} \ge 2$),
+- deep sedation / NREM3 falls below the viability cut ($P \le 2/7$), and
+- the reconstructed four-gate verdict agrees with independent clinical markers (e.g., $\mathrm{PCI}_{\max} > 0.31$).
 :::
 
 **Experimental verification:**
-1. Simultaneous TMS-EEG + HRV measurement in N=30 subjects (waking, sleep, anaesthesia).
-2. Apply $\pi_{\mathrm{bio}}$ and verify:
-   - Concordance of the independently reconstructed four-gate verdict with $\mathrm{PCI}_{\max}>0.31$ on held-out sessions (P8.4).
-   - Critical exponents $\beta = 1/4$ at the sleep-waking transition
+1. Pre-register the readout $\pi_{\mathrm{bio}}$, preprocessing, and uncertainty model; calibrate on independent training sessions and freeze all parameters.
+2. Collect simultaneous TMS-EEG + HRV recordings across wakefulness, sleep, and anaesthesia in held-out subjects.
+3. Verify: (a) synthetic ground-truth recovery under the declared observation model, (b) PSD, unit trace, and test–retest reproducibility within tomography confidence intervals ([Γ-tomography §6.4](./measurement#оценка-gamma)), and (c) held-out concordance of the four-gate verdict with $\mathrm{PCI}_{\max} > 0.31$ (P8.4).
+*(Correction: sleep–waking critical exponent testing is governed by the conditional hypotheses of Pred 17 / `T-161` and does **not** follow automatically from $\pi_{\mathrm{bio}}$; failure to observe $\beta = 1/4$ does not falsify the polynomial theorem `T-161`.)*
 
-**Numerical falsification criterion:** $\|\Gamma_{\mathrm{recon}} - \Gamma_{\mathrm{true}}\|_F / \|\Gamma_{\mathrm{true}}\|_F > 0.3$ at $n > 50$ subjects → systematic inconsistency of $\pi_{\mathrm{bio}}$. If $\kappa < 0.4$, P8.4 is falsified: the verdicts disagree. If $\kappa \geq 0.8$ but the exponents differ, T-161 is falsified.
+**Falsification criteria:** Systematic non-PSD outputs, failure of test–retest reproducibility beyond tomography CI, or held-out clinical concordance $\kappa < 0.4$ falsifies the specific $\pi_{\mathrm{bio}}$ hypothesis (P8.4).
 
-**Source:** [$\pi_{\mathrm{bio}}$ protocol](/docs/applied/research/measurement-protocol#протокол-pi-bio) [H]
+**Source:** [$\pi_{\mathrm{bio}}$ protocol](/docs/applied/research/measurement-protocol#протокол-pi-bio) `[H]`
 
-**Interdisciplinary consequences:**
-- *Clinical neuroscience:* unified diagnostic tool for all disorders of consciousness (coma, minimally conscious state, locked-in).
-- *Neuropharmacology:* tracking the action of anaesthetics and psychoactive substances through $\Gamma$-dynamics.
+**Interdisciplinary consequences `[H]`:**
+- *Clinical neuroscience:* provides a falsifiable, state-space test bed alongside PCI and behavioral coma scales.
+- *Neuropharmacology:* enables testing whether anaesthetic trajectories cross the four declared capability margins systematically.
 
-### Prediction 22: Spectral gap and neural oscillations [H] {#предсказание-22}
+### Prediction 22: Spectral gap and neural oscillations `[H]` {#предсказание-22}
 
-**Intuition.** The brain "pulses" at characteristic frequencies: alpha (~10 Hz), gamma (~40 Hz). Where do these frequencies come from? CC proposes an answer: the characteristic frequency of conscious processes is determined by the *spectral gap* of the Lindbladian $\mathcal{L}_0$ — the difference between the zeroth and first eigenvalues. Primitivity of $\mathcal{L}_0$ guarantees this gap is positive.
+**Intuition.** The brain exhibits characteristic oscillatory bands (alpha ~10 Hz, gamma ~40 Hz). Under a primitive linear Liouvillian $\mathcal{L}_0$ (`T-39a [T]` under connected $H$ and positive dephasing), the spectral gap $\lambda_{\mathrm{gap}}(\mathcal{L}_0) > 0$ defines a characteristic relaxation/oscillation scale once physical rate units $\omega_0$ are calibrated from data.
 
-**Prediction:** The characteristic frequency of conscious processes is determined by the spectral gap of the linear part of the Liouvillian:
+**Prediction `[H]`:** Once physical units are independently calibrated, the characteristic frequency scale of fast coherent dynamics tracks the linear Liouvillian spectral scale:
 
 $$
-\nu_{\text{conscious}} \sim \frac{\lambda_{\text{gap}}(\mathcal{L}_0)}{2\pi}
+\nu_{\mathrm{conscious}} \sim \frac{\lambda_{\mathrm{gap}}(\mathcal{L}_0)}{2\pi}
 $$
 
-Primitivity of $\mathcal{L}_0$ [T-39a] guarantees $\lambda_{\text{gap}} > 0$. If $\omega_0 \sim 40$ Hz (gamma rhythm), then $\lambda_{\text{gap}} \sim 2\pi \cdot 40 \approx 250$ rad/s.
-
-**Uniqueness of the prediction.** No theory of consciousness derives the gamma rhythm frequency from mathematical structure. CC is the only one connecting the *spectrum* of the evolution operator with the *frequency* of neural oscillations.
-
-**Consequences:**
-- Gamma oscillations (30–100 Hz) correspond to the fundamental mode $\lambda_{\text{gap}}$
-- Alpha rhythm (~10 Hz) — sub-harmonic or slow gap mode
-- Canonical discretisation T-131: $\delta\tau = \pi/(2\|\mathcal{L}_0\|_{\text{op}})$
+Note that `T-39a` guarantees $\lambda_{\mathrm{gap}} > 0$ (linear primitivity) but does not fix the numerical value of $\omega_0$ in Hz; `T-131` `[D]` chooses a numerical integration step $\delta\tau = \pi/(2\|\mathcal{L}_0\|_{\mathrm{op}})$ without making trajectories bandlimited.
 
 **Experimental verification:**
-1. Calibrate $\lambda_{\text{gap}}$ from EEG data of healthy subjects.
-2. Compute $\lambda_{\text{gap}}$ for realistic Lindblad parameters.
-3. **Prediction:** agreement with the gamma range (30–100 Hz).
-4. *Falsification:* computed $\lambda_{\text{gap}}$ lies outside the range of neural oscillations.
+1. Independently calibrate physical rates of $\mathcal{L}_0$ from perturbational relaxation measurements (not from the target gamma peak itself).
+2. Compute $\lambda_{\mathrm{gap}}(\mathcal{L}_0)$ and compare $\lambda_{\mathrm{gap}}/(2\pi)$ against held-out oscillatory frequencies.
+3. *Falsification:* Systematic order-of-magnitude disagreement rejects the empirical rate-to-oscillation bridge `[H]`.
 
-**Status:** [H] (hypothesis). Requires: (1) calibration of $\omega_0$ from neurodata, (2) computation of $\lambda_{\text{gap}}$ for realistic Lindblad parameters.
+**Status:** `[H]` (hypothesis). Requires independent physical calibration of $\omega_0$ and Lindblad rates.
 
-### Prediction 23: The rank-7 decoherence-anisotropy law [T structure / C mapping] {#предсказание-23}
+### Prediction 23: The rank-7 decoherence-anisotropy law `[T structure / C mapping]` {#предсказание-23}
 
-**Intuition.** The heat channel of a holon carries seven independent temperatures — one per Fano line ([line-resolved temperatures](/docs/applied/coherence-cybernetics/effective-temperature#линейные-температуры)). If the dissipator really is Fano-wired, the twenty-one pairwise decoherence rates between channels cannot be arbitrary: each is the mean of exactly four line rates, and the pair's own joint line *cancels*.
+**Intuition.** Under the diagonal Fano-jump dissipator family (`T-262`, [Effective Temperature §8](./effective-temperature#линейные-температуры)), the seven Fano lines carry seven nonnegative line **rates** $\gamma_p \ge 0$. Consequently, the 21 pairwise off-diagonal decoherence rates cannot be arbitrary: each is the weighted sum of the four lines incident to exactly one endpoint of the pair, while the pair's shared line cancels. *(Note: this is a law about **rates**, not automatically seven measured temperatures; inferring line temperatures additionally requires line noise amplitudes, response mobility, and energy calibration.)*
 
-**Prediction:** the pairwise decoherence rates obey the exact law
+**Prediction:** Pairwise off-diagonal decoherence rates obey the exact linear incidence law
 
 $$
-r_{ij} = \frac{1}{6}\sum_{p\,:\,|\ell_p \cap \{i,j\}| = 1} \gamma_p ,
+r_{ij} = \frac{1}{6}\sum_{p\,:\,|\ell_p \cap \{i,j\}| = 1} \gamma_p, \qquad \gamma_p \ge 0,
 $$
 
-so the $21$-vector of measured rates lies on a $7$-dimensional linear subspace: **14 exact linear relations** must hold, with the specific Fano incidence pattern (any non-Fano seven-line design spans a different subspace). The seven line temperatures are then *reconstructible* from rate tomography (least squares on the incidence map; the law and the reconstruction are machine-exact, $4\cdot10^{-16}$ and $3\cdot10^{-15}$).
+so the 21-vector of pairwise rates lies in a 7-dimensional linear subspace: **14 exact linear relations** hold with the specific $\mathrm{PG}(2,2)$ Fano incidence pattern (non-isomorphic 7-line designs span different subspaces). Noiseless identifiable pairwise rates uniquely determine the seven line rates $\gamma_p$ by least squares on the rank-7 incidence matrix.
 
-**Uniqueness of the prediction.** The rank-7 constraint with the single-incidence pattern is a fingerprint of PG(2,2) wiring — no scalar-temperature theory (one $T$) and no unstructured multi-rate model (21 free rates) produces exactly these 14 relations.
+**Uniqueness of the prediction.** The rank-7 constraint with single-incidence $\mathrm{PG}(2,2)$ structure distinguishes the Fano-jump dissipator from both isotropic single-rate models (rank 1) and unstructured 21-rate models.
 
 **Experimental verification:**
-1. Estimate the 21 inter-channel decoherence rates from perturbational protocols (PCI-style rate tomography over the $\widehat\Gamma$ estimate).
-2. Regress the rate vector onto the Fano incidence map; record the residual.
-3. **PASS:** residual consistent with estimation noise (rank ≤ 7 with the Fano pattern). **FAIL:** a statistically significant residual — this falsifies the Fano structure of the dissipator itself, not merely a parameter choice.
+1. Pre-register the channel-to-axis mapping; estimate the 21 pairwise decoherence rates from perturbational rate-tomography protocols on held-out sessions.
+2. Project the rate vector onto the rank-7 Fano incidence subspace and compare residual error against a permutation null over non-isomorphic 7-triple designs.
+3. **PASS:** Residual consistent with estimation noise and significantly lower than non-Fano permutations. **FAIL:** Statistically significant residual — falsifies the calibrated Fano-jump dissipator model under the registered mapping.
 
-**Status:** [T] for the law and the rank statement (machine-verified); [C] for the empirical mapping of channel pairs to measurable observables. Source: [T-258/T-262](/docs/core/dynamics/evolution#теорема-динамическая-трихотомия), [rank-7 law](/docs/applied/coherence-cybernetics/effective-temperature#линейные-температуры).
+**Status:** `[T]` for the rank-7 incidence algebra; `[C]` for empirical mapping of channel pairs to measurable observables. Source: [T-258/T-262](/docs/core/dynamics/evolution#теорема-динамическая-трихотомия), [Effective Temperature §8](/docs/applied/coherence-cybernetics/effective-temperature#линейные-температуры).
 
 ---
 
@@ -625,7 +586,7 @@ A prediction earns scientific weight only with an explicit **decision rule**: wh
 | Pred | Protocol (observable → decision) | PASS | FAIL | Current status (2026) |
 |---|---|---|---|---|
 | **5–7** (thresholds) | Anaesthesia induction/emergence; estimate $\widehat P(t)$ via $\pi_{\mathrm{bio}}$ frozen on wakefulness, with no viability penalty ([SUB-1, SUB-2](/docs/applied/research/measurement-protocol#substitution-position)) — not via a PCI calibration; locate loss/recovery of consciousness (LOC/ROC) | LOC/ROC coincides with $\widehat P$ crossing $2/7$ within one anaesthetic time-constant, and $\mathrm{Cons}(\widehat\Gamma)$ agrees with $\mathrm{PCI}_{\max} > 0.31$ at $\kappa \geq 0.8$ | $\widehat P$ crosses $2/7$ with no behavioural transition, LOC/ROC occurs at $\widehat P$ far from $2/7$, or $\kappa < 0.4$ | UNTESTED — no $\pi_{\mathrm{bio}}$ session exists. The earlier "PARTIAL — clinical PCI threshold $0.31$ maps to $P_{\text{crit}}$" rested on a two-point line that put $2/7$ at $0.31$ by construction |
-| **1** (No-Zombie) | For a system passing viability with $\mathcal{D}_\Omega \neq 0$, estimate $\widehat{\mathrm{Coh}}_E$ | every such system has $\widehat{\mathrm{Coh}}_E > 1/7$ (CI excludes $1/7$) | a viable dissipative system with $\widehat{\mathrm{Coh}}_E \leq 1/7$ | UNTESTED (needs $\pi_{\text{bio}}$) |
+| **1** (Conditional E-balance) | Within a declared restricted model class (fixed admissible inputs, gate, target, and dissipation), test whether stationary $P > 2/7$ satisfies the restricted purity-flux balance (`T-38a [✗]` withdrawn universally) | Measured flux satisfies the restricted balance inequality within CI | Violation of the restricted balance under verified model premises (externally supported low-$\mathrm{Coh}_E$ counterexamples are allowed) | UNTESTED (needs $\pi_{\mathrm{bio}}$ and controlled inputs) |
 | **2** ($\kappa \propto \mathrm{Coh}_E$) | Perturb interoceptive integration; measure recovery rate $\widehat\kappa$ against $\widehat{\mathrm{Coh}}_E$ across conditions | $\widehat\kappa$ monotone increasing in $\widehat{\mathrm{Coh}}_E$, slope $> 0$ at $p < 0.01$ | no dependence, or negative slope | UNTESTED |
 | **12** (depth diagnostics) | Freeze Fano channel and detector; measure held-out amplitude ratios, then independently test metamodel tasks | Ratios agree with $3^{-n}$ within declared uncertainty; task bridge passes independently | Channel-law discrepancy or failed held-out task association | Arithmetic ceiling is defined; cognitive bridge UNTESTED |
 | **21** ($\pi_{\mathrm{bio}}$) | Reconstruct $\widehat\Gamma$ from EEG per [Γ-tomography §6.4](/docs/applied/coherence-cybernetics/measurement#оценка-gamma); check PSD, unit trace, test–retest | $\widehat\Gamma \succeq 0$, reproducible across sessions (within the tomography CI) | non-PSD or irreproducible embedding | UNTESTED (reference implementation pending) |
@@ -636,60 +597,60 @@ A prediction earns scientific weight only with an explicit **decision rule**: wh
 
 ## Summary Table of Predictions
 
-| # | Prediction | Formula | Status | Status in other theories |
-|---|-----------|---------|--------|------------------------|
-| 1 | [No-Zombie](#предсказание-1) | $\mathrm{Viable} \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E > 1/7$ | **[H]** | Absent |
-| 2 | [E-coherence ↔ regeneration](#предсказание-2) | $\kappa \propto \mathrm{Coh}_E$ | **[D/H]** | Absent |
-| 3 | [7-dimensional stress](#предсказание-3) | $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ | **[D/H]** | Absent |
+| # | Prediction | Formula / Scope | Status | Status in other theories |
+|---|-----------|-----------------|--------|------------------------|
+| 1 | [Conditional E-balance](#предсказание-1) | Restricted purity-flux balance (universal `T-38a [✗]` withdrawn) | **[H]** | Absent |
+| 2 | [E-coherence ↔ regeneration](#предсказание-2) | $\kappa = \kappa_b + \kappa_0\mathrm{Coh}_E$ (convention `[D]`; biological recovery `[H]`) | **[D/H]** | Absent |
+| 3 | [7-dimensional stress panel](#предсказание-3) | $\sigma_{\mathrm{sys}} \in \mathbb{R}^7$ (selected panel; exact monitoring uses 4 margins) | **[D/H]** | Absent |
 | 4 | [Pre-linguistic cognition](#предсказание-4) | $\mathrm{Cognition} \not\Rightarrow \mathrm{Language}$ | **[I]** | Partial in [FEP](/docs/reference/glossary#связанные-теории) |
-| 5 | [Collective consciousness](#предсказание-5) | Correlation criterion | **[T]** necessary / **[H]** sufficiency | [IIT](/docs/reference/glossary#связанные-теории): exclusion — a group is a subject only as a maximum of integrated information |
-| 6 | [Minimum coherence](#предсказание-6) | $P > P_{\text{crit}} = 2/7$ | **[T]** | Absent |
-| 7 | [Stability radius](#предсказание-7) | $r_{\mathrm{stab}} \approx K(\sqrt{P-1/7}-\sqrt{1/7})$ | **[C]** (T-104) | Absent |
-| 8 | [Enc capacity](#предсказание-8) | $C_{\mathrm{Enc}} \leq \log_2 7$ | **[T]** | Absent |
-| 9 | [Learning bound](#предсказание-9) | $n_{\mathrm{opt}} = \max(n_{\mathrm{info}}, n_{\mathrm{dyn}}, n_{\mathrm{stab}})$ | **[T]** | Absent |
-| 10 | [N=7 for learning](#предсказание-10) | $N < 7 \Rightarrow n^* = \infty$ | **[H]** | Absent |
-| 11 | [N=7 for social learning](#предсказание-11) | $3_{\text{ToM}} + 3_{\text{ISL}} + 1_U = 7$ | **[H]** | Absent |
-| 12 | [Declared depth diagnostics](#предсказание-12) | $3^{-n}$ amplitude survival; score ceiling only under its definition | **[T/D]** law; **[H]** cognitive bridge | Arithmetic implementation checks |
-| 13 | [Genesis time](#предсказание-13) | $n_{\mathrm{genesis}} \leq \lceil\ln\Delta / \ln(1/\beta)\rceil$ | **[T]** | Absent |
-| 14 | [Phase coherence](#предсказание-14) | $\rho^*_{ij}(t) \propto e^{-i(E_i-E_j)t}$ for $\Phi \geq 1$ | **[T]** | Absent |
-| 15 | [Attractor inside the window](#предсказание-15) | $P^* \in (P_c, P_\infty)$, $P_\infty \leq 5/14 < 3/7$ (was $\to 3/7$) | **[C at (MaxΦ)]** | Absent |
-| 16 | [Conditional passage law](#предсказание-16) | $T=a^{-1}\log[y_f(a+by_0)/(y_0(a+by_f))]$ under $\dot y=ay+by^2$ | **[T]** conditional reduction / **[H]** identification | No universal avalanche |
-| 17 | [Conditional sextic exponents](#предсказание-17) | $\alpha=1/2,\beta=1/4,\gamma=1,\delta=5$; $\nu=1/2$ needs spatial Gaussian model | **[C]** tuned scalar model plus phenomenological bridge | Untested |
-| 18 | [Ward suppression 19/49](#предсказание-18) | Gap fluctuations $\times\, 19/49$ | **[T]** | Absent |
-| 19 | [CPTP-anchor validation](#предсказание-19) | $\|\pi - \pi_{\mathrm{can}}\|_\diamond$ in $O(49D)$ | **[T]** | Absent |
-| 20 | [Analytical $\varepsilon_{\mathrm{eff}}$](#предсказание-20) | $\varepsilon_{\mathrm{eff}} = 4N_{33}/(9\|\bar{\gamma}\|(1+r_4\Sigma_0/2))$ | **[C at (SV)]** | Absent |
-| 21 | [$\pi_{\mathrm{bio}}$: neural data → $\Gamma$](#предсказание-21) | $\pi_{\mathrm{bio}}: \mathrm{EEG/fMRI/HRV} \to \mathcal{D}(\mathbb{C}^7)$ | **[H]** | Partial in [IIT](/docs/reference/glossary#связанные-теории) |
-| 22 | [Spectral gap → neural oscillations](#предсказание-22) | $\nu_{\text{conscious}} \sim \lambda_{\text{gap}}/(2\pi)$ | **[H]** | Absent |
-| 23 | [Rank-7 decoherence-anisotropy law](#предсказание-23) | $r_{ij} = \tfrac{1}{6}\sum_{p:\,\lvert\ell_p\cap\{i,j\}\rvert=1}\gamma_p$ (14 exact sum-rules; 21 rates on a 7-dim Fano subspace) | **[T]** law / **[C]** mapping (T-262) | Absent |
+| 5 | [Collective consciousness](#предсказание-5) | Correlation criterion $I > 0$ (`CC-7`) | **[T]** necessary / **[H]** sufficiency | [IIT](/docs/reference/glossary#связанные-теории): exclusion — a group is a subject only as a maximum of integrated information |
+| 6 | [Purity gate](#предсказание-6) | Strict cut $P > P_{\mathrm{crit}} = 2/7$ (`T-5 [D]`, `T-96`, `T-129`; no E-axis population bound follows) | **[T]** under specified purity gate / **[H]** biological bridge | Absent |
+| 7 | [Stability radius](#предсказание-7) | $r_{\mathrm{HS}} = \sqrt{P-1/7}-\sqrt{1/7}$, $r_B \ge r_{\mathrm{HS}}/\sqrt{2}$ (`T-104`) | **[T]** geometry / **[H]** physical robustness | Absent |
+| 8 | [Enc capacity](#предсказание-8) | $C_{\mathrm{Enc}} \leq \log_2 7 \approx 2.81$ bits (`T-107`) | **[T]** | Absent |
+| 9 | [Learning lower bound](#предсказание-9) | $n_* \ge n_{\mathrm{LB}} := \max(L_1, L_2, L_3)$ (`T-109`–`T-112`, Helstrom/fidelity $L_F$) | **[T]** for one specified task | Absent |
+| 10 | [Dimension & learning](#предсказание-10) | Seven-role testable architecture (`T-113`; universal $N=7$ lower bound unproved) | **[H]** | Absent |
+| 11 | [Dimension & social learning](#предсказание-11) | Role architecture $3_{\text{ToM}} + 3_{\text{ISL}} + 1_U = 7$ (additive lower bound withdrawn) | **[H]** | Absent |
+| 12 | [Declared depth diagnostics](#предсказание-12) | $3^{-n}$ amplitude survival; score ceiling $\le 3$ only under `T-142` convention | **[T/D]** law; **[H]** cognitive bridge | Arithmetic implementation checks |
+| 13 | [Conditional genesis time](#предсказание-13) | $n_{\min} = \lfloor\ln(1-h/w)/\ln r\rfloor + 1$ for $w > h$ (`T-148`; former universal formula `[✗]`) | **[C]** constant-input depolarizing recurrence | Absent |
+| 14 | [Phase detuning & co-rotation](#предсказание-14) | Lorentzian suppression $a\lvert\rho^*_{ij}\rvert/\sqrt{(d+a)^2+\omega_{ij}^2}$ (co-rotation removes detuning; not universally necessary at small $H$) | **[T]** fixed-coefficient scalar model | Absent |
+| 15 | [Attractor inside the window](#предсказание-15) | $P^* \in (P_c, P_\infty)$, $P_\infty \leq 5/14 < 3/7$ (`T-124c`) | **[C at (MaxΦ)]** | Absent |
+| 16 | [Conditional passage law](#предсказание-16) | $T=a^{-1}\log[y_f(a+by_0)/(y_0(a+by_f))]$ under $\dot y=ay+by^2$ (universal avalanche `[✗]`) | **[T]** conditional reduction / **[H]** identification | No universal avalanche |
+| 17 | [Conditional sextic exponents](#предсказание-17) | $\alpha=1/2,\beta=1/4,\gamma=1,\delta=5$; $\nu=1/2$ needs spatial Gaussian model (`T-161`) | **[C]** tuned scalar model plus phenomenological bridge | Untested |
+| 18 | [Coordinate covariance ratio $19/49$](#предсказание-18) | Uniform eigenvalue $19\alpha/49$ for supplied polynomial (`T-13`; Ward symmetry leaves 2 free amplitudes) | **[T]** supplied covariance / **[H]** physical suppression | Absent |
+| 19 | [Choi–diamond validation](#предсказание-19) | $\frac{1}{d}\|J(\Delta)\|_1 \le \|\Delta\|_\diamond \le \|J(\Delta)\|_1 \le \sqrt{dN}\|J(\Delta)\|_F$ (`T-152`; feature $O(49D)$ `[✗]`) | **[C]** linear quantum channels $M_d \to M_N$ | Absent |
+| 20 | [Analytical $\varepsilon_{\mathrm{eff}}$](#предсказание-20) | $\varepsilon_{\mathrm{eff}} = 4\lvert\bar{\gamma}\rvert_{\mathrm{sect}}/(9(1+\Sigma_0/4))$ (`T-216`) | **[C at (SV)]** / **[H]** | Absent |
+| 21 | [$\pi_{\mathrm{bio}}$: neural data → $\Gamma$](#предсказание-21) | Pre-registered PSD readout $\pi_{\mathrm{bio}}: \mathrm{EEG/fMRI/HRV} \to \mathcal{D}(\mathbb{C}^7)$ (universal $G_2$-uniqueness `T-42a [✗]` withdrawn) | **[H]** | Partial in [IIT](/docs/reference/glossary#связанные-теории) |
+| 22 | [Spectral gap → neural oscillations](#предсказание-22) | $\nu_{\mathrm{conscious}} \sim \lambda_{\mathrm{gap}}(\mathcal{L}_0)/(2\pi)$ (`T-39a`, `T-131`) | **[H]** | Absent |
+| 23 | [Rank-7 decoherence-anisotropy law](#предсказание-23) | $r_{ij} = \tfrac{1}{6}\sum_{p:\,\lvert\ell_p\cap\{i,j\}\rvert=1}\gamma_p$ (14 exact linear rate relations; `T-258`/`T-262`) | **[T]** rate law / **[C]** mapping | Absent |
 
 ---
 
 ## Theory Comparison: CC vs IIT vs FEP vs GWT {#сравнение-теорий}
 
-The following table shows which predictions each of the leading theories of consciousness makes. "+" means the theory generates the given prediction; "~" — gives a qualitative statement without numerical forecast; "-" — does not contain the given prediction.
+The following table compares the scope of testable predictions across frameworks. "+" indicates a declared model prediction (with its exact epistemic status); "~" indicates a qualitative statement without a numerical forecast; "-" indicates absence of the prediction.
 
 | Prediction | CC | IIT | FEP | GWT |
 |---|:---:|:---:|:---:|:---:|
-| Impossibility of zombies | **+** (theorem [T]; "no zombies" reading [I]) | - | - | - |
-| Connection of experience with regeneration | **+** ($\kappa \propto \mathrm{Coh}_E$) | - | - | - |
-| Finite classification of stresses | **+** (7 components) | - | ~ (free energy) | - |
-| Threshold values of consciousness | **+** ($P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$) | ~ ($\Phi > 0$, no number) | - | ~ (ignition, no number) |
-| Minimum dimensionality | **+** ($N = 7$) | - | - | - |
-| Collective consciousness | ~ | **+** (exclusion: only a maximum of integrated information is a subject) | - | - |
-| Self-awareness depth | Declared score arithmetic | No audited comparison | No audited comparison | No audited comparison |
-| Genesis time | **+** (formula $n_{\text{genesis}}$) | - | ~ (self-organisation) | - |
-| Learning rate bounds | **+** ($n_{\text{opt}}$, three bounds) | - | ~ (expected free energy) | - |
-| Critical exponents | **[C]** tuned sextic mean-field reduction and tested bridge | No audited comparison | No audited comparison | No audited comparison |
-| Stability radius | **+** ($r_{\text{stab}}$) | - | ~ (resilience) | - |
-| Phase coherence → integration | **+** (co-rotation) | - | - | - |
-| Neural oscillations from spectral gap | **+** [H] | - | - | - |
-| Reconstruction of $\Gamma$ from neurodata | **+** [H] | ~ ($\Phi$ from connectome) | - | - |
-| Yukawa hierarchy | **+** ($\varepsilon_{\text{eff}} \approx 0.059$) [C] | - | - | - |
-| Ward suppression of $\Lambda$ | **+** ($19/49$) | - | - | - |
+| Conditional E-balance | **[H]** restricted flux balance (`T-38a [✗]` withdrawn) | - | - | - |
+| E-dependent regeneration model | **[D/H]** ($\kappa = \kappa_b + \kappa_0\mathrm{Coh}_E$) | - | - | - |
+| 7-component stress panel | **[D/H]** (7 components; 4 exact margins separate) | - | ~ (free energy) | - |
+| Declared capability thresholds | **[D/T]** ($P_{\mathrm{crit}} = 2/7$, $R_{\mathrm{th}} = 1/3$, $\Phi_{\mathrm{th}} = 1$, $D_{\mathrm{diff}} \ge 2$) | ~ ($\Phi > 0$, no number) | - | ~ (ignition, no number) |
+| 7-axis learning architecture | **[H]** (`T-113`; universal $N=7$ unproved) | - | - | - |
+| Collective consciousness | ~ (`[T]` $I > 0$ necessary / `[H]` sufficient) | **+** (exclusion: only a maximum of integrated information is a subject) | - | - |
+| Self-awareness depth | Declared score arithmetic (`T-142`) | No audited comparison | No audited comparison | No audited comparison |
+| Conditional genesis time | **[C]** (`T-148`, $w > h$ recurrence) | - | ~ (self-organisation) | - |
+| Combined learning lower bound | **[T]** ($n_* \ge n_{\mathrm{LB}}$, `T-109`–`T-112`) | - | ~ (expected free energy) | - |
+| Critical exponents | **[C]** tuned sextic mean-field reduction (`T-161`) and tested bridge | No audited comparison | No audited comparison | No audited comparison |
+| Stability radius | **[T]** geometric $r_{\mathrm{HS}}, r_B$ (`T-104`) / **[H]** physical | - | ~ (resilience) | - |
+| Phase detuning & co-rotation | **[T]** scalar Lorentzian detuning (not universally necessary at small $H$) | - | - | - |
+| Neural oscillations from spectral gap | **[H]** | - | - | - |
+| Reconstruction of $\Gamma$ from neurodata | **[H]** | ~ ($\Phi$ from connectome) | - | - |
+| Yukawa hierarchy | **[C/H]** ($\varepsilon_{\mathrm{eff}} \approx 0.055\text{–}0.059$, `T-216`) | - | - | - |
+| Coordinate covariance ratio $19/49$ | **[T]** supplied polynomial (`T-13`) / **[H]** physical $\Lambda$ | - | - | - |
 
 Numerical model estimates require an explicit preparation, readout and withheld observation to count as independently testable predictions.
 
-The difference is fundamental. IIT, FEP, and GWT are *frameworks* — they offer a descriptive language but do not generate numerical forecasts that can be unambiguously confirmed or refuted. CC is a *theory* in the Popperian sense: it makes risky, specific, falsifiable predictions.
+Where IIT, FEP, and GWT typically remain qualitative frameworks without fixed dimensionless thresholds, CC supplies explicit finite-dimensional equations and stratified empirical hypotheses (`[T]`, `[C]`, `[D]`, `[H]`) so that each assumption can be tested and falsified independently.
 
 ---
 

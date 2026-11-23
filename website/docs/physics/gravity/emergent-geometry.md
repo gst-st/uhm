@@ -135,21 +135,21 @@ This finite operator triple is an abstract internal datum on $\mathbb{C}^7$, not
 
 ## 4. Emergent Dimensionality
 
-### 4.1 Derivation of 3+1 Dimensions [C]
+### 4.1 Charge-Fluctuation Product $\mathbb{R}\times S^3$ [C]
 
-The macroscopic fluctuations of the three selected commuting charges fill $\mathbb R^3$. Minimal unitization gives $C(S^3)$. Two charges are colour Cartan generators, so interpreting the spectrum as ordinary space is an additional premise. T-118 supplies a time coordinate in the depth-clock scaling limit. [T-119 and T-120](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство)
+The macroscopic fluctuations of the three selected commuting charges fill $\mathbb R^3$. Minimal unitization gives $C(S^3)$. Two of the three charges are colour Cartan generators $\subset \mathrm{SU}(3)_C \subset G_2$, creating a direct Coleman–Mandula obstruction to identifying their joint spectrum with physical spatial coordinates; interpreting the spectrum as ordinary space is therefore an external premise `[I]`. T-118 supplies a time coordinate in the depth-clock scaling limit. [T-119 and T-120](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство)
 
 ### 4.2 Resolved Questions
 
 | Question | Answer | Theorem |
 |--------|-------|---------|
-| Why is the charge spectrum three-dimensional? | Three independent commuting charges have fluctuation spectra filling $\mathbb R^3$. | T-119 [T] |
+| Why is the charge spectrum three-dimensional? | Three independent commuting charges have fluctuation spectra filling $\mathbb R^3$ (two carry colour). | T-119 [T] |
 | What fixes a Lorentzian signature? | The product has a one-dimensional clock factor. A Lorentzian realization requires metric and causality data. | T-53 [C] |
-| How is the four-manifold constructed? | Combine the depth clock and the minimally unitized charge algebra. | T-120 [T] |
+| How is the four-manifold constructed? | Combine the depth clock and the minimally unitized charge algebra on a supplied Riemannian metric/spinor bundle. | T-120 [T] |
 
 ### 4.3 Sector Decomposition
 
-With $\mathrm{SU}(3)=\mathrm{Stab}_{G_2}(e_O)$ the real representation is $\mathbb R e_O\oplus\mathbb R^6$, with irreducible complement. Only after complexification does it split as $\mathbb C e_O\oplus\mathbf3\oplus\bar{\mathbf3}$. A choice of real and imaginary coordinate axes breaks this symmetry. The colour-singlet spin factor in 48c has a determinant of signature $(1,3)$ under its stated algebraic inputs. Its identification with physical spacetime requires the additional locality premise. [48c](/docs/core/foundations/spacetime#теорема-48c)
+With $\mathrm{SU}(3)=\mathrm{Stab}_{G_2}(e_O)$ the real representation is $\mathbb R e_O\oplus\mathbb R^6$, with irreducible complement. Only after complexification does it split as $\mathbb C e_O\oplus\mathbf3\oplus\bar{\mathbf3}$. A choice of real and imaginary coordinate axes breaks this symmetry. The colour-singlet spin factor in T-48c has a determinant of signature $(1,3)$ under its stated algebraic inputs. Its identification with physical spacetime requires the additional locality premise. [T-48c](/docs/core/foundations/spacetime#теорема-48c)
 
 ---
 
@@ -175,10 +175,10 @@ This is the volume and Einstein–Hilbert part of the heat-kernel expansion. Oth
 
 | Result | Status | Theorem |
 |-----------|--------|---------|
-| Product $\mathbb R\times S^3$ | [T] for the selected algebras | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
-| Einstein equations from spectral action | **[T]** | [T-65](/docs/physics/gravity/einstein-equations) |
+| Product $\mathbb R\times S^3$ | **[T]** for the selected algebras on supplied Riemannian data | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
+| Einstein–Hilbert term from spectral action | **[T under supplied product geometry, elliptic Dirac operator and cutoff]** | [T-65](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) · [Einstein equations](/docs/physics/gravity/einstein-equations) |
 | Cosmological constant $\Lambda_{\text{CC}} > 0$ | **[H]** physical bridge; positivity follows conditionally for the selected positive readout | [T-71](/docs/core/foundations/consequences#теорема-лямбда-положительна) |
-| Lovelock classification | [T] under the four-dimensional metric and differential hypotheses | [T-121](/docs/proofs/physics/emergent-manifold#теорема-лавлок-замыкание) |
+| Lovelock classification | **[T]** under the four-dimensional metric and differential hypotheses | [T-121](/docs/proofs/physics/emergent-manifold#теорема-лавлок-замыкание) |
 | Vacuum topology $\Sigma^3 \cong S^3$ | **[T]** for the selected spatial algebra (T-119); round metric and $k=+1$ slicing **[C at supplied field, symmetry and global conditions]** | [T-120b](/docs/proofs/physics/emergent-manifold#следствие-вакуумная-топология) |
 
 ### 5.3 Lovelock Gaps and Their Closure
@@ -187,27 +187,34 @@ The Lovelock theorem (1971) states: the unique second-order tensor constructed f
 
 | Gap | Question | UHM answer | Theorem |
 |--------|--------|-----------|---------|
-| 1 | Why $d=4$? | The clock and the three selected charge fluctuations give a mathematical product of dimension four. | T-120 [T] |
+| 1 | Why $d=4$? | The clock and the three selected charge fluctuations give a mathematical product of dimension four (with two colour charges). | T-120 [T] |
 | 2 | Why Lorentzian signature? | The heat-kernel expansion uses Riemannian geometry. A Lorentzian model requires additional analytic data. | T-53 [C] |
-| 3 | Why $\Lambda > 0$? | A supplied energy readout may have positive sign under explicit state and parameter conditions; autopoiesis and cohomology do not fix it | T-71 [H] |
+| 3 | Why $\Lambda > 0$? | A supplied energy readout may have positive sign under explicit state and parameter conditions; autopoiesis and cohomology do not fix it. | T-71 [H] |
 
 ---
 
-## 6. Connection with Other Sections
+## 6. Operational Network Geometry and Connection with Other Sections
+
+Whereas the spectral-triple route imports a continuum manifold metric through $D_M$, the constructive operational route builds distances directly from intervention costs, first-arrival timing, and probe calibration on finite and limiting networks ([Response Metric](/docs/geometry/response-metric), [Common Limiting Metric](/docs/geometry/common-limit), [Verified Network Results](/docs/reference/network-results)).
 
 | Topic | Page | Connection |
 |------|----------|-------|
-| Emergent manifold $M^4$ | [Emergent manifold](/docs/proofs/physics/emergent-manifold) | Derivation of $M^4$ from categorical structure (T-117 — T-121) |
-| Einstein equations | [Einstein equations from Gap](/docs/physics/gravity/einstein-equations) | Derivation of $G_{\mu\nu}$ from spectral action |
-| Cosmological constant | [Cosmological constant](/docs/physics/gravity/cosmological-constant) | Computation of $\Lambda$ and suppression mechanisms |
-| Berry phase | [Berry phase](/docs/physics/cosmology-phys/berry-phase) | Holonomy for a specified connection |
+| Response metric | [Response metric](/docs/geometry/response-metric) | Operational distances from minimal intervention cost and first-arrival timing |
+| Common limiting metric | [Common limiting metric](/docs/geometry/common-limit) | Constructive scaling limits of network probe metrics |
+| Emergent manifold $M^4$ | [Emergent manifold](/docs/proofs/physics/emergent-manifold) | Product-triple construction on supplied geometry and Coleman–Mandula obstruction (T-117–T-121) |
+| Einstein equations | [Einstein equations](/docs/physics/gravity/einstein-equations) | Conditional Einstein–Hilbert variation on supplied 4D geometry (T-65) and exact QFI lemma (T-264) |
+| Cosmological constant | [Cosmological constant](/docs/physics/gravity/cosmological-constant) | Volume-response identifiability and open sign/magnitude of $\Lambda$ |
+| Berry phase | [Berry phase](/docs/physics/cosmology-phys/berry-phase) | Holonomy for a specified connection and exact no-go theorems |
 | $G_2$ | [Octonionic structure](/docs/physics/gauge-symmetry/g2-structure) | Stabilizer of the chosen clock axis |
 | Coherence matrix | [Coherence matrix](/docs/core/dynamics/coherence-matrix) | Definition of $\Gamma$ and coherences $\gamma_{ij}$ |
 
 ---
 
 **Related documents:**
-- [Einstein equations from Gap](/docs/physics/gravity/einstein-equations)
+- [Response metric](/docs/geometry/response-metric)
+- [Common limiting metric](/docs/geometry/common-limit)
+- [Verified network results](/docs/reference/network-results)
+- [Einstein equations](/docs/physics/gravity/einstein-equations)
 - [Quantum gravity](/docs/physics/gravity/quantum-gravity)
 - [Spacetime](/docs/core/foundations/spacetime)
-- [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold)
+- [Emergent manifold](/docs/proofs/physics/emergent-manifold)

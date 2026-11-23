@@ -111,7 +111,7 @@ $G_2$ is the minimal exceptional Lie group, 14-dimensional, of rank 2.
 - $\dim(G_2) = 14$
 - $\text{rank}(G_2) = 2$
 - $G_2 \subset SO(7)$ — subgroup of rotations in $\text{Im}(\mathbb{O}) \cong \mathbb{R}^7$
-- $G_2$ preserves the multiplication structure of the octonions and the Fano plane
+- $G_2$ preserves the continuous octonion multiplication structure (and $7$-dimensional cross product), while generically rotating and mixing the seven coordinate axes; the discrete Fano plane incidence structure of a fixed basis is preserved by the finite collineation group $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3, \mathbb{F}_2)$ of order $168$ (lifting to signed permutations of order $1344$ inside $G_2$)
 - $G_2$-manifolds admit a metric with $G_2$ holonomy (the unique exceptional holonomy by Berger's classification)
 
 ### 1.7 Hamming Code H(7,4) [T] {#код-хэмминга}

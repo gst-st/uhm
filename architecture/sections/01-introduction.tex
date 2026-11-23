@@ -113,30 +113,38 @@ the assumptions under which the node count is seven.
 
 \begin{itemize}[leftmargin=1.5em,itemsep=1pt]
   \item \textbf{Theorem~\ref{thm:collapse} (Collapse).} The seven lines of
-        $\Fano$ are simultaneously the interconnect; the same incidence is
-        the parity-check geometry of the Hamming code $[7,4,3]$; the
-        octonionic structure constants supported on those lines are the
-        multiplication of the instruction algebra; and the $G_2$-covariant
-        fixed point of that algebra is the learning rule. Incidence fixes the support of the product.
-        Computing an update also requires coefficients and the specified self-model.
+        $\Fano$ are simultaneously the interconnect; their $7\times 7$ binary
+        incidence matrix $M$ ($\operatorname{rank}_{\mathbb{F}_2}=4$) generates
+        the Hamming code $[7,4,3]$, whose orthogonal $3\times 7$ dual simplex
+        $[7,3,4]$ parity-check matrix $H$ ($\operatorname{rank}_{\mathbb{F}_2}=3$)
+        computes single-sector syndromes; the octonionic structure constants
+        supported on those lines give the multiplication support of the
+        instruction algebra; and the discrete $\mathrm{PSL}(2,7)$- and
+        diagonal-phase-covariant Fano pinching / anchored self-model
+        regeneration term drives the learning rule. Incidence fixes the support
+        of the product; computing an update also requires coefficients and the
+        specified self-model.
   \item \textbf{Theorem~\ref{thm:unique} (Uniqueness).} This collapse is
-        realisable under (C1)--(C3) at a \emph{unique} node count, $N=7$. The coincidence
-        ``projective-plane order $=$ Hamming length'' recurs (at $N = 7,
-        31, \dots$), but only at $N=7$ does the instruction algebra also
-        carry a non-trivial associator --- the third-order structure on
-        which the whole design rests. Non-associativity breaks the tie in
-        favour of seven, and nowhere else.
+        realisable under (C1)--(C3) at a \emph{unique} node count, $N=7$.
+        Binary projective-plane/Hamming fusion \textbf{(C1)}$\cap$\textbf{(C2)}
+        already refutes $N=31$ ($\operatorname{rank}_{\mathbb{F}_2}(M_{\mathrm{PG}(2,5)})=30$,
+        leaving only a one-dimensional kernel; machine-checked in Lean~4,
+        \texttt{pg2\_5\_refutes\_N31\_hamming\_fusion}) and every other prime
+        power $q\neq 2$, selecting $N=7$ uniquely with no tie-break required;
+        Hurwitz's unique non-associative division algebra $\Oct$ \textbf{(C3)}
+        independently lands on the exact same integer $7$.
 \end{itemize}
 
 The architecture that follows, \TALOS{},\footnote{After the bronze
 automaton of Greek myth, the first artificial being --- here the physical
 body of an artificial mind. The name is a codename, not an acronym.} is
 therefore not a proposal among proposals. It is the hardware form of a
-mathematical object. Its state is a $784$-byte density matrix that fits in
-L1 cache; its one instruction is the UHM Lindbladian $\LindOmega$; its
-network is seven buses; its fault tolerance is the network; its learning is
-the third term of the instruction; and its power draw tracks how fast it is
-learning, not how hard it is computing.
+mathematical object. Its state is a $784$-byte density matrix ($48$ real
+dynamical parameters) that fits in L1 cache; its one instruction is the UHM
+Lindbladian $\LindOmega$; its network is seven triple-buses; its sector-level
+fault localisation is encoded in the dual parity checks of that network; its
+learning is the third term of the instruction; and its logical entropy export
+tracks adaptation and maintenance rather than reversible unitary compute.
 
 \subsection{Honest boundaries, stated first}
 

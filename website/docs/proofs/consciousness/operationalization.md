@@ -21,9 +21,9 @@ $$
 
 The range and endpoints follow from an orthogonal **operator-space** projection; $\pi_E$ is generally neither positive nor an algebra conditional expectation. Its maximum is attained at $|E\rangle\langle E|$ ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)); zero is attained by states supported outside E.
 
-This formula is a proxy choice [D], not $e^{S(\rho_E)}$ derived from partial trace. A prime seven-dimensional Hilbert space has no nontrivial tensor factor selected by naming an E coordinate. The unnormalized scalar $\gamma_{EE}$ is not a density matrix for reduced entropy; a normalized one-dimensional state has entropy zero. A declared extended lift and partial trace can define a different $\rho_E$, which must be written explicitly. A section–retraction alone does not make every quantity of the larger space a function of the smaller state.
+This formula is a proxy choice [D], not $\exp S_{vN}(\rho_E)$ derived from partial trace on an extended experiential register $\mathcal{H}_E$. A prime seven-dimensional Hilbert space has no nontrivial tensor factor selected by naming an E coordinate. The unnormalized scalar $\gamma_{EE}$ is not a density matrix for reduced entropy; a normalized one-dimensional state has entropy zero. A declared extended lift and partial trace can define a different $\rho_E \in \mathcal{D}(\mathcal{H}_E)$, which must be written explicitly. A section–retraction alone does not make every quantity of the larger space a function of the smaller state.
 
-The proxy is not even a universal endpoint match to global entropy: at the pure E state, $D_{\mathrm{diff}}^{7D}=7$ while $e^{S(\Gamma)}=1$. At $I/7$, the proxy is $13/7$ while global $e^S=7$. Claims of equality, CPTP monotonicity or reconstruction of reduced entropy from this scalar are withdrawn. The score $\sigma_E^{\mathrm{diff}}=(7-D_{\mathrm{diff}}^{7D})/5$ is another definition, with range $[0,6/5]$. Use it consistently with the declared gate; it is not the diagonal clamp score of [T-158](/docs/proofs/consciousness/substrate-closure#t-158).
+The proxy is not even a universal endpoint match to the non-canonical full-state entropy $\exp S_{vN}(\Gamma)$: at the pure E state, $D_{\mathrm{diff}}^{7D}=7$ while $\exp S_{vN}(\Gamma)=1$; at $I/7$, the proxy is $13/7$ while global $\exp S_{vN}(\Gamma)=7$. (Global $\exp S_{vN}(\Gamma)$ on $\mathbb{C}^7$ is **not** canonical $D_{\mathrm{diff}}$.) Claims of equality, CPTP monotonicity or reconstruction of reduced entropy from this scalar are withdrawn. The score $\sigma_E^{\mathrm{diff}}=(7-D_{\mathrm{diff}}^{7D})/5$ is another definition, with range $[0,6/5]$. Use it consistently with the declared gate; it is not the diagonal clamp score of [T-158](/docs/proofs/consciousness/substrate-closure#t-158).
 
 ## §2. T-129: integration threshold selection and sharp algebra {#t-129}
 
@@ -53,7 +53,7 @@ The least scalar cut $t$ such that $\Phi\ge t$ guarantees $P\ge2/7$ for all stat
 
 ## §3. T-130: correctly typed state/readout error bounds {#t-130}
 
-A feature map $\pi:\mathbb R^D\to\mathcal D_7$ has no diamond norm or Choi matrix by this type. It needs a calibrated observation model; the withdrawn T-123/T-42a do not provide a canonical comparator. Compare state estimates or declared identifiable targets on a specified domain.
+A feature map $\pi:\mathbb R^D\to\mathcal D_7$ has no diamond norm or Choi matrix by this type. It needs a calibrated observation model; the withdrawn T-123 [✗] and T-42a [✗] do not provide a canonical comparator. Compare state estimates or declared identifiable targets on a specified domain.
 
 **Conditional theorem [T].** If two valid states $\rho,\sigma$ satisfy $\|\rho-\sigma\|_F\le\varepsilon$ (or the stronger trace-norm bound), then
 
@@ -109,7 +109,7 @@ No dimension-free feature-space bridge or unique empirical target has been prove
 
 ## §7. T-134: population dynamics and stationarity {#t-134}
 
-For the specified equation $\dot\Gamma=-i[H,\Gamma]+\mathcal D(\Gamma)+a(\varphi(\Gamma)-\Gamma)+B(\Gamma)$,
+For the specified equation $\dot\Gamma=-i[H,\Gamma]+\mathcal D(\Gamma)+a(\varphi(\Gamma)-\Gamma)+B(\Gamma)$ — with any declared state-valued self-model $\varphi$, such as linear anchor-mixing $\varphi_{\mathrm{lin}}(\Gamma) := R(\Gamma)\,\Gamma + (1-R(\Gamma))\,I/7$ ([T-249](/docs/proofs/categorical/formalization-phi#дф-производная) **[T]**), coherent dephasing-anchor $\varphi_{\mathrm{coh}}(\Gamma) := (1-R(\Gamma))\,\mathcal P_\alpha(\Gamma) + R(\Gamma)\,I/7$, or collineation-anchored $\varphi_J(\Gamma) := (1-R(\Gamma))\,\mathcal P_\alpha(\Gamma) + R(\Gamma)\,|\psi\rangle\langle\psi|$ ([T-334](/docs/core/operators/phi-operator#phi-j) **[T]**) — we have
 
 $$
 \dot\gamma_{kk}=2\sum_j\operatorname{Im}(H_{kj}\gamma_{jk})+\mathcal D(\Gamma)_{kk}+a(\varphi(\Gamma)_{kk}-\gamma_{kk})+B(\Gamma)_{kk}.
@@ -179,7 +179,7 @@ Let $\rho$ be the actual joint state and $\delta_{\rm corr}=\rho-\bigotimes_i\rh
 
 ### SAD–L equivalence {#г-89-повышение}
 
-Hyp-89 remains a probe/bridge hypothesis. A stipulated score, one successful level or a positive late limit does not certify the entire preceding prefix of meta-tests. No universal equivalence follows from T-136.
+Hyp-89 remains a probe/bridge hypothesis. A stipulated score, one successful level or a positive late limit does not certify the entire preceding prefix of meta-tests. Universal T-136 equivalence is withdrawn [✗]; it does not follow from the conditional score arithmetic.
 
 ### Iteration and tower compatibility {#г-90-повышение}
 
@@ -205,7 +205,7 @@ T-130/T-133 give conditional error transfer after a correctly typed state/channe
 | T-133 | Margin transfer [T]; empirical H3 remains [H] |
 | T-134 | Exact population derivative/stationarity [T]; universal diagonal freeze withdrawn |
 | T-135 | Exponential auxiliary/declared convolution identities [T]; general validity and cost not automatic |
-| T-136 | Historical score [D], attenuation arithmetic [T]; universal SAD equivalence withdrawn |
+| T-136 | Historical score [D], attenuation arithmetic [T]; universal SAD equivalence withdrawn [✗] |
 | T-137 | Selected scores [D]; evaluation [T with full state and extra model inputs], observation identification separate |
 | T-138 | Product validity, purity and factorized storage [T]; coherence-only correlation bound withdrawn |
 

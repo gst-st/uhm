@@ -143,16 +143,16 @@ A separately calibrated quality-ray map may take values in $\mathbb P(\mathcal H
 
 ### Component 3: Context
 
-Coherences between dimension $E$ and the others:
+Coherences between dimension $E$ and the others **[D]**:
 
 $$
 \mathrm{Context}(\Gamma) := \{\gamma_{EA}, \gamma_{ES}, \gamma_{ED}, \gamma_{EL}, \gamma_{EO}, \gamma_{EU}\}
 $$
 
-Context modulates experience through [coherences](/docs/core/dynamics/coherence-matrix#недиагональные-элементы-когерентности):
+**Interpretive illustration [I/H] (not a derived theorem):** in the proposed phenomenological reading, these [coherences](/docs/core/dynamics/coherence-matrix#недиагональные-элементы-когерентности) are hypothesized to modulate experience as follows:
 
-| Coherence | Description of modulation |
-|-----------|--------------------------|
+| Coherence | Proposed interpretive modulation **[I/H]** |
+|-----------|-------------------------------------------|
 | $\gamma_{EA}$ | Attention — how actively the system processes interiority content |
 | $\gamma_{ES}$ | Structural context — bodily sensations, spatial grounding |
 | $\gamma_{ED}$ | Dynamic context — temporal unfolding, rhythm of experience |
@@ -162,21 +162,21 @@ Context modulates experience through [coherences](/docs/core/dynamics/coherence-
 
 ### Component 4: History
 
-Trajectory of evolution of $\rho_E$ in time window $T_{\mathrm{mem}}$:
+Trajectory of evolution of $\rho_E$ in time window $T_{\mathrm{mem}}$ **[D]**:
 
 $$
 \mathrm{History}(\tau, T_{\mathrm{mem}}) := \{\rho_E(\tau') : \tau' \in [\tau - T_{\mathrm{mem}}, \tau]\}
 $$
 
-where $T_{\mathrm{mem}} > 0$ is the system's characteristic memory time. History determines adaptation, habituation, expectations. Without history, **anticipation** (prediction of future $\rho_E$ on the basis of the past), **habituation** (decrease of intensity upon repeated stimulation), and **surprise** (divergence between expected and actual $\rho_E$) are impossible.
+where $T_{\mathrm{mem}} > 0$ is the system's characteristic memory time. **Interpretive illustration [I/H]:** within this descriptive framework, the recorded history is hypothesized to ground adaptation, habituation, and expectations — associating **anticipation** (prediction of future $\rho_E$ from the past), **habituation** (decrease of intensity upon repeated stimulation), and **surprise** (divergence between expected and actual $\rho_E$) with trajectory-dependent readouts, rather than establishing them as theorems of the matrix formalism alone.
 
 ## Projective Space of Qualities
 
-### Motivation: why qualities live in projective space
+### Motivation: why qualities are modelled in projective space [I]
 
-The qualities of experience are not merely a set of numbers. They form a **geometric space** with its own metric. This space is the projective space $\mathbb{P}(\mathcal{H}_E)$.
+**Interpretive model [I]:** when a quality-ray readout is chosen, qualities of experience are represented not merely as a list of numbers, but as points in the **projective space** $\mathbb{P}(\mathcal{H}_E)$ equipped with a metric.
 
-Why projective and not ordinary? Because the **global phase is unobservable**: vectors $|q\rangle$ and $e^{i\theta}|q\rangle$ describe the same quality. Therefore we work not with vectors but with **rays** — equivalence classes:
+In this representation, the **global phase is unobservable**: vectors $|q\rangle$ and $e^{i\theta}|q\rangle$ denote the same ray. Hence the mathematical space consists of **rays** — equivalence classes **[D]**:
 
 $$
 \mathbb{P}(\mathcal{H}_E) := (\mathcal{H}_E \setminus \{0\}) / \sim
@@ -306,27 +306,27 @@ Thus the spectrum alone does not identify the state, while the weighted projecto
 
 The examples below propose interpretations within a **declared L2 model**: $A_1\land(P>2/7)\land(R\ge1/3)\land(\Phi\ge1)\land(D_{\rm diff}\ge2)$ with the chosen proxy/extension mode. Neither this predicate nor a spectral name proves that a system knows it experiences; higher predictive self-model claims require their own certificates. Fix observations and calibration before testing the proposed readings.
 
-### The colour red
+### The colour red [I/H]
 
-| Component | Mathematical representation | Phenomenal interpretation |
-|-----------|-----------------------------|--------------------------|
+| Component | Mathematical representation | Proposed phenomenal interpretation **[I/H]** |
+|-----------|-----------------------------|---------------------------------------------|
 | Intensity | $\lambda_{\text{red}} \in [0, 1]$ | Brightness |
 | Quality | $[\vert q_{\text{red}}\rangle] \in \mathbb{P}(\mathcal{H}_E)$ | Shade of red |
 | Context | $\gamma_{EA}$ (attention), $\gamma_{EL}$ | Lighting, background |
 | History | $\rho_E(\tau - T_{\mathrm{mem}}) \to \rho_E(\tau)$ | Retinal adaptation |
 
-When you look at a red rose: $\lambda_{\text{red}} \approx 0.7$ (dominant component), $|q_{\text{red}}\rangle$ determines the specific shade, $\gamma_{EA}$ is high (you are paying attention), $\gamma_{EO}$ sets the emotional tone (beauty, joy). After a minute of adaptation $\lambda_{\text{red}}$ decreases slightly — history.
+**Illustration [I/H] (hypothetical values, not derived or measured):** in this interpretive picture, looking at a red rose might be modelled by a dominant eigenvalue $\lambda_{\text{red}} \approx 0.7$, a ray $|q_{\text{red}}\rangle$ indexing the shade, high $\gamma_{EA}$ (attentional focus), and $\gamma_{EO}$ encoding emotional tone; after a minute of adaptation $\lambda_{\text{red}}$ decreases slightly via the history component.
 
-### Pain
+### Pain [I/H]
 
-| Component | Mathematical representation | Phenomenal interpretation |
-|-----------|-----------------------------|--------------------------|
+| Component | Mathematical representation | Proposed phenomenal interpretation **[I/H]** |
+|-----------|-----------------------------|---------------------------------------------|
 | Intensity | $\lambda_{\text{pain}} \in [0, 1]$ | Strength of pain |
 | Quality | $[\vert q_{\text{pain}}\rangle] \in \mathbb{P}(\mathcal{H}_E)$ | Sharp/dull/throbbing |
 | Context | $\gamma_{ES}$ (structure), $\gamma_{EO}$ | Localisation, emotions |
 | History | $\{\rho_E(\tau')\}_{\tau' \in [\tau - T_{\mathrm{mem}}, \tau]}$ | Sensitisation/desensitisation |
 
-The difference between sharp and dull pain is a difference in $|q_{\text{pain}}\rangle$, not in $\lambda_{\text{pain}}$. Intense dull pain ($\lambda = 0.8$, $|q_{\text{dull}}\rangle$) and mild sharp pain ($\lambda = 0.3$, $|q_{\text{sharp}}\rangle$) differ in both components.
+**Illustration [I/H] (hypothetical values, not derived or measured):** in this interpretive mapping, the distinction between sharp and dull pain is represented as a difference in $|q_{\text{pain}}\rangle$ rather than $\lambda_{\text{pain}}$ alone; for example, intense dull pain ($\lambda = 0.8$, $|q_{\text{dull}}\rangle$) and mild sharp pain ($\lambda = 0.3$, $|q_{\text{sharp}}\rangle$) would differ in both components.
 
 ## The E-Slice and the Full Content (T-301) {#e-срез-и-полнота}
 
@@ -360,7 +360,7 @@ These correspondences are proposed readouts [I/H], not derived identities with n
 
 Neuroscience knows that colour is processed in area V4, shape in area IT, motion in MT. But we see a **unified** object: a red ball flying to the right. How are representations distributed across the cortex unified into a coherent experience?
 
-### UHM's Solution
+### Candidate UHM Binding Hypothesis [H]
 
 UHM proposes that declared native E–U coherence and register integration can be predictors of a specified binding response [H]. These are mathematical diagnostics before they are psychological explanations.
 
@@ -421,25 +421,25 @@ graph LR
 
 **Practical discretisation of history:** Store $T_{\mathrm{mem}} / \Delta\tau$ states with step $\Delta\tau$. Typical value: 100–1000 time points.
 
-### For Psychologists
+### For Psychologists [I/H]
 
-The theory of interiority provides a **mathematical language for describing phenomenology**:
+As a proposed **interpretive illustration [I/H]** (not a proven theorem), the theory of interiority offers a candidate mathematical vocabulary for describing phenomenology once a calibrated readout is supplied:
 
-- **Spectrum of $\rho_E$** — quantitative characterisation of the "palette" of interiority states (at L2+: experiences)
-- **Fubini-Study metric** — measure of "distance" between qualities (how much red differs from blue)
-- **Context** — how attention, mood, and embodiment modulate experience
-- **History** — mechanism of adaptation, habituation, sensitisation
+- **Spectrum of $\rho_E$** — proposed quantitative characterisation of the "palette" of interiority states (at L2+: experiences) **[I/H]**
+- **Fubini-Study metric** — proposed geometric measure of "distance" between quality rays **[I/H]**
+- **Context** — proposed model of how attention, mood, and embodiment modulate experience **[I/H]**
+- **History** — proposed descriptor for adaptation, habituation, and sensitisation **[I/H]**
 
-### For Researchers of Inner Landscapes
+### For Researchers of Inner Landscapes [I/H]
 
-Experiential content is a **map of inner space**:
+As a heuristic **interpretive illustration [I/H]** (not a theorem), experiential content is pictured as a candidate **map of inner space**:
 
-- **Intensity** answers the question "how strongly?"
-- **Quality** answers the question "what exactly?" (colour, sound, emotion, bodily sensation)
-- **Context** answers the question "under what conditions?" (attentional focus, emotional background)
-- **History** answers the question "where did it come from and where is it going?"
+- **Intensity** corresponds to "how strongly?" **[I]**
+- **Quality** corresponds to "what exactly?" (colour, sound, emotion, bodily sensation) **[I]**
+- **Context** corresponds to "under what conditions?" (attentional focus, emotional background) **[I]**
+- **History** corresponds to "where did it come from and where is it going?" **[I]**
 
-Altered states of consciousness are characterised by a change in the **geometry** of this space — distances between qualities may contract (synesthesia) or expand (heightened perception).
+**Hypothesis [H]:** altered states of consciousness are hypothesized to correspond to changes in the effective **geometry** of this representational space — for instance, contraction of distances between qualities (synesthesia) or expansion (heightened perception); testing any such correspondence requires a fixed calibrated readout and independent behavioural data.
 
 ### What We Learned
 

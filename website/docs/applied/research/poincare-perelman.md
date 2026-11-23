@@ -74,7 +74,7 @@ For $\mathcal{H} = \mathbb{C}^N$ (in UHM $N = 7$):
 - Projective space: $\mathbb{P}(\mathcal{H}) = \mathbb{CP}^{N-1} = \mathbb{CP}^6$
 :::
 
-The analogy with $S^3$ is **structural**: just as $S^3$ is the "target state" for simply-connected 3-manifolds, the pure state ($P = 1$) is the attractor for coherent systems.
+The analogy with $S^3$ is **structural and geometric**: just as $S^3$ is the extremal maximally symmetric target for simply-connected 3-manifolds, the pure-state manifold $\mathbb{CP}^6$ ($P = 1$) is the extremal rank-1 boundary of $\mathcal{D}(\mathbb{C}^7)$ (whereas viable conscious attractors in UHM lie in the mixed interior window $P \in (2/7, 3/7]$, `T-124` `[T]`; see Open Question 3 in Part IX).
 
 ---
 
@@ -92,9 +92,9 @@ $$
 
 | Stratum | $\dim_\mathbb{R}$ | Topology | Role in UHM |
 |---------|-----------|-----------|-------------|
-| $\mathcal{D}_7^\circ$ (interior) | 48 | Open convex manifold | Viable states ($P > 1/7$) |
+| $\mathcal{D}_7^\circ$ (interior) | 48 | Open convex manifold | Full-rank interior ($P \ge 1/7$; contains the viable window $P \in (2/7, 3/7]$) |
 | $\mathcal{D}_6^\circ$ | 40 | Submanifold of codimension 8 | Loss of one dimension — Bures geometry stays **regular** here (curvature $\to 5874$) |
-| $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ | 12 | Compact Kähler manifold | Pure states, $P = 1$ |
+| $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ | 12 | Compact Kähler manifold | Pure states, $P = 1$ (extremal boundary) |
 
 **Topological fact [T]:** $\mathcal{D}_+(\mathbb{C}^7) := \mathcal{D}_7^\circ$ is convex and contractible: $\pi_k(\mathcal{D}_+) = 0$ for all $k \geq 1$. This confirms and refines the note from §2 (correspondence table): the simple-connectedness of $\mathcal{D}_+$ holds **trivially**, independent of cognitive content.
 
@@ -157,7 +157,7 @@ with respect to the quantum 2-Wasserstein metric $\mathcal{W}_\sigma$ on $\mathc
 
 This result **elevates the status of the analogy**: the Lindblad dynamics of UHM does not merely "resemble" Ricci flow structurally — it itself is a gradient flow in a Riemannian structure (the Wasserstein metric).
 
-**Refined comparison table [T/I]:**
+**Refined comparison table `[T]` / `[I]`:**
 
 | | Ricci–Perelman Flow | KMS-symmetric Lindblad |
 |---|---|---|
@@ -223,7 +223,7 @@ graph LR
 
 ---
 
-## Part IV: The Factor of 2 — A Deep Connection
+## Part IV: The Factor of 2 — Numerical Coincidence, Not a Structural Link
 
 ### In the Poincaré Theorem
 
@@ -307,18 +307,20 @@ Perelman developed **surgery**: cut the neck, cap both ends with "spherical caps
 | Surgery | Restructuring of beliefs |
 | Spherical cap | New consistent subsystem |
 
-**Formally:**
+**Diagnostic panel scope (`CC-8` `[D]`, `T-92` `[D]`):**
+
+The seven-component stress panel defines its own diagnostic region
 
 $$
-\|\sigma_{\mathrm{sys}}\|_\infty \to 1 \implies P \to P_{\text{crit}}
+V_\sigma := \{\Gamma \in \mathcal{D}(\mathbb{C}^7) : \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1\},
 $$
 
-(consequence of the definition of the stress tensor — see [CC: Definitions](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений))
+where $\|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty \to 1$ signals a boundary crossing of the selected panel. Universal equivalence between $\|\sigma_{\mathrm{sys}}\|_\infty < 1$ and purity viability $P > P_{\text{crit}}$ (or the four-margin Cap2 window) is **withdrawn** (`CC-8` `[D]`, `T-92` `[D]` — see [CC: Theorems](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий) and [CC: Definitions](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений)): uniform-diagonal Cap2 states already fail the raw $L$-component, so exact viability monitoring uses the four explicit margins directly rather than inferring $P \to P_{\text{crit}}$ from $\|\sigma_{\mathrm{sys}}\|_\infty \to 1$.
 
 **Mathematical justification via Dittmann's theorem [T]:** The Bures scalar curvature $R_{\mathrm{scal}}(\rho) \to +\infty$ as $\mathrm{rank}(\rho) \to r \leq 5$ (Part II.b) — a rigorous analogue of the condition triggering Perelman's surgery. Note the sharpened threshold: at $\mathrm{rank} = 6$ the curvature is still finite ($\to 5874$), so the trigger is collapse by *two or more* dimensions, not one. The regularization $\Gamma \mapsto (\Gamma + \varepsilon I/7)/(1+\varepsilon)$ returns $\rho$ to the interior $\mathcal{D}_+(\mathbb{C}^7)$, restoring finite curvature and the guarantees of the Carlen–Maas theorem.
 
-:::note Connection to Gödel's Theorems
-Singularities in the L-dimension may correspond to **Gödelian limits** — statements unprovable within the current axiomatics. "Surgery" is the extension of the axiomatics via the O-dimension. See [Gödel and the completeness of UHM](/docs/core/foundations/consequences#10-теоремы-гёделя-и-полнота-угм).
+:::note Metaphorical Connection to Incompleteness `[I]`
+In a speculative reading `[I]`, persistent stresses in the $L$-dimension may be compared heuristically to formal incompleteness limits — statements unprovable within a fixed axiomatics — with "surgery" corresponding to model extension via the $O$-dimension. See [Consequences](/docs/core/foundations/consequences#10-теоремы-гёделя-и-полнота-угм).
 :::
 
 ---
@@ -353,11 +355,11 @@ Just as Ricci flow inevitably passes through singularities, so cognitive evoluti
 The dominant mode at $P_{\text{crit}}$ captures ≈49%. This is the **minimal majority** needed for identity. Consciousness begins when one "thought" becomes louder than half of all noise.
 :::
 
-:::info 4. Dimension 7 Is Topologically Optimal
-The minimal dimension $N = 7$ (see [Theorem S](/docs/proofs/minimality/theorem-minimality-7), [octonion justification](/docs/core/foundations/axiom-omega#октонионная-структура)) provides:
-- Enough room for "surgery" (restructuring)
-- A sufficiently low threshold ($P_{\text{crit}} \approx 0.29$) for flexibility
-- A sufficiently high threshold for noise robustness
+:::info 4. Dimension 7 and Multi-Rank Structure
+Under the conditional diagnosability and representation premises of the corpus ([Minimality](/docs/proofs/minimality/theorem-minimality-7), `T-224` `[T]`), $N = 7$ provides:
+- A multi-rank state space with room for curvature-regular ($\mathrm{rank} = 6$) vs. curvature-singular ($\mathrm{rank} \le 5$) strata
+- A moderate threshold ($P_{\text{crit}} = 2/7 \approx 0.286$) separating the viable window $(2/7, 3/7]$ from $I/7$
+- Exact single-fault Hamming/Fano coding structure (`T-224` `[T]`)
 :::
 
 ---
@@ -441,7 +443,7 @@ For an AGI architecture: under KMS-symmetric dynamics, adaptation from any initi
 The middle column gives the limit of ambient scalar curvature from full-rank states. The intrinsic curvature of a rank stratum is a different geometric quantity. A surgery criterion using ambient curvature must use the middle column.
 :::
 
-**Principle [H]:** An AGI system must maintain $\mathrm{rank}(\Gamma) = 7$ to remain in the interior $\mathcal{D}_+(\mathbb{C}^7)$ with Carlen–Maas guarantees. Any rank-collapse requires surgery.
+**Principle [H]:** An AGI system must maintain $\mathrm{rank}(\Gamma) = 7$ to remain in the interior $\mathcal{D}_+(\mathbb{C}^7)$ with Carlen–Maas guarantees. Any collapse to $\mathrm{rank}(\Gamma) \leq 5$ triggers ambient Bures curvature divergence and requires regularization ("surgery"), while $\mathrm{rank} = 6$ remains curvature-regular.
 
 ### Noncommutative Ricci Flow as AGI Weight Regularization [H]
 
@@ -463,7 +465,7 @@ The collection of proven theorems establishes:
 
 3. **Surgery = geometrically justified operation** [T, Dittmann]: elimination of curvature singularities at collapse to rank $\leq 5$ is a direct analogue of Perelman's surgery. Collapse by a single dimension does **not** qualify — the curvature there is finite.
 
-4. **$\mathbb{CP}^6$ — structural attractor** [D]: $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ — the lowest stratum of the stratification and the analogue of $S^3$ in the Poincaré theorem (by its role as attractor, not by dimension).
+4. **$\mathbb{CP}^6$ — extremal geometric boundary** [D]: $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ is the lowest-rank stratum of the stratification (the geometric counterpart of $S^3$ as an extremal boundary, distinct from the mixed viable conscious window $P \in (2/7, 3/7]$ of `T-124` `[T]`).
 
 ---
 
@@ -500,7 +502,7 @@ graph TD
 | Sphere | Pure state | **Attractor** |
 | Ricci flow | Lindblad evolution | **Mechanism** |
 | Surgery | Restructuring | **Overcoming crises** |
-| Factor 2 in Ric | Factor 2 in $P_{\text{crit}}$ | **Doubling principle** |
+| Factor 2 in Ric | Factor 2 in $P_{\text{crit}}$ | **Numerical coincidence** (conventional vs. algebraic) |
 
 ### Practical Significance
 

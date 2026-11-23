@@ -28,42 +28,55 @@ architecture three properties for free:
         is computed from the pair.
 \end{itemize}
 
-\subsection{Third-order routing and the $9\times$ integration advantage}
+\subsection{Third-order routing and exact Fano pinching contraction}
 
-A conventional router moves data pairwise and is, by the first-order blind
-spot (\S\ref{sec:collapse}), unable to see the structure it is carrying: any
-equal-weight pairwise fabric is a function of $J-I$ alone and cannot
-distinguish the Fano wiring from unstructured all-to-all. \TALOS{} routes on
-\emph{triples}: a transfer is an interaction $(i,j\mid k^\ast)$ mediated by
-the line's third sector. This is the hardware form of the third-order
-principle, and it carries a measurable price for getting it wrong.
+A conventional router moves data pairwise and is unable to see the third-order
+line structure it is carrying: any equal-weight pairwise fabric is a function of
+$J-I$ alone and cannot distinguish the Fano wiring from unstructured all-to-all.
+\TALOS{} routes on \emph{triples}: a transfer is an interaction
+$(i,j\mid k^\ast)$ mediated by the line's unique third sector. Because every
+distinct pair of sectors in $\Fano$ shares exactly one common line (Steiner
+$S(2,3,7)$), there are no ``unlinked'' pairs; instead, the exact Fano geometry
+governs coherence attenuation directly through the Fano pinching channel.
 
-\begin{claimbox}[The line-aware routing advantage \status{T} arithmetic]
-Coherence pushed across sectors that do \emph{not} share a line is attenuated
-by the exact channel-contraction constant $1/9$ per coarse hop
-($\Phi\to\Phi/9$, a Steiner incidence count: a population survives in all
-three of its lines, $3\times\tfrac13=1$, but a coherence survives in only one
-of three, $\times\tfrac13$, squared $=\tfrac19$). A router blind to the line
-structure therefore loses a factor of \textbf{nine} in integration per hop;
-a line-aware router --- keeping every interaction on its mediator's line ---
-preserves it. Integration per operation is $9\times$ that of a line-blind
-fabric.
+\begin{claimbox}[Fano pinching contraction \status{T}]
+Let $\Pi_\ell = \sum_{k\in\ell}\ket{k}\bra{k}$ be the rank-$3$ projector onto
+Fano line $\ell$ ($\ell=1,\dots,7$), and define the Fano pinching channel
+$\mathcal{P}_{\mathrm{Fano}}(\Gam) = \tfrac{1}{3}\sum_{\ell=1}^{7}\Pi_\ell\Gam\Pi_\ell$.
+By the Steiner $S(2,3,7)$ incidence counts:
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item every diagonal population $\gamma_{ii}$ lies on $3$ lines and survives
+        unchanged: $[\mathcal{P}_{\mathrm{Fano}}(\Gam)]_{ii} = 3\cdot\tfrac13\gamma_{ii} = \gamma_{ii}$
+        (so $P_{\mathrm{diag}}$ is preserved identically);
+  \item every distinct pair $(i,j)$ lies on \emph{exactly one} line, so every
+        off-diagonal coherence is attenuated by $1/3$:
+        $[\mathcal{P}_{\mathrm{Fano}}(\Gam)]_{ij} = \tfrac13\gamma_{ij}$.
+\end{itemize}
+Consequently, squared off-diagonal coherence contracts by $(1/3)^2 = 1/9$,
+giving the exact universal contraction
+$\Phi(\mathcal{P}_{\mathrm{Fano}}(\Gam)) = \tfrac{1}{9}\Phi(\Gam)$ for every
+$\Gam\in\Dens(\mathbb{C}^7)$. In continuous time, the Fano Lindblad dissipator
+$\mathcal{D}_{\mathrm{Fano}}[\Gam]=\gamma(\mathcal{P}_{\mathrm{Fano}}(\Gam)-\Gam)
+=\tfrac{2}{3}\gamma(\operatorname{diag}(\Gam)-\Gam)$ preserves populations and
+damps off-diagonals at uniform rate $2\gamma/3$ (machine-verified in
+\texttt{architecture/talos\_v0\_emulator.py} and
+\texttt{website/scripts/check\_core\_numbers.py}).
 \end{claimbox}
 
-This is the sharpest reason the topology cannot be an afterthought: a
-generic, line-agnostic mixture-of-experts router (the default in large neural
-accelerators) pays the $\times\tfrac19$ on every cross-expert hop, and no
-amount of bandwidth recovers it, because the loss is in \emph{integration},
-not throughput.
+This is the sharp dynamical role of the Fano topology: a single Fano pinching
+pass preserves $1/3$ of coherence amplitude ($1/9$ of squared coherence $\Phi$)
+rather than destroying coherences completely as full diagonal dephasing does,
+and its continuous-time generator sets the exact spectral gap
+$\lambda_{\mathrm{deco}}=2/3$ (\S\ref{sec:substrate}).
 
 \begin{trybox}[Try it --- route with one finger]
-Put a finger on the Fano figure (Figure~\ref{fig:collapse}, right). Game:
-carry a message from $S$ to $E$. Rule: you may only travel along a line, and
-a pair may only meet \emph{through the third point of its own line}. Find the
-line containing both $S$ and $E$ --- it is $\{S,E,U\}$ --- so the message
-goes $S\to U\to E$: the mediator is $U$, and there was nothing to look up,
+Put a finger on the canonical Singer Fano figure (Figure~\ref{fig:collapse}, right).
+Game: carry a message from $S$ to $E$. Rule: you may only travel along a line,
+and a pair may only meet \emph{through the third point of its own line}. Find
+the line containing both $S$ and $E$ --- it is $\{S,D,E\}$ --- so the message
+goes $S\to D\to E$: the mediator is $D$, and there was nothing to look up,
 because the pair \emph{names} its own relay. Now break the direct path from
-$A$ to $O$ and reroute: their line is $\{A,O,U\}$, so again through $U$ ---
+$A$ to $O$ and reroute: their line is $\{O,A,D\}$, so again through $D$ ---
 fault repair with no routing table (\S\ref{sec:ecc}). Every one of the $21$
 pairs plays the same one-move game; the full mediator table is
 Appendix~\ref{app:fano}.

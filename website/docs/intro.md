@@ -12,7 +12,7 @@ description: A mathematical research programme on state dynamics, physical measu
 
 UHM is a mathematical research programme on organization, state dynamics and consciousness. It proposes a seven-role numerical model together with a psychophysical interpretation. Its verified constructions, chosen definitions and unverified physical bridges have different statuses; the [mathematical kernel](/docs/reference/mathematical-kernel) and [premise ledger](/docs/reference/premises) make these distinctions explicit.
 
-Start with the [operational construction of states and composition](/docs/core/foundations/operational-processes) for the reconstruction before QG.
+Start with the [operational construction of states and composition](/docs/core/foundations/operational-processes) (and its verified codebase under `website/research/operational-reconstruction/`) as the honest operational entry point prior to quantum modelling.
 
 ## What is mathematically specified
 
@@ -22,13 +22,13 @@ Start with the [operational construction of states and composition](/docs/core/f
 <a id="takes-as-primitive-categorical-gap"></a>
 <a id="terminal-object-t"></a>
 
-For a chosen finite dimension $N$, the state space is
+Adopting quantum kinematics **(QG)** — $\mathcal H = \mathbb C^7$, density-matrix state space $\mathcal D(\mathbb C^7)$, the Born rule, and linear CPTP channels — is an **explicit modelling postulate** [P]/[D], not a theorem deduced from operational wiring alone. For a chosen finite dimension $N$, the state space is
 
 $$
 X_N=\mathcal D(\mathbb C^N)=\{\Gamma=\Gamma^\dagger\geq0:\operatorname{Tr}\Gamma=1\}.
 $$
 
-Linear CPTP channels form a category of quantum systems. Pairs $(\mathcal H,\Gamma)$ and channels sending the distinguished source state to the target state form the state-preserving process category. Separately, the site $\operatorname{Open}_B(X_N)$ with ordinary open covers defines the $\infty$-topos $\mathcal E_N=\operatorname{Sh}_\infty(X_N)$ [T]. Channels are continuous maps and induce geometric morphisms between these sheaf topoi. They are not automatically internal arrows of one topos.
+Linear CPTP channels form a category of quantum systems. Pairs $(\mathcal H,\Gamma)$ and channels sending the distinguished source state to the target state form the state-preserving process category. Separately, the open-cover site $(\operatorname{Open}_B(D_7), J_{\mathrm{open}})$ defines the $\infty$-topos $\mathcal E_7 = \operatorname{Sh}_\infty(\operatorname{Open}_B(D_7), J_{\mathrm{open}}) \simeq \operatorname{Sh}_\infty(B^{48})$ [T] (since $D_7$ is homeomorphic to the closed $48$-ball $B^{48}$). Because this $\infty$-topos depends only on the underlying locally contractible topological space, it is **blind to complex structure $\mathbb C$, convexity, and the Bures metric**; it serves as an optional sheaf-semantic envelope rather than a load-bearing dynamical primitive. Channels are continuous maps and induce geometric morphisms between these sheaf topoi; they are not automatically internal arrows of one topos.
 
 Choosing this topos as a common language or ontological framework is [D/I]. Its existence does not select $N=7$, a numerical self-model, a clock, a Hamiltonian or phenomenal experience. The subobject classifier is a sheaf of opens, not seven basis projectors.
 
@@ -44,7 +44,7 @@ The native model chooses $\mathcal H=\mathbb C^7$ and a labelled orthonormal fra
 | S | Structure |
 | D | Dynamics |
 | L | Logic |
-| E | Experience |
+| E | Interiority |
 | O | Ground |
 | U | Unity |
 

@@ -1,616 +1,506 @@
 ---
 sidebar_position: 16
-title: "G₂-Noether Charges"
-description: "14 G₂-Noether charges in a cybernetic context: 7 Fano charges + 7 cross-sector charges, Ward identities, experimental protocol"
+title: "Symmetries and Noether Charges in CC"
+description: "Scope of G₂-symmetry in Coherence Cybernetics: exact dissipator covariance U(1)⁷ ⋊ Aut(r) (T-260), withdrawal of universal continuous G₂ Noether conservation (T-2, T-3, T-75 [✗], T-85 [✗]), invariant covariances, and pre-registered experimental protocol"
 ---
 
-# G₂-Noether Charges: A Cybernetic Interpretation
+# Symmetries and Noether Charges: A Cybernetic Analysis
 
-:::info Who This Chapter Is For
-A cybernetic interpretation of the 14 Noether charges from $G_2$-symmetry. The reader will learn about the conservation laws of consciousness and their clinical application.
+:::info Scope and Revision
+This chapter analyses the exact symmetry structure of open holon dynamics in Coherence Cybernetics (CC). It distinguishes what is **strictly proved** for the Fano dissipator — the exact diagonal kernel and unitary covariance group $U(1)^7 \rtimes \mathrm{Aut}(r)$ (`T-2`, `T-3`, `T-260`) — from the **withdrawn** claim of 14 universally conserved continuous $G_2$ Noether charges (`T-75 [✗]`, `T-85 [✗]`), clarifies the true freedom of $G_2$-invariant covariances, and defines a pre-registered falsification protocol (`[Pr]`).
 :::
 
-
-In the [previous chapter](./goldstone-modes) we saw how spontaneous breaking of $G_2$-symmetry gives rise to Goldstone modes — "soft oscillations" of coherence felt as flickering attention. We learned that the number of these modes is determined by the depth of breaking, and that each mode is a trace of a lost symmetry. But we have not yet answered the key question: **which quantities exactly does $G_2$-symmetry conserve when it is not broken?** And what happens to these quantities when the symmetry is broken? That is precisely the subject of this chapter.
+In the [previous chapter](./goldstone-modes) we examined how symmetry breaking generates soft modes in effective models. Here we address the dual question: **which symmetries are actually respected by the coherence dynamics, which quantities are conserved, and which putative $G_2$ Noether laws fail to hold universally?**
 
 :::tip Chapter Roadmap
 In this chapter we:
-1. **Recall Noether's theorem** — one of the deepest results of theoretical physics, linking symmetry with conservation laws (section 0).
-2. **Construct 14 Noether charges** — 7 Fano charges (within triplets) and 7 supplementary charges (between triplets) — and explain the physical meaning of each (sections 1–3).
-3. **Show how these charges constrain the dynamics** — 14 conservation laws of consciousness (section 4).
-4. **Derive Ward identities** — linear relations on correlators following from $G_2$-invariance (section 6).
-5. **Translate the mathematics into the clinic** — diagnostic table, therapeutic strategies, experimental protocol (sections 7–8).
+1. **Recall Noether's theorem and its exact hypotheses** — why conservation requires a specified invariant action, and what changes in open GKSL systems (section 0).
+2. **Distinguish $G_2$ algebra from dissipator symmetry** — why $\dim \mathfrak{g}_2 = 14$, yet the bare Fano/atomic dissipator is **not** $G_2$-covariant (`T-2`, `T-3`, section 0b–1).
+3. **Establish the exact scope of the 14 model charges** — separating conditional conservative-ansatz charges from withdrawn universal Keldysh/Berry claims (`T-75 [✗]`, `T-85 [✗]`, sections 2–5).
+4. **State the exact conservation structure of the bare dissipator** — the 7-dimensional diagonal kernel and the compact rephasing torus $U(1)^7 \rtimes \mathrm{Aut}(r)$ (`T-260`, section 5.3).
+5. **Correct the Ward-identity parameter count** — two independent invariant covariance coefficients on $\Lambda^2 \mathbb{R}^7 = \mathbf{7} \oplus \mathbf{14}$, not one (section 6).
+6. **Formulate falsifiable hypotheses and a pre-registered protocol** — without circular mapping optimization (sections 7–8).
 :::
 
 :::note On Notation
 In this document:
-- $G_2 = \mathrm{Aut}(\mathbb{O})$ — [group of automorphisms of octonions](/docs/physics/gauge-symmetry/g2-structure)
+- $G_2 = \mathrm{Aut}(\mathbb{O})$ — [group of automorphisms of the octonions](/docs/physics/gauge-symmetry/g2-structure)
 - $\mathfrak{g}_2$ — Lie algebra of $G_2$ ($\dim \mathfrak{g}_2 = 14$)
 - $T_a$ — generators of $\mathfrak{g}_2$ ($a = 1, \ldots, 14$)
-- $\gamma_{ij} = |\gamma_{ij}|e^{i\theta_{ij}}$ — coherence between dimensions $i$ and $j$
+- $\gamma_{ij} = |\gamma_{ij}|e^{i\theta_{ij}}$ — coherence between dimensions $i$ and $j$ in a fixed basis $\{A, S, D, L, E, O, U\}$
 - $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$ — [gap measure](/docs/physics/dual-aspect/gap-semantics)
-- PG(2,2) — [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules)
+- $\mathrm{PG}(2,2)$ — [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules)
 - $C_{(ij),(kl)}(\tau)$ — two-point Gap correlator
 :::
 
-This document translates the formalism of [G₂-Noether charges](/docs/physics/gauge-symmetry/noether-charges) into the language of Coherence Cybernetics: diagnostic metrics, clinical protocols, and experimental verification of the $G_2$-structure.
-
-But before turning to formulas, it is worth understanding why this chapter is one of the deepest in the entire theory. The subject is how **symmetry** generates **conservation laws** — and how these laws operate in the space of consciousness.
+This document connects the mathematical results of [Charges of an invariant action](/docs/physics/gauge-symmetry/noether-charges) and [Gap Lagrangian models](./lagrangian) to Coherence Cybernetics: exact dissipator covariance, conditional benchmark models, diagnostic hypotheses, and experimental tests.
 
 ---
 
-## 0. Emmy Noether and the Deepest Principle of Physics {#нётер}
+## 0. Emmy Noether and the Exact Conditions for Conservation {#нётер}
 
-In 1918 Emmy Noether — a mathematician whom the University of Göttingen refused a professorship because she was a woman — proved a theorem that Einstein called "a monument to mathematical thinking." David Hilbert, inviting her to Göttingen, remarked: "I do not see why the sex of the candidate is an argument against her admission — after all, we are not in a bathhouse, but in a university."
+In 1918 Emmy Noether proved a foundational theorem of variational calculus ([Noether](https://arxiv.org/abs/physics/0503066)):
 
-Noether's theorem asserts something surprisingly simple and infinitely deep:
+> **For a differentiable Lagrangian $L(q,\dot{q})$, if an infinitesimal continuous transformation $\delta_a q$ changes $L$ by at most a total time derivative $dB_a/dt$, then on solutions of the Euler–Lagrange equations the quantity $Q_a = \sum_i (\partial L/\partial\dot{q}_i)\delta_a q_i - B_a$ is conserved ($dQ_a/dt = 0$).** `[T]`
 
-> **Every continuous symmetry of a system corresponds to a conserved quantity.**
+Classic physical instances arise when a specified microscopic action obeys the corresponding symmetry:
 
-This is not a metaphor or analogy. It is an exact mathematical theorem applicable to any system described by a Lagrangian. Examples familiar to every physicist:
+| Symmetry of the specified action | Conserved quantity |
+|----------------------------------|--------------------|
+| Time-translation invariance | Energy |
+| Spatial translation invariance | Momentum |
+| Spatial rotational invariance | Angular momentum |
+| Global $U(1)$ phase invariance | Charge |
+| Gauge $SU(3)$ symmetry (with gauge constraints) | Color current / charges |
 
-| Symmetry | Conserved quantity |
-|----------|--------------------|
-| Time homogeneity (laws of physics do not change with time) | Energy |
-| Space homogeneity (laws do not depend on position) | Momentum |
-| Space isotropy (laws do not depend on direction) | Angular momentum |
-| Gauge $U(1)$-symmetry | Electric charge |
-| Gauge $SU(3)$-symmetry | Color charge (QCD) |
+Crucially, Noether's theorem is **conditional on having an invariant dynamical action**. It does not generate conservation laws merely because a state space carries a group action: if the Hamiltonian, potential, dissipator, instrument, or external forcing breaks the symmetry, the corresponding charge is **not conserved**.
 
-Each row of this table is a fundamental law of physics derived from a single principle. Energy is conserved not because "nature is built that way," but because the laws of physics are the same today and tomorrow. Momentum is conserved not as a separate postulate, but as a consequence of spatial homogeneity.
+### Noether and Open Quantum Systems
 
-The beauty of Noether's theorem lies in its **universality**. It is not tied to specific physics. It suffices to specify a Lagrangian and its symmetry — and the theorem automatically generates a conserved quantity together with an explicit formula for it.
-
-### Noether and Open Systems
-
-The classical Noether theorem works for closed systems: $dQ/d\tau = 0$ exactly. But consciousness is an **open system**: it dissipates and regenerates. Does this mean Noether's theorem is inapplicable?
-
-No. For open systems there exists a **generalized** formulation (Frigerio 1978, Albert & Jiang 2014): Noether charges are not conserved exactly, but evolve in a **predictable manner** — as slowly decaying quantities converging to stationary values. This is analogous to how a spinning top gradually slows down due to friction: angular momentum is not conserved exactly, but its evolution is fully determined.
-
-It is precisely this generalized construction that is applied to the Gap-dynamics of consciousness. And here the group $G_2$ enters the picture.
+In open quantum systems governed by a GKSL master equation $\dot{\Gamma} = \mathcal{L}(\Gamma)$, continuous symmetry splits into **weak symmetry** (covariance of the generator $\mathcal{L}$) and **strong symmetry** (commutation with both the Hamiltonian and every Lindblad jump operator; see Frigerio 1978, Buča & Prosen 2012, Albert & Jiang 2014). Only strong symmetries generate conserved observables in the Heisenberg picture ($\mathcal{L}^\dagger(X) = 0$). Weak symmetries restrict transition structure and spectrum, while broken symmetries yield neither exact conservation nor universal asymptotic charge formulas.
 
 ---
 
-## 0b. The G₂ Group — Exceptional Symmetry {#g2-обзор}
+## 0b. The G₂ Group vs. Actual Dissipator Symmetry {#g2-обзор}
 
-Among all Lie groups there are exactly **five exceptional** ones: $G_2$, $F_4$, $E_6$, $E_7$, $E_8$. They belong to no infinite series ($A_n$, $B_n$, $C_n$, $D_n$), but stand apart — like the five Platonic solids among polyhedra.
-
-$G_2$ is the smallest of the exceptional groups. Its definition is elementary:
+Among simple Lie groups there are five exceptional groups: $G_2, F_4, E_6, E_7, E_8$. The smallest is the automorphism group of the octonion algebra $\mathbb{O}$:
 
 $$
-G_2 = \mathrm{Aut}(\mathbb{O}) — \text{the group of automorphisms of the octonion algebra}
+G_2 = \mathrm{Aut}(\mathbb{O}), \qquad \dim \mathfrak{g}_2 = 14.
 $$
 
-The octonions $\mathbb{O}$ are the unique normed division algebra after the real numbers ($\mathbb{R}$), complex numbers ($\mathbb{C}$), and quaternions ($\mathbb{H}$). It is **non-associative**: $(ab)c \neq a(bc)$ in general. This very non-associativity is the source of the exceptionality of $G_2$.
+On the 7 imaginary units $e_1, \ldots, e_7$, octonion multiplication is encoded by the oriented **Fano plane** $\mathrm{PG}(2,2)$ with 7 lines of 3 points each. Inside $\mathfrak{so}(7)$ ($\dim = 21$), the subalgebra $\mathfrak{g}_2$ has codimension 7:
 
-### Why Exactly 14 Generators
+$$
+\Lambda^2 \mathbb{R}^7 \cong \mathfrak{so}(7) = \mathbf{7} \oplus \mathbf{14},
+$$
 
-The Lie algebra $\mathfrak{g}_2$ has dimension 14. This number is not arbitrary — it is determined by the structure of the octonions. Here is how to understand it:
+where the 14-dimensional summand is the adjoint representation $\mathfrak{g}_2$ and the 7-dimensional summand is the standard representation of $G_2$.
 
-- The octonions have 7 imaginary units: $e_1, e_2, \ldots, e_7$
-- An automorphism preserves the multiplication table defined by the **Fano plane** PG(2,2) with 7 lines
-- Each of the 7 lines contains 3 imaginary units, and rotations within lines give 7 generators (**Fano generators**)
-- Another 7 generators describe "rotations" **between** lines (**supplementary generators**)
-- Total: $7 + 7 = 14 = \dim(G_2)$
+### Why Continuous G₂ Conservation Does Not Follow for UHM Dynamics
 
-This split $14 = 7 + 7$ is not a convention, but a **structural fact** of the algebra $\mathfrak{g}_2$. It reflects two types of symmetry: within Fano triplets and between them.
+Earlier drafts of Coherence Cybernetics assumed that UHM's open-system dynamics derives from a universal $G_2$-invariant six-term Keldysh action, yielding 14 continuous $G_2$ Noether charges as `[T]`. Three rigorous results overturn that claim:
 
-### G₂ and Noether's Theorem Together
+1. **No universal Keldysh action (`T-75 [✗]`):** The derivation of a universal six-term phase Lagrangian $L_{\mathrm{Gap}}$ from GKSL evolution is **withdrawn** (`T-75 [✗]`). A second-order phase Lagrangian $S[\theta] = \int (\frac{1}{2}\dot\theta^T M \dot\theta - V(\theta))\,dt$ is a **chosen model ansatz**, whereas matrix ODE evolution $\dot{\Gamma} = F(\Gamma)$ directly yields only the first-order phase identity $\dot{\theta}_{ij} = \mathrm{Im}(F_{ij}/\gamma_{ij})$ for $\gamma_{ij}\neq 0$ (see [Gap Lagrangian models](./lagrangian)).
+2. **No universal Berry/topological term (`T-85 [✗]`):** The derivation of a universal topological term $\mathcal{L}_{\mathrm{top}}$ from Hermitian Keldysh traces is **withdrawn** (`T-85 [✗]`). The trace of a product of Hermitian matrices is real; a Berry term requires a separately specified eigenbundle and microscopic derivation.
+3. **The bare dissipator breaks continuous $G_2$ (`T-2 [T]`, `T-3 [T]`, `T-260 [T]`):** In the chosen coordinate frame, uniform Fano dephasing equals $\frac{2}{3}$ of atomic coordinate dephasing (`T-2 [T]`), and the atomic/Fano dissipator is **not** $G_2$-covariant (`T-3 [T]`). Instead, its exact unitary covariance group is the diagonal-preserving group $U(1)^7 \rtimes \mathrm{Aut}(r)$ (`T-260 [T]`), whose intersection with $G_2$ is the **finite** monomial frame group $\Gamma_{\mathrm{oct}}$ (order $1344$), **not** continuous $G_2$.
 
-Now the key move: **the Gap-dynamics Lagrangian** $L_{\mathrm{Gap}}$ possesses $G_2$-invariance. By Noether's theorem this automatically generates **14 conserved charges** — one for each generator of $\mathfrak{g}_2$.
-
-These 14 charges are **14 conservation laws of consciousness**. They constrain the coherence dynamics just as conservation of energy constrains motion in mechanics. Let us proceed to their explicit construction.
+Consequently, the 14 continuous $G_2$ charges are **withdrawn as universal laws of UHM open-system dynamics**. They survive solely as a **conditional reference construction** for a specifically postulated $G_2$-invariant conservative phase action (`[C]`), useful as an idealized symmetry benchmark against which actual symmetry breaking is measured.
 
 ---
 
-## 1. 14 Generalized Noether Charges for Open Systems: Overview [T] {#обзор}
+## 1. Withdrawn Universal 14-Charge Claim and Conditional Benchmark Scope {#обзор}
 
-$G_2$-invariance of the [Gap Lagrangian](/docs/core/dynamics/gap-thermodynamics) generates **14 generalized Noether charges** (in the sense of open quantum systems, Frigerio 1978, Albert & Jiang 2014).
-
-:::info Remark: Generalized Noether Charges for Open Systems
-The 14 charges $Q_a$ are **not conserved** in the classical sense ($dQ/d\tau = 0$), but are **asymptotically stationary**: $Q_a(\tau) \to Q_a^{(\mathrm{stat})}$ as $\tau \to \infty$. The Noether argument is applied to the **conservative part** of the Lagrangian ($\mathcal{L}_{\mathrm{kin}} + \mathcal{L}_{\mathrm{pot}}$), and dissipation and regeneration are accounted for as generalized forces via the Rayleigh function. Ward identities (14 linear constraints) are consequences of $G_2$-invariance [T]. Stationary values $Q_a^{(\mathrm{stat})} = (\kappa/\Gamma_2) \cdot Q_a^{(\mathrm{reg})}$ are consequences of primitivity + $G_2$-invariance [T].
+:::warning Retraction and Corrected Scope (`T-2`, `T-3`, `T-260`, `T-75 [✗]`, `T-85 [✗]`)
+- **Withdrawn (`[✗]`):** The claim that UHM's GKSL dynamics universally generates 14 continuous $G_2$ Noether charges with a topological triplet term and universal stationary values $Q_a^{(\mathrm{stat})} = (\kappa/\Gamma_2)\,Q_a^{(\mathrm{reg})}$.
+- **What holds strictly (`[T]`):**
+  1. For the bare coordinate/Fano dissipator, the exact kernel is the 7-dimensional diagonal algebra and the exact unitary covariance group is $U(1)^7 \rtimes \mathrm{Aut}(r)$ (`T-260 [T]`), not continuous $G_2$ (`T-2 [T]`, `T-3 [T]`).
+  2. For any **separately postulated** smooth conservative action $S[q] = \int L(q,\dot{q})\,dt$ that is invariant under a continuous $G_2$ action, Noether's theorem yields 14 conserved charges along its Euler–Lagrange trajectories (`[C under postulated G₂-invariant action]`).
 :::
 
-The charges divide into two classes:
+In such a postulated $G_2$-invariant conservative benchmark model, one may choose a basis of $\mathfrak{g}_2$ adapted to the Fano plane (for example, splitting a chosen 14-element basis into 7 triplet-adapted generators and 7 complementary generators):
 
-| Class | Number | Notation | Scope |
-|-------|--------|----------|-------|
-| Fano charges | 7 | $Q_p^{(F)}$, $p = 1, \ldots, 7$ | **Within** each Fano triplet |
-| Supplementary (cross-sector) | 7 | $Q_q^{(D)}$, $q = 1, \ldots, 7$ | **Between** different Fano triplets |
+| Benchmark class | Count | Notation | Scope |
+|-----------------|-------|----------|-------|
+| Fano-adapted basis charges | 7 | $Q_p^{(F)}$, $p = 1, \ldots, 7$ | Postulated $G_2$-invariant conservative ansatz `[C]` |
+| Complementary basis charges | 7 | $Q_q^{(D)}$, $q = 1, \ldots, 7$ | Postulated $G_2$-invariant conservative ansatz `[C]` |
+| **Exact bare-dissipator conserved observables** | **7** | **$\gamma_{kk}$, $k \in \{A,S,D,L,E,O,U\}$** | **Bare Fano/atomic dissipator at $H=0$, $\kappa=0$ (`T-260 [T]`)** |
 
-This structure $14 = 7 + 7$ is not an arbitrary split, but a reflection of the two types of symmetry in the algebra $\mathfrak{g}_2$: rotations **within** Fano lines and connections **between** them. Each class carries its own physical and cybernetic meaning.
+Note that the $7 + 7 = 14$ split of $\mathfrak{g}_2$ is a choice of basis adapted to a fixed Fano frame, not a canonical $G_2$-invariant decomposition ($\mathfrak{g}_2$ is simple and irreducible under the adjoint action of $G_2$).
 
 ---
 
-## 2. Fano Charges $Q_p^{(F)}$ [T] {#фано-заряды}
+## 2. Model Triplet Momenta $Q_p^{(F)}$ (Conditional Ansatz) `[C/I]` {#фано-заряды}
 
-:::tip Theorem 2.1 (Fano Charges) [T]
-For each [Fano line](/docs/physics/gauge-symmetry/fano-selection-rules) $p = (i,j,k)$ the Fano charge is defined:
+:::caution Conditional Ansatz vs. Withdrawn Topological Term (`T-75 [✗]`, `T-85 [✗]`)
+For a **chosen** quadratic phase-kinetic ansatz $L_{\mathrm{kin}} = \frac{1}{2}\sum_{i<j} m_{ij}\dot\theta_{ij}^2$ with constant weights $m_{ij} = |\gamma_{ij}|^2$ on a fixed-amplitude chart ($|\gamma_{ij}| > 0$) and a Fano-line generator $\delta_p$, the kinetic Noether momentum takes the form
 
 $$
-Q_p^{(F)} = \sum_{(i,j) \in \mathrm{line}_p} |\gamma_{ij}|^2 \dot{\theta}_{ij} + \frac{1}{6\pi} \sum_{(i,j,k) \in \mathrm{line}_p} \theta_{ij} \cdot \theta_{jk}
+Q_p^{(F,\mathrm{kin})} = \sum_{(i,j) \in \mathrm{line}_p} |\gamma_{ij}|^2 \dot{\theta}_{ij}
 $$
 
-The first term is the **kinetic angular momentum** (rate of phase rotation weighted by coherence magnitudes). The second is the **topological contribution** (non-local phase correlation within the triplet).
+**Correction (`T-85 [✗]`):** The former second term $+\frac{1}{6\pi}\sum_{(i,j,k)\in\mathrm{line}_p} \theta_{ij}\theta_{jk}$ is **withdrawn**: it was derived from a retracted Keldysh-to-Berry term (`T-85 [✗]`), is not invariant under $2\pi$-shifts of individual phase coordinates $\theta_{ij} \mapsto \theta_{ij} + 2\pi$, and does not represent a Chern number of a finite $7 \times 7$ matrix. Moreover, constant-amplitude phase charts do not form a $G_2$-invariant submanifold of $\mathcal{D}(\mathbb{C}^7)$ (see [Gap Lagrangian models §1](./lagrangian)).
 :::
 
-### 2.1 Anatomy of the Fano Charge
+### 2.1 Anatomy of the Kinetic Triplet Statistic
 
-The formula $Q_p^{(F)}$ contains two terms, each with an independent meaning:
+In the fixed-frame phase chart where $|\gamma_{ij}| > 0$:
 
-**Kinetic term** $\sum |\gamma_{ij}|^2 \dot{\theta}_{ij}$ — this is the *weighted rate of phase precession*. When coherence between two dimensions is strong ($|\gamma_{ij}|$ is large), its phase evolution $\dot{\theta}_{ij}$ contributes more. This is analogous to classical angular momentum $L = mr^2\dot{\phi}$: mass is replaced by the squared coherence magnitude, and angular velocity by the rate of phase precession.
+- **Weighted phase-velocity sum** $\sum_{(i,j)\in\mathrm{line}_p} |\gamma_{ij}|^2 \dot{\theta}_{ij}$ is a **defined kinematic summary statistic** `[D]` of phase circulation along the three pairs of Fano line $p$.
+- Because matrix evolution $\dot\Gamma = F(\Gamma)$ is first-order, $\dot\theta_{ij} = \mathrm{Im}(F_{ij}/\gamma_{ij})$ is fixed instantaneously by the state $\Gamma$, not an independent canonical velocity (`T-75 [✗]`). Therefore $Q_p^{(F,\mathrm{kin})}$ is **not** automatically conserved by GKSL evolution.
 
-**Topological term** $\frac{1}{6\pi} \sum \theta_{ij} \cdot \theta_{jk}$ — a nonlinear coupling of phases *within the triplet*. This term does not depend on the rate of evolution: it is sensitive only to the **instantaneous configuration** of phases. Its analogue in physics is the Chern number: a topological invariant insensitive to the details of the trajectory, but capturing the global structure of the field.
+### 2.2 Hydrodynamic Analogy `[I]`
 
-### 2.2 Physical Meaning
+The circulation analogy is strictly heuristic `[I]` and holds only inside a specifically postulated conservative phase model:
 
-The Fano charge $Q_p^{(F)}$ is analogous to **velocity circulation** in hydrodynamics:
+| Hydrodynamics | Conservative phase ansatz (`[C]`) | Full open GKSL holon |
+|---------------|-----------------------------------|----------------------|
+| Vortex tube | Fano line $p = \{i,j,k\}$ | Coordinate triplet in fixed basis |
+| Velocity circulation | $Q_p^{(F,\mathrm{kin})}$ | Non-conserved summary statistic |
+| Kelvin's theorem | Requires postulated symmetric action | **Does not hold** (`T-2`, `T-3`, `T-75 [✗]`) |
 
-| Hydrodynamics | Gap-dynamics |
-|---------------|--------------|
-| Vortex tube | Fano line $p = (i,j,k)$ |
-| Velocity circulation | $Q_p^{(F)}$ |
-| Kelvin's theorem (conservation of circulation) | $dQ_p^{(F)}/d\tau = 0$ (for $\Gamma_2 = 0$) |
+### 2.3 Canonical Seven Fano Triplets and Seven Axes
 
-**Cybernetic interpretation [I]:** Each Fano charge describes the **internal balance** of Gap-dynamics within a single triplet. Conservation of $Q_p^{(F)}$ means: redistribution of opacity within the triplet obeys a conservation law — an increase in the Gap for one pair is compensated by a decrease for the other pairs of the same triplet.
+Using the canonical Singer cyclic Fano plane on the 7 axes $\{A, S, D, L, E, O, U\}$:
 
-Metaphorically: a Fano charge is the "opacity budget" of the triplet. It cannot be increased or decreased from within — only redistributed among the three pairs. This is analogous to the conservation of energy within a closed subsystem.
+| Line $p$ | Canonical triplet | Axes | Heuristic functional domain `[I]` |
+|----------|-------------------|------|-----------------------------------|
+| 1 | $\{A, S, L\}$ | Articulation–Structure–Logic | Perception–structuring–verification |
+| 2 | $\{S, D, E\}$ | Structure–Dynamics–Interiority | Organization–process–interiority |
+| 3 | $\{D, L, U\}$ | Dynamics–Logic–Unity | Process–logic–integration |
+| 4 | $\{L, E, O\}$ | Logic–Interiority–Ground | Reasoning–interiority–grounding |
+| 5 | $\{E, U, A\}$ | Interiority–Unity–Articulation | Interiority–unity–expression |
+| 6 | $\{U, O, S\}$ | Unity–Ground–Structure | Integration–resources–structure |
+| 7 | $\{O, A, D\}$ | Ground–Articulation–Dynamics | Resources–perception–action |
 
-### 2.3 Seven Fano Charges and Seven Dimensions
+### 2.4 Heuristic Cognitive Reading of Triplet Imbalances `[I]` {#интерпретация-зарядов}
 
-| Line $p$ | Dimensions | $Q_p^{(F)}$ describes |
-|----------|------------|----------------------|
-| 1: $\{A, S, L\}$ | Articulation–Structure–Logic | Balance perception–structure–verification |
-| 2: $\{S, D, E\}$ | Structure–Dynamics–Interiority | Balance organization–process–interiority |
-| 3: $\{D, L, U\}$ | Dynamics–Logic–Unity | Balance process–logic–integration |
-| 4: $\{L, E, O\}$ | Logic–Interiority–Ground | Balance reasoning–interiority–grounding |
-| 5: $\{E, U, A\}$ | Interiority–Unity–Articulation | Balance interiority–unity–expression |
-| 6: $\{U, O, S\}$ | Unity–Ground–Structure | Balance integration–resources–structure |
-| 7: $\{O, A, D\}$ | Ground–Articulation–Dynamics | Balance resources–perception–action |
+Reading the seven Fano triplets in cognitive terms is an **interpretive mapping** `[I]`, not a derived clinical diagnostic law:
 
-### 2.4 Cybernetic Meaning of Each Charge [I] {#интерпретация-зарядов}
+- **$\{A, S, L\}$** (*perceptual verification*): links Articulation ($A$), Structure ($S$), and Logic ($L$).
+- **$\{S, D, E\}$** (*organizational process*): links Structure ($S$), Dynamics ($D$), and Interiority ($E$).
+- **$\{D, L, U\}$** (*goal-directed reasoning*): links Dynamics ($D$), Logic ($L$), and Unity ($U$).
+- **$\{L, E, O\}$** (*grounded reflection*): links Logic ($L$), Interiority ($E$), and Ground ($O$).
+- **$\{E, U, A\}$** (*expressive integration*): links Interiority ($E$), Unity ($U$), and Articulation ($A$).
+- **$\{U, O, S\}$** (*resource organization*): links Unity ($U$), Ground ($O$), and Structure ($S$).
+- **$\{O, A, D\}$** (*sensorimotor cycle*): links Ground ($O$), Articulation ($A$), and Dynamics ($D$).
 
-Each of the seven Fano charges carries a concrete meaning in terms of cognitive dynamics:
+### 2.5 Illustrative Scenario: Trade-Offs Within $\{A, S, L\}$ `[I]` {#сценарий-q1}
 
-**$Q_1^{(F)}$ (A–S–L)** — *perceptual verification charge*. Links perception (A), its structuring (S), and logical verification (L). Violation: "I see, but cannot structure" or "I structure, but do not verify." Conservation means: every act of perception generates commensurate structuring and verification.
-
-**$Q_2^{(F)}$ (S–D–E)** — *organizational process charge*. Links structure (S), dynamics (D), and interiority (E). Violation: "I understand the arrangement, but cannot act" or "I act without inner experience." This charge is critical for somatic disorders where action becomes detached from experience.
-
-**$Q_3^{(F)}$ (D–L–U)** — *purposeful thinking charge*. Links process (D), its logical justification (L), and integration into a whole (U). Violation: "I think logically, but cannot act purposefully" — a sign of disintegrative states.
-
-**$Q_4^{(F)}$ (L–E–O)** — *existential grounding charge*. Links reasoning (L), interiority (E), and rootedness (O). Violation of this charge is one manifestation of existential crisis: logic becomes detached from feeling and from the sense of groundedness.
-
-**$Q_5^{(F)}$ (E–U–A)** — *expressive integration charge*. Links inner experience (E), its integration (U), and expression (A). Violation: alexithymia (inability to express feelings) or dissociation (experience is not integrated).
-
-**$Q_6^{(F)}$ (U–O–S)** — *resource organization charge*. Links unity (U), resources (O), and structure (S). Violation: "I know what to do, but have no resources" or "there are resources, but no structure for applying them."
-
-**$Q_7^{(F)}$ (O–A–D)** — *sensorimotor cycle charge*. Links resources (O), perception (A), and action (D). This is the "most somatic" of the charges — its violation is associated with motor and perceptual disorders.
-
-### 2.5 Concrete Scenario: Evolution of $Q_1^{(F)}$ During Learning {#сценарий-q1}
-
-Let us consider how the Fano charge $Q_1^{(F)}$ (perceptual verification, triplet A-S-L) evolves in a concrete situation.
-
-**Scenario.** A student is learning a new language. At the start of learning:
-- $|\gamma_{AS}|$ is large (perceives speech sounds — articulation-structure is linked),
-- $|\gamma_{SL}|$ is small (cannot determine grammatical correctness — structure-logic is disconnected),
-- $|\gamma_{AL}|$ is small (cannot distinguish correct from incorrect pronunciation).
-
-In this configuration $Q_1^{(F)}$ has a "skew": the kinetic term is dominated by $|\gamma_{AS}|^2 \dot{\theta}_{AS}$, while contributions from $SL$ and $AL$ are small.
-
-**As learning proceeds** (without external disruptions, $\Gamma_2 \approx 0$): the charge $Q_1^{(F)}$ is conserved. This means: growth of $|\gamma_{SL}|$ (the student begins to "feel" grammar) is *inevitably* accompanied by redistribution of Gap-resources within the triplet. Specifically:
-
-$$
-\Delta(|\gamma_{SL}|^2 \dot{\theta}_{SL}) = -\Delta(|\gamma_{AS}|^2 \dot{\theta}_{AS}) - \Delta(|\gamma_{AL}|^2 \dot{\theta}_{AL})
-$$
-
-The student cannot strengthen grammatical intuition without "weakening" something else in the same triplet — either perceptual acuity ($AS$) or logical verification ($AL$). This explains a familiar phenomenon: in the early stages of language learning, when focusing on grammar, a person temporarily perceives pronunciation subtleties less sharply.
-
-:::info Numerical Example
-Suppose at the initial moment $|\gamma_{AS}|^2 = 0.15$, $\dot{\theta}_{AS} = 2.0$ rad/s, and the remaining contributions are negligible. Then $Q_1^{(F)} \approx 0.30$ (in conventional units). After a month of learning: $|\gamma_{AS}|^2 = 0.10$, $|\gamma_{SL}|^2 = 0.08$, $\dot{\theta}_{SL} = 1.5$ rad/s. Then the $AS$-channel contribution: $0.10 \times 2.0 = 0.20$, the $SL$-channel contribution: $0.08 \times 1.5 = 0.12$. Sum: $0.20 + 0.12 = 0.32 \approx 0.30$ (accounting for small corrections from the topological term and the $AL$ contribution). The charge is conserved to good accuracy.
-:::
-
-This example shows why Fano charges are not abstract mathematics, but a **law of the internal economy of consciousness**: the budget of cognitive resources within each triplet is fixed, and improving one function requires redistribution, not "creation from nothing."
+Consider a learner acquiring a new language, modelled via pairwise coherences within the triplet $\{A, S, L\}$:
+- Initially $|\gamma_{AS}|$ is large (speech sounds are parsed into surface structures), while $|\gamma_{SL}|$ and $|\gamma_{AL}|$ are small (grammatical rules and verification are weak).
+- Under a **postulated** conservative triplet constraint $Q_1^{(F,\mathrm{kin})} = \mathrm{const}$ (`[C]`), any increase in $|\gamma_{SL}|^2\dot\theta_{SL}$ would have to be offset by decreases in $|\gamma_{AS}|^2\dot\theta_{AS}$ or $|\gamma_{AL}|^2\dot\theta_{AL}$.
+- In actual open-system dynamics, however, no such exact budget conservation is enforced by UHM axioms (`T-3`, `T-75 [✗]`): whether attentional trade-offs occur in a specific cognitive task is an empirical hypothesis `[H]` depending on the Hamiltonian, dissipation, and external training drive, not an exact Noether identity.
 
 ---
 
-## 3. Supplementary Charges $Q_q^{(D)}$ [T] {#дополнительные-заряды}
+## 3. Complementary Inter-Triplet Momenta $Q_q^{(D)}$ (Conditional Ansatz) `[C/I]` {#дополнительные-заряды}
 
-:::tip Theorem 3.1 (Supplementary Charges) [T]
-For each supplementary generator $D_q$ of the algebra $\mathfrak{g}_2$:
+:::caution Conditional Model Definition `[D/C]`
+Given a postulated $G_2$-invariant conservative phase Lagrangian and a basis $\{T_1,\ldots,T_{14}\}$ of $\mathfrak{g}_2$ split into 7 triplet-adapted generators and 7 complementary generators $D_q$, the complementary kinetic momenta are defined by
 
 $$
-Q_q^{(D)} = \sum_{(m,n):\, [D_q]_{mn} \neq 0} |\gamma_{mn}|^2 \dot{\theta}_{mn}
+Q_q^{(D)} = \sum_{(m,n):\, [D_q]_{mn} \neq 0} c_{q,mn}\, |\gamma_{mn}|^2 \dot{\theta}_{mn},
 $$
 
-Supplementary charges are purely **kinetic** (without topological contribution): they describe Gap-transfer **between** different Fano triplets.
+where the weights $c_{q,mn}$ encode the exact matrix elements of $D_q$ on the phase coordinates. Without a $G_2$-invariant action and matching representation intertwiner, $Q_q^{(D)}$ is **not** conserved along GKSL trajectories.
 :::
 
-**Cybernetic interpretation [I]:** Supplementary charges characterize **cross-sector exchange**. Their conservation ensures "exchange balance": the loss of Gap by one triplet is compensated by its acquisition by another.
+### 3.1 Basis Dependence vs. Structural Claims
 
-### 3.1 Why Supplementary Charges are Purely Kinetic
+Because $\mathfrak{g}_2$ is a **simple** Lie algebra, it admits no invariant ideal splitting into $7 + 7$. The distinction between "within-triplet" and "cross-triplet" generators is tied to a chosen coordinate basis and its Fano incidence structure, and vanishes under generic $G_2$ rotations. With the topological term withdrawn (`T-85 [✗]`), neither class carries a derived topological protection from finite-matrix traces.
 
-The absence of a topological term in the supplementary charges is not accidental, but a consequence of the structure of the algebra $\mathfrak{g}_2$. The supplementary generators $D_q$ connect **different** Fano lines. Within a single line, three dimensions form a closed cycle (triplet), and phase correlation within the cycle generates a topological contribution. Between lines there is no such closed cycle — only "bridges" between triplets.
+### 3.2 Inter-Triplet Connectivity `[I]`
 
-Physical analogy: Fano charges are vortices (with topological charge), supplementary charges are flows (without vortex structure). A vortex exists "on its own" (topologically protected), while a flow requires maintenance.
+Heuristically `[I]`, coherences bridging different Fano lines reflect cross-domain coordination. Loss of cross-triplet coherence can serve as a descriptive indicator of modular decoupling, provided the axis-to-observable mapping is independently validated (`[H]`).
 
-### 3.2 Inter-Triplet Network
+### 3.3 Dimension Count of $\mathfrak{g}_2$
 
-The seven supplementary charges form a **network of connections** between the seven Fano triplets. Each triplet is connected to the others through supplementary charges. This network is analogous to the "white matter" of the brain, connecting functional areas.
-
-Violation of supplementary charges leads to **modular isolation**: triplets function autonomously but do not exchange information. Clinically this manifests as "island" consciousness: individual cognitive functions are preserved but not integrated.
-
-### 3.3 Complete System of Charges
+The identity
 
 $$
-\underbrace{7 \text{ Fano charges}}_{\text{within triplets}} + \underbrace{7 \text{ supplementary}}_{\text{between triplets}} = 14 = \dim(G_2)
+\dim \mathfrak{g}_2 = 14 < 21 = \dim \mathfrak{so}(7)
 $$
 
-This identity is not a coincidence, but a **theorem**: the number of independent Noether charges equals the dimension of the symmetry group. There are no other charges, and there cannot be.
+is an exact algebraic fact `[T]`. What does **not** follow from $\dim \mathfrak{g}_2 = 14$ is that UHM's dissipative coherence evolution obeys 14 conservation laws.
 
 ---
 
-## 4. 14 Conservation Laws of Consciousness {#14-законов}
+## 4. Degree-of-Freedom Count and Why 14 Laws Do Not Freeze GKSL Dynamics {#14-законов}
 
-We can now state the result in full. $G_2$-invariance of the Gap Lagrangian generates **14 conservation laws** — in analogy with how invariance under rotations generates conservation of angular momentum.
+The earlier claim that "14 conservation laws freeze 21 coherences down to $21 - 14 = 7$ free degrees of freedom" fails on two independent grounds:
 
-For a closed system ($\Gamma_2 = 0$, $\kappa = 0$) these laws are exact:
+1. **State-space geometry:** A density matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ has $7^2 - 1 = 48$ real parameters — $6$ independent diagonal populations plus $21$ complex ($42$ real) off-diagonal coherences — subject to positivity $\Gamma \succeq 0$. A generic $G_2$ rotation mixes diagonal and off-diagonal entries and does not leave a fixed-amplitude phase torus invariant ([Gap Lagrangian models §1](./lagrangian)).
+2. **Symmetry breaking by the generator (`T-2`, `T-3`, `T-260`):** Even if one restricts attention to the GKSL generator $\dot\Gamma = -i[H,\Gamma] + \mathcal{D}_{\mathrm{Fano}}(\Gamma) + \mathcal{R}(\Gamma)$, the Fano dissipator breaks continuous $G_2$ (`T-3 [T]`), and no universal conservative $G_2$-invariant action is derived (`T-75 [✗]`).
 
-$$
-\frac{dQ_a}{d\tau} = 0, \quad a = 1, \ldots, 14
-$$
-
-This means: **the dynamics of 7-dimensional coherence is not arbitrary** — it is constrained by 14 conditions. Of the $7 \times 7 = 49$ parameters of the density matrix (21 of which are independent coherences), only $21 - 14 = 7$ can evolve freely. Symmetry "freezes" most degrees of freedom.
-
-### Analogy with Physics
-
-In mechanics: a body in three-dimensional space has 6 degrees of freedom (3 coordinates + 3 velocities). If the system has conservation of energy and three components of momentum (4 laws), only 2 free degrees of freedom remain. The body moves on a two-dimensional surface in phase space.
-
-In Gap-dynamics: 21 coherences, constrained by 14 laws, leave **7 degrees of freedom** — exactly equal to the number of dimensions. This is a deep self-consistency: each dimension contributes exactly one "degree of freedom" to the Gap-dynamics.
+Therefore, UHM does **not** have 14 universal conservation laws of consciousness. The only universal conservation law of every CPTP/trace-preserving evolution is **trace conservation** $\mathrm{Tr}\,\Gamma = 1$ (`[T]`). Additional conserved quantities exist only for restricted generators — most importantly the bare dissipator discussed in §5.3 (`T-260 [T]`).
 
 ---
 
-## 5. Charge Dissipation — Slowly Fading Conservation Laws [T] {#диссипация}
+## 5. Non-Conservation Under Dissipation and the Exact Diagonal Kernel {#диссипация}
 
-In the presence of dissipation ($\Gamma_2 > 0$) and regeneration ($\kappa > 0$) charges evolve:
-
-$$
-\frac{dQ_a}{d\tau} = -\Gamma_2 \, Q_a^{(\mathrm{kin})} + \kappa \, Q_a^{(\mathrm{reg})}
-$$
-
-This equation is beautiful in its structure: it describes **competition between two processes**. Dissipation ($\Gamma_2$) tends to zero out the charges — this is the "forgetting" of conservation. Regeneration ($\kappa$) restores them — this is the "maintenance" of conservation. Living consciousness exists in the zone of balance between these processes.
-
-:::info Stationary Level of Charges [T]
-In the stationary state ($dQ_a/d\tau = 0$):
+In a **postulated** damped-driven phase ansatz $M\ddot\theta + \nabla V + B\dot\theta = u$ ([Variational derivation](./variational)), any candidate symmetry charge $Q_a$ of the conservative part obeys a balance equation determined explicitly by the chosen damping matrix $B$ and forcing $u$:
 
 $$
-Q_a^{(\text{stat})} = \frac{\kappa}{\Gamma_2} \cdot Q_a^{(\text{reg})} = r \cdot Q_a^{(\text{reg})}
+\frac{dQ_a}{dt} = (\delta_a \theta)^T (-B\dot\theta + u).
 $$
 
-where $r = \kappa/\Gamma_2$ is the [phase diagram](./phase-diagram-cc#параметры) parameter.
+This balance is **model-dependent** `[C]`. The former universal formula $dQ_a/d\tau = -\Gamma_2 Q_a^{(\mathrm{kin})} + \kappa Q_a^{(\mathrm{reg})}$ and stationary ratio $Q_a^{(\mathrm{stat})} = (\kappa/\Gamma_2) Q_a^{(\mathrm{reg})}$ are **withdrawn as theorems** of the GKSL equation: the matrix dissipator is not $G_2$-covariant (`T-3 [T]`), regeneration $\mathcal{R}(\Gamma)$ is generally nonlinear and state-dependent, and the phase velocity $\dot\theta_{ij}$ is not an independent canonical momentum (`T-75 [✗]`).
+
+### 5.1 Competition of Rates (Qualitative Regime Classification `[I]`)
+
+In the reduced models of the [phase diagram](./phase-diagram-cc), the dimensionless rate ratio $r = \kappa/\Gamma_2$ controls the balance between regenerative drive and dephasing:
+
+| Regime | Rate ratio $r = \kappa/\Gamma_2$ | Qualitative coherence behavior `[I]` |
+|--------|----------------------------------|--------------------------------------|
+| Strong regeneration | $r \gg 1$ | Coherences maintained near target structure (model-dependent) |
+| Balanced | $r \sim 1$ | Competition between off-diagonal decay and regenerative injection |
+| Weak regeneration | $r < 1$ | Off-diagonal coherences suppressed toward diagonal steady states |
+| Sub-threshold | Below model threshold | Purity falls below the chosen $P_{\mathrm{crit}} = 2/7$ cut |
+
+### 5.2 Timescales of Off-Diagonal Decay
+
+Under uniform Fano dephasing with rate $\gamma$, every off-diagonal element decays exponentially as $\gamma_{ij}(t) = \gamma_{ij}(0)\,e^{-(2\gamma/3)t}$ (`T-2 [T]`), giving a characteristic coherence relaxation time $\tau_{\mathrm{coh}} = 3/(2\gamma)$. For general line-resolved Fano rates $\gamma_p \ge 0$, pair $(i,j)$ decays at rate $r_{ij} = \frac{1}{6}\sum_{|\ell_p \cap \{i,j\}|=1} \gamma_p$ (see [Effective temperature §8](./effective-temperature#линейные-температуры)).
+
+### 5.3 Exact Conservation of the Bare Dissipator: The Gauge Torus $U(1)^7 \rtimes \mathrm{Aut}(r)$ (`T-260 [T]`) {#тор-зарядов}
+
+While continuous $G_2$ is **broken** by the Fano dissipator (`T-2 [T]`, `T-3 [T]`), the bare dissipator $\mathcal{D}_{\mathrm{Fano}}$ (at $H = 0$, $\kappa = 0$) does possess an **exact** symmetry and conservation structure (`T-260 [T]`):
+
+:::tip Theorem (`T-260`) — Exact Kernel and Covariance of the Bare Dissipator `[T]`
+1. **Exact 7-dimensional diagonal kernel:** For every choice of nonnegative line rates $\gamma_p \ge 0$ (with at least one line incident to each pair), the kernel of the bare Fano dissipator is the 7-dimensional commutative algebra of diagonal matrices:
+   $$
+   \ker(\mathcal{D}_{\mathrm{Fano}}) = \mathrm{span}\{\Pi_k = |k\rangle\langle k| : k \in \{A,S,D,L,E,O,U\}\}.
+   $$
+   Every diagonal population $\gamma_{kk} = \mathrm{Tr}(\Pi_k \Gamma)$ is exactly invariant under $\mathcal{D}_{\mathrm{Fano}}$ alone: $\mathcal{D}_{\mathrm{Fano}}^\dagger(\Pi_k) = 0$.
+2. **Compact gauge torus $U(1)^7$ from projector periodicity:** Each coordinate projector $\Pi_k$ is idempotent with spectrum $\{0, 1\}$. Consequently, the one-parameter unitary group $U_k(\alpha_k) = e^{i\alpha_k \Pi_k}$ is $2\pi$-periodic in $\alpha_k$, and the seven commuting projectors generate the compact **7-torus of diagonal rephasings** $U(1)^7$.
+3. **Full unitary covariance group:** The full unitary covariance group of $\mathcal{D}_{\mathrm{Fano}}$ is the semidirect product
+   $$
+   G_{\mathrm{cov}}(\mathcal{D}_{\mathrm{Fano}}) = U(1)^7 \rtimes \mathrm{Aut}(r),
+   $$
+   where $\mathrm{Aut}(r) \subseteq S_7$ is the permutation group preserving the pairwise decay-rate table $r_{ij}$. For equal line rates ($\gamma_p = \gamma$), $\mathrm{Aut}(r) = S_7$, so $G_{\mathrm{cov}} = U(1)^7 \rtimes S_7$. Its intersection with $G_2$ is the **finite** octonionic frame group $\Gamma_{\mathrm{oct}}$ (signed permutations, order $1344$, acting on $\mathrm{PG}(2,2)$ through $\mathrm{Aut}(\mathrm{PG}(2,2)) \cong \mathrm{PSL}(2,7)$) — **not** continuous $G_2$.
+4. **Effect of a connected Hamiltonian $H$:** Turning on a connected Hamiltonian $H$ (with nonvanishing couplings linking all 7 axes) breaks the conservation of individual diagonal projectors $\Pi_k$ and **removes all non-scalar diagonal conserved charges**, leaving only the scalar identity $I$ (trace conservation $\mathrm{Tr}\,\Gamma = 1$).
 :::
 
-### 5.1 Four Regimes
-
-| Regime | $r$ | Charges | Interpretation |
-|--------|-----|---------|----------------|
-| $r \gg 1$ | Regeneration dominates | $Q_a^{(\text{stat})} \gg Q_a^{(\text{reg})}$ | Charges amplified — active internal dynamics |
-| $r \approx 1$ | Balance | $Q_a^{(\text{stat})} \approx Q_a^{(\text{reg})}$ | Charges at the level of the regenerative contribution |
-| $r < 1$ | Dissipation dominates | $Q_a^{(\text{stat})} < Q_a^{(\text{reg})}$ | Charges suppressed — dynamics fading |
-| $r < r_c$ | [Dead zone](./phase-diagram-cc#три-фазы) | $Q_a^{(\text{stat})} \to 0$ | All charges extinguished |
-
-### 5.2 Slowly Fading Laws
-
-Characteristic decay time of charge $Q_a$:
-
-$$
-\tau_a \sim \frac{1}{\Gamma_2}
-$$
-
-If $\Gamma_2$ is small (weak dissipation), charges are conserved **for a long time** — on timescales much larger than the characteristic time of the cognitive process. This creates a hierarchy of timescales:
-
-- **Fast dynamics** ($\tau \sim 1$): coherences $\gamma_{ij}$ fluctuate
-- **Slow dynamics** ($\tau \sim 1/\Gamma_2$): charges $Q_a$ drift
-- **Quasi-statics** ($\tau \gg 1/\Gamma_2$): charges at stationary levels
-
-Clinically important: a **sudden change in a charge** (on timescales $\tau \ll 1/\Gamma_2$) is a marker of violation of $G_2$-invariance. This is analogous to how a sudden change in energy points to an external force.
-
-### 5.3 The charges that never fade: the gauge torus U(1)⁷ {#тор-зарядов}
-
-Section 5.2 said charges fade on the timescale $1/\Gamma_2$. There is a crucial exception, and it is the deepest structural fact about the dissipator. The Fano dephasing has an **exact seven-dimensional kernel** — the diagonal populations $\gamma_{kk}$ — that no amount of decoherence can erode: dephasing scrambles the off-diagonal *coordinations* $\gamma_{ij}$ but leaves each channel's own *weight* untouched (the same single-incidence Fano combinatorics that produces the [rank-7 law](./effective-temperature#линейные-температуры) — a channel's population sits on lines that damp its correlations, never itself). These seven exactly-conserved populations do more than survive: they **generate a symmetry group**, and that group is not the non-compact $\mathbb{R}^7$ but the compact **torus $U(1)^7$** (T-260 [T]).
-
-Why circles rather than open lines? Because the population spectrum is **integer-quantized** — the conserved quantities change only by whole units (a discrete degree of freedom is added or removed, $\Delta N \in \mathbb{Z}$), so the phases they generate wrap around and close on themselves. **Compactness is the shadow of integrality** — precisely as the quantization of electric charge is what makes electromagnetism's gauge group the *circle* $U(1)$ and not the *line* $\mathbb{R}$. This is the same mechanism by which Vanchurin's self-learning universe grows a $U(1)$ from an integer count of degrees of freedom, here derived channel-by-channel.
-
-The full unitary covariance group of the dissipator is $U(1)^7 \rtimes \mathrm{Aut}(r)$ — the torus extended by the permutations that preserve the decay rates. For equal line rates that is every permutation, $U(1)^7 \rtimes S_7$, and its elements in $G_2$ form the *finite* frame group $\Gamma_{\text{oct}}$ (signed permutations, order $1344$, acting on the seven Fano lines through $\mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$) — **not** the full continuous $G_2$: only monomial maps send the diagonal algebra to itself, while a generic $G_2$ rotation does not. (This corrects a natural over-expectation that the dissipator inherits all of $G_2$; see [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-происхождение-тора).
+:::warning Correction on Compactness vs. Integrality (`T-260`)
+The compactness of $U(1)^7$ follows strictly from the $\{0,1\}$ eigenvalue spectrum of the chosen coordinate projectors $\Pi_k$ generating diagonal phase rotations $e^{i\alpha_k \Pi_k}$. It does **not** mean that diagonal populations $\gamma_{kk}$ are integer-quantized: $\gamma_{kk} \in [0, 1]$ are continuous real probabilities satisfying $\sum_k \gamma_{kk} = 1$, and compactness of a symmetry group is **not** equivalent to arbitrary charge-generator integrality. Earlier text asserting discrete integer population steps $\Delta N \in \mathbb{Z}$ was erroneous and has been removed.
+:::
 
 ---
 
-## 6. Ward Identities — Symmetry Constraints [T] {#уорд}
+## 6. Ward Identities and $G_2$-Invariant Covariances (Corrected Scope) {#уорд}
 
-:::tip Theorem 5.1 (14 Ward Identities for Gap Correlators) [T]
-$G_2$-invariance generates **14 linear relations** on two-point Gap correlators.
+In quantum field theory and statistical physics, Ward identities constrain correlation functions **if and only if** the state, measure, and dynamics are invariant under the symmetry group in question. Applying this to $G_2$ on 21-dimensional pair space requires two critical corrections relative to earlier drafts (see [Charges of an invariant action](/docs/physics/gauge-symmetry/noether-charges#тождества-уорда-разложение)).
 
-**(a)** For each generator $T_a \in \mathfrak{g}_2$ ($a = 1, \ldots, 14$):
+### 6.1 What $G_2$-Invariance Actually Implies on $\Lambda^2 \mathbb{R}^7$ `[T]`
 
-$$
-\sum_{m} [T_a]_{im} \, C_{(mj),(kl)} + [T_a]_{jm} \, C_{(im),(kl)} = 0
-$$
-
-**(b)** Number of independent two-point correlators:
+:::tip Theorem 6.1 ($G_2$-Invariant Symmetric Covariances on $\Lambda^2 \mathbb{R}^7$) `[T]`
+Under the fundamental 7-dimensional representation of $G_2$, the 21-dimensional antisymmetric tensor space decomposes into two **inequivalent** irreducible representations:
 
 $$
-N_{\text{corr}} = \frac{21 \times 22}{2} - 14 = 231 - 14 = 217
+\Lambda^2 \mathbb{R}^7 = \mathbf{7} \oplus \mathbf{14}.
 $$
+
+By Schur's lemma, every symmetric $G_2$-invariant covariance operator $C$ on $\Lambda^2 \mathbb{R}^7$ has **two** independent real parameters, not one:
+
+$$
+C = a\,\mathsf{P}_7 + b\,\mathsf{P}_{14}, \qquad a, b \ge 0,
+$$
+
+where $\mathsf{P}_7$ and $\mathsf{P}_{14}$ are the orthogonal projectors onto the $\mathbf{7}$ and $\mathbf{14}$ summands. A single trace measurement fixes only $7a + 14b$; determining both $a$ and $b$ requires a **second** independent measurement.
 :::
 
-### 6.1 What Are Ward Identities
-
-Ward identities are one of the central tools of quantum field theory. Named after John Clive Ward (1924–2000), they express a simple idea: **if a theory possesses a symmetry, then correlation functions are not arbitrary — they are related to each other**.
-
-In the context of Gap-dynamics this means: if $G_2$-symmetry is exact, then of the $231$ possible pairwise correlators $C_{(ij),(kl)}$ only $217$ are independent. The rest are **computed** from these $217$ via 14 linear relations.
-
-Intuition: imagine 231 springs connecting 21 points. $G_2$-symmetry means that 14 of these springs are "slaves": their stiffness is fully determined by the stiffnesses of the rest. The system cannot have arbitrary correlations — symmetry forbids it.
-
-### 6.2 Meaning of Ward Identities
-
-Ward identities are **constraints** imposed by $G_2$-symmetry on correlations between Gap channels. They mean: **transformation of one "leg" of a correlator is compensated by transformation of the other**.
-
-For pairs on the same Fano line: redistribution of Gap within the triplet **does not change** the correlational properties with other pairs.
-
-### 6.3 Decomposition by $G_2$-Invariant Tensors {#разложение-по-g_2-инвариантным-тензорам}
-
-The two-point correlator decomposes as:
+The infinitesimal invariance equations for a $G_2$-invariant tensor $C$ take the form
 
 $$
-C = \alpha \cdot \mathbf{1}_{21} + \beta \cdot \mathbf{F}_{21} + \gamma \cdot \mathbf{F}_{21}^2
+\sum_{m} \left([T_a]_{im} C_{(mj),(kl)} + [T_a]_{jm} C_{(im),(kl)} + [T_a]_{km} C_{(ij),(ml)} + [T_a]_{lm} C_{(ij),(km)}\right) = 0
 $$
 
-where $\mathbf{F}_{21}$ is the Fano tensor on the space of pairs. Ward identities fix:
+for all $T_a \in \mathfrak{g}_2$ ($a = 1, \ldots, 14$), acting on **all four** indices (both legs of the two-point correlator — transforming only one leg would overconstrain $C$).
+
+### 6.2 Meaning of the Correction
+
+Earlier text asserted that Ward identities reduce the 231 entries of a symmetric $21 \times 21$ matrix first to $231 - 14 = 217$ and then via $G_2$-invariance to **one** parameter $\alpha$. Both steps require correction:
+- The number of independent $G_2$-invariant symmetric bilinear forms on $\Lambda^2 \mathbb{R}^7 = \mathbf{7} \oplus \mathbf{14}$ is **2** (parameters $a, b$), not 1.
+- Moreover, the unsigned Gap observables $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})| \in [0, 1]$ live on the 21 **unordered** coordinate edges, not directly on the antisymmetric tensor representation $\Lambda^2 \mathbb{R}^7$: matching dimensions $(7, 14)$ does **not** supply a canonical $G_2$-intertwiner between unsigned edge coordinates and $\Lambda^2 \mathbb{R}^7$ ([Charges of an invariant action](/docs/physics/gauge-symmetry/noether-charges#оператор-f21-определение)).
+
+### 6.3 The Fano Adjacency Matrix $F$ on 21 Edges `[T]` {#разложение-по-g_2-инвариантным-тензорам}
+
+On the 21 unordered edges of $\mathrm{PG}(2,2)$, define the symmetric adjacency matrix $\mathbf{F}_{21}$ joining distinct edges that lie on the same Fano line. Because every pair of distinct axes determines a unique Fano line of 3 edges, $\mathbf{F}_{21}$ is block-diagonal with seven $3 \times 3$ blocks $J_3 - I_3$:
+
+- Eigenvalue $+2$ with multiplicity $7$ (constant vector on each Fano line, projector $\Pi_7$),
+- Eigenvalue $-1$ with multiplicity $14$ (zero-sum vectors on each Fano line, projector $\Pi_{14}$).
+
+Since $\mathbf{F}_{21}$ satisfies the minimal polynomial $(\mathbf{F}_{21} - 2I)(\mathbf{F}_{21} + I) = 0$, we have $\mathbf{F}_{21}^2 = \mathbf{F}_{21} + 2I$, so every polynomial in $\mathbf{F}_{21}$ spans at most the **2-dimensional** algebra $\mathrm{span}\{\Pi_7, \Pi_{14}\}$ (`[T]`):
 
 $$
-\beta = -\frac{3\alpha}{7}, \quad \gamma = \frac{3\alpha}{49}
+C = a'\,\Pi_7 + b'\,\Pi_{14}.
 $$
 
-**The only free parameter** is $\alpha$ (overall amplitude of fluctuations). This is a radical reduction: from 231 independent parameters only **one** remains.
+The specific former polynomial $C = \alpha(I - \frac{3}{7}\mathbf{F}_{21} + \frac{3}{49}\mathbf{F}_{21}^2)$ simply selects one particular ray $a' = \frac{19}{49}\alpha$, $b' = \frac{73}{49}\alpha$ by **choice of polynomial**, not by Ward identities!
 
-:::warning Relation Between 217 and 1 Parameter
-The 14 Ward identities reduce 231 free parameters to 217 — these are **linear constraints** on two-point correlators. However, the [decomposition by $G_2$-invariant tensors](#разложение-по-g_2-инвариантным-тензорам) (section 6.3) imposes **additional**, stronger constraints (isotropy over irreducible representations), reducing everything to **one** parameter $\alpha$. These two results do not contradict each other: 217 is the intermediate reduction via linear identities; 1 is the full reduction via the structure of $G_2$ representations.
+:::info Actual Dissipator Breaking of $G_2$ (`T-2`, `T-3`)
+Even in the theoretical model, the coordinate/Fano dissipator is **not** $G_2$-covariant (`T-3 [T]`). Across every Fano weight $\alpha^* \in [0, 1]$, the $G_2$-covariance violation satisfies $\Delta_{G_2} = \frac{2+\alpha^*}{3}\,\Delta_{\max} \ge \frac{2}{3}\Delta_{\max}$ ([Fano channel](/docs/proofs/gap/fano-channel#g2-ковариантность)). Therefore, an experimental observation of exact $G_2$-invariance ($\Delta_{G_2} \approx 0$) would **contradict** the coordinate Fano-pinching dissipator rather than confirm it! What the Fano dissipator predicts is the **rank-7 line-rate structure** ($r_{ij} = \frac{1}{6}\sum_{|\ell_p \cap \{i,j\}|=1}\gamma_p$) and $U(1)^7 \rtimes \mathrm{Aut}(r)$ covariance (`T-260 [T]`).
 :::
 
-:::info Practical Consequence [T]
-For the $G_2$-symmetric reference dynamics the entire $21 \times 21$ correlation matrix would be determined by **one number** $\alpha$. The actual dynamics breaks $G_2$ at every Fano weight $\alpha^*$, including $\alpha^* = 0$: $\Delta_{G_2} = \tfrac{2+\alpha^*}{3}\,\Delta_{\max} \geq \tfrac23\Delta_{\max}$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)), so corrections of that order are always present.
-:::
+### 6.4 Summary of Parameter Counts `[T]`
 
-### 6.4 Reduction Cascade — From Chaos to Order
-
-It is useful to trace how $G_2$-symmetry successively compresses the space of possible correlations:
-
-| Stage | Number of parameters | What happens |
-|-------|---------------------|--------------|
-| No constraints | 231 | Arbitrary $21 \times 21$ symmetric matrix |
-| After Ward identities | 217 | 14 linear relations remove 14 parameters |
-| $G_2$-isotropy | 3 | Decomposition over $\mathbf{1}$, $\mathbf{F}$, $\mathbf{F}^2$ |
-| Full $G_2$-invariance | 1 | $\beta = -3\alpha/7$, $\gamma = 3\alpha/49$ |
-
-Compression by a factor of **231** — from 231 to 1. This is more powerful than any statistical model: here it is not fitting that works, but **symmetry**.
+| Model class for a $21 \times 21$ symmetric covariance | Independent parameters | Exact algebraic basis |
+|-------------------------------------------------------|------------------------|-----------------------|
+| Unrestricted symmetric $21 \times 21$ matrix | 231 | Arbitrary symmetric matrix |
+| $G_2$-invariant bilinear form on $\Lambda^2 \mathbb{R}^7$ | 2 | $a\,\mathsf{P}_7 + b\,\mathsf{P}_{14}$ (`[T]`) |
+| Block-Fano-symmetric edge covariance ($\Gamma_{\mathrm{oct}}$-adapted) | 2 | $a'\,\Pi_7 + b'\,\Pi_{14}$ (`[T]`) |
+| Former single-parameter polynomial ansatz | 1 | Fixed ratio $a'/b' = 19/73$ (special ansatz `[D]`, not forced by $G_2$) |
 
 ---
 
-## 7. Clinical Diagnostics via Charges [I] {#диагностика}
+## 7. Exploratory Diagnostic Hypotheses `[H/I]` {#диагностика}
 
-### 7.1 Diagnostic Table
+Because continuous $G_2$ Noether conservation does not hold for open holon dynamics (`T-3`, `T-75 [✗]`), charge deviations **cannot** be treated as validated clinical diagnostics. The tables below record **exploratory interpretive hypotheses** `[H/I]` that require independent psychometric, physiological, and longitudinal validation before any clinical use.
 
-| Charge / Measure | Observable | Violation | Clinical significance |
-|-----------------|------------|-----------|----------------------|
-| $Q_p^{(F)}$ | Balance within Fano triplet | $Q_p^{(F)} \neq Q_p^{(\text{stat})}$ | Intra-sector imbalance |
-| $Q_q^{(D)}$ | Exchange between triplets | $Q_q^{(D)} \neq Q_q^{(\text{stat})}$ | Cross-sector rigidity |
-| $\sum_p Q_p^{(F)}$ | Total Fano circulation | $\neq 0$ | Non-stationary state |
-| $\sum_q Q_q^{(D)}$ | Total inter-triplet exchange | $\neq 0$ | Non-stationary state |
-| $\max_a \lvert dQ_a/d\tau\rvert$ | Maximum rate of change | $> 0$ | Crisis marker |
-| $\Delta_{G_2}^{(\text{exp})}$ | Degree of Ward identity violation | $\gg 0$ | $G_2$-structure is broken |
+### 7.1 Candidate Symmetry-Breaking Observables `[H/I]`
 
-### 7.2 Diagnostics by Individual Charges [I] {#диагностика-по-зарядам}
+| Observable | Operational definition | Exploratory hypothesis `[H/I]` |
+|------------|------------------------|--------------------------------|
+| Fano-line rate residuals | Deviation of estimated decay rates $r_{ij}$ from rank-7 Fano incidence span | Tests the calibrated Fano-jump dissipator ([Effective temperature §8](./effective-temperature#линейные-температуры)) |
+| Block-covariance ratio $a'/b'$ | Projection of empirical $21 \times 21$ covariance onto $\Pi_7$ vs. $\Pi_{14}$ | Measures within-triplet vs. cross-triplet correlation anisotropy |
+| Diagonal population drift $\dot\gamma_{kk}$ | Rate of change of inferred axis weights | Reflects Hamiltonian coupling + regenerative/external forcing (`T-260`) |
+| $G_2$-breaking residual $\Delta_{G_2}^{(\mathrm{exp})}$ | Norm of commutator residual on antisymmetrized pair observables | Benchmark distance from idealized $G_2$-isotropy |
 
-Violation of a **specific** charge points to a **specific** type of imbalance:
+### 7.2 Exploratory Triplet-Profile Hypotheses `[I]` {#диагностика-по-зарядам}
 
-| Violated charge | Dimensions | Clinical marker |
-|----------------|------------|----------------|
-| $Q_1^{(F)}$ (A–S–L) | Perception, structure, logic | Perceptual disorders: illusions, verification failures, thought disorders |
-| $Q_2^{(F)}$ (S–D–E) | Structure, dynamics, interiority | Somatoform disorders: action without experience, "action depersonalization" |
-| $Q_3^{(F)}$ (D–L–U) | Dynamics, logic, unity | Disintegration of goal-setting: "I know why, but I cannot" |
-| $Q_4^{(F)}$ (L–E–O) | Logic, interiority, ground | Existential anxiety: "I understand, but feel no grounding" |
-| $Q_5^{(F)}$ (E–U–A) | Interiority, unity, articulation | Alexithymia, dissociation: experience cannot be expressed |
-| $Q_6^{(F)}$ (U–O–S) | Unity, ground, structure | Resource depletion: "unity without grounding" |
-| $Q_7^{(F)}$ (O–A–D) | Ground, articulation, dynamics | Sensorimotor disorders: coordination and perceptual disturbances |
-| $Q_q^{(D)}$ (cross-triplet) | Between triplets | Modular isolation: functions preserved but not connected |
+The seven canonical Fano triplets suggest domain-grouped hypotheses `[I]` (none of which is an established medical criterion):
 
-### 7.3 Therapeutic Strategies
+| Canonical triplet | Axes | Exploratory functional focus `[I]` |
+|-------------------|------|------------------------------------|
+| $\{A, S, L\}$ | Articulation, Structure, Logic | Perceptual parsing, structural organization, logical checking |
+| $\{S, D, E\}$ | Structure, Dynamics, Interiority | Coupling of structured action with felt experience |
+| $\{D, L, U\}$ | Dynamics, Logic, Unity | Coherence of goal-directed action and reasoning |
+| $\{L, E, O\}$ | Logic, Interiority, Ground | Alignment between reasoning, affect, and physiological grounding |
+| $\{E, U, A\}$ | Interiority, Unity, Articulation | Integration and verbal/behavioral expression of experience |
+| $\{U, O, S\}$ | Unity, Ground, Structure | Resource availability supporting structural integration |
+| $\{O, A, D\}$ | Ground, Articulation, Dynamics | Sensorimotor regulation and physiological readiness |
+| Cross-triplet edges | Between distinct Fano lines | Global coordination across functional subsystems |
 
-:::info Two Types of Violations [I]
-**Violation of Fano charges** ($Q_p^{(F)} \neq Q_p^{(\text{stat})}$): imbalance **within** a triplet.
+### 7.3 Intervention Hypotheses `[H/I]`
 
-*Example:* In the triplet $\{A, S, L\}$ (articulation–structure–logic): excessive perceptual load ($\sigma_A$ elevated) with insufficient verification ($\sigma_L$ reduced).
+Distinguishing within-triplet imbalance from cross-triplet decoupling is an **untested intervention hypothesis** `[H/I]`. Any therapeutic protocol must be grounded in independently validated clinical trials and medical standards, not inferred from matrix algebra alone.
 
-*Strategy:* Work **within** the triplet — rebalancing the load among the three dimensions.
+### 7.4 Principle of Targeted Measurement `[I]`
 
-**Violation of supplementary charges** ($Q_q^{(D)} \neq Q_q^{(\text{stat})}$): Gap stagnation **between** triplets.
-
-*Example:* The triplet $\{S, D, E\}$ is isolated from the rest — Gap-transfer is blocked.
-
-*Strategy:* Establishing **connections between sectors** — integrative practices.
-:::
-
-### 7.4 Principle of Minimal Intervention [I]
-
-The Noether structure suggests an important therapeutic principle: **intervention should target the specific violated charge**, not the system as a whole. If only $Q_3^{(F)}$ is violated (D–L–U balance), there is no point in working with the A–S–L triplet.
-
-This is analogous to the principle of **minimal sufficiency** in medicine: treat what is broken without touching what is working. Noether charges provide a formal criterion for determining "what is broken."
+Rather than assuming a universal conservation law, an applied measurement framework should estimate all four capability margins ($P$, $R$, $\Phi$, $D_{\mathrm{diff}}$) together with axis-level uncertainty sets (see [Measurement of Consciousness](./measurement)) before forming targeted hypotheses.
 
 ---
 
-## 8. Experimental Protocol for Verifying $G_2$-Structure [P] {#протокол}
+## 8. Pre-Registered Experimental Protocol for Symmetry Testing `[Pr]` {#протокол}
 
-::::caution Program: Operational Verification Protocol [P]
+::::caution Research Programme: Pre-Registered Symmetry-Testing Protocol `[Pr]`
 
-:::warning Methodological Circularity [I]
-Step 2 of the protocol (mapping channels to 7 dimensions) **presupposes** a known mapping of neural channels onto holonomic dimensions, yet this mapping is itself the object of verification. The protocol results depend on the choice of mapping. To resolve the circularity, an **independent** method for establishing the correspondence between channels and dimensions is required (e.g., via task structure or anatomical criteria), or enumeration of possible mappings with selection of the optimal one by the criterion $\Delta_{G_2}^{(\text{exp})} \to \min$.
+:::warning Eliminating Circularity and Multiple-Testing Bias
+Mapping neural or behavioral channels to the 7 axes $\{A,S,D,L,E,O,U\}$ is itself part of the empirical hypothesis. **Optimizing or enumerating channel-to-axis mappings to minimize the test statistic $\Delta_{G_2}^{(\mathrm{exp})}$ on the same dataset is statistically invalid (p-hacking / circular overfitting)** and MUST NOT be used.
+
+To prevent circularity, any valid test MUST enforce:
+1. **Independent pre-registration of the mapping:** Fix the channel-to-axis encoder *a priori* from anatomical, task-factorial, or functional criteria and deposit the mapping, preprocessing pipeline, and statistical test plan in a public pre-registration before data inspection.
+2. **Strict train/test separation (if learned):** If an encoder is learned from data, fit it strictly on an independent calibration split (or independent subjects/sessions) using task labels unrelated to the symmetry statistic, freeze the encoder, and evaluate symmetry residuals exclusively on held-out test data.
+3. **Permutation null and multiple-testing control:** Compare the held-out test statistic against a null distribution of random Fano-plane relabellings (permutations of the 7 axes not in $\mathrm{Aut}(\mathrm{PG}(2,2))$) and apply explicit family-wise error or FDR correction (e.g., Holm–Bonferroni or Benjamini–Hochberg) across all tested hypotheses, frequency bands, and time lags.
 :::
 
-### Stage 1: Data Collection
+### Stage 1: Pre-Registered Data Acquisition and Frozen Mapping
 
-1. Record multi-channel data (EEG/fMRI, 64+ channels, $\geq 30$ min)
-2. Map channels to the 7 holonomic dimensions (based on [neurobiological correlates](./definitions#нейробиологические-корреляты))
-3. Compute all 21 pairwise coherences $\gamma_{ij}(t)$
+1. Record multi-channel neural data (e.g., high-density EEG/MEG, $\ge 64$ channels, with preregistered artifact rejection, filter bands, and window lengths).
+2. Apply the **pre-registered, frozen** channel-to-axis readout mapping to obtain 7 complex analytic signals (or state estimates under a declared [reconstruction protocol](/docs/applied/research/reconstruction-identifiability)).
+3. Estimate the 21 pairwise complex coherences $\gamma_{ij}(t)$, verify density-matrix positivity ($\Gamma \succeq 0$, $\mathrm{Tr}\,\Gamma = 1$), and report estimation uncertainty.
 
-### Stage 2: Building the Correlation Matrix
+### Stage 2: Empirical Covariance and Decay-Rate Estimation
 
-4. Construct the $21 \times 21$ matrix of two-point Gap correlators:
+4. Compute the empirical $21 \times 21$ covariance matrix $C_{(ij),(kl)}(\tau)$ on held-out test epochs, distinguishing unsigned Gap statistics from signed/antisymmetric pair observables.
+5. Separately estimate the 21 pairwise off-diagonal relaxation rates $r_{ij}$ from perturbation-recovery or autocorrelation envelopes.
 
-$$
-C_{(ij),(kl)}(\tau) = \langle \mathrm{Gap}(i,j;\tau) \, \mathrm{Gap}(k,l;0) \rangle
-$$
+### Stage 3: Pre-Registered Statistical Tests
 
-### Stage 3: Verification of 14 Ward Identities
+6. **Primary Fano-dissipator test (rank-7 law, `T-260`):** Fit the nonnegative rank-7 model $r_{ij} = \frac{1}{6}\sum_{|\ell_p \cap \{i,j\}|=1} \gamma_p$ ($\gamma_p \ge 0$) and test the 14 linear Fano-incidence constraints on held-out data against random 7-block permutations (see [falsifiability F-rank7](/docs/reference/falsifiability#f-rank7-ранг-7-анизотропия-декогеренции)).
+7. **Block-Fano covariance test ($\Pi_7 \oplus \Pi_{14}$):** Decompose the held-out empirical $21 \times 21$ covariance matrix into the $\Pi_7 \oplus \Pi_{14}$ subspace versus its orthogonal complement (229 residual degrees of freedom) and compute the variance explained relative to the permutation null across non-isomorphic label assignments.
+8. **$G_2$-breaking benchmark:** On an explicitly specified antisymmetric representation $\Lambda^2 \mathbb{R}^7$, evaluate the four-index invariance residual
+   $$
+   W_a := \left\|\sum_{m} \left([T_a]_{im} C_{(mj),(kl)} + [T_a]_{jm} C_{(im),(kl)} + [T_a]_{km} C_{(ij),(ml)} + [T_a]_{lm} C_{(ij),(km)}\right)\right\|_F
+   $$
+   and $\Delta_{G_2}^{(\mathrm{exp})} := \max_a W_a / \|C\|_F$, reporting confidence intervals via block bootstrap.
 
-5. For each generator $T_a \in \mathfrak{g}_2$ ($a = 1, \ldots, 14$) compute:
+### Stage 4: Honest Falsification Criteria
 
-$$
-W_a := \left\|\sum_{m} [T_a]_{im} \, C_{(mj),(kl)} + [T_a]_{jm} \, C_{(im),(kl)}\right\|
-$$
-
-6. Compute the degree of violation:
-
-$$
-\Delta_{G_2}^{(\text{exp})} := \max_a W_a
-$$
-
-### Stage 4: Interpretation
-
-| $\Delta_{G_2}^{(\text{exp})}$ | Interpretation |
-|-------------------------------|----------------|
-| $\Delta\approx0$ | Compare with the specified pinching model, which requires $\Delta_{G_2}\ge(2/3)\Delta_{\max}$. |
-| $0<\Delta\ll1$ | The model gives $\Delta_{G_2}=(2+\alpha)\Delta_{\max}/3$ at the chosen Fano weight $\alpha$. |
-| $\Delta \sim O(1)$ | Strong violation — $G_2$-reduction not applicable |
+| Outcome on held-out pre-registered data | Interpretation |
+|-----------------------------------------|----------------|
+| Rank-7 Fano rate relations rejected ($p_{\mathrm{adj}} < \alpha$) | **Falsifies** the calibrated Fano-jump dissipator under the registered mapping |
+| Block-Fano subspace ($\Pi_7 \oplus \Pi_{14}$) no better than random axis permutations | **Falsifies** Fano-triplet covariance organization under the registered mapping |
+| $\Delta_{G_2}^{(\mathrm{exp})} \approx 0$ (exact continuous $G_2$ invariance) | **Inconsistent** with the coordinate Fano-pinching dissipator (`T-3`, which requires $\Delta_{G_2} \ge \frac{2}{3}\Delta_{\max}$) |
+| Significant rank-7 fit and $\Pi_7 \oplus \Pi_{14}$ excess over permutation null, with nonzero $\Delta_{G_2}^{(\mathrm{exp})}$ | Consistent with the finite-covariance Fano-dissipator model (`T-260`), subject to replication |
 ::::
 
-### 8.1 Expected Results
+### 8.1 Falsifiable Predictions `[H]`
 
-:::warning Falsifiable Prediction [H]
-If the $G_2$-structure of octonions is fundamental to Gap-dynamics, then:
+:::warning Falsifiable Empirical Hypotheses `[H]`
+Under an independently pre-registered mapping to the 7 axes:
+1. **Rank-7 relaxation structure (`T-260`):** If decoherence is governed by the Fano-line jump family, the 21 pairwise decay rates obey the 14 linear incidence constraints of $\mathrm{PG}(2,2)$ better than random non-isomorphic triple systems.
+2. **Two-parameter Fano-block covariance:** If fluctuations respect the finite octonionic frame symmetry $\Gamma_{\mathrm{oct}}$ on the 21 edges, the covariance concentrates in the 2-parameter subspace $a'\Pi_7 + b'\Pi_{14}$ (with $a', b'$ both estimated, not fixed to a single arbitrary ratio).
+3. **Absence of exact continuous $G_2$ invariance (`T-3`):** Because the coordinate dissipator breaks continuous $G_2$, exact $G_2$ Ward invariance is **not** predicted for the coordinate Fano model.
 
-1. Specify the symmetry action before applying Ward identities. The Fano-channel weight must be fixed independently of a readout to be predicted. [Fano channel](/docs/proofs/gap/fano-channel)
-2. The decomposition $C = \alpha \cdot \mathbf{1} + \beta \cdot \mathbf{F} + \gamma \cdot \mathbf{F}^2$ with $\beta = -3\alpha/7$, $\gamma = 3\alpha/49$ must approximate the data well
-3. Systematic violation $\Delta \sim O(1)$ refutes the $G_2$-hypothesis
-
-**Status:** algebraic structure [T]; experimental verification [H]; protocol [P].
+**Status:** Bare-dissipator kernel and $U(1)^7 \rtimes \mathrm{Aut}(r)$ covariance (`T-260`) `[T]`; non-covariance under continuous $G_2$ (`T-2`, `T-3`) `[T]`; empirical neural mapping `[H]`; testing protocol `[Pr]`.
 :::
 
-### 8.2 Practical Recommendations for the Experiment [P]
+### 8.2 Practical Experimental Requirements `[Pr]`
 
-For implementing the protocol in laboratory conditions:
-
-**Choice of modality.** EEG is preferable to fMRI due to high temporal resolution ($\sim 1$ ms vs. $\sim 1$ s). Gap-dynamics operates on millisecond scales, and the temporal smoothing of fMRI may mask $G_2$-structure.
-
-**Minimum number of channels.** The theoretical minimum is 7 (one per dimension), but for reliable mapping of channels to dimensions $\geq 64$ channels are recommended.
-
-**Recording duration.** Stationary charges $Q_a^{(\text{stat})}$ are established over time $\tau \sim 1/\Gamma_2$. The recording must be $\geq 10/\Gamma_2$ for a reliable estimate. At $\Gamma_2 \sim 0.1$ Hz this is $\geq 100$ s; at $\Gamma_2 \sim 0.01$ Hz — $\geq 1000$ s.
-
-**Artifact control.** Eye movements and muscle artifacts violate $G_2$-invariance "from outside" — they must be removed (ICA or regression) before computing coherences.
+- **Modality and temporal resolution:** High-temporal-resolution recordings (EEG/MEG, $\sim 1$ ms sampling) are required to resolve coherence relaxation rates; slow hemodynamic modalities (fMRI) impose severe temporal filtering that must be explicitly modelled.
+- **Channel density and inverse modelling:** Source-space reconstruction ($\ge 64$ sensors) reduces volume-conduction leakage, which otherwise creates spurious zero-lag coherences and distorts phase estimates.
+- **Recording duration and stationarity:** Verify weak stationarity across segments before estimating stationary covariances; use block-bootstrap resampling to account for temporal autocorrelation.
+- **Artifact control:** Pre-register ocular, muscular, and line-noise rejection criteria before inspecting symmetry statistics.
 
 ---
 
-## 9. Connection with Other CC Results {#связи}
+## 9. Connections with Other CC Results {#связи}
 
-### 9.1 14 Charges and 5 Types of Gap Protection
+### 9.1 Symmetry Structure and Protection Mechanisms
 
-Noether charges are connected with the [five mechanisms of coherence protection](./topological-protection):
+| Mathematical structure | Exact scope | Link |
+|------------------------|-------------|------|
+| Diagonal kernel $\ker(\mathcal{D}_{\mathrm{Fano}})$ (`T-260 [T]`) | Bare Fano dissipator preserves $\gamma_{kk}$; broken by connected $H$ | [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-происхождение-тора) |
+| Hamming $(7,4,3)$ parity-check structure (`[T]` for specified binary channel) | Requires declared binary noise and syndrome decoder; not automatic for continuous phases | [Topological protection](./topological-protection) |
+| Homotopy $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ (`[T]` in algebraic topology) | Concerns maps from a 2D spatial domain; a single finite $7\times 7$ matrix carries no such topological charge | [Stability §7](./stability) |
 
-| Charge | Protection mechanism |
-|--------|---------------------|
-| $Q_p^{(F)}$ (Fano charges) | Code protection (Hamming): Fano lines define the parity-check matrix $H(7,4)$ |
-| $Q_q^{(D)}$ (supplementary) | Algebraic protection: inter-triplet connections are determined by the associator |
-| $Q_{\text{top}}$ (topological) | Topological protection: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ |
+### 9.2 Goldstone Modes
 
-### 9.2 Charges and Goldstone Modes
+Goldstone's theorem applies to spontaneous breaking of a **continuous** symmetry of an action or Hamiltonian in a thermodynamic/spatial limit. Because the coordinate Fano dissipator explicitly breaks continuous $G_2$ (`T-3 [T]`), any soft modes in a finite-dimensional open matrix model are model-dependent damped modes of a chosen effective potential, not exact massless $G_2$ Goldstone bosons (see [Goldstone modes](./goldstone-modes)).
 
-Under spontaneous breaking $G_2 \to H$:
+### 9.3 Connection to the Phase Diagram
 
-- $\dim(H)$ charges remain **exactly conserved**
-- $14 - \dim(H)$ charges are **broken** $\Rightarrow$ generate [Goldstone modes](./goldstone-modes)
+In the [CC phase diagram](./phase-diagram-cc), regimes are governed by the chosen potential, regeneration rate $\kappa$, and dephasing rate $\Gamma_2$ rather than by continuous $G_2$ conservation. In particular, stationary branches and stability boundaries depend on the explicit reduced flow (`T-259`), not on 14 conserved charges.
 
-| Rank | Preserved charges | Broken $\to$ modes |
-|------|------------------|--------------------|
-| 1 | 8 ($\mathrm{SU}(3)$) | 6 Goldstone |
-| 2 | 4 ($\mathrm{SU}(2) \times \mathrm{U}(1)$) | 10 Goldstone |
-| 3 | 2 ($T^2$) | 12 Goldstone |
+### 9.4 Connection to Capability Thresholds
 
-Each broken symmetry generates a "soft" mode — a quasi-Goldstone boson. The number of such modes is a precise diagnostic marker of the **depth of breaking** of $G_2$-invariance.
-
-### 9.3 Charges and Phase Diagram
-
-In the context of the [phase diagram](./phase-diagram-cc):
-
-| Phase | State of charges |
-|-------|-----------------|
-| **I (ordered)** | $n_{\text{broken}}$ charges are broken; the rest are exactly conserved |
-| **II (disordered)** | All 14 charges are approximately conserved ($G_2$ is not broken) |
-| **III (dead)** | Charges are not defined ($\gamma_{ij} \to 0$) |
-
-### 9.4 Charges and Consciousness Thresholds
-
-Noether charges are connected with [critical consciousness thresholds](/docs/consciousness/foundations/self-observation):
-
-- **$P = P_{\text{crit}} = 2/7$**: on crossing the purity threshold — a step change in the charge profile. Below threshold, charges are defined but fluctuations dominate. Above it — charges stabilize.
-- **$R = R_{\text{th}} = 1/3$**: on reaching the reflection threshold — self-observation begins to *modify* charges. A feedback loop appears: charges $\to$ self-observation $\to$ correction of charges.
-- **$\Phi = \Phi_{\text{th}} = 1$**: on reaching the integration threshold — Fano charges and supplementary charges begin to coordinate. Consciousness "sees" its own conservation laws.
+The defined capability thresholds $P_{\mathrm{crit}} = 2/7$, $R_{\mathrm{th}} = 1/3$, $\Phi_{\mathrm{th}} = 1$, and $D_{\mathrm{diff}} \ge 2$ ([Mathematical kernel](/docs/reference/mathematical-kernel#thresholds)) are algebraic predicates on $\Gamma$ (plus extended readout for $D_{\mathrm{diff}}$). Crossing these thresholds does not follow from, nor produce, 14 conserved $G_2$ charges.
 
 ---
 
 ## 10. Status Summary {#статусы}
 
-| Result | Status |
-|--------|--------|
-| 14 Noether charges from $G_2$-invariance of $L_{\text{Gap}}$ | [T] |
-| 7 Fano charges = circulation momenta | [T] |
-| 7 supplementary charges = inter-triplet momenta | [T] |
-| Charge dissipation: $dQ_a/d\tau = -\Gamma_2 Q_a^{(\text{kin})} + \kappa Q_a^{(\text{reg})}$ | [T] |
-| 14 Ward identities: linear relations on $C_{(ij),(kl)}$ | [T] |
-| Number of independent correlators: $231 - 14 = 217$ | [T] |
-| Decomposition $C = \alpha \cdot \mathbf{1} + \beta \cdot \mathbf{F} + \gamma \cdot \mathbf{F}^2$ | [T] |
-| Clinical diagnostics via charges | [I] |
-| Therapeutic strategies (Fano vs. cross-sector) | [I] |
-| Experimental verification of $G_2$-structure | [H] |
-| Operational protocol ($21 \times 21$ matrix) | [P] |
+| Statement | Status | Reference |
+|-----------|--------|-----------|
+| Universal 6-term Keldysh Lagrangian derivation | `[✗]` Retracted | `T-75 [✗]` |
+| Universal Keldysh-to-Berry topological term in charges | `[✗]` Retracted | `T-85 [✗]` |
+| Universal 14 continuous $G_2$ Noether charges of GKSL dynamics | `[✗]` Retracted | `T-2`, `T-3`, `T-260` |
+| Integer quantization of diagonal populations ($\Delta N \in \mathbb{Z}$) | `[✗]` Retracted | `T-260` |
+| Fano dephasing $= \frac{2}{3}$ atomic dephasing in fixed frame | `[T]` | `T-2` |
+| Atomic/Fano dissipator is **not** $G_2$-covariant | `[T]` | `T-3` |
+| Bare dissipator diagonal kernel & $U(1)^7 \rtimes \mathrm{Aut}(r)$ covariance (finite $\Gamma_{\mathrm{oct}} \subset G_2$) | `[T]` | `T-260` |
+| Connected $H$ removes non-scalar diagonal conserved charges | `[T]` | `T-260` |
+| Noether charges for a *postulated* $G_2$-invariant conservative action | `[C]` | [Noether charges](/docs/physics/gauge-symmetry/noether-charges) |
+| $G_2$-invariant symmetric covariance on $\Lambda^2 \mathbb{R}^7$ has **2** parameters ($a\mathsf{P}_7 + b\mathsf{P}_{14}$) | `[T]` | [Noether charges](/docs/physics/gauge-symmetry/noether-charges#тождества-уорда-разложение) |
+| Fano edge adjacency $\mathbf{F}_{21}$ has eigenvalues $2$ (mult 7) and $-1$ (mult 14) | `[T]` | [Noether charges](/docs/physics/gauge-symmetry/noether-charges#оператор-f21-определение) |
+| Cognitive/clinical triplet reading | `[I]` / `[H]` | §7 |
+| Pre-registered symmetry-testing protocol | `[Pr]` | §8 |
 
 ---
 
 ### What We Learned {#что-мы-узнали}
 
-1. **Noether's theorem is universal**: every continuous symmetry corresponds to a conservation law — and this works for consciousness just as it does for physics.
-2. **14 charges = 14 conservation laws of consciousness**: 7 Fano charges (budget of cognitive resources *within* triplets) + 7 supplementary charges (exchange balance *between* triplets).
-3. **Charges are not conserved forever** in open systems: they slowly decay with characteristic time $\tau \sim 1/\Gamma_2$, but converge to stationary values $Q_a^{(\text{stat})} = (\kappa/\Gamma_2) \cdot Q_a^{(\text{reg})}$.
-4. **14 Ward identities** constrain correlations: from 231 possible parameters only **one** free parameter remains — the amplitude $\alpha$. This is a compression by a factor of 231 — the power of symmetry.
-5. **Each violated charge is a diagnostic marker**: the clinical table translates mathematics into concrete types of violations and therapeutic strategies.
-6. **An experimental protocol exists**: the $21 \times 21$ correlation matrix from EEG data, verification of 14 Ward identities, violation measure $\Delta_{G_2}^{(\text{exp})}$.
+1. **Noether's theorem is conditional on actual symmetry of the dynamics:** Because UHM's universal Keldysh Lagrangian (`T-75 [✗]`) and Berry term (`T-85 [✗]`) are withdrawn and the bare Fano dissipator breaks continuous $G_2$ (`T-2`, `T-3`), there are **no** 14 universally conserved continuous $G_2$ Noether charges in open holon evolution.
+2. **Exact bare-dissipator symmetry is $U(1)^7 \rtimes \mathrm{Aut}(r)$ (`T-260 [T]`):** The bare Fano dissipator preserves the 7 continuous diagonal populations $\gamma_{kk}$ and is covariant under the compact rephasing torus $U(1)^7$ (from the $\{0,1\}$ spectrum of coordinate projectors, not integer population quantization) extended by rate-preserving permutations; its overlap with $G_2$ is the finite group $\Gamma_{\mathrm{oct}}$ (order $1344$). A connected Hamiltonian $H$ removes all non-scalar diagonal conserved charges.
+3. **Invariant covariances have two parameters, not one:** On $\Lambda^2 \mathbb{R}^7 = \mathbf{7} \oplus \mathbf{14}$, a $G_2$-invariant symmetric covariance has two independent parameters $(a, b)$; on the 21 Fano edges, the block-Fano algebra $\mathrm{span}\{\Pi_7, \Pi_{14}\}$ is likewise two-dimensional.
+4. **Honest empirical testing requires pre-registration:** Channel-to-axis mappings must be fixed independently or cross-validated on separate splits with permutation nulls and multiple-testing correction — never selected by minimizing the symmetry residual on the test data.
 
 :::tip Bridge to the Next Chapter
-We have seen how $G_2$-symmetry defines the conservation laws of consciousness. But where did all these ideas come from — feedback, the observer, social systems? The CC formalism did not arise in a vacuum: it stands on the shoulders of 80 years of cybernetic thought. In the [next chapter](./cybernetics-history) we trace this history — from Plato's helmsman through Wiener and von Foerster to full coherence — and see how each cybernetic tradition captured **part** of the truth, while CC assembles them into a unified whole.
+With the exact symmetries and boundaries of the formalism established, the [next chapter](./cybernetics-history) places Coherence Cybernetics within the broader 80-year arc of cybernetic thought — from Wiener and Ashby to von Foerster — comparing conceptual traditions with exact mathematical boundaries.
 :::
 
 ---
 
 ## Related Documents
 
-- [G₂-Noether Charges and Ward Identities](/docs/physics/gauge-symmetry/noether-charges) — mathematical foundation: complete proofs, topological charges
-- [G₂-Structure and the Fano Plane](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$, Fano-Lindblad operators
-- [Gap Operator](/docs/core/dynamics/gap-operator) — $G_2/\perp$-decomposition, stabilizers
-- [Gap Phase Diagram](/docs/core/dynamics/gap-phase-diagram) — Ward identities (mathematical), three phases
-- [Fano Channel and Gap Theorems](/docs/proofs/gap/fano-channel) — covariance groups of the dissipators ($\Gamma_{\!\text{oct}}$, not full $G_2$; Theorem 5.1b)
-- [CC Phase Diagram](./phase-diagram-cc) — cybernetic interpretation of phases
-- [Goldstone Modes](./goldstone-modes) — quasi-Goldstone modes from $G_2$ breaking
-- [Topological Coherence Protection](./topological-protection) — five protection mechanisms
-- [CC Definitions](./definitions) — neurobiological correlates, stress tensor
-- [CC Predictions](./predictions) — falsifiable predictions
-- [CC Theorems](./theorems) — No-Zombie, composition
-- [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules) — PG(2,2), 7 lines
-- [Philosophical Foundations](./philosophy) — Noether symmetries and ontology
-- [Interdisciplinary Bridge](./interdisciplinary) — G₂-charges in different contexts
+- [Charges of an Invariant Action](/docs/physics/gauge-symmetry/noether-charges) — exact Noether conditions and two-parameter invariant covariances
+- [Gap Lagrangian Models](./lagrangian) — selected phase action ansatz (`T-75 [✗]` universal Keldysh derivation withdrawn)
+- [Variational Derivation](./variational) — Euler–Lagrange equations and energy balance
+- [Fano Channel and Gap Theorems](/docs/proofs/gap/fano-channel) — `T-2`, `T-3`, `T-260`, and $G_2$-breaking lower bound
+- [Lindblad Operators](/docs/core/operators/lindblad-operators) — exact covariance group $U(1)^7 \rtimes \mathrm{Aut}(r)$
+- [Effective Temperature](./effective-temperature) — rank-7 line-rate structure (§8)
+- [CC Phase Diagram](./phase-diagram-cc) — reduced flows and regimes
+- [Goldstone Modes](./goldstone-modes) — symmetry-breaking modes in effective models
+- [Measurement of Consciousness](./measurement) — state reconstruction and uncertainty
+- [Falsifiability](/docs/reference/falsifiability) — pre-registered falsification tests

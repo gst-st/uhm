@@ -49,26 +49,18 @@ $$
 
 This is **logically circular**: dynamics is defined through $d/dt$, but $t$ is what we are trying to derive.
 
-### 1.2 Requirement of Axiom Ω⁷
+### 1.2 Scope relative to Axiom Ω⁷ and the typed kernel
 
-From [Axiom Ω⁷](/docs/core/foundations/axiom-omega) it follows:
-
-> "The ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ is the unique primitive."
-
-**Logical consequence:** Time must be a **function of the structure of category $\mathcal{C}$**:
-
-$$
-\tau = \tau(\text{Mor}(\mathcal{C})) \quad \text{or} \quad \tau = \tau(\text{strata } X)
-$$
+The legacy programmatic slogan from [Axiom Ω⁷](/docs/core/foundations/axiom-omega) asked whether time can be derived solely from $\mathbf{Sh}_\infty(\mathcal{C})$. As established in §2, §6, and §11 below, the topological sheaf topos $\mathcal{E}_7 = \mathrm{Sh}_\infty(\mathrm{Open}_B(D_7))$ is locally contractible and does **not** by itself force a clock register, Hamiltonian, or irreversible arrow. Honest constructions of relational or discrete time require explicit additional inputs: a clock tensor factor and support constraint (§3.1a, `T-87`), a directed history category $[N] \to \mathbf{Chan}_7$ (§7.4, §11.6), or a finite Feynman–Kitaev depth register (§11.4).
 
 ### 1.3 Four levels of the problem
 
-| Level | Problem | Solution |
+| Level | Problem | Honest mathematical status |
 |---------|----------|---------|
-| **Kinematic** | What is a "moment of time"? | Page–Wootters: correlation with O |
-| **Geometric** | How to measure "the flow of time"? | Bures metric / d_strat |
-| **Categorical** | How to formalize the structure? | ∞-groupoid of paths Exp_∞ |
-| **Stratificational** | What is the arrow of time? | Stratum collapse to T |
+| **Kinematic** | What is a "moment of time"? | Page–Wootters conditioning on a supplied clock factor (§3.1a, `T-87` [C]) |
+| **Geometric** | How to measure "the flow of time"? | Bures arc length along a supplied state curve (§4, §6.1) |
+| **Categorical** | How to formalize directed evolution? | Directed functor $[N] \to \mathbf{Chan}_7$ (§7.4, `T-352` [T]); former $\mathbf{Exp}_\infty$ groupoid arrow withdrawn (§5 [✗]) |
+| **Irreversibility** | What is the arrow of time? | Relative-entropy monotonicity under unital CPTP steps (§7.1, §10.4, `T-53c` [T]); former nerve-stratum collapse withdrawn (§10.1–10.2 [✗]) |
 
 ---
 
@@ -193,12 +185,9 @@ Positivity and trace normalization follow directly. A compatible noninteracting 
 
 ### 3.2 Adaptation for UHM
 
-In the 7D structure of UHM, the natural candidate for the role of a clock is **[dimension O](/docs/core/structure/dimension-o) (Foundation)**.
+In the 7D UHM labelling, **[dimension O](/docs/core/structure/dimension-o) (Ground)** is designated as the clock-associated modelling register [D] (while, as noted in §3.1a and §3.3, a Page–Wootters tensor factor $\mathcal{H}_O \cong \mathbb{C}^7$ is a separately supplied composite Hilbert-space factor rather than the 1D basis line $|O\rangle \subset \mathbb{C}^7$).
 
-**Justification:**
-- O — connection to the quantum vacuum
-- O participates in regeneration: $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ (see [categorical derivation of κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
-- Physically: O is the "source" feeding the dynamics
+*(Note: the former categorical justification $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ linking $O$ to regeneration is withdrawn [✗]; see [Axiom of Septicity](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0).)*
 
 ### 3.3 Formal construction {#33-формальная-конструкция}
 
@@ -328,7 +317,7 @@ $$
 | Set of times | $\mathbb{Z}_7$ (7 moments) | $S^1$ or $\mathbb{R}$ |
 | Topology | Discrete, cyclic | Continual |
 | Chronon (minimal quantum) | $\delta\tau = 2\pi/(7\omega_0)$ | $\delta\tau \to 0$ |
-| Fundamental group | $\pi_1 \cong \mathbb{Z}_7$ | $\pi_1 \cong \mathbb{Z}$ |
+| Fundamental group | $\pi_1(\mathbb{Z}_7) = 0$ (discrete space; classifying space $\pi_1(B\mathbb{Z}_7) \cong \mathbb{Z}_7$) | $\pi_1(S^1) \cong \mathbb{Z}$ ($\pi_1(\mathbb{R}) = 0$) |
 | Evolution equation | Difference | Differential |
 
 **Interpretation:**
@@ -359,49 +348,23 @@ This is a **scaled** limit, not a topological one.
 
 #### Theorem on algebraic limit {#теорема-алгебраический-предел}
 
-:::warning Theorem (Algebraic limit ℂ[ℤ_N] → C(S¹))
-As $N \to \infty$, the group algebra $\mathbb{C}[\mathbb{Z}_N]$ converges to the algebra of continuous functions on the circle:
+:::warning Theorem (Sampling approximation of $C(S^1)$ by $\mathbb{C}[\mathbb{Z}_N]$) [T]
+Let $\mu_N = \{e^{2\pi i k/N} : k = 0,\ldots,N-1\} \subset S^1$ be the Pontryagin dual of $\mathbb{Z}_N$, so that via discrete Fourier transform the finite group $C^*$-algebra satisfies $\mathbb{C}[\mathbb{Z}_N] \cong C(\mu_N)$. Then the sampling $*$-homomorphisms $s_N : C(S^1) \to C(\mu_N) \cong \mathbb{C}[\mathbb{Z}_N]$, $s_N(f) = (f(e^{2\pi i k/N}))_k$, satisfy $\|s_N(f)\|_\infty \to \|f\|_\infty$ for every $f \in C(S^1)$ and assemble into an injective isometric $*$-homomorphism
 
 $$
-\lim_{N \to \infty} \mathbb{C}[\mathbb{Z}_N] \cong C(S^1)
+s : C(S^1) \hookrightarrow \prod_{N \ge 1} \mathbb{C}[\mathbb{Z}_N] \Big/ \bigoplus_{N \ge 1} \mathbb{C}[\mathbb{Z}_N].
 $$
 
-as C*-algebras (algebraically, not topologically).
+**Distinction from the profinite inductive limit:** The naive inductive $C^*$-limit of $\mathbb{C}[\mathbb{Z}_N]$ along the divisibility homomorphisms dual to the projective system $\hat{\mathbb{Z}} = \varprojlim_N \mathbb{Z}_N$ is $C(\hat{\mathbb{Z}})$ (functions on the totally disconnected profinite integers), **not** $C(S^1)$. The circle algebra $C(S^1) \cong C^*(\mathbb{Z})$ is recovered through the Hausdorff/sampling approximation $\mu_N \to S^1$ (the circular counterpart of Theorem 11.5 for $C_0(\mathbb{R})$).
 :::
 
 **Proof:**
 
-**(a) Structure of the group algebra:**
+**(a) Structure and Fourier isomorphism:** $\mathbb{C}[\mathbb{Z}_N] = \mathrm{span}\{e_k : k = 0,\ldots,N-1\}$ with $e_k e_l = e_{(k+l)\bmod N}$ is commutative and finite-dimensional; its Gelfand spectrum is the dual group $\widehat{\mathbb{Z}_N} \cong \mu_N \subset S^1$ via characters $\chi_m(e_k) = e^{2\pi i mk/N}$, giving the $C^*$-isomorphism $\mathcal{F}: \mathbb{C}[\mathbb{Z}_N] \xrightarrow{\sim} C(\mu_N)$.
 
-$$
-\mathbb{C}[\mathbb{Z}_N] = \text{span}\{e_k : k = 0, 1, \ldots, N-1\}, \quad e_k \cdot e_l = e_{(k+l) \mod N}
-$$
+**(b) Dense sampling on $S^1$:** Every point of $S^1$ lies within arc distance $\pi/N$ of $\mu_N$. For any $f \in C(S^1)$, uniform continuity gives $\|f\|_\infty - \omega_f(\pi/N) \le \|s_N(f)\|_\infty \le \|f\|_\infty$, hence $\lim_{N\to\infty}\|s_N(f)\|_\infty = \|f\|_\infty$.
 
-**(b) Fourier transform:**
-
-Isomorphism $\mathcal{F}: \mathbb{C}[\mathbb{Z}_N] \to \mathbb{C}^N$:
-
-$$
-\mathcal{F}(e_k) = \left(\zeta^{0 \cdot k}, \zeta^{1 \cdot k}, \ldots, \zeta^{(N-1) \cdot k}\right), \quad \zeta = e^{2\pi i/N}
-$$
-
-**(c) Limiting transition:**
-
-As $N \to \infty$, the spectrum $\text{Spec}(\mathbb{C}[\mathbb{Z}_N]) = \mathbb{Z}_N$ becomes dense in $S^1$:
-
-$$
-\left\{e^{2\pi i k/N} : k = 0, \ldots, N-1\right\} \xrightarrow{N \to \infty} S^1
-$$
-
-**(d) C*-isomorphism:**
-
-By the Gelfand–Naimark theorem:
-
-$$
-\mathbb{C}[\mathbb{Z}_N] \cong C(\text{Spec}(\mathbb{C}[\mathbb{Z}_N])) \xrightarrow{N \to \infty} C(S^1)
-$$
-
-∎
+**(c) Isometric embedding:** Because the norm in the quotient $C^*$-algebra $\prod_N C(\mu_N)/\bigoplus_N C(\mu_N)$ is $\limsup_{N\to\infty}\|s_N(f)\|_\infty = \|f\|_\infty$, the map $s$ is an isometric $*$-homomorphism identifying $C(S^1)$ with the continuous-sampling limit of $\mathbb{C}[\mathbb{Z}_N]$ (whereas the inductive limit along divisibility maps yields $C(\hat{\mathbb{Z}})$). $\square$
 
 **Chronon as a function of N:**
 
@@ -575,117 +538,40 @@ $$
 
 ### 4.4 Correspondence with dynamics
 
-:::tip Theorem 4.2 (Connection to Hamiltonian)
-For unitary evolution $\Gamma(t) = U(t) \Gamma_0 U^\dagger(t)$ with $U(t) = e^{-iHt}$:
+:::tip Theorem 4.2 (Bures speed and Mandelstam–Tamm bound) [T]
+For unitary evolution $\Gamma(t) = U(t)\Gamma_0 U^\dagger(t)$ with $U(t) = e^{-iHt/\hbar}$ ($\dot\Gamma = -\frac{i}{\hbar}[H,\Gamma]$), the dimensionless Bures-angle speed (using Definition 4.1, $ds_B^2 = \frac{1}{2}\mathrm{Tr}[d\Gamma\cdot L_\Gamma(d\Gamma)]$) is:
 
 $$
-\frac{dt_{int}}{dt} = \sqrt{\text{Tr}([H, \Gamma] \cdot L_\Gamma([H, \Gamma]))}
+\frac{ds_B}{dt} = \sqrt{\frac{1}{2}\,\mathrm{Tr}\!\left(\dot\Gamma \cdot L_\Gamma(\dot\Gamma)\right)} = \frac{1}{\hbar}\sqrt{-\frac{1}{2}\,\mathrm{Tr}\!\left([H,\Gamma]\cdot L_\Gamma([H,\Gamma])\right)} = \frac{1}{2}\sqrt{F_Q(\Gamma, H/\hbar)} \le \frac{\Delta H}{\hbar},
 $$
 
-For $\Gamma$ close to a pure state $|\psi\rangle\langle\psi|$:
+where $F_Q(\Gamma, H/\hbar)$ is the quantum Fisher information and $\Delta H = \sqrt{\langle H^2\rangle - \langle H\rangle^2}$. For a pure state $\Gamma = |\psi\rangle\langle\psi|$, $F_Q = 4(\Delta H/\hbar)^2$, so equality holds:
 
 $$
-\frac{dt_{int}}{dt} \approx 2 \Delta H, \quad \Delta H = \sqrt{\langle H^2 \rangle - \langle H \rangle^2}
+\frac{ds_B}{dt} = \frac{\Delta H}{\hbar}.
 $$
-
 :::
 
-**Corollary:** The time-energy uncertainty relation:
+**Corollary (Mandelstam–Tamm quantum speed limit [T]):** Since $s_B$ is a dimensionless angle ($d_B(\Gamma_1,\Gamma_2) = \arccos\sqrt{\mathrm{Fid}(\Gamma_1,\Gamma_2)} \in [0,\pi/2]$) and $d_B(\Gamma(0),\Gamma(T)) \le \int_0^T (ds_B/dt)\,dt \le T\,\Delta H/\hbar$, any unitary evolution between states at Bures angle $d_B$ over physical duration $T$ satisfies:
 
 $$
-\Delta t_{int} \cdot \Delta H \geq \frac{1}{2}
+T \cdot \Delta H \ge \hbar\,d_B(\Gamma(0),\Gamma(T))
 $$
 
-is **derived** from the geometry of the state space, not postulated.
+(for orthogonal states, $d_B = \pi/2 \implies T\cdot\Delta H \ge \frac{\pi}{2}\hbar$).
 
 ---
 
-## 5. Categorical time via ∞-groupoid {#5-категорное-время-через-infty-группоид}
+## 5. Categorical time: why an ∞-groupoid cannot carry an arrow {#5-категорное-время-через-infty-группоид}
 
-### 5.1 ∞-groupoid of experiential paths
+:::warning Obstruction to the ∞-groupoid construction [✗] — directed categories (§7.4, T-352(a))
+Modeling physical time and its arrow as oriented 1-morphisms in an experiential path $\infty$-groupoid $\mathbf{Exp}_\infty$ (or attempting to derive temporal modalities directly from $\mathbf{Sh}_\infty(\mathbf{Exp}_\infty)$) is **mathematically obstructed [✗]** for two exact reasons proved in [Theorem T-352(a)](#t-352):
 
-:::info Definition 5.1 (∞-category Exp_∞)
-**∞-category** $\mathbf{Exp}_\infty$ is defined as:
+1. **Every morphism in an $\infty$-groupoid is invertible.** If a functional $f$ (such as relative entropy $D(\cdot\|I/7)$) is non-increasing along morphisms of an $\infty$-groupoid, then invertibility forces $f(x) \ge f(y) \ge f(x)$ — so $f$ is constant on every connected component. An $\infty$-groupoid cannot support a strictly monotone arrow of time.
+2. **A Grothendieck $\infty$-topos of sheaves on a space does not automatically produce a physical temporal modality or irreversible flow** without additional directed/dynamical data (cf. §2.6–2.7).
 
-**0-cells (objects):**
-
-$$
-\text{Ob}(\mathbf{Exp}_\infty) = \mathcal{E} = \Delta^{N-1} \times_{\text{Spec}} \mathbb{P}(\mathcal{H}_E)^N \times \mathcal{C}
-$$
-
-(History Hist is not included — it is **derived** as the structure of the ∞-groupoid)
-
-**1-morphisms:**
-
-$$
-\text{Mor}_1(\mathcal{Q}_1, \mathcal{Q}_2) = \{\gamma: [0,1] \to \mathcal{E} \mid \gamma(0) = \mathcal{Q}_1, \gamma(1) = \mathcal{Q}_2\}
-$$
-
-**2-morphisms:**
-
-$$
-\text{Mor}_2(\gamma_1, \gamma_2) = \text{homotopies between } \gamma_1 \text{ and } \gamma_2
-$$
-
-**n-morphisms:**
-
-$$
-\text{Mor}_n = n\text{-parameter families of paths}
-$$
-
+**Replacement [T]:** Directed irreversible evolution lives in a **category** (a directed poset $[N]$ mapping into the non-invertible channel category $\mathbf{Chan}_7$, see [§7.4](#74-infty-категорное-разрешение) and [Theorem T-352(a)](#t-352)), whose $\infty$-groupoid completion is contractible. Within a symmetric $\infty$-topos foundation, such directed objects are modelled internally as simplicial category objects (complete Segal spaces, §11.6).
 :::
-
-### 5.2 Time as a 1-morphism
-
-:::info Definition 5.2 (Categorical time)
-**Time** is a **1-morphism** in $\mathbf{Exp}_\infty$:
-
-$$
-\tau: \mathcal{Q}_1 \to \mathcal{Q}_2
-$$
-
-**Direction of time** — choice of orientation on 1-morphisms.
-
-**Equivalent moments of time** — 2-isomorphic 1-morphisms.
-:::
-
-### 5.3 Theorem on internal time
-
-:::tip Theorem 5.1 (Time as a path)
-In the ∞-groupoid $\mathbf{Exp}_\infty$:
-
-1. **History** — automatically arises as the loop space:
-
-$$
-   \text{Hist}(\mathcal{Q}) := \Omega_\mathcal{Q}(\mathbf{Exp}_\infty) = \{\gamma: S^1 \to \mathcal{E} \mid \gamma(0) = \gamma(1) = \mathcal{Q}\}
-$$
-
-2. **Temporal structure** — homotopy type:
-
-$$
-   \pi_1(\mathbf{Exp}_\infty, \mathcal{Q}) = \text{"cyclic time" at point } \mathcal{Q}
-$$
-
-3. **Arrow of time** — orientation σ on 1-morphisms.
-:::
-
-### 5.4 ∞-topos of sheaves
-
-:::info Definition 5.3 (∞-topos Sh_∞(Exp))
-**∞-topos** $\mathbf{Sh}_\infty(\mathbf{Exp})$ — category of ∞-sheaves on $\mathbf{Exp}_\infty$:
-
-1. **∞-topology:** Cover = family of paths covering a neighborhood
-2. **∞-sheaf:** Functor $F: \mathbf{Exp}_\infty^{op} \to \mathbf{Spaces}$, satisfying the descent condition
-:::
-
-:::tip Theorem 5.2 (Existence of ∞-topos)
-$\mathbf{Sh}_\infty(\mathbf{Exp})$ is an **∞-topos** and has:
-1. **Internal logic:** Homotopy type theory (HoTT)
-2. **Internal time:** Modality of type "in the future", "in the past"
-3. **Subobject classifier:** ∞-groupoid of truth values
-:::
-
-**Corollary:** The logic of experiential content is **temporal modal logic**, derivable from the internal structure of the ∞-topos.
 
 ---
 
@@ -782,24 +668,13 @@ A non-unital channel can lower entropy. For example, $\Phi(\rho)=|0\rangle\langl
 
 Unital steps in fixed dimension cannot decrease entropy. External preparation, cooling and other non-unital operations require their own energy and entropy accounting.
 
-### 7.3 Connection to regeneration
+### 7.3 Connection to regeneration (open-system balance; former derivation of $g_V$ withdrawn [✗])
 
-:::tip Theorem 7.2 (Local arrow of time)
-Regeneration $\mathcal{R}[\Gamma, E]$ **locally** decreases entropy, but only when:
+When an open system's local von Neumann entropy decreases ($\Delta S_{vN}^{\text{local}} < 0$) under a non-unital or nonlinear effective regeneration term $\mathcal{R}[\Gamma, E]$, standard open-system thermodynamics requires compensating free-energy supply / entropy export to the environment so that total system-plus-environment entropy does not decrease ($\Delta S_{vN}^{\text{total}} = \Delta S_{vN}^{\text{sys}} + \Delta S_{vN}^{\text{env}} \ge 0$) **[I/H]** (depending on an explicit system–environment coupling model, not fixed by $\mathcal{D}(\mathbb{C}^7)$ alone).
 
-$$
-\Delta S_{vN}^{local} < 0 \Rightarrow \Delta F_{env \to sys} > 0
-$$
-
-Total entropy (system + energy source) grows:
-
-$$
-\Delta S_{vN}^{total} = \Delta S_{vN}^{sys} + \Delta S_{vN}^{source} \geq 0
-$$
-
+:::warning Withdrawn claim [✗]
+An earlier corollary claimed that the viability gate $g_V(P)$ in $\mathcal{R}$ is derived from CPTP structure and Landauer's principle. That claim is **withdrawn [✗]**: as proved in [§11.3](#113-носители-апериодического-параметра) (second Lemma) and [Viability](/docs/core/dynamics/viability#условие-смерти), no linear CPTP channel carries the nonlinear purity gate $g_V(P)$, and Landauer's principle does not force a cutoff at $P_{\mathrm{crit}} = 2/7$. The gate $g_V(P)$ is an explicit modelling choice **[D]**.
 :::
-
-**Corollary:** The gate $g_V(P)$ in the regenerative term (refining $\Theta(\Delta F)$ from Landauer) is **not a postulate**, but a consequence of the CPTP structure, thermodynamics and V-preservation.
 
 ### 7.4 ∞-categorical resolution {#74-infty-категорное-разрешение}
 
@@ -910,7 +785,7 @@ $$
 where:
 - $t \in \mathbb{R}_{\geq 0}$ — the aperiodic semigroup parameter; at finite resolution $t_n = n\,\Delta t$ is the reading $n$ of the depth register (§11.4), and the Page–Wootters tick is its lowest digit $\tau = n \bmod 7$ (§10.3)
 - $H_{eff}$ — effective Hamiltonian from constraint $\hat{C}$, exact for $H_{int} = 0$ and the leading term otherwise (§3.4)
-- The dissipator and the regenerator are the axiomatic dynamics in $t$ ([evolution](/docs/core/dynamics/evolution)); what is derived is that a finite timeless world reproduces them as conditional states relative to the depth register — the linear part as a state-independent law (Theorem 11.1), the full flow along each solution (Theorem 11.3)
+- The dissipator and the regenerator are the axiomatic dynamics in $t$ ([evolution](/docs/core/dynamics/evolution)); what Theorem 11.1 derives is that a finite timeless world reproduces the **linear** semigroup $\mathcal{L}_0$ as a state-independent conditional law relative to the depth register, while Theorem 11.3 encodes any pre-solved trajectory of the full nonlinear flow along a solution-dependent constraint (which is circular as an independent derivation of time for $\mathcal{R}$)
 
 ### 9.2 Extended role of dimension O
 
@@ -918,69 +793,32 @@ where:
 1. **Energy source:** Provides $\Delta F > 0$ for regeneration
 2. **Internal clock:** Parametrizes internal time via the Page–Wootters mechanism
 
-### 9.3 Extended categorical structure
+### 9.3 Categorical architecture of directed histories
 
-```
-                    G                           F
-DensityMat_C  ──────────► DensityMat  ────────────► Exp
-    │                         │                      │
-    │ constraint               │ CPTP                 │ induced
-    ▼                         ▼                      ▼
-DensityMat_C  ──────────► DensityMat  ────────────► Exp
+Directed evolution is modelled as a functor from an ordered history index $[N]$ into the channel category $\mathbf{Chan}_7$ (or pointed channels $\mathbf{Chan}_7^{\mathrm{pointed}}$, §7.4 and `T-352(a)`), with Page–Wootters conditioning $G$ acting on a supplied constrained composite system (§3.1a, §11.4). The earlier diagram embedding histories into the path $\infty$-groupoid $\mathbf{Exp}_\infty$ and sheafifying to $\mathbf{Sh}_\infty(\mathbf{Exp})$ is retired (§5 [✗]).
 
-                                        ↓ embed
+### 9.4 Conditional predictions and modelling properties
 
-                              Exp_∞ (∞-groupoid)
-                                        ↓ sheafify
-
-                              Sh_∞(Exp) (∞-topos)
-```
-
-where:
-- **DensityMat_C** — category with Page–Wootters constraint
-- **G** — functor "conditional states"
-- **Exp_∞** — ∞-groupoid of paths
-- **Sh_∞(Exp)** — ∞-topos of sheaves
-
-### 9.4 Experimental predictions
-
-| Prediction | Formula | Theor. status | Exp. status |
+| Statement | Formula / Condition | Theoretical status | Notes |
 |--------------|---------|--------------|--------------|
-| Time slowdown at decoherence | $\frac{d\tau_{int}}{dt_{ext}} \propto (P - P_{crit})^{1/2}$ | **[T]** Corollary of T.8.1 | Requires verification |
-| Discreteness of internal time | $\tau \in \{\tau_1, \ldots, \tau_7\}$ | **[T]** Corollary of §3.7 | Requires verification |
-| Temporal entanglement | $\Gamma_{12,total} \neq \Gamma_{1} \otimes \Gamma_{2}$ even when $\Gamma_{12}(\tau) = \Gamma_1(\tau) \otimes \Gamma_2(\tau)$ | **[T]** Corollary of P-W | Requires verification |
-
-:::note On statuses
-- **Theor. status [T]**: Prediction is mathematically derived from the UHM formalism
-- **Exp. status**: Prediction requires experimental verification
-:::
+| Conditional fold slowdown | $\frac{d\tau_{\mathrm{int}}}{dt} = C\sqrt{\mu} + O(\mu)$ | **[C]** under `(Fold)+(ClockReadout)` (§8.2, `T-53d`) | Does **not** follow unconditionally as $(P - 2/7)^{1/2}$ (`[✗]` former `[T]` claim) |
+| Discrete 7-tick clock readings | $\tau \in \mathbb{Z}_7$ | **[D/C]** property of chosen Salecker–Wigner–Peres clock (§3.5, §11.2) | Follows from choosing a 7-level clock register, not an independent test |
+| Frame-relative clock–system correlation | $\Gamma_{CS} \neq \Gamma_C \otimes \Gamma_S$ | **[C]** relative to assumed PW tensor factor & constraint (§3.1a, §11.1) | Frame-dependent; requires explicit tensor clock input |
 
 ---
 
-## 10. Stratificational time {#10-стратификационное-время}
+## 10. Stratificational time and unital monotonicity {#10-стратификационное-время}
 
-### 10.1 Base space as nerve of category
+### 10.1–10.2 Nerve stratification $X = |N(\mathcal{C})|$ — withdrawn [✗]
 
-From [Axiom Ω⁷](/docs/core/foundations/axiom-omega) the base space is defined as:
+:::warning Withdrawn construction [✗]
+Earlier subsections 10.1 and 10.2 defined a base space $X := |N(\mathcal{C})|$ as the geometric realization of the nerve of a category with terminal object $T$, and claimed a manifold-like stratification $X = \bigsqcup_\alpha S_\alpha$ whose simplices collapse toward the attractor $\Gamma^* = T$. This is **withdrawn [✗]**:
 
-$$
-X := |N(\mathcal{C})|
-$$
+1. Every category with a terminal object has a **contractible** nerve $|N(\mathcal{C})| \simeq *$ (Quillen 1973; cf. [T-352(a)](#t-352) and [Spacetime](/docs/core/foundations/spacetime)).
+2. Simplices of a nerve are combinatorial cells, not smooth Riemannian strata, and a categorical terminal object does not specify a dynamical attractor $\Gamma^*$.
 
-where $N(\mathcal{C})$ is the nerve of the category of Holons.
-
-### 10.2 Stratification of X
-
-Space X is stratified:
-
-$$
-X = \bigsqcup_{\alpha \in A} S_\alpha
-$$
-
-where:
-- $S_0 = \{T\}$ — terminal object (attractor Γ*)
-- $S_1$ — edges (morphisms to T)
-- $S_n$ — n-simplices
+The surviving rigorous content of §10 is the separation of cyclic vs. directed indices (§10.3) and relative-entropy monotonicity along a specified unital CPTP history (§10.4–10.5).
+:::
 
 ### 10.3 Temporal stratification: two indices, one arrow {#временная-стратификация}
 
@@ -1013,23 +851,11 @@ For a nonlinear flow $\Phi_t$, monotonicity and attraction require separate proo
 | Full nonlinear flow | Needs a separate functional and environment model; T-53c supplies neither |
 | Terminal topos object | Determines no physical attractor or arrow |
 
-### 10.6 Stratified metric
+### 10.6 Stratified metric $d_{\mathrm{strat}}$ — withdrawn [✗]
 
-**Definition (Metric d_strat):**
-
-$$
-d_{strat}(\omega_1, \omega_2) = \inf_\gamma \int_\gamma ds_\alpha
-$$
-
-where:
-- γ — path through strata
-- ds_α — Connes metric on stratum S_α
-
-**Theorem 10.2:** d_strat is consistent with the Bures metric:
-
-$$
-d_{strat}(\Gamma_1, \Gamma_2) \asymp d_B(\Gamma_1, \Gamma_2)
-$$
+:::warning Withdrawn claim [✗]
+The former definition of a stratified Connes metric $d_{\mathrm{strat}}$ on nerve strata $S_\alpha$ and the claimed equivalence $d_{\mathrm{strat}} \asymp d_B$ (former Theorem 10.2) are **withdrawn [✗]** together with the nerve stratification of §10.1–10.2. The Bures metric $d_B$ is defined directly on $\mathcal{D}(\mathbb{C}^7)$ (§4.1) without any nerve stratification or Connes spectral triple.
+:::
 
 ---
 
@@ -1086,7 +912,7 @@ T-53b asks three things of its time parameter: **(R1)** the dynamics in it is no
 | Composite O-clocks with incommensurate frequencies $\omega_m$ | yes: the orbit $(\omega_1 t, \ldots, \omega_M t)$ on the torus never closes | no, by the almost-periodicity Lemma: two clocks with $\omega = 1, \sqrt 2$ never return exactly, yet at $t \approx 2\pi \cdot 70$ the clock state overlaps its initial state to $0.9987$ | no | [✗]; the readings form $C(\mathbb{T}^M)$ — by Kronecker's theorem the orbit is dense in the torus — not $C_0(\mathbb{R})$, so T-118 is not obtained this way either |
 | Ideal clock register ($H_C = \hat p$ on $L^2(\mathbb{R})$, spectrum $\mathbb{R}$; or a counter on $\ell^2(\mathbb{Z})$) | yes | only together with an infinite environment with continuous spectrum, in a Markov limit that gives $\mathcal{L}_0$ approximately (E. B. Davies, "Markovian master equations", *Commun. Math. Phys.* **39**, 91 (1974)) | postulated (Lemma above) | approximate: $\mathcal{L}_0$ only in the weak-coupling limit, with an infinite environment; superseded by the last row |
 | Semigroup parameter $t$ taken as primitive | yes | as postulated | as postulated | the same as the ideal clock: by the trinity of Höhn, Smith and Lock (2021) the conditional dynamics relative to an ideal clock is the Schrödinger picture in $t$ |
-| **Depth register**: readings $0 < 1 < \cdots < N$ as a chain, realised positionally in $M = \lceil\log_7(N+1)\rceil$ O-registers, with a two-holon environment $\mathbb{C}^{49}$ and a Feynman–Kitaev constraint (§11.4) | yes: no reading follows $N$, the chain is not a group orbit | yes, exactly at every reading, for the linear part as a state-independent law (Theorem 11.1) | along each solution (Theorem 11.3) | **[T]**: T-53b holds, in a world of dimension $343(N+1)$ |
+| **Depth register**: readings $0 < 1 < \cdots < N$ as a chain, realised positionally in $M = \lceil\log_7(N+1)\rceil$ O-registers, with a two-holon environment $\mathbb{C}^{49}$ and a Feynman–Kitaev constraint (§11.4) | yes: no reading follows $N$, the chain is not a group orbit | yes, exactly at every reading, for the linear part as a state-independent law (Theorem 11.1) | post-hoc encoding of a pre-solved trajectory only (Theorem 11.3; circular as a derivation of time for nonlinear $\mathcal{R}$) | **[T]** for linear $\mathcal{L}_0$ (state-independent, dim $343(N+1)$); trajectory-fitted encoding only for nonlinear $\mathcal{R}$ |
 
 **Cost of the ideal clock**. (i) An ideal clock has a Hamiltonian unbounded below, so no ground state; by Unruh and Wald (1989) no clock with a Hamiltonian bounded below reads time monotonically. (ii) Its finite approximations — the quasi-ideal clocks of M. P. Woods, R. Silva and J. Oppenheim, whose back-reaction is exponentially small in the clock dimension $d$ at a linear cost in energy (*Ann. Henri Poincaré* **20**, 125 (2019)) — are finite, hence periodic, and by the almost-periodicity Lemma support dissipation only over a finite window; exact T-53b needs $d \to \infty$. (iii) The environment must be infinite, and $\mathcal{L}_0$ is then a weak-coupling approximation, not an exact law. (iv) The time of the dynamics is not emergent from the O-dimension: the O-clock becomes a kinematic label read off $t$ ($n = \lfloor t/\delta\tau \rfloor$, $\tau = n \bmod 7$), and the arrow of Theorem 10.1 is monotone in $t$, as it is already stated. (v) $\mathcal{R}$ is postulated in $t$, and the measurement reading of [physics correspondence, §8.7](/docs/proofs/physics/physics-correspondence#87-прочтение-измерения) has to be fixed separately. At this carrier T-118 holds by Gelfand duality of the clock spectrum, $A_{\text{time}} \cong C_0(\mathbb{R})$ — true, but assumed rather than obtained as a limit of O-clocks.
 
@@ -1146,6 +972,8 @@ Let $\Gamma(t)$, $t \in [0, N\Delta t]$, solve the full equation of §9.1 with $
 (b) the construction of Theorem 11.1, with $W_n$ a dilation of $\Phi_n \circ \cdots \circ \Phi_1$, yields a finite timeless world whose conditional states are exactly $\Gamma(n\Delta t)$ at every reading $n = 0, \ldots, N$.
 
 The constraint of (b) depends on the solution; for a nonlinear $\mathcal{R}$ no constraint independent of the solution does this (second Lemma of §11.3).
+
+**Circularity disclosure for nonlinear $\mathcal{R}$:** Unlike Theorem 11.1 (where a fixed linear CPTP semigroup $\Phi_t = e^{t\mathcal{L}_0}$ yields a single state-independent constraint $\hat{C}$), Theorem 11.3 is a **post-hoc trajectory encoding**, not a non-circular derivation of time for the nonlinear regenerative flow: constructing the time-dependent generators $\mathcal{K}_s$ and unitaries $U_n$ requires **first solving** the nonlinear ODE $\dot\Gamma(s) = \mathcal{L}_0(\Gamma(s)) + \mathcal{R}[\Gamma(s)]$ in an external time parameter $s \in [0, N\Delta t]$.
 :::
 
 **Proof.** (a) $\mathcal{K}_s = c\,(\Psi_s - \mathrm{id})$ with the replacement channel $\Psi_s(X) = \rho_*\,\mathrm{Tr}\,X$, and $e^{h c(\Psi - \mathrm{id})} = e^{-hc}\,\mathrm{id} + (1 - e^{-hc})\,\Psi$ (since $\Psi^2 = \Psi$) is CPTP for $h, c \geq 0$; a sum of Lindblad generators is one. The time-ordered exponential of a continuous family of Lindblad generators is a limit of products $e^{h\mathcal{L}_{s_k}}$ of CPTP maps, and the CPTP maps form a closed set. Because $\mathrm{Tr}\,\Gamma(s) = 1$, $\mathcal{K}_s(\Gamma(s)) = \mathcal{R}[\Gamma(s)]$, so $\Gamma$ solves the linear equation $\dot X = \mathcal{L}_s X$; uniqueness for linear equations with continuous coefficients gives $\Phi_n(\Gamma((n-1)\Delta t)) = \Gamma(n\Delta t)$. (b) Step (i) of the proof of Theorem 11.1 uses only that the maps it dilates are CPTP. $\blacksquare$

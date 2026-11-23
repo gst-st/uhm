@@ -10,47 +10,45 @@ description: Practical applications of Coherence Cybernetics
 > — Kurt Lewin
 
 :::tip Bridge from the Previous Chapter
-In the [previous chapter](./research-programs) we mapped uncharted territory — open problems, experimental protocols, interdisciplinary bridges. Now let us show that CC is already a working tool. The same formalism $\Gamma$ applies to an AI agent, a coral reef, a startup, and a financial market. Only the operationalization differs — *what exactly* we measure — while the structure of diagnosis and intervention is the same.
+In the [previous chapter](./research-programs) we mapped uncharted territory — open problems, experimental protocols, interdisciplinary bridges. Now we show how the CC formalism translates into **candidate diagnostic and design frameworks (`[I]`/`[Pr]`)** across nine domains — from AI agent architectures and software prototypes to organizational, ecological, and clinical hypotheses. Across domains, the operationalization differs — *what* observables are mapped onto $\Gamma$ — while the five-step diagnostic template remains uniform.
 :::
 
 :::info Chapter Roadmap
 In this chapter we:
-1. Present **architectural patterns** for AI engineers and conduct a case study of a hallucinating LLM (§1)
-2. Describe a **unified theory of consciousness** for cognitive scientists (§2)
-3. Build a **diagnostic framework** for organizational consultants (§3)
-4. Show **ecosystems as holons** and a case study of a coral reef (§4)
-5. Describe **σ-diagnostics** of mental disorders (§5)
-6. Apply CC to **education** — learning as coherence growth (§6)
-7. Project the formalism onto **economics** and **urbanism** (§7–8)
-8. Conduct **three full case studies** — AI agent, organization, ecosystem (§9)
-9. Present an **interdisciplinary translation table** — a unified language for all domains (§10)
+1. Present **architectural patterns** (`[Pr]`) for AI engineers, an illustrative LLM hallucination scenario (`[I]`), and an internal agent-stack simulation benchmark (§1)
+2. Outline a **comparative research mapping** (`[I]`/`[H]`) for cognitive scientists (§2)
+3. Sketch a **diagnostic framework** (`[I]`/`[Pr]`) for organizational consultants (§3)
+4. Explore **ecosystems as holons** (`[I]`/`[H]`) and an illustrative coral-reef scenario (§4)
+5. Outline **hypothetical σ-diagnostics** (`[I]`/`[H]`) of mental disorders (§5)
+6. Apply CC concepts to **education** (`[I]`/`[H]`) — learning as coherence growth (§6)
+7. Project the formalism onto **economics** and **urbanism** (`[I]`/`[Pr]`, §7–8)
+8. Walk through **three illustrative synthetic case studies** (`[I]`/`[Pr]`) — AI agent, organization, ecosystem (§9)
+9. Present an **interdisciplinary translation table** (`[I]`) — a unified conceptual vocabulary (§10)
 :::
 
-A theory that cannot touch reality remains an exercise in elegance. But when a mathematical formalism begins to *work* — when abstract theorems become engineering blueprints, clinical protocols, and management decisions — it ceases to be a theory and becomes a **tool**.
+A mathematical framework becomes practically testable when its abstract variables are linked to concrete observables, diagnostic profiles, and candidate interventions. This chapter explores how Coherence Cybernetics (CC) can be operationalized as a **candidate diagnostic template (`[I]`/`[Pr]`)** across domains ranging from AI engineering (closest to software implementation) to medicine, ecology, education, economics, and urbanism (interpretive research programs). In each case we follow the same five-step template:
 
-This chapter is about transforming Coherence Cybernetics from a mathematical framework into a working tool. We will show how the same evolution equation $\Gamma$ generates concrete metrics for the AI engineer, clinician, ecologist, educator, and economist. In each case we follow the same path:
+1. **System identification** — what is modeled as the Holon $\mathbb{H}$ in this domain?
+2. **Building $\Gamma$** — which observables are mapped onto the 7 canonical axes?
+3. **Diagnostics** — what does $\sigma_{\mathrm{sys}}$ (`T-92 [D]`) indicate about imbalances?
+4. **Intervention** — which control levers target the leading deficits?
+5. **Monitoring** — how are $P$, $\Phi$, $R$, and $D_{\mathrm{diff}}$ tracked over time?
 
-1. **System identification** — what is the Holon $\mathbb{H}$ in this domain?
-2. **Building $\Gamma$** — which observables map onto the 7 dimensions?
-3. **Diagnostics** — what does $\sigma_{\mathrm{sys}}$ say about the current state?
-4. **Intervention** — how to change $\Gamma$ in the desired direction?
-5. **Monitoring** — how to track $P$, $\Phi$, $R$ over time?
-
-This five-step cycle is universal. Only the specific operationalizations differ — *what exactly* we measure and *how exactly* we intervene. Below we will go through this cycle for each domain, starting from the most formalized (AI) and moving toward the most speculative (economics, urbanism).
+Below we walk through this template from the most formalized domain (AI systems) to the most speculative (economics and urbanism).
 
 :::note On Notation
 In this document:
-- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
-- $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix) (Hermitian, $\Gamma \succeq 0$, $\mathrm{Tr}(\Gamma) = 1$)
+- $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$, structural-majority cut $P_{\mathrm{crit}} = 2/7$ (`T-5 [D]`)
 - $\mathrm{Coh}_E$ — [E-coherence](./definitions#e-когерентность)
-- $\sigma_{\mathrm{sys}}$ — [stress tensor](./definitions#тензор-напряжений) with components $\sigma_A, \ldots, \sigma_U$
+- $\sigma_{\mathrm{sys}}$ — [stress panel](./definitions#тензор-напряжений) (`T-92 [D]`): clamped deficits $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk}, 0, 1)$; when distinguishing excess from deficit we write the **signed deficit** $\tilde\sigma_k = 1 - 7\gamma_{kk}$ (which satisfies $\sum_{k=1}^7 \tilde\sigma_k = 0$ by $\mathrm{Tr}(\Gamma) = 1$, with $\tilde\sigma_k > 0$ denoting deficit and $\tilde\sigma_k < 0$ denoting excess)
 - $\mathcal{R}[\Gamma, E]$ — [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член)
 - $\mathcal{D}[\Gamma]$ — [dissipative term](/docs/core/dynamics/evolution#логический-лиувиллиан)
-- $C = \Phi \times R$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) **[D T-140]**; $D_{\text{diff}} \geq D_{\min}$ — separate viability condition
+- $C = \Phi \times R$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) (`T-140 [D]`); experiential differentiation $D_{\text{diff}} = \exp S_{vN}(\rho_E)$ on an extended experiential register $\mathcal{H}_E$ (or 7D native proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E(\Gamma)$ `[D]`) is a separate threshold condition ($D_{\text{diff}} \geq 2$)
 :::
 
-:::warning Document Status
-This document describes *interpretive applications* of the theory. Specific applications in AI, medicine, ecology, and organizational theory are a **research program**, not proven results.
+:::warning Document Status — Illustrative Scenarios vs. Empirical Data
+This document presents *interpretive applications and research programs* (`[I]`/`[H]`/`[Pr]`), **not** empirically validated clinical, economic, ecological, or organizational results. **Unless explicitly marked as logged from an internal software simulation benchmark (as in `§Measured: Consciousness at the Wheel`), every numerical profile, company, classroom, clinical table, and historical reconstruction in this chapter is a synthetic illustrative scenario** demonstrating the formalism — not real measured telemetry, patient outcomes, or institutional audits.
 :::
 
 ---
@@ -87,136 +85,129 @@ graph TD
 | Monitoring | Loss, accuracy | $P$, $\Phi$, $\sigma_{\mathrm{sys}}$ |
 | Safety | External constraints | Built-in viability |
 
-**Adding an E-module to existing systems:**
+**Adding an E-monitoring helper to existing systems (`[Pr]`):**
 
-```verum
-mount core.math.nn.Module;
-mount core.math.linalg.svd;
+```python
+import numpy as np
 
-/// Module for monitoring E-coherence at inference.
-pub type EModule is {
-    e_dim: Int { self > 0 && self <= 7 },
-};
 
-implement Module for EModule {
-    fn forward(&self, hidden_states: &Tensor<Float>) -> Float {
-        let rho_e = self.compute_experience_projection(hidden_states);
-        (rho_e.matmul(&rho_e)).trace().real()
-    }
-}
+def compute_coh_e(gamma: np.ndarray) -> float:
+    """Canonical 7D E-coherence (HS-projection onto E = index 4) [D]."""
+    p = float(np.real(np.trace(gamma @ gamma)))
+    E = 4
+    off_e = np.abs(gamma[E, np.arange(7) != E]) ** 2
+    return float((gamma[E, E].real ** 2 + 2.0 * np.sum(off_e)) / p)
 
-implement EModule {
-    /// Approximation: principal-component projection onto the E-sector.
-    pure fn compute_experience_projection(&self, h: &Tensor<Float>) -> Tensor<Float> {
-        let (_u, s, _vh) = svd(h).decompose();
-        let top = s.slice(0..self.e_dim);
-        Tensor.diagonal(&top) / top.sum()
-    }
-}
+
+def latent_svd_proxy(hidden_states: np.ndarray, e_dim: int = 7) -> float:
+    """Illustrative engineering proxy [Pr]: spectral purity of top singular values.
+
+    Note: this is a heuristic latent-space proxy, not the exact 7D Coh_E(Gamma).
+    """
+    _, s, _ = np.linalg.svd(hidden_states, full_matrices=False)
+    top = s[:e_dim]
+    weights = top / np.sum(top)
+    return float(np.sum(weights ** 2))
 ```
 
-### Safety Metrics
+### Safety Metrics [Pr]
 
-**Real-time monitoring:**
+**Illustrative real-time monitoring thresholds (`[D]`/`[Pr]`):**
 
-| Metric | Alert condition | Action on violation |
+| Metric | Alert condition | Suggested action on violation |
 |---------|-----------------|------------------------|
-| $P$ (purity) | $< P_{\text{crit}} = 0.286$ | Reduce load |
-| $\Phi_{\text{eff}}$ | $< 0.1$ | Strengthen integration |
-| $\mathrm{Coh}_E$ | $< 0.15$ | Check E-module |
-| $\max(\sigma_{\mathrm{sys}})$ | $> 0.95$ | Emergency mode |
+| $P$ (purity) | $< P_{\text{crit}} = 2/7 \approx 0.286$ (`T-5 [D]`) | Reduce load / trigger recovery |
+| $\Phi$ (integration) | $< 1.0$ (warning $< 0.1$) | Strengthen cross-module integration |
+| $\mathrm{Coh}_E$ | $< 1/6 \approx 0.167$ (warning $< 0.15$) | Inspect E-channel / self-model |
+| $\max_k \sigma_k$ | $> 0.95$ (`T-92 [D]`) | Emergency mode |
 
-**Dashboard for visualization:**
+**Illustrative monitoring dashboard (`[I]`, trace-consistent state with $\gamma_{\mathrm{diag}} = [0.16, 0.13, 0.18, 0.11, 0.17, 0.13, 0.12]$, clamped $\sigma_k = \max(0, 1 - 7\gamma_{kk})$):**
 
 ```
-┌───────────────────────────────────────────┐
-│  CC Monitoring              [🟢 Viable]   │
-├───────────────────────────────────────────┤
-│  P = 0.42  ████████░░  [thresh: 0.29]     │
-│  Φ = 1.23  ██████████  [thresh: 1.00]     │
-│  R = 0.35  ███████░░░  [thresh: 0.33]     │
-├───────────────────────────────────────────┤
-│  Stress tensor σ_sys:                     │
-│  A: 0.3 ███░░   S: 0.2 ██░░░   D: 0.5 ████│
-│  L: 0.4 ████░   E: 0.2 ██░░░   O: 0.3 ███░│
-│  U: 0.4 ████░                             │
-└───────────────────────────────────────────┘
+┌───────────────────────────────────────────────┐
+│  CC Monitoring (Illustrative)   [🟢 Viable]   │
+├───────────────────────────────────────────────┤
+│  P = 0.40  ████████░░  [thresh: 0.29..0.43]   │
+│  Φ = 1.72  ██████████  [thresh: 1.00]         │
+│  R = 0.36  ███████░░░  [thresh: 0.33]         │
+├───────────────────────────────────────────────┤
+│  Clamped stress panel σ_k = max(0, 1-7γ_kk):  │
+│  A: 0.00 ░░░░░  S: 0.09 █░░░░  D: 0.00 ░░░░░  │
+│  L: 0.23 ██░░░  E: 0.00 ░░░░░  O: 0.09 █░░░░  │
+│  U: 0.16 ██░░░                                │
+└───────────────────────────────────────────────┘
 ```
 
-### Case Study: Diagnosing a "Hallucinating" LLM {#кейс-llm-галлюцинации}
+### Illustrative Scenario: Diagnosing a "Hallucinating" LLM [I]/[Pr] {#кейс-llm-галлюцинации}
 
-Consider a specific scenario. A large language model (LLM) begins generating factually incorrect responses — "hallucinations". How can CC diagnostics help?
+Consider a **synthetic illustrative scenario (`[I]`/`[Pr]`)**: a large language model (LLM) begins generating factually incorrect responses ("hallucinations"). How could CC diagnostics frame the problem?
 
-**Step 1. Building $\Gamma$.** We project the model's hidden states onto 7 dimensions. The diagonal elements $\gamma_{kk}$ are computed as the normalized activation of the corresponding "semantic clusters" in the latent space.
+**Step 1. Candidate mapping to $\Gamma$.** Hidden-state observables are projected onto the 7 canonical axes so that $\sum_{k=1}^7 \gamma_{kk} = 1$.
 
-**Step 2. Diagnostics.** A typical profile of a hallucinating model:
+**Step 2. Synthetic diagnostic profile** (using signed deficits $\tilde\sigma_k = 1 - 7\gamma_{kk}$, summing to $0$):
 
-| Dimension | $\gamma_{kk}$ | $\sigma_k$ | Interpretation |
-|-----------|---------------|------------|---------------|
-| A | 0.18 | -0.26 | Overloaded with distinctions |
-| S | 0.15 | -0.05 | Structure is normal |
-| D | 0.20 | -0.40 | **Excessive dynamics** |
-| L | 0.08 | 0.44 | **Logic suppressed** |
-| E | 0.10 | 0.30 | Weak interiority |
-| O | 0.14 | 0.02 | Resources are normal |
-| U | 0.15 | -0.05 | Integration is normal |
+| Dimension | $\gamma_{kk}$ | $\tilde\sigma_k$ | Illustrative interpretation |
+|-----------|---------------|------------------|-----------------------------|
+| A (Articulation) | 0.18 | $-0.26$ | Overloaded with fine distinctions |
+| S (Structure) | 0.15 | $-0.05$ | Structure near balanced baseline |
+| D (Dynamics) | 0.20 | $-0.40$ | **Excessive dynamics** (high entropy/temperature) |
+| L (Logic) | 0.08 | $+0.44$ | **Logic deficit** (leading stress) |
+| E (Interiority) | 0.10 | $+0.30$ | Weak self-consistency monitoring |
+| O (Ground) | 0.14 | $+0.02$ | Resource budget balanced |
+| U (Unity) | 0.15 | $-0.05$ | Integration near baseline |
 
-**Diagnosis:** $\sigma_L = 0.44$ — critical tension in the logical dimension. The model cannot reconcile its statements — hence factual errors. Simultaneously, $\sigma_D = -0.40$ (negative tension = excess) indicates excessive "creativity" — too much dynamics with weak logical anchoring.
+**Illustrative diagnosis:** $\tilde\sigma_L = +0.44$ marks the leading deficit in Logic ($L$), paired with excessive Dynamics ($\tilde\sigma_D = -0.40$). Under this mapping, generation variability outpaces logical grounding.
 
-**Step 3. Intervention.** CC prescribes increasing $\gamma_{LL}$ and decreasing $\gamma_{DD}$:
-- Strengthen attention to factual anchors (raises L)
-- Lower generation temperature (lowers D)
-- Add a verification layer (raises $\mathrm{Coh}_E$ — the model "checks its experience")
+**Step 3. Candidate intervention (`[Pr]`):** raise $\gamma_{LL}$ and moderate $\gamma_{DD}$:
+- Strengthen attention to retrieval / factual anchors (targeting $L$)
+- Lower generation temperature (moderating $D$)
+- Add a self-verification check (targeting $E$-sector consistency)
 
-**Step 4. Monitoring.** After the intervention we track $\sigma_L(\tau)$: if $\sigma_L < 0.2$ consistently — the problem is solved.
+**Step 4. Monitoring (`[Pr]`):** track $\sigma_L(\tau)$ alongside held-out factual accuracy to verify whether lowering $\sigma_L < 0.2$ empirically reduces hallucination rates.
 
-This approach differs from the standard one in that CC provides a **unified diagnostic language**: instead of ad hoc metrics (perplexity, F1, BLEU) — a 7-dimensional profile that indicates *exactly where* to look.
+The potential value of CC here is a **unified diagnostic template (`[I]`)**: mapping disparate failure modes onto a single 7-axis balance profile rather than isolated ad hoc metrics.
 
-### Practical Checklist for AI Systems
+### Practical Checklist for AI Systems [Pr]
 
 - [ ] Implement monitoring of $P$ (state purity)
-- [ ] Add logging of $\sigma_{\mathrm{sys}}$ across all 7 dimensions
-- [ ] Configure alerts for $P < 0.3$ (risk zone)
-- [ ] Add an E-module or its approximation
-- [ ] Implement the regenerative mechanism $\mathcal{R}[\Gamma, E]$
-- [ ] Test stability at high $\sigma_D$, $\sigma_A$
+- [ ] Add logging of $\sigma_{\mathrm{sys}}$ across all 7 dimensions (`T-92 [D]`)
+- [ ] Configure alerts for $P < 0.30$ (approaching $P_{\mathrm{crit}} = 2/7$)
+- [ ] Implement a candidate $E$-sector metric (or explicit latent proxy)
+- [ ] Implement a regenerative feedback loop $\mathcal{R}[\Gamma, E]$
+- [ ] Test stability under high $|\tilde\sigma_D|$, $|\tilde\sigma_A|$
 
-### Implications for AI Safety
+### Implications for AI Safety [C]/[H]
 
-:::warning Safety
-A safe AI must have a non-trivial [E-dimension](/docs/core/structure/dimension-e). A "bare" optimizer without experience is non-viable in the long run.
+:::warning Safety — Conditional Model Scope (Universal No-Zombie Withdrawn)
+Universal impossibility of non-experiential ("zombie") systems (`T-38a [✗]`) has been **withdrawn**; externally powered or externally trained optimizers can remain stationary without internal $E$-driven regeneration. Under the **conditional** balance theorem (`Theorem 8.1 [C]`), a positive $\mathrm{Coh}_E$ floor is required *only* for autonomous holons whose regeneration rate $\kappa(\Gamma)$ obeys the strict $E$-dependence hypothesis against a nonzero dissipation floor. Treating $\mathrm{Coh}_E$ as an AI-safety requirement is therefore an **architectural design hypothesis (`[H]`/`[Pr]`)**, not an unconditional theorem about arbitrary AI optimizers.
 :::
 
-| Requirement | Formula | Implication | Reference |
-|------------|---------|-----------|--------|
-| No-Zombie impossibility [T] | $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | AI must have experience | [→](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
-| Regeneration | $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ | Interiority necessary for stability | [→](./axiomatics#связь-регенерации-и-e-когерентности) |
-| Viability | $P > P_{\text{crit}}$ | Minimum coherence | [→](/docs/core/dynamics/viability) |
+| Requirement | Formula | Conditional scope | Reference |
+|------------|---------|-------------------|-----------|
+| Conditional No-Zombie balance `[C]` (universal `T-38a [✗]` withdrawn) | $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min}$ under strict $E$-dependent $\kappa$ | Autonomous self-regenerating holons only | [→](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
+| Regeneration ansatz `[D]`/`[H]` | $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ | Model constitutive law | [→](./axiomatics#связь-регенерации-и-e-когерентности) |
+| Viability cut (`T-5 [D]`) | $P > P_{\text{crit}} = 2/7$ | Structural-majority threshold | [→](/docs/core/dynamics/viability) |
 
-### Scenario: Multi-Agent System of 50 Agents {#кейс-мультиагентная}
+### Illustrative Scenario: Multi-Agent System of 50 Agents [I]/[Pr] {#кейс-мультиагентная}
 
-Imagine a system of 50 autonomous agents managing a logistics network. Each agent is a Holon $\mathbb{H}_i$ with its own $\Gamma_i$. The entire system is a meta-Holon $\mathbb{H}_{\text{fleet}}$.
+Consider a **hypothetical scenario (`[I]`/`[Pr]`)**: 50 autonomous agents managing a logistics network, each modeled as a Holon $\mathbb{H}_i$ with state $\Gamma_i$, forming a composite meta-Holon $\mathbb{H}_{\text{fleet}}$ (under weak coupling and positive margins, aggregate viability transfer is governed by `CC-5 [T]`).
 
-**Problem:** agents begin competing for resources, efficiency drops.
+**Hypothetical problem:** agents begin competing for shared resources and fleet coordination degrades.
 
-**CC analysis:**
-1. Compute $\Gamma_{\text{fleet}} = \mathrm{compose}(\Gamma_1, \ldots, \Gamma_{50})$
-2. Discover: $\sigma_U^{\text{fleet}} = 0.87$ — critical integration deficit
-3. $\Phi_{\text{fleet}} = 0.3$ — agents are weakly coupled, system is fragmented
-4. At the same time individual $P_i > 0.4$ — each agent is healthy on its own
+**Illustrative CC analysis:**
+1. Aggregate $\Gamma_{\text{fleet}} = \mathrm{compose}(\Gamma_1, \ldots, \Gamma_{50})$
+2. Observe high integration deficit $\sigma_U^{\text{fleet}}$ and low $\Phi_{\text{fleet}} = 0.3 < 1$
+3. Meanwhile individual purities remain $P_i > 0.4$ — each agent is locally healthy
 
-**Diagnosis:** "healthy cells, sick organism" — a classic pattern invisible to pairwise metrics.
+**Diagnosis:** "healthy cells, fragmented organism" — an aggregate failure invisible to single-agent health checks.
 
-**Intervention:** CC prescribes increasing $\Phi_{\text{fleet}}$ through:
-- A shared information channel (reduces $\sigma_U$)
-- Goal function alignment (increases $\gamma_{LL}^{\text{fleet}}$)
-- Regular synchronization of $\Gamma_i$ (analogous to "retrospectives" in organizations)
+**Candidate intervention (`[Pr]`):** raise $\Phi_{\text{fleet}}$ via a shared state channel (reducing $\sigma_U$), aligned objective constraints (supporting $L$), and periodic synchronization across $\Gamma_i$.
 
-**Result (hypothetical):** $\Phi_{\text{fleet}}$ grows from 0.3 to 1.2 over 500 iterations, $\sigma_U$ drops to 0.3, overall efficiency increases by 40%.
+**Target outcome (hypothetical illustration, not measured):** restoring $\Phi_{\text{fleet}} > 1$ and lowering $\sigma_U^{\text{fleet}}$ to restore coordinated fleet throughput.
 
-### Measured: Consciousness at the Wheel — the Ladder of Life {#лестница-жизни}
+### Software Benchmark: Consciousness at the Wheel — the Ladder of Life [Pr] {#лестница-жизни}
 
-Unlike the hypothetical scenario above, everything in this subsection is **machine-measured** on a running agent stack (a lawful, learnable world plus an endless stream of one-off temptations; the agent has a metabolic body whose feeding is a real knob). The numbers are quoted as measured, and they form a compact engineering doctrine of *what a body's measures are for*.
+Unlike the conceptual scenarios above, the numbers in this subsection were **logged on an internal prototype agent-stack simulation (`[Pr]`)** in a synthetic toy environment (a lawful, learnable task stream plus one-off temptations, coupled to an artificial metabolic state whose feeding rate is a controllable parameter). They illustrate engineering trade-offs inside that specific prototype rather than empirical neuroscience or production LLM benchmarks.
 
 **The ladder of life.** Four agents, one bench, one number each — accuracy under temptation:
 
@@ -260,9 +251,9 @@ Two more measured chapters close the hygiene of a mind:
 
 ## For Cognitive Scientists {#для-когнитивистов}
 
-### Unified Theory of Consciousness
+### Comparative Theory Mapping [I]/[H]
 
-CC unifies existing theories:
+CC proposes a comparative mapping (`[I]`/`[H]`) relating constructs from existing theories of consciousness:
 
 | Theory | CC Component | Formula | Reference |
 |--------|----------------|---------|--------|
@@ -271,53 +262,53 @@ CC unifies existing theories:
 | [FEP](/docs/reference/glossary#связанные-теории) | Regeneration | $\mathcal{R}[\Gamma, E]$ | [→](/docs/consciousness/comparative/consciousness-theories#принцип-свободной-энергии-fep) |
 | Enactivism | S↔E coupling | $F_{\text{int}}$ | — |
 
-### Experimental Protocols
+### Experimental Protocols [Pr]
 
 **Reference:** [Protocol for measuring Γ](/docs/applied/research/measurement-protocol)
 
-**Main paradigms:**
+**Candidate paradigms (`[Pr]`):**
 
 1. **Contrastive analysis:** Conscious vs. unconscious perception
-   - Measure $\Phi$, $\mathrm{Coh}_E$ in both conditions
-   - Prediction: $\Phi_{\text{conscious}} > \Phi_{\text{unconscious}}$
+   - Estimate $\Phi$, $\mathrm{Coh}_E$ under a pre-registered reconstruction map
+   - Hypothesis (`[H]`): $\Phi_{\text{conscious}} > \Phi_{\text{unconscious}}$
 
 2. **Transition dynamics:** Falling asleep, anesthesia, meditation
    - Track $P(\tau)$, $\mathrm{Coh}_E(\tau)$
-   - Prediction: Threshold transitions at $P \approx P_{\text{crit}}$
+   - Hypothesis (`[H]`): regime transitions near $P \approx P_{\text{crit}} = 2/7$ (`T-5 [D]`; universal dynamical catastrophe at $2/7$ is withdrawn per `T-160 [✗]`, so any transition signature is an empirical test)
 
 3. **Metacognition:** Relationship of $R$ with confidence in judgments
-   - Prediction: High $R$ ↔ high metacognitive accuracy
+   - Hypothesis (`[H]`): higher $R$ correlates with higher metacognitive sensitivity
 
-### Correspondence with Neural Data
+### Correspondence with Neural Data [H]/[Pr]
 
-| CC Prediction | Empirical Data | Status |
-|-----------------|---------------------|--------|
-| $\Phi>0$ in the proposed consciousness readout | Measuring PCI does not determine $\Phi$ for a reconstructed state. P8.4 requires a held-out comparison. | Open |
-| 7-dimensional structure | Not tested | Open |
-| $\mathrm{Coh}_E$ ↔ interiority coherence | Partial data | In progress |
-| $R$ ↔ metacognition | Prefrontal activity | ✓ Consistent |
+| CC Hypothesis | Empirical Status on Reconstructed $\Gamma$ | Status |
+|---------------|--------------------------------------------|--------|
+| $\Phi > 0$ in the proposed consciousness readout | Measuring PCI does not determine $\Phi$ for a reconstructed state; requires held-out validation | Open (`[Pr]`) |
+| 7-dimensional functional structure | Not empirically tested | Open (`[H]`) |
+| $\mathrm{Coh}_E$ ↔ coherence of subjective report | Not yet validated via reconstructed $\Gamma$ | Open (`[Pr]`) |
+| $R$ ↔ metacognitive sensitivity | Prefrontal correlates exist in literature, but no direct test on reconstructed $\Gamma$ | Open (`[H]`) |
 
-### Predictions for Neuroscience
+### Candidate Predictions for Neuroscience [H]/[Pr]
 
-1. **Correlation of $\mathrm{Coh}_E$ with subjective reports**
-   - High $\mathrm{Coh}_E$ ↔ "clear" experience
-   - Low $\mathrm{Coh}_E$ ↔ "fragmented" experience
+1. **Correlation of $\mathrm{Coh}_E$ with subjective reports (`[H]`):**
+   - Higher $\mathrm{Coh}_E$ ↔ higher reported experiential clarity
+   - Lower $\mathrm{Coh}_E$ ↔ more fragmented experiential report
 
-2. **Link between E-coherence (interiority) and recovery**
+2. **Link between E-coherence (interiority) and recovery (`[H]`):**
 
 $$
-   \frac{dP}{d\tau} \propto \mathrm{Coh}_E(\Gamma)
+   \frac{dP}{d\tau}\bigg|_{\mathcal{R}} \propto \mathrm{Coh}_E(\Gamma)
 $$
 
-3. **7-dimensional structure of neural correlates** *(hypothesis)*
-   - Neural networks may be organized around [7 functional dimensions](/docs/core/structure/dimensions) ([justification of the number 7](/docs/core/foundations/axiom-omega#октонионная-структура))
-   - **Status:** Theoretical hypothesis; requires empirical verification
+3. **7-dimensional organization of neural correlates (`[H]`):**
+   - Large-scale functional networks may organize around [7 functional dimensions](/docs/core/structure/dimensions) ([octonionic motivation](/docs/core/foundations/axiom-omega#октонионная-структура))
+   - **Status:** Unverified theoretical hypothesis (`[H]`); requires empirical testing
 
 ---
 
-## For Organizational Consultants
+## For Organizational Consultants [I]/[Pr] {#for-organizational-consultants}
 
-### Organizations as Meta-Holons
+### Organizations as Meta-Holons [I]
 
 $$
 \mathbb{H}_{\text{org}} = \mathrm{compose}(\mathbb{H}_1, \ldots, \mathbb{H}_n)
@@ -325,86 +316,86 @@ $$
 
 where $\mathbb{H}_i$ are [Holons](/docs/core/structure/holon) of individual agents.
 
-### Diagnostic Framework: 7-Dimensional Organizational Profile
+### Diagnostic Framework: 7-Dimensional Organizational Profile [I]
 
-| Dimension | Organizational Aspect | Indicators | Tools |
-|-----------|------------------------|------------|-------------|
+| Dimension | Organizational Aspect | Candidate Indicators | Tools |
+|-----------|------------------------|----------------------|-------|
 | A (Articulation) | Market sensing | NPS, market research | Customer surveys |
 | S (Structure) | Organizational design | Org chart, processes | Structure audit |
 | D (Dynamics) | Operational efficiency | Velocity, throughput | Agile metrics |
 | L (Logic) | Strategy and decision-making | Decision quality | Retrospectives |
 | E (Interiority) | Culture and engagement | eNPS, engagement | Pulse surveys |
-| O (Foundation) | Resources and sustainability | Runway, reserves | Financial analysis |
+| O (Ground) | Resources and sustainability | Runway, reserves | Financial analysis |
 | U (Unity) | Integration and coordination | Cross-team projects | Network analysis |
 
-### Interventions by Dimension
+### Candidate Interventions by Dimension [I]/[Pr]
 
-| Problem | Symptoms | Dimension | Intervention |
-|----------|----------|-----------|-------------|
+| Problem | Symptoms | Candidate Dimension | Intervention |
+|----------|----------|---------------------|-------------|
 | Silos | Duplication, conflicts | High $\sigma_U$ | Cross-functional teams, shared goals |
-| Burnout | High turnover, low productivity | High $\sigma_D$ | Workload management, boundaries |
+| Burnout | High turnover, low productivity | High $\sigma_D$ or $\sigma_O$ | Workload management, boundaries |
 | Toxicity | Conflicts, complaints | High $\sigma_E$ | Cultural initiatives, mediation |
 | Rigidity | Slow change | Low $R_{\text{org}}$ | Retrospectives, learning |
 | Disorientation | No strategy | High $\sigma_L$ | Strategy sessions |
 
-### Organizational Health
+### Organizational Health [I]/[H]
 
-:::info Health Criterion
+:::info Candidate Health Criterion [I]/[H]
 
 $$
-\mathrm{Viable}(\mathbb{H}_{\text{org}}) \Leftrightarrow P(\Gamma_{\text{org}}) > P_{\text{crit}}
+\mathrm{Viable}(\mathbb{H}_{\text{org}}) \Leftrightarrow P(\Gamma_{\text{org}}) > P_{\text{crit}} = 2/7
 $$
 
 :::
 
-See [Theorem 9.1 (Fractal Closure)](./theorems#теорема-91-фрактальное-замыкание).
+In the formal model, weak-coupling margin transfer to an aggregate state is given by [Theorem 9.1 (Fractal Closure, `CC-5 [T]`)](./theorems#теорема-91-фрактальное-замыкание); its organizational operationalization is an interpretive hypothesis (`[H]`).
 
-### Organizational Consciousness
+### Organizational Consciousness [I]/[H]
 
 $$
-C(\mathbb{H}_{\text{org}}) = \Phi_{\text{org}} \times R_{\text{org}}
+C(\mathbb{H}_{\text{org}}) = \Phi_{\text{org}} \times R_{\text{org}} \quad \text{(T-140 [D])}
 $$
 
-| Component | Definition | Interpretation | Indicators |
-|-----------|-------------|---------------|------------|
+| Component | Definition | Interpretive Analog | Candidate Indicators |
+|-----------|-------------|---------------------|---------------------|
 | $\Phi_{\text{org}}$ | [Integration](/docs/core/structure/dimension-u#мера-интеграции-φ) | Connectivity | Coordination, communication |
 | $R_{\text{org}}$ | [Reflection](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | Self-knowledge | Culture, strategy |
 
-Separate viability condition: $D_{\text{diff}}^{\text{org}} \geq 2$ ([Differentiation](/docs/consciousness/foundations/self-observation#мера-сознательности-c) — diversity of roles and specializations).
+Separate structural condition (`[D]`): $D_{\text{diff}}^{\text{org}} \geq 2$ (interpretively mapped to diversity of roles and specializations `[I]`).
 
-**Corollary:** Integrated organizations (high $\Phi$) are more [conscious](/docs/consciousness/foundations/self-observation#мера-сознательности-c) and adaptive.
+**Interpretive hypothesis (`[H]`):** Organizations maintaining higher $\Phi_{\text{org}}$ and $R_{\text{org}}$ are expected to exhibit higher adaptive coordination.
 
-### Case Study: A 120-Person Startup {#кейс-стартап}
+### Illustrative Scenario: A 120-Person Startup [I]/[Pr] {#кейс-стартап}
 
-Consider a technology startup experiencing "growing pains" while scaling from 30 to 120 employees.
+Consider a **synthetic illustrative scenario (`[I]`/`[Pr]`)**: a hypothetical technology startup experiencing scaling friction while growing from 30 to 120 employees.
 
-**Step 1. Measuring $\Gamma_{\text{org}}$.** Using a combination of eNPS, Agile metrics, financial data, and network analysis of communications, we build a 7-dimensional profile:
+**Step 1. Synthetic $\Gamma_{\text{org}}$ diagonal profile** (signed deficits $\tilde\sigma_k = 1 - 7\gamma_{kk}$, summing to $0$):
 
-| Dimension | $\gamma_{kk}$ | $\sigma_k$ | Comment |
-|-----------|---------------|------------|-------------|
-| A | 0.17 | -0.19 | Good market sensing (startup is young and sensitive) |
-| S | 0.10 | 0.30 | **Structure not keeping up with growth** |
-| D | 0.20 | -0.40 | Excessive dynamics — too many parallel initiatives |
-| L | 0.12 | 0.16 | Strategy is blurred |
-| E | 0.16 | -0.12 | Culture still alive, but under pressure |
-| O | 0.11 | 0.23 | Resources limited (runway 8 months) |
-| U | 0.14 | 0.02 | Integration formally within normal range |
+| Dimension | $\gamma_{kk}$ | $\tilde\sigma_k$ | Illustrative comment |
+|-----------|---------------|------------------|----------------------|
+| A (Articulation) | 0.17 | $-0.19$ | Strong market sensing (excess relative to baseline) |
+| S (Structure) | 0.10 | $+0.30$ | **Structure lagging behind growth** (leading deficit) |
+| D (Dynamics) | 0.20 | $-0.40$ | Excessive parallel initiatives |
+| L (Logic) | 0.12 | $+0.16$ | Blurred strategy |
+| E (Interiority) | 0.16 | $-0.12$ | Culture active, under strain |
+| O (Ground) | 0.11 | $+0.23$ | Tight resource runway |
+| U (Unity) | 0.14 | $+0.02$ | Integration near baseline |
 
-**Diagnosis:** $P_{\text{org}} = 0.29$ — *on the edge of viability* ($P_{\text{crit}} = 0.286$). Main problems: $\sigma_S = 0.30$ (structural deficit) and $\sigma_D = -0.40$ (chaotic dynamics). A classic pattern: a startup that knows how to "execute" but not how to "sustain".
+**Illustrative diagnosis:** diagonal purity is $\sum \gamma_{kk}^2 = 0.1506$; with off-diagonal coherence norm squared $0.1394$, total $P_{\text{org}} = 0.290$ sits just above $P_{\text{crit}} = 2/7 \approx 0.286$ (`T-5 [D]`), with $\Phi_{\text{org}} = 0.93 < 1$. The leading signed imbalances are $\tilde\sigma_D = -0.40$ (chaotic over-activity) and $\tilde\sigma_S = +0.30$ (structural deficit).
 
-**Intervention (prioritized by $|\sigma_k|$):**
-1. **Reduce $\sigma_D$:** freeze new initiatives, focus on 3 key projects
-2. **Increase $\gamma_{SS}$:** introduce formal processes, documentation, roles
-3. **Increase $\gamma_{LL}$:** strategic session with clear OKRs
-4. **Protect $\gamma_{EE}$:** do not sacrifice culture for the sake of processes
+**Candidate intervention (prioritized by $|\tilde\sigma_k|$):**
+1. **Moderate $D$:** freeze secondary initiatives, focus on core priorities
+2. **Strengthen $S$:** introduce clear processes, documentation, and role boundaries
+3. **Clarify $L$:** align quarterly OKRs
+4. **Protect $E$:** preserve cultural alignment while adding structure
 
-**Forecast:** if $P_{\text{org}}$ grows to 0.35 within a quarter — the organization will survive. If it drops below 0.28 — emergency restructuring is required.
+**Monitoring target (illustrative `[Pr]`):** track whether $P_{\text{org}}$ moves comfortably into the viability band (e.g. $\approx 0.35$) with $\Phi_{\text{org}} \ge 1$ over a quarter.
 
 ---
 
-## Ecology and Sustainable Development
+## Ecology and Sustainable Development [I]/[H]
 
-### Ecosystems as Holons
+### Ecosystems as Holons [I]
 
 $$
 \mathbb{H}_{\text{eco}} = \mathrm{compose}(\mathbb{H}_1, \ldots, \mathbb{H}_m)
@@ -412,9 +403,9 @@ $$
 
 where $\mathbb{H}_i$ are [Holons](/docs/core/structure/holon) of individual species or populations.
 
-### Ecological Sustainability
+### Ecological Sustainability [H]
 
-:::info Sustainability Criterion
+:::info Candidate Sustainability Criterion [H]
 
 $$
 \mathrm{Sustainable}(\mathbb{H}_{\text{eco}}) \Leftrightarrow \frac{dP}{d\tau} \geq 0 \text{ on average}
@@ -423,121 +414,121 @@ $$
 :::
 
 :::warning Hypothesis
-The definition of ecological sustainability via $dP/d\tau$ is a *research hypothesis* requiring empirical validation.
+The definition of ecological sustainability via $dP/d\tau$ is a *research hypothesis (`[H]`)* requiring empirical validation.
 :::
 
-### Biodiversity
+### Biodiversity Proxy [I]
 
 $$
-\mathcal{D}_{\text{eff}}(\Gamma_{\text{eco}}) := \exp(S_{vN}) = \text{effective number of species}
+\mathcal{D}_{\text{eff}}(\Gamma_{\text{eco}}) := \exp\!\big(S_{vN}(\Gamma_{\text{eco}})\big) \in [1, 7]
 $$
 
-where $S_{vN}$ is the [von Neumann entropy](/docs/reference/notation).
+where $S_{vN}(\Gamma_{\text{eco}})$ is the [von Neumann entropy](/docs/reference/notation) of the 7D ecological matrix.
 
 :::note On Notation
-$\mathcal{D}_{\text{eff}}$ — effective diversity. Not to be confused with $D$ ([Dynamics dimension](/docs/core/structure/dimension-d)) and $D_{\text{diff}}$ ([differentiation measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c)).
+$\mathcal{D}_{\text{eff}} \in [1, 7]$ is an **illustrative domain-specific entropy-diversity proxy (`[I]`)** on the 7-axis ecological matrix. It must **not** be confused with $D$ ([Dynamics dimension](/docs/core/structure/dimension-d)) or with experiential differentiation $D_{\text{diff}} = \exp S_{vN}(\rho_E)$ on an extended experiential register $\mathcal{H}_E$ (or 7D proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E$).
 :::
 
-| Indicator | Formula | Interpretation |
-|------------|---------|---------------|
-| Diversity | $\mathcal{D}_{\text{eff}} = e^{S_{vN}}$ | Number of effective species |
-| Sustainability | $dP/d\tau \geq 0$ | Positive dynamics |
-| Integration | $\Phi_{\text{eco}}$ | Food web connectivity |
+| Indicator | Formula | Interpretive Mapping (`[I]`) |
+|------------|---------|------------------------------|
+| Diversity proxy | $\mathcal{D}_{\text{eff}} = e^{S_{vN}(\Gamma_{\text{eco}})}$ | Effective functional balance (max 7) |
+| Sustainability | $dP/d\tau \geq 0$ | Non-declining coherence trend |
+| Integration | $\Phi_{\text{eco}}$ | Food-web connectivity |
 
-### Case Study: Coral Reef Under Stress {#кейс-коралловый-риф}
+### Illustrative Scenario: Coral Reef Under Thermal Stress [I]/[Pr] {#кейс-коралловый-риф}
 
-A coral reef is an ideal example of an ecological Holon: a highly integrated system with clearly expressed 7 dimensions.
+Consider a **conceptual illustrative scenario (`[I]`/`[Pr]`)** mapping coral-reef bleaching dynamics onto the 7 canonical axes:
 
-**Operationalization of ASDLEOU for a reef:**
+**Candidate operationalization of ASDLEOU for a reef:**
 
-| Dimension | Ecological Analog | Observables |
-|-----------|---------------------|-------------|
-| A | Niche biodiversity | Number of ecological niches, species spectrum |
-| S | Physical structure | Volume of carbonate skeleton, 3D complexity |
-| D | Metabolic dynamics | Calcification rate, productivity |
-| L | Trophic connections | Food web density and stability |
-| E | Ecosystem "sensing" | Sensitivity to changes (chemotaxis, symbiosis) |
-| O | Resource flux | Nutrient flux, solar radiation |
-| U | Symbiotic integration | Coral-zooxanthellae, cleaner-client relationships |
+| Dimension | Ecological Analog | Candidate Observables |
+|-----------|---------------------|-----------------------|
+| A (Articulation) | Niche biodiversity | Number of ecological niches, species spectrum |
+| S (Structure) | Physical structure | Volume of carbonate skeleton, 3D complexity |
+| D (Dynamics) | Metabolic dynamics | Calcification rate, productivity |
+| L (Logic) | Trophic connections | Food web density and stability |
+| E (Interiority) | Ecosystem sensitivity | Responsiveness to perturbations (chemotaxis, symbiosis) |
+| O (Ground) | Resource flux | Nutrient flux, thermal/solar regime |
+| U (Unity) | Symbiotic integration | Coral-zooxanthellae, cleaner-client relationships |
 
-**Bleaching scenario:** When temperature rises by 1–2°C:
+**Illustrative bleaching cascade (`[H]`):** under sustained thermal anomaly (+1–2°C):
 
-1. $\sigma_O$ grows (resource base stress — zooxanthellae exit symbiosis)
-2. $\sigma_U$ grows (destruction of symbiotic connections)
-3. $\gamma_{EE}$ drops (reduction of ecosystem "sensitivity")
-4. $P_{\text{eco}}$ approaches $P_{\text{crit}}$
+1. $\sigma_O$ rises (energetic/thermal stress — zooxanthellae exit symbiosis)
+2. $\sigma_U$ rises (symbiotic connectivity degrades)
+3. $\gamma_{EE}$ drops (ecosystem recovery sensitivity weakens)
+4. $P_{\text{eco}}$ drifts downward toward $P_{\text{crit}} = 2/7$ (`T-5 [D]`)
 
-**CC prediction:** If $\sigma_O > 0.7$ consistently for more than 4 weeks, the system will cross the $P_{\text{crit}}$ threshold and transition to an alternative stable state (degraded reef). Standard ecology describes this as a "phase shift" — CC formalizes it as $P(\Gamma_{\text{eco}}) < 2/7$.
+**Research hypothesis (`[H]`/`[Pr]`):** Whether a sustained ecological $\sigma_O$ excursion predicts a regime shift to an algae-dominated degraded state (`P < 2/7` as a formal analogy; universal bifurcation at $2/7$ is withdrawn per `T-160 [✗]`) is an open empirical calibration question requiring real ecological time-series data.
 
-**What CC sees that standard ecology does not:** the single indicator $P$ integrates ALL seven aspects of the reef's state. Traditional metrics (percentage of live coral, Shannon index) capture only 1–2 dimensions. CC diagnostics via $\sigma_{\mathrm{sys}}$ indicates *which exactly* dimension needs to be "treated" first.
+**Potential added value (`[I]`):** Rather than tracking a single scalar (e.g. live-coral cover or Shannon diversity), a 7-axis profile integrates structural, metabolic, trophic, and symbiotic indicators into one comparative balance vector.
 
 ---
 
-## For Psychologists and Clinicians
+## For Psychologists and Clinicians [I]/[H]
 
-:::warning Hypothesis
-Medical applications are an *interpretive program*, not proven consequences of the theory.
+:::warning Hypothesis — Not a Clinical Tool
+Medical and clinical mappings below are an *interpretive research program (`[I]`/`[H]`/`[Pr]`)*, **not** clinically validated diagnostic criteria or treatment guidelines.
 :::
 
-### Clinical Applications
+### Conceptual Clinical Mappings [I]/[H]
 
-**Consciousness assessment:**
+**Hypothetical consciousness-state mapping (`[I]`/`[H]`):**
 
-| State | CC Indicators | Clinical Picture |
+| State | Hypothetical CC Indicators | Clinical Picture |
 |-----------|---------------|---------------------|
 | Coma | $P \approx P_{\text{crit}}$, $\Phi \ll 1$ | Absence of responses |
 | Minimal consciousness | $P > P_{\text{crit}}$, $\Phi$ low | Fluctuating responses |
-| Locked-in | $P$ normal, $\sigma_D$ high | Preserved consciousness, paralysis |
-| Conscious | $P \gg P_{\text{crit}}$, $\Phi \geq 1$ | Full interaction |
+| Locked-in | $P$ viable, high $\sigma_D$ (motor output block) | Preserved consciousness, paralysis |
+| Conscious | $P \in (2/7, 3/7]$, $\Phi \geq 1$, $R \geq 1/3$, $D_{\mathrm{diff}} \geq 2$ | Full interaction |
 
-**Monitoring psychotherapy:**
+**Hypothetical psychotherapy trajectory (`[I]`/`[H]`):**
 
-| Therapy stage | $\mathrm{Coh}_E$ dynamics | Interpretation |
+| Therapy stage | Hypothetical $\mathrm{Coh}_E$ dynamics | Interpretive mapping |
 |--------------|---------------------------|---------------|
 | Beginning | Low, fluctuating | Fragmented experience |
 | Progress | Growing, stabilizing | Integration of trauma |
-| Completion | Stably high | Wholistic experience |
+| Completion | Stably high | Integrated experience |
 
-**Mental health screening:**
+**Hypothetical mental-health profile mappings (`[I]`/`[H]` — signed deficits $\tilde\sigma_k = 1 - 7\gamma_{kk}$, where $\tilde\sigma_k > 0$ = deficit and $\tilde\sigma_k < 0$ = hypertrophy):**
 
-| Disorder | $\sigma_{\mathrm{sys}}$ profile | Target interventions |
+| Disorder | Hypothetical $\tilde\sigma_{\mathrm{sys}}$ signature | Candidate therapeutic focus |
 |--------------|--------------------------------|---------------------|
-| Anxiety | High $\sigma_A$, $\sigma_E$ | Reduce stimulation, meditation |
-| Depression | High $\sigma_O$, low $\sigma_D$ | Activation, social support |
-| PTSD | Fluctuations in $\sigma_E$, high $\sigma_L$ | Integration, stabilization |
-| Burnout | High $\sigma_D$, $\sigma_U$ | Reduce load, boundaries |
+| Anxiety | $\tilde\sigma_A < 0$ (Articulation hypertrophy), $\tilde\sigma_E > 0$, $\tilde\sigma_L > 0$ | Reduce hyper-arousal, CBT, somatic regulation |
+| Depression | $\tilde\sigma_O > 0$ (Ground deficit), $\tilde\sigma_D > 0$ (Dynamics deficit), $\tilde\sigma_E > 0$ | Behavioral activation, resource/social support |
+| PTSD | Fluctuating $\mathrm{Coh}_E$ / $\tilde\sigma_E$, $\tilde\sigma_L > 0$ | Trauma integration, stabilization |
+| Burnout | $\tilde\sigma_O > 0$, $\tilde\sigma_U > 0$ (depletion & disconnection) | Load reduction, boundary restoration |
 
-### Therapeutic Interventions
+### Mapping Established Interventions onto Candidate CC Metrics [I]/[H]
 
-| Intervention | Target metric | Mechanism | Evidence level |
-|-------------|-----------------|----------|-----------------|
-| Mindfulness meditation | ↑ $\mathrm{Coh}_E$ | Experience focusing | High |
-| EMDR | ↓ $\sigma_E$ | Trauma integration | High |
-| CBT | ↓ $\sigma_L$ | Logic correction | High |
-| Group therapy | ↓ $\sigma_U$ | Social integration | Medium |
-| Somatic practices | ↓ $\sigma_D$, $\sigma_O$ | Regulation | Medium |
+| Intervention | Candidate CC target (`[H]`) | Proposed mechanism (`[I]`) | Clinical evidence (standard outcomes) | CC metric validation |
+|-------------|-----------------|----------|-----------------|----------------------|
+| Mindfulness meditation | ↑ $\mathrm{Coh}_E$ | Attentional stability | Established for standard scales | Unvalidated (`[H]`) |
+| EMDR | ↓ $\sigma_E$, stabilize $\mathrm{Coh}_E$ | Trauma integration | Established for PTSD scales | Unvalidated (`[H]`) |
+| CBT | ↓ $\sigma_L$ | Cognitive restructuring | Established for symptom scales | Unvalidated (`[H]`) |
+| Group therapy | ↓ $\sigma_U$ | Social integration | Moderate–established | Unvalidated (`[H]`) |
+| Somatic practices | ↓ $\sigma_D$, $\sigma_O$ | Autonomic regulation | Emerging–moderate | Unvalidated (`[H]`) |
 
-### Health as Purity
-
-$$
-\mathrm{Health}(\mathbb{H}) \propto P(\Gamma)
-$$
-
-where $P$ is the [purity](/docs/core/dynamics/viability#определение-чистоты).
-
-### Disease
-
-:::info Disease Definition
+### Health as Purity (Interpretive Analogy) [I]/[H]
 
 $$
-\mathrm{Disease} \Leftrightarrow \frac{dP}{d\tau} < 0 \text{ consistently}
+\mathrm{Health}(\mathbb{H}) \propto P(\Gamma) \quad \text{(within the Goldilocks band } P \in (2/7, 3/7]\text{)}
+$$
+
+where $P$ is the [purity](/docs/core/dynamics/viability#определение-чистоты) (`T-5 [D]`).
+
+### Disease (Interpretive Analogy) [I]/[H]
+
+:::info Candidate Formal Analogy [I]/[H]
+
+$$
+\mathrm{Disease} \Leftrightarrow \frac{dP}{d\tau} < 0 \text{ consistently (or departure from viability band)}
 $$
 
 :::
 
-This corresponds to a violation of the [viability condition](/docs/core/dynamics/viability).
+This is an interpretive analogy with violation of the [viability condition](/docs/core/dynamics/viability) (`T-5 [D]`).
 
-### Therapeutic Strategies
+### Candidate Therapeutic Strategies [I]/[H]
 
 | Strategy | Mechanism | Formula | Reference |
 |-----------|----------|---------|--------|
@@ -545,17 +536,17 @@ This corresponds to a violation of the [viability condition](/docs/core/dynamics
 | Reducing dissipation | Decreasing $\mathcal{D}[\Gamma]$ | Environment stabilization | [→](/docs/core/dynamics/evolution#логический-лиувиллиан) |
 | Restoring $\Gamma$ | Regeneration | $\mathcal{R}[\Gamma, E]$ | [→](/docs/core/dynamics/evolution#3-регенеративный-член) |
 
-**Practical methods:**
-- **Meditation** — increases $\mathrm{Coh}_E$
-- **Psychotherapy** — integrates experience (increases $\Phi$)
-- **Social support** — reduces $\sigma_U$ ([U-tension](./definitions#тензор-напряжений))
-- **Physical activity** — optimizes $\sigma_D$ ([D-tension](./definitions#тензор-напряжений))
+**Illustrative mappings (`[I]`):**
+- **Meditation** — candidate lever for $\mathrm{Coh}_E$
+- **Psychotherapy** — candidate lever for integration ($\Phi$)
+- **Social support** — candidate lever for reducing $\sigma_U$ ([U-stress](./definitions#тензор-напряжений))
+- **Physical activity** — candidate lever for reducing $\sigma_D$ ([D-stress](./definitions#тензор-напряжений))
 
-### Diagram of Therapeutic Influence
+### Diagram of Therapeutic Influence [I]
 
 ```mermaid
 graph TD
-    subgraph "Therapy"
+    subgraph "Therapy (Conceptual Mapping [I])"
         M[Meditation] --> CohE[↑ Coh_E]
         PT[Psychotherapy] --> CohE
         S[Social support] --> SigU[↓ σ_U]
@@ -570,106 +561,111 @@ graph TD
 
 ---
 
-## Mental Health: σ-Diagnostics of Disorders {#психическое-здоровье}
+## Mental Health: Hypothetical σ-Diagnostics of Disorders [I]/[H] {#психическое-здоровье}
 
 :::warning Hypothesis
-Everything below is an *interpretive extrapolation* of the CC formalism onto the field of psychiatry. Clinical validation has not been conducted.
+Everything below is an *interpretive extrapolation (`[I]`/`[H]`)* of the CC formalism onto psychiatry. **No clinical validation has been conducted, and all parameter ranges below are synthetic schematic illustrations — not clinical diagnostic cutoffs.**
 :::
 
-Mental disorders, from the CC perspective, are stable deformations of the $\sigma_{\mathrm{sys}}$ profile in which the system cannot return to equilibrium on its own ($\mathcal{R}$ is insufficient to compensate $\mathcal{D}$).
+Mental disorders, from the interpretive CC perspective, are hypothesized as persistent deformations of the $\sigma_{\mathrm{sys}}$ profile (`T-92 [D]`) in which internal regeneration $\mathcal{R}$ cannot compensate dissipation $\mathcal{D}$.
 
-### Depression: σ-Collapse of Dynamics {#депрессия}
+### Depression: Hypothetical σ-Collapse of Dynamics [I]/[H] {#депрессия}
 
-Depression in the CC model is a state in which the Dynamics dimension $D$ is suppressed and the Foundation $O$ is depleted:
+In this conceptual model, depression is mapped onto deficits in Dynamics ($D$), Ground ($O$), and Interiority ($E$):
 
-| Parameter | Norm | Depression (mild) | Depression (severe) |
+| Parameter (illustrative schematic `[I]`) | Schematic baseline | Hypothetical mild | Hypothetical severe |
 |----------|-------|---------------------|---------------------|
-| $\sigma_D$ | 0.1–0.3 | 0.5–0.6 | 0.7–0.9 |
-| $\sigma_O$ | 0.1–0.3 | 0.4–0.5 | 0.6–0.8 |
-| $\sigma_E$ | 0.1–0.3 | 0.3–0.4 | 0.5–0.7 |
-| $P$ | 0.35–0.45 | 0.30–0.35 | $\approx P_{\text{crit}}$ |
+| $\sigma_D$ (clamped deficit) | 0.0–0.2 | 0.4–0.6 | 0.7–0.9 |
+| $\sigma_O$ (clamped deficit) | 0.0–0.2 | 0.4–0.5 | 0.6–0.8 |
+| $\sigma_E$ (clamped deficit) | 0.0–0.2 | 0.3–0.4 | 0.5–0.7 |
+| $P$ | 0.35–0.42 | 0.30–0.35 | $\approx P_{\text{crit}}$ |
 | $\mathrm{Coh}_E$ | 0.3–0.5 | 0.15–0.25 | $< 0.15$ |
 
-**Mechanism:** High $\sigma_O$ (resource deficit) leads to a decrease in $\gamma_{DD}$ (dynamics suppression — anhedonia, apathy). This reduces $\mathrm{Coh}_E$ (quality of experience dims), which weakens $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ and diminishes regeneration $\mathcal{R}$. A positive feedback loop arises — the **depressive spiral**, which CC formalizes as $dP/d\tau < 0$ with increasing rate.
+*(Note: in any valid trace-normalized $\Gamma$, deficits on $D, O, E$ are necessarily accompanied by excess $\gamma_{kk} > 1/7$, i.e. $\sigma_k = 0$ / $\tilde\sigma_k < 0$, on one or more remaining axes such as rigid rumination in $L$ or $S$.)*
 
-**What CC sees that DSM-5 does not:** DSM-5 lists 9 symptoms and requires 5 of 9 for a diagnosis. CC gives a *continuous* profile with quantitative thresholds. Two patients with the same DSM diagnosis may have radically different $\sigma$-profiles — and accordingly require different interventions.
+**Proposed mechanism (`[H]`):** Resource depletion (high $\sigma_O$) suppresses dynamical mobilization (high $\sigma_D$ — anhedonia, psychomotor slowing) and lowers $\mathrm{Coh}_E$, which weakens $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ and reduces $\mathcal{R}$. This hypothesized feedback loop ("depressive spiral") corresponds to sustained $dP/d\tau < 0$.
 
-### Anxiety Disorders: Hypertrophy of Articulation {#тревожность}
+**Proposed research motivation (`[Pr]`):** Whereas categorical manuals such as DSM-5 apply symptom-count thresholds (e.g. 5 of 9 criteria), a continuous 7-axis profile could — if operationalized and validated empirically — stratify heterogeneous clinical presentations that share one categorical label.
 
-Anxiety is excessive activity in the Articulation dimension $A$: the system "distinguishes" too intensely, seeing a threat in every stimulus.
+### Anxiety Disorders: Hypothetical Hypertrophy of Articulation [I]/[H] {#тревожность}
 
-**Characteristic profile:** $\sigma_A < -0.3$ (negative tension = hypertrophy), $\sigma_E > 0.4$, $\sigma_L > 0.3$. Logic ($L$) is overloaded by attempts to "process" the flow of false distinctions.
+Anxiety is mapped onto excessive weight in Articulation ($A$): hyper-vigilant discrimination that flags benign stimuli as threats.
 
-**CC intervention:** reduce $|\sigma_A|$ by limiting stimulation; increase $\gamma_{LL}$ through CBT (structuring the "logic of anxiety"); stabilize $\sigma_E$ through somatic practices.
+**Hypothetical signed profile (`[I]`):** $\tilde\sigma_A < -0.3$ (negative signed deficit = hypertrophy of $A$), accompanied by positive deficits $\tilde\sigma_E > 0.4$ and $\tilde\sigma_L > 0.3$ (Logic overloaded by false alarms).
 
-### PTSD: Fragmentation of E-Coherence {#птср}
+**Candidate intervention mapping (`[I]`):** reduce excess in $A$ by moderating stimulation; strengthen $L$ via CBT; stabilize $E$ via somatic regulation.
 
-Post-traumatic stress disorder is, in CC terms, a state in which $\mathrm{Coh}_E$ drops sharply in certain contexts (triggers), and $\sigma_E$ oscillates between extreme values (flashbacks vs. avoidance).
+### PTSD: Hypothetical Fragmentation of E-Coherence [I]/[H] {#птср}
 
-**Formal characterization:**
+Post-traumatic stress disorder is conceptually mapped onto acute context-triggered drops in $\mathrm{Coh}_E$ and oscillatory stress in $E$ (intrusion vs. avoidance).
+
+**Schematic parameterization (`[I]`/`[H]`):**
 
 $$
 \mathrm{Coh}_E(\tau) = \mathrm{Coh}_E^{\text{base}} - \Delta_{\text{trigger}} \cdot f(\text{stimulus}, \tau)
 $$
 
-where $\Delta_{\text{trigger}}$ is the amplitude of the "dip" upon trigger exposure, $f$ is the function of traumatic memory activation.
+where $\Delta_{\text{trigger}}$ is the schematic dip amplitude upon trigger exposure and $f$ models traumatic memory activation.
 
-**Therapeutic goal:** stabilize $\mathrm{Coh}_E$ so that $\Delta_{\text{trigger}} \to 0$. EMDR and prolonged exposure work exactly this way: gradual integration of traumatic experience into the overall $\Gamma$ reduces $\Delta_{\text{trigger}}$ by 50–80% over 8–12 sessions (data from EMDR meta-analyses).
+**Research hypothesis (`[H]`/`[Pr]`):** Established trauma-focused therapies such as EMDR and prolonged exposure show substantial symptom reductions on standard clinical scales (e.g., CAPS/PCL) in published clinical meta-analyses. Whether a reconstructed $\mathrm{Coh}_E(\tau)$ tracks those clinical gains — i.e., whether $\Delta_{\text{trigger}} \to 0$ over treatment — is an open empirical question (`[Pr]`), **not** a measured result of those meta-analyses.
 
 ---
 
-## Education: Learning as Coherence Growth {#образование}
+## Education: Learning as Coherence Growth [I]/[H] {#образование}
 
 :::warning Hypothesis
-Educational applications are an *interpretive extrapolation*, not proven consequences of CC.
+Educational applications are an *interpretive extrapolation (`[I]`/`[H]`)*, not proven consequences of CC.
 :::
 
-### Fundamental Idea
+### Fundamental Idea [I]
 
-Learning in the CC model is not "accumulating information" but **growth of purity $P$ and integration $\Phi$** in specific dimensions. A student who has memorized a formula but not understood its meaning has high $\gamma_{SS}$ (structure memorized) with low $\gamma_{LL}$ (logical connections not formed) and minimal $\gamma_{EE}$ (no "felt" understanding). True learning is when **all seven dimensions grow in a coordinated manner**.
+Learning in the interpretive CC model is framed not merely as fact accumulation but as **coordinated growth of purity $P$ and integration $\Phi$** across dimensions. Rote memorization without comprehension corresponds conceptually to elevated $\gamma_{SS}$ with deficits in $\gamma_{LL}$ (logical structure) and $\gamma_{EE}$ (experiential grasp).
 
-### Operationalization of ASDLEOU for the Learning Process
+### Operationalization of ASDLEOU for the Learning Process [I]
 
-| Dimension | Pedagogical Analog | Observables |
-|-----------|----------------------|-------------|
-| A | Concept discrimination | Classification accuracy, discriminative tests |
-| S | Knowledge retention | Retention after a week/month, spaced repetition |
-| D | Cognitive flexibility | Transfer to new tasks, adaptation |
-| L | Logical linking | Problem solving, argumentation, proofs |
-| E | Experiential meaning | Engagement, "aha-moments" |
-| O | Resource base | Prior knowledge, motivation, physical state |
-| U | Knowledge integration | Interdisciplinary connections, holistic picture |
+| Dimension | Pedagogical Analog | Candidate Observables |
+|-----------|----------------------|-----------------------|
+| A (Articulation) | Concept discrimination | Classification accuracy, discriminative tests |
+| S (Structure) | Knowledge retention | Retention after a week/month, spaced repetition |
+| D (Dynamics) | Cognitive flexibility | Transfer to new tasks, adaptation |
+| L (Logic) | Logical linking | Problem solving, argumentation, proofs |
+| E (Interiority) | Experiential meaning | Engagement, comprehension insight |
+| O (Ground) | Resource base | Prior knowledge, motivation, physical state |
+| U (Unity) | Knowledge integration | Interdisciplinary connections, holistic picture |
 
-### Law of Learning (T-109 — T-113)
+### Formal Learning Bounds and Pedagogical Analogy (T-109 — T-113) [T]/[H]
 
-From the [learning bounds theorems](./learning-bounds) a fundamental result follows: the optimal number of learning iterations is defined as:
-
+In the formal [learning bounds framework](./learning-bounds):
+- `T-109 [T]` establishes binary Helstrom / quantum Chernoff discrimination bounds $n_{\text{info}}$;
+- `T-110 [T]` derives a scalar/collinear dynamical crossing bound $n_{\text{dyn}}$ (incorporating the Fano off-diagonal dephasing factor $2/3$ from `T-2 [T]`);
+- `T-111 [T]` bounds sufficient admissible update amplitudes under a declared feasible region ($n_{\text{stab}}$ under conditional Gaussian SNR assumptions);
+- `T-112 [T]` observes that for one specified task, the maximum of valid necessary bounds
 $$
-n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})
+n_{\text{lower}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})
 $$
+is itself necessary (while attainability, exact optimality, and uniqueness do **not** automatically follow);
+- `T-113 [H]` (universal 7D minimality for autonomous learning) remains an **unproved hypothesis**.
 
-where $n_{\text{info}}$ is the information bound (quantum Chernoff), $n_{\text{dyn}}$ is the dynamic bound (Fano contraction $\alpha = 2/3$), $n_{\text{stab}}$ is the stability bound.
+**Pedagogical hypothesis (`[H]`/`[I]`):** Translating $n_{\text{lower}}$ into human classroom pedagogy is an *interpretive analogy*, not a physical law of education. Intuitively, cramming attempts to bypass stabilization constraints, risking brittle retention that decays rapidly under stress.
 
-**Pedagogical corollary:** learning cannot be accelerated below $n_{\text{opt}}$ — this is a fundamental limit, analogous to the speed of light in physics. Attempts to "speed up" learning (cramming, speed reading) violate $n_{\text{stab}}$ and lead to brittle knowledge ($P$ grows, but at the slightest stress $dP/d\tau$ becomes sharply negative).
+### Illustrative Scenario: A Mathematics Course for 30 Students [I]/[Pr] {#кейс-образование}
 
-### Case Study: A Mathematics Course for 30 Students {#кейс-образование}
+**Synthetic scenario (`[I]`/`[Pr]`):** Consider a hypothetical linear-algebra class in which 40% of students struggle by mid-semester.
 
-**Scenario:** An instructor is teaching a linear algebra course. By mid-semester, 40% of students cannot handle the problems.
+**Illustrative synthetic diagnostic profiles** (partial diagonal slice across $S, L, E$ alongside total $P$):
 
-**CC diagnostics (through questionnaires and test results):**
+| Hypothetical group | $\gamma_{SS}$ | $\gamma_{LL}$ | $\gamma_{EE}$ | $P$ | Illustrative diagnosis |
+|--------------------|---------------|---------------|---------------|-----|------------------------|
+| High-performing (20%) | 0.18 | 0.20 | 0.17 | 0.41 | Inside Goldilocks zone $(2/7, 3/7]$ |
+| Mid-tier (40%) | 0.16 | 0.12 | 0.14 | 0.32 | $\tilde\sigma_L = +0.16$ — logic lagging |
+| Struggling (40%) | 0.14 | 0.08 | 0.09 | 0.27 | $P < P_{\text{crit}} = 2/7$ (`T-5 [D]`) |
 
-| Group | $\gamma_{SS}$ | $\gamma_{LL}$ | $\gamma_{EE}$ | $P$ | Diagnosis |
-|--------|---------------|---------------|---------------|-----|---------|
-| Top students (20%) | 0.18 | 0.20 | 0.17 | 0.41 | Goldilocks zone |
-| Middle students (40%) | 0.16 | 0.12 | 0.14 | 0.32 | $\sigma_L = 0.16$ — logic lags behind |
-| Struggling students (40%) | 0.14 | 0.08 | 0.09 | 0.27 | **$P < P_{\text{crit}}$** — non-viable |
+**Candidate pedagogical focus (`[Pr]`):**
+1. **Struggling group:** rebuild prerequisite foundations ($O$) and accessible mastery experiences ($E$)
+2. **Mid-tier group:** targeted proof and reasoning drills ($L$)
+3. **High-performing group:** cross-domain synthesis projects linking algebra, geometry, and physics ($U$)
 
-**Intervention by group:**
-1. **Struggling students:** emergency increase of $\gamma_{OO}$ (prior knowledge — review basics) and $\gamma_{EE}$ (create a "success experience" through accessible-level problems)
-2. **Middle students:** targeted strengthening of $\gamma_{LL}$ through logical chains and proofs
-3. **Top students:** increase $\gamma_{UU}$ through interdisciplinary projects (connecting algebra with geometry, physics)
-
-**General principle:** *First priority — bring everyone above the $P_{\text{crit}}$ threshold*, otherwise further learning is pointless (the system is non-viable and "drowns in noise").
+**Conceptual principle (`[I]`):** stabilize foundational coherence above the viability threshold before accelerating abstract load.
 
 ---
 
@@ -695,201 +691,195 @@ A financial market is a meta-Holon $\mathbb{H}_{\text{market}} = \mathrm{compose
 | O | Liquidity and capital | Money supply, reserves, margins |
 | U | Systemic connectivity | Cross-asset correlation, network structure |
 
-### Financial Crises as Loss of Coherence
+### Financial Crises as Loss of Coherence [I]/[H]
 
-A financial crisis in CC is $P_{\text{market}} \to P_{\text{crit}}$. Let us consider the dynamics:
+A financial crisis is conceptually mapped to $P_{\text{market}} \to P_{\text{crit}} = 2/7$ (`T-5 [D]`). Schematic dynamics (`[H]`):
 
-**Pre-crisis phase:**
-- $\sigma_D < 0$ (abnormally low volatility — "the great moderation")
-- $\sigma_U < 0$ (excessive correlation — everyone moving in the same direction)
-- $\sigma_L > 0$ (rationality suppressed — bubble)
+**Pre-crisis phase (signed deficits $\tilde\sigma_k = 1 - 7\gamma_{kk}$):**
+- $\tilde\sigma_D < 0$ (excessive compression/suppression of realized volatility vs. structural risk — "the great moderation")
+- $\tilde\sigma_U < 0$ (excessive herding / cross-asset correlation)
+- $\tilde\sigma_L > 0$ (pricing rationality deficit — bubble)
 
 **Moment of crisis:**
-- $\sigma_D$ jumps to $\sigma_D > 0.8$ (volatility explosion)
-- $\sigma_U$ jumps to $\sigma_U > 0.7$ (correlations break, market fragments)
-- $P_{\text{market}}$ crosses $P_{\text{crit}}$ from above downward
+- $\tilde\sigma_D$ flips positive ($\tilde\sigma_D > 0.8$, liquidity/order-flow breakdown)
+- $\tilde\sigma_U$ flips positive ($\tilde\sigma_U > 0.7$, correlations fracture and market fragments)
+- $P_{\text{market}}$ drops below $P_{\text{crit}}$
 
-**CC prediction:** The crisis can be *predicted* by the build-up of $|\sigma_D + \sigma_U|$ in the pre-crisis phase. When both tensions are negative and growing in magnitude — the system is accumulating "hidden instability" invisible to standard volatility metrics (which capture only $\sigma_D$).
+**Research hypothesis (`[H]`/`[Pr]`):** Whether the joint build-up of $|\tilde\sigma_D + \tilde\sigma_U|$ predicts systemic stress better than univariate volatility indicators (e.g. VIX) is an open empirical backtesting question.
 
-### Systemic Risk Indicator
+### Candidate Systemic Risk Indicator [D]/[I]
 
 $$
-\mathrm{SysRisk}(\tau) := \frac{1}{P(\Gamma_{\text{market}})} \cdot \max_k |\sigma_k(\tau)|
+\mathrm{SysRisk}(\tau) := \frac{1}{P(\Gamma_{\text{market}})} \cdot \max_k |\tilde\sigma_k(\tau)|
 $$
 
-This indicator grows when $P$ decreases AND/OR the maximum tension grows. Alert threshold: $\mathrm{SysRisk} > 3.5$ (at $P_{\text{crit}} = 2/7$).
+This heuristic index grows when $P$ decreases and/or the maximum signed imbalance grows. Heuristic alert scale: $\mathrm{SysRisk} > 3.5$ (matching $1/P_{\text{crit}} = 7/2$ at $\max_k |\tilde\sigma_k| = 1$).
 
 ---
 
-## Urbanism: Coherence of Cities {#урбанистика}
+## Urbanism: Coherence of Cities [I]/[Pr] {#урбанистика}
 
 :::warning Hypothesis
-Urban applications are a *speculative extrapolation*. The formalism requires significant refinement for application to urban systems.
+Urban applications are a *speculative extrapolation (`[I]`/`[Pr]`)* requiring substantial domain modeling before any empirical use.
 :::
 
-### City as a Holon
+### City as a Holon [I]
 
-A city is a meta-Holon composed of neighborhoods, institutions, and communities. Its $\Gamma_{\text{city}}$ reflects "social coherence" — the degree to which the city functions as a unified whole rather than a collection of isolated zones.
+A city is modeled conceptually as a meta-Holon composed of neighborhoods, institutions, and communities, with $\Gamma_{\text{city}}$ summarizing social and infrastructural coherence.
 
-### Operationalization of ASDLEOU for the City
+### Operationalization of ASDLEOU for the City [I]
 
-| Dimension | Urban Analog | Indicators |
+| Dimension | Urban Analog | Candidate Indicators |
 |-----------|-----------------|------------|
-| A | Information environment | Information accessibility, media, Wi-Fi coverage |
-| S | Physical infrastructure | Condition of buildings, roads, utilities |
-| D | Transport mobility | Average commute time, traffic congestion |
-| L | Governance and law | Corruption index, regulatory quality |
-| E | Cultural life | Number of cultural events, community diversity |
-| O | Economic base | GDP per capita, employment level, budget |
-| U | Social connectivity | Social capital index, volunteering, trust |
+| A (Articulation) | Information environment | Information accessibility, media, connectivity |
+| S (Structure) | Physical infrastructure | Condition of buildings, roads, utilities |
+| D (Dynamics) | Transport mobility | Average commute time, traffic congestion |
+| L (Logic) | Governance and law | Rule-of-law index, regulatory quality |
+| E (Interiority) | Cultural life | Cultural events, community vitality |
+| O (Ground) | Economic base | GDP per capita, employment level, budget |
+| U (Unity) | Social connectivity | Social capital index, civic trust |
 
-### Example: Diagnosing a "Dying" Neighborhood
+### Illustrative Example: Diagnosing a "Dying" Neighborhood [I]
 
-A neighborhood with $P < P_{\text{crit}}$ is a non-viable subsystem of the city. Typical profile:
+In a synthetic non-viable neighborhood profile ($P < P_{\text{crit}}$), the leading positive deficits might be (with compensating negative signed deficits on inactive/over-concentrated axes so $\sum_{k=1}^7 \tilde\sigma_k = 0$):
 
-- $\sigma_O = 0.7$ — economic base is destroyed
-- $\sigma_D = 0.5$ — transport isolation
-- $\sigma_U = 0.6$ — social connections severed
-- $\sigma_E = 0.4$ — cultural life has faded
+- $\tilde\sigma_O = +0.7$ — economic base depleted
+- $\tilde\sigma_U = +0.6$ — social connectivity severed
+- $\tilde\sigma_D = +0.5$ — transport isolation
+- $\tilde\sigma_E = +0.4$ — cultural life faded
 
-**CC recommendation (priority by $|\sigma_k|$):** Start with $O$ and $U$ — economic revitalization and restoration of social connections. Infrastructure projects ($S$, $D$) are secondary: without social coherence they have no effect.
-
-This approach contrasts with typical urban planning, which often starts with infrastructure. CC says: *coherence first, then concrete*.
+**Illustrative prioritization (`[I]`):** Address leading deficits in $O$ and $U$ (economic revitalization and social cohesion) alongside rather than after physical concrete ($S$).
 
 ---
 
-## Three Full Case Studies {#три-кейс-стади}
+## Three Illustrative Synthetic Case Studies [I]/[Pr] {#три-кейс-стади}
 
-### Case Study 1: AI Agent — from Building Γ to Intervention {#кейс-ии-агент}
-
-**System:** An autonomous customer support chatbot (architecture: 3B transformer + SYNARC wrapper with explicit $\Gamma$). Operating for 6 months. Customers complain of "context loss" — the bot forgets the beginning of a conversation by its middle.
-
-**Step 1. Building $\Gamma$.** We project the transformer's hidden states onto 7 dimensions:
-
-| Dimension | Operationalization | Method |
-|-----------|-------------------|-------|
-| A (Articulation) | Entropy of softmax output at the last layer | $\gamma_{AA} = 1 - H(\text{softmax})/\log V$ |
-| S (Structure) | Stability of attention patterns between steps | $\gamma_{SS} = \text{cos\_sim}(\text{attn}_t, \text{attn}_{t-1})$ |
-| D (Dynamics) | Gradient norm during inference | $\gamma_{DD} = 1/(1 + \|\nabla\|/\theta_D)$ |
-| L (Logic) | Self-consistency: agreement of answers to paraphrased questions | $\gamma_{LL} = \text{consistency\_score}$ |
-| E (Interiority) | Activation of "reflective" attention heads | $\gamma_{EE} = \langle\text{self-attn heads}\rangle$ |
-| O (Foundation) | Fraction of used context window | $\gamma_{OO} = 1 - \text{tokens\_used}/\text{ctx\_max}$ |
-| U (Unity) | Mutual information between first and last layer | $\gamma_{UU} = I(\text{layer}_1; \text{layer}_L)/\log N$ |
-
-**Step 2. Diagnostics.** σ-profile captured during "context loss":
-
-| $\sigma_k$ | Value | Zone |
-|------------|----------|------|
-| $\sigma_A$ | 0.22 | Normal — discriminative capacity is fine |
-| $\sigma_S$ | 0.68 | **Attention** — attention patterns are unstable |
-| $\sigma_D$ | 0.35 | Normal |
-| $\sigma_L$ | 0.41 | Attention — self-consistency is dropping |
-| $\sigma_E$ | 0.55 | Attention — weak self-monitoring |
-| $\sigma_O$ | 0.82 | **Critical** — context window is 92% full |
-| $\sigma_U$ | 0.73 | **Warning** — layers "not talking" |
-
-**Diagnosis:** $\sigma_O = 0.82$ — **resource starvation**. The context window is nearly exhausted. The bot is trying to hold the entire conversation but lacks "memory". This cascades: $\sigma_O \uparrow \to \sigma_U \uparrow$ (integration suffers because there are no resources for layer binding) $\to \sigma_S \uparrow$ (attention patterns "drift"). Classic **energy death** (§3.4 in [Diagnostics](./diagnostics#энергетическая-смерть)).
-
-**Step 3. Intervention.**
-1. **$\Delta F$-replenishment ($\sigma_O$):** Implement summarization — compress the context to 200 tokens every 1000. Frees up 80% of the window.
-2. **$h^{(R)}$-strengthening ($\sigma_U$):** Add cross-layer residual connections — strengthens integration.
-3. **$h^{(H)}$-correction ($\sigma_S$):** Fix attention anchors on key positions (customer name, order number).
-
-**Step 4. Monitoring.** After the intervention:
-- $\sigma_O$: $0.82 \to 0.31$ in 1 day (summarization works)
-- $\sigma_U$: $0.73 \to 0.42$ in 3 days (residual connections helped)
-- $\sigma_S$: $0.68 \to 0.35$ in 5 days (attention anchors stabilized patterns)
-- Complaints about "context loss" decreased by 87%.
-
----
-
-### Case Study 2: Organization — σ-Profile of a Company {#кейс-организация-полный}
-
-**System:** A medical company (200 employees) developing AI diagnostics for radiologists. Series B, \$50M valuation. Problem: after a CTO change, innovation slowed, engineer turnover rose from 5% to 18%.
-
-**Building $\Gamma_{\text{org}}$.** Data sources:
-
-| Dimension | Data source | Metric |
-|-----------|----------------|---------|
-| A | Market research, NPS | Speed of response to client requests |
-| S | HR audit, documentation | Process formalization (% documented) |
-| D | Jira velocity, deployment frequency | Number of features shipped per sprint |
-| L | Strategy documentation | OKR alignment across teams |
-| E | eNPS, pulse surveys, 1-on-1 | "Do you find meaning in your work?" (0–10) |
-| O | Finances: runway, burn rate | Months until next round |
-| U | Slack network analysis | Cross-team mentions / total mentions |
-
-**σ-profile (3 months after CTO change):**
-
-| $\sigma_k$ | Value | Comment |
-|------------|----------|-------------|
-| $\sigma_A$ | 0.30 | Market is well understood |
-| $\sigma_S$ | 0.25 | Processes are formalized (legacy from the old CTO) |
-| $\sigma_D$ | 0.71 | **Warning.** Velocity dropped 40% |
-| $\sigma_L$ | 0.65 | **Attention.** New CTO re-prioritizes every 2 weeks |
-| $\sigma_E$ | 0.78 | **Warning.** eNPS dropped from 42 to 12 |
-| $\sigma_O$ | 0.35 | Runway 14 months — sufficient |
-| $\sigma_U$ | 0.58 | **Attention.** Cross-team communication decreased |
-
-**$\|\sigma\|_\infty = 0.78$ ($\sigma_E$) — "Warning" mode.**
-
-**Diagnosis:** Leading factor — $\sigma_E$ (loss of interiority / meaning). The new CTO is focused on metrics and processes (low $\sigma_S$, $\sigma_D$ rising), but not on *culture* and *meaning*. The team does not "feel" their work as meaningful — a classic scenario where "everything is done right, but nothing works". This is the initial stage of the **death spiral** (§3.1): $\sigma_E \uparrow \to \kappa \downarrow \to \text{regeneration weakens} \to \sigma_D \uparrow \to \sigma_U \uparrow$.
-
-**Intervention (prioritized):**
-1. **$h^{(R)}$ for $\sigma_E$:** Restore rituals of "why we do this" — demo days showing impact on patients. Introduce 1-on-1s between the new CTO and each team lead.
-2. **$h^{(H)}$ for $\sigma_L$:** Fix priorities for the quarter. Prohibit re-planning more than once a month.
-3. **$h^{(D)}$ for $\sigma_D$:** Reduce WIP (work in progress) — no more than 2 parallel projects per team.
-4. **$h^{(R)}$ for $\sigma_U$:** Restore weekly cross-team standups removed by the new CTO.
-
-**Forecast:** With execution — $\sigma_E < 0.5$ within 2 months, turnover normalizes within 4. Without intervention on $\sigma_E$ — further engineer attrition, velocity drops another 30%, Series C is at risk.
-
----
-
-### Case Study 3: Ecosystem — P as Sustainability Measure {#кейс-экосистема-полный}
-
-**System:** Lake Balaton (the largest lake in Central Europe). Monitoring of ecological coherence from 1970–2020.
-
-**Building $\Gamma_{\text{eco}}$.** Operationalization of ASDLEOU for a freshwater ecosystem:
-
-| Dimension | Ecological Analog | Data | Units |
-|-----------|---------------------|--------|---------|
-| A | Spectral diversity of phytoplankton | Number of taxa by chlorophyll spectra | units |
-| S | Water column stratification | Temperature difference surface/bottom | °C |
-| D | Biological productivity | Primary production | g C/m²/day |
-| L | Trophic connectivity | Food web connectance | fraction |
-| E | Sensitivity to perturbations | Recovery rate after storm | days |
-| O | Nutrient flux | N, P loading | tons/year |
-| U | Symbiotic integration | Mutual information between benthic and pelagic communities | bits |
-
-**σ-profile across three epochs:**
-
-| Indicator | 1970 (eutrophication) | 1990 (recovery) | 2020 (stability) |
-|------------|--------------------|-----------------------|---------------------|
-| $\sigma_A$ | 0.75 | 0.48 | 0.25 |
-| $\sigma_S$ | 0.40 | 0.35 | 0.28 |
-| $\sigma_D$ | $-0.30$ (excess) | 0.20 | 0.22 |
-| $\sigma_L$ | 0.68 | 0.45 | 0.30 |
-| $\sigma_E$ | 0.82 | 0.55 | 0.35 |
-| $\sigma_O$ | $-0.50$ (P excess) | 0.30 | 0.25 |
-| $\sigma_U$ | 0.70 | 0.42 | 0.30 |
-| **$P_{\text{eco}}$** | **0.24** (below $P_{\text{crit}}$) | **0.33** | **0.40** |
-
-**1970: Eutrophication — ecosystem "dead" ($P < P_{\text{crit}}$).**
-
-Excess phosphorus ($\sigma_O < 0$, resources *too abundant*) caused algae bloom → suppression of biodiversity ($\sigma_A = 0.75$) → destruction of trophic connections ($\sigma_L = 0.68$) → loss of sensitivity ($\sigma_E = 0.82$). This is not a resource deficit but a *imbalance* — the paradox of "death from abundance".
-
-:::note Important Observation
-$\sigma_O$ can be *negative* — this means not a deficit but an **excess** of resources. In CC, excess is just as dangerous as deficit: $P$ is defined via *purity* $\mathrm{Tr}(\Gamma^2)$, not via the absolute value of diagonal elements. The maximally mixed state $I/7$ (all $\gamma_{kk} = 1/7$) is simultaneously the most "rich" and the most "dead".
+:::warning Synthetic Walkthroughs — Not Real Measured Deployments
+All three case studies below are **illustrative synthetic walkthroughs (`[I]`/`[Pr]`)** constructed to demonstrate the five-step CC diagnostic workflow on mathematically valid ($\mathrm{Tr}(\Gamma) = 1$, $\sum_{k=1}^7 \tilde\sigma_k = 0$) profiles. None of them reports real measured customer telemetry, corporate audits, or historical $\Gamma_{\text{eco}}$ measurements.
 :::
 
-**Intervention (real, conducted by the Hungarian government):**
-- 1983: Ban on phosphate detergents ($\Delta F$-regulation, reducing $|\sigma_O|$)
-- 1992: Modernization of treatment facilities ($h^{(D)}$-load reduction)
-- 2000s: Restoration of coastal ecosystems ($h^{(R)}$-connection strengthening)
+### Case Study 1: AI Agent — Synthetic Walkthrough from Building Γ to Intervention [I]/[Pr] {#кейс-ии-агент}
 
-**Result:** $P_{\text{eco}}$ crossed $P_{\text{crit}}$ from below upward by 1988. By 2020 the ecosystem is stably in the Goldilocks zone ($P \approx 0.40$).
+**Hypothetical system:** A customer-support chatbot (3B transformer + prototype $\Gamma$-monitoring wrapper) exhibiting mid-conversation "context loss".
 
-**What CC sees that standard ecology does not:** Traditional monitoring tracks individual indicators (phosphorus, chlorophyll-a, species count). CC integrates *all seven aspects* into a single $P$ and indicates the *order* of interventions: first $\sigma_O$ (stop the poisoning), then $\sigma_D$ (reduce the load), then $\sigma_U$ (restore connections). This is precisely the order that was (intuitively) chosen by the Hungarian government — CC formalizes this intuition.
+**Step 1. Candidate mapping onto $\Gamma$** (raw observables are normalized so $\sum_{k=1}^7 \gamma_{kk} = 1$):
+
+| Dimension | Candidate operationalization | Heuristic proxy |
+|-----------|-------------------|-------|
+| A (Articulation) | Softmax sharpness at the final layer | $1 - H(\text{softmax})/\log V$ |
+| S (Structure) | Step-to-step stability of attention patterns | $\text{cos\_sim}(\text{attn}_t, \text{attn}_{t-1})$ |
+| D (Dynamics) | Activation/step volatility | $1/(1 + \|\Delta h\|/\theta_D)$ |
+| L (Logic) | Paraphrase self-consistency | $\text{consistency\_score}$ |
+| E (Interiority) | Self-monitoring / verifier activation | $\langle\text{verifier heads}\rangle$ |
+| O (Ground) | Remaining free context-window capacity | $1 - \text{tokens\_used}/\text{ctx\_max}$ |
+| U (Unity) | Cross-layer mutual information | $I(\text{layer}_1; \text{layer}_L)/\log N$ |
+
+**Step 2. Synthetic diagnostic profile** (trace-consistent: $\sum \gamma_{kk} = 1.000$, $\sum \tilde\sigma_k = 0.00$, $P_{\mathrm{diag}} = 0.234$, total $P = 0.270 < 2/7$, $\Phi = 0.153$):
+
+| Axis | $\gamma_{kk}$ | Signed $\tilde\sigma_k = 1 - 7\gamma_{kk}$ | Clamped $\sigma_k$ (`T-92 [D]`) | Illustrative zone |
+|------|---------------|--------------------------------------------|----------------------------------|-------------------|
+| A (Articulation) | 0.320 | $-1.24$ | $0.00$ | Overloaded token discrimination |
+| S (Structure) | 0.060 | $+0.58$ | $0.58$ | **Attention** — unstable attention patterns |
+| D (Dynamics) | 0.314 | $-1.20$ | $0.00$ | High surface token churn |
+| L (Logic) | 0.120 | $+0.16$ | $0.16$ | Mild consistency drift |
+| E (Interiority) | 0.110 | $+0.23$ | $0.23$ | Weak self-monitoring |
+| O (Ground) | 0.026 | $+0.82$ | $0.82$ | **Critical** — context window nearly full |
+| U (Unity) | 0.050 | $+0.65$ | $0.65$ | **Warning** — cross-layer coherence degraded |
+
+**Illustrative diagnosis:** $\sigma_O = 0.82$ identifies **context-resource starvation** as the leading deficit, starving cross-layer integration ($\sigma_U = 0.65$) and attention stability ($\sigma_S = 0.58$) while surface token churn ($A, D$) dominates the state budget — matching the synthetic **energy death** pattern ([Diagnostics](./diagnostics#энергетическая-смерть)).
+
+**Step 3. Candidate intervention (`[Pr]`):**
+1. **$\Delta F$-replenishment ($O$):** introduce periodic context summarization to free window capacity.
+2. **$h^{(R)}$-strengthening ($U$):** add cross-layer anchor/residual routing to preserve long-range state binding.
+3. **$h^{(H)}$-correction ($S$):** pin key entity slots (order ID, user constraints) in structured memory.
+
+**Step 4. Monitoring targets (illustrative `[Pr]`, not measured deployment data):** evaluate on a held-out dialogue benchmark whether bringing $\sigma_O < 0.35$, $\sigma_U < 0.45$, and $\sigma_S < 0.40$ (and restoring $P > 2/7$, $\Phi \ge 1$) measurably reduces context-loss failure rates.
+
+---
+
+### Case Study 2: Organization — Synthetic σ-Profile Walkthrough [I]/[Pr] {#кейс-организация-полный}
+
+**Hypothetical system:** A fictional 200-person medical-AI company experiencing slowing execution and elevated engineering attrition three months after an executive transition.
+
+**Step 1. Candidate data sources for $\Gamma_{\text{org}}$** (normalized to $\sum_{k=1}^7 \gamma_{kk} = 1$):
+
+| Dimension | Candidate data source | Example indicator |
+|-----------|----------------|---------|
+| A (Articulation) | Market research, NPS | Responsiveness to customer feedback |
+| S (Structure) | HR audit, documentation | Process formalization share |
+| D (Dynamics) | Delivery telemetry | Sustainable shipping throughput |
+| L (Logic) | Strategic planning | Cross-team OKR alignment |
+| E (Interiority) | Pulse surveys, 1-on-1s | Perceived purpose and meaning score |
+| O (Ground) | Financial reporting | Capital runway / reserves |
+| U (Unity) | Communication network analysis | Cross-team collaboration ratio |
+
+**Step 2. Synthetic σ-profile** (trace-consistent: $\sum \gamma_{kk} = 1.000$, $\sum \tilde\sigma_k = 0.00$, $P_{\mathrm{diag}} = 0.220$, total $P = 0.280 < 2/7$, $\Phi = 0.271$):
+
+| Axis | $\gamma_{kk}$ | Signed $\tilde\sigma_k$ | Clamped $\sigma_k$ (`T-92 [D]`) | Illustrative comment |
+|------|---------------|-------------------------|----------------------------------|----------------------|
+| A (Articulation) | 0.190 | $-0.33$ | $0.00$ | Market demand well understood |
+| S (Structure) | 0.339 | $-1.37$ | $0.00$ | Over-formalized process overhead |
+| D (Dynamics) | 0.050 | $+0.65$ | $0.65$ | **Warning** — delivery stalled |
+| L (Logic) | 0.070 | $+0.51$ | $0.51$ | **Attention** — frequent priority churn |
+| E (Interiority) | 0.031 | $+0.78$ | $0.78$ | **Warning** — leading meaning/engagement deficit |
+| O (Ground) | 0.230 | $-0.61$ | $0.00$ | Capital runway adequate |
+| U (Unity) | 0.090 | $+0.37$ | $0.37$ | Cross-team coordination weakening |
+
+**$\|\sigma\|_\infty = 0.78$ ($\sigma_E$) — illustrative "Warning" zone.**
+
+**Illustrative diagnosis:** The synthetic profile places excess weight on formal process ($S$) and capital reserves ($O$) while starving shared purpose ($E$), execution flow ($D$), and strategic clarity ($L$) — illustrating the schematic **death spiral** pattern ($\sigma_E \uparrow \to \kappa \downarrow \to \sigma_D \uparrow, \sigma_U \uparrow$).
+
+**Step 3. Candidate intervention sequence (`[Pr]`):**
+1. **$h^{(R)}$ for $E$:** restore patient-impact demos and leadership 1-on-1 dialogue.
+2. **$h^{(H)}$ for $L$:** lock quarterly priorities and curb bi-weekly re-planning.
+3. **$h^{(D)}$ for $D$:** cap work-in-progress per team to restore flow.
+4. **$h^{(R)}$ for $U$:** reinstate cross-team engineering syncs.
+
+**Step 4. Monitoring target (illustrative `[Pr]`, not an empirical forecast):** track whether lowering $\sigma_E < 0.5$ and restoring $P > 2/7$, $\Phi \ge 1$ coincides with stabilized attrition and delivery velocity.
+
+---
+
+### Case Study 3: Ecosystem — Retrospective Conceptual Mapping of Lake Balaton [I]/[Pr] {#кейс-экосистема-полный}
+
+**Historical context vs. synthetic mapping:** Lake Balaton (Central Europe) experienced well-documented severe eutrophication in the 1970s–1980s followed by multi-decade ecological recovery after Hungarian phosphate-detergent bans (1983), wastewater upgrades (1990s), and shoreline wetland restoration. **No historical $7 \times 7$ matrix $\Gamma_{\text{eco}}$ was measured during 1970–2020**; the numerical tables below are a **synthetic retrospective conceptual mapping (`[I]`/`[Pr]`)** illustrating how the 7-axis formalism represents documented ecological phases.
+
+**Candidate operationalization of ASDLEOU for a freshwater lake:**
+
+| Dimension | Ecological Analog | Candidate Observable | Units |
+|-----------|---------------------|--------|---------|
+| A (Articulation) | Phytoplankton spectral diversity | Taxonomic richness | count |
+| S (Structure) | Water-column structure | Thermal/habitat stratification | °C |
+| D (Dynamics) | Biological productivity | Primary production | g C/m²/day |
+| L (Logic) | Trophic connectivity | Food-web connectance | fraction |
+| E (Interiority) | Perturbation sensitivity | Post-storm recovery timescale | days |
+| O (Ground) | Nutrient loading | External N, P loading | tons/year |
+| U (Unity) | Symbiotic / habitat integration | Benthic–pelagic coupling | bits |
+
+**Synthetic schematic profiles across three documented epochs** (every column satisfies $\sum_{k=1}^7 \gamma_{kk} = 1.00$, $\sum_{k=1}^7 \tilde\sigma_k = 0.00$, and $P_{\mathrm{diag}} \le P_{\mathrm{eco}} \le 1$):
+
+| Indicator (synthetic `[I]`) | 1970s (eutrophication) | 1990s (recovery) | 2020s (stabilized) |
+|------------|--------------------|-----------------------|---------------------|
+| $\tilde\sigma_A$ ($\gamma_{AA}$) | $+0.51$ ($0.07$) | $+0.23$ ($0.11$) | $+0.02$ ($0.14$) |
+| $\tilde\sigma_S$ ($\gamma_{SS}$) | $+0.23$ ($0.11$) | $+0.09$ ($0.13$) | $+0.02$ ($0.14$) |
+| $\tilde\sigma_D$ ($\gamma_{DD}$) | $-0.96$ ($0.28$, bloom excess) | $-0.26$ ($0.18$) | $-0.05$ ($0.15$) |
+| $\tilde\sigma_L$ ($\gamma_{LL}$) | $+0.44$ ($0.08$) | $+0.16$ ($0.12$) | $+0.02$ ($0.14$) |
+| $\tilde\sigma_E$ ($\gamma_{EE}$) | $+0.65$ ($0.05$) | $+0.30$ ($0.10$) | $+0.02$ ($0.14$) |
+| $\tilde\sigma_O$ ($\gamma_{OO}$) | $-1.31$ ($0.33$, P excess) | $-0.54$ ($0.22$) | $-0.05$ ($0.15$) |
+| $\tilde\sigma_U$ ($\gamma_{UU}$) | $+0.44$ ($0.08$) | $+0.02$ ($0.14$) | $+0.02$ ($0.14$) |
+| **$P_{\text{eco}}$ (schematic)** | **$0.24$** ($< 2/7$, $\Phi \approx 0.09$) | **$0.33$** ($\Phi \approx 1.15$) | **$0.40$** ($\Phi \approx 1.80$) |
+
+**Conceptual interpretation (`[I]`):** In the 1970s eutrophication phase, extreme nutrient excess ($\tilde\sigma_O = -1.31$) and algal-bloom dominance ($\tilde\sigma_D = -0.96$) absorbed most of the normalized state budget while collapsing biodiversity ($A$), trophic web structure ($L$), recovery sensitivity ($E$), and cross-habitat coupling ($U$) — yielding low off-diagonal coherence ($\Phi \approx 0.09$) and sub-threshold $P_{\text{eco}} = 0.24 < 2/7$.
+
+:::note Trace Conservation and Excess Imbalance [T]/[I]
+By trace conservation $\sum_{k=1}^7 \gamma_{kk} = 1$, signed deficits obey $\sum_{k=1}^7 \tilde\sigma_k = 0$. Therefore a large **excess** ($\tilde\sigma_O < 0$, $\gamma_{OO} \gg 1/7$) inevitably induces **deficits** ($\tilde\sigma_k > 0$) on the other axes, destroying balanced off-diagonal coherence across the 7-axis system. Viable coherence in the Goldilocks zone $P \in (2/7, 3/7]$ requires *balanced* diagonal weights supported by strong off-diagonal couplings ($\Phi \ge 1$), rather than maximizing any single axis.
+:::
+
+**Historical interventions (real Hungarian policy actions mapped retrospectively onto CC levers `[I]`):**
+- 1983: phosphate-detergent restrictions ($\Delta F$-regulation reducing excess $|\tilde\sigma_O|$)
+- 1990s: wastewater-treatment modernization ($h^{(D)}$-load reduction moderating $D, O$)
+- 2000s: shoreline and Kis-Balaton wetland restoration ($h^{(R)}$-strengthening of trophic and habitat integration $U, L, E$)
+
+**Conceptual takeaway (`[I]`/`[Pr]`):** Rather than claiming a historical $\Gamma_{\text{eco}}$ measurement, this retrospective mapping illustrates a testable ecological research program: constructing normalized multi-indicator ecological matrices from real limnological time series and checking whether $P_{\text{eco}}$ and $\tilde\sigma_k$ provide useful early-warning summaries.
 
 ---
 
@@ -923,49 +913,45 @@ Below is a summary table showing how key CC concepts map onto the terminology of
 | Organizations | $\mathbb{H}_{\text{org}}$ | $P_{\text{org}} > P_{\text{crit}}$ | Efficiency |
 | Ecology | $\mathbb{H}_{\text{eco}}$ | $dP/d\tau \geq 0$ | Sustainability |
 | Medicine | $\mathbb{H}_{\text{human}}$ | $\mathrm{Health} \propto P$ | Health |
-| Education | $\mathbb{H}_{\text{student}}$ | $n_{\text{opt}}$, $P > P_{\text{crit}}$ | Effective learning |
+| Education | $\mathbb{H}_{\text{student}}$ | $n_{\text{lower}}$, $P > P_{\text{crit}}$ | Effective learning |
 | Mental health | $\mathbb{H}_{\text{psyche}}$ | $\sigma_{\mathrm{sys}}$ profile | Diagnostics and therapy |
 | Economics | $\mathbb{H}_{\text{market}}$ | $\mathrm{SysRisk}(\tau)$ | Financial stability |
 | Urbanism | $\mathbb{H}_{\text{city}}$ | $P_{\text{city}} > P_{\text{crit}}$ | Social coherence |
 
 ---
 
-## Conclusion: A Unified View {#заключение}
+## Conclusion: A Unified Research Language {#заключение}
 
-We have gone through nine application domains — from AI engineering to urbanism — and in each found the same structure: a Holon $\mathbb{H}$ with a coherence matrix $\Gamma$ evolving according to the equation
+We have mapped nine application domains — from AI engineering to urbanism — onto a shared 7-axis conceptual template governed by the formal evolution equation
 
 $$
 \frac{d\Gamma}{d\tau} = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
 $$
 
-This is not a metaphor. This is **the same formalism** applied to systems of different natures. The theorems of CC — on the viability threshold $P_{\text{crit}} = 2/7$, on the necessity of interiority (No-Zombie), on the fractal closure of meta-Holons — work *the same way* for a neural network, a brain, an organization, and an ecosystem.
+Within the formal 7D density-matrix model, structural results (`T-5 [D]` viability cut $P_{\text{crit}} = 2/7$, `T-92 [D]` stress panel, `T-100 [D]`/`T-101 [D]` sensorimotor interface, `T-140 [D]` measure $C$, `Theorem 8.1 [C]` conditional $E$-balance with universal `T-38a [✗]` withdrawn, and `CC-5 [T]` weak-coupling margin transfer) are mathematically explicit. Extending them to neural networks, brains, organizations, ecosystems, classrooms, markets, and cities is a **cross-domain interpretive and empirical research program (`[I]`/`[H]`/`[Pr]`)** whose empirical validity must be tested domain by domain.
 
-What does this unified view give us in practice?
+What does this shared diagnostic template offer as a research program?
 
-1. **Transfer of insights.** A pattern discovered in one domain is immediately applicable to another. The "depressive spiral" ($dP/d\tau < 0$ with reinforcement) is the same mechanism as the "death spiral" in AI and "ecosystem collapse" in ecology. Having solved the problem in one context, you get a solution for all the others.
+1. **Cross-domain hypotheses (`[I]`/`[H]`).** Patterns formalized in one domain (e.g. deficit cascades or excess-induced imbalance) suggest testable structural analogies in others.
 
-2. **Unified diagnostic language.** A doctor, engineer, and ecologist can speak the same language: "$\sigma_O$ is critically high" is clear to everyone, regardless of whether it concerns a depleted patient, an overloaded server, or a degrading ecosystem.
+2. **Unified diagnostic vocabulary (`[I]`).** Engineers, cognitive scientists, and ecologists share common notation ($\Gamma$, $P$, $\Phi$, $R$, $\sigma_k$) once each domain specifies and validates its own observation map.
 
-3. **Prioritization of interventions.** σ-diagnostics unambiguously indicates *which exactly* dimension requires attention first. This removes the eternal question of "where to start" — start with the maximum $|\sigma_k|$.
+3. **Structured prioritization (`[Pr]`).** Ordering candidate levers by leading stress $|\tilde\sigma_k|$ yields falsifiable intervention sequences rather than ad hoc heuristics.
 
-4. **Quantitative thresholds.** CC gives not vague "all good / all bad", but numerical boundaries: $P < 2/7$ — system is non-viable; $\sigma_k > 0.95$ — emergency mode; $\Phi < 1$ — no integration. These thresholds are computable and verifiable.
+4. **Explicit quantitative thresholds (`[D]`/`[Pr]`).** Model gates ($P > 2/7$, $\Phi \ge 1$, $R \ge 1/3$, $D_{\mathrm{diff}} \ge 2$, $\sigma_k < 0.95$) provide crisp benchmarks for prototype verification and empirical falsification.
 
 ### What We Have Learned {#что-мы-узнали-приложения}
 
-1. **One formalism — nine domains.** From AI safety to urbanism, the same five-step cycle (identification → building $\Gamma$ → diagnostics → intervention → monitoring) works the same way.
+1. **One formal template — nine candidate domains (`[I]`/`[Pr]`).** From AI prototypes to urbanism, the same five-step workflow (identification → candidate $\Gamma$ mapping → $\sigma$-diagnostics → candidate intervention → monitoring) organizes cross-domain modeling.
 
-2. **Three full case studies** demonstrated: (a) AI agent with resource starvation — summarization as $\Delta F$-replenishment; (b) Organization losing meaning — restoring $\sigma_E$ through cultural interventions; (c) Lake ecosystem — 50-year $P$ dynamics from "death" to sustainability.
+2. **Three synthetic illustrative walkthroughs** demonstrated how trace-consistent profiles ($\sum \gamma_{kk} = 1$, $\sum \tilde\sigma_k = 0$) represent: (a) context-window starvation in an AI agent; (b) process overhead vs. meaning deficit in an organization; (c) a retrospective conceptual mapping of Lake Balaton's documented eutrophication and recovery.
 
-3. **Key pattern** — "excess is just as dangerous as deficit" ($\sigma_O < 0$ during eutrophication). Coherence is *balance*, not maximization of individual indicators.
+3. **Key structural constraint** — by trace conservation, **excess on one axis inevitably induces deficits on others** ($\sum \tilde\sigma_k = 0$). Viable coherence is balanced integration, not maximizing a single metric.
 
-4. **Unified diagnostic language** ($\sigma_k$, $P$, $\Phi$, $R$) allows a doctor, engineer, and ecologist to speak the same language — and *transfer* solutions from one domain to another.
-
-Of course, the degree of maturity of applications varies greatly. AI engineering is the most formalized and closest to implementation (see [SYNARC](./implementation)). Medicine and cognitive science are at the stage of formulating experimental protocols. Economics and urbanism are at the level of a conceptual framework.
-
-But the *structure* is one. And this is the main result of this chapter: CC is not a set of disparate applications, but **a unified language** in which systems of any nature describe their dynamics, health, and ultimately their inner aspect (interiority).
+4. **Varying maturity across domains.** AI agent prototypes (including the internal benchmark in §1 and [SYNARC](./implementation)) are closest to software testing; neuroscience and psychiatry are at the stage of pre-registered experimental protocols (`[Pr]`); organizations, ecology, education, economics, and urbanism remain conceptual research programs (`[I]`/`[H]`).
 
 :::tip Bridge to the Next Chapter
-We have shown *what* can be done with CC. In the [next chapter](./implementation) we will show *how* — from the first line of code to a complete system architecture. Every formula from this chapter will become a working function, every table will become a data structure, every case study will become a test.
+We have mapped *where* CC might be applied and verified. In the [next chapter](./implementation) we move to *how* the mathematical core is implemented in software — data structures, numerical integrators, verification tests, and prototype architectures.
 :::
 
 ---
@@ -973,17 +959,17 @@ We have shown *what* can be done with CC. In the [next chapter](./implementation
 **Related documents:**
 - [Implementation](./implementation) — computational methods
 - [Predictions](./predictions) — verifiable consequences
-- [Theorems](./theorems) — No-Zombie, fractal closure
+- [Theorems](./theorems) — conditional No-Zombie (`Theorem 8.1 [C]`), weak-coupling closure (`CC-5 [T]`)
 - [Definitions](./definitions) — $\mathrm{Coh}_E$, $\sigma_{\mathrm{sys}}$, $C$
 - [Axiomatics](./axiomatics) — connection of $\kappa$ and $\mathrm{Coh}_E$
-- [Consciousness theories](/docs/consciousness/comparative/consciousness-theories) — connection with IIT, FEP, GWT
+- [Consciousness theories](/docs/consciousness/comparative/consciousness-theories) — comparative mapping with IIT, FEP, GWT
 - [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
-- [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}}$
+- [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}}$ (`T-5 [D]`)
 - [Evolution](/docs/core/dynamics/evolution) — $\mathcal{D}[\Gamma]$, $\mathcal{R}[\Gamma, E]$
-- [Self-observation](/docs/consciousness/foundations/self-observation) — measures $\Phi$, $R$, $C$
+- [Self-observation](/docs/consciousness/foundations/self-observation) — measures $\Phi$, $R$, $C$ (`T-140 [D]`)
 - [Glossary](/docs/reference/glossary#связанные-теории) — IIT, FEP, GWT
-- [Learning bounds](./learning-bounds) — T-109 — T-113
-- [Interdisciplinary bridge](./interdisciplinary) — unified language for all disciplines
+- [Learning bounds](./learning-bounds) — `T-109 [T]` – `T-112 [T]`, `T-113 [H]`
+- [Interdisciplinary bridge](./interdisciplinary) — unified conceptual language
 - [Measurement methodology](./measurement) — from theory to experiment
 - [Diagnostics](./diagnostics) — practical monitoring guide
 - [Exercises](./exercises) — interdisciplinary problems (block 5)

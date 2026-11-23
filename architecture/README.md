@@ -1,107 +1,58 @@
-# architecture/ — лаборатории теории
+# `architecture/` — TALOS Architecture Specification & Reference Emulator
 
-Каждая лаба — воспроизводимый прибор: пререгистрированный вопрос → счёт →
-честный вердикт со статусом ([Т]/[С]/[Г]/[И]/[✗]). Запуск: `python3
-architecture/<файл>.py`. Ниже — карта «какая лаба что установила»
-(однострочники; подробности в докстрингах и в `RECON-TOTAL.md`).
+This directory contains the technical LaTeX specification of **TALOS** (the seven-mode coherence-flow architecture for UHM holons, co-designed with SYNARC-$\Omega$), its verified V0 reference emulator, and supporting mathematical/computational laboratories.
 
-## Программные документы
-- `RECON-TOTAL.md` — программа тотальной реконструкции (пласты П1–П5,
-  пререгистрации, очередь приборов, статусы).
+The Russian 1:1 companion specification lives in [`../architecture-ru/`](../architecture-ru/).
 
-## Интериорность и вертикаль (П1, П3, П4)
-- `interiority_lab.py` — форм-константы Клювера из механизма (лог-полярная
-  V1) [Т-вывод]; маршрут ворот = функция профиля пористости (DMT
-  unity<conn<ego 56/60 vs псилоцибин conn<ego<unity 43/60) [С]; при R=1/(7P) пороги P>3/7 и R<1/3 равносильны [Т];
-  в состоянии, обозначенном «единство», связность модели выросла в 8,6 раза (60/60)
-  [С]; сущности → корпусный различающий тест (протокол в RECON-TOTAL) [О];
-  Гроф БПМ II–IV = кривая сопротивления, различие маршрутов в РАЗРЕШЕНИИ
-  (хвост 6% vs 47% после единства) [С]; обратный маршрут: гистерезис
-  Δσ=+0.16/+0.19 (окно интеграции), LIFO 75% [С]. Пять артефактов прибора
-  пойманы и оставлены в тексте.
-- `holarchy_ladder_lab.py` — SAD_MAX=3 каркас [Т]; захват перколяционен,
-  защита = живой R-фильтр (порог давления ×2), критерии захвата и «эго-растворения»
-  используют один и тот же порог модели; связь с опытом требует проверки; уровни холархии = каскад НЧ-фильтров
-  (прецессия — полоса культурных холонов [Г], галактический год вне полос
-  живой вертикали [И]).
-- `historical_capture_probe.py` — триптих P3b: громкие случаи p=0.081
-  (survivorship-намёк); полный реестр GWF N=248 × мировые шоки — НОЛЬ
-  p=0.66; локальный спад страны (WB per-capita, within-country нуль) —
-  СИГНАЛ −1.70 пп, z=−4.30 (упреждение z=−2.56) [С]. Восприимчивость поля
-  ЛОКАЛЬНА — социальный близнец «точка, не население» (§75c). Данные:
-  `data/`.
+## Core Architecture Specification
 
-## Символический кристалл (П2) — семейство symbolica_*
-- `symbolica_g2.py` — астрология (12 знаков/7 планет/аспекты) ≅ корневая
-  система G₂=Aut(𝕆) [Т]; полярность знаков = чередование длин корней.
-- `symbolica_iching.py` — И Цзин = F₂-тень того же кристалла: семья триграмм
-  = градуировка веса Хэмминга [Т]; 64 = F₂⁶.
-- `symbolica_kabbalah.py` — 3+7+12=22 (Сефер Йецира) = страты кристалла;
-  счёты [Т], буквенные соответствия [И].
-- `symbolica_atlas.py` — атлас 17+ систем: эннеаграмма = арифметика 1/7 [Т];
-  геомантия = F₂⁴ [Т]; Ло Шу единственен (орбита D₄) [Т]; 36 деканов ⊥ 64
-  дверям (0 общих границ) [Т]; нумерология = mod-9 гомоморфизм [Т], 9⊥7;
-  Кибалион — разрешён (см. ниже).
-- `symbolica_kybalion.py` — 7 герметических принципов = 7 СЛОЁВ-ЗАКОНОВ
-  машинерии (монизм/холархия/динамика/полярность/циклы/поток/роли), НЕ
-  7 осей состояния: категориальный тест «что кванторизует принцип» [С];
-  ловушка «верный счёт/неверная категория» поймана вторично.
-- `symbolica_trigrams.py` — 8 триграмм = F₂³ = несущая группа октонионного
-  базиса: умножение единиц 𝕆 ложится на построчный XOR (Кэли–Диксон,
-  вычислительно) [Т]; Земля=единица, 7 подвижных = точки Фано = голоса;
-  семья Вэнь-вана = арифметика весов, круг Фуси = дополнения, 64 = F₂⁶ —
-  теоремы, не предание [Т]; инь=0 — единственная конвенция [И].
-- `symbolica_timewave.py` — TWZ Маккены деконструирован: три канонических
-  хода по 64 — Кинг Вэнь «рассказ» (пары, z=+2.0), колесо «календарь»
-  (грей-ход 34·16·8·4·2, z=−8.4), Мавандуй «словарь» (блоки 1.75/стыки
-  3.25, z=−7.6) [Т-спектры]; «новизна» — свойство хода, не узлов [И].
-- `symbolica_calibration.py` — размерность G₂-орбиты зависит от стабилизатора;
-  фиксированное наблюдение может меняться вдоль орбиты. Калибровка
-  по отчётам о переживании остаётся гипотезой.
-- `symbolica_frame_bundle.py`, `symbolica_stratification.py` — расслоение
-  фреймов и стратификация (см. докстринги).
+- [`main.tex`](main.tex), [`references.bib`](references.bib), [`sections/`](sections/) — English specification of TALOS (`pdflatex` / `latexmk`).
+- [`../architecture-ru/main.tex`](../architecture-ru/main.tex) — Russian 1:1 specification (`xelatex`).
 
-## Колесо, HD и родственные системы
-- `hd_lab.py` — вскрытие Human Design: типы = арифметика центров; колесо =
-  Грей-структура (p=5e-4).
-- `hd_circuits_lab.py` — контуры HD ⊥ колесу (тройной нуль: корни p=0.53,
-  вес p=0.25, голоса p=0.57) — контур = слой проводки, не решётки [С].
-- `hd_seasonal_audit.py` — сезонный аудит эфемеридного слоя.
-- `genetics_lab.py` — 64 кодона vs 64 гексаграммы: сигнатура вырожденности
-  НЕ переносится (код: одна wobble-позиция 67%; колесо: жёсткое 100/0 на
-  линиях 3-4) [С]; мост ген→здоровье — через ритмы, не кодоны.
-- `wheel_relations_lab.py`, `sky_lab.py`, `falsify_lab.py`,
-  `fate_lab.py` — отношения колеса, небо, фальсификация, судьба (см.
-  докстринги).
+### Key Verified Mathematical & Engineering Primitives
 
-## Категориальный и системный каркас
-- `category_lab.py/2/3` — категориальные гарантии Ч.XII–XIV: классификация=
-  копредел, Я=неподвижная точка (Брауэр=Лоувер), операдная сборка.
-- `holarch_lab.py` — холон ⟨Γ,B,φ,ℒ,C⟩, HL01–14; попарная разводка не PSD;
-  SAD_MAX=3.
-- `prime_radiant.py` — прайм-радиант: 66 гипотез (65 подтв.).
-- `lens_lab.py` — идеальное самоописание: d=7 ⟹ 8 MUB ⟹ 48 чисел; натал
-  достаёт 32.3/48; фазы несут половину.
-- `heptacode.py`, `homoholograph.py`, `psyche_lab.py`, `interp_lab.py`,
-  `interp_verify.py`, `symmetry_lab.py`, `talos_v0_emulator.py`,
-  `recon_audit_lab.py` — код семёрки, мост HD→Γ, психика, интерпретации,
-  симметрии, эмулятор Ω⁷ (см. докстринги).
+1. **Canonical Singer cyclic Fano plane $\mathrm{PG}(2,2)$** on `(A, S, D, L, E, U, O) = (1..7)` (0-indexed `0..6`):
+   - Seven lines: `{A,S,L}`, `{S,D,E}`, `{D,L,U}`, `{L,E,O}`, `{E,U,A}`, `{U,O,S}`, `{O,A,D}`.
+   - Uniqueness at $N=7$ across all prime powers $q \ge 2$ via binary incidence-code fusion (`FoundationalBounds.pg2_5_refutes_N31_hamming_fusion`, `FoundationalBounds.pg2EvenHammingUniqueSeven`, verified in `website/research/operational-reconstruction/verify_foundational_bounds.py`).
+2. **Binary coding duality over $\mathbb{F}_2$:**
+   - The $7 \times 7$ Fano incidence matrix $M$ ($\operatorname{rank}_{\mathbb{F}_2}(M)=4$, rows = weight-3 lines) generates the Hamming $[7,4,3]$ code.
+   - The $3 \times 7$ parity-check matrix $H$ ($\operatorname{rank}_{\mathbb{F}_2}(H)=3$, rows = three independent weight-4 line complements spanning the dual simplex code $[7,3,4]$) satisfies $H M^T \equiv 0 \pmod 2$ and uniquely maps all 7 single-sector faults to distinct nonzero 3-bit syndromes.
+3. **Genuine Fano pinching & discrete covariance:**
+   - $\mathcal{P}_{\mathrm{Fano}}(\Gamma) = \frac{1}{3}\sum_{\ell=1}^{7} \Pi_\ell \Gamma \Pi_\ell$ preserves all populations and scales every off-diagonal coherence by $1/3$, yielding exact $\Phi$-contraction $\Phi(\mathcal{P}_{\mathrm{Fano}}(\Gamma)) = \frac{1}{9}\Phi(\Gamma)$ on all $\Gamma \in \mathcal{D}(\mathbb{C}^7)$.
+   - The Fano Lindblad dissipator $\mathcal{D}_{\mathrm{Fano}}[\Gamma] = \gamma(\mathcal{P}_{\mathrm{Fano}}(\Gamma) - \Gamma)$ decays off-diagonals at uniform rate $2\gamma/3$ and is covariant under the discrete collineation group $\mathrm{PSL}(2,7)$ (order 168) and diagonal phase rephasing $U(1)^7$ — **not** under continuous $G_2$ rotations of the coordinate basis; hence all $48$ real parameters of $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ are dynamically active.
+4. **Canonical observables & thermodynamics in bits:**
+   - Exact integration $\Phi = (P - P_{\mathrm{diag}})/P_{\mathrm{diag}}$ (reducing to $7P - 1$ only on uniform diagonals $\gamma_{kk}=1/7$), reflection $R = 1/(7P)$ ($R \ge 1/3 \iff P \le 3/7$), $\mathrm{Coh}_E = (\gamma_{EE}^2 + 2\sum_{j\neq E}|\gamma_{Ej}|^2)/P$, $D_{\mathrm{diff}} = 1 + 6\,\mathrm{Coh}_E$, and exact von Neumann entropy $S_{\mathrm{vN}} = -\operatorname{Tr}(\Gamma \log_2 \Gamma) \le \log_2 7 \approx 2.807$ bits ($k_B T \ln 7 \approx 8.06 \times 10^{-21}$ J at 300 K).
 
-## Данные
-- `data/gwf_starts_matched.tsv`, `data/wb_pcap_growth_matched.tsv` —
-  слепки внешних датасетов (GWF 1.2, World Bank) для воспроизводимости
-  `historical_capture_probe.py` v3.
+## Reference V0 Emulator
 
+Run the NumPy-only reference kernel and self-test suite:
 
-## Исследования символических систем
+```bash
+PYTHONDONTWRITEBYTECODE=1 python3 -B architecture/talos_v0_emulator.py
+```
 
-Тексты о символических системах и Ozar, профильные протоколы и аудит
-перенесены в [ozar/research](https://github.com/old8man/ozar/tree/main/research).
-Математические исследования УГМ остаются в этом корпусе. Референсные
-вычислительные лаборатории (`homoholograph.py`, `symbolica_*.py`, `hd_*.py`)
-и исходные данные пока сохраняют свои имена и расположение здесь: это
-исполняемые свидетельства, на которые ссылается перенесённый материал.
-Генератор иллюстрации «Три геометрические вселенные» теперь находится в
-`ozar/research/tools/universes_svg.py`; изображения — в `ozar/research/assets/`.
+The emulator verifies:
+1. Canonical Singer Fano $S(2,3,7)$ incidence, 21 mediators, $M$/$H$ duality ($H M^T \equiv 0 \pmod 2$), and bijective 3-bit single-sector syndrome decoding.
+2. Exact Fano pinching ($\Phi \to \Phi/9$), Fano Lindblad dissipator equivalence ($\mathcal{D}_{\mathrm{Fano}} = \frac{2}{3}\mathcal{D}_{\mathrm{atom}}$), discrete $\mathrm{PSL}(2,7)\ltimes U(1)^7$ covariance, and explicit non-covariance under continuous $G_2$ rotations.
+3. Exact canonical observables on both uniform and non-uniform diagonal states (verifying $\Phi \neq 7P - 1$ off the uniform stratum) and $S_{\mathrm{vN}} \le \log_2 7$ bits.
+4. Canonical nonlinear anchored self-model $\varphi_J(\Gamma) = (1 - R(\Gamma))\mathcal{P}_{\mathrm{Fano}}(\Gamma) + R(\Gamma)|\psi\rangle\langle\psi|$, CPTP Strang-split attractor convergence inside the full 4-gate viable window, unitary spectrum conservation, and analytical power-port severance latency.
+5. Thermodynamic entropy production rate in bits ($\dot S_{\mathcal{D}} > 0$, $\Delta\tau$-independent).
+6. Vectorized SIMT ecology batch (`1000` holons, `0.784 MB`).
 
-Опись переноса с исходными SHA-256: [Ozar `414129b`](https://github.com/old8man/ozar/blob/414129b3bb4a7b93eb5f8996d47f0c72f75d4848/research/migration.json).
+## Building the Specifications
+
+```bash
+# English specification
+cd architecture && pdflatex main.tex && bibtex main && pdflatex main.tex && pdflatex main.tex
+
+# Russian 1:1 specification (requires XeLaTeX + CMU OpenType fonts)
+cd architecture-ru && xelatex main.tex && bibtex main && xelatex main.tex && xelatex main.tex
+```
+
+## Supporting Mathematical Laboratories
+
+- `fano_verify.py`, `symmetry_lab.py` — finite geometry, Fano incidence, and symmetry verification.
+- `holarch_lab.py`, `holarchy_ladder_lab.py`, `interiority_lab.py`, `wf_toy_a1.py` — holon dynamics, hierarchical composition, and toy dynamical models.
+- `category_lab.py`, `category_lab2.py`, `category_lab3.py` — categorical colimit, fixed-point, and operadic composition scripts.
+- `prime_radiant.py`, `prime_radiant.verum`, `prime-radiant-rs/` — Prime Radiant reference implementations (Python, Verum, Rust).
+- `boundary_svg.py`, `chord_svg.py`, `fold_svg.py`, `turnover_svg.py` — technical SVG figure generators.

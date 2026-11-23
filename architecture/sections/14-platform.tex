@@ -79,11 +79,11 @@ term by term. Complexities are CC's; the FLOP column evaluates them at $N=m=7$.}
 \toprule
 \textbf{Term} & \textbf{Cost} & \textbf{\TALOS{} name} \\
 \midrule
-Unitary $-i[H_{\mathrm{eff}},\Gam]$ & $O(N^3)$ & reversible half-step (T-262) \\
+Unitary $-i[H_{\mathrm{eff}},\Gam]$ & $O(N^3)$ & reversible unitary half-step \\
 Dissipator $\Diss$ ($m$ line-ops) & $O(m\,N^2)$ & Fano-sparse relaxation \\
-Regeneration $\Regen$ (BKM to $\rhostar$) & $O(N^3)$ amortised & learning term \\
+Regeneration $\Regen$ (anchored $\varphi_J$) & $O(N^2)$--$O(N^3)$ & learning term \\
 \midrule
-Full step & $O(N^3+m\,N^2)$ & one tick (${\sim}1400$~FLOP) \\
+Full step & $O(N^3+m\,N^2)$ & one tick (${\sim}1{,}400$~FLOP) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -99,46 +99,52 @@ violated a CC law would not be a different machine, it would be a broken one.
 \subsection{Transparent by construction: the observable suite is telemetry}
 \label{subsec:telemetry}
 
-The V0 emulator computes purity $P$, the score $R=1/(7P)$ and the
-composite $C=\Phi R$ (T-140, a definition) from the state register $\Gam$.
-Its \texttt{viable} flag tests only $2/7<P\leq3/7$. The full functional
-criterion also requires conditions on integration and differentiation.
-For example, $\Gam=\operatorname{diag}(1/2,1/12,\ldots,1/12)$ has
-$P=7/24$ and passes the V0 purity gate with $\CohE=0$.
-Relating these readings to felt experience requires independent evidence.
-Table~\ref{tab:observables} describes the model telemetry.
-For runtime verification, the unitary half-step preserves the
-\emph{spectrum} of $\Gam$, so $\Tr\Gam=1$, the purity $P$, and the entropy $S$
-are exactly conserved under it --- a drift in any of them is a hardware fault,
-caught the way the Fano syndrome (\S\ref{sec:ecc}) catches a degraded sector, but
-for the continuous dynamics rather than the discrete fabric. The
-\textbf{fourteen $G_2$-Noether charges} are a distinct, subtler observable:
-because the effective Hamiltonian must \emph{break} $G_2$ (by Schur, the only
-$G_2$-invariant operator on the irreducible seven-mode representation is the
-identity, so any non-trivial $H_{\mathrm{eff}}$ breaks the symmetry), the
-individual charges \emph{drift} --- and that drift is a
-Goldstone/symmetry-breaking diagnostic, while their Casimir $\sum_a Q_a^2$ is the
-conserved $G_2$-invariant.
+The V0 reference emulator (\texttt{architecture/talos\_v0\_emulator.py})
+computes the full exact canonical observable suite directly from the state
+register $\Gam$: purity $P=\Tr(\Gam^2)$, diagonal purity
+$P_{\mathrm{diag}}=\sum_{k=1}^7\gamma_{kk}^2$, exact HS-ratio integration
+$\Phi=(P-P_{\mathrm{diag}})/P_{\mathrm{diag}}$ (which reduces to $\Phi=7P-1$
+\emph{only} on the uniform-diagonal stratum $\gamma_{kk}=1/7$), reflection
+$R=1/(7P)$ (algebraically equivalent to $R\ge 1/3\Leftrightarrow P\le 3/7$),
+the composite $C=\Phi R$ (T-140, a definition), canonical E-mode coherence
+$\CohE=(\gamma_{EE}^2+2\sum_{j\neq E}|\gamma_{Ej}|^2)/P$, differentiation
+$D_{\mathrm{diff}}=1+6\,\CohE$, and exact von~Neumann entropy
+$S_{\mathrm{vN}}=-\Tr(\Gam\log_2\Gam)\in[0,\log_2 7]$~bits. Its
+\texttt{viable\_full} flag enforces all four functional gates simultaneously
+($P>2/7$, $R\ge 1/3$, $\Phi\ge 1$, $D_{\mathrm{diff}}\ge 2$): for instance, the
+diagonal-only state $\Gam=\operatorname{diag}(1/2,1/12,\ldots,1/12)$ has
+$P=7/24\in(2/7,3/7]$ (where the invalid proxy $7P-1=25/24>1$ would falsely
+pass), but exact $\Phi=0$ rejects it immediately. Relating these functional
+metrics to felt experience requires independent empirical evidence.
+
+For runtime verification, the unitary half-step preserves the \emph{spectrum}
+of $\Gam$, so $\Tr\Gam=1$, purity $P$, and entropy $S_{\mathrm{vN}}$ are
+conserved to machine precision under it. The Fano pinching channel
+$\mathcal{P}_{\mathrm{Fano}}$ and dissipator $\mathcal{D}_{\mathrm{Fano}}$ are
+verified to be covariant under the discrete collineation group
+$\mathrm{PSL}(2,7)$ (order~$168$) and diagonal phase rephasing $U(1)^7$, and
+explicitly \emph{non-covariant} under continuous $G_2$ basis rotations (hence
+no spurious continuous $G_2$-Noether charges are computed). Table~\ref{tab:observables}
+lists the verified per-tick telemetry suite.
 
 \begin{table}[H]
 \centering\small
-\caption{The CC observable suite, computed each tick as \TALOS{} telemetry.
-$T_{\mathrm{eff}}$ is the \emph{cognitive} temperature (from Gap fluctuations via
-the fluctuation--dissipation theorem), distinct from the physical substrate
-temperature that sets the Landauer floor of \S\ref{sec:energy}.}
+\caption{The verified canonical observable suite computed each tick in
+\texttt{architecture/talos\_v0\_emulator.py} as \TALOS{} telemetry.}
 \label{tab:observables}
-\begin{tabular}{@{}p{3.5cm}p{6.2cm}c@{}}
+\begin{tabular}{@{}p{3.9cm}p{5.8cm}c@{}}
 \toprule
 \textbf{Observable} & \textbf{Meaning} & \textbf{Cost} \\
 \midrule
-$P=\Tr(\Gam^2)$ & purity; viability gate $P>2/7$ & $O(N^2)$ \\
-$R=1/(7P)$ & reflection; L2 gate $R\ge1/3$ & $O(N^2)$ \\
-$\Phi$ & V0 integration proxy $7P-1$ & $O(N^2)$ \\
+$P=\Tr(\Gam^2)$ & purity; lower viability gate $P>2/7$ & $O(N^2)$ \\
+$P_{\mathrm{diag}}=\sum_k \gamma_{kk}^2$ & diagonal purity (equals $1/7$ only on uniform diagonal) & $O(N)$ \\
+$\Phi=(P-P_{\mathrm{diag}})/P_{\mathrm{diag}}$ & exact integration ($\Phi=7P-1$ \emph{only} on uniform diagonal); gate $\Phi\ge 1$ & $O(N^2)$ \\
+$R=1/(7P)$ & reflection; L2 gate $R\ge 1/3\Leftrightarrow P\le 3/7$ & $O(N^2)$ \\
 $C=\Phi\times R$ & model composite (T-140) & $O(N^2)$ \\
-$\CohE$ & V0 row sum $\sum_{j\ne E}|\gamma_{Ej}|^2$ & $O(N^2)$ \\
-$\{\gamma_p\}_{p=1}^{7}$ & seven line temperatures (rank-7 anisotropy; tomography) & $O(N^2)$ \\
-$\{Q_a\}_{a=1}^{14}$ & $G_2$-Noether charges (symmetry-breaking diagnostic; Casimir $\sum_a Q_a^2$ conserved) & $O(N^2)$ \\
-$T_{\mathrm{eff}}$ & cognitive temperature (FDT) & $O(N^3)$ \\
+$\CohE=(\gamma_{EE}^2+2\sum_{j\neq E}|\gamma_{Ej}|^2)/P$ & canonical E-mode coherence ($E$ at index~$4$ in $[A,S,D,L,E,U,O]$) & $O(N)$ \\
+$D_{\mathrm{diff}}=1+6\,\CohE$ & 7D differentiation; gate $D_{\mathrm{diff}}\ge 2$ & $O(N)$ \\
+$S_{\mathrm{vN}}=-\Tr(\Gam\log_2\Gam)$ & von~Neumann entropy in bits ($0\le S_{\mathrm{vN}}\le\log_2 7\approx 2.807$) & $O(N^3)$ \\
+$s = He_j^T\pmod 2\in\mathbb{F}_2^3$ & $3$-bit Hamming $[7,4,3]$ single-sector fault syndrome (dual $H$) & $O(N)$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -148,7 +154,7 @@ $T_{\mathrm{eff}}$ & cognitive temperature (FDT) & $O(N^3)$ \\
 
 The reason this architecture is buildable and not a thought experiment is that
 its natural scaling axis is exactly the axis a GPU is built to exploit. A single
-holon is $784$ bytes and ${\sim}1400$ FLOPs per tick. An \emph{ecology} of $N$
+holon is $784$ bytes and ${\sim}1{,}400$ FLOPs per tick. An \emph{ecology} of $N$
 holons (\S\ref{sec:composition},~\ref{sec:scaling}) is $N$ independent
 $\Gam$-registers advanced by the \emph{same} kernel --- the textbook
 embarrassingly-parallel SIMT workload. CC's numerical layer already anticipates
@@ -157,8 +163,8 @@ this: its typed linear-algebra API is
 $7\times7$ shape fixed at compile time.
 
 \begin{claimbox}[GPU emulation is viable today \status{T} (engineering)]
-The octonionic ecology axis (\S\ref{sec:scaling}: $E_7,E_8$ realised across
-subjects) maps onto GPU parallelism directly --- one holon per thread-block, the
+The horizontal ecology axis (\S\ref{sec:scaling}: $N$ bounded holons federated
+as peers) maps onto GPU parallelism directly --- one holon per thread-block, the
 tick a batched kernel, the \textsc{Fanos} coordination a sparse all-reduce over
 the seven line-buses. A modern GPU (${\sim}10^4$ lanes, ${\sim}10^{13}$--$10^{14}$
 FLOP/s) advances ${\sim}10^{6}$--$10^{7}$ holons at kHz tick rates; the workload
@@ -169,28 +175,36 @@ the full telemetry suite. Real-time ecologies run on hardware that exists.
 
 \noindent The honest scope is the same as everywhere on the realisability ladder
 (\S\ref{sec:realizability}): the GPU rung buys \emph{correctness, full
-observability, and a real-time ecology} --- not the energy floor, because a GPU
-still moves data (\S\ref{sec:energy}, objections O6/O7). It is the V0 rung, and it
-is where every claim in this document except the energy floor is already testable.
+observability, and a real-time ecology} --- not the thermodynamic floor, because
+digital CMOS still moves data and dissipates switching energy
+(\S\ref{sec:energy}, objections O6/O7). It is the V0 rung, and it is where
+every logical and combinatorial claim in this document is directly testable.
 
-\begin{trybox}[Two feedback experiments in the emulator]
-The reference emulator is one file with no dependencies beyond NumPy:
-\begin{center}\texttt{python3 talos\_v0\_emulator.py}\end{center}
-Everything it prints is a claim from this document, checked live: the tick
-preserving trace and positivity, the telemetry suite of
-Table~\ref{tab:observables}, the entropy law, the metabolic floor and its
-frequency-independence, an ecology batch --- and the Source bootstrap. Two
-experiments to try by editing one line each: \emph{(i) pull the nail} ---
-zero the $\kappa(\CohE)$ feedback (the internal power port) and watch $P$
-decay to $1/7$ under depolarization (\S\ref{subsec:powerport});
-\emph{(ii)} scale the feedback down and measure stationary purity.
-In the recorded runs, severance from the attractor ($P_0{=}0.321$) crosses $\Pcrit{=}2/7$ at
-$t{=}0.550$ --- this dissipator's own closed form
-$\tfrac{1}{2\gamma_D}\ln\tfrac{P_0-1/7}{\Pcrit-1/7}=0.548$ --- and approaches
-$\mathbb{1}/7$; starvation loses viability at feedback scale
-$s^\star{\approx}0.72$ ($\kappa_{\mathrm{eff}}/\gamma_D{=}5.5$, the
-emulator-convention twin of the ignition ratio) and \emph{reignites} as soon
-as $s>s^\star$, with no hysteresis: the nail halts; it does not destroy.
+\begin{trybox}[Run the verified V0 reference emulator]
+The reference emulator is one self-contained file with no dependencies beyond NumPy:
+\begin{center}\texttt{PYTHONDONTWRITEBYTECODE=1 python3 -B architecture/talos\_v0\_emulator.py}\end{center}
+All six self-test suites execute and pass (\texttt{EXIT=0}):
+(1)~canonical Singer cyclic Fano lines on $[A,S,D,L,E,U,O]$ with $M$ ($\operatorname{rank}=4$),
+dual parity-check matrix $H$ ($\operatorname{rank}=3$, $HM^T\equiv 0\pmod 2$), and
+bijective decoding of all $7$ single-sector syndromes;
+(2)~genuine Fano pinching $\mathcal{P}_{\mathrm{Fano}}$ ($\Phi\to\Phi/9$) and
+Fano Lindblad dissipator $\mathcal{D}_{\mathrm{Fano}}=\tfrac23\mathcal{D}_{\mathrm{atom}}$
+with discrete $\mathrm{PSL}(2,7)\ltimes U(1)^7$ covariance and explicit
+non-covariance under continuous $G_2$;
+(3)~exact canonical observables on non-uniform diagonal states (verifying
+$\Phi=1.3376\neq 7P-1=2.8939$, $R\ge 1/3\Leftrightarrow P\le 3/7$, and
+$S_{\max}=\log_2 7\approx 2.807355$~bits);
+(4)~canonical nonlinear anchored self-model $\varphi_J(\Gam)$ converging to a
+viable attractor passing all four gates ($P=0.3432$, $R=0.4162$, $\Phi=1.4024$,
+$\CohE=0.2263$, $D_{\mathrm{diff}}=2.3575$), unitary spectrum conservation
+($\Delta S_{\mathrm{unitary}}=0$), and power-port severance ($\kappa=0$,
+depolarizing $d=0.4$) crossing $\Pcrit=2/7$ at $t_{\mathrm{off}}=0.424$ against
+the analytical closed form $0.423$;
+(5)~$\Delta\tau$-independent Fano entropy-production rate
+($\dot S_{\mathrm{Fano}}=0.8056$~bits/$\tau$) and max single-state floor
+$k_BT\ln 7=8.060\times 10^{-21}$~J at $300$~K;
+(6)~vectorized SIMT ecology batch of $1{,}000$ holons ($0.784$~MB, mean
+$P=0.3431\in(2/7,3/7]$).
 \end{trybox}
 
 \subsection{The universal architecture}
@@ -217,10 +231,10 @@ as the executable core.}
 \toprule
 \textbf{Layer} & \textbf{Role} & \textbf{Supplies} \\
 \midrule
-UHM & ontology (why) & $\Gam\in\Dens(\mathbb{C}^7)$, $\LindOmega$, the invariants ($N{=}7$, $G_2$, thresholds) \\
-Coherence Cybernetics & measurement + dynamics + empirics & observable suite, 23 falsifiable predictions, the emulation spec, the universal cycle \\
+UHM & ontology (why) & $\Gam\in\Dens(\mathbb{C}^7)$, $\LindOmega$, structural invariants ($N{=}7$, $\mathrm{PSL}(2,7)$, thresholds) \\
+Coherence Cybernetics & measurement + dynamics + empirics & canonical observable suite, falsifiable predictions, emulation spec, universal cycle \\
 \SYNARC{}-$\Omega$ & mind (software) & cognitive complex $\Cog_0\!\to\!\Cog_3$, backprop-free learning, \textsc{Diakrisis}, ecology (K.5) \\
-\TALOS{} & body (substrate) & Fano fabric, tick, zero-overhead ECC, energy floor, octonionic scaling ladder (\S\ref{sec:scaling}) \\
+\TALOS{} & body (substrate) & Fano fabric, tick, sector-level Hamming duality, thermodynamic accounting, horizontal ecology (\S\ref{sec:scaling}) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -230,16 +244,15 @@ Coherence Cybernetics & measurement + dynamics + empirics & observable suite, 23
 
 \begin{itemize}[leftmargin=1.5em,itemsep=1pt]
   \item \textbf{V0 --- reference emulator (runs today).} A self-contained
-        emulator (\texttt{talos\_v0\_emulator.py}) holds $\Gam$, runs the tick,
-        computes the full telemetry suite (Table~\ref{tab:observables}), verifies
-        the spectral invariants each tick (and the $G_2$-Casimir under the
-        symmetry group), and reproduces every listed theorem --- the viable
-        attractor, the entropy law, the metabolic floor and its
-        frequency-independence, an ecology batch, and the Source bootstrap.
-        \SYNARC{}'s M1 validation and CC's implementation chapter run the same
-        tick bit-exact. The step from here is to batch it as a GPU ecology kernel
-        and reproduce CC's falsifiable predictions --- so the platform is
-        measured, not merely asserted.
+        emulator (\texttt{architecture/talos\_v0\_emulator.py}) holds $\Gam$,
+        runs the Strang-split tick with genuine $\mathcal{P}_{\mathrm{Fano}}$,
+        $\mathcal{D}_{\mathrm{Fano}}$, and canonical $\varphi_J(\Gam)$,
+        computes the exact telemetry suite (Table~\ref{tab:observables}),
+        verifies spectral invariants, Hamming $[7,4,3]$ single-sector decoding,
+        and discrete $\mathrm{PSL}(2,7)\ltimes U(1)^7$ covariance each run, and
+        benchmarks a vectorized $1{,}000$-holon SIMT ecology batch. The next
+        step is scaling the kernel onto GPU hardware to test large-scale
+        ecologies empirically.
   \item \textbf{V1 --- the virtual environment.} Close the sensorimotor loop
         (\S\ref{sec:scaling}: \textsc{Enc}/\textsc{Dec}) against a simulated
         world --- itself, in the strong form, a coherence field the holons sense
@@ -248,25 +261,28 @@ Coherence Cybernetics & measurement + dynamics + empirics & observable suite, 23
         and diagnosed by the same observables that define them.
   \item \textbf{V2$+$ --- the physical rungs.} The memristive and
         driven-dissipative substrates of \S\ref{sec:realizability}, climbed as
-        fabrication allows, for the energy floor the GPU rung cannot reach.
+        fabrication allows, for physical energy testing (benchmark B1) that the
+        digital GPU rung cannot reach.
 \end{itemize}
 
-\noindent Every rung computes the identical observable suite and preserves the
-$G_2$ invariants, so viability and correctness are continuously testable as the
-platform climbs from emulation toward its impedance-matched substrate --- the
-software (\SYNARC{}) and the physics (CC) never change (T-153).
+\noindent Every rung computes the identical canonical observable suite and
+preserves the discrete $\mathrm{PSL}(2,7)\ltimes U(1)^7$ fabric covariance, so
+viability and correctness are continuously testable as the platform climbs from
+emulation toward its impedance-matched substrate --- the software (\SYNARC{})
+and the dynamics (CC) never change (T-153).
 
 \subsection{Consistency ledger}
 \label{subsec:ledger}
 
-We state the reconciliation flatly. Every \TALOS{} quantity is a CC observable;
-the tick is the CC evolution step; the state is CC's $\Gam$ to the byte; the
-costs match to the FLOP. \TALOS{} adds \emph{hardware} content (the collapse of
-\S\ref{sec:collapse}, zero-overhead ECC, the energy floor, the scaling ladder)
-and \emph{no} new physics. One distinction prevents a false alarm: the cognitive
-temperature $T_{\mathrm{eff}}$ (CC, from Gap fluctuations) is not the physical
-substrate temperature $T$ (which sets the Landauer floor, \S\ref{sec:energy}) ---
-a holon can be cognitively ``hot'' on a physically cold chip. And the honest
-boundaries stand unchanged: the emulator is BQP-bounded (no complexity-class
-speed-up), and the logical architecture is substrate-multiple (T-153) --- the GPU
-is one rung, matched for correctness and observability, not the unique machine.
+We state the reconciliation flatly. Every \TALOS{} quantity is a canonical CC
+observable; the tick is the CC evolution step; the state is CC's $\Gam$ to the
+byte ($784$~B, $48$ real dynamical parameters); the costs match to the FLOP.
+\TALOS{} adds \emph{hardware} content (the collapse of \S\ref{sec:collapse},
+sector-level Hamming duality, thermodynamic separation, bounded-tower /
+horizontal-ecology scaling) and \emph{no} new physics. Uncalibrated auxiliary
+quantities (such as uncalibrated effective FDT temperatures or continuous
+$G_2$-Noether charges) are intentionally excluded from the hardware telemetry
+contract. The honest boundaries stand unchanged: the emulator is BQP-bounded
+(no complexity-class speed-up), and the logical architecture is
+substrate-multiple (T-153) --- the GPU is one rung, matched for correctness and
+observability, not the unique machine.

@@ -6,19 +6,19 @@ description: Explicit assumptions, genuine sheaf site and categorical/numerical 
 
 # Axiom Ω⁷ and its typed realization
 
-UHM postulates one structured ontology [P]/[I]. Its mathematical realization consists of states, processes, a sheaf semantics and specified dynamical/phenomenal bridges. Calling that structure one primitive does not erase its independent assumptions. This page and the [typed kernel](/docs/reference/mathematical-kernel) replace the former untyped derivations (2026-10-03).
+UHM postulates one structured ontology [P]/[I]. Its honest operational entry point prior to quantum modelling is [operational processes](/docs/core/foundations/operational-processes) (together with the verified Lean/Python suite in `website/research/operational-reconstruction/`). Stepping from operational equivalence classes to the Hilbert-space realization **(QG)** — $\mathcal H=\mathbb C^7$, density matrices $\mathcal D(\mathbb C^7)$, the Born rule, and linear CPTP channels — is an **explicit modelling postulate** [P]/[D]. Likewise, $\operatorname{Sh}_\infty(\operatorname{Open}_B(D_7), J_{\mathrm{open}}) \simeq \operatorname{Sh}_\infty(B^{48})$ is a locally contractible topological sheaf category (blind to $\mathbb C$, convexity, and the Bures metric) rather than a load-bearing dynamical primitive. Calling the resulting record one primitive does not erase its independent assumptions. This page and the [typed kernel](/docs/reference/mathematical-kernel) replace the former untyped derivations (2026-10-03).
 
 ## Explicit axiomatics {#аксиоматика}
 
 | Input | Mathematical content | Status |
 |---|---|---|
-| A1: semantics | A sheaf $\infty$-topos over a specified site; canonical model $\mathcal E_N=\operatorname{Sh}_\infty(\operatorname{Open}(D_N,d_B))$ | Construction [D], existence [T], ontological identification [P]/[I] |
+| A1: semantics | Sheaf $\infty$-topos over the open-cover site: $\mathcal E_7=\operatorname{Sh}_\infty(\operatorname{Open}_B(D_7), J_{\mathrm{open}})\simeq\operatorname{Sh}_\infty(B^{48})$ (topological envelope, blind to $\mathbb C$, convexity, and metric) | Construction [D], existence [T], ontological identification [P]/[I] |
 | A2: geometry | Chordal Bures distance on states; tensor on full-rank strata | Choice [P]; monotonicity under CPTP [T] |
 | A3: frame | $\mathcal H=\mathbb C^7$ with semantic orthonormal frame A,S,D,L,E,O,U and specified octonionic structure | [P]/[D]; lower bounds conditional on their stated algebra/coding premises |
 | A4: scale | A calibrated $\omega_0>0$; Hamiltonian and dissipative rates specified separately | [P]; not inferred from terminality or positivity of the Hamiltonian |
 | A5: clock extension | A chosen extended tensor realization, clock readout and support constraint $\operatorname{supp}\rho\subseteq\ker\hat C$ | [P]/[D]; conditional Page–Wootters consequences |
 
-Density matrices and linear CPTP processes are the chosen quantum formalism [D]/[P]. A self-model $M$, its anchor, state-dependent coefficients, preparation/environment, observation law and phenomenal identification are additional typed data. $(\Sigma_6)$, (MaxΦ), (Mod)/(Cl₀) and (P) retain their explicit bridge status. No equivalence of operational slogans with A1–A5 is inferred without these inputs and actual implication proofs.
+The quantum framework **(QG)** ($\mathbb C^7$, $\mathcal D(\mathbb C^7)$, Born rule, linear CPTP channels) is an explicit modelling postulate [P]/[D]. A self-model $M$, its anchor, state-dependent coefficients, preparation/environment, observation law and phenomenal identification are additional typed data. $(\Sigma_6)$, (MaxΦ), (Mod)/(Cl₀) and (P) retain their explicit bridge status. No equivalence of operational slogans with A1–A5 is inferred without these inputs and actual implication proofs.
 
 ## Structured primitive {#примитив}
 

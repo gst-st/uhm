@@ -45,7 +45,7 @@ The question seems naïve, but it is deep. Why does anything remain unchanged? W
 
 Physics answers: because **symmetries** exist. If a law of nature does not change under some transformation (rotation, translation, reflection), then there exists a quantity that **cannot** change. This is not a postulate — it is a mathematical theorem (Noether). Conservation is not a property of things, but a **consequence of the symmetries** of the laws to which things are subject.
 
-In UHM theory this principle is deepened: symmetries are not "imposed from outside", but **emerge** from the structure of the configuration $\Gamma$ itself. The Hamiltonian $H_\Omega$ is determined by axioms [A1–A5](../../core/foundations/axiom-omega), and its symmetries are a mathematical consequence of those axioms. Thus the stability of form is not a mysterious property of reality, but a **derivable** consequence of the fundamental structure.
+In UHM theory this principle operates at the level of the effective Hamiltonian: $H_\Omega$ is supplied dynamical data (modelling input rather than uniquely derived from axioms [A1–A5](../../core/foundations/axiom-omega)). Once $H_\Omega$ is specified, its symmetries determine the conserved invariants of the unitary evolution by Noether's theorem. Thus structural stability in the unitary sector is directly linked to the symmetry structure of the chosen generator.
 
 ## Description
 
@@ -79,7 +79,7 @@ Moreover, DNA is an example of an **informational** structure: what matters is n
 
 Astronomers determine the chemical composition of a star millions of light-years away from its **spectrum** — the set of frequencies of emitted light. Each chemical element leaves a unique "spectral fingerprint" — a set of absorption and emission lines.
 
-In exactly the same way, the Hamiltonian $H$ of a Holon has a **spectrum** — the set of eigenvalues $\{E_n\}$ that uniquely characterises the structure of the system. From the spectrum one can determine which symmetries the system has, which transitions are possible, and what the "architecture" of the configuration is — even without knowing the details of the state.
+In the same way, the Hamiltonian $H$ of a Holon has a **spectrum** $\{E_n\}$ (characteristic energy levels and transition frequencies), which together with its **eigenbasis** $\{|\psi_n\rangle\}$ determines the full unitary generator and its symmetries.
 
 ## Mathematical representation
 
@@ -139,7 +139,7 @@ $$
 | $\to 0$ | Loss of all structure | Heat death, complete destructuration |
 
 :::warning Structure ≠ rigidity
-High $\gamma_{SS}$ is not always good. Excessive structuredness (rigidity) impedes adaptation. Living systems maintain $\gamma_{SS}$ in a range that combines stability with plasticity. This is consistent with the [Goldilocks zone](../../core/foundations/axiom-septicity) $P \in (2/7, 3/7]$ **[T]** — consciousness requires a balance between order and chaos.
+High $\gamma_{SS}$ is not always good. Excessive structuredness (rigidity) impedes adaptation. Living systems maintain $\gamma_{SS}$ in a range that combines stability with plasticity. This is consistent with the [Goldilocks zone](../../core/foundations/axiom-septicity) $P \in (2/7, 3/7]$ (**[T]** given the **[D]** threshold cuts $P_{\text{crit}} = 2/7$ and $R_{\text{th}} = 1/3$) — balanced operation requires neither total mixing nor rigid collapse.
 :::
 
 ## Structural stress $\sigma_S$ {#стресс-структуры}
@@ -242,12 +242,12 @@ Structure and [Dynamics](./dimension-d) are two aspects of one object: **the Ham
 
 | Aspect | What $H$ describes | Mathematical operation |
 |--------|-------------------|----------------------|
-| **Structure (S)** | Spectrum $\{E_n\}$ — stationary states | Eigenvalues: $H\|\psi_n\rangle = E_n\|\psi_n\rangle$ |
-| **Dynamics (D)** | Evolution $U(\tau) = e^{-iH_{eff}\tau}$ | Exponential map |
+| **Structure (S)** | Spectrum $\{E_n\}$ and eigenbasis $\{\lvert\psi_n\rangle\}$ — stationary states | Spectral decomposition: $H = \sum_n E_n \lvert\psi_n\rangle\langle\psi_n\rvert$ |
+| **Dynamics (D)** | Evolution $U(\tau) = e^{-iH_{\text{eff}}\tau}$ | Exponential map: $U(\tau) = \sum_n e^{-iE_n\tau}\lvert\psi_n\rangle\langle\psi_n\rvert$ |
 
-This is not a metaphor — it is a precise mathematical statement. Knowing the spectrum of $H$ (structure), you completely determine the evolution (dynamics), and vice versa: knowing all possible evolutions, one can recover the spectrum.
+The unitary evolution $U(\tau) = e^{-iH_{\text{eff}}\tau}$ is determined by **both** the spectrum $\{E_n\}$ and the eigenbasis $\{|\psi_n\rangle\}$ of $H_{\text{eff}}$: knowing the eigenvalues alone does **not** determine $U(\tau)$, because isospectral Hamiltonians $H' = V H V^\dagger$ with different eigenbases generate distinct unitary evolutions. Conversely, knowing the full one-parameter group $\{U(\tau)\}_{\tau\in\mathbb{R}}$ recovers the full generator $H_{\text{eff}} = i\left.\frac{dU}{d\tau}\right|_{\tau=0}$, and therefore both its spectrum and its eigenbasis.
 
-**Music analogy:** A score (structure) and a performance (dynamics) are two aspects of the same work. The score is a set of notes (spectrum); the performance is sound in time (evolution). One score determines all possible performances; one complete performance allows the score to be recovered.
+**Music analogy:** A score (structure: both pitches and which instruments play them) and a performance (dynamics) are two aspects of the same work. The full spectral decomposition of $H$ determines the unitary performance; the full trajectory of the unitary group recovers the generator.
 
 :::tip Consequence of duality
 The coherence $\gamma_{SD}$ is the **stability under evolution**. High $\gamma_{SD}$ means that structure and dynamics are "aligned": the system evolves without destroying its own form. Low $\gamma_{SD}$ is a sign of instability: dynamics destroys structure (chaotic collapse) or structure suppresses dynamics (freezing).
@@ -325,22 +325,18 @@ The elements $\gamma_{Si}$ of the coherence matrix describe the connection of st
 
 ## Structure and the Fano plane {#структура-и-фано}
 
-In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM, dimension $S$ corresponds to the imaginary unit $e_2 \in \mathrm{Im}(\mathbb{O})$. ~~Structure lies in the **3** sector of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]).~~ Retracted 2026-09-25 with T-48a: no single axis lies in the $\mathbf 3$ — the triplet is $\mathrm{span}_{\mathbb C}\{A-iD,\,S-iU,\,L-iE\}$, so $S$ enters it only in the combination $S - iU$, paired with an axis of the other triple.
+In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM, dimension $S$ corresponds to the imaginary unit $e_2 \in \mathrm{Im}(\mathbb{O})$ in the chosen oriented orthonormal frame. (No single real basis axis lies in the complex triplet $\mathbf{3} = \mathrm{span}_{\mathbb{C}}\{A-iD,\, S-iU,\, L-iE\}$ of the $\mathrm{SU}(3) \subset G_2$ stabilizer of $O$.)
 
-On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$, structure $S$ ($= e_2$) belongs to **three Fano lines**:
+On the canonical Singer-cyclic [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$, structure $S$ ($= e_2$) belongs to **three Fano lines**:
 
 | Fano line | Dimensions | Interpretation |
 |-----------|------------|----------------|
-| $\{A, S, L\}$ = $\{1, 2, 4\}$ | Articulation + Structure + Logic | **Formal line**: distinction + form + logic — the triad of rational cognition |
-| $\{S, D, E\}$ = $\{2, 3, 5\}$ | Structure + Dynamics + Interiority | **Evolutionary line**: form + change + experience — the triad of lived experience |
-| $\{U, O, S\}$ = $\{6, 7, 2\}$ | Unity + Ground + Structure | **Fundamental line**: $S$ is connected to $O$ through the $\bar{\mathbf{3}}$ element ($U$) — form through integration |
+| $\{A, S, L\}$ = $\{1, 2, 4\}$ | Articulation + Structure + Logic | **Formal line**: distinction + form + logic |
+| $\{S, D, E\}$ = $\{2, 3, 5\}$ | Structure + Dynamics + Interiority | **Evolutionary line**: form + change + experience |
+| $\{U, O, S\}$ = $\{6, 7, 2\}$ | Unity + Ground + Structure | **Fundamental line**: unity + ground + form |
 
-:::tip Uniqueness of S on the Fano plane (T-177) — retracted [✗]
-*Retracted 2026-09-25 with T-48a and T-177: no axis lies in the **3** or the $\bar{\mathbf{3}}$, so the sector labels below have no content; restated (T-177), incidence fixes $S$ only together with the binary convention that fixes $E$ versus $U$ (the collineation swapping $E \leftrightarrow U$ with $O$ fixed swaps $S \leftrightarrow L$). Earlier text:*
-
-Structure is the only element of the **3** sector that is connected to Ground ($O$) through a $\bar{\mathbf{3}}$ element (Unity, $U$) on the line $\{U, O, S\}$. By comparison: $A$ is connected to $O$ directly (line $\{O, A, D\}$), and $D$ — through a **3** element ($A$).
-
-This means that the path from the Ground to Structure passes through **integration** ($U$) — form arises not directly from the source, but through unification.
+:::tip Incidence constraint on S
+By the incidence geometry of $\mathrm{PG}(2,2)$ ([What incidence fixes](./dimensions#комбинаторная-единственность)), once the point $O$ and the unordered pair $\{E, U\}$ (non-collinear with $O$) are supplied as model marks, the collineation fixing $O, A, D$ and swapping $E \leftrightarrow U$ also swaps $S \leftrightarrow L$. Hence $S$ is fixed by Fano incidence only together with the additional binary mark distinguishing $E$ from $U$, and no real basis axis carries a $\mathbf{3}$/$\bar{\mathbf{3}}$ sector label.
 :::
 
 ```mermaid
@@ -360,7 +356,7 @@ graph TD
 ### Octonionic context {#октонионный-контекст}
 
 :::note Chosen octonionic correspondence [D/I]
-The assignment $S=e_2\in\operatorname{Im}\mathbb O$ belongs to the declared oriented orthonormal frame. For a specified positive octonionic three-form, its stabilizer is $G_2$ [T]. This group identity does not uniquely assign functional names to axes or determine a physical encoder. The former universal T-42a rigidity is withdrawn [✗]; [reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) give a conditional comparison theorem. Incidence can constrain labels **after** the required marks are supplied; those marks and the remaining label convention are model data. The [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) states the additional algebraic inputs, and [the frame discussion](./dimensions#октонионная-интерпретация) distinguishes its symmetries from physical gauge equivalence.
+The assignment $S=e_2\in\operatorname{Im}\mathbb O$ belongs to the declared oriented orthonormal frame. For a specified positive octonionic three-form, its stabilizer is $G_2$ [T]. This group identity does not uniquely assign functional names to axes or determine a physical encoder. [Reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) give a conditional comparison theorem. Incidence can constrain labels **after** the required marks are supplied; those marks and the remaining label convention are model data. The [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) states the additional algebraic inputs, and [the frame discussion](./dimensions#октонионная-интерпретация) distinguishes its symmetries from physical gauge equivalence.
 :::
 
 ## Gradations of structure {#градации-структуры}
@@ -369,7 +365,7 @@ Like [Articulation](./dimension-a#градации-артикуляции), Stru
 
 #### Level 0: Amorphousness ($\gamma_{SS} \approx 0$)
 
-No invariants are distinguished — complete chaos. The physical analogue is an ideal gas at infinite temperature: each moment is unconnected to the previous, there is no "memory". At the cognitive level — delirium, where no thought is held for longer than an instant.
+No invariants are distinguished — complete disorder. The physical analogue is an ideal gas at infinite temperature: each moment is unconnected to the previous, there is no "memory". In a cognitive readout, this corresponds to an uncoordinated stream in which no pattern persists beyond an instant.
 
 #### Level 1: Local order ($\gamma_{SS} \sim 0.05$)
 
@@ -389,7 +385,7 @@ Pathological rigidity. The system is incapable of adaptation: any deviation from
 
 ## Summary
 
-Structure is the second dimension of the Holon, providing its identity in time. Without structure there are no invariants, no memory, no self-sameness. Mathematically, structure is described by the Hamiltonian — the operator whose spectrum defines the "architecture" of the system and whose exponential defines its evolution. The S ↔ D duality (spectrum ↔ evolution) is one of the central relations of the theory. On the Fano plane, S occupies a unique position: it is connected to the Ground through Unity, reflecting the path "from the source through integration to form".
+Structure is the second dimension of the Holon, providing its identity in time. Without structure there are no invariants, no memory, no self-sameness. Mathematically, structure is represented by the Hamiltonian — the Hermitian generator whose spectrum and eigenbasis jointly determine both stationary invariants and unitary evolution. The S ↔ D duality (spectral decomposition ↔ unitary group) is one of the central relations of the theory. On the canonical Fano plane, $S$ lies on the three lines $\{A, S, L\}$, $\{S, D, E\}$, and $\{U, O, S\}$.
 
 ---
 

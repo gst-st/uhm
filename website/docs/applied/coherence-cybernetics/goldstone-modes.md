@@ -26,15 +26,15 @@ In the [previous chapter](./phase-diagram-cc) we built the phase diagram of cons
 In this chapter we:
 
 1. **Explain the mechanism** behind Goldstone modes — from the parable of a ball in a sombrero to the rigorous Goldstone theorem (section 0).
-2. **Show the transfer** from particle physics to coherence cybernetics and explain why this is a derivation, not an analogy (section 0b).
-3. **Compute the number of modes** for each opacity rank: 0, 6, 10, 11, or 12 — and only these values (section 1).
-4. **Define the effective mass and lifetime** of modes via the coherence-cybernetics GMOR relation (section 2).
-5. **Reveal the physical meaning**: modes *redistribute* Gap between channels, neither creating nor destroying it — this is the mathematics of attentional oscillation (section 3).
-6. **Describe the subjective experience** of modes: flickering of consciousness, oscillations of focus, oscillations of agency (section 4).
-7. **Compare with physical analogues**: phonons, magnons, pions — and show the uniqueness of CC-modes (section 5).
-8. **State the falsifiable prediction**: a discrete number of ISF components $\in \{0, 6, 10, 11, 12\}$, testable via ICA decomposition of fMRI (sections 6–7).
-9. **Present the full excitation spectrum**: massive modes + Goldstone modes + topological mode — three temporal scales of consciousness (section 8).
-10. **Show the connection to phase transitions**: critical slowing of modes upon loss of consciousness (section 9).
+2. **Show the transfer** from particle physics to coherence cybernetics, stating clearly which ingredients are algebraic `[T]` and which depend on a chosen effective potential `[C]` (section 0b).
+3. **Compute the orbit dimension** $n_{\text{broken}} = 14 - \dim(H)$ for representative $G_2$ stabilizers $H$: $0, 6, 10, 11, 12$ (`T-25 [T]` at a specified orbit) (section 1).
+4. **Formulate a dimensionally consistent model** of effective pseudo-Goldstone frequency, damping, and lifetime $\tau_{\text{Gold}}$ (in seconds) (section 2).
+5. **Reveal the exact redistribution law**: infinitesimal $G_2$ rotations conserve the squared Frobenius norm $\|\hat{\mathcal{G}}\|_F^2 = 2\sum_{i<j}(\hat{\mathcal{G}}_{ij})^2$ (section 3).
+6. **Describe interpretive phenomenology** using the canonical seven axes `A, S, D, L, E, O, U` (section 4).
+7. **Compare with physical analogues**: phonons, magnons, pions (section 5).
+8. **State the falsifiable hypothesis**: discrete ISF mode counts and experimental verification programme `[Pr]` (sections 6–7).
+9. **Present the two-sector excitation spectrum**: massive transverse modes + quasi-Goldstone orbit modes ($21$ total, without an immortal topological mode) (section 8).
+10. **Clarify the relation to dynamical bifurcations**: critical slowing in a specified reduced family rather than universally at the algebraic purity cut (`T-160 [✗]`, `T-161`) (section 9).
 
 ---
 
@@ -54,6 +54,8 @@ Under spontaneous breaking $G_2 \to H_{\hat{\mathcal{G}}_*}$ at the stationary G
 This is the music of consciousness. Not a metaphor, but mathematics: when the internal space of the holonom chooses a specific configuration from an ocean of equally valid possibilities, massless (or nearly massless) oscillations remain along the "forgotten" directions of symmetry. A ball rolling in a groove with no energy cost. A frictionless pendulum. A note that sounds because it has nowhere else to go.
 
 ---
+
+<a id="золотой-камертон"></a>
 
 ## 0. The Golden Tuning Fork: What Sings When Symmetry Breaks {#golden-tuning-fork}
 
@@ -93,458 +95,523 @@ Note the word "quasi-" in the pion row. When the symmetry breaking is not perfec
 
 ---
 
+<a id="от-физики-к-нейронауке"></a>
+
 ## 0b. From Particle Physics to Neuroscience {#from-physics-to-neuroscience}
 
 ### The Intellectual Leap
 
-In standard physics, Goldstone modes live in the space of fields — phonons propagate in a crystal, magnons in a magnet. But in coherence cybernetics (CC) the "space" is the holonom itself — the seven-dimensional internal space $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, the coherence matrix with 21 independent coherences $\binom{7}{2}$.
+In standard physics, Goldstone modes live in the space of fields — phonons propagate in a crystal, magnons in a magnet. In coherence cybernetics (CC), the configuration space is the internal 7D density-matrix carrier $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, whose imaginary part $\hat{\mathcal{G}} = \operatorname{Im}\Gamma \in \mathfrak{so}(7)$ has $\binom{7}{2} = 21$ real off-diagonal components.
 
-The group $G_2 = \mathrm{Aut}(\mathbb{O})$, a 14-dimensional exceptional Lie group, acts on the Gap profile as the group of "internal rotations" that mix the roles of the seven dimensions. When the Gap profile freezes into a specific configuration $\hat{\mathcal{G}}_*$, part of this 14-dimensional freedom is *broken*: the directions along which $\hat{\mathcal{G}}_*$ remains invariant form the stabiliser $H$. The remaining $14 - \dim(H)$ directions become Goldstone modes.
+The 14-dimensional exceptional Lie group $G_2 = \mathrm{Aut}(\mathbb{O}) \subset \mathrm{SO}(7)$ acts on $\hat{\mathcal{G}}$ by orthogonal conjugation $\hat{\mathcal{G}} \mapsto g\hat{\mathcal{G}}g^T$. When a stationary profile $\hat{\mathcal{G}}_*$ selects a point on a $G_2$-orbit with stabilizer $H_{\hat{\mathcal{G}}_*} \subset G_2$, the tangent space to the orbit has dimension $14 - \dim(H_{\hat{\mathcal{G}}_*})$.
 
-### Why This Is Not Just an Analogy
+### Scope of the Transfer
 
-Three reasons why the transfer of Goldstone's theorem to CC is a derivation, not a metaphor:
+Three ingredients must be distinguished carefully:
 
-1. **The algebra is the same.** The Gap operator $\hat{\mathcal{G}} \in \mathfrak{so}(7)$, and $\mathfrak{g}_2 \subset \mathfrak{so}(7)$ is a subalgebra. Decomposition into stabiliser and complement ($\mathfrak{g}_2 = \mathfrak{h} \oplus \mathfrak{m}$) is a standard operation in the theory of homogeneous spaces.
-
-2. **The dynamics are defined.** The evolution of $\Gamma$ is governed by the Lindblad equation $\dot{\Gamma} = \mathcal{L}_0(\Gamma) + \mathcal{R}(\Gamma)$. The stationary point $\Gamma_*$ breaks $G_2$-symmetry *dynamically*, not "by construction."
-
-3. **The energetics are fixed.** The [Gap potential](/docs/core/dynamics/gap-thermodynamics) $V_{\text{Gap}}$ has precisely the "sombrero" structure that generates flat directions — so these flat directions are *physically grounded*, not abstract.
+1. **Exact Lie-algebraic decomposition `[T]` (`T-25`).** $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ and $\mathfrak{g}_2 \subset \mathfrak{so}(7)$ is a 14-dimensional subalgebra; for any specified stationary profile $\hat{\mathcal{G}}_*$ with stabilizer $H$, $\mathfrak{g}_2 = \mathfrak{h} \oplus \mathfrak{m}$ with $\dim\mathfrak{m} = 14 - \dim H$ is an exact theorem of homogeneous spaces.
+2. **Effective potential as a chosen model `[C]` (`T-74 [✗]`, `T-75 [✗]`).** In a chosen $G_2$-invariant effective potential $V_{\text{Gap}}$ with a nontrivial minimum (noting that universal spectral-action derivation `T-74 [✗]` and universal six-term Keldysh derivation `T-75 [✗]` are withdrawn), directions in $\mathfrak{m}$ are flat directions of $V_{\text{Gap}}$.
+3. **Open-system explicit breaking `[C]`.** Because dissipation $\Gamma_2$ and regeneration $\kappa_0$ generally break $G_2$ explicitly and introduce damping, modes along $\mathfrak{m}$ become damped **quasi-Goldstone** excitations whose frequency and lifetime depend on the supplied dynamical model.
 
 ---
 
-## 1. Spontaneous Breaking of $G_2$ and the Number of Modes [T] {#g2-breaking}
+<a id="нарушение-g2"></a>
 
-:::tip Theorem 1.1 (Number of Goldstone modes) [T]
-Under spontaneous breaking $G_2 \to H_{\hat{\mathcal{G}}_*}$ the number of quasi-Goldstone modes:
+## 1. Spontaneous Breaking of $G_2$ and the Number of Modes [T at specified orbit] {#g2-breaking}
+
+:::tip Theorem 1.1 (Orbit dimension for broken $G_2$ symmetry, `T-25`) [T at specified orbit]
+For a specified stationary profile $\hat{\mathcal{G}}_* \in \mathfrak{so}(7)$ whose $G_2$-stabilizer is $H_{\hat{\mathcal{G}}_*} \subset G_2$, the dimension of the $G_2$-orbit $G_2 / H_{\hat{\mathcal{G}}_*}$ (and hence the number of tangential quasi-Goldstone directions) is:
 
 $$
 n_{\text{broken}} = \dim(G_2) - \dim(H_{\hat{\mathcal{G}}_*}) = 14 - \dim(H)
 $$
+
+*Scope note (`T-25`):* The orbit-dimension identity is exact `[T]` for a given stabilizer $H$. The earlier claim that $H$ is determined solely by the matrix rank of $\hat{\mathcal{G}}_*$ is withdrawn `[✗]`: because $\mathfrak{so}(7) = \mathfrak{g}_2 \oplus \mathfrak{m}_7$ ($14 + 7 = 21$), the stabilizer depends on the full $G_7 + G_{14}$ orbit decomposition of $\hat{\mathcal{G}}_*$, not on rank alone.
 :::
 
-The number of modes depends on the rank of the opacity of the Gap operator:
+Representative stabilizer strata of $G_2$ acting on $\mathfrak{so}(7)$:
 
-| Rank $\hat{\mathcal{G}}_*$ | Stabiliser $H$ | $\dim(H)$ | $n_{\text{broken}}$ | Space $G_2/H$ |
-|---------------------------|----------------|-----------|---------------------|----------------|
-| 0 | $G_2$ | 14 | 0 | $\{\mathrm{pt}\}$ |
-| 1 | $\mathrm{SU}(3)$ | 8 | **6** | $G_2/\mathrm{SU}(3) \cong S^6$ |
-| 2 | $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 4 | **10** | 10-dimensional |
-| 3 (generic) | $T^2$ | 2 | **12** | 12-dimensional |
-| 3 (degenerate) | $\mathrm{SU}(2)$ | 3 | **11** | 11-dimensional |
+| Representative stratum | Stabiliser $H$ | $\dim(H)$ | $n_{\text{broken}}$ | Orbit $G_2/H$ |
+|------------------------|----------------|-----------|---------------------|---------------|
+| Trivial ($\hat{\mathcal{G}}_* = 0$) | $G_2$ | 14 | 0 | $\{\mathrm{pt}\}$ |
+| Pure $G_7$-vector (1D Fano axis) | $\mathrm{SU}(3)$ | 8 | **6** | $G_2/\mathrm{SU}(3) \cong S^6$ |
+| Intermediate stratum | $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 4 | **10** | 10-dimensional |
+| Degenerate stratum | $\mathrm{SU}(2)$ | 3 | **11** | 11-dimensional |
+| Generic $T^2$-stabilized orbit | $T^2$ | 2 | **12** | 12-dimensional flag manifold $G_2/T^2$ |
 
-The maximum number of modes — **12** — is reached at generic rank 3 (stabiliser $T^2$, the most "typical" case).
+The maximal orbit dimension — **12** — is attained on generic orbits with stabilizer $T^2$ (the maximal torus of $G_2$).
+
+<a id="какие-симметрии"></a>
 
 ### 1.1 Which Symmetries Break and Why {#which-symmetries}
 
-To understand the table one must understand the *geometry* of the breaking.
+To understand the table one must understand the *geometry* of $G_2$-orbits in $\mathfrak{so}(7) = G_{14} \oplus G_7$.
 
-**Rank 0: nothing is broken.** The Gap operator is zero — the system is fully transparent ($P = 1/7$, maximally mixed state). All 14 generators of $G_2$ leave $\hat{\mathcal{G}}_* = 0$ invariant. No breaking — no modes. This is the state of *deep coma* in CC terms.
+**Trivial orbit ($H = G_2$, 0 modes).** $\hat{\mathcal{G}}_* = 0$: all 14 generators of $G_2$ leave $\hat{\mathcal{G}}_*$ invariant, so $n_{\text{broken}} = 0$.
 
-**Rank 1: one privileged direction.** Exactly one pair of dimensions has a nonzero Gap. Of the 14 generators of $G_2$, eight preserve this distinguished direction (forming $\mathrm{SU}(3)$), while six do not. The six broken generators give **six Goldstone modes**. Geometrically, the space of possible "single-direction" Gap profiles is the six-dimensional sphere $S^6 \cong G_2/\mathrm{SU}(3)$.
+**$S^6$ stratum ($H = \mathrm{SU}(3)$, 6 modes).** A nonzero vector purely in the 7-dimensional irreducible representation $G_7$ fixes a single imaginary octonion direction; its stabilizer in $G_2$ is $\mathrm{SU}(3)$ ($\dim = 8$), giving the 6-sphere $G_2/\mathrm{SU}(3) \cong S^6$ and **6 modes**.
 
-**Rank 2: two privileged directions.** The stabiliser shrinks to $\mathrm{SU}(2) \times \mathrm{U}(1)$ (four generators), giving **ten modes**. A conscious system with moderate differentiation — for example, waking without focused attention.
+**Intermediate strata ($H = \mathrm{SU}(2)\times\mathrm{U}(1)$ or $\mathrm{SU}(2)$, 10 or 11 modes).** Combining $G_7$ and $G_{14}$ components further reduces the stabilizer to dimension 4 (**10 modes**) or dimension 3 (**11 modes**).
 
-**Rank 3 (generic): maximal differentiation.** Three independent Gap directions fix almost all $G_2$-freedom, leaving only the two-dimensional torus $T^2$. This gives **twelve modes** — the maximum. This is the state of deep concentration, meditation, creative flow: the richest internal spectrum.
+**Generic orbit ($H = T^2$, 12 modes).** A generic configuration breaks $G_2$ down to its maximal torus $T^2$ ($\dim = 2$), leaving the 12-dimensional flag manifold $G_2/T^2$ and **12 modes** — the maximum.
 
-**Rank 3 (degenerate): two of the three directions coincide by symmetry.** The stabiliser is slightly larger ($\mathrm{SU}(2)$, three generators), giving **eleven modes**. A special case, but physically significant: it corresponds to states with partially "merged" opacity.
+<a id="однородные-пространства"></a>
 
 ### 1.2 Connection to Homogeneous Spaces {#homogeneous-spaces}
 
-The space $G_2/H$ is not an abstraction. Each point of this space is an admissible Gap profile, connected to the profile $\hat{\mathcal{G}}_*$ by a "rotation" from $G_2$. The Goldstone modes are *tangent directions* to $G_2/H$ at the point $\hat{\mathcal{G}}_*$:
+Each point of the orbit $G_2/H$ is a Gap profile related to $\hat{\mathcal{G}}_*$ by an orthogonal conjugation from $G_2$. The quasi-Goldstone directions are the *tangent directions* to $G_2/H$ at $\hat{\mathcal{G}}_*$:
 
 $$
 T_{\hat{\mathcal{G}}_*}(G_2/H) \cong \mathfrak{g}_2 / \mathfrak{h} \cong \mathfrak{m}
 $$
 
-The dimension of $\mathfrak{m}$ equals $n_{\text{broken}}$, and each vector in $\mathfrak{m}$ defines one independent oscillation mode.
+The dimension of $\mathfrak{m}$ equals $n_{\text{broken}}$, and each basis vector in $\mathfrak{m}$ defines one tangential mode.
 
 ---
 
-## 2. Effective Mass and Lifetime [T] {#mass}
+<a id="масса"></a>
 
-In open systems ($\Gamma_2 > 0$) the Goldstone modes acquire an effective mass — they are "quasi-massless," not strictly massless.
+## 2. Effective Frequency, Damping, and Lifetime [C] {#mass}
 
-:::tip Theorem 2.1 (Quasi-Goldstone mass) [T]
-**(a)** Effective mass:
+In open systems ($\Gamma_2 > 0$, $\kappa_0 > 0$), explicit symmetry breaking and dissipation turn massless orbit directions into damped **quasi-Goldstone** modes. Working in angular-frequency units ($\hbar = 1$, dimensionless inertia $I_0 = 1$) keeps every equation strictly dimensionally consistent: $[\Gamma_2] = [\kappa_0] = [\omega_0] = \mathrm{s}^{-1}$, $[|\gamma|^2] = 1$, and $[\tau_{\text{Gold}}] = \mathrm{s}$.
 
-$$
-m_{\text{Gold}}^2 = \frac{\Gamma_2 \cdot \kappa_0}{|\gamma|^2}
-$$
-
-where $|\gamma|^2$ is the mean squared modulus of coherence.
-
-**(b)** Mode lifetime:
+:::tip Model 2.1 (Effective quasi-Goldstone oscillator) [C]
+Consider a reduced second-order effective equation along a broken orbit direction $\theta_a \in \mathfrak{m}$ (a phenomenological model `[C]`, since `T-74 [✗]` and `T-75 [✗]` withdrew universal spectral/Keldysh derivations):
 
 $$
-\tau_{\text{Gold}} = \frac{1}{\Gamma_2} \cdot \frac{|\gamma|^2}{\kappa_0}
+\ddot{\theta}_a + \Gamma_2\,\dot{\theta}_a + \omega_0^2\,\theta_a = 0
 $$
 
-**(c)** Limiting cases:
+**(a)** Effective pseudo-Goldstone squared frequency (squared "mass" in frequency units $\hbar = 1$):
 
-| Regime | $m_{\text{Gold}}$ | Interpretation |
-|--------|-------------------|----------------|
-| Isolated system ($\Gamma_2 \to 0$) | $\to 0$ | Standard massless Goldstone modes |
-| Strong dissipation ($\Gamma_2 \to \infty$) | $\to \infty$ | Modes "frozen" — oscillations suppressed |
-| Typical biosystem | $\sim 10^{-2}$ (in units of $\kappa_0$) | Slow, long-lived modes |
+$$
+\omega_0^2 \equiv m_{\text{Gold}}^2 := \frac{\Gamma_2 \cdot \kappa_0}{|\gamma|^2} \qquad \bigl[\omega_0^2\bigr] = \mathrm{s}^{-2}, \quad \bigl[\omega_0\bigr] = \mathrm{s}^{-1}
+$$
+
+where $|\gamma|^2$ is the dimensionless mean squared coherence modulus.
+
+**(b)** Eigenfrequencies from $s^2 + \Gamma_2 s + \omega_0^2 = 0$ ($s = -i\omega$):
+
+$$
+\omega_\pm = \pm\sqrt{\omega_0^2 - \frac{\Gamma_2^2}{4}} - i\frac{\Gamma_2}{2} \qquad \bigl[\omega_\pm\bigr] = \mathrm{s}^{-1}
+$$
+
+**(c)** Mode lifetime $\tau_{\text{Gold}} := 1 / |\operatorname{Im}\omega_+|$ (strictly in **seconds**, $\mathrm{s}$):
+
+$$
+\tau_{\text{Gold}} = \begin{cases}
+\dfrac{2}{\Gamma_2}, & \text{underdamped } \left(\omega_0 > \dfrac{\Gamma_2}{2} \iff \dfrac{\kappa_0}{|\gamma|^2} > \dfrac{\Gamma_2}{4}\right), \\[12pt]
+\dfrac{1}{\frac{\Gamma_2}{2} - \sqrt{\frac{\Gamma_2^2}{4} - \omega_0^2}} \;\approx\; \dfrac{\Gamma_2}{\omega_0^2} = \dfrac{|\gamma|^2}{\kappa_0}, & \text{strongly overdamped } \left(\omega_0 \ll \dfrac{\Gamma_2}{2} \iff \dfrac{\kappa_0}{|\gamma|^2} \ll \dfrac{\Gamma_2}{4}\right).
+\end{cases}
+$$
+
+*Dimensional check:* In both regimes $[\tau_{\text{Gold}}] = [1/\Gamma_2] = [|\gamma|^2/\kappa_0] = \mathrm{s}$ (never $|\gamma|^2/(\Gamma_2\kappa_0)$, which has invalid dimension $\mathrm{s}^2$!).
+
+**(d)** Limiting cases:
+
+| Regime | $\omega_0$ ($\mathrm{s}^{-1}$) | Lifetime $\tau_{\text{Gold}}$ ($\mathrm{s}$) | Interpretation |
+|--------|-------------------------------|----------------------------------------------|----------------|
+| Isolated limit ($\Gamma_2 \to 0$) | $\to 0$ | $\to \infty$ | Massless undamped Goldstone modes |
+| Weak breaking / overdamped ($\omega_0 \ll \Gamma_2/2$) | $\sqrt{\Gamma_2\kappa_0}/\lvert\gamma\rvert$ | $\approx \lvert\gamma\rvert^2/\kappa_0$ | Slow relaxational drift along the orbit |
+| Underdamped ($\omega_0 > \Gamma_2/2$) | $\sqrt{\Gamma_2\kappa_0}/\lvert\gamma\rvert$ | $2/\Gamma_2$ | Damped oscillations at $\omega_{\text{Gold}} = \sqrt{\omega_0^2 - \Gamma_2^2/4}$ |
 :::
 
-### 2.1 Why the Mass Is Not Zero: Openness as Explicit Breaking {#why-mass-not-zero}
+<a id="почему-масса-не-ноль"></a>
 
-In an isolated system the Goldstone theorem guarantees *strictly* massless modes. But the holonom is an open system: decoherence at rate $\Gamma_2$ and regeneration at rate $\kappa_0$ are *explicit* breakings of $G_2$-symmetry. The analogy with particle physics is exact: pions have mass $m_\pi \neq 0$ because quarks have nonzero masses that *explicitly* break chiral symmetry. Here the role of "quark masses" is played by the dissipative parameter $\Gamma_2 \cdot \kappa_0$.
+### 2.1 Why the Frequency Is Not Zero: Openness as Explicit Breaking {#why-mass-not-zero}
 
-The formula $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / |\gamma|^2$ is the GMOR relation (Gell-Mann–Oakes–Renner) of coherence cybernetics. In particle physics the analogue is:
-
-$$
-m_\pi^2 f_\pi^2 = -m_q \langle \bar{q}q \rangle
-$$
-
-Here $\Gamma_2 \cdot \kappa_0$ plays the role of $m_q \langle \bar{q}q \rangle$, and $|\gamma|^2$ plays the role of $f_\pi^2$ (squared decay constant).
+In an isolated $G_2$-invariant Hamiltonian system, Goldstone's theorem guarantees strictly zero restoring frequency along the broken orbit $\mathfrak{m}$. In an open Holon, decoherence $\Gamma_2$ and regeneration $\kappa_0$ introduce both damping and explicit symmetry breaking. By loose structural analogy with the Gell-Mann–Oakes–Renner (GMOR) relation for pions in QCD ($m_\pi^2 f_\pi^2 = -m_q \langle \bar{q}q \rangle$), the combination $\Gamma_2 \kappa_0$ plays the role of explicit symmetry-breaking strength and $|\gamma|^2$ plays the role of the order-parameter stiffness, giving $\omega_0^2 = \Gamma_2 \kappa_0 / |\gamma|^2$ in $\mathrm{s}^{-2}$.
 
 ### 2.2 Oscillation Regimes
 
-The frequency of a quasi-Goldstone mode:
+From $\ddot{\theta}_a + \Gamma_2\,\dot{\theta}_a + \omega_0^2\,\theta_a = 0$ with $\omega_0^2 = \Gamma_2\kappa_0/|\gamma|^2$:
 
 $$
-\omega_{\text{Gold}}^2 = \frac{\kappa}{m} - \frac{\Gamma_2^2}{4m^2}
+\omega_{\text{Gold}}^2 = \omega_0^2 - \frac{\Gamma_2^2}{4} = \frac{\Gamma_2\kappa_0}{|\gamma|^2} - \frac{\Gamma_2^2}{4} \qquad \bigl[\omega_{\text{Gold}}^2\bigr] = \mathrm{s}^{-2}
 $$
 
-| Condition | Regime | Dynamics |
-|-----------|--------|----------|
-| $\kappa > \Gamma_2^2/(4m)$ | Oscillatory | Damped oscillations of the Gap profile |
-| $\kappa = \Gamma_2^2/(4m)$ | Critical damping | Aperiodic return to stationary Gap |
-| $\kappa < \Gamma_2^2/(4m)$ | Overdamped | Exponential return without oscillations |
+| Condition (dimensionally exact: both sides in $\mathrm{s}^{-1}$) | Regime | Dynamics |
+|------------------------------------------------------------------|--------|----------|
+| $\kappa_0 / \lvert\gamma\rvert^2 > \Gamma_2 / 4$ ($\omega_0 > \Gamma_2/2$) | Underdamped (oscillatory) | Damped oscillations of the Gap profile at $\omega_{\text{Gold}}$ |
+| $\kappa_0 / \lvert\gamma\rvert^2 = \Gamma_2 / 4$ ($\omega_0 = \Gamma_2/2$) | Critical damping | Fastest aperiodic return to stationary Gap |
+| $\kappa_0 / \lvert\gamma\rvert^2 < \Gamma_2 / 4$ ($\omega_0 < \Gamma_2/2$) | Overdamped | Slow exponential relaxation with slow time $\tau_{\text{Gold}} \approx \lvert\gamma\rvert^2/\kappa_0$ |
 
-Each regime has a cybernetic meaning:
+Each regime admits a cybernetic interpretation `[I]`:
 
-- **Oscillatory:** the system *oscillates* — attention rhythmically rolls between sectors. Subjectively experienced as natural mind-wandering, a gentle rocking of focus.
+- **Underdamped:** attention gently oscillates between sectors (mind-wandering, rhythmic focus shifts).
+- **Critical damping:** fastest non-oscillatory reorientation of attention without overshoot.
+- **Overdamped:** viscous, slow attentional drift governed by the slow relaxation time $\tau_{\text{Gold}} \approx |\gamma|^2/\kappa_0$.
 
-- **Critical damping:** the system *responds optimally* — attentional shift occurs quickly, without overshoot. This is the state of *greatest adaptability*: the response to a stimulus is immediate, but without parasitic oscillations.
-
-- **Overdamped:** the system is *viscous* — attentional reorientation is slowed. Clinically this may correspond to mild attention-deficit disorders or the action of sedative drugs.
+<a id="время-жизни"></a>
 
 ### 2.3 Lifetime and Observability {#lifetime}
 
-From the lifetime formula $\tau_{\text{Gold}} = |\gamma|^2 / (\Gamma_2 \kappa_0)$ an important prediction follows: modes with *greater coherence* ($|\gamma|^2$) live *longer*. This means that highly coherent states of consciousness (deep meditation, flow) should exhibit *narrower* ISF peaks in the power spectrum — modes remain coherent longer, the spectral line is narrower.
+In the **overdamped** weak-breaking regime ($\omega_0 \ll \Gamma_2/2$, i.e. $\kappa_0/|\gamma|^2 \ll \Gamma_2/4$), the slow orbit relaxation time is $\tau_{\text{Gold}} \approx |\gamma|^2 / \kappa_0$ (in seconds): greater coherence $|\gamma|^2$ yields longer mode persistence and narrower low-frequency spectral width. For example, with $\Gamma_2 = 1\,\mathrm{s}^{-1}$, $\kappa_0 = 0.05\,\mathrm{s}^{-1}$, and $|\gamma|^2 = 0.5$:
+- $\omega_0^2 = \Gamma_2\kappa_0/|\gamma|^2 = 0.1\,\mathrm{s}^{-2} < \Gamma_2^2/4 = 0.25\,\mathrm{s}^{-2}$ (overdamped),
+- exact slow decay rate $\gamma_- = \frac{1}{2} - \sqrt{0.25 - 0.1} \approx 0.113\,\mathrm{s}^{-1}$,
+- lifetime $\tau_{\text{Gold}} = 1/\gamma_- \approx 8.9\,\mathrm{s}$ (approaching $|\gamma|^2/\kappa_0 = 10\,\mathrm{s}$).
 
-Estimate for a typical biosystem: with $\Gamma_2 \sim 1 \;\text{s}^{-1}$, $\kappa_0 \sim 0.1 \;\text{s}^{-1}$, and $|\gamma|^2 \sim 0.1$:
-
-$$
-\tau_{\text{Gold}} \sim \frac{0.1}{1 \cdot 0.1} = 1 \;\text{s}
-$$
-
-One second — the characteristic decay time of free attentional oscillations. This is consistent with psychophysical data on the duration of the "elementary act of attention."
+In the **underdamped** regime ($\omega_0 > \Gamma_2/2$), the amplitude decays at the universal damping lifetime $\tau_{\text{Gold}} = 2/\Gamma_2$ (e.g., $\tau_{\text{Gold}} = 2\,\mathrm{s}$ for $\Gamma_2 = 1\,\mathrm{s}^{-1}$), while oscillating at frequency $\omega_{\text{Gold}} = \sqrt{\omega_0^2 - \Gamma_2^2/4}$.
 
 ---
 
-## 3. Physical Meaning: Gap Redistribution [T] {#redistribution}
+<a id="перераспределение"></a>
 
-:::tip Theorem 3.1 (Goldstone modes as collective oscillations) [T]
-Each quasi-Goldstone mode **redistributes** Gap between pairs of dimensions while preserving the total Gap $\mathcal{G}_{\text{total}}$:
+## 3. Physical Meaning: Redistribution of Squared Coherence [T] {#redistribution}
+
+:::tip Theorem 3.1 (Infinitesimal $G_2$ orbit modes conserve $\|\hat{\mathcal{G}}\|_F^2$) [T]
+An infinitesimal transformation along the $G_2$-orbit acts on the skew-symmetric operator $\hat{\mathcal{G}}_* = \operatorname{Im}\Gamma_* \in \mathfrak{so}(7)$ by conjugation:
 
 $$
-\delta\mathrm{Gap}(i,j) = \sum_a \epsilon_a \cdot [T_a, \hat{\mathcal{G}}_*]_{ij}
+\delta\hat{\mathcal{G}}_{ij} = \sum_a \epsilon_a \cdot [T_a, \hat{\mathcal{G}}_*]_{ij}
 $$
 
-where $T_a$ are the broken generators of $G_2$, and $\epsilon_a$ are the mode amplitudes.
+where $T_a \in \mathfrak{g}_2 \subset \mathfrak{so}(7)$ are broken skew-symmetric generators ($T_a^T = -T_a$) and $\epsilon_a \in \mathbb{R}$ are mode amplitudes. Every such mode preserves the **squared Frobenius norm** $\mathcal{G}_{\text{total}}^2 := \frac{1}{2}\|\hat{\mathcal{G}}\|_F^2 = \sum_{i < j} (\hat{\mathcal{G}}_{ij})^2$ (and indeed every spectral invariant $\operatorname{tr}(\hat{\mathcal{G}}^{2k})$), redistributing imaginary coherence across pairs without creating or destroying total $\|\hat{\mathcal{G}}\|_F^2$.
 :::
 
-**Key property:** modes do not change the "total amount" of opacity — they transport it between channels. This is the slow "rocking" of the Gap profile along the $G_2$ orbit.
+<a id="сохранение-gap"></a>
 
-### 3.1 Conservation Law for Total Gap {#gap-conservation}
+### 3.1 Exact Conservation Law (Frobenius Norm, Not Trace) {#gap-conservation}
 
-Mathematically, the commutator $[T_a, \hat{\mathcal{G}}_*]$ generates a *traceless* contribution to the Gap tensor (since $T_a$ are generators of a compact group, $\mathrm{tr}(T_a) = 0$). Consequently:
+Because $\hat{\mathcal{G}}_*$ is real skew-symmetric, its diagonal is identically zero ($\operatorname{tr}\hat{\mathcal{G}}_* = 0$), and the trace identity $\operatorname{tr}([T_a, \hat{\mathcal{G}}_*]) = 0$ concerns only diagonal entries — it does **not** imply $\sum_{i<j}\delta\mathrm{Gap}(i,j) = 0$ (indeed, neither the linear off-diagonal sum $\sum_{i<j}\delta\hat{\mathcal{G}}_{ij}$ nor $\sum_{i<j}\delta|\sin\theta_{ij}|$ is invariant under $\mathrm{SO}(7)$ rotations in general!).
+
+What **is** strictly conserved is the quadratic Frobenius invariant $\mathcal{G}_{\text{total}}^2 = \sum_{i<j}(\hat{\mathcal{G}}_{ij})^2 = -\frac{1}{2}\operatorname{tr}(\hat{\mathcal{G}}^2)$. Using cyclicity of the trace:
 
 $$
-\sum_{i < j} \delta\mathrm{Gap}(i,j) = 0
+\delta\bigl(\mathcal{G}_{\text{total}}^2\bigr) = -\operatorname{tr}\bigl(\hat{\mathcal{G}}_*\,\delta\hat{\mathcal{G}}\bigr) = -\sum_a \epsilon_a\,\operatorname{tr}\bigl(\hat{\mathcal{G}}_*\,[T_a, \hat{\mathcal{G}}_*]\bigr) = -\sum_a \epsilon_a\,\operatorname{tr}\bigl(T_a\,[\hat{\mathcal{G}}_*, \hat{\mathcal{G}}_*]\bigr) = 0
 $$
 
-**What is added in some pairs is taken from others.** Total opacity is invariant. This is a deep property: Goldstone modes describe *redistribution*, not *creation* or *destruction* of the gap.
+Equivalently, in component form:
 
-### 3.2 Example: Mode on $S^6$ (Rank 1) {#mode-example}
+$$
+\sum_{i < j} \hat{\mathcal{G}}_{*,ij}\,\delta\hat{\mathcal{G}}_{ij} = 0 \qquad \Longleftrightarrow \qquad \delta\!\left(\sum_{i < j} (\hat{\mathcal{G}}_{ij})^2\right) = 0
+$$
 
-Consider the simplest case: rank 1, stabiliser $\mathrm{SU}(3)$, six modes. The Gap profile singles out one pair, say $(A, S)$. The six Goldstone modes roll this distinguished direction across the six-dimensional sphere $S^6$:
+**What increases in squared imaginary coherence on some pairs must decrease on others.** Total quadratic opacity $\|\hat{\mathcal{G}}\|_F^2$ is strictly conserved along the entire $G_2$-orbit.
 
-- Mode 1: $(A,S) \to (A,D)$ — focus shifts from the pair "Agent–Subject" to the pair "Agent–Action"
-- Mode 2: $(A,S) \to (S,L)$ — to the pair "Subject–Lexicon"
-- ... and so on.
+<a id="пример-мода"></a>
 
-Each mode is a *rotation* in the space of Gap profiles, preserving $\mathcal{G}_{\text{total}}$ but changing the *distribution* of opacity between channels.
+### 3.2 Example: Mode on $S^6$ ($G_2/\mathrm{SU}(3)$) {#mode-example}
+
+Consider the $G_7$-vector stratum with stabilizer $\mathrm{SU}(3)$ and six tangential modes on $G_2/\mathrm{SU}(3) \cong S^6$. Suppose the initial imaginary coherence is concentrated along the pair $(A, S)$ (Articulation–Structure). The six tangential $G_2$ rotations tilt this direction across $S^6$:
+
+- Mode 1: $(A, S) \to (A, D)$ — shifting from **Articulation–Structure** to **Articulation–Dynamics**
+- Mode 2: $(A, S) \to (S, L)$ — shifting from **Articulation–Structure** to **Structure–Logic**
+- ... and analogously across the remaining directions of $S^6$.
+
+Each rotation preserves $\|\hat{\mathcal{G}}\|_F^2$ identically while redistributing imaginary coherence across pairs of dimensions.
+
+<a id="кибернетическая-интерпретация"></a>
 
 ### 3.3 Cybernetic Interpretation [I] {#cybernetic-interpretation}
 
-**Cybernetic interpretation [I]:** Goldstone modes describe **natural oscillations of attention** — the background redistribution of the "opacity focus" between sectors. The system neither loses nor gains overall opacity level, but slowly retunes itself.
-
-This explains a fundamental property of conscious experience: **attention cannot be simultaneously focused on everything.** Strengthening Gap in one channel (focusing on sound) inevitably weakens Gap in another (peripheral vision "blurs"). Goldstone modes are the mathematical description of this inevitable trade-off.
+**Cybernetic interpretation [I]:** Quasi-Goldstone modes are interpreted as **natural background redistributions of attentional/coherence allocation** across sectors. Because $\|\hat{\mathcal{G}}\|_F^2$ is conserved along the orbit, amplifying imaginary coherence in one channel trades off against others.
 
 ---
 
-## 4. Free Oscillations of Consciousness {#free-oscillations}
+<a id="свободные-колебания"></a>
 
-### 4.1 What Is Felt When a Mode Oscillates {#subjective-experience}
+## 4. Free Oscillations of Consciousness [I] {#free-oscillations}
 
-Each Goldstone mode is an oscillation of opacity between a pair of channels. But since the [seven dimensions](/docs/core/structure/dimension-u) of the holonom carry *semantic* content (A — Agent, S — Subject, D — Action, L — Lexicon, E — Experience, O — Observer, U — Universe), the oscillations are not abstract: they carry *subjective* meaning.
+<a id="субъективный-опыт"></a>
 
-**Mode $(E, O)$:** opacity oscillates between Experience and Observer. Subjectively: rhythmic alternation between "immersion in the experience" and "detached observation." This is the classical "flickering of consciousness" described by meditative traditions as the alternation of samadhi and vipassana.
+### 4.1 Interpretive Reading of Pair Modes {#subjective-experience}
 
-**Mode $(L, D)$:** oscillates between Lexicon and Action. Subjectively: alternation between "inner monologue" and "readiness for action." A familiar feeling: you formulate a thought, then switch to action, then back to thought.
+The [seven canonical dimensions](/docs/core/structure/dimension-u) of the Holon carry semantic roles: **A — Articulation**, **S — Structure**, **D — Dynamics**, **L — Logic**, **E — Interiority**, **O — Ground**, **U — Unity**. In phenomenological interpretation `[I]`, slow redistributions along specific pairs are read as:
 
-**Mode $(A, U)$:** oscillates between Agent and Universe. Subjectively: alternation between "I am the doer" and "I am part of the whole." This is the oscillation between a sense of agency and a sense of dissolution, well known in the phenomenology of altered states.
+**Mode $(E, O)$:** coherence redistributes between **Interiority ($E$)** and **Ground ($O$)** — interpreted as alternation between foreground experiential immersion and baseline grounding/presence.
 
-### 4.2 Why We Do Not Notice the Modes {#invisibility}
+**Mode $(L, D)$:** coherence redistributes between **Logic ($L$)** and **Dynamics ($D$)** — interpreted as alternation between discursive/analytical structuring and active behavioural engagement.
 
-Goldstone modes are *infra-slow*: their frequencies $\sim 0.01$ Hz, periods $\sim 100$ s. Ordinary introspective "scanning" occurs on timescales $\sim 1$ s (frequency $\sim 1$ Hz), which is two orders of magnitude faster. We do not notice the modes for the same reason we do not notice the tide: the process is too slow for our attentional "temporal resolution."
+**Mode $(A, U)$:** coherence redistributes between **Articulation ($A$)** and **Unity ($U$)** — interpreted as alternation between sharp perceptual/conceptual differentiation and holistic integrative unity.
 
-But they can be detected *objectively* — through analysis of fMRI and EEG in the ultra-slow range. And — even more interestingly — *subjectively* in extended meditation, when the temporal resolution of introspection increases.
+<a id="незаметность"></a>
+
+### 4.2 Why Slow Modes Escape Rapid Introspection {#invisibility}
+
+If quasi-Goldstone modes lie in the infra-slow band ($\sim 0.01$ Hz, periods $\sim 100$ s), they operate two orders of magnitude more slowly than ordinary moment-to-moment cognitive updates ($\sim 1$ Hz), making them difficult to detect directly by rapid introspection while potentially accessible to slow resting-state fMRI/EEG analyses.
 
 ---
+
+<a id="сравнение"></a>
 
 ## 5. Comparison with Physical Analogues {#comparison}
 
-It is instructive to compare CC Goldstone modes with their physical analogues, to see what is shared and what is unique:
-
-| Property | Phonons (crystal) | Magnons (magnet) | Pions (QCD) | CC Goldstone modes |
-|----------|--------------------|------------------|-------------|---------------------|
+| Property | Phonons (crystal) | Magnons (magnet) | Pions (QCD) | CC quasi-Goldstone modes (model) |
+|----------|--------------------|------------------|-------------|----------------------------------|
 | Broken symmetry | Translational | Rotational $\mathrm{SO}(3)$ | Chiral $\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R$ | $G_2 = \mathrm{Aut}(\mathbb{O})$ |
-| Stabiliser | Lattice translations | $\mathrm{SO}(2)$ | $\mathrm{SU}(2)_V$ | $H \in \{G_2, \mathrm{SU}(3), \mathrm{SU}(2) \times \mathrm{U}(1), T^2\}$ |
-| Number of modes | 3 (acoustic) | 1 (for $S = 1/2$) | 3 ($\pi^+, \pi^-, \pi^0$) | $\in \{0, 6, 10, 11, 12\}$ |
-| Mass | 0 (exact) | 0 (at $T = 0$) | 135–140 MeV (quasi) | $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / \|\gamma\|^2$ (quasi) |
-| Source of mass | — | Thermal fluctuations, anisotropy | Nonzero quark masses | Decoherence $\Gamma_2$, regeneration $\kappa_0$ |
-| Propagation medium | Crystal lattice | Spin lattice | QCD vacuum | Internal space $\mathcal{D}(\mathbb{C}^7)$ |
-| Characteristic frequency | $10^{12}$ Hz (THz) | $10^{9}$–$10^{12}$ Hz (GHz–THz) | $10^{23}$ Hz | $0.005$–$0.02$ Hz |
-| Observability | Raman spectroscopy | Neutron scattering | Particle detectors | fMRI, EEG |
+| Stabiliser | Lattice translations | $\mathrm{SO}(2)$ | $\mathrm{SU}(2)_V$ | $H \in \{G_2, \mathrm{SU}(3), \mathrm{SU}(2) \times \mathrm{U}(1), \mathrm{SU}(2), T^2\}$ |
+| Number of modes | 3 (acoustic) | 1 (for $S = 1/2$) | 3 ($\pi^+, \pi^-, \pi^0$) | $\in \{0, 6, 10, 11, 12\}$ (`T-25`) |
+| Squared frequency / mass | 0 (exact) | 0 (at $T = 0$) | 135–140 MeV (quasi) | $\omega_0^2 = \Gamma_2 \kappa_0 / \lvert\gamma\rvert^2$ (model `[C]`) |
+| Source of explicit breaking | — | Thermal fluctuations, anisotropy | Nonzero quark masses | Decoherence $\Gamma_2$, regeneration $\kappa_0$ |
+| Carrier space | Crystal lattice | Spin lattice | QCD vacuum | Internal state space $\mathcal{D}(\mathbb{C}^7)$ |
+| Hypothesised frequency | $10^{12}$ Hz (THz) | $10^{9}$–$10^{12}$ Hz (GHz–THz) | $10^{23}$ Hz | $0.005$–$0.02$ Hz `[H]` |
+| Observability | Raman spectroscopy | Neutron scattering | Particle detectors | fMRI, EEG `[Pr]` |
 
-Two features make CC modes *unique*:
-
-1. **Extremely low frequency.** 25 orders of magnitude lower than phonons. This reflects the *macroscopic* character of consciousness: the timescales of cognitive processes are seconds and minutes, not picoseconds.
-
-2. **Variable number of modes.** In physics the number of Goldstone modes is fixed for a given system. In CC it *depends on the state of consciousness* (through the rank of the Gap operator): from 0 in coma to 12 in deep concentration. This is a dynamic symmetry breaking that changes on the fly.
+Two features make the CC hypothesis distinctive `[H]`:
+1. **Macroscopic timescale:** cognitive/neural rates lie in the Hz to mHz range rather than microscopic solid-state scales.
+2. **State-dependent orbit dimension:** if different states of consciousness correspond to distinct $G_2$-stabilizer strata, the number of orbit modes shifts discretely across $\{0, 6, 10, 11, 12\}$.
 
 ---
 
 <a id="предсказание-isf"></a>
 
-## 6. Falsifiable Prediction: Connection to ISF [H] {#isf-prediction}
+## 6. Falsifiable Hypothesis: Connection to ISF [H] {#isf-prediction}
 
-### 6.1 Prediction of Infra-Slow Fluctuations {#frequency-prediction}
+<a id="предсказание-частот"></a>
 
-:::warning Prediction (Goldstone modes $\leftrightarrow$ infra-slow fluctuations) [H]
-Frequency of quasi-Goldstone modes:
+### 6.1 Hypothesis on Infra-Slow Fluctuations {#frequency-prediction}
+
+:::warning Hypothesis (Quasi-Goldstone modes $\leftrightarrow$ infra-slow fluctuations) [H]
+In the underdamped regime ($\omega_0 > \Gamma_2/2$), the mode oscillation frequency is:
 
 $$
-f_{\text{Gold}} = \frac{\omega_{\text{Gold}}}{2\pi} \approx \frac{1}{2\pi}\sqrt{\frac{\kappa}{m}} \sim 0.005\text{–}0.02 \;\text{Hz}
+f_{\text{Gold}} = \frac{\omega_{\text{Gold}}}{2\pi} = \frac{1}{2\pi}\sqrt{\frac{\Gamma_2\kappa_0}{|\gamma|^2} - \frac{\Gamma_2^2}{4}} \qquad \bigl[f_{\text{Gold}}\bigr] = \mathrm{Hz}
 $$
 
-This coincides with the range of **infra-slow neuronal fluctuations** (ISF) observed in resting-state fMRI ($0.01$–$0.1$ Hz).
+Under model parameter choices placing $f_{\text{Gold}}$ in $0.005\text{–}0.02\text{ Hz}$, this falls within the band of **infra-slow neuronal fluctuations** (ISF) observed in resting-state fMRI ($0.01\text{–}0.1\text{ Hz}$).
 
-**Status:** algebra [T], frequency coincidence [H], experimental verification [P].
+**Status:** orbit-dimension algebra `[T]` (`T-25`), effective oscillator relation `[C]`, frequency coincidence with ISF `[H]`, experimental verification `[Pr]`.
 :::
 
-:::warning Free parameters in the numerical prediction [C]
-The specific range $0.005$--$0.02$ Hz depends on the values of $\kappa$ and $m_{\text{Gold}}$, which are **not determined** from first principles but estimated by order of magnitude. With two free parameters ($\kappa$, $m$) the ISF range can be fitted post hoc. The falsifiable content is the **structural** prediction (number of components $\in \{6, 10, 12\}$, dependence on state of consciousness), not the exact frequency range. Status of the numerical prediction: **[C]**, not [T].
+:::warning Free parameters in the numerical range [C]
+The range $0.005\text{–}0.02\text{ Hz}$ depends on the calibrated values of $\Gamma_2$, $\kappa_0$, and $|\gamma|^2$, which are **not determined** from first principles. With unfixed rate inputs, the frequency band can be matched post hoc. The genuinely falsifiable content is the **structural** hypothesis (discrete mode counts $\in \{0, 6, 10, 11, 12\}$ and discrete step-downs under sedation), not the numeric frequency range.
 :::
+
+<a id="isf-данные"></a>
 
 ### 6.2 What Is Known about ISF from Experiment {#isf-data}
 
 Infra-slow fluctuations (ISF) are a well-documented neurophysiological phenomenon:
 
-- **Discovery:** First noticed in resting-state fMRI as spontaneous oscillations of the BOLD signal (Biswal et al., 1995).
-- **Frequency range:** $0.01$–$0.1$ Hz, with the core at $0.01$–$0.03$ Hz.
-- **Properties:** Spatially organised into "resting-state networks" (default mode network, DMN), exhibiting anti-correlations between DMN and the task-positive network.
-- **Dependence on consciousness:** Weakened under anaesthesia (Boveroux et al., 2010), disappear in deep coma (Noirhomme et al., 2010), enhanced during meditation (Brewer et al., 2011).
+- **Discovery:** First observed in resting-state fMRI as spontaneous oscillations of the BOLD signal (Biswal et al., 1995).
+- **Frequency range:** $0.01$–$0.1$ Hz, with substantial power at $0.01$–$0.03$ Hz.
+- **Properties:** Spatially organised into resting-state networks (e.g. default mode network, DMN), exhibiting anti-correlations between DMN and task-positive networks.
+- **Dependence on consciousness:** Weakened under anaesthesia (Boveroux et al., 2010), greatly reduced in deep coma (Noirhomme et al., 2010), modulated during meditation (Brewer et al., 2011).
 
-This profile is precisely what the theory predicts: modes that depend on the level of consciousness, with a characteristic frequency in the ultra-slow range.
+### 6.3 Structural Mode-Count Hypothesis
 
-### 6.3 Quantitative Predictions
+| Representative $G_2$ stabilizer | $n_{\text{Gold}}$ | Hypothesis for ISF |
+|---------------------------------|-------------------|--------------------|
+| $\mathrm{SU}(3)$ | 6 | 6 independent ISF components |
+| $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 10 | 10 ISF components |
+| $\mathrm{SU}(2)$ | 11 | 11 ISF components |
+| $T^2$ | 12 | 12 ISF components |
 
-| Opacity rank | $n_{\text{Gold}}$ | Prediction for ISF |
-|--------------|-------------------|--------------------|
-| 1 | 6 | 6 independent ISF components |
-| 2 | 10 | 10 ISF components |
-| 3 | 12 | 12 ISF components |
+Typical ICA decompositions of resting-state fMRI yield $\sim 10$–$20$ components depending on model-order selection; testing whether a $G_2$-specific discrete set $\{6, 10, 11, 12\}$ emerges requires an objective, pre-registered model-order criterion.
 
-Comparison with ICA decomposition data from resting-state fMRI: the typical number of independent ISF components is $\sim 10$–$20$, consistent with rank 2–3.
+### 6.4 Specific Hypotheses for EEG
 
-### 6.4 Specific Predictions for EEG
+| Parameter | Hypothesis [H] | Verification method [Pr] |
+|-----------|----------------|--------------------------|
+| Frequency band | $0.005$–$0.02$ Hz (calibrated `[C]`) | Spectral analysis of DC-coupled EEG in $0.001$–$0.1$ Hz |
+| Number of components | $6$, $10$, $11$, or $12$ | Pre-registered ICA model-order analysis of infra-slow EEG |
+| Reduction in coma | $n_{\text{Gold}} \to 0$ | Comparison of spectra: wakefulness vs. coma |
+| Modulation with meditation | Shift in $f_{\text{Gold}}$ with changes in $\kappa_0, \Gamma_2$ | Longitudinal study of meditators |
 
-| Parameter | Prediction | Verification method |
-|-----------|------------|---------------------|
-| Frequency range | $0.005$–$0.02$ Hz | Spectral analysis of EEG in the $0.001$–$0.1$ Hz band |
-| Number of components | $6$, $10$, or $12$ | ICA decomposition of ultra-slow EEG |
-| Absence in coma | $n_{\text{Gold}} \to 0$ | Comparison of spectra: consciousness vs. coma |
-| Dependence on meditation | Shift in $f_{\text{Gold}}$ with change in $\kappa$ | Longitudinal study of meditators |
+<a id="структурный-тест"></a>
 
 ### 6.5 The Key Structural Test: Discrete Number of Modes {#structural-test}
 
-The strongest (and most falsifiable) prediction is *not* the numerical value of the frequency, but the *discreteness* of the number of modes. The theory asserts that the number of independent ISF components can only take values from the set $\{0, 6, 10, 11, 12\}$ — and no others. This is a direct consequence of the classification of subgroups of $G_2$:
+The strongest falsifiable hypothesis is *not* the numeric frequency band, but the *discreteness* of the orbit dimension across $G_2$-stabilizer strata (`T-25`):
 
 $$
-n_{\text{broken}} \in \{0, 6, 10, 11, 12\} \quad \text{and no other values}
+n_{\text{broken}} \in \{0, 6, 10, 11, 12\}
 $$
 
-If ICA decomposition finds, say, a stable 8 or 15 components, this *falsifies* the $G_2$ mechanism. If it finds 10 or 12 — this *confirms* it with high specificity, since the posterior probability of a random coincidence with one of the five discrete values is small.
+Testing this empirically requires controlling for non-neural confounds (vascular, respiratory, ICA dimensionality choice) before drawing conclusions for or against the $G_2$ hypothesis.
 
 ---
 
-## 7. Experimental Verification Protocol [P] {#protocol}
+<a id="протокол"></a>
 
-:::caution Verification programme [P]
-**Stage 1: Spectral analysis (EEG)**
+## 7. Experimental Verification Protocol [Pr] {#protocol}
 
-1. Record 64-channel EEG at rest (eyes-closed, 30 min)
+:::caution Verification programme [Pr]
+**Stage 1: Spectral analysis (DC-EEG)**
+
+1. Record 64-channel DC-coupled EEG at rest (eyes-closed, 30 min)
 2. Bandpass filtering: $0.001$–$0.1$ Hz
-3. Compute power spectrum in the ultra-slow range
-4. Determine the number of significant peaks in the $0.005$–$0.02$ Hz band
-5. Compare with prediction: $n_{\text{peaks}} \in \{6, 10, 12\}$
+3. Compute power spectrum in the infra-slow band
+4. Estimate statistically significant independent components via a pre-registered model-order criterion
+5. Test clustering against $\{6, 10, 11, 12\}$
 
 **Stage 2: Dependence on state of consciousness**
 
-1. Repeat for states: wakefulness, sleep (N1–N3, REM), anaesthesia
-2. Prediction: number of ISF components decreases with decreasing level of consciousness
+1. Repeat across wakefulness, sleep (N1–N3, REM), and titrated anaesthesia
+2. Hypothesis: number of infra-slow components decreases with deepening anaesthesia
 3. In deep anaesthesia / coma: $n_{\text{peaks}} \to 0$
 
-**Stage 3: Correlation with G₂ structure**
+**Stage 3: Correlation with $G_2$ structure**
 
-1. Construct the $21 \times 21$ correlation matrix (see [G₂ Noether charges](./g2-noether-cc))
-2. Verify [Ward identities](/docs/physics/gauge-symmetry/noether-charges#6-тождества-уорда-для-gap-корреляторов)
-3. Estimate opacity rank from the number of ISF components
+1. Construct the $21 \times 21$ coherence-correlation matrix (see [G₂ Noether charges](./g2-noether-cc))
+2. Test [Ward identities](/docs/physics/gauge-symmetry/noether-charges#6-тождества-уорда-для-gap-корреляторов) under explicitly specified symmetry assumptions
+3. Estimate the effective stabilizer stratum from the mode count
 :::
+
+<a id="протокол-eeg"></a>
 
 ### 7.1 Detailed EEG Study Protocol {#eeg-protocol}
 
 **Participants:** $N \geq 30$, healthy adults, no neurological pathology, no psychotropic medications.
 
 **Equipment:**
-- 64-channel EEG (10-20 system + additional electrodes)
-- Sampling rate $\geq 500$ Hz (for artefacts), but key data in the 0.001–0.1 Hz band
-- Reference: average of ear electrodes
-- Simultaneous ECG, EOG recording (for artefact correction)
+- 64-channel DC-coupled EEG (10–20 system + additional electrodes)
+- Sampling rate $\geq 500$ Hz (for artefact rejection), analysing the $0.001$–$0.1$ Hz band
+- Reference: average of ear/mastoid electrodes
+- Simultaneous ECG, EOG, and respiration recording (for physiological artefact control)
 
 **Recording protocol:**
 1. **Baseline (30 min):** eyes closed, relaxed wakefulness
-2. **Task (15 min):** N-back (working memory) — to change opacity rank
+2. **Task (15 min):** N-back (working memory)
 3. **Meditation (30 min):** experienced meditators, open monitoring
 4. **Sleep (where possible):** overnight polysomnography with full EEG
 
 **Data analysis:**
-1. Preprocessing: artefact removal (ICA), re-referencing
-2. Bandpass filtering: $0.001$–$0.1$ Hz (causal filter, to avoid phase distortion)
-3. Spectral analysis: multitaper method (Thomson, 1982) to increase spectral resolution
-4. ICA decomposition in the ultra-slow range: determination of the number of statistically significant components
-5. Comparison with prediction: $n_{\text{ICA}} \in \{6, 10, 11, 12\}$
+1. Preprocessing: artefact removal (ICA), physiological nuisance regression, re-referencing
+2. Bandpass filtering: $0.001$–$0.1$ Hz (causal filter)
+3. Spectral analysis: multitaper method (Thomson, 1982)
+4. Pre-registered ICA model-order estimation in the infra-slow band
+5. Comparison against $\{0, 6, 10, 11, 12\}$
 
 **Statistical criteria:**
-- $H_0$: the number of ISF components is continuously distributed (does not cluster around $\{6, 10, 12\}$)
-- $H_1$: the number of ISF components is discrete, consistent with the $G_2/H$ prediction
-- Test: comparison of the distribution of $n_{\text{ICA}}$ with uniform ($\chi^2$ criterion or bootstrap)
+- $H_0$: the distribution of component counts shows no excess clustering on $\{6, 10, 11, 12\}$
+- $H_1$: component counts cluster significantly on $\{6, 10, 11, 12\}$
+- Test: goodness-of-fit / permutation test with multiple-comparison correction
+
+<a id="протокол-fmri"></a>
 
 ### 7.2 fMRI Study Protocol {#fmri-protocol}
 
-**Advantages of fMRI:** higher spatial resolution, direct access to ISF via the BOLD signal.
+**Advantages of fMRI:** higher spatial resolution, direct access to infra-slow BOLD fluctuations.
 
 **Protocol:**
-1. Resting-state fMRI, 20 min, TR $\leq 1$ s (to access $f \leq 0.5$ Hz)
-2. ICA decomposition (FSL MELODIC or equivalent)
-3. Extraction of components with a power peak in $0.005$–$0.02$ Hz
-4. Count of such components
-5. Repeat in different states: wakefulness, propofol sedation (light, deep)
+1. Resting-state fMRI, 20 min, TR $\leq 1$ s (Nyquist frequency $\geq 0.5$ Hz)
+2. ICA decomposition (FSL MELODIC or equivalent with objective dimensionality estimation)
+3. Extraction of neural components with spectral peak in $0.005$–$0.02$ Hz
+4. Component count across participants and sessions
+5. Repeat across wakefulness and graded propofol sedation (light, deep)
 
-**Prediction:** the number of ISF components decreases discretely ($12 \to 10 \to 6 \to 0$) with deepening sedation, reflecting the sequential restoration of $G_2$-symmetry.
+**Hypothesis [H]:** the number of infra-slow neural components decreases in discrete steps ($12 \to 10 \to 6 \to 0$) with deepening sedation.
 
 ---
 
-## 8. Excitation Spectrum: The Full Picture [T] {#spectrum}
+<a id="спектр"></a>
 
-The full space of small oscillations around the stationary Gap profile divides into three sectors:
+## 8. Excitation Spectrum: Two Linear Sectors [T / C] {#spectrum}
 
-| Sector | Number of modes | Frequency | Physical meaning |
-|--------|-----------------|-----------|-----------------|
-| Massive | $21 - n_{\text{broken}} - n_{\text{top}}$ | $\omega_{\text{mass}}^2 = \mu_{\text{eff}}^2 + \kappa/m$ | Oscillations perpendicular to the $G_2$ orbit |
-| Quasi-Goldstone | $n_{\text{broken}}$ | $\omega_{\text{Gold}}^2 = \kappa/m - \Gamma_2^2/(4m^2)$ | Slow oscillations along the $G_2$ orbit |
-| Topologically protected | $0$ or $1$ | Determined by $Q_{\text{top}}$ | Does not decay without a phase transition |
+The 21-dimensional real tangent space $\mathfrak{so}(7)$ of small perturbations around a stationary profile $\hat{\mathcal{G}}_*$ splits orthogonally into **two** linear excitation sectors:
 
-Total number of modes: $n_{\text{mass}} + n_{\text{Gold}} + n_{\text{top}} = 21$ — equal to the number of independent coherences $\binom{7}{2}$.
+| Sector | Number of modes | Squared eigenfrequency (underdamped model `[C]`) | Physical meaning |
+|--------|-----------------|--------------------------------------------------|-----------------|
+| Massive (transverse) | $21 - n_{\text{broken}}$ | $\omega_{\text{mass},k}^2 = \omega_{\text{rad},k}^2 + \omega_0^2 - \Gamma_2^2/4$ | Oscillations perpendicular to the $G_2$-orbit (changing $\|\hat{\mathcal{G}}\|_F^2$ or invariants) |
+| Quasi-Goldstone (tangential) | $n_{\text{broken}}$ | $\omega_{\text{Gold}}^2 = \omega_0^2 - \Gamma_2^2/4$ | Slow redistributions along the $G_2$-orbit (preserving $\|\hat{\mathcal{G}}\|_F^2$) |
+
+Total number of modes: $(21 - n_{\text{broken}}) + n_{\text{broken}} = 21 = \dim\mathfrak{so}(7) = \binom{7}{2}$.
+
+:::warning Removal of the former "immortal topological mode" (`T-25`, `T-69`, `T-85 [✗]`)
+Earlier versions included a third spectral sector — a supposedly immortal, non-decaying "topological mode" ($\tau \to \infty$) governed by a 1D charge $Q_{\text{top}}$. That claim is **withdrawn**:
+1. The flag manifold $G_2/T^2$ is simply connected ($\pi_1(G_2/T^2) = 0$, `T-25 [T]`), so no 1D quantized loop charge $Q_{\text{top}}$ exists.
+2. While $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ (`T-25`, `T-69 [T]`), by **`T-69 [T]`** topological classes of maps into $G_2/T^2$ supply **no physical energy barrier** and no zero-damping linear mode; the universal Keldysh-to-Berry topological term is withdrawn (`T-85 [✗]`).
+3. In open dissipative dynamics ($\Gamma_2 > 0$), **every** linear perturbation decays unless actively sustained by regeneration $\mathcal{R}$.
+:::
+
+<a id="иерархия-масштабов"></a>
 
 ### 8.1 Hierarchy of Timescales {#timescale-hierarchy}
 
-The three spectral sectors define three *cardinally different* timescales in consciousness:
+The two genuine linear sectors define two distinct dynamical timescales `[C]/[I]`:
 
-| Sector | Characteristic frequency | Timescale | Cognitive analogue |
-|--------|--------------------------|-----------|--------------------|
-| Massive modes | $\sim 1$–$40$ Hz | $25$–$1000$ ms | Perceptual processes, working memory, alpha/beta/gamma rhythms |
-| Goldstone modes | $\sim 0.005$–$0.02$ Hz | $50$–$200$ s | Infra-slow fluctuations, mind-wandering, mode switching |
-| Topological mode | $\sim 0$ (does not decay) | $\to \infty$ | Stable "core" of self-consciousness, continuity of the "I" |
+| Sector | Hypothesised frequency band | Timescale | Interpretive cognitive analogue [I] |
+|--------|-----------------------------|-----------|-------------------------------------|
+| Massive (transverse) modes | $\sim 1$–$40$ Hz | $25$–$1000$ ms | Rapid perceptual and cognitive updates, alpha/beta/gamma rhythms |
+| Quasi-Goldstone (orbit) modes | $\sim 0.005$–$0.02$ Hz | $50$–$200$ s | Infra-slow fluctuations, mind-wandering, slow attentional reallocation |
 
-This hierarchy explains why consciousness simultaneously *reacts quickly* to stimuli (massive modes), *drifts slowly* in the background (Goldstone modes), and *stably preserves* self-identity (topological mode).
+Long-term personal continuity is not sustained by a mythical non-decaying topological mode, but by **non-Markovian memory kernels** (see [Non-Markovian Dynamics](./non-markovian)) and active thermodynamic regeneration $\mathcal{R}$.
 
-### 8.2 Full Spectrum in the Oscillatory Regime {#full-spectrum}
+<a id="полный-спектр"></a>
 
-In the oscillatory regime ($\kappa > \Gamma_2^2/(4m)$ for all sectors) the full spectrum is:
+### 8.2 Full Linear Spectrum in the Underdamped Regime {#full-spectrum}
+
+In the underdamped regime ($\omega_0 > \Gamma_2/2$, all terms in $\mathrm{s}^{-1}$):
 
 $$
 \omega_k = \begin{cases}
-\sqrt{\mu_k^2 + \kappa/m} - i\Gamma_2/(2m) & \text{massive, } k = 1, \ldots, 21 - n_{\text{broken}} - n_{\text{top}} \\
-\sqrt{\kappa/m - \Gamma_2^2/(4m^2)} - i\Gamma_2/(2m) & \text{Goldstone, } k = 1, \ldots, n_{\text{broken}} \\
-\omega_{\text{top}} & \text{topological, } k = 0 \text{ or } 1
+\sqrt{\omega_{\text{rad},k}^2 + \omega_0^2 - \Gamma_2^2/4} - i\,\Gamma_2/2 & \text{massive (transverse), } k = 1, \ldots, 21 - n_{\text{broken}}, \\[6pt]
+\sqrt{\omega_0^2 - \Gamma_2^2/4} - i\,\Gamma_2/2 & \text{quasi-Goldstone (orbit), } k = 1, \ldots, n_{\text{broken}}.
 \end{cases}
 $$
 
-The Goldstone modes form a *quasi-degenerate* cluster near the lower edge of the spectrum: their frequencies are nearly equal (the small spread is determined by the nuances of the $G_2$ structure), but *much lower* than the massive modes. This is the spectral gap separating "fast" processes from "slow" ones.
+All $21$ poles lie strictly in the lower half-plane ($\operatorname{Im}\omega_k = -\Gamma_2/2 < 0$), ensuring causal decay of linear perturbations. When $\omega_{\text{rad},k} \gg \omega_0$, the $n_{\text{broken}}$ quasi-Goldstone modes form a low-frequency cluster well separated from the $21 - n_{\text{broken}}$ massive modes.
 
 ---
 
-## 9. Goldstone Modes and Consciousness Phase Transitions {#phase-transitions}
+<a id="фазовые-переходы"></a>
 
-### 9.1 Connection to the Phase Diagram {#connection-to-phases}
+## 9. Quasi-Goldstone Modes and Dynamical Bifurcations [C / H] {#phase-transitions}
 
-The [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) distinguishes three phases: symmetric (coherent), intermediate, and "frozen" (decohered). Goldstone modes play a key role at *transitions* between phases:
+<a id="связь-с-фазами"></a>
 
-- **Symmetric phase** ($P < P_{\text{crit}}$): $G_2$ is unbroken, $n_{\text{broken}} = 0$, no modes. The system is "faceless" — all Gap directions are equivalent.
-- **Intermediate phase** ($P \in (P_{\text{crit}}, 3/7]$): $G_2$ is broken, modes appear. The number of modes grows as $P$ increases (the rank of the Gap operator grows). This is the region of *conscious experience*.
-- **At the phase transition** $P \to P_{\text{crit}}$ from below: modes "condense" — their mass tends to zero, lifetime to infinity, amplitude to zero. This is *critical* slowing, analogous to the divergence of the correlation length at a second-order phase transition.
+### 9.1 Relation to Reduced Phase Models (`T-160 [✗]`, `T-161`) {#connection-to-phases}
 
-### 9.2 Critical Slowing at Loss of Consciousness {#critical-slowing}
+:::warning Scope of symmetry breaking and critical exponents (`T-160 [✗]`, `T-161`)
+Earlier versions asserted that the algebraic purity cut $P_{\text{crit}} = 2/7$ universally triggers a second-order $G_2$ symmetry-breaking phase transition with diverging mode lifetime and universal UHM critical exponents. Both universal claims are **withdrawn**:
+- **`T-160 [✗]`:** The Hilbert–Schmidt majority cut $P > 2/7$ is an algebraic threshold under a chosen convention; it does **not** automatically imply a dynamical bifurcation or $U(7) \to G_2$ symmetry breaking. A dynamical catastrophe requires a **specified reduced family and transversality**.
+- **`T-161`:** Classical mean-field critical exponents hold `[T]` only for a **tuned** scalar mean-field potential (specifically even symmetry, vanishing quartic term, and positive sextic term for tricritical $A_5$ exponents; a spatial correlation length further requires an explicit gradient term). Universal UHM critical exponents are withdrawn.
+:::
 
-During falling asleep, anaesthesia, or loss of consciousness, the *reverse* phase transition occurs: $P$ decreases toward $P_{\text{crit}}$. The Goldstone modes:
+Within a **specified reduced dynamical model** possessing a continuous symmetry-breaking bifurcation (for instance, as a control parameter $\mu$ crosses a bifurcation threshold $\mu_c$ where a nontrivial stationary Gap orbit $\hat{\mathcal{G}}_*(\mu) \neq 0$ splits off from $\hat{\mathcal{G}} = 0$):
 
-1. **Slow down:** $\omega_{\text{Gold}} \to 0$, frequency tends to zero.
-2. **"Spread out":** mode coherence drops, spectral lines broaden.
-3. **Disappear:** $n_{\text{broken}} \to 0$ upon full restoration of $G_2$-symmetry.
+- **Symmetric regime ($\hat{\mathcal{G}}_* = 0$):** $G_2$ is unbroken, $n_{\text{broken}} = 0$.
+- **Symmetry-broken regime ($\hat{\mathcal{G}}_* \neq 0$):** $G_2$ breaks to its stabilizer $H$, producing $n_{\text{broken}} = 14 - \dim(H)$ orbit modes.
+- **Approaching the bifurcation ($\mu \to \mu_c^+$):** the restoring stiffness along the symmetry-breaking direction vanishes ($\omega_{\text{rad}} \to 0$), producing model-dependent **critical slowing** `[C]` of the soft mode.
 
-This prediction is directly testable: upon administration of an anaesthetic, the ISF spectrum should show a *red shift* (shift to lower frequencies) followed by *disappearance* of ISF peaks.
+<a id="критическое-замедление"></a>
+
+### 9.2 Critical Slowing Hypothesis at Loss of Consciousness [H] {#critical-slowing}
+
+As an empirical hypothesis `[H]` for models where sedation or anaesthesia drives neural dynamics across a continuous symmetry-restoring bifurcation:
+
+1. **Frequency red shift:** soft-mode frequencies shift downward ($\omega \to 0$) as the restoring stiffness decreases.
+2. **Reduced amplitude / altered damping:** coherence $|\gamma|^2$ drops and orbit modes lose amplitude.
+3. **Mode collapse:** $n_{\text{broken}} \to 0$ when $\hat{\mathcal{G}}_* \to 0$ restores $G_2$ invariance.
+
+Testing for a low-frequency red shift and collapse of infra-slow components under graded propofol anaesthesia provides an empirical probe of this hypothesis `[H]`.
 
 ---
+
+<a id="статусы"></a>
 
 ## 10. Status Summary {#statuses}
 
-| Result | Status |
-|--------|--------|
-| Spontaneous breaking $G_2 \to H$: $n_{\text{broken}} = 14 - \dim(H)$ | [T] |
-| Quasi-Goldstone mass: $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / \lvert\gamma\rvert^2$ | [T] |
-| Three spectral sectors (massive, Goldstone, topological) | [T] |
-| Modes redistribute Gap preserving $\mathcal{G}_{\text{total}}$ | [T] |
-| Frequency $f_{\text{Gold}} \sim 0.005$–$0.02$ Hz | [C] (numerical range depends on $\kappa$, $m$) |
-| Coincidence with ISF range | [H] |
-| Number of ISF components $\in \{6, 10, 12\}$ determined by rank | [H] |
-| Discreteness of number of modes (only $\{0, 6, 10, 11, 12\}$) | [H] |
-| Red shift of ISF upon loss of consciousness | [H] |
-| Experimental verification protocol | [P] |
-| Cybernetic interpretation (attentional oscillations) | [I] |
-| Subjective experience of modes (flickering of consciousness) | [I] |
+| Result | Status | Reference |
+|--------|--------|-----------|
+| Orbit dimension $n_{\text{broken}} = 14 - \dim(H)$ for specified stabilizer $H \subset G_2$ | **[T]** (at specified orbit) | `T-25` |
+| Rank-only stabilizer classification | **[✗]** (withdrawn) | `T-25` |
+| Infinitesimal $G_2$-orbit modes conserve $\|\hat{\mathcal{G}}\|_F^2 = 2\sum_{i<j}(\hat{\mathcal{G}}_{ij})^2$ | **[T]** | Section 3.1 |
+| Effective oscillator model $\omega_0^2 = \Gamma_2\kappa_0/\lvert\gamma\rvert^2$ and $\tau_{\text{Gold}}$ (in seconds) | **[C]** (model ansatz; `T-74 [✗]`, `T-75 [✗]`) | Section 2 |
+| Two linear sectors: $(21 - n_{\text{broken}})$ massive + $n_{\text{broken}}$ quasi-Goldstone | **[T]/[C]** | Section 8 |
+| Former immortal non-decaying topological mode ($\tau \to \infty$, $Q_{\text{top}}$) | **[✗]** (withdrawn) | `T-25`, `T-69`, `T-85 [✗]` |
+| Universal $P = 2/7$ symmetry-breaking transition & universal UHM critical exponents | **[✗]** (withdrawn; tuned model only) | `T-160 [✗]`, `T-161` |
+| Numerical ISF band $0.005$–$0.02$ Hz | **[C]** (depends on calibrated rates) | Section 6.1 |
+| Discrete ISF component count $\in \{0, 6, 10, 11, 12\}$ & anaesthesia red shift | **[H]** | Sections 6, 9 |
+| Experimental verification protocol (EEG / fMRI) | **[Pr]** | Section 7 |
+| Phenomenological interpretation of $(E,O)$, $(L,D)$, $(A,U)$ modes | **[I]** | Sections 3.3, 4 |
 
 ---
 
+<a id="что-мы-узнали"></a>
+
 ## What We Learned {#what-we-learned}
 
-Summary of key results:
+Summary of verified results:
 
-- **Goldstone modes** are an inevitable consequence of spontaneous $G_2$-symmetry breaking in Phase I. Their number $n_{\text{broken}} = 14 - \dim(H)$ takes only discrete values: $\{0, 6, 10, 11, 12\}$ (Theorem 1.1 [T]).
-- **Modes are quasi-massless**: mass $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / |\gamma|^2$ is nonzero due to the openness of the system (decoherence + regeneration), by analogy with pion masses from quark masses (Theorem 2.1 [T]).
-- **Modes redistribute Gap**, neither creating nor destroying it: $\sum \delta\mathrm{Gap}(i,j) = 0$. This is the mathematics of *attentional oscillations* (Theorem 3.1 [T]).
-- **Three spectral sectors** define three timescales: massive modes (ms, perception), Goldstone modes ($\sim 100$ s, mind-wandering), topological mode ($\to \infty$, continuity of the "I").
-- **Falsifiable prediction**: the number of ISF components in ICA decomposition of fMRI should take values from $\{0, 6, 10, 11, 12\}$ and decrease discretely upon loss of consciousness [H]. Frequency range $\sim 0.005$--$0.02$ Hz coincides with ISF [C].
-- **Critical slowing** at $P \to P_{\text{crit}}$: modes slow down, spread out, and disappear — red shift of the ISF spectrum under anaesthesia [H].
-- **Subjective experience** of modes: flickering of consciousness ($E \leftrightarrow O$), speech/action oscillations ($L \leftrightarrow D$), oscillations of agency ($A \leftrightarrow U$) [I].
+- **Orbit dimension (`T-25 [T]` at a specified orbit):** Breaking $G_2 \to H$ produces $n_{\text{broken}} = 14 - \dim(H)$ tangential directions, taking representative values $\{0, 6, 10, 11, 12\}$ across $G_2$-stabilizer strata (depending on the full $G_7 + G_{14}$ orbit decomposition, not rank alone).
+- **Dimensionally consistent effective oscillator `[C]`:** With $\omega_0^2 = \Gamma_2\kappa_0/|\gamma|^2$ ($\mathrm{s}^{-2}$), the lifetime is strictly in **seconds** — $\tau_{\text{Gold}} = 2/\Gamma_2$ in the underdamped regime ($\kappa_0/|\gamma|^2 > \Gamma_2/4$) and $\tau_{\text{Gold}} \approx |\gamma|^2/\kappa_0$ in the strongly overdamped regime ($\kappa_0/|\gamma|^2 \ll \Gamma_2/4$).
+- **Exact conservation law `[T]`:** Infinitesimal $G_2$ rotations conserve the squared Frobenius norm $\|\hat{\mathcal{G}}\|_F^2 = 2\sum_{i<j}(\hat{\mathcal{G}}_{ij})^2$ (via $\sum_{i<j}\hat{\mathcal{G}}_{*,ij}\delta\hat{\mathcal{G}}_{ij} = 0$), not the linear off-diagonal sum.
+- **Two linear sectors (no immortal topological mode):** The 21 perturbations in $\mathfrak{so}(7)$ split into $(21 - n_{\text{broken}})$ massive transverse modes and $n_{\text{broken}}$ quasi-Goldstone orbit modes; the former immortal topological mode is withdrawn (`T-25`, `T-69`, `T-85 [✗]`).
+- **Conditional bifurcations (`T-160 [✗]`, `T-161`):** Critical slowing applies to a specified reduced dynamical family near a continuous bifurcation, not universally at the algebraic purity cut $P = 2/7$.
+- **Testable hypotheses `[H]` & verification programme `[Pr]`:** Discrete ISF component counts and anaesthesia-induced red shift are formulated as empirical hypotheses with explicit EEG/fMRI protocols, and phenomenological readings `[I]` use the canonical seven axes `A, S, D, L, E, O, U`.
 
 ---
 

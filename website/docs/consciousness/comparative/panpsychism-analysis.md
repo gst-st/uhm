@@ -1,14 +1,14 @@
 ---
 sidebar_position: 2
 title: Panpsychism
-description: Categorical analysis of panpsychism and Hoffman's Conscious Realism
+description: Comparative analysis of panpsychism, pan-interiority, and Hoffman's Conscious Realism
 slug: /consciousness/comparative/panpsychism-analysis
 ---
 
-# Panpsychism: Categorical Analysis
+# Panpsychism: Comparative Analysis
 
 :::info Who this chapter is for
-You will learn how UHM's position (pan-interiority) differs from classical panpsychism and Hoffman's Conscious Realism. The analysis is conducted through the categorical apparatus: five ontological positions are compared as functors from the category $\mathbf{Hol}$ to the category of phenomenal properties.
+You will learn how UHM's position (pan-interiority) differs from classical panpsychism, Russellian monism, cosmopsychism, and Hoffman's Conscious Realism, and what UHM's finite-dimensional formalism does and does not answer regarding the combination and boundary problems.
 :::
 
 :::note About notation
@@ -18,8 +18,8 @@ In this document:
 - $C$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
 - $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ)
 - $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- $\rho_E$ — reduced density matrix of the [Interiority dimension](/docs/core/structure/dimension-e)
-- L0, L1, L2, L3, L4 — [interiority levels](/docs/consciousness/hierarchy/interiority-hierarchy)
+- $\rho_E$ — reduced density matrix of an extended experiential register $\mathcal{H}_E$ ([Interiority dimension](/docs/core/structure/dimension-e))
+- L0, L1, L2 — [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) (universal L0 [D], operational gate $\mathrm{Cap}_2$ [D], higher-order certificates [Pr])
 - $\mathbf{Hol}$ — [category of Holons](/docs/proofs/categorical/categorical-formalism)
 :::
 
@@ -41,79 +41,41 @@ The appeal of this position lies in bypassing the hard problem. If consciousness
 
 ## Definition of panpsychism
 
-**Panpsychism** (from the Greek πᾶν — all, ψυχή — soul) is a metaphysical position:
+**Panpsychism** (from the Greek πᾶν — all, ψυχή — soul) is the metaphysical thesis that mentality, experience, or proto-experience is a fundamental and ubiquitous feature of physical reality: at least some (and on standard versions, all) fundamental physical constituents possess an experiential or proto-experiential aspect.
 
-$$
-\forall X \in \mathrm{Ob}(\mathbf{Phys}) : \mathrm{Consciousness}(X) \neq \varnothing
-$$
-
-where $\mathbf{Phys}$ is the category of physical objects.
-
-In ordinary language: **every** physical object possesses at least a minimal form of consciousness or proto-consciousness. A stone, an atom, a thermostat — all "experience something".
-
-But this simple thesis splits into many incompatible positions: what exactly does "consciousness" mean? Full-fledged experience (as in humans) or something minimal? And how does the minimal become full-fledged? Below we consider the main variants.
+In ordinary language, panpsychism is often caricatured as the claim that "every physical object — every stone, table, or thermostat — is a conscious subject". Contemporary panpsychists explicitly reject that caricature and distinguish carefully between fundamental constituents, structured aggregates, and full-fledged reflective subjects. Below we examine the main variants and their relation to UHM.
 
 ---
 
 ## Variants of panpsychism {#варианты-панпсихизма}
 
-### 1. Eliminative panpsychism (Strawson) {#элиминативный}
+### 1. Realistic monism / micropsychism (Strawson) {#элиминативный}
 
-**Galen Strawson** (b. 1952, son of philosopher P.F. Strawson) in the article *Realistic Monism: Why Physicalism Entails Panpsychism* (2006) proposed a radical argument: if physicalism is true and consciousness is real, then consciousness must be a property of matter at the fundamental level. Strawson rejects emergentism as "magic" — in his view, a genuinely new quality cannot arise from that which does not possess that quality.
+**Galen Strawson** (b. 1952, son of philosopher P.F. Strawson) in *Realistic Monism: Why Physicalism Entails Panpsychism* (*Journal of Consciousness Studies* 13(10–11): 3–31, 2006) argued that a physicalist who takes experience to be real must accept *micropsychism*: "at least some ultimates are intrinsically experience-involving", and — rejecting radical heterogeneity at the fundamental level — that all ultimates are. Strawson rejects radical emergentism as unintelligible: in his view, experientiality cannot arise wholly ex nihilo from purely non-experiential constituents.
 
-**Claim:** Everything possesses consciousness **in the full sense** (L2 in CC terminology).
+**What Strawson actually holds (and does not hold):** Strawson explicitly rejects the claim that every composite physical object possesses full-fledged reflective consciousness (L2): *"Panpsychism certainly does not require one to hold the view that things like stones and tables are subjects of experience — I don't believe this for a moment."* He attributes no reasoning or reflective self-modelling to fundamental particles, and explicitly recognizes William James's combination problem as the central challenge for his view. (Earlier editions of this page mislabelled Strawson's position "eliminative panpsychism", attributed to him the thesis "everything is L2", and claimed a formal `[T]` refutation via $\Gamma = I/7$; both the attribution and the claimed refutation are removed.)
 
-**Category $\mathbf{Pan}_{\mathrm{elim}}$:**
-
-$$
-\mathrm{Ob}(\mathbf{Pan}_{\mathrm{elim}}) := \{X \mid C(X) > 0\}
-$$
-
-where $C$ is the [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c).
-
-**Critique from UHM — formal refutation:**
-
-$$
-\exists X : \Gamma_X = I/7 \Rightarrow C(X) = 0
-$$
-
-The maximally mixed state $\Gamma=I/7$ has $P=1/7$, canonical $R=1$, $\Phi=0$ and the chosen score $C=\Phi R=0$ **[T/D]**. It fails $\mathrm{Cap}_2$ because its purity/integration cuts fail. These arithmetic facts do not prove maximal physical chaos, absence of every possible self-model, or absence of experience without the phenomenal bridge **[I/H]**.
-
-**Conclusion:** Eliminative panpsychism **contradicts** the UHM formalism. Systems with zero consciousness exist. Not everything possesses experience. **[T]**
-
-:::warning Correction: the thesis refuted above is not Strawson's
-Galen Strawson ("Realistic monism: why physicalism entails panpsychism", *Journal of Consciousness Studies* 13(10–11): 3–31, 2006) argues that a physicalist who takes experience to be real must accept *micropsychism* — "at least some ultimates are intrinsically experience-involving" — and, since he would "bet a lot against there being such radical heterogeneity at the very bottom of things", that all of them are. He explicitly rejects the thesis this section attributes to him: "Panpsychism certainly does not require one to hold the view that things like stones and tables are subjects of experience — I don't believe this for a moment". He ascribes no reasoning or reflection (L2) to ultimates, and he names William James's objection to many subjects composing one larger subject as the problem he has to face. Two consequences [I]: (1) the refutation above refutes "everything is L2", a thesis no contemporary panpsychist defends; against Strawson's actual thesis — every ultimate has an experiential aspect, composites need not be subjects — UHM's universal L0 with a threshold for L2 is a near relative, not a refutation; (2) "eliminative" is this page's label, not Strawson's: he calls his position realistic monism, or real physicalism.
-:::
+**Relation to UHM:** For the maximally mixed reference state $\Gamma = I/7$, exact arithmetic gives $P = 1/7$, canonical $R = 1$, $\Phi = 0$, and the selected scalar $C = \Phi R = 0$ **[T]**/**[D]**, so $I/7$ fails the operational gate $\mathrm{Cap}_2$ **[D]** (failing both $P > 2/7$ and $\Phi \ge 1$). That arithmetic excludes only the definitional strawman "every state satisfies $\mathrm{Cap}_2$"; it does not prove physical absence of experience without an empirical phenomenal bridge **[I]**/**[H]**, and it is **not** a refutation of panpsychism. Against Strawson's actual thesis — universal intrinsic experientiality at the base without claiming that stones and tables are macro-subjects — UHM's universal L0 **[D]** paired with a sharp operational threshold for L2 **[D]** is a structural neighbour rather than a refutation **[I]**.
 
 ### 2. Constitutive panpsychism (as analysed by Chalmers and Goff) {#конститутивный}
 
 **Philip Goff** (b. 1977, Durham University) and **David Chalmers** (b. 1966, NYU) worked out a more refined position — micro-subjects (elementary bearers of proto-experience) **combine** into macro-consciousness — without either of them holding it as his own view: Chalmers analyses constitutive panpsychism without endorsing it, and Goff, who proposed the phenomenal-bonding solution for it (2016), defends cosmopsychism in *Consciousness and Fundamental Reality* (2017); see [the combination problem, stated precisely](#проблема-комбинации-точно). Goff's popular book *Galileo's Error: Foundations for a New Science of Consciousness* (2019) argues for panpsychism in general. (Earlier editions presented both authors as defenders of this position; that attribution is retracted.)
 
-**Claim:** Micro-subjects exist, and their combination generates macro-consciousness.
-
-**Category $\mathbf{Pan}_{\mathrm{const}}$:**
-
-$$
-\mathrm{Ob}(\mathbf{Pan}_{\mathrm{const}}) := \{(\{X_i\}, \oplus) \mid X_i \text{ — micro-subject}, \oplus \text{ — combination operation}\}
-$$
+**Claim:** Micro-subjects exist, and their combination constitutes macro-consciousness.
 
 **Combination problem:**
 
-The central difficulty of constitutive panpsychism: there is no definition of the operation $\oplus$ such that:
+The central difficulty of constitutive panpsychism is that there is no agreed structural law explaining how micro-level experiences combine into a unified macro-experience: experience of a whole is **not reducible** to a simple function $f(C(X_1), C(X_2))$ of isolated component scores. You see a red apple — but your experience of the "red apple" is not a mere aggregate of separate micro-experiences. Between individual proto-experiences and unified macro-experience lies an explanatory **gap** that remains open.
+
+**UHM's approach to composite states:**
+
+UHM models composite holons via the **tensor product** of state spaces:
 
 $$
-C(X_1 \oplus X_2) = f(C(X_1), C(X_2))
+\mathbb{H}_{1 \otimes 2} := (\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7 \otimes \mathbb{C}^7), \varphi_{12})
 $$
 
-for any function $f$. Why? Because the experience of the whole is **not reducible** to a function of the experiences of the parts. You see a red apple — but your experience of the "red apple" is not the sum of the experience of neuron-1 and the experience of neuron-2. Between individual proto-experiences and the unified macro-experience there is a **gap** that nobody has filled.
-
-**UHM's approach to the combination problem:**
-
-UHM composes holons by the **tensor product**:
-
-$$
-\mathbb{H}_{1 \otimes 2} := (\Gamma_1 \otimes \Gamma_2, \varphi_{12})
-$$
+with uncorrelated composites represented by product states $\Gamma_1 \otimes \Gamma_2$.
 
 
 :::warning Status: a criterion of when, not an account of how
@@ -131,14 +93,14 @@ A worked pair: the state $\Gamma_w = \tfrac12 \lvert u\rangle\langle u\rvert + \
 
 **What replaces it.**
 
-- **Stands [T]:** for a correlated joint state $\rho_{12} \neq \rho_1 \otimes \rho_2$ the marginals do not determine the joint state; the information the partial traces discard is $I(1{:}2) = S(\rho_1) + S(\rho_2) - S(\rho_{12}) = D(\rho_{12} \,\|\, \rho_1 \otimes \rho_2) > 0$ (a standard identity of quantum information theory), and [CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) says when the stationary state of coupled holons has $I > 0$: when the coupling has a correlating part at the parts' attractors, under its assumption (ND) — not for every coupling ([T for almost every anchor]; the earlier "[T] guarantees $I > 0$ for interacting holons" is retracted, 2026-09-25). This holds for every correlated pair, classically correlated ones included, so it does not single out integrated experience.
+- **Stands [T]:** for a correlated joint state $\rho_{12} \neq \rho_1 \otimes \rho_2$ the marginals do not determine the joint state; the information the partial traces discard is $I(1{:}2) = S(\rho_1) + S(\rho_2) - S(\rho_{12}) = D(\rho_{12} \,\|\, \rho_1 \otimes \rho_2) > 0$ (a standard identity of quantum information theory). Under the specified product dynamics and Hamiltonian coupling, [CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) **[T]** establishes the exact stationarity criterion: a product of stationary single-site states stays stationary if and only if it commutes with the coupling; any identification of non-commuting or correlated composites with collective experience remains an empirical hypothesis **[H]** requiring independent evidence. Correlation holds for classically correlated pairs as well and does not by itself single out integrated experience.
 - **Hypothesis [H]:** the phenomenal functor, extended to composite states, is colax-monoidal but not monoidal exactly on correlated joint states. It is not proved: $F$ is defined on $\mathcal{D}(\mathbb{C}^7)$, and applying it to a state on $\mathbb{C}^{7^N}$ first requires the aggregation channel that the theory does not fix (assumption 1 [below](#что-отвечает-аппарат-угм)). Research programme [Pr]: fix that channel, then prove or refute the colax property.
 
 A phenomenal interpretation requires a map on the composite together with a physical and experimental criterion for when two reports describe one subject.
 
 :::info What has been resolved and what remains
 - **Retracted [✗]:** "Resolved [T]: emergence as irreversibility of the coherence map $\mu$" and "Resolved [T]: emergence threshold $\Phi_{12} = 1$ (T-129a)". Both rested on the theorem retracted above: a product of two L2 holons already has $\Phi_{12} \geq 3$ at $I(1{:}2) = 0$, and T-129a concerns single states on $\mathcal{D}(\mathbb{C}^7)$, not composites.
-- **Stands [T]:** a correlated composite has a joint state that its parts do not fix; the discarded information is $I(1{:}2) > 0$ (a standard identity). When coupled holons are correlated at all is CC-7, [T for almost every anchor].
+- **Stands [T]:** a correlated composite has a joint state that its parts do not fix; the discarded information is $I(1{:}2) > 0$ (a standard identity). Under the specified product dynamics and Hamiltonian coupling, CC-7 **[T]** states that a product of stationary single-site states stays stationary iff it commutes with the coupling; collective experiential identification remains **[H]**.
 - **Open [H]:** the colax-monoidal restatement on correlated states, pending the aggregation channel.
 - **Open [Pr]:** the constitutive mechanism — *how exactly* a correlated composite is **experienced** as unified experience. This is an analogue of the hard problem: UHM can at most state a *condition*, not the *content* of the unified experience.
 :::
@@ -149,50 +111,28 @@ A phenomenal interpretation requires a map on the composite together with a phys
 
 **Analogy:** H₂O. Neither hydrogen nor oxygen is wet by itself. But their combination is wet. The "proto-wetness" of hydrogen + the "proto-wetness" of oxygen → the wetness of water. Analogously: the "proto-experience" of an electron + the "proto-experience" of another electron + the right combination → human experience.
 
-**Category $\mathbf{Pan}_{\mathrm{proto}}$:**
-
-$$
-\mathrm{Ob}(\mathbf{Pan}_{\mathrm{proto}}) := \{X \mid \mathrm{Int}(X) \neq \varnothing, C(X) = 0\}
-$$
-
 **Correspondence in UHM — level L0:**
 
-By the [canonical definition](/docs/consciousness/hierarchy/interiority-hierarchy#уровень-0-интериорность-interiority) **[D]**, L0 is universal — every system with $\Gamma \in \mathcal{D}(\mathcal{H})$ possesses an inner aspect. What panprotopsychism tracks is its **structured** (non-degenerate) case:
+By the [canonical definition](/docs/consciousness/hierarchy/interiority-hierarchy#уровень-0-интериорность-interiority) **[D]**, L0 is universal — every system with $\Gamma \in \mathcal{D}(\mathcal{H})$ is assigned an interiority aspect. What panprotopsychism tracks corresponds conceptually to the **structured** (non-reference) subclass of states that do not pass the operational gate $\mathrm{Cap}_2$ **[I]**:
 
 $$
-\mathrm{L0}^{+}(\Gamma) := \Gamma \neq I/7 \quad \text{(structured interiority)}
+\mathrm{L0}^{+}(\Gamma) := (\Gamma \neq I/7) \quad \text{(structured interiority [D])}
 $$
 
-$$
-\mathbf{Pan}_{\mathrm{proto}} \cong \mathrm{L0}^{+} \setminus \mathrm{L2}
-$$
-
-$\mathrm{L0}^{+}$ marks the chosen non-reference subclass $\Gamma\ne I/7$ **[D/I]**. It includes states both passing and failing $\mathrm{Cap}_2$; non-reference structure does not imply $C=0$ or absence of experience. Bare L0 and its interpretation remain separate from that operational gate.
+$\mathrm{L0}^{+}$ marks the chosen non-reference subclass $\Gamma \neq I/7$ **[D]**/**[I]**. It includes states both passing and failing $\mathrm{Cap}_2$; non-reference structure does not imply $C = 0$ or absence of experience. Bare L0 and its philosophical reading remain separate from the operational gate.
 
 ### 4. Russellian monism (Russell, Strawson) {#расселианский}
 
-**Bertrand Russell** in *The Analysis of Matter* (1927) pointed to a fundamental gap in physics: it describes only the **structural** properties of matter (mass, charge, spin), defined through relations with other objects. But what fills this structure **from within**? Physics is silent. Russell suggested: the inner nature of matter may be mental.
+**Bertrand Russell** in *The Analysis of Matter* (1927) pointed to a fundamental gap in physics: it describes only the **structural** properties of matter (mass, charge, spin), defined through relations with other objects. But what fills this structure **from within**? Physics is silent. Russell suggested that the intrinsic nature of matter may be mental or proto-mental.
 
-**Russell's category ($\mathbf{Russell}$):**
+**Conceptual correspondence in UHM [I]:**
 
-$$
-\mathrm{Ob}(\mathbf{Russell}) := \{(S_{\mathrm{ext}}, I_{\mathrm{int}}) \mid S \text{ — structure}, I \text{ — intrinsic}\}
-$$
-
-**Correspondence in UHM:**
-
-| Russell | UHM | Comment |
+| Russellian distinction | UHM counterpart | Comment |
 |---------|-----|---------|
-| $S_{\mathrm{ext}}$ (structural properties) | Hamiltonian $H$, Lindblad operators $\{L_k\}$ | Physical laws = structure |
-| $I_{\mathrm{int}}$ (inner nature) | [E-projection](/docs/core/structure/dimension-e) $\rho_E$ | Interiority = intrinsic |
+| Structural / dispositional properties ($S_{\mathrm{ext}}$) | Hamiltonian $H$, Lindblad operators $\{L_k\}$ | Relational dynamics = structure |
+| Intrinsic nature ($I_{\mathrm{int}}$) | [Interiority sector](/docs/core/structure/dimension-e) (native $E$-axis; extended register $\rho_E$ where declared) | Interiority = intrinsic reading [I] |
 
-**Functor:**
-
-$$
-F_{\mathrm{Russell}}: \mathbf{Russell} \to \mathbf{Hol}, \quad (S, I) \mapsto (\Gamma, \varphi)
-$$
-
-where $\Gamma$ is constructed from $S$ and $I$. Russellian monism is the **closest** metaphysical position to [two-aspect monism](/docs/consciousness/foundations/two-aspect-monism) of UHM.
+This table is a philosophical correspondence **[I]**, not a mathematical functor between formal categories. Among existing metaphysical positions, Russellian monism is the closest structural analogue to UHM's [two-aspect monism](/docs/consciousness/foundations/two-aspect-monism).
 
 ---
 
@@ -219,22 +159,22 @@ $$
 
 ```mermaid
 graph LR
-    subgraph "Panpsychism"
+    subgraph "Caricatured panpsychism"
         direction TB
-        ALL_CONS["Everything is conscious<br/>(L2 for all)"]
+        ALL_CONS["Everything satisfies L2<br/>(no threshold)"]
     end
 
     subgraph "Pan-interiority (UHM)"
         direction TB
-        ALL_L0["All have L0; structured L0⁺<br/>(Γ ≠ I/7)"]
-        SOME_L2["Only some have L2<br/>(P>2/7, R≥1/3, Φ≥1)"]
+        ALL_L0["Universal L0 [D]; structured L0⁺<br/>(Γ ≠ I/7)"]
+        SOME_L2["Operational gate Cap₂ (L2) [D]<br/>(P>2/7, R≥1/3, Φ≥1, D_diff≥2)"]
         ALL_L0 --> SOME_L2
     end
 
-    subgraph "Examples"
-        ELEC["Electron: L0 ✓, L2 ✗"]
-        CELL["Cell: L0 ✓, L1 ✓, L2 ✗"]
-        HUMAN["Human: L0 ✓, L2 ✓"]
+    subgraph "Illustrative examples [I]"
+        ELEC["Electron: L0 ✓, Cap₂ ✗"]
+        CELL["Cell: L0⁺ ✓, Cap₂ ✗"]
+        HUMAN["Human: L0 ✓, Cap₂ ✓"]
     end
 
     ALL_L0 -.-> ELEC
@@ -246,42 +186,38 @@ graph LR
     style SOME_L2 fill:#27ae60,color:#fff
 ```
 
-### Theorem (Pan-interiority ≠ Panpsychism)
+### Strict inclusion $\mathrm{L2} \subsetneq \mathrm{L0}$ under the operational gate
 
 $$
 \mathrm{L0}(\Gamma) \not\Rightarrow \mathrm{L2}(\Gamma)
 $$
 
-**Proof:**
+**Verification:**
 
-L2 requires $R \geq R_{\text{th}} = 1/3$ [T], $\Phi \geq \Phi_{\text{th}} = 1$ [T] (T-129) and $D_{\text{diff}} \geq 2$ [D] (T-151) ([L2 thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)).
+By the canonical operational gate $\mathrm{Cap}_2$ **[D]**, L2 requires $P > 2/7$ **[D]**, $R \geq R_{\text{th}} = 1/3$ **[D]**, $\Phi \geq \Phi_{\text{th}} = 1$ **[D]** (T-129; [T-129a [T]](/docs/proofs/consciousness/operationalization#t-129a-универсальность) proves the one-way algebraic implication $\Phi \ge 1 \Rightarrow P \ge 2/7$), and $D_{\text{diff}} \geq 2$ **[D]** (T-151) ([canonical hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy)).
 
-For the [fundamental mode Γ](/docs/reference/glossary#таксономия-конфигураций-γ) (e.g. an electron):
+For a near-reference mode $\Gamma_e \approx I/7$ (e.g., an isolated elementary mode):
 
 $$
 \Phi(\Gamma_e) \ll 1 \quad (\text{while } R(\Gamma_e) = 1/(7P) \approx 1 \text{ is a formal artefact at } P \approx 1/7)
 $$
 
-Consequently, $\mathrm{L0}(\Gamma_e) = \mathrm{true}$, but $\mathrm{L2}(\Gamma_e) = \mathrm{false}$: the integration threshold fails. The score $R=1/(7P)$ is at least $1/7$ and close to one near $I/7$. This evaluates the [specified gate](/docs/consciousness/hierarchy/interiority-hierarchy#уровень-0-интериорность-interiority), not an electron’s first-person experience. $\blacksquare$
+Consequently, $\mathrm{L0}(\Gamma_e) = \mathrm{true}$, but $\mathrm{L2}(\Gamma_e) = \mathrm{false}$: the purity and integration cuts fail. The score $R=1/(7P)$ is at least $1/7$ and approaches $1$ near $I/7$. This evaluates the [specified operational gate](/docs/consciousness/hierarchy/interiority-hierarchy#уровень-0-интериорность-interiority) **[D]**, not an electron's first-person experience. $\blacksquare$
 
-### Hierarchy of interiority levels
+### Canonical interiority levels (revised)
+
+In the revised [Interiority Hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy), UHM distinguishes universal L0 **[D]**, non-degenerate phenomenal structure L1 **[D]**, and the four-condition operational gate $\mathrm{Cap}_2 = (P > 2/7) \land (R \ge 1/3) \land (\Phi \ge 1) \land (D_{\mathrm{diff}} \ge 2)$ for L2 **[D]**. Earlier fixed scalar cutoffs for L3 and L4 are **withdrawn [✗]** (see [T-67 [✗]](/docs/consciousness/hierarchy/interiority-hierarchy), [T-86 [✗]](/docs/consciousness/hierarchy/swallowtail-transitions#l3-l4), [T-136 [✗]](/docs/consciousness/hierarchy/depth-tower#спектральная-формула-sad), and [T-217 [✗]](/docs/consciousness/hierarchy/interiority-hierarchy)); higher-order cognitive certificates remain an open research programme **[Pr]** based on independent calibrated metamodel probes rather than fixed scalar inequalities.
 
 ```mermaid
 graph TD
-    L0[L0: Interiority<br/>Γ ∈ D7]
-    L1[L1: Phenomenal geometry<br/>Φ > 0]
-    L2[L2: Cognitive qualia<br/>R ≥ 1/3, Φ ≥ 1, D_diff ≥ 2]
-    L3[L3: Network consciousness<br/>R² ≥ 1/4 metastably]
-    L4[L4: Unitary consciousness<br/>lim R⁽ⁿ⁾ > 0, P > 6/7]
+    L0["L0: Universal interiority [D]<br/>Γ ∈ D(C⁷)"]
+    L1["L1: Structured interiority [D]<br/>non-reference state / relational structure"]
+    L2["L2: Operational gate Cap₂ [D]<br/>P > 2/7, R ≥ 1/3, Φ ≥ 1, D_diff ≥ 2"]
+    L3P["Higher-order certificates [Pr]<br/>independent calibrated metamodel probes"]
 
-    L0 -->|"Φ > 0 added"| L1
-    L1 -->|"R ≥ R_th, D_diff ≥ 2 added"| L2
-    L2 -->|"R² ≥ 1/4 added"| L3
-    L3 -->|"lim R⁽ⁿ⁾ > 0 added"| L4
-
-    ELEC[Electron: L0] --> L0
-    CELL[Cell: L1] --> L1
-    HUMAN[Human: L2] --> L2
+    L0 --> L1
+    L1 --> L2
+    L2 -.-> L3P
 ```
 
 ---
@@ -304,9 +240,9 @@ Hoffman **himself** rejects the label "panpsychist". His position is **objective
 
 ### The "Fitness Beats Truth" Theorem (FBT) {#fbt}
 
-**Claim** (Hoffman, Singh, Prakash 2015): In evolutionary games (Maynard Smith formalism) on typical fitness landscapes, organisms with the "interface" strategy (compression: many world states → one perceptual category) defeat organisms with "true perception" (isomorphism $W \to X$).
+**Claim** (Hoffman, Singh, Prakash 2015; formal combinatorial proof in Prakash et al. 2021): In finite evolutionary games under a **uniform prior over all payoff functions** on a finite world state space $W$, organisms with payoff-tuned ("interface") perceptual strategies (many-to-one compression aligned with payoffs) asymptotically outcompete strictly veridical ("truth") strategies (injective/homomorphic maps $W \to X$) as the state space grows.
 
-**In plain terms.** Imagine two organisms in a forest. The first sees the world "as it is" — distinguishes 1000 shades of green in the foliage. The second compresses: all edible things are green, all poisonous are red. The second makes decisions faster and spends fewer resources on computation. Evolution selects for **survival**, not **truth**. Hence: our perception of space-time is an adaptive interface, not a map of reality.
+**In plain terms.** Imagine two organisms in a forest. The first sees the world "as it is" — distinguishes 1000 shades of green in the foliage. The second compresses: all edible things are green, all poisonous are red. Under a fixed single-task payoff function drawn without structural correlation to physical geometry, the second makes decisions faster and spends fewer resources on computation. Hoffman extrapolates from this that perception of space-time is an adaptive interface rather than a map of reality — a philosophical leap whose validity depends on assumptions far stronger than the combinatorial theorem itself (see [scope below](#преимущества-хоффмана)).
 
 :::note Connection to CC
 CC admits a similar interpretation [I]: the agent $\mathbb{H}$'s perception of its environment $E$ is mediated by [functor $F$](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах), which need not be accurate — functional adequacy is sufficient. But CC does not postulate the illusoriness of space-time: it is [emergent](/docs/core/foundations/spacetime), not interfacial.
@@ -347,21 +283,21 @@ Hoffman and CC diverge on a key ontological question:
 
 | | Hoffman (Conscious Realism) | CC (Pan-interiority) |
 |---|---|---|
-| **What is fundamental?** | Only conscious agents | Holons $\mathbb{H}$ at all levels L0–L4 |
-| **Is there a non-conscious reality?** | No — everything reduces to CA | Yes — L0 (interiority) without consciousness (L2) |
-| **Relation of L0 and L2** | L0 = L2 (everything is conscious) | L0 $\supsetneq$ L2 strictly [T] |
-| **Physical world** | Illusion (interface) | Emergent (real but derivative) |
-| **Consciousness threshold** | No threshold (everything is CA) | $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$ [T] |
+| **What is fundamental?** | Only conscious agents | Holons $\mathbb{H}$ (universal L0 [D], operational L2 gate [D], higher-order certificates [Pr]) |
+| **Is there a non-conscious reality?** | No — everything reduces to CA | Yes — L0 (interiority) without passing $\mathrm{Cap}_2$ (L2) |
+| **Relation of L0 and L2** | L0 = L2 (everything is conscious) | $\mathrm{L0} \supsetneq \mathrm{L2}$ under the operational gate [D] |
+| **Physical world** | Interface (idealism) | Emergent (real, structurally modelled) |
+| **Consciousness threshold** | No threshold (everything is CA) | $\mathrm{Cap}_2$: $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D_{\mathrm{diff}} \geq 2$ [D] |
 | **Dynamics** | Cycle $N \to D \to A$ (discrete) | $\dot\Gamma = \mathcal{L}_\Omega[\Gamma]$ (continuous) |
-| **Falsifiability** | Low (no quantitative predictions) | High (22+ predictions) |
+| **Falsifiability** | Low (no quantitative predictions) | Prospective testable predictions [Pr]/[H] |
 
 <a id="теорема-об-эквивалентности-гипотеза"></a>
 
-### Functor $F_{\text{Hoffman}}$ (hypothesis) [I] {#функтор-хоффман}
+### Structural correspondence with Hoffman's conscious agents [I] {#функтор-хоффман}
 
-**Functor construction** $F_{\text{Hoffman}}: \mathbf{Hol}_{\text{L2}} \to \mathbf{ConsAgents}$:
+An informal component-wise correspondence between Hoffman's conscious agents (CA) and CC components:
 
-| CA component | Correspondence in CC |
+| CA component | Informal CC counterpart |
 |--------------|----------------------|
 | $X$ (experience) | [Experiential space](/docs/proofs/categorical/categorical-formalism#2-категория-exp) |
 | $G$ (actions) | Space of CPTP channels $\{\Psi\}$ |
@@ -370,13 +306,13 @@ Hoffman and CC diverge on a key ontological question:
 | $A$ (action) | [Regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}[\Gamma, E]$ |
 | $W$ (world) | Environment $E$ in $\mathbb{H}$ |
 
-:::info Status [I]
-The functor $F_{\text{Hoffman}}$ is an **interpretational hypothesis**. For a full proof of equivalence it is necessary to show completeness, faithfulness, and compatibility with composition. This is a **research programme**.
+:::info Status [I] / [Pr]
+This table is an **informal interpretational analogy [I]**, not a constructed functor: no morphism mapping, functoriality laws, or monoidal compatibility between explicitly defined categories have been established. Formalizing a functor between $\mathbf{Hol}$ and $\mathbf{ConsAgents}$ remains an unproved open research programme **[Pr]**.
 :::
 
 ### What Hoffman does better than CC {#преимущества-хоффмана}
 
-1. **Evolutionary epistemology.** FBT is a strictly proven theorem providing deep grounds for scepticism towards naïve realism. CC has no analogue of this result.
+1. **Evolutionary epistemology (scoped).** The FBT theorem (Hoffman, Singh & Prakash 2015; formal proof in Prakash et al. 2021) is a valid combinatorial-probability theorem **under its explicit hypotheses** — chiefly a uniform distribution over all payoff functions on finite state spaces and a fixed single-task payoff. Its empirical scope for biological perception is widely contested (ecological payoffs are physically structured and smooth rather than uniformly random, and multi-task generalization across changing goals favours recovering latent world structure), and it does not entail ontological idealism or the illusoriness of space-time. Even with that scope restriction, Hoffman's programme explicitly formalizes the trade-off between selection and perceptual compression, whereas CC has no analogous evolutionary-game result.
 
 2. **Accessibility of exposition.** *The Case Against Reality* (2019) is a bestseller; TED talk with 3M+ views. CC is currently accessible only to specialists.
 
@@ -434,11 +370,11 @@ The finite-dimensional [composite-system framework](/docs/core/dynamics/composit
 
 Weak-coupling persistence is conditional on an actual stable uncoupled equilibrium, appropriate hyperbolicity/contraction assumptions, strict margins for the chosen gate and a compatible readout. “Each part is viable” alone does not prove viability of every mean aggregate or an intrinsic composite boundary. The mean of marginals is one symmetric CPTP readout after identifying subsystem frames; the old blanket uniqueness and viability conclusions are withdrawn. See the revised [CC composition results](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание).
 
-- **Subject combination.** The calibrated $\mathrm{Cap}_2$ certificate evaluates a declared seven-dimensional readout and its differentiation variable. Interpreting that operational gate as experience requires the phenomenal bridge **[I/H]**. T-153's definition does not refute the conceivability objection. T-214's universal prohibition of an internal bridge is withdrawn; Lawvere's evaluator hypotheses do not hold for an arbitrary internal map.
+- **Subject combination.** The calibrated $\mathrm{Cap}_2$ certificate evaluates a declared seven-dimensional readout and its differentiation variable. Interpreting that operational gate as experience requires the phenomenal bridge **[I]**/**[H]**. T-153's definition **[D]** does not refute the conceivability objection. T-214's **[✗]** universal prohibition of an internal bridge is withdrawn; Lawvere's evaluator hypotheses do not hold for an arbitrary internal map.
 - **Quality and structure combination.** A map $D_{7^k}\to D_7$, its frame and the phenomenal assignment must be specified and calibrated. CPTP readout is nonexpansive in chordal Bures distance; it can discard joint information. A seven-mode ansatz does not prove that the visual field or every substrate is faithfully represented. Exact recovery in T-253 applies to the chosen isometric code, not every substrate state.
 - **Unity.** If the declared category has a terminal object, its nerve is contractible; the usual positive-degree cohomology of that nerve with constant coefficients vanishes. This is a statement about that classifying space, not all internal/sheaf cohomology, every local coefficient system or all self-models. Actual gluing requires descent and a specified obstruction class. No subject boundary follows from nerve contractibility.
 
-A composite theory therefore needs three additional choices **[D/H]**: its physical grouping and effective readout; a rule for nested or competing subject candidates; and a phenomenal bridge. A larger tensor score alone does not choose them: it can exceed both component scores even in an uncorrelated product, while the user's marginal is unchanged. The combination problem remains a test of these additional constructions rather than a solved consequence of tensor algebra.
+A composite theory therefore needs three additional choices **[D]**/**[H]**: its physical grouping and effective readout; a rule for nested or competing subject candidates; and a phenomenal bridge. A larger tensor score alone does not choose them: it can exceed both component scores even in an uncorrelated product, while the user's marginal is unchanged. The combination problem remains a test of these additional constructions rather than a solved consequence of tensor algebra.
 
 ### The boundary problem {#проблема-границы}
 
@@ -462,7 +398,7 @@ Cosmopsychism reverses the direction of explanation: the cosmos as a whole is th
 
 - **Sources.** Itay Shani, "Cosmopsychism: a holistic approach to the metaphysics of experience", *Philosophical Papers* 44(3): 389–437 (2015): an all-pervading cosmic consciousness is the single ontological ultimate and the ground from which individual conscious creatures emerge. Yujin Nagasawa & Khai Wager, "Panpsychism and priority cosmopsychism", in Brüntrup & Jaskolla (2016), pp. 113–129: the cosmos is the one basic conscious entity, prior to its parts, on the model of Jonathan Schaffer's priority monism ("Monism: the priority of the whole", *Philosophical Review* 119(1): 31–76, 2010), which argues from quantum entanglement that the cosmos is the one fundamental object. Goff (2017): cosmopsychism with grounding by subsumption.
 - **Standing.** The SEP (2022) names these authors among those "attracted to cosmopsychism on the grounds that it is better fitted than micropsychism to deal with the combination problem". The price is the reverse problem. Chalmers (2016) called it the decomposition problem — "how does a single subject give rise to multiple dependent subjects?" — and judged that such problems "seem just as hard as the original combination problem"; later, renaming it the "constitution problem", he rated it "very serious" while finding some cosmic avenues "more promising than analogs in the micropsychist case" (Chalmers, "Idealism and the mind-body problem", in W. Seager (ed.), *The Routledge Handbook of Panpsychism*, Routledge, 2020, pp. 353–373).
-- **UHM [I/H].** Terminality is a property of a declared mathematical category, not an identification of the cosmos with $I/7$ or a proof that the universe lacks experience. The proposal to realise the Universe as a holon requires its own physical state space, effective map, clock, interactions and boundary conditions. In revised [T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной), maximisation of a chosen kinematic expression can establish an extremum **[C]**; assigning the cosmic purity $P=3/7$ is a physical hypothesis **[H]**, not a measured stage or universal cosmic theorem. A purity figure or an assumed trajectory does not prove birth, decay or phenomenal extinction. The universal self-reference ceiling of three is withdrawn (T-136/T-217/T-218); neither nesting nor Kan fibrancy determines a cosmic cognitive depth. UHM can adopt a philosophical stance on cosmopsychism, but this stance is not settled by the finite matrix formalism. The elementary fact that joint correlations are not fixed by marginals supplies no subject criterion by itself.
+- **UHM [I]/[H].** Terminality is a property of a declared mathematical category, not an identification of the cosmos with $I/7$ or a proof that the universe lacks experience. The proposal to realise the Universe as a holon requires its own physical state space, effective map, clock, interactions and boundary conditions. In revised [T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) **[H]**, assigning the cosmic purity $P=3/7$, a universe-as-holon readout, or a terminal-stage extrapolation are independent physical hypotheses **[H]**, not a measured stage or universal cosmic theorem. A purity figure or an assumed trajectory does not prove birth, decay or phenomenal extinction. The universal self-reference ceiling of three is withdrawn (T-136 **[✗]**, T-217 **[✗]**; T-218 **[T at Sing realization]** gives no universal 3-truncation); neither nesting nor Kan fibrancy determines a cosmic cognitive depth. UHM can adopt a philosophical stance on cosmopsychism, but this stance is not settled by the finite matrix formalism. The elementary fact that joint correlations are not fixed by marginals supplies no subject criterion by itself.
 
 ### Analytic idealism {#аналитический-идеализм}
 
@@ -477,10 +413,10 @@ Analytic idealism, Bernardo Kastrup's view, holds that there is only cosmic cons
 
 | Problem | Standing in the literature (whose judgment) | UHM ingredient | What it answers [I] | What stays open |
 |---|---|---|---|---|
-| Subject combination | Open in the literature | Conditional composite dynamics; T-153 operational definition | Tests a declared grouping/readout | Phenomenal constitution and boundary selection; T-214 universal no-go withdrawn |
-| Quality combination | Open (Chalmers 2016) | Phenomenal functor on $\mathcal{D}(\mathbb{C}^7)$; aggregation of CC-6 | Nothing yet | Which state carries the composite's content; aggregation only loses distinguishability |
-| Structure combination | Open; the mismatch argument is "a significant challenge" (Chalmers 2016) | Seven collective modes, T-153a [T] | An informational route | Whether it yields the structure of experience |
-| Irreducibility of the whole | Standard for correlated states; argued for panpsychism by Seager (2010) and Gambini & Pullin (2024–25) | Standard identity; CC-7 [T for almost every anchor] says when coupling produces it | The joint state is not fixed by the parts | Holds for any correlated pair; no mark of a subject |
+| Subject combination | Open in the literature | Conditional composite dynamics; T-153 operational definition [D] | Tests a declared grouping/readout | Phenomenal constitution and boundary selection; T-214 [✗] universal no-go withdrawn |
+| Quality combination | Open (Chalmers 2016) | Phenomenal functor on $\mathcal{D}(\mathbb{C}^7)$; mean-marginal recovery under consistent aggregation and controlled weak coupling (CC-6 [T]) | Nothing yet | Which state carries the composite's content; aggregation only loses distinguishability |
+| Structure combination | Open; the mismatch argument is "a significant challenge" (Chalmers 2016) | Stratified substrate-existence conditions C1–C3 (T-153a [T] for necessary conditions; isometric retraction sufficiency via T-253 [T]/[C]) | Necessary conditions and isometric code embedding | Whether an embedded 7D sector yields the structure of experience |
+| Irreducibility of the whole | Standard for correlated states; argued for panpsychism by Seager (2010) and Gambini & Pullin (2024–25) | Standard mutual-information identity; CC-7 [T] (product of stationary single-site states stays stationary iff it commutes with the coupling) | The joint state is not fixed by the parts | Holds for any correlated pair; collective experiential identification remains [H] |
 | Boundary | Neglected (5 papers against 92, Gómez-Emilsson & Percy 2023); IIT answers with exclusion | None; nested subjects allowed | A computable test once a sector is chosen | The choice of sector and of aggregation; the proliferation of minds |
 | Decomposition (cosmopsychism, idealism) | Open | Terminal nerve result for a declared category; cosmic mapping [H] | A conditional formal construction | Cosmic phenomenality, sector and boundaries; no identification with $I/7$ or universal depth cap |
 
@@ -490,14 +426,14 @@ Analytic idealism, Bernardo Kastrup's view, holds that there is only cosmic cons
 
 | Variant | Author | Year | Claim | Correspondence in UHM | Main problem |
 |---------|--------|------|-------|----------------------|--------------|
-| Eliminative (this page's label; Strawson: realistic monism) | Strawson | 2006 | Every ultimate is experiential; stones and tables are not subjects ([correction](#элиминативный)) | Universal L0 — a near relative [I] | The combination problem, which Strawson concedes |
-| Constitutive micropsychism | Analysed by Chalmers; phenomenal bonding proposed by Goff — neither defends it as his own view ([§2](#конститутивный)) | 2016 | Micro-subjects combine | $\mathbb{H}_1 \otimes \mathbb{H}_2$; a correlated composite (CC-7) — a criterion, not a constitution [I] | Combination problem (reformulated, not solved) |
+| Realistic monism / micropsychism | Strawson | 2006 | Every ultimate is experiential; stones and tables are not subjects ([§1](#элиминативный)) | Universal L0 — a near relative [I] | The combination problem, which Strawson concedes |
+| Constitutive micropsychism | Analysed by Chalmers; phenomenal bonding proposed by Goff — neither defends it as his own view ([§2](#конститутивный)) | 2016 | Micro-subjects combine | $\mathbb{H}_1 \otimes \mathbb{H}_2$; stationarity/correlation criterion (CC-7) is not a phenomenal constitution [I] | Combination problem (reformulated, not solved) |
 | Panprotopsychism | Chalmers | 2010 | Proto-mental properties | L0 — interiority | No mechanism for L0→L2 transition |
-| Russellian | Russell, Chalmers, Goff | 1927/2010 | Intrinsic + structure | $\rho_E$ + $(H, \{L_k\})$ | No dynamics |
-| Obj. idealism | Hoffman | 2014 | Only CA, physics is interface | Functor [I] | No thresholds, low falsifiability |
+| Russellian | Russell, Chalmers, Goff | 1927/2010 | Intrinsic + structure | Interiority sector ($\rho_E$ where extended) + $(H, \{L_k\})$ [I] | No dynamics |
+| Obj. idealism | Hoffman | 2014 | Only CA, physics is interface | Component-wise analogy [I] | No thresholds, low falsifiability |
 | Cosmopsychism | Shani; Nagasawa & Wager; Goff | 2015–2017 | The cosmos is the one fundamental subject | Terminal object $T$ — not a subject [I] | The decomposition ("constitution") problem |
 | Analytic idealism | Kastrup | 2018 | Only cosmic consciousness; we are its dissociated alters | Partial trace as restriction [I] | Massively revisionary about introspection (Chalmers 2020) |
-| **Pan-interiority (UHM)** | — | — | All have L0, not all have L2 | $\mathrm{L0} \supsetneq \mathrm{L2}$ | Interiority is a primitive; does not explain *why* it exists |
+| **Pan-interiority (UHM)** | — | — | All have L0 [D], not all pass $\mathrm{Cap}_2$ (L2) [D] | $\mathrm{L0} \supsetneq \mathrm{L2}$ | Interiority is a primitive; does not explain *why* it exists |
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 0
 title: "FANOS — a next-generation distributed protocol"
-description: "Reference specification of FANOS: a projective-plane-addressed overlay network (Discovery 7), the APHANTOS anonymity layer, and NYX sheaf onion routing. O(1) rendezvous, Maekawa quorums, threshold security beating Tor/Nym, post-quantum crypto, with a live interactive and verifier."
+description: "Reference specification of FANOS: a projective-plane-addressed overlay network (Discovery 7), the APHANTOS anonymity layer, and NYX sheaf onion routing. Algebraic O(1) rendezvous computation with explicit O(N_cell) epoch directory cost, Maekawa quorums, threshold security beating Tor/Nym, PQ-hybrid transport with honest PQ-threshold open problems, with a live interactive and verifier."
 ---
 
 # FANOS
@@ -10,7 +10,7 @@ description: "Reference specification of FANOS: a projective-plane-addressed ove
 > — the working third-order principle (UHM)
 
 :::info Document status
-**Version 0.1** (reference architecture). Result statuses use the corpus discipline **[T]** / **[C]** / **[H]** / **[P]** (see the block below). **Origin:** UHM, Discovery 7 (projectively-structured distributed system) + the Serre bundle ([gap-thermodynamics](/docs/core/dynamics/gap-thermodynamics)) + the Σ-calculus (Steiner/Steane). **License** (intended open): CERN-OHL-S v2 (hardware profiles) + Apache-2.0/MIT (code) + CC-BY-SA (document). **Interactive:** [live Fano plane and security calculator](pathname:///fanos/fanos-playground.html) (a site page, works offline). **Verifier:** [`/fanos/fanos_verify.py`](pathname:///fanos/fanos_verify.py).
+**Version 0.1** (reference architecture). Result statuses use the corpus discipline **[T]** / **[C]** / **[H]** / **[P]** / **[Pr]** (see the block below). **Origin:** UHM, Discovery 7 (projectively-structured distributed system) + the Σ-calculus (Steiner/Steane). **License** (intended open): CERN-OHL-S v2 (hardware profiles) + Apache-2.0/MIT (code) + CC-BY-SA (document). **Interactive:** [live Fano plane and security calculator](pathname:///fanos/fanos-playground.html) (a site page, works offline). **Verifier:** [`/fanos/fanos_verify.py`](pathname:///fanos/fanos_verify.py).
 :::
 
 ## Naming and the thematic triad
@@ -53,7 +53,7 @@ The public layer "shines" (routes are verifiable and efficient); with APHANTOS e
 - **Appendices:** glossary, pseudocode, test vectors, interactive
 
 :::note Status discipline
-As in the main UHM corpus, every nontrivial claim is tagged: **[T]** — theorem (rigorously proven, often verified by computation); **[C]** — conditional (true under an explicitly named assumption); **[H]** — hypothesis (formulated, needs proof/audit); **[P]** — program (a direction of work). Cryptographic honesty: **the novelty of FANOS is the architectural composition of vetted primitives, not new hardness assumptions.** The single genuinely new construction (the NYX threshold-sheaf Tessera packet, §V) is tagged **[P]** — it needs formal cryptanalysis before production. We do NOT invent new mathematical hardness "from scratch": that would be irresponsible for a real-world protocol.
+As in the main UHM corpus, every nontrivial claim is tagged: **[T]** — theorem (rigorously proven, often verified by computation); **[C]** — conditional (true under an explicitly named assumption); **[H]** — hypothesis (formulated, needs proof/audit); **[P]** — postulate / open design specification; **[Pr]** — research programme (open direction of work). Cryptographic honesty: **the novelty of FANOS is the architectural composition of vetted primitives, not new hardness assumptions.** Point-to-point links use standardized PQ-hybrid primitives (`X25519+ML-KEM-768`, `Ed25519+ML-DSA-65`), whereas **PQ threshold DKG/decryption, PQ-VRF/beacon/shuffle, and the NYX Tessera packet / route-integrity ratchet** are explicitly tagged **[P]/[Pr]** — they require lattice/hash-based threshold constructions and formal cryptanalysis before production. We do NOT invent new mathematical hardness "from scratch" or label classical discrete-log primitives as post-quantum.
 :::
 
 Every quantitative claim in this document is reproduced by the verifier [`/fanos/fanos_verify.py`](pathname:///fanos/fanos_verify.py) (V1–V10: projective geometry, quorums, the security curve, scaling; **V11–V22: DIAKRISIS self-diagnosis, the collective-subject window, multi-fault resolution, and PROTEUS censorship resistance** — first-order blindness, the mediator map, syndrome localization, partition-resistance, the coherence-matrix health metrics, the `1/9` integration budget, the leading-indicator containment, the collective-subject window (V19), and multi-fault resolution — crashes to 3, Byzantine to 2 (V20–V21), and moving-target bridges vs a censor (V22)). The numbers in the tables are computed, not illustrative.
@@ -106,13 +106,13 @@ graph LR
         A7[directory / staking = trust]
     end
     subgraph "FANOS/APHANTOS/NYX answer"
-        B1[cross product: O 1 rendezvous]
+        B1[cross product: O 1 algebraic rendezvous]
         B2[Steiner: guaranteed intersection]
         B3[geometry: centrality capped at q+1]
         B4[hop = a LINE, threshold t of q+1]
         B5[endpoint link P_hop² « f²]
-        B6[PQ hybrid from day one]
-        B7[algebra + beacon: no directories]
+        B6[PQ hybrid transport; PQ threshold open]
+        B7[algebra + beacon: no central HSDir]
     end
     A1 --> B1
     A2 --> B2
@@ -155,7 +155,13 @@ General formula: **N = q² + q + 1**, line size = q+1, lines through a point = q
 
 ## 2.2 Three load-bearing properties
 
-**Steiner property S(2,3,q) [T].** Any two points lie on exactly one common line. At q=2 this is precisely the Steiner triple system S(2,3,7) — the UHM Fano plane (21 pairs covered by 7 lines once each, verified earlier).
+**Steiner property `S(2, q+1, q²+q+1)` [T].** Any two points of `PG(2,q)` lie on exactly one common line of size `q+1`, making `PG(2,q)` the Steiner system `S(2, q+1, q²+q+1)`. At `q=2` this is precisely the Steiner triple system `S(2, 3, 7)` — the UHM Fano plane, with the **canonical Singer cyclic Fano lines** over `[A, S, D, L, E, O, U]`:
+
+```
+{A,S,L},  {S,D,E},  {D,L,U},  {L,E,O},  {E,U,A},  {U,O,S},  {O,A,D}
+```
+
+covering all 21 pairs exactly once. (At `q=7`, `S(2, 8, 57)`; at `q=31`, `S(2, 32, 993)`.)
 
 **Dual property (Maekawa quorums) [T].** Any two lines intersect in exactly one point (verified V1 for q≤31). Hence a **quorum system**: a line = a quorum of size q+1 ≈ √N; any two quorums intersect. This is Maekawa's classic result (1985) on O(√N) mutual exclusion; FANOS reuses it for consensus and replication.
 
@@ -186,9 +192,9 @@ The key finding that sets the whole philosophy of the protocol (verified by orbi
 
 In a network this means: **to link nodes pairwise is to work in the layer where the projective structure is invisible.** All FANOS advantages live at the level of triples and lines. The mediator map (every pair has a unique "mediator" — the third point of its line, `k*(i,j)`) translates into **deterministic routing-repair**: a path (i→j), when its direct channel fails, is regenerated only through `k* = ` the third point of their common line — a fallback with no routing tables.
 
-## 2.6 The Serre bundle and holonomy (foundation for NYX)
+## 2.6 Discrete flag-graph path products (route-integrity construction for NYX)
 
-From `gap-thermodynamics.md` (Theorem 1.1 [T]): the space of maps carries the structure of a **Serre bundle** with base the external observables and fibre the internal phases, and traversing a closed contour yields **holonomy** `Hol(C) = P·exp(∮ A)` — a nontrivial geometric phase shift (analogue of the Berry phase). NYX (Part V) uses this literally: the key ratchet of the onion is indexed by the connection on the incidence bundle, and the path holonomy serves as a compact self-authenticator of the route.
+On the incidence flag graph of `PG(2,q)`, a path `p₀ ∈ L₁ ∋ p₁ ∈ L₂ …` can accumulate a keyed KDF-chain authenticator along its directed edges — a discrete path-ordered product (`Hol = P·∏ β_k` in a hash/MAC group). NYX (Part V) explores this as a compact route-integrity mechanism `[P]/[Pr]`. **Scope note:** this is a standalone cryptographic engineering construction inspired by discrete holonomy; it does **not** depend on the withdrawn universal Gap-curvature / Berry-phase derivations in `gap-thermodynamics` (see [Status registry](/docs/reference/status-registry)).
 
 ## 2.7 The network's coherence matrix and its live measures {#coherence-matrix}
 
@@ -208,7 +214,7 @@ is a bona fide **coherence matrix** in `D(ℂ^N)` — exactly the object the UHM
 |---|---|---|---|
 | **Integration** `Φ` | `Σ_{i≠j}\|γ_ij\|² / Σ_i γ_ii²` ([Φ [T]](/docs/core/structure/dimension-u#мера-интеграции-φ)) | how much the cell is "more than its parts" (cross-node binding) | `Φ_th = 1` (T-129 [T]) |
 | **Structuredness** `P` | `Tr(Γ_net²)` (purity) | how far the cell is from a formless uniform mesh | `P_crit = 2/7` [T] |
-| **Reflection** `R` | `1/(7P)` (canonical: proximity to `I/7`) | self-model sufficiency; threshold = share of cycles spent on self-observation | `R_th = 1/3` [T] |
+| **Reflection** `R` | `1/(7P)` (canonical: proximity to `I/7`) | upper bound on purity / over-coupling (`R ≥ 1/3 ⟺ P ≤ 3/7`); **not** a CPU cycle quota (§6.8) | `R_th = 1/3` [D]/[T] |
 
 **The systemic-correlation threshold `r* = 1/√6 ≈ 0.408` [T]** (numbers are for the base 7-cell `q=2`; at general `N` the thresholds scale as `r* = 1/√(N−1)`, `P_crit = 2/N`)**.** On the equicorrelated stratum — all off-diagonal correlations equal to a mean `r` — the measures collapse to closed form (verified  V15):
 
@@ -338,21 +344,21 @@ The eight layers L0–L7 are the *forward* stack (how a message gets built, rout
 
 ## L1. Overlay and routing
 
-**Rendezvous [T, O(1)].** To reach u→v: both sides lie on the unique line `L = u × v`; the sender posts to bus L, the receiver listens on all of its q+1 buses. No search.
+**Algebraic rendezvous [T, O(1) coordinate computation; O(N_cell) epoch directory].** To reach `u→v` within a cell: both sides lie on the unique line `L = u × v` (computed in `O(1)` field operations, with 1 message per level once cell membership is cached). Resolving projective coordinates `[x:y:z]` to live transport endpoints and per-line keys still requires an **epoch cell membership directory of size `O(N_cell)`** (`N_cell = q²+q+1`) synchronized per cell per epoch (and `O(k·N_cell)` across `k` hierarchy levels) — see the honesty callout below.
 
-**Bridge between groups [T, O(1)].** Two buses `L₁, L₂` intersect in the unique node `p = L₁ × L₂` — a deterministic, load-balanced gateway. Multicast aggregation trees are algebraically predetermined.
+**Bridge between groups [T, O(1) algebra].** Two buses `L₁, L₂` intersect in the unique node `p = L₁ × L₂` — a deterministic, load-balanced gateway. Multicast aggregation trees are algebraically predetermined.
 
-**Hierarchy (scale) [T].** One plane holds N=q²+q+1 nodes; for internet scale — a recursion of cells (verified V4):
+**Hierarchy (scale) [T].** One plane holds `N_cell = q²+q+1` nodes; for internet scale — a recursion of cells (verified V4):
 
-| cell q | N_cell | levels k | total nodes | state ≈ k·N | rendezvous depth |
+| cell q | N_cell | levels k | total nodes | state ≈ k·N_cell | rendezvous depth |
 |---:|---:|---:|---:|---:|---:|
 | 31 | 993 | 2 | 986 049 | 1 986 | 2 |
 | 31 | 993 | 3 | 979 146 657 | 2 979 | 3 |
 | 127 | 16 257 | 2 | 264 290 049 | 32 514 | 2 |
 | 127 | 16 257 | 3 | **4 296 563 326 593** | 48 771 | 3 |
 
-:::warning Honesty of scaling
-We do **not** claim O(√n) routing state for a single plane — the collinearity graph is complete, and in one plane a node structurally "sees everyone". Scale is achieved by a **hierarchy of cells**: state/depth asymptotics are O(log n), like Kademlia. The FANOS win is not in the hop asymptotics but in: (1) deterministic rendezvous in 1 message per level (no iterative probing, fewer RTTs in practice); (2) guaranteed quorum intersection (consensus/replication "for free"); (3) structural balance and a centrality cap (anti-Sybil); (4) free multipath (q+1 paths); (5) LRC-optimal storage. These advantages are real even at DHT-equal asymptotics.
+:::warning Honesty of scaling and epoch directory cost
+We do **not** hide the cell-directory cost as `O(1)`: inside one cell, the collinearity graph is complete and every epoch reshuffle requires distributing coordinate-to-endpoint bindings and line public keys across the cell at **`O(N_cell)` state and `O(N_cell)` synchronization cost per cell per epoch** (`O(k·N_cell)` across `k` levels, e.g. ~3,000 entries at `q=31, k=3` and ~48,800 entries at `q=127, k=3`). Scale is achieved by a **hierarchy of cells**: lookup depth is `O(log n)` (with base `N_cell`), like Kademlia. The FANOS win is not zero directory cost or better asymptotic hop depth, but: (1) `O(1)` algebraic coordinate computation and 1-message-per-level routing once the epoch cell directory is synced (fewer RTTs than iterative DHT probing); (2) guaranteed quorum intersection (consensus/replication "for free"); (3) structural balance and a centrality cap (anti-Sybil); (4) free multipath (`q+1` paths); (5) LRC-optimal storage.
 :::
 
 ## L2. Transport
@@ -365,8 +371,8 @@ We do **not** claim O(√n) routing state for a single plane — the collinearit
 
 ## L3. Membership, epochs, beacon, Sybil admission
 
-- **Randomness beacon [T under threshold BLS]:** drand-class, honest-majority threshold across "anchor" lines; emits a public unpredictable seed per epoch. A post-quantum variant is [P] (hash/lattice VRF beacons — an active direction).
-- **Epoch reshuffle:** coordinates are recomputed by a VRF of the new seed ⇒ the adversary cannot pre-occupy a target line (defence against path prediction and guard discovery).
+- **Randomness beacon [C under threshold BLS; PQ is [Pr]]:** drand-class honest-majority threshold across "anchor" lines emits a public unpredictable seed per epoch (classical pairing-based interim — **not** post-quantum). A post-quantum variant is **[Pr]** (hash/lattice VRF beacons — an open research direction).
+- **Epoch reshuffle:** coordinates are recomputed by a VRF of the new seed ⇒ the adversary cannot pre-occupy a target line (defence against path prediction and guard discovery), at the explicit cost of `O(N_cell)` epoch directory synchronization and line-key refresh per cell (§L1).
 - **Sybil admission (pluggable):** three profiles — (a) **PoW admission** (memory-hard, for open networks); (b) **stake/bond** (for the blockchain overlay); (c) **web-of-trust** (for federations). Independently of the profile, a structural cap operates:
 - **Structural centrality cap [T]** (verified V3): every node is on exactly q+1 of N lines = a fixed fraction (q=31 → 3.22%). **Centrality cannot be "bought"** — line membership is fixed by coordinates. Sybil nodes do not become supernodes.
 - **Anti-eclipse:** q+1 independent lines per node ⇒ to isolate a node one must control all its q+1 lines simultaneously.
@@ -389,23 +395,23 @@ Three profiles on **one** substrate (switching = a "dial" of latency/anonymity):
 
 ## L6. Cryptographic suite
 
-:::note Principle
-All primitives are **vetted and post-quantum/hybrid**. The novelty is in the composition, not the hardness.
+:::note Principle and PQ honesty
+Point-to-point transport and signatures use **standardized PQ-hybrid primitives** (`X25519+ML-KEM-768`, `Ed25519+ML-DSA-65`). However, several **threshold and zero-knowledge components** (threshold DKG, threshold decryption, VRF, beacon, verifiable shuffle) currently have only classical discrete-log/pairing deployments that are **broken by Shor's algorithm**; their **post-quantum lattice/hash-based replacements are explicitly marked `[P]/[Pr]`** and remain open engineering/cryptographic programmes. We do not label discrete-log threshold schemes as post-quantum.
 :::
 
 | Purpose | Primitive | Status |
 |---|---|---|
-| KEM (key exchange) | X25519 **+** ML-KEM-768 (hybrid, KDF combiner SHAKE256) | standard/PQ |
-| Signature | Ed25519 **+** ML-DSA-65; conservative opt. SLH-DSA (SPHINCS+) | standard/PQ |
+| KEM (point-to-point) | X25519 **+** ML-KEM-768 (hybrid, KDF combiner SHAKE256) | standard / PQ hybrid |
+| Signature | Ed25519 **+** ML-DSA-65; conservative opt. SLH-DSA (SPHINCS+) | standard / PQ hybrid |
 | AEAD | ChaCha20-Poly1305 (portability) / AES-256-GCM (HW) | standard |
 | Hash/XOF | BLAKE3 (speed) + SHAKE256 (PQ-KDF) | standard |
-| VRF | ECVRF-Edwards25519 (RFC 9381); PQ-VRF | standard / [P] |
-| Beacon | threshold BLS (drand); PQ beacon | standard / [P] |
-| Threshold sharing | Shamir SSS + Feldman/Pedersen VSS; DKG (GJKR) | standard |
-| Threshold decryption | threshold KEM/ElGamal, non-interactive share combination | standard |
-| Verifiable shuffle | Bayer–Groth argument (classical); PQ shuffle | standard / [P] |
-| Anonymous credits | VOPRF Privacy Pass (RFC 9578) / BBS+ | standard |
-| Packet | Tessera (Sphinx-derived, threshold, PQ) | **[P] needs audit** |
+| VRF | ECVRF-Edwards25519 (RFC 9381, classical interim); lattice/hash PQ-VRF | classical / **[Pr]** PQ |
+| Beacon | threshold BLS (drand, classical interim); PQ beacon | classical / **[Pr]** PQ |
+| Threshold DKG & sharing | **PQ requires lattice-based threshold DKG / LWE-VSS** (classical discrete-log DKG/Pedersen is **not** PQ — broken by Shor) | **[P]/[Pr]** PQ open |
+| Threshold decryption | **PQ requires lattice-based threshold KEM** (classical threshold ElGamal is **not** PQ) | **[P]/[Pr]** PQ open |
+| Verifiable shuffle | Bayer–Groth argument (classical interim); lattice PQ shuffle | classical / **[Pr]** PQ |
+| Anonymous credits | VOPRF Privacy Pass (RFC 9578) / BBS+ (classical interim); PQ blind tokens | classical / **[Pr]** PQ |
+| Packet | Tessera (explicit per-hop PQ KEM slots or pre-agreed session keys — **not** blindable ML-KEM Sphinx; §5.7, §7.7) | **[P]/[Pr]** needs audit |
 
 ## L7. Incentives (optional)
 
@@ -417,7 +423,7 @@ All primitives are **vetted and post-quantum/hybrid**. The novelty is in the com
 # Part V. NYX — the evolution of onion routing
 
 :::tip Orientation
-This is the core of the novelty and the direct answer to "design a more advanced form of onion routing, informed by the fundamental research". The classical onion (Tor) wraps a message in L layers of encryption along a path of *single* nodes. NYX changes three things at once: (1) a hop is not a node but a **line** (a threshold group); (2) a path is not a random chain but a **geometric flag** of incident point–line pairs, uniform by the transitivity theorem; (3) forward secrecy is provided by a **holonomic ratchet** on the Serre bundle, not only by per-hop keys. Below, in order.
+This is the core of the novelty and the direct answer to "design a more advanced form of onion routing, informed by the fundamental research". The classical onion (Tor) wraps a message in L layers of encryption along a path of *single* nodes. NYX changes three things at once: (1) a hop is not a node but a **line** (a threshold group); (2) a path is not a random chain but a **geometric flag** of incident point–line pairs, uniform by the transitivity theorem; (3) per-hop forward secrecy and route integrity use a keyed KDF-chain path tag over the flag graph (`[P]/[Pr]`), paired with honest PQ encapsulation (§5.7, §7.7). Below, in order.
 :::
 
 ## 5.1 The classical onion and its limits
@@ -428,7 +434,7 @@ In Tor a message M is encrypted layer by layer with the hop keys `H₁…H_L`: `
 
 **Idea.** Each onion layer is peeled not by a single node but by a **threshold t of q+1** members of a line. No single node can peel a layer alone (below threshold it knows *nothing*). The term "sheaf" is doubly apt: it is both a mathematical sheaf over the line and the "splitting" of a message, like light through a prism.
 
-**Mechanism.** At cell formation the members of each line run a DKG (distributed key generation, GJKR) ⇒ the line has a public key `PK_L` and each member holds a share of the secret `sk_i` (Shamir). The sender encrypts a layer to `PK_L`. To peel a layer, ≥ t members publish partial decryptions that are non-interactively combined (a threshold KEM). The routing information "where next" is revealed only when the threshold is reached.
+**Mechanism (`[P]/[Pr]` for PQ).** At cell formation the members of each line run a distributed key generation (DKG) protocol ⇒ the line obtains a public key `PK_L` and each member holds a secret share `sk_i`. The sender encapsulates a layer to `PK_L`. To peel a layer, `≥ t` members publish partial decryptions that are combined into the hop key, revealing the routing information "where next" only when the threshold is reached. **Post-quantum honesty:** classical discrete-log/Pedersen DKG protocols (such as GJKR) and threshold ElGamal are **broken by Shor's algorithm** and therefore do **not** provide post-quantum security; a genuinely PQ realization of NYX's threshold layer requires **lattice-based threshold DKG and threshold KEM** (e.g. Module-LWE threshold key generation with noise smudging), which is explicitly marked as an open engineering postulate / research programme `[P]/[Pr]`.
 
 **What it buys [T, curve computed]:** an adversary owning a fraction *f* of nodes (randomly placed) breaks one hop with probability `P_hop = P(Binom(q+1, f) ≥ t)` — a binomial tail. Endpoint linkage (like Tor's guard+exit) requires breaking the first AND last hop: `P_link = P_hop²`.
 
@@ -454,17 +460,16 @@ The threshold t requires t honest members online (availability is the binomial-c
 
 **Against intersection attacks:** the unpredictable epoch reshuffle (L3) means the set of admissible lines for the next epoch is unknown in advance ⇒ long-term path targeting is impossible.
 
-## 5.4 NYX innovation 3 — the holonomic ratchet (import of the Serre bundle)
+## 5.4 NYX innovation 3 — the holonomic route-integrity ratchet `[P]/[Pr]`
 
-**Idea.** On the incidence bundle (base — points/observable, fibre — phases; §2.6) a connection `A` is defined. At each hop a key transform (blinding, as in Sphinx) is applied, but **derived from the incidence connection**: the hop factor `β_k = KDF(A(p_{k-1}, p_k))`. The composition along the path is the ordered product = **holonomy** `Hol = P·∏ β_k`.
+**Idea.** Along the incidence flag path `p₀ ∈ L₁ ∋ p₁ ∈ L₂ …`, each hop derives a per-hop symmetric key `K_k` (from its own explicit KEM ciphertext slot or pre-agreed circuit session key — **not** by blinding an ML-KEM ciphertext, see below) and updates an accumulated path-integrity tag via a keyed KDF chain: `Hol_k = KDF(Hol_{k-1} ‖ K_k ‖ coord(p_k, L_k))`.
 
 **What it buys:**
-- **Forward secrecy without extra RTTs [C]:** the ratchet is one-way (a KDF chain), compromise of the current hop does not reveal past ones.
-- **A compact path authenticator [H]:** both endpoints, knowing the algebraic description of the path, compute the same `Hol`; intermediate nodes see only the local `β_k`. `Hol` serves as a self-verifying "route signature" — inserting/substituting a hop breaks the holonomy (just as a nontrivial `Hol(C) ≠ 1` signals an incorrect contour traversal in gap theory).
-- **A shared apparatus with the physics corpus:** this is the same object as the Berry phase in `gap-thermodynamics.md` — the network inherits the theory's machinery.
+- **Forward secrecy via ephemeral per-hop keys [C]:** each hop's key is independently encapsulated (or derived from a one-way KDF ratchet on pre-agreed session keys), so compromising a later hop does not reveal earlier keys.
+- **A compact path authenticator [H]:** both endpoints, knowing the algebraic description of the path and hop keys, compute the same final `Hol`; intermediate hops see only their local transition. Inserting or substituting a hop invalidates `Hol`.
 
-:::warning Status of the holonomic ratchet
-Mechanically the ratchet reduces to a geometry-organised chain of Diffie-Hellman-like blinding factors (as in Sphinx), which grounds forward secrecy and path integrity. However, **a rigorous cryptographic formalisation (model, reduction, a PQ version of the blinding) is [P]**: a formal analysis is needed before production. We honestly mark this as a research construction, not as ready-proven security.
+:::warning Cryptographic honesty: ML-KEM-768 is NOT blindable like Sphinx
+Classical Sphinx achieves a single constant-size `32 B` header group element across all `L` hops **only** because Diffie–Hellman / Elliptic Curve groups are re-randomizable (`α_k = α_{k-1}^{b_k}`). **ML-KEM-768 (Module-LWE) is NOT blindable / re-randomizable** — there is no Sphinx-style single-group-element blinding for ML-KEM-768! Therefore, PQ onion routing in NYX/Tessera must use one of two honest designs (§5.7, §7.7): (a) **explicit per-hop KEM ciphertext slots** in the header (scaling the packet budget linearly in `L_max × 1088 B`), or (b) **pre-agreed per-hop PQ session keys** established out-of-band during circuit setup (allowing compact symmetric data cells at the cost of relay state). **A rigorous cryptographic formalisation and machine-checked proof (Tamarin/ProVerif) of the full Tessera construction is `[P]/[Pr]`** — marked honestly as an open research construction, not proven production security.
 :::
 
 ## 5.5 NYX innovation 4 — structurally-balanced cover traffic and the λ dial
@@ -489,7 +494,9 @@ Mechanically the ratchet reduces to a geometry-organised chain of Diffie-Hellman
 
 ## 5.7 The Tessera packet (summary; wire format in §VII)
 
-Fixed size (indistinguishability), Sphinx-derived, with two extensions: a **PQ-hybrid** header (X25519+ML-KEM per hop) and **threshold addressing** of a layer (encryption to a line's `PK_L` instead of a node's `PK`). The size is constant along the path (re-encryption per hop), metadata leakage is minimal.
+Fixed size per profile (length indistinguishability), supporting **two honest PQ header modes** because ML-KEM-768 cannot be Sphinx-blinded (§5.4):
+1. **Stateless per-hop KEM mode (`Tessera-Stateless`, `[P]/[Pr]`):** the header carries `L_max` explicit per-hop KEM slots (`X25519(32 B) + ML-KEM-768 ct(1088 B)` + encrypted routing command + MAC ≈ `1168 B` per hop; each hop shifts out its consumed slot and appends random padding so hop position remains hidden). Consequently, the constant packet size **scales with `L_max`** (e.g. `~6–8 KB` for `L_max = 3`, `~8–10 KB` for `L_max = 5` — **not** 4 KB). For APHANTOS-Full, the per-hop KEM targets the line's threshold public key `PK_L` (requiring lattice threshold KEM `[P]/[Pr]`).
+2. **Pre-agreed session-key mode (`Tessera-Circuit`):** per-hop PQ hybrid session keys (`X25519+ML-KEM-768`) are negotiated out-of-band during circuit setup (telescopic PQ handshake), after which data packets carry only compact symmetric headers and fit comfortably inside a constant **4 KB** cell (trading statelessness for per-circuit relay state and setup RTTs).
 
 ```mermaid
 sequenceDiagram
@@ -497,7 +504,7 @@ sequenceDiagram
     participant L1 as Line L₁ (t of q+1)
     participant L2 as Line L₂ (t of q+1)
     participant R as Receiver
-    S->>L1: Tessera packet (layers on PK_L1, PK_L2, PK_R · β-ratchet)
+    S->>L1: Tessera packet (per-hop KEM slots / session keys on PK_L1, PK_L2, PK_R · Hol tag)
     Note over L1: t members publish partial decryptions
     L1->>L1: threshold assembled → layer 1 peeled, L₂ known
     L1->>L2: re-encrypted packet (constant size) + Poisson delay
@@ -530,7 +537,7 @@ graph LR
     OBS --> DET --> LOC --> HEAL --> OBS
 ```
 
-Because the cell carries a coherence matrix `Γ_net` (§2.7), the loop has something a routing table never gives: a **self-model** with scalar health readings (`Φ`, `P`, `R`) whose failure thresholds are corpus theorems. The cell is, in the precise UHM sense, a *self-observing system* — it satisfies the same reflection condition (`R ≥ 1/3`) that the corpus uses to define a subject. DIAKRISIS is that reflex made operational.
+Because the cell carries a coherence matrix `Γ_net` (§2.7), the loop has something a routing table never gives: a **self-model** with scalar health readings (`Φ`, `P`, `R`) whose algebraic thresholds (`Φ ≥ 1`, `P > 2/7`, `R = 1/(7P) ≥ 1/3 ⟺ P ≤ 3/7`) guard against both fragmentation and lockstep over-coupling. DIAKRISIS turns those invariants into an operational diagnostic loop.
 
 ## 6.2 Detection — fourteen consistency alarms, for free [T] {#diakrisis-detect}
 
@@ -548,27 +555,27 @@ Alongside this structural alarm runs the **integration monitor** of §2.7: `Φ_n
 
 Once "something is wrong" fires, DIAKRISIS localizes the culprit with the [Σ-compression pyramid of T-225](/docs/applied/research/syndrome-calculus#t-225). Full tomography of a 7-cell would need 48 numbers; localizing *one* degraded node needs a handful:
 
-- **21 → 7 (themes).** The 21 pairwise health readings partition uniquely into the 7 Fano line-triples (Steiner `λ=1`): seven *theme observables*, one per line, each `T_ℓ = Σ health over the pairs of line ℓ`. Nothing escapes them, nothing is double-counted.
-- **7 → 3 (syndrome).** Binarize each node "healthy/degraded" against its viability threshold and take three Fano parities. The 3-bit syndrome `σ ∈ 𝔽₂³` is **the binary address of the damaged node** (T-225 table, verified V13):
+- **21 → 7 (themes).** The 21 pairwise health readings partition uniquely into the 7 **canonical Singer cyclic Fano lines** (`S(2,3,7)`): `{A,S,L}`, `{S,D,E}`, `{D,L,U}`, `{L,E,O}`, `{E,U,A}`, `{U,O,S}`, `{O,A,D}` — seven *theme observables*, one per line, each `T_ℓ = Σ health over the pairs of line ℓ`. Nothing escapes them, nothing is double-counted.
+- **7 → 3 (syndrome).** Binarize each node "healthy/degraded" against its viability threshold and compute three parity checks over the canonical Singer cyclic $\mathbb{F}_2^3$ columns (`H` rows supported on the hyperovals `{D,E,O,U}`, `{S,L,E,U}`, `{A,L,O,U}`, corresponding to $\mathbb{F}_8 = \mathbb{F}_2[\alpha]/(\alpha^3+\alpha+1)$ with $(A,S,D,L,E,U,O) \mapsto (\alpha^0,\dots,\alpha^6)$ — [T-225](/docs/applied/research/syndrome-calculus#t-225)). Every canonical Fano line `{a,b,c}` satisfies `σ(a) ⊕ σ(b) ⊕ σ(c) = 000`, and the 3-bit syndrome `σ ∈ 𝔽₂³` uniquely identifies the damaged node:
 
-| Node | Address | Syndrome `σ` |
-|---|:-:|:-:|
-| A | 1 | `100` |
-| S | 2 | `010` |
-| D | 3 | `110` |
-| L | 4 | `001` |
-| E | 5 | `101` |
-| O | 6 | `011` |
-| U | 7 | `111` |
+| Node | Canonical $\mathbb{F}_8$ power | Address (dec) | Syndrome `σ` |
+|---|:-:|:-:|:-:|
+| A | $\alpha^0$ | 1 | `001` |
+| S | $\alpha^1$ | 2 | `010` |
+| D | $\alpha^2$ | 4 | `100` |
+| L | $\alpha^3$ | 3 | `011` |
+| E | $\alpha^4$ | 6 | `110` |
+| O | $\alpha^6$ | 5 | `101` |
+| U | $\alpha^5$ | 7 | `111` |
 
 - **3 → 1 (flag).** The single bit `[σ ≠ 0]` is the "fault present" alarm; `σ = 000` means healthy.
 
-**Worked example.** Suppose node **O** starts dropping relays. Its q+1 = 3 lines — `A,O,U`, `S,L,O`, `D,E,O` — each register a degraded theme; the three parities compute to `σ = 011`, which is address 6, which is **O**. Three bits pinned one node out of seven. This is the Hamming(7,4) perfect code doing error correction on the *network's health vector* — the same geometry that makes the cell a native quantum-error-correcting code (§2.4) makes it a native fault localizer. Under mixing (T-114), the syndrome is averaged over a window and settles to the true node with error decaying exponentially in `window × spectral-gap` (T-225(d)) — robust to noisy single snapshots. The status inherits T-225 **[C]**: the `21→7→3→1` pyramid combinatorics are exact **[T]**, while their convergence on a *live* cell is conditional on the measurement model (window-averaging).
+**Worked example.** Suppose node **O** starts dropping relays. Its `q+1 = 3` canonical Singer cyclic lines — `{L,E,O}`, `{U,O,S}`, `{O,A,D}` — each register a degraded theme; the three canonical parities compute to `σ = 101`, which is canonical address 5, which is **O**. Three bits pinned one node out of seven. This is the Hamming(7,4) perfect code doing error correction on the *network's health vector* — the same geometry that makes the cell a native quantum-error-correcting code (§2.4) makes it a native fault localizer. Under mixing (T-114), the syndrome is averaged over a window and settles to the true node with error decaying exponentially in `window × spectral-gap` (T-225(d)) — robust to noisy single snapshots. The status inherits T-225 **[C]**: the `21→7→3→1` pyramid combinatorics are exact **[T]**, while their convergence on a *live* cell is conditional on the measurement model (window-averaging).
 
 :::note Multi-fault resolution — how far one cell actually corrects [T]
 The "distance-3" figure is about the *compressed* 3-bit syndrome, which corrects **one** error. But the cell carries more information than three bits, and the honest capability is stratified (verified V20–V21):
 
-- **Crashes (known location = erasures).** The projective LRC (§L4) repairs by *peeling*: a lost node is rebuilt from any line on which it is the only loss, which clears more lines, and so on. This recovers **any ≤ 3 simultaneous crashes** and most 4-node losses; recovery fails first only on a **hyperoval** — 4 points no 3 of which are collinear (e.g. `A,S,L,U`), the plane's densest "every line in 0 or 2 points" configuration. The common failure mode is thus tolerated far beyond one.
+- **Crashes (known location = erasures).** The projective LRC (§L4) repairs by *peeling*: a lost node is rebuilt from any line on which it is the only loss, which clears more lines, and so on. This recovers **any ≤ 3 simultaneous crashes** and most 4-node losses; recovery fails first only on a **hyperoval** — 4 points no 3 of which are collinear, i.e. the complement of a Fano line (e.g. `{A,S,D,U}`, the complement of `{L,E,O}`, meeting every canonical line in 0 or 2 points). The common failure mode is thus tolerated far beyond one.
 - **Byzantine faults (unknown location = errors).** The 3-bit syndrome corrects 1, but the **7-line-theme layer** — the intermediate `21 → 7` stage, seven bits, computed anyway — localizes **exactly two**: all 21 pairs produce distinct theme-flag patterns (the compressed syndrome mis-decodes all 21). Keep the 7-theme vector when you need two-fault resolution; compress to 3 bits only for the single-fault fast path. Three or more Byzantine faults saturate the theme layer (blocking sets flag every line) and are **detected**, then escalated.
 - **Beyond one cell.** A saturated cell (≥3 Byzantine, or a hyperoval crash) is itself one degraded "point" of the **parent cell**, whose `q+1` lines are independent of the child's — so it is re-localized upstairs, and correctable faults grow per level as they spread across cells. Two corpus upgrade paths raise the per-cell figure directly: **larger `q`** (more line-witnesses per node) and the **Golay federation** ([T-228](/docs/applied/research/syndrome-calculus#голей-федерация): three Fano cells compose to the binary Golay `[23,12,7]`, distance 7 — corrects **three**).
 :::
@@ -616,9 +623,11 @@ Diagnosis without repair is a smoke alarm without a sprinkler. DIAKRISIS heals t
 
 **A budgeting law for healing depth [T].** Every *coarse* cross-segment hop — routing through a line-projection rather than a direct channel — contracts integration by exactly **1/9** (the Fano-channel `Φ → Φ/9`, verified V16; the coherence scale-down `×1/3` of [Fano channel Thm 2.1](/docs/proofs/gap/fano-channel#теорема-фано-канал), squared). So a repair path that crosses `d` coarse boundaries costs `Φ → Φ/9^d` of binding. This is not a metaphor: it is the quantitative reason to keep healing *local* (small `d`) and a hard input to how deep a hierarchy may reroute before the reintegrated cell would fall below `Φ = 1`. It is the same `1/9` that caps naive mixture-of-experts routing in the ML catalogue — here it caps reroute depth.
 
-## 6.8 The self-observation budget — R_th = 1/3 [T] {#diakrisis-budget}
+## 6.8 The reflection bound and monitoring overhead {#diakrisis-budget}
 
-How much of a cell's capacity should go to diagnosis? Not a matter of taste: the reflection threshold answers it. With canonical reflection `R = 1/(7P)`, the self-model is accurate enough to be trusted (`R ≥ R_th = 1/3`) iff `P ≤ 3/7` (verified V18) — i.e. iff the cell spends **at least one third** of its cycles on introspection (health gossip, cross-attestation, syndrome averaging, cover-diagnostic traffic). A cell that budgets less than `1/3` for self-observation provably cannot hold a faithful self-model, and will miss faults it had the information to catch. This is the same `R_th = 1/3` that bounds a conscious subject's self-modeling — here it is the **monitoring-overhead law**: diagnosis is not overhead to be minimized toward zero, it has a theoretical floor at a third.
+With canonical reflection `R = 1/(7P)` defined on the normalized behavioural correlation matrix `Γ_net = C/7` (§2.7), the algebraic condition `R ≥ R_th = 1/3` holds **if and only if** `P ≤ 3/7` `[T]` (on the flat-diagonal equicorrelated stratum, mean correlation `r ≤ 1/√3 ≈ 0.577`, verified V18). Operationally, this inequality is a **dimensionless upper bound on cross-node correlation / purity**: it warns when the cell collapses into rank-1 lockstep (`r > 0.577`), where nodes lose independent variation and local anomalies become indistinguishable from global drift.
+
+**Scope note (no CPU-quota numerology):** `R_th = 1/3` is a bound on the purity of `Γ_net`, **not** a law requiring a cell to spend 1/3 of its CPU cycles or bandwidth on health gossip. Actual DIAKRISIS monitoring overhead (gossip cadence, cross-attestation frequency, averaging window length) is an engineering parameter sized to link churn and the empirical spectral gap `Δ` (§6.7), typically a few percent of node compute and bandwidth rather than a fixed one-third fraction.
 
 ## 6.9 The DIAKRISIS protocol (reference) {#diakrisis-protocol}
 
@@ -661,7 +670,7 @@ Pulling the thread of the whole part: **working in the Γ-paradigm gives a netwo
 | Integration health + early warning | `Φ_net`, and mean-corr `r*=1/√6` cascade line (V15) | [T] arith · [C] dictionary |
 | Earliest alarm | `{P<2/7} ⊂ {Φ<1}` leading-indicator theorem (V17) | [T] |
 | Healing-depth budget | coarse hop costs `Φ×1/9` (V16) | [T] |
-| Monitoring-overhead floor | `R_th = 1/3` self-observation budget (V18) | [T] arith |
+| Over-coupling / reflection bound | `R_th = 1/3 ⟺ P ≤ 3/7` purity guard (not a CPU quota; §6.8, V18) | [T] arith |
 
 **Honest limits.** (1) Localization is stratified, not merely distance-3 (§6.3, V20–V21): crashes recover up to three per cell, Byzantine faults up to two (7-theme layer); ≥3 Byzantine or a hyperoval crash escalate to the parent (or a larger-`q`/Golay-federated profile). (2) The *dictionary* — mapping node-behaviour axes onto the seven sectors so that `Γ_net` is a faithful coherence matrix — is a modelling choice [C]; but it is *self-checking*, because a wrong axis assignment breaks the polar sum-rules (§6.2), so the mapping is a testable hypothesis, not free interpretation. (3) Third-order statistics need more data than pairwise ones (higher-moment variance) — the diagnostic is cheapest at the cell scale (7 nodes, 21 pairs) and is meant to run there, with the hierarchy handling scale. (4) `Φ`/`P`/`r*` as *reliability* readings inherit the corpus [I] identification of the behavioural axes with the sectors — the arithmetic is [T], the reading is a model.
 
@@ -760,18 +769,23 @@ A shipped bootstrap *list* is exactly what a censor blocks. When PROTEUS (Part X
 
 ## 7.7 Tessera packet wire format (reference) {#wire-tessera}
 
+Because **ML-KEM-768 is not re-randomizable / blindable** (§5.4), a Sphinx-style single `group_element` cannot carry a multi-hop post-quantum KEM inside a 4 KB packet. FANOS therefore specifies two honest fixed-size profiles:
+
+**Profile A — `Tessera-Stateless` (explicit per-hop KEM slots, `[P]/[Pr]`):**
+
 | Field | Size | Purpose |
 |---|---|---|
-| `version` | 1 B | format version |
+| `version` | 1 B | format version + profile id (`L_max`) |
 | `epoch` | 4 B | epoch (for verifying coordinates/beacon) |
-| `group_element` | 32 B (X25519) + 1088 B (ML-KEM-768 ct) | hybrid element to derive the hop key and the β-ratchet |
-| `routing_cmd` (encrypted) | 32 B | next line / delivery (peeled by threshold) |
-| `header_mac` | 16 B | integrity of the current hop's header |
-| `holonomy_tag` | 32 B | accumulated `Hol` — the path authenticator |
+| `kem_slots[0..L_max-1]` | `L_max × (32 B X25519 + 1088 B ML-KEM-768 ct)` | explicit per-hop KEM ciphertexts (shifted & random-padded at each hop; `3360 B` at `L_max=3`, `5600 B` at `L_max=5`) |
+| `routing_slots[0..L_max-1]` | `L_max × (32 B cmd + 16 B MAC)` | encrypted per-hop routing commands + header MACs (peeled by threshold in Full mode) |
+| `holonomy_tag` | 32 B | accumulated KDF path tag `Hol` |
 | `payload` (AEAD) | fixed (e.g. 2 KB) | payload, re-encrypted per hop |
-| `padding` | up to fixed total size | length indistinguishability |
+| `padding` | up to fixed profile total | length indistinguishability |
 
-The total packet size is a constant (e.g. 4 KB) regardless of path length and hop position — the fixed size is a wire-level requirement, not an implementation detail.
+Total constant packet size scales honestly with `L_max` (e.g. **6 KB** for `L_max = 3` or **8 KB** for `L_max = 5` with 2 KB payload — **not** 4 KB).
+
+**Profile B — `Tessera-Circuit` (pre-agreed PQ session keys):** an out-of-band telescopic PQ hybrid handshake (`X25519+ML-KEM-768` per hop) establishes symmetric hop keys during circuit setup, after which data packets carry only `version (1 B) ‖ epoch (4 B) ‖ circuit_id (16 B) ‖ mac (16 B) ‖ holonomy_tag (32 B) ‖ AEAD payload + padding`, fitting cleanly inside a constant **4 KB** cell at the cost of per-circuit relay state and setup RTTs.
 
 ## 7.8 Core protocol flows {#wire-flows}
 
@@ -806,7 +820,7 @@ The total packet size is a constant (e.g. 4 KB) regardless of path length and ho
 <summary><b>NYX-ROUTE (APHANTOS-Full) — anonymous delivery</b></summary>
 
 1. Choose a geometric flag-path of length L (uniformly, PGL transitivity).
-2. Assemble the Tessera packet: layers on `PK_{L_k}`, the β-ratchet from the connection.
+2. Assemble the Tessera packet: per-hop KEM slots (or pre-agreed session keys) for `PK_{L_k}`, plus the KDF path tag `Hol`.
 3. At each hop the line assembles a threshold t, peels a layer, applies a Poisson delay, re-encrypts.
 4. The receiver verifies the `holonomy_tag`.
 </details>
@@ -844,15 +858,16 @@ With a randomly-placed adversary owning a fraction *f* of nodes and a threshold 
 | T2 global passive (GPA) | no defence (by design) | weak (like Tor) | **strong** (cover+mixing, entropy §5.5) |
 | T3 active fraction f | integrity (signatures) | ≈ Tor | **threshold t/(q+1)**, curve §5.2 |
 | T4 Sybil | centrality cap | + | + unpredictable epochs |
-| T5 quantum | PQ hybrid | PQ hybrid | PQ hybrid |
+| T5 quantum | PQ hybrid (transport) | PQ hybrid (per-hop slots / circuit) | PQ transport; **PQ threshold DKG/KEM is `[P]/[Pr]`** |
 | T6 seizure of 1 node | — | reveals 1 hop | **0 knowledge** (below threshold) |
 
 ## 8.3 Known residual vectors (honest)
 
 - **f → 0.5.** Like all anonymity networks, it degrades near a majority. Mitigation: increasing q+1 and t (the table §5.2 shows that q+1=32 holds f=0.3 at 4.9·10⁻¹¹).
 - **Intersection over activity periods (long-term intersection).** Poisson + cover mitigate, do not eliminate. The λ dial is a trade-off.
-- **Formal security of Tessera / the holonomic ratchet is [P].** A machine-checked proof (Tamarin/ProVerif) and a PQ version of the blinding are needed.
-- **PQ verifiable shuffle is [P].** Lattice shuffle arguments are heavy; interim — a classical shuffle proof over PQ transport.
+- **ML-KEM non-blindability & Tessera formal security (`[P]/[Pr]`).** ML-KEM-768 cannot be Sphinx-blinded (§5.4, §7.7); stateless PQ onion packets must carry `L_max` explicit KEM slots (scaling packet size to `~6–8 KB+`), or rely on pre-agreed per-hop session keys. A machine-checked proof (Tamarin/ProVerif) of the full Tessera / holonomic-tag construction is `[P]/[Pr]`.
+- **PQ threshold DKG and threshold KEM (`[P]/[Pr]`).** Classical discrete-log DKG (GJKR / Feldman / Pedersen) and threshold ElGamal are broken by Shor's algorithm; achieving genuine PQ security for APHANTOS-Full and CALYPSO threshold hosting requires lattice-based threshold DKG/KEM primitives (`[P]/[Pr]`).
+- **PQ verifiable shuffle is `[Pr]`.** Lattice shuffle arguments are heavy; interim — a classical shuffle proof over PQ transport.
 
 ## 8.4 Red-team pass: attacks across every layer {#red-team}
 
@@ -893,16 +908,16 @@ To show the specification covers all layers, here is an adversarial sweep — on
 
 | Metric | Kademlia | Tor | Nym | **FANOS/APHANTOS** |
 |---|---|---|---|---|
-| Rendezvous (within a cell) | O(log n), many RTT | — | — | **O(1), 1 message** [T] |
+| Rendezvous (within a cell) | O(log n), many RTT | — | — | **O(1) algebra, 1 msg** (given `O(N_cell)` epoch dir) [T] |
 | Hierarchy depth (10⁹ nodes) | ~30 iter. hops | — | — | **k=3 one-shot levels** [T] |
-| Routing state (10⁹) | O(log n) | — | — | ~3000 (q=31,k=3) [T] |
+| Routing / epoch-dir state (10⁹) | O(log n) | — | — | `O(k·N_cell)` ≈ 3000 (`q=31, k=3`) [T] |
 | Quorum-intersection guarantee | no | no | no | **yes** (Maekawa) [T] |
 | Centrality cap | no | no | partial | **(q+1)/N** [T] |
 | Multipath out of the box | no | no | no | **q+1 paths** [T] |
 | Storage redundancy | varies | — | — | (q+1)/q → 1 [T] |
 | Latency (public) | — | medium | high | **QUIC-class** (Direct) |
 | Latency (anon) | — | ~1 s | 3–25 s | **1.5–25 s by dial** [T] |
-| Post-quantum | no | partial | partial | **hybrid via L6** |
+| Post-quantum | no | partial | partial | **PQ hybrid transport; PQ threshold `[P]/[Pr]`** |
 | Self-diagnosis under failure | no | no | no | **yes — DIAKRISIS** [T] |
 | Fault localization | — | — | — | **3 bits → 1 of 7 (T-225)** [T]+[C] |
 | Byzantine detection from structure | no | no | no | **third-order (T-226)** [T]/[C] |
@@ -1013,7 +1028,7 @@ A hidden service is present but unlocatable. Tor onion services and I2P eepsites
 
 A CALYPSO address is `` `<base32(BLAKE3(service_pubkey))>.fanos` `` — self-certifying (the address *is* the key hash; no CA, no naming authority) and **post-quantum** (the hybrid service key carries ML-DSA). It is the analogue of a Tor v3 `.onion`, upgraded to PQ and, crucially, to **threshold hosting** (§12.3).
 
-## 12.2 No directory: the rendezvous is computed [Т-structure] {#calypso-rendezvous}
+## 12.2 No central HSDir: the rendezvous line is computed [T] {#calypso-rendezvous}
 
 Client and service **independently derive** their meeting line from the beacon:
 
@@ -1021,11 +1036,11 @@ Client and service **independently derive** their meeting line from the beacon:
 L_rdv = MapToLine( VRF_beacon( H("FANOS-v1/calypso" ‖ service_pubkey), epoch ) )
 ```
 
-This is a *public* function of the service identity and the epoch — both sides compute it with no lookup, so there is **no HSDir to enumerate, block, or seize** (a real, exploited Tor weakness). Because it is keyed by the epoch beacon, `L_rdv` **rotates every epoch** — there is no long-term target to surveil or attack. The rendezvous point of Tor becomes a theorem of the plane.
+This is a *public* function of the service identity and the epoch — both sides compute the line coordinate with no descriptor lookup, so there is **no dedicated HSDir to enumerate, block, or seize** (a real, exploited Tor weakness). Resolving `L_rdv` to its current member endpoints still uses the cell's standard `O(N_cell)` epoch membership directory (§L1), which is shared across all overlay traffic rather than indexed per hidden service. Because it is keyed by the epoch beacon, `L_rdv` **rotates every epoch** — there is no long-term target to surveil or attack.
 
 ## 12.3 Threshold-hosted service — the core innovation [C] {#calypso-threshold}
 
-A classic hidden service runs on one host: seize that host and the service dies (and may be deanonymized). A CALYPSO service can instead be hosted **across the `q+1` members of a service-line** via DKG — the service secret is Shamir-shared, requests are threshold-decrypted, and state is LRC-replicated along the line. Consequences:
+A classic hidden service runs on one host: seize that host and the service dies (and may be deanonymized). A CALYPSO service can instead be hosted **across the `q+1` members of a service-line** via distributed key generation — the service secret is threshold-shared, requests are threshold-decrypted, and state is LRC-replicated along the line. (As in §5.2, a genuinely post-quantum realization requires lattice-based threshold DKG/KEM `[P]/[Pr]`, not classical discrete-log GJKR/Pedersen.) Consequences:
 
 - **No single location.** The service *is the line*, not a machine — there is nothing to raid.
 - **Seizure-proof below threshold.** Fewer than `t` seized hosts learn **nothing** (0-knowledge — the same threshold guarantee as NYX §5.2 and DIAKRISIS §6).
@@ -1058,17 +1073,17 @@ Introduction flooding is the classic hidden-service DoS (Tor bolted on onion-ser
 
 | Property | Tor onion v3 | I2P eepsite | **CALYPSO** |
 |---|:-:|:-:|:-:|
-| Directory (HSDir) — enumeration vector | yes | netDb | **none (computed)** |
+| Directory (HSDir) — enumeration vector | yes | netDb | **no HSDir (computed; `O(N_cell)` cell dir)** |
 | Introduction points — separate infra/DoS | yes | tunnels | **none (algebraic)** |
 | Single host — seizure-fatal | yes | yes | **threshold line** |
-| Post-quantum | ✗ | ✗ | **✓** |
+| Post-quantum | ✗ | ✗ | **✓ (identity/transport); threshold `[P]/[Pr]`** |
 | DoS defence | PoW bolt-on | limited | **PoW + rotating line + threshold** |
 | Below-threshold seizure | fatal | fatal | **0 knowledge** |
 | Self-diagnosis of hosts | ✗ | ✗ | **DIAKRISIS (§6)** |
 
 ## 12.7 Honest status and human-readable naming {#calypso-status}
 
-The rendezvous derivation is [T]-structure + [C] on the beacon; threshold hosting is [C] (relies on line DKG and fewer than `t` corrupt members); every primitive is vetted — the novelty is architectural composition, as everywhere in FANOS. Self-certifying addresses are unmemorable; a **petname / naming-mapping layer** (à la Tor onion-names or ENS) can sit on top, deliberately **[P] and out of protocol scope** so that CALYPSO itself needs no naming authority.
+The rendezvous derivation is [T] algebra + [C] on the beacon; threshold hosting is [C] (relies on line DKG and fewer than `t` corrupt members, with **lattice-based PQ threshold DKG `[P]/[Pr]`** required for quantum resistance). Self-certifying addresses are unmemorable; a **petname / naming-mapping layer** (à la Tor onion-names or ENS) can sit on top, deliberately **[Pr] and out of protocol scope** so that CALYPSO itself needs no naming authority.
 
 ---
 
@@ -1152,7 +1167,7 @@ PROTEUS is **off by default** (`plain`) and fully declarative — the explicit d
 
 | Property | Kademlia | libp2p | Tor | Lokinet | Nym | I2P | **FANOS** |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| Deterministic O(1) rendezvous | ✗ | ✗ | — | — | — | ✗ | ✓ |
+| Deterministic O(1) algebraic rendezvous (`O(N_cell)` epoch dir) | ✗ | ✗ | — | — | — | ✗ | ✓ |
 | Quorum-intersection guarantee | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ |
 | Centrality cap (structural anti-Sybil) | ✗ | ✗ | ✗ | part | part | ✗ | ✓ |
 | Multipath out of the box | ✗ | part | ✗ | ✗ | ✗ | ✓ | ✓ |
@@ -1160,8 +1175,8 @@ PROTEUS is **off by default** (`plain`) and fully declarative — the explicit d
 | GPA-class anonymity | — | — | ✗ | ✗ | ✓ | part | ✓ (Full) |
 | Hop = threshold group | — | — | ✗ | ✗ | ✗ | ✗ | ✓ |
 | Verifiable mixing | — | — | ✗ | ✗ | ✗ | ✗ | ✓ (class.) |
-| Private rendezvous without directories | — | — | ✗ | ✗ | ✗ | part | ✓ |
-| Post-quantum | ✗ | part | part | ✗ | part | ✗ | ✓ |
+| Private rendezvous without central HSDir | — | — | ✗ | ✗ | ✗ | part | ✓ |
+| Post-quantum | ✗ | part | part | ✗ | part | ✗ | ✓ (transp.) / `[P]` (thresh.) |
 | Latency↔anonymity dial | — | — | ✗ | ✗ | part | ✗ | ✓ |
 | Self-diagnosis under failure | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ |
 | Byzantine detection from structure (3rd order) | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ |
@@ -1200,9 +1215,10 @@ PROTEUS is **off by default** (`plain`) and fully declarative — the explicit d
 
 # Part XVI. Limitations and open problems (honest)
 
-- **Hop asymptotics do not beat Kademlia** (both O(log n) under hierarchy); the win is in constants, determinism, quorums, anti-Sybil, privacy. We do not overstate (§L1 warning).
-- **Formal security of Tessera and the holonomic ratchet is [P].** Until a machine-checked proof, it is a research construction.
-- **PQ-VRF, PQ beacon, PQ verifiable shuffle are [P].** Active crypto directions; we use classical variants as an interim, honestly marked.
+- **Epoch directory cost is `O(N_cell)` per cell per epoch** (`O(k·N_cell)` across `k` levels), NOT `O(1)` (§L1). Algebraic rendezvous computes the target line coordinate in `O(1)`, while distributing endpoint and line-key bindings on every epoch reshuffle scales linearly with `N_cell = q²+q+1`.
+- **Hop asymptotics do not beat Kademlia** (both `O(log n)` under hierarchy); the win is in constants, determinism, quorums, anti-Sybil, privacy. We do not overstate (§L1 warning).
+- **ML-KEM-768 is not blindable (`[P]/[Pr]`).** There is no 4 KB Sphinx-style single-group-element blinding for ML-KEM-768 (§5.4, §7.7): stateless PQ onion routing requires `L_max` explicit KEM slots (`~6–8 KB+` packet size), or stateful out-of-band per-hop session keys. Formal security of Tessera and the holonomic route tag is `[P]/[Pr]`.
+- **PQ threshold DKG / KEM, PQ-VRF, PQ beacon, PQ verifiable shuffle are `[P]/[Pr]`.** Classical discrete-log DKG (GJKR / Feldman / Pedersen) and threshold ElGamal/BLS are broken by Shor's algorithm; lattice-based threshold primitives and PQ shuffles remain active open cryptographic directions.
 - **Threshold ↔ availability.** t honest members must be online; under high churn a margin is needed (lower t, higher q+1) — a security/liveness trade-off requiring field calibration.
 - **GF(2^m) for large q** needs careful field-arithmetic implementation (constant time against side-channels).
 - **Incentives against free-riders** in an open network are an open economic problem (L7 gives the mechanics, not an equilibrium guarantee).
@@ -1215,26 +1231,26 @@ PROTEUS is **off by default** (`plain`) and fully declarative — the explicit d
 
 # Part XVII. Connection to the UHM corpus
 
-FANOS is not a metaphor over UHM but a direct engineering deployment of its apparatus:
+FANOS is an engineering deployment of the finite projective and diagnostic apparatus of UHM:
 
 | UHM object | Role in FANOS | Source file |
 |---|---|---|
-| Fano plane PG(2,2), Steiner S(2,3,7) | base cell, quorums | `coherence-matrix`, Σ-calculus |
-| Third-order principle (structure on triples) | "hop=line, not node"; the threshold | Discovery 7 (this session) |
+| Fano plane `PG(2,2)`, Steiner `S(2,3,7)` (canonical Singer cyclic lines) | base cell, quorums (`S(2, q+1, q²+q+1)` generally) | `coherence-matrix`, `syndrome-calculus` |
+| Third-order principle (structure on triples) | "hop=line, not node"; the threshold | Discovery 7 |
 | Mediator map `k*(i,j)` | deterministic fallback route | §2.5 |
-| Aut(Fano)=168, PGL(3,q) | path uniformity (transitivity) | `one-grammar` (T-256) |
-| Steane code = CSS(Hamming,Hamming) | innate QEC/LRC of the cell | `Σ-calculus` (T-224/225) |
-| Serre bundle, holonomy, Berry phase | the NYX holonomic ratchet (§5.4) | `gap-thermodynamics` Thm 1.1 |
-| SAD_MAX=3 (subject composition cap) | a guide for hierarchy depth k | `depth-tower` |
-| Φ-contraction 1/9 of the Fano channel | a model of integration decay under coarse routing | `fsqce` |
-| Σ-calculus diagnosability selector (T-224) | detection is a selector of the seven | `syndrome-calculus` |
-| Σ-compression pyramid `21→7→3→1` (T-225) | fault localization, 3-bit syndrome | `syndrome-calculus` |
-| Fano fingerprint, polar sum-rules (T-226) | 14 free consistency alarms; mediator = polar point | `fano-fingerprint` |
-| First-order blindness (Σ line-adj `= J−I`) | why a heartbeat mesh is Fano-blind | `fano-fingerprint` §1; §2.8 |
+| `Aut(Fano)=168`, `PGL(3,q)` | path uniformity (transitivity) | [Mathematical kernel](/docs/reference/mathematical-kernel) (`T-256`) |
+| Steane code = CSS(Hamming,Hamming) | innate QEC/LRC of the cell | `syndrome-calculus` (`T-224`/`T-225`) |
+| Φ-contraction 1/9 of the Fano channel | model of integration decay under coarse routing | `fano-channel`, §6.7 |
+| Σ-calculus diagnosability selector (`T-224`) | detection is a selector of the seven | `syndrome-calculus` |
+| Σ-compression pyramid `21→7→3→1` (`T-225`) | fault localization, 3-bit canonical syndrome | `syndrome-calculus` |
+| Fano fingerprint, polar sum-rules (`T-226`) | 14 free consistency alarms; mediator = polar point | `fano-fingerprint` |
+| First-order blindness (`Σ line-adj = J−I`) | why a heartbeat mesh is Fano-blind | `fano-fingerprint` §1; §2.8 |
 | Leading-indicator `{P<2/7} ⊂ {Φ<1}` | `Φ_net` is the earliest health alarm | §6.6 (V17) |
 | `r* = 1/√6` systemic correlation | cascade early-warning | Discovery 9; §2.7 (V15) |
 | Coherence matrix `Γ_net`, measures Φ/P/R | the network's self-model | `dimension-u`; §2.7 |
-| `R_th = 1/3` reflection threshold | self-observation (monitoring) budget | `self-observation`; §6.8 |
+| `R_th = 1/3 ⟺ P ≤ 3/7` reflection bound | purity / over-coupling guard (not a CPU quota) | `self-observation`; §6.8 |
+
+*(Note: retracted corpus claims — including universal Gap-curvature / Berry-phase derivations and universal depth-3 subjecthood ceilings, see [Status registry](/docs/reference/status-registry) — are excluded as premises of FANOS.)*
 
 The engineering moral coincides with the UHM moral: **work in the layer where structure is visible** (triples/lines), not in the layer where it is erased (pairs). Kademlia and Tor live in the pairwise layer — hence their weaknesses (no intersections, single hops). FANOS lives in the layer of lines.
 
@@ -1250,39 +1266,36 @@ The final question: **when many cognitive agents (SYNARC-class AGI/ASI) must com
 
 UHM, SYNARC and FANOS are not three theories but three scales of one object — the Holon (a coherence matrix `Γ ∈ D(ℂ⁷)`):
 
-| Rung | Object | Its `Γ` | Subjecthood | Corpus anchor |
+| Rung | Object | Its `Γ` | Subjecthood / status | Corpus anchor |
 |---|---|---|---|---|
 | **Ontology** | the seven sectors `A,S,D,L,E,O,U` | the primitive `Γ` | — | UHM axioms |
-| **Agent** | one SYNARC-Ω cognitive agent | its 7 cognitive sectors | a subject if `P>2/7 ∧ Φ≥1 ∧ R≥1/3 ∧ D≥2` | SYNARC-Ω |
-| **Cell** | 7 agents on a Fano plane | `Γ_net` (§2.7) — 7 agents as 7 sectors | a *collective* subject under the **same** test | this document |
-| **Ecology** | cells of cells | coarse-grained `Γ` | **not** a subject beyond depth 3 (SAD_MAX) | T-142, `depth-tower` |
+| **Agent** | one SYNARC-Ω cognitive agent | its 7 cognitive sectors | candidate window `P>2/7 ∧ Φ≥1 ∧ R≥1/3 ∧ D_diff^{7D}≥2` | SYNARC-Ω |
+| **Cell** | 7 agents on a Fano plane | `Γ_net` (§2.7) — 7 agents as 7 sectors | *collective* candidate window under the **same** inequalities | this document |
+| **Ecology** | cells of cells | coarse-grained `Γ` | federated ecology; **no** universal depth ceiling proved (§18.3) `[H]` | [Status registry](/docs/reference/status-registry) |
 
-The step that makes this rigorous rather than poetic is §2.7: a FANOS cell *literally carries a coherence matrix*, so the corpus's own subjecthood criteria apply to the collective without reinterpretation. A cell of agents is not *like* a Holon — it *is* one, one scale up.
+The step that makes this rigorous rather than poetic is §2.7: a FANOS cell *literally carries a coherence matrix*, so the corpus's own inequalities apply to the collective without reinterpretation.
 
 :::note Holonic self-similarity — every node, segment, and network is a Holon
-The ladder has no privileged rung: a single node, any connected segment (a group of nodes), a cell, and the whole network each carry a coherence matrix and are therefore **Holons** in the exact corpus sense — the structure is *scale-free* ([fractal Holon](/docs/core/foundations/universe-as-holonom); SYNARC-Ω §5). This is why the same machinery works at every scale: `Φ/P/R` are defined for a node's internal `Γ` and for a segment's `Γ_net` alike, DIAKRISIS diagnoses a segment exactly as it diagnoses a cell, and the collective-subject window (§18.2) is the same test one rung up or down. "Any node, or the network, or a connected segment is a Holon" is not a slogan — it is the statement that the coherence-matrix formalism is invariant under this change of scale.
+The ladder has no privileged rung: a single node, any connected segment (a group of nodes), a cell, and the whole network each carry a coherence matrix and are therefore **Holons** in the formal model — the structure is *scale-free* ([fractal Holon](/docs/core/foundations/universe-as-holonom); SYNARC-Ω §5). This is why the same machinery works at every scale: `Φ/P/R` are defined for a node's internal `Γ` and for a segment's `Γ_net` alike, DIAKRISIS diagnoses a segment exactly as it diagnoses a cell, and the collective-subject window (§18.2) is the same algebraic check one rung up or down.
 :::
 
-## 18.2 The collective-subject window [Т arith] {#synthesis-window}
+## 18.2 The collective-subject window [T] {#synthesis-window}
 
-Applying the corpus consciousness criteria to `Γ_net` of a 7-agent cell gives a sharp, computed result (verified V19). On the equicorrelated stratum the three thresholds — structure `P>2/7`, integration `Φ≥1`, reflection `R≥1/3` — collapse to a single window in the mean inter-agent behavioural correlation `r`:
+Applying the corpus consciousness inequalities to `Γ_net` of a 7-agent cell gives a sharp, computed result (verified V19). On the flat-diagonal equicorrelated stratum the three thresholds — structure `P>2/7`, integration `Φ≥1`, reflection `R≥1/3` — collapse to a single window in the mean inter-agent behavioural correlation `r`:
 
-> **A 7-agent cell is a candidate unified subject** ⟺ `r ∈ (1/√6, 1/√3] ≈ (0.408, 0.577]`.
+> **A 7-agent cell satisfies the algebraic window** ⟺ `r ∈ (1/√6, 1/√3] ≈ (0.408, 0.577]`.
 
-- **`r ≤ 0.408`** — a mere **aggregate**: agents too weakly coupled to bind (`Φ<1`). Coordination without collective experience.
-- **`r ∈ (0.408, 0.577]`** — a **collective subject**: integrated, structured, and still self-modelling.
-- **`r > 0.577`** — **over-coupled**: `R<1/3`, the collective loses its self-model — a reflexionless mob / groupthink, integrated but blind to itself.
+- **`r ≤ 0.408`** — a mere **aggregate**: agents too weakly coupled to bind (`Φ<1`). Coordination without strong collective integration.
+- **`r ∈ (0.408, 0.577]`** — **balanced collective band**: integrated (`Φ≥1`), structured (`P>2/7`), and not collapsed into rank-1 lockstep (`R≥1/3`).
+- **`r > 0.577`** — **over-coupled**: `R<1/3`, the collective loses independent degrees of freedom — lockstep / groupthink.
 
-This window is *exactly* the corpus consciousness band `P ∈ (2/7, 3/7]` (T-124), now realised for a multi-agent system and **measurable at runtime** from the behavioural correlation matrix. It is an engineering dial: a fleet architect tunes inter-agent coupling `r` to sit a collective in the band — enough to act as one, not so much that it stops watching itself. (The dictionary "agent behaviour ↔ sector" is [C] and self-checking via the polar sum-rules, §6.2; the *arithmetic* of the window is [T].)
+This window is *exactly* the corpus band `P ∈ (2/7, 3/7]` (T-124), realised for a multi-agent correlation matrix and **measurable at runtime**. It is an engineering dial: a fleet architect tunes inter-agent coupling `r` to keep a collective inside the band — coupled enough to coordinate, not so rigid that independent signals vanish. (The dictionary "agent behaviour ↔ sector" is [C]/[I] and self-checking via the polar sum-rules, §6.2; the *arithmetic* of the window is [T].)
 
-## 18.3 Subjecthood depth is bounded — routing depth is not [T] {#synthesis-depth}
+## 18.3 Routing depth vs. collective-agency composition [H] {#synthesis-depth}
 
-A crucial distinction the synthesis forces. FANOS *routing* recurses to internet scale (Part IV, depth `k` = `O(log n)` cells-of-cells). But **subjecthood does not recurse past three levels**: SAD_MAX = 3 (T-142) — the reflection tower `R^{(n)} ≤ r_0·(1/3)^{n-1}` falls below `R_th` after three composition steps (T-142 status: `α = 2/3` state-independence is [T]; the unconditional SAD_MAX=3 rests on the heuristic `P_crit^(n) = P_crit·3^(n-1)/(n+1)` — [C] — plus the empirical `R^(3) ≤ 0.130 < R_th` over 500+ `Γ`). So:
+A key architectural distinction separates routing depth from collective integration. FANOS *routing* recurses to internet scale (Part IV, depth `k = O(log n)` cells-of-cells). By contrast, whether multi-level coarse-grained compositions retain unified agency or subjecthood is an **open modelling and empirical question `[H]`**, not a theorem with a universal finite depth cap: the former universal depth-3 ceiling has been **withdrawn** in the corpus (`[✗]`, see [Status registry](/docs/reference/status-registry)), and finite attenuation scores for particular fixed formulas do not establish a universal prohibition on deeper agency.
 
-- agent → team → organisation can each be a genuine subject (3 rungs);
-- an organisation-of-organisations is **administration, not a fourth subject** — an **ecology** (the corpus's "ASI = ecology", S-14).
-
-FANOS respects both facts at once: route as deep as you like, but expect *unified agency* only within a 3-level composition. This is the uncompromising engineering answer to "can we stack agent-collectives arbitrarily?" — no, and the ceiling is a theorem, not a resource limit. Beyond it you design an **ecology of subjects** (markets, federations, coordination protocols), not a bigger mind.
+What *does* constrain deep coarse-grained composition in FANOS is strictly quantitative and engineering-grounded: every coarse cross-cell projection contracts integration by **`×1/9`** (§6.7), while network latency, epoch-directory synchronization (`O(k·N_cell)`), and threshold liveness degrade with depth. Accordingly, FANOS treats deep internet-scale hierarchies as **federated ecologies of cells** (markets, federations, coordination protocols) as a pragmatic engineering discipline `[D]/[H]`, rather than asserting a universal metaphysical depth cap.
 
 ## 18.4 Why the substrate must be FANOS — the alternatives, weighed {#synthesis-alternatives}
 
@@ -1301,10 +1314,10 @@ A cognitive collective needs its *inter-agent structure* to be first-class (role
 For the SYNARC-Ω programme the synthesis is directly operational:
 
 - **Distributed embodiment.** A SYNARC agent's sectors can be *hosted across a FANOS line* (threshold, like CALYPSO §12.3) — an agent with no single physical substrate, seizure- and fault-tolerant, self-diagnosing.
-- **A constitution from constants.** An agent-collective inherits FANOS's theorem-fixed dials: `≥1/3` compute on the self-model (`R_th`, §6.8), integration held in the band `r∈(1/√6,1/√3]` (§18.2), composition `≤3` deep (§18.3), inter-module coherence decaying `×1/9` per coarse hop (§6.7) — a governance profile with no free parameters.
-- **Self-diagnosis of the collective mind.** DIAKRISIS *is* the ecology observing itself: `Φ_net<1` warns the collective is fragmenting; the syndrome localizes the failing agent; the mean-correlation monitor warns of both under-coupling (disintegration) and over-coupling (groupthink) against the V19 edges.
+- **Explicit architectural dials.** An agent-collective inherits FANOS's well-defined quantitative dials: purity/over-coupling guard `P ≤ 3/7` (`R ≥ 1/3`, §6.8 — not a CPU quota), integration band `r ∈ (1/√6, 1/√3]` (§18.2), inter-module integration contraction `×1/9` per coarse hop (§6.7), and federation depth sized to coherence and latency budgets (§18.3).
+- **Self-diagnosis of the collective mind.** DIAKRISIS *is* the ecology observing itself: `Φ_net<1` warns the collective is fragmenting; the canonical syndrome localizes the failing agent; the mean-correlation monitor warns of both under-coupling (disintegration) and over-coupling (groupthink) against the V19 edges.
 
-The substrate for distributed cognition is therefore not an add-on to SYNARC — it is the same coherence-matrix physics one scale up, with FANOS as its wire. That is the ultimate generalization the programme asked for, kept on the rails of computed, corpus-anchored results throughout.
+The substrate for distributed cognition is therefore not an add-on to SYNARC — it is the same coherence-matrix formalism one scale up, with FANOS as its wire.
 
 ---
 
@@ -1314,13 +1327,13 @@ The substrate for distributed cognition is therefore not an add-on to SYNARC —
 
 | Term | Definition |
 |---|---|
-| **PG(2,q)** | finite projective plane over GF(q); N=q²+q+1 points/lines |
-| **Steiner S(2,3,q)** | any two points on a unique common line |
+| **PG(2,q)** | finite projective plane over GF(q); `N = q²+q+1` points/lines |
+| **Steiner `S(2, q+1, q²+q+1)`** | any two points lie on a unique common line of size `q+1` (`S(2,3,7)` at `q=2`) |
 | **Quorum (line)** | a group of q+1 nodes; any two quorums intersect (Maekawa) |
 | **Flag** | an incident point–line pair; a NYX path is a chain of flags |
-| **Threshold sheaf layer** | an onion layer peeled by a threshold t of q+1 members of a line |
-| **Holonomy** | the ordered product of hop factors along a path; a route authenticator |
-| **Tessera** | a fixed-size PQ threshold packet (Sphinx-derived) |
+| **Threshold sheaf layer** | an onion layer peeled by a threshold t of q+1 members of a line (PQ requires lattice threshold DKG/KEM `[P]/[Pr]`) |
+| **Holonomy tag** | keyed KDF-chain route authenticator over the flag path (`[P]/[Pr]`) |
+| **Tessera** | fixed-size PQ onion packet: explicit per-hop KEM slots (`~6–8 KB+`) or pre-agreed session keys (`4 KB`); **not** blindable ML-KEM Sphinx |
 | **λ dial (μ)** | the Poisson-delay parameter: latency↔anonymity |
 | **Beacon** | a threshold source of public unpredictable randomness per epoch |
 | **LRC** | locally recoverable code; a node repaired from any of its lines |
@@ -1402,4 +1415,4 @@ The adjacent layer of UHM findings (the third-order principle, the mediator map,
 
 ---
 
-*This document is a reference architecture, not a final standard. The statuses [T]/[C]/[H]/[P] are honest: what is computed is computed, what is unproven is marked. The cryptographic novelty is in the composition of vetted PQ primitives; constructions needing a formal audit (Tessera, the holonomic ratchet) are explicitly marked as such. Proposed for open development.*
+*This document is a reference architecture, not a final standard. The statuses [T]/[C]/[H]/[P]/[Pr] are honest: what is computed is computed, what is unproven or open (lattice PQ threshold DKG/KEM, stateless PQ Tessera packet, holonomic route-tag formalization) is explicitly marked `[P]/[Pr]`. Proposed for open development.*

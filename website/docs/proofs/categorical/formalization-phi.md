@@ -169,7 +169,7 @@ For the family $\sigma(a)=a|E\rangle\langle E|+(1-a)\sum_{i\ne E}|i\rangle\langl
 
 
 :::tip Theorem T-191 [T]
-Let an embodied holon carry the backbone term $\mu(\sigma - \Gamma)$ ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)); let $L_{\mathcal{R}}$ be a trace-norm Lipschitz constant on $\mathcal{D}(\mathbb{C}^7)$ of $\Gamma \mapsto \kappa(\Gamma)g_V(P)(a - \Gamma)$, uniform in the target state $a$, and $\kappa_{\max} = \sup \kappa\,g_V$. If
+Let an embodied holon carry the backbone term $\mu(\sigma - \Gamma)$ ([T-148](/docs/proofs/consciousness/substrate-closure#t-148)), and assume that the regeneration rate $\kappa(\Gamma)$ is **globally Lipschitz and bounded** on $\mathcal{D}(\mathbb{C}^7)$ — in particular, when $\kappa$ involves the kinetic quotient $|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$, this **requires explicit $\varepsilon$-regularization** $\gamma_{OO} \mapsto \gamma_{OO} + \varepsilon$ ($\varepsilon > 0$) or a bounded smooth rate law (since unregularized $\gamma_{OO}^{-1}$ is discontinuous and non-Lipschitz at the $\gamma_{OO}=0$ boundary; see [axiom of septicity](/docs/core/foundations/axiom-septicity#обработка-сингулярности-gamma-oo)). Let $L_{\mathcal{R}} < \infty$ be a trace-norm Lipschitz constant on $\mathcal{D}(\mathbb{C}^7)$ of $\Gamma \mapsto \kappa(\Gamma)g_V(P)(a - \Gamma)$, uniform in the target state $a$, and $\kappa_{\max} = \sup \kappa\,g_V$. If
 
 $$
 \mu > L_{\mathcal{R}} + \kappa_{\max},

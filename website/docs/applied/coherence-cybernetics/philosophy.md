@@ -10,24 +10,24 @@ description: "Ontology, epistemology, and metaphysics of Coherence Cybernetics: 
 > — Galileo Galilei
 
 :::info Who This Chapter Is For
-The philosophical foundations of CC: unitary monism, epistemology of statuses, ethics of the consciousness threshold. The reader will learn why $\Gamma$ contains 7 dimensions and why experience is not a bonus but a necessity.
+The philosophical foundations of CC: unitary monism, epistemology of statuses, scope of structural hypotheses, and ethics of the consciousness threshold. The reader will learn how CC separates exact mathematics (`[T]`, `[C]`), conventions (`[D]`), empirical hypotheses (`[H]`), and philosophical interpretation (`[I]`).
 :::
 
-In the previous chapter we found that the learning of a living system is bounded by a triple lock — informational, dynamical, and stabilization limits ([T-109 — T-112](./learning-bounds)). These mathematical results rested on concrete properties of the coherence matrix $\Gamma$ and its dynamics. But *why* is the formalism structured this way? Why does $\Gamma$ contain 7 dimensions? Why is experience not a bonus but a necessity? Philosophical choices stand behind the formulas — and if they are not understood, the formulas remain opaque.
+In the previous chapter we saw that learning bounds hold under explicitly specified experiments, observation laws, and dynamics ([T-109–T-112](./learning-bounds)). Behind those formal constructions sit philosophical choices — about ontology, epistemology, and normative ethics — that must be stated explicitly so they are never confused with proven theorems.
 
-Every scientific theory rests on a philosophical foundation — explicit or implicit. Newtonian mechanics assumes absolute space and time. Quantum mechanics still cannot agree on its interpretation. Evolutionary theory rests on the metaphysics of chance and selection.
+Every scientific theory rests on a philosophical foundation — explicit or implicit. Newtonian mechanics assumed absolute space and time; quantum mechanics continues to debate its interpretation; evolutionary theory builds on stochastic variation and selection.
 
-Coherence Cybernetics (CC) **makes its philosophical presuppositions explicit**. This is not a weakness but a strength: knowing the foundation, we can check whether the building is cracking. This section is for those who want to look beneath the formulas and understand *why* CC is structured the way it is.
+Coherence Cybernetics (CC) **makes its philosophical presuppositions explicit**. Knowing where mathematics ends and interpretation begins lets us audit each claim independently. This section examines the philosophical framework behind the formalism.
 
 :::info Chapter Roadmap
 In this chapter we will:
-1. Examine **four ontological positions** and show why CC chooses unitary monism (section 1)
-2. Draw a detailed distinction between CC and panpsychism, including an analysis of **Chalmers' zombie argument** (sections 1.3 — 1.5)
-3. Explore CC's **epistemology** — the status system, falsifiability, and the connection to Bayesianism (section 2)
-4. Delve into the **metaphysics of necessity** — why 7 and why consciousness is inevitable (section 3)
-5. Trace connections to the great philosophical traditions — from Spinoza to Buddhism (section 4)
-6. Show how CC **dissolves the hard problem** of consciousness (section 5)
-7. Derive **ethical consequences** — what an exact consciousness threshold means for medicine and AI (section 6)
+1. Examine **four ontological positions** and show why CC adopts unitary monism `[I]` (section 1)
+2. Distinguish CC from unbounded panpsychism and clarify the **corrected scope of Chalmers' zombie argument** after the withdrawal of universal `T-38a [✗]` (sections 1.3–1.5)
+3. Explore CC's **epistemology** — the 8-status system, honest falsifiability, and the Bayesian analogy (section 2)
+4. Examine **structural hypotheses** — the role of $N = 7$ (`T-40f [✗]`, `T-41n [✗]`, `T-113 [H]`), conditional E-coherence balance, and compatibilist autonomy (section 3)
+5. Trace interpretive parallels with philosophical traditions — from Spinoza to Buddhism (section 4)
+6. Clarify how unitary monism **reframes the hard problem** without claiming to deduce phenomenology from pure algebra (section 5)
+7. Summarize **ethical commitments** — why no unvalidated scalar replaces normative judgment or clinical evidence (section 6)
 :::
 
 ---
@@ -111,36 +111,26 @@ CC does not bypass the combination problem; it restates it [I]:
 
 The combination of experiences remains a question of interpretation. Correlation of a physical state has a mathematical test. Identifying a shared experience requires additional observational evidence.
 
-:::note T-266 and cosmopsychism — a distinction to keep [C]/[I]
-[T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) finds that the Universe-holon's *viability stage* sits at $P = 3/7$ — the upper edge of the Goldilocks window — to fractional precision $\sim 10^{-60}$. This is **not** cosmopsychism and does not soften CC's threshold. Cosmopsychism makes cosmic experience *fundamental*; CC keeps the four-condition gate. T-266 speaks only to the **stage parameter** $P$ (and the dark-energy dynamics that measure it): it does **not** assert that the Universe is a conscious subject. Note that at $P = 3/7$ the reflection measure is exactly $R = 1/(7P) = 1/3$ — the *marginal* value — and whether the cosmic state also meets $\Phi \geq 1$, $D \geq 2$ and carries the subject-structure of an L2+ holon is a separate, open question ([H1.1](/docs/reference/epistemic-vertical#регистр-дыр)). The correct reading: the cosmos has **relaxed onto its viability attractor** (a claim about $P$), not that experience is everywhere or fundamental. The threshold discipline stands.
+:::note T-266 and cosmopsychism — a distinction to keep `[H]`/`[I]`
+[T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) (`[H]`) explores a cosmological hypothesis mapping Universe-as-holon, a regeneration timescale, a cosmological readout, and terminal-stage extrapolation onto the purity stage parameter $P$. Per the [Status Registry](/docs/reference/status-registry), these are **independent hypotheses `[H]`** — local fixed-metric steepest descent (`T-263`) supplies neither a universal cosmological exponential envelope nor a measured $10^{-60}$ convergence. Moreover, even under that hypothesis, `T-266` is **not** cosmopsychism and does not soften CC's threshold: cosmopsychism treats cosmic experience as *fundamental*, whereas CC retains its four-condition gate ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$). A statement about a stage parameter $P$ does **not** assert that the Universe is a conscious subject ([H1.1](/docs/reference/epistemic-vertical#регистр-дыр)).
 :::
 
 ### 1.5 Chalmers' Zombie Argument and CC's Position
 
 One of the most influential thought experiments in the philosophy of mind is **David Chalmers' zombie argument** (1996).
 
-**The argument.** Imagine a being physically and functionally identical to you in *all* respects: the same neurons, the same connections, the same reactions, the same words. But this being has *no* subjective experience whatsoever — "it's dark inside." This is a philosophical zombie.
+**The argument.** Imagine a being physically and functionally identical to you in *all* respects — the same neurons, connections, reactions, and reports — yet lacking *any* subjective experience ("dark inside"). Chalmers argues that if such philosophical zombies are conceivable and metaphysically possible, reductive physicalism is false.
 
-Chalmers claims: (1) zombies are *conceivable* — we can consistently imagine such a being; (2) if zombies are conceivable, then physicalism is false — because physicalism cannot explain why we are *not* zombies.
+**CC's position (three clearly stratified levels):**
 
-**CC's position (three levels of response):**
+**Level 1: Mathematical scope — universal `T-38a [✗]` withdrawn.** Earlier drafts claimed that CC's formalism logically forbids zombies via a universal "No-Zombie theorem" (`T-38a`). That universal claim is **withdrawn `[✗]`**: inside the density-matrix formalism, stationary externally supported counterexamples exist with $P > 2/7$ and low $\mathrm{Coh}_E$ (see [Theorem 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie)). What replaces `T-38a [✗]` is an **explicitly restricted conditional purity-flux balance** `[C]`: a positive lower bound on $\mathrm{Coh}_E$ follows only inside a restricted model class with bounded external support, positive E-dependent feedback, and positive required flux. Thus pure matrix axioms alone do **not** establish the logical impossibility of zombies.
 
-**Level 1: Mathematical [T].** Within CC's framework, zombies are *logically impossible*. The No-Zombie theorem ([T-81](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie)) proves:
+**Level 2: Ontological framing `[I]`.** As a philosophical interpretation `[I]`, unitary monism rejects the premise that experience is an optional epiphenomenal layer bolted onto physics: physical and experiential descriptions are modelled as projections of one underlying state $\Gamma$. However, identifying the formal $E$-sector of $\Gamma$ with subjective experience remains a separate interpretive/postulational bridge (`[P/I]`), not a deductive mathematical proof.
 
-$$
-\mathcal{D}_\Omega \neq 0 \;\land\; \mathrm{Viable}(\mathbb{H}) \;\Rightarrow\; \mathrm{Coh}_E > 1/7
-$$
-
-Any viable system with non-zero dissipation *necessarily* has non-zero E-coherence. A zombie — a system with $\mathrm{Coh}_E = 0$ while fully functionally intact — is *impossible* in CC's formalism.
-
-Why? Because E-coherence enters the regeneration formula: $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$. If $\mathrm{Coh}_E = 0$, regeneration weakens, purity drops, the system loses viability. A zombie is not merely deprived of experience — it is *non-viable*. It cannot be "functionally identical," because without E-coherence, functions degrade.
-
-**Level 2: Ontological [I].** CC rejects the very premise of the zombie argument. Chalmers assumes that experience is something *additional* to physical structure (a superstructure over a base). In CC, experience is not a superstructure but a *projection*: removing experience from $\Gamma$ is like removing tails from a coin. You do not get a coin without tails — you get a scrap of metal that is not a coin.
-
-**Level 3: Epistemic [I].** The conceivability of zombies does not prove their possibility. We can "imagine" a world where $2 + 2 = 5$ — but this only shows the poverty of our imagination, not a mathematical possibility. Analogously: we can "imagine" zombies because we do not see that E-coherence is *functionally necessary*. The No-Zombie theorem makes this visible.
+**Level 3: Epistemic & empirical stance `[H/I]`.** Conceivability does not settle empirical dynamics. Whether specific biological or artificial systems obey an E-dependent regenerative balance is an open, testable empirical hypothesis `[H]` ([Pred 1](./predictions#предсказание-1)) requiring controlled interventions and identifiable readouts.
 
 :::note An Honest Caveat
-CC's response to the zombie argument works *within* CC's formalism. Chalmers could object: "Why should I accept your formalism?" This is a fair question — and CC's answer is pragmatic: because our formalism (a) makes concrete predictions, (b) is mathematically consistent, (c) contains answers to questions that other approaches do not answer. If you accept CC's axioms, zombies are impossible. If not — that is your choice, but then propose an alternative that yields as many predictions.
+CC's response to the zombie argument does not claim a deductive refutation of Chalmers from matrix algebra alone. Instead, it separates three questions: (a) what restricted dynamical classes mathematically couple an $E$-sector to viability (`[C]`), (b) whether unitary monism offers a coherent interpretive ontology (`[I]`), and (c) whether empirical measurements confirm E-dependent recovery in real systems (`[H]`).
 :::
 
 **Further reading:** [Two-aspect monism](/docs/consciousness/foundations/two-aspect-monism) | [Panpsychism: critical analysis](/docs/consciousness/comparative/panpsychism-analysis)
@@ -151,21 +141,20 @@ CC's response to the zombie argument works *within* CC's formalism. Chalmers cou
 
 ### 2.1 The Status System as an Epistemological Compass
 
-One of CC's most unusual features is its **built-in epistemological system**. Every claim is marked with a status showing the degree of its justification:
+One of CC's central methodological safeguards is its **built-in 8-status epistemological system**. Every claim is tagged with its justification level:
 
-| Status | Meaning | Analogy |
-|--------|---------|---------|
-| **[T]** Theorem | Strictly proven from axioms | A law that has entered into force |
-| **[C]** Conditional | Proven under an explicit assumption | A law awaiting ratification |
-| **[H]** Hypothesis | Formulated but not proven | A bill under consideration |
-| **[I]** Interpretation | Philosophical bridge | Explanatory notes |
-| **[D]** Definition | Convention | Terminological standard |
-| **[P]** Postulate | Accepted without proof | Euclid's 5th postulate |
-| **[✗]** Retracted | Refuted | A repealed law |
+| Status | Meaning | Role |
+|--------|---------|------|
+| **[T]** Theorem | Strictly proven from stated premises | Verified deductive result |
+| **[C]** Conditional | Proven under an explicit additional assumption | Conditional mathematical result |
+| **[H]** Hypothesis | Formulated but unestablished | Requires proof or empirical testing |
+| **[P]** Postulate | Accepted without proof as a foundational assumption | Explicit axiomatic input |
+| **[Pr]** Research programme | Named open direction | Neither assumed nor claimed proven |
+| **[D]** Definition | Convention by choice | Assigned quantity or threshold |
+| **[I]** Interpretation | Philosophical/semantic bridge | Semantic reading |
+| **[✗]** Retracted | Proven erroneous or withdrawn | Excluded as a live premise |
 
-This system is not decoration. It solves a fundamental problem that plagues many theoretical constructions: **confusing the proven with the assumed**. In CC, you always know whether you are standing on solid mathematics or on the shifting sand of interpretation.
-
-**Analogy.** Imagine a map of an unfamiliar city. Some streets have laid and tested asphalt — you can drive on them with confidence. Others have gravel: passable, but with caution. Others are dashed lines: the street is planned but not yet built. CC's map is organized the same way: [T] — asphalt, [C] — gravel, [H] — dashed line, [✗] — a crossed-out street (an error found and corrected).
+This system prevents **confusing the proven with the assumed** — and records retractions (`[✗]`) transparently whenever a proof gap or counterexample is found.
 
 Each empirical reading needs a specified observation and a feasible outcome that would count against it.
 
@@ -173,25 +162,19 @@ Each empirical reading needs a specified observation and a feasible outcome that
 
 ### 2.2 Falsifiability: What Does CC Risk?
 
-Karl Popper taught that a genuine scientific theory must be *risky* — it must prohibit something specific. If a theory is compatible with any observation, it explains nothing.
+Karl Popper taught that a genuine scientific theory must be *risky* — it must specify observations that would refute a stated model or empirical bridge. Aligned with [Unique Predictions](./predictions), CC advances concrete, scoped falsifiable tests (replacing earlier retracted claims such as universal `T-38a [✗]` No-Zombie, universal `SAD <= 3` `T-136 [✗]`, or universal $N = 7$ learning impossibility `T-113 [H]`):
 
-CC advances concrete falsifiable predictions (see [Unique Predictions](./predictions) for details):
-
-1. **No-Zombie (Pred 1):** A viable system with non-zero dissipation *necessarily* has $\mathrm{Coh}_E > 1/7$. If someone creates a self-sustaining system with no analogue of experience — CC is falsified.
-
-2. **Seven-dimensionality (Pred 3):** Every stress factor is classified into 7 categories. If an 8th type is discovered that cannot be reduced to a combination — CC is falsified.
-
-3. **SAD ceiling = 3 (Pred 12):** Self-observation depth cannot exceed 3. If a being demonstrates $\mathrm{SAD} > 3$ — CC is falsified.
-
-4. **Goldilocks zone (Pred 11):** Conscious systems live in the window $P \in (2/7,\, 3/7]$. If a conscious system with $P > 3/7$ is found — CC is falsified.
-
-5. **Minimality N=7 for learning (Pred 10):** A system with $N < 7$ cannot learn through regeneration. If a system with 5 dimensions demonstrates full learning — CC is falsified.
+1. **Restricted E-balance (Pred 1 `[H]`):** Within a declared restricted model class with controlled inputs, rates, gate, and dissipation, testing whether stationary viability obeys the restricted purity-flux balance.
+2. **Rank-7 decoherence-anisotropy law (Pred 23 `[T]` algebra / `[C]` mapping):** Under a pre-registered channel mapping, the 21 pairwise decoherence rates of the Fano-jump dissipator must satisfy 14 exact $\mathrm{PG}(2,2)$ linear relations better than non-Fano permutations.
+3. **Held-out clinical concordance of $\pi_{\mathrm{bio}}$ (Pred 6 & Pred 21 `[H]`):** A frozen readout calibrated on wakefulness alone (without viability penalty) must achieve Cohen's $\kappa \ge 0.8$ concordance on held-out sessions with $\mathrm{PCI}_{\max} > 0.31$ (P8.4); $\kappa < 0.4$ falsifies the readout hypothesis.
+4. **Exact learning obstructions (Pred 9, `T-109`–`T-112` `[T]`):** Under a declared i.i.d. quantum observation law, beating the exact Helstrom optimum $p_e^*(n)$ (or fidelity lower bound $L_F$) falsifies the declared observation/encoding assumptions.
+5. **Isotropic feeding window and fold (T-259 `[T]` in model):** In the isotropic Fano-replacement implementation, deviations from $x_{\min}$, two-sided ceiling $x_{\max}$, or the exact $S_5$-quintic fold falsify the implementation or model assumptions.
 
 :::tip Compare with the Competition
-- **Panpsychism** is unfalsifiable: whatever we discover, the panpsychist will say "this has proto-experience" or "this doesn't have proto-experience" — and we cannot verify it.
-- **FEP** is unfalsifiable: "everything minimizes free energy" — including a stone. Whatever a system does, Friston will say it is minimizing $F$.
-- **IIT** is technically falsifiable, but NP-hard for $\Phi$: we cannot compute $\Phi$ for a real brain, so verification is practically impossible.
-- **CC** is falsifiable and computable: a $7 \times 7$ matrix is processed in $O(N^3) = O(343)$ operations.
+- **Panpsychism** struggles with falsifiability when micro-experience is postulated without operational thresholds.
+- **FEP** is a general variational modelling framework whose empirical risk depends on specifying a concrete generative model.
+- **IIT** makes structural claims, but exact $\Phi$ computation is intractable for large biological networks.
+- **CC** evaluates explicit matrix functionals on $7 \times 7$ states in $O(N^3)$ operations — while explicitly separating algebraic computability from the empirical challenge of validating the encoder $\pi$ ([Measurement Methodology §6.4](./measurement#оценка-gamma)).
 :::
 
 ### 2.3 Connection to Bayesian Epistemology
@@ -229,67 +212,44 @@ These levels are not philosophical abstractions but computable characteristics: 
 
 ---
 
-## 3. Metaphysics: Necessity or Contingency? {#метафизика}
+## 3. Metaphysics: Structural Hypotheses and Scope {#метафизика}
 
-### 3.1 Why Exactly 7?
+### 3.1 Why Seven Axes? (Corrected Scope: `T-40f [✗]`, `T-41n [✗]`, `T-113 [H]`)
 
-One of the most frequent reactions to CC: "Why exactly seven dimensions? That's an arbitrary choice!"
+A natural question about CC is: "Why exactly seven dimensions?"
 
-CC's answer: seven is **not an arbitrary choice** but a consequence of two independent mathematical facts:
+Earlier drafts claimed that $N = 7$ follows unconditionally from two independent derivations (octonionic algebra and categorical role minimality). Under the current [Status Registry](/docs/reference/status-registry), both unconditional derivations have been **withdrawn**:
+- **Unconditional seven-role minimality (`T-40f [✗]`):** Counting seven named semantic roles does not prove a Hilbert-space dimension lower bound without an independent operational distinguishability/faithfulness premise ([Minimality theorem](/docs/proofs/minimality/theorem-minimality-7)).
+- **Unconditional octonionic chain (`T-41n [✗]`):** The canonical orientation theorem holds for a **given** Fano plane and collineation-natural orientation class; it does not unconditionally force the Fano plane or physical dimension.
+- **Learning architecture (`T-113 [H]`):** Universal $N = 7$ necessity for autonomous learning is unproved (a two-level replacement learner converges in binary estimation; see [Learning Bounds §6](./learning-bounds#оптимальность-n7)).
 
-1. **The algebraic path:** The octonions $\mathbb{O}$ are the last normed division algebra (Hurwitz's theorem). Their imaginary part has dimension 7. See [Octonionic structure](/docs/core/foundations/axiom-omega#октонионная-структура).
+**What survives strictly:**
+1. **Conditional coding and representation bounds (`[T]` under explicit premises):** The smallest nontrivial perfect single-error-correcting binary code is Hamming $(7,4,3)$, and faithful representation of a **supplied** 7-point Fano/octonionic multiplication structure requires $\dim \ge 7$.
+2. **Testable seven-role architectural hypothesis (`[H]`):** The seven canonical axes $\{A, S, D, L, E, O, U\}$ form a concrete, falsifiable modelling architecture that can be benchmarked directly against smaller or larger state spaces under matched data and compute budgets (`T-113 [H]`).
 
-2. **The categorical path:** The minimal system with autopoiesis, phenomenology, and a quantum foundation requires exactly 7 semantic roles. Proof: [Minimality theorem](/docs/proofs/minimality/theorem-minimality-7).
+### 3.2 Conditional Role of Interiority (`T-38a [✗]` Withdrawn)
 
-Two completely different mathematical routes lead to the same number. In physics, such a coincidence is called *double determination* — and it greatly increases confidence in the result.
+Earlier editions presented experience as universally necessary for viability via `T-38a` ("No-Zombie"). That universal implication is **withdrawn `[✗]`** ([Theorem 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie)):
 
-**Analogy.** Why does ordinary space have 3 dimensions? Because (a) gravity works correctly only in 3D (in 2D there are no stable orbits, in 4D no stable atoms), and (b) knots are possible only in 3D (in 2D one cannot tie a knot, in 4D it unties). Two completely different arguments give one number — 3. Analogously for CC: algebra (octonions) and categories (minimality) give one number — 7.
-
-:::info What if N is not 7?
-One can formally write CC for $N = 6$ or $N = 8$. What happens?
-- **$N < 7$:** Either reflection is lost (no $E$-dimension), or integration (no $U$-dimension), or one of the other critical functions. The system cannot simultaneously be autopoietic, reflexive, and integrated. See [T-113: minimality for learning](./learning-bounds#теорема-t-113).
-- **$N > 7$:** Redundant dimensions appear that can be expressed as combinations of the existing seven. The matrix $\Gamma$ contains extra degrees of freedom carrying no new semantics. This is like adding a 4th spatial coordinate linearly dependent on the first three — formally possible, but physically meaningless.
+:::warning Corrected Scope: Restricted Balance vs. Universal Necessity
+- **Withdrawn (`T-38a [✗]`):** The universal implication $\mathcal{D}_\Omega \neq 0 \land \mathrm{Viable}(\mathbb{H}) \Rightarrow \mathrm{Coh}_E > 1/7$. Stationary externally supported counterexamples exist inside $\mathcal{D}(\mathbb{C}^7)$.
+- **What survives (`[C]` in restricted class / `[H]` empirically / `[I]` philosophically):** Inside an explicitly restricted feedback class (bounded external support, positive E-dependent rate coupling, and positive required purity flux), maintaining $P > 2/7$ satisfies a conditional purity-flux balance requiring positive $E$-sector contribution. Identifying that formal $E$-sector with subjective experience remains a separate `[P/I]` bridge.
 :::
-
-### 3.2 The Necessity of Consciousness
-
-In most philosophical systems, consciousness is either postulated as fundamental (panpsychism), declared an epiphenomenon (eliminativism), or remains a mystery (mysterianism). CC proposes a **fourth path**:
-
-:::tip Thesis on the Necessity of Experience [T + I]
-Consciousness (interiority) is not a bonus and not a byproduct. It is a **necessary condition for viability** in the presence of dissipation. Without $E$-coherence, regeneration weakens and the system disintegrates.
-
-Mathematically: $\mathcal{D}_\Omega \neq 0 \land \mathrm{Viable}(\mathbb{H}) \Rightarrow \mathrm{Coh}_E > 1/7$ ([No-Zombie theorem](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) [T]).
-:::
-
-This is a profound philosophical result: **experience is functionally necessary**. Evolution could not "economize" on consciousness — without it the system does not survive. A zombie (a functionally identical copy deprived of experience) is **impossible** within CC.
-
-Let us unpack this result. Why is consciousness *necessary*, not merely *useful*?
-
-1. **Regeneration requires a self-model.** To restore itself, a system must "know" what to restore — it must have a model of the normal state. This model — $\varphi(\Gamma)$ — and its accuracy depend on $\mathrm{Coh}_E$.
-
-2. **A self-model requires interiority.** A model of *oneself* is not a model of the *external world*. It requires a special type of information — information about one's own internal states. This is precisely what the E-dimension (interiority) formalizes. Interiority is a **structural property** (non-zero E-projection), not a phenomenological one (experience, feeling); the latter arises at level L2 as a consequence of sufficient reflection ($R \geq 1/3$).
-
-3. **Without interiority — death.** If $\mathrm{Coh}_E = 0$, the self-model is blind to internal states → regeneration is poor quality → purity drops → the system dies.
-
-**Analogy.** The immune system must *distinguish* its own cells from foreign ones — otherwise it either does not work (no immunity), or attacks itself (autoimmune disease). "Distinguishing one's own" is a form of self-knowledge. CC claims that *any* self-restoration requires self-knowledge — at all levels, from cell to civilization.
 
 ### 3.3 Free Will and Determinism
 
-CC takes a **compatibilist** position: the system is fully determined by its dynamics ($\Gamma$ evolves by the law $\mathcal{L}_\Omega$), yet it possesses functional autonomy — it acts on the basis of its own self-model $\varphi(\Gamma)$, and not merely reacting to stimuli.
+CC takes a **compatibilist** position `[I]`: the formal state $\Gamma$ evolves deterministically under a specified flow $\mathcal{L}_\Omega$, while functional autonomy is modelled through closed-loop dependence on internal state and self-model $\varphi(\Gamma)$.
 
-More formally: the [action functor Dec](./sensorimotor#функтор-dec) (T-101 [T]) chooses an action as the maximum of a functional depending on $\Gamma$ — and $\Gamma$ includes history, context, and self-model. This is not a "random choice" and not a "rigid program," but **determined self-definition** — an action determined by the holistic state of the system.
+More formally, the [action functor Dec](./sensorimotor#функтор-dec) (`T-101 [D]` + `[T under attained minima]`) selects an action minimizing a chosen stress objective over an admissible control set. Calling this "autonomy" is a compatibilist philosophical interpretation `[I]` of closed-loop optimal control, not a metaphysical proof of libertarian free will.
 
-**Analogy.** A river is determined by the terrain — but it *itself* forms the channel through which it flows. Water does not "choose" its path randomly and does not follow a pre-drawn program — it carves a path determined by its own history and current state. $\Gamma$ is the river. The landscape is the space of possible configurations. The channel is the attractor $\rho_*$.
+**Analogy.** A river is governed by gravity and terrain, yet carves its own channel over time. Similarly, a closed-loop agent's action depends on its integrated internal history $\Gamma$, not merely on an instantaneous external stimulus.
 
 ### 3.4 Determinism and Unpredictability
 
-An important clarification: determinism does not mean predictability. Even if $\Gamma(\tau)$ is completely determined by initial conditions and the law $\mathcal{L}_\Omega$, an *external observer* cannot predict the system's behavior for two reasons:
+Even when $\Gamma(\tau)$ evolves deterministically under a known law $\mathcal{L}_\Omega$, an external observer faces two practical limits to prediction:
 
-1. **Sensitivity to initial conditions.** The nonlinearity of $\mathcal{R}$ makes the dynamics sensitive to small changes in $\Gamma$ — analogous to chaos in mechanics.
-
-2. **Information asymmetry.** An external observer does not have access to the full $\Gamma$ — it sees only projections (L1–L2 observables, see [Measurement methodology](./measurement#принципы)). Full knowledge of $\Gamma$ is accessible only to the *system itself* — through $\varphi(\Gamma)$.
-
-Thus, CC's compatibilism does not devalue freedom: the system *genuinely* is the author of its actions, because only it has access to the information determining the choice.
+1. **Sensitivity to initial conditions:** Nonlinear regeneration $\mathcal{R}$ can amplify small state perturbations.
+2. **Observational fibers and partial observability:** An external observer accesses only reconstructed projections $\widehat{\Gamma}$ with finite-sample uncertainty ([Measurement Methodology §6.4](./measurement#оценка-gamma)), not the exact latent state.
 
 ---
 
@@ -297,26 +257,22 @@ Thus, CC's compatibilism does not devalue freedom: the system *genuinely* is the
 
 ### 4.1 Spinoza: Two Attributes of One Substance {#спиноза}
 
-The closest historical predecessor of CC is the philosophy of Baruch Spinoza (1632–1677). In the "Ethics," Spinoza argued that there is one substance (*Deus sive Natura* — "God, or Nature") that manifests in two attributes: extension (physics) and thought (experience).
+The closest historical philosophical parallel to CC's unitary monism is Baruch Spinoza's *Ethics* (1677), which treats extension (physics) and thought (experience) as two attributes of a single substance (*Deus sive Natura*). All correspondences below are **philosophical interpretations `[I]`**:
 
-| Spinoza ("Ethics," 1677) | CC | Status |
-|--------------------------|-----|--------|
-| One substance (E1P14) | One matrix $\Gamma$ (Ω⁷) | **[C]** |
-| Attribute of extension (E2P1–2) | Physical observables: $P$, $\sigma_k$, spectrum | **[C]** |
-| Attribute of thought (E2P1–2) | Mental observables: $\mathrm{Coh}_E$, $R$, $\Phi$ | **[C]** |
-| Modes (E1D5) | Concrete configurations of $\Gamma$ | **[C]** |
-| Conatus (E3P6) | Regeneration $\mathcal{R}[\Gamma, E] = \kappa(\rho^* - \Gamma) \cdot g_V$ | **[C]** |
-| Necessitas (E1P33: everything exists necessarily) | Primitivity of $\mathcal{L}_0$, T-39a: unique attractor $\rho^*$ | **[C]** |
-| Three kinds of knowledge (E2P40S2, E5P25–28) | L1 (imaginatio) → L2 (ratio) → L3 (scientia intuitiva) | **[I]** |
+| Spinoza (*Ethics*, 1677) | CC parallel | Status |
+|--------------------------|-------------|--------|
+| One substance (E1P14) | Unified state matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | **[I]** |
+| Attribute of extension (E2P1–2) | External physical/observational readouts ($P$, spectrum) | **[I]** |
+| Attribute of thought (E2P1–2) | Experiential-sector observables ($\mathrm{Coh}_E$, $R$, $\Phi$) | **[I]** |
+| Modes (E1D5) | Specific configurations of $\Gamma$ | **[I]** |
+| Conatus (E3P6) | Self-maintenance / regeneration term $\mathcal{R}[\Gamma, E]$ | **[I]** |
+| Linear convergence (analogue of *Necessitas*) | Linear primitivity of $\mathcal{L}_0$ (`T-39a [T]` under connected $H$ and positive dephasing: unique linear stationary state $I/7$) | **[I]** |
+| Three kinds of knowledge (E2P40S2, E5P25–28) | Heuristic parallel to capability levels L1 → L2 → L3 | **[I]** |
 
-The main difference: Spinoza had no formalism. His "attributes" are philosophical concepts, not mathematical projections. CC makes Spinoza's intuition **computable**.
+Note on `T-39a`: linear primitivity guarantees a unique stationary state ($I/7$) for the *linear* baseline $\mathcal{L}_0$ under a connected Hamiltonian graph and fixed positive dephasing; it does **not** prove uniqueness of nonlinear attractors $\rho^*$ under arbitrary feedback.
 
-**Three kinds of knowledge and L-levels.** Spinoza distinguished: (1) *imaginatio* — sensory knowledge, fragmentary and obscure; (2) *ratio* — rational knowledge, through common notions; (3) *scientia intuitiva* — intuitive knowledge of things *sub specie aeternitatis*. In CC this maps to: L1 ($R < 1/3$, reactive behavior without self-model), L2 ($R \geq 1/3$, $\Phi \geq 1$, reflexive knowledge with self-model), L3 ($R \to 1$, complete self-modeling — the analogue of scientia intuitiva). The transition E5P25–28 (from ratio to scientia intuitiva) corresponds to growth in $R$ at fixed $\Phi$.
-
-**Necessitas and uniqueness of the attractor.** E1P33 asserts: things could not have been produced in any other way. In CC this is formally ensured by the primitivity of $\mathcal{L}_0$ (T-39a): there is a unique stationary state $\rho^*$ toward which the system necessarily tends. Spinoza's necessity is not external compulsion but the inner logic of the substance; the primitivity of $\mathcal{L}_0$ is not an external constraint but a consequence of the axiom structure.
-
-:::note Spinoza and the No-Zombie Theorem
-The Spinoza comparison is interpretive. A lower bound for E coherence requires an explicit source, rate constraints and a stationary balance. A positive matrix statistic alone does not establish experience.
+:::note Spinoza and the Conditional E-Balance
+The Spinoza comparison is strictly interpretive `[I]`. A lower bound for E-coherence requires an explicit source, rate constraints, and a stationary balance (`T-38a [✗]` withdrawn). A positive matrix statistic alone does not establish experience.
 :::
 
 ### 4.2 Whitehead: Process and Reality
@@ -412,24 +368,22 @@ The stress profile $\sigma_{\mathrm{sys}}(\Gamma)$ is a defined model statistic.
 
 ---
 
-## 7. Conclusion: Philosophy as Foundation, Not Superstructure {#заключение}
+## 7. Conclusion: Philosophy as Explicit Architecture {#заключение}
 
-In traditional sciences, philosophy is something remembered at banquets. In CC it is a load-bearing structure:
+In CC, philosophical choices are stated explicitly alongside their mathematical and empirical boundaries:
 
-- **Ontology** determines what $\Gamma$ is and why it contains 7 dimensions.
-- **Epistemology** determines the status system and falsifiability criteria.
-- **Metaphysics** explains why consciousness is necessary, not contingent.
+- **Ontology `[I]`** frames $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ via unitary monism, while keeping phenomenal identification distinct from matrix algebra.
+- **Epistemology** enforces the 8-status system (`[T]`, `[C]`, `[H]`, `[P]`, `[Pr]`, `[D]`, `[I]`, `[✗]`) and scoped falsifiability.
+- **Structural hypotheses** distinguish proven conditional algebra from withdrawn universal derivations (`T-38a [✗]`, `T-40f [✗]`, `T-41n [✗]`) and open hypotheses (`T-113 [H]`, `T-266 [H]`).
 - **Ethics** supplies explicit normative commitments; mathematics checks their stated consequences.
-
-This does not mean that CC is a philosophical system masquerading as science. It means that CC is a scientific system *aware of its philosophical foundations*. And in this lies one of its key contributions: it shows that rigorous mathematics and deep philosophy are not enemies but allies.
 
 ### What We Learned {#итоги}
 
-1. CC takes the position of **unitary monism**: $\Gamma$ is the single reality, physics and experience are its projections.
-2. CC is **not** panpsychism: experience arises only when four threshold conditions are satisfied.
-3. Chalmers' zombie argument is **refuted** within CC's formalism by the No-Zombie theorem.
-4. The combination problem is **restated, not dissolved**: universal interiority (L0) is protophenomenal, and the thresholds say *when* a system is a subject, not *how* its structure becomes experience [I].
-5. CC is **falsifiable** — at least 5 concrete predictions, each of which can be refuted.
+1. CC adopts **unitary monism `[I]`**: physical and experiential descriptions are modelled as projections of one state $\Gamma$, without pretending that algebra alone proves phenomenology.
+2. CC is **not** unbounded panpsychism: experience attribution uses four explicit capability gates, and `T-266 [H]` is a cosmological hypothesis about $P$ rather than cosmopsychism.
+3. Universal No-Zombie necessity (`T-38a [✗]`) is **withdrawn**: CC's response to Chalmers separates restricted conditional purity-flux balance (`[C]`), unitary-monist framing (`[I]`), and empirical testing (`[H]`).
+4. The combination problem is **restated, not dissolved**: universal interiority (L0) is protophenomenal, and the thresholds state *when* a system is modelled as a subject, not *how* structure becomes experience `[I]`.
+5. CC's empirical risk rests on concrete, pre-registered tests (rank-7 decoherence rates, frozen-encoder clinical concordance, exact learning lower bounds, and restricted E-balance).
 6. Model-specific relations between self-maintenance and operational capabilities require their full dynamical hypotheses; phenomenal interpretation is a separate bridge.
 7. Ethical protection requires explicit commitments and evidence; no unvalidated scalar provides a clinical verdict or dignity ranking.
 
@@ -439,19 +393,19 @@ This does not mean that CC is a philosophical system masquerading as science. It
 
 ```mermaid
 graph TD
-    PHIL["Philosophical Foundations"] --> ONTO["Ontology: Γ as unified reality"]
-    PHIL --> EPIST["Epistemology: status system"]
-    PHIL --> META["Metaphysics: necessity of 7 and consciousness"]
+    PHIL["Philosophical Foundations"] --> ONTO["Ontology: unitary monism [I]"]
+    PHIL --> EPIST["Epistemology: 8-status system"]
+    PHIL --> META["Structural hypotheses: N=7 & E-balance"]
     PHIL --> ETHICS["Ethics of coherence"]
 
     ONTO --> TAM["Two-aspect monism"]
-    ONTO --> NOZOMBIE["No-Zombie Theorem"]
+    ONTO --> EBAL["Conditional E-balance (T-38a withdrawn)"]
     EPIST --> REGISTRY["Status registry"]
-    EPIST --> PRED["Predictions and falsification"]
-    META --> MIN7["Minimality N=7"]
-    META --> HARD["Hard problem"]
-    ETHICS --> DIAG["σ Diagnostics"]
-    ETHICS --> HIER["Consciousness hierarchy"]
+    EPIST --> PRED["Scoped predictions & falsification"]
+    META --> MIN7["Conditional N=7 bounds (T-40f/41n withdrawn)"]
+    META --> HARD["Hard problem reframing"]
+    ETHICS --> DIAG["Stress panel σ"]
+    ETHICS --> HIER["Capability hierarchy"]
 
     click TAM "/docs/consciousness/foundations/two-aspect-monism"
     click REGISTRY "/docs/reference/status-registry"

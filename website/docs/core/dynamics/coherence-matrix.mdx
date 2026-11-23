@@ -35,9 +35,7 @@ The equalizer analogy captures the essence well, but $\Gamma$ is richer: coheren
 **The Coherence Matrix** $\Gamma$ is a linear operator on a Hilbert space $\mathcal{H}$, which is the mathematical representation of the state of a [Holonom](../structure/holon).
 
 :::info Ontological Status
-According to [Axiom Ω⁷](../foundations/axiom-omega), the only primitive is the **∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$**. The coherence matrix $\Gamma$ is an **object** of this category: $\Gamma \in \text{Ob}(\mathcal{C})$.
-
-$\Gamma$ is not a model of reality, but reality itself. From the structure of the ∞-topos, the base space $X = |N(\mathcal{C})|$, time, metric, and all physical aspects are derived.
+In the operational formulation ([operational processes](../foundations/operational-processes)), $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is the numerical state matrix under modelling postulate **(QG)**. The categorical layer $\mathrm{Sh}_\infty(\mathrm{Open}_B(D_7), J_{\mathrm{open}}) \simeq \mathrm{Sh}_\infty(B^{48})$ ([Axiom Ω⁷](../foundations/axiom-omega)) is a locally contractible topological sheaf envelope; physical spacetime and dynamics are not derived from a contractible nerve $|N(\mathcal{C})|$ (see [spacetime](../foundations/spacetime)).
 :::
 
 ### Formal Definition
@@ -96,7 +94,7 @@ $$
 **Corollary:** All eigenvalues $\lambda_k \geq 0$.
 
 :::note Preservation Under Evolution
-Positivity $\Gamma \geq 0$ is **preserved** under full evolution (including nonlinear regeneration) due to the CPTP structure. See the [theorem on preservation of positivity](./evolution#сохранение-положительности).
+Positivity $\Gamma \geq 0$ and unit trace are **preserved** under the full evolution (including locally Lipschitz nonlinear regeneration $a(\Gamma)(M(\Gamma) - \Gamma)$ with $a \ge 0$ and $M(D_7) \subseteq D_7$) by forward invariance of the convex state space $\mathcal{D}(\mathbb{C}^7)$ — not because the nonlinear flow is a linear CPTP semigroup. See the [theorem on preservation of positivity](./evolution#сохранение-положительности).
 :::
 
 ### 3. Normalization
@@ -127,32 +125,37 @@ $$
 \end{pmatrix}
 $$
 
-#### Numerical Example: a Concrete Γ {#числовой-пример}
+#### Numerical Example: a Concrete Viable Γ {#числовой-пример}
 
-Consider a simple example — a holonom in a "healthy" state with an emphasis on Structure and Interiority:
+Consider an exact verified example inside the full viable window $\mathcal{V}_{\mathrm{full}}$:
 
 $$
-\Gamma_{\text{example}} = \begin{pmatrix}
-0.12 & 0.04 & 0.02 & 0.01 & 0.03 & 0.01 & 0.02 \\
-0.04 & \mathbf{0.22} & 0.05 & 0.03 & 0.06i & 0.02 & 0.03 \\
-0.02 & 0.05 & 0.14 & 0.02 & 0.01 & 0.01 & 0.01 \\
-0.01 & 0.03 & 0.02 & 0.10 & 0.02 & 0.01 & 0.01 \\
-0.03 & -0.06i & 0.01 & 0.02 & \mathbf{0.20} & 0.04 & 0.05 \\
-0.01 & 0.02 & 0.01 & 0.01 & 0.04 & 0.10 & 0.03 \\
-0.02 & 0.03 & 0.01 & 0.01 & 0.05 & 0.03 & 0.12
+\Gamma_{\text{example}} = \frac{1}{2}\frac{I_7}{7} + \frac{1}{2}|\psi\rangle\langle\psi|, \qquad |\psi\rangle = \frac{1}{\sqrt{7}}(1,\, 1,\, 1,\, 1,\, -i,\, 1,\, 1)^\top
+$$
+
+Written explicitly in units of $1/14$ ($\gamma_{kk} = 2/14 = 1/7 \approx 0.1429$, $|\gamma_{ij}| = 1/14 \approx 0.0714$):
+
+$$
+\Gamma_{\text{example}} = \frac{1}{14}\begin{pmatrix}
+2 & 1 & 1 & 1 & i & 1 & 1 \\
+1 & 2 & 1 & 1 & i & 1 & 1 \\
+1 & 1 & 2 & 1 & i & 1 & 1 \\
+1 & 1 & 1 & 2 & i & 1 & 1 \\
+-i & -i & -i & -i & 2 & -i & -i \\
+1 & 1 & 1 & 1 & i & 2 & 1 \\
+1 & 1 & 1 & 1 & i & 1 & 2
 \end{pmatrix}
 $$
 
-**What we see:**
-- $\gamma_{SS} = 0.22$ and $\gamma_{EE} = 0.20$ — most of the resource is concentrated in Structure and Interiority (the system "thinks" and "feels").
-- $\gamma_{SE} = 0.06i$ — a purely imaginary coherence! This means $\mathrm{Gap}(S,E) = |\sin(\pi/2)| = 1$ — full opacity between Structure and Interiority. Body and experience do not "see" each other (model of [alexithymia](/docs/core/dynamics/gap-dynamics#модельные-системы)).
-- The other coherences are real ($\mathrm{Gap} = 0$) — transparent connections.
-- $\mathrm{Tr}(\Gamma) = 0.12 + 0.22 + 0.14 + 0.10 + 0.20 + 0.10 + 0.12 = 1.00$ — normalization satisfied.
+**Verified properties:**
+- **Positive definite and normalized:** eigenvalues are $1/14 \approx 0.0714$ (multiplicity 6) and $4/7 \approx 0.5714$ (multiplicity 1), $\lambda_{\min} = 1/14 > 0$, $\mathrm{Tr}(\Gamma) = 1$.
+- **Viable conscious-window invariants:** purity $P = \mathrm{Tr}(\Gamma^2) = 5/14 \approx 0.3571 \in (2/7, 3/7]$; reflection $R = 1/(7P) = 2/5 = 0.40 \ge 1/3$; integration $\Phi = \frac{3/14}{1/7} = 1.50 \ge 1$; interiority coherence $\mathrm{Coh}_E = 8/35 \approx 0.2286$, giving the 7D differentiation proxy $D^{7D} = 1 + 6\mathrm{Coh}_E = 83/35 \approx 2.371 \ge 2$.
+- **Non-trivial Gap:** $\gamma_{SE} = +i/14$ (and all $\gamma_{iE}$ for $i \neq E$ are purely imaginary), so $\mathrm{Gap}(S,E) = |\sin(\pi/2)| = 1$ (orthogonal exterior/interior phase), whereas $\gamma_{ij} = +1/14 \in \mathbb{R}$ ($\mathrm{Gap}(i,j) = 0$) for pairs not involving $E$.
 
 :::note Degrees of Freedom
-A Hermitian $7 \times 7$ matrix has $7^2 = 49$ real parameters. Taking normalization into account: **48 independent parameters**.
+A Hermitian $7 \times 7$ matrix has $7^2 = 49$ real parameters. Taking normalization into account: **48 independent real parameters** in the interior of $\mathcal{D}(\mathbb{C}^7)$.
 
-Of these, **34** are physically distinguishable ($G_2$-invariant), and $14 = \dim(G_2)$ are gauge degrees of freedom. The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#физические-состояния) [T] proves that $G_2 = \mathrm{Aut}(\mathbb{O})$ is the maximal gauge group: the physical state space $\mathcal{D}_{\mathrm{phys}} = \mathcal{D}(\mathbb{C}^7)/G_2$ has $\dim = 34$.
+Under a faithful $G_2 = \mathrm{Aut}(\mathbb{O})$ action on $\mathbb{C}^7$ ($\dim G_2 = 14$), generic orbits on the **principal stratum** have dimension $14$, giving a generic quotient dimension $48 - 14 = 34$ (states with non-trivial $G_2$-stabilizers lie on lower-dimensional singular strata). Identifying $G_2$-orbits with physically equivalent states is conditional on the [reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#физические-состояния), not an unconditional theorem of state-space geometry alone.
 :::
 
 ## Interpretation of Elements
@@ -264,7 +267,7 @@ Hermiticity $\Gamma^\dagger = \Gamma$ means $\gamma_{ji} = \gamma_{ij}^*$, which
 | $\mathrm{Im}(\gamma_{ij}) = -\mathrm{Im}(\gamma_{ji})$ | Imaginary parts are opposite | **Gap**: what distinguishes the external from the internal |
 | $\arg(\gamma_{ij}) = -\arg(\gamma_{ji})$ | Phases are opposite | The direction of the "arrow of duality" is reversed for exterior and interior projections |
 
-### Principle of the Conjugate Pair (Т.4.1) {#принцип-сопряжённой-пары}
+### Principle of the Conjugate Pair (T.4.1) {#принцип-сопряжённой-пары}
 
 :::info Interpretation [I]
 The conjugate pair principle is a semantic statement (interpretation of the modulus as "common", the phase as "perspective"), not a mathematical theorem. The mathematical content is a trivial consequence of the polar decomposition of a complex number.
@@ -280,7 +283,7 @@ $$
 2. **Phase** $\theta$ — **perspective index**: the "angle of view" on the same connection
 3. **$\mathrm{Gap}(i,j) = |\sin\theta|$** — measure of discrepancy between external and internal
 
-**Corollary:** A fully "transparent" system (all $\gamma_{ij} \in \mathbb{R}$) is a theoretical limit in which exterior and interior aspects coincide. This state is equivalent to **Level L4** (unitary consciousness), at which $\varphi(\Gamma) = \Gamma$ and all phases vanish.
+**Corollary:** A fully "transparent" configuration (all $\gamma_{ij} \in \mathbb{R}$, hence $\mathrm{Gap}(i,j) = 0$ for all pairs) is a theoretical limit in which exterior and interior projections coincide; vanishing phases do not by themselves certify higher-order operational capability levels such as L4.
 
 ### Gap Measure for Each Pair {#мера-зазора}
 
@@ -326,46 +329,46 @@ The identification "upper triangle = $\mathrm{Map}_{\mathrm{ext}}$, lower = $\ma
 The full 49-cell map with the table of external projections ($\mathrm{Map}_{\mathrm{ext}}$: Morphogenesis, Actualization, Predication, ...) and interior projections ($\mathrm{Map}_{\mathrm{int}}$: Filter, Flow, Frame, ...) is given in [Gap semantics: 49 elements](/docs/physics/dual-aspect/gap-semantics#полная-49-клеточная-карта).
 :::
 
-### Quantum Current Between Dimensions (Т.2.2) {#квантовый-ток}
+### Quantum Current Between Dimensions (T.2.2) {#квантовый-ток}
 
 :::tip Theorem 2.2: Probability Current Between Dimensions [T]
-For a pair of dimensions $(i, j)$, the probability current is defined as:
+Under unitary evolution $\frac{d\Gamma}{d\tau}\big|_{\text{unitary}} = -\frac{i}{\hbar}[H, \Gamma]$ (with $\hbar = 1$ in natural units), for a pair of dimensions $(i, j)$ the probability current **into** $i$ from $j$ is:
 
 $$
 J_{i \leftarrow j} = \frac{2}{\hbar} \, \mathrm{Im}(H_{ij} \cdot \gamma_{ji}) = \frac{2}{\hbar} \, \mathrm{Im}(H_{ij} \cdot \gamma_{ij}^*)
 $$
 
-**Net current:**
+**Net current (in units $\hbar = 1$):**
 
 $$
-J_{\mathrm{net}}(i,j) = 2|H_{ij}| \cdot |\gamma_{ij}| \cdot \sin(\alpha_{ij} - \theta_{ij})
+J_{\mathrm{net}}(i,j) := J_{i \leftarrow j} = 2|H_{ij}| \cdot |\gamma_{ij}| \cdot \sin(\alpha_{ij} - \theta_{ij}) = -J_{\mathrm{net}}(j,i)
 $$
 
-where $\alpha_{ij} = \arg(H_{ij})$, $\theta_{ij} = \arg(\gamma_{ij})$.
+where $\alpha_{ij} = \arg(H_{ij})$ and $\theta_{ij} = \arg(\gamma_{ij})$.
 :::
 
 **Corollaries:**
 
-1. **Current direction** is determined by the phase difference $(\alpha - \theta)$:
-   - $\sin(\alpha - \theta) > 0$: current flows from $j$ to $i$ (dimension $i$ "receives" from $j$)
-   - $\sin(\alpha - \theta) < 0$: current flows from $i$ to $j$
-   - $\sin(\alpha - \theta) = 0$: equilibrium, no current
+1. **Current direction** is determined by the phase difference $(\alpha_{ij} - \theta_{ij})$:
+   - $\sin(\alpha_{ij} - \theta_{ij}) > 0$: current flows from $j$ to $i$ (population $\gamma_{ii}$ increases)
+   - $\sin(\alpha_{ij} - \theta_{ij}) < 0$: current flows from $i$ to $j$ (population $\gamma_{ii}$ decreases)
+   - $\sin(\alpha_{ij} - \theta_{ij}) = 0$: equilibrium, no current
 
-2. **Current oscillation** under unitary evolution — the phase rotates:
-
-$$
-\theta_{ij}(\tau) = \theta_{ij}(0) + (\omega_i - \omega_j) \cdot \tau
-$$
-
-where $\omega_i, \omega_j$ are the eigenfrequencies of the Hamiltonian. The current **oscillates** with frequency $|\omega_i - \omega_j|$.
-
-3. **Continuity equation** (normalization preservation):
+2. **Phase rotation** under a diagonal Hamiltonian $H = \mathrm{diag}(\omega_1, \dots, \omega_7)$ ($\dot{\gamma}_{ij} = -i(\omega_i - \omega_j)\gamma_{ij}$):
 
 $$
-\frac{d}{d\tau} \mathrm{Tr}(\Gamma) = 0 \quad \Rightarrow \quad \sum_{j \neq i} J_{\mathrm{net}}(i,j) = -\frac{d\gamma_{ii}}{d\tau}\bigg|_{\text{unitary}}
+\theta_{ij}(\tau) = \theta_{ij}(0) - (\omega_i - \omega_j) \cdot \tau
 $$
 
-What leaves the population $\gamma_{ii}$ is distributed among the currents to other dimensions.
+where $\omega_i, \omega_j$ are the eigenfrequencies of the Hamiltonian. The coherence phase rotates with angular frequency $-(\omega_i - \omega_j)$, and weak off-diagonal currents oscillate with frequency $|\omega_i - \omega_j|$.
+
+3. **Continuity equation** (exact identity from $\dot{\Gamma} = -i[H, \Gamma]$):
+
+$$
+\left.\frac{d\gamma_{ii}}{d\tau}\right|_{\text{unitary}} = 2 \sum_{j \neq i} \mathrm{Im}(H_{ij}\gamma_{ij}^*) = +\sum_{j \neq i} J_{\mathrm{net}}(i,j), \qquad \frac{d}{d\tau} \mathrm{Tr}(\Gamma) = \sum_{i \neq j} J_{\mathrm{net}}(i,j) = 0
+$$
+
+The net inflow $\sum_{j \neq i} J_{\mathrm{net}}(i,j)$ into dimension $i$ equals $+\frac{d\gamma_{ii}}{d\tau}\big|_{\text{unitary}}$ (equivalently, the outflow $\sum_{j \neq i} J_{j \leftarrow i}$ equals $-\frac{d\gamma_{ii}}{d\tau}\big|_{\text{unitary}}$).
 
 ## State Types
 
@@ -495,12 +498,12 @@ graph LR
 - **Total:** 48 independent real parameters (taking normalization into account)
 
 :::info Fano Organization of Coherences
-The 21 coherences $\gamma_{ij}$ ($i \neq j$) are organized by the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) PG(2,2):
-- Each **Fano line** $(i,j,k)$ groups 3 coherences that transform jointly under the Fano dissipator
-- **$G_2$-covariance** [T]: the Fano dissipator $\mathcal{D}_{\text{Fano}}$ preserves the symmetry $G_2 = \mathrm{Aut}(\mathbb{O})$
+The 21 coherences $\gamma_{ij}$ ($i \neq j$) are organized by the canonical Singer-cyclic [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$:
+- Each **Fano line** $\{i,j,k\}$ groups 3 coherences that transform jointly under the Fano dissipator $\mathcal{D}_{\text{Fano}}$
+- **Symmetry breaking [T]:** the basis-dependent Fano dissipator $\mathcal{D}_{\text{Fano}}$ is **not** continuously $G_2$-covariant — it breaks continuous $G_2 = \mathrm{Aut}(\mathbb{O})$ down to the finite octonionic signed-permutation subgroup $\Gamma_{\mathrm{oct}}$ (covering $\mathrm{PSL}(2,7)$, order 168) that preserves the seven Fano lines (see [Fano channel](/docs/proofs/gap/fano-channel))
 - All 21 pairs are covered by exactly one Fano line ($\lambda = 1$ in BIBD$(7,3,1)$)
 
-This is not an arbitrary classification, but a consequence of the uniqueness of the projective plane of order 2 [T].
+This incidence structure is unique up to isomorphism because $\mathrm{PG}(2,2)$ is the unique projective plane of order 2 **[T]**.
 :::
 
 <a id="два-уровня-формализации"></a>
@@ -587,18 +590,31 @@ where $|e_i\rangle$ are the basis states from the definition of the embedding $\
 
 | Property | Formula | Corollary |
 |---|---|---|
-| Consistency | $\pi \circ \iota = \mathrm{id}$ | Projection recovers the minimal representation |
-| P preservation | $P(\iota(\Gamma)) \geq P(\Gamma)$ | Purity does not decrease under embedding |
-| $\Phi$ preservation | $\Phi(\pi(\Gamma_{ext})) \approx \Phi_{eff}(\Gamma_{ext})$ | Integration is consistent |
+| Consistency | $\pi \circ \iota = \mathrm{id}$ | Projection recovers the minimal 7D representation |
+| $P$ preservation | $P(\iota(\Gamma)) = P(\Gamma)$ | Exact equality (isometric embedding into the 7D single-excitation subspace) |
+| $\Phi$ preservation | $\Phi(\pi(\Gamma_{\text{ext}})) \approx \Phi_{\text{eff}}(\Gamma_{\text{ext}})$ | Consistent on the single-excitation sector |
+| **No-go for $D_{\text{diff}}$ under $\iota$ [T]** | $\rho_E = (1-\gamma_{EE})\lvert 0_E\rangle\langle 0_E\rvert + \gamma_{EE}\lvert 1_E\rangle\langle 1_E\rvert$ | Forces $D_{\text{diff}}(\iota(\Gamma)) \le 1.952 < 2$ on the entire conscious window! |
+
+:::warning Exact upper bound on the single-excitation lift $\iota$ [T]
+Because $|e_E\rangle$ has $|0\dots 0\rangle_{-E}$ while every $|e_i\rangle$ ($i \neq E$) has an orthogonal single-excitation state on $-E$, tracing out $-E$ kills all off-diagonal coherences on $\mathcal{H}_E$ and produces a rank-$\le 2$ state $\rho_E = \mathrm{Tr}_{-E}(\iota(\Gamma)) = (1-\gamma_{EE})|0_E\rangle\langle 0_E| + \gamma_{EE}|1_E\rangle\langle 1_E|$.
+
+On the entire conscious window ($P \le 3/7$ and $\Phi \ge 1$), $\sum_i \gamma_{ii}^2 = P/(1+\Phi) \le 3/14$, so Cauchy–Schwarz gives $\gamma_{EE}^2 + \frac{(1-\gamma_{EE})^2}{6} \le \frac{3}{14} \implies \gamma_{EE} \le \frac{1+\sqrt{3}}{7} \approx 0.3903$. Hence:
+
+$$
+D_{\mathrm{diff}}(\iota(\Gamma)) = \exp\!\bigl(H_2(\gamma_{EE})\bigr) \le \exp\!\left(H_2\!\left(\frac{1+\sqrt{3}}{7}\right)\right) \approx 1.9520 < 2.
+$$
+
+Therefore the single-excitation embedding $\iota$ can **never** satisfy $D_{\mathrm{diff}} \ge 2$ on the conscious window. Achieving $D_{\mathrm{diff}} \ge 2$ requires either an **independent multi-level $E$-register lift** ($\dim \mathcal{H}_E \ge 3$ with non-trivial population across $\ge 3$ levels) or using the **7D differentiation proxy** $D^{7D}(\Gamma) = 1 + 6\,\mathrm{Coh}_E(\Gamma)$.
+:::
 
 #### Domain of Operations
 
 | Operation | Minimal 7D | Extended | Transition Formula |
 |---|---|---|---|
 | $P = \mathrm{Tr}(\Gamma^2)$ | Yes | Yes | $P(\Gamma) = P(\iota(\Gamma))$ |
-| $\Phi = \sum_{i\neq j}\lVert\gamma_{ij}\rVert^2 / \sum_i \gamma_{ii}^2$ | Yes | Yes | Consistent |
-| $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | No | Yes | Requires $\iota$ |
-| $D_{diff} = \exp(S_{vN}(\rho_E))$ | No | Yes | Computed in extended |
+| $\Phi = \sum_{i\neq j}\lVert\gamma_{ij}\rVert^2 / \sum_i \gamma_{ii}^2$ | Yes | Yes | Consistent on single-excitation sector |
+| $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | No | Yes | Requires multi-level $\mathcal{H}_E$ (not single-excitation $\iota$ alone) |
+| $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ | Proxy $D^{7D} = 1+6\mathrm{Coh}_E$ | Yes | Requires multi-level $\mathcal{H}_E$ ($\dim \mathcal{H}_E \ge 3$) for $D_{\text{diff}} \ge 2$ |
 | $R = 1/(7P)$, where $P = \mathrm{Tr}(\Gamma^2)$; $\rho^*_{\mathrm{diss}} = I/7$ | Yes | Yes | Consistent |
 
 :::warning Rule for Using Formalisms
@@ -671,28 +687,16 @@ All three formalisms describe **the same physical object** at different levels o
 - 6D: instantaneous analysis (state at moment τ)
 :::
 
-### Morita Equivalence of 7D and 42D Formalisms {#морита-эквивалентность-7d-42d}
+### Section–Retraction Relation of 7D and 42D Formalisms {#морита-эквивалентность-7d-42d}
 
-#### Theorem (Morita Equivalence 7D↔42D) [C] {#теорема-морита-эквивалентность}
+#### Theorem (Section–Retraction 7D ↔ 42D, T-58′) [T] {#теорема-морита-эквивалентность}
 
-:::tip Theorem (Morita Equivalence 7D↔42D) [C] — conditional (2026-09-10)
-**Status note — the equivalence is retracted [✗] (2026-09-10).** Steps 1–3 are exact and give a **section–retraction** ($\pi \circ \iota = \mathrm{id}$, T-58′ [T]). Step 4 is void: the equivalence fails on dimension — the PW-constrained space has $\dim \leq 35$ against $48$ for $\mathcal{D}(\mathbb{C}^7)$ ([disproof](/docs/core/structure/dimension-e#теорема-морита-эквивалентность)). This lift ($\Gamma \otimes |\tau_0\rangle\langle\tau_0|_O$) is moreover only one of three in use. The 7D quantities $P$, $R$, $\Phi$, $\mathrm{Coh}_E$ are defined and exact in 7D on their own and need none of this.
+:::tip Theorem T-58′ (Section–Retraction, replacing the retracted Morita equivalence) [T]
+Define the clock-initialized embedding $\iota: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^{42})$, $\Gamma \mapsto \Gamma \otimes |\tau_0\rangle\langle\tau_0|_O$, and the partial trace $\pi: \mathcal{D}(\mathbb{C}^{42}) \to \mathcal{D}(\mathbb{C}^7)$, $\Gamma_{42} \mapsto \mathrm{Tr}_O(\Gamma_{42})$.
 
-
-The formalisms $\mathcal{D}(\mathbb{C}^7)$ and $\mathcal{D}(\mathbb{C}^{42})$ are Morita equivalent:
-$$\mathbf{Sh}_\infty(\mathcal{C}|_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}|_{42})$$
-
-**Proof (4 steps).**
-
-**Step 1 (Extension functor).** Tensor product $\iota: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^{42})$, $\Gamma \mapsto \Gamma \otimes |\tau_0\rangle\langle\tau_0|_O$ — embedding (clock initialized).
-
-**Step 2 (Reduction functor).** Partial trace $\pi: \mathcal{D}(\mathbb{C}^{42}) \to \mathcal{D}(\mathbb{C}^7)$, $\Gamma_{42} \mapsto \mathrm{Tr}_O(\Gamma_{42})$ — CPTP channel.
-
-**Step 3 (Section).** $\pi \circ \iota = \mathrm{id}$: the partial trace over O of the tensor product with a pure O-state gives the original matrix.
-
-**Step 4 (Lurie comparison theorem).** The functor $\iota$ induces an equivalence of ∞-toposes by HTT 6.5.3.13 (Lurie): if the morphism of sites $f: (\mathcal{C}_1, J_1) \to (\mathcal{C}_2, J_2)$ generates an equivalence on subobject lattices, then $f^*: \mathbf{Sh}_\infty(\mathcal{C}_2) \xrightarrow{\sim} \mathbf{Sh}_\infty(\mathcal{C}_1)$.
-
-Application: the Bures metric on $\mathcal{D}(\mathbb{C}^7)$ coincides with the restriction of the Bures metric on $\mathcal{D}(\mathbb{C}^{42})$ to the image of $\iota$ (CPTP channel monotonicity + section). Consequently, the covers are consistent and $\mathbf{Sh}_\infty(\mathcal{C}|_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}|_{42})$. $\blacksquare$
+1. Both $\iota$ and $\pi$ are CPTP channels.
+2. They form an exact **section–retraction pair**: $\pi \circ \iota = \mathrm{id}_{\mathcal{D}(\mathbb{C}^7)}$, and $\iota$ preserves the Bures metric on its image.
+3. **No Morita equivalence:** $\mathcal{D}(\mathbb{C}^7)$ ($\dim = 48$) and $\mathcal{D}(\mathbb{C}^{42})$ (or its PW-constrained subspace, $\dim \le 35$) are **not** Morita equivalent — the former equivalence claim $\mathbf{Sh}_\infty(\mathcal{C}|_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}|_{42})$ fails on dimension and has been withdrawn (see [dimension-e](/docs/core/structure/dimension-e#теорема-морита-эквивалентность)).
 :::
 
 **Corollary [T].** The dimensionless invariants ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$) are **defined in 7D** and are exact there; they are not approximations of 42D quantities, and they do not depend on any lift. Quantities defined only in 42D are lift-dependent and are therefore not functions of the 7D state.
@@ -716,7 +720,7 @@ The matrix $\Gamma$ contains $\binom{7}{2} = 21$ coherences $\gamma_{ij}$. In th
 
 The [Fano plane](../../proofs/minimality/theorem-octonionic-derivation#плоскость-фано) PG(2,2) singles out **7 triplets** — lines on which octonionic multiplication is closed. Each triplet $(e_i, e_j, e_k)$ defines an associative subalgebra isomorphic to Im($\mathbb{H}$).
 
-**Prediction [T]:** Coherences within Fano triplets may exhibit stronger correlations than those between triplets. Bridge [T] (closed, T15).
+**Hypothesis [H]:** Coherences within Fano triplets may exhibit stronger correlations than those between triplets when dynamics is governed by Fano-structured channels.
 
 [Structural derivation →](../../proofs/minimality/theorem-octonionic-derivation)
 :::

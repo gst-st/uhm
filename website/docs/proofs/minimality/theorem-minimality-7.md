@@ -36,7 +36,7 @@ These are exact coding assumptions [D]. Their application to **every** alternati
 
 <a id="t-349"></a>
 
-**T-349(c), strictness of the premise [T].** The length-15 Hamming code has dimension 11, distance three and $(1+15)2^{11}=2^{15}$, so it meets assumptions 1–3 while no real normed division algebra has dimension 16. Perfect diagnosis does not imply a normed division algebra for every allowed $N$. The former hosting argument likewise starts from Hurwitz's list and cannot replace its division-algebra premise.
+**T-349(c), strictness of the premise [T].** The length-15 Hamming code has dimension 11, distance three and $(1+15)2^{11}=2^{15}$, so it meets assumptions 1–3 while no real normed division algebra has dimension 16. Perfect diagnosis does not imply a normed division algebra for every allowed $N$. Conversely, **relaxing exact sphere-packing perfection (assumption 2) or the binary alphabet drops the lower bound below $7$**: single-fault binary coding with more than two codewords already works at $N=5$ (the binary $[5,2,3]_2$ code has $4$ codewords and $d_{\min}=3$, with $24$ of $32$ words covered by disjoint radius-$1$ balls), and over a ternary alphabet the Hamming $[4,2,3]_3$ code is already **perfect** at $N=4$ ($9$ codewords, $d_{\min}=3$, $(1+4\cdot 2)\cdot 9 = 3^4$). In the operational address-fusion construction ([operational processes](/docs/core/foundations/operational-processes#address)), the upper bound $k\le 3$ likewise rests on the explicit `NoDarkPairs` signed-XOR interference hypothesis. The former hosting argument likewise starts from Hurwitz's list and cannot replace its division-algebra premise.
 
 ## Track A_int: faithful finite-dimensional representation {#representation-bound}
 
@@ -50,7 +50,7 @@ $$
 
 **Proof.** The three central units give an orthogonal decomposition of the representation space. On the scalar sector the representation has multiplicity $m_0$; matrix units in either $M_3$ sector identify three equal-dimensional ranges, giving dimensions $3m_1$ and $3m_2$. Faithfulness requires $m_i\ge1$. Hence $N=m_0+3m_1+3m_2\ge7$. Conversely choose $(m_0,m_1,m_2)=(N-6,1,1)$. At equality all multiplicities are one, and orthonormal identifications of the three sectors differ by a unitary. $\square$
 
-This strengthens the mathematical dimension statement without identifying operator *names* with coordinates. Selecting $A_{\mathrm{int}}$ as the internal observable algebra remains a structural input; the theorem does not derive that algebra from autopoiesis. Moreover $A_{\mathrm{int}}$ is not $M_7(\mathbb C)$, and restricting a state by sector pinching loses inter-sector coherences. See [T-174](/docs/intro).
+This strengthens the mathematical dimension statement without identifying operator *names* with coordinates. Selecting $A_{\mathrm{int}}$ as the internal observable algebra remains a structural input; the theorem does not derive that algebra from autopoiesis. Moreover $A_{\mathrm{int}}$ is not $M_7(\mathbb C)$, and restricting a state by sector pinching loses inter-sector coherences. See [T-174](/docs/proofs/physics/toe-embeddings).
 
 ## Seven-dimensional realizations {#часть-iv-доказательство-достаточности-конструктивное}
 

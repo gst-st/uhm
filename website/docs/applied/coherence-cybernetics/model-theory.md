@@ -7,7 +7,7 @@ description: Formal specification and categorical semantics of CC
 # Model Theory of CC
 
 :::info Bridge from the Previous Chapter
-In the [previous chapter](./theorems) we proved the fundamental theorems of CC: from the existence of dynamics to the impossibility of zombies and emergence. Those theorems form a powerful formal apparatus. But to understand its *limits*, one must ask the question mathematicians have been asking since the 1930s: *what are* these theorems about? Does a concrete mathematical structure exist in which all CC axioms are true? Is it unique? How does CC *relate* to other theories of consciousness? Model theory answers these questions rigorously.
+In the [previous chapter](./theorems) we examined the formal theorems of CC: from the existence and density-preservation of dynamics (`CC-1`, `CC-2`) to conditional purity-flux bounds and composite aggregation (`CC-5`, `CC-6`). Those theorems form a structured formal apparatus. But to understand its *limits*, one must ask the question mathematicians have been asking since the 1930s: *what are* these theorems about? Does a concrete mathematical structure exist in which all CC axioms are true? Is it unique? How does CC *relate* to other theories of consciousness? Model theory answers these questions rigorously.
 :::
 
 :::tip Chapter Roadmap
@@ -116,7 +116,7 @@ The sorts of CC are minimal — there are exactly as many as are needed to formu
 
 Two special features deserve attention. First, the sort $\Gamma$ is *not* an arbitrary matrix, but a density matrix: Hermitian, positive semi-definite, with unit trace. These constraints are not axioms of the theory, but part of the *definition* of the sort (analogously to how in arithmetic "natural number" is not just any symbol but a specific type of object).
 
-Second, fixing $\mathcal{H} = \mathbb{C}^7$ is a consequence of the Axiom of Septicity, not an arbitrary choice. The dimension 7 is derived from the structure of the octonion algebra and is the only dimension compatible with the remaining axioms.
+Second, fixing $\mathcal{H} = \mathbb{C}^7$ is an explicit frame postulate (`A3`, **(QG)**) rather than a free choice without structural motivation. Under explicit diagnosability and state-grammar premises, single-fault localizability and nontrivial state encoding yield the lower bound $n \ge 7$ and select the unique Hamming $H(7,4)$ / Fano plane $\mathrm{PG}(2,2)$ structure at $n = 7$ (`T-224 [T]`), whereas earlier unconditional derivations of seven dimensions from `AP+PH+QG+V` (`T-40f [✗]`, `T-41n [✗]`) are withdrawn.
 
 ### Functions
 
@@ -131,12 +131,12 @@ Functions are the central element of the signature, because all quantitative res
 |----------|-----------|----------------|-----|
 | $P$ | $\Gamma \to [1/7, 1]$ | Purity | [→](/docs/core/dynamics/viability#определение-чистоты) |
 | $S_{vN}$ | $\Gamma \to [0, \log 7]$ | Von Neumann entropy | [→](/docs/reference/notation) |
-| $\mathrm{Coh}_E$ | $\Gamma \to [0, 1]$ (viable: $> 1/7$) | E-coherence | [→](./definitions#e-когерентность) |
+| $\mathrm{Coh}_E$ | $\Gamma \to [0, 1]$ | $E$-coherence (Hilbert–Schmidt share of the $E$ row/column) | [→](./definitions#e-когерентность) |
 | $\mathrm{Spec}$ | $\Gamma \to \mathrm{List}(\mathbb{R} \times \mathcal{H})$ | Spectrum | — |
 | $\varphi$ | $\Gamma \to \Gamma$ | Self-modelling operator | [→](/docs/proofs/categorical/formalization-phi) |
 | $C$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Consciousness measure | [→](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
 | $\Phi$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Integration measure | [→](/docs/core/structure/dimension-u#мера-интеграции-φ) |
-| $D_{\text{diff}}$ | $\Gamma \to \{1, 2, \ldots, 7\}$ | Differentiation measure | [→](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
+| $D_{\text{diff}}$ | $\rho_E \to [1, \dim\mathcal{H}_E]$ (or 7D proxy $D^{7D}: \Gamma \to [1, 7]$) | Differentiation measure: continuous $\exp S_{vN}(\rho_E)$ on an extended experiential register $\mathcal{H}_E$, or native 7D proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E(\Gamma) \in [1, 7]$ | [→](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
 | $R$ | $\Gamma \to [0,1]$ | Reflection measure | [→](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) |
 | $\sigma_{\mathrm{sys}}$ | $\Gamma \to \mathbb{R}^7$ | Stress tensor | [→](./definitions#тензор-напряжений) |
 | $\mathrm{compose}$ | $\mathrm{List}(\mathbb{H}) \to \mathbb{H}$ | Holon composition | [→](./theorems#теорема-91-фрактальное-замыкание) |
@@ -160,14 +160,15 @@ These predicates form a *hierarchy*: every conscious Holon is viable, but not ev
 
 ### Signature Axioms
 
-The CC axioms are set out in detail in the chapter ["Axiomatics"](./axiomatics). Here we simply record their list as an element of the signature:
+The CC axiomatic inputs are set out in detail in [Axiom $\Omega^7$](/docs/core/foundations/axiom-omega), [Holon Requirements](/docs/core/foundations/axiom-septicity), and [Axiomatics](./axiomatics). They separate cleanly into **foundational postulates (`A1`–`A5`)** and **typed Holon requirements (`AP`, `PH`, `QG`, `V`)** (per `T-181 [✗]`, `AP`, `PH`, `QG`, `V` are explicit modelling requirements rather than automatic consequences of a topos):
 
-- **(Ω)** — Axiom of Being: $\Omega = \rho_\Omega \in \mathcal{D}(\mathcal{H}_\Omega)$ ([→](/docs/core/foundations/axiom-omega))
-- **(AP)** — Axiom of Septicity: $\dim \mathcal{H} = 7$ ([→](/docs/core/foundations/axiom-septicity))
-- **(PH)** — Axiom of Hierarchy: Holons form a fractal hierarchy ([→](/docs/core/structure/holon))
-- **(QG)** — Axiom of Quantum Gravity ([→](/docs/physics/gravity/quantum-gravity))
+- **(A1–A5)** — Foundational typed inputs of $\Omega^7$ ([→](/docs/core/foundations/axiom-omega)): sheaf $\infty$-topos envelope (`A1`), Bures metric geometry (`A2`), seven-dimensional semantic frame `A,S,D,L,E,O,U` (`A3`), calibrated time scale $\omega_0 > 0$ (`A4`), and clock extension (`A5`).
+- **(AP)** — Autopoiesis `[P]/[I]`: declared self-model $\varphi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ and organisation-maintaining dynamics ([→](/docs/core/foundations/axiom-septicity#ap-автопоэзис)).
+- **(PH)** — Phenomenology `[P]/[I]`: declared experiential realization and interpretive bridge to observation ([→](/docs/core/foundations/axiom-septicity#ap-автопоэзис)).
+- **(QG)** — Quantum Ground `[P]/[D]`: positive trace-one states $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, Born rule, and declared quantum process model ([→](/docs/core/foundations/axiom-septicity#ap-автопоэзис)).
+- **(V)** — Viability `[D]/[H]`: structural majority criterion $P(\Gamma) > P_{\mathrm{crit}} = 2/7$ together with trajectory survival conditions ([→](/docs/core/foundations/axiom-septicity#v-жизнеспособность)).
 
-Note that there are just four axioms. By comparison, ZFC (the foundation of all mathematics) has 9 axioms, general relativity has 2 (the equivalence principle and Einstein's equations). The minimality of the CC axiomatics is not a simplification for simplicity's sake, but a consequence of the deep internal structure: more than a hundred theorems are derived from four axioms.
+Separating foundational postulates (`A1`–`A5`), operational requirements (`AP`, `PH`, `QG`, `V`), and definitional thresholds `[D]` keeps every dependency explicit and auditable.
 
 ## Standard Model
 
@@ -208,9 +209,9 @@ The interpretation function $I$ is a *dictionary* translating the signature symb
 | $I(\mathrm{Viable})(\mathbb{H})$ | $P(\Gamma_\mathbb{H}) > P_{\text{crit}} \land dP/d\tau > -\varepsilon_{\text{death}}$ |
 | $I(\mathrm{compose})$ | Tensor product + interaction |
 
-:::info Derived and empirical constants
-- $P_{\text{crit}} = 2/7 \approx 0.286$ — [theorem](/docs/proofs/dynamics/theorem-purity-critical)
-- $\varepsilon_{\text{death}} = 0.01 \cdot P_{\text{crit}} / \tau_{\text{char}}$ — decay rate threshold, see [viability](/docs/core/dynamics/viability)
+:::info Derived and convention constants
+- $P_{\text{crit}} = 2/7 \approx 0.286$ — exact algebraic threshold `[T]` *after choosing* structural majority $\|\Gamma - I/7\|_F^2 > 1/7$ `[D]` ([proof](/docs/proofs/dynamics/theorem-purity-critical))
+- $\varepsilon_{\text{death}} = 0.01 \cdot P_{\text{crit}} / \tau_{\text{char}}$ — decay rate threshold `[D]`, see [viability](/docs/core/dynamics/viability)
 :::
 
 The key property of the standard model: the interpretation of each symbol is *consistent* — for every statement derivable from the axioms, its interpretation in $\mathfrak{M}_{\mathrm{CC}}$ is true. This property (soundness) is proved below.
@@ -246,7 +247,7 @@ All CC theorems are true in $\mathfrak{M}_{\mathrm{CC}}$.
 **Proof:** Each theorem is proved constructively from the axioms, which are true in $\mathfrak{M}_{\mathrm{CC}}$ by construction. ∎
 
 :::warning Note on triviality
-This "soundness" is trivial: the standard model $\mathfrak{M}_{\mathrm{CC}}$ was constructed so as to satisfy the axioms. Non-trivial soundness — joint consistency of all axioms — is an **open problem**. To resolve it, one must show that the axioms Ω, (AP), (PH), (QG) do not produce contradictions when applied jointly.
+This "soundness" is trivial: the standard model $\mathfrak{M}_{\mathrm{CC}}$ was constructed so as to satisfy the axioms. Non-trivial soundness — joint consistency of all foundational postulates and operational requirements — requires showing that `A1`–`A5` together with `AP`, `PH`, `QG`, `V` and any added dynamical closure laws admit a joint realization without contradiction.
 :::
 
 ### The Gödelian Context {#гёделевский-контекст}
@@ -282,7 +283,7 @@ Summary:
 | Property | Status | Comment |
 |----------|--------|---------|
 | Soundness (trivial) | **Established** | By construction of the model |
-| Joint consistency of axioms | **Open problem** | Requires proving $\mathrm{Con}(\Omega + AP + PH + QG)$ |
+| Joint consistency of axioms | **Open problem** | Requires proving $\mathrm{Con}(\mathrm{A1\text{–}A5} + \mathrm{AP} + \mathrm{PH} + \mathrm{QG} + \mathrm{V})$ |
 | Relative completeness | **Hypothesis** | For viable Holons |
 | Absolute completeness | **Impossible** | Gödel's theorem |
 
@@ -300,9 +301,9 @@ Several classes of potential non-standard models can be distinguished:
 
 **1. Models with non-standard arithmetic.** If $\mathbb{R}$ is replaced by ${}^*\mathbb{R}$ (Robinson's non-standard analysis), one obtains a model in which purity $P$ can take values infinitely close to $2/7$ but not equal to $2/7$. Physically such models are probably vacuous, but mathematically they are legitimate.
 
-**2. Models with different dimension.** The Axiom of Septicity (AP) fixes $\dim \mathcal{H} = 7$. But one can consider "CC-like" theories with $\dim \mathcal{H} = N$ for arbitrary $N$. Such theories are not models of CC (they violate the axiom), but are important as *counterfactuals*: they show *why* precisely $N = 7$ is necessary. The theorems on minimality of the Fano plane and the Hamming code $H(7,4)$ [give the answer](/docs/core/foundations/axiom-septicity): for $N \neq 7$ it is impossible to simultaneously ensure optimal error-correction, $S_7$-group symmetry, and the structure of the projective plane PG(2,2).
+**2. Models with different dimension.** The frame postulate (`A3`) fixes $\dim \mathcal{H} = 7$. One can also consider "CC-like" models with $\dim \mathcal{H} = N$ for arbitrary $N$. Such structures are not models of the 7D theory, but serve as *counterfactuals* showing what is special at $N = 7$: under perfect single-fault localizability and a nontrivial state grammar (`T-224 [T]`), $N \ge 7$ is forced, and $N = 7$ is the unique dimension at which the state grammar is unique up to relabelling — the Hamming code $H(7,4)$ / Fano plane $\mathrm{PG}(2,2)$ with collineation group $\mathrm{PGL}(3,2) \cong \mathrm{PSL}(2,7)$ of order 168 ([details](/docs/core/foundations/axiom-septicity)).
 
-**3. Operator-algebraic models.** Instead of finite-dimensional matrices $\mathbb{C}^{7 \times 7}$ one can consider infinite-dimensional $C^*$-algebras. Such models may describe the "thermodynamic limit" — the collective behaviour of infinitely many Holons. This is related to [Theorem T-117 on emergent commutativity](/docs/proofs/physics/emergent-manifold), where macroscopic spacetime arises as the classical limit of a quantum system.
+**3. Operator-algebraic models.** Instead of finite-dimensional matrices $\mathbb{C}^{7 \times 7}$ one can consider infinite-dimensional $C^*$-algebras. Such models describe thermodynamic limits of many-Holon aggregates. Under bounded local observables and normalized spatial averaging, commutators of mean observables vanish in the large-system limit (`T-117 [T]`, see [Emergent Manifold](/docs/proofs/physics/emergent-manifold)); a full fluctuation or spacetime limit requires additional clustering and scaling assumptions.
 
 ### Categoricity
 
@@ -349,27 +350,29 @@ $$
 
 The objects of the category are viable Holons. The morphisms are maps that preserve the coherence structure. Intuitively, a morphism $f: \mathbb{H}_1 \to \mathbb{H}_2$ is a "way of seeing" $\mathbb{H}_1$ as a part or projection of $\mathbb{H}_2$, preserving all essential properties.
 
-### Theorem (Symmetric Monoidality)
+### Theorem (Symmetric Monoidality on Composite Holons)
 
-:::info Theorem
+:::info Theorem [T]
+In the ambient category $\mathbf{Hol}^{\otimes}$ of finite-tensor composite systems with carrier spaces $\mathcal{H} \cong (\mathbb{C}^7)^{\otimes k}$ ($k \in \mathbb{N}_0$, where $k = 0$ is the one-dimensional Hilbert space $\mathbb{C}$),
 $$
-(\mathbf{Hol}, \otimes, \mathbb{H}_{\text{unit}}, \alpha, \lambda, \rho, \sigma) \text{ is a symmetric monoidal category}
+(\mathbf{Hol}^{\otimes}, \otimes, I_{\mathbf{Hol}}, \alpha, \lambda, \rho, \sigma) \text{ is a symmetric monoidal category.}
 $$
 :::
 
 | Component | Definition |
 |-----------|------------|
 | $\otimes$ | $\mathbb{H}_1 \otimes \mathbb{H}_2 = \langle \Gamma_1 \otimes \Gamma_2, \mathcal{H}_1 \otimes \mathcal{H}_2, \ldots \rangle$ |
-| $\mathbb{H}_{\text{unit}}$ | $\langle I/7, \mathbb{C}^7, 0, \{\}, \varnothing, \mathrm{id} \rangle$ |
+| $I_{\mathbf{Hol}}$ | $\langle (1), \mathbb{C}, 0, \varnothing, \varnothing, \mathrm{id}_{\mathbb{C}} \rangle$ (the $k=0$ one-dimensional trivial system, $\dim = 1$) |
 | $\alpha$ | $(\mathbb{H}_1 \otimes \mathbb{H}_2) \otimes \mathbb{H}_3 \cong \mathbb{H}_1 \otimes (\mathbb{H}_2 \otimes \mathbb{H}_3)$ |
+| $\lambda, \rho$ | $I_{\mathbf{Hol}} \otimes \mathbb{H} \cong \mathbb{H} \cong \mathbb{H} \otimes I_{\mathbf{Hol}}$ (inherited from $\mathbb{C} \otimes \mathcal{H} \cong \mathcal{H} \cong \mathcal{H} \otimes \mathbb{C}$) |
 | $\sigma$ | $\mathbb{H}_1 \otimes \mathbb{H}_2 \cong \mathbb{H}_2 \otimes \mathbb{H}_1$ |
 
-The symmetric monoidal structure means that Holons can be *composed* — combined into larger systems — and this composition behaves "correctly": order does not matter (symmetry), brackets do not matter (associativity), and there is an "empty" Holon that does not affect composition (unit).
+The symmetric monoidal structure means that composite Holons can be *composed* — combined into larger systems — and this composition behaves consistently: order does not matter up to canonical isomorphism (symmetry), bracketing does not matter up to canonical isomorphism (associativity), and tensoring with the one-dimensional trivial system $I_{\mathbf{Hol}}$ leaves every object isomorphic to itself (unit).
 
-Physical analogy: the monoidal structure on $\mathbf{Hol}$ is an *algebra of parts and wholes*. Two neurons can be combined into a neural network; two neural networks into a brain; two organisms into a social system. At each level the same operator $\otimes$ operates, and at each level a new Holon arises.
+Physical analogy: the monoidal structure on $\mathbf{Hol}^{\otimes}$ is an *algebra of parts and wholes*. Two neurons can be combined into a neural network; two neural networks into a brain; two organisms into a social system. At the 7D effective level, returning from a composite state in $\mathcal{D}((\mathbb{C}^7)^{\otimes k})$ to a single effective 7D Holon requires an explicit aggregation/coarse-graining map (such as the mean marginal studied under weak coupling in `CC-5` and `CC-6`).
 
-:::note On the monoidal unit
-$\mathbb{H}_{\text{unit}}$ with $\Gamma = I/7$ has $P(I/7) = 1/7 < P_{\text{crit}} = 2/7$, which formally violates the viability condition. This is **not a defect** of the categorical structure: the monoidal unit is a formal element for defining isomorphisms $\mathbb{H} \otimes \mathbb{H}_{\text{unit}} \cong \mathbb{H}$, not a physical Holon. Viable Holons form a **full subcategory** $\mathbf{Hol}_{\mathcal{V}} \subset \mathbf{Hol}$.
+:::note Why the monoidal unit is $\mathbb{C}$, NOT $\mathbb{C}^7$
+In $(\mathbf{Hilb}, \otimes)$ and $(\mathbf{DensityMat}, \otimes)$, a seven-dimensional object $\langle I/7, \mathbb{C}^7, \ldots \rangle$ **cannot** be a monoidal unit for $\otimes$: tensoring $\mathbb{C}^7 \otimes \mathbb{C}^7 = \mathbb{C}^{49} \not\cong \mathbb{C}^7$ changes Hilbert-space dimension from $7$ to $49$, so no unit isomorphism $\mathbb{H} \otimes \mathbb{H}_{\mathrm{unit}} \cong \mathbb{H}$ can exist. The unique monoidal unit for $\otimes$ is the one-dimensional space $\mathbb{C}$ with the unique $1\times 1$ density matrix $(1)$. Likewise, single-site 7D viable Holons $\mathbf{Hol}_{\mathcal{V}}$ ($k = 1$, $P > 2/7$) form a generating full subcategory inside $\mathbf{Hol}^{\otimes}$ rather than a monoidal subcategory closed under $\otimes$.
 :::
 
 ## Translatability: How CC Speaks the Languages of Other Theories {#переводимость}
@@ -481,7 +484,7 @@ where:
 
 CPTP = Completely Positive Trace-Preserving (quantum channels).
 
-The morphisms of this category — CPTP channels — deserve a separate comment. In quantum mechanics a CPTP channel is the most general physically admissible transformation of a state. It preserves *positivity* (probabilities remain non-negative), *complete positivity* (works correctly for composite systems too), and the *trace* (total probability equals 1). In CC this means that the transition between Holon states is always a *physically realisable* process. The evolution $\mathrm{evolve}(\Gamma, t)$ is a special case of a CPTP channel.
+The morphisms of this category — CPTP channels — deserve a separate comment. In quantum mechanics a CPTP channel is the most general linear physically admissible transformation of a state. It preserves *positivity* (probabilities remain non-negative), *complete positivity* (works correctly for composite systems too), and the *trace* (total probability equals 1). Linear GKSL evolution $\exp(t\mathcal{L}_0)$ is a semigroup of CPTP channels, whereas the full nonlinear regenerative flow $\dot\Gamma = \mathcal{L}_0(\Gamma) + \mathcal{R}[\Gamma, E]$ preserves the density-matrix space $\mathcal{D}(\mathbb{C}^7)$ under stated regularity and target hypotheses (`CC-2 [T]`), while being nonlinear and therefore generally **not** a linear CPTP map.
 
 ### Experience Functor
 
@@ -502,7 +505,7 @@ The experience functor $F_{\mathcal{Q}}$ is the mathematical formalisation of th
 
 2. **Eigenvectors** $\mathrm{Eigenvectors}(\rho_E)$ — directions in the $E$-subspace. They define the *content* of experience: *what exactly* is being experienced. Two states with the same spectrum but different eigenvectors are states of the same "brightness" but different "colour".
 
-3. **Context** $\mathrm{Context}(\Gamma_{-E})$ — the remaining six dimensions of the coherence matrix. They define the *background* of experience: what the dynamics is (D), attention (A), social context (S), logical structure (L), wholeness (O), energy level (U).
+3. **Context** $\mathrm{Context}(\Gamma_{-E})$ — the remaining six dimensions of the coherence matrix. They define the *background* of experience: Articulation ($A$), Structure ($S$), Dynamics ($D$), Logic ($L$), Ground ($O$), and Unity ($U$).
 
 4. **History** $\mathrm{History}$ — the temporal trajectory of preceding states. It defines the *temporal* structure of experience: the sense of duration, memory, anticipation.
 
@@ -543,11 +546,11 @@ CC differs from physics in that it *starts* with the observer: axiom Ω postulat
 
 ### What the Theory Explains
 
-1. The **structure** of phenomenal space ([L1](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry): Fubini–Study metric)
-2. The **relations** between qualities (L1: isomorphism with $\mathbb{P}(\mathcal{H}_E)$)
-3. The **dynamics** of experience ([evolution equation](/docs/core/dynamics/evolution))
-4. The **conditions** for consciousness ([L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$, $D_{\text{diff}} \geq 2$)
-5. The **necessity** of interiority ([L0](/docs/proofs/consciousness/interiority-hierarchy#уровень-0-интериорность-interiority)) for viability ([Theorem 8.1 [T]](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie))
+1. The **structure** of phenomenal space ([L1](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry): Fubini–Study metric on $\mathbb{P}(\mathcal{H}_E)$)
+2. The **relations** between qualities (L1: projective-space geometry on an extended experiential register $\mathcal{H}_E$)
+3. The **dynamics** of state evolution ([evolution equation](/docs/core/dynamics/evolution))
+4. The **operational criteria** for consciousness ([L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): definitional thresholds `[D]` $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$, $D_{\text{diff}} \geq 2$)
+5. **Conditional purity-flux balance** for self-regenerating trajectories (the universal No-Zombie necessity and universal $E$-floor `T-38a [✗]` are withdrawn because stationary externally supported counterexamples exist; interiority requirements hold only under explicitly specified regeneration hypotheses — see [Theorem 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie))
 
 ### What the Theory Does Not Explain
 
@@ -556,15 +559,11 @@ CC differs from physics in that it *starts* with the observer: axiom Ω postulat
 
 ### The Nature of the Categorical Gap {#природа-категориального-разрыва}
 
-It is important to understand that the categorical gap is not *epistemic* (we don't know something), but *ontological* (knowledge of a certain type is *impossible in principle*). This claim can be made precise:
+It is important to understand that the categorical gap is framed in CC not merely as an *epistemic* lacuna, but as an *interpretive boundary* between formal state structure and subjective quality.
 
-**Statement (Non-derivability of quality):** There is no formal system $T$ containing arithmetic such that for some predicate $Q$ (quality of experience):
-$$
-T \vdash \forall \rho.\, Q(\rho) \leftrightarrow \Phi(\rho)
-$$
-where $\Phi$ is any computable function of $\rho$.
+**Philosophical thesis (Non-derivability of quality) `[I]`:** No formal deduction from arithmetic or matrix properties alone derives *that* a given density matrix $\rho$ feels like a specific quale $Q(\rho)$ without an explicit interpretive postulate linking formalism and phenomenology. (Note that this is an interpretive thesis `[I]`, not a formal impossibility theorem: the earlier attempt to derive a universal Lawvere phenomenal-map prohibition is withdrawn as `T-214 [✗]`.)
 
-In other words: the quality of experience (qualia) *cannot be identified* with any computable characteristic of the density matrix. This does not mean that qualia are "non-material" — it means that the relation "quality ↔ structure" is a *basic* relation, not reducible to anything simpler.
+In other words: the quality of experience (qualia) is *not deduced* from any computable characteristic of the density matrix. This does not mean that qualia are "non-material" — it means that the relation "quality ↔ structure" is a *basic* interpretive bridge, not reducible to purely syntactic derivation.
 
 CC circumvents this problem elegantly but radically: axiom Ω *postulates* the identity of being and experience. Not "being *generates* experience" (which would require explaining the mechanism), but "being *is* experience" (which is an axiom, requiring no explanation).
 
@@ -604,15 +603,15 @@ The key result of this chapter is a *complete picture* of the formal status of C
 
 Let us summarise this chapter. We have examined CC "from above" — not as a collection of formulas, but as a formal theory with a clearly defined status:
 
-1. **Signature** $\Sigma_{\mathrm{CC}}$ — the formal "alphabet" of CC: 6 sorts (including $\Gamma$ and $\mathbb{H}$), 12+ functions ($P$, $\Phi$, $R$, $\varphi$, $\sigma_{\mathrm{sys}}$...), 4 predicates ($\mathrm{Viable}$, $\mathrm{Conscious}$, ...) and 4 axioms. Every CC statement is written in the symbols of this signature.
+1. **Signature** $\Sigma_{\mathrm{CC}}$ — the formal "alphabet" of CC: 6 sorts (including $\Gamma$ and $\mathbb{H}$), 12+ functions ($P$, $\Phi$, $R$, $D_{\mathrm{diff}}$, $\varphi$, $\sigma_{\mathrm{sys}}$...), 4 predicates ($\mathrm{Viable}$, $\mathrm{Conscious}$, ...), the foundational postulates `A1`–`A5`, and the typed Holon requirements `AP`, `PH`, `QG`, `V`. Every CC statement is written in the symbols of this signature.
 
-2. **Standard model** $\mathfrak{M}_{\mathrm{CC}}$ — a concrete realisation: $\Gamma$ = density matrices in $\mathbb{C}^{7 \times 7}$, evolution = solution of the Lindblad equation. The existence of the model proves consistency (relative to ZFC). The concreteness of the model makes the theory computable and falsifiable.
+2. **Standard model** $\mathfrak{M}_{\mathrm{CC}}$ — a concrete realisation: $\Gamma$ = density matrices in $\mathbb{C}^{7 \times 7}$, evolution = solution of the Lindblad/regenerative equation (`CC-1`, `CC-2`). The existence of the model proves consistency (relative to ZFC). The concreteness of the model makes the theory computable and falsifiable.
 
 3. **Soundness** is established (trivially — by construction). **Absolute completeness** is impossible (Gödel's theorem). **Relative completeness** for viable Holons is an open hypothesis.
 
 4. **Non-standard models** are possible (Löwenheim–Skolem theorem), but physically probably vacuous. The question of categoricity remains open.
 
-5. **Category of Holons** $\mathbf{Hol}$ is a symmetric monoidal category. Holons can be composed ($\otimes$), and this composition is associative, commutative, and has a unit.
+5. **Ambient composite category** $\mathbf{Hol}^{\otimes}$ is a symmetric monoidal category on spaces $(\mathbb{C}^7)^{\otimes k}$ ($k \ge 0$), whose monoidal unit for $\otimes$ is the one-dimensional trivial system $I_{\mathbf{Hol}}$ on $\mathbb{C}$ (not $\mathbb{C}^7$). Single-site 7D viable Holons form the generating subcategory $\mathbf{Hol}_{\mathcal{V}}$.
 
 6. **Functor bridges** $F_{\mathrm{IIT}}$, $F_{\mathrm{FEP}}$, $F_{\mathrm{GNW}}$ — CC as metatheory. Each existing theory of consciousness is a *projection* of CC, preserving part of the structure and losing the rest. IIT loses dynamics and reflection. FEP loses the internal structure of experience. GNW loses the metric of the phenomenal space.
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: Spacetime
-description: Emergence of space and time from the structure of the category C
+description: Representation-theoretic 3+1 bounds (Theorems 48c–48e), operational network geometry, and withdrawal of legacy nerve/Krein heuristics
 ---
 
 # Spacetime Structure
@@ -24,425 +24,213 @@ The colour-singlet spin factor and its spinor representation are exact algebraic
 - Physical spacetime and gravity require the physical bridges listed on their respective pages.
 :::
 
-## Base space X = $|N(\mathcal{C})|$ {#базовое-пространство}
+## Base space X = $|N(\mathcal{C})|$ — withdrawn stratified-manifold claim {#базовое-пространство}
 
-:::warning Property 5 (Stratification) [D]
-The base space of the theory is defined as the geometric realization of the nerve of the category:
-
-$$
-X = |N(\mathcal{C})|
-$$
-
-where $\mathcal{C}$ is the [primitive UHM category](./axiom-omega#примитив).
+:::warning Withdrawn legacy construction [✗]
+The former claim that the geometric realization $X = |N(\mathcal{C})|$ of a primitive category $\mathcal C$ endogenously yields a stratified spacetime manifold with a derived metric $d_{\mathrm{strat}}$ and unique zero-dimensional stratum $\{T\}$ is **withdrawn [✗]**. A category with a terminal object has a **contractible** nerve; an arbitrary process category can contain nondegenerate morphism chains of unbounded length and supplies neither manifold strata nor a Dirac spectral triple. For the operational construction of limiting distances from calibrated probes on discrete networks, see [operational network geometry](/docs/geometry/common-limit) and [response metrics](/docs/geometry/response-metric).
 :::
 
-### Autopoiesis of the base space {#автопоэтичность}
+### Endogenous geometry versus operational limits {#автопоэтичность}
 
-Key property: **X is defined endogenously**, not introduced from outside.
-
-| Aspect | Traditional theories | UHM |
+| Aspect | Withdrawn nerve claim [✗] | Current operational / typed status |
 |--------|---------------------|---------|
-| Base space | Postulated (ℝ⁴, Σ, ...) | Derived from $\mathcal{C}$ |
-| Metric | Introduced by hand | Computed from spectral data |
-| Topology | Fixed | Follows from the nerve structure |
+| Base space | Claimed $X = \|N(\mathcal{C})\|$ as stratified manifold | Operational limiting metric from calibrated probes on specified networks ([common limit](/docs/geometry/common-limit)) [T] |
+| Metric | Claimed derived $d_{\mathrm{strat}}$ from $\mathcal C$ | First-arrival / response metrics on networks, or Bures metric on state space $D_7$ [D]/[T] |
+| Lorentzian 3+1 | Claimed from nerve + Krein triple | Representation-theoretic obstructions & spin-factor construction ([Theorems 48c–48e](#теорема-48c)) [T] / [C at (L)] |
 
 ### Nerve of the category $N(\mathcal{C})$ {#нерв-категории}
 
-**Definition (Nerve):**
-
-The nerve $N(\mathcal{C})$ is a simplicial set:
-- 0-simplices: objects of $\mathcal{C}$ (holons $\mathbb{H}$)
-- 1-simplices: morphisms $f: A \to B$
-- n-simplices: composable chains of morphisms
-
-**Geometric realization:**
-
-$$
-|N(\mathcal{C})| = \left( \bigsqcup_n \Delta^n \times N_n \right) \Big/ \sim
-$$
-
-where the equivalence relation glues the faces of simplices.
+For any small category $\mathcal C$, its nerve $N(\mathcal C)$ is the simplicial set of composable morphism chains, with geometric realization $|N(\mathcal C)|$. This is a standard homotopy construction [T], not a physical manifold or the density space $D_7$.
 
 ### Stratification of X {#стратификация-x}
 
-A stratification $X=\bigsqcup_\alpha S_\alpha$ is additional data with stated frontier and local-geometric conditions. Cells of the realization correspond to nondegenerate simplices, but their dimensions alone do not give the claimed stratification with sole zero-dimensional stratum $\{T\}$: zero-simplices are all objects of the category.
-
-A category with finitely many objects can have nondegenerate chains of arbitrary length. For example, repeating a nonidentity idempotent endomorphism gives nondegenerate simplices in every dimension. Thus seven does not bound the nerve's dimension. For a **separately chosen** linear order of seven objects its nerve realizes as $\Delta^6$ [T]; this is neither the category of all CPTP processes nor $D_7$.
+A stratification $X=\bigsqcup_\alpha S_\alpha$ requires explicit frontier and local-geometric data. Zero-simplices of $|N(\mathcal C)|$ are all objects of $\mathcal C$ (not a single terminal stratum $\{T\}$), and a category with finitely many objects can still have nondegenerate simplices in every dimension (e.g., iterates of a non-identity idempotent). Seven axes do not bound $\dim |N(\mathcal C)|$. Only for a separately chosen linear order of $7$ objects is the nerve $\Delta^6$ [T], which is neither $\mathbf{CPTP}$ nor $D_7$.
 
 ### Local-global dichotomy {#локально-глобальная-дихотомия}
 
-If the **indexing category** $\mathcal C$ itself has a terminal object, its nerve is contractible [T]. Terminality of its sheaf category does not establish this condition for $\mathcal C$. For contractible $X$, positive cohomology with constant coefficients vanishes; arbitrary sheaf cohomology need not vanish.
+If an indexing category $\mathcal C$ has a terminal object, its nerve $|N(\mathcal C)|$ is contractible [T] (so constant-coefficient positive cohomology vanishes). Terminality of a sheaf category does not make $\mathcal C$ terminal, selects no link $K$ or conical stratification, and implies neither dynamical convergence nor physical curvature.
 
-Local cohomology requires a separate local model. If a point $x$ has a neighbourhood conical on a link $K$, then
-
-$$
-H^k_{\mathrm{loc}}(X,x;A)\cong\widetilde H^{k-1}(K;A).
-$$
-
-At an interior point of a six-manifold the link is $S^5$. At a vertex of $\Delta^6$ the link is a contractible $\Delta^5$, so the local cohomology vanishes. Terminality alone selects no link or stratification.
-
-Global contractibility can indeed coexist with nonzero local cohomology, for example at an interior point of a disk. This is a topological compatibility, not a proof of physics or dynamical convergence.
-
-## Connes stratified metric {#метрика-конна}
+## Spectral distance and operational metrics {#метрика-конна}
 
 ### Spectral triple for strata {#спектральная-тройка}
 
-On each stratum $S_\alpha$ a spectral triple is defined:
-
-$$
-(A_\alpha, H_\alpha, D_\alpha)
-$$
-
-where:
-- $A_\alpha = C(S_\alpha)$ — algebra of functions on the stratum
-- $H_\alpha = L^2(S_\alpha, E_\alpha)$ — Hilbert space of sections
-- $D_\alpha$ — Dirac operator on the stratum
+On a **separately supplied** smooth Riemannian spin manifold $(S_\alpha, g_\alpha)$, its canonical spectral triple $(C^\infty(S_\alpha), L^2(S_\alpha, E_\alpha), D_\alpha)$ recovers geodesic distance via Connes' supremum formula [T]. No spectral triple is derived from the nerve $|N(\mathcal C)|$.
 
 ### Distance formula d_strat {#формула-расстояния}
 
-:::warning Conditional length construction [C]
-Given compatible length metrics on the strata, define a path pseudometric between their points:
-
-$$
-d_{strat}(\omega_1, \omega_2) = \inf_{\gamma} \int_\gamma ds_\alpha
-$$
-
-where:
-- $\gamma$ — a path crossing strata $S_{\alpha_1}, S_{\alpha_2}, \ldots$
-- $ds_\alpha$ — Connes metric on stratum $S_\alpha$:
-
-$$
-d_\alpha(p, q) = \sup\{|f(p) - f(q)| : \|[D_\alpha, f]\| \leq 1\}
-$$
-
-- The infimum is taken over all paths connecting $\omega_1$ and $\omega_2$
+:::warning Scope and Euclidean restriction [C]
+Connes' formula $d_\alpha(p, q) = \sup\{|f(p) - f(q)| : \|[D_\alpha, f]\| \leq 1\}$ is a **Riemannian (positive-definite)** theorem. Applying this Euclidean supremum formula or Riemannian Seeley–DeWitt heat-kernel expansions directly to an indefinite Lorentzian Dirac operator is **mathematically invalid [✗]**. Gluing path metrics $d_{\mathrm{strat}}$ across strata likewise requires separately verified connectivity, finite-length, and separation hypotheses.
 :::
 
 ### Metric near the terminal object {#метрика-вблизи-t}
 
-For the path pseudometric to be a finite metric, require connectivity of the relevant points, finite lengths and separation of points; terminality gives none of these conditions. On a smooth Riemannian stratum with its canonical spectral triple, Connes' formula recovers geodesic distance [T]; gluing different strata requires additional hypotheses.
+Terminality supplies neither a conical metric $ds^2 = dr^2 + r^2 ds_K^2$ nor a radial attractor. The terminal object of a sheaf topos is not a numerical state or equilibrium of a flow on $D_7$.
 
-If a conical Riemannian model $ds^2=dr^2+r^2ds_K^2$ with apex $x$ is **specified**, then $d(x,(r,k))=r$. This is exact geometry of the chosen cone, not a consequence of terminality. Decrease of $r$ along trajectories requires a separately specified dynamical law; the terminal topos object is not a numerical attractor.
+## Operational network geometry and state differences
 
-## Space as a structure of differences
-
-:::note Space is not a stage, but a relation
-We are accustomed to thinking of space as a "stage" on which physics plays out: first there is an empty room (space), then objects are placed in it (matter). In UHM space is not a stage, but a *structure of differences between states*. The distance between two points is a measure of how hard it is to deform one state into another. If two states transition into each other easily — they are "close"; if this requires a major restructuring — they are "far." Space arises as a by-product of differences, not as their container. This resolves the fundamental problem of quantum gravity: if space is not a given but a consequence, its quantization does not lead to contradictions.
-:::
-
-Space is **not an empty container**, but a structure of differences in the category $\mathcal{C}$.
+Rather than deriving spacetime from a contractible nerve, UHM separates two honest geometric layers:
+1. **State-space geometry:** chordal Bures distance $d_B$ and Frobenius norm $\|\Gamma_A - \Gamma_B\|_F$ on $D_7$ compare quantum states, not spatial positions.
+2. **Operational network geometry:** on cyclic and product pulse networks with calibrated probes, [when probes measure the same limiting distance](/docs/geometry/common-limit) proves exact Cauchy, error-reserve, and coverage criteria yielding a common separated limiting metric [T]. Establishing physical 3+1 Lorentzian signature, smoothness, and gravitational dynamics remains a separate physical bridge.
 
 ### Distance {#расстояние}
 
-In the updated theory, distance is defined via the [Connes stratified metric](#метрика-конна):
-
-$$
-d(A, B) := d_{strat}(A, B)
-$$
-
-On a specified spectral triple the distance depends on the algebra and Dirac operator. The Frobenius distance $\|\Gamma_A-\Gamma_B\|_F$ instead compares two assigned state matrices. Turning either construction into a physical ranging procedure requires specified locations and probes. [Operational distance](/docs/geometry/response-metric)
+State distances (Bures, trace, Frobenius) compare preparations in $D_7$; operational spatial distances require explicit probes, clocks, and transfer protocols ([response metric](/docs/geometry/response-metric), [common limit](/docs/geometry/common-limit)).
 
 ### Topology {#топология}
 
-The topology of the nerve $X$ is determined by the specified small category. The topology of $D_N$ belongs to the density-matrix state space; its Bures and Euclidean topologies coincide. Physical topology does not follow by identifying these different objects.
-
-A terminal object of $\mathcal C$ itself makes its nerve contractible, but gives no local cone structure, monotone stratification or dynamical limit.
+The topology of $|N(\mathcal C)|$ depends on the chosen category; the topology of $D_7$ is that of the compact convex $48$-ball $B^{48}$ (Bures and Euclidean topologies coincide). Identifying either with physical spacetime topology requires an explicit physical bridge.
 
 ## Emergent time
 
-:::note Time is not a river, but a correlation
-In everyday experience time seems like a "river" carrying us from past to future. In UHM time is something entirely different. It **emerges** from correlations between subsystems. Imagine a clock and an observer as a single quantum system. "Time = 3 o'clock" means not "the river has reached mark 3," but "the state of the clock correlates with a certain state of the observer." The universe as a whole is *timeless* (satisfies the constraint $[\hat{C}, \Gamma_{\text{total}}] = 0$); time arises *within* it — as the relation of "the clock" (the O measurement) to "the rest" (6 dimensions). This is the solution to the "problem of time" in quantum gravity proposed by Page and Wootters in 1983.
-:::
+### Conditional scope of emergent time
 
-:::warning Theorem (Emergence of time) [T]
-Time is **derived** from the structure of the category $\mathcal{C}$ in four equivalent ways:
+:::info Conditional status (replacing the former "four equivalent derivations" claim)
+Time is **not** derived in four equivalent ways from $\mathcal C$ alone:
+| Construction | Mathematical status | Scope / Missing input |
+|---|---|---|
+| **Page–Wootters** | [C] conditional | Requires an extended clock tensor factor $\mathcal H_O \otimes \mathcal H_S$ and constraint $\operatorname{supp}\rho\subseteq\ker\hat C$ |
+| **Bures distance** | [T] state metric | Measures distinguishability on $D_7$; does not by itself define an external clock parameter |
+| **$\infty$-groupoid paths** | [T] homotopy model | All paths in $\operatorname{Sing}(Y)$ are invertible; does not derive irreversible arrow of time |
+| **Collapse of strata to $T$** | **[✗] withdrawn** | Terminality does not induce a flow or $\dim(X_n)\ge\dim(X_{n+1})$ |
 
-| Level | Time as... | Formula | Status |
-|---------|--------------|---------|--------|
-| **Page–Wootters** | Correlation with [O](../structure/dimension-o) | $\Gamma(\tau) = \text{Tr}_O[\cdot]$ | [T] Formalized |
-| **Information geometry** | Distance in the Bures metric | $d_B(\Gamma_1, \Gamma_2)$ | [T] Formalized |
-| **Categorical** | 1-morphism in ∞-groupoid | $\gamma: \Gamma_1 \to \Gamma_2$ | [T] Formalized |
-| **Stratification** | Collapse of strata to T along the depth $n$ | $\dim(X_n) \geq \dim(X_{n+1})$ | [T] Formalized |
-
-[Full proof →](../../proofs/dynamics/emergent-time)
+See [emergent time](/docs/proofs/dynamics/emergent-time) for the audited analysis.
 :::
 
 ### Page–Wootters mechanism {#механизм-page-wootters}
 
-Time arises as the parameter of **conditional states** with respect to the O measurement:
+Given an extended clock-system tensor product $\mathcal H_O \otimes \mathcal H_S$, a clock readout $\{|\tau\rangle_O\}$, and a global state $\Gamma_{\mathrm{total}}$ satisfying the constraint $[\hat C, \Gamma_{\mathrm{total}}] = 0$ (more precisely $\operatorname{supp}\Gamma_{\mathrm{total}}\subseteq\ker\hat C$), conditional states are defined wherever $p(\tau) = \mathrm{Tr}[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}_S)\Gamma_{\mathrm{total}}] > 0$:
 
 $$
-\Gamma(\tau) := \frac{\text{Tr}_O\left[ (|\tau\rangle\langle \tau|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{total} \right]}{p(\tau)}
+\Gamma(\tau) := \frac{\mathrm{Tr}_O\left[ (|\tau\rangle\langle \tau|_O \otimes \mathbb{1}_S) \cdot \Gamma_{\mathrm{total}} \right]}{p(\tau)}.
 $$
 
-where:
-- $\Gamma_{total}$ satisfies the constraint $[\hat{C}, \Gamma_{total}] = 0$
-- $|\tau\rangle_O$ — basis of eigenstates of the internal clock O
-- p(τ) — normalization
-
-:::info The continuity of τ is an output, not an assumption (T-286)
-Continuous clock parameters require a continuous model or an explicit scaling limit of readings. A finite cyclic clock has a finite set of distinguishable readings. [Depth-clock limit](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-время)
+:::info Finite clock vs continuous parameter
+Continuous clock parameters require a continuous clock Hilbert space or an explicit scaling limit of readings. A finite cyclic register $\mathbb Z_7$ has only $7$ distinguishable ticks and does not automatically generate $\mathbb R$.
 :::
 
-### Information-geometric time
+### Information-geometric speed
 
-Distance between configurations in the Bures metric:
-
-$$
-d_B(\Gamma_1, \Gamma_2) = \arccos\left( \text{Tr}\sqrt{\sqrt{\Gamma_1} \Gamma_2 \sqrt{\Gamma_1}} \right)
-$$
-
-:::note Notation
-Here $d_B$ is the Bures angle (not the chordal distance $\sqrt{2(1-\sqrt{F})}$ from [evolution.md](../dynamics/evolution#каноническое-delta-f)).
-:::
-
-**Flow of time** — the rate of change of Γ:
-
-$$
-\frac{d\tau_{int}}{d\sigma} = \left\| \frac{d\Gamma}{d\sigma} \right\|_B
-$$
-
-Time "flows faster" when Γ changes more strongly.
+The Bures angle $d_B(\Gamma_1, \Gamma_2) = \arccos(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}})$ (distinct from the chordal distance $\sqrt{2(1-\sqrt{F})}$) defines a state-space path length along a **given** differentiable trajectory $\Gamma(\sigma)$ in the full-rank interior $\mathcal D_7$: $ds_B = \|d\Gamma\|_B$. This measures speed of state change along an already-parametrized trajectory; it does not derive the evolution equation.
 
 ### Relation to evolution
 
-Evolution is described with internal time τ:
-
-$$
-\frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma(\tau)] + \mathcal{D}[\Gamma(\tau)] + \mathcal{R}[\Gamma(\tau), E]
-$$
-
-This equation is a **consequence** of the structure of $\Gamma_{total}$, not a postulate.
+The open-system evolution equation $\dot\Gamma = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal D[\Gamma] + \mathcal R[\Gamma, E]$ is a **postulated effective dynamical model** [D]/[P] (see [evolution](../dynamics/evolution)), not an automatic consequence of $\Gamma_{\mathrm{total}}$ without specifying the Hamiltonian, environment coupling, and feedback readout.
 
 ## Arrow of time {#стрела-времени}
 
-Terminality specifies mapping spaces. Distinct qubit channels can fix the same pure state: examples include the identity and the channel that prepares that state for every input. They give different dynamics.
+Terminality specifies mapping spaces, not dynamics. Distinct qubit channels can fix the same state (e.g., identity vs. constant reset) and generate different dynamics.
 
 Let a flow $\Phi_t$ on $D_N$ be **specified**. Convergence $\Phi_t(\Gamma)\to\Gamma_*$ requires a proof for the selected vector field. If every trajectory in an invariant basin converges to a fixed point, its limit defines an idempotent retraction $r$ on that basin [T]; it is distinct from logical support reflection. For nonlinear rates or self-models the flow is not a single linear CPTP semigroup.
 
-The inequality $\dim(X_n)\ge\dim(X_{n+1})$ can be a condition on a separately specified sequence of geometric objects [D]/[H]; existence of $T$ does not imply it. The depth count $n$ and cyclic clock index $\tau\in\mathbb Z_7$ retain different meanings, but neither alone proves physical irreversibility.
-
 ### Thermodynamic direction
 
-The arrow of time is defined by the direction of increase of the [von Neumann entropy](../dynamics/coherence-matrix#энтропия-фон-неймана):
-
-$$
-\frac{dS_{vN}}{d\tau} \geq 0
-$$
-
-:::note Distinction of concepts
-The geometric sequence of strata and the dynamical flow must each be specified.
-
-**Global increase of differentiation** ($dD_{\text{diff}}/d\tau > 0$) — this is a [separate cosmological hypothesis](/docs/physics/cosmology-phys/origin#направление-эволюции), having the status of a **non-falsifiable philosophical position**.
-
-These concepts are related (both concern direction), but have different epistemological status.
-:::
-
-A reset channel $\rho\mapsto|0\rangle\langle0|$ lowers the entropy of a mixed state. Entropy is nondecreasing for unital CPTP maps in fixed finite dimension.
-
-:::note Clarification
-In the presence of [regeneration](../dynamics/evolution#3-регенеративный-член) $\mathcal{R}$ a local decrease in entropy is possible due to the import of free energy:
-
-$$
-\Delta S_{vN}^{local} < 0 \Rightarrow \Delta F_{env \to sys} > 0
-$$
-
-The total entropy (system + source) always grows.
-:::
+A non-unital reset channel $\rho\mapsto|0\rangle\langle0|$ lowers von Neumann entropy $S_{vN}$. Entropy is guaranteed nondecreasing ($dS_{vN}/d\tau \ge 0$) only for **unital** CPTP dynamics in fixed finite dimension; for a general primitive GKSL semigroup with stationary state $\rho_\infty$, the monotone is the relative entropy $D_{KL}(\Gamma\|\rho_\infty)$ (Spohn 1978) [T]. Local entropy reduction under regeneration $\mathcal R$ requires an external free-energy / environment source.
 
 ### Second law of thermodynamics {#второй-закон}
 
-:::warning Theorem (Second law from the unital-channel order) [T]
-The second law of thermodynamics is a **consequence** of the **majorization order** induced by the unital-channel refinement of morphisms (see [Mathematical foundations §terminal object](/docs/core/foundations/mathematical-foundations)):
+:::tip Theorem (Second law in the unital-channel preorder) [T]
+In the reachability preorder induced by unital CPTP channels on $\mathcal D(\mathbb C^7)$ (Alberti–Uhlmann majorization):
 
 $$
 \forall \Gamma:\quad \Gamma \xrightarrow{\ \text{unital CPTP}\ } I/7 \quad\text{iff}\quad I/7 \prec \Gamma \ (\text{always}),\qquad I/7 \not\to \sigma\ \text{for }\sigma\neq I/7.
 $$
 
-In the reachability preorder generated by unital channels, $I/7$ is the least state: every state can reach it, and a unital channel fixes it. There is no unital return path to another state. This is a theorem about allowed transitions, not a proof that every unital trajectory converges to $I/7$: the identity channel and unitary dynamics are counterexamples. It is not terminality of the channel category, since multiple channels fix $I/7$.
-
-A constant channel $X\mapsto\mathrm{Tr}(X)\rho'$ reaches any fixed target state $\rho'$. Entropy monotonicity here requires unital channels between registers of the same dimension.
+Thus $I/7$ is the least element of the unital reachability preorder. This characterizes allowed unital transitions, not convergence of every trajectory (identity and unitary flows do not approach $I/7$) and not categorical terminality (multiple channels fix $I/7$). Non-unital channels (such as a reset to $\rho'$) are not constrained by this preorder.
 :::
 
-**Geometric interpretation:**
-
-| Aspect | Formulation | Consequence |
-|--------|--------------|-----------|
-| Sink (unital order) | $\forall \Gamma:\ I/7 \prec \Gamma$; $I/7\not\to\sigma\ (\sigma\neq I/7)$ | Reachability only; convergence needs a dynamical theorem |
-| Chosen geometric sequence | $\dim(X_n)\ge\dim(X_{n+1})$ if imposed | An additional condition, not a consequence of terminality |
-| Entropy (unital channels) | $dS_{vN}/d\tau \geq 0$ for unital generators only | Entropy does not decrease along unital dynamics; for a general quantum dynamical semigroup the monotone is $D_{KL}(\Gamma\|\rho_\infty)$ (Spohn 1978) |
-
-**Status:** [T] Formalized for the unital morphism class. The second law is **derived** from categorical structure for unital dynamics; the full UHM generator is not unital (see "Thermodynamic direction").
-
-### Relation to the Heaviside function
-
-The gate $g_V(P)$ is specified as part of the numerical law [D]. Landauer thermodynamics requires a separate environment and information-operation model; logical support, terminality and CPTP alone do not fix the gate's form. State preservation of the nonlinear law and finite split step is established under explicit assumptions in [evolution](/docs/core/dynamics/evolution#сохранение-положительности).
-
-## Relativity
+## Relativity and operational geometry
 
 ### Internal clocks
 
-Different Holons can have different "internal clocks" — different rates of evolution:
+Different holons can carry different calibrated clock rates $\tau_{\mathbb H_1} \neq \tau_{\mathbb H_2}$ depending on their local Hamiltonians and couplings.
 
-$$
-\tau_{\mathbb{H}_1} \neq \tau_{\mathbb{H}_2}
-$$
+### Relativistic effects — withdrawn Riemannian-on-Lorentzian derivation [✗] {#релятивистские-эффекты}
 
-where $\tau_{\mathbb{H}}$ is the proper time of the [Holon](../structure/holon) $\mathbb{H}$.
-
-### Relativistic effects [C] {#релятивистские-эффекты}
-
-:::tip Theorem (Relativistic effects from spectral triple) [C at T-53]
-Gravitational and kinematic time dilation are consequences of the spectral triple T-53 [C] (its Lorentzian sign holds at reflection positivity, its spatial slice at T-119) and the full spectral action T-65 [T]. Connes' formula defines the metric $g_{\mu\nu}$, and the spectral action reproduces the Einstein–Hilbert action, which includes all relativistic effects.
-
-**Proof.**
-
-**Step 1 (Metric from Connes formula).** From T-53 [C] ([spectral triple](#теорема-спектральная-тройка)):
-
-$$
-d(p, q) = \sup\{|f(p) - f(q)| : \|[D, f]\| \leq 1\}
-$$
-
-The block-diagonal structure of $D$ with $g_{00} = 1/|D_O|^2 > 0$, $g_{aa} = -1/|D_{3,a}|^2 < 0$ defines the Lorentzian metric $g_{\mu\nu}$.
-
-**Step 2 (Einstein–Hilbert action).** From T-65 [T] ([full spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)):
-
-$$
-S = \mathrm{Tr}(f(D/\Lambda)) = \int (a_0\Lambda^4 + a_2\Lambda^2 R + a_4 C_{\mu\nu\rho\sigma}^2 + \ldots)\sqrt{g}\,d^4x
-$$
-
-The coefficient $a_2\Lambda^2 R$ gives the kinetic term of gravity, i.e., the Einstein–Hilbert action.
-
-**Step 3 (Time dilation).** Formula for the rate of internal clocks:
-
-$$
-\frac{d\tau}{d\sigma} = \omega_0 \cdot \sqrt{\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2}
-$$
-
-$\mathrm{Gap}(O,i)$ includes gravitational corrections via the metric $g_{\mu\nu}$: in a region of strong gravitational field (small $g_{00}$) the eigenvalues of $D_O$ are modified, which slows $d\tau/d\sigma$. Similarly, kinematic time dilation follows from the Lorentz transformation of spectral data. $\blacksquare$
+:::warning Withdrawn derivation [✗]
+The former "Theorem (Relativistic effects from spectral triple)" applied **Euclidean/Riemannian** formulas — Connes' supremum distance $d(p,q)=\sup\{|f(p)-f(q)|:\|[D,f]\|\le 1\}$ and the Seeley–DeWitt heat-kernel expansion $\mathrm{Tr}(f(D/\Lambda))$ — directly to a postulated indefinite Lorentzian Dirac operator with $g_{00}=1/|D_O|^2$, $g_{aa}=-1/|D_{3,a}|^2$, and invoked the unverified formula $d\tau/d\sigma = \omega_0\sqrt{\sum |\gamma_{Oi}|^2 \mathrm{Gap}(O,i)^2}$. Those steps are **mathematically invalid and withdrawn [✗]**. Gravitational and kinematic time dilation remain open physical bridges requiring a genuine Lorentzian/causal field dynamics rather than Riemannian spectral-action heuristics.
 :::
 
 ## Emergence of geometry {#эмерджентность-геометрии}
 
 :::info Section status
-- **Metric:** [T] Formalized via $d_{strat}$ (see [above](#метрика-конна))
-- **Dimensionality:** the nerve has the dimension of the specified category; $N=7$ does not determine it
-- **Gravity.** The manifold $\mathbb R\times S^3$ is a product of the chosen charge and clock constructions. Its physical interpretation is [I]. [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)
+- **Nerve metric $d_{\mathrm{strat}}$ on $X=|N(\mathcal C)|$:** **[✗] withdrawn** as an endogenous derivation.
+- **Operational network geometry:** **[T]** verified limiting distances from calibrated first-arrival probes on discrete networks ([common limit](/docs/geometry/common-limit)).
+- **3+1 Lorentzian structure:** **[T]** representation-theoretic obstructions and spin-factor construction ([Theorems 48c–48e](#теорема-48c)); physical identification conditional on locality premise **(L)** [H].
 :::
-
-### Derived metric (not a hypothesis)
-
-In UHM the metric is **derived**, not postulated:
-
-$$
-d_{strat}(\omega_1, \omega_2) = \inf_{\gamma} \int_\gamma ds_\alpha
-$$
-
-**Key properties:**
-- Metric defined on $X = |N(\mathcal{C})|$
-- Accounts for stratification (different ds on different strata)
-- Cone-like near a specified point only with an explicit conical local model
 
 ### Dimensionality of space {#размерность}
 
-The selected objects have different dimensions:
+The selected mathematical objects have distinct dimensions:
 
 $$
 \dim_{\mathbb C}\mathcal H=7,\qquad \dim_{\mathbb R}D_7=48,\qquad
 \dim_{\mathbb R}\mathbb{CP}^6=12,\qquad \dim\Delta^6=6.
 $$
 
-Only the diagonal state subspace is $\Delta^6$. The nerve of an arbitrary process category need not be that simplex.
+Only the diagonal state simplex has dimension $6$; none of these numbers determines the dimension of $|N(\mathcal C)|$ or physical spacetime.
 
 ### Relation to GR (program) {#связь-с-ото}
 
-A spectral action on a specified smooth spin geometry contains an Einstein–Hilbert term in its heat-kernel expansion. T-119 determines the spectrum of a particular charge algebra and T-120 supplies a product topology. Choosing a physical Lorentzian metric and matter couplings requires additional data. [Metric dynamics](/docs/physics/gravity/einstein-equations)
-
-See [Correspondence with physics: GR](../../proofs/physics/physics-correspondence#5-связь-с-общей-теорией-относительности) for the detailed program.
+A heat-kernel spectral action on a **separately supplied** smooth Riemannian spin geometry yields an Einstein–Hilbert term in Euclidean signature. Deriving physical 3+1 Lorentzian spacetime, Einstein's field equations, and matter couplings from UHM remains an open research programme **[Pr/H]**; see [Einstein equations](/docs/physics/gravity/einstein-equations) and [physics correspondence](../../proofs/physics/physics-correspondence#5-связь-с-общей-теорией-относительности).
 
 ## Emergence diagram
 
 ```mermaid
 graph TD
- C["C — specified category"]
- X["X = nerve realization"]
- GEO["Chosen stratification and spectral data"]
- STATES["D_N — density matrices"]
- FLOW["Chosen dynamics Φ_t"]
- CONV["Conditional convergence to Γ_*"]
+ NET["Calibrated pulse networks"]
+ LIM["Common limiting metric #91;T#93;"]
+ STATES["D_7 — density matrices"]
+ FLOW["Effective dynamics Φ_t"]
  SPIN["Spin factor h₂#40;C_O#41; #91;T#93;"]
- SPACE["Physical spacetime with bridge #40;L/P#41;"]
- C --> X
- X --> GEO
+ SPACE["Physical 3+1 spacetime #40;open bridge L/P#41;"]
+ NET --> LIM
  STATES --> FLOW
- FLOW --> CONV
  SPIN --> SPACE
 ```
 
-The diagram separates types; its arrows do not identify a terminal object, state and attractor.
+The diagram separates mathematical layers; it does not equate a sheaf topos, a state space, a network limit, and physical spacetime.
 
-## Non-locality
+## Non-locality and composite entanglement
 
-### Quantum correlations
+### Single-holon coherences are NOT Bell non-locality
 
-[Coherences](../dynamics/coherence-matrix#недиагональные-элементы-когерентности) $\gamma_{ij}$ between distant parts of $\Gamma$ mean **non-local connections**:
+Off-diagonal coherences $\gamma_{ij}$ ($i \neq j$) inside a **single** $7\times 7$ holon density matrix $\Gamma \in \mathcal D(\mathbb C^7)$ represent **single-system superpositions** between the seven basis axes of one $\mathbb C^7$ register — they do **not** represent spatial non-locality, bipartite entanglement, or Bell-inequality violation! (The former single-holon claims $\gamma_{AB}\neq 0 \Rightarrow$ non-local connections and Bell violations from $\Gamma \in D_7$ alone are **withdrawn [✗]**.)
 
-$$
-\gamma_{AB} \neq 0 \Rightarrow A \text{ and } B \text{ are quantum-correlated}
-$$
+### Entanglement in composite holons
 
-### Entanglement
-
-Entanglement is the non-separability of the state of subsystems:
+Genuine entanglement and Bell-inequality violation require a **composite multipartite tensor-product system** $\mathcal H_A \otimes \mathcal H_B$ (for two holons, $\mathbb C^7 \otimes \mathbb C^7 \cong \mathbb C^{49}$, with spatially separated local measurement settings):
 
 $$
-\Gamma_{AB} \neq \Gamma_A \otimes \Gamma_B
+\Gamma_{AB} \in \mathcal D(\mathcal H_A \otimes \mathcal H_B), \qquad \Gamma_{AB} \notin \operatorname{conv}\{\rho_A \otimes \rho_B\},
 $$
 
-where $\Gamma_A = \mathrm{Tr}_B(\Gamma_{AB})$ is the [partial trace](/docs/consciousness/foundations/interiority-theory#редуцированная-матрица-опыта) over subsystem $B$.
-
-Violation of Bell inequalities is a consequence of non-zero coherences in the structure of $\Gamma$.
+with reduced states $\Gamma_A = \mathrm{Tr}_B(\Gamma_{AB})$ and $\Gamma_B = \mathrm{Tr}_A(\Gamma_{AB})$ ([composite systems](../dynamics/composite-systems)). Only non-separable composite states under local tomography can violate Bell inequalities (see also the verified 3-node bilocal witness in `website/research/operational-reconstruction/verify_foundational_bounds.py`).
 
 ## Relation to physics
 
-| Physical concept | Expression via $\mathcal{C}$ | Status |
-|--------------------|-------------------------------|--------|
-| **Base space** | $X = \lVert N(\mathcal{C})\rVert$ | [T] [Formalized](#базовое-пространство) |
-| **Time** | Parameter τ (Page–Wootters) | [T] [Formalized](../../proofs/dynamics/emergent-time) |
-| Arrow of time | Specified evolution, readout and monotonicity conditions | [C under these inputs] |
-| **Metric** | $d_{strat}$ (Connes on strata) | [T] [Formalized](#метрика-конна) |
-| **Dimensionality** | $D_7$: 48; $\mathbb{CP}^6$: 12; diagonal states: 6 | [T] for these objects, not nerve or physical-space dimension |
-| Energy | Eigenvalues of $H_{eff}$ | [T] Formalized |
-| Gravity | Spectral action on a supplied product geometry | [C under the metric and cutoff assumptions] |
-| Topological charges | IC-cohomology of strata | [T] [Formalized](../../proofs/categorical/categorical-formalism#производные-категории) |
+| Physical concept | Honest UHM status | Status |
+|---|---|---|
+| **Operational distance** | Limiting first-arrival distance on calibrated discrete networks | **[T]** ([common limit](/docs/geometry/common-limit)) |
+| **Base space $X = \|N(\mathcal{C})\|$** | Former stratified-manifold derivation | **[✗] withdrawn** |
+| **Time** | Conditional Page–Wootters on extended clock register + constraint | **[C]** ([emergent time](../../proofs/dynamics/emergent-time)) |
+| **Arrow of time** | Unital majorization preorder ($I/7$ least); full open flow requires dynamics | **[T]** (unital) / **[C]** (open) |
+| **State-space dimensions** | $D_7$: 48; $\mathbb{CP}^6$: 12; diagonal states: 6 | **[T]** (not physical spacetime dim) |
+| **Quantum mechanics limit** | Standard linear GKSL/QM recovered when nonlinear feedback vanishes ($\kappa \to 0$) | **[T]** (note: $R=1/(7P)\ge 1/7$ never tends to $0$!) |
+| **3+1 Lorentzian spin factor** | $\mathfrak h_2(\mathbb C_O)\cong\mathbb R^{1,3}$ commutes with $\mathrm{SU}(3)_C$ | **[T]** math; **[C at (L)]** spacetime ([48c–48e](#теорема-48c)) |
+| **Gravity / GR** | Open physical bridge (Riemannian spectral action does not apply to Lorentzian $D$) | **[Pr/H]** |
 
-## Relation to other approaches
-
-| Approach | Relation to UHM | Status |
-|--------|-------------|--------|
-| **Quantum mechanics** | Special case of UHM at $R \to 0$ | [Proven](../../proofs/physics/physics-correspondence#3-редукция-к-квантовой-механике) |
-| **Standard Model** | Gauge symmetries from $\text{Sym}(\Gamma)$ | [Program](../../proofs/physics/physics-correspondence#6-калибровочные-симметрии-и-стандартная-модель) |
-| **Loop quantum gravity** | Spin networks may correspond to coherence structures | Not investigated |
-| **String theory** | Possible connection via holographic principle | Not investigated |
-| **Hoffman Conscious Agents** | Spacetime as interface consistent with emergence | Conceptually compatible |
-| **Emergent gravity (Verlinde)** | Similar approach: gravity as entropic force | Requires investigation |
-| **Octonionic lineage** (Günaydın–Gürsey 1973; Manogue–Dray 1999; Boyle 2026) | Same split $1\oplus3\oplus\bar{3}$, read as colour; four-dimensional spacetime from the choice of one imaginary unit | Prior art — see [Precedents](#прецеденты-3-плюс-1) |
-
-## What is formalized vs Research program
+## What is formalized vs withdrawn or open
 
 | Statement | Status | Comment |
-|-------------|--------|-------------|
-| **Base space $X = \lVert N(\mathcal{C})\rVert$** | [T] Formalized | [Property 5](./axiom-omega#свойство-5) |
-| **Time as Page–Wootters parameter** | [T] Formalized | [Theorem proved](../../proofs/dynamics/emergent-time) |
-| **Arrow of time as collapse of strata** | [✗] universal derivation | Terminality specifies no dynamics; a flow and convergence assumptions are required |
-| **Metric $d_{strat}$** | [T] Formalized | [Connes stratified metric](#метрика-конна) |
-| **Dimensionality 6D** | [✗] as an N=7 consequence for the nerve | Dimension 6 holds for the chosen diagonal simplex |
-| **Local-global dichotomy** | [C] with a local conical model | Contractibility gives no spherical link or physical bridge |
-| **Lorentzian signature** | signature $(1,3)$ [C] (T-53: time count [T], spatial slice $S^3$ from T-119 [T], sign at reflection positivity) | [UHM spectral triple](#теорема-спектральная-тройка) |
-| **Real axis triplets** | No invariant split of the real six-dimensional complement | [Stabilizer representation](#секторная-декомпозиция) |
-| **3+1 with rotations that commute with colour** | [T] as mathematics; [C at (L)] as spacetime (Theorem 48e) | [Theorem 48c](#теорема-48c): the colour-singlet part of $\mathfrak h_2(\mathbb O)$ is $\mathfrak h_2(\mathbb C_O)\cong\mathbb R^{1,3}$ |
-| **Topology of the product** | [T] for the depth register and specified charge algebra. Its physical reading is [I]. | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
-| **Einstein–Hilbert term** | [T] on a supplied Riemannian spin geometry with cutoff | [Spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) |
+|---|---|---|
+| **Operational network limiting distance** | **[T]** Verified | [Common limit](/docs/geometry/common-limit) (Lean-checked) |
+| **No-go & 3+1 spin factor (Theorems 48c–48e)** | **[T]** math / **[C at (L)]** | Colour-commuting $\mathfrak h_2(\mathbb C_O)\cong\mathbb R^{1,3}$; no unital spin factor in $\mathbb C^{7^M}$ |
+| **Real axis triplets under $\mathrm{SU}(3)_C$** | **[T]** No-go | No invariant 3D real split of $\mathbb R^6 = e_O^\perp$ |
+| **Base space $X=\|N(\mathcal C)\|$ as stratified manifold & $d_{\mathrm{strat}}$** | **[✗] Withdrawn** | Nerve of a category with terminal object is contractible |
+| **Arrow of time as collapse of strata** | **[✗] Withdrawn** | Terminality specifies no dynamics |
+| **Krein derivation of $(1,3)$ signature & Lorentzian Connes/FRW** | **[✗] Withdrawn** | Circular input of $(\gamma^0)^2=+1,(\gamma^a)^2=-1$; Connes/Seeley–DeWitt are Euclidean |
+| **Single-holon Bell non-locality & QM as $R\to 0$** | **[✗] Withdrawn** | Bell requires composite $\mathcal H_A\otimes\mathcal H_B$; $R\ge 1/7$ cannot tend to $0$ |
+| **Octonionic precedents** (Günaydın–Gürsey 1973; Manogue–Dray 1999; Boyle 2026) | Prior art | See [Precedents](#прецеденты-3-плюс-1) |
 
 
 ## Sectoral decomposition of dimension 7 = 1 + 3 + 3̄ {#секторная-декомпозиция}
@@ -663,160 +451,50 @@ The real centre of $\mathbb C\oplus M_3(\mathbb C)\oplus M_3(\mathbb C)$ is $\ma
 
 On $H_{\rm int}=\mathbb C^7$ a grading may have positive and negative eigenspaces of dimensions four and three. A real structure of KO-dimension six would exchange these eigenspaces bijectively. Their dimensions rule this out. The four-dimensional heat-kernel curvature term uses a supplied external Dirac geometry. [Spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)
 
-#### Theorem (UHM Krein–Lorentzian spectral triple) [C] {#теорема-крейнова-тройка}
+#### Krein–Lorentzian spectral triple — circularity of signature derivation [✗] {#теорема-крейнова-тройка}
 
-:::tip Theorem (Krein–Lorentzian spectral triple) [C]
-Consider a specified Lorentzian spin geometry with a fundamental symmetry $\beta$, a clock Hilbert space and an internal operator. The following expressions describe that choice [C under these inputs].
+:::warning Withdrawn signature derivation [✗]
+Constructing a Krein space $(\mathcal H, \langle\cdot,\beta\cdot\rangle)$ using a Lorentzian Clifford generator $\beta = \gamma^0 \otimes 1$ with $(\gamma^0)^2 = +1$ and $(\gamma^a)^2 = -1$ is standard Lorentzian spinor algebra **once a $(1,3)$ Lorentzian metric is already given**, but calling $\operatorname{sig}(g) = (\#\{\mu:(\gamma^\mu)^2=+1\}, \#\{\mu:(\gamma^\mu)^2=-1\}) = (1,3)$ a derivation of Lorentzian signature is **circular [✗]** (the signature $(1,3)$ was assumed in the input Clifford relations). Likewise, a finite $\mathbb Z_7$ register and a bounded-below Hamiltonian do not automatically furnish Osterwalder–Schrader reflection-positive correlation functions or an unbounded continuous time line.
 :::
 
-**Construction.**
+#### Metric components, FRW, and $\sin^2\theta_W$ — withdrawn heuristics [✗] {#теорема-метрика-компоненты}
 
-**(K1) Auxiliary Hilbert space and Wick rotation.** Start from the *Euclidean* Hilbert space $\mathcal{H} = L^2(M,S)\otimes\mathbb{C}^7$ of the product triple ([Step 1](#теорема-спектральная-тройка)), where $L^2(M,S)$ carries the spinor bundle over the base $M=\mathbb{R}_{\text{PW}}\times\Sigma^3$. The Page–Wootters factor $\mathbb{R}_{\text{PW}}$ is the emergent time; $\Sigma^3\cong S^3$ is the emergent space (T-119, T-120b [C]).
+:::warning Withdrawn claims [✗]
+The former section claiming to derive:
+1. closed-FRW metric components $g_{00} = 1/|D_O|^2$, $g_{aa} = -1/(\omega_0\,\mathrm{Gap}_a)^2$ from $D_{3,a}$;
+2. Newton's constant $G_N = 3\pi/(7f_2\Lambda^2)$ via a **Riemannian** Seeley–DeWitt heat-kernel expansion $\mathrm{Tr}\,f(\mathcal D/\Lambda)$ applied to a **Lorentzian** operator $\mathcal D$;
+3. the weak mixing angle $\sin^2\theta_W = 3/8$ from Connes' trace relation; and
+4. a derivation of $V_{\mathrm{Gap}}$ from axioms via $\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \mathcal G_{\mathrm{total}}$
 
-**(K2) Fundamental symmetry $\beta$.** Define the **fundamental symmetry** (Krein metric operator)
-
-$$
-\beta = \gamma^0\otimes 1_{\mathbb C^7}, \qquad \beta^\dagger=\beta,\quad \beta^2 = 1,
-$$
-
-Given the supplied Lorentzian Hermitian-form construction with one timelike axis, choose its Clifford generator $\gamma^0$. The finite $\mathbb Z_7$ register and its constraint are additional data [T-87 [C]](/docs/core/foundations/axiom-omega#pw-constraint): they do not determine the metric signature or an unbounded temporal line. The spatial metric and any continuous reading limit are separate specified structures. This paragraph constructs the Krein operator for a chosen Lorentzian metric; it does not derive that metric from clock cardinality.
-
-**(K3) Krein space.** The indefinite inner product
-
-$$
-\langle\psi,\phi\rangle_\beta := \langle\psi,\beta\,\phi\rangle_{\mathcal H} = \int_M \bar\psi\,\phi
-$$
-
-(the Dirac-adjoint pairing $\bar\psi=\psi^\dagger\gamma^0$) is non-degenerate and indefinite; $\mathcal{K}=(\mathcal{H},\langle\cdot,\cdot\rangle_\beta)$ is a **Krein space** with fundamental decomposition $\mathcal{K}=\mathcal{K}_+\oplus\mathcal{K}_-$ into the $\beta=\pm1$ eigenspaces.
-
-**(K4) Krein-self-adjoint Dirac operator.** The total Dirac operator
-
-$$
-\mathcal{D} = \mathcal{D}_M\otimes 1 + \gamma_M\otimes D_{\text{int}}, \qquad \mathcal{D}_M = i\gamma^\mu\partial_\mu\ (\text{Lorentzian}),
-$$
-
-is **Krein-self-adjoint**, $\mathcal{D}^{\ddagger}=\mathcal{D}$, where $\ddagger$ is the $\beta$-adjoint ($\mathcal{D}^{\ddagger}:=\beta\,\mathcal{D}^\dagger\beta$). Indeed, since $\partial_\mu^\dagger=-\partial_\mu$ and $i^\dagger=-i$ (two sign flips that cancel), $(i\gamma^\mu\partial_\mu)^\dagger = i(\gamma^\mu)^\dagger\partial_\mu$, so
-
-$$
-\beta\,\mathcal{D}^\dagger\beta = \gamma^0\big(i(\gamma^\mu)^\dagger\partial_\mu\big)\gamma^0 = i\,\big[\gamma^0(\gamma^\mu)^\dagger\gamma^0\big]\,\partial_\mu = i\gamma^\mu\partial_\mu = \mathcal{D},
-$$
-
-using the Lorentzian Clifford identity $\gamma^0(\gamma^\mu)^\dagger\gamma^0=\gamma^\mu$ (verified: $\gamma^0$ Hermitian with $(\gamma^0)^2=+1$, $\gamma^a$ anti-Hermitian with $(\gamma^a)^2=-1$). (On the Euclidean Hilbert space $\mathcal{D}$ is *not* self-adjoint; it is self-adjoint only in the Krein/indefinite sense — the correct notion for Lorentzian geometry.)
-
-**(K5) Signature theorem.** The metric signature equals the $\beta$-signature restricted to the tangent (Clifford) structure:
-
-$$
-\operatorname{sig}(g) = \big(\#\{\mu:(\gamma^\mu)^2=+1\},\ \#\{\mu:(\gamma^\mu)^2=-1\}\big) = (\underbrace{1}_{\dim\mathcal H_{\text{time}}},\ \underbrace{3}_{\dim\Sigma^3}) = (1,3).
-$$
-
-The clock contributes one parameter and the specified charge spectrum contributes three independent coordinates. Their counts do not fix the relative sign of a spacetime metric.
-
-**(K6) Reflection positivity / unitarity.** The time-reflection $\Theta:\ t\mapsto -t$ lifts to $\Theta=\beta\,\mathcal{U}_{\text{PW}}$. Osterwalder–Schrader positivity $\langle\Theta\psi,\psi\rangle_\beta\geq 0$ on the positive-time subspace is **equivalent** to the spectrum condition that the PW generator $H_S$ be bounded below. Under this (the minimal stability requirement), the quotient of $\mathcal{K}$ by the $\beta$-null states is a genuine (positive-norm) Hilbert space carrying a **unitary** representation of the Lorentz group — i.e. the Krein triple is the intrinsic Lorentzian object, and no separate Euclidean→Lorentzian continuation is needed.
-
-
-#### Theorem (Metric components from the spectral action — quantitative match) {#теорема-метрика-компоненты}
-
-:::tip Theorem (Emergent metric components vs observation)
-The spectral action fixes the emergent metric **components** — not just the signature — from the Dirac spectrum. The result is a **Friedmann–Lemaître–Robertson–Walker** metric on $\mathbb{R}_{\text{PW}}\times S^3$ that is **locally Minkowski [C]** (local Lorentz invariance at T-120b and reflection positivity), with Newton's constant set by $\Lambda=M_{\text{Pl}}$. All checkable geometric predictions match observation; the **single unresolved quantity is the cosmological constant** (the $\sim10^{-123}$ problem, honestly open).
-:::
-
-**(M1) Metric components from the Dirac spectrum.** The emergent metric weights each Clifford direction by the corresponding Dirac eigenvalue (Gap-scale), with the Krein sign of §Krein triple:
-
-$$
-g_{00} = \frac{+1}{|D_O|^2} = \frac{1}{\omega_0^2}, \qquad g_{aa} = \frac{-1}{|D_{3,a}|^2} = \frac{-1}{(\omega_0\,\mathrm{Gap}_a)^2}\ (a=1,2,3),
-$$
-
-where $|D_O|=\omega_0$ (the fundamental PW frequency) and $|D_{3,a}|=\omega_0\,\mathrm{Gap}_a$ are the spatial-sector eigenvalues. The overall factor $\omega_0^{-2}$ fixes the **unit of proper time** ($\omega_0\equiv1$ in natural units); it is not observable, only the ratios are.
-
-**(M2) Local form.** Assume equal spatial scales $\mathrm{Gap}_a=\mathrm{Gap}_s>0$ and the stated coordinate normalization. The proposed tangent metric becomes
-
-$$
-g_{\mu\nu} = \frac{1}{\omega_0^2}\,\mathrm{diag}(1,-1,-1,-1) = \frac{1}{\omega_0^2}\,\eta_{\mu\nu},
-$$
-
-**exactly Minkowski** at every point. Two distinct statements combine here, and it is worth keeping them separate:
-
-- **Minkowski tangent space** (the equivalence-principle statement) follows already from the **signature $(1,3)$** of the Krein construction — it holds at every point of *any* smooth Lorentzian metric, curved or not.
-- Equality of the three spatial scales requires an independent spatial isotropy premise in this model.
-
-Together they give **local Lorentz invariance [C]**. The rotational-isotropy part is precisely what the strongest laboratory tests probe: spatial isotropy is verified to $\sim10^{-18}$ (Hughes–Drever, optical-cavity Michelson–Morley), and any anisotropy would require breaking the $S^3$ symmetry. (Boost invariance is a separate sector, constrained independently and not derived here beyond the signature.)
-
-**(M3) FRW form and spatial curvature.** The slow spatial variation of $\mathrm{Gap}_s$ over $S^3$ gives **constant positive curvature** (maximal symmetry ⟹ constant $R$), so the global metric is the **closed FRW** line element
-
-$$
-ds^2 = dt^2 - a(t)^2\,d\Omega_{S^3}^2, \qquad a(t)=\frac{1}{\mathrm{Gap}_s(t)},
-$$
-
-with the scale factor $a(t)$ driven by the vacuum Gap evolution. This is exactly the observed cosmological form; the spatial curvature is $\Omega_k\lesssim0$ (closed $S^3$), consistent with Planck 2018 $\Omega_k=0.001\pm0.002$.
-
-**(M4) Newton's constant.** The $a_2$ Seeley–DeWitt coefficient of $\mathrm{Tr}\,f(\mathcal D/\Lambda)$ gives the Einstein–Hilbert term with
-
-$$
-\frac{1}{16\pi G_N} = \frac{f_2\Lambda^2}{12\pi^2}\,\mathrm{Tr}(1_F)\ \Rightarrow\ G_N = \frac{3\pi}{7 f_2\Lambda^2},\qquad \Lambda = M_{\text{Pl}}=1.22\times10^{19}\text{ GeV},
-$$
-
-with the $O(1)$ coefficient $3\pi/7\approx1.35$. Setting $\Lambda=M_{\text{Pl}}$ reproduces $G_N=6.674\times10^{-11}$ (this fixes the cutoff $\Lambda$ at $M_{\text{Pl}}$ rather than predicting $G_N$ independently).
-
-**(M5) Quantitative comparison.**
-
-| Metric/geometric quantity | Spectral-action prediction | Observation | Status |
-|---|---|---|---|
-| Signature | $(1,3)$ (Krein, §above) | $(1,3)$ | **[C]** ✓ (T-53) |
-| Local Lorentz invariance | exact Minkowski tangent (M2) | isotropy $<10^{-18}$ | **[C at T-120b]** ✓ |
-| Metric form | closed FRW $\mathbb{R}\times S^3$ (M3) | FRW | **[C at T-120b]** ✓ |
-| Spatial curvature | closed $S^3$, $\Omega_k\lesssim0$ | $\Omega_k=0.001\pm0.002$ | **[T]/[C]** ✓ |
-| Newton's constant $G_N$ | $3\pi/(7f_2\Lambda^2)$, $\Lambda=M_{\text{Pl}}$ | $6.674\times10^{-11}$ | **[T at $\Lambda=M_{\text{Pl}}$]** (fixes $\Lambda$) |
-| $\sin^2\theta_W$ (unification) | $3/8$ (Connes tr-relation) | $0.231$ at $M_Z$ (after RG) | **[C]** ✓ |
-| Cosmological constant $\Lambda_{\text{cc}}$ | $\varepsilon^{12}M_{\text{Pl}}^4\sim10^{-24}M_{\text{Pl}}^4$ (one mechanism) | $\sim10^{-123}M_{\text{Pl}}^4$ | **[C]/[H] — UNRESOLVED** |
-
-:::warning Honest gap: the cosmological constant
-A numerical cosmological constant needs a vacuum-energy readout and an independently calibrated physical normalization. The proposed $\varepsilon^{12}$ suppression also requires cancellation of lower-order terms. [Vacuum energy](/docs/physics/gravity/cosmological-constant)
-:::
-
-:::info Spectral identity
-From the block-off-diagonal structure of $D_{\mathrm{int}}$ ($[D_{\mathrm{int}}]_{ii} = 0$) and the [definition of Gap](/docs/core/dynamics/gap-operator#g-total-definition) the exact identity follows:
-
-$$
-\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
-$$
-
-This connects the [total Gap](/docs/core/dynamics/gap-operator#g-total-definition) with the coefficient $a_2$ of the spectral action and justifies the [derivation of $V_{\mathrm{Gap}}$](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) from axioms [T].
+is **withdrawn [✗]**. Riemannian heat-kernel coefficients do not apply to indefinite Lorentzian Dirac operators; $\sin^2\theta_W = 3/8$ requires an $SU(5)/SO(10)$-type hypercharge normalization not derived from $A_{\mathrm{int}}$; and $V_{\mathrm{Gap}}$ is an effective model potential, not a theorem of axioms A1–A5. See [vacuum energy](/docs/physics/gravity/cosmological-constant) and [$\Lambda$-budget](/docs/proofs/gap/lambda-budget) for the open cosmological-constant problem.
 :::
 
 #### Time, spatial coordinates and signature (T-83) {#теорема-время-из-o}
 
-A chosen Page–Wootters clock provides a parameter for conditional evolution. The abstract product of its scaling limit with a specified charge spectrum has dimension four. Identifying that product with measured events and giving it a Lorentzian metric requires additional physical assumptions. [Construction of the product](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)
+A chosen Page–Wootters clock provides a parameter for conditional evolution. The abstract product of its scaling limit with a specified charge spectrum has dimension four. Identifying that product with measured events and giving it a Lorentzian metric requires additional physical assumptions ([Theorems 48c–48e](#теорема-48c) and [operational network geometry](/docs/geometry/common-limit)).
 
-#### Consequence: formula dτ/dσ from spectral triple [T] {#следствие-dtau}
+#### Withdrawn formula for $d\tau/d\sigma$ [✗] {#следствие-dtau}
 
-From the spectral triple:
-
-$$
-\frac{d\tau}{d\sigma} = \|D_O \Gamma\|_{\text{HS}} = \omega_0 \cdot \sqrt{\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \text{Gap}(O,i)^2} \propto \sqrt{\sum_i |\gamma_{Di}|^2}
-$$
-
-This justifies the formula from [dimension-d.md](../structure/dimension-d) **[T]**.
+The former claim $d\tau/d\sigma = \|D_O \Gamma\|_{\mathrm{HS}} = \omega_0\sqrt{\sum_{i\neq O}|\gamma_{Oi}|^2\mathrm{Gap}(O,i)^2} \propto \sqrt{\sum_i|\gamma_{Di}|^2}$ [T] is **withdrawn [✗]**: the matrix norm $\|D_O\Gamma\|_{\mathrm{HS}}$ does not reduce to that Gap-weighted sum and is not proportional to the $D$-row norm $\sqrt{\sum_i|\gamma_{Di}|^2}$.
 
 ---
 
 ## Open questions
 
-1. **Dark sector:** What is the connection to dark matter/energy?
-2. **QFT:** How to unite with quantum field theory?
-3. **Calibration of $\omega_0$:** What is the fundamental clock frequency?
+1. **Physical locality bridge (L)/(P):** How to derive or experimentally test the two-level spinor locality premise of [Theorem 48e](#теорема-48e).
+2. **From operational networks to Lorentzian dynamics:** How discrete network limits ([common limit](/docs/geometry/common-limit)) connect to causal cones, continuum smoothness, and gravity.
+3. **Calibration of $\omega_0$:** What sets the fundamental clock frequency scale.
 
 ---
 
 **Related documents:**
-- [Theorem on emergent time](../../proofs/dynamics/emergent-time) — formal derivation of time, including stratification
-- [Axiom Ω⁷](./axiom-omega) — final axiomatics with terminal object
-- [Consequences](./consequences) — cohomological monism and local-global dichotomy
-- [Correspondence with physics](../../proofs/physics/physics-correspondence) — formal connection of UHM with QM, GR, and the Standard Model
-- [Origin of the Universe](/docs/physics/cosmology-phys/origin) — cosmogenesis and $\Gamma_{\odot}$
+- [Operational network geometry](/docs/geometry/common-limit) — verified limiting distance from calibrated probes
+- [Response metric](/docs/geometry/response-metric) — operational distance from network arrivals
+- [Theorem on emergent time](../../proofs/dynamics/emergent-time) — conditional Page–Wootters construction and limits
+- [Axiom Ω⁷](./axiom-omega) — typed axiomatics and explicit modelling postulate (QG)
+- [Composite systems](../dynamics/composite-systems) — bipartite entanglement and tensor products
+- [Correspondence with physics](../../proofs/physics/physics-correspondence) — scope and open bridges to QM, GR, and SM
 - [Coherence matrix](../dynamics/coherence-matrix) — definition of $\Gamma$ and tensor extension
-- [Evolution](../dynamics/evolution) — numerical dynamics and its conditional equilibria
-- [Foundation dimension (O)](../structure/dimension-o) — role of internal clock
-- [Categorical formalism](../../proofs/categorical/categorical-formalism) — ∞-topos, derived categories, IC-cohomology
-- [Holon](../structure/holon) — definition of $\mathbb{H}$
-- [Emergent manifold M⁴](../../proofs/physics/emergent-manifold) — derivation of $M^4$ from categorical structure (T-117 — T-121)
+- [Evolution](../dynamics/evolution) — effective open-system dynamics
+- [Foundation dimension (O)](../structure/dimension-o) — ground axis and extended clock register
 - [Theory limits](../../reference/falsifiability#границы-теории) — what UHM does not explain

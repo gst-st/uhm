@@ -6,28 +6,34 @@ by a structure-preserving Strang split that keeps $\Gam$ a legal density
 matrix (Hermitian, PSD, unit trace) to machine precision:
 \begin{enumerate}[leftmargin=1.6em,itemsep=1pt]
   \item \textbf{Unitary half-step} $e^{-i H_{\mathrm{eff}}\Delta\tau/2}$:
-        reversible; an isometry (T-262), Landauer-free. Cost
-        $\sim\!700$~FLOPs for one \DM{} multiply; arithmetic depth
-        $\log_2 7\approx 2.8$.
-  \item \textbf{Dissipator + regeneration full step} on the diagonal-adjacent
-        sector, using the Fano-sparse kernel: the dissipator is
-        $-\tfrac16\sum_p\gamma_p[\Pi_p,[\Pi_p,\Gam]]$ over the seven line
-        projectors $\Pi_p$; the regeneration is one BKM-gradient step toward
-        $\rhostar=\vp(\Gam)$.
+        logically reversible; preserves eigenvalues and von~Neumann entropy
+        identically (zero logical entropy export). Cost $\sim\!700$~FLOPs for
+        one \DM{} multiply; arithmetic depth $\log_2 7\approx 2.8$.
+  \item \textbf{Dissipator + regeneration full step} using the Fano-sparse
+        kernel: the Fano Lindblad dissipator is
+        $-\tfrac{\gamma}{6}\sum_{p=1}^7[\Pi_p,[\Pi_p,\Gam]]
+        = \gamma(\mathcal{P}_{\mathrm{Fano}}(\Gam)-\Gam)
+        = \tfrac{2}{3}\gamma(\operatorname{diag}(\Gam)-\Gam)$ over the seven
+        rank-$3$ line projectors $\Pi_p$ (preserving populations and damping
+        off-diagonals at rate $2\gamma/3$, plus optional depolarization
+        $\gamma_{\mathrm{dep}}(\mathbb{1}/7-\Gam)$ when modelling full reset);
+        regeneration drives $\Gam$ toward the canonical nonlinear anchored
+        self-model $\varphi_J(\Gam)=(1-R(\Gam))\mathcal{P}_{\mathrm{Fano}}(\Gam)
+        + R(\Gam)\ket{\psi}\bra{\psi}$.
   \item \textbf{Unitary half-step} again (Strang symmetry, second-order
-        accurate in $\Delta\tau$).
+        accurate in $\Delta\tau$), followed by positive-semidefinite
+        projection.
 \end{enumerate}
-Per-tick cost is $\sim\!1400$~FLOPs (two unitary halves) plus the sparse
-dissipator; the self-model iteration $\vp$, when run to tolerance $\epsilon$,
-adds $\sim\!10^4$~FLOPs at depth $\log(1/\epsilon)$ but is amortised across
-ticks (the state moves little between ticks). All operands are the resident
-$784$-byte state; no memory beyond L1 is touched. The tick period is fixed by
-$\bar\gamma\tau=\tfrac32\ln3$ (\S\ref{sec:substrate}), so $\Delta\tau$ is
-derived from the physical relaxation rate $\bar\gamma$, not chosen.
+Per-tick cost is $\sim\!1{,}400$~FLOPs (two unitary halves) plus the sparse
+Fano pinching/regeneration step. All operands are the resident $784$-byte state
+($48$ real dynamical parameters); no memory beyond L1 is touched. The natural
+cycle time obeys $\bar\gamma\tau=\tfrac32\ln3$ (\S\ref{sec:substrate}).
 
-\noindent\textbf{Exact laws checked every tick} (bit-exact against an
-independent oracle in the \SYNARC{} M1 validation): $\Phi$-contraction
-$\times\tfrac19$; cycle-time identity $\bar\gamma\tau=\tfrac32\ln3$; stratum
-anchoring $\Phi=7P-1$; unit trace and positivity. A tick that violates any is
-a hardware fault, detected by the syndrome the tick itself emits
-(Principle~\ref{prin:selfdiag}).
+\noindent\textbf{Exact invariants checked in
+\texttt{architecture/talos\_v0\_emulator.py}:} Fano pinching contraction
+$\Phi(\mathcal{P}_{\mathrm{Fano}}(\Gam))=\tfrac19\Phi(\Gam)$; exact
+integration $\Phi=(P-P_{\mathrm{diag}})/P_{\mathrm{diag}}$ (reducing to
+$\Phi=7P-1$ \emph{only} on uniform diagonals $\gamma_{kk}=1/7$);
+$R=1/(7P)\ge 1/3\Leftrightarrow P\le 3/7$; Hermiticity, unit trace, and
+positivity; discrete $\mathrm{PSL}(2,7)\ltimes U(1)^7$ covariance; and $3$-bit
+Hamming $[7,4,3]$ single-sector syndrome decoding.

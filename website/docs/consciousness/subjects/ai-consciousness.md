@@ -45,7 +45,7 @@ An encoder $G:\mathbb R^d\to X_7$ is a map from classical configurations to stat
 
 ### Representing a linear channel {#теорема-cptp-аппроксимация}
 
-Every channel $\Lambda:M_7\to M_7$ has at most $49$ Kraus operators. Stack them vertically as $Q=(K_1^T,\ldots,K_m^T)^T$; the exact constraint is $Q^\dagger Q=I_7$. Conversely every such isometry gives a CPTP channel. Thus this finite-dimensional parametrization represents every channel **exactly** [T]. For a full-column-rank stack $A$, the polar normalization $Q=A(A^\dagger A)^{-1/2}$ enforces the constraint; singular stacks need a separate chart/regularization. [Watrous, chapter 2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.double.2.pdf).
+Every channel $\Lambda:M_7\to M_7$ has at most $49$ Kraus operators. Stack them vertically as $Q=(K_1^T,\ldots,K_m^T)^T$; the exact constraint is $Q^\dagger Q=I_7$. Conversely every such isometry gives a CPTP channel. Thus this finite-dimensional parametrization represents every channel **exactly** [T]. For a full-column-rank stack $A$, the polar normalization $Q=A(A^\dagger A)^{-1/2}$ enforces the constraint; singular stacks need a separate chart/regularization. [Watrous, chapter 2](https://cs.uwaterloo.ca/~watrous/TQI/TQI.pdf).
 
 The quantum channel representation applies at fixed parameters. Choosing $u$ as a function of the input in a channel family $\Lambda_u$ can make the total update nonlinear. State validity, channel expressivity and predictive adequacy of a trained encoder are separate tests.
 

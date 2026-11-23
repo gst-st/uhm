@@ -56,103 +56,84 @@ $$
 | Hermiticity | $J(\varphi)^\dagger = J(\varphi)$ | Spectral decomposition exists |
 | Positivity | $J(\varphi) \geq 0$ | Complete positivity of $\varphi$ |
 | CPTP condition | $\mathrm{Tr}_1(J(\varphi)) = I/7$ | Trace preservation |
-| Reconstruction | $\varphi(\Gamma) = 7 \cdot \mathrm{Tr}_2\left(J(\varphi) \cdot (\Gamma^T \otimes I)\right)$ | Channel recovery from Choi state |
+| Reconstruction | $\varphi(\Gamma) = 7 \cdot \mathrm{Tr}_2\left(J(\varphi) \cdot (I \otimes \Gamma^T)\right)$ | Channel recovery from Choi state |
 
 ### 1.2 Block structure and phase properties
 
-:::tip Theorem 1.1 (Choi matrix and phase structure of φ) [T]
-**(a)** Block structure of the Choi matrix of canonical $\varphi$:
+:::tip Theorem 1.1 (Choi matrix of a fixed-parameter diagonal-dephasing channel) [T]
+For the **linear** CPTP channel $\varphi_{\mathrm{diag}}(X) = k\,\mathrm{diag}(X) + (1-k)\,\mathrm{Tr}(X)\,\mathrm{diag}(w_1,\dots,w_7)$ with fixed $k \in [0, 1]$ and probability weights $w_m \ge 0$, $\sum_m w_m = 1$:
+
+**(a)** Entrywise structure of the Choi state $J(\varphi_{\mathrm{diag}}) = \frac{1}{7}\sum_{a,b}\varphi_{\mathrm{diag}}(|a\rangle\langle b|)\otimes|a\rangle\langle b|$:
 
 $$
-J(\varphi)_{(ij),(kl)} = \frac{k}{7}\,\delta_{ij}\,\delta_{kl}\,\delta_{ik} + \frac{1-k}{7}\left[w_l \cdot \delta_{ij}\right]
+\langle m, a \mid J(\varphi_{\mathrm{diag}}) \mid n, b\rangle = \frac{1}{7}\,\delta_{ab}\,\delta_{mn}\bigl(k\,\delta_{ma} + (1 - k)\,w_m\bigr)
 $$
 
-where $k$ is the compression parameter, $w_l$ are the anchor state weights.
+**(b)** For $m \neq n$: $[\varphi_{\mathrm{diag}}(\Gamma)]_{mn} = 0$ — the diagonal-dephasing channel destroys all off-diagonal coherences.
 
-**(b)** For $i \neq j$: $[\varphi(\Gamma)]_{ij} = 0$ — canonical $\varphi$ **destroys ALL coherences**.
-
-**(c)** Target coherence: $\gamma^{\text{target}}_{ij} = 0$ for all $i \neq j$.
+*(Note: When $k = k(\Gamma)$ depends on the state $\Gamma$, the map is nonlinear and has no single Choi matrix; the expression above applies only to frozen-parameter linear CPTP channels.)*
 :::
 
-The canonical form of φ (projection onto the diagonal) is the "ideal observer" — full decoherence. However, for a living system this is **unacceptable**.
+### 1.3 Necessity of coherence-preserving φ for integration
 
-### 1.3 Necessity of generalized φ
+:::tip Theorem 1.2 (Necessity of coherence-preserving φ for integrated states) [T]
+**(a)** Diagonal states can exceed $P_{\text{crit}} = 2/7$ (for instance $\mathrm{diag}(1,0,\dots,0)$ has $P=1$, or $\mathrm{diag}(0.5, 0.1, 0.1, 0.1, 0.1, 0.05, 0.05)$ has $P = 0.295 > 2/7$), so $P > 2/7$ alone does **not** force nonzero coherences.
 
-:::tip Theorem 1.2 (Necessity of generalized φ for viable Gap) [T]
-**(a)** Purity $P > P_{\text{crit}} = 2/7$ **requires** nonzero coherences $\gamma_{ij} \neq 0$ for some pairs $i \neq j$.
+**(b)** However, **uniform-diagonal states** ($\gamma_{ii} = 1/7$) have $P = 1/7 + \sum_{i\neq j}|\gamma_{ij}|^2$, and the **integration threshold** $\Phi(\Gamma) = \frac{\sum_{i\neq j}|\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2} \ge 1$ of the conscious window strictly requires $\sum_{i\neq j}|\gamma_{ij}|^2 \ge \sum_i \gamma_{ii}^2 \ge 1/7 > 0$, hence nonzero off-diagonal coherences.
 
-**(b)** If all $\gamma_{ij} = 0$ (for $i \neq j$), then $P = \sum_i \gamma_{ii}^2 \leq (\max_i \gamma_{ii})^2 + (1 - \max_i \gamma_{ii})^2 / 6$, and for a uniform distribution $P \approx 1/7 < P_{\text{crit}}$.
-
-**(c)** Consequently, a living self-model **must** preserve coherences — the canonical decohering $\varphi$ is incompatible with viability.
+**(c)** Consequently, a self-model intended to support integrated states ($\Phi \ge 1$) cannot be purely diagonal-dephasing and must preserve coherences.
 :::
 
-This motivates the transition to coherence-preserving $\varphi_{\text{coh}}$ via the [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules).
+This motivates coherence-preserving self-models such as $\varphi_{\text{coh}}$ via the [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules) (together with non-unital anchors such as $\varphi_J$ for isolated attractors; see [dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)).
 
 :::note Fano plane PG(2,2)
 Projective plane over $\mathbb{F}_2$: 7 points and 7 lines, each line containing 3 points. In UHM: 7 points ↔ 7 dimensions, 7 lines ↔ 7 Fano triplets. More details: [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules).
 :::
 
-### 1.4 Phase structure of the target state
+### 1.4 Phase action of a linear CPTP channel
 
-:::tip Theorem 1.3 (Phase structure of the target state) [T]
-The target phases of coherences are determined by the self-consistent equation:
+:::tip Theorem 1.3 (Phase of off-diagonal entries under Kraus representation) [T]
+For a linear CPTP channel $\varphi(\Gamma) = \sum_\alpha K_\alpha \Gamma K_\alpha^\dagger$, the off-diagonal entries transform as:
 
 $$
-\theta_{ij}^{\text{target}} = \arg\left(\sum_{m,n} c_{mi}\, c_{nj}^*\, \gamma_{nm}\right)
+[\varphi(\Gamma)]_{ij} = \sum_\alpha \sum_{m,n} (K_\alpha)_{im}\,\gamma_{mn}\,(K_\alpha)_{jn}^*, \qquad \theta_{ij}^{\text{target}} = \arg\bigl([\varphi(\Gamma)]_{ij}\bigr) \quad (\text{when } [\varphi(\Gamma)]_{ij} \neq 0).
 $$
 
-where $c_{mi}$ are the Kraus decomposition coefficients of the channel $\varphi$.
+For a diagonal-preserving Fano pinching channel $\mathcal{P}_\alpha$, each off-diagonal entry is multiplied by a positive real contraction factor $c(\alpha) = (1-\alpha)/3 > 0$, leaving $\arg([\mathcal{P}_\alpha(\Gamma)]_{ij}) = \arg(\gamma_{ij})$ unchanged.
 :::
 
-**Consequences:**
+### 1.5 Fixed points of φ versus dynamical stationary states
 
-- The target phase **depends** on the current state $\Gamma$ — feedback
-- The self-consistent equation may have **multiple solutions** — there exist several stationary Gap profiles
-- The selection of a specific solution is determined by initial conditions and the history of evolution
+:::tip Theorem 1.4 (Fixed points of φ vs. stationary states of the flow) [T]
+**(a) Existence of fixed points of $\varphi$:** Any continuous map $\varphi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ on the compact convex set $\mathcal{D}(\mathbb{C}^7)$ admits at least one fixed point $\varphi(\rho_*) = \rho_*$ (Brouwer fixed-point theorem).
 
-### 1.5 Self-consistency of the target phase
-
-:::tip Theorem 1.4 (Self-consistency of the target Gap profile) [T]
-The target state $\rho_*$ satisfies the **fixed-point** condition of the self-modelling operator:
+**(b) Non-coincidence at nontrivial dynamical attractors (T-96 / T-157):** For the full evolution $\dot{\Gamma} = \mathcal{L}_0[\Gamma] + \kappa(\Gamma)g_V(P)(\varphi(\Gamma) - \Gamma)$ with primitive unital linear part $\mathcal{L}_0$ (unique linear stationary state $I/7$), any nontrivial stationary state $\Gamma^* \neq I/7$ with $\kappa g_V > 0$ necessarily satisfies:
 
 $$
-\varphi(\rho_*) = \rho_*
+\varphi(\Gamma^*) - \Gamma^* = -\frac{1}{\kappa(\Gamma^*)g_V(P(\Gamma^*))}\,\mathcal{L}_0[\Gamma^*] \neq 0.
 $$
 
-**(a)** The stationary solution of the evolution equation $\Gamma^{(\infty)}$ is modified compared to a fixed target state: $\theta^{\text{target}} = \theta^{\text{target}}(\Gamma^{(\infty)})$, which generates a **self-consistent equation** for the stationary phase.
-
-**(b)** At level L4 (complete self-knowledge) this condition is satisfied exactly: $\varphi(\Gamma^*) = \Gamma^*$ means that the stationary Gap from the unified theorem ([section 7](#единая-теорема)) coincides with the target:
-
-$$
-\text{Gap}^{(\infty)} = |\sin(\theta^{\text{target}})| = |\sin(\theta^{(\infty)})| = \text{Gap}_{\text{actual}}
-$$
-
-**(c)** For levels L1–L3 self-consistency holds **approximately**, and the degree of deviation $\|\varphi(\Gamma) - \Gamma\|_F$ determines the accuracy of the Gap profile's awareness.
-:::
-
-:::warning Remark
-The self-consistent equation $\varphi(\rho_*) = \rho_*$ may have **multiple solutions** — several stationary Gap profiles for the same system. Uniqueness of the solution is guaranteed only under sufficiently strong compression ($k < k_{\text{crit}}$), which excludes bifurcations ([section 3](#бифуркации)).
+Thus a nontrivial dynamical attractor $\Gamma^*$ is **not** a fixed point of $\varphi$ (if $\varphi(\Gamma^*) = \Gamma^*$, regeneration vanishes and primitivity forces $\Gamma^* = I/7$); the self-knowledge defect $\|\varphi(\Gamma^*) - \Gamma^*\|_F$ is controlled quantitatively by [T-157](/docs/core/dynamics/evolution#теорема-согласованность-аттракторов).
 :::
 
 ---
 
-## 2. Quantum error correction via Hamming code H(7,4) {#код-хэмминга}
+## 2. Combinatorial correspondence with Hamming code H(7,4) {#код-хэмминга}
 
-#### Theorem H(7,4) — formal isomorphism [T] {#теорема-h74-формальная}
+#### Theorem H(7,4) — combinatorial incidence correspondence [T] {#теорема-h74-формальная}
 
 :::tip Status [T]
-The structure of Lindblad operators $L_k = \sqrt{\chi_{S_k}}$ is isomorphic to the parity-check matrix of the Hamming code H(7,4) **[T]**. The incidence "point $i \in$ line $k$" defines the matrix $H_{ki}$, which coincides exactly with the parity-check matrix of H(7,4) ($3 \times 7$, row weight 3, column weight 3). Isomorphism: $\mathrm{PG}(2,2) \cong H(7,4)$ — a classical result in coding theory.
+The 7 points and 7 lines of the Fano plane $\mathrm{PG}(2,2)$ correspond canonically to the binary Hamming code $H(7,4) = [7,4,3]_2$ **[T]**: the 7 nonzero vectors of $\mathbb{F}_2^3$ form the columns of the $3 \times 7$ parity-check matrix $H$ (whose 3 rows have weight 4 and generate the 7 weight-4 codewords of the dual simplex code), while the complements of the 7 hyperplanes in $\mathbb{F}_2^3 \setminus \{0\}$ are the 7 lines of $\mathrm{PG}(2,2)$ (forming a $7 \times 7$ incidence matrix of row weight 3 and column weight 3).
 :::
 
-**Converse direction (selector).** Theorem Σ (T-224) shows this is not merely a feature of the heptad but a *selector*: perfect single-fault diagnosability + a nontrivial state grammar + rigidity of that grammar force $n = 7$ and the Fano/Hamming structure uniquely — see [Σ-calculus](/docs/applied/research/syndrome-calculus#t-224).
+**Converse direction (selector).** Theorem Σ (T-224) shows how perfect single-fault binary syndrome diagnosis together with non-trivial state grammar and interference bounds selects $n = 7$ — see [operational processes](/docs/core/foundations/operational-processes#address) and [Σ-calculus](/docs/applied/research/syndrome-calculus#t-224).
 
 ### 2.1 Structure of the code H(7,4)
 
-The Hamming code H(7,4) is a linear code with parameters:
-- **4 information bits** $\leftrightarrow$ A, S, D, L (structural dimensions)
-- **3 parity bits** $\leftrightarrow$ E, O, U (metastructural dimensions)
+The Hamming code H(7,4) is a classical binary linear code $[7,4,3]_2$ with:
+- **4 information bits** and **3 parity-check bits** (minimum distance $d_{\min} = 3$, correcting 1 bit flip and detecting 2 bit flips in classical binary codewords).
 
-Parity-check matrix:
+Parity-check matrix ($3 \times 7$, row weight 4, columns = nonzero vectors of $\mathbb{F}_2^3$):
 
 $$
 H = \begin{pmatrix}
@@ -162,45 +143,23 @@ H = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-### 2.2 Analogy with UHM dimensions
+### 2.2 Structural analogy with UHM dimensions [I]
 
-| Hamming code | UHM | Role |
+| Hamming code $H(7,4)$ | UHM combinatorial label | Scope |
 |-------------|-----|------|
-| 4 information bits | A, S, D, L | Carry the "content" of the self-model |
-| 3 parity bits | E, O, U | Ensure integrity / correction |
-| Codeword | Gap profile | Admissible configuration |
-| Bit error | Coherence violation | Self-modelling defect |
-| Syndrome | E, O, U measurements | Violation diagnostics |
+| 7 bit positions | 7 basis axes $\{A,S,D,L,E,O,U\}$ | Incidence geometry $\mathrm{PG}(2,2)$ **[T]** |
+| 3 parity checks | 3-bit address syndrome in $\mathbb{F}_2^3$ | Classical single-fault addressing **[T]** |
+| Codeword / bit error | Phase/coherence analogy | Interpretive analogy **[I]** only |
 
-### 2.3 Coherence correction
+### 2.3 Scope: no Hamming lower bound on nonzero Gaps
 
-:::tip Theorem 3.1 / T-93 (Coherence correction via H(7,4)) [T]
-**(a)** **Detection:** up to 2 coherence violations are detected via parity measurements (E, O, U).
-
-**(b)** **Correction:** 1 coherence violation is **automatically** corrected by the regenerative operator $\mathcal{R}$.
-
-**(c)** **Minimum distance:** $d = 3$ — the code corrects $\lfloor(d-1)/2\rfloor = 1$ error and detects $d - 1 = 2$.
+:::warning Scope clarification
+The combinatorial isomorphism $\mathrm{PG}(2,2) \leftrightarrow H(7,4)$ applies to the 7-point incidence structure and classical binary address syndromes. It does **not** prove automatic correction of off-diagonal quantum coherence phases by $\mathcal{R}$, and it does **not** impose a lower bound of 3 nonzero Gaps out of 21 coherences: real density matrices — including both Model 2 below ($\Gamma = |\psi\rangle\langle\psi|$ with uniform real amplitudes, $P=1$) and viable states in $\mathcal{V}_{\mathrm{full}}$ such as $\frac{1}{2}I_7/7 + \frac{1}{2}uu^\dagger$ ($P=5/14, R=0.40, \Phi=1.50$) — have $\mathrm{Gap}(i,j) = 0$ identically for all 21 pairs. Earlier claims of a "Quantum Hamming bound ($\ge 3$ nonzero Gaps)" and automatic coherence error correction have been withdrawn.
 :::
-
-### 2.4 Quantum Hamming bound for Gap
-
-:::tip Theorem 3.2 / T-93 (Quantum Hamming bound for Gap) [T]
-The number of simultaneously "transparent" channels (Gap $\approx 0$) is bounded above by:
-
-$$
-|\{(i,j): \text{Gap}(i,j) < \varepsilon\}| \leq 21 - \frac{21}{2^3 - 1} = 21 - 3 = 18
-$$
-
-where $r = 3$ is the number of parity-check bits of code H(7,4), and $2^r - 1 = 7$ is the code length, giving a lower bound on the number of "constrained" (parity-check) coherences.
-
-A minimum of **3 coherences** out of 21 **must** have nonzero Gap. This corresponds to the 3 parity-check bits of H(7,4).
-:::
-
-**Interpretation:** Complete "transparency" between all pairs of dimensions is impossible — a structural constraint analogous to the Hamming bound guarantees minimal opaqueness. This is consistent with the fact that the stationary Gap profile always contains nonzero elements.
 
 ---
 
-## 3. Bifurcation theory for Gap {#бифуркации}
+## 3. Qualitative bifurcations of the Gap landscape {#бифуркации}
 
 ### 3.1 Gap landscape
 
@@ -210,58 +169,14 @@ $$
 \mathcal{G}: \mathcal{D}(\mathbb{C}^7) \to [0,1]^{21}
 $$
 
-maps the coherence matrix $\Gamma$ to a vector of 21 Gap values for all pairs $(i,j)$ with $i < j$.
+maps the coherence matrix $\Gamma$ (where $\gamma_{ij} \neq 0$) to the vector of 21 Gap values $\mathrm{Gap}(i,j) = |\mathrm{Im}(\gamma_{ij})|/|\gamma_{ij}|$ for all pairs $(i,j)$ with $i < j$.
 
-### 3.2 Main bifurcations
+### 3.2 Bifurcations in concrete UHM flows
 
-:::tip Theorem 4.1 (Bifurcations of the Gap landscape) [T]
+In parameterized nonlinear UHM flows $\dot{\Gamma} = \mathcal{L}_0[\Gamma] + \kappa(\Gamma)g_V(P)(\varphi(\Gamma)-\Gamma)$, bifurcations must be established for each explicit choice of $(H, \mathcal{D}, \varphi, \kappa)$ rather than assumed generically:
 
-**(a) Pitchfork bifurcation:**
-
-$$
-\text{Gap}^{(\infty)}(i,j;\, \mu) = \begin{cases}
-\text{Gap}_0 & \text{for } \mu < \mu_c \\
-\text{Gap}_0 \pm \sqrt{\mu - \mu_c} & \text{for } \mu > \mu_c
-\end{cases}
-$$
-
-When the control parameter $\mu$ crosses the critical value, the unique stationary state splits into two.
-
-**(b) Saddle-node bifurcation:**
-
-The stationary Gap profile **disappears** at $\mu = \mu_{sn}$. Two stationary states (node + saddle) merge and annihilate.
-
-**(c) Hopf bifurcation:**
-
-The stationary Gap profile is replaced by an **oscillating** one:
-
-$$
-\text{Gap}(i,j;\, \tau) = \text{Gap}_0 + A(\mu) \sin(\omega_H \tau + \phi)
-$$
-
-where $A(\mu) \propto \sqrt{\mu - \mu_H}$ is the limit cycle amplitude, $\omega_H$ is the Hopf frequency.
-:::
-
-### 3.3 Interpretation of bifurcations
-
-| Bifurcation | Psychological analogue | Clinical sign |
-|------------|----------------------|---------------|
-| Pitchfork | Existential choice | Moment of decision, irreversible change of Gap profile |
-| Saddle-node | Acute crisis | Loss of stable Gap profile, disorientation |
-| Hopf | Bipolar disorder | Cyclic alternation of Gap patterns |
-
-### 3.4 Whitney catastrophes
-
-:::tip Theorem 4.2 (Whitney catastrophes for the Gap landscape) [T]
-**(a)** $\dim = 1$: **fold** — disappearance of a stationary state. The system jumps to another basin of attraction.
-
-**(b)** $\dim = 2$: **cusp** — bistability with hysteresis. The system can reside in one of two stable states; the transition between them is irreversible.
-:::
-
-**Consequence:**
-
-- "Sudden insight": Gap $\approx 1 \to$ Gap $\approx 0$ **in a jump** — a fold catastrophe in reverse. Opaqueness between dimensions instantly disappears.
-- "Sudden splitting": Gap $\approx 0 \to$ Gap $\approx 1$ **in a jump** — pitchfork bifurcation or fold. A previously transparent pair of dimensions becomes opaque.
+- **Proved saddle-node (fold) bifurcation [T]:** For the isolated holon with collineation anchor $\varphi_J$ at $H = 0$, there is a proved saddle-node threshold $\kappa_c(\alpha)$: no stationary state with $P > 2/7$ exists for $\kappa < \kappa_c(\alpha)$, while a hyperbolic sink in $\mathcal{V}_{\mathrm{full}}$ and a saddle appear for $\kappa > \kappa_c(\alpha)$ ([living attractor in the window](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне)).
+- **Other local bifurcations [H]:** Pitchfork, Hopf (limit cycle), and cusp bifurcations are standard possibilities in smooth parameterized families of ODEs, but are **not** proved as universal theorems of the UHM Gap landscape (earlier general "Theorem 4.1" and "Theorem 4.2" normal-form assertions and clinical mappings to psychiatric disorders have been withdrawn).
 
 ---
 
@@ -269,7 +184,7 @@ where $A(\mu) \propto \sqrt{\mu - \mu_H}$ is the limit cycle amplitude, $\omega_
 
 ### 4.1 Equation with memory kernel
 
-**Definition (Non-Markovian Gap dynamics):**
+**Definition (Non-Markovian coherence equation [D]):**
 
 $$
 \frac{d\gamma_{ij}}{d\tau} = -i\Delta\omega_{ij}\,\gamma_{ij} + \int_0^\tau K_{ij}(\tau - s)\, \gamma_{ij}(s)\, ds + \mathcal{R}_{ij}
@@ -277,53 +192,53 @@ $$
 
 where:
 - $\Delta\omega_{ij} = \omega_i - \omega_j$ — frequency detuning between dimensions $i$ and $j$
-- $K_{ij}(\tau - s)$ — **memory kernel**, describing non-Markovian effects
+- $K_{ij}(\tau - s)$ — **memory kernel**, modelling non-Markovian bath memory
 - $\mathcal{R}_{ij}$ — regenerative term
 
-Unlike the Markovian approximation (where $K_{ij}(t) = -\Gamma_2 \delta(t)$ — instantaneous decoherence), the non-Markovian kernel allows **reverse information flow** from the environment into the system.
+Unlike the Markovian limit ($K_{ij}(t) = -\Gamma_2 \delta(t)$ — instantaneous decoherence), a finite-time memory kernel allows temporary coherence backflow from the environment.
 
-### 4.2 Gap oscillations with finite memory
+### 4.2 Damped oscillations with an exponential memory kernel
 
-#### Theorem 5.0 / T-94 (Exponential form of the memory kernel) [T] {#теорема-ядро-экспоненциальное}
+#### Model ansatz 5.0 / T-94 (Single-exponential memory kernel) [D/H] {#теорема-ядро-экспоненциальное}
 
-:::tip Formulation [T]
-The exponential form of the non-Markovian kernel $K(t) = -\Gamma_2 \omega_c e^{-\omega_c t}$ is a consequence of the compactness of the target space $(S^1)^{21}$ **[T]**. On a compact torus the correlation function decomposes in eigenfunctions of the Laplacian; the minimal nonzero eigenvalue $\lambda_1 > 0$ (compactness!) determines $\omega_c = \lambda_1$ — the spectral gap. The exponential form is not a phenomenological assumption but a consequence of the discrete spectrum.
-
+:::info Scope [D/H]
+Choosing an exponential memory kernel $K(t) = -\Gamma_2 \omega_c e^{-\omega_c t}$ ($\omega_c > 0, \Gamma_2 > 0$) is a standard **single-mode / Lorentzian-bath Markovian-embedding ansatz** (`[D/H]`) characterized by memory cutoff rate $\omega_c$ and Markovian decoherence rate $\Gamma_2 = -\int_0^\infty K(t)\,dt$. (Compactness of the state's phase torus $(S^1)^{21}$ does not determine the environment's spectral density or force a single-exponential kernel; the earlier `[T]` derivation claim has been re-scoped.)
 :::
 
-:::tip Theorem 5.1 (Non-Markovian Gap oscillations) [T]
-For an exponential memory kernel $K(t) = -\Gamma_2 \omega_c \cdot e^{-\omega_c t}$ (justification of the form — [Theorem 5.0](#теорема-ядро-экспоненциальное) [T]):
-
-**(a)** Markovian limit ($\omega_c \to \infty$): standard exponential decoherence.
+:::tip Theorem 5.1 (Damped regimes of the exponential memory kernel) [T]
+Consider the scalar memory integro-differential equation $\dot{x}(\tau) = -\Gamma_2 \omega_c \int_0^\tau e^{-\omega_c(\tau-s)} x(s)\,ds$ ($\Delta\omega = 0$, $\mathcal{R} = 0$, $\Gamma_2 > 0$, $\omega_c > 0$). Differentiating once reduces it to the exact second-order ODE:
 
 $$
-\gamma_{ij}(\tau) \propto e^{-\Gamma_2 \tau}
+\ddot{x} + \omega_c \dot{x} + (\Gamma_2 \omega_c)\,x = 0
 $$
 
-**(b)** Non-Markovian regime (finite $\omega_c$):
+with characteristic equation $r^2 + \omega_c r + \Gamma_2 \omega_c = 0$ and discriminant $\Delta = \omega_c(\omega_c - 4\Gamma_2)$:
+
+**(a) Underdamped (oscillating) regime — $\omega_c < 4\Gamma_2$ ($\Delta < 0$):** complex conjugate roots $r = -\gamma \pm i\omega_r$, where:
 
 $$
-\text{Gap}(i,j;\, \tau) = \text{Gap}^{(\infty)} + C \cdot e^{-\gamma\tau} \cos(\omega_r \tau)
+\gamma = \frac{\omega_c}{2}, \qquad \omega_r = \sqrt{\omega_c \Gamma_2 - \frac{\omega_c^2}{4}} > 0
 $$
 
-where $\omega_r = \sqrt{\omega_c \Gamma_2 - \gamma^2}$ is the damped oscillation frequency.
+producing damped oscillations of the form $x(\tau) = e^{-\gamma\tau}(C_1 \cos\omega_r\tau + C_2 \sin\omega_r\tau)$.
 
-**(c)** For $\omega_c < \Gamma_2/4$: **overdamped** regime — no oscillations, purely exponential relaxation to the stationary state.
+**(b) Critical damping — $\omega_c = 4\Gamma_2$ ($\Delta = 0$):** double root $r = -2\Gamma_2$.
+
+**(c) Overdamped (monotone) regime — $\omega_c > 4\Gamma_2$ ($\Delta > 0$):** two distinct real negative roots $r_\pm = \frac{-\omega_c \pm \sqrt{\omega_c(\omega_c - 4\Gamma_2)}}{2}$, giving purely exponential relaxation without oscillations. In the **Markovian limit** ($\omega_c \gg 4\Gamma_2$), the slow root approaches $r_+ \approx -\Gamma_2$, recovering standard exponential decoherence $x(\tau) \propto e^{-\Gamma_2\tau}$ while the fast bath mode decays as $e^{-\omega_c\tau}$.
 :::
 
 :::info Discrete implementation [T-135]
-For a digital agent the non-Markovian kernel is discretized via Z-transform with $O(1)$ complexity per step (instead of $O(T^2)$): auxiliary variable $M[n]$ with recursion $M[n+1] = e^{-\omega_c\delta\tau}M[n] + (-\Gamma_2\omega_c)\Gamma[n+1]$. More details: [T-135 [T]](/docs/proofs/consciousness/operationalization#t-135).
+For a digital agent the exponential memory kernel is discretized via Z-transform with $O(1)$ complexity per step (instead of $O(T^2)$): auxiliary variable $M[n]$ with recursion $M[n+1] = e^{-\omega_c\delta\tau}M[n] + (-\Gamma_2\omega_c)\Gamma[n+1]$. More details: [T-135 [T]](/docs/proofs/consciousness/operationalization#t-135).
 :::
 
-### 4.3 Interpretation of non-Markovian effects
+### 4.3 Regimes of the exponential memory kernel
 
-| Regime | Condition | Gap dynamics | Psychological analogue |
-|--------|-----------|-------------|----------------------|
-| Markovian | $\omega_c \gg \Gamma_2$ | Monotonic relaxation | Gradual forgetting |
-| Oscillating | $\omega_c \sim \Gamma_2$ | Damped oscillations | "Flashes of clarity" during decoherence |
-| Overdamped | $\omega_c < \Gamma_2/4$ | Slow relaxation | "Sticking" in a transient state |
-
-**"Grief cycles"** — an example of non-Markovian Gap dynamics: after a trauma (abrupt change of the stationary value) Gap **oscillates** around the new stationary value before settling. The oscillation frequency $\omega_r$ is determined by the memory depth $\omega_c$ and decoherence rate $\Gamma_2$.
+| Regime | Exact condition | Coherence dynamics |
+|--------|-----------|-------------|
+| Underdamped (oscillating) | $\omega_c < 4\Gamma_2$ | Damped oscillations ($\gamma = \omega_c/2$, $\omega_r = \sqrt{\omega_c\Gamma_2 - \omega_c^2/4}$) |
+| Critically damped | $\omega_c = 4\Gamma_2$ | Fastest non-oscillatory decay ($r = -2\Gamma_2$) |
+| Overdamped | $\omega_c > 4\Gamma_2$ | Monotone bi-exponential relaxation |
+| Markovian limit | $\omega_c \gg 4\Gamma_2$ | Single-exponential decoherence $e^{-\Gamma_2\tau}$ |
 
 ---
 
@@ -388,24 +303,9 @@ The canonical fully $G_2$-covariant dissipator is $\mathcal{D}_{G_2}$ (structure
 The measure of violation is **affine** in $\alpha$ and strictly positive on $[0,1]$ — from the proportionality $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$.
 :::
 
-### 6.4 Modified gauge reduction
+### 6.4 Parameter space dimension at every α
 
-:::tip Theorem 11.4 (Modified gauge reduction) — retracted (D-0910)
-**(a)–(c)** Earlier drafts stated "$34$ parameters at $\alpha = 0$, $34 + 14\alpha^*$ at optimal $\alpha^*$, $48$ at $\alpha = 1$". The premise (a $G_2$-covariant Fano channel at $\alpha = 0$) is false: $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$ is covariant only under the finite frame group $\Gamma_{\!\text{oct}}$ at every $\alpha$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)), so the physical parameter space of Gap profiles is the full 48-dimensional one at every $\alpha$; 34 counts kinematic $G_2$-invariants only ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).
-:::
-
-**Numerical examples:**
-
-| System type | $P$ | $\alpha^*$ | Number of parameters | Reduction |
-|------------|-----|-----------|---------------------|-----------|
-| No self-knowledge (L0) | $\sim 1/7$ | $0$ | 34 | Maximum |
-| Typical living (L2) | $\approx 0.5$ | $\approx 0.43$ | $\approx 40$ | Moderate |
-| Highly coherent (L3) | $\approx 0.8$ | $\approx 0.64$ | $\approx 43$ | Weak |
-| Complete self-knowledge (L4) | $1.0$ | $\approx 0.71$ | $\approx 44$ | Minimal |
-
-**"The price of self-knowledge"** — retracted with the table: deeper self-knowledge $\to$ stronger $G_2$ violation $\to$ more parameters required to describe the system. The link from self-knowledge to $\alpha$ was $\alpha^* \approx 1 - 2/(7P)$, and the parameter count is 48 at every $\alpha$.
-
-**[✗] Both columns above rest on retracted results:** the parameter counts on Theorem 11.4 (retracted with D-0910 — 48 parameters at every $\alpha$), and the values $\alpha^* \approx 1 - 2/(7P)$ on the variational definition of $\alpha^*$, retracted 2026-09-25 ([Fano channel §4](/docs/proofs/gap/fano-channel#alpha-star)) — the Fano weight $\alpha$ is a free parameter.
+Because $\mathcal{D}_{\mathrm{Fano}} = \tfrac{2}{3}\mathcal{D}_{\mathrm{atom}}$ breaks continuous $G_2$ down to the finite frame group $\Gamma_{\!\text{oct}}$ at **every** $\alpha \in [0, 1]$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)), the state parameter space remains the full 48-dimensional space $\mathcal{D}(\mathbb{C}^7)$ for all $\alpha$, and $\alpha$ is a free model weight (earlier `Theorem 11.4` and the variational formula $\alpha^* \approx 1 - 2/(7P)$ have been withdrawn).
 
 ---
 
@@ -416,44 +316,16 @@ The canonical formulation is also in the [φ operator](/docs/core/operators/phi-
 :::
 
 :::tip Theorem 12.1 (Fano-coherent self-modelling) [T]
-The canonical coherence-preserving self-modelling for UHM is determined up to the compression parameter $k$ and the Fano weight $\alpha$ (the variational value of item (b) is retracted):
+The canonical coherence-preserving linear observation channel $\mathcal{P}_\alpha$ and self-model $\varphi_{\mathrm{coh}}$ are parameterized by the compression parameter $k$ and free Fano weight $\alpha \in [0, 1]$:
 
-**(a) Algebraic structure:** The Fano plane $\mathrm{PG}(2,2)$ determines the compound atoms of the classifier $\Omega$, generating the Fano–Lindblad operators $L_p^{\text{Fano}}$.
+**(a) Algebraic structure:** The Fano plane $\mathrm{PG}(2,2)$ determines the seven line projectors $\Pi_p$, generating the Fano–Lindblad operators $L_p^{\text{Fano}} = \Pi_p/\sqrt{3}$.
 
-**(b) Variational principle — retracted 2026-09-25 [✗]:** the balance of atomic and Fano observation $\alpha^*$ was said to minimize the functional
+**(b) Phase preservation of $\mathcal{P}_\alpha$:** The Fano–atomic pinching channel $\mathcal{P}_\alpha$ scales every off-diagonal coherence by the positive real factor $c(\alpha) = (1-\alpha)/3 \ge 0$, preserving coherence phases whenever $c(\alpha) > 0$ ($\alpha < 1$).
 
-$$
-\mathcal{F} = S_{\text{spec}} + D_{KL}
-$$
+**(c) Symmetry:** Continuous $G_2$ is broken at every $\alpha \in [0, 1]$ down to the finite frame group $\Gamma_{\!\text{oct}}$, with violation $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3}\Delta_{\max}$ (Theorem 11.3).
 
-but along $\mathcal{P}_\alpha$ this functional is affine in $\alpha$ with non-negative slope and is minimal at $\alpha = 0$ ([Fano channel §4](/docs/proofs/gap/fano-channel#alpha-star)).
-
-**(c) Phase properties:** Canonical $\varphi_{\text{coh}}$ **preserves** the phases of coherences. The target Gap coincides with the current Gap (amplitude scaling without phase distortion).
-
-**(d) Symmetry (corrected):** $G_2$ is broken at every $\alpha$, by the Fano and the atomic components alike (Theorem 11.3). Degree of violation:
-
-$$
-\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3} \cdot \Delta_{\max}
-$$
-
-The earlier $\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}$ assumed a $G_2$-covariant Fano dissipator, retracted on 2026-09-10.
-
-**(e) Stationary Gap:**
-
-$$
-\text{Gap}^{(\infty)}(i,j) = \left|\sin\left(\theta_{ij} - \arctan\left(\frac{\Delta\omega_{ij}}{\Gamma_2 + \kappa}\right)\right)\right|
-$$
-
-where:
-- $\theta_{ij}$ — phase of coherence $\gamma_{ij}$
-- $\Delta\omega_{ij}$ — frequency detuning
-- $\Gamma_2$ — decoherence rate
-- $\kappa$ — regeneration rate
+*(Note: For a unital phase-preserving self-model $\varphi_{\mathrm{coh}}$, dead isolation ([evolution.md](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция)) drives an isolated system to $\Gamma = I/7$, where off-diagonal coherences vanish; the earlier item (e) formula $\mathrm{Gap}^{(\infty)} = |\sin(\theta_{ij} - \arctan(\Delta\omega_{ij}/(\Gamma_2+\kappa)))|$ was withdrawn because it holds only as a linear fixed-anchor phase shift $\theta^a_{ij} - \arctan(\Delta\omega_{ij}/\Gamma_{\mathrm{eff}})$ toward an externally supplied coherent anchor $\rho_a$, not for phase-preserving $\varphi_{\mathrm{coh}}$.)*
 :::
-
-**Physical meaning of stationary Gap:**
-
-Even with phase-preserving $\varphi_{\text{coh}}$ the stationary Gap **differs** from the current one by the angle $\arctan(\Delta\omega/(\Gamma_2 + \kappa))$. This "shift" is caused by unitary rotation: the competition between free precession ($\Delta\omega$) and dissipative damping ($\Gamma_2 + \kappa$) generates stationary opaqueness even for pairs with initially zero Gap.
 
 ---
 
@@ -520,9 +392,9 @@ Let $\phi_k = (k-1)\pi/7$, i.e. $\phi_1 = 0,\; \phi_2 = \pi/7,\; \phi_3 = 2\pi/7
 Gap grows monotonically with the "distance" between dimensions (in the sense of cyclic order). Neighboring dimensions are more transparent, distant ones more opaque. The A$\leftrightarrow$S connection (articulation–structure) is closer and more transparent than A$\leftrightarrow$L (articulation–logic).
 :::
 
-### 8.4 Model 4: Alexithymia ($\gamma_{SE} = |\gamma| \cdot e^{i\pi/2}$)
+### 8.4 Model 4: Single-pair phase opacity ($\gamma_{SE} = |\gamma_{SE}| \cdot e^{i\pi/2}$)
 
-**Model of alexithymia** — pathological disconnection of S$\leftrightarrow$E (body–experience):
+**Rank-1 Gap configuration** — maximal phase opacity on a single pair $(S, E)$:
 
 $$
 \gamma_{SE} = |\gamma_{SE}| \cdot e^{i\pi/2}, \quad \text{remaining coherences} \in \mathbb{R}
@@ -534,35 +406,23 @@ $$
 | $\text{Gap}(i,j)$ for $(i,j) \neq (S,E)$ | $0$ |
 | Opaqueness rank | 1 |
 
-**Interpretation:** The body–experience connection **exists** ($|\gamma_{SE}| > 0$), but is completely opaque. The patient "feels" with the body but is not aware of the experience, and vice versa.
+**Interpretation:** The $(S,E)$ coherence has nonzero modulus ($|\gamma_{SE}| > 0$) with purely imaginary phase, giving a rank-1 Gap operator $\hat{\mathcal{G}}$ (one nonzero singular pair $\pm i|\gamma_{SE}|$). Note that positivity of $\Gamma$ constrains the allowed modulus $|\gamma_{SE}|$ given the remaining real coherences (for example, $S = J_7 - I_7$ with $(S,E)\mapsto i$ remains PSD up to $\eta \approx 0.474$).
 
-:::tip Hamming correction
-Exactly 1 coherence is violated $\to$ by Theorem 3.1 ([section 2.3](#код-хэмминга)) the system can automatically correct via the $\varphi$-operator. **Therapeutic consequence:** restore one S$\leftrightarrow$E connection (somatic therapy), and the remaining coherences stabilize.
-:::
+### 8.5 Model 5: Rational vs. incommensurable unitary frequency spectra
 
-### 8.5 Model 5: Fibonacci dynamics
-
-Let $H_{\text{eff}}$ have eigenfrequencies from the Fibonacci sequence:
+Let $H_{\text{eff}} = \mathrm{diag}(\omega_1, \dots, \omega_7)$ be diagonal. Under purely unitary evolution $\dot{\gamma}_{ij} = -i(\omega_i - \omega_j)\gamma_{ij}$, the coherence phase rotates as:
 
 $$
-\omega = (0,\; 1,\; 2,\; 3,\; 5,\; 8,\; 13) \quad \text{(normalized)}
+\text{Gap}(i,j;\, \tau) = \bigl|\sin\bigl(\theta_{ij}(0) - (\omega_i - \omega_j)\tau\bigr)\bigr|
 $$
 
-Difference frequencies $|\omega_i - \omega_j|$ determine Gap oscillations:
+**Two contrasting spectral regimes:**
 
-$$
-\text{Gap}(i,j;\, \tau) = |\sin(\theta_{ij}(0) + (\omega_i - \omega_j)\tau)|
-$$
+- **Integer Fibonacci spectrum $\omega = (0, 1, 2, 3, 5, 8, 13)$:** Because all frequencies are **integers**, every difference $\Delta\omega_{ij} = \omega_i - \omega_j$ is an integer and every frequency ratio $\Delta\omega_{ij}/\Delta\omega_{kl} \in \mathbb{Q}$ is **rational**. Consequently, the unitary trajectory is strictly **$2\pi$-periodic** (not ergodic), and every pair repeatedly returns to its initial phase.
+- **Incommensurable spectrum (e.g., $\omega_k = \varphi_{\mathrm{gold}}^k$ or rationally independent $\sqrt{p_k}$):** Only when the frequency differences $\Delta\omega_{ij}$ are **rationally independent** (incommensurable over $\mathbb{Q}$) does the phase vector $(\theta_{ij}(\tau))$ wind quasi-periodically and densely on the invariant torus, avoiding simultaneous exact periodicity.
 
-**Dynamic properties:**
-
-- Pairs with rational ratios $\Delta\omega / \Delta\omega'$ have **periodic** transparency windows.
-- Pairs with irrational ratios $\Delta\omega / \Delta\omega'$ fill $[0,1]$ **ergodically** — Gap takes all values with equal probability.
-
-:::info Remark (Golden ratio and Gap)
-The golden ratio $\varphi_{\text{gold}} = (1+\sqrt{5})/2 \approx 1.618$ connects successive Fibonacci members. This means that for most pairs the difference frequencies are **irrationally related** to one another, and Gap **never** reaches exact zero. Complete transparency is a limit, not an achievable state.
-
-If Fibonacci frequencies are indeed connected with biological rhythms (phyllotaxis, neuronal patterns), this is a speculative analogy not following from the UHM axioms. **Status: [I]** — interpretation/analogy.
+:::info Scope [I]
+Whether any biological system exhibits Fibonacci or golden-ratio frequency spectra is an external empirical question not derived from UHM axioms.
 :::
 
 ---
@@ -577,10 +437,10 @@ If Fibonacci frequencies are indeed connected with biological rhythms (phyllotax
 | Coherence matrix $\Gamma$ | [Coherence matrix](/docs/core/dynamics/coherence-matrix) | Definition of $\Gamma$, its properties and computation |
 | Evolution equations | [Evolution of Γ](/docs/core/dynamics/evolution) | Full equation of motion, Liouvillian |
 | Operator $\varphi$ | [φ operator](/docs/core/operators/phi-operator) | Master definition of self-modelling |
-| Lindblad operators | [Lindblad operators](/docs/core/operators/lindblad-operators) | Derivation of $L_k$ from classifier $\Omega$ |
-| $G_2$-structure | [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure) | Full theory of $G_2$-invariants and gauge reduction |
-| Fano selection rules | [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) | Yukawa texture and mass hierarchy |
-| Gap thermodynamics | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) | Gap entropy, free energy of the Gap landscape |
+| Lindblad operators | [Lindblad operators](/docs/core/operators/lindblad-operators) | Structural jumps and symmetry breaking |
+| $G_2$-structure | [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure) | Full theory of $G_2$-invariants |
+| Fano selection rules | [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) | Incidence triples of $\mathrm{PG}(2,2)$ |
+| Gap thermodynamics | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) | Gap entropy and thermodynamic scope |
 
 ### 9.2 Logic map
 
@@ -591,66 +451,56 @@ graph TD
         SP["Spectrum: {0, ±iλ₁, ±iλ₂, ±iλ₃}"]
     end
     subgraph DYN["Dynamics"]
-        BIF["Bifurcations of Gap landscape"]
-        NM["Non-Markovian effects"]
-        STAT["Stationary Gap"]
+        BIF["Model bifurcations (e.g., φ_J fold)"]
+        NM["Non-Markovian kernel (ω_c ≶ 4Γ₂)"]
+        STAT["Coherence & phase evolution"]
     end
     subgraph SYM["Symmetry"]
-        G2["G₂-covariance"]
-        FANO["Fano dissipator"]
+        GOCT["Finite frame group Γ_oct ⊂ G₂"]
+        FANO["Fano dissipator (breaks G₂)"]
     end
-    subgraph ERR["Error correction"]
-        HAM["H(7,4) analogy"]
-        PAR["3 parity checks"]
+    subgraph ERR["Combinatorics"]
+        HAM["PG(2,2) ↔ H(7,4) incidence"]
     end
     subgraph MOD["Model systems"]
         M1["Γ=I/7 (decoherence)"]
-        M2["Uniform superposition (transparency)"]
-        M3["Fano phases (Gap texture)"]
-        M4["Alexithymia (pathology)"]
-        M5["Fibonacci (dynamics)"]
+        M2["Uniform superposition (Gap = 0)"]
+        M3["Pure state with phases"]
+        M4["Single-pair rank-1 opacity"]
+        M5["Rational vs. incommensurable spectra"]
     end
 
     GO --> SP
-    SP --> |"rank = 3"| PAR
     GO --> |"||Ĝ||²_F"| STAT
     BIF --> STAT
     NM --> STAT
-    G2 --> FANO
+    GOCT --> FANO
     FANO --> STAT
-    HAM --> PAR
+    HAM --> FANO
     STAT --> M3
     STAT --> M4
-    NM --> M5
+    STAT --> M5
 ```
 
 ### 9.3 Status summary
 
 | Result | Status | Section |
 |--------|--------|---------|
-| Choi matrix and phase structure of φ | **[T]** | [1.2](#чой-ямиолковский) |
-| Necessity of generalized φ for viability | **[T]** | [1.3](#чой-ямиолковский) |
-| Phase structure of the target state | **[T]** | [1.4](#чой-ямиолковский) |
-| Self-consistency of the target Gap profile | **[T]** | [1.5](#чой-ямиолковский) |
-| Coherence correction via H(7,4) | **[T]** | [2.3](#код-хэмминга) |
-| Quantum Hamming bound for Gap | **[T]** | [2.4](#код-хэмминга) |
-| Bifurcations of the Gap landscape | **[T]** | [3.2](#бифуркации) |
-| Whitney catastrophes for Gap | **[T]** | [3.4](#бифуркации) |
-| Exponential form of memory kernel K(t) | **[T]** | [4.2](#теорема-ядро-экспоненциальное) |
-| Non-Markovian Gap oscillations | **[T]** | [4.2](#немарковские-эффекты) |
+| Choi matrix of fixed linear diagonal-dephasing channel | **[T]** | [1.2](#чой-ямиолковский) |
+| Necessity of coherence preservation for $\Phi \ge 1$ / uniform diagonal | **[T]** | [1.3](#чой-ямиолковский) |
+| Kraus off-diagonal phase formula | **[T]** | [1.4](#чой-ямиолковский) |
+| Fixed points of $\varphi$ vs. nontrivial stationary states (T-96 / T-157) | **[T]** | [1.5](#чой-ямиолковский) |
+| Combinatorial incidence correspondence $\mathrm{PG}(2,2) \leftrightarrow H(7,4)$ | **[T]** | [2](#код-хэмминга) |
+| Saddle-node fold for $\varphi_J$ (other bifurcations model-dependent) | **[T]/[H]** | [3](#бифуркации) |
+| Exponential memory kernel ansatz (T-94) | **[D/H]** | [4.2](#теорема-ядро-экспоненциальное) |
+| Non-Markovian regimes ($\omega_c < 4\Gamma_2$ oscillating, $\omega_c > 4\Gamma_2$ overdamped) | **[T]** | [4.2](#немарковские-эффекты) |
 | Properties of Gap operator | **[T]** | [Gap operator](/docs/core/dynamics/gap-operator#свойства) |
 | Spectral interpretation of Gap | **[T]** | [Gap operator](/docs/core/dynamics/gap-operator#спектр) |
 | Atomic dissipator is not $G_2$-covariant | **[T]** | [6.1](#g2-ковариантность) |
 | Fano dissipator: frame-group $\Gamma_{\!\text{oct}}$-covariant, not full $G_2$ ($\mathcal{D}_{\text{Fano}}=\tfrac23\mathcal{D}_{\text{atom}}$) | **[T]** | [6.2](#fano-frame-covariance) |
 | Degree of $G_2$-violation $\tfrac{2+\alpha}{3}\Delta_{\max}$, affine in $\alpha$ | **[T]** | [6.3](#g2-ковариантность) |
-| Modified gauge reduction — retracted (D-0910) | **[✗]** | [6.4](#g2-ковариантность) |
-| Fano-coherent self-modelling (unified theorem): (a), (c), (e), corrected (d); (b) retracted | **[T]** | [7](#единая-теорема) |
-| Model 1: Uniform system $\Gamma = I/7$ | **[T]** | [8.1](#модельные-системы) |
-| Model 2: Pure state (uniform superposition) | **[T]** | [8.2](#модельные-системы) |
-| Model 3: Pure state with Fano phases | **[T]** | [8.3](#модельные-системы) |
-| Model 4: Alexithymia ($\gamma_{SE} = \lvert\gamma\rvert \cdot e^{i\pi/2}$) | **[T]** | [8.4](#модельные-системы) |
-| Model 5: Fibonacci dynamics | **[H]** | [8.5](#модельные-системы) |
-| Coincidence of opaqueness rank and H(7,4) checks | **[T]** | [Gap operator](/docs/core/dynamics/gap-operator#спектр) |
+| Fano-coherent observation channel $\mathcal{P}_\alpha$ (Theorem 12.1) | **[T]** | [7](#единая-теорема) |
+| Models 1–5 (exact analytical examples) | **[T]** | [8](#модельные-системы) |
 
 ---
 

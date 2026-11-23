@@ -1,7 +1,7 @@
 ---
 sidebar_position: 13
 title: HOLARCH
-description: "The holonic meta-specification of digital architecture: seven concerns, 21 typed channels, four computable viability invariants, three-flow dynamics, a composition algebra and a depth ceiling — validated against UML, C4, SysML v2, DDD, VSM, MAPE-K and the 2024–2026 agentic stack"
+description: "The holonic meta-specification of digital architecture: seven concerns, 21 typed channels, four computable viability invariants, three-flow dynamics, a composition algebra and a bounded-depth federation budget — compared against UML, C4, SysML v2, DDD, VSM, MAPE-K and the 2024–2026 agentic stack"
 ---
 
 # HOLARCH: the holonic meta-specification of digital architecture
@@ -30,25 +30,26 @@ meta-specification, the way the corpus already crystallized a network fabric
 navigation machine ([the Prime Radiant](./prime-radiant.md)) — each built by hand, each
 converging on the same organs.
 
-HOLARCH is that meta-specification, stated once and validated. The delivery criterion
-is taken from the request that produced it, at full strength: **no speculation**, and
-**not inferior to any established solution in any point**. The second half is not
-rhetoric; it is a machine-checked table. §18 lays out 41 load-bearing capabilities of
-the strongest existing frameworks — from UML 2.5.1 to SysML v2 (2025), C4, ArchiMate,
-ISO 42010, DDD, VSM, MAPE-K, Erlang/OTP, Kubernetes, TLA+, Spec Kit, AGENTS.md, MCP and
-A2A — and for each one names the HOLARCH mechanism that carries it, **native** in 28
-cases, **embedded** (the framework is kept, as a mandated view or procedure step) in 12,
-with exactly **one honest gap** (§19). The laboratory re-checks that the table has no
-empty cells and that every named mechanism resolves to a section of this page (HL07).
+HOLARCH is that meta-specification, stated once and audited against the existing field.
+The design goal is **zero hidden speculation** and **explicit traceability to established
+architectural practices**: §18 compares 44 architectural concerns and capabilities across
+major frameworks — from UML 2.5.1 to SysML v2 (2025), C4, ArchiMate, ISO 42010, DDD, VSM,
+MAPE-K, Erlang/OTP, Kubernetes, TLA+, Spec Kit, AGENTS.md, MCP and A2A — distinguishing
+where HOLARCH provides a **native modeling construct**, where an external notation,
+verifier, or execution platform is **retained/embedded**, and where real engineering gaps
+remain (§19). HOLARCH operates strictly at the **design-level meta-specification layer**:
+it classifies and constrains architecture; it does **not** replace production runtimes
+(such as Kubernetes or Erlang/OTP), formally verified kernels (such as seL4), or mature
+diagramming toolchains. The laboratory re-checks that every row of §18 resolves to a
+section of this page (HL07).
 
-What HOLARCH is *not*: it is not a notation (it emits notations), not a process (it
-contains one as a component), not a pattern catalog (patterns become typed channel
-configurations). It is the semantic layer the sixty-year lineage kept circling without
-landing on: a **fixed, theorem-forced alphabet of concerns; a complete typed taxonomy
-of couplings; computable viability invariants with proven thresholds; dynamics,
-self-model, composition and depth as first-class citizens**. Existing languages become
-projections of one computable object — the way the same building casts a floor plan,
-a wiring diagram and an elevation.
+What HOLARCH is *not*: it is not a notation (it emits notations), not a runtime or kernel,
+not a process (it contains one as a component), and not a pattern catalog (patterns become
+typed channel configurations). It is a computable semantic layer: a **fixed alphabet of
+concerns; a complete typed taxonomy of couplings; computable viability invariants with
+explicit cuts; dynamics, self-model, composition and bounded-depth federation as
+first-class modeling constructs**. Existing notations become projections of one computable
+object — the way the same building casts a floor plan, a wiring diagram and an elevation.
 
 ## §2. The landscape: what sixty years actually taught {#ландшафт}
 
@@ -110,17 +111,16 @@ nothing can compute is advice, not law.
 **The diagnosis, in one place.** Across all four waves, seven capabilities are
 systematically absent, and they are exactly the seven UHM supplies as mathematics:
 
-1. a **fixed alphabet of concerns** with a uniqueness theorem (not "however many
-   layers we drew this year") — supplied by N=7 diagnosability rigidity, T-224 [T];
+1. a **fixed alphabet of concerns** with a rigidity theorem for single-fault localizability — supplied by N=7 diagnosability rigidity, T-224 [T];
 2. a **complete typed taxonomy of couplings** — supplied by the 21 coherences of Γ;
-3. **numeric viability invariants** with proven thresholds — P, R, Φ, D [T];
-4. **dynamics as first-class** — the three-flow decomposition of ℒ_Ω, T-262 [T];
-5. a **self-model with an anti-Goodhart theorem** — φ(Γ), T-96/T-191 [T]; T-222 [T] adds that no resource vector can stand in for the target, since the viable window has no resource optimum;
+3. **numeric viability invariants** with declared cuts [D] and proven independence/robustness — P, R, Φ, D (T-124b/d [T], T-129 [D], T-151 [D]);
+4. **dynamics as first-class** — a three-flow grouping [D] with dephasing-model spectral/Onsager identities, T-262 [T at specified dephasing model] (diagonal kernel; not a Riemannian metric or $G_2$-covariant);
+5. a **self-model with an anti-Goodhart discipline** — φ(Γ), T-96/T-191 [T under stated model/contraction hypotheses]; T-222 [T] adds that in the high-temperature Rényi model no resource vector can stand in for the target;
 6. an **exact block-purity identity with an explicit comparison** — T-77 [T]; operational benefit remains a separate obligation;
-7. a **depth ceiling with a federation rule** — T-142 [T/C].
+7. a **score-convention depth ladder and bounded-depth federation budget** — T-142 [T at specified SAD score convention] and T-304 [D]+[H] (the universal depth ceiling T-217 is withdrawn [✗]).
 
 The rest of this page states the meta-specification (§3–§14), runs it through three
-worked designs (§15–§17), proves the subsumption table (§18), and attacks it (§19).
+worked designs (§15–§17), presents the comparative capability mapping (§18), and attacks it (§19).
 
 ## §3. The signature of an architectural holon {#холон}
 
@@ -148,7 +148,7 @@ cell has a canonical name and semantics), and equipped with invariants and an
 evolution law. Everything downstream — verdicts, ablations, views — is computed from
 this one object. A system is then a **holarchy**: a bounded-depth tree of holons (§10)
 with contracts on the edges — the corpus's
-[holarchic ladder](https://homohologra.ph/research/gamma-canon#холархия) restricted to
+[holarchic hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) restricted to
 engineered systems.
 
 ## §4. The seven aspects {#аспекты}
@@ -256,18 +256,20 @@ not a grade to be optimised away.
 
 ## §6. The four viability invariants {#инварианты}
 
-Everything in this section is imported theorem arithmetic; the engineering layer only
-chooses what to feed it. For a design, Γ is assembled from declared budgets and flows
-(§12, §14); at runtime, from measurement. Four numbers then decide, with thresholds
-that are proved, not tuned ([viability](/docs/core/dynamics/viability),
-[T-124b](/docs/proofs/consciousness/conscious-window#t-124b)):
+Everything in this section imports corpus state-space functionals; the engineering layer
+chooses what to feed them. For a design, Γ is assembled from declared budgets and flows
+(§12, §14); at runtime, from measurement. Four numbers then form the verdict, using
+**declared threshold cuts `[D]`** whose mutual independence, Lipschitz robustness, and
+algebraic interrelations are proven theorems ([viability](/docs/core/dynamics/viability),
+[T-124b](/docs/proofs/consciousness/conscious-window#t-124b) [T],
+[T-124d](/docs/proofs/consciousness/conscious-window#t-124d) [T]):
 
-| Invariant | Formula | Threshold | Guards against — the named pathology |
-|-----------|---------|-----------|--------------------------------------|
-| V1 Distinguishability | $P = \mathrm{Tr}(\Gamma^2)$ | $P > 2/7$ [T] | **mud**: the big ball — activity smeared until the system is statistically indistinguishable from noise |
-| V2 Reflection | $R \ge 1/3$ [T]; lower-bound form $R = 1/(7P)$ ⇔ $P \le 3/7$ | $R \ge 1/3$ | **crystal/monolith**: one global pattern eats the system; nothing is left to observe it |
-| V3 Integration | $\Phi = \sum_{i \ne j}\lvert\gamma_{ij}\rvert^2 / \sum_i \gamma_{ii}^2$ | $\Phi \ge 1$ [T] (T-129) | **fragmentation**: parts without binding — the microservice archipelago with no real contracts |
-| V4 Differentiation | $D_{\mathrm{diff}} = 1 + 6\,\mathrm{Coh}_E$ | $D \ge 2$ [D] (T-151) | **rigidity**: a single-mode system — no degraded mode, no second regime to fall back to |
+| Invariant | Formula | Threshold cut | Guards against — the named pathology |
+|-----------|---------|---------------|--------------------------------------|
+| V1 Distinguishability | $P = \mathrm{Tr}(\Gamma^2)$ | $P > 2/7$ **[D]** (non-empty window T-124 [T]; $\Phi\ge1\Rightarrow P\ge2/7$ T-129a [T]) | **mud**: the big ball — activity smeared until the system is statistically indistinguishable from noise |
+| V2 Reflection | $R \ge 1/3$ **[D]**; algebraic lower-bound identity $R = 1/(7P) \iff P \le 3/7$ [T] | $R \ge 1/3$ **[D]** | **crystal/monolith**: one global pattern eats the system; nothing is left to observe it |
+| V3 Integration | $\Phi = \sum_{i \ne j}\lvert\gamma_{ij}\rvert^2 / \sum_i \gamma_{ii}^2$ | $\Phi \ge 1$ **[D]** (T-129 [D]; one-way purity bound T-129a [T]) | **fragmentation**: parts without binding — the microservice archipelago with no real contracts |
+| V4 Differentiation | 7D native proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E$ [D] (canonical $D_{\mathrm{diff}}=\exp S_{\mathrm{vN}}(\rho_E)$ on extended $\mathcal{H}_E$) | $D \ge 2$ **[D]** (T-151 [D]) | **rigidity**: a single-mode system — no degraded mode, no second regime to fall back to |
 
 Four properties make this table an instrument rather than a metaphor.
 
@@ -303,47 +305,56 @@ structural consonance, not an identity (HL09, HL14).
 
 ## §7. Dynamics: the three flows {#динамика}
 
-An architecture that only describes standing structure describes a corpse. The corpus
-proves the evolution law decomposes *exactly* into three geometric flows
-([T-262](/docs/core/dynamics/evolution#теорема-динамическая-трихотомия) [T]+[C]):
+An architecture that only describes standing structure describes a corpse. HOLARCH organizes
+evolution into a **three-flow modeling decomposition `[D]`** (a chosen grouping of
+unitary, dissipative, and regenerative terms rather than a unique categorical exhaustion
+of all GKSL generators). Within the **specified dephasing model**,
+[T-262](/docs/core/dynamics/evolution#теорема-динамическая-трихотомия)
+(**[T at specified dephasing model]**) establishes unitary spectral invariance,
+nonnegative dephasing entropy production, and a positive semidefinite Onsager identity —
+noting explicitly that the operator has a **diagonal kernel** and is **neither a
+Riemannian metric nor $G_2$-covariant**:
 
 1. **Work — the unitary flow**: transformations that preserve every spectral
    functional. Engineering: the reversible moves — refactorings that provably keep
    behavior, blue-green switchovers, live migrations. What characterizes them: they
    cost energy, never structure.
-2. **Heat — the dissipative flow**: gradient descent of negentropy at rate γ; the
+2. **Heat — the dissipative flow**: dephasing/entropy production at rate γ; the
    system relaxing toward grey. Engineering: bitrot, dependency drift, config
    entropy, knowledge evaporation. This flow is *never zero*; pretending otherwise
    is how systems die politely.
-3. **Matter — the regenerative flow** ℛ: replacement toward the target $\rho^*$
-   through the self-model. Engineering: supervision restarts, immutable-infra
-   redeploys, crash-only recovery — repair by **replacement**, not surgery
-   (Erlang/OTP and Kubernetes each industrialized one half of this flow).
+3. **Matter — the regenerative flow** ℛ: replacement toward a target $\rho^*$.
+   Engineering: supervision restarts, immutable-infra redeploys, crash-only
+   recovery — repair by **replacement**, not surgery (conceptually aligned with
+   Erlang/OTP supervision and Kubernetes desired-state reconciliation).
 
-Three imported results give the flows teeth:
+Model-conditional corpus results give the flows quantitative benchmarks:
 
-- **No supply, no being.** An isolated holon provably dies: with regeneration
-  anchored to the grey state, purity is non-increasing and $P \to 1/7$
-  ([T-288](/docs/reference/status-registry) [T]). Viability is a *driven* phenomenon
-  with an ignition threshold in drive-to-dissipation ratio, numerically
-  $(r/\gamma)_c \approx 7$ for reference dissipation (T-289 [T]/[C]). An
-  architecture document that does not state its supply loop has not stated the
-  system.
-- **The silver floor.** In the stationary feeding model (T-259 [Т в модели]), the
+- **No supply, no being.** Under the specified linear unital channel, purity is
+  non-increasing ([T-288](/docs/reference/status-registry) **[T under the specified
+  linear unital channel]**; strict decay to $1/7$ requires primitivity). Under the
+  specified affine driven injection model with depolarizing dissipation and a fixed
+  replacement state, stationary purity depends on the drive-to-dissipation ratio
+  (numerically $(r/\gamma)_c \approx 7$ in the reference parametrization;
+  T-289 **[T under the specified affine driven injection model]**). An architecture
+  document that does not state its supply loop has not stated the system.
+- **The silver floor.** In the stationary isotropic fixed-target feeding model (T-259 **[T in the model]**), the
   maintenance-to-decay ratio $x = \kappa_{\mathrm{eff}}/\Gamma_2$ must exceed
-  $1 + \sqrt{2} \approx 2.414$ for the state to hold above the $2/7$ floor — the
+  $1 + \sqrt{2} \approx 2.414$ for the stationary branch to hold above the $2/7$ floor — the
   laboratory reproduces the fold: $x = 0.9\,x_{\min}$ starves ($P_\infty = 0.277 <
   2/7$), $x_{\min}$ lands exactly on the floor, $1.3\,x_{\min}$ lives
-  ($P_\infty = 0.307$) (HL12). Engineering translation, deliberately blunt: **a
-  system whose regeneration tempo is not ≈2.4× its entropy tempo is dissolving,
-  whatever the roadmap says.**
-- **Halt and reignition.** The off-switch is a physics-level statement: cut the
-  drive and the system settles to grey in $t_{\mathrm{off}} \approx 0.49/\gamma$,
-  with **hysteresis-free reignition** (T-288) — which is the crash-only design rule
-  (recovery = the one and only start path) derived rather than preached.
-- **The algedonic wire.** $\mathcal{V}_{\mathrm{hed}} = dP/d\tau$ (T-103 [T]+[I]) —
-  the signed tempo of organization — is VSM's algedonic channel with a formula: one
-  scalar that bypasses dashboards and says *getting better / getting worse*.
+  ($P_\infty = 0.307$) (HL12). Engineering rule of thumb: **a system whose
+  regeneration tempo falls below its model-specific entropy-balance threshold is
+  dissolving, whatever the roadmap says.**
+- **Halt and reignition.** In the same driven model, cutting the drive returns the
+  state monotonically toward $I/7$ (time scale $\sim 0.49/\gamma$ in the reference
+  run, T-288/T-289), matching the crash-only design discipline (recovery = the one
+  and only start path).
+- **The algedonic wire.** Under a specified differentiable injection field, purity
+  flux $\dot P = 2a\,\mathrm{Tr}(\rho(\sigma-\rho))$ (T-103 **[T at specified
+  differentiable injection field] + [I]**; sign is state-dependent and hedonic
+  reading is an interpretation) serves as a compact VSM-style algedonic scalar
+  signaling whether organization is rising or falling.
 
 ## §8. The self-model and the anti-Goodhart clause {#самомодель}
 
@@ -351,11 +362,17 @@ Every wave-3 loop (MAPE-K's Knowledge, Kubernetes' desired state, the digital tw
 carries an unexamined assumption: that the system's account of itself can be trusted.
 HOLARCH imports the corpus results that examine it:
 
-- $\varphi(\Gamma)$ — the self-model — is a **functor** (T-96 [T]): it must be
-  computed *from the state* by a lawful map, not asserted alongside it.
-- The self-model tower $\varphi, \varphi^{(2)}, \ldots$ **converges** for an embodied holon under backbone dominance (T-191 [T])
-  and terminates at depth 3 (T-142) — reflection on reflection has a floor and a
-  ceiling; §10 prices it.
+- $\varphi(\Gamma)$ — the self-model — must be **computed from the state** by a
+  declared map rather than asserted alongside it (T-96 **[T under the stated
+  stationary model]** gives nontrivial purity/mismatch conditions under its
+  explicit baseline and diagonal-preservation hypotheses).
+- Fixed-point iteration $\varphi, \varphi^{(2)}, \ldots$ **converges geometrically**
+  whenever its Lipschitz constant is strictly below one on the chosen complete
+  invariant domain (T-191 **[T under the stated strict contraction]**; purity alone
+  does not bound the Lipschitz constant). Under the stipulated score convention of
+  T-142 (**[T at specified SAD score convention]**; universal depth ceiling T-217
+  is withdrawn **[✗]**), the score stops at 3 — §10 analyses the resulting
+  window trade-off and architectural budget.
 - **Fidelity is a number**: $R_\varphi = 1 - \lVert\Gamma - \varphi(\Gamma)\rVert^2
   / \lVert\Gamma\rVert^2$ — the fraction of the system's actual state its telemetry
   and models capture. For an agent platform this is, concretely, eval fidelity: how
@@ -418,11 +435,11 @@ the key *and* spreads it: either half alone would leave most of the gain on the
 table [C].
 
 
-## §10. Depth: the ladder and the ceiling {#глубина}
+## §10. Depth: the score ladder, the window trade-off, and the architectural budget {#глубина}
 
-The Depth Tower ([T-142](/docs/consciousness/hierarchy/depth-tower) [T at
-α = 2/3] + [C at the ladder formula]) prices reflection levels: sustaining
-self-model depth $n$ requires purity above
+Under the stipulated attenuation score convention ([T-142](/docs/consciousness/hierarchy/depth-tower)
+**[T at the specified SAD score convention]** — `scoreR0 = 7P/2`, attenuation $3^{-(k-1)}$,
+cut $1/(k+1)$), the purity thresholds for score rungs $n = 1, 2, 3, 4$ evaluate algebraically to
 
 $$
 P_{\mathrm{crit}}^{(n)} = \frac{2}{7}\cdot\frac{3^{\,n-1}}{n+1}
@@ -430,43 +447,46 @@ P_{\mathrm{crit}}^{(n)} = \frac{2}{7}\cdot\frac{3^{\,n-1}}{n+1}
 \tfrac{1}{7},\;\; \tfrac{2}{7},\;\; \tfrac{9}{14},\;\; \tfrac{54}{35} > 1
 $$
 
-(HL02). The fourth rung demands purity beyond the physical maximum — **depth 3 is a
-ceiling**, resting on three independent arguments (dynamical, categorical, algebraic)
-in the corpus. Engineering translation:
+(HL02). Two critical clarifications replace earlier overclaims:
 
-- **Mandate concentration climbs the ladder.** A depth-2 governor must run at
-  $P > 2/7$; a depth-3 governor at $P > 9/14 \approx 0.64$ — more than twice as
-  concentrated. Deep control layers must be *small and pure*: the microkernel
-  instinct (a minimal, verified core under a broad userland) is this rung
-  arithmetic felt by hand.
-- **Above three: federate.** There is no depth-4 governor; there is an **ecology**
-  of depth-≤3 systems with contracts (§9). C4's practical stop at four zooms and
-  VSM's recursion (same shape at every level, never a taller tower per subject) both
-  encode the ceiling as craft.
-- **External consonance [CONS].** The blockchain lineage ran the experiment at
-  ecosystem scale: L2 rollups scale L1; stacked L3s do *not* compound scaling —
-  Buterin's argument is that data "can be compressed once, but not again", so L3's
-  legitimate role is customization, not another turn of the same crank. An
-  independent discipline discovering "the same trick does not stack a third time"
-  is exactly what a real ceiling looks like from outside (§16).
+1. **Not a universal depth ceiling.** The universal depth ceiling (`T-217` **[✗]**) is
+   **withdrawn**; `T-142` holds only algebraically for that stipulated score convention
+   and imposes no universal prohibition on metamodels or deeper engineered hierarchies.
+2. **Conflict between $P > 9/14$ and the agentic window $(2/7, 3/7]$.** Notice that the
+   $n = 3$ rung requires $P > 9/14 \approx 0.643$, which **exceeds the upper edge
+   $P = 3/7 \approx 0.429$ of the V1–V2 conscious/agentic window (§6)**: at
+   $P > 9/14$, the lower-bound reflection satisfies $R = 1/(7P) < 2/9 \approx 0.222 < 1/3$,
+   violating V2 (the "crystal/monolith" regime). Consequently, a single holon running inside
+   the agentic window $P \in (2/7, 3/7]$ **cannot** simultaneously operate at $P > 9/14$
+   under the lower-bound $R$ criterion.
 
-- **Breadth is bounded too, and the two bounds multiply [C].** A node types at most
-  21 distinct dependencies (§5), so it can carry at most 21 addressing decisions;
-  with depth capped at three, the reach of one holarchy is $21$ raised to the depth.
-  How much of that is attainable depends on what a single addressing decision can
-  express. The full bound is $21^3 = 9261$ typed contexts; what decides
-  whether that reach is real is *how an address is held*. An address **read** from
-  the sign of a channel is one bit, branching is two, and the ceiling collapses to
-  $21 \cdot 2^2 = 84$ — two orders of magnitude of reach lost to the readout. An
-  address **stored** as a declared contract instead spends a whole channel on each
-  child, so fan-out runs to 21 and the full 9261 stands. The laboratory separates the
-  two regimes (HL15): the declared holarchy gains 26% over the undivided holon at
-  fan-out 2 and 39% at fan-out 7 — the advantage *grows* with branching, which is
-  what a channel-bound fan-out predicts and a bit-bound one forbids. The ceiling is
-  also not merely arithmetic: at exactly 84 contexts over four leaves at depth 3,
-  every node sitting at capacity, the declared-routing holarchy misses 242 against
-  the undivided holon's 339. So 9261 is the reach, and it is earned rather than
-  assumed — the price is one declared address per child.
+Engineering translation:
+
+- **Deterministic kernels vs. agentic holons.** A minimal, rigid verification core (such as
+  a microkernel) may legitimately operate at high concentration $P > 3/7$ by trading away
+  lower-bound reflection $R$ in favor of deterministic lock-in. Conversely, a reflective
+  agentic holon stays inside the window $P \in (2/7, 3/7]$ and does **not** seek $P > 9/14$.
+- **Federation as an architectural budget (`T-304` [D] + [H]).** Rather than stacking
+  arbitrary nesting depth inside one holon, HOLARCH adopts **depth $\le 3$** as an
+  **architectural design budget `[D]`** and delegates larger scale to a federated **ecology**
+  of bounded-depth holons with declared contracts (§9). C4's practical four-zoom cap and
+  VSM's bounded recursion reflect the same engineering craft.
+- **External consonance [CONS].** The blockchain lineage ran a related experiment at
+  ecosystem scale: L2 rollups scale L1, whereas stacked L3s do *not* compound compression
+  (Buterin's argument: data "can be compressed once, but not again"), so L3's legitimate
+  role is customization rather than repeating the same layer (§16). This is a structural
+  rhyme, not a derivation.
+- **Breadth budget and addressing cost (`T-304` [D] + [H]).** A node types at most
+  21 distinct dependencies (§5), so allocating one subordinate per unordered pair gives
+  21 slots; under the chosen architectural budget of depth 3, one holarchy spans at most
+  $21^3 = 9261$ typed contexts (or $21 \cdot 2^2 = 84$ if each address is read only from
+  a single channel sign bit). These are **architectural capacity budgets**, not universal
+  composition ceilings. The laboratory separates the two regimes (HL15): the declared
+  holarchy gains 26% over the undivided holon at fan-out 2 and 39% at fan-out 7 — the
+  advantage *grows* with branching, matching channel-bound fan-out rather than bit-bound
+  fan-out. At 84 contexts over four leaves at depth 3, the declared-routing holarchy
+  misses 242 against the undivided holon's 339: reach is earned by spending one declared
+  contract per child.
 
 
 ## §11. Diagnosability: the seven-axis instrument panel {#диагностика}
@@ -535,7 +555,7 @@ notations struggle with) collapse into "both views project one Γ".
 
 | Notation | What projects into it |
 |----------|----------------------|
-| C4 | the holon tree at depths 0–3 = context/containers/components/code; the ceiling theorem explains why the fourth zoom is where maps hand off to code |
+| C4 | the holon tree at depths 0–3 = context/containers/components/code; the depth-3 architectural budget (§10) mirrors where C4 hands off to code |
 | UML class / sequence / state | S-aspect structure; D-channel interactions; SD persistence machines |
 | SysML v2 / KerML | the full instance, textual and API-first — closest cousin in spirit; HOLARCH adds the invariants v2 does not have |
 | ArchiMate | strata of the holarchy; its relationship taxonomy lands in the 21 channels |
@@ -627,7 +647,7 @@ Loopix design, *named by the state itself*.
 fraction $f = 1/3$ per layer, the fully-hostile-route probability is $f^\ell$: 33.3%
 at one layer, 11.1% at two, **3.7% at three**, 1.2% at four — at ~50 ms per hop.
 Depth 2→3 buys 9× at +50 ms; 3→4 buys only the same 3× multiplier for another
-+50 ms — and the anonymity trilemma (Das–Meiser–Mohammadi–Kate 2018 [external Т])
++50 ms — and the anonymity trilemma (Das–Meiser–Mohammadi–Kate 2018 [external T])
 proves the remaining gap is always paid in bandwidth (cover) or latency, never free.
 The procedure therefore lands on: **at least two independent mixing layers (V4's
 $D \ge 2$ heard at topology scale: one mix = one trusted party = no anonymity),
@@ -664,9 +684,9 @@ node-state margin has one regime and no floor to degrade onto.
 Erigon 7% (HL14) — the leader sits *above* the community's 1/3 danger line and below
 the 2/3 finality-killing line, which is exactly how the ecosystem itself talks about
 it. BFT's $f < n/3$ and the R-ceiling are the same *shape* of law on different bases
-(HL09 states both sides precisely; [I], not an identity). And the depth ceiling ran
-its own experiment here: L2 scales L1; stacked L3s do not compound (compression does
-not stack) — the ecosystem discovered §10's ceiling from outside (CONS).
+(HL09 states both sides precisely; [I], not an identity). And the depth-budget heuristic
+finds an external consonance here: L2 scales L1; stacked L3s do not compound compression —
+a structural rhyme with §10's bounded-depth federation rule (CONS).
 
 **Ω8.** The feeding law lands bluntly on this breed: issuance+fees fund the
 regeneration flow; a chain whose maintenance-to-entropy ratio slips under the silver
@@ -693,73 +713,77 @@ must not grade its own homework with a gauge it can write to. The canon says "ad
 memory"; V4 says memory is the *differentiation organ*: unplug E and the ablation
 lands exactly on rigidity — an agent with no interior state has one regime, which is
 the observed brittleness of stateless prompt-chains. The canon says "orchestrate";
-§10 prices the depth: orchestrator→worker→tool is depth 3, and a fourth reflective
-tier has no budget — federate instead (A2A), which is what the industry's
-multi-agent turn did empirically. The corpus's SYNARC-Ω is the full-strength
+§10 adopts an architectural depth-3 budget (`T-304` [D]+[H]): orchestrator→worker→tool
+caps a single hierarchy and delegates further nesting to federation (A2A), mirroring the
+industry's multi-agent turn. The corpus's SYNARC-Ω is the full-strength
 realization of this breed (the AGI-grade instance with all theorems switched on);
 the [Prime Radiant's case №1](./prime-radiant.md#кейсы) runs its σ-panel as
 interoception.
 
-## §18. The subsumption matrix {#матрица}
+## §18. Comparative mapping against established frameworks {#матрица}
 
-The delivery criterion, mechanically. 41 load-bearing capabilities across the
-strongest frameworks; each row names the HOLARCH mechanism and its section. **Native**
-(N): the capability is carried by HOLARCH's own machinery. **Embedded** (E): the
-framework itself is retained — as a mandated view, procedure stage or contract field —
-so its capability (and its tooling) is inherited rather than reinvented. The
-laboratory verifies no row is empty and every mechanism anchor resolves (HL07:
-28 N / 12 E / 1 honest gap, listed in §19).
+This section maps 44 architectural concerns across established notations, methods,
+runtimes, and reference systems onto HOLARCH's vocabulary, making explicit what HOLARCH
+models natively and what remains external. **Native modeling construct** (N): HOLARCH's
+own state-matrix specification provides a first-class architectural representation for
+that concern. **Embedded / External** (E): the established notation, formal verifier,
+execution runtime, or reference system is **retained as an external artifact or platform**
+— HOLARCH classifies where it sits in the design and does **not** replace its runtime,
+consensus protocol, or formal proofs. **Gap** (G): ecosystem capability not yet built.
+The laboratory verifies that every row is non-empty and every section anchor resolves
+(HL07).
 
-| Framework → capability | Mode | HOLARCH mechanism |
+| Framework → capability | Mode | HOLARCH comparative mapping |
 |---|---|---|
 | **UML 2.5.1** — diagram vocabulary; MOF interchange; tooling ecosystem | E·E·**G** | view emission from S/D/L projections (§13); `holarch.v1` as interchange (§14); *gap: native tooling* (§19) |
 | **SysML v2/KerML** — textual git-native models, API; traceability | N·N | text-first instance + lab-as-API (§14); Γ-target→budget→channel trace (§12) |
-| **C4** — zoom levels; maps-not-models pragmatism | N·E | depth tower with a ceiling theorem (§10); views stay maps, the model computes behind them (§13) |
-| **ArchiMate 3.2** — EA layers; relationship taxonomy | E·E | holarchy strata; relations land in 21 channels (§5, §13) |
-| **ISO 42010** — stakeholder/concern/viewpoint discipline | N | fixed concern alphabet + generated views + trivialized correspondences (§13) |
+| **C4** — zoom levels; maps-not-models pragmatism | N·E | bounded-depth federation budget (§10); views stay maps, the model computes behind them (§13) |
+| **ArchiMate 3.2** — EA layers; relationship taxonomy | E·E | holarchy strata; relations map onto 21 channels (§5, §13) |
+| **ISO 42010** — stakeholder/concern/viewpoint discipline | N | fixed concern alphabet + generated views + single-source correspondences (§13) |
 | **arc42 / ADR** — documentation skeleton; decision log | E·N | emitted from instance (§12 Ω5); ADR + status discipline [T]/[C]/[H]/[D]/[I] (§13) |
 | **TOGAF ADM / Zachman** — process cycle; interrogative coverage | E·E | Ω0–Ω9 with computable gates (§12); interrogatives = aspect×view queries (§13) |
-| **AADL** — analyzable embedded semantics | E | O/L channel contracts carry analysis annexes; AADL as mandated view (§5) |
-| **TLA+/Alloy** — formal behavior verification | E | mandatory formal view on heavy L-contracts (§13) |
+| **AADL** — analyzable embedded semantics | E | O/L channel contracts carry analysis annexes; AADL retained as mandated view (§5) |
+| **TLA+/Alloy** — formal behavior verification | E | mandatory external formal view on heavy L-contracts (§13) |
 | **DDD** — bounded contexts; context-mapping patterns | N·N | holon boundary = E-interiority (§3); typed interface models; T-77 has only the block-identity scope (§9) |
 | **Hexagonal/Clean** — dependency rule, ports/adapters | N | A-ports, O-adapters, protected L/S/E core; the rule is channel direction (§4) |
 | **Parnas 1972** — information hiding as criterion | N | E is an *axis with a measure* (Coh_E), not advice (§4) |
-| **Simon 1962** — near-decomposability | N | sparse-but-nonzero cross-blocks, quantified by the Φ window (§6) |
+| **Simon 1962** — near-decomposability | N | sparse-but-nonzero cross-blocks, quantified by the Φ cut (§6) |
 | **Alexander** — pattern language; semilattice not tree | N | Fano incidence: overlapping lines over 7 aspects — a semilattice by theorem (§11) |
 | **DSM** — dependency matrix + clustering | N | Γ *is* the matrix — typed, PSD, dynamic, thresholded (§3) |
-| **VSM** — viability criterion; recursion; algedonic channel | N·N·N | four invariants [T] (§6); depth tower (§10); $\mathcal V_{\mathrm{hed}} = dP/d\tau$ (§7) |
-| **MAPE-K** — autonomic loop over knowledge | N | φ(Γ) + reconciliation flows, with convergence theorems (§8, §7) |
-| **Erlang/OTP / Kubernetes** — supervision; desired-state reconciliation | N·N | ℛ replacement flow (§7); ρ* attractor + DU channel (§5, §7) |
-| **Reactive Manifesto** — responsive/resilient/elastic/message-driven | N | thresholds + ℛ + O-budget elasticity + A/D channel style (§6, §7) |
+| **VSM** — viability criterion; recursion; algedonic channel | N·N·N | four invariants ([D] cuts; independence/robustness [T], §6); bounded-depth federation (§10); purity-flux scalar (§7) |
+| **MAPE-K** — autonomic loop over knowledge | N | φ(Γ) + three-flow model, with conditional contraction/feeding bounds (§8, §7) |
+| **Erlang/OTP / Kubernetes** — supervision; desired-state reconciliation | E·E | *specification-level mapping only*: conceptual correspondence to $\mathcal{R}$ replacement flow and `DU` channel (§5, §7); **production supervision, scheduling, and cluster reconciliation remain in Erlang/OTP and Kubernetes** |
+| **Reactive Manifesto** — responsive/resilient/elastic/message-driven | N | threshold cuts + ℛ policy + O-budget elasticity + A/D channel style (§6, §7) |
 | **12-Factor** — operational hygiene | E | each factor lands in an aspect checklist at Ω2 (§12) |
 | **CALM** — coordination boundary | E | mandatory monotone/coordinated field on LU contracts (§9) |
-| **Conway / Team Topologies** — org↔system mirror; interaction modes | N·N | org-holon ⊗ system-holon cross-block (§9) |
+| **Conway / Team Topologies** — org↔system mirror; interaction modes | N·N | declared org–system coupling model (§9) |
 | **ATAM** — scenario-based tradeoff analysis | N | ablation calculus: scenario = ablation, sensitivity = ∂verdict (§12 Ω4) |
-| **Spec Kit SDD** — constitution→specify→plan→tasks | N | Ω0–Ω9 with mathematics inside the gates (§12) |
-| **AGENTS.md** — machine context for repos | N | the `holarch.v1` instance *is* the design-level machine context (§14) |
-| **MCP / A2A** — tool contracts; agent peering | N·N | SL/AS contract channels (§5); declared peering with independently measured task outcomes (§9) |
+| **Spec Kit SDD** — constitution→specify→plan→tasks | N | Ω0–Ω9 with computable checks inside the gates (§12) |
+| **AGENTS.md** — machine context for repos | N | the `holarch.v1` instance serves as a design-level machine context (§14) |
+| **MCP / A2A** — tool contracts; agent peering | E·E | mapped to SL/AS contract channels (§5) and declared peering (§9); **actual wire protocols remain MCP and A2A** |
 | **Anthropic agent patterns** — workflows-vs-agents; evaluator-optimizer | N | DL regulation loop + LE evidence critic + R_φ fidelity (§17, §8) |
-| **LangGraph/AutoGen/CrewAI** — orchestration graphs | E | U-organ emitted as graph views (§13) |
-| **Nym/Loopix · Ethereum-modular · seL4** — reference architectures | N·N·N | re-derived in §15; re-derived in §16; LO-grounding channel at [T]-grade (§5) |
+| **LangGraph/AutoGen/CrewAI** — orchestration graphs | E | U-organ emitted as graph views; runtime execution stays in the orchestration framework (§13) |
+| **Nym/Loopix · Ethereum-modular · seL4** — reference architectures | E·E·E | *architectural profiling only*: W1 (§15) and W2 (§16) profile Loopix and modular-blockchain designs in `holarch.v1`; **seL4's machine-checked Isabelle/HOL kernel proof is an external formal-verification artifact mapped to `LO` (§5) — HOLARCH classifies it and never derives or replaces it** |
 
-Reading the table honestly in both directions: HOLARCH **adds** to every row at least
-one of {computable invariants, typed channels, dynamics, anti-Goodhart, composition
-arithmetic, depth ceiling, diagnosability} — the seven absences of §2; and HOLARCH
-**loses** to the field in exactly one column (tooling maturity), stated in §19 rather
-than hidden in an appendix.
+Reading the table honestly in both directions: at the **architectural modeling layer**,
+HOLARCH adds a common state-matrix grammar (fixed 7-aspect alphabet, 21 typed channels,
+four computable cuts, ablation checks, and Fano triad diagnostics) across notations that
+otherwise do not compose. Conversely, HOLARCH does **not** subsume or replace execution
+runtimes (Kubernetes, Erlang/OTP), formally verified kernels (seL4), formal model
+checkers (TLA+/Alloy), wire protocols (MCP/A2A), or mature diagramming toolchains (§19).
 
-## §19. Critical analysis: boundaries, falsifiers, the one gap {#границы}
+## §19. Critical analysis: boundaries, falsifiers, and honest gaps {#границы}
 
 A meta-specification claiming perfection would refute itself; this section is the
 spec attacking its own weakest planks, in descending order of load.
 
-**The honest gap: tooling.** UML has forty years of editors, generators and trained
-readers. HOLARCH's answer — inherit tooling through mandated view emission, keep the
-model computable in a 700-line reference validator — is architecturally sound and
-*young*. Until independent implementations of `holarch.v1` exist, "not inferior"
-holds at the level of capability-by-mechanism (§18), not at the level of ecosystem
-mass. This is the single **G** cell, and it closes only with adoption, not with
-argument.
+**Honest scope and gaps: tooling, runtimes, and domain proofs.** UML and SysML have
+decades of editors, generators, and trained practitioners; Kubernetes and Erlang/OTP
+provide battle-tested distributed execution; seL4 provides a machine-checked C/binary
+proof of kernel isolation in Isabelle/HOL. HOLARCH is strictly a **design-level
+meta-specification** backed by a ~700-line reference validator — it complements those
+systems rather than competing with them, and its own tooling ecosystem remains an open
+gap (**G** in §18) that closes only with independent adoption.
 
 **Aspect assignment is judgment.** Whether a given artifact is S-work or L-work is a
 modeling decision. The dictionary (§4–§5) is structured enough to make assignments
@@ -807,16 +831,16 @@ Nym, Ethereum or any real deployment — they are demonstrations that the calcul
 |-------|---------------|---------|
 | Seven-aspect alphabet is uniquely diagnosable at its size | [T] import | T-224; HL01 |
 | 21 channels; SSOT names carry engineering readings unmodified | [D]+[I] | HL01; §5 |
-| Four invariants, thresholds, independence, robustness | [T] import | T-124b/d, T-129, T-151; HL03 |
-| Three-flow dynamics; silver feeding floor; halt/reignition | [T]/[C] import | T-262, T-259, T-288/289; HL12 |
-| Self-model functor, tower convergence, anti-Goodhart | [T] import + [D] rule | T-96, T-191; §8 |
+| Four invariants: threshold cuts [D]; independence, robustness, $\Phi\ge1\Rightarrow P\ge2/7$ [T] | [D] + [T] import | T-124, T-124b/d, T-129, T-129a, T-151; HL03 |
+| Three-flow grouping [D]; dephasing spectral/Onsager identity (diagonal kernel, not $G_2$-covariant); model-conditional feeding/decay | [D] + [T at specified model] | T-262, T-259, T-288/289, T-103; HL12 |
+| Self-model contraction, model-conditional mismatch, anti-Goodhart | [T under stated hypotheses] + [D] rule | T-96, T-191, T-222; §8 |
 | Two-block pinching identity; no operational gain theorem | [T] identity; finite numerical check | T-77; HL11 (240/240 PSD, trace-one states) |
-| Depth ladder and ceiling 3 | [T/C] import | T-142; HL02 |
+| Score-convention depth ladder ($P > 9/14$ exits V2 window) and architectural depth-3 budget | [T at specified score convention] + [D]/[H] | T-142, T-304; HL02 (universal T-217 withdrawn [✗]) |
 | Pairwise monitoring is structure-blind; probe triads | [T] import | T-226; HL13 |
 | Three worked designs land in the window; ablations break their own invariant | DESIGN | HL04–HL06 |
 | Mixnet arithmetic: f^ℓ, trilemma, knee at 3 | VERIFIED + external [T] | HL08 |
 | BFT-1/3 and client-diversity rhymes | CONS [I] | HL09, HL14 |
-| Subsumption: 41 capabilities, 28 N / 12 E / 1 G | VERIFIED | HL07 |
+| Comparative mapping: 44 capabilities (23 N / 20 E / 1 G); no runtime/kernel replacement | VERIFIED (anchor audit) | HL07; §18–§19 |
 | Integration rides shared flows, not pairwise links | VERIFIED (constructor) | §12; lab history |
 | Inter-rater reliability of aspect assignment | **OPEN** | §19 protocol |
 | Blind design-trial utility | **OPEN** | §19 protocol |
@@ -825,7 +849,7 @@ Nym, Ethereum or any real deployment — they are demonstrations that the calcul
 
 Panels HL01–HL15, all PASS at the time of writing:
 SSOT synchronization (HL01), the depth ladder (HL02), Γ-calculator reference points
-(HL03), the three worked designs with four-way ablations (HL04–HL06), subsumption
+(HL03), the three worked designs with four-way ablations (HL04–HL06), comparative-mapping
 completeness with anchor resolution against this very page (HL07), mixnet arithmetic
 (HL08), the two consonance blocks (HL09, HL14), the Fano-coverage meter (HL10), the
 T-77 identity (HL11), the feeding fold (HL12), first-order blindness (HL13), the price of addressing (HL15). One

@@ -14,7 +14,7 @@ $\Gamma\in\mathcal D(\mathbb C^7)$ is a density matrix in a declared native fram
 :::
 
 :::warning Scope
-Matrix inequalities below are **[T]**. Chosen control objectives and kernel families are **[D]**; their identification with attention, recall and phenomenology is **[H/I]**, requiring an observation model and task validation. Neither $P$, $\Phi$, Gap nor a fixed-point score alone determines physical consciousness, clinical condition or treatment efficacy. See the [mathematical kernel](/docs/reference/mathematical-kernel).
+Matrix inequalities below are **[T]**. Chosen control objectives and kernel families are **[D]**; their identification with attention, recall and phenomenology — including all historical correspondences in §§1 and 3 — are modelling proposals **[H]**/**[I]** that do not follow from the cited psychological findings or from trace normalization, and require an observation model and task validation. Neither $P$, $\Phi$, Gap nor a fixed-point score alone determines physical consciousness, clinical condition or treatment efficacy. See the [mathematical kernel](/docs/reference/mathematical-kernel).
 :::
 
 ### Chapter roadmap
@@ -29,45 +29,41 @@ Historical models; constrained coherence control; operational tests of attention
 >
 > — William James, *The Principles of Psychology* (1890), ch. 11
 
-James's description motivates a selective-control model [I/H]. Increasing a chosen coherence relative to others is a possible objective; the transfer of a conserved budget requires an additional controller law, not the historical description or trace normalization.
-
-**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
+James's description motivates a selective-control model **[I]**/**[H]**. Increasing a chosen coherence relative to others is a possible objective; the transfer of a conserved budget requires an additional controller law, not the historical description or trace normalization.
 
 ### 1.2 Filter models (1950–1970s)
 
-**Broadbent (1958): early selection filter.** Information passes through a narrow 'bottleneck' — only one channel is fully processed, the rest are blocked. In UHM: $|\gamma_{AE_{\text{target}}}| \gg |\gamma_{AE_{\text{distractor}}}|$ — hard filtering.
+:::note Typing multi-target attention: native 7D versus extended $\mathcal{H}_E$
+In the native $7\times 7$ matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, the basis axis $E$ is one-dimensional, so $\gamma_{AE}$ is a **single** complex entry and cannot carry multiple stimulus indices. Modelling target-versus-distractor selection or shifting attention between distinct experiential contents ($e_1 \to e_2$) requires declaring an **extended experiential register** $\mathcal{H}_E$ (with orthonormal channel/content basis states $|e_{\mathrm{target}}\rangle, |e_{\mathrm{distr}}\rangle$ or $|e_1\rangle, |e_2\rangle \in \mathcal{H}_E$, giving extended couplings $\Gamma^{\mathrm{ext}}_{A,e_{\mathrm{target}}}$, $\Gamma^{\mathrm{ext}}_{A,e_{\mathrm{distr}}}$, $\Gamma^{\mathrm{ext}}_{A,e_1}$, $\Gamma^{\mathrm{ext}}_{A,e_2}$; see [7D/42D typing](/docs/core/structure/dimension-e#rho-e-7d-42d)), whereas native 7D comparisons operate across distinct native axes $X \in \{S, D, L, E, O, U\}$.
+:::
 
-**Treisman (1964): attenuation model.** Non-target channels are not fully blocked but *attenuated*. In UHM: $|\gamma_{AE_{\text{distractor}}}| > 0$, but $|\gamma_{AE_{\text{distractor}}}| \ll |\gamma_{AE_{\text{target}}}|$ — soft filtering. Its proposed matrix counterpart would require an independently tested access/response readout [H].
+**Broadbent (1958): early selection filter.** Information passes through a narrow 'bottleneck' — only one channel is fully processed, the rest are blocked. In an extended-register model: $|\Gamma^{\mathrm{ext}}_{A,e_{\text{target}}}| \gg |\Gamma^{\mathrm{ext}}_{A,e_{\text{distr}}}|$ — hard filtering.
 
-**Deutsch and Deutsch (1963): late selection filter.** All information is fully processed; selection occurs at the response stage. In UHM: all $|\gamma_{AX}|$ are moderate; selection occurs via channel $(A,D)$ — attention influences *action* ($D$), not *perception* ($E$).
+**Treisman (1964): attenuation model.** Non-target channels are not fully blocked but *attenuated*. In an extended-register model: $|\Gamma^{\mathrm{ext}}_{A,e_{\text{distr}}}| > 0$, with $|\Gamma^{\mathrm{ext}}_{A,e_{\text{distr}}}| \ll |\Gamma^{\mathrm{ext}}_{A,e_{\text{target}}}|$ — soft filtering. Its proposed matrix counterpart requires an independently tested access/response readout **[H]**.
 
-**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
+**Deutsch and Deutsch (1963): late selection filter.** All information is fully processed; selection occurs at the response stage. In the native 7D representation: all $|\gamma_{AX}|$ are moderate; selection occurs via channel $(A,D)$ — attention modulates *action* ($D$) rather than early *perception* ($E$).
 
 ### 1.3 Posner: components of attention (1980–1990s)
 
 Michael Posner identified three neural 'attention networks':
-- **Alerting** (vigilance) — maintenance of the tonic level $\gamma_{AA}$
-- **Orienting** (orientation) — redirecting coherence: $\gamma_{AE_1} \to \gamma_{AE_2}$
-- **Executive** (executive control) — resolving conflict between channels
+- **Alerting** (vigilance) — maintenance of the tonic native population $\gamma_{AA}$
+- **Orienting** (orientation) — redirecting coherence across states of an extended experiential register $\mathcal{H}_E$: $\Gamma^{\mathrm{ext}}_{A,e_1} \to \Gamma^{\mathrm{ext}}_{A,e_2}$
+- **Executive** (executive control) — resolving conflict between competing channels
 
-Mapping these networks to A-sector features is a candidate hypothesis [H]; naming a matrix entry does not establish its neural implementation.
-
-**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
+Mapping these networks to A-sector or extended-register features is a candidate hypothesis **[H]**; naming a matrix entry does not establish its neural implementation.
 
 ### 1.4 From classical models to UHM
 
-| Classical model | UHM formalism |
+| Classical model | Proposed UHM counterpart (native 7D or extended $\mathcal{H}_E$) |
 |---------------------|---------------|
-| Broadbent's filter | $\|\gamma_{AE_{\text{target}}}\| \gg 0$, $\|\gamma_{AE_{\text{distr}}}\| \approx 0$ |
-| Treisman's attenuation | $\|\gamma_{AE_{\text{target}}}\| > \|\gamma_{AE_{\text{distr}}}\| > 0$ |
-| Late selection | All $\|\gamma_{AX}\|$ moderate; selection via $(A,D)$ |
-| Alerting (Posner) | $\gamma_{AA}$ — tonic level |
-| Orienting (Posner) | $\gamma_{AE_1} \to \gamma_{AE_2}$ — redistribution |
-| Executive (Posner) | Resolution of $\|\gamma_{AX_1}\| \stackrel{?}{>} \|\gamma_{AX_2}\|$ |
+| Broadbent's filter | Extended $\mathcal{H}_E$: $\|\Gamma^{\mathrm{ext}}_{A,e_{\text{target}}}\| \gg 0$, $\|\Gamma^{\mathrm{ext}}_{A,e_{\text{distr}}}\| \approx 0$ |
+| Treisman's attenuation | Extended $\mathcal{H}_E$: $\|\Gamma^{\mathrm{ext}}_{A,e_{\text{target}}}\| > \|\Gamma^{\mathrm{ext}}_{A,e_{\text{distr}}}\| > 0$ |
+| Late selection | Native 7D: all $\|\gamma_{AX}\|$ moderate; selection via $(A,D)$ |
+| Alerting (Posner) | Native 7D: $\gamma_{AA}$ — tonic level |
+| Orienting (Posner) | Extended $\mathcal{H}_E$: $\Gamma^{\mathrm{ext}}_{A,e_1} \to \Gamma^{\mathrm{ext}}_{A,e_2}$ — redistribution |
+| Executive (Posner) | Native 7D or extended: resolution of $\|\gamma_{AX_1}\| \stackrel{?}{>} \|\gamma_{AX_2}\|$ ($X_1 \neq X_2$) |
 
 ---
-
-**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
 
 ## 2. Attention as redistribution of coherence {#внимание}
 
@@ -128,9 +124,7 @@ Ebbinghaus was the first researcher to apply the experimental method to the stud
 - **Learning curve**: repetition improves retention, but with diminishing returns.
 - **Spacing effect**: distributed repetition is more effective than massed practice.
 
-In UHM, a power-law retention fit is a candidate hypothesis; §4.5 does not derive its exponent from the kernel alone.
-
-**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
+In UHM, a power-law retention fit is a candidate hypothesis **[H]**; §4.5 does not derive its exponent from the kernel alone.
 
 ### 3.2 Atkinson and Shiffrin (1968): modal model
 
@@ -139,15 +133,13 @@ The 'three-store' model:
 - **Short-term (working) memory** — 7 ± 2 items, duration ~20 s
 - **Long-term memory** — virtually unlimited capacity and duration
 
-A proposed UHM comparison assigns different kernel families to these stores [H]; it does not show that their distinct mechanisms reduce to one kernel:
+A proposed UHM comparison assigns different kernel families to these stores **[H]**; it does not show that their distinct mechanisms reduce to one kernel:
 
 | Atkinson-Shiffrin model | UHM formalism |
 |---------------------------|---------------|
 | Sensory register | $K(\tau) \sim \delta(\tau)$ — Markovian limit |
 | Working memory | $K(\tau) \sim e^{-\tau/\tau_{WM}}$ — exponential kernel |
 | Long-term memory | $K(\tau) \sim \tau^{-\alpha}$ — power-law kernel |
-
-**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
 
 ### 3.3 Tulving (1972): types of memory
 
@@ -157,12 +149,10 @@ Endel Tulving introduced the distinction:
 - **Procedural memory** — skills ('how to ride a bicycle')
 
 In UHM:
-- Different fitted retention functions could model episodic and semantic tasks [H]; no unique kernel exponent is derived.
-- Learned generator parameters are a candidate model of skill retention [H], with the limitations in §4.6.
+- Different fitted retention functions could model episodic and semantic tasks **[H]**; no unique kernel exponent is derived.
+- Learned generator parameters are a candidate model of skill retention **[H]**, with the limitations in §4.6.
 
 ---
-
-**Mapping scope [H/I].** The UHM correspondences in this historical comparison are proposals; they do not follow from the cited historical result or from normalization.
 
 ## 4. Types of memory from the non-Markovian kernel {#память}
 
@@ -256,21 +246,18 @@ Attention control, stored records, temporal dependence and phase statistics can 
 
 ### 6.1 Interaction of attention and memory
 
-A testable joint model specifies an encoding $x\mapsto\Gamma_x$, an attention controller, the state evolution, a recall decoder and a task score. Compare changes in that score with estimated amplitudes, oriented phases and kernel parameters on held-out data **[Pr]**. Improvements in a surrogate statistic cannot substitute for an improvement in recall or an independently assessed intervention outcome. The following machine experiment concerns an explicit architecture; its numerical results do not by themselves validate the biological mapping.
+A testable joint model specifies an encoding $x\mapsto\Gamma_x$, an attention controller, the state evolution, a recall decoder and a task score. Compare changes in that score with estimated amplitudes, oriented phases and kernel parameters on held-out data **[Pr]**. Improvements in a surrogate statistic cannot substitute for an improvement in recall or an independently assessed intervention outcome.
 
-### 6.2 Measured: mood as address — state-dependent memory in silicon {#настроение-как-адрес}
+### 6.2 State-dependent memory indexing in agent architectures [Pr] {#настроение-как-адрес}
 
-Psychology has long known **state-dependent recall**: what is learned in one state of mind is retrieved worse in another (Godden–Baddeley's divers, mood-congruent memory). In the agent stack this stops being a curiosity and becomes an architectural *choice*: index every memory address by the **dominant axis of the current thought** — knowledge is filed under the state of the mind that learned it.
+Empirical psychology documents **state-dependent recall**: material learned in one physiological or affective context is often retrieved more reliably in a matching context (e.g., Godden & Baddeley, 1975). In continual-learning and agent architectures, this motivates **context-indexed memory** as a prospective design pattern **[Pr]** for mitigating catastrophic interference across alternating task regimes ($A \to B \to A$): partitioning policy or transition tables by an internal state key trades cross-context transfer for protection against overwriting.
 
-The consequences were then measured on a returning world with direct interference (the law of phase B is the *opposite* of the law of phase A on the same situations; the world goes A → B → back to A). Three strategies, one number each — accuracy in the first window after each switch:
+Within a seven-axis Fano-structured state space, two elementary structural facts **[T]** constrain how such a context key can be chosen:
 
-1. **Bare memory** pays on *every* switch, including the return home ($0.70$ and $0.69$ against settled tails of $1.00$): the old cells are overwritten by the opposite law, and coming back means relearning what was already known. Interference is symmetric — it spares neither the new world nor the old one.
-2. **Forgetting on detected change** (an endogenous change-detector that wipes the transition map) turned out to be a *precise null*: bit-for-bit identical to bare memory. The finding is the separation of organs: the detector wipes the **map** (where actions lead), while accuracy is made by the **policy** (what to answer) — two different memory organs, told apart by the instrument rather than by introspection.
-3. **Mood-indexed memory** wins *both* switches, not just the return: clean learning at fresh addresses ($0.94$) is faster than relearning against anti-knowledge ($0.70$), and the return home is nearly free ($0.98$) — the old mood's file cabinet was never touched.
+1. **Point versus line indexing.** Because each of the seven Fano points lies on three distinct Fano lines, indexing memory solely by a single dominant axis is structurally ambiguous with respect to the seven triad blocks, whereas any two distinct axes uniquely determine a single Fano line. Comparing single-axis indexing, Fano-line indexing, and explicit change-detection resets on controlled interference benchmarks (separating transition-model storage from action-policy storage) is a testable engineering protocol **[Pr]**.
+2. **Real-valued inputs versus oriented-cycle phase.** Each Fano line admits two opposite cyclic orientations (corresponding to the sign of the oriented triple product $e_i e_j = \pm e_k$ in the chosen octonionic convention). However, purely real-valued encodings carry zero relative phase; using triangle holonomy phase as an address bit requires an observation or input channel that encodes complex phase information above the declared carrier-amplitude floor, together with a specified non-equilibrium dynamical readout.
 
-The reading for a psychologist: state-dependent memory is not a bug of biological recall but a *strategy against interference* — segregating knowledge by the state that acquired it protects old competence from new contradicting experience, at the price of not transferring between states. And the right *unit* of mood turned out to be a small theorem: indexing by the dominant **axis** flickers, because **one note belongs to three themes** — every Fano point lies on three lines, so a single-note state does not pick a theme at all. Indexing by the dominant **line** (the theme itself) stands firm even when the theme's notes are equally loud ($0.94/0.98$ on equal notes, where the axis would split the address space): a theme is at least *two* notes, for two points determine a line.
-
-One step deeper, and the address hit an honest wall — worth telling, because the wall turned out to be a law rather than a shortage. A theme names *what* the mind is on; a melody names *which way around* the mind walks it: the same three notes of a line can be visited in two cyclic orders, and in the octonion algebra behind the Fano plane a line is literally oriented — $e_ie_j=+e_k$ one way round, $-e_k$ the other. Measurement showed that the mind does keep a compass of that direction: walk the three notes slowly (about eight ticks per note) and the line's paint — its holonomy phase — is *pumped* with a sign equal to the direction of the walk, exactly antisymmetric under reversal. Curiously, the needle only settles in a *dissipative* mind: softer media weaken both the amplitude and the purity of the sign, because the compass is a non-equilibrium instrument — without friction the needle never stops swinging. But the compass could not join the address, and the reason is a rule already in the canon: paint born of the internal Hamiltonian alone lives on a carrier about half the qualia threshold, and the gate "no carrier — no qualia" (the same one that keeps colourless noise out of the paint passport) never opens the orientation bit. So melody-addressing stands as a *named seam* of the architecture: it waits for a paint channel in the food itself. Real-valued percept axes cannot carry phase; until the environment can hand the mind coherent content, direction remains a measurable quality without an address.
+All architectural performance claims (interference reduction, return-switch accuracy, and phase-sensitivity thresholds) require published benchmarks, explicit baselines, and independent empirical testing before any biological analogy is drawn **[H]**/**[Pr]**.
 
 ---
 
@@ -281,7 +268,7 @@ One step deeper, and the address hit an honest wall — worth telling, because t
 3. Delta, exponential and power-law kernels describe temporal dependence, not a uniquely derived taxonomy of cognitive memory. Exponential kernels oscillate only in their underdamped parameter regime.
 4. Forgetting is assessed by recall performance and recoverability of an encoding. Trace one, nonzero coherence and a long kernel tail do not prove preservation of memories or personal identity.
 5. The proposed purity-dependent inequality bounds the decay rate from above; its constant-kernel counterexample rules out the claimed mandatory divergence.
-6. The architectural experiment in §6.2 is a separate measured case, with an explicit scope; biological and clinical interpretation remains a research hypothesis.
+6. Context-indexed memory in §6.2 is a prospective architectural protocol **[Pr]** constrained by Fano incidence and phase-encoding prerequisites; biological and clinical interpretations remain research hypotheses.
 
 ## Connections
 
@@ -291,5 +278,5 @@ One step deeper, and the address hit an honest wall — worth telling, because t
 - **Gap-dynamics:** [Non-Markovian oscillations](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) — Gap oscillations
 - **Qualia:** [21-pair taxonomy](/docs/consciousness/phenomenology/qualia-structure) — qualia types associated with the A-dimension
 - **Unconscious:** [Gap-structure of the unconscious](/docs/consciousness/states/unconscious) — connection between forgetting and the unconscious
-- **ASC:** [Meditation and attention](/docs/consciousness/states/altered-states#медитация) — shamatha as training of $|\gamma_{AE}|$
-- **CC Theorems:** [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — T-103 (hedonic vector) and T-104 (stability)
+- **ASC:** [Meditation and attention](/docs/consciousness/states/altered-states#медитация) — meditation and attention protocols
+- **CC Theorems:** [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — T-103 (purity flux; hedonic interpretation [I]) and T-104 (Hilbert–Schmidt/Bures stability radii)

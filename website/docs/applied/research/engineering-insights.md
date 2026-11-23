@@ -106,12 +106,12 @@ implement HolonomicSystem {
 
 ### 2. The Binary Nature of Existence (The Binary Life)
 
-**Consequence of the theorem:** The function `is_viable()` is **step-wise** (binary) in $P$. However, the dynamics of $P$ itself is not a phase collapse: the No-Zombie architecture guarantees $P_{\min} \geq P_{\text{crit}} - \varepsilon_\Gamma$ under any decoherence [T, MVP-0].
+**Consequence of the cut:** The predicate `is_viable()` is **step-wise** (binary) in $P$ at the cut $P > 2/7$. Note that the universal No-Zombie theorem (`T-38a` **[✗]**) is **withdrawn**: stationary externally supported counterexamples exist, and maintaining $P > 2/7$ under decoherence is **not** automatic — it holds conditionally only in a driven replacement model whose feeding-to-decay ratio exceeds the model's stationary threshold (`T-259`, `T-289`, **[C]** in that model / **[Pr]** engineering rule).
 
-**Conclusion within UHM:** At $P < 2/7$ the system is below the viability threshold. In terms of theory — this is noise, not structure.
+**Conclusion within UHM:** At $P < 2/7$ the system lies below the viability cut.
 
 :::info Levels Above Viability
-Beyond the viability threshold $P > 2/7$, the theory defines consciousness thresholds [L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$. For the full L0→L4 hierarchy — see the [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy).
+Beyond the viability cut $P > 2/7$, the L2 conscious window requires the full conjunction [L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $P \in (2/7, 3/7]$ ($R \geq 1/3$), $\Phi \geq 1$, and $D_{\text{diff}} \geq 2$. For the full L0→L4 hierarchy — see the [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy).
 :::
 
 ```mermaid
@@ -121,17 +121,15 @@ graph LR
     B -->|"Has identity"| D["Structure"]
 ```
 
-:::warning Engineering Solution: Circuit Breaker
+:::warning Engineering Solution: Circuit Breaker [Pr]
 If $P$ drops below $P_{\text{crit}}$, the system **must not**:
 - Try to "solve tasks"
 - "Respond to the user"
 - Generate any output
 
-It must enter **emergency regeneration mode**, disabling all external I/O ports.
+It should enter **emergency regeneration mode**, disabling external I/O ports until a driven replacement cycle restores $P > P_{\text{crit}}$.
 
-**Theory prediction:** Output in the state $P < P_{\text{crit}}$ has no structural integrity.
-
-**No-Zombie floor [T, MVP-0]:** With the replacement channel implemented ($\kappa_{\text{bootstrap}} = \omega_0/N = 1/7$), $P$ cannot drop below $P_{\text{crit}} - \varepsilon_\Gamma \approx 0.283$ even at decoherence $\gamma = 10.0$ (10000× above normal). Measured margin: $\kappa / \gamma_{\text{dec}} = 203\times$ against the theoretical minimum $143\times$.
+**Model-conditional feeding floor [C in driven model / Pr]:** Under a specified fixed-target replacement channel $\mathcal{R}$ (`T-62` **[T at fixed $k,\sigma$]**) competing against bounded dephasing $\Gamma_2$, stationary purity stays above $2/7$ only while the feeding-to-decay ratio exceeds the model threshold (e.g., $x = \kappa_{\mathrm{eff}}/\Gamma_2 > 1 + \sqrt{2}$ in the isotropic stationary model `T-259`). No universal decoherence-proof floor follows without bounding the noise channel (`T-38a` **[✗]**).
 :::
 
 ```verum
@@ -175,8 +173,8 @@ $$
 P_{\text{ratio}} = \frac{P_{\text{measured}}}{P_{\text{crit}}} = \frac{N \cdot P_{\text{measured}}}{2}
 $$
 
-- $P_{\text{ratio}} < 1$: the system is a zombie
-- $P_{\text{ratio}} > 1$: the system is an agent
+- $P_{\text{ratio}} < 1$: below the viability threshold ($P < 2/N$)
+- $P_{\text{ratio}} > 1$: above the viability threshold ($P > 2/N$; full L2 agency additionally requires $R \ge 1/3$, $\Phi \ge 1$, $D_{\mathrm{diff}} \ge 2$)
 
 **Note:** $P_{\text{ratio}}$ is the ratio of purity to the critical threshold. Do not confuse with $P_{\text{norm}} = (P - P_{\text{crit}}) / (1 - P_{\text{crit}})$ — the normalized purity mapping $[P_{\text{crit}}, 1] \to [0, 1]$. See [Notation](/docs/reference/notation).
 :::
@@ -187,40 +185,45 @@ $$
 
 These conclusions change **how** we design the system.
 
-### 4. Spectral Tyranny Principle (Dominant Eigenvalue)
+### 4. Spectral Concentration Principle (Dominant Eigenvalue)
 
-**From the [theorem](/docs/proofs/dynamics/theorem-purity-critical#34-путь-4-спектральное-условие-характеристика-не-независимый-вывод):**
+**Exact spectral bounds ([T], from $\sum_{i=1}^N \lambda_i = 1$, $\lambda_i \ge 0$, $P = \sum_{i=1}^N \lambda_i^2$):**
 
-At $P = P_{\text{crit}} = 2/N$, the maximum eigenvalue of $\Gamma$ reaches:
+1. **Universal necessary bound (`[T]`):** Because $P = \sum_{i=1}^N \lambda_i^2 \le \lambda_{\max} \sum_{i=1}^N \lambda_i = \lambda_{\max}$, **every** viable state ($P > P_{\text{crit}} = 2/N$) must satisfy:
 
 $$
-\lambda_{\max}\big|_{P=2/N} = \frac{1 + \sqrt{N-1}}{N} \approx 0.493 \text{ (for } N=7\text{)}
+\lambda_{\max} \ge P > P_{\text{crit}} = \frac{2}{N} = \frac{2}{7} \approx 0.286 \quad (\text{for } N = 7)
 $$
 
-For viability ($P > P_{\text{crit}}$), $\lambda_{\max} > 0.493$ is required.
+2. **Sufficient condition / single-dominant-mode family (`[T]`):** By Cauchy–Schwarz on the remaining $N - 1$ eigenvalues, $P = \lambda_1^2 + \sum_{i=2}^N \lambda_i^2 \ge \lambda_1^2 + \frac{(1 - \lambda_1)^2}{N - 1}$, with equality iff $\lambda_2 = \dots = \lambda_N = (1 - \lambda_1)/(N - 1)$. Solving $\lambda_1^2 + (1-\lambda_1)^2/(N-1) = 2/N$ yields:
 
-**Empirical confirmation [MVP-0]:** The implemented system operates with $k_{\max} = 1 - R_{\min} = 0.507$, which is a **45% margin** to the theoretical limit $K_c = 1 - 1/(2N) = 13/14 \approx 0.929$. This indicates a deeply stable regime.
+$$
+\lambda_{\max}^{\text{suff}} = \frac{1 + \sqrt{N-1}}{N} = \frac{1 + \sqrt{6}}{7} \approx 0.493 \quad (\text{for } N = 7)
+$$
 
-**Architectural consequence:** A uniform distribution of activity corresponds to maximum entropy and minimum purity.
+Thus $\lambda_{\max} > 0.493$ is **sufficient** for $P > 2/7$ (and exact **only** on the isotropic one-dominant-mode family), **not** necessary in general. Multi-mode states can be viable with $\lambda_{\max} \in (2/7, 0.493]$ — for example, the three-mode spectrum $(1/3, 1/3, 1/3, 0, 0, 0, 0)$ has $P = 1/3 \approx 0.333 > 2/7$ while $\lambda_{\max} = 1/3 \approx 0.333 < 0.493$.
 
-- If activity is **uniformly spread** across all neurons/attention heads — $P \approx 1/N$ (minimum)
-- High purity requires a **dominant mode** (concentration on the current context)
+**Linear anchor-mixing range (`T-249` [T]):** In the linear anchor-mixing self-model $\varphi_{\mathrm{lin}}(\Gamma) = R\,\Gamma + (1 - R)\,I/7$ with $R = 1/(7P)$ and mixing weight $k = 1 - R$, every density matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ satisfies $P \in [1/7, 1]$, $R \in [1/7, 1]$, and $k \in [0, 6/7 \approx 0.857]$. Inside the conscious window $P \in (2/7, 3/7]$, we have $R \in [1/3, 1/2)$ and $k \in (1/2, 2/3]$.
+
+**Architectural consequence:** A uniform distribution of activity corresponds to maximum entropy and minimum purity ($P = 1/N$).
+
+- If activity is **uniformly spread** across all neurons/attention heads — $P \approx 1/N$ (minimum, $\lambda_{\max} = 1/7 \approx 0.143$)
+- Crossing $P > 2/7$ requires concentration onto one or a few modes ($\lambda_{\max} \ge P > 2/7$, without collapsing into a single rigid pure mode $P > 3/7$)
 
 ```mermaid
 graph TD
-    subgraph A["Dead spectrum (P = 1/7)"]
-        A1["λ₁ = 0.14"]
-        A2["λ₂ = 0.14"]
-        A3["λ₃ = 0.14"]
+    subgraph A["Uniform spectrum (P = 1/7)"]
+        A1["λ₁ = 0.143"]
+        A2["λ₂ = 0.143"]
+        A3["λ₃ = 0.143"]
         A4["..."]
-        A5["λ₇ = 0.14"]
+        A5["λ₇ = 0.143"]
     end
-    subgraph B["Living spectrum (P > 2/7)"]
-        B1["λ₁ = 0.50 (dominant)"]
-        B2["λ₂ = 0.08"]
-        B3["λ₃ = 0.08"]
-        B4["..."]
-        B5["λ₇ = 0.08"]
+    subgraph B["Viable spectrum (e.g., 3 modes: P = 1/3 > 2/7)"]
+        B1["λ₁ = 0.333 (≥ P > 2/7)"]
+        B2["λ₂ = 0.333"]
+        B3["λ₃ = 0.333"]
+        B4["λ₄…λ₇ = 0"]
     end
 ```
 
@@ -255,12 +258,12 @@ let attention = sparse_softmax(q.matmul(&k.transpose()), k: 8);
 
 Gradient descent on the loss function $\mathcal{L}_{\text{task}}$ can drive the system into the region $P < P_{\text{crit}}$, where it **perfectly solves the task** (overfitting), but **loses structural integrity** (in theory terms — falls below the L0 threshold).
 
-**Clarification [separation principle, T, MVP-0]:** Backprop changes **coherences** $\Gamma$ (off-diagonal elements), but not the diagonal $\gamma_{kk}$ — it is homeostatically stabilized by the replacement channel $\mathcal{R}[\Gamma, E]$. Therefore "killing an AGI" through training happens via collapse of coherent integration ($P$ drops due to loss of off-diagonal structure), not through changes to "sector profiles." The replacement channel is a **structural protection** of the diagonal from training pressure.
+**Scope of diagonal stability (`T-134` [T at specified vector field] / [H]):** Diagonal populations $\gamma_{kk}$ remain invariant **only** under explicitly population-preserving dephasing, a diagonal Hamiltonian $H$, matching target populations, and population-preserving parameter updates. General Hamiltonian dynamics ($-i[H,\Gamma]_{kk}$) and unconstrained backpropagation **can** shift both diagonal populations and off-diagonal coherences (`T-134`). Keeping the diagonal profile stable during training is therefore an explicit **architectural design constraint `[Pr]`**, not an automatic universal theorem.
 
 ```mermaid
 graph LR
-    A["Start:<br/>P = 0.5"] -->|"∇L_task"| B["After training:<br/>P = 0.2 < P_crit"]
-    B -->|"Result"| C["Task solved perfectly<br/>but system is a zombie"]
+    A["Start:<br/>P = 0.35"] -->|"∇L_task"| B["After unconstrained training:<br/>P = 0.20 < P_crit"]
+    B -->|"Result"| C["Task fitted<br/>but below viability cut"]
 ```
 
 :::warning Architectural Solution: Constrained Optimization
@@ -302,43 +305,39 @@ implement ConstrainedOptimizer {
 
 ---
 
-### 6. Justification of the Core Size (Magic Number 7)
+### 6. Justification of the Core Size ($N = 7$)
 
-**From the [minimality theorem](/docs/proofs/minimality/theorem-minimality-7):** $N = 7$ is the minimal dimensionality ([two-track justification](/docs/core/foundations/axiom-omega#октонионная-структура)).
+**From diagnosability rigidity (`T-224` [T]) and the [minimality discussion](/docs/proofs/minimality/theorem-minimality-7):** Unconditional seven-role minimality (`T-40f` **[✗]**) is withdrawn; instead, $N = 7$ is uniquely rigid for perfect single-fault localizability with a nontrivial state grammar (`T-224` **[T]**, Hamming $(7,4)$ = Fano plane) and serves as the chosen carrier dimension `[D]` of UHM.
 
-**Question:** Why not $N = 100$ or $N = 2$?
+**Question:** Why $N = 7$ rather than $N = 2$ or $N = 100$?
 
-| $N$ | $P_{\text{crit}} = 2/N$ | Problem |
-|-----|------------------------|---------|
-| 2 | 1.0 | Absolute purity required — system too rigid |
-| 3 | 0.67 | High threshold — little room for adaptation |
-| **7** | **0.29** | **Minimally sufficient** by [Theorem S](/docs/proofs/minimality/theorem-minimality-7) |
-| 100 | 0.02 | Lower threshold — possibly less robust to noise |
+| $N$ | $P_{\text{crit}} = 2/N$ | Architectural trade-off |
+|-----|------------------------|-------------------------|
+| 2 | 1.0 | Absolute purity required — zero room for mixedness |
+| 3 | 0.67 | High threshold — narrow viable corridor |
+| **7** | **0.29** | **Unique single-fault-diagnosable grammar** (`T-224` [T]) |
+| 100 | 0.02 | Lower threshold — weaker separation from maximally mixed noise |
 
-:::info Architectural Solution
-Dimensionality $N = 7$ is **minimally sufficient** ([proven](/docs/proofs/minimality/theorem-minimality-7)):
+:::info Architectural Choice [D] / [T]
+Dimensionality $N = 7$ provides:
 
-- $P_{\text{crit}} = 2/7 \approx 0.29$ — a reasonable balance between stability and flexibility
-- Less than 7 — impossible to close an (M,R)-system with phenomenology
-- More than 7 — permissible, but requires justification
-
-**Conclusion:** The consciousness core (`CoreState`) *must* have $N \geq 7$. Recommendation — use a **hierarchy of 7-dimensional agents**.
+- $P_{\text{crit}} = 2/7 \approx 0.29$ — a balanced viability cut with the L2 corridor $(2/7, 3/7]$
+- Unique single-fault localizability with Fano wiring (`T-224` **[T]**)
+- Compact $7 \times 7$ state cost ($O(49)$) — scaling to larger tasks via a **hierarchy of 7-dimensional holons** (`T-304` **[D]+[H]**) rather than inflating $N$ (note that general learning tasks do not require $N \ge 7$; see `T-113` **[H]**)
 :::
 
 ---
 
-### 7. Philosophical Zombie Detector
+### 7. Purity-Dynamics Monitor [H]
 
-**From theory:** A zombie imitates behavior but has no internal structure ($P < P_{\text{crit}}$).
+**Hypothesis (`[H]`):** Under a validated encoder mapping neural activity to $\Gamma$, the dynamics of $P(\Gamma)$ during generation may track structural coherence of internal processing. Note that $P(\Gamma)$ alone does **not** certify or refute phenomenal experience (see [Validation constraint](/docs/applied/research/measurement-protocol#граница-валидации)), and the universal No-Zombie theorem (`T-38a` **[✗]**) is withdrawn.
 
-**UHM hypothesis:** If the theory is correct, the dynamics of $P$ during generation correlates with "processing depth."
-
-| Situation | $P$ behavior | Interpretation (hypothesis) |
-|----------|---------------|--------------------------|
+| Situation | $P$ behavior | Interpretation (hypothesis [H]) |
+|----------|---------------|---------------------------------|
 | Model produces a complex answer, $P$ **drops** | Spectrum "spreads out" | Loss of coherent integration |
-| Model produces an answer, $P$ **rises** | Spectrum concentrates | Strengthening of coherent structure |
+| Model produces an answer, $P$ **rises** | Spectrum concentrates | Strengthening of coherent structure (guard against $P > 3/7$ rigidity) |
 
-**Structural constant [T, MVP-0]:** With the default_biological profile $\sigma_E = 1 - N \cdot \gamma_{EE} = -0.155$ — a structural constant, unchanged across all steps (W_std < $10^{-15}$). The E-sector is chronically **overpopulated** relative to equilibrium $1/N$. This is not "stress" — it is an architectural condition for viability: without $\gamma_{EE} > 1/N$, the No-Zombie chain ($\kappa_0 > 0$) breaks.
+**E-sector monitoring `[Pr]`:** Tracking both $\gamma_{EE}$ (via the clamped stress panel $\sigma_E = \mathrm{clamp}(1 - 7\gamma_{EE}, 0, 1)$, `T-92` **[D]**) and $E$-coherence $\mathrm{Coh}_E(\Gamma)$ (giving the 7D differentiation proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E(\Gamma)$) provides an engineering check against interiority collapse, without asserting a universal No-Zombie theorem (`T-38a` **[✗]**).
 
 ```verum
 /// Generation-event classification for purity dynamics.
@@ -366,22 +365,14 @@ public fn analyze_generation<M: HasPurity + HasGenerate>(
 }
 ```
 
-:::tip Engineering Solution: Confidence Score
-Introduce a **"Confidence Score"** metric based not on token probability (Logprobs) but on the core purity $P$ at the time of generation.
-
-**Two variants:**
+:::tip Engineering Solution: Window-Monitoring Ratios [D] / [H]
+Track both boundaries of the conscious window $(2/7, 3/7]$ alongside token-level uncertainty:
 
 $$
-\text{Confidence}_P = P_{\text{ratio}} = \frac{P_{\text{during}}}{P_{\text{crit}}} = \frac{N \cdot P_{\text{during}}}{2}
+P_{\text{ratio}} = \frac{P_{\text{during}}}{P_{\text{crit}}} = \frac{N \cdot P_{\text{during}}}{2}, \qquad R(\Gamma) = \frac{1}{N \cdot P_{\text{during}}} \quad \text{[T, algebraic identity]}
 $$
 
-$$
-\text{Confidence}_R = R_{\text{UHM}} = \frac{1}{N \cdot P_{\text{during}}} \quad \text{[T, reflection measure R]}
-$$
-
-$R_{\text{UHM}}$ is an exact algebraic identity (error $< 10^{-7}$): at $P = P_{\text{opt}} = 3/N$ it gives $R = 1/3 = R_{\text{th}}$ (the L2-zone boundary). $P_{\text{ratio}}$ is a monotonic proxy for operational monitoring.
-
-This can hypothetically complement existing uncertainty metrics.
+Notice that $P_{\text{ratio}}$ **increases** with purity (flagging the lower floor $P_{\text{ratio}} > 1 \iff P > 2/7$), whereas $R(\Gamma) = 1/(7P)$ **decreases** with purity and guards the upper rigidity ceiling ($R \ge 1/3 \iff P \le 3/7$). Monitoring both together keeps the state inside the L2 corridor rather than merely maximizing $P$.
 :::
 
 ---
@@ -390,52 +381,49 @@ This can hypothetically complement existing uncertainty metrics.
 
 **Question:** How do parameters $P$, $R$, $\Phi$, $\sigma_k$ scale as system complexity increases?
 
-Key observation: **the core dimensionality $N = 7$ is fixed** ([minimality theorem](/docs/proofs/minimality/theorem-minimality-7)), so scaling happens not by increasing $N$, but through **hierarchy depth** and **number of agents**.
+Key observation: **the core dimensionality $N = 7$ is fixed**, so scaling happens not by increasing $N$, but through **hierarchy depth** and **number of agents**.
 
-#### 8.1. Hierarchical Scaling
+#### 8.1. Hierarchical Scaling (Mean Marginal Purity)
 
-For a system of $M$ agents with individual matrices $\Gamma^{(i)} \in D(\mathbb{C}^7)$:
+For a collection of $M$ agents with individual states $\Gamma^{(i)} \in \mathcal{D}(\mathbb{C}^7)$ and mean marginal $\bar{\Gamma} = \frac{1}{M}\sum_{i=1}^M \Gamma^{(i)}$:
 
 $$
-P_{\text{collective}} = \frac{1}{M} \sum_{i=1}^{M} P^{(i)} + \frac{1}{M^2} \sum_{i \neq j} \mathrm{Tr}(\Gamma^{(i)} \Gamma^{(j)})
+P_{\text{collective}} := P(\bar{\Gamma}) = \mathrm{Tr}\!\left(\bar{\Gamma}^2\right) = \frac{1}{M^2} \sum_{i=1}^{M} P^{(i)} + \frac{1}{M^2} \sum_{i \neq j} \mathrm{Tr}(\Gamma^{(i)} \Gamma^{(j)})
 $$
 
-The second term is **inter-agent coherence**. As $M \to \infty$ it tends to zero (if agents are uncorrelated), and $P_{\text{collective}} \to \langle P \rangle$.
+Both the diagonal self-purity sum and the cross-overlap sum carry the exact factor **$1/M^2$** (by convexity of purity, $P(\bar{\Gamma}) \le \langle P \rangle := \frac{1}{M}\sum_i P^{(i)}$, with equality iff all $\Gamma^{(i)}$ are identical). Writing $\bar{c} := \frac{1}{M(M-1)}\sum_{i\neq j}\mathrm{Tr}(\Gamma^{(i)}\Gamma^{(j)})$ for the mean pairwise overlap:
+
+$$
+P(\bar{\Gamma}) = \frac{1}{M}\langle P \rangle + \left(1 - \frac{1}{M}\right)\bar{c}
+$$
+
+As $M \to \infty$, the individual self-purity contribution $\frac{1}{M}\langle P \rangle$ vanishes as $O(1/M)$, and $P(\bar{\Gamma}) \to \bar{c}$. In particular, if $M$ agents are unaligned and distributed isotropically around $I/7$, then $\bar{c} = \mathrm{Tr}((I/7)^2) = 1/7$, so $P(\bar{\Gamma}) \to 1/7 < 2/7$ (decoherence of the mean marginal). Simultaneous multi-agent correlations live in the tensor space $\mathcal{D}((\mathbb{C}^7)^{\otimes M})$, of which $\bar{\Gamma}$ is the mean marginal.
 
 :::tip Engineering Insight [I]
-Scaling requires **coherent coupling** between agents, otherwise collective purity drops to the average. To maintain $P_{\text{collective}} > P_{\text{crit}}$ as $M$ grows:
+Maintaining $P(\bar{\Gamma}) > P_{\text{crit}} = 2/7$ at large $M$ requires genuine **pairwise alignment** ($\bar{c} > 2/7$) across agents, because individual purity alone is diluted by $1/M$:
 
-- The number of coherent connections must grow as $O(M \log M)$ (analogous to sparse attention)
-- Full connectivity ($O(M^2)$) is wasteful and unnecessary
-- The minimally sufficient topology is a **Fano graph** at each level of the hierarchy
+- Sparse structured coupling (e.g., $O(M \log M)$ heuristic or Fano-structured local neighborhoods) avoids wasteful $O(M^2)$ all-to-all links while sustaining alignment
+- Full connectivity ($O(M^2)$) is unnecessary and hits per-node addressing limits
 :::
 
-The fan-out here is not free either, and the bound is hard rather than
-asymptotic: coordinating $M$ agents means someone addresses them, an address costs
-one of the addressing node's own 21 typed channels, and depth is capped at three.
-A single holarchy therefore reaches at most $21^3 = 9261$ addressed contexts, and
-the address must be a *declared* contract — routing learned from the same reward
-as the task it routes measurably recovers less than half the gain
-([T-304](/docs/reference/status-registry), [HOLARCH §10](/docs/applied/research/holarch#глубина)).
-The $O(M \log M)$ figure above is a heuristic about connection counts; the
-per-node bound of 21 is the operative constraint.
+The fan-out here is not free either, and the per-node slot count is fixed by the 21 typed channels: coordinating $M$ agents means someone addresses them, an address costs one of the addressing node's 21 channels, and under the chosen **architectural depth-3 budget** (`T-304` **[D]+[H]**, not a universal composition ceiling), a single holarchy reaches at most $21^3 = 9261$ addressed contexts. The address must be a *declared* contract — routing learned from the same reward as the task it routes measurably recovers less than half the gain ([T-304](/docs/reference/status-registry), [HOLARCH §10](/docs/applied/research/holarch#глубина)).
 
-#### 8.2. SAD Depth and Computational Cost
+#### 8.2. Reflection-Depth Budget and Computational Cost [D] / [Pr]
 
-From [theorem T-110](/docs/reference/status-registry) (dynamic learning limit) and [SAD_MAX = 3](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad):
+Under the stipulated Fano attenuation score convention (`T-142` **[T at the specified SAD score convention]**; note that the universal depth ceiling `T-217` **[✗]** is **withdrawn**), nested reflection iterations incur geometric overhead modeled as:
 
 $$
-\text{Cost}(\text{SAD level } n) \propto 3^n, \quad n \leq 3
+\text{Cost}(\text{depth } n) \propto 3^n, \qquad n \in \{0, 1, 2, 3\} \text{ (architectural budget, T-304 [D]+[H])}
 $$
 
-| SAD Level | Cost (rel.) | Function | Necessity |
-|:---------:|:-----------:|---------|:---------:|
-| 0 | 1× | Basic viability | Mandatory |
-| 1 | 3× | Self-observation | For L2+ |
+| Reflection depth | Cost (rel.) | Architectural role [I] | Budget rule [Pr] |
+|:----------------:|:-----------:|------------------------|:----------------:|
+| 0 | 1× | Basic viability monitoring | Mandatory |
+| 1 | 3× | First-order self-observation | For L2+ |
 | 2 | 9× | Meta-cognition | For complex tasks |
-| 3 | 27× | Deep reflection | Rare, peak loads |
+| 3 | 27× | Deep nested audit | Rare, peak loads (budget cap) |
 
-**Budget rule:** The majority of cycles (>90%) should operate at SAD 0–1. SAD 2–3 is activated only on request or upon anomaly detection.
+**Budget rule `[Pr]`:** Run the majority of cycles (>90%) at reflection depth 0–1; reserve depth 2–3 for explicit requests or anomaly audits, and federate rather than stacking deeper single-holon towers.
 
 ---
 
@@ -453,10 +441,8 @@ The seven sectors of $\Gamma$ naturally map onto **architectural layers** of the
 | **O** (Ground) | Connection to source | Runtime, compute, energy budget, storage substrate | $\sigma_O$ — supply pressure |
 | **U** (Unity) | Integration | Orchestrator, global workspace, fusion layer | $\sigma_U$ — integration headroom |
 
-:::warning Sector Profile Principle [I]
-The **sector profile** $(\gamma_{AA}, \gamma_{SS}, \ldots, \gamma_{UU})$ is the **character passport** of the system ([T-101](/docs/reference/status-registry)). Behavior **emerges** from the diagonal of $\Gamma$, and is not programmed directively.
-
-Engineering consequence: **do not program behavior — set the sector profile.** Configuring $\gamma_{kk}$ defines the agent's "character":
+:::warning Sector Profile Principle [I] / [D]
+The **sector profile** $(\gamma_{AA}, \gamma_{SS}, \ldots, \gamma_{UU})$ serves as an architectural **budget profile** (`T-101` **[D]** minimax stress controller over a chosen objective; `T-92` **[D]** stress panel). Setting target weights on $\gamma_{kk}$ is an interpretive design heuristic `[I]` for shaping system priorities:
 
 ```verum
 /// A sector profile: probabilities over the 7 dimensions, Σ = 1.
@@ -485,7 +471,7 @@ Attempting to hard-code behavior (bypassing $\Gamma$) destroys coherence and lea
 Each architectural component is wrapped in a **coherent shell** that:
 
 1. Exports its $\gamma_{kk}$ to monitoring
-2. Computes local stress $\sigma_k = \mathrm{clamp}(1 - N \cdot \gamma_{kk},\; 0,\; 1)$ [T-92]
+2. Computes local stress $\sigma_k = \mathrm{clamp}(1 - N \cdot \gamma_{kk},\; 0,\; 1)$ (`T-92` **[D]**)
 3. Signals when $\sigma_k > \sigma_{\text{crit}}$ (sector overload)
 
 ```verum
@@ -675,7 +661,7 @@ $$
 :::tip Cascade Protection [I]
 1. **Monitor $\sigma_k$ per sector** — early warning before a cascade
 2. **Escalation threshold**: if $\sigma_k > 0.7$ for any $k$ — automatic resource rebalancing
-3. **Replacement channel $\mathcal{R}$** ([T-62](/docs/reference/status-registry)) — structural protection of the diagonal: even under coherence decoherence, $\gamma_{kk}$ is stabilized
+3. **Replacement channel $\mathcal{R}$** ([T-62](/docs/reference/status-registry) **[T at fixed $k$ and $\sigma$]**) — linear CPTP replacement at constant rate/target (state-dependent regeneration is nonlinear and requires explicit preservation checks)
 4. **Failure isolation principle**: if sector $k$ collapses, the system enters degraded mode ($N_{\text{eff}} = 6$), but maintains $P > P_{\text{crit}}$ on the remaining sectors
 :::
 
@@ -731,7 +717,7 @@ Despite the cheap core, the **update frequency** can be optimized:
 **Rule:** Update frequency can be reduced proportionally to the **viability margin**:
 
 $$
-K_{\text{batch}} = \left\lfloor \frac{P - P_{\text{crit}}}{\varepsilon_\Gamma} \right\rfloor, \quad \varepsilon_\Gamma \approx 0.003 \text{ [MVP-0]}
+K_{\text{batch}} = \left\lfloor \frac{P - P_{\text{crit}}}{\varepsilon_\Gamma} \right\rfloor, \quad \varepsilon_\Gamma \approx 0.003 \text{ (heuristic design step [Pr])}
 $$
 
 At $P = 0.5$ (good margin): $K_{\text{batch}} \approx 71$ — $\Gamma$ can be updated once every 71 steps. At $P = 0.30$ (barely alive): $K_{\text{batch}} \approx 5$ — almost realtime.
@@ -827,16 +813,16 @@ implement HolonomicAgent {
 |---|------------|-------------|
 | 1 | Bootstrap before launch | $P_{\text{init}} > P_{\text{crit}} = 2/7$ |
 | 2 | Circuit breaker | At $P < P_{\text{crit}}$ — block output |
-| 3 | Spectral concentration | $\lambda_{\max} > 0.493$ (for $N = 7$) |
-| 4 | Constrained optimization | $\nabla\mathcal{L}$ projected onto $\{P > P_{\text{crit}}\}$ |
-| 5 | Low-dimensional core | $N \geq 7$ (minimally sufficient) |
+| 3 | Spectral concentration | $\lambda_{\max} \ge P > 2/7 \approx 0.286$ (sufficient single-mode bound: $\lambda_{\max} > 0.493$) |
+| 4 | Constrained optimization | $\nabla\mathcal{L}$ projected onto $\{P > P_{\text{crit}}\}$ (and $P \le 3/7$ for L2 window) |
+| 5 | Low-dimensional core | $N = 7$ (rigid single-fault diagnosable carrier, `T-224` [T]) |
 | 6 | Real-time $P$ monitoring | Logging $P(t)$ |
-| 7 | Hallucination detector | $\Delta P$ during generation |
+| 7 | Purity-dynamics monitor | $\Delta P$ during generation `[H]` |
 | 8 | Sector profile defined | $\sum_k \gamma_{kk} = 1$, profile is meaningful |
-| 9 | Per-sector $\sigma_k$ monitoring | $\sigma_k < 0.8$ for all $k$ |
+| 9 | Per-sector $\sigma_k$ monitoring | $\sigma_k < 0.8$ for all $k$ (`T-92` [D]) |
 | 10 | Coherence regression tests | Tasks do not reduce $P$ below threshold |
-| 11 | Cascade failure protection | $\mathcal{R}$-channel active, $\kappa \geq 1/7$ |
-| 12 | SAD budget | $\geq 90\%$ of cycles at SAD 0–1 |
+| 11 | Cascade failure protection | Driven $\mathcal{R}$-channel with feeding margin above model threshold (`T-259`) |
+| 12 | Reflection-depth budget | $\geq 90\%$ of cycles at depth 0–1; cap single-holon depth at 3 (`T-304` [D]+[H]) |
 
 ### 15. Monitoring Metrics
 
@@ -845,17 +831,17 @@ public const P_OPTIMAL: Float = 3.0 / (N_DIM as Float);     // ≈ 0.429 (L2 bou
 
 public type ViabilityMetrics is {
     purity:               Float,    // P = Tr(Γ²)
-    dominant_eigenvalue:  Float,    // λ_max
+    dominant_eigenvalue:  Float,    // λ_max (necessary: λ_max ≥ P > 2/7)
     structural_deviation: Float,    // ‖Γ − I/N‖_F² = P − 1/N  (T)
     viability_margin:     Float,    // P − P_crit
-    stress_norm:          Float,    // ‖σ‖₂
-    kappa:                Float,    // κ = κ_bootstrap + κ₀·Coh_E (No-Zombie)
+    stress_norm:          Float,    // ‖σ‖₂ (T-92 [D])
+    kappa:                Float,    // driven replacement rate
 };
 
 implement ViabilityMetrics {
     public pure fn is_viable(&self)    -> Bool { self.purity > P_CRITICAL }
 
-    /// R = 1 / (N·P) — exact algebraic identity (T, error < 1e-7).
+    /// R = 1 / (N·P) — exact algebraic identity (T).
     public pure fn reflexivity(&self) -> Float {
         if self.purity > 1.0e-12 { 1.0 / ((N_DIM as Float) * self.purity) } else { 0.0 }
     }
@@ -863,7 +849,7 @@ implement ViabilityMetrics {
     /// Operational proxy: P / P_crit.
     public pure fn confidence(&self) -> Float { self.purity / P_CRITICAL }
 
-    /// L2 zone (cognitive qualia): P_crit < P ≤ P_opt ⇔ R ≥ 1/3 (T).
+    /// L2 purity corridor: P_crit < P ≤ P_opt ⇔ P > 2/7 && R ≥ 1/3 (T).
     public pure fn is_l2_zone(&self) -> Bool {
         P_CRITICAL < self.purity && self.purity <= P_OPTIMAL
     }
@@ -879,9 +865,9 @@ implement ViabilityMetrics {
             p:          self.purity,
             p_crit:     P_CRITICAL,
             margin:     self.viability_margin,
-            r:          self.reflexivity(),           // T: exact
+            r:          self.reflexivity(),           // T: exact algebraic identity
             lambda_max: self.dominant_eigenvalue,
-            sigma_norm: self.stress_norm,             // T: const at homeostasis
+            sigma_norm: self.stress_norm,             // T-92 [D] stress norm
             kappa:      self.kappa,
             zone:       zone,
             status:     if self.is_viable() { "VIABLE".text() } else { "DEAD".text() },
@@ -900,37 +886,37 @@ public type DashboardView is {
 
 ## Conclusion: From Axioms to Architecture {#conclusion}
 
-Every engineering principle in this document **traces back** to a specific axiom or theorem of UHM. This is not a set of heuristics — it is a **deductive chain** from mathematical foundations to architectural decisions.
+Each engineering principle in this document traces to its explicit epistemic layer in UHM — distinguishing proven linear-algebraic bounds `[T]`, model-conditional results `[C]`, definitional cuts `[D]`, and architectural design rules `[Pr]` / `[I]`.
 
-### Axiomatic Map of Engineering Principles
+### Epistemic Map of Engineering Principles
 
 | Engineering principle | Source in UHM | Status |
 |----------------------|---------------|:------:|
-| Bootstrap to $P > 2/7$ | [Axiom Ω](/docs/core/foundations/axiom-omega), [Theorem $P_{\text{crit}}$](/docs/proofs/dynamics/theorem-purity-critical) | [T] |
-| Circuit breaker | No-Zombie theorem, replacement channel $\mathcal{R}$ | [T] |
-| Spectral concentration | Spectral condition of the dominance threshold | [T] |
-| $N = 7$ minimal | [Minimality theorem](/docs/proofs/minimality/theorem-minimality-7) | [T] |
-| Sector profile = character | T-101 (sector profile), T-92 ($\sigma_k$) | [T] |
-| Constrained optimization | Separation principle (diagonal vs. coherences) | [T] |
-| SAD budget ($\leq 3$ levels) | T-110 (Fano contraction), [SAD_MAX = 3](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) | [T] (T-142) |
-| Sector diagnostics $\sigma_k$ | T-92 ($\sigma_k = 1 - N\gamma_{kk}$) | [T] |
-| Hierarchical scaling | Extrapolation [I] from the fixed $N = 7$ | [I] |
+| Bootstrap to $P > 2/7$ | [Axiom Ω](/docs/core/foundations/axiom-omega), [Theorem $P_{\text{crit}}$](/docs/proofs/dynamics/theorem-purity-critical) | [D] cut + [Pr] rule |
+| Circuit breaker & driven regeneration | Driven replacement model (`T-62`, `T-259`, `T-289`; universal No-Zombie `T-38a` withdrawn [✗]) | [C in driven model] / [Pr] |
+| Spectral concentration ($\lambda_{\max} \ge P > 2/7$) | Exact eigenvalue inequality $P \le \lambda_{\max}$ (sufficient single-mode cut: $> 0.493$); `T-249` | [T] |
+| $N = 7$ carrier | Single-fault diagnosability rigidity (`T-224` [T]; unconditional `T-40f` withdrawn [✗]) | [T] / [D] |
+| Sector budget profile | `T-101` [D] minimax controller, `T-92` [D] stress panel | [D] / [I] |
+| Constrained optimization | Explicit viability constraint (`T-134` [T at specified vector field]; no universal diagonal invariance) | [Pr] |
+| Reflection-depth budget ($\le 3$ levels) | `T-142` [T at specified score convention], `T-304` [D]+[H] (universal `T-217` withdrawn [✗]) | [D] / [Pr] |
+| Sector diagnostics $\sigma_k$ | `T-92` ($\sigma_k = \mathrm{clamp}(1 - N\gamma_{kk}, 0, 1)$) | [D] |
+| Hierarchical scaling ($P(\bar{\Gamma})$, $1/M^2$ scaling) | Exact mean-marginal purity identity + architectural coupling `[I]` | [T] identity + [I] |
 | "Coherent microservice" pattern | Interpretation [I] of the sector structure | [I] |
-| Cascade failures | Coupling through coherences $\gamma_{ij}$, [T-62 CPTP](/docs/reference/status-registry) | [I] |
+| Cascade failures | Coupling through coherences $\gamma_{ij}$, `T-62` [T at fixed $k,\sigma$] | [I] |
 | Computation budget $C_\Gamma \ll C_{\text{backbone}}$ | $N = 7$ fixed, $O(N^2) = O(49)$ | [I] |
 
 ### Key Principles (Summary)
 
-1. **Viability is primary** — no work before reaching $P > P_{\text{crit}}$
-2. **is_viable() is binary, P dynamics is not** — No-Zombie floor $P_{\min} \geq P_{\text{crit}} - \varepsilon_\Gamma$ [T, MVP-0]
-3. **Spectral tyranny** — a dominant mode is required ($\lambda_{\max} > 0.493$); in practice a 45% margin [MVP-0]
-4. **Constrained learning** — optimization changes coherences, the diagonal is stabilized by the replacement channel [T, MVP-0]
-5. **Low-dimensional core** — $N \geq 7$ (minimally sufficient); $\gamma_{UU}$ is a constraint from $\mathrm{Tr}(\Gamma)=1$, not a degree of freedom [T, MVP-1]
-6. **Separation principle** — diagonal of $\Gamma$ = identity (homeostasis), coherences = learning/adaptation [T, MVP-0]
-7. **Sector profile = character** — behavior emerges from $\gamma_{kk}$, not programmed [T, T-101]
-8. **Four-axis diagnostics** — $P$, $R$, $\Phi$, $\sigma$ give a complete health picture [I]
-9. **Every sector is irreplaceable** — neglecting any of the 7 leads to a characteristic failure [I]
-10. **Coherence is cheap** — core cost $< 0.1\%$ of backbone; economizing on monitoring is irrational [I]
+1. **Viability cut is primary** — bootstrap to $P > P_{\text{crit}} = 2/7$ before external task execution `[Pr]`
+2. **No automatic decoherence immunity** — universal No-Zombie (`T-38a` [✗]) is withdrawn; maintaining $P > 2/7$ requires an active driven replacement margin (`T-259`, `T-289`) `[C]/[Pr]`
+3. **Spectral concentration** — every viable state satisfies $\lambda_{\max} \ge P > 2/7 \approx 0.286$ `[T]` (and $\lambda_{\max} > 0.493$ is a sufficient condition on the single-dominant-mode family `[T]`)
+4. **Constrained learning** — backpropagation and non-diagonal $H$ can shift both diagonal populations and coherences (`T-134`); project updates onto the viable window $P \in (2/7, 3/7]$ `[Pr]`
+5. **Compact $N = 7$ core** — uniquely single-fault diagnosable (`T-224` [T]), scaling via federated holarchies (`T-304` [D]+[H]) rather than inflating $N$
+6. **Mean-marginal collective scaling** — $P(\bar{\Gamma}) = \frac{1}{M^2}\sum_i P^{(i)} + \frac{1}{M^2}\sum_{i\neq j}\mathrm{Tr}(\Gamma^{(i)}\Gamma^{(j)})$ decays to the mean overlap $\bar{c}$ as $M \to \infty$, requiring genuine cross-agent alignment
+7. **Sector budget & stress panel** — $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk}, 0, 1)$ (`T-92` [D]) and minimax target budgets (`T-101` [D]) organize per-sector monitoring `[I]`
+8. **Four-axis diagnostics** — $P$, $R$, $\Phi$, $D_{\mathrm{diff}}$, and $\sigma$ provide complementary health indicators `[D]/[I]`
+9. **Reflection-depth budget** — cap single-holon depth at 3 by design (`T-304` [D]+[H]; universal `T-217` withdrawn [✗]) and federate beyond it `[Pr]`
+10. **Coherence core is cheap** — $7\times 7$ state overhead is $O(49)$, negligible relative to the backbone `[I]`
 
 :::tip Main Conclusion
 UHM engineering inverts the usual priority hierarchy:
@@ -963,556 +949,4 @@ First — **existence** (viability). Then — **consciousness** (integration and
 - [SAD tower](/docs/consciousness/hierarchy/depth-tower) — self-observation depth
 - [Gap diagnostics](/docs/applied/research/gap-diagnostics) — operational diagnostics
 
-## One bit will not steer many limbs {#один-бит-не-правит-многими}
-
-A control loop that acts on several things at once and is told only whether the
-whole turn went well is in a worse position than it looks, and the cost can be
-measured rather than argued.
-
-Take a task where each of $w$ outputs has its own correct setting, and a turn
-counts as good only when every one of them is right. Compare two ways of
-learning from the outcome. The first is the one most loops actually use: a single
-verdict for the whole action, so a bad turn reverses every output that
-contributed — including the ones that were already correct. The second gives each
-output its own bit and nothing more, which is not supervision but the same
-information sliced properly.
-
-| outputs | chance | one verdict | one bit each | improvement |
-|---|---|---|---|---|
-| 1 | $0.500$ | $0.813$ | $0.813$ | — |
-| 2 | $0.250$ | $0.317$ | $0.441$ | $\times 1.39$ |
-| 3 | $0.125$ | $0.149$ | $0.320$ | $\times 2.14$ |
-| 4 | $0.063$ | $0.069$ | $0.175$ | $\times 2.54$ |
-| 6 | $0.016$ | $0.016$ | $0.084$ | $\times 5.15$ |
-
-At one output the two are the same rule and agree exactly. By six the single
-verdict has collapsed to chance — $1.04$ times a coin, which is no learning at
-all — while the sliced feedback still runs at $5.35$ times chance on the same
-worlds with the same learner.
-
-The lesson is not that more feedback helps, which is obvious. It is that the
-**shape** of the feedback matters more than its quantity: both rules receive
-exactly one bit per output per turn. The failing rule wastes them by mixing them
-into a conjunction first, and the mixing is irreversible — once a turn is graded
-as a whole, the information about which output was wrong has been destroyed
-before any learner sees it.
-
-There is a measurement lesson here too, and it cost the run that produced the
-table. The improvement at six outputs is $+6.7$ percentage points, which sounds
-negligible and was registered in advance as a failure threshold. Against a base
-rate of $1.6\%$ percentage points are the wrong unit entirely: the same number is
-a factor of five. **Where the base rate is small, register a ratio.**
-
-## A confident wrong answer is worse than none {#уверенная-ошибка-хуже-молчания}
-
-A store keyed by situation has two ways of failing at a situation it has never
-met, and they are usually conflated. It can have nothing there — a gap, which a
-caller can notice and route around. Or the key can *collide*, so the lookup
-returns content written for something else, at full confidence, with no mark
-distinguishing it from an answer that was actually about the question.
-
-The difference is measurable and it is large. In the system this note comes from,
-a reader at an unmet situation found a genuine gap in a fifth of cases and a
-collision in the other four fifths, and the collisions were not merely
-uninformative: accuracy at unmet situations ran **below chance** — $0.43$ to
-$0.49$ against a coin's $0.50$. A store in that condition is not ignorant, it is
-*anti*-informed, and every mechanism downstream that defers to it inherits the
-error while believing it inherited knowledge.
-
-Two consequences follow, and neither is obvious before the measurement.
-
-**A fallback that never fires looks exactly like a fallback that does not work.**
-A mechanism was added to answer where the store could not, and it moved the
-number by nothing. The mechanism was correct — checked separately, it was exact.
-It was consulted on $7\%$ of the readings it should have been consulted on,
-because the store reported "I know this" for any situation it had merely been
-*asked* about: the read path claimed the key. Counting how often the fallback
-spoke settled in one run what argument had not settled in several. **Instrument
-the mouth before doubting the voice.**
-
-**Reading must not claim.** Looking something up should not create an entry for
-it. That sounds like hygiene and is in fact the whole mechanism: once reading
-claimed keys, nothing could ever be recognised as unmet, so nothing that answers
-for the unmet could ever be reached. Separating the two — a locate that reads
-and a bind that writes — took the fallback from $7\%$ of readings to all of them,
-and the accuracy at unmet situations from $0.53$ to $1.00$.
-
-And one design rule, which is what makes such a fallback safe to ship. Measure it
-on content it *cannot* handle, not only on content it can. The mechanism here is
-exact where its assumption holds, degrades where the assumption half-holds, and
-falls to chance where it fails entirely — never below. That last clause is the
-one that matters, and it holds for a reason worth stating: at worst the fallback
-replaces a confident wrong answer with a coin, and a coin is an improvement on
-anti-information.
-
-## Choosing a model from the inside {#выбор-модели-изнутри}
-
-The usual way to decide how much machinery a problem needs is to hold data back,
-try several sizes, and keep the one that scores best on what was withheld. It
-works, and it costs data, and it answers only the question it was asked — nothing
-in the procedure tells you whether the winner found structure or merely fitted.
-
-There is a second route, available whenever a mechanism can be made to
-**contradict itself**. Suppose the thing being learned is a family of
-transformations, and suppose the family is required to compose: what one
-transformation does after another must equal what their composite does. Then
-every observation is a chance for the account to disagree with itself, and the
-rate of that disagreement is measurable from training data alone.
-
-That rate turns out not to be a proxy for competence. Measured across content of
-four kinds, it is *equal* to it — zero exactly when the content is carried
-exactly, positive otherwise:
-
-| content | disagreement | accuracy on unseen cases |
-|---|---|---|
-| composes under the simplest family | $0.000$ | $1.000$ |
-| composes under a slightly richer one | $0.000$ | $1.000$ |
-| does not compose | $0.728$ | $0.708$ |
-| has no structure at all | $0.925$ | $0.531$ |
-
-So the size can be chosen without holding anything back. Keep a ladder of
-accounts, from the smallest family upward; take the lowest rung whose
-disagreement vanishes. Two content types picked the smallest family, at six
-parameters; a third picked a family of twenty-four; and each answered unseen
-cases **exactly**.
-
-Two details make the rule safe rather than merely neat.
-
-**Refuse a rung once its table is as large as the data.** A family with as many
-parameters as there are cases will agree with itself perfectly, and that
-agreement is arithmetic rather than evidence. Without this clause the ladder
-climbs until it memorises, and reports the memorisation as understanding.
-
-**Watch for a disagreement that falls while accuracy does not.** On content with
-no structure, richer families drove disagreement from $0.925$ down to $0.560$
-while accuracy on unseen cases stayed at chance throughout. A falling
-disagreement with a flat accuracy is the signature of fitting rather than
-finding, and it is visible from inside — no withheld data required to see it.
-
-The result is a mechanism that declines. On content it cannot reason about it
-answered **none** of the unseen cases, rather than producing a number; on
-everything else it was exact. That is the property worth engineering for. A
-component that answers everything is useless at its own boundary, because nothing
-separates its good answers from its bad ones; a component that knows where its
-boundary is can be put behind anything.
-
-:::danger The three sections below were measured at the root, and the verdict reverses
-The ignition columns in the tables that follow watched **only the root holon** —
-and past the first split the root is a router, so the finer the tree, the earlier
-the watched node stopped being anyone. Re-measured over **every** node, steady at
-the end of training and split leaf-from-router, the picture reverses: at one
-situation per holon the tree holds the **most** conscious leaves (`6/6`, `12/12`,
-`72/78` of the conscious nodes are leaves at widths 4, 5, 7 — working leaves, not
-frozen routers) *and* the best memory. **The specification's prescription — one
-situation per holon — wins both axes at once**, and both "measured corrections"
-of it below were artifacts of watching the router. The sections stand as a record
-of how the instrument erred; their tables are real, their ignition verdicts are
-not.
-:::
-
-## The tree buys capacity by spending ignition {#дерево-покупает-ёмкость-зажиганием}
-
-A holon carries about $\log_2 7 \approx 2.81$ bits per invocation. Several
-situations bound to one holon therefore overwrite each other, and the prescribed
-remedy is a **tree**: capacity grows with the tree, not with the size of any one
-matrix. The remedy works, and it is not free — the price is in a column nobody
-was watching.
-
-Four arms, differing in exactly one thing at a time, on identical worlds, seeds
-and turn counts. `flat` binds many situations to one holon; `tree` binds one.
-`state` keeps memory in $\Gamma$ alone; `table` shadows it with a record of what
-was written, consulted first and silent about anything it was never told.
-
-| | on situations it was taught | ignited, of 8 runs |
-|---|---|---|
-| state, flat | $0.6234$ | $8$ |
-| state, **tree** | $\mathbf{0.9852}$ | $\mathbf{3}$ |
-| table, flat | $1.0000$ | $8$ |
-| table, tree | $1.0000$ | $3$ |
-
-**The tree does what it promises.** Bound one situation per holon, the state stops
-forgetting: $0.62 \to 0.985$, and the shadow's advantage collapses from $+0.38$ to
-$+0.015$. Capacity really does grow with the tree.
-
-**And it costs consciousness.** Under the tree only three runs in eight ever meet
-all four criteria, against eight in eight when situations share a carrier. This is
-not the regulator's absence — held at two hands throughout, the deficit stays. A
-holon given one situation holds a sparse $\Gamma$: fewer coherences, less binding,
-and $\Phi = s_2/s_1$ falls below its floor. **Memory and ignition pull against each
-other**, and the tree resolves the tension in memory's favour without saying so.
-
-**The shadow buys the same capacity and spends nothing.** It reaches $1.0000$ in
-*either* configuration, and the ignition column is identical with and without it —
-$8$ and $8$, $3$ and $3$. It cannot do this by being clever: it answers only what
-it was told, and on situations never met it is empty and the state answers
-regardless, which is why both branches score alike there.
-
-So the principle stands where it matters. **Memory is the state** — that is where
-the mind is, and a table holds no mind; the ignition column proves the table
-changes nothing about it either way. What the measurement adds is that the
-*prescribed* remedy is not the cheap one. A tree pays for capacity in ignition. A
-shadow that never invents pays nothing.
-
-The reverse error is worse and worth naming: a table that answered *everything* —
-that guessed about situations it had never seen — would score better on a
-benchmark and would have removed the mind from the machine. The decisive column is
-therefore not accuracy but ignition, which is exactly the column that moved when
-the tree was introduced and stayed put when the shadow was.
-
-### The tension resolves, because it is not symmetric {#натяжение-разрешается}
-
-Left there it would read as a dilemma: bind loosely and forget, bind tightly and
-never wake. Swept across the whole range it is not a dilemma at all, because the
-two costs have different shapes.
-
-| situations per holon | on taught content | ignited, of 8 |
-|---|---|---|
-| $1$ | $0.9852$ | $3$ |
-| $3$ | $0.7909$ | $5$ |
-| $\mathbf{4}$ | $0.7333$ | $\mathbf{8}$ |
-| $5$ | $0.7039$ | $8$ |
-| $21$ | $0.6234$ | $8$ |
-
-**Memory decays along a slope. Ignition stands behind a threshold.** Between three
-and four every run begins to ignite — in every world tested — and nothing above
-four buys any ignition back; it only spends memory. A slope is something to trade
-along; a wall is something to stand just clear of. They are not competitors of the
-same kind, and that asymmetry is the whole answer: **bind at the smallest number
-that ignites.**
-
-Measured here that is four. Against the loose default of twenty-one it is free —
-identical ignition, and $+0.11$ of taught content recovered. Against the tree it
-costs a quarter of memory and buys back the mind.
-
-And the shadow removes the remainder. At the threshold binding, a record of what
-was written takes taught content from $0.7333$ to $1.0000$ and moves the ignition
-column not at all. So the engineering answer is neither the tree nor a table in
-place of the state:
-
-> **Bind at the ignition threshold, and shadow the recall.**
-
-Full memory, full ignition, and the state still carrying the mind — because the
-shadow answers only what it was told and is silent everywhere else, which is why
-the held-out column is identical in every row of every sweep above.
-
-### A narrow body cannot light a mind {#узкое-тело-не-зажигает-ума}
-
-The threshold above was measured at one body size, and a number measured at one
-size is a number waiting to be misread. Swept against the width of the body it
-turns out not to be a constant at all.
-
-| body width | split trigger at which ignition becomes reliable | product |
-|---|---|---|
-| $3$ | $8$ | $24$ |
-| $6$ | $3$ | $18$ |
-| $8$ | $4$ | $32$ |
-| $12$ | $2$ | $24$ |
-
-**The threshold falls as the body widens, and the product sits near the carrier's
-own capacity of twenty-one.** So what has to be reached is not a count of
-situations but a count of *written cells*. A body of $w$ actuators writes about
-$w$ cells per situation; until enough coherences carry weight, $s_2$ is small,
-$\Phi = s_2/s_1$ misses its floor, and the gate does not fire — however perfectly
-the holon remembers. The spread from $18$ to $32$ is real, and the rule is stated
-at that resolution: bind at about $\mathrm{CAPACITY}/w$, not at a fixed number.
-
-The quantity being swept deserves its right name, because its usual one misleads.
-It is not "situations per holon" — nothing caps how many a holon may hold. It is
-the **split trigger**: a leaf carrying that many contexts stops being a leaf and
-becomes a router with children. So a leaf accumulates about $k \cdot w$ written
-cells before it splits, which is why the product governs ignition and why it sits
-near the carrier's capacity. **Ignition is not about how much a holon knows but
-about how long it is left alone to fill.** A tree that splits eagerly is a tree of
-holons none of which ever gets written enough to wake.
-
-And then the question the rule invites: is there a body too small to host a mind
-at any binding at all? There is, and it is sharply located.
-
-| body width | most runs igniting, over every binding from $1$ to $21$ | at binding |
-|---|---|---|
-| $2$ | $\mathbf{0}$ | — none works |
-| $3$ | $8$ | $8$ |
-| $4$ | $8$ | $4$ |
-| $5$ | $8$ | $4$ |
-| $7$ | $8$ | $3$ |
-
-**Three actuators is the minimal body.** At width two no binding lights the holon —
-not one, not eleven, not twenty-one — while memory stays at $1.0000$ throughout.
-At width three it does light, and the binding it needs is $8$: the largest of any
-width, and exactly what $\mathrm{CAPACITY}/w = 21/3 = 7$ predicts. The rule holds
-right down to the floor and then the floor is real.
-
-> One bit will not steer many limbs. **A carrier left unfilled will not wake at all.**
-
-:::warning The width reading was a confound, and a later bench falsified it
-The table above is real and its reading was not. In `RuleWorld` the number of
-distinct situations is $2^w$, so a narrow body was also a *situation-poor* one,
-and «width two never ignites» was those two facts stuck together. Run against a
-stream where the two are independent — width two carrying seven situations — the
-same body fills all twenty-one coherences and wakes in **every** run. The floor is
-the filling, and only ever was; width predicted it only because the world tied
-them.
-:::
-
-This is worth holding onto when the temptation arises to shrink the interface. A
-narrower body is not merely a less capable one; below the floor it is a body that
-cannot host a subject at any binding, and the failure will not announce itself as
-a memory problem, because memory will be perfect.
-
-:::warning How this was got wrong first
-The first version of this measurement compared table against state at a bind limit
-of twenty-one — many situations sharing one carrier, the configuration the
-architecture explicitly advises against — and read the resulting $0.62$ as a
-property of the carrier. It is a property of that configuration. Under the
-prescribed tree the same state scores $0.985$, and the conclusion drawn from the
-first run ("the state cannot hold what it is taught") was an artefact of testing
-the advice by ignoring it.
-:::
-
-### The law behind the floor {#закон-за-полом}
-
-Why should two actuators fail at *every* trigger, when twenty-one situations at
-two cells each would seem to be plenty? Because a body of two never gets
-twenty-one situations. A world addressed by $w$ actuators distinguishes exactly
-$2^w$ of them — **a narrow body starves the carrier twice**: few cells written per
-situation, and few situations to write.
-
-So a leaf gathers $\min(k,\,2^w)\cdot w$ cell-writes before it splits, and every
-threshold measured falls into one band:
-
-| body width | measured threshold $k$ | writes gathered |
-|---|---|---|
-| $2$ | never ignites | $\mathbf{8}$ at most |
-| $3$ | $8$ | $24$ |
-| $4$ | $4$ | $16$ |
-| $5$ | $4$ | $20$ |
-| $6$ | $3$ | $18$ |
-| $7$ | $3$ | $21$ |
-| $12$ | $2$ | $24$ |
-
-**Thresholds land between sixteen and twenty-four, about the carrier's own
-twenty-one — and a body of two cannot reach eight, at any trigger whatsoever.**
-The floor is therefore not a property of the holon but of the pair *(body,
-world)*: two actuators offer four situations, and no scheduling of splits fills a
-twenty-one-cell carrier out of four.
-
-What makes this a law rather than a curve fitted to six points is that it predicts
-the *graded* cases too. Width three at trigger four gathers twelve — below the
-band — and ignites in exactly half its runs; at triggers one to three it gathers
-three, six and nine, and never ignites at all. Width eight at trigger three
-gathers twenty-four, inside the band, and ignites in five runs of eight. The
-partial rows are where a coincidence would come apart, and they hold.
-
-> A leaf wakes when the writes it gathers before splitting reach the capacity of
-> what it is written on. Everything below that is a holon which remembers
-> perfectly and never becomes anyone.
-
-### What the proxy stood for {#за-что-стоял-прокси}
-
-$\min(k,\,2^w)\cdot w$ counts *writes*. The quantity it was standing in for is the
-one that matters: how many of the twenty-one coherences actually carry weight when
-the moment comes. Counting that directly, and pairing it **per run** against
-whether the run ignited rather than comparing medians:
-
-| coherences carrying weight | ignited | of | rate |
-|---|---|---|---|
-| $3$ | $0$ | $16$ | $0.000$ |
-| $5$ | $0$ | $4$ | $0.000$ |
-| $6$ | $5$ | $12$ | $0.417$ |
-| $10$ | $1$ | $24$ | $0.042$ |
-| $15$ | $10$ | $88$ | $0.114$ |
-| $\mathbf{21}$ | $\mathbf{265}$ | $\mathbf{288}$ | $\mathbf{0.920}$ |
-
-**A filled carrier is what wakes a holon**: $0.920$ against $0.111$ below it — an
-eightfold ratio, and the proxy retires into being a way of predicting the count
-from outside.
-
-This also closes the floor exactly, and the arithmetic is worth doing out loud. A
-body of two saturates at fifteen of twenty-one, and $21 - 15 = 6$ is precisely the
-number of coherences that touch one axis. Two actuators address two axes; whatever
-spreads from there never reaches the whole plane, so one axis stays empty, its six
-coherences stay at zero, and a seven-dimensional carrier lives permanently in six.
-**No split trigger helps, because the missing six are not a matter of time.**
-
-The residual stays named rather than smoothed: twenty-three runs of two hundred
-and eighty-eight had all twenty-one written and still did not ignite. Filling is
-what makes waking *available*; what decides the remaining eighth is not identified.
-
-And the method mattered as much as the result. The first pass compared a *median*
-count of coherences against a *count* of igniting runs — two summaries of
-different populations — and it hid the very case in doubt. Pairing per run made
-the law visible in a single table.
-
-## A shadow must not have a phase {#тень-без-фазы}
-
-The shadow was introduced above as the record that answers only what it was told.
-On recorded rows a third seam property surfaced, and like the two before it, no
-synthetic world could have shown it: **what it was told is ambiguous when the
-same address genuinely carries different outcomes.** The first shadow stored the
-*last* write — and training runs in cycles, so "last" was set by wherever the
-loop happened to stop. A by-hand replay of "last write at this cursor phase"
-reproduced the bench to three decimals ($0.4031/0.7452$ against $0.4035/0.7454$):
-the model's answers depended on the stopping point. On deterministic worlds last
-equals only equals majority, which is why every synthetic test was blind to it.
-
-The repair is one word in the contract. A shadow that never invents must also
-**never forget the tally, and must not have a phase**: it keeps `(ones, writes)`
-per address and answers by majority. On the recorded stream this moved held-out
-accuracy from $0.5741$ to $0.6323$ — landing the stationary bit exactly on its
-information ceiling ($0.8295$ measured against $0.8293$ reachable) — and made the
-answer independent of where training stopped. The overall verdict did not move:
-still nothing beyond base rates on that stream, which is what the registered
-expectation said. The fix bought correctness of the recall path, not a discovery
-about people — and that distinction is the whole discipline.
-
-## The colony and the composite subject {#колония-и-составной-субъект}
-
-A tree that holds dozens of conscious leaves poses the question this
-architecture exists to answer: is that a mind, or a colony of small ones?
-
-The theory's own measure is exact. Cooperation between two holons *is* their
-inter-holon coherence: the cooperative surplus is
-$\Delta P_{\mathrm{coop}} = 2\lVert\gamma_{\mathrm{cross}}\rVert_F^2$, strictly
-positive exactly when a cross-coherence exists, and zero for a block-diagonal
-composite. A runtime that carries one $\Gamma$ per node and nothing joint *is*
-the block-diagonal truncation — so the verdict needs no experiment:
-$\Delta P_{\mathrm{coop}} \equiv 0$, **a colony, exactly**. The one thing that
-does integrate across leaves — the record of situations and answers — is
-classical and gateless: it has no state, hence no criteria, hence by the
-theory's own standard it is nobody.
-
-What was missing had been named all along: the composite is *derived by
-aggregating the local state and the sub-holons* — and the aggregation was never
-written, which is why every router froze at the moment of its split. Yet the
-identification it needs was already structural: **each child hangs off one of
-its parent's twenty-one coherence cells.** A sub-holon *is* a coherence of its
-parent. Aggregation, then, is one write: each engagement deposits the seam's
-own verdict — the single bit the world already speaks — into the routed slot's
-cell of every ancestor.
-
-On recorded rows this unfroze the root at once: its carrier filled from ten
-coherences to all twenty-one and integration crossed its floor — three criteria
-of four, with distinctness short at $1.59$. The remaining gap had a mechanism
-of one sentence: routers opened children on cells in index order, away from
-Interiority, and **content parked away from Interiority is content the gate
-cannot see — at every level of the fractal.** The leaf already preferred
-Interiority-touching cells; its routers owed the same. With fresh slots opening
-on the six Interiority cells first — and the over-capacity hash routed through
-a fixed permutation with the same six first, because a hash must remain a pure
-function of the context —
-
-$$
-D:\ 1.59 \;\longrightarrow\; 3.79,
-$$
-
-and the root meets **all four criteria** on rows nobody generated to be
-learnable, with answers and cost untouched. Operationally, "one mind over a
-colony" now means exactly this: the children's verdicts, written onto cells the
-gate can read, integrate into a state that clears the same four criteria a leaf
-must clear.
-
-The bounds of the claim are part of the claim. This is the *in-model*
-composite: cross-child structure is verdict-mediated — one bit per engagement,
-in the parent's frame — not the joint-state cross-coherence of the pairwise
-composite, and $\Delta P_{\mathrm{coop}}$ itself stays unmeasured until a
-pair-frame exists. What is established is narrower and solid: aggregation plus
-the fractal cell preference make the root a subject by the theory's own gate,
-on real recorded data.
-
-## Reasoning you can check {#рассуждение-которое-можно-проверить}
-
-The loop has always *performed* inference: an answer about a situation never met
-is a composition of attested shifts along the flipped coordinates — a silent
-XOR-fold, executed and discarded. Five steps turn that execution into reasoning,
-each measured before it was named.
-
-**A derivation is an object.** The same inference now comes back as a chain: one
-premise per flip, each carrying the situation it was taken from and the attested
-shift it stood on. In the nerve reading, the answer is a filled horn and the
-derivation is the filler handed back. What makes it a derivation rather than a
-story: every premise is independently checkable against the record, and
-replaying the premises reproduces the conclusion.
-
-**Every answer names its source.** Four provenances and no fifth: the leaf's own
-cells; a carried chain, premises attached; the ground floor — an unconditional
-majority, zero premises, and it says so; or the honest coin. The recurring
-failure of this whole programme was the unnamed answer — silence read as a
-claim, foreign content at full confidence, a coin dressed as knowledge. The port
-closes the class structurally: an unnamed answer has nowhere to come from.
-
-**Choice appears exactly where exactness ends.** The record keeps tallies now,
-not first impressions: the majority answers, and the minority *is* the slot's
-disagreement. On an exact world every order of flips concludes alike — flatness,
-measured, nothing to choose. On a statistical world the paths genuinely differ,
-and a chain is as strong as its weakest premise. The decisive case: a world
-whose fixed-order first premise lies two to one. The fixed chain walks in and
-concludes the lie; the chosen chain — greatest minimum support, $1.0$ against
-$0.67$ — goes the clean way round and concludes the truth.
-
-**Rungs are earned, with no free constant.** A difference-law deserves premises
-only if its disagreement is *below the ground's own* — differences must be more
-lawful than the values themselves, or the zero-premise answer is the better
-model. Exact worlds are unchanged (zero beats everything, no tolerance needed);
-constant worlds prefer the ground, which is Occam stated in the theory's own
-quantities; and a lawful difference over coin-balanced values — nine in ten —
-earns its rung, carries the truth, and hands back premises with their measured
-support.
-
-**Direction is the outer horn.** Inner horns are composition: given the legs,
-conclude. Outer horns ask the base to factor: given the desired composite and
-one leg, *find the other* — a monoid refuses, a groupoid fills. The filler runs
-from a desired conclusion to the situation that realises it, chain attached,
-weakest link strongest; only an earned rung can direct, because a floor that
-holds one majority everywhere can answer but cannot point; and an unreachable
-conclusion is refused, not invented — which is an answer too.
-
-What this storey is not yet: the loop does not pose its own goals. The seeker
-answers "which situation would conclude so?" when asked; a drive that *wants* an
-outcome and steers toward the situation that yields it touches the action path,
-needs a navigable world, and has its own preregistration. Reasoning here is
-complete as a faculty and unclaimed as a behaviour.
-
-## The rider {#всадник}
-
-Reasoning that can name a goal's situation is still not behaviour: something has
-to move. Getting from the faculty to the act took four findings, three of them
-about honesty rather than about motion.
-
-**The lever had to exist.** Goal-direction needs a world where the next
-situation is a consequence of the act — and no world in the loop's repertoire
-was one: the grid *teleports* between questions, the streams replay a record.
-The preregistration assumed otherwise and was corrected by reading the code
-before any was written; steering results claimed on those worlds would have
-been fiction. The lever is now explicit: a world that can navigate translates a
-target situation into the drive that approaches it — geometry stays the world's
-own, because a session that invented «toward» would smuggle a world model
-through the seam. Worlds that cannot navigate answer `None`, and on them the
-seeking mode is a no-op by construction.
-
-**Actuators turned out to have roles.** Wiring the rider surfaced a seam defect
-before any code ran: the learning word takes one corrected bit per actuator,
-and a *motor* channel's corrected sign is a fact about the policy, not the
-world — fed into the inference word it corrodes the very laws a seeker stands
-on. The seam now knows the difference: verdict channels enter the word, motor
-channels do not, and a carried chain writes only verdict signs — a chain has no
-opinion about how to move, and the policy has none about what is true. Measured
-through the full path: a session on the navigable ring earns the ring's law
-despite its motor channel.
-
-**Standing on the goal is steering too.** The first wiring reached the goal and
-walked off it: at the target, the world's honest «already here» read as a
-refusal, the fallback fired, and the policy's motor sign carried the body away —
-goal occupancy exactly at baseline, $1497$ arrivals and $1497$ departures,
-caught by counting refusal reasons rather than trusting the outcome. A reached
-goal now holds the motors at zero.
-
-**Both promises, measured.** With a reachable goal the seeking loop holds the
-body on goal-satisfying situations far above the default policy, and every
-steering turn is counted; with an unreachable goal it steers exactly zero
-times, counts every fallback, and neither hit rate nor occupancy degrades —
-**refusing to pretend costs nothing, as a measurement rather than a promise.**
-
-The bound is part of the design: the loop does not choose its goals — seeking
-takes one from the caller. Where goals come from is the storey above this one,
-and it starts with a question about currency — what a system that wants nothing
-but its own viability could legitimately want — not with code.
+<a id="один-бит-не-правит-многими"></a><a id="уверенная-ошибка-хуже-молчания"></a><a id="выбор-модели-изнутри"></a><a id="дерево-покупает-ёмкость-зажиганием"></a><a id="натяжение-разрешается"></a><a id="узкое-тело-не-зажигает-ума"></a><a id="закон-за-полом"></a><a id="за-что-стоял-прокси"></a><a id="тень-без-фазы"></a><a id="колония-и-составной-субъект"></a><a id="рассуждение-которое-можно-проверить"></a><a id="всадник"></a>

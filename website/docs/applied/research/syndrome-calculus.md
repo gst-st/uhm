@@ -16,7 +16,7 @@ The core is **Theorem Σ (T-224) [T]**: classical mathematics — perfect codes,
 
 ## §1. What was known: the forward direction {#известное}
 
-A parity-check matrix for $H(7,4)$ has as its seven columns the seven nonzero vectors of $\mathbb F_2^3$. Three distinct columns sum to zero exactly on the Fano lines. This $3\times7$ array differs from the $7\times7$ line–point incidence matrix. Correcting a flip of an encoded bit uses a syndrome readout. A line-labelled Lindblad operator by itself does not implement that readout or correct an arbitrary quantum coherence. [Gap dynamics](/docs/core/dynamics/gap-dynamics#код-хэмминга) · [Shield I](/docs/applied/coherence-cybernetics/topological-protection#код-хэмминга) · [Γ-canon](https://homohologra.ph/research/gamma-canon)
+A parity-check matrix for $H(7,4)$ has as its seven columns the seven nonzero vectors of $\mathbb F_2^3$. Three distinct columns sum to zero exactly on the Fano lines. This $3\times7$ array differs from the $7\times7$ line–point incidence matrix. Correcting a flip of an encoded bit uses a syndrome readout. A line-labelled Lindblad operator by itself does not implement that readout or correct an arbitrary quantum coherence. [Gap dynamics](/docs/core/dynamics/gap-dynamics#код-хэмминга) · [Shield I](/docs/applied/coherence-cybernetics/topological-protection#код-хэмминга) · [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules)
 
 In all those places the logic runs one way. **The seven axes are given first** — by the octonionic track ($\dim \mathrm{Im}\,\mathbb{O} = 7$), by $G_2$-rigidity, by the minimality theorem — and the code arrives afterwards, as a welcome structural gift. The gift is genuinely remarkable: among all linear codes, $H(7,4)$ is *perfect* — its correction balls tile the ambient cube with no gaps and no overlaps — and perfection is an arithmetic accident, not something one can order at will.
 
@@ -36,7 +36,7 @@ Perfect single-error correction and more than two codewords give the lower bound
 | 1962 | Vasil'ev constructs **nonlinear** perfect codes for $n \geq 15$ | rigidity breaks above seven — part (iv) |
 | 1971–73 | van Lint, Tietäväinen (independently Zinoviev–Leontiev) classify all perfect codes over prime-power alphabets | the ladder is *complete* — part (v) |
 | 1996 | Calderbank–Shor, Steane: quantum CSS codes; the $[[7,1,3]]$ code | the quantum lift of Shield I (§7) |
-| corpus | Shield I; Γ-canon archetypes; Fano selection rules | the forward direction |
+| corpus | Shield I; 16-codeword Hamming profiles; Fano selection rules | the forward direction |
 | **this doc** | **Theorem Σ: the converse direction** | diagnosability as a selector |
 
 ## §2. Preliminaries: codes, balls, designs {#предварительные}
@@ -58,7 +58,7 @@ Tiling is the strongest possible form of diagnosability: *every* raw profile has
 Two presentations of the Fano plane circulate in the corpus, and we will need both:
 
 - the **binary (XOR) presentation**: points are the nonzero vectors of $\mathbb{F}_2^3$, labelled $1,\dots,7$ by their binary value; lines are the triples $\{a, b, a \oplus b\}$ — equivalently, the 2-dimensional subspaces with $0$ removed;
-- the **cyclic (QR) presentation** used by the [Γ-canon](https://homohologra.ph/research/gamma-canon): points are residues $\bmod\ 7$; lines are the translates $\{1,2,4\} + t$ of the quadratic-residue set $\mathrm{QR}(7) = \{1,2,4\}$, which is a $(7,3,1)$ *difference set* — every nonzero residue is a difference of two of its elements in exactly one way.
+- the **cyclic (QR) presentation** used by [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) and [Gap diagnostics](/docs/applied/research/gap-diagnostics): points are residues $\bmod\ 7$ in the canonical Singer cyclic ordering $(A,S,D,L,E,U,O) = (1,2,3,4,5,6,7)$; lines are the translates $\{1,2,4\} + t \pmod 7$ of the quadratic-residue set $\mathrm{QR}(7) = \{1,2,4\}$, yielding the seven canonical lines $\{A,S,L\}$, $\{S,D,E\}$, $\{D,L,U\}$, $\{L,E,O\}$, $\{E,U,A\}$, $\{U,O,S\}$, $\{O,A,D\}$ — a $(7,3,1)$ *difference set* in which every nonzero residue is a difference of two elements in exactly one way.
 
 Lemma Σ.6 below exhibits an explicit relabeling carrying one presentation to the other, so no corpus statement depends on the choice.
 
@@ -78,7 +78,7 @@ We impose three requirements, and then a fourth of a different kind.
 
 - **(D3) Nontrivial grammar:** $|\mathcal{C}| > 2$.
 
-  *Motivation.* Two admissible profiles mean the grammar only says "everything intact / everything broken". A holon's archetype layer must distinguish qualitatively different healthy regimes — the Γ-canon's sixteen signatures are the target scale.
+  *Motivation.* Two admissible profiles mean the grammar only says "everything intact / everything broken". A nontrivial diagnostic layer must distinguish qualitatively different healthy regimes — the sixteen admissible codewords of $H(7,4)$ are the minimal nontrivial scale.
 
 And separately:
 
@@ -182,15 +182,15 @@ by Step 3. In particular $\mathcal{C}$ is linear, equal to $\ker H$ in the binar
 
 #### Lemma Σ.6 (dictionary between the two corpus presentations)
 
-*The relabeling $\sigma:\ 1 \mapsto 2,\ 2 \mapsto 4,\ 3 \mapsto 3,\ 4 \mapsto 6,\ 5 \mapsto 7,\ 6 \mapsto 5,\ 7 \mapsto 1$ carries the cyclic (QR) presentation onto the binary (XOR) presentation: every translate $\{1,2,4\}+t \pmod 7$ maps to a triple $\{a, b, a\oplus b\}$.*
+*The relabeling $\sigma:\ 1 \mapsto 1,\ 2 \mapsto 2,\ 3 \mapsto 4,\ 4 \mapsto 3,\ 5 \mapsto 6,\ 6 \mapsto 7,\ 7 \mapsto 5$ (the permutation $(3\,4)(5\,6\,7)$) carries the canonical Singer cyclic (QR) presentation $(A,S,D,L,E,U,O) = (1,2,3,4,5,6,7)$ onto the binary (XOR) presentation $(A,S,D,L,E,O,U) \mapsto (1,2,4,3,6,5,7)$: every translate $\{1,2,4\}+t \pmod 7$ maps to a triple $\{a, b, a\oplus b\}$.*
 
 **Proof.** Realize $\mathbb{F}_8 = \mathbb{F}_2[\alpha]/(\alpha^3 = \alpha + 1)$ and read nonzero elements as 3-bit vectors $(c_2 c_1 c_0)$ for $c_2\alpha^2 + c_1\alpha + c_0$:
 $$
 \alpha^0 = 001,\quad \alpha^1 = 010,\quad \alpha^2 = 100,\quad \alpha^3 = 011,\quad \alpha^4 = 110,\quad \alpha^5 = 111,\quad \alpha^6 = 101 .
 $$
-Define $\sigma(t) := $ the binary value of $\alpha^{t}$ (indices mod 7, residue 7 read as $t=0$): this is precisely the table above. Multiplication by $\alpha$ is $\mathbb{F}_2$-linear, hence maps 2-dimensional subspaces to 2-dimensional subspaces, i.e. XOR-lines to XOR-lines. The base translate $\{1,2,4\}$ maps to $\{\alpha^1, \alpha^2, \alpha^4\} = \{2, 4, 6\}$, and $2 \oplus 4 = 6$: an XOR-line. Every other translate $\{1,2,4\}+t$ maps to $\alpha^t \cdot \{2,4,6\}$, again an XOR-line. Spot checks: $\{2,3,5\} \mapsto \{4,3,7\}$, $4 \oplus 3 = 7$ ✓; $\{3,4,6\} \mapsto \{3,6,5\}$, $3 \oplus 6 = 5$ ✓. $\blacksquare$
+Define $\sigma(k) := $ the binary value of $\alpha^{k-1}$ for $k = 1,\dots,7$: this gives $(A,S,D,L,E,U,O) \mapsto (1,2,4,3,6,7,5)$, i.e. the table above. Multiplication by $\alpha$ is $\mathbb{F}_2$-linear, hence maps 2-dimensional subspaces to 2-dimensional subspaces, i.e. XOR-lines to XOR-lines. The base translate $\{1,2,4\} = \{A,S,L\}$ maps to $\{\alpha^0, \alpha^1, \alpha^3\} = \{1, 2, 3\}$, and $1 \oplus 2 = 3$: an XOR-line. Every other translate $\{1,2,4\}+t$ maps to $\alpha^t \cdot \{1,2,3\}$, again an XOR-line. Spot checks: $\{2,3,5\} = \{S,D,E\} \mapsto \{2,4,6\}$, $2 \oplus 4 = 6$ ✓; $\{3,4,6\} = \{D,L,U\} \mapsto \{4,3,7\}$, $4 \oplus 3 = 7$ ✓; $\{4,5,7\} = \{L,E,O\} \mapsto \{3,6,5\}$, $3 \oplus 6 = 5$ ✓. $\blacksquare$
 
-Thus the Γ-canon's cyclic triads and the Gap-dynamics check matrix describe the same grammar; the corpus may use either presentation, and Theorem Σ applies verbatim to both.
+Thus the canonical Singer cyclic triads and the binary XOR check matrix describe the same grammar; the corpus uses both presentations interchangeably, and Theorem Σ applies verbatim to both.
 
 #### Lemma Σ.7 (the ladder above: Vasil'ev and van Lint–Tietäväinen)
 
@@ -229,44 +229,44 @@ Several historical constructions use seven objects. In Hurwitz's theorem seven c
 Status discipline. The implication is **[T]** — parts (i)–(iv), proved above with no appeal to algebra, norms, or continuity: nothing enters but counting and sphere packing. The claim that the UHM axes *must* satisfy (D1)–(D4) is the interpretive step **[I]**, and it deserves to be stated carefully rather than smuggled:
 
 - (D1)–(D2) formalize *internal diagnosability of a viable holon*: degradation of an axis must be caught before it cascades through the coherence lattice (this is what Shields I–V protect against), and it must be caught by the system's own reflexive layer — the diagnosis is an act of the $R$-operator, not of an external observer ([self-observation](/docs/consciousness/foundations/self-observation)). Perfectness is precisely "no state about which the grammar is speechless, no state with two conflicting diagnoses".
-- (D3) matches the empirical scale of the archetype layer: the Γ-canon's sixteen signatures.
-- (D4) is the requirement that the canon be *reconstructible*: any observer, internal or external, recovering the grammar from the system's behavior must arrive at the same sixteen archetypes. Without rigidity, "normal" is a convention and the canon loses its diagnostic authority.
+- (D3) matches the minimal nontrivial scale of the diagnostic layer: the sixteen admissible codewords of $H(7,4)$.
+- (D4) is the requirement that the grammar be *reconstructible*: any observer, internal or external, recovering the grammar from the system's behavior must arrive at the same sixteen codewords. Without rigidity, "normal" is a convention and the grammar loses its diagnostic authority.
 
 Under these readings, the heptad is not a numerological choice but the unique solution of a well-posed design problem. The track is logically independent of the octonionic one — a hypothetical universe with no division algebras would still be subject to Theorem Σ.
 
-**The classification built on Σ [T].** If Σ fixes the *whole* grammar, then every partial view of it — every symbolic system in history — is a sub-configuration of the Fano plane, and those fall into a finite, computable list of orbit types under the collineation group ($|\mathrm{Aut}| = 168$). This is [T-256](https://homohologra.ph/research/one-grammar#t-256): nine axis-orbit types plus the channel sectors, with the zodiac's 12-block, the I Ching's $2^6 = 64$, and the diagonal chakra chart all appearing as named orbits. The reason unrelated cultures keep rediscovering the same structures is now a theorem: there are only finitely many charts to draw.
+**Orbit classification built on Σ (`T-256` `[T]` + `[I]`).** Under the finite collineation group $\mathrm{Aut}(\mathrm{PG}(2,2)) = \mathrm{PGL}(3,2)$ of order 168, the $2^7 - 1 = 127$ nonempty subsets of the seven axes partition into exactly **nine** orbit types (`T-256` `[T]` for the specified finite Fano collineation action; [Mathematical kernel](/docs/reference/mathematical-kernel)): singletons (7), pairs (21), collinear lines (7), non-collinear triples (28), line-complements (7), non-complement quadruples (28), quintuples (21), sextuples (7), and the full 7-set (1). Note strictly the status boundary of `T-256`: mapping empirical symbolic or cultural taxonomies onto these sub-configurations is an interpretation `[I]`; neither a universal classification of cultures nor empirical cross-cultural recurrence follows from finite-group orbit counting.
 
 ### §5.2. Why above seven one builds a tower, not width {#башня-не-ширина}
 
 #### Corollary Σ.2 [I] {#следствие-башня}
 
-Part (iv) explains a structural choice that elsewhere in the corpus is a postulate. The hierarchy of subjects ([SAD tower](/docs/consciousness/hierarchy/depth-tower)) scales by **stacking storeys of seven-axis blocks** — $7, 7^{(2)}, \dots$ with the $P_\mathrm{crit}^{(n)}$ rescaling and $\mathrm{SAD}_{\max} = 3$ — rather than by lengthening the axis list to the next Hamming length 15. Theorem Σ supplies the reason. A fifteen-axis "extended psyche" *could* be perfectly diagnosed: $[15,11,3]$ exists. But by Σ.7(a) the grammar at fifteen is no longer unique — nonlinear Vasil'ev grammars share all parameters ($2^{11}$ archetypes, distance 3, perfect tiling) while being inequivalent, and no internal statistic of fault-correction behavior distinguishes them. Diagnosis without a unique grammar is diagnosis without a canon: the system could not certify *which* normality it maintains. Seven is the last level at which "what to repair" and "what counts as normal" are simultaneously and uniquely determined; beyond it, growth must copy the rigid block rather than stretch it.
+Part (iv) explains a structural choice in multi-level architectures. Composite hierarchies scale by **stacking storeys of seven-axis blocks** — $7, 7^{(2)}, \dots$ (analyzed under the stipulated $P_\mathrm{crit}^{(m)}$ attenuation-score sequence of `T-142` `[T]` and the tower-load accounting of `T-232`; note that the universal cognitive depth ceiling `T-217 [✗]` is withdrawn) — rather than by lengthening the axis list to the next Hamming length 15. Theorem Σ supplies the coding-theoretic reason. A fifteen-axis single layer *could* be perfectly diagnosed: $[15,11,3]$ exists. But by Σ.7(a) the grammar at fifteen is no longer unique — nonlinear Vasil'ev grammars share all parameters ($2^{11}$ codewords, distance 3, perfect tiling) while being inequivalent, and no internal statistic of fault-correction behavior distinguishes them. Diagnosis without a unique grammar is diagnosis without a canon: the system could not certify *which* normality it maintains. Seven is the last level at which "what to repair" and "what counts as normal" are simultaneously and uniquely determined; beyond it, growth copies the rigid block rather than stretching it.
 
-Open note [H]: above the whole $t = 1$ ladder there is exactly one more perfect binary rung — Golay's $n = 23$ with $t = 3$. The numerical echo between its correction capacity $t = 3$ and $\mathrm{SAD}_{\max} = 3$ is recorded as a curiosity, with no status, until a structural argument connects the tower height to multi-fault localization.
+Open note `[H]`: above the whole $t = 1$ ladder there is exactly one more perfect binary rung — Golay's $n = 23$ with $t = 3$. The numerical coincidence between its correction capacity $t = 3$ and the height-$3$ bound of the stipulated geometric-attenuation score ladder (`T-142` `[T]`) is dissected precisely in §8b (`T-239`, `T-242`), where the two mechanisms are proved independent.
 
-### §5.3. Weight strata, the sixteen archetypes, and the $G_2$ forms {#весовые-страты}
+### §5.3. Weight strata, the sixteen codewords, and the $G_2$ forms {#весовые-страты}
 
-The grammar $16 = 1 + 7 + 7 + 1$ established in Lemma Σ.5 admits an exceptional-geometric reading [T]. Recall ([G₂-structure](/docs/physics/gauge-symmetry/g2-structure)) that $G_2 \subset SO(7)$ is the stabilizer of the *associative 3-form* $\varphi = \sum_{\ell} e_i \wedge e_j \wedge e_k$ (one oriented summand per Fano line) with Hodge dual the *coassociative 4-form* $\ast\varphi$ (one summand per line complement).
+The grammar $16 = 1 + 7 + 7 + 1$ established in Lemma Σ.5 admits an exceptional-geometric reading `[T]`. Recall ([G₂-structure](/docs/physics/gauge-symmetry/g2-structure)) that $G_2 \subset SO(7)$ is the stabilizer of the *associative 3-form* $\varphi = \sum_{\ell} e_i \wedge e_j \wedge e_k$ (one oriented summand per Fano line) with Hodge dual the *coassociative 4-form* $\ast\varphi$ (one summand per line complement).
 
-| Weight | Words | Supports | $G_2$ object | Archetype reading |
+| Weight | Words | Supports | $G_2$ object | Diagnostic reading |
 |---|---|---|---|---|
-| 0 | 1 | $\varnothing$ | vacuum | the null signature |
-| 3 | 7 | Fano lines | summands of $\varphi$ | the seven *triads* of the Γ-canon |
-| 4 | 7 | line complements | summands of $\ast\varphi$ | the seven *co-triads* |
+| 0 | 1 | $\varnothing$ | vacuum | null codeword |
+| 3 | 7 | Fano lines | summands of $\varphi$ | seven *line triads* |
+| 4 | 7 | line complements | summands of $\ast\varphi$ | seven *co-triads* (check supports) |
 | 7 | 1 | all axes | volume form $\mathrm{vol}_7$ | full activation |
 
-Explicitly, in the corpus axis order $[A,S,D,L,E,O,U] = [1,\dots,7]$ (binary presentation), the sixteen admissible signatures are:
+Explicitly, in the canonical Singer cyclic Fano plane (mapped via Lemma Σ.6 to binary addresses $(A,S,D,L,E,O,U) \mapsto (1,2,4,3,6,5,7)$), the sixteen admissible codewords are:
 
 $$
 \varnothing;\quad
-\{A{,}S{,}D\},\ \{A{,}L{,}E\},\ \{S{,}L{,}O\},\ \{D{,}L{,}U\},\ \{S{,}E{,}U\},\ \{D{,}E{,}O\},\ \{A{,}O{,}U\};
+\{A{,}S{,}L\},\ \{S{,}D{,}E\},\ \{D{,}L{,}U\},\ \{L{,}E{,}O\},\ \{E{,}U{,}A\},\ \{U{,}O{,}S\},\ \{O{,}A{,}D\};
 $$
 $$
 \text{their seven complements};\quad
 \{A{,}S{,}D{,}L{,}E{,}O{,}U\}.
 $$
 
-The code's minimum-weight words are the associative triples; their complements the coassociative quadruples. The grammar of admissible profiles and the calendar of $G_2$-calibrations are one structure written in two languages — and by Theorem Σ that structure is not one design option among many, but the unique solution of (D1)–(D4).
+The code's minimum-weight words are the associative triples; their complements are the coassociative quadruples. The grammar of admissible profiles and the $G_2$-calibration structure are one object written in two languages — and by Theorem Σ that structure is the unique solution of (D1)–(D4).
 
 ## §6. The Σ-compression protocol (T-225): the 21 → 7 → 3 → 1 pyramid {#протокол-сигма}
 
@@ -282,16 +282,16 @@ T_\ell \;:=\; \sum_{\{i,j\} \subset \ell} \bigl|\mathrm{Coh}_{ij}\bigr|^2, \qqua
 $$
 constitute the complete content-monitoring layer: no coherence escapes them and none is double-counted.
 
-**(b) 7 → 3 (syndrome).** Binarize each axis status by its viability threshold (the threshold is a convention [D]; the corpus default is the per-axis Gap threshold of [Gap diagnostics](/docs/applied/research/gap-diagnostics)). Three parities of the resulting bits localize any single fault: the *syndrome* $\sigma = (\sigma_1, \sigma_2, \sigma_3) \in \mathbb{F}_2^3$, computed by the rows of $H$, is **the binary address of the damaged axis** — see the table below. The geometry of the three checks is itself Fano-theoretic: the zero-set of each check row is a line ($\{S,L,O\}$, $\{A,L,E\}$, $\{A,S,D\}$ respectively), and these three lines form a **triangle** — three lines with pairwise distinct meeting points $L, S, A$ and no common point. So each check is "parity over the complement of one triangle side". The choice of triangle is exactly the choice of syndrome coordinates: the Fano plane has $\binom{7}{3} - 7 = 35 - 7 = 28$ triangles (35 line-triples minus the 7 concurrent triples, one per point), the group $\mathrm{PGL}(3,2)$ of order $168 = 28 \cdot 6$ acts on them transitively with stabilizer $S_3$ — any triangle serves, and all choices are conjugate.
+**(b) 7 → 3 (syndrome).** Binarize each axis status by its viability threshold (the threshold is a convention `[D]`; the corpus default is the per-axis Gap threshold of [Gap diagnostics](/docs/applied/research/gap-diagnostics)). Three parities of the resulting bits localize any single fault: the *syndrome* $\sigma = (\sigma_1, \sigma_2, \sigma_3) \in \mathbb{F}_2^3$, computed by the rows of $H$, is **the binary address of the damaged axis** under the canonical Singer cyclic bijection of Lemma Σ.6 — see the table below. The geometry of the three checks is itself Fano-theoretic: the zero-set of each check row is a canonical Fano line ($\{S,D,E\}$, $\{O,A,D\}$, $\{A,S,L\}$ respectively), and these three lines form a **triangle** — three lines with pairwise distinct meeting points $D, S, A$ and no common point. So each check is "parity over the complement of one triangle side". The choice of triangle is exactly the choice of syndrome coordinates: the Fano plane has $\binom{7}{3} - 7 = 35 - 7 = 28$ triangles (35 line-triples minus the 7 concurrent triples, one per point), the group $\mathrm{PGL}(3,2)$ of order $168 = 28 \cdot 6$ acts on them transitively with stabilizer $S_3$ — any triangle serves, and all choices are conjugate.
 
 | Axis | Column of $H$ (binary) | Syndrome $(\sigma_1\sigma_2\sigma_3)$ | Address |
 |---|---|---|---|
 | $A$ | $001$ | $100$ | 1 |
 | $S$ | $010$ | $010$ | 2 |
-| $D$ | $011$ | $110$ | 3 |
-| $L$ | $100$ | $001$ | 4 |
-| $E$ | $101$ | $101$ | 5 |
-| $O$ | $110$ | $011$ | 6 |
+| $D$ | $100$ | $001$ | 4 |
+| $L$ | $011$ | $110$ | 3 |
+| $E$ | $110$ | $011$ | 6 |
+| $O$ | $101$ | $101$ | 5 |
 | $U$ | $111$ | $111$ | 7 |
 
 **(c) 3 → 1 (flag).** The single bit $[\sigma \neq 0]$ is the "fault present" alarm.
@@ -312,41 +312,45 @@ So the 21 coherence directions carry **two canonical grids**: by *lines* — the
 
 #### Reference implementation {#референс-реализация}
 
-The following program verifies, by exhaustive machine check, every finite claim used above: the cardinality $|\mathcal{C}| = 16$, the weight distribution, the identity "weight-3 supports = Fano lines", the one-theme law $\lambda = 1$, and the perfect-decode property (every single-bit corruption of every codeword is localized to the correct axis). It is deterministic and runs in milliseconds.
+The following program verifies, by exhaustive machine check, every finite claim used above on the canonical Singer cyclic Fano plane: the cardinality $|\mathcal{C}| = 16$, the weight distribution, the identity "weight-3 supports = canonical Fano lines", the one-theme law $\lambda = 1$, and the perfect-decode property (every single-bit corruption of every codeword is localized to the exact axis). It is deterministic and runs in milliseconds.
 
 ```python
-# sigma_calculus.py — reference implementation of T-224/T-225 (deterministic)
+# sigma_calculus.py — reference implementation of T-224/T-225 (canonical Singer cyclic Fano)
 import itertools
 
-AXES = ['A', 'S', 'D', 'L', 'E', 'O', 'U']          # axis a=1..7 <-> bit (7-a): A=MSB
-H = [0b1010101, 0b0110011, 0b0001111]                # the H of Gap-dynamics §2:
-                                                     # column a = binary of a (row1 = LSB)
-LINES = [(1,2,3),(1,4,5),(2,4,6),(3,4,7),(2,5,7),(3,5,6),(1,6,7)]  # a XOR b = c
+AXES = ['A', 'S', 'D', 'L', 'E', 'O', 'U']           # display order: bit (6-i) <-> AXES[i]
+ADDR = [1, 2, 4, 3, 6, 5, 7]                         # Lemma Sigma.6 binary addresses (alpha^(k-1))
+ADDR_TO_AXIS = dict(zip(ADDR, AXES))
+H = [0b1001011, 0b0101101, 0b0010111]                # rows = bit 0, 1, 2 of ADDR (row 0 = LSB)
+LINES = [
+    ('A','S','L'), ('S','D','E'), ('D','L','U'),
+    ('L','E','O'), ('E','U','A'), ('U','O','S'), ('O','A','D'),
+]
 
-def syndrome(x):                                     # x: 7-bit status profile
+def syndrome(x):                                     # x: 7-bit status profile (MSB = A, LSB = U)
     return tuple(bin(row & x).count('1') & 1 for row in H)
 
 def locate(x):                                       # -> corrupted axis or None
     s = syndrome(x)
-    idx = s[0] | (s[1] << 1) | (s[2] << 2)           # syndrome = binary ADDRESS = axis index
-    return None if idx == 0 else AXES[idx - 1]
+    idx = s[0] | (s[1] << 1) | (s[2] << 2)           # syndrome = binary ADDRESS
+    return None if idx == 0 else ADDR_TO_AXIS[idx]
 
 CODE = [c for c in range(128) if syndrome(c) == (0,0,0)]
 assert len(CODE) == 16                               # |C| = 16   (T-224 ii)
 ws = sorted(bin(c).count('1') for c in CODE)
 assert ws == [0]+[3]*7+[4]*7+[7]                     # 1+7+7+1    (§5.3)
-supports = {frozenset(i+1 for i in range(7) if c >> (6-i) & 1)
+supports = {frozenset(AXES[i] for i in range(7) if c >> (6-i) & 1)
             for c in CODE if bin(c).count('1') == 3}
-assert supports == {frozenset(l) for l in LINES}     # weight-3 words = Fano lines
-for pair in itertools.combinations(range(1,8), 2):   # one-theme law: λ = 1
+assert supports == {frozenset(l) for l in LINES}     # weight-3 words = canonical Fano lines
+for pair in itertools.combinations(AXES, 2):         # one-theme law: λ = 1
     assert sum(set(pair) <= set(l) for l in LINES) == 1
 for c in CODE:                                       # perfectness: unique decode
-    for i in range(7):                               # flip bit i = corrupt axis 7-i
-        assert locate(c ^ (1 << i)) == AXES[6 - i]
-print("T-224/T-225 invariants verified: |C|=16, 1+7+7+1, Fano, perfect decode")
+    for i in range(7):                               # flip bit (6-i) = corrupt AXES[i]
+        assert locate(c ^ (1 << (6 - i))) == AXES[i]
+print("T-224/T-225 invariants verified: |C|=16, 1+7+7+1, canonical Fano, perfect decode")
 ```
 
-Output: `T-224/T-225 invariants verified: |C|=16, 1+7+7+1, Fano, perfect decode`.
+Output: `T-224/T-225 invariants verified: |C|=16, 1+7+7+1, canonical Fano, perfect decode`.
 
 ## §7. The quantum lift: the Steane code as the shadow of Shield I {#квантовый-лифт}
 
@@ -360,7 +364,7 @@ The classical grammar of Theorem Σ is precisely the input demanded by fault-tol
 $$
 X^{(h)} := \bigotimes_{i:\,h_i = 1} X_i, \qquad Z^{(h)} := \bigotimes_{i:\,h_i = 1} Z_i .
 $$
-An $X$-type and a $Z$-type operator commute iff their supports overlap evenly; here $\langle h, h' \rangle = |{\mathrm{supp}(h) \cap \mathrm{supp}(h')}| \bmod 2 = 0$ for all row pairs — the supports $\{A,D,E,U\}, \{S,D,O,U\}, \{L,E,O,U\}$ intersect pairwise in exactly two axes — so the six operators generate an abelian *stabilizer group*.
+An $X$-type and a $Z$-type operator commute iff their supports overlap evenly; here $\langle h, h' \rangle = |{\mathrm{supp}(h) \cap \mathrm{supp}(h')}| \bmod 2 = 0$ for all row pairs — the supports $\{A,L,O,U\}, \{S,L,E,U\}, \{D,E,O,U\}$ intersect pairwise in exactly two axes ($\{L,U\}, \{O,U\}, \{E,U\}$) — so the six operators generate an abelian *stabilizer group*.
 
 **Parameters.** The six generators are independent, so the joint $+1$-eigenspace has dimension $2^{7-6} = 2$: **one logical qubit**, $k = n - \mathrm{rk}_X - \mathrm{rk}_Z = 7 - 3 - 3 = 1$. The code distance is the minimum weight of a logical (non-stabilizer) representative, i.e. of a word in $\mathcal{C}_1 \setminus \mathcal{C}_2^\perp = H(7,4) \setminus \{0, \text{7 complements}\} = \{\text{7 lines}, \mathbf{1}\}$ — minimum weight **3**. Result:
 $$
@@ -618,7 +622,7 @@ An $n$-category can be reversed at each level independently: $\mathrm{op}_k$ rev
 
 *Proof.* (i) Commutation and involutivity are levelwise computations; distinctness on walking cells as stated; $n = 1$ rigidity of $\mathbf{Cat}$ is classical folklore. (ii) Exhaustive enumeration over $(\mathbb{Z}/2)^n$, $n \leq 3$: subgroup closure of every line triple, uniqueness of joins and meets, the $3/3$ incidence counts. (iii) $a \oplus b \oplus (a \oplus b) = 0$ in $(\mathbb{Z}/2)^3$. $\blacksquare$
 
-**Reading [I] (the habitat).** The corpus selects the number three as the depth of licensed self-composition through three independent theorems — $\mathrm{SAD}_{\max} = 3$, the viability maximum of T-239, the $m = 3$ canon of T-232 — and the Postnikov ceiling truncates the experiential tower at $\tau_{\leq 3}$. The natural habitat of depth-3 systems is a depth-3 doctrine; and there the Fano incidence *pre-exists*: no design, no transplant. Discipline note: the coincidence of *this* $\mathbb{F}_2^3$ (dualities) with the blueprint's flux $\mathbb{F}_2^3$ (T-237) is **not** claimed as an identity — it is pre-registered in the resonance table of the [epistemic vertical](/docs/reference/epistemic-vertical#регистр-дыр), and establishing or refuting it is precisely the open content of H3.4.
+**Reading [I] (the habitat).** In the finite coding and stipulated-score models of this document, height three arises from two distinct constructions — the canonical multi-fault Golay tower $m = 3$ of `T-232` (`[T]` at Σ-TOW) and the height-3 bound of the stipulated geometric-attenuation score ladder `T-142` / `T-239` (note that a universal cognitive depth ceiling `T-217 [✗]` and universal Postnikov truncation `T-86 [✗]` are withdrawn). The natural categorical habitat of depth-3 doctrines is a 3-category, where the Fano incidence of dualities *pre-exists* without transplant (`T-241` `[T]`). Discipline note: the coincidence of *this* $\mathbb{F}_2^3$ (dualities) with the blueprint's flux $\mathbb{F}_2^3$ (`T-237`) is **not** claimed as an identity — it is pre-registered in the resonance table of the [epistemic vertical](/docs/reference/epistemic-vertical#регистр-дыр), and establishing or refuting it is precisely the open content of H3.4.
 
 **The target, sharpened.** The blueprint's grammar requires the seven classes as involutive axes over the plane, a nontrivial gauge-invariant holonomy on them, and the $\mathrm{PG}(2,2)$ incidence. The sharp question: **is there a natural structure carrying the seven-axis frame with a nontrivial gauge-invariant holonomy?** T-243 answers it — and locates the holonomy on the axes, not the lines.
 
@@ -693,11 +697,11 @@ and at four or more organisms nothing of the kind exists at all.
 
 **Corollary (the glue is the mirror) [T]+[I].** The glue code $B$ is the *other* orientation of the same plane: the federation speaks to its members in the reversed Fano orientation. Both enantiomorphic labelings — identified only abstractly by the uniqueness clause of Theorem Σ — occur concretely in the federation: one as member grammar, one as glue.
 
-**Corollary (the ceiling echo, structured) [T]+[H].** By van Lint–Tietäväinen (Lemma Σ.7) the only perfect binary codes with more than two words are the Hamming family ($t = 1$) and the Golay code ($t = 3$, $n = 23$); two-word repetition grammars are excluded by (D3). Hence **no federation of four or more organisms admits a perfect multi-fault grammar of any order** — certified-perfect integrity caps at three members. The composition tower of the architecture caps at three for an independent reason (the purity ladder $P^{(4)}_{\mathrm{crit}} = 54/35 > 1$). Two unrelated derivations — sphere packing and purity arithmetic — cap the same quantity at the same value. §8b gives the coincidence a shared skeleton, and T-239 settles the relation between the two mechanisms.
+**Corollary (the ceiling echo, structured) [T]+[H].** By van Lint–Tietäväinen (Lemma Σ.7) the only perfect binary codes with more than two words are the Hamming family ($t = 1$) and the Golay code ($t = 3$, $n = 23$); two-word repetition grammars are excluded by (D3). Hence **no federation of four or more organisms admits a perfect multi-fault grammar of any order** — certified-perfect integrity caps at three members. Under the stipulated geometric-attenuation score convention of `T-142` `[T]`, the algebraic threshold sequence also crosses unity at $m = 4$ ($P^{(4)}_{\mathrm{crit}} = 54/35 > 1$; universal cognitive depth ceiling withdrawn, `T-217 [✗]`). §8b gives both finite-model bounds a shared dial, and `T-239`/`T-242` settle the relation between the two independent mechanisms.
 
 ## §8b. The tower ladder: $8m - 1$ and the perfect-grammar dichotomy {#лестница-башен}
 
-The federation of §8a is *horizontal* — three organisms side by side. The architecture's other growth axis is *vertical*: the composite tower, organisms stacked by composition, capped at three by the purity ladder ($P^{(4)}_{\mathrm{crit}} = 54/35 > 1$). It turns out the vertical axis carries its own coding arithmetic — and it selects the same number $3$, independently of purity.
+The federation of §8a is *horizontal* — three organisms side by side. The architecture's other growth axis is *vertical*: a tower of stacked seven-axis blocks (which under the stipulated `T-142` attenuation score has $P^{(4)}_{\mathrm{crit}} = 54/35 > 1$). The vertical axis carries its own coding arithmetic — and it selects $m = 3$ purely by sphere packing, independently of attenuation-score arithmetic.
 
 **Accounting axiom Σ-TOW [D].** A certified tower of height $m$ consists of $m$ seven-axis organisms and the $m - 1$ couplings between adjacent levels; each axis and each coupling contributes one binary health unit to the tower's diagnostic load. Total:
 
@@ -732,7 +736,7 @@ The full ladder, made explicit:
 | $5,6,7$ | $39, 47, 55$ | — none — | — | — |
 | $8$ | $63$ | Hamming-type | no | $t = 1$ |
 
-**Corollary (two derivations of one ceiling) [T]+[I].** The composition ceiling of the architecture has **two independent derivations**: the purity ladder ($P^{(4)}_{\mathrm{crit}} > 1$ — no conscious fourth story) and the tower ladder ($U(4) = 31$ loses the canon and all multi-fault protection; $U(3) = 23$ is the unique canonical multi-fault rung) — two theorems over one $23$-unit geometry, the horizontal and vertical readings carrying literally the same Golay grammar. Whether the two mechanisms are projections of one deeper structure is the subject of T-239.
+**Corollary (two independent finite-model bounds at $m=3$) [T]+[I].** Within these two finite models, height $3$ emerges from **two independent mechanisms**: the stipulated attenuation-score ladder (`T-142` `[T]`, $P^{(4)}_{\mathrm{crit}} > 1$, not a universal cognitive ceiling `T-217 [✗]`) and the tower coding ladder (`T-232` `[T]` at Σ-TOW: $U(4) = 31$ loses canonicity and multi-fault perfection; $U(3) = 23$ is the unique canonical multi-fault rung) — with horizontal and vertical 23-unit geometries carrying the same Golay grammar. Whether the two mechanisms reduce to one deeper structure is settled negatively by `T-239` and `T-242`.
 
 **Remark (the two-tower ambiguity) [I].** The ladder also explains a subtlety of depth two. A $2$-tower ($U = 15$) *is* perfectly diagnosable — but not canonically: from length $15$ onward the Vasil'ev rivals mean two independently assembled $2$-towers can hold inequivalent "normalities" that no internal test distinguishes. Diagnosability without canonicity is exactly the operational-but-not-licensed regime; the corpus discipline "tower, not width — and not past three" gains a purely coding-theoretic voice.
 
@@ -783,10 +787,10 @@ This closes the last question the two-ceilings arc left open: the agreement at $
 
 **Technology package.**
 
-1. **Monitoring budget [C].** Fault localization: 3 binary aggregates instead of 48-parameter tomography — a sixteenfold reduction in observable count, and the three parities are *global* (each sums four axes), hence robust to per-axis noise by (d) of T-225. Content monitoring: 7 theme observables instead of 21 coherences. Direct cost reduction for the Γ-tomograph and for the diagnostic tiers of the Γ-canon П-protocols.
+1. **Monitoring budget [C].** Fault localization: 3 binary aggregates instead of 48-parameter tomography — a sixteenfold reduction in observable count, and the three parities are *global* (each sums four axes), hence robust to per-axis noise by (d) of T-225. Content monitoring: 7 theme observables instead of 21 coherences. Direct cost reduction for the Γ-tomograph and diagnostic monitoring tiers.
 2. **Fault-tolerant seven-agent cores [D].** The Steane blueprint of §7 for register realizations: transversal Cliffords mean the core's basic operations do not multiply single faults; the stabilizer layout is inherited from the selection rules for free.
 3. **Syndrome audit of corpora [D].** Assign each of the seven UHM dimensions its cluster of corpus claims; binarize cluster health (all claim-sites consistent / at least one broken); three parities over the seven bits localize "which cluster hides the inconsistency" without reading the whole corpus. The reference implementation of §6 applies verbatim — the corpus becomes an instance of its own theorem.
-4. **Rigidity as a design criterion [D].** Part (iv) of Theorem Σ is an argument *against* widening the axis list in NOEMA-like cognitive architectures: above seven, the diagnostic grammar loses canonicity, and two independently trained instances may converge to inequivalent "normalities" that no internal test distinguishes. Scale by towers of rigid seven-blocks (consistent with $\mathrm{SAD}_{\max}$), not by wider single levels.
+4. **Rigidity as a design criterion [D].** Part (iv) of Theorem Σ is an argument *against* widening the axis list in NOEMA-like cognitive architectures: above seven, the diagnostic grammar loses canonicity, and two independently trained instances may converge to inequivalent "normalities" that no internal test distinguishes. Scale by towers of rigid seven-blocks (using the canonical Golay 3-tower of `T-232` `[T]` where multi-fault canonical certification is required), not by wider single levels.
 5. **The rate tier [C].** The dynamical companion of this document — [the Fano fingerprint](/docs/applied/research/fano-fingerprint) — adds the *rate* level: the $21$ pairwise decoherence rates collapse to $7$ polar values (fourteen parameter-free sum rules — prediction Σ-P2), per-line dissipation strengths become direct observables with a closed-form tomography, and the cooldown constant of T-39a becomes explicit. Content monitoring compresses **by lines** (this document), rate monitoring **by polar points** — the two Fano-dual tiers together instrument the full coherence matrix at $7 + 7$ observables.
 
 ## §10. Status summary {#сводка}
@@ -797,7 +801,7 @@ This closes the last question the two-ceilings arc left open: the agreement at $
 | Remark Σ-QR (check positions = QR(7)); dictionary Lemma Σ.6 | **[T]** |
 | Corollary Σ.1: the diagnosability track for $N=7$ | **[T]** mathematics + **[I]** identification |
 | Corollary Σ.2: "tower, not width" | **[I]** (rests on (iv) [T]) |
-| Weight strata ↔ $(\varphi, \ast\varphi)$; 16-archetype table | **[T]** |
+| Weight strata ↔ $(\varphi, \ast\varphi)$; 16-codeword table | **[T]** |
 | T-225: Σ-compression, the 21→7→3→1 pyramid | **[C]** |
 | Lie shadow: $21 = 14 + 7$, eigenvalue characterization | **[T]** (diagnostic reading — [I]) |
 | Steane $[[7,1,3]]$ = CSS of Shield I; transversal Cliffords | **[T]** mathematics; **[D]** engineering |
@@ -820,7 +824,7 @@ This closes the last question the two-ceilings arc left open: the agreement at $
 | T-241: the native Fano — the duality ladder $n = 1, 2, 3$ gives no lines, $\mathrm{PG}(1,2)$, $\mathrm{PG}(2,2)$; the depth-$3$ doctrine's seven reversal classes carry the Fano incidence natively; line loops close | **[T]** (exhaustive); habitat reading **[I]** |
 | T-243. The standard imaginary octonion units realize the signed Fano frame. | [T] Given the octonion model |
 | T-244. Split units with square $+1$ yield idempotent zero divisors. A positive multiplicative norm excludes zero divisors. Positivity alone allows them. | [T] Algebraic statements, [✗] diagnostic selection |
-| Golay $t=3$ ↔ $\mathrm{SAD}_{\max}=3$ | both sides theorems; mechanisms distinct, maxima coincide (T-239); root of the agreement **[H]** (H2.1′) |
+| Golay $t=3$ ↔ stipulated attenuation-score maximum $m=3$ (`T-142`) | both finite-model bounds **[T]**; mechanisms distinct (`T-239`), common $\mathrm{PG}(2,2)$ input $b=q+1=3$ (`T-242` **[T]**); universal depth ceiling withdrawn (`T-217 [✗]`) |
 | T-232: tower ladder $U(m) = 8m{-}1$ — perfect grammars at $m \in \{2^k\} \cup \{3\}$, canonical only $m \in \{1,3\}$, $t \geq 2$ only $m = 3$ | **[T at Σ-TOW]**; ceiling unification reading **[I]** |
 | T-239: two-ceilings dichotomy — $V = \{1,2,3\}$ monotone vs $K = \{1,3\}$ non-monotone; mechanism identity refuted (unique disagreement at the Vasil'ev height $m = 2$; $3 \neq 2$), witness identity proven ($m = 3$: $U = 23$, Golay, $9/14$) | **[T at Σ-TOW]**; resource reading **[I]** |
 | T-242: independence of the two ceilings — the purity ceiling $\Pi(b)$ is nonconstant in the contraction base ($\Pi(2){=}5,\Pi(3){=}3,\Pi(4){=}2$), the coding depth is $b$-independent; they agree only at $b=3$, the $\mathrm{PG}(2,2)$ line order that also fixes $N=7$ — one geometric input, two independent mechanisms (H2.1′ resolved) | **[T]** |
@@ -830,9 +834,9 @@ This closes the last question the two-ceilings arc left open: the agreement at $
 - [Gap dynamics §2](/docs/core/dynamics/gap-dynamics#код-хэмминга) — the forward direction: the isomorphism $\mathrm{PG}(2,2) \cong H(7,4)$ at the level of Lindblad operators.
 - [Topological protection, Shield I](/docs/applied/coherence-cybernetics/topological-protection#код-хэмминга) — the five shields; Σ turns Shield I from a property into a selector.
 - [Minimality of N=7](/docs/proofs/minimality/theorem-minimality-7) and the [octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation) — the three prior tracks; §9.3 there tabulates Track Σ against Tracks A and B.
-- [Γ-canon](https://homohologra.ph/research/gamma-canon) — the sixteen archetypes as codewords; the Σ protocol adds the diagnostic tier to the П-protocols; Lemma Σ.6 is the dictionary between its cyclic triads and the binary presentation.
+- [Mathematical kernel (T-256)](/docs/reference/mathematical-kernel) — the nine nonempty Fano collineation orbit types (`T-256 [T]+[I]`) and canonical Singer cyclic triads; Lemma Σ.6 gives the explicit dictionary to the binary presentation.
 - [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules), [evolution / T-114](/docs/core/dynamics/evolution) — the dynamical premises of T-225(d).
 - [G₂-structure](/docs/physics/gauge-symmetry/g2-structure) — the forms $\varphi, \ast\varphi$ and the $14 \oplus 7$ split behind §6.
-- [Status registry](/docs/reference/status-registry) — rows T-224–T-241.
+- [Status registry](/docs/reference/status-registry) — rows T-224–T-246.
 - [The Fano fingerprint](/docs/applied/research/fano-fingerprint) — the dynamical companion: the polar rate law, fourteen sum rules, line tomography, and the $\mathfrak g_2$-shadow in observable decoherence rates (T-226).
 - For MSFS §8.1 and the Diakrisis correspondence, T-229 assumes a Σ-FIB chart. The existence and operational faithfulness of such a chart on an arbitrary fiber remain open in ΣQ1′.

@@ -20,15 +20,20 @@ Kraus operators $B_bK_a$ describe a composite $\Psi\Lambda$; the identity has Kr
 
 ## Category Hol
 
-Use structured objects $(\mathcal H,M,V,\rho)$, where $M$ is a declared state self-map, $V$ a declared viable region and $\rho\in V$. Physical autonomy and the phenomenal interpretation are additional validated bridge data, not consequences of $\rho\in V$ or nonzero $E$ occupancy. The [holon requirements](/docs/core/foundations/axiom-septicity) separate these claims.
+In alignment with [categorical formalism §12](/docs/proofs/categorical/categorical-formalism#категория-голономов-hol), we distinguish two closely related categories:
 
-A structure-preserving arrow satisfies
+- **Unpointed structured systems** $\mathbf{Hol}^{\mathrm{sys}}$: objects $(\mathcal H, M, V)$, where $M: X \to X$ is a declared state self-model and $V \subseteq X$ is a declared viable region, with linear CPTP arrows $\Lambda$ satisfying $\Lambda(V_A)\subseteq V_B$ and $\Lambda M_A = M_B \Lambda$ (faithful forgetful functor to $\mathbf{CPTP}$).
+- **Pointed holon processes** $\mathbf{Hol}$: objects $(\mathcal H, M, V, \rho)$ with a distinguished viable state $\rho \in V$, and linear CPTP arrows satisfying
 
 $$
 \Lambda(\rho_A)=\rho_B,\quad\Lambda(V_A)\subseteq V_B,\quad\Lambda M_A=M_B\Lambda.
 $$
 
-Identities satisfy these conditions, and their preservation under composition follows by substitution [T]. Thus they define a category with a faithful forgetful functor to $\mathbf{DensityMat}$. Multiple structures on one state mean that this need not be an object-injective subcategory until a structure assignment is fixed. A nonlinear $M$ can enter the intertwining equation as a state map; it is not thereby a CPTP arrow.
+Physical autonomy and the phenomenal interpretation are additional validated bridge data, not consequences of $\rho\in V$ or nonzero $E$ occupancy. The [holon requirements](/docs/core/foundations/axiom-septicity) separate these claims.
+
+Identities satisfy these conditions, and their preservation under composition follows by substitution [T]. Thus $\mathbf{Hol}$ is a category with a faithful forgetful functor to $\mathbf{DensityMat}$ (and $\mathbf{Hol}^{\mathrm{sys}}$ to $\mathbf{CPTP}$). Multiple structures on one state mean that this need not be an object-injective subcategory until a structure assignment is fixed. A nonlinear $M$ can enter the intertwining equation as a state map; it is not thereby a CPTP arrow.
+
+**Rigidity of strict intertwining [T].** Requiring exact equivariance $\Lambda \circ M = M \circ \Lambda$ severely constrains the arrows of $\mathbf{Hol}$ whenever $M$ is a purity-dependent self-model such as $M_{\mathrm{coh}}$, $M_s$, or $M_J$: because a non-trivial contracting or dissipative CPTP channel strictly reduces purity $P(\Lambda(\rho)) < P(\rho)$ on generic viable states, it cannot commute with a self-model whose mixing weight or anchor response depends on $P(\rho)$ (excluding non-trivial dissipative channels and leaving mainly unitary symmetries or trivial resets). Consequently, **open dissipative UHM dynamics lives in CPTP channels and nonlinear semiflows on $D_7$, not in strict $\mathbf{Hol}$ morphisms**.
 
 ## Viability and composition
 

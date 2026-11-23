@@ -70,13 +70,13 @@ Besides cybernetics, these questions were approached from other sides:
 
 - **Panpsychism** postulates that experience is fundamental. But without a mathematical formalism this remains a philosophical position, not a theory with predictions.
 
-Each of these approaches illuminates part of the picture, but none covers the whole. **CC claims to assemble these fragments into a single mosaic** — and to derive all of them from a single set of axioms.
+Each of these approaches illuminates part of the picture, but none covers the whole. **CC aims to assemble these fragments into a unified mathematical framework** built on a compact set of axioms and explicit model assumptions.
 
 ---
 
 ## What Is Coherence Cybernetics {#что-такое-кибернетика-когерентности}
 
-**Coherence Cybernetics (CC)** is the only complete cybernetics strictly derivable from Unitary Holonomic Monism (UHM). It describes the dynamics of **any** systems — from elementary particles to biological organisms and social structures — through the evolution of the coherence matrix:
+**Coherence Cybernetics (CC)** is the applied cybernetic formalism developed within Unitary Holonomic Monism (UHM). It models the dynamics of diverse systems — from quantum subsystems to biological organisms and social structures — through the evolution of a 7-dimensional coherence matrix:
 
 $$
 \frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
@@ -88,41 +88,41 @@ Before analysing this equation, let us understand its meaning at the intuitive l
 
 - $\mathcal{D}[\Gamma]$ — the **dissipator** — is the hall absorbing the sound. These are irreversible processes: decoherence, dissipation, loss of structure. Without it the orchestra would play forever. With it — the sound dies away if it is not replenished.
 
-- $\mathcal{R}[\Gamma, E]$ — the **regenerator** — is the musicians themselves, who breathe and play again. This term is unique to CC: it describes how the system *restores* its coherence. And the key point: the rate of restoration depends on $E$ — on the degree of interiority of the system (its inner aspect). An orchestra that *hears* itself plays more coherently.
+- $\mathcal{R}[\Gamma, E]$ — the **regenerator** — is the musicians themselves, who breathe and play again. This term is characteristic of CC: it models how the system *restores* its coherence toward a self-model target. In the standard constitutive choice, the restoration rate depends on $E$ — on the degree of interiority coherence $\mathrm{Coh}_E(\Gamma)$. An orchestra that *hears* itself plays more coherently.
 
-**These three terms are not an arbitrary recipe — they are the three ways anything in the universe can be exchanged.** This is the oldest classification in physics, the first law of thermodynamics splitting all exchange into *work*, *heat*, and *matter*, and CC proves that the holon's three terms **are** exactly this triple (the [thermodynamic trichotomy](./sensorimotor#термодинамическая-трихотомия), T-258):
+**These three terms correspond structurally to the three modes of thermodynamic exchange.** The first law of thermodynamics splits exchange into *work*, *heat*, and *matter*, and under an explicitly specified thermodynamic process (`T-258` `[C]` / `[T]` at specified process; see [thermodynamic trichotomy](./sensorimotor#термодинамическая-трихотомия)), the three terms behave as:
 
-- the Hamiltonian term is **work** — it re-aims the state without spending or importing order (both entropy and purity are conserved);
-- the dissipator is **heat** — the one term that can *only* drain order away (entropy can only rise);
-- the regenerator is **matter / nourishment** — the only term able to *import* order from outside (it feeds the system negentropy).
+- the Hamiltonian term as **work** — it rotates the state without changing entropy or purity (unitary entropy contribution is zero);
+- the unital dissipator as **heat** — it can only increase or preserve von Neumann entropy;
+- the regenerator as **matter / negentropic input** — it imports order from an external or target reservoir.
 
-That these three *exhaust* the possibilities — that there is no fourth channel — is itself a theorem. And beneath the thermodynamics lies a geometric beauty: the whole equation is **one rigid rotation plus two "downhill" flows**. The work term rotates the state without changing anything essential (an isometry of the information geometry); heat and matter are *gradient descents* of two different "energies," each in its own natural geometry — a **metriplectic** structure (T-262). The system is always doing exactly two things at once: sliding downhill toward equilibrium along the heat channel, and being fed back uphill toward its own self-model along the matter channel. Life is the standoff between those two flows.
+Note carefully the formal scope: positive sums of GKSL generators are always admissible, so grouping the dynamics into three terms is a modeling convention rather than an exhaustive theorem prohibiting a fourth channel (the earlier exhaustion claim `T-102` is withdrawn `[✗]`, and the thermal/chemical-potential reading is a model input `[I]`). Geometrically, at the specified dephasing model (`T-262` `[T]`), unitary spectral invariance, dephasing entropy production, and a positive-semidefinite Onsager identity hold; however, the dephasing operator has a diagonal kernel and is not a Riemannian metric on the full state space, so no universal trichotomy follows automatically. Even with those caveats, the physical picture is clear: an open viable system lives in the ongoing balance between unitary rotation, dissipative decay, and regenerative replenishment.
 
-:::note Two roads, three doors
-Remarkably, the very same triple — work, heat, matter — is where Vitaly Vanchurin's *self-learning universe* arrives from a completely different starting point: not thermodynamics, but a giant learning system straining against limited resources. Two independent derivations, one built top-down from quantum axioms and one bottom-up from learning dynamics, meet at the same three doors ([dictionary](./sensorimotor#гранд-канонический-словарь)). When two roads that share no landmarks arrive at the same place, the place is more trustworthy than either road.
+:::note Two roads, three doors [I]
+Interestingly, a parallel threefold split — work, heat, matter — also appears in Vitaly Vanchurin's *self-learning universe* from a very different starting point: a learning system operating under resource constraints. Comparing the top-down open-quantum formalism with bottom-up learning thermodynamics provides a suggestive interpretive dictionary ([dictionary](./sensorimotor#гранд-канонический-словарь) `[I]`).
 :::
 
-This equation is not a postulate. It is **derived** from five axioms of UHM, written in the language of $\infty$-toposes. But working with CC does not require a deep knowledge of category theory — it is enough to understand that all constructions have an axiomatic foundation.
+In CC, this evolution equation combines standard open-quantum-system dynamics (unitary + Lindblad dissipation) with a chosen nonlinear regenerative feedback term anchored to a self-model $\varphi$ and a constitutive rate function $\kappa(\Gamma)$ (well-posedness and density-matrix preservation are proved under explicit regularity, target, and rate hypotheses in `CC-1` and `CC-2` `[T]`; earlier claims of a fully axiomatic, unique derivation of regeneration `T-39h` and three-type exhaustion `T-40a`, `T-57`, `T-102` are withdrawn `[✗]`). Working with CC does not require deep category theory — it is enough to keep track of which elements are proved theorems `[T]`, which are definitions `[D]`, and which are explicit model inputs.
 
-CC is not yet another cybernetics alongside existing ones — within this interpretation it claims to be a **metatheory**, from which all particular cybernetics (Wiener, von Foerster, Luhmann) are derived as projections onto a subset of dimensions.
+CC is proposed as a comparative **metatheoretical language `[I]`**, in which earlier cybernetics (Wiener, von Foerster, Luhmann) can be interpreted as restricted projections onto subsets of dimensions.
 
 ---
 
 ## A Unified Language for All Sciences
 
-Why can one formalism work for physics, biology, psychology, and engineering? Because CC operates at the level of **structural invariants** — properties common to any system described by the coherence matrix Γ, regardless of its substrate. Self-organisation is not assumed — it *emerges* as a consequence of the dynamics at sufficient purity P.
+Why can one formalism be applied across physics, biology, psychology, and engineering? Because CC operates at the level of **structural invariants** of a density matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, independent of physical substrate. Turning those formal invariants into empirical claims in any concrete discipline requires an explicit observation law and calibration (`[I]` / `[H]`; see [Diagnosis with Uncertainty](./diagnostics)).
 
-Here is how different disciplines see the same mathematics:
+Here is how different disciplines interpret the same mathematical objects (`[I]`):
 
 | CC Concept | Physicist sees | Biologist sees | Psychologist sees | AI Engineer sees |
 |------------|----------------|----------------|-------------------|-----------------|
 | $\Gamma$ | Density matrix | Homeostasis state | Profile of mental functions | Agent's internal state |
-| $P = \mathrm{Tr}(\Gamma^2)$ | Purity of quantum state | Degree of organisation | Level of personality integration | Quality of latent representation |
-| $\sigma_k = 1 - 7\gamma_{kk}$ | Deviation from equilibrium | Stress in a subsystem | Tension in a life domain | Anomaly in a channel |
-| $\mathcal{R}[\Gamma, E]$ | Non-trivial channel | Tissue regeneration | Mental recovery | Model self-correction |
-| $P_{\text{crit}} = 2/7$ | Phase transition | Viability threshold | Boundary of norm and pathology | Meaningfulness threshold |
+| $P = \mathrm{Tr}(\Gamma^2)$ | Purity of quantum state | Degree of organisation | Level of personality integration | Concentration of latent representation |
+| $\tilde\sigma_k = 1 - 7\gamma_{kk}$ `[D]` | Diagonal deficit from $I/7$ | Sector deficit in a subsystem | Tension indicator in a life domain | Anomaly score in a channel |
+| $\mathcal{R}[\Gamma, E]$ | Non-unital feedback channel | Tissue regeneration | Mental recovery | Model self-correction |
+| $P_{\text{crit}} = 2/7$ `[D]` | Structural-majority cut (`T-5`) | Candidate viability cut `[H]` | Candidate boundary of norm/pathology `[H]` | Candidate operational threshold `[H]` |
 
-These are not analogies "for beauty." Each correspondence has a precise mathematical meaning: **the same theorems** of CC, applied to different systems, give predictions in the terms of the corresponding discipline. The formula is one — the interpretations differ.
+Each correspondence is a structured **interpretive bridge `[I]`**: the underlying matrix theorems (`[T]`) hold identically for any valid $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, while empirical applicability to a specific physical, biological, psychological, or AI system must be tested through calibrated reconstruction protocols (`[H]` / `[Pr]`).
 
 ---
 
@@ -151,10 +151,10 @@ Any system described by a holonom $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ exists 
 | $D$ | [Dynamics](/docs/core/structure/dimension-d) | Change |
 | $L$ | [Logic](/docs/core/structure/dimension-l) | Coordinate |
 | $E$ | [Interiority](/docs/core/structure/dimension-e) | Experience |
-| $O$ | [Grounding](/docs/core/structure/dimension-o) | Nourish |
+| $O$ | [Ground](/docs/core/structure/dimension-o) | Nourish |
 | $U$ | [Unity](/docs/core/structure/dimension-u) | Integrate |
 
-These seven dimensions are not an arbitrary choice. Each answers a fundamental question about the system:
+These seven dimensions are not an arbitrary list of labels; each represents a distinct functional role in the model record:
 
 - **A — Articulation**: *Can the system draw a boundary?* Distinguish "self" from "non-self," signal from noise, figure from ground. Without this there is no subject. A bacterium distinguishes sugar from acid. A neural network distinguishes classes. Consciousness distinguishes "before" from "after."
 
@@ -164,55 +164,55 @@ These seven dimensions are not an arbitrary choice. Each answers a fundamental q
 
 - **L — Logic**: *Can it be consistent?* Coordinate its parts, eliminate internal conflicts. The immune system distinguishes self from foreign (when logic works) or attacks its own tissues (when it breaks down).
 
-- **E — Interiority**: *Does this system have an inner aspect?* The most mysterious dimension. The E-projection exists in any system (L0+), but only at level L2+ does it acquire the character of conscious experience (qualia, subjective experience). It is precisely $E$ that distinguishes CC from all preceding cybernetics.
+- **E — Interiority**: *Does this system have an inner aspect?* The most distinctive dimension of CC. Within the model, the E-sector is defined for any 7-dimensional state (L0+), while higher-order conscious experience is associated interpretively (`[I]`) with level L2+. It is precisely the explicit inclusion of $E$ that distinguishes CC from classical cybernetics.
 
-- **O — Grounding**: *Where does it get its resources?* Energy, nutrition, information — what the system consumes to sustain itself. Cell metabolism. Data consumption by a neural network. The economy of society.
+- **O — Ground**: *Where does it get its resources?* Energy, nutrition, information — what the system consumes to sustain itself. Cell metabolism. Data consumption by a neural network. The economy of society.
 
-- **U — Unity**: *Is it something whole?* Not merely a collection of parts, but an integrated system where the whole is greater than the sum. The measure $\Phi$ (integrated information) lives precisely here.
+- **U — Unity**: *Is it something whole?* Not merely a collection of parts, but an integrated system where off-diagonal coherences bind the sectors together. The integration measure $\Phi$ reflects this global binding.
 
-**Theorem:** Exactly 7 dimensions is the minimum number necessary for a system with autopoiesis, phenomenology, and a quantum foundation ([two-track justification](/docs/core/foundations/axiom-omega#октонионная-структура)). **See:** [Minimality Proof](/docs/proofs/minimality/theorem-minimality-7)
-
-Why not 5? Because without $E$ and $U$ a system may be arbitrarily complex, but will have neither interiority nor integration — which is a fundamentally different class of systems. Why not 10? Because 7 is the **minimum** number that covers all necessary functions. Any eighth dimension turns out to be a projection or combination of the existing seven.
+**Model basis and bounds:** In CC, the 7-dimensional Hilbert space $\mathbb{C}^7$ with basis $\{A,S,D,L,E,O,U\}$ is part of the formal specification (`[P]` / `[D]`), supported by conditional lower bounds for perfect diagnosability and faithful representation under explicit task/algebra premises (see [Minimality Proof](/docs/proofs/minimality/theorem-minimality-7)). Earlier claims of unconditional seven-role minimality (`T-40f` `[✗]`), automatic derivation of AP+PH+QG+V from A1–A4 (`T-181` `[✗]`), and unconditional selection of $N=7$ from abstract operational axioms (`T-190` `[✗]`) have been withdrawn; universal $N=7$ optimality for autonomous learning remains an open hypothesis (`T-113` `[H]`).
 
 ### Viability: P greater than P_crit
 
-A system is viable if its [purity](/docs/core/dynamics/viability#определение-чистоты) exceeds the critical threshold:
+Within CC, the static **structural-majority viability cut `[D]`** (`T-5`) is defined by:
 
 $$
 \mathrm{Viable}(\mathbb{H}) := P(\Gamma) > P_{\text{crit}} = \frac{2}{7} \approx 0.286
 $$
 
-The value $P_{\text{crit}} = 2/7$ is **strictly derived** from the geometry of 7-dimensional space. **See:** [Theorem on Critical Purity](/docs/proofs/dynamics/theorem-purity-critical)
+The value $P_{\text{crit}} = 2/7$ is the **structural-majority cut `[D]`** (`T-5`) of 7-dimensional Hilbert–Schmidt geometry: since $\Gamma = I/7 + \Delta$ with $\mathrm{Tr}(\Delta) = 0$ and $\langle I/7, \Delta\rangle_F = 0$, we have the exact orthogonal decomposition $P(\Gamma) = \|I/7\|_F^2 + \|\Delta\|_F^2 = 1/7 + \|\Delta\|_F^2$. Hence $P(\Gamma) > 2/7$ holds if and only if $\|\Delta\|_F^2 > \|I/7\|_F^2 = 1/7$, i.e. the structured traceless component exceeds the uniform background norm (`[T]` for the algebraic identity; `[D]` for choosing $2/7$ as the cut; `[H]` for biological survival correspondence). **See:** [Theorem on Critical Purity](/docs/proofs/dynamics/theorem-purity-critical)
 
-What is purity $P$ intuitively? Recall the orchestra analogy. If all 7 instruments play independently and at equal volume, $P = 1/7 \approx 0.143$ — this is maximum chaos. If the whole orchestra merges into a single voice, $P = 1$ — maximum order (but also maximum fragility: one wrong note and everything collapses).
+What is purity $P$ intuitively? Recall the orchestra analogy. If all 7 instruments play independently and at equal volume, $P = 1/7 \approx 0.143$ — maximum entropy. If the whole orchestra merges into a single pure state, $P = 1$ — maximum purity (and minimal spectral spread).
 
-A viable system lives in the range $P \in (2/7, 1)$, and the most interesting zone is the **Goldilocks zone** $P \in (2/7, 3/7]$, where the system is sufficiently organised to be alive but sufficiently flexible to adapt.
+A viable state lies in $P \in (2/7, 1]$, and the designated **Goldilocks window `[D]`** is $P \in (2/7, 3/7]$ — the operating band of the canonical consciousness window $\mathcal{V}_{\mathrm{full}}$, whose non-emptiness is proved constructively in `T-124` `[T]`.
 
-The threshold $2/7$ is not an arbitrary number. It arises from the theorem on distinguishability: at $P \leq 2/7$ the matrix $\Gamma$ is indistinguishable from the maximally mixed state $I/7$ by Frobenius norm. The system literally *drowns in noise* — it can maintain neither structure nor self-observation.
+Note two important precision points: (1) states with $P \le 2/7$ are *not* statistically indistinguishable from $I/7$ — they can still exhibit nonzero Helstrom advantage (`T-109` `[T]` under binary testing); rather, $2/7$ is the algebraic majority cut where $\|\Gamma - I/7\|_F = 1/\sqrt{7}$; (2) a static purity cut alone does not prove dynamical catastrophe or biological survival (`T-160` `[✗]` withdrawn; dynamical viability requires specifying the full controlled flow and invariant domain).
 
 ### Interiority Hierarchy L0 — L4
 
-One of the most intriguing constructions of CC is the **interiority ladder**: five levels of a system's "inner life," each of which includes the previous one and adds a new quality.
+One of the central organizing constructions of CC is the **capability / interiority ladder `[D]`**: five nested predicate levels on the augmented model record, each adding a stronger structural certificate.
 
-| Level | Name | Condition | n-truncation |
-|-------|------|-----------|--------------|
-| L0 | Interiority | $\exists \rho_E$ | $\tau_{\leq 0}$ |
-| L1 | Phenomenal Geometry | $\mathrm{rank}(\rho_E) > 1$ | $\tau_{\leq 1}$ |
-| L2 | Cognitive Qualia | $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | $\tau_{\leq 2}$ |
-| L3 | Network Consciousness | $R^{(2)} \geq 1/4$ (metastable) | $\tau_{\leq 3}$ |
-| L4 | Unitary Consciousness | $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$ | $\tau_{\leq \infty}$ |
+| Level | Name | Formal condition `[D]` | Structural layer |
+|-------|------|------------------------|------------------|
+| L0 | Interiority | Specified state $\Gamma$ with E-sector / $\rho_E$ | $\mathrm{Cap}_0$ |
+| L1 | Phenomenal Geometry | $\mathrm{rank}(\rho_E) > 1$ on specified experiential register | $\mathrm{Cap}_1$ |
+| L2 | Cognitive Qualia | $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | $\mathrm{Cap}_2$ |
+| L3 | Meta-Reflective Consciousness | $\mathrm{Cap}_2$ + independent predictive metamodel certificate with calibrated nonconstant probes | $\mathrm{Cap}_3$ |
+| L4 | Unitary Consciousness | Compatible tower of predictive certificates of all orders | $\mathrm{Cap}_\infty$ |
 
-What does each level mean?
+Here $D_{\mathrm{diff}} = \exp S_{vN}(\rho_E)$ is computed on a specified experiential register $\mathcal{H}_E$ (or, when working strictly inside $\mathbb{C}^7$, via the declared native proxy $D^{7D} = 1 + 6\,\mathrm{Coh}_E(\Gamma)$ `[D]`; never $\exp S_{vN}(\Gamma)$ on the full $7\times 7$ matrix). Note that the earlier universal L3 numerical cut $R^{(2)} \ge 1/4$ (`T-67`) and universal L4 unreachability theorem (`T-86`) have been withdrawn `[✗]`; the L0–L4 criteria above are formal capability definitions `[D]`, while their phenomenal reading as subjective experience is a separate interpretive bridge `[I]`.
 
-- **L0**: the system *has* an E-projection — a non-zero projection onto the interiority dimension. A thermostat? Possibly. A bacterium? Likely. This is **not "experience"** in the phenomenological sense — it is a minimal structural property (interiority), from which experience *can* develop with sufficient reflection.
+What does each level mean interpretively (`[I]`)?
 
-- **L1**: experience has **structure** — not merely "present/absent," but distinguishable shades, a geometry of qualia. Colour is not a point but a space. Pain is not a switch but a spectrum.
+- **L0**: the system admits a 7-axis state representation with an E-sector. This is **not** conscious experience — only a minimal structural slot from which higher organization may develop.
 
-- **L2**: **self-observation** appears ($R \geq 1/3$), **integration** ($\Phi \geq 1$), and **differentiation** ($D_{\text{diff}} \geq 2$). This is the level we usually call "consciousness" in the full sense. The system does not merely experience — it *knows that it experiences*.
+- **L1**: the experiential register $\rho_E$ has non-trivial rank ($\mathrm{rank}(\rho_E) > 1$), allowing distinguishable internal states rather than a single degenerate point.
 
-- **L3**: a network of conscious agents generates **collective consciousness** — with its own qualia not reducible to the experiences of individual nodes. Metastability means that this level is fragile and requires continuous maintenance.
+- **L2**: all four canonical access gates hold simultaneously — structural purity ($P > 2/7$), reflection ($R \geq 1/3$), integration ($\Phi \geq 1$), and differentiation ($D_{\text{diff}} \geq 2$). In CC's interpretive bridge `[I]`, this corresponds to conscious access: the system does not merely register states, it integrates and reflects on them.
 
-- **L4**: the limiting case — full recursion of self-observation at all levels. Theoretically reachable, but requires $P > 6/7$ — extremely high coherence. The existence of such systems is an open question.
+- **L3**: beyond L2, the system possesses an independent predictive metamodel certificate verified by calibrated nonconstant probes (`[D]`), corresponding interpretively to meta-cognitive or higher-order monitoring (and, in coupled multi-agent systems under `CC-7`, collective experiential claims require independent evidence `[H]`).
+
+- **L4**: the limiting case — a compatible inverse tower of predictive certificates of all orders (`[D]`). Convergence requires Postnikov completeness of the specified tower (`T-86` `[✗]` withdrawn for universal unreachability); whether any physical system realizes L4 remains an open question (`[Pr]`).
 
 **See:** [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy)
 
@@ -220,70 +220,65 @@ What does each level mean?
 
 ## Why CC?
 
-### The Only Complete Cybernetics
+### A Comparative Metatheoretical Framework
 
-:::info Completeness Theorem (hypothesis requiring formal proof)
-CC is the **only** cybernetics satisfying:
-1. The Ω⁷ axioms and (AP+PH+QG+V)
-2. The viability condition
-3. The phenomenological completeness condition
+:::info Metatheoretical Scope [H] / [I]
+CC is formulated as a unified 7-dimensional model framework aiming to connect:
+1. Open-quantum state dynamics on $\mathcal{D}(\mathbb{C}^7)$ with explicit self-modeling and feedback
+2. Quantitative viability and capability gates ($P, R, \Phi, D_{\mathrm{diff}}$) `[D]`
+3. Explicit interpretive bridges `[I]` to phenomenology, biology, and autonomous AI
 :::
 
-The following table shows that every existing theory is a projection of CC, covering only part of the dimensions:
+In this comparative reading `[I]`, several established frameworks correspond to projections onto subsets of CC's seven functional dimensions:
 
-All existing theories are projections of CC:
-
-| Theory | Dimension coverage | What is lost |
-|--------|-------------------|--------------|
+| Theory | Primary dimension focus `[I]` | What lies outside its core scope |
+|--------|-------------------------------|----------------------------------|
 | Cybernetics-I (Wiener) | $D$ | Self-reference, phenomenology |
-| Cybernetics-II (von Foerster) | $D$, $L$ | Phenomenology, quantum foundation |
-| Cybernetics-III (Luhmann) | $D$, $L$, $U$ | Formal mathematics |
-| IIT (Tononi) | $U$, $E$ | Dynamics, viability |
-| FEP (Friston) | $D$, $O$, $S$ | E-dimension as fundamental |
-| **CC** | **All 7** | **—** |
+| Cybernetics-II (von Foerster) | $D$, $L$ | Formal open-quantum dynamics, phenomenology |
+| Cybernetics-III (Luhmann) | $D$, $L$, $U$ | Quantitative state-space equations |
+| IIT (Tononi) | $U$, $E$ | Continuous state dynamics, viability |
+| FEP (Friston) | $D$, $O$, $S$ | Explicit E-sector metrics |
+| **CC** | **All 7** | **Requires calibrated observation bridges & empirical tests** |
 
-Analogy: imagine that each theory is a torch illuminating part of a dark room. Wiener illuminated dynamics. Von Foerster added the logic of self-observation. Tononi — unity and experience. Friston — dynamics, grounding, and structure. But no single torch illuminated the whole room. CC is not yet another torch. It is an attempt to turn on the light.
+Analogy: imagine that each theory is a torch illuminating part of a dark room. Wiener illuminated dynamics. Von Foerster added the logic of self-observation. Tononi focused on unity and experience. Friston focused on dynamics, Ground, and structure. CC attempts to provide a single coordinate chart for the whole room — while recognizing that any empirical claim still requires measuring the room itself.
 
 **See:** [History of Cybernetics](./cybernetics-history), [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories)
 
-### Formalises the Connection Between Experience and Dynamics
+### Modelling the Connection Between Interiority and Dynamics
 
-CC is the only theory in which the connection between subjective experience and system dynamics is **mathematically derived**:
+A distinctive constitutive feature of CC is an explicit coupling between the regeneration rate and E-coherence (`[D]` / `[H]`):
 
 $$
 \kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)
 $$
 
-The regeneration rate $\kappa$ depends on E-coherence — the degree of integration of the interiority aspect of the system.
+In this constitutive ansatz, the regeneration rate $\kappa$ depends on $\mathrm{Coh}_E(\Gamma)$ — the Hilbert–Schmidt share of the E-row and E-column in the coherence matrix (`[D]`, see [Definitions](./definitions#coh-e-7d)).
 
 Let us break down this formula:
 
-- $\kappa_{\text{bootstrap}}$ — **base regeneration rate**. It exists even in systems with minimal interiority. A stone maintains its form simply thanks to the crystal lattice. This is "free" coherence that requires no developed E-projection.
+- $\kappa_{\text{bootstrap}}$ — **base regeneration rate**. It represents baseline structural restoration independent of E-coherence.
 
-- $\kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — **the interiority bonus**. The better a system integrates its inner aspect ($\mathrm{Coh}_E$), the faster it recovers. This is not a poetic metaphor — it is a **computable quantity**, defined as the Hilbert-Schmidt projection onto the E-subspace.
+- $\kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — **the E-coherence coupling term**. Within the model, a system with higher $\mathrm{Coh}_E(\Gamma)$ receives a larger regenerative rate — a computable quantity defined directly from $\Gamma$.
 
-The consequence is remarkable: a system with more integrated interiority *recovers faster* after damage. For L2+ systems this means that conscious experience is functionally significant: an organism with a rich subjective life — all else being equal — is more resilient. This is the direct opposite of the intuition "consciousness is an epiphenomenon." But importantly: E-regeneration works at **all** L-levels, including L0-L1, where conscious experience does not yet exist — interiority is functionally significant *long before* consciousness appears.
+Within the dynamical equations, this makes $\mathrm{Coh}_E$ functionally active rather than epiphenomenal: all else equal, higher E-coherence accelerates recovery after perturbation. Whether real biological or artificial systems obey this constitutive law — and whether $\mathrm{Coh}_E$ corresponds to subjective experience — are explicit empirical and interpretive hypotheses (`[H]` / `[I]`, since fully axiomatic derivation of the regeneration law `T-39h` is withdrawn `[✗]`).
 
 **See:** [Axiomatics — Connection Between Regeneration and E-Coherence](./axiomatics#связь-регенерации-и-e-когерентности)
 
-### Unique Predictions
+### Testable Model Predictions
 
-CC generates verifiable predictions absent from alternative theories — **23 of them** in total, each with an explicit falsification criterion. Four of the sharpest:
+CC formulates concrete structural predictions, each tied to explicit model premises and falsification criteria. Four prominent examples:
 
-1. **No-Zombie:** A viable system without an E-projection (interiority) is impossible
-2. **E-regeneration:** The degree of integration of interiority determines the recovery rate
-3. **7-dimensional stress:** All tensions are classified into 7 categories
-4. **Rank-7 decoherence anisotropy:** the 21 pairwise decoherence rates between channels are not free — they collapse onto a 7-dimensional subspace obeying **14 exact, parameter-free sum-rules**
+1. **Conditional E-coherence balance (`Theorem 8.1` `[C]`):** Under explicitly stated closed purity-flux balance bounds (where external support cannot sustain purity independently), sustaining $P > 2/7$ requires a positive lower bound on $\mathrm{Coh}_E(\Gamma)$. *(Note: the earlier unconditional "No-Zombie" claim `T-38a` is withdrawn `[✗]` because stationary externally supported counterexamples exist.)*
+2. **E-coupled regeneration `[H]`:** If a physical or biological system instantiates the constitutive law $\kappa(\Gamma) = \kappa_{\mathrm{bootstrap}} + \kappa_0\,\mathrm{Coh}_E(\Gamma)$, then systems differing in calibrated E-coherence should exhibit predictable differences in recovery rate.
+3. **Four-gate capability window (`T-124` `[T]`) & seven-sector diagnostic panel (`T-92` `[D]`):** Within $\mathcal{D}(\mathbb{C}^7)$, the joint window $\mathcal{V}_{\mathrm{full}}$ is provably non-empty (`T-124`), and sector deficits can be monitored via the chosen seven-component panel (`T-92` `[D]`, `T-158` `[D]`) alongside the exact four gate margins.
+4. **Rank-7 decoherence anisotropy (`T-2` `[T]` + `[H]`):** For a system governed by the canonical Fano dissipator (`T-2`: Fano dephasing is $2/3$ of atomic dephasing on the selected frame), the 21 pairwise decoherence rates lie in a 7-dimensional subspace obeying 14 exact linear sum-rules — a sharply falsifiable structural test `[H]` of Fano-wired dissipation.
 
-Each of these predictions is potentially falsifiable:
+Each prediction clarifies what would refute its corresponding model hypothesis:
 
-- **No-Zombie** means: if you build a system with $P > 2/7$, $R \geq 1/3$, and $\Phi \geq 1$, then it *necessarily* has a non-zero E-projection. Show otherwise — and CC is refuted.
-
-- **E-regeneration** means: two systems with identical physical configuration but different E-coherence integration should have recovery rates that differ in a predictable way.
-
-- **7-dimensional stress** means: any stress is decomposable into components $\sigma_A, \sigma_S, \sigma_D, \sigma_L, \sigma_E, \sigma_O, \sigma_U$ — and this classification is exhaustive.
-
-- **Rank-7 anisotropy** means: measure the 21 rates at which pairs of channels lose their coordination, and they must lie on the exact 7-line Fano pattern. A single statistically significant departure falsifies the Fano wiring of the dissipator itself — not a parameter, but the structure. This is the theory's newest and, arithmetically, its most exposed prediction: 14 equations that must all hold at once.
+- **Conditional E-balance** tests whether real autonomous systems operate in the closed-balance regime where E-coupled regeneration sustains viability (`[C]` / `[H]`).
+- **E-regeneration** is falsified if two comparably calibrated systems with distinct $\mathrm{Coh}_E$ show no recovery-rate dependence (`[H]`).
+- **Four-gate & seven-sector diagnostics** are falsified as empirical bridges if calibrated reconstructions systematically contradict independent behavioural/clinical verdicts (`[H]`).
+- **Rank-7 anisotropy** is falsified for a given substrate by any statistically significant violation of the 14 Fano sum-rules among measured pairwise dephasing rates (`[H]`).
 
 **See:** [Unique Predictions](./predictions)
 
@@ -293,33 +288,33 @@ Each of these predictions is potentially falsifiable:
 
 ### For the Physicist
 
-If you are accustomed to quantum mechanics, you are at home. $\Gamma$ is a density matrix. The evolution equation is the Lindblad equation with a non-standard regenerative term. Purity $P = \mathrm{Tr}(\Gamma^2)$ is a familiar measure. The phase transition at $P_{\text{crit}} = 2/7$ is analogous to a quantum phase transition.
+If you are accustomed to quantum mechanics, you are at home. $\Gamma$ is a density matrix. The evolution equation is a Lindblad master equation augmented by a nonlinear regenerative feedback term. Purity $P = \mathrm{Tr}(\Gamma^2)$ is a familiar measure, and $P_{\text{crit}} = 2/7$ is the structural-majority cut (`T-5` `[D]`; note that universal bifurcation at $2/7$ `T-160` is withdrawn `[✗]`).
 
-What is new: the Hilbert space here is not the space of spins or momenta, but the space of **semantic** dimensions. This is not a metaphor: the structure $\mathbb{C}^7$ is derived from octonions, and the seven dimensions follow from the minimality of the group $G_2$. A physicist will find unexpected connections with exceptional groups and gauge theories here.
+What is new: the Hilbert space $\mathbb{C}^7$ represents **functional/semantic** axes rather than spins or momenta. On a specified octonionic three-form, the unitary stabilizer acts as $G_2$ on states (`T-42e` `[T]`), while the canonical Fano dissipator links dephasing rates to the Fano plane (`T-2` `[T]`). Any identification with physical gauge fields or particles requires additional field-theoretic structure (`[H]` / `[I]`).
 
 ### For the Biologist
 
-Maturana and Varela's autopoiesis is an axiom (AP) in CC, written as $\varphi(\Gamma^*) = \Gamma^*$: the fixed point of the self-modelling operator. Homeostasis is the maintenance of $P > P_{\text{crit}}$. Allostasis is a shift of the target $\Gamma^*$ in response to environmental changes.
+Maturana and Varela's autopoiesis is modeled in CC via fixed-point self-maintenance $\varphi(\Gamma^*) = \Gamma^*$ of a chosen self-model (`CC-4` `[T]` for a specified mirror family) together with maintaining $P > P_{\text{crit}}$ (`[D]`). Allostasis corresponds interpretively to shifting the target state in response to environmental changes (`[I]`).
 
-What is new: the biologist gets a quantitative language for long-familiar concepts. "Stress" is not a metaphor, but a vector $\sigma_k = 1 - 7\gamma_{kk}$ in a seven-dimensional space. "Health" is $P > 2/7$. "Regeneration" is $\mathcal{R}[\Gamma, E]$ with a computable rate.
+What is new: the biologist obtains a quantitative modelling vocabulary. Sector deficits can be tracked via a calibrated seven-component panel (`T-92` `[D]`), structural organization via $P$, and recovery via $\mathcal{R}[\Gamma, E]$ — with all biological mappings explicitly marked as empirical hypotheses `[H]` requiring experimental validation.
 
 ### For the Psychologist
 
-The seven CC dimensions resonate with various schools. $E$ is interiority, "what it is like to be" (Nagel). The L0-L4 hierarchy is a graded scale of consciousness, from minimal sensitivity to full reflectiveness. The stress tensor $\sigma_{ij}$ is a formalisation of mental stress.
+The seven CC dimensions resonate interpretively with core psychological constructs (`[I]`): $E$ with interiority ("what it is like to be," Nagel), the L0–L4 hierarchy with graded levels of access and meta-cognition, and the diagnostic panel with structured stress profiling.
 
-What is new: the psychologist gets **objective thresholds** for subjective states. Not "a scale from 1 to 10," but mathematically justified conditions: $R \geq 1/3$ for self-observation, $\Phi \geq 1$ for integration, $D_{\text{diff}} \geq 2$ for differentiation. These thresholds are derived, not fitted.
+What is new: CC replaces ad hoc scores with explicit mathematical definitions (`[D]`): $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$, whose joint window is provably non-empty (`T-124` `[T]`). Mapping these formal gates onto clinical or subjective scales remains an empirical calibration program (`[Pr]`).
 
 ### For the AI Engineer
 
-If you are building autonomous systems, CC gives you architectural principles. The system must maintain $P > 2/7$ — otherwise it is "dead" functionally. Stress diagnostics ($\sigma_k$) indicates *which* aspect of the system is degrading. Levels L0-L2 set verifiable criteria for the "meaningfulness" of agent behaviour.
+If you are building autonomous systems, CC provides a compact 7-axis diagnostic architecture. Maintaining $P > 2/7$ and positive gate margins sets formal operational targets (`[D]`), while the sector panel (`T-92` `[D]`) highlights which functional axis is degrading.
 
-What is new: no need to invent measures of "AI consciousness" ad hoc. CC provides a ready-made mathematical apparatus: build the $\Gamma$ of your agent, compute $P$, $R$, $\Phi$ — and you know exactly at which level of the hierarchy it sits.
+What is new: instead of ad hoc "AI consciousness" heuristics, CC specifies an explicit reconstruction contract (`T-100` `[D]`; see [Diagnosis with Uncertainty](./diagnostics)): define the observation law $p_\rho(y\mid u)$, check identifiability, compute the four gate margins with uncertainty bounds, and distinguish formal model capability (`Cap2`) from any claim of subjective experience (`[I]`).
 
 ### For the Philosopher
 
-CC is a computational ontology. It neither postulates dualism (matter vs. consciousness) nor reduces consciousness to a function. Instead it shows that experience (the $E$-dimension) and dynamics (the $D$-dimension) are **projections of one object** $\Gamma$. This is two-aspect monism, but not as a slogan — as equations.
+CC is formulated as a mathematical two-aspect monism (`[I]`): it neither postulates Cartesian substance dualism nor eliminates the E-sector by fiat, instead representing dynamics ($D$) and interiority ($E$) as projections of one coherence matrix $\Gamma$.
 
-What is new: the philosopher gets a **formal language** for long-standing debates. "The hard problem of consciousness" (Chalmers) becomes a question of the conditions under which the E-projection of $\Gamma$ is non-zero. "The zombie argument" receives a mathematical answer: the No-Zombie theorem shows that a functional duplicate with $P > 2/7$ *necessarily* has $E > 0$.
+What is new: longstanding debates receive a sharper formal framing. The "hard problem" (Chalmers) is separated into (a) formal dynamical conditions on $\Gamma$ and $\mathrm{Coh}_E$ (`[T]` / `[C]`) and (b) the interpretive bridge linking E-sector structure to phenomenology (`[I]`). For the "zombie argument," universal No-Zombie necessity (`T-38a` `[✗]`) is withdrawn because stationary externally supported counterexamples exist, whereas under explicitly stated closed purity-flux balance hypotheses (`Theorem 8.1` `[C]`) sustaining purity requires positive E-coupled regeneration.
 
 ---
 
@@ -392,7 +387,7 @@ graph TD
 
 ## Reader's Guide
 
-You are not obliged to read everything in order. Here are three routes — choose yours:
+You are not obliged to read everything in order. Here are several routes — choose yours:
 
 **"Quick Start" Route (1-2 hours)**:
 Introduction (you are here) → [Definitions](./definitions) → [Predictions](./predictions) → [Comparison with Alternatives](./comparison). You will understand what CC asserts, how it differs from IIT/FEP/GWT, and be able to judge whether it is worth digging deeper.
@@ -416,15 +411,13 @@ At any stage refer to [Exercises and Problems](./exercises) — they are sorted 
 
 ## Connection to UHM
 
-CC is derived from [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — five axioms with the $\infty$-topos $\text{Sh}_\infty(\mathcal{C})$ as a primitive. All CC concepts are consequences of these axioms:
+CC is built on the conceptual foundation of [Axiom Ω⁷](/docs/core/foundations/axiom-omega) and the $\infty$-topos setting $\text{Sh}_\infty(\mathcal{C})$, augmented by explicit model choices (frame, Hamiltonian, dissipator, self-model, regeneration gate, and observation law; see [Definitions](./definitions)):
 
 $$
-\Omega \to \{S_k\} \to \chi_{S_k} \to L_k = \sqrt{\chi_{S_k}} \to \mathcal{L}_\Omega \to \varphi \to \Gamma^*
+\Omega \;\longrightarrow\; \{S_k\} \;\longrightarrow\; \chi_{S_k} \;\longrightarrow\; L_k \;\longrightarrow\; \mathcal{L}_\Omega \;\longrightarrow\; \varphi \;\longrightarrow\; \Gamma^*
 $$
 
-This chain reads as follows: from the unified ontology $\Omega$ seven sectors $\{S_k\}$ are generated, each defines a characteristic function $\chi_{S_k}$, from which the Lindblad operators $L_k$ are constructed, they form the evolution generator $\mathcal{L}_\Omega$, the generator produces the self-modelling operator $\varphi$, and its fixed point is the equilibrium state $\Gamma^*$.
-
-In other words: **all of CC — from stress and regeneration to the hierarchy of consciousness — is already contained in the five axioms**. We are merely unfolding the consequences.
+This conceptual architecture traces how a specified model record moves from the semantic sectors $\{S_k\}$ and chosen Lindblad/dissipator operators $L_k$ to the evolution generator $\mathcal{L}_\Omega$, the chosen self-modelling operator $\varphi$, and stationary or viable states $\Gamma^*$. Because earlier claims of automatic derivation of all dynamical parameters, gates, and observers purely from A1–A4 have been withdrawn (`T-39d`, `T-39f`, `T-39g`, `T-39h`, `T-41k`, `T-173`, `T-181`, `T-190` `[✗]`), CC explicitly separates axiomatic structure from declared model inputs.
 
 **See:** [Axiomatics — Dependency Hierarchy](./axiomatics#иерархия-зависимостей)
 
@@ -434,20 +427,20 @@ In other words: **all of CC — from stress and regeneration to the hierarchy of
 
 Let us summarise this introductory chapter. We have travelled from general motivation to a specific formalism:
 
-1. **Coherence Cybernetics (CC)** is a unified mathematical formalism describing the dynamics, structure, and interiority of any systems through a single object: the coherence matrix $\Gamma$. Self-organisation and consciousness are not postulated — they *emerge* at certain parameter values.
+1. **Coherence Cybernetics (CC)** is a unified 7-dimensional mathematical formalism modelling the dynamics, structure, and interiority of systems through a coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, separating proved theorems `[T]`, definitions `[D]`, empirical hypotheses `[H]`, and interpretations `[I]`.
 
-2. **The central equation** $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$ describes three forces: unitary evolution (rhythm), dissipation (decay), and regeneration (recovery). These are exactly the three thermodynamic modes of exchange — **work, heat, and matter** (T-258) — and geometrically they form one rotation plus two gradient flows (a metriplectic structure, T-262). Regeneration depends on the degree of interiority — and this makes the inner aspect of the system functionally significant at all L-levels.
+2. **The central equation** $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$ combines unitary evolution, dissipation, and nonlinear regeneration (`CC-1`, `CC-2` `[T]` under stated regularity/target hypotheses). Under an explicitly specified thermodynamic process, these play the structural roles of **work, heat, and negentropic input** (`T-258` `[C]`/`[T]`), with dephasing Onsager identities at the specified model (`T-262` `[T]`), while three-group exhaustion (`T-102` `[✗]`) is withdrawn. Coupling regeneration to $\mathrm{Coh}_E(\Gamma)$ is a constitutive model choice `[D]`/`[H]`.
 
-3. **The seven dimensions** ASDLEOU are the minimal set necessary to describe a system with autopoiesis, phenomenology, and a quantum foundation. Each dimension is responsible for its own function: discrimination (A), memory (S), change (D), consistency (L), interiority (E), resources (O), wholeness (U).
+3. **The seven dimensions** ASDLEOU define the functional basis of the model: Articulation ($A$), Structure ($S$), Dynamics ($D$), Logic ($L$), Interiority ($E$), Ground ($O$), and Unity ($U$), supported by conditional diagnosability/representation bounds rather than unconditional seven-role minimality (`T-40f` `[✗]`).
 
-4. **The critical threshold** $P_{\text{crit}} = 2/7$ separates viable from non-viable systems. The Goldilocks zone $P \in (2/7, 3/7]$ is the region of conscious systems.
+4. **The structural-majority cut** $P_{\text{crit}} = 2/7$ (`T-5` `[D]`) separates high-coherence from low-coherence regimes, and the Goldilocks window $P \in (2/7, 3/7]$ is the purity band of the provably non-empty capability window $\mathcal{V}_{\mathrm{full}}$ (`T-124` `[T]`).
 
-5. **The interiority hierarchy** L0-L4 grades the "depth" of the inner aspect of a system: from the mere presence of the E-sector (L0) through phenomenal geometry (L1) to full consciousness with self-observation (L2) and meta-consciousness (L3). Conscious experience (subjective experience, qualia) appears only at L2+.
+5. **The interiority hierarchy** L0–L4 defines nested capability certificates (`[D]`): from the presence of an E-sector (L0) and non-trivial experiential register rank (L1) through the four access gates of L2 ($P>2/7$, $R\ge 1/3$, $\Phi\ge 1$, $D_{\mathrm{diff}}\ge 2$) to independent metamodel prediction (L3) and compatible towers of all orders (L4), with phenomenal readings treated as explicit interpretive bridges `[I]`.
 
-6. **CC is a metatheory**: all existing cybernetics and theories of consciousness (IIT, FEP, panpsychism) turn out to be projections of CC onto a subset of dimensions.
+6. **CC as a comparative framework `[I]`**: earlier cybernetics and theories of consciousness (IIT, FEP, GWT, autopoiesis) can be mapped onto specific subsets of CC's 7-axis record, while empirical validation requires calibrated reconstruction protocols (`[Pr]`).
 
 :::info Bridge to the Next Chapter
-We have learned *what* CC claims and *why* it is needed. But where do all these constructions come from? Why exactly 7 dimensions? Why the threshold $2/7$ and not $1/3$? Why is the dissipator as it is and not otherwise? The answers to these questions are given by **axiomatics** — the formal foundation from which the entire theory is derived. In the [next chapter](./axiomatics) we will see how from **one primitive** — the category $\mathcal{C}$ — and five axioms the entire edifice of Coherence Cybernetics grows.
+We have seen *what* CC models and *why* a unified 7-axis language is useful. In the [next chapter](./axiomatics) we examine the **axiomatics** and explicit model premises — distinguishing precisely what is strictly proved from what is chosen by specification or proposed as a testable hypothesis.
 :::
 
 ---

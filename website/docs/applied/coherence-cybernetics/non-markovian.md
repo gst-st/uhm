@@ -15,7 +15,7 @@ In the [previous chapter](./bifurcation) we studied **bifurcations** of the Gap 
 In this chapter we:
 
 1. **Understand the difference between Markovian and non-Markovian dynamics** — and see why consciousness fundamentally cannot be "memoryless" (Introduction, section "Two Views on Time")
-2. **Introduce the memory kernel $K(\tau)$** — the mathematical object describing how the past influences the present — and classify its forms: exponential [T], oscillatory [H], power-law [H] (section 1)
+2. **Introduce the memory kernel $K(\tau)$** — the mathematical object describing how the past influences the present — and classify its forms: exponential (`T-94` [T] under an exponential kernel), oscillatory [H], power-law [H] (section 1)
 3. **Show how non-Markovianity generates Gap oscillations** — damped waves distinct from undamped Hopf oscillations — and introduce the BLP non-Markovianity measure (section 2)
 4. **Formalise "grief cycles"** — as a mathematical model of grieving, including post-traumatic growth and complicated grief (section 3)
 5. **Define therapeutic windows** — time intervals of heightened plasticity created by non-Markovian oscillations (section 4)
@@ -97,7 +97,7 @@ Mathematically, the memory kernel is a weight function in a temporal convolution
 
 In the Markovian approximation decoherence is described by a delta function: $K(\tau) = -\Gamma_2 \delta(\tau)$, giving standard exponential decay. For a finite memory time the kernel $K(\tau) \neq \delta(\tau)$, and the equation of motion for coherence $\gamma_{ij}$ takes the integro-differential form:
 
-:::tip Definition (Non-Markovian coherence dynamics) [T]
+:::tip Definition (Non-Markovian coherence dynamics) [D]
 $$
 \frac{d\gamma_{ij}}{d\tau} = -i\Delta\omega_{ij}\,\gamma_{ij}(\tau) + \int_0^\tau K_{ij}(\tau - s)\, \gamma_{ij}(s)\, ds + \mathcal{R}_{ij}
 $$
@@ -114,17 +114,19 @@ The convolution structure of the second term means that dissipation at moment $\
 
 Note the depth of this formula. The integral $\int_0^\tau K(\tau - s)\, \gamma(s)\, ds$ is not merely a technical complication. It is a statement about the nature of reality: *the current rate of change of the state is determined by the superposition of all past states*, each weighted by how long ago it occurred. This is precisely how living memory works: the recent is vivid, the distant is faint, but does not vanish completely.
 
-### 1.2 Exponential Kernel [T] (T-94) {#экспоненциальное-ядро}
+### 1.2 Exponential Kernel [T under exponential kernel] (T-94) {#экспоненциальное-ядро}
 
-The simplest non-Markovian kernel is exponential memory decay. The exponential form is **proved** from the compactness of the state space ([T-94](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) [T]):
+The simplest non-Markovian kernel is exponential memory decay, supplied with kernel amplitude $\Gamma_2 > 0$ and decay rate $\omega_c = 1/\tau_{\text{mem}} > 0$ as model inputs:
 
 $$
 K(\tau) = -\Gamma_2\,\omega_c \cdot e^{-\omega_c\,\tau}
 $$
 
+By [T-94](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (**[T]** under an exponential kernel), this convolution is realized **exactly** by an auxiliary first-order evolution (Markovian embedding) with auxiliary memory variable $z_{ij}(\tau) := \int_0^\tau e^{-\omega_c(\tau-s)}\gamma_{ij}(s)\,ds$, satisfying $\dot z_{ij} = -\omega_c z_{ij} + \gamma_{ij}$.
+
 **Parameters:**
-- $\Gamma_2$ — integral decoherence strength
-- $\omega_c = 1/\tau_{\text{mem}}$ — cut-off frequency (inverse memory time)
+- $\Gamma_2$ — integral decoherence strength (input)
+- $\omega_c = 1/\tau_{\text{mem}}$ — cut-off frequency (inverse memory time, input)
 - $\tau_{\text{mem}}$ — characteristic memory time of the system
 
 **Limiting regimes:**
@@ -167,13 +169,13 @@ Peaks at $\omega = \pm\omega_{\text{mem}}$ — the environment preferentially "r
 
 | Kernel | $K(\tau)$ | Spectrum | Gap behaviour | Status |
 |--------|-----------|----------|---------------|--------|
-| Markovian | $-\Gamma_2\,\delta(\tau)$ | White noise | Monotone relaxation | [T] (T-94 limit) |
-| Exponential | $-\Gamma_2\omega_c\,e^{-\omega_c\tau}$ | Lorentzian | Damped oscillations | **[T]** (T-94) |
+| Markovian | $-\Gamma_2\,\delta(\tau)$ | White noise | Monotone relaxation | [T] ($\omega_c \to \infty$ limit of T-94) |
+| Exponential | $-\Gamma_2\omega_c\,e^{-\omega_c\tau}$ | Lorentzian | Damped oscillations ($\omega_c < 4\Gamma_2$) / overdamped ($\omega_c > 4\Gamma_2$) | **[T]** (T-94, under exponential kernel) |
 | Oscillatory | $-\Gamma_2\omega_c\,e^{-\omega_c\tau}\cos(\omega_{\text{mem}}\tau)$ | Double Lorentzian | Resonant oscillations | **[H]** |
 | Power-law | $-\Gamma_2\,(\tau/\tau_0)^{-\alpha}$ | $1/f^{1-\alpha}$ | Power-law relaxation | **[H]** |
 
 :::info Connection to Gap space
-The structure of the 7-dimensional Gap space is determined by the isomorphism $\mathrm{PG}(2,2) \cong H(7,4)$ ([T-93](/docs/core/dynamics/gap-dynamics#теорема-h74-формальная) [T]). The Hamming code H(7,4) defines distances between Gap configurations and, consequently, correlations of the kernel $K_{ij}(\tau)$ between different dimension pairs.
+Algebraically, the three-bit parity-check matrix of the Hamming code $H(7,4)$ with all seven distinct nonzero columns separates single bit flips ([T-93](/docs/core/dynamics/gap-dynamics#теорема-h74-формальная) [T]). Applying this coding structure to inter-channel correlations of $K_{ij}(\tau)$ across the Fano plane $\mathrm{PG}(2,2)$ requires a declared binary error model and syndrome instrument.
 :::
 
 ### 1.5 Physiology of the Memory Kernel {#физиология-ядра}
@@ -194,49 +196,51 @@ The memory kernel $K(\tau)$ is not an abstraction. It has direct neurophysiologi
 
 ### 2.1 Non-Markovian Gap Oscillations
 
-:::tip Theorem (Non-Markovian Gap oscillations) [T]
-For exponential memory kernel $K(\tau) = -\Gamma_2\omega_c \cdot e^{-\omega_c\tau}$:
-
-**(a)** Markovian limit ($\omega_c \to \infty$): standard exponential decoherence
+:::tip Theorem (Non-Markovian Gap oscillations under exponential kernel) [T]
+For exponential memory kernel $K(\tau) = -\Gamma_2\omega_c \cdot e^{-\omega_c\tau}$ (with $\Delta\omega_{ij} = 0$, $\mathcal{R}_{ij} = 0$), introducing $z(\tau) = \int_0^\tau e^{-\omega_c(\tau-s)}\gamma(s)\,ds$ yields the exact second-order ODE $\ddot{\gamma} + \omega_c\dot{\gamma} + \Gamma_2\omega_c\,\gamma = 0$ (`T-94`), with **characteristic equation**:
 
 $$
-\gamma_{ij}(\tau) \propto e^{-\Gamma_2\tau}
+s^2 + \omega_c s + \Gamma_2\omega_c = 0, \qquad s_\pm = -\frac{\omega_c}{2} \pm \frac{1}{2}\sqrt{\omega_c(\omega_c - 4\Gamma_2)}
 $$
 
-**(b)** Non-Markovian regime (finite $\omega_c$): Gap **oscillates**
+and discriminant $\Delta = \omega_c^2 - 4\Gamma_2\omega_c = \omega_c(\omega_c - 4\Gamma_2)$. Three exact regimes follow:
+
+**(a) Underdamped (oscillatory) regime** ($\Delta < 0 \iff \omega_c < 4\Gamma_2 \iff \tau_{\text{mem}} > \frac{1}{4\Gamma_2}$): coherence and Gap exhibit **damped oscillations**:
 
 $$
-\mathrm{Gap}(i,j;\,\tau) = \mathrm{Gap}^{(\infty)} + C \cdot e^{-\gamma\tau}\cos(\omega_r\tau)
+\mathrm{Gap}(i,j;\,\tau) = \mathrm{Gap}^{(\infty)} + C \cdot e^{-\gamma\tau}\cos(\omega_r\tau + \phi_0)
 $$
 
-where $\omega_r = \sqrt{\omega_c\Gamma_2 - \gamma^2}$ is the frequency of damped oscillations, $\gamma$ is the decay rate.
+with decay rate $\gamma = \frac{\omega_c}{2} = \frac{1}{2\tau_{\text{mem}}}$ and oscillation frequency $\omega_r = \sqrt{\Gamma_2\omega_c - \gamma^2} = \frac{1}{2}\sqrt{\omega_c(4\Gamma_2 - \omega_c)} > 0$.
 
-**(c)** For $\omega_c < \Gamma_2/4$: **overdamped** regime — no oscillations, purely exponential (but slowed) relaxation to the stationary state.
+**(b) Overdamped (non-oscillatory) regime** ($\Delta > 0 \iff \omega_c > 4\Gamma_2 \iff \tau_{\text{mem}} < \frac{1}{4\Gamma_2}$): purely double-exponential relaxation $c_+ e^{-\gamma_-\tau} + c_- e^{-\gamma_+\tau}$ with real decay rates $\gamma_\pm = \frac{\omega_c \pm \sqrt{\omega_c(\omega_c - 4\Gamma_2)}}{2} > 0$, separated from the oscillatory regime by critical damping at $\omega_c = 4\Gamma_2$.
 
-**Proof:** See [Gap dynamics, Theorem 5.1](/docs/core/dynamics/gap-dynamics#немарковские-эффекты).
+**(c) Markovian limit** ($\omega_c \gg 4\Gamma_2$, i.e. $\tau_{\text{mem}} \ll \frac{1}{4\Gamma_2}$): the slow rate approaches $\gamma_- = \Gamma_2 + O(\Gamma_2^2/\omega_c)$, recovering standard monotone Markovian decay $\gamma_{ij}(\tau) \propto e^{-\Gamma_2\tau}$.
+
+**Proof:** Direct substitution of the auxiliary variable from [T-94](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное); see also [Gap dynamics, Theorem 5.1](/docs/core/dynamics/gap-dynamics#немарковские-эффекты).
 :::
 
-**Physical mechanism.** Non-Markovian oscillations arise from the **backflow of information** from the environment into the system. In the Markovian regime, information lost to the environment does not return. In the non-Markovian regime — the environment "remembers" coherence and returns it with delay $\sim \tau_{\text{mem}}$.
+**Physical mechanism.** Non-Markovian oscillations arise from the **backflow of information** from the environment into the system. In the Markovian regime ($\omega_c \gg 4\Gamma_2$), the environment forgets instantly and information lost does not return. In the underdamped non-Markovian regime ($\omega_c < 4\Gamma_2$), the environment retains coherence long enough ($\tau_{\text{mem}} > 1/(4\Gamma_2)$) to return part of it with delay $\sim \tau_{\text{mem}}$.
 
-This is one of the most striking results of the theory. We usually think of decoherence as a one-way process: order → chaos, coherence → noise, clarity → muddiness. But non-Markovian dynamics says: **the environment can return what it has taken**. Coherence that "dissolved" into the surroundings returns after time $\tau_{\text{mem}}$ — weakened, but real. In terms of human experience: clarity lost in a crisis can return — not because we "work on ourselves", but because *that is the dynamics of the system*. The environment — body, social surroundings, neural network — carries the imprint of lost coherence and returns it in waves.
+This is one of the most striking results of the theory. We usually think of decoherence as a one-way process: order → chaos, coherence → noise, clarity → muddiness. But non-Markovian dynamics says: **the environment can return what it has taken**. Coherence that "dissolved" into the surroundings returns after time $\sim \tau_{\text{mem}}$ — weakened, but real. In terms of human experience: clarity lost in a crisis can return — not because we "work on ourselves", but because *that is the dynamics of the system*. The environment — body, social surroundings, neural network — carries the imprint of lost coherence and returns it in waves.
 
 ### 2.2 Three Gap-Relaxation Regimes
 
 | Regime | Condition | Gap dynamics | Characteristic scale |
 |--------|-----------|-------------|----------------------|
-| Markovian | $\omega_c \gg \Gamma_2$ | $e^{-\Gamma_2\tau}$ (monotone) | $\tau_{\text{relax}} = 1/\Gamma_2$ |
-| Oscillating | $\omega_c \sim \Gamma_2$ | $e^{-\gamma\tau}\cos(\omega_r\tau)$ | $\tau_{\text{relax}} = 1/\gamma$, $T_{\text{osc}} = 2\pi/\omega_r$ |
-| Overdamped | $\omega_c < \Gamma_2/4$ | $e^{-\gamma_{\pm}\tau}$ (double exponential) | $\tau_{\text{relax}} = 1/\gamma_-$ (slow) |
+| Markovian limit | $\omega_c \gg 4\Gamma_2$ ($\tau_{\text{mem}} \ll \frac{1}{4\Gamma_2}$) | $e^{-\Gamma_2\tau}$ (monotone) | $\tau_{\text{relax}} = 1/\Gamma_2$ |
+| Overdamped | $\omega_c > 4\Gamma_2$ ($\tau_{\text{mem}} < \frac{1}{4\Gamma_2}$) | $c_+ e^{-\gamma_-\tau} + c_- e^{-\gamma_+\tau}$ (non-oscillatory) | $\tau_{\text{relax}} = 1/\gamma_-$ |
+| Underdamped (oscillating) | $\omega_c < 4\Gamma_2$ ($\tau_{\text{mem}} > \frac{1}{4\Gamma_2}$) | $e^{-(\omega_c/2)\tau}\cos(\omega_r\tau + \phi_0)$ | $\tau_{\text{relax}} = 2/\omega_c = 2\tau_{\text{mem}}$, $T_{\text{osc}} = 2\pi/\omega_r$ |
 
-**Criterion for oscillations:**
+**Exact criterion for oscillations** (from $\Delta = \omega_c(\omega_c - 4\Gamma_2) < 0$):
 
 $$
-\omega_c\Gamma_2 > \gamma^2 \quad \Longleftrightarrow \quad \tau_{\text{mem}} < \frac{4}{\Gamma_2}
+\omega_c < 4\Gamma_2 \quad \Longleftrightarrow \quad \tau_{\text{mem}} = \frac{1}{\omega_c} > \frac{1}{4\Gamma_2}
 $$
 
-Gap oscillations arise when the environment's memory time is **short enough** (but not zero). Paradoxically: excessively long memory ($\tau_{\text{mem}} \gg 4/\Gamma_2$) **suppresses** oscillations.
+Gap oscillations arise when the environment's memory time is **long enough** ($\tau_{\text{mem}} > 1/(4\Gamma_2)$) for coherence absorbed by the bath to feed back before the bath forgets it. When memory is **too short** ($\tau_{\text{mem}} < 1/(4\Gamma_2)$, i.e. $\omega_c > 4\Gamma_2$), the system is **overdamped** and relaxes monotonically without oscillations, smoothly approaching the Markovian limit as $\omega_c \to \infty$.
 
-This paradox deserves separate discussion. One might think: the longer the memory, the more "material" for return, hence the more pronounced the oscillations. But mathematics says the opposite: for very long memory ($\omega_c \to 0$) the system enters the overdamped regime, where there are no oscillations. The reason: when the environment remembers *too much*, the returning information flow is spread over a long time interval and becomes so weak at each moment that it cannot overcome the current dissipation. This resembles a clinical observation: a patient "stuck" in chronic grief does not pass through oscillatory phases — they are in a state of constant but blunted suffering.
+Notice also what happens at the opposite extreme of **very long memory** ($\omega_c \ll \Gamma_2$, $\tau_{\text{mem}} \gg 1/\Gamma_2$): the system remains formally underdamped, **but** both its decay rate $\gamma = \omega_c/2 = 1/(2\tau_{\text{mem}}) \to 0$ and its oscillation frequency $\omega_r \approx \sqrt{\Gamma_2\omega_c} = \sqrt{\Gamma_2/\tau_{\text{mem}}} \to 0$ become ultra-slow! The oscillation period $T_{\text{osc}} \approx 2\pi\sqrt{\tau_{\text{mem}}/\Gamma_2}$ and recovery time $\tau_{\text{recovery}} \approx 3/\gamma = 6\tau_{\text{mem}}$ stretch indefinitely — corresponding clinically to protracted, quasi-static chronic grief. Meanwhile, the oscillation frequency reaches its maximum $\omega_{r,\max} = \Gamma_2$ at $\omega_c = 2\Gamma_2$ ($\tau_{\text{mem}} = 1/(2\Gamma_2)$).
 
 ### 2.3 Non-Markovianity Measure BLP {#мера-blp}
 
@@ -280,7 +284,7 @@ Non-Markovian Gap oscillations must be distinguished from oscillations generated
 | Damping | Always damped ($\gamma > 0$) | Undamped limit cycle |
 | Amplitude | Decreases exponentially | Constant $A(\mu)$ |
 | Control | Through $\omega_c$ (memory kernel) | Through $\mu$ (control parameter) |
-| Disappearance | As $\omega_c \to \infty$ or $\omega_c < \Gamma_2/4$ | As $\mu < \mu_H$ |
+| Disappearance | As $\omega_c \geq 4\Gamma_2$ (overdamped / Markovian limit $\omega_c \to \infty$) | As $\mu < \mu_H$ |
 
 In real systems both mechanisms can operate simultaneously: non-Markovian oscillations **modulate** the amplitude of the Hopf limit cycle.
 
@@ -308,9 +312,9 @@ $$
 \mathrm{Gap}^{(\infty)}(S,E) : \quad G_0 \xrightarrow{\tau = \tau_0} G_0 + \Delta G
 $$
 
-where $\Delta G > 0$ is the magnitude of the jump (increase in opacity between body and experience for channel $S \leftrightarrow E$, or between other dimension pairs).
+where $\Delta G > 0$ is the magnitude of the jump (increase in opacity between Structure $S$ and Interiority $E$, or between other dimension pairs).
 
-What does this jump mean in terms of experience? $\mathrm{Gap}(S,E)$ is the measure of opacity between Sensation and Emotion, between embodiment and experience. The jump $\Delta G$ is a sudden loss of connection: the body stops "hearing" the emotions, or the emotions stop "reaching" the body. Clinically this manifests as numbness, depersonalisation, a "cotton wool" feeling — well-known reactions to acute trauma.
+What does this jump mean in terms of experience? $\mathrm{Gap}(S,E)$ is the measure of opacity between **Structure ($S$)** and **Interiority ($E$)** — in clinical interpretation `[I]`, between somatic/structural organisation and lived interior experience. The jump $\Delta G$ represents a sudden decoupling between structural-bodily processing and interior feeling. Clinically this is interpreted as numbness, depersonalisation, or a "cotton wool" feeling — well-known reactions to acute trauma.
 
 **Dynamics after the jump.** The system tends toward the new stationary value, but does so in an **oscillatory** manner:
 
@@ -357,30 +361,36 @@ where $\gamma_{\min}$ is the minimum decay rate. When the difference in oscillat
 
 ### 3.4 Duration of Grieving
 
-**Recovery time** is determined by the parameters of the non-Markovian kernel:
+**Recovery time** is determined by the slow decay rate $\gamma_{\text{slow}}$ of the characteristic equation $s^2 + \omega_c s + \Gamma_2\omega_c = 0$:
 
 $$
-\tau_{\text{recovery}} \approx \frac{3}{\gamma} = \frac{3}{\text{Re}\left(\frac{\omega_c + \Gamma_2}{2} - \sqrt{\left(\frac{\omega_c - \Gamma_2}{2}\right)^2 - \omega_c\Gamma_2}\right)}
+\tau_{\text{recovery}} \approx \frac{3}{\gamma_{\text{slow}}}, \qquad \gamma_{\text{slow}} = \operatorname{Re}\!\left(\frac{\omega_c}{2} - \frac{1}{2}\sqrt{\omega_c(\omega_c - 4\Gamma_2)}\right)
 $$
 
-(time for oscillation amplitude to drop to $\sim 5\%$).
+(time for oscillation/relaxation amplitude to drop to $e^{-3} \approx 5\%$). Explicitly, $\gamma_{\text{slow}} = \omega_c/2 = 1/(2\tau_{\text{mem}})$ throughout the oscillatory regime ($\tau_{\text{mem}} > 1/(4\Gamma_2)$), giving $\tau_{\text{recovery}} \approx 6\tau_{\text{mem}}$, while in the short-memory overdamped limit ($\tau_{\text{mem}} \ll 1/(4\Gamma_2)$) we recover $\gamma_{\text{slow}} \to \Gamma_2$ and $\tau_{\text{recovery}} \approx 3/\Gamma_2$.
 
 **Dependence on $\tau_{\text{mem}} = 1/\omega_c$:**
 
 | $\tau_{\text{mem}}$ | $\tau_{\text{recovery}}$ | Clinical interpretation |
 |---------------------|--------------------------|------------------------|
-| Short ($\ll 1/\Gamma_2$) | $\sim 3/\Gamma_2$ | Fast recovery (Markovian regime) |
-| Moderate ($\sim 1/\Gamma_2$) | $\sim 6/\Gamma_2$ | Oscillatory grieving (non-Markovian regime) |
-| Long ($\gg 1/\Gamma_2$) | $\gg 1/\Gamma_2$ | Prolonged grieving (overdamped regime) |
+| Short ($\ll \frac{1}{4\Gamma_2}$, $\omega_c \gg 4\Gamma_2$) | $\sim 3/\Gamma_2$ | Fast monotone recovery (overdamped / Markovian regime) |
+| Moderate ($\sim 1/\Gamma_2 > \frac{1}{4\Gamma_2}$) | $\approx 6\tau_{\text{mem}} \sim 6/\Gamma_2$ | Oscillatory grieving (underdamped non-Markovian regime) |
+| Very long ($\gg 1/\Gamma_2$, $\omega_c \ll \Gamma_2$) | $\approx 6\tau_{\text{mem}} \gg 1/\Gamma_2$ | Prolonged grieving with ultra-slow waves ($\omega_r \approx \sqrt{\Gamma_2/\tau_{\text{mem}}}$) |
 
-:::warning Therapeutic corollary [I]
-From non-Markovian FDT ([Phase diagram, section 6.1](/docs/core/dynamics/gap-phase-diagram#немарковские-осцилляции)):
+:::warning Causal linear susceptibility and therapeutic corollary [T]/[I]
+From the exact frequency-space equation of section 8.1–8.2 (standard causal convention $e^{-i\omega\tau}$, $\Delta\omega_{ij} = 0$), the linear susceptibility $\chi_{ij}(\omega) := \tilde{\gamma}_{ij}(\omega)/\tilde{\mathcal{R}}_{ij}(\omega)$ is:
 
 $$
-\chi_{ij}(\omega) \propto \frac{1 + \omega^2\tau_M^2}{T_{\text{eff}}\,\Gamma_2^2\,\tau_M}
+\chi_{ij}(\omega) = \frac{1}{-i\omega - \widetilde{K}_{ij}(\omega)} = \frac{\omega_c - i\omega}{\Gamma_2\omega_c - \omega^2 - i\omega_c\omega}
 $$
 
-For $\omega\tau_M \gg 1$: $\chi \propto \omega^2$ — **anti-resonance**. A system with long memory responds more strongly to high-frequency perturbations. This explains the greater effectiveness of frequent short therapeutic sessions compared to infrequent lengthy ones.
+Its poles $\omega_\pm = -i\frac{\omega_c}{2} \pm \sqrt{\Gamma_2\omega_c - \omega_c^2/4}$ lie **strictly in the lower half-plane** ($\operatorname{Im}\omega_\pm < 0$), and $|\chi_{ij}(\omega)| \sim 1/|\omega| \to 0$ as $|\omega| \to \infty$, so $\chi_{ij}(\omega)$ is strictly **causal** and obeys the **Kramers–Kronig relations** `[T]`. Its squared modulus,
+
+$$
+|\chi_{ij}(\omega)|^2 = \frac{\omega_c^2 + \omega^2}{(\Gamma_2\omega_c - \omega^2)^2 + \omega_c^2\omega^2},
+$$
+
+does **not** diverge at high frequency; instead, whenever $\omega_c < (1 + \sqrt{2})\Gamma_2$, it exhibits a **finite resonant peak** at $\omega_{\text{peak}} = \sqrt{\omega_c\bigl(\sqrt{\Gamma_2(\Gamma_2 + 2\omega_c)} - \omega_c\bigr)} \sim \omega_r$ where $|\chi(\omega_{\text{peak}})| > |\chi(0)| = 1/\Gamma_2$, followed by causal $1/|\omega|$ roll-off for $\omega \gg \omega_{\text{peak}}$. Interpretively `[I]`, this favours therapeutic interventions paced near the finite resonant frequency band $\omega_{\text{peak}} \sim \omega_r$ rather than arbitrarily high frequencies.
 :::
 
 ### 3.5 Diagram of Grief Dynamics
@@ -411,7 +421,7 @@ graph LR
 
 Not all grieving passes through the oscillatory phase to acceptance. Clinicians distinguish **complicated grief** (prolonged grief disorder) — a state in which the process "gets stuck". Non-Markovian dynamics offers two models of this transition:
 
-**Model 1: Overdamping.** If the memory time $\tau_{\text{mem}}$ is anomalously large ($\tau_{\text{mem}} \gg 4/\Gamma_2$), the system enters the overdamped regime. There are no oscillations — neither "waves of grief" nor "flashes of clarity". Instead — a prolonged, monotone, but very slow approach to the stationary state. This corresponds to the clinical picture of "frozen grief": the person does not cry, does not get angry, does not pass through phases — they simply "cannot get out of it".
+**Model 1: Ultra-slow long-memory freezing.** If the memory time $\tau_{\text{mem}}$ is anomalously large ($\tau_{\text{mem}} \gg 1/\Gamma_2$, i.e. $\omega_c \ll \Gamma_2$), both the decay rate $\gamma = 1/(2\tau_{\text{mem}}) \to 0$ and the oscillation frequency $\omega_r \approx \sqrt{\Gamma_2/\tau_{\text{mem}}} \to 0$ become ultra-slow. Recovery time $\tau_{\text{recovery}} \approx 6\tau_{\text{mem}}$ stretches indefinitely, so on clinical timescales the Gap profile looks nearly static and unyielding. (By contrast, short-memory overdamping $\tau_{\text{mem}} < 1/(4\Gamma_2)$ produces rapid monotone decay at rate $\gamma_- \to \Gamma_2$ without oscillations.) This long-memory freezing corresponds to the clinical picture of "frozen grief": the person appears stuck in a persistent, slowly shifting state of suffering.
 
 **Model 2: Hopf bifurcation.** If the trauma is strong enough for the system's parameters to cross the Hopf bifurcation threshold ($\mu > \mu_H$), the damped oscillations *transition into a self-sustaining limit cycle*. This is chronic grief with undamped waves of pain and relief. Formally:
 
@@ -457,7 +467,7 @@ From the structure of non-Markovian windows a clear therapeutic strategy follows
 
 2. **Phase monitoring**: tracking subjective reports at sufficient frequency (no less than $2\omega_r / (2\pi)$, according to the Nyquist theorem) allows one to determine whether the patient is in a "flash of clarity" phase ($\cos > 0$) or a "wave of grief" ($\cos < 0$).
 
-3. **Session synchronisation**: a therapeutic session during a "flash of clarity" (Gap decreasing) is significantly more effective than during a "wave of grief" (Gap increasing). Formally: susceptibility $\chi$ in phase $\cos > 0$ is $(1 + \omega^2\tau_M^2)$ times higher.
+3. **Session synchronisation**: a therapeutic session during a "flash of clarity" (Gap decreasing) is hypothesised to be more effective than during a "wave of grief" (Gap increasing), and pacing perturbations near the causal resonant peak $\omega_{\text{peak}} \sim \omega_r$ (where $|\chi(\omega_{\text{peak}})| > |\chi(0)| = 1/\Gamma_2$) maximises linear response without entering the high-frequency $1/|\omega|$ roll-off.
 
 4. **Resonant frequency**: the optimal session frequency $\sim \omega_r / \pi$ ensures *resonance* with the returning coherence. Too infrequent sessions miss windows; too frequent ones — do not have time to "utilise" the accumulated returned coherence.
 
@@ -483,18 +493,18 @@ Non-Markovian Gap dynamics produces observable signatures that can be detected i
 2. Compute the autocorrelation function $C(\Delta\tau)$
 3. If $C(\Delta\tau)$ changes sign — a sign of oscillations (non-Markovian regime)
 4. Fit model $C(\Delta\tau) = C_0\,e^{-\gamma\Delta\tau}\cos(\omega_r\Delta\tau)$
-5. Extract parameters: $\tau_{\text{mem}} \approx 2\pi / \omega_r$, $\tau_{\text{recovery}} \approx 3/\gamma$
+5. Extract parameters from the exact underdamped relations $\gamma = \omega_c/2$ and $\omega_r^2 = \Gamma_2\omega_c - \gamma^2$: $\tau_{\text{mem}} = \frac{1}{2\gamma}$, $\Gamma_2 = \frac{\omega_r^2 + \gamma^2}{2\gamma}$, and $\tau_{\text{recovery}} \approx \frac{3}{\gamma} = 6\tau_{\text{mem}}$
 
 ### 5.2 Predictions for Therapy
 
 :::warning Hypothesis (Measurable predictions) [H]
-**(a)** Gap oscillation frequency is proportional to the inverse memory time:
+**(a)** In the long-memory oscillatory regime ($\tau_{\text{mem}} \gg 1/(4\Gamma_2)$), the Gap oscillation frequency scales inversely with the square root of memory time:
 
 $$
-f_{\text{osc}} \sim \frac{1}{\tau_{\text{mem}}}
+f_{\text{osc}} = \frac{\omega_r}{2\pi} \approx \frac{1}{2\pi}\sqrt{\frac{\Gamma_2}{\tau_{\text{mem}}}}
 $$
 
-Patients with "deep memory" (large $\tau_{\text{mem}}$) show **slow** Gap oscillations (long grief cycles). Patients with "short memory" — **fast** oscillations and faster recovery.
+Patients with "deep memory" (large $\tau_{\text{mem}}$) show **slow** Gap oscillations (long grief cycles) and slow recovery ($\tau_{\text{recovery}} \approx 6\tau_{\text{mem}}$). Patients closer to the resonant optimum $\tau_{\text{mem}} \sim 1/(2\Gamma_2)$ show **faster** oscillations (peaking at $\omega_{r,\max} = \Gamma_2$) and faster recovery.
 
 **(b)** Non-Markovianity measure $\mathcal{N}$ positively correlates with the subjective depth of trauma experience.
 
@@ -540,7 +550,7 @@ Formally, reconsolidation corresponds to the phase $\cos(\omega_r\tau) > 0$ (Gap
 
 **Hippocampal theta rhythm.** Hippocampal theta oscillations (4–8 Hz) play a key role in the formation and retrieval of episodic memory. They represent the neural correlate of the *oscillatory kernel* $K(\tau)$ with $\omega_{\text{mem}}$ in the theta range. During REM sleep the theta rhythm is active, and reorganisation of memory traces occurs — this is periodic backflow of coherence from the "environment" (neocortex) into the "system" (hippocampus).
 
-**Neuroplasticity and critical periods.** Critical developmental periods (plasticity windows in early life) can be interpreted as phases of high non-Markovianity $\mathcal{N}$: the young nervous system has *short memory time* $\tau_{\text{mem}}$ (a plastic, rapidly reorganising environment), which generates strong oscillations and broad therapeutic windows. With age, $\tau_{\text{mem}}$ grows (the environment "hardens"), non-Markovianity decreases, and the system approaches the Markovian regime — manifested as reduced plasticity.
+**Neuroplasticity and critical periods.** Critical developmental periods (plasticity windows in early life) can be interpreted as phases operating near the resonant underdamped window ($\tau_{\text{mem}} \sim 1/(2\Gamma_2) > 1/(4\Gamma_2)$), where the oscillation frequency $\omega_r$ attains its maximum $\Gamma_2$ and backflow windows are frequent and vigorous. If $\tau_{\text{mem}}$ either grows anomalously large (ultra-slow freezing, $\omega_r \to 0$) or shrinks below $1/(4\Gamma_2)$ (overdamped / Markovian regime without oscillations), active plasticity windows diminish.
 
 ### 6.2 EMDR and Non-Markovian Intervention {#emdr}
 
@@ -559,9 +569,9 @@ Psychopharmacology can also be described in terms of modification of the memory 
 | Agent | Effect on kernel | Model prediction |
 |-------|-----------------|-----------------|
 | Benzodiazepines | Increase of $\Gamma_2$ (enhanced dissipation) | Rapid suppression of oscillations, but without changing $\tau_{\text{mem}}$ — superficial effect |
-| SSRIs | Decrease of $\omega_c$ (lengthening of $\tau_{\text{mem}}$) | Slowing of oscillations, transition to overdamped regime — "blunting" |
+| SSRIs | Decrease of $\omega_c$ (lengthening of $\tau_{\text{mem}}$) | Reduction of both $\gamma = \omega_c/2$ and $\omega_r \approx \sqrt{\Gamma_2\omega_c}$ — slower, flatter oscillations ("blunting") |
 | Propranolol | Modification of $K$ during reconsolidation | Weakening of emotional component without erasing factual memory |
-| Psilocybin | Sharp decrease of $\tau_{\text{mem}}$ (critical period) | Brief increase in non-Markovianity and plasticity — broad therapeutic windows |
+| Psilocybin | Shift of $\tau_{\text{mem}}$ toward the resonant underdamped band ($\omega_c \sim 2\Gamma_2$) | Temporary amplification of oscillatory backflow and plasticity — pronounced therapeutic windows |
 
 :::warning Status [H]
 Pharmacological predictions are hypotheses requiring experimental validation. They follow from the general structure of the model, but the specific identification of agents with kernel parameters is preliminary.
@@ -593,35 +603,49 @@ Formally: continuity of the self through sleep is ensured by $\tau_{\text{mem}} 
 
 ### 8.1 Integro-Differential Equation in Frequency Space
 
-Fourier transform of the non-Markovian equation:
+Using the causal unilateral Fourier convention $\tilde{f}(\omega) = \int_0^\infty f(\tau)\,e^{i\omega\tau}\,d\tau$ (so that $f(\tau) = \int \frac{d\omega}{2\pi}\tilde{f}(\omega)\,e^{-i\omega\tau}$ and causal functions are analytic in the upper half-plane $\operatorname{Im}\omega > 0$ with all poles in the lower half-plane $\operatorname{Im}\omega < 0$), the Fourier transform of the homogeneous/driven linear equation is:
 
 $$
 (-i\omega + i\Delta\omega_{ij})\,\tilde{\gamma}_{ij}(\omega) = \widetilde{K}_{ij}(\omega)\,\tilde{\gamma}_{ij}(\omega) + \tilde{\mathcal{R}}_{ij}(\omega)
 $$
 
-Solution:
+Solution in terms of the causal linear susceptibility $\chi_{ij}(\omega)$:
 
 $$
-\tilde{\gamma}_{ij}(\omega) = \frac{\tilde{\mathcal{R}}_{ij}(\omega)}{-i(\omega - \Delta\omega_{ij}) - \widetilde{K}_{ij}(\omega)}
+\tilde{\gamma}_{ij}(\omega) = \chi_{ij}(\omega)\,\tilde{\mathcal{R}}_{ij}(\omega), \qquad \chi_{ij}(\omega) = \frac{1}{-i(\omega - \Delta\omega_{ij}) - \widetilde{K}_{ij}(\omega)}
 $$
 
-Poles of the denominator determine oscillation frequencies and decay rates.
+Poles of $\chi_{ij}(\omega)$ determine oscillation frequencies and decay rates.
 
-### 8.2 Poles for the Exponential Kernel
+### 8.2 Poles and Causality for the Exponential Kernel
 
-For $\widetilde{K}(\omega) = -\Gamma_2\omega_c / (\omega_c - i\omega)$:
-
-$$
--i(\omega - \Delta\omega_{ij}) + \frac{\Gamma_2\omega_c}{\omega_c - i\omega} = 0
-$$
-
-Leads to a quadratic equation in $\omega$:
+For $\widetilde{K}(\omega) = -\Gamma_2\omega_c / (\omega_c - i\omega)$, the susceptibility is:
 
 $$
-\omega^2 + i(\omega_c + \Gamma_2)\omega - (\omega_c\Delta\omega_{ij} + i\omega_c\Gamma_2) = 0
+\chi_{ij}(\omega) = \frac{\omega_c - i\omega}{-i(\omega - \Delta\omega_{ij})(\omega_c - i\omega) + \Gamma_2\omega_c}
 $$
 
-Two poles $\omega_{\pm} = -i\gamma \pm \omega_r$ give decay $\gamma$ and oscillation frequency $\omega_r$ from [Theorem 5.1](/docs/core/dynamics/gap-dynamics#немарковские-эффекты).
+Setting the denominator to zero:
+
+$$
+-i(\omega - \Delta\omega_{ij})(\omega_c - i\omega) + \Gamma_2\omega_c = 0
+$$
+
+Multiplying out gives the exact quadratic pole equation in $\omega$:
+
+$$
+\omega^2 + (i\omega_c - \Delta\omega_{ij})\,\omega - \omega_c(\Gamma_2 + i\Delta\omega_{ij}) = 0
+$$
+
+Equivalently, substituting the Laplace variable $s = -i\omega$ gives:
+
+$$
+s^2 + (\omega_c + i\Delta\omega_{ij})\,s + \omega_c(\Gamma_2 + i\Delta\omega_{ij}) = 0
+$$
+
+which reduces at zero detuning ($\Delta\omega_{ij} = 0$) to $s^2 + \omega_c s + \Gamma_2\omega_c = 0$, with roots $\omega_\pm = -i\frac{\omega_c}{2} \pm \sqrt{\Gamma_2\omega_c - \omega_c^2/4}$.
+
+**Causality and Kramers–Kronig `[T]`:** For all $\omega_c > 0$, $\Gamma_2 > 0$, and $\Delta\omega_{ij} \in \mathbb{R}$, no root can cross the real axis $\operatorname{Im}\omega = 0$ (since at real $\omega$, setting the imaginary part $\omega_c(\omega - \Delta\omega_{ij}) = 0$ forces $\omega = \Delta\omega_{ij}$, leaving the real part $\Gamma_2\omega_c > 0$). By continuity from $\Delta\omega_{ij} = 0$, **both poles always lie strictly in the lower half-plane** $\operatorname{Im}\omega_\pm < 0$ ($\operatorname{Re}s_\pm < 0$). Together with the asymptotic decay $\chi_{ij}(\omega) \sim i/\omega \to 0$ as $|\omega| \to \infty$, this guarantees strict **causality** and exact **Kramers–Kronig relations** between $\operatorname{Re}\chi_{ij}(\omega)$ and $\operatorname{Im}\chi_{ij}(\omega)$.
 
 ### 8.3 Operator Form: Nakajima–Zwanzig {#nakajima-zwanzig}
 
@@ -641,19 +665,19 @@ The scalar kernel $K_{ij}(\tau)$ from section 1 is obtained by projecting $\math
 
 | Result | Status | Source |
 |--------|--------|--------|
-| Non-Markovian equation of motion (definition) | **[T]** | [Gap dynamics](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) |
-| Non-Markovian Gap oscillations (Theorem 5.1) | **[T]** | [Gap dynamics](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) |
-| Non-Markovian FDT for Gap | **[T]** | [Phase diagram](/docs/core/dynamics/gap-phase-diagram#немарковские-осцилляции) |
-| BLP non-Markovianity measure (definition) | **[T]** | Breuer, Laine, Piilo (2009) |
+| Non-Markovian equation of motion (definition) | **[D]** | [Gap dynamics](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) |
+| Auxiliary first-order realization for exponential kernel (`T-94`) | **[T]** (under exponential kernel) | [Gap dynamics](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) |
+| Causal linear susceptibility $\chi_{ij}(\omega)$ & Kramers–Kronig | **[T]** (under exponential kernel) | Section 8.2 (this document) |
+| BLP non-Markovianity measure (definition) | **[D]** | Breuer, Laine, Piilo (2009) |
 | "Grief cycles" as non-Markovian dynamics | **[I]** | This document |
 | "Flashes of clarity" as constructive interference | **[I]** | This document |
 | Post-traumatic growth as $\Delta G < 0$ | **[I]** | This document |
-| Complicated grief as overdamping/Hopf | **[I]** | This document |
+| Complicated grief as long-memory freezing / Hopf | **[I]** | This document |
 | Therapeutic windows from oscillation phase | **[I]** | This document |
 | Non-Markovianity as condition for identity | **[I]** | This document |
 | Neural correlates (reconsolidation, theta rhythm) | **[I]** | This document |
 | Non-Markovian signatures in clinical data | **[H]** | This document |
-| Connection $f_{\text{osc}} \sim 1/\tau_{\text{mem}}$ | **[H]** | This document |
+| Scaling $f_{\text{osc}} \sim \sqrt{\Gamma_2/\tau_{\text{mem}}}$ | **[H]** | This document |
 | Optimal therapeutic session frequency | **[H]** | This document |
 | EMDR as resonant non-Markovian intervention | **[H]** | This document |
 | Pharmacological predictions | **[H]** | This document |
@@ -666,9 +690,9 @@ The scalar kernel $K_{ij}(\tau)$ from section 1 is obtained by projecting $\math
 
 1. **Non-Markovian dynamics** is not a technical complication but a fundamental property of consciousness. The integro-differential equation with convolution $\int_0^\tau K(\tau - s)\,\gamma(s)\,ds$ describes how the entire history of the system is woven into its current evolution.
 
-2. **Exponential memory kernel** [T] (T-94) — the simplest non-Markovian form, proved from compactness of the state space. Two limits: instantaneous memory ($\omega_c \to \infty$) — Markovian regime; infinite memory ($\omega_c \to 0$) — frozen system.
+2. **Exponential memory kernel** (`T-94` [T] under an exponential kernel) — given supplied amplitude $\Gamma_2$ and cut-off $\omega_c = 1/\tau_{\text{mem}}$, the convolution is realized exactly by an auxiliary first-order evolution ($s^2 + \omega_c s + \Gamma_2\omega_c = 0$). Two limits: instantaneous memory ($\omega_c \gg 4\Gamma_2$) — overdamped / Markovian regime; infinite memory ($\omega_c \to 0$) — ultra-slow quasi-frozen system.
 
-3. **Gap oscillations** — the environment can *return* coherence, creating damped waves with frequency $\omega_r = \sqrt{\omega_c\Gamma_2 - \gamma^2}$. Paradox: excessively long memory **suppresses** oscillations (overdamped regime).
+3. **Gap oscillations** — the environment returns coherence whenever $\omega_c < 4\Gamma_2$ ($\tau_{\text{mem}} > 1/(4\Gamma_2)$), producing damped waves with decay rate $\gamma = \omega_c/2$ and frequency $\omega_r = \sqrt{\Gamma_2\omega_c - \omega_c^2/4}$. Short memory ($\omega_c > 4\Gamma_2$) is overdamped (monotone), while the exact susceptibility $\chi_{ij}(\omega)$ is strictly causal ($\operatorname{Im}\omega_\pm < 0$) and obeys Kramers–Kronig.
 
 4. **"Grief cycles"** are formalised as non-Markovian oscillations: waves of grief ($\cos < 0$, Gap grows) alternate with flashes of clarity ($\cos > 0$, Gap falls), amplitude decays exponentially. Post-traumatic growth is possible when $\kappa \cdot \mathrm{Coh}_E > \Gamma_2 \cdot (G_0 + |\Delta G|)$.
 

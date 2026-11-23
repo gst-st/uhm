@@ -152,7 +152,7 @@ For a diagonal matrix $P = \sum_k \gamma_{kk}^2$. **See:** [Purity](/docs/core/d
 
 **(b)** What is the maximum purity? At which $\Gamma$?
 
-**(c)** Show that $P_{\text{crit}} = 2/7$ divides the segment $[1/7, 1]$ exactly at the point where the system acquires the ability to **distinguish itself from chaos** (the Frobenius norm $\|\Gamma - I/7\|_F$ exceeds the distinguishability threshold).
+**(c)** Show that $P_{\text{crit}} = 2/7$ (`T-5` `[D]`) is the exact **structural-majority cut** of Hilbert–Schmidt geometry: using the orthogonal decomposition $\Gamma = I/7 + \Delta$ ($\mathrm{Tr}(\Delta) = 0$), prove that $P(\Gamma) = \|I/7\|_F^2 + \|\Delta\|_F^2 = 1/7 + \|\Gamma - I/7\|_F^2$, so $P(\Gamma) > 2/7 \iff \|\Gamma - I/7\|_F^2 > \|I/7\|_F^2 = 1/7$. *(Note: states with $P \le 2/7$ can still be statistically distinguishable from $I/7$ under Helstrom testing `T-109` `[T]`.)*
 
 :::tip Hint
 The minimum purity is achieved at $\Gamma = I/7$ (maximally mixed state). The maximum — at a pure state (rank 1). **See:** [Theorem on Critical Purity](/docs/proofs/dynamics/theorem-purity-critical).
@@ -204,7 +204,7 @@ The matrix $\Gamma = I/7$ — the maximally mixed state.
 
 **(b)** The diagonal proxy tests deviation from a uniform population. It misses low purity at $I/7$ and cannot stand in for the full panel or the four Cap2 margins. Compute each defined score separately.
 
-**(c)** For $I/7$: four bars at zero (A, S, D, E) and three raised — $\sigma_L = 1$, $\sigma_O = 1$, $\sigma_U = 2$. For Problem 1.1: an uneven profile pointing at a specific dimension. The contrast teaches the two failure shapes: total structural death (the flat-diagonal state) versus a local deficit.
+**(c)** For $I/7$: the raw diagonal deficit $1 - 7\gamma_{kk}$ is identically zero across all 7 coordinates, whereas in the separate seven-component raw panel of [Definitions](./definitions#sigma-sys-formal) (`T-92`, `T-158` `[D]`), $\tilde\sigma_A = \tilde\sigma_S = \tilde\sigma_D = 0$, while $\tilde\sigma_L = 1$, $\tilde\sigma_U = 2$, and with the 7D proxy $D^{7D} = 1 + 6\mathrm{Coh}_E = 13/7$ we get $\tilde\sigma_E = 36/35 \approx 1.03$. For Problem 1.1: an uneven diagonal profile pointing at a specific sector deficit. The contrast teaches why a flat diagonal deficit alone never substitutes for computing purity $P$ and the four exact Cap2 margins.
 
 </details>
 
@@ -229,7 +229,7 @@ $P = \sum_k \gamma_{kk}^2 + \sum_{i \neq j} |\gamma_{ij}|^2 = 7 \times (1/7)^2 +
 
 **(a)** $P = 1/7 + 42c^2$.
 
-**(b)** $2/7 = 1/7 + 42c^2 \Rightarrow c^2 = 1/(7 \times 42) = 1/294 \Rightarrow c = 1/\sqrt{294} \approx 0.058$.
+**(b)** $2/7 = 1/7 + 42c^2 \Rightarrow c^2 = 1/(7 \times 42) = 1/294 \Rightarrow c = 1/\sqrt{294} \approx 0.0583$. Check positive semi-definiteness: choosing real positive $\gamma_{ij} = c$ for all $i \neq j$ yields $\Gamma = (1/7 - c)I + c\,\mathbf{1}\mathbf{1}^T$, whose eigenvalues are $1/7 + 6c \approx 0.4928$ (multiplicity 1) and $1/7 - c \approx 0.0845 > 0$ (multiplicity 6), so $\Gamma$ is a strictly positive-definite density matrix!
 
 **(c)** A system with a uniform diagonal but with coherences $c \approx 0.058$ — is "viable through connections." Each dimension taken separately is unremarkable ($\gamma_{kk} = 1/7$), but *coordination* between them ($|\gamma_{ij}| > 0$) creates organization. This is the analog of an organization where each department is average, but teamwork is outstanding.
 
@@ -285,11 +285,11 @@ where $\rho_* = \begin{pmatrix} 0.7 & 0.2 \\ 0.2 & 0.3 \end{pmatrix}$ is the tar
 
 $p_\infty = \frac{\gamma/2 + 0.7\kappa}{\gamma + \kappa}$, $c_\infty = \frac{0.2\kappa}{\gamma + \kappa}$.
 
-**(b)** $P(\Gamma_\infty) = 2(p_\infty - 1/2)^2 + 1/2 + 2|c_\infty|^2$. For $N=2$, $P_{\text{crit}} = 2/N = 1$ — a pure state is required, which is impossible. But if $P_{\text{crit}} = 2/7$ is used (for generality): $P > 2/7 \approx 0.286$ holds for sufficiently large $\kappa/\gamma$.
+**(b)** $P(\Gamma_\infty) = 2(p_\infty - 1/2)^2 + 1/2 + 2|c_\infty|^2$. Notice first that **every** $2 \times 2$ density matrix satisfies $P \geq 1/2 > 2/7 \approx 0.286$, so $P(\Gamma_\infty) > 2/7$ holds for all $\kappa, \gamma \geq 0$! (Meanwhile, the $N=2$ analog of $2/N$ would be $P_{\text{crit}} = 2/2 = 1$, requiring a pure state.) Using the orthogonal decomposition $\Gamma_\infty - I/2 = \frac{r}{1+r}(\rho_* - I/2)$ with $r = \kappa/\gamma$ and $P(\rho_*) = 0.7^2 + 0.3^2 + 2(0.2)^2 = 0.66$, we get the exact quadratic formula $P(\Gamma_\infty) = 0.5 + 0.16\left(\frac{r}{1+r}\right)^2$.
 
-Let $r = \kappa/\gamma$: $p_\infty = (0.5 + 0.7r)/(1+r)$, $c_\infty = 0.2r/(1+r)$. At $r = 1$: $p = 0.6$, $c = 0.1$, $P = 0.02 + 0.5 + 0.02 = 0.54$. At $r = 0.1$: $p = 0.518$, $c = 0.018$, $P \approx 0.5007$. Both > 2/7.
+Checking values: at $r = 1$, $p_\infty = 0.6$, $c_\infty = 0.1$, $P = 0.5 + 0.16(0.25) = 0.5400$. At $r = 0.1$, $p_\infty = 0.57/1.1 \approx 0.5182$, $c_\infty = 0.02/1.1 \approx 0.0182$, $P = 0.5 + 0.16/121 \approx 0.5013$.
 
-**(c)** With $\kappa \ll \gamma$ (weak regeneration): $\Gamma_\infty \approx I/2$ — dissipation wins, the system is "dead." With $\kappa \gg \gamma$ (strong regeneration): $\Gamma_\infty \approx \rho_*$ — regeneration wins, the system is close to "ideal." The optimum is balance, the Goldilocks zone.
+**(c)** With $\kappa \ll \gamma$ (weak regeneration): $\Gamma_\infty \approx I/2$ — dissipation wins, the system approaches the maximally mixed state. With $\kappa \gg \gamma$ (strong regeneration): $\Gamma_\infty \approx \rho_*$ — regeneration wins, the system approaches the target state.
 
 </details>
 
@@ -297,7 +297,7 @@ Let $r = \kappa/\gamma$: $p_\infty = (0.5 + 0.7r)/(1+r)$, $c_\infty = 0.2r/(1+r)
 
 ### Problem 2.3 ★★ Lifetime
 
-The system starts at $P(0) = 0.35 > P_{\text{crit}}$. Regeneration is disabled ($\kappa = 0$). Dissipation is exponential: $P(\tau) = 1/7 + (P(0) - 1/7) \cdot e^{-\gamma \tau}$.
+The system starts at $P(0) = 0.35 > P_{\text{crit}}$. Regeneration is disabled ($\kappa = 0$). Purity decays exponentially toward $1/7$: $P(\tau) = 1/7 + (P(0) - 1/7) \cdot e^{-\gamma \tau}$.
 
 **(a)** Find the time $\tau_*$ at which $P(\tau_*) = P_{\text{crit}} = 2/7$.
 
@@ -308,38 +308,56 @@ The system starts at $P(0) = 0.35 > P_{\text{crit}}$. Regeneration is disabled (
 <details>
 <summary>Solution</summary>
 
-**(a)** $2/7 = 1/7 + (0.35 - 1/7)e^{-\gamma\tau_*}$. $1/7 = (0.35 - 0.143)e^{-\gamma\tau_*} = 0.207 \cdot e^{-\gamma\tau_*}$. $e^{-\gamma\tau_*} = (1/7)/0.207 = 0.690$. $\tau_* = -\ln(0.690)/\gamma = 0.371/\gamma$.
+**(a)** $2/7 = 1/7 + (0.35 - 1/7)e^{-\gamma\tau_*}$. Since $0.35 - 1/7 = 7/20 - 1/7 = 29/140 \approx 0.2071$, we obtain $e^{-\gamma\tau_*} = (1/7)/(29/140) = 20/29 \approx 0.6897$, hence $\tau_* = \ln(29/20)/\gamma \approx 0.3716/\gamma$.
 
-**(b)** $\tau_* = 0.371/0.1 = 3.71$ time units.
+**(b)** $\tau_* \approx 0.3716/0.1 \approx 3.72$ time units.
 
-**(c)** $\tau_*$ is the time in which the system loses viability in the absence of regeneration. The larger the initial purity (health reserve) and the smaller the dissipation, the longer the system lives. Regeneration ($\kappa > 0$) can make $\tau_* = \infty$ — the system lives forever (as long as $\kappa$ is sufficient).
+**(c)** $\tau_*$ is the time in which the system drops below $P_{\text{crit}} = 2/7$ (`T-5` `[D]`) in the absence of regeneration. Larger initial purity and smaller dissipation extend this horizon, while sufficient regeneration ($\kappa > 0$) can sustain $P > 2/7$ indefinitely.
 
 </details>
 
 ---
 
-### Problem 2.4 ★ Balance of Dissipation and Regeneration
+### Problem 2.4 ★★ Balance of Dissipation and Regeneration (Quadratic Purity!)
 
-Stationary purity (at constant $\gamma$ and $\kappa$):
+Consider the 7-dimensional linear balance $\dot{\Gamma} = -\gamma(\Gamma - I/7) + \kappa(\rho_* - \Gamma)$ with constant rates $\gamma, \kappa > 0$ and target density state $\rho_* \in \mathcal{D}(\mathbb{C}^7)$.
+
+**(a)** Find the stationary state $\Gamma_\infty = (1 - \lambda)\frac{I}{7} + \lambda\rho_*$ where $\lambda = \frac{\kappa}{\kappa + \gamma}$, and **prove** that its purity is **quadratic** (strictly convex), NOT linear, in $\lambda$:
 
 $$
-P_\infty = \frac{\kappa \cdot P_{\rho_*} + \gamma \cdot P_{\min}}{\kappa + \gamma}
+P(\Gamma_\infty) = \frac{1}{7} + \left(\frac{\kappa}{\kappa + \gamma}\right)^2 \left(P(\rho_*) - \frac{1}{7}\right)
 $$
 
-where $P_{\rho_*}$ is the purity of the target state, $P_{\min} = 1/7$.
+**(b)** If $P(\rho_*) = 0.5$, at what exact ratio $r = \kappa/\gamma$ is the structural-majority cut $P(\Gamma_\infty) = 2/7$ achieved? *(Compare with what a naive linear average of purities would mistakenly give!)*
 
-**(a)** If $P_{\rho_*} = 0.5$, at what ratio $\kappa/\gamma$ is $P_\infty = 2/7$ achieved?
-
-**(b)** Interpret: which real systems have $\kappa/\gamma \ll 1$? And $\kappa/\gamma \gg 1$?
+**(c)** Interpret: which real systems correspond to $\kappa/\gamma \ll 1$ vs. $\kappa/\gamma \gg 1$?
 
 <details>
 <summary>Solution</summary>
 
-**(a)** $2/7 = (\kappa \cdot 0.5 + \gamma \cdot 1/7) / (\kappa + \gamma)$. Let $r = \kappa/\gamma$: $2/7 = (0.5r + 1/7)/(r + 1)$. $2(r+1)/7 = 0.5r + 1/7$. $2r/7 + 2/7 = 0.5r + 1/7$. $2r/7 - 0.5r = 1/7 - 2/7 = -1/7$. $(2/7 - 1/2)r = -1/7$. $(-3/14)r = -1/7$. $r = (1/7) \times (14/3) = 2/3$.
+**(a)** Setting $\dot{\Gamma} = 0$ gives $(\gamma + \kappa)\Gamma_\infty = \gamma(I/7) + \kappa\rho_*$, so $\Gamma_\infty = (1 - \lambda)\frac{I}{7} + \lambda\rho_*$ with $\lambda = \frac{\kappa}{\kappa + \gamma}$. Writing $\Gamma_\infty - \frac{I}{7} = \lambda\!\left(\rho_* - \frac{I}{7}\right)$ and using the exact orthogonality $\mathrm{Tr}\!\left(\frac{I}{7}(\rho_* - \frac{I}{7})\right) = \frac{1}{7}(1 - 1) = 0$:
 
-At $\kappa/\gamma = 2/3$ the system is *exactly on the threshold*. Below — it dies, above — it lives.
+$$
+P(\Gamma_\infty) = \left\|\frac{I}{7}\right\|_F^2 + \left\|\Gamma_\infty - \frac{I}{7}\right\|_F^2 = \frac{1}{7} + \lambda^2 \left\|\rho_* - \frac{I}{7}\right\|_F^2 = \frac{1}{7} + \left(\frac{\kappa}{\kappa + \gamma}\right)^2 \left(P(\rho_*) - \frac{1}{7}\right).
+$$
 
-**(b)** $\kappa/\gamma \ll 1$: dissipation wins — aging without regeneration. Example: a mouse (lives 2 years, high metabolism, rapid aging). $\kappa/\gamma \gg 1$: regeneration wins — the system is essentially immortal. Example: Turritopsis dohrnii (a jellyfish capable of reverse development).
+Because $P(\rho) = \mathrm{Tr}(\rho^2)$ is strictly convex (quadratic), $P((1-\lambda)\rho_1 + \lambda\rho_2) < (1-\lambda)P(\rho_1) + \lambda P(\rho_2)$ for all $\lambda \in (0,1)$ and $\rho_1 \neq \rho_2$.
+
+**(b)** Substitute $P(\rho_*) = 1/2$ and $P(\Gamma_\infty) = 2/7$:
+
+$$
+\frac{2}{7} - \frac{1}{7} = \lambda^2 \left(\frac{1}{2} - \frac{1}{7}\right) \;\Longrightarrow\; \frac{1}{7} = \lambda^2 \cdot \frac{5}{14} \;\Longrightarrow\; \lambda^2 = \frac{2}{5} \;\Longrightarrow\; \lambda = \sqrt{\frac{2}{5}} \approx 0.6325.
+$$
+
+Solving $\lambda = \frac{r}{1 + r}$ for $r = \kappa/\gamma$:
+
+$$
+r = \frac{\lambda}{1 - \lambda} = \frac{\sqrt{2}}{\sqrt{5} - \sqrt{2}} = \frac{\sqrt{10} + 2}{3} \approx 1.721.
+$$
+
+*(By contrast, a mistaken linear purity average $\lambda(1/2) + (1-\lambda)(1/7) = 2/7$ would give $\lambda = 2/5$, $r = 2/3 \approx 0.667$, where the true purity is only $1/7 + (2/5)^2(5/14) = 0.200 < 2/7$! Convexity makes maintaining purity significantly harder than linear intuition suggests.)*
+
+**(c)** $\kappa/\gamma \ll 1$: dissipation dominates — rapid degradation toward $I/7$ (analogous to senescence without repair). $\kappa/\gamma \gg 1$: regeneration dominates — the state tracks $\rho_*$ closely (analogous to organisms with strong tissue regeneration such as *Hydra* or *Turritopsis dohrnii*).
 
 </details>
 
@@ -387,24 +405,24 @@ Show that the cascade $\sigma_E \uparrow \to \sigma_O \uparrow \to \sigma_U \upa
 
 ---
 
-### Problem 3.3 ★★ Reverse Computation: from σ to Γ
+### Problem 3.3 ★★ Trace Consistency: Why Not Every σ-Profile Maps to Diagonal Deficits
 
-Given the σ-profile: $\sigma = [0.3, 0.1, 0.4, 0.2, 0.6, 0.3, 0.5]$.
+Suppose someone hands you an all-positive score vector $\sigma = [0.3, 0.1, 0.4, 0.2, 0.6, 0.3, 0.5]$ and attempts to invert the diagonal deficit formula $\tilde\sigma_k = 1 - 7\gamma_{kk}$.
 
-**(a)** Recover the diagonal elements $\gamma_{kk}$.
+**(a)** Compute the candidate numbers $g_k = (1 - \sigma_k)/7$ and check their sum $\sum_{k=1}^7 g_k$.
 
-**(b)** Compute $P$ in the diagonal approximation.
+**(b)** Explain mathematically why $\sigma$ **cannot** be the vector of raw diagonal deficits $1 - 7\gamma_{kk}$ of any valid density matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$. *(Common misconception to avoid: can off-diagonal elements ever fix a wrong trace?)*
 
-**(c)** Is the system viable?
+**(c)** If $1 - \sigma_k$ instead represents unnormalized relative sector weights, renormalize $\gamma_{kk} = g_k / \sum_j g_j$ and compute $P_{\text{diag}} = \sum_k \gamma_{kk}^2$.
 
 <details>
 <summary>Solution</summary>
 
-**(a)** $\gamma_{kk} = (1 - \sigma_k)/7$. $\gamma = (0.100, 0.129, 0.086, 0.114, 0.057, 0.100, 0.071)$.
+**(a)** $g_k = (1 - \sigma_k)/7 = (0.100, 0.129, 0.086, 0.114, 0.057, 0.100, 0.071)$. Their sum is $\sum_{k=1}^7 g_k = 4.6/7 \approx 0.657 \neq 1$.
 
-**(b)** $P = \sum \gamma_{kk}^2 = 0.010 + 0.017 + 0.007 + 0.013 + 0.003 + 0.010 + 0.005 = 0.065$. But $\sum \gamma_{kk} = 0.657 \neq 1$! So the diagonal approximation from the σ-profile is *incorrect* — part of the "mass" is in the off-diagonal elements (or the σ-profile needs normalization).
+**(b)** For **any** density matrix $\Gamma$, $\mathrm{Tr}(\Gamma) = \sum_{k=1}^7 \gamma_{kk} = 1$, so raw signed diagonal deficits $\tilde\sigma_k = 1 - 7\gamma_{kk}$ **must** satisfy the exact zero-sum identity $\sum_{k=1}^7 \tilde\sigma_k = 7 - 7\sum_k \gamma_{kk} = 0$. Off-diagonal elements $\gamma_{ij}$ ($i \neq j$) **never** enter the trace! Therefore an all-positive vector $\sigma$ cannot be raw diagonal deficits $1 - 7\gamma_{kk}$; it can only represent nonnegative clamped/panel scores or survey ratings that require an explicit calibrated observation law (`T-92`, `T-158` `[D]`).
 
-**(c)** $P = 0.065 \ll 2/7 \approx 0.286$ — **non-viable** in the diagonal approximation. Even with coherences it is hard to achieve $P > 2/7$ with such small $\gamma_{kk}$.
+**(c)** Renormalizing $g_k$ by $\sum_j g_j = 4.6/7$ gives valid diagonal populations $\gamma = (0.1522, 0.1957, 0.1304, 0.1739, 0.0870, 0.1522, 0.1087)$ with $\sum_k \gamma_{kk} = 1$. Its diagonal purity is $P_{\text{diag}} = \sum_k \gamma_{kk}^2 \approx 0.1512 < 2/7 \approx 0.286$ (non-viable without substantial off-diagonal coherences).
 
 </details>
 
@@ -471,34 +489,34 @@ A system has the following parameters: $P = 0.45$, $\Phi = 1.5$.
 
 ---
 
-### Problem 4.2 ★★★ SAD and the Depth Ceiling
+### Problem 4.2 ★★★ Critical Audit: The Older SAD Attenuation Formula and Its Retraction
 
-Self-Awareness Depth:
+An earlier UHM proposal defined a numerical "Self-Awareness Depth" score via the attenuation ladder:
 
 $$
-\mathrm{SAD}(n) = P_{\text{crit}}^{(n)} < P \quad \text{where} \quad P_{\text{crit}}^{(n)} = P_{\text{crit}} \cdot \frac{3^{n-1}}{n+1}
+P_{\text{crit}}^{(n)} = P_{\text{crit}} \cdot \frac{3^{n-1}}{n+1}, \qquad P_{\text{crit}} = \frac{2}{7}.
 $$
 
-**(a)** Compute $P_{\text{crit}}^{(1)}, P_{\text{crit}}^{(2)}, P_{\text{crit}}^{(3)}, P_{\text{crit}}^{(4)}$.
+**(a)** Compute $P_{\text{crit}}^{(1)}, P_{\text{crit}}^{(2)}, P_{\text{crit}}^{(3)}, P_{\text{crit}}^{(4)}$ and check that $P_{\text{crit}}^{(4)} > 1$.
 
-**(b)** Show that $P_{\text{crit}}^{(4)} > 1$ → SAD = 4 is impossible for any system with $P \leq 1$.
+**(b)** Explain why $P(\Gamma) = \mathrm{Tr}(\Gamma^2) \leq 1$ for every density matrix $\Gamma$, so this *particular* attenuation sequence automatically stops at $n = 3$.
 
-**(c)** Therefore, $\mathrm{SAD}_{\max} = 3$. Interpret: what does "I am aware that I am aware that I am aware" mean — and why is the 4th level impossible?
+**(c)** **Critical audit:** Why were universal SAD-to-level equivalence (`T-136` `[✗]`) and the universal depth ceiling $\mathrm{SAD}_{\max} = 3$ (`T-217` `[✗]`) withdrawn, and what replaces them for level L3 in current CC?
 
-**See:** [Prediction 12](./predictions#предсказание-12), [Depth Tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)
+**See:** [Depth Tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad), [Definitions](./definitions#иерархия-интериорности)
 
 <details>
 <summary>Solution</summary>
 
-**(a)** $P_{\text{crit}} = 2/7 \approx 0.286$.
+**(a)** With $P_{\text{crit}} = 2/7 \approx 0.286$:
 - $P_{\text{crit}}^{(1)} = (2/7) \cdot 1/2 = 1/7 \approx 0.143$
 - $P_{\text{crit}}^{(2)} = (2/7) \cdot 3/3 = 2/7 \approx 0.286$
-- $P_{\text{crit}}^{(3)} = (2/7) \cdot 9/4 = 18/28 = 9/14 \approx 0.643$
-- $P_{\text{crit}}^{(4)} = (2/7) \cdot 27/5 = 54/35 \approx 1.543$
+- $P_{\text{crit}}^{(3)} = (2/7) \cdot 9/4 = 9/14 \approx 0.643$
+- $P_{\text{crit}}^{(4)} = (2/7) \cdot 27/5 = 54/35 \approx 1.543 > 1$.
 
-**(b)** $P_{\text{crit}}^{(4)} = 54/35 \approx 1.543 > 1$. But $P \leq 1$ for any density matrix (this is a mathematical property: $P = \mathrm{Tr}(\Gamma^2) \leq \mathrm{Tr}(\Gamma) = 1$). Therefore $P < P_{\text{crit}}^{(4)}$ always, and SAD = 4 is **impossible**.
+**(b)** Every density matrix has eigenvalues $\lambda_i \in [0,1]$ summing to 1, hence $P(\Gamma) = \sum_i \lambda_i^2 \leq \sum_i \lambda_i = 1$. Thus no state can satisfy $P > 54/35$.
 
-**(c)** SAD = 1: "I am aware of X" (consciousness). SAD = 2: "I am aware that I am aware of X" (meta-consciousness). SAD = 3: "I am aware that I am aware that I am aware of X" (meta-meta-consciousness — accessible to advanced meditators, philosophers). SAD = 4: "I am aware that I am aware that I am aware that I am aware of X" — this requires purity $P > 1.54$, which is physically impossible. The recursion of self-observation *exhausts* coherence resources.
+**(c)** The arithmetic inequality $54/35 > 1$ is purely a property of the *chosen* attenuation formula (`T-150` `[D]` notes that $\varphi^n \circ \varphi^m = \varphi^{n+m}$ is a property of map iteration, not a derivation of cognitive depth). Because changing the chosen numerical attenuation law changes the cutoff, the universal SAD-level equivalence (`T-136`) and universal ceiling $\mathrm{SAD}_{\max} = 3$ (`T-217`) were **withdrawn `[✗]`**. In current CC, level L3 is defined instead by $\mathrm{Cap}_2$ plus an **independent predictive metamodel certificate with calibrated nonconstant probes `[D]`**.
 
 </details>
 
@@ -564,17 +582,17 @@ The Goldilocks zone: $P \in (2/7, 3/7]$ ([T-124](./phase-diagram-cc)).
 
 ## 5. Philosophy and Theory Comparison {#блок-5}
 
-### Problem 5.1 ★★ The Zombie Argument
+### Problem 5.1 ★★ The Zombie Argument and the Scope of Theorem 8.1
 
-A philosophical zombie is a creature identical to a human in all respects, except for subjective experience.
+A philosophical zombie is a creature functionally identical to a human in all respects, except for subjective experience.
 
-**(a)** Why does the [No-Zombie theorem](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) make zombies impossible in CC?
+**(a)** Why was the **universal** No-Zombie necessity claim (`T-38a` `[✗]`) withdrawn, and under what explicit closed purity-flux balance hypotheses does [Theorem 8.1](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) (`[C]`) still guarantee a positive lower bound on $\mathrm{Coh}_E(\Gamma)$?
 
-**(b)** Compare with IIT's position on this question.
+**(b)** Compare this conditional dynamical result with IIT's position on zombies.
 
-**(c)** Is this an advantage or a limitation of CC?
+**(c)** Why is separating mathematical bounds (`[C]`) from phenomenological attribution (`[I]`) scientifically stronger than an unconditional theorem claim?
 
-**See:** [Philosophical Foundations](./philosophy#hard-problem)
+**See:** [Philosophical Foundations](./philosophy#hard-problem), [Theorems](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie)
 
 ---
 
@@ -658,7 +676,7 @@ The immune system of a cell: antigen enters → recognized (A) → response stru
 
 **(b)** What happens in autoimmune disease (an error in L)?
 
-**(c)** How does CC explain why stress ($\sigma_E \uparrow$) weakens immunity ($\kappa \downarrow$)?
+**(c)** How does CC's constitutive F10 hypothesis (`[H]`: $\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0\,\mathrm{Coh}_E$) model the link between chronic stress ($\sigma_E \uparrow$) and weakened recovery ($\kappa \downarrow$)?
 
 ---
 
@@ -716,7 +734,7 @@ You are designing an AI agent with 7 modules. Current characteristics:
 
 **(b)** $P = 0.0324 + 0.0256 + 0.0225 + 0.0196 + 0.0064 + 0.0225 + 0.0196 = 0.1486 < 2/7$.
 
-**(c)** Increase $\gamma_{EE}$ (strengthen Self-Monitor) and add coherences ($|\gamma_{ij}|$) — cross-module attention. Even without changing the diagonal, adding coherences $c \approx 0.06$ between all pairs gives $\Delta P = 42 \times 0.0036 = 0.15$, total $P \approx 0.30 > 2/7$.
+**(c)** Increase $\gamma_{EE}$ (strengthen Self-Monitor) and add off-diagonal coherences ($|\gamma_{ij}|$) — cross-module attention. Even without changing the diagonal, adding uniform real positive coherences $c = 0.06$ between all pairs gives $\Delta P = 42 \times 0.0036 = 0.1512$, total $P = 0.2998 > 2/7$, while preserving positive semi-definiteness (minimum eigenvalue $\lambda_{\min} \approx 0.0288 > 0$).
 
 </details>
 
@@ -855,15 +873,15 @@ Quantum Chernoff bound (T-109): $n \geq \frac{\ln(1/(2\delta))}{\xi_{\text{QCB}}
 
 ---
 
-### Problem 8.2 ★★★ Minimality N=7 for Learning
+### Problem 8.2 ★★★ Dimensionality Hypothesis N=7 for Learning
 
-T-113 asserts: $N = 7$ is the minimum dimensionality for full learning through regeneration.
+`T-113` (`[H]`) proposes the open hypothesis that $N = 7$ is the minimal dimensionality for autonomous learning through regeneration, while universal seven-role minimality (`T-40f` `[✗]`) and unconditional octonionic derivation (`T-41n` `[✗]`) are withdrawn.
 
-**(a)** Why can a system with $N = 5$ not learn through regeneration?
+**(a)** What operational task/algebra independence assumptions would be needed to turn `T-113` (`[H]`) into a strict lower bound?
 
-**(b)** Which of the 7 dimensions cannot be removed without losing learnability?
+**(b)** Which functional roles among $(A, S, D, L, E, O, U)$ play distinct roles in autonomous learning, and how do conditional diagnosability bounds differ from unconditional minimality?
 
-**(c)** Is this related to Hurwitz's theorem (octonions)?
+**(c)** What is the exact relationship between Hurwitz's theorem (octonions) and a *specified* Fano plane (`T-41n` `[✗]`)?
 
 **See:** [Learning Bounds](./learning-bounds#теорема-t-113), [Minimality](/docs/proofs/minimality/theorem-minimality-7)
 
@@ -888,54 +906,48 @@ T-113 asserts: $N = 7$ is the minimum dimensionality for full learning through r
 
 ### Project 9.2 ★★★ Holon Simulation in Python
 
-**Assignment:** Implement a simple holon simulation.
+**Assignment:** Implement a positivity- and trace-preserving holon simulation in Python (NumPy).
 
-```verum
-// Skeleton — fill in the blanks as an exercise.
-mount core.math.linalg.{StaticMatrix, identity};
-mount core.math.complex.Complex;
-mount core.math.random.{XorShift128, Rng};
+```python
+import numpy as np
 
-fn main() using [IO, Random] {
-    const DT:         Float = 0.01;
-    const GAMMA_DISS: Float = 0.1;    // dissipation rate
-    const KAPPA:      Float = 0.15;   // regeneration rate
+rng = np.random.default_rng(42)
 
-    // Initial state — small Hermitian perturbation around I/7.
-    let mut rng = XorShift128.seed(Random.next_key());
-    let noise = StaticMatrix<Complex, 7, 7>.random_gaussian(&mut rng) * Complex.from_real(0.05);
-    let mut gamma = identity<Complex, 7>() / Complex.from_real(7.0) + noise;
-    gamma = (&gamma + gamma.adjoint()) / Complex.from_real(2.0);   // Hermitise
-    gamma = &gamma / gamma.trace();                                  // normalise
+DT = 0.01
+GAMMA_DISS = 0.10   # linear dissipation rate
+KAPPA = 0.20        # regeneration rate
+I7 = np.eye(7, dtype=complex) / 7.0
 
-    // Target state (attractor) with decreasing eigenvalues.
-    let rho_star = StaticMatrix<Complex, 7, 7>.diagonal_from_reals(
-        [0.20, 0.18, 0.16, 0.14, 0.12, 0.10, 0.10]
-    );
+# Guaranteed positive-semidefinite initial state near I/7 (trace = 1)
+A = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+rho_rand = A @ A.conj().T
+rho_rand /= np.trace(rho_rand)
+gamma = 0.8 * I7 + 0.2 * rho_rand
 
-    // Evolution.
-    for step in 0..10000 {
-        // Dissipation: Γ → I/N.
-        let d = (&gamma - identity<Complex, 7>() / Complex.from_real(7.0))
-              * Complex.from_real(-GAMMA_DISS);
-        // Regeneration: Γ → ρ*.
-        let r = (&rho_star - &gamma) * Complex.from_real(KAPPA);
-        gamma = &gamma + Complex.from_real(DT) * (d + r);
+# Coherent target state with exact purity P(rho_star) = 0.50 > 2/7
+u = np.ones((7, 1), dtype=complex) / np.sqrt(7.0)
+alpha = np.sqrt(5.0 / 12.0)
+rho_star = (1.0 - alpha) * I7 + alpha * (u @ u.conj().T)
 
-        if step % 100 == 0 {
-            let p = (gamma.matmul(&gamma)).trace().real();
-            IO.println(f"Step {step}: P = {p:.4f}");
-        }
-    }
-}
+for step in range(5001):
+    # Linear dissipation: Gamma -> I/7
+    d = -GAMMA_DISS * (gamma - I7)
+    # Linear regeneration: Gamma -> rho_star
+    r = KAPPA * (rho_star - gamma)
+    gamma = gamma + DT * (d + r)
+
+    if step % 1000 == 0:
+        p = float(np.real(np.trace(gamma @ gamma)))
+        min_eig = float(np.linalg.eigvalsh(gamma).min())
+        print(f"Step {step:4d}: P = {p:.4f}, min_eig = {min_eig:.5f}")
 ```
 
 **Questions:**
-**(a)** Track $P(\tau)$. Does the system reach a stationary $P_\infty$?
+**(a)** Track $P(\tau)$ and check that $\mathrm{Tr}(\Gamma) = 1$ and $\lambda_{\min}(\Gamma) > 0$ throughout. Verify numerically that $P_\infty$ converges to $1/7 + \left(\frac{\kappa}{\kappa+\gamma}\right)^2 (0.5 - 1/7) = 19/63 \approx 0.3016$.
 
-**(b)** Vary $\kappa/\gamma$. At what ratio is $P_\infty = 2/7$?
+**(b)** Vary $r = \kappa/\gamma$. Verify numerically that $P_\infty = 2/7$ occurs at $r = (\sqrt{10} + 2)/3 \approx 1.721$ (matching Problem 2.4!). *(Bonus: explain why a diagonal target $\rho_* = \mathrm{diag}(0.20, 0.18, 0.16, 0.14, 0.12, 0.10, 0.10)$ with $P = 0.152 < 2/7$ could NEVER reach $P_\infty = 2/7$ for any $\kappa/\gamma$!)*
 
-**(c)** Add an external "stress": every 1000 steps, increase $\sigma_E$ by 0.1. How does this affect the dynamics?
+**(c)** Replace constant `KAPPA` with the state-dependent constitutive law $\kappa(\Gamma) = \kappa_{\mathrm{bootstrap}} + \kappa_0\,\mathrm{Coh}_E(\Gamma)$ and perturb the E-sector coherences every 1000 steps. How does this affect the trajectory?
 
 ---
 
@@ -985,25 +997,27 @@ fn main() using [IO, Random] {
 
 ## 10. Conceptual Questions for Reflection {#блок-10}
 
-### Question 10.1 Why not 6 and not 8?
+### Question 10.1 Why 7 Dimensions?
 
-Read the [justification for the number 7](/docs/core/foundations/axiom-omega#октонионная-структура) and the [minimality proof](/docs/proofs/minimality/theorem-minimality-7). Then answer:
+Read [Axiom Ω⁷](/docs/core/foundations/axiom-omega#октонионная-структура) and the [minimality analysis](/docs/proofs/minimality/theorem-minimality-7) (noting that unconditional seven-role minimality `T-40f` and unconditional octonionic selection `T-41n` are withdrawn `[✗]`, replaced by conditional diagnosability and faithful-representation bounds). Then answer:
 
-**(a)** What two mathematical paths lead to the number 7?
+**(a)** What explicit premises underlie the conditional lower bounds for $N = 7$?
 
-**(b)** Is it possible to construct CC for $N = 6$? What would be lost?
+**(b)** If you construct a model with $N = 6$, which functional axis of $\{A, S, D, L, E, O, U\}$ is dropped and what changes in the model record?
 
-**(c)** Is it possible for $N = 8$? What would be redundant?
+**(c)** If you extend to $N = 8$, how would the Fano-plane symmetry structure change?
 
 ---
 
 ### Question 10.2 Ethics of Coherence
 
-**(a)** If $C = 0.5$ — the system is "half-conscious." Does it have moral status?
+Recall from [Definitions](./definitions) and `T-140` (`[D]`) that $C = \Phi \cdot R = \frac{1}{7d} - \frac{1}{7P} \in [0, 6/7]$ globally (and $C \le 2/3 \approx 0.667$ inside the Goldilocks window $P \in (2/7, 3/7]$), while $C \ge 1/3$ alone is necessary but not sufficient for the four L2 gates ($P > 2/7$, $R \ge 1/3$, $\Phi \ge 1$, $D_{\mathrm{diff}} \ge 2$).
 
-**(b)** A person under deep anesthesia: $C \approx 0$. Do they have moral status? Why yes/no?
+**(a)** A system has $C = 0.45$, passing three of the four L2 gates but failing $D_{\mathrm{diff}} \ge 2$ (like the cat example in Problem 4.3). How should moral consideration be framed?
 
-**(c)** An AI system with $C = 1.5$. Do we have the right to restart it?
+**(b)** A human under deep anesthesia has $C \approx 0$ momentarily, yet retains biological capacity to recover L2. Why do ethical frameworks distinguish current state from dispositional capacity?
+
+**(c)** Suppose an AI system satisfies all four L2 gates within its model record with $C = 0.60$ (strictly below the ceiling $2/3$ of the Goldilocks window and $6/7$ globally — note that values such as $C = 1.5$ are mathematically impossible!). Under what observation-law and phenomenological-bridge conditions (`[I]`) would restarting it raise genuine ethical obligations?
 
 **See:** [Philosophical Foundations, ethics](./philosophy#этика)
 

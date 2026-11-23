@@ -43,6 +43,8 @@ G5b tests a sharper distinction. Two positive definite conjugate states have equ
 
 For a selected pair, $(|i\rangle+i|j\rangle)/\sqrt2$ gives $\mathrm{Gap}(i,j)=1$. The uniform real superposition $7^{-1/2}\sum_i|i\rangle$ gives zero on every pair in the selected basis. Fano incidence alone therefore permits both extreme values. A tighter bound requires a restriction on preparations or a calibrated dynamics that enforces it.
 
+**Status of `T-6` (equilibrium Gap formula — withdrawn `[✗]`).** Because individual pairwise phases $\theta_{ij}$ shift arbitrarily under local basis rephasings $|i\rangle \mapsto e^{i\alpha_i}|i\rangle$ and depend on the chosen generator and frame, the earlier universal equilibrium Gap formula (`T-6`) is withdrawn (`[✗]`) in favour of exact Fano pinching readouts (above) and basis-rephasing-invariant cycle holonomies (the 15 independent cycle angles; cf. `T-306`, `T-307`, `T-317`).
+
 ## Reconstructing the entries experimentally {#полная-49-клеточная-карта}
 
 First measure in the coordinate basis to obtain $p_i=\Gamma_{ii}$. For each pair $(i,j)$, use two further settings on independently prepared copies. Each setting has two outcomes in the pair subspace and an additional outcome on its orthogonal complement.

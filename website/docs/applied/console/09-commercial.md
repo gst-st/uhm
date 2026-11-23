@@ -33,7 +33,7 @@ The consumer market funds attention and data; the two B2B markets fund the busin
 
 | Category | Examples | Their frame | Their anchor | Why the Console wins |
 |---|---|---|---|---|
-| Astrology apps | large installed bases | postulated zodiac | birth data (silent) | derived frame; honest anchor; the [T-256](https://homohologra.ph/research/one-grammar#t-256) translator ingests them |
+| Astrology apps | large installed bases | postulated zodiac | birth data (silent) | derived frame; honest anchor; the [T-256 [T]+[I]](/docs/reference/status-registry) translator maps them as interpretive sub-orbits |
 | Human Design | subscription apps | postulated bodygraph | birth data (silent) | [measured bodygraph](/docs/applied/console/human-module), falsifiable, updatable |
 | Personality (MBTI/Enneagram) | assessment vendors | postulated types | one-time test | continuous state + trajectory, not a fixed type |
 | Meditation/wellness | large apps | none (content) | none | a measured self-model, not just content |
@@ -43,7 +43,7 @@ The pattern: every incumbent serves the same need with a postulated frame and a 
 
 ## §4. Go-to-market {#вывод}
 
-The motion is built on the honest onboarding funnel ([04 §9.1](/docs/applied/console/use-cases#интероп)): **meet users inside the system they already trust.** A person arrives with an astrology or Human Design reading; the back-projection translator shows its Γ-image, its [orbit type](https://homohologra.ph/research/one-grammar#t-256), and — gently — what it captured and what it dropped. That single interaction converts a skeptic-of-the-old into a user-of-the-new without insulting where they came from. From there: the free self-read hooks, the autoephemeris retains, the human module and synastry monetise. B2B-AI runs in parallel as a direct enterprise sale on the same kernel, funding the consumer build.
+The motion is built on the honest onboarding funnel ([04 §9.1](/docs/applied/console/use-cases#интероп)): **meet users inside the system they already trust.** A person arrives with an astrology or Human Design reading; the back-projection translator shows its interpretive $\Gamma$-image, its [Fano orbit type](/docs/reference/mathematical-kernel) (`T-256 [T]+[I]`), and — gently — what it captured and what it dropped. That single interaction converts a skeptic-of-the-old into a user-of-the-new without insulting where they came from. From there: the free self-read hooks, the autoephemeris retains, the human module and synastry monetise. B2B-AI runs in parallel as a direct enterprise sale on the same kernel, funding the consumer build.
 
 ## §5. The moat {#ров}
 
@@ -63,7 +63,7 @@ Four layers, hardest to easiest to copy:
 | Regulatory burden (clinical) | clinical is a *later*, partnered stage; consumer/B2B do not need it |
 | Privacy backlash | local-first, honesty-in-types, no dark patterns are the default, not a response |
 | Over-claim / hype temptation | the anchor-class discipline is compiler-enforced; the theory's own [I]/[C]/[T] tags travel to the UI |
-| Modulation-hardware overreach | bounded by theorem ([08 §3](/docs/applied/console/hardware-horizon#граница)); never marketed as a state-writer |
+| Modulation-hardware overreach | bounded by the coupling model and ethics gate ([08 §3](/docs/applied/console/hardware-horizon#граница), [10](/docs/applied/console/ethics-governance)); never marketed as a state-writer |
 
 The largest risk is the one the whole suite is built to avoid: becoming the thing it replaces. The compiler-enforced honesty and the validation discipline are the structural guards against it.
 

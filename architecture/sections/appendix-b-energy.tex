@@ -1,43 +1,54 @@
-\section{The energy floor, derived}
+\section{Thermodynamic entropy accounting, derived}
 \label{app:energy}
 
-We derive Eq.~\eqref{eq:energy-law}. Landauer's principle states that erasing
-one bit of information --- reducing the state's entropy by $\ln 2$ nats while
-exporting it to a bath at temperature $T$ --- costs at least $kT\ln 2$ of free
-energy. The converse (creating order) costs the same. The free-energy budget
-of a tick is therefore $kT\ln 2$ times the number of bits of entropy the tick
-\emph{exports}.
+We derive Eq.~\eqref{eq:energy-law} and clarify its exact scope. Landauer's
+principle~\cite{landauer1961} states that reducing a system's entropy by $1$~bit
+($\ln 2$~nats) while exporting it to a thermal bath at temperature $T$ requires
+at least $k_B T\ln 2$ of free energy. The logical thermodynamic budget of a
+tick is therefore bounded below by $k_B T\ln 2$ times the bits of von~Neumann
+entropy exported.
 
-\paragraph{The three terms.} Decompose the tick (Eq.~\ref{eq:lomega}).
+\paragraph{The three terms.} Decompose the tick (Eq.~\ref{eq:lomega}), measuring
+von~Neumann entropy in bits, $S_{\mathrm{vN}}(\Gam)=-\Tr(\Gam\log_2\Gam)$:
 \begin{itemize}[leftmargin=1.5em,itemsep=1pt]
-  \item \textbf{Unitary} $-i[H_{\mathrm{eff}},\Gam]$: by T-262 this is an
-        isometry of every monotone metric and preserves the von~Neumann
-        entropy $H(\Gam)=-\Tr(\Gam\ln\Gam)$ exactly, $\dot H_{\text{unitary}}=0$.
-        It exports no entropy, hence costs no free energy. This is the
-        reversible core.
-  \item \textbf{Dissipator} $\Diss$: relaxation toward $\mathbb{1}/7$
-        \emph{raises} $H$ (loses information, thermodynamically downhill,
-        heat out). Holding the state against this leak requires re-exporting
-        $\Delta H_{\Diss}^{(+)}$ per tick --- the maintenance term.
-  \item \textbf{Regeneration} $\Regen$: descent toward $\rhostar$
-        \emph{lowers} $H$ (creates order, the self-model), which by Landauer
-        costs $kT\ln2\cdot\Delta H_{\Regen}$ of free energy per tick. This is
-        the learning term, and it is exactly the ``regeneration paid in free
-        energy'' bookkeeping of UHM's cosmological accounting
-        ($V_{\mathrm{hed}}=dP/d\tau$).
+  \item \textbf{Unitary} $-i[H_{\mathrm{eff}},\Gam]$: unitary conjugation
+        $U\Gam U^\dagger$ preserves all eigenvalues identically, so
+        $\dot S_{\mathrm{unitary}}=0$ exactly. It exports zero logical entropy,
+        the same bound that applies to any logically reversible
+        computation~\cite{bennett1973}.
+  \item \textbf{Dissipator} $\Diss$: the Fano Lindblad dissipator
+        $\gamma(\mathcal{P}_{\mathrm{Fano}}(\Gam)-\Gam)$ (and optional
+        depolarization) \emph{raises} $S_{\mathrm{vN}}$ at rate
+        $\dot S_{\Diss}>0$ bits/time. Holding a coherent state against this leak
+        requires re-exporting $\Delta H_{\Diss}^{(+)}=\dot S_{\Diss}\Delta\tau$
+        bits per tick --- the maintenance term.
+  \item \textbf{Regeneration} $\Regen$: driving $\Gam$ toward the anchored
+        self-model $\varphi_J(\Gam)$ \emph{lowers} $S_{\mathrm{vN}}$ by
+        $\Delta H_{\Regen}$ bits per tick (creating order), requiring at least
+        $k_B T\ln 2\cdot\Delta H_{\Regen}$ of free energy.
 \end{itemize}
-Summing, $E_{\mathrm{tick}}\ge kT\ln2\,(\Delta H_{\Regen}+\Delta H_{\Diss}^{(+)})$,
-Eq.~\eqref{eq:energy-law}. At the fixed point $\Delta H_{\Regen}=0$ (nothing
-to learn) and, if the task tolerates no forgetting, $\Diss$ can be quenched,
-leaving a reversible tick at zero net erasure --- the Landauer floor.
+Summing gives $E_{\mathrm{tick}}\ge k_B T\ln 2\,(\Delta H_{\Regen}+\Delta H_{\Diss}^{(+)})$,
+Eq.~\eqref{eq:energy-law}.
 
-\paragraph{Numbers ($T=300$~K).} $kT\ln2=1.380649\!\times\!10^{-23}\cdot300\cdot\ln2
-=2.87\times10^{-21}$~J $=0.018$~eV per bit. Worst-case tick (re-export the
-entire $48$-DOF state; $34$ physical after the $G_2$ gauge): $48\,kT\ln2=1.38\times10^{-19}$~J. A learning-bounded
-tick reshaping $\sim\!4$ bits: $1.1\times10^{-20}$~J. Von~Neumann off-chip
-word: $\sim\!2\times10^{-11}$~J. Ratio (DRAM word $/$ learning-bounded tick):
-$\sim\!1.7\times10^{9}$. Hence the $\sim$nine-orders headline
-(\S\ref{sec:energy}). All values reproduced by the verifier
-\texttt{talos\_energy.py}. The floor is a ceiling on efficiency, not a
-promise a real device meets it; the architectural content is that the
-data-movement term --- which sets the von~Neumann floor --- is absent.
+\paragraph{Exact numbers ($T=300$~K) and honest scope.}
+At $T=300$~K, $k_B T\ln 2 = 1.380649\!\times\!10^{-23}\cdot 300\cdot\ln 2
+= 2.87\times 10^{-21}$~J ($0.018$~eV per bit). For $\Gam\in\Dens(\mathbb{C}^7)$,
+the exact maximum von~Neumann entropy is attained at $\Gam=\mathbb{1}/7$:
+\[
+S_{\max} \;=\; \log_2 7 \;\approx\; 2.807355\;\text{bits}
+\quad\Longrightarrow\quad
+E_{\max,\text{state}} \;=\; k_B T\ln 7 \;=\; (\log_2 7)\,k_B T\ln 2
+\;\approx\; 8.060\times 10^{-21}\;\text{J}.
+\]
+Note carefully that $S_{\max}=\log_2 7\approx 2.807$~bits is the exact
+von~Neumann entropy ceiling of a $7$-dimensional density matrix --- \emph{not}
+$48$~bits (which is the real manifold dimension of $\Dens(\mathbb{C}^7)$) and
+\emph{not} $6{,}272$~bits (the IEEE-754 digital storage representation of
+$49$ \texttt{complex128} entries). All bit-entropy calculations and
+step-frequency-independent dissipation rates are verified directly in
+\texttt{architecture/talos\_v0\_emulator.py}. We do \emph{not} divide physical
+CMOS DRAM joules by this theoretical Landauer floor: Landauer bounds apply
+equally to any logically reversible machine, whereas CMOS power is dominated by
+switching capacitance and leakage. On digital hardware, \TALOS{}'s immediate
+energy benefit is keeping the $784$-byte state resident in L1/registers to
+avoid off-chip DRAM fetches.

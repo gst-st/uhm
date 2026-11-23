@@ -1,248 +1,141 @@
 ---
 sidebar_position: 4
-title: "Bimodule Construction and SM Representations"
-description: "Solution of the SM representations problem via the bimodule NCG construction. Non-perturbative approach to λ₃. Derivation of (AP+PH+QG+V) from A1-A4."
+title: "Obstructions to a 7D NCG Bimodule and Requirements of the Spin(10) Extension"
+description: "Proven algebraic obstructions to a 7D KO-dim-6 bimodule (withdrawn T-178, T-175a, T-179), external spinor requirements of T-326/T-327/T-329 against T-350, and exact scope of T-180, T-181, and T-123."
 ---
 
-# Bimodule Construction: solving four systemic problems
+# Obstructions to a 7D NCG Bimodule and Requirements of the Spin(10) Extension
 
-:::info Who this chapter is for
-This document solves four interrelated problems that remained open [P] in UHM theory:
-
-1. **SM representations**: How does one obtain SM representations from the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ in which quarks carry **simultaneously** color and weak isospin: $(3,2)_{1/6}$?
-2. **Non-perturbative λ₃**: How to extract physical predictions when $\lambda_3 \approx 74 \gg 4\pi$ (non-perturbative regime)?
-3. **Derivation of (AP+PH+QG+V) from A1-A4**: What is the explicit derivation of the characterizing properties of the holon from the four axioms?
-4. **G-map**: How is the map $G: \text{States} \to \mathcal{D}(\mathbb{C}^7)$ constructed for concrete systems?
-
-All four problems have a **common root**: the theory has so far worked at the level of **algebras**, without reaching the level of **representations and bimodules**. Connes' bimodule construction is the missing link.
-
-*Correction 2026-09-25:* problem 1 is **not** solved here — T-178 below is retracted as a derivation; the Standard Model representations come from Connes' Hilbert space $H_F$, which UHM imports. Half of problem 1 is solved elsewhere, without the import. Under the assumption (Cl), the left-handed doublets $(3,2)_{1/6}\oplus(1,2)_{-1/2}$ arise on $\mathbb{C}\otimes\mathbb{O}$ — UHM's Hilbert space plus the parallel spinor — as the spinor of the forced octonionic Clifford system, with the group $(\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1))/\mathbb{Z}_6$ ([Standard Model, §2.5](/docs/physics/gauge-symmetry/standard-model#sm-из-клиффорда), T-326, T-327). The right-handed singlets do not fit there. They come with the complexification of that spinor: a Weyl field with values in it is valued in $\mathcal{S}\otimes_{\mathbb{R}}\mathbb{C}$, where a tenth Clifford generator is forced and $\mathrm{Spin}(10)$ gives one complete, anomaly-free generation with $\nu_R$ and the Standard Model hypercharges ([Standard Model, §2.6](/docs/physics/gauge-symmetry/standard-model#поколение-t329), T-329, [C at (Cl)]). The other half of problem 1 is thereby solved too, without $H_F$.
-:::
+This page records the algebraic obstructions showing that the 7-dimensional internal carrier $\mathbb{C}^7$ of UHM cannot by itself supply Connes' Standard Model bimodule, states the exact external inputs required by the $\mathrm{Spin}(9)/\mathrm{Spin}(10)$ spinor extension (`T-326`, `T-327`, `T-329`) alongside the non-inducibility theorem (`T-350`), and fixes the exact scope of `T-180`, `T-181`, and `T-123`.
 
 ---
 
-## 1. Common Root of the Four Problems {#единый-корень}
+## 1. The Algebra–Representation Gap {#единый-корень}
 
-:::note Diagnosis
-All four problems are symptoms of a single gap: between the **algebraic** structure $A_{\text{int}}$ (correctly derived) and the **representational** structure $H_F$ (not derived). In Connes' noncommutative geometry, physics is determined not by the algebra $A$ alone, but by its **action** on a Hilbert space $H$ — where $H$ is simultaneously a **left** $A$-module and a **right** $A^\circ$-module via the real structure $J$: $b^\circ \cdot \xi := J b^* J^* \xi$. It is precisely this **bimodule** structure that generates the SM representations.
-:::
+Working on the coherence state space $\mathcal{D}(\mathbb{C}^7)$ and the internal algebra $A_{\mathrm{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ (induced by the $\mathrm{SU}(3) \subset G_2$ splitting $\mathbb{C}^7 = \mathbf{1} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$) does not determine a chiral Standard Model fermion module, a dynamical mass spectrum, the characterizing holon requirements, or a unique empirical encoder. Earlier claims that a 7D noncommutative-geometry bimodule resolved all four issues have been withdrawn; the exact separation between retracted claims and surviving results is summarized below.
 
-| Problem | Algebra level (done) | Bimodule level (needed) |
+| Topic | Withdrawn claim | Proven status |
 |---|---|---|
-| SM representations | $A_{\text{int}}$ contains rank-4 generators | Bimodule $H_F$ generates $(3,2)_{1/6}$ |
-| λ₃ | Loop calculations with λ₃ ≈ 74 | Spectral action $\mathrm{Tr}(f(D^2/\Lambda^2))$ non-perturbative |
-| (AP+PH+QG+V) | Characterizing properties are postulated | Derived from bimodule structure via $J$ |
-| G-map | $\mathcal{D}(\mathbb{C}^7)$ is defined | Bimodule defines canonical embedding |
+| SM bimodule on $\mathbb{C}^7$ | `T-178 [✗]`, `T-175a [✗]` | Odd dimension 7 forbids KO-dim 6; centres of $A_{\mathrm{int}}$ and $A_F$ have real dimensions 6 vs. 5. |
+| Hypercharges from anomalies alone | `T-179 [✗]` | Homogeneous anomaly equations underdetermine hypercharges (e.g. $Y + c(B-L)$ with $\nu_R$). |
+| Spinor extension | Imported $H_F$ | `T-326`, `T-327`, `T-329` `[T / C]` require external `(Cl₀)` + complexification `(W₀)` + manual $\nu^c$ breaking; `T-350 [T]` proves no spinor module is induced from $\mathcal{D}(\mathbb{C}^7)$ or $(\mathbb{C}^7)^{\otimes M}$. |
+| Spectral mass ratios | Diagonal `0/0` formula & "PG(2,2) distances" | `T-180 [T]`: tree-level mass ratios are singular values of **specified** Yukawa matrices in a supplied $D_{\mathrm{int}}$ (`T-184 [T]`). |
+| Holon requirements `(AP+PH+QG+V)` | `T-181 [✗]` | Independent modeling requirements, not consequences of topos terminality. |
+| Empirical encoder $G$ | `T-123 [✗]` | Cholesky parameterization ensures PSD when nonzero; identifiability depends on the observation law. |
 
 ---
 
-## 2. Bimodule Construction of SM Representations {#бимодульная-конструкция}
+## 2. Algebraic Obstructions and the Spin(10) Spinor Extension {#бимодульная-конструкция}
 
-### 2.1 Finite bimodule from the UHM spectral triple
+### 2.1 Proven algebraic obstructions on $\mathbb{C}^7$
 
-:::danger Theorem T-178 (Bimodule realization of SM) — retracted [✗] as a derivation (2026-09-25)
-Retracted statement: the finite Hilbert space $H_F$ of the UHM spectral triple, viewed as an $(A_{\text{int}}, A_{\text{int}}^\circ)$-bimodule via the real structure $J$ with KO-dimension 6, decomposes into a direct sum of irreducible bimodules **exactly coinciding** with one generation of SM fermions.
+**Theorem T-178 (7D NCG bimodule realization of SM) — retracted `[✗]`.**
+The finite carrier $H_{\mathrm{int}} = \mathbb{C}^7$ with algebra $A_{\mathrm{int}} = \mathbb{C}_O \oplus M_3(\mathbb{C})_{\mathbf{3}} \oplus M_3(\mathbb{C})_{\bar{\mathbf{3}}}$ cannot realize one generation of Standard Model fermions as a KO-dimension-6 spectral triple:
 
-It is not derived, for three reasons. (i) The UHM triple has $H_{\text{int}} = \mathbb{C}^7$, while one generation needs $32$ states (16 Weyl fermions and their conjugates); the $H_F$ used below is Connes' Hilbert space, imported, and "$7 \cdot 2 = 14 + 2$" in the reduction note is a count, not a map. (ii) KO-dimension 6 cannot occur on $\mathbb{C}^7$: it needs $J\chi = -\chi J$, so the antiunitary $J$ maps the $+1$ eigenspace of $\chi$ onto the $-1$ eigenspace and the two have equal dimension, which no grading of an odd-dimensional space provides (with the $\chi$ of Step 1 they are $4$ and $3$; [spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)). (iii) The reduction $A_{\text{int}} \to A_F$ is not a homomorphism, and its "Morita compatibility" is T-175a, retracted: Morita equivalence preserves the centre, $\mathbb{C}^3$ for $A_{\text{int}}$ against $\mathbb{C}\oplus\mathbb{R}\oplus\mathbb{C}$ for $A_F$ ([spacetime](/docs/core/foundations/spacetime#алгебра-морита)). What stands is the standard bimodule decomposition of Connes' $H_F$ over $A_F = \mathbb{C}\oplus\mathbb{H}\oplus M_3(\mathbb{C})$ (Chamseddine–Connes–Marcolli 2007; Barrett 2007), which UHM imports rather than derives.
-:::
+1. **Odd-dimension KO-6 obstruction:** KO-dimension 6 requires an antiunitary real structure $J$ and a $\mathbb{Z}_2$-grading $\chi$ ($\chi^2 = I$, $\chi^\dagger = \chi$) obeying $J\chi = -\chi J$. Because $J$ is antiunitary and anticommutes with $\chi$, it maps the $+1$ eigenspace of $\chi$ bijectively onto the $-1$ eigenspace, forcing $\dim \ker(\chi - I) = \dim \ker(\chi + I)$ and therefore forcing $\dim_{\mathbb{C}} H_{\mathrm{int}}$ to be **even**. No grading on $\mathbb{C}^7$ admits a KO-dimension-6 real structure ([Spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка)).
+2. **State-count obstruction:** One Standard Model generation with $\nu_R$ requires 16 Weyl fermions and 16 conjugates ($\dim_{\mathbb{C}} H_F = 32$), which does not embed into $\mathbb{C}^7$.
+3. **No Morita equivalence (`T-175a [✗]`):** The centre of the real $*$-algebra $A_{\mathrm{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ is $\mathbb{C}^3$ (real dimension **6**), whereas the centre of Connes' Standard Model algebra $A_F = \mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ is $\mathbb{C} \oplus \mathbb{R} \oplus \mathbb{C}$ (real dimension **5**). Because Morita equivalence preserves the centre, $A_{\mathrm{int}}$ and $A_F$ are not Morita equivalent ([Spacetime](/docs/core/foundations/spacetime#алгебра-морита)).
 
-**Construction.**
+What remains mathematically valid is solely the standard Chamseddine–Connes–Marcolli (2007) / Barrett (2007) bimodule decomposition of Connes' externally imported $H_F$ over $A_F$, where left $\mathbb{H}$-action and right $M_3(\mathbb{C})^\circ$-action intersect on $\mathbf{2}_L \otimes \mathbf{3}$. That construction imports $A_F$ and $H_F$ rather than deriving them from $\mathbb{C}^7$.
 
-**Step 1 (Input data).** Finite UHM spectral triple:
-- Algebra: $A_{\text{int}} = \mathbb{C}_O \oplus M_3(\mathbb{C})_{\mathbf{3}} \oplus M_3(\mathbb{C})_{\bar{\mathbf{3}}}$
-- Space: $H_{\text{int}} = \mathbb{C}^7$
-- Real structure: $J$ with $J^2 = +1$, $JD = DJ$, $J\chi = -\chi J$ (KO-dim 6) — retracted [✗]: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ — its $\chi = \pm 1$ eigenspaces would need equal dimension, and 7 is odd ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка))
-- Chirality: $\chi = \mathrm{diag}(+1, -1, -1, -1, +1, +1, +1)$
+**Theorem T-179 (Hypercharge fixation from anomalies alone) — retracted `[✗]`.**
+The anomaly cancellation equations alone do not uniquely fix the Standard Model hypercharges. Two equations ($\mathrm{Tr}\,Y = 0$, $\mathrm{Tr}\,Y^3 = 0$) cannot determine five (or six, with $\nu_R$) hypercharges. Even all four linear/cubic gauge and gravitational anomaly conditions ($\mathrm{Tr}\,Y = 0$, $\mathrm{Tr}\,Y^3 = 0$, $\mathrm{Tr}_{SU(3)} Y = 0$, $\mathrm{Tr}_{SU(2)} Y = 0$) are homogeneous and admit alternative solutions: without $\nu_R$, the assignment $y_Q = y_L = y_e = 0$, $y_u = -y_d$ satisfies all four; with $\nu_R$, every one-parameter shift $Y + c(B-L)$ satisfies all four (Boyle & Farnsworth, *New J. Phys.* **22**, 073023 (2020)). Selecting the Standard Model hypercharges additionally requires Yukawa couplings to a single Higgs doublet and, when $\nu_R$ is present, a Majorana mass term for $\nu_R$ (Babu & Mohapatra, *Phys. Rev. Lett.* **63**, 938 (1989)).
 
-**Step 2 (Opposite algebra).** The real structure $J$ defines a right action of the algebra $A_{\text{int}}$ on $H_{\text{int}}$:
+### 2.2 Requirements of the $\mathrm{Spin}(9)/\mathrm{Spin}(10)$ extension (`T-326`, `T-327`, `T-329`) and non-inducibility (`T-350`)
+
+A separate algebraic route constructs a Standard Model generation without importing Connes' $H_F$, but only after introducing explicit external spinor and symmetry-breaking premises:
+
+- **External spinor module `(Cl₀)` and $\mathrm{Spin}(9)$ (`T-326`, `T-327` `[T]`, `[C under (Cl₀)]`):** Given the independent physical premise `(Cl₀)` — supplying a real 16-dimensional $\mathrm{Spin}(9)$ spinor module $\mathcal{S} \cong \mathbb{O}^2$ on which octonionic Clifford generators act (`T-347 [T]/[H]`) — selecting Krasnov's complex structure yields a centralizer isomorphic to $(\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1))/\mathbb{Z}_6$ (`T-326`) and the left-handed doublet charges $(3,2)_{1/6}\oplus(1,2)_{-1/2}$ (`T-327`). Physical chirality requires an external spacetime and chiral matter action ([Standard Model §2.5](/docs/physics/gauge-symmetry/standard-model#sm-из-клиффорда)).
+- **Complexification `(W₀)` and manual $\nu^c$ breaking (`T-329` `[T]`, `[C under (Cl₀) + (W₀) + \nu^c breaking]`):** Right-handed singlets do not fit inside the real $\mathrm{Spin}(9)$ spinor $\mathcal{S}$. Obtaining one complete 16-state anomaly-free generation requires **complexifying** the module to $\mathcal{S}\otimes_{\mathbb{R}}\mathbb{C}$ (premise `(W₀)`, supplying the complex Weyl spinor factor and a tenth Clifford generator lifting $\mathrm{Spin}(9)$ to $\mathrm{Spin}(10)$) together with a **manual breaking** in the sterile-neutrino $\nu^c$ direction to select the Standard Model subgroup and hypercharges. Once that representation is supplied, its decomposition into the 16-plet and vanishing of the gauge anomaly traces are verified directly (`T-329`, [Standard Model §2.6](/docs/physics/gauge-symmetry/standard-model#поколение-t329)).
+
+**Theorem T-350 (Non-inducibility of spinors from $\mathcal{D}(\mathbb{C}^7)$) `[T]`.**
+Although a Clifford/spinor module can be constructed algebraically from a supplied seven-axis frame and octonionic three-form, **no spinor module carrying the required electroweak doublets can be induced from transformations of $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ or from any tensor power $(\mathbb{C}^7)^{\otimes M}$**:
+
+1. On a single site $\mathbb{C}^7 = \mathbf{1} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$, the three $\mathrm{SU}(3)$ summands are pairwise inequivalent and multiplicity-free; by Schur's lemma the commutant of $\mathrm{SU}(3)$ is abelian ($\mathbb{C}^3$) and cannot host a non-abelian weak $\mathrm{SU}(2)$.
+2. Every tensor power $(\mathbb{C}^7)^{\otimes M}$ transforms in representations that factor through $\mathrm{SO}(7) \supset G_2$ (trivial action of the central element $-1 \in \mathrm{Spin}(7)$), whereas genuine spinor modules of $\mathrm{Spin}(7)$, $\mathrm{Spin}(9)$, or $\mathrm{Spin}(10)$ are double-valued representations on which $-1 \in \mathrm{Spin}$ acts as $-I$.
+
+Consequently, `(Cl₀)` and `(W₀)` cannot be derived from the 7D holon state axioms; they enter as independent physical hypotheses `[H]` ([Premises §7](/docs/reference/premises#t-350)).
+
+---
+
+## 3. Spectral Mass Ratios and Scope of T-180 {#непертурбативный}
+
+**Theorem T-180 (Yukawa singular values in a supplied Dirac operator) `[T]`.**
+For a supplied finite Dirac operator $D_{\mathrm{int}}$ containing specified Yukawa matrices $Y_f$ coupling left- and right-handed sectors of a supplied chiral matter module, the tree-level fermion mass ratios are determined by the **singular values** of those Yukawa matrices, subject to the required electroweak and renormalization-group scale matching.
+
+Two earlier claims under this heading are mathematically invalid and withdrawn:
+
+1. **Undefined `0/0` diagonal formula:** For a zero-diagonal Hermitian internal operator (such as the antisymmetric Gap operator $\hat{\mathcal{G}}$ or an off-diagonal chiral mass matrix $D_{\mathrm{int}}$), every diagonal matrix element $[D_{\mathrm{int}}]_{ii}$ vanishes identically. The previously written expression $|[D_{\mathrm{int}}]_{ii}|/|[D_{\mathrm{int}}]_{jj}|$ evaluates to $0/0$ and is replaced by the singular values of the off-diagonal Yukawa blocks.
+2. **False "different distances on $\mathrm{PG}(2,2)$" claim:** Every pair of distinct points in the Fano plane $\mathrm{PG}(2,2)$ lies on a unique line, so its point-collinearity graph is the complete graph $K_7$ (distance 1 between every pair of distinct points) and $\mathrm{PGL}(3,2)$ acts flag-transitively. The incidence geometry of $\mathrm{PG}(2,2)$ therefore has no metric distinction between distinct pairs and does not by itself generate a fermion mass hierarchy.
+
+Likewise, evaluating $S_{\mathrm{spec}}[D] = \mathrm{Tr}\,f(D^2/\Lambda^2)$ by matrix diagonalization for a *supplied* finite Hermitian matrix $D$ (`T-184 [T]`) requires no loop expansion in $\lambda_3$, but does not derive $D$, the Yukawa entries, or a unique physical vacuum potential (`T-64`, `T-74 [✗]`, `T-176`).
+
+---
+
+## 4. Characterizing Requirements Are Independent Premises (T-181 `[✗]`) {#вывод-apphqgv}
+
+The former derivation `T-181` of `(AP+PH+QG+V)` from `A1–A4` is retracted **`[✗]`**. A sheaf topos is not the category of density matrices: its objects are sheaves, and its terminal object has a terminal space of global sections. The support reflector is defined in a slice, not as a numerical CPTP attractor; Stinespring dilation does not identify sheaf morphisms with channels; seven chosen matrix axes do not prove experiential content or tensor-factor reduction; and Bures separation does not select the structural-majority cut.
+
+`AP`, `PH`, `QG`, and `V` are explicit modeling requirements and bridges in the [Axiom of Septicity](/docs/core/foundations/axiom-septicity). The state model, frame, self-model, rates, Page–Wootters clock extension, and phenomenal identification must each be supplied separately.
+
+---
+
+## 5. Observation Encoders and Identifiability (T-123 `[✗]`) {#g-отображение}
+
+For a system with state $s \in \mathcal{S}$, a Cholesky parameterization produces a valid density matrix wherever the denominator is nonzero:
 
 $$
-b^\circ \cdot \xi := J b^* J^* \xi, \quad b \in A_{\text{int}}
+G(s) = \pi(s) := \frac{L(s) L(s)^\dagger}{\mathrm{Tr}\!\left(L(s) L(s)^\dagger\right)},
 $$
 
-This turns $H_{\text{int}}$ into an $(A_{\text{int}}, A_{\text{int}}^\circ)$-bimodule: the left action is ordinary multiplication, the right action is via $J$.
+where $L: \mathcal{S} \to \mathbb{C}^{7 \times 7}_{\mathrm{lower\text{-}triangular}}$ is a chosen parameterization.
 
-**Step 3 (First-order condition).** KO-dim 6 requires:
+The universal encoder-uniqueness claim **`T-123 [✗]`** is retracted. Normalizing $L(s)L(s)^\dagger$ ensures positive semidefiniteness and unit trace, not that distinct physical states are distinguishable in the observations or that two learned encoders differ by a $G_2$ symmetry. Complete positivity (CPTP) applies to linear maps of operator algebras, not to arbitrary nonlinear feature estimators. Empirical identifiability requires specifying the observation law and checking its fibres via [Reconstruction Identifiability](/docs/applied/research/reconstruction-identifiability).
 
-$$
-[[D, a], Jb^*J^*] = 0 \quad \forall a, b \in A_{\text{int}}
-$$
+| System | Parameterization of $G$ | Status |
+|---|---|---|
+| Neural network | Probe $h \to L \to \Gamma$ via Cholesky (`C25`) | `[C]` |
+| Brain (EEG) | Band-power and coherence map into $\mathcal{D}(\mathbb{C}^7)$ | `[Pr]` |
+| Organism | Physiological indicator panel (`T-92 [D]`) | `[D]` |
 
-This condition constrains the admissible Dirac operators $D$ and, consequently, the admissible representations.
+---
 
-:::note Scope: first-order condition verification
-The first-order (order-one) condition is the seventh of Connes' reconstruction axioms and is the step most commonly flagged in external audits of NCG-based derivations (cf. Chamseddine–Connes 2008 on the "first-order / one-form" weakening). In this proof it is **imposed** as a structural constraint on $D$ (the admissible Dirac operators are those for which the condition holds) rather than derived from the algebra $A_{\text{int}}$ alone. Verification for the specific $D_{\text{int}}$ of T-53 reduces to a computation on the Higgs-line $\{A,E,U\}$ restriction of the product triple; this computation is sketched but not fully written out here (the same gap T-119 had until its restatement of 2026-09-25, flagged as framework-conditional in the [Rigour Stratification table](/docs/reference/status-registry#стратификация-строгости)).
-:::
+## 6. Equalizer Predicates and Conditional Iteration Bounds {#глубинная-структура}
 
-**Step 4 (Bimodule inputs).** The standard decomposition uses the specified finite algebra $A_F=\mathbb C\oplus\mathbb H\oplus M_3(\mathbb C)$ and its representation on $H_F$. On a chosen complex two-dimensional space, an antiunitary structure with $J^2=+1$ acts as conjugation in a suitable basis. The complex matrices commuting with it form $M_2(\mathbb R)$. For $J^2=-1$ the corresponding real algebra is isomorphic to $\mathbb H$. Choosing the line $\{A,E,U\}$ alone supplies neither that structure nor the fermion representation. The real dimensions of the centres of $A_{\rm int}$ and $A_F$ are six and five, which rules out Morita equivalence. [Comparison of algebras](/docs/core/foundations/spacetime#алгебра-морита)
+### 6.1 Distinct maps: fixed predicates (`T-54`, `T-55`) vs. real structure $J$
 
-The bimodule decomposition of $H_F$ gives (Barrett, 2007; Chamseddine-Connes, 2007):
+For an endomorphism $m: G \to G$ in the ordinary part of a specified topos, precomposition acts on predicates by $m^*: \Omega^G \to \Omega^G$, defining the fixed-predicate equalizer $\mathrm{Th}_m := \mathrm{Eq}(m^*, \mathrm{id}_{\Omega^G}) \hookrightarrow \Omega^G$ (`T-54 [T]/[D]`). Under separating predicates and $m \neq \mathrm{id}$, $\mathrm{Th}_m$ is a proper subobject (`T-55 [T]`).
 
-| Bimodule | Left action $(A_F)$ | Right action $(A_F^\circ)$ | SM fermion |
+| Construction | Carrier | Specified map | Exact scope |
 |---|---|---|---|
-| $\mathbf{2}_L \otimes \mathbf{3}$ | $\mathbb{H}$ (weak isospin) | $M_3(\mathbb{C})^\circ$ (color) | Left quark $(u_L, d_L)$ |
-| $\mathbf{1}_R \otimes \mathbf{3}$ | $\mathbb{C}$ (hypercharge) | $M_3(\mathbb{C})^\circ$ (color) | Right quark $u_R, d_R$ |
-| $\mathbf{2}_L \otimes \mathbf{1}$ | $\mathbb{H}$ (weak isospin) | $\mathbb{C}^\circ$ | Left lepton $(\nu_L, e_L)$ |
-| $\mathbf{1}_R \otimes \mathbf{1}$ | $\mathbb{C}$ (hypercharge) | $\mathbb{C}^\circ$ | Right lepton $e_R, \nu_R$ |
+| Holon iteration | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | Chosen $M: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ | Iteration depth depends on a declared detector or operational certificate; finite dimension imposes no universal ceiling |
+| Fixed predicates | $\mathrm{Th}_m \hookrightarrow \Omega^G$ | $m^*: p \mapsto p \circ m$ | Proper iff predicates separate and $m \neq \mathrm{id}$ (`T-55 [T]`); not Gödel incompleteness and not a state-space theorem |
+| NCG bimodule | Imported $H_F$ | Antiunitary $J: H_F \to H_F$ | $J^2 = +1$ in KO-dim 6 on even-dimensional $H_F$; not an estimator or recursion bound |
 
-**Key point:** A quark in the representation $(3,2)_{1/6}$ arises **not** from the tensor product of two factors $\mathbb{C}^7 \otimes \mathbb{C}^6$, but from the **intersection** of left and right actions on a single bimodule. The left action of $\mathbb{H}$ gives weak isospin, the right action of $M_3(\mathbb{C})^\circ$ gives color — both acting on the **same** element $\xi \in H_F$.
-
-:::info Solution of the SM representations problem
-The 42D tensor structure $\mathbb{C}^7 \otimes \mathbb{C}^6$ is a realization of the Page–Wootters mechanism for **emergent time**. SM representations arise from a **different** construction: the bimodule decomposition of $H_F$ via the real structure $J$. These two mechanisms are **compatible** but solve **different** problems: PW gives time, the bimodule gives particles.
-
-~~**Updated status of the SM representations problem: [T]** — solved via the standard NCG construction (Barrett 2007), applied to the UHM spectral triple (T-53 [T]).~~ Retracted 2026-09-25: the construction is applied to Connes' imported $H_F$, not to the UHM triple, whose $\mathbb{C}^7$ carries no KO-dimension-6 structure (T-178 above). Deriving the SM representations from UHM remains an open problem [Pr].
-:::
-
-$\blacksquare$
-
-### 2.2 Hypercharge and parameter α
-
-The free parameter $\alpha$ in the hypercharge generator $Y$ is fixed by **anomaly freedom** of the bimodule $H_F$:
-
-:::danger Theorem T-179 (Hypercharge fixation) — retracted [✗] as stated (2026-09-25)
-Retracted statement: the anomaly cancellation conditions $\mathrm{Tr}(Y) = 0$ and $\mathrm{Tr}(Y^3) = 0$ on the bimodule $H_F$ **uniquely** fix the hypercharge assignments of the Standard Model (up to overall normalization).
-
-Two equations cannot fix the five hypercharges of a generation (six with $\nu_R$). Even all four anomaly conditions — gravitational, $U(1)_Y^3$, $SU(3)^2\,U(1)_Y$ and $SU(2)^2\,U(1)_Y$ — are solved both by the Standard Model values and by $y_Q = y_L = y_e = 0$, $y_u = -y_d$; and with a right-handed neutrino every combination $Y + c\,(B-L)$ passes all four (checked in exact arithmetic for $c = 1/7,\ 1/2,\ 3$; $B-L$ is the anomaly-free outer automorphism noted by Boyle and Farnsworth, *New J. Phys.* **22**, 073023 (2020)). Fixing the hypercharges needs further input: the Yukawa couplings to one Higgs doublet and, when $\nu_R$ is present, a Majorana mass for it (Babu and Mohapatra, *Phys. Rev. Lett.* **63**, 938 (1989)). The bimodule it is applied to is Connes' imported $H_F$ (T-178 above), so no part of the result is derived from UHM.
-:::
-
-**Former proof (retracted with the statement).** This is a standard result of anomaly theory (Alvarez-Gaumé, Witten 1984), applied to the specific bimodule from Step 4 above. The condition $\mathrm{Tr}(Y) = 0$ fixes the relative hypercharges of quarks and leptons; $\mathrm{Tr}(Y^3) = 0$ fixes the absolute values. The unique solution: $Y(q_L) = 1/6$, $Y(u_R) = 2/3$, $Y(d_R) = -1/3$, $Y(l_L) = -1/2$, $Y(e_R) = -1$. $\blacksquare$
-
----
-
-## 3. Non-perturbative Approach to λ₃ {#непертурбативный}
-
-### 3.1 Spectral action as a solution
-
-:::note Key observation
-The parameter $\lambda_3 \approx 74$ appears when expanding the spectral action in powers of $\Lambda^{-1}$. But the spectral action is **defined non-perturbatively**:
-
-$$
-S_{\text{spec}}[D] = \mathrm{Tr}\!\left(f\!\left(\frac{D^2}{\Lambda^2}\right)\right)
-$$
-
-where $f$ is a smooth cutoff function. This formula **does not require** expansion into loop diagrams. Physical predictions (masses, mixing angles) are determined by the **spectrum** of the operator $D$, not by the Lagrangian parameters.
-:::
-
-### 3.2 Spectral predictions without loops
-
-:::warning Theorem T-180 (Non-perturbative mass ratios) [C at (SV)]
-*Corrected 2026-09-25 from [T]: the vacuum state $\theta^*$ is taken with the sector values of the hypothesis (SV); T-64 is restated as a hypothesis whose vacuum has none of them.*
-
-Fermion mass ratios are determined by the **eigenvalues** of the finite Dirac operator $D_{\text{int}}$ and **do not depend** on λ₃:
-
-$$
-\frac{m_i}{m_j} = \frac{|[D_{\text{int}}]_{ii}|}{|[D_{\text{int}}]_{jj}|} = \frac{\mathrm{Gap}(i)}{\mathrm{Gap}(j)}
-$$
-
-where $\mathrm{Gap}(i)$ are the Gap parameters from the vacuum state $\theta^*$ (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV)), unique minimum of $V_{\text{Gap}}$).
-:::
-
-**Corollary.** The mass hierarchy ($m_t \gg m_u$) is determined by the hierarchy of vacuum Gap parameters, which follows from the **geometry** of the Fano plane (different distances on PG(2,2)), not from loop corrections with λ₃.
-
-### 3.3 What remains of λ₃
-
-The parameter λ₃ = $\omega_0 \cdot |f_{ijk}|$ (where $f_{ijk}$ are the octonionic structure constants) enters the Gap potential $V_{\text{Gap}}$:
-
-$$
-V_{\text{Gap}} = V_2(\varepsilon) + \lambda_3 \cdot V_3(\varepsilon, \theta) + \lambda_4 \cdot V_4(\varepsilon)
-$$
-
-For λ₃ ≫ λ₄ the potential is dominated by the **cubic** term $V_3$. This is **not** a problem — it is an indication that the vacuum structure is determined by the **octonionic associator** (the cubic term $\propto [e_i, e_j, e_k]$), not by the standard quartic potential. The minimum of $V_{\text{Gap}}$ (T-64 [T] (corrected to the $G_2$-invariant potential; its vacuum has no sector values — hypothesis (SV))) exists and is unique **independently** of the ratio λ₃/λ₄.
-
-:::info Reinterpretation of C7
-Condition C7 ($\lambda_3 \gg 4\pi$) is **not** a problem but a **feature** of the octonionic structure. The non-associativity of octonions manifests through the dominance of the cubic potential. Physical predictions should be extracted from the spectrum of $D_{\text{int}}$ (non-perturbatively), not from loop expansions of the Lagrangian. **Updated status of C7: from a [H]-warning to an [I]-feature** — a structural property of the theory, not a defect.
-:::
-
----
-
-## 4. Requirements are not automatic consequences {#вывод-apphqgv}
-
-The former T-181 proof is withdrawn [✗]. A sheaf topos is not the category of density matrices: its objects are sheaves, and its terminal object has a terminal space of global sections. The support reflector is defined in a slice, not as a numerical CPTP attractor. Stinespring does not identify sheaf morphisms with channels. Seven chosen matrix axes do not prove experiential content or tensor-factor reduction. Bures separation does not select the structural-majority cut.
-
-AP, PH, QG and V are explicit requirements/bridges in the [corrected specification](/docs/core/foundations/axiom-septicity). The numerical state model, frame, self-model, rates, clock extension and phenomenal identification must each be provided. These data may define a consistent model; their existence does not follow from terminality. The Page–Wootters constraint also remains independent. No count of four independent primitives is asserted.
-
-## 5. G-map: Constructive Protocol {#g-отображение}
-
-### 5.1 Canonical embedding via the anchor function
-
-For a system with state $s \in \mathcal{S}$ (neural network, brain, organism), the G-map $G: \mathcal{S} \to \mathcal{D}(\mathbb{C}^7)$ is constructed via the **anchor function** $\pi$:
-
-$$
-G(s) = \pi(s) := \frac{L(s) \cdot L(s)^\dagger}{\mathrm{Tr}(L(s) \cdot L(s)^\dagger)}
-$$
-
-where $L: \mathcal{S} \to \mathbb{C}^{7 \times 7}_{\text{lower-triangular}}$ is a trainable map (MLP or linear projection), and the normalization guarantees $G(s) \in \mathcal{D}(\mathbb{C}^7)$.
-
-### 5.2. Identifiability of the observation model
-
-The universal T-123 uniqueness claim is withdrawn [✗]. A Cholesky parameterization guarantees a state only when its denominator is nonzero; it does not guarantee that different states are distinguishable in the observations or that two learned encoders differ by a symmetry. Specify the observation law, test its fibres, and use the [reconstruction theorem](/docs/applied/research/reconstruction-identifiability). CPTP applies to linear maps of operator algebras, not to an arbitrary estimator from feature vectors.
-
-### 5.3 Protocol for concrete systems
-
-| System | Method for constructing G | Status |
-|---|---|---|
-| **Neural network** | Linear probe $h \to L \to \Gamma$ via Cholesky (C25 [C]) | Feasible |
-| **Brain (EEG)** | 7 frequency bands → $\gamma_{kk}$, coherence → $\gamma_{ij}$ | [Pr] Research program |
-| **Organism** | Physiological markers → 7 sectors (T-92 [D]) | [P] Measurement protocol |
-
-:::note Measurement bridge
-Every empirical formalism requires an observation model. UHM now treats this bridge as an identifiable statistical problem, with no universal encoder uniqueness.
-:::
-
----
-
-## 6. Deep Structure: Fractal Recurrence {#глубинная-структура}
-
-:::note Meta-level
-Self-reference is a proposed interpretation **[I]** of several different constructions. For T-54, choose $m:G\to G$ in the ordinary part of a specified topos. Its precomposition map acts on predicates: $m^*:\Omega^G\to\Omega^G$, and $\mathrm{Th}_m:=\operatorname{Eq}(m^*,\mathrm{id}_{\Omega^G})\hookrightarrow\Omega^G$ **[D/T]**. This equalizer does not identify a formal theory, the whole topos or mathematics with a density-matrix state. Those realizations and interpretations are separate inputs.
-:::
-
-### 6.1 Three levels of self-reference
-
-| Level | Object | Specified map | Conditional property |
-|---|---|---|---|
-| **Holon** | $\Gamma \in D_7$ | Chosen $M:D_7\to D_7$ | Iteration depth requires a declared detector or operational certificate; finite dimension alone supplies no ceiling |
-| **Fixed predicates** | $\mathrm{Th}_m\hookrightarrow\Omega^G$ | $m^*:p\mapsto p\circ m$ | Proper only with separating predicates and $m\ne\mathrm{id}$ (T-55); identity fixes every predicate |
-| **Bimodule** | $H_F$ as $(A, A^\circ)$-bimodule | Antiunitary real structure $J:H_F\to H_F$ | $J^2=+1$ in the supplied KO-dimension-6 structure; this is not a self-model accuracy or recursion bound |
-
-These maps have different domains and mathematical roles. T-55's properness is not Gödel incompleteness and does not prove unavoidable dynamics or a mismatch at every state. A nonidentity map may have fixed states; $J$ is a real structure, not an estimator. Reading the constructions as a common self-referential mechanism is **[I]**; a concrete physical coupling is needed before that reading predicts evolution or masses.
-
-### 6.2 Correspondence with knowledge traditions
-
-| Tradition | Concept | Formalization in UHM |
-|---|---|---|
-| **Vedanta** | Brahman = Atman | $\Gamma_{\text{global}}$ (single substance) ≡ $\varphi(\Gamma)$ (self-model) at $R = 1$ |
-| **Buddhism** | Śūnyatā (emptiness) | Analogy [I] with conditional predicate noninvariance; T-55 does not prove that no predicate is "self-existent" |
-| **Kabbalah** | Tzimtzum (contraction) | $\Gamma_\odot \to \rho^*$ — spontaneous breaking of $S_7$-symmetry |
-| **Taoism** | The Tao that can be expressed | $L \subsetneq \Gamma$ — logic (L-dimension) does not encompass the whole |
-| **Alchemy** | Solve et Coagula | $\mathcal{D}[\Gamma]$ (decoherence = solve) + $\mathcal{R}[\Gamma]$ (regeneration = coagula) |
-| **Fractals** | Self-similarity | Iteration analogy [I]; measured depth requires a detector and independently passing operational certificates |
+These three constructions act on different domains with distinct mathematical roles; grouping them as a unified self-referential mechanism is purely interpretive (`[I]`) and yields no dynamical or mass predictions.
 
 <a id="63-why-exactly-3-levels-of-recursion"></a>
 
-### 6.3 Conditional limits of iteration
+### 6.2 Conditional detector cutoff for contractive iterations
 
-The universal SAD_MAX = 3 claim is removed. A finite dimension and compact state space do not bound iteration depth: the identity on $D_7$ can be iterated to any depth. This example certifies repeated iteration, not progressively stronger metamodel competence.
+The universal `SAD_MAX = 3` claim is withdrawn: finite dimension and compactness of $\mathcal{D}(\mathbb{C}^7)$ do not bound iteration depth (the identity map iterates arbitrarily far). The Fano incidence fraction $\alpha = 2/3$ enters a specific discrete dephasing channel $\mathcal{D}_{2/3}$; for a continuous dephasing rate $\Gamma_2$ sampled at interval $\Delta t$, the contraction factor is $q = e^{-\Gamma_2 \Delta t}$.
 
-The Fano incidence fraction $\alpha=2/3$ can enter a specified generator's decay **rate**; it does not determine an iteration multiplier. For a declared continuous dephasing rate $\Gamma_2$, a sampling interval $\Delta t$ gives $q=e^{-\Gamma_2\Delta t}$. The multiplier $1/3$ belongs to the separately chosen discrete channel $\mathcal D_{2/3}$, not to every act of observation.
-
-If a specified map satisfies $A_n:=\|\operatorname{offdiag}M^n(\rho)\|\le q^nA_0$ with $0<q<1$, and a detector requires $A_n\ge\varepsilon>0$ with $A_0\ge\varepsilon$, then
+If a specified map obeys $A_n := \|\operatorname{offdiag} M^n(\rho)\| \le q^n A_0$ with $0 < q < 1$ and a detector requires $A_n \ge \varepsilon > 0$ (with $A_0 \ge \varepsilon$), then
 
 $$
-n\le\left\lfloor\frac{\log(A_0/\varepsilon)}{\log(1/q)}\right\rfloor.
+n \le \left\lfloor \frac{\log(A_0/\varepsilon)}{\log(1/q)} \right\rfloor.
 $$
 
-This is a conditional detector cutoff. Resource budgets and independent operational certificates can impose other bounds. It is not a universal cognitive ceiling, a claim about canonical $R$, or a proof that L4 is impossible; see the [revised depth tower](/docs/consciousness/hierarchy/depth-tower).
+This is a conditional signal-to-threshold bound for the stated contraction and detector, not a universal cognitive ceiling; see [Depth Tower](/docs/consciousness/hierarchy/depth-tower).
 
 ---
 
 ## Related documents
 
-- [UHM Spectral Triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) — construction of $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$
-- [Standard Model](/docs/physics/gauge-symmetry/standard-model) — gauge groups from $G_2$
-- [Cosmological Constant](/docs/physics/gravity/cosmological-constant) — Λ-budget
-- [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics) — $V_{\text{Gap}}$ and minimum $\theta^*$
-- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — 4 axioms A1-A4
-- [Consciousness Window](/docs/proofs/consciousness/conscious-window) — reconstruction identifiability
-- [Formalization of φ](/docs/proofs/categorical/formalization-phi) — self-modeling operator
-- [Depth Tower](/docs/consciousness/hierarchy/depth-tower) — conditional detector bounds and certified operational depth
+- [Premises of UHM](/docs/reference/premises#t-350) — independence of `(Cl₀)`, `(W₀)`, and `T-347`/`T-350`
+- [Standard Model](/docs/physics/gauge-symmetry/standard-model) — colour stabilizer and spinor constructions (`T-326`, `T-327`, `T-329`)
+- [Spacetime](/docs/core/foundations/spacetime#алгебра-морита) — odd-dimension KO-6 obstruction and `T-175a`
+- [Einstein Equations](/docs/physics/gravity/einstein-equations#непертурбативная-извлекаемость) — scope of `T-184`
+- [Reconstruction Identifiability](/docs/applied/research/reconstruction-identifiability) — observation fibres replacing `T-123`
+- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — explicit specification of `AP`, `PH`, `QG`, `V`
+- [Depth Tower](/docs/consciousness/hierarchy/depth-tower) — conditional detector bounds

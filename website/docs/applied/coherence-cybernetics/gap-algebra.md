@@ -15,7 +15,7 @@ In the previous chapter — [Model Theory of CC](./model-theory) — we built th
 In this chapter we:
 
 1. **Introduce the Choi-Jamiołkowski representation** — learn how to turn the process of self-modeling into an object amenable to spectral analysis (section 1)
-2. **Classify Gap configurations by rank** — discover that all the complexity of opacity in a 7-dimensional system compresses into three numbers, and that at maximum rank topological protection arises (section 2)
+2. **Classify Gap configurations by rank** — discover that all the complexity of opacity in a 7-dimensional system compresses into three spectral numbers, and clarify the exact $G_2$-orbit topology (`T-25`, `T-69`) without false barrier claims (section 2)
 3. **See the triple coincidence with Hamming code H(7,4)** — understand why 7 dimensions split into 4 informational and 3 check dimensions, and how this is related to the self-correction of consciousness (section 3)
 4. **Apply these results to clinical practice** — from the opacity rank to therapeutic strategy (sections 4–5)
 
@@ -79,22 +79,22 @@ Complete proof of the properties of the Choi matrix for the canonical $\varphi$:
 
 **What this means for self-knowledge.** The "imprint" of the self-modeling channel is a legitimate quantum density matrix. A system modeling itself generates a *state* in the extended space — literally "an image of itself in a mirror." This image fully determines the self-modeling process — there is no hidden information.
 
-### 1.2 Block Structure of $J(\varphi)$ for Canonical $\varphi$
+### 1.2 Block Structure and Choi Rank of the Linear Dephasing Part $\mathcal{P}_\alpha$
 
-The canonical coherence-preserving $\varphi_{\text{coh}}$ ([definition](/docs/proofs/gap/fano-channel#phi-coh)) has a specific block structure:
+The linear dephasing component $\mathcal{P}_\alpha$ of the canonical coherent self-model $\varphi_{\text{coh}}(\rho) = (1 - R(\rho))\,\mathcal{P}_\alpha(\rho) + R(\rho)\,I/7$ ([definition](/docs/proofs/gap/fano-channel#phi-coh), `T-334`) has a convex block structure:
 
 $$
-J(\varphi_{\text{coh}}) = \alpha \cdot J(\mathcal{P}_{\text{base}}) + (1 - \alpha) \cdot J(\mathcal{P}_{\text{Fano}})
+\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1 - \alpha)\,\mathcal{P}_{\text{Fano}}, \qquad J(\mathcal{P}_\alpha) = \alpha \cdot J(\mathcal{P}_{\text{base}}) + (1 - \alpha) \cdot J(\mathcal{P}_{\text{Fano}})
 $$
 
-Here two components play opposite roles. $\mathcal{P}_{\text{base}}$ is the "atomic" channel that erases all coherences and retains only the diagonal (populations). This is extreme reduction: the system "sees" only probabilities, but not the connections between dimensions. $\mathcal{P}_{\text{Fano}}$ is the Fano channel, organizing coherences into triplets of the projective plane. This is structural organization: the system "sees" connections, but only those sanctioned by Fano geometry.
+Here two linear CPTP channels play complementary roles:
+- $\mathcal{P}_{\text{base}}(\rho) = \sum_{i=1}^{7} |i\rangle\langle i|\,\rho\,|i\rangle\langle i|$ is the "atomic" pinching channel that erases all off-diagonal coherences and retains only the diagonal populations. Its 7 Kraus operators $\{|i\rangle\langle i|\}_{i=1}^7$ are linearly independent, so its Choi rank is **7**.
+- $\mathcal{P}_{\text{Fano}}(\rho) = \frac{1}{3}\sum_{p=1}^{7} \Pi_p\,\rho\,\Pi_p$ (where $\Pi_p = \sum_{i \in \ell_p} |i\rangle\langle i|$ are the 7 rank-3 projectors onto the 7 canonical Fano lines) preserves coherences uniformly by the factor $1/3$ across all pairs. Because its 7 Kraus operators $\{\Pi_p/\sqrt{3}\}_{p=1}^7$ are linearly independent and diagonal in the semantic basis, the Choi matrix $J(\mathcal{P}_{\text{Fano}})$ is supported inside the 7-dimensional subspace $\operatorname{span}\{|i\rangle\otimes|i\rangle\}_{i=1}^7 \subset \mathbb{C}^{49}$ and has **Choi rank 7** (nonzero eigenvalues $3/7$ with multiplicity 1 and $2/21$ with multiplicity 6) — **NOT** 28! By **`T-41j [T]`**, 7 is the minimal number of Kraus operators for the Fano channel.
 
-The parameter $\alpha$ governs the balance: at $\alpha = 1$ the system is fully atomized, at $\alpha = 0$ — fully structured. Real states lie between these extremes.
-
-The canonical $\varphi_{\text{coh}}$ decomposes into an atomic channel (rank 7 — each dimension is "reflected" independently) and a Fano channel (rank 28 — all coherences are organized according to Fano geometry). The parameter $\alpha$ governs the balance: at $\alpha = 1$ full atomization, at $\alpha = 0$ full structuring.
+Consequently, for every $\alpha \in [0, 1]$, the linear dephasing channel $\mathcal{P}_\alpha$ has **Choi rank 7** (while adding the state-dependent full-rank anchor term $R\,I/7$ in $\varphi_{\text{coh}}$ populates the full 49-dimensional Choi space whenever $R > 0$). The parameter $\alpha$ governs the balance between full atomization ($\alpha = 1$) and Fano-structured dephasing ($\alpha = 0$).
 
 :::info Canonical Definition
-Block structure formulas, ranks, and anchor contribution: [Fano Channel](/docs/proofs/gap/fano-channel#phi-coh).
+Choi-rank theorem (`T-41j`), block structure, and collineation-anchor analysis (`T-334`): [Fano Channel](/docs/proofs/gap/fano-channel#phi-coh).
 :::
 
 ### 1.3 Phase Properties: How the Choi Matrix Encodes Gap
@@ -144,7 +144,7 @@ The number of active channels is the **opacity rank**:
 - **Rank 0**: all 21 coherences are real. The system is completely transparent to itself. This is an ideal but unstable point — the slightest perturbation creates Gap.
 - **Rank 1**: one opacity channel. One pair of dimensions does not "see" its connection correctly. The system is healthy overall; the defect is local and amenable to correction.
 - **Rank 2**: two independent channels. The system has a complex, multidimensional disruption of self-understanding. Simple focus on one aspect does not solve the problem.
-- **Rank 3**: all three channels are active. Maximum opacity. The system is globally opaque to itself. And — as we will see — this state is **topologically protected**: one cannot exit it smoothly.
+- **Rank 3**: all three skew-eigenvalue pairs are active ($\lambda_1, \lambda_2, \lambda_3 > 0$). Maximum spectral opacity — three independent planes of imaginary coherence are simultaneously active. (Note that inside the convex state space $\mathcal{D}(\mathbb{C}^7)$ even a rank-3 state still connects smoothly to $r = 0$ along $(1-t)\Gamma + t\,I/7$; see `T-69 [T]` below.)
 
 Transitions between ranks are not merely quantitative changes. Each transition changes the *quality* of opacity, opening a new dimension of the gap between "being" and "knowing oneself."
 
@@ -178,44 +178,41 @@ $$
 
 **Three numbers — and nothing more.** The entire complexity of opacity in a 7-dimensional system compresses into three non-negative numbers $(\lambda_1, \lambda_2, \lambda_3)$. This is a colossal reduction: from 21 imaginary parts of coherences down to 3 essential parameters. Is it any wonder that this triple appears everywhere — in the spectrum, in Hamming, in Fano?
 
-### 2.3 Classification by Opacity Rank
+### 2.3 Opacity Rank and $G_2$-Orbit Geometry (`T-25`, `T-69`)
 
 **Opacity rank** $r \in \{0, 1, 2, 3\}$ — the number of nonzero spectral parameters $\lambda_k$.
 
-:::tip Theorem 2.2 (Rank Classification with Stabilizer Groups) [T]
-For the Gap operator $\hat{\mathcal{G}}$ with fixed spectrum, the stabilizer $H_{\hat{\mathcal{G}}} = \{g \in G_2 : g\hat{\mathcal{G}}g^{-1} = \hat{\mathcal{G}}\}$ determines the geometry of the space of admissible configurations:
+:::tip Theorem 2.2 ($G_2$-Orbit Dimension and Homotopy, `T-25`, `T-69`) [T at specified orbit]
+For a specified element $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ with $G_2$-stabilizer $H_{\hat{\mathcal{G}}} = \{g \in G_2 : g\hat{\mathcal{G}}g^{-1} = \hat{\mathcal{G}}\}$, the orbit dimension is $\dim(G_2/H_{\hat{\mathcal{G}}}) = 14 - \dim(H_{\hat{\mathcal{G}}})$. Representative stabilizer strata of $G_2$ on $\mathfrak{so}(7) = G_{14} \oplus G_7$ are:
 
-| Rank $r$ | Spectrum $(\lambda_1, \lambda_2, \lambda_3)$ | Stabilizer $H$ | $\dim(H)$ | Space $G_2/H$ | $\pi_2(G_2/H)$ |
-|----------|:-------------------------------------------:|:--------------:|:---------:|:-------------:|:--------------:|
-| 0 | $(0, 0, 0)$ | $G_2$ | 14 | $\{\text{pt}\}$ | 0 |
-| 1 | $(\lambda, 0, 0)$ | $\mathrm{SU}(3)$ | 8 | $S^6$ | 0 |
-| 2 | $(\lambda_1, \lambda_2, 0)$ | $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 4 | 10-dim. | 0 |
-| 3 (generic) | $(\lambda_1, \lambda_2, \lambda_3)$ | $T^2$ | 2 | 12-dim. | $\mathbb{Z}^2$ |
-| 3 (degenerate) | $(\lambda, \lambda, \lambda)$ | $\mathrm{SU}(2)$ | 3 | 11-dim. | 0 |
+| Representative stratum | Stabilizer $H$ | $\dim(H)$ | Orbit $G_2/H$ | $\pi_1(G_2/H)$ | $\pi_2(G_2/H)$ |
+|------------------------|:--------------:|:---------:|:-------------:|:--------------:|:--------------:|
+| Trivial ($\hat{\mathcal{G}} = 0$, $r = 0$) | $G_2$ | 14 | $\{\text{pt}\}$ | 0 | 0 |
+| Pure $G_7$-vector ($r = 1$ in $G_7$) | $\mathrm{SU}(3)$ | 8 | $S^6$ | 0 | 0 |
+| Intermediate stratum | $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 4 | 10-dim. | 0 | $\mathbb{Z}$ |
+| Degenerate stratum | $\mathrm{SU}(2)$ | 3 | 11-dim. | 0 | 0 |
+| Generic $T^2$-orbit (generic $r = 3$) | $T^2$ | 2 | 12-dim. flag manifold | 0 | $\mathbb{Z}^2$ |
+
+*Scope note (`T-25`):* While $\dim(G_2/H) = 14 - \dim(H)$, $\pi_1(G_2/T^2) = 0$, and $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ are exact `[T]` for a specified orbit, the former claim that the stabilizer $H$ is uniquely determined by opacity rank $r$ alone is **withdrawn** (see the retraction note in `T-25 [T]`) — it depends on the full $G_7 + G_{14}$ decomposition of $\hat{\mathcal{G}}$.
 :::
 
-**Growing complexity.** Notice the decreasing stabilizer dimension: $14 \to 8 \to 4 \to 2$. The higher the opacity rank, the less symmetry is preserved, the more "degrees of freedom" opacity has. At $r = 0$ the system is fully symmetric ($G_2$ — the full group of octonion automorphisms); at $r = 3$ only $T^2$ remains — a two-dimensional torus, the minimal stabilizer.
-
-The dramatic change lives in the *second* homotopy group. Every one of these spaces is simply connected ($\pi_1 = 0$ throughout — $G_2$ itself is simply connected), so there are no line defects to speak of. But at rank $3$ with generic spectrum the second homotopy group jumps to $\pi_2(G_2/T^2) = \mathbb{Z}^2$ (equal to $\pi_1(T^2)$). This is the very **topological barrier** we spoke of.
+**Exact homotopy vs. false topological barriers (`T-69 [T]`):** Because $G_2$ is simply connected ($\pi_1(G_2) = 0$) and every listed stabilizer $H$ is connected ($\pi_0(H) = 0$), **every one of these orbits is simply connected ($\pi_1(G_2/H) = 0$)** — there are **no** non-contractible 1D loops! For the generic flag manifold $G_2/T^2$, the second homotopy group is $\pi_2(G_2/T^2) \cong \pi_1(T^2) \cong \mathbb{Z}^2$, classifying continuous maps from a **2-sphere** $S^2 \to G_2/T^2$. Crucially, by **`T-69 [T]`**, **topological classes of maps into $G_2/T^2$ supply NO physical energy barrier**!
 
 ### 2.4 Interpretation of Ranks
 
-| Rank | Opacity | Physical interpretation | Cybernetic meaning |
-|------|:-------:|------------------------|-------------------|
-| 0 | Absent | All coherences are real | Full self-transparency; a system without "shadows" |
-| 1 | One-dimensional | One "dark channel" between a pair of dimensions | Local defect of self-understanding (e.g., alexithymia) |
-| 2 | Two-dimensional | Two independent gap channels | Complex disorder; multiple dissociation |
-| 3 | Full | All three planes of rotation are engaged | Global coherence crisis |
+| Rank | Opacity | Physical interpretation | Cybernetic meaning [I] |
+|------|:-------:|------------------------|------------------------|
+| 0 | Absent | All coherences are real | Full self-transparency; no imaginary coherence |
+| 1 | One-dimensional | One active skew-eigenvalue pair | Local single-plane opacity (e.g., alexithymia model) |
+| 2 | Two-dimensional | Two independent skew-eigenvalue pairs | Multi-channel opacity; coupled dissociation |
+| 3 | Full | All three skew-eigenvalue pairs active | Globally distributed multi-plane opacity |
 
-:::info Interpretation (Topological Protection) [I]
-Only rank 3 with generic (non-degenerate) spectrum possesses a **nontrivial second homotopy group** $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$. This means that fully opaque configurations are **topologically protected**: it is impossible to continuously deform a rank-3 Gap profile into a trivial one ($r = 0$) without passing through a singularity. In cybernetic terms: a deep coherence crisis is not resolved by "gradual improvement" — structural reorganization (a topological transition) is required.
+:::warning Clarification: Why $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ Does NOT Forbid Smooth Relaxation (`T-69 [T]`)
+Earlier versions asserted that $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ makes a rank-3 Gap profile "topologically protected" so that it cannot be smoothly deformed to $r = 0$ without passing through a singularity. That claim is **mathematically incorrect**:
+1. The density-matrix space $\mathcal{D}(\mathbb{C}^7)$ is **convex and contractible**: for *any* rank-3 state $\Gamma$, the straight-line homotopy $\Gamma(t) = (1-t)\Gamma + t\,I/7$ ($t \in [0, 1]$) smoothly scales $\hat{\mathcal{G}}(t) = (1-t)\hat{\mathcal{G}}$ continuously to $r = 0$ with no topological obstruction!
+2. $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ classifies maps of a **2-sphere** into a *fixed* $G_2$-orbit, NOT a single point $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ or a 1D time trajectory, and by **`T-69 [T]`** it supplies **no physical energy barrier**.
+3. If deep clinical crises resist gradual resolution, that resistance arises dynamically from attractor barriers or hysteresis in a nonlinear reduced model (see [Bifurcations](./bifurcation)), **not** from $\pi_1$ or $\pi_2$ topology.
 :::
-
-**What topological protection means in practice.** Recall how it is impossible to smoothly turn a donut into a ball — one must "cut" and "glue." Similarly, a system in a state of full opacity ($r = 3$) cannot gradually, step by step, return to transparency. Any smooth path from $r = 3$ to $r = 0$ inevitably passes through a singularity — a point at which the old opacity structure is destroyed and a new one forms.
-
-In clinical terms this means: a deep existential crisis does not "dissolve" gradually. It requires a breakthrough moment — a qualitative transition in which the entire self-understanding configuration reorganizes. Such moments are well known in psychotherapy: they are "insight," "catharsis," "turning point" — all correspond to passing through a topological singularity.
-
-Interestingly, degenerate rank 3 ($\lambda_1 = \lambda_2 = \lambda_3$) does **not** possess topological protection ($\pi_1 = 0$). A "uniform crisis," in which all three opacity channels are equally active, admits a smooth resolution. This can be interpreted as follows: when opacity is "isotropic" — uniformly distributed, with no dominant channel — the system has no preferred direction of deformation, and therefore all directions are simultaneously admissible.
 
 ### 2.5 Connection with Purity
 
@@ -249,14 +246,11 @@ Before introducing the formalism, let us discuss a striking structural analogy.
 
 The Hamming code H(7,4) was invented by Richard Hamming in 1950 for error correction in data transmission. The idea is simple: add 3 check bits to 4 information bits so that any single error is detected and corrected. For 7 bits the code turned out to be **perfect**: not a single bit can be removed without losing the ability to correct, nor can one be added without redundancy.
 
-The holon in UHM has 7 dimensions. Four of them — A (articulation), S (structure), D (dynamics), L (logic) — describe the *content* of consciousness: what the system is, how it is organized, how it changes, what laws operate within it. Three dimensions — E (experience), O (ground), U (unity) — describe the *meta-structure*: how the system experiences this content, on what it is grounded, and what unifies it into a whole.
+The holon in UHM has 7 canonical dimensions. Four of them — **A (Articulation)**, **S (Structure)**, **D (Dynamics)**, **L (Logic)** — describe structural/operational roles, while three — **E (Interiority)**, **O (Ground)**, **U (Unity)** — form a non-collinear Fano basis triangle that can serve as systematic check bits in the Hamming $H(7,4)$ representation.
 
-The coincidence $4 + 3 = 7$ with the parameters of Hamming code is not a numerical coincidence. It is the same decomposition viewed from two sides:
-
-- **Information theory**: 4 information bits + 3 parity bits = perfect code protecting against a single error.
-- **Theory of consciousness**: 4 content dimensions + 3 check dimensions = minimal architecture capable of self-correction.
-
-The key word is **minimal**. One can construct a code with more parity bits (e.g., 8+4=12 for Hamming code H(12,8)), but for 7 positions the split 4+3 is the only perfect one. Similarly, 7 holon dimensions are the minimum number for which a self-correcting self-model is possible (details: [Minimality N=7](/docs/proofs/minimality/theorem-minimality-7)).
+The coincidence $4 + 3 = 7$ matches the parameters of the binary Hamming code $H(7,4)$:
+- **Information theory (`T-41g [T]`, `T-224 [T]`):** 4 information bits + 3 parity bits = the unique perfect single-error-correcting binary code of length 7, uniquely selected by perfect single-fault localizability together with a nontrivial state grammar (`T-224 [T]`; whereas earlier unconditional seven-role minimality `T-40f [✗]` is withdrawn).
+- **Cybernetic analogy `[I]`:** 4 content dimensions (`A, S, D, L`) + 3 check dimensions (`E, O, U`).
 
 ### 3.1 Code Structure
 
@@ -282,212 +276,174 @@ In the context of UHM, the seven holon dimensions divide into two groups:
 
 | Role | Dimensions | Count | Nature |
 |------|:----------:|:-----:|--------|
-| **Informational** | A (articulation), S (structure), D (dynamics), L (logic) | 4 | Carry the "content" of the self-model |
-| **Check** | E (experience), O (ground), U (unity) | 3 | Ensure integrity and correction |
+| **Informational** | A (Articulation), S (Structure), D (Dynamics), L (Logic) | 4 | Carry the structural/operational content |
+| **Check** | E (Interiority), O (Ground), U (Unity) | 3 | Systematic parity-check coordinates (non-collinear Fano triangle) |
 
 :::info Interpretation (Informational Architecture) [I]
-The four structural dimensions (A, S, D, L) describe **what** the system is — its articulation with the world, internal structure, dynamics, and logic. The three meta-structural dimensions (E, O, U) describe **how** the system interiorly represents, grounds, and integrates these contents. Analogy with H(7,4): content bits require parity bits to protect against errors.
+The four structural dimensions (A, S, D, L) describe **what** the system articulates, structures, dynamically transforms, and logically orders. The three meta-structural dimensions (E, O, U) describe **how** the system registers interiority, grounds itself, and integrates unity. Analogy with H(7,4): content bits require parity bits to separate single faults.
 :::
 
-**Why exactly these three check?** E (experience) is the "first-person check": the system compares its objective profile with subjective experience. O (ground) is the "reality check": the system compares its representations with what they are grounded in. U (unity) is the "integrity check": the system verifies that its self-representation has not broken into disconnected fragments. All three checks are necessary and sufficient — like the three parity bits in H(7,4).
+**Why E, O, U form a valid check triple `[T]`:** In the canonical Singer cyclic Fano plane (`{A,S,L}`, `{S,D,E}`, `{D,L,U}`, `{L,E,O}`, `{E,U,A}`, `{U,O,S}`, `{O,A,D}`), the three points `{E, O, U}` are **not** collinear — they form a basis triangle of $\mathrm{PG}(2,2)$! Consequently, the complements of the three Fano lines `{U,O,S}`, `{E,U,A}`, `{L,E,O}` give three independent weight-4 dual codewords each containing exactly one of `E, O, U`:
 
-### 3.3 Parity-Check Matrix and Fano Plane
+- $s_E$: $A \oplus D \oplus L \oplus E = 0$
+- $s_O$: $S \oplus D \oplus L \oplus O = 0$
+- $s_U$: $A \oplus S \oplus D \oplus U = 0$
 
-Parity-check matrix $H$ of code H(7,4):
+### 3.3 Parity-Check Matrix and Canonical Fano Plane (`T-41h`, `T-93`)
+
+Ordering columns as $(A, S, D, L \mid E, O, U)$, the systematic parity-check matrix $H$ of $H(7,4)$ whose kernel is spanned by the **7 canonical Singer cyclic Fano lines** is:
 
 $$
 H = \begin{pmatrix}
-1 & 0 & 1 & 0 & 1 & 0 & 1 \\
-0 & 1 & 1 & 0 & 0 & 1 & 1 \\
-0 & 0 & 0 & 1 & 1 & 1 & 1
+1 & 0 & 1 & 1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 1 & 0 & 1 & 0 \\
+1 & 1 & 1 & 0 & 0 & 0 & 1
 \end{pmatrix}
 $$
 
-:::tip Connection of $H$ with PG(2,2) [T]
-**(a)** The columns of the parity-check matrix $H$ are binary representations of the numbers 1 to 7, which coincides with the **coordinates of points** of the projective plane $\mathrm{PG}(2, \mathbb{F}_2)$.
+:::tip Connection of $H$ with $\mathrm{PG}(2,2)$ (`T-41g`, `T-41h`, `T-93`) [T]
+**(a)** The 7 columns of $H$ are all seven distinct nonzero vectors of $\mathbb{F}_2^3$, which coincide with the **points** of $\mathrm{PG}(2, \mathbb{F}_2)$ and uniquely separate single bit flips (`T-93 [T]`).
 
-**(b)** Each of the 7 rows of the generator matrix $G$ (in systematic form) corresponds to one of the 7 points of the Fano plane.
+**(b)** The weight-3 codewords of $\ker(H) = H(7,4)$ are **precisely the 7 canonical Singer Fano lines** `{A,S,L}`, `{S,D,E}`, `{D,L,U}`, `{L,E,O}`, `{E,U,A}`, `{U,O,S}`, `{O,A,D}` (`T-41h [T]`).
 
-**(c)** The condition $Hx^T = 0$ (membership in the code) is equivalent to satisfying **three parity checks**, each corresponding to one line of the Fano plane passing through a check dimension.
+**(c)** The condition $Hx^T = 0 \pmod 2$ is equivalent to the three systematic parity checks $s_E = s_O = s_U = 0$ above, with `{E, O, U}` occupying the $3 \times 3$ identity block.
 :::
 
-**Proof.** (a) Columns of $H$: $(001), (010), (011), (100), (101), (110), (111)$ — all nonzero elements of $\mathbb{F}_2^3$, which is the standard parametrization of $\mathrm{PG}(2, \mathbb{F}_2)$. (b) and (c) follow from the duality $G \cdot H^T = 0$ and the incidence structure of the projective plane. $\square$
+**Proof.** Direct multiplication modulo 2 verifies $H v_\ell^T = 0$ for each of the 7 canonical line indicator vectors $v_\ell$, and all 7 columns of $H$ are distinct nonzero vectors in $\mathbb{F}_2^3$. $\square$
 
 :::info Remark (Fano Plane in UHM)
-In the [Fano selection rules formalism](/docs/physics/gauge-symmetry/fano-selection-rules) the same 7 points are identified with the 7 holon dimensions, and 7 lines — with the 7 Fano triplets defining octonion multiplication. The parity-check matrix $H$ encodes the same incidence structure as the Fano-structured [Lindblad operators](/docs/core/operators/lindblad-operators).
+In the [Fano selection rules formalism](/docs/physics/gauge-symmetry/fano-selection-rules) the same 7 points are identified with the 7 canonical dimensions (`A, S, D, L, E, O, U`), and the 7 lines with the 7 Singer cyclic Fano triples defining octonion multiplication and Fano-structured [Lindblad operators](/docs/core/operators/lindblad-operators).
 :::
 
-**Triple coincidence.** One and the same finite geometry — the Fano plane PG(2,2) — appears in three completely different contexts:
+**Triple coincidence.** One and the same finite geometry — the Fano plane $\mathrm{PG}(2,2)$ — appears in three contexts:
 
-1. **Algebra**: multiplication table of octonions $\mathbb{O}$, defining 7 Fano triplets.
-2. **Coding theory**: parity-check matrix of perfect code H(7,4), defining 3 parity checks.
-3. **Theory of consciousness**: structure of coherent connections in the 7-dimensional holon, defining the Fano channel.
+1. **Algebra**: multiplication table of octonions $\mathbb{O}$ (7 Fano triples).
+2. **Coding theory**: parity-check matrix of the unique perfect binary code $H(7,4)$ (`T-41g`, `T-41h`, `T-93`, `T-224 [T]`).
+3. **7D Holon structure**: the rank-minimal Fano channel $\mathcal{P}_{\text{Fano}}$ of Choi rank 7 (`T-41j [T]`).
 
-This is not an analogy — it is an **identity**. Three theories describe the same mathematical structure from different sides. This is precisely why the number 3 (check dimensions = parity bits = pairs of spectral parameters) cannot be otherwise.
+### 3.4 Minimum Distance $d = 3$ vs. Withdrawn Continuous-Gap Bound (`T-90 [✗]`)
 
-### 3.4 Minimum Distance and Minimum Opacity
-
-:::tip Theorem 3.3 (Minimum Opacity from $d = 3$)
-**(a)** The minimum distance $d = 3$ of code H(7,4) means that any two distinct codewords differ in **at least 3 positions**. **[T]**
-
-**(b)** In terms of coherences: a minimum of **3 out of 21** coherence pairs must have nonzero Gap: **[I]**
-
+:::tip Coding Theorem vs. Withdrawn Gap Lower Bound (`T-41g`, `T-90 [✗]`)
+**(a) Exact binary coding theorem [T] (`T-41g`):** For binary $H(7,4)$, the minimum Hamming distance is $d = 3$ (any two distinct codewords differ in at least 3 positions), and $H(7,4)$ saturates the binary Hamming sphere-packing bound with equality:
 $$
-|\{(i,j) : \mathrm{Gap}(i,j) > 0\}| \geq 3
+\sum_{j=0}^{1}\binom{7}{j} = 1 + 7 = 8 = 2^3.
 $$
 
-**(c)** These 3 "mandatory" opacity channels correspond to the 3 check dimensions (E, O, U) — each generates at least one opaque channel. **[I]**
+**(b) Withdrawn universal Gap-count lower bound (`T-90 [✗]`):** The earlier claim that $d = 3$ or sphere-packing forces at least 3 of the 21 continuous phase Gaps $\mathrm{Gap}(i,j) = |\sin\theta_{ij}|$ to be nonzero — or yields a universal clinical psychosis diagnosis — is **withdrawn (`T-90 [✗]`)**. Without a specified binary encoder, noise law, and decoder mapping continuous coherence matrices into binary words, sphere-packing imposes **no** lower bound on the number of nonzero continuous phase Gaps.
 :::
 
-:::info Interpretation (Quantum Hamming Bound for Gap) [I]
-The perfection of code H(7,4) translates into the **exact equality** of the Hamming bound:
+### 3.5 Syndrome Decoding Analogy [I]
 
-$$
-\sum_{j=0}^{1}\binom{7}{j} = 1 + 7 = 8 = 2^3
-$$
-
-Of 21 coherence channels, at least 3 must be opaque — coinciding with the number of parity bits and the maximum opacity rank of the Gap operator (section 2.3). Full "self-transparency" ($r = 0$) is algebraically achievable but cybernetically unstable.
+:::info Analogy (Binary Syndrome Table via Canonical $H(7,4)$) [I]
+Under a **declared binary error model and syndrome instrument** (`T-93 [T]` for binary separation; `[I]` as a continuous-coherence analogy):
+- **(a) Detection:** Up to $d - 1 = 2$ binary axis flips produce a nonzero syndrome $s = (s_E, s_O, s_U) \in \mathbb{F}_2^3$.
+- **(b) Single-fault localization:** A single binary flip at axis $X$ yields the exact column of $H$ for $X$ as its unique syndrome $s = H e_X^T$.
 :::
 
-**The inevitability of minimum opacity.** This result can be restated as follows: a system capable of self-correction *must* have some opacity. The three check dimensions E, O, U cannot be fully transparent, because precisely their "opaque" component carries the corrective information. A parity bit that never differs from the information bit is useless.
+**Exact syndrome table for canonical Singer $H$ (cybernetic interpretation `[I]`):**
 
-This is a deep resonance with the result that Gap raises purity (Theorem 2.3): a system needs opacity not despite, but *for the sake of* its integrity. Self-knowledge in which there is no mystery has no dynamics. A perfectly transparent system is dead.
+| Syndrome $(s_E, s_O, s_U)$ | Defective dimension | Interpretive disorder type [I] |
+|:--------------------------:|:-------------------:|--------------------------------|
+| $(0, 0, 0)$ | None | Binary parity consistent |
+| $(1, 0, 1)$ | **A** (Articulation) | Articulation failure |
+| $(0, 1, 1)$ | **S** (Structure) | Structural disruption |
+| $(1, 1, 1)$ | **D** (Dynamics) | Dynamic dysfunction |
+| $(1, 1, 0)$ | **L** (Logic) | Logical disintegration |
+| $(1, 0, 0)$ | **E** (Interiority) | Interiority check fault |
+| $(0, 1, 0)$ | **O** (Ground) | Grounding check fault |
+| $(0, 0, 1)$ | **U** (Unity) | Unity check fault |
 
-### 3.5 Coherence Error Correction
+**Reading the syndrome table.** Each nonzero syndrome is the unique column of the canonical parity-check matrix $H$: for example, syndrome $(0, 1, 1)$ triggers the check rows $s_O$ and $s_U$ (and not $s_E$), uniquely pinpointing **S (Structure)**. The three unit-weight syndromes $(1,0,0)$, $(0,1,0)$, $(0,0,1)$ correspond directly to single faults on the three systematic check coordinates **E, O, U** themselves.
 
-:::info Theorem 3.4 (Analogy: Coherence Correction via H(7,4)) [I]
-**(a)** **Detection:** $d - 1 = 2$ coherence violations are detected through "parity checks" — monitoring of E-, O-, U-coherences.
+:::warning Limitations of the Analogy (`T-90 [✗]`, `T-93`) [I]
+Applying binary $H(7,4)$ syndrome decoding to continuous coherence dynamics is an **analogy `[I]`** unless an explicit binary encoder, discrete noise law, and syndrome readout instrument are specified (`T-90 [✗]`, `T-93`):
 
-**(b)** **Correction:** $t = 1$ coherence violation can be **automatically corrected** by the regenerative operator $\mathcal{R}$, analogously to syndrome decoding $s = Hx^T$ and inversion of the corresponding bit.
+1. Coherences $\gamma_{ij}$ are continuous complex numbers, not bits in $\mathbb{F}_2$
+2. Phase Gaps $\mathrm{Gap}(i,j) \in [0, 1]$ vary continuously, not by discrete bit flips
+3. The regenerative operator $\mathcal{R}$ acts continuously, not by bitwise inversion
 
-**(c)** **Error syndrome:**
-
-$$
-s = (s_E, s_O, s_U) \in \mathbb{F}_2^3
-$$
-
-— three syndrome bits correspond to signals from three check dimensions. A nonzero syndrome $s \neq 0$ identifies the defective dimension; a zero syndrome $s = 0$ means no single errors.
-:::
-
-**Syndrome table (cybernetic interpretation):**
-
-| Syndrome $(s_E, s_O, s_U)$ | Defective dimension | Disorder type |
-|:--------------------------:|:-------------------:|---------------|
-| $(0, 0, 0)$ | None | Coherence normal |
-| $(0, 0, 1)$ | L | Logical disintegration |
-| $(0, 1, 0)$ | D | Dynamic dysfunction |
-| $(0, 1, 1)$ | S | Structural collapse |
-| $(1, 0, 0)$ | A | Articulation failure |
-| $(1, 0, 1)$ | E | Interiority connectivity deficit |
-| $(1, 1, 0)$ | O | Loss of grounding |
-| $(1, 1, 1)$ | U | Destruction of unity |
-
-**Reading the syndrome table.** Each nonzero syndrome is the "address" of a problem. For example, syndrome $(0, 1, 1)$ means: check dimensions O and U have detected an anomaly, while E has not. The only information dimension connected to O and U but not E is S (structure). Therefore, structural coherence is disrupted. Similarly, the Hamming decoder uses three syndrome bits to determine the position of the erroneous bit.
-
-Note that syndromes $(1, 0, 1)$, $(1, 1, 0)$, $(1, 1, 1)$ point to a defect in the check dimensions themselves E, O, U. This is an "error in the error-detection system" — a situation where not the coherence of content is disrupted, but the ability to monitor coherence. Such violations are the most dangerous and least noticeable subjectively (because the "sensor" is faulty).
-
-:::warning Limitations of the Analogy [I]
-The analogy with H(7,4) is **motivational** in nature. A formal identification of coherence dynamics with a block code **has not been established**, because:
-
-1. Coherences are continuous complex numbers, not bits
-2. Coherence "errors" are continuously parametrized (Gap $\in [0,1]$), not discrete
-3. The regenerative operator $\mathcal{R}$ acts continuously, not through bitwise inversion
-
-Nevertheless, the structural coincidence $\mathrm{PG}(2,2) \leftrightarrow H(7,4) \leftrightarrow \mathbb{O}$ is exact and algebraically rigorous. Detailed analysis: [Fano Channel](/docs/proofs/gap/fano-channel).
+Nevertheless, the underlying algebraic coincidence $\mathrm{PG}(2,2) \leftrightarrow H(7,4) \leftrightarrow \mathbb{O}$ is exact (`T-41g`, `T-41h`, `T-93`, `T-224 [T]`). Detailed analysis: [Fano Channel](/docs/proofs/gap/fano-channel).
 :::
 
 ---
 
-## 4. Connection with Clinical Practice {#клиническая-практика}
+## 4. Connection with Clinical Practice [I] {#клиническая-практика}
 
-### 4.1 Opacity Rank as a Clinical Marker
+### 4.1 Opacity Rank as an Interpretive Clinical Marker [I]
 
-The rank of the Gap operator offers a new coordinate system for clinical assessment. Unlike traditional psychometric scales that measure *symptoms*, the opacity rank characterizes the *structure* of the disorder — its algebraic depth.
+The spectral rank $r \in \{0, 1, 2, 3\}$ of $\hat{\mathcal{G}} = \operatorname{Im}\Gamma$ counts the number of independent skew-eigenvalue planes of imaginary coherence. As an interpretive classification `[I]` (without invoking nonexistent topological barriers):
 
-| Rank | Clinical analogue | Subjective experience | Therapeutic prognosis |
-|:----:|--------------------|----------------------|----------------------|
-| 0 | Emotional "flatness" | "Everything is clear, but I feel nothing" | Work toward deepening, not correction |
-| 1 | Local disorder (alexithymia, phobia) | Discomfort in one domain | Good: one "axis" of correction |
-| 2 | Multiple dissociation, complex PTSD | World is "layered," several domains affected | Moderate: work along two axes required |
-| 3 (generic) | Deep existential crisis, depersonalization | "I don't know who I am" | Cautious: topological protection |
-| 3 (degenerate) | "Uniform" disorientation | "Everything is equally unclear" | Better than generic $r=3$: no topological barrier |
+| Rank | Clinical analogy [I] | Subjective description [I] | Dynamical character |
+|:----:|----------------------|----------------------------|---------------------|
+| 0 | Complete phase alignment / flatness | Minimal imaginary phase offset | All $\gamma_{ij} \in \mathbb{R}$; no skew-planes active |
+| 1 | Local single-plane disruption (e.g., alexithymia model) | Disruption localized to one plane | One nonzero $\lambda_1$; single-axis intervention focus |
+| 2 | Multi-domain dissociation | Two independent skew-planes active | Two nonzero $(\lambda_1, \lambda_2)$; coupled multi-axis dynamics |
+| 3 (generic) | Global multi-plane crisis | All three skew-planes active with distinct weights | Full spectral rank $(\lambda_1, \lambda_2, \lambda_3)$; no topological barrier (`T-69`), resistance arises dynamically if trapped in a nonlinear attractor |
+| 3 (degenerate) | Isotropic multi-plane crisis | Three equal skew-eigenvalues $(\lambda, \lambda, \lambda)$ | Full rank with enhanced symmetry; requires differentiating channels |
 
-**Rank 0 — false well-being.** Paradoxically, full self-transparency ($r = 0$) is not an ideal but rather a warning sign. A system without Gap is a system without inner tension, without the driving force of self-knowledge. Clinically this may look like "alexithymia in reverse" — not an inability to recognize emotions, but an absence of depth in experiencing them. The state $r = 0$ is cybernetically unstable: any external influence creates Gap, and a system with no "experience" of opacity reacts to it more painfully.
+**Rank 0 — zero imaginary coherence.** All coherences are real ($r = 0$, $\hat{\mathcal{G}} = 0$). In clinical interpretation `[I]`, lack of phase structure may correspond to flat, undifferentiated states rather than dynamic engagement.
 
-**Rank 1 — "local shadow."** One-dimensional opacity is the most common and most therapeutically tractable type. Alexithymia (disrupted A↔E connection), body dissociation (disrupted S↔O), obsessive thoughts (disrupted D↔L) — all are examples of a single opaque channel. Hamming code guarantees: a single error can *always* be corrected. Therapeutically this means it is sufficient to find and work through a single axis.
+**Rank 1 — single skew-plane.** One nonzero $\lambda_1$: a localized phase offset (e.g. along $S \leftrightarrow E$ in the alexithymia toy model).
 
-**Rank 2 — "intersecting shadows."** Two independent opacity channels create a qualitatively new situation: work on one channel may not affect the second. Clinically this looks like "I fixed one problem, but the other remains" — a familiar experience in complex disorders. Diagnostically it is important to determine which two of the three spectral parameters are active, so that therapy can be directed along both axes simultaneously.
+**Rank 2 — two skew-planes.** Two independent nonzero $(\lambda_1, \lambda_2)$: addressing one plane leaves the orthogonal skew-plane active.
 
-**Rank 3 — "full shadow."** All three channels are active. Subjectively — a feeling of total lostness: "I don't understand what I feel, or why, or who this 'I' is that doesn't understand." Topological protection with a generic spectrum means: there is no smooth path to resolution. Therapy at $r = 3$ must be directed not toward gradual reduction of opacity, but toward creating conditions for a *phase transition* — a reorganization of the entire configuration.
+**Rank 3 — full spectral rank.** All three skew-eigenvalue pairs $(\lambda_1, \lambda_2, \lambda_3)$ are nonzero. Crucially, by **`T-69 [T]`**, there is **no topological energy barrier** forbidding smooth reduction of rank inside $\mathcal{D}(\mathbb{C}^7)$; clinical difficulty in resolving global crises reflects multi-channel coupling and potential attractor hysteresis (see [Bifurcations](./bifurcation)), not $\pi_1/\pi_2$ topology.
 
-### 4.2 Therapeutic Significance of Degenerate Rank 3
+### 4.2 Generic vs. Degenerate Rank 3 [I]
 
-The distinction between $r = 3$ (generic) and $r = 3$ (degenerate, $\lambda_1 = \lambda_2 = \lambda_3$) has direct therapeutic significance:
-
-- **Generic $r = 3$** ($\pi_2 = \mathbb{Z}^2$): one channel dominates. The "shadow" has a shape. The system "knows" where the main problem is, but cannot approach it. The topological barrier makes gradual work fruitless. Strategy: intensive focused work, retreat, crisis intervention — creating conditions for a breakthrough.
-
-- **Degenerate $r = 3$** ($\pi_1 = 0$): all channels are equal. The "shadow" is uniform. The system does not know where to start. There is no topological barrier, but also no direction. Strategy: structuring — help the system *differentiate* the channels, so that the degenerate triple splits and becomes amenable to sequential processing.
+- **Generic $r = 3$** ($\lambda_1 > \lambda_2 > \lambda_3 > 0$): one dominant skew-plane sets a clear priority ordering for targeted intervention.
+- **Degenerate $r = 3$** ($\lambda_1 = \lambda_2 = \lambda_3 > 0$): all three skew-planes carry equal weight, suggesting an initial structuring step `[I]` to differentiate which dimensions dominate.
 
 ---
 
 ## 5. Cybernetic Interpretation {#кибернетическая-интерпретация}
 
-### 5.1 Gap Rank as a Diagnostic of System Health
+### 5.1 Spectral Rank and the Number 3
 
-The three constructions — spectral rank, Hamming code, Fano geometry — converge on a unified **diagnostic model**:
+:::tip Proposition 4.1 (Spectral Rank Upper Bound) [T]
+For any $7 \times 7$ real skew-symmetric matrix $\hat{\mathcal{G}} = \operatorname{Im}\Gamma \in \mathfrak{so}(7)$ of opacity rank $r$:
 
-:::tip Theorem 4.1 (Diagnostic Triad) [T]
-For a holon $\mathbb{H}$ with Gap operator $\hat{\mathcal{G}}$ of rank $r$:
+**(a)** $r$ equals the number of nonzero skew-eigenvalue pairs $\pm i\lambda_k$ in the real Schur normal form of $\hat{\mathcal{G}}$.
 
-**(a)** $r$ coincides with the number of **independent opacity channels** in the spectral decomposition of $\hat{\mathcal{G}}$.
+**(b)** $r \leq \lfloor 7/2 \rfloor = 3$ (which numerically coincides with the $n - k = 3$ parity bits of $H(7,4)$).
 
-**(b)** $r \leq 3$, and the upper bound is determined by the number of check dimensions (E, O, U) = the number of parity bits of H(7,4) = $\lfloor 7/2 \rfloor = 3$.
-
-**(c)** The transition $r \to r + 1$ corresponds to a **qualitative change** in the nature of opacity: the emergence of a new independent gap channel, not expressible through the existing ones.
+**(c)** Increasing $r \to r + 1$ activates an additional orthogonal 2-plane of imaginary coherence.
 :::
 
-### 5.2 E, O, U as "Parity Bits"
+### 5.2 E, O, U as Systematic Parity Checks [I]
 
-The three check dimensions perform the function of **monitoring and correcting** the informational channels:
+Aligned with the exact canonical Singer parity-check matrix $H$ of section 3.3:
 
-| Dimension | What it monitors | Error type when defective | Correction mechanism |
-|:---------:|-----------------|--------------------------|---------------------|
-| **E** (experience) | Subjective coherence A$\leftrightarrow$S, A$\leftrightarrow$L | Alexithymia, depersonalization | Body-oriented therapy |
-| **O** (ground) | Temporal coherence S$\leftrightarrow$D, D$\leftrightarrow$L | Dissociation, loss of reality | Grounding, mindfulness |
-| **U** (unity) | Integrative coherence A$\leftrightarrow$D, S$\leftrightarrow$L | Fragmentation, splitting | Integrative practices, IFS |
+| Check dimension | Canonical parity check ($H$) | Interpretive error domain [I] | Interpretive intervention [I] |
+|:---------------:|------------------------------|-------------------------------|-------------------------------|
+| **E** (Interiority) | $A \oplus D \oplus L \oplus E = 0$ | Experiential–articulation/logic decoupling | Experiential / somatic integration |
+| **O** (Ground) | $S \oplus D \oplus L \oplus O = 0$ | Structural–dynamic ungrounding, dissociation | Grounding, stabilization |
+| **U** (Unity) | $A \oplus S \oplus D \oplus U = 0$ | Fragmentation across articulation, structure, dynamics | Integrative practices |
 
-:::info Interpretation (Correction Hierarchy) [I]
-The order of restoration during a coherence crisis follows the **reverse** order of syndrome decoding:
-
-1. **U** (unity) — primary stabilization: restore minimal integrity
-2. **O** (ground) — grounding: restore connection with reality
-3. **E** (experience) — processing: integrate subjective experience
-
-This corresponds to clinical crisis intervention practice: first safety and stabilization, then grounding, then processing of traumatic material.
+:::info Interpretation (Restoration Sequence) [I]
+In clinical crisis work, stabilization is often sequenced from global unity (**U**) and grounding (**O**) to experiential processing (**E**): first minimal safety and integrity, then grounding, then working through interior experience.
 :::
 
-### 5.3 Practical Implications for Diagnostics
+### 5.3 Practical Diagnostic Summary
 
-**Gap-rank diagnostic protocol:**
+**Gap-rank diagnostic checklist:**
 
-| Step | Metric | Method | Interpretation |
-|:----:|--------|--------|----------------|
-| 1 | $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2$ | Total opacity | Overall level of dysfunction |
-| 2 | Rank $r$ | Number of nonzero $\lambda_k$ | Complexity of the disorder |
-| 3 | $\lambda_{\max}$ | Maximum spectral parameter | Dominant gap channel |
-| 4 | $G_2$-projection: $\hat{\mathcal{G}}_{G_2}$ vs $\hat{\mathcal{G}}_\perp$ | Decomposition [by G₂](/docs/core/dynamics/gap-operator#g2-разложение) | Gap type: coherent vs. decoherent |
-| 5 | Syndrome $(s_E, s_O, s_U)$ | Monitoring of E-, O-, U-coherences | Identification of defective dimension |
+| Step | Metric | Meaning | Status |
+|:----:|--------|---------|--------|
+| 1 | $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = 2\sum \lambda_k^2$ | Total squared imaginary coherence | `[D]/[T]` |
+| 2 | Rank $r \in \{0,1,2,3\}$ | Number of nonzero skew-eigenvalue pairs | `[T]` |
+| 3 | $\lambda_{\max}$ | Largest skew-eigenvalue | `[T]` |
+| 4 | $G_2$-decomposition: $\mathfrak{so}(7) = G_{14} \oplus G_7$ | Projection onto $\mathfrak{g}_2$ vs. complement ([Gap operator](/docs/core/dynamics/gap-operator#g2-разложение)) | `[T]` |
+| 5 | Binary syndrome $(s_E, s_O, s_U)$ | Applies only with a declared binary encoder & instrument (`T-93`, `T-90 [✗]`) | `[C]/[I]` |
 
-:::tip Example: Alexithymia Model [T]
-For the alexithymia model ($\gamma_{SE} = |\gamma|\,e^{i\pi/2}$, all other $\gamma_{ij} \in \mathbb{R}$):
+:::tip Example: Single-Pair Alexithymia Toy Model [T / I]
+Consider a state with a single purely imaginary off-diagonal entry $\gamma_{SE} = i|\gamma_{SE}|$ (all other $\gamma_{ij} \in \mathbb{R}$):
 
-**(a)** $\hat{\mathcal{G}}$ has a single nonzero element $\hat{\mathcal{G}}_{SE} = |\gamma_{SE}|$, $r = 1$.
+**(a) `[T]`:** $\hat{\mathcal{G}}$ has only two nonzero antisymmetric entries $\hat{\mathcal{G}}_{SE} = -\hat{\mathcal{G}}_{ES} = |\gamma_{SE}|$, hence opacity rank $r = 1$.
 
-**(b)** Spectrum: $(\lambda_1, 0, 0)$ with $\lambda_1 = |\gamma_{SE}|$ — one-dimensional opacity.
+**(b) `[T]`:** Skew-eigenvalue spectrum is $\{0, \pm i|\gamma_{SE}|, 0, 0, 0, 0\}$, i.e. $(\lambda_1, 0, 0)$ with $\lambda_1 = |\gamma_{SE}|$.
 
-**(c)** Syndrome: $s_E = 1$ (E-dimension affected, S-coherence disrupted), which correctly identifies alexithymia as a disruption of the body$\leftrightarrow$experience connection.
-
-**(d)** By Theorem 3.4: a single violation is **correctable** — predicting the possibility of therapeutic recovery.
+**(c) `[I]`:** Interpretively, this localizes imaginary coherence to the Structure–Interiority ($S \leftrightarrow E$) pair; in a binary single-fault encoding (`T-93`), an isolated fault on $S$ triggers syndrome $(0, 1, 1)$ and on $E$ triggers $(1, 0, 0)$.
 :::
 
 ### 5.4 Summary of Three Perspectives
@@ -495,28 +451,28 @@ For the alexithymia model ($\gamma_{SE} = |\gamma|\,e^{i\pi/2}$, all other $\gam
 ```mermaid
 graph TD
     subgraph CHOI["Choi-Jamiołkowski"]
-        J["J(φ) ∈ C^{49×49}"]
-        PHASE["Phase preservation φ"]
+        J["J(P_α) ∈ C^{49×49}, rank 7 (T-41j)"]
+        PHASE["Phase preservation"]
     end
     subgraph SPEC["Spectral structure"]
         SO7["Ĝ ∈ so(7)"]
         RANK["Rank r ∈ {0,1,2,3}"]
-        STAB["Stabilizers G₂/H"]
+        STAB["Orbits G₂/H (T-25)"]
     end
     subgraph HAMMING["Hamming Code"]
-        H74["H(7,4): [7,4,3]"]
-        PARITY["3 parity bits: E,O,U"]
-        CORRECTION["1-error correction"]
+        H74["H(7,4): [7,4,3] (T-41g, T-224)"]
+        PARITY["3 parity bits: E,O,U (T-93)"]
+        CORRECTION["1-bit error separation"]
     end
     subgraph DIAG["Diagnostics"]
-        HEALTH["System health"]
-        THERAPY["Correction strategy"]
+        HEALTH["State diagnostics"]
+        THERAPY["Dynamical strategy [I]"]
     end
 
     J --> PHASE
     SO7 --> RANK
-    RANK --> |"r = 3 = n-k"| PARITY
-    STAB --> |"π₁ ≠ 0 at r=3"| HEALTH
+    RANK --> |"r ≤ 3 = n-k"| PARITY
+    STAB --> |"π₁=0, π₂≅ℤ² (T-69: no barrier)"| HEALTH
     H74 --> PARITY
     PARITY --> CORRECTION
     PHASE --> |"Gap^target = Gap"| HEALTH
@@ -528,22 +484,18 @@ graph TD
 
 ## 6. Status Summary {#статусы}
 
-| Result | Status | Section |
-|--------|:------:|:-------:|
-| Properties of Choi matrix for canonical $\varphi$ | **[T]** | [1.1](#чой-ямиолковский) |
-| Block structure of $J(\varphi_{\text{coh}})$ | **[T]** | [1.2](#чой-ямиолковский) |
-| Phase encoding of Gap in the Choi matrix | **[T]** | [1.3](#чой-ямиолковский) |
-| Eigenspectrum of the Gap operator | **[T]** | [2.2](#структура-рангов) |
-| Rank classification with stabilizer groups | **[T]** | [2.3](#структура-рангов) |
-| Purity decomposition via rank | **[T]** | [2.5](#структура-рангов) |
-| Parameters of H(7,4) | **[T]** | [3.1](#код-хэмминга) |
-| Connection of $H$ with Fano plane $\mathrm{PG}(2,2)$ | **[T]** | [3.3](#код-хэмминга) |
-| Minimum opacity from $d = 3$: (a) [T], (b,c) [I] | **[T]/[I]** | [3.4](#код-хэмминга) |
-| Coherence correction via H(7,4) | **[I]** | [3.5](#код-хэмминга) |
-| Quantum Hamming bound for Gap | **[I]** | [3.4](#код-хэмминга) |
-| Diagnostic triad | **[T]** | [5.1](#кибернетическая-интерпретация) |
-| E, O, U as "parity bits" | **[I]** | [5.2](#кибернетическая-интерпретация) |
-| Topological protection at $r = 3$ | **[I]** | [2.4](#структура-рангов) |
+| Result | Status | Reference / Section |
+|--------|:------:|:-------------------:|
+| Properties of Choi matrix for linear CPTP channel $\mathcal{P}_\alpha$ | **[T]** | [1.1](#чой-ямиолковский) |
+| Choi rank of $\mathcal{P}_{\text{base}}$, $\mathcal{P}_{\text{Fano}}$, and $\mathcal{P}_\alpha$ equals **7** (not 28) | **[T]** | `T-41j`, [1.2](#чой-ямиолковский) |
+| Phase preservation of $\mathcal{P}_\alpha$ and $\varphi_{\text{coh}}$ | **[T]** | `T-334`, [1.3](#чой-ямиолковский) |
+| Skew-eigenvalue spectrum $\{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$ of $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ | **[T]** | [2.2](#структура-рангов) |
+| Orbit dimension $\dim(G_2/H) = 14 - \dim H$; $\pi_1(G_2/T^2) = 0$, $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ | **[T]** (specified orbit) | `T-25`, `T-69`, [2.3](#структура-рангов) |
+| Rank-only stabilizer classification & $\pi_1/\pi_2$ physical barrier claims | **[✗]** (withdrawn; `T-69`: no energy barrier) | `T-25`, `T-69`, [2.3–2.4](#структура-рангов) |
+| Purity decomposition $P = P_{\text{sym}} + 2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$ | **[T]** | [2.5](#структура-рангов) |
+| Binary $H(7,4)$ perfection, Fano supports, 3-bit syndrome separation, diagnosability rigidity | **[T]** | `T-41g`, `T-41h`, `T-93`, `T-224`, [3.1–3.3](#код-хэмминга) |
+| Universal lower bound $\ge 3$ nonzero continuous phase Gaps & psychosis diagnosis | **[✗]** (withdrawn) | `T-90 [✗]`, [3.4](#код-хэмминга) |
+| Continuous-coherence Hamming analogy, syndrome clinical reading, and E/O/U parity metaphor | **[I]** | [3.5](#код-хэмминга), [4–5](#клиническая-практика) |
 
 ---
 
@@ -551,26 +503,26 @@ graph TD
 The computational scaling of the algorithms described in this document **has not been analyzed**. In particular:
 - Computing the Choi matrix $J(\varphi) \in \mathbb{C}^{49 \times 49}$ requires $O(N^4)$ operations for $N = 7$, but scaling for composite systems ($N = 7^k$) is unknown.
 - Spectral decomposition of the Gap operator $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ is $O(N^3)$, but for large $N$ approximate spectroscopy may be required.
-- Syndrome decoding (section 3.5) for $N > 7$ is not defined.
+- Binary syndrome decoding (section 3.5) applies to $N = 7$ under a declared binary encoding (`T-93`, `T-224`).
 :::
 
 ---
 
 ### What We Learned {#что-мы-узнали}
 
-Let us summarize the chapter — from mathematical constructions to practical implications:
+Let us summarize the chapter — from exact algebra to honest scope limits:
 
-1. **The Choi-Jamiołkowski representation** allows the self-modeling process $\varphi$ to be turned into a matrix $J(\varphi) \in \mathbb{C}^{49 \times 49}$ amenable to spectral analysis. The canonical $\varphi_{\text{coh}}$ **preserves the phases** of coherences — distortions arise not from the self-modeling channel, but from precession and dissipation.
+1. **Choi–Jamiołkowski representation (`T-41j`, `T-334`):** Both $\mathcal{P}_{\text{base}}$ and $\mathcal{P}_{\text{Fano}}$, as well as their mixture $\mathcal{P}_\alpha$, have **Choi rank 7** (not 28) and strictly preserve coherence phases $\arg(\gamma_{ij})$.
 
-2. **All opacity of a 7-dimensional system is described by three numbers** $(\lambda_1, \lambda_2, \lambda_3)$ — spectral parameters of the Gap operator $\hat{\mathcal{G}} \in \mathfrak{so}(7)$. Opacity rank $r \in \{0, 1, 2, 3\}$ determines the qualitative nature of the self-understanding disorder.
+2. **Three spectral parameters:** Any real skew-symmetric Gap operator $\hat{\mathcal{G}} = \operatorname{Im}\Gamma \in \mathfrak{so}(7)$ has spectrum $\{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$ and opacity rank $r \in \{0, 1, 2, 3\}$.
 
-3. **Topological protection at $r = 3$**: at maximum rank with generic spectrum the second homotopy group $\pi_2(G_2/T^2) = \mathbb{Z}^2$ forbids a smooth transition to transparency. A deep crisis requires a *phase transition*, not gradual improvement.
+3. **Exact orbit topology (`T-25`, `T-69`):** Every $G_2/H$ orbit listed is **simply connected** ($\pi_1 = 0$), and for the generic flag manifold $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$; crucially, by **`T-69 [T]`**, $\pi_2$ supplies **no physical energy barrier** and does not prevent smooth contraction inside the convex space $\mathcal{D}(\mathbb{C}^7)$.
 
-4. **The opacity paradox**: Gap raises purity $P$ (Theorem 2.3). A system needs opacity *for the sake of* its integrity — a perfectly transparent system is static and dead.
+4. **Purity decomposition:** $P = \operatorname{Tr}(\Gamma^2) = P_{\text{sym}} + 2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$ — imaginary coherences contribute positively to total purity $P$.
 
-5. **Hamming code H(7,4)** connects 7 dimensions with a perfect code capable of detecting 2 and correcting 1 error. The three check dimensions (E, O, U) play the role of "parity bits," monitoring the integrity of the four informational dimensions (A, S, D, L).
+5. **Canonical Hamming code $H(7,4)$ (`T-41g`, `T-41h`, `T-93`, `T-224`):** With the 7 canonical Singer Fano lines as weight-3 codewords, `(E, O, U)` form a systematic non-collinear check triple separating single binary faults — while the former universal continuous-Gap count bound ($\ge 3$ nonzero Gaps) is **withdrawn (`T-90 [✗]`)** without a declared binary encoder and noise law.
 
-6. **Triple coincidence** — the Fano plane PG(2,2) simultaneously defines the octonion multiplication table, the parity-check matrix of H(7,4), and the structure of coherent connections in the holon. This is not an analogy, but an identity.
+6. **Canonical 7 axes:** All algebraic and interpretive mappings use the canonical basis **A (Articulation), S (Structure), D (Dynamics), L (Logic), E (Interiority), O (Ground), U (Unity)**.
 
 :::tip Bridge to the Next Chapter
 We have explored the *static* algebra of the Gap operator — its spectrum, ranks, and topology. But Gap does not stand still: it evolves, and its evolution contains **qualitative transitions** — bifurcations. In the [next chapter](./bifurcation) we will see how, as parameters change smoothly, the Gap landscape reorganizes abruptly: stable states disappear, oscillations are born, bistability with hysteresis emerges. Bifurcations are the "forks of fate" of a coherent system.

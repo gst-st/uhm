@@ -105,7 +105,7 @@ $\binom{7}{2} = 21$ pairs of dimensions define 21 coherences $\gamma_{ij}$, each
 | $(S,D)$ | $\{S,D,E\}$ | $\mathbf{3}$-$\mathbf{3}$ | Structural dynamics |
 | $(L,E)$ | $\{L,E,O\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | Logic of interiority |
 | $(L,U)$ | $\{D,L,U\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | Logical unity |
-| $(E,U)$ | $\{E,U,A\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | **Higgs channel** |
+| $(E,U)$ | $\{E,U,A\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | Interiority–unity channel |
 | $(A,L)$ | $\{A,S,L\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Articulation of logic |
 | $(A,O)$ | $\{O,A,D\}$ | $O$-link | Observation of articulation |
 | $(L,O)$ | $\{L,E,O\}$ | $O$-link | Logical foundation |
@@ -159,15 +159,15 @@ $$
 $\mathcal{G}_{\text{total}}$ is defined as the **full** Frobenius norm (counting both pairs $(i,j)$ and $(j,i)$): $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = \sum_{i,j} |\hat{\mathcal{G}}_{ij}|^2 = 2\sum_{i<j} \mathrm{Im}(\gamma_{ij})^2$. The factor of 2 is due to the antisymmetry $\hat{\mathcal{G}}_{ji} = -\hat{\mathcal{G}}_{ij}$. This ensures consistency with the purity decomposition $P = P_{\text{sym}} + \mathcal{G}_{\text{total}}$ (Theorem 4.1) and the spectral formula $\mathcal{G}_{\text{total}} = 2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$ (Theorem 3.1).
 :::
 
-#### Identity with the Dirac operator [T] {#тождество-tr-d2}
+#### Matrix identity with the chosen Dirac entry norm [T] {#тождество-tr-d2}
 
-:::tip Corollary (Spectral identity)
+:::tip Corollary (Matrix trace identity) [T]
 
 $$
-\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
+\mathrm{Tr}(D^2) = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
 $$
 
-where $D_{\mathrm{int}}$ is the [internal Dirac operator](/docs/core/foundations/spacetime#теорема-спектральная-тройка) (T-53 [T]) with elements $[D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}$. This identity connects the total Gap to the coefficient $a_2$ of the [spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [T]) and justifies the derivation of the potential [$V_{\mathrm{Gap}}$](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) from the axioms.
+for the Hermitian zero-diagonal matrix $D$ defined in [§5 (T-73)](#теорема-gap-серра) with entries $D_{ij} = \omega_0\,|\mathrm{Im}\,\gamma_{ij}|\,e^{i\arg\gamma_{ij}}$ ($i\neq j$, zero when $\gamma_{ij}=0$). This is an exact algebraic identity for the chosen matrix $D$; it does **not** identify $\hat{\mathcal{G}}$ with a curvature 2-form or derive the potential [$V_{\mathrm{Gap}}$](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) from the axioms (the former spectral-action derivation is withdrawn [✗], see [§5](#кривизна-серра) and [T-331(e)](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия)).
 :::
 
 **Proof.** (a) $\hat{\mathcal{G}}^T = \mathrm{Im}(\Gamma)^T$. Since $\mathrm{Im}(\gamma_{ij}) = -\mathrm{Im}(\gamma_{ji})$ (consequence of Hermiticity), we get $\hat{\mathcal{G}}^T = -\hat{\mathcal{G}}$. (b) Standard property of antisymmetric matrices of odd dimension. (c) $\mathfrak{so}(7)$ is the space of antisymmetric $7 \times 7$ matrices. (d) $\|\hat{\mathcal{G}}\|_F^2 = \sum_{ij} |\hat{\mathcal{G}}_{ij}|^2 = 2\sum_{i<j} \mathrm{Im}(\gamma_{ij})^2$ (the factor of 2 from counting both pairs $(i,j)$ and $(j,i)$). $\square$
@@ -195,12 +195,8 @@ Let $\mathrm{spec}(\hat{\mathcal{G}}) = \{0, \pm i\lambda_1, \pm i\lambda_2, \pm
 | 2 | $(\lambda_1, \lambda_2, 0)$ | Two-dimensional opacity |
 | 3 | $(\lambda_1, \lambda_2, \lambda_3)$ | Full opacity (maximum rank) |
 
-:::info Remark [I]
-The maximum opacity rank = 3 coincides with the number of "check" dimensions (E, O, U) in the [Hamming code H(7,4) analogy](/docs/core/dynamics/gap-dynamics#код-хэмминга). This coincidence connects the algebra of the Gap operator to the coding-theoretic structure.
-:::
-
 :::info Connection between Gap rank and the Hamming code
-Any real antisymmetric $7\times7$ matrix has rank at most six, with three rotation planes. This follows from skew-symmetry and odd dimension, independently of a Fano structure. The Hamming code H(7,4) separately has three check bits; their numerical equality establishes no dynamical or coding equivalence.
+Any real antisymmetric $7\times7$ matrix has rank at most six, with three rotation planes. This follows from skew-symmetry and odd dimension, independently of a Fano structure. The Hamming code H(7,4) separately has three check bits ([Hamming code analogy](/docs/core/dynamics/gap-dynamics#код-хэмминга)); their numerical equality establishes no dynamical or coding equivalence.
 :::
 
 ---
@@ -344,7 +340,7 @@ The former T.9.1 phase equation is withdrawn [✗]: its RHS used a vector-valued
 
 - [Gap dynamics](/docs/core/dynamics/gap-dynamics) — bifurcations, non-Markovian effects, Choi–Jamiołkowski
 - [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — Fisher metric, Lagrangian, T_eff
-- [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) — three phases, Whitney catastrophes
+- [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) — three phases, bifurcation regimes
 - [Dual-aspect Gap semantics](/docs/physics/dual-aspect/gap-semantics) — 49-element map
 - [G₂ structure](/docs/physics/gauge-symmetry/g2-structure) — G₂ = $\mathrm{Aut}(\mathbb{O})$
-- [Proofs: Fano channel](/docs/proofs/gap/fano-channel) — rigorous theorems on G₂-covariance
+- [Proofs: Fano channel](/docs/proofs/gap/fano-channel) — Fano–atomic proportionality, frame-group $\Gamma_{\!\text{oct}}$ covariance, and canonical $\mathcal{D}_{G_2}$

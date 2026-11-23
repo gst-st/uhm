@@ -31,10 +31,10 @@ The idea that change is a fundamental feature of reality is as old as philosophy
 
 **Erwin Schrödinger** (1887–1961) discovered that at the quantum level dynamics is described not by coordinates and velocities, but by a **wave function** obeying the equation $i\hbar \partial_t |\psi\rangle = H|\psi\rangle$. This is unitary evolution — deterministic, reversible, lossless. But real quantum systems interact with their environment, and unitarity alone is insufficient.
 
-**Göran Lindblad** (1940–2022) derived in 1976 the general form of the evolution equation for **open quantum systems** — systems that exchange information with their environment. The Lindblad equation adds dissipative terms to the unitary part, describing decoherence and information loss. This form is the foundation of the UHM evolution equation.
+**Göran Lindblad** (1940–2008) derived in 1976 the general form of the evolution equation for **open quantum systems** — systems that exchange information with their environment. The Lindblad equation adds dissipative terms to the unitary part, describing decoherence and information loss. This form is the foundation of the linear open-system part of the UHM evolution equation.
 
 :::tip Key step of UHM
-In UHM a **third** — **regenerative** — term $\mathcal{R}$ is added to the unitary and dissipative parts, describing the ability of living systems to restore coherence. This is not an arbitrary addition: the form of $\mathcal{R}$ is **fully derived** from axioms [A1–A5](/docs/core/foundations/axiom-omega) and standard thermodynamics.
+In UHM a **third** — **regenerative** — term $\mathcal{R}$ is added to the unitary and dissipative parts as an effective nonlinear feedback model (**[D]/[P]**), describing the capacity of living systems to restore coherence from an environmental resource. Unlike the linear GKSL generator, $\mathcal{R}$ is not a linear CPTP semigroup and is not uniquely forced by axioms [A1–A5](/docs/core/foundations/axiom-omega) alone; see [evolution of $\Gamma$](/docs/core/dynamics/evolution).
 :::
 
 :::note Logic of historical development
@@ -73,8 +73,8 @@ $$
 \frac{d\Gamma}{d\tau} = \underbrace{-i[H_{eff}, \Gamma]}_{\text{pendulum}} + \underbrace{\mathcal{D}[\Gamma]}_{\text{friction}} + \underbrace{\mathcal{R}[\Gamma, E]}_{\text{life}}
 $$
 
-:::info Why exactly three, and not two or four?
-Three terms are not an arbitrary choice. The unitary part follows from quantum mechanics (the von Neumann equation). The dissipative part follows from Lindblad's theorem: for any CPTP generator the dissipative correction has precisely this form. The regenerative part is the unique addition compatible with CPTP, autopoiesis, and standard thermodynamics. There simply is no fourth independent term: any other addition either violates CPTP (physically inadmissible) or reduces to a combination of the three already present.
+:::info Why these three terms?
+The unitary part comes from quantum mechanics (the von Neumann equation) and preserves spectrum and purity. The dissipative part comes from the GKSL (Gorini–Kossakowski–Sudarshan–Lindblad) theorem: every linear Markovian CPTP semigroup generator decomposes into a Hamiltonian commutator plus a Lindblad dissipator. The third term $\mathcal{R}$ is an **effective nonlinear feedback model** (**[D]/[P]**) added to capture resource-driven coherence restoration beyond a single-copy linear semigroup (for multi-copy operational realizations and feedback costs, see [evolution of $\Gamma$](/docs/core/dynamics/evolution)).
 :::
 
 ## Function
@@ -99,18 +99,8 @@ Without dynamics the Holon is a "frozen snapshot", not a living system. See [pro
 
 **Time emerges from the structure of Γ:** Dynamics does not "happen in time" — time is **derived** from correlations between dimensions. According to the [emergent time theorem](../../proofs/dynamics/emergent-time), internal time τ arises as the parameter of conditional states relative to [dimension O](./dimension-o).
 
-:::tip Key consequence [T]
-The rate of flow of internal time is determined by the coherences of D with the other dimensions:
-
-$$
-\frac{d\tau}{d\sigma} \propto \sum_{i \neq D} |\gamma_{Di}|^2
-$$
-
-where $\sigma$ is the external affine parameter (coordinate time of the observer) and $\tau$ is the [internal emergent time](../../proofs/dynamics/emergent-time).
-
-When $\gamma_{Di} \to 0$ for all $i \neq D$, time "freezes".
-
-**Status:** **[T]** — consequence of the [finite spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$: from the spectral triple $d\tau/d\sigma = \|D_O\Gamma\|_{\text{HS}} = \omega_0\sqrt{\sum_{i \neq O}|\gamma_{Oi}|^2 \cdot \text{Gap}(O,i)^2} \propto \sqrt{\sum_i |\gamma_{Di}|^2}$.
+:::tip Operational clock rate and Bures speed
+In the Page–Wootters framework, internal time $\tau$ is the conditioning parameter relative to an independent clock register $\mathcal{H}_O$ with clock Hamiltonian $H_O$ and interaction constraint $\hat{C}$ ([Theorem on emergent time](../../proofs/dynamics/emergent-time)). Along a unitary trajectory $\Gamma(\tau) = e^{-iH_{\mathrm{eff}}\tau}\Gamma(0)e^{iH_{\mathrm{eff}}\tau}$, the geometric rate of state change in Bures distance is bounded by the energy variance $\Delta H_{\mathrm{eff}}$ (the Mandelstam–Tamm / Braunstein–Caves speed limit); it is **not** determined by an algebraic formula $d\tau/d\sigma \propto \sum_{i \neq D}|\gamma_{Di}|^2$ or a finite spectral triple norm (earlier contradictory formulas comparing $\sum_{i\neq D}|\gamma_{Di}|^2$ with $\sqrt{\sum_i |\gamma_{Di}|^2}$ and $\|D_O\Gamma\|_{\mathrm{HS}}$ have been withdrawn).
 :::
 
 ## Mathematical representation
@@ -127,9 +117,9 @@ $$
 \Gamma(\tau) = U(\tau) \Gamma(0) U^\dagger(\tau)
 $$
 
-**Connection with the Hamiltonian:** The operator $U(\tau)$ is fully determined by the effective Hamiltonian $H_{eff}$ from the Page–Wootters constraint. This is the **S ↔ D duality** — structure and dynamics are two aspects of the same Hamiltonian:
-- $S$: spectrum $\{E_n\}$ (what is preserved)
-- $D$: evolution $U(\tau) = e^{-iH_{eff}\tau}$ (how it changes)
+**Connection with the Hamiltonian:** The operator $U(\tau)$ is determined by both the spectrum and the eigenbasis of the effective Hamiltonian $H_{\mathrm{eff}}$ from the Page–Wootters constraint. This is the **S ↔ D duality** — structure and dynamics are two aspects of the same Hermitian generator:
+- $S$: spectral decomposition $\{E_n, |\psi_n\rangle\}$ (what is preserved)
+- $D$: unitary evolution $U(\tau) = e^{-iH_{\mathrm{eff}}\tau}$ (how it changes)
 
 ## Full evolution equation
 
@@ -141,9 +131,9 @@ $$
 $$
 
 where:
-- τ is the parameter of conditional states (Page–Wootters)
+- τ is the parameter of conditional states (Page–Wootters on a supplied clock factor)
 - $H_{eff}$ is the effective Hamiltonian arising from the constraint $\hat{C}$
-- The equation is a **consequence** of the structure of $\Gamma_{total}$, not a postulate
+- The unitary part follows from the conditional Page–Wootters construction, while $\mathcal{D}$ and $\mathcal{R}$ specify the effective open-system and feedback dynamics (**[D]/[P]**)
 
 ### Components:
 
@@ -173,17 +163,17 @@ $$
 Imagine a carefully constructed house of cards (high coherence). Wind (interaction with the environment) gradually destabilises the cards — the house loses structure. This is decoherence: the loss of quantum correlations through interaction with a "noisy" environment. The larger $\gamma_k$, the stronger the "wind".
 :::
 
-**3. Regenerative part** [T] (restoration):
+**3. Regenerative part** **[D]/[P]** (effective nonlinear feedback restoration):
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
-- Can increase $P$ (regeneration)
-- Form **fully derived** from axioms A1–A5 + standard thermodynamics ([derivation](../dynamics/evolution#вывод-формы-регенерации))
-- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate [T], $\kappa_0$ — [categorical derivation](../foundations/axiom-septicity#структурный-анзац-kappa0)
-- $(\rho_* - \Gamma)$ — unique CPTP relaxation [T], $\rho_* = \varphi(\Gamma)$ — categorical self-model ([φ operator](/docs/core/operators/phi-operator))
-- $g_V(P)$ — V-preservation gate [T] (Landauer + V-invariance, [derivation](../dynamics/evolution#теорема-v-preservation-gate))
+- Can increase $P$ (coherence restoration)
+- Effective mean-field / classical-record feedback ansatz ([evolution of $\Gamma$](../dynamics/evolution#вывод-формы-регенерации)); not a linear CPTP semigroup and not uniquely derived from A1–A5 alone
+- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — effective regeneration rate ansatz **[D]/[P]** (requires $\varepsilon$-regularization or bounded $\kappa_0$ for global Lipschitz well-posedness; see [axiom-septicity](../foundations/axiom-septicity#структурный-анзац-kappa0))
+- $(\rho_* - \Gamma)$ — convex relaxation toward the target self-model $\rho_* = \varphi(\Gamma)$ ([φ operator](/docs/core/operators/phi-operator)), ensuring forward invariance of $\mathcal{D}(\mathbb{C}^7)$ **[T]** whenever the scalar rate $\kappa(\Gamma)g_V(P) \ge 0$ is locally Lipschitz
+- $g_V(P)$ — threshold-modulating feedback gate **[D]/[P]** ([evolution](../dynamics/evolution#теорема-v-preservation-gate))
 - The nonlinearity of $\mathcal{R}$ in $\Gamma$ keeps the **marginal identity** $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ [T]; no-signalling of the full dynamics holds only in the non-selective reading [C] — with the Lüders update at a distant partner the gate $g_V$ signals ([proof and the counterexample](../dynamics/evolution#запрет-сигнализации); [physics correspondence §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). An earlier line said the nonlinearity "does not violate" the no-signalling constraint; retracted.
 
 :::info Regeneration: why life is not merely complex physics
@@ -202,7 +192,7 @@ For clarity, let us gather the three types of dynamics into a unified table of p
 | **Reversibility** | Fully reversible | Irreversible | Irreversible (but constructive) |
 | **Effect on $P$** | Does not change | Decreases | Can increase |
 | **Physical meaning** | Coherent evolution | Loss of information | Restoration of order |
-| **Mathematical source** | Von Neumann equation | Lindblad theorem | Axioms A1–A5 + thermodynamics |
+| **Mathematical source** | Von Neumann equation | GKSL theorem | Effective nonlinear feedback model [D/P] |
 | **Requires resource?** | No | No | Yes ($E$ from environment) |
 | **Exists in isolation in nature?** | Only as approximation | Yes (non-living matter) | Only together with $\mathcal{D}$ |
 
@@ -225,10 +215,10 @@ Purity $P = \mathrm{Tr}(\Gamma^2)$ is the central measure of the Holon's coheren
 **Regenerative regime** (full equation): The balance between $\mathcal{D}$ and $\mathcal{R}$ determines the fate of the system:
 - If $\mathcal{R}$ dominates: $P$ grows, the system accumulates coherence
 - If $\mathcal{D}$ dominates: $P$ falls, the system degrades
-- At equilibrium ($dP/d\tau = 0$): the system rests on an **attractor** — a stable stationary state with $P > P_{\text{crit}} = 2/7$ [T]
+- At equilibrium ($dP/d\tau = 0$): the system rests on an **attractor** — a stable stationary state with $P > P_{\text{crit}} = 2/7$ **[D]**
 
 :::warning Critical threshold
-Viability requires $P > P_{\text{crit}} = 2/7$ [T]. Below this threshold the system cannot maintain sufficient distinguishability between dimensions and "crumbles" into an indistinguishable mixture. Details: [critical purity theorem](/docs/proofs/dynamics/theorem-purity-critical).
+The operational viability criterion requires $P > P_{\text{crit}} = 2/7$ **[D]**. Below this chosen cut the configuration falls below the structural-majority threshold (see [critical purity analysis](/docs/proofs/dynamics/theorem-purity-critical)).
 :::
 
 ### Viability as dynamic balance {#жизнеспособность-баланс}
@@ -241,7 +231,7 @@ $$
 \left.\frac{dP}{d\tau}\right|_{\mathcal{D}} + \left.\frac{dP}{d\tau}\right|_{\mathcal{R}} = 0
 $$
 
-This equation defines the **attractor** $\Gamma_*$ — the stationary state towards which the system tends. For a viable Holon $P(\Gamma_*) > 2/7$ [T], with the upper boundary of the "Goldilocks zone" being $P = 3/7$ [T] (T-124): $P \in (2/7, 3/7]$ — the [consciousness window](/docs/proofs/dynamics/theorem-purity-critical).
+This equation defines the **attractor** $\Gamma_*$ — the stationary state towards which the system tends. For a viable Holon $P(\Gamma_*) > 2/7$ **[D]**, while the upper bound $P \le 3/7$ (**[T]** given the **[D]** reflection cut $R \ge 1/3$, T-124) yields the operational window $P \in (2/7, 3/7]$ — the [consciousness window](/docs/proofs/dynamics/theorem-purity-critical).
 
 ## Emergent time {#эмерджентность-времени}
 
@@ -269,18 +259,13 @@ where $|\tau_O\rangle$ is the "clock reading" in the O-dimension. Thus time **ar
 Imagine a film reel wound into a loop — the entire reel "exists" simultaneously. But the projector, illuminating frame after frame, creates the illusion of motion. In UHM the O-dimension is the "projector", and D is the "content of the frames". Time is the order in which the "projector" illuminates the correlations.
 :::
 
-### Rate of time flow
+### Rate of evolution in internal time
 
-An important consequence of emergence: the rate of time flow is **not the same** for all systems. It depends on how strongly the D-dimension is coupled to the others:
+In the Page–Wootters framework, how rapidly the conditional state $\Gamma(\tau)$ changes per unit of clock parameter $\tau$ is governed by the effective generator ($H_{\mathrm{eff}}$, $\mathcal{D}$, $\mathcal{R}$) and its Bures velocity $ds_B/d\tau$ (bounded in the unitary case by the energy spread $\Delta H_{\mathrm{eff}}$), rather than by a single off-diagonal sum $\sum_{i \neq D}|\gamma_{Di}|^2$:
 
-$$
-\frac{d\tau}{d\sigma} \propto \sum_{i \neq D} |\gamma_{Di}|^2
-$$
-
-This means:
-- **Strongly coupled system** (large $|\gamma_{Di}|$): time flows fast, events succeed one another rapidly. Example: the brain in a waking state — high coherence between dynamics and other dimensions.
-- **Weakly coupled system** (small $|\gamma_{Di}|$): time "slows down". Example: deep dreamless sleep, anaesthesia — subjective time nearly stops.
-- **Completely isolated** ($\gamma_{Di} = 0$ for all $i$): time freezes. The system is "outside of time" — eternal, but dead.
+- **Strongly driven / non-commuting state** (large $\|[H_{\mathrm{eff}}, \Gamma]\|$ or active $\mathcal{D}+\mathcal{R}$): conditional states change rapidly along $\tau$.
+- **Near-stationary state** ($\dot{\Gamma} \approx 0$): conditional states evolve slowly relative to the clock ticks.
+- **Exact stationary point** ($\dot{\Gamma} = 0$): the state is frozen relative to the clock parameter $\tau$.
 
 Detailed derivation: [Theorem on emergent time](../../proofs/dynamics/emergent-time).
 
@@ -349,7 +334,7 @@ At strata I–II dynamics "just happens". At strata III–IV the system **knows*
 
 **Stratum III (Mind).** Dynamics acquires **purposefulness**. The brain does not merely react to stimuli — it builds internal models of the world and **minimises free energy** $F$ (Friston's active inference theory). Learning is *directed* regeneration: new neural connections form not randomly, but so as to reduce the discrepancy between prediction and reality.
 
-**Stratum IV (Consciousness).** The deepest level: the system not only changes, but also **observes its own changes**. The reflection measure $R \geq 1/3$ [T] means that the Holon "sees" its own dynamics — the stream of consciousness ($\Gamma(\tau)$ as a function of internal time) is accessible to self-observation. This is what we experience as "the flow of thoughts", "the stream of impressions", "the sense of time".
+**Stratum IV (Consciousness).** The deepest level: the system not only changes, but also **observes its own changes**. The reflection threshold $R \geq 1/3$ **[D]** means that the Holon maintains an operational self-model of its dynamics — the stream of consciousness ($\Gamma(\tau)$ as a function of internal time) is accessible to self-observation. This is what we experience as "the flow of thoughts", "the stream of impressions", "the sense of time".
 
 ## Examples
 
@@ -410,7 +395,7 @@ $$
 H_{eff} \xrightarrow{\text{spectrum}} S \quad \text{and} \quad H_{eff} \xrightarrow{\text{exponential}} D
 $$
 
-The spectrum of the Hamiltonian (eigenvalues $\{E_n\}$) determines **what** is preserved — structure. The exponential of the Hamiltonian ($e^{-iH\tau}$) determines **how** the system changes — dynamics. Removing one without the other is impossible: there is no spectrum without the operator, no evolution without the spectrum.
+The spectral decomposition of the Hamiltonian (both eigenvalues $\{E_n\}$ and eigenbasis $\{|\psi_n\rangle\}$) determines **what** is preserved — structure. The exponential of the Hamiltonian ($e^{-iH\tau}$) determines **how** the system changes — dynamics. Removing one without the other is impossible: both arise from the same Hermitian generator $H_{\mathrm{eff}}$.
 
 This duality has a deep analogy in music: the **score** (S) defines the notes, intervals, harmony — the static structure of a piece. **Performance** (D) is the unfolding of the score in time: sounds, rhythm, dynamics of volume. A score without performance is dead; a performance without a score is chaos.
 
@@ -443,16 +428,16 @@ The elements $\gamma_{Di}$ of the coherence matrix describe the connection of dy
 
 ## Dynamics and the Fano plane {#динамика-и-фано}
 
-Dimension D ($e_3$ in the octonionic correspondence) belongs to three [Fano lines](/docs/core/structure/dimensions#октонионная-интерпретация):
+Dimension D ($e_3$ in the chosen oriented octonionic frame) belongs to three canonical Singer-cyclic [Fano lines](/docs/core/structure/dimensions#октонионная-интерпретация):
 
-| Fano line | Sector type | Physical meaning |
-|-----------|-------------|-----------------|
-| $\{S, D, E\}$ | **3**–**3**–$\bar{\mathbf{3}}$ | Structural dynamics connected with interiority |
-| $\{D, L, U\}$ | **3**–$\bar{\mathbf{3}}$–$\bar{\mathbf{3}}$ | Dynamic logic of unity: causal integration |
-| $\{O, A, D\}$ | $1_O$–**3**–**3** | Observable articulated dynamics: direct O-connection |
+| Fano line | Dimensions | Interpretive role |
+|-----------|------------|-------------------|
+| $\{S, D, E\}$ | Structure + Dynamics + Interiority | Structural dynamics linked with interiority |
+| $\{D, L, U\}$ | Dynamics + Logic + Unity | Dynamic logic of unity: causal integration |
+| $\{O, A, D\}$ | Ground + Articulation + Dynamics | Observable articulated dynamics: direct $O$-incidence |
 
-:::info Combinatorial profile of D
-Of the seven dimensions D is the only element of the **3**-sector connected with O through another element of **3** ($A$) via the line $\{O, A, D\}$. This defines the unique role of D: dynamics is **directly visible** through the ground, through the "lens" of articulation. By [theorem T-177](/docs/core/structure/dimensions#комбинаторная-единственность) the semantic role of D is combinatorially unique.
+:::info Combinatorial incidence of D
+By the incidence geometry of $\mathrm{PG}(2,2)$ ([What incidence fixes](/docs/core/structure/dimensions#комбинаторная-единственность)), once the point $O$ and the unordered pair $\{E, U\}$ (non-collinear with $O$) are supplied as model marks, $A = E + U$ is fixed on $\{E, U, A\}$, and $D = O + A$ is then uniquely constrained as the third point on $\{O, A, D\}$. No real basis axis lies in the complex $\mathrm{SU}(3)$ triplet $\mathbf{3}$, so earlier sector-3 readings are not used here.
 :::
 
 ### What the Fano lines say about dynamics {#фано-линии-динамика}
@@ -470,16 +455,16 @@ Each Fano line $\ell = \{i,j,k\}$ defines a [Lindblad operator](/docs/core/opera
 ### Octonionic context {#октонионный-контекст}
 
 :::note Chosen octonionic correspondence [D/I]
-The assignment $D=e_3\in\operatorname{Im}\mathbb O$ belongs to the declared oriented orthonormal frame. For a specified positive octonionic three-form, its stabilizer is $G_2$ [T]. This group identity does not uniquely assign functional names to axes or determine a physical encoder. The former universal T-42a rigidity is withdrawn [✗]; [reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) give a conditional comparison theorem. Incidence can constrain labels **after** the required marks are supplied; those marks and the remaining label convention are model data. The [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) states the additional algebraic inputs, and [the frame discussion](./dimensions#октонионная-интерпретация) distinguishes its symmetries from physical gauge equivalence.
+The assignment $D=e_3\in\operatorname{Im}\mathbb O$ belongs to the declared oriented orthonormal frame. For a specified positive octonionic three-form, its stabilizer is $G_2$ [T]. This group identity does not uniquely assign functional names to axes or determine a physical encoder. [Reversible-identification assumptions](/docs/proofs/categorical/uniqueness-theorem#теорема-единственности) give a conditional comparison theorem. Incidence can constrain labels **after** the required marks are supplied; those marks and the remaining label convention are model data. The [structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation) states the additional algebraic inputs, and [the frame discussion](./dimensions#октонионная-интерпретация) distinguishes its symmetries from physical gauge equivalence.
 :::
 
 ## Key conclusions of the chapter {#ключевые-выводы}
 
-1. **Dynamics is not motion in time, but the source of time.** Time $\tau$ arises from D↔O correlations via the Page–Wootters mechanism.
-2. **Three types of dynamics exhaust all possibilities.** Unitary (reversible), dissipative (irreversible, destructive) and regenerative (irreversible, constructive) — there are no others.
-3. **The arrow of time is a consequence, not a postulate.** Non-unitary CPTP channels are irreversible by construction; along a linear Lindblad semigroup the relative entropy to its stationary state does not increase (Spohn 1978), and the von Neumann entropy itself grows only under unital dynamics (the earlier "entropy increases automatically" is corrected, 2026-09-25).
-4. **Life is dynamic balance.** Living systems maintain $P > 2/7$ through the equilibrium between $\mathcal{D}$ and $\mathcal{R}$.
-5. **D is combinatorially unique.** On the Fano plane D is the only **3**-dimension with a direct O-connection, which explains its role as the source of emergent time.
+1. **Dynamics is not motion in time, but the source of time.** Time $\tau$ arises from correlations with an independent clock register via the Page–Wootters mechanism.
+2. **Three dynamical regimes.** Unitary (reversible), linear GKSL dissipative (irreversible), and effective nonlinear regenerative feedback $\mathcal{R}$ (**[D]/[P]**).
+3. **The arrow of time is a consequence, not a postulate.** Non-unitary CPTP channels are irreversible by construction; along a linear Lindblad semigroup the relative entropy to its stationary state does not increase (Spohn 1978), and the von Neumann entropy itself grows only under unital dynamics.
+4. **Life as dynamic balance.** Living systems in the model maintain $P > 2/7$ (**[D]**) through the equilibrium between $\mathcal{D}$ and $\mathcal{R}$.
+5. **Incidence of D on the Fano plane.** On $\mathrm{PG}(2,2)$, $D$ lies on $\{S, D, E\}$, $\{D, L, U\}$, and $\{O, A, D\}$, and is constrained by incidence once $O$ and $\{E, U\}$ are marked.
 
 ---
 

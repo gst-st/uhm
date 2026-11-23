@@ -131,13 +131,13 @@ The dictionary is exact on every line that matters:
 |---|---|---|
 | trainable state $q$ | coherence matrix $\Gamma\in\mathcal D(\mathbb C^7)$ | structural |
 | loss $-\mathcal F$ | functional $\mathcal F[\varphi;\Gamma]$ | The proposed expression is a cross-entropy. Its minimum need not be the specified channel. |
-| metric $g$ | **Bures/SLD metric**, one member of the Petz family | selected metric [D], operational reading requires its bridge |
+| metric $g$ | **Bures/SLD metric**, pointwise minimal normalized member of the Petz family (`T-187` `[T]`) | selected metric `[D]`, operational reading requires its bridge |
 | noise covariance $\kappa$ | covariance of one-step Kraus increments of $\mathcal D_\Omega$ | depends on the [specified measurement instrument](#постановка) |
-| covariant descent | regeneration toward a target $\rho_*$ | A specified family of maps [D]. |
-| emergent time = block index | $\tau\in\mathbb Z_7$ (Page–Wootters) | T-38b, T-87 |
+| covariant descent | regeneration toward a target $\rho_*$ | A specified family of maps `[D]`. |
+| emergent time = block index | $\tau\in\mathbb Z_7$ (Page–Wootters) | `T-38b`, `T-87` |
 | maximum-entropy identity $g^{-1}=c$ (his 4.7) | **derived here as a dynamical theorem** (§4) | this page |
-| multi-level structure | tensor product and specified aggregation | CC-5 holds at weak coupling for the stated aggregate. The $1/3$ Fano-channel contraction is a separate result. |
-| cellular network | Fano plane $\mathrm{PG}(2,2)$, *unique* optimal BIBD$(7,3,1)$ | T-41i |
+| multi-level structure | tensor product and specified aggregation | `CC-5` holds at weak coupling for the stated aggregate. The $1/3$ Fano-channel contraction is a separate result. |
+| cellular network | Fano plane $\mathrm{PG}(2,2)$, dominating pair design within nontrivial BIBD$(7,k,1)$ | `T-41i` `[T]` (in that restricted class; global optimality not proved) |
 
 ---
 
@@ -159,8 +159,11 @@ $$
 Every result on this page depends on the line set only through the
 design parameters $(v,k,r,b)=(7,3,3,7)$ — which axis-triples realise
 the lines never enters. Axis-*labelled* corollaries (such as the
-third-point screen quoted in §5) do require the canonical translate
-set of the corpus, $\{1,2,4\}+k \pmod 7$ with $U=6,\,O=7$ — see
+third-point screen quoted in §5) use the canonical Singer cyclic
+translate set of the corpus, $\{1,2,4\}+k \pmod 7$ under
+$(A,S,D,L,E,U,O) = (1,2,3,4,5,6,7)$ (note $U=6,\,O=7$), yielding the
+seven lines $\{A,S,L\}$, $\{S,D,E\}$, $\{D,L,U\}$, $\{L,E,O\}$,
+$\{E,U,A\}$, $\{U,O,S\}$, $\{O,A,D\}$ — see
 [selection rules](/docs/physics/gauge-symmetry/fano-selection-rules#каппа-по-подавленным).
 :::
 
@@ -641,10 +644,10 @@ decohered manifold is the attractor, so $\kappa^{\text{coh}}\to0$
 always; it is not identically zero everywhere.
 
 **Interpretation, and a genuine tension with VL.** UHM predicts a
-**two-sector structure**: a *population sector* with stochastic,
-natural-gradient learning ($a=1$, anisotropic through Fano), and a
-*coherence sector* that is noiseless and purely deterministic at
-$5\gamma/21$.
+**two-sector structure**: a *population sector* with stochastic noise
+whose covariance matches the inverse metric ($a=1$, anisotropic through
+Fano), and a *coherence sector* that is noiseless and purely
+deterministic at $5\gamma/21$.
 
 VL calls $a=1$ the "quantum regime" because it yields Schrödinger-like
 dynamics on the trainables from a discrete shift symmetry [V2]. In UHM
@@ -825,8 +828,11 @@ holons is viable, and its invariants lie within $O(g)$ of a member's
 but that aggregate follows the members' own generator only up to a forcing,
 depends on nothing but their marginals, and can die at strong coupling
 ([Theorem 9.6](/docs/applied/coherence-cybernetics/theorems#теорема-96-сильная-связь));
-identifying a population with a holon is an additional assumption (HOL).
-rather than a theorem about biology. If it is rejected, the mathematical covariance identity remains valid for its specified model; the learning and biological interpretation does not follow.
+identifying a population with a holon is an additional bridge
+assumption `(HOL)` `[I]`, rather than a theorem about biology. If it is
+rejected, the mathematical covariance identity remains valid for its
+specified model; the learning and biological interpretation does not
+follow.
 :::
 
 ---
@@ -847,7 +853,7 @@ rather than a theorem about biology. If it is rejected, the mathematical covaria
    relates a routinely measured object to an unmeasured one.
 3. *A specified frame.* The seven axes and positive three-form are inputs. Comparing encoders requires a common observation law and tests that distinguish their records.
 4. *A conditional finite design.* Given attenuation $1/3$ and sharp minimal projector realisation, the Fano classification is exact. Primitivity alone does not force pair coverage or block size.
-5. *A selected attenuation score.* The SAD value three belongs to the specified score and damping rule. It is not a universal limit on recursive representations. Twenty-one matrix pairs are not twenty-one independent communication addresses: an address bound requires a defined instrument, channel use and distinguishability task. Multiplying these counts does not prove a context-capacity theorem.
+5. *A selected attenuation score.* The algebraic score value three (`T-142` `[T]` for its specified score and damping convention) is not a universal limit on recursive representations (the universal cognitive depth ceiling `T-217 [✗]` is withdrawn). Twenty-one matrix pairs are not twenty-one independent communication addresses: an address bound requires a defined instrument, channel use and distinguishability task. Multiplying these counts does not prove a context-capacity theorem.
 
 6. *A variable that must not be trainable.* VL's organising distinction
    is trainable against non-trainable, and it leaves open which is which
@@ -877,7 +883,7 @@ rather than a theorem about biology. If it is rejected, the mathematical covaria
    his (7.5) supplies the criterion in a form UHM can meet exactly.
 3. *A macroscopic derivation route*: the cell/agent split of the
    *Self-Learning Universe* (memory-cost vs processing-cost) is a
-   physically motivated variational principle whose UHM counterpart —
+   physically motivated variational principle whose UHM counterpart is
    a specified tensor statistic and effective potential $V_{\rm Gap}$. A term-by-term comparison needs the observation maps and action coefficients in both models.
 
 **Computing, exploring and reusing [H].** These are useful architectural
@@ -946,7 +952,8 @@ For the constituent channels see the [BIBD contraction](/docs/core/operators/lin
 ## 12. Summary {#резюме}
 
 Vanchurin's framework asks: *which learning algorithm does nature
-implement?* UHM answers, without adjustable parameters:
+implement?* The selected UHM instrument yields the following exact
+conditional identities, with no adjustable parameters:
 
 $$
 \kappa^{\uparrow\uparrow}_{\text{at}}=\frac{\gamma}{4N}\,g^{-1}

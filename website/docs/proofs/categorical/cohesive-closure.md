@@ -1,7 +1,7 @@
 ---
 sidebar_position: 4
 title: "Cohesive Closure Theorem"
-description: "A single categorical construction closing three foundational vulnerabilities: phenomenal functor, emergent time, free energy"
+description: "Scope of cohesive modalities, SLD/Bures metric selection, and explicit physical/phenomenal bridge assumptions"
 ---
 
 # Cohesive constructions and metric-selection scope

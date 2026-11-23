@@ -8,7 +8,7 @@ sidebar_position: 8
 
 ## Purpose
 
-This document fixes the **operator-factorization protocol** for all "self-X" / "auto-X" / "само-X" constructions in the UHM corpus. The protocol is not a stylistic preference but a **structural invariant**, established by theorem **NO-19 (Articulation Hygiene)** in Noesis ([diakrisis.gst.st/11-noesis/07-theorems](http://diakrisis.gst.st/11-noesis/07-theorems)). The protocol is mandatory for every articulation passing the Noesis core pipeline (SMT → Axi → AFN-T → **Hygiene**).
+This document fixes the **operator-factorization protocol** for all "self-X" / "auto-X" / "само-X" constructions in the UHM corpus. The protocol is not a stylistic preference but a **structural invariant**, aligned with theorem **NO-19 (Articulation Hygiene)** in Noesis ([diakrisis.gst.st/11-noesis/07-theorems](http://diakrisis.gst.st/11-noesis/07-theorems)) and enforced as a writing discipline across the UHM interface and prose layer.
 
 ## Principle
 
@@ -32,12 +32,12 @@ For each recurring "self-X" construction in UHM:
 
 | Surface form | Operator $\Phi$ | Trajectory $\Phi^\kappa$ | Terminal $t$ | Source theorem |
 |---|---|---|---|---|
-| self-model / самомодель | $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ | $\varphi^\kappa$ on states | $\rho^* = \varphi(\Gamma)$ (conditional on stationary model) | T-96 |
-| self-modelling / самомоделирование | specified state map $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ | iteration in specified GKSL + feedback dynamics | stationary fixed point $\rho^*$ under stated contraction hypotheses | T-96 + T-39a |
+| self-model / самомодель | $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ | $\varphi^\kappa$ on states | image $\varphi(\Gamma)$; on a nontrivial dissipative attractor $\varphi(\rho^*) \neq \rho^*$ while $\mathcal{L}_\Omega[\rho^*]=0$ | T-96 + T-157 |
+| self-modelling / самомоделирование | specified state map $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ | iteration in specified GKSL + feedback dynamics | dynamical stationary state $\rho^*$ ($\mathcal{L}_\Omega[\rho^*]=0$) under stated contraction hypotheses | T-96 + T-39a + T-157 |
 | autopoiesis / автопоэзис | $\mathsf{A}^\mathrm{act}$ (activation) on AC-side | $\mathsf{A}^{\omega^2}$-iteration | $\varepsilon \in \mathrm{Fix}(\mathsf{A}^{\omega^2})$ | 113.T (Diakrisis) |
 | self-observation / самонаблюдение | specified state map $\varphi$ + reflection measure $R = 1/(7P)$ | trajectory of $\varphi^\kappa$ on states | stationary balance $\rho^*$; threshold $R \geq 1/3$ | T-126 + T-96 |
 | self-reference / самореференция | endomorphism $h:Y\to Y$ without fixed points and weakly point-surjective map $X\to Y^X$ | Lawvere diagonal construction | obstruction via depth stratification on nontrivial truth/comprehension objects | [Diakrisis, 87.T](https://diakrisis.gst.st/06-limits/06-absoluteness), [Diakrisis, 105.T](https://diakrisis.gst.st/06-limits/10-maximality-theorems) |
-| self-consistency / самосогласованность | fixed-point condition $\varphi(\Gamma) = \Gamma$ | — (point-level) | stationary state $\rho^*$ under stated model | T-96 |
+| self-consistency / самосогласованность | dynamical stationarity $\mathcal{L}_\Omega[\rho^*] = 0$ (distinct from map fixed point $\varphi(\Gamma) = \Gamma$) | — (point-level) | stationary state $\rho^*$ obeying $\kappa g_V(\varphi(\rho^*) - \rho^*) = -\mathcal{L}_0[\rho^*]$ | T-96 + T-157 |
 | self-awareness / самосознание | reflexive measure $R = 1/(7P)$ + Φ-integration | (P, R, Φ, D)-threshold | declared gate $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$ | T-96 + T-126 + T-129 + T-151 |
 | self-closure / самозамыкание | $\mathsf{M}^\kappa$-iteration on the articulation side | trajectory $\alpha \mapsto \mathsf{M}(\alpha) \mapsto \mathsf{M}^2(\alpha) \mapsto \ldots$ | $\alpha \in \mathrm{Fix}(\mathsf{M})$ | 04.T1, Axi-7 |
 | self-amplification / самоусиление | positive feedback $\Psi$ | $\Psi^k$-iteration | threshold activation value | Diakrisis §kinetic (context) |
@@ -80,11 +80,11 @@ Demonstration of the protocol on the key concept.
 > UHM establishes self-modelling through the operator $\varphi$. Self-observation is the system's ability to describe its own state. Autopoiesis is the system's self-reproduction through self-modelling.
 
 **After (operator-based)**:
-> UHM specifies a **state map** $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ together with a stationary condition $\rho^* = \varphi(\Gamma)$ under the stated dynamical model (T-96). **Reflection** relative to the canonical reference is quantified by the Hilbert–Schmidt projection $R = 1/(7P)$ (T-126). **Closure under the $\varphi$-trajectory** (on the dual AC-side, an $\mathsf{A}$-fixed point at level $\omega^2$ per 113.T Diakrisis) expresses trajectory maintenance relative to the declared process.
+> UHM specifies a **state map** $\varphi: \mathrm{D}(\mathbb{C}^7) \to \mathrm{D}(\mathbb{C}^7)$ together with the dynamical stationary balance $\mathcal{L}_\Omega[\rho^*] = 0$, i.e. $\kappa g_V(\varphi(\rho^*) - \rho^*) = -\mathcal{L}_0[\rho^*]$ (on a nontrivial dissipative attractor $\varphi(\rho^*) \neq \rho^*$, T-96, T-157). **Reflection** relative to the canonical reference is quantified by the Hilbert–Schmidt projection $R = 1/(7P)$ (T-126). **Closure under the $\varphi$-trajectory** (on the dual AC-side, an $\mathsf{A}$-fixed point at level $\omega^2$ per 113.T Diakrisis) expresses trajectory maintenance relative to the declared process.
 
 The operator-based form makes the mathematical inputs explicit:
-1. Every element is explicitly typed ($\varphi$ is a specified map on states, $\rho^*$ a stationary state, $R$ a scalar measure, iteration a trajectory).
-2. The describing and described positions are separated ($\Gamma$ and $\varphi(\Gamma)$ are distinct points in $\mathrm{D}(\mathbb{C}^7)$, connected by the stationary equation under explicit hypotheses).
+1. Every element is explicitly typed ($\varphi$ is a specified map on states, $\rho^*$ a dynamical stationary state, $R$ a scalar measure, iteration a trajectory).
+2. The describing and described positions are separated ($\Gamma$ and $\varphi(\Gamma)$ are distinct points in $\mathrm{D}(\mathbb{C}^7)$, related at stationarity by the flux balance $\kappa g_V(\varphi(\rho^*) - \rho^*) = -\mathcal{L}_0[\rho^*]$ under explicit hypotheses).
 3. The protocol is compatible with Noesis hygiene verification (NO-19): the factorisation is explicit.
 
 ## Relation to other documents

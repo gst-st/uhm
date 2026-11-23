@@ -10,7 +10,7 @@ description: CC's relationship to first-, second-, and third-order cybernetics
 A 2500-year history of cybernetic ideas — from Plato through Wiener and von Foerster to CC. The reader will learn why CC is a metatheory that unifies all previous approaches.
 :::
 
-In the [previous chapter](./g2-noether-cc) we saw how $G_2$-symmetry generates 14 conservation laws of consciousness — precise mathematical constraints on coherent dynamics. This is a powerful formalism, but it did not emerge from nothing. Every key concept of CC — feedback, observer, self-reproduction, social system — has predecessors. In this chapter we trace the 2500-year history of ideas that led to Coherence Cybernetics, and show why CC is not a "fourth cybernetics" but a **metatheory** that unifies all previous approaches.
+In the [previous chapter](./g2-noether-cc) we saw how, on a specified octonionic 3-form, $G_2$-symmetry (`T-42e` `[T]`) organizes invariant structure and conditional Noether generators for coherent dynamics. This is a rich formalism, but it did not emerge from nothing. Every key concept of CC — feedback, observer, self-reproduction, social system — has predecessors. In this chapter we trace the 2500-year history of ideas that led to Coherence Cybernetics, and show why CC is framed not as a "fourth cybernetics" but as a comparative **metatheoretical language `[I]`** connecting these approaches.
 
 :::tip Chapter Roadmap
 In this chapter we:
@@ -65,7 +65,7 @@ Before Norbert Wiener gave a name to the new science, humanity had been reflecti
 
 The word **cybernetics** itself goes back to the Greek κυβερνήτης — "helmsman," the one who steers a ship. Plato used this term in the *Gorgias* and the *Republic*, describing the art of governing the polis by analogy with navigation. The helmsman does not fight the sea — he reads the wind and waves and adjusts the course. This is history's first intuition about **feedback**: control not as one-way command, but as a continuous dialogue with the environment.
 
-In CC terms, Plato was feeling his way toward dimension $D$ (Action) — but not as a mechanical lever, rather as purposeful action that takes into account the state of the environment. Yet the Greeks had no concept of a closed loop: the helmsman remained an external observer, not part of the governed system.
+In CC terms, Plato was feeling his way toward dimension $D$ (**Dynamics**) — not as a mechanical lever, but as adaptive trajectory adjustment taking into account the state of the environment. Yet the Greeks had no concept of a closed loop: the helmsman remained an external observer, not part of the governed system.
 
 ### Leibniz and Monads
 
@@ -86,7 +86,7 @@ Of course, pre-established harmony is a metaphysical crutch: Leibniz had no tool
 
 Immanuel Kant, in the *Critique of Judgment* (1790), formulated the paradox of the organism: a biological being looks **as if** it were designed for some purpose, but there is no designer in nature. Kant called this *Zweckmässigkeit ohne Zweck* — "purposiveness without purpose."
 
-This paradox remains unsolved for all cybernetics I–III. In CC it is resolved through the [autopoiesis axiom (AP)](/docs/core/foundations/axiom-septicity): the fixed point $\varphi(\Gamma^*) = \Gamma^*$ is a system that *reproduces its own structure* as a consequence of dynamics, not as the result of an external plan. Purposiveness arises as a fixed point — without teleology.
+This paradox remained conceptually challenging for classical cybernetics. In CC it is modeled through fixed-point self-maintenance $\varphi(\Gamma^*) = \Gamma^*$ of a chosen self-model (`CC-4` `[T]` for a specified mirror family; note that universal necessity of a self-model `CC-3` is withdrawn `[✗]`): the system reproduces its own coherent state through internal dynamics rather than an external blueprint (`[I]`).
 
 ### Ampère and the Birth of the Term
 
@@ -209,7 +209,7 @@ Mathematically this can be written as a fixed-point equation: if $O$ is the obse
 
 **What is lost:**
 - Phenomenology ([E-dimension](/docs/core/structure/dimension-e)) — von Foerster spoke of observation, but not of *experiencing*
-- Regeneration ([O-dimension](/docs/core/structure/dimension-o)) — updating of values
+- Resource foundation ([O-dimension, Ground](/docs/core/structure/dimension-o)) — energetic and negentropic sustenance
 - Quantum foundation [(QG)](/docs/core/foundations/axiom-septicity) — classical recursion, not quantum coherence
 
 ### The Legacy of BCL
@@ -274,10 +274,10 @@ This move was brilliant and simultaneously limited. Brilliant — because it all
 - Quantum foundation [(QG)](/docs/core/foundations/axiom-septicity)
 - Formal mathematical structure
 
-:::tip Thought Experiment: Society Without Consciousness
-Luhmann describes society as a system of communications. Imagine a world in which communications occur — messages are generated and processed, systems differentiate and reproduce — but **no one experiences anything**. No one understands the meaning of a message, feels joy at a scientific discovery, suffers from the injustice of the legal system. According to Luhmann, such a society would be formally indistinguishable from ours — since consciousness for him is in the environment of the social system, not inside it.
+:::tip Thought Experiment: Society Without Consciousness `[I]`
+Luhmann describes society as a system of communications. Imagine a world in which communications occur — messages are generated and processed, systems differentiate and reproduce — but **no one experiences anything**. No one understands the meaning of a message, feels joy at a scientific discovery, or suffers from the injustice of the legal system. According to Luhmann, such a society would be formally indistinguishable from ours — since consciousness for him lies in the environment of the social system, not inside it.
 
-CC shows why this is impossible: without the [E-dimension](/docs/core/structure/dimension-e) communication degenerates into an exchange of noise. Meaning is not an abstract "medium" but a consequence of interiority: for a message to be *understood*, the receiver must possess inner experience ($P > P_{\text{crit}}$, $R \geq 1/3$). Society is not merely a network of communications, but a network of **conscious** communications.
+Within CC's framework, purely syntactic signaling can indeed run without L2 capability — universal impossibility of functional zombies (`T-38a`) and universal self-model necessity (`CC-3`) are withdrawn `[✗]`, and collective experience in coupled systems (`CC-7`) requires independent evidence `[H]`. However, CC distinguishes syntactic message exchange from **conscious comprehension**: under CC's interpretive bridge `[I]`, meaningful experience at the individual level requires passing all four L2 capability gates (`[D]`: $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$), and under explicitly restricted closed purity-flux balance hypotheses (`Theorem 8.1` `[C]`) autonomous viability depends on positive E-coupled regeneration.
 :::
 
 ---
@@ -292,13 +292,13 @@ The three "orders" of cybernetics represent the main line. But in parallel, seve
 
 But Ashby's chief achievement was the **law of requisite variety** (1956): *"Only variety can absorb variety."* For a control system to cope with $N$ possible disturbances, it must have no fewer than $N$ possible responses. Simply: to control a complex system, the controller must be no less complex than the controlled.
 
-| Ashby | CC |
+| Ashby | CC (`[I]`) |
 |------|-----|
-| Requisite variety | $\dim(\mathcal{H}) = 7$ — minimum dimensionality for [complete description](/docs/core/foundations/axiom-omega) |
+| Requisite variety | $\dim(\mathcal{H}) = 7$ — the seven functional axes $A,S,D,L,E,O,U$ (`[P]` / `[D]`) |
 | Homeostat | Dynamics $\Gamma(t)$ with attractor $\Gamma^*$ |
 | Ultrastability | Two-level adaptation: $\mathcal{L}_0$ (fast) + $\mathcal{R}$ (slow) |
 
-Ashby's law explains *why exactly 7 dimensions are needed*: the world presents variety along seven irreducible aspects (action, sensation, cognition, learning, experience, evaluation, integration), and a viable system must have an answer to each. Six dimensions are insufficient, eight are redundant (theorem [T-5](/docs/reference/status-registry): minimality $N=7$).
+Ashby's law provides a conceptual parallel (`[I]`) for why CC adopts seven functional axes — **Articulation ($A$), Structure ($S$), Dynamics ($D$), Logic ($L$), Interiority ($E$), Ground ($O$), and Unity ($U$)** — with conditional diagnosability and faithful-representation lower bounds under explicit task premises (see [Minimality Proof](/docs/proofs/minimality/theorem-minimality-7); note that unconditional seven-role minimality `T-40f` is withdrawn `[✗]`, while `T-5` `[D]` is the structural-majority cut $P_{\text{crit}} = 2/7$, not an $N=7$ minimality theorem).
 
 ### Beer: The Viable System
 
@@ -312,16 +312,16 @@ Ashby's law explains *why exactly 7 dimensions are needed*: the world presents v
 
 In 1971–1973, Beer attempted to implement VSM at the scale of an entire country — the **Cybersyn** project in Salvador Allende's Chile. A network of telexes connected factories to a control center in Santiago, where data were visualized in a futuristic "operations room." The project was interrupted by the military coup in 1973.
 
-| Beer (VSM) | CC |
+| Beer (VSM) | CC (`[I]`) |
 |-----------|-----|
-| System 1 (operations) | Dimension $A$ + $S$: action and sensation |
-| System 2 (coordination) | $D$: control |
-| System 3 (optimization) | $L$: cognitive optimization |
-| System 4 (strategy) | $O$: evaluation and value adaptation |
-| System 5 (identity) | $U$: integration, wholeness |
+| System 1 (operations) | Dimensions $A$ + $D$: Articulation and Dynamics (operational distinction and action) |
+| System 2 (coordination) | $S$: Structure (stabilization and anti-oscillation) |
+| System 3 (optimization) | $L$: Logic (internal consistency and optimization) |
+| System 4 (strategy) | $O$: Ground (external resource and environment interface) |
+| System 5 (identity) | $U$: Unity (global integration, wholeness) |
 | Recursiveness | Recursive [Holon composition](/docs/core/structure/holon) |
 
-Remarkably, VSM "almost" covers all 7 dimensions — Beer intuitively felt out the multidimensionality of viability. But his model remains an organizational scheme, not a formal theory: there are no evolution equations, no threshold conditions, no quantum foundation.
+Remarkably, VSM maps interpretively (`[I]`) onto five of CC's seven dimensions (omitting an explicit $E$-sector). Beer intuitively captured the multidimensionality of viability, though his model remains an organizational scheme without state-space evolution equations or formal threshold definitions.
 
 ### Bateson: Ecology of Mind
 
@@ -334,27 +334,27 @@ Bateson formulated several ideas ahead of their time:
 - **Deutero-learning** — a system not only learns but learns *how to learn*. A hierarchy of levels of learning.
 - **Ecology of mind** — mind is not enclosed in the skull but distributed across the "organism + environment" system.
 
-| Bateson | CC |
+| Bateson | CC (`[I]`) |
 |---------|-----|
-| Difference that makes a difference | $\sigma_k = 1 - 7\gamma_{kk}$ (T-92/T-158 [D]) — stress as the difference between state and norm |
-| Double bind | Contradiction between $\gamma_{DD}$ (command) and $\gamma_{EE}$ (experience) |
-| Deutero-learning | SAD levels: L0 → L1 → L2 ([depth tower](/docs/consciousness/hierarchy/interiority-hierarchy)) |
-| Ecology of mind | The Holon is not isolated — $\Gamma$ includes interaction with the environment |
+| Difference that makes a difference | Raw diagonal deficit $\tilde\sigma_k = 1 - 7\gamma_{kk}$ / clamped $\sigma_k$ (`T-92`, `T-158` `[D]`) |
+| Double bind | Conflict between dynamical control ($\gamma_{DD}$) and interiority/logical coherence ($\gamma_{EE}, \gamma_{LL}$) |
+| Deutero-learning | Nested capability levels L0 → L1 → L2 → L3 ([capability hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) `[D]`; note `T-136` `[✗]` withdrawn) |
+| Ecology of mind | The Holon is open — $\Gamma$ evolves in interaction with the environment |
 
 ### Spencer-Brown: Laws of Form
 
 **George Spencer-Brown** (1923–2016) — a British mathematician and logician — in 1969 published "Laws of Form" — one of the most enigmatic books of the twentieth century. It contains just one operator: **distinction** — the act of drawing a boundary that separates "inside" from "outside." From this single operand, Spencer-Brown derives all Boolean algebra, and then — through the "re-entry" of the form into itself — self-reference.
 
-The re-entry formula: $f = f(f)$ — a form that enters its own definition. This is the mathematical prototype of autopoiesis — and the direct precursor of the fixed point $\varphi(\Gamma^*) = \Gamma^*$ in CC. Von Foerster was one of the first to appreciate the significance of "Laws of Form" and invited Spencer-Brown to BCL. Luhmann used "distinction" as the basic operation of social systems.
+The re-entry formula: $f = f(f)$ — a form that enters its own definition. This is a conceptual precursor of fixed-point self-modeling $\varphi(\Gamma^*) = \Gamma^*$ in CC (`CC-4` `[T]` for a specified mirror family). Von Foerster was one of the first to appreciate the significance of "Laws of Form" and invited Spencer-Brown to BCL. Luhmann used "distinction" as the basic operation of social systems.
 
-| Spencer-Brown | CC |
+| Spencer-Brown | CC (`[I]`) |
 |---------------|-----|
-| Distinction | Decoherence: transition from superposition to definiteness |
-| Re-entry | $\varphi(\Gamma^*) = \Gamma^*$: self-modeling |
-| Unmarked state | $\Gamma = I/7$: fully mixed state |
-| Marked state | $P > 2/7$: viable state |
+| Distinction | Articulation ($A$) and decoherence: drawing boundaries between states |
+| Re-entry | $\varphi(\Gamma^*) = \Gamma^*$: fixed-point self-modeling |
+| Unmarked state | $\Gamma = I/7$: maximally mixed state |
+| Marked state | $P > 2/7$: above the structural-majority cut (`T-5` `[D]`) |
 
-In CC, distinction is formalized not as a logical but as a **physical** process: decoherence ($\mathcal{D}_\Omega$) is the continuous "drawing of boundaries" between states, while re-entry is regeneration ($\mathcal{R}$), returning the system to itself. Spencer-Brown found the *logical* form of self-reference; CC gives it a *dynamical* embodiment.
+In CC, distinction is modeled dynamically (`[I]`): decoherence ($\mathcal{D}_\Omega$) and articulation ($A$) separate states, while regeneration ($\mathcal{R}$) returns the system toward its self-model. Spencer-Brown found a *logical* form of self-reference; CC studies a *dynamical* matrix model of it.
 
 ### Pask: Conversation Theory
 
@@ -362,14 +362,14 @@ In CC, distinction is formalized not as a logical but as a **physical** process:
 
 Pask introduced the concept of the **p-individual** (psychological individual) — the minimal unit capable of conversation. A p-individual is not a person (one person may contain several p-individuals), but precisely a *participant in dialogue*, capable of generating, understanding, and transforming concepts.
 
-| Pask | CC |
+| Pask | CC (`[I]`) |
 |------|-----|
-| P-individual | Holon $\mathbb{H}$ with $R \geq 1/3$ |
-| Conversation | Interaction through $\gamma_{ij}$ between holons |
-| Understanding | Convergence of $\Gamma_1, \Gamma_2$ to a common attractor |
+| P-individual | Holon $\mathbb{H}$ with $R \geq 1/3$ (`[D]`) |
+| Conversation | Interaction through coupling coherences between holons |
+| Understanding | Convergence of $\Gamma_1, \Gamma_2$ toward compatible attractors |
 | Agreement | $\|\Gamma_1 - \Gamma_2\|_F < \epsilon$ |
 
-Pask was right in the main: cognition is a **dialogical** process. CC formalizes this through [Holon composition](/docs/core/structure/holon): two holons, interacting through shared coherence, generate an emergent state irreducible to the sum of the parts. "Understanding" in CC terms is the convergence of $\Gamma$-matrices, and "misunderstanding" is divergence.
+Pask emphasized that cognition is a **dialogical** process. CC models coupled holons through [Holon composition](/docs/core/structure/holon): two holons interacting through weak or strong coupling can exhibit emergent composite dynamics (`CC-7` `[T]` for stationary product characterization; collective experiential reading remains `[H]`).
 
 ### Maturana and Varela: Autopoiesis
 
@@ -383,25 +383,25 @@ For more on the connection between autopoiesis and CC — see the section [Theor
 
 ### Vanchurin: The Self-Learning Universe {#ванчурин}
 
-**Vitaly Vanchurin** — a physicist who, in *The World as a Neural Network* (2020) and the **Self-Learning Universe** program that followed, took the most radical step of all: not "the mind is like a cybernetic system," but *the entire universe is a giant learning system*, and physics itself — quantum mechanics, gauge fields, even gravity — falls out as the optimality conditions of that learning under **limited resources**.
+**Vitaly Vanchurin** — a physicist who, in *The World as a Neural Network* (2020) and the **Self-Learning Universe** program that followed, took a bold step: modeling the universe as a learning system under **limited resources**, where effective physical equations emerge as optimality conditions of learning.
 
-Here is why this belongs in a history of cybernetics — and why it is different from every entry above. Ashby and Beer *intuited* the multidimensionality of viability but never wrote the equations; Vanchurin writes them, and he starts from the **opposite end** of CC. CC is built top-down: from quantum axioms down to learning and life. Vanchurin builds bottom-up: from a learning system up to physics. Two ladders, climbed from opposite floors — and they meet on the same landing. His three intensive variables (the ones a resource-limited learner is forced to track) turn out to be **exactly CC's three channels**:
+Here is why this belongs in a history of cybernetics. Ashby and Beer intuited multidimensional viability without writing state-space dynamics; Vanchurin writes explicit dynamical equations from the bottom up (from learning dynamics toward physics), while CC writes open-quantum equations on $\mathcal{D}(\mathbb{C}^7)$ from the top down. Comparing Vanchurin's three intensive variables with CC's three dynamical terms gives a suggestive interpretive dictionary (`[I]`):
 
-| Vanchurin (SLU) | CC |
+| Vanchurin (SLU) | CC (`[I]` / `[C]`) |
 |-----------------|-----|
-| Gauge field $A_\mu$ (models displacement) | **Work** channel $h^{(H)}$ — Hamiltonian re-aiming |
-| Temperature $T$ (models fast entropy) | **Heat** channel $h^{(D)}$ — dissipation |
-| Chemical potential $\mu$ (models the count $N$) | **Matter** channel $h^{(R)}$ — regeneration |
-| $U(1)$ gauge symmetry from $\Delta N \in \mathbb{Z}$ | compact torus $U(1)^7$ (T-260) |
-| Covariant learning dynamics | evolution $\mathcal{L}_\Omega$ |
+| Gauge field $A_\mu$ (models displacement) | **Work** term $h^{(H)}$ — unitary Hamiltonian rotation (`T-258`) |
+| Temperature $T$ (models fast entropy) | **Heat** term $h^{(D)}$ — unital dissipation (`T-258`) |
+| Chemical potential $\mu$ (models the count $N$) | **Negentropic input** term $h^{(R)}$ — regeneration (`T-258`) |
+| $U(1)$ symmetry from $\Delta N \in \mathbb{Z}$ | Bare-dissipator diagonal covariance $U(1)^7$ (`T-260` `[T]`; matter-ledger reading is `[I]`) |
+| Covariant learning dynamics | Evolution generator $\mathcal{L}_\Omega$ |
 
-This is the sharpest support the history can offer for the chapter's thesis. When two theories that share no assumptions, no vocabulary, and no starting point nonetheless arrive at the *same three doors* — work, heat, matter — the three doors are unlikely to be an artifact of either theory. They look like a feature of reality. CC proves this correspondence as a theorem ([the thermodynamic trichotomy](./sensorimotor#термодинамическая-трихотомия), T-258); Vanchurin arrives at it from learning dynamics. Neither is "the fourth cybernetics" — both are reading the same fundamental grammar, from opposite pages.
+Note the exact formal scope: under an explicitly specified thermodynamic process (`T-258` `[T]` at specified process), the unitary entropy contribution is zero and a unital dissipator does not decrease entropy, while thermal/chemical-potential identifications are model inputs and the withdrawn `T-102` `[✗]` does not prove exhaustive prohibition of other GKSL channels; similarly, `T-260` `[T]` establishes bare-dissipator diagonal $U(1)^7$ covariance while the matter-ledger reading remains interpretive `[I]`. Even with these precise caveats, the convergence between two independent research programs on a work/heat/input triad is striking.
 
 ---
 
 ## Parallel Streams: Theories of Consciousness {#параллельные-потоки}
 
-From the 1990s onward, three theories developed in parallel to the cybernetic tradition, each of which captured one or two CC dimensions with remarkable precision — and equally remarkable incompleteness.
+From the 1990s onward, three theories developed in parallel to the cybernetic tradition, each capturing distinct functional aspects of the seven-dimensional CC record.
 
 ### IIT: Integrated Information (Tononi)
 
@@ -409,14 +409,14 @@ From the 1990s onward, three theories developed in parallel to the cybernetic tr
 
 IIT is arguably the most formalized of the competing theories of consciousness. It gives a concrete number ($\Phi$), defines a "quale-space" (the structure of experience), and formulates five axioms (Existence, Composition, Information, Integration, Exclusion). But it has a fundamental problem: $\Phi$ is computationally intractable (NP-hard for general graphs) and ontologically indeterminate — why should *integration* give rise to *experience*?
 
-| IIT (Tononi) | CC |
+| IIT (Tononi) | CC (`[I]` / `[D]`) |
 |-------------|-----|
-| $\Phi$ (integration) | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) — [U-dimension](/docs/core/structure/dimension-u) |
-| Quale-space | [E-dimension](/docs/core/structure/dimension-e) — but in CC this is **fundamental**, not derived from integration |
-| 5 IIT axioms | Covered by CC axiomatics: [(AP), (QG), (PW)](/docs/core/foundations/axiom-septicity) |
-| $\Phi > 0$ as consciousness criterion | $P > P_{\text{crit}} \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$ — **four-component** criterion |
+| $\Phi$ (integration) | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) — [U-dimension](/docs/core/structure/dimension-u) `[D]` |
+| Quale-space | [E-dimension](/docs/core/structure/dimension-e) — explicit sector in $\mathbb{C}^7$ |
+| 5 IIT axioms | Conceptual comparison with CC model conditions `[I]` |
+| $\Phi > 0$ as consciousness criterion | $P > P_{\text{crit}} \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D_{\text{diff}} \geq 2$ — **four-gate** criterion `[D]` (`T-5`) |
 
-The key difference: IIT makes integration the *sole* criterion of consciousness. CC shows that integration ($\Phi \geq 1$) is necessary but not sufficient — reflection ($R \geq 1/3$), purity ($P > P_{\text{crit}}$), and depth ($D \geq 2$) are also needed.
+The key difference: IIT makes integration the *sole* criterion of consciousness. In CC's capability definition `[D]`, integration ($\Phi \geq 1$) is only one of four gates alongside purity ($P > P_{\text{crit}} = 2/7$), reflection ($R \geq 1/3$), and experiential differentiation ($D_{\text{diff}} \geq 2$).
 
 ### FEP: Free Energy Principle (Friston)
 
@@ -424,16 +424,16 @@ The key difference: IIT makes integration the *sole* criterion of consciousness.
 
 FEP is simultaneously a very deep and a very slippery idea. Deep — because it unifies perception, action, learning, and attention in a single optimization scheme. Slippery — because, being a principle of surprise minimization, it is either trivially true (everything that exists minimizes surprise — otherwise it would have dissolved), or falsifiable, but then it is unclear what the counterexample would be.
 
-| FEP (Friston) | CC |
+| FEP (Friston) | CC (`[I]`) |
 |---------------|-----|
-| Free energy $F$ | [Viability](/docs/core/dynamics/viability) $\mathcal{V}(\Gamma)$ |
-| Markov blanket | Boundary of [Holon](/docs/core/structure/holon) |
-| Active inference | [D-dimension](/docs/core/structure/dimension-d): action as optimization |
-| Surprise minimization | Attraction to [viable region](/docs/core/dynamics/viability): $P > P_{\text{crit}}$ |
-| Generative model | [L-dimension](/docs/core/structure/dimension-l): internal world model |
-| Precision | $\gamma_{SS}$: weight of the sensory channel |
+| Free energy $F$ | Canonical $\Delta F$ / viability margin `[I]` (requires explicit generative model) |
+| Markov blanket | Boundary of [Holon](/docs/core/structure/holon) / observation interface |
+| Active inference | [D-dimension (Dynamics)](/docs/core/structure/dimension-d): state evolution and active control |
+| Surprise minimization | Maintenance of [viable region](/docs/core/dynamics/viability): $P > P_{\text{crit}}$ (`T-5` `[D]`) |
+| Generative model | [S-dimension (Structure)](/docs/core/structure/dimension-s) & [L-dimension (Logic)](/docs/core/structure/dimension-l): retained internal model |
+| Sensory precision | $\gamma_{AA}$ ([A-dimension, Articulation](/docs/core/structure/dimension-a)): signal-to-noise discrimination |
 
-FEP covers $D$, $O$, $S$ and partly $L$ — but has no analogs for $E$ (interiority), $A$ (action as separate from inference), and $U$ (integration). Friston himself acknowledges that FEP is a "process-theory," not a "content-theory": it says *how* the system optimizes, but not *what* it experiences.
+FEP focuses interpretively on $D$ (Dynamics), $O$ (Ground), $S$ (Structure), and partly $L$ (Logic) — without a dedicated $E$-sector metric or explicit four-gate access criterion. Friston himself acknowledges that FEP is a "process-theory," not a "content-theory": it describes *how* inference optimizes, not *what* is experienced.
 
 ### GWT: Global Workspace (Baars)
 
@@ -441,26 +441,26 @@ FEP covers $D$, $O$, $S$ and partly $L$ — but has no analogs for $E$ (interior
 
 Stanislas Dehaene and Jean-Pierre Changeux developed this idea into the **Neural Global Workspace Theory** (GNWT), linking the "stage" to long-range cortical connections (especially prefrontal-parietal).
 
-| GWT (Baars, Dehaene) | CC |
+| GWT (Baars, Dehaene) | CC (`[I]`) |
 |-------------------|-----|
 | Global workspace | Coherent component of $\Gamma$: off-diagonal $\gamma_{ij} \neq 0$ |
-| Attention "spotlight" | [S-dimension](/docs/core/structure/dimension-s): sensory focus |
-| Unconscious modules | $P < P_{\text{crit}}$: automatic processes below the coherence threshold |
-| Broadcast | $\Phi \geq 1$: integration of information across dimensions |
-| Ignition | Phase transition at $P = P_{\text{crit}} = 2/7$ |
+| Attention "spotlight" | [A-dimension (Articulation)](/docs/core/structure/dimension-a): selective discrimination |
+| Unconscious modules | $P < P_{\text{crit}}$: low-coherence regimes below the majority cut (`T-5` `[D]`) |
+| Broadcast | $\Phi \geq 1$: integration across dimensions ([U-dimension](/docs/core/structure/dimension-u)) |
+| Ignition | Crossing $P = P_{\text{crit}} = 2/7$ (`T-5` `[D]`; note universal bifurcation `T-160` is withdrawn `[✗]`) |
 
-GWT is essentially a theory of the **mechanism of access** to consciousness, not a theory of consciousness as such. It explains *which* processes become conscious (those that got onto the stage), but not *why* getting onto the stage is accompanied by subjective experience. In CC terms: GWT describes the transition $P < P_{\text{crit}} \to P > P_{\text{crit}}$, but does not explain where $E$ comes from.
+GWT is essentially a theory of the **mechanism of access** to consciousness, not a theory of phenomenal character as such. In CC terms (`[I]`): GWT focuses on selective articulation ($A$), logical coordination ($L$), and global broadcast ($U$), without modeling an explicit E-sector dynamics.
 
 ### Summary Table of Parallel Streams
 
 | Aspect | IIT | FEP | GWT | CC |
 |--------|-----|-----|-----|-----|
-| Formalism | High | High | Low | Full (categorical) |
-| Interiority | Postulated | Ignored | Ignored | [Fundamental](/docs/core/structure/dimension-e) |
+| Formalism | High | High | Low | Explicit 7D matrix & categorical framework |
+| Interiority | Postulated | Ignored | Ignored | Explicit [E-dimension](/docs/core/structure/dimension-e) |
 | Dynamics | Static | Optimization of $F$ | Module competition | [Evolution equation](/docs/core/dynamics/evolution) |
 | Multi-agent | No | Partially (active inference) | No | [Composition $\mathbb{H}$](/docs/core/structure/holon) |
-| Falsifiability | Hard ($\Phi$ NP-hard) | Debated | Moderate | [22+ predictions](/docs/applied/coherence-cybernetics/predictions) |
-| ASDLEOU coverage | U, E | D, O, S | S, L | All 7 |
+| Falsifiability | Hard ($\Phi$ NP-hard) | Debated | Moderate | [Structured hypotheses](/docs/applied/coherence-cybernetics/predictions) `[H]` |
+| ASDLEOU focus `[I]` | U, E | D, O, S | A, L, U | All 7 |
 
 ---
 
@@ -491,7 +491,7 @@ graph TD
     subgraph "Parallel Streams"
         T1["IIT<br/>Tononi 2004<br/>📐 U, E"]
         T2["FEP<br/>Friston 2006<br/>📐 D, O, S"]
-        T3["GWT<br/>Baars 1988<br/>📐 S, L"]
+        T3["GWT<br/>Baars 1988<br/>📐 A, L, U"]
     end
 
     KK["CC<br/>Full Coherence<br/>📐 A, S, D, L, E, O, U"]
@@ -531,19 +531,19 @@ Every transition between orders of cybernetics followed one pattern: **inclusion
 - **I → II:** Wiener described control *from outside*. Von Foerster included the scientist *in* the system.
 - **II → III:** Von Foerster described the observer *individually*. Luhmann included the observer *in a network* of observers.
 
-If CC were "cybernetics-IV," it would include the network of observers in an even broader system — for example, in an ecosystem or in the cosmos. But CC does something **fundamentally different**: it does not add yet another level, but rebuilds the foundation.
+If CC were "cybernetics-IV," it would include the network of observers in an even broader system — for example, in an ecosystem or in the cosmos. But CC does something **fundamentally different**: it does not add yet another level, but rebuilds the modeling basis.
 
-### Three Reasons Why CC Is a Metatheory
+### Three Reasons Why CC Acts as a Comparative Metatheory `[I]`
 
-**1. Axiomatic completeness.** Cybernetics I–III and parallel theories work with *subsets* of dimensions: $D$ (Wiener), $D+L$ (von Foerster), $D+L+U$ (Luhmann), $U+E$ (IIT), $D+O+S$ (FEP). CC works with all seven simultaneously and shows that [exactly 7 is the minimum number](/docs/core/foundations/axiom-omega#октонионная-структура) that ensures closure.
+**1. Seven-axis coverage.** Cybernetics I–III and parallel theories focus on *subsets* of functional dimensions: $D$ (Wiener), $D+L$ (von Foerster), $D+L+U$ (Luhmann), $U+E$ (IIT), $D+O+S$ (FEP), $A+L+U$ (GWT). CC models all seven axes $\{A,S,D,L,E,O,U\}$ simultaneously (`[P]` / `[D]`, with conditional diagnosability/representation lower bounds; unconditional minimality `T-40f` is withdrawn `[✗]`).
 
-**2. Unified formalism.** Each theory uses its own mathematical apparatus: differential equations (Wiener), recursive functions (von Foerster), distinctions (Luhmann), graphs (IIT), Bayesian models (FEP). CC translates all these descriptions into the unified language of the coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and [categorical formalism](/docs/proofs/categorical/categorical-formalism).
+**2. Unified formalism.** Each theory uses its own mathematical apparatus: differential equations (Wiener), recursive functions (von Foerster), distinctions (Luhmann), graphs (IIT), Bayesian models (FEP). CC provides a single matrix state space $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and [categorical formalism](/docs/proofs/categorical/categorical-formalism) for comparing them (`[I]`).
 
-**3. Quantum foundation.** All cybernetics I–III are classical. They describe macroscopic feedback loops, observation, communication. CC begins with [quantum foundation (QG)](/docs/core/foundations/axiom-septicity): $\Gamma$ is a density matrix in $\mathcal{D}(\mathbb{C}^7)$, and all classical constructions are consequences of the decoherence of this matrix.
+**3. Open-quantum state space.** Classical cybernetics I–III operate on classical macroscopic variables. CC starts from a density matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with explicit off-diagonal coherences and decoherence channels, recovering classical diagonal dynamics when off-diagonal coherences vanish.
 
 ### Analogy
 
-The relationship of CC to cybernetics I–III is not "the fourth book in a series," but rather **translation into a common language**. Just as category theory is not "new algebra" or "new topology," but a language in which *algebra and topology can talk to each other* — CC is not "new cybernetics," but a language in which cybernetics, consciousness theory, and quantum theory reveal a common structure.
+The relationship of CC to cybernetics I–III is not "the fourth book in a series," but rather **translation into a common language**. Just as category theory is not "new algebra" or "new topology," but a language in which *algebra and topology can talk to each other* — CC is proposed as a language in which cybernetics, consciousness theory, and open-quantum dynamics can be compared (`[I]`).
 
 ```mermaid
 graph LR
@@ -554,7 +554,7 @@ graph LR
         G -->|"projection onto D,L,U"| C3["Cybernetics-III"]
         G -->|"projection onto U,E"| IIT["IIT"]
         G -->|"projection onto D,O,S"| FEP["FEP"]
-        G -->|"projection onto S,L"| GWT["GWT"]
+        G -->|"projection onto A,L,U"| GWT["GWT"]
     end
 ```
 
@@ -562,31 +562,31 @@ graph LR
 
 ## A Unified Vocabulary: How CC Translates Between Disciplines {#единый-словарь}
 
-One of the key functions of CC is to be a **translation dictionary** between disciplines that have been studying the same phenomena for decades but could not discover this because they used different terminology.
+One of the key functions of CC is to provide an interpretive **translation dictionary `[I]`** between disciplines that have studied overlapping phenomena under different terminologies.
 
-### Correspondence Table
+### Correspondence Table (`[I]`)
 
 | CC Concept | Cybernetics | Neuroscience | Philosophy of Consciousness | Physics | Systems Theory |
 |-----------|-------------|------------|------------------------------|--------|----------------|
 | $\Gamma$ | System state | Neural activity | State of consciousness | Density matrix $\rho$ | Phase point |
-| $P(\Gamma)$ | Orderliness | Neural coherence | Level of consciousness | Purity $\text{tr}(\rho^2)$ | Negentropy |
+| $P(\Gamma)$ | Orderliness | Neural coherence | Structural coherence | Purity $\text{tr}(\rho^2)$ | Negentropy proxy |
 | $\varphi$ | Observer (von Foerster) | Self-model (default mode) | Self-awareness | — | Reflexivity |
-| $R$ | Depth of recursion | Metacognition | Self-modeling | — | Higher-order feedback |
-| $\Phi$ | — | Integration (Tononi) | $\Phi$ in IIT | Entanglement | Connectedness |
-| $\sigma_k$ | Deviation from norm | Neural stress | Suffering/discomfort | Defect | Control error |
-| $\mathcal{L}_0$ | Feedback | Neurodynamics | Stream of consciousness | Lindblad equation | System dynamics |
-| $\mathcal{R}$ | Self-restoration | Neuroplasticity | Transformation | — | Regeneration |
-| $P_{\text{crit}} = 2/7$ | — | Consciousness threshold | Criterion of consciousness | Phase transition | Viability threshold |
+| $R$ | Reflection fidelity | Metacognition | Self-modeling | — | Higher-order feedback |
+| $\Phi$ | — | Integration (Tononi) | $\Phi$ in IIT | Coherence ratio | Connectedness |
+| $\sigma_k$ | Deviation from norm | Neural stress | Suffering/discomfort | Sector deficit | Control error |
+| $\mathcal{L}_0$ | Feedback | Neurodynamics | Stream of dynamics | Lindblad equation | System dynamics |
+| $\mathcal{R}$ | Self-restoration | Neuroplasticity | Active restoration | Non-unital feedback | Regeneration |
+| $P_{\text{crit}} = 2/7$ (`T-5` `[D]`) | — | Candidate threshold `[H]` | Majority cut `[D]` | Structural cut `[D]` | Viability cut `[D]` |
 | Holon $\mathbb{H}$ | Viable system (Beer) | Neural assembly | Subject of experience | Subsystem | Autopoietic unit |
 | $\mathbb{H}_{1 \otimes \ldots \otimes n}$ | Social system (Luhmann) | Neural network | Intersubjectivity | Tensor product | Metasystem |
 
-### Translation Examples
+### Translation Examples (`[I]`)
 
-**Chalmers' problem** (the hard problem of consciousness) in CC language: why does $P > P_{\text{crit}}$ accompany the E-dimension? Answer: because [E is not a consequence](/docs/core/structure/dimension-e) of coherence, but one of the **seven fundamental dimensions** of $\Gamma$. There is no $\Gamma$ without $E$ (or without the other six). The hard problem arises only if E is considered derived from D, S, L — but in CC all dimensions are **co-fundamental**.
+**Chalmers' problem** (the hard problem of consciousness) in CC language `[I]`: CC does not claim to derive qualia from classical dynamics alone; instead, two-aspect monism places the [E-dimension](/docs/core/structure/dimension-e) alongside the other six dimensions as a co-fundamental sector of $\Gamma$, separating formal capability conditions (`[D]` / `[T]`) from the phenomenological interpretation (`[I]`).
 
-**Ashby's law** in CC language: requisite variety $\geq$ variety of disturbances ↔ $\dim(\mathcal{H}) \geq 7$ for complete description of a viable agent.
+**Ashby's law** in CC language `[I]`: requisite variety ↔ choosing a 7-dimensional functional basis $\{A,S,D,L,E,O,U\}$ rich enough to track seven distinct operational roles.
 
-**Friston's Markov blanket** in CC language: the boundary of the Holon, defined by the decomposition $\Gamma = \Gamma_{\text{int}} + \Gamma_{\text{ext}} + \Gamma_{\text{coupling}}$.
+**Friston's Markov blanket** in CC language `[I]`: the observation/control boundary separating internal state $\Gamma$ from its environment.
 
 ---
 
@@ -594,16 +594,16 @@ One of the key functions of CC is to be a **translation dictionary** between dis
 
 | Aspect | Cybernetics I–II–III | CC |
 |--------|---------------------|-----|
-| Ontology | Information/communication | Coherence $\Gamma$ |
-| Subjectivity | Ignored | [E-dimension](/docs/core/structure/dimension-e) — fundamental |
-| Dynamics | Descriptive | [Evolution equation](/docs/core/dynamics/evolution) |
-| Foundation | Classical | Quantum [(QG)](/docs/core/foundations/axiom-septicity) |
-| Formalism | Informal / partial | Full (categorical) |
-| Viability | Intuitive | [Formal criterion](/docs/core/dynamics/viability) $P > P_{\text{crit}}$ |
-| Number of dimensions | 1–3 | 7 ([proven minimal](/docs/core/foundations/axiom-omega#октонионная-структура)) |
-| Reflection | Qualitative (von Foerster) | [Quantitative](/docs/consciousness/foundations/self-observation#мера-рефлексии-r): $R \geq 1/3$ |
-| Predictions | None | [22+ falsifiable](/docs/applied/coherence-cybernetics/predictions) |
-| Thresholds | None | $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$, $D_{\min} = 2$ |
+| Ontology | Information/communication | Coherence matrix $\Gamma$ |
+| Subjectivity | Ignored | Explicit [E-dimension](/docs/core/structure/dimension-e) |
+| Dynamics | Descriptive / classical | [Evolution equation](/docs/core/dynamics/evolution) |
+| Foundation | Classical | Density-matrix formalism on $\mathcal{D}(\mathbb{C}^7)$ |
+| Formalism | Informal / partial | Explicit finite-dimensional & categorical |
+| Viability | Intuitive | [Structural cut](/docs/core/dynamics/viability) $P > P_{\text{crit}} = 2/7$ (`T-5` `[D]`) |
+| Number of dimensions | 1–3 | 7 (`[P]` / `[D]`, with conditional bounds; `T-40f` `[✗]`) |
+| Reflection | Qualitative (von Foerster) | [Quantitative](/docs/consciousness/foundations/self-observation#мера-рефлексии-r): $R \geq 1/3$ `[D]` |
+| Predictions | Conceptual | [Structured falsifiable hypotheses](/docs/applied/coherence-cybernetics/predictions) `[H]` |
+| Thresholds | None | $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$, $D_{\text{diff}} \geq 2$ `[D]` |
 
 ---
 
@@ -640,34 +640,34 @@ timeline
         2004 : Tononi — IIT
         2006 : Friston — FEP
     section CC
-        2024-26 : CC — full coherence, 7 dimensions, quantum foundation
+        2024-26 : CC — full coherence, 7 dimensions, open-quantum formalism
 ```
 
 ---
 
 ## Open Questions
 
-Even with the full formalism, CC inherits a number of open questions from the cybernetic tradition:
+Even with the explicit formalism, CC inherits a number of open questions from the cybernetic tradition:
 
-1. **Empirical verification.** Cybernetics I–III were primarily conceptual: they changed the *way of thinking* but did not generate specific experimental predictions. CC takes a step forward — [22+ falsifiable predictions](/docs/applied/coherence-cybernetics/predictions) — but most of them are still awaiting verification.
+1. **Empirical verification.** Cybernetics I–III were primarily conceptual: they changed the *way of thinking* without yielding narrow laboratory tests. CC formulates [structured testable hypotheses](/docs/applied/coherence-cybernetics/predictions) `[H]`, which remain to be empirically tested.
 
-2. **Computational tractability.** Computing $\Gamma$ for real systems (the brain, a social group, an ecosystem) is an unsolved problem. IIT faced the same issue ($\Phi$ is NP-hard). CC offers approximations through the [SYNARC architecture](/docs/applied/coherence-cybernetics/introduction), but this remains a work in progress.
+2. **Reconstruction and tractability.** Reconstructing $\Gamma$ for real systems (the brain, a social group, an ecosystem) requires an explicit observation law and identifiability verification (see [Diagnosis with Uncertainty](./diagnostics)), which remains an active research programme (`[Pr]`).
 
-3. **The boundary between metaphor and mapping.** When we say "Wiener's homeostasis → attractor $\Gamma^*$," is this a *strict mapping* or a *useful analogy*? CC strives to be precise (all correspondences at the level of concrete formulas), but the philosophical status of such mappings deserves further analysis.
+3. **The boundary between metaphor and mapping.** When we say "Wiener's homeostasis → attractor $\Gamma^*$," is this a *formal embedding* or an *interpretive analogy* (`[I]`)? Distinguishing strict mathematical theorems `[T]` from interpretive bridges `[I]` and empirical hypotheses `[H]` is essential throughout CC.
 
 ---
 
 ### What We Have Learned {#что-мы-узнали}
 
 1. **Cybernetics is a 2500-year history** of one idea: how systems govern themselves. From Plato's κυβερνήτης through Leibniz's monads and Kant's purposiveness to Ampère's cybernétique.
-2. **Three orders of cybernetics** — three steps of inclusion: Wiener included *feedback* ($D$), von Foerster — the *observer* ($D + L$), Luhmann — *social systems* ($D + L + U$). Each order added dimensions, but none covered all seven.
-3. **The offshoots captured important fragments**: Ashby — requisite variety (explaining why 7 dimensions are needed), Beer — the viable system (recursive structure), Bateson — difference as the unit of mind ($\sigma_k$), Maturana/Varela — autopoiesis (fixed point). Spencer-Brown provided the logic of distinction, Pask — the dialogical nature of cognition.
-4. **Parallel streams** (IIT, FEP, GWT) — each captured 2–3 dimensions with remarkable precision and equally remarkable incompleteness. IIT — $U, E$. FEP — $D, O, S$. GWT — $S, L$.
-5. **CC is not a fourth cybernetics but a metatheory**: it does not add yet another level, but rebuilds the foundation. Each preceding theory is a *projection* of the full matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ onto a subset of dimensions.
-6. **A unified vocabulary**: CC allows *translation* between disciplines — neural coherence, density matrix, state of consciousness, phase point, and negentropy are one and the same ($\Gamma$), described in different languages.
+2. **Three orders of cybernetics** — three steps of inclusion: Wiener included *feedback* ($D$), von Foerster — the *observer* ($D + L$), Luhmann — *social systems* ($D + L + U$). Each order focused on a subset of CC's seven axes.
+3. **The offshoots captured important fragments `[I]`**: Ashby — requisite variety (conceptual parallel to seven functional axes $A,S,D,L,E,O,U$), Beer — the viable system (recursive structure), Bateson — difference as the unit of mind ($\sigma_k$, `T-92`/`T-158` `[D]`), Maturana/Varela — autopoiesis (fixed point `CC-4`), Spencer-Brown — distinction/re-entry, Pask — dialogical cognition, Vanchurin — work/heat/input triad (`T-258`, `T-260`).
+4. **Parallel streams** (IIT, FEP, GWT) — each highlights a distinct subset of dimensions (`[I]`): IIT — $U, E$; FEP — $D, O, S$; GWT — $A, L, U$.
+5. **CC as a comparative metatheory `[I]`**: rather than merely adding a fourth order, it proposes a unified 7-dimensional density-matrix coordinate space $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ on which earlier traditions can be compared.
+6. **A unified vocabulary `[I]`**: CC provides an explicit translation table across disciplines, while keeping proved theorems `[T]`, conventions `[D]` (such as `T-5`, $P_{\mathrm{crit}} = 2/7$), hypotheses `[H]`, and withdrawn claims `[✗]` clearly separated.
 
 :::tip Bridge to the Next Chapter
-We have traced how the ideas of feedback, observer, and social systems developed over 80 years — and how CC assembled them into a unified formalism. But all these ideas concerned the *internal* dynamics of a system. How does a system **interact with the world**? How does it perceive the environment and act in it? In the [next chapter](./sensorimotor) we will build a complete theory of sensorimotor coding: from the chemotaxis of a bacterium to a human navigating an unfamiliar city — and show that the entire "perception–decision–action" cycle is realized through the *same* three channels (Hamiltonian, dissipative, regenerative) that define the internal dynamics.
+We have traced how the ideas of feedback, observer, and social systems developed over 80 years — and how CC frames them within a single 7-dimensional formalism. Next, how does a system **interact with its environment**? In the [next chapter](./sensorimotor) we examine the sensorimotor interface — observation laws, optimal control, and purity flux — built on the same Hamiltonian, dissipative, and regenerative components (noting that positive sums of additional GKSL generators remain admissible, as `T-102` `[✗]` is withdrawn).
 :::
 
 ---

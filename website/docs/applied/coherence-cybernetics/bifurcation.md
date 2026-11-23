@@ -166,9 +166,9 @@ The geometry is transparent: the parabola $\mathrm{Gap}^2$ intersects the horizo
 
 **Phase portrait.** At $\mu > 0$: the positive root $\mathrm{Gap} = +\sqrt{\mu}$ is stable (node), the negative root $\mathrm{Gap} = -\sqrt{\mu}$ is unstable (saddle). All trajectories in the neighborhood flow toward the node. At $\mu = 0$: node and saddle merge into a semi-stable point. At $\mu < 0$: no attractor. The system sweeps away — "falls through."
 
-**Gap-specific parameters:**
-- $\mu$ is identified with $r - r_c = \kappa/\Gamma_2 - r_c$ — the deviation from the critical regeneration-to-dissipation ratio
-- At $r < r_c$: the stationary Gap profile **disappears** — the system transitions to Phase III (dead zone)
+**Gap-specific parameters (reconciled with `T-259`):**
+- In a schematic phase diagram, $\mu$ is written $r - r_c$ for deviation from the fold locus; **quantitatively**, in the gated isotropic fixed-target flow of `T-259 [T]` (section 1.2a below), the fold control parameter is $u - u^*$ (with $u^* \approx 21.5$ at $c = 2$), **not** the obsolete shorthand $r_c = P_{\text{crit}}/(7P) \approx 0.116$.
+- Below the fold ($u < u^*$, schematically $r < r_c$): the viable stationary branch and its unstable twin merge and annihilate, sending trajectories toward the dead-zone branch (Phase III).
 
 **Discontinuity of the transition.** Gap **suddenly** switches to a qualitatively different level. There are no intermediate states — the system instantly "falls" from one basin of attraction into another. This is a fundamental difference from gradual degradation: the system appears stable right up to the moment of catastrophe.
 
@@ -185,7 +185,7 @@ Saddle-node bifurcation is the formalization of an **acute crisis**. Clinically:
 
 #### 1.2a The exact fold: how the window of consciousness closes {#точная-складка-окна}
 
-The parameter $r_c$ above was left as "the critical ratio." One of CC's sharpest recent results (T-259 [T], see [Phase Diagram §1.3](./phase-diagram-cc#теорема-окно-питания)) pins the Phase-III boundary down *exactly* — and it turns out to have two edges, a simple one and a deep one. Work in the natural variable $x = \kappa_{\text{eff}}/\Gamma_2$: **how hard the system is fed relative to how fast it decoheres.** As feeding weakens and $x$ drops, the stationary purity $P_\infty$ slides down.
+The parameter $r_c$ above was left as a schematic symbol for the fold locus. **`T-259`** (**[T]** under the stated isotropic fixed-target flow; **[C]** under physical rate matching for biological substrates — see [Phase Diagram §1.3](./phase-diagram-cc#теорема-окно-питания)) determines the reduced Phase-III boundary *exactly*, revealing two distinct edges: a simple linear floor and a deep nonlinear fold. Work in the natural dimensionless ratio $x = \kappa_{\text{eff}}/\Gamma_2$: **how strongly the system is regenerated relative to how fast it decoheres.** As feeding weakens and $x$ drops, the stationary purity $P_\infty$ slides down.
 
 **The simple edge — the silver ratio.** Set the viability gate aside for a moment. The bare (linear) relaxation keeps a fixed point that stays viable, $P_\infty > P_{\text{crit}}$, only above a floor $x_{\min}$. At the reflection wall $P^* = 3/7$ this floor is exactly
 
@@ -260,16 +260,16 @@ Hopf bifurcation formalizes **cyclic oscillations** of Gap. Clinically this corr
 The key difference from non-Markovian oscillations ([section 4 of Gap dynamics](/docs/core/dynamics/gap-dynamics#немарковские-эффекты)): Hopf oscillations are **non-decaying** limit cycles, whereas non-Markovian ones are decaying.
 :::
 
-**What CC adds.** Bipolar disorder in standard psychiatry is described phenomenologically: mania replaces depression "for unknown reasons." CC provides a *mechanism*: this is a Hopf bifurcation in Gap dynamics. The stationary Gap profile has become unstable — two pairs of dimensions periodically exchange transparency. In the manic phase, certain connections dominate (high Action-Emotion coherence), in the depressive phase — others (high Stillness-Unconscious coherence). The frequency $\omega_H$ and amplitude $A$ are measurable parameters, not metaphors.
+**What CC adds [I].** In phenomenological psychiatry, bipolar cycling is often described descriptively without a low-dimensional bifurcation model. In CC's interpretive framework `[I]`, a Hopf bifurcation in reduced Gap dynamics provides a candidate mechanism: the stationary Gap profile loses stability and pairs of canonical dimensions periodically exchange coherence — for example, elevated **Dynamics–Interiority ($D \leftrightarrow E$)** coupling in an activated/manic phase alternating with heightened **Structure–Ground ($S \leftrightarrow O$)** rigidity or decoupling in a depressive phase. The frequency $\omega_H$ and amplitude $A$ are empirically measurable observables once a readout map is calibrated.
 
-Circadian rhythms are another example: sleep and wakefulness are not a "switching" but a limit cycle. The Gap between certain dimension pairs (primarily A-S and L-U) periodically oscillates at frequency $\omega_H \approx 2\pi/(24\,\text{h})$.
+Circadian rhythms offer another interpretive example `[I]`: sleep and wakefulness form a limit cycle in which coherence across dimension pairs (such as Articulation–Structure $A \leftrightarrow S$ and Logic–Unity $L \leftrightarrow U$) oscillates periodically with $\omega_H \approx 2\pi/(24\,\text{h})$.
 
 ### 1.4 Summary Table of Bifurcations
 
-| Bifurcation | Normal Form | Criterion | Gap Parameter | Clinical Analog |
+| Bifurcation | Normal Form | Criterion | Reduced Gap Parameter | Clinical Analog [I] |
 |------------|-----------------|----------|--------------|-------------------|
-| Pitchfork | $\dot{G} = \mu G - G^3$ | $\mu = \mu_c$ | $T_{\text{eff}} / T_c$ | Existential choice |
-| Saddle-node | $\dot{G} = \mu - G^2$ | $\mu = \mu_{sn}$ | $\kappa/\Gamma_2 - r_c$ | Acute crisis |
+| Pitchfork | $\dot{G} = \mu G - G^3$ | $\mu = \mu_c$ | $T_{\text{eff}} / T_c$ (specified symmetric reduction) | Existential choice |
+| Saddle-node | $\dot{G} = \mu - G^2$ | $\mu = \mu_{sn}$ | $u - u^*$ (`T-259` fold; schematic $r - r_c$) | Acute crisis |
 | Hopf | $\dot{z} = (\mu + i\omega)z - \lvert z\rvert^2 z$ | $\mathrm{Re}(\lambda) = 0$ | $\Delta\omega_{ij}, \Gamma_2$ | Bipolar oscillations |
 
 ### 1.5 Interaction of Bifurcations {#взаимодействие-бифуркаций}
@@ -358,90 +358,62 @@ The cuspoid curve divides the parameter plane into three regions:
 2. **Inside the cusp** ($a < 0$, $|b|$ small): two minima, bistability
 3. **On the cusp boundary**: fold — one minimum disappears, a jump occurs
 
-**Bistability with hysteresis.** In the cusp region, the system can be in one of two stable states:
-
-| State | Gap | Reflection | Correspondence |
-|-----------|-----|-----------|--------------|
-| $G_{\text{low}}$ | Low | High $R$ | L2–L3 |
-| $G_{\text{high}}$ | High | Low $R$ | L0–L1 |
-
-The transition $G_{\text{high}} \to G_{\text{low}}$ (insight) and $G_{\text{low}} \to G_{\text{high}}$ (regression) occur at **different** parameter values — **hysteresis**. The hysteresis width determines the stability of the achieved state.
+**Bistability with hysteresis.** In the cusp region, a reduced scalar order parameter $G$ can reside in one of two coexisting stable minima $G_{\text{low}}$ and $G_{\text{high}}$, and switching between them exhibits **hysteresis** (jumps occur on opposite branches of the cuspoid curve $8a^3 + 27b^2 = 0$). Note per **`T-28b [✗]`** that a scalar phase-Gap value alone does **not** injectively determine L-levels (explicit states with identical pairwise phase Gaps can have opposite capability verdicts); associating $G_{\text{low}}$ / $G_{\text{high}}$ with higher or lower reflective regimes is strictly an illustrative correspondence `[I]` within a specific reduced family where $R, \Phi, D_{\text{diff}}$ co-vary monotonically with $G$.
 
 :::info Cybernetic Interpretation [I]
-The cusp formalizes the "ratchet effect": a system that has jumped to a state with low Gap (insight) does not return upon a simple "rollback" of parameters — a significantly stronger perturbation is needed for regression.
+The cusp formalizes the "ratchet effect": a system that has jumped into a low-Gap basin does not immediately revert upon a small rollback of parameters — crossing back requires reaching the opposite fold boundary.
 
-The two control parameters $(a, b)$ can be identified with:
-- $a \sim T_{\text{eff}} - T_c$ (deviation from the critical temperature)
-- $b \sim h_{\text{ext}}$ (external field — a directed intervention by a therapist, teacher)
+In a reduced two-parameter family, the controls $(a, b)$ are interpreted `[I]` as:
+- $a$ — bifurcation/temperature-like control (splitting factor)
+- $b$ — symmetry-breaking external drive or therapeutic field (normal factor)
 :::
 
-### 2.3 Swallowtail ($A_4$) — Codimension 3: Architecture of Consciousness Levels {#swallowtail}
+### 2.3 Swallowtail ($A_4$) and Butterfly ($A_5$): Exact Minima Count and Withdrawn L-Level Map {#swallowtail}
 
-The swallowtail is a catastrophe with three control parameters. Its bifurcation set in three-dimensional parameter space has the characteristic shape of a forked swallow's tail — hence the name.
+The swallowtail ($A_4$, codimension 3) and butterfly ($A_5$, codimension 4) are the next two cuspoid singularities in Thom–Arnold catastrophe theory (`T-29 [C]` for local normal forms under a specified scalar gradient reduction). A **critical calculus correction** and two **registry retractions (`T-28 [✗]`, `T-28b [✗]`)** must be stated clearly here:
 
-The significance of $A_4$ for CC can hardly be overstated: it is precisely this catastrophe that explains why there are **three** interiority levels (not counting L0 and L4). A fifth-degree potential admits up to three stable minima — and each of them corresponds to a specific coherence level.
-
-:::tip Theorem (Swallowtail Cascade and L-levels) [T]
-With three control parameters $(\kappa, \alpha, \Delta F)$, the effective potential:
-
-$$
-V(G) = G^5 + a\,G^3 + b\,G^2 + c\,G
-$$
-
-The stationarity condition $V'(G) = 0$ is a fourth-degree polynomial, admitting up to **three stable minima**. The four swallowtail sheets correspond to interiority levels:
-
-| Swallowtail leaf | L-level | Gap | Characteristic |
-|------------------|-----------|-----|----------------|
-| Outer stable | L0–L1 | $G_{\text{high}} \approx 0.8$ | Stationary, unconscious |
-| Intermediate | L2 | $G_{\text{mid}} \approx 0.4$ | Partially conscious, metastable |
-| Inner unstable | L3 | $G_{\text{low}} \approx 0.1$ | Near-complete consciousness |
-| Self-intersection point | L4 | Fixed point | $\varphi(\Gamma^*) = \Gamma^*$ |
-
-**Proof:** Arnold's theorem (1972) at codimension 3 gives $A_4$-bifurcation; the approximate $\mathbb{Z}_2$-symmetry of purity selects $x^4$ as the leading term. See [$A_4$-bifurcation](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация), [Phase diagram, Theorem 5.2](/docs/core/dynamics/gap-phase-diagram#катастрофы-уитни).
+:::warning Exact calculus of minima (`A_4` vs `A_5`) and withdrawn L-level correspondence (`T-28 [✗]`, `T-28b [✗]`)
+1. **A degree-5 swallowtail ($A_4$) has at most TWO local minima, NOT three!**
+   Consider the swallowtail unfolding:
+   $$
+   V_{A_4}(G) = G^5 + a\,G^3 + b\,G^2 + c\,G
+   $$
+   Its derivative $V'_{A_4}(G) = 5G^4 + 3aG^2 + 2bG + c = 0$ is a **quartic** (degree-4) polynomial, which has at most **4** real roots. By Rolle's theorem, local minima and maxima must alternate strictly; since $V'_{A_4}(G) \to +\infty$ as $|G| \to \infty$, four simple real roots $r_1 < r_2 < r_3 < r_4$ necessarily alternate as **max, min, max, min** — yielding **at most 2 local minima** (and $V_{A_4}(G) \to -\infty$ as $G \to -\infty$, so $A_4$ is not even globally bounded below without a higher-order stabilizing term).
+2. **Three coexisting stable minima (tristability) require at least a SEXTIC (degree-6) potential — the butterfly catastrophe $A_5$ (`T-161`):**
+   To obtain **3** local minima separated by 2 local maxima (`min–max–min–max–min`), $V'(G) = 0$ must have at least **5** real roots, which requires $\deg V \ge 6$:
+   $$
+   V_{A_5}(G) = G^6 + a\,G^4 + b\,G^3 + c\,G^2 + d\,G \qquad \text{(codimension 4, butterfly } A_5\text{)}.
+   $$
+   (Indeed, `T-161` notes explicitly that the sextic germ is $A_5$, not $A_4$.)
+3. **Withdrawn universal swallowtail / L-level correspondence (`T-28 [✗]`) and phase-Gap injection (`T-28b [✗]`):**
+   - **`T-28 [✗]`:** The former claim of a universal correspondence between swallowtail sheets and the interiority hierarchy L0–L4 is **withdrawn**. Applying any normal form ($A_2, A_3, A_4, A_5$) to a concrete transition requires specifying the exact reduced 1D equation, proving the required degeneracy order, and verifying transversality of the control parameters.
+   - **`T-28b [✗]`:** The former claim that phase-Gap statistics injectively classify L-levels is **withdrawn**: explicit states with identical phase Gaps yield opposite capability verdicts. A capability verdict factors through a scalar statistic iff it is constant on that statistic's fibres.
 :::
 
-**Tristability.** Three stable minima coexist simultaneously — this is a qualitatively new phenomenon compared to the cusp. The system can "remember" its past: depending on its history, it resides in one of three minima, even if the current parameters are identical. Three minima — three qualitatively distinct coherence levels, three operating regimes.
+**What survives rigorously `[T]`/`[C]`:**
+- Local Thom–Arnold normal forms $A_2$ (fold), $A_3$ (cusp), $A_4$ (swallowtail), and $A_5$ (butterfly) remain exact theorems of singularity theory when applied to a supplied reduced family (`T-29 [C]`).
+- **Tristability** (three coexisting stable attractors, permitting direct jumps bypassing an intermediate well) is a valid dynamical mechanism `[C]` inside a **sextic ($A_5$) or higher-degree** bounded-below reduced potential (codimension 4) once reduction, degeneracy, and transversality are verified — not inside a quartic-derivative $A_4$ potential!
 
-**Swallowtail cascade of transitions L0 $\to$ L4:**
+### 2.4 Hierarchy of Elementary Cuspoids {#иерархия-катастроф}
 
-Transitions between L-levels are first-order phase transitions (fold bifurcations inside the swallowtail):
+The cuspoid sequence $A_2 \to A_3 \to A_4 \to A_5$ forms a mathematically exact hierarchy of local normal forms:
 
-- **L1 $\to$ L2** (awakening): fold bifurcation at $\kappa > \kappa_{\text{fold}}$; Gap jumps down from $G_{\text{high}}$ to $G_{\text{mid}}$
-- **L2 $\to$ L3** (insight): fold bifurcation at $\kappa > \kappa'_{\text{fold}}$; Gap jumps down from $G_{\text{mid}}$ to $G_{\text{low}}$
-- **Direct jump L1 $\to$ L3**: possible with simultaneous control of all three parameters — a swallowtail path bypassing the intermediate minimum
+- **$A_2$ (fold, $\deg V = 3$, codim 1):** $V'(G)$ quadratic ($\le 2$ real roots) $\implies$ at most **1** local minimum (tipping point).
+- **$A_3$ (cusp, $\deg V = 4$, codim 2):** $V'(G)$ cubic ($\le 3$ real roots) $\implies$ at most **2** local minima (bistability and hysteresis, globally bounded below).
+- **$A_4$ (swallowtail, $\deg V = 5$, codim 3):** $V'(G)$ quartic ($\le 4$ real roots) $\implies$ at most **2** local minima and 2 local maxima (not globally bounded below; self-intersecting Maxwell set).
+- **$A_5$ (butterfly, $\deg V = 6$, codim 4):** $V'(G)$ quintic ($\le 5$ real roots) $\implies$ up to **3** coexisting local minima (tristability, globally bounded below).
 
-Hysteresis width for each transition ([Phase diagram, Theorem 5.3](/docs/core/dynamics/gap-phase-diagram#катастрофы-уитни)):
+### 2.5 Summary Table of Cuspoid Normal Forms
 
-$$
-\Delta\kappa_{L1 \to L2} = \frac{\lambda_3 \bar{A}_1}{\mu^2}, \qquad \Delta\kappa_{L2 \to L3} = \frac{\lambda_3 \bar{A}_2}{\mu^2}
-$$
+| Catastrophe | Codim. | Potential $V(G)$ | Degree of $V'(G)$ | Max local minima | Globally bounded below? |
+|------------|---------|------------------|-------------------|------------------|-------------------------|
+| Fold ($A_2$) | 1 | $G^3 + aG$ | 2 | 1 | No |
+| Cusp ($A_3$) | 2 | $G^4 + aG^2 + bG$ | 3 | 2 (bistability) | Yes |
+| Swallowtail ($A_4$) | 3 | $G^5 + aG^3 + bG^2 + cG$ | 4 | **2** (not 3!) | No |
+| Butterfly ($A_5$) | 4 | $G^6 + aG^4 + bG^3 + cG^2 + dG$ | 5 | **3** (tristability) | Yes |
 
-A versal unfolding of $A_4$ requires three independent controls. To use it for a particular transition one must identify a fourfold degeneracy of the stationary equation and verify transversality of the parameter directions.
-
-### 2.4 Hierarchy of Catastrophes and the Evolution of Complexity {#иерархия-катастроф}
-
-The sequence $A_2 \to A_3 \to A_4$ is not merely a list. It is a **hierarchy of increasing complexity**, in which each subsequent catastrophe contains the previous one as a special case:
-
-- $A_2$ (fold): one parameter, one jump. The minimal possible restructuring.
-- $A_3$ (cusp): two parameters, bistability, hysteresis. *Memory* appears — the system "remembers" which minimum it was in.
-- $A_4$ (swallowtail): three parameters, tristability, transition cascades. *Architecture* appears — levels of organization.
-
-This hierarchy mirrors the L-level hierarchy non-accidentally. Each L-level requires an *additional* control parameter for its existence as a separate minimum. L0–L1 — unique minimum (no control parameters). L2 — second minimum (one parameter, fold). L3 — third minimum (two parameters, cusp inside swallowtail). This is why Coherence Cybernetics predicts *exactly* three main levels of conscious coherence.
-
-### 2.5 Summary Table of Catastrophes
-
-| Catastrophe | Codim. | Potential $V(G)$ | Number of stable minima | Connection with L-levels |
-|------------|---------|------------------|----------------------|---------------------|
-| Fold ($A_2$) | 1 | $G^3 + aG$ | 0 or 1 | Jump between adjacent L |
-| Cusp ($A_3$) | 2 | $G^4 + aG^2 + bG$ | 1 or 2 | Bistability L1/L2 |
-| Swallowtail ($A_4$) | 3 | $G^5 + aG^3 + bG^2 + cG$ | 1, 2 or 3 | Tristability L1/L2/L3 |
-
-:::info Corollary for the Number of Fermion Generations [T]
-The swallowtail ($A_4$) restriction to three stable minima is a **consistency check** on $N_{\text{gen}} = 3$: the count itself is group-theoretic — $|\mathrm{QR}(7)| = 3$, both bounds, [T] — and the identification with the physical generations is [I] ([theorem](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)).
-:::
-
-:::note Scope of finite catastrophe models
-The transition to the categorical L4 limit uses a Postnikov tower. A finite $A_5$ butterfly model would require a separate finite-dimensional reduction and degeneracy proof. [L4 construction](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l4-категориальная)
+:::note Note on fermion generations and L4
+Because $A_4$ has at most **2** local minima (not 3), swallowtail catastrophe counting does **not** serve as a consistency check on $N_{\text{gen}} = 3$ (which rests separately on the finite-field count $|\mathrm{QR}(7)| = 3$, with physical generation identification `[I]`). Likewise, L-level definitions rest on operational capability criteria ($P, R, \Phi, D_{\text{diff}}$) rather than swallowtail sheets (`T-28 [✗]`, `T-28b [✗]`).
 :::
 
 ---
@@ -482,14 +454,14 @@ $$
 
 ### 3.2 Hysteresis in Recovery {#гистерезис}
 
-:::tip Theorem (Asymmetry of Degradation and Recovery) [T]
-A system that has crossed the critical threshold $P_{\text{crit}} = 2/7$ "downward" (loss of viability) requires for recovery a **greater** value of the control parameter than the value at which the collapse occurred:
+:::tip Proposition (Asymmetry of Degradation and Recovery in a Bistable Family) [C]
+In a specified bistable reduced family (such as a cusp unfolding $A_3$ or the nonlinear gated flow of `T-259`), once the control parameter crosses the lower fold threshold $\mu_{\text{collapse}}$ and the system drops out of the viable branch, returning to that branch requires exceeding the upper fold threshold:
 
 $$
-\mu_{\text{recovery}} = \mu_{\text{collapse}} + \Delta\mu_{\text{hyst}}, \quad \Delta\mu_{\text{hyst}} > 0
+\mu_{\text{recovery}} = \mu_{\text{collapse}} + \Delta\mu_{\text{hyst}}, \qquad \Delta\mu_{\text{hyst}} > 0
 $$
 
-**Proof:** Consequence of bistability in the cuspoid region ([Theorem 5.1(b)](/docs/core/dynamics/gap-phase-diagram#катастрофы-уитни)).
+*Scope note (`T-160 [✗]`):* By **`T-160 [✗]`**, the algebraic purity cut $P_{\text{crit}} = 2/7$ does **not** universally generate a catastrophe or hysteresis loop; hysteresis holds conditionally `[C]` inside a declared bistable reduced family with verified fold boundaries (such as `T-259` or a cusp unfolding `T-29`).
 :::
 
 Hysteresis is not a system defect but a fundamental consequence of nonlinearity. It explains many clinical and organizational observations that otherwise seem paradoxical.
@@ -524,24 +496,15 @@ Resilience is one of the most practically valuable concepts of bifurcation theor
 
 Two people with the same purity level $P$ can have radically different resilience: one is deep inside the basin of attraction, the other is on its boundary. Both are "healthy," but one of them is on the edge.
 
-**Computing resilience.** For a system with parameters $(t, r)$ in the [phase diagram](/docs/core/dynamics/gap-phase-diagram):
+**Computing resilience.** For a specified reduced phase diagram with dimensionless temperature $t$ and feeding/regeneration coordinate $r$ (where $r_c$ denotes the actual fold locus — e.g. the quintic fold $u^*$ of `T-259`, NOT the obsolete shorthand $P_{\text{crit}}/(7P)$):
 
 $$
 \mathcal{R}_{\text{res}} = \min\left(\frac{|t - 1|}{\sqrt{1 + (dr_c/dt)^2}}, \; |r - r_c|\right)
 $$
 
-— the minimum of distances to the Phase I $\leftrightarrow$ II transition line ($t = 1$) and the Phase I $\leftrightarrow$ III transition line ($r = r_c$).
+— the minimum distance to the transition line $t = 1$ and the fold boundary $r = r_c$.
 
-**Resilience and L-levels:**
-
-| L-level | Typical $\mathcal{R}_{\text{res}}$ | Justification |
-|-----------|-------------------------------------|-------------|
-| L0–L1 | Low | Proximity to Phase III (dead zone) |
-| L2 | Medium | Metastability in swallowtail |
-| L3 | High | Deep minimum $G_{\text{low}}$ |
-| L4 | Maximum | Fixed point $\varphi(\Gamma^*) = \Gamma^*$ |
-
-The monotonic growth of resilience with interiority level is not accidental but a consequence of deep structure: the deeper the minimum (the lower the Gap), the farther to the nearest saddle-node point, the harder it is to "knock out" the system.
+**Resilience and operational regimes [I]:** Because `T-28 [✗]` and `T-28b [✗]` withdrew universal swallowtail/phase-Gap L-level maps, resilience $\mathcal{R}_{\text{res}}$ must be evaluated directly against the specified dynamical model's fold boundaries (e.g. margin $u - u^*$ in `T-259`) rather than inferred from L-level labels or scalar Gap values alone. Typically `[I]`, deeper well margins correspond to larger parametric distance from fold collapse.
 
 ### 3.4 Bifurcation Precursors: Early Warning {#раннее-предупреждение}
 
@@ -551,38 +514,24 @@ The idea goes back to the theory of critical phenomena in physics: near a phase 
 
 CC provides a precise formalism for these precursors in terms of Gap dynamics.
 
-:::tip Theorem (Early Warning Indicators) [T]
-Near a bifurcation point, universal precursors are observed:
+:::tip Proposition (Early Warning Indicators in a Linearized Langevin Model) [C]
+Near a local codimension-1 bifurcation of a specified 1D reduced coordinate $x$ perturbed by additive white noise $\dot{\delta x} = -|\lambda_{\min}(\mu)|\,\delta x + \sqrt{2D}\,\xi(\tau)$ (constant noise intensity $D > 0$), linear Ornstein–Uhlenbeck theory gives:
 
-**(a)** Recovery slowdown (critical slowing down):
+**(a)** Critical slowing down ($\tau_{\text{relax}} = 1/|\lambda_{\min}(\mu)| \to \infty$):
+- **Fold / saddle-node** ($|\lambda_{\min}| = 2\sqrt{\mu - \mu_{sn}}$): $\tau_{\text{relax}} \propto |\mu - \mu_{sn}|^{-1/2}$
+- **Pitchfork** ($|\lambda_{\min}| \propto |\mu - \mu_c|$): $\tau_{\text{relax}} \propto |\mu - \mu_c|^{-1}$
 
+**(b)** Growth of stationary fluctuation variance ($\mathrm{Var}(\delta x) = D / |\lambda_{\min}(\mu)| \to \infty$):
+- **Fold / saddle-node**: $\mathrm{Var}(\delta x) \propto |\mu - \mu_{sn}|^{-1/2}$
+- **Pitchfork**: $\mathrm{Var}(\delta x) \propto |\mu - \mu_c|^{-1}$
+
+**(c)** Slowing decay of autocorrelation:
 $$
-\tau_{\text{relax}} \propto |\mu - \mu_c|^{-1/2} \to \infty
+C(\Delta\tau) = \langle\delta x(\tau)\,\delta x(\tau + \Delta\tau)\rangle = \frac{D}{|\lambda_{\min}|}\,e^{-\Delta\tau / \tau_{\text{relax}}}
 $$
+so the lag-$\Delta\tau$ autocorrelation coefficient $\rho(\Delta\tau) = e^{-\Delta\tau/\tau_{\text{relax}}} \to 1$ as $\tau_{\text{relax}} \to \infty$.
 
-**(b)** Growth of Gap fluctuation variance:
-
-$$
-\mathrm{Var}(\mathrm{Gap}) \propto |\mu - \mu_c|^{-1} \to \infty
-$$
-
-**(c)** Growth of autocorrelation:
-
-$$
-C(\Delta\tau) = \langle\delta\mathrm{Gap}(\tau)\,\delta\mathrm{Gap}(\tau + \Delta\tau)\rangle \to \mathrm{const} \neq 0
-$$
-
-Monitoring these indicators allows one to **predict** an approaching bifurcation before it occurs.
-
-**Proof.** Follows from linear stability theory applied to Gap dynamics near the swallowtail bifurcation ([Theorem 1.2](#swallowtail) [T]).
-
-**(a)** The Jacobian $J$ of the linearized Gap dynamics $d(\delta\mathrm{Gap})/d\tau = J \cdot \delta\mathrm{Gap}$ has a minimal eigenvalue $\lambda_{\min}(\mu)$ that vanishes at $\mu = \mu_c$ (definition of the bifurcation point). Relaxation time $\tau_{\text{relax}} = 1/|\lambda_{\min}| \to \infty$. The exponent $-1/2$ is standard for the swallowtail (normal form $A_4$: $\lambda_{\min} \sim |\mu - \mu_c|^{1/2}$).
-
-**(b)** From the fluctuation-dissipation theorem [T-105](/docs/core/dynamics/gap-thermodynamics#эффективная-температура) [T]: $\mathrm{Var}(\mathrm{Gap}) = k_B T_{\text{eff}} / |\lambda_{\min}|$. With $\lambda_{\min} \sim |\mu - \mu_c|^{1/2}$ we get $\mathrm{Var} \propto |\mu - \mu_c|^{-1/2}$, and for saddle-node ($\lambda_{\min} \sim |\mu - \mu_c|$) — $\mathrm{Var} \propto |\mu - \mu_c|^{-1}$.
-
-**(c)** The autocorrelation function $C(\Delta\tau) \sim e^{-\Delta\tau / \tau_{\text{relax}}}$. As $\tau_{\text{relax}} \to \infty$, the decay slows down, $C(\Delta\tau) \to \mathrm{const}$ for any finite $\Delta\tau$.
-
-All three consequences are standard results of the theory of critical phenomena (Strogatz 2015, §8), applied to specific Gap dynamics with a known Jacobian. $\blacksquare$
+**Proof & clarification on `T-105`.** Follows directly from the stationary Ornstein–Uhlenbeck variance $\mathrm{Var}(\delta x) = D / |\lambda_{\min}|$ and autocorrelation $\rho(\Delta\tau) = e^{-|\lambda_{\min}|\Delta\tau}$ (Strogatz 2015, §8) for the supplied reduced Jacobian eigenvalue $|\lambda_{\min}(\mu)|$ and noise intensity $D$. *(Clarification: earlier editions mistakenly cited `T-105` as a fluctuation–dissipation theorem for Gap variance; in the registry, **`T-105`** is the conditional **Landauer bound** for thermal erasure under measured bath temperature and entropy flow — a completely different result! Likewise, universal UHM critical exponents are withdrawn per `T-161`.)* $\blacksquare$
 :::
 
 **Physical intuition.** Critical slowing down is the most reliable precursor. It can be understood through an analogy: imagine a ball in a shallow cup. If the ball is pushed, it quickly returns to the bottom. Now imagine the cup gradually flattening — the bottom becoming ever more flat. The ball still returns, but *ever more slowly*. At the moment when the cup becomes completely flat, the return time becomes infinite — the ball "forgets" where its equilibrium is.
@@ -608,7 +557,7 @@ The bifurcation approach to psychiatry is not a metaphor but a research program,
 
 Standard model: when neurotransmitter activity (serotonin, dopamine) falls below a critical level, the stable "normal" state disappears and the system "falls" into the depressive attractor.
 
-In CC terms: the control parameter $\mu = \kappa / \Gamma_2$ (the regeneration-to-decoherence ratio) drops below $\mu_{sn}$. The stationary Gap profile with $G_{\text{mid}}$ (L2 level — normal reflexivity) annihilates. The system finds itself in the basin of attraction $G_{\text{high}}$ (L0–L1 — reduced reflexivity, loss of interiority).
+In CC's interpretive model `[I]`, the dimensionless regeneration-to-decoherence ratio $\mu = \kappa_{\text{eff}} / \Gamma_2$ drops below the fold threshold $\mu_{sn}$ (such as the gated fold $u^*$ of `T-259`, `[C]` under physical rate matching). The higher-coherence stationary attractor annihilates, and trajectories fall into a lower-coherence, reduced-reflection attractor.
 
 **Hysteresis in treatment.** Antidepressants increase $\kappa$ (strengthen coherence regeneration). But to exit depression, $\kappa > \kappa_{\text{recovery}} > \kappa_{\text{collapse}}$ is necessary — simply returning to "normal" is insufficient. This explains why antidepressants are recommended to be continued *after* symptoms disappear: the parameters must exit the hysteresis zone before the former equilibrium becomes stable again.
 
@@ -624,9 +573,7 @@ Bipolar disorder type I is characterized by alternating manic and depressive epi
 
 One of the most striking clinical observations: after severe trauma, some people do not merely recover — they reach a *higher* level of functioning than before the trauma. This is post-traumatic growth (Tedeschi, Calhoun).
 
-In swallowtail terms: trauma is a saddle-node bifurcation that destroys the minimum $G_{\text{mid}}$ (L2). The system is "thrown out" of its habitual minimum. But where to? If the parameters $(\kappa, \alpha, \Delta F)$ are configured in a certain way — the system may end up not in $G_{\text{high}}$ (regression to L0–L1) but in $G_{\text{low}}$ (breakthrough to L3). Trauma as a catalyst: by destroying the old, insufficiently deep minimum, it opens access to a deeper one.
-
-This is not a romanticization of suffering but a mathematical fact: in swallowtail geometry, the path through crisis can lead both upward and downward. The therapeutic task is to provide parameters under which the crisis resolves "downward" (toward $G_{\text{low}}$, higher coherence), not "upward" (toward $G_{\text{high}}$, regression).
+In a tristable reduced potential (requiring at least a sextic / butterfly $A_5$ potential with 3 coexisting local minima, rather than the at-most-bistable $A_4$ swallowtail), an acute shock that destabilizes an intermediate metastable basin can expel the trajectory either toward a lower-coherence basin (regression) or — if regeneration and control parameters are favourably configured `[I]` — into a deeper, higher-coherence basin (post-traumatic growth). This is an interpretive dynamical model `[I]`, not a universal swallowtail-to-L-level theorem (`T-28 [✗]`, `T-28b [✗]`).
 
 ### 4.4 Epilepsy: Subcritical Hopf and Critical Slowing Down {#эпилепсия}
 
@@ -650,10 +597,11 @@ graph TD
         SN["Saddle-node: annihilation"]
         HF["Hopf: oscillations"]
     end
-    subgraph CAT["Whitney Catastrophes"]
-        FOLD["Fold (1D)"]
-        CUSP["Cusp (2D)"]
-        SW["Swallowtail (3D)"]
+    subgraph CAT["Cuspoid Normal Forms"]
+        FOLD["Fold A₂ (1D, ≤1 min)"]
+        CUSP["Cusp A₃ (2D, ≤2 min)"]
+        SW["Swallowtail A₄ (3D, ≤2 min)"]
+        BF["Butterfly A₅ (4D, ≤3 min)"]
     end
     subgraph APP["Cybernetic Interpretation"]
         CRISIS["Crisis"]
@@ -668,7 +616,8 @@ graph TD
     HF --> CUSP
     FOLD --> CRISIS
     CUSP --> HYST
-    SW --> |"L0→L4"| HYST
+    SW --> HYST
+    BF --> HYST
     CRISIS --> WARN
     HYST --> RES
 ```
@@ -681,13 +630,13 @@ graph TD
 
 | Result | Status | Source |
 |-----------|--------|----------|
-| Gap landscape bifurcations (Theorem 4.1) | **[T]** | [Gap dynamics](/docs/core/dynamics/gap-dynamics#бифуркации) |
-| Whitney catastrophes (Theorem 5.1) | **[T]** | [Phase diagram](/docs/core/dynamics/gap-phase-diagram#катастрофы-уитни) |
-| Swallowtail and L-levels (Theorem 5.2) | **[T]** | [Phase diagram](/docs/core/dynamics/gap-phase-diagram#катастрофы-уитни) |
-| Three minima and L-levels (Theorem 5.3) | **[T]** | [Phase diagram](/docs/core/dynamics/gap-phase-diagram#катастрофы-уитни) |
-| Crisis as bifurcation | **[I]** | This document |
-| Resilience | **[I]** | This document |
-| Early warning indicators | **[H]** | This document |
+| Local bifurcation normal forms (pitchfork, saddle-node, Hopf) | **[T]** (for specified nondegenerate reduction) | [Gap dynamics](/docs/core/dynamics/gap-dynamics#бифуркации) |
+| Exact gated fold & quintic $S_5$ boundary (`T-259`) | **[T]** (isotropic fixed-target flow) / **[C]** (biological calibration) | Section 1.2a, [Phase diagram](./phase-diagram-cc#теорема-окно-питания) |
+| Elementary cuspoid normal forms $A_2, A_3, A_4, A_5$ (`T-29`) | **[T]** (local singularity theory; $A_4$ has $\le 2$ minima, $A_5$ has $\le 3$) | Section 2.5, [Phase diagram](/docs/core/dynamics/gap-phase-diagram#катастрофы-уитни) |
+| Universal swallowtail / L-level correspondence & phase-Gap injection | **[✗]** (withdrawn) | `T-28 [✗]`, `T-28b [✗]` |
+| Universal purity-cut catastrophe & universal UHM critical exponents | **[✗]** (withdrawn; tuned model only) | `T-160 [✗]`, `T-161` |
+| Linear Langevin early warning indicators (distinct from Landauer `T-105`) | **[C]** (reduced additive-noise model) / **[H]** (clinical) | Section 3.4 |
+| Crisis, hysteresis, and resilience interpretations | **[I]** | This document |
 
 ### 6.2 Cross-References
 
@@ -707,15 +656,15 @@ graph TD
 
 1. **Three types of bifurcations** exhaust the grammar of qualitative changes in the Gap landscape: pitchfork (choice), saddle-node (catastrophe), and Hopf (birth of rhythm). Each is described by a normal form — the simplest equation preserving the essence of the transition.
 
-2. **Local normal forms.** The $A_2$, $A_3$ and $A_4$ models have increasing unfolding codimension. Their applicability to a transition needs verification for the actual reduced dynamics.
+2. **Exact cuspoid calculus & retractions.** $A_2$ (fold) has $\le 1$ minimum, $A_3$ (cusp) and $A_4$ (swallowtail, quartic derivative) each have at most **2** local minima, whereas **3** coexisting minima (tristability) require at least the sextic butterfly $A_5$ (`T-29`, `T-161`). The universal swallowtail/L-level map (`T-28 [✗]`), phase-Gap injection (`T-28b [✗]`), and universal purity-cut catastrophe (`T-160 [✗]`) are withdrawn.
 
-3. **Hysteresis** is a fundamental consequence of nonlinearity: it is easier to destroy than to restore. To return to the former state after a crisis, the parameters must **exceed** the pre-crisis values.
+3. **Exact gated fold (`T-259`) and hysteresis.** In the gated isotropic fixed-target flow (`T-259`), the linear floor sits at the silver ratio $1+\sqrt{2}$ while the true saddle-node fold is a non-radical degree-5 algebraic number ($u^* \approx 21.5$ at $c = 2$), superseding the obsolete $r_c = P_{\text{crit}}/(7P)$ shorthand. Inside bistable reduced families, recovery exhibits hysteresis.
 
-4. **Resilience** — the distance to the nearest bifurcation — grows with interiority level: L3-systems are more stable than L1-systems. This is not accidental but a consequence of the depth of the potential minimum.
+4. **Resilience** — parametric distance to the nearest fold/bifurcation boundary — quantifies safety margin within a specified reduced dynamical model.
 
-5. **Early precursors** of bifurcation (critical slowing down, variance growth, autocorrelation growth) allow one to **predict** an approaching crisis before it occurs — and to intervene.
+5. **Early warning precursors** (critical slowing down $\tau_{\text{relax}} = 1/|\lambda_{\min}|$, variance $\mathrm{Var} = D/|\lambda_{\min}|$, autocorrelation growth) follow from linear Ornstein–Uhlenbeck stability near fold ($|\mu-\mu_{sn}|^{-1/2}$) or pitchfork ($|\mu-\mu_c|^{-1}$) bifurcations `[C]` (distinct from the conditional thermal Landauer bound `T-105`).
 
-6. **Clinical applications**: depression is formalized as a saddle-node bifurcation, bipolar disorder as Hopf, and post-traumatic growth as a direct jump through the swallowtail to a deeper minimum.
+6. **Clinical interpretations `[I]`**: depression is modelled as a saddle-node collapse, bipolar cycling as a Hopf limit cycle on canonical axes (`D, E, S, O, A, L, U`), and post-traumatic growth as an attractor jump in a tristable ($A_5$-type) reduced landscape.
 
 :::tip Bridge to the Next Chapter
 Bifurcations describe discontinuous transitions — but real systems have **memory**: the past influences the present, and that influence is not instantaneous. In the [next chapter](./non-markovian) we will introduce the **memory kernel** $K(\tau)$ and show how non-Markovian dynamics generates Gap oscillations — "grief waves" and "clarity flashes" — as well as therapeutic windows in which intervention is most effective.

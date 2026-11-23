@@ -25,7 +25,7 @@ The model supplies three terms for the generator of $\Gamma$. The name “logica
 
 ## 2. Switching off dissipation and regeneration {#2-предельный-функтор}
 
-**Theorem 3.1 (unitary regime).** Set all dissipative rates and the regenerative coupling to zero in the specified equation. With $H=H^\dagger$ in energy units, the remaining equation is
+**Theorem 2.1 (unitary regime).** Set all dissipative rates and the regenerative coupling to zero in the specified equation. With $H=H^\dagger$ in energy units, the remaining equation is
 
 $$
 \dot\Gamma=-\frac{i}{\hbar}[H,\Gamma]+\mathcal D[\Gamma]+\mathcal R[\Gamma]
@@ -63,7 +63,7 @@ $$
 
 where $\Phi_f$ is the CPTP channel induced by morphism $f$.
 
-:::tip [T] Theorem 1.1 (Functoriality of the forgetful functor)
+:::tip [T] Theorem 3.1 (Functoriality of the forgetful functor)
 $\mathcal{U}$ is a functor preserving identities and composition.
 
 *Proof:* Direct consequence of the definition of morphisms in $\mathbf{Hol}$ as structure-preserving CPTP channels. $\blacksquare$
@@ -83,7 +83,7 @@ The proposed association of unitary evolution with elementary particles, dissipa
 
 ## 6. Finite clock readings and Page–Wootters conditioning {#6-дискретность-времени}
 
-Choose a clock with $N$ pointer labels and cyclic shift $V|k\rangle=|k+1\bmod N\rangle$. Its readout set is $\mathbb Z_N$ by construction (the content of Theorem 3.4). With energy levels $\hbar\omega_0 k$, consecutive Fourier-clock readings are spaced by $2\pi/(N\omega_0)$. Conditioning a joint clock–system state on such a reading requires a specified tensor product, state and clock measurement. The Page–Wootters constraint is a further input. With $N=7$ and a six-level system this model has dimension 42. At fixed $\omega_0$ the readings become dense on a circle as $N$ grows. Finite dimension alone gives neither a universal chronon nor a continuum time law. [Clock algebra](/docs/core/structure/dimension-o#алгебра-часов) · [Page–Wootters construction](/docs/proofs/dynamics/emergent-time)
+Choose a clock with $N$ pointer labels and cyclic shift $V|k\rangle=|k+1\bmod N\rangle$. Its readout set is $\mathbb Z_N$ by construction (cf. `T-38b`). With energy levels $\hbar\omega_0 k$, consecutive Fourier-clock readings are spaced by $2\pi/(N\omega_0)$. Conditioning a joint clock–system state on such a reading requires a specified tensor product, state and clock measurement. The Page–Wootters constraint is a further input. With $N=7$ and a six-level system this model has dimension 42. At fixed $\omega_0$ the readings become dense on a circle as $N$ grows. Finite dimension alone gives neither a universal chronon nor a continuum time law. [Clock algebra](/docs/core/structure/dimension-o#алгебра-часов) · [Page–Wootters construction](/docs/proofs/dynamics/emergent-time)
 
 ## 7. Precedents: Reconstructions of Quantum Theory {#7-прецеденты-реконструкции}
 

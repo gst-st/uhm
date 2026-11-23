@@ -14,7 +14,7 @@ This is a **commercial project specification** at engineering status, not a theo
 
 ## §1. The one-paragraph thesis {#тезис}
 
-Humanity runs a vast, permanent market in self-reading — astrology, Human Design, the Enneagram, MBTI, tarot, numerology, and the entire coaching / self-help / wellness economy downstream of them. That market exists because the need is real and universal: *people must read themselves, their relationships, their teams, and now their AI systems, in order to act.* Every incumbent product serves the need with an **arbitrary frame**, a **hidden anchor**, and **unaccounted loss**. UHM Console serves the same need with a **derived frame** (the coherence matrix Γ, provably the unique complete self-reading grammar), an **explicit anchor** (each reading is labelled measured / self-tracked / oracular), and **quantified loss** (the theory says exactly what each view drops). That is the entire commercial thesis: *the same product category, rebuilt on a foundation that is true, honest, and — uniquely — falsifiable.*
+Humanity runs a vast, permanent market in self-reading — astrology, Human Design, the Enneagram, MBTI, tarot, numerology, and the entire coaching / self-help / wellness economy downstream of them. That market exists because the need is real and universal: *people must read themselves, their relationships, their teams, and now their AI systems, in order to act.* Every incumbent product serves the need with an **arbitrary frame**, a **hidden anchor**, and **unaccounted loss**. UHM Console serves the same need with a **derived frame** (the coherence matrix $\Gamma$, derived as the unique minimal grammar under single-fault diagnosability in the corpus), an **explicit anchor** (each reading is labelled measured / self-tracked / oracular), and **quantified loss** (the framework declares what each estimator drops). That is the entire commercial thesis: *the same product category, rebuilt on a foundation that is explicit, honest, and — uniquely — falsifiable.*
 
 ## §2. Why this is a commercial direction of UHM, not a side-app {#почему-коммерция}
 
@@ -31,8 +31,8 @@ The three revenue paths share one codebase and one theory. That is the structura
 UHM Console reads any admissible system as a point $\Gamma \in \mathcal D(\mathbb C^7)$ — a seven-dimensional coherence state — and its derived invariants, then presents them as a legible, actionable profile with an honest label on every claim. Concretely, a first-session user answers a structured self-audit; the Console returns:
 
 - a **mandalagram** — the seven populations and twenty-one channels of their own state, rendered as a readable chart;
-- an **invariant readout** — viability, reflection, integration, differentiation, self-model quality, the meaning-vector, and the degrees of freedom actually available to them;
-- an **archetype and mode** — which of sixteen structural signatures they currently express, and whether their present is preserving, dissolving, or regenerating;
+- an **invariant readout** — viability, reflection, fixed-frame integration, 7D differentiation proxy, self-model quality, and optional composite indicators with explicit provenance;
+- an **archetype and mode** — which of the sixteen Hamming $H(7,4)$ diagonal signatures they currently express (distinct from the nine nonempty Fano collineation orbit types), and which dynamical component dominates their recent increment;
 - a **trajectory** once they return — how their state moves, where a channel is about to open or jam, where a bifurcation looms;
 - on **every** output, the anchor class (how this was derived) and the loss/confidence (what it cannot see).
 
@@ -40,19 +40,19 @@ No birth chart. No planetary assignment. No cosmic decree. A measured, updatable
 
 ## §4. The honesty spine {#ось-честности}
 
-One design commitment separates the Console from a horoscope and makes it defensible in front of a scientist, a clinician, and a regulator: **every reading declares its anchor class.** The corpus proves there are exactly three ways to assign a state to a system ([gamma-canon §2](https://homohologra.ph/research/gamma-canon#якорение)), in decreasing rigour:
+One design commitment separates the Console from a horoscope and makes it defensible in front of a scientist, a clinician, and a regulator: **every reading declares its anchor class.** The [empirical programme](/docs/consciousness/empirical/overview) and [reconstruction-identifiability analysis](/docs/applied/research/reconstruction-identifiability) distinguish three ways to assign a state or lens to a system, in decreasing rigour:
 
 | Anchor | Input | Rigour | Corpus status |
 |---|---|---|---|
-| **I — measured** | physiological / neural / behavioural signals → $\widehat\Gamma$ with confidence bounds | hard-science | [Т-path] |
-| **II — autoephemeris** | longitudinal self-audit → $\widehat\Gamma(t)$ trajectory | structured self-report | [И, structured] |
-| **III — oracle** | a structured projective prompt in the derived frame | contemplative lens | [И, honest mechanism] |
+| **I — measured** | physiological / neural / behavioural signals → $\widehat\Gamma$ with confidence bounds | empirical measurement bridge | [Pr] |
+| **II — autoephemeris** | longitudinal self-audit → $\widehat\Gamma(t)$ trajectory | structured self-report | [Pr]/[I] |
+| **III — oracle** | a structured projective prompt in the derived frame | contemplative lens | [I] |
 
 The Console **never** presents a class-III reading as class-I, and never lets an anchor go unlabelled. This is not a disclaimer; it is the core feature. It is also the answer to the single question that sinks every competitor — *"how do you know?"* — because for the Console the answer is always printed on the reading.
 
 ## §5. What the Console refuses {#отказ}
 
-The corpus derives **no** mapping from birth date onto Γ ([gamma-canon §1.7](https://homohologra.ph/research/gamma-canon#слой-6)). Therefore the Console has **no natal-from-birth module** — the exact feature every astrology and Human Design app is built around. This is a deliberate, load-bearing refusal: the birth-anchor is the silent step the theory forbids, and refusing it is what earns the Console the right to call itself an instrument. What replaces it is stronger and is the heart of the human module ([05](/docs/applied/console/human-module)): a *measured, longitudinal, falsifiable* self-model that updates as the person does.
+The corpus derives **no** mapping from birth date onto $\Gamma$ (see [reconstruction identifiability](/docs/applied/research/reconstruction-identifiability) and [status registry](/docs/reference/status-registry)). Therefore the Console has **no natal-from-birth module** — the exact feature every astrology and Human Design app is built around. This is a deliberate, load-bearing refusal: the birth-anchor is an unidentified silent step, and refusing it is what earns the Console the right to call itself an instrument. What replaces it is stronger and is the heart of the human module ([05](/docs/applied/console/human-module)): a *measured, longitudinal, falsifiable* self-model that updates as the person does.
 
 ## §6. Reading guide to the specification {#гид}
 
@@ -71,4 +71,4 @@ The suite is ordered so that each document rests only on the ones before it — 
 | [09](/docs/applied/console/commercial) | Commercial model | market, tiers, business model, competition, go-to-market, moat, risks |
 | [10](/docs/applied/console/ethics-governance) | Ethics and governance | theory-derived guardrails, regulatory posture, data governance |
 
-**Where this leads.** The specification threads directly off five corpus documents; a reader who wants the theory under any claim should keep these open: [The One Grammar](https://homohologra.ph/research/one-grammar), [Measurement](/docs/applied/coherence-cybernetics/measurement), [The Γ-Canon](https://homohologra.ph/research/gamma-canon), [Gap diagnostics](/docs/applied/research/gap-diagnostics), [Falsifiability](/docs/reference/falsifiability).
+**Where this leads.** The specification threads directly off five corpus documents; a reader who wants the theory under any claim should keep these open: [Σ-Calculus](/docs/applied/research/syndrome-calculus), [Measurement](/docs/applied/coherence-cybernetics/measurement), [Empirical Programme](/docs/consciousness/empirical/overview), [Gap Diagnostics](/docs/applied/research/gap-diagnostics), [Status Registry & Falsifiability](/docs/reference/status-registry) ([Falsifiability](/docs/reference/falsifiability)).

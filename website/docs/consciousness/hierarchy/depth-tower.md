@@ -9,7 +9,7 @@ description: "Typed representation towers, independent predictive certificates a
 A representation tower and a self-model iteration are different constructions. Neither gives a biological depth merely by counting layers or iterations. This page follows the [typed mathematical kernel](/docs/reference/mathematical-kernel) and the [canonical hierarchy](./interiority-hierarchy): L2 requires $\mathsf{Cap}_2$; L3 additionally requires independent nonconstant metamodel predictions; L4 is a compatible all-order ideal.
 
 :::warning Revision 2026-10-03
-The former universal equivalence between SAD and L-levels, cognitive ceiling SAD_MAX = 3, and identification of every depth increase with an $A_4$ catastrophe are **withdrawn [✗]**. An optional score still has a ceiling of three by its definition; this is not a theorem limiting cognition. T-142's old cognitive/spectral identification needs these corrections propagated to its own proof.
+The former universal equivalence between SAD and L-levels ([T-136](/docs/proofs/consciousness/operationalization#t-136) **[✗]**), cognitive ceiling $\mathrm{SAD}_{\max} = 3$, and identification of every depth increase with an $A_4$ catastrophe are **withdrawn [✗]**. An optional score still has a ceiling of three by its definition; this is not a theorem limiting cognition. The corrected algebraic statement for [T-142](/docs/proofs/consciousness/operational-closure#t-142) retains only the off-diagonal attenuation identity and the arithmetic of the stipulated score.
 :::
 
 ## 1. The problem {#проблема}
@@ -58,19 +58,21 @@ $$
 
 A general linear channel may require Jordan terms. A projection onto stationary modes is an asymptotic statement requiring decay of the other modes and absence of nontrivial peripheral oscillations; it is not the formula for every finite iterate. A state-dependent model is nonlinear and has no such global channel spectral formula merely by being state preserving.
 
-For the bare Fano dephasing $D_{2/3}$ and nonzero initial off-diagonal norm,
+Let $\mathcal{P}_\alpha := \alpha\,\mathcal{P}_{\mathrm{base}} + (1-\alpha)\,\mathcal{P}_{\mathrm{Fano}}$ ($\alpha \in [0,1]$) be the canonical dephasing filter, which preserves the diagonal and multiplies off-diagonals by $c = (1-\alpha)/3$; at $\alpha = 0$, $\mathcal{P}_0 = \mathcal{P}_{\mathrm{Fano}}$ multiplies off-diagonals by $1/3$. For bare Fano dephasing $\mathcal{P}_{\mathrm{Fano}}$ and nonzero initial off-diagonal norm,
 
 $$
-S_n:=\frac{\|\operatorname{offdiag}(D_{2/3}^n\rho)\|_F}{\|\operatorname{offdiag}\rho\|_F}=3^{-n}.
+S_n:=\frac{\|\operatorname{offdiag}(\mathcal{P}_{\mathrm{Fano}}^n\rho)\|_F}{\|\operatorname{offdiag}\rho\|_F}=3^{-n}.
 $$
 
-For canonical $M(\rho)=(1-R(\rho))D_{2/3}\rho+R(\rho)I/7$,
+For the **coherent dephasing-anchor** self-model $\varphi_{\mathrm{coh}}(\rho) := (1-R(\rho))\,\mathcal{P}_\alpha(\rho) + R(\rho)\,I/7$ ($k = 1-R(\rho)$, $\rho_j = \varphi_{\mathrm{coh}}^j(\rho)$),
 
 $$
-S_n=3^{-n}\prod_{j=0}^{n-1}(1-R(\rho_j))\le(2/7)^n.
+S_n = \left(\frac{1-\alpha}{3}\right)^n \prod_{j=0}^{n-1}(1-R(\rho_j)) \le \left(\frac{2(1-\alpha)}{7}\right)^n,
 $$
 
-Neither expression is fidelity or reflective competence. The detection rule $S_n\ge\varepsilon$ gives the bare-channel bound $n\le\lfloor\log(1/\varepsilon)/\log3\rfloor$ **[T]**. It depends on a chosen detection threshold and is not universally three. If the initial off-diagonal norm is zero the ratio is undefined, rather than a depth certificate.
+reducing at $\alpha = 0$ ($\mathcal{P}_0 = \mathcal{P}_{\mathrm{Fano}}$) to $S_n = 3^{-n}\prod_{j=0}^{n-1}(1-R(\rho_j)) \le (2/7)^n$. This must not be conflated with the **linear anchor-mixing** form $\varphi_{\mathrm{lin}}(\rho) := R(\rho)\,\rho + (1-R(\rho))\,I/7$ ([T-249](/docs/proofs/categorical/formalization-phi#дф-производная) **[T]**), where $R$ and $1-R$ are reversed and no Fano filter acts (giving $S_n = \prod_{j=0}^{n-1} R(\rho_j)$), nor with the **collineation-anchored** model $\varphi_J(\rho) := (1-R(\rho))\,\mathcal{P}_\alpha(\rho) + R(\rho)\,|\psi\rangle\langle\psi|$ ([T-334](/docs/core/operators/phi-operator#phi-j) **[T]**), whose non-diagonal pure anchor $|\psi\rangle\langle\psi|$ injects coherence at every step.
+
+Neither attenuation ratio is fidelity or reflective competence. The detection rule $S_n\ge\varepsilon$ gives the bare-channel bound $n\le\lfloor\log(1/\varepsilon)/\log3\rfloor$ **[T]**. It depends on a chosen detection threshold and is not universally three. If the initial off-diagonal norm is zero the ratio is undefined, rather than a depth certificate.
 
 ### What the former critical-purity arithmetic proves {#критическая-чистота-sad}
 
@@ -88,7 +90,7 @@ $$
 
 For $n=1,2,3,4$, these numbers are $1/7,2/7,9/14,54/35$. Since $P\le1$, this **stipulated score** never reaches order four, and its maximum three is attained for $P>9/14$. This algebra is **[T conditional on the score definition]**. The prefactor $P/(2/7)$ can exceed one and is neither the normalised survival ratio nor canonical $R$. No Fano theorem identifies it with self-model accuracy.
 
-Also $P>9/14$ implies $R<2/9<1/3$: the purported depth-three episode fails the canonical L2 gate. It cannot be L3 under the cumulative hierarchy. A chosen 3-truncation, a Jordan-algebra matrix-rank ceiling or a chosen perfect-code grammar does not independently prove a bound on cognitive recursion; each needs a faithful operational bridge. See corrected [T-217/T-218](/docs/proofs/categorical/fundamental-closures#t-218).
+Also $P>9/14$ implies $R<2/9<1/3$: the purported depth-three episode fails the canonical L2 gate. It cannot be L3 under the cumulative hierarchy. A chosen 3-truncation, a Jordan-algebra matrix-rank ceiling or a chosen perfect-code grammar does not independently prove a bound on cognitive recursion; each needs a faithful operational bridge. See [T-217](/docs/proofs/categorical/fundamental-closures#t-217) **[✗]** (universal depth ceiling withdrawn; selected 3-type construction remains exact) and [T-218](/docs/proofs/categorical/fundamental-closures#t-218) **[T at Sing realization]**.
 
 ## 4. Biological correlates {#биологические-корреляты}
 

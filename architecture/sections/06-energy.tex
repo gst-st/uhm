@@ -18,93 +18,109 @@ The one instruction of \TALOS{} splits cleanly into a reversible part and two
 entropy-exporting parts (Table~\ref{tab:three-terms}), and this split induces
 an energy law with no counterpart in a layered machine.
 
-\begin{claimbox}[Energy--learning law \status{T} for the reversible core, \status{C} for the coefficient]
-The unitary term $-i[H_{\mathrm{eff}},\Gam]$ is an \emph{isometry} of every
-monotone metric (T-262): it preserves the von~Neumann entropy of the state,
-so by Landauer it costs \emph{zero} free energy. All free-energy expenditure
-is charged to the two entropy-exporting terms:
+\begin{claimbox}[Logical entropy--learning law \status{T} for the unitary core, \status{C} for the physical coefficient]
+The unitary term $-i[H_{\mathrm{eff}},\Gam]$ evolves $\Gam$ by unitary
+conjugation $U\Gam U^\dagger$: it preserves the spectrum and the von~Neumann
+entropy $S_{\mathrm{vN}}(\Gam)=-\Tr(\Gam\log_2\Gam)$ identically, so its
+logical Landauer entropy export is \emph{zero}. All logical entropy export is
+charged to the two non-unitary terms:
 \begin{equation}
 \label{eq:energy-law}
-E_{\mathrm{tick}} \;\geq\; kT\ln 2 \,\cdot\, \Delta H_{\mathrm{exported}},
+E_{\mathrm{tick}} \;\geq\; k_B T\ln 2 \,\cdot\, \Delta H_{\mathrm{exported}},
 \qquad
-\Delta H_{\mathrm{exported}} \;=\; \underbrace{\Delta H_{\Regen}}_{\text{learning}}
-\;+\; \underbrace{\Delta H_{\Diss}^{(+)}}_{\text{maintenance}},
+\Delta H_{\mathrm{exported}} \;=\; \underbrace{\Delta H_{\Regen}}_{\text{learning (bits)}}
+\;+\; \underbrace{\Delta H_{\Diss}^{(+)}}_{\text{maintenance (bits)}},
 \end{equation}
-where $\Delta H_{\Regen}$ is the order the regeneration creates (the
-free-energy-costly direction, $V_{\mathrm{hed}}=dP/d\tau>0$) and
-$\Delta H_{\Diss}^{(+)}$ is only the entropy that must be re-exported to hold
-the state against the dissipator's leak. \emph{Computing is free; only
-forgetting-into-order (maintenance) and learning cost energy.}
+where $\Delta H_{\Regen}$ (in bits) is the von~Neumann entropy reduction
+created by regeneration and $\Delta H_{\Diss}^{(+)}$ (in bits) is the entropy
+that must be re-exported to hold the state against the dissipator's leak.
+\emph{At the logical thermodynamic floor, reversible unitary work exports zero
+entropy; only maintenance and learning require entropy export.}
 \end{claimbox}
 
-Two limiting cases make the law concrete.
+Two limiting cases make the accounting concrete.
 \begin{itemize}[leftmargin=1.5em,itemsep=1pt]
   \item \textbf{A holon at its fixed point} ($\Gam=\rhostar$, converged, not
-        learning) has $\Delta H_{\Regen}=0$; its only cost is the maintenance
-        term, the free energy needed to hold $\rhostar$ against relaxation. If
-        the task requires no forgetting, the dissipator can be quenched and
-        the machine computes \emph{reversibly at the Landauer floor} --- net
-        erasure zero.
-  \item \textbf{A holon that is learning} spends in proportion to how fast it
-        is moving toward its self-model, $\propto (dP/d\tau)_+$. Power tracks
-        the learning rate directly: a machine that has learned draws less
-        than a machine that is learning, with no change to what it computes.
+        learning) has $\Delta H_{\Regen}=0$; its only logical thermodynamic
+        cost is the maintenance term needed to hold $\rhostar$ against
+        dissipation. If the dissipator is switched off, pure unitary evolution
+        exports zero entropy.
+  \item \textbf{A holon that is learning} exports logical entropy in proportion
+        to the order it creates per tick toward its self-model, tracking
+        adaptation rather than reversible unitary work.
 \end{itemize}
 
-\subsection{The numbers}
+\subsection{The numbers and honest thermodynamic scope}
 
-At $T=300$~K, $kT\ln 2 = 2.87\times10^{-21}$~J per irreversibly exported bit
-($0.018$~eV). A learning-bounded tick that reshapes a few bits of the
-$34$-parameter state costs on the order of $10^{-20}$~J; the worst case ---
-re-exporting the entire state entropy every tick, which never happens away
-from a cold start --- is $48\,kT\ln 2 = 1.4\times10^{-19}$~J. Against a single
-off-chip memory access on a von~Neumann machine ($\sim\!2\times10^{-11}$~J),
-the \TALOS{} learning-bounded tick sits roughly \textbf{nine orders of
-magnitude} lower. The architecture does not \emph{reach} the Landauer floor
-in any real substrate --- interface, control, and leakage overheads sit above
-it --- but it \emph{removes the data-movement term that sets the
-von~Neumann floor}, leaving a floor that is learning-limited rather than
-transport-limited. That is the whole of the energy claim, and it is honest:
-same computation, a floor nine orders lower, because there is nothing to move
-and the reversible core is free.
+At $T=300$~K, the Landauer cost per irreversibly erased or exported bit is
+$k_B T\ln 2 = 2.87\times10^{-21}$~J ($0.018$~eV). For a seven-mode density
+matrix $\Gam\in\Dens(\mathbb{C}^7)$, the exact maximum von~Neumann entropy is
+\begin{equation*}
+S_{\max} \;=\; \log_2 7 \;\approx\; 2.807\;\text{bits}
+\qquad (\ln 7 \approx 1.946\;\text{nats}),
+\end{equation*}
+attained at $\Gam=\mathbb{1}/7$. Consequently, the worst-case single-state
+thermodynamic floor --- creating a pure state from $\mathbb{1}/7$ in one step
+--- is
+\[
+k_B T\ln 7 \;=\; (\log_2 7)\,k_B T\ln 2 \;\approx\; 8.06\times10^{-21}\;\text{J}
+\;\approx\; 0.050\;\text{eV}.
+\]
+It is essential not to conflate three distinct numbers: (i) the von~Neumann
+state entropy $S_{\mathrm{vN}}(\Gam)\le\log_2 7\approx 2.807$~bits, (ii) the
+real manifold dimension ($48$ continuous parameters), and (iii) the digital
+emulation storage size ($49\times 128 = 6{,}272$ IEEE-754 bits $= 784$~bytes).
+
+\noindent\textbf{No apples-to-oranges CMOS comparison.} We explicitly do
+\emph{not} divide physical off-chip CMOS DRAM energy ($\sim\!2\times10^{-11}$~J/word)
+by the theoretical Landauer bound ($\sim\!10^{-20}$~J) to claim a ``nine-order''
+silicon energy advantage. Reversible thermodynamic bounds apply equally to
+\emph{any} logically reversible machine (including Bennett-reversible
+von~Neumann circuits~\cite{bennett1973}), whereas the actual power of any CMOS
+realisation is governed by physical transistor switching energy, capacitance,
+clocking, and leakage. \TALOS{} offers two separate, cleanly scoped engineering
+facts: (1) on digital substrates, keeping the entire $784$-byte state resident
+in local registers/L1 removes off-chip DRAM fetches per tick (a memory-hierarchy
+locality gain, not a Landauer gain); and (2) on future physically reversible or
+driven-dissipative substrates (\S\ref{sec:realizability}), separating the
+entropy-preserving unitary step from dissipation and regeneration isolates the
+irreversible thermodynamic cost to adaptation and maintenance.
 
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}
 \begin{axis}[
   width=12cm, height=6.4cm,
-  xlabel={computation performed (operations, arbitrary units)},
-  ylabel={energy (log scale, J)},
-  ymode=log, ymin=1e-21, ymax=1e-8,
+  xlabel={evolution step (arbitrary ticks)},
+  ylabel={logical entropy export (bits / tick, in $k_BT\ln 2$)},
+  ymin=0, ymax=3.2,
   xmin=0, xmax=10, xtick=\empty,
-  % legend sits in the empty mid-band between the (upper) von Neumann line and
-  % the (lower) Talos/Landauer floors, so it covers no curve; short parallel
-  % labels, the caption carries the full explanation.
-  legend style={at={(0.5,0.52)}, anchor=center, font=\footnotesize,
+  legend style={at={(0.98,0.62)}, anchor=east, font=\footnotesize,
                 legend cell align=left, draw=gray!55, fill=white, rounded corners},
   grid=both, grid style={gray!15},
   every axis plot/.append style={very thick},
 ]
-% von Neumann: energy rises ~linearly with computation (data movement)
-\addplot[plosblue,domain=0.2:10,samples=40] {2e-11*x + 3e-11};
-\addlegendentry{von Neumann floor ($\propto$ compute)}
-% TALOS: flat, set by learning (here a converging learner: high early, decays)
-\addplot[talosamber,domain=0.2:10,samples=60] {1.4e-19*exp(-0.45*x) + 6e-21};
-\addlegendentry{\textsc{Talos} floor (learning-bounded)}
-% Landauer floor
-\addplot[plosgray,dashed,domain=0.2:10,samples=2] {2.87e-21};
-\addlegendentry{Landauer floor $kT\ln2$}
+% Max state von Neumann entropy log2(7) ~ 2.807 bits (full irreversible state reset)
+\addplot[plosblue,dashed,domain=0.2:10,samples=2] {2.807};
+\addlegendentry{max 7-mode state entropy $\log_2 7 \approx 2.81$ bits}
+% Adaptive tick with reversible unitary core: transient learning + steady maintenance
+\addplot[talosamber,domain=0.2:10,samples=60] {2.1*exp(-0.5*x) + 0.35};
+\addlegendentry{\textsc{Talos} logical export ($\Delta H_{\Regen} + \Delta H_{\Diss}^{(+)}$)}
+% Pure unitary core (zero logical entropy export)
+\addplot[plosgray,dotted,domain=0.2:10,samples=2] {0.02};
+\addlegendentry{unitary core ($0$ bits; shared by any reversible machine)}
 \end{axis}
 \end{tikzpicture}
-\caption{Energy accounting (log scale, schematic with machine-checked
-anchors). The von~Neumann floor rises with the amount of computation because
-each operation moves data (blue). The \TALOS{} floor is set by the rate of
-\emph{learning}: high during convergence, decaying --- as the holon converges
-and stops learning (amber) --- toward the \emph{metabolic} floor of
-\S\ref{subsec:metabolic}, which sits just above the Landauer line
-(grey dashed) because a viable state must still be held against the
-dissipator's leak.
-Anchors: $kT\ln2=2.87\times10^{-21}$~J; DRAM word $\approx2\times10^{-11}$~J.}
+\caption{Apples-to-apples logical thermodynamic accounting in units of
+$k_BT\ln 2$ per tick (bits of von~Neumann entropy exported, schematic). The
+maximum von~Neumann entropy of any state $\Gam\in\Dens(\mathbb{C}^7)$ is
+$\log_2 7\approx 2.807$~bits ($k_BT\ln 7\approx 8.06\times10^{-21}$~J at
+$300$~K, blue dashed). Under the tick decomposition, the unitary half exports
+zero bits (grey dotted, a bound shared by any logically reversible machine),
+while logical entropy export decays as adaptation converges toward the
+steady-state maintenance floor $k_BT\ln 2\cdot\dot S_{\Diss}\Delta\tau$
+(amber). Physical CMOS power sits far above these thermodynamic bounds due to
+switching and leakage.}
 \label{fig:energy}
 \end{figure}
 
@@ -117,11 +133,11 @@ Anchors: $kT\ln2=2.87\times10^{-21}$~J; DRAM word $\approx2\times10^{-11}$~J.}
   \node[box, fill=plosblue!8, draw=plosblue!70!black, minimum width=3.0cm] (mach) at (4.1,0)
     {\textbf{the tick}\\ $\Gam$, Eq.~\ref{eq:lomega}};
   \node[box, fill=plosblue!14, minimum width=3.3cm] (work) at (9.4,1.35)
-    {\textbf{work} (reversible)\\ $0$ J by Landauer};
+    {\textbf{work} (unitary)\\ $0$ bits exported};
   \node[box, fill=talosamber!14, minimum width=3.3cm] (maint) at (9.4,0)
-    {\textbf{maintenance}\\ $P_{\mathrm{meta}} = kT\ln2\cdot\dot S_{\Diss}$};
+    {\textbf{maintenance}\\ $P_{\mathrm{meta}} \ge k_BT\ln2\cdot\dot S_{\Diss}$};
   \node[box, fill=green!10, minimum width=3.3cm] (learn) at (9.4,-1.35)
-    {\textbf{learning}\\ $kT\ln2\cdot\Delta H_{\Regen}$};
+    {\textbf{learning}\\ $k_BT\ln2\cdot\Delta H_{\Regen}$};
   \node[box, fill=gray!12, minimum width=1.9cm] (heat) at (13.3,-0.7) {heat\\ out};
   \draw[->, ultra thick, red!60!black] (port) -- node[above]{$r\,\rho_{\mathrm{env}}$} (mach);
   \draw[->, very thick, plosblue!70!black] (mach.east) to[out=25,in=180] (work.west);
@@ -129,14 +145,15 @@ Anchors: $kT\ln2=2.87\times10^{-21}$~J; DRAM word $\approx2\times10^{-11}$~J.}
   \draw[->, very thick, green!45!black] (mach.east) to[out=-25,in=180] (learn.west);
   \draw[->, thick, plosgray] (maint.east) to[out=0,in=110] (heat.north);
   \draw[->, thick, plosgray] (learn.east) to[out=0,in=200] (heat.west);
-  \node[plosgray, align=center] at (9.4,2.25) {\tiny the only branch a von~Neumann machine\\ \tiny cannot have: compute without paying};
+  \node[plosgray, align=center] at (9.4,2.25) {\tiny zero logical entropy export\\ \tiny (shared by any logically reversible machine)};
   \draw[plosgray, ->] (9.4,2.0) -- (work.north);
 \end{tikzpicture}
-\caption{Where the joules go. All free energy enters through the power port
-(\S\ref{subsec:powerport}). The reversible work branch is free (Landauer);
-only holding order against the leak (maintenance, \S\ref{subsec:metabolic})
-and creating order (learning) export entropy and cost. A layered machine has
-no free branch: every operation moves data and pays.}
+\caption{Logical thermodynamic budget of a tick. Negentropy enters through the
+power port (\S\ref{subsec:powerport}). The unitary work branch preserves
+von~Neumann entropy (zero logical Landauer export, as in any logically
+reversible machine); holding order against dissipation (maintenance,
+\S\ref{subsec:metabolic}) and creating order (learning) export entropy in bits.
+Physical hardware switching overheads sit above this thermodynamic floor.}
 \label{fig:energyflow}
 \end{figure}
 
@@ -169,67 +186,70 @@ toward the maximally mixed heat-death state $I/7$; holding the state against
 this leak is not free.
 
 \begin{claimbox}[The metabolic floor \status{T}$+$\status{C} (T-273)]
-At steady state a viable holon ($P>2/7$, $\Gam\neq I/7$) exports entropy at the
-dissipator's strictly-positive rate $\dot S_{\Diss}>0$ (the entropy law
-T-271). By Landauer, the minimum \emph{maintenance} power is
+At steady state a viable coherent holon ($P>2/7$, $\Phi\ge 1$) exports
+von~Neumann entropy at the dissipator's strictly-positive rate
+$\dot S_{\Diss}>0$ (measured in bits per unit time; T-271). By Landauer, the
+minimum thermodynamic \emph{maintenance} power is
 \[
-  P_{\mathrm{meta}} \;\geq\; kT\ln 2\cdot \dot S_{\Diss} \;>\; 0,
+  P_{\mathrm{meta}} \;\geq\; k_B T\ln 2\cdot \dot S_{\Diss} \;>\; 0
+  \qquad (\dot S_{\Diss}\text{ in bits/time}),
 \]
-the \emph{active, irreversible} counterpart of the reversible energy floor. A
-viable coherent machine's total power is therefore $0$ (reversible compute)
-$+\ P_{\mathrm{meta}}$ (maintenance): it \textbf{cannot run for free}. Here
-$\dot S_{\Diss}$ is the \emph{physical} entropy-production rate, so the floor is
-\textbf{frequency-independent} (T-276): the tick-rate sets only an emulator's
-real-time factor, not the fundamental cost. It is measurable, because
-$\dot S_{\Diss}$ is a live telemetry observable (\S\ref{sec:platform}).
+the \emph{active, irreversible} counterpart of the reversible unitary core. A
+viable dissipative holon \textbf{cannot run for free}. Because $\dot S_{\Diss}$
+is a \emph{physical} entropy-production rate (per unit continuous time $\tau$,
+not per numerical step $\Delta\tau$), this floor is
+\textbf{step-frequency-independent} (T-276): refining $\Delta\tau$ improves
+integration accuracy without changing the physical entropy-production rate. It
+is directly measurable as a live telemetry observable (\S\ref{sec:platform}).
 \end{claimbox}
 
 The free energy that pays this floor has exactly one entry point: the
 \textbf{power port} of \S\ref{subsec:powerport}. The drive
 $\Lind_{\mathrm{feed}}$ imports structured negentropy from the environment;
 regeneration \emph{directs} it into maintained coherence but cannot create it
-(T-288) --- so an unplugged machine cannot pay $P_{\mathrm{meta}}$ and halts,
-and a plugged one pays it out of the negentropy flux $r$ delivers. Maintenance
-power, the ignition threshold $(r/\bar\gamma)_c$, and the halt latency after
-severance are three faces of one budget line.
+from a unital closed map (T-288) --- so an unplugged machine cannot pay
+$P_{\mathrm{meta}}$ and halts, and a plugged one pays it out of the negentropy
+flux $r$ delivers. Maintenance power, the ignition threshold $(r/\bar\gamma)_c$,
+and the halt latency after severance are three faces of one budget line.
 
-The floor scales with the \textbf{order maintained} (the distance $\ln 7 - S$
-from $I/7$): a more coherent, more complex state is pushed harder by the
-dissipator and costs more to hold --- \emph{the price of complexity}. This turns
-the viability window into an explicit \textbf{design axis} rather than a single
-set-point.
+The floor scales with the \textbf{order maintained} (the negentropy
+$\log_2 7 - S_{\mathrm{vN}}$ in bits): a more coherent state has stronger
+dissipator entropy production and costs more to hold --- \emph{the price of
+complexity}. This turns the viability window into an explicit \textbf{design
+axis} rather than a single set-point.
 
 \begin{claimbox}[The operating-point axis \status{C} (T-274)]
 The viable window $(2/7,3/7]$ is a capability--efficiency axis, not one point:
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
   \item \textbf{Lean edge $P\to 2/7$} --- efficiency-optimal: minimal maintenance
         power, minimal margin. The ``survival'' mode --- highest
-        capability-per-watt (for capability $C=\Phi\times R$), least robust.
-  \item \textbf{Rich edge $P\to 3/7$} (the T-124 attractor) ---
-        capability-optimal: maximal $C=2/3$ and maximal dynamic range, at the
-        highest maintenance power. The ``thriving'' mode.
+        capability-per-watt (for $C=\Phi\times R$), least robust.
+  \item \textbf{Rich edge $P\to 3/7$} (where $R=1/(7P)=1/3$; on the
+        uniform-diagonal stratum $\Phi=7P-1=2$ and $C=\Phi R=2/3$) ---
+        capability-optimal at higher maintenance power. The ``thriving'' mode.
 \end{itemize}
-The dynamics pull the machine toward $P=3/7$ by default; an engineer can run it
-leaner toward $2/7$ to trade capability and margin for power. The optimal
-set-point is \status{C} (it depends on the capability measure chosen); what is
-\emph{robust} is the structure --- monotone cost across the window, two named
-modes at its edges. Machine-verified (\texttt{t273\_metabolic.py},
-\texttt{t274\_optimum.py}).
+An engineer can tune the operating point across $(2/7,3/7]$ to trade margin and
+coherence against maintenance export. The optimal set-point is \status{C} (it
+depends on the capability measure chosen); what is \emph{robust} is the
+monotone thermodynamic cost of maintaining higher coherence. Numerically
+verified in \texttt{architecture/talos\_v0\_emulator.py}.
 \end{claimbox}
 
 \begin{claimbox}[The efficiency law \status{T}$+$\status{C} (T-276)]
-Two refinements complete the thermodynamic budget. \textbf{(i)~Frequency-independence
-\status{T}.} The metabolic floor is $P_{\mathrm{meta}} = kT\ln 2\cdot\dot S_{\Diss}$,
-set by the \emph{physical} entropy-production rate: the per-tick entropy scales
-with the step $\Delta\tau$, so the rate --- and the cost --- are independent of
-the tick frequency. A faster clock buys real-time fidelity, not a lower floor.
-\textbf{(ii)~Order-per-joule \status{T}.} Creating order (negentropy) costs
-$\geq kT\ln 2$ per bit, so the regeneration's efficiency
-$\eta = (\text{order created})/(\text{free energy spent}) \leq 1$ is
-Landauer-bounded. \textbf{(iii)~Speed--efficiency tradeoff \status{C}.}
-$\eta\to 1$ for \emph{quasi-static} regeneration and falls as the update
-accelerates (irreversibility). The engineering rule follows: \textbf{run
-regeneration as slowly as the dissipator leak permits} ($\kappa$ just above
-$\gamma$) for maximal order-per-joule --- the coherent-machine analogue of a
-slow, near-reversible heat engine. Machine-verified (\texttt{t276\_efficiency.py}).
+Two refinements complete the thermodynamic budget. \textbf{(i)~Step-frequency
+independence \status{T}.} The metabolic floor is
+$P_{\mathrm{meta}} \ge k_B T\ln 2\cdot\dot S_{\Diss}$, set by the
+\emph{physical} entropy-production rate in bits/time: per-tick entropy
+production scales linearly with $\Delta\tau$, so the rate is independent of
+tick discretization frequency.
+\textbf{(ii)~Order-per-joule \status{T}.} Creating order (reducing
+$S_{\mathrm{vN}}$ by $1$~bit) costs $\geq k_B T\ln 2$, so thermodynamic
+regeneration efficiency
+$\eta = (k_B T\ln 2\cdot\text{bits ordered})/(\text{free energy spent}) \leq 1$
+is Landauer-bounded. \textbf{(iii)~Speed--efficiency tradeoff \status{C}.}
+$\eta\to 1$ only in the \emph{quasi-static} limit and falls under fast
+finite-time driving (irreversible dissipation). The engineering rule follows:
+\textbf{run regeneration as slowly as the dissipator leak permits} for maximal
+order-per-joule --- the coherent-machine analogue of a slow, near-reversible
+heat engine. Verified numerically in \texttt{architecture/talos\_v0\_emulator.py}.
 \end{claimbox}

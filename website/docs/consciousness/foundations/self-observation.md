@@ -62,13 +62,21 @@ For $k>0$, $T_{k,\sigma}(\rho)=\rho$ iff $\rho=\sigma$. For $k=0$, every state i
 | $M$-fixed states | Solve $M(\rho)=\rho$ for the specified map |
 | Stationary states of a flow | Solve the actual vector-field equation; their stability requires its Jacobian/basin |
 
-A state different from $I/7$ has $P>1/7$ **[T]**, by the HS identity below. This does not establish the existence of such an attractor. The canonical numerical $\varphi_{\mathrm{coh}}$ with anchor $I/7$ has that centre as its fixed state; alternative anchors and maps have separately stated assumptions. See [the numerical formalisation](/docs/proofs/categorical/formalization-phi).
+A state different from $I/7$ has $P>1/7$ **[T]**, by the HS identity below. This does not establish the existence of such an attractor. Both the linear anchor-mixing map $\varphi_{\mathrm{lin}}$ ([T-249](/docs/proofs/categorical/formalization-phi#дф-производная) **[T]**) and the coherent dephasing-anchor map $\varphi_{\mathrm{coh}}$ with anchor $I/7$ have that centre as their unique fixed state; the collineation-anchored self-model $\varphi_J$ ([T-334](/docs/core/operators/phi-operator#phi-j) **[T]**) instead anchors on a pure uniform-diagonal state $|\psi\rangle\langle\psi|$ and carries separately stated assumptions. See [the numerical formalisation](/docs/proofs/categorical/formalization-phi).
 
-#### Coupling convention for k [D] {#теорема-k-из-r}
+#### Coupling convention for k and canonical φ-forms [D] {#теорема-k-из-r}
 
-The rule $k(\rho):=1-R(\rho)=1-1/(7P)$ is a **chosen state-dependent coupling**. It lies in $[0,6/7]$. The replacement-channel formula alone does not derive it, and uniqueness of a logical reflector does not force it. Other choices of $k$ give equally valid frozen channels.
+The rule $k(\rho):=1-R(\rho)=1-1/(7P(\rho))$ is a **chosen state-dependent coupling**. It lies in $[0,6/7]$. The replacement-channel formula alone does not derive it, and uniqueness of a logical reflector does not force it. Other choices of $k$ give equally valid frozen channels.
 
-At $I/7$, $R=1$ and $k=0$; at a pure state, $R=1/7$ and $k=6/7$. These are mathematical proximity values, not levels of self-knowledge.
+At $I/7$, $R=1$ and $k=0$; at a pure state, $R=1/7$ and $k=6/7$. These are mathematical proximity values, not levels of self-knowledge. Because $R$ and $1-R$ play **opposite** roles in the two main self-model families of the corpus, three canonical $\varphi$-forms are distinguished explicitly and must not be conflated:
+
+| Canonical form | Formula (with $R = 1/(7P)$, $k = 1-R$) | Weight on state/filter | Weight on anchor | Fixed point |
+|---|---|---|---|---|
+| **Linear anchor-mixing** $\varphi_{\mathrm{lin}}$ ([T-249](/docs/proofs/categorical/formalization-phi#дф-производная) **[T]**) | $\varphi_{\mathrm{lin}}(\rho) := R(\rho)\,\rho + (1 - R(\rho))\,I/7 = (1-k)\,\rho + k\,I/7$ | $R = 1-k$ on $\rho$ | $1-R = k$ on $I/7$ | $I/7$ |
+| **Coherent dephasing-anchor** $\varphi_{\mathrm{coh}}$ **[D]** | $\varphi_{\mathrm{coh}}(\rho) := (1 - R(\rho))\,\mathcal{P}_\alpha(\rho) + R(\rho)\,I/7 = k\,\mathcal{P}_\alpha(\rho) + (1-k)\,I/7$ | $1-R = k$ on $\mathcal{P}_\alpha(\rho)$ | $R = 1-k$ on $I/7$ | $I/7$ |
+| **Collineation-anchored** $\varphi_J$ ([T-334](/docs/core/operators/phi-operator#phi-j) **[T]**) | $\varphi_J(\rho) := (1 - R(\rho))\,\mathcal{P}_\alpha(\rho) + R(\rho)\,\lvert\psi\rangle\langle\psi\rvert$ | $1-R = k$ on $\mathcal{P}_\alpha(\rho)$ | $R = 1-k$ on $\lvert\psi\rangle\langle\psi\rvert$ | Nontrivial living state |
+
+Here $\mathcal{P}_\alpha := \alpha\,\mathcal{P}_{\mathrm{base}} + (1-\alpha)\,\mathcal{P}_{\mathrm{Fano}}$ ($\alpha \in [0,1]$) preserves the diagonal and multiplies off-diagonals by $c = (1-\alpha)/3$, and $|\psi\rangle = \frac{1}{\sqrt 7}\sum_{m=0}^6 |m\rangle$ is unique up to diagonal phase gauge under $\Gamma_{\mathrm{oct}}$-covariance of atomic readings and maximal viability ([T-334](/docs/core/operators/phi-operator#phi-j)). The frozen-parameter instance of $\varphi_{\mathrm{lin}}$ is $T_{k,I/7}$ above; by contrast, $\varphi_{\mathrm{coh}}$ and $\varphi_J$ swap the coefficients $R$ and $1-R$ and compose the retained state with $\mathcal{P}_\alpha$.
 
 ## Conditional Fixed-Point Results {#теорема-о-неподвижной-точке}
 
@@ -114,7 +122,7 @@ Thus $R$ is a decreasing reparameterisation of $P$, invariant under every unitar
 | Iteration fidelity $F_n$ | $F(M^{n-1}\rho,M^n\rho)$ | State similarity [D], $0\le F_n\le1$ |
 | Forecast skill $A$ | $1-\sum_t(y_t-\widehat y_t)^2/\sum_t(y_t-\bar y)^2$ | Centred empirical score [D]; can be negative, undefined at zero variance |
 
-For a fixed replacement map, $R_M=1-k^2\|\rho-\sigma\|_F^2/P$. If $\sigma=I/7$, this is $1-k^2(1-R)$; substituting the convention $k=1-R$ gives $1-(1-R)^3$. This is a statement about this **particular** map. For $\varphi_{\mathrm{coh}}$ including Fano dephasing, the expression is different; use its defined formula. No universal closed relation with $R$ exists for arbitrary $M$.
+For the fixed replacement map $T_{k,\sigma}$, $R_M=1-k^2\|\rho-\sigma\|_F^2/P$. Taking $\sigma=I/7$ and $k=1-R$ yields the **linear anchor-mixing** map $\varphi_{\mathrm{lin}}(\rho) = R\,\rho + (1-R)\,I/7$, for which $R_{\varphi_{\mathrm{lin}}} = 1 - k^2(1-R) = 1 - (1-R)^3$ ([T-249](/docs/proofs/categorical/formalization-phi#дф-производная) **[T]**). This identity is specific to $\varphi_{\mathrm{lin}}$: for the coherent dephasing-anchor map $\varphi_{\mathrm{coh}}(\rho) = (1-R)\,\mathcal{P}_\alpha(\rho) + R\,I/7$ and the collineation-anchored map $\varphi_J(\rho) = (1-R)\,\mathcal{P}_\alpha(\rho) + R\,|\psi\rangle\langle\psi|$ ([T-334](/docs/core/operators/phi-operator#phi-j)), the weights $R$ and $1-R$ are reversed and $\mathcal{P}_\alpha$ acts on $\rho$, so the closed form $1-(1-R)^3$ does **not** hold; use the defined formula for $M$. No universal closed relation with $R$ exists for arbitrary $M$.
 
 The cutoff $R\ge1/3$ is a selected component of $\mathsf{Cap}_2$ **[D]**. Its equivalence to $P\le3/7$ is exact **[T]**. Counting three generator terms does not prove that $R$ is a Bayesian classification accuracy: that would require a labelled task, priors, likelihoods and a calibration connecting the score to decisions.
 
@@ -153,7 +161,7 @@ The root fidelity is $f=\sqrt F$, and $d_B^2=2(1-f)$. $F_n$ is a similarity of c
 
 **Conditional monotonicity [T].** For a **fixed linear CPTP channel** $K$, fidelity data processing gives $F(K\rho,K\sigma)\ge F(\rho,\sigma)$, hence $F_{n+1}\ge F_n$. See [Watrous, Theorem 3.27](https://cs.uwaterloo.ca/~watrous/TQI/TQI.pdf). The inequality need not be strict; a unitary preserves fidelity. A nonlinear state-selected map does not automatically satisfy this channel theorem.
 
-**Conditional convergence [T].** If $\rho_n\to\rho_*$, continuity of fidelity gives $F_n\to1$. At a fixed point, $F_n=1$ from the start; the identity channel gives this for every state. Canonical $\varphi_{\mathrm{coh}}$ with anchor $I/7$ converges to $I/7$, whose capability gate fails. Thus convergence to high similarity cannot certify cognitive depth or phenomenal access.
+**Conditional convergence [T].** If $\rho_n\to\rho_*$, continuity of fidelity gives $F_n\to1$. At a fixed point, $F_n=1$ from the start; the identity channel gives this for every state. Both $\varphi_{\mathrm{lin}}$ and $\varphi_{\mathrm{coh}}$ (anchored at $I/7$) converge to $I/7$, whose capability gate fails. Thus convergence to high similarity cannot certify cognitive depth or phenomenal access.
 
 The former universal inequality connecting $F_1$ to canonical $R$ via Fuchs–van de Graaf is **withdrawn [✗]**: the measures compare different pairs. A pure state with $M=\mathrm{id}$ has $F_1=1$ and $R=1/7$, directly refuting the displayed lower bound on $\sqrt R$. The valid inequalities for the **same** pair are
 
@@ -219,7 +227,7 @@ $$
 \mathsf{Cap}_2=(P>2/7)\land(R\ge1/3)\land(\Phi\ge1)\land(D_{\mathrm{diff}}\ge2).
 $$
 
-The entropy-derived $D_{\mathrm{diff}}=e^{S(\rho_E)}$ requires a specified normalised experiential extension. The 7D score $D^{7D}=1+6\mathrm{Coh}_E$ is separately defined, not an entropy identity. Clinical or diary values cannot be substituted for either without a validated measurement bridge. The old waking example $\Phi=3,R=0.4$ violates $\Phi\le7P-1=1.5$, and the old sleeping $R=0.1$ violates $R\ge1/7$; both are withdrawn.
+The entropy-derived $D_{\mathrm{diff}}=\exp S_{vN}(\rho_E)$ requires a specified normalised experiential state $\rho_E$ on an extended register $\mathcal{H}_E$ (never $\exp S_{vN}(\Gamma)$ on the full $7\times 7$ matrix $\Gamma$). The 7D native proxy $D^{7D}=1+6\,\mathrm{Coh}_E(\Gamma)$ is separately defined, not an entropy identity. Clinical or diary values cannot be substituted for either without a validated measurement bridge. The old waking example $\Phi=3,R=0.4$ violates $\Phi\le7P-1=1.5$, and the old sleeping $R=0.1$ violates $R\ge1/7$; both are withdrawn.
 
 ## Operational use
 

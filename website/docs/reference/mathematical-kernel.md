@@ -133,13 +133,13 @@ The classifier $\Omega$ classifies subobjects. For sheaves on a space, its secti
 
 A quantum channel is linear on the operator algebra and hence affine on states. The assertion “$M(\rho)\in D_N$ for every $\rho$” is only state preservation. If parameters depend on $\rho$, even a family of CPTP maps $K_\rho$ need not give an affine map $M(\rho)=K_\rho(\rho)$.
 
-For example a fixed-anchor model
+For example a coherent fixed-anchor model
 
 $$
-M(\rho)=(1-R(\rho))\mathcal P_\alpha(\rho)+R(\rho)\rho_a,\qquad R(\rho)=1/(NP(\rho))
+M_{\mathrm{coh}}(\rho)=(1-R(\rho))\mathcal P_\alpha(\rho)+R(\rho)\rho_a,\qquad R(\rho)=1/(NP(\rho))
 $$
 
-has a CPTP realization for each frozen input-dependent coefficient, but the complete state map is generally nonlinear. Intrinsic anchors such as $\rho^2/P(\rho)$ are also nonlinear. Joint-system extensions must be specified; applying a nonlinear map to an unspecified ensemble is not a definition.
+(denoted $\varphi_{\mathrm{coh}}$ for $\rho_a=I/7$ and $\varphi_J$ for $\rho_a=uu^\dagger$, T-334) is distinct from the linear anchor-mixing convention $\varphi_{\mathrm{lin}}(\rho)=R(\rho)\rho+(1-R(\rho))I/7$ used in T-249, where $R$ and $1-R$ carry opposite roles. Each frozen input-dependent coefficient defines a CPTP channel, whereas the complete state-dependent map is nonlinear: an exact operational heralded realization on a pure-target ray requires at least $3$–$4$ fresh copies per attempt at $N=7$, and a full-space three-copy coherent step fails positivity on a singlet witness ([verified network results](./network-results)). Intrinsic anchors such as $\rho^2/P(\rho)$ are also nonlinear. Joint-system extensions must be specified; applying a nonlinear map to an unspecified ensemble is not a definition.
 
 The evolution model is
 

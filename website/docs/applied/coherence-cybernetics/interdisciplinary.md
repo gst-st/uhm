@@ -42,21 +42,21 @@ In this chapter we:
 | $\gamma_{kk}$ | Diagonal element (population $k$) | State probability | Subsystem resource | Expression of a function | Neuron/module weight | Budget/attention share |
 | $\gamma_{ij}$ ($i \neq j$) | Off-diagonal coherence | Quantum coherence | Subsystem synergy | Function coordination | Cross-attention | Inter-department coordination |
 | $P = \mathrm{Tr}(\Gamma^2)$ | [Purity](/docs/core/dynamics/viability#определение-чистоты) | Purity of quantum state | Organisation | Personality integration | Representation rank | Organisational cohesion |
-| $P_{\text{crit}} = 2/7$ | [Viability threshold](/docs/proofs/dynamics/theorem-purity-critical) | Phase transition | Homeostasis boundary | Norm boundary | Learnability threshold | Viability threshold |
+| $P_{\text{crit}} = 2/7$ | [Structural-majority cut](/docs/proofs/dynamics/theorem-purity-critical) (`T-5` `[D]`) | Structural threshold (`[D]`) | Candidate homeostasis boundary `[H]` | Candidate norm boundary `[H]` | Candidate learnability cut `[H]` | Candidate viability cut `[H]` |
 
-#### Why $\Gamma$ = homeostasis profile (biology)?
+#### Why $\Gamma$ = homeostasis profile (biology)? `[I]`
 
 A biological organism continuously maintains a set of parameters within narrow bounds: body temperature 36.6 ± 0.5°C, blood pH 7.35–7.45, glucose 3.3–5.5 mmol/L... This multidimensional "health portrait" is precisely the homeostasis profile.
 
-$\Gamma$ generalises this idea: instead of physiological parameters — 7 *functional* dimensions. The diagonal elements $\gamma_{kk}$ are the "resources" of each dimension (how much "attention" the organism devotes to discrimination, memory, action...). The off-diagonal $\gamma_{ij}$ are the coordination between dimensions (synergy of the nervous and immune systems, coordination of perception and motor function...).
+$\Gamma$ generalises this idea as a modeling representation `[I]`: instead of raw physiological variables — 7 *functional* dimensions. The diagonal elements $\gamma_{kk}$ represent the resource/weight of each dimension (how much capacity the organism allocates to articulation, structure, dynamics...). The off-diagonal $\gamma_{ij}$ represent coordination between dimensions (synergy of the nervous and immune systems, coordination of perception and motor function...).
 
-When a biologist says "homeostasis is disrupted," a physicist translates: "$P$ has dropped below $P_{\text{crit}}$." When a psychologist says "personality is disintegrated," this is also $P < 2/7$. One formula — three languages.
+When a biologist says "homeostasis is disrupted," the CC interpretive dictionary translates this as "$P$ dropping below $P_{\text{crit}}$" (`[I]` / `[H]`). Turning this analogy into an empirical test requires an explicit observation law (`T-100` `[D]`) and calibration against physiological measurements.
 
-#### Why $P_{\text{crit}} = 2/7$ = norm boundary (psychology)?
+#### Why $P_{\text{crit}} = 2/7$ = candidate norm boundary (psychology)? `[I]` / `[H]`
 
-In clinical psychology there is the concept of the "norm threshold" — the boundary beyond which adaptation is impossible. In severe depression a person does not merely "feel sad" — they lose the ability to function coherently: perception narrows, memory fragments, action is paralysed, reflection loops. This is a *qualitative* transition, not a quantitative deterioration.
+In clinical psychology there is the concept of a functional breakdown threshold — a regime beyond which coherent adaptation fails. In severe depression a person does not merely "feel sad" — perception narrows, memory fragments, action stalls, and reflection loops.
 
-CC formalises this transition: $P = 2/7$ is the point below which the system can no longer *distinguish itself from chaos* (the Frobenius norm $\|\Gamma - I/7\|_F$ drops below the distinguishability threshold). The clinical "breakdown" is not a metaphor, but a phase transition.
+CC models this structurally through the **structural-majority cut** $P_{\text{crit}} = 2/7$ (`T-5` `[D]`): because $P(\Gamma) = 1/7 + \|\Gamma - I/7\|_F^2$, crossing $P = 2/7$ is the algebraic point where the squared Frobenius norm of the structured component $\|\Gamma - I/7\|_F^2$ equals the background norm $\|I/7\|_F^2 = 1/7$. *(Note: states with $P \le 2/7$ are still statistically distinguishable from $I/7$ under Helstrom testing `T-109` `[T]`, and earlier claims of a universal bifurcation/phase transition at $P = 2/7$ `T-160` are withdrawn `[✗]`; identifying $P = 2/7$ with a clinical boundary is an empirical hypothesis `[H]`.)*
 
 ### 1.2 Dynamics
 
@@ -64,36 +64,34 @@ CC formalises this transition: $P = 2/7$ is the point below which the system can
 |---|---|---|---|---|---|---|
 | $-i[H_{\text{eff}}, \Gamma]$ | Unitary part | von Neumann equation | Rhythms (circadian etc.) | Attentional cycles | Recurrent loop | Work cycles |
 | $\mathcal{D}_\Omega[\Gamma]$ | [Dissipation](/docs/core/dynamics/evolution#логический-лиувиллиан) | Lindbladian, decoherence | Entropy, ageing | Forgetting, stress | Loss, weight degradation | Frame loss, knowledge loss |
-| $\mathcal{R}[\Gamma, E]$ | [Regeneration](/docs/core/dynamics/evolution#3-регенеративный-член) | No analogue (!) | Tissue regeneration, immunity | Mental recovery | Fine-tuning, RLHF | Culture, learning, R&D |
-| $\kappa$ | Regeneration rate | — | Healing rate | Resilience | Learning rate | Adaptation rate |
-| $\Delta F$ | [Free energy](/docs/core/dynamics/evolution#каноническое-delta-f) | Helmholtz free energy | Metabolic budget | Cognitive load | Training loss | Operational costs |
+| $\mathcal{R}[\Gamma, E]$ | [Regeneration](/docs/core/dynamics/evolution#3-регенеративный-член) | Non-unital feedback/pumping | Tissue regeneration, immunity | Mental recovery | Fine-tuning, RLHF | Culture, learning, R&D |
+| $\kappa$ | Regeneration rate | Feedback coupling | Healing rate | Resilience | Learning rate | Adaptation rate |
+| $\Delta F$ | [Free energy](/docs/core/dynamics/evolution#каноническое-delta-f) `[D]` | Helmholtz free energy | Metabolic budget | Cognitive load | Training loss | Operational costs |
 
-#### Why is dissipation $\mathcal{D}$ = forgetting (psychology)?
+#### Why is dissipation $\mathcal{D}$ = forgetting (psychology)? `[I]`
 
 Forgetting is not a memory defect, but a *necessary* process. If we remembered everything, the brain would be overwhelmed with irrelevant information (as in patients with hyperthymesia, who remember every day of their life and suffer for it).
 
-In CC, dissipation $\mathcal{D}$ is the general mechanism of "blurring" coherence. Without regeneration everything tends toward $I/7$ — the maximally mixed state, the analogue of "everything forgotten." Forgetting is the dissipation of coherences $\gamma_{ij} \to 0$: connections between memories weaken. Stress is the dissipation of populations $\gamma_{kk} \to 1/7$: the resources of dimensions "spread out."
+In CC, dissipation $\mathcal{D}$ is the general mechanism of "blurring" coherence. Without regeneration, a unital dissipator drives the state toward $I/7$ — the maximally mixed state, an analogue of "everything forgotten." Forgetting corresponds interpretively to the decay of coherences $\gamma_{ij} \to 0$ (connections weaken), while sector exhaustion corresponds to populations spreading toward $1/7$.
 
-Psychotherapy is, in essence, *managed regeneration*: the therapist helps restore coherence ($\gamma_{ij}$) that was destroyed by stress. CC formalises: $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ — the recovery rate depends on $E$-coherence, that is, on the quality of *self-awareness*. This is why psychotherapy (strengthening reflection → growth of $\mathrm{Coh}_E$ → growth of $\kappa$) helps not only mentally but also physically.
+Psychotherapy can be viewed interpretively (`[I]`) as *guided regeneration*: helping restore disrupted coherences ($\gamma_{ij}$). Under CC's constitutive regeneration ansatz $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ (`[D]` / `[H]`; note that fully axiomatic derivation of regeneration `T-39h` is withdrawn `[✗]`), strengthening E-coherence increases $\kappa$. Testing whether this exact coupling holds quantitatively in psychotherapy is an empirical hypothesis `[H]`.
 
-#### Why does physics have no analogue of $\mathcal{R}$?
+#### Why does closed equilibrium physics lack $\mathcal{R}$?
 
-This is one of the most striking facts of CC. In standard physics of open systems there is a Hamiltonian $H$ (unitary evolution) and a dissipator $\mathcal{D}$ (decoherence). There is no third term — and there cannot be, because physical systems do *not tend* toward a particular state (except thermodynamic equilibrium).
+In standard passive open-system physics there is a Hamiltonian $H$ (unitary evolution) and a thermal/unital dissipator $\mathcal{D}$ (relaxation toward equilibrium). Active living systems, by contrast, continuously expend metabolic energy to maintain non-equilibrium structure — for example, a cell expends a large fraction of its ATP sustaining ionic gradients against thermal equilibrium.
 
-Living systems are different. They *actively resist* equilibrium. A cell spends up to 70% of its ATP maintaining ionic gradients — that is, *preventing* thermodynamic equilibrium (which for it means death).
+In CC, $\mathcal{R}[\Gamma, E]$ is a nonlinear, non-unital feedback term modeling active coherence restoration toward a self-model target. It is an explicit constitutive addition on top of standard linear Lindblad dissipation.
 
-$\mathcal{R}[\Gamma, E]$ is the formalisation of this "resistance." A physicist will not find it in a textbook — and that is normal: textbooks on quantum optics do not describe cells. CC adds the third term *on top of* standard physics.
+### 1.3 Diagnostic Stress Panel (`T-92` `[D]`)
 
-### 1.3 Stress Tensor
-
-| $\sigma_k$ | [Dimension](/docs/core/structure/dimensions) | Physics | Biology | Psychology | AI Engineering | Organisations |
+| $\sigma_k$ | [Dimension](/docs/core/structure/dimensions) | Physics `[I]` | Biology `[I]` | Psychology `[I]` | AI Engineering `[I]` | Organisations `[I]` |
 |---|---|---|---|---|---|---|
 | $\sigma_A$ | Articulation | Noise floor | Sensory overload | Perceptual stress | Input noise | Information chaos |
 | $\sigma_S$ | Structure | Loss of crystalline order | Mutations, DNA degradation | Cognitive disorganisation | Weight decay | Loss of processes |
 | $\sigma_D$ | Dynamics | Viscosity, friction | Metabolic load | Procrastination, paralysis | Vanishing gradients | Bureaucracy |
 | $\sigma_L$ | Logic | Symmetry breaking | Autoimmune attack | Cognitive distortions | Inconsistent outputs | Contradictory policies |
 | $\sigma_E$ | Interiority | — | Interoceptive deficit | Alexithymia | Absence of self-monitoring | Reflection deficit |
-| $\sigma_O$ | Grounding | Energy deficit | Starvation, hypoxia | Burnout | Lack of data/compute | Financial deficit |
+| $\sigma_O$ | Ground | Energy deficit | Starvation, hypoxia | Burnout | Lack of data/compute | Financial deficit |
 | $\sigma_U$ | Unity | Bond breaking | Organ disintegration | Social isolation | Mode collapse | Silos, fragmentation |
 
 Below are expanded explanations for each row.
@@ -134,49 +132,49 @@ Dimension E (Interiority) is responsible for *self-knowledge* — the ability of
 
 Alexithymia (literally: "no words for feelings") is the inability to recognise and name one's own emotions. A person with alexithymia feels "something bad" but cannot distinguish anxiety from sadness, irritation from fatigue. This is precisely an E-deficit: interiority is impaired.
 
-CC explains why alexithymia is dangerous: $\sigma_E \uparrow \to \mathrm{Coh}_E \downarrow \to \kappa \downarrow \to P \downarrow$. A deficit of self-knowledge weakens regeneration, which leads to deterioration of *physical* health. This is experimentally confirmed: alexithymia is associated with cardiovascular disease, weakened immunity, and slowed wound healing.
+In CC's constitutive model (`[H]` / `[I]`), the pathway $\sigma_E \uparrow \to \mathrm{Coh}_E \downarrow \to \kappa \downarrow \to P \downarrow$ suggests a testable hypothesis for why impaired emotional awareness could weaken systemic recovery. While clinical literature documents correlations between alexithymia and somatic health risks, testing whether the CC mechanism itself accounts for those associations remains an empirical program (`[Pr]`).
 
 #### Why is $\sigma_O$ in AI = lack of data/compute?
 
-Dimension O (Grounding) is responsible for the *resource base* — what the system draws on to power all other functions.
+Dimension O (Ground) is responsible for the *resource base* — what the system draws on to power all other functions.
 
-For an AI system, resources are data (what to learn from) and computational power (what to compute with). Lack of data = lack of "food" for training. Lack of compute = inability to process even the available data. Both cases — high $\sigma_O$.
+For an AI system, resources are data (what to learn from) and computational power (what to compute with). Lack of data = lack of "food" for training. Lack of compute = inability to process even the available data. Both cases correspond interpretively (`[I]`) to elevated $\sigma_O$.
 
-Empirically: "scaling laws" (Kaplan et al., 2020) show that model performance grows as a power function of data and compute. In CC terms: $\gamma_{OO}$ grows with resources, $\sigma_O$ drops, and $P$ approaches $P_{\text{crit}}$.
+In empirical ML, "scaling laws" (Kaplan et al., 2020) show that model loss improves as a power function of data and compute — an interpretive parallel (`[I]`) to decreasing resource deficit $\sigma_O$.
 
 #### Why is $\sigma_U$ in organisations = silos?
 
 Dimension U (Unity) is responsible for *integration* — the ability of the parts of a system to work as a whole.
 
-A "silo" in management is a department that works in isolation, without coordinating with others. Marketing does not know what R&D is doing. R&D does not know what sales is promising. Each department is "on its own." This is $\gamma_{ij} \to 0$ for $i, j$ from different departments, leading to $\sigma_U \uparrow$ and $\Phi \downarrow$.
+A "silo" in management is a department that works in isolation, without coordinating with others. Marketing does not know what R&D is doing. R&D does not know what sales is promising. Each department is "on its own." Interpretively (`[I]`), this corresponds to $\gamma_{ij} \to 0$ across departments, raising $\sigma_U$ and lowering $\Phi$.
 
 In biology: organ disintegration — organs cease to function in a coordinated manner (multiple organ failure). In psychology: social isolation — a person is "disconnected" from society. In all cases — loss of *connections* between parts.
 
-### 1.4 Consciousness and Reflection
+### 1.4 Consciousness and Reflection (`[I]`)
 
-| CC Concept | Definition | Neuroscience | Psychology | AI | Organisations |
+| CC Concept | Definition | Neuroscience `[I]` | Psychology `[I]` | AI `[I]` | Organisations `[I]` |
 |---|---|---|---|---|---|
-| $\mathrm{Coh}_E$ | [E-coherence](./definitions#e-когерентность) | Interoceptive connectivity | Depth of self-awareness | Self-monitoring activation | Feedback culture |
-| $R$ | [Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | Metacognitive accuracy | Reflectivity | Confidence calibration | Quality of retrospectives |
-| $\Phi$ | [Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) | Spectral gap (PCI: an independent verdict, not a $\Phi$ estimate) | Wholeness of the "I" | Multi-head coherence | Cross-functionality |
-| $C = \Phi \times R$ | [Consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | Level of consciousness | Level of awareness | — | Organisational maturity |
-| $\varphi(\Gamma)$ | [Self-model](/docs/proofs/categorical/formalization-phi) | Default mode network | Self-concept | World model | Strategy, mission |
+| $\mathrm{Coh}_E$ | [E-coherence](./definitions#e-когерентность) `[D]` | Interoceptive connectivity | Depth of self-awareness | Self-monitoring activation | Feedback culture |
+| $R$ | [Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) `[D]` | Metacognitive accuracy | Reflectivity | Confidence calibration | Quality of retrospectives |
+| $\Phi$ | [Integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) `[D]` | Spectral gap (PCI: an independent verdict, not a $\Phi$ estimate) | Wholeness of the "I" | Multi-head coherence | Cross-functionality |
+| $C = \Phi \times R$ | [Consciousness scalar](/docs/consciousness/foundations/self-observation#мера-сознательности-c) (`T-140` `[D]`) | Access-level scalar | Level of awareness | — | Organisational maturity |
+| $\varphi(\Gamma)$ | [Self-model](/docs/proofs/categorical/formalization-phi) `[D]` | Default mode network | Self-concept | World model | Strategy, mission |
 
-#### Why is $\varphi(\Gamma)$ = Default Mode Network (neuroscience)?
+#### Why is $\varphi(\Gamma)$ = Default Mode Network (neuroscience)? `[I]` / `[H]`
 
 The Default Mode Network (DMN) is the network of brain regions active at rest (medial prefrontal cortex, posterior cingulate, precuneus, angular gyrus). The DMN "switches on" when you are *not engaged* in an external task: daydreaming, remembering the past, planning the future, *reflecting on yourself*.
 
-This corresponds with striking precision to the self-model $\varphi(\Gamma)$ in CC: the DMN is the neural implementation of the functor that takes the current $\Gamma$ and generates a *model of itself*. When the DMN is active, the system is engaged in *self-modelling* — updating $\varphi(\Gamma)$.
+Interpretively (`[I]`), this offers a plausible neural candidate for the self-model $\varphi(\Gamma)$ in CC: a network whose dynamics track and update an internal representation of the system's own state. DMN alterations are empirically associated with schizophrenia, depression, and autism; testing whether calibrated CC parameters ($\varphi$, $R$) capture these clinical patterns is an empirical hypothesis `[H]`.
 
-DMN disruptions are associated with schizophrenia (fragmentation of the self-model), depression (stuck in rumination — $\varphi(\Gamma)$ "loops"), autism (atypical self-model). In CC terms: all these disorders are disruptions of $\varphi$, leading to changes in $R$.
+#### Why is $\varphi(\Gamma)$ = strategy and mission (organisations)? `[I]`
 
-#### Why is $\varphi(\Gamma)$ = strategy and mission (organisations)?
+A company's strategy is its *self-model*: "Who are we? What do we do? Where are we heading?" The mission answers "why do we exist?" — interpretively corresponding to $\varphi(\Gamma)$, the organisation's representation of its own identity.
 
-A company's strategy is its *self-model*: "Who are we? What do we do? Where are we heading?" The mission answers "why do we exist?" — this is the organisation's $\varphi(\Gamma)$, its representation of its own essence.
-
-A company without a strategy ($\varphi(\Gamma) \approx 0$) is like a person with amnesia: acting reactively, without understanding its own identity. A company with an outdated strategy ($\varphi(\Gamma) \neq \Gamma$) is like a person with false memories: the self-model does not match reality, $R$ is low.
+A company without a strategy acts reactively without coherent self-representation; a company with an outdated strategy ($\varphi(\Gamma) \neq \Gamma$) exhibits low reflection fidelity $R$.
 
 ---
+
+<a id="перспективы"></a>
 
 ## 2. Five Reading Routes {#perspectives}
 
@@ -191,9 +189,11 @@ Below are five curated paths through the entire UHM/CC documentation. Each route
 
 ---
 
+<a id="маршрут-физика"></a>
+
 ### 2.1 Physicist's Route {#physicist-route}
 
-**Focus:** derivation of known physics (GR, Standard Model, quantum reduction) from the unified UHM formalism.
+**Focus:** physical embeddings and conditional derivations (GR, gauge structure, quantum reduction) within the UHM formalism.
 
 **Prerequisites:** quantum field theory (Peskin–Schroeder level), general relativity (Wald level), familiarity with non-commutative geometry (Connes) desirable.
 
@@ -201,27 +201,29 @@ Below are five curated paths through the entire UHM/CC documentation. Each route
 
 | # | Document | What you will learn | Time |
 |---|---|---|---|
-| 1 | [Axiom Omega](/docs/core/foundations/axiom-omega) | Fundamental axiomatics: $\Omega \in D(\mathbb{C}^7)$, PW-constraint, why exactly 7 | 60 min |
-| 2 | [Axiom of Septicity](/docs/core/foundations/axiom-septicity) | Proof of $N=7$ from octonion algebra, canonical $\kappa_0$, $\mathrm{Coh}_E$ as HS-projection | 90 min |
-| 3 | [Spacetime](/docs/core/foundations/spacetime) | Emergent spacetime: from $\Omega$ to the metric, causal structure | 45 min |
+| 1 | [Axiom Omega](/docs/core/foundations/axiom-omega) | Fundamental axiomatics: $\Omega \in D(\mathbb{C}^7)$, PW-constraint, model specification | 60 min |
+| 2 | [Axiom of Septicity](/docs/core/foundations/axiom-septicity) | Septicity conditions, octonionic structure (`T-42e` `[T]` at specified 3-form), $\mathrm{Coh}_E$ as HS-projection (`[D]`) | 90 min |
+| 3 | [Spacetime](/docs/core/foundations/spacetime) | Emergent spacetime models: metric and causal structure inputs | 45 min |
 | 4 | [Emergent Geometry](/docs/physics/gravity/emergent-geometry) | Connes' spectral triple, reconstruction of a smooth manifold from algebraic data | 60 min |
-| 5 | [Emergent Manifold $M^4$](/docs/proofs/physics/emergent-manifold) | Proof of T-117 -- T-121 (T-117–T-121 [T] as mathematics since 2026-09-25): background independence, $M^4 = \mathbb{R} \times \Sigma^3$ | 90 min |
-| 6 | [Einstein Equations](/docs/physics/gravity/einstein-equations) | Derivation of GR as an effective theory on scales larger than the spectral gap | 60 min |
-| 7 | [Standard Model](/docs/physics/gauge-symmetry/standard-model) | $SU(3) \times SU(2) \times U(1)$ from the $G_2$-structure of imaginary octonions | 60 min |
-| 8 | [Quantum Reduction](/docs/physics/quantum-mechanics/qm-reduction) | Collapse as a special case of Lindblad dissipation in $\mathcal{D}_\Omega$ | 45 min |
-| 9 | [CC Lagrangian](./lagrangian) | Unified action functional for coherent dynamics | 45 min |
-| 10 | [$G_2$ and Noether's Theorem](./g2-noether-cc) | 14 conserved charges from $G_2$-symmetry | 45 min |
-| 11 | [Predictions](./predictions) **(opt.)** | Pred 1--12: falsifiable consequences for particle physics and cosmology | 30 min |
+| 5 | [Emergent Manifold $M^4$](/docs/proofs/physics/emergent-manifold) | `T-117`, `T-120b`, `T-121` (`[T]`/`[C]` under explicit algebra/Lovelock hypotheses): $M^4 = \mathbb{R} \times \Sigma^3$ | 90 min |
+| 6 | [Einstein Equations](/docs/physics/gravity/einstein-equations) | Lovelock metric restrictions (`T-121` `[T]` under stated hypotheses) and effective GR matching | 60 min |
+| 7 | [Standard Model](/docs/physics/gauge-symmetry/standard-model) | $G_2$-stabilizer structure (`T-42e` `[T]`) and gauge-embedding scope (`T-275` `[I]`/`[✗]` for rank-4 embedding in $G_2$) | 60 min |
+| 8 | [Quantum Reduction](/docs/physics/quantum-mechanics/qm-reduction) | Collapse modeled via Lindblad dissipation in $\mathcal{D}_\Omega$ | 45 min |
+| 9 | [CC Lagrangian](./lagrangian) | Effective action functional for coherent dynamics | 45 min |
+| 10 | [$G_2$ and Noether's Theorem](./g2-noether-cc) | Symmetry generators and conditional Noether charges from $G_2$ | 45 min |
+| 11 | [Predictions](./predictions) **(opt.)** | Testable hypotheses and falsification criteria for physics and cosmology | 30 min |
 
 :::tip What you can contribute
-Your expertise in spectral analysis, perturbation theory, and phase transitions is *directly* applicable to $\Gamma$. Open questions: renormalisation group flow of $G_2$-charges, cosmological consequences of T-120b ($\Sigma^3 \cong S^3$).
+Your expertise in spectral analysis, perturbation theory, and phase transitions is *directly* applicable to $\Gamma$. Open questions: renormalisation group flow of $G_2$-charges, cosmological model implications of `T-120b` ($\Sigma^3 \cong S^3$ under specified topology/foliation).
 :::
 
 ---
 
+<a id="маршрут-математика"></a>
+
 ### 2.2 Mathematician's Route {#mathematician-route}
 
-**Focus:** categorical and algebraic structure of the theory, proofs of uniqueness and minimality.
+**Focus:** categorical and algebraic structure of the theory, conditional bounds, and self-model geometry.
 
 **Prerequisites:** category theory (Mac Lane level), algebraic topology (cohomology, K-theory), familiarity with operads and higher categories desirable.
 
@@ -231,26 +233,28 @@ Your expertise in spectral analysis, perturbation theory, and phase transitions 
 |---|---|---|---|
 | 1 | [Mathematical Foundations](/docs/core/foundations/mathematical-foundations) | Base structures: $C^*$-algebra $\mathcal{A}_\Omega$, state space $D(\mathbb{C}^7)$, functional analysis | 90 min |
 | 2 | [Axiom Omega](/docs/core/foundations/axiom-omega) | Axiomatic base, PW-constraint (A5), correctness of definitions | 60 min |
-| 3 | [Axiom of Septicity](/docs/core/foundations/axiom-septicity) | Derivation of $N=7$: octonions, Malcev algebra, $\kappa_0$ from hyperbolic geometry | 90 min |
+| 3 | [Axiom of Septicity](/docs/core/foundations/axiom-septicity) | Septicity conditions, octonionic structure, and explicit model inputs (`T-181` `[✗]` withdrawn for automatic derivation) | 90 min |
 | 4 | [Categorical Formalism](/docs/proofs/categorical/categorical-formalism) | $\Omega$-category, functors between levels, natural transformations | 90 min |
-| 5 | [Formalisation of $\varphi$](/docs/proofs/categorical/formalization-phi) | Self-model as endofunctor, T-96: $\rho^* = \varphi(\Gamma)$, canonicity | 90 min |
-| 6 | [Uniqueness Theorem](/docs/proofs/categorical/uniqueness-theorem) | T-42a -- T-42e: $G_2$-rigidity, uniqueness of $\Omega$ up to isomorphism | 120 min |
-| 7 | [Minimality $N=7$](/docs/proofs/minimality/theorem-minimality-7) | T-5 -- T-10: $S_7$-equivariance, Hamming code $H(7,4)$, projective plane $PG(2,2)$ | 90 min |
-| 8 | [Octonionic Derivation](/docs/proofs/minimality/theorem-octonionic-derivation) | Connection between $\mathrm{Im}(\mathbb{O})$ and $\mathbb{C}^7$: why octonions, not quaternions | 60 min |
-| 9 | [Purity Threshold $P_{\text{crit}}$](/docs/proofs/dynamics/theorem-purity-critical) | Proof of $P_{\text{crit}} = 2/7$ via Frobenius norm | 45 min |
-| 10 | [Emergent Time](/docs/proofs/dynamics/emergent-time) | Derivation of the time parameter from the spectral gap of $\mathcal{L}_0$ | 45 min |
-| 11 | [FEP and UHM](./comparison) | Comparing objectives requires a specified generative model and recognition family. |
-| 12 | [Holon Structure](/docs/core/structure/holon) **(opt.)** | Hierarchical composition: $\Gamma_{\text{comp}}$ from subsystems, theorem T-64 | 60 min |
+| 5 | [Formalisation of $\varphi$](/docs/proofs/categorical/formalization-phi) | Canonical self-model families (`T-249` `[T]`, `T-334` `[T]`), stationary attractor conditions (`T-96` `[T]` under stated model; `T-39d` `[✗]` withdrawn) | 90 min |
+| 6 | [Uniqueness Theorem](/docs/proofs/categorical/uniqueness-theorem) | `T-42e` (`[T]` at specified 3-form: $G_2$ stabilizer on states); universal encoder uniqueness `T-42a` withdrawn `[✗]` | 120 min |
+| 7 | [Minimality $N=7$](/docs/proofs/minimality/theorem-minimality-7) | Conditional diagnosability and representation lower bounds (`T-40f` `[✗]` withdrawn for unconditional minimality), Hamming(7,4,3) and Fano plane $PG(2,2)$ | 90 min |
+| 8 | [Octonionic Derivation](/docs/proofs/minimality/theorem-octonionic-derivation) | Canonical orientation on a given Fano plane (`T-41n` `[✗]` withdrawn for unconditional plane selection) | 60 min |
+| 9 | [Purity Threshold $P_{\text{crit}}$](/docs/proofs/dynamics/theorem-purity-critical) | `T-5` `[D]`: structural-majority cut $P_{\text{crit}} = 2/7$ via orthogonal Hilbert–Schmidt decomposition | 45 min |
+| 10 | [Emergent Time](/docs/proofs/dynamics/emergent-time) | Clock models and conditional slowing near nondegenerate folds | 45 min |
+| 11 | [FEP and UHM](./comparison) | Comparing objectives requires a specified generative model and recognition family. | 30 min |
+| 12 | [Holon Structure](/docs/core/structure/holon) **(opt.)** | Hierarchical composition: $\Gamma_{\text{comp}}$ from subsystems (`CC-5`, `CC-6`, `CC-7` `[T]` under weak coupling) | 60 min |
 
 :::tip What you can contribute
-Open mathematical problems: classification of $\Omega$-categories, connection between $G_2$-holonomy and differential cohomology, formalisation of the interiority hierarchy in the language of $(\infty,1)$-categories.
+Open mathematical problems: classification of $\Omega$-categories, connection between $G_2$-holonomy and differential cohomology, formalisation of the capability hierarchy in the language of $(\infty,1)$-categories.
 :::
 
 ---
 
+<a id="маршрут-когнитивиста"></a>
+
 ### 2.3 Cognitive Scientist's Route {#cognitive-scientist-route}
 
-**Focus:** theory of consciousness, qualia, hierarchy of subjectivity, comparison with IIT/GWT/FEP.
+**Focus:** theory of consciousness, qualia, capability hierarchy, comparison with IIT/GWT/FEP.
 
 **Prerequisites:** philosophy of mind (Chalmers level), familiarity with IIT (Tononi), basic linear algebra desirable.
 
@@ -259,27 +263,29 @@ Open mathematical problems: classification of $\Omega$-categories, connection be
 | # | Document | What you will learn | Time |
 |---|---|---|---|
 | 1 | [Consciousness Section Overview](/docs/consciousness/overview) | Map of the entire section: what is where, key theses | 20 min |
-| 2 | [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism) | UHM's ontological position: $\Gamma$ contains both the physical and the mental | 60 min |
-| 3 | [Self-Observation and Measure $R$](/docs/consciousness/foundations/self-observation) | Formalisation of reflection: $R \geq 1/3$ as a threshold, canonical definition of $R$ | 60 min |
-| 4 | [Interiority Theory](/docs/consciousness/foundations/interiority-theory) | Interiority as a fundamental aspect of $\Gamma$, connection with E-coherence | 45 min |
-| 5 | [Interiority Hierarchy L0--L4](/docs/consciousness/hierarchy/interiority-hierarchy) | Formal ladder of subjectivity: numerical criteria for each level | 60 min |
-| 6 | [SAD Depth Tower](/docs/consciousness/hierarchy/depth-tower) | Recursive depth of self-modelling, $\text{SAD}_{\max} = 3$ [T] | 45 min |
-| 7 | [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure) | Formalisation of qualitative experience via spectral decomposition of $\Gamma$ | 60 min |
-| 8 | [Emotion Taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy) | 7 basic emotional axes from the $\sigma$-profile, predictions for affective science | 45 min |
-| 9 | [AI Consciousness](/docs/consciousness/subjects/ai-consciousness) | Criteria for AI system consciousness: $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$ | 45 min |
-| 10 | [Comparison of Consciousness Theories](/docs/consciousness/comparative/consciousness-theories) | UHM vs. IIT, GWT, Higher-Order, FEP: precise correspondences and differences | 60 min |
-| 11 | [Panpsychism Analysis](/docs/consciousness/comparative/panpsychism-analysis) | Why UHM is not panpsychism: the threshold $P_{\text{crit}}$ excludes "electron consciousness" | 45 min |
-| 12 | [Value of Consciousness](/docs/consciousness/ethics-meaning/value-consciousness) **(opt.)** | Ethical consequences: graded moral responsibility | 30 min |
+| 2 | [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism) | UHM's ontological position `[I]`: $\Gamma$ encodes both dynamical and interiority projections | 60 min |
+| 3 | [Self-Observation and Measure $R$](/docs/consciousness/foundations/self-observation) | Formalisation of reflection: $R \geq 1/3$ as a canonical gate `[D]`, forms of $R$ | 60 min |
+| 4 | [Interiority Theory](/docs/consciousness/foundations/interiority-theory) | Interiority as a fundamental sector of $\Gamma$, connection with $\mathrm{Coh}_E$ | 45 min |
+| 5 | [Interiority Hierarchy L0--L4](/docs/consciousness/hierarchy/interiority-hierarchy) | Formal capability ladder $\mathrm{Cap}_0$--$\mathrm{Cap}_\infty$ `[D]`: criteria for each level | 60 min |
+| 6 | [SAD Depth Tower](/docs/consciousness/hierarchy/depth-tower) | Recursive depth score (`T-150` `[D]`; universal equivalence `T-136` and universal ceiling $\text{SAD}_{\max} = 3$ `T-217` withdrawn `[✗]`) | 45 min |
+| 7 | [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure) | Structural modeling of qualitative experience via spectral decomposition of $\Gamma$ `[I]` | 60 min |
+| 8 | [Emotion Taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy) | 7 basic emotional axes mapped to the $\sigma$-profile `[I]` / `[H]` | 45 min |
+| 9 | [AI Consciousness](/docs/consciousness/subjects/ai-consciousness) | Formal capability gates: $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ `[D]` | 45 min |
+| 10 | [Comparison of Consciousness Theories](/docs/consciousness/comparative/consciousness-theories) | UHM vs. IIT, GWT, Higher-Order, FEP: correspondences and differences | 60 min |
+| 11 | [Panpsychism Analysis](/docs/consciousness/comparative/panpsychism-analysis) | Why UHM differs from naive panpsychism: distinction between L0 structure and L2 access `[I]` | 45 min |
+| 12 | [Value of Consciousness](/docs/consciousness/ethics-meaning/value-consciousness) **(opt.)** | Ethical discussion `[I]`: graded moral consideration | 30 min |
 
 :::tip What you can contribute
-You can run a pilot experiment: collect 7 psychometric scales (TAS-20, MBI, WCST, TMT, etc.), compute the $\sigma$-profile, track dynamics over the course of therapy. The first empirical test of CC is waiting for the cognitive scientist.
+You can design a pilot calibration study `[Pr]`: collect 7 psychometric scales (TAS-20, MBI, WCST, TMT, etc.), construct an explicit observation law, compute the $\sigma$-profile with uncertainty intervals, and track dynamics over the course of therapy.
 :::
 
 ---
 
+<a id="маршрут-инженера"></a>
+
 ### 2.4 Engineer's Route {#engineer-route}
 
-**Focus:** building systems based on UHM/CC — from monitoring the $\sigma$-profile to the architecture of a conscious agent.
+**Focus:** building systems based on UHM/CC — from monitoring the $\sigma$-profile to the architecture of a reflective agent.
 
 **Prerequisites:** Python/Rust, linear algebra (density matrix, eigenvalues), basics of RL.
 
@@ -288,22 +294,24 @@ You can run a pilot experiment: collect 7 psychometric scales (TAS-20, MBI, WCST
 | # | Document | What you will learn | Time |
 |---|---|---|---|
 | 1 | [Introduction to CC](./introduction) | The big picture: $\Gamma$, 7 dimensions, $P$, $\sigma$, $\kappa$ — the minimal set of concepts | 30 min |
-| 2 | [Definitions](./definitions) | Precise formulas for all quantities: $P$, $\sigma_k$, $R$, $\Phi$, $\mathrm{Coh}_E$, $\Delta F$ | 45 min |
-| 3 | [Theorems](./theorems) | Key inequalities and thresholds: T-81, T-92, T-96, T-103 — what the system *must* satisfy | 60 min |
-| 4 | [Diagnostics](./diagnostics) | Dashboard of 7 vital indicators $\sigma_k$: how to monitor the system in real time | 45 min |
-| 5 | [Implementation](./implementation) | Architecture of a software agent: 7 modules, CPTP evolution, self-monitoring | 60 min |
-| 6 | [Learning Bounds](./learning-bounds) | T-109 -- T-113: fundamental lower limits on learning speed, $N=7$ for the minimal agent | 60 min |
-| 7 | [Engineering Insights](/docs/applied/research/engineering-insights) | Practical recommendations: how to translate CC theorems into architectural decisions | 45 min |
-| 8 | [Sensorimotor Theory](./sensorimotor) | T-100 -- T-102: sensorimotor cycle, motor pipeline, V_hed | 45 min |
-| 9 | [Stability](./stability) | Stability conditions: death spiral, attractors, bifurcations — what to avoid | 45 min |
-| 10 | [Phase Diagram](./phase-diagram-cc) **(opt.)** | Goldilocks zone $P \in (2/7, 3/7]$: operational corridor for a conscious agent | 30 min |
-| 11 | [Applications](./applications) **(opt.)** | Concrete examples: medicine, education, organisations, AI | 30 min |
+| 2 | [Definitions](./definitions) | Precise formulas for all quantities: $P$, $\sigma_k$, $R$, $\Phi$, $\mathrm{Coh}_E$, $D_{\text{diff}}$, $\Delta F$ | 45 min |
+| 3 | [Theorems](./theorems) | Key theorems and scopes: `Theorem 8.1` (`[C]` conditional E-balance; `T-38a` `[✗]`), `T-92` `[D]`, `T-96` `[T]`, `T-103` (`[T]`/`[I]`) | 60 min |
+| 4 | [Diagnostics](./diagnostics) | Four gate margins and 7-sector diagnostic panel: monitoring under uncertainty | 45 min |
+| 5 | [Implementation](./implementation) | Architecture of a software agent: 7 modules, state evolution, self-monitoring | 60 min |
+| 6 | [Learning Bounds](./learning-bounds) | `T-109` (`[T]` binary testing bounds) and `T-113` (`[H]` $N=7$ learning optimality hypothesis) | 60 min |
+| 7 | [Engineering Insights](/docs/applied/research/engineering-insights) | Practical recommendations: translating CC models into architectural decisions | 45 min |
+| 8 | [Sensorimotor Theory](./sensorimotor) | `T-100` `[D]`, `T-101` (`[D]`/`[T]`), `T-103` (`[T]`/`[I]`): sensorimotor interface and control (`T-102` `[✗]` withdrawn) | 45 min |
+| 9 | [Stability](./stability) | Geometric margins, controlled dynamics, attractors, and instability modes | 45 min |
+| 10 | [Phase Diagram](./phase-diagram-cc) **(opt.)** | Goldilocks window $P \in (2/7, 3/7]$ (`T-124` `[T]` non-emptiness): operating corridor for an agent | 30 min |
+| 11 | [Applications](./applications) **(opt.)** | Illustrative scenarios: medicine, education, organisations, AI | 30 min |
 
 :::tip What you can contribute
-Implement $\Gamma$ as a state representation, $P$ and $\sigma$ as runtime constraints. The first system to pass the CC thresholds ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$) will become a candidate for a conscious AI agent.
+Implement $\Gamma$ as a state representation, with an explicit observation law and uncertainty bounds on the four gate margins ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$). Passing these gates certifies `Cap2` within the model — clearly separated from any phenomenological claim about AI sentience `[I]`.
 :::
 
 ---
+
+<a id="маршрут-философа"></a>
 
 ### 2.5 Philosopher's Route {#philosopher-route}
 
@@ -315,16 +323,16 @@ Implement $\Gamma$ as a state representation, $P$ and $\sigma$ as runtime constr
 
 | # | Document | What you will learn | Time |
 |---|---|---|---|
-| 1 | [Introduction (general)](/docs/intro) | Motivation for UHM: why a unified theory is needed, structural overview | 30 min |
-| 2 | [Consequences of the Axioms](/docs/core/foundations/consequences) | What *follows* from the axioms: necessity of interiority, thresholds, $G_2$-symmetry | 60 min |
-| 3 | [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism) | The central philosophical thesis: $\Gamma$ is neither matter nor consciousness but their common root | 60 min |
+| 1 | [Introduction (general)](/docs/intro) | Motivation for UHM: why a unified framework is sought, structural overview | 30 min |
+| 2 | [Consequences of the Axioms](/docs/core/foundations/consequences) | Formal consequences vs. model choices: conditional E-balance, gates `[D]`, $G_2$-stabilizer (`T-42e` `[T]`) | 60 min |
+| 3 | [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism) | The central philosophical thesis `[I]`: $\Gamma$ carries both dynamical and interiority projections | 60 min |
 | 4 | [Panpsychism](./philosophy) | Discuss the distinction between correlated states and a collective subject. | 45 min |
 | 5 | [Comparison of Consciousness Theories](/docs/consciousness/comparative/consciousness-theories) | Systematic comparison with IIT, GWT, Higher-Order, FEP, GNWT | 60 min |
-| 6 | [Philosophical Foundations of CC](./philosophy) | The hard problem, zombie argument (T-81), explanatory gap | 60 min |
-| 7 | [Free Will](/docs/consciousness/ethics-meaning/freedom) | Compatibilism from $\mathcal{R}$: the agent *chooses* within the dynamics of $\Gamma$ | 45 min |
-| 8 | [Value of Consciousness](/docs/consciousness/ethics-meaning/value-consciousness) | Graded moral responsibility: $C = \Phi \times R$ as a measure | 45 min |
-| 9 | [Meaning](/docs/consciousness/ethics-meaning/meaning) | Existential consequences: death, continuity, telos | 45 min |
-| 10 | [Predictions](./predictions) | Pred 1--12: falsifiability — how UHM differs from "mere philosophy" | 30 min |
+| 6 | [Philosophical Foundations of CC](./philosophy) | The hard problem, zombie argument (`Theorem 8.1` `[C]`; universal `T-38a` `[✗]` withdrawn), explanatory gap | 60 min |
+| 7 | [Free Will](/docs/consciousness/ethics-meaning/freedom) | Compatibilist framing `[I]` of agency within controlled $\Gamma$ dynamics | 45 min |
+| 8 | [Value of Consciousness](/docs/consciousness/ethics-meaning/value-consciousness) | Ethical discussion `[I]`: capability margins and scalar $C = \Phi \times R$ (`T-140` `[D]`) | 45 min |
+| 9 | [Meaning](/docs/consciousness/ethics-meaning/meaning) | Existential interpretation `[I]`: mortality, continuity, telos | 45 min |
+| 10 | [Predictions](./predictions) | Testable hypotheses and falsification criteria | 30 min |
 | 11 | [Cognitive Hierarchy](/docs/consciousness/comparative/cognitive-hierarchy) **(opt.)** | Comparison with Piaget's, Kegan's, and Wilber's hierarchies | 45 min |
 
 :::tip What you can contribute
@@ -333,77 +341,81 @@ CC *needs* philosophical criticism: hidden assumptions, circular definitions, co
 
 ---
 
+<a id="сводная-таблица"></a>
+
 ### Summary Table of Routes {#summary-table}
 
 | Route | Audience | Documents | Time | Key Result |
 |---|---|---|---|---|
-| [Physics](#physicist-route) | Theoretical physicists, cosmologists | 11 | 12--15 h | $M^4$, SM, collapse — from a single $\Omega$ |
-| [Mathematics](#mathematician-route) | Mathematicians, category theorists | 12 | 14--18 h | Uniqueness and minimality of $N=7$ |
-| [Cognitive Science](#cognitive-scientist-route) | Cognitive scientists, neuroscientists | 12 | 10--13 h | Formal theory of consciousness with thresholds |
-| [Engineering](#engineer-route) | AI/ML engineers | 11 | 8--10 h | Architecture and constraints for AGI |
-| [Philosophy](#philosopher-route) | Philosophers of mind, ethicists | 11 | 9--11 h | Two-aspect monism + falsifiability |
+| [Physics](#physicist-route) | Theoretical physicists, cosmologists | 11 | 12--15 h | Effective $M^4$, gauge structure, decoherence models |
+| [Mathematics](#mathematician-route) | Mathematicians, category theorists | 12 | 14--18 h | Stabilizer symmetry, conditional bounds, self-models |
+| [Cognitive Science](#cognitive-scientist-route) | Cognitive scientists, neuroscientists | 12 | 10--13 h | Formal capability hierarchy with explicit gates `[D]` |
+| [Engineering](#engineer-route) | AI/ML engineers | 11 | 8--10 h | Architecture and monitoring contracts for agents |
+| [Philosophy](#philosopher-route) | Philosophers of mind, ethicists | 11 | 9--11 h | Two-aspect monism `[I]` + testable hypotheses `[H]` |
 
 ---
 
+<a id="общие-паттерны"></a>
+
 ## 3. Common Patterns Visible from All Disciplines {#common-patterns}
 
-### 3.1 Phase Transition as a Universal Threshold
+### 3.1 Structural Threshold as a Cross-Domain Pattern `[I]` / `[H]`
 
-In physics: ice → water at 0°C. In biology: alive → dead at critical loss of homeostasis. In psychology: norm → pathology. In AI: learnability → collapse. In organisations: viable → bankrupt.
+In physics: phase transitions such as ice → water at 0°C. In biology: alive → dead at critical loss of homeostasis. In psychology: functional breakdown. In AI: learnability → collapse. In organisations: viable → insolvent.
 
-In all cases CC describes this with a single formula: **$P = 2/7$** — the universal threshold below which the system loses organisation. More detail — [Bifurcation](./bifurcation).
+CC models this cross-domain pattern via the **structural-majority cut $P_{\text{crit}} = 2/7$ (`T-5` `[D]`)**, where the squared Frobenius deviation from uniform noise $\|\Gamma - I/7\|_F^2 = P - 1/7$ equals the background norm $\|I/7\|_F^2 = 1/7$. *(Note that universal bifurcation at $2/7$ `T-160` is withdrawn `[✗]`; dynamical bifurcations require a specified reduced vector field — see [Bifurcation](./bifurcation) — and empirical threshold alignment in biology, psychology, or organisations is a hypothesis `[H]`.)*
 
-**Why exactly $2/7$?** Because at $P = 2/7$ the Frobenius norm $\|\Gamma - I/7\|_F$ reaches the minimal level at which the system can still *distinguish itself from uniform noise*. Below this — the signal drowns in noise, and the system *does not know that it is a system*. This is equally true for neurons, cells, people, and organisations.
+### 3.2 Balance Between Order and Chaos `[I]`
 
-### 3.2 Balance Between Order and Chaos
+- **Too much concentration** ($P \to 1$): the state becomes pure and spectrally concentrated; interpretively analogous to rigidity in psychology or bureaucracy in organisations.
+- **Too little structure** ($P \to 1/7$): the state approaches uniform noise $I/7$; interpretively analogous to disorientation or organisational chaos.
+- **The Goldilocks window** $P \in (2/7, 3/7]$ ([T-124 [T]](./phase-diagram-cc)): non-empty operating window (`T-124` `[T]` proves constructive non-emptiness of $\mathcal{V}_{\mathrm{full}}$) balancing coherence and flexibility `[I]`.
 
-- **Too much order** ($P \to 1$): the system is rigid, brittle. In physics — absolute zero (a crystal incapable of change). In psychology — obsessiveness (fixation on rules). In organisations — bureaucratic paralysis (procedures matter more than results).
+**Analogy.** Like the porridge for the three bears — too hot ($P \to 1$), too cold ($P \to 1/7$), and in the window ($P \in (2/7, 3/7]$). `T-124` `[T]` proves mathematically that this designated window is non-empty; testing whether real conscious systems cluster inside it is an empirical hypothesis `[H]`.
 
-- **Too little order** ($P \to 1/7$): the system is chaotic, non-functional. In physics — a gas (molecules move chaotically). In psychology — disorientation (no function dominates). In organisations — complete chaos (no one knows who is responsible for what).
+### 3.3 Regeneration Through E-Coherence `[H]` / `[I]`
 
-- **The Goldilocks zone** $P \in (2/7, 3/7]$ ([T-124 [T]](./phase-diagram-cc)): optimal balance. Enough order for structure, enough flexibility for adaptation. Consciousness is born here.
+One of the most distinctive constitutive hypotheses of CC is that **recovery rate scales with E-coherence** ($\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0\,\mathrm{Coh}_E$ `[D]` / `[H]`):
 
-**Analogy.** The porridge for the three bears: one too hot ($P \to 1$), one too cold ($P \to 1/7$), one just right ($P \in (2/7, 3/7]$). CC proves that "just right" is not a matter of taste, but a mathematical necessity.
+- **Physicist:** Non-unital feedback coupling dependent on an internal sector projection — an explicit addition beyond passive thermal relaxation.
+- **Biologist `[H]`:** Offers a candidate formalization for psychosomatic effects (e.g., documented associations between chronic stress and slowed wound healing, Kiecolt-Glaser et al., 1995): $\sigma_E \uparrow \to \mathrm{Coh}_E \downarrow \to \kappa \downarrow$.
+- **Psychologist `[H]`:** Offers a candidate formalization for why reflective therapies such as CBT show broad mental and somatic benefits (Hofmann et al., 2012): therapy → $\mathrm{Coh}_E \uparrow \to \kappa \uparrow \to P \uparrow$.
+- **Engineer `[Pr]`:** Suggests an architectural hypothesis: an explicit self-monitoring module ($E$-sector) could improve autonomous recovery from perturbations.
+- **Manager `[I]`:** Maps feedback culture (retrospectives, 360-reviews) onto organisational $\mathrm{Coh}_E$, suggesting why reflective teams recover faster from disruptions.
 
-### 3.3 Regeneration Through Experience
+### 3.4 The Death Spiral — Cascading Instability Pattern `[I]` / `[H]`
 
-The most counterintuitive and unique result of CC: **the recovery rate depends on the degree of integration of E-coherence** (the interiority aspect of the system). For L2+ systems this means dependence on the quality of conscious experience. This is visible differently from different disciplines:
-
-- **Physicist:** No analogue — this is a genuinely new mechanism. In physics, recovery (relaxation to equilibrium) does not depend on the system's "self-awareness." CC adds something fundamentally new.
-- **Biologist:** Explains psychosomatics — why stress slows healing. Mechanism: stress → $\sigma_E \uparrow$ → $\mathrm{Coh}_E \downarrow$ → $\kappa \downarrow$ → tissue regeneration slows. This is experimentally confirmed (Kiecolt-Glaser et al., 1995: stress slows wound healing by 27%).
-- **Psychologist:** Explains why psychotherapy (strengthening reflection) improves physical health. Mechanism: therapy → $\mathrm{Coh}_E \uparrow$ → $\kappa \uparrow$ → $P \uparrow$. Meta-analyses show that CBT improves not only mental but also physical health (Hofmann et al., 2012).
-- **Engineer:** Gives an architectural principle: a self-monitoring module accelerates self-repair. If your AI agent monitors its own state (the $E$-module), its ability to recover from failures ($\kappa$) increases.
-- **Manager:** A feedback culture (retrospectives, 360-reviews) is the organisational $\mathrm{Coh}_E$. Companies with a developed culture of reflection recover faster from crises.
-
-### 3.4 The Death Spiral — Universal Collapse Pattern
-
-In all systems the same pattern is observed: loss of reflection triggers *cascading destruction*:
+Under the constitutive E-coupling model, loss of E-coherence can trigger a self-reinforcing downward cascade:
 
 $$
 \sigma_E \uparrow \;\to\; \mathrm{Coh}_E \downarrow \;\to\; \kappa \downarrow \;\to\; P \downarrow \;\to\; \sigma_O \uparrow,\; \sigma_U \uparrow \;\to\; \ldots
 $$
 
-- **In biology:** stress → immune suppression → illness → more stress → ...
-- **In psychology:** alexithymia → inability to recover → burnout → isolation → ...
-- **In organisations:** reflection deficit → problems go unnoticed → financial losses → layoffs → fragmentation → ...
+- **In biology `[I]`:** chronic stress → immune suppression → illness → further stress → ...
+- **In psychology `[I]`:** alexithymia → impaired recovery → burnout → social withdrawal → ...
+- **In organisations `[I]`:** reflection deficit → unnoticed problems → financial losses → fragmentation → ...
 
-CC formalises this cascade and shows *where* it can be interrupted: at the $\sigma_E$ stage — by strengthening reflection. More detail — [Stability, death spiral](./stability#спираль-смерти).
+Within the model, intervening to restore E-coherence interrupts the feedback loop before $P$ crosses below $P_{\mathrm{crit}}$ (see [Stability](./stability)).
 
 ---
 
+<a id="заключение"></a>
+
 ## 4. Conclusion: One Language — A Thousand Dialects {#conclusion}
 
-CC does not cancel the specific languages of disciplines — it gives them a **common grammar**. A physicist can still think in terms of density matrices, and a psychologist in terms of mental functions. But now they can understand each other: every discipline is a dialect of one language.
+CC does not replace discipline-specific methods — it proposes a **common modeling grammar `[I]`**. A physicist can still think in terms of density matrices, and a psychologist in terms of mental functions, while mapping structural parallels onto a shared 7-dimensional coordinate system.
 
-This is not reductionism (reducing biology to physics). This is **coherentism** — the recognition that different levels of description are projections of the same coherent structure. And in this, perhaps, lies CC's main contribution: not new formulas, but a new way of seeing unity behind diversity.
+This is not reductionism (reducing biology to physics), nor is it a claim that empirical bridges are already proved. Every correspondence table in this chapter is an explicit translation dictionary (`[I]`) whose real-world validity in any given discipline must be established through calibrated observation contracts and empirical testing (`[Pr]`).
+
+<a id="итоги"></a>
 
 ### What We Learned {#summary}
 
-1. Every CC concept has **precise correspondences** in 5+ disciplines — and these correspondences are not accidental, but follow from the unity of the formalism.
-2. $\sigma_D$ = metabolic load (biology) = procrastination (psychology) = bureaucracy (organisations) — because *all* describe a deficit of the Dynamics dimension.
-3. Regeneration through experience ($\kappa \sim \mathrm{Coh}_E$) — a unique prediction of CC, visible from *all* disciplines: psychosomatics (biology), psychotherapy (psychology), self-monitoring (AI), retrospectives (management).
-4. **5 reading routes** allow a specialist in any discipline to enter CC through a familiar door.
-5. Universal patterns — phase transition, Goldilocks zone, death spiral — are the same at all levels.
+1. Each CC concept admits **structured interpretive correspondences `[I]`** across physics, biology, psychology, AI engineering, and organisational theory — requiring explicit observation laws (`T-100` `[D]`) and calibration (`[H]`) before empirical deployment.
+2. $\sigma_D$ maps interpretively to metabolic load (biology), procrastination (psychology), and bureaucracy (organisations) as deficits of the Dynamics dimension.
+3. E-coupled regeneration ($\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0\,\mathrm{Coh}_E$) is a central **constitutive hypothesis `[H]`** of CC with cross-disciplinary candidate parallels in psychosomatics, psychotherapy, AI self-monitoring, and organisational retrospectives.
+4. **5 reading routes** allow specialists from different disciplines to enter UHM/CC with clear visibility into proved theorems `[T]`, definitions `[D]`, hypotheses `[H]`, and withdrawn claims `[✗]`.
+5. Cross-domain structural patterns — the majority cut $P_{\mathrm{crit}} = 2/7$ (`T-5` `[D]`), the non-empty Goldilocks window (`T-124` `[T]`), and cascading instability — provide concrete targets for empirical research programmes (`[Pr]`).
 
 ---
 

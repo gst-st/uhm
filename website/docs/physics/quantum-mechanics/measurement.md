@@ -61,7 +61,7 @@ For a selected target $\sigma$ and fixed rate, the replacement channel below giv
 
 <a id="73-self-consistency-condition"></a>
 
-### 7.3 Self-consistency of a specified map
+### 7.1 Self-consistency of a specified map
 
 :::tip Theorem 7.1: fixed replacement channel [T under fixed parameters]
 Fix $\sigma\in D_7$ and $0<k\le1$ independently of the input. The linear operator map

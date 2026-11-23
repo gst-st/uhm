@@ -1,44 +1,56 @@
 \section{Error correction is the topology}
 \label{sec:ecc}
 
-\subsection{The wiring is the code}
+\subsection{The wiring generates the code; its dual checks the syndrome}
 
 In a conventional machine, fault tolerance is a separate layer: ECC-DRAM
 dedicates check bits (a $+12.5\%$ storage overhead for the common
 $[72,64]$ SEC-DED code) and a syndrome decoder; a quantum machine spends on
 the order of $10^3$ physical qubits per logical qubit on a surface code.
 The overhead exists because the code is a structure \emph{added to} the
-computation. \TALOS{} adds nothing, because the interconnect already
-\emph{is} a distance-3 code.
+computation. At the \textbf{seven-mode sector level}, \TALOS{} needs no
+separate routing or sector-diagnosis table because the Fano interconnect
+incidence directly generates a distance-$3$ Hamming code.
 
-\begin{claimbox}[Zero-overhead fault localisation \status{T}]
-The Fano incidence is the parity-check matrix of the Hamming code
-$[n,k,d]=[7,4,3]$: single errors are corrected, double errors detected, and a
-single degraded sector is \emph{located} by three syndrome checks --- the
-diagnosis pyramid $21\to 7\to 3\to 1$ (twenty-one pair-relations collapse to
-seven axes, read out by three syndrome bits, yielding one fault verdict). The
-three parity checks are the three lines through the faulty point. No storage,
-no decoder array, and no code-versus-computation mismatch: the fabric of
-\S\ref{sec:fabric} \emph{is} the check matrix.
+\begin{claimbox}[Sector-level Hamming duality \status{T}]
+Over $\mathbb{F}_2$, the $7\times 7$ Fano incidence matrix $M$
+($\operatorname{rank}_{\mathbb{F}_2}(M)=4$, rows $=$ the seven weight-$3$ lines
+of $\mathsf{N}$) \textbf{generates} the Hamming code $[n,k,d]=[7,4,3]$. Its
+orthogonal $3\times 7$ \textbf{parity-check matrix} $H$
+($\operatorname{rank}_{\mathbb{F}_2}(H)=3$, $HM^T\equiv 0\pmod 2$) has as its
+rows three independent weight-$4$ line complements spanning the dual simplex
+code $[7,3,4]$. Because the seven columns of $H$ are the seven distinct nonzero
+vectors of $\mathbb{F}_2^3$, any single-sector fault $e_j$ maps bijectively to
+a unique nonzero $3$-bit syndrome $s = He_j^T \pmod 2 \in \mathbb{F}_2^3\setminus\{0\}$:
+single-sector faults are uniquely localised ($d=3$: correct/locate~$1$,
+detect~$2$), implementing the diagnosis pyramid $21\to 7\to 3\to 1$
+(twenty-one pair-relations $\to$ seven modes $\to$ three syndrome bits $\to$
+one fault verdict).
 \end{claimbox}
 
-The syndrome map is exact and was machine-verified: for each of the seven
-single-sector fault patterns, the three-bit syndrome read as a binary index
-returns the fault position (Appendix~\ref{app:fano}). Because the code is the
-Hamming code, its guarantees are the textbook ones ($d=3$: correct 1, detect
-2), inherited at zero marginal cost.
+\noindent\textbf{Honest hardware scope.} This combinatorial duality protects
+and localises \emph{logical modes/sectors} ($7$ buses, $3$ dual syndrome bits)
+without a separate sector-routing table. It is \emph{not} physical bit-level
+ECC over the $784\times 8 = 6{,}272$ IEEE-754 storage bits of a digital
+emulation register: on CMOS SRAM/DRAM substrates, individual memory-cell
+bit-flips still rely on standard physical memory ECC.
+
+The syndrome map is exact and machine-verified in
+\texttt{architecture/talos\_v0\_emulator.py}: for each of the seven
+single-sector fault patterns on the canonical Singer ordering
+$(A,S,D,L,E,U,O)$, $s = He_j^T \pmod 2$ returns a unique nonzero $3$-bit
+syndrome decoding back to sector $j$ (Appendix~\ref{app:fano}).
 
 \begin{zerobox}[From zero --- find the broken toy with three questions]
-Seven toys stand in a row, numbered $1$ to $7$. Exactly one is broken, and
-you may ask only yes/no questions. Three questions suffice --- \emph{if} you
-ask the right ones: ``is its number $4$ or more?'', ``is it in
-$\{2,3,6,7\}$?'', ``is it odd?''. Write the three answers as $1$s and $0$s
-and you have spelled the broken toy's number in binary: three answers, seven
-suspects, one verdict. The Fano wiring asks exactly these three questions
-\emph{automatically, on every tick} --- each question is one of the three
-lines through the faulty sector --- and that is the whole error-correcting
-code: $21\to7\to3\to1$, no extra parts, because the wiring \emph{is} the
-questionnaire.
+Seven toys stand in a row, labelled $A,S,D,L,E,U,O$. Exactly one is broken, and
+you may ask only yes/no questions. Three parity questions suffice --- namely,
+the three rows of the dual matrix $H$ (the complements of the first three Fano
+lines: ``is it in $\{D,E,U,O\}$?'', ``is it in $\{A,L,U,O\}$?'', ``is it in
+$\{A,S,E,O\}$?''). Write the three yes/no answers as $1$s and $0$s and every
+single toy produces a distinct nonzero $3$-bit fingerprint (e.g.\ $A\mapsto 011$,
+$S\mapsto 001$, \dots, $O\mapsto 111$): three checks, seven suspects, one
+verdict --- $21\to 7\to 3\to 1$ directly from the dual geometry of the Fano
+wiring.
 \end{zerobox}
 
 \begin{mythbox}[The myth, continued --- he knows where it hurts]
@@ -104,15 +116,15 @@ same projective family.
 
 \begin{table}[H]
 \centering\small
-\caption{Fault tolerance: bolt-on codes versus code-as-topology.}
+\caption{Fault tolerance: bolt-on bit/qubit codes versus sector-level code-as-topology.}
 \label{tab:ecc}
 \begin{tabular}{@{}p{3.6cm}p{3.4cm}p{4.7cm}@{}}
 \toprule
-\textbf{Scheme} & \textbf{Overhead} & \textbf{Coupling to computation} \\
+\textbf{Scheme} & \textbf{Scope \& overhead} & \textbf{Coupling to computation} \\
 \midrule
-ECC-DRAM (SEC-DED) & $+12.5\%$ bits + decoder & separate; scrubbing is extra cycles \\
-Surface code (quantum) & $\sim\!10^3$ phys./logical & separate; decodes against decoherence \\
-\TALOS{} (Fano $=$ Hamming) & \textbf{zero} extra hardware & \textbf{identical}: the wiring is the check; every tick self-diagnoses (Principle~\ref{prin:selfdiag}) \\
+ECC-DRAM (SEC-DED) & bit-level; $+12.5\%$ bits + decoder & separate; scrubbing is extra cycles \\
+Surface code (quantum) & qubit-level; $\sim\!10^3$ phys./logical & separate; decodes against decoherence \\
+\TALOS{} ($M$ gen., $H$ check) & \textbf{sector-level} ($7$ modes, $3$ dual checks; does not replace physical bit-ECC for $6{,}272$ digital storage bits) & \textbf{structural}: $M$ generates $[7,4,3]$, dual $H$ ($[7,3,4]$) locates any single degraded sector from tick activity (Principle~\ref{prin:selfdiag}) \\
 \bottomrule
 \end{tabular}
 \end{table}

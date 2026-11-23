@@ -30,13 +30,13 @@ This static blind spot is the adjacency-level companion of the dynamical $\mathf
 
 ## §1. The premise and the question {#вопрос}
 
-The corpus fixes the dissipative half of the Γ-dynamics by the seven Fano projectors: one Lindblad channel per line $\ell_p = \{p,\, p{+}1,\, p{+}3\} \pmod 7$ of $\mathrm{PG}(2,2)$, with a nonnegative rate $\gamma_p$ per line ([Gap dynamics §2](/docs/core/dynamics/gap-dynamics#код-хэмминга), [Evolution](/docs/core/dynamics/evolution)). The exact channel form — the closed-form exponential established in the v2.2 canon — gives every off-diagonal coherence $(i,j)$, $i \neq j$, a pure exponential decay $e^{-r_{ij} t}$ with
+The corpus fixes the dissipative half of the Γ-dynamics by the seven Fano projectors: one Lindblad channel per line $\ell_p = \{p,\, p{+}1,\, p{+}3\} \pmod 7$ of $\mathrm{PG}(2,2)$ under the canonical Singer cyclic ordering $(0,1,2,3,4,5,6) = (A,S,D,L,E,U,O)$ — i.e. the seven lines $\{A,S,L\}$, $\{S,D,E\}$, $\{D,L,U\}$, $\{L,E,O\}$, $\{E,U,A\}$, $\{U,O,S\}$, $\{O,A,D\}$ — with a nonnegative rate $\gamma_p$ per line ([Gap dynamics §2](/docs/core/dynamics/gap-dynamics#код-хэмминга), [Evolution](/docs/core/dynamics/evolution)). The exact channel form — the closed-form exponential established in the v2.2 canon — gives every off-diagonal coherence $(i,j)$, $i \neq j$, a pure exponential decay $e^{-r_{ij} t}$ with
 
 $$
 r_{ij} \;=\; \frac{1}{6} \sum_{p\,:\, |\ell_p \cap \{i,j\}| = 1} \gamma_p .
 $$
 
-In words: a line damages a coherence only if it *separates* the pair — contains exactly one of its endpoints. For the uniform assignment $\gamma_p = \bar\gamma$ this reproduces the corpus constant $r = \tfrac{2}{3}\bar\gamma$, consistent with the discrete Lüders multiplier $1/3$ per full cycle (T-110) and the cycle-time identity $\bar\gamma\tau_{\mathrm{cycle}} = \tfrac{3}{2}\ln 3$.
+In words: a line damages a coherence only if it *separates* the pair — contains exactly one of its endpoints. For the uniform assignment $\gamma_p = \bar\gamma$ this reproduces the corpus constant $r = \tfrac{2}{3}\bar\gamma$, consistent with the discrete Lüders pinching multiplier $1/3$ per full cycle (`T-1` `[T]`) and the cycle-time identity $\bar\gamma\tau_{\mathrm{cycle}} = \tfrac{3}{2}\ln 3$.
 
 The seven $\gamma_p$ are the system's microscopic dials; the twenty-one $r_{ij}$ are what a rate experiment sees. So the natural — and, it turns out, sharply answerable — questions are:
 
@@ -75,7 +75,7 @@ $$
 
 #### Definition (polar partition) {#полярное-разбиение}
 
-For a pair $\{i,j\}$ write $\pi(i,j) :=$ the third point of $\lambda(i,j)$ — its **polar point**. The **polar class** of an axis $k$ is $P_k := \{\ell \setminus \{k\} : \ell \ni k\}$ — the three pairs completing the three lines through $k$. The seven classes have three pairs each and partition all $\binom{7}{2} = 21$ pairs. This is the point–pair polarity of $\mathrm{PG}(2,2)$: the same triple structure that underlies the octonion product ($e_i e_j = \pm e_{\pi(i,j)}$) and the sixteen-archetype grammar of the [Γ-canon](https://homohologra.ph/research/gamma-canon).
+For a pair $\{i,j\}$ write $\pi(i,j) :=$ the third point of $\lambda(i,j)$ — its **polar point**. The **polar class** of an axis $k$ is $P_k := \{\ell \setminus \{k\} : \ell \ni k\}$ — the three pairs completing the three lines through $k$. The seven classes have three pairs each and partition all $\binom{7}{2} = 21$ pairs. This is the point–pair polarity of $\mathrm{PG}(2,2)$: the same triple structure that underlies the octonion product ($e_i e_j = \pm e_{\pi(i,j)}$) and the 16-codeword Hamming grammar $H(7,4)$ ([Σ-calculus](/docs/applied/research/syndrome-calculus)).
 
 #### Lemma Φ.4 (image and injectivity) {#лемма-ф4}
 
@@ -194,7 +194,7 @@ Two structural facts fall out of the polar law and deserve their own sentences.
 
 **Intra-line immunity [T].** A line never damages its own coherences: if both endpoints of a pair lie on $\ell$, then $|\ell \cap \{i,j\}| = 2$ and $\ell$ contributes nothing to $r_{ij}$. This is Shield I of [topological protection](/docs/applied/coherence-cybernetics/topological-protection#код-хэмминга) surfacing at the *rate* level: the dissipative grammar is structurally incapable of eroding the coherence of its own syndrome triples.
 
-**Polar guardianship [Т math, И reading].** $r_{ij} = (G - T_{\pi(i,j)})/6$ is *anti-monotone* in the polar point's flux: strengthening the three lines through an axis $k$ slows the decay of the three coherences polar to $k$. Each axis guards not its own coherences but the polar ones — protection in $\mathrm{PG}(2,2)$ is always vicarious. The best-protected coherences of a Γ-state are those polar to its highest-flux axis — and those same coherences *set the spectral gap* (T-226(v)): the strongest guardian's wards decay slowest, so maximal protection and slow late-time convergence are two faces of one number. The worked example of §3a shows both faces concretely.
+**Polar guardianship [T] (math), [I] (reading).** $r_{ij} = (G - T_{\pi(i,j)})/6$ is *anti-monotone* in the polar point's flux: strengthening the three lines through an axis $k$ slows the decay of the three coherences polar to $k$. Each axis guards not its own coherences but the polar ones — protection in $\mathrm{PG}(2,2)$ is always vicarious. The best-protected coherences of a Γ-state are those polar to its highest-flux axis — and those same coherences *set the spectral gap* (T-226(v)): the strongest guardian's wards decay slowest, so maximal protection and slow late-time convergence are two faces of one number. The worked example of §3a shows both faces concretely.
 
 ## §6. Falsifiability and technology {#следствия-технологии}
 
@@ -239,6 +239,6 @@ The verification scripts follow the M1 discipline of the SYNARC programme: indep
 - [Σ-calculus](/docs/applied/research/syndrome-calculus) — the static selector (T-224) and the measurement pyramid (T-225); this document is their dynamical, rate-level companion, in polar duality to the pyramid.
 - [Gap dynamics §2](/docs/core/dynamics/gap-dynamics#код-хэмминга) — the Fano–Hamming wiring of the Lindblad operators whose exact channel forms feed §1.
 - [Topological protection, Shield I](/docs/applied/coherence-cybernetics/topological-protection#код-хэмминга) — intra-line immunity is Shield I at the rate level.
-- [Γ-canon](https://homohologra.ph/research/gamma-canon) — the polar (octonionic) triple structure $e_i e_j = \pm e_{\pi(i,j)}$ that indexes the rate classes.
+- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — the polar (octonionic) triple structure $e_i e_j = \pm e_{\pi(i,j)}$ that indexes the rate classes.
 - [Measurement protocol](/docs/applied/research/measurement-protocol) — where the polar-rate observables and the $\gamma$-tomography slot into the experimental tiers.
 - [Status registry](/docs/reference/status-registry) — row T-226.

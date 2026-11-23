@@ -34,7 +34,7 @@ $$
 
 Then $f_\Lambda(q(\rho))=q(\Lambda\rho)$ is well-defined and unique. These channels are closed under composition, and $f_{\Psi\Lambda}=f_\Psi f_\Lambda$, $f_{\mathrm{id}}=\mathrm{id}$. This defines a functor on the declared restricted category [T]. If $q$ is a quotient map, continuity of $q\Lambda$ also makes $f_\Lambda$ continuous. [Full proof](/docs/proofs/categorical/categorical-formalism#4-функтор-f-на-морфизмах).
 
-Reading only $\gamma_{EE}$ fails descent for general channels: swapping axes $A,E$ reveals different $A$ weights in states with the same $E$ weight. Thus an arbitrary channel has no automatic restricted map on experience. Unspecified natural transformations or higher associators do not repair this obstruction.
+Reading only $\gamma_{EE}$ fails descent for general channels: swapping axes $A,E$ reveals different $A$ weights in states with the same $E$ weight. Even on a genuine tensor extension $\mathcal H_E \otimes \mathcal H_{\bar E}$ with the partial-trace readout $q(\Gamma) = \rho_E = \operatorname{Tr}_{\bar E}(\Gamma)$, fiber-descent **(DC)** is equivalent to **semi-causality** ($\bar E \not\to E$: no signalling or dynamical influence from the complement $\bar E$ to $E$ [T]), which forbids any $\bar E \to E$ interaction! Thus an arbitrary interacting channel has no automatic restricted map on experience. Unspecified natural transformations or higher associators do not repair this obstruction; instead, the **Observable Closure Theorem** ([operational closure](/docs/proofs/consciousness/operational-closure)) serves as the honest operational replacement, tracking induced observable statistics without falsely forcing $\bar E \to E$ decoupling.
 
 ## Faithfulness and identification
 

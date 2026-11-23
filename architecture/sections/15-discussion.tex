@@ -5,18 +5,20 @@
 
 The result of this document is not a faster chip but a structural fact: the
 four subsystems that every computing machine designs apart --- interconnect,
-error-correcting code, instruction algebra, and learning rule --- are, on a
-seven-mode substrate, one object (Theorem~\ref{thm:collapse}), and that
-object is available at a \emph{unique} node count (Theorem~\ref{thm:unique}),
-selected among its arithmetic rivals by the requirement that computation be
-third-order (non-associative). From the collapse follow three things no
-layered machine has: fault tolerance at zero hardware overhead because the
-wiring is the code (\S\ref{sec:ecc}); an energy floor set by learning rather
-than data movement because the reversible core is Landauer-free
-(\S\ref{sec:energy}); and continuous self-diagnosis and refresh-as-learning
-because compute, check, and maintenance are the same term
-(Principles~\ref{prin:selfdiag},~\ref{prin:refresh}). These are the genuinely
-new architectural facts; each is derived from UHM, not asserted.
+combinatorial sector-level code, instruction multiplication support, and
+learning rule --- are, on a seven-mode substrate, functions of one incidence
+object (Theorem~\ref{thm:collapse}), and that fusion is available at a
+\emph{unique} node count $N=7$ (Theorem~\ref{thm:unique}), forced over all
+prime powers $q\ge 2$ by binary projective-plane/Hamming fusion alone (no
+tie-break needed; independently matching Hurwitz's unique non-associative
+division algebra $\Oct$). From the collapse follow three properties absent in
+layered designs: sector-level distance-$3$ fault localisation via the dual
+parity-check matrix $H$ without a separate routing table (\S\ref{sec:ecc});
+logical thermodynamic separation isolating entropy export ($\le\log_2 7\approx
+2.807$~bits/state) to adaptation and maintenance while keeping the $784$-byte
+state L1-resident (\S\ref{sec:energy}); and continuous self-diagnosis and
+refresh-as-adaptation because compute, check, and maintenance share one tick
+(Principles~\ref{prin:selfdiag},~\ref{prin:refresh}).
 
 \subsection{What is honestly open}
 
@@ -62,16 +64,16 @@ design layers cannot be mismatched.}
 \textbf{Axis} & \textbf{von Neumann} & \textbf{\TALOS{}} \\
 \midrule
 Memory vs compute & separate (the bottleneck) & one object: the state evolves in place \\
-State & unbounded, addressed & one $784$-byte density matrix in L1 \\
+State & unbounded, addressed & one $784$-byte density matrix in L1 ($48$ real DOFs) \\
 Instruction & fixed opcode set + compiler & one derived tick $\LindOmega$ \\
-Interconnect & crossbar / mesh, $\binom{N}{2}$ & seven line-buses (Fano) \\
-Error correction & bolted on ($+12.5\%$ or $\sim\!10^3\times$) & the wiring is the code ($0$ overhead) \\
-Learning & separate training loop & the third term of the tick \\
-Refresh & spent, computes nothing & is learning (Prin.~\ref{prin:refresh}) \\
-Diagnosis & extra scrub/decode pass & free byproduct of the tick (Prin.~\ref{prin:selfdiag}) \\
-Energy floor & data movement ($\sim\!20$~pJ/word) & learning ($\sim kT\ln2$, $\sim\!10^{9}\times$ lower) \\
+Interconnect & crossbar / mesh, $\binom{N}{2}$ & seven triple-buses (Fano, $\mathrm{PSL}(2,7)$) \\
+Error correction & bit-level bolted on ($+12.5\%$ or $\sim\!10^3\times$) & sector-level Hamming $[7,4,3]$ ($M$ gen., dual $H$ check; distinct from physical bit-ECC) \\
+Learning & separate training loop & third term of the tick (anchored $\varphi_J$) \\
+Refresh & spent, computes nothing & is adaptation (Prin.~\ref{prin:refresh}) \\
+Diagnosis & extra scrub/decode pass & sector syndrome emitted by tick (Prin.~\ref{prin:selfdiag}) \\
+Energy accounting & off-chip data movement ($\sim\!20$~pJ/word) & L1-resident $784$~B; unitary core exports $0$ bits ($\le\log_2 7$ bits/state; CMOS still switching-limited) \\
 Clock & free parameter (critical path) & derived ($\bar\gamma\tau=\tfrac32\ln3$) \\
-Scaling & more cores / bigger model & ecology of $\le 3$-deep subjects \\
+Scaling & more cores / bigger model & bounded $4$-register tower ($d_{\max}=3$ \status{D}) $+$ horizontal ecology \\
 Node count & any & \textbf{seven}, uniquely (Thm~\ref{thm:unique}) \\
 Complexity class & (classical) & BQP --- \emph{not} a speed-up \\
 \bottomrule

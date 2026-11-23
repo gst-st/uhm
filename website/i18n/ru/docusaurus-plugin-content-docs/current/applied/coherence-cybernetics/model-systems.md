@@ -127,7 +127,7 @@ $P = 1/7 < P_{\text{crit}} = 2/7$. Система **нежизнеспособн
 
 #### Психологическая аналогия
 
-Если бы можно было вообразить «сознание» в этом состоянии (что противоречиво, ибо $P < P_{\text{crit}}$), оно было бы тотально рассеянным: семь модальностей — Действие, Структура, Динамика, Логика, Переживание, Объектность, Единство — присутствуют в равной мере, но *ни одна не связана ни с одной другой*. Нет мысли, потому что мысль — это корреляция. Нет чувства, потому что чувство — это выделение одного из семи над остальными. Это не кома (кома — это *снижение* активности); это максимальная активность без направления, как бесконечный мозговой шум.
+Если бы можно было вообразить «сознание» в этом состоянии (что исключено, ибо $P < P_{\text{crit}}$, `T-5 [О]`), оно было бы тотально рассеянным: семь модальностей — Артикуляция, Структура, Динамика, Логика, Интериорность, Основание, Единство — присутствуют в равной мере, но *ни одна не связана ни с одной другой*. Нет мысли, потому что мысль — это корреляция. Нет чувства, потому что чувство — это выделение одного из семи над остальными. Это не кома (кома — это *снижение* активности); это максимальная активность без направления, как бесконечный мозговой шум.
 
 #### Что мы узнаём из этой модели
 
@@ -137,49 +137,42 @@ $P = 1/7 < P_{\text{crit}} = 2/7$. Система **нежизнеспособн
 
 #### Ограничения
 
-Модель абсолютно статична. Она не отвечает на вопрос: *как* система попадает в это состояние? (Ответ: через Фано-диссипацию без регенерации — именно так устроен Фано-канал.) И не отвечает на вопрос: *может ли* система выбраться обратно? (Ответ: только при $\kappa > 0$, через регенерацию.)
+Модель абсолютно статична. Она не отвечает на вопрос: *как* система попадает в это состояние? (Замечание: чистая Фано-дефазировка оставляет диагональные населённости $\gamma_{kk}$ инвариантными и разрушает только недиагональные когерентности — `T-2 [Т]`, `T-260 [Т]`; достижение максимально смешанного состояния $I/7$ требует дополнительной перемешивающей / деполяризующей диссипации либо связной гамильтоновой связи $H$ вместе с дефазировкой.) И не отвечает на вопрос: *может ли* система выбраться обратно? (Ответ: только при $\kappa > 0$, через регенерацию к нетривиальной цели $\rho_* \neq I/7$.)
 
 ### 1.4 Python-реализация
 
-```verum
-mount core.math.linalg.{StaticMatrix, identity, eigvalsh};
-mount core.math.complex.Complex;
+```python
+import numpy as np
 
-pub type ModelReport is {
-    p:         Float,
-    s_vn:      Float,
-    gap_total: Float,
-    coh_e:     Float,
-    viable:    Bool,
-};
 
-/// Model 1: Maximally mixed state Γ = I/7.
-public pure fn uniform_system() -> ModelReport {
-    let gamma = identity<Complex, 7>() / Complex.from_real(7.0);
+def uniform_system() -> dict:
+    """Модель 1: Максимально смешанное состояние Gamma = I / 7."""
+    gamma = np.eye(7, dtype=complex) / 7.0
 
-    let p = (gamma.matmul(&gamma)).trace().real();                     // 1/7
-    let s_vn = eigvalsh(&gamma).iter()
-        .map(|λ| -λ * (λ + 1.0e-30).ln())
-        .sum();
+    p = float(np.real(np.trace(gamma @ gamma)))  # 1/7
+    eigs = np.linalg.eigvalsh(gamma)
+    s_vn = float(-np.sum(eigs * np.log(np.clip(eigs, 1e-30, None))))
 
-    // Gap operator = Im(Γ) — zero matrix for real diagonal.
-    let gap_total = gamma.imag_part().norm_frobenius();
+    # Gap-оператор = Im(Gamma) — нулевая матрица для вещественной диагонали.
+    gap_norm_sq = float(np.sum(np.imag(gamma) ** 2))
 
-    const E: Int = 4;
-    let coh_e = (gamma[E, E].real().pow(2)
-                + 2.0 * (0..7).filter(|i| *i != E)
-                               .map(|i| gamma[E, *i].abs().pow(2))
-                               .sum()) / p;
+    E = 4
+    off_e = np.abs(gamma[E, np.arange(7) != E]) ** 2
+    coh_e = float((gamma[E, E].real ** 2 + 2.0 * np.sum(off_e)) / p)
 
-    ModelReport { p: p, s_vn: s_vn, gap_total: gap_total, coh_e: coh_e,
-                  viable: p > 2.0 / 7.0 }
-}
+    return {
+        "p": p,
+        "s_vn": s_vn,
+        "gap_norm_sq": gap_norm_sq,
+        "coh_e": coh_e,
+        "viable": bool(p > 2.0 / 7.0),
+    }
 
-fn main() using [IO] {
-    let r = uniform_system();
-    IO.println(f"P = {r.p:.4f}, Coh_E = {r.coh_e:.4f}, viable = {r.viable}");
-    // P = 0.1429, Coh_E = 0.1429, viable = false
-}
+
+if __name__ == "__main__":
+    r = uniform_system()
+    print(f"P = {r['p']:.4f}, S_vN = {r['s_vn']:.4f}, Coh_E = {r['coh_e']:.4f}, viable = {r['viable']}")
+    # Ожидаемый вывод: P = 0.1429, S_vN = 1.9459, Coh_E = 0.1429, viable = False
 ```
 
 ---
@@ -234,7 +227,7 @@ $P = 1$: система максимально чиста и жизнеспос�
 
 #### Психологическая аналогия
 
-Чистое однородное состояние — это идеализация *тотального самопознания*. Каждая когнитивная модальность полностью прозрачна для каждой другой. Structure видит Experience, Logic видит Action, Unity видит Objectness — без искажений, без фазовых сдвигов, без Gap.
+Чистое однородное состояние — это идеализация *тотального самопознания*. Каждая когнитивная модальность полностью прозрачна для каждой другой. Структура видит Интериорность, Логика видит Артикуляцию, Единство видит Основание — без искажений, без фазовых сдвигов, без Gap.
 
 Звучит прекрасно? Не торопитесь. Обратим внимание: **Gap тождественно нулён**. А Gap — это мера *внутреннего напряжения*, источник динамики, причина того, что система ищет, движется, растёт. Если Gap = 0, системе *некуда стремиться*. Она совершенна — и мертва в другом смысле: не в смысле хаоса (как $I/7$), а в смысле отсутствия *направления*.
 
@@ -262,31 +255,33 @@ $$
 
 ### 2.5 Python-реализация
 
-```verum
-/// Model 2: Pure state with uniform superposition |ψ⟩ = (1/√7) Σ|k⟩.
-public fn pure_uniform() using [IO]
-    -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
-{
-    let psi = StaticVector<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
-    let gamma = psi.outer(psi.conjugate());
+```python
+import numpy as np
 
-    let p = (gamma.matmul(&gamma)).trace().real();                                       // 1.0
-    let theta = gamma.map(|c| c.arg());                                             // zero
-    let gap_matrix = theta.map(|φ| φ.sin().abs());                                  // zero
 
-    const E: Int = 4;
-    let coh_e = (gamma[E, E].real().pow(2)
-                + 2.0 * (0..7).filter(|i| *i != E)
-                               .map(|i| gamma[E, *i].abs().pow(2))
-                               .sum()) / p;
+def pure_uniform() -> tuple[np.ndarray, np.ndarray]:
+    """Модель 2: Чистая однородная суперпозиция |psi> = (1/sqrt(7)) sum_k |k>."""
+    psi = np.ones(7, dtype=complex) / np.sqrt(7.0)
+    gamma = np.outer(psi, psi.conj())
 
-    IO.println(f"P = {p:.4f}");
-    IO.println(f"Coh_E = {coh_e:.4f}");
-    IO.println(f"Gap (max) = {gap_matrix.max_element():.6f}");
-    IO.println(f"All θ_ij = 0: {gap_matrix.frobenius_norm() < 1.0e-12}");
-    (gamma, gap_matrix)
-}
-// Expected: P = 1.0000, Coh_E = 0.2653, Gap (max) = 0.000000
+    p = float(np.real(np.trace(gamma @ gamma)))  # 1.0
+    theta = np.angle(gamma)                      # нули
+    gap_matrix = np.abs(np.sin(theta))           # нули
+
+    E = 4
+    off_e = np.abs(gamma[E, np.arange(7) != E]) ** 2
+    coh_e = float((gamma[E, E].real ** 2 + 2.0 * np.sum(off_e)) / p)
+
+    print(f"P = {p:.4f}")
+    print(f"Coh_E = {coh_e:.4f}")
+    print(f"Gap (max) = {gap_matrix.max():.6f}")
+    print(f"All theta_ij = 0: {np.linalg.norm(gap_matrix) < 1e-12}")
+    return gamma, gap_matrix
+
+
+if __name__ == "__main__":
+    pure_uniform()
+    # Ожидаемый вывод: P = 1.0000, Coh_E = 0.2653, Gap (max) = 0.000000
 ```
 
 ---
@@ -316,8 +311,8 @@ $$
 | 3 | D | 2 | 2 | $4\pi/7$ |
 | 4 | L | 3 | 3 | $6\pi/7$ |
 | 5 | E | 5 | 5 | $10\pi/7$ |
-| 6 | O | 8 | 1 | $2\pi/7$ |
-| 7 | U | 13 | 6 | $12\pi/7$ |
+| 6 | U | 8 | 1 | $2\pi/7$ |
+| 7 | O | 13 | 6 | $12\pi/7$ |
 
 #### Почему Фибоначчи?
 
@@ -341,15 +336,15 @@ $$
 
 Явная таблица $\Delta_{kl}$:
 
-| | A(1) | S(1) | D(2) | L(3) | E(5) | O(1) | U(6) |
+| | A(1) | S(1) | D(2) | L(3) | E(5) | U(1) | O(6) |
 |---|---|---|---|---|---|---|---|
 | **A(1)** | 0 | 0 | 6 | 5 | 3 | 0 | 2 |
 | **S(1)** | 0 | 0 | 6 | 5 | 3 | 0 | 2 |
 | **D(2)** | 1 | 1 | 0 | 6 | 4 | 1 | 3 |
 | **L(3)** | 2 | 2 | 1 | 0 | 5 | 2 | 4 |
 | **E(5)** | 4 | 4 | 3 | 2 | 0 | 4 | 6 |
-| **O(1)** | 0 | 0 | 6 | 5 | 3 | 0 | 2 |
-| **U(6)** | 5 | 5 | 4 | 3 | 1 | 5 | 0 |
+| **U(1)** | 0 | 0 | 6 | 5 | 3 | 0 | 2 |
+| **O(6)** | 5 | 5 | 4 | 3 | 1 | 5 | 0 |
 
 ### 3.3 Gap-профиль [Т]
 
@@ -367,15 +362,15 @@ $\mathrm{Gap}(k,l) = |\sin(2\pi\Delta_{kl}/7)|$. Используя значен
 
 Полная Gap-матрица $\mathrm{Gap}(k,l)$:
 
-| | A | S | D | L | E | O | U |
+| | A | S | D | L | E | U | O |
 |---|---|---|---|---|---|---|---|
 | **A** | 0 | 0 | 0.782 | 0.975 | 0.434 | 0 | 0.975 |
 | **S** | 0 | 0 | 0.782 | 0.975 | 0.434 | 0 | 0.975 |
 | **D** | 0.782 | 0.782 | 0 | 0.782 | 0.434 | 0.782 | 0.434 |
 | **L** | 0.975 | 0.975 | 0.782 | 0 | 0.975 | 0.975 | 0.434 |
 | **E** | 0.434 | 0.434 | 0.434 | 0.975 | 0 | 0.434 | 0.782 |
-| **O** | 0 | 0 | 0.782 | 0.975 | 0.434 | 0 | 0.975 |
-| **U** | 0.975 | 0.975 | 0.434 | 0.434 | 0.782 | 0.975 | 0 |
+| **U** | 0 | 0 | 0.782 | 0.975 | 0.434 | 0 | 0.975 |
+| **O** | 0.975 | 0.975 | 0.434 | 0.434 | 0.782 | 0.975 | 0 |
 
 #### Что видно в Gap-матрице
 
@@ -383,7 +378,7 @@ $\mathrm{Gap}(k,l) = |\sin(2\pi\Delta_{kl}/7)|$. Используя значен
 
 - **Кластер {A, S, U}** — три измерения с нулевым взаимным Gap. Они синфазны и полностью прозрачны друг для друга. Это *ядро когерентности* модели.
 - **L и O** — два измерения с максимальными Gap-значениями (~0.975) относительно кластера {A, S, U}. Они *наиболее скрыты* от ядра.
-- **E (Переживание)** — имеет самые мягкие Gap-значения (~0.434) относительно большинства измерений. Переживание «полупрозрачно» — оно частично видимо, частично скрыто.
+- **E (Интериорность)** — имеет самые мягкие Gap-значения (~0.434) относительно большинства измерений. Интериорность «полупрозрачна» — она частично видима, частично скрыта.
 - **D (Динамика)** — равномерно распределённый Gap (~0.434–0.782), «посредник» между кластером и периферией.
 
 Это не просто числа — это *архитектура внутреннего мира*.
@@ -415,12 +410,12 @@ $\mathrm{Gap}(k,l) = |\sin(2\pi\Delta_{kl}/7)|$. Используя значен
 | Величина | Значение |
 |----------|----------|
 | $P$ | $1$ (чистое состояние) |
-| $\|\hat{\mathcal{G}}\|_F^2$ | $\frac{1}{49}\sum_{k<l} \sin^2(2\pi\Delta_{kl}/7) \approx 0.1049$ |
+| $\|\hat{\mathcal{G}}\|_F^2$ | $\frac{2}{49}\sum_{k<l} \sin^2(2\pi\Delta_{kl}/7) \approx 0.4424$ ($\|\hat{\mathcal{G}}\|_F \approx 0.6651$) |
 | $\mathrm{Coh}_E$ | $13/49 \approx 0.265$ (инвариант чистого состояния с $\lvert\gamma_{kl}\rvert=1/7$) |
 | $\kappa$ | $\kappa_{\text{bootstrap}} + \kappa_0 \cdot 13/49$ |
 | Средний Gap | $\frac{1}{21}\sum_{k<l}\mathrm{Gap}(k,l) = \frac{7\sin\frac{4\pi}{7} + 6\sin\frac{\pi}{7} + 5\sin\frac{2\pi}{7}}{21} \approx 0.6351$ |
 
-> **Численная проверка.** Перебор значений разности фаз с их кратностями даёт среднее $0.6351$ в таблице. Чистота и доля E — отдельные проверки того же приготовления.
+> **Численная проверка.** Перебор значений разности фаз с их кратностями даёт среднее $0.6351$ и $\|\hat{\mathcal{G}}\|_F^2 = \sum_{k,l}(\mathrm{Im}\,\gamma_{kl})^2 \approx 0.4424$ в таблице. Чистота и доля E — отдельные проверки того же приготовления.
 
 
 #### Что мы узнаём из этой модели
@@ -431,69 +426,63 @@ $\mathrm{Gap}(k,l) = |\sin(2\pi\Delta_{kl}/7)|$. Используя значен
 
 #### Ограничения
 
-Модель не учитывает динамику: кластер {A, S, U} и высокие Gap-значения у L, U — это *начальное условие*, а не устойчивая конфигурация. Под действием Фано-диссипации фазовая текстура будет эволюционировать, и вопрос о том, какие кластеры устойчивы, остаётся открытым.
+Модель не учитывает динамику: кластер {A, S, U} и высокие Gap-значения у L, O — это *начальное условие*, а не устойчивая конфигурация. Под действием Фано-диссипации фазовая текстура будет эволюционировать, и вопрос о том, какие кластеры устойчивы, остаётся открытым.
 
 ### 3.6 Python-реализация
 
-```verum
-mount core.math.constants.PI;
+```python
+import numpy as np
 
-/// Model 3: Pure state with Fibonacci phases mod 7.
-public fn fibonacci_phases() using [IO]
-    -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
-{
-    // F₁…F₇ mod 7.
-    const FIB_MOD7: [Int; 7] = [1, 1, 2, 3, 5, 1, 6];
 
-    let psi = StaticVector<Complex, 7>.from_array(
-        FIB_MOD7.map(|f| (Complex.i() * Complex.from_real(2.0 * PI * (f as Float) / 7.0)).exp())
-    ) / Complex.from_real(7.0.sqrt());
+def fibonacci_phases() -> tuple[np.ndarray, np.ndarray]:
+    """Модель 3: Чистое состояние с фазами Фибоначчи по модулю 7."""
+    # F_1 ... F_7 mod 7 (октонионная разметка: U = e_6 [индекс 5], O = e_7 [индекс 6])
+    fib_mod7 = np.array([1, 1, 2, 3, 5, 1, 6])
+    dims = ["A", "S", "D", "L", "E", "U", "O"]
 
-    let gamma = psi.outer(psi.conjugate());
-    let p = (gamma.matmul(&gamma)).trace().real();
-    let theta = gamma.map(|c| c.arg());
-    let gap_matrix = theta.map(|φ| φ.sin().abs());
+    psi = np.exp(1j * 2.0 * np.pi * fib_mod7 / 7.0) / np.sqrt(7.0)
+    gamma = np.outer(psi, psi.conj())
 
-    // Octonionic labelling: U = e₆ (idx 5), O = e₇ (idx 6).
-    const DIMS: [Text; 7] = ["A", "S", "D", "L", "E", "U", "O"];
+    p = float(np.real(np.trace(gamma @ gamma)))
+    gap_matrix = np.abs(np.sin(np.angle(gamma)))
 
-    IO.println("Gap matrix:");
-    IO.println(f"    {DIMS.map(|d| f"{d:>5}").join("  ")}");
-    for i in 0..7 {
-        let row = (0..7).map(|j| f"{gap_matrix[i, j]:5.3f}").join("  ");
-        IO.println(f"{DIMS[i]:>2}  {row}");
-    }
+    print("Gap matrix:")
+    print("    " + "  ".join(f"{d:>5}" for d in dims))
+    for i, d in enumerate(dims):
+        row = "  ".join(f"{gap_matrix[i, j]:5.3f}" for j in range(7))
+        print(f"{d:>2}  {row}")
 
-    // Gap operator: ‖Im Γ‖_F².
-    let g_total = gamma.imag_part().norm_frobenius();
-    IO.println(f"\nP = {p:.4f}");
-    IO.println(f"||G_hat||_F^2 = {g_total:.4f}");
+    # Квадрат нормы Фробениуса Gap-оператора: ||Im(Gamma)||_F^2
+    g_norm_sq = float(np.sum(np.imag(gamma) ** 2))
+    print(f"\nP = {p:.4f}")
+    print(f"||G_hat||_F^2 = {g_norm_sq:.4f}")
 
-    const E: Int = 4;
-    let coh_e = (gamma[E, E].real().pow(2)
-                + 2.0 * (0..7).filter(|i| *i != E)
-                               .map(|i| gamma[E, *i].abs().pow(2))
-                               .sum()) / p;
-    IO.println(f"Coh_E = {coh_e:.4f}");
+    E = 4
+    off_e = np.abs(gamma[E, np.arange(7) != E]) ** 2
+    coh_e = float((gamma[E, E].real ** 2 + 2.0 * np.sum(off_e)) / p)
+    print(f"Coh_E = {coh_e:.4f}")
 
-    // Mean Gap over 21 independent off-diagonal pairs.
-    let mut sum_gap = 0.0;
-    let mut count  = 0;
-    for i in 0..7 { for j in (i + 1)..7 { sum_gap += gap_matrix[i, j]; count += 1; } }
-    IO.println(f"Mean Gap = {sum_gap / (count as Float):.4f}");
+    # Средний Gap по 21 независимой внедиагональной паре
+    iu = np.triu_indices(7, k=1)
+    mean_gap = float(np.mean(gap_matrix[iu]))
+    print(f"Mean Gap = {mean_gap:.4f}")
 
-    // Fano-line analysis.
-    const FANO_LINES: [(Int, Int, Int); 7] = [
-        (0, 1, 3), (1, 2, 4), (2, 3, 5), (3, 4, 6), (4, 5, 0), (5, 6, 1), (6, 0, 2),
-    ];
-    IO.println("\nGap by Fano lines:");
-    for (i, j, k) in FANO_LINES {
-        let mean = (gap_matrix[i, j] + gap_matrix[i, k] + gap_matrix[j, k]) / 3.0;
-        IO.println(f"  {{{DIMS[i]},{DIMS[j]},{DIMS[k]}}}: mean Gap = {mean:.3f}");
-    }
+    # Канонический анализ по линиям Фано
+    fano_lines = [
+        (0, 1, 3), (1, 2, 4), (2, 3, 5), (3, 4, 6),
+        (4, 5, 0), (5, 6, 1), (6, 0, 2),
+    ]
+    print("\nGap by Fano lines:")
+    for i, j, k in fano_lines:
+        mean_line = (gap_matrix[i, j] + gap_matrix[i, k] + gap_matrix[j, k]) / 3.0
+        print(f"  {{{dims[i]},{dims[j]},{dims[k]}}}: mean Gap = {mean_line:.3f}")
 
-    (gamma, gap_matrix)
-}
+    return gamma, gap_matrix
+
+
+if __name__ == "__main__":
+    fibonacci_phases()
+    # Ожидаемый вывод: P = 1.0000, ||G_hat||_F^2 = 0.4424, Coh_E = 0.2653, Mean Gap = 0.6351
 ```
 
 ---
@@ -506,7 +495,7 @@ public fn fibonacci_phases() using [IO]
 
 ### 4.1 Определение [О]
 
-**Алекситимия** (от греч. a- «без», lexis «слово», thymos «чувство») — неспособность распознавать и вербализовать собственные эмоции. В терминах Gap-динамики: максимальная непрозрачность между измерениями Structure (S) и Experience (E).
+**Алекситимия** (от греч. a- «без», lexis «слово», thymos «чувство») — неспособность распознавать и вербализовать собственные эмоции. В терминах Gap-динамики: максимальная непрозрачность между измерениями Структуры (S) и Интериорности (E).
 
 :::tip Модельное определение [О]
 Алекситимическое состояние — матрица когерентности $\Gamma_{\text{alex}}$, в которой:
@@ -540,8 +529,8 @@ $$
 
 где $c > 0$ — параметр когерентности. Для эрмитовости: $\gamma_{SE} = ci$, $\gamma_{ES} = \overline{\gamma_{SE}} = -ci$.
 
-:::warning Проверка положительности
-Матрица $\Gamma_{\text{alex}}$ должна быть положительно полуопределённой. Это налагает ограничения на $c$. Для $c = 0.08$ (при $\gamma_{ii} = 1/7 \approx 0.143$) матрица допустима.
+:::warning Проверка положительности [Т]
+Матрица $\Gamma_{\text{alex}}$ должна быть положительно полуопределённой ($\Gamma_{\text{alex}} \succeq 0$). Поскольку поворот $\gamma_{SE}$ от $+c$ к $+ic$ разрушает однородную внедиагональную структуру ранга 1, допустимый диапазон строго уже, чем $c < 1/7$: численно положительная полуопределённость выполняется при $0 \le c \le c_{\max} \approx 0.0677$ (например, при $c = 0.08$ минимальное собственное значение $\lambda_{\min} \approx -0.0260 < 0$, и матрица **недопустима**!). Выбор $c = 0.06$ даёт строго положительно определённое жизнеспособное состояние ($\lambda_{\min} \approx +0.0162 > 0$, $P = 1/7 + 42c^2 \approx 0.2941 > 2/7$, $\mathrm{Coh}_E \approx 0.2163$).
 :::
 
 ### 4.3 Влияние на E-когерентность [Т]
@@ -568,23 +557,23 @@ E-когерентность $\mathrm{Coh}_E$ зависит от $|\gamma_{Ei}|
 
 Это контринтуитивный и важный результат: *патология не видна в энергетических показателях*. $\mathrm{Coh}_E$ — это «метаболизм», и он нормальный. Но *функциональная связность* — Gap — кричит о проблеме. Аналогия из медицины: пациент с повреждённым мозолистым телом может иметь нормальную ЭЭГ-мощность в обоих полушариях, но нулевую межполушарную когерентность.
 
-### 4.4 Каскадный эффект на жизнеспособность [С]
+### 4.4 Каскадный эффект на жизнеспособность [Г]
 
-Хотя $\mathrm{Coh}_E$ не изменяется при одной фазовой ротации, **динамическое** последствие алекситимии приводит к каскадной деградации. Механизм:
+Хотя $\mathrm{Coh}_E$ не изменяется при одной фазовой ротации, **гипотетическое динамическое** последствие длительной алекситимии — каскадная деградация (`[Г]` — качественная гипотеза, пока не решённая аналитически для полной нелинейной динамики КК). Схематический механизм:
 
-1. $\mathrm{Gap}(S,E) = 1$ $\Rightarrow$ S-измерение «не видит» E-измерение
-2. Оператор самомоделирования $\varphi$ теряет доступ к E-данным через S-канал
-3. Рефлексия $R = 1/(7P)$ падает (при росте $P$)
+1. $\mathrm{Gap}(S,E) = 1$ $\Rightarrow$ S-измерение не может декодировать фазу E-измерения
+2. Оператор самомоделирования $\varphi$ теряет операциональную точность в E-секторе через S-канал
+3. Точность самомодели падает (подчеркнём: речь идёт об операциональной точности самомодели $F(\Gamma, \varphi(\Gamma))$, а *не* об алгебраическом отношении $R(\Gamma) = 1/(7P)$ линейного семейства якоря, которое при снижении $P$ растёт, а не падает)
 4. Неоптимальность $\varphi$ $\Rightarrow$ диссипация превышает регенерацию
-5. $P$ дрейфует к $P_{\text{crit}} = 2/7$
+5. $P$ дрейфует к $P_{\text{crit}} = 2/7$ (`T-5 [О]`)
 
-Количественная оценка каскадного эффекта:
+Схематическая скалярная оценка баланса чистоты (`[Г]`):
 
 $$
 \frac{dP}{d\tau}\bigg|_{\text{alex}} = \underbrace{-2\gamma_d \cdot P}_{\text{диссипация}} + \underbrace{2\kappa(\Gamma)(f - P)}_{\text{регенерация}}
 $$
 
-где $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$. При длительной алекситимии $\mathrm{Coh}_E$ начинает падать (через деградацию $|\gamma_{Ei}|$), $\kappa$ уменьшается, и $P \to P_{\text{crit}}$.
+где $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$. При длительной алекситимии, если $|\gamma_{Ei}|$ деградирует, $\mathrm{Coh}_E$ падает, $\kappa$ уменьшается, и $P \to P_{\text{crit}}$.
 
 #### Клинические параллели
 
@@ -620,66 +609,67 @@ $$
 
 ### 4.7 Python-реализация
 
-```verum
-mount core.math.linalg.matrix_rank;
+```python
+import numpy as np
 
-/// Model 4: Alexithymia — pure phase defect on the (S, E) channel, Gap = 1.
-public fn alexithymia_model(c: Float { 0.0 < self && self < 1.0 / 7.0 }) using [IO]
-    -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
-{
-    // Base matrix: uniform diagonal + real coherences.
-    let mut gamma = StaticMatrix<Complex, 7, 7>.filled(Complex.from_real(c));
-    for i in 0..7 { gamma[i, i] = Complex.from_real(1.0 / 7.0); }
 
-    // Alexithymic defect: S = 1, E = 4 → purely imaginary coherence.
-    const S_IDX: Int = 1;
-    const E_IDX: Int = 4;
-    gamma[S_IDX, E_IDX] = Complex.i() * Complex.from_real(c);   // γ_SE = ic
-    gamma[E_IDX, S_IDX] = -Complex.i() * Complex.from_real(c);  // γ_ES = −ic (Hermiticity)
+def alexithymia_model(c: float = 0.06) -> tuple[np.ndarray, np.ndarray]:
+    """Модель 4: Алекситимия — чисто фазовый дефект на канале (S, E), Gap(S, E) = 1.
 
-    // Hermiticity and positivity — runtime checks (invariants enforced by CoherenceMatrix refinement at use-site).
-    assert!((&gamma - gamma.adjoint()).frobenius_norm() < 1.0e-10, "not Hermitian");
-    let eigs = eigvalsh(&gamma);
-    assert!(eigs.iter().all(|λ| *λ >= -1.0e-12), "not positive");
+    Положительная полуопределённость требует 0 < c <= c_max ≈ 0.0677.
+    """
+    if not (0.0 < c <= 0.0676):
+        raise ValueError(f"c={c} вне безопасного диапазона положительной полуопределённости (0, 0.0676]")
 
-    let p = (gamma.matmul(&gamma)).trace().real();
-    let gap_se = gamma[S_IDX, E_IDX].arg().sin().abs();
-    let g_hat = gamma.imag_part();
-    let r_g = matrix_rank(&g_hat, 1.0e-10);
-    let g_total = g_hat.norm_frobenius();
+    # Базовая матрица: равномерная диагональ + вещественные внедиагональные когерентности
+    gamma = np.full((7, 7), c, dtype=complex)
+    np.fill_diagonal(gamma, 1.0 / 7.0)
 
-    let coh_e = (gamma[E_IDX, E_IDX].real().pow(2)
-                + 2.0 * (0..7).filter(|i| *i != E_IDX)
-                               .map(|i| gamma[E_IDX, *i].abs().pow(2))
-                               .sum()) / p;
+    # Алекситимический дефект: S = 1, E = 4 -> чисто мнимая когерентность
+    S_IDX, E_IDX = 1, 4
+    gamma[S_IDX, E_IDX] = 1j * c   # gamma_SE = +ic
+    gamma[E_IDX, S_IDX] = -1j * c  # gamma_ES = -ic (эрмитовость)
 
-    // κ = κ_bootstrap + κ₀·Coh_E, with ω₀ = 1, κ₀ = ω₀.
-    const OMEGA_0: Float = 1.0;
-    const KAPPA_0: Float = OMEGA_0;
-    const KAPPA_BOOTSTRAP: Float = OMEGA_0 / 7.0;
-    let kappa = KAPPA_BOOTSTRAP + KAPPA_0 * coh_e;
+    # Проверки эрмитовости и положительной полуопределённости
+    assert np.allclose(gamma, gamma.conj().T, atol=1e-12), "не эрмитова"
+    eigs = np.linalg.eigvalsh(gamma)
+    assert np.all(eigs >= -1e-12), f"не положительно полуопределена: min eig = {eigs.min():.6f}"
 
-    const P_CRIT: Float = 2.0 / 7.0;
-    IO.println(f"P = {p:.4f}, P_crit = {P_CRIT:.4f}, margin = {p - P_CRIT:.4f}");
-    IO.println(f"Gap(S,E) = {gap_se:.4f}");
-    IO.println(f"Gap operator rank r_G = {r_g}");
-    IO.println(f"||G_hat||_F^2 = {g_total:.6f}");
-    IO.println(f"Coh_E = {coh_e:.4f}");
-    IO.println(f"kappa = {kappa:.4f}");
+    p = float(np.real(np.trace(gamma @ gamma)))
+    gap_se = float(np.abs(np.sin(np.angle(gamma[S_IDX, E_IDX]))))
+    g_hat = np.imag(gamma)
+    r_g = int(np.linalg.matrix_rank(g_hat, tol=1e-10))
+    g_norm_sq = float(np.sum(g_hat ** 2))
 
-    // Compare against a normal reference (alexithymic defect removed).
-    let mut gamma_normal = StaticMatrix<Complex, 7, 7>.filled(Complex.from_real(c));
-    for i in 0..7 { gamma_normal[i, i] = Complex.from_real(1.0 / 7.0); }
-    let g_total_normal = gamma_normal.imag_part().norm_frobenius();
-    IO.println(f"\nComparison: ||G_hat||_F^2 normal = {g_total_normal:.6f}, \
-                 alexithymic = {g_total:.6f}");
+    off_e = np.abs(gamma[E_IDX, np.arange(7) != E_IDX]) ** 2
+    coh_e = float((gamma[E_IDX, E_IDX].real ** 2 + 2.0 * np.sum(off_e)) / p)
 
-    (gamma, g_hat)
-}
+    # kappa = kappa_bootstrap + kappa_0 * Coh_E, при omega_0 = 1, kappa_0 = omega_0
+    omega_0 = 1.0
+    kappa = omega_0 / 7.0 + omega_0 * coh_e
 
-fn main() using [IO] {
-    let _ = alexithymia_model(0.08);
-}
+    p_crit = 2.0 / 7.0
+    print(f"min_eig = {eigs.min():.6f} (> 0, строго PSD)")
+    print(f"P = {p:.4f}, P_crit = {p_crit:.4f}, margin = {p - p_crit:.4f}")
+    print(f"Gap(S,E) = {gap_se:.4f}")
+    print(f"Gap operator rank r_G = {r_g}")
+    print(f"||G_hat||_F^2 = {g_norm_sq:.6f}")
+    print(f"Coh_E = {coh_e:.4f}")
+    print(f"kappa = {kappa:.4f}")
+
+    # Сравнение с нормальным эталоном (без алекситимического дефекта)
+    gamma_normal = np.full((7, 7), c, dtype=complex)
+    np.fill_diagonal(gamma_normal, 1.0 / 7.0)
+    g_norm_sq_normal = float(np.sum(np.imag(gamma_normal) ** 2))
+    print(f"\nComparison: ||G_hat||_F^2 normal = {g_norm_sq_normal:.6f}, alexithymic = {g_norm_sq:.6f}")
+
+    return gamma, g_hat
+
+
+if __name__ == "__main__":
+    alexithymia_model(0.06)
+    # Ожидаемый вывод: min_eig = 0.016233, P = 0.2941, margin = 0.0083,
+    #                  Gap(S,E) = 1.0000, r_G = 2, ||G_hat||_F^2 = 0.007200, Coh_E = 0.2163
 ```
 
 ---
@@ -707,13 +697,13 @@ $$
 Фазы когерентностей:
 
 $$
-\theta_{kl}(\tau) = \theta_{kl}(0) + (\omega_k - \omega_l)\tau
+\theta_{kl}(\tau) = \theta_{kl}(0) - (\omega_k - \omega_l)\tau
 $$
 
 Gap эволюционирует как:
 
 $$
-\mathrm{Gap}(k,l;\tau) = |\sin(\theta_{kl}(0) + \Omega_{kl}\tau)|, \quad \Omega_{kl} := \omega_k - \omega_l
+\mathrm{Gap}(k,l;\tau) = |\sin(\theta_{kl}(0) - \Omega_{kl}\tau)|, \quad \Omega_{kl} := \omega_k - \omega_l
 $$
 
 #### Физическая аналогия
@@ -734,7 +724,7 @@ $$
 где $\mathrm{lcm}$ — наименьшее общее кратное (определено для рациональных кратных базовой частоты).
 :::
 
-**Доказательство.** Пусть $\Omega_{kl} = n_{kl} \cdot \omega_0$ для $n_{kl} \in \mathbb{Z}$, $\omega_0$ — базовая частота. Тогда $\mathrm{Gap}(k,l;\tau + 2\pi/\omega_0) = |\sin(\theta_{kl}(0) + n_{kl}\omega_0(\tau + 2\pi/\omega_0))| = |\sin(\theta_{kl}(0) + n_{kl}\omega_0\tau + 2\pi n_{kl})| = \mathrm{Gap}(k,l;\tau)$. Период: $T = 2\pi/\omega_0$. $\square$
+**Доказательство.** Пусть $\Omega_{kl} = n_{kl} \cdot \omega_0$ для $n_{kl} \in \mathbb{Z}$, $\omega_0$ — базовая частота. Тогда $\mathrm{Gap}(k,l;\tau + 2\pi/\omega_0) = |\sin(\theta_{kl}(0) - n_{kl}\omega_0(\tau + 2\pi/\omega_0))| = |\sin(\theta_{kl}(0) - n_{kl}\omega_0\tau - 2\pi n_{kl})| = \mathrm{Gap}(k,l;\tau)$. Период: $T = 2\pi/\omega_0$. $\square$
 
 **Пример.** $H = \mathrm{diag}(0, 1, 2, 3, 4, 5, 6) \cdot \omega_0$. Все $\Omega_{kl} = (k-l)\omega_0 \in \mathbb{Z}\omega_0$. Период $T = 2\pi/\omega_0$.
 
@@ -748,12 +738,12 @@ $$
 Если среди разностей частот $\{\Omega_{kl}\}$ существуют рационально **несоизмеримые** пары, то Gap-орбита $\tau \mapsto \{\theta_{kl}(\tau) \bmod 2\pi\}$ **квазипериодична** и плотно заполняет $d$-мерный тор $\mathbb{T}^d$, где $d$ — число линейно независимых (над $\mathbb{Q}$) разностей частот.
 :::
 
-**Доказательство.** Вектор фаз $\boldsymbol{\theta}(\tau) = \boldsymbol{\theta}(0) + \boldsymbol{\Omega}\tau$ на торе $\mathbb{T}^{21}$ (21 независимая пара). По теореме Вейля о равномерном распределении, если $\Omega_1, \ldots, \Omega_d$ линейно независимы над $\mathbb{Q}$, орбита плотна в $\mathbb{T}^d$ и равномерно распределена. $\square$
+**Доказательство.** Вектор фаз $\boldsymbol{\theta}(\tau) = \boldsymbol{\theta}(0) - \boldsymbol{\Omega}\tau$ на торе $\mathbb{T}^{21}$ (21 независимая пара). По теореме Вейля о равномерном распределении, если $\Omega_1, \ldots, \Omega_d$ линейно независимы над $\mathbb{Q}$, орбита плотна в $\mathbb{T}^d$ и равномерно распределена. $\square$
 
 **Следствие.** Средний по времени Gap:
 
 $$
-\overline{\mathrm{Gap}(k,l)} = \lim_{T \to \infty} \frac{1}{T}\int_0^T |\sin(\theta_{kl}(0) + \Omega_{kl}\tau)|\,d\tau = \frac{2}{\pi} \approx 0.637
+\overline{\mathrm{Gap}(k,l)} = \lim_{T \to \infty} \frac{1}{T}\int_0^T |\sin(\theta_{kl}(0) - \Omega_{kl}\tau)|\,d\tau = \frac{2}{\pi} \approx 0.637
 $$
 
 для всех пар $(k,l)$ с $\Omega_{kl} \neq 0$ (иррациональные или рациональные — результат одинаков для любого $\Omega_{kl} \neq 0$).
@@ -780,7 +770,7 @@ $$
 
 ### 5.5 Конкретный пример: золотое сечение [О]
 
-Выберем $H = \mathrm{diag}(0, 1, \phi, \phi^2, 2\phi, \phi+1, 2)$ где $\phi = (1+\sqrt{5})/2$ — золотое сечение. Среди разностей $\omega_k - \omega_l$ есть как рациональные ($\omega_6 - \omega_1 = 2$), так и иррациональные ($\omega_2 - \omega_1 = \phi$). Тор имеет $d = 2$ независимых частоты ($1$ и $\phi$), орбита плотно заполняет $\mathbb{T}^2$.
+Выберем $H = \mathrm{diag}(0, 1, \phi, \phi^2, 2\phi, \phi+2, 2)$ где $\phi = (1+\sqrt{5})/2$ — золотое сечение (поскольку $\phi^2 = \phi + 1$, замена $\phi+1$ на $\phi+2$ сохраняет все 7 собственных значений строго различными с $\min_{k\neq l}|\omega_k - \omega_l| = 2 - \phi \approx 0.382$). Среди разностей $\omega_k - \omega_l$ есть как рациональные ($\omega_7 - \omega_1 = 2$), так и иррациональные ($\omega_3 - \omega_1 = \phi$). Тор имеет $d = 2$ независимых частоты ($1$ и $\phi$), орбита плотно заполняет $\mathbb{T}^2$.
 
 #### Почему именно золотое сечение?
 
@@ -799,93 +789,66 @@ $\phi$ — «наиболее иррациональное» число: его 
 
 ### 5.8 Python-реализация
 
-```verum
-pub type RegimeKind is Rational | Irrational;
+```python
+import numpy as np
 
-/// Model 5: Evolution with rational/irrational frequencies.
-public fn dynamic_system(regime: RegimeKind, tau_max: Float, dt: Float) using [IO]
-    -> (List<Float>, List<(Float, Float)>, List<Float>)
-    where requires tau_max > 0.0 && dt > 0.0 && dt < tau_max
-{
-    let phi_golden = (1.0 + 5.0.sqrt()) / 2.0;
 
-    let (omega, label): (StaticVector<Float, 7>, Text) = match regime {
-        RegimeKind.Rational =>
-            (StaticVector.from_array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0]), "rational".text()),
-        RegimeKind.Irrational =>
-            (StaticVector.from_array([
-                0.0, 1.0, phi_golden, phi_golden.pow(2),
-                2.0 * phi_golden, phi_golden + 1.0, 2.0,
-            ]), "irrational".text()),
-    };
+def dynamic_system(
+    rational: bool = True,
+    tau_max: float = 200.0,
+    dt: float = 0.05,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """Модель 5: Чисто унитарная эволюция с рациональными или иррациональными частотами."""
+    phi = (1.0 + np.sqrt(5.0)) / 2.0
+    if rational:
+        omega = np.array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0])
+        label = "rational"
+    else:
+        # Все 7 собственных значений различны (phi^2 = phi + 1 != phi + 2)
+        omega = np.array([0.0, 1.0, phi, phi**2, 2.0 * phi, phi + 2.0, 2.0])
+        label = "irrational"
 
-    // Initial state: pure with Fibonacci phases (Model 3).
-    const FIB_MOD7: [Int; 7] = [1, 1, 2, 3, 5, 1, 6];
-    let psi_0 = StaticVector<Complex, 7>.from_array(
-        FIB_MOD7.map(|f| (Complex.i() * Complex.from_real(2.0 * PI * (f as Float) / 7.0)).exp())
-    ) / Complex.from_real(7.0.sqrt());
-    let gamma_0 = psi_0.outer(psi_0.conjugate());
+    # Начальное состояние: чистое с фазами Фибоначчи (Модель 3)
+    fib_mod7 = np.array([1, 1, 2, 3, 5, 1, 6])
+    psi_0 = np.exp(1j * 2.0 * np.pi * fib_mod7 / 7.0) / np.sqrt(7.0)
+    gamma_0 = np.outer(psi_0, psi_0.conj())
 
-    let n_steps = (tau_max / dt) as Int;
-    let mut gap_history = List.new();
-    let mut p_history   = List.new();
-    let mut tau_vals    = List.new();
+    tau_vals = np.arange(0.0, tau_max, dt)
+    gap_history = np.empty((len(tau_vals), 2), dtype=float)
+    p_history = np.empty(len(tau_vals), dtype=float)
 
-    for step in 0..n_steps {
-        let tau = (step as Float) * dt;
-        let u_diag = omega.map(|w| (Complex.i().neg() * Complex.from_real(w * tau)).exp());
-        let u = StaticMatrix<Complex, 7, 7>.diagonal(u_diag);
-        let gamma_t = u.matmul(&gamma_0).matmul(&u.adjoint());
+    for idx, tau in enumerate(tau_vals):
+        u = np.exp(-1j * omega * tau)
+        gamma_t = (u[:, None] * gamma_0) * u.conj()[None, :]
 
-        let p = (gamma_t.matmul(&gamma_t)).trace().real();
-        let gap_as = gamma_t[0, 1].arg().sin().abs();
-        let gap_se = gamma_t[1, 4].arg().sin().abs();
+        p_history[idx] = float(np.real(np.trace(gamma_t @ gamma_t)))
+        gap_history[idx, 0] = float(np.abs(np.sin(np.angle(gamma_t[0, 1]))))  # Gap(A, S)
+        gap_history[idx, 1] = float(np.abs(np.sin(np.angle(gamma_t[1, 4]))))  # Gap(S, E)
 
-        gap_history.push((gap_as, gap_se));
-        p_history.push(p);
-        tau_vals.push(tau);
-    }
+    print(f"Regime: {label}")
+    print(f"Mean Gap(A,S) = {gap_history[:, 0].mean():.4f}")
+    print(f"Mean Gap(S,E) = {gap_history[:, 1].mean():.4f}")
+    print(f"Theoretical limit (2/pi) = {2.0 / np.pi:.4f}")
+    print(f"P = const = {p_history[0]:.4f} (std = {p_history.std():.2e})")
 
-    let mean_gap_as: Float = gap_history.iter().map(|(a, _)| *a).sum<Float>()
-                            / (gap_history.len() as Float);
-    let mean_gap_se: Float = gap_history.iter().map(|(_, b)| *b).sum<Float>()
-                            / (gap_history.len() as Float);
+    if rational:
+        idx_period = int(round(2.0 * np.pi / dt))
+        if idx_period < len(gap_history):
+            diff = float(np.max(np.abs(gap_history[idx_period] - gap_history[0])))
+            print(f"Deviation after period T=2*pi: {diff:.2e}")
+    else:
+        rounded = np.round(gap_history * 1e4).astype(int)
+        unique_gaps = len({(int(a), int(b)) for a, b in rounded})
+        print(f"Unique Gap configurations: {unique_gaps}/{len(gap_history)}")
 
-    IO.println(f"Regime: {label}");
-    IO.println(f"Mean Gap(A,S) = {mean_gap_as:.4f}");
-    IO.println(f"Mean Gap(S,E) = {mean_gap_se:.4f}");
-    IO.println(f"Theoretical limit (2/π) = {2.0 / PI:.4f}");
-    IO.println(f"P = const = {p_history[0]:.4f} (unitary evolution preserves purity)");
+    return tau_vals, gap_history, p_history
 
-    match regime {
-        RegimeKind.Rational => {
-            let t_period = 2.0 * PI;                    // period at ω₀ = 1
-            let idx = (t_period / dt) as Int;
-            if idx < gap_history.len() {
-                let (a0, b0) = gap_history[0];
-                let (a1, b1) = gap_history[idx];
-                let diff = ((a1 - a0).abs()).max((b1 - b0).abs());
-                IO.println(f"Deviation after period T=2π: {diff:.2e}");
-            }
-        },
-        RegimeKind.Irrational => {
-            // Quasiperiodic: the orbit does not close within the observation window.
-            let unique_gaps = gap_history.iter()
-                .map(|(a, b)| ((a * 1.0e4).round() as Int, (b * 1.0e4).round() as Int))
-                .collect<Set>()
-                .len();
-            IO.println(f"Unique Gap configurations: {unique_gaps}/{gap_history.len()}");
-        },
-    }
 
-    (tau_vals, gap_history, p_history)
-}
-
-fn main() using [IO] {
-    IO.println("=".repeat(50));
-tau_r, gap_r, P_r = dynamic_system(rational=True)
-print("=" * 50)
-tau_i, gap_i, P_i = dynamic_system(rational=False)
+if __name__ == "__main__":
+    print("=" * 50)
+    dynamic_system(rational=True)
+    print("=" * 50)
+    dynamic_system(rational=False)
 ```
 
 ---
@@ -897,7 +860,7 @@ tau_i, gap_i, P_i = dynamic_system(rational=False)
 | 1. Однородная ($I/7$) | $1/7$ | $0$ | $1/7$ | $\omega_0/7 + \kappa_0/7$ | нет |
 | 2. Чистая однородная | $1$ | $0$ | $13/49$ | $\omega_0/7 + 13\kappa_0/49$ | да |
 | 3. Фибоначчи-фазы | $1$ | $\approx 0.635$ | $13/49$ | $\omega_0/7 + 13\kappa_0/49$ | да |
-| 4. Алекситимия | $< 1$ | $> 0$ | $\approx 13/49$ | уменьшается | под угрозой |
+| 4. Алекситимия ($c = 0.06$) | $1/7 + 42c^2 \approx 0.294$ | $1/21 \approx 0.048$ | $\frac{1/49+12c^2}{1/7+42c^2} \approx 0.216$ | $\omega_0/7 + \kappa_0\mathrm{Coh}_E$ (каскад `[Г]`) | да (под угрозой `[Г]`) |
 | 5a. Рациональные | $\mathrm{const}$ | периодический | $\mathrm{const}$ | $\mathrm{const}$ | да |
 | 5b. Иррациональные | $\mathrm{const}$ | $\to 2/\pi$ | $\mathrm{const}$ | $\mathrm{const}$ | да |
 
@@ -915,42 +878,42 @@ tau_i, gap_i, P_i = dynamic_system(rational=False)
 
 ## Модель минимального сознания {#минимальное-сознание}
 
-Итак, мы рассмотрели пять моделей — от полного хаоса ($I/7$) до чистого порядка ($|\psi\rangle\langle\psi|$). Но ни одна из них не описывает *сознательную* систему в полном смысле КК. Зададим прямой вопрос: **какой простейший Голоном удовлетворяет всем условиям сознательности?**
+Итак, мы рассмотрели пять моделей — от полного хаоса ($I/7$) до чистого порядка ($|\psi\rangle\langle\psi|$). Но ни одна из них не описывает *сознательную* систему в полном смысле КК. Зададим прямой вопрос: **какой простейший Голоном удовлетворяет всем условиям сознательности уровня L2?**
 
-### Условия сознательности (напоминание)
+### Условия сознательности (напоминание) [О]
 
-По [определению КК](/docs/applied/coherence-cybernetics/definitions), система сознательна, если:
+По [определению КК](/docs/applied/coherence-cybernetics/definitions), состояние удовлетворяет операциональным порогам сознательности L2 (`[О]`), если:
 
-1. $P > P_{\text{crit}} = 2/7$ — жизнеспособность
-2. $R \geq 1/3$ — минимальная рефлексия
-3. $\Phi \geq 1$ — интеграция
-4. $D \geq 2$ — глубина самонаблюдения
+1. $P > P_{\text{crit}} = 2/7$ (`T-5 [О]`) — жизнеспособность
+2. $R \geq 1/3$ (`[О]`) — минимальная рефлексия ($R = 1/(7P)$ в линейном семействе смешивания с якорем, что даёт $P \le 3/7$)
+3. $\Phi \geq 1$ (`[О]`) — интеграция
+4. $D_{\mathrm{diff}} \geq 2$ (`[О]`) — дифференцированность опыта ($\exp S_{vN}(\rho_E)$ на расширенном регистре опыта $\mathcal{H}_E$, либо нативная 7D-прокси $D^{7D} = 1 + 6\,\mathrm{Coh}_E(\Gamma) \ge 2 \iff \mathrm{Coh}_E \ge 1/6$)
 
-### Конструкция: «пороговый Голоном» [И]
+### Конструкция: «пороговый Голоном» [Т]/[Пр]
 
-Рассмотрим $\Gamma$ с минимальными параметрами, удовлетворяющими всем четырём условиям. Простейшая стратегия — слегка «приподнять» одно измерение над равномерным фоном:
+**Статическое существование (`T-124 [Т]`):** непустота окна сознательности $\mathcal{V}_{\mathrm{full}}$ ($P \in (2/7, 3/7]$, $\Phi \ge 1$, $\sigma_k < 1$) конструктивно доказана в `T-124 [Т]` через явное семейство $\Gamma_\lambda + \delta\Delta$ вокруг возмущённой равномерной диагонали:
 
 $$
 \gamma_{kk} = \frac{1}{7} + \epsilon_k, \quad \sum_k \epsilon_k = 0
 $$
 
-с ненулевыми когерентностями, обеспечивающими $R \geq 1/3$ и $\Phi \geq 1$. Точная конструкция зависит от конкретной реализации оператора самомоделирования $\varphi$ и не решена в замкнутой форме — это одна из **открытых задач** КК.
+с ненулевыми когерентностями, обеспечивающими $R \geq 1/3$, $\Phi \geq 1$ и $D_{\mathrm{diff}} \geq 2$. **Динамические неподвижные точки (`[Пр]`):** нахождение в замкнутой форме *стационарного* аттрактора $\Gamma^* \in \mathcal{V}_{\mathrm{full}}$ полной нелинейной эволюции $\mathcal{L}_0 + \mathcal{R}[\varphi]$ зависит от конкретного выбора оператора самомоделирования $\varphi$ и остаётся **открытой аналитической задачей** КК.
 
 ### Оценки снизу
 
-Тем не менее, мы можем установить нижние границы:
+На границе окна L2:
 
 | Параметр | Минимум | Что это означает |
 |----------|---------|------------------|
-| $P$ | $2/7 + \epsilon$ | Едва жизнеспособна — на грани |
-| $R$ | $1/3$ | Самомодель точна на 33% — очень грубое самопознание |
-| $\Phi$ | $1$ | Минимальная интеграция — система едва «целая» |
-| $D$ | $2$ | Два уровня самонаблюдения: «я» и «я знаю, что я» |
+| $P$ | $2/7 + \epsilon$ | Едва жизнеспособна — на нижней границе зоны Голдилокс $(2/7, 3/7]$ |
+| $R$ | $1/3$ | Порог рефлексии (соответствует $P = 3/7$ в линейном семействе) |
+| $\Phi$ | $1$ | Минимальная интеграция — квадрат нормы внедиагональных когерентностей равен диагональному |
+| $D_{\mathrm{diff}}$ | $2$ | Не менее двух эффективных степеней свободы опыта ($\mathrm{Coh}_E \ge 1/6$ в 7D-прокси) |
 
-Это *самое тусклое сознание*, которое может существовать в рамках КК. Оно едва-едва проходит все пороги. Психологическая аналогия — что-то вроде сознания при глубоком наркозе на грани пробуждения: есть, но минимально.
+Это *самый тусклый L2-профиль* в таксономии КК — едва проходящий все четыре шлюза. В качестве интуитивной аналогии (`[И]`) его можно сравнить с минимально отзывчивым бодрствующим сознанием на пороге выхода из наркоза.
 
-:::note Связь с SAD-иерархией
-Минимальное сознание ($D = 2$) не достигает SAD = 1. Для SAD = 1 требуется стабильная самомодель, способная к рекурсивному самоприменению — это уже уровень $D \geq 3$. Подробнее см. [глубинную башню](/docs/consciousness/hierarchy/interiority-hierarchy).
+:::note Статус высших рефлексивных уровней (L3 и отозванный SAD)
+В более ранних версиях $D_{\mathrm{diff}}$ связывалась с числовой шкалой «глубины SAD». Универсальная эквивалентность уровней SAD (`T-136 [✗]`) и универсальный потолок глубины $\mathrm{SAD}_{\max} = 3$ (`T-217 [✗]`) **отозваны**. Высшая рефлексивная способность (L3) формально сертифицируется через предиктивный критерий точности самомодели (`[О]`) — см. [иерархию интериорности](/docs/consciousness/hierarchy/interiority-hierarchy).
 :::
 
 ---
@@ -961,18 +924,18 @@ $$
 
 ### Что подтверждено симуляциями
 
-1. **Фано-контракция $\alpha = 2/3$**: численное моделирование Фано-канала (MVP-7) подтвердило аналитическое значение коэффициента контракции. Диагональные элементы $\gamma_{kk}$ сходятся к $1/7$ со скоростью $(2/3)^n$.
+1. **Коэффициент Фано-дефазировки $2/3$ (`T-2 [Т]`, `T-260 [Т]`)**: численное моделирование Фано-канала (MVP-7) подтвердило точный коэффициент затухания когерентностей. Канал Фано-пинчинга / дефазировки оставляет **все диагональные населённости $\gamma_{kk}$ строго инвариантными** и подавляет **только недиагональные когерентности** со скоростью $\frac{2}{3}\gamma_2$ (коэффициент сжатия $1/3$ за один дискретный шаг пинчинга; сходимость диагональных населённостей к $1/7$ требует дополнительного деполяризующего или перемешивающего населённости канала).
 
-2. **Пороговое поведение $P_{\text{crit}}$**: при $P < 2/7$ регенерация $\mathcal{R}$ не компенсирует диссипацию — система неизбежно деградирует к $I/7$. При $P > 2/7$ возможен устойчивый баланс. Порог виден как фазовый переход в динамике sim-0.
+2. **Пороговое поведение вблизи $P_{\text{crit}} = 2/7$ (`T-5 [О]`, `T-160 [✗]`)**: хотя универсальная динамическая катастрофа при $P = 2/7$ отозвана (`T-160 [✗]`), в моделируемой редуцированной системе (`sim-0`) ниже $P_{\text{crit}} = 2/7$ регенерация $\mathcal{R}$ не компенсирует диссипацию и траектория деградирует к $I/7$, тогда как выше $2/7$ достигается устойчивый баланс.
 
-3. **σ-диагностика**: стресс-вектор $\sigma_k = 1 - 7\gamma_{kk}$ (T-92) корректно идентифицирует «больные» измерения. В sim-0 агенты с высоким $\sigma_E$ демонстрируют поведение, аналогичное алекситимическому (модель 4): дефицит целенаправленного поиска.
+3. **σ-диагностика (`T-92 [О]`)**: семикомпонентная стресс-панель $\sigma_k = 1 - 7\gamma_{kk}$ (`T-92 [О]`) отслеживает дефицит населённости по осям. В `sim-0` агенты с высоким $\sigma_E$ демонстрируют поведение, качественно аналогичное алекситимии (Модель 4): дефицит целенаправленного поиска.
 
 4. **Сохранение чистоты при унитарной эволюции**: численно подтверждено с точностью до $10^{-14}$ (машинная точность float64).
 
 ### Что ещё не подтверждено
 
 - Полная динамика КК ($\mathcal{L}_0 + \mathcal{R} + \varphi$) в аналитически решаемом случае
-- Каскадный эффект алекситимии (раздел 4.4) — промоделирован качественно, но не количественно
+- Каскадный эффект алекситимии (раздел 4.4, `[Г]`) — промоделирован качественно, но не количественно
 - Устойчивость фазовых кластеров (как {A, S, U} в модели Фибоначчи) при полной динамике
 
 ---
@@ -999,16 +962,16 @@ $$
 
 ### 5. Модель обучения (приоритет: средний)
 
-Постепенное изменение *стационарной* $\Gamma^*$ под воздействием внешних данных. Связь с [границами обучения](/docs/applied/coherence-cybernetics/learning-bounds) (T-109 через T-113) и оптимальным $n_{\text{opt}}$.
+Постепенное изменение *стационарной* $\Gamma^*$ под воздействием внешних данных. Связь с [границами обучения](/docs/applied/coherence-cybernetics/learning-bounds) (`T-109 [Т]` бинарные границы Хелстрома/Чернова через `T-113 [Г]` недоказанную гипотезу 7D-минимальности) и оптимальным $n_{\text{opt}}$.
 
 ### 6. Модель мета-Голонома (приоритет: низкий, высокая сложность)
 
-Композитная система $N = 7^2 = 49$ с иерархической структурой. Первый шаг к Теореме 9.1 (мета-Голономы). Вычислительная сложность — $O(49^3) \approx 10^5$ — ещё приемлема, но аналитические решения маловероятны.
+Композитная система $N = 7^2 = 49$ с иерархической структурой. Первый шаг к Теореме 9.1 (`CC-5 [Т]` при слабой связи и положительных запасах). Вычислительная сложность — $O(49^3) \approx 10^5$ — ещё приемлема, но аналитические решения маловероятны.
 
 ---
 
 :::warning Вычислительная сложность
-Масштабирование вычислений для композитных систем ($N = 7^k$, $k > 1$) **не проанализировано**. Для единичного Голонома ($N = 7$) все модели вычислимы за $O(N^3) \approx O(343)$ операций, но для мета-Голономов (Теорема 9.1) сложность может расти экспоненциально с числом уровней композиции.
+Масштабирование вычислений для композитных систем ($N = 7^k$, $k > 1$) **не проанализировано**. Для единичного Голонома ($N = 7$) все модели вычислимы за $O(N^3) \approx O(343)$ операций, но для мета-Голономов (`CC-5 [Т]`, Теорема 9.1) сложность может расти экспоненциально с числом уровней композиции.
 :::
 
 ---
@@ -1066,14 +1029,14 @@ Gap = 0 ──┤       ├── Gap ≠ 0
 
 3. **Фазы Фибоначчи**: тот же $P = 1$ и та же $\mathrm{Coh}_E = 13/49$, но с богатым Gap-профилем. **Чистота и Gap ортогональны** — фазы определяют «характер», амплитуды — «энергию». Кластер {A, S, U} с нулевым взаимным Gap — пример фазовой синхронизации.
 
-4. **Алекситимия**: чисто *фазовая* патология ($\theta_{SE} = \pi/2$). Амплитуды не затронуты, $\mathrm{Coh}_E$ не изменена — но система больна. Один сломанный канал из 21 запускает каскад: $R$ падает, $\kappa$ уменьшается, $P$ дрейфует к $P_{\text{crit}}$. Диагностика возможна только через Gap-анализ, не через $P$.
+4. **Алекситимия**: чисто *фазовая* патология ($\theta_{SE} = \pi/2$). Амплитуды не затронуты и $\mathrm{Coh}_E$ в статическом снимке не изменена — но канал $(S, E)$ максимально непрозрачен. В гипотетическом динамическом каскаде (`[Г]`) потеря операциональной точности самомодели в E-секторе может снижать $\kappa$ и толкать $P$ к $P_{\text{crit}}$. Поэтому ранняя диагностика требует Gap-анализа, а не только контроля $P$.
 
 5. **Унитарная динамика**: чистота сохраняется ($P = \mathrm{const}$), Gap осциллирует. При рациональных частотах — периодические орбиты («день сурка»). При иррациональных — квазипериодичность и **эргодическая теорема**: средний Gap $\to 2/\pi \approx 0.637$ для всех пар, независимо от начальных условий.
 
 6. **Универсальная константа $2/\pi$** — «фоновый уровень непрозрачности» для любой активной системы с несоизмеримыми частотами.
 
 :::tip Мост к следующей главе
-Пять модельных систем — это «координатные оси» пространства состояний. Но что объединяет всю динамику Gap в единый принцип? В [следующей главе](./lagrangian) мы откроем **лагранжиан Gap-теории** — шестичленную формулу, из которой все уравнения движения выводятся столь же неизбежно, как траектория планеты из закона тяготения. Мы увидим, как спонтанное нарушение симметрии порождает непрозрачность — аналог механизма Хиггса для сознания.
+Пять модельных систем — это «координатные оси» пространства состояний. В [следующей главе](./lagrangian) мы рассмотрим **эффективный лагранжев формализм** Gap-теории (`T-75 [✗]` отзывает универсальный вывод фиксированного шестичленного действия Келдыша, формулируя его как структурированный модельный анзац `[О]`/`[Г]`) и увидим, как потенциалы спонтанного нарушения симметрии моделируют паттерны непрозрачности.
 :::
 
 ---
@@ -1082,14 +1045,14 @@ Gap = 0 ──┤       ├── Gap ≠ 0
 
 - [Gap-оператор](/docs/core/dynamics/gap-operator) — определение и свойства $\hat{\mathcal{G}}$
 - [Gap-динамика](/docs/core/dynamics/gap-dynamics) — бифуркации, немарковская динамика
-- [Жизнеспособность](/docs/core/dynamics/viability) — $P_{\text{crit}} = 2/7$ и условия выживания
+- [Жизнеспособность](/docs/core/dynamics/viability) — $P_{\text{crit}} = 2/7$ (`T-5 [О]`) и условия выживания
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — базовый объект $\Gamma$
-- [Фано-канал](/docs/proofs/gap/fano-channel) — доказательства сохранения когерентностей
+- [Фано-канал](/docs/proofs/gap/fano-channel) — доказательства сжатия когерентностей (`T-2 [Т]`)
 - [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules) — геометрия плоскости Фано
 - [Определения КК](/docs/applied/coherence-cybernetics/definitions) — $\mathrm{Coh}_E$, меры сознательности
 - [Аксиоматика КК](/docs/applied/coherence-cybernetics/axiomatics) — $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$
-- [Границы обучения](/docs/applied/coherence-cybernetics/learning-bounds) — T-109 через T-113
-- [Глубинная башня](/docs/consciousness/hierarchy/interiority-hierarchy) — SAD-иерархия и уровни сознания
+- [Границы обучения](/docs/applied/coherence-cybernetics/learning-bounds) — `T-109 [Т]` через `T-113 [Г]`
+- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни интериорности и сертификаты способностей
 - [Реализация](./implementation) — вычислительный код для моделей
 - [Упражнения](./exercises) — задачи на модельные системы
 - [Методология измерений](./measurement) — от модели к эксперименту
