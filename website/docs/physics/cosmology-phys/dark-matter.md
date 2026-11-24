@@ -101,7 +101,27 @@ In standard Chung–Kolb–Riotto (1998) gravitational production during inflati
 
 ---
 
-## 6. Requirements for Any Future UHM Dark-Matter Candidate `[H]` {#6-summary-candidate}
+## 6. Gauge-Lorentz Parity $\mathbb{Z}_2^{\mathrm{DM}}$ and Unified `Chain A2` Dark-Matter Audit {#z2-dm-audit}
+
+While partial $O$-conjugation fails positivity (`T-163`) [✗], breaking $\mathrm{Spin}(10) \to G_{\mathrm{SM}}/\mathbb{Z}_6$ via $\overline{\mathbf{126}}_H$ ($\lvert\Delta(B-L)\rvert = 2$) automatically preserves the exact, anomaly-free **gauge-Lorentz dark-matter parity** $\mathbb{Z}_2^{\mathrm{DM}} = (-1)^{3(B-L)+2s}$ (`minimal_spin10_all_fields_dm_parity_even`, `spin10_210F_singlet_dm_parity_odd`, `verify_deep_frontier_v7.py`, `verify_deep_frontier_v8.py`) [T].
+
+All states of minimal `Chain A2` ($\mathbf{16}_F, \mathbf{10}_H, \mathbf{45}_V, \overline{\mathbf{126}}_H, \mathbf{210}_H$) are strictly $P_{\mathrm{DM}}$-even ($+1$), so dark matter requires an explicit $P_{\mathrm{DM}}$-odd representation ($\mathbf{10}_F, \mathbf{45}_F, \mathbf{54}_F, \mathbf{210}_F, \mathbf{1}_F$, or scalar $\mathbf{16}_H$) [T]. Joint two-loop RGE, Super-K proton-decay, BBN, Planck $\Omega_{\mathrm{DM}} h^2 = 0.120$, LZ 2024, and $SO(10)$ $D$-parity constraints yield an exhaustive classification:
+
+| Candidate ($P_{\mathrm{DM}} = -1$) | Two-loop `Chain A2` impact ($M_{\mathrm{PS}}, M_{\mathrm{GUT}}, \tau_p$) | Relic / direct-detection / symmetry test | Verdict |
+|---|---|---|---|
+| Minimal `Chain A2` (no extra odd rep) | $1.43\times 10^{11}$, $7.95\times 10^{15}$, $9.08\times 10^{34}\,\mathrm{yr}$ | Zero $P_{\mathrm{DM}}$-odd states (`minimal_spin10_all_fields_dm_parity_even`) | No DM [✗] |
+| $\mathbf{10}_F$ doublet / isolated $\mathbf{45}_F$ triplet / $(1,5,0)_F$ / inert $\mathbf{16}_H$ | $\tau_p = 3.59\times 10^{28}$ / $1.28\times 10^{29}$ / $1.50\times 10^{22}$ / $5.27\times 10^{33}\,\mathrm{yr}$ | Violate Super-K ($> 2.4\times 10^{34}\,\mathrm{yr}$); $\mathbf{10}_F$ also fails LZ by $10^8\times$ | Falsified [✗] |
+| $\mathbf{16}_H$ complex singlet $(1,1,0)_S$ | Preserves `Chain A2` | High-mass plateau $\sigma_{\mathrm{SI}} = 1.63\times 10^{-45}\,\mathrm{cm}^2$ excluded by LZ; FIMP over-thermalized by $M_{Z'} = 2.94\times 10^{11}\,\mathrm{GeV}$ ($\Gamma_{Z'}/H = 4.40 > 1 \implies m_S \le 84\,\mathrm{eV}$, excluded $60\times$ by Lyman-$\alpha$); only Higgs funnel $62.5\,\mathrm{GeV}$ survives | Funnel only [C] |
+| Minimal $\mathbf{210}_F + \mathbf{210}_H$ | Preserves `Chain A2` only if split | **Refuted by $SO(10)$ $D$-parity** (`spin10_210F_singlet_dm_parity_odd`): $(1,1,1)_H \subset \mathbf{210}_H$ is $D$-odd ($-1$), forcing $(1,1,1)_F^2\langle\mathbf{210}_H\rangle \equiv 0$ (zero portal) and leaving $120/210$ states ($119$ colored/EW fermions) unsplit | Falsified [✗] |
+| Split $\mathbf{45}_F$: $(1,3,0)$ at $2.8\,\mathrm{TeV}$ + $(8,1,0)$ at $10^9\,\mathrm{GeV}$ | $M_{\mathrm{PS}} \to 6.47\times 10^{14}$, $\tau_p = 4.81\times 10^{34}\,\mathrm{yr}$, $\tau_8 = 0.11\,\mathrm{s}$ | Narrow window $M_8 \in [6\times 10^8, 1.2\times 10^9]\,\mathrm{GeV}$, $\Omega h^2 = 0.120$, $\sigma_{\mathrm{SI}} \approx 2.3\times 10^{-47}\,\mathrm{cm}^2$; shifts $M_{\mathrm{PS}}$ above Higgs $\mu_{\mathrm{inst}}$, shifts $\alpha_{\mathrm{GUT}}^{-1} \to 39.05$, needs cored Galactic Center vs. H.E.S.S. | Narrow / strained [C] |
+| **$D$-even $\mathbf{54}_H@M_{\mathrm{GUT}} + \mathbf{54}_F$ (or $\mathbf{210}_F$)** FIMP | **Preserves `Chain A2` 100%** ($\tau_p = 9.08\times 10^{34}\,\mathrm{yr}$, $\alpha_{\mathrm{GUT}}^{-1}=45.13$) | Splits all $4/5$ PS blocks distinctly; tree-level $\mathbf{10}_H^\dagger \mathbf{54}_H \mathbf{10}_H$ dim-5 portal gives cold $\Omega h^2 = 0.120$ at $m_\chi = 4.44\text{–}8.89\,\mathrm{GeV}$, $\sigma_{\mathrm{SI}} = 3.80\text{–}4.56\times 10^{-72}\,\mathrm{cm}^2$ | Viable FIMP [C] |
+| **Pure $\mathrm{Spin}(10)$ singlet $\chi_1 = \mathbf{1}_F$** FIMP | **Preserves `Chain A2` 100%** (zero GUT partners) | Planck dim-5 portal gives cold $\Omega h^2 = 0.120$ at $m_{\chi_1} = 4.17\text{–}8.35\,\mathrm{TeV}$, $\sigma_{\mathrm{SI}} = 5.94\times 10^{-75}\,\mathrm{cm}^2$ | Viable FIMP [C] |
+
+Both `Chain A2`-preserving FIMP survivors evade all proton-decay, BBN, Higgs-stability, and H.E.S.S. constraints, at the honest empirical cost that $\sigma_{\mathrm{SI}} \le 4.6\times 10^{-72}\,\mathrm{cm}^2$ lies far below direct-detection reach; dynamically deriving the chosen odd representation from the 7D holon remains open [P].
+
+---
+
+## 6b. General Requirements for Any Future UHM Dark-Matter Candidate [H] {#6-summary-candidate}
 
 Constructing a genuine UHM dark-matter candidate remains an open research program (`[Pr]`) requiring three explicit elements not yet present in the 7D register formalism:
 

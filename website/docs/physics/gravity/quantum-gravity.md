@@ -153,7 +153,15 @@ Removing the lattice cutoff ($N \to \infty$, lattice spacing $a \to 0$) introduc
 
 ## 5. Degrees-of-Freedom Count vs. Horizon Scaling {#степени-свободы}
 
-On an arbitrary finite lattice of $N$ sites where each site carries $21$ phase angles on $(S^1)^{21}$, the kinematic phase-variable count is $21N$ (scaling linearly with the number of sites, i.e., with spatial volume if sites are assigned to a 3D mesh). Neither supersymmetric partners nor a Planck-scale spatial lattice are derived from UHM, and no mechanism reducing volume-scaling lattice modes to an area-law Bekenstein–Hawking entropy $S_{\mathrm{BH}} = A/(4G_N)$ has been established.
+On an arbitrary finite lattice of $N$ sites where each site carries $21$ phase angles on $(S^1)^{21}$, the kinematic phase-variable count is $21N$ (scaling linearly with the number of sites, i.e., with spatial volume if sites are assigned to a 3D mesh). Neither supersymmetric partners nor a Planck-scale spatial lattice are derived from UHM from the phase torus alone.
+
+### 5.1 Microscopic area law, $G_{\mathrm{EE}} = G_{\mathrm{Sak}}$, unitary QCA bounds, and dynamical graph diagnostics {#microscopic-area-law}
+
+Moving from the bare phase torus to the fermionic Dirac-sea / unitary tetrad QCA layer yields four verified structural results (`verify_six_problems.py`, `verify_deep_frontier_v7.py`, `verify_deep_frontier_v8.py`, `ToEFrontierV8.lean`):
+
+1. **Exact microscopic equality $G_{\mathrm{EE}} = G_{\mathrm{Sak}}$ (`gee_equals_gsak_pv_exact_cq`) [T]:** For any positive 4-term super-convergent Pauli–Villars log-moment $L = \sum c_i m_i^2 \ln m_i^2 > 0$, the Sakharov induced Newton coupling $1/(4G_{\mathrm{Sak}}) = 4\pi \cdot L/(96\pi^2)$ and the continuum entanglement-entropy area-law coefficient $1/(4G_{\mathrm{EE}}) = L/(24\pi)$ coincide identically ($+0.02201618$ for $c=(7,-14,9,-2)/7$, $m=(1,2,3,4)$). On a chiral 3+1D Peschel lattice, $1/(4G_{\mathrm{EE}})$ converges at $O(a^2)$ ($+0.022231$ at $a=0.050$, $+0.022069$ at $a=0.025$) to a Richardson continuum limit of $+0.02201439$ (**$0.0081\%$ exact match** with $1/(4G_{\mathrm{Sak}})$), whereas bare Wilson fermions incur $14.9\%\text{–}23.3\%$ $O(Ma)$ chiral-breaking error [C].
+2. **Unitary QCA singularity bound, Schläfli identity, and Page curve [T]:** A finite-dimensional unitary tetrad QCA ($d_{\mathrm{site}} = 32$, $0 \le c_{\mathrm{eff}}(x) = \sin\theta(x) \le 1$) bounds local energy, entropy ($\le 32\ln 2$ per site), and discrete curvature unconditionally, preventing classical $r = 0$ singularities; simplicial deformations obey the exact Schläfli identity $\max\lvert\sum_e \ell_e d\theta_e/d\lambda\rvert = 5.79\times 10^{-10}$, and a globally pure unitary scrambler ($N = 10$ qubits) reproduces the analytic Page curve with final radiation entropy $S(R_{10}) = 1.78\times 10^{-15}$.
+3. **Dynamical graph boundary dominance vs. bare-graph UV obstruction [C] / [P]:** On a background-free $6\times 6$ Wilson–Dirac graph (72 dynamic edge weights, $\lvert\partial A\rvert = 12$), entanglement variation is strictly boundary-dominated ($\partial S_{\mathrm{EE}}/\partial w_{\mathrm{bdry}} = +0.27081$ vs. bulk $+0.01312$, **$20.6\times$ boundary dominance**, additivity $9.95\times 10^{-6}$). However, both bare ($\partial S_{\mathrm{EE}}/\partial E_{\mathrm{vac}} = -0.438 \to -0.821$ vs. $m_0$) and PV-regulated single-bond ratios on an $8\times 8$ graph ($+1356.4, -2.18, +25.7$ vs. $\mu$) fail universality because single-bond perturbations shift bare vacuum energy rather than Ricci curvature; deriving a covariant background-free variational principle $\delta S_{\mathrm{gen}}\vert_V = 0$ remains open [P].
 
 Operational network geometry constructs metric limits directly from transfer costs and first-arrival timing without assuming a Planck lattice ([Common Limiting Metric](/docs/geometry/common-limit)).
 
@@ -198,12 +206,12 @@ Crucially, `T-348` is a **Type $\mathrm{II}_1$ reparametrization**: a finite clo
 
 ---
 
-## 7. Open Problems `[Pr]` {#открытые-проблемы}
+## 7. Open Problems [P] {#открытые-проблемы}
 
-1. **Continuum limit of lattice models:** Construct a positivity-compatible lattice action and prove (or refute) existence of a renormalized continuum limit $\lim_{N\to\infty} Z_N$.
-2. **Microscopic gravitational dynamics:** Derive an operational spacetime metric with Lorentzian signature and spin-2 dynamics from network interactions rather than importing $(M^4, g, D_{M^4})$ externally.
-3. **Vacuum energy:** Establish an explicit volume-response observable and normalization fixing the sign and magnitude of the physical cosmological constant ([Cosmological Constant](/docs/physics/gravity/cosmological-constant)).
-4. **Horizon microphysics:** Specify a gravitational action, dynamical horizon solution, and microscopic emission channel before testing entropy or information-recovery claims.
+1. **Continuum limit and all-orders quantum gravity:** Perturbative induced 4D Einstein–Hilbert gravity is verified through $O(h^4)$ ([Einstein Equations §5](/docs/physics/gravity/einstein-equations#induced-4d-gravity)), while quartic $O(h^4)$ diffeomorphism Ward identities, positivity-compatible lattice limits $\lim_{N\to\infty} Z_N$, and non-perturbative UV completion remain open.
+2. **Covariant background-free graph dynamics:** Derive a covariant variational principle $\delta S_{\mathrm{gen}}\vert_V = 0$ on a dynamical holon graph without bare single-bond vacuum-energy contamination (§5.1).
+3. **Vacuum energy scale ($10^{-123}$):** Given the unconditional WGC–quintessence ceiling $S < 12$ / $\Lambda_{\mathrm{UV}} \le 38.54\,\mathrm{meV}$ ([Cosmological Constant](/docs/physics/gravity/cosmological-constant#wgc-quintessence-boundary)), determine whether an external decoupled dark factor or sequestered meV-scale dynamics supplies the physical scale of $\Lambda$.
+4. **Curved-background horizon microphysics:** Extend the exact flat-space $G_{\mathrm{EE}} = G_{\mathrm{Sak}}$ area law and finite-qubit Page curve to a self-consistent curved black-hole horizon solution.
 
 ---
 

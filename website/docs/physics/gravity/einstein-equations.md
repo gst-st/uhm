@@ -7,7 +7,7 @@ description: "Conditional Einstein–Hilbert variation on a supplied 4D spin man
 
 # Einstein Equations in a Supplied Four-Dimensional Geometry
 
-This chapter separates three distinct layers: (i) why the proposed Gap-to-metric ansatz, linearized Fierz–Pauli bridge, and universal spectral potential (`T-74 [✗]`) fail; (ii) what the heat-kernel variation actually proves on an externally supplied 4D Riemannian spin manifold (`T-65`); and (iii) the exact quantum Fisher information pair lemma (`T-264(a),(a')`) on $\mathcal{D}(\mathbb{C}^7)$. Constructive operational distance geometry is developed separately in [Common Limiting Metric](/docs/geometry/common-limit) and [Verified Network Results](/docs/reference/network-results).
+This chapter separates four distinct layers: (i) why the proposed Gap-to-metric ansatz, linearized Fierz–Pauli bridge, and universal spectral potential (`T-74`) [✗] fail; (ii) what the heat-kernel variation actually proves on an externally supplied 4D Riemannian spin manifold (`T-65`); (iii) the exact quantum Fisher information pair lemma (`T-264(a),(a')`) on $\mathcal{D}(\mathbb{C}^7)$; and (iv) induced 4D Einstein–Hilbert gravity through quartic order $O(h^4)$ from a covariantly regulated 4D Dirac sea with zero bare gravitational action. Constructive operational distance geometry is developed separately in [Common Limiting Metric](/docs/geometry/common-limit) and [Verified Network Results](/docs/reference/network-results).
 
 ---
 
@@ -153,7 +153,30 @@ This theorem evaluates a chosen spectral functional on supplied data; it does **
 
 ---
 
-## 5. Constructive Path: Operational Network Geometry
+## 5. Induced 4D Einstein–Hilbert Gravity Through Quartic Order $O(h^4)$ {#induced-4d-gravity}
+
+Although the naive coherence-to-metric ansatz (§1–§2) fails, a covariantly regulated four-dimensional Dirac sea (matching the spinor matter sector without inserting any bare Einstein–Hilbert term $S_{\mathrm{EH}} = 0$) reproduces the full perturbative tensor structure of 4D general relativity through quartic order $O(h^4)$ (verified in `verify_deep_frontier_v6.py`, `verify_deep_frontier_v7.py`, `verify_deep_frontier_v8.py` and formalized over constructive rationals in `ToEFrontierV6.lean`–`ToEFrontierV8.lean`):
+
+| Perturbative order & observable | Induced 4D Dirac sea (zero bare $S_{\mathrm{EH}}$) | Exact 4D GR / Adler–Visser | Discrepancy / status |
+|---|---|---|---|
+| $O(h^2)$ Newton coupling $1/(64\pi G_N)$ (3-term PV, 600-cell) | $+0.005885$ | $+0.005889$ | $0.07\%$ [C] |
+| $O(h^2)$ wave speed $c_{\mathrm{grav}}^2$ and spin-2 isotropy $c_2(h_+)/c_2(h_\times)$ | $1.00000004$ / $0.99999991$ | $1$ / $1$ | $< 10^{-7}$ [C] |
+| $O(h^2)$ trace/conformal ratios $(\mathrm{tr}_3\,q_0,\; \mathrm{tr}_3\,q_z,\; \mathrm{tr}_4\,q_z)/c_2(h_+)$ | $(-1.991,\; -0.660,\; -1.491)$ | $(-2,\; -2/3,\; -3/2)$ | $< 0.94\%$ (GHP sign) [T] |
+| $O(h^2)$ axis-free 3D Poisson causal network ($N=72, k=6$) | $c_2(h_+)/c_2(h_\times) = 0.9789$ | $1$ | $\lvert t \rvert = 0.43\,\sigma$ (removes $14.5\%$ cubic artifact) [C] |
+| $O(h^3)$ 8 diagonal + 7 off-diagonal cubic 3-graviton vertices (4-term PV) | Match exact nonlinear 4D GR | $\int d^4x\sqrt{g}R\big\vert_{O(h^3)}$ | $0.0004\%\text{–}0.0083\%$ [T] |
+| $O(h^3)$ non-Abelian Ward–Slavnov–Taylor identity ($q_1=1,q_2=2,q_3=-3$) | $S^{(3)} = +0.001751923$, $\delta_\xi S^{(2)} = -0.001751910$ | $S^{(3)} + \delta_\xi S^{(2)} = 0$ | $0.00077\%$ [T] |
+| $O(A_{12}^2)$ local Lorentz gauge invariance | $-6.69\times 10^{-8}$ (Cartan $-1/4$) vs $100\%/400\%$ fail | $0$ | Mandatory $\omega_{[abc]}$ [T] |
+| $O(h^4)$ collinear & non-collinear $h_+^2 h_\times^2$ and mixed $h_+ h_\times h_{13} h_{02}$ | $+0.00145983$ / $+0.00043792$ / $+0.00021892$ | $+0.00146000$ / $+0.00043800$ / $+0.00021900$ | $0.012\%\text{–}0.035\%$ ($75\%\text{–}225\%$ fail without $\omega_{[abc]}$) [T] |
+
+### 5.1 Structural theorems and remaining boundaries
+
+1. **Universal axial decoupling at $O(h^3)$ (`cubic_axial_spin_connection_decoupling_cq`) [T]:** For every symmetric $4\times 4$ metric perturbation $H_{ij} = H_{ji}$, the Levi-Civita axial contraction $\sum_{\alpha, d}\varepsilon_{\alpha e \beta d} H_{\alpha d} \equiv 0$. Consequently, the non-vanishing antisymmetric spin connection $\omega_{[abc]}^{(2)} \neq 0$ decouples identically from all cubic 3-graviton vertices for symmetric vierbeins (while $h_+^2 h_\times \equiv 0$ identically in 4D GR by 2D Gauss–Bonnet and $SO(2)_{12}$ parity) and first becomes dynamically mandatory at local Lorentz invariance $O(A^2)$ and quartic order $O(h^4)$ (`quartic_spin_connection_essential_ratio_cq`, where omitting $\gamma^{[a}\gamma^b\gamma^{c]}\omega_{abc}$ causes exact $9/4 = 225\%$ and wrong-sign $900\%$ failures).
+2. **4-term super-convergent Pauli–Villars regulator (`pv_4term_superconvergent_sum_rules_int`) [T]:** The pure-integer weights $c = (7, -14, 9, -2)/7$ at masses $m = (1, 2, 3, 4)$ satisfy $\sum c_i = \sum c_i m_i^2 = \sum c_i m_i^4 = 0$, removing the logarithmic $R^2$ divergence and fixing $1/(16\pi G_N) = \frac{1}{96\pi^2}\sum c_i m_i^2 \ln m_i^2 = +0.0017519921$. Both cubic sign-opposition (`eh_cubic_hplus_h00_h33_opposite_cq`) and the cubic non-Abelian Ward identity (`nonabelian_diffeo_ward_identity_cubic_cq`) are formally proved directly from the exact 4D diagonal Einstein–Hilbert action polynomials.
+3. **Open boundaries [P]:** On a curved $S^4$ background without PV regulators, the one-loop Sakharov positivity condition $C_{\mathrm{Sak}} > 0$ in $\mathrm{Spin}(10) + 3\times\mathbf{16}_+$ requires $N_S > 132$ minimally coupled real scalars (`sakharov_spin10_scalar_threshold_cq`) [✗]. Quartic $O(h^4)$ diffeomorphism Ward identities, all-orders non-perturbative quantum gravity, and a background-free derivation of the dynamical metric from discrete holon-graph interactions remain open.
+
+---
+
+## 6. Constructive Path: Operational Network Geometry
 
 Rather than assuming a 4D continuum manifold or fitting coherence entries to $h_{\mu\nu}$, operational distances in UHM are constructed directly from intervention costs, first-arrival fronts, and multi-probe calibration on finite and limiting networks:
 

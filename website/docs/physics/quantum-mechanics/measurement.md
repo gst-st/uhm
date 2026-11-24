@@ -93,6 +93,14 @@ Multiplying the difference by a scalar depending on the current marginal leaves 
 
 G4 gives a sharper resource statement for the canonical feedback ray with known target direction. For $d\ge3$ and fixed $0\le\mu<1$, the exact output conditioned on success needs three or four independent preparations per attempt, depending on $\mu$. No deterministic exact implementation with a finite input bound exists on the whole ray. A computational-speedup claim would also have to count repreparations, success probability, precision and readout. [Proof and assumptions](https://github.com/gst-st/uhm/blob/main/website/research/operational-reconstruction/feedback.md)
 
+## 9. Finite-Budget Quantum Darwinism and the Silent Operational Fiber $\mathcal{K}_{\mathrm{act}}$ {#quantum-darwinism-fiber}
+
+Connecting global unitary dynamics to classical records accessible to a finite-budget observer (`ToEFrontierObstructions.lean`, `ToEFrontierPhysicsTheorems.lean`, `verify_six_problems.py`) resolves the operational part of the measurement problem without modifying linear unitarity:
+
+1. **Exponential coherence trapping with zero spontaneous heating (`darwinism_coherence_strict_decay_cq`, `commuting_unitary_zero_heating_cq`) [T]:** Under unitary broadcast of a pointer record across $M$ environment fragments with per-fragment overlap $0 < c < 1$, any finite-budget observer accessing at most $k < M$ fragments sees off-diagonal coherence decay strictly as $a\cdot c^{M-k}$ into the inaccessible operational fiber $\mathcal{K}_{\mathrm{act}}$, while global commuting unitarity strictly preserves $\mathrm{Tr}(H U \rho U^\dagger) = \mathrm{Tr}(H\rho)$ (zero spontaneous heating, unlike objective-collapse models).
+2. **Exact superposition-mixture indistinguishability and Darwinism plateau [T]:** For a coherent branch state ($M = 8$ holons, $\lvert\alpha\rvert^2 = 0.3$, $\lvert\beta\rvert^2 = 0.7$), the maximum trace-norm difference between the globally pure superposition and the classical mixture across all observers capped at $k < M$ is $2.67\times 10^{-17}$ (identically zero), while mutual information reaches the full classical plateau $I(S:E_k) = H(S) = 0.881291\,\mathrm{bit}$ already at $k = 1$ fragment (guaranteeing inter-observer objectivity).
+3. **Categorical resource boundary and remaining interpretive fork (`cappedActuation_no_descent_iso`, `nonTrivial_silent_gauge_automorphism`) [T] / [I]:** Resource-capped actuation breaks naive Beck–Chevalley descent on the syntactic shadow (`Reif`), and the silent kernel carries nontrivial gauge automorphisms ($\pi_1(\mathcal{K}_{\mathrm{act}}) \neq 0$). Within strictly linear unitary evolution, the single remaining non-derivable element is the ontological fork between relational/Everettian branching and a testable physical single-outcome collapse mechanism [I].
+
 **Related models and definitions**
 
 - [Seven-level quantum model](/docs/physics/quantum-mechanics/qm-reduction)
