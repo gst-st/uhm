@@ -15,3 +15,4 @@ gate51_panel.yml
 
 # P6a: чужие тексты (мемуары) — только на диске, не в git
 architecture/data/p6a_texts/
+.agents/
