@@ -23,9 +23,10 @@ Suites:
   V7.2 (Front P2 - Zero-Mode-Free Origin of 10^-123 Inside UHM: Spin(10) Centralizer No-Go,
         Confining vs Higgsed SU(N_d), & 7D Holon / Fano Clockwork WGC Obstructions):
        - Part A: Exhaustive D_5 = so(10) root audit (40 roots): ZERO roots commute with the 4 SM Cartan
-         generators => Cent_{Spin(10)}(G_SM) = U(1)_{B-L} has NO non-Abelian dark gauge factor (Lean F-25A)!
+         generators => Cent_{so(10)}(g_SM) = u(1)_Y (+) u(1)_{B-L} has NO non-Abelian dark gauge factor (Lean F-25A)!
        - Part B: Exact 2-loop confining (IR, Lambda_d = 2.236 meV) vs Higgsed/constrained small-instanton (UV, v_d = M_GUT)
-         pure Yang-Mills SU(N_d): unbroken confining SU(2)_d requires alpha_d^-1(M_GUT) = 72.49 (mismatch [✗]),
+         pure Yang-Mills SU(N_d): unbroken confining SU(N_d) requires alpha_d^-1(M_GUT) = 76.58 (SU(2)), 114.87 (SU(3)),
+         153.16 (SU(4)) (PDG 2-loop; exact 2-loop ODE to alpha=1: 77.47-154.33, strictly > 1-loop, mismatch [✗]),
          whereas Higgsed SU(2)_d at M_GUT requires alpha_d^-1(M_GUT) = 44.23, matching UHM Chain A1/A2 alpha_GUT^-1 ~ 44-45 [C]
          (still requiring an external decoupled gauge factor outside Spin(10)!).
        - Part C: Single 7D holon's C(7,2)=21 phases strictly fail WGC alignment (21 < 35, S <= 161.6 << 276.7, Lean F-25B);
@@ -35,34 +36,42 @@ Suites:
 
   V7.3 (Front P3 - Modular M=7 Derivation via PSL(2,7) = Aut(PG(2,2)), Discrete Wilson-Line No-Go,
         Complex-tau Zero-Brane 2HDM & 2-Loop Higgs Criticality / Vissani EW Hierarchy Obstruction):
-       - Part A: Exact |PSL(2, Z_M)| = 168 = |Aut(PG(2,2))| UNIQUELY selects M = 7 among all M >= 2 (Lean F-26A,B),
+       - Part A: Exact |PSL(2, Z_M)| = 168 = |Aut(PG(2,2))| UNIQUELY selects M = 7 among all M >= 2 (Lean F-26A,B,B'),
          and direct Weil-representation verification proves the 3 odd generations (chi_1, chi_2, chi_3) carry
          an EXACT faithful linear 3D irrep of PSL(2,7) (|<S_odd, T_odd>| = 168, irrep norm = 1.0000000000)!
        - Part B: Exact discrete Z_2 Wilson-line no-go on M = 7 (Lean F-26C): all 3 nontrivial twists (alpha, beta) != (0,0)
          either move d_R's active fixed point off Q_L's z_top=(1/2,1/2) or break N_g = 3 -> 4 [T/✗];
-         conversely, complex modular tau = 0.25 + 1.5i in strictly zero-brane 2HDM boosts J_CP by 50,000x
-         (2.3e-10 -> 1.11e-5 vs SM 3.1e-5) and |V_cb| by 5-10x while preserving r_d = [2.4e-3, 1.8e-2, 1] [C/P].
-       - Part C: Exact 2-loop SM Higgs quartic running crosses zero at mu_inst = 3.5-5.3e10 GeV right at UHM's
+         conversely, at purely imaginary tau=1.5i the Yukawa tensor is purely real (exact CP-conserving vacuum J_CP = 0),
+         whereas complex modular tau = 0.25 + 1.5i in strictly zero-brane 2HDM explicitly breaks modular CP to generate
+         J_CP = 1.11e-5 (vs SM 3.1e-5) and raises |V_cb| 5-10x (0.003 -> 0.015-0.030) while preserving r_d = [2.4e-3, 1.8e-2, 1]
+         (honestly degrading r_u from [1.2e-6, 4.1e-3, 1] to [5.3e-4, 1.0e-2, 1] [C/P]).
+       - Part C: Exact 2-loop SM Higgs quartic running crosses zero at mu_inst = 5.28e10 GeV right at UHM's
          Pati-Salam scale M_PS = 9.19e10 GeV (where Delta_R stabilizes lambda_H [C]), YET finite MS-bar Vissani
-         threshold shifts from UHM's own M_N3 ~ 3e11 GeV and M_GUT ~ 10^16 GeV enforce irreducible tuning
-         Delta_EW >= 10^17 (M_N_vissani <= 7.21e6 GeV, Lean F-26D) [T/✗/P].
+         threshold shifts from UHM's own M_N3 = 3.005e11 GeV (y_nu3 = 0.542 -> Delta_EW = 8.58e16; y = 1 -> 1.45-2.91e17)
+         and M_GUT ~ 10^16 GeV enforce irreducible tuning (M_N_vissani <= 5.73-7.21e6 GeV, Lean F-26D) [T/✗/P].
 
   V7.4 (Front P4 - Exact Multi-Flavor/Resonant Boltzmann Leptogenesis in Non-PQ Chain A2 &
         Z_2^DM = (-1)^{3(B-L)+2s} Dark Matter Selection with 2-Loop RGE, Relic Omega h^2 = 0.120 & LZ 2024):
-       - Part A: Exact 2-flavor Nardi A^(2) coupled Boltzmann ODEs (N_1 + N_2 + N_3, exact Takagi U_R!) in non-PQ
-         Chain A2 strictly below Super-K M_N3 <= 3.06e11 GeV and DESI sum(m_nu) < 0.072 eV:
-         1) Hierarchical regime (M2/M1 = 13.7): 2-flavor boosts eta_B by 56x (-8.1e-14 -> +4.58e-12), still 130x short [C/P];
-         2) Mildly quasi-degenerate / resonant regime (M2/M1 ~ 1.0004, naturally realized in B = (M_d - M_e)/4):
-            simultaneously achieves chi2 = 0.000, M_N3 <= 3.06e11 GeV, DESI sum(m_nu) = 0.065 eV, AND exact
-            Planck eta_2fl = +6.12e-10 (while unflavored eta_1fl is ~5x too low -> BOTH mild degeneracy and flavor required, Lean F-27B,C)!
+       - Part A: Exact 2-flavor coupled Boltzmann ODEs (N_1 + N_2 + N_3, exact Takagi U_R!) WITH full Higgs asymmetry
+         C^(2) = C^l + (1/2) C^H = [[-499/589, 8/589], [-52/589, -502/589]] + off-shell Delta L = 2 washout
+         (cross-checked against exact 1-active-(e,mu) SM C_tot = [[-348/359, -20/359], [-20/359, -290/359]])
+         in non-PQ Chain A2 strictly below Super-K M_N3 <= 3.06e11 GeV and DESI sum(m_nu) < 0.072 eV:
+         1) Hierarchical regime (M2/M1 = 13.7): 2-flavor boosts eta_B by 13.43x (-8.13e-14 -> +1.09e-12), still 560x short [C/P];
+         2) Mildly quasi-degenerate perturbative regime (M2/M1 = 1.01414, 1.41% splitting, (M2-M1)/Gam2 = 9.69 >> 1,
+            collinearity |<l1_em|l2_em>| = 0.9990): simultaneously achieves chi2 = 0.000000, M_N3 = 3.005e11 <= 3.06e11 GeV,
+            DESI sum(m_nu) = 0.0650 eV, AND exact Planck eta_2fl = +6.1200e-10 (cross-check C_tot: +5.69e-10, within 7.1%;
+            2.69x boost over unflavored +2.28e-10 -> BOTH mild degeneracy and flavor required, Lean F-27B,C)!
        - Part B: Exact Z_2^DM = (-1)^{3(B-L)+2s} parity theorem (Lean F-27A): minimal Chain A2 has ZERO P_DM=-1 states [T/✗].
-         2-loop Machacek-Vaughn RGE + Super-K tau_p + thermal freeze-out + LZ 2024 audit of all 3 minimal Spin(10) P_DM=-1 extensions:
-         - 10_F doublet (1.1 TeV): excluded by BOTH Super-K (tau_p=3.6e28 yr) and LZ 2024 (10^8x) [✗];
-         - Isolated 45_F triplet (1,3,0) (2.8 TeV): excluded by Super-K (tau_p=1.3e29 yr) [✗], YET split 45_F
-           [(1,3,0)@2.8 TeV + (8,1,0)@10^9 GeV] RESCUES unification (M_GUT=7.29e15, tau_p=4.81e34 yr > Super-K!),
-           gives Omega h^2 = 0.120 & 1-loop sigma_SI ~ 2.3e-47 cm^2 < LZ 2024 (6.5e-47 cm^2) [C];
-         - 16_H scalar singlet (1,1,0): preserves Chain A2 tau_p = 9.08e34 yr, high-mass plateau sigma_SI = 4.07e-46 cm^2
-           excluded by LZ 2024 across perturbative TeV masses, leaving ONLY the Higgs-funnel resonance m_phi ~ 62.5 GeV [C/✗].
+         2-loop Machacek-Vaughn RGE + Super-K tau_p + dim-6 octet BBN lifetime + thermal Omega h^2 + LZ 2024 audit:
+         - 10_F doublet (1.1 TeV): excluded by BOTH Super-K (tau_p=3.59e28 yr) and LZ 2024 (10^8x) [✗];
+         - Isolated 45_F triplet (1,3,0) (2.8 TeV): excluded by Super-K (tau_p=1.28e29 yr) [✗], YET split 45_F
+           [(1,3,0)@2.8 TeV + (8,1,0)@10^9 GeV] rescues unification in a razor-thin window M_8 ~ [6e8, 1.2e9] GeV
+           (tau_p = 4.81e34 yr > Super-K, dim-6 octet lifetime tau_8 = 0.11 s < 1 s BBN; lower M_8 fails BBN, higher fails Super-K!),
+           gives Omega h^2 = 0.120 & 1-loop sigma_SI ~ 2.3e-47 cm^2 < LZ 2024 (caveats: shifts M_PS -> 6.47e14 GeV breaking
+           Higgs criticality coincidence, a_G^-1 -> 39.05, and 2.8 TeV wino requires cored GC profile vs H.E.S.S. [C/P]);
+         - 16_H complex scalar singlet (1,1,0): preserves Chain A2 tau_p = 9.08e34 yr, high-mass plateau
+           sigma_SI = 1.63e-45 cm^2 (real singlet: 8.13e-46 cm^2) strongly excluded by LZ 2024 across perturbative TeV masses,
+           leaving ONLY the narrow Higgs-funnel resonance m_phi ~ 62.5 GeV [C/✗].
 """
 
 import numpy as np
@@ -338,30 +347,42 @@ def suite_v72_dark_energy_uhm_origin():
     comm_roots = [r for r in roots_D5 if np.all(H_SM @ r == 0)]
     assert len(roots_D5) == 40 and np.linalg.matrix_rank(H_SM) == 4 and len(comm_roots) == 0
     print(f"  [V7.2.A] Exact Spin(10) Centralizer Audit (Lean F-25A): 0/40 roots of D_5 commute with G_SM Cartan!")
-    print("           -> SHARP NO-GO [T/✗]: Cent_{Spin(10)}(G_SM) = U(1)_{B-L} has ZERO non-Abelian dark gauge factor.")
+    print("           -> SHARP NO-GO [T/✗]: Cent_{so(10)}(g_SM) = u(1)_Y (+) u(1)_{B-L} has ZERO non-Abelian dark gauge factor.")
     print("              Single-group E_7 (Spin(10)xSU(2)) and E_8 (Spin(10)xSU(4)) couple SU(2)/SU(4) to chiral 16_+!")
 
     # Part B: Unbroken confining (IR) vs Higgsed/constrained (UV at M_GUT) pure YM SU(N_d):
     print("  [V7.2.B] Unbroken Confining (Lambda_d = 2.236 meV) vs Higgsed/Constrained Pure YM SU(N_d) at M_GUT:")
     ln_r = np.log(M_GUT / Lambda_DE)
-    a_conf, a_hig = {}, {}
+    a_conf, a_conf_ode, a_hig = {}, {}, {}
     for Nd in [2, 3, 4]:
         b0 = (11.0 / 3.0) * Nd; b1 = (34.0 / 3.0) * (Nd**2)
+        a_1loop = b0 * ln_r / (2.0 * np.pi)
+        # Exact PDG 2-loop Lambda_MSbar formula: ln(mu/Lambda) = x - (b1/(2 b0^2)) ln(x), where x = 2pi/(b0 alpha)!
         lo, hi = 10.0, 300.0
-        for _ in range(60):
+        for _ in range(70):
             mid = 0.5 * (lo + hi); x = 2.0 * np.pi * mid / b0
-            if x + (b1 / (2.0 * b0**2)) * np.log(x) - ln_r < 0: lo = mid
+            if x - (b1 / (2.0 * b0**2)) * np.log(x) - ln_r < 0: lo = mid
             else: hi = mid
         a_conf[Nd] = 0.5 * (lo + hi)
+        # Cross-check by direct numerical integration of the exact 2-loop RGE down to alpha_d(Lambda_d) = 1:
+        lo_o, hi_o = 10.0, 300.0
+        for _ in range(50):
+            mid = 0.5 * (lo_o + hi_o)
+            sol_d = solve_ivp(lambda t, y: [-(b0 / (2.0 * np.pi) + b1 / (8.0 * np.pi**2 * max(y[0], 1e-6)))],
+                              [0.0, ln_r], [mid], rtol=1e-10, atol=1e-12)
+            if sol_d.y[0, -1] < 1.0: lo_o = mid
+            else: hi_o = mid
+        a_conf_ode[Nd] = 0.5 * (lo_o + hi_o)
+        assert a_conf[Nd] > a_1loop and a_conf_ode[Nd] > a_conf[Nd]  # b1 > 0 strictly increases alpha^-1 above 1-loop!
         lo, hi = 20.0, 80.0
         for _ in range(60):
             mid = 0.5 * (lo + hi); S = 2.0 * np.pi * mid
             if 2.0 * Nd * np.log10(S) + 4.0 * np.log10(M_GUT) - S / np.log(10.0) > np.log10(rho_L0): lo = mid
             else: hi = mid
         a_hig[Nd] = 0.5 * (lo + hi)
-        print(f"           - SU({Nd})_dark: confining alpha_d^-1(M_GUT) = {a_conf[Nd]:6.2f} [✗ vs 44-45] | "
+        print(f"           - SU({Nd})_dark: confining alpha_d^-1(M_GUT) = {a_conf[Nd]:6.2f} (ODE@a=1: {a_conf_ode[Nd]:6.2f}, 1L: {a_1loop:6.2f}) [✗ vs 44-45] | "
               f"Higgsed@M_GUT alpha_d^-1 = {a_hig[Nd]:5.2f} (S={2*np.pi*a_hig[Nd]:.1f})")
-    assert a_conf[2] > 70.0 and 43.0 < a_hig[2] < 45.5
+    assert a_conf[2] > 76.0 and 43.0 < a_hig[2] < 45.5
     print("           -> STRIKING MATCH [C]: Higgsed SU(2)_dark at v_d=M_GUT needs alpha_d^-1=44.23, matching UHM's")
     print("              2-loop Chain A2 alpha_GUT^-1=45.13 to ~2% (yet requires a decoupled dark gauge factor outside Spin(10)!)")
 
@@ -470,7 +491,7 @@ def suite_v73_m7_modular_2hdm_and_hierarchy():
             assert len(idx_o) == 4  # Breaks N_g = 3!
         print(f"           - Discrete twist ({al:.1f},{be:.1f}): N_odd={len(idx_o)}, FP densities={dens}")
 
-    def solve_2hdm_tau(tau, cu, cd, lud, n_trials=6):
+    def solve_2hdm_tau(tau, cu, cd, lud, n_trials=6, real_only=False):
         pM = [psi_char(j, 7, X, Y, tau) for j in range(7)]
         chi = [(pM[a] - pM[7 - a]) / np.sqrt(2.0) for a in range(1, 4)]
         pH = [psi_char(k, 14, X, Y, tau) for k in range(14)]
@@ -479,8 +500,15 @@ def suite_v73_m7_modular_2hdm_and_hierarchy():
         K_yuk = np.einsum("aij,bij->ab", Y_all.conj(), Y_all)
         h_f = h_ev.reshape(8, -1)
         rng = np.random.default_rng(741)
-        def obj(x32):
-            vu = x32[:8] + 1j * x32[8:16]; vd = x32[16:24] + 1j * x32[24:32]
+        dim_x = 16 if real_only else 32
+        def unpack_v(xv):
+            if real_only:
+                vu = xv[:8].astype(complex); vd = xv[8:16].astype(complex)
+            else:
+                vu = xv[:8] + 1j * xv[8:16]; vd = xv[16:24] + 1j * xv[24:32]
+            return vu, vd
+        def obj(xv):
+            vu, vd = unpack_v(xv)
             nu, nd = np.linalg.norm(vu), np.linalg.norm(vd)
             if nu < 1e-12 or nd < 1e-12: return 1e9
             vu /= nu; vd /= nd
@@ -489,25 +517,28 @@ def suite_v73_m7_modular_2hdm_and_hierarchy():
                     - cu * float(np.real(vu.conj() @ K_yuk @ vu)) - cd * float(np.real(vd.conj() @ K_yuk @ vd)))
         bf, bvu, bvd = 1e18, None, None
         for _ in range(n_trials):
-            r = minimize(obj, rng.normal(size=32), method="BFGS", options={"gtol": 1e-6, "maxiter": 250})
+            r = minimize(obj, rng.normal(size=dim_x), method="BFGS", options={"gtol": 1e-7, "maxiter": 300})
             if r.fun < bf:
                 bf = r.fun
-                vu = r.x[:8] + 1j * r.x[8:16]; vd = r.x[16:24] + 1j * r.x[24:32]
+                vu, vd = unpack_v(r.x)
                 bvu = vu / np.linalg.norm(vu); bvd = vd / np.linalg.norm(vd)
         Mu = np.tensordot(bvu.conj(), Y_all, axes=(0, 0)); Md = np.tensordot(bvd.conj(), Y_all, axes=(0, 0))
         Uu, su, _ = svd(Mu); iu = np.argsort(su); su = su[iu]; Uu = Uu[:, iu]
         Ud, sd, _ = svd(Md); id_ = np.argsort(sd); sd = sd[id_]; Ud = Ud[:, id_]
         V = Uu.conj().T @ Ud
         J = float(abs(np.imag(V[0,1]*V[1,2]*np.conj(V[0,2])*np.conj(V[1,1]))))
-        return su/su[-1], sd/sd[-1], float(abs(V[0,1])), float(abs(V[1,2])), float(abs(V[0,2])), J
+        return bf, float(np.max(np.abs(Y_all.imag))), su/su[-1], sd/sd[-1], float(abs(V[0,1])), float(abs(V[1,2])), float(abs(V[0,2])), J
 
-    ru0, rd0, vus0, vcb0, vub0, J0 = solve_2hdm_tau(1.5j, 12.0, 9.0, 0.05)
-    ru1, rd1, vus1, vcb1, vub1, J1 = solve_2hdm_tau(0.25 + 1.5j, 12.0, 9.0, 0.05)
-    ru2, rd2, vus2, vcb2, vub2, J2 = solve_2hdm_tau(0.35 + 1.35j, 12.0, 8.5, 0.10)
+    f0_r, imY0, ru0, rd0, vus0, vcb0, vub0, J0_r = solve_2hdm_tau(1.5j, 12.0, 9.0, 0.05, real_only=True)
+    f0_c, _, _, _, _, _, _, J0_c = solve_2hdm_tau(1.5j, 12.0, 9.0, 0.05, real_only=False)
+    _, _, ru1, rd1, vus1, vcb1, vub1, J1 = solve_2hdm_tau(0.25 + 1.5j, 12.0, 9.0, 0.05)
+    _, _, ru2, rd2, vus2, vcb2, vub2, J2 = solve_2hdm_tau(0.35 + 1.35j, 12.0, 8.5, 0.10)
+    # At purely imaginary tau=1.5i, Y_all is purely real and the real CP-conserving vacuum attains the exact global minimum (J_CP = 0)!
+    assert imY0 < 1e-15 and abs(f0_r - f0_c) < 1e-9 and f0_r <= f0_c + 1e-11 and J0_r < 1e-18 and J0_c < 1e-8
     assert J1 > 5e-6 and vcb1 > 4.0 * vcb0 and rd1[1] < 0.03
-    print(f"           - Zero-brane 2HDM tau=1.5i (v6):       r_d=[{rd0[0]:.1e},{rd0[1]:.1e},1] | |Vus|={vus0:.3f} |Vcb|={vcb0:.3f} |Vub|={vub0:.4f} J={J0:.2e}")
-    print(f"           - Zero-brane 2HDM tau=0.25+1.5i:       r_d=[{rd1[0]:.1e},{rd1[1]:.1e},1] | |Vus|={vus1:.3f} |Vcb|={vcb1:.3f} |Vub|={vub1:.4f} J={J1:.2e} ({J1/max(1e-15,J0):.0f}x J_CP boost!)")
-    print(f"           - Zero-brane 2HDM tau=0.35+1.35i:      r_d=[{rd2[0]:.1e},{rd2[1]:.1e},1] | |Vus|={vus2:.3f} |Vcb|={vcb2:.3f} |Vub|={vub2:.4f} J={J2:.2e}")
+    print(f"           - Zero-brane 2HDM tau=1.5i (v6):       r_u=[{ru0[0]:.1e},{ru0[1]:.1e},1] r_d=[{rd0[0]:.1e},{rd0[1]:.1e},1] | |Vus|={vus0:.3f} |Vcb|={vcb0:.3f} |Vub|={vub0:.4f} J=0 (exact real vacuum; max|Im Y|={imY0:.1e}, complex-BFGS noise={J0_c:.1e})")
+    print(f"           - Zero-brane 2HDM tau=0.25+1.5i:       r_u=[{ru1[0]:.1e},{ru1[1]:.1e},1] r_d=[{rd1[0]:.1e},{rd1[1]:.1e},1] | |Vus|={vus1:.3f} |Vcb|={vcb1:.3f} |Vub|={vub1:.4f} J={J1:.2e} (modular CP broken: 0 -> 1.11e-5 vs SM 3.1e-5; honest m_u/m_t residual [P]!)")
+    print(f"           - Zero-brane 2HDM tau=0.35+1.35i:      r_u=[{ru2[0]:.1e},{ru2[1]:.1e},1] r_d=[{rd2[0]:.1e},{rd2[1]:.1e},1] | |Vus|={vus2:.3f} |Vcb|={vcb2:.3f} |Vub|={vub2:.4f} J={J2:.2e}")
 
     # Part C: Exact 2-Loop SM Higgs Quartic Running & Vissani EW Hierarchy Obstruction (Lean F-26D):
     def run_sm_higgs_2loop(mt_pole=172.57, mh_pole=125.25):
@@ -537,13 +568,18 @@ def suite_v73_m7_modular_2hdm_and_hierarchy():
         return float(np.exp(ts[idx[0]])), float(sol.sol(np.log(9.192e10))[4]), float(sol.sol(np.log(2.435e18))[4])
 
     mu_i, l_ps, l_pl = run_sm_higgs_2loop(172.57, 125.25)
-    m_h = 125.25; M_N_vissani = ((4.0 * np.pi**2 * (m_h**2) * (174.104**2)) / 0.05e-9)**(1.0 / 3.0)
-    Delta_NR = ((3.0e11)**2 / (4.0 * np.pi**2)) / (m_h**2)
-    assert 1e10 < mu_i < 2e11 and Delta_NR > 1e17
+    m_h = 125.25
+    # Exact Vissani (hep-ph/9709409): |delta m_H^2| = y^2 M_N^2 / (4 pi^2), and physical m_h^2 = 2 |m_H^2| => |delta m_h^2| = y^2 M_N^2 / (2 pi^2):
+    M_N_vissani_mh = ((2.0 * np.pi**2 * (m_h**2) * (174.104**2)) / 0.05e-9)**(1.0 / 3.0)
+    M_N_vissani_mH = ((4.0 * np.pi**2 * (m_h**2) * (174.104**2)) / 0.05e-9)**(1.0 / 3.0)
+    Delta_NR_y1 = ((3.0e11)**2 / (4.0 * np.pi**2)) / (m_h**2)
+    Delta_NR_uhm = ((0.5423**2) * (3.005e11)**2 / (2.0 * np.pi**2)) / (m_h**2)
+    assert 1e10 < mu_i < 2e11 and Delta_NR_y1 > 1e17 and Delta_NR_uhm > 5e16
     print("  [V7.3.C] 2-Loop SM Higgs Criticality at M_PS & Finite MS-bar Vissani Hierarchy Obstruction (Lean F-26D):")
     print(f"           - PDG 2024 m_t=172.57 GeV: lambda_H crosses 0 at mu_inst = {mu_i:.2e} GeV (lam(M_PS)={l_ps:+.5f}, lam(M_Pl)={l_pl:+.5f})")
     print(f"             -> UHM's Pati-Salam Delta_R=(10,1,3) threshold sits RIGHT at mu_inst ~ 10^10-10^11 GeV, curing vacuum stability [C]!")
-    print(f"           - Finite MS-bar Vissani bound: M_N <= {M_N_vissani:.2e} GeV; UHM's M_N3 ~ 3e11 GeV forces Delta_EW >= {Delta_NR:.2e} [T/✗/P]!\n")
+    print(f"           - Finite MS-bar Vissani bound: M_N <= {M_N_vissani_mh:.2e} GeV (|dm_h^2|<=m_h^2; {M_N_vissani_mH:.2e} GeV conservative);")
+    print(f"             UHM's actual Chain A2 M_N3=3.00e11 GeV (y_nu3=0.542) forces Delta_EW = {Delta_NR_uhm:.2e} ({Delta_NR_y1:.2e} for y=1) [T/✗/P]!\n")
 
 
 # ==============================================================================
@@ -634,9 +670,24 @@ def suite_v74_flavored_leptogenesis_and_dm(x_res_star, x_hier_star):
 
         K_tot = np.sum(K_mat, axis=1); eps_tot = np.sum(eps_mat, axis=1)
         r2 = M_vals[1] / M_vals[0]; r3 = M_vals[2] / M_vals[0]
+        # Verify collinearity of N1 and N2 decay states in the coherent (e, mu) subspace:
+        l1_em = Y_fl[:2, 0] / np.linalg.norm(Y_fl[:2, 0])
+        l2_em = Y_fl[:2, 1] / np.linalg.norm(Y_fl[:2, 1])
+        ov_em = float(abs(np.vdot(l1_em, l2_em)))
+        # Low-energy off-shell Delta L = 2 scattering washout rate per flavor (Buchmuller-Di Bari-Plumacher):
+        M_nu_eV = -(Y_fl * v_EW) @ np.diag(1.0 / M_vals) @ (Y_fl * v_EW).T * 1e9
+        m2_fl = np.sum(np.abs(M_nu_eV)**2, axis=1)
+        w_dL2_2 = np.array([m2_fl[0] + m2_fl[1], m2_fl[2]]) * (M_vals[0] / 1e10) * (0.186 / (0.1**2))
+        w_dL2_1 = np.array([float(np.sum(m2_fl))]) * (M_vals[0] / 1e10) * (0.186 / (0.1**2))
+
         A1 = np.array([[-1.0]])
-        A2 = np.array([[-417.0/589.0, 120.0/589.0], [30.0/589.0, -390.0/589.0]])
-        def integ(A, e1, e2, e3, P1, P2, P3):
+        # Complete 2-flavor spectator washout matrix WITH Higgs asymmetry C^(2) = C^l + (1/2) C^H
+        # (Davidson-Nardi-Nir 0802.2962 / Fong-Nardi-Riotto 1301.3062):
+        #   C^l = [[-417/589, 120/589], [30/589, -390/589]], (1/2) C^H = [[-82/589, -112/589]]
+        C2_nardi = np.array([[-499.0/589.0, 8.0/589.0], [-52.0/589.0, -502.0/589.0]])
+        # Independent cross-check: exact SM t,b,c,s,tau 1-active-coherent-(e,mu) matrix WITH Higgs asymmetry:
+        C2_exact = np.array([[-348.0/359.0, -20.0/359.0], [-20.0/359.0, -290.0/359.0]])
+        def integ(A, e1, e2, e3, P1, P2, P3, wd2):
             z_start = min(0.05, 0.05 / max(1.0, r3)); z_end = 40.0
             def rates(z):
                 def rt(Ki, ri):
@@ -649,16 +700,18 @@ def suite_v74_flavored_leptogenesis_and_dm(x_res_star, x_hier_star):
                 z = np.exp(u); N1, N2, N3 = y[0], y[1], y[2]; ND = y[3:]
                 (Neq1, D1, W1), (Neq2, D2, W2), (Neq3, D3, W3) = rates(z)
                 AN = A @ ND
-                dND = -e1*D1*(N1-Neq1) - e2*D2*(N2-Neq2) - e3*D3*(N3-Neq3) + (P1*W1 + P2*W2 + P3*W3)*AN
+                Wtot = P1*W1 + P2*W2 + P3*W3 + wd2 / (z * z)
+                dND = -e1*D1*(N1-Neq1) - e2*D2*(N2-Neq2) - e3*D3*(N3-Neq3) + Wtot*AN
                 return np.concatenate(([z*(-D1*(N1-Neq1)), z*(-D2*(N2-Neq2)), z*(-D3*(N3-Neq3))], z*dND))
             m_fl = len(e1)
             def jac(u, y):
                 z = np.exp(u)
                 (_, D1, W1), (_, D2, W2), (_, D3, W3) = rates(z)
+                Wtot = P1*W1 + P2*W2 + P3*W3 + wd2 / (z * z)
                 J = np.zeros((3 + m_fl, 3 + m_fl))
                 J[0, 0] = -z * D1; J[1, 1] = -z * D2; J[2, 2] = -z * D3
                 J[3:, 0] = -z * D1 * e1; J[3:, 1] = -z * D2 * e2; J[3:, 2] = -z * D3 * e3
-                J[3:, 3:] = z * ((P1*W1 + P2*W2 + P3*W3)[:, None] * A)
+                J[3:, 3:] = z * (Wtot[:, None] * A)
                 return J
             y0 = np.zeros(3 + m_fl)
             y0[0] = 0.5*(z_start**2)*kn(2, z_start)
@@ -667,33 +720,35 @@ def suite_v74_flavored_leptogenesis_and_dm(x_res_star, x_hier_star):
             sol = solve_ivp(rhs, [np.log(z_start), np.log(z_end)], y0, method="Radau", jac=jac, rtol=1e-7, atol=1e-14)
             return 0.96e-2 * sol.y[3:, -1]
         e1_v = integ(A1, np.array([eps_tot[0]]), np.array([eps_tot[1]]), np.array([eps_tot[2]]),
-                     np.array([1.0]), np.array([1.0]), np.array([1.0]))
+                     np.array([1.0]), np.array([1.0]), np.array([1.0]), w_dL2_1)
         e1_2 = np.array([eps_mat[0,0]+eps_mat[0,1], eps_mat[0,2]])
         e2_2 = np.array([eps_mat[1,0]+eps_mat[1,1], eps_mat[1,2]])
         e3_2 = np.array([eps_mat[2,0]+eps_mat[2,1], eps_mat[2,2]])
         P1_2 = np.array([(K_mat[0,0]+K_mat[0,1])/K_tot[0], K_mat[0,2]/K_tot[0]])
         P2_2 = np.array([(K_mat[1,0]+K_mat[1,1])/K_tot[1], K_mat[1,2]/K_tot[1]])
         P3_2 = np.array([(K_mat[2,0]+K_mat[2,1])/K_tot[2], K_mat[2,2]/K_tot[2]])
-        e2_v = integ(A2, e1_2, e2_2, e3_2, P1_2, P2_2, P3_2)
+        e2_v = integ(C2_nardi, e1_2, e2_2, e3_2, P1_2, P2_2, P3_2, w_dL2_2)
+        e2_x = integ(C2_exact, e1_2, e2_2, e3_2, P1_2, P2_2, P3_2, w_dL2_2)
         return {
             "c_nu": float(c_nu), "ru": ru, "sum_m": float(np.sum(m_nu)), "J_pmns": J_pmns,
-            "s12sq": s12sq, "s23sq": s23sq, "s13sq": s13sq, "r_dm": float(r_dm),
+            "s12sq": s12sq, "s23sq": s23sq, "s13sq": s13sq, "r_dm": float(r_dm), "ov_em": ov_em,
             "M": M_vals, "K": K_mat, "Gam": Gamma, "eta_1fl": float(e1_v[0]),
-            "eta_2fl": float(np.sum(e2_v)), "eta_2fl_vec": e2_v,
+            "eta_2fl": float(np.sum(e2_v)), "eta_2fl_vec": e2_v, "eta_2fl_exactSM": float(np.sum(e2_x)),
         }
 
-    print("  [V7.4.A] Exact Coupled 2-Flavor Nardi A^(2) Boltzmann Leptogenesis in Non-PQ Chain A2 (Lean F-27B,C):")
+    print("  [V7.4.A] Exact Coupled 2-Flavor Boltzmann Leptogenesis WITH Higgs C^H + Delta L=2 in Non-PQ Chain A2 (Lean F-27B,C):")
     h_res = eval_and_lepto(x_hier_star)
     r_res = eval_and_lepto(x_res_star)
     assert h_res["c_nu"] < 0.05 and h_res["M"][2] <= M_PS_cap and h_res["sum_m"] < 0.072
     assert r_res["c_nu"] < 0.01 and r_res["M"][2] <= M_PS_cap and r_res["sum_m"] < 0.072
-    assert (r_res["M"][1] - r_res["M"][0]) / r_res["Gam"][1] > 5.0  # Controlled perturbative regime (M2-M1) >> Gamma2!
-    assert abs(r_res["eta_2fl"] - 6.12e-10) / 6.12e-10 < 0.01 and abs(r_res["eta_1fl"]) < 0.30 * 6.12e-10
-    for tag, d in [("Hierarchical (M2/M1=13.7)", h_res), ("Mildly Quasi-Degenerate (1.36%)", r_res)]:
+    assert (r_res["M"][1] - r_res["M"][0]) / r_res["Gam"][1] > 8.0 and r_res["ov_em"] > 0.99  # Perturbative & collinear (e,mu)!
+    assert abs(r_res["eta_2fl"] - 6.12e-10) / 6.12e-10 < 0.005 and abs(r_res["eta_1fl"]) < 0.45 * 6.12e-10
+    assert abs(r_res["eta_2fl_exactSM"] - 6.12e-10) / 6.12e-10 < 0.10
+    for tag, d in [("Hierarchical (M2/M1=13.7)", h_res), ("Mildly Quasi-Degenerate (1.41%)", r_res)]:
         M = d["M"]
-        print(f"           - {tag}: chi2_nu={d['c_nu']:.6f}, r_u={d['ru']:+.2f}, sum_m={d['sum_m']:.4f} eV (<0.072 DESI), J_PMNS={d['J_pmns']:.4f}")
-        print(f"             M_N=[{M[0]:.3e}, {M[1]:.3e}, {M[2]:.3e}] GeV (<=3.06e11 Super-K!), M2/M1={M[1]/M[0]:.5f} ((M2-M1)/Gam2={(M[1]-M[0])/d['Gam'][1]:.1f})")
-        print(f"             Boltzmann ODE: eta_1fl={d['eta_1fl']:+.4e} ---> eta_2fl={d['eta_2fl']:+.4e} (Planck = +6.1200e-10, boost={abs(d['eta_2fl']/d['eta_1fl']):.2f}x)")
+        print(f"           - {tag}: chi2_nu={d['c_nu']:.6f}, r_u={d['ru']:+.2f}, sum_m={d['sum_m']:.4f} eV (<0.072 DESI), J_PMNS={d['J_pmns']:.4f}, |<l1|l2>|_em={d['ov_em']:.4f}")
+        print(f"             M_N=[{M[0]:.3e}, {M[1]:.3e}, {M[2]:.3e}] GeV (<=3.06e11 Super-K!), M2/M1={M[1]/M[0]:.5f} ((M2-M1)/Gam2={(M[1]-M[0])/d['Gam'][1]:.2f})")
+        print(f"             Boltzmann ODE (C^l+C^H/2+dL2): eta_1fl={d['eta_1fl']:+.4e} ---> eta_2fl={d['eta_2fl']:+.4e} (C_exactSM={d['eta_2fl_exactSM']:+.4e}, Planck=+6.1200e-10, boost={abs(d['eta_2fl']/d['eta_1fl']):.2f}x)")
 
     # Part B: Exact Z_2^DM = (-1)^{3(B-L)+2s} Classification, 2-Loop RGE, Relic Omega h^2=0.120 & LZ 2024:
     print("  [V7.4.B] Exact Z_2^DM = (-1)^{3(B-L)+2s} Dark Matter Audit (2-Loop RGE, Super-K tau_p, Omega h^2=0.120, LZ 2024):")
@@ -763,30 +818,54 @@ def suite_v74_flavored_leptogenesis_and_dm(x_res_star, x_hier_star):
     _, _, _, tp_min  = unif_case("Minimal Chain A2 / 16_H singlet (1,1,0)", [(None, z3, z33)], [])
     _, _, _, tp_10F  = unif_case("10_F doublet (1,2,1/2) @ 1.1 TeV", [(np.log(1100.0), z3, z33), (None, db_d, dB_d)], [(r4_1,r2_2,r2_2)])
     _, _, _, tp_45i  = unif_case("45_F isolated triplet (1,3,0) @ 2.8 TeV", [(np.log(2800.0), z3, z33), (None, db_t, dB_t)], [(r4_1,r2_3,r2_1)])
-    _, _, _, tp_45s  = unif_case("45_F split (1,3,0)@2.8TeV+(8,1,0)@1e9GeV",
+    mps_45s, mg_45s, ag_45s, tp_45s = unif_case("45_F split (1,3,0)@2.8TeV+(8,1,0)@1e9GeV",
                                  [(np.log(2800.0), z3, z33), (np.log(1e9), db_t, dB_t), (None, db_t+db_o, dB_t+dB_o)],
                                  [(r4_1,r2_3,r2_1), (r4_15,r2_1,r2_1)])
+    # Explicit BBN vs Super-K octet lifetime audit for Z2^DM-odd (8,1,0) decaying via dim-6 M_GUT X/Y exchange:
+    _, mg_1e8, ag_1e8, tp_1e8 = unif_case("45_F split check: (8,1,0) @ 1e8 GeV",
+                                 [(np.log(2800.0), z3, z33), (np.log(1e8), db_t, dB_t), (None, db_t+db_o, dB_t+dB_o)],
+                                 [(r4_1,r2_3,r2_1), (r4_15,r2_1,r2_1)])
+    _, mg_1e10, ag_1e10, tp_1e10 = unif_case("45_F split check: (8,1,0) @ 1e10 GeV",
+                                 [(np.log(2800.0), z3, z33), (np.log(1e10), db_t, dB_t), (None, db_t+db_o, dB_t+dB_o)],
+                                 [(r4_1,r2_3,r2_1), (r4_15,r2_1,r2_1)])
+    def octet_tau_s(M8, M_GUT, aG_inv):
+        gG2 = 4.0 * np.pi / aG_inv
+        Gam8 = (gG2**2 / (192.0 * np.pi**3)) * (M8**5 / M_GUT**4)
+        return 6.582119569e-25 / Gam8
+    tau8_1e8  = octet_tau_s(1e8, mg_1e8, ag_1e8)
+    tau8_1e9  = octet_tau_s(1e9, mg_45s, ag_45s)
+    tau8_1e10 = octet_tau_s(1e10, mg_1e10, ag_1e10)
     assert tp_min > 2.4e34 and tp_10F < 1e30 and tp_45i < 1e30 and tp_45s > 2.4e34
+    assert tau8_1e8 > 1e6 and tau8_1e9 < 1.0 and tp_1e10 < 1e33  # Razor-thin BBN + Super-K window around M8 ~ 1e9 GeV!
 
     sv_req = (1.07e9 * 26.0) / (1.2209e19 * np.sqrt(106.75) * 0.120)
     g2_sq = 4.0 * np.pi / 30.8; gY_sq = 4.0 * np.pi / 96.5
     M_wino = np.sqrt((37.0 * g2_sq**2) / (192.0 * np.pi * sv_req))
     M_higg = np.sqrt((21.0 * g2_sq**2 + 3.0 * g2_sq * gY_sq + 11.0 * gY_sq**2) / (512.0 * np.pi * sv_req))
-    sig_SI_16H = 2.0 * sv_req * ((0.30**2 * 0.9389**4) / (125.25**4)) * (1.97327e-14**2)
-    assert 2200 < M_wino < 2600 and 1000 < M_higg < 1300 and sig_SI_16H > 3.5e-46
+    # Exact high-mass Higgs-portal scalar singlet plateau (m_S >> m_h):
+    #   sigma_SI = lam_hS^2 f_N^2 m_N^4 / (4 pi m_S^2 m_h^4), <sigma v>_{SS*} = lam_hS^2 / (16 pi m_S^2)
+    #   Real scalar (self-conjugate):   sigma_SI / <sigma v> = 4 * f_N^2 m_N^4 / m_h^4
+    #   Complex 16_H (particle+antip.): <sigma v>_eff = (1/2) <sigma v>_{SS*} => factor 8!
+    sig_SI_real = 4.0 * sv_req * ((0.30**2 * 0.9389**4) / (125.25**4)) * (1.97327e-14**2)
+    sig_SI_16H  = 8.0 * sv_req * ((0.30**2 * 0.9389**4) / (125.25**4)) * (1.97327e-14**2)
+    assert 2200 < M_wino < 2600 and 1000 < M_higg < 1300 and 1.5e-45 < sig_SI_16H < 1.8e-45
+    print(f"           - Split 45_F octet BBN vs Super-K window: M8=1e8 -> tau8={tau8_1e8:.2e} s [✗ BBN]; "
+          f"M8=1e9 -> tau8={tau8_1e9:.2f} s (<1 s BBN PASS) & tau_p={tp_45s:.2e} yr [PASS]; M8=1e10 -> tau_p={tp_1e10:.2e} yr [✗ Super-K]!")
+    print(f"             Honest cross-suite caveats [P]: split 45_F shifts M_PS -> {mps_45s:.2e} GeV (above Higgs mu_inst=5.28e10 GeV) & a_G^-1 -> {ag_45s:.2f},")
+    print(f"             and a 2.8 TeV thermal wino triplet requires a cored Galactic Center DM profile to evade H.E.S.S. gamma-ray line bounds.")
     print(f"           - Thermal Omega h^2 = 0.120: 45_F triplet M_tree={M_wino:.0f} GeV (~2.8 TeV w/ Sommerfeld, 1-loop sigma_SI~2.3e-47 < LZ 2024!),")
     print(f"             10_F doublet M_tree={M_higg:.0f} GeV (excluded by Super-K & LZ 10^8x!), 16_H complex singlet high-mass plateau")
-    print(f"             sigma_SI={sig_SI_16H:.2e} cm^2 (excluded by LZ 2024 across perturbative TeV masses -> ONLY Higgs funnel ~62.5 GeV survives!)\n")
+    print(f"             sigma_SI={sig_SI_16H:.2e} cm^2 (real singlet: {sig_SI_real:.2e} cm^2; strongly excluded by LZ 2024 -> ONLY Higgs funnel ~62.5 GeV survives!)\n")
 
 
 if __name__ == "__main__":
     # Exact verified Chain A2 benchmark parameter vectors (14D: [Re(r_u), Im(r_u), e1, e2, a1, a2, b1, b2, th12, th23, th13, d_e, pe1, pe2]):
     X_HIER = np.array([0.5310066, -3.0752369, -9.5376196, -2.2452575, 1.3191036, -3.4103746, -8.5775392, 1.1066389,
                        0.8312934, -0.1382184, 0.175775, 2.8405643, 0.196354, -1.423149])
-    X_RES  = np.array([9.571029617290934, 6.352007227502666, 4.96012462460767, 0.036809245171428674,
-                       0.08069973477583184, -3.8229877149505267, 31.6007861132455, 3.384925446796613,
-                       0.35316654399068237, 0.15708231236010733, 0.0447317476083391, 1.093895670327911,
-                       0.10006002825917608, -1.0313936077702757])
+    X_RES  = np.array([9.587409961905237, 6.355312657619193, 4.9591945640579915, 0.03781705651210045,
+                       0.08099600169703325, -3.821229420606511, 31.66361313636991, 3.3798062379522493,
+                       0.35320991696984716, 0.1570194747521475, 0.04477352642186648, 1.0944032292676265,
+                       0.09989146798728185, -1.031259228693625])
     suite_v71_nonlinear_cubic_gravity_and_graph()
     suite_v72_dark_energy_uhm_origin()
     suite_v73_m7_modular_2hdm_and_hierarchy()
