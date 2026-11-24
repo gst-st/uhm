@@ -44,19 +44,22 @@ Suites:
                 H^+(14) (8 -> 7), enforcing 3-fold degenerate top singular values of K_d and destroying
                 down-quark hierarchy (m_s/m_b = 0.80..0.91, |V_ub| = 0.83..0.99 [✗])!
 
-  V10.3 (Front P4 — Full Besak-Bodeker s+p Wave 2D LPM Solver & PSL(2,7) -> D_4/S_3 RG Splitting):
+  V10.3 (Front P4 — Full Besak-Bodeker s+p Wave 2D LPM Solver [Boltzmann + Full Quantum FD/BE] & D_4 RG/Threshold Audit):
         - Exact finite-difference solution of BOTH s-wave and p-wave 2D radial impact-parameter LPM
           equations (Besak-Bodeker 2012) with Aurenche-Gelis-Zaraket HTL dipole collision kernel C(b),
-          adaptive b_max, and exact Gauss-Laguerre / Gauss-Legendre quadrature (zero free parameters,
-          zero piecewise cutoff!), validated in the free limit against exact 2-body thermal kinematics
-          (1 + a_l - a_h)*sqrt(lambda(1, a_l, a_h)) across x in [0.5, 20];
-        - Direct insertion of exact Besak-Bodeker f_LPM(x) into the 13-ODE dynamic-y_c(z) Chain A2
-          leptogenesis solver at UNMODIFIED X_RES (+6.026e-10, -1.53% vs Planck) + thermal-mass
-          sensitivity band (m_D +/-20%, m_H +/-10%) [T/C];
+          adaptive b_max, and 3-panel y-quadrature split cleanly across exact two-body threshold
+          endpoints (y_-, y_+) (zero free parameters, zero piecewise cutoff!), eliminating the x=1.0
+          free-limit discretization wobble to < 1e-14 (analytic) / < 0.4% (full numerical C=0 PDE);
+        - Full quantum Fermi-Dirac / Bose-Einstein statistical factors (1 - f_F(omega_l) + f_B(omega_phi))
+          with exact 4D relativistic boost-mapped energies omega_l(y), omega_phi(y) (reducing identically
+          to collinear yE, (1-y)E for p >> M_N, finite O(1) IR/collinear endpoints, validated against the
+          exact closed-form 2-body quantum thermal integral at C=0), plugged directly into the 13-ODE
+          dynamic-y_c(z) solver at UNMODIFIED X_RES alongside the Boltzmann baseline & thermal-mass band [T/C];
         - Exact PSL(2,7) -> S_4 -> D_4 / S_3 3D matrix irrep branching 3 -> 2 (+) 1 (Lean F-38A) locking
           tree-level M_{N_1}(M_GUT) = M_{N_2}(M_GUT), coupled to 1-loop SM & Pati-Salam G_422 RG running
-          (Lean F-38B): dynamically generates delta_21 = 0.242% (SM) to 0.449% (PS+SM) = 1.68..3.12 Gamma_2/M_2,
-          right in the resonant leptogenesis window, with an honest radiative-CP leptogenesis audit [T/C/P].
+          (Lean F-38B: delta_21 = 0.242% SM / 0.449% PS+SM = 1.68..3.12 Gamma_2/M_2), plus strict
+          quantitative D_4-breaking threshold misalignment audit quantifying the exact sub-RG diagonal
+          and pure off-diagonal misalignment amplitudes needed on top of 1-loop RG to reach Planck [T/C/P].
 
   V10.4 (Front P2/P3/P4 — External SU(2)_d Dark-Radiation Delta N_eff & 1_F FIMP Cosmological Reach):
         - Exact Machacek-Vaughn 2-loop RG scale Lambda_d ~ 2.3 meV (Pure YM b1=136/3, Higgsed b1=259/6,
@@ -71,8 +74,7 @@ Suites:
 
 import numpy as np
 from scipy.integrate import quad, solve_ivp
-from scipy.interpolate import interp1d
-from scipy.linalg import eigh, svd
+from scipy.linalg import eigh, solve_banded, svd
 from scipy.optimize import brentq, minimize
 from scipy.special import k0, kn
 
@@ -462,17 +464,11 @@ def suite_v103_first_principles_lpm_and_rg_splitting(x_res):
 
     def solve_thomas(lower, main, upper, rhs):
         n = len(main)
-        cp = np.zeros(n - 1, dtype=complex); dp = np.zeros(n, dtype=complex)
-        cp[0] = upper[0] / main[0]; dp[0] = rhs[0] / main[0]
-        for i in range(1, n - 1):
-            den = main[i] - lower[i - 1] * cp[i - 1]
-            cp[i] = upper[i] / den; dp[i] = (rhs[i] - lower[i - 1] * dp[i - 1]) / den
-        den = main[n - 1] - lower[n - 2] * cp[n - 2]
-        dp[n - 1] = (rhs[n - 1] - lower[n - 2] * dp[n - 2]) / den
-        x = np.zeros(n, dtype=complex); x[n - 1] = dp[n - 1]
-        for i in range(n - 2, -1, -1):
-            x[i] = dp[i] - cp[i] * x[i + 1]
-        return x
+        ab = np.zeros((3, n), dtype=complex)
+        ab[0, 1:] = upper
+        ab[1, :] = main
+        ab[2, :-1] = lower
+        return solve_banded((1, 1), ab, rhs, overwrite_ab=True, overwrite_b=True, check_finite=False)
 
     def lpm_besak_bodeker(x_M, p_over_T, y_frac, Nb=200, scale_C=1.0, mD_scale=1.0, mH_scale=1.0):
         # Exact Besak-Bodeker (2012) coupled 2D radial s-wave + p-wave LPM equations on adaptive b_max!
@@ -533,43 +529,118 @@ def suite_v103_first_principles_lpm_and_rg_splitting(x_res):
     assert abs(pf1 - pe1) / pe1 < 0.005 and abs(sf1 - 1.0) < 0.01
     assert abs(pf20 - pe20) / pe20 < 0.01 and abs(sf20 - 1.0) < 0.03
 
-    # Tabulate exact thermally momentum-averaged 1<->2 Besak-Bodeker LPM rate ratio f_LPM(x)
-    # using exact 8-point Gauss-Laguerre on u = E - xM and 24-point Gauss-Legendre on y in (0, 1) (ZERO cutoff hack!):
+    # Tabulate exact thermally momentum-averaged 1<->2 Besak-Bodeker LPM rate ratios (Boltzmann AND
+    # full quantum Fermi-Dirac / Bose-Einstein statistical factors) using 8-point Gauss-Laguerre on
+    # u = E - xM and 3-panel Gauss-Legendre on y split cleanly across the exact two-body threshold
+    # endpoints (y_-, y_+) whenever 1 > sqrt(a_l) + sqrt(a_h) (ZERO cutoff hack, ZERO endpoint wobble!):
     xs_lpm = np.array([0.05, 0.1, 0.2, 0.35, 0.5, 0.7, 0.85, 1.0, 1.25, 1.5, 2.0, 3.0, 5.0, 10.0, 20.0])
     u_gl, w_gl = np.polynomial.laguerre.laggauss(8)
-    y_gl_raw, wy_gl_raw = np.polynomial.legendre.leggauss(24)
-    y_gl = 0.5 * (y_gl_raw + 1.0); wy_gl = 0.5 * wy_gl_raw
+    _gl8_x, _gl8_w = np.polynomial.legendre.leggauss(8)
+    _gl12_x, _gl12_w = np.polynomial.legendre.leggauss(12)
+    _gl24_x, _gl24_w = np.polynomial.legendre.leggauss(24)
 
-    def compute_lpm_curve(Nb=200, mD_scale=1.0, mH_scale=1.0):
+    def _panel(a, b, gx, gw):
+        return 0.5 * (b - a) * gx + 0.5 * (b + a), 0.5 * (b - a) * gw
+
+    def get_y_quad(xM, mH_scale=1.0):
+        m_h2 = m_h_inf2 * (mH_scale ** 2)
+        al = m_l_inf2 / (xM ** 2); ah = m_h2 / (xM ** 2)
+        if 1.0 > np.sqrt(al) + np.sqrt(ah):
+            lam = max(0.0, (1.0 - al - ah) ** 2 - 4.0 * al * ah)
+            ym = 0.5 * (1.0 + al - ah - np.sqrt(lam))
+            yp = 0.5 * (1.0 + al - ah + np.sqrt(lam))
+            y1, w1 = _panel(0.0, ym, _gl8_x, _gl8_w)
+            y2, w2 = _panel(ym, yp, _gl12_x, _gl12_w)
+            y3, w3 = _panel(yp, 1.0, _gl8_x, _gl8_w)
+            return np.concatenate([y1, y2, y3]), np.concatenate([w1, w2, w3]), (ym, yp, lam, al, ah)
+        y0, w0 = _panel(0.0, 1.0, _gl24_x, _gl24_w)
+        return y0, w0, None
+
+    def compute_lpm_curve(Nb=200, mD_scale=1.0, mH_scale=1.0, include_quantum=True):
         f_lpm = np.zeros_like(xs_lpm); f_free = np.zeros_like(xs_lpm); f_2body = np.zeros_like(xs_lpm)
+        f_q_stat = np.zeros_like(xs_lpm); f_q_gamma = np.zeros_like(xs_lpm); f_q_2body_gamma = np.zeros_like(xs_lpm)
         m_h2 = m_h_inf2 * (mH_scale ** 2)
         for ix, xM in enumerate(xs_lpm):
             E_gl = xM + u_gl
             p_gl = np.sqrt(np.maximum(1e-12, E_gl**2 - xM**2))
             wp_gl = p_gl * w_gl; wp_gl /= np.sum(wp_gl)
+            fd_fac = 1.0 / (1.0 + np.exp(-E_gl))  # exact f_F(E) / e^(-E)
             al = m_l_inf2 / (xM**2); ah = m_h2 / (xM**2)
             lam = (1.0 - al - ah)**2 - 4.0 * al * ah
             f_2body[ix] = (1.0 + al - ah) * np.sqrt(max(0.0, lam)) if (1.0 > np.sqrt(al) + np.sqrt(ah)) else 0.0
-            lpm_avg = 0.0; free_avg = 0.0
-            for p_val, w_p in zip(p_gl, wp_gl):
-                s_lpm, s_fr = 0.0, 0.0
-                for y, wy in zip(y_gl, wy_gl):
+            ys, wys, roots = get_y_quad(xM, mH_scale=mH_scale)
+            lpm_avg = free_avg = q_stat_avg = q_gam_avg = q_2b_avg = 0.0
+            for E_val, p_val, w_p, fdf in zip(E_gl, p_gl, wp_gl, fd_fac):
+                if roots is not None:
+                    ym, yp, lam_r, al_r, ah_r = roots
+                    v_rel = float(p_val / E_val)
+                    um = 0.5 * (1.0 + al_r - ah_r - v_rel * np.sqrt(lam_r))
+                    up = 0.5 * (1.0 + al_r - ah_r + v_rel * np.sqrt(lam_r))
+                    if include_quantum:
+                        wm_e = um * E_val; wp_e = up * E_val
+                        if wp_e - wm_e > 1e-8:
+                            sq_2b = (np.log((np.exp(wp_e) + 1.0) / (np.exp(wm_e) + 1.0))
+                                     + np.log((-np.expm1(wm_e - E_val)) / (-np.expm1(wp_e - E_val)))) / (wp_e - wm_e)
+                        else:
+                            w0 = 0.5 * (wm_e + wp_e)
+                            sq_2b = 1.0 - 1.0 / (np.exp(w0) + 1.0) + 1.0 / np.expm1(E_val - w0)
+                        q_2b_avg += w_p * fdf * f_2body[ix] * sq_2b
+                s_lpm = s_fr = s_qs = 0.0
+                for y, wy in zip(ys, wys):
                     kl, kf, _, _, _ = lpm_besak_bodeker(xM, float(p_val), float(y), Nb=Nb, scale_C=1.0, mD_scale=mD_scale, mH_scale=mH_scale)
                     s_lpm += kl * wy; s_fr += kf * wy
+                    if include_quantum:
+                        # Exact 4D relativistic boost-mapped daughter energies omega_l + omega_phi = E:
+                        # maps [y_-, y_+] linearly to exact 2-body [u_-, u_+] (reducing identically to
+                        # collinear y*E, (1-y)*E at p >> M_N and below threshold, with finite O(1) IR endpoints!).
+                        if roots is not None:
+                            if y < ym:
+                                u_frac = (um / ym) * y
+                            elif y <= yp:
+                                u_frac = um + (up - um) * (y - ym) / (yp - ym)
+                            else:
+                                u_frac = up + ((1.0 - up) / (1.0 - yp)) * (y - yp)
+                        else:
+                            u_frac = y
+                        wl = u_frac * E_val; wh = (1.0 - u_frac) * E_val
+                        Sq = 1.0 - 1.0 / (np.exp(wl) + 1.0) + 1.0 / np.expm1(wh)
+                        s_qs += kl * Sq * wy
                 lpm_avg += w_p * s_lpm; free_avg += w_p * s_fr
+                if include_quantum:
+                    q_stat_avg += w_p * s_qs
+                    q_gam_avg  += w_p * fdf * s_qs
             f_lpm[ix] = lpm_avg / (xM**2)
             f_free[ix] = free_avg / (xM**2)
-        return f_lpm, f_free, f_2body
+            if include_quantum:
+                f_q_stat[ix] = q_stat_avg / (xM**2)
+                f_q_gamma[ix] = q_gam_avg / (xM**2)
+                f_q_2body_gamma[ix] = q_2b_avg
+        return f_lpm, f_free, f_2body, f_q_stat, f_q_gamma, f_q_2body_gamma
 
-    f_lpm_vals, f_gnrs_th, f_exact_2b = compute_lpm_curve(Nb=200, mD_scale=1.0, mH_scale=1.0)
-    # Check physical LPM features: free limit matches exact 2-body kinematics at x=1.0 & x=1.5 (within 24-pt GL step discretization < 5%,
-    # and analytically to < 1e-14 on [y_-, y_+]), LPM fills sub-threshold gap at x=0.5 (GNRS=0, LPM>0.20), and suppresses above threshold!
-    y_span_1 = np.sqrt((1.0 - m_l_inf2 - m_h_inf2)**2 - 4.0 * m_l_inf2 * m_h_inf2)
-    assert abs((1.0 + m_l_inf2 - m_h_inf2) * y_span_1 - f_exact_2b[7]) < 1e-14
-    assert abs(f_gnrs_th[7] - f_exact_2b[7]) / f_exact_2b[7] < 0.05
-    assert f_gnrs_th[4] < 1e-6 and f_lpm_vals[4] > 0.20 and f_lpm_vals[7] < f_exact_2b[7] and f_lpm_vals[9] < f_exact_2b[9]
-    assert 0.97 < f_lpm_vals[-1] < 1.02
-    f_lpm_interp = interp1d(np.log(xs_lpm), f_lpm_vals, bounds_error=False, fill_value=(f_lpm_vals[0], 1.0))
+    f_lpm_vals, f_gnrs_th, f_exact_2b, f_lpm_qstat, f_lpm_qgamma, f_q2b_gamma = compute_lpm_curve(Nb=200, mD_scale=1.0, mH_scale=1.0, include_quantum=True)
+    # Direct C=0 PDE integral validation at x=1.0 and x=1.5 with split (y_-, y_+) quadrature (sub-percent!):
+    def free_pde_split(xM, p_val=3.0, Nb=240):
+        ys, wys, _ = get_y_quad(xM)
+        return sum(lpm_besak_bodeker(xM, p_val, float(y), Nb=Nb, scale_C=0.0)[0] * wy for y, wy in zip(ys, wys)) / (xM**2)
+    f_pde_c0_x10 = free_pde_split(1.0)
+    f_pde_c0_x15 = free_pde_split(1.5)
+    # Verify exact split-quadrature precision: analytic free kernel < 1e-14 at ALL above-threshold points,
+    # full numerical C=0 PDE < 0.5% at x=1.0 and x=1.5, sub-threshold filling at x=0.5, above-threshold
+    # LPM suppression at x=1.0/1.5 (both Boltzmann and quantum FD/BE!), and exact high-x quantum decoupling!
+    assert abs(f_gnrs_th[7] - f_exact_2b[7]) < 1e-14 and abs(f_gnrs_th[9] - f_exact_2b[9]) < 1e-14
+    assert abs(f_pde_c0_x10 - f_exact_2b[7]) / f_exact_2b[7] < 0.005
+    assert abs(f_pde_c0_x15 - f_exact_2b[9]) / f_exact_2b[9] < 0.005
+    assert f_gnrs_th[4] < 1e-12 and f_lpm_vals[4] > 0.20 and f_lpm_vals[7] < f_exact_2b[7] and f_lpm_vals[9] < f_exact_2b[9]
+    assert f_lpm_qgamma[4] > f_lpm_vals[4] and f_lpm_qgamma[7] < f_q2b_gamma[7] and f_lpm_qgamma[9] < f_q2b_gamma[9]
+    assert abs(f_lpm_qgamma[-1] - f_lpm_vals[-1]) < 1e-3 and 0.97 < f_lpm_vals[-1] < 1.02
+    # Exact Fermi-Dirac vs Maxwell-Boltzmann equilibrium N_N abundance ratio n_N^FD(x)/n_N^MB(x):
+    xs_neq = np.geomspace(1e-3, 80.0, 120)
+    u_n, w_n = np.polynomial.laguerre.laggauss(16)
+    neq_rat = np.array([
+        float(np.sum(np.sqrt((x + u_n)**2 - x**2) * (x + u_n) * w_n / (1.0 + np.exp(-(x + u_n)))) /
+              np.sum(np.sqrt((x + u_n)**2 - x**2) * (x + u_n) * w_n))
+        for x in xs_neq
+    ])
 
     # Plug EXACT first-principles f_LPM(x) DIRECTLY into the 13-ODE dynamic-y_c(z) solver at UNMODIFIED X_RES:
     xs_g = np.geomspace(1e-3, 80.0, 100); tg_g = np.geomspace(1e-4, 35.0, 150)
@@ -591,11 +662,9 @@ def suite_v103_first_principles_lpm_and_rg_splitting(x_res):
             r_As[ix]  += int_ch(x, u_As,  lambda u: (w_g/(4.0*np.pi))*np.maximum(((u**2-2*u+2)/u**2)*np.log((u-1.0+al)/al) - (u-1.0)*(u-2.0)/u**2, 0.0))
             r_At1[ix] += int_ch(x, u_At1, lambda u: (w_g/(4.0*np.pi))*np.maximum((2.0*(u-1.0)/u**2)*np.log((u-1.0+ah)/ah) + (u-1.0)*(u-3.0)/(2.0*u**2), 0.0))
             r_At2[ix] += int_ch(x, u_At2, lambda u: (w_g/(4.0*np.pi))*np.maximum(((u-1.0)*np.log((u-1.0+al)/al) + (2.0*u/(u-1.0+ah+al))*(np.log((u-1.0+ah)/ah)+np.log((u-1.0+al)/al)))/u, 0.0))
-    f_Hs  = interp1d(np.log(xs_g), r_Hs,  bounds_error=False, fill_value=(r_Hs[0], 0.0))
-    f_Ht  = interp1d(np.log(xs_g), r_Ht,  bounds_error=False, fill_value=(r_Ht[0], 0.0))
-    f_As  = interp1d(np.log(xs_g), r_As,  bounds_error=False, fill_value=(r_As[0], 0.0))
-    f_At1 = interp1d(np.log(xs_g), r_At1, bounds_error=False, fill_value=(r_At1[0], 0.0))
-    f_At2 = interp1d(np.log(xs_g), r_At2, bounds_error=False, fill_value=(r_At2[0], 0.0))
+    lxs_g = np.log(xs_g)
+    lxs_lpm = np.log(xs_lpm)
+    lxs_neq = np.log(xs_neq)
 
     C_noyc = np.array([[-237, -7, -32], [-7, -237, -32], [-32, -32, -212]], dtype=float) / 230.0
     v_c = np.array([-123.0, -123.0, -168.0]) / 230.0
@@ -606,7 +675,7 @@ def suite_v103_first_principles_lpm_and_rg_splitting(x_res):
     C_mu  = 5.0e-3 * ((m_mu  / v_EW)**2) * M_vals[0] / H1_hub
     C_c_q = 1.5e-2 * ((m_c   / v_EW)**2) * M_vals[0] / H1_hub
 
-    def run_13ode(Y_in, M_in, mode_12="exact_lpm", custom_interp=None):
+    def run_13ode(Y_in, M_in, mode_12="exact_lpm", custom_arr=None, use_fd_Neq=False, method="Radau", rtol=1e-7, atol=1e-13):
         H_y = Y_in.conj().T @ Y_in
         Gam = np.array([H_y[i, i].real * M_in[i] / (8.0 * np.pi) for i in range(3)])
         K_t = np.array([(H_y[i, i].real * v_EW**2 / M_in[i]) * 1e9 / 1.08e-3 for i in range(3)])
@@ -636,7 +705,9 @@ def suite_v103_first_principles_lpm_and_rg_splitting(x_res):
         def pack_N(M):
             return np.array([M[0,0].real, M[1,1].real, M[2,2].real,
                              M[0,1].real, M[0,1].imag, M[0,2].real, M[0,2].imag, M[1,2].real, M[1,2].imag])
-        interp_use = custom_interp if custom_interp is not None else f_lpm_interp
+        arr_use = custom_arr if custom_arr is not None else f_lpm_vals
+        arr_left = float(arr_use[0])
+        rHs0, rHt0, rAs0, rAt10, rAt20 = float(r_Hs[0]), float(r_Ht[0]), float(r_As[0]), float(r_At1[0]), float(r_At2[0])
         def rhs(u, y):
             z = np.exp(u); N_vec = y[:3]; Nmat = unpack_N(y[3:12]); Dc = y[12]
             dN_RH = np.zeros(3); dNmat = np.zeros((3, 3), dtype=complex)
@@ -648,13 +719,19 @@ def suite_v103_first_principles_lpm_and_rg_splitting(x_res):
             for i, ri in enumerate([1.0, r2, r3]):
                 xx = ri * z
                 if xx > 80.0: continue
-                k1, k2 = kn(1, xx), kn(2, xx); Neq = 0.5*xx*xx*k2
-                D = K_t[i]*(ri**2)*z*(k1/max(1e-300, k2)); W = 0.25*K_t[i]*(ri**4)*(z**3)*k1
+                k1, k2 = kn(1, xx), kn(2, xx); Neq_mb = 0.5*xx*xx*k2
                 lx = np.log(max(xx, 1e-3))
-                rHs = float(f_Hs(lx)); rHt = float(f_Ht(lx))
-                rAs = float(f_As(lx)); rAt1 = float(f_At1(lx)); rAt2 = float(f_At2(lx))
+                nrat = float(np.interp(lx, lxs_neq, neq_rat, left=0.75, right=1.0)) if use_fd_Neq else 1.0
+                Neq = Neq_mb * nrat
+                D = K_t[i]*(ri**2)*z*(k1/max(1e-300, k2)) / nrat
+                W = 0.25*K_t[i]*(ri**4)*(z**3)*k1
+                rHs  = float(np.interp(lx, lxs_g, r_Hs,  left=rHs0,  right=0.0))
+                rHt  = float(np.interp(lx, lxs_g, r_Ht,  left=rHt0,  right=0.0))
+                rAs  = float(np.interp(lx, lxs_g, r_As,  left=rAs0,  right=0.0))
+                rAt1 = float(np.interp(lx, lxs_g, r_At1, left=rAt10, right=0.0))
+                rAt2 = float(np.interp(lx, lxs_g, r_At2, left=rAt20, right=0.0))
                 ratN = N_vec[i]/Neq if Neq > 1e-30 else 1.0
-                f12 = float(interp_use(np.log(max(xx, 0.05)))) if mode_12 == "exact_lpm" else 1.0
+                f12 = float(np.interp(np.log(max(xx, 0.05)), lxs_lpm, arr_use, left=arr_left, right=1.0)) if mode_12 == "exact_lpm" else 1.0
                 Dt = D * (f12 + rHs + 2.0*rHt + rAs + rAt1 + rAt2)
                 Wt = W * (f12 + ratN*(rHs + rAs) + 2.0*rHt + rAt1 + rAt2)
                 dN_RH[i] = -Dt*(N_vec[i] - Neq)
@@ -665,25 +742,39 @@ def suite_v103_first_principles_lpm_and_rg_splitting(x_res):
             dNmat[0,1] -= C_mu*Nmat[0,1];  dNmat[1,0] -= C_mu*Nmat[1,0]
             return np.concatenate((z*dN_RH, z*pack_N(dNmat), [z*dDc_dz]))
         y0 = np.zeros(13)
-        y0[0] = 0.5*(z_start**2)*kn(2, z_start); y0[1] = 0.5*((r2*z_start)**2)*kn(2, r2*z_start); y0[2] = 0.5*((r3*z_start)**2)*kn(2, r3*z_start)
-        sol = solve_ivp(rhs, [np.log(z_start), np.log(z_end)], y0, method="BDF", rtol=1e-8, atol=1e-14)
+        for i, ri in enumerate([1.0, r2, r3]):
+            xx0 = ri * z_start
+            nrat0 = float(np.interp(np.log(max(xx0, 1e-3)), lxs_neq, neq_rat, left=0.75, right=1.0)) if use_fd_Neq else 1.0
+            y0[i] = 0.5*(xx0**2)*kn(2, xx0) * nrat0
+        sol = solve_ivp(rhs, [np.log(z_start), np.log(z_end)], y0, method=method, rtol=rtol, atol=atol)
         Nf = unpack_N(sol.y[3:12, -1])
         return 0.96e-2 * float(np.trace(Nf).real)
 
-    eb_lpm_exact = run_13ode(Y_fl, M_vals, mode_12="exact_lpm")
-    eb_born      = run_13ode(Y_fl, M_vals, mode_12="born")
-    pct_lpm = (eb_lpm_exact - 6.12e-10) / 6.12e-10 * 100.0
+    eb_lpm_exact  = run_13ode(Y_fl, M_vals, mode_12="exact_lpm")
+    eb_lpm_qstat  = run_13ode(Y_fl, M_vals, mode_12="exact_lpm", custom_arr=f_lpm_qstat)
+    eb_lpm_qgamma = run_13ode(Y_fl, M_vals, mode_12="exact_lpm", custom_arr=f_lpm_qgamma)
+    eb_lpm_qfull  = run_13ode(Y_fl, M_vals, mode_12="exact_lpm", custom_arr=f_lpm_qgamma, use_fd_Neq=True)
+    eb_born       = run_13ode(Y_fl, M_vals, mode_12="born")
+    pct_lpm       = (eb_lpm_exact  - 6.12e-10) / 6.12e-10 * 100.0
+    pct_qstat     = (eb_lpm_qstat  - 6.12e-10) / 6.12e-10 * 100.0
+    pct_qgamma    = (eb_lpm_qgamma - 6.12e-10) / 6.12e-10 * 100.0
+    pct_qfull     = (eb_lpm_qfull  - 6.12e-10) / 6.12e-10 * 100.0
+    shift_qstat   = (eb_lpm_qstat  - eb_lpm_exact) / eb_lpm_exact * 100.0
+    shift_qgamma  = (eb_lpm_qgamma - eb_lpm_exact) / eb_lpm_exact * 100.0
+    shift_qfull   = (eb_lpm_qfull  - eb_lpm_exact) / eb_lpm_exact * 100.0
     # Sensitivity audit (m_D +/-20%, m_H +/-10%) to quantify exact LPM uncertainty band:
-    f_lo, _, _ = compute_lpm_curve(Nb=140, mD_scale=0.8, mH_scale=0.9)
-    f_hi, _, _ = compute_lpm_curve(Nb=140, mD_scale=1.2, mH_scale=1.1)
-    eb_lpm_lo = run_13ode(Y_fl, M_vals, mode_12="exact_lpm",
-                          custom_interp=interp1d(np.log(xs_lpm), f_lo, bounds_error=False, fill_value=(f_lo[0], 1.0)))
-    eb_lpm_hi = run_13ode(Y_fl, M_vals, mode_12="exact_lpm",
-                          custom_interp=interp1d(np.log(xs_lpm), f_hi, bounds_error=False, fill_value=(f_hi[0], 1.0)))
+    f_lo, _, _, _, fq_lo, _ = compute_lpm_curve(Nb=140, mD_scale=0.8, mH_scale=0.9, include_quantum=True)
+    f_hi, _, _, _, fq_hi, _ = compute_lpm_curve(Nb=140, mD_scale=1.2, mH_scale=1.1, include_quantum=True)
+    eb_lpm_lo = run_13ode(Y_fl, M_vals, mode_12="exact_lpm", custom_arr=f_lo)
+    eb_lpm_hi = run_13ode(Y_fl, M_vals, mode_12="exact_lpm", custom_arr=f_hi)
+    eb_q_lo   = run_13ode(Y_fl, M_vals, mode_12="exact_lpm", custom_arr=fq_lo)
+    eb_q_hi   = run_13ode(Y_fl, M_vals, mode_12="exact_lpm", custom_arr=fq_hi)
     eb_band_min, eb_band_max = min(eb_lpm_lo, eb_lpm_hi), max(eb_lpm_lo, eb_lpm_hi)
-    assert abs(pct_lpm) < 5.0 and eb_lpm_exact > eb_born and eb_band_min <= eb_lpm_exact <= eb_band_max
+    eb_qband_min, eb_qband_max = min(eb_q_lo, eb_q_hi), max(eb_q_lo, eb_q_hi)
+    assert abs(pct_lpm) < 3.0 and abs(pct_qgamma) < 5.0 and abs(pct_qfull) < 7.0
+    assert eb_lpm_exact > eb_born and eb_band_min <= eb_lpm_exact <= eb_band_max and eb_qband_min <= eb_lpm_qgamma <= eb_qband_max
 
-    # 2. Dynamical PSL(2,7) -> S_4 -> D_4 / S_3 Degeneracy & 1-Loop Radiative RG Splitting (Lean F-38A,B):
+    # 2. Dynamical PSL(2,7) -> S_4 -> D_4 / S_3 Degeneracy, 1-Loop RG Splitting & Quantitative D_4-Breaking Audit (Lean F-38A,B):
     H_nu = Y_fl.conj().T @ Y_fl
     M_GUT = 7.95e15; M_PS = 1.43e11; M_avg = 0.5 * (M_vals[0] + M_vals[1])
     Gam2_over_M2 = float(H_nu[1, 1].real / (8.0 * np.pi))
@@ -708,24 +799,68 @@ def suite_v103_first_principles_lpm_and_rg_splitting(x_res):
     d21_sm = (sv_sm[1] - sv_sm[0]) / sv_sm[0]
     d21_ps = (sv_ps[1] - sv_ps[0]) / sv_ps[0]
     # Honest radiative-CP audit: compute actual eta_B generated purely from RG-rotated M_deg (with zero tree-level splitting):
-    eb_rg_sm = run_13ode(Y_sm_rg, sv_sm, mode_12="exact_lpm")
-    eb_rg_ps = run_13ode(Y_ps_rg, sv_ps, mode_12="exact_lpm")
+    eb_rg_sm = run_13ode(Y_sm_rg, sv_sm, mode_12="exact_lpm", method="Radau", rtol=1e-7, atol=1e-13)
+    eb_rg_ps = run_13ode(Y_ps_rg, sv_ps, mode_12="exact_lpm", method="Radau", rtol=1e-7, atol=1e-13)
     assert 0.002 < d21_sm < 0.003 and 0.004 < d21_ps < 0.005
 
-    print(f"  [V10.3.A] Exact Full Besak-Bodeker (s+p Wave) 2D Impact-Parameter LPM Solver (Zero Free Parameters!):")
+    # Quantitative D_4-breaking heavy-threshold / soft misalignment sensitivity audit (ZERO fitting of Y_fl!):
+    # (a) Diagonal soft threshold M_GUT = diag(M_avg*(1-d/2), M_avg*(1+d/2), M_3) -> exact RG-assisted lower root & perturbative upper root
+    # (b) Pure off-diagonal threshold misalignment M_12 = M_21 = d_off * M_avg (zero diagonal splitting at M_GUT!)
+    def eval_diag_soft(d_soft, mult_PS):
+        M_in = np.diag([M_avg * (1.0 - 0.5 * d_soft), M_avg * (1.0 + 0.5 * d_soft), M_vals[2]]).astype(complex)
+        sv, Yrg = run_MR_1loop(M_in, H_nu, mult_PS=mult_PS)
+        return run_13ode(Yrg, sv, mode_12="exact_lpm", method="Radau", rtol=1e-6, atol=1e-12), (sv[1] - sv[0]) / sv[0]
+
+    def eval_offdiag_soft(d_off, mult_PS):
+        M_in = np.diag([M_avg, M_avg, M_vals[2]]).astype(complex)
+        M_in[0, 1] = M_in[1, 0] = d_off * M_avg
+        sv, Yrg = run_MR_1loop(M_in, H_nu, mult_PS=mult_PS)
+        return run_13ode(Yrg, sv, mode_12="exact_lpm", method="Radau", rtol=1e-6, atol=1e-12), (sv[1] - sv[0]) / sv[0]
+
+    dsoft_sm_lo = brentq(lambda d: eval_diag_soft(d, 1.0)[0] - 6.12e-10, 3.0e-4, 5.0e-4, rtol=1e-4)
+    eb_sm_lo, d21_sm_lo = eval_diag_soft(dsoft_sm_lo, 1.0)
+    dsoft_sm_hi = brentq(lambda d: eval_diag_soft(d, 1.0)[0] - 6.12e-10, 1.5e-2, 2.0e-2, rtol=1e-4)
+    eb_sm_hi, d21_sm_hi = eval_diag_soft(dsoft_sm_hi, 1.0)
+    dsoft_ps_lo = brentq(lambda d: eval_diag_soft(d, 2.0)[0] - 6.12e-10, 8.0e-4, 1.5e-3, rtol=1e-4)
+    eb_ps_lo, d21_ps_lo = eval_diag_soft(dsoft_ps_lo, 2.0)
+    dsoft_ps_hi = brentq(lambda d: eval_diag_soft(d, 2.0)[0] - 6.12e-10, 1.7e-2, 2.2e-2, rtol=1e-4)
+    eb_ps_hi, d21_ps_hi = eval_diag_soft(dsoft_ps_hi, 2.0)
+    doff_sm = brentq(lambda d: eval_offdiag_soft(d, 1.0)[0] - 6.12e-10, 1.0e-4, 2.5e-4, rtol=1e-4)
+    eb_off_sm, d21_off_sm = eval_offdiag_soft(doff_sm, 1.0)
+    doff_ps = brentq(lambda d: eval_offdiag_soft(d, 2.0)[0] - 6.12e-10, 4.0e-4, 9.0e-4, rtol=1e-4)
+    eb_off_ps, d21_off_ps = eval_offdiag_soft(doff_ps, 2.0)
+    assert abs(eb_sm_lo - 6.12e-10) < 1e-12 and abs(eb_ps_lo - 6.12e-10) < 1e-12
+    assert abs(eb_sm_hi - 6.12e-10) < 1e-12 and abs(eb_ps_hi - 6.12e-10) < 1e-12
+    assert abs(eb_off_sm - 6.12e-10) < 1e-12 and abs(eb_off_ps - 6.12e-10) < 1e-12
+    assert dsoft_sm_lo < 0.25 * d21_sm and dsoft_ps_lo < 0.30 * d21_ps
+    assert doff_sm < 0.10 * d21_sm and doff_ps < 0.20 * d21_ps
+
+    print(f"  [V10.3.A] Exact Full Besak-Bodeker (s+p Wave) 2D LPM Solver (Split (y_-,y_+) Quadrature + Full Quantum FD/BE!):")
     print(f"            - Free-limit validation (C=0): p-wave x=1.5 rel={abs(pf1-pe1)/pe1:.4f}, s-wave x=1.5={sf1:.4f} (exact 1.0000), x=20 p-rel={abs(pf20-pe20)/pe20:.4f}")
-    print(f"            - Exact 2-body kinematics match at x=1.0: exact={f_exact_2b[7]:.4f} vs free-BB={f_gnrs_th[7]:.4f} -> LPM={f_lpm_vals[7]:.4f} ({(f_lpm_vals[7]-f_exact_2b[7])/f_exact_2b[7]*100:+.2f}%)")
-    print(f"            - Sub-threshold bremsstrahlung filling (x=0.5): GNRS={f_exact_2b[4]:.4f} -> LPM={f_lpm_vals[4]:.4f}")
-    print(f"            - Above-threshold LPM suppression (x=1.5):      exact_2b={f_exact_2b[9]:.4f} -> LPM={f_lpm_vals[9]:.4f} ({(f_lpm_vals[9]-f_exact_2b[9])/f_exact_2b[9]*100:+.2f}%)")
-    print(f"            - 13-ODE dynamic-y_c(z) leptogenesis at UNMODIFIED X_RES:")
-    print(f"              Born 1<->2: {eb_born:+.4e} -> EXACT BESAK-BODEKER 2D LPM: {eb_lpm_exact:+.4e} ({pct_lpm:+.2f}% vs Planck 6.12e-10)!")
-    print(f"              Thermal-mass sensitivity band (m_D +/-20%, m_H +/-10%): [{eb_band_min:+.4e}, {eb_band_max:+.4e}] [T/C]!")
-    print(f"  [V10.3.B] Dynamical Origin of N_1/N_2 Splitting via PSL(2,7) -> S_4 -> D_4/S_3 (Lean F-38A,B):")
+    print(f"            - Split-(y_-,y_+) quadrature at x=1.0: exact_2b={f_exact_2b[7]:.4f} vs free-analytic={f_gnrs_th[7]:.4f} (err<1e-14) vs C=0 PDE={f_pde_c0_x10:.4f} ({(f_pde_c0_x10-f_exact_2b[7])/f_exact_2b[7]*100:+.2f}%)")
+    print(f"            - Split-(y_-,y_+) quadrature at x=1.5: exact_2b={f_exact_2b[9]:.4f} vs free-analytic={f_gnrs_th[9]:.4f} (err<1e-14) vs C=0 PDE={f_pde_c0_x15:.4f} ({(f_pde_c0_x15-f_exact_2b[9])/f_exact_2b[9]*100:+.2f}%)")
+    print(f"            - Boltzmann LPM:  x=0.5={f_lpm_vals[4]:.4f} (2b=0), x=1.0={f_lpm_vals[7]:.4f} ({(f_lpm_vals[7]-f_exact_2b[7])/f_exact_2b[7]*100:+.2f}%), x=1.5={f_lpm_vals[9]:.4f} ({(f_lpm_vals[9]-f_exact_2b[9])/f_exact_2b[9]*100:+.2f}%)")
+    print(f"            - Quantum FD/BE:  x=0.5={f_lpm_qgamma[4]:.4f} (+{(f_lpm_qgamma[4]/f_lpm_vals[4]-1)*100:.1f}% Bose), x=1.0={f_lpm_qgamma[7]:.4f} (vs Q-2b {f_q2b_gamma[7]:.4f}, {(f_lpm_qgamma[7]-f_q2b_gamma[7])/f_q2b_gamma[7]*100:+.2f}%), x=20={f_lpm_qgamma[-1]:.4f} (Boltz={f_lpm_vals[-1]:.4f})")
+    print(f"            - 13-ODE dynamic-y_c(z) leptogenesis at UNMODIFIED X_RES (Planck = +6.1200e-10, ZERO retuning!):")
+    print(f"              * Born 1<->2 baseline:                          {eb_born:+.4e} ({(eb_born-6.12e-10)/6.12e-10*100:+.2f}% vs Planck)")
+    print(f"              * Exact Besak-Bodeker 2D LPM (Boltzmann):       {eb_lpm_exact:+.4e} ({pct_lpm:+.2f}% vs Planck) | band [{eb_band_min:+.4e}, {eb_band_max:+.4e}]")
+    print(f"              * Exact Besak-Bodeker 2D LPM + FD/BE (1-fF+fB): {eb_lpm_qstat:+.4e} ({shift_qstat:+.2f}% vs Boltz, {pct_qstat:+.2f}% vs Planck)")
+    print(f"              * Exact Besak-Bodeker 2D LPM + full Q gamma:    {eb_lpm_qgamma:+.4e} ({shift_qgamma:+.2f}% vs Boltz, {pct_qgamma:+.2f}% vs Planck) | band [{eb_qband_min:+.4e}, {eb_qband_max:+.4e}]")
+    print(f"              * Exact Besak-Bodeker 2D LPM + full Q + FD Neq: {eb_lpm_qfull:+.4e} ({shift_qfull:+.2f}% vs Boltz, {pct_qfull:+.2f}% vs Planck) [T/C]!")
+    print(f"  [V10.3.B] Dynamical Origin of N_1/N_2 Splitting via PSL(2,7) -> S_4 -> D_4/S_3 & Quantitative Threshold Audit (Lean F-38A,B):")
     print(f"            - Group branching 3|_{{D_4}} = 2 (+) 1_-+ & 3|_{{S_3}} = 2 (+) 1 locks exact tree-level M_1(M_GUT) = M_2(M_GUT);")
     print(f"            - Pure 1-loop RG splitting: delta_21 = {d21_sm*100:.3f}% (SM, {d21_sm/Gam2_over_M2:.2f} Gamma_2/M_2) | {d21_ps*100:.3f}% (PS+SM, {d21_ps/Gam2_over_M2:.2f} Gamma_2/M_2)!")
-    print(f"            - HONEST RADIATIVE-CP AUDIT: pure M_1=M_2 1-loop RG aligns Re(H_12)=0 => eta_B^RG = {eb_rg_sm:+.3e} (SM) / {eb_rg_ps:+.3e} (PS+SM)!")
-    print("              -> RG naturally generates O(0.24%..0.45%) splitting at the exact resonant scale (1.7..3.1 Gamma/M),")
-    print("                 while the observed +6.12e-10 sign/amplitude still requires a small soft/threshold D_4-breaking misalignment [T/C/P]!\n")
+    print(f"            - Pure radiative-CP audit (zero D_4-breaking): Re(H_12)~0 => eta_B^RG = {eb_rg_sm:+.3e} (SM) / {eb_rg_ps:+.3e} (PS+SM).")
+    print(f"            - QUANTITATIVE D_4-BREAKING THRESHOLD MISALIGNMENT AUDIT (exact Planck +6.12e-10, ZERO Yukawa retuning):")
+    print(f"              * Diagonal soft threshold d_soft at M_GUT (RG-assisted sub-RG branch):")
+    print(f"                SM:    d_soft = {dsoft_sm_lo*100:.4f}% ({d21_sm/dsoft_sm_lo:.1f}x smaller than RG!) -> low-scale d21 = {d21_sm_lo*100:.3f}% ({d21_sm_lo/Gam2_over_M2:.2f} Gamma_2/M_2)")
+    print(f"                PS+SM: d_soft = {dsoft_ps_lo*100:.4f}% ({d21_ps/dsoft_ps_lo:.1f}x smaller than RG!) -> low-scale d21 = {d21_ps_lo*100:.3f}% ({d21_ps_lo/Gam2_over_M2:.2f} Gamma_2/M_2)")
+    print(f"              * Diagonal soft threshold d_soft at M_GUT (perturbative upper branch):")
+    print(f"                SM:    d_soft = {dsoft_sm_hi*100:.3f}% -> low-scale d21 = {d21_sm_hi*100:.3f}% ({d21_sm_hi/Gam2_over_M2:.2f} Gamma_2/M_2)")
+    print(f"                PS+SM: d_soft = {dsoft_ps_hi*100:.3f}% -> low-scale d21 = {d21_ps_hi*100:.3f}% ({d21_ps_hi/Gam2_over_M2:.2f} Gamma_2/M_2)")
+    print(f"              * Pure off-diagonal threshold M_12 = d_off * M_avg (zero diagonal splitting at M_GUT!):")
+    print(f"                SM:    d_off = {doff_sm*100:.4f}% ({d21_sm/doff_sm:.1f}x smaller than RG!) -> low-scale d21 = {d21_off_sm*100:.3f}% ({d21_off_sm/Gam2_over_M2:.2f} Gamma_2/M_2)")
+    print(f"                PS+SM: d_off = {doff_ps*100:.4f}% ({d21_ps/doff_ps:.1f}x smaller than RG!) -> low-scale d21 = {d21_off_ps*100:.3f}% ({d21_off_ps/Gam2_over_M2:.2f} Gamma_2/M_2) [T/C/P]!\n")
 
 
 # ==============================================================================
