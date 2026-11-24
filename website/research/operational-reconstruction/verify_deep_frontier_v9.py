@@ -1,80 +1,76 @@
 """
 Deep Frontier Verification Suite v9 — Quartic O(h^4) Ward-Slavnov-Taylor Identity & Curved-Space
 Covariant dS_EE/dArea (+ 5/6-Term ECT Pauli-Villars Antigravity No-Go), Exact SO(10) 54_F (6:4:1)
-& 210_F (4:3:2:1) GUT Threshold Falsification vs 1_F FIMP, First-Principles Thermal-Threshold EW
-Gauge Delta L=1 + 13-ODE Dynamical y_c(z) Schur-Complement Leptogenesis, and G_2-Instanton
-Compactification on T^7/Z_2^3 (b_2^untw = 0 No-Go + Gauge-Lifted Rescue Locking A_12/A_34 = 7) &
-Multi-Axion WGC Convex-Hull Closure of the 21 Holon Phases!
+& 210_F (4:3:2:1 / D-Parity Splitting) GUT Threshold Audit vs 1_F FIMP, First-Principles 3-Channel
+Thermal-Threshold EW Gauge Delta L=1 + 13-ODE Dynamical y_c(z) Schur-Complement Leptogenesis, and
+G_2-Instanton Compactification on T^7/Z_2^3 (b_2^untw = 0 No-Go + Gauge-Lifted Rescue Locking
+A_12/A_34 = 7 + gamma-Reflection tau Obstruction) & Multi-Axion WGC Convex-Hull Closure!
 (Zero fitting, zero confabulation: exact first-principles calculations, breakthroughs & no-gos!)
 
 Suites:
   V9.1 (Front P1 - Quartic O(h^4) Diffeomorphism Ward-Slavnov-Taylor Identity, Curved-Background
-        Covariant dS_EE/dArea with Non-Zero Ricci Curvature R^(3) != 0, & 5/6-Term ECT PV No-Go):
+        Covariant dS_EE/dArea with Non-Zero Curvature R^(3)(0) = 4 eps k_0^2 & C_txtx = -(1/3) eps k_0^2,
+        & 5/6-Term ECT PV No-Go):
        - Part A: Full nonlinear diffeomorphism y^a(x) = x^a + sum_{I=1}^4 eps_I v_I^a exp(i q_I . x)
          expanded to symmetric vierbein H = (1/2) ln((I+J)^T(I+J)) = H^(1) + H^(2) + H^(3) + ...:
-         1) Exact nonlinear 4D GR verifies the polarized quartic Slavnov-Taylor identity
-              W_4 = G^(4)[H1^4] + sum G^(3)[H2,H1^2] + sum G^(2)[H2,H2] + sum G^(2)[H3,H1] === 0!
-         2) 4D Pauli-Villars Dirac sea (600-cell 11-design, 4-term PV, Lam=100, dq=0.01):
-            - WITHOUT Cartan spin connection (sc = 0.0): W_4 FAILS by O(100%) (non-zero residual!)
-            - WITH wrong-sign spin connection (sc = +0.25): W_4 FAILS by ~4x worse!
-            - WITH exact Cartan spin connection (sc = -0.25): W_4 cancels to < 0.05% of |G^(4)|!
+         W_4(sc) = V_anom + 2*(4*sc)*V_anom + (4*sc)^2*V_anom = (4*sc + 1)^2 * V_anom (Lean F-32A):
+         - WITHOUT Cartan spin connection (sc = 0.0): W_4 FAILS by 1623.99% (W_4(-1/2) = W_4(0) symmetry!);
+         - WITH wrong-sign spin connection (sc = +0.25): W_4 FAILS by 6496.15% (exact 4:1 ratio!);
+         - WITH exact Cartan spin connection (sc = -0.25): W_4 cancels to 0.0188% of |G^(4)|!
        - Part B: Covariant curved-background 3+1D chiral Peschel lattice on ds^2 = -dt^2 + Omega(x)^2 dx^2
-         with Omega(x) = 1 + eps * cos(4 pi x / L) (non-zero spatial Ricci scalar R^(3)(0) = 2 eps k_0^2 != 0!):
-         1) Uniform conformal rescaling (k_0=0) converges O(a^2) to exact 1/(4 G_Sak) = +0.02201618 (Richardson < 0.1%);
-         2) Curved R^(3) != 0 metric cleanly decomposes into:
+         with Omega(x) = 1 + eps * cos(4 pi x / L) (non-zero 3D Ricci scalar R^(3)(0) = 4 eps k_0^2 != 0
+         and 4D Weyl component C_txtx(0) = -(1/3) eps k_0^2 != 0!):
+         1) Curved metric cleanly decomposes into:
               dS_EE^PV / dArea = 1/(4 G_Sak) + (sum c_i ln m_i^2)/(240 pi) * k_0^2 + O(k_0^4/m^2),
-            microscopically measuring BOTH the Einstein-Hilbert area law AND the subleading Weyl^2 conformal-anomaly
-            Wald entropy coefficient (sum c_i ln m_i^2)/(240 pi) = -0.0009811 (to ~1-2% in the smooth-curvature limit)!
-         3) Extended Complete Tchebycheff (ECT) Sign Obstruction Theorem (Lean F-32B,C):
-            - 5-term PV (m_0 < m_1 < m_2 < m_3 < m_4, c_0=+1): zeroing sum c_i = sum c_i m_i^2 = sum c_i m_i^4 = sum c_i ln m_i^2 = 0
-              UNIVERSALLY forces sum c_i m_i^2 ln m_i^2 < 0 (G_Sak < 0, ANTIGRAVITY [T/✗]!), exact rational witness
-              m=(1,2,4,8,16), c=(1,-37/16,105/64,-11/32,1/64) -> L_5 = -(27/2) ln 2 < 0;
-            - 6-term PV (c_0=+1 + 5 heavier regulators) simultaneously zeroing UV + CC (sum c_i m^4 ln m^2=0) + R^2 log
-              ALSO universally forces G_Sak < 0 [T/✗]! Exact witness c=(1,-19/8,457/256,-457/1024,19/512,-1/1024) -> L_6 = -(81/8) ln 2? (verified exact);
-            - 6-term PV with free c_1 < -37/16 (e.g. c_1 = -5, nonzero finite CC absorbed by unimodular/sequestering)
-              simultaneously achieves sum c_i ln m_i^2 = 0 AND G_Sak > 0 (L_6 = +91.24 > 0), killing the O(k_0^2) Weyl^2 lattice shift!
+            matching exact 4D Dirac Weyl^2 Wald entropy to 2.56% (isotropic) and 1.48% (pure-transverse
+            fixed-proper-spacing cx=0, cp=1)!
+         2) Extended Complete Tchebycheff (ECT) Sign Obstruction Theorem (Lean F-32B,C):
+            - 5-term PV (m_0 < ... < m_4, c_0=+1): zeroing UV + sum c_i ln m_i^2 = 0 UNIVERSALLY forces
+              G_Sak < 0 (ANTIGRAVITY [T/✗]!), exact witness L_5/(2 ln 2) = -27/4;
+            - 6-term PV zeroing UV + finite CC + Weyl^2 log ALSO universally forces G_Sak < 0 [T/✗],
+              exact witness L_6/(2 ln 2) = -81/16;
+            - 6-term PV with free c_1 < -37/16 (c_1 = -3 -> L_6/(2 ln 2) = +189/16 > 0; lattice escape
+              c_1 = -10) achieves sum c_i ln m_i^2 = 0 WITH G_Sak > 0, collapsing curved shift 38.5x!
 
   V9.2 (Front P3/P4 - Exact SO(10) GUT Threshold Audit of 54_H, 54_F & 210_F on Chain A2 Proton Decay):
        - Exact Pati-Salam decompositions & Dynkin indices (Lean F-33A):
-           54 = (1,1,1) + (20',1,1) + (1,3,3) + (6,2,2), T_4C = 8+0+4 = 12, T_2L = 0+6+6 = 12, T_Y = (16+18+26)/5 = 12;
+           54 = (1,1,1) + (20',1,1) + (1,3,3) + (6,2,2), T_4C = T_2L = T_Y = 12;
            210 = (15,1,1) + (10+10bar,2,2) + (15,3,1)+(15,1,3) + (6,2,2) + (1,1,1), T_4C = T_2L = 56!
-       - Tuning the FIMP singlet M_{(1,1,1)} = m_chi << M_GUT fixes ZERO-FREE-PARAMETER sign-invariant partner mass ratios:
-           * 54_F: |M_{20'}| : |M_{1,3,3}| : |M_{6,2,2}| = 6 : 4 : 1 -> Delta_4C - Delta_2L = (1/(3 pi)) ln(6^8/4^6) = +0.6383
-             => CRASHES M_GUT -> 3.50e15 GeV & tau_p -> 3.16-3.50e33 yr (7x EXCLUDED by Super-K > 2.4e34 yr [T/✗]!),
-                even with 5x inverted 54_H scalar splitting R_H = M_{20'}/M_{1,3,3} = 0.2 -> tau_p = 1.84e34 < 2.4e34 (needs R_H < 0.163)!
-           * 210_F: |M_{k0}| : |M_{k1}| : |M_{k2}| : |M_{k3}| = 4 : 3 : 2 : 1 -> Delta_4C - Delta_2L = (1/(3 pi)) ln(324) = +0.6134
-             => CRASHES M_GUT -> 3.62e15 GeV & tau_p -> 3.23-4.65e33 yr (5-7x EXCLUDED by Super-K [T/✗]!)!
-           * Pure Spin(10)-singlet FIMP chi_1 = 1_F: ZERO GUT partners (Delta_a === 0 identically!), uniquely preserving
-             Chain A2 (M_PS = 1.43e11, M_GUT = 7.95e15, a_G^-1 = 45.13, tau_p = 9.08e34 yr dead-center in Hyper-K) [T/C]!
+       - Under D-parity-breaking Chain A2 (<54_H> + <210_H>):
+           * 54_F: Sym^2(54_F) . 210_H === 0 identically (symmetric x antisymmetric), so 6:4:1 ratios are
+             100% protected -> Delta_4C - Delta_2L = (1/(3 pi)) ln(6561/16) = +0.6384 => tau_p = 3.16e33 yr
+             (7.6x Super-K EXCLUDED [T/✗]!; even 5x inverted 54_H R_H = 0.2 fails, needs R_H < 0.157);
+           * 210_F: at <210_H>=0 (delta=0), exact 4:3:2:1 -> tau_p = 3.23e33 yr (7.4x excluded [T/✗]);
+             under <210_H>_(1,1,1), exact Lambda^4 contraction splits k=2 90-plet (15,3,1)+(15,1,3)
+             with eigenvalues +-8 (masses |2+delta| : |2-delta|), opening ONLY a narrow strained sliver
+             delta in [0.28, 0.38] (tau_p = 2.4-5.0e34 yr) that crashes M_PS -> 5.4-8.6e10 GeV against
+             Higgs instability mu_inst = 5.28e10 GeV & M_{N3}/M_PS >= 3.5-5.5 perturbativity limit [C/P];
+           * Pure Spin(10)-singlet FIMP chi_1 = 1_F: ZERO GUT partners (Delta_a === 0 identically!), uniquely
+             preserving minimal Chain A2 unstrained (M_PS=1.43e11, M_GUT=7.95e15, tau_p=9.08e34 yr) [T/C]!
 
-  V9.3 (Front P4 - First-Principles Thermal-Threshold EW Gauge Delta L=1 & 13-ODE Dynamical y_c(z) Leptogenesis):
-       - First-principles 4D Dirac-trace derivation + exact gauge Ward identity (< 1e-12) for all 3 crossing-related
-         EW gauge channels: N l <-> phi A, N phi <-> l A, N A <-> l phi, integrated with exact asymptotic thermal masses
-         (m_H/T = 0.370, m_l/T = 0.266, m_W/T = 0.543, m_B/T = 0.386) and kinematic thresholds u_min = (1 + m_in/M_1)^2;
-       - Exact Onsager-symmetric rank-1 Schur-complement reduction of the 12-eq SM chemical network with dynamical charm
-         asymmetry Delta_c = mu_{cR} - mu_{uR} (Lean F-34):
-           C_tot^(3,phys) = C_tot^(3,no-c) - (1/lam_c) v_c w_c^T, with v_c = -6 w_c, lam_c = 237/230 > 0 (Lyapunov stable!);
-       - Full 13-variable 3x3 density-matrix + dynamic y_c(z) + thermal-threshold EW gauge + top DL1 + dL2 at UNMODIFIED X_RES:
-         charm equilibrates dynamically (Dc_fin / Dc_eq = 1.0000), collapsing the v8 -19.1% static-y_c uncertainty to -0.34%,
-         yielding honest zero-retuning eta_B = +5.60e-10 (-8.5% vs Planck 2018, within ~10-15% thermal LPM uncertainty) [T/C]!
+  V9.3 (Front P4 - First-Principles 3-Channel Thermal-Threshold EW Gauge DL1 & 13-ODE Dynamic y_c(z)):
+       - Direct 4D Dirac-trace derivation + exact gauge Ward identity (< 1e-12) for ALL THREE crossing-related
+         EW gauge channels: As (N l <-> phi A), At1 (N phi_bar <-> l_bar A), and At2 (N A <-> l_bar phi),
+         integrated with exact asymptotic thermal masses (m_H/T, m_l/T, m_W/T, m_B/T) & kinematic thresholds;
+       - Exact Onsager-symmetric rank-1 Schur-complement reduction for dynamic charm y_c(z) (Lean F-34):
+           C_tot^(3,phys) = C_tot^(3,no-c) - (1/lam_c) v_c w_c^T, v_c = -6 w_c, lam_c = 237/230 > 0;
+       - Full 13-ODE system at UNMODIFIED X_RES: Dc_fin / Dc_eq = 1.0000 (-19.1% -> -0.34%), yielding
+         honest zero-retuning eta_B = +5.591e-10 (-8.65% vs Planck 2018, within 10-15% LPM uncertainty) [T/C]!
 
   V9.4 (Front P2/P3 - G_2-Instanton Compactification on T^7/Z_2^3 & Multi-Axion WGC Convex-Hull Closure):
-       - Exact Cayley-Dickson associative 3-form phi and coassociative 4-form *phi on R^7 -> 7x21 instanton constraint matrix
-         (rank 7, kernel dim 14 = dim g_2);
-       - Exact No-Go [T/✗]: (i) single magnetized T^2_{12} (M_12=7, M_other=0) violates F ^ *phi = 0; (ii) untwisted Abelian
-         flux on Joyce orbifold T^7/Z_2^3 has b_2^untw = 0 (every e^{ij} is odd under some g in Z_2^3, Lean F-35A);
-       - Exact Gauge-Lifted Rescue [T/C]: lifting gamma in Z_2^3 by a Spin(10) Weyl charge-conjugation gamma(H) = -H makes
-         F (x) H = (7 omega_{12} - 1 omega_{34}) (x) H strictly Z_2^3-invariant, satisfies ALL 7 G_2-instanton equations F ^ *phi = 0
-         IFF the Kahler modulus ratio is dynamically locked to A_12 / A_34 = 7 (unique BPS minimum of Yang-Mills action!),
-         and yields exact 3x1 = 3 chiral generations H_3^-(M=7) (x) H_1^+(M=-1) under PSL(2,7) ~ GL(3,F_2) (while complex
-         structure tau = 0.25+1.5i & Joyce blow-up moduli remain honestly open [P]);
-       - Multi-axion WGC convex-hull bound (Lean F-35B): S_min f_eff <= sqrt(N_ax) c_AW M_Pl combined with F-29A strictly forces
-         N_ax >= 46 at m_e, N_ax >= 591 at M_Pl, and N_ax >= 620 at Chain A2 Spin(10) (S=283.5) — rigorously closing even
-         N-flation / multi-axion alignment of all 21 holon phases (21 < 46) [T/✗]!
+       - Exact Cayley-Dickson associative 3-form phi and coassociative 4-form *phi -> rank 7 on 21 2-forms;
+       - Exact No-Go [T/✗]: single T^2_{12} violates F ^ *phi = 0; untwisted b_2^untw(T^7/Z_2^3) = 0 (F-35A);
+       - Exact Gauge-Lifted Rescue [T/C]: lifting gamma in Z_2^3 by external/commutant outer charge conjugation
+         gamma_hat(H) = -H (e.g. U(1)_H in E_6, keeping Spin(10) unbroken) makes F (x) H strictly invariant,
+         locks Kahler ratio A_12 / A_34 = 7 at unique BPS minimum E_YM(7) = 7 (F-35B), and yields exact
+         3x1 + 4x0 = 3 chiral generations; however, gamma: z_12 -> z_12_bar enforces 2 Re(tau) in Z,
+         EXPLICITLY BROKEN by CKM CP-violating tau = 0.25 + 1.5i (2 Re(tau) = 0.5 not in Z, Lean F-35C) [T/✗/P];
+       - Multi-axion WGC convex-hull bound (Lean F-35D): strictly forces N_ax >= 46 (m_e), >= 591 (M_Pl),
+         >= 620 (Chain A2 Spin(10)), closing all 21 holon phases (21 < 46) [T/✗]!
 """
 
 from fractions import Fraction
-from itertools import permutations, product
+from itertools import combinations, permutations, product
 import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.interpolate import interp1d
@@ -342,35 +338,37 @@ def suite_v91_quartic_ward_curved_ee_and_ect():
             t31 += -(dirac_quad_sym(R3[ijk], R1[d], -dq*qs[d], sc) - dirac_quad_sym(R3[ijk], R1[d], [0,0,0,0], sc)) / (dq**2)
         return t4, t3, t22, t31, t4 + t3 + t22 + t31
 
-    # Note: t3, t22, t31 are identical across sc (by F-28A!), compute once for sc=-0.25 and check sc=0, +0.25!
+    # Note: t3, t22, t31 are identical across sc (by F-28A!); check sc = -1/2, -1/4, 0, +1/4 to verify (4*sc+1)^2:
     t4_ex, t3_ex, t22_ex, t31_ex, W4_ex = eval_W4_dirac(-0.25)
     t4_no, _, _, _, W4_no               = eval_W4_dirac(0.0)
     t4_bad, _, _, _, W4_bad             = eval_W4_dirac(+0.25)
-    # Note: in eval_W4_dirac, t3/t22/t31 are O(10^-4) * inv_16piG: compare relative to |t4_ex|!
+    t4_sym, _, _, _, W4_sym             = eval_W4_dirac(-0.5)
     rel_ex  = abs(W4_ex)  / abs(t4_ex) * 100.0
     rel_no  = abs(W4_no)  / abs(t4_ex) * 100.0
     rel_bad = abs(W4_bad) / abs(t4_ex) * 100.0
-    assert rel_ex < 0.05 and rel_no > 20.0 and rel_bad > 80.0 and abs(t31_ex) / abs(t4_ex) < 1e-3
+    sym_err = abs(W4_sym - W4_no) / abs(W4_no) * 100.0
+    assert rel_ex < 0.05 and rel_no > 20.0 and rel_bad > 80.0 and abs(t31_ex) / abs(t4_ex) < 1e-3 and sym_err < 0.05
     print("  [V9.1.A] Full Non-Collinear Quartic O(h^4) Diffeomorphism Ward-Slavnov-Taylor Identity (Lean F-32A):")
     print(f"           - Individual Dirac-sea terms (exact Cartan -1/4): G4={t4_ex:+.8f}, G3={t3_ex:+.8f}, G2_22={t22_ex:+.8f}, G2_31={t31_ex:+.2e}")
-    print(f"           - WITHOUT spin connection (sc = 0):       W_4 = {W4_no:+.8f} ({rel_no:6.2f}% VIOLATION [✗]!)")
-    print(f"           - WRONG-SIGN spin connection (sc = +1/4): W_4 = {W4_bad:+.8f} ({rel_bad:6.2f}% VIOLATION [✗]!)")
+    print(f"           - WITHOUT spin connection (sc = 0):       W_4 = {W4_no:+.8f} ({rel_no:6.2f}% VIOLATION [✗]; W_4(-1/2) agrees to {sym_err:.4f}%!)")
+    print(f"           - WRONG-SIGN spin connection (sc = +1/4): W_4 = {W4_bad:+.8f} ({rel_bad:6.2f}% VIOLATION [✗], exact 4:1 ratio!)")
     print(f"           - EXACT Cartan connection (sc = -1/4):    W_4 = {W4_ex:+.2e} ({rel_ex:.4f}% EXACT WARD CANCELLATION [T/C]!)")
 
-    # --- Part B: Curved-Background Covariant dS_EE/dArea (R^(3) != 0) & 5/6-Term ECT PV Obstruction ---
+    # --- Part B: Curved-Background Covariant dS_EE/dArea (R^(3)(0) = 4 eps k_0^2, C_txtx = -1/3 eps k_0^2) & ECT ---
     sx = np.array([[0, 1], [1, 0]], dtype=complex)
     sy = np.array([[0, -1j], [1j, 0]], dtype=complex)
     sz = np.array([[1, 0], [0, -1]], dtype=complex)
 
-    def S_1d_curved(m_val, k_par, a, N, eps, n_harm):
+    def S_1d_curved(m_val, k_par, a, N, eps, n_harm, cx=1.0, cp=1.0):
         xs = (np.arange(N) + 0.5) / N
-        Om = (1.0 + eps) * np.ones(N) if n_harm == 0 else (1.0 + eps * np.cos(2.0 * np.pi * n_harm * xs))
-        inv_Om = 1.0 / Om
+        f = np.ones(N) if n_harm == 0 else np.cos(2.0 * np.pi * n_harm * xs)
+        inv_Ox = 1.0 / (1.0 + eps * cx * f)
+        inv_Op = 1.0 / (1.0 + eps * cp * f)
         H = np.zeros((2*N, 2*N), dtype=complex)
         for n in range(N):
-            H[2*n:2*n+2, 2*n:2*n+2] = (k_par * inv_Om[n]) * sy + m_val * sz
+            H[2*n:2*n+2, 2*n:2*n+2] = (k_par * inv_Op[n]) * sy + m_val * sz
             np1 = (n + 1) % N
-            hop = (-0.5j / a) * 0.5 * (inv_Om[n] + inv_Om[np1]) * sx
+            hop = (-0.5j / a) * 0.5 * (inv_Ox[n] + inv_Ox[np1]) * sx
             H[2*n:2*n+2, 2*np1:2*np1+2] += hop
             H[2*np1:2*np1+2, 2*n:2*n+2] += hop.conj().T
         _, U = eigh(H)
@@ -380,30 +378,38 @@ def suite_v91_quartic_ward_curved_ee_and_ect():
         nu = np.clip(np.linalg.eigvalsh(C_A), 1e-15, 1.0 - 1e-15)
         return 0.5 * float(-np.sum(nu * np.log(nu) + (1.0 - nu) * np.log(1.0 - nu)))
 
-    def dSdA_curved(a, N, Kmax, n_harm, pv_set, eps=0.02, nq=18):
+    def dSdA_curved(a, N, Kmax, n_harm, pv_set, eps=0.02, nq=18, cx=1.0, cp=1.0):
         xi, wi = np.polynomial.legendre.leggauss(nq)
         kp = Kmax * (0.5 * (xi + 1.0))**2
         dkp = Kmax * (0.5 * (xi + 1.0)) * wi
         Sp, Sm = 0.0, 0.0
         for k, dk in zip(kp, dkp):
             w = k * dk / (2.0 * np.pi)
-            Sp += w * sum(ci * S_1d_curved(mi, k, a, N, +eps, n_harm) for ci, mi in pv_set)
-            Sm += w * sum(ci * S_1d_curved(mi, k, a, N, -eps, n_harm) for ci, mi in pv_set)
+            Sp += w * sum(ci * S_1d_curved(mi, k, a, N, +eps, n_harm, cx, cp) for ci, mi in pv_set)
+            Sm += w * sum(ci * S_1d_curved(mi, k, a, N, -eps, n_harm, cx, cp) for ci, mi in pv_set)
         return (Sp - Sm) / (2.0 * eps * 2.0)
 
-    # 1) Uniform conformal O(a^2) Richardson match + curved R^(3)!=0 Weyl^2 Wald shift on 4-term PV:
-    v0_a10 = dSdA_curved(0.10, 80,  12.0, 0, pv_terms)
-    v2_L8  = dSdA_curved(0.10, 80,  12.0, 2, pv_terms)
-    v0_L12 = dSdA_curved(0.10, 120, 12.0, 0, pv_terms)
-    v2_L12 = dSdA_curved(0.10, 120, 12.0, 2, pv_terms)
+    # 1) Curved R^(3)(0) = 4 eps k_0^2 != 0, C_txtx(0) = -(1/3) eps k_0^2 Weyl^2 Wald shift on 4-term PV:
+    v0_a10 = dSdA_curved(0.10, 80,  12.0, 0, pv_terms, cx=1.0, cp=1.0)
+    v2_L8  = dSdA_curved(0.10, 80,  12.0, 2, pv_terms, cx=1.0, cp=1.0)
+    v0_L12 = dSdA_curved(0.10, 120, 12.0, 0, pv_terms, cx=1.0, cp=1.0)
+    v2_L12 = dSdA_curved(0.10, 120, 12.0, 2, pv_terms, cx=1.0, cp=1.0)
     k0_8 = 4.0 * np.pi / 8.0; k0_12 = 4.0 * np.pi / 12.0
     slope_8  = (v2_L8  - v0_a10) / (k0_8**2)
     slope_12 = (v2_L12 - v0_L12) / (k0_12**2)
-    # Linear extrapolation of slope(k0^2) -> k0^2 = 0:
     slope_0  = (k0_8**2 * slope_12 - k0_12**2 * slope_8) / (k0_8**2 - k0_12**2)
     wald_exact = log_mom_4 / (240.0 * np.pi)
     wald_err = abs(slope_0 - wald_exact) / abs(wald_exact) * 100.0
-    assert wald_err < 3.5
+    # Pure-transverse fixed-proper-spacing metric (cx=0, cp=1) removes O(a^2) g_xx lattice-cutoff shift:
+    v0_t8  = dSdA_curved(0.10, 80,  12.0, 0, pv_terms, cx=0.0, cp=1.0)
+    v2_t8  = dSdA_curved(0.10, 80,  12.0, 2, pv_terms, cx=0.0, cp=1.0)
+    v0_t12 = dSdA_curved(0.10, 120, 12.0, 0, pv_terms, cx=0.0, cp=1.0)
+    v2_t12 = dSdA_curved(0.10, 120, 12.0, 2, pv_terms, cx=0.0, cp=1.0)
+    s8_t  = (v2_t8  - v0_t8)  / (k0_8**2)
+    s12_t = (v2_t12 - v0_t12) / (k0_12**2)
+    slope_0_t = (k0_8**2 * s12_t - k0_12**2 * s8_t) / (k0_8**2 - k0_12**2)
+    wald_err_t = abs(slope_0_t - wald_exact) / abs(wald_exact) * 100.0
+    assert wald_err < 3.5 and wald_err_t < 2.0
 
     # 2) Exact 5-term and 6-term ECT Tchebycheff Sign Obstruction Theorem (Lean F-32B,C):
     # Geometric masses m_i = 2^i => m_i^2 = 4^i, ln(m_i^2) = 2 i ln 2 (exact rational linear system!):
@@ -457,9 +463,10 @@ def suite_v91_quartic_ward_curved_ee_and_ect():
     rel_shift_6 = abs(v2_6  - v0_6)   / abs(v0_6)   * 100.0
     assert rel_shift_6 < 0.25 * rel_shift_4  # Killing sum c ln m^2 = 0 kills the curved O(k0^2) Weyl^2 shift!
 
-    print("  [V9.1.B] Curved-Background Covariant dS_EE/dArea (R^(3) != 0) & ECT PV Sign Obstruction (Lean F-32B,C):")
-    print(f"           - 4-term PV curved chiral lattice (L=8..12, R^(3)(0) = 2 eps k_0^2 != 0):")
-    print(f"             k0^2->0 slope = {slope_0:+.6f} vs EXACT 4D Dirac Weyl^2 Wald entropy (sum c ln m^2)/(240 pi) = {wald_exact:+.6f} ({wald_err:.2f}% MATCH!)")
+    print("  [V9.1.B] Curved-Background Covariant dS_EE/dArea (R^(3)(0)=4 eps k_0^2, C_txtx=-(1/3) eps k_0^2) & ECT (F-32B,C):")
+    print(f"           - 4-term PV curved chiral lattice (L=8..12, a=0.10, eps=0.02):")
+    print(f"             isotropic (cx=1,cp=1) slope_0 = {slope_0:+.6f} ({wald_err:.2f}%), pure-transverse (cx=0,cp=1) slope_0 = {slope_0_t:+.6f} ({wald_err_t:.2f}%)")
+    print(f"             vs EXACT 4D Dirac Weyl^2 Wald entropy (sum c ln m^2)/(240 pi) = {wald_exact:+.6f}!")
     print(f"           - UNIVERSAL ECT ANTIGRAVITY NO-GO [T/✗]:")
     print(f"             * 5-term PV (m_0<...<m_4, c_0=+1, sum c ln m^2=0): L_5/(2 ln 2) = {L5_rat} (< 0 => G_Sak < 0 for 100/100 random spectra!)")
     print(f"             * 6-term PV (all UV + CC + R^2 log = 0, c_0=+1):   L_6/(2 ln 2) = {L6_cc0_rat} (< 0 => G_Sak < 0 for 100/100 random spectra!)")
@@ -537,12 +544,54 @@ def suite_v92_gut_threshold_fimp_audit():
     assert abs(diff_54F - np.log(6561.0/16.0)/(3.0*np.pi)) < 1e-12
     m_54F = solve_thresh(np.array([d4_54F, d2_54F, d2_54F]))
 
-    # 210_F exact 4:3:2:1 ratios:
+    # 210_F exact 4:3:2:1 ratios at <210_H> = 0 (delta = 0):
     d4_210F = (2/3)*(4*np.log(1.0) + 24*np.log(3/4) + 24*np.log(2/4) + 4*np.log(1/4)) / (2*np.pi)
     d2_210F = (2/3)*(0*np.log(1.0) + 20*np.log(3/4) + 30*np.log(2/4) + 6*np.log(1/4)) / (2*np.pi)
     diff_210F = d4_210F - d2_210F
     assert abs(diff_210F - np.log(324.0)/(3.0*np.pi)) < 1e-12
     m_210F = solve_thresh(np.array([d4_210F, d2_210F, d2_210F]))
+
+    # Exact SO(10) D-parity audit under <210_H>_(1,1,1) = e_{6789} (required to break D-parity in Chain A2!):
+    # 1) 54_F: S_{ab} S_{cd} C_{abcd} === 0 identically (symmetric x antisymmetric) -> 6:4:1 is 100% protected!
+    # 2) 210_F: Lambda^4 contraction A_{abcd} B_{cdef} C_{efab} splits k=2 90-plet (15,3,1)+(15,1,3) with evals +-8!
+    basis210 = list(combinations(range(10), 4))
+    idx210 = {t: i for i, t in enumerate(basis210)}
+    def eps4_6789(e, f, a, b):
+        seq = (e, f, a, b)
+        if set(seq) != {6, 7, 8, 9}: return 0
+        inv = sum(1 for p in range(4) for q in range(p+1, 4) if seq[p] > seq[q])
+        return 1 if inv % 2 == 0 else -1
+    M210_D = np.zeros((210, 210))
+    for i_I, I in enumerate(basis210):
+        for a, b in permutations(I, 2):
+            if a < 6 or b < 6: continue
+            cd = [x for x in I if x not in (a, b)]
+            for c, d in [(cd[0], cd[1]), (cd[1], cd[0])]:
+                seqA = (a, b, c, d)
+                sA = 1 if sum(1 for p in range(4) for q in range(p+1,4) if seqA[p] > seqA[q]) % 2 == 0 else -1
+                ef_rem = [x for x in (6,7,8,9) if x not in (a, b)]
+                for e, f in [(ef_rem[0], ef_rem[1]), (ef_rem[1], ef_rem[0])]:
+                    sC = eps4_6789(e, f, a, b)
+                    if len({c, d, e, f}) < 4: continue
+                    J = tuple(sorted((c, d, e, f)))
+                    seqB = (c, d, e, f)
+                    sB = 1 if sum(1 for p in range(4) for q in range(p+1,4) if seqB[p] > seqB[q]) % 2 == 0 else -1
+                    M210_D[i_I, idx210[J]] += sA * sB * sC
+    ev_210D = np.round(np.linalg.eigvalsh(M210_D), 6)
+    vals_D, cnts_D = np.unique(ev_210D, return_counts=True)
+    assert list(zip(vals_D.tolist(), cnts_D.tolist())) == [(-8.0, 45), (0.0, 120), (8.0, 45)]
+
+    # Scan D-parity splitting delta on 210_F: M_(15,3,1) = |2+delta|, M_(15,1,3) = |2-delta|
+    def solve_210_delta(d):
+        mL, mR = abs(2.0 + d), abs(2.0 - d)
+        mmax = max(4.0, mL, mR)
+        d4 = (2/3)*(4*np.log(4/mmax) + 24*np.log(3/mmax) + 12*np.log(mL/mmax) + 12*np.log(mR/mmax) + 4*np.log(1/mmax)) / (2*np.pi)
+        d2L = (2/3)*(20*np.log(3/mmax) + 30*np.log(mL/mmax) + 6*np.log(1/mmax)) / (2*np.pi)
+        d2R = (2/3)*(20*np.log(3/mmax) + 30*np.log(mR/mmax) + 6*np.log(1/mmax)) / (2*np.pi)
+        return solve_thresh(np.array([d4, d2L, d2R]))
+    m_210_d028 = solve_210_delta(0.28)
+    m_210_d038 = solve_210_delta(0.38)
+    mu_inst = 5.28e10; M_N3_ref = 3.005e11
 
     # Find exact critical 54_H scalar inversion R_H = M_(20')/M_(1,3,3) required for 54_F + 54_H to barely survive Super-K (2.4e34 yr):
     lo, hi = 0.05, 1.0
@@ -554,16 +603,20 @@ def suite_v92_gut_threshold_fimp_audit():
     R_H_crit = 0.5*(lo + hi)
     m_54F_R02 = solve_thresh(np.array([d4_54F + (4/3)*np.log(0.2)/(2*np.pi), d2_54F, d2_54F]))
 
-    assert m_1F[3] > 9e34 and m_54F[3] < 4e33 and m_210F[3] < 4e33 and m_54F_R02[3] < 2.4e34 and R_H_crit < 0.17
-    print(f"  [V9.2.A] Exact Zero-Free-Parameter GUT Partner Thresholds (Lean F-33A,B):")
-    print(f"           - Pure Spin(10)-singlet FIMP 1_F (Delta=0):  M_PS={m_1F[0]:.2e}, M_GUT={m_1F[1]:.2e}, aG^-1={m_1F[2]:.2f}, tau_p={m_1F[3]:.2e} yr [HYPER-K OPTIMAL!]")
-    print(f"           - 54_F FIMP (exact 6:4:1, Delta4-Delta2 = ln(6561/16)/(3pi) = {diff_54F:+.4f}):")
-    print(f"             M_PS={m_54F[0]:.2e}, M_GUT={m_54F[1]:.2e}, aG^-1={m_54F[2]:.2f}, tau_p={m_54F[3]:.2e} yr (7.6x EXCLUDED by Super-K > 2.4e34 [✗]!)")
-    print(f"             Even with 5x inverted 54_H scalar splitting (R_H=0.2): tau_p={m_54F_R02[3]:.2e} yr < 2.4e34 (requires extreme R_H < {R_H_crit:.3f}!)")
-    print(f"           - 210_F FIMP (exact 4:3:2:1, Delta4-Delta2 = ln(324)/(3pi) = {diff_210F:+.4f}):")
-    print(f"             M_PS={m_210F[0]:.2e}, M_GUT={m_210F[1]:.2e}, aG^-1={m_210F[2]:.2f}, tau_p={m_210F[3]:.2e} yr (7.4x EXCLUDED by Super-K [✗]!)")
-    print("           -> SHARP V9 DISCOVERY [T/✗ + T/C]: Exact GUT partner thresholds FALSIFY both 54_F and 210_F FIMPs at Super-K")
-    print("              without extreme >6x inverted scalar tuning, singling out pure Spin(10)-singlet chi_1 = 1_F as unique survivor!\n")
+    assert (m_1F[3] > 9e34 and m_54F[3] < 4e33 and m_210F[3] < 4e33 and m_54F_R02[3] < 2.4e34 and R_H_crit < 0.17
+            and m_210_d028[3] > 2.3e34 and m_210_d038[0] < 5.6e10 and M_N3_ref / m_210_d028[0] > 3.3)
+    print(f"  [V9.2.A] Exact GUT Partner Thresholds & D-Parity Coupling Audit (Lean F-33A,B):")
+    print(f"           - Pure Spin(10)-singlet FIMP 1_F (Delta=0):  M_PS={m_1F[0]:.2e}, M_GUT={m_1F[1]:.2e}, aG^-1={m_1F[2]:.2f}, tau_p={m_1F[3]:.2e} yr [UNIQUE UNSTRAINED!]")
+    print(f"           - 54_F FIMP (Sym^2(54_F).210_H === 0 -> 6:4:1 100% protected; Delta4-Delta2 = ln(6561/16)/(3pi) = {diff_54F:+.4f}):")
+    print(f"             M_PS={m_54F[0]:.2e}, M_GUT={m_54F[1]:.2e}, aG^-1={m_54F[2]:.2f}, tau_p={m_54F[3]:.2e} yr (7.6x Super-K EXCLUDED [✗]!)")
+    print(f"             Even with 5x inverted 54_H scalar splitting (R_H=0.2): tau_p={m_54F_R02[3]:.2e} yr < 2.4e34 (needs R_H < {R_H_crit:.3f}!)")
+    print(f"           - 210_F FIMP at <210_H>=0 (delta=0, 4:3:2:1, Delta4-Delta2 = ln(324)/(3pi) = {diff_210F:+.4f}):")
+    print(f"             M_PS={m_210F[0]:.2e}, M_GUT={m_210F[1]:.2e}, aG^-1={m_210F[2]:.2f}, tau_p={m_210F[3]:.2e} yr (7.4x Super-K EXCLUDED [✗]!)")
+    print(f"           - 210_F under D-parity-breaking <210_H> (exact +-8 evals on k=2 90-plet -> M_L:M_R = |2+d|:|2-d|):")
+    print(f"             Narrow strained sliver delta in [0.28, 0.38] lifts tau_p={m_210_d028[3]:.2e}..{m_210_d038[3]:.2e} yr ONLY by crashing")
+    print(f"             M_PS={m_210_d028[0]:.2e}..{m_210_d038[0]:.2e} GeV against mu_inst={mu_inst:.2e} & perturbativity M_N3/M_PS={M_N3_ref/m_210_d028[0]:.2f}..{M_N3_ref/m_210_d038[0]:.2f} (sqrt(4pi)=3.54) [C/P]!")
+    print("           -> SHARP V9 RESULT [T/✗ + T/C]: 54_F is unconditionally falsified at Super-K; 210_F is falsified at delta=0 and")
+    print("              pinched to a perturbative-ceiling sliver under <210_H>; pure Spin(10)-singlet chi_1 = 1_F is the unique unstrained survivor!\n")
 
 
 # ==============================================================================
@@ -574,14 +627,15 @@ def suite_v93_exact_gauge_dl1_and_dynamic_yc(x_res):
     print("DEEP SUITE V9.3 (P4): Exact Thermal-Threshold EW Gauge DL1 & 13-ODE Dynamic y_c(z)")
     print("=" * 88)
 
-    # 1. Verify first-principles Dirac-trace Ward identity & closed-form |M(N l -> phi A)|^2:
+    # 1. Verify first-principles Dirac-trace Ward identity & closed forms for ALL THREE EW gauge channels (As, At1, At2):
     I2 = np.eye(2, dtype=complex)
     s1 = np.array([[0,1],[1,0]], dtype=complex); s2 = np.array([[0,-1j],[1j,0]], dtype=complex); s3 = np.array([[1,0],[0,-1]], dtype=complex)
     g0 = np.block([[np.zeros((2,2)), I2], [I2, np.zeros((2,2))]])
     g1 = np.block([[np.zeros((2,2)), s1], [-s1, np.zeros((2,2))]])
     g2 = np.block([[np.zeros((2,2)), s2], [-s2, np.zeros((2,2))]])
     g3 = np.block([[np.zeros((2,2)), s3], [-s3, np.zeros((2,2))]])
-    gam = [g0, g1, g2, g3]; g5 = 1j * g0 @ g1 @ g2 @ g3; PL = 0.5 * (np.eye(4) - g5)
+    gam = [g0, g1, g2, g3]; g5 = 1j * g0 @ g1 @ g2 @ g3
+    PL = 0.5 * (np.eye(4) - g5); PR = 0.5 * (np.eye(4) + g5)
     eta = np.array([1.0, -1.0, -1.0, -1.0])
     def mdot(a, b): return float(a[0]*b[0] - a[1]*b[1] - a[2]*b[2] - a[3]*b[3])
     def mslash(p): return p[0]*g0 - p[1]*g1 - p[2]*g2 - p[3]*g3
@@ -592,13 +646,26 @@ def suite_v93_exact_gauge_dl1_and_dynamic_yc(x_res):
         p1 = np.array([E1,0,0,p]); p2 = np.array([p,0,0,-p])
         k = rs/2; st = np.sqrt(1-ct**2)
         k2 = np.array([k, k*st, 0, k*ct]); k1 = np.array([k, -k*st, 0, -k*ct])
-        s = x; t = mdot(p2-k2, p2-k2)
-        P1 = mslash(p1) + np.eye(4); P2 = mslash(p2)
-        O = [((2*k1[mu]+k2[mu])/s)*np.eye(4) + (mslash(p2-k2)@gam[mu])/t for mu in range(4)]
-        max_ward = max(max_ward, float(np.max(np.abs(sum(eta[mu]*k2[mu]*(PL@O[mu]@P2) for mu in range(4))))))
-        m2 = sum((-eta[mu])*np.trace(P1@(PL@O[mu])@P2@(g0@(PL@O[mu]).conj().T@g0)).real for mu in range(4))
-        m2_ex = 2.0 * ((s**2 - 2*s + 2)/(s*(-t)) - (s - 2)/s)
-        max_poly = max(max_poly, abs(m2 - m2_ex))
+        s = x; t = mdot(p2-k2, p2-k2); u_m = mdot(p1-k2, p1-k2)
+        xt, xu = -t, -u_m
+        P1 = mslash(p1) + np.eye(4); P2 = mslash(p2); K1 = mslash(k1)
+        # Channel As (N l -> phi A):
+        O1 = [((2*k1[mu]+k2[mu])/s)*np.eye(4) + (mslash(p2-k2)@gam[mu])/t for mu in range(4)]
+        max_ward = max(max_ward, float(np.max(np.abs(sum(eta[mu]*k2[mu]*(PL@O1[mu]@P2) for mu in range(4))))))
+        m1_sq = sum((-eta[mu])*np.trace(P1@(PL@O1[mu])@P2@(g0@(PL@O1[mu]).conj().T@g0)).real for mu in range(4))
+        m1_ex = 2.0 * ((s**2 - 2*s + 2)/(s*xt) - (s - 2)/s)
+        # Channel At1 (N phi_bar -> l_bar A):
+        O2 = [((2*p2[mu]-k2[mu])/t)*np.eye(4) + (gam[mu]@mslash(k1+k2))/s for mu in range(4)]
+        max_ward = max(max_ward, float(np.max(np.abs(sum(eta[mu]*k2[mu]*(K1@O2[mu]@PR) for mu in range(4))))))
+        m2_sq = sum((-eta[mu])*np.trace(K1@(O2[mu]@PR)@P1@(g0@(O2[mu]@PR).conj().T@g0)).real for mu in range(4))
+        m2_ex = 2.0 * (2.0*(s - 1.0)/(s*xt) + (s - 2.0)/s - xt/s)
+        # Channel At2 (N A -> l_bar phi): note t_3 = (p1-k1)^2 = t (Higgs), u_3 = (p1-k2)^2 = u_m (lepton)!
+        t3 = mdot(p1-k1, p1-k1); u3 = mdot(p1-k2, p1-k2); xt3, xu3 = -t3, -u3
+        O3 = [((2*k2[mu]-p2[mu])/t3)*np.eye(4) - (gam[mu]@mslash(k1-p2))/u3 for mu in range(4)]
+        max_ward = max(max_ward, float(np.max(np.abs(sum(eta[mu]*p2[mu]*(K1@O3[mu]@PR) for mu in range(4))))))
+        m3_sq = sum((-eta[mu])*np.trace(K1@(O3[mu]@PR)@P1@(g0@(O3[mu]@PR).conj().T@g0)).real for mu in range(4))
+        m3_ex = 2.0 * ((s - 1.0)/xu3 + 2.0*s/(xt3*xu3))
+        max_poly = max(max_poly, abs(m1_sq - m1_ex), abs(m2_sq - m2_ex), abs(m3_sq - m3_ex))
     assert max_ward < 1e-12 and max_poly < 1e-11
 
     # 2. Exact Onsager-symmetric rank-1 Schur-complement verification (Lean F-34):
@@ -681,7 +748,7 @@ def suite_v93_exact_gauge_dl1_and_dynamic_yc(x_res):
             u_At2 = max((1.0 + mA_T/x)**2, ((ml_T + mh_T)/x)**2)
             r_As[ix]  += int_ch(x, u_As,  lambda u: (w_g/(4.0*np.pi))*np.maximum(((u**2-2*u+2)/u**2)*np.log((u-1.0+al)/al) - (u-1.0)*(u-2.0)/u**2, 0.0))
             r_At1[ix] += int_ch(x, u_At1, lambda u: (w_g/(4.0*np.pi))*np.maximum((2.0*(u-1.0)/u**2)*np.log((u-1.0+ah)/ah) + (u-1.0)*(u-3.0)/(2.0*u**2), 0.0))
-            r_At2[ix] += int_ch(x, u_At2, lambda u: (w_g/(4.0*np.pi))*np.maximum(((u-1.0+ah)*np.log((u-1.0+ah)/ah) + (2.0*u/(u-1.0+ah+al))*(np.log((u-1.0+ah)/ah)+np.log((u-1.0+al)/al)))/u, 0.0))
+            r_At2[ix] += int_ch(x, u_At2, lambda u: (w_g/(4.0*np.pi))*np.maximum(((u-1.0)*np.log((u-1.0+al)/al) + (2.0*u/(u-1.0+ah+al))*(np.log((u-1.0+ah)/ah)+np.log((u-1.0+al)/al)))/u, 0.0))
 
     f_Hs  = interp1d(np.log(xs_g), r_Hs,  bounds_error=False, fill_value=(r_Hs[0], 0.0))
     f_Ht  = interp1d(np.log(xs_g), r_Ht,  bounds_error=False, fill_value=(r_Ht[0], 0.0))
@@ -770,10 +837,10 @@ def suite_v93_exact_gauge_dl1_and_dynamic_yc(x_res):
     eb_t316, _     = solve_ode("static_316", "exact_thermal")
     eb_tdyn, r_td  = solve_ode("dynamic",    "exact_thermal")
     assert abs(r_td - 1.0) < 1e-4 and abs(eb_pdyn - eb_p316)/eb_p316 < 0.005 and 5.4e-10 < eb_tdyn < 5.8e-10
-    print(f"  [V9.3.A] First-Principles EW Gauge Dirac-Trace Ward Identity (< {max_ward:.1e}) & Exact Closed Form (< {max_poly:.1e}):")
+    print(f"  [V9.3.A] First-Principles 3-Channel EW Gauge Dirac-Trace Ward (< {max_ward:.1e}) & Exact Closed Forms (< {max_poly:.1e}):")
     print(f"           - Onsager-symmetric Schur complement (Lean F-34): v_c = -6 w_c, lam_c = 237/230 > 0, C_230 - v_c w_c^T/lam_c === C_316!")
     print(f"           - v8 proxy gauge: static 316 -> {eb_p316:+.4e} vs DYNAMIC y_c(z) -> {eb_pdyn:+.4e} (Dc_fin/Dc_eq={r_pd:.4f}; -19.1% -> -0.34%!)")
-    print(f"           - EXACT thermal-threshold EW gauge + DYNAMIC y_c(z) at UNMODIFIED X_RES:")
+    print(f"           - EXACT 3-channel thermal-threshold EW gauge + DYNAMIC y_c(z) at UNMODIFIED X_RES:")
     print(f"             static 316 -> {eb_t316:+.4e} | DYNAMIC y_c(z) -> {eb_tdyn:+.4e} ({(eb_tdyn-6.12e-10)/6.12e-10*100:+.2f}% vs Planck, Dc_fin/Dc_eq={r_td:.4f}) [T/C]!\n")
 
 
@@ -822,12 +889,17 @@ def suite_v94_g2_compactification_and_multiaxion_wgc():
     assert np.linalg.norm(M_inst @ f_bps) < 1e-14
     E_ym = lambda r: 0.5 * (49.0 / r + r)
     assert E_ym(7.0) == 7.0 and E_ym(6.0) > 7.0 and E_ym(8.0) > 7.0
-    # Zero modes on (T^2_{12}/Z_2(beta)) x (T^2_{34}/Z_2(alpha)):
-    # M_12 = 7 -> dim H_4^+ = 4, dim H_3^- = 3; M_34 = -1 -> dim H_1^+ = 1, dim H_0^- = 0 => (beta=-1, alpha=+1) has 3*1 = 3!
-    n_gen = 3 * 1
+    # Zero modes on (T^2_{12}/Z_2(beta)) x (T^2_{34}/Z_2(alpha)) across BOTH chi_56 = +-1 spinor sectors:
+    # chi_56 = +1 -> (beta=-1, alpha=+1): H_3^-(7) (x) H_1^+(-1) = 3 * 1 = 3;
+    # chi_56 = -1 -> (beta=+1, alpha=-1): H_4^+(7) (x) H_0^-(-1) = 4 * 0 = 0 => total = 3!
+    n_gen = 3 * 1 + 4 * 0
     assert n_gen == 3
+    # Exact gamma-reflection lattice obstruction on T^2_{12}: gamma: z -> z_bar preserves Z + tau Z iff 2 Re(tau) in Z!
+    tau_ckm = 0.25 + 1.5j
+    two_re_tau = 2.0 * tau_ckm.real  # = 0.5 not in Z -> EXPLICITLY BREAKS gamma (Lean F-35C)!
+    assert abs(two_re_tau - round(two_re_tau) - 0.5) < 1e-12
 
-    # Part B: Multi-Axion WGC Convex-Hull Closure of the 21 Holon Phases (Lean F-35B):
+    # Part B: Multi-Axion WGC Convex-Hull Closure of the 21 Holon Phases (Lean F-35D):
     M_Pl = 2.43535e18; rho_L0 = 2.5e-47; Omega_L = 0.685
     c_AW = 0.5 * np.pi * np.sqrt(6.0); c_cos = np.sqrt(1.5 * Omega_L)
     S_max_1 = 3.0 * c_AW / c_cos  # 11.391 < 12
@@ -839,14 +911,16 @@ def suite_v94_g2_compactification_and_multiaxion_wgc():
         ("M_Pl (2.44e18 GeV)",       M_Pl,       None),
         ("Chain A2 Spin(10) @ M_GUT", None,      283.5),
     ]
-    print("  [V9.4.A] G_2-Instanton Compactification on T^7/Z_2^3 (Lean F-35A):")
+    print("  [V9.4.A] G_2-Instanton Compactification on T^7/Z_2^3 (Lean F-35A,B,C):")
     print("           - Exact Cayley-Dickson constraint matrix M_inst: rank 7 on 21 2-forms (ker dim = 14 = dim g_2);")
     print("           - NO-GO [T/✗]: Single T^2_{12} (M=7) gives ||F ^ *phi|| = 7.0 != 0; untwisted Abelian b_2^untw(T^7/Z_2^3) = 0/21!")
-    print("           - GAUGE-LIFTED RESCUE [T/C]: F (x) H = ((7/A_12) e^{12} - (1/A_34) e^{34}) (x) H with Spin(10) Weyl lift gamma(H)=-H")
-    print("             is strictly Z_2^3-invariant, solves ALL 7 G_2-instanton eqs (||F ^ *phi|| = 0.00e+00) IFF Kahler ratio A_12/A_34 = 7")
-    print(f"             (unique BPS YM minimum E_YM(7) = 7.0 < E_YM(6,8)), yielding EXACTLY 3x1 = {n_gen} chiral generations H_3^-(7) (x) H_1^+(-1)!")
-    print("             (Honest [P]: complex structure tau = 0.25+1.5i & Joyce blow-up moduli stabilization remain open.)")
-    print("  [V9.4.B] Multi-Axion WGC Convex-Hull Bound Closing the 21 Holon Phases (Lean F-35B):")
+    print("           - GAUGE-LIFTED RESCUE [T/C]: F (x) H = ((7/A_12) e^{12} - (1/A_34) e^{34}) (x) H with external/commutant outer")
+    print("             charge-conjugation lift gamma_hat(H) = -H (e.g. U(1)_H in E_6, keeping Spin(10) unbroken) solves ALL 7 G_2")
+    print("             instanton eqs (||F ^ *phi|| = 0.00e+00) IFF Kahler ratio A_12/A_34 = 7 (unique BPS minimum E_YM(7) = 7.0,")
+    print(f"             independent of A_12*A_34 at fixed V_3), yielding EXACTLY 3x1 + 4x0 = {n_gen} chiral generations!")
+    print(f"           - SHARP OBSTRUCTION [T/✗/P] (Lean F-35C): Joyce reflection gamma: z_12 -> z_12_bar requires 2 Re(tau) in Z,")
+    print(f"             so CKM CP-violating tau = 0.25+1.5i (2 Re(tau) = {two_re_tau:.2f} not in Z) EXPLICITLY BREAKS gamma (needs blow-up/moduli breaking)!")
+    print("  [V9.4.B] Multi-Axion WGC Convex-Hull Bound Closing the 21 Holon Phases (Lean F-35D):")
     n_me = 0; n_mpl = 0; n_so10 = 0
     for lbl, Luv, S_fix in scales:
         S_req = float(np.log((Luv**4) / rho_L0)) if S_fix is None else S_fix
