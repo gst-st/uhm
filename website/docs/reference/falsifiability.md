@@ -58,13 +58,15 @@ A lifetime test needs an interaction and mediator scale. A mixing test needs two
 
 ### Quantitative experimental targets of the `Chain A2` and QCA architecture {#quantitative-targets}
 
-After eliminating falsified sub-models (`Chain B`, naive $Y_\nu = Y_u$ seesaw, PQ $\mathbf{10}_H \oplus \overline{\mathbf{126}}_H$, single-field WGC gravitational instantons, minimal $\mathbf{210}_F + \mathbf{210}_H$ DM), six sharp quantitative targets stand out for 2026–2040 observations [C]:
+After eliminating falsified sub-models (`Chain B`, naive $Y_\nu = Y_u$ seesaw, PQ $\mathbf{10}_H \oplus \overline{\mathbf{126}}_H$, single-field WGC gravitational instantons, minimal $\mathbf{210}_F + \mathbf{210}_H$ and $\mathbf{54}_F$ DM, thermalized $N_f = 4$ $SU(2)_d$), eight sharp quantitative targets stand out for 2026–2040 observations [C]:
 
 | Target | Quantitative signature | Primary experiment / falsification criterion |
 |---|---|---|
 | Proton decay $p \to e^+\pi^0$ | $\tau_p \approx 9.08\times 10^{34}\text{–}2.27\times 10^{35}\,\mathrm{yr}$ (`Chain A2`; `Chain A1`: $1.22\times 10^{36}\,\mathrm{yr}$) | Hyper-Kamiokande / DUNE ([Proton Decay](../physics/particle-physics/proton-decay#chain-a2-proton-decay)) |
-| Neutrino mass sum & $0\nu\beta\beta$ | Normal ordering, $\sum m_\nu \approx 0.065\,\mathrm{eV} < 0.072\,\mathrm{eV}$, Majorana $\nu^c \in \mathbf{16}_+$ | DESI / Euclid, LEGEND-1000, nEXO ([Neutrino Masses](../physics/particle-physics/neutrino-masses#nonpq-chain-a2-seesaw)) |
+| Neutrino mass sum & $0\nu\beta\beta$ | Normal ordering, $\sum m_\nu \approx 0.065\,\mathrm{eV} < 0.072\,\mathrm{eV}$, Majorana $\nu^c \in \mathbf{16}_+$; first-principles 2D LPM $\eta_B = +6.22\times 10^{-10}$ | DESI / Euclid, LEGEND-1000, nEXO ([Neutrino Masses](../physics/particle-physics/neutrino-masses#nonpq-chain-a2-seesaw)) |
 | Absence of Clifford PQ axion | No PQ symmetry inside $\mathrm{Cl}_{0,7}$ (`T-333`); tree-level $\bar{\theta}_{\mathrm{tree}} = 0$ via $L \leftrightarrow R$ | ADMX / MADMAX (classic QCD axion detection refutes minimal axion-free branch), nEDM |
 | Non-phantom thawing dark energy | $w(z) \ge -1$ ($w_0 \approx -0.81$ at $f = 0.7\,M_{\mathrm{Pl,red}}$; $\Delta\chi^2 = -8.35$ on DESY5) | DESI DR2+ / Euclid / Roman (confirmed phantom crossing $w < -1$ refutes single-field thawing; [Cosmological Constant](../physics/gravity/cosmological-constant#wgc-quintessence-boundary)) |
+| External $SU(2)_d$ dark radiation $\Delta N_{\mathrm{eff}}$ | Pure YM `0.052–0.161`, Higgsed `0.086–0.268` (thermalized $N_f=4$ $\ge 0.327$ already excluded!) | CMB-S4 ($\sigma \approx 0.027$), Simons Observatory ([Cosmological Constant](../physics/gravity/cosmological-constant#wgc-quintessence-boundary)) |
+| Unique FIMP $\chi_1 = \mathbf{1}_F$ Lyman-$\alpha$ & $T_{\mathrm{RH}}$ | Warm-DM floor $m_{\chi_1} \ge 16.47\text{–}23.53\,\mathrm{keV}$; gravitational freeze-in $T_{\mathrm{RH}} = 1.39\times 10^{14}\,\mathrm{GeV}$ at $10^9\,\mathrm{GeV}$ | DESI / ELT Lyman-$\alpha$ forest, CMB-S4 tensor $r$ ([Dark Matter](../physics/cosmology-phys/dark-matter#z2-dm-audit)) |
 | Quartic QCA UV dispersion | Zero linear $O(E/M_{\mathrm{Pl}})$ shift; subluminal quartic $O(a^2 E^2)$ octahedral term only | Fermi-LAT, CTA, LHAASO |
 | Laboratory quantum-information bounds | Bilocal complex contrast $6\sqrt{2} \approx 8.4853 > 7.6605$; $K_3$ Aharonov–Bohm spectrum; Choi $m_W(7)=245$ | Photonic / superconducting / Rydberg quantum simulators ([Network Results](./network-results)) |
