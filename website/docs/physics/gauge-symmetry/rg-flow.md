@@ -43,16 +43,16 @@ Scanning 30 Hall–Weinberg threshold realizations ($\lvert\Delta\alpha_i^{-1}\r
 
 Theorem **`F-42`** (`f42_spin6_stab_su4_dim`, `f42_ccvs_ko6_and_zeroth_order`, `f42_ccvs_orbit_vs_full_fluctuations`, `ToEFrontierV11.lean`, `verify_deep_frontier_v11.py` V11.3) formalizes the **Stratum-B** `(Cl₀)+KO-6+(P)` lift from the octonionic $\mathrm{Cl}_{0,7}$ spinor $S_\varphi \cong \mathbf{4}_{\mathbb{C}}$ (clock stabilizer $\mathfrak{spin}(6) \cong \mathfrak{su}(4)_C$, $\dim = 15$, $J_O = \Gamma_7$ with $J_O^2 = -I_8$) to the Connes–Chamseddine–van Suijlekom (CCvS) Pati–Salam finite spectral triple $A_F = \mathbb{H}_L \oplus \mathbb{H}_R \oplus M_4(\mathbb{C})$ on $H_F = \mathbb{C}^{32}$ (exact KO-dimension $6$, universal 0th-order condition, genuine 1st-order violation `max = 7.0`) [T]:
 
-- **Unitary orbit vs. full CCvS inner fluctuations [T]:** On the unitary gauge orbit $U D_F U^\dagger$, the antisymmetric $(6,1,1)_{\mathbb{C}}$ diquark/leptoquark vanishes identically (`real dim = 8 + 120 + 60 = 188`), whereas full CCvS fluctuations ($+A_{(2)}$) strictly generate $(6,1,1)_{\mathbb{C}}$ (`real dim = 200`, explicit pure-$(6,1,1)_{\mathbb{C}}$ witness `M_6(0,1) = +14`).
-- **Two-loop CCvS Pati–Salam unification, leptogenesis & heavy-threshold split (`V11.3.B,C`) [C] / [✗]:**
+- **Unitary orbit vs. genuine coupled unital CCvS inner fluctuations [T]:** On the $32\times 32$ unitary gauge orbit $U D_F U^\dagger$, the antisymmetric $(6,1,1)_{\mathbb{C}}$ diquark/leptoquark vanishes identically (`real dim = 8 + 120 + 60 = 188`), whereas genuine coupled unital self-adjoint CCvS semigroup perturbations $\Phi(\omega)(D_F)$ automatically preserve KO-dim 6 and strictly generate $(6,1,1)_{\mathbb{C}}$ (`real dim = 200`, single coupled witness `M_6(0,1) = -7`, and 4-perturbation pure-$(6,1,1)_{\mathbb{C}}$ linear combination with zero Yukawa block `M_6(0,1) = -28`).
+- **Two-loop CCvS Pati–Salam unification (exact 4-color $C_{\mathrm{top}}^{\mathrm{PS}} = [2,2,2]$, PDG $\pm 1\sigma$ $\alpha_s$ sensitivity), leptogenesis & heavy-threshold split (`V11.3.B,C`) [C] / [✗]:**
 
 | CCvS / Pati–Salam scalar benchmark | $M_{\mathrm{PS}}$ (GeV) | $\Lambda_{\mathrm{NCG}}$ (GeV) | $\alpha^{-1}(\Lambda_{\mathrm{NCG}})$ | $M_{\mathrm{PS}}$ vs. $M_{N_1}=1.80\times 10^{10}$ & $(6,1,1)_{\mathbb{C}}$ p-decay |
 |---|---|---|---|---|
-| `Chain A2` (`(1,2,2)_C + (10,1,3)_C`) | $1.45\times 10^{11}$ | $7.87\times 10^{15}$ | $45.14$ | OK ($> M_{N_1}$, no light $(6,1,1)_{\mathbb{C}}$) [C] |
-| `CCvS-trunc` (`+ (6,1,1)_C`) | $5.06\times 10^{10}$ | $2.04\times 10^{16}$ | $45.56$ | Excluded by $(6,1,1)_{\mathbb{C}}$ Super-K bound ($M_6 \ge 8.35\times 10^{10}$) [✗] |
-| `CCvS-FULL-R` (`+ (15,2,2)_R + (6,1,1)_C`) | $1.54\times 10^{10}$ | $5.01\times 10^{16}$ | $39.05$ | Drops $1.17\times$ below $M_{N_1}$ & fails Super-K $M_6$ [✗] |
-| `CCvS-FULL-C` (`+ (15,2,2)_C + (6,1,1)_C`) | $1.27\times 10^9$ | $2.70\times 10^{17}$ | $28.50$ | Breaks resonant leptogenesis ($14.2\times$ below $M_{N_1}$) & fails $M_6$ [✗] |
+| `Chain A2` (`(1,2,2)_C + (10,1,3)_C`) | $1.45\times 10^{11}$ | $7.89\times 10^{15}$ | $45.15$ | OK ($> M_{N_1}$, PDG $\pm 1\sigma$ $\alpha^{-1}\in[45.11,45.18]$; v10 baseline $45.13$) [C] |
+| `CCvS-trunc` (`+ (6,1,1)_C`) | $5.05\times 10^{10}$ | $2.05\times 10^{16}$ | $45.56$ | Excluded by $(6,1,1)_{\mathbb{C}}$ Super-K bound ($M_6 \ge 8.35\times 10^{10}$) [✗] |
+| `CCvS-FULL-R` (`+ (15,2,2)_R + (6,1,1)_C`) | $1.53\times 10^{10}$ | $5.03\times 10^{16}$ | $39.05$ | Drops $1.17\times$ below $M_{N_1}$ & fails Super-K $M_6$ [✗] |
+| `CCvS-FULL-C` (`+ (15,2,2)_C + (6,1,1)_C`) | $1.25\times 10^9$ | $2.71\times 10^{17}$ | $28.49$ | Breaks resonant leptogenesis ($14.4\times$ below $M_{N_1}$ across full $\pm 1\sigma$ band) & fails $M_6$ [✗] |
 | `Split-R` (`(6,1,1)_C + (15,2,2)_R` at $10^{15}$) | $1.07\times 10^{11}$ | $1.03\times 10^{16}$ | $44.22$ | Restores $M_{\mathrm{PS}} > M_{N_1}$ & cures $(6,1,1)_{\mathbb{C}}$ p-decay [C] |
-| `Split-C` (`(6,1,1)_C + (15,2,2)_C` at $10^{15}$) | $9.38\times 10^{10}$ | $1.16\times 10^{16}$ | $43.11$ | Restores $M_{\mathrm{PS}} > M_{N_1}$ & cures $(6,1,1)_{\mathbb{C}}$ p-decay [C] |
+| `Split-C` (`(6,1,1)_C + (15,2,2)_C` at $10^{15}$) | $9.35\times 10^{10}$ | $1.17\times 10^{16}$ | $43.11$ | Restores $M_{\mathrm{PS}} > M_{N_1}$ & cures $(6,1,1)_{\mathbb{C}}$ p-decay [C] |
 
 Because **`Super-F-40`** closes ALL 4D Dirac spectral actions as UV completions of gravity, the CCvS Pati–Salam spectral triple supplies the **Stratum-B** internal gauge/Yukawa/Higgs architecture while 4D quantum gravity strictly requires a separate **Stratum-C** background-free dynamical geometry ([Quantum Gravity](../gravity/quantum-gravity#microscopic-area-law)).

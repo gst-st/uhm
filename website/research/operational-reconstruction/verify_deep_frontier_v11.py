@@ -36,23 +36,27 @@ Suites:
           |q| = e^{-3 pi} = 8.071e-5 (50.98x below A_crit = 4.114e-3), 11D M-theory G_2 volume pincer
           forcing sub-Planckian t_EH < l_11 AND V_7-prefactor collapse (114x below A_crit even at t_EH = 0),
           plus Harvey-Moore b_1(S^2_EH x S^1) = 1 != 0 zero-mode vanishing;
-        - SL(2,Z) modular-flavor CP audit along Im(tau) = 1.5 across 6 canonical modular potentials:
-          all minimize strictly on CP-conserving boundary Re(tau) in {0, +-1/2} with O(|q|) ~ 8e-5 oscillation.
+        - SL(2,Z) modular-flavor CP audit along Im(tau) = 1.5 across 6 canonical modular potentials + CFILQ
+          SUGRA potential (all minimize strictly on CP-conserving boundary Re(tau) in {0, +-1/2}) AND explicit
+          constant-cancelled counterexample |j(tau) - 744|^2 (interior slice minimum Re(tau) = +-0.250, yet
+          2D-unstable with dV/d(Im tau) > 0 rolling to |tau| = 1).
 
   V11.3 (Front P2/P4 — F-42 CCvS Pati-Salam 32x32, Exact 2-Loop RGE, (6,1,1) Proton Decay, Higgs & Leptogenesis):
         - Exact 32x32 complex numerical verification of F-42: KO-dim 6 (0.00e+00), 0th-order (0.00e+00),
           1st-order violation (max = 7.0), unitary orbit (real dims 8+120+60 = 188, ZERO (6,1,1)_C) vs
-          full CCvS fluctuations (+A_(2): real dims 200, nonzero pure-(6,1,1)_C witness);
-        - Exact 2-loop Machacek-Vaughn RGE (PDG 2024 inputs) for Chain A2, CCvS-trunc, CCvS-FULL-R,
-          CCvS-FULL-C, and Heavy-Threshold Split benchmarks (M_heavy = 10^13..10^15 GeV);
+          genuine coupled unital self-adjoint CCvS semigroup perturbations Phi(omega)(D_F) (real dims 200,
+          single coupled witness M_6(0,1) = -7, 4-perturbation pure-(6,1,1)_C witness M_6(0,1) = -28);
+        - Exact 2-loop Machacek-Vaughn RGE (PDG 2024 inputs + +-1sigma alpha_s sensitivity, exact 4-color
+          C_top_PS = [2, 2, 2]) for Chain A2, CCvS-trunc, CCvS-FULL-R, CCvS-FULL-C, and Heavy-Threshold Split;
         - Tree-level (6,1,1)_C scalar proton decay Super-K bounds (p -> K+ nubar > 5.9e33 yr,
-          p -> e+ pi0 > 2.4e34 yr), exact Delta_R Higgs-quartic threshold stabilizing 2-loop lambda_H(M_PS^-) = -0.00410
+          p -> e+ pi0 > 2.4e34 yr), exact Delta_R Higgs-quartic threshold stabilizing 2-loop lambda_H(M_PS^-) = -0.00412
           and matching NCG lambda_H^+ > 0 for m_h = 125.25 GeV, and resonant leptogenesis M_{N_1} vs M_PS check.
 
   V11.4 (Stratified UHM Ontology Matrix & Cross-Doc Numerical Consistency Audit):
         - Verifies clean separation of Stratum A (D(C^7) + PG(2,2)), Stratum B ((Cl_0)+KO-6+(P) Clifford/CCvS),
           and Stratum C (background-free 4D Regge/CDT + external cosmological/DM sectors), and verifies exact
-          numerical parity (45.13, 0 remnants of the 44.23 Chain-A2 typo, 7.95e15, 1.434e11, 125.25 GeV).
+          numerical parity (0 remnants of the 44.23 Chain-A2 typo; v10 baseline 45.13 vs exact 4-color C_top_PS=[2,2,2]
+          Chain A2 a_GUT^-1 = 45.15 within PDG +-1sigma band [45.11, 45.18], M_PS = 1.447e11, Lam = 7.89e15, m_h = 125.25 GeV).
 """
 
 import math
@@ -465,7 +469,7 @@ def suite_v111_super_f40_4d_lattices_and_s4_regge():
             # Metric-deformed Wilson term: sum g^{mu nu} (1 - cos k_mu) ~ (e_1^2 + e_2^2) deformed
             if pol == "x":
                 ch, sh = math.cosh(h), math.sinh(h)
-                w12 = ch * ((1.0 - c1) + (1.0 - c2)) - 2.0 * sh * s1 * s2 * 0.5
+                w12 = ch * ((1.0 - c1) + (1.0 - c2)) + sh * s1 * s2
             else:
                 w12 = math.exp(h) * (1.0 - c1) + math.exp(-h) * (1.0 - c2)
             W_h = (1.0 - c0) + w12 + (1.0 - c3) - M0_ov
@@ -478,8 +482,10 @@ def suite_v111_super_f40_4d_lattices_and_s4_regge():
     ho = 1e-3
     m0_ov_x_kin = (Seff_ov(ho, "x", False) - 2 * Seff_ov(0.0, "x", False) + Seff_ov(-ho, "x", False)) / (ho * ho)
     m0_ov_p_kin = (Seff_ov(ho, "p", False) - 2 * Seff_ov(0.0, "p", False) + Seff_ov(-ho, "p", False)) / (ho * ho)
+    m0_ov_x_wil = (Seff_ov(ho, "x", True)  - 2 * Seff_ov(0.0, "x", True)  + Seff_ov(-ho, "x", True))  / (ho * ho)
     m0_ov_p_wil = (Seff_ov(ho, "p", True)  - 2 * Seff_ov(0.0, "p", True)  + Seff_ov(-ho, "p", True))  / (ho * ho)
-    assert abs(m0_ov_x_kin) > 0.02 and abs(m0_ov_p_kin - m0_ov_x_kin) > 0.003 and m0_ov_p_wil < -0.01
+    assert m0_ov_x_kin > 0.02 and m0_ov_p_kin > m0_ov_x_kin + 0.003
+    assert m0_ov_x_wil < -0.10 and m0_ov_p_wil < -0.01 and abs(m0_ov_x_wil / m0_ov_p_wil) > 7.0
 
     # Chiral GW-overlap IR log running c_log (single fermion, 0 doublers!):
     # Exact chiral GW Dirac operator: p_ov = 2 * sin(k) / (R - W) (which satisfies p_ov(k) -> k near k=0 and p_ov -> inf at doublers!)
@@ -580,7 +586,8 @@ def suite_v111_super_f40_4d_lattices_and_s4_regge():
           f"(mismatch +{100*mismatch_x:.2f}% h_x, +{100*mismatch_iso:.2f}% iso) [T/✗]")
     print(f"              Universal IR log running: c_log = {c_log_naive:.6f} vs exact 1/(24 pi) = {c_log_exact:.6f} (err {100*rel_err_clog_naive:.2f}%) [T]")
     print(f"            - Chiral Neuberger Overlap (M0=1, 0 doublers, exact GW symmetry):")
-    print(f"              Delta_2^ov(0) = {m0_ov_x_kin:+.5f} (h_x kin), {m0_ov_p_kin:+.5f} (h_+ kin), {m0_ov_p_wil:+.5f} (h_+ kin+Wilson, STILL tachyonic & anisotropic!) [T/✗]")
+    print(f"              Delta_2^ov(0) = {m0_ov_x_kin:+.5f} (h_x kin), {m0_ov_p_kin:+.5f} (h_+ kin) [nonzero anisotropic diffeo mass];")
+    print(f"                              {m0_ov_x_wil:+.5f} (h_x kin+W), {m0_ov_p_wil:+.5f} (h_+ kin+W, {abs(m0_ov_x_wil/m0_ov_p_wil):.2f}x anisotropic tachyon!) [T/✗]")
     print(f"              Chiral GW IR log running: c_log^ov = {c_log_ov:.6f} vs exact 1/(24 pi) = {c_log_exact:.6f} (err {100*rel_err_clog_ov:.2f}%) [T]")
     print(f"            - Axis-Free 2D Poisson-Delaunay (N={N_pts}, {len(edges)} edges): Delta_2(0) = {m0_del_x:.4f} (h_x), {m0_del_p:.4f} (h_+), "
           f"ratio={m0_del_p/m0_del_x:.3f} (isotropy restored, bare tachyon persists!) [T/✗]")
@@ -882,9 +889,19 @@ def suite_v112_f41_v102a_retraction_and_modular_cp():
         j_val = (E4 ** 3) / Delta
         return eta, E4, E6, j_val
 
+    def E2_hat_form(tau, n_max=40):
+        q = np.exp(2j * math.pi * tau)
+        E2 = 1.0 + 0j
+        for n in range(1, n_max + 1):
+            s1 = sum(d for d in range(1, n + 1) if n % d == 0)
+            E2 -= 24.0 * s1 * (q ** n)
+        return E2 - 3.0 / (math.pi * np.imag(tau))
+
     re_grid = np.linspace(-0.5, 0.5, 401)
     taus = re_grid + 1j * im_tau
     etas, E4s, E6s, js = modular_forms(taus)
+    e2hs = E2_hat_form(taus)
+    V_cfilq = ((2.0 * im_tau) ** (-3)) * (np.abs(etas) ** (-12)) * (((2.0 * im_tau) ** 2) * (np.abs(e2hs) ** 2) / 16.0 - 3.0)
     # Cross-check j(i) = 1728 to machine precision!
     _, _, _, j_at_i = modular_forms(1j)
     assert abs(j_at_i - 1728.0) < 1e-11
@@ -892,6 +909,7 @@ def suite_v112_f41_v102a_retraction_and_modular_cp():
     potentials = [
         ("|eta(tau)|^(-4)",   np.abs(etas) ** (-4)),
         ("|eta(tau)|^(-12)",  np.abs(etas) ** (-12)),
+        ("CFILQ SUGRA V(t)",  V_cfilq),
         ("|E_4(tau)|^2",      np.abs(E4s) ** 2),
         ("|E_6(tau)|^2",      np.abs(E6s) ** 2),
         ("|j(tau)-1728|^2",   np.abs(js - 1728.0) ** 2),
@@ -901,12 +919,24 @@ def suite_v112_f41_v102a_retraction_and_modular_cp():
     for pname, vals in potentials:
         imin = int(np.argmin(vals))
         re_min = float(re_grid[imin])
-        rel_osc = float((np.max(vals) - np.min(vals)) / np.mean(vals))
-        # Every CP-symmetric modular potential minimizes strictly on CP-conserving boundary Re(tau) in {0, +-1/2}!
+        rel_osc = float((np.max(vals) - np.min(vals)) / abs(np.mean(vals)))
+        # All 7 canonical/single-harmonic + CFILQ SUGRA potentials minimize strictly on Re(tau) in {0, +-1/2}!
         is_cp_conserving = (abs(re_min) < 1e-12) or (abs(abs(re_min) - 0.5) < 1e-12)
         assert is_cp_conserving, f"Unexpected interior CP minimum for {pname}: Re(tau)={re_min}"
         print(f"            - {pname:18s}: argmin Re(tau) = {re_min:+.3f} (CP-conserving!), rel. osc. = {rel_osc:.3e}")
-    print("            -> Without an external CP-breaking spurion, ALL smooth SL(2,Z) potentials lock on Re(tau) in {0, +-1/2} [T/✗]\n")
+    # Honest counterexample on the fixed 1D slice: cancelling the 744 constant in |j(tau) - 744|^2
+    # eliminates the leading cos(2 pi x) harmonic so cos(4 pi x) yields an interior slice minimum Re(tau) = +-0.249;
+    # HOWEVER in 2D it is strictly unstable (dV/d(Im tau) > 0), rolling down to j(tau)=744 on the |tau|=1 arc!
+    V_744 = np.abs(js - 744.0) ** 2
+    re_min_744 = float(re_grid[int(np.argmin(V_744))])
+    rel_osc_744 = float((np.max(V_744) - np.min(V_744)) / np.mean(V_744))
+    _, _, _, j_p = modular_forms(0.25 + (im_tau + 1e-3) * 1j)
+    _, _, _, j_m = modular_forms(0.25 + (im_tau - 1e-3) * 1j)
+    dV744_dIm = float((abs(j_p - 744.0) ** 2 - abs(j_m - 744.0) ** 2) / 2e-3)
+    assert 0.24 < abs(re_min_744) < 0.26 and dV744_dIm > 1e8
+    print(f"            - |j(tau)-744|^2    : argmin Re(tau) = {re_min_744:+.3f} (1D slice counterexample!, rel. osc. = {rel_osc_744:.3e})")
+    print(f"              yet 2D-UNSTABLE at Im(tau)=1.5 (dV/dIm = {dV744_dIm:+.2e} > 0: rolls to j=744 on |tau|=1 arc!)")
+    print("            -> All 7 canonical/CFILQ potentials lock on CP-conserving {0, +-1/2}; tuned |j-744|^2 destabilizes Im(tau)=1.5 [T/✗]\n")
 
 
 # ==============================================================================
@@ -1008,41 +1038,59 @@ def suite_v113_f42_ccvs_rge_pdecay_higgs_leptogenesis():
     rank_orbit = int(np.linalg.matrix_rank(np.array(orbit_vecs), tol=1e-8))
     assert max_orbit_6 < 1e-14 and rank_orbit == 188  # 8 (1,2,2)_C + 120 (15,2,2)_C + 60 (10bar,1,3)_C = 188!
 
-    # Full CCvS fluctuations: A_(1) = sum a [D_F, b], A_(2) = sum (J c J^-1) [A_(1), J d J^-1], Hermitian + J-real:
+    # Full CCvS fluctuations via GENUINE coupled, unital, self-adjoint semigroup perturbations
+    # omega = sum_{k=1}^K w_k (u_k (x) u_k^dag) in Pert(A_F) (sum w_k = 1, u_k in U(A_F) => sum a_k b_k = I, omega* = omega):
+    # Phi(omega)(D_F) = sum_{i,j} w_i w_j (u_i J u_j J^-1) D_F (u_i J u_j J^-1)^dag (AUTOMATICALLY KO-dim 6, zero ad-hoc patching!)
     fluct_vecs = list(orbit_vecs)
+    max_coupled_ko6 = 0.0
     for _ in range(250):
-        A1 = rep_AF(rand_quat(), rand_quat(), rng.normal(size=(4, 4)) + 1j * rng.normal(size=(4, 4)))
-        B1 = rep_AF(rand_quat(), rand_quat(), rng.normal(size=(4, 4)) + 1j * rng.normal(size=(4, 4)))
-        C1 = rep_AF(rand_quat(), rand_quat(), rng.normal(size=(4, 4)) + 1j * rng.normal(size=(4, 4)))
-        D1 = rep_AF(rand_quat(), rand_quat(), rng.normal(size=(4, 4)) + 1j * rng.normal(size=(4, 4)))
-        A_one = A1 @ (D_F @ B1 - B1 @ D_F)
-        A_two = Jconj(C1) @ (A_one @ Jconj(D1) - Jconj(D1) @ A_one)
-        P_tot = A_one + A_two
-        P_tot = 0.5 * (P_tot + P_tot.conj().T)
-        P_tot = 0.5 * (P_tot + Jconj(P_tot))
-        fluct_vecs.append(np.concatenate([P_tot.real.ravel(), P_tot.imag.ravel()]))
+        K_sg = 3
+        us_sg = []
+        for _k in range(K_sg):
+            uLk = rand_quat(); uLk /= math.sqrt(abs(np.linalg.det(uLk)))
+            uRk = rand_quat(); uRk /= math.sqrt(abs(np.linalg.det(uRk)))
+            us_sg.append(rep_AF(uLk, uRk, rand_unitary(4)))
+        ws_sg = rng.dirichlet(np.ones(K_sg))
+        D_om = np.zeros((32, 32), dtype=complex)
+        for ii in range(K_sg):
+            for jj in range(K_sg):
+                Uij = us_sg[ii] @ Jconj(us_sg[jj])
+                D_om += ws_sg[ii] * ws_sg[jj] * (Uij @ D_F @ Uij.conj().T)
+        max_coupled_ko6 = max(
+            max_coupled_ko6,
+            float(np.max(np.abs(D_om - D_om.conj().T))),
+            float(np.max(np.abs(Jconj(D_om) - D_om))),
+            float(np.max(np.abs(gam_F @ D_om + D_om @ gam_F))),
+        )
+        fluct_vecs.append(np.concatenate([D_om.real.ravel(), D_om.imag.ravel()]))
     rank_full = int(np.linalg.matrix_rank(np.array(fluct_vecs), tol=1e-8))
-    assert rank_full == 200  # 188 + 12 (6,1,1)_C = 200!
+    assert max_coupled_ko6 < 1e-13 and rank_full == 200  # 188 + 12 (6,1,1)_C = 200!
 
-    # Verify exact Lean ccvsPure6Fluct witness:
-    z2 = np.zeros((2, 2), dtype=complex); z4 = np.zeros((4, 4), dtype=complex)
-    def em4(p, q):
-        M = np.zeros((4, 4), dtype=complex); M[p, q] = 1.0; return M
-    aI = rep_AF(z2, np.eye(2), z4)
-    b0 = rep_AF(z2, z2, em4(3, 0)); b1 = rep_AF(z2, z2, em4(3, 1))
-    Jc1 = Jconj(rep_AF(z2, z2, em4(0, 3))); Jc2 = Jconj(rep_AF(z2, z2, em4(1, 3)))
-    JdJ = Jconj(rep_AF(z2, j2, z4))
-    Ac = aI @ (D_F @ b0 - b0 @ D_F); Ad = aI @ (D_F @ b1 - b1 @ D_F)
-    Q1 = Jc1 @ (Ad @ JdJ - JdJ @ Ad); Q2 = Jc2 @ (Ac @ JdJ - JdJ @ Ac)
-    Praw = Q2 - Q1; Pherm = Praw + Praw.conj().T; P_pure6 = Pherm + Jconj(Pherm)
+    # Verify exact Lean ccvsCoupledFluct & ccvsPure6Fluct witnesses (genuine 2-unitary CCvS semigroup elements!):
+    I2 = np.eye(2, dtype=complex)
+    P03 = np.eye(4, dtype=complex)[[3, 1, 2, 0]]
+    P13 = np.eye(4, dtype=complex)[[0, 3, 2, 1]]
+    def phi4_ccvs(ua, ub):
+        return sum((xa @ Jconj(xb)) @ D_F @ (xa @ Jconj(xb)).conj().T for xa in (ua, ub) for xb in (ua, ub))
+    u1_m = rep_AF(I2, I2, P03); u2p_m = rep_AF(I2, j2, P13); u2m_m = rep_AF(I2, -j2, P13)
+    v1_m = rep_AF(I2, I2, P13); v2p_m = rep_AF(I2, j2, P03); v2m_m = rep_AF(I2, -j2, P03)
+    for um in (u1_m, u2p_m, u2m_m, v1_m, v2p_m, v2m_m):
+        assert float(np.max(np.abs(um @ um.conj().T - np.eye(32)))) == 0.0
+    D_coupled_wit = phi4_ccvs(u1_m, u2p_m)
+    P_pure6 = (phi4_ccvs(u1_m, u2p_m) - phi4_ccvs(u1_m, u2m_m)) - (phi4_ccvs(v1_m, v2p_m) - phi4_ccvs(v1_m, v2m_m))
+    M6_coup = maj6_proj(D_coupled_wit)
     M6_wit = maj6_proj(P_pure6)
-    assert abs(M6_wit[0, 1] - 14.0) < 1e-14 and abs(M6_wit[1, 0] + 14.0) < 1e-14
+    assert abs(M6_coup[0, 1] + 7.0) < 1e-14 and abs(M6_coup[1, 0] - 7.0) < 1e-14
+    assert float(np.max(np.abs(M6_coup + M6_coup.T))) == 0.0
+    assert float(np.max(np.abs(P_pure6[0:8, 8:16]))) == 0.0  # ZERO Yukawa block!
+    assert abs(M6_wit[0, 1] + 28.0) < 1e-14 and abs(M6_wit[1, 0] - 28.0) < 1e-14
     assert float(np.max(np.abs(M6_wit + M6_wit.T))) == 0.0
 
     print("  [V11.3.A] F-42 CCvS Pati-Salam 32x32 Matrix Verification (matching Lean F-42A..C):")
     print(f"            - KO-dim 6 err = {err_ko6:.2e}, 0th-order err = {err_0th:.2e}, 1st-order viol max = {max_1st_viol:.2f} [T]")
     print(f"            - Unitary orbit: max|(6,1,1)_C| = {max_orbit_6:.2e}, real dim = {rank_orbit} (= 8 + 120 + 60)")
-    print(f"            - Full CCvS (+A_(2)): real dim = {rank_full} (= 188 + 12), pure-(6,1,1)_C witness M_6(0,1) = {M6_wit[0,1].real:+.1f} [T]")
+    print(f"            - Genuine coupled unital CCvS Phi(omega)(D_F): KO-6 err = {max_coupled_ko6:.2e}, real dim = {rank_full} (= 188 + 12),")
+    print(f"              single coupled witness M_6(0,1) = {M6_coup[0,1].real:+.1f}; pure-(6,1,1)_C 4-pert comb M_6(0,1) = {M6_wit[0,1].real:+.1f} [T]")
 
     # --------------------------------------------------------------------------
     # V11.3.B: Exact 2-Loop Machacek-Vaughn RGE (PDG 2024 Inputs) across 4 Benchmarks + Heavy Split
@@ -1065,8 +1113,9 @@ def suite_v113_f42_ccvs_rge_pdecay_higgs_leptogenesis():
     ])
     C_top_SM = np.array([17.0 / 10.0, 3.0 / 2.0, 2.0])
 
-    def run_sm_2loop(t_end):
+    def run_sm_2loop(t_end, alpha_s_val=alpha_s_MZ):
         """Integrate SM 2-loop gauge + 1-loop top Yukawa from t=0 (M_Z) to t_end = ln(mu/M_Z)."""
+        g3_0 = math.sqrt(4.0 * math.pi * alpha_s_val)
         def rhs(t, y):
             g1, g2, g3, yt = y
             g = np.array([g1, g2, g3])
@@ -1074,7 +1123,7 @@ def suite_v113_f42_ccvs_rge_pdecay_higgs_leptogenesis():
             dg = (g ** 3) / (16.0 * math.pi ** 2) * b_SM + (g ** 3) / ((16.0 * math.pi ** 2) ** 2) * (B_SM @ g2v - C_top_SM * (yt * yt))
             dyt = yt / (16.0 * math.pi ** 2) * (4.5 * yt * yt - (17.0 / 20.0) * g1 * g1 - (9.0 / 4.0) * g2 * g2 - 8.0 * g3 * g3)
             return [dg[0], dg[1], dg[2], dyt]
-        sol = solve_ivp(rhs, (0.0, t_end), [g_MZ[0], g_MZ[1], g_MZ[2], 0.995], rtol=1e-11, atol=1e-13)
+        sol = solve_ivp(rhs, (0.0, t_end), [g_MZ[0], g_MZ[1], g3_0, 0.995], rtol=1e-11, atol=1e-13)
         return sol.y[:, -1]
 
     # Exact Machacek-Vaughn 1-loop & 2-loop beta coefficients for Pati-Salam G_422 = SU(4)_C x SU(2)_L x SU(2)_R
@@ -1136,15 +1185,16 @@ def suite_v113_f42_ccvs_rge_pdecay_higgs_leptogenesis():
     S_1522_R = (0.5, (15, 4.0, 4.0), (2, 0.5, 0.75), (2, 0.5, 0.75))
     S_1522_C = (1.0, (15, 4.0, 4.0), (2, 0.5, 0.75), (2, 0.5, 0.75))
 
-    def solve_ps_unif(scalars_lo, scalars_hi=None, M_heavy=None):
+    def solve_ps_unif(scalars_lo, scalars_hi=None, M_heavy=None, alpha_s_val=alpha_s_MZ):
         """Find exact (M_PS, Lambda_NCG, alpha_GUT^-1) where g_4C = g_2L = g_2R at Lambda_NCG."""
         b_lo, B_lo = ps_betas(scalars_lo)
         b_hi, B_hi = ps_betas(scalars_hi) if scalars_hi is not None else (b_lo, B_lo)
-        C_top_PS = np.array([2.0, 3.0 / 2.0, 3.0 / 2.0])
+        # Exact 4-color Pati-Salam 2-loop Yukawa coefficient (4 colors x 2 isospin => [2, 2, 2]):
+        C_top_PS = np.array([2.0, 2.0, 2.0])
 
         def eval_at_MPS(log10_MPS):
             t_PS = (log10_MPS - math.log10(M_Z)) * math.log(10.0)
-            g1, g2, g3, yt = run_sm_2loop(t_PS)
+            g1, g2, g3, yt = run_sm_2loop(t_PS, alpha_s_val=alpha_s_val)
             # Tree-level Pati-Salam matching at M_PS:
             # g_4C = g_3, g_2L = g_2, and 1/a_1 = (3/5)/a_2R + (2/5)/a_4C => 1/a_2R = (5/3)/a_1 - (2/3)/a_3
             a1 = g1 * g1 / (4.0 * math.pi)
@@ -1203,13 +1253,19 @@ def suite_v113_f42_ccvs_rge_pdecay_higgs_leptogenesis():
         mps, lam, ainv = solve_ps_unif(slo, shi, mh)
         rge_out[bname] = (mps, lam, ainv)
 
-    # Tight assertions against exact PDG 2024 2-loop results:
+    # Tight assertions against exact PDG 2024 2-loop results + +-1sigma PDG alpha_s sensitivity (0.1180 +- 0.0009):
     assert abs(rge_out["Chain A2"][2] - 45.13) < 0.05
     assert 1.40e11 < rge_out["Chain A2"][0] < 1.47e11 and 7.8e15 < rge_out["Chain A2"][1] < 8.1e15
     assert 4.8e10 < rge_out["CCvS-trunc (+6,1,1)"][0] < 5.2e10 and 45.3 < rge_out["CCvS-trunc (+6,1,1)"][2] < 45.8
     assert 1.4e10 < rge_out["CCvS-FULL-R (+15,2,2_R+6)"][0] < 1.6e10 and 38.7 < rge_out["CCvS-FULL-R (+15,2,2_R+6)"][2] < 39.3
     assert 1.1e9  < rge_out["CCvS-FULL-C (+15,2,2_C+6)"][0] < 1.35e9 and 28.1 < rge_out["CCvS-FULL-C (+15,2,2_C+6)"][2] < 28.8
     assert 9.0e10 < rge_out["Split-R (M_h=1e15 GeV)"][0] < 1.2e11
+
+    a2_lo = solve_ps_unif([S_122_C, S_1013_C], alpha_s_val=0.1171)
+    a2_hi = solve_ps_unif([S_122_C, S_1013_C], alpha_s_val=0.1189)
+    fc_lo = solve_ps_unif([S_122_C, S_1013_C, S_611_C, S_1522_C], alpha_s_val=0.1171)
+    fc_hi = solve_ps_unif([S_122_C, S_1013_C, S_611_C, S_1522_C], alpha_s_val=0.1189)
+    assert 1.3e11 < a2_hi[0] < a2_lo[0] < 1.6e11 and fc_lo[0] < 1.6e9 and fc_hi[0] < 1.2e9
 
     # --------------------------------------------------------------------------
     # V11.3.C: Tree-Level (6,1,1)_C Scalar Proton Decay, Delta_R Higgs Threshold & Leptogenesis Pincer
@@ -1280,10 +1336,13 @@ def suite_v113_f42_ccvs_rge_pdecay_higgs_leptogenesis():
     assert ratio_fullC_N1 > 10.0 and ratio_fullR_N1 > 1.1
     assert rge_out["Split-R (M_h=1e15 GeV)"][0] > 5.0 * M_N1  # Heavy-threshold split restores M_PS >> M_{N_1}!
 
-    print("  [V11.3.B] Exact 2-Loop Machacek-Vaughn RGE Benchmarks (PDG 2024 SM inputs, g_4C = g_2L = g_2R):")
+    print("  [V11.3.B] Exact 2-Loop Machacek-Vaughn RGE Benchmarks (PDG 2024, exact 4-color C_top_PS=[2,2,2]):")
     for bname, (mps, lam, ainv) in rge_out.items():
         status = "OK (>M_N1)" if mps > M_N1 else f"BREAKS M_N1 ({M_N1/mps:.2f}x below!)"
         print(f"            - {bname:28s}: M_PS={mps:.3e} GeV | Lam_NCG={lam:.3e} GeV | a^-1={ainv:.2f} | {status}")
+    print(f"            - PDG +-1sigma alpha_s(M_Z)=0.1180+-0.0009 sensitivity:")
+    print(f"              Chain A2:    M_PS in [{a2_hi[0]:.3e}, {a2_lo[0]:.3e}], Lam in [{a2_lo[1]:.3e}, {a2_hi[1]:.3e}], a^-1 in [{a2_lo[2]:.2f}, {a2_hi[2]:.2f}]")
+    print(f"              CCvS-FULL-C: M_PS in [{fc_hi[0]:.3e}, {fc_lo[0]:.3e}] (breaks M_N1 across full +-1sigma PDG band!)")
     print("  [V11.3.C] Tree-Level (6,1,1)_C Scalar Proton Decay, Delta_R Higgs Threshold & Leptogenesis Pincer:")
     print(f"            - Super-K M_6 lower bounds: >= {M6_min_12:.2e} GeV (1st/2nd gen), >= {M6_min_3:.2e} GeV (3rd-gen CKM), "
           f">= {M6_min_O1:.2e} GeV (O(1) Yukawa) -> EXCLUDES light (6,1,1)_C at M_PS [T/✗]!")
@@ -1311,7 +1370,7 @@ def suite_v114_stratified_ontology_and_cross_doc_audit(rge_out):
          "Internal UHM axioms only"),
         ("Stratum B: (Cl_0)+KO-6+(P) Clifford/CCvS Lift",
          ["F-42A: Cl_{0,7} spinor S_phi = 4_C of SU(4)_C", "F-42B/C: CCvS Pati-Salam A_F = H_L + H_R + M_4(C) on C^32",
-          "Chain A2 / Split-CCvS 2-loop RGE (a^-1=45.13, M_PS=1.434e11, Lam=7.95e15)",
+          "Chain A2 / Split-CCvS 2-loop RGE (exact 4-color C_top_PS=[2,2,2]: a^-1=45.15 [45.11..45.18], M_PS=1.447e11, Lam=7.89e15; v10 baseline 45.13)",
           "Delta_R Higgs-quartic threshold (m_h = 125.25 GeV) & resonant leptogenesis (M_N1=1.80e10)"],
          "Explicit Clifford-spinor + KO-6 + Pati-Salam lift (NOT free from D(C^7) alone!)"),
         ("Stratum C: Background-Free 4D Gravity & External Sectors",
@@ -1333,15 +1392,15 @@ def suite_v114_stratified_ontology_and_cross_doc_audit(rge_out):
     rg_text  = (root / "docs" / "physics" / "gauge-symmetry" / "rg-flow.md").read_text(encoding="utf-8")
     pd_text  = (root / "docs" / "physics" / "particle-physics" / "proton-decay.md").read_text(encoding="utf-8")
 
-    # Verify the 44.23 Chain-A2 typo is GONE from verify_deep_frontier_v10.py and 45.13 matches across files:
+    # Verify the 44.23 Chain-A2 typo is GONE from verify_deep_frontier_v10.py and Chain A2 matches within PDG +-1sigma:
     assert "44.23" not in v10_text, "Stale 44.23 typo still present in verify_deep_frontier_v10.py!"
     assert "45.13" in v10_text and "45.13" in rg_text and "45.13" in pd_text
-    assert abs(rge_out["Chain A2"][2] - 45.13) < 0.05
+    assert abs(rge_out["Chain A2"][2] - 45.15) < 0.02 and abs(rge_out["Chain A2"][2] - 45.13) < 0.05
 
     print("  [V11.4] Stratified UHM Ontology Matrix & Cross-Doc Numerical Audit:")
     for s_name, items, status in ontology:
         print(f"          * {s_name} [{status}]: {len(items)} verified blocks")
-    print(f"          * Cross-doc parity: Chain A2 a_GUT^-1 = {rge_out['Chain A2'][2]:.2f} (matches rg-flow.md, proton-decay.md, verify_deep_frontier_v10.py; 0 '44.23' typo!) [T]\n")
+    print(f"          * Cross-doc parity: Chain A2 a_GUT^-1 = {rge_out['Chain A2'][2]:.2f} (exact 4-color C_top_PS=[2,2,2]; v10 baseline 45.13, 0 '44.23' typo!) [T]\n")
 
 
 if __name__ == "__main__":
