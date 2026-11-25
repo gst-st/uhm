@@ -186,10 +186,17 @@ def suite_d1_two_loop_rge_and_btau():
         b_int, B_int = compute_mv_betas(C2_G, weyl_int, scal_int)
 
         def int_ode(t, y):
-            a0, a1, a2 = y
+            if c_top_int is None:
+                a0, a1, a2 = y
+                al = np.array([1.0/a0, 1.0/a1, 1.0/a2])
+                da = -b_int / (2.0 * np.pi) - (B_int @ al) / (8.0 * np.pi**2)
+                return da.tolist()
+            a0, a1, a2, yt = y
             al = np.array([1.0/a0, 1.0/a1, 1.0/a2])
-            da = -b_int / (2.0 * np.pi) - (B_int @ al) / (8.0 * np.pi**2)
-            return da.tolist()
+            g2 = 4.0 * np.pi * al  # [2L, 2R, 4C]
+            da = -b_int / (2.0 * np.pi) - (B_int @ al) / (8.0 * np.pi**2) + c_top_int * (yt**2) / (32.0 * np.pi**3)
+            dyt = (yt / (16.0 * np.pi**2)) * (6.0 * yt**2 - (15.0 / 2.0) * g2[2] - (9.0 / 4.0) * (g2[0] + g2[1]))
+            return [da[0], da[1], da[2], dyt]
 
         sm_y0 = [a1_Z, a2_Z, a3_Z, yt_Z, yb_Z, ytau_Z, ys_Z, ymu_Z]
 
@@ -199,10 +206,12 @@ def suite_d1_two_loop_rge_and_btau():
             if t_int < 2.0 or dt < 0.2 or t_int + dt > 42.0:
                 return 1e6
             sol_sm = solve_ivp(sm_ode, [0.0, t_int], sm_y0, rtol=1e-10, atol=1e-12)
-            a1m, a2m, a3m = sol_sm.y[:3, -1]
+            a1m, a2m, a3m, ytm = sol_sm.y[:4, -1]
             y_init_int = match_fn(a1m, a2m, a3m)
+            if c_top_int is not None:
+                y_init_int = list(y_init_int) + [ytm]
             sol_int = solve_ivp(int_ode, [t_int, t_int + dt], y_init_int, rtol=1e-10, atol=1e-12)
-            g0, g1, g2 = sol_int.y[:, -1]
+            g0, g1, g2 = sol_int.y[:3, -1]
             return (g0 - g1)**2 + (g1 - g2)**2
 
         # Initial guess from rough grid scan
@@ -218,8 +227,10 @@ def suite_d1_two_loop_rge_and_btau():
         sol_sm = solve_ivp(sm_ode, [0.0, t_int], sm_y0, rtol=1e-11, atol=1e-13)
         a1m, a2m, a3m, ytm, ybm, ytaum, ysm, ymum = sol_sm.y[:, -1]
         y_init_int = match_fn(a1m, a2m, a3m)
+        if c_top_int is not None:
+            y_init_int = list(y_init_int) + [ytm]
         sol_int = solve_ivp(int_ode, [t_int, t_int + dt], y_init_int, rtol=1e-11, atol=1e-13)
-        g0, g1, g2 = sol_int.y[:, -1]
+        g0, g1, g2 = sol_int.y[:3, -1]
         assert max(abs(g0 - g1), abs(g1 - g2)) < 1e-6, f"{name} did not converge: {g0}, {g1}, {g2}"
         M_int = M_Z * np.exp(t_int)
         M_GUT = M_Z * np.exp(t_int + dt)
@@ -257,10 +268,11 @@ def suite_d1_two_loop_rge_and_btau():
     ]
     match_ps = lambda a1, a2, a3: [a2, (5.0/3.0)*a1 - (2.0/3.0)*a3, a3]
 
+    c_top_PS = np.array([2.0, 2.0, 2.0])
     solve_two_loop_chain("Chain A1: UHM Pati-Salam (real 4-plane (1,2,2)_R + (1,3,10))",
-                         [2.0, 2.0, 4.0], ps_weyl, ps_scal_A1, match_ps, None)
+                         [2.0, 2.0, 4.0], ps_weyl, ps_scal_A1, match_ps, c_top_PS)
     solve_two_loop_chain("Chain A2: Pati-Salam (complex (1,2,2)_C + (1,3,10))",
-                         [2.0, 2.0, 4.0], ps_weyl, ps_scal_A2, match_ps, None)
+                         [2.0, 2.0, 4.0], ps_weyl, ps_scal_A2, match_ps, c_top_PS)
 
     # Chain B: Left-Right G_3221 = [U(1)_{B-L}, SU(2)_L, SU(2)_R, SU(3)_C] from R_{e_O} without SU(4)
     def u1_bl(bl_val):

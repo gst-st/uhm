@@ -35,7 +35,7 @@ Within the clock-stabilizer symmetry-breaking chain $\mathrm{Spin}(10) \xrightar
 | One-step non-SUSY SM | — | misses by $\Delta\alpha^{-1}=5.58$ | — | — | Falsified [✗] |
 | `Chain B` (minimal left-right $G_{3221}$) | — | low $M_{\mathrm{GUT}}$ | — | $5.20\times 10^{33}$ ($<$ Super-K) | Falsified [✗] |
 | `Chain A1` ($G_{422}$, 1 real bidoublet + $\Delta_R$) | $9.19\times 10^{10}$ | $1.20\times 10^{16}$ | $45.65$ | $1.22\times 10^{36}$ | Viable [C] |
-| `Chain A2` ($G_{422}$, complex $(1,2,2)_{\mathbb{C}}$ + $\Delta_R$) | $1.43\times 10^{11}$ | $7.95\times 10^{15}$ | $45.13$ | $9.08\times 10^{34}\text{–}2.27\times 10^{35}$ | Viable, Hyper-K window [C] |
+| `Chain A2` ($G_{422}$, complex $(1,2,2)_{\mathbb{C}}$ + $\Delta_R$) | $1.45\times 10^{11}$ | $7.89\times 10^{15}$ | $45.15$ | $8.83\times 10^{34}\text{–}2.27\times 10^{35}$ | Viable, Hyper-K window [C] |
 
 Scanning 30 Hall–Weinberg threshold realizations ($\lvert\Delta\alpha_i^{-1}\rvert \le 1.0$) reveals a rigid anti-correlation $r(\log_{10} M_{\mathrm{PS}}, \log_{10}\tau_p) = -0.928$, capping the intermediate Pati–Salam scale strictly at $M_{\mathrm{PS}} \le 3.06\times 10^{11}\,\mathrm{GeV}$ under the Super-Kamiokande bound $\tau_p > 2.4\times 10^{34}\,\mathrm{yr}$ [C]. Meanwhile, the same two-loop SM running drives the Higgs quartic coupling $\lambda_H(\mu)$ through zero at $\mu_{\mathrm{inst}} = 5.28\times 10^{10}\,\mathrm{GeV}$ — directly adjacent to $M_{\mathrm{PS}}$, where the Pati–Salam scalar threshold $\Delta_R = (10,1,3)$ stabilizes the vacuum ([Higgs Sector](../particle-physics/higgs-sector#higgs-criticality-vissani)).
 
@@ -48,7 +48,7 @@ Theorem **`F-42`** (`f42_spin6_stab_su4_dim`, `f42_ccvs_ko6_and_zeroth_order`, `
 
 | CCvS / Pati–Salam scalar benchmark | $M_{\mathrm{PS}}$ (GeV) | $\Lambda_{\mathrm{NCG}}$ (GeV) | $\alpha^{-1}(\Lambda_{\mathrm{NCG}})$ | $M_{\mathrm{PS}}$ vs. $M_{N_1}=1.80\times 10^{10}$ & $(6,1,1)_{\mathbb{C}}$ p-decay |
 |---|---|---|---|---|
-| `Chain A2` (`(1,2,2)_C + (10,1,3)_C`) | $1.45\times 10^{11}$ | $7.89\times 10^{15}$ | $45.15$ | OK ($> M_{N_1}$, PDG $\pm 1\sigma$ $\alpha^{-1}\in[45.11,45.18]$; v10 baseline $45.13$) [C] |
+| `Chain A2` (`(1,2,2)_C + (10,1,3)_C`) | $1.45\times 10^{11}$ | $7.89\times 10^{15}$ | $45.15$ | OK ($> M_{N_1}$, PDG $\pm 1\sigma$ $\alpha^{-1}\in[45.11,45.18]$; pre-$C_{\mathrm{top}}^{\mathrm{PS}}$ baseline) [C] |
 | `CCvS-trunc` (`+ (6,1,1)_C`) | $5.05\times 10^{10}$ | $2.05\times 10^{16}$ | $45.56$ | Excluded by $(6,1,1)_{\mathbb{C}}$ Super-K bound ($M_6 \ge 8.35\times 10^{10}$) [✗] |
 | `CCvS-FULL-R` (`+ (15,2,2)_R + (6,1,1)_C`) | $1.53\times 10^{10}$ | $5.03\times 10^{16}$ | $39.05$ | Drops $1.17\times$ below $M_{N_1}$ & fails Super-K $M_6$ [✗] |
 | `CCvS-FULL-C` (`+ (15,2,2)_C + (6,1,1)_C`) | $1.25\times 10^9$ | $2.71\times 10^{17}$ | $28.49$ | Breaks resonant leptogenesis ($14.4\times$ below $M_{N_1}$ across full $\pm 1\sigma$ band) & fails $M_6$ [✗] |

@@ -698,7 +698,7 @@ def suite_v54_instanton_thooft_and_desi_chi2():
     M_Pl_full = 1.22089e19
     M_Pl_red = 2.43535e18
     rho_L0 = 2.5e-47  # GeV^4
-    a_GUT_inv = 45.14  # Chain A2 (and Chain A1 = 45.65)
+    a_GUT_inv = 45.15  # Chain A2 (and Chain A1 = 45.65)
     C2_SO10 = 8.0      # Dual Coxeter number of Spin(10)
     # Dynkin indices T(R) for Spin(10) (normalized T(10)=1, T(16)=2, T(45)=8, T(54)=12, T(120)=28, T(126)=35, T(210)=56):
     # 1-loop beta: b_0 = (11/3)*C2 - (2/3)*N_g*T(16) - (1/3)*sum T(complex_S) - (1/6)*sum T(real_S)

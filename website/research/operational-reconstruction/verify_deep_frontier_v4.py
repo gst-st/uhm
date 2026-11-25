@@ -27,7 +27,7 @@ Suites:
 
   V4.3 (Front P2 - Kaloper-Padilla Sequestering + Spin(10) Instanton Quintessence vs DESI (w_0, w_a)!):
        - Compute the exact non-perturbative Spin(10) BPST instanton scale M_Pl^4 * exp(-2 pi / alpha_GUT)
-         using our exact 2-loop Chain A1 (alpha_GUT^-1 = 45.65) and Chain A2 (alpha_GUT^-1 = 45.14) couplings!
+         using our exact 2-loop Chain A1 (alpha_GUT^-1 = 45.65) and Chain A2 (alpha_GUT^-1 = 45.15) couplings!
        - Integrate exact coupled flat/closed FRW + thawing pseudo-Goldstone quintessence V(phi) = M^4(1-cos(phi/f))
          with Kaloper-Padilla global sequestering, extract exact CPL parameters (w_0, w_a) on z in [0, 2],
          and compare ruthlessly against Planck + DESI BAO (w_0 ~ -0.75, w_a ~ -0.8) & flag UV-prefactor caveats!
@@ -384,7 +384,7 @@ def suite_v43_instanton_quintessence_desi():
     M_Pl_full = 1.22089e19  # GeV
     rho_L0 = 2.5e-47        # GeV^4 (observed today)
     a_A1_inv = 45.65        # Exact 2-loop UHM Chain A1 (real (1,2,2)_R)
-    a_A2_inv = 45.14        # Exact 2-loop UHM Chain A2 (complex (1,2,2)_C)
+    a_A2_inv = 45.15        # Exact 2-loop UHM Chain A2 (complex (1,2,2)_C)
     M_GUT_A1 = 1.196e16     # GeV
 
     S_A1 = 2.0 * np.pi * a_A1_inv
@@ -400,7 +400,7 @@ def suite_v43_instanton_quintessence_desi():
     print(f"           - Chain A2 (alpha_GUT^-1 = {a_A2_inv:.2f}): S_inst = {S_A2:.2f} => log10(exp(-S)) = {log10_inst_A2:.2f}")
     print(f"           - Observed log10(rho_L0 / M_UV^4):  M_Pl_full -> {log10_obs_full:.2f},  M_Pl_red -> {log10_obs_red:.2f},  M_GUT -> {log10_obs_gut:.2f}")
     print("           -> STRIKING MATCH + HONEST CAVEAT: With M_UV = M_Pl_full, Chain A2 hits log10(rho_L0/M_Pl^4)")
-    print("              within 0.23 orders of magnitude (-123.18 vs -122.95!), whereas M_UV = M_GUT misses by 12+ orders!")
+    print(f"              within {abs(log10_inst_A2 - log10_obs_full):.2f} orders of magnitude ({log10_inst_A2:.2f} vs {log10_obs_full:.2f}!), whereas M_UV = M_GUT misses by 12+ orders!")
     print("              Thus UV-prefactor sensitivity (M_Pl vs M_GUT) & 1-loop threshold shifts (+-0.5 -> +-1.4 dex) remain [G/P]!")
 
     # 2) Exact FRW + Thawing Pseudo-Goldstone Quintessence V(phi) = 0.5 * A * (1 + cos(phi / f))
@@ -538,9 +538,13 @@ def suite_v44_seesaw_neutrino_audit():
             for j in range(3):
                 if j != i: B_A1[i, j] += 4.0*S2*fac[j][2]
 
+    c_top_PS = np.array([2.0, 2.0, 2.0])
+
     def ps_ode(t, y):
-        al = 1.0 / np.array(y)
-        return (-b_A1/(2*np.pi) - (B_A1 @ al)/(8*np.pi**2)).tolist()
+        al = 1.0 / np.array(y[:3]); g2 = 4*np.pi*al; yt = y[3]  # [2L, 2R, 4C]
+        da = -b_A1/(2*np.pi) - (B_A1 @ al)/(8*np.pi**2) + c_top_PS*(yt**2)/(32*np.pi**3)
+        dyt = (yt/(16*np.pi**2))*(6.0*yt**2 - 7.5*g2[2] - 2.25*(g2[0] + g2[1]))
+        return [da[0], da[1], da[2], dyt]
 
     rng = np.random.default_rng(77)
     mps_list, tau_list = [], []
@@ -550,9 +554,9 @@ def suite_v44_seesaw_neutrino_audit():
             ti, dt = p
             if ti < 5.0 or dt < 0.5 or ti + dt > 42.0: return 1e6
             s1 = solve_ivp(sm_ode, [0.0, ti], [a1_Z, a2_Z, a3_Z, yt_Z], rtol=1e-9, atol=1e-11)
-            a1m, a2m, a3m = s1.y[:3, -1]
-            s2 = solve_ivp(ps_ode, [ti, ti + dt], [a2m, (5/3)*a1m - (2/3)*a3m, a3m], rtol=1e-9, atol=1e-11)
-            g = s2.y[:, -1] + d_gut
+            a1m, a2m, a3m, ytm = s1.y[:, -1]
+            s2 = solve_ivp(ps_ode, [ti, ti + dt], [a2m, (5/3)*a1m - (2/3)*a3m, a3m, ytm], rtol=1e-9, atol=1e-11)
+            g = s2.y[:3, -1] + d_gut
             return float(np.sum((g - np.mean(g))**2))
         opt = minimize(res, [20.5, 12.0], method="Nelder-Mead", options={"xatol": 1e-7, "fatol": 1e-12, "maxiter": 1000})
         if opt.fun < 1e-5:
@@ -560,9 +564,9 @@ def suite_v44_seesaw_neutrino_audit():
             M_PS = M_Z * np.exp(ti)
             M_GUT = M_Z * np.exp(ti + dt)
             s1 = solve_ivp(sm_ode, [0.0, ti], [a1_Z, a2_Z, a3_Z, yt_Z], rtol=1e-9, atol=1e-11)
-            a1m, a2m, a3m = s1.y[:3, -1]
-            s2 = solve_ivp(ps_ode, [ti, ti + dt], [a2m, (5/3)*a1m - (2/3)*a3m, a3m], rtol=1e-9, atol=1e-11)
-            ag = float(np.mean(s2.y[:, -1] + d_gut))
+            a1m, a2m, a3m, ytm = s1.y[:, -1]
+            s2 = solve_ivp(ps_ode, [ti, ti + dt], [a2m, (5/3)*a1m - (2/3)*a3m, a3m, ytm], rtol=1e-9, atol=1e-11)
+            ag = float(np.mean(s2.y[:3, -1] + d_gut))
             tau = (M_GUT**4 * ag**2 / (0.938272**5)) * 6.582119569e-25 / 3.15576e7
             mps_list.append(M_PS); tau_list.append(tau)
 

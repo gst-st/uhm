@@ -69,7 +69,7 @@ Suites:
            (tau_p = 4.81e34 yr > Super-K, dim-6 octet lifetime tau_8 = 0.11 s < 1 s BBN; lower M_8 fails BBN, higher fails Super-K!),
            gives Omega h^2 = 0.120 & 1-loop sigma_SI ~ 2.3e-47 cm^2 < LZ 2024 (caveats: shifts M_PS -> 6.47e14 GeV breaking
            Higgs criticality coincidence, a_G^-1 -> 39.05, and 2.8 TeV wino requires cored GC profile vs H.E.S.S. [C/P]);
-         - 16_H complex scalar singlet (1,1,0): preserves Chain A2 tau_p = 9.08e34 yr, high-mass plateau
+         - 16_H complex scalar singlet (1,1,0): preserves Chain A2 tau_p = 8.83e34 yr, high-mass plateau
            sigma_SI = 1.63e-45 cm^2 (real singlet: 8.13e-46 cm^2) strongly excluded by LZ 2024 across perturbative TeV masses,
            leaving ONLY the narrow Higgs-funnel resonance m_phi ~ 62.5 GeV [C/✗].
 """
@@ -384,7 +384,7 @@ def suite_v72_dark_energy_uhm_origin():
               f"Higgsed@M_GUT alpha_d^-1 = {a_hig[Nd]:5.2f} (S={2*np.pi*a_hig[Nd]:.1f})")
     assert a_conf[2] > 76.0 and 43.0 < a_hig[2] < 45.5
     print("           -> STRIKING MATCH [C]: Higgsed SU(2)_dark at v_d=M_GUT needs alpha_d^-1=44.23, matching UHM's")
-    print("              2-loop Chain A2 alpha_GUT^-1=45.13 to ~2% (yet requires a decoupled dark gauge factor outside Spin(10)!)")
+    print("              2-loop Chain A2 alpha_GUT^-1=45.15 to ~2% (yet requires a decoupled dark gauge factor outside Spin(10)!)")
 
     # Part C: 7D Holon 21-Phase, Fano Incidence & 7-Gear Clockwork WGC Audit (Lean F-25B..D):
     S_needed = float(np.log((M_Pl_red**4) / rho_L0))
@@ -776,8 +776,21 @@ def suite_v74_flavored_leptogenesis_and_dm(x_res_star, x_hier_star):
                     if b != a: B2[a,b] += 4.0*rep[b][2]*Ta*mult
         return b1, B2
 
-    def run_seg(a0, t0, t1, b1, B2):
-        return solve_ivp(lambda t, y: -b1/(2*np.pi) - (B2 @ (1.0/y))/(8*np.pi**2), [t0, t1], a0, rtol=1e-10, atol=1e-12).y[:, -1]
+    c_top_SM = np.array([17.0/10.0, 3.0/2.0, 2.0])
+    c_top_PS = np.array([2.0, 2.0, 2.0])
+    yt_0 = 0.995
+
+    def run_seg(y0, t0, t1, b1, B2, is_ps=False):
+        c_top = c_top_PS if is_ps else c_top_SM
+        def rhs(t, y):
+            al = 1.0 / y[:3]; g2 = 4.0 * np.pi * al; yt = y[3]
+            da = -b1/(2*np.pi) - (B2 @ al)/(8*np.pi**2) + c_top*(yt**2)/(32*np.pi**3)
+            if is_ps:  # [4C, 2L, 2R]
+                dyt = (yt/(16*np.pi**2))*(6.0*yt**2 - 7.5*g2[0] - 2.25*(g2[1] + g2[2]))
+            else:      # [1Y, 2L, 3C]
+                dyt = (yt/(16*np.pi**2))*(4.5*yt**2 - 0.85*g2[0] - 2.25*g2[1] - 8.0*g2[2])
+            return [da[0], da[1], da[2], dyt]
+        return solve_ivp(rhs, [t0, t1], y0, rtol=1e-10, atol=1e-12).y[:, -1]
 
     r4_1, r4_4, r4_10, r4_15 = (1,0,0), (4,0.5,15/8), (10,3.0,4.5), (15,4.0,4.0)
     r2_1, r2_2, r2_3 = (1,0,0), (2,0.5,0.75), (3,2.0,2.0)
@@ -786,23 +799,23 @@ def suite_v74_flavored_leptogenesis_and_dm(x_res_star, x_hier_star):
 
     def unif_case(lbl, segs_SM, extra_weyl_PS):
         b1_PS, B2_PS = exact_mv_B2([4,2,2], base_weyl + extra_weyl_PS, cscalar_PS)
-        a_cur = np.array([a1_0, a2_0, a3_0]); t_cur = np.log(M_Z)
+        a_cur = np.array([a1_0, a2_0, a3_0, yt_0]); t_cur = np.log(M_Z)
         for (t_next, db, dB) in segs_SM[:-1]:
-            a_cur = run_seg(a_cur, t_cur, t_next, b1_SM + db, B2_SM + dB)
+            a_cur = run_seg(a_cur, t_cur, t_next, b1_SM + db, B2_SM + dB, is_ps=False)
             t_cur = t_next
         _, db_last, dB_last = segs_SM[-1]
         def mis(x):
             tPS, tGUT = x
             if not (t_cur < tPS < tGUT < np.log(2.435e18)): return 1e9
-            aps = run_seg(a_cur, t_cur, tPS, b1_SM + db_last, B2_SM + dB_last)
+            aps = run_seg(a_cur, t_cur, tPS, b1_SM + db_last, B2_SM + dB_last, is_ps=False)
             a2R = (5/3)*aps[0] - (2/3)*aps[2]
             if a2R <= 1.0: return 1e9
-            ag = run_seg(np.array([aps[2], aps[1], a2R]), tPS, tGUT, b1_PS, B2_PS)
+            ag = run_seg(np.array([aps[2], aps[1], a2R, aps[3]]), tPS, tGUT, b1_PS, B2_PS, is_ps=True)[:3]
             return (ag[0]-ag[1])**2 + (ag[1]-ag[2])**2
         res = minimize(mis, [np.log(1e11), np.log(1e16)], method="Nelder-Mead", options={"xatol":1e-10,"fatol":1e-14})
         tPS, tGUT = res.x; M_PS, M_GUT = np.exp(tPS), np.exp(tGUT)
-        aps = run_seg(a_cur, t_cur, tPS, b1_SM + db_last, B2_SM + dB_last)
-        ag = run_seg(np.array([aps[2], aps[1], (5/3)*aps[0] - (2/3)*aps[2]]), tPS, tGUT, b1_PS, B2_PS)
+        aps = run_seg(a_cur, t_cur, tPS, b1_SM + db_last, B2_SM + dB_last, is_ps=False)
+        ag = run_seg(np.array([aps[2], aps[1], (5/3)*aps[0] - (2/3)*aps[2], aps[3]]), tPS, tGUT, b1_PS, B2_PS, is_ps=True)[:3]
         aG_inv = float(np.mean(ag)); alpha_G = 1.0 / aG_inv
         Gamma_p = (0.938272/(32*np.pi*0.1304**2))*((1+1.27)**2)*(2.5**2)*(0.0118**2)*((4*np.pi*alpha_G/M_GUT**2)**2)*(1+(1+0.974**2)**2)
         tau_p = (6.582119569e-25 / Gamma_p) / 3.15576e7

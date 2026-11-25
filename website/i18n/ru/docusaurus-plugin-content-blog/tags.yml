@@ -164,9 +164,9 @@ vacuum:
   description: Вакуумная энергия и космологическая постоянная
 
 Lawvere:
-  label: Ловер
+  label: Лоувер
   permalink: /lawvere
-  description: Неполнота Ловера и самореференция
+  description: Неполнота Лоувера и самореференция
 
 superintelligence:
   label: Суперинтеллект

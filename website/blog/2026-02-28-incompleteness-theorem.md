@@ -64,7 +64,9 @@ Proof — by contradiction, in six lines:
 
 The key step is the fifth. If $\varphi = \mathrm{id}$, self-modelling would be perfect: the system sees itself exactly as it is. But the dissipator $\mathcal{D}_\Omega$ — [Fano-structured](/docs/core/operators/lindblad-operators#теорема-единственность-фано) — creates nontrivial evolution. States change. Perfect self-modelling is impossible.
 
-## Gödel, Tarski, Lawvere {#гёдель-тарский-ловер}
+<a id="гёдель-тарский-ловер"></a>
+
+## Gödel, Tarski, Lawvere {#гёдель-тарский-лоувер}
 
 Three levels of incompleteness — three theorems, each deeper than the previous:
 

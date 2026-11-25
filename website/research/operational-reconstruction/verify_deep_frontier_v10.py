@@ -821,7 +821,7 @@ def suite_v103_first_principles_lpm_and_rg_splitting(x_res):
 
     # 2. Dynamical PSL(2,7) -> S_4 -> D_4 / S_3 Degeneracy, 1-Loop RG Splitting & Quantitative D_4-Breaking Audit (Lean F-38A,B):
     H_nu = Y_fl.conj().T @ Y_fl
-    M_GUT = 7.95e15; M_PS = 1.43e11; M_avg = 0.5 * (M_vals[0] + M_vals[1])
+    M_GUT = 7.890e15; M_PS = 1.447e11; M_avg = 0.5 * (M_vals[0] + M_vals[1])
     Gam2_over_M2 = float(H_nu[1, 1].real / (8.0 * np.pi))
 
     def run_MR_1loop(M_init, H_mat, mult_PS=1.0):
@@ -929,9 +929,9 @@ def suite_v104_su2d_neff_and_fimp_reach():
     print("=" * 88)
 
     # 1. Exact 2-loop RG scale Lambda_d for SU(2)_d (N_c=2, N_f=0 pure YM vs N_s=1 Higgsed) & Delta N_eff (Lean F-39A):
-    # Pure YM SU(2)_d: b_0 = 22/3, b_1 = 136/3. Target Lambda_d = 2.3 meV = 2.3e-12 GeV from M_GUT = 7.95e15 GeV:
+    # Pure YM SU(2)_d: b_0 = 22/3, b_1 = 136/3. Target Lambda_d = 2.3 meV = 2.3e-12 GeV from M_GUT = 7.890e15 GeV:
     # Exact 2-loop running: d(alpha^-1)/d(ln mu) = b_0/(2pi) + b_1/(8 pi^2 alpha^-1)
-    M_GUT = 7.95e15; Lam_target = 2.3e-12
+    M_GUT = 7.890e15; Lam_target = 2.3e-12
     def log_lam_su2d(a_inv_gut, b0, b1):
         # Integrate from M_GUT down to ln(1e-45) until a_inv hits 1.0 (confinement scale Lambda_d):
         sol = solve_ivp(lambda t, y: [b0/(2*np.pi) + b1/(8*np.pi**2 * max(y[0], 0.1))],
@@ -984,11 +984,11 @@ def suite_v104_su2d_neff_and_fimp_reach():
     assert 1.5e14 < grav_pts_sm[4][1] < 2.0e14 and 1.5e14 < grav_pts_ps[4][1] < 2.1e14 and grav_pts_sm[2][1] > 6.6e15
 
     print(f"  [V10.4.A] External SU(2)_d Dark-Energy Sector (Exact Machacek-Vaughn 2-Loop RG, WGC & CMB-S4 Delta N_eff, Lean F-39A):")
-    print(f"            - Exact 2-loop a_d^-1(M_GUT) for Lambda_d = 2.3 meV: Pure YM={a_ym:.2f} (b1=136/3), Higgsed={a_hg:.2f} (b1=259/6), N_f=4+1H={a_nf4:.2f} (vs Chain A2 a_GUT^-1=45.13!)")
+    print(f"            - Exact 2-loop a_d^-1(M_GUT) for Lambda_d = 2.3 meV: Pure YM={a_ym:.2f} (b1=136/3), Higgsed={a_hg:.2f} (b1=259/6), N_f=4+1H={a_nf4:.2f} (vs Chain A2 a_GUT^-1=45.15!)")
     print(f"            - WGC distinction: SU(2)_d glueball/condensate vacuum avoids single-axion WGC S < 12; dark axion at S = 2 pi a_d^-1 ~ 280 STILL fails WGC [T/✗]!")
     for lbl, n_sm, n_ps, n_so in neff_table:
         print(f"            - {lbl:34s}: Delta N_eff = {n_sm:.4f} (SM) | {n_ps:.4f} (PS) | {n_so:.4f} (Spin(10)) [CMB-S4 sigma~0.027!]")
-    print(f"              -> Notice: N_f=4 SU(2)_d matching a_GUT^-1=45.13 gives Delta N_eff >= {neff_table[2][3]:.3f} > 0.28 -> EXCLUDED by Planck+ACT+DESI if thermalized [T/✗]!")
+    print(f"              -> Notice: N_f=4 SU(2)_d matching a_GUT^-1=45.15 gives Delta N_eff >= {neff_table[2][3]:.3f} > 0.28 -> EXCLUDED by Planck+ACT+DESI if thermalized [T/✗]!")
     print(f"  [V10.4.B] Cosmological Reach of Unique Surviving Weyl/Majorana FIMP chi_1 = 1_F (Lean F-39B, direct detection 5.94e-75 cm^2 impossible):")
     print(f"            - Exact Lyman-alpha warm-DM lower bounds (m_WDM >= 5.7 keV):")
     print(f"              SM bath (g_*S=106.75): IR={m_ir:.2f} keV | UV dim-5={m_uv5:.2f} keV | UV dim-6 grav={m_uv6:.2f} keV")

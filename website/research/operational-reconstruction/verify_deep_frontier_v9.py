@@ -47,7 +47,7 @@ Suites:
              delta in [0.28, 0.38] (tau_p = 2.4-5.0e34 yr) that crashes M_PS -> 5.4-8.6e10 GeV against
              Higgs instability mu_inst = 5.28e10 GeV & M_{N3}/M_PS >= 3.5-5.5 perturbativity limit [C/P];
            * Pure Spin(10)-singlet FIMP chi_1 = 1_F: ZERO GUT partners (Delta_a === 0 identically!), uniquely
-             preserving minimal Chain A2 unstrained (M_PS=1.43e11, M_GUT=7.95e15, tau_p=9.08e34 yr) [T/C]!
+             preserving minimal Chain A2 unstrained (M_PS=1.45e11, M_GUT=7.89e15, tau_p=8.83e34 yr) [T/C]!
 
   V9.3 (Front P4 - First-Principles 3-Channel Thermal-Threshold EW Gauge DL1 & 13-ODE Dynamic y_c(z)):
        - Direct 4D Dirac-trace derivation + exact gauge Ward identity (< 1e-12) for ALL THREE crossing-related
@@ -574,8 +574,21 @@ def suite_v92_gut_threshold_fimp_audit():
                     if b != a: B2[a,b] += 4.0*rep[b][2]*Ta*mult
         return b1, B2
 
-    def run_seg(a0, t0, t1, b1, B2):
-        return solve_ivp(lambda t, y: -b1/(2*np.pi) - (B2 @ (1.0/y))/(8*np.pi**2), [t0, t1], a0, rtol=1e-10, atol=1e-12).y[:, -1]
+    c_top_SM = np.array([17.0/10.0, 3.0/2.0, 2.0])
+    c_top_PS = np.array([2.0, 2.0, 2.0])
+    yt_0 = 0.995
+
+    def run_seg(y0, t0, t1, b1, B2, is_ps=False):
+        c_top = c_top_PS if is_ps else c_top_SM
+        def rhs(t, y):
+            al = 1.0 / y[:3]; g2 = 4.0 * np.pi * al; yt = y[3]
+            da = -b1/(2*np.pi) - (B2 @ al)/(8*np.pi**2) + c_top*(yt**2)/(32*np.pi**3)
+            if is_ps:  # [4C, 2L, 2R]
+                dyt = (yt/(16*np.pi**2))*(6.0*yt**2 - 7.5*g2[0] - 2.25*(g2[1] + g2[2]))
+            else:      # [1Y, 2L, 3C]
+                dyt = (yt/(16*np.pi**2))*(4.5*yt**2 - 0.85*g2[0] - 2.25*g2[1] - 8.0*g2[2])
+            return [da[0], da[1], da[2], dyt]
+        return solve_ivp(rhs, [t0, t1], y0, rtol=1e-10, atol=1e-12).y[:, -1]
 
     r4_1, r4_4, r4_10 = (1,0,0), (4,0.5,15/8), (10,3.0,4.5)
     r2_1, r2_2, r2_3  = (1,0,0), (2,0.5,0.75), (3,2.0,2.0)
@@ -585,17 +598,17 @@ def suite_v92_gut_threshold_fimp_audit():
         def mis(x):
             tPS, tGUT = x
             if not (np.log(M_Z) < tPS < tGUT < np.log(M_Pl)): return 1e9
-            aps = run_seg(np.array([a1_0, a2_0, a3_0]), np.log(M_Z), tPS, b1_SM, B2_SM)
+            aps = run_seg(np.array([a1_0, a2_0, a3_0, yt_0]), np.log(M_Z), tPS, b1_SM, B2_SM, is_ps=False)
             a2R = (5/3)*aps[0] - (2/3)*aps[2]
             if a2R <= 1.0: return 1e9
-            ag = run_seg(np.array([aps[2], aps[1], a2R]), tPS, tGUT, b1_PS, B2_PS) + delta_vec
+            ag = run_seg(np.array([aps[2], aps[1], a2R, aps[3]]), tPS, tGUT, b1_PS, B2_PS, is_ps=True)[:3] + delta_vec
             if np.any(ag <= 1.0): return 1e9
             return (ag[0]-ag[1])**2 + (ag[1]-ag[2])**2
         res = minimize(mis, [np.log(1.4e11), np.log(8e15)], method="Nelder-Mead", options={"xatol":1e-11,"fatol":1e-15})
         tPS, tGUT = res.x; M_PS, M_GUT = np.exp(tPS), np.exp(tGUT)
-        aps = run_seg(np.array([a1_0, a2_0, a3_0]), np.log(M_Z), tPS, b1_SM, B2_SM)
+        aps = run_seg(np.array([a1_0, a2_0, a3_0, yt_0]), np.log(M_Z), tPS, b1_SM, B2_SM, is_ps=False)
         a4, a2L, a2R = aps[2], aps[1], (5/3)*aps[0] - (2/3)*aps[2]
-        aG = float(np.mean(run_seg(np.array([a4, a2L, a2R]), tPS, tGUT, b1_PS, B2_PS) + delta_vec))
+        aG = float(np.mean(run_seg(np.array([a4, a2L, a2R, aps[3]]), tPS, tGUT, b1_PS, B2_PS, is_ps=True)[:3] + delta_vec))
         Gamma_p = (0.938272/(32*np.pi*0.1304**2))*((1+1.27)**2)*(2.5**2)*(0.0118**2)*((4*np.pi/(aG*M_GUT**2))**2)*(1+(1+0.974**2)**2)
         tau_p = (6.582119569e-25 / Gamma_p) / 3.15576e7
         return M_PS, M_GUT, aG, tau_p
@@ -671,7 +684,7 @@ def suite_v92_gut_threshold_fimp_audit():
     R_H_crit = 0.5*(lo + hi)
     m_54F_R02 = solve_thresh(np.array([d4_54F + (4/3)*np.log(0.2)/(2*np.pi), d2_54F, d2_54F]))
 
-    assert (m_1F[3] > 9e34 and m_54F[3] < 4e33 and m_210F[3] < 4e33 and m_54F_R02[3] < 2.4e34 and R_H_crit < 0.17
+    assert (m_1F[3] > 8.5e34 and m_54F[3] < 4e33 and m_210F[3] < 4e33 and m_54F_R02[3] < 2.4e34 and R_H_crit < 0.17
             and m_210_d028[3] > 2.3e34 and m_210_d038[0] < 5.6e10 and M_N3_ref / m_210_d028[0] > 3.3)
     print(f"  [V9.2.A] Exact GUT Partner Thresholds & D-Parity Coupling Audit (Lean F-33A,B):")
     print(f"           - Pure Spin(10)-singlet FIMP 1_F (Delta=0):  M_PS={m_1F[0]:.2e}, M_GUT={m_1F[1]:.2e}, aG^-1={m_1F[2]:.2f}, tau_p={m_1F[3]:.2e} yr [UNIQUE UNSTRAINED!]")
@@ -1288,7 +1301,7 @@ def suite_v94_g2_compactification_and_multiaxion_wgc():
         ("m_e (0.511 MeV)",          5.11e-4,    None),
         ("Lambda_QCD (0.2 GeV)",     0.2,        None),
         ("v_EW (174.1 GeV)",         174.104,    None),
-        ("M_PS (1.43e11 GeV)",       1.434e11,   None),
+        ("M_PS (1.45e11 GeV)",       1.447e11,   None),
         ("M_Pl (2.44e18 GeV)",       M_Pl,       None),
         ("Chain A2 Spin(10) @ M_GUT", None,      283.5),
     ]

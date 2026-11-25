@@ -645,9 +645,17 @@ def suite_v34_threshold_bands():
     # Monte Carlo scan over 40 random threshold realizations within M_S in [M/3, 3M] (conservative +-0.5 on alpha_i^-1)!
     def scan_chain_thresholds(name, C2_G, weyl, scal, is_lr=False):
         b_int, B_int = compute_mv(C2_G, weyl, scal)
+        c_top_PS = np.array([2.0, 2.0, 2.0])
         def int_ode(t, y):
-            al = 1.0 / np.array(y)
-            return (-b_int/(2.0*np.pi) - (B_int @ al)/(8.0*np.pi**2)).tolist()
+            if is_lr:
+                al = 1.0 / np.array(y)
+                return (-b_int/(2.0*np.pi) - (B_int @ al)/(8.0*np.pi**2)).tolist()
+            al = 1.0 / np.array(y[:3])
+            g2 = 4.0 * np.pi * al  # [2L, 2R, 4C]
+            yt = y[3]
+            da = -b_int/(2.0*np.pi) - (B_int @ al)/(8.0*np.pi**2) + c_top_PS*(yt**2)/(32.0*np.pi**3)
+            dyt = (yt/(16.0*np.pi**2))*(6.0*yt**2 - 7.5*g2[2] - 2.25*(g2[0] + g2[1]))
+            return [da[0], da[1], da[2], dyt]
 
         rng = np.random.default_rng(101)
         taus = []
@@ -659,13 +667,13 @@ def suite_v34_threshold_bands():
                 ti, dt = p
                 if ti < 5.0 or dt < 0.5 or ti + dt > 42.0: return 1e6
                 s1 = solve_ivp(sm_ode, [0.0, ti], [a1_Z, a2_Z, a3_Z, yt_Z], rtol=1e-9, atol=1e-11)
-                a1m, a2m, a3m = s1.y[:3, -1]
+                a1m, a2m, a3m, ytm = s1.y[:, -1]
                 if is_lr:
                     yi = [2.5*a1m - 1.5*a2m, a2m, a2m, a3m]
                 else:
-                    yi = [a2m, (5.0/3.0)*a1m - (2.0/3.0)*a3m, a3m]
+                    yi = [a2m, (5.0/3.0)*a1m - (2.0/3.0)*a3m, a3m, ytm]
                 s2 = solve_ivp(int_ode, [ti, ti + dt], yi, rtol=1e-9, atol=1e-11)
-                g = s2.y[:, -1] + d_gut
+                g = s2.y[:len(C2_G), -1] + d_gut
                 return float(np.sum((g - np.mean(g))**2))
             p0 = [20.0, 12.0] if not is_lr else [19.0, 12.0]
             opt = minimize(res, p0, method="Nelder-Mead", options={"xatol": 1e-7, "fatol": 1e-12, "maxiter": 1000})
@@ -673,10 +681,10 @@ def suite_v34_threshold_bands():
                 ti, dt = opt.x
                 M_GUT = M_Z * np.exp(ti + dt)
                 s1 = solve_ivp(sm_ode, [0.0, ti], [a1_Z, a2_Z, a3_Z, yt_Z], rtol=1e-9, atol=1e-11)
-                a1m, a2m, a3m = s1.y[:3, -1]
-                yi = [2.5*a1m - 1.5*a2m, a2m, a2m, a3m] if is_lr else [a2m, (5.0/3.0)*a1m - (2.0/3.0)*a3m, a3m]
+                a1m, a2m, a3m, ytm = s1.y[:, -1]
+                yi = [2.5*a1m - 1.5*a2m, a2m, a2m, a3m] if is_lr else [a2m, (5.0/3.0)*a1m - (2.0/3.0)*a3m, a3m, ytm]
                 s2 = solve_ivp(int_ode, [ti, ti + dt], yi, rtol=1e-9, atol=1e-11)
-                ag = float(np.mean(s2.y[:, -1] + d_gut))
+                ag = float(np.mean(s2.y[:len(C2_G), -1] + d_gut))
                 tau = (M_GUT**4 * ag**2 / (0.938272**5)) * 6.582119569e-25 / 3.15576e7
                 taus.append(tau); mguts.append(M_GUT)
         taus = np.array(taus)

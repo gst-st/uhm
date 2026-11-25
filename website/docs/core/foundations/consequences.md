@@ -90,6 +90,8 @@ Define $\mathrm{Th}_m:=\operatorname{Eq}(m^*,\mathrm{id}_{\Omega^G})$ [D]. The e
 
 <a id="неполнота-как-двигатель-эволюции"></a>
 
+<a id="неполнота-лоувера"></a>
+
 <a id="неполнота-ловера"></a>
 
 ## T-55: properness under predicate separation

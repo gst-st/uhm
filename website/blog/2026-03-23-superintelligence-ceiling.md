@@ -27,7 +27,7 @@ This is a CPTP channel ([T-62 [Т]](/docs/proofs/categorical/formalization-phi))
 
 $$R(\Gamma) = 1 - \frac{\|\Gamma - \varphi(\Gamma)\|_F^2}{\|\Gamma\|_F^2}$$
 
-$R = 0$ — the system knows nothing about itself. $R = 1$ — perfect self-knowledge (unachievable: [Lawvere incompleteness](/docs/core/foundations/consequences#неполнота-ловера) [Т]). Consciousness threshold: $R \geq 1/3$ [Т].
+$R = 0$ — the system knows nothing about itself. $R = 1$ — perfect self-knowledge (unachievable: [Lawvere incompleteness](/docs/core/foundations/consequences#неполнота-лоувера) [Т]). Consciousness threshold: $R \geq 1/3$ [Т].
 
 **Self-awareness depth (SAD)** — the number of iterations of $\varphi$ for which reflection remains above the threshold:
 

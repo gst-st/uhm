@@ -55,8 +55,8 @@ Suites:
   V11.4 (Stratified UHM Ontology Matrix & Cross-Doc Numerical Consistency Audit):
         - Verifies clean separation of Stratum A (D(C^7) + PG(2,2)), Stratum B ((Cl_0)+KO-6+(P) Clifford/CCvS),
           and Stratum C (background-free 4D Regge/CDT + external cosmological/DM sectors), and verifies exact
-          numerical parity (0 remnants of the 44.23 Chain-A2 typo; v10 baseline 45.13 vs exact 4-color C_top_PS=[2,2,2]
-          Chain A2 a_GUT^-1 = 45.15 within PDG +-1sigma band [45.11, 45.18], M_PS = 1.447e11, Lam = 7.89e15, m_h = 125.25 GeV).
+          numerical parity (0 remnants of the 44.23 Chain-A2 typo; unified 45.15 parity across v2..v11 for exact 4-color
+          C_top_PS=[2,2,2] Chain A2 a_GUT^-1 = 45.15 within PDG +-1sigma band [45.11, 45.18], M_PS = 1.447e11, Lam = 7.89e15, m_h = 125.25 GeV).
 """
 
 import math
@@ -848,10 +848,10 @@ def suite_v112_f41_v102a_retraction_and_modular_cp():
     t_eh_s2s1_1  = (vol_q3_max_1 / (8.0 * math.pi ** 2)) ** (1.0 / 3.0)   # 0.2229 l_11
     t_eh_sph_1   = (vol_q3_max_1 / (4.0 * math.pi / 3.0)) ** (1.0 / 3.0)  # 0.5932 l_11
     # Exact Acharya-Witten K = -3 ln(4 pi^{1/3} V_7), e^K = (64 pi V_7^3)^{-1}, V_F ~ e^K |D W|^2 ~ (pi / (12 V_7)) e^{-2 S_M2}:
-    # At Chain A2 Vol(Q_GUT) = alpha_GUT^-1 = 45.13 => isotropic V_7 >= 45.13^{7/3} = 7252.2:
-    alpha_gut_inv = 45.13
+    # At Chain A2 Vol(Q_GUT) = alpha_GUT^-1 = 45.15 => isotropic V_7 >= 45.15^{7/3} = 7258.9:
+    alpha_gut_inv = 45.15
     V7_min = alpha_gut_inv ** (7.0 / 3.0)
-    pref_aw = math.pi / (12.0 * V7_min)  # 3.610e-5 << A_crit (114x too small even at S_M2 = 0!)
+    pref_aw = math.pi / (12.0 * V7_min)  # 3.606e-5 << A_crit (114x too small even at S_M2 = 0!)
     ratio_aw_deficit = A_crit / pref_aw
     assert vol_q3_max < 0.45 and t_eh_cub < 1.0 and t_eh_sph_1 < 0.65 and ratio_aw_deficit > 110.0
     # Harvey-Moore zero-mode topological obstruction: b_1(S^2_EH x S^1) = b_1(S^2) + b_1(S^1) = 0 + 1 = 1 != 0 => W_np == 0!
@@ -1254,7 +1254,7 @@ def suite_v113_f42_ccvs_rge_pdecay_higgs_leptogenesis():
         rge_out[bname] = (mps, lam, ainv)
 
     # Tight assertions against exact PDG 2024 2-loop results + +-1sigma PDG alpha_s sensitivity (0.1180 +- 0.0009):
-    assert abs(rge_out["Chain A2"][2] - 45.13) < 0.05
+    assert abs(rge_out["Chain A2"][2] - 45.15) < 0.02
     assert 1.40e11 < rge_out["Chain A2"][0] < 1.47e11 and 7.8e15 < rge_out["Chain A2"][1] < 8.1e15
     assert 4.8e10 < rge_out["CCvS-trunc (+6,1,1)"][0] < 5.2e10 and 45.3 < rge_out["CCvS-trunc (+6,1,1)"][2] < 45.8
     assert 1.4e10 < rge_out["CCvS-FULL-R (+15,2,2_R+6)"][0] < 1.6e10 and 38.7 < rge_out["CCvS-FULL-R (+15,2,2_R+6)"][2] < 39.3
@@ -1370,7 +1370,7 @@ def suite_v114_stratified_ontology_and_cross_doc_audit(rge_out):
          "Internal UHM axioms only"),
         ("Stratum B: (Cl_0)+KO-6+(P) Clifford/CCvS Lift",
          ["F-42A: Cl_{0,7} spinor S_phi = 4_C of SU(4)_C", "F-42B/C: CCvS Pati-Salam A_F = H_L + H_R + M_4(C) on C^32",
-          "Chain A2 / Split-CCvS 2-loop RGE (exact 4-color C_top_PS=[2,2,2]: a^-1=45.15 [45.11..45.18], M_PS=1.447e11, Lam=7.89e15; v10 baseline 45.13)",
+          "Chain A2 / Split-CCvS 2-loop RGE (exact 4-color C_top_PS=[2,2,2]: a^-1=45.15 [45.11..45.18], M_PS=1.447e11, Lam=7.89e15)",
           "Delta_R Higgs-quartic threshold (m_h = 125.25 GeV) & resonant leptogenesis (M_N1=1.80e10)"],
          "Explicit Clifford-spinor + KO-6 + Pati-Salam lift (NOT free from D(C^7) alone!)"),
         ("Stratum C: Background-Free 4D Gravity & External Sectors",
@@ -1394,13 +1394,14 @@ def suite_v114_stratified_ontology_and_cross_doc_audit(rge_out):
 
     # Verify the 44.23 Chain-A2 typo is GONE from verify_deep_frontier_v10.py and Chain A2 matches within PDG +-1sigma:
     assert "44.23" not in v10_text, "Stale 44.23 typo still present in verify_deep_frontier_v10.py!"
-    assert "45.13" in v10_text and "45.13" in rg_text and "45.13" in pd_text
-    assert abs(rge_out["Chain A2"][2] - 45.15) < 0.02 and abs(rge_out["Chain A2"][2] - 45.13) < 0.05
+    assert "45.15" in v10_text and "45.15" in rg_text and "45.15" in pd_text
+    assert "45.13" not in v10_text and "45.13" not in pd_text
+    assert abs(rge_out["Chain A2"][2] - 45.15) < 0.02
 
     print("  [V11.4] Stratified UHM Ontology Matrix & Cross-Doc Numerical Audit:")
     for s_name, items, status in ontology:
         print(f"          * {s_name} [{status}]: {len(items)} verified blocks")
-    print(f"          * Cross-doc parity: Chain A2 a_GUT^-1 = {rge_out['Chain A2'][2]:.2f} (exact 4-color C_top_PS=[2,2,2]; v10 baseline 45.13, 0 '44.23' typo!) [T]\n")
+    print(f"          * Cross-doc parity: Chain A2 a_GUT^-1 = {rge_out['Chain A2'][2]:.2f} (exact 4-color C_top_PS=[2,2,2], unified v2..v11 parity, 0 '44.23' typo!) [T]\n")
 
 
 if __name__ == "__main__":

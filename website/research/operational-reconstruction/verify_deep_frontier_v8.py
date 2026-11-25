@@ -64,8 +64,8 @@ Suites:
            gives Gamma_{Z'}/H = 4.40 > 1 at T_RH=M_N1 -> hot DM m_S <= 84 eV, 60x excluded by Lyman-alpha!), AND minimal 210_F + 210_H
            (exact 210x210 SO(10) tensor contraction + D-parity proves <210_H>_{(1,1,1)} gives ZERO portal to (1,1,1)_F and leaves 120 states
            of 210_F — including 119 colored/EW fermions — completely unsplit!);
-         - Two Genuine SO(10)-Consistent Unified FIMP Survivors [C/P] preserving Chain A2 100% (M_PS=1.43e11, M_GUT=7.95e15, a_G^-1=45.13,
-           tau_p=9.08e34 yr):
+         - Two Genuine SO(10)-Consistent Unified FIMP Survivors [C/P] preserving Chain A2 100% (M_PS=1.45e11, M_GUT=7.89e15, a_G^-1=45.15,
+           tau_p=8.83e34 yr):
            (i) D-parity-EVEN 54_H at M_GUT + 54_F (minimal, 4 distinct eigenvalues +2,-0.5,-3,-1) or 210_F (5 distinct eigenvalues +8,+3,-2,-7,-12):
                tree-level 10_H^dag 54_H 10_H dim-5 Higgs portal (c_5=0.1, T_RH=2.5-5.0e10 GeV) -> cold m_chi = 4.44-8.89 GeV, exact reduced-mass
                sigma_SI = 3.80-4.56e-72 cm^2, ZERO H.E.S.S. lines;
@@ -572,8 +572,23 @@ def suite_v82_dark_energy_boundary_theorem():
                     if b != a: B2[a,b] += 4.0*rep[b][2]*Ta*mult
         return b1, B2
 
-    def run_seg(a0, t0, t1, b1, B2):
-        return solve_ivp(lambda t, y: -b1/(2*np.pi) - (B2 @ (1.0/y))/(8*np.pi**2), [t0, t1], a0, rtol=1e-10, atol=1e-12).y[:, -1]
+    c_top_SM = np.array([17.0/10.0, 3.0/2.0, 2.0])
+    c_top_PS = np.array([2.0, 2.0, 2.0])
+    yt_0 = 0.995
+
+    def run_seg(y0, t0, t1, b1, B2, is_ps=False):
+        if len(y0) == 3:
+            return solve_ivp(lambda t, y: -b1/(2*np.pi) - (B2 @ (1.0/y))/(8*np.pi**2), [t0, t1], y0, rtol=1e-10, atol=1e-12).y[:, -1]
+        c_top = c_top_PS if is_ps else c_top_SM
+        def rhs(t, y):
+            al = 1.0 / y[:3]; g2 = 4.0 * np.pi * al; yt = y[3]
+            da = -b1/(2*np.pi) - (B2 @ al)/(8*np.pi**2) + c_top*(yt**2)/(32*np.pi**3)
+            if is_ps:  # [4C, 2L, 2R]
+                dyt = (yt/(16*np.pi**2))*(6.0*yt**2 - 7.5*g2[0] - 2.25*(g2[1] + g2[2]))
+            else:      # [1Y, 2L, 3C]
+                dyt = (yt/(16*np.pi**2))*(4.5*yt**2 - 0.85*g2[0] - 2.25*g2[1] - 8.0*g2[2])
+            return [da[0], da[1], da[2], dyt]
+        return solve_ivp(rhs, [t0, t1], y0, rtol=1e-10, atol=1e-12).y[:, -1]
 
     r4_1, r4_4, r4_10 = (1,0,0), (4,0.5,15/8), (10,3.0,4.5)
     r2_1, r2_2, r2_3  = (1,0,0), (2,0.5,0.75), (3,2.0,2.0)
@@ -582,17 +597,17 @@ def suite_v82_dark_energy_boundary_theorem():
     def mis(x):
         tPS, tGUT = x
         if not (np.log(M_Z) < tPS < tGUT < np.log(M_Pl)): return 1e9
-        aps = run_seg(np.array([a1_0, a2_0, a3_0]), np.log(M_Z), tPS, b1_SM, B2_SM)
+        aps = run_seg(np.array([a1_0, a2_0, a3_0, yt_0]), np.log(M_Z), tPS, b1_SM, B2_SM, is_ps=False)
         a2R = (5/3)*aps[0] - (2/3)*aps[2]
         if a2R <= 1.0: return 1e9
-        ag = run_seg(np.array([aps[2], aps[1], a2R]), tPS, tGUT, b1_PS, B2_PS)
+        ag = run_seg(np.array([aps[2], aps[1], a2R, aps[3]]), tPS, tGUT, b1_PS, B2_PS, is_ps=True)[:3]
         return (ag[0]-ag[1])**2 + (ag[1]-ag[2])**2
 
     res = minimize(mis, [np.log(1e11), np.log(1e16)], method="Nelder-Mead", options={"xatol":1e-11,"fatol":1e-15})
     tPS, tGUT = res.x; M_PS, M_GUT = np.exp(tPS), np.exp(tGUT)
-    aps = run_seg(np.array([a1_0, a2_0, a3_0]), np.log(M_Z), tPS, b1_SM, B2_SM)
+    aps = run_seg(np.array([a1_0, a2_0, a3_0, yt_0]), np.log(M_Z), tPS, b1_SM, B2_SM, is_ps=False)
     a4_PS, a2L_PS, a2R_PS = aps[2], aps[1], (5/3)*aps[0] - (2/3)*aps[2]
-    aG = float(np.mean(run_seg(np.array([a4_PS, a2L_PS, a2R_PS]), tPS, tGUT, b1_PS, B2_PS)))
+    aG = float(np.mean(run_seg(np.array([a4_PS, a2L_PS, a2R_PS, aps[3]]), tPS, tGUT, b1_PS, B2_PS, is_ps=True)[:3]))
 
     # Part A: Exact 't Hooft-Bernard (1979) 1-loop determinant exp(-1.68 h^v + 0.292 sum T_W) + STRONGEST Chain A2 Yukawa closure:
     #   - 126_H Majorana Yukawa F_ij = M_R / v_R (v_R ~ M_PS): |det F| = 3.381e-2 (closes ALL 12 ZM of Spin(10)@M_GUT & SU(2)_R@M_PS!)
@@ -644,8 +659,8 @@ def suite_v82_dark_energy_boundary_theorem():
     print(f"  [V8.2.B] Universal Unconditional WGC-Quintessence Boundary: m_phi/H_0 >= ({c_cos_min:.4f}/c_AW) * ln(Lam_UV^4/rho_L0) (Lean F-29A,B):")
     for lbl, Luv in [
         ("M_Pl (2.44e18 GeV)", M_Pl),
-        ("M_GUT (7.95e15 GeV)", M_GUT),
-        ("M_PS (1.43e11 GeV)", M_PS),
+        ("M_GUT (7.89e15 GeV)", M_GUT),
+        ("M_PS (1.45e11 GeV)", M_PS),
         ("v_EW (174 GeV)", 174.104),
         ("Lambda_QCD (0.2 GeV)", 0.2),
         ("m_e (0.511 MeV)", 5.11e-4),
@@ -671,7 +686,7 @@ def suite_v82_dark_energy_boundary_theorem():
     print(f"           1) Chain A2 active neutrino masses m_nu = [{m1*1e3:.2f}, {m2*1e3:.2f}, {m3*1e3:.2f}] meV (m_nu1, m_nu2 < {Lam_UV_mid*1e12:.2f} < {Lam_UV_max*1e12:.2f} meV < m_nu3!):")
     print(f"              m_nu2^4/(16 pi^2) = {cw2:.2e} GeV^4 ({cw2/rho_L0:.2f}x rho_L0), YET MaVaN adiabatic instability (c_s^2 < 0 for w != -1)")
     print("              & sequestering of all scales >= m_e block a minimal self-contained neutrino-DE mechanism [C/✗/P];")
-    print("           2) External decoupled dark sector (Higgsed SU(2)_d @ M_GUT matching a_G^-1=45.13 to 2%, or N_ax >= 36) [T/✗/P].\n")
+    print("           2) External decoupled dark sector (Higgsed SU(2)_d @ M_GUT matching a_G^-1=45.15 to 2%, or N_ax >= 36) [T/✗/P].\n")
 
 
 # ==============================================================================
@@ -890,8 +905,23 @@ def suite_v84_dm_density_matrix_and_splitting(x_res):
                     if b != a: B2[a,b] += 4.0*rep[b][2]*Ta*mult
         return b1, B2
 
-    def run_seg(a0, t0, t1, b1, B2):
-        return solve_ivp(lambda t, y: -b1/(2*np.pi) - (B2 @ (1.0/y))/(8*np.pi**2), [t0, t1], a0, rtol=1e-10, atol=1e-12).y[:, -1]
+    c_top_SM = np.array([17.0/10.0, 3.0/2.0, 2.0])
+    c_top_PS = np.array([2.0, 2.0, 2.0])
+    yt_0 = 0.995
+
+    def run_seg(y0, t0, t1, b1, B2, is_ps=False):
+        if len(y0) == 3:
+            return solve_ivp(lambda t, y: -b1/(2*np.pi) - (B2 @ (1.0/y))/(8*np.pi**2), [t0, t1], y0, rtol=1e-10, atol=1e-12).y[:, -1]
+        c_top = c_top_PS if is_ps else c_top_SM
+        def rhs(t, y):
+            al = 1.0 / y[:3]; g2 = 4.0 * np.pi * al; yt = y[3]
+            da = -b1/(2*np.pi) - (B2 @ al)/(8*np.pi**2) + c_top*(yt**2)/(32*np.pi**3)
+            if is_ps:  # [4C, 2L, 2R]
+                dyt = (yt/(16*np.pi**2))*(6.0*yt**2 - 7.5*g2[0] - 2.25*(g2[1] + g2[2]))
+            else:      # [1Y, 2L, 3C]
+                dyt = (yt/(16*np.pi**2))*(4.5*yt**2 - 0.85*g2[0] - 2.25*g2[1] - 8.0*g2[2])
+            return [da[0], da[1], da[2], dyt]
+        return solve_ivp(rhs, [t0, t1], y0, rtol=1e-10, atol=1e-12).y[:, -1]
 
     def sm_shift(d3, T3, C3, d2, T2, C2, Y, kind):
         mult = {"CS": 1.0, "Weyl": 1.0}[kind]; is_f = (kind == "Weyl")
@@ -913,24 +943,24 @@ def suite_v84_dm_density_matrix_and_splitting(x_res):
 
     def unif_dm(segs_SM, ex_W, ex_CS):
         b1_PS, B2_PS = exact_mv_B2([4,2,2], base_weyl + ex_W, cscalar_PS + ex_CS)
-        a_cur = np.array([a1_0, a2_0, a3_0]); t_cur = np.log(M_Z)
+        a_cur = np.array([a1_0, a2_0, a3_0, yt_0]); t_cur = np.log(M_Z)
         for (t_next, db, dB) in segs_SM[:-1]:
-            a_cur = run_seg(a_cur, t_cur, t_next, b1_SM + db, B2_SM + dB); t_cur = t_next
+            a_cur = run_seg(a_cur, t_cur, t_next, b1_SM + db, B2_SM + dB, is_ps=False); t_cur = t_next
         _, db_l, dB_l = segs_SM[-1]
         def mis(x):
             tPS, tGUT = x
             if not (t_cur < tPS < tGUT < np.log(M_Pl)): return 1e9
-            aps = run_seg(a_cur, t_cur, tPS, b1_SM + db_l, B2_SM + dB_l)
+            aps = run_seg(a_cur, t_cur, tPS, b1_SM + db_l, B2_SM + dB_l, is_ps=False)
             a2R = (5/3)*aps[0] - (2/3)*aps[2]
             if a2R <= 1.0: return 1e9
-            ag = run_seg(np.array([aps[2], aps[1], a2R]), tPS, tGUT, b1_PS, B2_PS)
+            ag = run_seg(np.array([aps[2], aps[1], a2R, aps[3]]), tPS, tGUT, b1_PS, B2_PS, is_ps=True)[:3]
             if np.any(ag <= 1.0): return 1e9
             return (ag[0]-ag[1])**2 + (ag[1]-ag[2])**2
         res = minimize(mis, [np.log(1.4e11), np.log(8e15)], method="Nelder-Mead", options={"xatol":1e-10,"fatol":1e-14})
         tPS, tGUT = res.x; M_PS, M_GUT = np.exp(tPS), np.exp(tGUT)
-        aps = run_seg(a_cur, t_cur, tPS, b1_SM + db_l, B2_SM + dB_l)
+        aps = run_seg(a_cur, t_cur, tPS, b1_SM + db_l, B2_SM + dB_l, is_ps=False)
         a4, a2L, a2R = aps[2], aps[1], (5/3)*aps[0] - (2/3)*aps[2]
-        aG = float(np.mean(run_seg(np.array([a4, a2L, a2R]), tPS, tGUT, b1_PS, B2_PS)))
+        aG = float(np.mean(run_seg(np.array([a4, a2L, a2R, aps[3]]), tPS, tGUT, b1_PS, B2_PS, is_ps=True)[:3]))
         Gamma_p = (0.938272/(32*np.pi*0.1304**2))*((1+1.27)**2)*(2.5**2)*(0.0118**2)*((4*np.pi/(aG*M_GUT**2))**2)*(1+(1+0.974**2)**2)
         tau_p = (6.582119569e-25 / Gamma_p) / 3.15576e7
         return M_PS, M_GUT, aG, tau_p, (a4, a2L, a2R)
@@ -943,7 +973,7 @@ def suite_v84_dm_density_matrix_and_splitting(x_res):
     mps_id, mg_id, ag_id, tp_id, _ = unif_dm([(np.log(535), z3, z33), (None, db_id, dB_id)], [], [(r4_4,r2_2,r2_1),(r4_4,r2_1,r2_2)])
     mps_5F, mg_5F, ag_5F, tp_5F, _ = unif_dm([(np.log(14000), z3, z33), (None, db_5F, dB_5F)], [(r4_1,r2_5,r2_1)], [])
     mps_R3, mg_R3, ag_R3, tp_R3, _ = unif_dm([(None, z3, z33)], [(r4_1,r2_1,r2_3)], [])
-    assert tp_0 > 9e34 and tp_id < 6e33 and tp_5F < 1e23 and mps_R3 < 1.8e10
+    assert tp_0 > 8.5e34 and tp_id < 6e33 and tp_5F < 1e23 and mps_R3 < 1.8e10
 
     # Exact Z'_{B-L} thermalization audit for 16_H (1,1,0)_S at leptogenesis T_RH = M_{N1} = 1.801e10 GeV:
     # Exact mass ratio from |D_mu Delta_{44}|^2 vs |D_mu Delta_{i4}|^2 for Delta_R=(10,1,3): M_{Z'} = sqrt(3) * (norm_Z / g_4) * M_PS!
