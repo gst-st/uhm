@@ -121,7 +121,7 @@ A specified network and transfer protocol can yield a common distance for calibr
 <a id="key-results"></a>
 <a id="what-the-theory-derives"></a>
 
-**[T]** means a theorem under its stated assumptions, **[D]** a definition or chosen model, **[C]** a conditional conclusion, **[H]** a hypothesis, **[I]** an interpretation, **[Pr]** a research programme, and **[✗]** a withdrawn statement. A theorem inside a chosen numerical model is not automatically a theorem about every physical or conscious system.
+**[T]** means a theorem under its stated assumptions, **[D]** a definition or chosen model, **[C]** a conditional conclusion, **[H]** a hypothesis, **[I]** an interpretation, **[Pr]** a research programme, and **[✗]** a withdrawn statement. A theorem inside a chosen numerical model is not automatically a theorem about every physical or conscious system. To prevent overclaiming from $\mathcal{D}(\mathbb{C}^7)$ alone, UHM explicitly separates three ontological strata ([Stratified UHM Ontology Matrix](/docs/reference/frontier-ledger#stratified-ontology)): **Stratum A** ($\mathcal{D}(\mathbb{C}^7)+\mathrm{PG}(2,2)$ internal theorems), **Stratum B** (`(Cl₀)+KO-6+(P)` Clifford/CCvS Pati–Salam lift `F-42`), and **Stratum C** (background-free 4D simplicial Regge/CDT gravity required after `Super-F-40`, plus external CP, dark-energy $SU(2)_d$, and singlet $\mathbf{1}_F$ FIMP sectors).
 
 ## Navigation
 

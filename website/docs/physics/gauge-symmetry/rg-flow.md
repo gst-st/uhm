@@ -38,3 +38,21 @@ Within the clock-stabilizer symmetry-breaking chain $\mathrm{Spin}(10) \xrightar
 | `Chain A2` ($G_{422}$, complex $(1,2,2)_{\mathbb{C}}$ + $\Delta_R$) | $1.43\times 10^{11}$ | $7.95\times 10^{15}$ | $45.13$ | $9.08\times 10^{34}\text{–}2.27\times 10^{35}$ | Viable, Hyper-K window [C] |
 
 Scanning 30 Hall–Weinberg threshold realizations ($\lvert\Delta\alpha_i^{-1}\rvert \le 1.0$) reveals a rigid anti-correlation $r(\log_{10} M_{\mathrm{PS}}, \log_{10}\tau_p) = -0.928$, capping the intermediate Pati–Salam scale strictly at $M_{\mathrm{PS}} \le 3.06\times 10^{11}\,\mathrm{GeV}$ under the Super-Kamiokande bound $\tau_p > 2.4\times 10^{34}\,\mathrm{yr}$ [C]. Meanwhile, the same two-loop SM running drives the Higgs quartic coupling $\lambda_H(\mu)$ through zero at $\mu_{\mathrm{inst}} = 5.28\times 10^{10}\,\mathrm{GeV}$ — directly adjacent to $M_{\mathrm{PS}}$, where the Pati–Salam scalar threshold $\Delta_R = (10,1,3)$ stabilizes the vacuum ([Higgs Sector](../particle-physics/higgs-sector#higgs-criticality-vissani)).
+
+### Kähler–Dirac Clifford Lift to CCvS Pati–Salam NCG (`F-42`, `V11.3`) {#ccvs-pati-salam-rge}
+
+Theorem **`F-42`** (`f42_spin6_stab_su4_dim`, `f42_ccvs_ko6_and_zeroth_order`, `f42_ccvs_orbit_vs_full_fluctuations`, `ToEFrontierV11.lean`, `verify_deep_frontier_v11.py` V11.3) formalizes the **Stratum-B** `(Cl₀)+KO-6+(P)` lift from the octonionic $\mathrm{Cl}_{0,7}$ spinor $S_\varphi \cong \mathbf{4}_{\mathbb{C}}$ (clock stabilizer $\mathfrak{spin}(6) \cong \mathfrak{su}(4)_C$, $\dim = 15$, $J_O = \Gamma_7$ with $J_O^2 = -I_8$) to the Connes–Chamseddine–van Suijlekom (CCvS) Pati–Salam finite spectral triple $A_F = \mathbb{H}_L \oplus \mathbb{H}_R \oplus M_4(\mathbb{C})$ on $H_F = \mathbb{C}^{32}$ (exact KO-dimension $6$, universal 0th-order condition, genuine 1st-order violation `max = 7.0`) [T]:
+
+- **Unitary orbit vs. full CCvS inner fluctuations [T]:** On the unitary gauge orbit $U D_F U^\dagger$, the antisymmetric $(6,1,1)_{\mathbb{C}}$ diquark/leptoquark vanishes identically (`real dim = 8 + 120 + 60 = 188`), whereas full CCvS fluctuations ($+A_{(2)}$) strictly generate $(6,1,1)_{\mathbb{C}}$ (`real dim = 200`, explicit pure-$(6,1,1)_{\mathbb{C}}$ witness `M_6(0,1) = +14`).
+- **Two-loop CCvS Pati–Salam unification, leptogenesis & heavy-threshold split (`V11.3.B,C`) [C] / [✗]:**
+
+| CCvS / Pati–Salam scalar benchmark | $M_{\mathrm{PS}}$ (GeV) | $\Lambda_{\mathrm{NCG}}$ (GeV) | $\alpha^{-1}(\Lambda_{\mathrm{NCG}})$ | $M_{\mathrm{PS}}$ vs. $M_{N_1}=1.80\times 10^{10}$ & $(6,1,1)_{\mathbb{C}}$ p-decay |
+|---|---|---|---|---|
+| `Chain A2` (`(1,2,2)_C + (10,1,3)_C`) | $1.45\times 10^{11}$ | $7.87\times 10^{15}$ | $45.14$ | OK ($> M_{N_1}$, no light $(6,1,1)_{\mathbb{C}}$) [C] |
+| `CCvS-trunc` (`+ (6,1,1)_C`) | $5.06\times 10^{10}$ | $2.04\times 10^{16}$ | $45.56$ | Excluded by $(6,1,1)_{\mathbb{C}}$ Super-K bound ($M_6 \ge 8.35\times 10^{10}$) [✗] |
+| `CCvS-FULL-R` (`+ (15,2,2)_R + (6,1,1)_C`) | $1.54\times 10^{10}$ | $5.01\times 10^{16}$ | $39.05$ | Drops $1.17\times$ below $M_{N_1}$ & fails Super-K $M_6$ [✗] |
+| `CCvS-FULL-C` (`+ (15,2,2)_C + (6,1,1)_C`) | $1.27\times 10^9$ | $2.70\times 10^{17}$ | $28.50$ | Breaks resonant leptogenesis ($14.2\times$ below $M_{N_1}$) & fails $M_6$ [✗] |
+| `Split-R` (`(6,1,1)_C + (15,2,2)_R` at $10^{15}$) | $1.07\times 10^{11}$ | $1.03\times 10^{16}$ | $44.22$ | Restores $M_{\mathrm{PS}} > M_{N_1}$ & cures $(6,1,1)_{\mathbb{C}}$ p-decay [C] |
+| `Split-C` (`(6,1,1)_C + (15,2,2)_C` at $10^{15}$) | $9.38\times 10^{10}$ | $1.16\times 10^{16}$ | $43.11$ | Restores $M_{\mathrm{PS}} > M_{N_1}$ & cures $(6,1,1)_{\mathbb{C}}$ p-decay [C] |
+
+Because **`Super-F-40`** closes ALL 4D Dirac spectral actions as UV completions of gravity, the CCvS Pati–Salam spectral triple supplies the **Stratum-B** internal gauge/Yukawa/Higgs architecture while 4D quantum gravity strictly requires a separate **Stratum-C** background-free dynamical geometry ([Quantum Gravity](../gravity/quantum-gravity#microscopic-area-law)).

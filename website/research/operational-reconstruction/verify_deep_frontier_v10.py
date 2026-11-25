@@ -984,11 +984,11 @@ def suite_v104_su2d_neff_and_fimp_reach():
     assert 1.5e14 < grav_pts_sm[4][1] < 2.0e14 and 1.5e14 < grav_pts_ps[4][1] < 2.1e14 and grav_pts_sm[2][1] > 6.6e15
 
     print(f"  [V10.4.A] External SU(2)_d Dark-Energy Sector (Exact Machacek-Vaughn 2-Loop RG, WGC & CMB-S4 Delta N_eff, Lean F-39A):")
-    print(f"            - Exact 2-loop a_d^-1(M_GUT) for Lambda_d = 2.3 meV: Pure YM={a_ym:.2f} (b1=136/3), Higgsed={a_hg:.2f} (b1=259/6), N_f=4+1H={a_nf4:.2f} (vs Chain A2 a_GUT^-1=44.23!)")
+    print(f"            - Exact 2-loop a_d^-1(M_GUT) for Lambda_d = 2.3 meV: Pure YM={a_ym:.2f} (b1=136/3), Higgsed={a_hg:.2f} (b1=259/6), N_f=4+1H={a_nf4:.2f} (vs Chain A2 a_GUT^-1=45.13!)")
     print(f"            - WGC distinction: SU(2)_d glueball/condensate vacuum avoids single-axion WGC S < 12; dark axion at S = 2 pi a_d^-1 ~ 280 STILL fails WGC [T/✗]!")
     for lbl, n_sm, n_ps, n_so in neff_table:
         print(f"            - {lbl:34s}: Delta N_eff = {n_sm:.4f} (SM) | {n_ps:.4f} (PS) | {n_so:.4f} (Spin(10)) [CMB-S4 sigma~0.027!]")
-    print(f"              -> Notice: N_f=4 SU(2)_d matching a_GUT^-1=44.23 gives Delta N_eff >= {neff_table[2][3]:.3f} > 0.28 -> EXCLUDED by Planck+ACT+DESI if thermalized [T/✗]!")
+    print(f"              -> Notice: N_f=4 SU(2)_d matching a_GUT^-1=45.13 gives Delta N_eff >= {neff_table[2][3]:.3f} > 0.28 -> EXCLUDED by Planck+ACT+DESI if thermalized [T/✗]!")
     print(f"  [V10.4.B] Cosmological Reach of Unique Surviving Weyl/Majorana FIMP chi_1 = 1_F (Lean F-39B, direct detection 5.94e-75 cm^2 impossible):")
     print(f"            - Exact Lyman-alpha warm-DM lower bounds (m_WDM >= 5.7 keV):")
     print(f"              SM bath (g_*S=106.75): IR={m_ir:.2f} keV | UV dim-5={m_uv5:.2f} keV | UV dim-6 grav={m_uv6:.2f} keV")
