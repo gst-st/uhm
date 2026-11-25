@@ -2,98 +2,117 @@
   --instrument-border: color-mix(in srgb, var(--ifm-font-color-base) 12%, transparent);
   --instrument-muted: var(--ifm-color-emphasis-700);
   --instrument-surface: var(--ifm-background-surface-color, #fff);
-  --instrument-accent: var(--home-accent, #008f91);
+  --instrument-accent: var(--home-accent, #855097);
+  --instrument-teal: var(--home-teal, #386d68);
   margin: 0;
   min-width: 0;
   width: 100%;
   overflow: hidden;
   border: 1px solid var(--instrument-border);
-  border-radius: 24px;
-  background: color-mix(in srgb, var(--instrument-surface) 92%, transparent);
-  box-shadow: 0 18px 60px -38px color-mix(in srgb, var(--ifm-color-primary) 45%, transparent);
+  border-radius: 22px;
+  background: color-mix(in srgb, var(--instrument-surface) 94%, transparent);
+  box-shadow:
+    0 1px 0 color-mix(in srgb, var(--ifm-font-color-base) 4%, transparent) inset,
+    0 24px 64px -40px color-mix(in srgb, var(--ifm-color-primary) 42%, transparent);
   text-align: left;
 }
 
-.heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 23px 24px 16px; }
-.eyebrow { display: block; color: var(--ifm-color-primary); font-size: .62rem; font-weight: 650; letter-spacing: .17em; margin-bottom: 6px; }
-.heading h2 { font-size: clamp(.93rem, 1.2vw, 1.08rem); line-height: 1.35; font-weight: 550; margin: 0; }
+.heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 22px 24px 14px; }
+.eyebrow { display: block; color: var(--ifm-color-primary); font-size: .62rem; font-weight: 650; letter-spacing: .16em; margin-bottom: 5px; }
+.heading h2 { font-size: clamp(.94rem, 1.2vw, 1.08rem); line-height: 1.35; font-weight: 550; margin: 0; }
 .headingTools { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-.dimension { flex-shrink: 0; border: 1px solid var(--instrument-border); border-radius: 6px; color: var(--instrument-muted); font: .7rem var(--ifm-font-family-monospace); padding: 5px 7px; }
+.dimension { flex-shrink: 0; border: 1px solid var(--instrument-border); border-radius: 6px; color: var(--instrument-muted); font: .7rem var(--ifm-font-family-monospace); padding: 5px 8px; }
 .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin: 0 24px; }
 .views { display: flex; min-width: 0; width: 100%; gap: 3px; padding: 3px; background: color-mix(in srgb, var(--ifm-font-color-base) 4%, transparent); border: 1px solid var(--instrument-border); border-radius: 10px; }
 .views button, .motion, .lineSelector button { font: inherit; cursor: pointer; border: 0; }
-.views button { flex: 1; min-width: 0; color: var(--instrument-muted); background: transparent; font-size: .73rem; border-radius: 7px; padding: 7px 12px; line-height: 1.35; }
+.views button { flex: 1; min-width: 0; color: var(--instrument-muted); background: transparent; font-size: .72rem; border-radius: 7px; padding: 7px 8px; line-height: 1.35; white-space: nowrap; transition: color .15s, background .15s; }
 .views button:hover { color: var(--ifm-color-primary); }
-.views .activeView { color: var(--ifm-color-primary); background: var(--instrument-surface); box-shadow: 0 1px 5px #0000000a; }
-.motion { display: grid; place-items: center; width: 34px; height: 34px; flex-shrink: 0; border: 1px solid var(--instrument-border); border-radius: 9px; color: var(--instrument-muted); background: transparent; }
+.views .activeView { color: var(--ifm-color-primary); background: var(--instrument-surface); box-shadow: 0 1px 5px #00000012; font-weight: 550; }
+.motion { display: grid; place-items: center; width: 34px; height: 34px; flex-shrink: 0; border: 1px solid var(--instrument-border); border-radius: 9px; color: var(--instrument-muted); background: transparent; transition: border-color .15s, color .15s; }
 .motion:hover { border-color: var(--ifm-color-primary); color: var(--ifm-color-primary); }
 .motion:disabled { opacity: .45; cursor: default; }
 .motion svg { width: 13px; height: 13px; stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .explorer button:focus-visible, .explorer input:focus-visible { outline: 2px solid var(--ifm-color-primary); outline-offset: 3px; }
 .stage { margin: 0 18px; }
 .diagram { display: block; width: 100%; height: auto; min-height: 265px; max-height: 338px; overflow: visible; }
-.orbit { fill: none; stroke: var(--instrument-border); stroke-width: .6; stroke-dasharray: 2 6; }
-.innerOrbit { fill: none; stroke: var(--instrument-border); stroke-width: .6; }
+.orbit { fill: none; stroke: var(--instrument-border); stroke-width: .65; stroke-dasharray: 2 6; }
+.innerOrbit { fill: none; stroke: var(--instrument-border); stroke-width: .65; }
+.purityTrack { fill: none; stroke: color-mix(in srgb, var(--ifm-font-color-base) 9%, transparent); stroke-width: 2.2; }
+.purityArc { fill: none; stroke: var(--ifm-color-primary); stroke-width: 2.6; stroke-linecap: round; transition: stroke-dasharray .18s ease, stroke .2s ease; }
+.purityArcWindow { fill: none; stroke: var(--instrument-teal); stroke-width: 2.8; stroke-linecap: round; transition: stroke-dasharray .18s ease, stroke .2s ease; }
 .core { fill: var(--instrument-surface); stroke: var(--instrument-border); stroke-width: 1; }
-.gamma { fill: var(--ifm-font-color-base); font-family: Georgia, serif; font-size: 36px; }
-.coreLabel { fill: var(--instrument-muted); font: 8px var(--ifm-font-family-monospace); }
+.gamma { fill: var(--ifm-font-color-base); font-family: Georgia, serif; font-size: 32px; }
+.coreLabel { fill: var(--instrument-muted); font: 8.5px var(--ifm-font-family-monospace); }
 .node { outline: none; }
 .interactiveNode { cursor: pointer; }
-.node > circle { fill: var(--instrument-surface); stroke: var(--instrument-border); stroke-width: 1; transition: stroke .15s, fill .15s; }
-.node > text { fill: var(--instrument-muted); font-size: 15px; font-weight: 500; pointer-events: none; }
+.node > circle { fill: var(--instrument-surface); stroke: var(--instrument-border); stroke-width: 1.1; transition: stroke .15s, fill .15s; }
+.node > text { fill: var(--instrument-muted); font-size: 14.5px; font-weight: 550; pointer-events: none; }
 .node > .nodeIndex { fill: var(--instrument-muted); opacity: .55; font: 8px var(--ifm-font-family-monospace); }
-.nodeSelected > circle { stroke: var(--ifm-color-primary); fill: color-mix(in srgb, var(--ifm-color-primary) 10%, var(--instrument-surface)); stroke-width: 1.5; }
+.fanoCenter > circle { stroke: color-mix(in srgb, var(--instrument-teal) 55%, var(--instrument-border)); stroke-width: 1.4; }
+.nodeSelected > circle { stroke: var(--ifm-color-primary); fill: color-mix(in srgb, var(--ifm-color-primary) 12%, var(--instrument-surface)); stroke-width: 1.8; }
 .nodeSelected > text { fill: var(--ifm-color-primary); }
-.interactiveNode:hover > circle, .interactiveNode:focus-visible > circle { stroke: var(--ifm-color-primary); stroke-width: 2.5; }
-.diagramLabel { fill: var(--instrument-muted); opacity: .8; font: 9px var(--ifm-font-family-monospace); }
-.triple { stroke: var(--ifm-color-primary); stroke-width: .75; stroke-opacity: .13; fill: none; }
-.activeTriple { stroke: var(--ifm-color-primary); stroke-width: 1.8; fill: var(--ifm-color-primary); fill-opacity: .065; }
-.tripleArrow { fill: none; stroke: var(--ifm-color-primary); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-.matrixAxis { fill: var(--instrument-muted); font-size: 11px; font-weight: 500; }
+.fanoCenter.nodeSelected > circle { stroke: var(--instrument-teal); fill: color-mix(in srgb, var(--instrument-teal) 14%, var(--instrument-surface)); }
+.fanoCenter.nodeSelected > text { fill: var(--instrument-teal); }
+.interactiveNode:hover > circle, .interactiveNode:focus-visible > circle { stroke: var(--ifm-color-primary); stroke-width: 2.4; }
+.diagramLabel { fill: var(--instrument-muted); opacity: .82; font: 9px var(--ifm-font-family-monospace); }
+.fanoClickable { cursor: pointer; }
+.fanoLine { stroke: var(--ifm-color-primary); stroke-width: 1.15; stroke-opacity: .2; fill: none; transition: stroke-opacity .15s, stroke-width .15s; }
+.fanoClickable:hover .fanoLine { stroke-opacity: .48; }
+.activeFanoLine { stroke: var(--ifm-color-primary); stroke-width: 2.4; stroke-opacity: .95; fill: none; }
+.tripleArrow { fill: none; stroke: var(--ifm-color-primary); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.matrixAxis { fill: var(--instrument-muted); font-size: 11px; font-weight: 550; }
 .matrixCell { cursor: pointer; outline: none; }
 .cellBase { fill: color-mix(in srgb, var(--ifm-font-color-base) 3%, transparent); }
-.cellSelection { fill: none; stroke: var(--ifm-color-primary); stroke-width: 1.5; }
+.cellSelection { fill: none; stroke: var(--ifm-color-primary); stroke-width: 1.7; }
+.cellConjugateSelection { fill: none; stroke: var(--instrument-teal); stroke-width: 1.3; stroke-dasharray: 3 2; }
 .matrixCell:focus-visible .cellSelection { stroke-width: 3; }
 .cellNumber { fill: var(--ifm-font-color-base); font-size: 12px; }
+.phaseDial { fill: none; stroke: currentColor; stroke-width: .6; opacity: .22; }
 .phaseArrow { fill: none; stroke: var(--ifm-font-color-base); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
 .matrixBracket { stroke: var(--instrument-border); stroke-width: 1; fill: none; }
-.readoutStage { aspect-ratio: 480 / 310; min-height: 265px; max-height: 338px; display: flex; flex-direction: column; justify-content: center; gap: 19px; padding: 16px 22px 10px; }
+.readoutStage { aspect-ratio: 480 / 310; min-height: 265px; max-height: 338px; display: flex; flex-direction: column; justify-content: center; gap: 15px; padding: 14px 22px 10px; }
 .observationFlow { display: flex; align-items: flex-start; justify-content: center; gap: 16px; }
 .observationFlow > div { text-align: center; min-width: 0; }
-.observationFlow small { display: block; font-size: .58rem; color: var(--instrument-muted); margin-top: 6px; }
-.stateSymbol, .measurementSymbol, .dataSymbol { display: flex; justify-content: center; align-items: center; height: 46px; color: var(--ifm-color-primary); }
-.stateSymbol { font: 2rem Georgia, serif; width: 46px; border: 1px solid var(--instrument-border); border-radius: 50%; margin: auto; }
-.measurementSymbol { font: .8rem var(--ifm-font-family-monospace); padding: 0 12px; border: 1px solid var(--instrument-border); border-radius: 9px; background: color-mix(in srgb, var(--ifm-color-primary) 5%, transparent); }
-.dataSymbol { font: italic 1.75rem Georgia, serif; }
-.flowArrow { color: var(--instrument-muted); opacity: .55; line-height: 46px; font-size: 1.1rem; }
-.readoutSettings { display: flex; justify-content: center; gap: 5px; }
-.readoutSettings button { appearance: none; border: 1px solid var(--instrument-border); border-radius: 7px; padding: 5px 12px; font: .66rem var(--ifm-font-family-monospace); color: var(--instrument-muted); background: transparent; cursor: pointer; }
-.readoutSettings .selectedSetting { border-color: var(--ifm-color-primary); background: color-mix(in srgb, var(--ifm-color-primary) 7%, transparent); color: var(--ifm-color-primary); }
-.probabilities { display: grid; gap: 12px; }
+.observationFlow small { display: block; font-size: .58rem; color: var(--instrument-muted); margin-top: 5px; }
+.stateSymbol, .measurementSymbol, .dataSymbol { display: flex; justify-content: center; align-items: center; height: 42px; color: var(--ifm-color-primary); }
+.stateSymbol { font: 1.85rem Georgia, serif; width: 42px; border: 1px solid var(--instrument-border); border-radius: 50%; margin: auto; }
+.measurementSymbol { font: .78rem var(--ifm-font-family-monospace); padding: 0 11px; border: 1px solid var(--instrument-border); border-radius: 9px; background: color-mix(in srgb, var(--ifm-color-primary) 5%, transparent); }
+.dataSymbol { font: italic 1.65rem Georgia, serif; }
+.flowArrow { color: var(--instrument-muted); opacity: .55; line-height: 42px; font-size: 1.1rem; }
+.readoutSettings { display: flex; justify-content: center; gap: 6px; }
+.readoutSettings button { appearance: none; border: 1px solid var(--instrument-border); border-radius: 7px; padding: 5px 12px; font: .66rem var(--ifm-font-family-monospace); color: var(--instrument-muted); background: transparent; cursor: pointer; transition: border-color .15s, color .15s; }
+.readoutSettings .selectedSetting { border-color: var(--ifm-color-primary); background: color-mix(in srgb, var(--ifm-color-primary) 9%, transparent); color: var(--ifm-color-primary); }
+.probabilities { display: grid; gap: 10px; }
 .probabilityRow { display: flex; align-items: center; gap: 12px; }
 .outcomeLabel { width: 20px; color: var(--instrument-muted); font: italic .86rem Georgia, serif; flex-shrink: 0; }
 .probabilityTrack { height: 6px; background: color-mix(in srgb, var(--ifm-font-color-base) 6%, transparent); border-radius: 6px; flex: 1; overflow: hidden; }
-.probabilityTrack > span { display: block; height: 100%; border-radius: 6px; background: var(--ifm-color-primary); }
-.probabilityTrack > .restBar { background: color-mix(in srgb, var(--instrument-accent) 60%, transparent); }
+.probabilityTrack > span { display: block; height: 100%; border-radius: 6px; background: var(--ifm-color-primary); transition: width .12s linear; }
+.probabilityTrack > .restBar { background: color-mix(in srgb, var(--instrument-teal) 68%, transparent); }
 .probabilityRow output { font: .71rem var(--ifm-font-family-monospace); font-variant-numeric: tabular-nums; color: var(--ifm-font-color-base); width: 43px; text-align: right; }
+.spectrumStrip { display: flex; align-items: center; gap: 8px; padding-top: 2px; }
+.spectrumLabel { font-size: .58rem; color: var(--instrument-muted); text-transform: uppercase; letter-spacing: .06em; flex-shrink: 0; }
+.spectrumBar { flex: 1; display: flex; height: 5px; border-radius: 5px; overflow: hidden; gap: 2px; }
+.spectrumDominant { background: var(--instrument-teal); border-radius: 4px; }
+.spectrumTail { background: color-mix(in srgb, var(--ifm-font-color-base) 16%, transparent); border-radius: 4px; }
+.spectrumReadout { font: .6rem var(--ifm-font-family-monospace); color: var(--instrument-muted); white-space: nowrap; }
 .readoutEquation { font: .64rem var(--ifm-font-family-monospace); color: var(--instrument-muted); text-align: center; }
 .readoutEquation > span { margin: 0 7px; }
-.legend { text-align: center; color: var(--instrument-muted); font-size: .63rem; margin: 1px 0 14px; letter-spacing: .015em; }
-.explanation { display: flex; align-items: flex-start; gap: 12px; margin: 0 24px; padding: 13px 0; min-height: 91px; border-top: 1px solid var(--instrument-border); border-bottom: 1px solid var(--instrument-border); }
-.selectionMark { width: 34px; height: 34px; display: grid; place-items: center; flex-shrink: 0; color: var(--ifm-color-primary); background: color-mix(in srgb, var(--ifm-color-primary) 8%, transparent); border-radius: 9px; font: .84rem var(--ifm-font-family-monospace); }
+.legend { text-align: center; color: var(--instrument-muted); font-size: .63rem; margin: 1px 0 13px; letter-spacing: .015em; }
+.explanation { display: flex; align-items: flex-start; gap: 12px; margin: 0 24px; padding: 13px 0; min-height: 92px; border-top: 1px solid var(--instrument-border); border-bottom: 1px solid var(--instrument-border); }
+.selectionMark { width: 34px; height: 34px; display: grid; place-items: center; flex-shrink: 0; color: var(--ifm-color-primary); background: color-mix(in srgb, var(--ifm-color-primary) 9%, transparent); border-radius: 9px; font: .84rem var(--ifm-font-family-monospace); }
 .explanation strong { display: block; font-size: .82rem; font-weight: 600; line-height: 1.3; margin: 0 0 4px; }
 .explanation p { margin: 0; color: var(--instrument-muted); font-size: .69rem; line-height: 1.5; }
 .explanation p span { opacity: .84; }
 .explanation code { display: inline-block; padding: 0; margin-top: 4px; border: 0; background: none; font-size: .69rem; }
 .fanoDescription { width: 100%; }
 .lineSelector { display: inline-flex; vertical-align: top; gap: 4px; margin: 0 13px 8px 0; }
-.lineSelector button { width: 25px; height: 25px; border-radius: 7px; color: var(--instrument-muted); background: color-mix(in srgb, var(--ifm-font-color-base) 4%, transparent); font-size: .68rem; }
+.lineSelector button { width: 25px; height: 25px; border-radius: 7px; color: var(--instrument-muted); background: color-mix(in srgb, var(--ifm-font-color-base) 4%, transparent); font-size: .68rem; transition: background .15s, color .15s; }
 .lineSelector .activeLine { color: var(--instrument-surface); background: var(--ifm-color-primary); }
 .explanation .product { display: inline-block; font: italic .93rem Georgia, serif; line-height: 25px; }
 .controls { padding: 14px 24px 10px; }
 .controls label { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; color: var(--instrument-muted); font-size: .71rem; }
 .controls label > span { color: var(--ifm-font-color-base); font: .73rem var(--ifm-font-family-monospace); }
-.controls input { appearance: none; display: block; width: 100%; height: 5px; border-radius: 4px; margin: 14px 0 6px; background: color-mix(in srgb, var(--ifm-color-primary) 18%, var(--instrument-surface)); cursor: pointer; }
+.controls input { appearance: none; display: block; width: 100%; height: 5px; border-radius: 4px; margin: 13px 0 6px; background: color-mix(in srgb, var(--ifm-color-primary) 18%, var(--instrument-surface)); cursor: pointer; }
 .controls input::-webkit-slider-thumb { appearance: none; width: 14px; height: 14px; border: 3px solid var(--instrument-surface); border-radius: 50%; background: var(--ifm-color-primary); box-shadow: 0 0 0 1px var(--ifm-color-primary); }
 .controls input::-moz-range-thumb { width: 10px; height: 10px; border: 3px solid var(--instrument-surface); border-radius: 50%; background: var(--ifm-color-primary); box-shadow: 0 0 0 1px var(--ifm-color-primary); }
 .metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 5px 24px 0; padding: 0 0 13px; gap: 12px; border-bottom: 1px solid var(--instrument-border); }
@@ -104,12 +123,12 @@
 .gauge { padding: 12px 24px 13px; }
 .gaugeHeading { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; font-size: .62rem; color: var(--instrument-muted); }
 .gaugeHeading b { font-weight: 500; color: var(--ifm-font-color-base); margin-left: 4px; white-space: nowrap; }
-.inWindow, .outWindow { font-size: .58rem; border-radius: 4px; padding: 2px 5px; }
-.inWindow { color: var(--instrument-accent); background: color-mix(in srgb, var(--instrument-accent) 9%, transparent); }
+.inWindow, .outWindow { font-size: .58rem; border-radius: 4px; padding: 2px 6px; font-weight: 550; }
+.inWindow { color: var(--instrument-teal); background: color-mix(in srgb, var(--instrument-teal) 13%, transparent); }
 .outWindow { color: var(--instrument-muted); background: color-mix(in srgb, var(--ifm-font-color-base) 5%, transparent); }
-.gaugeTrack { height: 4px; position: relative; margin: 13px 0 0; background: color-mix(in srgb, var(--ifm-font-color-base) 9%, transparent); border-radius: 3px; }
-.gaugeWindow { position: absolute; left: 16.666667%; width: 16.666667%; height: 100%; background: color-mix(in srgb, var(--instrument-accent) 60%, transparent); }
-.gaugeMarker { position: absolute; width: 2px; height: 12px; background: var(--ifm-font-color-base); transform: translate(-50%, -4px); border-radius: 1px; }
+.gaugeTrack { height: 5px; position: relative; margin: 13px 0 0; background: color-mix(in srgb, var(--ifm-font-color-base) 9%, transparent); border-radius: 3px; }
+.gaugeWindow { position: absolute; left: 16.666667%; width: 16.666667%; height: 100%; background: color-mix(in srgb, var(--instrument-teal) 62%, transparent); border-radius: 2px; }
+.gaugeMarker { position: absolute; width: 3px; height: 13px; background: var(--ifm-font-color-base); transform: translate(-50%, -4px); border-radius: 2px; }
 .gaugeScale { position: relative; height: 21px; font: .57rem var(--ifm-font-family-monospace); color: var(--instrument-muted); }
 .gaugeScale span { position: absolute; top: 7px; transform: translateX(-50%); }
 .gaugeScale span:first-child { left: 0; transform: none; }
@@ -128,7 +147,7 @@
   .controls, .gauge { padding-left: 18px; padding-right: 18px; }
   .metrics { margin-left: 18px; margin-right: 18px; }
   .family { padding-left: 18px; padding-right: 18px; }
-  .views button { padding: 7px 11px; }
+  .views button { padding: 7px 6px; font-size: .68rem; }
   .heading h2 { font-size: .98rem; }
   .headingTools { gap: 6px; }
 }
@@ -139,11 +158,12 @@
   .dimension { font-size: .6rem; padding: 4px; }
   .headingTools .dimension { display: none; }
   .toolbar { margin-left: 13px; margin-right: 13px; }
-  .views button { font-size: .69rem; padding: 7px 5px; }
-  .readoutStage { padding-left: 12px; padding-right: 12px; gap: 17px; }
+  .views button { font-size: .63rem; padding: 7px 3px; }
+  .readoutStage { padding-left: 12px; padding-right: 12px; gap: 12px; }
   .observationFlow { gap: 9px; }
   .measurementSymbol { padding: 0 8px; font-size: .7rem; }
   .readoutEquation { font-size: .57rem; }
+  .spectrumReadout { display: none; }
   .explanation { margin-left: 13px; margin-right: 13px; gap: 9px; min-height: 108px; }
   .controls, .gauge, .family { padding-left: 13px; padding-right: 13px; }
   .metrics { margin-left: 13px; margin-right: 13px; gap: 8px; }
@@ -155,5 +175,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .node > circle { transition: none; }
+  .node > circle, .purityArc, .purityArcWindow, .probabilityTrack > span { transition: none; }
 }

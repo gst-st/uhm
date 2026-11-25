@@ -89,8 +89,17 @@ try {
       assert.equal(await hero.locator('[data-cell="1-1"]').getAttribute('aria-pressed'), 'true');
       await page.getByTestId('ontology-view-fano').click();
       assert.equal(await page.getByTestId('ontology-stage').getAttribute('data-view'), 'fano');
+      await page.getByTestId('ontology-fano-node-O').waitFor();
       if (screenshots && scenario.name === 'desktop-light') await hero.screenshot({style: ".navbar { visibility: hidden !important; }", path: join(screenshots, `${locale}-fano.png`)});
       assert.equal(await hero.locator('[role="group"] button').count() > 7, true);
+      // Interactive Stratified UHM Ontology Explorer (Strata A / B / C).
+      const strata = page.getByTestId('strata-explorer');
+      await strata.waitFor();
+      await page.getByTestId('stratum-tab-B').click();
+      assert.equal(await page.getByTestId('stratum-tab-B').getAttribute('aria-pressed'), 'true');
+      assert.match(await page.getByTestId('stratum-detail').innerText(), /F-42/);
+      await page.getByTestId('stratum-tab-C').click();
+      assert.match(await page.getByTestId('stratum-detail').innerText(), /Regge|Редже/);
       const semantics = page.getByTestId('semantic-matrix');
       assert.equal(await semantics.locator('button[tabindex="0"]').count(), 1);
       const semanticSelected = semantics.locator('button[tabindex="0"]');
@@ -99,7 +108,7 @@ try {
       await page.keyboard.press('Tab');
       assert.equal(await semantics.evaluate(el => el.contains(document.activeElement)), false);
       await page.getByTestId('filter-physics').click();
-      assert.equal(await page.getByTestId('corpus-card').count(), 1);
+      assert.equal(await page.getByTestId('corpus-card').count(), 2);
       await page.getByTestId('filter-all').click();
       assert.equal(await page.getByTestId('corpus-card').count(), 12);
       // A changed OS preference starts/stops motion; explicit pause survives it.

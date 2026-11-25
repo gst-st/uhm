@@ -6,8 +6,11 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import OntologyExplorer from '@site/src/components/OntologyExplorer';
+import {BASIS, FANO_LINES} from '@site/src/components/OntologyExplorer/model';
+import RichText from '@site/src/components/RichText';
+import StrataExplorer from '@site/src/components/StrataExplorer';
 import {DIMENSIONS, cellOf, tr} from '@site/src/data/coherences';
-import {homeCopy, framework, bridges, statusGroups, corpus} from '@site/src/data/homepage';
+import {homeCopy, framework, bridges, statusGroups, verificationMetrics, corpus} from '@site/src/data/homepage';
 import type {HomeCopyKey, Subject} from '@site/src/data/homepage';
 import styles from './index.module.css';
 
@@ -18,6 +21,24 @@ function Arrow({diagonal = false}: {diagonal?: boolean}) {
   return <svg className={styles.arrow} viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path d={diagonal ? 'M6 18 18 6M6 6h12v12' : 'M4 12h15m-6-6 6 6-6 6'} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>;
+}
+
+/** Exact oriented Fano product e_row * e_col = sign * e_third from canonical FANO_LINES & BASIS. */
+function fanoProductOf(rowLetter: string, colLetter: string): {third: string; sign: '+' | '−'; triple: [string, string, string]} | null {
+  if (rowLetter === colLetter) return null;
+  const rIdx = BASIS.indexOf(rowLetter as (typeof BASIS)[number]) + 1;
+  const cIdx = BASIS.indexOf(colLetter as (typeof BASIS)[number]) + 1;
+  if (rIdx <= 0 || cIdx <= 0) return null;
+  for (const [a, b, c] of FANO_LINES) {
+    const letters: [string, string, string] = [BASIS[a - 1], BASIS[b - 1], BASIS[c - 1]];
+    if (a === rIdx && b === cIdx) return {third: BASIS[c - 1], sign: '+', triple: letters};
+    if (b === rIdx && c === cIdx) return {third: BASIS[a - 1], sign: '+', triple: letters};
+    if (c === rIdx && a === cIdx) return {third: BASIS[b - 1], sign: '+', triple: letters};
+    if (b === rIdx && a === cIdx) return {third: BASIS[c - 1], sign: '−', triple: letters};
+    if (c === rIdx && b === cIdx) return {third: BASIS[a - 1], sign: '−', triple: letters};
+    if (a === rIdx && c === cIdx) return {third: BASIS[b - 1], sign: '−', triple: letters};
+  }
+  return null;
 }
 
 function SectionIntro({number, title, lead, id}: {number: string; title: string; lead?: string; id?: string}) {
@@ -38,9 +59,11 @@ function HomepageHeader({text}: Pick<LocalProps, 'text'>) {
         <p className={styles.heroDescription}>{text('description')}</p>
         <div className={styles.heroActions}>
           <Link className={styles.primaryButton} to="#framework">{text('explore')}<Arrow /></Link>
-          <Link className={styles.textLink} to="/docs/reference/mathematical-kernel">{text('kernel')}<Arrow diagonal /></Link>
+          <Link className={styles.textLink} to="/docs/reference/frontier-ledger">{text('frontierLedger')}<Arrow diagonal /></Link>
         </div>
         <nav className={styles.heroReferences} aria-label={text('premises')}>
+          <Link to="/docs/reference/mathematical-kernel">{text('kernel')}</Link>
+          <span aria-hidden="true">/</span>
           <Link to="/docs/reference/premises">{text('premises')}</Link>
           <span aria-hidden="true">/</span>
           <Link to="/docs/reference/status-registry">{text('registry')}</Link>
@@ -54,7 +77,12 @@ function HomepageHeader({text}: Pick<LocalProps, 'text'>) {
     </div>
     <div className={styles.factStrip}>
       <p>{text('factNote')}</p>
-      {([['7', 'roles'], ['21', 'pairs'], ['48', 'parameters']] as const).map(([value, key]) =>
+      {([
+        ['7 · 21 · 48', 'factStateLabel'],
+        ['A · B · C', 'factStrataLabel'],
+        ['64 / 0', 'factLeanLabel'],
+        ['V1–V11', 'factSuitesLabel'],
+      ] as const).map(([value, key]) =>
         <div className={styles.fact} key={key}><strong>{value}</strong><span>{text(key)}</span></div>)}
     </div>
   </header>;
@@ -71,13 +99,7 @@ function FrameworkSection({locale, text}: LocalProps) {
           <p>{tr(item.text, locale)}</p>
         </Link>)}
       </div>
-      <div className={styles.categoricalBand}>
-        <div className={styles.sheafMotif} aria-hidden="true">
-          <svg viewBox="0 0 180 116"><ellipse cx="62" cy="56" rx="38" ry="36" /><ellipse cx="111" cy="56" rx="38" ry="36" /><ellipse cx="87" cy="68" rx="38" ry="36" /><circle cx="87" cy="57" r="5" /></svg>
-          <span>Sh∞(Open(𝒟ₙ))</span>
-        </div>
-        <div><Heading as="h3">{text('categoricalTitle')}</Heading><p>{text('categoricalText')}</p><Link className={styles.textLink} to="/docs/reference/mathematical-kernel#bures-site">{text('categoricalLink')}<Arrow /></Link></div>
-      </div>
+      <StrataExplorer locale={locale} />
     </div>
   </section>;
 }
@@ -104,6 +126,9 @@ function SemanticMatrix({locale, text}: LocalProps) {
   const row = DIMENSIONS[a];
   const column = DIMENSIONS[b];
   const cell = cellOf(row, column);
+  const fanoProd = fanoProductOf(row, column);
+  const thirdIdx = fanoProd ? DIMENSIONS.indexOf(fanoProd.third as (typeof DIMENSIONS)[number]) : -1;
+
   return <div className={styles.semanticInstrument} data-testid="semantic-matrix">
     <div className={styles.matrixHeader}><span>Γ = Γ†</span><span>Γ ⪰ 0</span><span>Tr Γ = 1</span></div>
     <table ref={table} className={styles.semanticTable} aria-label={text('matrixTable')}>
@@ -111,7 +136,13 @@ function SemanticMatrix({locale, text}: LocalProps) {
       <tbody>{DIMENSIONS.map((r, i) => <tr key={r}>
         <th scope="row">{r}</th>
         {DIMENSIONS.map((c, j) => <td key={c}><button type="button"
-          className={clsx(styles.semanticCell, i === j && styles.diagonal, a === i && b === j && styles.cellSelected, a === j && b === i && styles.cellConjugate)}
+          className={clsx(
+            styles.semanticCell,
+            i === j && styles.diagonal,
+            i === j && i === thirdIdx && styles.cellFanoPartner,
+            a === i && b === j && styles.cellSelected,
+            a !== b && a === j && b === i && styles.cellConjugate,
+          )}
           onClick={() => setSelected([i, j])} onFocus={() => setSelected([i, j])}
           onKeyDown={event => moveFocus(event, i, j)} tabIndex={a === i && b === j ? 0 : -1} data-semantic-cell={`${i}-${j}`}
           aria-pressed={a === i && b === j} aria-controls="coherence-reading"
@@ -121,8 +152,19 @@ function SemanticMatrix({locale, text}: LocalProps) {
       </tr>)}</tbody>
     </table>
     <div className={styles.cellReading} id="coherence-reading" aria-live="polite" aria-atomic="true">
-      <div className={styles.cellReadingTop}><span>{text(cell.diagonal ? 'diagonal' : 'coherence')}</span><span>γ<sub>{row}{column}</sub>{!cell.diagonal && <> = γ̅<sub>{column}{row}</sub></>}</span></div>
-      <strong>{tr(cell.name, locale)}</strong><p>{tr(cell.meaning, locale)}</p>
+      <div className={styles.cellReadingTop}>
+        <span>{text(cell.diagonal ? 'diagonal' : 'coherence')}</span>
+        <span>γ<sub>{row}{column}</sub>{!cell.diagonal && <> = γ̅<sub>{column}{row}</sub></>}</span>
+      </div>
+      <strong>{tr(cell.name, locale)}</strong>
+      <p>{tr(cell.meaning, locale)}</p>
+      {fanoProd && (
+        <div className={styles.fanoReadout}>
+          <span>{text('fanoRuleLabel')}</span>
+          <code>e<sub>{row}</sub> e<sub>{column}</sub> = {fanoProd.sign === '−' ? '−' : ''}e<sub>{fanoProd.third}</sub></code>
+          <small>({tr(cellOf(fanoProd.third, fanoProd.third).name, locale)})</small>
+        </div>
+      )}
     </div>
     <p className={styles.semanticTag}>{text('interpretation')} · [I]</p>
   </div>;
@@ -149,8 +191,13 @@ function BridgesSection({locale, text}: LocalProps) {
     <div className={styles.container}>
       <SectionIntro number={text('bridgesLabel')} title={text('bridgesTitle')} lead={text('bridgesLead')} />
       <div className={styles.bridgesGrid}>{bridges.map(item => <Link className={styles.bridgeCard} to={item.link} key={item.id}>
-        <div className={styles.bridgeTop}><span>{item.symbol}</span><Arrow diagonal /></div>
-        <Heading as="h3">{tr(item.title, locale)}</Heading><p>{tr(item.text, locale)}</p>
+        <div className={styles.bridgeTop}>
+          <span className={styles.bridgeMeta}><b>{item.symbol}</b><span>{tr(item.stratum, locale)}</span></span>
+          <Arrow diagonal />
+        </div>
+        <Heading as="h3">{tr(item.title, locale)}</Heading>
+        <p><RichText text={tr(item.text, locale)} /></p>
+        <div className={styles.bridgeHighlight}><RichText text={tr(item.highlight, locale)} /></div>
       </Link>)}</div>
     </div>
   </section>;
@@ -162,9 +209,28 @@ function StatusSection({locale, text}: LocalProps) {
       <SectionIntro number={text('statusLabel')} title={text('statusTitle')} lead={text('statusLead')} />
       <div className={styles.statusGrid}>{statusGroups.map(group => <div key={group.id} className={styles.statusColumn}>
         <span className={styles.statusBadge} data-kind={group.id}>{group.badge}</span><Heading as="h3">{tr(group.title, locale)}</Heading>
-        <ul>{group.items.map(item => <li key={item.link}><Link to={item.link}>{tr(item.text, locale)}</Link></li>)}</ul>
+        <ul>{group.items.map(item => <li key={item.link + item.text.en}><Link to={item.link}><RichText text={tr(item.text, locale)} /></Link></li>)}</ul>
       </div>)}</div>
-      <div className={styles.statusLinks}><Link className={styles.textLink} to="/docs/reference/status-registry">{text('registry')}<Arrow /></Link><Link className={styles.textLink} to="/docs/reference/falsifiability">{text('falsifiability')}<Arrow /></Link></div>
+
+      <div className={styles.verificationBand}>
+        <div className={styles.verificationInfo}>
+          <Heading as="h3">{text('verificationTitle')}</Heading>
+          <p>{text('verificationText')}</p>
+          <div className={styles.statusLinks}>
+            <Link className={styles.textLink} to="/docs/reference/network-results">{text('verificationLink')}<Arrow /></Link>
+            <Link className={styles.textLink} to="/docs/reference/status-registry">{text('registry')}<Arrow /></Link>
+            <Link className={styles.textLink} to="/docs/reference/falsifiability">{text('falsifiability')}<Arrow /></Link>
+          </div>
+        </div>
+        <div className={styles.verificationStats} aria-label={text('verificationTitle')}>
+          {verificationMetrics.map((m) => (
+            <div key={m.label.en} className={styles.metricTile}>
+              <strong>{tr(m.value, locale)}</strong>
+              <span>{tr(m.label, locale)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </section>;
 }
