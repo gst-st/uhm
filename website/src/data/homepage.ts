@@ -23,7 +23,7 @@ export const homeCopy = {
   factNote: {en: 'Post-v13 verified baseline', ru: 'Верифицированный срез v13'},
   factStateLabel: {en: 'roles · coherence pairs · real parameters in 𝒟(ℂ⁷)', ru: 'ролей · пар когерентностей · вещественных параметров в 𝒟(ℂ⁷)'},
   factStrataLabel: {en: 'explicit ontological strata (zero overclaiming)', ru: 'явных онтологических страты (ноль завышенных заявлений)'},
-  factLeanLabel: {en: 'Lean 4 modules · 0 Classical.choice (32,174 .olean / 7,336 src)', ru: 'модуля Lean 4 · 0 Classical.choice (32 174 .olean / 7 336 исх.)'},
+  factLeanLabel: {en: 'Lean 4 modules · 0 Classical.choice (38,316 .olean / 8,550 src)', ru: 'модулей Lean 4 · 0 Classical.choice (38 316 .olean / 8 550 исх.)'},
   factSuitesLabel: {en: 'deep frontier suites · 165/165 core checks passing', ru: 'глубоких рубежа проверок · 165/165 чисел ядра'},
   frameworkLabel: {en: '01 / Stratified architecture', ru: '01 / Стратифицированная архитектура'},
   frameworkTitle: {en: 'Four core objects. Three explicit strata.', ru: 'Четыре базовых объекта. Три явные страты.'},
@@ -62,8 +62,8 @@ export const homeCopy = {
   },
   verificationTitle: {en: 'Four-corpus machine-checked verification backbone', ru: 'Четырёхкорпусный контур машинной верификации'},
   verificationText: {
-    en: 'Holon is cross-linked and audited alongside math-foundations (94 Lean 4 modules, 32,174 compiled .olean env.constants / 7,336 source decls, 280 strictly zero-axiom theorems, 1,062 #print axioms checks, 0 Classical.choice), math-msfs (EN/RU preprint with 102 theorem-like envs / 124 labels / 67 refs & 15-module / 688-proved Verum corpus), and diakrisis (13-axiom 2-categorical metatheory, 133 definitions).',
-    ru: 'Holon сквозно связан и проверяется вместе с math-foundations (94 модуля Lean 4, 32 174 скомп. .olean env.constants / 7 336 исх. деклараций, 280 строго безаксиомных теорем, 1 062 проверки #print axioms, 0 Classical.choice), math-msfs (препринт EN/RU: 102 формальных окружения / 124 метки / 67 библ. записей и 15 модулей / 688 доказательств Verum) и diakrisis (13-аксиомная 2-категорная метатеория, 133 определения).',
+    en: 'Holon is cross-linked and audited alongside math-foundations (107 Lean 4 modules, 38,316 compiled .olean env.constants / 8,550 source decls, 342 strictly zero-axiom theorems, 1,454 #print axioms checks, 227 NonVacuity instances, 0 Classical.choice; 32/32 Autogeny/ modules, 35-chapter Part XVIII & Foundations of Autogeny preprint), math-msfs (EN/RU preprint 75 pp EN / 82 pp RU with 102 theorem-like envs / 128 labels / 67 refs & 15-module / 688-proved Verum corpus), and diakrisis (13-axiom 2-categorical metatheory, 133 definitions).',
+    ru: 'Holon сквозно связан и проверяется вместе с math-foundations (107 модулей Lean 4, 38 316 скомп. .olean env.constants / 8 550 исх. деклараций, 342 строго безаксиомные теоремы, 1 454 проверки #print axioms, 227 инстансов NonVacuity, 0 Classical.choice; 32/32 модуля Autogeny/, 35 глав Части XVIII и препринт «Foundations of Autogeny»), math-msfs (препринт EN/RU 75 стр. EN / 82 стр. RU: 102 формальных окружения / 128 меток / 67 библ. записей и 15 модулей / 688 доказательств Verum) и diakrisis (13-аксиомная 2-категорная метатеория, 133 определения).',
   },
   verificationLink: {en: 'Network results & Lean audit', ru: 'Сетевые результаты и аудит Lean'},
   falsifiability: {en: 'Tests and falsification criteria', ru: 'Проверки и критерии опровержения'},
@@ -186,8 +186,8 @@ export const bridges: FrontierEntry[] = [
     stratum: {en: 'Applied · Choice-Free', ru: 'Прикладное · Без AC'},
     title: {en: 'Coherence cybernetics & verifiable AGI architectures', ru: 'Когерентная кибернетика и верифицируемые архитектуры AGI'},
     text: {
-      en: 'Translates viability corridors, bounded self-models, and choice-free formal verification (94 Lean 4 modules, TranslationAdequacy) into operational criteria for self-monitoring agents, calibrated reconstruction, and non-hallucinating autonomous reasoning.',
-      ru: 'Переводит коридоры жизнеспособности, ограниченные самомодели и безвыборную верификацию (94 модуля Lean 4, TranslationAdequacy) в операционные критерии для самонаблюдающих агентов, томографии и негаллюцинирующего автономного вывода.',
+      en: 'Translates viability corridors, bounded self-models, and choice-free formal verification (107 Lean 4 modules, TranslationAdequacy) into operational criteria for self-monitoring agents, calibrated reconstruction, and non-hallucinating autonomous reasoning.',
+      ru: 'Переводит коридоры жизнеспособности, ограниченные самомодели и безвыборную верификацию (107 модулей Lean 4, TranslationAdequacy) в операционные критерии для самонаблюдающих агентов, томографии и негаллюцинирующего автономного вывода.',
     },
     highlight: {en: 'Potential: mathematically auditable autonomous cognition', ru: 'Потенциал: математически аудируемая автономная когниция'},
     link: '/docs/applied/coherence-cybernetics/introduction',
@@ -201,7 +201,7 @@ export const statusGroups = [
     title: {en: 'Proved & machine-checked', ru: 'Доказано и проверено машинно'},
     items: [
       {
-        text: {en: 'Choice-free Lean 4 kernel: 94 modules, 32,174 .olean env.constants (7,336 source decls), 1,062 audited, 280 zero-axiom, 149 NonVacuity (0 Classical.choice).', ru: 'Безвыборное ядро Lean 4: 94 модуля, 32 174 констант .olean (7 336 исх. декл.), 1 062 проверки, 280 безаксиомных, 149 NonVacuity (0 Classical.choice).'},
+        text: {en: 'Choice-free Lean 4 kernel: 107 modules, 38,316 .olean env.constants (8,550 source decls), 1,454 audited, 342 zero-axiom, 227 NonVacuity (0 Classical.choice).', ru: 'Безвыборное ядро Lean 4: 107 модулей, 38 316 констант .olean (8 550 исх. декл.), 1 454 проверки, 342 безаксиомных, 227 NonVacuity (0 Classical.choice).'},
         link: '/docs/reference/network-results',
       },
       {
@@ -274,9 +274,9 @@ export const statusGroups = [
 ];
 
 export const verificationMetrics: readonly {value: Bilingual; label: Bilingual}[] = [
-  {value: {en: '94', ru: '94'}, label: {en: 'Lean 4 modules', ru: 'Модулей Lean 4'}},
-  {value: {en: '32,174', ru: '32 174'}, label: {en: '.olean constants (7,336 src)', ru: 'Констант .olean (7 336 исх.)'}},
-  {value: {en: '280', ru: '280'}, label: {en: 'Zero-axiom proofs', ru: '0-аксиом теорем'}},
+  {value: {en: '107', ru: '107'}, label: {en: 'Lean 4 modules', ru: 'Модулей Lean 4'}},
+  {value: {en: '38,316', ru: '38 316'}, label: {en: '.olean constants (8,550 src)', ru: 'Констант .olean (8 550 исх.)'}},
+  {value: {en: '342', ru: '342'}, label: {en: 'Zero-axiom proofs', ru: '0-аксиом теорем'}},
   {value: {en: '0', ru: '0'}, label: {en: 'Classical.choice', ru: 'Classical.choice'}},
   {value: {en: '165/165', ru: '165/165'}, label: {en: 'Core numbers', ru: 'Чисел ядра'}},
   {value: {en: '1,138', ru: '1 138'}, label: {en: 'Kernel checks', ru: 'Проверок ядра'}},
@@ -294,5 +294,5 @@ export const corpus: (Entry & {subject: Subject})[] = [
   {id: 'frontier', symbol: '⊞', subject: 'physics', title: {en: 'Frontier ledger (v1–v13)', ru: 'Реестр рубежей (v1–v13)'}, text: {en: 'Stratified ontology A/B/C, Super-F-40, F-41, F-42, Deep Frontier v13, falsified dead ends, and open walls.', ru: 'Стратифицированная онтология A/B/C, Super-F-40, F-41, F-42, Deep Frontier v13, опровержения и открытые стены.'}, link: '/docs/reference/frontier-ledger'},
   {id: 'measurement', symbol: 'y', subject: 'research', title: {en: 'Reconstruction & measurement', ru: 'Реконструкция и измерение'}, text: {en: 'Informational completeness, POVM uncertainty bounds, and identifiable tomography.', ru: 'Информационная полнота, границы неопределённости POVM и идентифицируемая томография.'}, link: '/docs/applied/research/reconstruction-identifiability'},
   {id: 'cybernetics', symbol: '↺', subject: 'research', title: {en: 'Coherence cybernetics', ru: 'Когерентная кибернетика'}, text: {en: 'Control protocols, autonomous stability, and verifiable cognitive-architecture criteria.', ru: 'Протоколы управления, устойчивость автономии и критерии верифицируемых когнитивных архитектур.'}, link: '/docs/applied/coherence-cybernetics/introduction'},
-  {id: 'verification', symbol: '⊢', subject: 'research', title: {en: 'Network results & Lean audit', ru: 'Сетевые результаты и аудит Lean'}, text: {en: 'Four-corpus provenance, 94 choice-free Lean 4 modules, counterexamples, and falsifiability.', ru: 'Четырёхкорпусный провенанс, 94 безвыборных модуля Lean 4, контрпримеры и фальсифицируемость.'}, link: '/docs/reference/network-results'},
+  {id: 'verification', symbol: '⊢', subject: 'research', title: {en: 'Network results & Lean audit', ru: 'Сетевые результаты и аудит Lean'}, text: {en: 'Four-corpus provenance, 107 choice-free Lean 4 modules, counterexamples, and falsifiability.', ru: 'Четырёхкорпусный провенанс, 107 безвыборных модулей Lean 4, контрпримеры и фальсифицируемость.'}, link: '/docs/reference/network-results'},
 ];
