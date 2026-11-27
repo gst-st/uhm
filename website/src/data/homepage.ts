@@ -23,7 +23,7 @@ export const homeCopy = {
   factNote: {en: 'Post-v13 verified baseline', ru: 'Верифицированный срез v13'},
   factStateLabel: {en: 'roles · coherence pairs · real parameters in 𝒟(ℂ⁷)', ru: 'ролей · пар когерентностей · вещественных параметров в 𝒟(ℂ⁷)'},
   factStrataLabel: {en: 'explicit ontological strata (zero overclaiming)', ru: 'явных онтологических страты (ноль завышенных заявлений)'},
-  factLeanLabel: {en: 'Lean 4 modules · 0 Classical.choice (31,837 decls)', ru: 'модуля Lean 4 · 0 Classical.choice (31 837 деклараций)'},
+  factLeanLabel: {en: 'Lean 4 modules · 0 Classical.choice (32,174 .olean / 7,336 src)', ru: 'модуля Lean 4 · 0 Classical.choice (32 174 .olean / 7 336 исх.)'},
   factSuitesLabel: {en: 'deep frontier suites · 165/165 core checks passing', ru: 'глубоких рубежа проверок · 165/165 чисел ядра'},
   frameworkLabel: {en: '01 / Stratified architecture', ru: '01 / Стратифицированная архитектура'},
   frameworkTitle: {en: 'Four core objects. Three explicit strata.', ru: 'Четыре базовых объекта. Три явные страты.'},
@@ -62,8 +62,8 @@ export const homeCopy = {
   },
   verificationTitle: {en: 'Four-corpus machine-checked verification backbone', ru: 'Четырёхкорпусный контур машинной верификации'},
   verificationText: {
-    en: 'Holon is cross-linked and audited alongside math-foundations (94 Lean 4 modules, 280 strictly zero-axiom theorems, 1,027 #print axioms checks, 0 Classical.choice), math-msfs (EN/RU preprint with 102 theorem-like envs / 124 labels / 67 refs & 15-module / 688-proved Verum corpus), and diakrisis (13-axiom 2-categorical metatheory, 133 definitions).',
-    ru: 'Holon сквозно связан и проверяется вместе с math-foundations (94 модуля Lean 4, 280 строго безаксиомных теорем, 1 027 проверок #print axioms, 0 Classical.choice), math-msfs (препринт EN/RU: 102 формальных окружения / 124 метки / 67 библ. записей и 15 модулей / 688 доказательств Verum) и diakrisis (13-аксиомная 2-категорная метатеория, 133 определения).',
+    en: 'Holon is cross-linked and audited alongside math-foundations (94 Lean 4 modules, 32,174 compiled .olean env.constants / 7,336 source decls, 280 strictly zero-axiom theorems, 1,062 #print axioms checks, 0 Classical.choice), math-msfs (EN/RU preprint with 102 theorem-like envs / 124 labels / 67 refs & 15-module / 688-proved Verum corpus), and diakrisis (13-axiom 2-categorical metatheory, 133 definitions).',
+    ru: 'Holon сквозно связан и проверяется вместе с math-foundations (94 модуля Lean 4, 32 174 скомп. .olean env.constants / 7 336 исх. деклараций, 280 строго безаксиомных теорем, 1 062 проверки #print axioms, 0 Classical.choice), math-msfs (препринт EN/RU: 102 формальных окружения / 124 метки / 67 библ. записей и 15 модулей / 688 доказательств Verum) и diakrisis (13-аксиомная 2-категорная метатеория, 133 определения).',
   },
   verificationLink: {en: 'Network results & Lean audit', ru: 'Сетевые результаты и аудит Lean'},
   falsifiability: {en: 'Tests and falsification criteria', ru: 'Проверки и критерии опровержения'},
@@ -201,7 +201,7 @@ export const statusGroups = [
     title: {en: 'Proved & machine-checked', ru: 'Доказано и проверено машинно'},
     items: [
       {
-        text: {en: 'Choice-free Lean 4 kernel: 94 modules, 31,837 decls, 1,027 audited, 280 zero-axiom, 145 NonVacuity (0 Classical.choice).', ru: 'Безвыборное ядро Lean 4: 94 модуля, 31 837 деклараций, 1 027 проверок, 280 безаксиомных, 145 NonVacuity (0 Classical.choice).'},
+        text: {en: 'Choice-free Lean 4 kernel: 94 modules, 32,174 .olean env.constants (7,336 source decls), 1,062 audited, 280 zero-axiom, 149 NonVacuity (0 Classical.choice).', ru: 'Безвыборное ядро Lean 4: 94 модуля, 32 174 констант .olean (7 336 исх. декл.), 1 062 проверки, 280 безаксиомных, 149 NonVacuity (0 Classical.choice).'},
         link: '/docs/reference/network-results',
       },
       {
@@ -275,7 +275,7 @@ export const statusGroups = [
 
 export const verificationMetrics: readonly {value: Bilingual; label: Bilingual}[] = [
   {value: {en: '94', ru: '94'}, label: {en: 'Lean 4 modules', ru: 'Модулей Lean 4'}},
-  {value: {en: '31,837', ru: '31 837'}, label: {en: 'Checked decls', ru: 'Деклараций'}},
+  {value: {en: '32,174', ru: '32 174'}, label: {en: '.olean constants (7,336 src)', ru: 'Констант .olean (7 336 исх.)'}},
   {value: {en: '280', ru: '280'}, label: {en: 'Zero-axiom proofs', ru: '0-аксиом теорем'}},
   {value: {en: '0', ru: '0'}, label: {en: 'Classical.choice', ru: 'Classical.choice'}},
   {value: {en: '165/165', ru: '165/165'}, label: {en: 'Core numbers', ru: 'Чисел ядра'}},

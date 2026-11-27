@@ -3,21 +3,21 @@ Deep Frontier v13 — Module 2: Exact Left-Null / IPS / Farkas Obstruction Certi
 Constructive Algebraic Obstruction Certificates (Left-Null / Nullstellensatz / IPS / Farkas)
 for Nonlinear Gravity, 4D Regge+KD Subtraction, Mixed Spectral Actions, and Weyl^2 Black-Hole Perturbations.
 
-STRICT ZERO-FLOAT CERTIFICATE INVARIANT:
-  Every single mathematical check/assertion uses ONLY exact arithmetic:
+STRICT 100% ZERO-FLOAT CERTIFICATE INVARIANT:
+  Every single computation, check, assertion, AND diagnostic printout uses ONLY exact arithmetic:
   Python `int`, `fractions.Fraction`, and `sympy` exact rational/polynomial rings.
-  Floating-point values appear ONLY in optional diagnostic printout formatting, NEVER inside checks.
+  Zero `math`, zero `numpy`, zero `scipy`, and zero `float(...)` anywhere in this module.
 
 Self-contained, deterministic, zero fitted parameters.
 """
 
 from __future__ import annotations
 
+import ast
 from fractions import Fraction
 from itertools import combinations
-import math
+from pathlib import Path
 import sys
-import numpy as np
 import sympy as sp
 from sympy.polys.matrices import DomainMatrix
 from sympy.polys.domains import QQ
@@ -41,13 +41,161 @@ class ExactCheckCounter:
 
 
 # ==============================================================================
+# PURE-INTEGER UTILITIES & EXACT RATIONAL FORMATTERS (ZERO FLOAT64 / ZERO MATH / ZERO NUMPY)
+# ==============================================================================
+def _isqrt(n: int) -> int:
+    """Pure-integer Newton square root with runtime postcondition x^2 <= n < (x+1)^2."""
+    if n < 0:
+        raise ValueError("_isqrt requires n >= 0")
+    if n == 0:
+        return 0
+    x = 1 << ((n.bit_length() + 1) >> 1)
+    while True:
+        y = (x + n // x) >> 1
+        if y >= x:
+            assert x * x <= n < (x + 1) * (x + 1)
+            return x
+        x = y
+
+
+def _factorial(n: int) -> int:
+    res = 1
+    for k in range(2, n + 1):
+        res *= k
+    return res
+
+
+def _prod(vals) -> int:
+    res = 1
+    for v in vals:
+        res *= v
+    return res
+
+
+def _exact_num_den(val) -> tuple[int, int]:
+    if isinstance(val, Fraction):
+        return val.numerator, val.denominator
+    if isinstance(val, int):
+        return val, 1
+    if isinstance(val, sp.Rational):
+        return int(val.p), int(val.q)
+    raise TypeError(f"Expected exact Fraction/int/sp.Rational, got {type(val).__name__}")
+
+
+def fmt_exact_dec(val, digits: int = 4, signed: bool = False) -> str:
+    """Pure-integer rounded decimal string for exact rationals (zero float64)."""
+    num, den = _exact_num_den(val)
+    sign_str = "-" if num < 0 else ("+" if signed else "")
+    anum = -num if num < 0 else num
+    scale = 10 ** digits
+    scaled = (anum * scale * 2 + den) // (2 * den)
+    int_part, frac_part = divmod(scaled, scale)
+    if digits == 0:
+        return f"{sign_str}{int_part}"
+    return f"{sign_str}{int_part}.{frac_part:0{digits}d}"
+
+
+def fmt_exact_sci(val, digits: int = 2) -> str:
+    """Pure-integer scientific notation string for exact rationals (zero float64)."""
+    num, den = _exact_num_den(val)
+    if num == 0:
+        return f"0.{'0' * digits}e+00"
+    sign_str = "-" if num < 0 else ""
+    n = -num if num < 0 else num
+    d = den
+    exp = 0
+    while n >= 10 * d:
+        d *= 10
+        exp += 1
+    while n < d:
+        n *= 10
+        exp -= 1
+    scale = 10 ** digits
+    scaled = (n * scale * 2 + d) // (2 * d)
+    if scaled >= 10 * scale:
+        scaled //= 10
+        exp += 1
+    int_part, frac_part = divmod(scaled, scale)
+    exp_sign = "+" if exp >= 0 else "-"
+    return f"{sign_str}{int_part}.{frac_part:0{digits}d}e{exp_sign}{abs(exp):02d}"
+
+
+def _mat_zeros(r: int, c: int) -> list[list[int]]:
+    return [[0] * c for _ in range(r)]
+
+
+def _mat_eye(n: int) -> list[list[int]]:
+    return [[1 if i == j else 0 for j in range(n)] for i in range(n)]
+
+
+def _mat_copy(A: list[list[int]]) -> list[list[int]]:
+    return [row[:] for row in A]
+
+
+def _mat_T(A: list[list[int]]) -> list[list[int]]:
+    r, c = len(A), len(A[0])
+    return [[A[i][j] for i in range(r)] for j in range(c)]
+
+
+def _mat_add(A: list[list[int]], B: list[list[int]]) -> list[list[int]]:
+    return [[a + b for a, b in zip(ra, rb)] for ra, rb in zip(A, B)]
+
+
+def _mat_scale(c: int, A: list[list[int]]) -> list[list[int]]:
+    return [[c * x for x in row] for row in A]
+
+
+def _mat_sub_diag(A: list[list[int]], lam: int) -> list[list[int]]:
+    n = len(A)
+    return [[A[i][j] - (lam if i == j else 0) for j in range(n)] for i in range(n)]
+
+
+def _mat_mul(A: list[list[int]], B: list[list[int]]) -> list[list[int]]:
+    r, m, c = len(A), len(B), len(B[0])
+    out = [[0] * c for _ in range(r)]
+    for i in range(r):
+        ai = A[i]
+        oi = out[i]
+        for k in range(m):
+            aik = ai[k]
+            if aik:
+                bk = B[k]
+                for j in range(c):
+                    bkj = bk[j]
+                    if bkj:
+                        oi[j] += aik * bkj
+    return out
+
+
+def _mat_mul_diag_left(d_vec: list[int], A: list[list[int]]) -> list[list[int]]:
+    return [[d * x for x in row] for d, row in zip(d_vec, A)]
+
+
+def _mat_mul_diag_right(A: list[list[int]], d_vec: list[int]) -> list[list[int]]:
+    return [[x * d for x, d in zip(row, d_vec)] for row in A]
+
+
+def _mat_trace_prod(A: list[list[int]], B: list[list[int]]) -> int:
+    """Exact Tr(A @ B) = sum_{i,j} A[i][j] * B[j][i]."""
+    n = len(A)
+    tot = 0
+    for i in range(n):
+        ai = A[i]
+        for j in range(n):
+            v = ai[j]
+            if v:
+                tot += v * B[j][i]
+    return tot
+
+
+# ==============================================================================
 # EXACT RATIONAL INTERVAL HELPERS (ZERO FLOAT64)
 # ==============================================================================
 def isqrt_bounds(r: Fraction, prec: int = 10**24) -> tuple[Fraction, Fraction]:
     """Exact rational bracket [lo, hi] with lo^2 <= r < hi^2 via integer isqrt."""
     assert r > 0
     p, q = r.numerator, r.denominator
-    k = math.isqrt(p * q * prec * prec)
+    k = _isqrt(p * q * prec * prec)
     lo = Fraction(k, q * prec)
     hi = Fraction(k + 1, q * prec)
     assert lo * lo <= r < hi * hi
@@ -394,13 +542,13 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
     rel_keys = sorted({edge_rel(edges[0], e2) for e2 in edges})
     A_orb = {}
     for rk in rel_keys:
-        M = np.zeros((40, 40), dtype=int)
+        M = _mat_zeros(40, 40)
         for i, e1 in enumerate(edges):
             for j, e2 in enumerate(edges):
                 if edge_rel(e1, e2) == rk:
-                    M[i, j] = 1
+                    M[i][j] = 1
         A_orb[rk] = M
-    bm_comm = all(np.array_equal(A_orb[r1] @ A_orb[r2], A_orb[r2] @ A_orb[r1]) for r1 in rel_keys for r2 in rel_keys)
+    bm_comm = all(_mat_mul(A_orb[r1], A_orb[r2]) == _mat_mul(A_orb[r2], A_orb[r1]) for r1 in rel_keys for r2 in rel_keys)
 
     # Exact integer Bose-Mesner character table P[irrep, orbital]
     # Orbitals: [(0,0,0), (0,1,1), (0,2,2), (1,1,0), (1,2,1), (2,2,0)]
@@ -428,9 +576,9 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
     for i_idx, rk_i in enumerate(rel_keys):
         L_i = sp.zeros(6, 6)
         for j_idx, rk_j in enumerate(rel_keys):
-            prod = A_orb[rk_i] @ A_orb[rk_j]
+            prod = _mat_mul(A_orb[rk_i], A_orb[rk_j])
             for k_idx, rk_k in enumerate(rel_keys):
-                L_i[k_idx, j_idx] = int(prod[0, rep[rk_k]])
+                L_i[k_idx, j_idx] = prod[0][rep[rk_k]]
         for a in range(6):
             row_a = P_bm.row(a).T
             if L_i.T * row_a != P_bm[a, i_idx] * row_a:
@@ -445,31 +593,32 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
     # Verify w_{p+1}/w_p = (p+1)^2 exactly:
     # vol_p^2 = (p+1) / ((p!)^2 * 2^p), n_inc(p) = [16, 8, 4, 2, 1], w_p / V4 = ((p+1)/5) * n_inc(p) / vol_p^2
     n_inc = [16, 8, 4, 2, 1]
-    vol2 = [Fraction(p + 1, (math.factorial(p) ** 2) * (2 ** p)) for p in range(5)]
+    vol2 = [Fraction(p + 1, (_factorial(p) ** 2) * (2 ** p)) for p in range(5)]
     w_over_v4 = [Fraction(p + 1, 5) * n_inc[p] / vol2[p] for p in range(5)]
     ratios_ok = all(w_over_v4[p + 1] / w_over_v4[p] == Fraction((p + 1) ** 2) for p in range(4))
 
-    d0 = np.zeros((40, 10), dtype=object)
+    d0 = _mat_zeros(40, 10)
     for i, (a, b) in enumerate(edges):
-        d0[i, v_idx[a]] = -1; d0[i, v_idx[b]] = 1
-    d1 = np.zeros((80, 40), dtype=object)
+        d0[i][v_idx[a]] = -1; d0[i][v_idx[b]] = 1
+    d1 = _mat_zeros(80, 40)
     for i, (a, b, c) in enumerate(tris):
-        d1[i, e_idx[(b, c)]] = 1; d1[i, e_idx[(a, c)]] = -1; d1[i, e_idx[(a, b)]] = 1
-    d2 = np.zeros((80, 80), dtype=object)
+        d1[i][e_idx[(b, c)]] = 1; d1[i][e_idx[(a, c)]] = -1; d1[i][e_idx[(a, b)]] = 1
+    d2 = _mat_zeros(80, 80)
     for i, (a, b, c, d) in enumerate(tets):
-        d2[i, t_idx[(b, c, d)]] = 1; d2[i, t_idx[(a, c, d)]] = -1
-        d2[i, t_idx[(a, b, d)]] = 1; d2[i, t_idx[(a, b, c)]] = -1
-    d3 = np.zeros((32, 80), dtype=object)
+        d2[i][t_idx[(b, c, d)]] = 1; d2[i][t_idx[(a, c, d)]] = -1
+        d2[i][t_idx[(a, b, d)]] = 1; d2[i][t_idx[(a, b, c)]] = -1
+    d3 = _mat_zeros(32, 80)
     for i, (a, b, c, d, e_) in enumerate(simps):
-        d3[i, tet_idx[(b, c, d, e_)]] = 1; d3[i, tet_idx[(a, c, d, e_)]] = -1
-        d3[i, tet_idx[(a, b, d, e_)]] = 1; d3[i, tet_idx[(a, b, c, e_)]] = -1; d3[i, tet_idx[(a, b, c, d)]] = 1
+        d3[i][tet_idx[(b, c, d, e_)]] = 1; d3[i][tet_idx[(a, c, d, e_)]] = -1
+        d3[i][tet_idx[(a, b, d, e_)]] = 1; d3[i][tet_idx[(a, b, c, e_)]] = -1; d3[i][tet_idx[(a, b, c, d)]] = 1
     ds = [d0, d1, d2, d3]
+    ds_T = [_mat_T(D) for D in ds]
     ns = [10, 40, 80, 80, 32]
     L0 = []
     for p in range(5):
-        L = np.zeros((ns[p], ns[p]), dtype=object)
-        if p > 0: L = L + (p * p) * (ds[p - 1] @ ds[p - 1].T)
-        if p < 4: L = L + ((p + 1) * (p + 1)) * (ds[p].T @ ds[p])
+        L = _mat_zeros(ns[p], ns[p])
+        if p > 0: L = _mat_add(L, _mat_scale(p * p, _mat_mul(ds[p - 1], ds_T[p - 1])))
+        if p < 4: L = _mat_add(L, _mat_scale((p + 1) * (p + 1), _mat_mul(ds_T[p], ds[p])))
         L0.append(L)
 
     # Verify exact integer spectra via minimal polynomial prod_{lam}(L0[p] - lam I) == 0 and exact traces!
@@ -482,20 +631,20 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
     ]
     minpoly_ok = True
     for p in range(5):
-        I_p = np.eye(ns[p], dtype=object)
-        M_acc = I_p.copy()
+        I_p = _mat_eye(ns[p])
+        M_acc = _mat_copy(I_p)
         for lam, _ in spec_p[p]:
-            M_acc = M_acc @ (L0[p] - lam * I_p)
-        if not np.all(M_acc == 0):
+            M_acc = _mat_mul(M_acc, _mat_sub_diag(L0[p], lam))
+        if not all(x == 0 for row in M_acc for x in row):
             minpoly_ok = False
         # Verify power traces Tr(L^k) for k = 0..len(spec_p[p])-1 uniquely determine all multiplicities!
-        L_pow = I_p.copy()
+        L_pow = _mat_copy(I_p)
         for k_tr in range(len(spec_p[p])):
-            tr_mat = int(sum(L_pow[i, i] for i in range(ns[p])))
+            tr_mat = sum(L_pow[i][i] for i in range(ns[p]))
             tr_spec = sum(mult * (lam ** k_tr) for lam, mult in spec_p[p])
             if tr_mat != tr_spec:
                 minpoly_ok = False
-            L_pow = L_pow @ L0[p]
+            L_pow = _mat_mul(L_pow, L0[p])
 
     cc.check(
         ratios_ok and minpoly_ok,
@@ -504,7 +653,7 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
 
     # 2.3 Exact cleared-denominator Lagrange resolvent G_p = (L0[p] + m^2 I)^{-1} & exact rational S_KD Hessians!
     def lagrange_inv(L_obj, eigs, m2_int):
-        n = L_obj.shape[0]
+        n = len(L_obj)
         k = len(eigs)
         x = sp.Symbol("x")
         poly = sp.Integer(0)
@@ -519,11 +668,11 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
         coeffs = [poly.nth(r) for r in range(k)]
         lcm_d = int(sp.ilcm(*[sp.fraction(c)[1] for c in coeffs]))
         int_coeffs = [int(c * lcm_d) for c in coeffs]
-        I_obj = np.eye(n, dtype=object)
-        res = int_coeffs[k - 1] * I_obj
+        I_obj = _mat_eye(n)
+        res = _mat_scale(int_coeffs[k - 1], I_obj)
         for r in range(k - 2, -1, -1):
-            res = res @ L_obj + int_coeffs[r] * I_obj
-        assert np.array_equal(res @ (L_obj + m2_int * I_obj), lcm_d * I_obj)
+            res = _mat_add(_mat_mul(res, L_obj), _mat_scale(int_coeffs[r], I_obj))
+        assert _mat_mul(res, _mat_add(L_obj, _mat_scale(m2_int, I_obj))) == _mat_scale(lcm_d, I_obj)
         return res, lcm_d
 
     # Exact local derivatives of normalized simplex volumes u4, u3, u2 & dihedral angle derived from Cayley-Menger!
@@ -594,12 +743,12 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
     ]
     S1, S2 = 120, 14400
 
-    def to_int_arr(flist, scale):
-        out = np.empty(len(flist), dtype=object)
-        for i, f_v in enumerate(flist):
+    def to_int_arr(flist, scale) -> list[int]:
+        out: list[int] = []
+        for f_v in flist:
             v = f_v * scale
             assert v.denominator == 1
-            out[i] = v.numerator
+            out.append(v.numerator)
         return out
 
     def get_r_derivs_int(p, ea, eb):
@@ -633,33 +782,51 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
 
     def build_M_derivs_int(p, r_data):
         n = ns[p]
-        Ma = np.zeros((n, n), dtype=object)
-        Mb = np.zeros((n, n), dtype=object)
-        Mab = np.zeros((n, n), dtype=object)
+        Ma = _mat_zeros(n, n)
+        Mb = _mat_zeros(n, n)
+        Mab = _mat_zeros(n, n)
         if p > 0:
-            D = ds[p - 1]; DT = D.T
+            D = ds[p - 1]; DT = ds_T[p - 1]
             ra_p, rb_p, rab_p, _, _, _ = r_data[p]
             _, _, _, ia_m, ib_m, iab_m = r_data[p - 1]
             c = p * p
-            DDT = D @ DT
-            D_iam_DT = (D * ia_m[None, :]) @ DT
-            D_ibm_DT = (D * ib_m[None, :]) @ DT
-            D_iabm_DT = (D * iab_m[None, :]) @ DT
-            Ma = Ma + c * (ra_p[:, None] * DDT + D_iam_DT)
-            Mb = Mb + c * (rb_p[:, None] * DDT + D_ibm_DT)
-            Mab = Mab + c * (rab_p[:, None] * DDT + ra_p[:, None] * D_ibm_DT + rb_p[:, None] * D_iam_DT + D_iabm_DT)
+            DDT = _mat_mul(D, DT)
+            D_iam_DT = _mat_mul(_mat_mul_diag_right(D, ia_m), DT)
+            D_ibm_DT = _mat_mul(_mat_mul_diag_right(D, ib_m), DT)
+            D_iabm_DT = _mat_mul(_mat_mul_diag_right(D, iab_m), DT)
+            Ma = _mat_add(Ma, _mat_scale(c, _mat_add(_mat_mul_diag_left(ra_p, DDT), D_iam_DT)))
+            Mb = _mat_add(Mb, _mat_scale(c, _mat_add(_mat_mul_diag_left(rb_p, DDT), D_ibm_DT)))
+            Mab = _mat_add(
+                Mab,
+                _mat_scale(
+                    c,
+                    _mat_add(
+                        _mat_add(_mat_mul_diag_left(rab_p, DDT), _mat_mul_diag_left(ra_p, D_ibm_DT)),
+                        _mat_add(_mat_mul_diag_left(rb_p, D_iam_DT), D_iabm_DT),
+                    ),
+                ),
+            )
         if p < 4:
-            D = ds[p]; DT = D.T
+            D = ds[p]; DT = ds_T[p]
             ra_n, rb_n, rab_n, _, _, _ = r_data[p + 1]
             _, _, _, ia_p, ib_p, iab_p = r_data[p]
             c = (p + 1) * (p + 1)
-            DTD = DT @ D
-            DT_ran_D = (DT * ra_n[None, :]) @ D
-            DT_rbn_D = (DT * rb_n[None, :]) @ D
-            DT_rabn_D = (DT * rab_n[None, :]) @ D
-            Ma = Ma + c * (DT_ran_D + DTD * ia_p[None, :])
-            Mb = Mb + c * (DT_rbn_D + DTD * ib_p[None, :])
-            Mab = Mab + c * (DT_rabn_D + DT_ran_D * ib_p[None, :] + DT_rbn_D * ia_p[None, :] + DTD * iab_p[None, :])
+            DTD = _mat_mul(DT, D)
+            DT_ran_D = _mat_mul(_mat_mul_diag_right(DT, ra_n), D)
+            DT_rbn_D = _mat_mul(_mat_mul_diag_right(DT, rb_n), D)
+            DT_rabn_D = _mat_mul(_mat_mul_diag_right(DT, rab_n), D)
+            Ma = _mat_add(Ma, _mat_scale(c, _mat_add(DT_ran_D, _mat_mul_diag_right(DTD, ia_p))))
+            Mb = _mat_add(Mb, _mat_scale(c, _mat_add(DT_rbn_D, _mat_mul_diag_right(DTD, ib_p))))
+            Mab = _mat_add(
+                Mab,
+                _mat_scale(
+                    c,
+                    _mat_add(
+                        _mat_add(DT_rabn_D, _mat_mul_diag_right(DT_ran_D, ib_p)),
+                        _mat_add(_mat_mul_diag_right(DT_rbn_D, ia_p), _mat_mul_diag_right(DTD, iab_p)),
+                    ),
+                ),
+            )
         return Ma, Mb, Mab
 
     e0 = edges[0]
@@ -675,11 +842,11 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
             for p in range(5):
                 Ma, Mb, Mab = M_pairs[idx_rk][p]
                 G_int, lcm_d = Gs[p]
-                tr1 = int(np.sum(G_int * Mab.T))
-                tr2 = int(np.sum((G_int @ Ma) * (G_int @ Mb).T))
+                tr1 = _mat_trace_prod(G_int, Mab)
+                tr2 = _mat_trace_prod(_mat_mul(G_int, Ma), _mat_mul(G_int, Mb))
                 d2_tot += Fraction(-1, 2) * (Fraction(tr1, lcm_d * S2) - Fraction(tr2, lcm_d * lcm_d * S1 * S1))
                 if idx_rk == 0:
-                    d1_tot += Fraction(-1, 2) * Fraction(int(np.sum(G_int * Ma.T)), lcm_d * S1)
+                    d1_tot += Fraction(-1, 2) * Fraction(_mat_trace_prod(G_int, Ma), lcm_d * S1)
             if idx_rk == 0:
                 g_kd = d1_tot
             h_kd.append(d2_tot)
@@ -964,7 +1131,7 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
     obs_tt_4 = 6 * kd_exact[4][4] + 25 * kd_exact[4][5] - 27 * kd_exact[4][6]
     cc.check(
         ann_V_tt and ann_SR_tt and obs_tt_1 > 0 and obs_tt_4 > 0,
-        f"2.6: Pure-integer 3-entry Left-Null v_TT=(6,25,-27) annihilates {{V_tot,-S_R}}|_TT (indep. of eps0,sqrt3,sqrt5); P(m=1)={float(obs_tt_1):+.4f}, P(m=2)={float(obs_tt_4):+.4f}",
+        f"2.6: Pure-integer 3-entry Left-Null v_TT=(6,25,-27) annihilates {{V_tot,-S_R}}|_TT (indep. of eps0,sqrt3,sqrt5); P(m=1)={fmt_exact_dec(obs_tt_1, 4, signed=True)}, P(m=2)={fmt_exact_dec(obs_tt_4, 4, signed=True)}",
     )
 
     # 2.7 Exact 3-entry Farkas dual certificate y_2p > 0 for 2-param {V_tot, -S_R} on [g, 1_sc, 5_TT]!
@@ -980,7 +1147,7 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
     rhs_2p_4 = iadd(iadd(iscale(kd_exact[4][0], y_b[0]), iscale(kd_exact[4][1], y_b[1])), iscale(kd_exact[4][4], y_b[2]))
     cc.check(
         farkas_ann and all(b[0] > 0 for b in y_b) and rhs_2p_1[1] < 0 and rhs_2p_4[1] < 0,
-        f"2.7: Exact Farkas certificate y_2p>0 refutes {{V_tot,-S_R}} (g>=0 & 1_sc>=0 & 5_TT>=0): y^T b(m=1)={float(rhs_2p_1[1]):+.3f}<0",
+        f"2.7: Exact Farkas certificate y_2p>0 refutes {{V_tot,-S_R}} (g>=0 & 1_sc>=0 & 5_TT>=0): y^T b(m=1)={fmt_exact_dec(rhs_2p_1[1], 3, signed=True)}<0",
     )
 
     # 2.8a FIRST-PRINCIPLES 45-EDGE FLAT-(1,5) CURVED-S^4 SUBDIVISION:
@@ -1385,19 +1552,20 @@ def suite_2_regge_kd_s4(cc: ExactCheckCounter) -> None:
         tot_b = ishift(kd_part, eval_geom_interval(geom_expr))
         if not (tot_b[0] > 0):
             min_3p_pos = False
-        eigs_3p_str.append(round(float(tot_b[0]), 2))
+        eigs_3p_str.append(fmt_exact_dec(tot_b[0], 2))
     M_3p_tt = sp.Matrix.hstack(v_V, v_negSR, v_R2A).extract([0, 4, 5, 6], [0, 1, 2])
     ln_3p_tt = M_3p_tt.T.nullspace()
     M_4p = sp.Matrix.hstack(v_V, v_negSR, v_R2A, v_R2V).extract([0, 4, 5, 6], [0, 1, 2, 3])
     rk_4p = M_4p.rank()
     cV_ok = (Fraction(72484, 100) < cV_mid - cV_err and cV_mid + cV_err < Fraction(72485, 100))
+    eigs_3p_disp = "[" + ", ".join(eigs_3p_str) + "]"
     cc.check(
         pairs_ok and min_3p_pos and cV_ok and len(ln_3p_tt) == 1 and rk_4p == 4,
-        f"2.8b: All C(5,2)=10 pairs exhausted (9 infeasible, only {{-S_R,S_{{L^4}}}} feasible); 3-param {{V_tot,-S_R,S_{{R^2,A}}}} (c_R=110,c_R2A=75,c_V={float(cV_mid):.2f}) stabilizes all 40 S^4 modes {eigs_3p_str}; 3p-TT LN dim=1, 4p rank=4",
+        f"2.8b: All C(5,2)=10 pairs exhausted (9 infeasible, only {{-S_R,S_{{L^4}}}} feasible); 3-param {{V_tot,-S_R,S_{{R^2,A}}}} (c_R=110,c_R2A=75,c_V={fmt_exact_dec(cV_mid, 2)}) stabilizes all 40 S^4 modes {eigs_3p_disp}; 3p-TT LN dim=1, 4p rank=4",
     )
-    print(f"    -> Exact d^2_nl(S_{{R^2,V}}) = (21600*sqrt(5)/4913)*eps0^2 = {float(d2_rw_R2V_b[0]):.6f}, d^2_nl(S_{{L^4}}) = 12")
-    print(f"    -> Exact 45-edge S_ct interior tadpole = {float(g_ct15_mid):.4f}, certified Weyl bounds <= {float(max(w_sr, w_V, w_R2A, w_ct)):.2e} < 1")
-    print(f"    -> Exact S_KD(1) 1st-order grad_e = {kd_exact[1][0]} (~{float(kd_exact[1][0]):.6f})\n")
+    print(f"    -> Exact d^2_nl(S_{{R^2,V}}) = (21600*sqrt(5)/4913)*eps0^2 = {fmt_exact_dec(d2_rw_R2V_b[0], 6)}, d^2_nl(S_{{L^4}}) = 12")
+    print(f"    -> Exact 45-edge S_ct interior tadpole = {fmt_exact_dec(g_ct15_mid, 4)}, certified Weyl bounds <= {fmt_exact_sci(max(w_sr, w_V, w_R2A, w_ct), 2)} < 1")
+    print(f"    -> Exact S_KD(1) 1st-order grad_e = {kd_exact[1][0]} (~{fmt_exact_dec(kd_exact[1][0], 6)})\n")
 
 
 # ==============================================================================
@@ -1507,7 +1675,7 @@ def suite_3_spectral_pv_certificates(cc: ExactCheckCounter) -> None:
         m_uv = sp.diff(beta**(-2), beta, k_d).subs(beta, 1) * ((-1) ** k_d)
         if m_ir != sp.factorial(k_d) or m_uv != sp.factorial(k_d + 1):
             poly_cut_ok = False
-        expected_sr = sp.Rational(math.prod(2 * j + 3 for j in range(k_d)), 2 ** k_d)
+        expected_sr = sp.Rational(_prod(2 * j + 3 for j in range(k_d)), 2 ** k_d)
         if m_sr != expected_sr:
             poly_cut_ok = False
     # Exact signed-cutoff (1 - a u) e^{-u} critical thresholds: f_0(1/2) = 0, f_0(3/5) = -1/5 < 0 while f_2(3/5) = +2/5 > 0!
@@ -1532,7 +1700,7 @@ def suite_3_spectral_pv_certificates(cc: ExactCheckCounter) -> None:
         prev_abs = None
         for n in range(N_terms):
             m = n + k
-            term = ((-1) ** n) * (Q_f ** m) * Fraction(math.factorial(m) ** 2, math.factorial(n) * math.factorial(2 * m + 1))
+            term = ((-1) ** n) * (Q_f ** m) * Fraction(_factorial(m) ** 2, _factorial(n) * _factorial(2 * m + 1))
             if n == N_terms - 1:
                 assert prev_abs is not None and abs(term) < prev_abs
                 s_next = s + term
@@ -1561,7 +1729,11 @@ def suite_3_spectral_pv_certificates(cc: ExactCheckCounter) -> None:
         bp = delta2_exp_exact(Qf, n0_p, nw_p, ng_p)
         if not (bm[1] < 0 and bp[0] > 0):
             exp_ok = False
-        print(f"    -> e^-u {lbl} at Q={str(Qf):5s}: below=[{float(bm[0]):+.6f},{float(bm[1]):+.6f}]<0, above=[{float(bp[0]):+.6f},{float(bp[1]):+.6f}]>0")
+        print(
+            f"    -> e^-u {lbl} at Q={str(Qf):5s}: "
+            f"below=[{fmt_exact_dec(bm[0], 6, signed=True)},{fmt_exact_dec(bm[1], 6, signed=True)}]<0, "
+            f"above=[{fmt_exact_dec(bp[0], 6, signed=True)},{fmt_exact_dec(bp[1], 6, signed=True)}]>0"
+        )
     cc.check(
         exp_ok,
         "3.4: 100% zero-float exact Fraction threshold certificates for chi=e^-u: SM N0>=120, SUSY nc>=69, PS N0>=196",
@@ -1609,7 +1781,11 @@ def suite_3_spectral_pv_certificates(cc: ExactCheckCounter) -> None:
         bp = iadd(iscale(Fraction(n0_p), bs), iadd(iscale(Fraction(nw_p), bw), iscale(Fraction(ng_p), bg)))
         if not (bm[1] < 0 and bp[0] > 0):
             pv4_ok = False
-        print(f"    -> PV4  {lbl} at Q={str(Qf):5s}: below=[{float(bm[0]):+.6f},{float(bm[1]):+.6f}]<0, above=[{float(bp[0]):+.6f},{float(bp[1]):+.6f}]>0")
+        print(
+            f"    -> PV4  {lbl} at Q={str(Qf):5s}: "
+            f"below=[{fmt_exact_dec(bm[0], 6, signed=True)},{fmt_exact_dec(bm[1], 6, signed=True)}]<0, "
+            f"above=[{fmt_exact_dec(bp[0], 6, signed=True)},{fmt_exact_dec(bp[1], 6, signed=True)}]>0"
+        )
     cc.check(
         pv4_ok,
         "3.5: 100% zero-float exact Fraction threshold certificates for PV4: SM N0>=105, SUSY nc>=62, PS N0>=169",
@@ -1881,15 +2057,43 @@ def suite_4_weyl2_black_hole(cc: ExactCheckCounter) -> None:
     print(f"    -> Model B2 P1 = -16*al*w^4*({Q1_xi}), Bezout Delta(6,20) = {Delta_bez.subs({l1: 6, l2: 20})}\n")
 
 
+def _audit_zero_float_self() -> None:
+    """Verify at runtime and via AST that this module uses 0% float64 and zero math/numpy/scipy."""
+    for forbidden_mod in ("numpy", "scipy"):
+        assert forbidden_mod not in sys.modules, f"Forbidden module loaded: {forbidden_mod}"
+    src = Path(__file__).read_text(encoding="utf-8")
+    tree = ast.parse(src, filename=str(Path(__file__)))
+    forbidden_imports = {"math", "numpy", "scipy", "mpmath", "decimal"}
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            for alias in node.names:
+                top = alias.name.split(".")[0]
+                assert top not in forbidden_imports, f"Forbidden import at L{node.lineno}: {alias.name}"
+        elif isinstance(node, ast.ImportFrom):
+            if node.module:
+                top = node.module.split(".")[0]
+                assert top not in forbidden_imports, f"Forbidden from-import at L{node.lineno}: {node.module}"
+        elif isinstance(node, ast.Call):
+            if isinstance(node.func, ast.Name) and node.func.id == "float":
+                raise AssertionError(f"Forbidden float() call at L{node.lineno}")
+            if isinstance(node.func, ast.Attribute) and node.func.attr in ("evalf", "Float"):
+                raise AssertionError(f"Forbidden floating-point SymPy call .{node.func.attr}() at L{node.lineno}")
+        elif isinstance(node, ast.Constant):
+            if type(node.value).__name__ == "float":
+                raise AssertionError(f"Forbidden float literal at L{node.lineno}: {node.value!r}")
+
+
 def main() -> int:
+    _audit_zero_float_self()
     cc = ExactCheckCounter()
     suite_1_general_theory(cc)
     suite_2_regge_kd_s4(cc)
     suite_3_spectral_pv_certificates(cc)
     suite_4_weyl2_black_hole(cc)
+    _audit_zero_float_self()
 
     print("=" * 88)
-    print(f"FRONTIER v13 MODULE 2 (LEFT-NULL CERTIFICATES) SUMMARY: {cc.passed}/{cc.total} CHECKS PASSED (ZERO FLOAT64 IN ALL CHECKS)")
+    print(f"FRONTIER v13 MODULE 2 (LEFT-NULL CERTIFICATES) SUMMARY: {cc.passed}/{cc.total} CHECKS PASSED (100% ZERO FLOAT64, ZERO MATH/NUMPY/SCIPY)")
     print("=" * 88)
     if cc.failures:
         print("FAILURES:")

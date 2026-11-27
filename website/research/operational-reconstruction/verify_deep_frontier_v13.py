@@ -6,7 +6,7 @@ Deep Frontier Verification Suite v13 — Unified Runner (`verify_deep_frontier_v
     symplectic degeneracy no-go (`A1.7`), exact 1-loop 4D Schwarzschild Sen `C_log` sign
     trichotomy (`A1.8-A1.10`), finite Type `I_{d(A)}` deepening of `T-348` (`A1.11-A1.12`),
     and Lorentzian cobordism realizations of `B4` `CM-1/2/4` (`A1.13-A1.17`).
-  Module 2 (`frontier_v13_left_null.py`, 31/31 checks, 0% float64 in assertions):
+  Module 2 (`frontier_v13_left_null.py`, 31/31 checks, 0% float64, zero math/numpy/scipy):
     Choice-free parametric Left-Null / Bareiss / IPS / Farkas obstruction certificates:
     4D Regge+KD `B_5` Bose-Mesner 40x40 & 45x45 flat-(1,5) split, pure-integer `F-36A`
     all-ratio PV certificates, zero-float `V12.1.B6` scalar thresholds, and higher-curvature
