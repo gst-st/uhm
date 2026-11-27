@@ -80,8 +80,8 @@ function HomepageHeader({text}: Pick<LocalProps, 'text'>) {
       {([
         ['7 · 21 · 48', 'factStateLabel'],
         ['A · B · C', 'factStrataLabel'],
-        ['82 / 0', 'factLeanLabel'],
-        ['V1–V11', 'factSuitesLabel'],
+        ['94 / 0', 'factLeanLabel'],
+        ['V1–V13', 'factSuitesLabel'],
       ] as const).map(([value, key]) =>
         <div className={styles.fact} key={key}><strong>{value}</strong><span>{text(key)}</span></div>)}
     </div>

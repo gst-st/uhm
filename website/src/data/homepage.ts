@@ -1,8 +1,8 @@
 import type {Bilingual} from './coherences';
 
-// Homepage copy is strictly paired EN/RU so both locales share the exact post-v11 claims, numbers, and links.
+// Homepage copy is strictly paired EN/RU so both locales share the exact post-v13 claims, numbers, and links.
 export const homeCopy = {
-  name: {en: 'Unitary Holonomic Monism · Post-v11 Architecture', ru: 'Унитарный Голономный Монизм · Архитектура v11'},
+  name: {en: 'Unitary Holonomic Monism · Post-v13 Architecture', ru: 'Унитарный Голономный Монизм · Архитектура v13'},
   title: {en: 'From relations', ru: 'От отношений'},
   titleAccent: {en: 'to a whole.', ru: 'к целому.'},
   intro: {
@@ -20,10 +20,10 @@ export const homeCopy = {
   registry: {en: 'Status registry', ru: 'Реестр статусов'},
   interactive: {en: 'Live seven-dimensional state instrument', ru: 'Интерактивный прибор семимерного состояния'},
   interactiveHint: {en: 'Vary coherence s · inspect PG(2,2) Fano · test Born readouts.', ru: 'Меняйте когерентность s · исследуйте Фано PG(2,2) · проверяйте измерения Борна.'},
-  factNote: {en: 'Post-v11 verified baseline', ru: 'Верифицированный срез v11'},
+  factNote: {en: 'Post-v13 verified baseline', ru: 'Верифицированный срез v13'},
   factStateLabel: {en: 'roles · coherence pairs · real parameters in 𝒟(ℂ⁷)', ru: 'ролей · пар когерентностей · вещественных параметров в 𝒟(ℂ⁷)'},
   factStrataLabel: {en: 'explicit ontological strata (zero overclaiming)', ru: 'явных онтологических страты (ноль завышенных заявлений)'},
-  factLeanLabel: {en: 'Lean 4 modules · 0 Classical.choice (25,777 decls)', ru: 'модуля Lean 4 · 0 Classical.choice (25 777 деклараций)'},
+  factLeanLabel: {en: 'Lean 4 modules · 0 Classical.choice (31,837 decls)', ru: 'модуля Lean 4 · 0 Classical.choice (31 837 деклараций)'},
   factSuitesLabel: {en: 'deep frontier suites · 165/165 core checks passing', ru: 'глубоких рубежа проверок · 165/165 чисел ядра'},
   frameworkLabel: {en: '01 / Stratified architecture', ru: '01 / Стратифицированная архитектура'},
   frameworkTitle: {en: 'Four core objects. Three explicit strata.', ru: 'Четыре базовых объекта. Три явные страты.'},
@@ -62,16 +62,16 @@ export const homeCopy = {
   },
   verificationTitle: {en: 'Four-corpus machine-checked verification backbone', ru: 'Четырёхкорпусный контур машинной верификации'},
   verificationText: {
-    en: 'Holon is cross-linked and audited alongside math-foundations (82 Lean 4 modules, 267 strictly zero-axiom theorems, 915 #print axioms checks, 0 Classical.choice), math-msfs (69p/75p EN/RU preprint & 13-module / 592-proved Verum corpus), and diakrisis (13-axiom 2-categorical metatheory, 133 definitions).',
-    ru: 'Holon сквозно связан и проверяется вместе с math-foundations (82 модуля Lean 4, 267 строго безаксиомных теорем, 915 проверок #print axioms, 0 Classical.choice), math-msfs (препринт 69/75 с. EN/RU и 13 модулей / 592 доказательства Verum) и diakrisis (13-аксиомная 2-категорная метатеория, 133 определения).',
+    en: 'Holon is cross-linked and audited alongside math-foundations (94 Lean 4 modules, 280 strictly zero-axiom theorems, 1,027 #print axioms checks, 0 Classical.choice), math-msfs (EN/RU preprint with 102 theorem-like envs / 124 labels / 67 refs & 15-module / 688-proved Verum corpus), and diakrisis (13-axiom 2-categorical metatheory, 133 definitions).',
+    ru: 'Holon сквозно связан и проверяется вместе с math-foundations (94 модуля Lean 4, 280 строго безаксиомных теорем, 1 027 проверок #print axioms, 0 Classical.choice), math-msfs (препринт EN/RU: 102 формальных окружения / 124 метки / 67 библ. записей и 15 модулей / 688 доказательств Verum) и diakrisis (13-аксиомная 2-категорная метатеория, 133 определения).',
   },
   verificationLink: {en: 'Network results & Lean audit', ru: 'Сетевые результаты и аудит Lean'},
   falsifiability: {en: 'Tests and falsification criteria', ru: 'Проверки и критерии опровержения'},
   corpusLabel: {en: '05 / Navigate the corpus', ru: '05 / Навигация по корпусу'},
   corpusTitle: {en: 'Choose your path through the theory.', ru: 'Выберите свой путь по теории.'},
   corpusLead: {
-    en: 'Enter through the choice-free mathematical kernel, inspect the v1–v11 physical frontier ledger, or explore consciousness and coherence cybernetics.',
-    ru: 'Начните с безвыборного математического ядра, изучите сводку физических рубежей v1–v11 или перейдите к сознанию и когерентной кибернетике.',
+    en: 'Enter through the choice-free mathematical kernel, inspect the v1–v13 physical frontier ledger, or explore consciousness and coherence cybernetics.',
+    ru: 'Начните с безвыборного математического ядра, изучите сводку физических рубежей v1–v13 или перейдите к сознанию и когерентной кибернетике.',
   },
   filters: {en: 'Filter the corpus by subject', ru: 'Разделы корпуса по темам'},
   all: {en: 'All', ru: 'Все'},
@@ -186,8 +186,8 @@ export const bridges: FrontierEntry[] = [
     stratum: {en: 'Applied · Choice-Free', ru: 'Прикладное · Без AC'},
     title: {en: 'Coherence cybernetics & verifiable AGI architectures', ru: 'Когерентная кибернетика и верифицируемые архитектуры AGI'},
     text: {
-      en: 'Translates viability corridors, bounded self-models, and choice-free formal verification (82 Lean 4 modules, TranslationAdequacy) into operational criteria for self-monitoring agents, calibrated reconstruction, and non-hallucinating autonomous reasoning.',
-      ru: 'Переводит коридоры жизнеспособности, ограниченные самомодели и безвыборную верификацию (82 модуля Lean 4, TranslationAdequacy) в операционные критерии для самонаблюдающих агентов, томографии и негаллюцинирующего автономного вывода.',
+      en: 'Translates viability corridors, bounded self-models, and choice-free formal verification (94 Lean 4 modules, TranslationAdequacy) into operational criteria for self-monitoring agents, calibrated reconstruction, and non-hallucinating autonomous reasoning.',
+      ru: 'Переводит коридоры жизнеспособности, ограниченные самомодели и безвыборную верификацию (94 модуля Lean 4, TranslationAdequacy) в операционные критерии для самонаблюдающих агентов, томографии и негаллюцинирующего автономного вывода.',
     },
     highlight: {en: 'Potential: mathematically auditable autonomous cognition', ru: 'Потенциал: математически аудируемая автономная когниция'},
     link: '/docs/applied/coherence-cybernetics/introduction',
@@ -201,7 +201,7 @@ export const statusGroups = [
     title: {en: 'Proved & machine-checked', ru: 'Доказано и проверено машинно'},
     items: [
       {
-        text: {en: 'Choice-free Lean 4 kernel: 82 modules, 25,777 decls, 915 audited, 267 zero-axiom, 115 NonVacuity (0 Classical.choice).', ru: 'Безвыборное ядро Lean 4: 82 модуля, 25 777 деклараций, 915 проверок, 267 безаксиомных, 115 NonVacuity (0 Classical.choice).'},
+        text: {en: 'Choice-free Lean 4 kernel: 94 modules, 31,837 decls, 1,027 audited, 280 zero-axiom, 145 NonVacuity (0 Classical.choice).', ru: 'Безвыборное ядро Lean 4: 94 модуля, 31 837 деклараций, 1 027 проверок, 280 безаксиомных, 145 NonVacuity (0 Classical.choice).'},
         link: '/docs/reference/network-results',
       },
       {
@@ -274,9 +274,9 @@ export const statusGroups = [
 ];
 
 export const verificationMetrics: readonly {value: Bilingual; label: Bilingual}[] = [
-  {value: {en: '82', ru: '82'}, label: {en: 'Lean 4 modules', ru: 'Модулей Lean 4'}},
-  {value: {en: '25,777', ru: '25 777'}, label: {en: 'Checked decls', ru: 'Деклараций'}},
-  {value: {en: '267', ru: '267'}, label: {en: 'Zero-axiom proofs', ru: '0-аксиом теорем'}},
+  {value: {en: '94', ru: '94'}, label: {en: 'Lean 4 modules', ru: 'Модулей Lean 4'}},
+  {value: {en: '31,837', ru: '31 837'}, label: {en: 'Checked decls', ru: 'Деклараций'}},
+  {value: {en: '280', ru: '280'}, label: {en: 'Zero-axiom proofs', ru: '0-аксиом теорем'}},
   {value: {en: '0', ru: '0'}, label: {en: 'Classical.choice', ru: 'Classical.choice'}},
   {value: {en: '165/165', ru: '165/165'}, label: {en: 'Core numbers', ru: 'Чисел ядра'}},
   {value: {en: '1,138', ru: '1 138'}, label: {en: 'Kernel checks', ru: 'Проверок ядра'}},
@@ -291,8 +291,8 @@ export const corpus: (Entry & {subject: Subject})[] = [
   {id: 'consciousness', symbol: 'E', subject: 'mind', title: {en: 'Consciousness & interiority', ru: 'Сознание и интериорность'}, text: {en: 'Two-aspect monism, operational access bounds, and testable empirical questions.', ru: 'Двухаспектный монизм, операционные границы доступа и проверяемые вопросы.'}, link: '/docs/consciousness/overview'},
   {id: 'hierarchy', symbol: 'Lₙ', subject: 'mind', title: {en: 'Reflection & L-hierarchy', ru: 'Рефлексия и L-иерархия'}, text: {en: 'L₀–L₄ capability gates, explicit realizations, and reflection-depth conditions.', ru: 'Пороги способностей L₀–L₄, явные реализации и условия глубины рефлексии.'}, link: '/docs/consciousness/hierarchy/interiority-hierarchy'},
   {id: 'physics', symbol: '𝒢', subject: 'physics', title: {en: 'Physical bridges & CCvS', ru: 'Физические мосты и CCvS'}, text: {en: 'Stratum B Clifford/Pati–Salam lift, 2-loop RGE, Higgs, neutrinos, and 4D gravity.', ru: 'Лифт Клиффорда/Пати–Салама Страты B, 2-петлевой РГ, Хиггс, нейтрино и 4D гравитация.'}, link: '/docs/physics/overview'},
-  {id: 'frontier', symbol: '⊞', subject: 'physics', title: {en: 'Frontier ledger (v1–v11)', ru: 'Реестр рубежей (v1–v11)'}, text: {en: 'Stratified ontology A/B/C, Super-F-40, F-41, F-42, falsified dead ends, and open walls.', ru: 'Стратифицированная онтология A/B/C, Super-F-40, F-41, F-42, опровержения и открытые стены.'}, link: '/docs/reference/frontier-ledger'},
+  {id: 'frontier', symbol: '⊞', subject: 'physics', title: {en: 'Frontier ledger (v1–v13)', ru: 'Реестр рубежей (v1–v13)'}, text: {en: 'Stratified ontology A/B/C, Super-F-40, F-41, F-42, Deep Frontier v13, falsified dead ends, and open walls.', ru: 'Стратифицированная онтология A/B/C, Super-F-40, F-41, F-42, Deep Frontier v13, опровержения и открытые стены.'}, link: '/docs/reference/frontier-ledger'},
   {id: 'measurement', symbol: 'y', subject: 'research', title: {en: 'Reconstruction & measurement', ru: 'Реконструкция и измерение'}, text: {en: 'Informational completeness, POVM uncertainty bounds, and identifiable tomography.', ru: 'Информационная полнота, границы неопределённости POVM и идентифицируемая томография.'}, link: '/docs/applied/research/reconstruction-identifiability'},
   {id: 'cybernetics', symbol: '↺', subject: 'research', title: {en: 'Coherence cybernetics', ru: 'Когерентная кибернетика'}, text: {en: 'Control protocols, autonomous stability, and verifiable cognitive-architecture criteria.', ru: 'Протоколы управления, устойчивость автономии и критерии верифицируемых когнитивных архитектур.'}, link: '/docs/applied/coherence-cybernetics/introduction'},
-  {id: 'verification', symbol: '⊢', subject: 'research', title: {en: 'Network results & Lean audit', ru: 'Сетевые результаты и аудит Lean'}, text: {en: 'Four-corpus provenance, 82 choice-free Lean 4 modules, counterexamples, and falsifiability.', ru: 'Четырёхкорпусный провенанс, 82 безвыборных модуля Lean 4, контрпримеры и фальсифицируемость.'}, link: '/docs/reference/network-results'},
+  {id: 'verification', symbol: '⊢', subject: 'research', title: {en: 'Network results & Lean audit', ru: 'Сетевые результаты и аудит Lean'}, text: {en: 'Four-corpus provenance, 94 choice-free Lean 4 modules, counterexamples, and falsifiability.', ru: 'Четырёхкорпусный провенанс, 94 безвыборных модуля Lean 4, контрпримеры и фальсифицируемость.'}, link: '/docs/reference/network-results'},
 ];
